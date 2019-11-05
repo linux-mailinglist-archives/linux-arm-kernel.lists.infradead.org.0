@@ -2,80 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D48E0F0AA6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 00:57:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55687F0AB0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 00:57:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QMzMIckDD8LXvaTnwwv1OTj6jHEPyRyDFXVu0f329RI=; b=uXdxs5gIwnL7Nc
-	q3ehxZeelJvonEcc26KVPZirmzZam1jqueQwz+XtsfJgQsbqjbu8gY5qB04Oo8R2RRPsfOKzbX713
-	JPRMS4+4+RZ9ZsMlJetofKiNApUulBraPT7RSKPqH9Mdndq8X08I8f3NS24Sh2U/tLNQRNNB/4FyL
-	VHuPSvv847RMNQ48vmF/G0w85xWf6yBWAqz7uhVfR3AJx157Dohf8aOe3ENssZp0kOD9SYFs8xVC6
-	13s9fEh9PAzE/EErReQOnf1xtLZqcKR5aL+ELJmLikS922X+NR20twyRbt89Eaa2UdWCQB2QxM7m+
-	U3dYuqnsRXIALnKrWejQ==;
+	List-Owner; bh=UwljLfEYza2AQBIf8DiP1/ufNVDzmMliv8hjz0iOjOw=; b=bB4exbdRu0JJ62
+	foaeWs3U5ZsqG2txpvaskW897fgFe2n37Uonj510rvAFjos0IDvRERtSzdtNMPwovehGDFJ8cWUWy
+	4CrufWSmLhtz/fXT0ka2AY04Iujt60s9l2byv4wNVn2aICIBmkbhXSUBFSJ1NugOfBcnxyW61W2Wb
+	S3iOwss+JoRt2FwHvlaR4magOwYfGuy+YlbcCZXU5WVCVatJIXwisKGA0AeVQky7smgR+K9cb2T6u
+	msyu+dUYF/8fHre3UrwRmHOnX1/klZOhLKnz4BwqCv5IFrvenWFW5fT2gfQjD3XhAMvyrVoBl/+ew
+	qx5G8r8/9HpFzdkjoqgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS8h0-00088d-KI; Tue, 05 Nov 2019 23:56:58 +0000
-Received: from mail-vk1-xa4a.google.com ([2607:f8b0:4864:20::a4a])
+	id 1iS8hH-0008Pd-15; Tue, 05 Nov 2019 23:57:15 +0000
+Received: from mail-pg1-x549.google.com ([2607:f8b0:4864:20::549])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS8gT-0007i8-0O
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 23:56:26 +0000
-Received: by mail-vk1-xa4a.google.com with SMTP id i25so5117514vkk.23
+ id 1iS8gT-0007iz-FG
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 23:56:27 +0000
+Received: by mail-pg1-x549.google.com with SMTP id u11so16318428pgm.20
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 15:56:23 -0800 (PST)
+ Tue, 05 Nov 2019 15:56:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=OH2SjYe0B8esWxTAcCgR+62MsPomBC+RzRSTMU1rFk8=;
- b=LANLIsSLRt+jERn9z/YC1fWtMQVX8zCypiEu6yw+A7ph5wykxHwT9wsDMQDlDMl2rg
- stArYiAU/nb/XpN8wDOhlGyfTc0fdCPVyLoqsctOyYeGq24aghzkvptD+XVbn9Xq4Qx2
- yxJPdKckjUE2Le0UST7HQhi45E/yHrtn4L5mNNxo+7JL+AcIOJugxBvuaOWMfQaRKd19
- pgc7iEsvYu0XarG32KP1cibZw6Yh6odpoBcAbe/UiVxBTEh1uk9MrGBjI2ktk5L02xPX
- x9VA45PGyhIT4mZVHxYbG80ZMkQKYGWocfpS2nmfUWNgOvxc1mQu8MLaMnzS4vac3Qt1
- JBZw==
+ :cc; bh=dHd2oAd25v1QFamm49bKYnI+SDWrPmb9Vs4EgTfDEXk=;
+ b=bDliSoyYGxx43rEjkFDy5V4ntr7XfyvBRO13dbvsBo0S8JQUy+CqxbLaHNdLfREnCw
+ a0I8taTdiam8ApYbUculPMioDAysaU8DW84rQmV6vlUONLQUEhV8wGdC9CtCyCEtcyXZ
+ zFMpPoI1eGpbZbiga1Th/X377A0R2Az7nA63db6p9Ay7zYwET083itnXUljV0iaN0/Qz
+ 3izH+/Yw9gDCV9sWl9Wgc4I4gMwOn+2k1tVCgkrd6MAFSPLlao809xh49sSGLtt0qEy2
+ S+2sqJnqZhdClVXEacu79v4G5BJbF1/6V1tkhH9qEzhiNW9ETU59eVlVQfWrcC5/QOpD
+ IKUA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=OH2SjYe0B8esWxTAcCgR+62MsPomBC+RzRSTMU1rFk8=;
- b=A2Wsh5oPxw8mPRj3dl3J91gzkuJFGi5Bsaox3bNQLDkzKEShNYYnor/xwGNmFw9Hy2
- H8Gle2mB9OoOOsm3D3mwSS7YWokB7ctRJMgDMOZHQv10lkIwKwl2Ia8WPfzr3QuL6u1D
- 0zMc/D7LmZX1MkN9NoVoJpj5Lct5kxLYqMuqNRmyjfxGqOBt+9b6JClmUSYtlLbCbAR7
- gatg06eiw7w5+Cu03ob0CZJ2GBg2iMNzTyvoYX7OxBOp5RoL/d35e2dyNeMPRPLd3c1z
- egmx74anwbbIU56XN2oLwXC9iYNT9+PwZdLC65w3UZeoYAtaxrVKZrNngpJVHeWnfK2D
- JD6w==
-X-Gm-Message-State: APjAAAU8uYk2IZA+NRo4iWCJ2yNxbQOVKxxEM5v4f89aZCzDt1ZXMPBp
- C9hXhxwO9WXvGnSbzjQqJAN/U4rzuuEPiLghjPU=
-X-Google-Smtp-Source: APXvYqxFzno9MSXI4Ly95n1ixFuKJLy5PBpFiCEvi59EZLe1JMvD55HUp/RJhtm2+ZnxbDY2T+pgxUE1vx1ZzWw2zK4=
-X-Received: by 2002:a67:ef0c:: with SMTP id j12mr9381038vsr.201.1572998180740; 
- Tue, 05 Nov 2019 15:56:20 -0800 (PST)
-Date: Tue,  5 Nov 2019 15:55:56 -0800
+ bh=dHd2oAd25v1QFamm49bKYnI+SDWrPmb9Vs4EgTfDEXk=;
+ b=B3Rx1CdNemVgovfocNh4OptoSwOflHrBJdK1KEl7a96bmD7/snOSXx/xtOcYLVKF+H
+ c/RngNNRUm85woTeXldo/VOqIdw0vzWW/+rifzuXtgyhs5nlmzQHZ1chSyEqIEaNp3am
+ btGi1eM74pxaZItdJrrnyvFQ0IWCw5biRyQvN+djXYyTwhLRl28oHpc2ISTAUuvpooBj
+ 09HAGtrG1UnQXQhuOKPrCjRQvBi48TLcjaW8aFjyjNLtPGSch4BUFvkRMAri5uzvFNSv
+ awAOiWvm6yoEMetev00GCxn0bQEENKtGHdS4J/3gnoQxEkY69qG4xlftUWpaiC5Q5etb
+ PtSg==
+X-Gm-Message-State: APjAAAWGNIyr3kutPQ6EQS+KTiHy6tV131KCPGizVWocB5ugtoLGwh89
+ QGc7k4qJMQpRyOLmkUm9pJ077Ko/aJfNU4zdVUo=
+X-Google-Smtp-Source: APXvYqwoXaWLPx1zp6EIPHoWFJ4RyvAcLtwdFx+RmyQn+CTcUAB7w5M2fVP0LN47NIlc/qsCuoDGGAdmwSoWPYgVFrU=
+X-Received: by 2002:a63:750f:: with SMTP id q15mr14598354pgc.422.1572998183307; 
+ Tue, 05 Nov 2019 15:56:23 -0800 (PST)
+Date: Tue,  5 Nov 2019 15:55:57 -0800
 In-Reply-To: <20191105235608.107702-1-samitolvanen@google.com>
-Message-Id: <20191105235608.107702-3-samitolvanen@google.com>
+Message-Id: <20191105235608.107702-4-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191105235608.107702-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.24.0.rc1.363.gb1bccd3e3d-goog
-Subject: [PATCH v5 02/14] arm64/lib: copy_page: avoid x18 register in
- assembler code
+Subject: [PATCH v5 03/14] arm64: kvm: stop treating register x18 as caller save
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Masami Hiramatsu <mhiramat@kernel.org>, 
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_155625_066615_340C90A5 
-X-CRM114-Status: UNSURE (   9.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191105_155625_530916_F362909A 
+X-CRM114-Status: GOOD (  11.74  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a4a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:549 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -115,87 +113,124 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 
-Register x18 will no longer be used as a caller save register in the
-future, so stop using it in the copy_page() code.
+In preparation of reserving x18, stop treating it as caller save in
+the KVM guest entry/exit code. Currently, the code assumes there is
+no need to preserve it for the host, given that it would have been
+assumed clobbered anyway by the function call to __guest_enter().
+Instead, preserve its value and restore it upon return.
 
-Link: https://patchwork.kernel.org/patch/9836869/
+Link: https://patchwork.kernel.org/patch/9836891/
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-[Sami: changed the offset and bias to be explicit]
+[Sami: updated commit message, switched from x18 to x29 for the guest context]
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+Reviewed-by: Kees Cook <keescook@chromium.org>
+Reviewed-by: Marc Zyngier <maz@kernel.org>
 Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 ---
- arch/arm64/lib/copy_page.S | 38 +++++++++++++++++++-------------------
- 1 file changed, 19 insertions(+), 19 deletions(-)
+ arch/arm64/kvm/hyp/entry.S | 45 ++++++++++++++++++++------------------
+ 1 file changed, 24 insertions(+), 21 deletions(-)
 
-diff --git a/arch/arm64/lib/copy_page.S b/arch/arm64/lib/copy_page.S
-index bbb8562396af..290dd3c5266c 100644
---- a/arch/arm64/lib/copy_page.S
-+++ b/arch/arm64/lib/copy_page.S
-@@ -34,45 +34,45 @@ alternative_else_nop_endif
- 	ldp	x14, x15, [x1, #96]
- 	ldp	x16, x17, [x1, #112]
+diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
+index e5cc8d66bf53..0c6832ec52b1 100644
+--- a/arch/arm64/kvm/hyp/entry.S
++++ b/arch/arm64/kvm/hyp/entry.S
+@@ -22,7 +22,12 @@
+ 	.text
+ 	.pushsection	.hyp.text, "ax"
  
--	mov	x18, #(PAGE_SIZE - 128)
-+	add	x0, x0, #256
- 	add	x1, x1, #128
- 1:
--	subs	x18, x18, #128
-+	tst	x0, #(PAGE_SIZE - 1)
++/*
++ * We treat x18 as callee-saved as the host may use it as a platform
++ * register (e.g. for shadow call stack).
++ */
+ .macro save_callee_saved_regs ctxt
++	str	x18,      [\ctxt, #CPU_XREG_OFFSET(18)]
+ 	stp	x19, x20, [\ctxt, #CPU_XREG_OFFSET(19)]
+ 	stp	x21, x22, [\ctxt, #CPU_XREG_OFFSET(21)]
+ 	stp	x23, x24, [\ctxt, #CPU_XREG_OFFSET(23)]
+@@ -32,6 +37,8 @@
+ .endm
  
- alternative_if ARM64_HAS_NO_HW_PREFETCH
- 	prfm	pldl1strm, [x1, #384]
- alternative_else_nop_endif
+ .macro restore_callee_saved_regs ctxt
++	// We require \ctxt is not x18-x28
++	ldr	x18,      [\ctxt, #CPU_XREG_OFFSET(18)]
+ 	ldp	x19, x20, [\ctxt, #CPU_XREG_OFFSET(19)]
+ 	ldp	x21, x22, [\ctxt, #CPU_XREG_OFFSET(21)]
+ 	ldp	x23, x24, [\ctxt, #CPU_XREG_OFFSET(23)]
+@@ -48,7 +55,7 @@ ENTRY(__guest_enter)
+ 	// x0: vcpu
+ 	// x1: host context
+ 	// x2-x17: clobbered by macros
+-	// x18: guest context
++	// x29: guest context
  
--	stnp	x2, x3, [x0]
-+	stnp	x2, x3, [x0, #-256]
- 	ldp	x2, x3, [x1]
--	stnp	x4, x5, [x0, #16]
-+	stnp	x4, x5, [x0, #16 - 256]
- 	ldp	x4, x5, [x1, #16]
--	stnp	x6, x7, [x0, #32]
-+	stnp	x6, x7, [x0, #32 - 256]
- 	ldp	x6, x7, [x1, #32]
--	stnp	x8, x9, [x0, #48]
-+	stnp	x8, x9, [x0, #48 - 256]
- 	ldp	x8, x9, [x1, #48]
--	stnp	x10, x11, [x0, #64]
-+	stnp	x10, x11, [x0, #64 - 256]
- 	ldp	x10, x11, [x1, #64]
--	stnp	x12, x13, [x0, #80]
-+	stnp	x12, x13, [x0, #80 - 256]
- 	ldp	x12, x13, [x1, #80]
--	stnp	x14, x15, [x0, #96]
-+	stnp	x14, x15, [x0, #96 - 256]
- 	ldp	x14, x15, [x1, #96]
--	stnp	x16, x17, [x0, #112]
-+	stnp	x16, x17, [x0, #112 - 256]
- 	ldp	x16, x17, [x1, #112]
- 
- 	add	x0, x0, #128
- 	add	x1, x1, #128
- 
--	b.gt	1b
-+	b.ne	1b
- 
--	stnp	x2, x3, [x0]
--	stnp	x4, x5, [x0, #16]
--	stnp	x6, x7, [x0, #32]
--	stnp	x8, x9, [x0, #48]
--	stnp	x10, x11, [x0, #64]
--	stnp	x12, x13, [x0, #80]
--	stnp	x14, x15, [x0, #96]
--	stnp	x16, x17, [x0, #112]
-+	stnp	x2, x3, [x0, #-256]
-+	stnp	x4, x5, [x0, #16 - 256]
-+	stnp	x6, x7, [x0, #32 - 256]
-+	stnp	x8, x9, [x0, #48 - 256]
-+	stnp	x10, x11, [x0, #64 - 256]
-+	stnp	x12, x13, [x0, #80 - 256]
-+	stnp	x14, x15, [x0, #96 - 256]
-+	stnp	x16, x17, [x0, #112 - 256]
- 
+ 	// Store the host regs
+ 	save_callee_saved_regs x1
+@@ -67,31 +74,28 @@ alternative_else_nop_endif
  	ret
- ENDPROC(copy_page)
+ 
+ 1:
+-	add	x18, x0, #VCPU_CONTEXT
++	add	x29, x0, #VCPU_CONTEXT
+ 
+ 	// Macro ptrauth_switch_to_guest format:
+ 	// 	ptrauth_switch_to_guest(guest cxt, tmp1, tmp2, tmp3)
+ 	// The below macro to restore guest keys is not implemented in C code
+ 	// as it may cause Pointer Authentication key signing mismatch errors
+ 	// when this feature is enabled for kernel code.
+-	ptrauth_switch_to_guest x18, x0, x1, x2
++	ptrauth_switch_to_guest x29, x0, x1, x2
+ 
+ 	// Restore guest regs x0-x17
+-	ldp	x0, x1,   [x18, #CPU_XREG_OFFSET(0)]
+-	ldp	x2, x3,   [x18, #CPU_XREG_OFFSET(2)]
+-	ldp	x4, x5,   [x18, #CPU_XREG_OFFSET(4)]
+-	ldp	x6, x7,   [x18, #CPU_XREG_OFFSET(6)]
+-	ldp	x8, x9,   [x18, #CPU_XREG_OFFSET(8)]
+-	ldp	x10, x11, [x18, #CPU_XREG_OFFSET(10)]
+-	ldp	x12, x13, [x18, #CPU_XREG_OFFSET(12)]
+-	ldp	x14, x15, [x18, #CPU_XREG_OFFSET(14)]
+-	ldp	x16, x17, [x18, #CPU_XREG_OFFSET(16)]
+-
+-	// Restore guest regs x19-x29, lr
+-	restore_callee_saved_regs x18
+-
+-	// Restore guest reg x18
+-	ldr	x18,      [x18, #CPU_XREG_OFFSET(18)]
++	ldp	x0, x1,   [x29, #CPU_XREG_OFFSET(0)]
++	ldp	x2, x3,   [x29, #CPU_XREG_OFFSET(2)]
++	ldp	x4, x5,   [x29, #CPU_XREG_OFFSET(4)]
++	ldp	x6, x7,   [x29, #CPU_XREG_OFFSET(6)]
++	ldp	x8, x9,   [x29, #CPU_XREG_OFFSET(8)]
++	ldp	x10, x11, [x29, #CPU_XREG_OFFSET(10)]
++	ldp	x12, x13, [x29, #CPU_XREG_OFFSET(12)]
++	ldp	x14, x15, [x29, #CPU_XREG_OFFSET(14)]
++	ldp	x16, x17, [x29, #CPU_XREG_OFFSET(16)]
++
++	// Restore guest regs x18-x29, lr
++	restore_callee_saved_regs x29
+ 
+ 	// Do not touch any register after this!
+ 	eret
+@@ -114,7 +118,7 @@ ENTRY(__guest_exit)
+ 	// Retrieve the guest regs x0-x1 from the stack
+ 	ldp	x2, x3, [sp], #16	// x0, x1
+ 
+-	// Store the guest regs x0-x1 and x4-x18
++	// Store the guest regs x0-x1 and x4-x17
+ 	stp	x2, x3,   [x1, #CPU_XREG_OFFSET(0)]
+ 	stp	x4, x5,   [x1, #CPU_XREG_OFFSET(4)]
+ 	stp	x6, x7,   [x1, #CPU_XREG_OFFSET(6)]
+@@ -123,9 +127,8 @@ ENTRY(__guest_exit)
+ 	stp	x12, x13, [x1, #CPU_XREG_OFFSET(12)]
+ 	stp	x14, x15, [x1, #CPU_XREG_OFFSET(14)]
+ 	stp	x16, x17, [x1, #CPU_XREG_OFFSET(16)]
+-	str	x18,      [x1, #CPU_XREG_OFFSET(18)]
+ 
+-	// Store the guest regs x19-x29, lr
++	// Store the guest regs x18-x29, lr
+ 	save_callee_saved_regs x1
+ 
+ 	get_host_ctxt	x2, x3
 -- 
 2.24.0.rc1.363.gb1bccd3e3d-goog
 
