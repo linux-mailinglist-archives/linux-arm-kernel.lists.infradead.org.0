@@ -2,133 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C68EF057F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 19:56:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 762FFF05EE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 20:26:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fQfjWtHYjHbi6gVJzV6L04CkPlo/nyw9wQLuAN5gORY=; b=GcqmzXjNN4sAwG
-	C8aiqf6T2tXDu5e8ZmK6Sd5s+XBlmxla6RX3KySAqnpvXl4H2P5MXCOdOCRiYmYYheYrKf0Tfe4bi
-	QmVyvCDXVA2PrB5INHR/4CjI6wwFLYgfq47MJlAelWbgptCbMNq9X6vSvCyrcHy/5uVLJ5Mwx8KuP
-	0coS55mnsaGhuJ+yYbq84ptLbgRvtcb9SQPg2+IcwzaHSm2Pa9eroUeQCiOIxl8P2IUnOFF4/9NoT
-	K4YIyqJTFPk5KKG/qBy2Xw6u32Q4gh8EtjbX0Jg71sujrc2XtI7Gj3+1tGM6k72QNfTUSJe9geFij
-	5lY7bJu/+9NMeLaeverQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=najExg/VdD9HBceZsQ1pCazly2Af4XaP9tSQVDJl2is=; b=gJ9l+eLLtiaumv
+	RGH6VDG0Lc/Soi4EqabzeBREYQCZzjYb0kzuXlBTvcZu0hDRcXCf5c7h7ridQWL0q5pW+uft1Gvs4
+	d4xltrOgevrLcfcil4mpBW213ehvnNRH8atjsry/xIMkjVcFVRiqAto1d6hXmeGLMlLk86g49arLU
+	w6k3BWcuhil1nREysXNr3HS7m/VcDIYM6NuzNT4KTRB5HEEtZcyQpv7NLNuui4dtKxn/7dinRMS4m
+	dZbrjuw59Vv+g/ZxK5RE85TrlIVHv9uvfxR2Z8WycsqQARoStgvIUdHzsUMcOm0wXOKvZsjUq3bb7
+	VeT00p0Zpuv1SiS/qDog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS40W-0000BC-4G; Tue, 05 Nov 2019 18:56:48 +0000
-Received: from mout.web.de ([212.227.15.14])
+	id 1iS4Sz-0004G5-P6; Tue, 05 Nov 2019 19:26:13 +0000
+Received: from mail-eopbgr10051.outbound.protection.outlook.com ([40.107.1.51]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS40N-0000AM-QC
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 18:56:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1572980184;
- bh=O04SOfhyjtAX9VIh+fecSSaU9Sn317YdJ9++PLMXLq8=;
- h=X-UI-Sender-Class:Subject:From:To:Cc:References:Date:In-Reply-To;
- b=WENQh5YTQ3eKy17V6PKei1zGcVUtIB+1GFe8G8J6qo0pvNK3ls/9o4zSzwSNHbMHm
- s9ehralIBNbyxbfpP4/WN2TkbOkUmiD76EKLZU/wrn4KCNj0x/KVQJOOo3bBqNqMzB
- ziwPgznkNNrpld77QE9n37bdExHBXHX3yT58lC6A=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.1.2] ([78.48.164.204]) by smtp.web.de (mrweb001
- [213.165.67.108]) with ESMTPSA (Nemesis) id 0MPGym-1iWTqS1pke-004U1W; Tue, 05
- Nov 2019 19:56:24 +0100
-Subject: [PATCH 2/2] misc: xilinx_sdfec: Combine three condition checks into
- one statement in xsdfec_add_ldpc()
-From: Markus Elfring <Markus.Elfring@web.de>
-To: linux-arm-kernel@lists.infradead.org, Arnd Bergmann <arnd@arndb.de>,
- Derek Kiernan <derek.kiernan@xilinx.com>,
- Dragan Cvetic <dragan.cvetic@xilinx.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Michal Simek <michal.simek@xilinx.com>
-References: <af1ff373-56c0-ca49-36dd-15666d183c95@web.de>
-Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
- 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 FEE=
-Message-ID: <b927be91-a380-1bba-2b10-f0ca49c477b5@web.de>
-Date: Tue, 5 Nov 2019 19:56:23 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
-MIME-Version: 1.0
-In-Reply-To: <af1ff373-56c0-ca49-36dd-15666d183c95@web.de>
+ id 1iS4Sp-0004EQ-Om
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 19:26:05 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=G8GJcIbZ0JLnP3fHrgMIQhYTTaOukFilNoKhbPYmZkFe0ynm+Nse/AHh1UE+x/Vv3zVw61XAEVrb0zOpYT5QbkGmaFk10RpWn96cG4332qDpHzQ6k/ALD8XDoxV7ssal+G3QHCHcO9Bm9sWnWkIk64I9jQ4K8i0s+Gc2DIk5A4vZDI5AS2tVuMnDR+ivjnqC35T7zAgQvofXFZSxFepNRFcoOpdvKIkVFxX/ILE+u5CeyBsPg/vsuqyLlysbPOgQBXehcNuLMLMy9YKPyuSVF02wVV2UCaxIIYfpkEmXO64aFBZZ+oN6toK4ujavqvhU948Kzq+8tXy5/EhoPOueDw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ddzith1KCgIQvGUdk2FllzeY1o8XmIkimAvZ7eZbiYs=;
+ b=COAAhHsclhEZuBQzouJ0PXBlvbbzqQakeqDC9TmimKaXFSx9Zx+dLesIrsAt+mqVeQRdkGPMgKO99v3DHG36cByPtAHs9AeRibYTWwB+U+bhmZAKbQUb5AsvH1SLOfnxPqefXh0/HpizoivvD+PcIYnyB8mcwAYlWepqEIqHqWaOjaerl+v7GPqt+cCEqEKuJKrpGvcR4O3M2DL9cRi8SE8kgfptrIMxi4VAK0Js3EGcvJp66JadcsBRxROlkyVxPTnTNvLdmTJQgM9N+nR6qU/7HP//Q80T33D1lnDW2i91powk8GORqMqE7Ky2PtF+qX0bjMlAEGVqfPCXeC8Irw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ddzith1KCgIQvGUdk2FllzeY1o8XmIkimAvZ7eZbiYs=;
+ b=TiRRiiKd3PMgcKZa8aTGsNLsH1rEnm8rKWzx36QC0XlBJAq80e3nRDeUuSZfUmMeDBzCp2QOYkeRzja5xR3T1/o6fpBBIWkRi5A5dyk/HQW7/QGTYYefHVmzftqVOfmYvgwT/PFNnAlJwpfwMrHA4QdMXAyzckr5+e4QEZneZPE=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB5759.eurprd04.prod.outlook.com (20.178.125.151) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2408.24; Tue, 5 Nov 2019 19:25:57 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::dd0c:72dc:e462:16b3]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::dd0c:72dc:e462:16b3%5]) with mapi id 15.20.2408.024; Tue, 5 Nov 2019
+ 19:25:57 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Rob Herring <robh@kernel.org>, MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Chanwoo Choi
+ <cw00.choi@samsung.com>
+Subject: Re: [PATCH v3 3/6] dt-bindings: devfreq: Add bindings for imx ddr
+ controller
+Thread-Topic: [PATCH v3 3/6] dt-bindings: devfreq: Add bindings for imx ddr
+ controller
+Thread-Index: AQHVkDU6emQ0aN+uuUOlCrShp6WAog==
+Date: Tue, 5 Nov 2019 19:25:57 +0000
+Message-ID: <VI1PR04MB7023F375AEDC4549FA12247FEE7E0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <cover.1572558427.git.leonard.crestez@nxp.com>
+ <b9a87c69eb603622303add4f0c02dd4c1262462a.1572558427.git.leonard.crestez@nxp.com>
+ <20191104222126.GB5218@bogus>
+Accept-Language: en-US
 Content-Language: en-US
-X-Provags-ID: V03:K1:0HBPd4tfVS9jcMccgm/pU//DnE0stIF68JhMEcrKFVL2ZEm+m+Q
- r4aFR7q/eNehC5MB9ecdxTvyVuwcnL9VGXK4cFLq7ora6uJ9fQwYPXSCSR89LgLBd7vEVX+
- YnktlkrpiwthwSIYDnlybrKXu6Ql/h0IoMF2V9enWIKYr4CFYqcVqIif59xfSZwDfxKhzX+
- HbBtXjzHUNcqxAU/nwMYA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:vkgiOJf5RfI=:sDx8/XBVfqV9PXjQNVQ/rx
- iM5y8XXdWb2jFSbCYOZ2KOX0Wh2w383EtzLhuAfs6beam2m/LNDJNH+Hd4g2NwRpkIt0/cR8q
- lGNRZGGOvh3S1CBo/peyBt/NVgRnHDY5jnI32CSV1LKpHFG4DoaQY9Xdzq4EiUU4Hvw6E5oBJ
- O2gGe80uF+NYDSp+Wh9Z3GZFzWFDeEkVOzSzF2RIf15+U7Z9iHdU6lP1lxrFx6yYOocXMJnun
- 3LwPtZX2WdvJEPcLAKdlaiRH4u9Rc5CBsGF/uf8MFWZk2QAH0hM/k+0+diNd0X1hemuRpwpzt
- T/whcA+8LWooa5Feb582LgFCQnvrU/E64m1levnFOcD0CkiL7KII9192qsJsauupXEdIo5gWM
- wlR307vhMBky+6qsDbkfJBDr24yNnyaHr5EdlCwqxsv8TXlqyGAx3sQq8oF8r1CLGvXP6pTo7
- lOlWfNqyH4HQ6dVU7dHTXp9EJrYgy4EdiV+y2sMkaDAUNa7vJulSaMYR24BwBSLnx4Cwqh0f9
- nnE4Paf3dmmEKbvImAZ1QZwRyNFL9Ud7lWB8Wy7kP2TdAJqp9rhYIO894ZQ1k8o5pxkuBUG/a
- st2hFcZBClIlyMF8Aoy4bmKeTT9nqZttuF6er8hWVTLympWz4wxj+hvMuEUSZkk5/n1Rxg6Ei
- NACLoaQIc7wvvI5y9OEJ+zQ/LhKXDqJ0lfVPj4Vajy8TBkwvoNAfvh9XiVHJW/mon2ihg1LvX
- T8fccNgJj8nJjHzKbKE8raB6jqzH+5zMOk58YJMYmQ+0O2iEXzJexY8N0obl9hbEL4Xd72EMN
- by+Krlj35ffAbwbTHFgj8QLbZHptDlK5/nw64Mnhd4jGjp6SnFdg4DQpHL7SvcOKw26s8J0Un
- OInrTZpvaLx7LHiVgr0qMam6Z+X5XOP3Y41zgQsJPkJn3lhCTuAAQPhEK15rWEUXyhWgT+RDl
- KFy+7JbR1UCg7AOk1re5Ec+1f6jy3SgfzJgK6gpWas8wS2ywcbIr4wrh5KKtORCKgio0oBQkd
- mcYLofjBtb51vV/JTadXNoSGUcnYAvt3sWJKBWbKle054NKGKjOnrVV90fj231rnBFjV90F40
- h9TofE5LTFb+H563LgSX6BudOHJg1K/5CGJ/lvNE/MezUv2AaZW1BFZyt4ZECpN2Arv+Irx4S
- WbdQWWI8GkNQV6Ix/nBeNKKuj/Hfzh0dMBW6ZN0BDlPjkCu7C2wJ1rgBf4KeUdYVc6f2nJHiY
- PhMkhOqRkpH5wCTUw4dqcIAfLzWqiG6U+7pYiyz0dTuio92eVRNfeTITeB7U=
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 7825f8c0-8c2c-4ef3-babd-08d76225fc19
+x-ms-traffictypediagnostic: VI1PR04MB5759:|VI1PR04MB5759:
+x-ms-exchange-purlcount: 2
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR04MB5759EF7E2A85C3636D71C34CEE7E0@VI1PR04MB5759.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 0212BDE3BE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(376002)(366004)(136003)(346002)(396003)(189003)(199004)(476003)(6246003)(9686003)(256004)(102836004)(81156014)(8676002)(76176011)(446003)(66556008)(25786009)(3846002)(71200400001)(6116002)(66476007)(6306002)(6436002)(71190400001)(14454004)(66946007)(45080400002)(76116006)(66446008)(316002)(4326008)(478600001)(966005)(7696005)(2906002)(186003)(6506007)(110136005)(86362001)(26005)(7736002)(8936002)(305945005)(64756008)(55016002)(7416002)(91956017)(486006)(99286004)(66066001)(5660300002)(44832011)(33656002)(229853002)(52536014)(74316002)(81166006)(54906003)(53546011);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5759;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: xOa7ZzTL1I5s6UPvJLkyJ9akHpwqlqN4jM8FQgWliUnzpUJo5UaZ1eQ4ftkyq/7Vrm5+8YCLdEY6kEcnm0Khr6du5HDqMWKWwLwFPf1GoqDEiGkBeGyvsGlMyG6Jes4ta/ggAQqyMvRZ4gg7N7BjhA6Mj25Fl43cNibbJG/7CD1KMZNKUYWdd4aUaJfpTLrVbrPTrVnjOrwlu84T3N0n1sV2lqzjqoXPStTkJTw52sQ1AT8X/0Gjwqzqlon0V+FTmSTfE5+NTQTLP3HdEtsRXzFEoMGkfA5T52DuiWahwAp2eGhEhWJk4Uyg6nwEZgR88FTGPnRytcFHe61MWA+pae/F0yVTwAWJIFoiS9mP7m/Eqhiv3EfoLp9Y9KuiZf55BYaywtNGeO0nrL53xm9lA2uK2ulh5AAmNeE85n0eUVWMVIperKlprNPzcAF9bDHcNblRfKjS2VtoSJ7IQBtY49h7l2UcWX579SEN2F2drxM=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7825f8c0-8c2c-4ef3-babd-08d76225fc19
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Nov 2019 19:25:57.7010 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: YXe8EaZx92W5tqBZ1CuAbY9i5q0W5GALgOEt4d1n23gxr0hJlzHlYXUrfN1tDkhAqVTMYFzjODj5vW2X+I0AjA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5759
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_105640_146134_882F3571 
-X-CRM114-Status: GOOD (  12.14  )
+X-CRM114-CacheID: sfid-20191105_112603_895035_919E33AD 
+X-CRM114-Status: GOOD (  14.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.51 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (markus.elfring[at]web.de)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -147,54 +125,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
+ Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Matthias Kaehlcke <mka@chromium.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Martin Kepplinger <martink@posteo.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Markus Elfring <elfring@users.sourceforge.net>
-Date: Tue, 5 Nov 2019 19:32:25 +0100
+On 05.11.2019 00:21, Rob Herring wrote:
+> On Thu, Oct 31, 2019 at 11:50:24PM +0200, Leonard Crestez wrote:
+>> Add devicetree bindings for the i.MX DDR Controller on imx8m series
+>> chips. It supports dynamic frequency switching between multiple data
+>> rates and this is exposed to Linux via the devfreq subsystem.
+>>
+>> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+>> ---
+>>   .../devicetree/bindings/devfreq/imx-ddrc.yaml | 60 +++++++++++++++++++
+> 
+> .../bindings/memory-controllers/
 
-The same return code was set after three condition checks.
-Thus use a single statement instead.
+Okay, but I'm not sure about the rules here. Usually there is a 1:1 
+mapping between subsystems and bindings directory but I guess devfreq is 
+odd since it's not really a physical class of device.
 
-Fixes: 20ec628e8007ec75c2f884e00004f39eab6289b5 ("misc: xilinx_sdfec: Add ability to configure LDPC")
-Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
----
- drivers/misc/xilinx_sdfec.c | 16 ++++------------
- 1 file changed, 4 insertions(+), 12 deletions(-)
+I saw there is also a drivers/memory and there is already a 
+devfreq-using driver in there (EXYNOS5422_DMC).
 
-diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
-index a622fcf4954a..322d5c6e6d12 100644
---- a/drivers/misc/xilinx_sdfec.c
-+++ b/drivers/misc/xilinx_sdfec.c
-@@ -653,18 +653,10 @@ static int xsdfec_add_ldpc(struct xsdfec_dev *xsdfec, void __user *arg)
- 	if (IS_ERR(ldpc))
- 		return PTR_ERR(ldpc);
+It's not clear if my driver fits in there; as far as I can see the only 
+"core" functionality in drivers/memory is parsing DDR timings from DTS 
+but for imx8m this is all controlled in firmware.
 
--	if (xsdfec->config.code == XSDFEC_TURBO_CODE) {
--		ret = -EIO;
--		goto err_out;
--	}
--
--	/* Verify Device has not started */
--	if (xsdfec->state == XSDFEC_STARTED) {
--		ret = -EIO;
--		goto err_out;
--	}
--
--	if (xsdfec->config.code_wr_protect) {
-+	if (xsdfec->config.code == XSDFEC_TURBO_CODE ||
-+	    /* Verify device has not started */
-+	    xsdfec->state == XSDFEC_STARTED ||
-+	    xsdfec->config.code_wr_protect) {
- 		ret = -EIO;
- 		goto err_out;
- 	}
---
-2.24.0
+>>   1 file changed, 60 insertions(+)
+>>   create mode 100644 Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml
+>>
+>> diff --git a/Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml b/Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml
+>> new file mode 100644
+>> index 000000000000..31db204e6845
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/devfreq/imx-ddrc.yaml
+>> @@ -0,0 +1,60 @@
+>> +# SPDX-License-Identifier: GPL-2.0
+> 
+> For new bindings:
+> 
+> # SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> 
+>> +%YAML 1.2
+>> +---
+>> +$id: https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetree.org%2Fschemas%2Fdevfreq%2Fimx-devfreq.yaml%23&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Cba47e72161764d5a969a08d761755736%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637085028918247356&amp;sdata=2DjKgyATOPu7qhzpOCfRrmUM0%2FSAQrV9R7AxZxib8gk%3D&amp;reserved=0
+> 
+> Run 'make dt_binding_check'. This will fail as the filename doesn't
+> match.
+> 
+>> +$schema: https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetree.org%2Fmeta-schemas%2Fcore.yaml%23&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Cba47e72161764d5a969a08d761755736%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637085028918247356&amp;sdata=EbyVK2ZF6Z22vE%2F4LfIVv0S1LoMe7%2BxhM43H1i8nxtE%3D&amp;reserved=0
+>> +
+>> +title: i.MX DDR Controller
+> 
+> Perhaps i.MX8x as it's not all i.MX chips. And the filename too?
 
+Ok, will rename to imx8m-ddrc since it's not even for all imx8.
+
+>> +
+>> +maintainers:
+>> +  - Leonard Crestez <leonard.crestez@nxp.com>
+>> +
+>> +properties:
+>> +  compatible:
+>> +    items:
+>> +      - enum:
+>> +        - fsl,imx8mn-ddrc
+>> +        - fsl,imx8mm-ddrc
+>> +        - fsl,imx8mq-ddrc
+>> +      - const: fsl,imx8m-ddrc
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +  clocks:
+>> +    maxItems: 4
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: dram_core
+>> +      - const: dram_pll
+>> +      - const: dram_alt
+>> +      - const: dram_apb
+> 
+> Drop 'dram_'
+
+OK
+
+>> +
+>> +  operating-points-v2: true
+>> +
+>> +  devfreq-events:
+>> +    description: Phandle of PMU node
+>> +    $ref: "/schemas/types.yaml#/definitions/phandle"
+>> +
+>> +required:
+>> +  - reg
+>> +  - compatible
+>> +  - clocks
+>> +  - clock-names
+>> +
+>> +additionalProperties: false
+>> +
+>> +examples:
+>> +  - |
+>> +    #include <dt-bindings/clock/imx8mm-clock.h>
+>> +    ddrc: dram-controller@3d400000 {
+>> +        compatible = "fsl,imx8mm-ddrc", "fsl,imx8m-ddrc";
+>> +        reg = <0x3d400000 0x400000>;
+>> +        clock-names = "dram_core", "dram_pll", "dram_alt", "dram_apb";
+>> +        clocks = <&clk IMX8MM_CLK_DRAM_CORE>,
+>> +                 <&clk IMX8MM_DRAM_PLL>,
+>> +                 <&clk IMX8MM_CLK_DRAM_ALT>,
+>> +                 <&clk IMX8MM_CLK_DRAM_APB>;
+>> +        operating-points-v2 = <&ddrc_opp_table>;
+>> +    };
 
 _______________________________________________
 linux-arm-kernel mailing list
