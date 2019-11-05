@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DB6DEFB9C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:41:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C8CCEFBB1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:43:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qZXIkrAq393HHGlZK8E9EGEvYoLZG30D6WNKQcgsgAc=; b=Sn85sorLpaOpPGTEjYb+k7k2p
-	KxD7F++LUOCm+mArPJaJCVQ/oUNr8hKN+cbVYp3G1+BUtkX+EF7BvecqFcnzsxvMKrU748vMBybNT
-	N8DRrrsiNh4sQLG2V4gtHXlobVOAeO86v3HJYoGhf8Ju4QOqCH0O6cNDH82oLeQwnuoyWRGbUeI8W
-	sWS8kmqkPKdffroRGnEp9/9IqgvkvXyUydHZO9s5JjM33CXmsuvbmxIH8mmHLm9iF8Zt3k3EiLbgp
-	63nZ+QRhtKfktj+QxzMWcZh8xw/+icwUNlpMWdJx8JcmTLVr3ipvDw6r/bPRjqX5HZYCz+M1Lc4PD
-	uJF3skpYw==;
+	 bh=eUGvl37ByX8/fPpXsu2huWYmpqRs0gZOH9Nt8p3ntbs=; b=uGYsoS6ZrJtzi6JfYr11XghR+
+	tF5Gz91vBKOmU7RWVIiTs1okg3Ile5C+6HfaDYCyBeQB6OGc879vfAZsUbVzdhk/Jdw556hpM39U2
+	jrtdZoUUinPEjUtKXeNQrFGA//oBKO17xv5d0XgH/bFMoLW8KTQ4rFc7CKb4L/H9DY4vO8r7WPhpu
+	HJVK9pe4m/vskUSsjDQrddZ43vO0lHw3+ec/3Zf9NJbJXL/Pwy7b+/VKW9o5FFBd+EDgT1bG4VOA5
+	HEEmYrTqSzOmUCfa1zv6q9C3dEpzaWdn33HhxHDRjIzOvzw88UzD8NkB175zcY7LhfMkNVarqmUuR
+	q/OsoUJow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRwHJ-0001BO-LH; Tue, 05 Nov 2019 10:41:37 +0000
+	id 1iRwJW-0001w6-5w; Tue, 05 Nov 2019 10:43:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRwHB-0001AZ-W9
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:41:31 +0000
+ id 1iRwJN-0001uK-9J
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:43:46 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 130B3206BA;
- Tue,  5 Nov 2019 10:41:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6C7CB206BA;
+ Tue,  5 Nov 2019 10:43:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572950489;
- bh=tYgfDNUiKF9OG4ZAZHs1pUURXP/0w4N53wTEREG05Pk=;
+ s=default; t=1572950624;
+ bh=PSQEEnZ0laTDZiGYUA/GbDjYoEzSM/8mbSzwF/BKSyw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=YltowqDGvnMBn/nVPnvQGpxkN/kl/KLHSWZ4Iz4UwBznH7w+V0gcqDNuSq2yAsfbo
- oJpi2x/ApcGc+grS9NYykkB2iWQz7g1j//dPIq/0KGRZ6Kjbpcmz6+O4L0Hy/Uyb8X
- dnxCjRrctg0qduKr+uh0C4chDMp3nKA/S+k/EVUc=
-Date: Tue, 5 Nov 2019 11:41:26 +0100
+ b=PJkpTS1MgUmm8+9CqOP+yjuzMwiYk0PVtRfX5d7YaOUBySwDZ9cM6PgMR3Cggx8Uq
+ s/m93j31qYZSdoH7bqpcy6kTd9X/IXdOTOrhEHCjBFRVcbjOe/BQN0TsNli8mNcnw0
+ Dc9MpcOaQ87R/WxVfPrh8mXBTe9k5st6ALK08InI=
+Date: Tue, 5 Nov 2019 11:43:42 +0100
 From: Maxime Ripard <mripard@kernel.org>
 To: Torsten Duwe <duwe@lst.de>
-Subject: Re: [PATCH v5 2/7] drm/bridge: split some definitions of ANX78xx to
- dedicated headers
-Message-ID: <20191105104126.GC3876@gilmour.lan>
+Subject: Re: [PATCH v5 6/7] dt-bindings: Add ANX6345 DP/eDP transmitter binding
+Message-ID: <20191105104342.GD3876@gilmour.lan>
 References: <20191104110400.F319F68BE1@verein.lst.de>
- <20191104110605.F012268BFE@verein.lst.de>
+ <20191104110613.C3BA468C4E@verein.lst.de>
 MIME-Version: 1.0
-In-Reply-To: <20191104110605.F012268BFE@verein.lst.de>
+In-Reply-To: <20191104110613.C3BA468C4E@verein.lst.de>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_024130_055633_2038B9AB 
-X-CRM114-Status: GOOD (  14.56  )
+X-CRM114-CacheID: sfid-20191105_024345_369352_D2D719AB 
+X-CRM114-Status: GOOD (  20.48  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,61 +86,142 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
  Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
  linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============8253799095334510918=="
+Content-Type: multipart/mixed; boundary="===============0207381909771562762=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8253799095334510918==
+--===============0207381909771562762==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="0eh6TmSyL6TZE2Uz"
+	protocol="application/pgp-signature"; boundary="s9fJI615cBHmzTOP"
 Content-Disposition: inline
 
 
---0eh6TmSyL6TZE2Uz
+--s9fJI615cBHmzTOP
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-Hi,
 
 On Tue, Oct 29, 2019 at 01:16:57PM +0100, Torsten Duwe wrote:
-> From: Icenowy Zheng <icenowy@aosc.io>
+> The anx6345 is an ultra-low power DisplayPort/eDP transmitter designed
+> for portable devices.
 >
-> Some definitions currently in analogix-anx78xx.h are not restricted to
-> the ANX78xx series, but also applicable to other DisplayPort
-> transmitters by Analogix.
->
-> Split out them to dedicated headers, and make analogix-anx78xx.h include
-> them.
+> Add a binding document for it.
 >
 > Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 > Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> Reviewed-by: Rob Herring <robh@kernel.org>
 > Signed-off-by: Torsten Duwe <duwe@suse.de>
-> Reviewed-by: Andrzej Hajda <a.hajda@samsung.com>
+> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 
-This one doesn't apply on drm-misc-next. The fix doesn't look really
-obvious to me, can you rebase and resend it?
+Applied, thanks
 
-I'll apply the DT bindings and the DT tree so that it's part of the
-next PR I'm going to send.
+(still, there's one comment below that can be addressed in a
+subsequent patch).
+
+> ---
+>  .../bindings/display/bridge/anx6345.yaml           | 102 ++++++++++++++++++++++
+>  1 file changed, 102 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/anx6345.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/display/bridge/anx6345.yaml b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
+> new file mode 100644
+> index 000000000000..094e8e8a5faa
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
+> @@ -0,0 +1,102 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/bridge/anx6345.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Analogix ANX6345 eDP Transmitter Device Tree Bindings
+> +
+> +maintainers:
+> +  - Torsten Duwe <duwe@lst.de>
+> +
+> +description: |
+> +  The ANX6345 is an ultra-low power Full-HD eDP transmitter designed for
+> +  portable devices.
+> +
+> +properties:
+> +  compatible:
+> +    const: analogix,anx6345
+> +
+> +  reg:
+> +    maxItems: 1
+> +    description: base I2C address of the device
+> +
+> +  reset-gpios:
+> +    maxItems: 1
+> +    description: GPIO connected to active low reset
+> +
+> +  dvdd12-supply:
+> +    maxItems: 1
+> +    description: Regulator for 1.2V digital core power.
+> +
+> +  dvdd25-supply:
+> +    maxItems: 1
+> +    description: Regulator for 2.5V digital core power.
+> +
+> +  ports:
+> +    type: object
+> +
+> +    properties:
+> +      port@0:
+> +        type: object
+> +        description: |
+> +          Video port for LVTTL input
+> +
+> +      port@1:
+> +        type: object
+> +        description: |
+> +          Video port for eDP output (panel or connector).
+> +          May be omitted if EDID works reliably.
+> +
+> +    required:
+> +      - port@0
+
+You should have something like:
+
+ports:
+  type: object
+  additionalProperties: false
+
+as well...
+
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reset-gpios
+> +  - dvdd12-supply
+> +  - dvdd25-supply
+> +  - ports
+> +
+> +additionalProperties: false
+
+This prevents additional properties only on the top-level node, not
+its children.
 
 Maxime
 
---0eh6TmSyL6TZE2Uz
+--s9fJI615cBHmzTOP
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXcFR1gAKCRDj7w1vZxhR
-xV5aAQCXBnZlOkkH5HkRZaHAhmNuaFBDCCHJUlXqxSbXJL/X4QEA5kQpIKafNuiU
-aw+xjEUvCpBo0PvmsdjNFuoA8dwovAI=
-=FuMM
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXcFSXgAKCRDj7w1vZxhR
+xWDyAQC/sTEqgIPTcOOELk+/c6UietuE9I6ZSjYK0vSixbY85QEA3YGf1cUesRov
+KKmSnjZjgmC0YlV/4YVCj4ZQF1Dkkw0=
+=1muA
 -----END PGP SIGNATURE-----
 
---0eh6TmSyL6TZE2Uz--
+--s9fJI615cBHmzTOP--
 
 
---===============8253799095334510918==
+--===============0207381909771562762==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -152,5 +232,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8253799095334510918==--
+--===============0207381909771562762==--
 
