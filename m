@@ -2,91 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18A86F060B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 20:33:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FA31F061E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 20:37:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PdeCaWtihESitPxKatlEGfdl5S1+NgaXc1FvbUiLOgQ=; b=R3xXO87syVUTg8
-	2nQfOc/TugDKA/7hmkA1YosmIVpMo9KCs+ffs+5XZ8pLd6tFeHUThXYWJ/xoSMv2NRo5cNIIqYk55
-	IzfqiXQ2J/DsoEqd7XustFCxr3SEF+YmCv70Hk0GirllutMJJsXPk4nzYt8mPpYnAbQs1S54CL1w8
-	PJO2qH8JOmT/MWs/bSJlDTqu4rvJE86i7jek9C+tjuke1DRCMQ/HDdseUoX7IVgKGSpkdWvZ/GryD
-	C4qkLPDhtYtqBgj/J5Xy4PSZ+UABAzqR54K9cxpPY6pbmGf+WA9WK6cmRFjp/7R+7D7j69wpIzWfi
-	Gl72nFygpCSk9Z4y/U2w==;
+	List-Owner; bh=la+eKubJTMfKzQrszF6O39yM+9FjXmQQZiPzQZZigfM=; b=bh5n1pMCd6aixi
+	PYUWnHRNHB3C0y0rhtVM4TRkG2OraL9ZWlssDb8trkhYmIAUJgmiiXuH3z+byd60K0w83h/G553uV
+	qcuAZelvVODTP9VSqICkkzaSPot25VaSc1lHAjjcuZh+gyzDHof5Sl35nafO8XSqnTcUZSEiuaitK
+	CnoBgkGqehj8hpXSbg9CkXcJ4HNpR2jw5qMwOrJjFNuVw5iN/bv1yY441E50F6yFd/KThy7OMjv7y
+	qOc8+IWAe2AuFEqayGHh8T7qh1A+EbsYdS6ygFf0aKyH7SQOK7kv1ehj6Xm9GouItOHlRU42c20RR
+	IWs3lnLwPw0QnnX99x7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS4a2-0007NL-15; Tue, 05 Nov 2019 19:33:30 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1iS4dU-0000zm-H4; Tue, 05 Nov 2019 19:37:04 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS4Zu-0007Ms-TJ
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 19:33:24 +0000
-Received: by mail-lj1-x242.google.com with SMTP id t5so23255206ljk.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 11:33:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=I+MPyMHNaAjRQvZ6iKHiwm7qDRtza2TDmfA+ceVFOL0=;
- b=b+Gg10jVzxDOyvISO0AonChau01JWusEEKryI39jtyF8bqTketz+BUKTuPtBA+drOv
- YZ3tpMMgMhMB4d6pDYhh2NSVcnEJ4pwtjkD9aMWf5kVdUu6aWtLZjyVVV/p2V11jIMD6
- zLtq1WSoxYy4mfJw67YBK4MHI0fG/BIl6WL2vvUD2mvuMIbeQ90r3Ls63T/EKW/H2AXJ
- mS16h3c0dftKXy00HoC6AGL42ztxQro/6bRUvxdWJJlqCWsYpBnxwvTTSy92uVuCBvgo
- 3d5YvgrcVDL2c/w9xBufxdSfk3c6dq9H7oQRu1luipatbwv7kN5VvugmcumEOkvEpEZQ
- LB7g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=I+MPyMHNaAjRQvZ6iKHiwm7qDRtza2TDmfA+ceVFOL0=;
- b=F3nvsJlzg1T144xmf7LCsRqgB9VeaZdQyAjrNsjzEnCA3LmNUobfjOaQYKzWmoype1
- hpv3BwrRW5rYdEraXTtAevA1WeMstBiPxOO0cgi7koahVHjXqprD/ozRw7c051HAdZCl
- bA21rL6GU/BcbjGPzmNZo9gQyIkR+KQzO69Dqr5Lt0UawZ/Iu8qHXLth0x4clFZ07LQG
- 3K4FGpuk8MI7LdNgslPGv2kCoXvTq09T1JvXQUA6CYWS1cjXqfs+AtESXYp/3w3Q3q8M
- HrJD8NHaVl2vzDJnYe5DkSegFg0Zi6uSAwHHV6Meb87ElLk0JcorEB6QM5QUtoBxbMfX
- px8Q==
-X-Gm-Message-State: APjAAAVRLja+IxNuDrLb1sregEaJvzc4Zz0pdGEbcCuKDQEShRCc81QM
- pMeuztzKmQaJBLCO6D1ZYnDDHYH+G1CUHKI5d7s=
-X-Google-Smtp-Source: APXvYqxWyl+bdXvYXm0tfCa9yYZ/kOxjk6xKZRZDNSZDcR0N7SPIlEfhp2DOrA1agEILcvfyL/jjn+XkaZOcnW/AMG4=
-X-Received: by 2002:a2e:9417:: with SMTP id i23mr12150878ljh.152.1572982400796; 
- Tue, 05 Nov 2019 11:33:20 -0800 (PST)
+ id 1iS4dM-0000ww-58
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 19:36:57 +0000
+Received: from pps.filterd (m0098416.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ xA5JXjLV089598
+ for <linux-arm-kernel@lists.infradead.org>; Tue, 5 Nov 2019 14:36:53 -0500
+Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2w3dpp3yyg-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Tue, 05 Nov 2019 14:36:53 -0500
+Received: from localhost
+ by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <gerald.schaefer@de.ibm.com>; 
+ Tue, 5 Nov 2019 19:36:50 -0000
+Received: from b06cxnps3074.portsmouth.uk.ibm.com (9.149.109.194)
+ by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Tue, 5 Nov 2019 19:36:41 -0000
+Received: from d06av26.portsmouth.uk.ibm.com (d06av26.portsmouth.uk.ibm.com
+ [9.149.105.62])
+ by b06cxnps3074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ xA5JaeNI31719424
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 5 Nov 2019 19:36:40 GMT
+Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 6370DAE057;
+ Tue,  5 Nov 2019 19:36:40 +0000 (GMT)
+Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 43F44AE056;
+ Tue,  5 Nov 2019 19:36:39 +0000 (GMT)
+Received: from thinkpad (unknown [9.152.97.32])
+ by d06av26.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Tue,  5 Nov 2019 19:36:39 +0000 (GMT)
+Date: Tue, 5 Nov 2019 20:36:38 +0100
+From: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V8] mm/debug: Add tests validating architecture page
+ table helpers
+In-Reply-To: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
+References: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-References: <20191012200524.23512-1-alistair@alistair23.me>
- <20191016144946.p3tm67vh5lqigndn@gilmour>
- <CAGb2v67QrTJjSO99UNs-=3ZZnK948am11=izRTHT6gZ06E28eA@mail.gmail.com>
- <20191021111709.dpu6g7jltuw6cbbn@gilmour>
-In-Reply-To: <20191021111709.dpu6g7jltuw6cbbn@gilmour>
-From: Alistair Francis <alistair23@gmail.com>
-Date: Tue, 5 Nov 2019 11:27:42 -0800
-Message-ID: <CAKmqyKN8Ru19h3y=9O13=5wpys3BC2LQM65S+2QYjPdJQn2O4w@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: sun50i: sopine-baseboard: Expose serial1,
- serial2 and serial3
-To: Maxime Ripard <mripard@kernel.org>
+X-TM-AS-GCONF: 00
+x-cbid: 19110519-0020-0000-0000-00000382D869
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19110519-0021-0000-0000-000021D903DD
+Message-Id: <20191105203638.6889a994@thinkpad>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-11-05_07:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1908290000 definitions=main-1911050162
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_113322_944691_5F1B95CE 
-X-CRM114-Status: GOOD (  18.42  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191105_113656_322903_F56B6E85 
+X-CRM114-Status: GOOD (  26.57  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (alistair23[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (alistair23[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,84 +102,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@csie.org>, Alistair Francis <alistair@alistair23.me>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, linux-arm-kernel@lists.infradead.org,
+ linux-snps-arc@lists.infradead.org, Ingo Molnar <mingo@kernel.org>,
+ Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Oct 21, 2019 at 4:17 AM Maxime Ripard <mripard@kernel.org> wrote:
->
-> Hi,
->
-> On Wed, Oct 16, 2019 at 10:54:27PM +0800, Chen-Yu Tsai wrote:
-> > On Wed, Oct 16, 2019 at 10:49 PM Maxime Ripard <mripard@kernel.org> wrote:
-> > > On Sat, Oct 12, 2019 at 01:05:24PM -0700, Alistair Francis wrote:
-> > > > Follow what the sun50i-a64-pine64.dts does and expose all 5 serial
-> > > > connections.
-> > > >
-> > > > Signed-off-by: Alistair Francis <alistair@alistair23.me>
-> > > > ---
-> > > >  .../allwinner/sun50i-a64-sopine-baseboard.dts | 25 +++++++++++++++++++
-> > > >  1 file changed, 25 insertions(+)
-> > > >
-> > > > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-> > > > index 124b0b030b28..49c37b21ab36 100644
-> > > > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-> > > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
-> > > > @@ -56,6 +56,10 @@
-> > > >       aliases {
-> > > >               ethernet0 = &emac;
-> > > >               serial0 = &uart0;
-> > > > +             serial1 = &uart1;
-> > > > +             serial2 = &uart2;
-> > > > +             serial3 = &uart3;
-> > > > +             serial4 = &uart4;
-> > > >       };
-> > > >
-> > > >       chosen {
-> > > > @@ -280,6 +284,27 @@
-> > > >       };
-> > > >  };
-> > > >
-> > > > +/* On Pi-2 connector */
-> > > > +&uart2 {
-> > > > +     pinctrl-names = "default";
-> > > > +     pinctrl-0 = <&uart2_pins>;
-> > > > +     status = "disabled";
-> > > > +};
-> > > > +
-> > > > +/* On Euler connector */
-> > > > +&uart3 {
-> > > > +     pinctrl-names = "default";
-> > > > +     pinctrl-0 = <&uart3_pins>;
-> > > > +     status = "disabled";
-> > > > +};
-> > > > +
-> > > > +/* On Euler connector, RTS/CTS optional */
-> > > > +&uart4 {
-> > > > +     pinctrl-names = "default";
-> > > > +     pinctrl-0 = <&uart4_pins>;
-> > > > +     status = "disabled";
-> > > > +};
-> > >
-> > > Since these are all the default muxing, maybe we should just set that
-> > > in the DTSI?
-> >
-> > Maybe not, since people may want to only use RX/TX, and leave the other
-> > two pins for GPIO?
->
-> Right, I'll apply that patch.
+On Mon, 28 Oct 2019 10:59:22 +0530
+Anshuman Khandual <anshuman.khandual@arm.com> wrote:
 
-Ping, just want to make sure this has been applied/will be applied.
+> This adds tests which will validate architecture page table helpers and
+> other accessors in their compliance with expected generic MM semantics.
+> This will help various architectures in validating changes to existing
+> page table helpers or addition of new ones.
+> 
+> This test covers basic page table entry transformations including but not
+> limited to old, young, dirty, clean, write, write protect etc at various
+> level along with populating intermediate entries with next page table page
+> and validating them.
+> 
+> Test page table pages are allocated from system memory with required size
+> and alignments. The mapped pfns at page table levels are derived from a
+> real pfn representing a valid kernel text symbol. This test gets called
+> right after page_alloc_init_late().
+> 
+> This gets build and run when CONFIG_DEBUG_VM_PGTABLE is selected along with
+> CONFIG_VM_DEBUG. Architectures willing to subscribe this test also need to
+> select CONFIG_ARCH_HAS_DEBUG_VM_PGTABLE which for now is limited to x86 and
+> arm64. Going forward, other architectures too can enable this after fixing
+> build or runtime problems (if any) with their page table helpers.
 
-Alistair
+I've prepared a couple of commits to our arch code to make this work on s390,
+they will go upstream in the next merge window. After that, we can add s390
+to the supported architectures.
 
->
-> Thanks!
-> Maxime
+We had some issues, e.g. because we do not report large entries as bad in
+pxd_bad(), do not check for folded page tables in pxd_free(), or assume
+that primitives like pmd_mkdirty() will only be called after pmd_mkhuge().
+None of those should have any impact on current code, but your test module
+revealed that we do not behave like other architectures in some aspects,
+and it's good to find and fix such things to prevent possible future issues.
+
+Thanks a lot for the effort!
+
+Regards,
+Gerald
+
 
 _______________________________________________
 linux-arm-kernel mailing list
