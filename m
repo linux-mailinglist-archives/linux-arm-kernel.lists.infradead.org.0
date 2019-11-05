@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8937FF0439
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 18:42:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1262F0444
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 18:45:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=imi2fiobUc2J3OE9ZSBjRMHZGiwVKHq0PgDV2IyDv1Q=; b=Dl5IMm5JNyE22H
-	4DWeXtYKb9bxSFj8bGhH992ycqMWlxtS9mOJ3BtKVNeY9szVIaH2xjL3mYKJ5qjKfVNpnrM7WYVDJ
-	Oe2u9U0nplep74YmV2EGz7ITT56yYB0b71q9yj853InsrOrClEJngPv7nObbBYqUEQMA7MMexzK5a
-	E+mTfOALYCjRhcuYt0fA70i3exSmFletiOCEZtld4Zsu6KfrJYr79X6V39Y8svxLj/04iQoeZZeMJ
-	t7LMHjtDfG0oKXI6+6uYA0OeV/ChO0IAYkAvXEofLiaMT8/3I4rxkaYqndLcTmEvJokYXJarc+RAb
-	B8OKE1LZHMfy+KD80Nhw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5nZuTb60Gf2QFjJkejBgvg8uWk0OsdUfegWSeILkT5k=; b=dh2lBoXgmc2YzhILz4i3Dh77X
+	l9wT1JCQ2EAhhGNvBqePSVth5OeTgpUwNHglTJnqeo7EOVr3oLTAe60DKzgxN5jJOg1a1DKtb5c9a
+	DGyHdA34Chw0BB3gWBrEJZ7RyySajf6DNXbtnhkK3uU5wmkVYuRkcskk/9TWYNPTeqqwZ534low9K
+	ZBfFWMQ9C8ktt7g2wUXOZ1hAYPki+HU67ijTI8FMbhvgr+bm5RTxvRswUBZqeakSD//t/RuCh8Hw2
+	ruyzy7rKskJ4bKCkQ3vnD1R0a70GO/TBvpZtTTyE4lOG9RBj4M+nkLW+J1xW6lyFz240sLq+GiUDY
+	R1lKmX1qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS2qH-00076p-7K; Tue, 05 Nov 2019 17:42:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iS2t0-0008IQ-RD; Tue, 05 Nov 2019 17:44:58 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS2qA-00076L-5A
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 17:42:03 +0000
-Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
- [24.5.143.220])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 84CE9214D8;
- Tue,  5 Nov 2019 17:42:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572975721;
- bh=wpN5dFK9y7CHh7qhkGjKOJbrRTRGtSpcxKUvYH3cpdM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=UDKQjMTqFTL1AZCg5U4sHPerBG12YJ8qDC+VWkfCSUVMh2tGMk3XNEe7Z8hChxM1v
- jzI7+CbehGyLJPsR1DnBj/2FohcSXmH9eu1gOIJ8k9oBYklbyn8RrpIuOwNy1uOZXW
- JSwA0hdZJrEmrzKr7VVE7UEOTayZvfNe6B2Ejlw4=
-Date: Tue, 5 Nov 2019 09:42:00 -0800
-From: Eric Biggers <ebiggers@kernel.org>
-To: Tero Kristo <t-kristo@ti.com>
-Subject: Re: [PATCH 09/10] crypto: add timeout to crypto_wait_req
-Message-ID: <20191105174200.GC757@sol.localdomain>
-Mail-Followup-To: Tero Kristo <t-kristo@ti.com>,
- herbert@gondor.apana.org.au, davem@davemloft.net,
- linux-crypto@vger.kernel.org, ard.biesheuvel@linaro.org,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <20191017122549.4634-1-t-kristo@ti.com>
- <20191017122549.4634-10-t-kristo@ti.com>
+ id 1iS2sr-0008Ha-Qk
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 17:44:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=olNjguwSeZOlAMio+fbDK9OqNAVdTuRGYF4d5jr6w0I=; b=lNZDGZCsPn5jkLKsCRSsbNZc5
+ Cjua+qwCzIrs5TZbahHtEq2uNHOd7JNlDh9UNMsagy4DqIXosVkSBITmwANV6a8ThdES825Erx1sO
+ yeFRx5iyTBTgadfrCJmaM0ZyXDN9p63zgA8VXh69GAAngeuv5PNRdWquEfr6nwQWzB2nI=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iS2so-0007FK-3D; Tue, 05 Nov 2019 17:44:46 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 2ABE9274301E; Tue,  5 Nov 2019 17:44:45 +0000 (GMT)
+Date: Tue, 5 Nov 2019 17:44:45 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v5 4/4] arm64: Use a variable to store non-global
+ mappings decision
+Message-ID: <20191105174445.GD4500@sirena.co.uk>
+References: <20191104191524.10596-1-broonie@kernel.org>
+ <20191104191524.10596-5-broonie@kernel.org>
+ <20191105173005.GE22987@arrakis.emea.arm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191017122549.4634-10-t-kristo@ti.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <20191105173005.GE22987@arrakis.emea.arm.com>
+X-Cookie: Genius is pain.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_094202_219899_6377DEBE 
-X-CRM114-Status: GOOD (  16.74  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191105_094449_889390_8A5579B7 
+X-CRM114-Status: GOOD (  11.10  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,55 +81,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: herbert@gondor.apana.org.au, ard.biesheuvel@linaro.org,
- linux-crypto@vger.kernel.org, linux-omap@vger.kernel.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4951128416230956143=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 17, 2019 at 03:25:48PM +0300, Tero Kristo wrote:
-> Currently crypto_wait_req waits indefinitely for an async crypto request
-> to complete. This is bad as it can cause for example the crypto test
-> manager to hang without any notification as to why it has happened.
-> Instead of waiting indefinitely, add a 1 second timeout to the call,
-> and provide a warning print if a timeout happens.
-> 
-> Signed-off-by: Tero Kristo <t-kristo@ti.com>
-> ---
->  include/linux/crypto.h | 9 ++++++++-
->  1 file changed, 8 insertions(+), 1 deletion(-)
-> 
-> diff --git a/include/linux/crypto.h b/include/linux/crypto.h
-> index 19ea3a371d7b..b8f0e5c3cc0c 100644
-> --- a/include/linux/crypto.h
-> +++ b/include/linux/crypto.h
-> @@ -682,8 +682,15 @@ static inline int crypto_wait_req(int err, struct crypto_wait *wait)
->  	switch (err) {
->  	case -EINPROGRESS:
->  	case -EBUSY:
-> -		wait_for_completion(&wait->completion);
-> +		err = wait_for_completion_timeout(&wait->completion,
-> +						  msecs_to_jiffies(1000));
->  		reinit_completion(&wait->completion);
-> +		if (!err) {
-> +			pr_err("%s: timeout for %p\n", __func__, wait);
-> +			err = -ETIMEDOUT;
-> +			break;
-> +		}
-> +
->  		err = wait->err;
->  		break;
->  	};
 
-I'm not sure this is a good idea, because operations could legitimately take a
-long time, e.g. if someone passes in a huge data buffer.  How do you know that X
-amount of time is always going to be enough?
+--===============4951128416230956143==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="/unnNtmY43mpUSKx"
+Content-Disposition: inline
 
-- Eric
+
+--/unnNtmY43mpUSKx
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, Nov 05, 2019 at 05:30:06PM +0000, Catalin Marinas wrote:
+> On Mon, Nov 04, 2019 at 07:15:24PM +0000, Mark Brown wrote:
+
+> > +	/*
+> > +	 * If know now we are going to need KPTI then use non-global
+> > +	 * mappings from the start, avoiding the cost of rewriting
+> > +	 * everything later.
+> > +	 */
+> > +	arm64_use_ng_mappings = kaslr_requires_kpti();
+> >  }
+
+> I think we need this even earlier in paging_init() before we start
+> creating the kernel mappings.
+
+OK, I'll move it.  I didn't see any global mappings getting created with
+the current code but better safe than sorry.
+
+--/unnNtmY43mpUSKx
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3BtQwACgkQJNaLcl1U
+h9AHlQgAgU+g8NdNkBmSCcNRFYNt9KOOZ5qs11DH+cQFCAa3U8kgQUtYxHJzzi9m
+bMf/HI3+HE2r7sQ1KE8UqbR/+ILptkhpzC42UOdp166T9yLr3IK6A+wwI6GTTgvu
+lXjOGmJQxB3jZr1nuHUuAlLpIqh60fs2jWqz6lNizooIBJabFLrbLBN9rh9JDtrg
+d3DmTKtHa4o1isZTqHZQw15MLdOXJms6mqj5nk8LwPgHpqf1Zz1p96GNSuCPxDv9
+ppRIc8FDxULOzrHvU1pq0wePTocof729MW2qEbWk0pTeSgjazWGi4lMGQ7D29/zp
+PIJTJe9bRvJ1CtYHDXKzJUtkyC29EA==
+=4Z0/
+-----END PGP SIGNATURE-----
+
+--/unnNtmY43mpUSKx--
+
+
+--===============4951128416230956143==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4951128416230956143==--
+
