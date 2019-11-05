@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D598F07C7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:10:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 530FAF07C9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:10:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=nbXgOyM7xaBKW4+pRMvlW0jHMqV4chIaHjEloezxmM0=; b=DkW8ZkJ87BbuKN0bn4fbOuyS6d
-	laHKBcdlmqZ/hqebOitRcej3RJL7bpVbzP47eJKCnXkWKSu4TUkM3pcuYYM6VFQXfTcMeXIWiCPV/
-	qAdHCvFVryic2ZnZWd6wEzWXtLB62Mr45huFWfB+PpEDiZ/RqkrmnVw4rh3CiwvdSub6AZa35Oorm
-	O4t72CkxyceMDaOErYNLMdJW+Q1Iny85HfZBSg5asT8ckOkyZeGZMJ+idXY7XbYJ45njJV6oKN3nQ
-	wTRwbVtTCmrUZXPG9P+kkRjQgW8AJuI5KuWVsY2MM16w3cu71fvBmtdFDTjJyrkxpRb+UcZhv6vXs
-	p5E0pEMA==;
+	bh=duomjfypTryZ9aDF6WER+sWJOAhcb+emsJH28WZC4NU=; b=UeJH9R5xai5YS3Rr4OFANgHnk7
+	5pMbCOwSKk6wg7n41JQ8r/ehm1i1MTeZe9Ensps/3uwSqfK8owdq+hG+ZKyLjdIrU0wNDEgpnaVw3
+	n9R1BtpjPwsM73PEq2TOqMJqUHSGIyAAxg6prn23o1BFluyO8Ct3LKWYn4RVAh5aRdiBMPNS13iav
+	f9BczZ4MbpHz4NemeWbZESBvZYps4+dkGaDLHud87jNnJK0PTcZXmMR9rmfzQy23SzMbnov6c4C+z
+	vyNVAUlnpde3LdWJ7cmf108HbvXQMI9HxY7Kc4n+hl5Hf/gL89kRONrCdcD8JZN74PaDdOpUT9v2Q
+	yJHFR/Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS65e-0000oX-SK; Tue, 05 Nov 2019 21:10:14 +0000
+	id 1iS65v-0001jW-2p; Tue, 05 Nov 2019 21:10:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5wY-000824-Ro
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:52 +0000
+ id 1iS5wb-00084i-Sx
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:55 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DD4FA2087E;
- Tue,  5 Nov 2019 21:00:47 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D545321D7D;
+ Tue,  5 Nov 2019 21:00:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987650;
- bh=tX+cDE8Ezf24rr3RUCKyvKgwhDTQK3AX4NPVNxq4mWQ=;
+ s=default; t=1572987653;
+ bh=2LV6aALKCR/V3rjqe3hLuaJHZTHoKR1POw5zVi6tIh8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Jp6i61+R83bkEiIPy/RrAQKvrEArn2i5eiUVqyjGmImRF/OM78cqQDCoDtWeCzk4M
- xHKioi1KRnM3Ie2r37QqedOABxDiZi66W2+vmbwmFpTgEfLiCta1SV2zsDFXyKwBN0
- Ahyk0a8XPO0X4HbREBvTXWN3xIVWis4aBYEKKvSI=
+ b=2ifeNw2chk9zOx5UpmYULVzqmE8A7CJMy/SrXvBhJOkjG7vqPzRUWOSW372OvNHiQ
+ bsv5lIx6cFdHcaO1Prp8RmRKf99XKMMBXDzn8Ptcyfbvq9ibQVWDJPz8MyetE0Yovo
+ Cmit6OhQCMut6ghgvVH3iaepgw4ZfaSpMz2OA99o=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 39/53] ARM: 8789/1: signal: copy registers
- using __copy_to_user()
-Date: Tue,  5 Nov 2019 21:58:32 +0100
-Message-Id: <20191105205846.1394-40-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 40/53] ARM: 8791/1: vfp: use __copy_to_user()
+ when saving VFP state
+Date: Tue,  5 Nov 2019 21:58:33 +0100
+Message-Id: <20191105205846.1394-41-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_130050_951248_0F82036B 
-X-CRM114-Status: GOOD (  11.27  )
+X-CRM114-CacheID: sfid-20191105_130054_006988_EA0064FA 
+X-CRM114-Status: GOOD (  15.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,11 +92,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Julien Thierry <julien.thierry@arm.com>
 
-Commit 5ca451cf6ed04443774bbb7ee45332dafa42e99f upstream.
+Commit 3aa2df6ec2ca6bc143a65351cca4266d03a8bc41 upstream.
 
-When saving the ARM integer registers, use __copy_to_user() to
-copy them into user signal frame, rather than __put_user_error().
-This has the benefit of disabling/enabling PAN once for the whole copy
+Use __copy_to_user() rather than __put_user_error() for individual
+members when saving VFP state.
+This has the benefit of disabling/enabling PAN once per copied struct
 intead of once per write.
 
 Signed-off-by: Julien Thierry <julien.thierry@arm.com>
@@ -106,71 +106,103 @@ Reviewed-by: Julien Thierry <julien.thierry@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/kernel/signal.c | 49 +++++++++++---------
- 1 file changed, 27 insertions(+), 22 deletions(-)
+ arch/arm/include/asm/thread_info.h |  4 ++--
+ arch/arm/kernel/signal.c           | 13 +++++++------
+ arch/arm/vfp/vfpmodule.c           | 20 ++++++++------------
+ 3 files changed, 17 insertions(+), 20 deletions(-)
 
+diff --git a/arch/arm/include/asm/thread_info.h b/arch/arm/include/asm/thread_info.h
+index 57d2ad9c75ca..df8420672c7e 100644
+--- a/arch/arm/include/asm/thread_info.h
++++ b/arch/arm/include/asm/thread_info.h
+@@ -124,8 +124,8 @@ extern void vfp_flush_hwstate(struct thread_info *);
+ struct user_vfp;
+ struct user_vfp_exc;
+ 
+-extern int vfp_preserve_user_clear_hwstate(struct user_vfp __user *,
+-					   struct user_vfp_exc __user *);
++extern int vfp_preserve_user_clear_hwstate(struct user_vfp *,
++					   struct user_vfp_exc *);
+ extern int vfp_restore_user_hwstate(struct user_vfp *,
+ 				    struct user_vfp_exc *);
+ #endif
 diff --git a/arch/arm/kernel/signal.c b/arch/arm/kernel/signal.c
-index 6bee5c9b1133..fbb325ff8acc 100644
+index fbb325ff8acc..135b1a8e12eb 100644
 --- a/arch/arm/kernel/signal.c
 +++ b/arch/arm/kernel/signal.c
-@@ -256,30 +256,35 @@ static int
- setup_sigframe(struct sigframe __user *sf, struct pt_regs *regs, sigset_t *set)
+@@ -94,17 +94,18 @@ static int restore_iwmmxt_context(struct iwmmxt_sigframe *frame)
+ 
+ static int preserve_vfp_context(struct vfp_sigframe __user *frame)
  {
- 	struct aux_sigframe __user *aux;
-+	struct sigcontext context;
+-	const unsigned long magic = VFP_MAGIC;
+-	const unsigned long size = VFP_STORAGE_SIZE;
++	struct vfp_sigframe kframe;
  	int err = 0;
  
--	__put_user_error(regs->ARM_r0, &sf->uc.uc_mcontext.arm_r0, err);
--	__put_user_error(regs->ARM_r1, &sf->uc.uc_mcontext.arm_r1, err);
--	__put_user_error(regs->ARM_r2, &sf->uc.uc_mcontext.arm_r2, err);
--	__put_user_error(regs->ARM_r3, &sf->uc.uc_mcontext.arm_r3, err);
--	__put_user_error(regs->ARM_r4, &sf->uc.uc_mcontext.arm_r4, err);
--	__put_user_error(regs->ARM_r5, &sf->uc.uc_mcontext.arm_r5, err);
--	__put_user_error(regs->ARM_r6, &sf->uc.uc_mcontext.arm_r6, err);
--	__put_user_error(regs->ARM_r7, &sf->uc.uc_mcontext.arm_r7, err);
--	__put_user_error(regs->ARM_r8, &sf->uc.uc_mcontext.arm_r8, err);
--	__put_user_error(regs->ARM_r9, &sf->uc.uc_mcontext.arm_r9, err);
--	__put_user_error(regs->ARM_r10, &sf->uc.uc_mcontext.arm_r10, err);
--	__put_user_error(regs->ARM_fp, &sf->uc.uc_mcontext.arm_fp, err);
--	__put_user_error(regs->ARM_ip, &sf->uc.uc_mcontext.arm_ip, err);
--	__put_user_error(regs->ARM_sp, &sf->uc.uc_mcontext.arm_sp, err);
--	__put_user_error(regs->ARM_lr, &sf->uc.uc_mcontext.arm_lr, err);
--	__put_user_error(regs->ARM_pc, &sf->uc.uc_mcontext.arm_pc, err);
--	__put_user_error(regs->ARM_cpsr, &sf->uc.uc_mcontext.arm_cpsr, err);
+-	__put_user_error(magic, &frame->magic, err);
+-	__put_user_error(size, &frame->size, err);
++	memset(&kframe, 0, sizeof(kframe));
++	kframe.magic = VFP_MAGIC;
++	kframe.size = VFP_STORAGE_SIZE;
+ 
++	err = vfp_preserve_user_clear_hwstate(&kframe.ufp, &kframe.ufp_exc);
+ 	if (err)
+-		return -EFAULT;
++		return err;
+ 
+-	return vfp_preserve_user_clear_hwstate(&frame->ufp, &frame->ufp_exc);
++	return __copy_to_user(frame, &kframe, sizeof(kframe));
+ }
+ 
+ static int restore_vfp_context(struct vfp_sigframe __user *auxp)
+diff --git a/arch/arm/vfp/vfpmodule.c b/arch/arm/vfp/vfpmodule.c
+index 7aa6366b2a8d..f07567eedd82 100644
+--- a/arch/arm/vfp/vfpmodule.c
++++ b/arch/arm/vfp/vfpmodule.c
+@@ -558,12 +558,11 @@ void vfp_flush_hwstate(struct thread_info *thread)
+  * Save the current VFP state into the provided structures and prepare
+  * for entry into a new function (signal handler).
+  */
+-int vfp_preserve_user_clear_hwstate(struct user_vfp __user *ufp,
+-				    struct user_vfp_exc __user *ufp_exc)
++int vfp_preserve_user_clear_hwstate(struct user_vfp *ufp,
++				    struct user_vfp_exc *ufp_exc)
+ {
+ 	struct thread_info *thread = current_thread_info();
+ 	struct vfp_hard_struct *hwstate = &thread->vfpstate.hard;
+-	int err = 0;
+ 
+ 	/* Ensure that the saved hwstate is up-to-date. */
+ 	vfp_sync_hwstate(thread);
+@@ -572,22 +571,19 @@ int vfp_preserve_user_clear_hwstate(struct user_vfp __user *ufp,
+ 	 * Copy the floating point registers. There can be unused
+ 	 * registers see asm/hwcap.h for details.
+ 	 */
+-	err |= __copy_to_user(&ufp->fpregs, &hwstate->fpregs,
+-			      sizeof(hwstate->fpregs));
++	memcpy(&ufp->fpregs, &hwstate->fpregs, sizeof(hwstate->fpregs));
++
+ 	/*
+ 	 * Copy the status and control register.
+ 	 */
+-	__put_user_error(hwstate->fpscr, &ufp->fpscr, err);
++	ufp->fpscr = hwstate->fpscr;
+ 
+ 	/*
+ 	 * Copy the exception registers.
+ 	 */
+-	__put_user_error(hwstate->fpexc, &ufp_exc->fpexc, err);
+-	__put_user_error(hwstate->fpinst, &ufp_exc->fpinst, err);
+-	__put_user_error(hwstate->fpinst2, &ufp_exc->fpinst2, err);
 -
--	__put_user_error(current->thread.trap_no, &sf->uc.uc_mcontext.trap_no, err);
--	__put_user_error(current->thread.error_code, &sf->uc.uc_mcontext.error_code, err);
--	__put_user_error(current->thread.address, &sf->uc.uc_mcontext.fault_address, err);
--	__put_user_error(set->sig[0], &sf->uc.uc_mcontext.oldmask, err);
-+	context = (struct sigcontext) {
-+		.arm_r0        = regs->ARM_r0,
-+		.arm_r1        = regs->ARM_r1,
-+		.arm_r2        = regs->ARM_r2,
-+		.arm_r3        = regs->ARM_r3,
-+		.arm_r4        = regs->ARM_r4,
-+		.arm_r5        = regs->ARM_r5,
-+		.arm_r6        = regs->ARM_r6,
-+		.arm_r7        = regs->ARM_r7,
-+		.arm_r8        = regs->ARM_r8,
-+		.arm_r9        = regs->ARM_r9,
-+		.arm_r10       = regs->ARM_r10,
-+		.arm_fp        = regs->ARM_fp,
-+		.arm_ip        = regs->ARM_ip,
-+		.arm_sp        = regs->ARM_sp,
-+		.arm_lr        = regs->ARM_lr,
-+		.arm_pc        = regs->ARM_pc,
-+		.arm_cpsr      = regs->ARM_cpsr,
-+
-+		.trap_no       = current->thread.trap_no,
-+		.error_code    = current->thread.error_code,
-+		.fault_address = current->thread.address,
-+		.oldmask       = set->sig[0],
-+	};
-+
-+	err |= __copy_to_user(&sf->uc.uc_mcontext, &context, sizeof(context));
+-	if (err)
+-		return -EFAULT;
++	ufp_exc->fpexc = hwstate->fpexc;
++	ufp_exc->fpinst = hwstate->fpinst;
++	ufp_exc->fpinst2 = ufp_exc->fpinst2;
  
- 	err |= __copy_to_user(&sf->uc.uc_sigmask, set, sizeof(*set));
- 
+ 	/* Ensure that VFP is disabled. */
+ 	vfp_flush_hwstate(thread);
 -- 
 2.17.1
 
