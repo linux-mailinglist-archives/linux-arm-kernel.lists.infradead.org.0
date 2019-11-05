@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70279F06BB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:15:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B45BF0699
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:05:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RJ0lLlLyuypAyBc8RjWCinDeGLf072TGx9UCwnjdzes=; b=nwZFiEETKKWNLa
-	Izsvg5x7ZxwLcqReHjm4d8UJQeey43b35aoSD7RraP6/bfqDdawASBOWk01vXA+e8v2hn2wpAxxVi
-	3HLuN3vJd9IXv5QYovo1xp2/6fP0gxW2pRPBGDIi79qCFeZlDSo3C5B5zmQ7HpL/EQ/yLP/6QCsmv
-	Pvc0fjLDrwYh3srk1WZg1NZSUDGSJGt6QV/mZfVEwmTDUKZ4n5aR7lEb5hI6/wfHKxbAIHIsR48dD
-	XOcrn7JIUFF9a4AzhXGeJgSxk/eJPFVxyYGZSTtZZNNwSbpn1U5fxdYPi9E30n9z5WKDsJ7Cb/AZ+
-	3nHd/NdPQIK6bJ8PlDjw==;
+	List-Owner; bh=9fSqpTLBnshKeEIdQMYfQ2J/E/ivDs4hdhqSYLunsos=; b=Bu45zyQeXliHR5
+	oQ65xyO3AtDhRqtA/m2bxHI8azzVj4JnkP5/RbjsSXZISOuLcdM9L0C10CdeUPUNE0FEPuCG3p0Jg
+	Uo9ORMKpWmGKb5lpkSGFP3CZRvroZ8YAJ2MfRC2/+/6xZfGnARoGfIsK3ILpLUuotBBwkHmbIYbuw
+	3Gqlny9ID9Ce7//iFMMwVPxUjz/pvfu86Xjk0ufxQ5NbsymYtXGJhymY+ZpPKxK8Sm56bU3fWL+aS
+	AOGSy4ig2/r0DE7Db8Xkvmfv/8tE6vN/UuGSjZ3qzSJRqDqLnvo0+ePfPyy8D3sJS1k28HwowbZ1b
+	1sPuJacqDcI923CBPhdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS5EQ-0001eR-1o; Tue, 05 Nov 2019 20:15:14 +0000
+	id 1iS551-0006CL-Br; Tue, 05 Nov 2019 20:05:31 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5E9-0001e1-DM
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:14:58 +0000
+ id 1iS54V-0004hg-A3; Tue, 05 Nov 2019 20:05:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2A5727B9;
- Tue,  5 Nov 2019 12:14:56 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0BC003FBF5;
- Tue,  5 Nov 2019 01:37:10 -0800 (PST)
-Date: Tue, 5 Nov 2019 09:37:08 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>
-Subject: Re: [PATCH] arm64: mm: simplify the page end calculation in
- __create_pgd_mapping()
-Message-ID: <20191105093708.GE4743@lakrids.cambridge.arm.com>
-References: <20191103123559.8866-1-yamada.masahiro@socionext.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 48BBB7BB;
+ Tue,  5 Nov 2019 12:04:56 -0800 (PST)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D0AF740283;
+ Tue,  5 Nov 2019 07:16:24 -0800 (PST)
+Date: Tue, 5 Nov 2019 15:16:23 +0000
+From: Andrew Murray <andrew.murray@arm.com>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [PATCH v1 7/7] dt-bindings: PCI: Use IRQ flags for legacy PCI
+ IRQ interrupts
+Message-ID: <20191105151622.GN9723@e119886-lin.cambridge.arm.com>
+References: <20191104163834.8932-1-andrew.murray@arm.com>
+ <20191104163834.8932-8-andrew.murray@arm.com>
+ <CACRpkdb=5i3+H3OtGXSYQEjSq5ROrysfmnG-koGck+chEEgLnQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191103123559.8866-1-yamada.masahiro@socionext.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <CACRpkdb=5i3+H3OtGXSYQEjSq5ROrysfmnG-koGck+chEEgLnQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_121457_495197_D0ABC4C3 
-X-CRM114-Status: GOOD (  17.09  )
+X-CRM114-CacheID: sfid-20191105_120459_401305_B8AEEEE4 
+X-CRM114-Status: GOOD (  14.34  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,69 +62,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yu Zhao <yuzhao@google.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- David Hildenbrand <david@redhat.com>, Robin Murphy <robin.murphy@arm.com>,
- linux-kernel@vger.kernel.org, Hsin-Yi Wang <hsinyi@chromium.org>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Steve Capper <steve.capper@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>,
+ David Daney <david.daney@cavium.com>, linux-pci <linux-pci@vger.kernel.org>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Binghui Wang <wangbinghui@hisilicon.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Jonathan Chocron <jonnyc@amazon.com>, Toan Le <toan@os.amperecomputing.com>,
+ Will Deacon <will@kernel.org>, Jesper Nilsson <jesper.nilsson@axis.com>,
+ Ryder Lee <ryder.lee@mediatek.com>,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Fabio Estevam <festevam@gmail.com>, Tom Joseph <tjoseph@cadence.com>,
+ linux-arm-kernel@axis.com, Kishon Vijay Abraham I <kishon@ti.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Andy Gross <agross@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Xiaowei Song <songxiaowei@hisilicon.com>,
+ Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Richard Zhu <hongxing.zhu@nxp.com>,
+ MSM <linux-arm-msm@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, Linux-OMAP <linux-omap@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, rfi@lists.rocketboards.org,
+ Zhou Wang <wangzhou1@hisilicon.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Ley Foon Tan <lftan@altera.com>, Shawn Guo <shawnguo@kernel.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Nov 03, 2019 at 09:35:58PM +0900, Masahiro Yamada wrote:
-> Calculate the page-aligned end address more simply.
+On Tue, Nov 05, 2019 at 04:08:29PM +0100, Linus Walleij wrote:
+> Hi Andrew,
 > 
-> The local variable, "length" is unneeded.
+> thanks for your patch!
+
+Thanks for the review.
+
 > 
-> Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-> ---
+> On Mon, Nov 4, 2019 at 5:39 PM Andrew Murray <andrew.murray@arm.com> wrote:
 > 
->  arch/arm64/mm/mmu.c | 5 ++---
->  1 file changed, 2 insertions(+), 3 deletions(-)
+> > Replace magic numbers used to describe legacy PCI IRQ interrupts
+> > with #define.
+> >
+> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
 > 
-> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-> index 60c929f3683b..a9f541912289 100644
-> --- a/arch/arm64/mm/mmu.c
-> +++ b/arch/arm64/mm/mmu.c
-> @@ -338,7 +338,7 @@ static void __create_pgd_mapping(pgd_t *pgdir, phys_addr_t phys,
->  				 phys_addr_t (*pgtable_alloc)(int),
->  				 int flags)
->  {
-> -	unsigned long addr, length, end, next;
-> +	unsigned long addr, end, next;
->  	pgd_t *pgdp = pgd_offset_raw(pgdir, virt);
->  
->  	/*
-> @@ -350,9 +350,8 @@ static void __create_pgd_mapping(pgd_t *pgdir, phys_addr_t phys,
->  
->  	phys &= PAGE_MASK;
->  	addr = virt & PAGE_MASK;
-> -	length = PAGE_ALIGN(size + (virt & ~PAGE_MASK));
-> +	end = PAGE_ALIGN(virt + size);
->  
-> -	end = addr + length;
+> When I add examples I usually make sure that above the examples
+> are the appropriate #include files, this is becoming more important
+> as we convert to yaml, then you need the right includes because the
+> examples will get compiled.
 
-While looking at this, I got confused by the old code and thought that
-there was an existing bug, but I now see that's not the case, and the
-old and new code are equivalent.
+OK thanks - I can see other files in Documentation that take this approach
+I'll update this patch on my respin.
 
-The new code looks cleaner, and leaves less room for confusion, so I
-think that's preferable:
+Thanks,
 
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+Andrew Murray
 
-Mark.
-
->  	do {
->  		next = pgd_addr_end(addr, end);
->  		alloc_init_pud(pgdp, addr, next, phys, prot, pgtable_alloc,
-> -- 
-> 2.17.1
 > 
+> With that taken into account:
+> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+> 
+> Yours,
+> Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
