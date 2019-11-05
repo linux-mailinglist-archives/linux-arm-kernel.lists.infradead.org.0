@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51333F078D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:01:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75410F078E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:01:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xeqP01y6PbgMbsORtIyIVsFT+0sLOc8S3HBntM2voCg=; b=tw7OY3d2W6qS6FvEcGG4BBILRA
-	CN8jGLfuVzVRJy9iv42qVJ6Py7Dvbqd9KykottikaB64Ty4TTz1TfSJ3VZOVfbWZ/+peZCmHmtL/j
-	bQcDj/7onpj83UobcUHbHLfMEEZSPfYy9woNxeihfQrzb9nWcZqS9ByDODlvM3GRrr2LN3tjnhtIZ
-	9c0+AH6yxGfcKyMqSLPha6haY+OPlG1L6RUhf5U/Hspur4V1HpPVPhCkjYXQGjrlyLLThF2UsJRpb
-	iaate4SFO79dveAN0oTOAPfmf/iCjBme203pvHUN3WJytWfJgMGh67TffopfSG5kGnDOQmVRR4U1b
-	W1IlGUvg==;
+	bh=aC31KIk8cq3b4zWrfHy22m8xmt7aYYSQw35zeLfqoRE=; b=FPKsYYlii4rpV7hn4QKF9L+Jc4
+	FCUU08bQFQTYuDZQZGkyA1nypA3aAwJ/YqQsHcaceRsUZkFb8cyNWyoeFMqL9XNHTOc8bwmk7hbTE
+	ki0X6+FWKPtdtx0X31QvbxQvSstB9LlxmgLvJpsclekBlo4eBQWnDvMO1F1JWpyCF5YnjcjGdepXY
+	xE2oFvOkRxaauneMPiLgd/e6VnV4VNapBRJY78F7BxzzfelLNrjf5418UNuXD44+hUDjrd4bonD+N
+	cUtNDYgpALIY2v17xTs9wrYg/Fl2ABtCD1QV3AW2PfIhV4DcxyF8Y84skjmO4CxTMMfT4QwXjX6fL
+	X52mpCzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS5x4-0008ET-Gw; Tue, 05 Nov 2019 21:01:22 +0000
+	id 1iS5xM-000052-58; Tue, 05 Nov 2019 21:01:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5v2-0005Cw-3P
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:59:17 +0000
+ id 1iS5v4-0005GN-Rj
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:59:21 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 70FB4222C2;
- Tue,  5 Nov 2019 20:59:13 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1516021D81;
+ Tue,  5 Nov 2019 20:59:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987555;
- bh=pF/45MoP1mKXx4O/iiK0a5z3wGuZvQx00S7i6NGHUjg=;
+ s=default; t=1572987558;
+ bh=D/+nPNLGFL1r/kQMOcZSooYSVJ5DGejofPD8qX+EmJc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=x9OY9j6/ruXwcziZZdgk4h+SAB9ty9eiH0pG3TNZAQHgC0nG1a4zcQrdshmFNyWnL
- c43PhyGBUx3cUJ+kGieg08GG1/4KgN4ca3JIOkesxcGzKzdOgaeIVrB0l6IPQvXNIa
- KKjP4LJkqhOznIJGyjGOFnDtdEYJYxw/0UVGV2vY=
+ b=w+By/QMYX+WOPyDVNzKWVft1X1ft6outXXVdcTgjSXbf0UgCchXxtbg9Qns0tg5Ok
+ T6vOINL/f2ccv9TGp2E1V69+KzeBGWiQv2ZSr655t7xyevnGBGJKFTbSFDysuGj4WS
+ 5PCblOp8BOzdmTn7SfS7Hv3Bx/nC8VKFRlqOc/nI=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 06/53] ARM: uaccess: remove put_user() code
- duplication
-Date: Tue,  5 Nov 2019 21:57:59 +0100
-Message-Id: <20191105205846.1394-7-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 07/53] ARM: Move system register accessors to
+ asm/cp15.h
+Date: Tue,  5 Nov 2019 21:58:00 +0100
+Message-Id: <20191105205846.1394-8-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_125916_189067_B2DF1CCC 
-X-CRM114-Status: GOOD (  13.57  )
+X-CRM114-CacheID: sfid-20191105_125918_964729_8AFBDDE8 
+X-CRM114-Status: GOOD (  12.55  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,178 +80,154 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Mark Rutland <mark.rutland@arm.com>,
  Florian Fainelli <f.fainelli@gmail.com>, Tony Lindgren <tony@atomide.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <rmk+kernel@armlinux.org.uk>, Marc Zyngier <maz@kernel.org>,
- Russell King <rmk+kernel@arm.linux.org.uk>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Vladimir Murzin <vladimir.murzin@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
+ Christoffer Dall <christoffer.dall@linaro.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Russell King <rmk+kernel@arm.linux.org.uk>
+From: Vladimir Murzin <vladimir.murzin@arm.com>
 
-Commit 9f73bd8bb445e0cbe4bcef6d4cfc788f1e184007 upstream.
+Commit 4f2546384150e78cad8045e59a9587fabcd9f9fe upstream.
 
-Remove the code duplication between put_user() and __put_user().  The
-code which selected the implementation based upon the pointer size, and
-declared the local variable to hold the value to be put are common to
-both implementations.
+Headers linux/irqchip/arm-gic.v3.h and arch/arm/include/asm/kvm_hyp.h
+are included in virt/kvm/arm/hyp/vgic-v3-sr.c and both define macros
+called __ACCESS_CP15 and __ACCESS_CP15_64 which obviously creates a
+conflict. These macros were introduced independently for GIC and KVM
+and, in fact, do the same thing.
 
-Signed-off-by: Russell King <rmk+kernel@arm.linux.org.uk>
+As an option we could add prefixes to KVM and GIC version of macros so
+they won't clash, but it'd introduce code duplication.  Alternatively,
+we could keep macro in, say, GIC header and include it in KVM one (or
+vice versa), but such dependency would not look nicer.
+
+So we follow arm64 way (it handles this via sysreg.h) and move only
+single set of macros to asm/cp15.h
+
+Cc: Russell King <rmk+kernel@armlinux.org.uk>
+Acked-by: Marc Zyngier <marc.zyngier@arm.com>
+Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
+Signed-off-by: Christoffer Dall <christoffer.dall@linaro.org>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/include/asm/uaccess.h | 106 +++++++++-----------
- 1 file changed, 49 insertions(+), 57 deletions(-)
+ arch/arm/include/asm/arch_gicv3.h | 27 ++++++++------------
+ arch/arm/include/asm/cp15.h       | 15 +++++++++++
+ 2 files changed, 26 insertions(+), 16 deletions(-)
 
-diff --git a/arch/arm/include/asm/uaccess.h b/arch/arm/include/asm/uaccess.h
-index 35c9db857ebe..b0f9269bef1c 100644
---- a/arch/arm/include/asm/uaccess.h
-+++ b/arch/arm/include/asm/uaccess.h
-@@ -238,49 +238,23 @@ extern int __put_user_2(void *, unsigned int);
- extern int __put_user_4(void *, unsigned int);
- extern int __put_user_8(void *, unsigned long long);
+diff --git a/arch/arm/include/asm/arch_gicv3.h b/arch/arm/include/asm/arch_gicv3.h
+index e08d15184056..af25c32b1ccc 100644
+--- a/arch/arm/include/asm/arch_gicv3.h
++++ b/arch/arm/include/asm/arch_gicv3.h
+@@ -22,9 +22,7 @@
  
--#define __put_user_x(__r2, __p, __e, __l, __s)				\
--	   __asm__ __volatile__ (					\
--		__asmeq("%0", "r0") __asmeq("%2", "r2")			\
--		__asmeq("%3", "r1")					\
--		"bl	__put_user_" #__s				\
--		: "=&r" (__e)						\
--		: "0" (__p), "r" (__r2), "r" (__l)			\
--		: "ip", "lr", "cc")
+ #include <linux/io.h>
+ #include <asm/barrier.h>
 -
--#define __put_user_check(x, p)						\
-+#define __put_user_check(__pu_val, __ptr, __err, __s)			\
- 	({								\
- 		unsigned long __limit = current_thread_info()->addr_limit - 1; \
--		const typeof(*(p)) __user *__tmp_p = (p);		\
--		register const typeof(*(p)) __r2 asm("r2") = (x);	\
--		register const typeof(*(p)) __user *__p asm("r0") = __tmp_p; \
-+		register typeof(__pu_val) __r2 asm("r2") = __pu_val;	\
-+		register const void __user *__p asm("r0") = __ptr;	\
- 		register unsigned long __l asm("r1") = __limit;		\
- 		register int __e asm("r0");				\
--		unsigned int __ua_flags = uaccess_save_and_enable();	\
--		switch (sizeof(*(__p))) {				\
--		case 1:							\
--			__put_user_x(__r2, __p, __e, __l, 1);		\
--			break;						\
--		case 2:							\
--			__put_user_x(__r2, __p, __e, __l, 2);		\
--			break;						\
--		case 4:							\
--			__put_user_x(__r2, __p, __e, __l, 4);		\
--			break;						\
--		case 8:							\
--			__put_user_x(__r2, __p, __e, __l, 8);		\
--			break;						\
--		default: __e = __put_user_bad(); break;			\
--		}							\
--		uaccess_restore(__ua_flags);				\
--		__e;							\
-+		__asm__ __volatile__ (					\
-+			__asmeq("%0", "r0") __asmeq("%2", "r2")		\
-+			__asmeq("%3", "r1")				\
-+			"bl	__put_user_" #__s			\
-+			: "=&r" (__e)					\
-+			: "0" (__p), "r" (__r2), "r" (__l)		\
-+			: "ip", "lr", "cc");				\
-+		__err = __e;						\
- 	})
+-#define __ACCESS_CP15(CRn, Op1, CRm, Op2)	p15, Op1, %0, CRn, CRm, Op2
+-#define __ACCESS_CP15_64(Op1, CRm)		p15, Op1, %Q0, %R0, CRm
++#include <asm/cp15.h>
  
--#define put_user(x, p)							\
--	({								\
--		might_fault();						\
--		__put_user_check(x, p);					\
--	 })
--
- #else /* CONFIG_MMU */
+ #define ICC_EOIR1			__ACCESS_CP15(c12, 0, c12, 1)
+ #define ICC_DIR				__ACCESS_CP15(c12, 0, c11, 1)
+@@ -102,58 +100,55 @@
  
- /*
-@@ -298,7 +272,7 @@ static inline void set_fs(mm_segment_t fs)
+ static inline void gic_write_eoir(u32 irq)
+ {
+-	asm volatile("mcr " __stringify(ICC_EOIR1) : : "r" (irq));
++	write_sysreg(irq, ICC_EOIR1);
+ 	isb();
  }
  
- #define get_user(x, p)	__get_user(x, p)
--#define put_user(x, p)	__put_user(x, p)
-+#define __put_user_check __put_user_nocheck
+ static inline void gic_write_dir(u32 val)
+ {
+-	asm volatile("mcr " __stringify(ICC_DIR) : : "r" (val));
++	write_sysreg(val, ICC_DIR);
+ 	isb();
+ }
  
- #endif /* CONFIG_MMU */
+ static inline u32 gic_read_iar(void)
+ {
+-	u32 irqstat;
++	u32 irqstat = read_sysreg(ICC_IAR1);
  
-@@ -389,36 +363,54 @@ do {									\
- #define __get_user_asm_word(x, addr, err)			\
- 	__get_user_asm(x, addr, err, ldr)
- 
+-	asm volatile("mrc " __stringify(ICC_IAR1) : "=r" (irqstat));
+ 	dsb(sy);
 +
-+#define __put_user_switch(x, ptr, __err, __fn)				\
-+	do {								\
-+		const __typeof__(*(ptr)) __user *__pu_ptr = (ptr);	\
-+		__typeof__(*(ptr)) __pu_val = (x);			\
-+		unsigned int __ua_flags;				\
-+		might_fault();						\
-+		__ua_flags = uaccess_save_and_enable();			\
-+		switch (sizeof(*(ptr))) {				\
-+		case 1: __fn(__pu_val, __pu_ptr, __err, 1); break;	\
-+		case 2:	__fn(__pu_val, __pu_ptr, __err, 2); break;	\
-+		case 4:	__fn(__pu_val, __pu_ptr, __err, 4); break;	\
-+		case 8:	__fn(__pu_val, __pu_ptr, __err, 8); break;	\
-+		default: __err = __put_user_bad(); break;		\
-+		}							\
-+		uaccess_restore(__ua_flags);				\
-+	} while (0)
+ 	return irqstat;
+ }
+ 
+ static inline void gic_write_pmr(u32 val)
+ {
+-	asm volatile("mcr " __stringify(ICC_PMR) : : "r" (val));
++	write_sysreg(val, ICC_PMR);
+ }
+ 
+ static inline void gic_write_ctlr(u32 val)
+ {
+-	asm volatile("mcr " __stringify(ICC_CTLR) : : "r" (val));
++	write_sysreg(val, ICC_CTLR);
+ 	isb();
+ }
+ 
+ static inline void gic_write_grpen1(u32 val)
+ {
+-	asm volatile("mcr " __stringify(ICC_IGRPEN1) : : "r" (val));
++	write_sysreg(val, ICC_IGRPEN1);
+ 	isb();
+ }
+ 
+ static inline void gic_write_sgi1r(u64 val)
+ {
+-	asm volatile("mcrr " __stringify(ICC_SGI1R) : : "r" (val));
++	write_sysreg(val, ICC_SGI1R);
+ }
+ 
+ static inline u32 gic_read_sre(void)
+ {
+-	u32 val;
+-
+-	asm volatile("mrc " __stringify(ICC_SRE) : "=r" (val));
+-	return val;
++	return read_sysreg(ICC_SRE);
+ }
+ 
+ static inline void gic_write_sre(u32 val)
+ {
+-	asm volatile("mcr " __stringify(ICC_SRE) : : "r" (val));
++	write_sysreg(val, ICC_SRE);
+ 	isb();
+ }
+ 
+diff --git a/arch/arm/include/asm/cp15.h b/arch/arm/include/asm/cp15.h
+index c3f11524f10c..dbdbce1b3a72 100644
+--- a/arch/arm/include/asm/cp15.h
++++ b/arch/arm/include/asm/cp15.h
+@@ -49,6 +49,21 @@
+ 
+ #ifdef CONFIG_CPU_CP15
+ 
++#define __ACCESS_CP15(CRn, Op1, CRm, Op2)	\
++	"mrc", "mcr", __stringify(p15, Op1, %0, CRn, CRm, Op2), u32
++#define __ACCESS_CP15_64(Op1, CRm)		\
++	"mrrc", "mcrr", __stringify(p15, Op1, %Q0, %R0, CRm), u64
 +
-+#define put_user(x, ptr)						\
-+({									\
-+	int __pu_err = 0;						\
-+	__put_user_switch((x), (ptr), __pu_err, __put_user_check);	\
-+	__pu_err;							\
++#define __read_sysreg(r, w, c, t) ({				\
++	t __val;						\
++	asm volatile(r " " c : "=r" (__val));			\
++	__val;							\
 +})
++#define read_sysreg(...)		__read_sysreg(__VA_ARGS__)
 +
- #define __put_user(x, ptr)						\
- ({									\
- 	long __pu_err = 0;						\
--	__put_user_err((x), (ptr), __pu_err);				\
-+	__put_user_switch((x), (ptr), __pu_err, __put_user_nocheck);	\
- 	__pu_err;							\
- })
- 
- #define __put_user_error(x, ptr, err)					\
- ({									\
--	__put_user_err((x), (ptr), err);				\
-+	__put_user_switch((x), (ptr), (err), __put_user_nocheck);	\
- 	(void) 0;							\
- })
- 
--#define __put_user_err(x, ptr, err)					\
--do {									\
--	unsigned long __pu_addr = (unsigned long)(ptr);			\
--	unsigned int __ua_flags;					\
--	__typeof__(*(ptr)) __pu_val = (x);				\
--	__chk_user_ptr(ptr);						\
--	might_fault();							\
--	__ua_flags = uaccess_save_and_enable();				\
--	switch (sizeof(*(ptr))) {					\
--	case 1: __put_user_asm_byte(__pu_val, __pu_addr, err);	break;	\
--	case 2: __put_user_asm_half(__pu_val, __pu_addr, err);	break;	\
--	case 4: __put_user_asm_word(__pu_val, __pu_addr, err);	break;	\
--	case 8:	__put_user_asm_dword(__pu_val, __pu_addr, err);	break;	\
--	default: __put_user_bad();					\
--	}								\
--	uaccess_restore(__ua_flags);					\
--} while (0)
-+#define __put_user_nocheck(x, __pu_ptr, __err, __size)			\
-+	do {								\
-+		unsigned long __pu_addr = (unsigned long)__pu_ptr;	\
-+		__put_user_nocheck_##__size(x, __pu_addr, __err);	\
-+	} while (0)
++#define __write_sysreg(v, r, w, c, t)	asm volatile(w " " c : : "r" ((t)(v)))
++#define write_sysreg(v, ...)		__write_sysreg(v, __VA_ARGS__)
 +
-+#define __put_user_nocheck_1 __put_user_asm_byte
-+#define __put_user_nocheck_2 __put_user_asm_half
-+#define __put_user_nocheck_4 __put_user_asm_word
-+#define __put_user_nocheck_8 __put_user_asm_dword
+ extern unsigned long cr_alignment;	/* defined in entry-armv.S */
  
- #define __put_user_asm(x, __pu_addr, err, instr)		\
- 	__asm__ __volatile__(					\
+ static inline unsigned long get_cr(void)
 -- 
 2.17.1
 
