@@ -2,80 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2AF8EFA91
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:12:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F487EFA96
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:13:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XyQdkhlAgyJzdjxbW5dmpKbVdKvsFowbSgeEzMZ5634=; b=RWzc13vxbqwF1D
-	FHefJD99TKHSQmrpz8wZ4STWYcdNgv/gr1G8F+DPA45BUqSBv6sX1b9qq8mRK8XsmVLL+zKFybUpW
-	5zQt82dKTBviQittjIwllb864MBNPgWBjgT+lPuYPJWN0LvtT6gCovJ6hzpk4pfVh6xX5p1HP16Ox
-	6EwwEknMzm2hBezzTGm1f7Z75QmS3SCow0O0s6T+9OrP5kAqhnBUgNTcX6PusBfu+cp4h1mQfyzrP
-	3uoELmDBgNAxmAwOEVQy7CST0yyPk1K17NMya7vOCckYPfTEClaG17PW/qj5QAciDaMD+lJVn8v30
-	KLl2ck0Cq4VHp/Vsk3Ew==;
+	List-Owner; bh=T+GL9pQTtFO1oKh9861VXDqxdZ0FB0DxdX5QJ+0gQQg=; b=oSrwVWsmrcex4+
+	96ykSlD5FOYdF5ihwk77DfAajheYID4Xg7pZPDBblhSZ8YqdOzaodCc5zGK29f47IR11YtAAUeKEm
+	6jzMsMyJn6dfoOagXEgoT9+MRJ5sXt1NW6Hv6+gwL3rqr9GMk5SOKwXvXFH/aVTmOAN+W7tgeboDZ
+	piOLsBbQ44b+/TYt8ROxwm+vLYD4b7MT8Ey6hp0vYDTc9/hSfnM4CfPyDMh1FP0r0MIwydMZDLsVo
+	gH+m6w9ibIe7jYJEP0fV9uAM7HuCBOJ1I6zqPRT6JBIzuJQA7umJunXBIFTQpVWHPv1hxXNFV03CB
+	wGJe6U7jf6JN452FKwkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRvpR-0003vC-II; Tue, 05 Nov 2019 10:12:49 +0000
-Received: from mail-lj1-f194.google.com ([209.85.208.194])
+	id 1iRvpu-0004AY-77; Tue, 05 Nov 2019 10:13:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRvpK-0003uq-NB
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:12:44 +0000
-Received: by mail-lj1-f194.google.com with SMTP id g3so14991493ljl.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 02:12:41 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=V7qLFq4K93vUH8fK9wNC+b3dmkN6TfhoYmCQsWeu7yY=;
- b=Ptx+aBeD3l05fYf9ro2u5SCME+ZpnfjkGg+0JMDVU1f4+S7TNl4CyFEZXsUuo+7/R7
- J+rANC6KzCmDlc/4fnX0yPIYgmWbJtzz5jmzG/pq7Eq7F37z9nxClvSvn9/bs0uufXdQ
- i8oRXxKxj4L56lO7ZjVDzgQmx3S/1dUvq1APPrTyG9kLJlLJzLuIipRNQwvRTRmjUEJG
- 3YYUtOcHuT3QbPbLDeE13Dl2BjkBSVUm18V8vtjHMvcAwcuKlPY1L8quucRwMPuvFaeh
- yzOrLONT8UsBr45TJmJ2iPsGiG2RBu0iLtyUnEd/itpu8wLvX925k5q9CsyyI6bE8pG1
- IVUw==
-X-Gm-Message-State: APjAAAXmzvfsX5ths4zHHduDAe2uLPsp8kvf9wgpRsaw3R5EoJhnadvF
- mtL/UqrcW4auE0OPbRn6Tzw=
-X-Google-Smtp-Source: APXvYqwjjYsGhWJv9rnRxQZ46vKzy4j+wiUPekzGtjMuNsXdHE3646nl8SjkCccQfYCbSzyJz8M77w==
-X-Received: by 2002:a2e:28a:: with SMTP id y10mr20290638lje.155.1572948760228; 
- Tue, 05 Nov 2019 02:12:40 -0800 (PST)
-Received: from localhost.localdomain ([213.255.186.46])
- by smtp.gmail.com with ESMTPSA id k9sm1362903lfj.97.2019.11.05.02.12.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 02:12:39 -0800 (PST)
-Date: Tue, 5 Nov 2019 12:12:30 +0200
-From: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-To: matti.vaittinen@fi.rohmeurope.com, mazziesaccount@gmail.com
-Subject: [PATCH 07/62] gpio: gpio-aspeed: Use new GPIO_LINE_DIRECTION
-Message-ID: <493e2f9ed5aff112519adcdf2d3044bf54c2d91a.1572945709.git.matti.vaittinen@fi.rohmeurope.com>
-References: <cover.1572945709.git.matti.vaittinen@fi.rohmeurope.com>
+ id 1iRvpm-0004A0-8t
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:13:11 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1961F21929;
+ Tue,  5 Nov 2019 10:13:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572948789;
+ bh=EkFkzMw/9Q7TmseCjgj4zggdTDwYFvDKTbwOc9WSrrs=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=huX++/6ld4+kzCEovk5TNI25d6Y7ZwmKcSiqHq0C3aq0lczH3A2WFkTPtIGOPYMHX
+ YUBgihd44UMBnXiRZQslpZ2GYIE3zMWZel0TsiM8XlAcCOz3wgqPDYG7+FyonKaNz4
+ 15Md/fEU+jyT4CvadT9+ekOEnTWr+9gdRIbDSX3Y=
+Date: Tue, 5 Nov 2019 11:13:06 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Marcel Holtmann <marcel@holtmann.org>
+Subject: Re: [PATCH v2 1/3] dt-bindings: net: bluetooth: add DT binding for
+ Realtek controllers
+Message-ID: <20191105101306.GA3876@gilmour.lan>
+References: <20191030224333.70241-1-bonstra@bonstra.fr.eu.org>
+ <20191030224333.70241-2-bonstra@bonstra.fr.eu.org>
+ <20191101080256.gjc4tacltehro3iw@hendrix>
+ <6C5CE71F-37F2-4C8A-9D94-1BC75937B478@holtmann.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <cover.1572945709.git.matti.vaittinen@fi.rohmeurope.com>
+In-Reply-To: <6C5CE71F-37F2-4C8A-9D94-1BC75937B478@holtmann.org>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_021242_756379_6B890C57 
-X-CRM114-Status: GOOD (  11.38  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191105_021310_328445_230856E0 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.194 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (mazziesaccount[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.194 listed in wl.mailspike.net]
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,68 +80,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, linux-gpio@vger.kernel.org,
- Andrew Jeffery <andrew@aj.id.au>, Linus Walleij <linus.walleij@linaro.org>,
- linux-kernel@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Johan Hedberg <johan.hedberg@gmail.com>,
+ Hugo Grostabussiat <bonstra@bonstra.fr.eu.org>,
+ linux-bluetooth@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's hard for occasional GPIO code reader/writer to know if values 0/1
-equal to IN or OUT. Use defined GPIO_LINE_DIRECTION_IN and
-GPIO_LINE_DIRECTION_OUT to help them out.
-
-Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
----
- drivers/gpio/gpio-aspeed.c | 7 +++----
- 1 file changed, 3 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/gpio/gpio-aspeed.c b/drivers/gpio/gpio-aspeed.c
-index 09e53c5f3b0a..f1037b61f763 100644
---- a/drivers/gpio/gpio-aspeed.c
-+++ b/drivers/gpio/gpio-aspeed.c
-@@ -487,10 +487,10 @@ static int aspeed_gpio_get_direction(struct gpio_chip *gc, unsigned int offset)
- 	u32 val;
- 
- 	if (!have_input(gpio, offset))
--		return 0;
-+		return GPIO_LINE_DIRECTION_OUT;
- 
- 	if (!have_output(gpio, offset))
--		return 1;
-+		return GPIO_LINE_DIRECTION_IN;
- 
- 	spin_lock_irqsave(&gpio->lock, flags);
- 
-@@ -498,8 +498,7 @@ static int aspeed_gpio_get_direction(struct gpio_chip *gc, unsigned int offset)
- 
- 	spin_unlock_irqrestore(&gpio->lock, flags);
- 
--	return !val;
--
-+	return val ? GPIO_LINE_DIRECTION_OUT : GPIO_LINE_DIRECTION_IN;
- }
- 
- static inline int irqd_to_aspeed_gpio_data(struct irq_data *d,
--- 
-2.21.0
-
-
--- 
-Matti Vaittinen, Linux device drivers
-ROHM Semiconductors, Finland SWDC
-Kiviharjunlenkki 1E
-90220 OULU
-FINLAND
-
-~~~ "I don't think so," said Rene Descartes. Just then he vanished ~~~
-Simon says - in Latin please.
-~~~ "non cogito me" dixit Rene Descarte, deinde evanescavit ~~~
-Thanks to Simon Glass for the translation =] 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBOb3YgMDQsIDIwMTkgYXQgMDM6MjA6NTlQTSArMDEwMCwgTWFyY2VsIEhvbHRtYW5u
+IHdyb3RlOgo+ID4+IFRoZSBydGxfYnQgZHJpdmVyIGFscmVhZHkgc3VwcG9ydHMgc29tZSBSZWFs
+dGVrIGNvbnRyb2xsZXJzIG9uIEFDUEkKPiA+PiBwbGF0Zm9ybXMuCj4gPj4gVGhpcyBjb21taXQg
+YWRkcyBiaW5kaW5ncyBmb3IgRFQtb25seSBwbGF0Zm9ybXMuCj4gPj4KPiA+PiBTaWduZWQtb2Zm
+LWJ5OiBIdWdvIEdyb3N0YWJ1c3NpYXQgPGJvbnN0cmFAYm9uc3RyYS5mci5ldS5vcmc+Cj4gPj4g
+LS0tCj4gPj4gLi4uL2JpbmRpbmdzL25ldC9yZWFsdGVrLWJsdWV0b290aC50eHQgICAgICAgIHwg
+MjUgKysrKysrKysrKysrKysrKysrKwo+ID4+IDEgZmlsZSBjaGFuZ2VkLCAyNSBpbnNlcnRpb25z
+KCspCj4gPj4gY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
+aW5ncy9uZXQvcmVhbHRlay1ibHVldG9vdGgudHh0Cj4gPgo+ID4gWW91IHNob3VsZCB3cml0ZSB0
+aGF0IGJpbmRpbmcgdXNpbmcgYSBZQU1MIGRlc2NyaXB0aW9uLiBGcmVlLWZvcm0KPiA+IGRldmlj
+ZSB0cmVlIGJpbmRpbmdzIGFyZSBtb3JlIG9yIGxlc3MgZGVwcmVjYXRlZCBub3cuCj4KPiB1bmxl
+c3Mgd2UgY2hhbmdlIGFsbCB0aGUgQmx1ZXRvb3RoIGRlc2NyaXB0aW9ucywgSSBwcmVmZXIgd2Ug
+a2VlcCBpdCB0aGUg4oCcb2xk4oCdIHdheS4KCkZXSVcsIHRoaXMgaXMgYSB3YXJuaW5nIGluIGNo
+ZWNrcGF0Y2ggbm93LgoKTWF4aW1lCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
