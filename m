@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18410EFE7E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 14:29:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBA53EFE91
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 14:29:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v4+e79WOpSUN4FOZqmhiTLAsqbr2oTxJ3AQSSgIba18=; b=LZmVYuAFDwYKD+
-	wxb6QkSd3V03Hqr2e0/k9gsWetxC8bK/Dj5tWEryx7135iiOcM8S6UzCH1m11xCfUH9rEyCBnIPT+
-	6cZKdHRyfeLCmziXsE0PihPlZQJ5LU+SZuvBd0z1J/LGcCiIMNJJSdHw+CYa1OQe3QiwBMVx3D31R
-	MiRePjp8e6XBNRva3hzjfEX7PK5ldUEEWijm8wn/b1UP/+u8L5O9WQJ6bSa/3jsq45PNgaDCTvxWY
-	A5D+/K035AmGiGu9MfKcjNU7oZksCznTMXcR/j6CzuhRakRrjY3piOhArG5Xu2LYmDBpl4e2r88yQ
-	uowPXqZvGloX2JNQw3+w==;
+	List-Owner; bh=8iTwbxSJDvEkENSnZcR4yknTOzflBpZ7E9LhQlpMtHU=; b=XBponVWTwl9Hrc
+	KTUDr8i3YpDaPSgp/1rf9t3PZmJT/oZzSBeKYXTdLhOlxRvujT2dEi2obAYCIlNadLvxyBwo4XuZF
+	umoN5YwKzpY18sa8M/POSrgPfmFboVOPhhxhP24t3o/VJwAPd+79TyjgtzZwtkq41aXBF+6pvjFc8
+	mcbUD15c6iO3zkHoLWWMWsnSri11PhSAhN+YFq+ejtyZPuVwJST4hMQ/c9xN9SKF6WNwBJ7/+jAna
+	LbcEt0CgOZojQjjlY/tZFKBP1QLDs0fyWOUOyo/eU9KchvnYnNHVoHbtHJT8imjNB62+5ZPBtjvFB
+	hVRikKpKWFOxW8V53fKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRyth-0000T3-2O; Tue, 05 Nov 2019 13:29:25 +0000
+	id 1iRyu3-0000mU-V6; Tue, 05 Nov 2019 13:29:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRysz-0000Ak-0D
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 13:28:42 +0000
+ id 1iRyt1-0000BL-Ha
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 13:28:44 +0000
 Received: from localhost.localdomain
  (laubervilliers-657-1-83-120.w92-154.abo.wanadoo.fr [92.154.90.120])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A161621D71;
- Tue,  5 Nov 2019 13:28:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2C1142190F;
+ Tue,  5 Nov 2019 13:28:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572960520;
- bh=7mDjWmrykjWinI9flSdIxWfKbwzQRVeme/a6n119Pf8=;
+ s=default; t=1572960523;
+ bh=Nh55X7sYvLj2U2aGXFSuv9DJufS5jhXrUnAVYoR+7lE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=slgOjyTwt9OCoJixjRH5cLIeQPmUmjH4govBwVcy1mKhc2rJO3SE5SHp3WjnXAiQ/
- I724H/moeFtTnV79Oylq3cMtEnzODhZ7q6p7sanqANcUCrl1g3vwvIt4ZbCbPDhwIB
- QJjuTMqo6di0Xb8GEXxt5uMgA7WlC7Obp5a5aUEI=
+ b=LGKA6jzI0/JCyVEE3DeT0DtgGL3Ax03v0vHO1u7dhmWuyhf59QN02FSu+Qd6A/J7q
+ QHpaMTIVQkBwz6htket2Pv04BfuyYQmuTLsGiLZhJ00lcl+Id6oayPA6Xh6XyJ4g6W
+ lV7RtZszytcimf+g1OLSta/T02zJQY7kQY9R7oZ4=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-crypto@vger.kernel.org
-Subject: [PATCH v3 01/29] crypto: virtio - implement missing support for
- output IVs
-Date: Tue,  5 Nov 2019 14:27:58 +0100
-Message-Id: <20191105132826.1838-2-ardb@kernel.org>
+Subject: [PATCH v3 02/29] crypto: virtio - deal with unsupported input sizes
+Date: Tue,  5 Nov 2019 14:27:59 +0100
+Message-Id: <20191105132826.1838-3-ardb@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191105132826.1838-1-ardb@kernel.org>
 References: <20191105132826.1838-1-ardb@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_052841_061275_929336C8 
-X-CRM114-Status: GOOD (  10.30  )
+X-CRM114-CacheID: sfid-20191105_052843_615260_0B7736B1 
+X-CRM114-Status: GOOD (  12.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,10 +86,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to allow for CBC to be chained, which is something that the
-CTS template relies upon, implementations of CBC need to pass the
-IV to be used for subsequent invocations via the IV buffer. This was
-not implemented yet for virtio-crypto so implement it now.
+Return -EINVAL for input sizes that are not a multiple of the AES
+block size, since they are not supported by our CBC chaining mode.
+
+While at it, remove the pr_err() that reports unsupported key sizes
+being used: we shouldn't spam the kernel log with that.
 
 Fixes: dbaf0624ffa5 ("crypto: add virtio-crypto driver")
 Cc: "Michael S. Tsirkin" <mst@redhat.com>
@@ -99,36 +99,46 @@ Cc: Gonglei <arei.gonglei@huawei.com>
 Cc: virtualization@lists.linux-foundation.org
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- drivers/crypto/virtio/virtio_crypto_algs.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ drivers/crypto/virtio/virtio_crypto_algs.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/crypto/virtio/virtio_crypto_algs.c b/drivers/crypto/virtio/virtio_crypto_algs.c
-index 42d19205166b..65ec10800137 100644
+index 65ec10800137..82b316b2f537 100644
 --- a/drivers/crypto/virtio/virtio_crypto_algs.c
 +++ b/drivers/crypto/virtio/virtio_crypto_algs.c
-@@ -437,6 +437,11 @@ __virtio_crypto_ablkcipher_do_req(struct virtio_crypto_sym_request *vc_sym_req,
- 		goto free;
+@@ -105,8 +105,6 @@ virtio_crypto_alg_validate_key(int key_len, uint32_t *alg)
+ 		*alg = VIRTIO_CRYPTO_CIPHER_AES_CBC;
+ 		break;
+ 	default:
+-		pr_err("virtio_crypto: Unsupported key length: %d\n",
+-			key_len);
+ 		return -EINVAL;
  	}
- 	memcpy(iv, req->info, ivsize);
-+	if (!vc_sym_req->encrypt)
-+		scatterwalk_map_and_copy(req->info, req->src,
-+					 req->nbytes - AES_BLOCK_SIZE,
-+					 AES_BLOCK_SIZE, 0);
+ 	return 0;
+@@ -489,6 +487,11 @@ static int virtio_crypto_ablkcipher_encrypt(struct ablkcipher_request *req)
+ 	/* Use the first data virtqueue as default */
+ 	struct data_queue *data_vq = &vcrypto->data_vq[0];
+ 
++	if (!req->nbytes)
++		return 0;
++	if (req->nbytes % AES_BLOCK_SIZE)
++		return -EINVAL;
 +
- 	sg_init_one(&iv_sg, iv, ivsize);
- 	sgs[num_out++] = &iv_sg;
- 	vc_sym_req->iv = iv;
-@@ -563,6 +568,10 @@ static void virtio_crypto_ablkcipher_finalize_req(
- 	struct ablkcipher_request *req,
- 	int err)
- {
-+	if (vc_sym_req->encrypt)
-+		scatterwalk_map_and_copy(req->info, req->dst,
-+					 req->nbytes - AES_BLOCK_SIZE,
-+					 AES_BLOCK_SIZE, 0);
- 	crypto_finalize_ablkcipher_request(vc_sym_req->base.dataq->engine,
- 					   req, err);
- 	kzfree(vc_sym_req->iv);
+ 	vc_req->dataq = data_vq;
+ 	vc_req->alg_cb = virtio_crypto_dataq_sym_callback;
+ 	vc_sym_req->ablkcipher_ctx = ctx;
+@@ -509,6 +512,11 @@ static int virtio_crypto_ablkcipher_decrypt(struct ablkcipher_request *req)
+ 	/* Use the first data virtqueue as default */
+ 	struct data_queue *data_vq = &vcrypto->data_vq[0];
+ 
++	if (!req->nbytes)
++		return 0;
++	if (req->nbytes % AES_BLOCK_SIZE)
++		return -EINVAL;
++
+ 	vc_req->dataq = data_vq;
+ 	vc_req->alg_cb = virtio_crypto_dataq_sym_callback;
+ 	vc_sym_req->ablkcipher_ctx = ctx;
 -- 
 2.20.1
 
