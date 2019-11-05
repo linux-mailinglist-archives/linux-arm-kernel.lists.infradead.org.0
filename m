@@ -2,87 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8483EF0860
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:30:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77C12F0872
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:33:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2FeR36RHpzVcvArWa9OZgCHTuzBQ18oiQqSESkkpqik=; b=T/PB+X/9sdLkYM
-	xirLjlt3V49v/leD1HOPUpna0ha131yteOYCS+VyG0gIm71reM7FgVTJUQvXCcKCIQlnB0MV5A6fp
-	IJvgOJIfrGlITsXlezHG736U7qV4BPBQtNYol4rzQIY0Xt5VPdKT21mJEtDqDdWHFq9yT9byQ2vIu
-	64kZEsk313sSxE1YjD1CjCEjMbdzZJDHkw6OZhg23OgvrI60AjmwAyCWH9s0ODYJ4S8xVGsBqerjQ
-	PLIUNHh4IV1/fLfho/iJMwlkbmwCJGPTrgUV/I4gBfhs/1dX4LZOkxae+JBKVkUUli55qRGcVAnk3
-	UsWYvadEy/GCvXAZCYOw==;
+	List-Owner; bh=z+i66LyUk7vY5jLcorh/cxh81MLT+TWt3jr0gA+CXuo=; b=Pa48AZb6knuL7r
+	HTshSXdoFxDE2c2SiorIpUQrpOZkiIQprQMC3INv/cS/ICSjYbqu+H/VRhcjLQsTtCem6w+0+Ds/m
+	ubBl0h7Kc3sL5FCrOQmPIxlc/ZCmnpDhBXANyzLA/SqlVVfmiRxPcXdNUx6zVYItk1Bb/anOkE8hv
+	71ajBjuv5eLFzZUoO81TXjn/r2Vo8qZ8zvimGkD5LL656uVchy81QeBLiHJOReN/tQBbJykqlVSg8
+	cX47mMX2g/hWENXJTLPyXVohnfEOBWHYSeboQe68r7uUb4i7BHSVIPjcinfw99mWXhxh/+Ykd15Co
+	9nT+DbGmxI5QaLb+fKoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS6P0-000236-3h; Tue, 05 Nov 2019 21:30:14 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1iS6SB-0003Af-EJ; Tue, 05 Nov 2019 21:33:31 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS6Oo-0001Xm-3g
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:30:03 +0000
-Received: by mail-oi1-x243.google.com with SMTP id l20so6894125oie.10
+ id 1iS6S2-00039y-Gx
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:33:23 +0000
+Received: by mail-ot1-f65.google.com with SMTP id t4so7505286otr.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 13:30:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=MKex/i2q2cLUhnrOZHb/aTfSgxLlxLOB7hwQ/W42MOw=;
- b=yxFFwBbFJuRUmrLRu10ZGRWzKFrK7/48YyA7Ncx1ZigYrzwB8XSeGTQmsue6WKWmSJ
- Xfe0oir5wnBLctIZp9L+juUiBycM6ZTvBtI+BNK4TtUaT7fcE75tSlsPnxEHp9UKahbz
- 2hpMQA0b1ljhgjAucbg/dmSp2YGsqIQSvrhr5/r/p+eVAgFppBggggHoTEoj4hUxiryz
- Od37e8JexbJXGc9eI2TCXsU0X2LxLGic4ZFevFWgFwqpifNeSD15vXG1GGJlLQtgZXav
- t5TZWpVaSxnlO3F7KDScwucNanRdQ8eZ9FhGnEM+wUILlxc9m8A2ymCJzDbA8wLDhXr5
- 2URw==
+ Tue, 05 Nov 2019 13:33:21 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=MKex/i2q2cLUhnrOZHb/aTfSgxLlxLOB7hwQ/W42MOw=;
- b=m9r7qqOgemgKpYUJ7NxKCtFEscuhqLWT6lyPhX+lmOQyq2MwKjW7k/d22O2YcRk97p
- gNO+FkEEF9X976YVpMnn58lDC1z1zQEYnIHH5bxT6o2yPN2LUXSj6PLNoSag6YczKpkb
- PhlwIm4H1+iEFaxrha6Z6e4BRUnNr9qwjBmjujDoA5K0sUkTjEgWXMNsSAoe7yLadkPO
- X3XiLnMjWaltpbfC4OvE7kNTdlc43qjZb8Zh8VnCMos27zA4LtRHy4irPP4xVDiM+Dyy
- zZFpPeOHv/i9gpUYtyRTRVLiMOHxeQllKMN4CQLIORFafnllD7BDIT+Ncz0oSsdwkWPG
- 4c7g==
-X-Gm-Message-State: APjAAAVN54S5dBQf89CibXiWdV2/Fv86QcQALv9f7U94BONdUZl8yGHZ
- ksKG+ReWYPXEY6tOPzSLR06vReMCLhfeBs71X0HWvg==
-X-Google-Smtp-Source: APXvYqyzj5HURLTlobaqoi8hTKrbUECVIYX+Szr2iuPljx86BKtHnCHUZsYoXa9CppTgl3WUix0tHrwd6NrPPAarr4s=
-X-Received: by 2002:aca:3a41:: with SMTP id h62mr990522oia.97.1572989400562;
- Tue, 05 Nov 2019 13:30:00 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=zsmPSGfU4VIabCEcquyi1hsnRpNdKZ9P9UXPGbIVCSk=;
+ b=iaUU802PU1RtYhZN63c2HnTn/9FEpW/pAMC/ONz7UF/4Khc1W9IsBEUD6xTH2nUrFB
+ NLo3tuHBd38SUr0SW5Tb6+iJPabMcRnA8srXsnyNp+zxEACpRikP4TAJaHJhyYSgWULF
+ 3e4zckNlRrCmI+P+2aoXMU7VHZm3MajpOAltJaxXoXLJ2m+xirg/pokQFBS332zZfBS1
+ tfTdCROMdJRBudzkljdnFHibzDFK+g1C/surz7dVr1ITWUjf3H+h6Q/vq8wujCH4MVLP
+ WW38n9PxegpN9e2hlMXhe72Z9jg0xtMSgWcr+IXzVDkuoNLLBzVWpg9AN0ZdHY+sLDdR
+ UvwQ==
+X-Gm-Message-State: APjAAAVd+il2OZOifxSl638dnmcijA9KUu/aJdkdC4YIifv+VDEWe2y+
+ lr1szK2SC1qzwAuZ0cofXw==
+X-Google-Smtp-Source: APXvYqyuA6gQZu8HaSbrJ5/20jXgGV+3XUqpkaSV9Wbbgx/bbOF724lg2zbaq9jCmndj046bD68/WQ==
+X-Received: by 2002:a9d:7441:: with SMTP id p1mr9387956otk.87.1572989601214;
+ Tue, 05 Nov 2019 13:33:21 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id q3sm238414oti.49.2019.11.05.13.33.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 05 Nov 2019 13:33:20 -0800 (PST)
+Date: Tue, 5 Nov 2019 15:33:19 -0600
+From: Rob Herring <robh@kernel.org>
+To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v3 1/7] dt-bindings: pwm: allwinner: Add H6 PWM description
+Message-ID: <20191105213319.GA30538@bogus>
+References: <20191105131456.32400-1-peron.clem@gmail.com>
+ <20191105131456.32400-2-peron.clem@gmail.com>
 MIME-Version: 1.0
-References: <20191029153051.24367-1-catalin.marinas@arm.com>
- <CALAqxLXuxZVg0kqNQXF_dH17NzH9m14-Ci_rzruHzmms0V7pvg@mail.gmail.com>
- <20191105102902.GB29852@willie-the-truck>
- <20191105165433.GD22987@arrakis.emea.arm.com>
- <CALAqxLWYJvHO3YYbQHmgg0yThx_kqM7HBFnnxrcWkG1-LXeCQQ@mail.gmail.com>
-In-Reply-To: <CALAqxLWYJvHO3YYbQHmgg0yThx_kqM7HBFnnxrcWkG1-LXeCQQ@mail.gmail.com>
-From: John Stultz <john.stultz@linaro.org>
-Date: Tue, 5 Nov 2019 13:29:49 -0800
-Message-ID: <CALAqxLVeRKmJdwUZe3h1dBVyMsnPFNkEw5ckB08NFsJ7dwTvPw@mail.gmail.com>
-Subject: Re: [PATCH] arm64: Ensure VM_WRITE|VM_SHARED ptes are clean by default
-To: Catalin Marinas <catalin.marinas@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20191105131456.32400-2-peron.clem@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_133002_168242_ECFA0A37 
-X-CRM114-Status: GOOD (  22.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191105_133322_565578_2F005FF0 
+X-CRM114-Status: GOOD (  18.54  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,68 +93,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alistair Delva <adelva@google.com>, Sandeep Patil <sspatil@google.com>,
- Steve Capper <Steve.Capper@arm.com>, stable <stable@vger.kernel.org>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
+ 'Uwe =?iso-8859-1?Q?Kleine-K=F6nig'?= <u.kleine-koenig@pengutronix.de>,
+ Philipp Zabel <pza@pengutronix.de>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 5, 2019 at 1:17 PM John Stultz <john.stultz@linaro.org> wrote:
-> On Tue, Nov 5, 2019 at 8:54 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > On Tue, Nov 05, 2019 at 10:29:03AM +0000, Will Deacon wrote:
-> > > On Mon, Nov 04, 2019 at 05:16:42PM -0800, John Stultz wrote:
-> > > > On Tue, Oct 29, 2019 at 8:31 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > > > >
-> > > > > Shared and writable mappings (__S.1.) should be clean (!dirty) initially
-> > > > > and made dirty on a subsequent write either through the hardware DBM
-> > > > > (dirty bit management) mechanism or through a write page fault. A clean
-> > > > > pte for the arm64 kernel is one that has PTE_RDONLY set and PTE_DIRTY
-> > > > > clear.
-> > > > >
-> > > > > The PAGE_SHARED{,_EXEC} attributes have PTE_WRITE set (PTE_DBM) and
-> > > > > PTE_DIRTY clear. Prior to commit 73e86cb03cf2 ("arm64: Move PTE_RDONLY
-> > > > > bit handling out of set_pte_at()"), it was the responsibility of
-> > > > > set_pte_at() to set the PTE_RDONLY bit and mark the pte clean if the
-> > > > > software PTE_DIRTY bit was not set. However, the above commit removed
-> > > > > the pte_sw_dirty() check and the subsequent setting of PTE_RDONLY in
-> > > > > set_pte_at() while leaving the PAGE_SHARED{,_EXEC} definitions
-> > > > > unchanged. The result is that shared+writable mappings are now dirty by
-> > > > > default
-> > > > >
-> > > > > Fix the above by explicitly setting PTE_RDONLY in PAGE_SHARED{,_EXEC}.
-> > > > > In addition, remove the superfluous PTE_DIRTY bit from the kernel PROT_*
-> > > > > attributes.
-> > > > >
-> > > > > Fixes: 73e86cb03cf2 ("arm64: Move PTE_RDONLY bit handling out of set_pte_at()")
-> > > > > Cc: <stable@vger.kernel.org> # 4.14.x-
-> > > > > Cc: Will Deacon <will@kernel.org>
-> > > > > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> > [...]
-> > > As an experiment, can you try reverting just the part of the patch that
-> > > removes PTE_DIRTY from the PROT_* definitions? (see below)
-> >
-> > Another thing worth trying is reverting commit 747a70e60b72 ("arm64: Fix
-> > copy-on-write referencing in HugeTLB") when this patch is applied. That
-> > commit is not just about hugetlb but changes pte_same() to ignore
-> > PTE_RDONLY on the assumption that this is set by set_pte_at(). We
-> > subsequently changed set_pte_at() to drop PTE_RDONLY.
->
-> Just to confirm, reverting 747a70e60b72 instead of aa57157be69f also
-> seems to avoid the issue I'm seeing.
->
-> I've not tried Will patch but I'll do that next. Though its not clear
-> if you wanted me to revert 747a70e60b72 on top of Will's test patch or
-> not?
+On Tue, Nov 05, 2019 at 02:14:50PM +0100, Cl=E9ment P=E9ron wrote:
+> From: Jernej Skrabec <jernej.skrabec@siol.net>
+> =
 
-Not sure if its useful data, but while Will's patch on its own didn't
-change the behavior, it along with reverting 747a70e60b72 seems to
-work the same as just reverting 747a70e60b72 alone.
+> H6 PWM block is basically the same as A20 PWM, except that it also has
+> bus clock and reset line which needs to be handled accordingly.
+> =
 
-thanks
--john
+> Expand Allwinner PWM binding with H6 PWM specifics.
+> =
+
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+> ---
+>  .../bindings/pwm/allwinner,sun4i-a10-pwm.yaml | 47 +++++++++++++++++++
+>  1 file changed, 47 insertions(+)
+> =
+
+> diff --git a/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pw=
+m.yaml b/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
+> index 0ac52f83a58c..9fc32c1d94b4 100644
+> --- a/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
+> +++ b/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
+> @@ -30,13 +30,50 @@ properties:
+>        - items:
+>            - const: allwinner,sun50i-h5-pwm
+>            - const: allwinner,sun5i-a13-pwm
+> +      - const: allwinner,sun50i-h6-pwm
+>  =
+
+>    reg:
+>      maxItems: 1
+>  =
+
+>    clocks:
+> +    minItems: 1
+> +    maxItems: 2
+> +    items:
+> +      - description: Bus Clock
+> +      - description: Module Clock
+
+The order here doesn't match the if/then or the example.
+
+> +
+> +  # Even though it only applies to subschemas under the conditionals,
+> +  # not listing them here will trigger a warning because of the
+> +  # additionalsProperties set to false.
+> +  clock-names: true
+
+blank line here.
+
+> +  resets:
+>      maxItems: 1
+>  =
+
+> +  if:
+> +    properties:
+> +      compatible:
+> +        contains:
+> +          const: allwinner,sun50i-h6-pwm
+> +
+> +  then:
+> +    properties:
+> +      clocks:
+> +        minItems: 2
+> +
+> +      clock-names:
+> +        items:
+> +          - const: mod
+> +          - const: bus
+> +
+> +    required:
+> +      - clock-names
+> +      - resets
+> +
+> +  else:
+> +    properties:
+> +      clocks:
+> +        maxItems: 1
+> +
+>  required:
+>    - "#pwm-cells"
+>    - compatible
+> @@ -54,4 +91,14 @@ examples:
+>          #pwm-cells =3D <3>;
+>      };
+>  =
+
+> +  - |
+> +    pwm@300a000 {
+> +      compatible =3D "allwinner,sun50i-h6-pwm";
+> +      reg =3D <0x0300a000 0x400>;
+> +      clocks =3D <&osc24M>, <&ccu CLK_BUS_PWM>;
+> +      clock-names =3D "mod", "bus";
+> +      resets =3D <&ccu RST_BUS_PWM>;
+> +      #pwm-cells =3D <3>;
+> +    };
+> +
+>  ...
+> -- =
+
+> 2.20.1
+> =
+
 
 _______________________________________________
 linux-arm-kernel mailing list
