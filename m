@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A74AF0670
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 20:55:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 911DFF0661
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 20:55:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RbOKHFOMQFngtRLwQEEDsaRC6RvTv3E109sK4lg+etA=; b=f05FfKaRnpy5BL
-	KZ5MsEcckCAEfIQQcRMyEpHLFRCLDG60y0QMAsFkVapL9q0ZCIv147dnYKt4HerSiOLxtvuHcaVNe
-	VzILFm+CWGo9LVSytwhFdENr6Uu6L4yc/rP/3c+Wdc7mDovYVbYg9Ho2fC6P1nwHm72iYqrwaDnVm
-	2Q+Pipddm2B+ahPoiYNIysrZF2IMpBfKlG6X5VqQ/5I2r9NybnxTjeHYrfKneccLoPJOEY7+3HT6D
-	aRoer+wHgaHQ+PoCBnlDHP2Ato5DLyxmdRc1X0qHlxFH9eWAcAX94oD11A1oHFldKSWHMOKTkoFZ8
-	ZmSsDK8sp1v4DljUmk6w==;
+	List-Owner; bh=xC5u1o00QkwTtE2ceYqOcCfeF++7bxoa7SVITFLg8Rw=; b=GO0VFWieK4Xa2t
+	us/x8VjXJgCmNv6/Een01pD1dc7OLuattxOMCE2BrFvnJaI9doOP3MG6BoCA0Xzdzk+SUx7oQcbOi
+	6dWfHtz2CHkS7xFxSFvyD6AF4C2DRscIZyGsBFdFLLBWWH/v3eOzN+7hRRRXAh5nzv2A32sFW5sdZ
+	7DACRZ4c9PuY2nfGNCE5f7sth5z9u2OPMqfKT4k+Uq4ZPGuEHzAOhH4STjaJ5XHrZ3P/ZI0jFN2vD
+	pYickDSVL5olEsLfO39x9Urn1sbFjgVxVfkfUCRT95jP969jDy56zGFDzAL9o+1RqHlMFSwLMJnq/
+	OsyO49owJYKTy6HLu6XA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS4vF-0001VS-SI; Tue, 05 Nov 2019 19:55:25 +0000
+	id 1iS4v6-0000IK-JZ; Tue, 05 Nov 2019 19:55:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS4uq-00007F-P8
+ id 1iS4uq-00007D-NM
  for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 19:55:02 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8E02A7B9;
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8DFB87AD;
  Tue,  5 Nov 2019 11:54:56 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5E4523FBA1;
- Tue,  5 Nov 2019 01:15:53 -0800 (PST)
-Date: Tue, 5 Nov 2019 09:15:51 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7AFF33FBB1;
+ Tue,  5 Nov 2019 01:17:25 -0800 (PST)
+Date: Tue, 5 Nov 2019 09:17:23 +0000
 From: Mark Rutland <mark.rutland@arm.com>
 To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v4 11/17] arm64: disable function graph tracing with SCS
-Message-ID: <20191105091301.GB4743@lakrids.cambridge.arm.com>
+Subject: Re: [PATCH v4 07/17] scs: add support for stack usage debugging
+Message-ID: <20191105091723.GC4743@lakrids.cambridge.arm.com>
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191101221150.116536-1-samitolvanen@google.com>
- <20191101221150.116536-12-samitolvanen@google.com>
- <20191104171132.GB2024@lakrids.cambridge.arm.com>
- <CABCJKufDnLjP9vA-wSW0gSY05Cbr=NOpJ-WCh-bdj2ZNq7VNXw@mail.gmail.com>
+ <20191101221150.116536-8-samitolvanen@google.com>
+ <20191104124017.GD45140@lakrids.cambridge.arm.com>
+ <CABCJKueoJs7hS7VrVoz6CY_oAjTGcV-W61v9GAdwg+zk0W5ErA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CABCJKufDnLjP9vA-wSW0gSY05Cbr=NOpJ-WCh-bdj2ZNq7VNXw@mail.gmail.com>
+In-Reply-To: <CABCJKueoJs7hS7VrVoz6CY_oAjTGcV-W61v9GAdwg+zk0W5ErA@mail.gmail.com>
 User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_115500_856138_5A86ECD1 
-X-CRM114-Status: GOOD (  15.65  )
+X-CRM114-CacheID: sfid-20191105_115500_808725_D1187F47 
+X-CRM114-Status: GOOD (  15.60  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -83,38 +83,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 04, 2019 at 03:44:39PM -0800, Sami Tolvanen wrote:
-> On Mon, Nov 4, 2019 at 9:11 AM Mark Rutland <mark.rutland@arm.com> wrote:
-> > Can you please elaborate on _how_ this is incompatible in the commit
-> > message?
+On Mon, Nov 04, 2019 at 01:35:28PM -0800, Sami Tolvanen wrote:
+> On Mon, Nov 4, 2019 at 4:40 AM Mark Rutland <mark.rutland@arm.com> wrote:
+> > > +#ifdef CONFIG_DEBUG_STACK_USAGE
+> > > +static inline unsigned long scs_used(struct task_struct *tsk)
+> > > +{
+> > > +     unsigned long *p = __scs_base(tsk);
+> > > +     unsigned long *end = scs_magic(tsk);
+> > > +     uintptr_t s = (uintptr_t)p;
 > >
-> > For example, it's not clear to me if you mean that's functionally
-> > incompatible, or if you're trying to remove return-altering gadgets.
-> >
-> > If there's a functional incompatibility, please spell that out a bit
-> > more clearly. Likewise if this is about minimizing the set of places
-> > that can mess with control-flow outside of usual function conventions.
+> > As previously, please use unsigned long for consistency.
 > 
-> Sure, I'll add a better description in v5. In this case, the return
-> address is modified in the kernel stack, which means the changes are
-> ignored with SCS.
+> Ack.
+> 
+> > > +     while (p < end && *p)
+> > > +             p++;
+> >
+> > I think this is the only place where we legtimately access the shadow
+> > call stack directly.
+> 
+> There's also scs_corrupted, which checks that the end magic is intact.
 
-Ok, that makes sense to me. I'd suggest something like:
+Ah, true. I missed that.
 
-| The graph tracer hooks returns by modifying frame records on the
-| (regular) stack, but with SCS the return address is taken from the
-| shadow stack, and the value in the frame record has no effect. As we
-| don't currently have a mechanism to determine the corresponding slot
-| on the shadow stack (and to pass this through the ftrace
-| infrastructure), for now let's disable the graph tracer when SCS is
-| enabled.
+> > When using SCS and KASAN, are the
+> > compiler-generated accesses to the SCS instrumented?
+> >
+> > If not, it might make sense to make this:
+> >
+> >         while (p < end && READ_ONCE_NOCKECK(*p))
+> >
+> > ... and poison the allocation from KASAN's PoV, so that we can find
+> > unintentional accesses more easily.
+> 
+> Sure, that makes sense. I can poison the allocation for the
+> non-vmalloc case, I'll just need to refactor scs_set_magic to happen
+> before the poisoning.
 
-... as I suspect with some rework of the trampoline and common ftrace
-code we'd be able to correctly manipulate the shadow stack for this.
-Similarly, if clang gained -fpatchable-funciton-etnry, we'd get that for
-free.
+Sounds good!
 
-Thanks,
 Mark.
 
 _______________________________________________
