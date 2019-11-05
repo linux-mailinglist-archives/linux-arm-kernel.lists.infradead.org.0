@@ -2,85 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DF20EFABC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:18:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A020EFAF8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:23:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ggJ/AI04o7gxBp3kRbeN6h7hJkw4/zaBWT+1OC4zvB0=; b=Mw5978x4xxAlEV
-	H+hCv44XsK28YgXm8TWULqI3LMAP1D6iYk8vJFEag0apzub7zXxjGXEdW7L6+a9XFe7DZTiLtTPUI
-	klYp5jHuVHnW86WshQZ8F5xyemnsVlLy8FWRsFiFamJ2UadZBcE8jyHONo8b7+n3GbYnai1zE5JQA
-	tsoxJ1yioLSmByMOEzHX63hBXE4Rh1zWJxlcUSyOIeKcxoNGCNlAisYIKtTzhgdSi7VeH06w3jOb8
-	cZs9/mizTTAT7QQzR+BVLMnhX+4ksnDI0nWscBiDwltK3FDd5PtY+pJl4VQD7tmyta85gNerL+Dh2
-	3dDonWz0O5jr8PmEEaeg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=h6xjl8tm/GeS9mahcG4xDQJF/P8lZyBC58VxYhikpUU=; b=qbd3/SgZbhSa+V
+	l4OtwSNnRBF099ilW7ZyYAWU3m5zhvw32F73jM9ZKwou9qA0nBOtelCklsErr/GFXTwl+9FJO6LPq
+	OEozxu53NfF07TJoVAHu1s6WUVkz1/7FKujHeeP6TBVVBUYS5tBvQ6G7H/uauJBtQAbMFNApnkwyu
+	Z0gGwzY7ZUsVZ53CkamzW5HqTWH7pfIUPtpa5Xe3AcxhRyN781W9PiP/xjIFrt6Cue9RAS4nsZjaW
+	5vnp9Nl1jwODkNNWPm/Jmj2jdMz/gLTSxoNYLZEVRAH+eK+9HUj1Emdi5YuYz6UXqyNDzA32xVOK0
+	9tnGLFroCdcozuFofRvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRvuY-00066C-3I; Tue, 05 Nov 2019 10:18:06 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iRw03-0008I3-OT; Tue, 05 Nov 2019 10:23:47 +0000
+Received: from mail-eopbgr60078.outbound.protection.outlook.com ([40.107.6.78]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRvuL-00065A-61
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:17:54 +0000
-Received: by mail-wm1-x342.google.com with SMTP id c22so19455421wmd.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 02:17:48 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=fNwu5Brajivr2NZ+53CyrBT2A5quV+LusyMm1pW2iI4=;
- b=Svr0IOsnkV9uVg/wKUTFvPy0qCkSTYOZs+R3aU79Dp+7ujp/ZXBprGDTPc0rLHfI7s
- VXryGU7kIKqHDwe5tREK11WYlbZq4eWm3Kc2rtO7mC+OpAWnx4dlQKjg6NEfCRyLa5ea
- bLew8FfugD4c6fjaiQY+vFWl9Z1poGasldw4clK9AQEJxMgQ4KxSTmV5PKOdZYCmwfPV
- 9i1t3A/3UK5mO6Trk1Skr6MyslHPEnuzjTWerWmFz20fGmbsaoe1u5HC2DI4sPp8xukM
- yfMq8tdIjgrLh0cCpwnPQRm+X9bEDFydYxFRKXammO4Kq3Kw0D6cJhX5XpaNlE4VInNV
- itfg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=fNwu5Brajivr2NZ+53CyrBT2A5quV+LusyMm1pW2iI4=;
- b=nTvseREwgCYOWTv1LcEZUgwbgxtt27UkkqTCTolf02/S6ACP5eIHDdgZ1LQZYv2Aa5
- RSUpQjlpSXZTLMlgkwmKZUbFZotMxr+TayulXrSgoCcysX86A+p165vLCiDrJmwZXsgZ
- CaJeX3a+c3iCSgHC1BtH8VIznKg7Ca7HE15nRYcuSKHsmNvaJs2RRZwDhBVLGbolHT8Z
- Wee7ZQd0b+F2NEzPtx0RYZFfhhNOq8WLgspWTWf/yizgLZNEdth7AjIBuT9XhpRRRdEr
- PYnxWO8QSaG945FDSSpwxIx4+NhY1/gOIXHKzHzpz6mblU7M8x8U6lUueeYd0wvrRiGw
- o0Ig==
-X-Gm-Message-State: APjAAAUnYDL+s10r8HfTWf2/zUE0X5rFJ4JleGimEUVoo3cPvXk7KCOj
- fTI8mlHt4g6KFDepwM9RWLDPTtDz6XxIZA==
-X-Google-Smtp-Source: APXvYqwco7NI1yNgZpp2/qpqSq4V+HjXy7jIUynHKwu8FbE4cdXYH516yi26h8p96gVT/T4eKt2BBg==
-X-Received: by 2002:a7b:c5c9:: with SMTP id n9mr3623783wmk.94.1572949066778;
- Tue, 05 Nov 2019 02:17:46 -0800 (PST)
-Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
- [86.9.19.6])
- by smtp.gmail.com with ESMTPSA id d2sm25272593wmd.2.2019.11.05.02.17.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 02:17:46 -0800 (PST)
-Date: Tue, 5 Nov 2019 10:17:44 +0000
-From: Daniel Thompson <daniel.thompson@linaro.org>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH 38/46] video: backlight: tosa: use gpio lookup table
-Message-ID: <20191105101744.kzdpopq25slbfuue@holly.lan>
-References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-38-arnd@arndb.de>
- <CACRpkdajkSh6Bbvpfycm83j1GuCm+pTfw9fQS53JEfG2i07MKg@mail.gmail.com>
+ id 1iRvzv-0008HD-KS
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:23:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=MjHMoB6uoRtCmYsZeF3TQJPDlDHpwYTPuNaMyRTB1kdd52DrD3d2wouf3bfnptIOhOhKSurcBwRvP1ND+Es/SfxH3myOZ+hqmE3q9y54hOrYG86OQnwYjlbYvihfvlciYry1rHSbQeviaDkJ7mXm6fFRKCpnMnk9F+kXLX5POoAuq9e4NkvN8QsmHjnf+d1v+XDK2YUQpP7uBp2/fV/Ce7nxdNxSshwB+hpHloiflz1e1bsQcMmeVb/2HxXfUDKtlyuB1U/kzNpZU+e8FXhJDnqnV6XkRIfUpgkI1RPliI613HTfKGubTm3AHadcOoTtzBmlYoIOqjdIXf4uTvXAhg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sZKIcln25d+r+PAFMfHEYo9cEeXc2/sDpbZL1wT90Nk=;
+ b=B81aLgC2HtVG8+P599f57TkbDAP6dkUDwpnUG6qi59TevGUqBfixSiXMziPmrQE4eTI/3c7XxGtIphE4XLneF4SbRj3nvrph+iJRg0ZP3Wtjocpht/9/JKml5sqXee5+TBsh/1024OVfyscwDvZfZ3QPYjFyTwe6shKPxBwo5QXtl3Uk8insB8OXPsuSM6rxjpu1TktRGyKDg9TWVS7QMZTnc9V+h6FQOKyNDyyG8MGHVfm/0n627Dvl9bQNpUHv44P8N3IDlEfDW4N/24fYbZhbgm8bwnTJL6eMv6FRXUx/N+hXkq6hB1xYHvAMqJEEVTzUmHtCBouEAoH5LX5fQg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sZKIcln25d+r+PAFMfHEYo9cEeXc2/sDpbZL1wT90Nk=;
+ b=caswlHtgWPE8aaLVGRq969zSZB+ZIh6VIzHY8XEg+phjvV8w/cn3NjLtEUFJoY0l8y4QiunLuUESgn8cnp2JaRGtQEK4zPyPBWI68AVDLLnOH1UWcPUSSmR2HBHPy723dS+UAUE2pZL5NCYMO4UFR2wFBsnCse4yRHKeWt4ZEvU=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0SPR01MB0033.eurprd04.prod.outlook.com (52.135.152.161) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2430.20; Tue, 5 Nov 2019 10:23:36 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c%4]) with mapi id 15.20.2408.024; Tue, 5 Nov 2019
+ 10:23:36 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>, Abel
+ Vesa <abel.vesa@nxp.com>
+Subject: [PATCH] dt-bindings: mmc: fsl-imx-esdhc: add imx8m compatible string
+Thread-Topic: [PATCH] dt-bindings: mmc: fsl-imx-esdhc: add imx8m compatible
+ string
+Thread-Index: AQHVk8MVLLROxqVDtE+NBToMG73BkQ==
+Date: Tue, 5 Nov 2019 10:23:36 +0000
+Message-ID: <1572949321-8193-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK0PR03CA0046.apcprd03.prod.outlook.com
+ (2603:1096:203:2f::34) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 351b4f56-4a47-46be-62d1-08d761da3783
+x-ms-traffictypediagnostic: AM0SPR01MB0033:|AM0SPR01MB0033:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0SPR01MB00333ED29C279F56C312482A887E0@AM0SPR01MB0033.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3383;
+x-forefront-prvs: 0212BDE3BE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(346002)(366004)(136003)(39860400002)(396003)(189003)(199004)(2501003)(6436002)(44832011)(66556008)(486006)(6636002)(4744005)(4326008)(2616005)(476003)(478600001)(7416002)(6116002)(3846002)(6512007)(86362001)(36756003)(66446008)(186003)(26005)(64756008)(102836004)(386003)(6506007)(52116002)(50226002)(5660300002)(71200400001)(316002)(2201001)(8936002)(71190400001)(66066001)(99286004)(25786009)(66946007)(66476007)(110136005)(54906003)(8676002)(6486002)(81166006)(81156014)(2906002)(7736002)(305945005)(14454004)(256004)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0SPR01MB0033;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: EYaCU5hGDZrGEWTsv5yTPZA9hNyaWjv0VLu9APE+PXZyJFPWBxP1LuPRYEH1PLV67lGHUhT/vaVv5HZGi73rCJorx4Do2aIQPEYj78ONEWVlOtVX98j+au+So/3Kaz/dgjiRnLrdQ8w9uuKka+qz16woQnjdHdexyD/JqLAQpW3xqJDXjrgohdKWjcfV1fqKz6HNpYStZz6nEpSb8emLxiJSnnXnlTZ610kKN+goWqyzngvLEAQNv/1N+N4zvOgHYlwUxt5+PyqOwcd5G/jIKGTnsSwhXWChtOaIuN9ovcYmTxq1ZqHSmb1rsH7WWWSEZsKosDkBHm6+KTFltx9K1CxkweTzfipcdBqt2MuBbWP6MRp9dzxRKfktwquWZkk9PqZVYhi9Ec7KGt1j9uX21KHiNiKDCiP4WOWDOKfyc5zjEti2yn5eB9tNSt6j5ivI
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACRpkdajkSh6Bbvpfycm83j1GuCm+pTfw9fQS53JEfG2i07MKg@mail.gmail.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 351b4f56-4a47-46be-62d1-08d761da3783
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Nov 2019 10:23:36.2714 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Tko5uDVdoM1nNcl6Y1i451v+Ug1i3fDVen1cAyD49HCVH9XaWFY7MgGcqGsT39cGrq2nwmtnckrZDq1GhR5NBg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0SPR01MB0033
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_021753_237369_D2EBCF6C 
-X-CRM114-Status: GOOD (  16.51  )
+X-CRM114-CacheID: sfid-20191105_022339_684434_60860ACE 
+X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ no trust [40.107.6.78 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,54 +128,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Fbdev development list <linux-fbdev@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Lee Jones <lee.jones@linaro.org>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Peng Fan <peng.fan@nxp.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Jingoo Han <jingoohan1@gmail.com>, Robert Jarzmik <robert.jarzmik@free.fr>,
- Daniel Mack <daniel@zonque.org>
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 05, 2019 at 11:04:44AM +0100, Linus Walleij wrote:
-> On Fri, Oct 18, 2019 at 5:43 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> 
-> > The driver should not require a machine specific header. Change
-> > it to pass the gpio line through a lookup table, and move the
-> > timing generator definitions into the drivers itself.
-> >
-> > Cc: Lee Jones <lee.jones@linaro.org>
-> > Cc: Daniel Thompson <daniel.thompson@linaro.org>
-> > Cc: Jingoo Han <jingoohan1@gmail.com>
-> > Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-> > Cc: dri-devel@lists.freedesktop.org
-> > Cc: linux-fbdev@vger.kernel.org
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> >
-> > ---
-> > I'm not overly confident that I got the correct device names
-> > for the lookup table, it would be good if someone could
-> > double-check.
-> 
-> You're anyway doing more than required for the people who
-> may or may not be using this platform. Brokenness can surely
-> be fixed later, it's not like we are taking down the entire Amazon
-> cloud or something.
-> 
-> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+From: Peng Fan <peng.fan@nxp.com>
 
-Same here. I read, I did't see anything wrong but I can't test.
+Add imx8mq/m/n compatible string
 
-Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+---
 
+V1:
+ imx8mq/m/n.dtsi already use this compatible string,
+ but not listed in binding doc, so add it.
 
-Daniel.
+ Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt b/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt
+index f707b8bee304..2fb466ca2a9d 100644
+--- a/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt
++++ b/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt
+@@ -18,6 +18,9 @@ Required properties:
+ 	       "fsl,imx6ull-usdhc"
+ 	       "fsl,imx7d-usdhc"
+ 	       "fsl,imx7ulp-usdhc"
++	       "fsl,imx8mq-usdhc"
++	       "fsl,imx8mm-usdhc"
++	       "fsl,imx8mn-usdhc"
+ 	       "fsl,imx8qxp-usdhc"
+ 
+ Optional properties:
+-- 
+2.16.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
