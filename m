@@ -2,78 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7BB4F038B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 17:57:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B558AF0397
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 17:59:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5hjNk224E2yXi9ScsQtx1LBQUR0TVJ6PRIQfneu4zO8=; b=WScHwQdSrFEoGC
-	bfkTSPtd8pV/c6qvgKr3B9evyqYPqa1Tg49L1Sv0HSwy5RXJR9ntKNNDX4BhF/CDuDMu+rjD3KHs/
-	E3uCnJdvDkRwx2z9zal9c5e93La65Imawbdjrl+nlBII0Fh7C2qhroi+H4x8UW76Jd8H+SQvmkGBc
-	8+yEjs90yJdDJUMCj/xNOfkQGm1aer3Rng1vlh1AbgHP3JbZO9/NjYJcXoLAHCkayznvO3o1Kq/X5
-	aORYMkmiOO6akavcCTKuAxz3WKblDlnfC1tyEX2u0catDlzZSmt7F9zceHQKHJZVW4QzFXopFlyBB
-	FjPCmMUdhDl85EhdHiyA==;
+	List-Owner; bh=Xj1Vgxee1NzPpouPeimThTo9LX+/1VLWJBKYH5mVVqo=; b=BGfcabXo/m0ZRG
+	kCDN5A7ILkXvg8xwMCFD8dbdXiyVaoXVlr0oQ5h0raVM/T3uT6rx/lrXCxMowQou4S+dgelq/Zeec
+	1LCXP5bPEpK+L6uPxE1zPyqZPyKKxoaeGUGUpUkbHZ/Z7G2PYDQnthZaJgFTKfYJPNxUUydgSG5Ad
+	y95XI5nwAhsd+UC5t8n7O347ZZnN6jZjXvcsyN2euxsYduICIOxjtZSZY2twulQZj6H1uhPli7ECy
+	8v5Zx7A1k52d3F0g++Bnu9ZHHQmn/85lAL0tP3L9/umbVSNkQ5sqvimTPhGbZRpjh4A2TJcGTnimb
+	oGWxql9DqjZTffOPYgGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS29J-00051s-3i; Tue, 05 Nov 2019 16:57:45 +0000
-Received: from mail-lj1-f194.google.com ([209.85.208.194])
+	id 1iS2Ae-0005Os-Aw; Tue, 05 Nov 2019 16:59:08 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS299-00051J-Jw
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 16:57:37 +0000
-Received: by mail-lj1-f194.google.com with SMTP id l20so4016821lje.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 08:57:34 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=bOVYf2vdaSL/RWJvi5inztDYzFK8sbHwNSUro0lwIhE=;
- b=JuoeOufotHeUbgV4Q/wHNEBC25gj24A6lblZAFo88oFVU/J7QYLqL0rSaIguQS80CC
- N+BHhxwtLpwsghfmeYJosiz2RawqOG5WsZK5H9+jeRXPMRKHWqM3Kmgx9CPDlrqWZ8Xv
- KVtpd+cB+gnoP7NEajV5f8+MLNOab9jbjnKUgE7Hu0fAQDG6N9ooNvbg0i/E4gn1jBk7
- /z9PvYSihul+mKdLUcgZZCqVPFO45stOoIJz6y1TClGtEwz6r8FrfEubmBMN84nhkUNC
- NnO0gVUAz2UR0rJNlizthv9AVC/u2pOGfXw2bTJFm1E8Zh5cTUk+J9SRSnL48FDg5bFW
- +7Dg==
-X-Gm-Message-State: APjAAAUX2l/BZpLnyxa4HQ1Nzvra2x8SK/rx6VKZbsbx3IbTWHok2ABA
- 6KH7/UhIRpcImQ+850YUfnlVq1/McQR0Ifqg8/k=
-X-Google-Smtp-Source: APXvYqx1q5h25O1Avl1/rNRBA2TpfZ8vpThwQmiaeaIk1Z4Qvm+oVdx2IoV+LaUJUqn8XFTKqkgazKObjHqA+PE3MKU=
-X-Received: by 2002:a05:651c:20f:: with SMTP id
- y15mr8682641ljn.31.1572973052825; 
- Tue, 05 Nov 2019 08:57:32 -0800 (PST)
+ id 1iS2AW-0005Nq-UB
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 16:59:02 +0000
+Received: from localhost (unknown [106.51.111.166])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6691E21A4A;
+ Tue,  5 Nov 2019 16:58:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1572973140;
+ bh=/A2do6Mf/FPqPLM4v479lgV7kRc8ywC8Z/ymYhp6rms=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=OFavqygrYcNdBWeIIKwJ+n+eOg6AKPGmrReLitjDZaCiWkjp+0njB3pWCDHKLFZTP
+ SysI8QrUX1MoPkun18JjrtBovD5bHCDytIt/aJPY+SQGRy49gplo1SuPo5fPOQqzhu
+ 9iovrOO5Y3/2qhmWoliPXUHB5T4SYIfeTzTk/py0=
+Date: Tue, 5 Nov 2019 22:28:55 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Satendra Singh Thakur <sst2005@gmail.com>
+Subject: Re: [PATCH] dma/zx/remove: Removed dmam_pool_destroy from remove
+ method
+Message-ID: <20191105165855.GC952516@vkoul-mobl>
+References: <20191024041623.24658-1-sst2005@gmail.com>
 MIME-Version: 1.0
-References: <20191018163047.1284736-1-arnd@arndb.de>
- <20191104151310.GA1872@bogus>
- <CAK8P3a1B5v_3p0XhddoeWu7wChr6BndfqVVjPUvWYC6=aRfLXg@mail.gmail.com>
-In-Reply-To: <CAK8P3a1B5v_3p0XhddoeWu7wChr6BndfqVVjPUvWYC6=aRfLXg@mail.gmail.com>
-From: Sudeep Holla <sudeep.holla@arm.com>
-Date: Tue, 5 Nov 2019 16:57:21 +0000
-Message-ID: <CAPKp9uZ8OMhsXvF4m8=M+5QKHFGPK4ZmM_+eHt_perRQng9J8g@mail.gmail.com>
-Subject: Re: [PATCH 1/6] ARM: versatile: move integrator/realview/vexpress to
- versatile
-To: Arnd Bergmann <arnd@arndb.de>
+Content-Disposition: inline
+In-Reply-To: <20191024041623.24658-1-sst2005@gmail.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_085735_653540_2F2F329F 
-X-CRM114-Status: GOOD (  13.17  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191105_085900_992698_27BB57A1 
+X-CRM114-Status: GOOD (  13.59  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.194 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (sudeepholla.maillist[at]gmail.com)
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,50 +77,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>, Sudeep Holla <sudeep.holla@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-kernel@vger.kernel.org, dmaengine@vger.kernel.org,
+ Jun Nie <jun.nie@linaro.org>, Shawn Guo <shawnguo@kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 4, 2019 at 3:26 PM Arnd Bergmann <arnd@arndb.de> wrote:
->
-> On Mon, Nov 4, 2019 at 4:13 PM Sudeep Holla <sudeep.holla@arm.com> wrote:
-> >
-> > On Fri, Oct 18, 2019 at 06:29:14PM +0200, Arnd Bergmann wrote:
-> > > These are all fairly small platforms by now, and they are
-> > > closely related. Just move them all into a single directory.
-> > >
-> > > Cc: Linus Walleij <linus.walleij@linaro.org>
-> > > Cc: Liviu Dudau <liviu.dudau@arm.com>
-> > > Cc: Sudeep Holla <sudeep.holla@arm.com>
-> >
-> > Looks good to me, so for vexpress part:
-> > Acked-by: Sudeep Holla <sudeep.holla@arm.com>
-> >
-> > As Linus W requested, if you share a branch, I can give it a go on
-> > Vexpress TC2.
->
-> You are of course both right, I should have split this out into a separate
-> branch, rather than sticking it on the end of the completely unrelated
-> pxa-multiplatform branch.
->
-> For testing the changes, this should be fine in the meantime:
->
-> https://git.kernel.org/pub/scm/linux/kernel/git/arnd/playground.git/log/?h=pxa-multiplatform
+On 24-10-19, 09:46, Satendra Singh Thakur wrote:
+> In the probe method dmam_pool_create is used. Therefore, there is no
+> need to explicitly call dmam_pool_destroy in remove method as this
+> will be automatically taken care by devres
 
-Thanks, tested this branch and found no issues.
-So in addition to ack:
+Please do not reinvent system tags, git log is your friend to check for
+the tags to be used.
 
-Tested-by: Sudeep Holla <sudeep.holla@arm.com>
+In this case, it is dmaengine: zx: remove ...
 
---
-Regards,
-Sudeep
+
+> 
+> Signed-off-by: Satendra Singh Thakur <sst2005@gmail.com>
+> ---
+>  drivers/dma/zx_dma.c | 1 -
+>  1 file changed, 1 deletion(-)
+> 
+> diff --git a/drivers/dma/zx_dma.c b/drivers/dma/zx_dma.c
+> index 9f4436f7c914..7e4e457ac6d5 100644
+> --- a/drivers/dma/zx_dma.c
+> +++ b/drivers/dma/zx_dma.c
+> @@ -894,7 +894,6 @@ static int zx_dma_remove(struct platform_device *op)
+>  		list_del(&c->vc.chan.device_node);
+>  	}
+>  	clk_disable_unprepare(d->clk);
+> -	dmam_pool_destroy(d->pool);
+>  
+>  	return 0;
+>  }
+> -- 
+> 2.17.1
+
+-- 
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
