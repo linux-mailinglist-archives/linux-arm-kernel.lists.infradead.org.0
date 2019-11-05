@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29F91F0788
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:00:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 153B4F0789
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:00:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DIAtNb5ON1Vc17xHEKQI0Fju7eMVbb903suXXUNjLmY=; b=EkRjVylyeO4FzzuibWQEgVXk71
-	mvEXCnB+9rgbcYdloNmdKE5hpo8qwPpNf8lOwRhgBMQ8OzpnlXQiaVluAWLfrumqtVq0JlFregsNK
-	IGesDwg4WXBfjBGtWRSWugmj9qAfT57E8MinEy/r+qmDIrv9PlzKg25App5ab+ZB9zJzdM3LiMJuq
-	aoxbpQuDHWOik2JbxfKvUmdsRnbQ3BMqzpDoBcMgCbv3+FlrAyUn1NIih1/fKw+PECeYWIy7dqPjZ
-	Imf+4A5Wcl5xN6bjKCCW6fMRT8hnjTmkem416cHtu24J2G6d02a43hW+kkpMuXFTe1pmGLl/LKBoS
-	BXC312RQ==;
+	bh=XoKOaHU+55j/RsJgQ3bamR6jiKfLWNKy2QcBljb/fY4=; b=nbyQntkHJucrSRt+Vq0sxKN2sm
+	Tn+v8n8DOoRzlPSama9EvLGirCQSr7gK4AF6FhFk6bDnb6yDoSfkieSgcbdx2vJphI0itvBhkQAg0
+	VqQEp0nCqPCy6SOLWRark8z1Ts+8WNS7ctWZQ+K/UADpNZ21WxfZ8W6xptk5yf5OR36uqYXqvcPoW
+	KlOJTJvNcySxL3fvzCRcsEmNbdEA7FTXN59M+6xFVKhkIio4PDZneTXd818HdpX9iTHq3oOR4btiC
+	aCTdN+zKp9NvR5A3IoallZO/KQDdKun1yTgTlF0Chh/tX375VXO5HGK+I7azYVxhk6mvyJ1JnD9l1
+	5r6vJbgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS5w6-00065A-Ty; Tue, 05 Nov 2019 21:00:22 +0000
+	id 1iS5wM-0007c1-SP; Tue, 05 Nov 2019 21:00:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5uu-00050C-5E
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:59:09 +0000
+ id 1iS5ux-00057l-2m
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:59:12 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1C1C3222C9;
- Tue,  5 Nov 2019 20:59:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DAE8C222C1;
+ Tue,  5 Nov 2019 20:59:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987547;
- bh=xyCHHCLvpdzZqaC5UGmrIgpEhqZXB3G4JbzR9NWg6pg=;
+ s=default; t=1572987550;
+ bh=Oq4qxjNlIhJPIuOSCqUS5bvKK6mzMrpUrieH1mqMXb8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=fVN7v+1qB0xcHGScsggR3ypRRpqWsWiygCgNcZJtIeHJ6KXLPXGk2oPcY8pt0i/mm
- F4eZ40f9GCk0U1wFu/ajuKZEFGwex30m6F3SHsWd6Rcm0NQBtVqGMGjMTA/6hdw014
- 2d5tCbhdYr0Nk6xG+XXZdlTqOKObmY2iQEfncWug=
+ b=afAkR2OxPZ1zF1q6QlEdZ6FI8JCNQdHkX7LWnJgp2K2EfSUJG/CSR35/4Wf8qNWyE
+ FTX75ixCQmipQGqnpu0ptpYkCo1H3buyiQ4jj5l9+/lsToJrhpYO+RW/QSrLnO5yGB
+ xSQflcdHohhFu6qhNhSnUU8SCRJdX0N+C1922VQI=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 03/53] ARM: 8479/2: add implementation for
- arm-smccc
-Date: Tue,  5 Nov 2019 21:57:56 +0100
-Message-Id: <20191105205846.1394-4-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 04/53] ARM: 8480/2: arm64: add implementation
+ for arm-smccc
+Date: Tue,  5 Nov 2019 21:57:57 +0100
+Message-Id: <20191105205846.1394-5-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_125908_265221_46B352E2 
-X-CRM114-Status: GOOD (  16.17  )
+X-CRM114-CacheID: sfid-20191105_125911_172371_5FFDF2AF 
+X-CRM114-Status: GOOD (  17.26  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,134 +92,135 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Jens Wiklander <jens.wiklander@linaro.org>
 
-Commit b329f95d70f3f955093e9a2b18ac1ed3587a8f73 upstream.
+Commit 14457459f9ca2ff8521686168ea179edc3a56a44 upstream.
 
-Adds implementation for arm-smccc and enables CONFIG_HAVE_SMCCC for
-architectures that may support arm-smccc. It's the responsibility of the
-caller to know if the SMC instruction is supported by the platform.
+Adds implementation for arm-smccc and enables CONFIG_HAVE_SMCCC.
 
-Reviewed-by: Lars Persson <lars.persson@axis.com>
+Acked-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Jens Wiklander <jens.wiklander@linaro.org>
 Signed-off-by: Russell King <rmk+kernel@arm.linux.org.uk>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/Kconfig             |  1 +
- arch/arm/kernel/Makefile     |  2 +
- arch/arm/kernel/armksyms.c   |  6 ++
- arch/arm/kernel/smccc-call.S | 62 ++++++++++++++++++++
- 4 files changed, 71 insertions(+)
+ arch/arm64/Kconfig              |  1 +
+ arch/arm64/kernel/Makefile      |  2 +-
+ arch/arm64/kernel/arm64ksyms.c  |  5 +++
+ arch/arm64/kernel/asm-offsets.c |  3 ++
+ arch/arm64/kernel/smccc-call.S  | 43 ++++++++++++++++++++
+ 5 files changed, 53 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index 737c8b0dda84..ef742bacd568 100644
---- a/arch/arm/Kconfig
-+++ b/arch/arm/Kconfig
-@@ -37,6 +37,7 @@ config ARM
- 	select HAVE_ARCH_KGDB if !CPU_ENDIAN_BE32
- 	select HAVE_ARCH_SECCOMP_FILTER if (AEABI && !OABI_COMPAT)
- 	select HAVE_ARCH_TRACEHOOK
-+	select HAVE_ARM_SMCCC if CPU_V7
- 	select HAVE_BPF_JIT
- 	select HAVE_CC_STACKPROTECTOR
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index f18b8c26a959..644f4326b3e7 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -92,6 +92,7 @@ config ARM64
+ 	select SPARSE_IRQ
+ 	select SYSCTL_EXCEPTION_TRACE
  	select HAVE_CONTEXT_TRACKING
-diff --git a/arch/arm/kernel/Makefile b/arch/arm/kernel/Makefile
-index 3c789496297f..599c950468fc 100644
---- a/arch/arm/kernel/Makefile
-+++ b/arch/arm/kernel/Makefile
-@@ -91,4 +91,6 @@ obj-y				+= psci-call.o
- obj-$(CONFIG_SMP)		+= psci_smp.o
- endif
++	select HAVE_ARM_SMCCC
+ 	help
+ 	  ARM 64-bit (AArch64) Linux support.
  
-+obj-$(CONFIG_HAVE_ARM_SMCCC)	+= smccc-call.o
-+
- extra-y := $(head-y) vmlinux.lds
-diff --git a/arch/arm/kernel/armksyms.c b/arch/arm/kernel/armksyms.c
-index f89811fb9a55..7e45f69a0ddc 100644
---- a/arch/arm/kernel/armksyms.c
-+++ b/arch/arm/kernel/armksyms.c
-@@ -16,6 +16,7 @@
+diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
+index 474691f8b13a..0170bea3d4ae 100644
+--- a/arch/arm64/kernel/Makefile
++++ b/arch/arm64/kernel/Makefile
+@@ -17,7 +17,7 @@ arm64-obj-y		:= debug-monitors.o entry.o irq.o fpsimd.o		\
+ 			   hyp-stub.o psci.o psci-call.o cpu_ops.o insn.o	\
+ 			   return_address.o cpuinfo.o cpu_errata.o		\
+ 			   cpufeature.o alternative.o cacheinfo.o		\
+-			   smp.o smp_spin_table.o topology.o
++			   smp.o smp_spin_table.o topology.o smccc-call.o
+ 
+ extra-$(CONFIG_EFI)			:= efi-entry.o
+ 
+diff --git a/arch/arm64/kernel/arm64ksyms.c b/arch/arm64/kernel/arm64ksyms.c
+index 3b6d8cc9dfe0..678f30b05a45 100644
+--- a/arch/arm64/kernel/arm64ksyms.c
++++ b/arch/arm64/kernel/arm64ksyms.c
+@@ -26,6 +26,7 @@
  #include <linux/syscalls.h>
  #include <linux/uaccess.h>
  #include <linux/io.h>
 +#include <linux/arm-smccc.h>
  
  #include <asm/checksum.h>
- #include <asm/ftrace.h>
-@@ -175,3 +176,8 @@ EXPORT_SYMBOL(__gnu_mcount_nc);
- EXPORT_SYMBOL(__pv_phys_pfn_offset);
- EXPORT_SYMBOL(__pv_offset);
+ 
+@@ -68,3 +69,7 @@ EXPORT_SYMBOL(test_and_change_bit);
+ #ifdef CONFIG_FUNCTION_TRACER
+ EXPORT_SYMBOL(_mcount);
  #endif
 +
-+#ifdef CONFIG_HAVE_ARM_SMCCC
++	/* arm-smccc */
 +EXPORT_SYMBOL(arm_smccc_smc);
 +EXPORT_SYMBOL(arm_smccc_hvc);
-+#endif
-diff --git a/arch/arm/kernel/smccc-call.S b/arch/arm/kernel/smccc-call.S
+diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
+index 087cf9a65359..7c4146a4257b 100644
+--- a/arch/arm64/kernel/asm-offsets.c
++++ b/arch/arm64/kernel/asm-offsets.c
+@@ -28,6 +28,7 @@
+ #include <asm/suspend.h>
+ #include <asm/vdso_datapage.h>
+ #include <linux/kbuild.h>
++#include <linux/arm-smccc.h>
+ 
+ int main(void)
+ {
+@@ -162,5 +163,7 @@ int main(void)
+   DEFINE(SLEEP_SAVE_SP_PHYS,	offsetof(struct sleep_save_sp, save_ptr_stash_phys));
+   DEFINE(SLEEP_SAVE_SP_VIRT,	offsetof(struct sleep_save_sp, save_ptr_stash));
+ #endif
++  DEFINE(ARM_SMCCC_RES_X0_OFFS,	offsetof(struct arm_smccc_res, a0));
++  DEFINE(ARM_SMCCC_RES_X2_OFFS,	offsetof(struct arm_smccc_res, a2));
+   return 0;
+ }
+diff --git a/arch/arm64/kernel/smccc-call.S b/arch/arm64/kernel/smccc-call.S
 new file mode 100644
-index 000000000000..2e48b674aab1
+index 000000000000..ae0496fa4235
 --- /dev/null
-+++ b/arch/arm/kernel/smccc-call.S
-@@ -0,0 +1,62 @@
++++ b/arch/arm64/kernel/smccc-call.S
+@@ -0,0 +1,43 @@
 +/*
 + * Copyright (c) 2015, Linaro Limited
 + *
-+ * This software is licensed under the terms of the GNU General Public
-+ * License version 2, as published by the Free Software Foundation, and
-+ * may be copied, distributed, and modified under those terms.
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License Version 2 as
++ * published by the Free Software Foundation.
 + *
 + * This program is distributed in the hope that it will be useful,
 + * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 + * GNU General Public License for more details.
 + *
 + */
 +#include <linux/linkage.h>
-+
-+#include <asm/opcodes-sec.h>
-+#include <asm/opcodes-virt.h>
-+#include <asm/unwind.h>
-+
-+	/*
-+	 * Wrap c macros in asm macros to delay expansion until after the
-+	 * SMCCC asm macro is expanded.
-+	 */
-+	.macro SMCCC_SMC
-+	__SMC(0)
-+	.endm
-+
-+	.macro SMCCC_HVC
-+	__HVC(0)
-+	.endm
++#include <asm/asm-offsets.h>
 +
 +	.macro SMCCC instr
-+UNWIND(	.fnstart)
-+	mov	r12, sp
-+	push	{r4-r7}
-+UNWIND(	.save	{r4-r7})
-+	ldm	r12, {r4-r7}
-+	\instr
-+	pop	{r4-r7}
-+	ldr	r12, [sp, #(4 * 4)]
-+	stm	r12, {r0-r3}
-+	bx	lr
-+UNWIND(	.fnend)
++	.cfi_startproc
++	\instr	#0
++	ldr	x4, [sp]
++	stp	x0, x1, [x4, #ARM_SMCCC_RES_X0_OFFS]
++	stp	x2, x3, [x4, #ARM_SMCCC_RES_X2_OFFS]
++	ret
++	.cfi_endproc
 +	.endm
 +
 +/*
-+ * void smccc_smc(unsigned long a0, unsigned long a1, unsigned long a2,
++ * void arm_smccc_smc(unsigned long a0, unsigned long a1, unsigned long a2,
 + *		  unsigned long a3, unsigned long a4, unsigned long a5,
 + *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res)
 + */
 +ENTRY(arm_smccc_smc)
-+	SMCCC SMCCC_SMC
++	SMCCC	smc
 +ENDPROC(arm_smccc_smc)
 +
 +/*
-+ * void smccc_hvc(unsigned long a0, unsigned long a1, unsigned long a2,
++ * void arm_smccc_hvc(unsigned long a0, unsigned long a1, unsigned long a2,
 + *		  unsigned long a3, unsigned long a4, unsigned long a5,
 + *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res)
 + */
 +ENTRY(arm_smccc_hvc)
-+	SMCCC SMCCC_HVC
++	SMCCC	hvc
 +ENDPROC(arm_smccc_hvc)
 -- 
 2.17.1
