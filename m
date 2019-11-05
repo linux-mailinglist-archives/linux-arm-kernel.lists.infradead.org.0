@@ -2,75 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9774EF8D4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 10:28:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AAD5EF997
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 10:37:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KIcWS005OMVRydSmse3lgOj8tPu+zmZsVzjhm6oLluc=; b=NogCy8su2OM0Dl
-	5BzS5llB8/IWj5xgkvtVrMX7pV+7z5iyauWIYyfi2kSs/8YiXH47HJ9+RViwzRv9H2SoEOzAMGo/7
-	EVHiG6Q0cfhELST7j/dcC8MaPpgXvqAmceaHmYPRnNtpEjBaYqf3XskaDT9/AdCtf6mQDxFcfXtI1
-	9dGyY+eO9rmKcmeslVz2nl+B0A4oGpgDw7aKtq52BcndPf6aH8PW4uc+9zoAoJeNu3u30y5IPdIqv
-	fGgUv3KLnq4XTWECmXkQ5iyhHvk+EhDEha3nM2SnZBLXzgONBOpPhwwrWBzC7jrGbyZp2aaZ6wmne
-	VNNl/SlI1b6itZDacpPg==;
+	List-Owner; bh=v1hI4CrOn32OHGnt54atWJbYk3Tk/OCY4KorJS24wls=; b=jM7/c5vdk2qghe
+	PshV0lBDQuyM8QxgPdOCsDxjr4gyltQjD9r9wy+Ai7HGiCemR79EXt8Z6qs31/uCwnx+aZ+C7usw4
+	tTo5Zb+B39g28NCz4Kg7gY9h55oQvHWpPYulCzku4lCOua4Gd/cVT/iX7YAFPzZHGHh/gg6qxv+iT
+	qUjmECPNukME4of0/bacB4xw7IkcyXmpeIMYpj7tmfLTO2xlKEUHVMOd0pcc1jdDUEKW+MRIqeoaH
+	et+AQGQ9fOW5tLQZaHahG1vOOTQRnPW/pD98w4bPgYXtqDuNogLNmnTsPaRTHu73k5yfKG320P1Sp
+	wZV1leYBaT1OShRiOzEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRv8c-00024h-96; Tue, 05 Nov 2019 09:28:34 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1iRvHF-0005ht-S7; Tue, 05 Nov 2019 09:37:29 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRv8V-000231-4X
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 09:28:28 +0000
-Received: by mail-lj1-x243.google.com with SMTP id e9so7661089ljp.13
+ id 1iRvH8-0005hY-9H
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 09:37:24 +0000
+Received: by mail-pg1-x543.google.com with SMTP id 15so502334pgh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 01:28:26 -0800 (PST)
+ Tue, 05 Nov 2019 01:37:21 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=F2FPfgjdbIXWdDjS0yCRl6/2h1CV4PZp64uPK2X2BNQ=;
- b=WVjlcjsAOE+e3hERSGqNCL8ugQssMBzjxA2Ol1tzpslqafskb+d2jyNqT1JD9GsOMo
- qsCQWow1BCS3ieMoh8sCB2LZw8OMmnvBYirEwVOK0hECiIXvPCK/qloP+/hGPgf7mBIW
- nGNIpW27JhXojS4uyw/a9qYmYpu4wEau1xe775jP74yD7K+PQU+DawGWaPSO4jZolhMl
- 6n7hDnxoY9IKeSpOdI6474fWiZmGTcVWlgZhkPxjoPRFYxP80S927Ww00HXm1JWknfso
- QkI943Fcr72SDf9V+JOoKKVnRzqbaw5PWTIj8OaHuycQeD6GgTHdHdEHSGxza4WG1wkx
- hJwQ==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=jDulaD8yGPSw9RKsvK4+mof/PDtVuO9RYsvVXQwxzXM=;
+ b=o27oGeaQFxD86u8gIGPhrzIR6SfI9fMQiBcCgp5sHCQPiaD27PrDoNQBJWtB0QX+dP
+ qzXuOric5LOnQdEqqsdBrNIrsOh6QfgTwdZqm8w+5Bbo7Aqbc1nQr+Z2iKKg2xNmpSdW
+ XBp/BuUmEQddIvttxGZhA/tCgUFUvbqjcFk/iOpIDzFyrlKHe+nOzDET9BacRvs9g3AQ
+ /Z7xa0vBzFtlr1TRIsIb3T8BpEzi5Alw/tFY56gRnfYNBVsRaHVVTnHprjy2VeynAt1u
+ HVe3f6kmQpXlYTtVHFnMAEw897EAarckuA+gTg39J3OAKNz5oqgDex9R818HEacqL0TP
+ 74jw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=F2FPfgjdbIXWdDjS0yCRl6/2h1CV4PZp64uPK2X2BNQ=;
- b=D84mUUoJCdreq3AR668+6BATHKc+Zwi8C0B2WqV2OEad0Hd2lxL+dI7phX4BDvJD3r
- S+aUvIhjp3TIYF9aXa6sXiPMtRSX8FY/JTTAFOvRlZYTNOHym9mlr7F/fIz6HMJhTmSA
- zbiO/B5EErbDyS8mA2ldvmHQgQ0pBKN6hXQm80QI09iXaWfA3LQCqzU1EXtMHceznEJy
- neeJJnS6EPwv5hm4htS/UREbK1z1cgSceBLD9TpPs88cTCkQ8i29C9eka2KiERvFDHoi
- T4c6W8mA8swEkKjz/qz0KYSObCEj+zzve5E1EBKvDPzxIkm/6aGEJ5EmM+qFYBRdxsSZ
- EIug==
-X-Gm-Message-State: APjAAAVCAJszayeGGO1sqdoE4VuCDvCmV6x6ff3LBfwEQHku6bVD1UjZ
- 1N5pvl4UUJfYg0WbB1RjoJd43ApPbrXZS4wku6U8Ug==
-X-Google-Smtp-Source: APXvYqzkf3P4NiC+7rZsNgbXYUIcsBRDikSMDKFNsnz+OK18v4KaaK/EheFwXUjlKoFP+nppakoDlDtKmiwMGx5B9Mw=
-X-Received: by 2002:a2e:9a55:: with SMTP id k21mr8803557ljj.251.1572946105330; 
- Tue, 05 Nov 2019 01:28:25 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=jDulaD8yGPSw9RKsvK4+mof/PDtVuO9RYsvVXQwxzXM=;
+ b=GBQ6KQhgY81xW2d+VL9tNa25yZNqe+xHdcFiIUkKsEJrJ5XavIpe4fNiNmawgGumbJ
+ x6TWgc+GMDDI/1WFktzdWe/ZDvs0+aiyhX5zj7GcC2nLBGjn574ZAn5uL1fWjoal0gjV
+ 3OghG+8Z3JYBfMP1SlA6fuwlzOont2Dry8xK/0nHX4KcE8ONuJ65SWiapv/8bqiAQSmT
+ /jBIAUHriKy5ix4qD4J23Ig+bdQA5T1eI7XJwipXlLzLIQ+Lwrez7rK/aTt/dxeY+StY
+ 1/BRKFvzhoa3IGSoYFLhPof3+392zwxy59Yg0lRJebv0NFQPVa0g5gSmey4giMQH0woj
+ uo2g==
+X-Gm-Message-State: APjAAAUKLmndPTP8kKyLI8q7Pm0gXLvJYO5GQwSSpubY2jnIBo9cm/8g
+ 4Jk+AQGhJZ6J88Dxrs7T9CIbpQ==
+X-Google-Smtp-Source: APXvYqyzuRVgyvTXTyQjC8xtu0nRUNtH/fWQGOgOhCgO04UFjuK/wTl+n0U3uw5++iupsawbMVoZEA==
+X-Received: by 2002:a17:90a:ab83:: with SMTP id
+ n3mr5259220pjq.21.1572946641205; 
+ Tue, 05 Nov 2019 01:37:21 -0800 (PST)
+Received: from localhost ([122.171.110.253])
+ by smtp.gmail.com with ESMTPSA id 135sm17540908pgh.89.2019.11.05.01.37.19
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 05 Nov 2019 01:37:20 -0800 (PST)
+Date: Tue, 5 Nov 2019 15:07:17 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH v2] cpufreq: sun50i: Fix CPU speed bin detection
+Message-ID: <20191105093717.q5ixjjsnb3aqzxql@vireshk-i7>
+References: <20191101164152.445067-1-megous@megous.com>
+ <20191103155901.GC7001@gilmour>
 MIME-Version: 1.0
-References: <20191018154052.1276506-1-arnd@arndb.de>
- <20191018154201.1276638-26-arnd@arndb.de>
-In-Reply-To: <20191018154201.1276638-26-arnd@arndb.de>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 5 Nov 2019 10:28:12 +0100
-Message-ID: <CACRpkdYDaJmd1MxmEA52Fjbh0d6Q5Vvb-Fb1SVLH-6AquxC6+Q@mail.gmail.com>
-Subject: Re: [PATCH 26/46] ARM: pxa: zylonite: use gpio lookup instead mfp
- header
-To: Arnd Bergmann <arnd@arndb.de>
+Content-Disposition: inline
+In-Reply-To: <20191103155901.GC7001@gilmour>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_012827_189458_95BCBCE9 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20191105_013722_333774_8DBA0C43 
+X-CRM114-Status: GOOD (  18.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,40 +99,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>, Daniel Mack <daniel@zonque.org>,
- Linux Input <linux-input@vger.kernel.org>,
- Robert Jarzmik <robert.jarzmik@free.fr>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Ondrej Jirman <megous@megous.com>,
+ "open list:ALLWINNER CPUFREQ DRIVER" <linux-pm@vger.kernel.org>,
+ Yangtao Li <tiny.windzz@gmail.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Chen-Yu Tsai <wens@csie.org>, open list <linux-kernel@vger.kernel.org>,
+ linux-sunxi@googlegroups.com,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Oct 18, 2019 at 5:42 PM Arnd Bergmann <arnd@arndb.de> wrote:
+On 03-11-19, 16:59, Maxime Ripard wrote:
+> On Fri, Nov 01, 2019 at 05:41:51PM +0100, Ondrej Jirman wrote:
+> > I have observed failures to boot on Orange Pi 3, because this driver
+> > determined that my SoC is from the normal bin, but my SoC only works
+> > reliably with the OPP values for the slowest bin.
+> >
+> > By querying H6 owners, it was found that e-fuse values found in the wild
+> > are in the range of 1-3, value of 7 was not reported, yet. From this and
+> > from unused defines in BSP code, it can be assumed that meaning of efuse
+> > values on H6 actually is:
+> >
+> > - 1 = slowest bin
+> > - 2 = normal bin
+> > - 3 = fastest bin
+> >
+> > Vendor code actually treats 0 and 2 as invalid efuse values, but later
+> > treats all invalid values as a normal bin. This looks like a mistake in
+> > bin detection code, that was plastered over by a hack in cpufreq code,
+> > so let's not repeat it here. It probably only works because there are no
+> > SoCs in the wild with efuse value of 0, and fast bin SoCs are made to
+> > use normal bin OPP tables, which is also safe.
+> >
+> > Let's play it safe and interpret 0 as the slowest bin, but fix detection
+> > of other bins to match this research. More research will be done before
+> > actual OPP tables are merged.
+> >
+> > Fixes: f328584f7bff ("cpufreq: Add sun50i nvmem based CPU scaling driver")
+> > Signed-off-by: Ondrej Jirman <megous@megous.com>
+> 
+> Acked-by: Maxime Ripard <mripard@kernel.org>
 
-> The mach/mfp.h header is only used by this one driver
-> for hardcoded gpio numbers. Change that to use a lookup
-> table instead.
->
-> Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-> Cc: linux-input@vger.kernel.org
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-(...)
-> +               GPIO_LOOKUP("gpio-pxa", mfp_to_gpio(MFP_PIN_GPIO15),
-> +                           "touch", GPIO_ACTIVE_LOW),
+Applied. Thanks.
 
-What I tried to do with code like this, when I was ambitious,
-was to wind out mfp_to_gpio() as well and either just encode
-the offset on gpio-pxa as a define locally.
-
-But this works too, the kernel looks better after than before
-and I am not perfectionist, so:
-Acked-by: Linus Walleij <linus.walleij@linaro.org>
-
-Yours,
-Linus Walleij
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
