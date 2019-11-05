@@ -2,87 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A095F06B8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:13:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26BD0F0705
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:35:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k/foHOClUQ7gXr5hnk69OmP/adNHquahfLkpi5r9TD0=; b=Y9xl7UoDO4eMDx
-	wyiPF+M+ULBqBYzfcFoXcO/prIBsscvTn6f71ltxMs6eqZpjgzbHGHRZni1HLrltQmibOGGnWLEwb
-	KbjZqwLaOof/pf0X6oCB6kXd/9DozehPtp+yFoAi0AfCgtmqkpJW2+7lqwbIhQmVlTaorTPGSrTBK
-	X3iLpO3VfbjiC6h5LgPcyiaRyUVtcNWQ5rdRMtPzXwOls6N+xxyQGezP463p+MpldQrnZ8P2/GIJ/
-	olqFdfLaf8al35zQPP/kbEM87qGM5dPQ//rtwkRD/8D1MwtRT3h887BfEQ6NH/vcxZX5ST9CPdVZy
-	6uBu0PBhNrZw7G9ycBsw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TYQ6ZFMWXc9qjpYxdNp6UuvqlCmZjlaLLUeCBzbMNtA=; b=Z4fFGxF29I1WSP
+	ayYzHyZi7OpgbuuvcbPBUns225dYzykMgr2fQux/Tg8kMOcYZMyQF7lnqTwWRfFw6izY6bM1oXS7I
+	XFf3vfiTa+cripC9/iQdDpAyb0iXHBv1QEXUXMYy0QArJdgmgk/Tp2q/hsfJ3BxsqA6cFuCCebqlX
+	XnBnYgPcmgmFpo2sESAnRVmCafYj5JTbcmOSUg3Vfros2XrnFriN9rFmOLqINzjjmH5+5G4leyso9
+	YKC2IIZWCkw7TIPX+x3UjVyWzGv0dROB8BEeOvy7xCMaq3rAz5B607LGNFb+aqxtPFDyTHLRo/ofV
+	qHSKN2CBaYlVXRYflP0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS5CU-0001JR-1D; Tue, 05 Nov 2019 20:13:14 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5CK-0001Iv-Ku
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:13:06 +0000
-Received: by mail-oi1-f193.google.com with SMTP id i185so18756691oif.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 12:13:04 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=mU9UcOU7sHcf7HCmRIHXhWHMA1uoQHabE8Uv8Jt+A7E=;
- b=ezQdxC2CeFaS2s/bbyppjYUWAEKASTxROgfArsnNrysCKPjUJagrVc1VeRfrD3XOca
- 4IY4kAaAOpNmjQWo56GBdY2nyF5DiarGCR+8H0Fk4wsRbo7w8L25rIz26Yr65Aw9gFn9
- vnOjWm2/E4Ppxj+G8afY5DWebMnbYIgh+K2E+YMX9mF6iQtRf35+bhBUGf0ah3lKip47
- WweGTshlr+VJyeI3+m5kA7G9j8ch+z5vBoZzURrYxABbUeSP7OJE2E/dLpajMQaI8Ie5
- fqSLpQpUnGhbzgPwbdPxs4HvOt7gohNoOVf9RVYuso6PJmnkq2PVPyNJ7whINh4JRPwE
- 8VbQ==
-X-Gm-Message-State: APjAAAV7TJ6kplnTMoy1piWfHi5/ALffJEGKpQW31r9XQUxGCHYzFHeW
- LrjufWJjTCMCmHQdu0dDBA==
-X-Google-Smtp-Source: APXvYqzy0m98tPqHlFSqTVQuTPMUjEJDLNZe7DOwoduqbUy3ipM2+KtNECfZLQnN0fel0V++XN/OPg==
-X-Received: by 2002:aca:dd0a:: with SMTP id u10mr740393oig.130.1572984783628; 
- Tue, 05 Nov 2019 12:13:03 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id v13sm1077013ota.53.2019.11.05.12.13.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 12:13:03 -0800 (PST)
-Date: Tue, 5 Nov 2019 14:13:02 -0600
-From: Rob Herring <robh@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH v3 3/6] dt-bindings: devfreq: Add bindings for imx ddr
- controller
-Message-ID: <20191105201302.GA4772@bogus>
-References: <cover.1572558427.git.leonard.crestez@nxp.com>
- <b9a87c69eb603622303add4f0c02dd4c1262462a.1572558427.git.leonard.crestez@nxp.com>
- <20191104222126.GB5218@bogus>
- <VI1PR04MB7023F375AEDC4549FA12247FEE7E0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+	id 1iS5Y2-0002lp-PX; Tue, 05 Nov 2019 20:35:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iS5XV-0001Np-R4; Tue, 05 Nov 2019 20:34:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7F2DD8E6;
+ Tue,  5 Nov 2019 12:34:56 -0800 (PST)
+Received: from [192.168.225.149] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 178C53F95D;
+ Mon,  4 Nov 2019 16:00:07 -0800 (PST)
+Subject: Re: [PATCH V8] mm/debug: Add tests validating architecture page table
+ helpers
+To: linux-mm@kvack.org, Andrew Morton <akpm@linux-foundation.org>
+References: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <e0aa8d49-5511-15e4-f413-62c99eea4fab@arm.com>
+Date: Tue, 5 Nov 2019 05:30:41 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <VI1PR04MB7023F375AEDC4549FA12247FEE7E0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_121304_684448_A0342DA7 
-X-CRM114-Status: GOOD (  18.63  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20191105_123457_960257_8E6AF6EC 
+X-CRM114-Status: GOOD (  21.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,67 +61,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Martin Kepplinger <martink@posteo.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Michal Hocko <mhocko@kernel.org>, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-s390@vger.kernel.org,
+ Jason Gunthorpe <jgg@ziepe.ca>, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Ingo Molnar <mingo@kernel.org>, Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, Vlastimil Babka <vbabka@suse.cz>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 05, 2019 at 07:25:57PM +0000, Leonard Crestez wrote:
-> On 05.11.2019 00:21, Rob Herring wrote:
-> > On Thu, Oct 31, 2019 at 11:50:24PM +0200, Leonard Crestez wrote:
-> >> Add devicetree bindings for the i.MX DDR Controller on imx8m series
-> >> chips. It supports dynamic frequency switching between multiple data
-> >> rates and this is exposed to Linux via the devfreq subsystem.
-> >>
-> >> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> >> ---
-> >>   .../devicetree/bindings/devfreq/imx-ddrc.yaml | 60 +++++++++++++++++++
-> > 
-> > .../bindings/memory-controllers/
+
+
+On 10/28/2019 10:59 AM, Anshuman Khandual wrote:
+> This adds tests which will validate architecture page table helpers and
+> other accessors in their compliance with expected generic MM semantics.
+> This will help various architectures in validating changes to existing
+> page table helpers or addition of new ones.
 > 
-> Okay, but I'm not sure about the rules here. Usually there is a 1:1 
-> mapping between subsystems and bindings directory but I guess devfreq is 
-> odd since it's not really a physical class of device.
+> This test covers basic page table entry transformations including but not
+> limited to old, young, dirty, clean, write, write protect etc at various
+> level along with populating intermediate entries with next page table page
+> and validating them.
+> 
+> Test page table pages are allocated from system memory with required size
+> and alignments. The mapped pfns at page table levels are derived from a
+> real pfn representing a valid kernel text symbol. This test gets called
+> right after page_alloc_init_late().
+> 
+> This gets build and run when CONFIG_DEBUG_VM_PGTABLE is selected along with
+> CONFIG_VM_DEBUG. Architectures willing to subscribe this test also need to
+> select CONFIG_ARCH_HAS_DEBUG_VM_PGTABLE which for now is limited to x86 and
+> arm64. Going forward, other architectures too can enable this after fixing
+> build or runtime problems (if any) with their page table helpers.
+> 
+> Folks interested in making sure that a given platform's page table helpers
+> conform to expected generic MM semantics should enable the above config
+> which will just trigger this test during boot. Any non conformity here will
+> be reported as an warning which would need to be fixed. This test will help
+> catch any changes to the agreed upon semantics expected from generic MM and
+> enable platforms to accommodate it thereafter.
+> 
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Vlastimil Babka <vbabka@suse.cz>
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Mike Rapoport <rppt@linux.vnet.ibm.com>
+> Cc: Jason Gunthorpe <jgg@ziepe.ca>
+> Cc: Dan Williams <dan.j.williams@intel.com>
+> Cc: Peter Zijlstra <peterz@infradead.org>
+> Cc: Michal Hocko <mhocko@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: Steven Price <Steven.Price@arm.com>
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+> Cc: Kees Cook <keescook@chromium.org>
+> Cc: Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>
+> Cc: Matthew Wilcox <willy@infradead.org>
+> Cc: Sri Krishna chowdary <schowdary@nvidia.com>
+> Cc: Dave Hansen <dave.hansen@intel.com>
+> Cc: Russell King - ARM Linux <linux@armlinux.org.uk>
+> Cc: Michael Ellerman <mpe@ellerman.id.au>
+> Cc: Paul Mackerras <paulus@samba.org>
+> Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
+> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+> Cc: "David S. Miller" <davem@davemloft.net>
+> Cc: Vineet Gupta <vgupta@synopsys.com>
+> Cc: James Hogan <jhogan@kernel.org>
+> Cc: Paul Burton <paul.burton@mips.com>
+> Cc: Ralf Baechle <ralf@linux-mips.org>
+> Cc: Kirill A. Shutemov <kirill@shutemov.name>
+> Cc: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+> Cc: Christophe Leroy <christophe.leroy@c-s.fr>
+> Cc: Ingo Molnar <mingo@kernel.org>
+> Cc: linux-snps-arc@lists.infradead.org
+> Cc: linux-mips@vger.kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-ia64@vger.kernel.org
+> Cc: linuxppc-dev@lists.ozlabs.org
+> Cc: linux-s390@vger.kernel.org
+> Cc: linux-sh@vger.kernel.org
+> Cc: sparclinux@vger.kernel.org
+> Cc: x86@kernel.org
+> Cc: linux-kernel@vger.kernel.org
+> 
+> Tested-by: Christophe Leroy <christophe.leroy@c-s.fr>		#PPC32
+> Suggested-by: Catalin Marinas <catalin.marinas@arm.com>
+> Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
+> Signed-off-by: Christophe Leroy <christophe.leroy@c-s.fr>
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> ---
+> 
+> This adds a test validation for architecture exported page table helpers.
+> Patch adds basic transformation tests at various levels of the page table.
+> 
+> This test was originally suggested by Catalin during arm64 THP migration
+> RFC discussion earlier. Going forward it can include more specific tests
+> with respect to various generic MM functions like THP, HugeTLB etc and
+> platform specific tests.
+> 
+> https://lore.kernel.org/linux-mm/20190628102003.GA56463@arrakis.emea.arm.com/
+> 
+> Needs to be applied on linux-next (next-20191025).
+> 
+> Changes in V8:
+> 
+> - Enabled ARCH_HAS_DEBUG_VM_PGTABLE on PPC32 platform per Christophe
+> - Updated feature documentation as DEBUG_VM_PGTABLE is now enabled on PPC32 platform
+> - Moved ARCH_HAS_DEBUG_VM_PGTABLE earlier to indent it with DEBUG_VM per Christophe
+> - Added an information message in debug_vm_pgtable() per Christophe
+> - Dropped random_vaddr boundary condition checks per Christophe and Qian
+> - Replaced virt_addr_valid() check with pfn_valid() check in debug_vm_pgtable()
 
-Mostly true, but it's not completely 1:1.
+Hello Andrew,
 
+Just wondering if this version looks okay or is there anything else which still
+needs to be accommodated here first, before this test can be considered for merging ?
+Thank you.
 
-> I saw there is also a drivers/memory and there is already a 
-> devfreq-using driver in there (EXYNOS5422_DMC).
-
-Yeah, well it's been a while since I last tried to clean up locations of 
-things. DDR controller bindings are not in the best shape.
-
-
-> It's not clear if my driver fits in there; as far as I can see the only 
-> "core" functionality in drivers/memory is parsing DDR timings from DTS 
-> but for imx8m this is all controlled in firmware.
-
-You shouldn't have to think about that. Bindings should be for DDR 
-controllers regardless of whether there's a driver for devfreq, EDAC, 
-perf, or ??? or all of those.
-
-Rob
+- Anshuman
 
 _______________________________________________
 linux-arm-kernel mailing list
