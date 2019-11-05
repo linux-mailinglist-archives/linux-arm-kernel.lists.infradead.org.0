@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0F7BEFEAB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 14:34:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97B18EFEAC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 14:34:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YcHBvZQUz/X9HTxdmgcBkS3eDtIjG3/a/qYe3mCdU+c=; b=g8S30Bjh1IFasC
-	oGAvtxX7x3Ml655xXDOu9T8EDF5azQfVRRlDIJkoPnAHNy+bkVn4/j4Sy84U8M+x9CuOkRNfcbt80
-	dkWx1y8Ss0I9hc7nYdsPqjxweMU7snXQZA813xqlJqxToKGeu25C+6Thb/GeH8bmhqXlltqqrE24W
-	DgpE9O3OTp0/M+j+7X3Ba5VILkflUlA9W0OyAVYr28qwylBdydyrHZOHE8l5IbWb1dvkDh/5waQ9E
-	wtjmnnSG4tmhozbKgtBX3rzoCajDi35dJlLxjH6lTIT9iYIUIwKDdo4wK7wOxxMjNr9nMx9wZwMa+
-	Q5fqwklY3wVbSRclIXow==;
+	List-Owner; bh=0eFZm7CxxV4vQQyyaoQsW8qHq+Wq/lR1RjCR297P95s=; b=s6fTz9CuCS8N43
+	j3/1CsiojaRXVgAV/fsIDDzUi3MjiAhkvdKwOmph42LbRT9ccxYXSzD+Z0gUYU4Rz/RnCRHJDXsuJ
+	w6nh/BOiSJ1YM74qIOBj+oePjamjKtGFh6g+kLEIB1ve7J3fCj/tVVBQK193Mks4vD77HJ5bAhpNB
+	E/QULWu998XSEMBkFqGM8F9XWnM2z578Nd3y5KCqeKCFM+ljhJ3xK6bKvHLOIxgsc+PED/vlp9ZR5
+	iJhFOGXkNfPjMRxWaWpcYj5hF4wJVvvKQxzirl5BkoKvolFDCtQGsTsL//e9A7sfOefGIttgqlT7K
+	kmZEAJkHxlTwjLo13/qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRyyW-0005uF-4G; Tue, 05 Nov 2019 13:34:24 +0000
+	id 1iRyys-00068g-MH; Tue, 05 Nov 2019 13:34:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRytU-0000cQ-RY
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 13:29:17 +0000
+ id 1iRytX-0000dw-DN; Tue, 05 Nov 2019 13:29:21 +0000
 Received: from localhost.localdomain
  (laubervilliers-657-1-83-120.w92-154.abo.wanadoo.fr [92.154.90.120])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EF8732190F;
- Tue,  5 Nov 2019 13:29:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F3B2321D7D;
+ Tue,  5 Nov 2019 13:29:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572960552;
- bh=4K9k/A2waszkzp8AiDi5Gsl/4yjj2WXFV+AU9THyBNE=;
+ s=default; t=1572960554;
+ bh=LgsL6eDKHN8LPa1q+ftDXURke0wtTHffPmnUpK+9ZIc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=DiUxkf9K2m6Is8KQv8OEt4yvQpUxtXp7wrMC5o0cz2oRPS1G5ldA615iF84ccuuik
- uFwpDcDSAj5tkrrXGR4p0zvARY6HuyPFgs/1wJ6Yj6pWVn38+n+tQiUPFnfmqpUxpk
- ZIgAhl6+59X4UkQvJQiKtj7Jr2+Mpz4D8k+PZkMs=
+ b=KPMUicrdbgptIPWe5Lz7g0qScuQt7jsamJI6L7fVwl2l9REow7j8Ls+VfeLlLCRWb
+ HYMJzA0Ua0ZhWvctzeV06TGadzVTrmUPCFHYEjTx4axhG4yB+CJcWYeVuipejy5tHa
+ eEYNuFUcc1+1l13GjGHVDXjXyrKiG4GsVG5kHLX0=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-crypto@vger.kernel.org
-Subject: [PATCH v3 16/29] crypto: mxs - switch to skcipher API
-Date: Tue,  5 Nov 2019 14:28:13 +0100
-Message-Id: <20191105132826.1838-17-ardb@kernel.org>
+Subject: [PATCH v3 17/29] crypto: mediatek - switch to skcipher API
+Date: Tue,  5 Nov 2019 14:28:14 +0100
+Message-Id: <20191105132826.1838-18-ardb@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191105132826.1838-1-ardb@kernel.org>
 References: <20191105132826.1838-1-ardb@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_052914_278786_9CA95DD0 
-X-CRM114-Status: GOOD (  17.54  )
+X-CRM114-CacheID: sfid-20191105_052915_519706_B31554F7 
+X-CRM114-Status: GOOD (  16.16  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,209 +76,466 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Herbert Xu <herbert@gondor.apana.org.au>,
- =?UTF-8?q?Horia=20Geant=C4=83?= <horia.geanta@nxp.com>,
  Eric Biggers <ebiggers@google.com>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
  "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Q29tbWl0IDdhN2ZmZTY1YzhjNSAoImNyeXB0bzogc2tjaXBoZXIgLSBBZGQgdG9wLWxldmVsIHNr
-Y2lwaGVyIGludGVyZmFjZSIpCmRhdGVkIDIwIGF1Z3VzdCAyMDE1IGludHJvZHVjZWQgdGhlIG5l
-dyBza2NpcGhlciBBUEkgd2hpY2ggaXMgc3VwcG9zZWQgdG8KcmVwbGFjZSBib3RoIGJsa2NpcGhl
-ciBhbmQgYWJsa2NpcGhlci4gV2hpbGUgYWxsIGNvbnN1bWVycyBvZiB0aGUgQVBJIGhhdmUKYmVl
-biBjb252ZXJ0ZWQgbG9uZyBhZ28sIHNvbWUgcHJvZHVjZXJzIG9mIHRoZSBhYmxrY2lwaGVyIHJl
-bWFpbiwgZm9yY2luZwp1cyB0byBrZWVwIHRoZSBhYmxrY2lwaGVyIHN1cHBvcnQgcm91dGluZXMg
-YWxpdmUsIGFsb25nIHdpdGggdGhlIG1hdGNoaW5nCmNvZGUgdG8gZXhwb3NlIFthXWJsa2NpcGhl
-cnMgdmlhIHRoZSBza2NpcGhlciBBUEkuCgpTbyBzd2l0Y2ggdGhpcyBkcml2ZXIgdG8gdGhlIHNr
-Y2lwaGVyIEFQSSwgYWxsb3dpbmcgdXMgdG8gZmluYWxseSBkcm9wIHRoZQpibGtjaXBoZXIgY29k
-ZSBpbiB0aGUgbmVhciBmdXR1cmUuCgpUZXN0ZWQtYnk6IEhvcmlhIEdlYW50xIMgPGhvcmlhLmdl
-YW50YUBueHAuY29tPgpTaWduZWQtb2ZmLWJ5OiBBcmQgQmllc2hldXZlbCA8YXJkYkBrZXJuZWwu
-b3JnPgotLS0KIGRyaXZlcnMvY3J5cHRvL214cy1kY3AuYyB8IDE0MCArKysrKysrKystLS0tLS0t
-LS0tLQogMSBmaWxlIGNoYW5nZWQsIDY1IGluc2VydGlvbnMoKyksIDc1IGRlbGV0aW9ucygtKQoK
-ZGlmZiAtLWdpdCBhL2RyaXZlcnMvY3J5cHRvL214cy1kY3AuYyBiL2RyaXZlcnMvY3J5cHRvL214
-cy1kY3AuYwppbmRleCBiZjhkMjE5N2JjMTEuLmY0MzhiNDI1YzY1NSAxMDA2NDQKLS0tIGEvZHJp
-dmVycy9jcnlwdG8vbXhzLWRjcC5jCisrKyBiL2RyaXZlcnMvY3J5cHRvL214cy1kY3AuYwpAQCAt
-MjExLDExICsyMTEsMTEgQEAgc3RhdGljIGludCBteHNfZGNwX3N0YXJ0X2RtYShzdHJ1Y3QgZGNw
-X2FzeW5jX2N0eCAqYWN0eCkKICAqIEVuY3J5cHRpb24gKEFFUzEyOCkKICAqLwogc3RhdGljIGlu
-dCBteHNfZGNwX3J1bl9hZXMoc3RydWN0IGRjcF9hc3luY19jdHggKmFjdHgsCi0JCQkgICBzdHJ1
-Y3QgYWJsa2NpcGhlcl9yZXF1ZXN0ICpyZXEsIGludCBpbml0KQorCQkJICAgc3RydWN0IHNrY2lw
-aGVyX3JlcXVlc3QgKnJlcSwgaW50IGluaXQpCiB7CiAJc3RydWN0IGRjcCAqc2RjcCA9IGdsb2Jh
-bF9zZGNwOwogCXN0cnVjdCBkY3BfZG1hX2Rlc2MgKmRlc2MgPSAmc2RjcC0+Y29oLT5kZXNjW2Fj
-dHgtPmNoYW5dOwotCXN0cnVjdCBkY3BfYWVzX3JlcV9jdHggKnJjdHggPSBhYmxrY2lwaGVyX3Jl
-cXVlc3RfY3R4KHJlcSk7CisJc3RydWN0IGRjcF9hZXNfcmVxX2N0eCAqcmN0eCA9IHNrY2lwaGVy
-X3JlcXVlc3RfY3R4KHJlcSk7CiAJaW50IHJldDsKIAogCWRtYV9hZGRyX3Qga2V5X3BoeXMgPSBk
-bWFfbWFwX3NpbmdsZShzZGNwLT5kZXYsIHNkY3AtPmNvaC0+YWVzX2tleSwKQEAgLTI3NCw5ICsy
-NzQsOSBAQCBzdGF0aWMgaW50IG14c19kY3BfYWVzX2Jsb2NrX2NyeXB0KHN0cnVjdCBjcnlwdG9f
-YXN5bmNfcmVxdWVzdCAqYXJxKQogewogCXN0cnVjdCBkY3AgKnNkY3AgPSBnbG9iYWxfc2RjcDsK
-IAotCXN0cnVjdCBhYmxrY2lwaGVyX3JlcXVlc3QgKnJlcSA9IGFibGtjaXBoZXJfcmVxdWVzdF9j
-YXN0KGFycSk7CisJc3RydWN0IHNrY2lwaGVyX3JlcXVlc3QgKnJlcSA9IHNrY2lwaGVyX3JlcXVl
-c3RfY2FzdChhcnEpOwogCXN0cnVjdCBkY3BfYXN5bmNfY3R4ICphY3R4ID0gY3J5cHRvX3RmbV9j
-dHgoYXJxLT50Zm0pOwotCXN0cnVjdCBkY3BfYWVzX3JlcV9jdHggKnJjdHggPSBhYmxrY2lwaGVy
-X3JlcXVlc3RfY3R4KHJlcSk7CisJc3RydWN0IGRjcF9hZXNfcmVxX2N0eCAqcmN0eCA9IHNrY2lw
-aGVyX3JlcXVlc3RfY3R4KHJlcSk7CiAKIAlzdHJ1Y3Qgc2NhdHRlcmxpc3QgKmRzdCA9IHJlcS0+
-ZHN0OwogCXN0cnVjdCBzY2F0dGVybGlzdCAqc3JjID0gcmVxLT5zcmM7CkBAIC0zMDUsNyArMzA1
-LDcgQEAgc3RhdGljIGludCBteHNfZGNwX2Flc19ibG9ja19jcnlwdChzdHJ1Y3QgY3J5cHRvX2Fz
-eW5jX3JlcXVlc3QgKmFycSkKIAogCWlmICghcmN0eC0+ZWNiKSB7CiAJCS8qIENvcHkgdGhlIENC
-QyBJViBqdXN0IHBhc3QgdGhlIGtleS4gKi8KLQkJbWVtY3B5KGtleSArIEFFU19LRVlTSVpFXzEy
-OCwgcmVxLT5pbmZvLCBBRVNfS0VZU0laRV8xMjgpOworCQltZW1jcHkoa2V5ICsgQUVTX0tFWVNJ
-WkVfMTI4LCByZXEtPml2LCBBRVNfS0VZU0laRV8xMjgpOwogCQkvKiBDQkMgbmVlZHMgdGhlIElO
-SVQgc2V0LiAqLwogCQlpbml0ID0gMTsKIAl9IGVsc2UgewpAQCAtMzE2LDEwICszMTYsMTAgQEAg
-c3RhdGljIGludCBteHNfZGNwX2Flc19ibG9ja19jcnlwdChzdHJ1Y3QgY3J5cHRvX2FzeW5jX3Jl
-cXVlc3QgKmFycSkKIAkJc3JjX2J1ZiA9IHNnX3ZpcnQoc3JjKTsKIAkJbGVuID0gc2dfZG1hX2xl
-bihzcmMpOwogCQl0bGVuICs9IGxlbjsKLQkJbGltaXRfaGl0ID0gdGxlbiA+IHJlcS0+bmJ5dGVz
-OworCQlsaW1pdF9oaXQgPSB0bGVuID4gcmVxLT5jcnlwdGxlbjsKIAogCQlpZiAobGltaXRfaGl0
-KQotCQkJbGVuID0gcmVxLT5uYnl0ZXMgLSAodGxlbiAtIGxlbik7CisJCQlsZW4gPSByZXEtPmNy
-eXB0bGVuIC0gKHRsZW4gLSBsZW4pOwogCiAJCWRvIHsKIAkJCWlmIChhY3R4LT5maWxsICsgbGVu
-ID4gb3V0X29mZikKQEAgLTM3NSwxMCArMzc1LDEwIEBAIHN0YXRpYyBpbnQgbXhzX2RjcF9hZXNf
-YmxvY2tfY3J5cHQoc3RydWN0IGNyeXB0b19hc3luY19yZXF1ZXN0ICphcnEpCiAJLyogQ29weSB0
-aGUgSVYgZm9yIENCQyBmb3IgY2hhaW5pbmcgKi8KIAlpZiAoIXJjdHgtPmVjYikgewogCQlpZiAo
-cmN0eC0+ZW5jKQotCQkJbWVtY3B5KHJlcS0+aW5mbywgb3V0X2J1ZisobGFzdF9vdXRfbGVuLUFF
-U19CTE9DS19TSVpFKSwKKwkJCW1lbWNweShyZXEtPml2LCBvdXRfYnVmKyhsYXN0X291dF9sZW4t
-QUVTX0JMT0NLX1NJWkUpLAogCQkJCUFFU19CTE9DS19TSVpFKTsKIAkJZWxzZQotCQkJbWVtY3B5
-KHJlcS0+aW5mbywgaW5fYnVmKyhsYXN0X291dF9sZW4tQUVTX0JMT0NLX1NJWkUpLAorCQkJbWVt
-Y3B5KHJlcS0+aXYsIGluX2J1ZisobGFzdF9vdXRfbGVuLUFFU19CTE9DS19TSVpFKSwKIAkJCQlB
-RVNfQkxPQ0tfU0laRSk7CiAJfQogCkBAIC00MjIsMTcgKzQyMiwxNyBAQCBzdGF0aWMgaW50IGRj
-cF9jaGFuX3RocmVhZF9hZXModm9pZCAqZGF0YSkKIAlyZXR1cm4gMDsKIH0KIAotc3RhdGljIGlu
-dCBteHNfZGNwX2Jsb2NrX2ZhbGxiYWNrKHN0cnVjdCBhYmxrY2lwaGVyX3JlcXVlc3QgKnJlcSwg
-aW50IGVuYykKK3N0YXRpYyBpbnQgbXhzX2RjcF9ibG9ja19mYWxsYmFjayhzdHJ1Y3Qgc2tjaXBo
-ZXJfcmVxdWVzdCAqcmVxLCBpbnQgZW5jKQogewotCXN0cnVjdCBjcnlwdG9fYWJsa2NpcGhlciAq
-dGZtID0gY3J5cHRvX2FibGtjaXBoZXJfcmVxdGZtKHJlcSk7Ci0Jc3RydWN0IGRjcF9hc3luY19j
-dHggKmN0eCA9IGNyeXB0b19hYmxrY2lwaGVyX2N0eCh0Zm0pOworCXN0cnVjdCBjcnlwdG9fc2tj
-aXBoZXIgKnRmbSA9IGNyeXB0b19za2NpcGhlcl9yZXF0Zm0ocmVxKTsKKwlzdHJ1Y3QgZGNwX2Fz
-eW5jX2N0eCAqY3R4ID0gY3J5cHRvX3NrY2lwaGVyX2N0eCh0Zm0pOwogCVNZTkNfU0tDSVBIRVJf
-UkVRVUVTVF9PTl9TVEFDSyhzdWJyZXEsIGN0eC0+ZmFsbGJhY2spOwogCWludCByZXQ7CiAKIAlz
-a2NpcGhlcl9yZXF1ZXN0X3NldF9zeW5jX3RmbShzdWJyZXEsIGN0eC0+ZmFsbGJhY2spOwogCXNr
-Y2lwaGVyX3JlcXVlc3Rfc2V0X2NhbGxiYWNrKHN1YnJlcSwgcmVxLT5iYXNlLmZsYWdzLCBOVUxM
-LCBOVUxMKTsKIAlza2NpcGhlcl9yZXF1ZXN0X3NldF9jcnlwdChzdWJyZXEsIHJlcS0+c3JjLCBy
-ZXEtPmRzdCwKLQkJCQkgICByZXEtPm5ieXRlcywgcmVxLT5pbmZvKTsKKwkJCQkgICByZXEtPmNy
-eXB0bGVuLCByZXEtPml2KTsKIAogCWlmIChlbmMpCiAJCXJldCA9IGNyeXB0b19za2NpcGhlcl9l
-bmNyeXB0KHN1YnJlcSk7CkBAIC00NDQsMTIgKzQ0NCwxMiBAQCBzdGF0aWMgaW50IG14c19kY3Bf
-YmxvY2tfZmFsbGJhY2soc3RydWN0IGFibGtjaXBoZXJfcmVxdWVzdCAqcmVxLCBpbnQgZW5jKQog
-CXJldHVybiByZXQ7CiB9CiAKLXN0YXRpYyBpbnQgbXhzX2RjcF9hZXNfZW5xdWV1ZShzdHJ1Y3Qg
-YWJsa2NpcGhlcl9yZXF1ZXN0ICpyZXEsIGludCBlbmMsIGludCBlY2IpCitzdGF0aWMgaW50IG14
-c19kY3BfYWVzX2VucXVldWUoc3RydWN0IHNrY2lwaGVyX3JlcXVlc3QgKnJlcSwgaW50IGVuYywg
-aW50IGVjYikKIHsKIAlzdHJ1Y3QgZGNwICpzZGNwID0gZ2xvYmFsX3NkY3A7CiAJc3RydWN0IGNy
-eXB0b19hc3luY19yZXF1ZXN0ICphcnEgPSAmcmVxLT5iYXNlOwogCXN0cnVjdCBkY3BfYXN5bmNf
-Y3R4ICphY3R4ID0gY3J5cHRvX3RmbV9jdHgoYXJxLT50Zm0pOwotCXN0cnVjdCBkY3BfYWVzX3Jl
-cV9jdHggKnJjdHggPSBhYmxrY2lwaGVyX3JlcXVlc3RfY3R4KHJlcSk7CisJc3RydWN0IGRjcF9h
-ZXNfcmVxX2N0eCAqcmN0eCA9IHNrY2lwaGVyX3JlcXVlc3RfY3R4KHJlcSk7CiAJaW50IHJldDsK
-IAogCWlmICh1bmxpa2VseShhY3R4LT5rZXlfbGVuICE9IEFFU19LRVlTSVpFXzEyOCkpCkBAIC00
-NjgsMzAgKzQ2OCwzMCBAQCBzdGF0aWMgaW50IG14c19kY3BfYWVzX2VucXVldWUoc3RydWN0IGFi
-bGtjaXBoZXJfcmVxdWVzdCAqcmVxLCBpbnQgZW5jLCBpbnQgZWNiKQogCXJldHVybiByZXQ7CiB9
-CiAKLXN0YXRpYyBpbnQgbXhzX2RjcF9hZXNfZWNiX2RlY3J5cHQoc3RydWN0IGFibGtjaXBoZXJf
-cmVxdWVzdCAqcmVxKQorc3RhdGljIGludCBteHNfZGNwX2Flc19lY2JfZGVjcnlwdChzdHJ1Y3Qg
-c2tjaXBoZXJfcmVxdWVzdCAqcmVxKQogewogCXJldHVybiBteHNfZGNwX2Flc19lbnF1ZXVlKHJl
-cSwgMCwgMSk7CiB9CiAKLXN0YXRpYyBpbnQgbXhzX2RjcF9hZXNfZWNiX2VuY3J5cHQoc3RydWN0
-IGFibGtjaXBoZXJfcmVxdWVzdCAqcmVxKQorc3RhdGljIGludCBteHNfZGNwX2Flc19lY2JfZW5j
-cnlwdChzdHJ1Y3Qgc2tjaXBoZXJfcmVxdWVzdCAqcmVxKQogewogCXJldHVybiBteHNfZGNwX2Fl
-c19lbnF1ZXVlKHJlcSwgMSwgMSk7CiB9CiAKLXN0YXRpYyBpbnQgbXhzX2RjcF9hZXNfY2JjX2Rl
-Y3J5cHQoc3RydWN0IGFibGtjaXBoZXJfcmVxdWVzdCAqcmVxKQorc3RhdGljIGludCBteHNfZGNw
-X2Flc19jYmNfZGVjcnlwdChzdHJ1Y3Qgc2tjaXBoZXJfcmVxdWVzdCAqcmVxKQogewogCXJldHVy
-biBteHNfZGNwX2Flc19lbnF1ZXVlKHJlcSwgMCwgMCk7CiB9CiAKLXN0YXRpYyBpbnQgbXhzX2Rj
-cF9hZXNfY2JjX2VuY3J5cHQoc3RydWN0IGFibGtjaXBoZXJfcmVxdWVzdCAqcmVxKQorc3RhdGlj
-IGludCBteHNfZGNwX2Flc19jYmNfZW5jcnlwdChzdHJ1Y3Qgc2tjaXBoZXJfcmVxdWVzdCAqcmVx
-KQogewogCXJldHVybiBteHNfZGNwX2Flc19lbnF1ZXVlKHJlcSwgMSwgMCk7CiB9CiAKLXN0YXRp
-YyBpbnQgbXhzX2RjcF9hZXNfc2V0a2V5KHN0cnVjdCBjcnlwdG9fYWJsa2NpcGhlciAqdGZtLCBj
-b25zdCB1OCAqa2V5LAorc3RhdGljIGludCBteHNfZGNwX2Flc19zZXRrZXkoc3RydWN0IGNyeXB0
-b19za2NpcGhlciAqdGZtLCBjb25zdCB1OCAqa2V5LAogCQkJICAgICAgdW5zaWduZWQgaW50IGxl
-bikKIHsKLQlzdHJ1Y3QgZGNwX2FzeW5jX2N0eCAqYWN0eCA9IGNyeXB0b19hYmxrY2lwaGVyX2N0
-eCh0Zm0pOworCXN0cnVjdCBkY3BfYXN5bmNfY3R4ICphY3R4ID0gY3J5cHRvX3NrY2lwaGVyX2N0
-eCh0Zm0pOwogCXVuc2lnbmVkIGludCByZXQ7CiAKIAkvKgpAQCAtNTI1LDEwICs1MjUsMTAgQEAg
-c3RhdGljIGludCBteHNfZGNwX2Flc19zZXRrZXkoc3RydWN0IGNyeXB0b19hYmxrY2lwaGVyICp0
-Zm0sIGNvbnN0IHU4ICprZXksCiAJcmV0dXJuIHJldDsKIH0KIAotc3RhdGljIGludCBteHNfZGNw
-X2Flc19mYWxsYmFja19pbml0KHN0cnVjdCBjcnlwdG9fdGZtICp0Zm0pCitzdGF0aWMgaW50IG14
-c19kY3BfYWVzX2ZhbGxiYWNrX2luaXRfdGZtKHN0cnVjdCBjcnlwdG9fc2tjaXBoZXIgKnRmbSkK
-IHsKLQljb25zdCBjaGFyICpuYW1lID0gY3J5cHRvX3RmbV9hbGdfbmFtZSh0Zm0pOwotCXN0cnVj
-dCBkY3BfYXN5bmNfY3R4ICphY3R4ID0gY3J5cHRvX3RmbV9jdHgodGZtKTsKKwljb25zdCBjaGFy
-ICpuYW1lID0gY3J5cHRvX3RmbV9hbGdfbmFtZShjcnlwdG9fc2tjaXBoZXJfdGZtKHRmbSkpOwor
-CXN0cnVjdCBkY3BfYXN5bmNfY3R4ICphY3R4ID0gY3J5cHRvX3NrY2lwaGVyX2N0eCh0Zm0pOwog
-CXN0cnVjdCBjcnlwdG9fc3luY19za2NpcGhlciAqYmxrOwogCiAJYmxrID0gY3J5cHRvX2FsbG9j
-X3N5bmNfc2tjaXBoZXIobmFtZSwgMCwgQ1JZUFRPX0FMR19ORUVEX0ZBTExCQUNLKTsKQEAgLTUz
-NiwxMyArNTM2LDEzIEBAIHN0YXRpYyBpbnQgbXhzX2RjcF9hZXNfZmFsbGJhY2tfaW5pdChzdHJ1
-Y3QgY3J5cHRvX3RmbSAqdGZtKQogCQlyZXR1cm4gUFRSX0VSUihibGspOwogCiAJYWN0eC0+ZmFs
-bGJhY2sgPSBibGs7Ci0JdGZtLT5jcnRfYWJsa2NpcGhlci5yZXFzaXplID0gc2l6ZW9mKHN0cnVj
-dCBkY3BfYWVzX3JlcV9jdHgpOworCWNyeXB0b19za2NpcGhlcl9zZXRfcmVxc2l6ZSh0Zm0sIHNp
-emVvZihzdHJ1Y3QgZGNwX2Flc19yZXFfY3R4KSk7CiAJcmV0dXJuIDA7CiB9CiAKLXN0YXRpYyB2
-b2lkIG14c19kY3BfYWVzX2ZhbGxiYWNrX2V4aXQoc3RydWN0IGNyeXB0b190Zm0gKnRmbSkKK3N0
-YXRpYyB2b2lkIG14c19kY3BfYWVzX2ZhbGxiYWNrX2V4aXRfdGZtKHN0cnVjdCBjcnlwdG9fc2tj
-aXBoZXIgKnRmbSkKIHsKLQlzdHJ1Y3QgZGNwX2FzeW5jX2N0eCAqYWN0eCA9IGNyeXB0b190Zm1f
-Y3R4KHRmbSk7CisJc3RydWN0IGRjcF9hc3luY19jdHggKmFjdHggPSBjcnlwdG9fc2tjaXBoZXJf
-Y3R4KHRmbSk7CiAKIAljcnlwdG9fZnJlZV9zeW5jX3NrY2lwaGVyKGFjdHgtPmZhbGxiYWNrKTsK
-IH0KQEAgLTg1NCw1NCArODU0LDQ0IEBAIHN0YXRpYyB2b2lkIGRjcF9zaGFfY3JhX2V4aXQoc3Ry
-dWN0IGNyeXB0b190Zm0gKnRmbSkKIH0KIAogLyogQUVTIDEyOCBFQ0IgYW5kIEFFUyAxMjggQ0JD
-ICovCi1zdGF0aWMgc3RydWN0IGNyeXB0b19hbGcgZGNwX2Flc19hbGdzW10gPSB7CitzdGF0aWMg
-c3RydWN0IHNrY2lwaGVyX2FsZyBkY3BfYWVzX2FsZ3NbXSA9IHsKIAl7Ci0JCS5jcmFfbmFtZQkJ
-PSAiZWNiKGFlcykiLAotCQkuY3JhX2RyaXZlcl9uYW1lCT0gImVjYi1hZXMtZGNwIiwKLQkJLmNy
-YV9wcmlvcml0eQkJPSA0MDAsCi0JCS5jcmFfYWxpZ25tYXNrCQk9IDE1LAotCQkuY3JhX2ZsYWdz
-CQk9IENSWVBUT19BTEdfVFlQRV9BQkxLQ0lQSEVSIHwKLQkJCQkJICBDUllQVE9fQUxHX0FTWU5D
-IHwKKwkJLmJhc2UuY3JhX25hbWUJCT0gImVjYihhZXMpIiwKKwkJLmJhc2UuY3JhX2RyaXZlcl9u
-YW1lCT0gImVjYi1hZXMtZGNwIiwKKwkJLmJhc2UuY3JhX3ByaW9yaXR5CT0gNDAwLAorCQkuYmFz
-ZS5jcmFfYWxpZ25tYXNrCT0gMTUsCisJCS5iYXNlLmNyYV9mbGFncwkJPSBDUllQVE9fQUxHX0FT
-WU5DIHwKIAkJCQkJICBDUllQVE9fQUxHX05FRURfRkFMTEJBQ0ssCi0JCS5jcmFfaW5pdAkJPSBt
-eHNfZGNwX2Flc19mYWxsYmFja19pbml0LAotCQkuY3JhX2V4aXQJCT0gbXhzX2RjcF9hZXNfZmFs
-bGJhY2tfZXhpdCwKLQkJLmNyYV9ibG9ja3NpemUJCT0gQUVTX0JMT0NLX1NJWkUsCi0JCS5jcmFf
-Y3R4c2l6ZQkJPSBzaXplb2Yoc3RydWN0IGRjcF9hc3luY19jdHgpLAotCQkuY3JhX3R5cGUJCT0g
-JmNyeXB0b19hYmxrY2lwaGVyX3R5cGUsCi0JCS5jcmFfbW9kdWxlCQk9IFRISVNfTU9EVUxFLAot
-CQkuY3JhX3UJPSB7Ci0JCQkuYWJsa2NpcGhlciA9IHsKLQkJCQkubWluX2tleXNpemUJPSBBRVNf
-TUlOX0tFWV9TSVpFLAotCQkJCS5tYXhfa2V5c2l6ZQk9IEFFU19NQVhfS0VZX1NJWkUsCi0JCQkJ
-LnNldGtleQkJPSBteHNfZGNwX2Flc19zZXRrZXksCi0JCQkJLmVuY3J5cHQJPSBteHNfZGNwX2Fl
-c19lY2JfZW5jcnlwdCwKLQkJCQkuZGVjcnlwdAk9IG14c19kY3BfYWVzX2VjYl9kZWNyeXB0Ci0J
-CQl9LAotCQl9LAorCQkuYmFzZS5jcmFfYmxvY2tzaXplCT0gQUVTX0JMT0NLX1NJWkUsCisJCS5i
-YXNlLmNyYV9jdHhzaXplCT0gc2l6ZW9mKHN0cnVjdCBkY3BfYXN5bmNfY3R4KSwKKwkJLmJhc2Uu
-Y3JhX21vZHVsZQk9IFRISVNfTU9EVUxFLAorCisJCS5taW5fa2V5c2l6ZQkJPSBBRVNfTUlOX0tF
-WV9TSVpFLAorCQkubWF4X2tleXNpemUJCT0gQUVTX01BWF9LRVlfU0laRSwKKwkJLnNldGtleQkJ
-CT0gbXhzX2RjcF9hZXNfc2V0a2V5LAorCQkuZW5jcnlwdAkJPSBteHNfZGNwX2Flc19lY2JfZW5j
-cnlwdCwKKwkJLmRlY3J5cHQJCT0gbXhzX2RjcF9hZXNfZWNiX2RlY3J5cHQsCisJCS5pbml0CQkJ
-PSBteHNfZGNwX2Flc19mYWxsYmFja19pbml0X3RmbSwKKwkJLmV4aXQJCQk9IG14c19kY3BfYWVz
-X2ZhbGxiYWNrX2V4aXRfdGZtLAogCX0sIHsKLQkJLmNyYV9uYW1lCQk9ICJjYmMoYWVzKSIsCi0J
-CS5jcmFfZHJpdmVyX25hbWUJPSAiY2JjLWFlcy1kY3AiLAotCQkuY3JhX3ByaW9yaXR5CQk9IDQw
-MCwKLQkJLmNyYV9hbGlnbm1hc2sJCT0gMTUsCi0JCS5jcmFfZmxhZ3MJCT0gQ1JZUFRPX0FMR19U
-WVBFX0FCTEtDSVBIRVIgfAotCQkJCQkgIENSWVBUT19BTEdfQVNZTkMgfAorCQkuYmFzZS5jcmFf
-bmFtZQkJPSAiY2JjKGFlcykiLAorCQkuYmFzZS5jcmFfZHJpdmVyX25hbWUJPSAiY2JjLWFlcy1k
-Y3AiLAorCQkuYmFzZS5jcmFfcHJpb3JpdHkJPSA0MDAsCisJCS5iYXNlLmNyYV9hbGlnbm1hc2sJ
-PSAxNSwKKwkJLmJhc2UuY3JhX2ZsYWdzCQk9IENSWVBUT19BTEdfQVNZTkMgfAogCQkJCQkgIENS
-WVBUT19BTEdfTkVFRF9GQUxMQkFDSywKLQkJLmNyYV9pbml0CQk9IG14c19kY3BfYWVzX2ZhbGxi
-YWNrX2luaXQsCi0JCS5jcmFfZXhpdAkJPSBteHNfZGNwX2Flc19mYWxsYmFja19leGl0LAotCQku
-Y3JhX2Jsb2Nrc2l6ZQkJPSBBRVNfQkxPQ0tfU0laRSwKLQkJLmNyYV9jdHhzaXplCQk9IHNpemVv
-ZihzdHJ1Y3QgZGNwX2FzeW5jX2N0eCksCi0JCS5jcmFfdHlwZQkJPSAmY3J5cHRvX2FibGtjaXBo
-ZXJfdHlwZSwKLQkJLmNyYV9tb2R1bGUJCT0gVEhJU19NT0RVTEUsCi0JCS5jcmFfdSA9IHsKLQkJ
-CS5hYmxrY2lwaGVyID0gewotCQkJCS5taW5fa2V5c2l6ZQk9IEFFU19NSU5fS0VZX1NJWkUsCi0J
-CQkJLm1heF9rZXlzaXplCT0gQUVTX01BWF9LRVlfU0laRSwKLQkJCQkuc2V0a2V5CQk9IG14c19k
-Y3BfYWVzX3NldGtleSwKLQkJCQkuZW5jcnlwdAk9IG14c19kY3BfYWVzX2NiY19lbmNyeXB0LAot
-CQkJCS5kZWNyeXB0CT0gbXhzX2RjcF9hZXNfY2JjX2RlY3J5cHQsCi0JCQkJLml2c2l6ZQkJPSBB
-RVNfQkxPQ0tfU0laRSwKLQkJCX0sCi0JCX0sCisJCS5iYXNlLmNyYV9ibG9ja3NpemUJPSBBRVNf
-QkxPQ0tfU0laRSwKKwkJLmJhc2UuY3JhX2N0eHNpemUJPSBzaXplb2Yoc3RydWN0IGRjcF9hc3lu
-Y19jdHgpLAorCQkuYmFzZS5jcmFfbW9kdWxlCT0gVEhJU19NT0RVTEUsCisKKwkJLm1pbl9rZXlz
-aXplCQk9IEFFU19NSU5fS0VZX1NJWkUsCisJCS5tYXhfa2V5c2l6ZQkJPSBBRVNfTUFYX0tFWV9T
-SVpFLAorCQkuc2V0a2V5CQkJPSBteHNfZGNwX2Flc19zZXRrZXksCisJCS5lbmNyeXB0CQk9IG14
-c19kY3BfYWVzX2NiY19lbmNyeXB0LAorCQkuZGVjcnlwdAkJPSBteHNfZGNwX2Flc19jYmNfZGVj
-cnlwdCwKKwkJLml2c2l6ZQkJCT0gQUVTX0JMT0NLX1NJWkUsCisJCS5pbml0CQkJPSBteHNfZGNw
-X2Flc19mYWxsYmFja19pbml0X3RmbSwKKwkJLmV4aXQJCQk9IG14c19kY3BfYWVzX2ZhbGxiYWNr
-X2V4aXRfdGZtLAogCX0sCiB9OwogCkBAIC0xMTA0LDggKzEwOTQsOCBAQCBzdGF0aWMgaW50IG14
-c19kY3BfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKIAlzZGNwLT5jYXBzID0g
-cmVhZGwoc2RjcC0+YmFzZSArIE1YU19EQ1BfQ0FQQUJJTElUWTEpOwogCiAJaWYgKHNkY3AtPmNh
-cHMgJiBNWFNfRENQX0NBUEFCSUxJVFkxX0FFUzEyOCkgewotCQlyZXQgPSBjcnlwdG9fcmVnaXN0
-ZXJfYWxncyhkY3BfYWVzX2FsZ3MsCi0JCQkJCSAgIEFSUkFZX1NJWkUoZGNwX2Flc19hbGdzKSk7
-CisJCXJldCA9IGNyeXB0b19yZWdpc3Rlcl9za2NpcGhlcnMoZGNwX2Flc19hbGdzLAorCQkJCQkJ
-QVJSQVlfU0laRShkY3BfYWVzX2FsZ3MpKTsKIAkJaWYgKHJldCkgewogCQkJLyogRmFpbGVkIHRv
-IHJlZ2lzdGVyIGFsZ29yaXRobS4gKi8KIAkJCWRldl9lcnIoZGV2LCAiRmFpbGVkIHRvIHJlZ2lz
-dGVyIEFFUyBjcnlwdG8hXG4iKTsKQEAgLTExMzksNyArMTEyOSw3IEBAIHN0YXRpYyBpbnQgbXhz
-X2RjcF9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQogCiBlcnJfdW5yZWdpc3Rl
-cl9hZXM6CiAJaWYgKHNkY3AtPmNhcHMgJiBNWFNfRENQX0NBUEFCSUxJVFkxX0FFUzEyOCkKLQkJ
-Y3J5cHRvX3VucmVnaXN0ZXJfYWxncyhkY3BfYWVzX2FsZ3MsIEFSUkFZX1NJWkUoZGNwX2Flc19h
-bGdzKSk7CisJCWNyeXB0b191bnJlZ2lzdGVyX3NrY2lwaGVycyhkY3BfYWVzX2FsZ3MsIEFSUkFZ
-X1NJWkUoZGNwX2Flc19hbGdzKSk7CiAKIGVycl9kZXN0cm95X2Flc190aHJlYWQ6CiAJa3RocmVh
-ZF9zdG9wKHNkY3AtPnRocmVhZFtEQ1BfQ0hBTl9DUllQVE9dKTsKQEAgLTExNjQsNyArMTE1NCw3
-IEBAIHN0YXRpYyBpbnQgbXhzX2RjcF9yZW1vdmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRl
-dikKIAkJY3J5cHRvX3VucmVnaXN0ZXJfYWhhc2goJmRjcF9zaGExX2FsZyk7CiAKIAlpZiAoc2Rj
-cC0+Y2FwcyAmIE1YU19EQ1BfQ0FQQUJJTElUWTFfQUVTMTI4KQotCQljcnlwdG9fdW5yZWdpc3Rl
-cl9hbGdzKGRjcF9hZXNfYWxncywgQVJSQVlfU0laRShkY3BfYWVzX2FsZ3MpKTsKKwkJY3J5cHRv
-X3VucmVnaXN0ZXJfc2tjaXBoZXJzKGRjcF9hZXNfYWxncywgQVJSQVlfU0laRShkY3BfYWVzX2Fs
-Z3MpKTsKIAogCWt0aHJlYWRfc3RvcChzZGNwLT50aHJlYWRbRENQX0NIQU5fSEFTSF9TSEFdKTsK
-IAlrdGhyZWFkX3N0b3Aoc2RjcC0+dGhyZWFkW0RDUF9DSEFOX0NSWVBUT10pOwotLSAKMi4yMC4x
-CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+Commit 7a7ffe65c8c5 ("crypto: skcipher - Add top-level skcipher interface")
+dated 20 august 2015 introduced the new skcipher API which is supposed to
+replace both blkcipher and ablkcipher. While all consumers of the API have
+been converted long ago, some producers of the ablkcipher remain, forcing
+us to keep the ablkcipher support routines alive, along with the matching
+code to expose [a]blkciphers via the skcipher API.
+
+So switch this driver to the skcipher API, allowing us to finally drop the
+blkcipher code in the near future.
+
+Cc: Matthias Brugger <matthias.bgg@gmail.com>
+Cc: linux-mediatek@lists.infradead.org
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ drivers/crypto/mediatek/mtk-aes.c | 248 +++++++++-----------
+ 1 file changed, 116 insertions(+), 132 deletions(-)
+
+diff --git a/drivers/crypto/mediatek/mtk-aes.c b/drivers/crypto/mediatek/mtk-aes.c
+index d43410259113..90880a81c534 100644
+--- a/drivers/crypto/mediatek/mtk-aes.c
++++ b/drivers/crypto/mediatek/mtk-aes.c
+@@ -11,6 +11,7 @@
+ 
+ #include <crypto/aes.h>
+ #include <crypto/gcm.h>
++#include <crypto/internal/skcipher.h>
+ #include "mtk-platform.h"
+ 
+ #define AES_QUEUE_SIZE		512
+@@ -414,7 +415,7 @@ static int mtk_aes_map(struct mtk_cryp *cryp, struct mtk_aes_rec *aes)
+ static void mtk_aes_info_init(struct mtk_cryp *cryp, struct mtk_aes_rec *aes,
+ 			      size_t len)
+ {
+-	struct ablkcipher_request *req = ablkcipher_request_cast(aes->areq);
++	struct skcipher_request *req = skcipher_request_cast(aes->areq);
+ 	struct mtk_aes_base_ctx *ctx = aes->ctx;
+ 	struct mtk_aes_info *info = &ctx->info;
+ 	u32 cnt = 0;
+@@ -450,7 +451,7 @@ static void mtk_aes_info_init(struct mtk_cryp *cryp, struct mtk_aes_rec *aes,
+ 		return;
+ 	}
+ 
+-	mtk_aes_write_state_le(info->state + ctx->keylen, req->info,
++	mtk_aes_write_state_le(info->state + ctx->keylen, (void *)req->iv,
+ 			       AES_BLOCK_SIZE);
+ ctr:
+ 	info->tfm[0] += AES_TFM_SIZE(SIZE_IN_WORDS(AES_BLOCK_SIZE));
+@@ -552,13 +553,13 @@ static int mtk_aes_transfer_complete(struct mtk_cryp *cryp,
+ 
+ static int mtk_aes_start(struct mtk_cryp *cryp, struct mtk_aes_rec *aes)
+ {
+-	struct ablkcipher_request *req = ablkcipher_request_cast(aes->areq);
+-	struct mtk_aes_reqctx *rctx = ablkcipher_request_ctx(req);
++	struct skcipher_request *req = skcipher_request_cast(aes->areq);
++	struct mtk_aes_reqctx *rctx = skcipher_request_ctx(req);
+ 
+ 	mtk_aes_set_mode(aes, rctx);
+ 	aes->resume = mtk_aes_transfer_complete;
+ 
+-	return mtk_aes_dma(cryp, aes, req->src, req->dst, req->nbytes);
++	return mtk_aes_dma(cryp, aes, req->src, req->dst, req->cryptlen);
+ }
+ 
+ static inline struct mtk_aes_ctr_ctx *
+@@ -571,7 +572,7 @@ static int mtk_aes_ctr_transfer(struct mtk_cryp *cryp, struct mtk_aes_rec *aes)
+ {
+ 	struct mtk_aes_base_ctx *ctx = aes->ctx;
+ 	struct mtk_aes_ctr_ctx *cctx = mtk_aes_ctr_ctx_cast(ctx);
+-	struct ablkcipher_request *req = ablkcipher_request_cast(aes->areq);
++	struct skcipher_request *req = skcipher_request_cast(aes->areq);
+ 	struct scatterlist *src, *dst;
+ 	u32 start, end, ctr, blocks;
+ 	size_t datalen;
+@@ -579,11 +580,11 @@ static int mtk_aes_ctr_transfer(struct mtk_cryp *cryp, struct mtk_aes_rec *aes)
+ 
+ 	/* Check for transfer completion. */
+ 	cctx->offset += aes->total;
+-	if (cctx->offset >= req->nbytes)
++	if (cctx->offset >= req->cryptlen)
+ 		return mtk_aes_transfer_complete(cryp, aes);
+ 
+ 	/* Compute data length. */
+-	datalen = req->nbytes - cctx->offset;
++	datalen = req->cryptlen - cctx->offset;
+ 	blocks = DIV_ROUND_UP(datalen, AES_BLOCK_SIZE);
+ 	ctr = be32_to_cpu(cctx->iv[3]);
+ 
+@@ -620,12 +621,12 @@ static int mtk_aes_ctr_transfer(struct mtk_cryp *cryp, struct mtk_aes_rec *aes)
+ static int mtk_aes_ctr_start(struct mtk_cryp *cryp, struct mtk_aes_rec *aes)
+ {
+ 	struct mtk_aes_ctr_ctx *cctx = mtk_aes_ctr_ctx_cast(aes->ctx);
+-	struct ablkcipher_request *req = ablkcipher_request_cast(aes->areq);
+-	struct mtk_aes_reqctx *rctx = ablkcipher_request_ctx(req);
++	struct skcipher_request *req = skcipher_request_cast(aes->areq);
++	struct mtk_aes_reqctx *rctx = skcipher_request_ctx(req);
+ 
+ 	mtk_aes_set_mode(aes, rctx);
+ 
+-	memcpy(cctx->iv, req->info, AES_BLOCK_SIZE);
++	memcpy(cctx->iv, req->iv, AES_BLOCK_SIZE);
+ 	cctx->offset = 0;
+ 	aes->total = 0;
+ 	aes->resume = mtk_aes_ctr_transfer;
+@@ -634,10 +635,10 @@ static int mtk_aes_ctr_start(struct mtk_cryp *cryp, struct mtk_aes_rec *aes)
+ }
+ 
+ /* Check and set the AES key to transform state buffer */
+-static int mtk_aes_setkey(struct crypto_ablkcipher *tfm,
++static int mtk_aes_setkey(struct crypto_skcipher *tfm,
+ 			  const u8 *key, u32 keylen)
+ {
+-	struct mtk_aes_base_ctx *ctx = crypto_ablkcipher_ctx(tfm);
++	struct mtk_aes_base_ctx *ctx = crypto_skcipher_ctx(tfm);
+ 
+ 	switch (keylen) {
+ 	case AES_KEYSIZE_128:
+@@ -651,7 +652,7 @@ static int mtk_aes_setkey(struct crypto_ablkcipher *tfm,
+ 		break;
+ 
+ 	default:
+-		crypto_ablkcipher_set_flags(tfm, CRYPTO_TFM_RES_BAD_KEY_LEN);
++		crypto_skcipher_set_flags(tfm, CRYPTO_TFM_RES_BAD_KEY_LEN);
+ 		return -EINVAL;
+ 	}
+ 
+@@ -661,10 +662,10 @@ static int mtk_aes_setkey(struct crypto_ablkcipher *tfm,
+ 	return 0;
+ }
+ 
+-static int mtk_aes_crypt(struct ablkcipher_request *req, u64 mode)
++static int mtk_aes_crypt(struct skcipher_request *req, u64 mode)
+ {
+-	struct crypto_ablkcipher *ablkcipher = crypto_ablkcipher_reqtfm(req);
+-	struct mtk_aes_base_ctx *ctx = crypto_ablkcipher_ctx(ablkcipher);
++	struct crypto_skcipher *skcipher = crypto_skcipher_reqtfm(req);
++	struct mtk_aes_base_ctx *ctx = crypto_skcipher_ctx(skcipher);
+ 	struct mtk_aes_reqctx *rctx;
+ 	struct mtk_cryp *cryp;
+ 
+@@ -672,185 +673,168 @@ static int mtk_aes_crypt(struct ablkcipher_request *req, u64 mode)
+ 	if (!cryp)
+ 		return -ENODEV;
+ 
+-	rctx = ablkcipher_request_ctx(req);
++	rctx = skcipher_request_ctx(req);
+ 	rctx->mode = mode;
+ 
+ 	return mtk_aes_handle_queue(cryp, !(mode & AES_FLAGS_ENCRYPT),
+ 				    &req->base);
+ }
+ 
+-static int mtk_aes_ecb_encrypt(struct ablkcipher_request *req)
++static int mtk_aes_ecb_encrypt(struct skcipher_request *req)
+ {
+ 	return mtk_aes_crypt(req, AES_FLAGS_ENCRYPT | AES_FLAGS_ECB);
+ }
+ 
+-static int mtk_aes_ecb_decrypt(struct ablkcipher_request *req)
++static int mtk_aes_ecb_decrypt(struct skcipher_request *req)
+ {
+ 	return mtk_aes_crypt(req, AES_FLAGS_ECB);
+ }
+ 
+-static int mtk_aes_cbc_encrypt(struct ablkcipher_request *req)
++static int mtk_aes_cbc_encrypt(struct skcipher_request *req)
+ {
+ 	return mtk_aes_crypt(req, AES_FLAGS_ENCRYPT | AES_FLAGS_CBC);
+ }
+ 
+-static int mtk_aes_cbc_decrypt(struct ablkcipher_request *req)
++static int mtk_aes_cbc_decrypt(struct skcipher_request *req)
+ {
+ 	return mtk_aes_crypt(req, AES_FLAGS_CBC);
+ }
+ 
+-static int mtk_aes_ctr_encrypt(struct ablkcipher_request *req)
++static int mtk_aes_ctr_encrypt(struct skcipher_request *req)
+ {
+ 	return mtk_aes_crypt(req, AES_FLAGS_ENCRYPT | AES_FLAGS_CTR);
+ }
+ 
+-static int mtk_aes_ctr_decrypt(struct ablkcipher_request *req)
++static int mtk_aes_ctr_decrypt(struct skcipher_request *req)
+ {
+ 	return mtk_aes_crypt(req, AES_FLAGS_CTR);
+ }
+ 
+-static int mtk_aes_ofb_encrypt(struct ablkcipher_request *req)
++static int mtk_aes_ofb_encrypt(struct skcipher_request *req)
+ {
+ 	return mtk_aes_crypt(req, AES_FLAGS_ENCRYPT | AES_FLAGS_OFB);
+ }
+ 
+-static int mtk_aes_ofb_decrypt(struct ablkcipher_request *req)
++static int mtk_aes_ofb_decrypt(struct skcipher_request *req)
+ {
+ 	return mtk_aes_crypt(req, AES_FLAGS_OFB);
+ }
+ 
+-static int mtk_aes_cfb_encrypt(struct ablkcipher_request *req)
++static int mtk_aes_cfb_encrypt(struct skcipher_request *req)
+ {
+ 	return mtk_aes_crypt(req, AES_FLAGS_ENCRYPT | AES_FLAGS_CFB128);
+ }
+ 
+-static int mtk_aes_cfb_decrypt(struct ablkcipher_request *req)
++static int mtk_aes_cfb_decrypt(struct skcipher_request *req)
+ {
+ 	return mtk_aes_crypt(req, AES_FLAGS_CFB128);
+ }
+ 
+-static int mtk_aes_cra_init(struct crypto_tfm *tfm)
++static int mtk_aes_init_tfm(struct crypto_skcipher *tfm)
+ {
+-	struct mtk_aes_ctx *ctx = crypto_tfm_ctx(tfm);
++	struct mtk_aes_ctx *ctx = crypto_skcipher_ctx(tfm);
+ 
+-	tfm->crt_ablkcipher.reqsize = sizeof(struct mtk_aes_reqctx);
++	crypto_skcipher_set_reqsize(tfm, sizeof(struct mtk_aes_reqctx));
+ 	ctx->base.start = mtk_aes_start;
+ 	return 0;
+ }
+ 
+-static int mtk_aes_ctr_cra_init(struct crypto_tfm *tfm)
++static int mtk_aes_ctr_init_tfm(struct crypto_skcipher *tfm)
+ {
+-	struct mtk_aes_ctx *ctx = crypto_tfm_ctx(tfm);
++	struct mtk_aes_ctx *ctx = crypto_skcipher_ctx(tfm);
+ 
+-	tfm->crt_ablkcipher.reqsize = sizeof(struct mtk_aes_reqctx);
++	crypto_skcipher_set_reqsize(tfm, sizeof(struct mtk_aes_reqctx));
+ 	ctx->base.start = mtk_aes_ctr_start;
+ 	return 0;
+ }
+ 
+-static struct crypto_alg aes_algs[] = {
++static struct skcipher_alg aes_algs[] = {
+ {
+-	.cra_name		= "cbc(aes)",
+-	.cra_driver_name	= "cbc-aes-mtk",
+-	.cra_priority		= 400,
+-	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+-				  CRYPTO_ALG_ASYNC,
+-	.cra_init		= mtk_aes_cra_init,
+-	.cra_blocksize		= AES_BLOCK_SIZE,
+-	.cra_ctxsize		= sizeof(struct mtk_aes_ctx),
+-	.cra_alignmask		= 0xf,
+-	.cra_type		= &crypto_ablkcipher_type,
+-	.cra_module		= THIS_MODULE,
+-	.cra_u.ablkcipher = {
+-		.min_keysize	= AES_MIN_KEY_SIZE,
+-		.max_keysize	= AES_MAX_KEY_SIZE,
+-		.setkey		= mtk_aes_setkey,
+-		.encrypt	= mtk_aes_cbc_encrypt,
+-		.decrypt	= mtk_aes_cbc_decrypt,
+-		.ivsize		= AES_BLOCK_SIZE,
+-	}
++	.base.cra_name		= "cbc(aes)",
++	.base.cra_driver_name	= "cbc-aes-mtk",
++	.base.cra_priority	= 400,
++	.base.cra_flags		= CRYPTO_ALG_ASYNC,
++	.base.cra_blocksize	= AES_BLOCK_SIZE,
++	.base.cra_ctxsize	= sizeof(struct mtk_aes_ctx),
++	.base.cra_alignmask	= 0xf,
++	.base.cra_module	= THIS_MODULE,
++
++	.min_keysize		= AES_MIN_KEY_SIZE,
++	.max_keysize		= AES_MAX_KEY_SIZE,
++	.setkey			= mtk_aes_setkey,
++	.encrypt		= mtk_aes_cbc_encrypt,
++	.decrypt		= mtk_aes_cbc_decrypt,
++	.ivsize			= AES_BLOCK_SIZE,
++	.init			= mtk_aes_init_tfm,
+ },
+ {
+-	.cra_name		= "ecb(aes)",
+-	.cra_driver_name	= "ecb-aes-mtk",
+-	.cra_priority		= 400,
+-	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+-				  CRYPTO_ALG_ASYNC,
+-	.cra_init		= mtk_aes_cra_init,
+-	.cra_blocksize		= AES_BLOCK_SIZE,
+-	.cra_ctxsize		= sizeof(struct mtk_aes_ctx),
+-	.cra_alignmask		= 0xf,
+-	.cra_type		= &crypto_ablkcipher_type,
+-	.cra_module		= THIS_MODULE,
+-	.cra_u.ablkcipher = {
+-		.min_keysize	= AES_MIN_KEY_SIZE,
+-		.max_keysize	= AES_MAX_KEY_SIZE,
+-		.setkey		= mtk_aes_setkey,
+-		.encrypt	= mtk_aes_ecb_encrypt,
+-		.decrypt	= mtk_aes_ecb_decrypt,
+-	}
++	.base.cra_name		= "ecb(aes)",
++	.base.cra_driver_name	= "ecb-aes-mtk",
++	.base.cra_priority	= 400,
++	.base.cra_flags		= CRYPTO_ALG_ASYNC,
++	.base.cra_blocksize	= AES_BLOCK_SIZE,
++	.base.cra_ctxsize	= sizeof(struct mtk_aes_ctx),
++	.base.cra_alignmask	= 0xf,
++	.base.cra_module	= THIS_MODULE,
++
++	.min_keysize		= AES_MIN_KEY_SIZE,
++	.max_keysize		= AES_MAX_KEY_SIZE,
++	.setkey			= mtk_aes_setkey,
++	.encrypt		= mtk_aes_ecb_encrypt,
++	.decrypt		= mtk_aes_ecb_decrypt,
++	.init			= mtk_aes_init_tfm,
+ },
+ {
+-	.cra_name		= "ctr(aes)",
+-	.cra_driver_name	= "ctr-aes-mtk",
+-	.cra_priority		= 400,
+-	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+-				  CRYPTO_ALG_ASYNC,
+-	.cra_init		= mtk_aes_ctr_cra_init,
+-	.cra_blocksize		= 1,
+-	.cra_ctxsize		= sizeof(struct mtk_aes_ctr_ctx),
+-	.cra_alignmask		= 0xf,
+-	.cra_type		= &crypto_ablkcipher_type,
+-	.cra_module		= THIS_MODULE,
+-	.cra_u.ablkcipher = {
+-		.min_keysize	= AES_MIN_KEY_SIZE,
+-		.max_keysize	= AES_MAX_KEY_SIZE,
+-		.ivsize		= AES_BLOCK_SIZE,
+-		.setkey		= mtk_aes_setkey,
+-		.encrypt	= mtk_aes_ctr_encrypt,
+-		.decrypt	= mtk_aes_ctr_decrypt,
+-	}
++	.base.cra_name		= "ctr(aes)",
++	.base.cra_driver_name	= "ctr-aes-mtk",
++	.base.cra_priority	= 400,
++	.base.cra_flags		= CRYPTO_ALG_ASYNC,
++	.base.cra_blocksize	= 1,
++	.base.cra_ctxsize	= sizeof(struct mtk_aes_ctx),
++	.base.cra_alignmask	= 0xf,
++	.base.cra_module	= THIS_MODULE,
++
++	.min_keysize		= AES_MIN_KEY_SIZE,
++	.max_keysize		= AES_MAX_KEY_SIZE,
++	.ivsize			= AES_BLOCK_SIZE,
++	.setkey			= mtk_aes_setkey,
++	.encrypt		= mtk_aes_ctr_encrypt,
++	.decrypt		= mtk_aes_ctr_decrypt,
++	.init			= mtk_aes_ctr_init_tfm,
+ },
+ {
+-	.cra_name		= "ofb(aes)",
+-	.cra_driver_name	= "ofb-aes-mtk",
+-	.cra_priority		= 400,
+-	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+-				  CRYPTO_ALG_ASYNC,
+-	.cra_init		= mtk_aes_cra_init,
+-	.cra_blocksize		= 1,
+-	.cra_ctxsize		= sizeof(struct mtk_aes_ctx),
+-	.cra_alignmask		= 0xf,
+-	.cra_type		= &crypto_ablkcipher_type,
+-	.cra_module		= THIS_MODULE,
+-	.cra_u.ablkcipher = {
+-		.min_keysize	= AES_MIN_KEY_SIZE,
+-		.max_keysize	= AES_MAX_KEY_SIZE,
+-		.ivsize		= AES_BLOCK_SIZE,
+-		.setkey		= mtk_aes_setkey,
+-		.encrypt	= mtk_aes_ofb_encrypt,
+-		.decrypt	= mtk_aes_ofb_decrypt,
+-	}
++	.base.cra_name		= "ofb(aes)",
++	.base.cra_driver_name	= "ofb-aes-mtk",
++	.base.cra_priority	= 400,
++	.base.cra_flags		= CRYPTO_ALG_ASYNC,
++	.base.cra_blocksize	= AES_BLOCK_SIZE,
++	.base.cra_ctxsize	= sizeof(struct mtk_aes_ctx),
++	.base.cra_alignmask	= 0xf,
++	.base.cra_module	= THIS_MODULE,
++
++	.min_keysize		= AES_MIN_KEY_SIZE,
++	.max_keysize		= AES_MAX_KEY_SIZE,
++	.ivsize			= AES_BLOCK_SIZE,
++	.setkey			= mtk_aes_setkey,
++	.encrypt		= mtk_aes_ofb_encrypt,
++	.decrypt		= mtk_aes_ofb_decrypt,
+ },
+ {
+-	.cra_name		= "cfb(aes)",
+-	.cra_driver_name	= "cfb-aes-mtk",
+-	.cra_priority		= 400,
+-	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
+-				  CRYPTO_ALG_ASYNC,
+-	.cra_init		= mtk_aes_cra_init,
+-	.cra_blocksize		= 1,
+-	.cra_ctxsize		= sizeof(struct mtk_aes_ctx),
+-	.cra_alignmask		= 0xf,
+-	.cra_type		= &crypto_ablkcipher_type,
+-	.cra_module		= THIS_MODULE,
+-	.cra_u.ablkcipher = {
+-		.min_keysize	= AES_MIN_KEY_SIZE,
+-		.max_keysize	= AES_MAX_KEY_SIZE,
+-		.ivsize		= AES_BLOCK_SIZE,
+-		.setkey		= mtk_aes_setkey,
+-		.encrypt	= mtk_aes_cfb_encrypt,
+-		.decrypt	= mtk_aes_cfb_decrypt,
+-	}
++	.base.cra_name		= "cfb(aes)",
++	.base.cra_driver_name	= "cfb-aes-mtk",
++	.base.cra_priority	= 400,
++	.base.cra_flags		= CRYPTO_ALG_ASYNC,
++	.base.cra_blocksize	= 1,
++	.base.cra_ctxsize	= sizeof(struct mtk_aes_ctx),
++	.base.cra_alignmask	= 0xf,
++	.base.cra_module	= THIS_MODULE,
++
++	.min_keysize		= AES_MIN_KEY_SIZE,
++	.max_keysize		= AES_MAX_KEY_SIZE,
++	.ivsize			= AES_BLOCK_SIZE,
++	.setkey			= mtk_aes_setkey,
++	.encrypt		= mtk_aes_cfb_encrypt,
++	.decrypt		= mtk_aes_cfb_decrypt,
+ },
+ };
+ 
+@@ -1259,7 +1243,7 @@ static void mtk_aes_unregister_algs(void)
+ 	crypto_unregister_aead(&aes_gcm_alg);
+ 
+ 	for (i = 0; i < ARRAY_SIZE(aes_algs); i++)
+-		crypto_unregister_alg(&aes_algs[i]);
++		crypto_unregister_skcipher(&aes_algs[i]);
+ }
+ 
+ static int mtk_aes_register_algs(void)
+@@ -1267,7 +1251,7 @@ static int mtk_aes_register_algs(void)
+ 	int err, i;
+ 
+ 	for (i = 0; i < ARRAY_SIZE(aes_algs); i++) {
+-		err = crypto_register_alg(&aes_algs[i]);
++		err = crypto_register_skcipher(&aes_algs[i]);
+ 		if (err)
+ 			goto err_aes_algs;
+ 	}
+@@ -1280,7 +1264,7 @@ static int mtk_aes_register_algs(void)
+ 
+ err_aes_algs:
+ 	for (; i--; )
+-		crypto_unregister_alg(&aes_algs[i]);
++		crypto_unregister_skcipher(&aes_algs[i]);
+ 
+ 	return err;
+ }
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
