@@ -2,52 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C8CCEFBB1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:43:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D639DEFBB5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:45:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=eUGvl37ByX8/fPpXsu2huWYmpqRs0gZOH9Nt8p3ntbs=; b=uGYsoS6ZrJtzi6JfYr11XghR+
-	tF5Gz91vBKOmU7RWVIiTs1okg3Ile5C+6HfaDYCyBeQB6OGc879vfAZsUbVzdhk/Jdw556hpM39U2
-	jrtdZoUUinPEjUtKXeNQrFGA//oBKO17xv5d0XgH/bFMoLW8KTQ4rFc7CKb4L/H9DY4vO8r7WPhpu
-	HJVK9pe4m/vskUSsjDQrddZ43vO0lHw3+ec/3Zf9NJbJXL/Pwy7b+/VKW9o5FFBd+EDgT1bG4VOA5
-	HEEmYrTqSzOmUCfa1zv6q9C3dEpzaWdn33HhxHDRjIzOvzw88UzD8NkB175zcY7LhfMkNVarqmUuR
-	q/OsoUJow==;
+	 bh=nerANJStWdplh7WYNsuuyHtPlobih7dshS5+xp80nIM=; b=XVCpBMeblf6Qt0YydQrwp+cWI
+	UQDPO/o1iBiCQ+YRfx/wV33B2lt11Ik4CeAK0yCh+wRohzOByWTuBBcguSheFBPaVDEXElkXie0W+
+	8NdWq82aKsRYU0qMXZLR1o8oJO1MEVV+xjRMIeGGsMTyr0QMYzkWml6FstsLooc+OkBxKxiq5lmf5
+	0u67lXNh23C/UwZUJJ96FMSxQVQfn+Fh4u6qnkdL8Z3fZMxAnV8sV2yi/k2sn82iYKHo3EYQaELBc
+	Qt/N/KdwjqqfX4CspciqYDTanhdXZDWKtFw2bYcBvzubi8PX8mBMs17AUcPkD4D+kMTLMQRchZqlA
+	dWJnB0LMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRwJW-0001w6-5w; Tue, 05 Nov 2019 10:43:54 +0000
+	id 1iRwKs-0003Ue-PZ; Tue, 05 Nov 2019 10:45:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRwJN-0001uK-9J
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:43:46 +0000
+ id 1iRwKj-0003U6-UB
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:45:11 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6C7CB206BA;
- Tue,  5 Nov 2019 10:43:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1DB6B206BA;
+ Tue,  5 Nov 2019 10:45:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572950624;
- bh=PSQEEnZ0laTDZiGYUA/GbDjYoEzSM/8mbSzwF/BKSyw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PJkpTS1MgUmm8+9CqOP+yjuzMwiYk0PVtRfX5d7YaOUBySwDZ9cM6PgMR3Cggx8Uq
- s/m93j31qYZSdoH7bqpcy6kTd9X/IXdOTOrhEHCjBFRVcbjOe/BQN0TsNli8mNcnw0
- Dc9MpcOaQ87R/WxVfPrh8mXBTe9k5st6ALK08InI=
-Date: Tue, 5 Nov 2019 11:43:42 +0100
+ s=default; t=1572950709;
+ bh=onQoxY+60Ht/QpXXbe43yBiTlL8/TGR6VtklKa0Nv8Q=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=PFdcBBT7246rOR+L/TuwT/n4Vd90Yj6lLmFUd6G+BIkkG3DYYgUrl28UrcsC9529U
+ olg2lNxLJF9D2p0XDByHBB98hvUEFu0ZsC21KV3sVINqTUsnXTw6s+vC9LOX2EvyEb
+ CeG36tokQ2/KIRdx+YsA4oASez2fvTD8FLd+rPZs=
+Date: Tue, 5 Nov 2019 11:45:07 +0100
 From: Maxime Ripard <mripard@kernel.org>
-To: Torsten Duwe <duwe@lst.de>
-Subject: Re: [PATCH v5 6/7] dt-bindings: Add ANX6345 DP/eDP transmitter binding
-Message-ID: <20191105104342.GD3876@gilmour.lan>
-References: <20191104110400.F319F68BE1@verein.lst.de>
- <20191104110613.C3BA468C4E@verein.lst.de>
+To: linux-sunxi@googlegroups.com, Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Chen-Yu Tsai <wens@csie.org>,
+ Icenowy Zheng <icenowy@aosc.io>,
+ Thomas Gleixner <tglx@linutronix.de>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 4/4] arm64: dts: allwinner: orange-pi-3: Enable USB 3.0
+ host support
+Message-ID: <20191105104507.GE3876@gilmour.lan>
+References: <20191020134229.1216351-1-megous@megous.com>
+ <20191020134229.1216351-5-megous@megous.com>
+ <20191021110946.gxmib3to7n7v2vof@gilmour>
+ <20191104121648.jxgs2eoj6loh2as2@core.my.home>
 MIME-Version: 1.0
-In-Reply-To: <20191104110613.C3BA468C4E@verein.lst.de>
+In-Reply-To: <20191104121648.jxgs2eoj6loh2as2@core.my.home>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_024345_369352_D2D719AB 
-X-CRM114-Status: GOOD (  20.48  )
+X-CRM114-CacheID: sfid-20191105_024509_997122_53710593 
+X-CRM114-Status: GOOD (  15.61  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,152 +87,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============0207381909771562762=="
+Content-Type: multipart/mixed; boundary="===============5224673011702388985=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0207381909771562762==
+--===============5224673011702388985==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="s9fJI615cBHmzTOP"
+	protocol="application/pgp-signature"; boundary="MAH+hnPXVZWQ5cD/"
 Content-Disposition: inline
 
 
---s9fJI615cBHmzTOP
-Content-Type: text/plain; charset=us-ascii
+--MAH+hnPXVZWQ5cD/
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+Hi,
 
-On Tue, Oct 29, 2019 at 01:16:57PM +0100, Torsten Duwe wrote:
-> The anx6345 is an ultra-low power DisplayPort/eDP transmitter designed
-> for portable devices.
+On Mon, Nov 04, 2019 at 01:16:48PM +0100, Ond=C5=99ej Jirman wrote:
+> Hello Maxime,
 >
-> Add a binding document for it.
+> On Mon, Oct 21, 2019 at 01:09:46PM +0200, Maxime Ripard wrote:
+> > On Sun, Oct 20, 2019 at 03:42:29PM +0200, megous@megous.com wrote:
+> > > From: Ondrej Jirman <megous@megous.com>
+> > >
+> > > Enable Allwinner's USB 3.0 phy and the host controller. Orange Pi 3
+> > > board has GL3510 USB 3.0 4-port hub connected to the SoC's USB 3.0
+> > > port. All four ports are exposed via USB3-A connectors. VBUS is
+> > > always on, since it's powered directly from DCIN (VCC-5V) and
+> > > not switchable.
+> > >
+> > > Signed-off-by: Ondrej Jirman <megous@megous.com>
+> >
+> > Those last two patches are fine with me, I'll merge them once the phy
+> > driver will be merged.
 >
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Signed-off-by: Torsten Duwe <duwe@suse.de>
-> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
-Applied, thanks
-
-(still, there's one comment below that can be addressed in a
-subsequent patch).
-
-> ---
->  .../bindings/display/bridge/anx6345.yaml           | 102 ++++++++++++++++++++++
->  1 file changed, 102 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/bridge/anx6345.yaml
+> PHY driver has been merged. You can now pull these patches too, when
+> you like.
 >
-> diff --git a/Documentation/devicetree/bindings/display/bridge/anx6345.yaml b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
-> new file mode 100644
-> index 000000000000..094e8e8a5faa
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/bridge/anx6345.yaml
-> @@ -0,0 +1,102 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/bridge/anx6345.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Analogix ANX6345 eDP Transmitter Device Tree Bindings
-> +
-> +maintainers:
-> +  - Torsten Duwe <duwe@lst.de>
-> +
-> +description: |
-> +  The ANX6345 is an ultra-low power Full-HD eDP transmitter designed for
-> +  portable devices.
-> +
-> +properties:
-> +  compatible:
-> +    const: analogix,anx6345
-> +
-> +  reg:
-> +    maxItems: 1
-> +    description: base I2C address of the device
-> +
-> +  reset-gpios:
-> +    maxItems: 1
-> +    description: GPIO connected to active low reset
-> +
-> +  dvdd12-supply:
-> +    maxItems: 1
-> +    description: Regulator for 1.2V digital core power.
-> +
-> +  dvdd25-supply:
-> +    maxItems: 1
-> +    description: Regulator for 2.5V digital core power.
-> +
-> +  ports:
-> +    type: object
-> +
-> +    properties:
-> +      port@0:
-> +        type: object
-> +        description: |
-> +          Video port for LVTTL input
-> +
-> +      port@1:
-> +        type: object
-> +        description: |
-> +          Video port for eDP output (panel or connector).
-> +          May be omitted if EDID works reliably.
-> +
-> +    required:
-> +      - port@0
+> See here: https://git.kernel.org/pub/scm/linux/kernel/git/kishon/linux-ph=
+y.git/log/?h=3Dnext
 
-You should have something like:
-
-ports:
-  type: object
-  additionalProperties: false
-
-as well...
-
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - reset-gpios
-> +  - dvdd12-supply
-> +  - dvdd25-supply
-> +  - ports
-> +
-> +additionalProperties: false
-
-This prevents additional properties only on the top-level node, not
-its children.
+Thanks for letting me know, I just applied it.
 
 Maxime
-
---s9fJI615cBHmzTOP
+--MAH+hnPXVZWQ5cD/
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXcFSXgAKCRDj7w1vZxhR
-xWDyAQC/sTEqgIPTcOOELk+/c6UietuE9I6ZSjYK0vSixbY85QEA3YGf1cUesRov
-KKmSnjZjgmC0YlV/4YVCj4ZQF1Dkkw0=
-=1muA
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXcFSswAKCRDj7w1vZxhR
+xYUhAQCgnMs/KfGma0n4q8UBRgykbOwd6sV62XQC9vYIV/XaCQEA95H1Cno4U6UO
+7b+BJra9M7o+xz4P/Mv6itEuQHmycQM=
+=lBwP
 -----END PGP SIGNATURE-----
 
---s9fJI615cBHmzTOP--
+--MAH+hnPXVZWQ5cD/--
 
 
---===============0207381909771562762==
+--===============5224673011702388985==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -232,5 +157,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0207381909771562762==--
+--===============5224673011702388985==--
 
