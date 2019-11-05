@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C87BF07B8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:08:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CBD7F07BC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:08:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=UeGlO8GemSMKRjA6armQDOZz1F9KVPdcKmo8er05I9U=; b=tlKsDspEqN3pja53LPz8LLbC1Q
-	6KiTyNoDmNWu6zO4OhIieppaI5yCUW9a7YI/CIRI6hg3etYlmCdgfaXmu4rYAX4f/DLJQlfNPp+lX
-	iqtiGQrzEeN1fYjXKbv7XTyzU0VYbgK2aiBCGNT9HsziAMLM80IAHs/vOEDrGFBQiPrmQ+LkzAYqq
-	R06zOy+OwR3+JQixBpizwDCjKzTgwauabS67dfzCk+N+3DG2nm+p+c7wUAqD9dWnZHCDu8jNvuH6p
-	kLNHEvWX3mkcoEfZc23lTcLtGn3jn/zt2QBsgRjsqFgFU9tzSeZRPJWz9YM7oxZzofIxFqVn3Bkh5
-	k/yRlfSw==;
+	bh=zx3fCln+LAQAR3OIiq/DPnuXouLuq9p991jCXokwaVU=; b=KpcpZENuYwsuGllWhH+iQCfuD5
+	itIrIY2vBo6axJaAWC07Bc9I0h674BUAIhOwtngDSC4PtQRiaNE78MPNXU3HJx0aLp+LrV2ZfaVag
+	DMFJvEoMzDtmB/rJrEH2u8sgz3YXcAvAq3+QiX6tAezecK7JxOXLHw1hQt8H+Lb98z+LHCYoQeEND
+	u/VJmeOl7ahK+29vYxFu0ScnFwvW+pCZgMx5yJF97QrEDbBEDoMi711rBwdhD4WSoxCX+or3mIa1V
+	gli7FzyZXhYWKEsQjvskdYVismfRt1m79cOtxrO+QN/ALz6YEkAn9OUXcb32d2AbnWnh+hH+g63iL
+	QB4HLpnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS63O-0007EC-MY; Tue, 05 Nov 2019 21:07:54 +0000
+	id 1iS63v-0007ix-Nm; Tue, 05 Nov 2019 21:08:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5wB-0007fU-ST
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:29 +0000
+ id 1iS5wE-0007iK-LR
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:32 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C32EB21D6C;
- Tue,  5 Nov 2019 21:00:24 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9007721D7F;
+ Tue,  5 Nov 2019 21:00:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987627;
- bh=HZUHLYdRGJUrgy226Rwadpm2bQuFrlaAit8XjlBcYu0=;
+ s=default; t=1572987629;
+ bh=E5wA/b/k9CXJgLSYstOgxYFcyWTtNQfqF+P8GVa9EO0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mls0iUz0r7fkkT/MStZ3Y20s1m64DxAeRn1c8TpZmUpBeZfsG2cXe6/oBrUbipAph
- Rsm7Qa/R8cDw8+8XoTdDjc1RAAC3SkAzvpQhEPCiiq9pV5y4qavA4bvEO6wnTz+GvM
- oNf7M8De3YnPAzpFS0w70rfy2s/+2jqzu8ElpeL8=
+ b=f3Xnyac+aNxxtPQ/6uCLCyd3y6q6Pp9vqNk7ESxmQA3N+HKfqRWQ3jkbsGcVblAMz
+ V5XFlHiifxKxXD2Hl+kboDVZi6hMkzT0kEn5gGBE3L4/3YshqCaUZXyBQ2R+JJoAl1
+ 5YMDkZK0K9k3M9+nDb0qUN/D2WeEUwuO/9rn2LOc=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 31/53] ARM: spectre-v1: add
- array_index_mask_nospec() implementation
-Date: Tue,  5 Nov 2019 21:58:24 +0100
-Message-Id: <20191105205846.1394-32-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 32/53] ARM: spectre-v1: fix syscall entry
+Date: Tue,  5 Nov 2019 21:58:25 +0100
+Message-Id: <20191105205846.1394-33-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_130027_955324_F739DE70 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20191105_130030_749555_002117AC 
+X-CRM114-Status: GOOD (  12.99  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,10 +91,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Russell King <rmk+kernel@armlinux.org.uk>
 
-Commit 1d4238c56f9816ce0f9c8dbe42d7f2ad81cb6613 upstream.
+Commit 10573ae547c85b2c61417ff1a106cffbfceada35 upstream.
 
-Add an implementation of the array_index_mask_nospec() function for
-mitigating Spectre variant 1 throughout the kernel.
+Prevent speculation at the syscall table decoding by clamping the index
+used to zero on invalid system call numbers, and using the csdb
+speculative barrier.
 
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Acked-by: Mark Rutland <mark.rutland@arm.com>
@@ -105,40 +105,89 @@ Signed-off-by: David A. Long <dave.long@linaro.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/include/asm/barrier.h | 21 ++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+ arch/arm/kernel/entry-common.S | 18 ++++++--------
+ arch/arm/kernel/entry-header.S | 25 ++++++++++++++++++++
+ 2 files changed, 32 insertions(+), 11 deletions(-)
 
-diff --git a/arch/arm/include/asm/barrier.h b/arch/arm/include/asm/barrier.h
-index edd9e633a84b..8514b70704de 100644
---- a/arch/arm/include/asm/barrier.h
-+++ b/arch/arm/include/asm/barrier.h
-@@ -108,5 +108,26 @@ do {									\
- #define smp_mb__before_atomic()	smp_mb()
- #define smp_mb__after_atomic()	smp_mb()
+diff --git a/arch/arm/kernel/entry-common.S b/arch/arm/kernel/entry-common.S
+index 30a7228eaceb..e969b18d9ff9 100644
+--- a/arch/arm/kernel/entry-common.S
++++ b/arch/arm/kernel/entry-common.S
+@@ -223,9 +223,7 @@ local_restart:
+ 	tst	r10, #_TIF_SYSCALL_WORK		@ are we tracing syscalls?
+ 	bne	__sys_trace
  
+-	cmp	scno, #NR_syscalls		@ check upper syscall limit
+-	badr	lr, ret_fast_syscall		@ return address
+-	ldrcc	pc, [tbl, scno, lsl #2]		@ call sys_* routine
++	invoke_syscall tbl, scno, r10, ret_fast_syscall
+ 
+ 	add	r1, sp, #S_OFF
+ 2:	cmp	scno, #(__ARM_NR_BASE - __NR_SYSCALL_BASE)
+@@ -258,14 +256,8 @@ __sys_trace:
+ 	mov	r1, scno
+ 	add	r0, sp, #S_OFF
+ 	bl	syscall_trace_enter
+-
+-	badr	lr, __sys_trace_return		@ return address
+-	mov	scno, r0			@ syscall number (possibly new)
+-	add	r1, sp, #S_R0 + S_OFF		@ pointer to regs
+-	cmp	scno, #NR_syscalls		@ check upper syscall limit
+-	ldmccia	r1, {r0 - r6}			@ have to reload r0 - r6
+-	stmccia	sp, {r4, r5}			@ and update the stack args
+-	ldrcc	pc, [tbl, scno, lsl #2]		@ call sys_* routine
++	mov	scno, r0
++	invoke_syscall tbl, scno, r10, __sys_trace_return, reload=1
+ 	cmp	scno, #-1			@ skip the syscall?
+ 	bne	2b
+ 	add	sp, sp, #S_OFF			@ restore stack
+@@ -317,6 +309,10 @@ sys_syscall:
+ 		bic	scno, r0, #__NR_OABI_SYSCALL_BASE
+ 		cmp	scno, #__NR_syscall - __NR_SYSCALL_BASE
+ 		cmpne	scno, #NR_syscalls	@ check range
 +#ifdef CONFIG_CPU_SPECTRE
-+static inline unsigned long array_index_mask_nospec(unsigned long idx,
-+						    unsigned long sz)
-+{
-+	unsigned long mask;
-+
-+	asm volatile(
-+		"cmp	%1, %2\n"
-+	"	sbc	%0, %1, %1\n"
-+	CSDB
-+	: "=r" (mask)
-+	: "r" (idx), "Ir" (sz)
-+	: "cc");
-+
-+	return mask;
-+}
-+#define array_index_mask_nospec array_index_mask_nospec
++		movhs	scno, #0
++		csdb
 +#endif
+ 		stmloia	sp, {r5, r6}		@ shuffle args
+ 		movlo	r0, r1
+ 		movlo	r1, r2
+diff --git a/arch/arm/kernel/entry-header.S b/arch/arm/kernel/entry-header.S
+index 6d243e830516..86dfee487e24 100644
+--- a/arch/arm/kernel/entry-header.S
++++ b/arch/arm/kernel/entry-header.S
+@@ -373,6 +373,31 @@
+ #endif
+ 	.endm
+ 
++	.macro	invoke_syscall, table, nr, tmp, ret, reload=0
++#ifdef CONFIG_CPU_SPECTRE
++	mov	\tmp, \nr
++	cmp	\tmp, #NR_syscalls		@ check upper syscall limit
++	movcs	\tmp, #0
++	csdb
++	badr	lr, \ret			@ return address
++	.if	\reload
++	add	r1, sp, #S_R0 + S_OFF		@ pointer to regs
++	ldmccia	r1, {r0 - r6}			@ reload r0-r6
++	stmccia	sp, {r4, r5}			@ update stack arguments
++	.endif
++	ldrcc	pc, [\table, \tmp, lsl #2]	@ call sys_* routine
++#else
++	cmp	\nr, #NR_syscalls		@ check upper syscall limit
++	badr	lr, \ret			@ return address
++	.if	\reload
++	add	r1, sp, #S_R0 + S_OFF		@ pointer to regs
++	ldmccia	r1, {r0 - r6}			@ reload r0-r6
++	stmccia	sp, {r4, r5}			@ update stack arguments
++	.endif
++	ldrcc	pc, [\table, \nr, lsl #2]	@ call sys_* routine
++#endif
++	.endm
 +
-+#include <asm-generic/barrier.h>
-+
- #endif /* !__ASSEMBLY__ */
- #endif /* __ASM_BARRIER_H */
+ /*
+  * These are the registers used in the syscall handler, and allow us to
+  * have in theory up to 7 arguments to a function - r0 to r6.
 -- 
 2.17.1
 
