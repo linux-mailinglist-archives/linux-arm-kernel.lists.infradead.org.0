@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7D18F07A9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:05:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E01CF07AB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:05:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DpC21o4Ns/PWuqOrJSw9VJX1uj8wayNSFmUxINEuv7M=; b=bMlQ6ptGpMGQNT7lfNvXMaVwN9
-	7H4mXX3hPwePMKcP6wJRRPi9e5/UoGrvYE3HQt44mgMr19yVSSfDbSq3ljaGeS0AOS+XSxH289y6c
-	roaGSyVKVx7ezDSu9BKLWYwhWKnTc1+ptp+vTVP/5kxVx4GzAcgFIT++89AB0VeM2MBNCYd1DtP1o
-	p9A+TJETeWlZllSATDT7t6V5D1h6xW4NLkI/CBAvMnc1rRb3J9Uugp9fSCoQ1OQW1eVyhOj+4XxyD
-	30jBTqXtSw2PlHMAZ1n+/8bKh2eNwFg4KHeEa8Z0yi9OPPNYVOH2rEnpqUbb+1EIu/oukjROz07ND
-	SNHdL7ZA==;
+	bh=4oodytOA9zBxiXju8ukahdb76rq7SvZ2RvHVmZFDuI8=; b=ETPoRO8yVM1ZvefHJsitZC+anb
+	VMCAkqzIbtDJzac5UdtASoXnwXi6phPZT4clO9fyJF0nNT6QeEbZK1eNMygG1Wp86dIqjuAolQWqc
+	Mq43+hYPTcBen9qbgpnwcKRJKQUbM/x0FAjwI7tvq2D0O8JoZgRUS8j+mcs2GVHHFzdIqbjxFCAn1
+	guqiT1b3qUnzEEBRqEOUuvvi6XNwRzhhhL8y/5OxeVvefLyWtVg8bBB2BUZLO7nvzIwhA8YqsB4oW
+	mbvoIUvUYBvvkHwAn6cspfQKOLjrHuxf3ZMJjbHq19/FDESyKdZGltXH0eyAEIf3ywrgSN/Vu45qq
+	eZpB2jnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS616-0005Fk-Gi; Tue, 05 Nov 2019 21:05:32 +0000
+	id 1iS61M-0005PB-1I; Tue, 05 Nov 2019 21:05:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5vq-0006Jh-Ir
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:08 +0000
+ id 1iS5vs-0006cZ-5S
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:10 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 634C521D7F;
- Tue,  5 Nov 2019 21:00:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 33E0E21A49;
+ Tue,  5 Nov 2019 21:00:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987604;
- bh=fyrOJyisr0H3F7a7ubwb1jm3XxwyE+lQzIcDUhxXdQI=;
+ s=default; t=1572987607;
+ bh=fhAP4G/1H97l2QGMhYX0kvn0VP89Hp68X9bJIYc33/k=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=I4YSSs3nRlNh0NQ5M4hhh/4J1I1XhSO48b90jpdBBUxNSgkzIIz09CqsxfNGTAPBM
- Mkpv7egmvABaxapFsUm8xT5lsK1ksAjxGCIVN6Adui/m3CnD1D6JvsO5z8qkFWDwGo
- vz0Q8g2E18AfvmHNXceNcuth41hEnx5lLxacW8n4=
+ b=B8Hw/QXlrb1cgafgXibwCwqebjwimSG4OX6tgC2M1rWqEBAWUtuFW81/AcgHEL05d
+ 10xJ7I6JhYDaGoL2sfVb162nEsupAQMhcDQRRIhExhbydVyuCq2s2RznC8Yjl41AKw
+ e7qXQAf8MD+dWcaTZeb08YzGWQ+XmM4qutHa2fOg=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 23/53] ARM: bugs: add support for
- per-processor bug checking
-Date: Tue,  5 Nov 2019 21:58:16 +0100
-Message-Id: <20191105205846.1394-24-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 24/53] ARM: spectre: add Kconfig symbol for
+ CPUs vulnerable to Spectre
+Date: Tue,  5 Nov 2019 21:58:17 +0100
+Message-Id: <20191105205846.1394-25-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_130006_744370_09111235 
-X-CRM114-Status: GOOD (  13.99  )
+X-CRM114-CacheID: sfid-20191105_130008_275095_60258197 
+X-CRM114-Status: GOOD (  10.09  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,16 +92,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Russell King <rmk+kernel@armlinux.org.uk>
 
-Commit 9d3a04925deeabb97c8e26d940b501a2873e8af3 upstream.
+Commit c58d237d0852a57fde9bc2c310972e8f4e3d155d upstream.
 
-Add support for per-processor bug checking - each processor function
-descriptor gains a function pointer for this check, which must not be
-an __init function.  If non-NULL, this will be called whenever a CPU
-enters the kernel via which ever path (boot CPU, secondary CPU startup,
-CPU resuming, etc.)
-
-This allows processor specific bug checks to validate that workaround
-bits are properly enabled by firmware via all entry paths to the kernel.
+Add a Kconfig symbol for CPUs which are vulnerable to the Spectre
+attacks.
 
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
@@ -112,61 +106,31 @@ Signed-off-by: David A. Long <dave.long@linaro.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/include/asm/proc-fns.h | 4 ++++
- arch/arm/kernel/bugs.c          | 4 ++++
- arch/arm/mm/proc-macros.S       | 3 ++-
- 3 files changed, 10 insertions(+), 1 deletion(-)
+ arch/arm/mm/Kconfig | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm/include/asm/proc-fns.h b/arch/arm/include/asm/proc-fns.h
-index 8877ad5ffe10..f379f5f849a9 100644
---- a/arch/arm/include/asm/proc-fns.h
-+++ b/arch/arm/include/asm/proc-fns.h
-@@ -36,6 +36,10 @@ extern struct processor {
- 	 * Set up any processor specifics
- 	 */
- 	void (*_proc_init)(void);
-+	/*
-+	 * Check for processor bugs
-+	 */
-+	void (*check_bugs)(void);
- 	/*
- 	 * Disable any processor specifics
- 	 */
-diff --git a/arch/arm/kernel/bugs.c b/arch/arm/kernel/bugs.c
-index 16e7ba2a9cc4..7be511310191 100644
---- a/arch/arm/kernel/bugs.c
-+++ b/arch/arm/kernel/bugs.c
-@@ -5,6 +5,10 @@
+diff --git a/arch/arm/mm/Kconfig b/arch/arm/mm/Kconfig
+index 41218867a9a6..7ef92e6692ab 100644
+--- a/arch/arm/mm/Kconfig
++++ b/arch/arm/mm/Kconfig
+@@ -396,6 +396,7 @@ config CPU_V7
+ 	select CPU_CP15_MPU if !MMU
+ 	select CPU_HAS_ASID if MMU
+ 	select CPU_PABRT_V7
++	select CPU_SPECTRE if MMU
+ 	select CPU_TLB_V7 if MMU
  
- void check_other_bugs(void)
- {
-+#ifdef MULTI_CPU
-+	if (processor.check_bugs)
-+		processor.check_bugs();
-+#endif
- }
+ # ARMv7M
+@@ -793,6 +794,9 @@ config CPU_BPREDICT_DISABLE
+ 	help
+ 	  Say Y here to disable branch prediction.  If unsure, say N.
  
- void __init check_bugs(void)
-diff --git a/arch/arm/mm/proc-macros.S b/arch/arm/mm/proc-macros.S
-index c671f345266a..212147c78f4b 100644
---- a/arch/arm/mm/proc-macros.S
-+++ b/arch/arm/mm/proc-macros.S
-@@ -258,13 +258,14 @@
- 	mcr	p15, 0, ip, c7, c10, 4		@ data write barrier
- 	.endm
- 
--.macro define_processor_functions name:req, dabort:req, pabort:req, nommu=0, suspend=0
-+.macro define_processor_functions name:req, dabort:req, pabort:req, nommu=0, suspend=0, bugs=0
- 	.type	\name\()_processor_functions, #object
- 	.align 2
- ENTRY(\name\()_processor_functions)
- 	.word	\dabort
- 	.word	\pabort
- 	.word	cpu_\name\()_proc_init
-+	.word	\bugs
- 	.word	cpu_\name\()_proc_fin
- 	.word	cpu_\name\()_reset
- 	.word	cpu_\name\()_do_idle
++config CPU_SPECTRE
++	bool
++
+ config TLS_REG_EMUL
+ 	bool
+ 	select NEED_KUSER_HELPERS
 -- 
 2.17.1
 
