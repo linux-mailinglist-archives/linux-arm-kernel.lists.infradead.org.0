@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E6B2EFDC1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 13:53:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5ED3EFDB5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 13:52:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nf3FV9Ap8/G1UrUHPUJ9FdStpUd+ZTyip0XLnumKSJQ=; b=rgVWL7x0+/F9xd
-	nxOSDeJSq43d+0bUmXojk0WRBO77zZBuMF16XjOEMIlei6HoFoCttUnvlKSD86JwPBOs4wzKfg3+R
-	xw15yTJFaL9EeleGdiACwXuvd8vP023nx7HH8ht5jfQqYQlwcwePgXz7Z5Q8B2PGA0zciInMSwYSq
-	axzOe82wvtCzC8r/6XanVSoi1iMdMb3O+wKztHP12/9u3Qh8p69mmCLYEDwH6urON8jTBVCCIy9Yq
-	Yt0DPRkDXZnlDCaXAFT92NSLoJo18CpLT35uaZy+KWrwmnfy0xb/Ik4byBV/HiPqF1S6ZsEi/gdUj
-	XHF/LLvEKf8zoK0m1rQA==;
+	List-Owner; bh=WIhK0FcOsLXNwBXWpH1b7uxbrri9aWRWXKPxsYbhU9U=; b=DhLB7Q+VL8J2Wf
+	2njm/LEjJZjc7YWeyqIhUb0v1YgVDitldBUWqFdpiOo+8Z+vIg7bd9+MtUJj7/Cz7jWv52UIC/+pV
+	C+4gLI2TmGuJZ8jzxjwxzRDVAEemep0HDJhL9CPQe1MwzBnjNqibiX91B7CvBJ5ITzKKSQmrGlhAV
+	JIlq1AmW/rAxJJDk1z6Ygf6IppFtbTjAINCnpbTLKlrom+pJIr58ge+EW0NGc7J+avFW1geTnNNFL
+	xU/khREQQHtdF5+Gu/MZxWjxGh11w9vM1Ob78xgttttLE0pJmxysu8NiDduvnGjHSH5UFgHwLw1q7
+	6and9VmaNo4Ob1sLupnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRyLF-0007w2-QM; Tue, 05 Nov 2019 12:53:49 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iRyKL-0006vU-0m; Tue, 05 Nov 2019 12:52:53 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRyKA-0006ta-Kb
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 12:52:45 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xA5Cq9ZK024543; Tue, 5 Nov 2019 13:52:38 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=xEGD8vXEOIUdaCKgzE5zRyL6GzL6CnxaGb454HU1N+w=;
- b=c2Q9V9yH3NCkJPvVriKRUF4VjJGb76DcOGFqDaVxGRGJ9EuT0WCIKIF5fBqeM6ITVPJN
- +k3NAv6acFjr9gKt9EADlVQs+2OUx6HPIKoiDdvz5Ea6MtGiPSn3j9U96jWf0qB+FDyO
- UPGTdLH2VQPAcySgp8xvkGclvB5a9dGqjLNMZu/l8qfDUoEPGaKkm0UQlOmjjcmSaje1
- ajGXb890Gw4/G57kdG9A79cAWUhYXEy3Iy6YL1lKqQIL378rkuZZdzT2cwLogVJAKtPz
- +ok5dj8iV/mmkeJs/yQJAwp4+3tNXfTzCeVuYPm1FYymXowJA/l4k8ProdGYyAj7S2u+ 0A== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2w0ytcr0bu-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 05 Nov 2019 13:52:38 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 00DF8100034;
- Tue,  5 Nov 2019 13:52:38 +0100 (CET)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E892E2BC5E5;
- Tue,  5 Nov 2019 13:52:37 +0100 (CET)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.46) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 5 Nov 2019
- 13:52:37 +0100
-Received: from localhost (10.48.0.192) by webmail-ga.st.com (10.75.90.48) with
- Microsoft SMTP Server (TLS) id 14.3.439.0;
- Tue, 5 Nov 2019 13:52:37 +0100
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <alexandre.torgue@st.com>
-Subject: [PATCH 4/4] ARM: dts: stm32: add support for PWM on stm32mp157a-dk1
-Date: Tue, 5 Nov 2019 13:52:21 +0100
-Message-ID: <1572958341-12404-5-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1572958341-12404-1-git-send-email-fabrice.gasnier@st.com>
-References: <1572958341-12404-1-git-send-email-fabrice.gasnier@st.com>
+ id 1iRyKA-0006tL-6s
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 12:52:43 +0000
+Received: by mail-lf1-x142.google.com with SMTP id 195so15011026lfj.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 Nov 2019 04:52:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=YOzAXaD9/z5O/VkzaeEi9wDLIjI1mz7wj0WzoXrtE/s=;
+ b=u2h0XJa1uFBukj0rea7KKqSm5zUDn1Oqe9ydsrss5VqYU0ABN0gEgV8f5QhvOIw4Cl
+ AkTUFAZCOva2k9OcXo+tEX/Pgib/WinvY/ybsUKVKN7viynkAT3mwRi+f4rpQ6BaFGdp
+ mDoIMQ/GdmZ9hPjOm6nExeHSfFT/VjpIlMddeCbi7etK47baLN0vx9rrswBouMihEUeU
+ vu56MBc4iw4NNBHbit/g/L+koZt+wbsSyktFVKDSGSAW/95R1Q/bNbVaSamsiRDzBnt1
+ myZkobc9FW8jpbpUUvbV81WtdS3LygE1l4UTVpAAqvpdanPURHxAwKTuGj12RTwDJYCV
+ lK6A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=YOzAXaD9/z5O/VkzaeEi9wDLIjI1mz7wj0WzoXrtE/s=;
+ b=SnozV7JCHJ7wsjGUkK3aBBHj7yV/LZflY0I1gmPzPd5pJBk7DgMF+H8yNAclucehKw
+ GC+QvJeCiaKobcLAb1TGAW+PHdcvGH22Ls5qNOHnzbAM89AsJez6rSbe7U7Q3tQm8gPo
+ Kcqyswfb2sfme7d9MEJB4y/1YcBZqlFqze7EBDBb5jg/mWzf5VzuGJGPEafdpJhwTBan
+ t7EwRwdR9OLbtet5IYBzT7myI0kjpyQ6zwM/9RzqO6epIpM5EeufF83b6OlypRPhhYt/
+ Etv42KEFjtB4/KTai7oMtoe4y+8rtRMHX/wsKT364a6y2NnQNKnt6MPsYmKhc7uERhMp
+ carg==
+X-Gm-Message-State: APjAAAUwxrDGxbdrDtqmKeZm6oxK/tOPQjp+CnB9+TRlDb0Sqp063aYz
+ R/kDIb6CL21egVL09BVOSATMYie3vTYZMcwhFArOU16V
+X-Google-Smtp-Source: APXvYqzvsT6SpTRuwQNrmaN7BrvGXAxWBfcAcsfwk3Zp++JoZRocV2CnpG3DpFVY3Il6bjB2V0Pw5CdFeLjKTPCa2sM=
+X-Received: by 2002:ac2:4a8a:: with SMTP id l10mr12918658lfp.185.1572958358931; 
+ Tue, 05 Nov 2019 04:52:38 -0800 (PST)
 MIME-Version: 1.0
-X-Originating-IP: [10.48.0.192]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
- definitions=2019-11-05_04:2019-11-05,2019-11-05 signatures=0
+References: <20191105073413.23129-1-sr@denx.de>
+In-Reply-To: <20191105073413.23129-1-sr@denx.de>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Tue, 5 Nov 2019 09:52:33 -0300
+Message-ID: <CAOMZO5AbbT5kYgOKhynBut9p_E+z6Wqc1Cw6mTdOTetTS2++AA@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: imx6ul: imx6ul-14x14-evk.dtsi: Fix SPI NOR
+ probing
+To: Stefan Roese <sr@denx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_045242_957907_A9AE49C7 
-X-CRM114-Status: GOOD (  15.24  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191105_045242_251766_8CE7891A 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -95,127 +94,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Shawn Guo <shawnguo@kernel.org>,
+ Frieder Schrempf <frieder.schrempf@kontron.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add PWM support on stm32mp157a-dk1 board. There are several timers channels
-made available on GPIO expansion and arduino connectors:
-- Add PWM and trigger support (these timers can also be used as trigger
-  for ADC).
-It's easier then to configure them all. But keep them disabled by default,
-so the pins are kept in their initial state to lower power consumption.
-This way they can also be used as GPIO.
+Hi Stefan,
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
- arch/arm/boot/dts/stm32mp157a-dk1.dts | 85 +++++++++++++++++++++++++++++++++++
- 1 file changed, 85 insertions(+)
+On Tue, Nov 5, 2019 at 4:34 AM Stefan Roese <sr@denx.de> wrote:
+>
+> Without this "jedec,spi-nor" compatible property, probing of the SPI NOR
+> does not work on the NXP i.MX6ULL EVK. Fix this by adding this
+> compatible property to the DT.
+>
+> Signed-off-by: Stefan Roese <sr@denx.de>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: Frieder Schrempf <frieder.schrempf@kontron.de>
+> Cc: Shawn Guo <shawnguo@kernel.org>
 
-diff --git a/arch/arm/boot/dts/stm32mp157a-dk1.dts b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-index 984a47c..d4e37ab 100644
---- a/arch/arm/boot/dts/stm32mp157a-dk1.dts
-+++ b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-@@ -502,6 +502,91 @@
- 	status = "okay";
- };
- 
-+&timers1 {
-+	/* spare dmas for other usage */
-+	/delete-property/dmas;
-+	/delete-property/dma-names;
-+	status = "disabled";
-+	pwm {
-+		pinctrl-0 = <&pwm1_pins_a>;
-+		pinctrl-1 = <&pwm1_sleep_pins_a>;
-+		pinctrl-names = "default", "sleep";
-+		status = "okay";
-+	};
-+	timer@0 {
-+		status = "okay";
-+	};
-+};
-+
-+&timers3 {
-+	/delete-property/dmas;
-+	/delete-property/dma-names;
-+	status = "disabled";
-+	pwm {
-+		pinctrl-0 = <&pwm3_pins_a>;
-+		pinctrl-1 = <&pwm3_sleep_pins_a>;
-+		pinctrl-names = "default", "sleep";
-+		status = "okay";
-+	};
-+	timer@2 {
-+		status = "okay";
-+	};
-+};
-+
-+&timers4 {
-+	/delete-property/dmas;
-+	/delete-property/dma-names;
-+	status = "disabled";
-+	pwm {
-+		pinctrl-0 = <&pwm4_pins_a &pwm4_pins_b>;
-+		pinctrl-1 = <&pwm4_sleep_pins_a &pwm4_sleep_pins_b>;
-+		pinctrl-names = "default", "sleep";
-+		status = "okay";
-+	};
-+	timer@3 {
-+		status = "okay";
-+	};
-+};
-+
-+&timers5 {
-+	/delete-property/dmas;
-+	/delete-property/dma-names;
-+	status = "disabled";
-+	pwm {
-+		pinctrl-0 = <&pwm5_pins_a>;
-+		pinctrl-1 = <&pwm5_sleep_pins_a>;
-+		pinctrl-names = "default", "sleep";
-+		status = "okay";
-+	};
-+	timer@4 {
-+		status = "okay";
-+	};
-+};
-+
-+&timers6 {
-+	/delete-property/dmas;
-+	/delete-property/dma-names;
-+	status = "disabled";
-+	timer@5 {
-+		status = "okay";
-+	};
-+};
-+
-+&timers12 {
-+	/delete-property/dmas;
-+	/delete-property/dma-names;
-+	status = "disabled";
-+	pwm {
-+		pinctrl-0 = <&pwm12_pins_a>;
-+		pinctrl-1 = <&pwm12_sleep_pins_a>;
-+		pinctrl-names = "default", "sleep";
-+		status = "okay";
-+	};
-+	timer@11 {
-+		status = "okay";
-+	};
-+};
-+
- &uart4 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart4_pins_a>;
--- 
-2.7.4
+Thanks for the fix.
 
+Please add a Fixes tag so that it can be backported to older kernels.
+
+Then you can also add:
+
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
