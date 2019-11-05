@@ -2,56 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67467F00B3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 16:05:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9B19F00BE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 16:06:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0DooeZ8zZ4zA201aw6wuIwqxswweOw2b33n8QKOu28o=; b=YJUL6hixBjOH1i
-	gk9vZcqE/+e/vEVAtvt6gB8OBCNHfKlNQdFN4MrXCy2c633rlPuUw0ZgrBs/m11bbScqz7514tc2h
-	ekndW7iezvNG/Pv+4M7WKKX9OR8P8w70umYOhB9GoLBf3Ag8OiFCHAJtKSnd6CkGrKtVXPKNVmpNt
-	D3mP9e+DAgxZLKtsUxG98ud3aK/a7AaVWH6K6wIO5G96hVlbp1Z7N8P55xySNlZCra2N7lgbBQsfl
-	pQeGFBr/EsODqV1w4LeinysUUIwKaOmSE71eGOkezO6g5341aP7HbPTbSh1R+nu86dsu3YblsHMce
-	TfC5F00eEn8eQsbanu0A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EUzzFWfi/m4k6f0Ks00PMsXiXpUFqjjdBtPTtqubzwk=; b=gZCsmLlHDN/rFR
+	KBmU0r0Mv032KdYh2P0txrzT4G43l87+2iYzed+XFEv0dAn9Avrx6HHCq2QOXwnfAJyaEs0rbbAgA
+	e924uw1ikT4ucGPHsW+5f8vErPPz3z2DwQCFqyNPgxfERGcUv/gC8kxCTR2iyXSh/2l+BETqKarle
+	SRBFBuzHyGWUnTvvEE4YgBXUiQrQhwVL6e9pYzUEpHL2olqhCg+a8ozlZIbfXsLs4MVrjaWn35eVc
+	m6/Yf5W536A4cmc3+8kfnYYImaajGqLXjxfpLCRtSYAaoSmNVbyaDP4O3pJMNAjGQ+nuSocV8XtW+
+	GMISYrkh7j3knyNb7WGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS0OT-0000T4-OU; Tue, 05 Nov 2019 15:05:17 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1iS0Pt-0002IU-ES; Tue, 05 Nov 2019 15:06:45 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS0NM-00084I-3u
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 15:04:10 +0000
-Received: from 1.general.cking.uk.vpn ([10.172.193.212] helo=localhost)
- by youngberry.canonical.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <colin.king@canonical.com>)
- id 1iS0ND-0003AZ-ML; Tue, 05 Nov 2019 15:03:59 +0000
-From: Colin King <colin.king@canonical.com>
-To: Corentin Labbe <clabbe.montjoie@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- "David S . Miller" <davem@davemloft.net>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH][next][V2] crypto: allwinner: fix some spelling mistakes
-Date: Tue,  5 Nov 2019 15:03:59 +0000
-Message-Id: <20191105150359.61379-1-colin.king@canonical.com>
-X-Mailer: git-send-email 2.20.1
+ id 1iS0Pl-0002I5-EG
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 15:06:38 +0000
+Received: by mail-lj1-x242.google.com with SMTP id g3so16101778ljl.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 Nov 2019 07:06:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=XeLKSI0KpVKh7U51GFQKhu41G/kKMM6hiwNkiVQAYno=;
+ b=vmLGemzHKaxLBgLOj8ysaBgUxFMaOKKjcTIanlNzhYP69lx4N1ogVqivjUM37D2rJU
+ mqZpFLjzo/ZL8PcdliQcdNt45so0lInDzm5XPZpxb1dEXl776kPWKrmh47wo2KHWKBiS
+ OihVcAcKa7ILvYycaHoOqrGsb/Xv569qGfL5cyivyxmpqWoV70XY2FaTfZ4Nn4xQiBsv
+ 7FcYcUKl5Yun5MQhkq6/S3MoubixSgNFspwkPZUoQQxzpKOqlkR4hn9SmDQqQpgZpaP4
+ ea/FaQ/9Ig6WlPkVHuj6Fj2xBUe3a5dMC/UZ3Z/D2iXjk3U6bGdWAoxHw5RPFdN0or70
+ 1pFA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XeLKSI0KpVKh7U51GFQKhu41G/kKMM6hiwNkiVQAYno=;
+ b=MMkVGr4JRfWLzB20RSGIfqeOWcc2YpDmUC+NWZjyTRdt90vQU1vBj+X6D/7FANBWcN
+ V/cUeIusbKjkukxFKtmdl2lrD2zET/rSXXHFGhJ0IGlDn4RYFCXtDFU54EN7rU23Ug7T
+ njtW1d+qoJ8rjd+8g+XGQotPQ7Y3WuL4BrQnPCE46BmVLrk2JgMhMJ0vHfIqt/lwy0dI
+ FWX6oDsR7WSjlS/BzQtwo4gU8SVDN1I6Gke2WUGJFCMtL34Q8LBwCf4kTqwrYQJfnHzd
+ WkEKIkhtW12TatYIyMzH2byl0wnLyR+oflFo+UurugKHwg/MV7bLTeQHXk08sj4kBLv+
+ uLxA==
+X-Gm-Message-State: APjAAAXzxoFOcYJYi9eEngy2/dUHWj15jRVfteFG2YbSNhJ0+1TY7p6t
+ tGAiSNY5rgtZjMhgQcp3f4fgOZpQ0MEa/TgJtYg1cg==
+X-Google-Smtp-Source: APXvYqwnwnosIbALQWhH9iE66VbRevpNKoo2+AlOIGbO/YK+JvXEq7xF97GQzxccFEeM+dwg//oNT6x78p7b0HM0Jk0=
+X-Received: by 2002:a2e:9a12:: with SMTP id o18mr16050255lji.191.1572966395420; 
+ Tue, 05 Nov 2019 07:06:35 -0800 (PST)
 MIME-Version: 1.0
+References: <20191104163834.8932-1-andrew.murray@arm.com>
+ <20191104163834.8932-4-andrew.murray@arm.com>
+In-Reply-To: <20191104163834.8932-4-andrew.murray@arm.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 5 Nov 2019 16:06:24 +0100
+Message-ID: <CACRpkdYcUFkUUG8jQ=9i9LDpKbrzqNR0o_eLObijXn4YiBHOJw@mail.gmail.com>
+Subject: Re: [PATCH v1 3/7] arm: dts: Use IRQ flags for legacy PCI IRQ
+ interrupts
+To: Andrew Murray <andrew.murray@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_070408_317546_1EA68973 
-X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-CacheID: sfid-20191105_070637_481878_8A04AB55 
+X-CRM114-Status: UNSURE (   8.46  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,74 +93,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Jesper Nilsson <jesper.nilsson@axis.com>,
+ Antoine Tenart <antoine.tenart@bootlin.com>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Andy Gross <agross@kernel.org>, linux-arm-kernel@axis.com,
+ Rob Herring <robh+dt@kernel.org>, Lars Persson <lars.persson@axis.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Santosh Shilimkar <ssantosh@kernel.org>, MSM <linux-arm-msm@vger.kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Tsahee Zidenberg <tsahee@annapurnalabs.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Colin Ian King <colin.king@canonical.com>
+On Mon, Nov 4, 2019 at 5:39 PM Andrew Murray <andrew.murray@arm.com> wrote:
 
-There are spelling mistakes in dev_warn and dev_err messages. Fix these.
-Change "recommandation" to "recommendation" and "tryed" to "tried".
+> Replace magic numbers used to describe legacy PCI IRQ interrupts
+> with #define.
+>
+> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
 
-Signed-off-by: Colin Ian King <colin.king@canonical.com>
----
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-V2: Fix "tryed"
+Thanks for just changing them all in one patch, it is swift and elegant
+patching.
 
----
- drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c | 4 ++--
- drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c | 4 ++--
- 2 files changed, 4 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
-index 8e4eddbcc814..73a7649f915d 100644
---- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
-+++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-core.c
-@@ -469,7 +469,7 @@ static int sun8i_ce_get_clks(struct sun8i_ce_dev *ce)
- 		}
- 		if (ce->variant->ce_clks[i].max_freq > 0 &&
- 		    cr > ce->variant->ce_clks[i].max_freq)
--			dev_warn(ce->dev, "Frequency for %s (%lu hz) is higher than datasheet's recommandation (%lu hz)",
-+			dev_warn(ce->dev, "Frequency for %s (%lu hz) is higher than datasheet's recommendation (%lu hz)",
- 				 ce->variant->ce_clks[i].name, cr,
- 				 ce->variant->ce_clks[i].max_freq);
- 	}
-@@ -513,7 +513,7 @@ static int sun8i_ce_register_algs(struct sun8i_ce_dev *ce)
- 			break;
- 		default:
- 			ce_algs[i].ce = NULL;
--			dev_err(ce->dev, "ERROR: tryed to register an unknown algo\n");
-+			dev_err(ce->dev, "ERROR: tried to register an unknown algo\n");
- 		}
- 	}
- 	return 0;
-diff --git a/drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c b/drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c
-index e58407ac256b..b90c2e6c1393 100644
---- a/drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c
-+++ b/drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c
-@@ -446,7 +446,7 @@ static int sun8i_ss_register_algs(struct sun8i_ss_dev *ss)
- 			break;
- 		default:
- 			ss_algs[i].ss = NULL;
--			dev_err(ss->dev, "ERROR: tryed to register an unknown algo\n");
-+			dev_err(ss->dev, "ERROR: tried to register an unknown algo\n");
- 		}
- 	}
- 	return 0;
-@@ -502,7 +502,7 @@ static int sun8i_ss_get_clks(struct sun8i_ss_dev *ss)
- 		}
- 		if (ss->variant->ss_clks[i].max_freq > 0 &&
- 		    cr > ss->variant->ss_clks[i].max_freq)
--			dev_warn(ss->dev, "Frequency for %s (%lu hz) is higher than datasheet's recommandation (%lu hz)",
-+			dev_warn(ss->dev, "Frequency for %s (%lu hz) is higher than datasheet's recommendation (%lu hz)",
- 				 ss->variant->ss_clks[i].name, cr,
- 				 ss->variant->ss_clks[i].max_freq);
- 	}
--- 
-2.20.1
-
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
