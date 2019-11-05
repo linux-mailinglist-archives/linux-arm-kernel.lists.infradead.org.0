@@ -2,47 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AAC0F0704
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:35:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00184F070D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:36:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=68oCH6pgwttdQ5buNOvhT0cHVYW4C7rz4i2DwRc3C28=; b=kExKhf6zIiB1HX
-	hgS4xGl0tHEee/jslz9asjaJzQuMhmy908bAo18J0Tfl0jVtBC3IBKsy5fdJqIy1qIG4oZ93wuJJg
-	ALLCtlXQDpgslvaXKcw+pGkkRSAz1vXrgo4gK+89sJnTqjxzSgqL3kU1FV/U6X5WB0mDkiD1rPBp6
-	Lhff8lhsI3LR60BQLdGs0uQxIjKjFwWb2q7OB3KNJBWztCe7hcHrWcorUHBpeQzAPQv7WpLDoz308
-	mW4OoZSLlt4cRAVoEH0VmtrgjVk9926nKr7Ix88CNfg1eWXqcXf3p8wiDN4a9L+DsAtU+nHnk3DI+
-	qKj3L8rGUcR0JXftsYDg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=LhhiAE4+DVnK3IrezOHay08lPQfjBZhQTwrOCueIUmg=; b=rhm
+	usTeXuKCr4ByoXVY5/xoj3miLGMs52WD+USbbCBLI0cT+hoexqjeEiUuo3ZzD6nyQrVL0anb3vubo
+	xQvyqUxhXMXWS3mPnOzEgpVykLr8xlZ6b/hbcLjPaWR6tEBct1oszBDs/5FucI9KaxQlwe+5tOK9E
+	zY3JYP0Fq9I+4PktFOT8LYVgSW/LH5uub+sNoNAa/efj3rjsAv4EYUAzx+YgEuYuo+pysAnL6sEWd
+	rvpPmtrt1xUPxgvTEvOJIk1tR18KQlm9c2bSlwy+HstK3Gk3ieLBTSTNhAGSx1H7YOKKAyoBHRu8y
+	SV7fU57i7hWhXZuszJuId/UpG+rZc1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS5Xm-0001PE-LT; Tue, 05 Nov 2019 20:35:14 +0000
+	id 1iS5YW-0003GX-9o; Tue, 05 Nov 2019 20:36:00 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5XV-0001No-R0
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:34:59 +0000
+ id 1iS5XX-0001Nq-Dj
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:35:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A6DCC1D;
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7E9EF7B9;
  Tue,  5 Nov 2019 12:34:56 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 426873FEFC;
- Tue,  5 Nov 2019 03:05:36 -0800 (PST)
-Date: Tue, 5 Nov 2019 11:05:34 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Xiaowei Bao <xiaowei.bao@nxp.com>
-Subject: Re: [PATCH v6 1/3] dt-bindings: pci: layerscape-pci: add compatible
- strings "fsl,ls1028a-pcie"
-Message-ID: <20191105110533.GM9723@e119886-lin.cambridge.arm.com>
-References: <20190902034319.14026-1-xiaowei.bao@nxp.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190902034319.14026-1-xiaowei.bao@nxp.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.44])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2A3453FF11;
+ Tue,  5 Nov 2019 03:07:01 -0800 (PST)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Maxime Ripard <mripard@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>
+Subject: [PATCH] arm64: dts: allwinner: a64: Re-add PMU node
+Date: Tue,  5 Nov 2019 11:06:51 +0000
+Message-Id: <20191105110651.217513-1-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_123457_917391_4E01783C 
-X-CRM114-Status: GOOD (  12.99  )
+X-CRM114-CacheID: sfid-20191105_123459_510142_55269728 
+X-CRM114-Status: GOOD (  11.34  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,56 +57,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, roy.zang@nxp.com, lorenzo.pieralisi@arm.com,
- devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, linuxppc-dev@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, leoyang.li@nxp.com, minghuan.Lian@nxp.com,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org, bhelgaas@google.com,
- shawnguo@kernel.org, mingkai.hu@nxp.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ Emmanuel Vadot <manu@FreeBSD.org>, "Jared D . McNeill" <jmcneill@NetBSD.org>,
+ linux-sunxi@googlegroups.com, devicetree@vger.kernel.org,
+ =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
+ Harald Geyer <harald@ccbib.org>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 02, 2019 at 11:43:17AM +0800, Xiaowei Bao wrote:
-> Add the PCIe compatible string for LS1028A
-> 
-> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> ---
+As it was found recently, the Performance Monitoring Unit (PMU) on the
+Allwinner A64 SoC was not generating (the right) interrupts. With the
+SPI numbers from the manual the kernel did not receive any overflow
+interrupts, so perf was not happy at all.
+It turns out that the numbers were just off by 4, so the PMU interrupts
+are from 148 to 151, not from 152 to 155 as the manual describes.
 
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+This was found by playing around with U-Boot, which typically does not
+use interrupts, so the GIC is fully available for experimentation:
+With *every* PPI and SPI enabled, an overflowing PMU cycle counter was
+found to set a bit in one of the GICD_ISPENDR registers, with careful
+counting this was determined to be number 148.
 
-> v2:
->  - No change.
-> v3:
->  - No change.
-> v4:
->  - No change.
-> v5:
->  - No change.
-> v6:
->  - No change.
-> 
->  Documentation/devicetree/bindings/pci/layerscape-pci.txt | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/pci/layerscape-pci.txt b/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-> index e20ceaa..99a386e 100644
-> --- a/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-> +++ b/Documentation/devicetree/bindings/pci/layerscape-pci.txt
-> @@ -21,6 +21,7 @@ Required properties:
->          "fsl,ls1046a-pcie"
->          "fsl,ls1043a-pcie"
->          "fsl,ls1012a-pcie"
-> +        "fsl,ls1028a-pcie"
->    EP mode:
->  	"fsl,ls1046a-pcie-ep", "fsl,ls-pcie-ep"
->  - reg: base addresses and lengths of the PCIe controller register blocks.
-> -- 
-> 2.9.5
-> 
+Tested with perf record and perf top on a Pine64-LTS. Also tested with
+tasksetting to every core to confirm the assignment between IRQs and
+cores.
+
+This somewhat "revert-fixes" commit ed3e9406bcbc ("arm64: dts: allwinner:
+a64: Drop PMU node").
+
+Fixes: 34a97fcc71c2 ("arm64: dts: allwinner: a64: Add PMU node")
+Fixes: ed3e9406bcbc ("arm64: dts: allwinner: a64: Drop PMU node")
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+---
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+index 70f4cce6be43..ba41c1b85887 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+@@ -142,6 +142,15 @@
+ 		clock-output-names = "ext-osc32k";
+ 	};
+ 
++	pmu {
++		compatible = "arm,cortex-a53-pmu";
++		interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>;
++		interrupt-affinity = <&cpu0>, <&cpu1>, <&cpu2>, <&cpu3>;
++	};
++
+ 	psci {
+ 		compatible = "arm,psci-0.2";
+ 		method = "smc";
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
