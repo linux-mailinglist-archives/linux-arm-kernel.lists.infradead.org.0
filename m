@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E035FEF616
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 08:16:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E5B6EF620
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 08:17:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,41 +11,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=j5sXVM06QFljAlZKPOSoN5ce7wxbswIj/57i1Cnuhf4=; b=JDGPH3O3GfjhJrNKMYp/g9McBw
-	RbVv+hpLqgnEoc5sRpDlVpzAG4hIcq3plg8TBBVoi9bN0S9gkLjym84NeOJ33Is6xoQRmz6bPvoxC
-	QwsuvFavwZhby/t0Hcwgide1THqF3jfqUWHWW0DCxrXHPs4ZibUF5+IqCgUgwUv61wO67M8F68WkY
-	ls56ChFCpo80xba2IE1UNZ4NdX+NgEidi+3Vya5L5klCgNAz/ChUBpi3J5FSPklj0LTtAsvZNwN8J
-	Fu0HK3uAZT7h82cASHcft0hl+WvLkWYbEb5JfuDmvsVo6vHBQn01RxjpVqtN3k6TDFSK3c926VEUe
-	kSekUj+A==;
+	bh=Utn+sFN3yoi6Ja5KNHdH+OnfPY+N1+meP/TKRSCH7Ac=; b=M+YlDpL6Fx5WQV2i/dR2FHEez4
+	VEpdVBu4Y9jX7vyNap6GIcO/SnOIaWgORDYvC8TfA6HT5WsMle3yzsbDKPTiAWZYCExMaojBF5lGU
+	9NTQYz4XDZ2q+n+mmz0eEp6SR1koqpGcSy5UkjduCLnGwaRY76IXegcbK7fRDO8uP5fKah+yW3uE6
+	FZTUjXGrZcHnwigAy8cgGGsqaaT14QDB6tWtaLO5DkkHjkLzVnaWY4lUtFQclaw8m+nOAVueRAFkI
+	YA98QyP8eySuY0J0CeMFm7aynJ5hFa6RLh+Pz8f4QBSa7VBBKrHK42KNLIMjEOwKlxWu2ai59bl8O
+	e8wBbS9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRt56-0005u4-JV; Tue, 05 Nov 2019 07:16:48 +0000
+	id 1iRt5O-00067a-6y; Tue, 05 Nov 2019 07:17:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRt4T-0005Ub-TT; Tue, 05 Nov 2019 07:16:11 +0000
+ id 1iRt4d-0005da-Ad; Tue, 05 Nov 2019 07:16:21 +0000
 Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CCFA821929;
- Tue,  5 Nov 2019 07:16:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BE63C21A4A;
+ Tue,  5 Nov 2019 07:16:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572938169;
- bh=oG08x38Bw8t//MmcsXiMwfmG8dPNjLcnVisdmtiKgLI=;
+ s=default; t=1572938178;
+ bh=p11JZ/878S75pE68Mq2TwTFjvlVsPceSwhIak764zRU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=NrFkPfQBPsYp2BCE4Maa/kBX1vynrLKPPCrRUyCMwSQMmv52DallpkCp5VQjmhnQW
- gfwjRKIwDT/W2jOEZNbnF0y1sA35YxmA1PQRye/CUWxIFTXLu+jm3dHTxaNTw1OdEm
- D4i+idATtuSOx17jcO+/lVnSa4lho6geXRzVFqtI=
+ b=pIjOW76kqg0bbZMlBKplrKUeF7C5oqmYI7BFZNMka/tnwTF3W7X/eVzjZL7ApKqUD
+ bd4ykNr8yzMPnkgwUz4shN6ipOJ6zbEEHlkuN6pY2ToR8WIWQujtmyaev2+JGI9ahN
+ BzTjnfH3EGfr345FQ7+A06ZsRVKnIJCgVQx0Gfs4=
 From: Mike Rapoport <rppt@kernel.org>
 To: linux-mm@kvack.org
-Subject: [PATCH v4 02/13] arm: nommu: use pgtable-nopud instead of 4level-fixup
-Date: Tue,  5 Nov 2019 09:15:24 +0200
-Message-Id: <1572938135-31886-3-git-send-email-rppt@kernel.org>
+Subject: [PATCH v4 03/13] c6x: use pgtable-nopud instead of 4level-fixup
+Date: Tue,  5 Nov 2019 09:15:25 +0200
+Message-Id: <1572938135-31886-4-git-send-email-rppt@kernel.org>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1572938135-31886-1-git-send-email-rppt@kernel.org>
 References: <1572938135-31886-1-git-send-email-rppt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_231609_994677_EDF3CD49 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20191104_231619_514536_C08E35F6 
+X-CRM114-Status: GOOD (  10.71  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -100,31 +100,31 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Mike Rapoport <rppt@linux.ibm.com>
 
-The generic nommu implementation of page table manipulation takes care of
-folding of the upper levels and does not require fixups.
+c6x is a nommu architecture and does not require fixup for upper layers of
+the page tables because it is already handled by the generic nommu
+implementation.
 
-Simply replace of include/asm-generic/4level-fixup.h with
-include/asm-generic/pgtable-nopud.h.
+Replace usage of include/asm-generic/4level-fixup.h with
+include/asm-generic/pgtable-nopud.h
 
 Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-Acked-by: Russell King <rmk+kernel@armlinux.org.uk>
 ---
- arch/arm/include/asm/pgtable.h | 2 +-
+ arch/c6x/include/asm/pgtable.h | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/include/asm/pgtable.h b/arch/arm/include/asm/pgtable.h
-index 3ae120c..eabcb48 100644
---- a/arch/arm/include/asm/pgtable.h
-+++ b/arch/arm/include/asm/pgtable.h
-@@ -12,7 +12,7 @@
- 
- #ifndef CONFIG_MMU
+diff --git a/arch/c6x/include/asm/pgtable.h b/arch/c6x/include/asm/pgtable.h
+index 0b6919c..197c473 100644
+--- a/arch/c6x/include/asm/pgtable.h
++++ b/arch/c6x/include/asm/pgtable.h
+@@ -8,7 +8,7 @@
+ #ifndef _ASM_C6X_PGTABLE_H
+ #define _ASM_C6X_PGTABLE_H
  
 -#include <asm-generic/4level-fixup.h>
 +#include <asm-generic/pgtable-nopud.h>
- #include <asm/pgtable-nommu.h>
  
- #else
+ #include <asm/setup.h>
+ #include <asm/page.h>
 -- 
 2.7.4
 
