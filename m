@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6212CF0AC0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 00:58:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 023C0F0AC1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 00:59:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q/us5YYoN6NcpVPm//s9pMAcFkF2nW12G8DHM3ancRg=; b=dNI2JhXT5a6nZH
-	MoQbzZqbg3CvWQ6k8DPntSxt59roNv+lA3T4sFTkyDZlUqtD5vZomjzEb/68CMDlS0PDgi0XDb79F
-	2x22POLH9Nc1DfhZeKyjZK53O5VMKzoXT/lskYVGPlF+DulCVFK7RXlk0VbPSBYerDZ5SwuaA/Yg4
-	CPYKs9G9AG+Pp329qtsxF5TqLwcLKRG6saFKDZXdTK8NG+oHCquEgLRxvFixzQXlQxPSFo5p/suHa
-	yZN2vkWV3q+Eol+AYvbVSft8/IzN37j5BzLLErIWydAgmE0y8Stik1Ev05hJ0eTSZUczIvGZTRsB+
-	wC96S7uqy+jwJ+E27DYw==;
+	List-Owner; bh=ouav4OqpqthsNR1kqp2/EerXc25lrd15w+uP7AERr/I=; b=uO/1FAWFrPivB1
+	6Tx0WgJ9GsL3iw3wNQqbS4R24qq5Sm4Pi5eVuQ0EC1EqQtdgDBl/i+rLrgAsMISjuvMOHJxLiF8Mu
+	WZfPXVD4OX3ptSFHImhRB/hjjbenJ8AxvnZIHWNIJsyN3bnMCP2RPSCSRUt9HsjpdcBfShuHyeKD9
+	BImml9A10ml1CtmOgDN0mBVgKJHZEtkTQPx+S1lAtZ4qBDUj34tQlv4zrEZipbVNp7ai7VWyo7muk
+	WLce0e4AFCM+wQGhOd0NUIAf6qcD/NRGdG9i5G5kTbRl+iZRnV5bIz8AwnWuSH92Zlzjgvawr1T2v
+	VoVWmfGAxIVBcaVcAGUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS8it-0001fK-Tr; Tue, 05 Nov 2019 23:58:55 +0000
-Received: from mail-pl1-x649.google.com ([2607:f8b0:4864:20::649])
+	id 1iS8jA-0001sd-Ok; Tue, 05 Nov 2019 23:59:12 +0000
+Received: from mail-pl1-x64a.google.com ([2607:f8b0:4864:20::64a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS8gk-00083D-M2
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 23:56:45 +0000
-Received: by mail-pl1-x649.google.com with SMTP id g7so13900906plo.5
+ id 1iS8gn-00085O-Cu
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 23:56:47 +0000
+Received: by mail-pl1-x64a.google.com with SMTP id k8so5358293plt.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 15:56:41 -0800 (PST)
+ Tue, 05 Nov 2019 15:56:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=xr3X122JfUZTOJ9HNPiJpW+Iyor6r4hGY/b4sjNxJZA=;
- b=WX/V/VTfUhYNVK63Q6o2nwuNZuF84nG4taeFhEo17XXi/wiIq5TBNma6L2QWkkxymH
- DvQMMy0aOWkuLzcjaD/VZ7I9iJTaYKRhuhci0d1Uv1dvow1PsPAbfcG7lofjVT32BZTo
- XfopDA2vhLhs1jhnHF0BtxTMW++6XgIwcQqObAyguiG5eCzS2AdaeI/mW/++SFMdkYFO
- 0sFgOE5K8+grQi8hixiOmdeRZME3HY40NRXpHJTOGJP9Yp/g21dwfZOSqMKsicYNTg7M
- PQxjmxBUU54ovXgSaLB6R/0V/BtxcVf6/NuKLrw9AecxZk0Kx+tl9gJtoHFRyt1RFLTp
- RO5A==
+ :cc; bh=uzQ8cGBP/iiy1dmy29qxsrkA2y8A3VyyoGWk/X1qxUc=;
+ b=jWGQrW7gYc6D9nJteHiWYUXaoKd47FGvgCnUcq1RN0FNUvS12DXoQv/Qs2ZSsEmdsr
+ KIrZA7BzUYt42AyztGMVcz/QumFEYK2cJY5/FcPWOE01nPlBEr1XYQMmzvlCuOtePFHy
+ BrO2pUitDMPbbMwQ+djW4zvLYrFatsGxSZFpwthI0l0tEUjCd15qBB7CofGFXzjONnIJ
+ qdmdd/w16M48KK0143WbpUnJCYAPG0RUwEwhRL4ts3yhMXpE4SQA62x4WivBRaT/AZDF
+ 1NajHEvW01XhI1VvxrXdeiyPREGJ54AL4BUaLlFQCeTXTsDjryTGcoQgi5Pmte9ZuS+r
+ +4hw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=xr3X122JfUZTOJ9HNPiJpW+Iyor6r4hGY/b4sjNxJZA=;
- b=Tafu4VqkSqHbxGqNm0ex1t+zpggdjGVen9nQ7wdgT8+eKhI84zIg8+TqLIu54XMunT
- 9iGs9B+QQw9rsFcrh6MR4EOrN4GI9fydQdYzKiNa0NHWwSUhOotv0lP1FA07KD6MmR6m
- 5F5nQE+0EOLKm0ENHiq5ocCQSThPHHyBqNYmhBir9pAYhk1savSz6EythFO83KLLKt85
- jha5ksKLq2/hZnh8DUxyCsMwLg1C89IAykYttX2bIXEvtvIZdbIi4Kugy1Uh86EOeTj1
- gUx6NKUYCf3BRErXmybq6cDsXucwhdmTL9AmDC46iGrZU9yMGnirytiCjGL5uJX827eq
- FbaA==
-X-Gm-Message-State: APjAAAX8AMr7RSQJgNC+Aid1rgF21uMvrxeuTdeJ1PPrfC8PU7UVQEhU
- O9PtWi3ACa0B0EQu14+cnZjLi8ifb/WyydKd1aA=
-X-Google-Smtp-Source: APXvYqzws/iChASYEHCRVYS8P2kdCocZTmxir9yLCAbfQ2Y76yiotnVRg74apgBfcVGe/Rb1kCjSoUo8I9YbTGAoXKw=
-X-Received: by 2002:a65:5683:: with SMTP id v3mr19280245pgs.190.1572998200132; 
- Tue, 05 Nov 2019 15:56:40 -0800 (PST)
-Date: Tue,  5 Nov 2019 15:56:03 -0800
+ bh=uzQ8cGBP/iiy1dmy29qxsrkA2y8A3VyyoGWk/X1qxUc=;
+ b=AYChcfEdp3Lp6D8aHGjTJQOAaWRq13QyvJd0iRvYhktJTY0G7d/u5Fmya9WRS6LUCk
+ +SHhywMJrHa5INJrHZrAnk4kN4cM9gZaEDYXntIQjpC/LlVvqmYa6j91tN+TNbFY5Ixn
+ XlZAuddppmJCceQ8irEitI3HF1/W3N4g1gS1liVFzRvDT63yZP/CpwHeyth27KJdeqFR
+ Edc6r5dXM4rjPCBlEOIlQk7PPHBz0eu/lFf1o3JULqW7Yq1ZDNHc/7WBWQD2ZLHuKohl
+ v1Cf8CKvIYWVB5F6prc+3lw2L/2uSbOw23NnY53jHFxZKDJff3br4hpAo+OQG4JkBkyb
+ D5nA==
+X-Gm-Message-State: APjAAAV3xp2UIezZLNuXi4x9uiMTCF6TFr6Lg/S6HXMmel6IoySIqsAK
+ kQx6ihf9KZJKgSbiK0GHBE9qAPdsyl1Y6YR3t0Q=
+X-Google-Smtp-Source: APXvYqzhnl/od1+4wqmG+HB56zcHmEodlg2M4/tt0l0rrKjOHl/n60b0sUyw2UaMRpO3OuPN2c7IjdKlcyCGNq68Qz4=
+X-Received: by 2002:a65:5382:: with SMTP id x2mr1469482pgq.420.1572998202872; 
+ Tue, 05 Nov 2019 15:56:42 -0800 (PST)
+Date: Tue,  5 Nov 2019 15:56:04 -0800
 In-Reply-To: <20191105235608.107702-1-samitolvanen@google.com>
-Message-Id: <20191105235608.107702-10-samitolvanen@google.com>
+Message-Id: <20191105235608.107702-11-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191105235608.107702-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.24.0.rc1.363.gb1bccd3e3d-goog
-Subject: [PATCH v5 09/14] arm64: reserve x18 from general allocation with SCS
+Subject: [PATCH v5 10/14] arm64: preserve x18 when CPU is suspended
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Masami Hiramatsu <mhiramat@kernel.org>, 
  Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_155642_787331_2D6BB887 
-X-CRM114-Status: UNSURE (   9.05  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191105_155645_558816_1DC157F0 
+X-CRM114-Status: GOOD (  11.42  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:649 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:64a listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,33 +111,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Reserve the x18 register from general allocation when SCS is enabled,
-because the compiler uses the register to store the current task's
-shadow stack pointer. Note that all external kernel modules must also be
-compiled with -ffixed-x18 if the kernel has SCS enabled.
+Don't lose the current task's shadow stack when the CPU is suspended.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
 ---
- arch/arm64/Makefile | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/include/asm/suspend.h |  2 +-
+ arch/arm64/mm/proc.S             | 14 ++++++++++++++
+ 2 files changed, 15 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-index 2c0238ce0551..ef76101201b2 100644
---- a/arch/arm64/Makefile
-+++ b/arch/arm64/Makefile
-@@ -72,6 +72,10 @@ stack_protector_prepare: prepare0
- 					include/generated/asm-offsets.h))
- endif
+diff --git a/arch/arm64/include/asm/suspend.h b/arch/arm64/include/asm/suspend.h
+index 8939c87c4dce..0cde2f473971 100644
+--- a/arch/arm64/include/asm/suspend.h
++++ b/arch/arm64/include/asm/suspend.h
+@@ -2,7 +2,7 @@
+ #ifndef __ASM_SUSPEND_H
+ #define __ASM_SUSPEND_H
  
-+ifeq ($(CONFIG_SHADOW_CALL_STACK), y)
-+KBUILD_CFLAGS	+= -ffixed-x18
-+endif
-+
- ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
- KBUILD_CPPFLAGS	+= -mbig-endian
- CHECKFLAGS	+= -D__AARCH64EB__
+-#define NR_CTX_REGS 12
++#define NR_CTX_REGS 13
+ #define NR_CALLEE_SAVED_REGS 12
+ 
+ /*
+diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+index fdabf40a83c8..5c8219c55948 100644
+--- a/arch/arm64/mm/proc.S
++++ b/arch/arm64/mm/proc.S
+@@ -49,6 +49,8 @@
+  * cpu_do_suspend - save CPU registers context
+  *
+  * x0: virtual address of context pointer
++ *
++ * This must be kept in sync with struct cpu_suspend_ctx in <asm/suspend.h>.
+  */
+ ENTRY(cpu_do_suspend)
+ 	mrs	x2, tpidr_el0
+@@ -73,6 +75,11 @@ alternative_endif
+ 	stp	x8, x9, [x0, #48]
+ 	stp	x10, x11, [x0, #64]
+ 	stp	x12, x13, [x0, #80]
++	/*
++	 * Save x18 as it may be used as a platform register, e.g. by shadow
++	 * call stack.
++	 */
++	str	x18, [x0, #96]
+ 	ret
+ ENDPROC(cpu_do_suspend)
+ 
+@@ -89,6 +96,13 @@ ENTRY(cpu_do_resume)
+ 	ldp	x9, x10, [x0, #48]
+ 	ldp	x11, x12, [x0, #64]
+ 	ldp	x13, x14, [x0, #80]
++	/*
++	 * Restore x18, as it may be used as a platform register, and clear
++	 * the buffer to minimize the risk of exposure when used for shadow
++	 * call stack.
++	 */
++	ldr	x18, [x0, #96]
++	str	xzr, [x0, #96]
+ 	msr	tpidr_el0, x2
+ 	msr	tpidrro_el0, x3
+ 	msr	contextidr_el1, x4
 -- 
 2.24.0.rc1.363.gb1bccd3e3d-goog
 
