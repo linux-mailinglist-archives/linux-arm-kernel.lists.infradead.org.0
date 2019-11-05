@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80167F07B5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:07:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 738ECF07B6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:07:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zInhvhnFyZtraAFm5+9NU4HYq3qmsxT7S7hqkAaEZbs=; b=d3AfEuo25yuwC4g72mBrA4INmj
-	J32D6V3JEI2RFzkoYV0qUL32EToag6DTF7h4FNKRlrAEppRNlQDdmNHywOdwli2a8z3ktECtdL98O
-	9So75oLUJ2YYh/JX7mTT+SQospUA/A0lj1jXEJgJuqxUAeE3Lf5K8sUO6R+e/cZUC+qpi8gnscYES
-	uNlcmugSDTe1bDj4gPeDV+IKLToot/hm9dwrHbToahIFLSuwMNAjl2OkKKVXvdfBaIG1lVn+FFHUx
-	VXWFXQCnMW9v3EEBanqpYbYYZ3CtMrjjcDW/raNmY5F6y0JdVl2PirT5nddrRPkSt3KkgHV9QNvfy
-	nORHG/vg==;
+	bh=HZFnflJ/KPiHGLiPxO+E6KLwPQsr0vN3Si1DLd9uvQU=; b=gLPEizkJcbdkb9l8F7NKdVrT/F
+	R1AY93LNlRRbObMXbYR+ZT8ST50RForPif5WqNSsfneZW4S67EjUgdFNJ8gbAfGN1jiJESJC5Y/O4
+	cVeWbXA5cMywQ6cJHsWSIShE/spvLvd09yC9Cipf/lk6VUQA841PL42n8moujmqS6V4TzdodX+Q/U
+	P0jw/TfMuVQR8+T+rGkFM+ICf0zlhI7RgZDAbrjgGRyeFdLgHjpCWnZDUefG0dv3d1bHirTadNSdl
+	OaOETY9D+BR5DVttkt+10Zw10azRE++NTIrJ1YGjqFUdhB141F6AbRwv2DgeVns8BGPLq5CXvNj1k
+	C/4GYJxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS62k-0006gO-PA; Tue, 05 Nov 2019 21:07:14 +0000
+	id 1iS634-0006z6-Oh; Tue, 05 Nov 2019 21:07:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5w6-0007Zn-3C
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:24 +0000
+ id 1iS5w8-0007cv-Ub
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:26 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2E572222C1;
- Tue,  5 Nov 2019 21:00:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F2FC121A49;
+ Tue,  5 Nov 2019 21:00:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987621;
- bh=u+dEjTmHJVc4yK1I3h1KOIjOxCQdCyc4IWNOAGKk9wQ=;
+ s=default; t=1572987624;
+ bh=iNHMZZRltxS1MHgceMfHooYFXLtSicrOLVVkCXWKYjs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZhYW6UL6p53JKdOuvHAavx8sXaJC9u/ce6YbZNMTMcTPSaz/tLikKqeKo4W6nTKSK
- SlVBXXMsRRIRD4VIZR3Gwdl4NICtGENc0WKZBlQf6mKkVx3gtIVTolGDCVQJt21uUS
- HymbpfItd1Vq/GiCoC/tLdQldojOutSYJpFnSiA8=
+ b=QvS+IU9+ovJMx6Cs+TaOvoT/Lk5oDm5z+mvKnKd6zGGAVzedXzjHLLVL6c45TDySv
+ oh4IDyCe6DrEM4qrI9UCfBd9fwKpYTtfopgqjpHjDTldMSZfm7LFyOGXU8QwFGoial
+ jXqfvjdp3ydFJSMHUgmowKay1lK3AftqkJdrViYg=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 29/53] ARM: spectre-v2: warn about incorrect
- context switching functions
-Date: Tue,  5 Nov 2019 21:58:22 +0100
-Message-Id: <20191105205846.1394-30-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 30/53] ARM: spectre-v1: add speculation
+ barrier (csdb) macros
+Date: Tue,  5 Nov 2019 21:58:23 +0100
+Message-Id: <20191105205846.1394-31-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_130022_228118_56FE6B45 
-X-CRM114-Status: GOOD (  10.90  )
+X-CRM114-CacheID: sfid-20191105_130025_030217_BC7C0BE0 
+X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,84 +93,72 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Russell King <rmk+kernel@armlinux.org.uk>
 
-Commit c44f366ea7c85e1be27d08f2f0880f4120698125 upstream.
+Commit a78d156587931a2c3b354534aa772febf6c9e855 upstream.
 
-Warn at error level if the context switching function is not what we
-are expecting.  This can happen with big.Little systems, which we
-currently do not support.
+Add assembly and C macros for the new CSDB instruction.
 
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+Acked-by: Mark Rutland <mark.rutland@arm.com>
 Boot-tested-by: Tony Lindgren <tony@atomide.com>
 Reviewed-by: Tony Lindgren <tony@atomide.com>
-Acked-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: David A. Long <dave.long@linaro.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/mm/proc-v7-bugs.c | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ arch/arm/include/asm/assembler.h |  8 ++++++++
+ arch/arm/include/asm/barrier.h   | 13 +++++++++++++
+ 2 files changed, 21 insertions(+)
 
-diff --git a/arch/arm/mm/proc-v7-bugs.c b/arch/arm/mm/proc-v7-bugs.c
-index da25a38e1897..5544b82a2e7a 100644
---- a/arch/arm/mm/proc-v7-bugs.c
-+++ b/arch/arm/mm/proc-v7-bugs.c
-@@ -12,6 +12,8 @@
- #ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
- DEFINE_PER_CPU(harden_branch_predictor_fn_t, harden_branch_predictor_fn);
+diff --git a/arch/arm/include/asm/assembler.h b/arch/arm/include/asm/assembler.h
+index 4a275fba6059..307901f88a1e 100644
+--- a/arch/arm/include/asm/assembler.h
++++ b/arch/arm/include/asm/assembler.h
+@@ -441,6 +441,14 @@ THUMB(	orr	\reg , \reg , #PSR_T_BIT	)
+ 	.size \name , . - \name
+ 	.endm
  
-+extern void cpu_v7_iciallu_switch_mm(phys_addr_t pgd_phys, struct mm_struct *mm);
-+extern void cpu_v7_bpiall_switch_mm(phys_addr_t pgd_phys, struct mm_struct *mm);
- extern void cpu_v7_smc_switch_mm(phys_addr_t pgd_phys, struct mm_struct *mm);
- extern void cpu_v7_hvc_switch_mm(phys_addr_t pgd_phys, struct mm_struct *mm);
- 
-@@ -50,6 +52,8 @@ static void cpu_v7_spectre_init(void)
- 	case ARM_CPU_PART_CORTEX_A17:
- 	case ARM_CPU_PART_CORTEX_A73:
- 	case ARM_CPU_PART_CORTEX_A75:
-+		if (processor.switch_mm != cpu_v7_bpiall_switch_mm)
-+			goto bl_error;
- 		per_cpu(harden_branch_predictor_fn, cpu) =
- 			harden_branch_predictor_bpiall;
- 		spectre_v2_method = "BPIALL";
-@@ -57,6 +61,8 @@ static void cpu_v7_spectre_init(void)
- 
- 	case ARM_CPU_PART_CORTEX_A15:
- 	case ARM_CPU_PART_BRAHMA_B15:
-+		if (processor.switch_mm != cpu_v7_iciallu_switch_mm)
-+			goto bl_error;
- 		per_cpu(harden_branch_predictor_fn, cpu) =
- 			harden_branch_predictor_iciallu;
- 		spectre_v2_method = "ICIALLU";
-@@ -82,6 +88,8 @@ static void cpu_v7_spectre_init(void)
- 					  ARM_SMCCC_ARCH_WORKAROUND_1, &res);
- 			if ((int)res.a0 != 0)
- 				break;
-+			if (processor.switch_mm != cpu_v7_hvc_switch_mm && cpu)
-+				goto bl_error;
- 			per_cpu(harden_branch_predictor_fn, cpu) =
- 				call_hvc_arch_workaround_1;
- 			processor.switch_mm = cpu_v7_hvc_switch_mm;
-@@ -93,6 +101,8 @@ static void cpu_v7_spectre_init(void)
- 					  ARM_SMCCC_ARCH_WORKAROUND_1, &res);
- 			if ((int)res.a0 != 0)
- 				break;
-+			if (processor.switch_mm != cpu_v7_smc_switch_mm && cpu)
-+				goto bl_error;
- 			per_cpu(harden_branch_predictor_fn, cpu) =
- 				call_smc_arch_workaround_1;
- 			processor.switch_mm = cpu_v7_smc_switch_mm;
-@@ -109,6 +119,11 @@ static void cpu_v7_spectre_init(void)
- 	if (spectre_v2_method)
- 		pr_info("CPU%u: Spectre v2: using %s workaround\n",
- 			smp_processor_id(), spectre_v2_method);
-+	return;
++	.macro	csdb
++#ifdef CONFIG_THUMB2_KERNEL
++	.inst.w	0xf3af8014
++#else
++	.inst	0xe320f014
++#endif
++	.endm
 +
-+bl_error:
-+	pr_err("CPU%u: Spectre v2: incorrect context switching function, system vulnerable\n",
-+		cpu);
- }
- #else
- static void cpu_v7_spectre_init(void)
+ 	.macro check_uaccess, addr:req, size:req, limit:req, tmp:req, bad:req
+ #ifndef CONFIG_CPU_USE_DOMAINS
+ 	adds	\tmp, \addr, #\size - 1
+diff --git a/arch/arm/include/asm/barrier.h b/arch/arm/include/asm/barrier.h
+index 27c1d26b05b5..edd9e633a84b 100644
+--- a/arch/arm/include/asm/barrier.h
++++ b/arch/arm/include/asm/barrier.h
+@@ -18,6 +18,12 @@
+ #define isb(option) __asm__ __volatile__ ("isb " #option : : : "memory")
+ #define dsb(option) __asm__ __volatile__ ("dsb " #option : : : "memory")
+ #define dmb(option) __asm__ __volatile__ ("dmb " #option : : : "memory")
++#ifdef CONFIG_THUMB2_KERNEL
++#define CSDB	".inst.w 0xf3af8014"
++#else
++#define CSDB	".inst	0xe320f014"
++#endif
++#define csdb() __asm__ __volatile__(CSDB : : : "memory")
+ #elif defined(CONFIG_CPU_XSC3) || __LINUX_ARM_ARCH__ == 6
+ #define isb(x) __asm__ __volatile__ ("mcr p15, 0, %0, c7, c5, 4" \
+ 				    : : "r" (0) : "memory")
+@@ -38,6 +44,13 @@
+ #define dmb(x) __asm__ __volatile__ ("" : : : "memory")
+ #endif
+ 
++#ifndef CSDB
++#define CSDB
++#endif
++#ifndef csdb
++#define csdb()
++#endif
++
+ #ifdef CONFIG_ARM_HEAVY_MB
+ extern void (*soc_mb)(void);
+ extern void arm_heavy_mb(void);
 -- 
 2.17.1
 
