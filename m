@@ -2,56 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF16AEF6E8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 09:11:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40821EF706
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 09:13:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CP0R4Zdu0XUIc/bbGSGiDCmFLkS5vymDO1zVw6fHTAg=; b=speKYTGAHAEr/V6mIDVLHtKKX
-	qur+jNE3zepXgTsT5NOUCwvgzNWATSpY4iOO5nljUvxrWP1aY4pCDpoWhlFlY/ZFtWo8RqgXRLZ1V
-	fpWK4QHDs5KKvwGYkmsxI0+AWEE49gOZQlv6DL9Jq1Mk1z9Eb1XeeZpY9FnjUCavinBIuMZXBSFuW
-	i3blSXn8ruex5zCfjmMeldz5v5osKoyiHrlcAVzXHDa5SaM16sgvxZzb9hrexnKrSV6L/JiBP7/oU
-	7+RSAskRQ9QIqMq0CZxBKOyO0PpzRV1tlOmUa7vCfAX8R05lb5BrKYbirQZ8Cyu02WbuK70YajIPL
-	pWc46eF4w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CXUeMOIaqhXDBXvy8GM5+SEMnuZWClCsevZrpdhksrg=; b=cDQGi1u3NSHAFB
+	99baV5NXl4mEHjlX3ySQZF8kVOqmsbvSnPEV16VEZGGa28iPUATAC87krmyuieHvE/B7/9w49ZDq1
+	GJlnPMEV9asSDLd1a3h8graizXQSVb6mDOSUR440UegZypueUfRapG2aeNRN/SrL9NYdL7XJpxh1V
+	AHlMtjcoyGuznCAAwlh9HeQx0esxvpbpGZWF7t8Rroaggjay15MXaDJDfcFXCye61Y1W8LYGkftu6
+	yYb0jRwbtcf0ZBWPb7h7dYr2LfZCJE8qhzNasJsiMkBt6XBIu3gYygOGYncZan9ghFsI8Y1iJfStV
+	4/+g69tLJG6baMTXTCvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRtvU-0007o3-Az; Tue, 05 Nov 2019 08:10:56 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1iRtxZ-00008X-0E; Tue, 05 Nov 2019 08:13:05 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRtvM-0007nK-92
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 08:10:50 +0000
-Received: from aptenodytes (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 3745624000E;
- Tue,  5 Nov 2019 08:10:35 +0000 (UTC)
-Date: Tue, 5 Nov 2019 09:10:34 +0100
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
-Subject: Re: [PATCH 1/3] media: cedrus: Properly signal size in mode register
-Message-ID: <20191105081034.GC584930@aptenodytes>
-References: <20191026074959.1073512-1-jernej.skrabec@siol.net>
- <20191026074959.1073512-2-jernej.skrabec@siol.net>
- <20191104100228.GD502900@aptenodytes>
- <7309638.L6IRxaGt1L@jernej-laptop>
+ id 1iRtxO-00007x-3l
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 08:12:56 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xA58CkSf009351;
+ Tue, 5 Nov 2019 02:12:46 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1572941566;
+ bh=rss6Mp4quh2S4WzB5MeQQKUNTQjYLZd5GvvycvppoCc=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=EYMk7elOvlowniBg4gjffNRye3GSvxF/SC9gel8D9l0AeFj1HFwa4PHszW3/KlpJ7
+ BK2E62xGnItiUg4dwH7mFZivTtHIjppPOYfDuLfEAGoZSt0inM8CeNxh1OvOqSS1e5
+ fyfIX8E+UGzd6lVpdTLguU3DuMgNhf2uRGonae3I=
+Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xA58CkMN053421
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 5 Nov 2019 02:12:46 -0600
+Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 5 Nov
+ 2019 02:12:24 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 5 Nov 2019 02:12:24 -0600
+Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xA58CaiX047486;
+ Tue, 5 Nov 2019 02:12:36 -0600
+Subject: Re: [PATCH v4 07/15] dmaengine: ti: k3 PSI-L remote endpoint
+ configuration
+To: Tero Kristo <t-kristo@ti.com>, <vkoul@kernel.org>, <robh+dt@kernel.org>,
+ <nm@ti.com>, <ssantosh@kernel.org>
+References: <20191101084135.14811-1-peter.ujfalusi@ti.com>
+ <20191101084135.14811-8-peter.ujfalusi@ti.com>
+ <e23316e7-1913-d0a7-79c6-4af2084e5176@ti.com>
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Message-ID: <c3f95799-e211-7740-8c20-d79416965dc2@ti.com>
+Date: Tue, 5 Nov 2019 10:13:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <7309638.L6IRxaGt1L@jernej-laptop>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <e23316e7-1913-d0a7-79c6-4af2084e5176@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_001048_590523_B4488977 
-X-CRM114-Status: GOOD (  27.73  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191105_001254_240364_FC67A95F 
+X-CRM114-Status: GOOD (  22.07  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,271 +95,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, mripard@kernel.org,
- wens@csie.org, hverkuil-cisco@xs4all.nl, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============5629972979281509548=="
+Cc: devicetree@vger.kernel.org, grygorii.strashko@ti.com, lokeshvutla@ti.com,
+ j-keerthy@ti.com, linux-kernel@vger.kernel.org, tony@atomide.com,
+ dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============5629972979281509548==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Fig2xvG2VGoz8o/s"
-Content-Disposition: inline
-
-
---Fig2xvG2VGoz8o/s
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Mon 04 Nov 19, 17:33, Jernej =C5=A0krabec wrote:
-> Dne ponedeljek, 04. november 2019 ob 11:02:28 CET je Paul Kocialkowski=20
-> napisal(a):
-> > Hi Jernej,
-> >=20
-> > On Sat 26 Oct 19, 09:49, Jernej Skrabec wrote:
-> > > Mode register also holds information if video width is bigger than 20=
-48
-> > > and if it is equal to 4096.
-> > >=20
-> > > Rework cedrus_engine_enable() to properly signal this properties.
-> >=20
-> > Thanks for the patch, looks good to me!
-> >=20
-> > Acked-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> >=20
-> > One minor thing: maybe we should have a way to set the maximum dimensio=
-ns
-> > depending on the generation of the engine in use and the actual maximum
-> > supported by the hardware.
-> >=20
-> > Maybe either as dedicated new fields in struct cedrus_variant or as
-> > capability flags.
->=20
-> I was thinking about first solution, but after going trough manuals, it w=
-as=20
-> unclear what are real limitations. For example, H3 manual states that it =
-is=20
-> capable of decoding H264 1080p@60Hz. However, I know for a fact that it i=
-s=20
-> also capable of decoding 4k videos, but probably not at 60 Hz. I don't ow=
-n=20
-> anything older that A83T, so I don't know what are capabilities of those =
-SoCs.=20
-
-So I guess in this case we should try and see. I could try to look into it =
-at
-some point in the future too if you're not particulary interested.
-
-> Anyway, being slow is still ok for some tasks, like transcoding, so we ca=
-n't=20
-> limit decoding to 1080p just because it's slow. It is probably still fast=
-er=20
-> than doing it in SW. Not to mention that it's still ok for some videos, a=
- lot=20
-> of them uses 24 fps.
-
-I agree, it's best to expose the maximum supported resolution by the hardwa=
-re,
-even if it means running at a lower fps.
-
-Do you know if we have a way to report some estimation of the maximum suppo=
-rted
-fps to userspace? It would be useful to let userspace decide whether it's a
-better fit than software decoding.
-
-Cheers,
-
-Paul
-
-> Best regards,
-> Jernej
->=20
-> >=20
-> > Anyway that can be done later since we were already hardcoding this.
-> >=20
-> > Cheers,
-> >=20
-> > Paul
-> >=20
-> > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > > ---
-> > >=20
-> > >  drivers/staging/media/sunxi/cedrus/cedrus_h264.c  | 2 +-
-> > >  drivers/staging/media/sunxi/cedrus/cedrus_h265.c  | 2 +-
-> > >  drivers/staging/media/sunxi/cedrus/cedrus_hw.c    | 9 +++++++--
-> > >  drivers/staging/media/sunxi/cedrus/cedrus_hw.h    | 2 +-
-> > >  drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c | 2 +-
-> > >  drivers/staging/media/sunxi/cedrus/cedrus_regs.h  | 2 ++
-> > >  6 files changed, 13 insertions(+), 6 deletions(-)
-> > >=20
-> > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c index
-> > > 7487f6ab7576..d2c854ecdf15 100644
-> > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > @@ -485,7 +485,7 @@ static void cedrus_h264_setup(struct cedrus_ctx *=
-ctx,
-> > >=20
-> > >  {
-> > > =20
-> > >  	struct cedrus_dev *dev =3D ctx->dev;
-> > >=20
-> > > -	cedrus_engine_enable(dev, CEDRUS_CODEC_H264);
-> > > +	cedrus_engine_enable(ctx, CEDRUS_CODEC_H264);
-> > >=20
-> > >  	cedrus_write(dev, VE_H264_SDROT_CTRL, 0);
-> > >  	cedrus_write(dev, VE_H264_EXTRA_BUFFER1,
-> > >=20
-> > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-> > > b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c index
-> > > 9bc921866f70..6945dc74e1d7 100644
-> > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-> > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-> > > @@ -276,7 +276,7 @@ static void cedrus_h265_setup(struct cedrus_ctx *=
-ctx,
-> > >=20
-> > >  	}
-> > >  =09
-> > >  	/* Activate H265 engine. */
-> > >=20
-> > > -	cedrus_engine_enable(dev, CEDRUS_CODEC_H265);
-> > > +	cedrus_engine_enable(ctx, CEDRUS_CODEC_H265);
-> > >=20
-> > >  	/* Source offset and length in bits. */
-> > >=20
-> > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> > > b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c index
-> > > 570a9165dd5d..3acfa21bc124 100644
-> > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
-> > > @@ -30,7 +30,7 @@
-> > >=20
-> > >  #include "cedrus_hw.h"
-> > >  #include "cedrus_regs.h"
-> > >=20
-> > > -int cedrus_engine_enable(struct cedrus_dev *dev, enum cedrus_codec c=
-odec)
-> > > +int cedrus_engine_enable(struct cedrus_ctx *ctx, enum cedrus_codec c=
-odec)
-> > >=20
-> > >  {
-> > > =20
-> > >  	u32 reg =3D 0;
-> > >=20
-> > > @@ -58,7 +58,12 @@ int cedrus_engine_enable(struct cedrus_dev *dev, e=
-num
-> > > cedrus_codec codec)>=20
-> > >  		return -EINVAL;
-> > >  =09
-> > >  	}
-> > >=20
-> > > -	cedrus_write(dev, VE_MODE, reg);
-> > > +	if (ctx->src_fmt.width =3D=3D 4096)
-> > > +		reg |=3D VE_MODE_PIC_WIDTH_IS_4096;
-> > > +	if (ctx->src_fmt.width > 2048)
-> > > +		reg |=3D VE_MODE_PIC_WIDTH_MORE_2048;
-> > > +
-> > > +	cedrus_write(ctx->dev, VE_MODE, reg);
-> > >=20
-> > >  	return 0;
-> > > =20
-> > >  }
-> > >=20
-> > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-> > > b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h index
-> > > 27d0882397aa..604ff932fbf5 100644
-> > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-> > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
-> > > @@ -16,7 +16,7 @@
-> > >=20
-> > >  #ifndef _CEDRUS_HW_H_
-> > >  #define _CEDRUS_HW_H_
-> > >=20
-> > > -int cedrus_engine_enable(struct cedrus_dev *dev, enum cedrus_codec
-> > > codec);
-> > > +int cedrus_engine_enable(struct cedrus_ctx *ctx, enum cedrus_codec
-> > > codec);
-> > >=20
-> > >  void cedrus_engine_disable(struct cedrus_dev *dev);
-> > > =20
-> > >  void cedrus_dst_format_set(struct cedrus_dev *dev,
-> > >=20
-> > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c
-> > > b/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c index
-> > > 13c34927bad5..8bcd6b8f9e2d 100644
-> > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c
-> > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_mpeg2.c
-> > > @@ -96,7 +96,7 @@ static void cedrus_mpeg2_setup(struct cedrus_ctx *c=
-tx,
-> > > struct cedrus_run *run)>=20
-> > >  	quantization =3D run->mpeg2.quantization;
-> > >  =09
-> > >  	/* Activate MPEG engine. */
-> > >=20
-> > > -	cedrus_engine_enable(dev, CEDRUS_CODEC_MPEG2);
-> > > +	cedrus_engine_enable(ctx, CEDRUS_CODEC_MPEG2);
-> > >=20
-> > >  	/* Set intra quantization matrix. */
-> > >=20
-> > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> > > b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h index
-> > > 4275a307d282..ace3d49fcd82 100644
-> > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-> > > @@ -35,6 +35,8 @@
-> > >=20
-> > >  #define VE_MODE					0x00
-> > >=20
-> > > +#define VE_MODE_PIC_WIDTH_IS_4096		BIT(22)
-> > > +#define VE_MODE_PIC_WIDTH_MORE_2048		BIT(21)
-> > >=20
-> > >  #define VE_MODE_REC_WR_MODE_2MB			(0x01 << 20)
-> > >  #define VE_MODE_REC_WR_MODE_1MB			(0x00 << 20)
-> > >  #define VE_MODE_DDR_MODE_BW_128			(0x03 << 16)
->=20
->=20
->=20
->=20
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---Fig2xvG2VGoz8o/s
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl3BLnoACgkQ3cLmz3+f
-v9EjhwgAgeGyEQpAO6eVGrr8/1wd8Zn4Clb1Bmee41zx2U1LqhhWf0nr2ZSOR6/T
-qXztV6Y6ZZ5PcvRRiHXT7mVVzxpareDEuQvuyI1q53W2CBAmlXdLEp4JNOKjUDJ6
-iGPh8zvQDqaza6/88oK35uSSNreHY6RUFP0MIBT3nHsMFHKndpBgYo3kGjU46LKz
-xr3PV4NX9+8/+3m5Ol6mY5w+YTl0xJ/z3rbIXp6E0HFFFCL+pqdShu2osjHboPF1
-qTLMUK8zdHG3UYGdanhHS5jMpkZS4Qab06JYsuGKiJ/4WU4PgvAO9CEuIM0nslI1
-W6+I3tmt6J4p13N/VFoTJ+10EAooUA==
-=RajT
------END PGP SIGNATURE-----
-
---Fig2xvG2VGoz8o/s--
-
-
---===============5629972979281509548==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5629972979281509548==--
-
+CgpPbiAwNS8xMS8yMDE5IDkuNDksIFRlcm8gS3Jpc3RvIHdyb3RlOgo+IE9uIDAxLzExLzIwMTkg
+MTA6NDEsIFBldGVyIFVqZmFsdXNpIHdyb3RlOgo+PiBJbiBLMyBhcmNoaXRlY3R1cmUgdGhlIERN
+QSBvcGVyYXRlcyB3aXRoaW4gdGhyZWFkcy4gT25lIGVuZCBvZiB0aGUgdGhyZWFkCj4+IGlzIFVE
+TUFQLCB0aGUgb3RoZXIgaXMgb24gdGhlIHBlcmlwaGVyYWwgc2lkZS4KPj4KPj4gVGhlIFVETUFQ
+IGNoYW5uZWwgY29uZmlndXJhdGlvbiBkZXBlbmRzIG9uIHRoZSBuZWVkcyBvZiB0aGUgcmVtb3Rl
+Cj4+IGVuZHBvaW50IGFuZCBpdCBjYW4gYmUgZGlmZmVyIGZyb20gcGVyaXBoZXJhbCB0byBwZXJp
+cGhlcmFsLgo+Pgo+PiBUaGlzIHBhdGNoIGFkZHMgZGF0YWJhc2UgZm9yIGFtNjU0IGFuZCBqNzIx
+ZSBhbmQgc21hbGwgQVBJIHRvIGZldGNoIHRoZQo+PiBQU0ktTCBlbmRwb2ludCBjb25maWd1cmF0
+aW9uIGZyb20gdGhlIGRhdGFiYXNlIHdoaWNoIHNob3VsZCBvbmx5IHVzZWQgYnkKPj4gdGhlIERN
+QSBkcml2ZXIocykuCj4+Cj4+IEFub3RoZXIgQVBJIGlzIGFkZGVkIGZvciBuYXRpdmUgcGVyaXBo
+ZXJhbHMgdG8gZ2l2ZSBwb3NzaWJpbGl0eSB0bwo+PiBwYXNzIG5ldwo+PiBjb25maWd1cmF0aW9u
+IGZvciB0aGUgdGhyZWFkcyB0aGV5IGFyZSB1c2luZywgd2hpY2ggaXMgbmVlZGVkIHRvIGJlCj4+
+IGFibGUgdG8KPj4gaGFuZGxlIGNoYW5nZXMgY2F1c2VkIGJ5IGRpZmZlcmVudCBmaXJtd2FyZSBs
+b2FkZWQgZm9yIHRoZSBwZXJpcGhlcmFsIGZvcgo+PiBleGFtcGxlLgo+Pgo+PiBTaWduZWQtb2Zm
+LWJ5OiBQZXRlciBVamZhbHVzaSA8cGV0ZXIudWpmYWx1c2lAdGkuY29tPgo+PiAtLS0KPj4gwqAg
+ZHJpdmVycy9kbWEvdGkvS2NvbmZpZ8KgwqDCoMKgwqDCoMKgwqAgfMKgwqAgMyArCj4+IMKgIGRy
+aXZlcnMvZG1hL3RpL01ha2VmaWxlwqDCoMKgwqDCoMKgwqAgfMKgwqAgMSArCj4+IMKgIGRyaXZl
+cnMvZG1hL3RpL2szLXBzaWwtYW02NTQuYyB8IDE3MiArKysrKysrKysrKysrKysrKysrKysrKysr
+Kwo+PiDCoCBkcml2ZXJzL2RtYS90aS9rMy1wc2lsLWo3MjFlLmMgfCAyMTkgKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKysrCj4+IMKgIGRyaXZlcnMvZG1hL3RpL2szLXBzaWwtcHJpdi5o
+wqAgfMKgIDM5ICsrKysrKwo+PiDCoCBkcml2ZXJzL2RtYS90aS9rMy1wc2lsLmPCoMKgwqDCoMKg
+wqAgfMKgIDk3ICsrKysrKysrKysrKysrKwo+PiDCoCBpbmNsdWRlL2xpbnV4L2RtYS9rMy1wc2ls
+LmjCoMKgwqAgfMKgIDQ3ICsrKysrKysKPj4gwqAgNyBmaWxlcyBjaGFuZ2VkLCA1NzggaW5zZXJ0
+aW9ucygrKQo+PiDCoCBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9kbWEvdGkvazMtcHNpbC1h
+bTY1NC5jCj4+IMKgIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL2RtYS90aS9rMy1wc2lsLWo3
+MjFlLmMKPj4gwqAgY3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvZG1hL3RpL2szLXBzaWwtcHJp
+di5oCj4+IMKgIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL2RtYS90aS9rMy1wc2lsLmMKPj4g
+wqAgY3JlYXRlIG1vZGUgMTAwNjQ0IGluY2x1ZGUvbGludXgvZG1hL2szLXBzaWwuaAoKLi4uCgo+
+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9kbWEvdGkvazMtcHNpbC5jIGIvZHJpdmVycy9kbWEvdGkv
+azMtcHNpbC5jCj4+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4+IGluZGV4IDAwMDAwMDAwMDAwMC4u
+ZTYxMDAyMmYwOWY0Cj4+IC0tLSAvZGV2L251bGwKPj4gKysrIGIvZHJpdmVycy9kbWEvdGkvazMt
+cHNpbC5jCj4+IEBAIC0wLDAgKzEsOTcgQEAKPj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVy
+OiBHUEwtMi4wCj4+ICsvKgo+PiArICrCoCBDb3B5cmlnaHQgKEMpIDIwMTkgVGV4YXMgSW5zdHJ1
+bWVudHMgSW5jb3Jwb3JhdGVkIC0KPj4gaHR0cDovL3d3dy50aS5jb20KPj4gKyAqwqAgQXV0aG9y
+OiBQZXRlciBVamZhbHVzaSA8cGV0ZXIudWpmYWx1c2lAdGkuY29tPgo+PiArICovCj4+ICsKPj4g
+KyNpbmNsdWRlIDxsaW51eC9rZXJuZWwuaD4KPj4gKyNpbmNsdWRlIDxsaW51eC9kZXZpY2UuaD4K
+Pj4gKyNpbmNsdWRlIDxsaW51eC9tb2R1bGUuaD4KPj4gKyNpbmNsdWRlIDxsaW51eC9tdXRleC5o
+Pgo+PiArI2luY2x1ZGUgPGxpbnV4L29mLmg+Cj4+ICsKPj4gKyNpbmNsdWRlICJrMy1wc2lsLXBy
+aXYuaCIKPj4gKwo+PiArZXh0ZXJuIHN0cnVjdCBwc2lsX2VwX21hcCBhbTY1NF9lcF9tYXA7Cj4+
+ICtleHRlcm4gc3RydWN0IHBzaWxfZXBfbWFwIGo3MjFlX2VwX21hcDsKPj4gKwo+PiArc3RhdGlj
+IERFRklORV9NVVRFWChlcF9tYXBfbXV0ZXgpOwo+PiArc3RhdGljIHN0cnVjdCBwc2lsX2VwX21h
+cCAqc29jX2VwX21hcDsKPiAKPiBTbywgeW91IGFyZSBvbmx5IHByb3RlY3RpbmcgdGhlIGhpZ2gg
+bGV2ZWwgc29jX2VwX21hcCBwb2ludGVyIG9ubHkuIFlvdQo+IGRvbid0IG5lZWQgdG8gcHJvdGVj
+dCB0aGUgZGF0YWJhc2UgaXRzZWxmIHZpYSBzb21lIHVzZWNvdW50aW5nIG9yCj4gc29tZXRoaW5n
+LCBvciBhcmUgeW91IGRvaW5nIGl0IHdpdGhpbiB0aGUgRE1BIGRyaXZlcj8KClRoYXQncyBjb3Jy
+ZWN0LCBJIHByb3RlY3Qgb25seSB0aGUgc29jX2VwX21hcC4KVGhlIERNQSBkcml2ZXJzIGNhbiBs
+b29rIHVwIHRocmVhZHMgY29uY3VycmVudGx5IEkganVzdCBuZWVkIHRvIG1ha2UKc3VyZSB0aGF0
+IHRoZSBzb2NfZXBfbWFwIGlzIGNvbmZpZ3VyZWQgd2hlbiB0aGUgZmlyc3QKcHNpbF9nZXRfZXBf
+Y29uZmlnKCkgY29tZXMuCkFmdGVyIHRoaXMgdGhlIERNQSBkcml2ZXJzIGFyZSBmcmVlIHRvIGxv
+b2sgdXAgdGhpbmdzLgoKVGhlIGVwX2NvbmZpZyB1cGRhdGUgd2lsbCBiZSBjb21pbmcgZnJvbSB0
+aGUgRE1BIGNsaWVudCBkcml2ZXIocykgYW5kCm5vdCBmcm9tIHRoZSBETUEgZHJpdmVyLiBUaGUg
+Y2xpbmV0IGRyaXZlciBrbm93cyBob3cgdGhpZXIgUFNJLUwKZW5kcG9pbnQgaWYgY29uZmlndXJl
+ZCBzbyB0aGV5IGNvdWxkIHVwZGF0ZSB0aGUgZGVmYXVsdCBjb25maWd1cmF0aW9uCl9iZWZvcmVf
+IHRoZXkgd291bGQgcmVxdWVzdCBhIERNQSBjaGFubmVsLgoKPiAKPiAtVGVybwo+IAo+PiArCj4+
+ICtzdHJ1Y3QgcHNpbF9lbmRwb2ludF9jb25maWcgKnBzaWxfZ2V0X2VwX2NvbmZpZyh1MzIgdGhy
+ZWFkX2lkKQo+PiArewo+PiArwqDCoMKgIGludCBpOwo+PiArCj4+ICvCoMKgwqAgbXV0ZXhfbG9j
+aygmZXBfbWFwX211dGV4KTsKPj4gK8KgwqDCoCBpZiAoIXNvY19lcF9tYXApIHsKPj4gK8KgwqDC
+oMKgwqDCoMKgIGlmIChvZl9tYWNoaW5lX2lzX2NvbXBhdGlibGUoInRpLGFtNjU0IikpIHsKPj4g
+K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgc29jX2VwX21hcCA9ICZhbTY1NF9lcF9tYXA7Cj4+ICvC
+oMKgwqDCoMKgwqDCoCB9IGVsc2UgaWYgKG9mX21hY2hpbmVfaXNfY29tcGF0aWJsZSgidGksajcy
+MWUiKSkgewo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzb2NfZXBfbWFwID0gJmo3MjFlX2Vw
+X21hcDsKPj4gK8KgwqDCoMKgwqDCoMKgIH0gZWxzZSB7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgIHByX2VycigiUFNJTDogTm8gY29tcGF0aWJsZSBtYWNoaW5lIGZvdW5kIGZvciBtYXBcbiIp
+Owo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gRVJSX1BUUigtRU5PVFNVUFApOwo+
+PiArwqDCoMKgwqDCoMKgwqAgfQo+PiArwqDCoMKgwqDCoMKgwqAgcHJfZGVidWcoIiVzOiBVc2lu
+ZyBtYXAgZm9yICVzXG4iLCBfX2Z1bmNfXywgc29jX2VwX21hcC0+bmFtZSk7Cj4+ICvCoMKgwqAg
+fQo+PiArwqDCoMKgIG11dGV4X3VubG9jaygmZXBfbWFwX211dGV4KTsKPj4gKwo+PiArwqDCoMKg
+IGlmICh0aHJlYWRfaWQgJiBLM19QU0lMX0RTVF9USFJFQURfSURfT0ZGU0VUICYmIHNvY19lcF9t
+YXAtPmRzdCkgewo+PiArwqDCoMKgwqDCoMKgwqAgLyogY2hlY2sgaW4gZGVzdGluYXRpb24gdGhy
+ZWFkIG1hcCAqLwo+PiArwqDCoMKgwqDCoMKgwqAgZm9yIChpID0gMDsgaSA8IHNvY19lcF9tYXAt
+PmRzdF9jb3VudDsgaSsrKSB7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlmIChzb2NfZXBf
+bWFwLT5kc3RbaV0udGhyZWFkX2lkID09IHRocmVhZF9pZCkKPj4gK8KgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCByZXR1cm4gJnNvY19lcF9tYXAtPmRzdFtpXS5lcF9jb25maWc7Cj4+ICvC
+oMKgwqDCoMKgwqDCoCB9Cj4+ICvCoMKgwqAgfQo+PiArCj4+ICvCoMKgwqAgdGhyZWFkX2lkICY9
+IH5LM19QU0lMX0RTVF9USFJFQURfSURfT0ZGU0VUOwo+PiArwqDCoMKgIGlmIChzb2NfZXBfbWFw
+LT5zcmMpIHsKPj4gK8KgwqDCoMKgwqDCoMKgIGZvciAoaSA9IDA7IGkgPCBzb2NfZXBfbWFwLT5z
+cmNfY291bnQ7IGkrKykgewo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAoc29jX2VwX21h
+cC0+c3JjW2ldLnRocmVhZF9pZCA9PSB0aHJlYWRfaWQpCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgcmV0dXJuICZzb2NfZXBfbWFwLT5zcmNbaV0uZXBfY29uZmlnOwo+PiArwqDC
+oMKgwqDCoMKgwqAgfQo+PiArwqDCoMKgIH0KPj4gKwo+PiArwqDCoMKgIHJldHVybiBFUlJfUFRS
+KC1FTk9FTlQpOwo+PiArfQo+PiArRVhQT1JUX1NZTUJPTChwc2lsX2dldF9lcF9jb25maWcpOwo+
+PiArCj4+ICtpbnQgcHNpbF9zZXRfbmV3X2VwX2NvbmZpZyhzdHJ1Y3QgZGV2aWNlICpkZXYsIGNv
+bnN0IGNoYXIgKm5hbWUsCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHN0cnVjdCBw
+c2lsX2VuZHBvaW50X2NvbmZpZyAqZXBfY29uZmlnKQo+PiArewo+PiArwqDCoMKgIHN0cnVjdCBw
+c2lsX2VuZHBvaW50X2NvbmZpZyAqZHN0X2VwX2NvbmZpZzsKPj4gK8KgwqDCoCBzdHJ1Y3Qgb2Zf
+cGhhbmRsZV9hcmdzIGRtYV9zcGVjOwo+PiArwqDCoMKgIHUzMiB0aHJlYWRfaWQ7Cj4+ICvCoMKg
+wqAgaW50IGluZGV4Owo+PiArCj4+ICvCoMKgwqAgaWYgKCFkZXYgfHwgIWRldi0+b2Zfbm9kZSkK
+Pj4gK8KgwqDCoMKgwqDCoMKgIHJldHVybiAtRUlOVkFMOwo+PiArCj4+ICvCoMKgwqAgaW5kZXgg
+PSBvZl9wcm9wZXJ0eV9tYXRjaF9zdHJpbmcoZGV2LT5vZl9ub2RlLCAiZG1hLW5hbWVzIiwgbmFt
+ZSk7Cj4+ICvCoMKgwqAgaWYgKGluZGV4IDwgMCkKPj4gK8KgwqDCoMKgwqDCoMKgIHJldHVybiBp
+bmRleDsKPj4gKwo+PiArwqDCoMKgIGlmIChvZl9wYXJzZV9waGFuZGxlX3dpdGhfYXJncyhkZXYt
+Pm9mX25vZGUsICJkbWFzIiwgIiNkbWEtY2VsbHMiLAo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaW5kZXgsICZkbWFfc3BlYykpCj4+ICvCoMKgwqDCoMKg
+wqDCoCByZXR1cm4gLUVOT0VOVDsKPj4gKwo+PiArwqDCoMKgIHRocmVhZF9pZCA9IGRtYV9zcGVj
+LmFyZ3NbMF07Cj4+ICsKPj4gK8KgwqDCoCBkc3RfZXBfY29uZmlnID0gcHNpbF9nZXRfZXBfY29u
+ZmlnKHRocmVhZF9pZCk7Cj4+ICvCoMKgwqAgaWYgKElTX0VSUihkc3RfZXBfY29uZmlnKSkgewo+
+PiArwqDCoMKgwqDCoMKgwqAgcHJfZXJyKCJQU0lMOiB0aHJlYWQgSUQgMHglMDR4IG5vdCBkZWZp
+bmVkIGluIG1hcFxuIiwKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdGhyZWFkX2lk
+KTsKPj4gK8KgwqDCoMKgwqDCoMKgIG9mX25vZGVfcHV0KGRtYV9zcGVjLm5wKTsKPj4gK8KgwqDC
+oMKgwqDCoMKgIHJldHVybiBQVFJfRVJSKGRzdF9lcF9jb25maWcpOwo+PiArwqDCoMKgIH0KPj4g
+Kwo+PiArwqDCoMKgIG1lbWNweShkc3RfZXBfY29uZmlnLCBlcF9jb25maWcsIHNpemVvZigqZHN0
+X2VwX2NvbmZpZykpOwo+PiArCj4+ICvCoMKgwqAgb2Zfbm9kZV9wdXQoZG1hX3NwZWMubnApOwo+
+PiArwqDCoMKgIHJldHVybiAwOwo+PiArfQo+PiArRVhQT1JUX1NZTUJPTChwc2lsX3NldF9uZXdf
+ZXBfY29uZmlnKTsKPj4gKwo+PiArTU9EVUxFX0RFU0NSSVBUSU9OKCJUSSBLMyBQU0ktTCBlbmRw
+b2ludCBkYXRhYmFzZSIpOwo+PiArTU9EVUxFX0FVVEhPUigiUGV0ZXIgVWpmYWx1c2kgPHBldGVy
+LnVqZmFsdXNpQHRpLmNvbT4iKTsKPj4gK01PRFVMRV9MSUNFTlNFKCJHUEwgdjIiKTsKPj4gZGlm
+ZiAtLWdpdCBhL2luY2x1ZGUvbGludXgvZG1hL2szLXBzaWwuaCBiL2luY2x1ZGUvbGludXgvZG1h
+L2szLXBzaWwuaAo+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+PiBpbmRleCAwMDAwMDAwMDAwMDAu
+LjE2ZTljOGM2ZjgzOQo+PiAtLS0gL2Rldi9udWxsCj4+ICsrKyBiL2luY2x1ZGUvbGludXgvZG1h
+L2szLXBzaWwuaAo+PiBAQCAtMCwwICsxLDQ3IEBACj4+ICsvKiBTUERYLUxpY2Vuc2UtSWRlbnRp
+ZmllcjogR1BMLTIuMCAqLwo+PiArLyoKPj4gKyAqwqAgQ29weXJpZ2h0IChDKSAyMDE5IFRleGFz
+IEluc3RydW1lbnRzIEluY29ycG9yYXRlZCAtCj4+IGh0dHA6Ly93d3cudGkuY29tCj4+ICsgKi8K
+Pj4gKwo+PiArI2lmbmRlZiBLM19QU0lMX0hfCj4+ICsjZGVmaW5lIEszX1BTSUxfSF8KPj4gKwo+
+PiArI2luY2x1ZGUgPGxpbnV4L3R5cGVzLmg+Cj4+ICsKPj4gKyNkZWZpbmUgSzNfUFNJTF9EU1Rf
+VEhSRUFEX0lEX09GRlNFVCAweDgwMDAKPj4gKwo+PiArc3RydWN0IGRldmljZTsKPj4gKwo+PiAr
+LyogQ2hhbm5lbCBUaHJvdWdocHV0IExldmVscyAqLwo+PiArZW51bSB1ZG1hX3RwX2xldmVsIHsK
+Pj4gK8KgwqDCoCBVRE1BX1RQX05PUk1BTCA9IDAsCj4+ICvCoMKgwqAgVURNQV9UUF9ISUdIID0g
+MSwKPj4gK8KgwqDCoCBVRE1BX1RQX1VMVFJBSElHSCA9IDIsCj4+ICvCoMKgwqAgVURNQV9UUF9M
+QVNULAo+PiArfTsKPj4gKwo+PiArZW51bSBwc2lsX2VuZHBvaW50X3R5cGUgewo+PiArwqDCoMKg
+IFBTSUxfRVBfTkFUSVZFID0gMCwKPj4gK8KgwqDCoCBQU0lMX0VQX1BETUFfWFksCj4+ICvCoMKg
+wqAgUFNJTF9FUF9QRE1BX01DQU4sCj4+ICvCoMKgwqAgUFNJTF9FUF9QRE1BX0FBU1JDLAo+PiAr
+fTsKPj4gKwo+PiArc3RydWN0IHBzaWxfZW5kcG9pbnRfY29uZmlnIHsKPj4gK8KgwqDCoCBlbnVt
+IHBzaWxfZW5kcG9pbnRfdHlwZSBlcF90eXBlOwo+PiArCj4+ICvCoMKgwqAgdW5zaWduZWQgcGt0
+X21vZGU6MTsKPj4gK8KgwqDCoCB1bnNpZ25lZCBub3RkcGt0OjE7Cj4+ICvCoMKgwqAgdW5zaWdu
+ZWQgbmVlZHNfZXBpYjoxOwo+PiArwqDCoMKgIHUzMiBwc2Rfc2l6ZTsKPj4gK8KgwqDCoCBlbnVt
+IHVkbWFfdHBfbGV2ZWwgY2hhbm5lbF90cGw7Cj4+ICsKPj4gK8KgwqDCoCAvKiBQRE1BIHByb3Bl
+cnRpZXMsIHZhbGlkIGZvciBQU0lMX0VQX1BETUFfKiAqLwo+PiArwqDCoMKgIHVuc2lnbmVkIHBk
+bWFfYWNjMzI6MTsKPj4gK8KgwqDCoCB1bnNpZ25lZCBwZG1hX2J1cnN0OjE7Cj4+ICt9Owo+PiAr
+Cj4+ICtpbnQgcHNpbF9zZXRfbmV3X2VwX2NvbmZpZyhzdHJ1Y3QgZGV2aWNlICpkZXYsIGNvbnN0
+IGNoYXIgKm5hbWUsCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHN0cnVjdCBwc2ls
+X2VuZHBvaW50X2NvbmZpZyAqZXBfY29uZmlnKTsKPj4gKwo+PiArI2VuZGlmIC8qIEszX1BTSUxf
+SF8gKi8KPj4KPiAKPiAtLSAKPiBUZXhhcyBJbnN0cnVtZW50cyBGaW5sYW5kIE95LCBQb3Jra2Fs
+YW5rYXR1IDIyLCAwMDE4MCBIZWxzaW5raS4KPiBZLXR1bm51cy9CdXNpbmVzcyBJRDogMDYxNTUy
+MS00LiBLb3RpcGFpa2thL0RvbWljaWxlOiBIZWxzaW5raQoKLSBQw6l0ZXIKClRleGFzIEluc3Ry
+dW1lbnRzIEZpbmxhbmQgT3ksIFBvcmtrYWxhbmthdHUgMjIsIDAwMTgwIEhlbHNpbmtpLgpZLXR1
+bm51cy9CdXNpbmVzcyBJRDogMDYxNTUyMS00LiBLb3RpcGFpa2thL0RvbWljaWxlOiBIZWxzaW5r
+aQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
