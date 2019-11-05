@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20C37F0790
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:01:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C57A5F0792
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:02:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=I8fdUJ9P6Cs/1hrTBeSAzMQMu73q9QHLR1OsjHyULUc=; b=T00CO/Xz6Navsz3xPeTxws86xZ
-	DPx1daUGZQ71WJEfqgPkiCvaMpbi/HnRjFm8Sdy9FHw1Je4m26hon847UMOz5wHTv+tpMD6wrJyrG
-	WVhZVgbxrm8g+wPkPVRHAURsWpDAk+nPq4Bp53lhzex5AxSDImPrYLyvVs3mZTYOMFgiq3N+vuS+g
-	Z54ABhgam2eLbA5PjLjA/ZqZHJXikM4qaU7GdnCem/HZAMR7P2vVkwXpi3aTRDhHNWpU1Qtp7dnAT
-	bmKSkOhDaYZEg0mTKXjwuGNvKbxZBM+yLSgo27cwLXX2JfWMzAKoFfoSg5hnzskE7QBwh96bmFb7N
-	gsxrdrtA==;
+	bh=SOj5mao7uY27LDUrz6X3+H1wWGVRVV5K2nJv4SV4nik=; b=enXPoCKl3Qq/1Mxwlnp78jpaIy
+	vFQhVGHz6ztgYw1wFDu11rvdXdRhIgTWUJg8fwhLIpiMxh292r/Ak6PnULFGxewMfQVxrX6j726l3
+	SJ9sfZuaPzavntaq9+XXP/ahtpm2kp0Spya9yd05FXICG5aUGwpZSA3IwR6xaCg2YANHL/N7LzvjF
+	Lf2voUKlBeEKhljksfs4hP35/y4DYjmy54UoLMpBAUiRoujwh2sNucblhJhqkHZQLpZ+9achQ5Zze
+	m8+YbeYk5p7IAm1vK1ho+9G1QcZRKbFymCyailH45BkGUy2ulQN19gX9HSKx4E4P6QgcNCqOGrfmf
+	LzEHm4yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS5xb-0000I2-RU; Tue, 05 Nov 2019 21:01:55 +0000
+	id 1iS5xt-0000XC-1u; Tue, 05 Nov 2019 21:02:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5v8-0005Jl-MC
+ id 1iS5vB-0005Lq-9f
  for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:59:30 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D8E6D222C5;
- Tue,  5 Nov 2019 20:59:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0B06D222C4;
+ Tue,  5 Nov 2019 20:59:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987561;
- bh=0dsWAhvRpA+pYMGB4btBc2vF3S2Iq7FWZPvqB8beB3g=;
+ s=default; t=1572987564;
+ bh=/yceU+hIl0bH9C7nQWmK7euXoyeU9eG6jatmNh1g0UE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=L3kGD21JtxAKQAqHycxvTdN4pZfiffpUzsrkbOaoRMBdII5/9tez8Lu5N7R/LbsQ2
- qD0pAoIJKgz6tGG1u6X3rnHSqxJ76i13sz2DmiKWo3YtAlmoyHKqm1yBRlGzixIiea
- ejJrsV4p9J/jjGV7aCt7mh6k6Hy+MmqpihajampI=
+ b=g/bYaAILqFLvtmtWiuWfo7czLaKpFqp0dL2n4FdFKa/f0oIy7Q7NBmVGKgY9qt5aE
+ /nhHCAJih5szjaLpslns4P0sr5eS+WrWPZddAGT2f4r7J0y27DbkllHJYC/IUdx9Js
+ soin9KE+3Z0h28FVMBcZr8X0M7vAZMWl0oAhTzM4=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 08/53] arm: kernel: Add SMC structure parameter
-Date: Tue,  5 Nov 2019 21:58:01 +0100
-Message-Id: <20191105205846.1394-9-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 09/53] firmware: qcom: scm: Fix interrupted
+ SCM calls
+Date: Tue,  5 Nov 2019 21:58:02 +0100
+Message-Id: <20191105205846.1394-10-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_125922_868823_D406E718 
-X-CRM114-Status: GOOD (  14.49  )
+X-CRM114-CacheID: sfid-20191105_125925_392457_9AD8BF65 
+X-CRM114-Status: GOOD (  13.58  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,202 +93,92 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Andy Gross <andy.gross@linaro.org>
 
-[ Upstream commit 680a0873e193bae666439f4b5e32c758e68f114c ]
+[ Upstream commit 82bcd087029f6056506ea929f11af02622230901 ]
 
-This patch adds a quirk parameter to the arm_smccc_(smc/hvc) calls.
-The quirk structure allows for specialized SMC operations due to SoC
-specific requirements.  The current arm_smccc_(smc/hvc) is renamed and
-macros are used instead to specify the standard arm_smccc_(smc/hvc) or
-the arm_smccc_(smc/hvc)_quirk function.
+This patch adds a Qualcomm specific quirk to the arm_smccc_smc call.
 
-This patch and partial implementation was suggested by Will Deacon.
+On Qualcomm ARM64 platforms, the SMC call can return before it has
+completed.  If this occurs, the call can be restarted, but it requires
+using the returned session ID value from the interrupted SMC call.
+
+The quirk stores off the session ID from the interrupted call in the
+quirk structure so that it can be used by the caller.
+
+This patch folds in a fix given by Sricharan R:
+https://lkml.org/lkml/2016/9/28/272
 
 Signed-off-by: Andy Gross <andy.gross@linaro.org>
 Reviewed-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Sasha Levin <alexander.levin@verizon.com>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+[ardb: restrict to arch pieces since qcom was 32-bit only in v4.4]
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/kernel/armksyms.c      |  4 +-
- arch/arm/kernel/smccc-call.S    | 14 ++++---
- arch/arm64/kernel/arm64ksyms.c  |  4 +-
- arch/arm64/kernel/asm-offsets.c |  7 +++-
- arch/arm64/kernel/smccc-call.S  | 14 ++++---
- include/linux/arm-smccc.h       | 40 ++++++++++++++++----
- 6 files changed, 57 insertions(+), 26 deletions(-)
+ arch/arm64/kernel/smccc-call.S |  9 ++++++++-
+ include/linux/arm-smccc.h      | 11 ++++++++---
+ 2 files changed, 16 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/kernel/armksyms.c b/arch/arm/kernel/armksyms.c
-index 7e45f69a0ddc..8e8d20cdbce7 100644
---- a/arch/arm/kernel/armksyms.c
-+++ b/arch/arm/kernel/armksyms.c
-@@ -178,6 +178,6 @@ EXPORT_SYMBOL(__pv_offset);
- #endif
- 
- #ifdef CONFIG_HAVE_ARM_SMCCC
--EXPORT_SYMBOL(arm_smccc_smc);
--EXPORT_SYMBOL(arm_smccc_hvc);
-+EXPORT_SYMBOL(__arm_smccc_smc);
-+EXPORT_SYMBOL(__arm_smccc_hvc);
- #endif
-diff --git a/arch/arm/kernel/smccc-call.S b/arch/arm/kernel/smccc-call.S
-index 2e48b674aab1..e5d43066b889 100644
---- a/arch/arm/kernel/smccc-call.S
-+++ b/arch/arm/kernel/smccc-call.S
-@@ -46,17 +46,19 @@ UNWIND(	.fnend)
- /*
-  * void smccc_smc(unsigned long a0, unsigned long a1, unsigned long a2,
-  *		  unsigned long a3, unsigned long a4, unsigned long a5,
-- *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res)
-+ *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res,
-+ *		  struct arm_smccc_quirk *quirk)
-  */
--ENTRY(arm_smccc_smc)
-+ENTRY(__arm_smccc_smc)
- 	SMCCC SMCCC_SMC
--ENDPROC(arm_smccc_smc)
-+ENDPROC(__arm_smccc_smc)
- 
- /*
-  * void smccc_hvc(unsigned long a0, unsigned long a1, unsigned long a2,
-  *		  unsigned long a3, unsigned long a4, unsigned long a5,
-- *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res)
-+ *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res,
-+ *		  struct arm_smccc_quirk *quirk)
-  */
--ENTRY(arm_smccc_hvc)
-+ENTRY(__arm_smccc_hvc)
- 	SMCCC SMCCC_HVC
--ENDPROC(arm_smccc_hvc)
-+ENDPROC(__arm_smccc_hvc)
-diff --git a/arch/arm64/kernel/arm64ksyms.c b/arch/arm64/kernel/arm64ksyms.c
-index 678f30b05a45..a4252f586593 100644
---- a/arch/arm64/kernel/arm64ksyms.c
-+++ b/arch/arm64/kernel/arm64ksyms.c
-@@ -71,5 +71,5 @@ EXPORT_SYMBOL(_mcount);
- #endif
- 
- 	/* arm-smccc */
--EXPORT_SYMBOL(arm_smccc_smc);
--EXPORT_SYMBOL(arm_smccc_hvc);
-+EXPORT_SYMBOL(__arm_smccc_smc);
-+EXPORT_SYMBOL(__arm_smccc_hvc);
-diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
-index 7c4146a4257b..1f7b85d41587 100644
---- a/arch/arm64/kernel/asm-offsets.c
-+++ b/arch/arm64/kernel/asm-offsets.c
-@@ -163,7 +163,10 @@ int main(void)
-   DEFINE(SLEEP_SAVE_SP_PHYS,	offsetof(struct sleep_save_sp, save_ptr_stash_phys));
-   DEFINE(SLEEP_SAVE_SP_VIRT,	offsetof(struct sleep_save_sp, save_ptr_stash));
- #endif
--  DEFINE(ARM_SMCCC_RES_X0_OFFS,	offsetof(struct arm_smccc_res, a0));
--  DEFINE(ARM_SMCCC_RES_X2_OFFS,	offsetof(struct arm_smccc_res, a2));
-+  DEFINE(ARM_SMCCC_RES_X0_OFFS,		offsetof(struct arm_smccc_res, a0));
-+  DEFINE(ARM_SMCCC_RES_X2_OFFS,		offsetof(struct arm_smccc_res, a2));
-+  DEFINE(ARM_SMCCC_QUIRK_ID_OFFS,	offsetof(struct arm_smccc_quirk, id));
-+  DEFINE(ARM_SMCCC_QUIRK_STATE_OFFS,	offsetof(struct arm_smccc_quirk, state));
-+
-   return 0;
- }
 diff --git a/arch/arm64/kernel/smccc-call.S b/arch/arm64/kernel/smccc-call.S
-index ae0496fa4235..ba60a8cb07d2 100644
+index ba60a8cb07d2..62522342e1e4 100644
 --- a/arch/arm64/kernel/smccc-call.S
 +++ b/arch/arm64/kernel/smccc-call.S
-@@ -27,17 +27,19 @@
- /*
-  * void arm_smccc_smc(unsigned long a0, unsigned long a1, unsigned long a2,
-  *		  unsigned long a3, unsigned long a4, unsigned long a5,
-- *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res)
-+ *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res,
-+ *		  struct arm_smccc_quirk *quirk)
+@@ -12,6 +12,7 @@
+  *
   */
--ENTRY(arm_smccc_smc)
-+ENTRY(__arm_smccc_smc)
- 	SMCCC	smc
--ENDPROC(arm_smccc_smc)
-+ENDPROC(__arm_smccc_smc)
+ #include <linux/linkage.h>
++#include <linux/arm-smccc.h>
+ #include <asm/asm-offsets.h>
  
- /*
-  * void arm_smccc_hvc(unsigned long a0, unsigned long a1, unsigned long a2,
-  *		  unsigned long a3, unsigned long a4, unsigned long a5,
-- *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res)
-+ *		  unsigned long a6, unsigned long a7, struct arm_smccc_res *res,
-+ *		  struct arm_smccc_quirk *quirk)
-  */
--ENTRY(arm_smccc_hvc)
-+ENTRY(__arm_smccc_hvc)
- 	SMCCC	hvc
--ENDPROC(arm_smccc_hvc)
-+ENDPROC(__arm_smccc_hvc)
+ 	.macro SMCCC instr
+@@ -20,7 +21,13 @@
+ 	ldr	x4, [sp]
+ 	stp	x0, x1, [x4, #ARM_SMCCC_RES_X0_OFFS]
+ 	stp	x2, x3, [x4, #ARM_SMCCC_RES_X2_OFFS]
+-	ret
++	ldr	x4, [sp, #8]
++	cbz	x4, 1f /* no quirk structure */
++	ldr	x9, [x4, #ARM_SMCCC_QUIRK_ID_OFFS]
++	cmp	x9, #ARM_SMCCC_QUIRK_QCOM_A6
++	b.ne	1f
++	str	x6, [x4, ARM_SMCCC_QUIRK_STATE_OFFS]
++1:	ret
+ 	.cfi_endproc
+ 	.endm
+ 
 diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-index b5abfda80465..c66f8ae94b5a 100644
+index c66f8ae94b5a..b67934164401 100644
 --- a/include/linux/arm-smccc.h
 +++ b/include/linux/arm-smccc.h
-@@ -72,33 +72,57 @@ struct arm_smccc_res {
- };
+@@ -14,9 +14,6 @@
+ #ifndef __LINUX_ARM_SMCCC_H
+ #define __LINUX_ARM_SMCCC_H
  
+-#include <linux/linkage.h>
+-#include <linux/types.h>
+-
+ /*
+  * This file provides common defines for ARM SMC Calling Convention as
+  * specified in
+@@ -60,6 +57,13 @@
+ #define ARM_SMCCC_OWNER_TRUSTED_OS	50
+ #define ARM_SMCCC_OWNER_TRUSTED_OS_END	63
+ 
++#define ARM_SMCCC_QUIRK_NONE		0
++#define ARM_SMCCC_QUIRK_QCOM_A6		1 /* Save/restore register a6 */
++
++#ifndef __ASSEMBLY__
++
++#include <linux/linkage.h>
++#include <linux/types.h>
  /**
-- * arm_smccc_smc() - make SMC calls
-+ * struct arm_smccc_quirk - Contains quirk information
-+ * @id: quirk identification
-+ * @state: quirk specific information
-+ * @a6: Qualcomm quirk entry for returning post-smc call contents of a6
-+ */
-+struct arm_smccc_quirk {
-+	int	id;
-+	union {
-+		unsigned long a6;
-+	} state;
-+};
-+
-+/**
-+ * __arm_smccc_smc() - make SMC calls
-  * @a0-a7: arguments passed in registers 0 to 7
-  * @res: result values from registers 0 to 3
-+ * @quirk: points to an arm_smccc_quirk, or NULL when no quirks are required.
-  *
-  * This function is used to make SMC calls following SMC Calling Convention.
-  * The content of the supplied param are copied to registers 0 to 7 prior
-  * to the SMC instruction. The return values are updated with the content
-- * from register 0 to 3 on return from the SMC instruction.
-+ * from register 0 to 3 on return from the SMC instruction.  An optional
-+ * quirk structure provides vendor specific behavior.
-  */
--asmlinkage void arm_smccc_smc(unsigned long a0, unsigned long a1,
-+asmlinkage void __arm_smccc_smc(unsigned long a0, unsigned long a1,
- 			unsigned long a2, unsigned long a3, unsigned long a4,
- 			unsigned long a5, unsigned long a6, unsigned long a7,
--			struct arm_smccc_res *res);
-+			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk);
+  * struct arm_smccc_res - Result from SMC/HVC call
+  * @a0-a3 result values from registers 0 to 3
+@@ -125,4 +129,5 @@ asmlinkage void __arm_smccc_hvc(unsigned long a0, unsigned long a1,
  
- /**
-- * arm_smccc_hvc() - make HVC calls
-+ * __arm_smccc_hvc() - make HVC calls
-  * @a0-a7: arguments passed in registers 0 to 7
-  * @res: result values from registers 0 to 3
-  *
-  * This function is used to make HVC calls following SMC Calling
-  * Convention.  The content of the supplied param are copied to registers 0
-  * to 7 prior to the HVC instruction. The return values are updated with
-- * the content from register 0 to 3 on return from the HVC instruction.
-+ * the content from register 0 to 3 on return from the HVC instruction.  An
-+ * optional quirk structure provides vendor specific behavior.
-  */
--asmlinkage void arm_smccc_hvc(unsigned long a0, unsigned long a1,
-+asmlinkage void __arm_smccc_hvc(unsigned long a0, unsigned long a1,
- 			unsigned long a2, unsigned long a3, unsigned long a4,
- 			unsigned long a5, unsigned long a6, unsigned long a7,
--			struct arm_smccc_res *res);
-+			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk);
-+
-+#define arm_smccc_smc(...) __arm_smccc_smc(__VA_ARGS__, NULL)
-+
-+#define arm_smccc_smc_quirk(...) __arm_smccc_smc(__VA_ARGS__)
-+
-+#define arm_smccc_hvc(...) __arm_smccc_hvc(__VA_ARGS__, NULL)
-+
-+#define arm_smccc_hvc_quirk(...) __arm_smccc_hvc(__VA_ARGS__)
+ #define arm_smccc_hvc_quirk(...) __arm_smccc_hvc(__VA_ARGS__)
  
++#endif /*__ASSEMBLY__*/
  #endif /*__LINUX_ARM_SMCCC_H*/
 -- 
 2.17.1
