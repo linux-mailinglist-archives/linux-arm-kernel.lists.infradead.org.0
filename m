@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61140F0793
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:02:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF9D6F0795
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:02:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=IY0+o0KoXJs/CgvNmvJk8SvbK7v1YtL0Cp7QVFbgS8c=; b=FCkCRUV7w7nuVFNfa8yMIRYBY7
-	IzY+w/1nehzzMKPt7WkUvtpglZ0+MjfkHxS5olnbdId9cU9RTTTxYW8HJ3pPdW18AgfqrirNLoG/I
-	Pnf71dJlgE7QhF3UvAgxPfbc5wYT2cdsILqhHHGbUp0OwBO0Z35+OTiWJL0bteBB4EauxA/nHy+sx
-	ep3f40W1IKNF86LK0CmZ+e19yzoi8p3gDWn6CUytDK4R3DIVIS8Fvg+T8ybqtL+m7APVjUbN3wsEo
-	/U872bFnSKhehK4vyzVsaujwSHzsuODNMnAzaVMLo4b3QV0Re+FB67Q46LWmimY5RF246NOWy2K5S
-	KFquQsYA==;
+	bh=fnh7so9GpHBYyXmR6JeEVyoSBK/jAYniSLklfWinvNg=; b=sTlO6b8njEHXx9dvoJntV1K24R
+	UBy9CUyJSLdusTzko/lqicr+RdBSKljABpmdLGBPG186qs8CWm+tXAJ9VDalJKdQM6QbjlpM0tm19
+	pD6qe4cUtTUXFLkwmml2/loAAGCwycGUlSbktZ8cYZ6h4MeE9+XkT74SsazjuN/4UXN2mnQUr2+x7
+	NUUOxmDfncLonef6z/GYdHbTCXXBCa3Rlbj7x2toxFjyG9umWvdn1XLbAABm2Yhv8Sb2VmqmEVqpX
+	SedbCEIlCmbLVSqnjy8gxQgDQfw5sPZ67W2R0L6OVg1Q9D8KYilrN0yxORPMO5j785x5A0nqjkBfJ
+	pzIRhPzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS5y4-0000nC-4T; Tue, 05 Nov 2019 21:02:24 +0000
+	id 1iS5yO-00013v-GN; Tue, 05 Nov 2019 21:02:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5vE-0005OO-GA
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:59:33 +0000
+ id 1iS5vI-0005S7-2O
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:59:36 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2F0BB21D7D;
- Tue,  5 Nov 2019 20:59:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 28AE5222CB;
+ Tue,  5 Nov 2019 20:59:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987567;
- bh=rbfacBY3RL2nx6iTqlBmQBodGzrDQOSLLKeU8RyMr4w=;
+ s=default; t=1572987570;
+ bh=nc9eu01VaHRW/Nnx4XS5l36eD+FKqQK8dEmqgx73YVc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EfaFUIMTxC9LaUHuy+LabE2Zq78qRWdfNAfLu0Lq5anO5i7P8SZKjHAXjmzdjH38y
- TgpU3uIaW5006m5MwQofNgrQ3Ut3Oim5BgDV0OgSwH61q2wARwexiQr2268QxVuEK2
- z77XMje7+CqaXhMEHibTM5v3JOfWA8+6sv88wtS0=
+ b=TNB8LFxe/oGt81NHAV7jArGe3u/Ff4djRwWWlhHG2kJ/elDv65kEQzwZLU0ZgPePK
+ 2YHQIr1wTOjWDvXt9eebwYq9vZ3g/ivQCLvwN7/JCwhSJcq6Ndc/PgRpCO+8h4ybYd
+ jvh0DNWXoCV1eRewR05oKAVJrD0Ec8Sz5LNcOe4A=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 10/53] ARM: smccc: Update HVC comment to
- describe new quirk parameter
-Date: Tue,  5 Nov 2019 21:58:03 +0100
-Message-Id: <20191105205846.1394-11-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 11/53] arm/arm64: KVM: Advertise SMCCC v1.1
+Date: Tue,  5 Nov 2019 21:58:04 +0100
+Message-Id: <20191105205846.1394-12-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_125928_609680_5F368106 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20191105_125932_337888_D6A90C39 
+X-CRM114-Status: GOOD (  10.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,44 +80,65 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  Florian Fainelli <f.fainelli@gmail.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Tony Lindgren <tony@atomide.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, Sasha Levin <alexander.levin@verizon.com>,
- Russell King <rmk+kernel@armlinux.org.uk>, Marc Zyngier <maz@kernel.org>,
- Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>
+ Marc Zyngier <marc.zyngier@arm.com>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will.deacon@arm.com>
+From: Mark Rutland <mark.rutland@arm.com>
 
-[ Upstream commit 3046ec674d441562c6bb3e4284cd866743042ef3 ]
+From: Marc Zyngier <marc.zyngier@arm.com>
 
-Commit 680a0873e193 ("arm: kernel: Add SMC structure parameter") added
-a new "quirk" parameter to the SMC and HVC SMCCC backends, but only
-updated the comment for the SMC version. This patch adds the new
-paramater to the comment describing the HVC version too.
+commit 09e6be12effdb33bf7210c8867bbd213b66a499e upstream.
 
-Signed-off-by: Will Deacon <will.deacon@arm.com>
-Signed-off-by: Sasha Levin <alexander.levin@verizon.com>
+The new SMC Calling Convention (v1.1) allows for a reduced overhead
+when calling into the firmware, and provides a new feature discovery
+mechanism.
+
+Make it visible to KVM guests.
+
+Tested-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Reviewed-by: Christoffer Dall <christoffer.dall@linaro.org>
+Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+[v4.9: account for files moved to virt/ upstream]
+Signed-off-by: Mark Rutland <mark.rutland@arm.com> [v4.9 backport]
+Tested-by: Greg Hackmann <ghackmann@google.com>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+[ardb: restrict to include/linux/arm-smccc.h]
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- include/linux/arm-smccc.h | 1 +
- 1 file changed, 1 insertion(+)
+ include/linux/arm-smccc.h | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
 diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-index b67934164401..4c5bca38c653 100644
+index 4c5bca38c653..dc68aa5a7261 100644
 --- a/include/linux/arm-smccc.h
 +++ b/include/linux/arm-smccc.h
-@@ -109,6 +109,7 @@ asmlinkage void __arm_smccc_smc(unsigned long a0, unsigned long a1,
-  * __arm_smccc_hvc() - make HVC calls
-  * @a0-a7: arguments passed in registers 0 to 7
-  * @res: result values from registers 0 to 3
-+ * @quirk: points to an arm_smccc_quirk, or NULL when no quirks are required.
-  *
-  * This function is used to make HVC calls following SMC Calling
-  * Convention.  The content of the supplied param are copied to registers 0
+@@ -60,6 +60,19 @@
+ #define ARM_SMCCC_QUIRK_NONE		0
+ #define ARM_SMCCC_QUIRK_QCOM_A6		1 /* Save/restore register a6 */
+ 
++#define ARM_SMCCC_VERSION_1_0		0x10000
++#define ARM_SMCCC_VERSION_1_1		0x10001
++
++#define ARM_SMCCC_VERSION_FUNC_ID					\
++	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
++			   ARM_SMCCC_SMC_32,				\
++			   0, 0)
++
++#define ARM_SMCCC_ARCH_FEATURES_FUNC_ID					\
++	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
++			   ARM_SMCCC_SMC_32,				\
++			   0, 1)
++
+ #ifndef __ASSEMBLY__
+ 
+ #include <linux/linkage.h>
 -- 
 2.17.1
 
