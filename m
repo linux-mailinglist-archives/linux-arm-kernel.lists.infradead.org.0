@@ -2,79 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0516EFA55
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:01:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B03CCEFA63
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 11:04:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=goFASCnua9AGOo2wCzISM4JCuLKob0GX4YP128eesWs=; b=DnbnQuX6rZ9B3ZMpB8e2nFNuy
-	zdrut9dfteBTOyp7JxQsNYO9EMfFBi2mSnJHIFGM+tpybR3HH3aVy+G6GNBzcpfqqlArkZTB3k6y+
-	M93dOBw1bw6MqMCghN/HcyW0vi/uM5URrXkNdqj0MYPX7tq398a+ovnWAtU0HPP4Iq/U8fyKts5WO
-	LpW/WogZW3fyQKLSJ95SaP5dFzRVpKTD7/N5lCfoFYIfjCFhXqoichXcW3TlSRfJQo89ZdtBSMA5a
-	llS0BXVde9DfpdjRsAo8qliA0rMHCtyAo8nnIgejzJMzrMgn+0p0SxDlsDPuvfkqyr8d2fytOa05x
-	iouFhqJLQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yKZMOkMuuBj/5jfmZg/5IJr5u/4/sTCM5RWYBmaAtk8=; b=ZAo82QImtXr20L
+	u/3WdY3Fp7uWhtSOdcmKaTOsAS1HrJlRcy/WvlG9zLYcDrZKBHnVfeYBvQsrbdy6Y/A0xJleDa8eZ
+	qFG111jEtv3t+zfN9gQrJ1PkcyxRv20CqWbxl2aUTVtuDZ9p+fP9G9DFoTW4wv0QoQ1z9y1FeXAWj
+	GMvr2eRV5dKbQjnncqAf+jsq/nWr9tC+xNVlIecAEovFT2q6UNAqoj65CFsmPIY5080Ymt6OHR9Z7
+	HG7uNI2VmUrzXEYztRDqcRzrAs8bdHh6tr/TLQ1S9BFJZ2Bay1132RNxkHFGwep1XsGVx6ezZl+L7
+	GrhyfxxCymapJMC5CV0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRveH-0007JO-Cq; Tue, 05 Nov 2019 10:01:17 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1iRvhX-0007of-IE; Tue, 05 Nov 2019 10:04:39 +0000
+Received: from mail-eopbgr30088.outbound.protection.outlook.com ([40.107.3.88]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRve9-0007Hl-At
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:01:11 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xA5A11fx040316;
- Tue, 5 Nov 2019 04:01:01 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1572948061;
- bh=zbPTKFMP/VzQXIz/GVFKvy0Bu0kY7EmlTfBJtaGCMnY=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=hsPSJ5PPRBoB3sBXG1LtBARKT2zN9fCaS9LhkOkrYQOM6HVtlkEYAyyjQYYcbL/XM
- q7JBa0WNoXYcB2azHcRf3Q0RRsax/sDEnAZGihLR+wRBuUhoBOebhTGnKhRhk3Isya
- 9ZPn28nDm1syDYIbRJCvQ8ncDuI9x/uMElv4KebQ=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xA5A11PC107280
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 5 Nov 2019 04:01:01 -0600
-Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 5 Nov
- 2019 04:00:46 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 5 Nov 2019 04:01:00 -0600
-Received: from [10.250.98.116] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xA5A0vHX101993;
- Tue, 5 Nov 2019 04:00:58 -0600
-Subject: Re: [PATCH v4 07/15] dmaengine: ti: k3 PSI-L remote endpoint
- configuration
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <vkoul@kernel.org>,
- <robh+dt@kernel.org>, <nm@ti.com>, <ssantosh@kernel.org>
-References: <20191101084135.14811-1-peter.ujfalusi@ti.com>
- <20191101084135.14811-8-peter.ujfalusi@ti.com>
-From: Grygorii Strashko <grygorii.strashko@ti.com>
-Message-ID: <bbe8e13f-b865-a352-7960-31b2865e5421@ti.com>
-Date: Tue, 5 Nov 2019 12:00:57 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191101084135.14811-8-peter.ujfalusi@ti.com>
+ id 1iRvhM-0007nG-Fx
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 10:04:30 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=JShYW5tCyDKa0mVCaCY8gRoFKLqKuOXvVgT1f6Kjk235M2iaDpAHvN6X45KqqxtcdkoSkSupPsrGWcTiiW6334mzyCF0uLqaL2x9sLMCydDd7uovGV4e6QihwbPTxDoHDbjbceJb869o8fGogTaaDCLVWaAucNzLW7PwweyCmSyeVNjrgjKREZZzASKPK02CZxkZ5sO2WiFtNX01HEo1EBW7fE8hlwRW0r4wUaENSWz0JuDGhpgD/6Te+ziMLfuEMbwbAtmS/1AjRoRMS4idx+NLJJzGlrc+3WuDwj4GOApUH/s6u75v6vXA7UPm9fPeEG77cU56zZ0TqAO0yec5uA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=n7DJgdwZvma5Kt2IERTx97PHw09SHyxhlqv71znHz9g=;
+ b=FGevoTS+igaTmDTXIJtAic7ewbwatsUd+JRi4dpZG57Q6A7tviQPnJViQaibW/NloJMEizu4lG8+/mzVYXFfMInHlcokZT0R/6hOKQawUndyh/CR8FC/Y3gZVOnUOGI/mhakZh5FGe0afZeCKboe4mgv+mfGDZ1ncPe0H61JINGjcdWFFU8ULjEujEDWw329TXZiSPR9EOswFZWmAU0dihGVx96C3xOi3D012JShrBtZKllUuN61gItvkAfOblTedpK9wWkrDs0YeqKxTZoNpACg10JEv3wmJb/Wf+2ROKbgcJqah66vo0bpZEIbzugGuXfmSUDS2owWjFkYtajGYQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=n7DJgdwZvma5Kt2IERTx97PHw09SHyxhlqv71znHz9g=;
+ b=GzeeLfd6y8ZlblWbVvx40ux5daxgnmzy7AAyB5wPmjudkd47yynezrUEUXwoPaNHlcJzn+/q+y0MkHD+DEoVDS4UKA/O75D5XzqQ79Eugb8lyCSoA4hyIyS4wcFFpMRVtu59m9Vdm7O6T4IZrAEqNIx+QCnpEQfwi9Ul8B3ChTI=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB5156.eurprd04.prod.outlook.com (20.177.42.16) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2408.24; Tue, 5 Nov 2019 10:04:22 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c%4]) with mapi id 15.20.2408.024; Tue, 5 Nov 2019
+ 10:04:21 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: RE: [PATCH] clk: imx: pll14xx: initialize flags to 0
+Thread-Topic: [PATCH] clk: imx: pll14xx: initialize flags to 0
+Thread-Index: AQHVk6mXpyRie0JbfEaM7Eg+PLW60ad8VNgAgAABuPA=
+Date: Tue, 5 Nov 2019 10:04:21 +0000
+Message-ID: <AM0PR04MB4481010CA9D3672F55208092887E0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1572938372-7006-1-git-send-email-peng.fan@nxp.com>
+ <5fc2dfd6-ae59-6af8-0423-ddc8e0b4f78f@free.fr>
+In-Reply-To: <5fc2dfd6-ae59-6af8-0423-ddc8e0b4f78f@free.fr>
+Accept-Language: en-US
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 12507ae2-c688-4d42-0432-08d761d787c4
+x-ms-traffictypediagnostic: AM0PR04MB5156:
+x-ms-exchange-purlcount: 5
+x-microsoft-antispam-prvs: <AM0PR04MB515640A188637CE49E5EAF7F887E0@AM0PR04MB5156.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1923;
+x-forefront-prvs: 0212BDE3BE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(366004)(346002)(39860400002)(396003)(376002)(51914003)(189003)(199004)(4326008)(76116006)(66946007)(86362001)(6306002)(7736002)(9686003)(478600001)(6246003)(99286004)(54906003)(71200400001)(71190400001)(316002)(55016002)(44832011)(476003)(486006)(446003)(11346002)(14444005)(256004)(305945005)(74316002)(6116002)(52536014)(6916009)(2906002)(25786009)(186003)(66476007)(45080400002)(33656002)(66066001)(26005)(14454004)(66556008)(229853002)(966005)(66446008)(64756008)(6436002)(5660300002)(7696005)(8936002)(8676002)(81156014)(76176011)(81166006)(53546011)(6506007)(102836004)(3846002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5156;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: IF+06+Wqb4xdXHW1SQWL7uNVGdYYAegZYwqLnB2H6i2ZbTP8R3Ta0Be64wsmvB4npeXgSzITKpQBr8pqYomGNqWUj9mvUZWV2FhNQS2Vq5TGunOEhuEv4aIsQjw+9XRv/taJ+SpsuHPLGMw5uuE4F3NvwX/09pWwCFHXOCoDuTMuxrVeDcG1l7pH1SUsyVvtKrNkG81Nk3RJ4J6Xe7CvKX0AWaZVV3SVmO5Iu71mAUvkBzLmdwV+A2r3/19DElVck8Sn1aXlYSem11sLsphdeHfb5nmq7AXcSuK4neAeWTYpTfQEZMXkH1kX7nm39A6sKwjDUGyaJPsO3Cosmf59joyM2NVqF4w9n91ixrNinrQRl7gdj2KUr9XGZkA3KyCGHmMg5W/GIsZBNljWfzjY4Sns0rpDYShvjOy1pi1jBtBdVHTQrC/3b0r6AVNSjbgmTqYug2tJkxuzPH+J2Ty4GtwihgwcyagFLqBTa7RJpxc=
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 12507ae2-c688-4d42-0432-08d761d787c4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Nov 2019 10:04:21.8418 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ne8SfVnWlDhZ5Wm71qazNaPP61UdPPkg6CLsjXkKTaL0FzjiNZLCbQg7vf9eR5x2AE/BQxfbkv2lKdTTxw3L7A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5156
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_020109_483766_9C4A8DC0 
-X-CRM114-Status: GOOD (  22.51  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191105_020428_661930_303BE335 
+X-CRM114-Status: GOOD (  16.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.3.88 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -82,7 +110,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,117 +121,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, lokeshvutla@ti.com, j-keerthy@ti.com,
- linux-kernel@vger.kernel.org, t-kristo@ti.com, tony@atomide.com,
- dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Stephen Boyd <sboyd@kernel.org>, linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peter,
-
-On 01/11/2019 10:41, Peter Ujfalusi wrote:
-> In K3 architecture the DMA operates within threads. One end of the thread
-> is UDMAP, the other is on the peripheral side.
+> Subject: Re: [PATCH] clk: imx: pll14xx: initialize flags to 0
 > 
-> The UDMAP channel configuration depends on the needs of the remote
-> endpoint and it can be differ from peripheral to peripheral.
+> On 05/11/2019 08:21, Peng Fan wrote:
 > 
-> This patch adds database for am654 and j721e and small API to fetch the
-> PSI-L endpoint configuration from the database which should only used by
-> the DMA driver(s).
+> > From: Peng Fan <peng.fan@nxp.com>
+> >
+> > init.flags is initialized with value from pll_clk->flags, however
+> > imx_1443x_pll and imx_1416x_pll are not static structure, so flags
+> > might be random value. So let's initialize flags as 0 now.
 > 
-> Another API is added for native peripherals to give possibility to pass new
-> configuration for the threads they are using, which is needed to be able to
-> handle changes caused by different firmware loaded for the peripheral for
-> example.
+> This is incorrect. When using an initializer list, struct members not explicitly
+> specified are initialized to 0.
+> 
+> https://eur01.safelinks.protection.outlook.com/?url=https:%2F%2Fport70.net
+> %2F~nsz%2Fc%2Fc11%2Fn1570.html%236.7.9p19&amp;data=02%7C01%7C
+> peng.fan%40nxp.com%7Ca94356700d9c4f61614a08d761d53936%7C686ea1
+> d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637085440717516996&amp;s
+> data=cUQmXzdbaK6oZqWtJc3Vnh0FJBD1v1b%2FJqb4lRPis5w%3D&amp;rese
+> rved=0
+> 
+> > The initialization shall occur in initializer list order, each
+> > initializer provided for a particular subobject overriding any
+> > previously listed initializer for the same subobject; all subobjects
+> > that are not initialized explicitly shall be initialized implicitly
+> > the same as objects that have static storage duration.
+> (You might point out that the kernel is compiled with -std=gnu89 not C11, but
+> GCC's semantics are the same.)
+> 
+> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgcc.gn
+> u.org%2Fonlinedocs%2Fgcc%2FDesignated-Inits.html%23Designated-Inits&a
+> mp;data=02%7C01%7Cpeng.fan%40nxp.com%7Ca94356700d9c4f61614a08d
+> 761d53936%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637085
+> 440717516996&amp;sdata=nsiLE%2B91lfZ15zJtvg8D8nJbIpKJkPyaoKBtmMoa
+> AwQ%3D&amp;reserved=0
 
-I have no objection to this approach, but ...
+Thanks for the info.
+
+My understanding is wrong.
+The patch was initially try to address what [1] did.
+In [1], static was discarded and moved to a common place.
+So I thought flags should be initialized as 0.
 
 > 
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-> ---
->   drivers/dma/ti/Kconfig         |   3 +
->   drivers/dma/ti/Makefile        |   1 +
->   drivers/dma/ti/k3-psil-am654.c | 172 ++++++++++++++++++++++++++
->   drivers/dma/ti/k3-psil-j721e.c | 219 +++++++++++++++++++++++++++++++++
->   drivers/dma/ti/k3-psil-priv.h  |  39 ++++++
->   drivers/dma/ti/k3-psil.c       |  97 +++++++++++++++
->   include/linux/dma/k3-psil.h    |  47 +++++++
->   7 files changed, 578 insertions(+)
->   create mode 100644 drivers/dma/ti/k3-psil-am654.c
->   create mode 100644 drivers/dma/ti/k3-psil-j721e.c
->   create mode 100644 drivers/dma/ti/k3-psil-priv.h
->   create mode 100644 drivers/dma/ti/k3-psil.c
->   create mode 100644 include/linux/dma/k3-psil.h
+> > diff --git a/drivers/clk/imx/clk-pll14xx.c
+> > b/drivers/clk/imx/clk-pll14xx.c index fa76e04251c4..a7f1c1abe664
+> > 100644
+> > --- a/drivers/clk/imx/clk-pll14xx.c
+> > +++ b/drivers/clk/imx/clk-pll14xx.c
+> > @@ -65,12 +65,14 @@ struct imx_pll14xx_clk imx_1443x_pll = {
+> >  	.type = PLL_1443X,
+> >  	.rate_table = imx_pll1443x_tbl,
+> >  	.rate_count = ARRAY_SIZE(imx_pll1443x_tbl),
+> > +	.flags = 0,
+> >  };
 > 
+> What tree is this patch based on?
 
-[...]
+https://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git/log/?h=for-next
 
-> diff --git a/include/linux/dma/k3-psil.h b/include/linux/dma/k3-psil.h
-> new file mode 100644
-> index 000000000000..16e9c8c6f839
-> --- /dev/null
-> +++ b/include/linux/dma/k3-psil.h
-> @@ -0,0 +1,47 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + *  Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com
-> + */
-> +
-> +#ifndef K3_PSIL_H_
-> +#define K3_PSIL_H_
-> +
-> +#include <linux/types.h>
-> +
-> +#define K3_PSIL_DST_THREAD_ID_OFFSET 0x8000
-> +
-> +struct device;
-> +
-> +/* Channel Throughput Levels */
-> +enum udma_tp_level {
-> +	UDMA_TP_NORMAL = 0,
-> +	UDMA_TP_HIGH = 1,
-> +	UDMA_TP_ULTRAHIGH = 2,
-> +	UDMA_TP_LAST,
-> +};
-> +
-> +enum psil_endpoint_type {
-> +	PSIL_EP_NATIVE = 0,
-> +	PSIL_EP_PDMA_XY,
-> +	PSIL_EP_PDMA_MCAN,
-> +	PSIL_EP_PDMA_AASRC,
-> +};
-> +
-> +struct psil_endpoint_config {
-> +	enum psil_endpoint_type ep_type;
-> +
-> +	unsigned pkt_mode:1;
-> +	unsigned notdpkt:1;
-> +	unsigned needs_epib:1;
-> +	u32 psd_size;
-> +	enum udma_tp_level channel_tpl;
-> +
-> +	/* PDMA properties, valid for PSIL_EP_PDMA_* */
-> +	unsigned pdma_acc32:1;
-> +	unsigned pdma_burst:1;
-> +};
-> +
-> +int psil_set_new_ep_config(struct device *dev, const char *name,
-> +			   struct psil_endpoint_config *ep_config);
-> +
-> +#endif /* K3_PSIL_H_ */
+[1]
+https://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git/commit/?h=for-next&id=43cdaa1567ad3931fbde438853947d45238cc040
+
+Thanks,
+Peng.
+
 > 
-
-I see no user now of this public interface, so I think it better to drop it until
-there will be real user of it.
-
--- 
-Best regards,
-grygorii
-
+> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Felixir.b
+> ootlin.com%2Flinux%2Fv5.4-rc1%2Fsource%2Fdrivers%2Fclk%2Fimx%2Fclk-p
+> ll14xx.c%23L65&amp;data=02%7C01%7Cpeng.fan%40nxp.com%7Ca9435670
+> 0d9c4f61614a08d761d53936%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C
+> 0%7C1%7C637085440717516996&amp;sdata=fPeaCJQKsdWZKVG431KNL8v
+> hqT0y2TUMMntf1C66YNg%3D&amp;reserved=0
+> 
+> Regards.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
