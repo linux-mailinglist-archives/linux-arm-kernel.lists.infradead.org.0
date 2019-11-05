@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACF9AEFEBD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 14:37:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B9E9EFEC0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 14:37:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GiorYudTNj6zWLzKi8VceQv/aI17EqpGlJ+ksX/Ea9g=; b=V9t15X+2NU7Jse
-	xpAJmjHGOJntDuOq8tJVJxaciitLNOag3/m3Uuy321XVSXG58bA/AUeOU5pgoliPGIOgZ3xMSkV2y
-	P5depSOA8DhMFsMgarnMS3Y2iqO9r6TDMpGcMrX5PW521ZJ2gMxkATqNDqb25AnP8dGQDEkN2I0Qm
-	oBaK2mclnp68x+gDrLZXGqY5aZj42nG3YVyYW3RKxNmYNx8iU+auZv5EgP0cTiEliAuNRLXDdktpJ
-	lEiBNUzDVrvuklYhxCJdwF5YcxRKcH4LZHaXO39VLqB6EnQVqJ2udLNLGjqgk+rN61BUsgjW0ANPv
-	hHl7JtD1MovkMk7bZrpw==;
+	List-Owner; bh=aaTloU59cDEeykbBgmbJ66H8oeByC1SwZUaeu/juj6Y=; b=YxRKRD3+OCgB1Q
+	YKq4rERIhUB2lf4WSQ+LrQ9X7GeRfIgcT8dX1iwHzONg++qj2RR0DuK2peHo2PGWn6/0X9k4C7tU1
+	kB/GINrsN7oUUMkVfdvipsXlEItbhyPAqzt6xQopMkQulXY4qzILvJna31OBJx12qd/o4suUuy6AF
+	kyEK/YnNQOwRPkVOmIzjmZoLQETVsTfczY4C1pmADlfR48JCYUc6JicN1D9vxCjpnVZJtA9tplW31
+	PRjSaJJ0Nkfq7PmCbSW8GMTWvZiot+g35/GYj2pNQ0VG93/zlgqTj0JqOdn3zi0qo41k8IjZbSze6
+	lYSy9EvjabLB9hEniUow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRz1V-0000rV-Co; Tue, 05 Nov 2019 13:37:29 +0000
+	id 1iRz1q-0001Ih-9g; Tue, 05 Nov 2019 13:37:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRyto-0000rS-DY
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 13:29:35 +0000
+ id 1iRytq-0000sw-Sk
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 13:29:38 +0000
 Received: from localhost.localdomain
  (laubervilliers-657-1-83-120.w92-154.abo.wanadoo.fr [92.154.90.120])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BB5E421882;
- Tue,  5 Nov 2019 13:29:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8D4E02190F;
+ Tue,  5 Nov 2019 13:29:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572960572;
- bh=1VWJ5fz8xzmVH93FNmZt4hERKVAWYIS2d6Esm0HnL7U=;
+ s=default; t=1572960573;
+ bh=9siA7yMMHrQQj/tFGDxCU5tWG0e1feLftg/584iuhrI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=bcQs3TL9yDcFwUjGsXUSYgstYmBMsXlAhT+nNhDixXgbW4ph7KLBgL4jNhNIU/wsS
- 4iNRYCGLR5F9C3Mh3MDGoAWpgOAQ/rfsQMVRzAJTvXSQlGB+oj7RWCdADGKMV/Aru0
- Tbr8ST1Qr/7VnAqfNawFOQ0FdyAT6Egcyn0UpISE=
+ b=wvgyWKgx8DIzqM778cU21vMMfHt7IaAmzxjZh4Ohybc2fX92soAStucb93gfewoVk
+ yrOrhewkzKyEchXzCDKRZY1FIHOgsrF1bEgtnVh/VH1DN4114MWDkyUuXVgxzkB3EN
+ Q76Y0hOt0DY53u6pXhBdyt9U5AVA6Qvu687fewV8=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-crypto@vger.kernel.org
-Subject: [PATCH v3 26/29] crypto: marvell/cesa - rename blkcipher to skcipher
-Date: Tue,  5 Nov 2019 14:28:23 +0100
-Message-Id: <20191105132826.1838-27-ardb@kernel.org>
+Subject: [PATCH v3 27/29] crypto: nx - remove stale comment referring to the
+ blkcipher walk API
+Date: Tue,  5 Nov 2019 14:28:24 +0100
+Message-Id: <20191105132826.1838-28-ardb@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191105132826.1838-1-ardb@kernel.org>
 References: <20191105132826.1838-1-ardb@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_052932_514852_EF73883C 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20191105_052935_064173_C930E305 
+X-CRM114-Status: GOOD (  10.38  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,113 +85,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The driver specific types contain some rudimentary references to the
-blkcipher API, which is deprecated and will be removed. To avoid confusion,
-rename these to skcipher. This is a cosmetic change only, as the code does
-not actually use the blkcipher API.
+These drivers do not use either the deprecated blkcipher or the current
+skcipher walk API, so this comment must refer to a previous state of the
+driver that no longer exists. So drop the comments.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- drivers/crypto/marvell/cesa.h   |  6 +++---
- drivers/crypto/marvell/cipher.c | 14 +++++++-------
- 2 files changed, 10 insertions(+), 10 deletions(-)
+ drivers/crypto/nx/nx-aes-ccm.c | 5 -----
+ drivers/crypto/nx/nx-aes-gcm.c | 5 -----
+ 2 files changed, 10 deletions(-)
 
-diff --git a/drivers/crypto/marvell/cesa.h b/drivers/crypto/marvell/cesa.h
-index d63a6ee905c9..f1ed3b85c0d2 100644
---- a/drivers/crypto/marvell/cesa.h
-+++ b/drivers/crypto/marvell/cesa.h
-@@ -232,13 +232,13 @@ struct mv_cesa_sec_accel_desc {
- };
- 
- /**
-- * struct mv_cesa_blkcipher_op_ctx - cipher operation context
-+ * struct mv_cesa_skcipher_op_ctx - cipher operation context
-  * @key:	cipher key
-  * @iv:		cipher IV
-  *
-  * Context associated to a cipher operation.
-  */
--struct mv_cesa_blkcipher_op_ctx {
-+struct mv_cesa_skcipher_op_ctx {
- 	u32 key[8];
- 	u32 iv[4];
- };
-@@ -265,7 +265,7 @@ struct mv_cesa_hash_op_ctx {
- struct mv_cesa_op_ctx {
- 	struct mv_cesa_sec_accel_desc desc;
- 	union {
--		struct mv_cesa_blkcipher_op_ctx blkcipher;
-+		struct mv_cesa_skcipher_op_ctx skcipher;
- 		struct mv_cesa_hash_op_ctx hash;
- 	} ctx;
- };
-diff --git a/drivers/crypto/marvell/cipher.c b/drivers/crypto/marvell/cipher.c
-index 84ceddfee76b..d8e8c857770c 100644
---- a/drivers/crypto/marvell/cipher.c
-+++ b/drivers/crypto/marvell/cipher.c
-@@ -209,7 +209,7 @@ mv_cesa_skcipher_complete(struct crypto_async_request *req)
- 		struct mv_cesa_req *basereq;
- 
- 		basereq = &creq->base;
--		memcpy(skreq->iv, basereq->chain.last->op->ctx.blkcipher.iv,
-+		memcpy(skreq->iv, basereq->chain.last->op->ctx.skcipher.iv,
- 		       ivsize);
- 	} else {
- 		memcpy_fromio(skreq->iv,
-@@ -470,7 +470,7 @@ static int mv_cesa_des_op(struct skcipher_request *req,
- 	mv_cesa_update_op_cfg(tmpl, CESA_SA_DESC_CFG_CRYPTM_DES,
- 			      CESA_SA_DESC_CFG_CRYPTM_MSK);
- 
--	memcpy(tmpl->ctx.blkcipher.key, ctx->key, DES_KEY_SIZE);
-+	memcpy(tmpl->ctx.skcipher.key, ctx->key, DES_KEY_SIZE);
- 
- 	return mv_cesa_skcipher_queue_req(req, tmpl);
+diff --git a/drivers/crypto/nx/nx-aes-ccm.c b/drivers/crypto/nx/nx-aes-ccm.c
+index 84fed736ed2e..4c9362eebefd 100644
+--- a/drivers/crypto/nx/nx-aes-ccm.c
++++ b/drivers/crypto/nx/nx-aes-ccm.c
+@@ -525,11 +525,6 @@ static int ccm_aes_nx_decrypt(struct aead_request *req)
+ 	return ccm_nx_decrypt(req, req->iv, req->assoclen);
  }
-@@ -523,7 +523,7 @@ static int mv_cesa_cbc_des_op(struct skcipher_request *req,
- 	mv_cesa_update_op_cfg(tmpl, CESA_SA_DESC_CFG_CRYPTCM_CBC,
- 			      CESA_SA_DESC_CFG_CRYPTCM_MSK);
  
--	memcpy(tmpl->ctx.blkcipher.iv, req->iv, DES_BLOCK_SIZE);
-+	memcpy(tmpl->ctx.skcipher.iv, req->iv, DES_BLOCK_SIZE);
- 
- 	return mv_cesa_des_op(req, tmpl);
+-/* tell the block cipher walk routines that this is a stream cipher by
+- * setting cra_blocksize to 1. Even using blkcipher_walk_virt_block
+- * during encrypt/decrypt doesn't solve this problem, because it calls
+- * blkcipher_walk_done under the covers, which doesn't use walk->blocksize,
+- * but instead uses this tfm->blocksize. */
+ struct aead_alg nx_ccm_aes_alg = {
+ 	.base = {
+ 		.cra_name        = "ccm(aes)",
+diff --git a/drivers/crypto/nx/nx-aes-gcm.c b/drivers/crypto/nx/nx-aes-gcm.c
+index 898220e159d3..19c6ed5baea4 100644
+--- a/drivers/crypto/nx/nx-aes-gcm.c
++++ b/drivers/crypto/nx/nx-aes-gcm.c
+@@ -467,11 +467,6 @@ static int gcm4106_aes_nx_decrypt(struct aead_request *req)
+ 	return gcm_aes_nx_crypt(req, 0, req->assoclen - 8);
  }
-@@ -575,7 +575,7 @@ static int mv_cesa_des3_op(struct skcipher_request *req,
- 	mv_cesa_update_op_cfg(tmpl, CESA_SA_DESC_CFG_CRYPTM_3DES,
- 			      CESA_SA_DESC_CFG_CRYPTM_MSK);
  
--	memcpy(tmpl->ctx.blkcipher.key, ctx->key, DES3_EDE_KEY_SIZE);
-+	memcpy(tmpl->ctx.skcipher.key, ctx->key, DES3_EDE_KEY_SIZE);
- 
- 	return mv_cesa_skcipher_queue_req(req, tmpl);
- }
-@@ -628,7 +628,7 @@ struct skcipher_alg mv_cesa_ecb_des3_ede_alg = {
- static int mv_cesa_cbc_des3_op(struct skcipher_request *req,
- 			       struct mv_cesa_op_ctx *tmpl)
- {
--	memcpy(tmpl->ctx.blkcipher.iv, req->iv, DES3_EDE_BLOCK_SIZE);
-+	memcpy(tmpl->ctx.skcipher.iv, req->iv, DES3_EDE_BLOCK_SIZE);
- 
- 	return mv_cesa_des3_op(req, tmpl);
- }
-@@ -694,7 +694,7 @@ static int mv_cesa_aes_op(struct skcipher_request *req,
- 		key = ctx->aes.key_enc;
- 
- 	for (i = 0; i < ctx->aes.key_length / sizeof(u32); i++)
--		tmpl->ctx.blkcipher.key[i] = cpu_to_le32(key[i]);
-+		tmpl->ctx.skcipher.key[i] = cpu_to_le32(key[i]);
- 
- 	if (ctx->aes.key_length == 24)
- 		cfg |= CESA_SA_DESC_CFG_AES_LEN_192;
-@@ -755,7 +755,7 @@ static int mv_cesa_cbc_aes_op(struct skcipher_request *req,
- {
- 	mv_cesa_update_op_cfg(tmpl, CESA_SA_DESC_CFG_CRYPTCM_CBC,
- 			      CESA_SA_DESC_CFG_CRYPTCM_MSK);
--	memcpy(tmpl->ctx.blkcipher.iv, req->iv, AES_BLOCK_SIZE);
-+	memcpy(tmpl->ctx.skcipher.iv, req->iv, AES_BLOCK_SIZE);
- 
- 	return mv_cesa_aes_op(req, tmpl);
- }
+-/* tell the block cipher walk routines that this is a stream cipher by
+- * setting cra_blocksize to 1. Even using blkcipher_walk_virt_block
+- * during encrypt/decrypt doesn't solve this problem, because it calls
+- * blkcipher_walk_done under the covers, which doesn't use walk->blocksize,
+- * but instead uses this tfm->blocksize. */
+ struct aead_alg nx_gcm_aes_alg = {
+ 	.base = {
+ 		.cra_name        = "gcm(aes)",
 -- 
 2.20.1
 
