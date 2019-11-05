@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1ED2AF07E1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:12:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9F33F07EA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:13:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Hju49O6hkzctOFeoim+LviA0NGLnwvtcIguP0bAZt+Q=; b=GZtt8iCrsYMMlO3iGVWGOkp4LE
-	RosGYKEB1/EjAJ4TX1FIAaP+Rb9m/YHQQma7Q7Bct7Edv1k0X7cWwp+BtEHwEin8Hu/nJy0iUGRo1
-	9r1K31LUI+74pCZYpElGTyzPPoeDOUtikUGw+kIKkpRFV2yACU1xT4W7ETjN30p9jSAKjAuwEglBT
-	h34msHIvQV+UiQzwi1rUaE1WBaqXQPnGK71DSZW3beAaiaKYknlsPpsOKh9a3bL/N3t2lBHqQ60Fy
-	vCtlIKWbau/QZzAmXNTKuKAQYho2TToNsNVx59pT23hsv7I2rhXfKY+7IMah/2IcAOW10WQK0d8t9
-	TJCwLZkA==;
+	bh=GMFbyLfl6/QgIsBSM30mXCEjwWBjvBYWgazUe9U6/Is=; b=uWWds+T80wgH7xovDpwUvBTEs5
+	27wc1dbdD0TYbxXBdaSyKu/jUkJOYG42p9m48moLO9L6s16Wr7U1mYF+3hY6Jj5zRkU6GTZtCzacm
+	9zPV0Qh9ucmG00aY7QJk4RDosgBtoLTC++oEun+zHqF9itlJgUU55cdtQPMtNasGKMVRrIf8SLAhw
+	Ow0RWlbLdU0eyRQsCjoYe5Ln0ZoCu8A475zVt8uTSn6lEPMiDS96BT7Z+Nh/mpE3aKGjdb6or0p6z
+	yDJjo/ey+88Ms2+Tjn9bZ+8DROHRy24QMQxE255z9DAn0sX6/soLae9bfKglG/DqGXgxQ1gbLL7JF
+	KfGXOPhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS67x-0004WE-Tn; Tue, 05 Nov 2019 21:12:37 +0000
+	id 1iS68g-0005Ow-02; Tue, 05 Nov 2019 21:13:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5x2-0008S6-4q
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:01:23 +0000
+ id 1iS5x5-0008Ug-L8
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:01:25 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 453ED21D7C;
- Tue,  5 Nov 2019 21:01:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1290521929;
+ Tue,  5 Nov 2019 21:01:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987679;
- bh=9RbwEi9PmzueJ7iaJKjmaxls7U5aMrWSfV8G8fs5JIA=;
+ s=default; t=1572987682;
+ bh=NVHYNRi4Lrrof2Q1KTtm0d9k5Uba3w85qv9oUXWA3xY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=G3f7oZUmCzutDmvaXuCWy6yNVbPDvD1nIALmMpkg0VdGreJXl8p6YX2DW+0bJNQyz
- eXlQdGOL1Ft7dksBW/ESYLw0hL+dhxWsEuGwFB93KWzyoVRvkr460xd4J3nVZTpzhA
- MaAfCgO8h2VtCswx3/TQY8HL08WfId5ynYSJI0gU=
+ b=17lrDvN2pK0vPYt6YZkLs3gYUV+dp26/tqEMfTRx049ctIXPhIplI2lLpCTY+FHrP
+ HlrQ4VC4CMYvAzVcZbPapCjQjenU5BemETyIAXtAPlKl03OFVBK2NYE6TfTSodigso
+ GAcGPy951Jvd0HmWxjPFQOXOXURIoOj/mFvEkdJw=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 49/53] ARM: clean up per-processor check_bugs
- method call
-Date: Tue,  5 Nov 2019 21:58:42 +0100
-Message-Id: <20191105205846.1394-50-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 50/53] ARM: add PROC_VTABLE and PROC_TABLE
+ macros
+Date: Tue,  5 Nov 2019 21:58:43 +0100
+Message-Id: <20191105205846.1394-51-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_130120_337946_06C84264 
-X-CRM114-Status: GOOD (  13.55  )
+X-CRM114-CacheID: sfid-20191105_130123_797129_11355106 
+X-CRM114-Status: GOOD (  13.97  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,11 +91,16 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Russell King <rmk+kernel@armlinux.org.uk>
 
-Commit 945aceb1db8885d3a35790cf2e810f681db52756 upstream.
+Commit e209950fdd065d2cc46e6338e47e52841b830cba upstream.
 
-Call the per-processor type check_bugs() method in the same way as we
-do other per-processor functions - move the "processor." detail into
-proc-fns.h.
+Allow the way we access members of the processor vtable to be changed
+at compile time.  We will need to move to per-CPU vtables to fix the
+Spectre variant 2 issues on big.Little systems.
+
+However, we have a couple of calls that do not need the vtable
+treatment, and indeed cause a kernel warning due to the (later) use
+of smp_processor_id(), so also introduce the PROC_TABLE macro for
+these which always use CPU 0's function pointers.
 
 Reviewed-by: Julien Thierry <julien.thierry@arm.com>
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
@@ -104,37 +109,92 @@ Reviewed-by: Julien Thierry <julien.thierry@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/include/asm/proc-fns.h | 1 +
- arch/arm/kernel/bugs.c          | 4 ++--
- 2 files changed, 3 insertions(+), 2 deletions(-)
+ arch/arm/include/asm/proc-fns.h | 39 +++++++++++++-------
+ arch/arm/kernel/setup.c         |  4 +-
+ 2 files changed, 27 insertions(+), 16 deletions(-)
 
 diff --git a/arch/arm/include/asm/proc-fns.h b/arch/arm/include/asm/proc-fns.h
-index f379f5f849a9..19939e88efca 100644
+index 19939e88efca..a1a71b068edc 100644
 --- a/arch/arm/include/asm/proc-fns.h
 +++ b/arch/arm/include/asm/proc-fns.h
-@@ -99,6 +99,7 @@ extern void cpu_do_suspend(void *);
+@@ -23,7 +23,7 @@ struct mm_struct;
+ /*
+  * Don't change this structure - ASM code relies on it.
+  */
+-extern struct processor {
++struct processor {
+ 	/* MISC
+ 	 * get data abort address/flags
+ 	 */
+@@ -79,9 +79,13 @@ extern struct processor {
+ 	unsigned int suspend_size;
+ 	void (*do_suspend)(void *);
+ 	void (*do_resume)(void *);
+-} processor;
++};
+ 
+ #ifndef MULTI_CPU
++static inline void init_proc_vtable(const struct processor *p)
++{
++}
++
+ extern void cpu_proc_init(void);
+ extern void cpu_proc_fin(void);
+ extern int cpu_do_idle(void);
+@@ -98,18 +102,27 @@ extern void cpu_reset(unsigned long addr) __attribute__((noreturn));
+ extern void cpu_do_suspend(void *);
  extern void cpu_do_resume(void *);
  #else
- #define cpu_proc_init			processor._proc_init
-+#define cpu_check_bugs			processor.check_bugs
- #define cpu_proc_fin			processor._proc_fin
- #define cpu_reset			processor.reset
- #define cpu_do_idle			processor._do_idle
-diff --git a/arch/arm/kernel/bugs.c b/arch/arm/kernel/bugs.c
-index 7be511310191..d41d3598e5e5 100644
---- a/arch/arm/kernel/bugs.c
-+++ b/arch/arm/kernel/bugs.c
-@@ -6,8 +6,8 @@
- void check_other_bugs(void)
- {
- #ifdef MULTI_CPU
--	if (processor.check_bugs)
--		processor.check_bugs();
-+	if (cpu_check_bugs)
-+		cpu_check_bugs();
- #endif
- }
+-#define cpu_proc_init			processor._proc_init
+-#define cpu_check_bugs			processor.check_bugs
+-#define cpu_proc_fin			processor._proc_fin
+-#define cpu_reset			processor.reset
+-#define cpu_do_idle			processor._do_idle
+-#define cpu_dcache_clean_area		processor.dcache_clean_area
+-#define cpu_set_pte_ext			processor.set_pte_ext
+-#define cpu_do_switch_mm		processor.switch_mm
  
+-/* These three are private to arch/arm/kernel/suspend.c */
+-#define cpu_do_suspend			processor.do_suspend
+-#define cpu_do_resume			processor.do_resume
++extern struct processor processor;
++#define PROC_VTABLE(f)			processor.f
++#define PROC_TABLE(f)			processor.f
++static inline void init_proc_vtable(const struct processor *p)
++{
++	processor = *p;
++}
++
++#define cpu_proc_init			PROC_VTABLE(_proc_init)
++#define cpu_check_bugs			PROC_VTABLE(check_bugs)
++#define cpu_proc_fin			PROC_VTABLE(_proc_fin)
++#define cpu_reset			PROC_VTABLE(reset)
++#define cpu_do_idle			PROC_VTABLE(_do_idle)
++#define cpu_dcache_clean_area		PROC_TABLE(dcache_clean_area)
++#define cpu_set_pte_ext			PROC_TABLE(set_pte_ext)
++#define cpu_do_switch_mm		PROC_VTABLE(switch_mm)
++
++/* These two are private to arch/arm/kernel/suspend.c */
++#define cpu_do_suspend			PROC_VTABLE(do_suspend)
++#define cpu_do_resume			PROC_VTABLE(do_resume)
+ #endif
+ 
+ extern void cpu_resume(void);
+diff --git a/arch/arm/kernel/setup.c b/arch/arm/kernel/setup.c
+index 5aa9c08de410..13bda9574e18 100644
+--- a/arch/arm/kernel/setup.c
++++ b/arch/arm/kernel/setup.c
+@@ -625,9 +625,7 @@ static void __init setup_processor(void)
+ 	cpu_name = list->cpu_name;
+ 	__cpu_architecture = __get_cpu_architecture();
+ 
+-#ifdef MULTI_CPU
+-	processor = *list->proc;
+-#endif
++	init_proc_vtable(list->proc);
+ #ifdef MULTI_TLB
+ 	cpu_tlb = *list->tlb;
+ #endif
 -- 
 2.17.1
 
