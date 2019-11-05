@@ -2,47 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26BD0F0705
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:35:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14EEBF072F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 21:45:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TYQ6ZFMWXc9qjpYxdNp6UuvqlCmZjlaLLUeCBzbMNtA=; b=Z4fFGxF29I1WSP
-	ayYzHyZi7OpgbuuvcbPBUns225dYzykMgr2fQux/Tg8kMOcYZMyQF7lnqTwWRfFw6izY6bM1oXS7I
-	XFf3vfiTa+cripC9/iQdDpAyb0iXHBv1QEXUXMYy0QArJdgmgk/Tp2q/hsfJ3BxsqA6cFuCCebqlX
-	XnBnYgPcmgmFpo2sESAnRVmCafYj5JTbcmOSUg3Vfros2XrnFriN9rFmOLqINzjjmH5+5G4leyso9
-	YKC2IIZWCkw7TIPX+x3UjVyWzGv0dROB8BEeOvy7xCMaq3rAz5B607LGNFb+aqxtPFDyTHLRo/ofV
-	qHSKN2CBaYlVXRYflP0Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FFaBduX+A0ubwvxU/lt76NqoWcUYCt4/jyZ8lojZJTI=; b=sMcvwxTflKq42Lrwapw0fekfd
+	Hx22/pVviSYjXKgfZhuUjIv/GYK+1t2w79eUdxW5z2PkaauXw9tBJJxktGYcYgphm2VDuKC3ZLEIl
+	DPjY/l1KUUEl3EElFAHI40drA+FZhHg7FY/xJ0kWWtDsAX9kd6jjnooEIQiaHf8nlvUG3oU56ELsI
+	TFoh3l9ZJteChVvpNVzUMlAKh8Cg7pSdVQtHDGKqaNZGNfgL15cjKzYeXBik5hRCqBhBArZXo/Vqe
+	kSLSSLWvQTM3QpA+9hv90z/gS8OqBm9XlFhazc/t7s24CcLG69eQt4vmRwZZs1yoFZsBcwfEHgQPT
+	xyYOWHkwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS5Y2-0002lp-PX; Tue, 05 Nov 2019 20:35:30 +0000
+	id 1iS5hS-0006Xj-4t; Tue, 05 Nov 2019 20:45:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5XV-0001Np-R4; Tue, 05 Nov 2019 20:34:59 +0000
+ id 1iS5hC-0006Wu-48
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 20:44:59 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7F2DD8E6;
- Tue,  5 Nov 2019 12:34:56 -0800 (PST)
-Received: from [192.168.225.149] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 178C53F95D;
- Mon,  4 Nov 2019 16:00:07 -0800 (PST)
-Subject: Re: [PATCH V8] mm/debug: Add tests validating architecture page table
- helpers
-To: linux-mm@kvack.org, Andrew Morton <akpm@linux-foundation.org>
-References: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <e0aa8d49-5511-15e4-f413-62c99eea4fab@arm.com>
-Date: Tue, 5 Nov 2019 05:30:41 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 37749A64;
+ Tue,  5 Nov 2019 12:44:56 -0800 (PST)
+Received: from [10.162.40.121] (a075563-lin.blr.arm.com [10.162.40.121])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 73F753FB4E;
+ Mon,  4 Nov 2019 23:09:33 -0800 (PST)
+Subject: Re: [PATCHv2 0/8] arm64: ftrace cleanup + FTRACE_WITH_REGS
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20191029165832.33606-1-mark.rutland@arm.com>
+ <42c113ee-e7fc-3e94-cca0-f05f1c89fdb8@arm.com>
+ <20191104125637.GB24108@willie-the-truck>
+ <d9b738fa-b7c5-f1b2-3878-d7afa4ba7ba5@arm.com>
+ <20191104140440.GJ45140@lakrids.cambridge.arm.com>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <3a0dd498-ffd0-3e47-c1b4-3e9dbfe935d8@arm.com>
+Date: Tue, 5 Nov 2019 12:36:36 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
+In-Reply-To: <20191104140440.GJ45140@lakrids.cambridge.arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_123457_960257_8E6AF6EC 
-X-CRM114-Status: GOOD (  21.85  )
+X-CRM114-CacheID: sfid-20191105_124458_251538_2860C1EE 
+X-CRM114-Status: GOOD (  17.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,146 +65,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Michal Hocko <mhocko@kernel.org>, Dave Hansen <dave.hansen@intel.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, linux-s390@vger.kernel.org,
- Jason Gunthorpe <jgg@ziepe.ca>, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Ingo Molnar <mingo@kernel.org>, Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, Vlastimil Babka <vbabka@suse.cz>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "jthierry@redhat.com" <jthierry@redhat.com>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ Catalin Marinas <Catalin.Marinas@arm.com>, "deller@gmx.de" <deller@gmx.de>,
+ "jpoimboe@redhat.com" <jpoimboe@redhat.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "rostedt@goodmis.org" <rostedt@goodmis.org>,
+ "James.Bottomley@HansenPartnership.com"
+ <James.Bottomley@HansenPartnership.com>,
+ "takahiro.akashi@linaro.org" <takahiro.akashi@linaro.org>,
+ "mingo@redhat.com" <mingo@redhat.com>, James Morse <James.Morse@arm.com>,
+ "svens@stackframe.org" <svens@stackframe.org>,
+ "jeyu@kernel.org" <jeyu@kernel.org>, Will Deacon <will@kernel.org>,
+ "duwe@suse.de" <duwe@suse.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
+On 11/4/19 7:34 PM, Mark Rutland wrote:
+> On Mon, Nov 04, 2019 at 01:03:51PM +0000, Amit Kachhap wrote:
+>>
+>>
+>> On 11/4/19 6:26 PM, Will Deacon wrote:
+>>> On Sat, Nov 02, 2019 at 05:42:25PM +0530, Amit Daniel Kachhap wrote:
+>>>> On 10/29/19 10:28 PM, Mark Rutland wrote:
+>>>>> This series is a reworked version of Torsten's FTRACE_WITH_REGS series
+>>>>> [1]. I've tried to rework the existing code in preparatory patches so
+>>>>> that the patchable-function-entry bits slot in with fewer surprises.
+>>>>> This version is based on v5.4-rc3, and can be found in my
+>>>>> arm64/ftrace-with-regs branch [2].
+>>>>>
+>>>>> Patch 1 adds an (optional) ftrace_init_nop(), which the core code uses
+>>>>> to initialize callsites. This allows us to avoid a synthetic MCOUNT_ADDR
+>>>>> symbol, and more cleanly separates the one-time initialization of the
+>>>>> callsite from dynamic NOP<->CALL modification. Architectures which don't
+>>>>> implement this get the existing ftrace_make_nop() with MCOUNT_ADDR.
+>>>>>
+>>>>> Recently parisc gained ftrace support using patchable-function-entry.
+>>>>> Patch 2 makes the handling of module callsite locations common in
+>>>>> kernel/module.c with a new FTRACE_CALLSITE_SECTION definition, and
+>>>>> removed the newly redundant bits from arch/parisc.
+>>>>>
+>>>>> Patches 3 and 4 move the module PLT initialization to module load time,
+>>>>> which simplifies runtime callsite modification. This also means that we
+>>>>> don't transitently mark the module text RW, and will allow for the
+>>>>> removal of module_disable_ro().
+>>>>>
+>>>>> Patches 5 and 6 add some trivial infrastructure, with patch 7 finally
+>>>>> adding FTRACE_WITH_REGS support. Additional work will be required for
+>>>>> livepatching (e.g. implementing reliable stack trace), which is
+>>>>> commented as part of patch 7.
+>>>>>
+>>>>> Patch 8 is a trivial cleanup atop of the rest of the series, making the
+>>>>> code easier to read and less susceptible to config-specific breakage.
+>>>> I tested the whole series with my latest in-kernel ptrauth patches [1]
+>>>> and graph_tracer/function_graph_tracer works fine, So for the whole series,
+>>>> Tested-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+>>>>
+>>>> Also I gave few minor comments in the individual patches. With those
+>>>> comments,
+>>>> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+>> Oops sorry I meant,
+>> Reviewed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> 
+> Thanks!
+> 
+> I've added the Tested-by for the whole series, and the Reviewed-by for
+> patches 4 and 7. I haven't added it for patch 1 just yet; please reply
+> to my comment there if you'd still like to add a Reviewed-by.
 
-On 10/28/2019 10:59 AM, Anshuman Khandual wrote:
-> This adds tests which will validate architecture page table helpers and
-> other accessors in their compliance with expected generic MM semantics.
-> This will help various architectures in validating changes to existing
-> page table helpers or addition of new ones.
-> 
-> This test covers basic page table entry transformations including but not
-> limited to old, young, dirty, clean, write, write protect etc at various
-> level along with populating intermediate entries with next page table page
-> and validating them.
-> 
-> Test page table pages are allocated from system memory with required size
-> and alignments. The mapped pfns at page table levels are derived from a
-> real pfn representing a valid kernel text symbol. This test gets called
-> right after page_alloc_init_late().
-> 
-> This gets build and run when CONFIG_DEBUG_VM_PGTABLE is selected along with
-> CONFIG_VM_DEBUG. Architectures willing to subscribe this test also need to
-> select CONFIG_ARCH_HAS_DEBUG_VM_PGTABLE which for now is limited to x86 and
-> arm64. Going forward, other architectures too can enable this after fixing
-> build or runtime problems (if any) with their page table helpers.
-> 
-> Folks interested in making sure that a given platform's page table helpers
-> conform to expected generic MM semantics should enable the above config
-> which will just trigger this test during boot. Any non conformity here will
-> be reported as an warning which would need to be fixed. This test will help
-> catch any changes to the agreed upon semantics expected from generic MM and
-> enable platforms to accommodate it thereafter.
-> 
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Vlastimil Babka <vbabka@suse.cz>
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Cc: Mike Rapoport <rppt@linux.vnet.ibm.com>
-> Cc: Jason Gunthorpe <jgg@ziepe.ca>
-> Cc: Dan Williams <dan.j.williams@intel.com>
-> Cc: Peter Zijlstra <peterz@infradead.org>
-> Cc: Michal Hocko <mhocko@kernel.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Mark Brown <broonie@kernel.org>
-> Cc: Steven Price <Steven.Price@arm.com>
-> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
-> Cc: Kees Cook <keescook@chromium.org>
-> Cc: Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>
-> Cc: Matthew Wilcox <willy@infradead.org>
-> Cc: Sri Krishna chowdary <schowdary@nvidia.com>
-> Cc: Dave Hansen <dave.hansen@intel.com>
-> Cc: Russell King - ARM Linux <linux@armlinux.org.uk>
-> Cc: Michael Ellerman <mpe@ellerman.id.au>
-> Cc: Paul Mackerras <paulus@samba.org>
-> Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
-> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-> Cc: "David S. Miller" <davem@davemloft.net>
-> Cc: Vineet Gupta <vgupta@synopsys.com>
-> Cc: James Hogan <jhogan@kernel.org>
-> Cc: Paul Burton <paul.burton@mips.com>
-> Cc: Ralf Baechle <ralf@linux-mips.org>
-> Cc: Kirill A. Shutemov <kirill@shutemov.name>
-> Cc: Gerald Schaefer <gerald.schaefer@de.ibm.com>
-> Cc: Christophe Leroy <christophe.leroy@c-s.fr>
-> Cc: Ingo Molnar <mingo@kernel.org>
-> Cc: linux-snps-arc@lists.infradead.org
-> Cc: linux-mips@vger.kernel.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-ia64@vger.kernel.org
-> Cc: linuxppc-dev@lists.ozlabs.org
-> Cc: linux-s390@vger.kernel.org
-> Cc: linux-sh@vger.kernel.org
-> Cc: sparclinux@vger.kernel.org
-> Cc: x86@kernel.org
-> Cc: linux-kernel@vger.kernel.org
-> 
-> Tested-by: Christophe Leroy <christophe.leroy@c-s.fr>		#PPC32
-> Suggested-by: Catalin Marinas <catalin.marinas@arm.com>
-> Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
-> Signed-off-by: Christophe Leroy <christophe.leroy@c-s.fr>
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> ---
-> 
-> This adds a test validation for architecture exported page table helpers.
-> Patch adds basic transformation tests at various levels of the page table.
-> 
-> This test was originally suggested by Catalin during arm64 THP migration
-> RFC discussion earlier. Going forward it can include more specific tests
-> with respect to various generic MM functions like THP, HugeTLB etc and
-> platform specific tests.
-> 
-> https://lore.kernel.org/linux-mm/20190628102003.GA56463@arrakis.emea.arm.com/
-> 
-> Needs to be applied on linux-next (next-20191025).
-> 
-> Changes in V8:
-> 
-> - Enabled ARCH_HAS_DEBUG_VM_PGTABLE on PPC32 platform per Christophe
-> - Updated feature documentation as DEBUG_VM_PGTABLE is now enabled on PPC32 platform
-> - Moved ARCH_HAS_DEBUG_VM_PGTABLE earlier to indent it with DEBUG_VM per Christophe
-> - Added an information message in debug_vm_pgtable() per Christophe
-> - Dropped random_vaddr boundary condition checks per Christophe and Qian
-> - Replaced virt_addr_valid() check with pfn_valid() check in debug_vm_pgtable()
+Those were minor comments. Please go ahead and add the Reviewed-by's.
+Thanks,
+Amit
 
-Hello Andrew,
-
-Just wondering if this version looks okay or is there anything else which still
-needs to be accommodated here first, before this test can be considered for merging ?
-Thank you.
-
-- Anshuman
+> 
+> Mark.
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
