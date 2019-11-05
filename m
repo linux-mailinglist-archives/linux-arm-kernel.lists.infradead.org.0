@@ -2,72 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CBB8F09CD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 23:48:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BDA3F0A08
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 00:06:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8FVsONisw9B+xT3SIjUeUGl8FBBsQWzrwg5LIFZE5gY=; b=lssuyuWhxm5KbZ
-	KhAECCy8TGnxBPH9l4a8R2Vz6Mvu1AQuKL/cYJ0WM9EjqcVAb4yQyknRcLlI7k2AjgUN7kOYDmJ7F
-	DKMo73zXF8QdVBtzka+YLlUi5xAncs0E67yb0HAsbpKHzU9EgDIHVvSsTx/xr7enPfldHUuxMeIir
-	kxKxTKhrMgDVS+e7FKlTKRen6vyQu0MXIphEeIRxr8u9PziAe2kJAGvYGuFQwU+UmUwoeRFDGI4vE
-	zjpvVDyYv4b28C0s1skFLlLM6INjUycbYcc+Kogo060w3Rz8oP5M01EDwYMQdBeDLKH5cj7cz7NJx
-	w018prEwTbHgI8W1xHkg==;
+	List-Owner; bh=o7zRtnoc2b1Netk9zW36G3HE+le47cer/IvgwYLbb18=; b=LOfwLKJjXy8vBb
+	weY1fO9a6ThelwrD7k82uoCKv4w9EpZU/bfj62fEoSrGJxty0fNube6fgySUzBCFdMyeR/SwdP2xn
+	bOH7k5wJBS8TE0cEgzfDgE9DG1PjhsqvQwXm/4qcjXsGNQyZX/NL5m1/6c2x9FJo2Yxck8vM2sVhF
+	nK3w8zo3mbZcZNd1j4ueBuGZ1YlWYgfQ3AmGzpnDeYrNIElUQr3jwFf0vOxg4GSsRyslmjvQlyqmW
+	W8gH4lzo3nHlYZi0ayIjDt/hTgnZq/sUYxHE6n4mVvXhdLbTs7Ipk+/r+ZFjlyU9ylI70TNL4rFKE
+	rqBlveoRobg7F41ajXVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS7co-0006eu-1S; Tue, 05 Nov 2019 22:48:34 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1iS7th-0005N8-5F; Tue, 05 Nov 2019 23:06:01 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS7cg-0006eH-Dw
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 22:48:28 +0000
-Received: by mail-oi1-f196.google.com with SMTP id n14so3430253oie.13
+ id 1iS7ta-0005MV-Lj
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 23:05:56 +0000
+Received: by mail-oi1-f193.google.com with SMTP id l20so7124176oie.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 14:48:26 -0800 (PST)
+ Tue, 05 Nov 2019 15:05:54 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=a6RSlGUG/d/8KzpTd4sRswnPYzvmhaAeGKhO7ae8r/I=;
- b=GMXFD8vJzut8RZFgUdl51iXv+md/KgiW5//jEd2cyn2DG/24k1McmrNKfzDIp9srwp
- +8Jn063wQlNWT7OIe6I1wlb43pRys4WNTl9cA4Kxuboe7iS6JDuJEk/vTi73tBzmrOfk
- wh6x4lWlzCjNgzZbhoKqG33RTIw9B+cG38rJB8QAr0x8t37YqUNJ1RzShVp6NxeFal7d
- ULdfgXeQWG6Tkylm19YFvSJivksPgi4ElVL4xuzJtuSk47nHrAoRLh35q4yH+16rAJA1
- GFJzZdfe15RYmYOMR8nHvxF1EQxVUTqcGuHHxNyAZP7Vuj94EUhmow1OXMUvkatbGtPI
- lUHw==
-X-Gm-Message-State: APjAAAXOO2aXO/8qKZBQKuG/UzD9KdR2TlN7GMs8CsoVamF6FF3EZt1W
- uPujXmLVzEaLVEuxBfic4w==
-X-Google-Smtp-Source: APXvYqzcMPSnJ3OYS20YBUOnhtN5LeFqqMXUqA8iDmlBcXVY/2pwmyIQcwIu/ev22CTSndlo/euKwQ==
-X-Received: by 2002:aca:c489:: with SMTP id u131mr1274106oif.21.1572994105412; 
- Tue, 05 Nov 2019 14:48:25 -0800 (PST)
+ bh=LAi+qZUkuhq1d2wVLpPVPcbuNd2aQs6HwzUUOf0K5n0=;
+ b=buu8xZY7JJvpXTouE2JSzAkN7oE7faNt7F4ZAsMfYnw+/m9BmkM67S6AuaKhzbwaBQ
+ XRUx4fs3Rf8xe3Mcl2kBEUkOI1+yzWxms/y9nz2u/bSinbctpdvX43QwUEiJqyfxFUBO
+ cSppsXdQGOsf4PnJ9p4J+Ury+RBF/fl3n2AGz79A/ru0tYq55IwOejXhtN9Nlnnl0qMl
+ nhY8n1ALHB7nzud/QH2GaUGckngJsv3T0XqnbO1+OsSexTa37y90gVEclUW3+kgXjWrT
+ vRG8+PzR0gr4UwaYVIkPsfbPuMM5ZSEjHZG3dsGOS67T+0Y38J7g3h33HvhXGNnVKFfP
+ /RCg==
+X-Gm-Message-State: APjAAAUtvjXx+71kbzYil+O/FqKUfhIQ1aBw83a3BTkgFSvyNKOUehgI
+ +suH9Vq5qB/S9dUzb4HLZg==
+X-Google-Smtp-Source: APXvYqxhGYoDJXdpfnXNnhPdoaao9UI1xI0qHKyHXJT6+QFjo/BppkWuai5Qa9e9sgoNmpyOlN7Oew==
+X-Received: by 2002:aca:c4d5:: with SMTP id u204mr1189182oif.119.1572995153554; 
+ Tue, 05 Nov 2019 15:05:53 -0800 (PST)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id n9sm6779413otn.4.2019.11.05.14.48.24
+ by smtp.gmail.com with ESMTPSA id q82sm1372503oif.11.2019.11.05.15.05.52
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 14:48:24 -0800 (PST)
-Date: Tue, 5 Nov 2019 16:48:24 -0600
+ Tue, 05 Nov 2019 15:05:52 -0800 (PST)
+Date: Tue, 5 Nov 2019 17:05:52 -0600
 From: Rob Herring <robh@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v2] dt-bindings: serial: Convert Samsung UART bindings to
- json-schema
-Message-ID: <20191105224824.GA8073@bogus>
-References: <20191103160112.10764-1-krzk@kernel.org>
+To: Benoit Parrot <bparrot@ti.com>
+Subject: Re: [Patch v2 1/5] dt-bindings: media: ti-vpe: Document VPE driver
+Message-ID: <20191105230552.GA25817@bogus>
+References: <20191104203841.3628-1-bparrot@ti.com>
+ <20191104203841.3628-2-bparrot@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191103160112.10764-1-krzk@kernel.org>
+In-Reply-To: <20191104203841.3628-2-bparrot@ti.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_144826_464724_E0814AAD 
-X-CRM114-Status: GOOD (  12.05  )
+X-CRM114-CacheID: sfid-20191105_150554_712124_7667005E 
+X-CRM114-Status: GOOD (  15.72  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [209.85.167.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -76,8 +78,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
  0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -91,40 +91,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- linux-serial@vger.kernel.org, Lee Jones <lee.jones@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Tero Kristo <t-kristo@ti.com>, devicetree@vger.kernel.org,
+ Tony Lindgren <tony@atomide.com>, linux-kernel@vger.kernel.org,
+ Hans Verkuil <hverkuil@xs4all.nl>, linux-omap@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun,  3 Nov 2019 17:01:12 +0100, Krzysztof Kozlowski wrote:
-> Convert Samsung S3C/S5P/Exynos Serial/UART bindings to DT schema format
-> using json-schema.
+On Mon, Nov 04, 2019 at 02:38:37PM -0600, Benoit Parrot wrote:
+> Device Tree bindings for the Video Processing Engine (VPE).
 > 
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> 
+> Signed-off-by: Benoit Parrot <bparrot@ti.com>
 > ---
+>  .../devicetree/bindings/media/ti,vpe.yaml     | 64 +++++++++++++++++++
+>  MAINTAINERS                                   |  1 +
+>  2 files changed, 65 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/ti,vpe.yaml
 > 
-> Changes since v1:
-> 1. Simplify 'clock-names' patters after Rob's suggestions,
-> 2. Add description to 'interrupts',
-> 3. Remove 'uniqueItems' where not needed,
-> 4. Remove aliases from example.
-> ---
->  .../bindings/mfd/samsung,exynos5433-lpass.txt |   2 +-
->  .../bindings/serial/samsung_uart.txt          |  58 ---------
->  .../bindings/serial/samsung_uart.yaml         | 118 ++++++++++++++++++
->  3 files changed, 119 insertions(+), 59 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/serial/samsung_uart.txt
->  create mode 100644 Documentation/devicetree/bindings/serial/samsung_uart.yaml
+> diff --git a/Documentation/devicetree/bindings/media/ti,vpe.yaml b/Documentation/devicetree/bindings/media/ti,vpe.yaml
+> new file mode 100644
+> index 000000000000..eb9f3e1b7f5f
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/ti,vpe.yaml
+> @@ -0,0 +1,64 @@
+> +# SPDX-License-Identifier: (GPL-2.0)
+
+For new bindings:
+
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+
+With that,
+
+Reviewed-by: Rob Herring <robh@kernel.org>
+
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/ti,vpe.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Texas Instruments DRA7x Video Processing Engine (VPE) Device Tree Bindings
+> +
+> +maintainers:
+> +  - Benoit Parrot <bparrot@ti.com>
+> +
+> +description: |-
+> +  The Video Processing Engine (VPE) is a key component for image post
+> +  processing applications. VPE consist of a single memory to memory
+> +  path which can perform chroma up/down sampling, deinterlacing,
+> +  scaling and color space conversion.
+> +
+> +properties:
+> +  compatible:
+> +      const: ti,dra7-vpe
+> +
+> +  reg:
+> +    items:
+> +      - description: The VPE main register region
+> +      - description: Scaler (SC) register region
+> +      - description: Color Space Conversion (CSC) register region
+> +      - description: Video Port Direct Memory Access (VPDMA) register region
+> +
+> +  reg-names:
+> +    items:
+> +      - const: vpe_top
+> +      - const: sc
+> +      - const: csc
+> +      - const: vpdma
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - interrupts
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    vpe: vpe@489d0000 {
+> +        compatible = "ti,dra7-vpe";
+> +        reg = <0x489d0000 0x120>,
+> +              <0x489d0700 0x80>,
+> +              <0x489d5700 0x18>,
+> +              <0x489dd000 0x400>;
+> +        reg-names = "vpe_top",
+> +                    "sc",
+> +                    "csc",
+> +                    "vpdma";
+> +        interrupts = <GIC_SPI 354 IRQ_TYPE_LEVEL_HIGH>;
+> +    };
+> +
+> +...
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index d360df48f9f2..baf3aac1ab7c 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -16316,6 +16316,7 @@ Q:	http://patchwork.linuxtv.org/project/linux-media/list/
+>  S:	Maintained
+>  F:	drivers/media/platform/ti-vpe/
+>  F:	Documentation/devicetree/bindings/media/ti,cal.yaml
+> +F:	Documentation/devicetree/bindings/media/ti,vpe.yaml
+>  
+>  TI WILINK WIRELESS DRIVERS
+>  L:	linux-wireless@vger.kernel.org
+> -- 
+> 2.17.1
 > 
-
-Applied, thanks.
-
-Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
