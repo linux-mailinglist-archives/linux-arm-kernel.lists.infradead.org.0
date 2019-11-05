@@ -2,60 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9753BF07F3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:14:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F106F07F6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:14:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mVvhQbnWpay4+XuNNp+VMjidBJFvX6q6w9dgV+cSBNY=; b=KuCWjo2UE+flRVu5uKAc6/061t
-	zBBrIA2G0wFcO95eyV9QhEucF+zHIR8veMyrflumEEsyUlkdjGQq5yPimSpvI5Lc736+S5tqXkcrA
-	4ijQs5zpAk3LR3Yi+t6AodscdkITXGvfuLgQRx9GFsLOYoCOnBTG/oyDKLSTkBCNd9pdAB/DqaYIj
-	/1GkJ4wMtmyLqFVkaXAqtcZl/ea2JXuaSLSt1JdUlLoNkXd/+LCo+xTtWtfvq12+svI0zJ6wJR6WQ
-	gEo75ndIXOEAfxkaVHjGT26K+RatDOi05Kh9oHvM3jPkLRmcnLGK8oIUgxQOKQCz3DY9BQ6lGQXsk
-	Z52vQW6A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9RiR4XGR575PzulcwcU4/gLIqc5U89HvvnxOmLf4leI=; b=peMe6l6gDORrFA
+	iO3XHkyx57sGpTtltdmtklqWziFXBl1Tdb4nbVN6L0i8PFGumLugmeRgAnA5ESmQnpVhrzuvnc+l8
+	gfbeGuGfSNUBQVn3+ImoBQm9LaBoi3QqTmWOwmWxmP93pB4EhZSe+XitTbm+bNvBz9c5RtpEWN8je
+	iW69y8P/2+NVpLZwr6yZIIAj5C1lzjif0a6ER0N4FrDRRVYjq2Q5DXriHwa+X4yJmQbllffFebOve
+	hzkyrHem54bQOhGyOez9TMas1RaAIFKbP+8I2ouzWThl/LxiduMgb7j8+iFRMMqp78i+Ke7HDaOxR
+	xs5FqECYjxtp3ECbYDcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS69Q-0006MH-Vc; Tue, 05 Nov 2019 21:14:08 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iS69h-0006hI-TJ; Tue, 05 Nov 2019 21:14:25 +0000
+Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5xD-0000B2-IP
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:01:34 +0000
-Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
- [90.118.215.104])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 730502087E;
- Tue,  5 Nov 2019 21:01:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987690;
- bh=l/Zzc3defaUXVahIWnfD+VzKm5AD0QaEXHldCvfs2uI=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=qrNO0kp8bcvjE5XjE7DqoMcBPqdn4HFHdM8No7fQT0z+r1gKF026CREDQXQueI8JC
- gk67hmr26pwSLm7QuCH0lg2vRdJNj++4EcZBRDMg0TANCDg4hJqFHlTMgCxceTJ3hR
- +WCsuSiUgA8IwIjJr41V6/8S0aVzztFE1woaGuXk=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 53/53] ARM: fix the cockup in the previous
- patch
-Date: Tue,  5 Nov 2019 21:58:46 +0100
-Message-Id: <20191105205846.1394-54-ardb@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
-References: <20191105205846.1394-1-ardb@kernel.org>
+ id 1iS661-0002fP-TQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:10:39 +0000
+Received: by mail-yb1-xb42.google.com with SMTP id b2so10004583ybr.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 Nov 2019 13:10:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=5GhjUCkz3ocQmrG6PmUyRxi5BVK7ftViRGTD2rrmkKI=;
+ b=Uuid+vkuIMoEPu11BJV35oCzoqSefDW9ZuIPEB7sSMRiLblnbvGw2td5OwAl0HYFEs
+ UQF0Rnc3aJGQnFA+a1sDH1IvqHqKfMbeIYvLNjeLoB5eNFEKXyiis9Altea1PfmHu5zm
+ GPdFmGda9zTFKHcAxkl3at79EyN9ESPetMHCcnN1+X6WVw0tU0K3Az1E6S8p0FiRbVV9
+ w1KOI8RL2KFZg/hZpLEe5JjxApP5DcS9nGCc5X8v4le9Gep+hxkTdws36dbptVGnOFfX
+ 7yfQXQ6miw0VHXsnRDzXgNcPuMcdwP9ZW1Dzld4Ok8GP6z0UTNzUzDnTh8G5fJWTGHX2
+ zgHA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=5GhjUCkz3ocQmrG6PmUyRxi5BVK7ftViRGTD2rrmkKI=;
+ b=LtD8m/t9wL8uvTon9HvjQA22WiA8clZHYclH7C/Z5wjZTeRp1+GPc+9O48hPlWAqlP
+ tkt1KAPhdTUNqd3aeYtatOrGFA2GUPqmpuDdJKIlK9TmOHgYZmaplXhm27iwmNLephMn
+ 1X6XJFjD8XLWNdU9YmgMvkRHUNOJTICc+q54L4ImueIEA1QkN24y0FMJ7TkIzSiPW/jZ
+ 0qfWIRKNWXsNOqSyi+DGviQAQQkLyxGsdnaBHI0ETyD++pXChBv8tbse8ta9Pqiyw0uA
+ drdCZfyzGEF0XxRv7aGHMA4HW7IxMd8W1JDlVYB+bKg9i8/9LiSE+uTJ2LyHo70TOQ1/
+ YW4Q==
+X-Gm-Message-State: APjAAAUOBmx8lMGio4JyQTgZ4p4QjWMQTRiz5CcBxbWkRid4RhJ/Cjaa
+ x4fY2px5XZpEtSM3xvvBY5qryg==
+X-Google-Smtp-Source: APXvYqwZpVTKw7wEDsr9syi4VlENMgrIrYl9+rQ/rlZeFQSHvVhD8rMyrCSti6ffViFWSs7d4O4Rog==
+X-Received: by 2002:a5b:d0a:: with SMTP id y10mr6596220ybp.36.1572988235921;
+ Tue, 05 Nov 2019 13:10:35 -0800 (PST)
+Received: from rosewood.cam.corp.google.com
+ ([2620:0:1013:11:89c6:2139:5435:371d])
+ by smtp.gmail.com with ESMTPSA id j66sm1815216ywb.101.2019.11.05.13.10.35
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 05 Nov 2019 13:10:35 -0800 (PST)
+From: Sean Paul <sean@poorly.run>
+To: dri-devel@lists.freedesktop.org,
+	linux-mediatek@lists.infradead.org
+Subject: [PATCH v2 0/7] drm/mediatek: Refactor plane init/check and support
+ rotation
+Date: Tue,  5 Nov 2019 16:10:17 -0500
+Message-Id: <20191105211034.123937-1-sean@poorly.run>
+X-Mailer: git-send-email 2.24.0.rc1.363.gb1bccd3e3d-goog
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_130131_701921_2EE00031 
-X-CRM114-Status: GOOD (  12.68  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191105_131038_033450_25D8CC6D 
+X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -65,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,64 +98,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Sasha Levin <sashal@kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>, Tony Lindgren <tony@atomide.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- "David A . Long" <dave.long@linaro.org>, Marc Zyngier <maz@kernel.org>,
- Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>
-MIME-Version: 1.0
+Cc: dcastagna@chromium.org, matthias.bgg@gmail.com, mcasas@chromium.org,
+ Sean Paul <seanpaul@chromium.org>, p.zabel@pengutronix.de,
+ frkoenig@chromium.org, ck.hu@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, markyacoub@google.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Russell King <rmk+kernel@armlinux.org.uk>
+From: Sean Paul <seanpaul@chromium.org>
 
-Commit d6951f582cc50ba0ad22ef46b599740966599b14 upstream.
+Hello,
+This is a follow-on to [1], which supports the original Y-flip. I've
+added X-flip and 180 degree rotate. Additionally, the rotation property
+is only exposed for ovl planes, not rdma planes since rdma doesn't
+support it. In order to differentiate between the two types, I had to
+do some plumbing in order to surface the supported rotations of a
+component as well as allowing a component to implement plane checks.
 
-The intention in the previous patch was to only place the processor
-tables in the .rodata section if big.Little was being built and we
-wanted the branch target hardening, but instead (due to the way it
-was tested) it ended up always placing the tables into the .rodata
-section.
+I've tested this on a 4.19 kernel on mt8183. The set was then forward
+ported to mainline and build tested. The forward port was relatively
+collision free, but there were a few.
 
-Although harmless, let's correct this anyway.
+Sean
 
-Fixes: 3a4d0c2172bc ("ARM: ensure that processor vtables is not lost after boot")
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-Signed-off-by: David A. Long <dave.long@linaro.org>
-Reviewed-by: Julien Thierry <julien.thierry@arm.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
----
- arch/arm/mm/proc-macros.S | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+[1]- https://lists.freedesktop.org/archives/dri-devel/2019-November/242312.html
 
-diff --git a/arch/arm/mm/proc-macros.S b/arch/arm/mm/proc-macros.S
-index d36a283b4099..e6bfdcc381f8 100644
---- a/arch/arm/mm/proc-macros.S
-+++ b/arch/arm/mm/proc-macros.S
-@@ -263,7 +263,7 @@
-  * If we are building for big.Little with branch predictor hardening,
-  * we need the processor function tables to remain available after boot.
-  */
--#if 1 // defined(CONFIG_BIG_LITTLE) && defined(CONFIG_HARDEN_BRANCH_PREDICTOR)
-+#if defined(CONFIG_BIG_LITTLE) && defined(CONFIG_HARDEN_BRANCH_PREDICTOR)
- 	.section ".rodata"
- #endif
- 	.type	\name\()_processor_functions, #object
-@@ -301,7 +301,7 @@ ENTRY(\name\()_processor_functions)
- 	.endif
- 
- 	.size	\name\()_processor_functions, . - \name\()_processor_functions
--#if 1 // defined(CONFIG_BIG_LITTLE) && defined(CONFIG_HARDEN_BRANCH_PREDICTOR)
-+#if defined(CONFIG_BIG_LITTLE) && defined(CONFIG_HARDEN_BRANCH_PREDICTOR)
- 	.previous
- #endif
- .endm
+
+Sean Paul (7):
+  drm/mediatek: Refactor plane init
+  drm/mediatek: Add helper to get component for a plane
+  drm/mediatek: Add plumbing for layer_check hook
+  drm/mediatek: Plumb supported rotation values from components to plane
+    init
+  drm/mediatek: Support reflect-y plane rotation
+  drm/mediatek: Support reflect-x plane rotation
+  drm/mediatek: Support 180 degree rotation
+
+ drivers/gpu/drm/mediatek/mtk_disp_ovl.c     |  50 +++++++
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 145 ++++++++++++++------
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.h     |   2 +
+ drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  22 +++
+ drivers/gpu/drm/mediatek/mtk_drm_plane.c    |  18 ++-
+ drivers/gpu/drm/mediatek/mtk_drm_plane.h    |   4 +-
+ 6 files changed, 199 insertions(+), 42 deletions(-)
+
 -- 
-2.17.1
+Sean Paul, Software Engineer, Google / Chromium OS
 
 
 _______________________________________________
