@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 738ECF07B6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:07:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C87BF07B8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 Nov 2019 22:08:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,45 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=HZFnflJ/KPiHGLiPxO+E6KLwPQsr0vN3Si1DLd9uvQU=; b=gLPEizkJcbdkb9l8F7NKdVrT/F
-	R1AY93LNlRRbObMXbYR+ZT8ST50RForPif5WqNSsfneZW4S67EjUgdFNJ8gbAfGN1jiJESJC5Y/O4
-	cVeWbXA5cMywQ6cJHsWSIShE/spvLvd09yC9Cipf/lk6VUQA841PL42n8moujmqS6V4TzdodX+Q/U
-	P0jw/TfMuVQR8+T+rGkFM+ICf0zlhI7RgZDAbrjgGRyeFdLgHjpCWnZDUefG0dv3d1bHirTadNSdl
-	OaOETY9D+BR5DVttkt+10Zw10azRE++NTIrJ1YGjqFUdhB141F6AbRwv2DgeVns8BGPLq5CXvNj1k
-	C/4GYJxA==;
+	bh=UeGlO8GemSMKRjA6armQDOZz1F9KVPdcKmo8er05I9U=; b=tlKsDspEqN3pja53LPz8LLbC1Q
+	6KiTyNoDmNWu6zO4OhIieppaI5yCUW9a7YI/CIRI6hg3etYlmCdgfaXmu4rYAX4f/DLJQlfNPp+lX
+	iqtiGQrzEeN1fYjXKbv7XTyzU0VYbgK2aiBCGNT9HsziAMLM80IAHs/vOEDrGFBQiPrmQ+LkzAYqq
+	R06zOy+OwR3+JQixBpizwDCjKzTgwauabS67dfzCk+N+3DG2nm+p+c7wUAqD9dWnZHCDu8jNvuH6p
+	kLNHEvWX3mkcoEfZc23lTcLtGn3jn/zt2QBsgRjsqFgFU9tzSeZRPJWz9YM7oxZzofIxFqVn3Bkh5
+	k/yRlfSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS634-0006z6-Oh; Tue, 05 Nov 2019 21:07:34 +0000
+	id 1iS63O-0007EC-MY; Tue, 05 Nov 2019 21:07:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS5w8-0007cv-Ub
- for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:26 +0000
+ id 1iS5wB-0007fU-ST
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 Nov 2019 21:00:29 +0000
 Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
  [90.118.215.104])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F2FC121A49;
- Tue,  5 Nov 2019 21:00:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C32EB21D6C;
+ Tue,  5 Nov 2019 21:00:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572987624;
- bh=iNHMZZRltxS1MHgceMfHooYFXLtSicrOLVVkCXWKYjs=;
+ s=default; t=1572987627;
+ bh=HZUHLYdRGJUrgy226Rwadpm2bQuFrlaAit8XjlBcYu0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=QvS+IU9+ovJMx6Cs+TaOvoT/Lk5oDm5z+mvKnKd6zGGAVzedXzjHLLVL6c45TDySv
- oh4IDyCe6DrEM4qrI9UCfBd9fwKpYTtfopgqjpHjDTldMSZfm7LFyOGXU8QwFGoial
- jXqfvjdp3ydFJSMHUgmowKay1lK3AftqkJdrViYg=
+ b=mls0iUz0r7fkkT/MStZ3Y20s1m64DxAeRn1c8TpZmUpBeZfsG2cXe6/oBrUbipAph
+ Rsm7Qa/R8cDw8+8XoTdDjc1RAAC3SkAzvpQhEPCiiq9pV5y4qavA4bvEO6wnTz+GvM
+ oNf7M8De3YnPAzpFS0w70rfy2s/+2jqzu8ElpeL8=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH for-stable-v4.4 30/53] ARM: spectre-v1: add speculation
- barrier (csdb) macros
-Date: Tue,  5 Nov 2019 21:58:23 +0100
-Message-Id: <20191105205846.1394-31-ardb@kernel.org>
+Subject: [PATCH for-stable-v4.4 31/53] ARM: spectre-v1: add
+ array_index_mask_nospec() implementation
+Date: Tue,  5 Nov 2019 21:58:24 +0100
+Message-Id: <20191105205846.1394-32-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191105205846.1394-1-ardb@kernel.org>
 References: <20191105205846.1394-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_130025_030217_BC7C0BE0 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191105_130027_955324_F739DE70 
+X-CRM114-Status: GOOD (  10.42  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,9 +92,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Russell King <rmk+kernel@armlinux.org.uk>
 
-Commit a78d156587931a2c3b354534aa772febf6c9e855 upstream.
+Commit 1d4238c56f9816ce0f9c8dbe42d7f2ad81cb6613 upstream.
 
-Add assembly and C macros for the new CSDB instruction.
+Add an implementation of the array_index_mask_nospec() function for
+mitigating Spectre variant 1 throughout the kernel.
 
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Acked-by: Mark Rutland <mark.rutland@arm.com>
@@ -105,60 +105,40 @@ Signed-off-by: David A. Long <dave.long@linaro.org>
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/include/asm/assembler.h |  8 ++++++++
- arch/arm/include/asm/barrier.h   | 13 +++++++++++++
- 2 files changed, 21 insertions(+)
+ arch/arm/include/asm/barrier.h | 21 ++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-diff --git a/arch/arm/include/asm/assembler.h b/arch/arm/include/asm/assembler.h
-index 4a275fba6059..307901f88a1e 100644
---- a/arch/arm/include/asm/assembler.h
-+++ b/arch/arm/include/asm/assembler.h
-@@ -441,6 +441,14 @@ THUMB(	orr	\reg , \reg , #PSR_T_BIT	)
- 	.size \name , . - \name
- 	.endm
- 
-+	.macro	csdb
-+#ifdef CONFIG_THUMB2_KERNEL
-+	.inst.w	0xf3af8014
-+#else
-+	.inst	0xe320f014
-+#endif
-+	.endm
-+
- 	.macro check_uaccess, addr:req, size:req, limit:req, tmp:req, bad:req
- #ifndef CONFIG_CPU_USE_DOMAINS
- 	adds	\tmp, \addr, #\size - 1
 diff --git a/arch/arm/include/asm/barrier.h b/arch/arm/include/asm/barrier.h
-index 27c1d26b05b5..edd9e633a84b 100644
+index edd9e633a84b..8514b70704de 100644
 --- a/arch/arm/include/asm/barrier.h
 +++ b/arch/arm/include/asm/barrier.h
-@@ -18,6 +18,12 @@
- #define isb(option) __asm__ __volatile__ ("isb " #option : : : "memory")
- #define dsb(option) __asm__ __volatile__ ("dsb " #option : : : "memory")
- #define dmb(option) __asm__ __volatile__ ("dmb " #option : : : "memory")
-+#ifdef CONFIG_THUMB2_KERNEL
-+#define CSDB	".inst.w 0xf3af8014"
-+#else
-+#define CSDB	".inst	0xe320f014"
-+#endif
-+#define csdb() __asm__ __volatile__(CSDB : : : "memory")
- #elif defined(CONFIG_CPU_XSC3) || __LINUX_ARM_ARCH__ == 6
- #define isb(x) __asm__ __volatile__ ("mcr p15, 0, %0, c7, c5, 4" \
- 				    : : "r" (0) : "memory")
-@@ -38,6 +44,13 @@
- #define dmb(x) __asm__ __volatile__ ("" : : : "memory")
- #endif
+@@ -108,5 +108,26 @@ do {									\
+ #define smp_mb__before_atomic()	smp_mb()
+ #define smp_mb__after_atomic()	smp_mb()
  
-+#ifndef CSDB
-+#define CSDB
-+#endif
-+#ifndef csdb
-+#define csdb()
++#ifdef CONFIG_CPU_SPECTRE
++static inline unsigned long array_index_mask_nospec(unsigned long idx,
++						    unsigned long sz)
++{
++	unsigned long mask;
++
++	asm volatile(
++		"cmp	%1, %2\n"
++	"	sbc	%0, %1, %1\n"
++	CSDB
++	: "=r" (mask)
++	: "r" (idx), "Ir" (sz)
++	: "cc");
++
++	return mask;
++}
++#define array_index_mask_nospec array_index_mask_nospec
 +#endif
 +
- #ifdef CONFIG_ARM_HEAVY_MB
- extern void (*soc_mb)(void);
- extern void arm_heavy_mb(void);
++#include <asm-generic/barrier.h>
++
+ #endif /* !__ASSEMBLY__ */
+ #endif /* __ASM_BARRIER_H */
 -- 
 2.17.1
 
