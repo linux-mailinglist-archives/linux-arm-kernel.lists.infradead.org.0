@@ -2,55 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 842A4F1B55
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 17:33:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 240D2F1B59
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 17:33:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BVpIn7Amqd0JzT4aIRjQYbu0WlGzfZUHOueqzIKwBG0=; b=JsxM39dnJYj/qv
-	xr/gPv6DTz+3l5bG1ZrPUZ/GX5fWklVak+/sQn7Ea8JNtC2RunHgqq8kLkQp2IAK1Vrs5Ynron+yR
-	ppL3q2Hi3fYtcPPA4wAqxxJ5xFGKB5MKcsRCi02DrHofN0xMdK5US0J284rxfLbsek1x3rb3kFXYq
-	4PzLnmVuVZYskV0aBm75yV0ESkuqMwkEyGGAsnw/vyCm5gQchNQu/AxLWG7ogYAxXuI65RpU/qQ3F
-	JvaccdSTgSQ4Wu0bMBcxsYTUHaBT6qWvItiRW7ZMPfhRq6o9RrkbsuZzEeg7zDFf33nixSOoGKMP9
-	g2ODD/KQTjsv7M5/uO3Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ITlmv9TlvA8j+vJQMPcQjJ+tgQ8RB5iAJQnXUg48R7A=; b=CnB++K909MzTtI
+	7GLQd4F+Ga8TP/4daOwz+LC74v+xoggL0zdyg4Yog1V34irmzgPtz86c1kNGHYUYspI2nFQboe6+f
+	s1TOKQD//RVdjS881k485l3guYRAzM4GjZ/lih9QEdgiyE1OzkqM3p3N7i9RQK895NhX3cVhlK0IE
+	A5yT64SZW0fBsOLVqPol6zO81Yt1/9XplIIrnpDEjp4tue+KLdVAq+CV5KO9PRgd1zxB8rN+KXgLP
+	2uelBP3qmhbBqKPT7WsC8LUDULO9I2nMW/CSPqmqcxMgK0GqSLiL6EA0MoF2uEs79HC9fXS/LxuoU
+	KA6Qj8LLPD7d64CtqITQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSOEv-00070V-JX; Wed, 06 Nov 2019 16:33:01 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1iSOFB-0007Jk-SQ; Wed, 06 Nov 2019 16:33:17 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSODl-000618-7M; Wed, 06 Nov 2019 16:31:51 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id F216A28FDCE
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: linux-arm-kernel@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-rockchip@lists.infradead.org
-Subject: [PATCH v2 4/4] dt-bindings: display: add IMX MIPI DSI host controller
- doc
-Date: Wed,  6 Nov 2019 18:30:31 +0200
-Message-Id: <20191106163031.808061-5-adrian.ratiu@collabora.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191106163031.808061-1-adrian.ratiu@collabora.com>
-References: <20191106163031.808061-1-adrian.ratiu@collabora.com>
+ id 1iSOED-0006YT-0P
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 16:32:19 +0000
+Received: by mail-pl1-x644.google.com with SMTP id q16so11680110pll.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 Nov 2019 08:32:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=arista.com; s=googlenew;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=YDXR99N/YzQ/pZqCEI29huJxwejGrYigJcQpVl3mLN0=;
+ b=RDjOLla7UpdFA1uZVV/RjkQ6SwfLGswLg8cNYaDk16wAy2jKbHaMgvrGMS8PErrxrW
+ GFDxosOG5HVnj4O+ADH20k7STXbGnrgA7hy1HmziitFTqXDWjWdcbKeriEp4JFFQeLZa
+ kDyPWLHToo27tjU2eNGO/Vllhc2AHU6Bdq/yxqnkKCoOCkUQH6vfLsUVOoMGt/A/2npb
+ gnyLGHxmd5oYviEmAREMcaw4zruZmAxc07zAPbTcHGNNXl8MvZLk3Fl2rWYvWkwoyDCE
+ 1xPysUBCTD+eYaEZERw3pv6bKvd/HaBKrT6uITNWO/cM57G9mxGX2doCTFJq47dDsnYs
+ p8gQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=YDXR99N/YzQ/pZqCEI29huJxwejGrYigJcQpVl3mLN0=;
+ b=Cy6RXG0D0uNN6jhqVzKIr/qiNHgt7e94wpXro8efnWYs4PveWkLHPeHn9nf10svQmg
+ I4U0qX1v60z0t4NcQ+5xfdH8hh422w6qL0OBDpQ56Hx75YJSwVmb9v3s7Hl/bMalJmSP
+ jWuwHFMU3yfyjwk3n/n1PinJhdnQkOGegcu1q1NerXyp5gnkYDYQSU8LwqVJzcxDnpQJ
+ 8Y4ZZWZovQ61tSDzxErxGsg/ZXTN90lyd/wbqss3HsrDyN1wIaihcLYzs9h06+EdItyT
+ wQ/H3hdoU/cmWDetyfGvAKp5tVJhfD+X1lbQcauLKckgiepUTHv1sliTpOCXV4X85V9l
+ btpg==
+X-Gm-Message-State: APjAAAWa4gQ18M5AW/s3PdFHg4AeRDJ5Y6OFbBSq4vZ8o5gbor4sPFD9
+ /O//1+2TOJfj2nYh3dDbhrDYPw==
+X-Google-Smtp-Source: APXvYqzGnty5jGHPlGvF4cPMglmlPHfo5F67afnyOnzik5KBFCH43E7LJ5r8u2evmErEOI3pDLHStg==
+X-Received: by 2002:a17:902:8486:: with SMTP id
+ c6mr274839plo.137.1573057934474; 
+ Wed, 06 Nov 2019 08:32:14 -0800 (PST)
+Received: from [10.83.36.153] ([217.173.96.166])
+ by smtp.gmail.com with ESMTPSA id m12sm2974603pjk.13.2019.11.06.08.32.10
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 06 Nov 2019 08:32:13 -0800 (PST)
+Subject: Re: [PATCH 05/50] arm: Add loglvl to unwind_backtrace()
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <20191106030542.868541-1-dima@arista.com>
+ <20191106030542.868541-6-dima@arista.com>
+ <20191106091258.GS25745@shell.armlinux.org.uk>
+From: Dmitry Safonov <dima@arista.com>
+Message-ID: <cd6c5df5-effd-a1f9-8a25-9f5aac3a92f9@arista.com>
+Date: Wed, 6 Nov 2019 16:32:07 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
+In-Reply-To: <20191106091258.GS25745@shell.armlinux.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_083149_521527_D81E460A 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191106_083217_096795_FAA74A00 
+X-CRM114-Status: GOOD (  15.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,91 +104,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Martyn Welch <martyn.welch@collabora.com>,
- Sjoerd Simons <sjoerd.simons@collabora.com>,
- Emil Velikov <emil.l.velikov@gmail.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, kernel@collabora.com
+Cc: Petr Mladek <pmladek@suse.com>, clang-built-linux@googlegroups.com,
+ Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dmitry Safonov <0x7f454c46@gmail.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Jiri Slaby <jslaby@suse.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-Reviewed-by: Emil Velikov <emil.l.velikov@gmail.com>
-Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com>
-Signed-off-by: Martyn Welch <martyn.welch@collabora.com>
-Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
----
- .../bindings/display/imx/mipi-dsi.txt         | 56 +++++++++++++++++++
- 1 file changed, 56 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
+On 11/6/19 9:12 AM, Russell King - ARM Linux admin wrote:
+> On Wed, Nov 06, 2019 at 03:04:56AM +0000, Dmitry Safonov wrote:
+>> diff --git a/arch/arm/kernel/traps.c b/arch/arm/kernel/traps.c
+>> index 7c3f32b26585..69e35462c9e9 100644
+>> --- a/arch/arm/kernel/traps.c
+>> +++ b/arch/arm/kernel/traps.c
+>> @@ -202,7 +202,7 @@ static void dump_instr(const char *lvl, struct pt_regs *regs)
+>>  #ifdef CONFIG_ARM_UNWIND
+>>  static inline void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
+>>  {
+>> -	unwind_backtrace(regs, tsk);
+>> +	unwind_backtrace(regs, tsk, KERN_DEBUG);
+> 
+> Why demote this to debug level?  This is used as part of the kernel
+> panic message, surely we don't want this at debug level?  What about
+> the non-unwind version?
 
-diff --git a/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt b/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
-new file mode 100644
-index 000000000000..3f05c32ef963
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
-@@ -0,0 +1,56 @@
-+Freescale i.MX6 DW MIPI DSI Host Controller
-+===========================================
-+
-+The DSI host controller is a Synopsys DesignWare MIPI DSI v1.01 IP
-+with a companion PHY IP.
-+
-+These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
-+Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
-+the following device-specific properties.
-+
-+Required properties:
-+
-+- #address-cells: Should be <1>.
-+- #size-cells: Should be <0>.
-+- compatible: "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi".
-+- reg: See dw_mipi_dsi.txt.
-+- interrupts: The controller's CPU interrupt.
-+- clocks, clock-names: Phandles to the controller's pll reference
-+  clock(ref) and APB clock(pclk), as described in [1].
-+- ports: a port node with endpoint definitions as defined in [2].
-+- gpr: Should be <&gpr>.
-+       Phandle to the iomuxc-gpr region containing the multiplexer
-+       control register.
-+
-+[1] Documentation/devicetree/bindings/clock/clock-bindings.txt
-+[2] Documentation/devicetree/bindings/media/video-interfaces.txt
-+
-+Example:
-+
-+	mipi_dsi: mipi@21e0000 {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		compatible = "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi";
-+		reg = <0x021e0000 0x4000>;
-+		interrupts = <0 102 IRQ_TYPE_LEVEL_HIGH>;
-+		gpr = <&gpr>;
-+		clocks = <&clks IMX6QDL_CLK_MIPI_CORE_CFG>,
-+			 <&clks IMX6QDL_CLK_MIPI_IPG>;
-+		clock-names = "ref", "pclk";
-+		status = "okay";
-+
-+		ports {
-+			port@0 {
-+				reg = <0>;
-+				mipi_mux_0: endpoint {
-+					remote-endpoint = <&ipu1_di0_mipi>;
-+				};
-+			};
-+			port@1 {
-+				reg = <1>;
-+				mipi_mux_1: endpoint {
-+					remote-endpoint = <&ipu1_di1_mipi>;
-+				};
-+			};
-+		};
-+        };
--- 
-2.23.0
+Right, I wanted to keep the old loglevel in this patch - KERN_DEFAULT.
+But got confused with log level in unwind_backtrace().
+Will fix.
 
+[..]
+>> diff --git a/arch/arm/kernel/unwind.c b/arch/arm/kernel/unwind.c
+>> index 0a65005e10f0..caaae1b6f721 100644
+>> --- a/arch/arm/kernel/unwind.c
+>> +++ b/arch/arm/kernel/unwind.c
+>> @@ -455,11 +455,12 @@ int unwind_frame(struct stackframe *frame)
+>>  	return URC_OK;
+>>  }
+>>  
+>> -void unwind_backtrace(struct pt_regs *regs, struct task_struct *tsk)
+>> +void unwind_backtrace(struct pt_regs *regs, struct task_struct *tsk,
+>> +		      const char *loglvl)
+>>  {
+>>  	struct stackframe frame;
+>>  
+>> -	pr_debug("%s(regs = %p tsk = %p)\n", __func__, regs, tsk);
+>> +	printk("%s%s(regs = %p tsk = %p)\n", loglvl, __func__, regs, tsk);
+> 
+> Clearly, this isn't supposed to be part of the normal backtrace output...
+
+Yes, sorry it's debug for a backtrace - will return pr_debug() for the
+message.
+
+Thanks,
+          Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
