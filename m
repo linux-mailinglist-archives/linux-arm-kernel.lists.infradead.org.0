@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9712F17F5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:09:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3F65F17FA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:09:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/jgzcjh7EaZygNulWykIPOfUJFd0xAMa0lEVzicnJgY=; b=GOkEXEYS2gnXvY
-	7qpug+1m08bTeIBXspky2QA0MtN77J3yRpOkM04rew+Zw5glGe1GLhomkqJ+sK1T5weCNnH7ErZpr
-	rduYnKAO/GvmvbLvofH1jC3lRSQ0pDDo/AqWscLhtlU8FlJFi4LHkny1Ba7I/tsxxnekJQy/yJhE+
-	nXfFOAGaW6eXilzLwA8Z3JnpQR+w9WLN8sXHcKkRSva0vQSFIXWQhl5GaBfWYdYnA8J+taFCWoq7J
-	wZJm55D7HD0XnTWPUwMjikyr+hpLX1q+AJm4GZJ1pbujTODmeupaJW5bMqpbfy+2Cf8xcyGvFxfKL
-	9Xmzt1/ehb47VOHcOuiA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Dyf+7bU3B2YYBY9RsbBBRuzRTffTjBRLENx7w0Iug3Q=; b=s1tZZIfC2Ndhg2
+	4bDEZGzlDqfppo6lak/1ZY8Yo3TUPBXsiXd5Oic9uK4cPA8LVaGgVY4yfZm0tF4nWMmq/EgscNkVk
+	KikViSjKH64emmF8bbTemeE08XgoX7geoPvm/ivgAFQH1cCjwfNU8PSJWIfrl7YHEIgVh2BsGwkn8
+	UiMEcu8eU7+HSh2YBHSqfpZe95p/qp4Qg0qxfJYhYgtHllRvlxOHtKNhui4auhRKfXH+viVSPFpqW
+	V2BuD9ZQIbVD94obd6p2KFO1GSbsuVxtIMit7xvDhHvH5+yKaIGIsvThMc/b+IRvLAtlCWdz1FgZ6
+	6/MpXmIoOImCz3A/pp6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSLzX-0004ug-7S; Wed, 06 Nov 2019 14:08:59 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iSM04-0005VF-Sa; Wed, 06 Nov 2019 14:09:32 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSLz8-0004kA-7B; Wed, 06 Nov 2019 14:08:36 +0000
-Received: by mail-pg1-x542.google.com with SMTP id f19so8117618pgk.11;
- Wed, 06 Nov 2019 06:08:33 -0800 (PST)
+ id 1iSLzL-0004us-Cb; Wed, 06 Nov 2019 14:08:48 +0000
+Received: by mail-pg1-x541.google.com with SMTP id e4so17240714pgs.1;
+ Wed, 06 Nov 2019 06:08:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Xh0YLDess6L96nvkYhuVlivBqcsNSJ5iJO7vqQb2cA8=;
- b=MB1WGmx7LCN3svj1Z32NEMJi+359bYzJH064LJ6eHLnQ5EGZz73rdHSTAmS8xQ/f7k
- hHXH0vlm9SGNPrsvszHnY5l9DNVOqCNOCYD/2BmSijIBSDEsPvO1kwDOOzCflCUtE+C3
- 5uWCFCDsGeJ+btYZbhuxZEZGz66MRbWP9PD463v41i9Y1Oi+XQ1otayKg60K6uZh5Gnc
- 4DnZXRz5ohRbcR80EUKrbJhjL/yZPXX9+guRIg4XibxuO27z0vcOTmVyl6Kr/4HGMSSS
- /Wpq0gI97R1uFldSR/4Pmm/H3wRa0HUKiXPV/wUp+1WqruYcT72pfSlLfi8NUFXF9/2d
- +GvQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=IGrpDRKjGtiRT6QlcUQ2diK8Wp4T7B3HNEKu57gaI70=;
+ b=M4LY1AVpLRKaQ2PYpl4ihvdNmjYEbPsEsgJGBp5awZvOHExCB4h9/vK/P1ajy7wo4R
+ eCznYQKQmR0sxuEQhx2oXaGnZRS0+eVNZY2kX4ZjBV+ps4U7af3uQx7sDze9vlQLznir
+ 0+HGyIcrR0PoJ69qYWqFpl7aLdHYCXI3x25DrYnY6IKnvJ8a3f1uICEEInJ1jqriXyOi
+ AAPSaDfApqTsa50NTGrK4sl1f6wa1GLuun1S1qnjDGiOinOxUozoZUHhc192xjATsI1Z
+ nG4xZajoba2Bx/4KevwV9PXpoOylk3TpskZAbiV/uma4ZsBPl4rEF50ZQ44nc2Od9vxI
+ bmOw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Xh0YLDess6L96nvkYhuVlivBqcsNSJ5iJO7vqQb2cA8=;
- b=JvP/FVKWXWl/Y+rw17tPoFnHDcMRAf042VcVaQZ65xARPVU0BAcgzSOwtRVQT+i3x6
- H/LIdY1/CZGalJadbZ+CFLbTXzCFte/+Q/1sa7WGOk2+LG2cnK7T5x/YXMZhSxtCyim8
- +BicqfAfNeqii8xfEIQ5K+caZuvVmJ7cxAjQPkRHfHqcLecUtRwcSsJQzZw+kCQ8No0r
- G5RpZnASyWTxKtg5GpXmk7SeBTR2SxIb+12DmIUsXDs66OKBaXsnIgEfcBFMlM7AxJy2
- ag6sOyUDNxhvGLO7zuOkswqnFjUdLwPLpMm1dpzBaTS2EJrioUKgghqU8PjOm+z7R06j
- W9Pg==
-X-Gm-Message-State: APjAAAX3Woc9UF8PnDCiSN/Xe9mwShKx6AxHPXahWM1qWs3O9YBDT0xA
- hyzMvPxuth4DvnFKx9zGcXI7za+Y
-X-Google-Smtp-Source: APXvYqygIEZIViXKClHYSYmolDRBmW+9kj6CnM/P3+aITpIuH+/hhzB9v23qpqr0AtWRs2EX6QzoUw==
-X-Received: by 2002:a17:90a:9201:: with SMTP id
- m1mr4135941pjo.74.1573049311958; 
- Wed, 06 Nov 2019 06:08:31 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=IGrpDRKjGtiRT6QlcUQ2diK8Wp4T7B3HNEKu57gaI70=;
+ b=V0VERCNapzQ0qpnmMuddk6KboxCOHc0YFnyO1RRdHLibgJ9z88VU9o/YgpbKiKJqN6
+ SjLzIN73CN5zeSJ8T2zdRHr/vEl2fl8bDAEtHuE5A+Mb5w0JpVfU8HvyxWVSmkicQmdz
+ /VDEhg1xyyB/GBpC8U/NSYnmVpodCOQCCUlVyYij3WXNks6FM1+UWezUtT9s6bwHsAHI
+ S2cDzx/d7SwYHTfY/ZJPKJcE4eIP8qj6EIWcHLx3WDmBVUUIsFNSNlrC+Xr+NHDTW/a/
+ cxHqucz3NWKlIJ9jd+J1r/yLZmc5ZnVzegXQMCfITXbXR6/GXi4EYstjC4oWwHDlMknU
+ XfQQ==
+X-Gm-Message-State: APjAAAWa4kBoUEYKqfbnwCaR9ZSSCFOxVRIeeNhDXh51lZ53V1eotSAB
+ mWAIxHBCfp8KwSlql1i8lUrZ9rwcndk=
+X-Google-Smtp-Source: APXvYqyciAa1ghxUmSQPYlowrrMDo0Qpjz7jY0Ac/lNoa/xPayE7Fj+LDRfNpWCrFpdZ8Nu12OBZsg==
+X-Received: by 2002:a65:5885:: with SMTP id d5mr3017512pgu.278.1573049326032; 
+ Wed, 06 Nov 2019 06:08:46 -0800 (PST)
 Received: from localhost.localdomain ([2001:19f0:7001:2668:5400:1ff:fe62:2bbd])
- by smtp.gmail.com with ESMTPSA id a16sm4707345pfc.56.2019.11.06.06.08.14
+ by smtp.gmail.com with ESMTPSA id a16sm4707345pfc.56.2019.11.06.06.08.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 06 Nov 2019 06:08:26 -0800 (PST)
+ Wed, 06 Nov 2019 06:08:43 -0800 (PST)
 From: Chuanhong Guo <gch981213@gmail.com>
 To: linux-mtd@lists.infradead.org
-Subject: [PATCH 0/2] mtd: mtk-quadspi: add support for memory-mapped flash
+Subject: [PATCH 1/2] mtd: mtk-quadspi: add support for memory-mapped flash
  reading
-Date: Wed,  6 Nov 2019 22:07:46 +0800
-Message-Id: <20191106140748.13100-1-gch981213@gmail.com>
+Date: Wed,  6 Nov 2019 22:07:47 +0800
+Message-Id: <20191106140748.13100-2-gch981213@gmail.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20191106140748.13100-1-gch981213@gmail.com>
+References: <20191106140748.13100-1-gch981213@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_060834_286934_FB6FD3C5 
-X-CRM114-Status: GOOD (  11.66  )
+X-CRM114-CacheID: sfid-20191106_060847_457626_D8A38094 
+X-CRM114-Status: GOOD (  14.57  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -112,23 +113,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset adds support for optional memory-mapped flash reading.
+PIO reading mode on this controller is ridiculously inefficient
+(one cmd+addr+dummy sequence reads only one byte)
+This patch adds support for reading from memory-mapped flash area
+which increases reading speed from 1MB/s to 5.6MB/s
 
-BTW: This controller is a ridiculous one which only supports very limited
-spi-nor instructions. I can't rework the driver into a spi-mem one because
-MTK didn't provide register description in their datasheet and even if they
-do provide the documentation, the resulted driver will still be ridiculous
-because it'll need to check every supported instructions in support_op and
-do execution in one-by-one case in exec_op.
+Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
+---
+ drivers/mtd/spi-nor/mtk-quadspi.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-Chuanhong Guo (2):
-  mtd: mtk-quadspi: add support for memory-mapped flash reading
-  dt-bindings: mtd: mtk-quadspi: update bindings for mmap flash read
-
- .../devicetree/bindings/mtd/mtk-quadspi.txt   | 21 ++++++++++++++++++-
- drivers/mtd/spi-nor/mtk-quadspi.c             | 11 ++++++++++
- 2 files changed, 31 insertions(+), 1 deletion(-)
-
+diff --git a/drivers/mtd/spi-nor/mtk-quadspi.c b/drivers/mtd/spi-nor/mtk-quadspi.c
+index 34db01ab6cab..ba8b3be39896 100644
+--- a/drivers/mtd/spi-nor/mtk-quadspi.c
++++ b/drivers/mtd/spi-nor/mtk-quadspi.c
+@@ -106,6 +106,7 @@ struct mtk_nor {
+ 	struct spi_nor nor;
+ 	struct device *dev;
+ 	void __iomem *base;	/* nor flash base address */
++	void __iomem *flash_base;
+ 	struct clk *spi_clk;
+ 	struct clk *nor_clk;
+ };
+@@ -272,6 +273,11 @@ static ssize_t mtk_nor_read(struct spi_nor *nor, loff_t from, size_t length,
+ 	mtk_nor_set_read_mode(mtk_nor);
+ 	mtk_nor_set_addr(mtk_nor, addr);
+ 
++	if (mtk_nor->flash_base) {
++		memcpy_fromio(buffer, mtk_nor->flash_base + from, length);
++		return length;
++	}
++
+ 	for (i = 0; i < length; i++) {
+ 		ret = mtk_nor_execute_cmd(mtk_nor, MTK_NOR_PIO_READ_CMD);
+ 		if (ret < 0)
+@@ -475,6 +481,11 @@ static int mtk_nor_drv_probe(struct platform_device *pdev)
+ 	if (IS_ERR(mtk_nor->base))
+ 		return PTR_ERR(mtk_nor->base);
+ 
++	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
++	mtk_nor->flash_base = devm_ioremap_resource(&pdev->dev, res);
++	if (IS_ERR(mtk_nor->flash_base))
++		mtk_nor->flash_base = NULL;
++
+ 	mtk_nor->spi_clk = devm_clk_get(&pdev->dev, "spi");
+ 	if (IS_ERR(mtk_nor->spi_clk))
+ 		return PTR_ERR(mtk_nor->spi_clk);
 -- 
 2.21.0
 
