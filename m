@@ -2,67 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06856F0B81
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 02:13:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DB25F0B90
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 02:18:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dswSuGLDrtBhyt4JrbRKZ0YwJTuqh3Bzua2e27xKoRg=; b=pQGNvXeihMeJFI
-	6AA4gheho9CqNncOsAxIvYyKrFk/RU1K5kygMPdqJh8ULORPU4IIfSf96V/e7OgYXZxsAChTIl/M+
-	2nMC7sGGSdVAho3mtXL+MrKqI9tEoxjU5vbjQlV8u0B8Ga++aNh7S90/9eyKdbS8YbXv+VgmMx3nq
-	K5gJHIWl+0zV/RnXfmV2uH4w/fg/qUMiy3ki/0vb+Ni7IgazX2tQyOpc3N6DVKMB5kf2rqojQkyVr
-	H+VlcSJ1+lildTWs+OqpuP45osyy7nfsbE0IyZ+j4OwJQssw8S/NA0oZBzGEFH4lBShyfA6iyQfft
-	5TejuxgOE8F7ZGFzwgIw==;
+	List-Owner; bh=BmMffJmmuXkPnCoYg/nfwwm/YOsP4dVCNW7olUBH5KE=; b=h0nPn5JqJ9Xp3k
+	qOe+Ggg6EEAtP3nXAooksChfOYEjSQpIb33MEvYKJsi9yXiyPUKjf+MJ6uaSKI0SzgQoRtxEe57FD
+	lDhZEYyUePh5S5+gbNkQNDZAxcSdA+WDliB2qKY7eE49X07/eECdvAvoT8rrvw6hNZXkJe0k2bAL8
+	B5BF0zYaUj+lOCJ+FUlaF1WanbbUgiHZVuDSK/MI1KX6fRD5MRBp/TvrTstGwsGsIaERwY1sz3b1R
+	/TPbr3+XgS/Oi/PHzyozNRPa06aCcwphmKjN52UDZrMoYSlRoEIE/2346+tPnxVn6jDSH2t5w8nAX
+	GLusVhk6E5jl4JjzCGJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS9sv-0005Co-6K; Wed, 06 Nov 2019 01:13:21 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iS9xs-00077i-ML; Wed, 06 Nov 2019 01:18:28 +0000
+Received: from mail-eopbgr130052.outbound.protection.outlook.com
+ ([40.107.13.52] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS9sn-0005CJ-B4; Wed, 06 Nov 2019 01:13:14 +0000
-Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
- [73.231.172.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7CB1721A49;
- Wed,  6 Nov 2019 01:13:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573002791;
- bh=F8oZBAZiUgNBGiV+WdUohtNWYyfzETDe01QBSwwnbUE=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=LnltnbcoEvw0zudUzaix987ZKsj6MqDuFqsZC0+IjmxZ0XpTcoy82THWXKyrYQ0Ye
- mv5Z8zeYgtccYtyRipnP9TZaP3/JrnK54F4aJa9wN2ypZkOFNbFlBBd661zaIpobQL
- OZchQhXSAp1sAaj7ISlI/bn8Ev4MXWgPMnouR5wE=
-Date: Tue, 5 Nov 2019 17:13:09 -0800
-From: Andrew Morton <akpm@linux-foundation.org>
-To: Mike Rapoport <rppt@kernel.org>
-Subject: Re: [PATCH v4 13/13] mm: remove __ARCH_HAS_4LEVEL_HACK and
- include/asm-generic/4level-fixup.h
-Message-Id: <20191105171309.9a5ccf9cf14d7288f7adf198@linux-foundation.org>
-In-Reply-To: <1572938135-31886-14-git-send-email-rppt@kernel.org>
-References: <1572938135-31886-1-git-send-email-rppt@kernel.org>
- <1572938135-31886-14-git-send-email-rppt@kernel.org>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ id 1iS9xl-000779-4e
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 01:18:23 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GsTRy0PmkL+AYGpEHWs1gHzxUw3kIQ4Fv26o1tLo5/+63GxmQ93Lfxl2euwItYpIH0tQ3LjpNKKee4rqI2HufR4JrkTUFG00j3RXrGDdYh6kgjMqq/7GEbS0SLuImCQDetnUoJ81eDfJ3228VAN2143M8omA7UXFH4yCwY3TBfbm0gcoy+tX8AIIJM3v9a0rwAZFgH6ciuN0Ioa3ooejSULeJ/R7tFSUhepVunll4MQEBzZoQHQWVWAi+yPecwzVrVOPmXznOKLWJA6pVT4rjVN20I7TeW+cCMkMRqFbls1vpPDEm8/Mc0LbJLB+wgZAZGeA15Sdj/7EbaTVbC7Bxg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7v0ETZoKv7r8OqNEEcZWbCbhQXD+oTMo8o9Ky7AAofE=;
+ b=eg9uMpI2q9oVML03Kk5I5kXJjxl+JuYxkBzykJRWB20bOTnONiS93o3wFKhtFbDdTHTDpLhdiiq3l1bIzL6tqOUeTt+Us/6ZcHFvPDVXv9ZmLWLYbpkfkFWZZdNrCH4BysVBJF/lO+uU9XEL+2cHNSHp0mung/MBlDbbJzxnwicCJBbpgit7/NEredDz7ufJYzcCBz97Y7PXAoEZPFHSG53Rzzt4chtqZBl/w+JaVm5e16lFe4d8SAx+rqV3lACcdYb/b3VEyoki9s2WFt9kN0exWvnFTySDPUJ7hutK8BefiC6pwL8UJFECTVHqVMGoDzaxhgtoF4qliAQBdJRTiQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7v0ETZoKv7r8OqNEEcZWbCbhQXD+oTMo8o9Ky7AAofE=;
+ b=ifTEUPLPgpqO8utUSm7SN8ZqmaSH6OhJ5c74sBPDZbwN9puvCmvw2+pTAeWVmSvEU9N6dxV0JcNcKpGbCv0XQN26mAf20LzPr0B9Pzd+a5Tlfspr99+UlStllNbXrJp9iaS+jutNrc/96ZCKkSHKu3lR1gmkjzZLcSHjMoHXJno=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB5619.eurprd04.prod.outlook.com (20.178.119.155) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2430.20; Wed, 6 Nov 2019 01:18:17 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c%4]) with mapi id 15.20.2408.024; Wed, 6 Nov 2019
+ 01:18:16 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Ahmad Fatoum <a.fatoum@pengutronix.de>, "sboyd@kernel.org"
+ <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>
+Subject: RE: [PATCH] clk: imx: pll14xx: initialize flags to 0
+Thread-Topic: [PATCH] clk: imx: pll14xx: initialize flags to 0
+Thread-Index: AQHVk6mXpyRie0JbfEaM7Eg+PLW60ad8ilUAgADOL2A=
+Date: Wed, 6 Nov 2019 01:18:16 +0000
+Message-ID: <AM0PR04MB4481DC8B916E01AFF2D4BA8788790@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1572938372-7006-1-git-send-email-peng.fan@nxp.com>
+ <7966140a-7fec-0a8f-6ced-e4fbccef51da@pengutronix.de>
+In-Reply-To: <7966140a-7fec-0a8f-6ced-e4fbccef51da@pengutronix.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: fe1d5e94-8b93-43e5-b219-08d7625733f7
+x-ms-traffictypediagnostic: AM0PR04MB5619:|AM0PR04MB5619:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB5619C0B75898759A1452BAD588790@AM0PR04MB5619.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 02135EB356
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(39860400002)(346002)(376002)(396003)(366004)(199004)(189003)(54906003)(110136005)(6436002)(316002)(966005)(6246003)(186003)(2501003)(478600001)(14454004)(45080400002)(71200400001)(446003)(11346002)(86362001)(71190400001)(44832011)(25786009)(8936002)(486006)(2201001)(74316002)(305945005)(8676002)(7736002)(476003)(81156014)(6636002)(81166006)(7696005)(53546011)(5660300002)(6306002)(76176011)(76116006)(99286004)(26005)(14444005)(256004)(102836004)(33656002)(66476007)(6116002)(2906002)(3846002)(4326008)(66556008)(64756008)(66446008)(229853002)(9686003)(66066001)(55016002)(66946007)(6506007)(52536014);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5619;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: SV9CdZRpivAwklmjw2gB9bypLLXO0QEVSruuh11hm1f9PlWnVUm4MWIxkeBUVYfCBw70RMH2Jpc4fhKP89+xDDezd6Jt/yqETdhyLcpcYzmmAjwzIOXvZiopS8LpObAcbJiUg0MyxEDL9Iv8NNRjSLmqqGoja7r/FjFY1reIPaVCTSIxOVle3ddxwzGMSxHXwY/VLM0P3wkY0loIE8UwXxJ3ni6Mgk/y50ORPtEOJP5cTdViTZIWEBdzZ3hAixd+a32q1l16oeL30mBnVI6CCi0jeCEEWZbpxK70DBBKGqbtJo26eMMyTGDDqsXqyfXNHzEti0x9yZ2uuSlJB7sxlvkXcjZSsiJRVV4zGqLYi8VRJFGhK22PW/YKKNCyHtaYKw7SLadShvrRmsdZN8qv2mvg2xhJLtrJts81RS6obLVhuHlfS6I6Plk0KB0WjO3KzLx5vj41EopwE2h/aiiTggZSufcsPhO43UhKhrmloZA=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fe1d5e94-8b93-43e5-b219-08d7625733f7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Nov 2019 01:18:16.9382 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: tUQQHoe9/4AsKorGSlYOBy0vJRJtDHMEqO13scnyx66bOCG2i1H6nbdhZLgT6yCYHeD+pKOhWLONTNj34N4BRA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5619
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_171313_404238_12627459 
-X-CRM114-Status: UNSURE (   7.98  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191105_171821_260817_986052D5 
+X-CRM114-Status: GOOD (  17.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.13.52 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,42 +124,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-m68k@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- linux-mm@kvack.org, sparclinux@vger.kernel.org,
- Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
- Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
- Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
- Jeff Dike <jdike@addtoit.com>, Sam Creasey <sammy@sammy.net>,
- Arnd Bergmann <arnd@arndb.de>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-um@lists.infradead.org, Greentime Hu <green.hu@gmail.com>,
- "Kirill A. Shutemov" <kirill@shutemov.name>,
- linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, linux-alpha@vger.kernel.org,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  5 Nov 2019 09:15:35 +0200 Mike Rapoport <rppt@kernel.org> wrote:
+> Subject: Re: [PATCH] clk: imx: pll14xx: initialize flags to 0
+> 
+> Hello Peng,
+> 
+> On 11/5/19 8:21 AM, Peng Fan wrote:
+> > From: Peng Fan <peng.fan@nxp.com>
+> >
+> > init.flags is initialized with value from pll_clk->flags, however
+> > imx_1443x_pll and imx_1416x_pll are not static structure,
+> 
+> They don't have a static in front of them, but they still have static storage
+> duration.
 
-> There are no architectures that use include/asm-generic/4level-fixup.h
-> therefore it can be removed along with __ARCH_HAS_4LEVEL_HACK define.
+Yes. I am wrong.
 
-Conflicts a bit with Vineet's "asm-generic/tlb: stub out pud_free_tlb()
-if nopud ...", from
-http://lkml.kernel.org/r/20191016162400.14796-2-vgupta@synopsys.com
+> 
+> > so flags
+> > might be random value. So let's initialize flags as 0 now.
+> 
+> I fail to see how. Members not listed in the { initializer-list } are implicitly
+> initialized as if they were static objects, so flags should already be zero.
 
-I fixed it up by removing include/asm-generic/4level-fixup.h anyway and
-removing the removal of "#ifndef __ARCH_HAS_4LEVEL_HAC" from
-include/asm-generic/tlb.h.
+Understand.
 
+> 
+> (I assumed this patch is based on Shawn's imx-clk-5.5 tag)
+
+Yes.
+
+Drop this patch.
+
+Thanks,
+Peng.
+
+> 
+> Cheers
+> Ahmad
+> 
+> 
+> >
+> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > ---
+> >  drivers/clk/imx/clk-pll14xx.c | 2 ++
+> >  1 file changed, 2 insertions(+)
+> >
+> > diff --git a/drivers/clk/imx/clk-pll14xx.c
+> > b/drivers/clk/imx/clk-pll14xx.c index fa76e04251c4..a7f1c1abe664
+> > 100644
+> > --- a/drivers/clk/imx/clk-pll14xx.c
+> > +++ b/drivers/clk/imx/clk-pll14xx.c
+> > @@ -65,12 +65,14 @@ struct imx_pll14xx_clk imx_1443x_pll = {
+> >  	.type = PLL_1443X,
+> >  	.rate_table = imx_pll1443x_tbl,
+> >  	.rate_count = ARRAY_SIZE(imx_pll1443x_tbl),
+> > +	.flags = 0,
+> >  };
+> >
+> >  struct imx_pll14xx_clk imx_1416x_pll = {
+> >  	.type = PLL_1416X,
+> >  	.rate_table = imx_pll1416x_tbl,
+> >  	.rate_count = ARRAY_SIZE(imx_pll1416x_tbl),
+> > +	.flags = 0,
+> >  };
+> >
+> >  static const struct imx_pll14xx_rate_table *imx_get_pll_settings(
+> >
+> 
+> --
+> Pengutronix e.K.                           |
+> |
+> Industrial Linux Solutions                 |
+> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.p
+> engutronix.de%2F&amp;data=02%7C01%7Cpeng.fan%40nxp.com%7Cd19f6f7
+> 6f49e40ed516108d761eff88d%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C
+> 0%7C1%7C637085555604797300&amp;sdata=MVUvIPUFpkhLj6KDs1Za2sBU
+> FNPMrWvS9vA9BuxqQ3k%3D&amp;reserved=0  |
+> Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0
+> |
+> Amtsgericht Hildesheim, HRA 2686           | Fax:
+> +49-5121-206917-5555 |
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
