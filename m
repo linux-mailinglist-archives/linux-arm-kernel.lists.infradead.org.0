@@ -2,84 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BFC4F0DE8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 05:42:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B293F0DFB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 05:46:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2/AByvKpDultJp98PqJGOsmk0tk0WyBzBeweTzJUjIs=; b=fxpiVUuoMBX7Yt
-	2lck4DvKxYN/pk1ylzx3BLRnMqqG0P/MhO3Wq8dmrsY9T4IPsd0H63HiHeNjHTthLNPhXD3xVMbI+
-	i7GKt0cBbtP45jWvC3+2x+dLemCeZbmTfDmx6X6opJpql/4SmVcku+6x0lgowyfEZmgw7MM9CY4vs
-	Ai43i0PPD9kPWzozJLQfWbytMMetg5k2kExeFoukRO5eQ1zb24v1riHvg4/JwgybZqtp3RGjG+ctO
-	xmWTGIRkHFf4k3sFz930xFgEJkh8Q1i4b7MEqpduJ2a53oZJm36dnHUhr9XPxyO859y7Z0fVLiOga
-	RFeWHZSho+n/wUNSVnzA==;
+	List-Owner; bh=s9ZHUg7lkXIpt2schpXFYSptgnuUxuWpdPWAQ0oqrP4=; b=dDiolI+qjayozd
+	akujkFyFw172j8lECqlc302RbHn9+zEsFgX/l25CDu2tx0bPApjS4iB58Sbqn3gEjkD/UZBTF4kZ3
+	FUW/Qm6zfhugCnUMvuCoo9+vUmgv80We87HwkKcWoEVuOL72AkbmCocSOQROSeTR7sdcZVZkS46X0
+	hlvlpTXwZKo6Vfw4jukQGgdN0nqjWYxdCk/phrRv8KnLls5BaUVFjZyvh71NbcSYZy3kLRJdpWbQ/
+	gmA0MFMK4G67DzEtVFR6I6zY/1RW/iwcLLq/2Nbfk/RfuDLhn4skbRFrY7qxnRPZU933TCeP+Pg2m
+	ZC04jwTZR3X1V49aWKFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSD8x-0000Q0-U2; Wed, 06 Nov 2019 04:42:07 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1iSDCz-00029u-IM; Wed, 06 Nov 2019 04:46:17 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSD8k-0000Ly-FC; Wed, 06 Nov 2019 04:41:56 +0000
-Received: by mail-oi1-f193.google.com with SMTP id l202so19812184oig.1;
- Tue, 05 Nov 2019 20:41:54 -0800 (PST)
+ id 1iSDCn-00028o-Uo
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 04:46:07 +0000
+Received: by mail-lj1-x244.google.com with SMTP id g3so18331736ljl.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 Nov 2019 20:46:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gJMPHhKHFX8udqWNx4esBxs7+6CjmiT3KwNBEYCiDu4=;
+ b=AGaoiWuH4Fsah/5Mrnysi1CUGLJA95+VACk5fohzuSyNRGRqjFWx/bzNkkjPzfXmn4
+ Y56Mfrcr6KlRajYlG8J7KWJAzdar9H1F0kQSjY+NkGPXkylSOBzxNGc8EYAurRfcmB6W
+ 43XMW6wWO+KuWZ1x2OgcbRKsHTZipTg9iq1cqcSeYN66xeR7uy8Njsi51KVfJz+5ptjW
+ 6D0z5JCz3b+KpM0c+b+GyEa3DW++SaLoFMLmFNX+jRCwBR7lqHsH0/t1F5oUENfxCUfW
+ SzqAF/JT6aUsvr6p7H9ff6QpT6lsCCcdg5dNgHRCLTaRIyLqKDptL5tfjfXLbtrBDfPD
+ 2HNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=kExrcIwewO5meaE9ViSZ9PEk4wNZBD0E9gb/qgrKUcI=;
- b=ZKug/OVShp6cXAXp/B47CrHpaheOk6odeWjroznxtL5wKR3vRVceIfc2eu/4unRpGU
- yTOeCVovimkgaGTY4OAY4aXIiu0i5BXFz776+VRM/AgAnFzut5DCFNaAQjzYubLLLoEu
- lDSC9TN/ARsIrFRgdQlbSd6FeOzA0OlsbcFEDm2WnWsYKuJ2muQbrV83BToulVtWGRyA
- DadFD9ErBrlMeqbpA3Y3h9pfU6Npr7+tUTRPfbAZRgGYtBeQBFpcbTBnTU2Shvzsmw+A
- l3r3wBeoHCq/11irQaMYMJezzW26S8ygg2aOvZ/IZgngM3Qb+9q1thYFdvfhyhWmpxo6
- 43DA==
-X-Gm-Message-State: APjAAAVPhm4TdsVVnVsiq+++rQvVQSl2+jVuEsVLWyYidPGS/Fo7IzRy
- etL30R+zBGt0FQN0o+DlRvsba3Q=
-X-Google-Smtp-Source: APXvYqxmk7nxkZvyzvyIdu53qhvNJePeZ1ZjaB/WVSemAb5HsQboL1nEWJcM17/eP/f5e7eko5Xxgw==
-X-Received: by 2002:aca:f543:: with SMTP id t64mr498893oih.89.1573015313469;
- Tue, 05 Nov 2019 20:41:53 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 21sm6216231oin.26.2019.11.05.20.41.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 20:41:52 -0800 (PST)
-Date: Tue, 5 Nov 2019 22:41:52 -0600
-From: Rob Herring <robh@kernel.org>
-To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
-Subject: Re: [RFC 01/11] dt-bindings: soc: Add Realtek RTD1195 chip info
- binding
-Message-ID: <20191106044152.GA23224@bogus>
-References: <20191103013645.9856-1-afaerber@suse.de>
- <20191103013645.9856-2-afaerber@suse.de>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gJMPHhKHFX8udqWNx4esBxs7+6CjmiT3KwNBEYCiDu4=;
+ b=IftJQmHBrlnrVNcUtQU/3TX2SEPM2HU49xTKIH6W+9awjbrHpLbjGGqXZExclpyd9Y
+ m6x1fUk3xy+wUBxGD/grrtIBOlvTt24n1UnkgTErc5YuMkEKoc6gEbHVNuGKkZnY7f/1
+ bdF3pGq/yfP2MsBX2+vzRtlIu9oZC3VLm4uXYCL6F4gt+0vpOsJQ6qoZc6129iHwDp/f
+ +fMWL7QVJpM0UwXcD6ViKYhiV0sINiHq0uA3otRDJn3tk49EzLjX7FyrxEHbcM4FSALb
+ mQJyOPzrzm8eEwPMjGc00H5wlVhmcx0TNXaPrioNerpu/MSNzweGNnUz4it6yjHAe2j5
+ U57w==
+X-Gm-Message-State: APjAAAWtBq3VkYJz3R+e3b3XSdRv103/WOgAPB0o9hrl7/K7pvhuW0GY
+ AIQeQkoM4otQRyWG9w021YruZfBOHIO6QqsHD0U=
+X-Google-Smtp-Source: APXvYqzoj6tUsrC/BVFopD/SaOTrIMULCeKMkv2c1g5ElpPga9joMdtHCw+m/HoGVDnKOKrvi8XqjS+oHuccO/VR5HI=
+X-Received: by 2002:a2e:2419:: with SMTP id k25mr252654ljk.59.1573015560588;
+ Tue, 05 Nov 2019 20:46:00 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191103013645.9856-2-afaerber@suse.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191105235608.107702-1-samitolvanen@google.com>
+ <20191105235608.107702-12-samitolvanen@google.com>
+In-Reply-To: <20191105235608.107702-12-samitolvanen@google.com>
+From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+Date: Wed, 6 Nov 2019 05:45:49 +0100
+Message-ID: <CANiq72mZC-G_R_RJjapZS+NvkQcrjdiri0NyHUgesFzUpe-MDg@mail.gmail.com>
+Subject: Re: [PATCH v5 11/14] arm64: efi: restore x18 if it was corrupted
+To: Sami Tolvanen <samitolvanen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_204154_523839_1E46E469 
-X-CRM114-Status: GOOD (  15.47  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20191105_204605_993673_966EEB0F 
+X-CRM114-Status: GOOD (  10.43  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ provider (miguel.ojeda.sandonis[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,102 +94,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-realtek-soc@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Nov 03, 2019 at 02:36:35AM +0100, Andreas F=E4rber wrote:
-> Define a binding for RTD1195 and later SoCs' chip info registers.
-> Add the new directory to MAINTAINERS.
-> =
+On Wed, Nov 6, 2019 at 12:56 AM Sami Tolvanen <samitolvanen@google.com> wrote:
+>
+> If we detect a corrupted x18 and SCS is enabled, restore the register
+> before jumping back to instrumented code. This is safe, because the
+> wrapper is called with preemption disabled and a separate shadow stack
+> is used for interrupt handling.
 
-> Signed-off-by: Andreas F=E4rber <afaerber@suse.de>
-> ---
->  Note: The binding gets extended compatibly later for up to three reg ent=
-ries.
->  =
+In case you do v6: I think putting the explanation about why this is
+safe in the existing comment would be best given it is justifying a
+subtlety of the code rather than the change itself. Ard?
 
->  .../bindings/soc/realtek/realtek,rtd1195-chip.yaml | 32 ++++++++++++++++=
-++++++
->  MAINTAINERS                                        |  1 +
->  2 files changed, 33 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/soc/realtek/realtek=
-,rtd1195-chip.yaml
-> =
-
-> diff --git a/Documentation/devicetree/bindings/soc/realtek/realtek,rtd119=
-5-chip.yaml b/Documentation/devicetree/bindings/soc/realtek/realtek,rtd1195=
--chip.yaml
-> new file mode 100644
-> index 000000000000..565ad2419553
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/soc/realtek/realtek,rtd1195-chip.=
-yaml
-> @@ -0,0 +1,32 @@
-> +# SPDX-License-Identifier: (GPL-2.0-or-later OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/soc/realtek/realtek,rtd1195-chip.yam=
-l#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-> +
-> +title: Realtek RTD1195 chip identification
-> +
-> +maintainers:
-> +  - Andreas F=E4rber <afaerber@suse.de>
-> +
-> +description: |
-> +  The Realtek SoCs have some registers to identify the chip and revision.
-> +
-> +properties:
-> +  compatible:
-> +    const: "realtek,rtd1195-chip"
-
-Don't need quotes.
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-
-Add here:
-
-additionalProperties: false
-
-> +
-> +examples:
-> +  - |
-> +    chip-info@1801a200 {
-> +        compatible =3D "realtek,rtd1195-chip";
-> +        reg =3D <0x1801a200 0x8>;
-> +    };
-> +...
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index f33adc430230..5c61cf5a44cb 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -2188,6 +2188,7 @@ L:	linux-realtek-soc@lists.infradead.org (moderated=
- for non-subscribers)
->  S:	Maintained
->  F:	arch/arm64/boot/dts/realtek/
->  F:	Documentation/devicetree/bindings/arm/realtek.yaml
-> +F:	Documentation/devicetree/bindings/soc/realtek/
->  =
-
->  ARM/RENESAS ARM64 ARCHITECTURE
->  M:	Geert Uytterhoeven <geert+renesas@glider.be>
-> -- =
-
-> 2.16.4
-> =
-
+Cheers,
+Miguel
 
 _______________________________________________
 linux-arm-kernel mailing list
