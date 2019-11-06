@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36745F1813
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:14:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF20EF1815
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:14:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Yb4A9uzxQB0F+VDveG5Bx5kn4o5ep0SJjbRJy6dI6pc=; b=KbB8SjvZ1SS/vK2NULrXFyB1jU
-	U/7Dh+g5Egaaf1ngb2Qfbcz4KRernQe7CqHUFYtuLuUTR8Q15db4XF5jszxgV65yw7iUp9TGcahQ9
-	b/d0IuSONl7D3TrfaN8qhbPHIGav8GhLXqvODjm2X/fRFl5CCRKCInlHqRmJebWoMWlX8YqTSiNCJ
-	7xQZtqOvHE3ThWJpvoaulCo8oE9NC4XvR5w4Orus1v3XOJFkL9/PEtiBOB7A0JnjjK9qHBtS02eOh
-	9zl+Wkzh/+J/5Lf+mb5HjMR+m0yS8SaAaxSfoiTv17UCpBPtItlsvj2mSpRwece1kXNYu11M+8GF2
-	3DKgmFvg==;
+	bh=wMhvH2yuO5k2T3Doi7Cu0gfBfAdWoqlGUdyoLYQDTk0=; b=bEqWTEs0VU1zuj/4wUC41RC8Mt
+	CmLt7IOEwe96+dN7CaYAlPMNxRSiEgfaG7PT+9ABlJNROH9WkjR536OFBYSMPL1oeP6mJeqf1Huql
+	BxtkwLN52aGS4DCGEdHvtjGoGbDyi+uYVo7EzkvWvjAXXEPKZaIM1pcUEneAP4YZFcWL33fz8K695
+	+F3hgbP0IG7rRjQJrRY2H2x4vbiIMsZYFQtJfr0ya5xPlKk67/d7o2fyqL1y5o2dSJATRJ/5UJrvK
+	VaSHEVHbMkHEAAucvaJpfdKZW3A3xMsUAvZkB53lHrZE5OrFDDxIUnxLypmOX+WGSjlwWWEFWabOv
+	eAdUSdpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSM4k-0000MS-J4; Wed, 06 Nov 2019 14:14:22 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iSM4s-0000dR-OO; Wed, 06 Nov 2019 14:14:30 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSM3t-0008A6-Gg
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 14:13:30 +0000
-Received: by mail-wm1-x344.google.com with SMTP id x4so3608926wmi.3
+ id 1iSM3v-0008CU-EX
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 14:13:32 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 8so3553812wmo.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 Nov 2019 06:13:28 -0800 (PST)
+ Wed, 06 Nov 2019 06:13:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Bz6tm/Oq0JWNumhKoQOUWz+Q8JBAOdsIYOzjRyK0W9o=;
- b=jlbxIkKeL3Kg9sDbtCvzA0n80dNlWQeuKrHjCLy6JkLv+44YWN0XV/6Ri5hrDJmKx7
- RMw4nFFVFEbc3Y43ASQyDevRbQ1KafjwpXr/+E2NcnKi61gvBNO4T5/CoC/aVOJm1lF8
- afbdpOMvBrB1PiyE7mIkTCZmfFEppYlBRLE9bG4/7knt6uyuQCtc6yz3OfqEd7nJhW4y
- GaY42uHnvI3nskibfGwiI5um1+tf3nhRZnrxGC/x4jUZBdRvl7Ux9op1d4aYxNqMN6Yy
- Ugk6EsBMx1LG9OwSj5B/GAIoV5iSi0eBnC1ZNGpu0dDycG59m6by5s72ZnVqiH3P+Yu/
- polQ==
+ bh=QNZ1kA4q8aBB50NVJWu8PbKcs9AjHNKMK3pxZ9fNJP4=;
+ b=Xf2Ks/Jq/ihGwNCma8VLqakFtNZHKXIuWjUMxPXRRbJUiPMCjNJdWtn/qgWP/5sax7
+ Ujfw6TL3LrTHr+uDBhPChxFljQzS5xgGpRxtwOO3Cwx5CN9yZ8J+CA955DxnUVBtrQY9
+ UQ1bY0WghbSRoxyO+YnPSEFpDzUjl87KqEH5SgdaSVeeYvhaF4C+6ymBYsygd0tMpK+B
+ v1Ysb6J+hZxqg7dNd/kemAXJbzAWO4QDbjPoSV2WnuX18FdLVu+FkYfbLwr3DTApGJwK
+ qos9OGs4AuUlU8h/o/Y+yYw2NPn+omvenj9islnObpixtFKklAt0n2mEtWosrHsO99wv
+ YyoA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Bz6tm/Oq0JWNumhKoQOUWz+Q8JBAOdsIYOzjRyK0W9o=;
- b=pqZoO1XXpgFTbpfNiMaAOxtz4JvAfTvBS13l38XTi8HcgwwFoJv9PpvoRwBKsGxMrA
- kVchBlibZ3q5UhiyBsttZ3ZjqtP8AnvTpwTU9yXDTUBHJypAMPAdLl87JsGLOFebURBU
- rtBDuvN4X1H9Lo/S4JbsVnvwk0tCIqtS8+Cdr0dlIEKBj4UHnvaQQs3ly18eopEdGepj
- H7nuAldXgwB7pU/GoSOrFEpuhaduiH7rV0vkw/3OEUTfBS/Rac8zgOJlTu8cc18XoDwv
- oR9xIcK7e1iDgOjoyA91VdL6eb+K1YCtdFPEDegnvATNuAQ0mEDgK0P/utYU/rty2imh
- ICyw==
-X-Gm-Message-State: APjAAAXM34Jg+m1MovAo+zyI4yKEZLWabI6spz4nPcI8jMS7uwLhAWNA
- f7zZd1MoYYwgKFbGN+pFEJ8nzw==
-X-Google-Smtp-Source: APXvYqx0JMbMKxvkK6MwbV+885ST1BoFA+6H9mqlYYb0WUFjcxzb2zWqAt5vUgOEk43WSZGg8BgArw==
-X-Received: by 2002:a05:600c:28c:: with SMTP id
- 12mr2652459wmk.25.1573049607535; 
- Wed, 06 Nov 2019 06:13:27 -0800 (PST)
+ bh=QNZ1kA4q8aBB50NVJWu8PbKcs9AjHNKMK3pxZ9fNJP4=;
+ b=NGcZs+wTInEh8MUDH9LAf4mfR0pJFgVw6/d+NYVQUNi+Szk0rPlkVWLIi9j+Tg+XEP
+ JIvR3IptAXOuruy3LRkjTcMBHHonZLzgLNAJKyz8c9jOA+LFGQcWXxWknDTfI/Rhm/zP
+ +r/CVzyOxK7msjOJMVo50cTPymRZuYPfIGviqBQ7pHw3gUBmRc35IfSXNCek1hkwp8E0
+ oTqnnifFn1yI7LYJL8G+QtdsBlGLCZxdwVDwDH3LiyMQZ8lYtQhM2Lzvk0cvc/sLJVsS
+ KqELaKZnWumRhOvuufz0g+xg4Ur/t1qxR6Ps1fQGT9bWMpcY8tdteMhLl+mLa/6mWmVq
+ VUVg==
+X-Gm-Message-State: APjAAAWsgWjIsOlfQobwDPsZAM60VbvWL2elMOxM61Hm8hjXn69t8+rA
+ SZdn0ywSxBiyvDbd2lwUHhYVng==
+X-Google-Smtp-Source: APXvYqxlrxPHyV7WtfZwm6qyJvzgfUOUugHAQxtpX4eBnKipnxbgOwtoZZo0ZBiVDsCnO8UnT+Wz5A==
+X-Received: by 2002:a1c:544b:: with SMTP id p11mr2802294wmi.46.1573049609122; 
+ Wed, 06 Nov 2019 06:13:29 -0800 (PST)
 Received: from localhost.localdomain
  (31.red-176-87-122.dynamicip.rima-tde.net. [176.87.122.31])
- by smtp.gmail.com with ESMTPSA id b3sm2837556wma.13.2019.11.06.06.13.26
+ by smtp.gmail.com with ESMTPSA id b3sm2837556wma.13.2019.11.06.06.13.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 06 Nov 2019 06:13:27 -0800 (PST)
+ Wed, 06 Nov 2019 06:13:28 -0800 (PST)
 From: Richard Henderson <richard.henderson@linaro.org>
 X-Google-Original-From: Richard Henderson <rth@twiddle.net>
 To: linux-crypto@vger.kernel.org
-Subject: [PATCH v2 03/10] s390: Remove arch_has_random, arch_has_random_seed
-Date: Wed,  6 Nov 2019 15:13:01 +0100
-Message-Id: <20191106141308.30535-4-rth@twiddle.net>
+Subject: [PATCH v2 04/10] linux/random.h: Remove arch_has_random,
+ arch_has_random_seed
+Date: Wed,  6 Nov 2019 15:13:02 +0100
+Message-Id: <20191106141308.30535-5-rth@twiddle.net>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191106141308.30535-1-rth@twiddle.net>
 References: <20191106141308.30535-1-rth@twiddle.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_061329_581057_ED1A7476 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20191106_061331_569856_40716EAE 
+X-CRM114-Status: GOOD (  11.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,37 +107,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These symbols are currently part of the generic archrandom.h
-interface, but are currently unused and can be removed.
+The arm64 version of archrandom.h will need to be able to test for
+support and read the random number without preemption, so a separate
+query predicate is not practical.
+
+Since this part of the generic interface is unused, remove it.
 
 Signed-off-by: Richard Henderson <rth@twiddle.net>
 ---
- arch/s390/include/asm/archrandom.h | 12 ------------
- 1 file changed, 12 deletions(-)
+ include/linux/random.h | 8 --------
+ 1 file changed, 8 deletions(-)
 
-diff --git a/arch/s390/include/asm/archrandom.h b/arch/s390/include/asm/archrandom.h
-index c67b82dfa558..9a6835137a16 100644
---- a/arch/s390/include/asm/archrandom.h
-+++ b/arch/s390/include/asm/archrandom.h
-@@ -21,18 +21,6 @@ extern atomic64_t s390_arch_random_counter;
- 
- bool s390_arch_random_generate(u8 *buf, unsigned int nbytes);
- 
+diff --git a/include/linux/random.h b/include/linux/random.h
+index f189c927fdea..7fd0360908d2 100644
+--- a/include/linux/random.h
++++ b/include/linux/random.h
+@@ -175,10 +175,6 @@ static inline bool arch_get_random_int(unsigned int *v)
+ {
+ 	return 0;
+ }
 -static inline bool arch_has_random(void)
 -{
--	return false;
+-	return 0;
 -}
--
+ static inline bool arch_get_random_seed_long(unsigned long *v)
+ {
+ 	return 0;
+@@ -187,10 +183,6 @@ static inline bool arch_get_random_seed_int(unsigned int *v)
+ {
+ 	return 0;
+ }
 -static inline bool arch_has_random_seed(void)
 -{
--	if (static_branch_likely(&s390_arch_random_available))
--		return true;
--	return false;
+-	return 0;
 -}
--
- static inline bool arch_get_random_long(unsigned long *v)
- {
- 	return false;
+ #endif
+ 
+ /* Pseudo random number generator from numerical recipes. */
 -- 
 2.17.1
 
