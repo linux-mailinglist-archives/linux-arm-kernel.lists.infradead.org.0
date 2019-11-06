@@ -2,87 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8E79F1A3C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 16:42:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 175F9F1A36
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 16:41:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q/B3ncnD6uQeZzce1Gy2rRbeblwKGgZQW9HKK+9RIe0=; b=m+pFc2zw4yRjN4
-	FP0Vk6Q78zgNC3MOt0ruQ+Hh1F5zdg9ACV8t/aU9Ifih/BRknjM2L+9e7NqISj7RWiJqTiq4TnPaV
-	p50o6srqdmFUuPIXlfm9BGCs9kCPkimIyhx/P2FYZlZDgk5lzXIqDeTmf4GHqoQFa+kAYb2YzOvbG
-	de2xXgO3z7+9zrYc5+c6ojhb7/FJkHREaGS6eAv7iZZs3C8xvO37vaR5lg+b5Do0CHE2W4xbWL4It
-	DlROizDNzgSsaG4G/UsRHxVpyTuMnIRdyNCB4rRgF9mraM3Gz7UBRkTJnZxdtYUdhLsYWMgDWLK/r
-	Z0g7J/euFc5zeeq/+YOQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4Unr9LmI0mRFWkAJGMoSWspY2F8hF7semdWZvrHG0xc=; b=hgALQ62w/4gZeL
+	mL1M4MXcBcIGx34JCoaf2qJ/cW7RhC84B3jx45RFZJlykNSjHaTHsFeVvt+vfxeEXxtHQQ9lS06u3
+	EQ1eIMZ8igMHXNEaNqkN1J9n8F6GwgOhYf7rU65btJkEGyd++xvk5D/qsRDgL1JJ2RqysNGF8b7Dn
+	0y0POyuuTyj088Km7OqevWjiUMe7/Xft4oXnDiqCYoAB0hsTuf99ZKV9/shwqmG8qQAOdTtejmCvm
+	BJk+SBOCd0TirWz72S8fHbG+1RbCzGvtc5zjUkOy/8xmYowgIIu3m8FvUGohxtQuLOSyOXomKlhjz
+	M6dqa6dllP/YCClmvyWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSNS2-00015v-1b; Wed, 06 Nov 2019 15:42:30 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSNRv-00015A-DS
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 15:42:24 +0000
-Received: by mail-lj1-x241.google.com with SMTP id q2so20097157ljg.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 Nov 2019 07:42:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=9jXG6bZDYKPfNtC0/1d2Ai+KRGjpbhwAlT7QOJRQNmY=;
- b=dj67ZwgbjbMBznzK1iB433/HFDv0v74ESHEDFVCv/BFBLIe5H8RpuerRswHyhLYqRq
- u2a0/psUn/ZUrmnQRqz1jULEMbB0ZLjxaqHQQxwm/roXjBIZVO9tS60xAn+Omdf7iQZ9
- tb9GLHR9/d85rIvJELUySNrMvJfqQyC4AtutZ/Dg2HfLKAJcWYmkGrhAChg8YWu7frTb
- N3y7UQSkTGRHDVyEYZ1oQAzCqbVcRbLTTYkUHZmk7XArjMdTsREcMrUj06AqUxVei0sv
- 8Kamzn71UvNo99tGoQnqBRDsdVl3a/1PspaUqrcHJQwnbq3joqiLv2k80Y9g5HEOEsin
- g/mQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9jXG6bZDYKPfNtC0/1d2Ai+KRGjpbhwAlT7QOJRQNmY=;
- b=HEsYjAPgaooyof2O5erGw6QqF46yAnb9HnJ9XApmP8Sah5S21kveXm+1SW2+OYuW8y
- IELHW3gnN8FxzmjbFERJymLYh4dg3uN8ZHS/t/OdG0IVpTYUA1TUjFHGwuvB62tazAQc
- m5NObPyZjPo1o6Aq17eel64LjyEq3xjkaD1g/mRV58+SRNNcgbZ3txj2bXmWllxnl5gn
- XUFSE2+pALt0V7n4b0z/i8zx1EljE+ps49CRMcQxoXyFkhd1kw6KI4lM87s3eKONU4u1
- UTs8HR2HF/Af8UpgQ2wB7DAVbTsTEYaCwncZMUCGdunP9qe0PWHHOhM2ZmMkpibDadxW
- MyNQ==
-X-Gm-Message-State: APjAAAUW7jdjoZ009/agpQjxUGe+jNVkiKvv0+TW1xZM7wtEHcI0gOY6
- KPzdT2EwGJ+olDjcACDO9RMTEA==
-X-Google-Smtp-Source: APXvYqz69irX5muxQriV8JTcckFg53O7A25ptmixa7PFa4m+W2Ni5LJitXfbgWMt4qjub87007uUhg==
-X-Received: by 2002:a2e:3a09:: with SMTP id h9mr2526396lja.33.1573054940341;
- Wed, 06 Nov 2019 07:42:20 -0800 (PST)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id s11sm5799063ljo.42.2019.11.06.07.42.18
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 06 Nov 2019 07:42:18 -0800 (PST)
-Date: Wed, 6 Nov 2019 07:41:05 -0800
-From: Olof Johansson <olof@lixom.net>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [GIT PULL] Allwinner Fixes for 5.4, take 3
-Message-ID: <20191106154105.ntwb75qwenxxlazl@localhost>
-References: <45023fa6-b2bc-4934-b85c-3e7841dde0b1.lettre@localhost>
+	id 1iSNQt-0000nz-PI; Wed, 06 Nov 2019 15:41:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSNQl-0000nR-Bd
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 15:41:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DD67046A;
+ Wed,  6 Nov 2019 07:41:09 -0800 (PST)
+Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1B38D3F71A;
+ Wed,  6 Nov 2019 07:41:08 -0800 (PST)
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: Do not mask out PTE_RDONLY in pte_same()
+Date: Wed,  6 Nov 2019 15:41:05 +0000
+Message-Id: <20191106154105.15176-1-catalin.marinas@arm.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <45023fa6-b2bc-4934-b85c-3e7841dde0b1.lettre@localhost>
-User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_074223_499592_804CBBA1 
-X-CRM114-Status: GOOD (  12.93  )
+X-CRM114-CacheID: sfid-20191106_074111_440175_BD0143AD 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,31 +59,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: soc@kernel.org, arm@kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: John Stultz <john.stultz@linaro.org>, Will Deacon <will@kernel.org>,
+ Steve Capper <steve.capper@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 06, 2019 at 01:14:23PM +0100, Maxime Ripard wrote:
-> Hi,
-> 
-> Please pull the following changes for the current release. While this
-> is a patch that adds a node (and thus a feature), that node was
-> removed in a previous fixes PR since no interrupts were working on the
-> PMU. This has been figured out now, so the net outcome of those two
-> patches are making a device that wasn't functional functional, hence
-> why it's in a fixes PR.
+Following commit 73e86cb03cf2 ("arm64: Move PTE_RDONLY bit handling out
+of set_pte_at()"), the PTE_RDONLY bit is no longer managed by
+set_pte_at() but built into the PAGE_* attribute definitions.
+Consequently, pte_same() must include this bit when checking two PTEs
+for equality.
 
-Hi,
+Remove the arm64-specific pte_same() function, practically reverting
+commit 747a70e60b72 ("arm64: Fix copy-on-write referencing in HugeTLB")
 
-This doesn't fix a regression, so I've queued it up for 5.5.
+Fixes: 73e86cb03cf2 ("arm64: Move PTE_RDONLY bit handling out of set_pte_at()")
+Cc: <stable@vger.kernel.org> # 4.14.x-
+Cc: Will Deacon <will@kernel.org>
+Cc: Steve Capper <steve.capper@arm.com>
+Reported-by: John Stultz <john.stultz@linaro.org>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+---
 
+Steve,
 
-Thanks,
+Could you please check that the original problem fixed by commit
+747a70e60b72 no longer exists after reverting it in 4.14 onwards?
 
--Olof
+Thanks.
+
+ arch/arm64/include/asm/pgtable.h | 17 -----------------
+ 1 file changed, 17 deletions(-)
+
+diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+index 5716fe86e7b9..5d15b4735a0e 100644
+--- a/arch/arm64/include/asm/pgtable.h
++++ b/arch/arm64/include/asm/pgtable.h
+@@ -283,23 +283,6 @@ static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
+ 	set_pte(ptep, pte);
+ }
+ 
+-#define __HAVE_ARCH_PTE_SAME
+-static inline int pte_same(pte_t pte_a, pte_t pte_b)
+-{
+-	pteval_t lhs, rhs;
+-
+-	lhs = pte_val(pte_a);
+-	rhs = pte_val(pte_b);
+-
+-	if (pte_present(pte_a))
+-		lhs &= ~PTE_RDONLY;
+-
+-	if (pte_present(pte_b))
+-		rhs &= ~PTE_RDONLY;
+-
+-	return (lhs == rhs);
+-}
+-
+ /*
+  * Huge pte definitions.
+  */
 
 _______________________________________________
 linux-arm-kernel mailing list
