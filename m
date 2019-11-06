@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77392F130A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 10:58:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64606F1321
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 11:00:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=42Ej5Yr3ZyzXGj+sizQwfiNkIgY1TRBzF2YCBLa5Bzs=; b=U9bs4LPzL81YGE
-	KRiArHP9HyQorFR8EIVRQ4mJMtvrbY+XEHzyFTd+u2RpZbcNT/XaQzBe6Xb+tgV1CSx8/dT/8W3n4
-	VugoXxDtQdcHlWOCPz0sSpWyUdNYc7CFHq5NoAX8qoBJyNm+7yHyTZz4FIup7lojTtWbuuEhGNG2G
-	tkbaXjxF1Te6r4BS5h8VGCVxllLwzmuPXyOi9trV1/vrOIcWAof1Ju1Bfee84NErLlCwg2C+N2DsV
-	LqtXqC4cBAd/gSv/lSMSLCm+LwWNRTgbFbAuc6TEnjkqWZP1AxQb6EBOwM9NKf+02JnEDxlBMBqeV
-	XGq81F+1Gpb2IG5P86hw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uyUqov7cGQmKYBBoAMuIGZAxR9QmByyp2zw2arU0sfk=; b=Bx3WdctB+q8C8s
+	y1ppRAt0FRW37K+cCqk15dapkJ8pUyZ2OK9ynHorJ2Jir7DEXicBxyWLEU2NWURL3rO02kToHVlXO
+	CXsvFLUWZlXZfKrJZddMSoPIDKleUzIufJXAH4zw40iNnUfxGXyBBJDtF6L3Vruh3Ay82+VcYDAkX
+	wyvgF4ecqvKxPh34eqaSbk6ihqMF2E+G8og7jEP8+YEDIhSlGS7LNxVOG6pWw+OLgLcKMmgN8ABPS
+	9YoaZrviC4RDnHwJ4gW57mXJyMzeyVQj2oy3sO3Prk7z7VKege9mWSRSd1uHzXvYdK4E5ytOkcXvF
+	n6BeXDtOUgGmm5vlp30g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSI4x-0003da-3H; Wed, 06 Nov 2019 09:58:19 +0000
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSI4q-0003dA-BR; Wed, 06 Nov 2019 09:58:12 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 6FB11301A79;
- Wed,  6 Nov 2019 10:57:06 +0100 (CET)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 7142529ABB5FD; Wed,  6 Nov 2019 10:58:10 +0100 (CET)
-Date: Wed, 6 Nov 2019 10:58:10 +0100
-From: Peter Zijlstra <peterz@infradead.org>
-To: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>
-Subject: Re: [PATCH 1/2] perf/core: Adding capability to disable PMUs event
- multiplexing
-Message-ID: <20191106095810.GK5671@hirez.programming.kicks-ass.net>
-References: <1573002091-9744-1-git-send-email-gkulkarni@marvell.com>
- <1573002091-9744-2-git-send-email-gkulkarni@marvell.com>
- <20191106094032.GV4131@hirez.programming.kicks-ass.net>
+	id 1iSI72-0005Ob-No; Wed, 06 Nov 2019 10:00:28 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSI6e-0003yg-UO; Wed, 06 Nov 2019 10:00:06 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 42CCAAFE3;
+ Wed,  6 Nov 2019 10:00:01 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: catalin.marinas@arm.com,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2 0/2] arm64: Fix CMA/crashkernel reservation
+Date: Wed,  6 Nov 2019 10:59:43 +0100
+Message-Id: <20191106095945.22933-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191106094032.GV4131@hirez.programming.kicks-ass.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191106_020005_145197_369FDA68 
+X-CRM114-Status: UNSURE (   8.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -55,37 +58,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "corbet@lwn.net" <corbet@lwn.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "gklkml16@gmail.com" <gklkml16@gmail.com>,
- "mingo@redhat.com" <mingo@redhat.com>, "will@kernel.org" <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 06, 2019 at 10:40:32AM +0100, Peter Zijlstra wrote:
-> On Wed, Nov 06, 2019 at 01:01:40AM +0000, Ganapatrao Prabhakerrao Kulkarni wrote:
-> > When PMUs are registered, perf core enables event multiplexing
-> > support by default. There is no provision for PMUs to disable
-> > event multiplexing, if PMUs want to disable due to unavoidable
-> > circumstances like hardware errata etc.
-> > 
-> > Adding PMU capability flag PERF_PMU_CAP_NO_MUX_EVENTS and support
-> > to allow PMUs to explicitly disable event multiplexing.
-> 
-> This doesn't make sense, multiplexing relies on nothing that normal
-> event scheduling doesn't also rely on.
-> 
-> Either you can schedule different sets of events, or you cannot.
+As pointed out by Qian Cai[1] the series enabling ZONE_DMA in arm64
+breaks CMA/crashkernel reservations on large devices, as it changed its
+default placement. After discussing it with Catalin Marinas we're
+restoring the old behavior.
 
-More specifically, how is a reschedule due to rotation any different
-than a reschedule due to context switch?
+The Raspberry Pi 4, being the only device that needs CMA and crashkernel
+in ZONE_DMA will explicitly do so trough it's device tree.
 
-Both cases we do a full reprogram of the PMU.
+[1] https://lkml.org/lkml/2019/10/21/725
+
+---
+
+Changes since v1:
+  - Move CMA area registration into bcm2711.dtsi
+
+Nicolas Saenz Julienne (2):
+  ARM: dts: bcm2711: force CMA into first GB of memory
+  arm64: mm: reserve CMA and crashkernel in ZONE_DMA32
+
+ arch/arm/boot/dts/bcm2711.dtsi | 20 ++++++++++++++++++++
+ arch/arm64/mm/init.c           |  4 ++--
+ 2 files changed, 22 insertions(+), 2 deletions(-)
+
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
