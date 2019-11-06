@@ -2,60 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3D1DF13EE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 11:28:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57A55F1436
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 11:45:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=MwK8e2FLRWVsu2kCzTe7rD6owqxpJfZ0UIJMgcfungc=; b=TklRoZjcvqHzV9DiRiYkW5ItMS
-	Q3jRjO5RglKxbEznKWLzhr05Ssahwocu/uCKGokpqitezua0jdx4046+gRNVD1xvvI6zppwgbaEIm
-	9rpn8yrGD72Oo7eDMNbPgFhcP0GH8O7ZyfUA1vLjKfC/UOKze69fBJ28fD1RXgNIvgeYJwmDoJt/x
-	/Q6/dxla76OGob3fS9yz9D5Dr4zxR3/JYtX5lqDr/CIjf8muzAVGs7nk4yFeZNSYJrNdxn+6ogh3B
-	seZUnbsdtEFqs0MmETgi14uF8UdCVJjF4DL/j+sdH9fw3uJp/CSUpXXK8tPEuI4aoyWKVI4V86CQq
-	0TnkkS3w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WpEc/y3u07B6NjLPGwfZKWiNp/g3AgNTzu+oYLMW0lY=; b=dufYGBCr8/V6to
+	Wokg9EWgl1ZQUy0/VhKNhWmFylrrm5Kt1NOHR091YOgaUVrkH4/dqI0SbQZjgnHrw5bMSPz7JtNmL
+	67+00Lo85qy4VNojhA+elu5u9jopyalnEswgrgtesSa1RqSydB8ucDrNZpVKgUfLuAyxhYXavnbpz
+	imBnvC9GkzfaBbofeg9njh0sBWA09HN+DZ81iNbdV2SWEXJvW9YkgOKo8bXXQGTkTsOW+gNjj+39G
+	juDduCre2tIrcMwBowaTGSJsiVFx0k42YPpa93VgZxefg7AKXOcmBhgvn3SV1qu6Hzr70FBxdj4Vw
+	uHheqDpbblamDVS/UCnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSIYI-0004IB-Bt; Wed, 06 Nov 2019 10:28:38 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSIWb-0002mX-4i
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 10:26:55 +0000
-Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 06 Nov 2019 19:26:52 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id C0080605F8;
- Wed,  6 Nov 2019 19:26:52 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Wed, 6 Nov 2019 19:26:59 +0900
-Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 318481A04FC;
- Wed,  6 Nov 2019 19:26:52 +0900 (JST)
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>
-Subject: [PATCH 6/6] phy: uniphier-pcie: Add legacy SoC support for Pro5
-Date: Wed,  6 Nov 2019 19:26:19 +0900
-Message-Id: <1573035979-32200-7-git-send-email-hayashi.kunihiko@socionext.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1573035979-32200-1-git-send-email-hayashi.kunihiko@socionext.com>
-References: <1573035979-32200-1-git-send-email-hayashi.kunihiko@socionext.com>
+	id 1iSIoM-0002Kb-IC; Wed, 06 Nov 2019 10:45:14 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSIoB-0001Db-1z
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 10:45:06 +0000
+Received: by mail-wr1-x441.google.com with SMTP id f2so16228669wrs.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 Nov 2019 02:45:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ho0IuXnlLSu0S9dl4tyqWJ4wOPukxzFH+rPw8w9IP3U=;
+ b=0Djt5Com4Nw6nawSJY2BCWzsF4s4Xk8wxOoGPh18FDbcUJ4GQQiII9UXR5UWrhl9Ho
+ 1+hy5If3cGGw6wPamrAt2Ck9f3cdm537ILzhsx/nhU40El7Bti+8EM3DtzCwD0lcdJVq
+ FsOzwh1Lcgt8dIoSZ2KacYGB0OmM198fRKZq1pTGk9mqNz1pKhSmpGx/4skJR6qKeQH/
+ q6yJAgMA1lNxdvJ5c3cg8pzFOPAs5SAPbUukBlMw5+trLF5gSTdqtRrRu8ROe22nAZXh
+ 8yF6WN0msw88arX4YfEa+tQBnzkjmrmiQ2cIKVPbH6zBTa2Sz+d5UUDMWbYvrs4kVPHw
+ y1vQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ho0IuXnlLSu0S9dl4tyqWJ4wOPukxzFH+rPw8w9IP3U=;
+ b=n+IAEtcVtrjItuHDzw/segs15bbpURxvq37LBIdupEyEdBmrh3rvBmTJXYCcuEqp/B
+ TlepPrhLZ6fUM3MuwlacQI6w+EVUqL6T+ygVHS5c+LTXtQPSDEuzz0kVH8ODB/ZndXGU
+ 1q1SF6ffXm6jc+RpFbqCkYSM7B0I7QLJIoZOFSKxxEikSEvzV5F9YeiYPmja9B80gifp
+ UcfyrVcYS4dTfkvfximk+vEKUqqP5X0AhgTHyAgTG6pytPscyBs7UVw7VrmvRtgeBQmS
+ 6ahRSo1QIyYlM4kt6nVQw6HumiAu4/vpfHapA3W7TMHsn1lQb4xA/LcCWiSut8lEjAdF
+ ZyrQ==
+X-Gm-Message-State: APjAAAWJexcjplWun28Sv706nKqM8q95iQK1GEiDcJznuPlLTcHQ8FX/
+ /vSME5GT7Zjt5WYDPDZq9Y0QmQ==
+X-Google-Smtp-Source: APXvYqxmFcDntelzvf5oc2kIZGTaA8RcxUIN9ppLG7GpMdMZTeYZT5cyAcYce2korwDEVDossgvHyA==
+X-Received: by 2002:adf:fe90:: with SMTP id l16mr1948950wrr.81.1573037100615; 
+ Wed, 06 Nov 2019 02:45:00 -0800 (PST)
+Received: from bender.baylibre.local
+ (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id u187sm2483023wme.15.2019.11.06.02.44.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 06 Nov 2019 02:45:00 -0800 (PST)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: robh+dt@kernel.org
+Subject: [PATCH v2] dt-bindings: usb: dwc3: Move Amlogic G12A DWC3 Glue
+ Bindings to YAML schemas
+Date: Wed,  6 Nov 2019 11:44:58 +0100
+Message-Id: <20191106104458.23698-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_022653_585563_6DD46887 
-X-CRM114-Status: GOOD (  18.55  )
+X-CRM114-CacheID: sfid-20191106_024503_135777_379AF2C3 
+X-CRM114-Status: GOOD (  18.06  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.248.49.38 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,190 +93,263 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-kernel@vger.kernel.org,
- Jassi Brar <jaswinder.singh@linaro.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add legacy SoC support that needs to manage gio clock and reset and to skip
-setting unimplemented phy parameters. This supports Pro5.
+Now that we have the DT validation in place, let's convert the device tree
+bindings for the Amlogic G12A DWC3 Glue Bindings over to a YAML schemas,
+the AXG and GXL glue bindings will be converted later.
 
-This specifies only 1 port use because Pro5 doesn't set it in the power-on
-sequence.
-
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- drivers/phy/socionext/phy-uniphier-pcie.c | 83 +++++++++++++++++++++++++++----
- 1 file changed, 72 insertions(+), 11 deletions(-)
+Changes since v1:
+- fixed typo in description
+- removed dr-mode definition in favor of "true"
 
-diff --git a/drivers/phy/socionext/phy-uniphier-pcie.c b/drivers/phy/socionext/phy-uniphier-pcie.c
-index 25d1d9d..cd17c70 100644
---- a/drivers/phy/socionext/phy-uniphier-pcie.c
-+++ b/drivers/phy/socionext/phy-uniphier-pcie.c
-@@ -19,6 +19,10 @@
- #include <linux/resource.h>
- 
- /* PHY */
-+#define PCL_PHY_CLKCTRL		0x0000
-+#define PORT_SEL_MASK		GENMASK(11, 9)
-+#define PORT_SEL_1		FIELD_PREP(PORT_SEL_MASK, 1)
-+
- #define PCL_PHY_TEST_I		0x2000
- #define PCL_PHY_TEST_O		0x2004
- #define TESTI_DAT_MASK		GENMASK(13, 6)
-@@ -45,13 +49,14 @@
- struct uniphier_pciephy_priv {
- 	void __iomem *base;
- 	struct device *dev;
--	struct clk *clk;
--	struct reset_control *rst;
-+	struct clk *clk, *clk_gio;
-+	struct reset_control *rst, *rst_gio;
- 	const struct uniphier_pciephy_soc_data *data;
- };
- 
- struct uniphier_pciephy_soc_data {
- 	bool has_syscon;
-+	bool is_legacy;
- };
- 
- static void uniphier_pciephy_testio_write(struct uniphier_pciephy_priv *priv,
-@@ -111,16 +116,35 @@ static void uniphier_pciephy_deassert(struct uniphier_pciephy_priv *priv)
- static int uniphier_pciephy_init(struct phy *phy)
- {
- 	struct uniphier_pciephy_priv *priv = phy_get_drvdata(phy);
-+	u32 val;
- 	int ret;
- 
- 	ret = clk_prepare_enable(priv->clk);
- 	if (ret)
- 		return ret;
- 
--	ret = reset_control_deassert(priv->rst);
-+	ret = clk_prepare_enable(priv->clk_gio);
- 	if (ret)
- 		goto out_clk_disable;
- 
-+	ret = reset_control_deassert(priv->rst);
-+	if (ret)
-+		goto out_clk_gio_disable;
-+
-+	ret = reset_control_deassert(priv->rst_gio);
-+	if (ret)
-+		goto out_rst_assert;
-+
-+	/* support only 1 port */
-+	val = readl(priv->base + PCL_PHY_CLKCTRL);
-+	val &= ~PORT_SEL_MASK;
-+	val |= PORT_SEL_1;
-+	writel(val, priv->base + PCL_PHY_CLKCTRL);
-+
-+	/* legacy controller doesn't have phy_reset and parameters */
-+	if (priv->data->is_legacy)
-+		return 0;
-+
- 	uniphier_pciephy_set_param(priv, PCL_PHY_R00,
- 				   RX_EQ_ADJ_EN, RX_EQ_ADJ_EN);
- 	uniphier_pciephy_set_param(priv, PCL_PHY_R06, RX_EQ_ADJ,
-@@ -134,6 +158,10 @@ static int uniphier_pciephy_init(struct phy *phy)
- 
- 	return 0;
- 
-+out_rst_assert:
-+	reset_control_assert(priv->rst);
-+out_clk_gio_disable:
-+	clk_disable_unprepare(priv->clk_gio);
- out_clk_disable:
- 	clk_disable_unprepare(priv->clk);
- 
-@@ -144,8 +172,11 @@ static int uniphier_pciephy_exit(struct phy *phy)
- {
- 	struct uniphier_pciephy_priv *priv = phy_get_drvdata(phy);
- 
--	uniphier_pciephy_assert(priv);
-+	if (!priv->data->is_legacy)
-+		uniphier_pciephy_assert(priv);
-+	reset_control_assert(priv->rst_gio);
- 	reset_control_assert(priv->rst);
-+	clk_disable_unprepare(priv->clk_gio);
- 	clk_disable_unprepare(priv->clk);
- 
- 	return 0;
-@@ -179,13 +210,32 @@ static int uniphier_pciephy_probe(struct platform_device *pdev)
- 	if (IS_ERR(priv->base))
- 		return PTR_ERR(priv->base);
- 
--	priv->clk = devm_clk_get(dev, NULL);
--	if (IS_ERR(priv->clk))
--		return PTR_ERR(priv->clk);
+ .../devicetree/bindings/usb/amlogic,dwc3.txt  |  88 ------------
+ .../usb/amlogic,meson-g12a-usb-ctrl.yaml      | 128 ++++++++++++++++++
+ 2 files changed, 128 insertions(+), 88 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
+
+diff --git a/Documentation/devicetree/bindings/usb/amlogic,dwc3.txt b/Documentation/devicetree/bindings/usb/amlogic,dwc3.txt
+index b9f04e617eb7..9a8b631904fd 100644
+--- a/Documentation/devicetree/bindings/usb/amlogic,dwc3.txt
++++ b/Documentation/devicetree/bindings/usb/amlogic,dwc3.txt
+@@ -40,91 +40,3 @@ Example device nodes:
+ 				phy-names = "usb2-phy", "usb3-phy";
+ 			};
+ 		};
 -
--	priv->rst = devm_reset_control_get_shared(dev, NULL);
--	if (IS_ERR(priv->rst))
--		return PTR_ERR(priv->rst);
-+	if (priv->data->is_legacy) {
-+		priv->clk_gio = devm_clk_get(dev, "gio");
-+		if (IS_ERR(priv->clk_gio))
-+			return PTR_ERR(priv->clk_gio);
+-Amlogic Meson G12A DWC3 USB SoC Controller Glue
+-
+-The Amlogic G12A embeds a DWC3 USB IP Core configured for USB2 and USB3
+-in host-only mode, and a DWC2 IP Core configured for USB2 peripheral mode
+-only.
+-
+-A glue connects the DWC3 core to USB2 PHYs and optionnaly to an USB3 PHY.
+-
+-One of the USB2 PHY can be re-routed in peripheral mode to a DWC2 USB IP.
+-
+-The DWC3 Glue controls the PHY routing and power, an interrupt line is
+-connected to the Glue to serve as OTG ID change detection.
+-
+-Required properties:
+-- compatible:	Should be "amlogic,meson-g12a-usb-ctrl"
+-- clocks:	a handle for the "USB" clock
+-- resets:	a handle for the shared "USB" reset line
+-- reg:		The base address and length of the registers
+-- interrupts:	the interrupt specifier for the OTG detection
+-- phys: 	handle to used PHYs on the system
+-	- a <0> phandle can be used if a PHY is not used
+-- phy-names:	names of the used PHYs on the system :
+-	- "usb2-phy0" for USB2 PHY0 if USBHOST_A port is used
+-	- "usb2-phy1" for USB2 PHY1 if USBOTG_B port is used
+-	- "usb3-phy0" for USB3 PHY if USB3_0 is used
+-- dr_mode:	should be "host", "peripheral", or "otg" depending on
+-	the usage and configuration of the OTG Capable port.
+-	- "host" and "peripheral" means a fixed Host or Device only connection
+-	- "otg" means the port can be used as both Host or Device and
+-	  be switched automatically using the OTG ID pin.
+-
+-Optional properties:
+-- vbus-supply:	should be a phandle to the regulator controlling the VBUS
+-		power supply when used in OTG switchable mode
+-
+-Required child nodes:
+-
+-A child node must exist to represent the core DWC3 IP block. The name of
+-the node is not important. The content of the node is defined in dwc3.txt.
+-
+-A child node must exist to represent the core DWC2 IP block. The name of
+-the node is not important. The content of the node is defined in dwc2.txt.
+-
+-PHY documentation is provided in the following places:
+-- Documentation/devicetree/bindings/phy/meson-g12a-usb2-phy.txt
+-- Documentation/devicetree/bindings/phy/meson-g12a-usb3-pcie-phy.txt
+-
+-Example device nodes:
+-	usb: usb@ffe09000 {
+-			compatible = "amlogic,meson-g12a-usb-ctrl";
+-			reg = <0x0 0xffe09000 0x0 0xa0>;
+-			interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
+-			#address-cells = <2>;
+-			#size-cells = <2>;
+-			ranges;
+-
+-			clocks = <&clkc CLKID_USB>;
+-			resets = <&reset RESET_USB>;
+-
+-			dr_mode = "otg";
+-
+-			phys = <&usb2_phy0>, <&usb2_phy1>,
+-			       <&usb3_pcie_phy PHY_TYPE_USB3>;
+-			phy-names = "usb2-phy0", "usb2-phy1", "usb3-phy0";
+-
+-			dwc2: usb@ff400000 {
+-				compatible = "amlogic,meson-g12a-usb", "snps,dwc2";
+-				reg = <0x0 0xff400000 0x0 0x40000>;
+-				interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
+-				clocks = <&clkc CLKID_USB1_DDR_BRIDGE>;
+-				clock-names = "ddr";
+-				phys = <&usb2_phy1>;
+-				dr_mode = "peripheral";
+-				g-rx-fifo-size = <192>;
+-				g-np-tx-fifo-size = <128>;
+-				g-tx-fifo-size = <128 128 16 16 16>;
+-			};
+-
+-			dwc3: usb@ff500000 {
+-				compatible = "snps,dwc3";
+-				reg = <0x0 0xff500000 0x0 0x100000>;
+-				interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
+-				dr_mode = "host";
+-				snps,dis_u2_susphy_quirk;
+-				snps,quirk-frame-length-adjustment;
+-			};
+-	};
+diff --git a/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml b/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
+new file mode 100644
+index 000000000000..2b2dae2e6b7f
+--- /dev/null
++++ b/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
+@@ -0,0 +1,128 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++# Copyright 2019 BayLibre, SAS
++%YAML 1.2
++---
++$id: "http://devicetree.org/schemas/usb/amlogic,meson-g12a-usb-ctrl.yaml#"
++$schema: "http://devicetree.org/meta-schemas/core.yaml#"
 +
-+		priv->rst_gio =
-+			devm_reset_control_get_shared(dev, "gio");
-+		if (IS_ERR(priv->rst_gio))
-+			return PTR_ERR(priv->rst_gio);
++title: Amlogic Meson G12A DWC3 USB SoC Controller Glue
 +
-+		priv->clk = devm_clk_get(dev, "link");
-+		if (IS_ERR(priv->clk))
-+			return PTR_ERR(priv->clk);
++maintainers:
++  - Neil Armstrong <narmstrong@baylibre.com>
 +
-+		priv->rst = devm_reset_control_get_shared(dev, "link");
-+		if (IS_ERR(priv->rst))
-+			return PTR_ERR(priv->rst);
-+	} else {
-+		priv->clk = devm_clk_get(dev, NULL);
-+		if (IS_ERR(priv->clk))
-+			return PTR_ERR(priv->clk);
++description: |
++  The Amlogic G12A embeds a DWC3 USB IP Core configured for USB2 and USB3
++  in host-only mode, and a DWC2 IP Core configured for USB2 peripheral mode
++  only.
 +
-+		priv->rst = devm_reset_control_get_shared(dev, NULL);
-+		if (IS_ERR(priv->rst))
-+			return PTR_ERR(priv->rst);
-+	}
- 
- 	phy = devm_phy_create(dev, dev->of_node, &uniphier_pciephy_ops);
- 	if (IS_ERR(phy))
-@@ -203,16 +253,27 @@ static int uniphier_pciephy_probe(struct platform_device *pdev)
- 	return PTR_ERR_OR_ZERO(phy_provider);
- }
- 
-+static const struct uniphier_pciephy_soc_data uniphier_pro5_data = {
-+	.has_syscon = false,
-+	.is_legacy = true,
-+};
++  A glue connects the DWC3 core to USB2 PHYs and optionally to an USB3 PHY.
 +
- static const struct uniphier_pciephy_soc_data uniphier_ld20_data = {
- 	.has_syscon = true,
-+	.is_legacy = false,
- };
- 
- static const struct uniphier_pciephy_soc_data uniphier_pxs3_data = {
- 	.has_syscon = false,
-+	.is_legacy = false,
- };
- 
- static const struct of_device_id uniphier_pciephy_match[] = {
- 	{
-+		.compatible = "socionext,uniphier-pro5-pcie-phy",
-+		.data = &uniphier_pro5_data,
-+	},
-+	{
- 		.compatible = "socionext,uniphier-ld20-pcie-phy",
- 		.data = &uniphier_ld20_data,
- 	},
++  One of the USB2 PHYs can be re-routed in peripheral mode to a DWC2 USB IP.
++
++  The DWC3 Glue controls the PHY routing and power, an interrupt line is
++  connected to the Glue to serve as OTG ID change detection.
++
++properties:
++  compatible:
++    enum:
++      - amlogic,meson-g12a-usb-ctrl
++
++  ranges: true
++
++  "#address-cells":
++    enum: [ 1, 2 ]
++
++  "#size-cells":
++    enum: [ 1, 2 ]
++
++  clocks:
++    minItems: 1
++
++  resets:
++    minItems: 1
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  phy-names:
++    items:
++      - const: usb2-phy0 # USB2 PHY0 if USBHOST_A port is used
++      - const: usb2-phy1 # USB2 PHY1 if USBOTG_B port is used
++      - const: usb3-phy0 # USB3 PHY if USB3_0 is used
++
++  phys:
++    minItems: 1
++    maxItems: 3
++
++  dr_mode: true
++
++  power-domains:
++    maxItems: 1
++
++  vbus-supply:
++    description: VBUS power supply when used in OTG switchable mode
++    maxItems: 1
++
++patternProperties:
++  "^usb@[0-9a-f]+$":
++    type: object
++
++additionalProperties: false
++
++required:
++  - compatible
++  - "#address-cells"
++  - "#size-cells"
++  - ranges
++  - clocks
++  - resets
++  - reg
++  - interrupts
++  - phy-names
++  - phys
++  - dr_mode
++
++examples:
++  - |
++    usb: usb@ffe09000 {
++          compatible = "amlogic,meson-g12a-usb-ctrl";
++          reg = <0x0 0xffe09000 0x0 0xa0>;
++          interrupts = <16>;
++          #address-cells = <1>;
++          #size-cells = <1>;
++          ranges;
++
++          clocks = <&clkc_usb>;
++          resets = <&reset_usb>;
++
++          dr_mode = "otg";
++
++          phys = <&usb2_phy0>, <&usb2_phy1>, <&usb3_phy0>;
++          phy-names = "usb2-phy0", "usb2-phy1", "usb3-phy0";
++
++          dwc2: usb@ff400000 {
++              compatible = "amlogic,meson-g12a-usb", "snps,dwc2";
++              reg = <0xff400000 0x40000>;
++              interrupts = <31>;
++              clocks = <&clkc_usb1>;
++              clock-names = "ddr";
++              phys = <&usb2_phy1>;
++              dr_mode = "peripheral";
++              g-rx-fifo-size = <192>;
++              g-np-tx-fifo-size = <128>;
++              g-tx-fifo-size = <128 128 16 16 16>;
++          };
++
++          dwc3: usb@ff500000 {
++              compatible = "snps,dwc3";
++              reg = <0xff500000 0x100000>;
++              interrupts = <30>;
++              dr_mode = "host";
++              snps,dis_u2_susphy_quirk;
++              snps,quirk-frame-length-adjustment;
++          };
++    };
++
 -- 
-2.7.4
+2.22.0
 
 
 _______________________________________________
