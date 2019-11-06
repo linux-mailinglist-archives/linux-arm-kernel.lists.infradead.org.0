@@ -2,58 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC924F167B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 14:02:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92684F167E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 14:03:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ia7c5QttYuojFpduYWsJ/znPUCpCnwxf2MN1JxgAs1I=; b=sqxsXRAdUrv3X0
-	Rr55f0hwI6BD5zLjuaHiflyriRX2vVFe1MUYOYcylVJABauKUbhBHexKuD+ZthUgF+4NmByayaOdJ
-	vcnogcNY7+UeAa3uyQ+9xMVf7oH1hbwj3I9mNqX2e4D5EFPmoqnXrxFKWn/Rw+7ofKP658ftqZ+E1
-	/fV+YdFHcxF6X4j33WhIyn9y3hgLRrtYeGFC/Ctps/xKKqUkFxbVJBTFDsjRgejddjsEj1jEpMNki
-	LEI2al0TShO2qt7GdL7jJ0s7gtdQw8fDQT/lQWPyETwu6ylWgSTtgULqojvIdUtTleGO3VAw1IPRN
-	ajfKXvEKcwtrkNUxzfDQ==;
+	List-Owner; bh=H5M15zURBrDySxfgaH7tmx0S0UsXQvUbbGd1ScCGhIQ=; b=TI45c12KZPelkT
+	NIL8p+Z4WP+amGcDBJtODT6DAZekthPIiM9dYjz16YTlTeaS7HOVDZ204DCCNZm2VNs0LpXALQDqw
+	BVgtt1PbbQy8rGX6nsNPH2L+ouTT6OjQS4vS/JfKOLLTL8Mirnp9A8F8M985nFiM4wAW9Efoe8eGO
+	nNlbhYQYgS+/hM4kBZYbuRbSjkYh5iaY69r/AGfROlxuzHp7jERydN/Wb2r5iynqy7NHNIcNCw0zd
+	tGh6FC0vfprqB3jD/5lRhayv7ojd8zJ2ETaGs6cN4hUV1175NX1p4ewgz7E9o028qA+OrS7cFOh7g
+	akYIKODZybc1qax6OJVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSKxN-00014v-JZ; Wed, 06 Nov 2019 13:02:41 +0000
+	id 1iSKxl-0001RG-46; Wed, 06 Nov 2019 13:03:05 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSKxB-000134-PD
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 13:02:31 +0000
+ id 1iSKxC-000136-1N
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 13:02:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From
  :Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=e4ZJo1o41crkwDnqVFDEgG1ZP2ZGGvSyxm3T5I55f58=; b=HmVyIhHnLah8tDUC0nq6uh7rTY
- lHbFCVn1WT/VdK6nimFnFbbkI26GZR22fXdL0c6ezIU+sHiw3g7e6KxjgGMkBWJYp+c7hhjEc5/Hd
- cZTnPpcEhQWORDOjZaaBk1IgjUoZnSYJL24uBMmfc1BujKCRCEYCcGf0Nu/rbERl/PBI=;
+ bh=d24s9yKYK2Ti3h908D0MYpheIQstoAGndo4qvHtjlK0=; b=XGgGeIqfzQ3IBc9/Z8TKt8XQ4m
+ g3x+a8Xv5Kpp783FQ5x5eEb59hnMmJnzVBw6TuumnatHlaNyt7rKDLrDfxy8u5jPwBVABzVqRlblZ
+ VMsjuC4ckViqOUakKlX+yJGr2rGOpX7fKDp5AMDoDhwZery62Sh5+v6AnrBHTNN4bsEE=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iSKx8-0001TF-4v; Wed, 06 Nov 2019 13:02:26 +0000
+ id 1iSKx8-0001TE-1N; Wed, 06 Nov 2019 13:02:26 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 5F7EA2743193; Wed,  6 Nov 2019 13:02:25 +0000 (GMT)
+ id 6BD992743044; Wed,  6 Nov 2019 13:02:25 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH v7 2/4] arm64: Factor out checks for KASLR in KPTI code into
- separate function
-Date: Wed,  6 Nov 2019 13:00:50 +0000
-Message-Id: <20191106130052.10642-3-broonie@kernel.org>
+Subject: [PATCH v7 3/4] arm64: Don't use KPTI where we have E0PD
+Date: Wed,  6 Nov 2019 13:00:51 +0000
+Message-Id: <20191106130052.10642-4-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191106130052.10642-1-broonie@kernel.org>
 References: <20191106130052.10642-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_050229_813822_335E85B7 
-X-CRM114-Status: GOOD (  16.85  )
+X-CRM114-CacheID: sfid-20191106_050230_099663_BB7E59A5 
+X-CRM114-Status: GOOD (  14.01  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -85,112 +84,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for integrating E0PD support with KASLR factor out the
-checks for interaction between KASLR and KPTI done in boot context into
-a new function kaslr_requires_kpti(), in the process clarifying the
-distinction between what we do in boot context and what we do at
-runtime.
+Since E0PD is intended to fulfil the same role as KPTI we don't need to
+use KPTI on CPUs where E0PD is available, we can rely on E0PD instead.
+Change the check that forces KPTI on when KASLR is enabled to check for
+E0PD before doing so, CPUs with E0PD are not expected to be affected by
+meltdown so should not need to enable KPTI for other reasons.
+
+Since E0PD is a system capability we will still enable KPTI if any of
+the CPUs in the system lacks E0PD, this will rewrite any global mappings
+that were established in systems where some but not all CPUs support
+E0PD.  We may transiently have a mix of global and non-global mappings
+while booting since we use the local CPU when deciding if KPTI will be
+required prior to completing CPU enumeration but any global mappings
+will be converted to non-global ones when KPTI is applied.
+
+KPTI can still be forced on from the command line if required.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/include/asm/mmu.h   | 53 +++++++++++++++++++++++-----------
- arch/arm64/kernel/cpufeature.c |  2 +-
- 2 files changed, 37 insertions(+), 18 deletions(-)
+ arch/arm64/include/asm/mmu.h | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
 diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
-index f217e3292919..55e285fff262 100644
+index 55e285fff262..d61908bf4c9c 100644
 --- a/arch/arm64/include/asm/mmu.h
 +++ b/arch/arm64/include/asm/mmu.h
-@@ -35,10 +35,37 @@ static inline bool arm64_kernel_unmapped_at_el0(void)
- 	       cpus_have_const_cap(ARM64_UNMAP_KERNEL_AT_EL0);
- }
- 
--static inline bool arm64_kernel_use_ng_mappings(void)
-+static inline bool kaslr_requires_kpti(void)
+@@ -38,10 +38,21 @@ static inline bool arm64_kernel_unmapped_at_el0(void)
+ static inline bool kaslr_requires_kpti(void)
  {
  	bool tx1_bug;
++	u64 ftr;
  
-+	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
-+		return false;
-+
+ 	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
+ 		return false;
+ 
 +	/*
-+	 * Systems affected by Cavium erratum 24756 are incompatible
-+	 * with KPTI.
++	 * E0PD does a similar job to KPTI so can be used instead
++	 * where available.
 +	 */
-+	if (!IS_ENABLED(CONFIG_CAVIUM_ERRATUM_27456)) {
-+		tx1_bug = false;
-+#ifndef MODULE
-+	} else if (!static_branch_likely(&arm64_const_caps_ready)) {
-+		extern const struct midr_range cavium_erratum_27456_cpus[];
-+
-+		tx1_bug = is_midr_in_range_list(read_cpuid_id(),
-+						cavium_erratum_27456_cpus);
-+#endif
-+	} else {
-+		tx1_bug = __cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_27456);
++	if (IS_ENABLED(CONFIG_ARM64_E0PD)) {
++		ftr = read_sysreg_s(SYS_ID_AA64MMFR2_EL1);
++		if ((ftr >> ID_AA64MMFR2_E0PD_SHIFT) & 0xf)
++			return false;
 +	}
-+	if (tx1_bug)
-+		return false;
 +
-+	return kaslr_offset() > 0;
-+}
-+
-+static inline bool arm64_kernel_use_ng_mappings(void)
-+{
- 	/* What's a kpti? Use global mappings if we don't know. */
- 	if (!IS_ENABLED(CONFIG_UNMAP_KERNEL_AT_EL0))
- 		return false;
-@@ -52,29 +79,21 @@ static inline bool arm64_kernel_use_ng_mappings(void)
- 	if (arm64_kernel_unmapped_at_el0())
- 		return true;
- 
--	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
-+	/*
-+	 * Once we are far enough into boot for capabilities to be
-+	 * ready we will have confirmed if we are using non-global
-+	 * mappings so don't need to consider anything else here.
-+	 */
-+	if (static_branch_likely(&arm64_const_caps_ready))
- 		return false;
- 
  	/*
- 	 * KASLR is enabled so we're going to be enabling kpti on non-broken
- 	 * CPUs regardless of their susceptibility to Meltdown. Rather
- 	 * than force everybody to go through the G -> nG dance later on,
--	 * just put down non-global mappings from the beginning.
-+	 * just put down non-global mappings from the beginning
- 	 */
--	if (!IS_ENABLED(CONFIG_CAVIUM_ERRATUM_27456)) {
--		tx1_bug = false;
--#ifndef MODULE
--	} else if (!static_branch_likely(&arm64_const_caps_ready)) {
--		extern const struct midr_range cavium_erratum_27456_cpus[];
--
--		tx1_bug = is_midr_in_range_list(read_cpuid_id(),
--						cavium_erratum_27456_cpus);
--#endif
--	} else {
--		tx1_bug = __cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_27456);
--	}
--
--	return !tx1_bug && kaslr_offset() > 0;
-+	return kaslr_requires_kpti();
- }
- 
- typedef void (*bp_hardening_cb_t)(void);
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 2cf2b129ebb4..0d551af06421 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -1003,7 +1003,7 @@ static bool unmap_kernel_at_el0(const struct arm64_cpu_capabilities *entry,
- 	}
- 
- 	/* Useful for KASLR robustness */
--	if (IS_ENABLED(CONFIG_RANDOMIZE_BASE) && kaslr_offset() > 0) {
-+	if (kaslr_requires_kpti()) {
- 		if (!__kpti_forced) {
- 			str = "KASLR";
- 			__kpti_forced = 1;
+ 	 * Systems affected by Cavium erratum 24756 are incompatible
+ 	 * with KPTI.
 -- 
 2.20.1
 
