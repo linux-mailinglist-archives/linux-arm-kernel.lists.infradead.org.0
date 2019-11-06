@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85FF1F1EDB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 20:34:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CC10F1EDC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 20:34:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tIxR+SigskY4aoP4jgDfwNh1U8IAJzzdIPYhpsZkyNE=; b=Y73
-	6O8sX2aeci6b+q8Wzz0aW23fSWNdSz7hZz4p14I3MhO0fWTynhj53rpJqQ1QJxv7T79Ia7jUIqrbu
-	/PE3yYsbXjOPaEhsiX2FgVOAFkkVx5SAAZaPos9/nxiYQbt9iGRkIPIrrp+EZ3KHtPJz25W7qWVRv
-	KQqLWNivVhcsQf6mtWlFUt/Rly5lVKqDEIJQRb8kAZnY13lKji44fFFItkYycrysA0uX98chV31r7
-	zuZWEiZ0kPpkPeMpToYL/4eED3pOdpaTc9CRYla8YPCvhI+YFwasp+2cPoEzSw128pZMe8XIRRVpC
-	QS/BFkpoy21y6yRISrxCPPHZFIR4hTA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=U8u5c2/ZmBcCAF4BgFXc/9VJSR1q2G0ZzwTNeQcmGYo=; b=HEuGH6SCkNmrv2aee3cCjCKP3j
+	At7IVvHG64h0C9rU3c2AsmjPBpuA1IPNZ3I8QBkHhhqfpvzp1lKkMG/Z06im/n/82YDaaZrBqFhaI
+	Kc8tzttkDkGsqBJbfy+DFYzD9n2k3B/PBMQkScjhbKOBvrymoKorNbcP0KAbnod9DVuXsnjnwQwyG
+	XgGHKJg+96vCdgySvRlfo9StcXfwr/71CJe3pXR2dwtoCuJHc4goeczBTCBHilotBT9d/AqEkuYSG
+	6JhmbD9S3tST8btfpTX4ZszIMLfqK228JejwtOigFHwAe+OqvFtpuzskwebLRVMy3LDb+RRYn3+up
+	uTi6DcaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSR4I-0007nY-74; Wed, 06 Nov 2019 19:34:14 +0000
+	id 1iSR4b-0007xO-HX; Wed, 06 Nov 2019 19:34:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSR46-0007my-Eb
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 19:34:03 +0000
+ id 1iSR47-0007nK-RL
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 19:34:05 +0000
 Received: from localhost (mobile-107-92-63-247.mycingular.net [107.92.63.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 706BD217D7;
- Wed,  6 Nov 2019 19:34:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 215D8217F9;
+ Wed,  6 Nov 2019 19:34:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573068841;
- bh=coOa4RxODjJ6EYPV7rFTewcJTnI1nFBAjUdusE+P6SI=;
- h=From:To:Cc:Subject:Date:From;
- b=HB1qkuScqVLA8LfkEUpRzyEQuzZTvLubfGJ1n4aZ44SIYvJFRTPzkn0TNUfUEH8/F
- plDSsx6rqwcU2v98rMkFAlv0fQDIurBdzGVKkih3kV5GVHu23iqjBGxExTeT/4AsmH
- RUdBxmAqtY5s1MECbhxHiXyPEJ9ThhIZDB5R29uA=
+ s=default; t=1573068843;
+ bh=LwXt+suxcrsMZh6bzLLFxAHg5EDkYE/+FgIc2hs+ltU=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=cqMTgK5rprV7jPECaZoOpsBScX8ueGlhqLRUik8C+TZm2Tvy868veXWnYqt8uIr2Z
+ SXR+2H7QJgxuLLAOKmRROPk+5hAeuKM6Z3n7Uh6N2AGFOdDEqTg0FDng/Ws43SbAwK
+ Qq43z7lbqW0eSt8aW291cd417cwq8tKT22yPjvgQ=
 From: Andy Gross <agross@kernel.org>
 To: arm@kernel.org
-Subject: [GIT PULL] Qualcomm ARM64 Defconfig updates for 5.5
-Date: Wed,  6 Nov 2019 13:33:56 -0600
-Message-Id: <1573068840-13098-1-git-send-email-agross@kernel.org>
+Subject: [GIT PULL] Qualcomm ARM64 DT updates for 5.5
+Date: Wed,  6 Nov 2019 13:33:57 -0600
+Message-Id: <1573068840-13098-2-git-send-email-agross@kernel.org>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1573068840-13098-1-git-send-email-agross@kernel.org>
+References: <1573068840-13098-1-git-send-email-agross@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_113402_513334_D072328D 
-X-CRM114-Status: UNSURE (   9.20  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191106_113403_922444_4249E9EC 
+X-CRM114-Status: GOOD (  16.48  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,41 +85,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Arnd, Olof, and Kevin,
+
+I have one slight faux paux in this pull request.  A drivers: soc change got
+into my arm64 DTS branch and while it is innocuous, it wasn't easy to fix
+without messing up a lot of people who depend on the SHAs not changing.  So I'm
+sorry for this inclusion.  I'll scrub this better next time.
+
+Andy
+
+
 The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
   Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
 
 are available in the git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-arm64-defconfig-for-5.5
+  git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-arm64-for-5.5
 
-for you to fetch changes up to a36612b7469cf76953cf237a2b9a62f6c97730bb:
+for you to fetch changes up to 915603b106164f966ebc027de96e54011885bdf4:
 
-  arm64: defconfig: Enable Qualcomm watchdog driver (2019-10-20 23:04:59 -0700)
-
-----------------------------------------------------------------
-Qualcomm ARM64 Based defconfig Updates for v5.5
-
-* Enable Qualcomm cpufreq, watchdog, prng, socinfo, SPI, and QSPI controllers
-* Enable SN65DSI86 display bridge
-* Enable QCA Bluetooth over Uart
-* Enable various Qualcomm remoteproc dependencies
+  arm64: dts: qcom: db845c: Enable LVS 1 and 2 (2019-11-03 20:49:00 -0800)
 
 ----------------------------------------------------------------
-Bjorn Andersson (6):
-      arm64: defconfig: Enable Qualcomm remoteproc dependencies
-      arm64: defconfig: Enable Qualcomm SPI and QSPI controller
-      arm64: defconfig: Enable Qualcomm socinfo driver
-      arm64: defconfig: Enable Qualcomm CPUfreq HW driver
-      arm64: defconfig: Enable Qualcomm pseudo rng
-      arm64: defconfig: Enable Qualcomm watchdog driver
+Qualcomm ARM64 Updates for v5.5
 
-Jeffrey Hugo (2):
-      arm64: defconfig: Enable QCA Bluetooth over UART
-      arm64: defconfig: Enable SN65DSI86 display bridge
+* Add thermal IRQ support on MSM8916, SDM845, MSM8996, and QCS404
+* Fix thermal HW ids for cpus on MSM8916
+* Add blsp1 UART3 and  blsp1 BAM on MSM8998
+* Add volume buttons and WCNSS for Wifi and BT on MSM8916 LongCheer-l8150
+* Fixup load on l21 for SD on apq8096-db820c
+* Enable LVS1/2, APSS watchdog, and select UFS reset gpio for SDM845
+* Disable coresight by default on MSM8998
+* Enable bluetooth and remove retention idle state on MSM8998-clamshell
+* Enable adsp, cdsp, and mpss on C630
+* Enable bluetooth on MSM8998-mtp
+* Delete zap shader on SDM845-cheza
+* Add tactile buttons and hall sensor on MSM8916-Samsung-A2015
+* Add Interconnect nodes, watchdog, and sleep clk on QCS404
+* Override Iris compatible on MSM8916-Samsung-A5U
+* Enable WCNSS Wifi and bluetooth on MSM8916-Samsung-A2015
+* Fixup cooling states for the aoss warming devices
 
- arch/arm64/configs/defconfig | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+----------------------------------------------------------------
+Amit Kucheria (5):
+      arm64: dts: qcs404: thermal: Add interrupt support
+      arm64: dts: msm8998: thermal: Add interrupt support
+      arm64: dts: msm8996: thermal: Add interrupt support
+      arm64: dts: sdm845: thermal: Add interrupt support
+      arm64: dts: msm8916: thermal: Fixup HW ids for cpu sensors
+
+Bjorn Andersson (3):
+      arm64: dts: qcom: c630: Enable adsp, cdsp and mpss
+      arm64: dts: qcom: sdm845: Add APSS watchdog node
+      arm64: dts: qcom: db845c: Enable LVS 1 and 2
+
+Georgi Djakov (1):
+      arm64: dts: qcs404: Add interconnect provider DT nodes
+
+Jeffrey Hugo (5):
+      arm64: dts: qcom: msm8998: Add blsp1 BAM
+      arm64: dts: qcom: msm8998: Add blsp1_uart3
+      arm64: dts: qcom: msm8998-mtp: Enable bluetooth
+      arm64: dts: qcom: msm8998-clamshell: Enable bluetooth
+      arm64: dts: qcom: msm8998-clamshell: Remove retention idle state
+
+Jorge Ramirez-Ortiz (2):
+      arm64: dts: qcom: qcs404: add sleep clk fixed rate oscillator
+      arm64: dts: qcom: qcs404: add the watchdog node
+
+Loic Poulain (1):
+      arm64: dts: apq8096-db820c: Increase load on l21 for SDCARD
+
+Michael Srba (1):
+      arm64: dts: msm8916-samsung-a2015: add tactile buttons and hall sensor
+
+Nikita Travkin (2):
+      arm64: dts: msm8916-longcheer-l8150: Enable WCNSS for WiFi and BT
+      arm64: dts: msm8916-longcheer-l8150: Add Volume buttons
+
+Rob Clark (1):
+      arm64: dts: qcom: sdm845-cheza: delete zap-shader
+
+Sai Prakash Ranjan (1):
+      arm64: dts: qcom: msm8998: Disable coresight by default
+
+Stephan Gerhold (2):
+      arm64: dts: msm8916-samsung-a2015: Enable WCNSS for WiFi and BT
+      arm64: dts: msm8916-samsung-a5u: Override iris compatible
+
+Stephen Boyd (1):
+      arm64: dts: qcom: sdm845: Use UFS reset gpio instead of pinctrl
+
+Thara Gopinath (1):
+      soc: qcom: Invert the cooling states for the aoss warming devices
+
+ arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi       |  2 +
+ .../boot/dts/qcom/msm8916-longcheer-l8150.dts      | 55 ++++++++++++++
+ .../dts/qcom/msm8916-samsung-a2015-common.dtsi     | 80 +++++++++++++++++++++
+ .../boot/dts/qcom/msm8916-samsung-a5u-eur.dts      |  6 ++
+ arch/arm64/boot/dts/qcom/msm8916.dtsi              |  4 +-
+ arch/arm64/boot/dts/qcom/msm8996.dtsi              |  4 ++
+ arch/arm64/boot/dts/qcom/msm8998-clamshell.dtsi    | 54 ++++++++++++++
+ arch/arm64/boot/dts/qcom/msm8998-mtp.dtsi          | 82 +++++++++++++++++++++
+ arch/arm64/boot/dts/qcom/msm8998-pins.dtsi         | 13 ++++
+ arch/arm64/boot/dts/qcom/msm8998.dtsi              | 84 +++++++++++++++++-----
+ arch/arm64/boot/dts/qcom/qcs404.dtsi               | 41 +++++++++++
+ arch/arm64/boot/dts/qcom/sdm845-cheza.dtsi         | 53 ++------------
+ arch/arm64/boot/dts/qcom/sdm845-db845c.dts         | 12 ++++
+ arch/arm64/boot/dts/qcom/sdm845.dtsi               | 12 +++-
+ .../boot/dts/qcom/sdm850-lenovo-yoga-c630.dts      | 14 ++++
+ drivers/soc/qcom/qcom_aoss.c                       |  8 +--
+ 16 files changed, 449 insertions(+), 75 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
