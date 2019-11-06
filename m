@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE073F1EE1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 20:35:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94E8CF1EE2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 20:35:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ieAZognD05QbO6Lhi1rkFpneVTvMABzt02qJBZS2gSg=; b=k3VFqVIsQtH316exJsgQRHvwNs
-	3NpoieNbHEMXaUcDhF6UE314gQJzn5Os4wN1VjUnb86fyX4c/A2lsy8G278oNFSOMPITX1tbqOG6i
-	/lkSCqjlSXSPCjz87MXyjpAoBJt+KplJd/wejqMd4oFRmndOpoIAh2US49M785AhOdXKZHLEN6J/8
-	rT0OoEdaVDi9NQpjJ943zaDBu2HEemRVxb9aakaiXGZH8fER3nfd1os6yFmGAm17BAAZsLnX8pyjU
-	Vk/yinwICkZI8ZRR4msDTaCa5AfgRbcFZWIzWvEQFeboeRPfpV1ok52EibiBD1S1zDFlbfXwASgim
-	qSipdW2Q==;
+	bh=jo6jmJywgY95MwpIp9DXnM3IpvHpA7gQ4n8d2GC/PqU=; b=oL5KoLdeJSGVAYLjKdAAxuyauc
+	dIKr96vl8mEYaNyeVjiD5I3jMOzNT1VLh5DO3rH+xkIMmyO0+RnT0dMAVJ9NBXUTAx2/VE7wIvFrc
+	n+F6u5iyL2LzMRCupj1TvNF3WcvjDgcP1YldjH6tVDJQnbMgT7tO6yvP6aDyibuX3aToMsYFROMDH
+	+RTqlzhitH77FbHP944tLfERKvkW5RvyGFFlHQqITzi76gO/jyqZM54jlOUY2gMrKs9gwnrI3qpbM
+	P5R+77vNm1QJC971bsA9w9egfG+t6+Rf2IOdRo5S2MkKdvSXZcdbPJUuTmaq7ULO32NSLkGC6G+xh
+	I4VMk86w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSR56-0008TS-OW; Wed, 06 Nov 2019 19:35:04 +0000
+	id 1iSR5V-0001ho-Qm; Wed, 06 Nov 2019 19:35:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSR4B-0007pM-4L
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 19:34:08 +0000
+ id 1iSR4C-0007qw-Ec
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 19:34:09 +0000
 Received: from localhost (mobile-107-92-63-247.mycingular.net [107.92.63.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5A1E9217F9;
- Wed,  6 Nov 2019 19:34:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C3AAC21882;
+ Wed,  6 Nov 2019 19:34:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573068846;
- bh=niydE8E8tlgbxMzgPkVPuiVBj9Wdqn5HKmXxLh73XmQ=;
+ s=default; t=1573068848;
+ bh=L6z/fy593ih1VelBHJtxIfR7dAjL9slg0ehkYH3tD1Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=tiFWWrH840xpypCQo+Y9E+A6OJCOeqSrWLI0IQtYZ5NsIRjUpEl2QIc3UOxCvRBQl
- kpDW78Wbditu1ot/rtfAUlUdyGjsbAFY5LuQIIlJggiBu8fRlPbKrOUBqFCBB7JlFV
- dSZ6WhPuKFnN4xYHLUwk6OTpJdozBwDIV2XltqnI=
+ b=CyHJu8JSpcvBojxhl7S1pPYSq7XApPY0aMIlMjiRWfAeL6N7oQFniB1ZDx8Ck4htO
+ bejEK/pB0lftrzNWyumvqJ1qrsVGF7qqS3fmJVEMFpo48VsVlF3emos/T3czcrRzSx
+ m2G3dtY4o5ke0gnDM6rqBFPJiXdEdicUd9C9av5I=
 From: Andy Gross <agross@kernel.org>
 To: arm@kernel.org
-Subject: [GIT PULL] Qualcomm Driver updates for 5.5
-Date: Wed,  6 Nov 2019 13:33:59 -0600
-Message-Id: <1573068840-13098-4-git-send-email-agross@kernel.org>
+Subject: [GIT PULL] Qualcomm Device Tree updates for 5.5
+Date: Wed,  6 Nov 2019 13:34:00 -0600
+Message-Id: <1573068840-13098-5-git-send-email-agross@kernel.org>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1573068840-13098-1-git-send-email-agross@kernel.org>
 References: <1573068840-13098-1-git-send-email-agross@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_113407_227581_3EBB1495 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20191106_113408_539487_863B4439 
+X-CRM114-Status: GOOD (  11.67  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,74 +91,41 @@ The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
 are available in the git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-drivers-for-5.5
+  git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-dts-for-5.5
 
-for you to fetch changes up to 971112e072938517fe80ab2adcbfffc568a8838e:
+for you to fetch changes up to 140647f84dd8d895da2bf3e540dfd038f5076d46:
 
-  MAINTAINERS: Add myself as co-maintainer for QCOM (2019-11-04 22:35:46 -0600)
-
-----------------------------------------------------------------
-Qualcomm ARM Based Driver Updates for v5.5
-
-* Add Bjorn as QCOM co-maintainer
-* Add LLLC yaml bindings and SC7180 support
-* Fixups/Cleanup for LLLC
-* Add SMD-RPM MSM8976 compatible and interconnect device
-* Add missing RPMD SMD perf level
+  ARM: dts: msm8974: thermal: Add thermal zones for each sensor (2019-10-27 01:06:59 -0500)
 
 ----------------------------------------------------------------
-Angelo G. Del Regno (2):
-      soc: qcom: smd-rpm: Add MSM8976 compatible
-      dt-bindings: power: Add missing rpmpd smd performance level
+Qualcomm Device Tree Changes for v5.5
 
-AngeloGioacchino Del Regno (1):
-      soc: qcom: rpmpd: Add rpm power domains for msm8976
+* Add thermal zones and IRQ support for MSM8974
+* Add 5vs2 regulator node for PM8941
+* Add reboot-mode node, fix sdhci and card detect on MSM8974-FP2
+* Add IPQ4019 SDHCI node
 
-Bjorn Andersson (1):
-      MAINTAINERS: Add myself as co-maintainer for QCOM
+----------------------------------------------------------------
+Amit Kucheria (2):
+      ARM: dts: msm8974: thermal: Add interrupt support
+      ARM: dts: msm8974: thermal: Add thermal zones for each sensor
 
-Georgi Djakov (1):
-      soc: qcom: smd-rpm: Create RPM interconnect proxy child device
+Brian Masney (1):
+      ARM: dts: qcom: pm8941: add 5vs2 regulator node
 
-Sai Prakash Ranjan (2):
-      dt-bindings: msm: Convert LLCC bindings to YAML
-      dt-bindings: msm: Add LLCC for SC7180
+Luca Weiss (3):
+      ARM: dts: msm8974-FP2: Drop unused card-detect pin
+      ARM: dts: msm8974-FP2: Increase load on l20 for sdhci
+      ARM: dts: msm8974-FP2: add reboot-mode node
 
-Srinivas Kandagatla (1):
-      soc: qcom: socinfo: add sdm845 and sda845 soc ids
+Robert Marko (1):
+      ARM: dts: qcom: ipq4019: Add SDHCI controller node
 
-Stephen Boyd (2):
-      soc: qcom: llcc: Name regmaps to avoid collisions
-      soc: qcom: llcc: Move regmap config to local variable
-
-Vivek Gautam (4):
-      soc: qcom: llcc cleanup to get rid of sdm845 specific driver file
-      soc: qcom: Rename llcc-slice to llcc-qcom
-      soc: qcom: Make llcc-qcom a generic driver
-      soc: qcom: llcc: Add configuration data for SC7180
-
-YueHaibing (1):
-      soc: qcom: Fix llcc-qcom definitions to include
-
- .../devicetree/bindings/arm/msm/qcom,llcc.txt      |  41 -------
- .../devicetree/bindings/arm/msm/qcom,llcc.yaml     |  55 +++++++++
- .../devicetree/bindings/power/qcom,rpmpd.txt       |   1 +
- .../devicetree/bindings/soc/qcom/qcom,smd-rpm.txt  |   1 +
- MAINTAINERS                                        |   1 +
- drivers/soc/qcom/Kconfig                           |  14 +--
- drivers/soc/qcom/Makefile                          |   3 +-
- drivers/soc/qcom/{llcc-slice.c => llcc-qcom.c}     | 130 ++++++++++++++++++---
- drivers/soc/qcom/llcc-sdm845.c                     | 100 ----------------
- drivers/soc/qcom/rpmpd.c                           |  23 ++++
- drivers/soc/qcom/smd-rpm.c                         |  18 ++-
- drivers/soc/qcom/socinfo.c                         |   2 +
- include/dt-bindings/power/qcom-rpmpd.h             |   9 ++
- include/linux/soc/qcom/llcc-qcom.h                 |  94 ++++-----------
- 14 files changed, 250 insertions(+), 242 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/msm/qcom,llcc.txt
- create mode 100644 Documentation/devicetree/bindings/arm/msm/qcom,llcc.yaml
- rename drivers/soc/qcom/{llcc-slice.c => llcc-qcom.c} (68%)
- delete mode 100644 drivers/soc/qcom/llcc-sdm845.c
+ arch/arm/boot/dts/qcom-ipq4019.dtsi              |  12 +++
+ arch/arm/boot/dts/qcom-msm8974-fairphone-fp2.dts |  22 +++--
+ arch/arm/boot/dts/qcom-msm8974.dtsi              | 103 +++++++++++++++++++++++
+ arch/arm/boot/dts/qcom-pm8941.dtsi               |  10 +++
+ 4 files changed, 138 insertions(+), 9 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
