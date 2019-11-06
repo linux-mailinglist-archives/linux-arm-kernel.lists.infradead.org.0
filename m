@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BC09F1803
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:10:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1D33F180B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:13:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/URSxDsVsb+GoQjhOAxxwF6vuQumxPQF0Hg9AHMHA00=; b=geWPVUB1sBwqD3
-	nLj4ZuxO+EZcJSfGHRASnfS1zyujZYYFk/jqSlwsXdWVQ1Sksz8qFhyYpHct1+FODH91DeDGZY/W1
-	MezVAUcpbog8zLv/6z3eBMxvX4gYC31o/6q6YYpmKF/j4mwLxve61pimbrR8caRzJXCtfg5Woafx1
-	sRBGwlc7wQ86g/tLOpi3zYODSOIcvy31b82aL71iF94npmUjQdGRLiqEhiD/HPdYd97cp7lvTtE4b
-	Quvk6/vUC5IKbgsOP3hULGp7qRAY3LLOktbUbYssq6NGA+TVd4bXDz8450Vf8ab7uN+lrkK8O63BT
-	hUwnRhXUEI7p6h52f29g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=3CQ/KrmbjoIOBMMQ1Xkqy2nN44+LuuNS8nUj0OzWYG8=; b=tz6
+	+l7iI2xKphVcdEY9TVKapsZ+DfruG9i8tBg7ZJmCce+CC5+twM5XZaMCC7Cjf+N8NHp3gN0xEkn3x
+	YOw/MvzFWzvDE1/X8TftBtzEkEyF50VWx/00mw0h3HPeWKvTUKlhdT05E2dvB7efu9iuSZQIKN8AW
+	g9emBKYi5h5OSVVu1/GaaIla4xfnjbcgrODkt1EvGow5YZHiJ5nTy7r4LgnS6HxQCyjVIfv2dgKgr
+	i0wfRUhrv5+Zspg1E7RKUsGltFFsul86Wy9LbVUgaTu48tS0m0nRBAtuY5SB9eE/WELp8EEc0Mfe5
+	XIHgXC5gG5IbaTjP1XU8fbcXlPDSRUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSM0l-0006A0-VZ; Wed, 06 Nov 2019 14:10:15 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iSM3y-00089T-G4; Wed, 06 Nov 2019 14:13:34 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSLzZ-0005CA-Tj; Wed, 06 Nov 2019 14:09:03 +0000
-Received: by mail-pl1-x643.google.com with SMTP id ay6so4484974plb.0;
- Wed, 06 Nov 2019 06:09:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=FtX1kXBG3vvdaUl4wOoaBRuLdri0yIVtwLf8lR4UWWQ=;
- b=iJJItz+vffO9tQoSQOlwaE50RW26dK4JczW15WHT5J+2/9N3eVa0f9yHMEICb8juR8
- IQ1Ai2MbmbLKBLUaeX2m5RG3VZuJQIpfXA8Q4FeAQ2w63BlC/d1f9BndQbxAsSXm8GeD
- VslHcXTxq91LT4jpeidzeOFR6Qb4ALGFfS+qf50qDzeOWFpiHD60S5AfCp9ATxMzuUcM
- xJIc+vQdYCUHMR9u61Gxt3iIJdupU81bv58oXJ0MQOKX9nLBsdJBL9kE6DmTL762yOFi
- N4FvQkQopxK1HKJjHEWAlOCRIxbQG8ZHk7qRNr6FhpWZTF9P5pojX8jwU0P1uUl1URzv
- PoyA==
+ id 1iSM3o-00088Q-FZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 14:13:25 +0000
+Received: by mail-wm1-x342.google.com with SMTP id c22so3546220wmd.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 Nov 2019 06:13:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=5J/Ofk6ylx2fNP9WdzIRZXeA0e3ywJAg5ijroGTIp5E=;
+ b=tKY8u23aHs4/HPdanAkyFxDTfKUnmDGznwlyn9XjBCxK/OLl/98xLhDrlyXoAOfIaZ
+ MTBKdzqlKcEi8Yg41n3F5ev4DIFFQCUugd5VfyB2HNWmoU4XikzTEDyANulDHbwvbcGt
+ xDbwaS0xj8NvMvT+e/hpqaCLf8gOoFmdK/P02ME8aqM1f5ZIJy6RTYY9NhG5l3KDA+Wz
+ PKOJOKmxd+5yxjo8fgNIlhqZK0EwwkMOR65hNLRR3VHbZAkOsiDGtqkOuLP1c2k9yL1F
+ S4Ldyo5DpLfVAkoXEkLbUX6dB4/D40XNuTz48F2pAWJ0Ju6Z3ObFK2KYX4cDHUyK++vo
+ VXrw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=FtX1kXBG3vvdaUl4wOoaBRuLdri0yIVtwLf8lR4UWWQ=;
- b=cwbfI3Rf+Iz+dNr9QucBS5J8K0oVv9dPVuxoNhBh55emMPJq3/oz+TsBTSLgBRB09f
- zwkFCYcPSzG4fxNa/4dao/YEvBv37hvC6PDndidIUz/XfFLSo+Ei1A+e62df8NMjDVKw
- R8Tvk1nxlJZn1zqe2Z79lzASbehjE0k9KCndAZuc5IxtOOHEXlOXQWfes7w+wrbDyA8A
- 44gTSrLB6H2QT3RJ5nmOyP69i26PRYADQ439zN2zEnInKaYcP1zUdBpXKiDCrPFDHm/P
- ghq+I1Jq8jvzzMYgAyVoHXI/IqLNnAVu667eYsyJ9ikmZ9fVbh4KFglb/lbzu9s1oo5L
- lFMg==
-X-Gm-Message-State: APjAAAW4zB4EFxX4+YD8dM7TXqAwBkBTlBpms5po7fVPtEL8XoYZqYWg
- tSGmwA64i8iw1Mrzj3qgo7/WRHesdc4=
-X-Google-Smtp-Source: APXvYqygts/mak04562X0fgK/vvLZTbkPeSMoZr9mr+mopxFlmJTH31rJNGA97HB0NcP4AgDJFT0HQ==
-X-Received: by 2002:a17:902:8348:: with SMTP id
- z8mr2924804pln.130.1573049339919; 
- Wed, 06 Nov 2019 06:08:59 -0800 (PST)
-Received: from localhost.localdomain ([2001:19f0:7001:2668:5400:1ff:fe62:2bbd])
- by smtp.gmail.com with ESMTPSA id a16sm4707345pfc.56.2019.11.06.06.08.47
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=5J/Ofk6ylx2fNP9WdzIRZXeA0e3ywJAg5ijroGTIp5E=;
+ b=tKDQK9y/XIL0mRZkkWqH7zwNzk0haK+PQb/fpI7FkDYfSMclwMZ0HktXZv4hJqH0zE
+ bWhkWPFoX/VwU/eteAJqeTqBeSdnuEF+iFz6TmUdpFWV1qVfC4k0rauY7sKxR2lxyCdU
+ qK8egANDhqhdiJVCawnhU7eQDcflQX7KR+nz5YflM82l9n+0dNPfxCMauAZSabOODOme
+ pZQ+T7CNAuXNCdbdmEFkyfhuAtqokmPjpzoujSJesKBAmXVhNJYWn3CJRsOcaCh2qXmp
+ QD5S8CiGmnlTKAXoKxqRwFatThq4IP3YB13fwwwZwJYUGSuHVRcIf7e7m8+7uQwh/+ET
+ hRCg==
+X-Gm-Message-State: APjAAAXtBGmV0uJYzQUmwT7lA4ZvUFQHfx8XQfGsgj2BDz/5wrx7uUd4
+ fwuBT68drIIaJAb/OXJi9UOCKQ==
+X-Google-Smtp-Source: APXvYqz5N5+MuHewN3HtZf0o/tcihZPJ2fkIuNFxsMWdBRetpBqj57Ix1x+D/JGw4/oRNCMLLNTfOw==
+X-Received: by 2002:a7b:c925:: with SMTP id h5mr2938042wml.115.1573049602083; 
+ Wed, 06 Nov 2019 06:13:22 -0800 (PST)
+Received: from localhost.localdomain
+ (31.red-176-87-122.dynamicip.rima-tde.net. [176.87.122.31])
+ by smtp.gmail.com with ESMTPSA id b3sm2837556wma.13.2019.11.06.06.13.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 06 Nov 2019 06:08:59 -0800 (PST)
-From: Chuanhong Guo <gch981213@gmail.com>
-To: linux-mtd@lists.infradead.org
-Subject: [PATCH 2/2] dt-bindings: mtd: mtk-quadspi: update bindings for mmap
- flash read
-Date: Wed,  6 Nov 2019 22:07:48 +0800
-Message-Id: <20191106140748.13100-3-gch981213@gmail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20191106140748.13100-1-gch981213@gmail.com>
-References: <20191106140748.13100-1-gch981213@gmail.com>
-MIME-Version: 1.0
+ Wed, 06 Nov 2019 06:13:21 -0800 (PST)
+From: Richard Henderson <richard.henderson@linaro.org>
+X-Google-Original-From: Richard Henderson <rth@twiddle.net>
+To: linux-crypto@vger.kernel.org
+Subject: [PATCH v2 00/10] Improvements for random.h/archrandom.h
+Date: Wed,  6 Nov 2019 15:12:58 +0100
+Message-Id: <20191106141308.30535-1-rth@twiddle.net>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_060902_072736_3A469852 
-X-CRM114-Status: GOOD (  14.63  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191106_061324_522276_001AA46F 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (gch981213[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (gch981213[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,65 +94,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <tudor.ambarus@microchip.com>,
- Richard Weinberger <richard@nod.at>, linux-kernel@vger.kernel.org,
- Chuanhong Guo <gch981213@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Brian Norris <computersforpeace@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ herbert@gondor.apana.org.au, x86@kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-update register descriptions and add an example binding using it.
+During patch review for an addition of archrandom.h for arm64, it was
+suggeted that the arch_random_get_* functions should be marked __must_check.
+Which does sound like a good idea, since the by-reference integer output
+may be uninitialized when the boolean result is false.
 
-Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
----
- .../devicetree/bindings/mtd/mtk-quadspi.txt   | 21 ++++++++++++++++++-
- 1 file changed, 20 insertions(+), 1 deletion(-)
+In addition, it turns out that arch_has_random() and arch_has_random_seed()
+are not used, and not easy to support for arm64.  Rather than cobble
+something together that would not be testable, remove the interfaces
+against some future accidental use.
 
-diff --git a/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt b/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
-index a12e3b5c495d..4860f6e96f5a 100644
---- a/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
-+++ b/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
-@@ -12,7 +12,10 @@ Required properties:
- 		  "mediatek,mt7623-nor", "mediatek,mt8173-nor"
- 		  "mediatek,mt7629-nor", "mediatek,mt8173-nor"
- 		  "mediatek,mt8173-nor"
--- reg: 		  physical base address and length of the controller's register
-+- reg: 		  Contains one or two entries, each of which is a tuple consisting of a
-+		  physical address and length. The first entry is the address and length
-+		  of the controller register set. The optional second entry is the address
-+		  and length of the area where the nor flash is mapped to.
- - clocks: 	  the phandle of the clocks needed by the nor controller
- - clock-names: 	  the names of the clocks
- 		  the clocks should be named "spi" and "sf". "spi" is used for spi bus,
-@@ -48,3 +51,19 @@ nor_flash: spi@1100d000 {
- 	};
- };
- 
-+nor_flash: spi@11014000 {
-+	compatible = "mediatek,mt7629-nor",
-+		     "mediatek,mt8173-nor";
-+	reg = <0x11014000 0xe0>,
-+	      <0x30000000 0x10000000>;
-+	clocks = <&pericfg CLK_PERI_FLASH_PD>,
-+		 <&topckgen CLK_TOP_FLASH_SEL>;
-+	clock-names = "spi", "sf";
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+	};
-+};
+In addition, I noticed a few other minor inconsistencies between the
+different architectures, e.g. powerpc isn't using bool.
+
+Change since v1:
+  * Remove arch_has_random, arch_has_random_seed.
+
+
+r~
+
+
+Richard Henderson (10):
+  x86: Remove arch_has_random, arch_has_random_seed
+  powerpc: Remove arch_has_random, arch_has_random_seed
+  s390: Remove arch_has_random, arch_has_random_seed
+  linux/random.h: Remove arch_has_random, arch_has_random_seed
+  linux/random.h: Use false with bool
+  linux/random.h: Mark CONFIG_ARCH_RANDOM functions __must_check
+  x86: Mark archrandom.h functions __must_check
+  powerpc: Use bool in archrandom.h
+  powerpc: Mark archrandom.h functions __must_check
+  s390x: Mark archrandom.h functions __must_check
+
+ arch/powerpc/include/asm/archrandom.h | 27 +++++++++-----------------
+ arch/s390/include/asm/archrandom.h    | 20 ++++---------------
+ arch/x86/include/asm/archrandom.h     | 28 ++++++++++++---------------
+ include/linux/random.h                | 24 ++++++++---------------
+ 4 files changed, 33 insertions(+), 66 deletions(-)
+
 -- 
-2.21.0
+2.17.1
 
 
 _______________________________________________
