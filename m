@@ -2,63 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D5D8F1FE0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 21:28:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4A52F2003
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 21:39:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yCinvx5KZohdNuxVDqW0yB67HZo/xnqdvmed5jQvzLw=; b=I993I3SHi7AdQS
-	+WQ2vEFeSlBcEtHnd3DrbZ5JKj9eDG+sd2M3B3SGkpBOAFppeyHFanVBQ0cVaZlyV9KJOYqiyETPW
-	KKLicGdxJSiEPZCyvqkJ34sRkKyW48cE2peIliBwBiSfBQkmumbfKQHwTQRbZciUUx8tiqY40okFQ
-	9EBzUKAYUb+OaUeAYCTHmBsHM8XVdm6Mt0aRjR9HbBBKGLzT/SvVv/ujOw9xebmA7iiNItvnZiCvI
-	bJyYxvjFK1Fch8Ku+eR4vTe+UMg7GoRzbNhxCHxRAOGWf26B5IJD88ZlF5sUKG9ZZvHN3OnmR4mHl
-	tzHJQTzmEuypOHrz+G3Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hTa7u6I+A7TlLHHOscqxz6280LvnB63E9ifkK3M2Tzw=; b=fHmhuBR12910lU
+	pztriEJJHtLKrz1tnQ+TxeDNfwsf46tsSZwx4OYd+yBD4cjk70DOE7KVT3WCGmhRmxsLKMATcjr/k
+	WQSpNuu4VubGX6bpvQJD3prDvAXd0qqJ1nStgwMjzxPGdnf1zTUDQBFf9XGVtE9xncxoP/bhUfvKC
+	HE1q5sEjOSwRCXw8B3fRiGPRW8Ui79tSqgMLJxq+W2ERQ6t8n8kRzYOnnrbknrU6UcN2Z4CuvBvNj
+	3VFRx5S0mbNXBBHuEN0j8+7BPebSOarR46uHeCzk4MX0JqQpztMjGz/JJArdvUVF04Ha5H2lztWp8
+	yu9cmJRMVU+9NbUYrkrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSRur-0008El-Po; Wed, 06 Nov 2019 20:28:33 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1iSS5b-0003Gb-Oe; Wed, 06 Nov 2019 20:39:39 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSRug-0007vz-Dt
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 20:28:24 +0000
-Received: from [IPv6:2a00:5f00:102:0:5c62:8eff:fefa:67] (unknown
- [IPv6:2a00:5f00:102:0:5c62:8eff:fefa:67])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: gtucker)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 624032902CE;
- Wed,  6 Nov 2019 20:28:19 +0000 (GMT)
-Subject: Re: [PATCH] gpio: xgs-iproc: Fix section mismatch on device tree
- match table
-To: Chris Packham <Chris.Packham@alliedtelesis.co.nz>,
- "yoshihiro.shimoda.uh@renesas.com" <yoshihiro.shimoda.uh@renesas.com>,
- "broonie@kernel.org" <broonie@kernel.org>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>
-References: <20191105124915.34100-1-broonie@kernel.org>
- <TYAPR01MB45442B7135422BA8D088E29CD8790@TYAPR01MB4544.jpnprd01.prod.outlook.com>
- <7057fc47ded887fb2780332739afba53e3c33e4a.camel@alliedtelesis.co.nz>
-From: Guillaume Tucker <guillaume.tucker@collabora.com>
-Message-ID: <0ebb6b2c-52d4-bb53-cb85-1a97adde9249@collabora.com>
-Date: Wed, 6 Nov 2019 20:28:16 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iSS5U-0003Fm-Ba
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 20:39:33 +0000
+Received: by mail-pf1-x442.google.com with SMTP id s5so11554735pfh.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 Nov 2019 12:39:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Bp86L5fucSA+9Bwlt84/eQbHaJRbEE/iIVDIU2TrYmM=;
+ b=CrBxheWL+VkOfPX3aTBccoLvNQF92thO3oi5LNHeY04/wZsBJ5+Awp3yG38gVaW419
+ EwFnyiPDR1gnnZmr8ul0W/yKVfgIK5xZNdfgklRC9owvzvrb5YtTfIJlYj3tqqOBxrYA
+ puDhDKyZABgAkq3XZb5IJ/rCNzuAn76ZWc52ybg9wLNMg+z+ZgcGsKJOYHhRkT6tP0wM
+ ec8iwNatVcZ1mqzjbPOeUiHln+ne0fBBsTlHbQGoAkvksK/Txg3rLgikXk+7vSpyZ9Zz
+ Pee10GCisuUq4SYMJ+mByVVfZzuStCOWn9eeJ1oEBMVnENoJixSlbPeRYZP5cyGdf0TZ
+ UunA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Bp86L5fucSA+9Bwlt84/eQbHaJRbEE/iIVDIU2TrYmM=;
+ b=PQdQ++1bgUepU+LytoxWaUdlTfZCJLXQxBml8oQ6IQinTOr7UfAwmb7aLH23s3IY8v
+ X6iSneyW14madoSu+hnZOT1LeuC5NLQ25lSd0u8dvkI+wZ9r69LExdaAvVyDatbHssEq
+ YyfpRYjSIVKcmreF0JZS1QubIlLAP823LF1HT+Vfpoc5G8bEuK6kR67uhsHSXSOYViSH
+ pGzMCeu5CCH3HJvfANgMZi8XS9KfauvmzOW/dOKWnm3q9GdEdyBlejsjaOjgg2y8rKMa
+ r1qm6MWQ5KVA50nLSbJkOaYabAYB+4vadusYptNs6c8977oY4s1/BAZO6aY47eJ9Yo0V
+ FMxg==
+X-Gm-Message-State: APjAAAUrdVYygvGU7i+H5+nV7clCHUa1kuDl/umDjW0YUO7SrmmK9jjz
+ PSJAIRMvDWE/VOwr8+BI7WcsPJSBm7e/dFT20RxEgQ==
+X-Google-Smtp-Source: APXvYqzpFAhempBHWwl6LQCKUCJ19FjjZGAWA1oF9chpT593c5XiKJbvgs2xxIRCQukRs4o+FH4Rat+2Sk/7ytURtoo=
+X-Received: by 2002:aa7:8e56:: with SMTP id d22mr5854475pfr.3.1573072766085;
+ Wed, 06 Nov 2019 12:39:26 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <7057fc47ded887fb2780332739afba53e3c33e4a.camel@alliedtelesis.co.nz>
-Content-Language: en-US
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191105235608.107702-1-samitolvanen@google.com>
+ <20191105235608.107702-11-samitolvanen@google.com>
+In-Reply-To: <20191105235608.107702-11-samitolvanen@google.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Wed, 6 Nov 2019 12:39:14 -0800
+Message-ID: <CAKwvOdkGUn+X2HCnV7zM8ruCPYBsRi_UD8JY4VW4FbuOam8Pmg@mail.gmail.com>
+Subject: Re: [PATCH v5 10/14] arm64: preserve x18 when CPU is suspended
+To: Sami Tolvanen <samitolvanen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_122822_749290_6D26379C 
-X-CRM114-Status: GOOD (  21.10  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191106_123932_396449_470C2831 
+X-CRM114-Status: GOOD (  17.23  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,126 +98,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/11/2019 19:49, Chris Packham wrote:
-> (adding Guillamume),
-> 
-> On Wed, 2019-11-06 at 07:08 +0000, Yoshihiro Shimoda wrote:
->> Hi Mark,
->>
->>> From: Mark Brown, Sent: Tuesday, November 5, 2019 9:49 PM
->>>
->>> The table of devicetree identifiers is annotated as __initconst
->>> indicating that it can be discarded after kernel boot but it is
->>> referenced from the driver struct which has no init annotation leading
->>> to a linker warning:
->>>
->>> WARNING: vmlinux.o(.data+0x82d58): Section mismatch in reference from the variable bcm_iproc_gpio_driver to the
->>> variable .init.rodata:bcm_iproc_gpio_of_match
->>> The variable bcm_iproc_gpio_driver references
->>> the variable __initconst bcm_iproc_gpio_of_match
->>>
->>> Since drivers can be probed after init the lack of annotation on the
->>> driver struct is correct so remove the annotation from the match table.
->>>
->>> Signed-off-by: Mark Brown <broonie@kernel.org>
->>
->> Thank you for the patch! Without this patch, I had encountered another
->> issue which my environment caused a panic when I tried to install a usb host
->> driver after booted [1]. But, I could resolved the issue after
->> I applied this patch. Also, I confirmed this patch could resolved the warning.
->>
->> So,
->> Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
->> Tested-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
->>
->> Best regards,
->> Yoshihiro Shimoda
->>
->> ---
->> [1]
->> [  146.541188] Unable to handle kernel paging request at virtual address ffff800011f73540
->> [  146.549099] Mem abort info:
->> [  146.551885]   ESR = 0x96000007
->> [  146.554934]   EC = 0x25: DABT (current EL), IL = 32 bits
->> [  146.560238]   SET = 0, FnV = 0
->> [  146.563284]   EA = 0, S1PTW = 0
->> [  146.566416] Data abort info:
->> [  146.569289]   ISV = 0, ISS = 0x00000007
->> [  146.573117]   CM = 0, WnR = 0
->> [  146.576078] swapper pgtable: 4k pages, 48-bit VAs, pgdp=0000000049e4a000
->> [  146.582770] [ffff800011f73540] pgd=000000077ffff003, pud=000000077fffe003, pmd=000000077fffb003, pte=0000000000000000
->> [  146.593375] Internal error: Oops: 96000007 [#1] PREEMPT SMP
->> [  146.598944] CPU: 0 PID: 106 Comm: kworker/0:1 Not tainted 5.4.0-rc6-next-20191105 #87
->> [  146.606766] Hardware name: Renesas Salvator-X 2nd version board based on r8a7795 ES2.0+ (DT)
->> [  146.615209] Workqueue: events deferred_probe_work_func
->> [  146.620341] pstate: a0000085 (NzCv daIf -PAN -UAO)
->> [  146.625132] pc : __of_match_node.part.4+0x3c/0x78
->> [  146.629830] lr : of_match_node+0x3c/0x70
->> ...
->> ---
->>
->>
->> So,
-> 
-> I guess that kernelci failure[1] wasn't bogus after all. Sorry again
-> for the hassle. And Mark, Yoshihiro thanks for the fix and test.
+On Tue, Nov 5, 2019 at 3:56 PM Sami Tolvanen <samitolvanen@google.com> wrote:
+>
+> Don't lose the current task's shadow stack when the CPU is suspended.
+>
+> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 
-Thanks for the follow-up, I'll re-enable bisections in
-lab-theobroma-systems then.
+Re-LGTM
 
-It's actually pretty hard to get false positives from this
-automated bisection thanks to some checks run on the commit
-found, to verify it does cause a boot failure and also verify
-that when reverted the problem goes away.  This was a good
-example :)
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+> ---
+>  arch/arm64/include/asm/suspend.h |  2 +-
+>  arch/arm64/mm/proc.S             | 14 ++++++++++++++
+>  2 files changed, 15 insertions(+), 1 deletion(-)
+>
+> diff --git a/arch/arm64/include/asm/suspend.h b/arch/arm64/include/asm/suspend.h
+> index 8939c87c4dce..0cde2f473971 100644
+> --- a/arch/arm64/include/asm/suspend.h
+> +++ b/arch/arm64/include/asm/suspend.h
+> @@ -2,7 +2,7 @@
+>  #ifndef __ASM_SUSPEND_H
+>  #define __ASM_SUSPEND_H
+>
+> -#define NR_CTX_REGS 12
+> +#define NR_CTX_REGS 13
+>  #define NR_CALLEE_SAVED_REGS 12
+>
+>  /*
+> diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+> index fdabf40a83c8..5c8219c55948 100644
+> --- a/arch/arm64/mm/proc.S
+> +++ b/arch/arm64/mm/proc.S
+> @@ -49,6 +49,8 @@
+>   * cpu_do_suspend - save CPU registers context
+>   *
+>   * x0: virtual address of context pointer
+> + *
+> + * This must be kept in sync with struct cpu_suspend_ctx in <asm/suspend.h>.
+>   */
+>  ENTRY(cpu_do_suspend)
+>         mrs     x2, tpidr_el0
+> @@ -73,6 +75,11 @@ alternative_endif
+>         stp     x8, x9, [x0, #48]
+>         stp     x10, x11, [x0, #64]
+>         stp     x12, x13, [x0, #80]
+> +       /*
+> +        * Save x18 as it may be used as a platform register, e.g. by shadow
+> +        * call stack.
+> +        */
+> +       str     x18, [x0, #96]
+>         ret
+>  ENDPROC(cpu_do_suspend)
+>
+> @@ -89,6 +96,13 @@ ENTRY(cpu_do_resume)
+>         ldp     x9, x10, [x0, #48]
+>         ldp     x11, x12, [x0, #64]
+>         ldp     x13, x14, [x0, #80]
+> +       /*
+> +        * Restore x18, as it may be used as a platform register, and clear
+> +        * the buffer to minimize the risk of exposure when used for shadow
+> +        * call stack.
+> +        */
+> +       ldr     x18, [x0, #96]
+> +       str     xzr, [x0, #96]
+>         msr     tpidr_el0, x2
+>         msr     tpidrro_el0, x3
+>         msr     contextidr_el1, x4
+> --
+> 2.24.0.rc1.363.gb1bccd3e3d-goog
+>
 
-Guillaume
 
-> [1] - 
-> https://lore.kernel.org/lkml/5dbb2acf.1c69fb81.54ce2.2f48@mx.google.com/
-> 
->>
->>
->> Best regards,
->> Yoshihiro Shimoda
->>
->>
->>> ---
->>>  drivers/gpio/gpio-xgs-iproc.c | 2 +-
->>>  1 file changed, 1 insertion(+), 1 deletion(-)
->>>
->>> diff --git a/drivers/gpio/gpio-xgs-iproc.c b/drivers/gpio/gpio-xgs-iproc.c
->>> index a3fdd95cc9e6..bb183f584d92 100644
->>> --- a/drivers/gpio/gpio-xgs-iproc.c
->>> +++ b/drivers/gpio/gpio-xgs-iproc.c
->>> @@ -299,7 +299,7 @@ static int __exit iproc_gpio_remove(struct platform_device *pdev)
->>>  	return 0;
->>>  }
->>>
->>> -static const struct of_device_id bcm_iproc_gpio_of_match[] __initconst = {
->>> +static const struct of_device_id bcm_iproc_gpio_of_match[] = {
->>>  	{ .compatible = "brcm,iproc-gpio-cca" },
->>>  	{}
->>>  };
->>> --
->>> 2.20.1
->>
->>
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
-
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
