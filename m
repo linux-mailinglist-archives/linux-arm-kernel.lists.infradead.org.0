@@ -2,55 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5A23F1681
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 14:04:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B50A0F169F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 14:06:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ub60xixouD2pODDRYnXHPcKghg0SuANMytRSTfCJyzk=; b=ZSfasYDxe8SVMz
-	oqGSeuZ0ka0DQQVvVjdCAABikOrRnSNajVe6+14yYzm5wsKy8tJ4l4WQCvJzv/fuMeumZbk8CGkF6
-	ZUjsKfJlB+v4sxQJEHbUIZHuAOjjADt4zL8oBBuDkXsr+OKh/+ODLT5W9mElUaai60OQdC4HiGALf
-	udwBS/xexQfFw0nZEmoDVLBK5JNPBl6ANTdrLnBGclb6ZWawHx+jhDtyP1Ks8kpTCTY7B6yAzGzKO
-	tohy9B1WvYlgSYisCaZqCNib5Ea90veGMlkqJO6WEeYQ6EegleW1UpKd03IV1ukcDgWIpvu6U0lpL
-	6bvCcRG/J4/JO3rUGbMQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6lTqieaorL1ArPpAWg/djXN8ai6cQhI/Dr82fCMJ+uw=; b=gMmIaxzXS2Ugqo
+	edlz00ypqfF7Ge93/V+B2oiDzOk+zGsTp2fKYBXIOmR5CE+sjtimiNKVmPvPDnvhUZsVWxH0LMNCQ
+	+ZGEYPNW6f7dAKaqPY7P9F458QapQR+I+CwHJyoanrchNFbvzAWpyCbklHONLxtSbkt02oCtscPhS
+	W2Yvcn5s4hyzxN6HghS+Mof0wbeikUqtE6Rmue3Kh1wiK91124eBitskqkebfPAMHLzHe+s/llVa3
+	SydILBWsrbEHIpb3J4dWFHp6sHMOCbIM7gLBr9/KNiUEY3EKL7UjYZ7ame/wq1CGrJuNVXzo0t5FT
+	Y8ypNCzWmedURXqn5raA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSKyU-0002B1-P4; Wed, 06 Nov 2019 13:03:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSKxD-000137-B2
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 13:02:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 758F67A7;
- Wed,  6 Nov 2019 05:02:27 -0800 (PST)
-Received: from [10.1.196.63] (e123195-lin.cambridge.arm.com [10.1.196.63])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D94003F6C4;
- Wed,  6 Nov 2019 05:02:26 -0800 (PST)
-Subject: Re: [PATCH v2] KVM: arm64: Don't set HCR_EL2.TVM when S2FWB is
- supported
-To: Christoffer Dall <christoffer.dall@arm.com>, kvmarm@lists.cs.columbia.edu
-References: <20191028130541.30536-1-christoffer.dall@arm.com>
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-Message-ID: <7d3a2fe0-1bf3-0fee-deb6-fa6e0940586a@arm.com>
-Date: Wed, 6 Nov 2019 13:02:21 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1iSL0v-00046T-KJ; Wed, 06 Nov 2019 13:06:21 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSL0n-00045W-Vg; Wed, 06 Nov 2019 13:06:15 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 3F66D52C;
+ Wed,  6 Nov 2019 14:06:06 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1573045566;
+ bh=rwBoN4G+nIkI+5mwwd3pzYuox8k2CBX+v3Hd1yQBQGw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=aNPiEWK3sndyfV2uKQzJt9vYTAKeVjELD9xjz1RZxQvRYlrfizq8BhE5JMF7786tS
+ yiP/KIA0+YSBYXx1Hg+0yQgUK9i/MD9DcTyQGguIJInQ00TU9Df+thxLlpRs9wTZom
+ 9fPWxbx8TEzZc2kktPxlbJbZqNHSFhNTwyXaCCq8=
+Date: Wed, 6 Nov 2019 15:05:57 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+Subject: Re: [PATCH 2/3] drm/rockchip: add ability to handle external dphys
+ in mipi-dsi
+Message-ID: <20191106130557.GF4878@pendragon.ideasonboard.com>
+References: <20191106112650.8365-1-heiko.stuebner@theobroma-systems.com>
+ <20191106112650.8365-2-heiko.stuebner@theobroma-systems.com>
 MIME-Version: 1.0
-In-Reply-To: <20191028130541.30536-1-christoffer.dall@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191106112650.8365-2-heiko.stuebner@theobroma-systems.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_050231_496951_827BCCFB 
-X-CRM114-Status: GOOD (  30.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191106_050614_310643_92224243 
+X-CRM114-Status: GOOD (  24.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,123 +74,179 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, jernej.skrabec@siol.net,
+ heiko@sntech.de, narmstrong@baylibre.com, linux-kernel@vger.kernel.org,
+ jonas@kwiboo.se, hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
+ philippe.cornu@st.com, yannick.fertre@st.com, a.hajda@samsung.com,
+ robh+dt@kernel.org, linux-rockchip@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Heiko,
 
-On 10/28/19 1:05 PM, Christoffer Dall wrote:
-> On CPUs that support S2FWB (Armv8.4+), KVM configures the stage 2 page
-> tables to override the memory attributes of memory accesses, regardless
-> of the stage 1 page table configurations, and also when the stage 1 MMU
-> is turned off.  This results in all memory accesses to RAM being
-> cacheable, including during early boot of the guest.
->
-> On CPUs without this feature, memory accesses were non-cacheable during
-> boot until the guest turned on the stage 1 MMU, and we had to detect
-> when the guest turned on the MMU, such that we could invalidate all cache
-> entries and ensure a consistent view of memory with the MMU turned on.
-> When the guest turned on the caches, we would call stage2_flush_vm()
-> from kvm_toggle_cache().
->
-> However, stage2_flush_vm() walks all the stage 2 tables, and calls
-> __kvm_flush-dcache_pte, which on a system with S2FWD does ... absolutely
-> nothing.
->
-> We can avoid that whole song and dance, and simply not set TVM when
-> creating a VM on a system that has S2FWB.
->
-> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
-> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+Thank you for the patch.
+
+On Wed, Nov 06, 2019 at 12:26:49PM +0100, Heiko Stuebner wrote:
+> While the common case is that the dsi controller uses an internal dphy,
+> accessed through the phy registers inside the dsi controller, there is
+> also the possibility to use a separate dphy from a different vendor.
+> 
+> One such case is the Rockchip px30 that uses a Innosilicon Mipi dphy,
+> so add the support for handling such a constellation, including the pll
+> also getting generated inside that external phy.
+> 
+> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 > ---
-> I was only able to test this on the model with cache modeling enabled,
-> but even removing TVM from HCR_EL2 without having FWB also worked with
-> that setup, so the testing of this has been light.  It seems like it
-> should obviously work, but it would be good if someone with access to
-> appropriate hardware could give this a spin.
->
->  arch/arm64/include/asm/kvm_arm.h     |  3 +--
->  arch/arm64/include/asm/kvm_emulate.h | 12 +++++++++++-
->  2 files changed, 12 insertions(+), 3 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/kvm_arm.h b/arch/arm64/include/asm/kvm_arm.h
-> index ddf9d762ac62..6e5d839f42b5 100644
-> --- a/arch/arm64/include/asm/kvm_arm.h
-> +++ b/arch/arm64/include/asm/kvm_arm.h
-> @@ -61,7 +61,6 @@
->   * RW:		64bit by default, can be overridden for 32bit VMs
->   * TAC:		Trap ACTLR
->   * TSC:		Trap SMC
-> - * TVM:		Trap VM ops (until M+C set in SCTLR_EL1)
->   * TSW:		Trap cache operations by set/way
->   * TWE:		Trap WFE
->   * TWI:		Trap WFI
-> @@ -74,7 +73,7 @@
->   * SWIO:	Turn set/way invalidates into set/way clean+invalidate
->   */
->  #define HCR_GUEST_FLAGS (HCR_TSC | HCR_TSW | HCR_TWE | HCR_TWI | HCR_VM | \
-> -			 HCR_TVM | HCR_BSU_IS | HCR_FB | HCR_TAC | \
-> +			 HCR_BSU_IS | HCR_FB | HCR_TAC | \
->  			 HCR_AMO | HCR_SWIO | HCR_TIDCP | HCR_RW | HCR_TLOR | \
->  			 HCR_FMO | HCR_IMO)
->  #define HCR_VIRT_EXCP_MASK (HCR_VSE | HCR_VI | HCR_VF)
-> diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
-> index d69c1efc63e7..70509799a2a9 100644
-> --- a/arch/arm64/include/asm/kvm_emulate.h
-> +++ b/arch/arm64/include/asm/kvm_emulate.h
-> @@ -53,8 +53,18 @@ static inline void vcpu_reset_hcr(struct kvm_vcpu *vcpu)
->  		/* trap error record accesses */
->  		vcpu->arch.hcr_el2 |= HCR_TERR;
->  	}
-> -	if (cpus_have_const_cap(ARM64_HAS_STAGE2_FWB))
-> +
-> +	if (cpus_have_const_cap(ARM64_HAS_STAGE2_FWB)) {
->  		vcpu->arch.hcr_el2 |= HCR_FWB;
-> +	} else {
-> +		/*
-> +		 * For non-FWB CPUs, we trap VM ops (HCR_EL2.TVM) until M+C
-> +		 * get set in SCTLR_EL1 such that we can detect when the guest
-> +		 * MMU gets turned off and do the necessary cache maintenance
-> +		 * then.
-> +		 */
-> +		vcpu->arch.hcr_el2 &= ~HCR_TVM;
-> +	}
+>  .../display/rockchip/dw_mipi_dsi_rockchip.txt |  7 ++-
+>  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 54 ++++++++++++++++++-
+>  2 files changed, 57 insertions(+), 4 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt b/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
+> index ce4c1fc9116c..8b25156a9dcf 100644
+> --- a/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
+> +++ b/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
+> @@ -8,8 +8,9 @@ Required properties:
+>  	      "rockchip,rk3399-mipi-dsi", "snps,dw-mipi-dsi".
+>  - reg: Represent the physical address range of the controller.
+>  - interrupts: Represent the controller's interrupt to the CPU(s).
+> -- clocks, clock-names: Phandles to the controller's pll reference
+> -  clock(ref) and APB clock(pclk). For RK3399, a phy config clock
+> +- clocks, clock-names: Phandles to the controller's and APB clock(pclk)
+> +  and either a pll reference clock(ref) (internal dphy) or pll clock(pll)
+> +  (when connected to an external phy). For RK3399, a phy config clock
+
+Why does external PHY clock need to be specified here ? Shouldn't it be
+handled by the PHY instead ?
+
+>    (phy_cfg) and a grf clock(grf) are required. As described in [1].
+>  - rockchip,grf: this soc should set GRF regs to mux vopl/vopb.
+>  - ports: contain a port node with endpoint definitions as defined in [2].
+> @@ -18,6 +19,8 @@ Required properties:
+>  - video port 1 for either a panel or subsequent encoder
 >  
->  	if (test_bit(KVM_ARM_VCPU_EL1_32BIT, vcpu->arch.features))
->  		vcpu->arch.hcr_el2 &= ~HCR_RW;
+>  Optional properties:
+> +- phys: from general PHY binding: the phandle for the PHY device.
+> +- phy-names: Should be "dphy" if phys references an external phy.
+>  - power-domains: a phandle to mipi dsi power domain node.
+>  - resets: list of phandle + reset specifier pairs, as described in [3].
+>  - reset-names: string reset name, must be "apb".
+> diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+> index bc073ec5c183..99ec625e0448 100644
+> --- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+> +++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+> @@ -12,6 +12,7 @@
+>  #include <linux/mfd/syscon.h>
+>  #include <linux/module.h>
+>  #include <linux/of_device.h>
+> +#include <linux/phy/phy.h>
+>  #include <linux/pm_runtime.h>
+>  #include <linux/regmap.h>
+>  
+> @@ -223,6 +224,9 @@ struct dw_mipi_dsi_rockchip {
+>  	bool is_slave;
+>  	struct dw_mipi_dsi_rockchip *slave;
+>  
+> +	/* optional external dphy */
+> +	struct phy *phy;
+> +
+>  	unsigned int lane_mbps; /* per lane */
+>  	u16 input_div;
+>  	u16 feedback_div;
+> @@ -359,6 +363,9 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
+>  	struct dw_mipi_dsi_rockchip *dsi = priv_data;
+>  	int ret, i, vco;
+>  
+> +	if (dsi->phy)
+> +		return 0;
+> +
+>  	/*
+>  	 * Get vco from frequency(lane_mbps)
+>  	 * vco	frequency table
+> @@ -467,6 +474,27 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
+>  	return ret;
+>  }
+>  
+> +static void dw_mipi_dsi_phy_power_on(void *priv_data)
+> +{
+> +	struct dw_mipi_dsi_rockchip *dsi = priv_data;
+> +	int ret;
+> +
+> +	ret = phy_set_mode(dsi->phy, PHY_MODE_MIPI_DPHY);
+> +	if (ret) {
+> +		DRM_DEV_ERROR(dsi->dev, "failed to set phy mode: %d\n", ret);
+> +		return;
+> +	}
+> +
+> +	phy_power_on(dsi->phy);
+> +}
+> +
+> +static void dw_mipi_dsi_phy_power_off(void *priv_data)
+> +{
+> +	struct dw_mipi_dsi_rockchip *dsi = priv_data;
+> +
+> +	phy_power_off(dsi->phy);
+> +}
+> +
+>  static int
+>  dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
+>  			  unsigned long mode_flags, u32 lanes, u32 format,
+> @@ -504,9 +532,21 @@ dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
+>  				      "DPHY clock frequency is out of range\n");
+>  	}
+>  
+> -	fin = clk_get_rate(dsi->pllref_clk);
+>  	fout = target_mbps * USEC_PER_SEC;
+>  
+> +	/* an external phy does have a controllable pll clk */
+> +	if (dsi->phy) {
+> +		fout = clk_round_rate(dsi->pllref_clk, fout);
+> +		clk_set_rate(dsi->pllref_clk, fout);
+> +
+> +		dsi->lane_mbps = target_mbps;
+> +		*lane_mbps = dsi->lane_mbps;
+> +
+> +		return 0;
+> +	}
+> +
+> +	fin = clk_get_rate(dsi->pllref_clk);
+> +
+>  	/* constraint: 5Mhz <= Fref / N <= 40MHz */
+>  	min_prediv = DIV_ROUND_UP(fin, 40 * USEC_PER_SEC);
+>  	max_prediv = fin / (5 * USEC_PER_SEC);
+> @@ -561,6 +601,8 @@ dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
+>  
+>  static const struct dw_mipi_dsi_phy_ops dw_mipi_dsi_rockchip_phy_ops = {
+>  	.init = dw_mipi_dsi_phy_init,
+> +	.power_on = dw_mipi_dsi_phy_power_on,
+> +	.power_off = dw_mipi_dsi_phy_power_off,
+>  	.get_lane_mbps = dw_mipi_dsi_get_lane_mbps,
+>  };
+>  
+> @@ -920,7 +962,15 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
+>  		return -EINVAL;
+>  	}
+>  
+> -	dsi->pllref_clk = devm_clk_get(dev, "ref");
+> +	/* try to get a possible external dphy */
+> +	dsi->phy = devm_phy_optional_get(dev, "dphy");
+> +	if (IS_ERR(dsi->phy)) {
+> +		ret = PTR_ERR(dsi->phy);
+> +		DRM_DEV_ERROR(dev, "failed to get mipi dphy: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	dsi->pllref_clk = devm_clk_get(dev, dsi->phy ? "pll" : "ref");
+>  	if (IS_ERR(dsi->pllref_clk)) {
+>  		ret = PTR_ERR(dsi->pllref_clk);
+>  		DRM_DEV_ERROR(dev,
 
-This patch makes sense to me: when FWB is available, the guest memory is cacheable
-even when the stage 1 MMU is disabled, which means it's now impossible to have a
-situation where the data in memory is newer than the data in the cache.
-
-I tested the patch with the fix suggested by Marc by doing a linux boot and then a
-'ls -R /', and by running kvm-unit-tests in a loop a couple dozen times. For what
-it's worth:
-
-Tested-by: Alexandru Elisei <alexandru.elisei@arm.com>
-
-I do need to point out that I haven't been able to make a guest misbehave when FWB
-is not enabled *and* KVM doesn't do a stage2_flush_vm when the stage 1 MMU is
-enabled. I tried to write two different tests in kvm-unit-tests:
-
-1. With the MMU never enabled, the test tells the host to read a value from memory
-(so a cache line is allocated), writes another value to the same memory location,
-and then enables the MMU and reads the memory back. I always got the latest value
-that was written while the MMU was off.
-
-2. One thread tells the host to read the memory location in a loop (to make sure
-that the cache line doesn't get evicted), while the other thread writes a value
-with the MMU off, enables the MMU and reads the memory back. I still got the
-latest value written with the MMU off.
-
-I can share the source code for the tests, if anyone is interested; I'm also open
-to other suggestions.
-
+-- 
 Regards,
-Alex
+
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
