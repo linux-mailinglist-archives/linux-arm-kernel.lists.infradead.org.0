@@ -2,49 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B067AF1513
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 12:27:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8F0CF1521
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 12:29:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L2XbVf1+FqECF5b2VE67Vm/EAEYPxMcHh1w3MZmPPL4=; b=gLSbte1r5WTgxd
-	PcQNdMSs2x14WkDWeazvJzNeS+CFueCi9EqORxNf4dmDmMLb+ALEyWGlaViZZyJwtpmg64Jq2d1OZ
-	u24KAKeJD91De8xEJosBh065fhrrXIYY7LMloucoASn/nKE87XNyDCbOzPnPotANtCTGDDWoyt854
-	XGZOeJ1BirZIJIsT5Po9Dkil3deaCW58mR9EsB4yOBDs907ZGq/qjOrcE6BcZhKiiYAT85l9i0rpT
-	LdvgJkgVyeNkjbwg65zR2AQAgdg6GtdLgmCDDSjMK+oKKMS5OK1z6fCpc0nNgbZT0bw/QHIdK5SP8
-	BK/MdBZL0235+8jYRYIw==;
+	List-Owner; bh=d64xshEDisVG2kX6kHphvo/y77ARfRP4aW2jioh+Fnw=; b=OB4aVq0S9UGB8n
+	LBjiBoyBLDB9nrrseekYIxNLjPvALT54hE2D1ccAhhc89BCNqAvBXWHwzj1dio5om6SX/rwJ83Qzb
+	EEJ5zhjKZ7bOAnSYjqhbVJ5hrsbWkxFNWrMJrrmLL/RcS0TamOxVRRmh53HTwgh4ic9klBtQZccKx
+	zXznXnX0omNMFBxEDxYvbBiv6SJRNaJZloz2RHNNUTLcMK3xVTXElM3TRs8Jn13F9CmNQ4ku3As4l
+	Z0ZUYjMxFlePizC7taz/8LgcB8azIh9euKe45mRhKVmepFurAillxRyom94ecCIhYOi9oxVJtOHei
+	ZPrMmOkGa6obLuafWhhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSJTJ-0003CY-1J; Wed, 06 Nov 2019 11:27:33 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSJT8-0003BE-3f; Wed, 06 Nov 2019 11:27:23 +0000
-Received: from [94.134.91.181] (helo=phil.fritz.box)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <heiko.stuebner@theobroma-systems.com>)
- id 1iSJSo-0004nK-SH; Wed, 06 Nov 2019 12:27:02 +0100
-From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-To: dri-devel@lists.freedesktop.org,
-	a.hajda@samsung.com
-Subject: [PATCH 3/3] drm/rockchip: dsi: add px30 support
-Date: Wed,  6 Nov 2019 12:26:50 +0100
-Message-Id: <20191106112650.8365-3-heiko.stuebner@theobroma-systems.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191106112650.8365-1-heiko.stuebner@theobroma-systems.com>
-References: <20191106112650.8365-1-heiko.stuebner@theobroma-systems.com>
+	id 1iSJUa-00048e-Iq; Wed, 06 Nov 2019 11:28:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSJUO-00047c-EX
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 11:28:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ED8BC7A7;
+ Wed,  6 Nov 2019 03:28:38 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B3DC83F6C4;
+ Wed,  6 Nov 2019 03:28:37 -0800 (PST)
+Date: Wed, 6 Nov 2019 11:28:29 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>
+Subject: Re: [PATCH 1/2] perf/core: Adding capability to disable PMUs event
+ multiplexing
+Message-ID: <20191106112810.GA50610@lakrids.cambridge.arm.com>
+References: <1573002091-9744-1-git-send-email-gkulkarni@marvell.com>
+ <1573002091-9744-2-git-send-email-gkulkarni@marvell.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1573002091-9744-2-git-send-email-gkulkarni@marvell.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_032722_306008_3595C737 
-X-CRM114-Status: GOOD (  10.47  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191106_032840_529484_83BD2172 
+X-CRM114-Status: GOOD (  19.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -57,80 +63,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, jernej.skrabec@siol.net,
- heiko@sntech.de, jonas@kwiboo.se, linux-kernel@vger.kernel.org,
- narmstrong@baylibre.com, hjc@rock-chips.com, philippe.cornu@st.com,
- yannick.fertre@st.com, linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- Laurent.pinchart@ideasonboard.com,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
+Cc: "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ "corbet@lwn.net" <corbet@lwn.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "gklkml16@gmail.com" <gklkml16@gmail.com>,
+ "mingo@redhat.com" <mingo@redhat.com>, "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the compatible and GRF definitions for the PX30 soc.
+On Wed, Nov 06, 2019 at 01:01:40AM +0000, Ganapatrao Prabhakerrao Kulkarni wrote:
+> When PMUs are registered, perf core enables event multiplexing
+> support by default. There is no provision for PMUs to disable
+> event multiplexing, if PMUs want to disable due to unavoidable
+> circumstances like hardware errata etc.
+> 
+> Adding PMU capability flag PERF_PMU_CAP_NO_MUX_EVENTS and support
+> to allow PMUs to explicitly disable event multiplexing.
 
-Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
----
- .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 27 +++++++++++++++++++
- 1 file changed, 27 insertions(+)
+Even without multiplexing, this PMU activity can happen when switching
+tasks, or when creating/destroying events, so as-is I don't think this
+makes much sense.
 
-diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-index 99ec625e0448..aeadeda0febc 100644
---- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-+++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-@@ -140,6 +140,12 @@
- #define DW_MIPI_NEEDS_PHY_CFG_CLK	BIT(0)
- #define DW_MIPI_NEEDS_GRF_CLK		BIT(1)
- 
-+#define PX30_GRF_PD_VO_CON1		0x0438
-+#define PX30_DSI_FORCETXSTOPMODE	(0xf << 7)
-+#define PX30_DSI_FORCERXMODE		BIT(6)
-+#define PX30_DSI_TURNDISABLE		BIT(5)
-+#define PX30_DSI_LCDC_SEL		BIT(0)
-+
- #define RK3288_GRF_SOC_CON6		0x025c
- #define RK3288_DSI0_LCDC_SEL		BIT(6)
- #define RK3288_DSI1_LCDC_SEL		BIT(9)
-@@ -1039,6 +1045,24 @@ static int dw_mipi_dsi_rockchip_remove(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static const struct rockchip_dw_dsi_chip_data px30_chip_data[] = {
-+	{
-+		.reg = 0xff450000,
-+		.lcdsel_grf_reg = PX30_GRF_PD_VO_CON1,
-+		.lcdsel_big = HIWORD_UPDATE(0, PX30_DSI_LCDC_SEL),
-+		.lcdsel_lit = HIWORD_UPDATE(PX30_DSI_LCDC_SEL,
-+					    PX30_DSI_LCDC_SEL),
-+
-+		.lanecfg1_grf_reg = PX30_GRF_PD_VO_CON1,
-+		.lanecfg1 = HIWORD_UPDATE(0, PX30_DSI_TURNDISABLE |
-+					     PX30_DSI_FORCERXMODE |
-+					     PX30_DSI_FORCETXSTOPMODE),
-+
-+		.max_data_lanes = 4,
-+	},
-+	{ /* sentinel */ }
-+};
-+
- static const struct rockchip_dw_dsi_chip_data rk3288_chip_data[] = {
- 	{
- 		.reg = 0xff960000,
-@@ -1107,6 +1131,9 @@ static const struct rockchip_dw_dsi_chip_data rk3399_chip_data[] = {
- 
- static const struct of_device_id dw_mipi_dsi_rockchip_dt_ids[] = {
- 	{
-+	 .compatible = "rockchip,px30-mipi-dsi",
-+	 .data = &px30_chip_data,
-+	}, {
- 	 .compatible = "rockchip,rk3288-mipi-dsi",
- 	 .data = &rk3288_chip_data,
- 	}, {
--- 
-2.23.0
+If there's an erratum whereby heavy access to the PMU can lockup the
+core, and it's possible to workaround that by minimzing accesses, that
+should be done in the back-end PMU driver.
 
+Either way, this minimzes the utility of the PMU.
+
+Thanks,
+Mark.
+
+> 
+> Signed-off-by: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>
+> ---
+>  include/linux/perf_event.h | 1 +
+>  kernel/events/core.c       | 8 ++++++++
+>  2 files changed, 9 insertions(+)
+> 
+> diff --git a/include/linux/perf_event.h b/include/linux/perf_event.h
+> index 61448c19a132..9e18d841daf7 100644
+> --- a/include/linux/perf_event.h
+> +++ b/include/linux/perf_event.h
+> @@ -247,6 +247,7 @@ struct perf_event;
+>  #define PERF_PMU_CAP_HETEROGENEOUS_CPUS		0x40
+>  #define PERF_PMU_CAP_NO_EXCLUDE			0x80
+>  #define PERF_PMU_CAP_AUX_OUTPUT			0x100
+> +#define PERF_PMU_CAP_NO_MUX_EVENTS		0x200
+>  
+>  /**
+>   * struct pmu - generic performance monitoring unit
+> diff --git a/kernel/events/core.c b/kernel/events/core.c
+> index 4655adbbae10..65452784f81c 100644
+> --- a/kernel/events/core.c
+> +++ b/kernel/events/core.c
+> @@ -1092,6 +1092,10 @@ static void __perf_mux_hrtimer_init(struct perf_cpu_context *cpuctx, int cpu)
+>  	if (pmu->task_ctx_nr == perf_sw_context)
+>  		return;
+>  
+> +	/* No PMU support */
+> +	if (pmu->capabilities & PERF_PMU_CAP_NO_MUX_EVENTS)
+> +		return 0;
+> +
+>  	/*
+>  	 * check default is sane, if not set then force to
+>  	 * default interval (1/tick)
+> @@ -1117,6 +1121,10 @@ static int perf_mux_hrtimer_restart(struct perf_cpu_context *cpuctx)
+>  	if (pmu->task_ctx_nr == perf_sw_context)
+>  		return 0;
+>  
+> +	/* No PMU support */
+> +	if (pmu->capabilities & PERF_PMU_CAP_NO_MUX_EVENTS)
+> +		return 0;
+> +
+>  	raw_spin_lock_irqsave(&cpuctx->hrtimer_lock, flags);
+>  	if (!cpuctx->hrtimer_active) {
+>  		cpuctx->hrtimer_active = 1;
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
