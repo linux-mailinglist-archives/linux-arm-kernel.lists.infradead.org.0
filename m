@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7E25F1A7F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 16:55:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA066F1A81
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 16:56:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=q26pI9GsFnoZP/e6WuK6Ng/K8GR7uXqNG/vsjnMf7t8=; b=ptQt/CrDR31YsH
-	5DsCCjm9ULEng1R//LU62PNHx3PICWsDYqHR3zabNSWhKswJuCJmsDG38HEM9T1iYSoxEsgopw4UJ
-	DFvexj9M3T0biXjAS3ZxPrPQ8hlHUP6RFjndyDo4BoRyMOJ3JaIcXDEZBjenXAwwkdLPWQRLtLi86
-	WUlUVR0P7UixcVRD9i/xLhp+QYeRu4+doK00yOAo19ruZpY7By45IvUo95QtTVzNWuuAYkX1Ep93G
-	iMDWS0M8tpmXmmCQAv+9XjvwLOD0tkmSY/PTobe4fYOXwtOZk/Mpx3cL5uIFg4VjxmuPtV3uG6x1i
-	yX0AyslVNk7NkeqdRgTw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Fbo4MDZdXVCqrOBNpR0J0HgHqMoFmZ0TxLr0sKR8H24=; b=RVa
+	E9yLPKoePmdjm42psT+DbH/Mvu8CcM0TnX6eLsHcxLkzCxvkJNjDhZIAef6sGDUWqSIjdEFUtmk/7
+	4sjzMbKUfK+LSKchvbERA8yhcvHfrlbzlBK6M+KaCbRsTqscF7XBcPgOeXlIDjRweXxrDOYunWfkh
+	gEJJYmxz13Qwj1k/qqN/zHggLZF2pDO8cOSSPTE75ttaJmJ8MgPksUfeVo+TCXvixbxDvBnJvfg8c
+	WPTJVnEEFnuRmwvFqCNjqNEvL7n3IJTGLkKj5omJDc5bHyc3bKGv3BehEhzstZjiWT2XZAgwlsO+N
+	aiSDhFVqwYhrIiFLkPYb4nFEj1IDJYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSNex-0006Wl-3Y; Wed, 06 Nov 2019 15:55:51 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1iSNfG-0006lJ-19; Wed, 06 Nov 2019 15:56:10 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSNeq-0006W2-PL
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 15:55:46 +0000
-Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id F2D87CAD2C235EAEBD2D;
- Wed,  6 Nov 2019 23:55:41 +0800 (CST)
-Received: from localhost.localdomain.localdomain (10.175.113.25) by
- DGGEMS403-HUB.china.huawei.com (10.3.19.203) with Microsoft SMTP Server id
- 14.3.439.0; Wed, 6 Nov 2019 23:55:35 +0800
-From: Wei Yongjun <weiyongjun1@huawei.com>
-To: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>, Michal Simek
- <michal.simek@xilinx.com>, Russell King <linux@armlinux.org.uk>, "Robert
- Hancock" <hancock@sedsystems.ca>
-Subject: [PATCH net-next] net: axienet: Fix error return code in
- axienet_probe()
-Date: Wed, 6 Nov 2019 15:54:49 +0000
-Message-ID: <20191106155449.107672-1-weiyongjun1@huawei.com>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
-X-Originating-IP: [10.175.113.25]
-X-CFilter-Loop: Reflected
+ id 1iSNf7-0006i1-5D
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 15:56:02 +0000
+Received: by mail-lj1-x242.google.com with SMTP id t5so26722238ljk.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 Nov 2019 07:56:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=Qpl59SkxVGxYRO1y4hy9vYURdogoOxolBZEq335zpV0=;
+ b=crGU2R9aBYvgI4zzKv7bUfa+SWTkLwQp6yyPjoaL6tkbjuYf5Ky2/o4a7yo/q/UUzV
+ MBKRcJbbSQRyYxLd6Pg0NoIVnxAi+FiKD00neMcezQYG2t5xy+BRy6DxX9ERkkQw4xjn
+ HhcBt4EHaXif2TNLuNf5HP2YPobFp3mCibv/P6flxs4eex0tKWF7MIInNsyjx+AjG1Zs
+ gV5B1AXA5+r95uMX6mSO+4fdyWnRzLsbRk/5WKmIOPTyXX0Q3aL29fzpyEmX0R7ePaQZ
+ DwM7Tor8rWKV6+1QRPGX08LlbvGpfXU+vkYl2kR87IQwFOkMoDpxSmOjN0z9WAOJDAZ/
+ Hdxw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Qpl59SkxVGxYRO1y4hy9vYURdogoOxolBZEq335zpV0=;
+ b=EHEBH+AcY/mxnCNzXqMQoaM3Bsf+lt+djnsxS87D3t2LSxWUmgzhET7R/URJ4i0xDM
+ whEnJt4fvJ+iWG6VYma5OEfPr/90KVkqqtcDE0XWDxI7STj83xZNmrnk4z1eIIUkp5HS
+ OBLjzwhQmGRF/i15JyZ/g2jYXv3zWnO17Nmn9uQQP9aLXeMEDk4o9ymN/b5RjCm6e6Td
+ +n37MDRx5WJRnPf3d8gU42RDn64Tc+qg1WqlJY2x2qx7BD99uQYScCdxrSiXoWDbUOcK
+ OxTUpRDDWw4xpNvQpO4L9ijfyPztJDHnkiTrifUUeoxWyzmUGq43gRbEHZkmFqD9nTYK
+ fFDQ==
+X-Gm-Message-State: APjAAAXNGk5C+E2TSLWt9vjJCuhrSZ/n/6ZjsnOXojvmdCU6M4quw0MR
+ JuRV4Kvl28FATV57+vVt0i2uWA==
+X-Google-Smtp-Source: APXvYqyIDCj1EArqUS/KfCY+Ed7DLtEfID0IusRmXwjbGvjfcC5kpcSMGPxpQznGRhH1feDUSsZBdQ==
+X-Received: by 2002:a2e:88c1:: with SMTP id a1mr2591237ljk.204.1573055758918; 
+ Wed, 06 Nov 2019 07:55:58 -0800 (PST)
+Received: from jax.urgonet (h-48-83.A175.priv.bahnhof.se. [94.254.48.83])
+ by smtp.gmail.com with ESMTPSA id k187sm4704895lfd.54.2019.11.06.07.55.57
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 06 Nov 2019 07:55:58 -0800 (PST)
+From: Jens Wiklander <jens.wiklander@linaro.org>
+To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ tee-dev@lists.linaro.org
+Subject: [PATCH] tee: optee: fix device enumeration error handling
+Date: Wed,  6 Nov 2019 16:55:38 +0100
+Message-Id: <20191106155538.5618-1-jens.wiklander@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_075545_006275_3DE82C89 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191106_075601_335991_740F9944 
+X-CRM114-Status: GOOD (  14.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,40 +92,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, kernel-janitors@vger.kernel.org,
- Wei Yongjun <weiyongjun1@huawei.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sumit Garg <sumit.garg@linaro.org>, Victor Chong <victor.chong@linaro.org>,
+ Etienne Carriere <etienne.carriere@linaro.org>,
+ Jerome Forissier <jerome@forissier.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the DMA memory resource get failed case, the error is not
-set and 0 will be returned. Fix it by reove redundant check
-since devm_ioremap_resource() will handle it.
+Prior to this patch in optee_probe() when optee_enumerate_devices() was
+called the struct optee was fully initialized. If
+optee_enumerate_devices() returns an error optee_probe() is supposed to
+clean up and free the struct optee completely, but will at this late
+stage need to call optee_remove() instead. This isn't done and thus
+freeing the struct optee prematurely.
 
-Fixes: 28ef9ebdb64c ("net: axienet: make use of axistream-connected attribute optional")
-Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+With this patch the call to optee_enumerate_devices() is done after
+optee_probe() has returned successfully and in case
+optee_enumerate_devices() fails everything is cleaned up with a call to
+optee_remove().
+
+Fixes: c3fa24af9244 ("tee: optee: add TEE bus device enumeration support")
+Signed-off-by: Jens Wiklander <jens.wiklander@linaro.org>
 ---
- drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 4 ----
- 1 file changed, 4 deletions(-)
+ drivers/tee/optee/core.c | 20 ++++++++++++--------
+ 1 file changed, 12 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-index 867726d696e2..8f32db6d2c45 100644
---- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-+++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-@@ -1788,10 +1788,6 @@ static int axienet_probe(struct platform_device *pdev)
- 		/* Check for these resources directly on the Ethernet node. */
- 		struct resource *res = platform_get_resource(pdev,
- 							     IORESOURCE_MEM, 1);
--		if (!res) {
--			dev_err(&pdev->dev, "unable to get DMA memory resource\n");
--			goto free_netdev;
--		}
- 		lp->dma_regs = devm_ioremap_resource(&pdev->dev, res);
- 		lp->rx_irq = platform_get_irq(pdev, 1);
- 		lp->tx_irq = platform_get_irq(pdev, 0);
-
-
+diff --git a/drivers/tee/optee/core.c b/drivers/tee/optee/core.c
+index 1854a3db7345..b830e0a87fba 100644
+--- a/drivers/tee/optee/core.c
++++ b/drivers/tee/optee/core.c
+@@ -643,11 +643,6 @@ static struct optee *optee_probe(struct device_node *np)
+ 	if (optee->sec_caps & OPTEE_SMC_SEC_CAP_DYNAMIC_SHM)
+ 		pr_info("dynamic shared memory is enabled\n");
+ 
+-	rc = optee_enumerate_devices();
+-	if (rc)
+-		goto err;
+-
+-	pr_info("initialized driver\n");
+ 	return optee;
+ err:
+ 	if (optee) {
+@@ -702,9 +697,10 @@ static struct optee *optee_svc;
+ 
+ static int __init optee_driver_init(void)
+ {
+-	struct device_node *fw_np;
+-	struct device_node *np;
+-	struct optee *optee;
++	struct device_node *fw_np = NULL;
++	struct device_node *np = NULL;
++	struct optee *optee = NULL;
++	int rc = 0;
+ 
+ 	/* Node is supposed to be below /firmware */
+ 	fw_np = of_find_node_by_name(NULL, "firmware");
+@@ -723,6 +719,14 @@ static int __init optee_driver_init(void)
+ 	if (IS_ERR(optee))
+ 		return PTR_ERR(optee);
+ 
++	rc = optee_enumerate_devices();
++	if (rc) {
++		optee_remove(optee);
++		return rc;
++	}
++
++	pr_info("initialized driver\n");
++
+ 	optee_svc = optee;
+ 
+ 	return 0;
+-- 
+2.17.1
 
 
 _______________________________________________
