@@ -2,80 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD52EF117C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 09:54:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94506F1197
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 09:58:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bl2WvNoH0RhU8Oed4JAMP3b/laf+LPUln0eSOBAmzYg=; b=gbpj30v6qT+C7R
-	nGTG9lxatrDt1x7QC8hRixg+N0m9aZcxWFRhw1NTu9N7B5h2Ny3hVbOQQcwsyUGCzLK1RLchiyH00
-	ohflbGeNSS6HgfAIjKztvH2PfORWBS56jhBe87g7DgDA2blX72iiEqUNf8uK56IfidhsW4zMefNEv
-	FLK8qlpJzTqSZKPMjFNy9U8yftLaWDJ4pxzPLRv9QmkutyzzUM4uH0/TNG39lcDUUKbEWYRrokB1M
-	AbD1yvwLjYLHjKEB5XLHY+y1QILgUu9te4L+cXvWJ9DhzPgVvMoxVsD2eL8skNW7HIoBeI7+6awhh
-	CgHa3LjatOt1Wo5Qirsw==;
+	List-Owner; bh=mck+FD6AtmQAaaGUJ8qRyTxFg0mzG2xRwRMa/pj9u3Y=; b=aWWMMLfQFdkdEZ
+	z73coZxXHxlG8Kgl3aalQ7S+WBF4HCh4W3lxEcYnvoNpGze1zKvICNautLjuHvFrC82T8lui2vs8/
+	NcIwanMVqhoKlCJWV8S89Cc1Xpzr6LUfI31h27JdgJ9wxeoZFnsbhXK2WJrcmjOhc3RLH9qz+uLkA
+	2KqjQcmdAO4iENfVug8y8ubhSFAGqkVdHs7CKb8/S5tZ7tm3izAmIpdygw3sUJwXFTzoX4RrpQNWh
+	WW55SZdoVEuWPtFCd0GfU9evmpEXAU+Mj5nViSp7pXZfzRgpj/Xps0MoWj0ueny9bt3AJ7zVHboQU
+	+AHp7ViI65Kl0U63H44Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSH5F-0007Ek-GY; Wed, 06 Nov 2019 08:54:33 +0000
-Received: from mail-lj1-f195.google.com ([209.85.208.195])
+	id 1iSH9K-0000gG-Gq; Wed, 06 Nov 2019 08:58:46 +0000
+Received: from mail-ve1eur03on0700.outbound.protection.outlook.com
+ ([2a01:111:f400:fe09::700]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSH55-0007E1-JI
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 08:54:27 +0000
-Received: by mail-lj1-f195.google.com with SMTP id r7so16437095ljg.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 Nov 2019 00:54:23 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=B/HgTTi3tIOvXjYFfYsGWPtYDMO6+DtzJcOrJTLe3dU=;
- b=sEjXU1WgWN4bUb5mjMw0DPmuxR40szgWbgJW2O/g0SsXHfmIb4Dv+FbxR366OfrSq1
- HHWJXF+wEKYsUg4emqP5YSQw+XhCLkF+iTuVk1VK9O082cYXDqKHJh4hV0t/weenR2UG
- pLWEgT1+p7nsL6HLi7KhK4PRghQPNChmOCyiDvSBVweeJQfSBYlocErN6QCnfRNpS3Rp
- vGQyxy6OBIIzPlBULFeVRKg1/j8FMKOs8nGz5IC7wKeQmwFpFQq0xqRUzSDFLjM6cpD+
- fVfrN/H5dZ1iwmwGnbb5+APxCy9kzd2DJfrXIY0bJQa7mQ52sn+zRRDdozULBrND6IsA
- 7qcQ==
-X-Gm-Message-State: APjAAAX1D0SGwwgbzN3aTlBSzn4d1GTkml2o6iQFExycwh3YOP9Br5Xr
- +UdJFkGZLY8wk+fMbGJbmpbhUzTWuu+Irw==
-X-Google-Smtp-Source: APXvYqxmqNxhTaysyJ9X6y7gktlHWxVB+jMKH2WIo0W+Xfv1bDKLojo1+mpSD2s1WAbpq1dqkBoTcw==
-X-Received: by 2002:a2e:9b4b:: with SMTP id o11mr1028310ljj.252.1573030460992; 
- Wed, 06 Nov 2019 00:54:20 -0800 (PST)
-Received: from localhost.localdomain ([213.255.186.46])
- by smtp.gmail.com with ESMTPSA id b67sm21036227ljf.5.2019.11.06.00.54.18
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 06 Nov 2019 00:54:20 -0800 (PST)
-Date: Wed, 6 Nov 2019 10:54:12 +0200
-From: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-To: matti.vaittinen@fi.rohmeurope.com, mazziesaccount@gmail.com
-Subject: [PATCH v2 2/2] gpio: Use new GPIO_LINE_DIRECTION
-Message-ID: <42f40109e2926bca197b30fd9624c609653b23e5.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
-References: <cover.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
+ id 1iSH9B-0000ea-Fz
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 08:58:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=T6ZvDjEjw9w1qf7QtBppmv3j0MwW727436goJUs2+qPZvlPnQN2xi5joRd2sUEZRUT0mBtDbnq7MwotOF5tmU0SvxEp9kSQMNNjaDnJDNUe2Vc1psTul/PI8AYqYvoN7e6WhvoOhQN6oWWlI9z7DishFUNtC+yUEIRrW3WdAS7LFsOtlzNFIuXEXZvoLDINB+rxRu8zqGvPVPgWGjHOM1r/8pe9sMLWFlKo9y6jF1Rl1AwccEqvxhbmJrREAcVtaVfb3egw/hDiFcFYu6uOUj4quqY8j+Z09vmrWzJGtkhcA9huzbuDzivZR2rXZIQCWpvsbndd2pT7YO5wxfVN2iA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Too3ny17LSAqPtNW38ym6QAB7oLVKAUqAlvOEcwZDgE=;
+ b=TwYQ0GR8YXAM+bfGam0Uixb2Pt4tiRnlbFSLOJGARKVpg6a1dCROtE+lizJ5fRQxDrFwy9SWmVqkDT0Yc+UlxJ8U+SFovduf6J24c4d5A6HipGV41W3dHglZMn7NuTZ5dF0Me+hsLrgWGKhPSQM1PImEpYLRMaIiRNnToY8rUu2z8FW337fKIXhes0PzsfOpgv9lR1GIbzmJPlaIarg3ioQvs+cBaH9CuUm8dBRmCOmbVsUuMchP00oDf/FBhW7MuUfLB3iwCNE11+aiXPQnr4zr3fYdBHjC5yVVEWVPepoRUft1+7QMMIQwYBGoHNfdsKBKI/cdn2wJ+zeZDNUXrg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Too3ny17LSAqPtNW38ym6QAB7oLVKAUqAlvOEcwZDgE=;
+ b=YLOS1Ti9qqwHUpBR7BMWlABEijJOciEa2UjGO5SfoJ1blkO3XaebHrlBc2xksG5e5MCWUTGkBWWw20x9qeNOkoyEcnEFxJrnP/EuVvz9xuke6g3jXbLscyXiZBOpb0yNhWsWsqPVl+j0uZgu9qtrCPtTgLGdzJNH3HdAGX9yejc=
+Received: from VI1PR05MB6415.eurprd05.prod.outlook.com (20.179.27.139) by
+ VI1PR05MB5726.eurprd05.prod.outlook.com (20.178.121.152) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2430.20; Wed, 6 Nov 2019 08:58:25 +0000
+Received: from VI1PR05MB6415.eurprd05.prod.outlook.com
+ ([fe80::284c:b89e:d17e:794e]) by VI1PR05MB6415.eurprd05.prod.outlook.com
+ ([fe80::284c:b89e:d17e:794e%7]) with mapi id 15.20.2430.020; Wed, 6 Nov 2019
+ 08:58:25 +0000
+From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+To: "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>, "robh@kernel.org"
+ <robh@kernel.org>
+Subject: Re: [PATCH v2 3/5] dt-bindings: input: tochscreen: ad7879: generic
+ node names in example
+Thread-Topic: [PATCH v2 3/5] dt-bindings: input: tochscreen: ad7879: generic
+ node names in example
+Thread-Index: AQHVi9xiBbTK4Mn9XEC/Bt3TYQb1MqdzPkqAgACY4ICAChHOAA==
+Date: Wed, 6 Nov 2019 08:58:25 +0000
+Message-ID: <c200444ba450d7884cd26e12163b68db6db63725.camel@toradex.com>
+References: <20191026090403.3057-1-marcel@ziswiler.com>
+ <20191026090403.3057-3-marcel@ziswiler.com> <20191030140455.GA4544@bogus>
+ <20191030231205.GI57214@dtor-ws>
+In-Reply-To: <20191030231205.GI57214@dtor-ws>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=marcel.ziswiler@toradex.com; 
+x-originating-ip: [31.10.206.124]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: ba6d87a6-bae4-4e47-c848-08d762977bfe
+x-ms-traffictypediagnostic: VI1PR05MB5726:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR05MB57266BBFB9FA77D46022EF84FB790@VI1PR05MB5726.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3173;
+x-forefront-prvs: 02135EB356
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(346002)(396003)(376002)(136003)(366004)(39850400004)(199004)(189003)(305945005)(66476007)(6436002)(66946007)(64756008)(66446008)(76116006)(91956017)(76176011)(256004)(71190400001)(71200400001)(446003)(14444005)(66556008)(6486002)(6246003)(229853002)(6512007)(4326008)(5660300002)(6116002)(3846002)(8936002)(110136005)(54906003)(36756003)(4001150100001)(99286004)(118296001)(81156014)(8676002)(81166006)(4744005)(7736002)(2906002)(2501003)(316002)(486006)(6506007)(66066001)(102836004)(86362001)(2616005)(11346002)(44832011)(476003)(478600001)(186003)(14454004)(25786009)(26005)(41533002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB5726;
+ H:VI1PR05MB6415.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: toradex.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: z6Qp4CxdtTi/vbLr1xXBAST9yPtlLtHkwyaKNyzbztgqIWU8kXGoVNob0UYlRL9+wCAnVSzTW0Pw8i2n+sEMgmRK0vIV2WU1xptvjrnWkCn0+zFkZvJ1SJUju5SjDIQT+R5vhUTjxn4NHgFPEr4yb6Pa+HeCPFWRdUlqZbkjXf/ljseu1HBo1G9DeeW/GhnV/PnDm+d8rnFl1mhJCEZCU9T60o9cU01r4HYnV8T9djvL94mQjJJyc2jazKvC01WlBvx5m468XW7SnkNm5tc5K9IgfZUulvE8tE/0s0oJyX3TNTQQpwlUHDP5ZDLICDj+SxUQiDc65Z/+QeJfBcRYmiLww/yaibKEUBJaCqhK7GwlhNYYm1n5cO/RHtEdAYAW0wJkKa26eySXRsbdLGwdErh4peFKUKqkd89WSBObm/DQi6pYBLpithj9fH1Zhv10
+Content-ID: <AC973709B0891240854066BF948668E0@eurprd05.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cover.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ba6d87a6-bae4-4e47-c848-08d762977bfe
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Nov 2019 08:58:25.3544 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: TxzUAEeYSPRa13PsNQ0K08Njap6d6louXUi7ZZ3S6KPw8uWChbBqhvZcFOUWtdmx+n3UxLE/6O+CQcs3VAK+TOQL2dEs0DMZ1lOWKLOeoeg=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB5726
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_005423_684424_9516B658 
-X-CRM114-Status: GOOD (  22.80  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191106_005837_534966_EE0D4512 
+X-CRM114-Status: GOOD (  14.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.195 listed in wl.mailspike.net]
+ no trust [2a01:111:f400:fe09:0:0:0:700 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (mazziesaccount[at]gmail.com)
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,1240 +127,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kuppuswamy Sathyanarayanan <sathyanarayanan.kuppuswamy@linux.intel.com>,
- linux-aspeed@lists.ozlabs.org, David Daney <david.daney@cavium.com>,
- Linus Walleij <linus.walleij@linaro.org>, alsa-devel@alsa-project.org,
- Peter Tyser <ptyser@xes-inc.com>, Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, Fabio Estevam <festevam@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Kevin Hilman <khilman@kernel.org>,
- Michal Simek <michal.simek@xilinx.com>, Marek Behun <marek.behun@nic.cz>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- bcm-kernel-feedback-list@broadcom.com, Joel Stanley <joel@jms.id.au>,
- Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- Bamvor Jian Zhang <bamv2005@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- linux-pwm@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
- Charles Keepax <ckeepax@opensource.cirrus.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, linux-omap@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>, Ray Jui <rjui@broadcom.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- William Breathitt Gray <vilhelm.gray@gmail.com>, linux-gpio@vger.kernel.org,
- Richard Fitzgerald <rf@opensource.cirrus.com>,
- Santosh Shilimkar <ssantosh@kernel.org>, linux-tegra@vger.kernel.org,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Andrew Jeffery <andrew@aj.id.au>, "Enrico Weigelt,
- metux IT consult" <info@metux.net>, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, Thorsten Scherer <t.scherer@eckelmann.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, patches@opensource.cirrus.com,
- Shawn Guo <shawnguo@kernel.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's hard for occasional GPIO code reader/writer to know if values 0/1
-equal to IN or OUT. Use defined GPIO_LINE_DIRECTION_IN and
-GPIO_LINE_DIRECTION_OUT to help them out.
+On Wed, 2019-10-30 at 16:12 -0700, Dmitry Torokhov wrote:
+> On Wed, Oct 30, 2019 at 09:04:55AM -0500, Rob Herring wrote:
+> > On Sat, Oct 26, 2019 at 11:04:01AM +0200, Marcel Ziswiler wrote:
+> > > From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+> > 
+> > There's a typo in the subject.
+> 
+> I fixed it up file applying, thank you for noticing.
 
-NOTE - for gpio-amd-fch and gpio-bd9571mwv:
-This commit also changes the return value for direction get to equal 1
-for direction INPUT. Prior this commit these drivers might have
-returned some other positive value but 1 for INPUT.
+Where exactly did you apply this? As I still can't find it applied
+anywhere. Thanks!
 
-Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-Acked-by: Scott Branden <scott.branden@broadcom.com>
-Reviewed-by: Grygorii Strashko <grygorii.strashko@ti.com>
-Reviewed-by: Michal Simek <michal.simek@xilinx.com>
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-
----
-
-This patch contains same changes as v1 patches 2-61 did. v1 was splitted
-into small patches in order to help reviewing but squashing was
-requested by Linus Walleij. I maintained all acks/reviewed-by tags from
-v1 series - so acks/review-by tags in this patch mean that specific
-portion of changes have been acked/reviewed by tagger. Eg, whole patch
-has not been reviewed/acked by persons mentioned. Please let me know if
-this is not Ok to you.
-
- drivers/gpio/gpio-104-dio-48e.c     |  5 ++++-
- drivers/gpio/gpio-104-idi-48.c      |  2 +-
- drivers/gpio/gpio-104-idio-16.c     |  4 ++--
- drivers/gpio/gpio-74xx-mmio.c       |  5 ++++-
- drivers/gpio/gpio-amd-fch.c         |  2 +-
- drivers/gpio/gpio-aspeed.c          |  7 +++----
- drivers/gpio/gpio-bcm-kona.c        |  6 +++---
- drivers/gpio/gpio-bd70528.c         |  8 +++++---
- drivers/gpio/gpio-bd9571mwv.c       |  4 +++-
- drivers/gpio/gpio-dln2.c            |  6 +++---
- drivers/gpio/gpio-exar.c            |  5 ++++-
- drivers/gpio/gpio-f7188x.c          |  5 ++++-
- drivers/gpio/gpio-gpio-mm.c         |  5 ++++-
- drivers/gpio/gpio-htc-egpio.c       |  5 ++++-
- drivers/gpio/gpio-ich.c             |  5 ++++-
- drivers/gpio/gpio-kempld.c          |  5 ++++-
- drivers/gpio/gpio-lp873x.c          |  2 +-
- drivers/gpio/gpio-lp87565.c         |  5 ++++-
- drivers/gpio/gpio-madera.c          |  5 ++++-
- drivers/gpio/gpio-max3191x.c        |  2 +-
- drivers/gpio/gpio-merrifield.c      |  5 ++++-
- drivers/gpio/gpio-mmio.c            | 21 +++++++++++++++------
- drivers/gpio/gpio-mockup.c          | 11 +++--------
- drivers/gpio/gpio-moxtet.c          |  4 ++--
- drivers/gpio/gpio-mvebu.c           |  5 ++++-
- drivers/gpio/gpio-mxs.c             |  5 ++++-
- drivers/gpio/gpio-omap.c            |  6 ++++--
- drivers/gpio/gpio-pca953x.c         |  5 ++++-
- drivers/gpio/gpio-pci-idio-16.c     |  4 ++--
- drivers/gpio/gpio-pcie-idio-24.c    |  9 ++++++---
- drivers/gpio/gpio-pisosr.c          |  2 +-
- drivers/gpio/gpio-pl061.c           |  5 ++++-
- drivers/gpio/gpio-raspberrypi-exp.c |  5 ++++-
- drivers/gpio/gpio-rcar.c            |  5 ++++-
- drivers/gpio/gpio-reg.c             |  3 ++-
- drivers/gpio/gpio-sa1100.c          |  5 ++++-
- drivers/gpio/gpio-sama5d2-piobu.c   |  7 ++++---
- drivers/gpio/gpio-sch.c             |  5 ++++-
- drivers/gpio/gpio-sch311x.c         |  5 ++++-
- drivers/gpio/gpio-siox.c            |  4 ++--
- drivers/gpio/gpio-stmpe.c           |  5 ++++-
- drivers/gpio/gpio-tc3589x.c         |  5 ++++-
- drivers/gpio/gpio-tegra.c           |  5 ++++-
- drivers/gpio/gpio-tegra186.c        |  4 ++--
- drivers/gpio/gpio-thunderx.c        |  5 ++++-
- drivers/gpio/gpio-tpic2810.c        |  2 +-
- drivers/gpio/gpio-tps65086.c        |  2 +-
- drivers/gpio/gpio-tps65912.c        |  4 ++--
- drivers/gpio/gpio-tps68470.c        |  6 +++---
- drivers/gpio/gpio-tqmx86.c          |  5 ++++-
- drivers/gpio/gpio-ts4900.c          |  5 ++++-
- drivers/gpio/gpio-twl4030.c         | 10 +++++-----
- drivers/gpio/gpio-twl6040.c         |  3 +--
- drivers/gpio/gpio-uniphier.c        |  5 ++++-
- drivers/gpio/gpio-wcove.c           |  7 +++++--
- drivers/gpio/gpio-ws16c48.c         |  5 ++++-
- drivers/gpio/gpio-xgene.c           |  5 ++++-
- drivers/gpio/gpio-xra1403.c         |  5 ++++-
- drivers/gpio/gpio-xtensa.c          |  4 ++--
- drivers/gpio/gpio-zynq.c            |  7 +++++--
- 60 files changed, 211 insertions(+), 102 deletions(-)
-
-diff --git a/drivers/gpio/gpio-104-dio-48e.c b/drivers/gpio/gpio-104-dio-48e.c
-index a44fa8af5b0d..400c09b905f8 100644
---- a/drivers/gpio/gpio-104-dio-48e.c
-+++ b/drivers/gpio/gpio-104-dio-48e.c
-@@ -59,7 +59,10 @@ static int dio48e_gpio_get_direction(struct gpio_chip *chip, unsigned offset)
- 	const unsigned port = offset / 8;
- 	const unsigned mask = BIT(offset % 8);
- 
--	return !!(dio48egpio->io_state[port] & mask);
-+	if (dio48egpio->io_state[port] & mask)
-+		return  GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int dio48e_gpio_direction_input(struct gpio_chip *chip, unsigned offset)
-diff --git a/drivers/gpio/gpio-104-idi-48.c b/drivers/gpio/gpio-104-idi-48.c
-index 79dead61e776..c50329ab493a 100644
---- a/drivers/gpio/gpio-104-idi-48.c
-+++ b/drivers/gpio/gpio-104-idi-48.c
-@@ -53,7 +53,7 @@ struct idi_48_gpio {
- 
- static int idi_48_gpio_get_direction(struct gpio_chip *chip, unsigned offset)
- {
--	return 1;
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int idi_48_gpio_direction_input(struct gpio_chip *chip, unsigned offset)
-diff --git a/drivers/gpio/gpio-104-idio-16.c b/drivers/gpio/gpio-104-idio-16.c
-index 8d2f51cd9d91..5752d9dab148 100644
---- a/drivers/gpio/gpio-104-idio-16.c
-+++ b/drivers/gpio/gpio-104-idio-16.c
-@@ -51,9 +51,9 @@ struct idio_16_gpio {
- static int idio_16_gpio_get_direction(struct gpio_chip *chip, unsigned offset)
- {
- 	if (offset > 15)
--		return 1;
-+		return GPIO_LINE_DIRECTION_IN;
- 
--	return 0;
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int idio_16_gpio_direction_input(struct gpio_chip *chip, unsigned offset)
-diff --git a/drivers/gpio/gpio-74xx-mmio.c b/drivers/gpio/gpio-74xx-mmio.c
-index 83a2286d93f6..173e06758e6c 100644
---- a/drivers/gpio/gpio-74xx-mmio.c
-+++ b/drivers/gpio/gpio-74xx-mmio.c
-@@ -77,7 +77,10 @@ static int mmio_74xx_get_direction(struct gpio_chip *gc, unsigned offset)
- {
- 	struct mmio_74xx_gpio_priv *priv = gpiochip_get_data(gc);
- 
--	return !(priv->flags & MMIO_74XX_DIR_OUT);
-+	if (priv->flags & MMIO_74XX_DIR_OUT)
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return  GPIO_LINE_DIRECTION_IN;
- }
- 
- static int mmio_74xx_dir_in(struct gpio_chip *gc, unsigned int gpio)
-diff --git a/drivers/gpio/gpio-amd-fch.c b/drivers/gpio/gpio-amd-fch.c
-index 181df1581df5..4e44ba4d7423 100644
---- a/drivers/gpio/gpio-amd-fch.c
-+++ b/drivers/gpio/gpio-amd-fch.c
-@@ -92,7 +92,7 @@ static int amd_fch_gpio_get_direction(struct gpio_chip *gc, unsigned int gpio)
- 	ret = (readl_relaxed(ptr) & AMD_FCH_GPIO_FLAG_DIRECTION);
- 	spin_unlock_irqrestore(&priv->lock, flags);
- 
--	return ret;
-+	return ret ? GPIO_LINE_DIRECTION_IN : GPIO_LINE_DIRECTION_OUT;
- }
- 
- static void amd_fch_gpio_set(struct gpio_chip *gc,
-diff --git a/drivers/gpio/gpio-aspeed.c b/drivers/gpio/gpio-aspeed.c
-index 09e53c5f3b0a..f1037b61f763 100644
---- a/drivers/gpio/gpio-aspeed.c
-+++ b/drivers/gpio/gpio-aspeed.c
-@@ -487,10 +487,10 @@ static int aspeed_gpio_get_direction(struct gpio_chip *gc, unsigned int offset)
- 	u32 val;
- 
- 	if (!have_input(gpio, offset))
--		return 0;
-+		return GPIO_LINE_DIRECTION_OUT;
- 
- 	if (!have_output(gpio, offset))
--		return 1;
-+		return GPIO_LINE_DIRECTION_IN;
- 
- 	spin_lock_irqsave(&gpio->lock, flags);
- 
-@@ -498,8 +498,7 @@ static int aspeed_gpio_get_direction(struct gpio_chip *gc, unsigned int offset)
- 
- 	spin_unlock_irqrestore(&gpio->lock, flags);
- 
--	return !val;
--
-+	return val ? GPIO_LINE_DIRECTION_OUT : GPIO_LINE_DIRECTION_IN;
- }
- 
- static inline int irqd_to_aspeed_gpio_data(struct irq_data *d,
-diff --git a/drivers/gpio/gpio-bcm-kona.c b/drivers/gpio/gpio-bcm-kona.c
-index 9fa6d3a967d2..4122683eb1f9 100644
---- a/drivers/gpio/gpio-bcm-kona.c
-+++ b/drivers/gpio/gpio-bcm-kona.c
-@@ -127,7 +127,7 @@ static int bcm_kona_gpio_get_dir(struct gpio_chip *chip, unsigned gpio)
- 	u32 val;
- 
- 	val = readl(reg_base + GPIO_CONTROL(gpio)) & GPIO_GPCTR0_IOTR_MASK;
--	return !!val;
-+	return val ? GPIO_LINE_DIRECTION_IN : GPIO_LINE_DIRECTION_OUT;
- }
- 
- static void bcm_kona_gpio_set(struct gpio_chip *chip, unsigned gpio, int value)
-@@ -144,7 +144,7 @@ static void bcm_kona_gpio_set(struct gpio_chip *chip, unsigned gpio, int value)
- 	raw_spin_lock_irqsave(&kona_gpio->lock, flags);
- 
- 	/* this function only applies to output pin */
--	if (bcm_kona_gpio_get_dir(chip, gpio) == 1)
-+	if (bcm_kona_gpio_get_dir(chip, gpio) == GPIO_LINE_DIRECTION_IN)
- 		goto out;
- 
- 	reg_offset = value ? GPIO_OUT_SET(bank_id) : GPIO_OUT_CLEAR(bank_id);
-@@ -170,7 +170,7 @@ static int bcm_kona_gpio_get(struct gpio_chip *chip, unsigned gpio)
- 	reg_base = kona_gpio->reg_base;
- 	raw_spin_lock_irqsave(&kona_gpio->lock, flags);
- 
--	if (bcm_kona_gpio_get_dir(chip, gpio) == 1)
-+	if (bcm_kona_gpio_get_dir(chip, gpio) == GPIO_LINE_DIRECTION_IN)
- 		reg_offset = GPIO_IN_STATUS(bank_id);
- 	else
- 		reg_offset = GPIO_OUT_STATUS(bank_id);
-diff --git a/drivers/gpio/gpio-bd70528.c b/drivers/gpio/gpio-bd70528.c
-index 0c1ead12d883..734be6b752d0 100644
---- a/drivers/gpio/gpio-bd70528.c
-+++ b/drivers/gpio/gpio-bd70528.c
-@@ -54,8 +54,10 @@ static int bd70528_get_direction(struct gpio_chip *chip, unsigned int offset)
- 		dev_err(bdgpio->chip.dev, "Could not read gpio direction\n");
- 		return ret;
- 	}
-+	if (val & BD70528_GPIO_OUT_EN_MASK)
-+		return GPIO_LINE_DIRECTION_OUT;
- 
--	return !(val & BD70528_GPIO_OUT_EN_MASK);
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int bd70528_gpio_set_config(struct gpio_chip *chip, unsigned int offset,
-@@ -166,9 +168,9 @@ static int bd70528_gpio_get(struct gpio_chip *chip, unsigned int offset)
- 	 * locking would make no sense.
- 	 */
- 	ret = bd70528_get_direction(chip, offset);
--	if (ret == 0)
-+	if (ret == GPIO_LINE_DIRECTION_OUT)
- 		ret = bd70528_gpio_get_o(bdgpio, offset);
--	else if (ret == 1)
-+	else if (ret == GPIO_LINE_DIRECTION_IN)
- 		ret = bd70528_gpio_get_i(bdgpio, offset);
- 	else
- 		dev_err(bdgpio->chip.dev, "failed to read GPIO direction\n");
-diff --git a/drivers/gpio/gpio-bd9571mwv.c b/drivers/gpio/gpio-bd9571mwv.c
-index 5224a946e8ab..c0abc9c6851b 100644
---- a/drivers/gpio/gpio-bd9571mwv.c
-+++ b/drivers/gpio/gpio-bd9571mwv.c
-@@ -37,8 +37,10 @@ static int bd9571mwv_gpio_get_direction(struct gpio_chip *chip,
- 	ret = regmap_read(gpio->bd->regmap, BD9571MWV_GPIO_DIR, &val);
- 	if (ret < 0)
- 		return ret;
-+	if (val & BIT(offset))
-+		return GPIO_LINE_DIRECTION_IN;
- 
--	return val & BIT(offset);
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int bd9571mwv_gpio_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-dln2.c b/drivers/gpio/gpio-dln2.c
-index 8a33c2fc174d..26b40c8b8a12 100644
---- a/drivers/gpio/gpio-dln2.c
-+++ b/drivers/gpio/gpio-dln2.c
-@@ -200,9 +200,9 @@ static int dln2_gpio_get_direction(struct gpio_chip *chip, unsigned offset)
- 	struct dln2_gpio *dln2 = gpiochip_get_data(chip);
- 
- 	if (test_bit(offset, dln2->output_enabled))
--		return 0;
-+		return GPIO_LINE_DIRECTION_OUT;
- 
--	return 1;
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int dln2_gpio_get(struct gpio_chip *chip, unsigned int offset)
-@@ -214,7 +214,7 @@ static int dln2_gpio_get(struct gpio_chip *chip, unsigned int offset)
- 	if (dir < 0)
- 		return dir;
- 
--	if (dir == 1)
-+	if (dir == GPIO_LINE_DIRECTION_IN)
- 		return dln2_gpio_pin_get_in_val(dln2, offset);
- 
- 	return dln2_gpio_pin_get_out_val(dln2, offset);
-diff --git a/drivers/gpio/gpio-exar.c b/drivers/gpio/gpio-exar.c
-index fae327d5b06e..da1ef0b1c291 100644
---- a/drivers/gpio/gpio-exar.c
-+++ b/drivers/gpio/gpio-exar.c
-@@ -77,7 +77,10 @@ static int exar_get_direction(struct gpio_chip *chip, unsigned int offset)
- 		EXAR_OFFSET_MPIOSEL_HI : EXAR_OFFSET_MPIOSEL_LO;
- 	unsigned int bit  = (offset + exar_gpio->first_pin) % 8;
- 
--	return !!(exar_get(chip, addr) & BIT(bit));
-+	if (exar_get(chip, addr) & BIT(bit))
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int exar_get_value(struct gpio_chip *chip, unsigned int offset)
-diff --git a/drivers/gpio/gpio-f7188x.c b/drivers/gpio/gpio-f7188x.c
-index fdc639f856f1..cadd02993539 100644
---- a/drivers/gpio/gpio-f7188x.c
-+++ b/drivers/gpio/gpio-f7188x.c
-@@ -250,7 +250,10 @@ static int f7188x_gpio_get_direction(struct gpio_chip *chip, unsigned offset)
- 
- 	superio_exit(sio->addr);
- 
--	return !(dir & 1 << offset);
-+	if (dir & 1 << offset)
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int f7188x_gpio_direction_in(struct gpio_chip *chip, unsigned offset)
-diff --git a/drivers/gpio/gpio-gpio-mm.c b/drivers/gpio/gpio-gpio-mm.c
-index 78a1db24e931..c22d6f94129c 100644
---- a/drivers/gpio/gpio-gpio-mm.c
-+++ b/drivers/gpio/gpio-gpio-mm.c
-@@ -52,7 +52,10 @@ static int gpiomm_gpio_get_direction(struct gpio_chip *chip,
- 	const unsigned int port = offset / 8;
- 	const unsigned int mask = BIT(offset % 8);
- 
--	return !!(gpiommgpio->io_state[port] & mask);
-+	if (gpiommgpio->io_state[port] & mask)
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int gpiomm_gpio_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-htc-egpio.c b/drivers/gpio/gpio-htc-egpio.c
-index 8aa23d70b1e6..a40bd56673fe 100644
---- a/drivers/gpio/gpio-htc-egpio.c
-+++ b/drivers/gpio/gpio-htc-egpio.c
-@@ -220,7 +220,10 @@ static int egpio_get_direction(struct gpio_chip *chip, unsigned offset)
- 
- 	egpio = gpiochip_get_data(chip);
- 
--	return !test_bit(offset, &egpio->is_out);
-+	if (test_bit(offset, &egpio->is_out))
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static void egpio_write_cache(struct egpio_info *ei)
-diff --git a/drivers/gpio/gpio-ich.c b/drivers/gpio/gpio-ich.c
-index 90bf7742f9b0..2f086d0aa1f4 100644
---- a/drivers/gpio/gpio-ich.c
-+++ b/drivers/gpio/gpio-ich.c
-@@ -159,7 +159,10 @@ static bool ichx_gpio_check_available(struct gpio_chip *gpio, unsigned nr)
- 
- static int ichx_gpio_get_direction(struct gpio_chip *gpio, unsigned nr)
- {
--	return ichx_read_bit(GPIO_IO_SEL, nr);
-+	if (ichx_read_bit(GPIO_IO_SEL, nr))
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int ichx_gpio_direction_input(struct gpio_chip *gpio, unsigned nr)
-diff --git a/drivers/gpio/gpio-kempld.c b/drivers/gpio/gpio-kempld.c
-index ef51638f3f75..4ea15f08e0f4 100644
---- a/drivers/gpio/gpio-kempld.c
-+++ b/drivers/gpio/gpio-kempld.c
-@@ -104,7 +104,10 @@ static int kempld_gpio_get_direction(struct gpio_chip *chip, unsigned offset)
- 	struct kempld_gpio_data *gpio = gpiochip_get_data(chip);
- 	struct kempld_device_data *pld = gpio->pld;
- 
--	return !kempld_gpio_get_bit(pld, KEMPLD_GPIO_DIR_NUM(offset), offset);
-+	if (kempld_gpio_get_bit(pld, KEMPLD_GPIO_DIR_NUM(offset), offset))
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int kempld_gpio_pincount(struct kempld_device_data *pld)
-diff --git a/drivers/gpio/gpio-lp873x.c b/drivers/gpio/gpio-lp873x.c
-index 801995dd9b26..70fad87ff2db 100644
---- a/drivers/gpio/gpio-lp873x.c
-+++ b/drivers/gpio/gpio-lp873x.c
-@@ -33,7 +33,7 @@ static int lp873x_gpio_get_direction(struct gpio_chip *chip,
- 				     unsigned int offset)
- {
- 	/* This device is output only */
--	return 0;
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int lp873x_gpio_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-lp87565.c b/drivers/gpio/gpio-lp87565.c
-index a121c8f10610..e1244520cf7d 100644
---- a/drivers/gpio/gpio-lp87565.c
-+++ b/drivers/gpio/gpio-lp87565.c
-@@ -57,7 +57,10 @@ static int lp87565_gpio_get_direction(struct gpio_chip *chip,
- 	if (ret < 0)
- 		return ret;
- 
--	return !(val & BIT(offset));
-+	if (val & BIT(offset))
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int lp87565_gpio_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-madera.c b/drivers/gpio/gpio-madera.c
-index 7086f8b5388f..8f38303fcbc4 100644
---- a/drivers/gpio/gpio-madera.c
-+++ b/drivers/gpio/gpio-madera.c
-@@ -34,7 +34,10 @@ static int madera_gpio_get_direction(struct gpio_chip *chip,
- 	if (ret < 0)
- 		return ret;
- 
--	return !!(val & MADERA_GP1_DIR_MASK);
-+	if (val & MADERA_GP1_DIR_MASK)
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int madera_gpio_direction_in(struct gpio_chip *chip, unsigned int offset)
-diff --git a/drivers/gpio/gpio-max3191x.c b/drivers/gpio/gpio-max3191x.c
-index 4b4b2ceb82fc..0696d5a21431 100644
---- a/drivers/gpio/gpio-max3191x.c
-+++ b/drivers/gpio/gpio-max3191x.c
-@@ -94,7 +94,7 @@ DECLARE_CRC8_TABLE(max3191x_crc8);
- 
- static int max3191x_get_direction(struct gpio_chip *gpio, unsigned int offset)
- {
--	return 1; /* always in */
-+	return GPIO_LINE_DIRECTION_IN; /* always in */
- }
- 
- static int max3191x_direction_input(struct gpio_chip *gpio, unsigned int offset)
-diff --git a/drivers/gpio/gpio-merrifield.c b/drivers/gpio/gpio-merrifield.c
-index 2f1e9da81c1e..d4fa6e9560f3 100644
---- a/drivers/gpio/gpio-merrifield.c
-+++ b/drivers/gpio/gpio-merrifield.c
-@@ -162,7 +162,10 @@ static int mrfld_gpio_get_direction(struct gpio_chip *chip, unsigned int offset)
- {
- 	void __iomem *gpdr = gpio_reg(chip, offset, GPDR);
- 
--	return !(readl(gpdr) & BIT(offset % 32));
-+	if (readl(gpdr) & BIT(offset % 32))
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int mrfld_gpio_set_debounce(struct gpio_chip *chip, unsigned int offset,
-diff --git a/drivers/gpio/gpio-mmio.c b/drivers/gpio/gpio-mmio.c
-index 6f904c874678..cd07c948649f 100644
---- a/drivers/gpio/gpio-mmio.c
-+++ b/drivers/gpio/gpio-mmio.c
-@@ -370,15 +370,24 @@ static int bgpio_dir_in(struct gpio_chip *gc, unsigned int gpio)
- static int bgpio_get_dir(struct gpio_chip *gc, unsigned int gpio)
- {
- 	/* Return 0 if output, 1 if input */
--	if (gc->bgpio_dir_unreadable)
--		return !(gc->bgpio_dir & bgpio_line2mask(gc, gpio));
--	if (gc->reg_dir_out)
--		return !(gc->read_reg(gc->reg_dir_out) & bgpio_line2mask(gc, gpio));
-+	if (gc->bgpio_dir_unreadable) {
-+		if (gc->bgpio_dir & bgpio_line2mask(gc, gpio))
-+			return GPIO_LINE_DIRECTION_OUT;
-+		return GPIO_LINE_DIRECTION_IN;
-+	}
-+
-+	if (gc->reg_dir_out) {
-+		if (gc->read_reg(gc->reg_dir_out) & bgpio_line2mask(gc, gpio))
-+			return GPIO_LINE_DIRECTION_OUT;
-+		return GPIO_LINE_DIRECTION_IN;
-+	}
-+
- 	if (gc->reg_dir_in)
--		return !!(gc->read_reg(gc->reg_dir_in) & bgpio_line2mask(gc, gpio));
-+		if (!(gc->read_reg(gc->reg_dir_in) & bgpio_line2mask(gc, gpio)))
-+			return GPIO_LINE_DIRECTION_OUT;
- 
- 	/* This should not happen */
--	return 1;
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int bgpio_dir_out(struct gpio_chip *gc, unsigned int gpio, int val)
-diff --git a/drivers/gpio/gpio-mockup.c b/drivers/gpio/gpio-mockup.c
-index 213aedc97dc2..47c172b2f5ad 100644
---- a/drivers/gpio/gpio-mockup.c
-+++ b/drivers/gpio/gpio-mockup.c
-@@ -34,14 +34,9 @@
- 
- #define gpio_mockup_err(...)	pr_err(GPIO_MOCKUP_NAME ": " __VA_ARGS__)
- 
--enum {
--	GPIO_MOCKUP_DIR_IN = 0,
--	GPIO_MOCKUP_DIR_OUT = 1,
--};
--
- /*
-  * struct gpio_pin_status - structure describing a GPIO status
-- * @dir:       Configures direction of gpio as "in" or "out", 0=in, 1=out
-+ * @dir:       Configures direction of gpio as "in" or "out"
-  * @value:     Configures status of the gpio as 0(low) or 1(high)
-  */
- struct gpio_mockup_line_status {
-@@ -152,7 +147,7 @@ static int gpio_mockup_dirout(struct gpio_chip *gc,
- 	struct gpio_mockup_chip *chip = gpiochip_get_data(gc);
- 
- 	mutex_lock(&chip->lock);
--	chip->lines[offset].dir = GPIO_MOCKUP_DIR_OUT;
-+	chip->lines[offset].dir = GPIO_LINE_DIRECTION_OUT;
- 	__gpio_mockup_set(chip, offset, value);
- 	mutex_unlock(&chip->lock);
- 
-@@ -164,7 +159,7 @@ static int gpio_mockup_dirin(struct gpio_chip *gc, unsigned int offset)
- 	struct gpio_mockup_chip *chip = gpiochip_get_data(gc);
- 
- 	mutex_lock(&chip->lock);
--	chip->lines[offset].dir = GPIO_MOCKUP_DIR_IN;
-+	chip->lines[offset].dir = GPIO_LINE_DIRECTION_IN;
- 	mutex_unlock(&chip->lock);
- 
- 	return 0;
-diff --git a/drivers/gpio/gpio-moxtet.c b/drivers/gpio/gpio-moxtet.c
-index 3fd729994a38..8299909318f4 100644
---- a/drivers/gpio/gpio-moxtet.c
-+++ b/drivers/gpio/gpio-moxtet.c
-@@ -78,9 +78,9 @@ static int moxtet_gpio_get_direction(struct gpio_chip *gc, unsigned int offset)
- 
- 	/* All lines are hard wired to be either input or output, not both. */
- 	if (chip->desc->in_mask & BIT(offset))
--		return 1;
-+		return GPIO_LINE_DIRECTION_IN;
- 	else if (chip->desc->out_mask & BIT(offset))
--		return 0;
-+		return GPIO_LINE_DIRECTION_OUT;
- 	else
- 		return -EINVAL;
- }
-diff --git a/drivers/gpio/gpio-mvebu.c b/drivers/gpio/gpio-mvebu.c
-index 6c0687694341..9b2adf0ef880 100644
---- a/drivers/gpio/gpio-mvebu.c
-+++ b/drivers/gpio/gpio-mvebu.c
-@@ -384,7 +384,10 @@ static int mvebu_gpio_get_direction(struct gpio_chip *chip, unsigned int pin)
- 
- 	regmap_read(mvchip->regs, GPIO_IO_CONF_OFF + mvchip->offset, &u);
- 
--	return !!(u & BIT(pin));
-+	if (u & BIT(pin))
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int mvebu_gpio_to_irq(struct gpio_chip *chip, unsigned int pin)
-diff --git a/drivers/gpio/gpio-mxs.c b/drivers/gpio/gpio-mxs.c
-index 5e5437a2c607..c4a314c68555 100644
---- a/drivers/gpio/gpio-mxs.c
-+++ b/drivers/gpio/gpio-mxs.c
-@@ -248,7 +248,10 @@ static int mxs_gpio_get_direction(struct gpio_chip *gc, unsigned offset)
- 	u32 dir;
- 
- 	dir = readl(port->base + PINCTRL_DOE(port));
--	return !(dir & mask);
-+	if (dir & mask)
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static const struct platform_device_id mxs_gpio_ids[] = {
-diff --git a/drivers/gpio/gpio-omap.c b/drivers/gpio/gpio-omap.c
-index d0f27084a942..3bd8adaeed9e 100644
---- a/drivers/gpio/gpio-omap.c
-+++ b/drivers/gpio/gpio-omap.c
-@@ -805,8 +805,10 @@ static int omap_gpio_get_direction(struct gpio_chip *chip, unsigned offset)
- {
- 	struct gpio_bank *bank = gpiochip_get_data(chip);
- 
--	return !!(readl_relaxed(bank->base + bank->regs->direction) &
--		  BIT(offset));
-+	if (readl_relaxed(bank->base + bank->regs->direction) & BIT(offset))
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int omap_gpio_input(struct gpio_chip *chip, unsigned offset)
-diff --git a/drivers/gpio/gpio-pca953x.c b/drivers/gpio/gpio-pca953x.c
-index de5d1383f28d..82122c3c688a 100644
---- a/drivers/gpio/gpio-pca953x.c
-+++ b/drivers/gpio/gpio-pca953x.c
-@@ -449,7 +449,10 @@ static int pca953x_gpio_get_direction(struct gpio_chip *gc, unsigned off)
- 	if (ret < 0)
- 		return ret;
- 
--	return !!(reg_val & bit);
-+	if (reg_val & bit)
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static void pca953x_gpio_set_multiple(struct gpio_chip *gc,
-diff --git a/drivers/gpio/gpio-pci-idio-16.c b/drivers/gpio/gpio-pci-idio-16.c
-index 5aa136a6a3e0..df51dd08bdfe 100644
---- a/drivers/gpio/gpio-pci-idio-16.c
-+++ b/drivers/gpio/gpio-pci-idio-16.c
-@@ -61,9 +61,9 @@ static int idio_16_gpio_get_direction(struct gpio_chip *chip,
- 	unsigned int offset)
- {
- 	if (offset > 15)
--		return 1;
-+		return GPIO_LINE_DIRECTION_IN;
- 
--	return 0;
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int idio_16_gpio_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-pcie-idio-24.c b/drivers/gpio/gpio-pcie-idio-24.c
-index 52f1647a46fd..44c1e4fc489f 100644
---- a/drivers/gpio/gpio-pcie-idio-24.c
-+++ b/drivers/gpio/gpio-pcie-idio-24.c
-@@ -104,15 +104,18 @@ static int idio_24_gpio_get_direction(struct gpio_chip *chip,
- 
- 	/* FET Outputs */
- 	if (offset < 24)
--		return 0;
-+		return GPIO_LINE_DIRECTION_OUT;
- 
- 	/* Isolated Inputs */
- 	if (offset < 48)
--		return 1;
-+		return GPIO_LINE_DIRECTION_IN;
- 
- 	/* TTL/CMOS I/O */
- 	/* OUT MODE = 1 when TTL/CMOS Output Mode is set */
--	return !(ioread8(&idio24gpio->reg->ctl) & out_mode_mask);
-+	if (ioread8(&idio24gpio->reg->ctl) & out_mode_mask)
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int idio_24_gpio_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-pisosr.c b/drivers/gpio/gpio-pisosr.c
-index f809a5a8e9eb..1331b2a94679 100644
---- a/drivers/gpio/gpio-pisosr.c
-+++ b/drivers/gpio/gpio-pisosr.c
-@@ -65,7 +65,7 @@ static int pisosr_gpio_get_direction(struct gpio_chip *chip,
- 				     unsigned offset)
- {
- 	/* This device always input */
--	return 1;
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int pisosr_gpio_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-pl061.c b/drivers/gpio/gpio-pl061.c
-index 722ce5cf861e..5df7782e348f 100644
---- a/drivers/gpio/gpio-pl061.c
-+++ b/drivers/gpio/gpio-pl061.c
-@@ -63,7 +63,10 @@ static int pl061_get_direction(struct gpio_chip *gc, unsigned offset)
- {
- 	struct pl061 *pl061 = gpiochip_get_data(gc);
- 
--	return !(readb(pl061->base + GPIODIR) & BIT(offset));
-+	if (readb(pl061->base + GPIODIR) & BIT(offset))
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int pl061_direction_input(struct gpio_chip *gc, unsigned offset)
-diff --git a/drivers/gpio/gpio-raspberrypi-exp.c b/drivers/gpio/gpio-raspberrypi-exp.c
-index b77ea16ffa03..bb100e0124e6 100644
---- a/drivers/gpio/gpio-raspberrypi-exp.c
-+++ b/drivers/gpio/gpio-raspberrypi-exp.c
-@@ -147,7 +147,10 @@ static int rpi_exp_gpio_get_direction(struct gpio_chip *gc, unsigned int off)
- 			get.gpio);
- 		return ret ? ret : -EIO;
- 	}
--	return !get.direction;
-+	if (get.direction)
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int rpi_exp_gpio_get(struct gpio_chip *gc, unsigned int off)
-diff --git a/drivers/gpio/gpio-rcar.c b/drivers/gpio/gpio-rcar.c
-index 187984d26f47..d7e6e68c25af 100644
---- a/drivers/gpio/gpio-rcar.c
-+++ b/drivers/gpio/gpio-rcar.c
-@@ -279,7 +279,10 @@ static int gpio_rcar_get_direction(struct gpio_chip *chip, unsigned int offset)
- {
- 	struct gpio_rcar_priv *p = gpiochip_get_data(chip);
- 
--	return !(gpio_rcar_read(p, INOUTSEL) & BIT(offset));
-+	if (gpio_rcar_read(p, INOUTSEL) & BIT(offset))
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int gpio_rcar_direction_input(struct gpio_chip *chip, unsigned offset)
-diff --git a/drivers/gpio/gpio-reg.c b/drivers/gpio/gpio-reg.c
-index fdc7a9d5b382..d35169bde25a 100644
---- a/drivers/gpio/gpio-reg.c
-+++ b/drivers/gpio/gpio-reg.c
-@@ -26,7 +26,8 @@ static int gpio_reg_get_direction(struct gpio_chip *gc, unsigned offset)
- {
- 	struct gpio_reg *r = to_gpio_reg(gc);
- 
--	return r->direction & BIT(offset) ? 1 : 0;
-+	return r->direction & BIT(offset) ? GPIO_LINE_DIRECTION_IN :
-+					    GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int gpio_reg_direction_output(struct gpio_chip *gc, unsigned offset,
-diff --git a/drivers/gpio/gpio-sa1100.c b/drivers/gpio/gpio-sa1100.c
-index 46b7cf23fb0f..edff5e81489f 100644
---- a/drivers/gpio/gpio-sa1100.c
-+++ b/drivers/gpio/gpio-sa1100.c
-@@ -53,7 +53,10 @@ static int sa1100_get_direction(struct gpio_chip *chip, unsigned offset)
- {
- 	void __iomem *gpdr = sa1100_gpio_chip(chip)->membase + R_GPDR;
- 
--	return !(readl_relaxed(gpdr) & BIT(offset));
-+	if (readl_relaxed(gpdr) & BIT(offset))
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int sa1100_direction_input(struct gpio_chip *chip, unsigned offset)
-diff --git a/drivers/gpio/gpio-sama5d2-piobu.c b/drivers/gpio/gpio-sama5d2-piobu.c
-index 7d718557092e..b04c561f3280 100644
---- a/drivers/gpio/gpio-sama5d2-piobu.c
-+++ b/drivers/gpio/gpio-sama5d2-piobu.c
-@@ -119,7 +119,8 @@ static int sama5d2_piobu_get_direction(struct gpio_chip *chip,
- 	if (ret < 0)
- 		return ret;
- 
--	return (ret == PIOBU_IN) ? 1 : 0;
-+	return (ret == PIOBU_IN) ? GPIO_LINE_DIRECTION_IN :
-+				   GPIO_LINE_DIRECTION_OUT;
- }
- 
- /**
-@@ -154,9 +155,9 @@ static int sama5d2_piobu_get(struct gpio_chip *chip, unsigned int pin)
- 	/* if pin is input, read value from PDS else read from SOD */
- 	int ret = sama5d2_piobu_get_direction(chip, pin);
- 
--	if (ret == 1)
-+	if (ret == GPIO_LINE_DIRECTION_IN)
- 		ret = sama5d2_piobu_read_value(chip, pin, PIOBU_PDS);
--	else if (!ret)
-+	else if (ret == GPIO_LINE_DIRECTION_OUT)
- 		ret = sama5d2_piobu_read_value(chip, pin, PIOBU_SOD);
- 
- 	if (ret < 0)
-diff --git a/drivers/gpio/gpio-sch.c b/drivers/gpio/gpio-sch.c
-index fb143f28c386..c65f35b68202 100644
---- a/drivers/gpio/gpio-sch.c
-+++ b/drivers/gpio/gpio-sch.c
-@@ -127,7 +127,10 @@ static int sch_gpio_get_direction(struct gpio_chip *gc, unsigned gpio_num)
- {
- 	struct sch_gpio *sch = gpiochip_get_data(gc);
- 
--	return sch_gpio_reg_get(sch, gpio_num, GIO);
-+	if (sch_gpio_reg_get(sch, gpio_num, GIO))
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static const struct gpio_chip sch_gpio_chip = {
-diff --git a/drivers/gpio/gpio-sch311x.c b/drivers/gpio/gpio-sch311x.c
-index 8ecf336c9af4..da01e1cad7cb 100644
---- a/drivers/gpio/gpio-sch311x.c
-+++ b/drivers/gpio/gpio-sch311x.c
-@@ -228,7 +228,10 @@ static int sch311x_gpio_get_direction(struct gpio_chip *chip, unsigned offset)
- 	data = inb(block->runtime_reg + block->config_regs[offset]);
- 	spin_unlock(&block->lock);
- 
--	return !!(data & SCH311X_GPIO_CONF_DIR);
-+	if (data & SCH311X_GPIO_CONF_DIR)
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int sch311x_gpio_set_config(struct gpio_chip *chip, unsigned offset,
-diff --git a/drivers/gpio/gpio-siox.c b/drivers/gpio/gpio-siox.c
-index 006a7e6a75f2..311f66757b92 100644
---- a/drivers/gpio/gpio-siox.c
-+++ b/drivers/gpio/gpio-siox.c
-@@ -203,9 +203,9 @@ static int gpio_siox_direction_output(struct gpio_chip *chip,
- static int gpio_siox_get_direction(struct gpio_chip *chip, unsigned int offset)
- {
- 	if (offset < 12)
--		return 1; /* input */
-+		return GPIO_LINE_DIRECTION_IN;
- 	else
--		return 0; /* output */
-+		return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int gpio_siox_probe(struct siox_device *sdevice)
-diff --git a/drivers/gpio/gpio-stmpe.c b/drivers/gpio/gpio-stmpe.c
-index 994d542daf53..542706a852e6 100644
---- a/drivers/gpio/gpio-stmpe.c
-+++ b/drivers/gpio/gpio-stmpe.c
-@@ -84,7 +84,10 @@ static int stmpe_gpio_get_direction(struct gpio_chip *chip,
- 	if (ret < 0)
- 		return ret;
- 
--	return !(ret & mask);
-+	if (ret & mask)
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int stmpe_gpio_direction_output(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-tc3589x.c b/drivers/gpio/gpio-tc3589x.c
-index 75b1135b383a..6be0684cfa49 100644
---- a/drivers/gpio/gpio-tc3589x.c
-+++ b/drivers/gpio/gpio-tc3589x.c
-@@ -97,7 +97,10 @@ static int tc3589x_gpio_get_direction(struct gpio_chip *chip,
- 	if (ret < 0)
- 		return ret;
- 
--	return !(ret & BIT(pos));
-+	if (ret & BIT(pos))
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int tc3589x_gpio_set_config(struct gpio_chip *chip, unsigned int offset,
-diff --git a/drivers/gpio/gpio-tegra.c b/drivers/gpio/gpio-tegra.c
-index 8a01d3694b28..6fdfe4c5303e 100644
---- a/drivers/gpio/gpio-tegra.c
-+++ b/drivers/gpio/gpio-tegra.c
-@@ -215,7 +215,10 @@ static int tegra_gpio_get_direction(struct gpio_chip *chip,
- 
- 	oe = tegra_gpio_readl(tgi, GPIO_OE(tgi, offset));
- 
--	return !(oe & pin_mask);
-+	if (oe & pin_mask)
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int tegra_gpio_set_debounce(struct gpio_chip *chip, unsigned int offset,
-diff --git a/drivers/gpio/gpio-tegra186.c b/drivers/gpio/gpio-tegra186.c
-index 8a2a69178925..57185b96c110 100644
---- a/drivers/gpio/gpio-tegra186.c
-+++ b/drivers/gpio/gpio-tegra186.c
-@@ -111,9 +111,9 @@ static int tegra186_gpio_get_direction(struct gpio_chip *chip,
- 
- 	value = readl(base + TEGRA186_GPIO_ENABLE_CONFIG);
- 	if (value & TEGRA186_GPIO_ENABLE_CONFIG_OUT)
--		return 0;
-+		return GPIO_LINE_DIRECTION_OUT;
- 
--	return 1;
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int tegra186_gpio_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-thunderx.c b/drivers/gpio/gpio-thunderx.c
-index ddad5c7ea617..d08d86a22b1f 100644
---- a/drivers/gpio/gpio-thunderx.c
-+++ b/drivers/gpio/gpio-thunderx.c
-@@ -169,7 +169,10 @@ static int thunderx_gpio_get_direction(struct gpio_chip *chip, unsigned int line
- 
- 	bit_cfg = readq(txgpio->register_base + bit_cfg_reg(line));
- 
--	return !(bit_cfg & GPIO_BIT_CFG_TX_OE);
-+	if (bit_cfg & GPIO_BIT_CFG_TX_OE)
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int thunderx_gpio_set_config(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-tpic2810.c b/drivers/gpio/gpio-tpic2810.c
-index c8b34d787eed..99d5a84a9129 100644
---- a/drivers/gpio/gpio-tpic2810.c
-+++ b/drivers/gpio/gpio-tpic2810.c
-@@ -39,7 +39,7 @@ static int tpic2810_get_direction(struct gpio_chip *chip,
- 				  unsigned offset)
- {
- 	/* This device always output */
--	return 0;
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int tpic2810_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-tps65086.c b/drivers/gpio/gpio-tps65086.c
-index 2eea98ff4ea3..1e9d8262d0ff 100644
---- a/drivers/gpio/gpio-tps65086.c
-+++ b/drivers/gpio/gpio-tps65086.c
-@@ -21,7 +21,7 @@ static int tps65086_gpio_get_direction(struct gpio_chip *chip,
- 				       unsigned offset)
- {
- 	/* This device is output only */
--	return 0;
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int tps65086_gpio_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-tps65912.c b/drivers/gpio/gpio-tps65912.c
-index 3ad68bd78282..510d9ed9fd2a 100644
---- a/drivers/gpio/gpio-tps65912.c
-+++ b/drivers/gpio/gpio-tps65912.c
-@@ -32,9 +32,9 @@ static int tps65912_gpio_get_direction(struct gpio_chip *gc,
- 		return ret;
- 
- 	if (val & GPIO_CFG_MASK)
--		return 0;
-+		return GPIO_LINE_DIRECTION_OUT;
- 	else
--		return 1;
-+		return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int tps65912_gpio_direction_input(struct gpio_chip *gc, unsigned offset)
-diff --git a/drivers/gpio/gpio-tps68470.c b/drivers/gpio/gpio-tps68470.c
-index aff6e504c666..f7f5f770e0fb 100644
---- a/drivers/gpio/gpio-tps68470.c
-+++ b/drivers/gpio/gpio-tps68470.c
-@@ -47,7 +47,6 @@ static int tps68470_gpio_get(struct gpio_chip *gc, unsigned int offset)
- 	return !!(val & BIT(offset));
- }
- 
--/* Return 0 if output, 1 if input */
- static int tps68470_gpio_get_direction(struct gpio_chip *gc,
- 				       unsigned int offset)
- {
-@@ -57,7 +56,7 @@ static int tps68470_gpio_get_direction(struct gpio_chip *gc,
- 
- 	/* rest are always outputs */
- 	if (offset >= TPS68470_N_REGULAR_GPIO)
--		return 0;
-+		return GPIO_LINE_DIRECTION_OUT;
- 
- 	ret = regmap_read(regmap, TPS68470_GPIO_CTL_REG_A(offset), &val);
- 	if (ret) {
-@@ -67,7 +66,8 @@ static int tps68470_gpio_get_direction(struct gpio_chip *gc,
- 	}
- 
- 	val &= TPS68470_GPIO_MODE_MASK;
--	return val >= TPS68470_GPIO_MODE_OUT_CMOS ? 0 : 1;
-+	return val >= TPS68470_GPIO_MODE_OUT_CMOS ? GPIO_LINE_DIRECTION_OUT :
-+						    GPIO_LINE_DIRECTION_IN;
- }
- 
- static void tps68470_gpio_set(struct gpio_chip *gc, unsigned int offset,
-diff --git a/drivers/gpio/gpio-tqmx86.c b/drivers/gpio/gpio-tqmx86.c
-index a3109bcaa0ac..5022e0ad0fae 100644
---- a/drivers/gpio/gpio-tqmx86.c
-+++ b/drivers/gpio/gpio-tqmx86.c
-@@ -101,7 +101,10 @@ static int tqmx86_gpio_direction_output(struct gpio_chip *chip,
- static int tqmx86_gpio_get_direction(struct gpio_chip *chip,
- 				     unsigned int offset)
- {
--	return !!(TQMX86_DIR_INPUT_MASK & BIT(offset));
-+	if (TQMX86_DIR_INPUT_MASK & BIT(offset))
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static void tqmx86_gpio_irq_mask(struct irq_data *data)
-diff --git a/drivers/gpio/gpio-ts4900.c b/drivers/gpio/gpio-ts4900.c
-index 1da8d0586329..d885032cf814 100644
---- a/drivers/gpio/gpio-ts4900.c
-+++ b/drivers/gpio/gpio-ts4900.c
-@@ -44,7 +44,10 @@ static int ts4900_gpio_get_direction(struct gpio_chip *chip,
- 
- 	regmap_read(priv->regmap, offset, &reg);
- 
--	return !(reg & TS4900_GPIO_OE);
-+	if (reg & TS4900_GPIO_OE)
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int ts4900_gpio_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-twl4030.c b/drivers/gpio/gpio-twl4030.c
-index fbfb648d3502..de249726230e 100644
---- a/drivers/gpio/gpio-twl4030.c
-+++ b/drivers/gpio/gpio-twl4030.c
-@@ -165,10 +165,10 @@ static int twl4030_get_gpio_direction(int gpio)
- 	if (ret < 0)
- 		return ret;
- 
--	/* 1 = output, but gpiolib semantics are inverse so invert */
--	ret = !(ret & d_msk);
-+	if (ret & d_msk)
-+		return GPIO_LINE_DIRECTION_OUT;
- 
--	return ret;
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int twl4030_set_gpio_dataout(int gpio, int enable)
-@@ -380,10 +380,10 @@ static int twl_get_direction(struct gpio_chip *chip, unsigned offset)
- {
- 	struct gpio_twl4030_priv *priv = gpiochip_get_data(chip);
- 	/*
--	 * Default 0 = output
-+	 * Default GPIO_LINE_DIRECTION_OUT
- 	 * LED GPIOs >= TWL4030_GPIO_MAX are always output
- 	 */
--	int ret = 0;
-+	int ret = GPIO_LINE_DIRECTION_OUT;
- 
- 	mutex_lock(&priv->mutex);
- 	if (offset < TWL4030_GPIO_MAX) {
-diff --git a/drivers/gpio/gpio-twl6040.c b/drivers/gpio/gpio-twl6040.c
-index c845b2ff1f43..648fb418d775 100644
---- a/drivers/gpio/gpio-twl6040.c
-+++ b/drivers/gpio/gpio-twl6040.c
-@@ -34,8 +34,7 @@ static int twl6040gpo_get(struct gpio_chip *chip, unsigned offset)
- 
- static int twl6040gpo_get_direction(struct gpio_chip *chip, unsigned offset)
- {
--	/* This means "out" */
--	return 0;
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int twl6040gpo_direction_out(struct gpio_chip *chip, unsigned offset,
-diff --git a/drivers/gpio/gpio-uniphier.c b/drivers/gpio/gpio-uniphier.c
-index 93cdcc41e9fb..bd203e8fa58e 100644
---- a/drivers/gpio/gpio-uniphier.c
-+++ b/drivers/gpio/gpio-uniphier.c
-@@ -113,7 +113,10 @@ static int uniphier_gpio_offset_read(struct gpio_chip *chip,
- static int uniphier_gpio_get_direction(struct gpio_chip *chip,
- 				       unsigned int offset)
- {
--	return uniphier_gpio_offset_read(chip, offset, UNIPHIER_GPIO_PORT_DIR);
-+	if (uniphier_gpio_offset_read(chip, offset, UNIPHIER_GPIO_PORT_DIR))
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int uniphier_gpio_direction_input(struct gpio_chip *chip,
-diff --git a/drivers/gpio/gpio-wcove.c b/drivers/gpio/gpio-wcove.c
-index 444fe9e7f04a..8b481b3c1ebe 100644
---- a/drivers/gpio/gpio-wcove.c
-+++ b/drivers/gpio/gpio-wcove.c
-@@ -170,13 +170,16 @@ static int wcove_gpio_get_direction(struct gpio_chip *chip, unsigned int gpio)
- 	int ret, reg = to_reg(gpio, CTRL_OUT);
- 
- 	if (reg < 0)
--		return 0;
-+		return GPIO_LINE_DIRECTION_OUT;
- 
- 	ret = regmap_read(wg->regmap, reg, &val);
- 	if (ret)
- 		return ret;
- 
--	return !(val & CTLO_DIR_OUT);
-+	if (val & CTLO_DIR_OUT)
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- static int wcove_gpio_get(struct gpio_chip *chip, unsigned int gpio)
-diff --git a/drivers/gpio/gpio-ws16c48.c b/drivers/gpio/gpio-ws16c48.c
-index e0ef66b6a237..fe456bea81f6 100644
---- a/drivers/gpio/gpio-ws16c48.c
-+++ b/drivers/gpio/gpio-ws16c48.c
-@@ -56,7 +56,10 @@ static int ws16c48_gpio_get_direction(struct gpio_chip *chip, unsigned offset)
- 	const unsigned port = offset / 8;
- 	const unsigned mask = BIT(offset % 8);
- 
--	return !!(ws16c48gpio->io_state[port] & mask);
-+	if (ws16c48gpio->io_state[port] & mask)
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int ws16c48_gpio_direction_input(struct gpio_chip *chip, unsigned offset)
-diff --git a/drivers/gpio/gpio-xgene.c b/drivers/gpio/gpio-xgene.c
-index a6e66ac18e1f..532b0df8a1f2 100644
---- a/drivers/gpio/gpio-xgene.c
-+++ b/drivers/gpio/gpio-xgene.c
-@@ -80,7 +80,10 @@ static int xgene_gpio_get_direction(struct gpio_chip *gc, unsigned int offset)
- 	bank_offset = GPIO_SET_DR_OFFSET + GPIO_BANK_OFFSET(offset);
- 	bit_offset = GPIO_BIT_OFFSET(offset);
- 
--	return !!(ioread32(chip->base + bank_offset) & BIT(bit_offset));
-+	if (ioread32(chip->base + bank_offset) & BIT(bit_offset))
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int xgene_gpio_dir_in(struct gpio_chip *gc, unsigned int offset)
-diff --git a/drivers/gpio/gpio-xra1403.c b/drivers/gpio/gpio-xra1403.c
-index 05f1998c11a4..31b5072b2df0 100644
---- a/drivers/gpio/gpio-xra1403.c
-+++ b/drivers/gpio/gpio-xra1403.c
-@@ -83,7 +83,10 @@ static int xra1403_get_direction(struct gpio_chip *chip, unsigned int offset)
- 	if (ret)
- 		return ret;
- 
--	return !!(val & BIT(offset % 8));
-+	if (val & BIT(offset % 8))
-+		return GPIO_LINE_DIRECTION_IN;
-+
-+	return GPIO_LINE_DIRECTION_OUT;
- }
- 
- static int xra1403_get(struct gpio_chip *chip, unsigned int offset)
-diff --git a/drivers/gpio/gpio-xtensa.c b/drivers/gpio/gpio-xtensa.c
-index 43d3fa5f511a..08d7c3b32038 100644
---- a/drivers/gpio/gpio-xtensa.c
-+++ b/drivers/gpio/gpio-xtensa.c
-@@ -72,7 +72,7 @@ static inline void disable_cp(unsigned long flags, unsigned long cpenable)
- 
- static int xtensa_impwire_get_direction(struct gpio_chip *gc, unsigned offset)
- {
--	return 1; /* input only */
-+	return GPIO_LINE_DIRECTION_IN; /* input only */
- }
- 
- static int xtensa_impwire_get_value(struct gpio_chip *gc, unsigned offset)
-@@ -95,7 +95,7 @@ static void xtensa_impwire_set_value(struct gpio_chip *gc, unsigned offset,
- 
- static int xtensa_expstate_get_direction(struct gpio_chip *gc, unsigned offset)
- {
--	return 0; /* output only */
-+	return GPIO_LINE_DIRECTION_OUT; /* output only */
- }
- 
- static int xtensa_expstate_get_value(struct gpio_chip *gc, unsigned offset)
-diff --git a/drivers/gpio/gpio-zynq.c b/drivers/gpio/gpio-zynq.c
-index cd475ff4bcad..4c3f6370eab4 100644
---- a/drivers/gpio/gpio-zynq.c
-+++ b/drivers/gpio/gpio-zynq.c
-@@ -360,7 +360,7 @@ static int zynq_gpio_dir_out(struct gpio_chip *chip, unsigned int pin,
-  *
-  * This function returns the direction of the specified GPIO.
-  *
-- * Return: 0 for output, 1 for input
-+ * Return: GPIO_LINE_DIRECTION_OUT or GPIO_LINE_DIRECTION_IN
-  */
- static int zynq_gpio_get_direction(struct gpio_chip *chip, unsigned int pin)
- {
-@@ -372,7 +372,10 @@ static int zynq_gpio_get_direction(struct gpio_chip *chip, unsigned int pin)
- 
- 	reg = readl_relaxed(gpio->base_addr + ZYNQ_GPIO_DIRM_OFFSET(bank_num));
- 
--	return !(reg & BIT(bank_pin_num));
-+	if (reg & BIT(bank_pin_num))
-+		return GPIO_LINE_DIRECTION_OUT;
-+
-+	return GPIO_LINE_DIRECTION_IN;
- }
- 
- /**
--- 
-2.21.0
-
-
--- 
-Matti Vaittinen, Linux device drivers
-ROHM Semiconductors, Finland SWDC
-Kiviharjunlenkki 1E
-90220 OULU
-FINLAND
-
-~~~ "I don't think so," said Rene Descartes. Just then he vanished ~~~
-Simon says - in Latin please.
-~~~ "non cogito me" dixit Rene Descarte, deinde evanescavit ~~~
-Thanks to Simon Glass for the translation =] 
-
+> > > Update example in ad7879 devicetree documentation to use generic
+> > > touch
+> > > controller node names.
+> > > 
+> > > Signed-off-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+> > > 
+> > > ---
+> > > 
+> > > Changes in v2: New patch.
+> > > 
+> > >  .../devicetree/bindings/input/touchscreen/ad7879.txt          |
+> > > 4 ++--
+> > >  1 file changed, 2 insertions(+), 2 deletions(-)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
