@@ -2,85 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9357EF0D6A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 04:56:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 357F6F0D85
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 05:04:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IrPO86ixhdoGhzMz6Y50Uey8+1ge0pw6O9v5FmUTr9E=; b=Ysx903MoHTUKWO
-	aqE2XcVmdA7ASnli0wt/PoAf7btr897zOzEm389t2hOcHLcf/ujYIxNDxc5hPQ5BmkMvsiYrGsLOe
-	rwzJ9Ie6D9Q2EJbV0/ddqe//BaM+Aa80jTqFzCxBxbNcPModQEQvBXhLEUFewjYsyDCv7GN3iqL44
-	Wvrvi0ULbndkl++WSvhEcrwlGYeAwsof4vz82oLERYNf4IAzXjVpgTKhKTQn8rMdGUt1CWllYjd6U
-	QK1j583/dmv9mdWeUAoHITN6IyJ+01LXK6Vhf+IXPyS1cwbFs99FDW/IMIzPozOArFt62I0q7VNZq
-	0jYNcqcpbmNgiKYvDAtA==;
+	List-Owner; bh=c2F7Jx196bdVzy3KI67k2Tf6qhb6iZZ35gyPT5OlyvY=; b=ucPYA1gt4blqaw
+	MCZ5WOqr//rHG0I249xifAMEp/JqXzNYhsl5sOufAbSxmp2lWffbZlBuWE+7S02OvIuRmchDH4Mas
+	0O08pOO2T/XCFg2nK5MOomcDsbJT6Izu7QQ5cle6TzVKO+0jzateemeGqZ871tH+fsrUanu4OfjrE
+	NvC4hxpTAlneVfCJJEjd8doRdsAyKI1aEpjrIA2QgoXUKSNbjQtsI5r/2av7Wl/2iytI2Emw3+Z5x
+	1zWZemXyAiWxKnCtV+T9PAl5nFRCu9t2b/B2klx7HaG7DEjEK7jPE7uDPToThtoMJ9INxI0cLdmve
+	uV4EC8tSIFvL3a8flPFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSCQD-0007ml-Md; Wed, 06 Nov 2019 03:55:53 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1iSCY2-0001xK-Jl; Wed, 06 Nov 2019 04:03:58 +0000
+Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSCQ6-0007m5-VY
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 03:55:48 +0000
-Received: by mail-oi1-f193.google.com with SMTP id j7so19763377oib.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 19:55:46 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=HjUAd9X8fjLKsDxJpN2012RcMafvu6lngdZt6RcTJmE=;
- b=EC/j1FErp0k/8r7NnuReO/wA5t6mrLImm3ezc2KdxgFGNFt6xU9NfcnGJLaRAKRzqL
- jw+WuSry9VvJyT7cUM4lkpgDzGXinzhSs+UxBCWsVCbAqTq+MNJG7tSf040HUD75GBUG
- uNaRxYvH/luLju6dVNbBTfmnw+e7O372DeiBD0PsocezVGnySvJ5Cj9iMKqlEgSLn7Dr
- BJke3o8EGX3+lbjDqzhya2jvA6tXpdv9E3UG/DGIXxBmh6JhZDG1UwjvGlEwT0jWSqMP
- LqMr4qjxRGKUAFdN10VO6LO60DpjdhM9BnoxWhjrBfFvOGbS4yWmRXkXsQZodbh/ypef
- 7pNA==
-X-Gm-Message-State: APjAAAVG/0uKnMZzBEZE8SRfUKJY3F1tYOQWKHSl5bCGa1uiFA5HNGOR
- emupfjI5kDTOdcRI47sbHA==
-X-Google-Smtp-Source: APXvYqxJkijcKLeyFdKVWB0o60ED3NvjcHRUtiDM4zKRWEtVlOO/Z5sLKo86HRD5S3kjvC0jks7g6Q==
-X-Received: by 2002:aca:c753:: with SMTP id x80mr337979oif.115.1573012545901; 
- Tue, 05 Nov 2019 19:55:45 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id c23sm6055178oiy.20.2019.11.05.19.55.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 19:55:45 -0800 (PST)
-Date: Tue, 5 Nov 2019 21:55:44 -0600
-From: Rob Herring <robh@kernel.org>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH 3/6] dt-bindings: thermal: Define BCM7216 thermal sensor
- compatible
-Message-ID: <20191106035544.GA29667@bogus>
-References: <20191030182132.25763-1-f.fainelli@gmail.com>
- <20191030182132.25763-4-f.fainelli@gmail.com>
+ id 1iSCXv-0001w4-Cq
+ for linux-arm-kernel@lists.infradead.orG; Wed, 06 Nov 2019 04:03:53 +0000
+Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
+ by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
+ id 1iSCXn-00064F-Uy; Wed, 06 Nov 2019 12:03:44 +0800
+Received: from herbert by gondobar with local (Exim 4.89)
+ (envelope-from <herbert@gondor.apana.org.au>)
+ id 1iSCXj-0004XI-Rf; Wed, 06 Nov 2019 12:03:39 +0800
+Date: Wed, 6 Nov 2019 12:03:39 +0800
+From: Herbert Xu <herbert@gondor.apana.org.au>
+To: Ard Biesheuvel <ardb@kernel.org>, linux-crypto@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v3 28/29] crypto: remove deprecated and unused ablkcipher
+ support
+Message-ID: <20191106040339.mclk3vyjv3wawmhx@gondor.apana.org.au>
+References: <20191105132826.1838-1-ardb@kernel.org>
+ <20191105132826.1838-29-ardb@kernel.org>
+ <20191105175206.GD757@sol.localdomain>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191030182132.25763-4-f.fainelli@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191105175206.GD757@sol.localdomain>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_195547_014354_F2AE55AD 
-X-CRM114-Status: GOOD (  11.13  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20191105_200351_575926_FAFB9EE5 
+X-CRM114-Status: UNSURE (   5.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,34 +66,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Amit Kucheria <amit.kucheria@verdurent.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- "open list:BROADCOM STB AVS TMON DRIVER" <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Eduardo Valentin <edubezval@gmail.com>,
- "maintainer:BROADCOM STB AVS TMON DRIVER"
- <bcm-kernel-feedback-list@broadcom.com>, Markus Mayer <mmayer@broadcom.com>,
- Zhang Rui <rui.zhang@intel.com>,
- "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 30 Oct 2019 11:21:29 -0700, Florian Fainelli wrote:
-> BCM7216 is a 16nm process STB chip, which requires a different
-> compatible string to differentiate different temperature formulas.
-> 
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> ---
->  .../devicetree/bindings/thermal/brcm,avs-tmon.txt         | 8 ++++++--
->  1 file changed, 6 insertions(+), 2 deletions(-)
-> 
+On Tue, Nov 05, 2019 at 09:52:06AM -0800, Eric Biggers wrote:
+>
+> Now that these helpers are trivial, they could be removed and we could just
+> dereference the struct skcipher_alg directly.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+We probably should just keep them to avoid churn.  New code can
+certainly start using them directly.
+
+Thanks,
+-- 
+Email: Herbert Xu <herbert@gondor.apana.org.au>
+Home Page: http://gondor.apana.org.au/~herbert/
+PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
 
 _______________________________________________
 linux-arm-kernel mailing list
