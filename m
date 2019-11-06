@@ -2,113 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B11BEF1BE1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 17:59:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68326F1C47
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 18:19:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ntsM21SDlKlIwGBAaUMyI6yY1M2Zey6B8/ixCmaXE+Y=; b=dQYpUpUEwHn0j8
-	uGaAfm5l71M0kiY8kv8VlkeoQiPqtN0o0GlaVTn13RGinZIIqqK2+lJf0eLCVhiX74dEp9j6AM48L
-	+7hT3YmNWVfFNaK+qi3AJp9a1MZjMqKi96nS+yMsrPN43thkLghvMLkYBFRVFVg/3xdND50Ay7KCX
-	Duja/0oeFlulETe2f1ifI4ZF0ut0Vh72N/yQlKgfEyByIfU8MojtallIsBjg0DQLPDUNOD6taH4ae
-	HAqa4AmPt+0gojrGHg0qIGBNBdswqjgevGj9tia+on5wYpamqmyHrKDAfnabI1cqdLm9ga3RhM2Wv
-	5+tmxWt1CP2xsqyE80QQ==;
+	List-Owner; bh=FYUbFnQjLyfJm7O8JzY///dr/VoviCN9pksgjuT7R3k=; b=DuEZCXT83mfjGg
+	odYFP7a0w0bZDhjq72QBdTlvCZcBphEZd3lXHCU3AUrLO6n5sXil9DX2tLI0DxHuEBE4uIPJhhMtX
+	TCD3P3pEm7EcCmW7UwwOxDkZK9YWThA9fguURWFPmNlSnrNZoqqHUXZtQBhlAi0v/jJQPoHuPOtmO
+	FFv1tKRACQVtLz4oaS9y5TBu5tl2N7eknvYb8kAGoaRCwYe5wVDjo50ZnsT+NKHpaq7/LD4f0gPl4
+	WyI+bCBsbK0NLAyST5aa229ucJt1ckaH9VQ/dYRsyQGNeTzzCsu4njJlG1fowxN9MAUIGwRmHvREb
+	HTcwZEbYCxa6F+du1hqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSOes-0001ZU-Sg; Wed, 06 Nov 2019 16:59:50 +0000
-Received: from mail-eopbgr800059.outbound.protection.outlook.com
- ([40.107.80.59] helo=NAM03-DM3-obe.outbound.protection.outlook.com)
+	id 1iSOxw-0000KW-Ef; Wed, 06 Nov 2019 17:19:32 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSOem-0001YN-8w
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 16:59:45 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FoHaUcYaHkuCgW9Rp+TLtfcNjzWcZmkX6VanELnOA+djsXtoXYJkKkUiI6rHH0Tvn/xDj0LbryA6VZ3IHJzj3/E5RHBKF+4HkZxfIEWKQ6vwXSw4uhKQCOskN5XrUF97rIxysY2ZoIgZWSxCLqVTnS6cgagb2q6POF6pXg3eYvvNZH7n3S0cg7gn6Qpka5hlaYmJTLnqdHGvz3OwmiAKE2vQwKgAHEh1RwZ0rq1owxxNTwVo9X7Ex6r0499toIIl1kEMV7DuoRMIhlv8aGbd89N3+B9aFjCKgLNco1GCVNJ7iRiXjk+dB2lmPdDvINLnT3aL0rY1d9zXnoqnR0PoLA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SZRWD9+IbAgYjBeRRtwEJzOrkgiDy3JyIMlKiZYfxFg=;
- b=nMLz42kWyZlHQ/SyBTzuAQnFcCQzKUu2Nn7/cq9LIcX7p4NdBodfC1h6I+99p+FymvEbRAr9b4mlzv8uuTSRYd8LiWlwkbzFnWoRTlx2p1lb6zm5k54GvkjMWlleev9b+VAcnyagSMEQcZtZJq0WZTeEiJA/iBjhzyXh2+Wy5RSreT+6+mZnVoWvu52P1N8RBlC83Osqo7BRrHagu9fAfr8UXjnHpC1AsUG7MT7VG0SWlM2S+GgdudgHHYD4RsXkKploPyI56FG9vm4yl2fxwtkQKqs2cs/2joAJAA75+pvYWn4M6mWXfz8iZv3W81802y+KM5Mxn22q8Gm/zPjUXg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SZRWD9+IbAgYjBeRRtwEJzOrkgiDy3JyIMlKiZYfxFg=;
- b=JnzwpGJioGOrbstA76eDaa//51kVZdXgn6uOnxUV6pgDMMpFelXs579OVa8tcPIkJgqLvuBEl0sFCVeB3Iax32bwH93dVmXqKoq6+zM/4uJPJ0Uap3ApkjyW9GGMafhZr7ZASrm+sexvDFPf8qzmNITvg+iSp5+PHPARzl0ZTLM=
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com (20.180.9.216) by
- CH2PR02MB6728.namprd02.prod.outlook.com (10.141.156.24) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.20; Wed, 6 Nov 2019 16:59:38 +0000
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::701f:f4b3:5a98:dbf2]) by CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::701f:f4b3:5a98:dbf2%7]) with mapi id 15.20.2408.024; Wed, 6 Nov 2019
- 16:59:38 +0000
-From: Radhey Shyam Pandey <radheys@xilinx.com>
-To: Wei Yongjun <weiyongjun1@huawei.com>, Michal Simek <michals@xilinx.com>,
- Russell King <linux@armlinux.org.uk>, Robert Hancock <hancock@sedsystems.ca>
-Subject: RE: [PATCH net-next] net: axienet: Fix error return code in
- axienet_probe()
-Thread-Topic: [PATCH net-next] net: axienet: Fix error return code in
- axienet_probe()
-Thread-Index: AQHVlLqn5FzAWnixa0CNU2pyYHx21Kd+W8Pg
-Date: Wed, 6 Nov 2019 16:59:38 +0000
-Message-ID: <CH2PR02MB700031904CC37C8D5EE3435EC7790@CH2PR02MB7000.namprd02.prod.outlook.com>
-References: <20191106155449.107672-1-weiyongjun1@huawei.com>
-In-Reply-To: <20191106155449.107672-1-weiyongjun1@huawei.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=radheys@xilinx.com; 
-x-originating-ip: [183.83.136.226]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: f4f8170c-b582-4666-c9bc-08d762dab57a
-x-ms-traffictypediagnostic: CH2PR02MB6728:|CH2PR02MB6728:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <CH2PR02MB672817D4EC2119245ED34551C7790@CH2PR02MB6728.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 02135EB356
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(136003)(346002)(39860400002)(376002)(366004)(189003)(199004)(13464003)(186003)(99286004)(26005)(256004)(33656002)(5660300002)(66066001)(52536014)(7696005)(53546011)(76176011)(9686003)(229853002)(66446008)(66556008)(66946007)(66476007)(64756008)(102836004)(55016002)(6116002)(3846002)(2906002)(4326008)(76116006)(6246003)(14454004)(478600001)(54906003)(110136005)(316002)(6436002)(6506007)(305945005)(74316002)(8676002)(7736002)(476003)(486006)(8936002)(25786009)(446003)(81156014)(81166006)(71190400001)(86362001)(71200400001)(11346002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6728;
- H:CH2PR02MB7000.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: hEdnIpSMA50J+1+i9d3Q0ju7/rLTv0CQnXHeSeN/jxyYezcF7DZdpPSnITVRodnzs83ZBzm5w2i6xdee21yErJo1hRdgvA7UvDUUC4DShioPAc9FYa/Ab6hv5ZbtWWxAzpCekTwgjyYMMlSMDk1EA2Tb8AIT3J9E1mJWeSeLms2xCpXpW86sfGFm7MUriFm2XUP5TBubKQRp9Iu/dgRqZHoD9EvaGjhkhmIfxSxXUJCcsFgsS3FweyBp0XNgABNA/v8c5vPQn1mGsztN6PVBTYVbrNmhzGPsVyYLGVk0xFiH6dnDn+JDr5hejNlgob6ly8mQm9Id2/k44euCt/IUSX1rI0C7xn6s23F1HdeyUbhyyBposAwuT9afo/TBd+C8giSq2m1yfh1jPtGS8UBpwCceXwMcVIe2L970L7KYKmXew5Y3Smzzgal/FHPyf3e1
+ id 1iSOxm-0000JE-T0
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 17:19:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Q1snHVOjvov2W8i0pGQGf0sAPNpUIvqQUdMy3Qldyrk=; b=RipgNPFgEN6zp/8BlVS2Wwri6
+ SELXtoB+F+T3Oh0b4EfQS3WElMFIR6wm27qGvGUr/xsGRDKdkVv0ljG3HGmGYlFbBkDdLrBfgkgJw
+ qKOUNW1L14Pn8MNpvNq5KobiEtaTOn1gPbTidQUDUx8hkJdLje4Zc1rNZ7INM4z7tgNheMQBdNqSc
+ 1kbYvO+qq/uY159PmplUK77n/IAiqAreOllyv35uiHTDPbpssMUI9VFpbQi/upd67kQjt5Syxziyn
+ GPskyN9mQbLFko7Aspjq2iabkp05eS4mlgRB+PIIzzbEDr4SgkbcEuz7DrkVpOnevGo/q53OB1zzW
+ esbWcUgRg==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:52656)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iSOxW-0006QF-5B; Wed, 06 Nov 2019 17:19:06 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iSOxS-0004Cq-8b; Wed, 06 Nov 2019 17:19:02 +0000
+Date: Wed, 6 Nov 2019 17:19:02 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Naresh Kamboju <naresh.kamboju@linaro.org>
+Subject: Re: Linux-next-20191106 : arm64: Internal error: Oops: 96000007
+Message-ID: <20191106171902.GT25745@shell.armlinux.org.uk>
+References: <CA+G9fYvm_QEq+9e+dni1Y+bJswr9bU5=shJcC+wKjjOyiPsXXQ@mail.gmail.com>
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f4f8170c-b582-4666-c9bc-08d762dab57a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Nov 2019 16:59:38.2015 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: mzrwWh2Ab9ebPbwLvQ04dgraz44Fi2SH65jZ1+kxFJ3YJQVNtV3qGB5qI/0+ck+vp0c7q5IjJeYg7lXyeQcX9w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6728
+Content-Disposition: inline
+In-Reply-To: <CA+G9fYvm_QEq+9e+dni1Y+bJswr9bU5=shJcC+wKjjOyiPsXXQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_085944_316568_A2EFF364 
-X-CRM114-Status: GOOD (  13.76  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191106_091923_879804_6E62F406 
+X-CRM114-Status: GOOD (  11.15  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.80.59 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -120,63 +86,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Stephen Rothwell <sfr@canb.auug.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ catalin.marinas@arm.com, open list <linux-kernel@vger.kernel.org>,
+ lkft-triage@lists.linaro.org, Mark Brown <broonie@kernel.org>,
+ John Stultz <john.stultz@linaro.org>,
+ Linux-Next Mailing List <linux-next@vger.kernel.org>, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Wei Yongjun <weiyongjun1@huawei.com>
-> Sent: Wednesday, November 6, 2019 9:25 PM
-> To: Radhey Shyam Pandey <radheys@xilinx.com>; Michal Simek
-> <michals@xilinx.com>; Russell King <linux@armlinux.org.uk>; Robert Hancock
-> <hancock@sedsystems.ca>
-> Cc: Wei Yongjun <weiyongjun1@huawei.com>; netdev@vger.kernel.org; linux-
-> arm-kernel@lists.infradead.org; kernel-janitors@vger.kernel.org
-> Subject: [PATCH net-next] net: axienet: Fix error return code in axienet_probe()
-> 
-> In the DMA memory resource get failed case, the error is not
-> set and 0 will be returned. Fix it by reove redundant check
-:s/reove/removing
+Hi,
 
-> since devm_ioremap_resource() will handle it.
-> 
-> Fixes: 28ef9ebdb64c ("net: axienet: make use of axistream-connected attribute
-> optional")
-> Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+Could you please explain why you've sent this to me?
 
-The rest looks fine.
-Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
+Thanks.
 
-> ---
->  drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 4 ----
->  1 file changed, 4 deletions(-)
+On Wed, Nov 06, 2019 at 09:26:29PM +0530, Naresh Kamboju wrote:
+> arm64 devices Juno-r2, hikey (Hi6220) and dragonboard (APQ 8016 SBC)
+> boot failed while running linux next 20191106 kernel. But qemu_arm64
+> boot pass.
 > 
-> diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> index 867726d696e2..8f32db6d2c45 100644
-> --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> @@ -1788,10 +1788,6 @@ static int axienet_probe(struct platform_device
-> *pdev)
->  		/* Check for these resources directly on the Ethernet node. */
->  		struct resource *res = platform_get_resource(pdev,
+> Crash log from dragonboard,
 > 
-> IORESOURCE_MEM, 1);
-> -		if (!res) {
-> -			dev_err(&pdev->dev, "unable to get DMA memory
-> resource\n");
-> -			goto free_netdev;
-> -		}
->  		lp->dma_regs = devm_ioremap_resource(&pdev->dev, res);
->  		lp->rx_irq = platform_get_irq(pdev, 1);
->  		lp->tx_irq = platform_get_irq(pdev, 0);
+> [   10.656527] Unable to handle kernel paging request at virtual
+> address ffff800011b3ef68
+> [   10.656580] Mem abort info:
+> [   10.656587]   ESR = 0x96000007
+> [   10.656594]   EC = 0x25: DABT (current EL), IL = 32 bits
+> [   10.656600]   SET = 0, FnV = 0
+> [   10.656605]   EA = 0, S1PTW = 0
+> [   10.656610] Data abort info:
+> [   10.656616]   ISV = 0, ISS = 0x00000007
+> [   10.656621]   CM = 0, WnR = 0
+> [   10.656629] swapper pgtable: 4k pages, 48-bit VAs, pgdp=0000000081980000
+> [   10.656635] [ffff800011b3ef68] pgd=00000000bfeff003,
+> pud=00000000bfefe003, pmd=00000000bfefa003, pte=0000000000000000
+> [   10.656887] Internal error: Oops: 96000007 [#1] PREEMPT SMP
+> [   10.656894] Modules linked in: adv7511(+) cec msm(+) mdt_loader
+> drm_kms_helper qcom_rng drm socinfo rmtfs_mem qrtr fuse
+> [   10.656928] CPU: 0 PID: 230 Comm: systemd-udevd Not tainted
+> 5.4.0-rc6-next-20191106 #1
+> [   10.656933] Hardware name: Qualcomm Technologies, Inc. APQ 8016 SBC (DT)
+> [   10.656939] pstate: a0000085 (NzCv daIf -PAN -UAO)
+> [   10.656953] pc : __of_match_node.part.5+0x48/0x88
+> [   10.656960] lr : of_match_node+0x40/0x70
+> [   10.656964] sp : ffff8000132534d0
+> [   10.656968] x29: ffff8000132534d0 x28: ffff8000101d6260
+> [   10.656977] x27: ffff80001241a7a0 x26: ffff80001241a7a0
+> [   10.656985] x25: ffff80001241a860 x24: ffff80001241a6e8
+> [   10.656993] x23: 0000000000000000 x22: ffff00003fd08010
+> [   10.657001] x21: 0000000000000000 x20: 0000000000000000
+> [   10.657008] x19: ffff800011b3ef68 x18: ffffffffffffffff
+> [   10.657016] x17: 0000000000000000 x16: 0000000000000000
+> [   10.657024] x15: ffff8000121ffa48 x14: 4e3a666f3d534149
+> [   10.657032] x13: 0000000000000040 x12: 0000000000000028
+> [   10.657039] x11: 0000000000000001 x10: 0101010101010101
+> [   10.657047] x9 : ffff800012532c50 x8 : 0000000000000050
+> [   10.657055] x7 : ffff800010df1164 x6 : 0000000000000000
+> [   10.657063] x5 : 00000000a4fd7f12 x4 : ffff00003bd7cd18
+> [   10.657070] x3 : 0000000000000000 x2 : 0000000000000001
+> [   10.657078] x1 : ffff00003fd08010 x0 : ffff800010df1178
+> [   10.657086] Call trace:
+> [   10.657094]  __of_match_node.part.5+0x48/0x88
+> [   10.657099]  of_match_node+0x40/0x70
+> [   10.657106]  of_match_device+0x30/0x50
+> [   10.657115]  platform_match+0x4c/0xe8
+> [   10.657122]  __device_attach_driver+0x3c/0x120
+> [   10.657128]  bus_for_each_drv+0x78/0xd8
+> [   10.657135]  __device_attach+0xe8/0x170
+> [   10.657141]  device_initial_probe+0x24/0x30
+> [   10.657148]  bus_probe_device+0xa0/0xa8
+> [   10.657154]  device_add+0x4fc/0x7a8
+> [   10.657160]  of_device_add+0x50/0x68
+> [   10.657167]  of_platform_device_create_pdata+0xf0/0x170
+> [   10.657173]  of_platform_bus_create+0x174/0x550
+> [   10.657180]  of_platform_populate+0x94/0x158
+> [   10.657358]  msm_pdev_probe+0x74/0x358 [msm]
+> [   10.657369]  platform_drv_probe+0x58/0xa8
+> [   10.657377]  really_probe+0x290/0x488
+> [   10.657384]  driver_probe_device+0x12c/0x148
+> [   10.657391]  device_driver_attach+0x74/0x98
+> [   10.657397]  __driver_attach+0xc4/0x178
+> [   10.657403]  bus_for_each_dev+0x84/0xd8
+> [   10.657409]  driver_attach+0x30/0x40
+> [   10.657416]  bus_add_driver+0x170/0x258
+> [   10.657423]  driver_register+0x64/0x118
+> [   10.657430]  __platform_driver_register+0x54/0x60
+> [   10.657582]  msm_drm_register+0x60/0x6c [msm]
+> [   10.657592]  do_one_initcall+0x94/0x460
+> [   10.657600]  do_init_module+0x60/0x204
+> [   10.657606]  load_module+0x2078/0x2720
+> [   10.657613]  __do_sys_finit_module+0x100/0x120
+> [   10.657619]  __arm64_sys_finit_module+0x28/0x38
+> [   10.657628]  el0_svc_common.constprop.2+0x7c/0x180
+> [   10.657635]  el0_svc_handler+0x34/0xa0
+> [   10.657643]  el0_sync_handler+0x124/0x1f8
+> [   10.657649]  el0_sync+0x140/0x180
+> [   10.657659] Code: 1a80d281 9a93d2b5 2a0103f4 91032273 (39400264)
+> [   10.657667] ---[ end trace 8b4c2740f71524d1 ]---
 > 
+> Full test log,
+> https://lkft.validation.linaro.org/scheduler/job/994051#L1396
+> 
+> metadata:
+>   git branch: master
+>   git repo: https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
+>   git commit: dcd34bd234181ec74f081c7d0025204afe6b213e
+>   git describe: next-20191106
+>   make_kernelversion: 5.4.0-rc6
+>   kernel-config:
+> http://snapshots.linaro.org/openembedded/lkft/lkft/sumo/dragonboard-410c/lkft/linux-next/640/config
+>   build-location:
+> http://snapshots.linaro.org/openembedded/lkft/lkft/sumo/dragonboard-410c/lkft/linux-next/640
+> 
+> 
+> Best regards
+> Naresh Kamoju
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 > 
 
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
