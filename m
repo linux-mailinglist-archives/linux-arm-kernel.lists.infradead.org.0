@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60773F1895
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:26:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4046F187A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:24:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lolSCpeRLApEkMXs4/6gijSPctqY2Zh/wpmtPFgKw9o=; b=kK7swao6/vlr4R
-	jF1pxujKmiE8Jd2LM+P+eF6MlRVy4yqyXkdfYp3iY7vywfxax1beAP+fDfNyQXKY9xOeNhoq2v+Em
-	wMm9n40fDdeL7GMxVIHNPM71Iw9WuXcnM+2Zq7pxqW2AH7xsZ41N+8k/D98M19cAgvL+AclEiYzK/
-	qMR+hCwKeqy1PmseqzrMRpvyZKMycpOVFV5uxSbKlPcKt4tXtKdj0WcoWpFKhyGMZGojoewStiUY0
-	y3wuIcsrl5pIKHUn0FH/T+sZVy05hlJTTtxh83D5K8X/z6wewuSxnZjgahHRoiKpMklHun0HWJbzA
-	IvLLnrEpT/sVAMCou5qw==;
+	List-Owner; bh=UoPh6llK/F6ZC1UeuVGd99ABbZuSN5S4OLxXg2MDF9A=; b=BxidzQ42MiVJis
+	FrnF7tqRox549ABfZJi+yTeW3D3YJeEpi2zKnZpwGDK6er/uhIreOqceSd8JNIZmlzWaI71AbVxLx
+	oSIG3ddFurYHqpz2bR7g3paDKAsu4jzr4wFO77vDDMTXaglsX8xfS38Ix+oMBTXM/DIbKJSEWdU3z
+	VPvrucOEmTo76GfqDMWW6cXvTooiCdkMPI5eFmSI0n2U6zn/aqm2ddiNe0hCRvqmqQ08wpAUiKSGW
+	Kci1GFYWsFF7BetDwQbYCXv5UKlF0MLAFM43jTdB5g5FP8pNxlnjU5bptQ2dJ0qAbRtrIxV5uZ5Zl
+	OooWISV04+oVk0dBTP2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSMFr-0000oZ-QN; Wed, 06 Nov 2019 14:25:51 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1iSMEv-0007C5-8T; Wed, 06 Nov 2019 14:24:53 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSMFb-0000hZ-5w; Wed, 06 Nov 2019 14:25:38 +0000
+ id 1iSMEm-0006Zu-Ue
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 14:24:46 +0000
 X-Amp-Result: UNKNOWN
 X-Amp-Original-Verdict: FILE UNKNOWN
 X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 06 Nov 2019 06:25:33 -0800
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 06 Nov 2019 06:22:42 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.68,275,1569308400"; d="scan'208";a="227499194"
-Received: from grand-mobl.ger.corp.intel.com (HELO kekkonen.fi.intel.com)
- ([10.249.41.248])
- by fmsmga004.fm.intel.com with ESMTP; 06 Nov 2019 06:25:29 -0800
-Received: by kekkonen.fi.intel.com (Postfix, from userid 1000)
- id 1007721E7B; Wed,  6 Nov 2019 16:22:03 +0200 (EET)
-Date: Wed, 6 Nov 2019 16:22:02 +0200
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
-Subject: Re: [V2, 2/2] media: i2c: Add more sensor modes for ov8856 camera
- sensor
-Message-ID: <20191106142202.GC16056@kekkonen.localdomain>
-References: <20190910130446.26413-1-dongchun.zhu@mediatek.com>
- <20190910130446.26413-3-dongchun.zhu@mediatek.com>
- <20190913075528.GL5781@paasikivi.fi.intel.com>
- <1572440528.21623.270.camel@mhfsdcap03>
+X-IronPort-AV: E=Sophos;i="5.68,275,1569308400"; d="scan'208";a="227938330"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by FMSMGA003.fm.intel.com with ESMTP; 06 Nov 2019 06:22:29 -0800
+Received: from andy by smile with local (Exim 4.93-RC1)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1iSMCY-0004FN-Gs; Wed, 06 Nov 2019 16:22:26 +0200
+Date: Wed, 6 Nov 2019 16:22:26 +0200
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+Subject: Re: [PATCH v2 2/2] gpio: Use new GPIO_LINE_DIRECTION
+Message-ID: <20191106142226.GB32742@smile.fi.intel.com>
+References: <cover.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
+ <42f40109e2926bca197b30fd9624c609653b23e5.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1572440528.21623.270.camel@mhfsdcap03>
+In-Reply-To: <42f40109e2926bca197b30fd9624c609653b23e5.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_062535_277519_C43CE161 
-X-CRM114-Status: GOOD (  30.82  )
+X-CRM114-CacheID: sfid-20191106_062445_007350_068941B8 
+X-CRM114-Status: GOOD (  18.57  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,358 +71,168 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, drinkcat@chromium.org,
- andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, shengnan.wang@mediatek.com, tfiga@chromium.org,
- louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- bingbu.cao@intel.com, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Kuppuswamy Sathyanarayanan <sathyanarayanan.kuppuswamy@linux.intel.com>,
+ linux-aspeed@lists.ozlabs.org, David Daney <david.daney@cavium.com>,
+ Linus Walleij <linus.walleij@linaro.org>, alsa-devel@alsa-project.org,
+ Peter Tyser <ptyser@xes-inc.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Fabio Estevam <festevam@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Kevin Hilman <khilman@kernel.org>,
+ Michal Simek <michal.simek@xilinx.com>, Marek Behun <marek.behun@nic.cz>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ bcm-kernel-feedback-list@broadcom.com, Joel Stanley <joel@jms.id.au>,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ Bamvor Jian Zhang <bamv2005@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-pwm@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
+ Charles Keepax <ckeepax@opensource.cirrus.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, mazziesaccount@gmail.com,
+ Ray Jui <rjui@broadcom.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>, linux-gpio@vger.kernel.org,
+ Richard Fitzgerald <rf@opensource.cirrus.com>,
+ Santosh Shilimkar <ssantosh@kernel.org>, linux-tegra@vger.kernel.org,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Scott Branden <sbranden@broadcom.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Andrew Jeffery <andrew@aj.id.au>, "Enrico Weigelt,
+ metux IT consult" <info@metux.net>, linux-kernel@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, Thorsten Scherer <t.scherer@eckelmann.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, patches@opensource.cirrus.com,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dongchun,
-
-On Wed, Oct 30, 2019 at 09:02:08PM +0800, Dongchun Zhu wrote:
-
-...
-
-> > > @@ -548,6 +986,18 @@ static const struct ov8856_mode supported_modes[] = {
-> > >  		.link_freq_index = OV8856_LINK_FREQ_720MBPS,
-> > >  	},
-> > >  	{
-> > > +		.width    = 3264,
-> > > +		.height   = 2448,
-> > > +		.hts      = 1932,
-> > > +		.vts_def  = 2482,
-> > > +		.vts_min  = 2482,
-> > > +		.reg_list = {
-> > > +			.num_of_regs = ARRAY_SIZE(mode_3264x2448_regs),
-> > > +			.regs = mode_3264x2448_regs,
-> > > +		},
-> > > +		.link_freq_index = OV8856_LINK_FREQ_720MBPS,
-> > > +	},
-> > 
-> > How do you guarantee that the modes are only used on the xvclk frequency
-> > they're intended for?
-> > 
-> > I think it'd be best if you added the new modes in a separete patch.
-> > 
+On Wed, Nov 06, 2019 at 10:54:12AM +0200, Matti Vaittinen wrote:
+> It's hard for occasional GPIO code reader/writer to know if values 0/1
+> equal to IN or OUT. Use defined GPIO_LINE_DIRECTION_IN and
+> GPIO_LINE_DIRECTION_OUT to help them out.
 > 
-> In a separate patch?
+> NOTE - for gpio-amd-fch and gpio-bd9571mwv:
+> This commit also changes the return value for direction get to equal 1
+> for direction INPUT. Prior this commit these drivers might have
+> returned some other positive value but 1 for INPUT.
 
-Yes, please create a new patch that only adds these modes.
+>  drivers/gpio/gpio-ich.c             |  5 ++++-
 
-...
+>  drivers/gpio/gpio-merrifield.c      |  5 ++++-
 
-> > > @@ -696,6 +1170,25 @@ static int ov8856_test_pattern(struct ov8856 *ov8856, u32 pattern)
-> > >  				OV8856_REG_VALUE_08BIT, pattern);
-> > >  }
-> > >  
-> > > +static int ov8856_check_revision(struct ov8856 *ov8856)
-> > > +{
-> > > +	int ret;
-> > > +
-> > > +	ret = ov8856_write_reg(ov8856, OV8856_REG_MODE_SELECT,
-> > > +			       OV8856_REG_VALUE_08BIT, OV8856_MODE_STREAMING);
-> > > +	if (ret)
-> > > +		return ret;
-> > > +
-> > > +	ret = ov8856_write_reg(ov8856, OV8856_OTP_MODE_CTRL,
-> > > +			       OV8856_REG_VALUE_08BIT, OV8856_OTP_MODE_AUTO);
-> > > +	if (ret)
-> > > +		return ret;
-> > > +
-> > > +	return ov8856_write_reg(ov8856, OV8856_OTP_LOAD_CTRL,
-> > > +				OV8856_REG_VALUE_08BIT,
-> > > +				OV8856_OTP_LOAD_CTRL_ENABLE);
-> > 
-> > Is it not necessary to disable streaming after reading EEPROM?
-> > 
-> 
-> These registers are provided by OV vendor.
-> They need to be initialized before reading sensor revision.
+>  drivers/gpio/gpio-pca953x.c         |  5 ++++-
 
-I'd still expect streaming to be stopped once it's started. Most probably
-the sensor will still be powered off before streaming is started the next
-time, but that may not be the case.
+>  drivers/gpio/gpio-sch.c             |  5 ++++-
 
-> 
-> > > +}
-> > > +
-> > >  static int ov8856_set_ctrl(struct v4l2_ctrl *ctrl)
-> > >  {
-> > >  	struct ov8856 *ov8856 = container_of(ctrl->handler,
-> > > @@ -825,7 +1318,6 @@ static void ov8856_update_pad_format(const struct ov8856_mode *mode,
-> > >  {
-> > >  	fmt->width = mode->width;
-> > >  	fmt->height = mode->height;
-> > > -	fmt->code = MEDIA_BUS_FMT_SGRBG10_1X10;
-> > >  	fmt->field = V4L2_FIELD_NONE;
-> > >  }
-> > >  
-> > > @@ -834,6 +1326,7 @@ static int ov8856_start_streaming(struct ov8856 *ov8856)
-> > >  	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-> > >  	const struct ov8856_reg_list *reg_list;
-> > >  	int link_freq_index, ret;
-> > > +	u32 h_size;
-> > >  
-> > >  	link_freq_index = ov8856->cur_mode->link_freq_index;
-> > >  	reg_list = &link_freq_configs[link_freq_index].reg_list;
-> > > @@ -850,6 +1343,29 @@ static int ov8856_start_streaming(struct ov8856 *ov8856)
-> > >  		return ret;
-> > >  	}
-> > >  
-> > > +	/* Update R3614 if the revision is 1B module */
-> > > +	if (ov8856->is_1B_revision) {
-> > > +		ret = ov8856_write_reg(ov8856, OV8856_ANAL_MODE_CTRL,
-> > > +				       OV8856_REG_VALUE_08BIT,
-> > > +				       OV8856_ANAL_1B_VAL);
-> > > +		if (ret) {
-> > > +			dev_err(&client->dev, "failed to set R3614");
-> > > +			return ret;
-> > > +		}
-> > > +	}
-> > > +
-> > > +	ret = ov8856_read_reg(ov8856, REG_X_ADDR_START,
-> > > +			      OV8856_REG_VALUE_16BIT, &h_size);
-> > > +	if (ret) {
-> > > +		dev_err(&client->dev, "failed to read out R3614");
-> > > +		return ret;
-> > > +	}
-> > > +
-> > > +	if (h_size == X_OUTPUT_FULL_SIZE || h_size == X_OUTPUT_BINNING_SIZE)
-> > > +		ov8856->fmt.code = MEDIA_BUS_FMT_SBGGR10_1X10;
-> > 
-> > I wonder if this condition is right. The pixel order (and thus the media
-> > bus code) is determined by cropping (and flipping and mirroring, but
-> > they're not supported right now). See e.g. the smiapp driver for an
-> > example.
-> > 
-> > The correct media bus code needs to be available to the user through the
-> > regular API at all times, not only after streaming is started.
-> > 
-> > I'd suggest adding support for other pixel orders in a separate patch.
-> > 
-> 
-> This may need time to think out.
-> Is there any recommended regular API?  
+>  drivers/gpio/gpio-wcove.c           |  7 +++++--
 
-Yes. Please see:
+Since maintainers seems in favour of this and bloat-o-meter shows no difference
+on selected module,
 
-<URL:https://hverkuil.home.xs4all.nl/spec/uapi/v4l/dev-subdev.html>
+Acked-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 
-Although that is more or less incompatible with the current driver
-behaviour which is simply relying on SUBDEV_S_FMT.
+for the stuff I'm involved in.
 
-> 
-> > > +
-> > >  	ret = __v4l2_ctrl_handler_setup(ov8856->sd.ctrl_handler);
-> > >  	if (ret)
-> > >  		return ret;
-> > > @@ -878,6 +1394,7 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
-> > >  	struct ov8856 *ov8856 = to_ov8856(sd);
-> > >  	struct i2c_client *client = v4l2_get_subdevdata(sd);
-> > >  	int ret = 0;
-> > > +	u32 val;
-> > >  
-> > >  	if (ov8856->streaming == enable)
-> > >  		return 0;
-> > > @@ -908,6 +1425,44 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
-> > >  	return ret;
-> > >  }
-> > >  
-> > > +static int __ov8856_power_on(struct ov8856 *ov8856)
-> > > +{
-> > > +	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-> > > +	int ret;
-> > > +
-> > > +	ret = clk_prepare_enable(ov8856->xvclk);
-> > > +	if (ret < 0) {
-> > > +		dev_err(&client->dev, "failed to enable xvclk\n");
-> > > +		return ret;
-> > > +	}
-> > > +
-> > > +	gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, GPIOD_OUT_LOW);
-> > > +
-> > > +	ret = regulator_bulk_enable(OV8856_NUM_SUPPLIES, ov8856->supplies);
-> > > +	if (ret < 0) {
-> > > +		dev_err(&client->dev, "failed to enable regulators\n");
-> > > +		goto disable_clk;
-> > > +	}
-> > > +
-> > > +	gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, GPIOD_OUT_HIGH);
-> > 
-> > ..., 1);
-> > 
-> > > +
-> > > +	usleep_range(1400, 1500);
-> > > +
-> > > +	return 0;
-> > > +
-> > > +disable_clk:
-> > > +	clk_disable_unprepare(ov8856->xvclk);
-> > 
-> > How about the n_shutdn GPIO?
-> > 
-> 
-> This is power up sequence function.
-> When enabling regulators failed, it is required to disable the enabled
-> power previously.
-> Thus here we need to disable xvclk.
-> But for n_shutdn GPIO, it was low state at that time.
-> So we don't need to do anything for it.
+Thanks!
 
-Ah, right. Please ignore the comment.
+> diff --git a/drivers/gpio/gpio-ich.c b/drivers/gpio/gpio-ich.c
+> index 90bf7742f9b0..2f086d0aa1f4 100644
+> --- a/drivers/gpio/gpio-ich.c
+> +++ b/drivers/gpio/gpio-ich.c
+> @@ -159,7 +159,10 @@ static bool ichx_gpio_check_available(struct gpio_chip *gpio, unsigned nr)
+>  
+>  static int ichx_gpio_get_direction(struct gpio_chip *gpio, unsigned nr)
+>  {
+> -	return ichx_read_bit(GPIO_IO_SEL, nr);
+> +	if (ichx_read_bit(GPIO_IO_SEL, nr))
+> +		return GPIO_LINE_DIRECTION_IN;
+> +
+> +	return GPIO_LINE_DIRECTION_OUT;
+>  }
+>  
+>  static int ichx_gpio_direction_input(struct gpio_chip *gpio, unsigned nr)
 
-> 
-> > > +
-> > > +	return ret;
-> > > +}
-> > > +
-> > > +static void __ov8856_power_off(struct ov8856 *ov8856)
-> > > +{
-> > > +	gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, 1);
-> > 
-> > Why to inactivate xshutdn here (it already was)?
+> diff --git a/drivers/gpio/gpio-merrifield.c b/drivers/gpio/gpio-merrifield.c
+> index 2f1e9da81c1e..d4fa6e9560f3 100644
+> --- a/drivers/gpio/gpio-merrifield.c
+> +++ b/drivers/gpio/gpio-merrifield.c
+> @@ -162,7 +162,10 @@ static int mrfld_gpio_get_direction(struct gpio_chip *chip, unsigned int offset)
+>  {
+>  	void __iomem *gpdr = gpio_reg(chip, offset, GPDR);
+>  
+> -	return !(readl(gpdr) & BIT(offset % 32));
+> +	if (readl(gpdr) & BIT(offset % 32))
+> +		return GPIO_LINE_DIRECTION_OUT;
+> +
+> +	return GPIO_LINE_DIRECTION_IN;
+>  }
+>  
+>  static int mrfld_gpio_set_debounce(struct gpio_chip *chip, unsigned int offset,
 
-^
+> diff --git a/drivers/gpio/gpio-pca953x.c b/drivers/gpio/gpio-pca953x.c
+> index de5d1383f28d..82122c3c688a 100644
+> --- a/drivers/gpio/gpio-pca953x.c
+> +++ b/drivers/gpio/gpio-pca953x.c
+> @@ -449,7 +449,10 @@ static int pca953x_gpio_get_direction(struct gpio_chip *gc, unsigned off)
+>  	if (ret < 0)
+>  		return ret;
+>  
+> -	return !!(reg_val & bit);
+> +	if (reg_val & bit)
+> +		return GPIO_LINE_DIRECTION_IN;
+> +
+> +	return GPIO_LINE_DIRECTION_OUT;
+>  }
+>  
+>  static void pca953x_gpio_set_multiple(struct gpio_chip *gc,
 
-> > 
-> > > +	regulator_bulk_disable(OV8856_NUM_SUPPLIES, ov8856->supplies);
-> > > +	clk_disable_unprepare(ov8856->xvclk);
-> > > +}
-> > > +
-> > >  static int __maybe_unused ov8856_suspend(struct device *dev)
-> > >  {
-> > >  	struct i2c_client *client = to_i2c_client(dev);
-> > > @@ -951,6 +1506,7 @@ static int ov8856_set_format(struct v4l2_subdev *sd,
-> > >  			     struct v4l2_subdev_format *fmt)
-> > >  {
-> > >  	struct ov8856 *ov8856 = to_ov8856(sd);
-> > > +	struct v4l2_mbus_framefmt *mbus_fmt = &fmt->format;
-> > >  	const struct ov8856_mode *mode;
-> > >  	s32 vblank_def, h_blank;
-> > >  
-> > > @@ -960,7 +1516,9 @@ static int ov8856_set_format(struct v4l2_subdev *sd,
-> > >  				      fmt->format.height);
-> > >  
-> > >  	mutex_lock(&ov8856->mutex);
-> > > -	ov8856_update_pad_format(mode, &fmt->format);
-> > > +	mbus_fmt->code = ov8856->fmt.code;
-> > > +	ov8856_update_pad_format(mode, mbus_fmt);
-> > > +	ov8856->fmt = fmt->format;
-> > >  	if (fmt->which == V4L2_SUBDEV_FORMAT_TRY) {
-> > >  		*v4l2_subdev_get_try_format(sd, cfg, fmt->pad) = fmt->format;
-> > >  	} else {
-> > > @@ -992,13 +1550,17 @@ static int ov8856_get_format(struct v4l2_subdev *sd,
-> > >  			     struct v4l2_subdev_format *fmt)
-> > >  {
-> > >  	struct ov8856 *ov8856 = to_ov8856(sd);
-> > > +	struct v4l2_mbus_framefmt *mbus_fmt = &fmt->format;
-> > >  
-> > >  	mutex_lock(&ov8856->mutex);
-> > > -	if (fmt->which == V4L2_SUBDEV_FORMAT_TRY)
-> > > +	if (fmt->which == V4L2_SUBDEV_FORMAT_TRY) {
-> > >  		fmt->format = *v4l2_subdev_get_try_format(&ov8856->sd, cfg,
-> > >  							  fmt->pad);
-> > > -	else
-> > > -		ov8856_update_pad_format(ov8856->cur_mode, &fmt->format);
-> > > +	} else {
-> > > +		fmt->format = ov8856->fmt;
-> > > +		ov8856_update_pad_format(ov8856->cur_mode, mbus_fmt);
-> > > +		mbus_fmt->code = ov8856->fmt.code;
-> > > +	}
-> > >  
-> > >  	mutex_unlock(&ov8856->mutex);
-> > >  
-> > > @@ -1009,11 +1571,12 @@ static int ov8856_enum_mbus_code(struct v4l2_subdev *sd,
-> > >  				 struct v4l2_subdev_pad_config *cfg,
-> > >  				 struct v4l2_subdev_mbus_code_enum *code)
-> > >  {
-> > > -	/* Only one bayer order GRBG is supported */
-> > > +	struct ov8856 *ov8856 = to_ov8856(sd);
-> > > +
-> > >  	if (code->index > 0)
-> > >  		return -EINVAL;
-> > >  
-> > > -	code->code = MEDIA_BUS_FMT_SGRBG10_1X10;
-> > > +	code->code = ov8856->fmt.code;
-> > >  
-> > >  	return 0;
-> > >  }
-> > > @@ -1089,6 +1652,20 @@ static int ov8856_identify_module(struct ov8856 *ov8856)
-> > >  		return -ENXIO;
-> > >  	}
-> > >  
-> > > +	/* check sensor hardware revision */
-> > > +	ret = ov8856_check_revision(ov8856);
-> > > +	if (ret) {
-> > > +		dev_err(&client->dev, "failed to check sensor revision");
-> > > +		return ret;
-> > > +	}
-> > > +
-> > > +	ret = ov8856_read_reg(ov8856, OV8856_MODULE_REVISION,
-> > > +			      OV8856_REG_VALUE_08BIT, &val);
-> > > +	if (ret)
-> > > +		return ret;
-> > > +
-> > > +	ov8856->is_1B_revision = (val == OV8856_1B_MODULE) ? 1 : 0;
-> > > +
-> > >  	return 0;
-> > >  }
-> > >  
-> > > @@ -1107,7 +1684,7 @@ static int ov8856_check_hwcfg(struct device *dev)
-> > >  		return -ENXIO;
-> > >  
-> > >  	fwnode_property_read_u32(fwnode, "clock-frequency", &mclk);
-> > > -	if (mclk != OV8856_MCLK) {
-> > > +	if (mclk != OV8856_XVCLK) {
-> > >  		dev_err(dev, "external clock %d is not supported", mclk);
-> > >  		return -EINVAL;
-> > >  	}
-> > > @@ -1164,6 +1741,9 @@ static int ov8856_remove(struct i2c_client *client)
-> > >  	media_entity_cleanup(&sd->entity);
-> > >  	v4l2_ctrl_handler_free(sd->ctrl_handler);
-> > >  	pm_runtime_disable(&client->dev);
-> > > +	if (!pm_runtime_status_suspended(&client->dev))
-> > > +		__ov8856_power_off(ov8856);
-> > > +	pm_runtime_set_suspended(&client->dev);
-> > >  	mutex_destroy(&ov8856->mutex);
-> > >  
-> > >  	return 0;
-> > > @@ -1172,6 +1752,7 @@ static int ov8856_remove(struct i2c_client *client)
-> > >  static int ov8856_probe(struct i2c_client *client)
-> > >  {
-> > >  	struct ov8856 *ov8856;
-> > > +	unsigned int i;
-> > >  	int ret;
-> > >  
-> > >  	ret = ov8856_check_hwcfg(&client->dev);
-> > > @@ -1186,6 +1767,42 @@ static int ov8856_probe(struct i2c_client *client)
-> > >  		return -ENOMEM;
-> > >  
-> > >  	v4l2_i2c_subdev_init(&ov8856->sd, client, &ov8856_subdev_ops);
-> > > +	ov8856->fmt.code = MEDIA_BUS_FMT_SGRBG10_1X10;
-> > > +
-> > > +	ov8856->xvclk = devm_clk_get(&client->dev, "xvclk");
-> > 
-> > Does this work on ACPI?
-> > 
-> > See e.g. the smiapp driver for an example. The same applies to the rest of
-> > the chunk.
-> 
-> For ACPI, this probe should not be executed,
-> as DT setting may not have compatible property.
+> diff --git a/drivers/gpio/gpio-sch.c b/drivers/gpio/gpio-sch.c
+> index fb143f28c386..c65f35b68202 100644
+> --- a/drivers/gpio/gpio-sch.c
+> +++ b/drivers/gpio/gpio-sch.c
+> @@ -127,7 +127,10 @@ static int sch_gpio_get_direction(struct gpio_chip *gc, unsigned gpio_num)
+>  {
+>  	struct sch_gpio *sch = gpiochip_get_data(gc);
+>  
+> -	return sch_gpio_reg_get(sch, gpio_num, GIO);
+> +	if (sch_gpio_reg_get(sch, gpio_num, GIO))
+> +		return GPIO_LINE_DIRECTION_IN;
+> +
+> +	return GPIO_LINE_DIRECTION_OUT;
+>  }
+>  
+>  static const struct gpio_chip sch_gpio_chip = {
 
-This probe function will be executed on ACPI as well.
+> diff --git a/drivers/gpio/gpio-wcove.c b/drivers/gpio/gpio-wcove.c
+> index 444fe9e7f04a..8b481b3c1ebe 100644
+> --- a/drivers/gpio/gpio-wcove.c
+> +++ b/drivers/gpio/gpio-wcove.c
+> @@ -170,13 +170,16 @@ static int wcove_gpio_get_direction(struct gpio_chip *chip, unsigned int gpio)
+>  	int ret, reg = to_reg(gpio, CTRL_OUT);
+>  
+>  	if (reg < 0)
+> -		return 0;
+> +		return GPIO_LINE_DIRECTION_OUT;
+>  
+>  	ret = regmap_read(wg->regmap, reg, &val);
+>  	if (ret)
+>  		return ret;
+>  
+> -	return !(val & CTLO_DIR_OUT);
+> +	if (val & CTLO_DIR_OUT)
+> +		return GPIO_LINE_DIRECTION_OUT;
+> +
+> +	return GPIO_LINE_DIRECTION_IN;
+>  }
+>  
+>  static int wcove_gpio_get(struct gpio_chip *chip, unsigned int gpio)
+
 
 -- 
-Regards,
+With Best Regards,
+Andy Shevchenko
 
-Sakari Ailus
+
 
 _______________________________________________
 linux-arm-kernel mailing list
