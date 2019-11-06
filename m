@@ -2,158 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C464F15FB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 13:23:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F128F1605
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 13:25:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=agUpQpirur3ou/jVLCGDJitVVvRk62JxRd+jXV0/wi0=; b=jgbtRmT/lYAJiP
-	Hy3E06K8PWRVhvdu29eN+xSTdrtvbzy8yjDaTFuueqlRPaybYbD6g3MFA/IZ+byCiinpxq6gbQzrm
-	7eg0bncCB1yhz9TADbymaA+G3OMfHrA+OrshI+GDz+BVxDJX6vWOI4B0g9rwGW4VOLUQmR1ckMcjk
-	JtUzPLNhdbEmK6ADn0IOW/YyKJFgaFX4ptvf9k2btHK2gwgNx4bdjee+ZVaOzTx/WUpa8aQ7soHQB
-	Q3bFi8SPZoUIZhQ5ndHArUPGhk9gaQs+Cl1Rq1ttVEWg1SY2ef3wRq+QGUR5IcRLRhStfSY4N8pnl
-	8eru4zlDpKAOOb4pQ3tg==;
+	List-Owner; bh=gCYRlpbXDWyNH0bTPt0ds9EcP4rM8hJs0SpACOtSGt8=; b=JY1J7Jw95muvQT
+	VrHKhjM86DtECRKKxzDI0g/C20ckOTs9pkkJJbt2iXjxJcL035k2cAIDxg0EHDaP+dzdJQztK1dBF
+	7qNuPoFmfsdb1l97KsZ4Uh5D4T12c5yHyieNqL7k5oswGIBX+ZzxkPz3bD0FYpzl22b/7AJBpy27g
+	4LuJBbg8qpj/qfWXHetu735Yik2iSYVuYaL673RvzTbgM6XrCVllrGMDYv9tBzLmV5CxqY0M17rvB
+	hVZeR8YtvALS6/5bEQ25co0CWdTxLtV+tuf4/zdo4qm2RAg+iR2d4kfwYpUpiji2s0K03CTo63H2B
+	gVArqGA+ObMGa/3+55Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSKL9-0003rK-5s; Wed, 06 Nov 2019 12:23:11 +0000
-Received: from alln-iport-6.cisco.com ([173.37.142.93])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSKL1-0003qY-J5; Wed, 06 Nov 2019 12:23:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=cisco.com; i=@cisco.com; l=3552; q=dns/txt; s=iport;
- t=1573042983; x=1574252583;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-id:content-transfer-encoding: mime-version;
- bh=VVrK51hRZI55odG7ZNnZp9l6jxMaGxztVQSHMnIAb8Q=;
- b=HsfRlZWOfsBs1FwPpdbVTnBtiW22uQN/gxBs1uKNOBjSwZ59//LZvQPR
- yYdaR0qKi9YNMlhh6a2N85tEQBH1NUkWDu2GafaqMvfgiswtJsd2LnwEu
- 107M1h5Yl1WBbUWY3eA5j40xonMN6mNGFizgEvEsBlHGOf9uGdYQGp6Ni s=;
-IronPort-PHdr: =?us-ascii?q?9a23=3A+sfjExCL6egwExSTJkD4UyQJPHJ1sqjoPgMT9p?=
- =?us-ascii?q?ssgq5PdaLm5Zn5IUjD/qs03kTRU9Dd7PRJw6rNvqbsVHZIwK7JsWtKMfkuHw?=
- =?us-ascii?q?QAld1QmgUhBMCfDkiuLPfsdDI3BsdqX15+9Hb9Ok9QS47z?=
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0B4AQDcucJd/4kNJK1mGgEBAQEBAQE?=
- =?us-ascii?q?BAQMBAQEBEQEBAQICAQEBAYF+gUtQBYFEIAQLKgqEH4NGA4p+ToFrJZd+glI?=
- =?us-ascii?q?DVAkBAQEMAQEtAgEBhEACF4N3JDgTAgMLAQEEAQEBAgEFBG2FNwyFUQEBAQE?=
- =?us-ascii?q?CARIRBA0MAQE3AQ8CAQgVAwICJgICAjAVEAIEAQwBBQIBAR6DAIJHAw4gAaY?=
- =?us-ascii?q?eAoE4iGB1fzOCfgEBBYUIGIIXCYEOKIwUGIFAP4E4DIJfPoRcgnmCXo1RgX0?=
- =?us-ascii?q?3nX8KgiSVNgYbmWyOQ5lkAgQCBAUCDgEBBYFpIoFYcBWDJ1ARFIMGDBcVgzu?=
- =?us-ascii?q?KU3SBKI9TAYEOAQE?=
-X-IronPort-AV: E=Sophos;i="5.68,274,1569283200"; d="scan'208";a="373985871"
-Received: from alln-core-4.cisco.com ([173.36.13.137])
- by alln-iport-6.cisco.com with ESMTP/TLS/DHE-RSA-SEED-SHA;
- 06 Nov 2019 12:23:01 +0000
-Received: from XCH-RCD-016.cisco.com (xch-rcd-016.cisco.com [173.37.102.26])
- by alln-core-4.cisco.com (8.15.2/8.15.2) with ESMTPS id xA6CN1km019096
- (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=FAIL);
- Wed, 6 Nov 2019 12:23:01 GMT
-Received: from xhs-aln-002.cisco.com (173.37.135.119) by XCH-RCD-016.cisco.com
- (173.37.102.26) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Wed, 6 Nov 2019 06:23:00 -0600
-Received: from xhs-aln-002.cisco.com (173.37.135.119) by xhs-aln-002.cisco.com
- (173.37.135.119) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Wed, 6 Nov 2019 06:22:59 -0600
-Received: from NAM05-CO1-obe.outbound.protection.outlook.com (173.37.151.57)
- by xhs-aln-002.cisco.com (173.37.135.119) with Microsoft SMTP Server (TLS) id
- 15.0.1473.3 via Frontend Transport; Wed, 6 Nov 2019 06:22:59 -0600
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ILbKp2Ug3a9k8goVAGqb+/tB/NVHPRtrsS1RFdKtCeRc0u50qNb6bT3WRYUjbAubiuuAQL4Pg7+taiyin0/A6/BBP/FasPY+LvmaDRq9DSQBMHOS9vVn7Yguu6G6G7NflGnAc1EfZ3k812tIgbfcwJu46Sz3SEzQg1ciLJmzWLGWyLuuOTvpQNGOYIwUZtXv/mqItt2kybIzx16M8fepYWwB0GQ61rLipkusFIZ1Ys48xbkLPaQWaiqMKBXrjX3b8ghb8l/8cNpSCqWdxnYuZTfRwDWaukljmFigea+zKQ0Ac4QEPvJSHX/1Zc8FJbKuZwnPdmXwvklDZPxIImImFQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=VVrK51hRZI55odG7ZNnZp9l6jxMaGxztVQSHMnIAb8Q=;
- b=R4iZ8UIVTLcK9iy4uIlPIQJBZ48OOfGXIqdTNGh3pXscu+fBMiAGtdGkXwkeGzU4UISddYONeialV1fB+N+fi2TFL5LEelCq5v257DAxSSVOkgZ3Wv42Ta2DdUzaOBdzXeTlno7W/FS/SRZz6jeFPiCJA6MiSUnVceqHjw411veJL+xRUPuAIuFAXlqXe1tJ8drvEP7XCJ5qqjyhtzs4q0JrGPxz1l1UHuzRQmmA6mPM5/giTTls6+i1Vni6tpawZ4+KMXqiHyr5vq5MzppfedhExB4/9uR24c7mLYZy9r8THXqix1DRjdurBTABF7uPHEW6UcoFzOX2oXm0MMDfVw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=cisco.com; dmarc=pass action=none header.from=cisco.com;
- dkim=pass header.d=cisco.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cisco.onmicrosoft.com; 
- s=selector2-cisco-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=VVrK51hRZI55odG7ZNnZp9l6jxMaGxztVQSHMnIAb8Q=;
- b=kVuElGIEXC2Z1KhawW0z8nOID1uKBRNfJbiap34MY9MrUt064AvcUxhSDjo7FnDFo36U6HmotLdrPjRTgRoJVA45qh8eL1TDPu/jR0prLc3MZyxfJ0nAiSn2/208ooRSrd62sZhX2f6gHrbL85Z8dNLIMFAdgmIN/9CguNyT/fY=
-Received: from MWHPR11MB0062.namprd11.prod.outlook.com (10.164.204.34) by
- MWHPR11MB0078.namprd11.prod.outlook.com (10.164.204.38) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2408.24; Wed, 6 Nov 2019 12:22:50 +0000
-Received: from MWHPR11MB0062.namprd11.prod.outlook.com
- ([fe80::915:6397:4683:34e0]) by MWHPR11MB0062.namprd11.prod.outlook.com
- ([fe80::915:6397:4683:34e0%3]) with mapi id 15.20.2408.024; Wed, 6 Nov 2019
- 12:22:50 +0000
-From: "Hans Verkuil (hansverk)" <hansverk@cisco.com>
-To: Helen Koike <helen.koike@collabora.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>
-Subject: Re: [PATCH v9 1/4] media: videodev2.h, v4l2-ioctl: add rkisp1 meta
- buffer format
-Thread-Topic: [PATCH v9 1/4] media: videodev2.h, v4l2-ioctl: add rkisp1 meta
- buffer format
-Thread-Index: AQHVlJoMoe3KhuzWQE6zp8GXlxAXY6d+EJqA
-Date: Wed, 6 Nov 2019 12:22:50 +0000
-Message-ID: <9102bcf8-0279-7972-daff-b15aaf98804d@cisco.com>
-References: <20191106120132.6876-1-helen.koike@collabora.com>
- <20191106120132.6876-2-helen.koike@collabora.com>
-In-Reply-To: <20191106120132.6876-2-helen.koike@collabora.com>
-Accept-Language: en-US
-Content-Language: en-US
+	id 1iSKNV-0005rQ-NA; Wed, 06 Nov 2019 12:25:37 +0000
+Received: from mailgate1.rohmeurope.com ([178.15.145.194])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSKNO-0005g1-10
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 12:25:32 +0000
+X-AuditID: c0a8fbf4-183ff70000001fa6-6c-5dc2bbb4f65b
+Received: from smtp.reu.rohmeu.com (will-cas002.reu.rohmeu.com
+ [192.168.251.178])
+ by mailgate1.rohmeurope.com (Symantec Messaging Gateway) with SMTP id
+ CC.BC.08102.4BBB2CD5; Wed,  6 Nov 2019 13:25:24 +0100 (CET)
+Received: from WILL-MAIL002.REu.RohmEu.com ([fe80::e0c3:e88c:5f22:d174]) by
+ WILL-CAS002.REu.RohmEu.com ([fe80::fc24:4cbc:e287:8659%12]) with mapi id
+ 14.03.0439.000; Wed, 6 Nov 2019 13:25:18 +0100
+From: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
+To: "sre@kernel.org" <sre@kernel.org>
+Subject: Re: [PATCH v2 0/2] Add definition for GPIO direction
+Thread-Topic: [PATCH v2 0/2] Add definition for GPIO direction
+Thread-Index: AQHVlJrx7wcBaYPaxUmQrQAzc732Rad+AIyA
+Date: Wed, 6 Nov 2019 12:25:18 +0000
+Message-ID: <ddcd02cc6c709837a28cae2cbfa672c506927659.camel@fi.rohmeurope.com>
+References: <cover.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
+ <20191106120846.5bunrqj3uz4khih5@earth.universe>
+In-Reply-To: <20191106120846.5bunrqj3uz4khih5@earth.universe>
+Accept-Language: en-US, de-DE
+Content-Language: de-DE
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=hansverk@cisco.com; 
-x-originating-ip: [173.38.220.39]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 08f653a5-e61c-45fd-71b3-08d762b40aad
-x-ms-traffictypediagnostic: MWHPR11MB0078:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MWHPR11MB0078EB299800129990D08E13DE790@MWHPR11MB0078.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3968;
-x-forefront-prvs: 02135EB356
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(376002)(136003)(396003)(366004)(346002)(199004)(189003)(31686004)(229853002)(91956017)(66556008)(99286004)(256004)(8936002)(8676002)(6246003)(3846002)(6486002)(2906002)(25786009)(71200400001)(7416002)(71190400001)(81156014)(81166006)(305945005)(4326008)(31696002)(7736002)(6436002)(66446008)(76116006)(5660300002)(65806001)(66066001)(65956001)(86362001)(6116002)(6512007)(58126008)(102836004)(64756008)(53546011)(446003)(6506007)(36756003)(486006)(14454004)(11346002)(476003)(2616005)(66476007)(54906003)(186003)(110136005)(2501003)(316002)(76176011)(26005)(66946007)(478600001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB0078;
- H:MWHPR11MB0062.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: cisco.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: r1HC8zt3SUj+w6AqAeGP8YVzEnJTRpdq9KqpVi7UhUcwOm+PzSioqgGQoG7EPZTHynGL+d4qkfFHDwjD8KUDBqyjp2kxSf0YkHdN9PYq3tGDjh07Va1jHr0DuXMFfn/XMI7dSYtoHnvrs0FTa28agalLoD3VxRYnE5VXPHaJNBRBH1QKbO+FPsgB3fKZdJoUmeb6KrwwfQNllO6pg9Ck3yUiHjiv3BsEnNUQdIYRgw1xG6DKKo9SRMZzTRMUuUR8psrOFt8ov/Jl1QjF2evsFvfQEVZeHadwiUlEGpsRR7H92/n7Fb8u/JLAMOQf7uFdfF17srtjq6RdrwgIcnIirNxUxwaAYxr548jzQ0IsqByZsAXA8FNVSj6OYBpHde68Rqct8oPFwC15Ylubozen7XG51rgB56ueOSgEeRT7CXAyQrYYTVz0xOijIYceCNCl
-Content-ID: <E779B3FBDFE14F408BAD826C04919BF8@namprd11.prod.outlook.com>
+x-originating-ip: [213.255.186.46]
+Content-ID: <FD03FC67CBBBB149AC58086B204B0910@de.rohmeurope.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 08f653a5-e61c-45fd-71b3-08d762b40aad
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Nov 2019 12:22:50.7979 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 5ae1af62-9505-4097-a69a-c1553ef7840e
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jKR78HJF4GMbv34W5zu2G8i1HMfat/MuvMpBcnlpoY1rqLWMGEfPNNhQFEnEp3Kt/IebRFuXehsYCAO8hAMWtA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB0078
-X-OriginatorOrg: cisco.com
-X-Outbound-SMTP-Client: 173.37.102.26, xch-rcd-016.cisco.com
-X-Outbound-Node: alln-core-4.cisco.com
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Ta0xbZRjOd87p6eFSc9Zy+exc4uqIcUYmxuibOBd+LWfGiZsxMWYED+NA
+ yaAlbTHgH9kQgRIcYxDKGeCoreMyomtBt8KEVbYxyKhkgCMDlFE2WORiYLBx9RzqBr++J+9z
+ e3+8H0Oqcxktk2qwCCYDn6ajg6mOuhXXG82t3vg3e3Oj4JK/B0F/n5cAzx0Gik9VEFA0V0FC
+ U/F1Chaquynoz3MhaC/+nYTlmU4ljA3EQX0ZBUMnWwlY8a2R8I1op6Ch/AoFE+5xAspWLxDg
+ Gh9UQG5jLwnu71cRWJfrSbjjqaLhnOM0BSMjDQhapmYIsA76FVC4INIw2fSnArocjxGM1VdR
+ UOXsoqBmrUkBM1OfwfxsuwKuPZymoM/mI2Gi0k3D2q8uCvLr+yVFox/BZHMk9LRaYNjtVoDt
+ YiuCp54aCu6dOYugeNZJw9XReRQbww3ke5Tcz/OnaG72bp6SE/+6TXO2FTvFeTq03BVxRMn1
+ /XuD5FwNhTQ3PNhGczW3jnBux9ecz1aLuJK5aWn8xIk4151h9PHOz0P2J/KWLz9JTTHsO/BF
+ iP7v0ftUxrImq9y5SOWgyxorCmIw+zZuKnLQMlazAwhvFOy1omAJ30R4cHBUIhiGZvdj65BS
+ 1oSxUXix+x4pa0j2bjgumGvfNGvY9/HtS34iIDqAuxorqAB+Czt680gZU+weXPiwc3OuYj/C
+ tjwZM1JZFp5cekUeB0kxkxttm5GI3YULc2Y2I0k2ErseLCkCO7PY0eYjAzgcT42v/z/X4atP
+ xzYjSfY1/JNnX8Aai38oLaECeDcuKxpTBjbYgW9V+qkSFCFuaxC33OI2t7jNLW5zn0eKBoTT
+ +dS0FN4ixESbhMxok1GfLj3HjekuFDjqhctow3vIiwgGedGLDKELV32Qei1e/UKiMSlbz5v1
+ CabMNMHsRZghdWGqY99JnCqJz/5KMBmfUTsZShepenXsTLyalbtOCEKGYHrGvsQwOqzaJX0d
+ 9Q6TkCJkJaemWbZoggmSw4O1YWbBkCSY+EyLPkG+jgSzdB4yFSr1Jnsku8qcwadL04C1G73O
+ lExV20mms9ppJ9WUwWgQtJGqGy2SlJWl+kzD86JHKJJBOo1qRA4KlX7285xHUgUhVXw4/ptc
+ YeG3KG0OOuiz1racO3LBn/zuRNQvJzaWVrNj0y5qQ//IFY/XeB+XNrdV5t+PjugndzMnX944
+ +yQ3f5o+3NPh1Sza9BG9dXUN60Mh5d8yBb533nOE+6+H14aKrtK801nK4cR/xt2flgQZDfEP
+ vPZV/9B668HoY/abcYf2/BjXq3GmHz1sPp9Zo6PMej5mL2ky8/8BbFL4/JYEAAA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_042303_763127_30995A77 
-X-CRM114-Status: GOOD (  16.00  )
-X-Spam-Score: -12.7 (------------)
+X-CRM114-CacheID: sfid-20191106_042530_218634_26ADA97A 
+X-CRM114-Status: GOOD (  12.53  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-12.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [173.37.142.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.15.145.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -165,97 +90,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "eddie.cai.linux@gmail.com" <eddie.cai.linux@gmail.com>,
- "kernel@collabora.com" <kernel@collabora.com>,
- "heiko@sntech.de" <heiko@sntech.de>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "jeffy.chen@rock-chips.com" <jeffy.chen@rock-chips.com>,
- "zyc@rock-chips.com" <zyc@rock-chips.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "tfiga@chromium.org" <tfiga@chromium.org>,
- Jacob Chen <jacob2.chen@rock-chips.com>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "laurent.pinchart@ideasonboard.com" <laurent.pinchart@ideasonboard.com>,
- "sakari.ailus@linux.intel.com" <sakari.ailus@linux.intel.com>,
- "zhengsq@rock-chips.com" <zhengsq@rock-chips.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "ezequiel@collabora.com" <ezequiel@collabora.com>,
+Cc: "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "david.daney@cavium.com" <david.daney@cavium.com>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "sathyanarayanan.kuppuswamy@linux.intel.com"
+ <sathyanarayanan.kuppuswamy@linux.intel.com>,
+ "ptyser@xes-inc.com" <ptyser@xes-inc.com>,
+ "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
+ "marek.behun@nic.cz" <marek.behun@nic.cz>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "marek.vasut+renesas@gmail.com" <marek.vasut+renesas@gmail.com>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ "khilman@kernel.org" <khilman@kernel.org>,
+ "michal.simek@xilinx.com" <michal.simek@xilinx.com>,
+ "jonathanh@nvidia.com" <jonathanh@nvidia.com>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ "linux-omap@vger.kernel.org" <linux-omap@vger.kernel.org>,
+ "bamv2005@gmail.com" <bamv2005@gmail.com>, "joel@jms.id.au" <joel@jms.id.au>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "linux-pwm@vger.kernel.org" <linux-pwm@vger.kernel.org>,
+ "grygorii.strashko@ti.com" <grygorii.strashko@ti.com>,
+ "ckeepax@opensource.cirrus.com" <ckeepax@opensource.cirrus.com>,
+ "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
+ "mazziesaccount@gmail.com" <mazziesaccount@gmail.com>,
+ "rjui@broadcom.com" <rjui@broadcom.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "vilhelm.gray@gmail.com" <vilhelm.gray@gmail.com>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "rf@opensource.cirrus.com" <rf@opensource.cirrus.com>,
+ "ssantosh@kernel.org" <ssantosh@kernel.org>,
+ "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
+ "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+ "sbranden@broadcom.com" <sbranden@broadcom.com>,
+ "yamada.masahiro@socionext.com" <yamada.masahiro@socionext.com>,
+ "andrew@aj.id.au" <andrew@aj.id.au>, "info@metux.net" <info@metux.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "t.scherer@eckelmann.de" <t.scherer@eckelmann.de>,
+ "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ "patches@opensource.cirrus.com" <patches@opensource.cirrus.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/6/19 1:01 PM, Helen Koike wrote:
-> From: Shunqian Zheng <zhengsq@rock-chips.com>
-> 
-> Add the Rockchip ISP1 specific processing parameter format
-> V4L2_META_FMT_RK_ISP1_PARAMS and metadata format
-> V4L2_META_FMT_RK_ISP1_STAT_3A for 3A.
-> 
-> Signed-off-by: Shunqian Zheng <zhengsq@rock-chips.com>
-> Signed-off-by: Jacob Chen <jacob2.chen@rock-chips.com>
-> Acked-by: Hans Verkuil <hans.verkuil@cisco.com>
 
-I acked this? It is missing documentation for these new formats.
-
-> [refactored for upstream]
-> Signed-off-by: Helen Koike <helen.koike@collabora.com>
-> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+On Wed, 2019-11-06 at 13:08 +0100, Sebastian Reichel wrote:
+> Hi,
 > 
-> ---
+> On Wed, Nov 06, 2019 at 10:51:06AM +0200, Matti Vaittinen wrote:
+> > The patch series adds definitions for GPIO line directions.
+> > 
+> > For occasional GPIO contributor like me it is always a pain to
+> > remember
+> > whether 1 or 0 was used for GPIO direction INPUT/OUTPUT.
 > 
-> Changes in v9:
-> - Add reviewed-by tag from Laurent
+> Maybe also update the GPIO drivers in pinctrl?
 > 
-> Changes in v8: None
-> Changes in v7:
-> - s/IPU3/RK_ISP1
-> 
->  drivers/media/v4l2-core/v4l2-ioctl.c | 2 ++
->  include/uapi/linux/videodev2.h       | 4 ++++
->  2 files changed, 6 insertions(+)
-> 
-> diff --git a/drivers/media/v4l2-core/v4l2-ioctl.c b/drivers/media/v4l2-core/v4l2-ioctl.c
-> index 315ac12c3e0a..ade990554caf 100644
-> --- a/drivers/media/v4l2-core/v4l2-ioctl.c
-> +++ b/drivers/media/v4l2-core/v4l2-ioctl.c
-> @@ -1341,6 +1341,8 @@ static void v4l_fill_fmtdesc(struct v4l2_fmtdesc *fmt)
->  	case V4L2_META_FMT_UVC:		descr = "UVC Payload Header Metadata"; break;
->  	case V4L2_META_FMT_D4XX:	descr = "Intel D4xx UVC Metadata"; break;
->  	case V4L2_META_FMT_VIVID:       descr = "Vivid Metadata"; break;
-> +	case V4L2_META_FMT_RK_ISP1_PARAMS:	descr = "Rockchip ISP1 3A params"; break;
+> $ git grep -l gpio_get_direction drivers/pinctrl
+> drivers/pinctrl/bcm/pinctrl-bcm2835.c
+> drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
+> drivers/pinctrl/intel/pinctrl-baytrail.c
+> drivers/pinctrl/intel/pinctrl-cherryview.c
+> drivers/pinctrl/intel/pinctrl-intel.c
+> drivers/pinctrl/mediatek/pinctrl-mtk-common.c
+> drivers/pinctrl/mediatek/pinctrl-paris.c
+> drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
+> drivers/pinctrl/pinctrl-amd.c
+> drivers/pinctrl/pinctrl-at91.c
+> drivers/pinctrl/pinctrl-axp209.c
+> drivers/pinctrl/pinctrl-ingenic.c
+> drivers/pinctrl/pinctrl-ocelot.c
+> drivers/pinctrl/pinctrl-oxnas.c
+> drivers/pinctrl/pinctrl-pic32.c
+> drivers/pinctrl/pinctrl-pistachio.c
+> drivers/pinctrl/pinctrl-rk805.c
+> drivers/pinctrl/pinctrl-rockchip.c
+> drivers/pinctrl/pinctrl-rza1.c
+> drivers/pinctrl/pinctrl-st.c
+> drivers/pinctrl/pinctrl-stmfx.c
+> drivers/pinctrl/pinctrl-sx150x.c
+> drivers/pinctrl/qcom/pinctrl-msm.c
+> drivers/pinctrl/stm32/pinctrl-stm32.c
+> drivers/pinctrl/vt8500/pinctrl-wmt.c
 
-params -> Params
+Ouch. I didn't check from pinctrl but I see those should be converted
+as well. I'm a bit short on time right now so if anyone else is
+interested I won't mind :)
 
-> +	case V4L2_META_FMT_RK_ISP1_STAT_3A:	descr = "Rockchip ISP1 3A statistics"; break;
+Luckily the value for IN and OUT is not changed - only the defines were
+added - so all of the drivers do not need to be done at once. If no one
+else will take the pinctrl part then I can probably do pinctrl patches
+for v5.6 cycle.
 
-statistics -> Statistics
-
->  
->  	default:
->  		/* Compressed formats */
-> diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
-> index f98bbcced8ff..56798b09cd85 100644
-> --- a/include/uapi/linux/videodev2.h
-> +++ b/include/uapi/linux/videodev2.h
-> @@ -762,6 +762,10 @@ struct v4l2_pix_format {
->  #define V4L2_META_FMT_D4XX        v4l2_fourcc('D', '4', 'X', 'X') /* D4XX Payload Header metadata */
->  #define V4L2_META_FMT_VIVID	  v4l2_fourcc('V', 'I', 'V', 'D') /* Vivid Metadata */
->  
-> +/* Vendor specific - used for RK_ISP1 camera sub-system */
-> +#define V4L2_META_FMT_RK_ISP1_PARAMS	v4l2_fourcc('R', 'K', '1', 'P') /* Rockchip ISP1 params */
-> +#define V4L2_META_FMT_RK_ISP1_STAT_3A	v4l2_fourcc('R', 'K', '1', 'S') /* Rockchip ISP1 3A statistics */
-> +
->  /* priv field value to indicates that subsequent fields are valid. */
->  #define V4L2_PIX_FMT_PRIV_MAGIC		0xfeedcafe
->  
-> 
-
-Regards,
-
-	Hans
+Br,
+	Matti Vaittinen
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
