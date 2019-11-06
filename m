@@ -2,120 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81DFAF1D0A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 18:59:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA6FBF1D24
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 19:08:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/B+yY2JEJm18yJu9AtgA6s4OphzkuTu8FlYqi5iQsHI=; b=Ri9/SouYR5CS2H
-	fxtO4BnT1SscYRbUB5ve9gv7Qwua2memhgSnEPtpNnXxyeyi5UkvSlIIyIeaO1Pn3ptBhZeMqSl82
-	hfjgLGrHHrkuEBAbrqWwuxlanfdiP0oUte4EIX0WGTOHcn/Cpn02mp3Z7VGHhmnt0ey18AIlWR+gX
-	Hv+bx69D21++7E8yswiGUgd+kwjyMPKJy9ugRB4IEcyw5WjQjlI9n5jMA5E8cEkkFwoFxGm9MVFqe
-	PMDR45I9QqQstI7a2CnDb0N/GwAmADeG8qE6A1BKipI+PrMfwTGUHeCJMyhC7Oc+ImcwsQmDDNgY1
-	dOkhYkRlCLDIA4d0mMoA==;
+	List-Owner; bh=HWRM09wS/JIBhafjNIapN83oEw7wNAt7iSCQzRycdHU=; b=NX4GI3J347CJJt
+	52q5W2NtrFMljXeFf1NYYGnW6UxUnKrzpn/7Mszbk0F5zGh2HDnJgNcG2k4cih9B5O/k6r6GoUHBP
+	GjJ/oYeoYJQ05/0PFvSkhSdwWJhc6kv0pK+AyJT4Xon9QTETGErJlQKOarJHYD+tQLO8NUFBmptBI
+	qcBNaJdtWVSgPw9kF4aJ3LzcnjXJ/VZY8dYiix07ibp0tE95kPhssSu5UhdM+5b301Ck1yja2vAsj
+	niV9GwQCjJiadGqcYvQOlzaMQVpHp1wgd6gy7lSCFWOYQF4U08au/TZa/W0IJh99KeM1h6mK+vDld
+	2ywQn97EhI835bmXf3QA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSPaU-0006uq-Id; Wed, 06 Nov 2019 17:59:22 +0000
-Received: from mail-eopbgr760128.outbound.protection.outlook.com
- ([40.107.76.128] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
+	id 1iSPjT-0001oM-NP; Wed, 06 Nov 2019 18:08:39 +0000
+Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSPaL-0006uO-Ld
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 17:59:15 +0000
+ id 1iSPjJ-0001nR-Eu; Wed, 06 Nov 2019 18:08:31 +0000
+Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
+ [10.192.0.18])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 30EA5C08C8;
+ Wed,  6 Nov 2019 18:08:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1573063706; bh=fmcUSQy+Rboqs0cgOnfekDx6LEtxeUQPlxV0dMHzFM8=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=D+SxQLwTfz+9krEZ0lWZ4ohNWs/jpeV1yzvhe2Tzdael1hRlgJcnUAC5uAKRNcexR
+ pqv+k5E+odEpPYfUptYa/Sn2SmW6VX4QU2wxJyGhtyPcHzx+Nv0A/QOxOsQNbEE/v4
+ h6qx8Oa4JoskvLFMnrzzpZj70fb6qxl0EHQ4DUirYuSRK/a7Tz7hMJbTuB6acDmQdt
+ b3D5T9toIORhYkOu8c6BGeqFamYw1449Kwh6IKaUx3V14bqNvKTEVr2LVQ+9eZ5YrR
+ iBVgPrVSTOL60az5Mu+IJGPWhedHLvplRYt4t62FoNBBixcVOC3wK4GUoyBItjJN33
+ jwOirddB8jOIw==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id D2B65A006B;
+ Wed,  6 Nov 2019 18:08:04 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Wed, 6 Nov 2019 10:07:46 -0800
+Received: from NAM05-CO1-obe.outbound.protection.outlook.com (10.13.134.195)
+ by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Wed, 6 Nov 2019 10:07:46 -0800
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Jt0jM4ikrHPfQexJYG7C4Kwc/biujYhETTmaaq6U3mmF2hfvFJWpDIUwmA9+C75qR07sbArxorypsnasbX3z7/Ra/+djMTGa9n2CoE7t4KmvVkuO41iS6uwll4v2ZwDk2KmTChq180st7YJeRgazoq8kA221ojMuNdBvakeQaviSbIwpjiCr+V1EHReBgG5uin7o3SDLDC0g+RuJOEnyj1FZP8jq/yWCsb2Hh2yjyrkliQbasNqUhtZks6bmLJtQawAX97TjAxVDFQtXifF/pVKFa8kwMJRFw4yGy6jvVMKLKaoHfXLDtd1HIn9JVAW/pQuBEERKOULp4W6swC+a3A==
+ b=cJdaIvjlVM4PnIjAdA0wWCDPToNIEt4+pIqxu+Xcw0M7C8CGqhqyQLXaedBGpexXmaDK1VS5StFMi4mdFb8ejwZ63tARWt/x59ghyc9lZtj4aez+xf+hED5Q6vMDPTu8iiVZkLzHsL4iB0arEKoheOQoqWqMl3zAfjUvyPE86ISYYiKGum1DCwXJ4BbaNWgcpwOaz+p37sWwYw2DkmW9rPl7hZsw85+B6rMfqjx5vf+1gFMQKQw7ZlGSiwT3H/ylPtPRWfGZKRuEHqxxQvVPC+0WLA7QKNm96H8lsaTQg9DXVlJfaLuNaKCcPSPgLrRvrQbuvgwW6Qm3huJgTIvKyA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jyxzDweRQO11hgtDzyq44VWbKQe/y3Y8EhZtzqC+464=;
- b=Xa8TbBlSsiSIcRNYzwvLSllKj51BK/5BdMfVy7RArQO401c7YXHVyy+wkedtmo5cQF+JU4ZrmOrdhnnwq9WeEx+Y4U1agzhnwtfKroGh/gfVFniR4dgsaaLZgWVwQejCOaSFi2QfotN4UU+6MwSt/D4bTlEJiyk7t+4ELMmr1tNYEmQzGSedTr4B7KU/eVVSk5AdGngRdJf1TEwdoCsb9Gg/ndRtTJfUFy6USf+mxEmzCj4lS0/IaqaHt8dzxs5pYFBmSGwc52mDxzX7sZsPYnkQGK5iUrsBUVCZf3b8JVLviqkE5jE5wfn1PAYe/T1s0l/8HNys/znBL84kmarfsw==
+ bh=fmcUSQy+Rboqs0cgOnfekDx6LEtxeUQPlxV0dMHzFM8=;
+ b=fm0XcbFcXIiGQJQvNUgSa7Gj9JmBI33asjUkcZj9vl4PLKboQoJ3xCKo4k0rs0MLJy0Qr/+ZEL66T09MifgTLXh54wFZSdcJzqObPjaesDael2ENi3ayZCE0hrk3I1O6F5/TjS9vZOnggbmgi6eKU2r8eFz2vHNT6tHRY6C+6w8mk/u0+AHgkWeF3rqByUTLKWafGDfGRv4gROHa7gC/FuurnrGs1vlsJHFcv96eJlyot42dHltuvyi4FbrHKr9LFBAjw7WPBsfcdAdWC25nZdnBxOEm5T4566fI+e6WTd/+tiX978E/63xvItqx1jv7GXlqsSP/OuOoZxM081K1Yw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microsoft.com; dmarc=pass action=none
- header.from=microsoft.com; dkim=pass header.d=microsoft.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=selector2;
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jyxzDweRQO11hgtDzyq44VWbKQe/y3Y8EhZtzqC+464=;
- b=jkZBEe+5Zz6xWW/6eVLHyG+vcbS6BJDaquSdGSR/A6NHczcfd8sRgcFen2Pa/Arb5anXNvz9iQJNWf9GlafhX1Dc4w/0jHTiezRkA7zc7PAXvA8EcsthLi8QhhxYjhgx0bKjutMu5bcMZUDHblqp58IPQpEPbdR+S0tcDBkBNcM=
-Received: from DM5PR21MB0137.namprd21.prod.outlook.com (10.173.173.12) by
- DM5PR21MB0140.namprd21.prod.outlook.com (10.173.173.15) with Microsoft SMTP
+ bh=fmcUSQy+Rboqs0cgOnfekDx6LEtxeUQPlxV0dMHzFM8=;
+ b=DnV33DVR4t5e6H92ZF/Ro4U9uKYi64vW1pE4cV+eYiigF6kP+Of6UPeDMfW6lpRGa5jHYJ3R6TdTV/voMwksP+mWVqW0YBc7R+/6cou31X87VzbjPiTMF+i2i+/uBN1jRHNys6fpq3LljngHomysK/kyBmYz4CfYwpZUtyzZR4g=
+Received: from DM6PR12MB4089.namprd12.prod.outlook.com (10.141.184.211) by
+ DM6PR12MB3338.namprd12.prod.outlook.com (20.178.31.208) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.9; Wed, 6 Nov 2019 17:59:11 +0000
-Received: from DM5PR21MB0137.namprd21.prod.outlook.com
- ([fe80::9cc3:f167:bb63:799]) by DM5PR21MB0137.namprd21.prod.outlook.com
- ([fe80::9cc3:f167:bb63:799%5]) with mapi id 15.20.2451.013; Wed, 6 Nov 2019
- 17:59:11 +0000
-From: Michael Kelley <mikelley@microsoft.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: RE: [PATCH v5 2/8] arm64: hyperv: Add hypercall and register access
- functions
-Thread-Topic: [PATCH v5 2/8] arm64: hyperv: Add hypercall and register access
- functions
-Thread-Index: AQHVlIunJ+Hzurh+rUem3N3TxZQeRKd+ayBw
-Date: Wed, 6 Nov 2019 17:59:10 +0000
-Message-ID: <DM5PR21MB013730D09CB8BA7658DE57F7D7790@DM5PR21MB0137.namprd21.prod.outlook.com>
-References: <1570129355-16005-1-git-send-email-mikelley@microsoft.com>
- <1570129355-16005-3-git-send-email-mikelley@microsoft.com>
- <8cdc86e5bcf861c74069e0d349910c94@www.loen.fr>
-In-Reply-To: <8cdc86e5bcf861c74069e0d349910c94@www.loen.fr>
+ 15.20.2430.20; Wed, 6 Nov 2019 18:07:45 +0000
+Received: from DM6PR12MB4089.namprd12.prod.outlook.com
+ ([fe80::19df:560:b8d3:e1cd]) by DM6PR12MB4089.namprd12.prod.outlook.com
+ ([fe80::19df:560:b8d3:e1cd%5]) with mapi id 15.20.2430.020; Wed, 6 Nov 2019
+ 18:07:45 +0000
+From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>, "linux-mm@kvack.org"
+ <linux-mm@kvack.org>, Andrew Morton <akpm@linux-foundation.org>
+Subject: Re: [PATCH V8] mm/debug: Add tests validating architecture page table
+ helpers
+Thread-Topic: [PATCH V8] mm/debug: Add tests validating architecture page
+ table helpers
+Thread-Index: AQHVk2wP8ZQH8Ag2aUW4lQaNsiawtKd9KlIAgABMeACAAPyJgA==
+Date: Wed, 6 Nov 2019 18:07:44 +0000
+Message-ID: <b93ffe1f-b198-a042-ecd4-b0f2b0171f72@synopsys.com>
+References: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
+ <e0aa8d49-5511-15e4-f413-62c99eea4fab@arm.com>
+ <e0dc3636-8c6e-0177-9a7f-fefd28c74f27@synopsys.com>
+ <dc2746c9-bde4-ac00-88d1-2bd1cea1f105@arm.com>
+In-Reply-To: <dc2746c9-bde4-ac00-88d1-2bd1cea1f105@arm.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Enabled=True;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SiteId=72f988bf-86f1-41af-91ab-2d7cd011db47;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Owner=mikelley@ntdev.microsoft.com;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SetDate=2019-11-06T17:59:08.9751666Z;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Name=General;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Application=Microsoft Azure
- Information Protection;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_ActionId=1a5259d0-6f61-4c4e-9b97-52eb3d9574c6;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Extended_MSFT_Method=Automatic
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=mikelley@microsoft.com; 
-x-originating-ip: [167.220.2.5]
+ smtp.mailfrom=vgupta@synopsys.com; 
+x-originating-ip: [149.117.75.13]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 1aaaaaf5-8516-4521-456c-08d762e306fc
-x-ms-traffictypediagnostic: DM5PR21MB0140:|DM5PR21MB0140:|DM5PR21MB0140:
-x-ms-exchange-transport-forked: True
-x-ld-processed: 72f988bf-86f1-41af-91ab-2d7cd011db47,ExtAddr
-x-microsoft-antispam-prvs: <DM5PR21MB0140FA2A2CF943ED850E419ED7790@DM5PR21MB0140.namprd21.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-ms-office365-filtering-correlation-id: 28dbea8e-a3a5-4001-3d60-08d762e43953
+x-ms-traffictypediagnostic: DM6PR12MB3338:
+x-microsoft-antispam-prvs: <DM6PR12MB3338B3B518E9E6DC6294832EB6790@DM6PR12MB3338.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
 x-forefront-prvs: 02135EB356
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(346002)(39860400002)(366004)(376002)(396003)(136003)(189003)(199004)(476003)(55016002)(4326008)(25786009)(71190400001)(71200400001)(66066001)(6246003)(2906002)(81156014)(8676002)(81166006)(6916009)(14444005)(7416002)(256004)(6436002)(8936002)(7736002)(6116002)(3846002)(305945005)(10090500001)(52536014)(229853002)(9686003)(5660300002)(74316002)(486006)(102836004)(53546011)(446003)(6506007)(11346002)(33656002)(86362001)(316002)(186003)(54906003)(26005)(66946007)(7696005)(66476007)(76176011)(64756008)(22452003)(10290500003)(76116006)(66556008)(8990500004)(66446008)(478600001)(99286004)(14454004);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DM5PR21MB0140;
- H:DM5PR21MB0137.namprd21.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microsoft.com does not designate
+ SFS:(10019020)(396003)(39860400002)(366004)(136003)(376002)(346002)(199004)(189003)(476003)(31696002)(54906003)(186003)(256004)(7406005)(7416002)(14444005)(305945005)(66066001)(65806001)(71200400001)(81156014)(65956001)(7736002)(81166006)(71190400001)(99286004)(86362001)(446003)(11346002)(2616005)(478600001)(25786009)(486006)(6246003)(36756003)(316002)(76116006)(102836004)(4326008)(6506007)(2906002)(66446008)(8936002)(66556008)(58126008)(66476007)(2501003)(64756008)(110136005)(5660300002)(3846002)(6436002)(8676002)(6512007)(6116002)(14454004)(229853002)(26005)(6486002)(31686004)(91956017)(66946007)(76176011)(53546011);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DM6PR12MB3338;
+ H:DM6PR12MB4089.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: N4bdsSK1vh8U5CUJ6fSD8lodY1PY0l0m08GQgBnK+544DjAk17lv1EPG7KaIflBK9x1cyh1M3PlFtvU/rOBFojVWmbu1Ya+ukjeN2h8TuErUp7KO5qUJR57FIaNnXNOGPyXhAtgV9UAbQvW/pzpd73b4FImGGQeOw1SnpR77ujvFP3HXFR7Wym6IFU08vdicMJFkcaihJ5Vak/ulcvJlrpXXe06xzZZ7PKs0S95hbbKma8wwKW0uEjHKE2EsZXJCd/qj/3k5d4lwVAik/Pb3jA5HTsGG/JtFBFMnhsKoArDQj4NTP3434AvCO9+FyVysMKzdp8sqqzW+t/Kb0KpgMiXLnRttCCanutDMP2/0qIdXPdjHDtPmFrB9zkP3NF0n+2U2GuY7qYF7ZU1ymXQ4dH6L+qHpPSVyAImtDR13G6FTgXiy3479rKSHBSVkjCGx
+x-microsoft-antispam-message-info: XtKGpBsaaMrPeaBRy0h8zOYJ+LLnNSnXwi9mH/eZpVb7ma46ZxcgjNMTrcGXzN0hsofjRcgX8lIqgmsBvS4qCkrbdTehm2zXvB9MxUrzBmrmrmIag9f4b4gVbQEtI/PMOYamAkw3KtuNYhl7TySVLrV9n/3roslJmbLg8/yShuVb7H1e7RaHCk2LQDpOC6HegDtVakwEI+KkoWcN0WpURfm/4eBVxXebscpZQxcWWMqoKM0XCiPpB5MTBtWi+gRlP8BfsfrVmTGZSMqRk2EYYoF3mmMNXTNuL3GTkdYcrLZuWt4dd3kMqgyUh6N8E7Yvu+mVSAZgjrKo63Fv38I/pXuY3t4EbsdurTvrN903SG/HR7D1EDH/St830a8g8vzwnPyDcse3o2TfG8/2mBRWT8W4d3fRNsZ/29t19HrWf1R237NDBHEkB946DY7VzMGl
+x-ms-exchange-transport-forked: True
+Content-ID: <DFA87E4256F23B4D9C57EFB0864104E5@namprd12.prod.outlook.com>
 MIME-Version: 1.0
-X-OriginatorOrg: microsoft.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1aaaaaf5-8516-4521-456c-08d762e306fc
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Nov 2019 17:59:10.9759 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 28dbea8e-a3a5-4001-3d60-08d762e43953
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Nov 2019 18:07:44.8861 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: M69MtHxTCc2w8fuRftAyDjswJyj3e+eaiTxwmApNLNtNLiPn8ye9j6XFFb4CIkAKrKKoTmKuTliunpzQQCLugFglBF58FZCOJvqrLCISqsc=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR21MB0140
+X-MS-Exchange-CrossTenant-userprincipalname: 55pU9yaZ6oMhi8wafxb08Z5+Hjbv2SqDFDB+oMzjkWVK4HvkBhHlO7Wl6/HzP4BitruHWz8RLnOPgWPngSQmfQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR12MB3338
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_095913_784729_A76EFEC3 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20191106_100829_707103_0AABD841 
+X-CRM114-Status: GOOD (  19.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.76.128 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -123,7 +141,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -135,54 +152,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "linux-hyperv@vger.kernel.org" <linux-hyperv@vger.kernel.org>,
- "boqun.feng" <boqun.feng@gmail.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "jasowang@redhat.com" <jasowang@redhat.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
+ "linux-sh@vger.kernel.org" <linux-sh@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, James Hogan <jhogan@kernel.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ Dave Hansen <dave.hansen@intel.com>, Paul Mackerras <paulus@samba.org>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>, Dan
+ Williams <dan.j.williams@intel.com>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Michael Ellerman <mpe@ellerman.id.au>,
+ "x86@kernel.org" <x86@kernel.org>,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Ingo Molnar <mingo@kernel.org>, Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, Mark
+ Brown <broonie@kernel.org>, "Kirill A .
+ Shutemov" <kirill@shutemov.name>, Thomas Gleixner <tglx@linutronix.de>,
+ Vlastimil Babka <vbabka@suse.cz>, Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>, Ard
+ Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "marcelo.cerri@canonical.com" <marcelo.cerri@canonical.com>,
- "olaf@aepfle.de" <olaf@aepfle.de>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "apw@canonical.com" <apw@canonical.com>,
- "devel@linuxdriverproject.org" <devel@linuxdriverproject.org>,
- vkuznets <vkuznets@redhat.com>, KY Srinivasan <kys@microsoft.com>,
- "will@kernel.org" <will@kernel.org>, Sunil Muthuswamy <sunilmut@microsoft.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Paul Burton <paul.burton@mips.com>, Mike
+ Rapoport <rppt@linux.vnet.ibm.com>, Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marc Zyngier <maz@kernel.org>  Sent: Wednesday, November 6, 2019 2:20 AM
-> 
-> On 2019-10-03 20:12, Michael Kelley wrote:
-> > Add ARM64-specific code to make Hyper-V hypercalls and to
-> > access virtual processor synthetic registers via hypercalls.
-> > Hypercalls use a Hyper-V specific calling sequence with a non-zero
-> > immediate value per Section 2.9 of the SMC Calling Convention
-> > spec.
-> 
-> I find this "following the spec by actively sidestepping it" counter
-> productive. You (or rather the Hyper-V people) are reinventing the
-> wheel (of the slightly square variety) instead of using the standard
-> that the whole of the ARM ecosystem seems happy to take advantage
-> of.
-> 
-> I wonder what is the rational for this. If something doesn't quite
-> work for Hyper-V, I think we'd all like to know.
-> 
-
-I'll go another round internally with the Hyper-V people on this
-topic and impress upon them the desire of the Linux community to
-have Hyper-V adopt the true spirit of the spec.  But I know they are
-fairly set in their approach at this point, regardless of the technical
-merits or lack thereof.  Hyper-V is shipping and in use as a commercial
-product on ARM64 hardware, which makes it harder to change.  I
-hope we can find a way to avoid a complete impasse ....
-
-Michael
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTEvNS8xOSA3OjAzIFBNLCBBbnNodW1hbiBLaGFuZHVhbCB3cm90ZToNCj4gQnV0IHNob3Vs
+ZCBub3QgcGZuX3BtZCgpIGJlIGVuY2Fwc3VsYXRlZCBpbnNpZGUgSEFWRV9BUkNIX1RSQU5TUEFS
+RU5UX0hVR0VQQUdFDQo+IGF0IHRoZSBtaW5pbXVtIChidXQgSSB3b3VsZCBzYXkgaXQgc2hvdWxk
+IGJlIGF2YWlsYWJsZSBhbHdheXMsIG5vbmV0aGVsZXNzKSB3aGVuDQo+IHRoZSBwbGF0Zm9ybSBz
+dWJzY3JpYmVzIHRvIFRIUCBpcnJlc3BlY3RpdmUgb2Ygd2hldGhlciBUSFAgaXMgZW5hYmxlZCBv
+ciBub3QuDQoNCkZvciBBUkMgaXQgd2FzIG9ubHkgaW50cm9kdWNlZC9uZWVkZWQgd2hlbiBJIGFk
+ZGVkIFRIUCBzdXBwb3J0IHNvIGl0IGlzIGRlcGVuZGVudA0KaW4gc29tZSB3YXkuDQoNCj4gSSBj
+b3VsZCBzZWUgaW4gdGhlIGZpbGUgKGFyY2gvYXJjL2luY2x1ZGUvYXNtL3BndGFibGUuaCkgdGhh
+dCBmZXRjaGluZyBwZm5fcG1kKCkNCj4gYW5kIGFsbCBvdGhlciBiYXNpYyBQTUQgZGVmaW5pdGlv
+bnMgaXMgY29uZGl0aW9uYWwgb24gQ09ORklHX1RSQU5TUEFSRU5UX0hVR0VQQUdFLg0KPg0KPiAj
+aWZkZWYgQ09ORklHX1RSQU5TUEFSRU5UX0hVR0VQQUdFDQo+ICNpbmNsdWRlIDxhc20vaHVnZXBh
+Z2UuaD4NCj4gI2VuZGlmDQo+DQo+IElJVUMsIENPTkZJR19UUkFOU1BBUkVOVF9IVUdFUEFHRSBz
+aG91bGQgb25seSBlbmNhcHN1bGF0ZSBQTUQgcGFnZSB0YWJsZSBoZWxwZXJzDQo+IHdoaWNoIGFy
+ZSBleHBlY3RlZCBmcm9tIGdlbmVyaWMgVEhQIGNvZGUgKHBtZF90cmFuc19odWdlLCBwbWRwX3Nl
+dF9hY2Nlc3NfZmxhZ3MNCj4gZXRjKSBidXQgbm90IHRoZSBiYXNpYyBQTUQgaGVscGVycyBsaWtl
+IHBtZF9wZm4sIHBtZF9ta3lvdW5nLCBwbWRfbWtkaXJ0eSwNCj4gcG1kX21rY2xlYW4gZXRjLiAN
+Cg0KQVJDIG9ubHkgaGFzIDIgbGV2ZWxzIG9mIHBhZ2luZywgc28gdGhlc2UgZG9uJ3QgbWFrZSBh
+bnkgc2Vuc2UgaW4gZ2VuZXJhbCBhbmQNCm5lZWRlZCBvbmx5IGZvciBUSFAgY2FzZS4NCkkgY2Fz
+ZSBvZiBhcmNoL2FybSB5b3Ugc2VlIGl0IGlzIG9ubHkgZGVmaW5lZCBpbiBwZ3RhYmxlLTNsZXZl
+bC5oDQoNCj4gSGVuY2Ugd29uZGVyaW5nIHdpbGwgaXQgYmUgcG9zc2libGUgdG8gYWNjb21tb2Rh
+dGUgZm9sbG93aW5nDQo+IGNvZGUgY2hhbmdlIG9uIGFyYyBwbGF0Zm9ybSAobm90IGV2ZW4gY29t
+cGlsZWQpIGluIG9yZGVyIHRvIGZpeCB0aGUgcHJvYmxlbSA/DQoNCkknbSBvcGVuIHRvIG1ha2lu
+ZyBjaGFuZ2VzIGluIEFSQyBjb2RlIGJ1dCBsZXRzIGRvIHRoZSByaWdodCB0aGluZy4NCg0KPiAg
+ICovDQo+IC0jaWZkZWYgQ09ORklHX1RSQU5TUEFSRU5UX0hVR0VQQUdFDQo+ICsjaWZkZWYgQ09O
+RklHX0hBVkVfQVJDSF9UUkFOU1BBUkVOVF9IVUdFUEFHRQ0KPiAgI2luY2x1ZGUgPGFzbS9odWdl
+cGFnZS5oPg0KPiAgI2VuZGlmDQoNClRoaXMgaW4gd3JvbmcuwqAgQ09ORklHX0hBVkVfQVJDSF9U
+UkFOU1BBUkVOVF9IVUdFUEFHRSBpcyBhIGp1c3QgYSBnbHVlIHRvZ2dsZSwNCnVzZWQgb25seSBp
+biBLY29uZmlnIGZpbGVzIChhbmQgbm90IGluIGFueSAiQyIgY29kZSkuwqAgSXQgZW5hYmxlcyBn
+ZW5lcmljIEtjb25maWcNCmNvZGUgdG8gYWxsb3cgdmlzaWJpbGl0eSBvZiBDT05GSUdfVFJBTlNQ
+QVJFTlRfSFVHRVBBR0Ugdy9vIGV2ZXJ5IGFyY2ggbmVlZGluZyB0bw0KZG8gYSBtZSB0b28uDQoN
+CkkgdGhpbmsgeW91IG5lZWQgdG8gdXNlIENPTkZJR19UUkFOU1BBUkVOVF9IVUdFUEFHRSB0byBn
+dWFyZCBhcHByb3ByaWF0ZSB0ZXN0cy4gSQ0KdW5kZXJzdGFuZCB0aGF0IGl0IG9ubHkNCg0KLVZp
+bmVldA0KDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
