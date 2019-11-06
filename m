@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16BE1F0C8B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 04:08:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76209F0C90
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 04:08:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=htuq/pM3sLH3gsLU2HqCZ9udNoZkoHWrEO1wt0A+J1w=; b=qSOj8SbImzCCbI
-	ZL+jVqwHUORY6BmrgvZVRJ570XAAnFjxlnCvtcjaqopZqVZyyDLEeq6vsUcFbsefdixYgJAvxXG9N
-	GQiMXglr+q4QMqRg2fgg1s263OCT/mVXYvHFdJfuYxvRBn7cxL9ajUCb5a6PmAD0d7KbTXfwhebbZ
-	ct6DiGBjhuRsNE0BHZA8CgQeHsC4a2cgcEw0C0HiWGDgGM3G2UTKdMQrly0DyTB34+4MI12oyBxl3
-	fe3xSITTkkvrTwfWhUFqOAwrEl8C86Cf1h7I8S3DjCkyOh7lRs4A+txNQwOrFVZtqGddBlvT5orOh
-	WnoR/xHaepNoAWQN1C2A==;
+	List-Owner; bh=4S3sz8bsn8BBeRZ/EqtOyCz23VxR1GDhNGF0jY11DAY=; b=QPLlU4vHMceGdm
+	hg2d53xfLVUlpAf6j51L2E4WbI1jMi2LQfbnEp/3gtP71x3g4MSKxbw9DuNDtbKYXmExq5UptVnE6
+	ZsOboLPQ8cI4VncnNK0nhKM5LS+yMDCSio6sDV0CWcai4nKXjzvcBpCTA0DmTL4umNLG9goo2xWs3
+	kdw/BJP+n103vJgaT6Bf/gLaGoZtKDJaF6Bv6B98IFWEkIRDkM4PlTrE3/MqyB0A0W3exZ3aaGQuW
+	jf8EUhINUmyeVy40q4MSG91V6BIgC2JiYIJ8k/835OwNZm7EbgbuCmoLSJ/EBNEU3x6RTJo3A1+N3
+	g11oh+uqGwYfToysrlRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSBg0-00036F-Hq; Wed, 06 Nov 2019 03:08:08 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iSBgT-0003Rr-5p; Wed, 06 Nov 2019 03:08:37 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSBeg-0001zO-Ei
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 03:06:49 +0000
-Received: by mail-pf1-x443.google.com with SMTP id 3so17714483pfb.10
+ id 1iSBek-00023g-DZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 03:06:54 +0000
+Received: by mail-pg1-x542.google.com with SMTP id r18so404948pgu.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 19:06:46 -0800 (PST)
+ Tue, 05 Nov 2019 19:06:50 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=arista.com; s=googlenew;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=nwR9CcGfOm2RmcVXjGycnTvK5Jd4c8Blttv9a/CZC/0=;
- b=UdMa2T9nHqA3LFMjK+pWj3K+yUaB0z+1BTvAUCLmq8bQfol0rDqOC2+1gH4O9E8A9h
- Yi3ZNqIkyTDIMhE55E4+6l5JYmf1RRUfULTwc8I4vanYKybs0i9ArtMod2CFq/SOJLw2
- KnSYnHKIMaIL2XcMxRpUhPlYwJFOmRTCCHEU5DlqpgSQLqQbxQTZAHuNRTKN2Cz7aD9W
- 7Gw3ucM5qf3dc1YvUsn7RHLOhSt96s/fiOikxCDqUghfr0/RSTT59T66YrQNRhOZKKmT
- /fJjmAKh+QfzxwWjzZQJ7cAlhzHwS/6TkrU0xM2DT/MK7f37dnWPTFlgo9doHiy4Gab6
- JOxA==
+ bh=mH9KBFdGIy02JZxT1QReQ3QmWD9fRQIiXWuOgQOgh+g=;
+ b=Jc8ZhbezELpHMdltV8DPzafP6vQPlh9x0UnT0wZTbJ93Lv27yVRmw0i5uB6Sfry2Xw
+ zHs4cDo0LnqrZ2Q/3dPFMmVATW/oOv7iF2B1g7gRWbYsCrIr74NZXnPkckBTS0lE3KFD
+ mjQsEokBqEgD5N5oh2i94TH/aMRrY0RDS14DsUmfwuxPHzCaFdrMWU5wFlEbarOaf/zr
+ M6lFGSdNkQ+ax9MBJKMJBsO8DLzLX0cEeO8Zf3A6/s2QQSf4NlewIwZwcrDfJOVYW2Qs
+ A78WUTGbd4UxOgdaUV+DZRRFd8by+KR11frl8Mohd7YR6t16xtINiBkTBULikYl1wjab
+ j3AQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=nwR9CcGfOm2RmcVXjGycnTvK5Jd4c8Blttv9a/CZC/0=;
- b=V+mBXRvRcFzzb7grB6qf2Y/0yvDYAJ3VQSXvq0YRfagsSQGV2qijGSge4W51nu6h2C
- sipicNh/ilYTEUbeXy6xbTg3xDiBidwJhj/6spmGyeriiwET/mJi+SroUmY0XKXorllN
- NLs5FuQPwIwA3CzouKTvqja1bCChVj/N92yRMfVfHiQWzeYeXJpFhvmioUHwUblAKGjo
- ++9GE79WK+Bzg/hHpFfI8G1vWt7P8nDAQeKUSM+O6oKa6lt7v1xm10hxhkbnkAHlRbfn
- MCMl/S9pZpiSs5hW362FXl49YdUGqDHQzOIkW9QDx6CJ5Xg2X3F6g5x8GOAAEDtOW1FU
- XSPQ==
-X-Gm-Message-State: APjAAAWHoDBq2jxCty6Et6+snOndINU2yDixG4+x1ZO85bWVj19ljHIp
- gdj+s2AN0CjtPa5XC7S/NuWS7A==
-X-Google-Smtp-Source: APXvYqwl/ZkAnlXpWL33fvgsLGduP6TX1qo4dNY9VgxsWQ+dEiLM8Z4M9dI8XtEOR6FKqmqdz4o4Jg==
-X-Received: by 2002:a63:f441:: with SMTP id p1mr197683pgk.362.1573009605013;
- Tue, 05 Nov 2019 19:06:45 -0800 (PST)
+ bh=mH9KBFdGIy02JZxT1QReQ3QmWD9fRQIiXWuOgQOgh+g=;
+ b=fFBF+7FfIE2438234xQgtlNJbmyTXaQqMEImOfzv6epcth1dof0103O/zTYC3MHQUw
+ ZsGBO+xutq6WCCIYrdjAAcBww8rZOOiA7yq/Igm7Kcc2SNCl9U6ms5yykbSLI2WQV1Zj
+ Za1CsiEJloXELrceOEKAUAjsY6AKVr5EwSUCPnQYGdXLGEv/HyxDtl52nwnfoPk82EqA
+ 9zE7Zme3EFSr29iWijXb3NBwLOBlsQlNZFy23DMhbPhpNGJfQ/ClO6RlddK7zLk9CIma
+ it6Q5NnYF2YBOcp7F4IO+lhMaiu4a3q3Qz5gjEveDKtyhqu1HJ2vhhZDVX5vZYUrGjPx
+ Dqng==
+X-Gm-Message-State: APjAAAW3fWtiGRAk0BmVOAdvzifV3a2UqV/aikhPx+kgPbDD0A4o5uLD
+ PcBu2QY4OrNBu6OR6vZyp5mpTw==
+X-Google-Smtp-Source: APXvYqxDneNdofpipCrXEwSDGjej3gjw6AcUjr3U7+ngBaLcpr/45Qz5Ohf6pjxPgm1QHxP2sjlCJg==
+X-Received: by 2002:a17:90a:9741:: with SMTP id i1mr664978pjw.2.1573009609310; 
+ Tue, 05 Nov 2019 19:06:49 -0800 (PST)
 Received: from Mindolluin.ire.aristanetworks.com ([217.173.96.166])
- by smtp.gmail.com with ESMTPSA id k24sm19570487pgl.6.2019.11.05.19.06.40
+ by smtp.gmail.com with ESMTPSA id k24sm19570487pgl.6.2019.11.05.19.06.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 19:06:43 -0800 (PST)
+ Tue, 05 Nov 2019 19:06:48 -0800 (PST)
 From: Dmitry Safonov <dima@arista.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 09/50] arm64: Add loglvl to dump_backtrace()
-Date: Wed,  6 Nov 2019 03:05:00 +0000
-Message-Id: <20191106030542.868541-10-dima@arista.com>
+Subject: [PATCH 10/50] arm64: Add show_stack_loglvl()
+Date: Wed,  6 Nov 2019 03:05:01 +0000
+Message-Id: <20191106030542.868541-11-dima@arista.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191106030542.868541-1-dima@arista.com>
 References: <20191106030542.868541-1-dima@arista.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_190646_693371_72DD03A0 
-X-CRM114-Status: GOOD (  16.60  )
+X-CRM114-CacheID: sfid-20191105_190650_510682_9D675AEF 
+X-CRM114-Status: GOOD (  12.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -129,8 +129,8 @@ Introducing log-level parameter and KERN_UNSUPPRESSED [1] seems
 an easier approach than introducing more printk buffers.
 Also, it will consolidate printings with headers.
 
-Add log level argument to dump_backtrace() as a preparation for
-introducing show_stack_loglvl().
+Introduce show_stack_loglvl(), that eventually will substitute
+show_stack().
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Russell King <linux@armlinux.org.uk>
@@ -139,102 +139,34 @@ Cc: linux-arm-kernel@lists.infradead.org
 [1]: https://lore.kernel.org/lkml/20190528002412.1625-1-dima@arista.com/T/#u
 Signed-off-by: Dmitry Safonov <dima@arista.com>
 ---
- arch/arm64/include/asm/stacktrace.h |  3 ++-
- arch/arm64/kernel/process.c         |  2 +-
- arch/arm64/kernel/traps.c           | 17 +++++++++--------
- 3 files changed, 12 insertions(+), 10 deletions(-)
+ arch/arm64/kernel/traps.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/include/asm/stacktrace.h b/arch/arm64/include/asm/stacktrace.h
-index 4d9b1f48dc39..fdb913cc0bcb 100644
---- a/arch/arm64/include/asm/stacktrace.h
-+++ b/arch/arm64/include/asm/stacktrace.h
-@@ -64,7 +64,8 @@ struct stackframe {
- extern int unwind_frame(struct task_struct *tsk, struct stackframe *frame);
- extern void walk_stackframe(struct task_struct *tsk, struct stackframe *frame,
- 			    int (*fn)(struct stackframe *, void *), void *data);
--extern void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk);
-+extern void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk,
-+			   const char *loglvl);
- 
- DECLARE_PER_CPU(unsigned long *, irq_stack_ptr);
- 
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index 71f788cd2b18..1a6b58b1be2c 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -291,7 +291,7 @@ void __show_regs(struct pt_regs *regs)
- void show_regs(struct pt_regs * regs)
- {
- 	__show_regs(regs);
--	dump_backtrace(regs, NULL);
-+	dump_backtrace(regs, NULL, KERN_DEFAULT);
- }
- 
- static void tls_thread_flush(void)
 diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index 34739e80211b..59072c7b9fb4 100644
+index 59072c7b9fb4..5b3ae8ed33fd 100644
 --- a/arch/arm64/kernel/traps.c
 +++ b/arch/arm64/kernel/traps.c
-@@ -52,9 +52,9 @@ static const char *handler[]= {
- 
- int show_unhandled_signals = 0;
- 
--static void dump_backtrace_entry(unsigned long where)
-+static void dump_backtrace_entry(unsigned long where, const char *loglvl)
- {
--	printk(" %pS\n", (void *)where);
-+	printk("%s %pS\n", loglvl, (void *)where);
+@@ -136,12 +136,18 @@ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk,
+ 	put_task_stack(tsk);
  }
  
- static void dump_kernel_instr(const char *lvl, struct pt_regs *regs)
-@@ -82,12 +82,13 @@ static void dump_kernel_instr(const char *lvl, struct pt_regs *regs)
- 	printk("%sCode: %s\n", lvl, str);
- }
- 
--void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
-+void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk,
-+		    const char *loglvl)
+-void show_stack(struct task_struct *tsk, unsigned long *sp)
++void show_stack_loglvl(struct task_struct *tsk, unsigned long *sp,
++		       const char *loglvl)
  {
- 	struct stackframe frame;
- 	int skip = 0;
- 
--	pr_debug("%s(regs = %p tsk = %p)\n", __func__, regs, tsk);
-+	printk("%s%s(regs = %p tsk = %p)\n", loglvl, __func__, regs, tsk);
- 
- 	if (regs) {
- 		if (user_mode(regs))
-@@ -114,11 +115,11 @@ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
- 				thread_saved_pc(tsk));
- 	}
- 
--	printk("Call trace:\n");
-+	printk("%sCall trace:\n", loglvl);
- 	do {
- 		/* skip until specified stack frame */
- 		if (!skip) {
--			dump_backtrace_entry(frame.pc);
-+			dump_backtrace_entry(frame.pc, loglvl);
- 		} else if (frame.fp == regs->regs[29]) {
- 			skip = 0;
- 			/*
-@@ -128,7 +129,7 @@ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
- 			 * at which an exception has taken place, use regs->pc
- 			 * instead.
- 			 */
--			dump_backtrace_entry(regs->pc);
-+			dump_backtrace_entry(regs->pc, loglvl);
- 		}
- 	} while (!unwind_frame(tsk, &frame));
- 
-@@ -137,7 +138,7 @@ void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
- 
- void show_stack(struct task_struct *tsk, unsigned long *sp)
- {
--	dump_backtrace(NULL, tsk);
-+	dump_backtrace(NULL, tsk, KERN_DEFAULT);
+-	dump_backtrace(NULL, tsk, KERN_DEFAULT);
++	dump_backtrace(NULL, tsk, loglvl);
  	barrier();
  }
  
++void show_stack(struct task_struct *tsk, unsigned long *sp)
++{
++	show_stack_loglvl(tsk, sp, KERN_DEFAULT);
++}
++
+ #ifdef CONFIG_PREEMPT
+ #define S_PREEMPT " PREEMPT"
+ #else
 -- 
 2.23.0
 
