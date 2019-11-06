@@ -2,95 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D61E3F103E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 08:29:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD200F105F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 08:33:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uiq3vBNR25DhX35kZhBr4bSb+FGufXb9kid8hnecuOw=; b=l2lJiWscmBiINZTBxtK/ux+oQ
-	FlrgBHYxsAdl4aDGNG1Hj+e0yrNyAVFpDsq8uksAEjY8mDZBTnjiDZJc1NvXKzf9+p5BEwp3TZIKI
-	2Uqp88bObR22ZoNlqQhbAZm3HUgaQYEjMJfq7mr1ZXA2Iriv4dHrgtmdPcc7vaq3h0ytfokTe6feA
-	fT3RZaymXmnkbTR8yoT71I+h3OW38IElRw+PSfC0bdbFGrV/k22GyMG6YUd6Cp5F0TZMqMFwWIAbq
-	6fF23YnYOtikdAvSyIGcqtCxN0Z1hhSnc1Ei1hYrhvFSIxQ/jpzp3hHQeMb8Ga29OKaWu6Vf8qKu/
-	iFlFjVcRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BCtvLK8qHjUCKelUeKb90Cub0DV1dG6v+Qlo94VvH4s=; b=O/2tQme9bKVBhg
+	DYnEnWr1CWHYy6/vft7X3yQkcrpcT139jsYhvyB7ZrhLSSx8x1sGjOiVuLeVzrEBEwGrBLqSeVVVC
+	SgS7nwQTORK8cXXBokNPbOcDj4pqv032Cdvy/7a5DIU1GMAexMsx4jeYX5Cz4JFqGRCNrE2vCULnp
+	6oR4lZrPwoMSUoKp/wWxvcbDWzYcXI/CWjxhWTTBSmL73kKHLP4Fc35vSdbrH4Q4YgaOnOgXdwk4s
+	keHWU13JpXHestAT164t4Dhf6LwcVfM5oIGpIJXbU3qPo+RuH9bwW0dSgomu+kgFlsgL3+qX0czpD
+	C9X70PyXfUTr2YTozy5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSFkw-0008WQ-3I; Wed, 06 Nov 2019 07:29:30 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iSFoz-0001uD-6J; Wed, 06 Nov 2019 07:33:41 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSFkj-0008Uz-FZ; Wed, 06 Nov 2019 07:29:22 +0000
-Received: by mail-pf1-x442.google.com with SMTP id d13so18191095pfq.2;
- Tue, 05 Nov 2019 23:29:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:cc:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding;
- bh=CZXGdk9uFu2d7V8fak5kkfAh72DjR9+d3K1XsYdLz38=;
- b=oGcJVGIO9nAfwZ9U9gs9P3ysGflXOrasF6qEiEhb6WpEy/r0O4b4WcXcLFHBABCJ7R
- QUOnBvxM0K+ORQ5GEwdd68Rbvuyj5JajApo+O20Qk7aw+1UO9FWS+6+LzSfRmtqSLrdq
- xvCHWuUmC+aEABOOmXkQjFb1AvmC1AZ+Bwjcb+sSQtS1GRTuQLMEbpuch+Wd9OB5B9nR
- MEP3ZWqL3l8J6HAnG5DRusZtOBOPsYcpMAZ4FMs88UBSyQ00BeMuWCLwvOdu7PSHWk++
- XtgmclZQxAc89Qmj6l/gKcwAVt76pZv/YKMWttV48g2arcZGneYo8SkwGAFkxvqsnIJf
- JInQ==
+ id 1iSFoq-0001th-IJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 07:33:33 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id u79so5381037vke.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 Nov 2019 23:33:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=benyossef-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=fbVrCNlPLaDTmcKHIN3LtBZK21JIiPNghUTOX5jQAi0=;
+ b=tXq9+cEdTgcUL/rTgW92c4PNWlxnqdy9ufzkcqPbyt0BmkFpZwtDr2SKTAZ2B2adPA
+ F+XDqVbx7RMa+5XEnQg/NkxPXT5p1qsf2Il96TWl2Xo9SSM9hUuVYMdG4OSux/yBuUE8
+ /lt+ifyc1imI3ov8PQ2W9bkBv+/tM6c/VcGIy/P/kI10Cz+YzkEMxuP+yQO8wBG0+vvv
+ 4n+EMc34+wsK62rjmo/p32ZrKZm00eMyRRnbQWc2dTB1jGdGHtZvt3NtPvauqSi+hfbZ
+ LBqtHWQ+Da8ZxU44fzKnYQQKozNVLB2Tu1/P25qp5db4qn1FRQ9kkdL7iUFiBnTCljtW
+ Vuzw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:cc:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding;
- bh=CZXGdk9uFu2d7V8fak5kkfAh72DjR9+d3K1XsYdLz38=;
- b=W4k7E51/n9wJZ+xIjNtwPCJE6Ff2f7liovTX+1+K5OPJO1DPIavOeJ/hY5KF+WpZXF
- TRdL4x1Xh5Xy7Nw8PyPLjWjssV/d27RgYB3V2NXP/f92M+XTMakA2OVAqB/P5VVVTKSJ
- YTPTp/+5qtOZFXb48LxQaJrIz5J0su9Tl3wsoLbSQ0CHfCk2/k39e3FNTLaLXVvuqFnk
- fBJEFoDsNBHIVhZYVcJ8fiOimncmPjFjQg5K/A3d7M+32pXELkNQ/tvqsT/gOc5AWeAm
- S1mvh34ovxYNKdolZ1xXk2Pp4tiVwza7CgnU5xlNDedSgDGy6oog4vuiynYGf9o8jyXR
- Udtg==
-X-Gm-Message-State: APjAAAW/sWgj/JhKilunU2rcanW9MW08PCuogPw63sMNCab+jzVatDEL
- DaQSMaz19dfNdmH+y7YJI5I=
-X-Google-Smtp-Source: APXvYqxBVXh1jmjAePr3S1g4NtkWBhTLAIl9OTaZqYXb6wMgMaiO3o4Y3mgSEbDLjoLjMA38tOeOfg==
-X-Received: by 2002:a62:90:: with SMTP id 138mr1557534pfa.209.1573025356612;
- Tue, 05 Nov 2019 23:29:16 -0800 (PST)
-Received: from [192.168.1.101] (122-58-182-39-adsl.sparkbb.co.nz.
- [122.58.182.39])
- by smtp.gmail.com with ESMTPSA id h13sm26505185pfr.98.2019.11.05.23.29.01
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 05 Nov 2019 23:29:15 -0800 (PST)
-Subject: Re: [PATCH v3 05/13] m68k: mm: use pgtable-nopXd instead of
- 4level-fixup
-To: Geert Uytterhoeven <geert@linux-m68k.org>, Mike Rapoport <rppt@kernel.org>
-References: <1572850587-20314-1-git-send-email-rppt@kernel.org>
- <1572850587-20314-6-git-send-email-rppt@kernel.org>
- <CAMuHMdUG3V7uxzhbetw75vVeobeP0-bQySb3r=0V5XujUF123g@mail.gmail.com>
- <20191104094748.GB23288@rapoport-lnx>
- <CAMuHMdVHsNyLxhaxZcVdLvQ1PUnb=2_+ECPWVD0234V+qu+kOw@mail.gmail.com>
-From: Michael Schmitz <schmitzmic@gmail.com>
-Message-ID: <15fafca0-e4c4-1f46-4f19-9b2a177f7d6b@gmail.com>
-Date: Wed, 6 Nov 2019 20:28:59 +1300
-User-Agent: Mozilla/5.0 (X11; Linux ppc; rv:45.0) Gecko/20100101 Icedove/45.4.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fbVrCNlPLaDTmcKHIN3LtBZK21JIiPNghUTOX5jQAi0=;
+ b=SOFWU5mTdbZEMC7l45UuPIcrOfQqbNjGwcYfq8e43Oas1LHkeBJMMOSDuOWfkd3LOs
+ c2OUsgNZ1nUpJsp4dvWKzrVGJ7ojMGhzwPdXw6CzBp3a+q93Hwrgnf7U8OelqR2rLVMR
+ /p65lQexeteFFfJpLq+2ooKIbPBMzVx7hkgUSLxde3vnAlXjeCE1HlSYlC1UbZ7QIlRq
+ dcewlBAFmBU6v83wDVGf87+7ZxoIsPBxVhzsFekWuzcXceOAj3CIygwZGHrY4SjTsjBK
+ CX35h+pMzpRRmyIHjrpBowlq+Hka9C2Omag9uT2lTa+IUmZMBSJWq70O1zt/cpeKBrxn
+ VmPg==
+X-Gm-Message-State: APjAAAWOi1z6FEvp1/z8XTh1t3IwPdq1hIUhBe/4vUDJBbOzSCf+K+3m
+ wjlfImP+wtkD5CFboAf76yzXh9M8cXC4hwM/Xizv9g==
+X-Google-Smtp-Source: APXvYqw32qEeWfeBSD+BM8iRa57I4atoH5ZwU4QbRCyWX48m3mTUA1rFPOiMiu2Vt5iwu172Y/DEdSEJXJ81xV0PdLY=
+X-Received: by 2002:ac5:c756:: with SMTP id b22mr628305vkn.2.1573025611342;
+ Tue, 05 Nov 2019 23:33:31 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdVHsNyLxhaxZcVdLvQ1PUnb=2_+ECPWVD0234V+qu+kOw@mail.gmail.com>
+References: <20191017122549.4634-1-t-kristo@ti.com>
+ <20191017122549.4634-10-t-kristo@ti.com>
+ <CAOtvUMeBXjDBhSVgMOW=hshEx_AkNPg-Zk2c2jCDzY8vyXWW5g@mail.gmail.com>
+ <076f0bc6-ad04-9543-db02-d7c7060db036@ti.com>
+In-Reply-To: <076f0bc6-ad04-9543-db02-d7c7060db036@ti.com>
+From: Gilad Ben-Yossef <gilad@benyossef.com>
+Date: Wed, 6 Nov 2019 09:33:20 +0200
+Message-ID: <CAOtvUMc7pbtPAPUbEmz_MTHmB9LboQVdgG-t9tHCr=biEbFuUQ@mail.gmail.com>
+Subject: Re: [PATCH 09/10] crypto: add timeout to crypto_wait_req
+To: Tero Kristo <t-kristo@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_232918_194783_EF534672 
-X-CRM114-Status: GOOD (  14.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191105_233332_627570_1CC1B513 
+X-CRM114-Status: GOOD (  20.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (schmitzmic[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,56 +90,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Linux MM <linux-mm@kvack.org>, sparclinux <sparclinux@vger.kernel.org>,
- Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
- Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Linux-Arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
- Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>, Sam Creasey <sammy@sammy.net>,
- Arnd Bergmann <arnd@arndb.de>, Jeff Dike <jdike@addtoit.com>,
- linux-um@lists.infradead.org, linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "David S. Miller" <davem@davemloft.net>, alpha <linux-alpha@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
+Cc: Herbert Xu <herbert@gondor.apana.org.au>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Eric Biggers <ebiggers@google.com>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ linux-omap@vger.kernel.org, David Miller <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
-
-Am 04.11.2019 um 22:53 schrieb Geert Uytterhoeven:
->>> This indeed boots fine on ARAnyM, which emulates on 68040.
->>> It would be good to have some boot testing on '020/030, too.
->>
->> To be honest, I have no idea how to to that :)
+On Wed, Nov 6, 2019 at 9:25 AM Tero Kristo <t-kristo@ti.com> wrote:
 >
-> Sure. This was more a request for the fellow m68k users.
-
-I heard you :-) Still doing more regression testing on the latest SCSI 
-fix, but I can schedule this next.
-
-Cheers,
-
-	Michael
-
-> But don't worry too much about it.  If it breaks '020/'030, we can fix
-> that later.
+> On 06/11/2019 08:39, Gilad Ben-Yossef wrote:
+> > Hi,
+> >
+> >
+> > On Thu, Oct 17, 2019 at 3:26 PM Tero Kristo <t-kristo@ti.com> wrote:
+> >>
+> >> Currently crypto_wait_req waits indefinitely for an async crypto request
+> >> to complete. This is bad as it can cause for example the crypto test
+> >> manager to hang without any notification as to why it has happened.
+> >> Instead of waiting indefinitely, add a 1 second timeout to the call,
+> >> and provide a warning print if a timeout happens.
+> >
+> > While the incentive is clear and positive, this suggested solution
+> > creates problems of its own.
+> > In many (most?) cases where we are waiting here, we are waiting for a
+> > DMA operation to finish from hardware.
+> > Exiting while this pending DMA operation is not finished, even with a
+> > proper error return value, is dangerous because
+> > unless the calling code takes great care to not release the memory the
+> > DMA is being done from/to, this can have disastrous effects.
+> >
+> > As Eric has already mentioned, one second might seem like a long time,
+> > but we don't really know if it is enough.
+> >
+> > How about adding a second API (ig. crypto_wait_req_timeout) which
+> > supports a calee specified timeout where
+> > the calle knows how to correctly deal with timeout and port the
+> > relevant call sites to use this?
 >
-> Thanks!
->
-> Gr{oetje,eeting}s,
->
->                         Geert
->
+> Yeah, that would work for me. I guess we could just swap the testmgr to
+> use this timeout API, as it is quite clear it should timeout rather than
+> wait indefinitely, and afaics, the data buffers it uses are limited
+> size. It doesn't really matter for it whether the timeout is 1 second or
+> 10 seconds, as long as it eventually times out.
+
+
+As long as you avoid releasing the memory used on timeout, that should
+work well, I think.
+
+Gilad
 
 _______________________________________________
 linux-arm-kernel mailing list
