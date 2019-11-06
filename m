@@ -2,70 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6920CF1460
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 11:51:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 198C9F1456
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 11:49:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=b8Ddd51tnS+ErN22F6IlsRuXt0Ij1HeeoEpDtWbmQ74=; b=hOyGmAwhn4Yd6851Rq1llUpY+h
-	PZMNXQOK+VbspPo2W0wbrP7Wp/eXbnofVU0fHb/WaiAKVz/bn3BUSLOVPLSxPg3AuZy01KI5/oDBh
-	dcvPfFfypfWhPlcucCy2KBmv2VI98bITw8V+nxHOeGdKtujgIlltqg+nPAwtAUMxoR4BcebI9bNSj
-	ojl/ZdySm0vTyke4RvHtnyiCRhlNeLacPl/l17npG6rlVHrtLIr6mGIOed774LAHpL1j8VZeQnuDp
-	Fe12oIokR/4njFxkZtcutcci1wvQyayim9+BL5r9JEOe0NgZF0aqmOzB3P7egcrbCrBhnkVQhzckO
-	gSQK9IJg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tkupkizKvF3BXAKdEC+C+VTy6OlraBawUrRFJc+zV1s=; b=DHghWMJ3NCSQcd
+	nDB4TXUDCxGCkkbdESGJGYda3HhGTIakNEtZ4zptnXa8lxu+6ETaerMyoLrkbSJu2DZKtsvo8gmvr
+	/1BKQDKfs1qwW8Hbg2cwDZE6mYLOX/dpyBOTyhIqsneHsBri0yp/pIiKLF2M3BIWmu8t97uJQdlA5
+	LPevhHkd6atqMnN2RUArboqfAR3wKd2tvZoX1Dlr7P2oPh6QDFNzJtjHFy/Ai1LVU9t1J/Z/cRMz1
+	zM81sjTeBZsVEYJk4ZUyQpReV8/Wv5BgP2Vg+iSI4Ah3YNE22yvFvdzodsg6T6fSmDG12w3Cq7Zyy
+	KmHyChoHQRXomj67Jj1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSItu-0004vY-QM; Wed, 06 Nov 2019 10:50:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iSIsp-0002ws-LW; Wed, 06 Nov 2019 10:49:51 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSItL-0004W7-CM
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 10:50:24 +0000
-Received: from e123331-lin.home (lfbn-mar-1-643-104.w90-118.abo.wanadoo.fr
- [90.118.215.104])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2C7812187F;
- Wed,  6 Nov 2019 10:50:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573037422;
- bh=Xpce4/ws0tivXiJphl965VRfX0ymYGfscPagSV/Lc+A=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=0ojW93ya2eZSExdfF8UY80H1A00nh2KQ+77DL8v9nQu3KdP/YhPoub1X0Qt6wrByu
- 3TDTBJaE64hWyJ9EPZ8k4CEuCiq61lrXxxBNMqMtul1zWzIIjlmjQfF8NyYxRMTk4q
- 9PsLoa29ksi1F7/FAj9yV0hLo4H6181fvMrhfiFE=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH resend 2/2] Revert "ARM: 8857/1: efi: enable CP15 DMB
- instructions before cleaning the cache"
-Date: Wed,  6 Nov 2019 11:49:18 +0100
-Message-Id: <20191106104918.26397-3-ardb@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191106104918.26397-1-ardb@kernel.org>
-References: <20191106104918.26397-1-ardb@kernel.org>
+ id 1iSIsg-0002w9-LZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 10:49:44 +0000
+Received: by mail-wr1-x444.google.com with SMTP id f2so16246677wrs.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 Nov 2019 02:49:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=kl4ziYImo8mxXSUIUzerWcurMfUG2nKE46XW1BkCvlw=;
+ b=kxBJiJoCz+uvEjlaoHMgcQr+fPhAS0j2sc8HQCdJjk0eOme7VQHHlm3TDIUwxNStV/
+ IAr8TqzToP3BUIwWnA7k3eNZDWdns4KTC1BChbku6s+9vm65UyDEPJIgV4KXwCKpfUHR
+ 3GqU0MH9ui+CytCItnEbyCTbgcvYV7VjZW0QGrt/jtVusHHPs8WevG+USUqczTgjBlq4
+ kD6WEBWIFfNMsOfhxJRESwTtuQfvK5JMtJdJfKFxXFe+hKKplRvMHMUAf5DaA7nMaRw9
+ 2q24dcf3jUtUASsUuACt6r/sejqO/Dx1+pNfRBy3dce6DwxTECCghcvZySDx55qOM/c5
+ OeWg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=kl4ziYImo8mxXSUIUzerWcurMfUG2nKE46XW1BkCvlw=;
+ b=NIY0QQnTEkw8CaMSZZkGDHcSMvQ6aRfy5wTvojt8NI4ArlEwoAGpw0wwaHy5jkxTs+
+ R1/YZ0HjFc9M6tWN4x6m0dWsulQp2b2mG9Nnl/tHc1MbKU4djn0NKKX1ihDGh/hDeL0B
+ DkU8MSiswqHvkAGOSE2TKpbqWCAewQn9UheNqqIp2OlDbeuiYz8JfioEuWDL/GDy3PjR
+ a4Kv85HAmyHCew8w5JSdFLgE1JYCUr86c9raGgaV9AxgHd2LGAzDke7TDsbJc2PR+qsQ
+ 1LhCGGKV8HfCwxFseG2pYe+ScSZIROim2XtTMaPYNuqdpRc+angdBopZm+/qLie1Sp/0
+ pTLw==
+X-Gm-Message-State: APjAAAXRLJgzJ725x+GIVno1BWbRz8f2PjJBUckwLBsTvDj2pzPm6ptZ
+ FHl0ux9KSkS5umrHFvIrJNUDDQ==
+X-Google-Smtp-Source: APXvYqzq1lHX4GDEZEPtsCJdyQnYK9ZIjkX+6ml9wEgDrjlLUn4+3HRgIK41WbnzWNEb4WSW+nUPmg==
+X-Received: by 2002:a5d:6789:: with SMTP id v9mr1978787wru.344.1573037381252; 
+ Wed, 06 Nov 2019 02:49:41 -0800 (PST)
+Received: from bender.baylibre.local
+ (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id b14sm2331695wmj.18.2019.11.06.02.49.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 06 Nov 2019 02:49:40 -0800 (PST)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: hverkuil@xs4all.nl,
+	mchehab@kernel.org
+Subject: [PATCH] MAINTAINERS: ao-cec: Update path for yaml bindings
+Date: Wed,  6 Nov 2019 11:49:35 +0100
+Message-Id: <20191106104935.24307-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_025023_479474_18557931 
-X-CRM114-Status: GOOD (  11.05  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191106_024942_706878_6518C026 
+X-CRM114-Status: GOOD (  10.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,52 +93,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maz@kernel.org, rmk+kernel@armlinux.org.uk, linus.walleij@linaro.org,
- Ard Biesheuvel <ardb@kernel.org>
-MIME-Version: 1.0
+Cc: linux-amlogic@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reverts commit e17b1af96b2afc38e684aa2f1033387e2ed10029, which is
-no longer necessary now that the v7 specific routines take care not to
-issue CP15 barrier instructions before they are enabled in SCTLR.
+Update the path to the ao-cec bindings after convertion to DT Schemas.
 
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+Suggested-by: Hans Verkuil <hverkuil@xs4all.nl>
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- arch/arm/boot/compressed/head.S | 16 +---------------
- 1 file changed, 1 insertion(+), 15 deletions(-)
+ MAINTAINERS | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index ec14687aea3c..4369f491b23d 100644
---- a/arch/arm/boot/compressed/head.S
-+++ b/arch/arm/boot/compressed/head.S
-@@ -1462,21 +1462,7 @@ ENTRY(efi_stub_entry)
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 296de2b51c83..11108701cadf 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -10581,7 +10581,7 @@ W:	http://linux-meson.com/
+ S:	Supported
+ F:	drivers/media/platform/meson/ao-cec.c
+ F:	drivers/media/platform/meson/ao-cec-g12a.c
+-F:	Documentation/devicetree/bindings/media/meson-ao-cec.txt
++F:	Documentation/devicetree/bindings/media/amlogic,meson-gx-ao-cec.yaml
+ T:	git git://linuxtv.org/media_tree.git
  
- 		@ Preserve return value of efi_entry() in r4
- 		mov	r4, r0
--
--		@ our cache maintenance code relies on CP15 barrier instructions
--		@ but since we arrived here with the MMU and caches configured
--		@ by UEFI, we must check that the CP15BEN bit is set in SCTLR.
--		@ Note that this bit is RAO/WI on v6 and earlier, so the ISB in
--		@ the enable path will be executed on v7+ only.
--		mrc	p15, 0, r1, c1, c0, 0	@ read SCTLR
--		tst	r1, #(1 << 5)		@ CP15BEN bit set?
--		bne	0f
--		orr	r1, r1, #(1 << 5)	@ CP15 barrier instructions
--		mcr	p15, 0, r1, c1, c0, 0	@ write SCTLR
-- ARM(		.inst	0xf57ff06f		@ v7+ isb	)
-- THUMB(		isb						)
--
--0:		bl	cache_clean_flush
-+		bl	cache_clean_flush
- 		bl	cache_off
- 
- 		@ Set parameters for booting zImage according to boot protocol
+ MESON NAND CONTROLLER DRIVER FOR AMLOGIC SOCS
 -- 
-2.17.1
+2.22.0
 
 
 _______________________________________________
