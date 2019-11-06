@@ -2,145 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA6FBF1D24
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 19:08:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E52E4F1D38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 19:11:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HWRM09wS/JIBhafjNIapN83oEw7wNAt7iSCQzRycdHU=; b=NX4GI3J347CJJt
-	52q5W2NtrFMljXeFf1NYYGnW6UxUnKrzpn/7Mszbk0F5zGh2HDnJgNcG2k4cih9B5O/k6r6GoUHBP
-	GjJ/oYeoYJQ05/0PFvSkhSdwWJhc6kv0pK+AyJT4Xon9QTETGErJlQKOarJHYD+tQLO8NUFBmptBI
-	qcBNaJdtWVSgPw9kF4aJ3LzcnjXJ/VZY8dYiix07ibp0tE95kPhssSu5UhdM+5b301Ck1yja2vAsj
-	niV9GwQCjJiadGqcYvQOlzaMQVpHp1wgd6gy7lSCFWOYQF4U08au/TZa/W0IJh99KeM1h6mK+vDld
-	2ywQn97EhI835bmXf3QA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Mime-Version:Message-ID:To:From:In-Reply-To:Subject:
+	Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
+	 bh=XS7EBpW6O2tJtbg4TIu8k4QBLlIFlcPPzQmRk+JGx2A=; b=i1VUXxJi3FIFecu1dyBVq2/Rz
+	n/YDJPFXszFaWo1lC9XL94HJuEZqCU1adS3kcq/yVz9qxONm8yVwDTJh1F7cmZMIRgLdbxZI9qwH0
+	WkN0CF+mAUN/nwDfGgxMceZO3eXQxqfKJa9BAvOWLmMN9Yt06JksLipbGwc+RW/vPweXGSj/erdAi
+	PHf6Uz8VnTC+0O5a2Kw8D+8Y6JsZXRj2AdWMHWW2Kqlx1H6xlK50xEgVh1ZEpLwAXj0kZ94H5sn1A
+	0ZAKdB8rhzyE82KuQ2sgY27H9mh6nLkbJKAbX3VarnDgV9O9YqGkkML1bO9WqP9UfX52EaYp5RNaL
+	hELolsxjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSPjT-0001oM-NP; Wed, 06 Nov 2019 18:08:39 +0000
-Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
- helo=smtprelay-out1.synopsys.com)
+	id 1iSPmV-0003mF-QR; Wed, 06 Nov 2019 18:11:47 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSPjJ-0001nR-Eu; Wed, 06 Nov 2019 18:08:31 +0000
-Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
- [10.192.0.18])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 30EA5C08C8;
- Wed,  6 Nov 2019 18:08:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1573063706; bh=fmcUSQy+Rboqs0cgOnfekDx6LEtxeUQPlxV0dMHzFM8=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=D+SxQLwTfz+9krEZ0lWZ4ohNWs/jpeV1yzvhe2Tzdael1hRlgJcnUAC5uAKRNcexR
- pqv+k5E+odEpPYfUptYa/Sn2SmW6VX4QU2wxJyGhtyPcHzx+Nv0A/QOxOsQNbEE/v4
- h6qx8Oa4JoskvLFMnrzzpZj70fb6qxl0EHQ4DUirYuSRK/a7Tz7hMJbTuB6acDmQdt
- b3D5T9toIORhYkOu8c6BGeqFamYw1449Kwh6IKaUx3V14bqNvKTEVr2LVQ+9eZ5YrR
- iBVgPrVSTOL60az5Mu+IJGPWhedHLvplRYt4t62FoNBBixcVOC3wK4GUoyBItjJN33
- jwOirddB8jOIw==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id D2B65A006B;
- Wed,  6 Nov 2019 18:08:04 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 6 Nov 2019 10:07:46 -0800
-Received: from NAM05-CO1-obe.outbound.protection.outlook.com (10.13.134.195)
- by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Wed, 6 Nov 2019 10:07:46 -0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cJdaIvjlVM4PnIjAdA0wWCDPToNIEt4+pIqxu+Xcw0M7C8CGqhqyQLXaedBGpexXmaDK1VS5StFMi4mdFb8ejwZ63tARWt/x59ghyc9lZtj4aez+xf+hED5Q6vMDPTu8iiVZkLzHsL4iB0arEKoheOQoqWqMl3zAfjUvyPE86ISYYiKGum1DCwXJ4BbaNWgcpwOaz+p37sWwYw2DkmW9rPl7hZsw85+B6rMfqjx5vf+1gFMQKQw7ZlGSiwT3H/ylPtPRWfGZKRuEHqxxQvVPC+0WLA7QKNm96H8lsaTQg9DXVlJfaLuNaKCcPSPgLrRvrQbuvgwW6Qm3huJgTIvKyA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fmcUSQy+Rboqs0cgOnfekDx6LEtxeUQPlxV0dMHzFM8=;
- b=fm0XcbFcXIiGQJQvNUgSa7Gj9JmBI33asjUkcZj9vl4PLKboQoJ3xCKo4k0rs0MLJy0Qr/+ZEL66T09MifgTLXh54wFZSdcJzqObPjaesDael2ENi3ayZCE0hrk3I1O6F5/TjS9vZOnggbmgi6eKU2r8eFz2vHNT6tHRY6C+6w8mk/u0+AHgkWeF3rqByUTLKWafGDfGRv4gROHa7gC/FuurnrGs1vlsJHFcv96eJlyot42dHltuvyi4FbrHKr9LFBAjw7WPBsfcdAdWC25nZdnBxOEm5T4566fI+e6WTd/+tiX978E/63xvItqx1jv7GXlqsSP/OuOoZxM081K1Yw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
- dkim=pass header.d=synopsys.com; arc=none
+ id 1iSPmO-0003kn-Oc
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 18:11:42 +0000
+Received: by mail-pf1-x441.google.com with SMTP id p24so13024459pfn.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 Nov 2019 10:11:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fmcUSQy+Rboqs0cgOnfekDx6LEtxeUQPlxV0dMHzFM8=;
- b=DnV33DVR4t5e6H92ZF/Ro4U9uKYi64vW1pE4cV+eYiigF6kP+Of6UPeDMfW6lpRGa5jHYJ3R6TdTV/voMwksP+mWVqW0YBc7R+/6cou31X87VzbjPiTMF+i2i+/uBN1jRHNys6fpq3LljngHomysK/kyBmYz4CfYwpZUtyzZR4g=
-Received: from DM6PR12MB4089.namprd12.prod.outlook.com (10.141.184.211) by
- DM6PR12MB3338.namprd12.prod.outlook.com (20.178.31.208) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.20; Wed, 6 Nov 2019 18:07:45 +0000
-Received: from DM6PR12MB4089.namprd12.prod.outlook.com
- ([fe80::19df:560:b8d3:e1cd]) by DM6PR12MB4089.namprd12.prod.outlook.com
- ([fe80::19df:560:b8d3:e1cd%5]) with mapi id 15.20.2430.020; Wed, 6 Nov 2019
- 18:07:45 +0000
-From: Vineet Gupta <Vineet.Gupta1@synopsys.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>, "linux-mm@kvack.org"
- <linux-mm@kvack.org>, Andrew Morton <akpm@linux-foundation.org>
-Subject: Re: [PATCH V8] mm/debug: Add tests validating architecture page table
- helpers
-Thread-Topic: [PATCH V8] mm/debug: Add tests validating architecture page
- table helpers
-Thread-Index: AQHVk2wP8ZQH8Ag2aUW4lQaNsiawtKd9KlIAgABMeACAAPyJgA==
-Date: Wed, 6 Nov 2019 18:07:44 +0000
-Message-ID: <b93ffe1f-b198-a042-ecd4-b0f2b0171f72@synopsys.com>
-References: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
- <e0aa8d49-5511-15e4-f413-62c99eea4fab@arm.com>
- <e0dc3636-8c6e-0177-9a7f-fefd28c74f27@synopsys.com>
- <dc2746c9-bde4-ac00-88d1-2bd1cea1f105@arm.com>
-In-Reply-To: <dc2746c9-bde4-ac00-88d1-2bd1cea1f105@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=vgupta@synopsys.com; 
-x-originating-ip: [149.117.75.13]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 28dbea8e-a3a5-4001-3d60-08d762e43953
-x-ms-traffictypediagnostic: DM6PR12MB3338:
-x-microsoft-antispam-prvs: <DM6PR12MB3338B3B518E9E6DC6294832EB6790@DM6PR12MB3338.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 02135EB356
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(396003)(39860400002)(366004)(136003)(376002)(346002)(199004)(189003)(476003)(31696002)(54906003)(186003)(256004)(7406005)(7416002)(14444005)(305945005)(66066001)(65806001)(71200400001)(81156014)(65956001)(7736002)(81166006)(71190400001)(99286004)(86362001)(446003)(11346002)(2616005)(478600001)(25786009)(486006)(6246003)(36756003)(316002)(76116006)(102836004)(4326008)(6506007)(2906002)(66446008)(8936002)(66556008)(58126008)(66476007)(2501003)(64756008)(110136005)(5660300002)(3846002)(6436002)(8676002)(6512007)(6116002)(14454004)(229853002)(26005)(6486002)(31686004)(91956017)(66946007)(76176011)(53546011);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DM6PR12MB3338;
- H:DM6PR12MB4089.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: synopsys.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: XtKGpBsaaMrPeaBRy0h8zOYJ+LLnNSnXwi9mH/eZpVb7ma46ZxcgjNMTrcGXzN0hsofjRcgX8lIqgmsBvS4qCkrbdTehm2zXvB9MxUrzBmrmrmIag9f4b4gVbQEtI/PMOYamAkw3KtuNYhl7TySVLrV9n/3roslJmbLg8/yShuVb7H1e7RaHCk2LQDpOC6HegDtVakwEI+KkoWcN0WpURfm/4eBVxXebscpZQxcWWMqoKM0XCiPpB5MTBtWi+gRlP8BfsfrVmTGZSMqRk2EYYoF3mmMNXTNuL3GTkdYcrLZuWt4dd3kMqgyUh6N8E7Yvu+mVSAZgjrKo63Fv38I/pXuY3t4EbsdurTvrN903SG/HR7D1EDH/St830a8g8vzwnPyDcse3o2TfG8/2mBRWT8W4d3fRNsZ/29t19HrWf1R237NDBHEkB946DY7VzMGl
-x-ms-exchange-transport-forked: True
-Content-ID: <DFA87E4256F23B4D9C57EFB0864104E5@namprd12.prod.outlook.com>
-MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 28dbea8e-a3a5-4001-3d60-08d762e43953
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Nov 2019 18:07:44.8861 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 55pU9yaZ6oMhi8wafxb08Z5+Hjbv2SqDFDB+oMzjkWVK4HvkBhHlO7Wl6/HzP4BitruHWz8RLnOPgWPngSQmfQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR12MB3338
-X-OriginatorOrg: synopsys.com
+ d=dabbelt-com.20150623.gappssmtp.com; s=20150623;
+ h=date:subject:in-reply-to:cc:from:to:message-id:mime-version
+ :content-transfer-encoding;
+ bh=j8eNwULKpZxPZC3Ue7l8WChG2Sw1ZeM6zGQJhcLB2q4=;
+ b=PNo3xZ45pD8y2N6reebfbfZpOdqqiBr1Lz+k6yQFI0L0/2p4rg9rq6quFNZC0fUzEy
+ WlsJw4SBofaliFzu25uc3GL+jfLPaDDaxBBSeFuxKZdU+M46CbuLmJCyYZ3YubRPMmb4
+ KJuh7ZayA7bBdQZfTwcK1CQOU3wgdx+7HYStjSw481T2P1SlQpPljbqXrje6nW+uncab
+ xnl2WqnQq3h3MzYeukOBvYmW22S70Ab9cogKRn6Y5e/sTOn8Whd6Q8gV3t9/yTSsvIJH
+ qW1nfHNHClKIYFKkd63n+sMzCsL83vOlxoTHUSAO8sIcR8NpgIG3bG3BN+f8kRlw/+Kv
+ 8mzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:subject:in-reply-to:cc:from:to:message-id
+ :mime-version:content-transfer-encoding;
+ bh=j8eNwULKpZxPZC3Ue7l8WChG2Sw1ZeM6zGQJhcLB2q4=;
+ b=KFj7MwV0+daMPpf00dF1Fin7r+02I/IGX3cc1b/APlvY6lZMV2hIADrQvm2XARZkwV
+ f4aLsUKtvduaoRGcXllfswUiT7oi9J9GfALMOLhl6MfzkPyZQyhxJI6xUXjUWdvetpTl
+ 8unfmtziRWMHfVGljWhOU7yYMaIyzE8jt2QCerhkFSFlsPlmES/GPtbataSd2oT6cYtW
+ xkrjZugz1yuDML7fC5RJMstptPzZHktBhZyQ7mr0YhCjBPSs6427BQtaSeF23L6micrc
+ +MgB6H3QmDfULWtUGlFRZOc5Sxx9AWCIU8AZVVuEyB7l5bl3DbdihYqAH67Y3GUCmP8I
+ 0XuA==
+X-Gm-Message-State: APjAAAXx7EsUWAOZEqZxWME3sN/ifS0oSeOU4cnCGkdKCTMAirAIYHSM
+ JdNHIZ5Hq72Xao9urqg/EdCuFQ==
+X-Google-Smtp-Source: APXvYqyi7QvVvwFbCwtrCcolLw/HV05dOHLVSXF3jAYddzEgRk4byr6sPDxWkoeeO54icKRZXqVAsQ==
+X-Received: by 2002:a62:170b:: with SMTP id 11mr4988303pfx.85.1573063899585;
+ Wed, 06 Nov 2019 10:11:39 -0800 (PST)
+Received: from localhost ([12.206.222.5])
+ by smtp.gmail.com with ESMTPSA id i5sm12394738pfo.52.2019.11.06.10.11.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 06 Nov 2019 10:11:37 -0800 (PST)
+Date: Wed, 06 Nov 2019 10:11:37 -0800 (PST)
+X-Google-Original-Date: Wed, 06 Nov 2019 10:11:28 PST (-0800)
+Subject: Re: [PATCH 11/21] asm-generic: don't provide ioremap for CONFIG_MMU
+In-Reply-To: <20191029064834.23438-12-hch@lst.de>
+From: Palmer Dabbelt <palmer@dabbelt.com>
+To: Christoph Hellwig <hch@lst.de>
+Message-ID: <mhng-33ea9141-2440-4a2d-8133-62094486fc48@palmer-si-x1c4>
+Mime-Version: 1.0 (MHng)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_100829_707103_0AABD841 
-X-CRM114-Status: GOOD (  19.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191106_101140_808530_0488D9E5 
+X-CRM114-Status: GOOD (  26.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -152,76 +92,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
- "linux-sh@vger.kernel.org" <linux-sh@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, James Hogan <jhogan@kernel.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- Dave Hansen <dave.hansen@intel.com>, Paul Mackerras <paulus@samba.org>,
- "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>, Dan
- Williams <dan.j.williams@intel.com>,
- "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, Michael Ellerman <mpe@ellerman.id.au>,
- "x86@kernel.org" <x86@kernel.org>,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Ingo Molnar <mingo@kernel.org>, Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, Mark
- Brown <broonie@kernel.org>, "Kirill A .
- Shutemov" <kirill@shutemov.name>, Thomas Gleixner <tglx@linutronix.de>,
- Vlastimil Babka <vbabka@suse.cz>, Christophe Leroy <christophe.leroy@c-s.fr>,
- Sri Krishna chowdary <schowdary@nvidia.com>, Ard
- Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Paul Burton <paul.burton@mips.com>, Mike
- Rapoport <rppt@linux.vnet.ibm.com>, Martin Schwidefsky <schwidefsky@de.ibm.com>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-kernel@vger.kernel.org, guoren@kernel.org, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, deanbo422@gmail.com,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ linux-hexagon@vger.kernel.org, x86@kernel.org,
+ linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, green.hu@gmail.com,
+ linux-mtd@lists.infradead.org, gxt@pku.edu.cn,
+ linux-arm-kernel@lists.infradead.org, monstr@monstr.eu,
+ linux-parisc@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-alpha@vger.kernel.org, nios2-dev@lists.rocketboards.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTEvNS8xOSA3OjAzIFBNLCBBbnNodW1hbiBLaGFuZHVhbCB3cm90ZToNCj4gQnV0IHNob3Vs
-ZCBub3QgcGZuX3BtZCgpIGJlIGVuY2Fwc3VsYXRlZCBpbnNpZGUgSEFWRV9BUkNIX1RSQU5TUEFS
-RU5UX0hVR0VQQUdFDQo+IGF0IHRoZSBtaW5pbXVtIChidXQgSSB3b3VsZCBzYXkgaXQgc2hvdWxk
-IGJlIGF2YWlsYWJsZSBhbHdheXMsIG5vbmV0aGVsZXNzKSB3aGVuDQo+IHRoZSBwbGF0Zm9ybSBz
-dWJzY3JpYmVzIHRvIFRIUCBpcnJlc3BlY3RpdmUgb2Ygd2hldGhlciBUSFAgaXMgZW5hYmxlZCBv
-ciBub3QuDQoNCkZvciBBUkMgaXQgd2FzIG9ubHkgaW50cm9kdWNlZC9uZWVkZWQgd2hlbiBJIGFk
-ZGVkIFRIUCBzdXBwb3J0IHNvIGl0IGlzIGRlcGVuZGVudA0KaW4gc29tZSB3YXkuDQoNCj4gSSBj
-b3VsZCBzZWUgaW4gdGhlIGZpbGUgKGFyY2gvYXJjL2luY2x1ZGUvYXNtL3BndGFibGUuaCkgdGhh
-dCBmZXRjaGluZyBwZm5fcG1kKCkNCj4gYW5kIGFsbCBvdGhlciBiYXNpYyBQTUQgZGVmaW5pdGlv
-bnMgaXMgY29uZGl0aW9uYWwgb24gQ09ORklHX1RSQU5TUEFSRU5UX0hVR0VQQUdFLg0KPg0KPiAj
-aWZkZWYgQ09ORklHX1RSQU5TUEFSRU5UX0hVR0VQQUdFDQo+ICNpbmNsdWRlIDxhc20vaHVnZXBh
-Z2UuaD4NCj4gI2VuZGlmDQo+DQo+IElJVUMsIENPTkZJR19UUkFOU1BBUkVOVF9IVUdFUEFHRSBz
-aG91bGQgb25seSBlbmNhcHN1bGF0ZSBQTUQgcGFnZSB0YWJsZSBoZWxwZXJzDQo+IHdoaWNoIGFy
-ZSBleHBlY3RlZCBmcm9tIGdlbmVyaWMgVEhQIGNvZGUgKHBtZF90cmFuc19odWdlLCBwbWRwX3Nl
-dF9hY2Nlc3NfZmxhZ3MNCj4gZXRjKSBidXQgbm90IHRoZSBiYXNpYyBQTUQgaGVscGVycyBsaWtl
-IHBtZF9wZm4sIHBtZF9ta3lvdW5nLCBwbWRfbWtkaXJ0eSwNCj4gcG1kX21rY2xlYW4gZXRjLiAN
-Cg0KQVJDIG9ubHkgaGFzIDIgbGV2ZWxzIG9mIHBhZ2luZywgc28gdGhlc2UgZG9uJ3QgbWFrZSBh
-bnkgc2Vuc2UgaW4gZ2VuZXJhbCBhbmQNCm5lZWRlZCBvbmx5IGZvciBUSFAgY2FzZS4NCkkgY2Fz
-ZSBvZiBhcmNoL2FybSB5b3Ugc2VlIGl0IGlzIG9ubHkgZGVmaW5lZCBpbiBwZ3RhYmxlLTNsZXZl
-bC5oDQoNCj4gSGVuY2Ugd29uZGVyaW5nIHdpbGwgaXQgYmUgcG9zc2libGUgdG8gYWNjb21tb2Rh
-dGUgZm9sbG93aW5nDQo+IGNvZGUgY2hhbmdlIG9uIGFyYyBwbGF0Zm9ybSAobm90IGV2ZW4gY29t
-cGlsZWQpIGluIG9yZGVyIHRvIGZpeCB0aGUgcHJvYmxlbSA/DQoNCkknbSBvcGVuIHRvIG1ha2lu
-ZyBjaGFuZ2VzIGluIEFSQyBjb2RlIGJ1dCBsZXRzIGRvIHRoZSByaWdodCB0aGluZy4NCg0KPiAg
-ICovDQo+IC0jaWZkZWYgQ09ORklHX1RSQU5TUEFSRU5UX0hVR0VQQUdFDQo+ICsjaWZkZWYgQ09O
-RklHX0hBVkVfQVJDSF9UUkFOU1BBUkVOVF9IVUdFUEFHRQ0KPiAgI2luY2x1ZGUgPGFzbS9odWdl
-cGFnZS5oPg0KPiAgI2VuZGlmDQoNClRoaXMgaW4gd3JvbmcuwqAgQ09ORklHX0hBVkVfQVJDSF9U
-UkFOU1BBUkVOVF9IVUdFUEFHRSBpcyBhIGp1c3QgYSBnbHVlIHRvZ2dsZSwNCnVzZWQgb25seSBp
-biBLY29uZmlnIGZpbGVzIChhbmQgbm90IGluIGFueSAiQyIgY29kZSkuwqAgSXQgZW5hYmxlcyBn
-ZW5lcmljIEtjb25maWcNCmNvZGUgdG8gYWxsb3cgdmlzaWJpbGl0eSBvZiBDT05GSUdfVFJBTlNQ
-QVJFTlRfSFVHRVBBR0Ugdy9vIGV2ZXJ5IGFyY2ggbmVlZGluZyB0bw0KZG8gYSBtZSB0b28uDQoN
-CkkgdGhpbmsgeW91IG5lZWQgdG8gdXNlIENPTkZJR19UUkFOU1BBUkVOVF9IVUdFUEFHRSB0byBn
-dWFyZCBhcHByb3ByaWF0ZSB0ZXN0cy4gSQ0KdW5kZXJzdGFuZCB0aGF0IGl0IG9ubHkNCg0KLVZp
-bmVldA0KDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
-aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1hcm0ta2VybmVsCg==
+On Mon, 28 Oct 2019 23:48:24 PDT (-0700), Christoph Hellwig wrote:
+> All MMU-enabled ports have a non-trivial ioremap and should thus provide
+> the prototype for their implementation instead of providing a generic
+> one unless a different symbol is not defined.  Note that this only
+> affects sparc32 nds32 as all others do provide their own version.
+>
+> Also update the kerneldoc comments in asm-generic/io.h to explain the
+> situation around the default ioremap* implementations correctly.
+>
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/nds32/include/asm/io.h    |  2 ++
+>  arch/sparc/include/asm/io_32.h |  1 +
+>  include/asm-generic/io.h       | 29 ++++++++---------------------
+>  3 files changed, 11 insertions(+), 21 deletions(-)
+>
+> diff --git a/arch/nds32/include/asm/io.h b/arch/nds32/include/asm/io.h
+> index 16f262322b8f..fb0e8a24c7af 100644
+> --- a/arch/nds32/include/asm/io.h
+> +++ b/arch/nds32/include/asm/io.h
+> @@ -6,6 +6,7 @@
+>
+>  #include <linux/types.h>
+>
+> +void __iomem *ioremap(phys_addr_t phys_addr, size_t size);
+>  extern void iounmap(volatile void __iomem *addr);
+>  #define __raw_writeb __raw_writeb
+>  static inline void __raw_writeb(u8 val, volatile void __iomem *addr)
+> @@ -80,4 +81,5 @@ static inline u32 __raw_readl(const volatile void __iomem *addr)
+>  #define writew(v,c)	({ __iowmb(); writew_relaxed((v),(c)); })
+>  #define writel(v,c)	({ __iowmb(); writel_relaxed((v),(c)); })
+>  #include <asm-generic/io.h>
+> +
+>  #endif /* __ASM_NDS32_IO_H */
+> diff --git a/arch/sparc/include/asm/io_32.h b/arch/sparc/include/asm/io_32.h
+> index df2dc1784673..9a52d9506f80 100644
+> --- a/arch/sparc/include/asm/io_32.h
+> +++ b/arch/sparc/include/asm/io_32.h
+> @@ -127,6 +127,7 @@ static inline void sbus_memcpy_toio(volatile void __iomem *dst,
+>   * Bus number may be embedded in the higher bits of the physical address.
+>   * This is why we have no bus number argument to ioremap().
+>   */
+> +void __iomem *ioremap(phys_addr_t offset, size_t size);
+>  void iounmap(volatile void __iomem *addr);
+>  /* Create a virtual mapping cookie for an IO port range */
+>  void __iomem *ioport_map(unsigned long port, unsigned int nr);
+> diff --git a/include/asm-generic/io.h b/include/asm-generic/io.h
+> index a98ed6325727..6a5edc23afe2 100644
+> --- a/include/asm-generic/io.h
+> +++ b/include/asm-generic/io.h
+> @@ -922,28 +922,16 @@ static inline void *phys_to_virt(unsigned long address)
+>  /**
+>   * DOC: ioremap() and ioremap_*() variants
+>   *
+> - * If you have an IOMMU your architecture is expected to have both ioremap()
+> - * and iounmap() implemented otherwise the asm-generic helpers will provide a
+> - * direct mapping.
+> + * Architectures with an MMU are expected to provide ioremap() and iounmap()
+> + * themselves.  For NOMMU architectures we provide a default nop-op
+> + * implementation that expect that the physical address used for MMIO are
+> + * already marked as uncached, and can be used as kernel virtual addresses.
+>   *
+> - * There are ioremap_*() call variants, if you have no IOMMU we naturally will
+> - * default to direct mapping for all of them, you can override these defaults.
+> - * If you have an IOMMU you are highly encouraged to provide your own
+> - * ioremap variant implementation as there currently is no safe architecture
+> - * agnostic default. To avoid possible improper behaviour default asm-generic
+> - * ioremap_*() variants all return NULL when an IOMMU is available. If you've
+> - * defined your own ioremap_*() variant you must then declare your own
+> - * ioremap_*() variant as defined to itself to avoid the default NULL return.
+> + * ioremap_wc() and ioremap_wt() can provide more relaxed caching attributes
+> + * for specific drivers if the architecture choses to implement them.  If they
+> + * are not implemented we fall back to plain ioremap.
+>   */
+>  #ifndef CONFIG_MMU
+> -
+> -/*
+> - * Change "struct page" to physical address.
+> - *
+> - * This implementation is for the no-MMU case only... if you have an MMU
+> - * you'll need to provide your own definitions.
+> - */
+> -
+>  #ifndef ioremap
+>  #define ioremap ioremap
+>  static inline void __iomem *ioremap(phys_addr_t offset, size_t size)
+> @@ -954,14 +942,13 @@ static inline void __iomem *ioremap(phys_addr_t offset, size_t size)
+>
+>  #ifndef iounmap
+>  #define iounmap iounmap
+> -
+>  static inline void iounmap(void __iomem *addr)
+>  {
+>  }
+>  #endif
+>  #endif /* CONFIG_MMU */
+> +
+>  #ifndef ioremap_nocache
+> -void __iomem *ioremap(phys_addr_t phys_addr, size_t size);
+>  #define ioremap_nocache ioremap_nocache
+>  static inline void __iomem *ioremap_nocache(phys_addr_t offset, size_t size)
+>  {
+
+It looks like the difference in prototype between the architectures is between
+
+    void __iomem *ioremap(resource_size_t, size_t)
+    void __iomem *ioremap(phys_addr_t, size_t)
+    void __iomem *ioremap(phys_addr_t, unsigned long)
+    void __iomem *ioremap(unsigned long, unsigned long)
+
+shouldn't they all just be that first one?  In other words, wouldn't it be 
+better to always provide the generic ioremap prototype and unify the ports 
+instead?
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
