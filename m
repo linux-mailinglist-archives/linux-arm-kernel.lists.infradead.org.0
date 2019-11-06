@@ -2,75 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7AFBF0D99
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 05:10:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E061CF0DA4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 05:15:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sL5OsG0qQesKsK19ZSeuH0PC84GGf+79Sn4lLu6q3io=; b=fZ0DT4zUmxLu9w
-	kVBRsfuppgEIyCoAWXNhmj54ckH1y0+krecVf2Mvg7L8KQ+TVJdOgL3zrFAWz3Py1VeHRK/oukcOo
-	F3GwZ7i1sgqooJfbb/QDX8bRCK88LHr1fX2CUKjken660estt84BBJhybcS2m8zfnQJOWron0RQl5
-	dE+IPEQ9MRM2FJzCRzlNCm1sMH1kZNV7nEMU418VLYn7jxBbdpmkSnQ7GpajMcxpTNN2shSs8e3wv
-	qNqZxJ7W4Twt7DnAq+90p52ZYoCsOL37546G2B/gG80eKQGe/zZLjmihr1txJp2pGkifHwxDmWXEt
-	t53XuZcWYHuOtu7yEPxA==;
+	List-Owner; bh=yNi53BTxzJ4VgWKSAisQLN++SyM2u67t4VvLaq9pZ/4=; b=FDjKEFSrHIjClL
+	Qrf74No6IJ6Ft41ke3nBUR/TFTIMr6XqYcZ0FR84LHsDHhlDUMLrTdXF6r8FdXpVLAvqIoMxdtTNn
+	4SL7QF7TTaDpkLCAbKRFrNOtjrjaCyY2KddeI+N5iksFLxnfZ/rVKK3lqz16H02IdWKzmXpyAhhhS
+	VGQO+AqZbXAOSDKlSnxoBHrV1XKyD+v1W3Hc5LGS1wSj0ch0HcKQFyuf7PIdP2oJ7DzuLYkcvTdNi
+	v8mACyWKOcRT8nr9O9+TKkwUX+KGE3cREiJUvB02E4f4XEwWC7t/ZrXhTRDD5AoRahkHXxF8iOZ0B
+	btFljuayFCiBY9BWyYsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSCeW-0005hO-6E; Wed, 06 Nov 2019 04:10:40 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1iSCj9-0007SM-CN; Wed, 06 Nov 2019 04:15:27 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSCeI-0005eX-8i
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 04:10:28 +0000
-Received: by mail-oi1-f195.google.com with SMTP id a14so30796oid.5
+ id 1iSCj2-0007Rv-C7
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 04:15:22 +0000
+Received: by mail-ot1-f66.google.com with SMTP id n23so9445321otr.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 20:10:25 -0800 (PST)
+ Tue, 05 Nov 2019 20:15:20 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=XTqm+5ilx5cNXoALUuokKsa13a1L8tV/eJS9nqrIoLA=;
- b=EdHTLEwD8rsyiHGvHOIPhq5Za45C22MPZiMBsm5/UeAusHllYKxFvuSgKPxN63VrVM
- g9IDj5Qk9HXbO9GnEpbgdxcuqjSrhUNis3hbzp+q4NdcXJjV7v2bDgXa9w7rNvFYBgxD
- j+CS27o1Ef2cm7MCLKOTc3YZYfBazcQvQJocmef4wuIkl1mD1g74hnN+H2q83dvnSlZS
- Th1xqC7F/7BrJgZPJ5kEo4NqeNbcIIVUNqD4gTu6qPiTMI8wGvCsbVIQdyTV8i7Zd4an
- 9JNJdPaXWRq962xtFo3msxnEWQKOYzu6t4A9qIk2APUSx/2hxTQLXpPvJoAazKbBHARi
- 6qZw==
-X-Gm-Message-State: APjAAAUsLogbcOOjzfKDSv8fN5wGhSIxKnWSRJK6aUiGrfszR2eJnfvI
- mRQ93lb1r2Zcjgn7vpqkJiK3wEY=
-X-Google-Smtp-Source: APXvYqylmIWEBXlGiig5sQDLxWMziJuvUvr8lMR4v+i6TBlZUwvxqcsWnINhAkMmXTCCEcsff6WZoQ==
-X-Received: by 2002:aca:5dd5:: with SMTP id r204mr400621oib.73.1573013425171; 
- Tue, 05 Nov 2019 20:10:25 -0800 (PST)
+ bh=eU07epBZUVYLaHBjz3RtRcFaFle5kQt9relwi3C3BoI=;
+ b=s52txFa4FCnOgSxe5hcxMcWiXrAKHsywkFjKObt/U1+7rzBzX3ZAc0EJzmNnWW6LS1
+ oTvaHIbNCW7QC75fqsWrYS+1Tk/SN8cfOPG37aU8qPksQsFcM4mg8XncYCN070GO3jLF
+ hIUguAnLoPzRjFTlG546843tIspTkjNy7j27mXTqSWnaSLnESAscbl4lNQxD3Q/EjpTa
+ DrAb6iTlY2OnbC9tmNdPATkxZ1nytHM1e7nJ/+abjWXGZqcPhcYxThmfEOEsKPPKdJSd
+ CavGp5x7uve7yh95mXcDlNOVpVxSVndwoXhaew4aMkfy/tMDvdC9bLax9aQJTbWllv96
+ ywSA==
+X-Gm-Message-State: APjAAAX/N+jVVzFDRt/43SBjxwSb5lj/iCb0wTsYWAuGXWWTvfKiS6bF
+ VD1bA4Ev87WMkWAAhEO6wVVOq3E=
+X-Google-Smtp-Source: APXvYqyL7N4ZSd4YdH6F4tHPJTvw4bxJUurlUdTYajOsiR6wMLQz0zP3nOgOpX9idyBcv2QLfignhw==
+X-Received: by 2002:a9d:6950:: with SMTP id p16mr289110oto.16.1573013719528;
+ Tue, 05 Nov 2019 20:15:19 -0800 (PST)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w33sm6874277otb.68.2019.11.05.20.10.24
+ by smtp.gmail.com with ESMTPSA id d17sm1946185otl.13.2019.11.05.20.15.18
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 20:10:24 -0800 (PST)
-Date: Tue, 5 Nov 2019 22:10:23 -0600
+ Tue, 05 Nov 2019 20:15:18 -0800 (PST)
+Date: Tue, 5 Nov 2019 22:15:18 -0600
 From: Rob Herring <robh@kernel.org>
 To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: Re: [PATCH 1/4] dt-bindings: counter: Convert stm32 counter bindings
- to json-schema
-Message-ID: <20191106041023.GB5294@bogus>
+Subject: Re: [PATCH 4/4] dt-bindings: mfd: Convert stm32 timers bindings to
+ json-schema
+Message-ID: <20191106041518.GC5294@bogus>
 References: <20191031123040.26316-1-benjamin.gaignard@st.com>
- <20191031123040.26316-2-benjamin.gaignard@st.com>
+ <20191031123040.26316-5-benjamin.gaignard@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191031123040.26316-2-benjamin.gaignard@st.com>
+In-Reply-To: <20191031123040.26316-5-benjamin.gaignard@st.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_201026_338396_EF750700 
-X-CRM114-Status: GOOD (  18.49  )
+X-CRM114-CacheID: sfid-20191105_201520_414595_E4036AEC 
+X-CRM114-Status: GOOD (  17.44  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
+ no trust [209.85.210.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -79,8 +77,11 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
  0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,103 +105,130 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 01:30:37PM +0100, Benjamin Gaignard wrote:
-> Convert the STM32 counter binding to DT schema format using json-schema
-
-Probably this should all be 1 file instead.
-
+On Thu, Oct 31, 2019 at 01:30:40PM +0100, Benjamin Gaignard wrote:
+> Convert the STM32 timers binding to DT schema format using json-schema
+> 
 > Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 > ---
->  .../bindings/counter/st,stm32-timer-cnt.yaml       | 38 ++++++++++++++++++++++
->  .../bindings/counter/stm32-timer-cnt.txt           | 31 ------------------
->  2 files changed, 38 insertions(+), 31 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/counter/st,stm32-timer-cnt.yaml
->  delete mode 100644 Documentation/devicetree/bindings/counter/stm32-timer-cnt.txt
+>  .../devicetree/bindings/mfd/st,stm32-timers.yaml   | 91 ++++++++++++++++++++++
+>  .../devicetree/bindings/mfd/stm32-timers.txt       | 73 -----------------
+>  2 files changed, 91 insertions(+), 73 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/mfd/stm32-timers.txt
 > 
-> diff --git a/Documentation/devicetree/bindings/counter/st,stm32-timer-cnt.yaml b/Documentation/devicetree/bindings/counter/st,stm32-timer-cnt.yaml
+> diff --git a/Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml b/Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml
 > new file mode 100644
-> index 000000000000..56192d613601
+> index 000000000000..3f0a65fb2bc0
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/counter/st,stm32-timer-cnt.yaml
-> @@ -0,0 +1,38 @@
+> +++ b/Documentation/devicetree/bindings/mfd/st,stm32-timers.yaml
+> @@ -0,0 +1,91 @@
 > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 > +%YAML 1.2
 > +---
-> +$id: http://devicetree.org/schemas/counter/st,stm32-timer-cnt.yaml#
+> +$id: http://devicetree.org/schemas/mfd/st,stm32-timers.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: STMicroelectronics STM32 Timers quadrature bindings
+> +title: STMicroelectronics STM32 Timers bindings
 > +
-> +description:
-> +  STM32 Timer provides quadrature encoder to detect angular position
-> +  and direction of rotary elements, from IN1 and IN2 input signals.
+> +description: |
+> +  This hardware block provides 3 types of timer along with PWM functionality: \
+
+Don't need the \
+
+> +    - advanced-control timers consist of a 16-bit auto-reload counter driven by a programmable \
+> +      prescaler, break input feature, PWM outputs and complementary PWM ouputs channels. \
+> +    - general-purpose timers consist of a 16-bit or 32-bit auto-reload counter driven by a \
+> +      programmable prescaler and PWM outputs.\
+> +    - basic timers consist of a 16-bit auto-reload counter driven by a programmable prescaler.
 > +
 > +maintainers:
 > +  - Benjamin Gaignard <benjamin.gaignard@st.com>
 > +  - Fabrice Gasnier <fabrice.gasnier@st.com>
 > +
+> +allOf:
+> +  - $ref: "../pwm/st,stm32-pwm.yaml#"
+> +  - $ref: "../iio/timer/st,stm32-timer-trigger.yaml#"
+> +  - $ref: "../counter/st,stm32-timer-cnt.yaml#"
+
+This works, but I prefer the child node names be listed under properties 
+here with a ref:
+
+counter:
+  $ref: "../counter/st,stm32-timer-cnt.yaml#"
+
+> +
 > +properties:
-> +  counter:
-> +    type: object
+> +  compatible:
+> +    const: st,stm32-timers
 > +
-> +    description:
-> +      must be a sub-node of an STM32 Timer device tree node
+> +  reg:
+> +    maxItems: 1
 > +
-> +    properties:
-> +      compatible:
-> +        const: st,stm32-timer-counter
-> +            
-> +    required:
-> +      - compatible
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    items:
+> +      - const: int
+> +
+> +  reset:
+> +    maxItems: 1
+> +
+> +  dmas: true
+
+How many?
+
+> +
+> +  dma-names: true
+
+What are the names?
+
+> +
+> +  "#address-cells":
+> +    const: 1
+> +
+> +  "#size-cells":
+> +    const: 0
+> +
+> +required:
+> +  - "#address-cells"
+> +  - "#size-cells"
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
 > +
 > +examples:
 > +  - |
-> +    counter {
-> +      compatible = "st,stm32-timer-counter";
+> +    #include <dt-bindings/clock/stm32mp1-clks.h>
+> +    timers2: timer@40000000 {
+> +      #address-cells = <1>;
+> +      #size-cells = <0>;
+> +      compatible = "st,stm32-timers";
+> +      reg = <0x40000000 0x400>;
+> +      clocks = <&rcc TIM2_K>;
+> +      clock-names = "int";
+> +      dmas = <&dmamux1 18 0x400 0x1>,
+> +             <&dmamux1 19 0x400 0x1>,
+> +             <&dmamux1 20 0x400 0x1>,
+> +             <&dmamux1 21 0x400 0x1>,
+> +             <&dmamux1 22 0x400 0x1>;
+> +      dma-names = "ch1", "ch2", "ch3", "ch4", "up";
+> +      pwm {
+> +        compatible = "st,stm32-pwm";
+> +        #pwm-cells = <3>;
+> +        st,breakinput = <0 1 5>;
+> +      };
+> +      timer@0 {
+> +        compatible = "st,stm32-timer-trigger";
+> +        reg = <0>;
+> +      };
+> +      counter {
+> +        compatible = "st,stm32-timer-counter";
+> +      };
 > +    };
 > +
 > +...
-> +
-> diff --git a/Documentation/devicetree/bindings/counter/stm32-timer-cnt.txt b/Documentation/devicetree/bindings/counter/stm32-timer-cnt.txt
-> deleted file mode 100644
-> index c52fcdd4bf6c..000000000000
-> --- a/Documentation/devicetree/bindings/counter/stm32-timer-cnt.txt
-> +++ /dev/null
-> @@ -1,31 +0,0 @@
-> -STMicroelectronics STM32 Timer quadrature encoder
-> -
-> -STM32 Timer provides quadrature encoder to detect
-> -angular position and direction of rotary elements,
-> -from IN1 and IN2 input signals.
-> -
-> -Must be a sub-node of an STM32 Timer device tree node.
-> -See ../mfd/stm32-timers.txt for details about the parent node.
-> -
-> -Required properties:
-> -- compatible:		Must be "st,stm32-timer-counter".
-> -- pinctrl-names: 	Set to "default".
-> -- pinctrl-0: 		List of phandles pointing to pin configuration nodes,
-> -			to set CH1/CH2 pins in mode of operation for STM32
-> -			Timer input on external pin.
-> -
-> -Example:
-> -	timers@40010000 {
-> -		#address-cells = <1>;
-> -		#size-cells = <0>;
-> -		compatible = "st,stm32-timers";
-> -		reg = <0x40010000 0x400>;
-> -		clocks = <&rcc 0 160>;
-> -		clock-names = "int";
-> -
-> -		counter {
-> -			compatible = "st,stm32-timer-counter";
-> -			pinctrl-names = "default";
-> -			pinctrl-0 = <&tim1_in_pins>;
-> -		};
-> -	};
-> -- 
-> 2.15.0
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
