@@ -2,120 +2,133 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16868F0B2B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 01:40:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 755FBF0B64
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 02:02:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=km50h2ncZuRgQRTGC8av5poBL/82KFRyVA41KkETVPw=; b=HnXVlmwa/FCJwG
-	PLqdCsdVZzpcGN0tMWJjrow8gPWCNzkZMLeQ1SfrebADkft3mrZhrpfPyvxcPDP/2HfngMmtNUX1o
-	/lgWPRVrEN1sHCmTxgpJXgDisb8PKVHfcRrb+gl6e2W/gBqsyXzC4eDd4mi8zFrKEpVsKLeFQHJkh
-	TzOK2s/xLHQmNIH/eTcRAJ5j56nTc8awlCgyg9rymnxBo6z7Vt9N3lfZpQfWNPwhWL+BHN1Dr00P/
-	XtYxQju2yNExHJ4I1bA8LP0kWt1TxjLTd7wfoNXckhdLKeLCctwpA1QUGdY7COdaw+dT65iKLHv84
-	v4R6B0JWEz/QX7E8bTMA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=M/Ltmjm/wWZ5g7YlNGus5ztN/vFwTL7KlkIJ9CASrN4=; b=rrvGAEinfjvCCB
+	88F6n+BoYwgx5tyVSV1pFjhvGzkKIklDa/CU7WMLp8xeTZiw2zAEs0I5wrVrMiYJX8UlQ2+Nxraio
+	b29r1bvjf4JxN24yYcR7sA4KNin2+HN24XKoJp9UXGpJEyOoWIULrdkxOMHbQqLSVpWk34/hO5Pnv
+	1Giickq3SlIJXyk7+hmTrhjAIavnkYqln2RF+Yf+Vr2L4Cux1H7YuYPG2qQqoaAf/zUWDmhrdAdzi
+	u8Zbb7ecuMRoW6ApAIYLpIBC7anzpROSHX1XJdYdWxewg08l4Pw/2aVntdUb+DxIcv1Jm/6oo8d9A
+	Yai2lkXayVtiah4wBc3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS9Mv-0002il-UL; Wed, 06 Nov 2019 00:40:17 +0000
-Received: from mail-eopbgr790131.outbound.protection.outlook.com
- ([40.107.79.131] helo=NAM03-CO1-obe.outbound.protection.outlook.com)
+	id 1iS9iL-00014i-J7; Wed, 06 Nov 2019 01:02:25 +0000
+Received: from mx0a-0016f401.pphosted.com ([67.231.148.174]
+ helo=mx0b-0016f401.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS9Mn-0002DJ-72
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 00:40:11 +0000
+ id 1iS9hu-0000w0-Sy
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 01:02:00 +0000
+Received: from pps.filterd (m0045849.ppops.net [127.0.0.1])
+ by mx0a-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xA61092t028449; Tue, 5 Nov 2019 17:01:42 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
+ h=from : to : cc :
+ subject : date : message-id : content-type : content-transfer-encoding :
+ mime-version; s=pfpt0818; bh=BVp8qUxRE121/tm+T2vAbDt1Z1MHkG+jRqNO0T9Q5w8=;
+ b=q13agy6I5i1iqfD4YnmPGa8TRm0fGQOqEK9hygBoBc45bW9VrN0JewgjzkthxpRQ7zj6
+ zSFPJ47PWjWFoIWNjOVyfOzyFYSxBwBsbMDUW15xCeggpRXiOZvW/7rVrD+4HLmfGsaO
+ U2JONSYsKHgrghhu1RIvDn7BYyTB6zqPTo9ZlLv09U64MNU1rOMo4ZswGQKV69knFqKM
+ OxuVIUgT0G/0GSATL3GINC4ss4QAbrxdzkpdWt4UNxw7sNzuxXNy7pGDabYyENosdug5
+ EbhrwYJ5sFRN540nvVP0TVd3pBFgm/e6RbqiLJWEGX6XTlj2fX/xjuX8l8Eoxd9bzslp zg== 
+Received: from sc-exch02.marvell.com ([199.233.58.182])
+ by mx0a-0016f401.pphosted.com with ESMTP id 2w3eud17ea-2
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Tue, 05 Nov 2019 17:01:41 -0800
+Received: from SC-EXCH01.marvell.com (10.93.176.81) by SC-EXCH02.marvell.com
+ (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Tue, 5 Nov
+ 2019 17:01:40 -0800
+Received: from NAM03-DM3-obe.outbound.protection.outlook.com (104.47.41.57) by
+ SC-EXCH01.marvell.com (10.93.176.81) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1367.3 via Frontend Transport; Tue, 5 Nov 2019 17:01:40 -0800
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YdFxiRaxkpvJ5vN34yAKueaYCA0YHrv4XjjeqP+22FbyaLaj8EBipkhLYkx+MpCxKD+QwrWdo5HLfpM+Pio7E3NoOf42DD4jhExvx3F0ACNpOrizHbFYOYzMjwZl5eN/qPXL7H1cWUbPjVdrCKLoW9W8kvw8gS5zDRh099YECP4W0C/IY43EHdr/l5Iv0O5My+9KNexWeOdm0CxRTV4dCEAHSV1ikuc1OzbnXT5DmNMEZkxXTa/dx1ug9SccMT1F7zBujNWGWicR4VznqTz+nSyzPVCH+jPpgAN4s+9pARUDLr2/sGIRt/hIbm8tZ6Fy0XwtJzozhzkOxR3SVlbebQ==
+ b=cxLmRvOp5oZwxO+fRusbj/pIBLSll9g7aCGpgjB/9xKjTPMswUZWJ1mHpUATDKmnRAHlANynr549QaPTKsB7QL7H8gYzg0JFs6qbpnN4fGefyiGgFoLVwqe99dUxDWw4S3yN3yRS22ANLZpE9h/cGUZWtdDog4ps/xkwGnW8iTrfwFq9lCDZyVWGcrIbZ8poOmg0yo1i22NgsMENhnVo7oI1Rwk2y9YYbwpkHQqaqN+L1On8S/oQox+6KF6WVbujc3C5cEBFzr9tHiWm2Jh/I9bDIfLajJ3qokqpwKYG+8s6tkKqVhwZnDPQIOu/JQGHzLXXh7dumH72V6L3WD51xQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Sw/iJjUaB7Zgd3IuIPZ87gZW+5d2qkZacf4u91TH+/o=;
- b=kuXAJyTJ1IZOfa2hoQbyvHwWJUTmIFiZVjKTlnQiMYSLAsxbiV4PLMvBzuC/2G56Dk4SeZZyR9fLEd7kHlBoTzsL3wqO/JvDp1ClmmpNJX9SLPtHE9frmM/ggkWwvePFwVhNs/iD5r48/4sggS9wsd8XTifVIYfSi7xUwwTUk1cplCk3xG87EJiSxKdEzpPzZvmYhH6z6E1TymWa6IzkbrlXgNE/m9jZYuLtIB2SZA8ccZe1P7Ht7AFLR0r7B2/btcpqnISbJHHKeO0KynFubX46STCxbJTuT7Wdl0F8JYCV8LZTAUhKdCx8/Qo4V+oz8+NPLKYWpA6IZpyXwFnYdg==
+ bh=BVp8qUxRE121/tm+T2vAbDt1Z1MHkG+jRqNO0T9Q5w8=;
+ b=VflQ/2/2yTGvxqUr+0gMNZWBp+ekRr7g+PcJEBOXZPUZlOb8RlOibrOOjYsUco0BvyBliR6K2xOhuj+gX8GNt7VKw5Xb+834YfgAPxH0zEXPDsvCivJSOo8wqyrwAm+ejAdTr8sRFi8I7exRHSAh0+9BrhI0eonuZMwp/1ygQ1JFy+omYAl87m6kTDnAQjekZoA7ztkMSl+r6e6q4kmcTa+tSow02D4yF0HxkvL6qVQRVyaqEpQhsaYWWUrgNl7rstBkaFAAlLbe8/OYDRpPrZjGk9B2rmuBkNgeAFh/qAgi2h0O+0WR598HxnQwajQQ6Lz4QBRwmnGWai56QKswMw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microsoft.com; dmarc=pass action=none
- header.from=microsoft.com; dkim=pass header.d=microsoft.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=selector2;
+ smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
+ dkim=pass header.d=marvell.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=marvell.onmicrosoft.com; s=selector2-marvell-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Sw/iJjUaB7Zgd3IuIPZ87gZW+5d2qkZacf4u91TH+/o=;
- b=IB0Gn/teGOpoGUUdjG6LAGzS5ACUzqoCak9mdb2P2O0fck1P2sSoOo/Ak0emkhDXZ6VmFY2wQvpsrVRmc3dmmtdC0STuPjnLn52t1kMLRIAOafN9UoJFRXwtD3wApEfaAxrOybvWPLjb/FE+QUpA6PvjRbFK8MF3QlHOFyzJW4M=
-Received: from CY4PR21MB0136.namprd21.prod.outlook.com (10.173.189.18) by
- CY4PR21MB0134.namprd21.prod.outlook.com (10.173.189.16) with Microsoft SMTP
+ bh=BVp8qUxRE121/tm+T2vAbDt1Z1MHkG+jRqNO0T9Q5w8=;
+ b=UPrh9KnoJpgdk55a6MmcoazMm1XscpdoM+FrihQVhNzWsku83IgwQha2w0+lN65cgi9EIx1E7F3GjWKsEKaJWAi4ChK6G65AHiIIfHk29h0IlvnoKFO4HliYcb9j1No9Tib3p08qCUzasG4/9/OLX+n/B5kw5P/QEqDZ0ZaCYik=
+Received: from BN8PR18MB2868.namprd18.prod.outlook.com (20.179.74.155) by
+ BN8PR18MB2804.namprd18.prod.outlook.com (20.179.73.85) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.20; Wed, 6 Nov 2019 00:40:04 +0000
-Received: from CY4PR21MB0136.namprd21.prod.outlook.com
- ([fe80::c012:a072:ce15:ebd6]) by CY4PR21MB0136.namprd21.prod.outlook.com
- ([fe80::c012:a072:ce15:ebd6%6]) with mapi id 15.20.2430.020; Wed, 6 Nov 2019
- 00:40:04 +0000
-From: Michael Kelley <mikelley@microsoft.com>
-To: boqun.feng <boqun.feng@gmail.com>
-Subject: RE: [PATCH v5 2/8] arm64: hyperv: Add hypercall and register access
- functions
-Thread-Topic: [PATCH v5 2/8] arm64: hyperv: Add hypercall and register access
- functions
-Thread-Index: AQHVeh04Ms529Em9Uk+lYQprCDUhuKd6nqIAgALhQ3A=
-Date: Wed, 6 Nov 2019 00:40:04 +0000
-Message-ID: <CY4PR21MB013693817F4AF4EFA6A4DCD3D7790@CY4PR21MB0136.namprd21.prod.outlook.com>
-References: <1570129355-16005-1-git-send-email-mikelley@microsoft.com>
- <1570129355-16005-3-git-send-email-mikelley@microsoft.com>
- <20191104043632.GB182@boqun-laptop.fareast.corp.microsoft.com>
-In-Reply-To: <20191104043632.GB182@boqun-laptop.fareast.corp.microsoft.com>
+ 15.20.2430.20; Wed, 6 Nov 2019 01:01:39 +0000
+Received: from BN8PR18MB2868.namprd18.prod.outlook.com
+ ([fe80::431:e92e:ca76:f241]) by BN8PR18MB2868.namprd18.prod.outlook.com
+ ([fe80::431:e92e:ca76:f241%5]) with mapi id 15.20.2408.024; Wed, 6 Nov 2019
+ 01:01:39 +0000
+From: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>
+To: "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH 0/2] Workaround for ThunderX2 erratum 221
+Thread-Topic: [PATCH 0/2] Workaround for ThunderX2 erratum 221
+Thread-Index: AQHVlD2+Hbd68lyaXEuRVf5Y/wFAFw==
+Date: Wed, 6 Nov 2019 01:01:39 +0000
+Message-ID: <1573002091-9744-1-git-send-email-gkulkarni@marvell.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Enabled=True;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SiteId=72f988bf-86f1-41af-91ab-2d7cd011db47;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Owner=mikelley@ntdev.microsoft.com;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SetDate=2019-11-06T00:40:02.7590240Z;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Name=General;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Application=Microsoft Azure
- Information Protection;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_ActionId=c2e5f6c0-4cbd-4c50-86dc-7e3599d1293f;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Extended_MSFT_Method=Automatic
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=mikelley@microsoft.com; 
-x-originating-ip: [24.22.167.197]
+x-clientproxiedby: BYAPR11CA0087.namprd11.prod.outlook.com
+ (2603:10b6:a03:f4::28) To BN8PR18MB2868.namprd18.prod.outlook.com
+ (2603:10b6:408:a2::27)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 1.8.3.1
+x-originating-ip: [199.233.59.128]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: bdcd0305-18d9-430e-b869-08d76251ddc8
-x-ms-traffictypediagnostic: CY4PR21MB0134:|CY4PR21MB0134:|CY4PR21MB0134:
-x-ms-exchange-transport-forked: True
-x-ld-processed: 72f988bf-86f1-41af-91ab-2d7cd011db47,ExtAddr
-x-microsoft-antispam-prvs: <CY4PR21MB0134F75215C550D2C7DE5797D7790@CY4PR21MB0134.namprd21.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-ms-office365-filtering-correlation-id: e681de9a-873d-475f-003f-08d76254e112
+x-ms-traffictypediagnostic: BN8PR18MB2804:
+x-microsoft-antispam-prvs: <BN8PR18MB280492D82BC5ED5E5F6BD1C3B2790@BN8PR18MB2804.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
 x-forefront-prvs: 02135EB356
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(396003)(376002)(366004)(39860400002)(346002)(136003)(189003)(199004)(6436002)(9686003)(86362001)(55016002)(4326008)(6246003)(33656002)(8676002)(81166006)(446003)(81156014)(186003)(25786009)(76176011)(52536014)(316002)(102836004)(7696005)(8936002)(26005)(3846002)(22452003)(11346002)(6116002)(6506007)(229853002)(8990500004)(2906002)(7416002)(99286004)(54906003)(6916009)(256004)(476003)(66066001)(7736002)(486006)(107886003)(66946007)(5660300002)(305945005)(66446008)(66556008)(478600001)(64756008)(71200400001)(66476007)(10290500003)(71190400001)(74316002)(14454004)(10090500001)(76116006);
- DIR:OUT; SFP:1102; SCL:1; SRVR:CY4PR21MB0134;
- H:CY4PR21MB0136.namprd21.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microsoft.com does not designate
+ SFS:(10009020)(4636009)(346002)(396003)(136003)(366004)(376002)(39860400002)(199004)(189003)(4744005)(8676002)(99286004)(81166006)(81156014)(2906002)(316002)(2501003)(50226002)(8936002)(54906003)(110136005)(3846002)(6116002)(36756003)(476003)(25786009)(14454004)(186003)(478600001)(26005)(102836004)(66066001)(386003)(6506007)(486006)(2201001)(2616005)(86362001)(66556008)(71200400001)(71190400001)(256004)(14444005)(7736002)(305945005)(4720700003)(52116002)(66446008)(64756008)(6486002)(66476007)(66946007)(6436002)(4326008)(6512007)(5660300002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BN8PR18MB2804;
+ H:BN8PR18MB2868.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: marvell.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: +fvLJ51TRo36T+u6Hhw5o8bcpGG2dosvVSHlmAP+bWt28lxABZ5WYxRs/64U7lo0lJy0wzLaGH86riEcQr4LFb+ok9hmsOZxxMM0zehiFhfwSAKDlcClYTDGs8CusbBew/QGz51HNYmR1tbaCQPAmZiFDmMU4EqRWrZ06rD2qCvl4XjaX1d1MTFCtvhj2A+r0RJGzA5P3zzjdJlCUvNAbQx9UIhIa+JHsIv92Hk890SJxaAhe+UgEFFIOD5DaAMdQiLgRtmFGlw9m74XgvpUlOoMZMS7sXKzRjEl7uqNO5+KyCpfft6Al9NOeV/oL8F2b0B1JyU7kJJpucddMKbD5QcJgUI1kkt0jXMBPVHx7bq3tnti7MyqO2YyfvIk++jVzLQNPx1TahH7qrbSsXY4zXEd5tG56LLfVFG6QudY8iU4ezpJPrEhApEb6GlH6aiX
+x-microsoft-antispam-message-info: gdPAi0IudJncwAfHg3+ydnPPFyFxgek/aHbqJCznAPxBbNDAXxnjjxkheGlr09As5JdFV4BLn6MaXLn63Ak88vFWBrOmOoa2wfmgJaPApZmVXndcRPcQooW0EUVWsC3L2u4Wyh2ZmBh0iYzonDE+f2shifTwEmmyJg2ZVTqe9rNlh4Ay7qr4xz9q/G5ML2D3ZgE4kVZP03ntWcBbhapH5TySTt+8NzAYRPVqyQjmDW1P7zxMqMUWi6Noa1dqOX9+5xcHUDxld8dtgtpGRQ8ccdh5m4u8PcfU0qDG9ySY13J/7BCXw4Rt8yv07WYddGp06sO8AKQQU6HTEdhA8pGjh2pAnERFEgTzBVJMC4kTCUvEX65eKogoQ6EDyTFj+OmwaXhILHN2K8H6n5Jq2U9ljTTslrsDgGPWwxbbFXNtrVluweTRoidorIDnujAWkyGD
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-OriginatorOrg: microsoft.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bdcd0305-18d9-430e-b869-08d76251ddc8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Nov 2019 00:40:04.7227 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: e681de9a-873d-475f-003f-08d76254e112
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Nov 2019 01:01:39.1091 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: PhsGnRKv7t0sfu4vQc0Pe7AqDTdtlBCaI15xLA1ov9pP3cYtxL0X7Nh1nS/QxMn0bdHXgrklkd+tw2KJ5upsqvk0q87alveT4F6gdAvQ8sI=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR21MB0134
+X-MS-Exchange-CrossTenant-userprincipalname: 5PK8DoYlw8CL9xo8CTeKpVGq0Q7G//xt9sFMHdXPA8JEn5gikxzQVb9ehfRoaEQQan6DSpVu+QFW3GTvANX5QQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR18MB2804
+X-OriginatorOrg: marvell.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,1.0.8
+ definitions=2019-11-05_09:2019-11-05,2019-11-05 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_164009_780590_1E6C0BE3 
-X-CRM114-Status: GOOD (  14.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191105_170158_937906_E42FED94 
+X-CRM114-Status: GOOD (  10.85  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.79.131 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.148.174 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -123,7 +136,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -136,93 +148,41 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "maz@kernel.org" <maz@kernel.org>,
- "linux-hyperv@vger.kernel.org" <linux-hyperv@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "jasowang@redhat.com" <jasowang@redhat.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "marcelo.cerri@canonical.com" <marcelo.cerri@canonical.com>,
- "olaf@aepfle.de" <olaf@aepfle.de>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "apw@canonical.com" <apw@canonical.com>,
- "devel@linuxdriverproject.org" <devel@linuxdriverproject.org>,
- vkuznets <vkuznets@redhat.com>, KY Srinivasan <kys@microsoft.com>,
- "will@kernel.org" <will@kernel.org>, Sunil Muthuswamy <sunilmut@microsoft.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ "corbet@lwn.net" <corbet@lwn.net>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ "gklkml16@gmail.com" <gklkml16@gmail.com>,
+ "mingo@redhat.com" <mingo@redhat.com>, "will@kernel.org" <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Boqun Feng <boqun.feng@gmail.com> Sent: Sunday, November 3, 2019 8:37 PM
->
-> > diff --git a/arch/arm64/Kbuild b/arch/arm64/Kbuild
-> > index d646582..2469421 100644
-> > --- a/arch/arm64/Kbuild
-> > +++ b/arch/arm64/Kbuild
-> > @@ -3,4 +3,5 @@ obj-y			+= kernel/ mm/
-> >  obj-$(CONFIG_NET)	+= net/
-> >  obj-$(CONFIG_KVM)	+= kvm/
-> >  obj-$(CONFIG_XEN)	+= xen/
-> > +obj-$(CONFIG_HYPERV)	+= hyperv/
-> 
-> I did a kernel built with CONFIG_HYPERV=m today, and found out this line
-> should be (similar to x86):
-> 
-> 	+obj-$(subst m,y,$(CONFIG_HYPERV))      += hyperv/
-> 
-> , otherwise, when CONFIG_HYPERV=m, files in arch/arm64/hyperv/ will be
-> compiled as obj-m, and symbols defined in those files cannot be
-> used by kernel builtin, e.g. hyperv_timer (since CONFIG_HYPERV_TIMER=y
-> in this case).
+This erratum is found when system hang reported by internal
+benchmarking team while they were trying ThunderX2 PMU uncore
+events along with cpu/memory intensive applications like stream,
+SPECjbb, SPECInt, etc.
 
-Agreed.  I'll fix that in the next version.
+The workaround is to disable event multiplexing.
 
-> 
-> A compile/link error I hit today is:
-> 
-> | /home/boqun/linux-arm64/drivers/clocksource/hyperv_timer.c:98: undefined reference
-> to `hv_set_vpreg'
-> | aarch64-linux-gnu-ld: /home/boqun/linux-arm64/drivers/clocksource/hyperv_timer.c:98:
-> undefined reference to `hv_set_vpreg'
+The current Perf core does not provide any provision to PMUs
+to disable event multiplexing. In first patch, adding PMU
+capability to disable event multiplexing in perf core.
+In second patch, setting the capability to disable for
+the ThunderX2 UNCORE PMUs.
 
-I'm not seeing this error.  I'm building natively on an ARM64 system, though
-the environment and tools are perhaps a couple of years old.   Are you still
-able to reproduce the above error?  And is it only complaining about
-'hv_set_vpreg', or also about similar functions like 'hv_get_vpreg' that
-are very parallel?
+Ganapatrao Prabhakerrao Kulkarni (2):
+  perf/core: Adding capability to disable PMUs event multiplexing
+  Thunderx2, uncore: Add workaround for ThunderX2 erratum 221
 
-> 
-> [...]
-> 
-> Besides, another problem I hit when compiled with CONFIG_HYPERV=m is:
-> 
-> | ERROR: "screen_info" [drivers/hv/hv_vmbus.ko] undefined!
-> 
-> , which can be fixed by the following change.
-> 
-> Regards,
-> Boqun
-> 
-> ---------------->8
-> diff --git a/arch/arm64/kernel/efi.c b/arch/arm64/kernel/efi.c
-> index d0cf596db82c..8ff557ae5cc6 100644
-> --- a/arch/arm64/kernel/efi.c
-> +++ b/arch/arm64/kernel/efi.c
-> 
-> @@ -55,6 +55,7 @@ static __init pteval_t create_mapping_protection(efi_memory_desc_t
-> *md)
-> 
->  /* we will fill this structure from the stub, so don't put it in .bss */
->  struct screen_info screen_info __section(.data);
-> +EXPORT_SYMBOL(screen_info);
-> 
->  int __init efi_create_mapping(struct mm_struct *mm, efi_memory_desc_t *md)
->  {
+ Documentation/admin-guide/perf/thunderx2-pmu.rst | 9 +++++++++
+ drivers/perf/thunderx2_pmu.c                     | 3 ++-
+ include/linux/perf_event.h                       | 1 +
+ kernel/events/core.c                             | 8 ++++++++
+ 4 files changed, 20 insertions(+), 1 deletion(-)
 
-Agreed.  I can reproduce the same problem, and will fix it as you suggest.
+-- 
+2.17.1
 
-Michael
 
 _______________________________________________
 linux-arm-kernel mailing list
