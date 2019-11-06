@@ -2,58 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 712CAF11A6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 10:02:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88E62F11B7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 10:07:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O9lyDYGp3/xgik6wMxaiMlw0bg1el3FtmId9I7ICFvw=; b=ifs+CDeIuiF4yJ
-	C2u/2C24Y0WhmD77ilyVTLNoPH6osSNCBQjuPqAvgtg/07nv0ajqcYcKmflHSRxWDUOjwyQ/a07j5
-	mElOiEaxkZylwCM4grOO6D0GZHc49Q2kyeRK6f4IGyCBIuEQVBe3bXrNCxu4V7kk8VUPeZa0cBmhU
-	4fmRST5/AZY9l3qZyrwbbtFdjTKyWvxxmQFgXoLyWfvUyYuDLctZpV+KTmjXtfW0KQC2gsSCbagD2
-	3o6MDi7iIygPsZyFyvULzFsy3qQcTzVcz7M0wYHWgXzeczdpYiLn8blW5B6EiDY9P8ck+zNs845p0
-	SQDHGXIzJKiRO3qbeRPg==;
+	List-Owner; bh=PH54LdIDvhd3TzQ4ytYCPGX06EXdJPoTr/jY0UYmXBc=; b=LVORtgiN8O+iLp
+	vcB0B8wx1hPhWVgpWYb+wFbdBq6YuCG4xvsaHRQvozju6qzCOv5pShuwTuH+lgj2ortphDhSoGCr8
+	fhfEuIfLtiZ2gRf/NY5FjPQKEzZTIwIHfkPf5GAAKAp+RlVEIoCwr9gtPCoVbX3z5vOkzf8hQHfUz
+	zv1XXh+0KaMHVxnv4QGpgNFgCypLeLj6WSBEf7ES2088E0BDzJsUcdPwdIqpE4W7ldABF1lo5yAB9
+	ldraKvKS760JShgBG1i5SYPXXSLyk293HNFjf3DSYeBc6CG+Eh/V5HkdB5hindP3lbyPpQZB7M1Q4
+	hxwp88HDU1mIOuG1zcEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSHCR-0002gw-58; Wed, 06 Nov 2019 09:01:59 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iSHI4-0004lC-Nv; Wed, 06 Nov 2019 09:07:48 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSHCJ-0002gM-68
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 09:01:52 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1iSHCH-0000o8-DO; Wed, 06 Nov 2019 10:01:49 +0100
-Message-ID: <159380b7ec799f15269a4a6e8f2482a02748e6fd.camel@pengutronix.de>
-Subject: Re: [PATCH 0/2] Couple of reset-brcmstb fixes
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Florian Fainelli <f.fainelli@gmail.com>, 
- linux-arm-kernel@lists.infradead.org
-Date: Wed, 06 Nov 2019 10:01:47 +0100
-In-Reply-To: <20191104181502.15679-1-f.fainelli@gmail.com>
-References: <20191104181502.15679-1-f.fainelli@gmail.com>
-User-Agent: Evolution 3.30.5-1.1 
+ id 1iSHHx-0004jv-63; Wed, 06 Nov 2019 09:07:42 +0000
+X-UUID: 68b43c4d91ef4a59a2437d5299dfd785-20191106
+X-UUID: 68b43c4d91ef4a59a2437d5299dfd785-20191106
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1963890153; Wed, 06 Nov 2019 01:07:25 -0800
+Received: from mtkexhb01.mediatek.inc (172.21.101.102) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 6 Nov 2019 01:07:34 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkexhb01.mediatek.inc (172.21.101.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 6 Nov 2019 17:07:20 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 6 Nov 2019 17:07:20 +0800
+Message-ID: <1573031243.15410.2.camel@mtksdaap41>
+Subject: Re: [PATCH v2 7/7] drm/mediatek: Support 180 degree rotation
+From: CK Hu <ck.hu@mediatek.com>
+To: Sean Paul <sean@poorly.run>
+Date: Wed, 6 Nov 2019 17:07:23 +0800
+In-Reply-To: <20191105211034.123937-8-sean@poorly.run>
+References: <20191105211034.123937-1-sean@poorly.run>
+ <20191105211034.123937-8-sean@poorly.run>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_010151_225105_D35B99FC 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191106_010741_228177_55052640 
+X-CRM114-Status: GOOD (  13.48  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,28 +73,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org
+Cc: dcastagna@chromium.org, dri-devel@lists.freedesktop.org,
+ frkoenig@chromium.org, mcasas@chromium.org, linux-mediatek@lists.infradead.org,
+ p.zabel@pengutronix.de, matthias.bgg@gmail.com,
+ Sean Paul <seanpaul@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ markyacoub@google.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Florian,
+Hi, Sean:
 
-On Mon, 2019-11-04 at 10:15 -0800, Florian Fainelli wrote:
-> Hi Philipp,
+On Tue, 2019-11-05 at 16:10 -0500, Sean Paul wrote:
+> From: Sean Paul <seanpaul@chromium.org>
 > 
-> This series replaces the previously submitted fixes to the reset-brcmstb
-> driver and also fix the dt binding example.
+> Now that we support both reflections, we can expose 180 degree rotation
+> and rely on the simplify routine to convert that into REFLECT_X |
+> REFLECT_Y
 > 
-> Thank you!
 
-Thank you. Both applied to reset/fixes.
+Patch 1 ~ 6 of this series looks good to me.
+For this one, I think the rotation check in mtk_ovl_layer_check() should
+be modified.
 
-regards
-Philipp
+Regards,
+CK
+
+> Signed-off-by: Sean Paul <seanpaul@chromium.org>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_disp_ovl.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> index f4c4d3fedc5f..4a55bb6e2213 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> @@ -143,8 +143,8 @@ static unsigned int mtk_ovl_layer_nr(struct mtk_ddp_comp *comp)
+>  
+>  static unsigned int mtk_ovl_supported_rotations(struct mtk_ddp_comp *comp)
+>  {
+> -	return DRM_MODE_ROTATE_0 | DRM_MODE_REFLECT_Y |
+> -	       DRM_MODE_REFLECT_X;
+> +	return DRM_MODE_ROTATE_0 | DRM_MODE_ROTATE_180 |
+> +	       DRM_MODE_REFLECT_X | DRM_MODE_REFLECT_Y;
+>  }
+>  
+>  static int mtk_ovl_layer_check(struct mtk_ddp_comp *comp, unsigned int idx,
+
 
 
 _______________________________________________
