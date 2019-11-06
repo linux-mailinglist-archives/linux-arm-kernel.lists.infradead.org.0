@@ -2,73 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1589BF1AF9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 17:17:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2E0AF1B02
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 17:18:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xNqvlm3K3N/bMzLWD0YMPOZgmdFbSwQzqMKqWameXcg=; b=B9W2mkSOJHQwhBypwXESHBEqj
-	H/+wlGGoEgjq8Neqpvick4GxQ+e7YmUOGS+IMi35CmFAvyXn95TR2bj4RUAIi6WKG2RnyvuEcRtB4
-	nm6wDXwMMoHrUNTPBVlrSYuIEHnEUq/ANcZIQgwNeplmRbEybSh65VMpHrvXRFYVDlSYwuUKVNXZw
-	o8zKN4JWixc201uZc7FK06QfIpYwhm48i9MWpDCjfmAVK/S2iR0szzMZC9hlYopCiVJNaL7t65UXV
-	CvyQFwrt0V9xl9UfYY0YK6KoKItz3LvwmGN/AB8t0fFXwsuP85FEFzyn0YiEhdIY9n8LVMPAtONxa
-	9TQlO3Q4A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tynx8lztrxPFFJ9djaMbbalzPTGHO9uBp4gQMAbB4Bc=; b=L6t9larNRp3UbD
+	XzbZ6/btBtSPLWXrmU/zT9GF/3VgZCDqnGaDY6jNb9Fl8V0Ix534LjAXUAjSYFYBBsl6u/aBzuaHO
+	FXXmaS5McH6/NvTccsrSP6J6z6YLXy+O3pjae5vi3/FvyvcgpBUo+Ma3GgoITS7Z13iGNAJj3Dfk+
+	GZ0Nsff5tDO3/lcTQnoXffRAanAJdAXFalFHHkrDq8uLRUvns19svUTCQnoEQpJ402v2rj8ZNYy4V
+	4lCAAIzRXKuJ7HIiC5FOnnCEpFCmtP8fz5dg8FaCmp6n5iolWBiOb5dpGnH10OQOU/C11GOicQoLE
+	Mvf+HibE+RVvyT8T2U1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSNzs-00083B-Qf; Wed, 06 Nov 2019 16:17:28 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+	id 1iSO0r-0008Lu-2q; Wed, 06 Nov 2019 16:18:29 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSNzl-00082K-2j
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 16:17:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=6M+B3l0mYAuPdlo4NisvhpcZGxRIeK1UZtXEBEKLvTg=; b=fY/TbSAZEW7iHcxrOBDzEO4Ea
- 9Akm9bpl42LHWpb5rdDUtKEZwLZzNHxLlZdYkzagbcFaWeIjgw+L4DenOhDwKRw69G2bm8q4qRpxJ
- y+eqyGboM0gsw0ycCt10QvM/OzKzcDD36PgBJjOfF4fcUMjf3pd3r6P3gchpQG4NhTYl4=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1iSNzW-0001oA-6C; Wed, 06 Nov 2019 16:17:06 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 5E53D2743035; Wed,  6 Nov 2019 16:17:05 +0000 (GMT)
-Date: Wed, 6 Nov 2019 16:17:05 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: Linux-next-20191106 : arm64: Internal error: Oops: 96000007
-Message-ID: <20191106161705.GA11849@sirena.co.uk>
-References: <CA+G9fYvm_QEq+9e+dni1Y+bJswr9bU5=shJcC+wKjjOyiPsXXQ@mail.gmail.com>
- <bfced8c8-c64f-982e-8797-d48b5ec65291@arm.com>
+ id 1iSO0i-0008L0-W8
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 16:18:22 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iSO0f-0000VI-4J; Wed, 06 Nov 2019 17:18:17 +0100
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iSO0d-0003OC-GA; Wed, 06 Nov 2019 17:18:15 +0100
+Date: Wed, 6 Nov 2019 17:18:15 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Adam Ford <aford173@gmail.com>
+Subject: Re: [PATCH V2] ARM: dts: imx6q-logicpd: Enable ili2117a Touchscreen
+Message-ID: <20191106161815.uwcoe7spn3seupaq@pengutronix.de>
+References: <20191106142308.10511-1-aford173@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <bfced8c8-c64f-982e-8797-d48b5ec65291@arm.com>
-X-Cookie: Shah, shah!  Ayatollah you so!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20191106142308.10511-1-aford173@gmail.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 17:17:26 up 172 days, 22:35, 120 users,  load average: 0.16, 0.11,
+ 0.09
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_081721_164453_E6AA486E 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191106_081821_033538_0F99728D 
+X-CRM114-Status: GOOD (  17.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,67 +74,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>, Arnd Bergmann <arnd@arndb.de>,
- catalin.marinas@arm.com, Naresh Kamboju <naresh.kamboju@linaro.org>,
- Russell King - ARM Linux <linux@armlinux.org.uk>, lkft-triage@lists.linaro.org,
- open list <linux-kernel@vger.kernel.org>,
- Linux-Next Mailing List <linux-next@vger.kernel.org>,
- John Stultz <john.stultz@linaro.org>, will@kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2885751154373465574=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Adam,
 
---===============2885751154373465574==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="J/dobhs11T7y2rNN"
-Content-Disposition: inline
+On 19-11-06 08:23, Adam Ford wrote:
+> The LCD used with the imx6q-logicpd board has an integrated
+> ili2117a touch controller connected to i2c1.
+> 
+> This patch adds the node to enable this feature.
+> 
+> Signed-off-by: Adam Ford <aford173@gmail.com>
+> ---
+> ili2117 support is scheduled to be introduced for Kernel v5.5.
+> 
+> V2:  Change node to touchscreen@26 and move comment about 5.5 to under the dashes
+> 
+> diff --git a/arch/arm/boot/dts/imx6q-logicpd.dts b/arch/arm/boot/dts/imx6q-logicpd.dts
+> index d96ae54be338..7a3d1d3e54a9 100644
+> --- a/arch/arm/boot/dts/imx6q-logicpd.dts
+> +++ b/arch/arm/boot/dts/imx6q-logicpd.dts
+> @@ -73,6 +73,16 @@
+>  	status = "okay";
+>  };
+>  
+> +&i2c1 {
+> +	touchscreen@26 {
+> +		compatible = "ilitek,ili2117";
+> +		reg = <0x26>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pinctrl_touchscreen>;
 
+This phandle already exists?
 
---J/dobhs11T7y2rNN
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Regards,
+  Marco
 
-On Wed, Nov 06, 2019 at 04:07:52PM +0000, Robin Murphy wrote:
+> +		interrupts-extended = <&gpio1 6 IRQ_TYPE_EDGE_RISING>;
+> +	};
+> +};
+> +
+>  &ldb {
+>  	status = "okay";
+>  
+> -- 
+> 2.20.1
+> 
+> 
+> 
 
-> FWIW this smells like a builtin driver had its of_device_id table marked
-> __init, leaving drv->of_match_table as a dangling pointer to freed memory by
-> this point.
-
-Indeed, in fact I sent a fix for this to Linus Walleij yesterday having
-seen the relevant build warning when testing -next.  Someone already
-reported that it fixed the boot issues.  Hopefully Linus will pick it up
-soon :/
-
---J/dobhs11T7y2rNN
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3C8gAACgkQJNaLcl1U
-h9D7Wgf9F9Yw6Kh7mvViQn49G9SuO0EnkXYRHUVKyoPkOmKjvTneGozwupi7xFEv
-k5zZ3ZeWF1wpyER0QTwCN4ifYYkws92Q3+EyUy+k/UuAxFjpuIXupYB+Q82Vy14Z
-8KtOGNm7ga+2kNaIW2qXUQrPrqfc2diitgP+DO/7Fsl/lUpq3gC60eSzHWx8krb6
-tkCMD/krVAGMwg35Bg3/i82x1AoDLMUSmuqvUns1ioWOaY6imO4GxH0fKV3H3IzN
-9FVhQl4pcpNGhPAvCS5nnp6mYyiJ2m2vwE4TNl8mux627sfCXKPhOR60zhTasgoU
-9Q9/phWOSE2PrOEKHfPkumPs/+YdCA==
-=R1Wg
------END PGP SIGNATURE-----
-
---J/dobhs11T7y2rNN--
-
-
---===============2885751154373465574==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2885751154373465574==--
-
