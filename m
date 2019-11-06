@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B47DF196F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 16:04:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAF89F1980
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 16:05:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=s8lgsEAOA1HeK083/0Na/dxvu8+dPwTvQmSC/p7L40A=; b=Ib/Xfxm7tf6/hJRBgxjCRSUaIZ
-	kquAVd7HVzY8+dth+vqpEsrf6EJO1xsZhzclgwRtgzDXmWwXJJLOZl4lbW5EeSOK7ZQ6FcwLPdNPk
-	P2zi6CWdUQOX72sjZWdtmR8y18lJiWudN7OQXPKy9VuIz2ZhOzxObASwuneL3eLH87bubbsJWbx5G
-	RDtOxuUquMe4KhvXnxYcu+//1Od/1InA+f/9vV/tMeMtTl4vx2R99Y1H0qCoklHdJ+y8hgAYzX5Qv
-	KaQIduURa0qgWdi/i/cxtm/GWUP3fdrjEfzPxvfRry60P8HZ5wpLlTZB+0CWpE5VXGbbP6momJ/8s
-	E42AxbmQ==;
+	bh=LXk1aT8nTT5Uz768tmVAm3NDFLvCsMBcRfOXbvWbC0E=; b=qSnTxx/gpFgJZKfP+NpNUzCJsl
+	bPYTe1ATf3UG/nk/qMSWjx2/h3QefUiBmiVD4PwBVI75OY6ufNaHz/ApkZt4SGhnIdt5uvL2X1Dmd
+	PbQFTof7b9JsOguKzz5Wr/ZXgRJhQDOG9HMU5Fq1XR7z8cj9mSaLPNwmMuTUPK9BYfE16c3mLmzvF
+	99eos8lAZXbf6DJg7j+J3oS1Wo5eMYQ80MgxjUEdzZTZrYXzSjIonX06aqRfaqM3wf0j5NlSlzBR0
+	O9ODcKS/LlNwG6aKL54gLda00eOniK3enGyNM0fyTWRueBbnJjZncS7IZazzGwYOx3LEODkrs4Mgl
+	suRa3wMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSMqc-00077W-8U; Wed, 06 Nov 2019 15:03:50 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1iSMrk-0008Ny-Ii; Wed, 06 Nov 2019 15:05:00 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSMq1-0006qN-MT
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 15:03:17 +0000
+ id 1iSMq1-0006qW-LE
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 15:03:20 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 1E216C0F4F;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 24C9EC0F50;
  Wed,  6 Nov 2019 15:03:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1573052592; bh=5oeMB9CE84lgWSWl1HAT/3PLsWVooIarHoFAomQbC8c=;
+ t=1573052592; bh=ntn5h+EtiIr26cxuzm1ZrBPes0SSBYvLTZygjleUGzc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=S4sbwIDzBosHiMJ0XXvhTpL+iQyTI8N9TxIGxc5g5rjrDLqKefAAkJiegC6xTeLyr
- MMVAVklxiqwdwUbdQ77vxQzefbSKzUcHtgoGD4aBpct/UClTdasVuohYU1KiieVaFB
- 0rRxBMFcXZBzSjWxFim2heDC0NMVLYwQJB8petxr6nD9z9lyklpJwlfJxNg94MoBXc
- InlkkIf0b/dboBVTNI9wkQl9u6xC0vNYlX/xc+fh7NtTCutI501j1Mwni8gk3bE5Me
- H3CeiG2wi8HloyptzFkGUvfTPHGzaqlkwdCOpn8WypW6GZ1F2rZMjgWI2Bi9E2L6YA
- nsWBjyiTv9QjA==
+ b=klG2q3nFG65HPrpY5Kdxt47P3pYI7LWxN8yFGTQ9ytOchwkVULKnj/kfj2fmz6kTp
+ bo20ZV4qA+5zBEgV7eTtSmoeeeacKbJDbClj9VXmp8JJvXZaN9SkhmT3P8zofep/7X
+ PMZVqBY98iJsPwys1f4y7hFtQ5cDX3kexvDKl2lCE47/Qg201fXq6MEld9SVV6wRmE
+ zjKK19Yks6TWJQZvrG8ts6NovA5/rhw6Md7qHK/+vnkfg744b7YYg6MoceD6wUTgyn
+ Zt8uzjiz/4/aSmexQJo5bLNv+eY57D88JRDvkvkiQrJWNXXYjwTodHU8VJ2gA+4e52
+ cuseJ31+kCE0Q==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id D5BC0A0079;
+ by mailhost.synopsys.com (Postfix) with ESMTP id DE67CA007D;
  Wed,  6 Nov 2019 15:03:10 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net 07/11] net: stmmac: xgmac: Disable Flow Control when 1 or
- more queues are in AV
-Date: Wed,  6 Nov 2019 16:03:01 +0100
-Message-Id: <df2a41e98a7980b9f499b33b6d36d61e1effea1e.1573052379.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net 08/11] net: stmmac: xgmac: Disable MMC interrupts by
+ default
+Date: Wed,  6 Nov 2019 16:03:02 +0100
+Message-Id: <d89d225566d012d499eec5c8ab30b5e441f5c509.1573052379.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1573052378.git.Jose.Abreu@synopsys.com>
 References: <cover.1573052378.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1573052378.git.Jose.Abreu@synopsys.com>
 References: <cover.1573052378.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_070313_758690_93D06FFF 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20191106_070313_739083_E9E1A8FC 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,10 +97,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When in AVB mode we need to disable flow control to prevent MAC from
-pausing in TX side.
+MMC interrupts were being enabled, which is not what we want because it
+will lead to a storm of interrupts that are not handled at all. Fix it
+by disabling all MMC interrupts for XGMAC.
 
-Fixes: ec6ea8e3eee9 ("net: stmmac: Add CBS support in XGMAC2")
+Fixes: b6cdf09f51c2 ("net: stmmac: xgmac: Implement MMC counters")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -115,29 +115,33 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/mmc_core.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-index 2e814aa64a5c..f70ca5300b82 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-@@ -470,6 +470,7 @@ static void dwxgmac2_enable_tso(void __iomem *ioaddr, bool en, u32 chan)
- static void dwxgmac2_qmode(void __iomem *ioaddr, u32 channel, u8 qmode)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/mmc_core.c b/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
+index a223584f5f9a..252cf48c5816 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/mmc_core.c
+@@ -176,6 +176,7 @@
+ #define MMC_XGMAC_RX_PKT_SMD_ERR	0x22c
+ #define MMC_XGMAC_RX_PKT_ASSEMBLY_OK	0x230
+ #define MMC_XGMAC_RX_FPE_FRAG		0x234
++#define MMC_XGMAC_RX_IPC_INTR_MASK	0x25c
+ 
+ static void dwmac_mmc_ctrl(void __iomem *mmcaddr, unsigned int mode)
  {
- 	u32 value = readl(ioaddr + XGMAC_MTL_TXQ_OPMODE(channel));
-+	u32 flow = readl(ioaddr + XGMAC_RX_FLOW_CTRL);
+@@ -333,8 +334,9 @@ static void dwxgmac_mmc_ctrl(void __iomem *mmcaddr, unsigned int mode)
  
- 	value &= ~XGMAC_TXQEN;
- 	if (qmode != MTL_QUEUE_AVB) {
-@@ -477,6 +478,7 @@ static void dwxgmac2_qmode(void __iomem *ioaddr, u32 channel, u8 qmode)
- 		writel(0, ioaddr + XGMAC_MTL_TCx_ETS_CONTROL(channel));
- 	} else {
- 		value |= 0x1 << XGMAC_TXQEN_SHIFT;
-+		writel(flow & (~XGMAC_RFE), ioaddr + XGMAC_RX_FLOW_CTRL);
- 	}
+ static void dwxgmac_mmc_intr_all_mask(void __iomem *mmcaddr)
+ {
+-	writel(MMC_DEFAULT_MASK, mmcaddr + MMC_RX_INTR_MASK);
+-	writel(MMC_DEFAULT_MASK, mmcaddr + MMC_TX_INTR_MASK);
++	writel(0x0, mmcaddr + MMC_RX_INTR_MASK);
++	writel(0x0, mmcaddr + MMC_TX_INTR_MASK);
++	writel(MMC_DEFAULT_MASK, mmcaddr + MMC_XGMAC_RX_IPC_INTR_MASK);
+ }
  
- 	writel(value, ioaddr +  XGMAC_MTL_TXQ_OPMODE(channel));
+ static void dwxgmac_read_mmc_reg(void __iomem *addr, u32 reg, u32 *dest)
 -- 
 2.7.4
 
