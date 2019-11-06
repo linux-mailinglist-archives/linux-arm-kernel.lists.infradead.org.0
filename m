@@ -2,97 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2ABCDF1AAA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 17:00:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C229F1AC2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 17:07:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jaCvE5eMc5RQBE6mAyE4Q0K0Q/TvIQSOk9NZdz5cVyo=; b=KiWePNvhQCbrTa
-	SNGImTySGtt+TK/deNB4x3cD+swLM13M+f8fOGoOZaRKLQ9BVjuDWBDw5jfY/1nubJPPpO2Tqig/p
-	b7LkCbInpYhkQyLb0mXAKSfqbucf5OFB/1eqtRz7FLpgAegUVoWHOA/UEm8RJbXw6ZSn1hfYgFma+
-	wW8+/hD3t7r7H2rOUU2XLulixGZ7PoyJJ/GAi9C/kpNjC1vmF+s9ObYLVRWyllQrWpIulcTWw8Q8a
-	OTwF9dnYa+m0keruhIqz5kuz/NpLQtfdMWScsusFwmhv+A5TQDj0mrOZqys6YlakCVCWYEDMZn11Q
-	3AIQX7PSPJFAv9SENOhg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XSCDrDk7QwDjZs9OdXKAXjVKTXuPDAH96Qsrv+K8WYA=; b=ihqfLx5EfEbtDe
+	vU3qZFYGdhPnifRC2VJqC5HNvid6/Gd+UcCXy8F8jZvPN/gQwpde4UtV5l1OmoEYfPpa014Q+H326
+	+2g0DCsY26wMcHLJ9h8AQV1sScknQ06djlDFvkwp85f8ylkwxhdmCI5E4EYDGGMgkZ83tcp7EvV2m
+	h+gptjYWEIFVu6b9QxCToteUc07dqeEK+GTM2daGlZrYmIt7IxNvrO5PjH7+cPU7lsHfTEaobzK3u
+	b2WWkLUxg5qGGrmP1SEbzlAyAgzigjTjvi60zBSDWYZjFBgc2X7l4C1R9G4Om1MWh24QNNJZkKOAA
+	e/DucJYlvk2g4gjzv+sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSNje-0000i4-OZ; Wed, 06 Nov 2019 16:00:42 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iSNpu-00036v-Mw; Wed, 06 Nov 2019 16:07:10 +0000
+Received: from 212.199.177.27.static.012.net.il ([212.199.177.27]
+ helo=herzl.nuvoton.co.il)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSNjK-0000UL-KL
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 16:00:24 +0000
-Received: by mail-pf1-x444.google.com with SMTP id x28so16023934pfo.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 Nov 2019 08:00:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=arista.com; s=googlenew;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=1GV3/Jdxkg8ik6S7OWfdp2ifwH1Q7AbghamYNHcPHOc=;
- b=VSOaZA+jblM9AJLZwqdcCQod+zmpe8jHwojVTlpMraDgX4jrwb/4WIL5cqdd1d0kTR
- lMt1fPwOvxB8EgRvMAmZx9dl9lR19yeXgQaPeRwnKDGcRJNcgdaf4YHNnOTgrn0j86MI
- MNscn9U2vaU+IAabqYj8T73H0KzZYfjFiAi52EJKJPnYBVg1T5ugyzJOLAkKWUNG2KCQ
- lfWtYITopl9ZQ3QZbf2F9iaSD9E7Wavw5O3tfO200GF2et+Vpp6Gc+yBr2lfCFFMrmqf
- b74UkHIYuLdcSkrb16h1f9jTB4iSTNUREUywfP3jg1NWBvSco9f+BcQ97E2bQin3a33Q
- RU0w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=1GV3/Jdxkg8ik6S7OWfdp2ifwH1Q7AbghamYNHcPHOc=;
- b=tCBf2UAOdEVSeJvz/7ScGgR16CuAUeE++GoUo+IKZw9iOfMrKjhfBJzYb+UfqoY19c
- 4evktB9J4AgLCpe/KCu8+YQXRupAkHzRMdEWn7lkMS6iNc1tPC7r/4hMuIDvbTMp7haj
- BURZR9kgXTgZzx+l6fugRv18W/lcKAPXjr3LvPQgefa/8jb+rUfE2tz8oxK/x7tt32kP
- qBWqDe3jvEEA+a3IHPIQJM7BgdRTuOBQ0ZaBcX3qp+ZIP8TJ6kxmPOhGU66lbxWvFEtX
- ohUkMGRhnGmkKUZVKNHxxRX/ozZKFeleeN3rlZVaCaqIB67CFsb0Z9yBUqXJYMz7N5K8
- keeQ==
-X-Gm-Message-State: APjAAAVXL8e2KsftEXIRbU1O3KKnyEmJlpmV7056NY8Zn+92197EoLNG
- aCr2atpOskUhtnafStT6KEGRuQ==
-X-Google-Smtp-Source: APXvYqxL9k+5TcfM9wckN3H0edDZs1LX2me43REHosrAo9CIFZgKkMe3XaA4FVlF2GlOyeGrmyTDyg==
-X-Received: by 2002:a17:90a:280e:: with SMTP id
- e14mr4724404pjd.135.1573056021910; 
- Wed, 06 Nov 2019 08:00:21 -0800 (PST)
-Received: from [10.83.36.153] ([217.173.96.166])
- by smtp.gmail.com with ESMTPSA id h6sm3082451pji.21.2019.11.06.08.00.17
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 06 Nov 2019 08:00:20 -0800 (PST)
-Subject: Re: [PATCH 09/50] arm64: Add loglvl to dump_backtrace()
-To: Will Deacon <will@kernel.org>
-References: <20191106030542.868541-1-dima@arista.com>
- <20191106030542.868541-10-dima@arista.com>
- <20191106132516.GC5808@willie-the-truck>
-From: Dmitry Safonov <dima@arista.com>
-Message-ID: <8750aff1-036b-4604-27ab-5e04c7f9eeb4@arista.com>
-Date: Wed, 6 Nov 2019 16:00:09 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ id 1iSNpU-0002la-LS
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 16:06:46 +0000
+Received: from taln60.nuvoton.co.il (ntil-fw [212.199.177.25])
+ by herzl.nuvoton.co.il (8.13.8/8.13.8) with ESMTP id xA6G6JSe028121;
+ Wed, 6 Nov 2019 18:06:19 +0200
+Received: by taln60.nuvoton.co.il (Postfix, from userid 10070)
+ id 45E5460275; Wed,  6 Nov 2019 18:06:19 +0200 (IST)
+From: Tomer Maimon <tmaimon77@gmail.com>
+To: linux-arm-kernel@lists.infradead.org, joel@jms.id.au, yuenn@google.com,
+ venture@google.com, benjaminfair@google.com, avifishman70@gmail.com
+Subject: [PATCH v1 0/3] arm: dts: add and modify device node in NPCM7xx device
+ tree
+Date: Wed,  6 Nov 2019 18:06:14 +0200
+Message-Id: <20191106160617.51807-1-tmaimon77@gmail.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <20191106132516.GC5808@willie-the-truck>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_080022_778239_2FB25EAF 
-X-CRM114-Status: GOOD (  12.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191106_080645_117817_37846B36 
+X-CRM114-Status: UNSURE (   7.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 4.9 (++++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (4.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 TVD_RCVD_IP            Message was received from an IP address
+ 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
+ headers
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tmaimon77[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+ CUSTOM_MED
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
+ list
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ 2.0 SPOOFED_FREEMAIL       No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,42 +75,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Petr Mladek <pmladek@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dmitry Safonov <0x7f454c46@gmail.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>, Russell King <linux@armlinux.org.uk>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Jiri Slaby <jslaby@suse.com>, Andrew Morton <akpm@linux-foundation.org>,
- Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Tomer Maimon <tmaimon77@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/6/19 1:25 PM, Will Deacon wrote:
-> On Wed, Nov 06, 2019 at 03:05:00AM +0000, Dmitry Safonov wrote:
-[..]
->> @@ -82,12 +82,13 @@ static void dump_kernel_instr(const char *lvl, struct pt_regs *regs)
->>  	printk("%sCode: %s\n", lvl, str);
->>  }
->>  
->> -void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
->> +void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk,
->> +		    const char *loglvl)
->>  {
->>  	struct stackframe frame;
->>  	int skip = 0;
->>  
->> -	pr_debug("%s(regs = %p tsk = %p)\n", __func__, regs, tsk);
->> +	printk("%s%s(regs = %p tsk = %p)\n", loglvl, __func__, regs, tsk);
-> 
-> This one needs to stay as pr_debug().
+This patch set adds and modify device tree nodes in the NPCM7xx 
+Baseboard Management Controller (BMC) device tree.
 
-Makes sense, it's debug rather part of backtrace, will fix.
+The following device node add:
+	- NPCM7xx Pin controller and GPIO
+	- NPCM7xx PWM and FAN.
+	- NPCM7xx EHCI USB.
+	- NPCM7xx KCS.
+	- NPCM Peripheral SPI.
+	- NPCM FIU SPI.
+	- NPCM HWRNG.
+	- NPCM I2C.
+	- STMicro STMMAC.
+	
+The following device node modified:
+	- NPCM7xx timer.
+	- NPCM7xx clock constants parameters.
 
-Thanks,
-          Dmitry
+NPCM7xx device tree tested on NPCM750 evaluation board.
+
+Tomer Maimon (3):
+  arm: dts: modify NPCM7xx device tree clock parameter to clock constant
+  arm: dts: modify NPCM7xx device tree timer register size
+  arm: dts: add new device nodes to NPCM750 device tree
+
+ arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi | 948 +++++++++++++++++-
+ arch/arm/boot/dts/nuvoton-npcm750-evb.dts     | 444 +++++++-
+ .../boot/dts/nuvoton-npcm750-pincfg-evb.dtsi  | 157 +++
+ arch/arm/boot/dts/nuvoton-npcm750.dtsi        |  24 +-
+ 4 files changed, 1539 insertions(+), 34 deletions(-)
+ create mode 100644 arch/arm/boot/dts/nuvoton-npcm750-pincfg-evb.dtsi
+
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
