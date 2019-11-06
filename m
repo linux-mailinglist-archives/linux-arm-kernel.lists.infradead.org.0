@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32F16F1ACA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 17:08:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38FC4F1AD3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 17:10:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xKkrPKvUUDWgXp9lA6vUJVvX12XtnZkQf4edXix/6qo=; b=IvtINHqUQN0OM9CVjduWwprei
-	MuK8XEDLsITQmDoJ+eMIW0jAnNy9qkxjMaywDdtmSU7Dr/5K6y+hfDXjOahMW1em7iLUBlLP6bykN
-	bH5v8ZwDZQGPDpPk0Dn0Fo6skV+Y7uZO8Jk9fn8+6Yryl6mIwAiyD/TXm7uDTXrGpXEc8OUigJ9Ib
-	szZLFoyza42ZYB4ZEavyFgzawmv8JcXb2do3k5zfGom9X31vdOLjTlDWlrRhN44dGs005PZBWyZSQ
-	V58zdLg/9H7vGJxZCIdj0oChRfJ+iVNSvaJrdat9F3AvyUDYZZfxOSyio+k3cLTbxXwx75jUGSOGT
-	pP1T7AmGA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P+VDXYzdrtS/tWIwEbVZ6kRkmmtsRzmSwzYBVkmoVQ0=; b=QFpU4AfG/XdqEK
+	Al2XCPV8BhyGudgLryxgFipTbzVLmuoxppMi49pUPGHx+ASX7xeYqD9ipOboeD7oLaZxYH5oDniLn
+	qd53bFOFUUBdOHvFqNrVMGyh1UyHBn32R1erYTz+FMDt7gb/XotVk8zF6oz9elB2ARR3F2xVEVnrq
+	AkB/+1yvGEpwZzuN1Mu/PKPi8xEMUz7IQVXaHMrejU0Dz22QRUFegmMtuLMRSeUkgt6TUfbYZ07Vr
+	9BZT6RKqb6lBSkwIz43mfuLpEZuQWiFM9/saeQv90VXJo/RMOvv8NFImx746MWe9ZPOgcrpd3gleN
+	XS3WYQ0/EuVL6S+hiCHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSNqx-0003pd-58; Wed, 06 Nov 2019 16:08:15 +0000
+	id 1iSNsT-0004Af-UA; Wed, 06 Nov 2019 16:09:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSNqj-0003oJ-2C
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 16:08:03 +0000
+ id 1iSNsM-00049l-JO
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 16:09:44 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 76AA846A;
- Wed,  6 Nov 2019 08:07:55 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EFE5D3F71A;
- Wed,  6 Nov 2019 08:07:53 -0800 (PST)
-Subject: Re: Linux-next-20191106 : arm64: Internal error: Oops: 96000007
-To: Naresh Kamboju <naresh.kamboju@linaro.org>,
- Russell King - ARM Linux <linux@armlinux.org.uk>, catalin.marinas@arm.com,
- will@kernel.org, linux-arm-kernel@lists.infradead.org
-References: <CA+G9fYvm_QEq+9e+dni1Y+bJswr9bU5=shJcC+wKjjOyiPsXXQ@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <bfced8c8-c64f-982e-8797-d48b5ec65291@arm.com>
-Date: Wed, 6 Nov 2019 16:07:52 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6A98346A;
+ Wed,  6 Nov 2019 08:09:41 -0800 (PST)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 82DC23F71A;
+ Wed,  6 Nov 2019 08:09:39 -0800 (PST)
+Date: Wed, 6 Nov 2019 16:09:37 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Xiaowei Bao <xiaowei.bao@nxp.com>
+Subject: Re: [PATCH v6 1/3] dt-bindings: pci: layerscape-pci: add compatible
+ strings "fsl,ls1028a-pcie"
+Message-ID: <20191106160937.GB23381@e121166-lin.cambridge.arm.com>
+References: <20190902034319.14026-1-xiaowei.bao@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <CA+G9fYvm_QEq+9e+dni1Y+bJswr9bU5=shJcC+wKjjOyiPsXXQ@mail.gmail.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20190902034319.14026-1-xiaowei.bao@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_080801_195201_929B730B 
-X-CRM114-Status: GOOD (  14.08  )
+X-CRM114-CacheID: sfid-20191106_080942_683319_B4F25EA1 
+X-CRM114-Status: GOOD (  12.24  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,129 +62,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>, Arnd Bergmann <arnd@arndb.de>,
- open list <linux-kernel@vger.kernel.org>, lkft-triage@lists.linaro.org,
- Mark Brown <broonie@kernel.org>, John Stultz <john.stultz@linaro.org>,
- Linux-Next Mailing List <linux-next@vger.kernel.org>
+Cc: mark.rutland@arm.com, roy.zang@nxp.com, devicetree@vger.kernel.org,
+ linux-pci@vger.kernel.org, Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ leoyang.li@nxp.com, minghuan.Lian@nxp.com, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, bhelgaas@google.com, shawnguo@kernel.org,
+ mingkai.hu@nxp.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/11/2019 15:56, Naresh Kamboju wrote:
-> arm64 devices Juno-r2, hikey (Hi6220) and dragonboard (APQ 8016 SBC)
-> boot failed while running linux next 20191106 kernel. But qemu_arm64
-> boot pass.
-> 
-> Crash log from dragonboard,
-> 
-> [   10.656527] Unable to handle kernel paging request at virtual
-> address ffff800011b3ef68
-> [   10.656580] Mem abort info:
-> [   10.656587]   ESR = 0x96000007
-> [   10.656594]   EC = 0x25: DABT (current EL), IL = 32 bits
-> [   10.656600]   SET = 0, FnV = 0
-> [   10.656605]   EA = 0, S1PTW = 0
-> [   10.656610] Data abort info:
-> [   10.656616]   ISV = 0, ISS = 0x00000007
-> [   10.656621]   CM = 0, WnR = 0
-> [   10.656629] swapper pgtable: 4k pages, 48-bit VAs, pgdp=0000000081980000
-> [   10.656635] [ffff800011b3ef68] pgd=00000000bfeff003,
-> pud=00000000bfefe003, pmd=00000000bfefa003, pte=0000000000000000
-> [   10.656887] Internal error: Oops: 96000007 [#1] PREEMPT SMP
-> [   10.656894] Modules linked in: adv7511(+) cec msm(+) mdt_loader
-> drm_kms_helper qcom_rng drm socinfo rmtfs_mem qrtr fuse
-> [   10.656928] CPU: 0 PID: 230 Comm: systemd-udevd Not tainted
-> 5.4.0-rc6-next-20191106 #1
-> [   10.656933] Hardware name: Qualcomm Technologies, Inc. APQ 8016 SBC (DT)
-> [   10.656939] pstate: a0000085 (NzCv daIf -PAN -UAO)
-> [   10.656953] pc : __of_match_node.part.5+0x48/0x88
-> [   10.656960] lr : of_match_node+0x40/0x70
-> [   10.656964] sp : ffff8000132534d0
-> [   10.656968] x29: ffff8000132534d0 x28: ffff8000101d6260
-> [   10.656977] x27: ffff80001241a7a0 x26: ffff80001241a7a0
-> [   10.656985] x25: ffff80001241a860 x24: ffff80001241a6e8
-> [   10.656993] x23: 0000000000000000 x22: ffff00003fd08010
-> [   10.657001] x21: 0000000000000000 x20: 0000000000000000
-> [   10.657008] x19: ffff800011b3ef68 x18: ffffffffffffffff
-> [   10.657016] x17: 0000000000000000 x16: 0000000000000000
-> [   10.657024] x15: ffff8000121ffa48 x14: 4e3a666f3d534149
-> [   10.657032] x13: 0000000000000040 x12: 0000000000000028
-> [   10.657039] x11: 0000000000000001 x10: 0101010101010101
-> [   10.657047] x9 : ffff800012532c50 x8 : 0000000000000050
-> [   10.657055] x7 : ffff800010df1164 x6 : 0000000000000000
-> [   10.657063] x5 : 00000000a4fd7f12 x4 : ffff00003bd7cd18
-> [   10.657070] x3 : 0000000000000000 x2 : 0000000000000001
-> [   10.657078] x1 : ffff00003fd08010 x0 : ffff800010df1178
-> [   10.657086] Call trace:
-> [   10.657094]  __of_match_node.part.5+0x48/0x88
+On Mon, Sep 02, 2019 at 11:43:17AM +0800, Xiaowei Bao wrote:
+> Add the PCIe compatible string for LS1028A
 
-FWIW this smells like a builtin driver had its of_device_id table marked 
-__init, leaving drv->of_match_table as a dangling pointer to freed 
-memory by this point.
+Sentences must be terminated with a period.
 
-Robin.
+> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
+> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> ---
+> v2:
+>  - No change.
+> v3:
+>  - No change.
+> v4:
+>  - No change.
+> v5:
+>  - No change.
+> v6:
+>  - No change.
+> 
+>  Documentation/devicetree/bindings/pci/layerscape-pci.txt | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/pci/layerscape-pci.txt b/Documentation/devicetree/bindings/pci/layerscape-pci.txt
+> index e20ceaa..99a386e 100644
+> --- a/Documentation/devicetree/bindings/pci/layerscape-pci.txt
+> +++ b/Documentation/devicetree/bindings/pci/layerscape-pci.txt
+> @@ -21,6 +21,7 @@ Required properties:
+>          "fsl,ls1046a-pcie"
+>          "fsl,ls1043a-pcie"
+>          "fsl,ls1012a-pcie"
+> +        "fsl,ls1028a-pcie"
+>    EP mode:
+>  	"fsl,ls1046a-pcie-ep", "fsl,ls-pcie-ep"
+>  - reg: base addresses and lengths of the PCIe controller register blocks.
 
-> [   10.657099]  of_match_node+0x40/0x70
-> [   10.657106]  of_match_device+0x30/0x50
-> [   10.657115]  platform_match+0x4c/0xe8
-> [   10.657122]  __device_attach_driver+0x3c/0x120
-> [   10.657128]  bus_for_each_drv+0x78/0xd8
-> [   10.657135]  __device_attach+0xe8/0x170
-> [   10.657141]  device_initial_probe+0x24/0x30
-> [   10.657148]  bus_probe_device+0xa0/0xa8
-> [   10.657154]  device_add+0x4fc/0x7a8
-> [   10.657160]  of_device_add+0x50/0x68
-> [   10.657167]  of_platform_device_create_pdata+0xf0/0x170
-> [   10.657173]  of_platform_bus_create+0x174/0x550
-> [   10.657180]  of_platform_populate+0x94/0x158
-> [   10.657358]  msm_pdev_probe+0x74/0x358 [msm]
-> [   10.657369]  platform_drv_probe+0x58/0xa8
-> [   10.657377]  really_probe+0x290/0x488
-> [   10.657384]  driver_probe_device+0x12c/0x148
-> [   10.657391]  device_driver_attach+0x74/0x98
-> [   10.657397]  __driver_attach+0xc4/0x178
-> [   10.657403]  bus_for_each_dev+0x84/0xd8
-> [   10.657409]  driver_attach+0x30/0x40
-> [   10.657416]  bus_add_driver+0x170/0x258
-> [   10.657423]  driver_register+0x64/0x118
-> [   10.657430]  __platform_driver_register+0x54/0x60
-> [   10.657582]  msm_drm_register+0x60/0x6c [msm]
-> [   10.657592]  do_one_initcall+0x94/0x460
-> [   10.657600]  do_init_module+0x60/0x204
-> [   10.657606]  load_module+0x2078/0x2720
-> [   10.657613]  __do_sys_finit_module+0x100/0x120
-> [   10.657619]  __arm64_sys_finit_module+0x28/0x38
-> [   10.657628]  el0_svc_common.constprop.2+0x7c/0x180
-> [   10.657635]  el0_svc_handler+0x34/0xa0
-> [   10.657643]  el0_sync_handler+0x124/0x1f8
-> [   10.657649]  el0_sync+0x140/0x180
-> [   10.657659] Code: 1a80d281 9a93d2b5 2a0103f4 91032273 (39400264)
-> [   10.657667] ---[ end trace 8b4c2740f71524d1 ]---
-> 
-> Full test log,
-> https://lkft.validation.linaro.org/scheduler/job/994051#L1396
-> 
-> metadata:
->    git branch: master
->    git repo: https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
->    git commit: dcd34bd234181ec74f081c7d0025204afe6b213e
->    git describe: next-20191106
->    make_kernelversion: 5.4.0-rc6
->    kernel-config:
-> http://snapshots.linaro.org/openembedded/lkft/lkft/sumo/dragonboard-410c/lkft/linux-next/640/config
->    build-location:
-> http://snapshots.linaro.org/openembedded/lkft/lkft/sumo/dragonboard-410c/lkft/linux-next/640
-> 
-> 
-> Best regards
-> Naresh Kamoju
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+I have applied this series to pci/layerscape, thanks.
+
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
