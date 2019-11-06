@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC19FF197D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 16:04:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 974BCF196B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 16:03:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=RdwlIDVrOIP5d7AuRXHDKcNXw8RBIJNEe2sW2qYmDLM=; b=Ghkj71XmhSVh45EZx998Q9UfXQ
-	JNrVQdDTMJG7L/Nej0rybyAZ/aLay8cRx2L6AFYP1z1kMxhL4bWoRJj5X3s1D9E1QnkoIGcMAHkUZ
-	zI3a9jtPh3s6AfTnQAORlny9XnvBh4LL+9PgDuIF24HC+pVGBO6x1bZm4h9GdrqlkDBjRCYQIeGmk
-	UfX+mc0QKkNmSgyv/8gYNjq8ILusHrHCKzU5NSO9xrYI3Hgb6f2wDrgEOV1mI+kL7Lgk6zmS3BJ4S
-	xmyBjy4PiI1IWZYRBMCneuz4vrTg3113p2l+iEkYSKxJvPsZIF2Pm+p9dEmqKVygySa1PFzeSjouP
-	QF1joEPg==;
+	bh=FaPbYbaa6uFGZVudqc+JK8cbiIb0DOQcmjEvUXdocxw=; b=NW9KwwD/iCr8WAiQ1A9Zz9IAHM
+	ctY8Gpk6dp2GtMGaXwkzEow89AJKA91n/z9s+Qpx65v8ztb453YeyXi2WZ4Q29MlK3sVnwE4zCQDQ
+	bYLIDOLUdNwzVpIsvS4zGG62zdf0JkGTVv7+EolB8anIbOL7NkbYYr46CVxwVy8lbZktFJj+1tFKm
+	0C95hDbPPxpimiORikc7LevUJmZ4jG+PTkgWkWzrexDYUgIuta//sMJ95wxhct9HAvDGqHZP9w1LJ
+	w/pmzyo/AKgJJcIZBVAFzm8dNxHwTSzMO+4DbpZ6E/zFJedICIAyz4NBu8X1l9iSEG9KQpTRIs7PV
+	zqZmb7+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSMr7-0007dg-BO; Wed, 06 Nov 2019 15:04:21 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1iSMqJ-0006tn-6s; Wed, 06 Nov 2019 15:03:31 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSMq1-0006qG-Ko
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 15:03:17 +0000
+ id 1iSMq1-0006qF-Kr
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 15:03:15 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id EACE8C0F4B;
- Wed,  6 Nov 2019 15:03:11 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 0BD37C0F4C;
+ Wed,  6 Nov 2019 15:03:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1573052592; bh=lSRQ99cSkNF5cr5WxPR/Dx/0LMZ4CIS9zons/16DEj8=;
+ t=1573052592; bh=/tE+oQIQA2jqvpF/cTAJUXNupu7zNSj0ZPechBJ4a80=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=Pw/P8DdssfrTW3yDFcoXSMSgTx5+bn4QCogK5YhSBJazfIS/dYqu7ydVb+0g+ar1V
- v4BP1bkXd0MeACdt8e6KRZt/VC4V/4lTeMiQSSsnmTRQnbZZR3g0TUXbXCeK8do3HC
- 9Ksmsok+8xTucUCB7+90Ca3kxSbz1EN8yIOaalYQjuo3RaF2OBLm+U/8AeeTpz0A7O
- eIy7g6LP4QQqyIsW8A9s8sSORSQaTWlQeU4OaogImXfaxs4yGPV0Fc93a9w7P/hwnq
- 1okPm/to7hcmIpbx7EwP06iLRhcBn8GdDydOfsUkuy8TiicOqH90vv72YT5jBiU2m3
- xJsyeyOpaBDdg==
+ b=Hr+1PAtLSqexo2ssdltOXhZE5pwsCZsv1gLLmikMcjaUFfrwvjBoqAqfkSIroAHUF
+ xIikutERC8i4ysVxt+mIRlnLLuz83SmeCfcN35VhFwAFVq3Bgix8kVIn7NxpUS8RT6
+ Ykv1c7I0nVu6MovpI61/gVf/taiCl59Xoh0OdAlkxWeLHAt9Sv34GewsTxKyVRallf
+ PaMtpQD7OUwHWMR9FxbwAthr4vdwJ0zhl8c5mS/QATBSove2gtDNzxz1eCF1+vx928
+ pDZ3I1k81Nub6GHpC66bu5Y6LDjAR78If5+YFfcUTRxmQo8dmMJ85uUSJKh7YlnkAt
+ URW+fg++oGOFg==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id A2F9CA006C;
+ by mailhost.synopsys.com (Postfix) with ESMTP id B6D3FA0070;
  Wed,  6 Nov 2019 15:03:10 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net 04/11] net: stmmac: xgmac: Only get SPH header len if
- available
-Date: Wed,  6 Nov 2019 16:02:58 +0100
-Message-Id: <58ba72cfcc373c2f98a6a89da3da12a4fc9f7b3b.1573052379.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net 05/11] net: stmmac: xgmac: Fix TSA selection
+Date: Wed,  6 Nov 2019 16:02:59 +0100
+Message-Id: <c1342c865938cc087d5c9400bbe11b71cd6c0062.1573052379.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1573052378.git.Jose.Abreu@synopsys.com>
 References: <cover.1573052378.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1573052378.git.Jose.Abreu@synopsys.com>
 References: <cover.1573052378.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_070313_742304_7B40FA01 
-X-CRM114-Status: GOOD (  13.77  )
+X-CRM114-CacheID: sfid-20191106_070313_700556_31A67297 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,10 +96,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Split Header length is only available when L34T == 0. Fix this by
-correctly checking if L34T is zero before trying to get Header length.
+When we change between Transmission Scheduling Algorithms, we need to
+clear previous values so that the new chosen algorithm is correctly
+selected.
 
-Fixes: 67afd6d1cfdf ("net: stmmac: Add Split Header support and enable it in XGMAC cores")
+Fixes: ec6ea8e3eee9 ("net: stmmac: Add CBS support in XGMAC2")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -115,23 +114,21 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2_descs.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_descs.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_descs.c
-index ae48154f933c..bd5838ce1e8a 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_descs.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_descs.c
-@@ -288,7 +288,8 @@ static int dwxgmac2_get_rx_hash(struct dma_desc *p, u32 *hash,
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+index 01075a955c66..070bd7d1ae4c 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+@@ -224,6 +224,7 @@ static void dwxgmac2_config_cbs(struct mac_device_info *hw,
+ 	writel(low_credit, ioaddr + XGMAC_MTL_TCx_LOCREDIT(queue));
  
- static int dwxgmac2_get_rx_header_len(struct dma_desc *p, unsigned int *len)
- {
--	*len = le32_to_cpu(p->des2) & XGMAC_RDES2_HL;
-+	if (le32_to_cpu(p->des3) & XGMAC_RDES3_L34T)
-+		*len = le32_to_cpu(p->des2) & XGMAC_RDES2_HL;
- 	return 0;
+ 	value = readl(ioaddr + XGMAC_MTL_TCx_ETS_CONTROL(queue));
++	value &= ~XGMAC_TSA;
+ 	value |= XGMAC_CC | XGMAC_CBS;
+ 	writel(value, ioaddr + XGMAC_MTL_TCx_ETS_CONTROL(queue));
  }
- 
 -- 
 2.7.4
 
