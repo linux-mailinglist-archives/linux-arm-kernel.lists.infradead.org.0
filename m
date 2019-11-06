@@ -2,78 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7FFCF102D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 08:25:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D61E3F103E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 08:29:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TisH0YopLk7lBss8L3b5/bvFPBf1j/Nk+t+Ois88FiU=; b=PmE6XqdJhHOHhkjTG3CNoRTDj
-	53GHWtA/2Cy6Z1FzO7ekp5aPIUl3SQJVd/E1AiL61PkV3Fm8UsL5tmp2uyTPwIlv1G0k7byz/XJWE
-	2RNt8br6go1wZKbS1Qf3nyendjeB3b4UbzvujDxZ8E9F+zZ2PE4sh+RECVQn77lBg5QfE1mgMQ4gv
-	GIYANF2fkFRd+8MbPWsQ58O46QhFhMozvZ58kG/SA5xtxFPmWOyStnpK2Q52Am2oJkpW3g1d6xI/3
-	dzT317UzTa2H95vmygCJTb+aOoOGeSxfgxBEJ+SXNM/vT9wdUJz3ApgarFtReKGEC/MJinoOH9BGE
-	oyAUP8VDQ==;
+	 bh=uiq3vBNR25DhX35kZhBr4bSb+FGufXb9kid8hnecuOw=; b=l2lJiWscmBiINZTBxtK/ux+oQ
+	FlrgBHYxsAdl4aDGNG1Hj+e0yrNyAVFpDsq8uksAEjY8mDZBTnjiDZJc1NvXKzf9+p5BEwp3TZIKI
+	2Uqp88bObR22ZoNlqQhbAZm3HUgaQYEjMJfq7mr1ZXA2Iriv4dHrgtmdPcc7vaq3h0ytfokTe6feA
+	fT3RZaymXmnkbTR8yoT71I+h3OW38IElRw+PSfC0bdbFGrV/k22GyMG6YUd6Cp5F0TZMqMFwWIAbq
+	6fF23YnYOtikdAvSyIGcqtCxN0Z1hhSnc1Ei1hYrhvFSIxQ/jpzp3hHQeMb8Ga29OKaWu6Vf8qKu/
+	iFlFjVcRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSFhJ-0007p0-3u; Wed, 06 Nov 2019 07:25:45 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iSFkw-0008WQ-3I; Wed, 06 Nov 2019 07:29:30 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSFh9-0007oN-El
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 07:25:36 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xA67PQbb101819;
- Wed, 6 Nov 2019 01:25:26 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573025126;
- bh=dJZ3sYUnQAot2lJVFPiVqyY58bNj17rDpH/tpnzKJI0=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=OwHcmlJRFBVGaXR1CTf+KNdoaK5uYZZ2QZbjb/ATdmLrOrNETwj8tkr2WZNfHoF3v
- RZ4dRD0G/vqLsuPcTRBRw48HVx0yfjfHA8id6hhOPT8PxwdcQt9VOXD0bsqCeqY1hJ
- S3/CbNHLPWu8tMzj/Q2t1icaPDOFXxlvv1mkoVOw=
-Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xA67PQIB078357
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 6 Nov 2019 01:25:26 -0600
-Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 6 Nov
- 2019 01:25:09 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 6 Nov 2019 01:25:24 -0600
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id xA67PJRS106020;
- Wed, 6 Nov 2019 01:25:22 -0600
-Subject: Re: [PATCH 09/10] crypto: add timeout to crypto_wait_req
-To: Gilad Ben-Yossef <gilad@benyossef.com>
-References: <20191017122549.4634-1-t-kristo@ti.com>
- <20191017122549.4634-10-t-kristo@ti.com>
- <CAOtvUMeBXjDBhSVgMOW=hshEx_AkNPg-Zk2c2jCDzY8vyXWW5g@mail.gmail.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <076f0bc6-ad04-9543-db02-d7c7060db036@ti.com>
-Date: Wed, 6 Nov 2019 09:25:18 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iSFkj-0008Uz-FZ; Wed, 06 Nov 2019 07:29:22 +0000
+Received: by mail-pf1-x442.google.com with SMTP id d13so18191095pfq.2;
+ Tue, 05 Nov 2019 23:29:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:cc:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding;
+ bh=CZXGdk9uFu2d7V8fak5kkfAh72DjR9+d3K1XsYdLz38=;
+ b=oGcJVGIO9nAfwZ9U9gs9P3ysGflXOrasF6qEiEhb6WpEy/r0O4b4WcXcLFHBABCJ7R
+ QUOnBvxM0K+ORQ5GEwdd68Rbvuyj5JajApo+O20Qk7aw+1UO9FWS+6+LzSfRmtqSLrdq
+ xvCHWuUmC+aEABOOmXkQjFb1AvmC1AZ+Bwjcb+sSQtS1GRTuQLMEbpuch+Wd9OB5B9nR
+ MEP3ZWqL3l8J6HAnG5DRusZtOBOPsYcpMAZ4FMs88UBSyQ00BeMuWCLwvOdu7PSHWk++
+ XtgmclZQxAc89Qmj6l/gKcwAVt76pZv/YKMWttV48g2arcZGneYo8SkwGAFkxvqsnIJf
+ JInQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:cc:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding;
+ bh=CZXGdk9uFu2d7V8fak5kkfAh72DjR9+d3K1XsYdLz38=;
+ b=W4k7E51/n9wJZ+xIjNtwPCJE6Ff2f7liovTX+1+K5OPJO1DPIavOeJ/hY5KF+WpZXF
+ TRdL4x1Xh5Xy7Nw8PyPLjWjssV/d27RgYB3V2NXP/f92M+XTMakA2OVAqB/P5VVVTKSJ
+ YTPTp/+5qtOZFXb48LxQaJrIz5J0su9Tl3wsoLbSQ0CHfCk2/k39e3FNTLaLXVvuqFnk
+ fBJEFoDsNBHIVhZYVcJ8fiOimncmPjFjQg5K/A3d7M+32pXELkNQ/tvqsT/gOc5AWeAm
+ S1mvh34ovxYNKdolZ1xXk2Pp4tiVwza7CgnU5xlNDedSgDGy6oog4vuiynYGf9o8jyXR
+ Udtg==
+X-Gm-Message-State: APjAAAW/sWgj/JhKilunU2rcanW9MW08PCuogPw63sMNCab+jzVatDEL
+ DaQSMaz19dfNdmH+y7YJI5I=
+X-Google-Smtp-Source: APXvYqxBVXh1jmjAePr3S1g4NtkWBhTLAIl9OTaZqYXb6wMgMaiO3o4Y3mgSEbDLjoLjMA38tOeOfg==
+X-Received: by 2002:a62:90:: with SMTP id 138mr1557534pfa.209.1573025356612;
+ Tue, 05 Nov 2019 23:29:16 -0800 (PST)
+Received: from [192.168.1.101] (122-58-182-39-adsl.sparkbb.co.nz.
+ [122.58.182.39])
+ by smtp.gmail.com with ESMTPSA id h13sm26505185pfr.98.2019.11.05.23.29.01
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 05 Nov 2019 23:29:15 -0800 (PST)
+Subject: Re: [PATCH v3 05/13] m68k: mm: use pgtable-nopXd instead of
+ 4level-fixup
+To: Geert Uytterhoeven <geert@linux-m68k.org>, Mike Rapoport <rppt@kernel.org>
+References: <1572850587-20314-1-git-send-email-rppt@kernel.org>
+ <1572850587-20314-6-git-send-email-rppt@kernel.org>
+ <CAMuHMdUG3V7uxzhbetw75vVeobeP0-bQySb3r=0V5XujUF123g@mail.gmail.com>
+ <20191104094748.GB23288@rapoport-lnx>
+ <CAMuHMdVHsNyLxhaxZcVdLvQ1PUnb=2_+ECPWVD0234V+qu+kOw@mail.gmail.com>
+From: Michael Schmitz <schmitzmic@gmail.com>
+Message-ID: <15fafca0-e4c4-1f46-4f19-9b2a177f7d6b@gmail.com>
+Date: Wed, 6 Nov 2019 20:28:59 +1300
+User-Agent: Mozilla/5.0 (X11; Linux ppc; rv:45.0) Gecko/20100101 Icedove/45.4.0
 MIME-Version: 1.0
-In-Reply-To: <CAOtvUMeBXjDBhSVgMOW=hshEx_AkNPg-Zk2c2jCDzY8vyXWW5g@mail.gmail.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <CAMuHMdVHsNyLxhaxZcVdLvQ1PUnb=2_+ECPWVD0234V+qu+kOw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_232535_600844_9DA06C3E 
-X-CRM114-Status: GOOD (  26.90  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191105_232918_194783_EF534672 
+X-CRM114-Status: GOOD (  14.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (schmitzmic[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -81,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,69 +102,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, Eric Biggers <ebiggers@google.com>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- linux-omap@vger.kernel.org, David Miller <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ Linux MM <linux-mm@kvack.org>, sparclinux <sparclinux@vger.kernel.org>,
+ Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
+ Greg Ungerer <gerg@linux-m68k.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Linux-Arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
+ Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>, Sam Creasey <sammy@sammy.net>,
+ Arnd Bergmann <arnd@arndb.de>, Jeff Dike <jdike@addtoit.com>,
+ linux-um@lists.infradead.org, linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "David S. Miller" <davem@davemloft.net>, alpha <linux-alpha@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDYvMTEvMjAxOSAwODozOSwgR2lsYWQgQmVuLVlvc3NlZiB3cm90ZToKPiBIaSwKPiAKPiAK
-PiBPbiBUaHUsIE9jdCAxNywgMjAxOSBhdCAzOjI2IFBNIFRlcm8gS3Jpc3RvIDx0LWtyaXN0b0B0
-aS5jb20+IHdyb3RlOgo+Pgo+PiBDdXJyZW50bHkgY3J5cHRvX3dhaXRfcmVxIHdhaXRzIGluZGVm
-aW5pdGVseSBmb3IgYW4gYXN5bmMgY3J5cHRvIHJlcXVlc3QKPj4gdG8gY29tcGxldGUuIFRoaXMg
-aXMgYmFkIGFzIGl0IGNhbiBjYXVzZSBmb3IgZXhhbXBsZSB0aGUgY3J5cHRvIHRlc3QKPj4gbWFu
-YWdlciB0byBoYW5nIHdpdGhvdXQgYW55IG5vdGlmaWNhdGlvbiBhcyB0byB3aHkgaXQgaGFzIGhh
-cHBlbmVkLgo+PiBJbnN0ZWFkIG9mIHdhaXRpbmcgaW5kZWZpbml0ZWx5LCBhZGQgYSAxIHNlY29u
-ZCB0aW1lb3V0IHRvIHRoZSBjYWxsLAo+PiBhbmQgcHJvdmlkZSBhIHdhcm5pbmcgcHJpbnQgaWYg
-YSB0aW1lb3V0IGhhcHBlbnMuCj4gCj4gV2hpbGUgdGhlIGluY2VudGl2ZSBpcyBjbGVhciBhbmQg
-cG9zaXRpdmUsIHRoaXMgc3VnZ2VzdGVkIHNvbHV0aW9uCj4gY3JlYXRlcyBwcm9ibGVtcyBvZiBp
-dHMgb3duLgo+IEluIG1hbnkgKG1vc3Q/KSBjYXNlcyB3aGVyZSB3ZSBhcmUgd2FpdGluZyBoZXJl
-LCB3ZSBhcmUgd2FpdGluZyBmb3IgYQo+IERNQSBvcGVyYXRpb24gdG8gZmluaXNoIGZyb20gaGFy
-ZHdhcmUuCj4gRXhpdGluZyB3aGlsZSB0aGlzIHBlbmRpbmcgRE1BIG9wZXJhdGlvbiBpcyBub3Qg
-ZmluaXNoZWQsIGV2ZW4gd2l0aCBhCj4gcHJvcGVyIGVycm9yIHJldHVybiB2YWx1ZSwgaXMgZGFu
-Z2Vyb3VzIGJlY2F1c2UKPiB1bmxlc3MgdGhlIGNhbGxpbmcgY29kZSB0YWtlcyBncmVhdCBjYXJl
-IHRvIG5vdCByZWxlYXNlIHRoZSBtZW1vcnkgdGhlCj4gRE1BIGlzIGJlaW5nIGRvbmUgZnJvbS90
-bywgdGhpcyBjYW4gaGF2ZSBkaXNhc3Ryb3VzIGVmZmVjdHMuCj4gCj4gQXMgRXJpYyBoYXMgYWxy
-ZWFkeSBtZW50aW9uZWQsIG9uZSBzZWNvbmQgbWlnaHQgc2VlbSBsaWtlIGEgbG9uZyB0aW1lLAo+
-IGJ1dCB3ZSBkb24ndCByZWFsbHkga25vdyBpZiBpdCBpcyBlbm91Z2guCj4gCj4gSG93IGFib3V0
-IGFkZGluZyBhIHNlY29uZCBBUEkgKGlnLiBjcnlwdG9fd2FpdF9yZXFfdGltZW91dCkgd2hpY2gK
-PiBzdXBwb3J0cyBhIGNhbGVlIHNwZWNpZmllZCB0aW1lb3V0IHdoZXJlCj4gdGhlIGNhbGxlIGtu
-b3dzIGhvdyB0byBjb3JyZWN0bHkgZGVhbCB3aXRoIHRpbWVvdXQgYW5kIHBvcnQgdGhlCj4gcmVs
-ZXZhbnQgY2FsbCBzaXRlcyB0byB1c2UgdGhpcz8KClllYWgsIHRoYXQgd291bGQgd29yayBmb3Ig
-bWUuIEkgZ3Vlc3Mgd2UgY291bGQganVzdCBzd2FwIHRoZSB0ZXN0bWdyIHRvIAp1c2UgdGhpcyB0
-aW1lb3V0IEFQSSwgYXMgaXQgaXMgcXVpdGUgY2xlYXIgaXQgc2hvdWxkIHRpbWVvdXQgcmF0aGVy
-IHRoYW4gCndhaXQgaW5kZWZpbml0ZWx5LCBhbmQgYWZhaWNzLCB0aGUgZGF0YSBidWZmZXJzIGl0
-IHVzZXMgYXJlIGxpbWl0ZWQgCnNpemUuIEl0IGRvZXNuJ3QgcmVhbGx5IG1hdHRlciBmb3IgaXQg
-d2hldGhlciB0aGUgdGltZW91dCBpcyAxIHNlY29uZCBvciAKMTAgc2Vjb25kcywgYXMgbG9uZyBh
-cyBpdCBldmVudHVhbGx5IHRpbWVzIG91dC4KCi1UZXJvCgo+IAo+IFRoYW5rcyEKPiBHaWxhZAo+
-IAo+IAo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBUZXJvIEtyaXN0byA8dC1rcmlzdG9AdGkuY29tPgo+
-PiAtLS0KPj4gICBpbmNsdWRlL2xpbnV4L2NyeXB0by5oIHwgOSArKysrKysrKy0KPj4gICAxIGZp
-bGUgY2hhbmdlZCwgOCBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4+Cj4+IGRpZmYgLS1n
-aXQgYS9pbmNsdWRlL2xpbnV4L2NyeXB0by5oIGIvaW5jbHVkZS9saW51eC9jcnlwdG8uaAo+PiBp
-bmRleCAxOWVhM2EzNzFkN2IuLmI4ZjBlNWMzY2MwYyAxMDA2NDQKPj4gLS0tIGEvaW5jbHVkZS9s
-aW51eC9jcnlwdG8uaAo+PiArKysgYi9pbmNsdWRlL2xpbnV4L2NyeXB0by5oCj4+IEBAIC02ODIs
-OCArNjgyLDE1IEBAIHN0YXRpYyBpbmxpbmUgaW50IGNyeXB0b193YWl0X3JlcShpbnQgZXJyLCBz
-dHJ1Y3QgY3J5cHRvX3dhaXQgKndhaXQpCj4+ICAgICAgICAgIHN3aXRjaCAoZXJyKSB7Cj4+ICAg
-ICAgICAgIGNhc2UgLUVJTlBST0dSRVNTOgo+PiAgICAgICAgICBjYXNlIC1FQlVTWToKPj4gLSAg
-ICAgICAgICAgICAgIHdhaXRfZm9yX2NvbXBsZXRpb24oJndhaXQtPmNvbXBsZXRpb24pOwo+PiAr
-ICAgICAgICAgICAgICAgZXJyID0gd2FpdF9mb3JfY29tcGxldGlvbl90aW1lb3V0KCZ3YWl0LT5j
-b21wbGV0aW9uLAo+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgIG1zZWNzX3RvX2ppZmZpZXMoMTAwMCkpOwo+PiAgICAgICAgICAgICAgICAgIHJlaW5p
-dF9jb21wbGV0aW9uKCZ3YWl0LT5jb21wbGV0aW9uKTsKPj4gKyAgICAgICAgICAgICAgIGlmICgh
-ZXJyKSB7Cj4+ICsgICAgICAgICAgICAgICAgICAgICAgIHByX2VycigiJXM6IHRpbWVvdXQgZm9y
-ICVwXG4iLCBfX2Z1bmNfXywgd2FpdCk7Cj4+ICsgICAgICAgICAgICAgICAgICAgICAgIGVyciA9
-IC1FVElNRURPVVQ7Cj4+ICsgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrOwo+PiArICAgICAg
-ICAgICAgICAgfQo+PiArCj4+ICAgICAgICAgICAgICAgICAgZXJyID0gd2FpdC0+ZXJyOwo+PiAg
-ICAgICAgICAgICAgICAgIGJyZWFrOwo+PiAgICAgICAgICB9Owo+PiAtLQo+PiAyLjE3LjEKPj4K
-Pj4gLS0KPiAKPiAKPiAKPiAtLQo+IEdpbGFkIEJlbi1Zb3NzZWYKPiBDaGllZiBDb2ZmZWUgRHJp
-bmtlcgo+IAo+IHZhbHVlcyBvZiDOsiB3aWxsIGdpdmUgcmlzZSB0byBkb20hCj4gCgotLQpUZXhh
-cyBJbnN0cnVtZW50cyBGaW5sYW5kIE95LCBQb3Jra2FsYW5rYXR1IDIyLCAwMDE4MCBIZWxzaW5r
-aS4gWS10dW5udXMvQnVzaW5lc3MgSUQ6IDA2MTU1MjEtNC4gS290aXBhaWtrYS9Eb21pY2lsZTog
-SGVsc2lua2kKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+Hi Geert,
+
+Am 04.11.2019 um 22:53 schrieb Geert Uytterhoeven:
+>>> This indeed boots fine on ARAnyM, which emulates on 68040.
+>>> It would be good to have some boot testing on '020/030, too.
+>>
+>> To be honest, I have no idea how to to that :)
+>
+> Sure. This was more a request for the fellow m68k users.
+
+I heard you :-) Still doing more regression testing on the latest SCSI 
+fix, but I can schedule this next.
+
+Cheers,
+
+	Michael
+
+> But don't worry too much about it.  If it breaks '020/'030, we can fix
+> that later.
+>
+> Thanks!
+>
+> Gr{oetje,eeting}s,
+>
+>                         Geert
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
