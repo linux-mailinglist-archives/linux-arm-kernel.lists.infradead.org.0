@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD573F119C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 10:00:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 712CAF11A6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 10:02:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fw9sJe8kWTyC2VLhqCco6lRdDjwMAxR7YRheoQCI18o=; b=rZoUS0JzheRrHI
-	ngVYwYWjEoRDGlzbieQ/oy1Remh8NDlPBlEwDz6VKXW+1KjcqtvrGmnwbzHK6oeKi65gzSNlIQVfA
-	M9jEudA5Q3xzXKanypbRtHD4B1Ss/+pmZg0K1ro/lLWxzkfnEaVLD/6mZqjv0UAK+JqL9PIxVIU4W
-	6rvTi9opdfsSWrK1MRG+BXYB8qpMQNq5YDV3ZqZ2novCk9VQjYzKHGm/tkn4+r4lThshP7Hlf4H9v
-	qENUcBG/gUP4pBDTvaR09ZMjbgLkskZ1jYKi+1wAtCjtsx+nK+7B3G9bGGxNIE7mO0Uszq9fs5Phx
-	m6/+/CjQx9oUlVX7/EHQ==;
+	List-Owner; bh=O9lyDYGp3/xgik6wMxaiMlw0bg1el3FtmId9I7ICFvw=; b=ifs+CDeIuiF4yJ
+	C2u/2C24Y0WhmD77ilyVTLNoPH6osSNCBQjuPqAvgtg/07nv0ajqcYcKmflHSRxWDUOjwyQ/a07j5
+	mElOiEaxkZylwCM4grOO6D0GZHc49Q2kyeRK6f4IGyCBIuEQVBe3bXrNCxu4V7kk8VUPeZa0cBmhU
+	4fmRST5/AZY9l3qZyrwbbtFdjTKyWvxxmQFgXoLyWfvUyYuDLctZpV+KTmjXtfW0KQC2gsSCbagD2
+	3o6MDi7iIygPsZyFyvULzFsy3qQcTzVcz7M0wYHWgXzeczdpYiLn8blW5B6EiDY9P8ck+zNs845p0
+	SQDHGXIzJKiRO3qbeRPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSHAk-00019j-0i; Wed, 06 Nov 2019 09:00:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSHAQ-00018I-TL
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 08:59:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F38B930E;
- Wed,  6 Nov 2019 00:59:42 -0800 (PST)
-Received: from arrakis.emea.arm.com (unknown [10.1.197.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EE9493F71A;
- Wed,  6 Nov 2019 00:59:41 -0800 (PST)
-Date: Wed, 6 Nov 2019 08:59:39 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: John Stultz <john.stultz@linaro.org>
-Subject: Re: [PATCH] arm64: Ensure VM_WRITE|VM_SHARED ptes are clean by default
-Message-ID: <20191106085939.GC21133@arrakis.emea.arm.com>
-References: <20191029153051.24367-1-catalin.marinas@arm.com>
- <CALAqxLXuxZVg0kqNQXF_dH17NzH9m14-Ci_rzruHzmms0V7pvg@mail.gmail.com>
- <20191105102902.GB29852@willie-the-truck>
- <20191105165433.GD22987@arrakis.emea.arm.com>
- <CALAqxLWYJvHO3YYbQHmgg0yThx_kqM7HBFnnxrcWkG1-LXeCQQ@mail.gmail.com>
+	id 1iSHCR-0002gw-58; Wed, 06 Nov 2019 09:01:59 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSHCJ-0002gM-68
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 09:01:52 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1iSHCH-0000o8-DO; Wed, 06 Nov 2019 10:01:49 +0100
+Message-ID: <159380b7ec799f15269a4a6e8f2482a02748e6fd.camel@pengutronix.de>
+Subject: Re: [PATCH 0/2] Couple of reset-brcmstb fixes
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Florian Fainelli <f.fainelli@gmail.com>, 
+ linux-arm-kernel@lists.infradead.org
+Date: Wed, 06 Nov 2019 10:01:47 +0100
+In-Reply-To: <20191104181502.15679-1-f.fainelli@gmail.com>
+References: <20191104181502.15679-1-f.fainelli@gmail.com>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CALAqxLWYJvHO3YYbQHmgg0yThx_kqM7HBFnnxrcWkG1-LXeCQQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_005955_932615_9F43EC03 
-X-CRM114-Status: GOOD (  21.94  )
+X-CRM114-CacheID: sfid-20191106_010151_225105_D35B99FC 
+X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,65 +65,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alistair Delva <adelva@google.com>, Sandeep Patil <sspatil@google.com>,
- Steve Capper <Steve.Capper@arm.com>, stable <stable@vger.kernel.org>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 05, 2019 at 01:17:11PM -0800, John Stultz wrote:
-> On Tue, Nov 5, 2019 at 8:54 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > On Tue, Nov 05, 2019 at 10:29:03AM +0000, Will Deacon wrote:
-> > > On Mon, Nov 04, 2019 at 05:16:42PM -0800, John Stultz wrote:
-> > > > On Tue, Oct 29, 2019 at 8:31 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > > > >
-> > > > > Shared and writable mappings (__S.1.) should be clean (!dirty) initially
-> > > > > and made dirty on a subsequent write either through the hardware DBM
-> > > > > (dirty bit management) mechanism or through a write page fault. A clean
-> > > > > pte for the arm64 kernel is one that has PTE_RDONLY set and PTE_DIRTY
-> > > > > clear.
-> > > > >
-> > > > > The PAGE_SHARED{,_EXEC} attributes have PTE_WRITE set (PTE_DBM) and
-> > > > > PTE_DIRTY clear. Prior to commit 73e86cb03cf2 ("arm64: Move PTE_RDONLY
-> > > > > bit handling out of set_pte_at()"), it was the responsibility of
-> > > > > set_pte_at() to set the PTE_RDONLY bit and mark the pte clean if the
-> > > > > software PTE_DIRTY bit was not set. However, the above commit removed
-> > > > > the pte_sw_dirty() check and the subsequent setting of PTE_RDONLY in
-> > > > > set_pte_at() while leaving the PAGE_SHARED{,_EXEC} definitions
-> > > > > unchanged. The result is that shared+writable mappings are now dirty by
-> > > > > default
-> > > > >
-> > > > > Fix the above by explicitly setting PTE_RDONLY in PAGE_SHARED{,_EXEC}.
-> > > > > In addition, remove the superfluous PTE_DIRTY bit from the kernel PROT_*
-> > > > > attributes.
-> > > > >
-> > > > > Fixes: 73e86cb03cf2 ("arm64: Move PTE_RDONLY bit handling out of set_pte_at()")
-> > > > > Cc: <stable@vger.kernel.org> # 4.14.x-
-> > > > > Cc: Will Deacon <will@kernel.org>
-> > > > > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> > [...]
-> > > As an experiment, can you try reverting just the part of the patch that
-> > > removes PTE_DIRTY from the PROT_* definitions? (see below)
-> >
-> > Another thing worth trying is reverting commit 747a70e60b72 ("arm64: Fix
-> > copy-on-write referencing in HugeTLB") when this patch is applied. That
-> > commit is not just about hugetlb but changes pte_same() to ignore
-> > PTE_RDONLY on the assumption that this is set by set_pte_at(). We
-> > subsequently changed set_pte_at() to drop PTE_RDONLY.
+Hi Florian,
+
+On Mon, 2019-11-04 at 10:15 -0800, Florian Fainelli wrote:
+> Hi Philipp,
 > 
-> Just to confirm, reverting 747a70e60b72 instead of aa57157be69f also
-> seems to avoid the issue I'm seeing.
+> This series replaces the previously submitted fixes to the reset-brcmstb
+> driver and also fix the dt binding example.
+> 
+> Thank you!
 
-Thanks for confirming. I'm not sure about all the interactions in your
-kernel but just looking at commit 747a70e60b72 it likely needs to be
-reverted anyway. I'll send a separate patch and hopefully Steve can
-confirm that it doesn't break the original hugetlb use-case.
+Thank you. Both applied to reset/fixes.
 
--- 
-Catalin
+regards
+Philipp
+
 
 _______________________________________________
 linux-arm-kernel mailing list
