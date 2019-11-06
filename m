@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86C5DF12BB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 10:49:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE241F12B8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 10:49:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fAp6oJf9MmQ6OtJ8mRBnlmsCAJWxtEXjgNPDnbmvtUY=; b=ghJotT8t7c5biQYxGqfbCmyDv7
-	KivXRHuMT7wcovQed58hSHRlxrAhIWWIqDh/G7+Oo9ZUZWxSoHl3JT4AuxeHAd6UweazpOmusAbNT
-	qoz/GOS/VZmDoYYnhPOTL403DFmUREVzBEv7t4WNUB/bZ76Dl7q6RiPwTP5FE+Qxif7ki8DWyvT91
-	JNoxeO5kTJXUM0rb9d2Y1cmK7AS+/SSHfaCZQuyPKef0nutZu+K3z7XQk+3JsyA23nYhcdK2tS61r
-	nIXYKvC9QU1O+gvRM9xGIrs0yTFz7QWq+RNXtNn7Wz4cP+UGuTmGJ/rMIT5qHq+3kjHB05bCLZCp3
-	lSTPu2qw==;
+	bh=OsM8ptlCdjAQ6/BOXwTccvYCK1HUeIPUFjTvxpR275U=; b=OGBSL+3QMet9F+AN3fvlBnQ47m
+	7YLGBtTXWirJ3qnWJsYlny0cJmkOqdZ8KpQgoggVBo9wAvtWB3pU8gLhbbglKO0hll2zCRZbGUE4Y
+	nElneQP2abkFJ0CwrJVya/x290gfW8yDtZc+4mC1FgUCTOTHbl3p2X9WZSAXAx1Yh+Wsl33c1HZ8u
+	WbEezlRlqjbUsOqU2UDEb0xPsayoMDbWQJyKkb/sWiRufeFPUeT7M3AOmluEAPMwNP9YuiRz71K3o
+	HkzdfaeP6MrLo/hr669IV0srvW4U2ydDXUNCUBvlvyBSxhdILezJeqF6/e7zDpR4294gj1itHBfmF
+	QEjg2H8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSHwc-000052-Nf; Wed, 06 Nov 2019 09:49:42 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1iSHwJ-0008JN-G2; Wed, 06 Nov 2019 09:49:23 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSHw2-00089p-Kj
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 09:49:08 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 924B62005EE;
- Wed,  6 Nov 2019 10:49:03 +0100 (CET)
+ id 1iSHw2-00089v-7F
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 09:49:07 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id ACD1F1A05F8;
+ Wed,  6 Nov 2019 10:49:04 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 159E32005DA;
- Wed,  6 Nov 2019 10:48:59 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 30E5B1A011D;
+ Wed,  6 Nov 2019 10:49:00 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 35853402EE;
- Wed,  6 Nov 2019 17:48:53 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4987E402FC;
+ Wed,  6 Nov 2019 17:48:54 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 2/3] ARM: dts: imx6sll-evk: Add eMMC support
-Date: Wed,  6 Nov 2019 17:47:29 +0800
-Message-Id: <1573033650-11848-2-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 3/3] ARM: dts: imx6sll: Add Rev A board support
+Date: Wed,  6 Nov 2019 17:47:30 +0800
+Message-Id: <1573033650-11848-3-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1573033650-11848-1-git-send-email-Anson.Huang@nxp.com>
 References: <1573033650-11848-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_014906_951652_02A8843F 
-X-CRM114-Status: UNSURE (   8.83  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191106_014906_397972_B4ED0502 
+X-CRM114-Status: GOOD (  11.27  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,106 +77,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX6SLL EVK board has eMMC connected on uSDHC2, add support
-for it.
+i.MX6SLL EVK Rev A board is same with latest i.MX6SLL EVK board except
+eMMC can ONLY run at HS200 mode, add support for this board.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm/boot/dts/imx6sll-evk.dts | 67 +++++++++++++++++++++++++++++++++++++++
- 1 file changed, 67 insertions(+)
+ arch/arm/boot/dts/Makefile             |  1 +
+ arch/arm/boot/dts/imx6sll-evk-reva.dts | 12 ++++++++++++
+ 2 files changed, 13 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx6sll-evk-reva.dts
 
-diff --git a/arch/arm/boot/dts/imx6sll-evk.dts b/arch/arm/boot/dts/imx6sll-evk.dts
-index 3e1d32f..29b284c 100644
---- a/arch/arm/boot/dts/imx6sll-evk.dts
-+++ b/arch/arm/boot/dts/imx6sll-evk.dts
-@@ -109,6 +109,14 @@
- 		enable-active-high;
- 	};
- 
-+	reg_sd2_vmmc: regulator-sd2-vmmc {
-+		compatible = "regulator-fixed";
-+		regulator-name = "eMMC-VCCQ";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		regulator-boot-on;
-+	};
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index 71f08e7..3845bbf 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -557,6 +557,7 @@ dtb-$(CONFIG_SOC_IMX6SL) += \
+ 	imx6sl-warp.dtb
+ dtb-$(CONFIG_SOC_IMX6SLL) += \
+ 	imx6sll-evk.dtb \
++	imx6sll-evk-reva.dtb \
+ 	imx6sll-kobo-clarahd.dtb
+ dtb-$(CONFIG_SOC_IMX6SX) += \
+ 	imx6sx-nitrogen6sx.dtb \
+diff --git a/arch/arm/boot/dts/imx6sll-evk-reva.dts b/arch/arm/boot/dts/imx6sll-evk-reva.dts
+new file mode 100644
+index 0000000..7ca2563
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6sll-evk-reva.dts
+@@ -0,0 +1,12 @@
++// SPDX-License-Identifier: (GPL-2.0 OR MIT)
++/*
++ * Copyright 2016 Freescale Semiconductor, Inc.
++ * Copyright 2017-2019 NXP.
++ *
++ */
 +
- 	reg_sd3_vmmc: regulator-sd3-vmmc {
- 		compatible = "regulator-fixed";
- 		pinctrl-names = "default";
-@@ -314,6 +322,17 @@
- 	status = "okay";
- };
- 
++#include "imx6sll-evk.dts"
++
 +&usdhc2 {
-+	pinctrl-names = "default", "state_100mhz", "state_200mhz";
-+	pinctrl-0 = <&pinctrl_usdhc2>;
-+	pinctrl-1 = <&pinctrl_usdhc2_100mhz>;
-+	pinctrl-2 = <&pinctrl_usdhc2_200mhz>;
-+	vqmmc-supply = <&reg_sd2_vmmc>;
-+	bus-width = <8>;
-+	no-removable;
-+	status = "okay";
++	compatible = "fsl,imx6sll-usdhc", "fsl,imx6sx-usdhc";
 +};
-+
- &usdhc3 {
- 	pinctrl-names = "default", "state_100mhz", "state_200mhz";
- 	pinctrl-0 = <&pinctrl_usdhc3>;
-@@ -403,6 +422,54 @@
- 		>;
- 	};
- 
-+	pinctrl_usdhc2: usdhc2grp {
-+		fsl,pins = <
-+			MX6SLL_PAD_SD2_CMD__SD2_CMD		0x17059
-+			MX6SLL_PAD_SD2_CLK__SD2_CLK		0x13059
-+			MX6SLL_PAD_SD2_DATA0__SD2_DATA0		0x17059
-+			MX6SLL_PAD_SD2_DATA1__SD2_DATA1		0x17059
-+			MX6SLL_PAD_SD2_DATA2__SD2_DATA2		0x17059
-+			MX6SLL_PAD_SD2_DATA3__SD2_DATA3		0x17059
-+			MX6SLL_PAD_SD2_DATA4__SD2_DATA4		0x17059
-+			MX6SLL_PAD_SD2_DATA5__SD2_DATA5		0x17059
-+			MX6SLL_PAD_SD2_DATA6__SD2_DATA6		0x17059
-+			MX6SLL_PAD_SD2_DATA7__SD2_DATA7		0x17059
-+			MX6SLL_PAD_GPIO4_IO21__SD2_STROBE	0x413059
-+		>;
-+	};
-+
-+	pinctrl_usdhc2_100mhz: usdhc2grp_100mhz {
-+		fsl,pins = <
-+			MX6SLL_PAD_SD2_CMD__SD2_CMD		0x170b9
-+			MX6SLL_PAD_SD2_CLK__SD2_CLK		0x130b9
-+			MX6SLL_PAD_SD2_DATA0__SD2_DATA0		0x170b9
-+			MX6SLL_PAD_SD2_DATA1__SD2_DATA1		0x170b9
-+			MX6SLL_PAD_SD2_DATA2__SD2_DATA2		0x170b9
-+			MX6SLL_PAD_SD2_DATA3__SD2_DATA3		0x170b9
-+			MX6SLL_PAD_SD2_DATA4__SD2_DATA4		0x170b9
-+			MX6SLL_PAD_SD2_DATA5__SD2_DATA5		0x170b9
-+			MX6SLL_PAD_SD2_DATA6__SD2_DATA6		0x170b9
-+			MX6SLL_PAD_SD2_DATA7__SD2_DATA7		0x170b9
-+			MX6SLL_PAD_GPIO4_IO21__SD2_STROBE	0x4130b9
-+		>;
-+	};
-+
-+	pinctrl_usdhc2_200mhz: usdhc2grp_200mhz {
-+		fsl,pins = <
-+			MX6SLL_PAD_SD2_CMD__SD2_CMD		0x170f9
-+			MX6SLL_PAD_SD2_CLK__SD2_CLK		0x130f9
-+			MX6SLL_PAD_SD2_DATA0__SD2_DATA0		0x170f9
-+			MX6SLL_PAD_SD2_DATA1__SD2_DATA1		0x170f9
-+			MX6SLL_PAD_SD2_DATA2__SD2_DATA2		0x170f9
-+			MX6SLL_PAD_SD2_DATA3__SD2_DATA3		0x170f9
-+			MX6SLL_PAD_SD2_DATA4__SD2_DATA4		0x170f9
-+			MX6SLL_PAD_SD2_DATA5__SD2_DATA5		0x170f9
-+			MX6SLL_PAD_SD2_DATA6__SD2_DATA6		0x170f9
-+			MX6SLL_PAD_SD2_DATA7__SD2_DATA7		0x170f9
-+			MX6SLL_PAD_GPIO4_IO21__SD2_STROBE	0x4130f9
-+		>;
-+	};
-+
- 	pinctrl_usbotg1: usbotg1grp {
- 		fsl,pins = <
- 			MX6SLL_PAD_EPDC_PWR_COM__USB_OTG1_ID 0x17059
 -- 
 2.7.4
 
