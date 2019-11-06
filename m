@@ -2,53 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BC4FF13D0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 11:24:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09638F13E0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 11:27:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n+IMyBSFVTy0pQkkyZJ5nUw3wnTlr4R8LX0Oo1/tW7w=; b=Ua2oLfbi+YvDL+
-	Hpyzs7B6vB4tl2Xj/oiSNCvkEn48jE7Aw/G+A8FVh/kmy1aOxi8J505uhvOuuZaR3U3a26l2EMNKO
-	gI0osmMtDgFmKS0ryjPuWIaNJV/Ua5IuVynaZRrHqLzXJ+aL6PKY8YCAIf+P7Su8fAh0W9egijeQl
-	roOkTIwQ3c3AXtyJXy/8S9HrKuTiylXWj8IgqpPt6pj3Hl6kf+NXVaRdRRKiblMp0b/Q3PcAlbFvM
-	QWIOls0ii1nIa2lozFd7Qg/r92LubxdDYoDYM6I+NWmeSKvCHj48DEXIuW4LfM/7+hIsTMjgkP5uQ
-	xa6sini6fetZsW1bG4Ag==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Mn5flVuuVPxAlqe+eXtlWYgWdsYrSNs90gHlIjnDBcE=; b=T0K
+	1c0y9eprNsygS8wPMWdIf6oWlbd7fczGqR9JwmOukpsw4AcSw/N5XdZlE8P5JhYiz70TEv7Zby4NL
+	6zHiUJG3PeAV4II9fBtZOuoAW2UFM9iNlbKd5mdEIGcYjrsdIHVhTBgQGj2b0hdzohboTJY6ioFri
+	EimYAErWo1MBned+ax9phiV3bORZ9CUYcTyB3g49YxQvi6LkcolfeSRQJRQO6wIRdc5gSMEmH6Y7+
+	8SCUbbYc1RN5bR92lJwiGLT3ZHMrZNxzkDquzxPBC8wHhLKPyTMdHL+P7zkx3PCXJj4c9F9al1lE7
+	N+WEwTXw8/uYMh3pq0pmYf8evPuMa2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSIUR-0000z9-H0; Wed, 06 Nov 2019 10:24:39 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1iSIWg-0002kv-QO; Wed, 06 Nov 2019 10:26:58 +0000
+Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSIUK-0000uh-AP
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 10:24:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4BE097A7;
- Wed,  6 Nov 2019 02:24:31 -0800 (PST)
-Received: from arrakis.emea.arm.com (unknown [10.1.197.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B59633F6C4;
- Wed,  6 Nov 2019 02:24:30 -0800 (PST)
-Date: Wed, 6 Nov 2019 10:24:28 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v6 4/4] arm64: Use a variable to store non-global
- mappings decision
-Message-ID: <20191106102428.GE21133@arrakis.emea.arm.com>
-References: <20191105214854.30725-1-broonie@kernel.org>
- <20191105214854.30725-5-broonie@kernel.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191105214854.30725-5-broonie@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1iSIWU-0002jE-0S
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 10:26:47 +0000
+Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ by mx.socionext.com with ESMTP; 06 Nov 2019 19:26:43 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 6AE77180095;
+ Wed,  6 Nov 2019 19:26:43 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Wed, 6 Nov 2019 19:26:53 +0900
+Received: from plum.e01.socionext.com (unknown [10.213.132.32])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id CB92B1A04FC;
+ Wed,  6 Nov 2019 19:26:42 +0900 (JST)
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: [PATCH 0/6] phy: socionext: Add some improvements and legacy SoC
+ support
+Date: Wed,  6 Nov 2019 19:26:13 +0900
+Message-Id: <1573035979-32200-1-git-send-email-hayashi.kunihiko@socionext.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_022432_403114_1CCD0103 
-X-CRM114-Status: GOOD (  12.04  )
+X-CRM114-CacheID: sfid-20191106_022646_171582_D9EBECA0 
+X-CRM114-Status: GOOD (  14.79  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.248.49.38 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,34 +65,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-kernel@vger.kernel.org,
+ Jassi Brar <jaswinder.singh@linaro.org>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 05, 2019 at 09:48:54PM +0000, Mark Brown wrote:
-> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-> index 60c929f3683b..8462a358a1dc 100644
-> --- a/arch/arm64/mm/mmu.c
-> +++ b/arch/arm64/mm/mmu.c
-> @@ -679,6 +679,13 @@ void __init paging_init(void)
->  	cpu_replace_ttbr1(lm_alias(swapper_pg_dir));
->  	init_mm.pgd = swapper_pg_dir;
->  
-> +        /*
-> +         * If know now we are going to need KPTI then use non-global
-> +         * mappings from the start, avoiding the cost of rewriting
-> +         * everything later.
-> +         */
-> +        arm64_use_ng_mappings = kaslr_requires_kpti();
+This series adds some improvements to PHY interface drivers, and adds legacy SoC
+support that needs to manage gio clock and reset.
 
-This really needs to be done before map_kernel() and map_mem() in
-paging_init(). Tested this series and most of the linear map does not
-have the nG bit when it should (/sys/kernel/debug/kernel_page_tables).
+Kunihiko Hayashi (6):
+  phy: socionext: Use devm_platform_ioremap_resource()
+  dt-bindings: phy: socionext: Add Pro5 support and remove Pro4 from
+    usb3-hsphy
+  phy: uniphier-usb3ss: Add Pro5 support
+  phy: uniphier-usb3hs: Add legacy SoC support for Pro5
+  phy: uniphier-usb3hs: Change Rx sync mode to avoid communication
+    failure
+  phy: uniphier-pcie: Add legacy SoC support for Pro5
+
+ .../devicetree/bindings/phy/uniphier-pcie-phy.txt  | 13 ++-
+ .../bindings/phy/uniphier-usb3-hsphy.txt           |  6 +-
+ .../bindings/phy/uniphier-usb3-ssphy.txt           |  5 +-
+ drivers/phy/socionext/phy-uniphier-pcie.c          | 87 ++++++++++++++++----
+ drivers/phy/socionext/phy-uniphier-usb3hs.c        | 92 ++++++++++++++++------
+ drivers/phy/socionext/phy-uniphier-usb3ss.c        |  8 +-
+ 6 files changed, 163 insertions(+), 48 deletions(-)
 
 -- 
-Catalin
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
