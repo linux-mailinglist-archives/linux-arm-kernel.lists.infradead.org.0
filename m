@@ -2,42 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 048BFF151C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 12:28:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90769F1519
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 12:27:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=k/F2XyAnKW52TBAIR26+wVW6b7V8NzYEPzpFGV1UJoo=; b=SyKu3o0ZpqqgC0
-	xpU4WIKM3PS3ZRJldH8O2QD7oceBEjhi4iadEcplc3ECp6I3EFQTsiyCN13+9GdL7dqDiu9MW48c7
-	VcUUmwndY/fglMhwB/MrXgGY/XBO7ROQln4lIUr0VSujpqQs8/Yo5yQ4HE5whbYgNO0ZhUDl1QfQo
-	QW1elfeMYxa7+komMkLxOqvOxLJc51JBG+MiB6ZChPKMZBLhOL2hCppCK27cJlnqXsyqheDnLxh7c
-	4r9vzpDe0FPfd6P5UM6bnZYyz0ze1h2x4xQmsHze04RPjrWBlRzEmgkkxGWPxyiv1927jpGjjny+Z
-	GiHm08qJq/dF7RlCiosQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RIHQG4rpTytiyrbEq058nzA8bphI48osRv5e6vV74Lw=; b=GlsLh7PXhIoWA6
+	LvfILCFCySvss2TupLjl6tzXileWAT07oTrpHDrNyr8s3OywBhmObIZ5gMX0asvhWy9Xr9OBnqZVT
+	E+PWquCjcPcKUMzCHjsBfY/660wX18ViBu00Ljl+9JtUhcT+tYg2YzHpcQxrhHBhHC+Z3X2jNG0S/
+	IUt4OeqysfLWi6GJkqOaWePrNGDOCH6bn/Hw9OaBxID8xilSolm/cYukIaozoE4+OVxuONLQYoFPd
+	6oOP3EIl9VqXZGKDkUmQd9JOI7LkP1NHx7Qse48Q0xWsa19n96cYh2UUtnoovqvb88WWcOBM4WJuZ
+	zpafHs9oaXrX8vSvI5eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSJTt-0003kZ-P1; Wed, 06 Nov 2019 11:28:09 +0000
+	id 1iSJTX-0003P3-Uu; Wed, 06 Nov 2019 11:27:47 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSJT8-0003BD-3o; Wed, 06 Nov 2019 11:27:24 +0000
+ id 1iSJT8-0003BF-3k; Wed, 06 Nov 2019 11:27:23 +0000
 Received: from [94.134.91.181] (helo=phil.fritz.box)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.89) (envelope-from <heiko.stuebner@theobroma-systems.com>)
- id 1iSJSn-0004nK-1P; Wed, 06 Nov 2019 12:27:01 +0100
+ id 1iSJSn-0004nK-UE; Wed, 06 Nov 2019 12:27:02 +0100
 From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 To: dri-devel@lists.freedesktop.org,
 	a.hajda@samsung.com
-Subject: [PATCH 1/3] drm/bridge/synopsys: dsi: move phy_ops callbacks around
- panel enablement
-Date: Wed,  6 Nov 2019 12:26:48 +0100
-Message-Id: <20191106112650.8365-1-heiko.stuebner@theobroma-systems.com>
+Subject: [PATCH 2/3] drm/rockchip: add ability to handle external dphys in
+ mipi-dsi
+Date: Wed,  6 Nov 2019 12:26:49 +0100
+Message-Id: <20191106112650.8365-2-heiko.stuebner@theobroma-systems.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191106112650.8365-1-heiko.stuebner@theobroma-systems.com>
+References: <20191106112650.8365-1-heiko.stuebner@theobroma-systems.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_032722_307529_9959BE72 
-X-CRM114-Status: GOOD (  10.06  )
+X-CRM114-CacheID: sfid-20191106_032722_306297_B889825B 
+X-CRM114-Status: GOOD (  18.64  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
@@ -68,72 +70,154 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If implementation-specific phy_ops need to be defined they probably
-should be enabled before trying to talk to the panel and disabled only
-after the panel was disabled.
+While the common case is that the dsi controller uses an internal dphy,
+accessed through the phy registers inside the dsi controller, there is
+also the possibility to use a separate dphy from a different vendor.
 
-Right now they are enabled last and disabled first, so might make it
-impossible to talk to some panels - example for this being the px30
-with an external Innosilicon dphy that needs the phy to be enabled
-to transfer commands to the panel.
-
-So move the calls appropriately.
+One such case is the Rockchip px30 that uses a Innosilicon Mipi dphy,
+so add the support for handling such a constellation, including the pll
+also getting generated inside that external phy.
 
 Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 ---
- drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 13 ++++++-------
- 1 file changed, 6 insertions(+), 7 deletions(-)
+ .../display/rockchip/dw_mipi_dsi_rockchip.txt |  7 ++-
+ .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 54 ++++++++++++++++++-
+ 2 files changed, 57 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-index 675442bfc1bd..49f5600a1dea 100644
---- a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-@@ -797,9 +797,6 @@ static void dw_mipi_dsi_bridge_post_disable(struct drm_bridge *bridge)
- 	struct dw_mipi_dsi *dsi = bridge_to_dsi(bridge);
- 	const struct dw_mipi_dsi_phy_ops *phy_ops = dsi->plat_data->phy_ops;
+diff --git a/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt b/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
+index ce4c1fc9116c..8b25156a9dcf 100644
+--- a/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
++++ b/Documentation/devicetree/bindings/display/rockchip/dw_mipi_dsi_rockchip.txt
+@@ -8,8 +8,9 @@ Required properties:
+ 	      "rockchip,rk3399-mipi-dsi", "snps,dw-mipi-dsi".
+ - reg: Represent the physical address range of the controller.
+ - interrupts: Represent the controller's interrupt to the CPU(s).
+-- clocks, clock-names: Phandles to the controller's pll reference
+-  clock(ref) and APB clock(pclk). For RK3399, a phy config clock
++- clocks, clock-names: Phandles to the controller's and APB clock(pclk)
++  and either a pll reference clock(ref) (internal dphy) or pll clock(pll)
++  (when connected to an external phy). For RK3399, a phy config clock
+   (phy_cfg) and a grf clock(grf) are required. As described in [1].
+ - rockchip,grf: this soc should set GRF regs to mux vopl/vopb.
+ - ports: contain a port node with endpoint definitions as defined in [2].
+@@ -18,6 +19,8 @@ Required properties:
+ - video port 1 for either a panel or subsequent encoder
  
--	if (phy_ops->power_off)
--		phy_ops->power_off(dsi->plat_data->priv_data);
--
+ Optional properties:
++- phys: from general PHY binding: the phandle for the PHY device.
++- phy-names: Should be "dphy" if phys references an external phy.
+ - power-domains: a phandle to mipi dsi power domain node.
+ - resets: list of phandle + reset specifier pairs, as described in [3].
+ - reset-names: string reset name, must be "apb".
+diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+index bc073ec5c183..99ec625e0448 100644
+--- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
++++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+@@ -12,6 +12,7 @@
+ #include <linux/mfd/syscon.h>
+ #include <linux/module.h>
+ #include <linux/of_device.h>
++#include <linux/phy/phy.h>
+ #include <linux/pm_runtime.h>
+ #include <linux/regmap.h>
+ 
+@@ -223,6 +224,9 @@ struct dw_mipi_dsi_rockchip {
+ 	bool is_slave;
+ 	struct dw_mipi_dsi_rockchip *slave;
+ 
++	/* optional external dphy */
++	struct phy *phy;
++
+ 	unsigned int lane_mbps; /* per lane */
+ 	u16 input_div;
+ 	u16 feedback_div;
+@@ -359,6 +363,9 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
+ 	struct dw_mipi_dsi_rockchip *dsi = priv_data;
+ 	int ret, i, vco;
+ 
++	if (dsi->phy)
++		return 0;
++
  	/*
- 	 * Switch to command mode before panel-bridge post_disable &
- 	 * panel unprepare.
-@@ -816,6 +813,9 @@ static void dw_mipi_dsi_bridge_post_disable(struct drm_bridge *bridge)
- 	 */
- 	dsi->panel_bridge->funcs->post_disable(dsi->panel_bridge);
- 
-+	if (phy_ops->power_off)
-+		phy_ops->power_off(dsi->plat_data->priv_data);
-+
- 	if (dsi->slave) {
- 		dw_mipi_dsi_disable(dsi->slave);
- 		clk_disable_unprepare(dsi->slave->pclk);
-@@ -882,6 +882,9 @@ static void dw_mipi_dsi_mode_set(struct dw_mipi_dsi *dsi,
- 
- 	/* Switch to cmd mode for panel-bridge pre_enable & panel prepare */
- 	dw_mipi_dsi_set_mode(dsi, 0);
-+
-+	if (phy_ops->power_on)
-+		phy_ops->power_on(dsi->plat_data->priv_data);
+ 	 * Get vco from frequency(lane_mbps)
+ 	 * vco	frequency table
+@@ -467,6 +474,27 @@ static int dw_mipi_dsi_phy_init(void *priv_data)
+ 	return ret;
  }
  
- static void dw_mipi_dsi_bridge_mode_set(struct drm_bridge *bridge,
-@@ -898,15 +901,11 @@ static void dw_mipi_dsi_bridge_mode_set(struct drm_bridge *bridge,
- static void dw_mipi_dsi_bridge_enable(struct drm_bridge *bridge)
- {
- 	struct dw_mipi_dsi *dsi = bridge_to_dsi(bridge);
--	const struct dw_mipi_dsi_phy_ops *phy_ops = dsi->plat_data->phy_ops;
++static void dw_mipi_dsi_phy_power_on(void *priv_data)
++{
++	struct dw_mipi_dsi_rockchip *dsi = priv_data;
++	int ret;
++
++	ret = phy_set_mode(dsi->phy, PHY_MODE_MIPI_DPHY);
++	if (ret) {
++		DRM_DEV_ERROR(dsi->dev, "failed to set phy mode: %d\n", ret);
++		return;
++	}
++
++	phy_power_on(dsi->phy);
++}
++
++static void dw_mipi_dsi_phy_power_off(void *priv_data)
++{
++	struct dw_mipi_dsi_rockchip *dsi = priv_data;
++
++	phy_power_off(dsi->phy);
++}
++
+ static int
+ dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
+ 			  unsigned long mode_flags, u32 lanes, u32 format,
+@@ -504,9 +532,21 @@ dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
+ 				      "DPHY clock frequency is out of range\n");
+ 	}
  
- 	/* Switch to video mode for panel-bridge enable & panel enable */
- 	dw_mipi_dsi_set_mode(dsi, MIPI_DSI_MODE_VIDEO);
- 	if (dsi->slave)
- 		dw_mipi_dsi_set_mode(dsi->slave, MIPI_DSI_MODE_VIDEO);
--
--	if (phy_ops->power_on)
--		phy_ops->power_on(dsi->plat_data->priv_data);
- }
+-	fin = clk_get_rate(dsi->pllref_clk);
+ 	fout = target_mbps * USEC_PER_SEC;
  
- static enum drm_mode_status
++	/* an external phy does have a controllable pll clk */
++	if (dsi->phy) {
++		fout = clk_round_rate(dsi->pllref_clk, fout);
++		clk_set_rate(dsi->pllref_clk, fout);
++
++		dsi->lane_mbps = target_mbps;
++		*lane_mbps = dsi->lane_mbps;
++
++		return 0;
++	}
++
++	fin = clk_get_rate(dsi->pllref_clk);
++
+ 	/* constraint: 5Mhz <= Fref / N <= 40MHz */
+ 	min_prediv = DIV_ROUND_UP(fin, 40 * USEC_PER_SEC);
+ 	max_prediv = fin / (5 * USEC_PER_SEC);
+@@ -561,6 +601,8 @@ dw_mipi_dsi_get_lane_mbps(void *priv_data, const struct drm_display_mode *mode,
+ 
+ static const struct dw_mipi_dsi_phy_ops dw_mipi_dsi_rockchip_phy_ops = {
+ 	.init = dw_mipi_dsi_phy_init,
++	.power_on = dw_mipi_dsi_phy_power_on,
++	.power_off = dw_mipi_dsi_phy_power_off,
+ 	.get_lane_mbps = dw_mipi_dsi_get_lane_mbps,
+ };
+ 
+@@ -920,7 +962,15 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
+ 		return -EINVAL;
+ 	}
+ 
+-	dsi->pllref_clk = devm_clk_get(dev, "ref");
++	/* try to get a possible external dphy */
++	dsi->phy = devm_phy_optional_get(dev, "dphy");
++	if (IS_ERR(dsi->phy)) {
++		ret = PTR_ERR(dsi->phy);
++		DRM_DEV_ERROR(dev, "failed to get mipi dphy: %d\n", ret);
++		return ret;
++	}
++
++	dsi->pllref_clk = devm_clk_get(dev, dsi->phy ? "pll" : "ref");
+ 	if (IS_ERR(dsi->pllref_clk)) {
+ 		ret = PTR_ERR(dsi->pllref_clk);
+ 		DRM_DEV_ERROR(dev,
 -- 
 2.23.0
 
