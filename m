@@ -2,63 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE241F12B8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 10:49:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77392F130A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 10:58:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OsM8ptlCdjAQ6/BOXwTccvYCK1HUeIPUFjTvxpR275U=; b=OGBSL+3QMet9F+AN3fvlBnQ47m
-	7YLGBtTXWirJ3qnWJsYlny0cJmkOqdZ8KpQgoggVBo9wAvtWB3pU8gLhbbglKO0hll2zCRZbGUE4Y
-	nElneQP2abkFJ0CwrJVya/x290gfW8yDtZc+4mC1FgUCTOTHbl3p2X9WZSAXAx1Yh+Wsl33c1HZ8u
-	WbEezlRlqjbUsOqU2UDEb0xPsayoMDbWQJyKkb/sWiRufeFPUeT7M3AOmluEAPMwNP9YuiRz71K3o
-	HkzdfaeP6MrLo/hr669IV0srvW4U2ydDXUNCUBvlvyBSxhdILezJeqF6/e7zDpR4294gj1itHBfmF
-	QEjg2H8w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=42Ej5Yr3ZyzXGj+sizQwfiNkIgY1TRBzF2YCBLa5Bzs=; b=U9bs4LPzL81YGE
+	KRiArHP9HyQorFR8EIVRQ4mJMtvrbY+XEHzyFTd+u2RpZbcNT/XaQzBe6Xb+tgV1CSx8/dT/8W3n4
+	VugoXxDtQdcHlWOCPz0sSpWyUdNYc7CFHq5NoAX8qoBJyNm+7yHyTZz4FIup7lojTtWbuuEhGNG2G
+	tkbaXjxF1Te6r4BS5h8VGCVxllLwzmuPXyOi9trV1/vrOIcWAof1Ju1Bfee84NErLlCwg2C+N2DsV
+	LqtXqC4cBAd/gSv/lSMSLCm+LwWNRTgbFbAuc6TEnjkqWZP1AxQb6EBOwM9NKf+02JnEDxlBMBqeV
+	XGq81F+1Gpb2IG5P86hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSHwJ-0008JN-G2; Wed, 06 Nov 2019 09:49:23 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSHw2-00089v-7F
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 09:49:07 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id ACD1F1A05F8;
- Wed,  6 Nov 2019 10:49:04 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 30E5B1A011D;
- Wed,  6 Nov 2019 10:49:00 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4987E402FC;
- Wed,  6 Nov 2019 17:48:54 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH 3/3] ARM: dts: imx6sll: Add Rev A board support
-Date: Wed,  6 Nov 2019 17:47:30 +0800
-Message-Id: <1573033650-11848-3-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1573033650-11848-1-git-send-email-Anson.Huang@nxp.com>
-References: <1573033650-11848-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_014906_397972_B4ED0502 
-X-CRM114-Status: GOOD (  11.27  )
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+	id 1iSI4x-0003da-3H; Wed, 06 Nov 2019 09:58:19 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSI4q-0003dA-BR; Wed, 06 Nov 2019 09:58:12 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 6FB11301A79;
+ Wed,  6 Nov 2019 10:57:06 +0100 (CET)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 7142529ABB5FD; Wed,  6 Nov 2019 10:58:10 +0100 (CET)
+Date: Wed, 6 Nov 2019 10:58:10 +0100
+From: Peter Zijlstra <peterz@infradead.org>
+To: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>
+Subject: Re: [PATCH 1/2] perf/core: Adding capability to disable PMUs event
+ multiplexing
+Message-ID: <20191106095810.GK5671@hirez.programming.kicks-ass.net>
+References: <1573002091-9744-1-git-send-email-gkulkarni@marvell.com>
+ <1573002091-9744-2-git-send-email-gkulkarni@marvell.com>
+ <20191106094032.GV4131@hirez.programming.kicks-ass.net>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191106094032.GV4131@hirez.programming.kicks-ass.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,56 +55,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "corbet@lwn.net" <corbet@lwn.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "gklkml16@gmail.com" <gklkml16@gmail.com>,
+ "mingo@redhat.com" <mingo@redhat.com>, "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX6SLL EVK Rev A board is same with latest i.MX6SLL EVK board except
-eMMC can ONLY run at HS200 mode, add support for this board.
+On Wed, Nov 06, 2019 at 10:40:32AM +0100, Peter Zijlstra wrote:
+> On Wed, Nov 06, 2019 at 01:01:40AM +0000, Ganapatrao Prabhakerrao Kulkarni wrote:
+> > When PMUs are registered, perf core enables event multiplexing
+> > support by default. There is no provision for PMUs to disable
+> > event multiplexing, if PMUs want to disable due to unavoidable
+> > circumstances like hardware errata etc.
+> > 
+> > Adding PMU capability flag PERF_PMU_CAP_NO_MUX_EVENTS and support
+> > to allow PMUs to explicitly disable event multiplexing.
+> 
+> This doesn't make sense, multiplexing relies on nothing that normal
+> event scheduling doesn't also rely on.
+> 
+> Either you can schedule different sets of events, or you cannot.
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- arch/arm/boot/dts/Makefile             |  1 +
- arch/arm/boot/dts/imx6sll-evk-reva.dts | 12 ++++++++++++
- 2 files changed, 13 insertions(+)
- create mode 100644 arch/arm/boot/dts/imx6sll-evk-reva.dts
+More specifically, how is a reschedule due to rotation any different
+than a reschedule due to context switch?
 
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 71f08e7..3845bbf 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -557,6 +557,7 @@ dtb-$(CONFIG_SOC_IMX6SL) += \
- 	imx6sl-warp.dtb
- dtb-$(CONFIG_SOC_IMX6SLL) += \
- 	imx6sll-evk.dtb \
-+	imx6sll-evk-reva.dtb \
- 	imx6sll-kobo-clarahd.dtb
- dtb-$(CONFIG_SOC_IMX6SX) += \
- 	imx6sx-nitrogen6sx.dtb \
-diff --git a/arch/arm/boot/dts/imx6sll-evk-reva.dts b/arch/arm/boot/dts/imx6sll-evk-reva.dts
-new file mode 100644
-index 0000000..7ca2563
---- /dev/null
-+++ b/arch/arm/boot/dts/imx6sll-evk-reva.dts
-@@ -0,0 +1,12 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-+/*
-+ * Copyright 2016 Freescale Semiconductor, Inc.
-+ * Copyright 2017-2019 NXP.
-+ *
-+ */
-+
-+#include "imx6sll-evk.dts"
-+
-+&usdhc2 {
-+	compatible = "fsl,imx6sll-usdhc", "fsl,imx6sx-usdhc";
-+};
--- 
-2.7.4
-
+Both cases we do a full reprogram of the PMU.
 
 _______________________________________________
 linux-arm-kernel mailing list
