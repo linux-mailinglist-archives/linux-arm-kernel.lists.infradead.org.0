@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3F65F17FA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:09:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BC09F1803
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:10:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dyf+7bU3B2YYBY9RsbBBRuzRTffTjBRLENx7w0Iug3Q=; b=s1tZZIfC2Ndhg2
-	4bDEZGzlDqfppo6lak/1ZY8Yo3TUPBXsiXd5Oic9uK4cPA8LVaGgVY4yfZm0tF4nWMmq/EgscNkVk
-	KikViSjKH64emmF8bbTemeE08XgoX7geoPvm/ivgAFQH1cCjwfNU8PSJWIfrl7YHEIgVh2BsGwkn8
-	UiMEcu8eU7+HSh2YBHSqfpZe95p/qp4Qg0qxfJYhYgtHllRvlxOHtKNhui4auhRKfXH+viVSPFpqW
-	V2BuD9ZQIbVD94obd6p2KFO1GSbsuVxtIMit7xvDhHvH5+yKaIGIsvThMc/b+IRvLAtlCWdz1FgZ6
-	6/MpXmIoOImCz3A/pp6A==;
+	List-Owner; bh=/URSxDsVsb+GoQjhOAxxwF6vuQumxPQF0Hg9AHMHA00=; b=geWPVUB1sBwqD3
+	nLj4ZuxO+EZcJSfGHRASnfS1zyujZYYFk/jqSlwsXdWVQ1Sksz8qFhyYpHct1+FODH91DeDGZY/W1
+	MezVAUcpbog8zLv/6z3eBMxvX4gYC31o/6q6YYpmKF/j4mwLxve61pimbrR8caRzJXCtfg5Woafx1
+	sRBGwlc7wQ86g/tLOpi3zYODSOIcvy31b82aL71iF94npmUjQdGRLiqEhiD/HPdYd97cp7lvTtE4b
+	Quvk6/vUC5IKbgsOP3hULGp7qRAY3LLOktbUbYssq6NGA+TVd4bXDz8450Vf8ab7uN+lrkK8O63BT
+	hUwnRhXUEI7p6h52f29g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSM04-0005VF-Sa; Wed, 06 Nov 2019 14:09:32 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iSM0l-0006A0-VZ; Wed, 06 Nov 2019 14:10:15 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSLzL-0004us-Cb; Wed, 06 Nov 2019 14:08:48 +0000
-Received: by mail-pg1-x541.google.com with SMTP id e4so17240714pgs.1;
- Wed, 06 Nov 2019 06:08:47 -0800 (PST)
+ id 1iSLzZ-0005CA-Tj; Wed, 06 Nov 2019 14:09:03 +0000
+Received: by mail-pl1-x643.google.com with SMTP id ay6so4484974plb.0;
+ Wed, 06 Nov 2019 06:09:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=IGrpDRKjGtiRT6QlcUQ2diK8Wp4T7B3HNEKu57gaI70=;
- b=M4LY1AVpLRKaQ2PYpl4ihvdNmjYEbPsEsgJGBp5awZvOHExCB4h9/vK/P1ajy7wo4R
- eCznYQKQmR0sxuEQhx2oXaGnZRS0+eVNZY2kX4ZjBV+ps4U7af3uQx7sDze9vlQLznir
- 0+HGyIcrR0PoJ69qYWqFpl7aLdHYCXI3x25DrYnY6IKnvJ8a3f1uICEEInJ1jqriXyOi
- AAPSaDfApqTsa50NTGrK4sl1f6wa1GLuun1S1qnjDGiOinOxUozoZUHhc192xjATsI1Z
- nG4xZajoba2Bx/4KevwV9PXpoOylk3TpskZAbiV/uma4ZsBPl4rEF50ZQ44nc2Od9vxI
- bmOw==
+ bh=FtX1kXBG3vvdaUl4wOoaBRuLdri0yIVtwLf8lR4UWWQ=;
+ b=iJJItz+vffO9tQoSQOlwaE50RW26dK4JczW15WHT5J+2/9N3eVa0f9yHMEICb8juR8
+ IQ1Ai2MbmbLKBLUaeX2m5RG3VZuJQIpfXA8Q4FeAQ2w63BlC/d1f9BndQbxAsSXm8GeD
+ VslHcXTxq91LT4jpeidzeOFR6Qb4ALGFfS+qf50qDzeOWFpiHD60S5AfCp9ATxMzuUcM
+ xJIc+vQdYCUHMR9u61Gxt3iIJdupU81bv58oXJ0MQOKX9nLBsdJBL9kE6DmTL762yOFi
+ N4FvQkQopxK1HKJjHEWAlOCRIxbQG8ZHk7qRNr6FhpWZTF9P5pojX8jwU0P1uUl1URzv
+ PoyA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=IGrpDRKjGtiRT6QlcUQ2diK8Wp4T7B3HNEKu57gaI70=;
- b=V0VERCNapzQ0qpnmMuddk6KboxCOHc0YFnyO1RRdHLibgJ9z88VU9o/YgpbKiKJqN6
- SjLzIN73CN5zeSJ8T2zdRHr/vEl2fl8bDAEtHuE5A+Mb5w0JpVfU8HvyxWVSmkicQmdz
- /VDEhg1xyyB/GBpC8U/NSYnmVpodCOQCCUlVyYij3WXNks6FM1+UWezUtT9s6bwHsAHI
- S2cDzx/d7SwYHTfY/ZJPKJcE4eIP8qj6EIWcHLx3WDmBVUUIsFNSNlrC+Xr+NHDTW/a/
- cxHqucz3NWKlIJ9jd+J1r/yLZmc5ZnVzegXQMCfITXbXR6/GXi4EYstjC4oWwHDlMknU
- XfQQ==
-X-Gm-Message-State: APjAAAWa4kBoUEYKqfbnwCaR9ZSSCFOxVRIeeNhDXh51lZ53V1eotSAB
- mWAIxHBCfp8KwSlql1i8lUrZ9rwcndk=
-X-Google-Smtp-Source: APXvYqyciAa1ghxUmSQPYlowrrMDo0Qpjz7jY0Ac/lNoa/xPayE7Fj+LDRfNpWCrFpdZ8Nu12OBZsg==
-X-Received: by 2002:a65:5885:: with SMTP id d5mr3017512pgu.278.1573049326032; 
- Wed, 06 Nov 2019 06:08:46 -0800 (PST)
+ bh=FtX1kXBG3vvdaUl4wOoaBRuLdri0yIVtwLf8lR4UWWQ=;
+ b=cwbfI3Rf+Iz+dNr9QucBS5J8K0oVv9dPVuxoNhBh55emMPJq3/oz+TsBTSLgBRB09f
+ zwkFCYcPSzG4fxNa/4dao/YEvBv37hvC6PDndidIUz/XfFLSo+Ei1A+e62df8NMjDVKw
+ R8Tvk1nxlJZn1zqe2Z79lzASbehjE0k9KCndAZuc5IxtOOHEXlOXQWfes7w+wrbDyA8A
+ 44gTSrLB6H2QT3RJ5nmOyP69i26PRYADQ439zN2zEnInKaYcP1zUdBpXKiDCrPFDHm/P
+ ghq+I1Jq8jvzzMYgAyVoHXI/IqLNnAVu667eYsyJ9ikmZ9fVbh4KFglb/lbzu9s1oo5L
+ lFMg==
+X-Gm-Message-State: APjAAAW4zB4EFxX4+YD8dM7TXqAwBkBTlBpms5po7fVPtEL8XoYZqYWg
+ tSGmwA64i8iw1Mrzj3qgo7/WRHesdc4=
+X-Google-Smtp-Source: APXvYqygts/mak04562X0fgK/vvLZTbkPeSMoZr9mr+mopxFlmJTH31rJNGA97HB0NcP4AgDJFT0HQ==
+X-Received: by 2002:a17:902:8348:: with SMTP id
+ z8mr2924804pln.130.1573049339919; 
+ Wed, 06 Nov 2019 06:08:59 -0800 (PST)
 Received: from localhost.localdomain ([2001:19f0:7001:2668:5400:1ff:fe62:2bbd])
- by smtp.gmail.com with ESMTPSA id a16sm4707345pfc.56.2019.11.06.06.08.32
+ by smtp.gmail.com with ESMTPSA id a16sm4707345pfc.56.2019.11.06.06.08.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 06 Nov 2019 06:08:43 -0800 (PST)
+ Wed, 06 Nov 2019 06:08:59 -0800 (PST)
 From: Chuanhong Guo <gch981213@gmail.com>
 To: linux-mtd@lists.infradead.org
-Subject: [PATCH 1/2] mtd: mtk-quadspi: add support for memory-mapped flash
- reading
-Date: Wed,  6 Nov 2019 22:07:47 +0800
-Message-Id: <20191106140748.13100-2-gch981213@gmail.com>
+Subject: [PATCH 2/2] dt-bindings: mtd: mtk-quadspi: update bindings for mmap
+ flash read
+Date: Wed,  6 Nov 2019 22:07:48 +0800
+Message-Id: <20191106140748.13100-3-gch981213@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191106140748.13100-1-gch981213@gmail.com>
 References: <20191106140748.13100-1-gch981213@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_060847_457626_D8A38094 
-X-CRM114-Status: GOOD (  14.57  )
+X-CRM114-CacheID: sfid-20191106_060902_072736_3A469852 
+X-CRM114-Status: GOOD (  14.63  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -113,52 +114,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-PIO reading mode on this controller is ridiculously inefficient
-(one cmd+addr+dummy sequence reads only one byte)
-This patch adds support for reading from memory-mapped flash area
-which increases reading speed from 1MB/s to 5.6MB/s
+update register descriptions and add an example binding using it.
 
 Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
 ---
- drivers/mtd/spi-nor/mtk-quadspi.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ .../devicetree/bindings/mtd/mtk-quadspi.txt   | 21 ++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/mtd/spi-nor/mtk-quadspi.c b/drivers/mtd/spi-nor/mtk-quadspi.c
-index 34db01ab6cab..ba8b3be39896 100644
---- a/drivers/mtd/spi-nor/mtk-quadspi.c
-+++ b/drivers/mtd/spi-nor/mtk-quadspi.c
-@@ -106,6 +106,7 @@ struct mtk_nor {
- 	struct spi_nor nor;
- 	struct device *dev;
- 	void __iomem *base;	/* nor flash base address */
-+	void __iomem *flash_base;
- 	struct clk *spi_clk;
- 	struct clk *nor_clk;
+diff --git a/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt b/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
+index a12e3b5c495d..4860f6e96f5a 100644
+--- a/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
++++ b/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
+@@ -12,7 +12,10 @@ Required properties:
+ 		  "mediatek,mt7623-nor", "mediatek,mt8173-nor"
+ 		  "mediatek,mt7629-nor", "mediatek,mt8173-nor"
+ 		  "mediatek,mt8173-nor"
+-- reg: 		  physical base address and length of the controller's register
++- reg: 		  Contains one or two entries, each of which is a tuple consisting of a
++		  physical address and length. The first entry is the address and length
++		  of the controller register set. The optional second entry is the address
++		  and length of the area where the nor flash is mapped to.
+ - clocks: 	  the phandle of the clocks needed by the nor controller
+ - clock-names: 	  the names of the clocks
+ 		  the clocks should be named "spi" and "sf". "spi" is used for spi bus,
+@@ -48,3 +51,19 @@ nor_flash: spi@1100d000 {
+ 	};
  };
-@@ -272,6 +273,11 @@ static ssize_t mtk_nor_read(struct spi_nor *nor, loff_t from, size_t length,
- 	mtk_nor_set_read_mode(mtk_nor);
- 	mtk_nor_set_addr(mtk_nor, addr);
  
-+	if (mtk_nor->flash_base) {
-+		memcpy_fromio(buffer, mtk_nor->flash_base + from, length);
-+		return length;
-+	}
++nor_flash: spi@11014000 {
++	compatible = "mediatek,mt7629-nor",
++		     "mediatek,mt8173-nor";
++	reg = <0x11014000 0xe0>,
++	      <0x30000000 0x10000000>;
++	clocks = <&pericfg CLK_PERI_FLASH_PD>,
++		 <&topckgen CLK_TOP_FLASH_SEL>;
++	clock-names = "spi", "sf";
++	#address-cells = <1>;
++	#size-cells = <0>;
 +
- 	for (i = 0; i < length; i++) {
- 		ret = mtk_nor_execute_cmd(mtk_nor, MTK_NOR_PIO_READ_CMD);
- 		if (ret < 0)
-@@ -475,6 +481,11 @@ static int mtk_nor_drv_probe(struct platform_device *pdev)
- 	if (IS_ERR(mtk_nor->base))
- 		return PTR_ERR(mtk_nor->base);
- 
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
-+	mtk_nor->flash_base = devm_ioremap_resource(&pdev->dev, res);
-+	if (IS_ERR(mtk_nor->flash_base))
-+		mtk_nor->flash_base = NULL;
-+
- 	mtk_nor->spi_clk = devm_clk_get(&pdev->dev, "spi");
- 	if (IS_ERR(mtk_nor->spi_clk))
- 		return PTR_ERR(mtk_nor->spi_clk);
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++	};
++};
 -- 
 2.21.0
 
