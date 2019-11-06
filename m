@@ -2,58 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32511F183B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:16:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20706F1852
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:20:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0H4JIVB8sASowbpnSWcZyP3dD0ERECSmDO9uuTDwXyw=; b=HQpzvflBBNIEe7
-	HtTM/hUG16YdgvBnOS16LFxBC7sP6Fc6tuwtzEsBMzn1ND/HIG7CBfrwE4EM4WXzjyBv/gvUCv3B4
-	5i5FVsREMLYbK1v+d9mAbW7+ao0dBfKqpdV0ErBpt2vKja4ocDZSliagsPEdunHgh3ecxPVCrTBwL
-	Xul5fQj/oP9TIjniH0QMeIvPEngnv6yk6Hrt98n5ojKnqewMTaebCnQUKpsFgSc2On82f/Mfv78QI
-	1cDPn8C9RTu79ZBq4ytx5F2LY/E5pvKgZLi2hnHe/GT1YOhMPg4QvqIxf3yQkACgEp/S3ws0F+uPJ
-	J9FqJJBrIvAqtWIxVN5A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=OKK1vcW+CN3xwP2zJJnDBZbx6KWmfHd12eKc0Qbbgks=; b=QtZ
+	IPXQufoOaB//jxxcvFMcORjgvMJ2Jvmx0g2hY91lrUxd69y9AsYgnzzaaTgxSmYeF9krl+f6MOr34
+	JzGjWZIvfSOwg2q0fQ0zK84v5kHXJD4+ZqegXh4lR/OYPB70ycoDpr+uK5oi32Q5/Mn4elKkBJ2/J
+	fPg7KuDhE4OpAGxoIDX+ZohXjOYvc9L7sG5WCsFB4Ed29NHtMw//A98xMqCVwb3hwc+5auOO89ocf
+	jDuiZNNvxXPtU27L3IDABF9Zub2G5rn+ecwYhJDLWFzCd4YGtNMs+uXxYU67PK8gSOQrqv3mJiJcJ
+	gIy0HefB+GlRAwDn66/LaB3h7juLP1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSM6c-0003g5-OX; Wed, 06 Nov 2019 14:16:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSM5y-00037a-Ez
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 14:15:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2AAD47CD;
- Wed,  6 Nov 2019 06:15:35 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E5A693F6C4;
- Wed,  6 Nov 2019 06:15:32 -0800 (PST)
-Date: Wed, 6 Nov 2019 14:15:30 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Amit Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCHv2 1/8] ftrace: add ftrace_init_nop()
-Message-ID: <20191106141530.GC50610@lakrids.cambridge.arm.com>
-References: <20191029165832.33606-1-mark.rutland@arm.com>
- <20191029165832.33606-2-mark.rutland@arm.com>
- <daad0785-a33f-3cfb-cf0f-657b6c677257@arm.com>
- <20191104133657.GE45140@lakrids.cambridge.arm.com>
- <8e68de1f-f961-752d-9c07-ce41ce624d35@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8e68de1f-f961-752d-9c07-ce41ce624d35@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+	id 1iSMAT-0005l7-PF; Wed, 06 Nov 2019 14:20:17 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSMAK-0005Gr-28
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 14:20:09 +0000
+Received: by mail-wr1-x444.google.com with SMTP id a15so25986078wrf.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 Nov 2019 06:20:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=8BtBfv1f64XM22OKVAWg9tny4DrS6nBkaS+49knlZDw=;
+ b=E49WR0tTA98/K0BeZ6M0oSIbi9GQHW7rjF+kMCUVzHyozP3/lL7cYzcwBrpA9XyEN7
+ Za8ZNFOuagrVowQJcxkXIb174OEEKzGEMlYh1vAU6ZQpP9WFv4ipin+8kjFmkoI9OtlN
+ L8HWJ/fMxM2iqV68MOxGBgy2o36VGLuQNZ7SFboNd4lvUkF2k+7R3nBBhJwNcEUUpWu0
+ qPwioeoDTWgZ27bIvd0MGoAhtZywFrEamwWtLJX2/0IlPNOKwfZM3+uMDAqpwkCH+DKM
+ DhoNDWHLWzCoaGjQ6DNr5rJ1NZc602EiYesaOGDIrgNSGKw59hykiNkbrPCBZpc5jrGN
+ VHyg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=8BtBfv1f64XM22OKVAWg9tny4DrS6nBkaS+49knlZDw=;
+ b=Grovf/CZH/ki08Sdf/MT6hBQ2huKE/RP2gQrEUHEx6Fj4bKc/tDxDmkumJxBcJTsjg
+ bKMYqGBc7esZFsN3u8FjtWwNLspPrfOc4qB91DKsU3VM1iP7umQhgDiM7XiJaUrTgP8f
+ 1EF8J4+Rp20NY1q6pb3ZFshDFBsJeJD2mQjjCtptNvNja8NmKpofKjRYtxd+U4ud+eJn
+ 2eWiIct62JYvHUqr0y1kHtrlgRh9YP2svMsRMJseIgqZCk2noowqjRVsbHHKCfOY3TIU
+ 2MK8F9w2qakw4M7eiBxck0zO6DGWu5iF1gGoQMyWZnJveOjNsGaZl1X0UF7RQ0P5IPL/
+ zyoA==
+X-Gm-Message-State: APjAAAUZkCPTMtEQkhtrF4Jdk4zA1JaX6sB8GfOXGpLMXuH5Q7JPmEqQ
+ i3PTojQ3XFcC8QJ1IvficB62DuPZub6FSg==
+X-Google-Smtp-Source: APXvYqy6u8LC596fT4iTndVF5NRGlUkwmHxUF4f04mY1HYJ5KLMJh128KkcuYc/QCTLryNllGrpiYQ==
+X-Received: by 2002:a5d:4803:: with SMTP id l3mr2913835wrq.381.1573050006556; 
+ Wed, 06 Nov 2019 06:20:06 -0800 (PST)
+Received: from localhost.localdomain
+ (31.red-176-87-122.dynamicip.rima-tde.net. [176.87.122.31])
+ by smtp.gmail.com with ESMTPSA id f13sm24004818wrq.96.2019.11.06.06.20.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 06 Nov 2019 06:20:06 -0800 (PST)
+From: Richard Henderson <richard.henderson@linaro.org>
+X-Google-Original-From: Richard Henderson <rth@twiddle.net>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v4 0/1] arm64: Implement archrandom.h for ARMv8.5-RNG
+Date: Wed,  6 Nov 2019 15:19:53 +0100
+Message-Id: <20191106141954.30657-1-rth@twiddle.net>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_061538_576163_EF73F253 
-X-CRM114-Status: GOOD (  19.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191106_062008_120141_B8D76F84 
+X-CRM114-Status: GOOD (  11.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,57 +93,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jthierry@redhat.com, linux-parisc@vger.kernel.org, peterz@infradead.org,
- catalin.marinas@arm.com, deller@gmx.de, jpoimboe@redhat.com,
- linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- James.Bottomley@HansenPartnership.com, takahiro.akashi@linaro.org,
- will@kernel.org, mingo@redhat.com, james.morse@arm.com, jeyu@kernel.org,
- svens@stackframe.org, duwe@suse.de, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, linux-crypto@vger.kernel.org,
+ ard.biesheuvel@linaro.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 05, 2019 at 12:17:26PM +0530, Amit Kachhap wrote:
-> On 11/4/19 7:06 PM, Mark Rutland wrote:
-> > On Sat, Nov 02, 2019 at 05:49:00PM +0530, Amit Daniel Kachhap wrote:
-> > > On 10/29/19 10:28 PM, Mark Rutland wrote:
-> > > > +/**
-> > > > + * ftrace_init_nop - initialize a nop call site
-> > > > + * @mod: module structure if called by module load initialization
-> > > > + * @rec: the call site record (e.g. mcount/fentry)
-> > > > + *
-> > > > + * This is a very sensitive operation and great care needs
-> > > > + * to be taken by the arch.  The operation should carefully
-> > > > + * read the location, check to see if what is read is indeed
-> > > > + * what we expect it to be, and then on success of the compare,
-> > > > + * it should write to the location.
-> > > > + *
-> > > > + * The code segment at @rec->ip should contain the contents created by
-> > > > + * the compiler
-> > > Nit: Will it be better to write it as "@rec->ip should store the adjusted
-> > > ftrace entry address of the call site" or something like that.
-> > 
-> > This was the specific wording requested by Steve, and it's trying to
-> > describe the instructions at rec->ip, rather than the value of rec->ip,
-> > so I think it's better to leave this as-is.
-> ok Its fine this way too. Actually from the comment, I could not understand
-> which one of the compiler contents this points to as in this case there are
-> 2 nops.
+The ARMv8.5-RNG extension adds a hardware random number generator.
+The plumbing for this is already present in the kernel; we just
+have to take advantage of that.
 
-We can't say what the compiler contents will be. An architecture may use
-this callback if it's using mcount, mfentry, patchable-function-entry,
-or some other mechanism we're not aware of today. Depending on the
-architecture and mechanism, the callsite could contain a number of
-distinct things.
+Changes since v2:
+  * Keep arch_get_random{,_seed}_long in sync.
+  * Use __cpus_have_const_cap before falling back to this_cpu_has_cap.
 
-All the comment is trying to say is that when ftrace_init_nop() is
-called, the callsite has not been modified in any way since being
-compiled, so we can expect the contents to be whatever the compiler
-generated.
+Changes since v1:
+  * Use __mrs_s and fix missing cc clobber (Mark),
+  * Log rng failures with pr_warn (Mark),
+  * Use __must_check; put RNDR in arch_get_random_long and RNDRRS
+    in arch_get_random_seed_long (Ard),
+  * Use ARM64_CPUCAP_WEAK_LOCAL_CPU_FEATURE, and check this_cpu_has_cap
+    when reading random data.
+  * Move everything out of line, now that there are 5 other function
+    calls involved, and to unify the rate limiting on the pr_warn.
 
-Thanks,
-Mark.
+Tested with QEMU.  What's not tested is hot plugging cpus with differing
+capabilities; QEMU would need some extension to allow that sort of thing.
+
+
+r~
+
+
+Richard Henderson (1):
+  arm64: Implement archrandom.h for ARMv8.5-RNG
+
+ Documentation/arm64/cpu-feature-registers.rst |  2 +
+ arch/arm64/include/asm/archrandom.h           | 35 ++++++++
+ arch/arm64/include/asm/cpucaps.h              |  3 +-
+ arch/arm64/include/asm/sysreg.h               |  4 +
+ arch/arm64/kernel/cpufeature.c                | 13 +++
+ arch/arm64/kernel/random.c                    | 79 +++++++++++++++++++
+ arch/arm64/Kconfig                            | 12 +++
+ arch/arm64/kernel/Makefile                    |  1 +
+ drivers/char/Kconfig                          |  4 +-
+ 9 files changed, 150 insertions(+), 3 deletions(-)
+ create mode 100644 arch/arm64/include/asm/archrandom.h
+ create mode 100644 arch/arm64/kernel/random.c
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
