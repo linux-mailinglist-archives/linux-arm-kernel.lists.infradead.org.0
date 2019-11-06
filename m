@@ -2,64 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4046F187A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:24:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAC9BF1863
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 15:23:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UoPh6llK/F6ZC1UeuVGd99ABbZuSN5S4OLxXg2MDF9A=; b=BxidzQ42MiVJis
-	FrnF7tqRox549ABfZJi+yTeW3D3YJeEpi2zKnZpwGDK6er/uhIreOqceSd8JNIZmlzWaI71AbVxLx
-	oSIG3ddFurYHqpz2bR7g3paDKAsu4jzr4wFO77vDDMTXaglsX8xfS38Ix+oMBTXM/DIbKJSEWdU3z
-	VPvrucOEmTo76GfqDMWW6cXvTooiCdkMPI5eFmSI0n2U6zn/aqm2ddiNe0hCRvqmqQ08wpAUiKSGW
-	Kci1GFYWsFF7BetDwQbYCXv5UKlF0MLAFM43jTdB5g5FP8pNxlnjU5bptQ2dJ0qAbRtrIxV5uZ5Zl
-	OooWISV04+oVk0dBTP2g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ye4C2mlm+LZMH1JV0400kKk46ZlEzoFf/NoxVpiBZoY=; b=kr4cDEb2eSTBh0
+	MYIfmOzdPTtVDrZa4bBGyvnhvRYaMqwYagvPAwAHfC7Z6ki1QYHpoJ/O9R202qQnTq3KUHoFHpZMm
+	ZP93Y7+RSMaBqnpmCwdFZpo620Lh34InsKJe5EQAlCkW0gu8tbgslzm4SEurrYQU1PXzLKMvEHfGk
+	BD2UrCXUTSV/+3naB0ooNCV6B71QnjbSNiZQH0oLBT5VFo54xzCDorj1OcMd8m6axPLZFVNqO0GYn
+	KZueq62VQSeRRyktBE+f6ys7MNF0qUZuUEhC6Cc/+N0Lq862tAtANSPgYyyPE84c4vbCZkh3gXoSq
+	LAivnBXucglmwh38DZjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSMEv-0007C5-8T; Wed, 06 Nov 2019 14:24:53 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1iSMDZ-0006cj-W6; Wed, 06 Nov 2019 14:23:30 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSMEm-0006Zu-Ue
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 14:24:46 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 06 Nov 2019 06:22:42 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.68,275,1569308400"; d="scan'208";a="227938330"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by FMSMGA003.fm.intel.com with ESMTP; 06 Nov 2019 06:22:29 -0800
-Received: from andy by smile with local (Exim 4.93-RC1)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1iSMCY-0004FN-Gs; Wed, 06 Nov 2019 16:22:26 +0200
-Date: Wed, 6 Nov 2019 16:22:26 +0200
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-Subject: Re: [PATCH v2 2/2] gpio: Use new GPIO_LINE_DIRECTION
-Message-ID: <20191106142226.GB32742@smile.fi.intel.com>
-References: <cover.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
- <42f40109e2926bca197b30fd9624c609653b23e5.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
+ id 1iSMDS-0006bm-Vc
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 14:23:24 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id a67so9617150ywg.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 Nov 2019 06:23:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=eSWVp70y2kpyJk9Cxl49/cxLR3cgjAESMYLS12E5oUY=;
+ b=bWzySGaI1gx56KAqizix5H7Yk63JM+hiMx+HiAX2uSV+XOVSC9t6Jrkst9wSIn/yLa
+ Xcu/wWwfjHrzCGL5RS/ikhES7rrC7bIxuo/xobxeHHdGdiupSqBrywwc01R4ggjyVVwT
+ 6JEpWFWZxnJ/BBGpPpEnMjKz3Upd/nuofT7yj7MARsElGSSh3VroG1/9NtMtS9asMnub
+ XLFSnfkiGKtLmEppBnfnGIvYYIlvm1VLadl1ERrUOnACBilCnP8g/fKJMCpoXlfG+JUY
+ 67VOsBsBFFpozYlaQHVQN8dlLJyN6q8JLY/4aG2J/Ve/avl4AYaZ4kmHQxum19YIaqTs
+ NVrQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=eSWVp70y2kpyJk9Cxl49/cxLR3cgjAESMYLS12E5oUY=;
+ b=gZKD+lbq3fp8XjRbmEV0HkTxYacPHwD8uStNVSa7Tw8VhN6/F8F+ibJLgKFVuZOvgX
+ N+vuCwHDl/bsjBT8p95mjsdd7gVhQ+PKaD30vJ5mHXnRCD1Dzwi7uQmIncmAOzlnGoNU
+ FCLevG7ovHKWl1aDzijfajADcUzhdPcu3aaRO+Yv+S74pXM7aQ4uhYW7kq4X5UXb1t1i
+ 9cbxHJRhbakscwV3G8AcE4WR34p28LwBnK9a4ViAoYHYPzwgS67oRHNtLWMcXRu5ULu3
+ C7JxzKG0xzjnT6rCdCYNohJevv1mraLHbHan8cUa6dMXmYwjoASnLVbdnUFT3cL7Ojyr
+ 2dfg==
+X-Gm-Message-State: APjAAAUziajX4gWl8lLN3dJH+dancjYblym70qJ0EsPbrOCeNSOCpW5W
+ TEpGXMCDjYydJxmAAhQKoP/odVWjyvE=
+X-Google-Smtp-Source: APXvYqzoYMq5gT/9eBMtyUIJu1a4USxwCNgZTNpjMjW3B/XCmy9qZhYAuVQhtBUvi/iW0mEQY3Xf8A==
+X-Received: by 2002:a81:58c6:: with SMTP id m189mr1437100ywb.25.1573050199708; 
+ Wed, 06 Nov 2019 06:23:19 -0800 (PST)
+Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
+ [73.37.219.234])
+ by smtp.gmail.com with ESMTPSA id f203sm4436246ywa.106.2019.11.06.06.23.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 06 Nov 2019 06:23:18 -0800 (PST)
+From: Adam Ford <aford173@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH V2] ARM: dts: imx6q-logicpd: Enable ili2117a Touchscreen
+Date: Wed,  6 Nov 2019 08:23:08 -0600
+Message-Id: <20191106142308.10511-1-aford173@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <42f40109e2926bca197b30fd9624c609653b23e5.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_062445_007350_068941B8 
-X-CRM114-Status: GOOD (  18.57  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191106_062323_567638_67FF30CF 
+X-CRM114-Status: GOOD (  11.61  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (aford173[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,167 +99,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kuppuswamy Sathyanarayanan <sathyanarayanan.kuppuswamy@linux.intel.com>,
- linux-aspeed@lists.ozlabs.org, David Daney <david.daney@cavium.com>,
- Linus Walleij <linus.walleij@linaro.org>, alsa-devel@alsa-project.org,
- Peter Tyser <ptyser@xes-inc.com>, Thierry Reding <thierry.reding@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, Fabio Estevam <festevam@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Kevin Hilman <khilman@kernel.org>,
- Michal Simek <michal.simek@xilinx.com>, Marek Behun <marek.behun@nic.cz>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- bcm-kernel-feedback-list@broadcom.com, Joel Stanley <joel@jms.id.au>,
- Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- Bamvor Jian Zhang <bamv2005@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- linux-pwm@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
- Charles Keepax <ckeepax@opensource.cirrus.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, mazziesaccount@gmail.com,
- Ray Jui <rjui@broadcom.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- William Breathitt Gray <vilhelm.gray@gmail.com>, linux-gpio@vger.kernel.org,
- Richard Fitzgerald <rf@opensource.cirrus.com>,
- Santosh Shilimkar <ssantosh@kernel.org>, linux-tegra@vger.kernel.org,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Scott Branden <sbranden@broadcom.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Andrew Jeffery <andrew@aj.id.au>, "Enrico Weigelt,
- metux IT consult" <info@metux.net>, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, Thorsten Scherer <t.scherer@eckelmann.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, patches@opensource.cirrus.com,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Fabio Estevam <festevam@gmail.com>, Adam Ford <aford173@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
  Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 06, 2019 at 10:54:12AM +0200, Matti Vaittinen wrote:
-> It's hard for occasional GPIO code reader/writer to know if values 0/1
-> equal to IN or OUT. Use defined GPIO_LINE_DIRECTION_IN and
-> GPIO_LINE_DIRECTION_OUT to help them out.
-> 
-> NOTE - for gpio-amd-fch and gpio-bd9571mwv:
-> This commit also changes the return value for direction get to equal 1
-> for direction INPUT. Prior this commit these drivers might have
-> returned some other positive value but 1 for INPUT.
+The LCD used with the imx6q-logicpd board has an integrated
+ili2117a touch controller connected to i2c1.
 
->  drivers/gpio/gpio-ich.c             |  5 ++++-
+This patch adds the node to enable this feature.
 
->  drivers/gpio/gpio-merrifield.c      |  5 ++++-
+Signed-off-by: Adam Ford <aford173@gmail.com>
+---
+ili2117 support is scheduled to be introduced for Kernel v5.5.
 
->  drivers/gpio/gpio-pca953x.c         |  5 ++++-
+V2:  Change node to touchscreen@26 and move comment about 5.5 to under the dashes
 
->  drivers/gpio/gpio-sch.c             |  5 ++++-
-
->  drivers/gpio/gpio-wcove.c           |  7 +++++--
-
-Since maintainers seems in favour of this and bloat-o-meter shows no difference
-on selected module,
-
-Acked-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-
-for the stuff I'm involved in.
-
-Thanks!
-
-> diff --git a/drivers/gpio/gpio-ich.c b/drivers/gpio/gpio-ich.c
-> index 90bf7742f9b0..2f086d0aa1f4 100644
-> --- a/drivers/gpio/gpio-ich.c
-> +++ b/drivers/gpio/gpio-ich.c
-> @@ -159,7 +159,10 @@ static bool ichx_gpio_check_available(struct gpio_chip *gpio, unsigned nr)
->  
->  static int ichx_gpio_get_direction(struct gpio_chip *gpio, unsigned nr)
->  {
-> -	return ichx_read_bit(GPIO_IO_SEL, nr);
-> +	if (ichx_read_bit(GPIO_IO_SEL, nr))
-> +		return GPIO_LINE_DIRECTION_IN;
-> +
-> +	return GPIO_LINE_DIRECTION_OUT;
->  }
->  
->  static int ichx_gpio_direction_input(struct gpio_chip *gpio, unsigned nr)
-
-> diff --git a/drivers/gpio/gpio-merrifield.c b/drivers/gpio/gpio-merrifield.c
-> index 2f1e9da81c1e..d4fa6e9560f3 100644
-> --- a/drivers/gpio/gpio-merrifield.c
-> +++ b/drivers/gpio/gpio-merrifield.c
-> @@ -162,7 +162,10 @@ static int mrfld_gpio_get_direction(struct gpio_chip *chip, unsigned int offset)
->  {
->  	void __iomem *gpdr = gpio_reg(chip, offset, GPDR);
->  
-> -	return !(readl(gpdr) & BIT(offset % 32));
-> +	if (readl(gpdr) & BIT(offset % 32))
-> +		return GPIO_LINE_DIRECTION_OUT;
-> +
-> +	return GPIO_LINE_DIRECTION_IN;
->  }
->  
->  static int mrfld_gpio_set_debounce(struct gpio_chip *chip, unsigned int offset,
-
-> diff --git a/drivers/gpio/gpio-pca953x.c b/drivers/gpio/gpio-pca953x.c
-> index de5d1383f28d..82122c3c688a 100644
-> --- a/drivers/gpio/gpio-pca953x.c
-> +++ b/drivers/gpio/gpio-pca953x.c
-> @@ -449,7 +449,10 @@ static int pca953x_gpio_get_direction(struct gpio_chip *gc, unsigned off)
->  	if (ret < 0)
->  		return ret;
->  
-> -	return !!(reg_val & bit);
-> +	if (reg_val & bit)
-> +		return GPIO_LINE_DIRECTION_IN;
-> +
-> +	return GPIO_LINE_DIRECTION_OUT;
->  }
->  
->  static void pca953x_gpio_set_multiple(struct gpio_chip *gc,
-
-> diff --git a/drivers/gpio/gpio-sch.c b/drivers/gpio/gpio-sch.c
-> index fb143f28c386..c65f35b68202 100644
-> --- a/drivers/gpio/gpio-sch.c
-> +++ b/drivers/gpio/gpio-sch.c
-> @@ -127,7 +127,10 @@ static int sch_gpio_get_direction(struct gpio_chip *gc, unsigned gpio_num)
->  {
->  	struct sch_gpio *sch = gpiochip_get_data(gc);
->  
-> -	return sch_gpio_reg_get(sch, gpio_num, GIO);
-> +	if (sch_gpio_reg_get(sch, gpio_num, GIO))
-> +		return GPIO_LINE_DIRECTION_IN;
-> +
-> +	return GPIO_LINE_DIRECTION_OUT;
->  }
->  
->  static const struct gpio_chip sch_gpio_chip = {
-
-> diff --git a/drivers/gpio/gpio-wcove.c b/drivers/gpio/gpio-wcove.c
-> index 444fe9e7f04a..8b481b3c1ebe 100644
-> --- a/drivers/gpio/gpio-wcove.c
-> +++ b/drivers/gpio/gpio-wcove.c
-> @@ -170,13 +170,16 @@ static int wcove_gpio_get_direction(struct gpio_chip *chip, unsigned int gpio)
->  	int ret, reg = to_reg(gpio, CTRL_OUT);
->  
->  	if (reg < 0)
-> -		return 0;
-> +		return GPIO_LINE_DIRECTION_OUT;
->  
->  	ret = regmap_read(wg->regmap, reg, &val);
->  	if (ret)
->  		return ret;
->  
-> -	return !(val & CTLO_DIR_OUT);
-> +	if (val & CTLO_DIR_OUT)
-> +		return GPIO_LINE_DIRECTION_OUT;
-> +
-> +	return GPIO_LINE_DIRECTION_IN;
->  }
->  
->  static int wcove_gpio_get(struct gpio_chip *chip, unsigned int gpio)
-
-
+diff --git a/arch/arm/boot/dts/imx6q-logicpd.dts b/arch/arm/boot/dts/imx6q-logicpd.dts
+index d96ae54be338..7a3d1d3e54a9 100644
+--- a/arch/arm/boot/dts/imx6q-logicpd.dts
++++ b/arch/arm/boot/dts/imx6q-logicpd.dts
+@@ -73,6 +73,16 @@
+ 	status = "okay";
+ };
+ 
++&i2c1 {
++	touchscreen@26 {
++		compatible = "ilitek,ili2117";
++		reg = <0x26>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_touchscreen>;
++		interrupts-extended = <&gpio1 6 IRQ_TYPE_EDGE_RISING>;
++	};
++};
++
+ &ldb {
+ 	status = "okay";
+ 
 -- 
-With Best Regards,
-Andy Shevchenko
-
+2.20.1
 
 
 _______________________________________________
