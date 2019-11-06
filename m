@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F5F6F0C6B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 04:07:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAF27F0C75
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 04:07:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dVgh2xawnN32t1sf7MdjBTXSRLhpDFIiGJfVG8PyYnQ=; b=f4BOIAKDWSLgX8
-	mexeHQEnxH+fBvD+BNwhpkADugyvOYUH6nKTBireMhjEsQSP7wWHVkqW68L372LUyoCx82PpaoKuN
-	PqmdjRh/G6bxBGRqOs8H6ge/ahvbXlDdGEmD/iUvdHEoIK8B7w9IfKK/odob6gwfi0MXPHQUb3qnC
-	JXYKCCoMLX4z/B9JrlYe48PsQ5IqIZ5ljWZnj5JBZCwOodx6Muh7k78osW71wq6IP0lErV9ESPoDf
-	m02W7PFrJVu0mUh4PyOnbZnj5+V+lKWskJJUOWqejsDX5nhh/ikostR4bJzAjZTbwpdQqZ6tO2ndM
-	IWnjAWkTICLP8/87CZVA==;
+	List-Owner; bh=2q0H+esmVBjfy8ARwmGUSltJXwDJuck6YBrnJ+kW6Y8=; b=s8CaNtNRvdku53
+	smcwceszVVr/jHQ+dJw05deMKyfGs4NCaF1SFYa4S5ldABIMvn9FZid3YGvWtZgXZJZJMgzAa/cil
+	T8Yx9HDwNqsT5bh7TE5HuT3HEEtD5ZDBGQV09LSDY6bx3PM0nGvIOEZ8ieHaeipW2EU2nXgdnSmGU
+	RSqe4zaFKgz1gI7g91+Aon55fthMK26az6odGiQ6cg2njEoqY4XpqZpTKRq/PbiPcF1g76yJzs2bV
+	iY5Nu4yOxXyjn/dyYR6oU2FDcgWpHSCI2YCr05h4RhhHw/CrfBe54kZuRO4HEjvPODawEL8+OzrY1
+	WL2rnjH2QqqrV7fGautA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSBex-0001tU-2B; Wed, 06 Nov 2019 03:07:03 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iSBfJ-0002J0-OH; Wed, 06 Nov 2019 03:07:25 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSBeO-0001hP-Vh
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 03:06:30 +0000
-Received: by mail-pg1-x542.google.com with SMTP id f19so7013693pgk.11
+ id 1iSBeT-0001lm-F7
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 03:06:35 +0000
+Received: by mail-pl1-x642.google.com with SMTP id k7so10746316pll.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 Nov 2019 19:06:28 -0800 (PST)
+ Tue, 05 Nov 2019 19:06:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=arista.com; s=googlenew;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=0JSJptxyMyyawlDIBafWZUWHnWl6qdn6DTmb9gqM8mc=;
- b=JHekqEdxHHGq9kYP65o2sun5nG9SgZ6ZvelgmrQOBAd6nSZPqd+KI8tFb+/BxnkoRt
- fEqocTcau1xtvO8DXbt5MpnFCejfVZXd46xYnzH3azls0EE9UxNKyBeCQiDfnZ6m/2H7
- Y0G6x6Mt6/7pcjhvQR7RmJjwYgecku2UfMAKf5CBM4QwylzBcNVp6BZOPcI00JwR0w8t
- 93oVAESRdy2IE8lRGfRSuHkvNNIZWDbL7p9v5L7iQk1lH3tW0U4NVRUJRxvLswfvcaKs
- eB6xY45UcfkHCgQpoez5YKail4THuaGs9qT1052KKwRhyNoEgPzvIermNmfAWoi3aY4L
- DZQg==
+ bh=T4xceT58B6sbL4PhV43oCBSGVJEvO1DNZo325HcSVkg=;
+ b=U3UPaJg+2y87NqfpsnwuDDEKpAogHQ3AUxQixZIutQNYD5rfoA7vZzTIL+Wd243QXP
+ mBL9fQeYEt1+bO4QIY7SYhqSyra1ePH4jDwMACZsXCbmhl2yQo1oRhY7v4QTdpinYHuz
+ GK3D7hxrdvZ3KaUactgAQElVQ2s6CAfVLUEqCHRsM25V4z4qa6ZPR6D/CmLuyTMpaUxn
+ 2EaC/jnzc+e2qN8UcInFBc9mIef6p2J19lLYVVbKE6XVpO1h2ngK3yPVEbB8GXDk2xOZ
+ sKpwDTALK4MbaX2Rq4LrkGBNxOXmhl8LsikDWGzwGCe5RVjq721/u3WUUXx2rqLMK6A1
+ GBGg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=0JSJptxyMyyawlDIBafWZUWHnWl6qdn6DTmb9gqM8mc=;
- b=VgdTPTFXnY+kqhNp0e62GpcxXem65nUi5vFQ4Fyo5iy8Dhtz8lf+uobgseEbbff1/J
- 4milAphBM3qU4xqKH8dhls9BdyHCkH1tK1qZIEFR3Pobsyomtem9gb28pJEasBND4jW6
- DXhTzatuROEytGV5Fi33VL19J5Zcc05+duMSSonyVTK4g1VeCGQA3FnOZhdIta01PwSF
- WfCKlIIay/b7s6gaHd0z8iL3mv+85WGUkmkh5QG8qWuBhqSJSzwzrwBf6PUZq+GrZpXa
- Z0UkXeaSD3+l5XCHwANkd0WFCNlpEAtZ/PA8CRmYO4FcdoKi5kD5wuZ0AzV3ynL31T7f
- fpOA==
-X-Gm-Message-State: APjAAAVmg+t//M7wndYR4IMmcdzwp2Eo4hxIBUPd2/+wN3prKeq830Nb
- fSo7U+filTsbxL2PFwbqR7+85w==
-X-Google-Smtp-Source: APXvYqzMex0R0bYN510KHz0M3qzyYI08t2BEtaQ5LiAHiQZF5atMOFpXXMlmxNnasjCDeyjokgwVbQ==
-X-Received: by 2002:a63:d1a:: with SMTP id c26mr225690pgl.24.1573009588153;
- Tue, 05 Nov 2019 19:06:28 -0800 (PST)
+ bh=T4xceT58B6sbL4PhV43oCBSGVJEvO1DNZo325HcSVkg=;
+ b=VyV92p6E80QcfWHi4cPn1q4BXUC27gQl7J4tliQyxFyG+vvU8gZlxUi3/NATS2idJR
+ bxmOYGsKKGuq3HWFlRMTMLviVBnBBGxiHnF2FX2jhH59EwgN50UKQcWKrCvw5aDXGkwp
+ B+cinyOZoLOrQ+5I/SmlEwmCIH3JZTHjToXiahm8Hg27MLf+Io74zUXu7TYLwoYqoHyc
+ CxuuBDc02PzKxp2KahbNvdrpEuP7vIjH5qsTWn4RdWQuEUMNOsYJs6mZohDaJc+L4/jK
+ Q3lVXWfiRgd6a8blNWAcwDkvLVOPNmA5i2TWsmBT0py21p3Mb0F69O7at66clLhsYX4i
+ Yukg==
+X-Gm-Message-State: APjAAAX7YN8T57QHThICIpjj+S1fjjxjf78V8iuKcmpp76DWHt9BsqmR
+ TlUb+sf5okowjU+WkN7x7jZJVw==
+X-Google-Smtp-Source: APXvYqyk+jwPIxnw+WSN1kToR1F8PVjBE6uY2e4pxOa1tt6VZ8XuJUjdGnhvtrpfbvJH4vxVL4+yFw==
+X-Received: by 2002:a17:902:7783:: with SMTP id
+ o3mr132537pll.313.1573009592111; 
+ Tue, 05 Nov 2019 19:06:32 -0800 (PST)
 Received: from Mindolluin.ire.aristanetworks.com ([217.173.96.166])
- by smtp.gmail.com with ESMTPSA id k24sm19570487pgl.6.2019.11.05.19.06.24
+ by smtp.gmail.com with ESMTPSA id k24sm19570487pgl.6.2019.11.05.19.06.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 19:06:27 -0800 (PST)
+ Tue, 05 Nov 2019 19:06:31 -0800 (PST)
 From: Dmitry Safonov <dima@arista.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 05/50] arm: Add loglvl to unwind_backtrace()
-Date: Wed,  6 Nov 2019 03:04:56 +0000
-Message-Id: <20191106030542.868541-6-dima@arista.com>
+Subject: [PATCH 06/50] arm: Add loglvl to dump_backtrace()
+Date: Wed,  6 Nov 2019 03:04:57 +0000
+Message-Id: <20191106030542.868541-7-dima@arista.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191106030542.868541-1-dima@arista.com>
 References: <20191106030542.868541-1-dima@arista.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_190629_039987_D785677C 
-X-CRM114-Status: GOOD (  15.00  )
+X-CRM114-CacheID: sfid-20191105_190633_544907_150D1FD2 
+X-CRM114-Status: GOOD (  14.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -128,11 +129,11 @@ Introducing log-level parameter and KERN_UNSUPPRESSED [1] seems
 an easier approach than introducing more printk buffers.
 Also, it will consolidate printings with headers.
 
-Add log level argument to unwind_backtrace() as a preparation for
+Add log level argument to dump_backtrace() as a preparation for
 introducing show_stack_loglvl().
 
-As a good side-effect arm_syscall() is now printing errors with the same
-log level as the backtrace.
+As a good side-effect __die() now prints not only "Stack:" header with
+KERN_EMERG, but the backtrace itself.
 
 Cc: Russell King <linux@armlinux.org.uk>
 Cc: Will Deacon <will@kernel.org>
@@ -141,78 +142,61 @@ Cc: clang-built-linux@googlegroups.com
 [1]: https://lore.kernel.org/lkml/20190528002412.1625-1-dima@arista.com/T/#u
 Signed-off-by: Dmitry Safonov <dima@arista.com>
 ---
- arch/arm/include/asm/unwind.h | 3 ++-
- arch/arm/kernel/traps.c       | 6 +++---
- arch/arm/kernel/unwind.c      | 7 ++++---
- 3 files changed, 9 insertions(+), 7 deletions(-)
+ arch/arm/kernel/traps.c | 16 +++++++++-------
+ 1 file changed, 9 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm/include/asm/unwind.h b/arch/arm/include/asm/unwind.h
-index 6e282c33126b..0f8a3439902d 100644
---- a/arch/arm/include/asm/unwind.h
-+++ b/arch/arm/include/asm/unwind.h
-@@ -36,7 +36,8 @@ extern struct unwind_table *unwind_table_add(unsigned long start,
- 					     unsigned long text_addr,
- 					     unsigned long text_size);
- extern void unwind_table_del(struct unwind_table *tab);
--extern void unwind_backtrace(struct pt_regs *regs, struct task_struct *tsk);
-+extern void unwind_backtrace(struct pt_regs *regs, struct task_struct *tsk,
-+			     const char *loglvl);
- 
- #endif	/* !__ASSEMBLY__ */
- 
 diff --git a/arch/arm/kernel/traps.c b/arch/arm/kernel/traps.c
-index 7c3f32b26585..69e35462c9e9 100644
+index 69e35462c9e9..e4f4ec8a1899 100644
 --- a/arch/arm/kernel/traps.c
 +++ b/arch/arm/kernel/traps.c
-@@ -202,7 +202,7 @@ static void dump_instr(const char *lvl, struct pt_regs *regs)
+@@ -200,17 +200,19 @@ static void dump_instr(const char *lvl, struct pt_regs *regs)
+ }
+ 
  #ifdef CONFIG_ARM_UNWIND
- static inline void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
+-static inline void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
++static inline void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk,
++				  const char *loglvl)
  {
--	unwind_backtrace(regs, tsk);
-+	unwind_backtrace(regs, tsk, KERN_DEBUG);
+-	unwind_backtrace(regs, tsk, KERN_DEBUG);
++	unwind_backtrace(regs, tsk, loglvl);
  }
  #else
- static void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
-@@ -660,10 +660,10 @@ asmlinkage int arm_syscall(int no, struct pt_regs *regs)
- 	if (user_debug & UDBG_SYSCALL) {
- 		pr_err("[%d] %s: arm syscall %d\n",
- 		       task_pid_nr(current), current->comm, no);
--		dump_instr("", regs);
-+		dump_instr(KERN_ERR, regs);
- 		if (user_mode(regs)) {
- 			__show_regs(regs);
--			c_backtrace(frame_pointer(regs), processor_mode(regs), NULL);
-+			c_backtrace(frame_pointer(regs), processor_mode(regs), KERN_ERR);
- 		}
- 	}
- #endif
-diff --git a/arch/arm/kernel/unwind.c b/arch/arm/kernel/unwind.c
-index 0a65005e10f0..caaae1b6f721 100644
---- a/arch/arm/kernel/unwind.c
-+++ b/arch/arm/kernel/unwind.c
-@@ -455,11 +455,12 @@ int unwind_frame(struct stackframe *frame)
- 	return URC_OK;
- }
- 
--void unwind_backtrace(struct pt_regs *regs, struct task_struct *tsk)
-+void unwind_backtrace(struct pt_regs *regs, struct task_struct *tsk,
-+		      const char *loglvl)
+-static void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
++static void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk,
++			   const char *loglvl)
  {
- 	struct stackframe frame;
+ 	unsigned int fp, mode;
+ 	int ok = 1;
  
--	pr_debug("%s(regs = %p tsk = %p)\n", __func__, regs, tsk);
-+	printk("%s%s(regs = %p tsk = %p)\n", loglvl, __func__, regs, tsk);
+-	printk("Backtrace: ");
++	printk("%sBacktrace: ", loglvl);
  
  	if (!tsk)
  		tsk = current;
-@@ -493,7 +494,7 @@ void unwind_backtrace(struct pt_regs *regs, struct task_struct *tsk)
- 		urc = unwind_frame(&frame);
- 		if (urc < 0)
- 			break;
--		dump_backtrace_entry(where, frame.pc, frame.sp - 4, NULL);
-+		dump_backtrace_entry(where, frame.pc, frame.sp - 4, loglvl);
- 	}
+@@ -237,13 +239,13 @@ static void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk)
+ 	pr_cont("\n");
+ 
+ 	if (ok)
+-		c_backtrace(fp, mode, NULL);
++		c_backtrace(fp, mode, loglvl);
  }
+ #endif
+ 
+ void show_stack(struct task_struct *tsk, unsigned long *sp)
+ {
+-	dump_backtrace(NULL, tsk);
++	dump_backtrace(NULL, tsk, KERN_DEFAULT);
+ 	barrier();
+ }
+ 
+@@ -285,7 +287,7 @@ static int __die(const char *str, int err, struct pt_regs *regs)
+ 	if (!user_mode(regs) || in_interrupt()) {
+ 		dump_mem(KERN_EMERG, "Stack: ", regs->ARM_sp,
+ 			 THREAD_SIZE + (unsigned long)task_stack_page(tsk));
+-		dump_backtrace(regs, tsk);
++		dump_backtrace(regs, tsk, KERN_EMERG);
+ 		dump_instr(KERN_EMERG, regs);
+ 	}
  
 -- 
 2.23.0
