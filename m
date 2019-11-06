@@ -2,158 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 646B4F216B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 23:10:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8085F217A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 Nov 2019 23:15:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/wUZot70/BnPAhkxvrjOVUaDnoU5oJR5vaJPt664vyo=; b=ImgrKGS989r5KS
-	HD4GYQ4RpGu7NjHkQ7bei5kQQWQBOEvNFsGZZ/sCp3QniuwTJvvee+Hl9mQkZggvJfzvH+2/7FEoQ
-	96qIRtzJxh9yXei7z7onRmpqNwvaH0L3B0rFkm76C4HWIQOBjJMxzwyvGOGfbU6WXkNcrlzym0DiM
-	7T2ttKB1Etx8Q8k9eg5ILoKFZcFZSv+3fmYt8vG3Zg8ForVt0BjIX8BRri7gMPLXzqDKPQGj2v5Lz
-	/fl4dzV28x9CpuZMvzNtogRIvEFlE6fCJBKSO/E2bQ2wFXnb5fwUyxZu2MmeMax15nEjKKXM9Zze6
-	iD4S8pavlB6qp3PtVXeQ==;
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Q0VdlTMKy565b5MS17zfKwucSp2dIXJEKnyVyYCk04w=; b=X7eEQo+BTbdwP/
+	sG7Fxxc0qUvygRkId1kf8dow+tmXh1RYqwt5CMhkPkYinxZeGFNTerKvOjrsab0P5ZCpW9tA/up8x
+	uFioF4vfRsTGuKlVhaIkVdWedUq5revaMEDWnNOaUAk9uLKtu4dPkHchmf206CeWbLSUJd8kFmMtn
+	tp7YpPQuo/+YwQHiYG6k6KAFJYZQ8AKFqJMbDHxGEAWFMypW5OhTu5QzxzETktYn93x4592QaTIDz
+	WnpAps08ou1B2iYdOpXDOJv9QS4s2XdXrwd7vEDYzoY/2KdgrS2wuQiiT3QIy5ZwRJgsg6zXcITqQ
+	NfJupN1xdTwI6SE/X8Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSTVr-0007ZN-HX; Wed, 06 Nov 2019 22:10:51 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1iSTag-0000oY-2V; Wed, 06 Nov 2019 22:15:50 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSTVj-0007Yh-GZ
- for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 22:10:45 +0000
-Received: by mail-ed1-x541.google.com with SMTP id b72so176900edf.1
+ id 1iSTaX-0000ns-9N
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 Nov 2019 22:15:43 +0000
+Received: by mail-wm1-x343.google.com with SMTP id q70so5920212wme.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 Nov 2019 14:10:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=SDr75JeUJsJ8dZL/F1Be4/O1quSb0nw2X9hrHND8Y8U=;
- b=GANudTF+1UsLE9mwYGatQdZ9xW827oG/pClc3lKYYg/7SRSfh4AxD+YbTxwiEof0xS
- 7I8Hj4e+3LyJT+sS2AdizrwRxnmhCvo89bfMYafgivJ4ZGei4MSMxELjSnOyEg4/hiYw
- JEOXqc1W8chNN1+jU48HL1C/M4S1HHHfn/tjxmNTPlD+U88n9lZd/WdP9rMS0kVmfT9E
- j2802XFtbb0aCZtx09n7Bq9jT+D6aIln6u7htKHyO5Pn2ouMdF2Tt6M2LkuPdCFWyP3a
- ZetB760Ovy1LyLCDpvlPiKI55/WzLE2nJ1hnoYXI3F/sDYOCHGDrlgePZLZ9NgJtZCKQ
- RQ0g==
+ Wed, 06 Nov 2019 14:15:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from:cc; bh=UJA8WLNvHF2SOQyoAUNEJnqpP8T7iPhqxJV3li4veHI=;
+ b=di92SvI3LMsnBt6xF2BmlXVE1w1cdJnhOlG5G8hJlFqKA7/8sOmHtlK8hxGva3wmL1
+ vcjEp4LQkBCoI0RIe42kv+5AaPMQxo/tKmnRlqCH1XrBZRa8xhpnDAB2K2qFI+MTK6tV
+ ny+h+IVPe3VEeMyGTKWKXjNuox7GhpqCsM0C39Q6a6Z3QMheUhpLJeEMKZidxRxeqN+M
+ 6D/gwmzBHtwsQ/fHqCEa+wI2w2LnaOTgghI4WcBN6gJRwQA0NZ5/C+WpkdEAmXwHpAJM
+ aFAH40G8uRir6Qb99akHSfNiajDuITSQU9CNFe30ljV8Y02spI6N/MkZjekzOx1/h5C0
+ 3JSg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=SDr75JeUJsJ8dZL/F1Be4/O1quSb0nw2X9hrHND8Y8U=;
- b=SxqC4u8gamIFVUVnklrtHnbl2KLfa7dDETJ96HzDYqGBSK5+IohGLUCzrLHWPzJxne
- SNsunk3H5ttOhfuJhdOfwgwb8b6FPiE2LgEIjb0U6kU0gEYMxy/7zi0XMcDzOX97+n+4
- THsofeW76zlee4vLeazH4lMtCy/ahl/R5z8ftkQtOMMsr94gFfWzDM6Yr0R61Pb88egp
- 4kUZm516eFJYrHIlYRhR5clCdgYJr8ShMF7GZ/R7DAjAA1ORjkKsaHca5olcgrE+cVZj
- w3JgWewqrMbqbJPe78eKjDhpXDbP2RN+Ly0azXFZ9sFUn2H6SF4b/NPZKFDnjOMzuwjN
- ac8g==
-X-Gm-Message-State: APjAAAWGuvQfUdCTAV7dl3heEncqhOb0kj+Qw3LHEfT1UuJBi4NVHtSy
- eFihO2BZ5Iajm2DmpPWLdW09AeVQ
-X-Google-Smtp-Source: APXvYqwG75vte35QkvT6lDd1vdJ/jH+dGJ7ahEnC2vQZyVqVLeC5SH0ROIIEHzS74SFsspMtbQEEVQ==
-X-Received: by 2002:aa7:d842:: with SMTP id f2mr49149eds.262.1573078240727;
- Wed, 06 Nov 2019 14:10:40 -0800 (PST)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id m20sm1280edb.60.2019.11.06.14.10.28
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 06 Nov 2019 14:10:40 -0800 (PST)
-Subject: Re: [RFC 0/7] cpuidle: Add poking mechanism to support non-IPI wakeup
-To: Leonard Crestez <leonard.crestez@nxp.com>, Abel Vesa <abel.vesa@nxp.com>
-References: <1553692845-20983-1-git-send-email-abel.vesa@nxp.com>
- <1553701479.2561.38.camel@pengutronix.de>
- <564216aa-1144-71de-e887-00c58f466bf5@arm.com>
- <1553702767.2561.40.camel@pengutronix.de>
- <85c91392-9cbf-a5fc-b037-3d58f2b0ac9c@arm.com>
- <cb2e5521cc0d29b7c3ac42a6717256ec2e8d35e6.camel@nxp.com>
- <20190328104542.GA27459@e107981-ln.cambridge.arm.com>
- <ebf1b5f3-1612-9dae-72bb-cc67be69ebf2@gmail.com>
- <VI1PR04MB7023BCCCE80A02B00F5F2ED0EE790@VI1PR04MB7023.eurprd04.prod.outlook.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <8e5de17a-b81b-fa92-3ffc-58ddb5b864b3@gmail.com>
-Date: Wed, 6 Nov 2019 14:10:26 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from:cc;
+ bh=UJA8WLNvHF2SOQyoAUNEJnqpP8T7iPhqxJV3li4veHI=;
+ b=A5A33dGo0304lhEWDKZcbZ9XHPz8HthD5qtccju7/4cTzHSEnJJHnRBBVM7w+934Kl
+ 049hUooepxqLDf8xf7IVmWRX506fvE2dlTD/NpBvuLfrytXAxwEJD0ab0Am/QY6GaQ1L
+ JQUco/5xUaBRhU4MNQGsO6+7hjjqvCxh24K2Xuf5UNoe0Wh2i55tnqLXjibjJmS2/MFe
+ Ub2P+OdacBaIF6IzoVkN/Q4ajDE5S2Kj5uoAwNxyH936S+oewebB8wsq4jvSouK2BkLW
+ 54341RVeaeqwfZ2OuVLel+4TAB1H/ICUafyssDTBXYm2LbGHYL0zUkYMg8QLAoUMRn6P
+ bBZA==
+X-Gm-Message-State: APjAAAW65SyaxE6uPLivriClRFedxYlDozaMM+aLlHsUWWQ1d0WW2t+n
+ e7jL5FOf5tk21I7PdoD3xLRRSA==
+X-Google-Smtp-Source: APXvYqyECvVmmIIC5UbODcf22HZ3p6bEl9Vc4Wq7qeDGxU86K6w55cauMs/ByiLViyMrUVZAc6zQzg==
+X-Received: by 2002:a1c:5fc4:: with SMTP id t187mr4853909wmb.142.1573078539057; 
+ Wed, 06 Nov 2019 14:15:39 -0800 (PST)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id j63sm4667484wmj.46.2019.11.06.14.15.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 06 Nov 2019 14:15:38 -0800 (PST)
+Message-ID: <5dc3460a.1c69fb81.bfae4.adf1@mx.google.com>
+Date: Wed, 06 Nov 2019 14:15:38 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <VI1PR04MB7023BCCCE80A02B00F5F2ED0EE790@VI1PR04MB7023.eurprd04.prod.outlook.com>
-Content-Language: en-US
+X-Kernelci-Branch: master
+X-Kernelci-Lab-Name: lab-baylibre
+X-Kernelci-Tree: next
+X-Kernelci-Report-Type: bisect
+X-Kernelci-Kernel: next-20191106
+Subject: next/master boot bisection: next-20191106 on r8a7795-salvator-x
+To: Linus Walleij <linus.walleij@linaro.org>, tomeu.vizoso@collabora.com,
+ guillaume.tucker@collabora.com, mgalka@collabora.com, broonie@kernel.org,
+ matthew.hart@linaro.org, Scott Branden <scott.branden@broadcom.com>,
+ khilman@baylibre.com, enric.balletbo@collabora.com,
+ Chris Packham <chris.packham@alliedtelesis.co.nz>
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_141043_553633_1B894502 
-X-CRM114-Status: GOOD (  33.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191106_141541_437788_DB2DC6A8 
+X-CRM114-Status: GOOD (  16.73  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -165,183 +98,471 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Jacky Bai <ping.bai@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "marc.zyngier@arm.com" <marc.zyngier@arm.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "will.deacon@arm.com" <will.deacon@arm.com>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "robh@kernel.org" <robh@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: Scott Branden <sbranden@broadcom.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Ray Jui <rjui@broadcom.com>,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/6/19 1:31 PM, Leonard Crestez wrote:
-> On 06.11.2019 22:15, Florian Fainelli wrote:
->> On 3/28/19 3:45 AM, Lorenzo Pieralisi wrote:
->>> On Wed, Mar 27, 2019 at 06:40:07PM +0000, Leonard Crestez wrote:
->>>> On Wed, 2019-03-27 at 17:45 +0000, Marc Zyngier wrote:
->>>>> On 27/03/2019 16:06, Lucas Stach wrote:
->>>>>> Am Mittwoch, den 27.03.2019, 15:57 +0000 schrieb Marc Zyngier:
->>>>>>> On 27/03/2019 15:44, Lucas Stach wrote:
->>>>>>>> Am Mittwoch, den 27.03.2019, 13:21 +0000 schrieb Abel Vesa:
->>>>>>>>> This work is a workaround I'm looking into (more as a background task)
->>>>>>>>> in order to add support for cpuidle on i.MX8MQ based platforms.
->>>>>>>>>
->>>>>>>>> The main idea here is getting around the missing GIC wake_request signal
->>>>>>>>> (due to integration design issue) by waking up a each individual core through
->>>>>>>>> some dedicated SW power-up bits inside the power controller (GPC) right before
->>>>>>>>> every IPI is requested for that each individual core.
->>>>>>>>
->>>>>>>> Just a general comment, without going into the details of this series:
->>>>>>>> this issue is not only affecting IPIs, but also MSIs terminated at the
->>>>>>>> GIC. Currently MSIs are terminated at the PCIe core, but terminating
->>>>>>>> them at the GIC is clearly preferable, as this allows assigning CPU
->>>>>>>> affinity to individual MSIs and lowers IRQ service overhead.
->>>>>>>>
->>>>>>>> I'm not sure what the consequences are for upstream Linux support yet,
->>>>>>>> but we should keep in mind that having a workaround for IPIs is only
->>>>>>>> solving part of the issue.
->>>>>>>
->>>>>>> If this erratum is affecting more than just IPIs, then indeed I don't
->>>>>>> see how this patch series solves anything.
->>>>>>>
->>>>>>> But the erratum documentation seems to imply that only SGIs are
->>>>>>> affected, and goes as far as suggesting to use an external interrupt
->>>>>>> would solve it. How comes this is not the case? Or is it that anything
->>>>>>> directly routed to a redistributor is also affected? This would break
->>>>>>> LPIs (and thus MSIs) and PPIs (the CPU timer, among others).
->>>>>>
->>>>>> Anything that isn't visible to the GPC and requires the GIC
->>>>>> wake_request signal to behave as specified is broken by this erratum.
->>>>>
->>>>> I really wonder how a timer interrupt (a PPI, hence not routed through
->>>>> the GPC) can wake up the CPU in this case. It really feels like
->>>>> something like "program CNTV_CVAL_EL0 to expire at some later point;
->>>>> WFI" could result in the CPU going to a deep sleep state, and not
->>>>> wake-up at all.
->>>>
->>>> This is already a common issue for cpuidle implementions handled by the
->>>> "local-timer-stop" property. imx has other timer blocks in the SOC,
->>>> they generate SPIs which are connected to GPC.
->>>
->>> It is not a common issue. The tick-broadcast mechanism relies on
->>> IPIs that are sent to specific CPUs upon timer expiry.
->>>
->>> If IPIs don't work for CPUs in shutdown state (which is what this patch
->>> is fixing AFAIU), the only reason I can see how a CPU can resume from
->>> idle on a timer expiry is the GPC waking up all cores upon the global
->>> timer SPI; if that's the case there is precious little point in
->>> implementing CPUidle at all - too bad people worked hard to implement
->>> NOHZ in a power efficient manner.
->>>
->>>>> This would indicate that not only cpuidle is broken with this, but
->>>>> absolutely every interrupt that is not routed through the GPC.
->>>>
->>>> Yes, cpuidle is broken for irqs not routed through GPC. However:
->>>>
->>>> * All SPIs are connected to GPC in a 1:1 mapping
->>>> * This series deals with SGIs
->>>> * The timer PPIs are not required; covered by local-timer-stop
->>>> * LPIs are currently unused (I understand imx-pci uses SPI by default
->>>> from Lucas)
->>>>
->>>> Anything missing?
->>>
->>> Yes, LPIs must be able to wake up CPUs and only the CPU for which
->>> an IRQ is actually pending.
->>>
->>> >From an architectural perspective, an ARM core executing the WFI
->>> instruction must resume execution upon an IRQ occurrence targeted
->>> at it and that's true regardless of the idle state entered.
->>>
->>> Anything deviating from this behaviour is not architecture compliant.
->>
->> What if you enter a deeper state than WFI, which leads to the power
->> gating of your CPU core, and you are missing the necessary hardware that
->> should be driven from the GIC's nIRQOUT/nFIQOUT signals to automatically
->> bring the core back on upon the GIC seeing a pending interrupt targeting
->> that core?
-> 
-> imx8mq has a secondary "GPC" block which receives SPIs and can wake the 
-> cores. Do you have something similar? Because if you only have the GIC 
-> then that sounds much worse: you'd have to ensure that all peripheral 
-> interrupts are routed away from sleeping cores.
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* This automated bisection report was sent to you on the basis  *
+* that you may be involved with the breaking commit it has      *
+* found.  No manual investigation has been done to verify it,   *
+* and the root cause of the problem may be somewhere else.      *
+*                                                               *
+* If you do send a fix, please include this trailer:            *
+*   Reported-by: "kernelci.org bot" <bot@kernelci.org>          *
+*                                                               *
+* Hope this helps!                                              *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-We have a legacy interrupt controller that receives all SPIs as well,
-and it can be used as a full replacement for the GIC (with the loss of
-nVIRQ/nFIQ) but it cannot wake-up the cores unfortunately. This is all
-custom logic, so we could have done at least wake-up based on SPIs, but
-we missed that apparently, at least we were consistent.
+next/master boot bisection: next-20191106 on r8a7795-salvator-x
 
-Out of curiosity, does your GPC somehow know the affinity of a given
-interrupt to a particular core?
+Summary:
+  Start:      dcd34bd23418 Add linux-next specific files for 20191106
+  Details:    https://kernelci.org/boot/id/5dc298b459b514acf8138e34
+  Plain log:  https://storage.kernelci.org//next/master/next-20191106/arm64/defconfig+CONFIG_RANDOMIZE_BASE=y/gcc-8/lab-baylibre/boot-r8a7795-salvator-x.txt
+  HTML log:   https://storage.kernelci.org//next/master/next-20191106/arm64/defconfig+CONFIG_RANDOMIZE_BASE=y/gcc-8/lab-baylibre/boot-r8a7795-salvator-x.html
+  Result:     6a41b6c5fc20 gpio: Add xgs-iproc driver
 
-> 
-> On IMX only SGIs need special treatment and a newer version just 
-> replaces __smp_cross_call in a platform-specific manner:
-> 
->      https://lkml.org/lkml/2019/6/10/350
+Checks:
+  revert:     PASS
+  verify:     PASS
 
-Right, because for PPIs you leverage the timer broadcast and for SPIs
-you have that GPC, so all your left are the remaining "intra GIC"
-interrupts which are SGIs.
+Parameters:
+  Tree:       next
+  URL:        git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
+  Branch:     master
+  Target:     r8a7795-salvator-x
+  CPU arch:   arm64
+  Lab:        lab-baylibre
+  Compiler:   gcc-8
+  Config:     defconfig+CONFIG_RANDOMIZE_BASE=y
+  Test suite: boot
 
-> 
->> Would it be acceptable in that case to "help" the platform by ensuring
->> that there is at least one core that is not allowed to enter the deepest
->> idle state and be able to help wake back up the others? I am asking
->> because I am facing a similar issue to what Abel is trying to solve here
->> with ARCH_BRCMSTB platforms which do not have the ability to have their
->> CPU cores wake-up on their once power gated.
-> 
-> Maybe you can workaround in ATF: if (last_core) wfi(); else powerdown();
+Breaking commit found:
 
-Yes, that would certainly work, the biggest problem in my case is
-dealing with SPIs, since we still have no way to wake-up from those,
-other than by getting the help of another CPU that is not power gated.
-Lovely, I know.
+-------------------------------------------------------------------------------
+commit 6a41b6c5fc20abced88fa0eed42ae5e5cb70b280
+Author: Chris Packham <chris.packham@alliedtelesis.co.nz>
+Date:   Fri Oct 25 09:27:03 2019 +1300
 
-> 
-> But you still need special treatment for interrupts targeted at gated cores.
-> 
->>>> My understanding is that this wake request feature via GIC is new in v3
->>>> and this is maybe why HW team missed it during integration. Older
->>>> imx6/7 has GICv2 and has deep idle states which always rely on GPC to
->>>> wakeup so the approach can work.
->>>
->>> If HW designers really wanted to have sensible power management policy
->>> in this SoC they would have paid attention, I am against patching the
->>> kernel heavily to fix a platform bug.
-> 
->> HW designers may not be aware of how the cpuifle framework operates or
->> what its constraints are, so they may not understand that any interrupt,
->> must be able to autonomously (with lack of a better name) wake-up a
->> given core, given any idle state it has entered.
-> 
-> My understanding is that this is a requirement of GICv3 architecture.
-> 
+    gpio: Add xgs-iproc driver
+    
+    This driver supports the Chip Common A GPIO controller present on a
+    number of Broadcom switch ASICs with integrated SoCs. The controller is
+    similar to the pinctrl-nsp-gpio and pinctrl-iproc-gpio blocks but
+    different enough that a separate driver is required.
+    
+    This has been ported from Broadcom's XLDK 5.0.3 retaining only the CCA
+    support (pinctrl-iproc-gpio covers CCB).
+    
+    Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+    Link: https://lore.kernel.org/r/20191024202703.8017-3-chris.packham@alliedtelesis.co.nz
+    Acked-by: Scott Branden <scott.branden@broadcom.com>
+    Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 
-The systems I use have a GICv2 architecture though this is still no
-excuse for not having hooked the nIRQOUT/nFIQOUT to a power management
-controller, this is clearly an oversight, and it should have been
-possible to automatically take a core out of power gating, since we did
-design our own power gating logic, but this was done that way. Hopefully
-future designs can remedy that, designers are aware of why this is a
-problem now.
---
-Florian
+diff --git a/drivers/gpio/Kconfig b/drivers/gpio/Kconfig
+index 8ec1f041c98d..e9516393c971 100644
+--- a/drivers/gpio/Kconfig
++++ b/drivers/gpio/Kconfig
+@@ -155,6 +155,15 @@ config GPIO_BCM_KONA
+ 	help
+ 	  Turn on GPIO support for Broadcom "Kona" chips.
+ 
++config GPIO_BCM_XGS_IPROC
++	tristate "BRCM XGS iProc GPIO support"
++	depends on OF_GPIO && (ARCH_BCM_IPROC || COMPILE_TEST)
++	select GPIO_GENERIC
++	select GPIOLIB_IRQCHIP
++	default ARCH_BCM_IPROC
++	help
++	  Say yes here to enable GPIO support for Broadcom XGS iProc SoCs.
++
+ config GPIO_BRCMSTB
+ 	tristate "BRCMSTB GPIO support"
+ 	default y if (ARCH_BRCMSTB || BMIPS_GENERIC)
+diff --git a/drivers/gpio/Makefile b/drivers/gpio/Makefile
+index 84e05701f500..34eb8b2b12dd 100644
+--- a/drivers/gpio/Makefile
++++ b/drivers/gpio/Makefile
+@@ -35,6 +35,7 @@ obj-$(CONFIG_GPIO_ASPEED)		+= gpio-aspeed.o
+ obj-$(CONFIG_GPIO_ASPEED_SGPIO)		+= gpio-aspeed-sgpio.o
+ obj-$(CONFIG_GPIO_ATH79)		+= gpio-ath79.o
+ obj-$(CONFIG_GPIO_BCM_KONA)		+= gpio-bcm-kona.o
++obj-$(CONFIG_GPIO_BCM_XGS_IPROC)	+= gpio-xgs-iproc.o
+ obj-$(CONFIG_GPIO_BD70528)		+= gpio-bd70528.o
+ obj-$(CONFIG_GPIO_BD9571MWV)		+= gpio-bd9571mwv.o
+ obj-$(CONFIG_GPIO_BRCMSTB)		+= gpio-brcmstb.o
+diff --git a/drivers/gpio/gpio-xgs-iproc.c b/drivers/gpio/gpio-xgs-iproc.c
+new file mode 100644
+index 000000000000..a3fdd95cc9e6
+--- /dev/null
++++ b/drivers/gpio/gpio-xgs-iproc.c
+@@ -0,0 +1,321 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (C) 2017 Broadcom
++ */
++
++#include <linux/gpio/driver.h>
++#include <linux/init.h>
++#include <linux/interrupt.h>
++#include <linux/io.h>
++#include <linux/irq.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/platform_device.h>
++#include <linux/spinlock.h>
++
++#define IPROC_CCA_INT_F_GPIOINT		BIT(0)
++#define IPROC_CCA_INT_STS		0x20
++#define IPROC_CCA_INT_MASK		0x24
++
++#define IPROC_GPIO_CCA_DIN		0x0
++#define IPROC_GPIO_CCA_DOUT		0x4
++#define IPROC_GPIO_CCA_OUT_EN		0x8
++#define IPROC_GPIO_CCA_INT_LEVEL	0x10
++#define IPROC_GPIO_CCA_INT_LEVEL_MASK	0x14
++#define IPROC_GPIO_CCA_INT_EVENT	0x18
++#define IPROC_GPIO_CCA_INT_EVENT_MASK	0x1C
++#define IPROC_GPIO_CCA_INT_EDGE		0x24
++
++struct iproc_gpio_chip {
++	struct irq_chip irqchip;
++	struct gpio_chip gc;
++	spinlock_t lock;
++	struct device *dev;
++	void __iomem *base;
++	void __iomem *intr;
++};
++
++static inline struct iproc_gpio_chip *
++to_iproc_gpio(struct gpio_chip *gc)
++{
++	return container_of(gc, struct iproc_gpio_chip, gc);
++}
++
++static void iproc_gpio_irq_ack(struct irq_data *d)
++{
++	struct gpio_chip *gc = irq_data_get_irq_chip_data(d);
++	struct iproc_gpio_chip *chip = to_iproc_gpio(gc);
++	int pin = d->hwirq;
++	unsigned long flags;
++	u32 irq = d->irq;
++	u32 irq_type, event_status = 0;
++
++	spin_lock_irqsave(&chip->lock, flags);
++	irq_type = irq_get_trigger_type(irq);
++	if (irq_type & IRQ_TYPE_EDGE_BOTH) {
++		event_status |= BIT(pin);
++		writel_relaxed(event_status,
++			       chip->base + IPROC_GPIO_CCA_INT_EVENT);
++	}
++	spin_unlock_irqrestore(&chip->lock, flags);
++}
++
++static void iproc_gpio_irq_unmask(struct irq_data *d)
++{
++	struct gpio_chip *gc = irq_data_get_irq_chip_data(d);
++	struct iproc_gpio_chip *chip = to_iproc_gpio(gc);
++	int pin = d->hwirq;
++	unsigned long flags;
++	u32 irq = d->irq;
++	u32 int_mask, irq_type, event_mask;
++
++	spin_lock_irqsave(&chip->lock, flags);
++	irq_type = irq_get_trigger_type(irq);
++	event_mask = readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_EVENT_MASK);
++	int_mask = readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_LEVEL_MASK);
++
++	if (irq_type & IRQ_TYPE_EDGE_BOTH) {
++		event_mask |= 1 << pin;
++		writel_relaxed(event_mask,
++			       chip->base + IPROC_GPIO_CCA_INT_EVENT_MASK);
++	} else {
++		int_mask |= 1 << pin;
++		writel_relaxed(int_mask,
++			       chip->base + IPROC_GPIO_CCA_INT_LEVEL_MASK);
++	}
++	spin_unlock_irqrestore(&chip->lock, flags);
++}
++
++static void iproc_gpio_irq_mask(struct irq_data *d)
++{
++	struct gpio_chip *gc = irq_data_get_irq_chip_data(d);
++	struct iproc_gpio_chip *chip = to_iproc_gpio(gc);
++	int pin = d->hwirq;
++	unsigned long flags;
++	u32 irq = d->irq;
++	u32 irq_type, int_mask, event_mask;
++
++	spin_lock_irqsave(&chip->lock, flags);
++	irq_type = irq_get_trigger_type(irq);
++	event_mask = readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_EVENT_MASK);
++	int_mask = readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_LEVEL_MASK);
++
++	if (irq_type & IRQ_TYPE_EDGE_BOTH) {
++		event_mask &= ~BIT(pin);
++		writel_relaxed(event_mask,
++			       chip->base + IPROC_GPIO_CCA_INT_EVENT_MASK);
++	} else {
++		int_mask &= ~BIT(pin);
++		writel_relaxed(int_mask,
++			       chip->base + IPROC_GPIO_CCA_INT_LEVEL_MASK);
++	}
++	spin_unlock_irqrestore(&chip->lock, flags);
++}
++
++static int iproc_gpio_irq_set_type(struct irq_data *d, u32 type)
++{
++	struct gpio_chip *gc = irq_data_get_irq_chip_data(d);
++	struct iproc_gpio_chip *chip = to_iproc_gpio(gc);
++	int pin = d->hwirq;
++	unsigned long flags;
++	u32 irq = d->irq;
++	u32 event_pol, int_pol;
++	int ret = 0;
++
++	spin_lock_irqsave(&chip->lock, flags);
++	switch (type & IRQ_TYPE_SENSE_MASK) {
++	case IRQ_TYPE_EDGE_RISING:
++		event_pol = readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_EDGE);
++		event_pol &= ~BIT(pin);
++		writel_relaxed(event_pol, chip->base + IPROC_GPIO_CCA_INT_EDGE);
++		break;
++	case IRQ_TYPE_EDGE_FALLING:
++		event_pol = readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_EDGE);
++		event_pol |= BIT(pin);
++		writel_relaxed(event_pol, chip->base + IPROC_GPIO_CCA_INT_EDGE);
++		break;
++	case IRQ_TYPE_LEVEL_HIGH:
++		int_pol = readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_LEVEL);
++		int_pol &= ~BIT(pin);
++		writel_relaxed(int_pol, chip->base + IPROC_GPIO_CCA_INT_LEVEL);
++		break;
++	case IRQ_TYPE_LEVEL_LOW:
++		int_pol = readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_LEVEL);
++		int_pol |= BIT(pin);
++		writel_relaxed(int_pol, chip->base + IPROC_GPIO_CCA_INT_LEVEL);
++		break;
++	default:
++		/* should not come here */
++		ret = -EINVAL;
++		goto out_unlock;
++	}
++
++	if (type & IRQ_TYPE_LEVEL_MASK)
++		irq_set_handler_locked(irq_get_irq_data(irq), handle_level_irq);
++	else if (type & IRQ_TYPE_EDGE_BOTH)
++		irq_set_handler_locked(irq_get_irq_data(irq), handle_edge_irq);
++
++out_unlock:
++	spin_unlock_irqrestore(&chip->lock, flags);
++
++	return ret;
++}
++
++static irqreturn_t iproc_gpio_irq_handler(int irq, void *data)
++{
++	struct gpio_chip *gc = (struct gpio_chip *)data;
++	struct iproc_gpio_chip *chip = to_iproc_gpio(gc);
++	int bit;
++	unsigned long int_bits = 0;
++	u32 int_status;
++
++	/* go through the entire GPIOs and handle all interrupts */
++	int_status = readl_relaxed(chip->intr + IPROC_CCA_INT_STS);
++	if (int_status & IPROC_CCA_INT_F_GPIOINT) {
++		u32 event, level;
++
++		/* Get level and edge interrupts */
++		event =
++		    readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_EVENT_MASK);
++		event &= readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_EVENT);
++		level = readl_relaxed(chip->base + IPROC_GPIO_CCA_DIN);
++		level ^= readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_LEVEL);
++		level &=
++		    readl_relaxed(chip->base + IPROC_GPIO_CCA_INT_LEVEL_MASK);
++		int_bits = level | event;
++
++		for_each_set_bit(bit, &int_bits, gc->ngpio)
++			generic_handle_irq(irq_linear_revmap(gc->irq.domain, bit));
++	}
++
++	return int_bits ? IRQ_HANDLED : IRQ_NONE;
++}
++
++static int iproc_gpio_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct device_node *dn = pdev->dev.of_node;
++	struct iproc_gpio_chip *chip;
++	u32 num_gpios;
++	int irq, ret;
++
++	chip = devm_kzalloc(dev, sizeof(*chip), GFP_KERNEL);
++	if (!chip)
++		return -ENOMEM;
++
++	chip->dev = dev;
++	platform_set_drvdata(pdev, chip);
++	spin_lock_init(&chip->lock);
++
++	chip->base = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(chip->base))
++		return PTR_ERR(chip->base);
++
++	ret = bgpio_init(&chip->gc, dev, 4,
++			 chip->base + IPROC_GPIO_CCA_DIN,
++			 chip->base + IPROC_GPIO_CCA_DOUT,
++			 NULL,
++			 chip->base + IPROC_GPIO_CCA_OUT_EN,
++			 NULL,
++			 0);
++	if (ret) {
++		dev_err(dev, "unable to init GPIO chip\n");
++		return ret;
++	}
++
++	chip->gc.label = dev_name(dev);
++	if (of_property_read_u32(dn, "ngpios", &num_gpios))
++		chip->gc.ngpio = num_gpios;
++
++	irq = platform_get_irq(pdev, 0);
++	if (irq > 0) {
++		struct gpio_irq_chip *girq;
++		struct irq_chip *irqc;
++		u32 val;
++
++		irqc = &chip->irqchip;
++		irqc->name = dev_name(dev);
++		irqc->irq_ack = iproc_gpio_irq_ack;
++		irqc->irq_mask = iproc_gpio_irq_mask;
++		irqc->irq_unmask = iproc_gpio_irq_unmask;
++		irqc->irq_set_type = iproc_gpio_irq_set_type;
++
++		chip->intr = devm_platform_ioremap_resource(pdev, 1);
++		if (IS_ERR(chip->intr))
++			return PTR_ERR(chip->intr);
++
++		/* Enable GPIO interrupts for CCA GPIO */
++		val = readl_relaxed(chip->intr + IPROC_CCA_INT_MASK);
++		val |= IPROC_CCA_INT_F_GPIOINT;
++		writel_relaxed(val, chip->intr + IPROC_CCA_INT_MASK);
++
++		/*
++		 * Directly request the irq here instead of passing
++		 * a flow-handler to gpiochip_set_chained_irqchip,
++		 * because the irq is shared.
++		 */
++		ret = devm_request_irq(dev, irq, iproc_gpio_irq_handler,
++				       IRQF_SHARED, chip->gc.label, &chip->gc);
++		if (ret) {
++			dev_err(dev, "Fail to request IRQ%d: %d\n", irq, ret);
++			return ret;
++		}
++
++		girq = &chip->gc.irq;
++		girq->chip = irqc;
++		/* This will let us handle the parent IRQ in the driver */
++		girq->parent_handler = NULL;
++		girq->num_parents = 0;
++		girq->parents = NULL;
++		girq->default_type = IRQ_TYPE_NONE;
++		girq->handler = handle_simple_irq;
++	}
++
++	ret = devm_gpiochip_add_data(dev, &chip->gc, chip);
++	if (ret) {
++		dev_err(dev, "unable to add GPIO chip\n");
++		return ret;
++	}
++
++	return 0;
++}
++
++static int __exit iproc_gpio_remove(struct platform_device *pdev)
++{
++	struct iproc_gpio_chip *chip;
++
++	chip = platform_get_drvdata(pdev);
++	if (!chip)
++		return -ENODEV;
++
++	if (chip->intr) {
++		u32 val;
++
++		val = readl_relaxed(chip->intr + IPROC_CCA_INT_MASK);
++		val &= ~IPROC_CCA_INT_F_GPIOINT;
++		writel_relaxed(val, chip->intr + IPROC_CCA_INT_MASK);
++	}
++
++	return 0;
++}
++
++static const struct of_device_id bcm_iproc_gpio_of_match[] __initconst = {
++	{ .compatible = "brcm,iproc-gpio-cca" },
++	{}
++};
++MODULE_DEVICE_TABLE(of, bcm_iproc_gpio_of_match);
++
++static struct platform_driver bcm_iproc_gpio_driver = {
++	.driver = {
++		.name = "iproc-xgs-gpio",
++		.owner = THIS_MODULE,
++		.of_match_table = bcm_iproc_gpio_of_match,
++	},
++	.probe = iproc_gpio_probe,
++	.remove = iproc_gpio_remove,
++};
++
++module_platform_driver(bcm_iproc_gpio_driver);
++
++MODULE_DESCRIPTION("XGS IPROC GPIO driver");
++MODULE_LICENSE("GPL v2");
+-------------------------------------------------------------------------------
+
+
+Git bisection log:
+
+-------------------------------------------------------------------------------
+git bisect start
+# good: [26bc672134241a080a83b2ab9aa8abede8d30e1c] Merge tag 'for-linus-2019-11-05' of git://git.kernel.org/pub/scm/linux/kernel/git/brauner/linux
+git bisect good 26bc672134241a080a83b2ab9aa8abede8d30e1c
+# bad: [dcd34bd234181ec74f081c7d0025204afe6b213e] Add linux-next specific files for 20191106
+git bisect bad dcd34bd234181ec74f081c7d0025204afe6b213e
+# good: [8bb6f79f15d1a0f9471c06f68da0b4a270b575cf] Merge remote-tracking branch 'crypto/master'
+git bisect good 8bb6f79f15d1a0f9471c06f68da0b4a270b575cf
+# good: [18a88f87d4eb404ac5cd4f208fa7228df183e64f] Merge remote-tracking branch 'battery/for-next'
+git bisect good 18a88f87d4eb404ac5cd4f208fa7228df183e64f
+# good: [cfe4391e1d4ced7a82819919fe1afa458e2c33f1] Merge remote-tracking branch 'thunderbolt/next'
+git bisect good cfe4391e1d4ced7a82819919fe1afa458e2c33f1
+# good: [6df9adf95b9d756bef44c3bf0c4410f7b72cfe61] Merge remote-tracking branch 'rpmsg/for-next'
+git bisect good 6df9adf95b9d756bef44c3bf0c4410f7b72cfe61
+# bad: [9548912f77a91a1151b4988d214e005c892cf5f5] Merge remote-tracking branch 'pidfd/for-next'
+git bisect bad 9548912f77a91a1151b4988d214e005c892cf5f5
+# bad: [f93f33542dfed02f4fd0029e220dff1221f6d8ea] Merge remote-tracking branch 'y2038/y2038'
+git bisect bad f93f33542dfed02f4fd0029e220dff1221f6d8ea
+# bad: [175736ba4340069619b568081e810187bbee9f74] Merge remote-tracking branch 'pinctrl/for-next'
+git bisect bad 175736ba4340069619b568081e810187bbee9f74
+# good: [66ee1973603572e4258b08b8737490833f8172bc] Merge tag 'sh-pfc-for-v5.5-tag1' of git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-drivers into devel
+git bisect good 66ee1973603572e4258b08b8737490833f8172bc
+# good: [fe12e94375da34d62f7d5556161ce7629212ff80] Merge tag 'gpio-v5.5-updates-for-linus-part-1' of git://git.kernel.org/pub/scm/linux/kernel/git/brgl/linux into devel
+git bisect good fe12e94375da34d62f7d5556161ce7629212ff80
+# bad: [4b3a4463c3f63ee2f8168953a8ac7a0aea05d37e] Merge remote-tracking branch 'gpio-brgl/gpio/for-next'
+git bisect bad 4b3a4463c3f63ee2f8168953a8ac7a0aea05d37e
+# bad: [6a41b6c5fc20abced88fa0eed42ae5e5cb70b280] gpio: Add xgs-iproc driver
+git bisect bad 6a41b6c5fc20abced88fa0eed42ae5e5cb70b280
+# good: [d57eb825e0dc6f0b5be78251d69cbf1bdd1db622] gpio: Add RDA Micro GPIO controller support
+git bisect good d57eb825e0dc6f0b5be78251d69cbf1bdd1db622
+# good: [1dfc462a54386d8467ff427ef900f553e2e470e3] dt-bindings: gpio: brcm: Add bindings for xgs-iproc
+git bisect good 1dfc462a54386d8467ff427ef900f553e2e470e3
+# first bad commit: [6a41b6c5fc20abced88fa0eed42ae5e5cb70b280] gpio: Add xgs-iproc driver
+-------------------------------------------------------------------------------
 
 _______________________________________________
 linux-arm-kernel mailing list
