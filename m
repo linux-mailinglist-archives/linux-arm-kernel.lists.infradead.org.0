@@ -2,86 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EB51F2DF8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 13:12:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F14CF2DFC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 13:13:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ivtR3SZx8QeqfKUgK36LpFSU2dcd34vdfrHW/18BPdc=; b=BbIsgp3DXRGtUh
-	YRmIBZqB0Z9tIUSmeWs82FY9JM7o4VZTRGNUPv9NYPEZR1Pxl4zcCyGOR29DdMaUsaF962nDPJw5t
-	xofZQS9AYJJOUZXakkPHvMA5f3njLqIMU6IaOopvFGJF2m3NoKaVbHpRT2V0pQema7TwBzpgsNQoM
-	Mv2nhO0md5bA5sajuCn08rHj79q3o0JXHSgwHh9oD+4OtLRDCrq/Qk3sYLGb67j0rp8X+6d7oyXpE
-	t1jMqhqzibTuq2J3uTQG6zetREJYbcZAIflXQilUTJO07sRyV/QZ7tAycenhPa7/6HH2YrNqd9yNv
-	I7IP3s3cx9lTM1bPAJYw==;
+	List-Owner; bh=pUja1QiG/LHU1rnN7D88O1Es80cxczlvR1oFHTJHW4w=; b=QLzKnlVZr/s3wQ
+	UbTQ1wYcQGVhnP4FI8Nx2flCQ4kiN47N69PYYTxRj6KnG5O4aok6AfdIaiMyR13NRW66JB2SZm1dL
+	dOcGYBF3iEet4HbTVqE8yfyHplMJjAc02/MD6+/ItqqgmHyXvZayf7I5CXr2qS6gzyHUTlmYQkaHo
+	4I8/p3Xx1E95glYV0hx/SOb1BiL7jUiDZU/X3VUFLF8tjC5dszKW+vgsrU++GeFHocMxnwLR//y3p
+	XN8UE2Iq4lNx3KGdSCnvW720TsShSU8bCAAdZhpdeVxjbFsewLVXfop96s3ti3vGLNFwXKD4sWzYb
+	TO9vwKzswyG3QpEdMWxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSgeA-00008t-Hp; Thu, 07 Nov 2019 12:12:18 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iSgel-0000Ux-In; Thu, 07 Nov 2019 12:12:55 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSgdv-0008U5-VJ
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 12:12:05 +0000
-Received: by mail-lf1-x143.google.com with SMTP id v4so1397295lfd.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 04:12:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=pyy8vkTJSzgNxqiCr2+y5TMDgtVVbBOEIpX6C3EpP3U=;
- b=XPpefSxVqa4KAVZE9vPHMqqgshNjBfZB43iDpwfSv1FNBN2KzTgfMDWtKAlwqYLPq1
- AyKfc7mD2FN66uF/5zcH+FHNfwOgDRAfv4ckt/vciODMTECa4DA2++2YBU1+P8rHAcdI
- A55FfzBl52daMgUUHiudYHOl1uMr1jQr7KZq4SlaauK0m74l1mSFKuhmFa4zjLmPk4zl
- fhshw3j5FnaaHEhMel3ygDj+ZsHkqHQebKfA6+Zy0nkaZvvqEVW9JL1ZQGb0//bd+ohM
- q/dbY3l6XEUDPli8FGfJMCd7Ht2G12LvVSgLDN3/eR5TdPUNHvtqHfWtx0zoFGuCkeMg
- 2vKQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=pyy8vkTJSzgNxqiCr2+y5TMDgtVVbBOEIpX6C3EpP3U=;
- b=uQPt9MsiGpNYqjANn22CE3c/Avw88EVdw9cMN1ucofqk+KTbEKJssedWS85M4r7fmL
- pXnvnyoeD6+MXU/aqDVZdD+0Dw9DJiPO1D9p6yVTprKG7845ZgSrC0drkVgbZ83M78R6
- MJinp0drOakHUOe1KBAkDiITAIEY8PuC0C4bUFEIwr4BQz/MfBS4w1elfZ+D+ON8W9Rs
- Gzo7Fy+Q/gOPd1GEe4i2vqEgBqehIo0vkBZ04RLdABCvC2kRGw4muIZlcFaBJNpXpmWc
- Tg3vcQeD45fbkr2+s1oIB+mO+tcUv34NX62LXIUy66ic9cUVUyRlVIimCYAxy2jaeHTd
- 9CvQ==
-X-Gm-Message-State: APjAAAUgU8e1rEhcS3JVoUP1hOjWTrPIoW7DwmJvRh9C+fvzFox4Uwrt
- wp7aznpMfx8ZkyzD6zG4ZB1x+A==
-X-Google-Smtp-Source: APXvYqyO00Wglntl8Ch/EQ1NSmfyf403om0J9/NXHBJF6084BMLQydB7qQX2RFthZZ9lFM43VEJjow==
-X-Received: by 2002:a19:fc1e:: with SMTP id a30mr2209666lfi.167.1573128722113; 
- Thu, 07 Nov 2019 04:12:02 -0800 (PST)
-Received: from jax (h-48-81.A175.priv.bahnhof.se. [94.254.48.81])
- by smtp.gmail.com with ESMTPSA id k187sm2371024lfd.54.2019.11.07.04.12.00
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 07 Nov 2019 04:12:01 -0800 (PST)
-Date: Thu, 7 Nov 2019 13:11:59 +0100
-From: Jens Wiklander <jens.wiklander@linaro.org>
-To: arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL] tee subsys fixes for v5.4
-Message-ID: <20191107121159.GA9301@jax>
+ id 1iSgeb-0000U6-Ud
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 12:12:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Content-Transfer-Encoding:
+ MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=mqab7UDvfBiNsFyyYLe+hloVEA9Ce+SF33HE2FH0Aw0=; b=v574dL0BaUIne7goIh34RUj/8
+ qHCOtqDv4rVC3R46Tqg/KmcqnUqOpb+RIbMMFvIeKa0Erds62PmfKmXkfbU0IInLi+A+OLFR3Rf7U
+ F/7LMZCgzA/ZPsg9MQFnGO83/eILO9ipEUZUR62/vBxfUza7dl6hz8GgwriPOXBWLseb4=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iSgeZ-0004H4-DZ; Thu, 07 Nov 2019 12:12:43 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id A363627431AF; Thu,  7 Nov 2019 12:12:42 +0000 (GMT)
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>
+Subject: [PATCH] arm64: kaslr: Print warning if KASLR is disabled due to lack
+ of seed
+Date: Thu,  7 Nov 2019 12:12:41 +0000
+Message-Id: <20191107121241.8458-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_041204_037376_435F041D 
-X-CRM114-Status: GOOD (  13.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191107_041245_987274_241273B1 
+X-CRM114-Status: GOOD (  12.35  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,52 +77,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello arm-soc maintainers,
+It seems to be a relatively common system integration error for system
+integrators and administrators to enable KASLR in their configuration but
+not provide the seed at runtime, sometimes due to that breaking at some
+later point after it is initially enabled. Since KASLR is not announced at
+boot time unless it forces on KPTI this can lead to users incorrectly
+believing their system has the feature enabled when in fact it does not,
+and if they notice the problem the lack of any diagnostics makes it harder
+to understand the problem. Provide a warning message to assist in these
+situations.
 
-Please pull these OP-TEE driver fixes. There's one user-after-free issue if
-in the error handling path when the OP-TEE driver is initializing. There's
-also one fix to to register dynamically allocated shared memory needed by
-kernel clients communicating with secure world via memory references.
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ arch/arm64/kernel/kaslr.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-If you think it's too late for v5.4 please queue it for v5.5 instead.
+diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
+index 416f537bf614..c2ba5e783ada 100644
+--- a/arch/arm64/kernel/kaslr.c
++++ b/arch/arm64/kernel/kaslr.c
+@@ -98,8 +98,10 @@ u64 __init kaslr_early_init(u64 dt_phys)
+ 	 * Retrieve (and wipe) the seed from the FDT
+ 	 */
+ 	seed = get_kaslr_seed(fdt);
+-	if (!seed)
++	if (!seed) {
++		pr_warn("No seed available for KASLR, disabling\n");
+ 		return 0;
++	}
+ 
+ 	/*
+ 	 * Check if 'nokaslr' appears on the command line, and
+-- 
+2.20.1
 
-Thanks,
-Jens
-
-The following changes since commit 4f5cafb5cb8471e54afdc9054d973535614f7675:
-
-  Linux 5.4-rc3 (2019-10-13 16:37:36 -0700)
-
-are available in the Git repository at:
-
-  git://git.linaro.org/people/jens.wiklander/linux-tee.git tags/tee-fixes-for-v5.4
-
-for you to fetch changes up to 61435a63b15233428088ccb0ad34e19fc00416c9:
-
-  tee: optee: fix device enumeration error handling (2019-11-07 12:07:44 +0100)
-
-----------------------------------------------------------------
-Two OP-TE driver fixes:
-- Add proper cleanup on optee_enumerate_devices() failure
-- Make sure to register kernel allocations of dynamic shared memory
-
-----------------------------------------------------------------
-Jens Wiklander (1):
-      tee: optee: fix device enumeration error handling
-
-Sumit Garg (1):
-      tee: optee: Fix dynamic shm pool allocations
-
- drivers/tee/optee/core.c     | 20 ++++++++++++--------
- drivers/tee/optee/shm_pool.c | 12 +++++++++++-
- 2 files changed, 23 insertions(+), 9 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
