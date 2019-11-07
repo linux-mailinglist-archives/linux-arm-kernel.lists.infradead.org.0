@@ -2,85 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1897DF39B8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 21:47:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38DCBF3A4C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 22:18:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S2wpWM07qgZHk3kqUjdDZ7kOs7+4yLJTdYI5EKX+k3M=; b=AWjol65UnzJd7a
-	pddl6DmSIsyYEaQvBoif692mQzkvfWmXB08VJPmZPu2ngGHqABFI5GXxSSHaWzvBwYU0naDThlxFR
-	TnuC9nrWgRZZtuD3YYdnm+AeRZM/nDpqotLepdsJWTJ5qO83x4u/0ZAovI9Mntk0YQokeXxSYKzUy
-	8q9f0rTXdhrlgJ9hGM6tqIFdyhfarKBiU+W3eOrnWTowUx5oUTn3eewHgV2Lq1PRb2h78iFdnXJiG
-	EEFmJAIXaTNhi5tvxFzzFrl0Phss+LzQFV7Q+4DIjnTQrzmAxl1cuSrWShj8zU53tC9Z588y+sTSE
-	/fysKUYsMrJtKKDOjwRQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=X6ZaxpXzNzTDzGYJ+P0vBJP8RfCtxeQfahmmVAjdyj4=; b=AZtaImNVxbyCLm
+	nFJeVQccUfVrEWotbIlJcKk2D2aqhd6jfrGO6pT5Vmll8KZsH7IuObNXovZW/wj6OLJYIQ0ybg0Nk
+	NAPYRo8GESlZGVH6pouyUEeXX7Ry2UpcWR4w2lmJe4857eAT4wTq7g4njFzWiqGlUWt4dQoBsEPUw
+	8GPGouFTnxJR/tz3KDD+DavaArRWdi4F7nGu97aLhn6R6zyN7BbszvEWa9COIGM1yrrhfFiTDDxQD
+	5+9iiIPLmcp6zrXv+2boADI+OkVoXHw0GZ0RFgwldz7A+yvAvyCNGGMzV8Vbw5Z3FPgZWd4mGb6iH
+	2a38zjDdN61io0OOEFSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSogL-0001Ke-Uy; Thu, 07 Nov 2019 20:47:05 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iSpAU-0005AC-DF; Thu, 07 Nov 2019 21:18:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSogD-0001Jz-UH
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 20:46:59 +0000
-Received: by mail-lf1-x144.google.com with SMTP id z12so2648710lfj.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 12:46:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=hRPY2QI7LGnP1fwI1XGEjgN8hS6ZNhTh7sEjWEKqz3M=;
- b=JDNTcnPLIR3fsbrNqa6N8UdbU5UJ06+eIb46PaBZElxxZJ8daq2JSQIPXF9wjccjKr
- Lv7909Hj0a3WPsRP6EBc4FSkoe1R9eSdVUghC6Dm1KAFXKTYk6vkkSPAPBGwLqpjHxWr
- Jj3sfxBbyJxGFDdM2BBUzKHAzy4X+VApms/gx/DVLH6ggX0jq3HJjKDn9vsQFCJ7aZ1X
- 4WUfIcIWwaCXpNy7DzyQGjhImgZKIcGd82TGA01cmFLUuOB8bD6nYbh4fwT8qg/jhavo
- RJCMMR7+tc4dcMR/udColJ0eDoTN7zJCszjrr+emx/wnH9nwuTUU47QYNSCBZmZ53ztQ
- zpvA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=hRPY2QI7LGnP1fwI1XGEjgN8hS6ZNhTh7sEjWEKqz3M=;
- b=A+Vy+aoCFw5fr92yS2DddQ0gxHjLhVceLKSEqYwzCCgOBpB08R5RFxFwNgH4c8Sas8
- gwMWbYZ+u+20GcW0kXhfbweK8XmD6crxme3bEt0iaA/Hrn1uxtkQAejI0mza8/pKRNAT
- lzhI8mUfuC4bKvTY07yezta+h66esiWvMpd+oweg0OwoknPc26D5DA2TLb18KcgwDHBa
- lfp8KPCmJ2rWKJeU+jI1emouVYbwN+jJEMpUmTrpboacZvvBdMJfVorwRqB/6d/XgPYu
- vGLLizaS6RaUyT/5IN20qWfCdRVWZt9/CWeREvE2uuBtoJMdk4peru3F2zHAsUbG/hK+
- carg==
-X-Gm-Message-State: APjAAAUSA5TGuZtIDkq/vvCqMYxTrJ3sQTAq2mUbutcBcDOr3M5eA0D7
- 2HX8sRzWx9TnURPkUSRa5qs=
-X-Google-Smtp-Source: APXvYqx+X9FSowYO/oLK/7eoF1bHHGrqtHJqTZvVurYmumhD/sMFQJXLVI+wyUbSqo58WGBDXL/LDA==
-X-Received: by 2002:ac2:4d10:: with SMTP id r16mr3947997lfi.70.1573159615527; 
- Thu, 07 Nov 2019 12:46:55 -0800 (PST)
-Received: from localhost.localdomain (h-98-128-228-153.NA.cust.bahnhof.se.
- [98.128.228.153])
- by smtp.gmail.com with ESMTPSA id g26sm1419323lfh.1.2019.11.07.12.46.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 12:46:54 -0800 (PST)
-From: Rikard Falkeborn <rikard.falkeborn@gmail.com>
-To: megous@megous.com
-Subject: [PATCH] phy: allwinner: Fix GENMASK misuse
-Date: Thu,  7 Nov 2019 21:46:45 +0100
-Message-Id: <20191107204645.13739-1-rikard.falkeborn@gmail.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191020134229.1216351-3-megous@megous.com>
-References: <20191020134229.1216351-3-megous@megous.com>
+ id 1iSpAN-000598-QD
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 21:18:09 +0000
+Received: from localhost (unknown [69.71.4.100])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AA5DC2077C;
+ Thu,  7 Nov 2019 21:18:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573161486;
+ bh=+J4FAIKTXaaTMUjiB9JwExcwXekKFRbj/8/L2DEZGfA=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=gDEqAWSa5ZZIbcdBqNLxXP5Bq9FiF+tJfk5J7VKwv0fHvTOnAkwdeMMxvwyMmrE1u
+ M1soAbjwF54DNbKn+WpoBNaHdPDxHjCz7Zfmdng1PWtQW/HA03X/dNziBxwPOkPXG+
+ jxicxYHMDkodzwlwUgPlwUTwRQhvsAdsHL37JoII=
+Date: Thu, 7 Nov 2019 15:18:01 -0600
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Olof Johansson <olof@lixom.net>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: Re: linux-next: manual merge of the pci tree with the arm-soc tree
+Message-ID: <20191107211801.GA107543@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAOesGMjVUCd9bN=pggS-ECjMR42b0SqXKewsp+NYFSVqRgSWrg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_124657_975146_376AA3AA 
-X-CRM114-Status: GOOD (  10.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191107_131807_870065_B0D1BD54 
+X-CRM114-Status: GOOD (  12.30  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rikard.falkeborn[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,6 +64,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FAKE_REPLY_C           No description available.
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,43 +77,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, arnd@arndb.de,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
- kishon@ti.com, paul.kocialkowski@bootlin.com, linux-sunxi@googlegroups.com,
- robh+dt@kernel.org, Rikard Falkeborn <rikard.falkeborn@gmail.com>,
- tglx@linutronix.de, wens@csie.org, linux-arm-kernel@lists.infradead.org,
- icenowy@aosc.io
+Cc: Stephen Rothwell <sfr@canb.auug.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Arguments are supposed to be ordered high then low.
+On Thu, Nov 07, 2019 at 10:27:20AM -0800, Olof Johansson wrote:
+> On Wed, Nov 6, 2019 at 2:46 PM Stephen Rothwell <sfr@canb.auug.org.au> wrote:
+> >
+> > Hi all,
+> >
+> > Today's linux-next merge of the pci tree got a conflict in:
+> >
+> >   arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> >
+> > between commit:
+> >
+> >   68e36a429ef5 ("arm64: dts: ls1028a: Move thermal-zone out of SoC")
+> >
+> > from the arm-soc tree and commit:
+> >
+> >   8d49ebe713ab ("arm64: dts: ls1028a: Add PCIe controller DT nodes")
+> 
+> Bjorn, we ask that driver subsystem maintainers don't pick up DT
+> changes since it causes conflicts like these.
+> 
+> Is it easy for you to drop this patch, or are we stuck with it?
+> Ideally it should never have been sent to you in the first place. :(
 
-Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
----
-Spotted while trying to add compile time checks of GENMASK arguments.
-Patch has only been compile tested.
+Lorenzo, is it feasible for you to drop it from your pci/layerscape
+branch and repush it?  If so, I can redo the merge into my "next"
+branch.
 
- drivers/phy/allwinner/phy-sun50i-usb3.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/phy/allwinner/phy-sun50i-usb3.c b/drivers/phy/allwinner/phy-sun50i-usb3.c
-index 1169f3e83a6f..b1c04f71a31d 100644
---- a/drivers/phy/allwinner/phy-sun50i-usb3.c
-+++ b/drivers/phy/allwinner/phy-sun50i-usb3.c
-@@ -49,7 +49,7 @@
- #define SUNXI_LOS_BIAS(n)		((n) << 3)
- #define SUNXI_LOS_BIAS_MASK		GENMASK(5, 3)
- #define SUNXI_TXVBOOSTLVL(n)		((n) << 0)
--#define SUNXI_TXVBOOSTLVL_MASK		GENMASK(0, 2)
-+#define SUNXI_TXVBOOSTLVL_MASK		GENMASK(2, 0)
- 
- struct sun50i_usb3_phy {
- 	struct phy *phy;
--- 
-2.24.0
-
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
