@@ -2,70 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96DCAF395F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 21:17:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFAA2F3967
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 21:17:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wQ2Ov79zYtsovQwbRIhurII8DEPiL6in6DB0mT/wbBE=; b=pDmaD5h+b+qMnO
-	5DBNRiVrdRpxl2u80ohbp7p7QkbIyEfufTIZDhA+2DZgbPQsj0bXS+SjdmroUZr+WMGBfig2vcgOw
-	Dxgy7gQv+/vzSHAOseiMUaHztHLWun/Zv1+TqFCEescwSPbDQFhGJjLy2KFQmOKoW4f46900VLZ0B
-	/4pEozDLHTDGcqbntamfyGzRuCslXQpfDrOW1g+T35u8dao4LBMb+4c4U1h1eQAqO8VP7ECn3xQ50
-	KQH8qkKhnnQvNrg0RhHQuh9Y9gAf4XDOKp1AlR8pphfYdMKU87VIHHS2iad4RfE32ai/tpMCiuI1Z
-	W92i1i2l5RbHdP/6nWrQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pD6XNH8CKo2WL/z0yx4MgMulF0NNsD19RJVwPOjAGR8=; b=qf09LDjtsA+vEG
+	jjjUxSbnELCLAhrN33KN6tg2JMBVceVxrY1NJ0RVTABlvJx1tkxIJoEXREBIH56XWiUfeIX8JsOHP
+	ts+a3PH1jgsSaYapz/QS6WQRv53W0tNfQ2sVUednlKqbOwaLnUbu1uaxVj7eAFAwRSy4WnUp8HxlJ
+	5PEMXqDkUZETpqiGlh+AN/25GGQfBa1qA9WyyoI+ZBpzZ7Mhd/WIDZ8fLTqbOJOXVMS0lnG4/BZRU
+	/LQIYi5wh6h61htXZHL4Omq2PIJDlkwzgRTWUDLyE6BrOBXo1AiFOyT+q+BmXU+WTWPABhsdV5OCb
+	sTXWYjWj1aPN2KbJsO7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSoDZ-0006Ah-5R; Thu, 07 Nov 2019 20:17:21 +0000
+	id 1iSoDp-0006Me-FA; Thu, 07 Nov 2019 20:17:37 +0000
 Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSoDL-00069W-UE
+ id 1iSoDM-00069X-IQ
  for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 20:17:09 +0000
-Received: by mail-wr1-x444.google.com with SMTP id f2so4496926wrs.11
+Received: by mail-wr1-x444.google.com with SMTP id a11so4552892wra.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 12:17:07 -0800 (PST)
+ Thu, 07 Nov 2019 12:17:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=8Eh1A+XBqcPZEFBnh+HgUCyw+82+aoc7YA8bWZyx/XU=;
- b=HdbGDG/bD9rfLuXChKqfIL0GLBdwAQkoeEUR08XO5vmvDP4d9n5jwJzBtM5nafVUXy
- IbxdQZMZkDC143pI38WUWa9gkoPM4Ct8HTsfcpCvJyXbPWy6b1amMm4RNAayLLmuWkCF
- ot/OuCxCp8MppEtlxsnDIRm0zBzr2Y3olP1hj3Cfuhfe83eyDO1jtOrMhJgItBHinr5L
- NNo8Jeg3Xsvw+g9kiTxfMp/D1kolWj04wOkYmWlZHv4bo6wUkwhs7rp1K3ce/3oKRlrN
- cSVTDjamow1Jbjv7k3iY237zJd4PIhhBdAypb7a7ki5+2AsUX8w0g22P+oMjeBuyTZyv
- 65xA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=qbI1BAgAkPaImSA31avjQBXyIdfFKUwTp+KLI6AEZH0=;
+ b=EC/SX8ooYqTxr5pQUlGH6g2yvyeF1kpJrkFWbvWtgr9gM5Iyl2llrDdEp7D0xc/ckc
+ ylpxAJXxfPTRewHYEUFf27rRf6OgKgwfod65R20q3y8PspodxrnnoNVES54RwWuDDEpq
+ SsHlynYxsuBNvn0l2/BMHVk1L0kCIEaI31sdizplPtimHczDVHahZ8j/MIxu3T9GpPTn
+ M5jVzoulmUi+TraL/W6sI7/MBMMzPtNWYjvL46ILMEWPqXx2zbH0RJBFrbBv+JFvYPqr
+ k+PMcl6B7+yLQprGnJqMAS3oiTZ6vHClRRoA7MElF5y2dMfk5TLqZOALfA0c6ZwIhoj/
+ jyVQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=8Eh1A+XBqcPZEFBnh+HgUCyw+82+aoc7YA8bWZyx/XU=;
- b=NBxZAGlNLmdPVq5ye1Kpc+HtwOXDKZm20/jXW048HoQJ5ON2NQxQJWWKxnB2GIU2rW
- 8MHN+vde3AwrRNODQWfqopuXVlMnJ08bWFzrgs/mG3uFUY8q3oLMic/zdDugkZocYOAQ
- B1pferqnzPsCjkR5+V/PKt6H07CUI0uQiVX8Y1rAdMbbZmptwI25EYPW2V/v40slPUuk
- DWLLa0Dkw09i5SF92Kbjn2VDW6LBYrUMniDz1l3IxyVQobNPVwsGfVp18+tCUgU7N8un
- oD26iPBIyGzWjqe2qB/uxw4rW5Ejms5FBoXYSD+vpJH7R4FHoCw/XJRYIhv0PRFG+lEB
- n6gA==
-X-Gm-Message-State: APjAAAX6HtuOxIj8gvbNebNU78n0AzcFwfD3B13nxIpAzEoW/gxknLDe
- zdOHaw/BKjYWA9u+RybijpxnWg==
-X-Google-Smtp-Source: APXvYqxskYQg9q985hoq9WCm5QC668oyfjuHraw4eT/RktdibeQ6Rb2kp4vLE3njmdl9xUCiiFZ/Nw==
-X-Received: by 2002:a5d:5262:: with SMTP id l2mr4768386wrc.113.1573157826508; 
- Thu, 07 Nov 2019 12:17:06 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=qbI1BAgAkPaImSA31avjQBXyIdfFKUwTp+KLI6AEZH0=;
+ b=VBqBxticVG9yvApy+CkvrEXsO/NOe7frgoF9udJPMW0fJpAoET0aqKj4TLVNZJLNwJ
+ Q0sWqzVGUuqPNeHI3/xPzmw98CfMNnYG599L41shiBNEgTn985Ii0I2iwJYjnlw8SlsN
+ pY1XvpJnJDCDYxmN4zc4zy83VzgrqB7aItSTx6Q3Y8g5moswC2KuK7legERNfZi+aP/V
+ LOLhXs9FZ+WHDCIjDphYm3DMdsDxe6kgYFFhfy3DeYkBgLO2UNxcjiybPg8/rowUCBBB
+ iGQj4RpdXEFrJ+k9Rvrkr/FpA1lgXPPXGQsdypd+eh1bMPqxlbhYlvO79bOjTEz5SFQW
+ 2V9w==
+X-Gm-Message-State: APjAAAV9lutsmwTiqLZRZitmj6eI8J2Mwyz1KyhxpkajHzlgCLwNU18e
+ NM2a+PHB6ZIhX7DtEnPRv/o8mg==
+X-Google-Smtp-Source: APXvYqwsnkG5W3lQgjzDjrPN3gpk1F2MAlnJ4iiacsTzP9kRpXXiviPWMQMCMjJN24d9pILn7v49QQ==
+X-Received: by 2002:adf:8481:: with SMTP id 1mr5190613wrg.189.1573157827384;
+ Thu, 07 Nov 2019 12:17:07 -0800 (PST)
 Received: from localhost.localdomain ([95.147.198.88])
- by smtp.gmail.com with ESMTPSA id d11sm3215162wrn.28.2019.11.07.12.17.05
+ by smtp.gmail.com with ESMTPSA id d11sm3215162wrn.28.2019.11.07.12.17.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 12:17:05 -0800 (PST)
+ Thu, 07 Nov 2019 12:17:06 -0800 (PST)
 From: Lee Jones <lee.jones@linaro.org>
 To: gregkh@google.com
-Subject: [PATCH 01/10] ASoC: max98090: remove 24-bit format support if RJ is 0
-Date: Thu,  7 Nov 2019 20:16:53 +0000
-Message-Id: <20191107201702.27023-1-lee.jones@linaro.org>
+Subject: [PATCH 02/10] usb: gadget: udc: lpc32xx: allocate descriptor with
+ GFP_ATOMIC
+Date: Thu,  7 Nov 2019 20:16:54 +0000
+Message-Id: <20191107201702.27023-2-lee.jones@linaro.org>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191107201702.27023-1-lee.jones@linaro.org>
+References: <20191107201702.27023-1-lee.jones@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_121708_109123_F6BFC986 
-X-CRM114-Status: GOOD (  10.90  )
+X-CRM114-CacheID: sfid-20191107_121708_605994_FFD0A5FE 
+X-CRM114-Status: GOOD (  12.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -94,66 +97,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-kernel@vger.kernel.org,
- Yu-Hsuan Hsu <yuhsuan@chromium.org>, Mark Brown <broonie@kernel.org>,
- Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Felipe Balbi <felipe.balbi@linux.intel.com>, linux-kernel@vger.kernel.org,
+ Sylvain Lemieux <slemieux.tyco@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, James Grant <jamesg@zaltys.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yu-Hsuan Hsu <yuhsuan@chromium.org>
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 
-[ Upstream commit 5628c8979642a076f91ee86c3bae5ad251639af0 ]
+[ Upstream commit fbc318afadd6e7ae2252d6158cf7d0c5a2132f7d ]
 
-The supported formats are S16_LE and S24_LE now. However, by datasheet
-of max98090, S24_LE is only supported when it is in the right justified
-mode. We should remove 24-bit format if it is not in that mode to avoid
-triggering error.
+Gadget drivers may queue request in interrupt context. This would lead to
+a descriptor allocation in that context. In that case we would hit
+BUG_ON(in_interrupt()) in __get_vm_area_node.
 
-Signed-off-by: Yu-Hsuan Hsu <yuhsuan@chromium.org>
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Also remove the unnecessary cast.
+
+Acked-by: Sylvain Lemieux <slemieux.tyco@gmail.com>
+Tested-by: James Grant <jamesg@zaltys.org>
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Felipe Balbi <felipe.balbi@linux.intel.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 Signed-off-by: Lee Jones <lee.jones@linaro.org>
-Change-Id: I68110cd295e9cd1c692bbd3cc3fbc247d92759a0
+Change-Id: Iac6fdb2f664de82dde243dfa15b81e4add2198bf
 ---
- sound/soc/codecs/max98090.c | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ drivers/usb/gadget/udc/lpc32xx_udc.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/sound/soc/codecs/max98090.c b/sound/soc/codecs/max98090.c
-index 607f68597c21..25565f364af8 100644
---- a/sound/soc/codecs/max98090.c
-+++ b/sound/soc/codecs/max98090.c
-@@ -1847,6 +1847,21 @@ static const int dmic_comp[6][6] = {
- 	{7, 8, 3, 3, 3, 3}
- };
+diff --git a/drivers/usb/gadget/udc/lpc32xx_udc.c b/drivers/usb/gadget/udc/lpc32xx_udc.c
+index 23d0475a9136..928e0dd2f2d3 100644
+--- a/drivers/usb/gadget/udc/lpc32xx_udc.c
++++ b/drivers/usb/gadget/udc/lpc32xx_udc.c
+@@ -966,8 +966,7 @@ static struct lpc32xx_usbd_dd_gad *udc_dd_alloc(struct lpc32xx_udc *udc)
+ 	dma_addr_t			dma;
+ 	struct lpc32xx_usbd_dd_gad	*dd;
  
-+static int max98090_dai_startup(struct snd_pcm_substream *substream,
-+				struct snd_soc_dai *dai)
-+{
-+	struct snd_soc_component *component = dai->component;
-+	struct max98090_priv *max98090 = snd_soc_component_get_drvdata(component);
-+	unsigned int fmt = max98090->dai_fmt;
-+
-+	/* Remove 24-bit format support if it is not in right justified mode. */
-+	if ((fmt & SND_SOC_DAIFMT_FORMAT_MASK) != SND_SOC_DAIFMT_RIGHT_J) {
-+		substream->runtime->hw.formats = SNDRV_PCM_FMTBIT_S16_LE;
-+		snd_pcm_hw_constraint_msbits(substream->runtime, 0, 16, 16);
-+	}
-+	return 0;
-+}
-+
- static int max98090_dai_hw_params(struct snd_pcm_substream *substream,
- 				   struct snd_pcm_hw_params *params,
- 				   struct snd_soc_dai *dai)
-@@ -2274,6 +2289,7 @@ EXPORT_SYMBOL_GPL(max98090_mic_detect);
- #define MAX98090_FORMATS (SNDRV_PCM_FMTBIT_S16_LE | SNDRV_PCM_FMTBIT_S24_LE)
+-	dd = (struct lpc32xx_usbd_dd_gad *) dma_pool_alloc(
+-			udc->dd_cache, (GFP_KERNEL | GFP_DMA), &dma);
++	dd = dma_pool_alloc(udc->dd_cache, GFP_ATOMIC | GFP_DMA, &dma);
+ 	if (dd)
+ 		dd->this_dma = dma;
  
- static struct snd_soc_dai_ops max98090_dai_ops = {
-+	.startup = max98090_dai_startup,
- 	.set_sysclk = max98090_dai_set_sysclk,
- 	.set_fmt = max98090_dai_set_fmt,
- 	.set_tdm_slot = max98090_set_tdm_slot,
 -- 
 2.24.0
 
