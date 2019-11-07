@@ -2,74 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3010DF2DC9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 12:56:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93864F2DCD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 12:57:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Bk4fRCvSyDv+Bh2NOPwh8eY69kpcoX27sZWUgbtafPE=; b=EAY2A8yY33YP0joRYC3PKj0xM
-	GWSkaFaoBsM+WlnRvVqmkfSMp8ZCq7UFXTlIiNT/I5WkWNbztoYjY0jCTVtEmpCGkf+RttDFxerB9
-	0GrwmAGNF2b/VygfJyIQkWskqICAKSabFqqLM0q0e2m9saJGH8h3vaLy4RMlETmucU2v9AkykmjQA
-	ZaZ+cRSTudEL9vCLUR8WD2E/y+VXC/2aYo1e7izMbr9jP+lI1z6SLtxpRnHQaDd79MkRGLse9JAUu
-	971asuWS1bWyTwFogIKUPE9aX7DTWo8nNr4HZ6yvgav7qC+suOreyMnLOlq0BqL4Z884YgS1x4/Mr
-	1rzlrs4Aw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IeE+iMKha7YmITFPIwFlUhA2fpqpiNkS6y0pjd4VfwI=; b=VXJsbPvRTkBoCl
+	bBwrThDoflqSsRRtNbTtalqTjxuA/2huDIWNft63BXpqDTxbxKlrmcGqlfOzVKuMAA5sTY773KAZm
+	nO7wUrKcSiXsGKx2OBpcX27uzAsJDJXOPeFvoAz+SGh+J10ztv1D4Hsf3Ykc1jGSsOOrcxPN3atdK
+	daxEIF7rOQmX3n8tkbn5L/ZADzrFxVEfu6Rhq/dzevY1jxbMbgFvhfg6n+2iVqaWETmab+RDn/BQI
+	R+O+nfFMouwy7tSweHqLGS/CEm2jDrTemewTimZgmxDfz6OToATqbLo7NQT9zcx+MeWxXxcfFSKZ1
+	ivqv70TnOiWnUcsZMXbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSgOU-0001rS-Os; Thu, 07 Nov 2019 11:56:06 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSgOG-0001o9-CM
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 11:55:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=iHlXGtTG3blZ6wKTwLxKq3oEwBwhxS47/spmMRLMzdY=; b=K/UJzHdCs9fwV96Yji6p6gWE/
- jMLeuXh+3eUByTdf2+mklAcdNAqP3OIGRCfrSlyf0pYM2buraM2dWLRx2gdJb6YIkSXbT0QEljedz
- 3B+7cDRAiw74kq1pZ6Qb0+CmMlIagDCI/9wkzhOsntg9x62ieTcaWY+8+P6uNEwgtrRIc=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1iSgOC-0004FS-V1; Thu, 07 Nov 2019 11:55:48 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 50BC527431AF; Thu,  7 Nov 2019 11:55:48 +0000 (GMT)
-Date: Thu, 7 Nov 2019 11:55:48 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Christoph Fritz <chf.fritz@googlemail.com>
-Subject: Re: [PATCH 3/4] dt-bindings: regulator: describe da906x buck
- regulator modes
-Message-ID: <20191107115548.GC6159@sirena.co.uk>
-References: <1573121050-4728-1-git-send-email-chf.fritz@googlemail.com>
- <1573121050-4728-4-git-send-email-chf.fritz@googlemail.com>
+	id 1iSgPX-0002Fh-1Y; Thu, 07 Nov 2019 11:57:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSgPO-0002FB-EV
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 11:57:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 247DA31B;
+ Thu,  7 Nov 2019 03:57:01 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 06CFF3F6C4;
+ Thu,  7 Nov 2019 03:56:59 -0800 (PST)
+Date: Thu, 7 Nov 2019 11:56:50 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: John Garry <john.garry@huawei.com>
+Subject: Re: [PATCH] drivers/perf: hisi: update the sccl_id/ccl_id for
+ certain HiSilicon platform
+Message-ID: <20191107115650.GA4948@lakrids.cambridge.arm.com>
+References: <1573113364-32531-1-git-send-email-zhangshaokun@hisilicon.com>
+ <20191107114041.GB11587@willie-the-truck>
+ <52f89b8c-0baf-77d0-4bbd-1e129f8e5ed2@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <1573121050-4728-4-git-send-email-chf.fritz@googlemail.com>
-X-Cookie: I've read SEVEN MILLION books!!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <52f89b8c-0baf-77d0-4bbd-1e129f8e5ed2@huawei.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_035552_441989_1AD7ECF6 
-X-CRM114-Status: UNSURE (   8.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191107_035702_528882_F1BAC48F 
+X-CRM114-Status: GOOD (  17.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,63 +64,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Support Opensource <support.opensource@diasemi.com>,
- Lee Jones <lee.jones@linaro.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7698008593132567081=="
+Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Hanjun Guo <guohanjun@huawei.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Nov 07, 2019 at 11:50:30AM +0000, John Garry wrote:
+> On 07/11/2019 11:40, Will Deacon wrote:
+> > Hi,
+> > 
+> > On Thu, Nov 07, 2019 at 03:56:04PM +0800, Shaokun Zhang wrote:
+> > > @@ -338,8 +339,10 @@ void hisi_uncore_pmu_disable(struct pmu *pmu)
+> > >   /*
+> > >    * Read Super CPU cluster and CPU cluster ID from MPIDR_EL1.
+> > > - * If multi-threading is supported, CCL_ID is the low 3-bits in MPIDR[Aff2]
+> > > - * and SCCL_ID is the upper 5-bits of Aff2 field; if not, SCCL_ID
+> > > + * If multi-threading is supported, On Huawei Kunpeng 920 SoC whose cpu
+> > > + * core is tsv110, CCL_ID is the low 3-bits in MPIDR[Aff2] and SCCL_ID
+> > > + * is the upper 5-bits of Aff2 field; while for other cpu types, SCCL_ID
+> > > + * is in MPIDR[Aff3] and CCL_ID is in MPIDR[Aff2], if not, SCCL_ID
+> > >    * is in MPIDR[Aff2] and CCL_ID is in MPIDR[Aff1].
+> > >    */
+> > >   static void hisi_read_sccl_and_ccl_id(int *sccl_id, int *ccl_id)
+> > > @@ -347,12 +350,19 @@ static void hisi_read_sccl_and_ccl_id(int *sccl_id, int *ccl_id)
+> > >   	u64 mpidr = read_cpuid_mpidr();
+> > >   	if (mpidr & MPIDR_MT_BITMASK) {
+> > > -		int aff2 = MPIDR_AFFINITY_LEVEL(mpidr, 2);
+> > > -
+> > > -		if (sccl_id)
+> > > -			*sccl_id = aff2 >> 3;
+> > > -		if (ccl_id)
+> > > -			*ccl_id = aff2 & 0x7;
+> > > +		if (read_cpuid_part_number() == HISI_CPU_PART_TSV110) {
+> > > +			int aff2 = MPIDR_AFFINITY_LEVEL(mpidr, 2);
+> > > +
+> > > +			if (sccl_id)
+> > > +				*sccl_id = aff2 >> 3;
+> > > +			if (ccl_id)
+> > > +				*ccl_id = aff2 & 0x7;
+> > > +		} else {
+> > > +			if (sccl_id)
+> > > +				*sccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 3);
+> > > +			if (ccl_id)
+> > > +				*ccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 2);
+> > > +		}
+> > 
+> > [I prefer Mark's version, so please reply to indicate whether or not it
+> >   works for you]
+> 
+> Replying on Shaokun's behalf as he appears offline now.
+> 
+> In response to "> If TSV110 is always MT, ":
+> 
+> It isn't. There are 2 spins of Huawei Kunpeng 920 SoC which includes
+> TaishanV110 aka TSV110: one has the MT bit set and the other without.
 
---===============7698008593132567081==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="JWEK1jqKZ6MHAcjA"
-Content-Disposition: inline
+Just to check, for the non-MT variant is the SCCL/CCL assignment
+Aff2/Aff1 as with other non-MT parts?
 
-
---JWEK1jqKZ6MHAcjA
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, Nov 07, 2019 at 11:04:09AM +0100, Christoph Fritz wrote:
-> This patch adds DT description of da906x buck regulator modes.
-
-Please submit patches using subject lines reflecting the style for the
-subsystem, this makes it easier for people to identify relevant patches.
-Look at what existing commits in the area you're changing are doing and
-make sure your subject lines visually resemble what they're doing.
-There's no need to resubmit to fix this alone.
-
---JWEK1jqKZ6MHAcjA
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3EBkMACgkQJNaLcl1U
-h9DFYwf+K+6Qv4srSebiFY++rlxALTFBrd/T7KJR2yrAhocBG0I9XWBns9OzMgQi
-1Ff7vMnWBiE0CAVpK1MTPD0E86pxX5EoSGS65rl9gq5SRCXLSje+va3qbzUW7x79
-20f0+cGUdTyaROEauNYrrLdxJnW3c/dNEqGtOnQfYQ72ejDQYSXX5bZwO5ay8oU3
-7S2ByVjf1qUXnpBH0W6kbDmnwRdvtRN7gh9Pbc0tcItDop6bQmVPckRYw3Qll7Y4
-Qe53MkwaODM5Mv97D4pGUGVkW0eYLPNckegdlGmS8jZg5Ubh4uGchTplFVj8eu3d
-FNuOOMzELazOxzyjsbSG7MeGZPY0Hg==
-=NCpx
------END PGP SIGNATURE-----
-
---JWEK1jqKZ6MHAcjA--
-
-
---===============7698008593132567081==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7698008593132567081==--
-
