@@ -2,59 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42A1FF2DF6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 13:12:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EB51F2DF8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 13:12:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2SHQ9pEqIe+Fb4t/fUHsHiuGhBaT7UHlIzWAvJ0qZlk=; b=lMVojnSWEMmZDF
-	I4Lc7qVUeAknHhlLyeLW6JnqbH6O0LNnOjbpuj7g081mrmc7wC+4AJ3zUGwKV1rZSl4vOECC9mvds
-	mHuCtVajs+w376xhupx2zJ8Uob+Q/vUVk0ClDltNdyvoczP4JsU/PnkoVNwoys7StdTgDKw2UhCA2
-	jrIUfvNo1lEXpRUh6LmYAEwYaiQutb/fKE1sScJnmzij99d1nJ7ptOqrPNSYhsIQuBPd0FifmhNQV
-	vLGfhxTEZuS8zQdsLd6V2lBScRikV4Q9wFI3arp1AA9V9GbJjFR04xze1c2IGS/5pR6Olslw21EtD
-	zUgEmbbgxsyOD82WLCzA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ivtR3SZx8QeqfKUgK36LpFSU2dcd34vdfrHW/18BPdc=; b=BbIsgp3DXRGtUh
+	YRmIBZqB0Z9tIUSmeWs82FY9JM7o4VZTRGNUPv9NYPEZR1Pxl4zcCyGOR29DdMaUsaF962nDPJw5t
+	xofZQS9AYJJOUZXakkPHvMA5f3njLqIMU6IaOopvFGJF2m3NoKaVbHpRT2V0pQema7TwBzpgsNQoM
+	Mv2nhO0md5bA5sajuCn08rHj79q3o0JXHSgwHh9oD+4OtLRDCrq/Qk3sYLGb67j0rp8X+6d7oyXpE
+	t1jMqhqzibTuq2J3uTQG6zetREJYbcZAIflXQilUTJO07sRyV/QZ7tAycenhPa7/6HH2YrNqd9yNv
+	I7IP3s3cx9lTM1bPAJYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSgdy-0008RC-GS; Thu, 07 Nov 2019 12:12:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSgdp-0008Qb-1Y
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 12:11:58 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1DFA031B;
- Thu,  7 Nov 2019 04:11:55 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4E3F93F6C4;
- Thu,  7 Nov 2019 04:11:54 -0800 (PST)
-Date: Thu, 7 Nov 2019 12:11:52 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH] drivers/perf: hisi: update the sccl_id/ccl_id for
- certain HiSilicon platform
-Message-ID: <20191107121151.GB4948@lakrids.cambridge.arm.com>
-References: <1573113364-32531-1-git-send-email-zhangshaokun@hisilicon.com>
- <20191107114041.GB11587@willie-the-truck>
- <52f89b8c-0baf-77d0-4bbd-1e129f8e5ed2@huawei.com>
- <20191107115650.GA4948@lakrids.cambridge.arm.com>
- <14e778fb-7b71-3927-134a-415f9a83eae7@huawei.com>
+	id 1iSgeA-00008t-Hp; Thu, 07 Nov 2019 12:12:18 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSgdv-0008U5-VJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 12:12:05 +0000
+Received: by mail-lf1-x143.google.com with SMTP id v4so1397295lfd.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 07 Nov 2019 04:12:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=pyy8vkTJSzgNxqiCr2+y5TMDgtVVbBOEIpX6C3EpP3U=;
+ b=XPpefSxVqa4KAVZE9vPHMqqgshNjBfZB43iDpwfSv1FNBN2KzTgfMDWtKAlwqYLPq1
+ AyKfc7mD2FN66uF/5zcH+FHNfwOgDRAfv4ckt/vciODMTECa4DA2++2YBU1+P8rHAcdI
+ A55FfzBl52daMgUUHiudYHOl1uMr1jQr7KZq4SlaauK0m74l1mSFKuhmFa4zjLmPk4zl
+ fhshw3j5FnaaHEhMel3ygDj+ZsHkqHQebKfA6+Zy0nkaZvvqEVW9JL1ZQGb0//bd+ohM
+ q/dbY3l6XEUDPli8FGfJMCd7Ht2G12LvVSgLDN3/eR5TdPUNHvtqHfWtx0zoFGuCkeMg
+ 2vKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=pyy8vkTJSzgNxqiCr2+y5TMDgtVVbBOEIpX6C3EpP3U=;
+ b=uQPt9MsiGpNYqjANn22CE3c/Avw88EVdw9cMN1ucofqk+KTbEKJssedWS85M4r7fmL
+ pXnvnyoeD6+MXU/aqDVZdD+0Dw9DJiPO1D9p6yVTprKG7845ZgSrC0drkVgbZ83M78R6
+ MJinp0drOakHUOe1KBAkDiITAIEY8PuC0C4bUFEIwr4BQz/MfBS4w1elfZ+D+ON8W9Rs
+ Gzo7Fy+Q/gOPd1GEe4i2vqEgBqehIo0vkBZ04RLdABCvC2kRGw4muIZlcFaBJNpXpmWc
+ Tg3vcQeD45fbkr2+s1oIB+mO+tcUv34NX62LXIUy66ic9cUVUyRlVIimCYAxy2jaeHTd
+ 9CvQ==
+X-Gm-Message-State: APjAAAUgU8e1rEhcS3JVoUP1hOjWTrPIoW7DwmJvRh9C+fvzFox4Uwrt
+ wp7aznpMfx8ZkyzD6zG4ZB1x+A==
+X-Google-Smtp-Source: APXvYqyO00Wglntl8Ch/EQ1NSmfyf403om0J9/NXHBJF6084BMLQydB7qQX2RFthZZ9lFM43VEJjow==
+X-Received: by 2002:a19:fc1e:: with SMTP id a30mr2209666lfi.167.1573128722113; 
+ Thu, 07 Nov 2019 04:12:02 -0800 (PST)
+Received: from jax (h-48-81.A175.priv.bahnhof.se. [94.254.48.81])
+ by smtp.gmail.com with ESMTPSA id k187sm2371024lfd.54.2019.11.07.04.12.00
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 07 Nov 2019 04:12:01 -0800 (PST)
+Date: Thu, 7 Nov 2019 13:11:59 +0100
+From: Jens Wiklander <jens.wiklander@linaro.org>
+To: arm@kernel.org, soc@kernel.org
+Subject: [GIT PULL] tee subsys fixes for v5.4
+Message-ID: <20191107121159.GA9301@jax>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <14e778fb-7b71-3927-134a-415f9a83eae7@huawei.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_041157_175711_8AF8C8A8 
-X-CRM114-Status: GOOD (  20.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191107_041204_037376_435F041D 
+X-CRM114-Status: GOOD (  13.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,119 +94,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Hanjun Guo <guohanjun@huawei.com>
+Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 07, 2019 at 12:06:24PM +0000, John Garry wrote:
-> On 07/11/2019 11:56, Mark Rutland wrote:
-> > On Thu, Nov 07, 2019 at 11:50:30AM +0000, John Garry wrote:
-> > > On 07/11/2019 11:40, Will Deacon wrote:
-> > > > Hi,
-> > > > 
-> > > > On Thu, Nov 07, 2019 at 03:56:04PM +0800, Shaokun Zhang wrote:
-> > > > > @@ -338,8 +339,10 @@ void hisi_uncore_pmu_disable(struct pmu *pmu)
-> > > > >    /*
-> > > > >     * Read Super CPU cluster and CPU cluster ID from MPIDR_EL1.
-> > > > > - * If multi-threading is supported, CCL_ID is the low 3-bits in MPIDR[Aff2]
-> > > > > - * and SCCL_ID is the upper 5-bits of Aff2 field; if not, SCCL_ID
-> > > > > + * If multi-threading is supported, On Huawei Kunpeng 920 SoC whose cpu
-> > > > > + * core is tsv110, CCL_ID is the low 3-bits in MPIDR[Aff2] and SCCL_ID
-> > > > > + * is the upper 5-bits of Aff2 field; while for other cpu types, SCCL_ID
-> > > > > + * is in MPIDR[Aff3] and CCL_ID is in MPIDR[Aff2], if not, SCCL_ID
-> > > > >     * is in MPIDR[Aff2] and CCL_ID is in MPIDR[Aff1].
-> > > > >     */
-> > > > >    static void hisi_read_sccl_and_ccl_id(int *sccl_id, int *ccl_id)
-> > > > > @@ -347,12 +350,19 @@ static void hisi_read_sccl_and_ccl_id(int *sccl_id, int *ccl_id)
-> > > > >    	u64 mpidr = read_cpuid_mpidr();
-> > > > >    	if (mpidr & MPIDR_MT_BITMASK) {
-> > > > > -		int aff2 = MPIDR_AFFINITY_LEVEL(mpidr, 2);
-> > > > > -
-> > > > > -		if (sccl_id)
-> > > > > -			*sccl_id = aff2 >> 3;
-> > > > > -		if (ccl_id)
-> > > > > -			*ccl_id = aff2 & 0x7;
-> > > > > +		if (read_cpuid_part_number() == HISI_CPU_PART_TSV110) {
-> > > > > +			int aff2 = MPIDR_AFFINITY_LEVEL(mpidr, 2);
-> > > > > +
-> > > > > +			if (sccl_id)
-> > > > > +				*sccl_id = aff2 >> 3;
-> > > > > +			if (ccl_id)
-> > > > > +				*ccl_id = aff2 & 0x7;
-> > > > > +		} else {
-> > > > > +			if (sccl_id)
-> > > > > +				*sccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 3);
-> > > > > +			if (ccl_id)
-> > > > > +				*ccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 2);
-> > > > > +		}
-> > > > 
-> > > > [I prefer Mark's version, so please reply to indicate whether or not it
-> > > >    works for you]
-> > > 
-> > > Replying on Shaokun's behalf as he appears offline now.
-> > > 
-> > > In response to "> If TSV110 is always MT, ":
-> > > 
-> > > It isn't. There are 2 spins of Huawei Kunpeng 920 SoC which includes
-> > > TaishanV110 aka TSV110: one has the MT bit set and the other without.
-> > 
-> > Just to check, for the non-MT variant is the SCCL/CCL assignment
-> > Aff2/Aff1 as with other non-MT parts?
-> 
-> We don't support any other non-MT parts for this driver.
+Hello arm-soc maintainers,
 
-The driver claimed to support non-MT parts before TSV110 came around, so that
-statement confuses me.
+Please pull these OP-TEE driver fixes. There's one user-after-free issue if
+in the error handling path when the OP-TEE driver is initializing. There's
+also one fix to to register dynamically allocated shared memory needed by
+kernel clients communicating with secure world via memory references.
 
-For a non-MT TSV110, is Aff2 the SCCL and Aff1 the CCL? That's what the
-existing code (and Shaokun's patch) assumed.
-
-Assuming that is the case, I'd suggest we have the following:
-
-/*
- * The Super CPU Cluster (SCCL) and CPU Cluster (CCL) IDs can be
- * determined from the MPIDR_EL1, but the encoding varies by CPU:
- *
- * - For MT variants of TSV110 (e.g. found in Kunpeng 920):
- *   SCCL is Aff2[7:3], CCL is Aff2[2:0]
- *
- * - For other MT parts:
- *   SCCL is Aff3[7:0], CCL is Aff2[7:0]
- *
- * - For non-MT parts:
- *   SCCL is Aff2[7:0], CCL is Aff1[7:0]
- */
-static void hisi_read_sccl_and_ccl_id(int *scclp, int *cclp)
-{
-	u64 mpidr = read_cpuid_mpidr();
-	int aff3 = MPIDR_AFFINITY_LEVEL(mpidr, 3);
-	int aff2 = MPIDR_AFFINITY_LEVEL(mpidr, 2);
-	int aff1 = MPIDR_AFFINITY_LEVEL(mpidr, 1);
-	bool mt = mpdir & MPIDR_MT_BITMASK;
-	int sccl, ccl;
-
-	if (mt && read_cpuid_part_number() == HISI_CPU_PART_TSV110) {
-		sccl = aff2 >> 3;
-		ccl = aff2 & 0x7;
-	} else if (mt) {
-		sccl = aff3;
-		ccl = aff2;
-	} else {
-		sccl = aff2;
-		ccl = aff1;
-	}
-
-	if (scclp)
-		*scclp = sccl;
-	if (cclp)
-		*cclp = ccl;
-}
+If you think it's too late for v5.4 please queue it for v5.5 instead.
 
 Thanks,
-Mark.
+Jens
+
+The following changes since commit 4f5cafb5cb8471e54afdc9054d973535614f7675:
+
+  Linux 5.4-rc3 (2019-10-13 16:37:36 -0700)
+
+are available in the Git repository at:
+
+  git://git.linaro.org/people/jens.wiklander/linux-tee.git tags/tee-fixes-for-v5.4
+
+for you to fetch changes up to 61435a63b15233428088ccb0ad34e19fc00416c9:
+
+  tee: optee: fix device enumeration error handling (2019-11-07 12:07:44 +0100)
+
+----------------------------------------------------------------
+Two OP-TE driver fixes:
+- Add proper cleanup on optee_enumerate_devices() failure
+- Make sure to register kernel allocations of dynamic shared memory
+
+----------------------------------------------------------------
+Jens Wiklander (1):
+      tee: optee: fix device enumeration error handling
+
+Sumit Garg (1):
+      tee: optee: Fix dynamic shm pool allocations
+
+ drivers/tee/optee/core.c     | 20 ++++++++++++--------
+ drivers/tee/optee/shm_pool.c | 12 +++++++++++-
+ 2 files changed, 23 insertions(+), 9 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
