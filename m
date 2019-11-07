@@ -2,84 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85864F2A82
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:24:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0F75F2A8C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:26:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=v9FeUKaEjVBT7fkIaIL8bLx9ALqgOwui7wPXEsMMw1M=; b=owgvjmrr7E2liYHtcnjHlphAl
-	d7zaqnCQxzFB6wcXrpO2UxU3HMHQFV1iRIro+ubJz4sh7F3v6HApz9jvEODBCHPfHL31z+tgscudI
-	irEA+w0pbR6h/PIMEMoyKE4nnL+Rsf6dDAJChPsg9P1/O7xecIhRn4DPQkOg2ru99JUQcDgx5x2pR
-	QvdHEDf2EBdjITjfMv0SmeyT/bXW90IxWyxKBCVKqpwtkBVFJ37AinBZeET5Fayo0J82GpQUVQ2fT
-	oDVXS2RVTKlVK9LTDf3+qdCHNxjSkRViH5rQ9sA1IQceSnHox4hRh5/83Gi8GnlurwPhGchZbYntz
-	zXS21Amtg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rFcqpE5e+PTcmeTeOslsUaSaJ+X3IGtcgVIUcjqSAmg=; b=LeiYL8YKcG2lHa
+	WydnZge+yP1r6oFPovk+qfY0OBMKm1YXD3hKQY2B5i9XFBtrHds2h0jogPf8SDDFdRTaKT7cMPn/f
+	rG8lcdLSXdRS9v67058zXyD6/6TODkF4fZgtKVeSHVDoAkjrWlQfgE90PusDfnE4V79L4zItHSBoc
+	DRlX7OxIWMYPpnyvr010zIS/Ec0DikT+3KlreasZKIdtl6tHyB67g6/n0EtRp3CDMYHFVjLIHJJda
+	Dts6Eyeu/Zhvufkdda6NxQFjb1MM1BD6WXRPZ2DpYglgQ8sFjH97nmyYvoyLlUXDs6GC6RbyE6Dnm
+	aTNSTUwubgPWqIcDZPoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSe2A-0004Z1-I5; Thu, 07 Nov 2019 09:24:54 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iSe3K-0006VZ-BP; Thu, 07 Nov 2019 09:26:06 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSe21-0004YR-CV
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 09:24:47 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xA79NYM7019497; Thu, 7 Nov 2019 10:24:40 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=Nb/QEqnZoMmiwFk8QYy7UhscfVZLIh+x/Bdk+co3TD0=;
- b=aSsHwf9oISipVlgti+RbcmRO5jKKaVfy49CVVZoh3lJ599KYvpEp1+0LDMRsYtbIkDW4
- cDLRKlVjqnwEKGWPA/Uj5LpjfQWPVwvudUTL9t3P18nJqsT8WwmiBc5VuVTgf7dhxpPS
- /Yuggi9lsFG0F320F4tzp37XQqg5l+p9HxF2fO/+WakNrKRCVgRkQOHpDHQDnlSzuwh/
- vXDs/CeZ3b/eiPMIpM1L4X7mHBzLNpLOYe9Lk5arNCbZ80rswAV3/oqM6NYw262lhotZ
- b309lMdc893X8B1Pct01HFVzc1Cttd//mffb9rDBBnETYXiZspQri9yq4eVPw5aN7vZG RQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2w41vdv6hc-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 07 Nov 2019 10:24:40 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 794A5100039;
- Thu,  7 Nov 2019 10:24:40 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6AEF32AD32A;
- Thu,  7 Nov 2019 10:24:40 +0100 (CET)
-Received: from lmecxl0995.lme.st.com (10.75.127.46) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 7 Nov
- 2019 10:24:39 +0100
-Subject: Re: [PATCH 1/1] pinctrl: stmfx: fix valid_mask init sequence
-To: Linus Walleij <linus.walleij@linaro.org>
-References: <20191104100908.10880-1-amelie.delaunay@st.com>
- <CACRpkdb1c-NHXDQXYS78VTcGPnJApmxjzZbF_cM8SUknhDiQ4Q@mail.gmail.com>
- <64f8096f-cec6-fef1-5a4e-ddca3bf8c73d@st.com>
- <CACRpkdbK=aB84hW0FtuMBtzqi3ftKBxedXEpqmnJhbN_vJWx2Q@mail.gmail.com>
-From: Amelie DELAUNAY <amelie.delaunay@st.com>
-Message-ID: <390e6f5b-e7a1-d7ae-34bf-5574e7239d5c@st.com>
-Date: Thu, 7 Nov 2019 10:24:39 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iSe2y-0006KY-Li; Thu, 07 Nov 2019 09:25:45 +0000
+Received: by mail-ot1-x344.google.com with SMTP id 94so1407703oty.8;
+ Thu, 07 Nov 2019 01:25:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=U8p26XYqH5TPqHeQad7U65Znhq7tW+I3xCdiHZkPSpw=;
+ b=QHfIIwuD2yv6I76g8JQ2D3pTFBro5Jhl/JMGULBBB3QmkDldjRx8CNGkL31TzAll6b
+ 7TH0ng15f4+P1S53c69OJTrUGN5DKrZNCO/hNdEiuGf8E9akHxAu1UUgCV33PMhyipjK
+ wqqP7AVEBCrNUYL+rxd2BEmDqFEXCKjVD3QieWTN5PwpxJJZUvy8+7QX2n5PnVAmOjyZ
+ qyjjtFO+GELGo1jcBkXENU3vVcVOTlGAouLwupNRtg7i6iaqw1YKIiN5eTjIHfwNWmj/
+ DSVz7qYjs4qHromtabMMTi8NHJB4CG/9hJC/gI1kS8VbG5fznQRTrKhM+fCeU5R0f8RB
+ FP/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=U8p26XYqH5TPqHeQad7U65Znhq7tW+I3xCdiHZkPSpw=;
+ b=ujuQCOAGKHLoI5KNR4HVWmmLpyhu836DxlsWOcPO7QttDyfC0+rskFeyx59KsuJCKD
+ 69Fjrv+pTJgdHc0FthL2wQdLWzlQE6JL4VGrYejz9NeEHAXlMcTUpEud/nNFlQYhUFT2
+ zo3zNFsDPbo+xRBK3lOPDrnYFdLH8GPZXukobCdURFPOPekG75fcPE0xSBs5IkydXhWD
+ qkw+/Xvs3EnGew8qjY0utWPV+4dJ7VDUOL1P4fLOJADhUzMcZi79PlOcf5n/OhwFsi2j
+ uJycG/G9n8k+jghGc8bue8G63APYGWwRPBfZfW9Sh632xiK3YMZ74Gh0/xKidpoWgdwg
+ rxAw==
+X-Gm-Message-State: APjAAAVVs56UxD6Xup54u7eow4HMOlQRdaYnEll487WPYYMJHzUqoWsb
+ 9/IyC0UAXnKxWz0Dbt40mw9nD3R+qLP/azfaGvM=
+X-Google-Smtp-Source: APXvYqytqNiv5noMGnzCkM3rhghUIUChzKwN8or6v9tCbNWgAONdjfZGD/sKd5quAzzGMSJy96OxTz6jDoGYY1aFd9Q=
+X-Received: by 2002:a9d:1b0d:: with SMTP id l13mr171271otl.84.1573118743606;
+ Thu, 07 Nov 2019 01:25:43 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <CACRpkdbK=aB84hW0FtuMBtzqi3ftKBxedXEpqmnJhbN_vJWx2Q@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG1NODE1.st.com (10.75.127.1) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-11-07_02:2019-11-07,2019-11-07 signatures=0
+References: <20191106140748.13100-1-gch981213@gmail.com>
+ <20191106140748.13100-3-gch981213@gmail.com>
+ <20191107010928.GA14186@bogus>
+In-Reply-To: <20191107010928.GA14186@bogus>
+From: Chuanhong Guo <gch981213@gmail.com>
+Date: Thu, 7 Nov 2019 17:25:32 +0800
+Message-ID: <CAJsYDV+M4kH5aCcJxxLB7UMhT7VsRXJW+RYcykHMTZW+1ftC9w@mail.gmail.com>
+Subject: Re: [PATCH 2/2] dt-bindings: mtd: mtk-quadspi: update bindings for
+ mmap flash read
+To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_012445_788734_5F237DAD 
-X-CRM114-Status: GOOD (  21.94  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191107_012544_710044_DF70A8B0 
+X-CRM114-Status: GOOD (  16.39  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gch981213[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (gch981213[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -98,108 +95,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, open list <linux-kernel@vger.kernel.org>,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/7/19 10:09 AM, Linus Walleij wrote:
-> On Tue, Nov 5, 2019 at 4:14 PM Amelie DELAUNAY <amelie.delaunay@st.com> wrote:
->> On 11/5/19 3:32 PM, Linus Walleij wrote:
->>> On Mon, Nov 4, 2019 at 11:09 AM Amelie Delaunay <amelie.delaunay@st.com>
->>> wrote:
->>>
->>>> With stmfx_pinctrl_gpio_init_valid_mask callback, gpio_valid_mask was used
->>>> to initialize gpiochip valid_mask for gpiolib. But gpio_valid_mask was not
->>>> yet initialized. gpio_valid_mask required gpio-ranges to be registered,
->>>> this is the case after gpiochip_add_data call. But init_valid_mask
->>>> callback is also called under gpiochip_add_data. gpio_valid_mask
->>>> initialization cannot be moved before gpiochip_add_data because
->>>> gpio-ranges are not registered.
->>>
->>> Sorry but this doesn't add up, look at this call graph:
->>>
->>> gpiochip_add_data()
->>>     gpiochip_add_data_with_key()
->>>       gpiochip_alloc_valid_mask()
->>>       of_gpiochip_add()
->>>       of_gpiochip_add_pin_range()
->>>       gpiochip_init_valid_mask()
->>>
->>> So the .initi_valid_mask() is clearly called *after*
->>> of_gpiochip_add_pin_range() so this cannot be the real reason,
->>> provided that the ranges come from the device tree. AFAICT that
->>> is the case with the stmfx.
->>>
->>> Can you check and see if the problem is something else?
->>>
->>
->> stmfx_pinctrl_gpio_init_valid_mask uses pctl->gpio_valid_mask to
->> initialize gpiochip valid_mask.
->>
->> pctl->gpio_valid_mask is initialized in
->> stmfx_pinctrl_gpio_function_enable depending on gpio ranges.
->>
->> stmfx_pinctrl_gpio_function_enable is called after gpiochip_add_data
->> because it requires gpio ranges to be registered.
->>
->> So, in stmfx driver the call graph is
->>
->> stmfx_pinctrl_probe
->>     gpiochip_add_data()
->>       gpiochip_add_data_with_key()
->>         gpiochip_alloc_valid_mask()
->>         of_gpiochip_add()
->>         of_gpiochip_add_pin_range()
->>         gpiochip_init_valid_mask()
->>           stmfx_pinctrl_gpio_init_valid_mask (but pctl->gpio_valid_mask
->> is not yet initialized so gpiochip valid_mask is wrong)
->>     stmfx_pinctrl_gpio_function_enable (pctl->gpio_valid_mask is going to
->> be initialized thanks to gpio ranges)
->>
->> When consumer tries to take a pin (it is the case for the joystick on
->> stm32mp157c-ev1), it gets the following issue:
->> [    3.347391] irq: :soc:i2c@40013000:stmfx@42:stmfx-pin-controller
->> didn't like hwirq-0x0 to VIRQ92 mapping (rc=-6)
->> [    3.356418] irq: :soc:i2c@40013000:stmfx@42:stmfx-pin-controller
->> didn't like hwirq-0x1 to VIRQ92 mapping (rc=-6)
->> [    3.366512] irq: :soc:i2c@40013000:stmfx@42:stmfx-pin-controller
->> didn't like hwirq-0x2 to VIRQ92 mapping (rc=-6)
->> [    3.376671] irq: :soc:i2c@40013000:stmfx@42:stmfx-pin-controller
->> didn't like hwirq-0x3 to VIRQ92 mapping (rc=-6)
->> [    3.387169] irq: :soc:i2c@40013000:stmfx@42:stmfx-pin-controller
->> didn't like hwirq-0x4 to VIRQ92 mapping (rc=-6)
->> [    3.397065] gpio-keys joystick: Found button without gpio or irq
->> [    3.403041] gpio-keys: probe of joystick failed with error -22
->>
->> I can reword the commit message to make it clearer.
-> 
-> No need I understand it now, thanks for explaining!
-> 
-> We need to populate the valid mask some other way if you
-> want to safeguard this, I don't know if the existing
-> gpio-reserved-ranges would work? But it feels a bit unsafe
-> if you actually determine this some other way.
-> 
+Hi!
 
-Before this patch, I made a "draft" version using the 
-gpio-reserved-ranges property but then I had to use 
-gpiochip_line_is_valid in pinconf_get/_set/_dbg_show in addition of 
-pinctrl_find_gpio_range_from_pin... With an update of the bindings for 
-optional property gpio-reserved-ranges.
-I was not really fond of this solution, it sounded redundant.
+On Thu, Nov 7, 2019 at 9:09 AM Rob Herring <robh@kernel.org> wrote:
+>
+> On Wed, Nov 06, 2019 at 10:07:48PM +0800, Chuanhong Guo wrote:
+> > update register descriptions and add an example binding using it.
+> >
+> > Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
+> > ---
+> >  .../devicetree/bindings/mtd/mtk-quadspi.txt   | 21 ++++++++++++++++++-
+> >  1 file changed, 20 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt b/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
+> > index a12e3b5c495d..4860f6e96f5a 100644
+> > --- a/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
+> > +++ b/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
+> > @@ -12,7 +12,10 @@ Required properties:
+> >                 "mediatek,mt7623-nor", "mediatek,mt8173-nor"
+> >                 "mediatek,mt7629-nor", "mediatek,mt8173-nor"
+> >                 "mediatek,mt8173-nor"
+> > -- reg:                 physical base address and length of the controller's register
+> > +- reg:                 Contains one or two entries, each of which is a tuple consisting of a
+> > +               physical address and length. The first entry is the address and length
+> > +               of the controller register set. The optional second entry is the address
+> > +               and length of the area where the nor flash is mapped to.
+>
+> All the compatibles support 2 entries? If not, which ones?
 
-Thanks for applying the patch.
+It should be. I implemented it as an optional feature only because I
+don't know the mapped address space for all these chips and can't
+update every device trees.
 
 Regards,
-Amelie
+Chuanhong Guo
 
 _______________________________________________
 linux-arm-kernel mailing list
