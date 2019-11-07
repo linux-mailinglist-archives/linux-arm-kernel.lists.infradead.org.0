@@ -2,55 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03FB0F2BA7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:58:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 385CFF2BAB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:59:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rnYZDZhYZTnFvhsnANoDUrW2iAcDtohacFcyJxlOtY0=; b=irLyW42FuCqaFTRkrkfIU5VOV
-	7UD0fxOK+H38R6N16aAtnorgHcQ50ordg3ElbjtXKhUbmLW1sTxj1o2Jh1m/MxUBl3iDKyzZ3w0aP
-	eL/hYn6ZNyMr4rxusQ86tXCfLHYTm9xSeh+xfHSjpO7GlXkL8rOyKPJtCyq25HSMn/vXi5HczzB4Y
-	D171zU1yoONt7713EIm9g19JYSk6xsq4QvoEkxt7llyK18LpQOjkmOntNbGmI6TfWWR6y/EVC0MK/
-	WY5YEKgIrMCIwnIpVZzaS46++EgrUd9gOdOqzJd8gHlLfb3qdYqibOrvZyO9XhTB3VnearMCliNnN
-	c0tLYN5PQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Rd0FRvNBdnGeJF55+3TpKT2Z8O9dALw/Z90NfIqwXq8=; b=hVdHFvO5NV1JCy
+	LtDSnJl/noUTlJXZ70QzcnHK11wuxyuK1ssuXcgt9Oqpeg/v3ttC7jdj4l5ys2EzkUmwwLaIFBPcW
+	MMaKLlm6kTeCT1YEU/BGKEx1Ipmvxv84TsZZirpODuYTPk46Vz39FZ8/7RZ5K9a9rpkBt5B9zqy1k
+	vQ0e0mUGIRj2tHww4q2m8sakZP91UKYUon1tAcb8TMjAal0RvIoPvvn4DMxIUxvcqL8TC3PEMWErI
+	me4amUO1b/tfO47rPaT/StfzNJ6bGWRHi5e5ReBeL3w2WODmI6SoooCS/tIFJGEPkBUQ7a6RA51zm
+	OEqHfhdE5uqnwBsKr2OQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSeYg-0005hi-AQ; Thu, 07 Nov 2019 09:58:30 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iSeZS-0006DZ-C3; Thu, 07 Nov 2019 09:59:18 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSeYV-0005h4-Pm; Thu, 07 Nov 2019 09:58:21 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 68354AFA7;
- Thu,  7 Nov 2019 09:58:18 +0000 (UTC)
-Message-ID: <6391b0574abbe9f669fd5b8c539d306fb64aaba7.camel@suse.de>
-Subject: Re: [PATCH 0/4] Raspberry Pi 4 PCIe support
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Florian Fainelli <f.fainelli@gmail.com>, Andrew Murray
- <andrew.murray@arm.com>, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org,  bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org,  linux-arm-kernel@lists.infradead.org
-Date: Thu, 07 Nov 2019 10:58:16 +0100
-In-Reply-To: <5e3df7af-d7be-2408-7b53-13a0e38e9478@gmail.com>
-References: <20191106214527.18736-1-nsaenzjulienne@suse.de>
- <5e3df7af-d7be-2408-7b53-13a0e38e9478@gmail.com>
-User-Agent: Evolution 3.34.1 
+ id 1iSeZ6-0005zw-6u
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 09:58:58 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xA79wGNs011951; Thu, 7 Nov 2019 10:58:48 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=hbVDWXJ00zmSGkN7uOVCNrHuL1TPN4pH9x85Y3/XZCw=;
+ b=fCpAJnXenkQkx5e+gKEYTy5J7ew3c0UrRs2d8pPiknmB3AorZG1sPVDJq5Ll5X9SHDaO
+ t78tOySt/RflVWyEbnOQ9l51r6ko/xpBtctpH+4EjttVbSn0zCMX6SNBS9El/D94CvSf
+ zNl4XU+88NObspeGUao5fmBhP5ysWmMrl+cHApxCDSYcA4SgupgG0v4+CG22Hmqa8RDL
+ Iq3YUX4VEPB+n255e3E/2YZKf9ri0QvYVk+pcO7A/OyKrfQRxUoXn/90Vuwz69Z5nCjg
+ 3h8hym6taUaMsCJrJSpPm25DmIcNif/josHnx9lgc8qrU5G60pcqSE83PSn/RdK8fGjF /w== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2w41vgvey9-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 07 Nov 2019 10:58:48 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 43D4210002A;
+ Thu,  7 Nov 2019 10:58:47 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 326122AA4DB;
+ Thu,  7 Nov 2019 10:58:47 +0100 (CET)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE3.st.com
+ (10.75.127.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 7 Nov
+ 2019 10:58:46 +0100
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Thu, 7 Nov 2019 10:58:46 +0100
+From: Patrice CHOTARD <patrice.chotard@st.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Mauro Carvalho Chehab
+ <mchehab@kernel.org>
+Subject: Re: [PATCH] media: c8sectpfe: no need to check return value of
+ debugfs_create functions
+Thread-Topic: [PATCH] media: c8sectpfe: no need to check return value of
+ debugfs_create functions
+Thread-Index: AQHVlUi4fopZoSb/7UygbHVOP1JV06d/aI4A
+Date: Thu, 7 Nov 2019 09:58:46 +0000
+Message-ID: <e27c1351-3ca8-ccf3-bcb6-adab33be8889@st.com>
+References: <20191107085238.GA1285658@kroah.com>
+In-Reply-To: <20191107085238.GA1285658@kroah.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.48]
+Content-ID: <A8395E0710B8C84BB8416781D9DD88E0@st.com>
 MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-07_02:2019-11-07,2019-11-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_015819_979715_A1E97C2B 
-X-CRM114-Status: GOOD (  16.31  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191107_015856_937436_90850F13 
+X-CRM114-Status: GOOD (  21.11  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,103 +108,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mbrugger@suse.com, phil@raspberrypi.org, wahrenst@gmx.net,
- james.quinlan@broadcom.com, linux-kernel@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============5809554791455875552=="
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi
 
---===============5809554791455875552==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-9+CcCd+frESmTBhEBdh8"
+On 11/7/19 9:52 AM, Greg Kroah-Hartman wrote:
+> When calling debugfs functions, there is no need to ever check the
+> return value.  The function can work or not, but the code logic should
+> never do something different based on this.
+>
+> Cc: Patrice Chotard <patrice.chotard@st.com>
+> Cc: Mauro Carvalho Chehab <mchehab@kernel.org>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-media@vger.kernel.org
+> Cc: linux-kernel@vger.kernel.org
+> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> ---
+>  .../sti/c8sectpfe/c8sectpfe-debugfs.c         | 26 +++----------------
+>  1 file changed, 3 insertions(+), 23 deletions(-)
+>
+> diff --git a/drivers/media/platform/sti/c8sectpfe/c8sectpfe-debugfs.c b/drivers/media/platform/sti/c8sectpfe/c8sectpfe-debugfs.c
+> index 8f0ddcbeed9d..301fa10f419b 100644
+> --- a/drivers/media/platform/sti/c8sectpfe/c8sectpfe-debugfs.c
+> +++ b/drivers/media/platform/sti/c8sectpfe/c8sectpfe-debugfs.c
+> @@ -225,36 +225,16 @@ static const struct debugfs_reg32 fei_sys_regs[] = {
+>  
+>  void c8sectpfe_debugfs_init(struct c8sectpfei *fei)
+>  {
+> -	struct dentry		*root;
+> -	struct dentry		*file;
+> -
+> -	root = debugfs_create_dir("c8sectpfe", NULL);
+> -	if (!root)
+> -		goto err;
+> -
+> -	fei->root = root;
+> -
+>  	fei->regset =  devm_kzalloc(fei->dev, sizeof(*fei->regset), GFP_KERNEL);
+>  	if (!fei->regset)
+> -		goto err;
+> +		return;
+>  
+>  	fei->regset->regs = fei_sys_regs;
+>  	fei->regset->nregs = ARRAY_SIZE(fei_sys_regs);
+>  	fei->regset->base = fei->io;
+>  
+> -	file = debugfs_create_regset32("registers", S_IRUGO, root,
+> -				fei->regset);
+> -	if (!file) {
+> -		dev_err(fei->dev,
+> -			"%s not able to create 'registers' debugfs\n"
+> -			, __func__);
+> -		goto err;
+> -	}
+> -
+> -	return;
+> -
+> -err:
+> -	debugfs_remove_recursive(root);
+> +	fei->root = debugfs_create_dir("c8sectpfe", NULL);
+> +	debugfs_create_regset32("registers", S_IRUGO, fei->root, fei->regset);
+>  }
+>  
+>  void c8sectpfe_debugfs_exit(struct c8sectpfei *fei)
 
+Reviewed-by: Patrice Chotard <patrice.chotard@st.com>
 
---=-9+CcCd+frESmTBhEBdh8
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, 2019-11-06 at 13:51 -0800, Florian Fainelli wrote:
-> On 11/6/19 1:45 PM, Nicolas Saenz Julienne wrote:
-> > This series aims at providing support for Raspberry Pi 4's PCIe
-> > controller, which is also shared with the Broadcom STB family of
-> > devices.
-> >=20
-> > There was a previous attempt to upstream this some years ago[1] but was
-> > blocked as most STB PCIe integrations have a sparse DMA mapping[2] whic=
-h
-> > is something currently not supported by the kernel.  Luckily this is no=
-t
-> > the case for the Raspberry Pi 4.
-> >=20
-> > Note that the driver code is to be based on top of Rob Herring's series
-> > simplifying inbound and outbound range parsing.
-> >=20
-> > [1] https://patchwork.kernel.org/cover/10605933/
-> > [2] https://patchwork.kernel.org/patch/10605957/
->=20
-> Thanks for picking up on this Nicolas. Can you amend the MAINTAINERS
-> file with something along those lines such that PCIe binding and driver
-> changes are picked up by both the BCM2835 and BCM7XXX entries?
->=20
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index cba1095547fd..4276a30f3294 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -3196,6 +3196,8 @@ S:        Maintained
->  N:     bcm2711
->  N:     bcm2835
->  F:     drivers/staging/vc04_services
-> +F:     Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> +F:     drivers/pci/controller/pcie-brcmstb.c
->=20
->  BROADCOM BCM47XX MIPS ARCHITECTURE
->  M:     Hauke Mehrtens <hauke@hauke-m.de>
-> @@ -3251,6 +3253,7 @@ F:        drivers/bus/brcmstb_gisb.c
->  F:     arch/arm/mm/cache-b15-rac.c
->  F:     arch/arm/include/asm/hardware/cache-b15-rac.h
->  N:     brcmstb
-> +F:     Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
->=20
->  BROADCOM BMIPS CPUFREQ DRIVER
->  M:     Markus Mayer <mmayer@broadcom.com>
->=20
-
-Ok, noted, I'll add that patch to v2.
-
-
---=-9+CcCd+frESmTBhEBdh8
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3D6rgACgkQlfZmHno8
-x/7uuwf/dOmDBfR85tFZWNiXZ87/YYUeVY/OGHACLI0ieSBKa2qdCJSFl4TzWe6I
-Ur9nlLsi4MEtNTtUlE919ZlLuC7Y8R4J0bIK5vCY/AnRcnWvPyQXqyjMnv+BkhDu
-sLc8I3YEGAtVL05o7P+63+Jb8RqDoQVOBOXPP6LAHSn2amevOGp6UUETlsW7KNVo
-FHMO7fHmlpdW+Wdk9nzzVJ65NEk8SeyqM8AgCCm5QVrvMVwkiMHemcYoN7UH/SuJ
-oHZVup66FLWCxOqOWdQHcb4cUMPh9da0ZmJwSJJ40yBH4Q7UP6HYzhMlHjkVED5Y
-QzNn1tWx78yWq5mKFaSMxBNhWBUSDQ==
-=XJ+I
------END PGP SIGNATURE-----
-
---=-9+CcCd+frESmTBhEBdh8--
-
-
-
---===============5809554791455875552==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5809554791455875552==--
-
-
