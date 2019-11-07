@@ -2,70 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F14CF2DFC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 13:13:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80749F2E25
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 13:25:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pUja1QiG/LHU1rnN7D88O1Es80cxczlvR1oFHTJHW4w=; b=QLzKnlVZr/s3wQ
-	UbTQ1wYcQGVhnP4FI8Nx2flCQ4kiN47N69PYYTxRj6KnG5O4aok6AfdIaiMyR13NRW66JB2SZm1dL
-	dOcGYBF3iEet4HbTVqE8yfyHplMJjAc02/MD6+/ItqqgmHyXvZayf7I5CXr2qS6gzyHUTlmYQkaHo
-	4I8/p3Xx1E95glYV0hx/SOb1BiL7jUiDZU/X3VUFLF8tjC5dszKW+vgsrU++GeFHocMxnwLR//y3p
-	XN8UE2Iq4lNx3KGdSCnvW720TsShSU8bCAAdZhpdeVxjbFsewLVXfop96s3ti3vGLNFwXKD4sWzYb
-	TO9vwKzswyG3QpEdMWxw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JC8vz9GynLWpPdwh8Pea5CerBX/pEnZ2cnvNpIVx7Mw=; b=YvwvFRXfmMf70u
+	phpdT93wBPO4GGarLx8Bo9j0Rg87MvgV9Tqcirz6JrDnqQddYd1gMbmKDfdM36Rq1+njANAgeYanf
+	t+wre2hk7VRpd+d+p+/rZeW2lg7+JnAQgXIihtmWnJVg4tqtcFseClHepXhHnUeQ3PpqQ9CCEdxTU
+	NC7VYZGuPgTa88b1sfACTg7uJNAawY4jEQ6wJr6UvLwSys2sJXo+EufA5IJmlqKsLltKL3kdan2sO
+	S7ZfMeMqdTwIDJwe8haD7wFT836O6XviOhAzeFVBS9wT7e/Y0OPV50IUAt7Hp8/28gHlHka52kPaR
+	43nyYzotlDQuMaafs0pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSgel-0000Ux-In; Thu, 07 Nov 2019 12:12:55 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+	id 1iSgrG-0005Z5-HX; Thu, 07 Nov 2019 12:25:50 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSgeb-0000U6-Ud
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 12:12:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Content-Transfer-Encoding:
- MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=mqab7UDvfBiNsFyyYLe+hloVEA9Ce+SF33HE2FH0Aw0=; b=v574dL0BaUIne7goIh34RUj/8
- qHCOtqDv4rVC3R46Tqg/KmcqnUqOpb+RIbMMFvIeKa0Erds62PmfKmXkfbU0IInLi+A+OLFR3Rf7U
- F/7LMZCgzA/ZPsg9MQFnGO83/eILO9ipEUZUR62/vBxfUza7dl6hz8GgwriPOXBWLseb4=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1iSgeZ-0004H4-DZ; Thu, 07 Nov 2019 12:12:43 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id A363627431AF; Thu,  7 Nov 2019 12:12:42 +0000 (GMT)
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>
-Subject: [PATCH] arm64: kaslr: Print warning if KASLR is disabled due to lack
- of seed
-Date: Thu,  7 Nov 2019 12:12:41 +0000
-Message-Id: <20191107121241.8458-1-broonie@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ id 1iSgqq-0005Or-W1; Thu, 07 Nov 2019 12:25:26 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xA7CPAai081212;
+ Thu, 7 Nov 2019 06:25:10 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1573129510;
+ bh=E4MS55kwaW5g/5KMrdjN4z1SWbBuXuTiMq2j/PcjEiY=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=UW+6NMZI2DNcg8/Yc8M2AkH9YUhIjG0ug6zMpSF8759STfMnQIXvG15KKYOZAgo98
+ va4Aooa7y2zRrtfb1gpbKTaiyzGKmaUyAAewm0RR+d6N0Q1IJ5hL9uzN+uqqMCbNdy
+ RhjwN1TNyhG3OWeWQSVS9D3FIK/DfoxqTx5ovUFo=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xA7CPAqU108742
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 7 Nov 2019 06:25:10 -0600
+Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 7 Nov
+ 2019 06:24:55 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Thu, 7 Nov 2019 06:24:55 -0600
+Received: from [172.24.145.136] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xA7CP57p097478;
+ Thu, 7 Nov 2019 06:25:06 -0600
+Subject: Re: [PATCH 1/2] mtd: mtk-quadspi: add support for memory-mapped flash
+ reading
+To: Chuanhong Guo <gch981213@gmail.com>
+References: <20191106140748.13100-1-gch981213@gmail.com>
+ <20191106140748.13100-2-gch981213@gmail.com>
+ <bc917a56-e688-d701-2279-87df460d6055@ti.com>
+ <CAJsYDVJgUNxLhcO9iLKwRZHPQ9FT8XuKQq8ru_djD2nryT5o9A@mail.gmail.com>
+From: Vignesh Raghavendra <vigneshr@ti.com>
+Message-ID: <efd471a6-daad-a191-5528-62313dd4e4a4@ti.com>
+Date: Thu, 7 Nov 2019 17:55:40 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <CAJsYDVJgUNxLhcO9iLKwRZHPQ9FT8XuKQq8ru_djD2nryT5o9A@mail.gmail.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_041245_987274_241273B1 
-X-CRM114-Status: GOOD (  12.35  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191107_042525_139533_797AA71C 
+X-CRM114-Status: GOOD (  17.43  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,46 +94,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, "open
+ list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, open list <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-mtd@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It seems to be a relatively common system integration error for system
-integrators and administrators to enable KASLR in their configuration but
-not provide the seed at runtime, sometimes due to that breaking at some
-later point after it is initially enabled. Since KASLR is not announced at
-boot time unless it forces on KPTI this can lead to users incorrectly
-believing their system has the feature enabled when in fact it does not,
-and if they notice the problem the lack of any diagnostics makes it harder
-to understand the problem. Provide a warning message to assist in these
-situations.
 
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- arch/arm64/kernel/kaslr.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
-index 416f537bf614..c2ba5e783ada 100644
---- a/arch/arm64/kernel/kaslr.c
-+++ b/arch/arm64/kernel/kaslr.c
-@@ -98,8 +98,10 @@ u64 __init kaslr_early_init(u64 dt_phys)
- 	 * Retrieve (and wipe) the seed from the FDT
- 	 */
- 	seed = get_kaslr_seed(fdt);
--	if (!seed)
-+	if (!seed) {
-+		pr_warn("No seed available for KASLR, disabling\n");
- 		return 0;
-+	}
- 
- 	/*
- 	 * Check if 'nokaslr' appears on the command line, and
+On 07/11/19 3:01 PM, Chuanhong Guo wrote:
+> Hi!
+> 
+> On Thu, Nov 7, 2019 at 2:05 PM Vignesh Raghavendra <vigneshr@ti.com> wrote:
+>>> @@ -272,6 +273,11 @@ static ssize_t mtk_nor_read(struct spi_nor *nor, loff_t from, size_t length,
+>>>       mtk_nor_set_read_mode(mtk_nor);
+>>>       mtk_nor_set_addr(mtk_nor, addr);
+>>>
+>>> +     if (mtk_nor->flash_base) {
+>>> +             memcpy_fromio(buffer, mtk_nor->flash_base + from, length);
+>>> +             return length;
+>>> +     }
+>>> +
+>>
+>> Don't you need to check if access is still within valid memory mapped
+>> window?
+> 
+> The mapped area is 256MB and I don't quite believe there will be such
+> a big NOR flash.
+> I'll add a check here in the next version.
+>
+
+
+There are 256MB (2GiB) NORs out there in market already. So, pretty
+soon, 256MB window won't be big enough :)
+
+>>
+>>>       for (i = 0; i < length; i++) {
+>>>               ret = mtk_nor_execute_cmd(mtk_nor, MTK_NOR_PIO_READ_CMD);
+>>>               if (ret < 0)
+>>> @@ -475,6 +481,11 @@ static int mtk_nor_drv_probe(struct platform_device *pdev)
+>>>       if (IS_ERR(mtk_nor->base))
+>>>               return PTR_ERR(mtk_nor->base);
+>>>
+>>> +     res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
+>>> +     mtk_nor->flash_base = devm_ioremap_resource(&pdev->dev, res);
+>>
+>> There is a single API now: devm_platform_ioremap_resource().
+> 
+> Cool. I'll change it.
+> Should I add another patch to change the same mapping operation right
+> above this piece of code?
+> 
+
+That would be nice to do too, please send a separate patch.
+
 -- 
-2.20.1
-
+Regards
+Vignesh
 
 _______________________________________________
 linux-arm-kernel mailing list
