@@ -2,84 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 808AEF288A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 08:56:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA545F2887
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 08:56:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RaI5ZWpjPhGvjl1uashfX3veGL3sKInYGjvkibuw33s=; b=tTRfW62wMxRQnV
-	RMg0SITO1BEotMWFK8CO/TdDmZ2tatMXrj53Ae3zEXfW0XbujKakTQiZklgMi7uKUg9tujjQ4OFeh
-	njq0KI3Sr2TYPifGfBNntDB0oA355zjJiwzIdWhnyWP9ws0vcvTkmfq9hepipPRDnvGh2yXuB/8XH
-	uIfVhwnhE01vSMnaC0ozPmdZ7dFNZY/ROVDfzl4qHPPX1KhCZvOeCE8z0eaDlfsBvspYZJn5wxCzD
-	HC+hfGbhS10hyqz/Bdi0H3DKO40AuMz11AgNib9JykZpQr9Fex+veYKyhD0pOvbTfCPb3Bui2s4rX
-	nxbkiEwOwXb7hvtxz4Ng==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=U3LHVlsjR8AyJ8JimrDhugaIId2yznW4O3lAuDiIiY0=; b=aRneGS1KIj5Rbu
+	wcH8KWLxJ/7XYuXydE2T7RKAFr+6NXlBkAtTCWNAGnxGtc3J/f8yVJ9Z1FEs113DU8c96c2MQUUlV
+	6ukkVvzowJ4bagraRMDLii7NCSkAbQExKI1lGQ/zp0fHtBiqJYmu+XiRaS9uxnoEUTzM/SBRoS5pI
+	OOxTqBNxfdnlIgoH/pvqhxqIog6lJLWY1WPn/Gp5WS0TohD+iqiLkcwsEYpOh18HeXsT8CGaChNev
+	x9oVTPKha1KyQaf5pbE1lYNYU0nDR0oL0OKZGfnN43VoZvUUXBySOYPGserIY1EBVZ6PWNBBLO/0Q
+	6M4/uBJ1wqSIsaqAle+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iScej-0006Kw-Mm; Thu, 07 Nov 2019 07:56:37 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1iSceG-0005ut-3j; Thu, 07 Nov 2019 07:56:08 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSceP-00069b-1D
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 07:56:18 +0000
-Received: by mail-lf1-x141.google.com with SMTP id j14so828367lfb.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 Nov 2019 23:56:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=7mVzEAC3PYZ6lpwiL+xf/9aZ7Qv1sjEzD+JY+8MBtWg=;
- b=o/vg6xLElk2f7BrBS3YYNQnsdnM6poifIjeLagf3IT4HY0bFneDxgynYdByIcS7dHo
- EzLmS6pL/TyvIYJdQEOzBEsnwOAM7Njv1CFAh7AuC54CbmAw47HZJmHVO7et+nczCN+W
- 7+8o/Voh8wDjNUOFjhCx4CMK4KOz+BHiUSJCtkBLzC40fA5Qb0zg2BvUW7Hm+07pAMXB
- 0lLuQBKWtKJ5TGKj2EMx7k5O722aqWp0xbmm+Bc3j5P+DXUw2Q0hnvWWj88ZONlxPSjo
- npqEAZU/xnP17zcGp5HbfLkqVBsC7eilbm/0NAMCMG057MaAubYC5365OtbgJSB2ih+c
- McEw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=7mVzEAC3PYZ6lpwiL+xf/9aZ7Qv1sjEzD+JY+8MBtWg=;
- b=RbTvJooeyhzyTZVGrX+qA//Z4bVPEz/jt478nrM0BVdQAlLDfwr9W3NR6zPQksjE0M
- oWcuKhcQbMid1ERj1xhiPSADkOF8BkSFx9hUxBrb0Wni+3bZjdX7/GHgtikUqoPtjmZd
- 7GemoRRNZLqTq241XLF1LBpo1PNLb+T1wOjsNY5A3J04B+LQeIs2pd2OBXSaVVOtXj0S
- eHRkPCGA8Jtv/ybV3Yq9gAC1gZMuRzHqtYnecDWs9xUx/T5s37bkHKyyMRzOswRz5doC
- Mqx5y7/MBLdqdOc3pMSuJMuNU6NZDlvQgWJFrtLZ7GoZHdCSW7iLVgazktBsYSV41b4Q
- 04Zw==
-X-Gm-Message-State: APjAAAVg2E2fzoBOBShX6QrIicSAgCU7Mt6YVRw2MO4vexw0a7QD1tah
- 1Z9vWmEp2d91dQhaFJuyFDfjsJt8Gj/tI4zovjfHIw==
-X-Google-Smtp-Source: APXvYqz/ohb7JsLP5oPlc3mF5OTWP6CRzEQS9/wJ3HgdeOitF87zrMa4v8J9ow3u2rGgz4TVrAbl+ne6JhgEadI2dHA=
-X-Received: by 2002:ac2:51dd:: with SMTP id u29mr1354160lfm.135.1573113373506; 
- Wed, 06 Nov 2019 23:56:13 -0800 (PST)
+ id 1iSce8-0005u9-48
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 07:56:01 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 8EAA992C3DD2D3EAD6A3;
+ Thu,  7 Nov 2019 15:55:50 +0800 (CST)
+Received: from localhost.localdomain (10.69.192.56) by
+ DGGEMS402-HUB.china.huawei.com (10.3.19.202) with Microsoft SMTP Server id
+ 14.3.439.0; Thu, 7 Nov 2019 15:55:40 +0800
+From: Shaokun Zhang <zhangshaokun@hisilicon.com>
+To: <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH] drivers/perf: hisi: update the sccl_id/ccl_id for certain
+ HiSilicon platform
+Date: Thu, 7 Nov 2019 15:56:04 +0800
+Message-ID: <1573113364-32531-1-git-send-email-zhangshaokun@hisilicon.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-References: <20191105124915.34100-1-broonie@kernel.org>
-In-Reply-To: <20191105124915.34100-1-broonie@kernel.org>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 7 Nov 2019 08:56:02 +0100
-Message-ID: <CACRpkdYps-xADSrObMyF4bMK8vm0bbE+d_o2V9W4iTFBTYBmTg@mail.gmail.com>
-Subject: Re: [PATCH] gpio: xgs-iproc: Fix section mismatch on device tree
- match table
-To: Mark Brown <broonie@kernel.org>
+X-Originating-IP: [10.69.192.56]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_235617_270623_1398CC37 
-X-CRM114-Status: GOOD (  10.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191106_235600_320846_6539ACBE 
+X-CRM114-Status: GOOD (  13.66  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,42 +62,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Chris Packham <chris.packham@alliedtelesis.co.nz>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>
+Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ Mark Rutland <mark.rutland@arm.com>, John Garry <john.garry@huawei.com>,
+ Will Deacon <will@kernel.org>, Hanjun Guo <guohanjun@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 5, 2019 at 1:49 PM Mark Brown <broonie@kernel.org> wrote:
+For some HiSilicon platform, the originally designed SCCL_ID and CCL_ID
+are not satisfied with much rich topology when the MT is set, so we
+extend the SCCL_ID to MPIDR[aff3] and CCL_ID to MPIDR[aff2]. Let's
+update this for HiSilicon uncore PMU driver.
 
-> The table of devicetree identifiers is annotated as __initconst
-> indicating that it can be discarded after kernel boot but it is
-> referenced from the driver struct which has no init annotation leading
-> to a linker warning:
->
-> WARNING: vmlinux.o(.data+0x82d58): Section mismatch in reference from the variable bcm_iproc_gpio_driver to the variable .init.rodata:bcm_iproc_gpio_of_match
-> The variable bcm_iproc_gpio_driver references
-> the variable __initconst bcm_iproc_gpio_of_match
->
-> Since drivers can be probed after init the lack of annotation on the
-> driver struct is correct so remove the annotation from the match table.
->
-> Signed-off-by: Mark Brown <broonie@kernel.org>
+Cc: John Garry <john.garry@huawei.com>
+Cc: Hanjun Guo <guohanjun@huawei.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
+---
+ drivers/perf/hisilicon/hisi_uncore_pmu.c | 26 ++++++++++++++++++--------
+ 1 file changed, 18 insertions(+), 8 deletions(-)
 
-Oh thanks a LOT Mark!
+diff --git a/drivers/perf/hisilicon/hisi_uncore_pmu.c b/drivers/perf/hisilicon/hisi_uncore_pmu.c
+index 79f76f8dda8e..96183e31b96a 100644
+--- a/drivers/perf/hisilicon/hisi_uncore_pmu.c
++++ b/drivers/perf/hisilicon/hisi_uncore_pmu.c
+@@ -15,6 +15,7 @@
+ #include <linux/errno.h>
+ #include <linux/interrupt.h>
+ 
++#include <asm/cputype.h>
+ #include <asm/local64.h>
+ 
+ #include "hisi_uncore_pmu.h"
+@@ -338,8 +339,10 @@ void hisi_uncore_pmu_disable(struct pmu *pmu)
+ 
+ /*
+  * Read Super CPU cluster and CPU cluster ID from MPIDR_EL1.
+- * If multi-threading is supported, CCL_ID is the low 3-bits in MPIDR[Aff2]
+- * and SCCL_ID is the upper 5-bits of Aff2 field; if not, SCCL_ID
++ * If multi-threading is supported, On Huawei Kunpeng 920 SoC whose cpu
++ * core is tsv110, CCL_ID is the low 3-bits in MPIDR[Aff2] and SCCL_ID
++ * is the upper 5-bits of Aff2 field; while for other cpu types, SCCL_ID
++ * is in MPIDR[Aff3] and CCL_ID is in MPIDR[Aff2], if not, SCCL_ID
+  * is in MPIDR[Aff2] and CCL_ID is in MPIDR[Aff1].
+  */
+ static void hisi_read_sccl_and_ccl_id(int *sccl_id, int *ccl_id)
+@@ -347,12 +350,19 @@ static void hisi_read_sccl_and_ccl_id(int *sccl_id, int *ccl_id)
+ 	u64 mpidr = read_cpuid_mpidr();
+ 
+ 	if (mpidr & MPIDR_MT_BITMASK) {
+-		int aff2 = MPIDR_AFFINITY_LEVEL(mpidr, 2);
+-
+-		if (sccl_id)
+-			*sccl_id = aff2 >> 3;
+-		if (ccl_id)
+-			*ccl_id = aff2 & 0x7;
++		if (read_cpuid_part_number() == HISI_CPU_PART_TSV110) {
++			int aff2 = MPIDR_AFFINITY_LEVEL(mpidr, 2);
++
++			if (sccl_id)
++				*sccl_id = aff2 >> 3;
++			if (ccl_id)
++				*ccl_id = aff2 & 0x7;
++		} else {
++			if (sccl_id)
++				*sccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 3);
++			if (ccl_id)
++				*ccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 2);
++		}
+ 	} else {
+ 		if (sccl_id)
+ 			*sccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 2);
+-- 
+2.7.4
 
-Hurriedly applied this with the ACKs and pushed out so
-linux-next starts working.
-
-Quite interesting bug, I guess I'll comment on it in the other
-thread.
-
-Yours,
-Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
