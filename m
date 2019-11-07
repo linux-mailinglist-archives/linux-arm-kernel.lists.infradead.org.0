@@ -2,98 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D287F3838
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 20:10:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA6D6F383B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 20:10:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IOpxli3QtA4KLUa9j4YY5hA6f15qV2fArQr+p47xN38=; b=GFuIPhwAokNeku
-	9PI1K5rVxKevlDIdhZLDMjE1s/EnEsH/GBIxZo/fSr4843PG9a5lX6+cY3JBU1mhdpn1qeQJRuAsH
-	EEZPQNFqpMMFsyCGmIF7j99MdwKcKaWJcWFW8tjceDfY2dIPLSfA1BYbM+CB7End//obT7lwvWHQu
-	ak/la9Wl4KXMjKB1zW2cU3V5tBNo5QHQNqofsCd4/JuylgFa/MGECiVj0Gz5tJOWyWXpPOZFfJZx/
-	ISSFmJCyA1IafQKFMDH8koB4hXtrAevrAOcVhycVmSxBSXuRz8U67FULVAlr/hSPRNiv+0Tz4FbZC
-	i8cxoH6Zk6IJrw/nDI1Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5V3G+uz+QOwwqRCjYyrGLg11ptZJ9e+wV9eHZah+ZG0=; b=a0mpdE3G1kYJxU
+	S+Y/YZPABOC/ozn+gp8RjUJsSWTHSHPaSbK6ggScpCeCdiY8v4LafMRFwqWqQfq+Kcm+7DM1Ucma3
+	8D77C/cXHPclW0Vhwsi0loG95nRJpeMKgUlZW8dCWiRzAWDqJv3VnY7LKktXp1C/FbChQnxkxxikZ
+	VrjA9GgznPNIEu6hhGPDcIrqIXcXQWpHwwcux02L1cNe6B2eGjZ4dAqS8ASuQiGIl+ras3IDs16GU
+	QzHceH8py/infauSu7h0UQJiB8g6HirXqnNvtrpDV1cvB7eA2x/UiqHK51UlgmMBgaYR1+u9MM+3W
+	hUCyMe6j4CBsBLrwyPNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSnAd-0003xE-Jj; Thu, 07 Nov 2019 19:10:15 +0000
-Received: from mout.gmx.net ([212.227.15.15])
+	id 1iSnB1-0005UK-2u; Thu, 07 Nov 2019 19:10:39 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSnAL-0003wm-Pv; Thu, 07 Nov 2019 19:09:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1573153788;
- bh=+jCINLffjUOyT+IY08Y5zx4Vxskk9OJZTse82HsxTz4=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=gThPoZTR1eidwzNRwz/Rpz8F9GxRZbr8OjLint+Fa57V8TMbCKrq3pr5YwOSBFmIB
- u4pqHGnosQL6RsGqMG2MM9FRiYx7qmMMECkcnuseUPXPHgvpdANoOHqHZcAuZE2PYk
- con9IEykthBhd6QArNo0lkZaKfFxtOJCVOZH3daI=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.167] ([37.4.249.112]) by mail.gmx.com (mrgmx005
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1N1fn0-1hn1Ge0GNM-011zQB; Thu, 07
- Nov 2019 20:09:48 +0100
-Subject: Re: [PATCH v3 1/2] ARM: dts: bcm2711: force CMA into first GB of
- memory
-To: Florian Fainelli <f.fainelli@gmail.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-References: <20191107095611.18429-1-nsaenzjulienne@suse.de>
- <20191107095611.18429-2-nsaenzjulienne@suse.de>
- <20191107112020.GA16965@arrakis.emea.arm.com>
- <4f82d3b5-fe5e-03a5-220e-f1431cb3a50c@gmail.com>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <8c84654e-f91e-7865-0cf7-99b30820b7d0@gmx.net>
-Date: Thu, 7 Nov 2019 20:09:46 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iSnAt-0005TN-WC
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 19:10:33 +0000
+Received: by mail-il1-x142.google.com with SMTP id p6so2844299ilp.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 07 Nov 2019 11:10:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gateworks-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Pkb5jMFuLCEWCYW/JsNLSSIWv1a87ksEuR1XT2B21OU=;
+ b=E4yuGYMS1pq9v1+WF35EsKgSb9HtDZWkJ3jNVKnVOGnXkuxGKERzeomvsq61IKZ+BS
+ 5vDnyoe59CafR7ujung+DFAh5VrxhyezrfAPIK46pLKEGDol4nS0bHrghLG1+x8cP+Tz
+ XWUXgXGAWb8K+OefOWhoAmQ6PtfilZ7rpXyTKa4SB3qk0/4cnIWvk218Qha95C9QUZdP
+ awkOnTqUy+AocpO/EOWrjgGMutNupXwNBRObdnRnLCRIkg5KqEFN18PnhUM/IkRgjdT0
+ 9bDxLZtA6buuUF4XI8ScG6JyWq3De1yqQKC53DMhnvo4wkyS+H61eoKPf70b+0N44EcV
+ lLiQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Pkb5jMFuLCEWCYW/JsNLSSIWv1a87ksEuR1XT2B21OU=;
+ b=DHd3rni0pvwPHtAJPLk+E5fNz7LZxpIYlahmM+YmkpvmsHt1kk+rsXAGq5qdXQ77iF
+ NIkTMO3pBvTYaLhd7k+ACqp06yhxZvW8jWS9ykS3O8obA3StduFIC0gDh6wqimOWhpIb
+ n5eEUPZtrBUvVqJAFUJT0I2IhdBLW6eDINj8QF8qFibb2B0Az6g4uA+s/zVh73HfEadS
+ IOeaZCKuNwz7PuiJfQwGxgTpbrWOoGt9tDYPPAvsukq1kWSrg+dhQ5G5mSwHgHVHilPJ
+ 4/sOKito61qsoXntMpEo/5PJ7I5hUALXgWEMeypozVkOL4mZ8QALm92GO/7gBu3W1M1D
+ j/ow==
+X-Gm-Message-State: APjAAAVbn3ZSpKBcKGrhnEraSn6q9gOzhrQpCEU03sr1qWwBVumS4+hP
+ iqGu3hvLkFeR76aq/DUzWUdtm2V76U1w1qxvUMLF8Q==
+X-Google-Smtp-Source: APXvYqwHrMqf0QGsixAbdr9YO/brEv5lOHVZjAT153yUV3MxVGAnMIC9SdFTs2dZJSNR204F/AOxPhvAJj2cdqQv4XA=
+X-Received: by 2002:a92:3b04:: with SMTP id i4mr6543252ila.211.1573153830610; 
+ Thu, 07 Nov 2019 11:10:30 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <4f82d3b5-fe5e-03a5-220e-f1431cb3a50c@gmail.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:ds3wIfCrqN8mXv4xV2yOkIAZhuvU/WXha9+QIZbz4jW5afq1ugo
- nxjvgEy4zXDiM3p6JevaZKdzdE1nVBUQS5rVNVX7LWE3+B06qt0Zdoi9xkuuhXBb+9hTNDK
- qIM8qmvGI0T3IGX9yQlLDgzn2yIGy1ft1bPIHFQ7zXqXayblhOKRNUs6yC+9sbQHFggoFyH
- EfjC1oBZCE8lPFuiBoHuQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:fnoUzY9B470=:Ck+piXC91e3UO6kAhBaICU
- 7ygijkBy5cG7QMTWiwVxlGSUIZ41eFePjzKTNBmlqFU6iyAYaxLvn5Yq9Z0oPwmQAzwRw47zX
- 3oU3JDLceXv21bdCiFtvGtLi4/aC+gzHPr/wfv3SSZCJdprq4ncTsuZaa3SPabyiO7z6ZSMhW
- FocRvE3+PuegJUKVimw3Lo4Y9U64vBcy6Q/gINOyZG2lNL+TJZ51VabJsNO6R1HRqbQr8PCJL
- RnJnLnZIaB61JxLTqx/DWAJacDV1NW6WGDmkYwC8O9wCYOY568oQLIntI2MI/rIPfmBBdQRps
- DZjO2AEd1Apd8MCL6NjxWyY1iAm3q/NsvdpCHEstg3fBtY0VwxWEnwRLM4fMOjYlKXBr1L00r
- 5IwCLZWa/VWV828GOSqIotecrZmZm6OOSjG3u0UHzPqKLdUz0OKFcm8725FoSTazqAeMDDwbU
- JTyyM/jB8vrTs5P07tkfHHVD3Z2GUJOwbqKGT7UCO/a96djW9iPasBBi1OzjN4t3BxLroMlh0
- OYr8baQYeLQdSH7wWqZjMzM1tKewa5yV2WKUY2O1MNDimmseaO+Gw335DZg5RmnRKrtlvEb8K
- uEjaI+iJCGK6OnX5Qb+Khm5dTHlGVNx1yRJ+08zlG29IEq+EqGsfhs7+wiksGu2qjusvALi7I
- 8NaaLrjRoa7ATT16j2xuNbLpgjIp3lcKhzqsw+vIHZsPx91oVeNWuEAZCPnlZWihvtPkbQUor
- 2u4pD7FlpOxAHOGMXRcpQoYhTlF7MPowy1cfUsBEvXBy9C83rvggrj2A2XqSvjkXLKoBM40eT
- YIUG7RqiS/+2zS4bInx5b1OFicvrzYdemOuPoc/6p5g+WktzQZhZ+Wc9vzkbS038L46VopI+q
- 0Fx3I91zjQ0gtnUytX8TKy7evYlxjAp13OTH11SIGXl7x0JFcWL5kOPrkiLlZ+s2qk+RL0V5m
- qTDhxhgLQLjnjogcyW+G0gn9S82KIr1Oy8xa8dtVYrQw+3qsET16ky4cpsisAuxB4hixxVcxl
- RI7BzRBqC2H7hwssXmBYs9yD9OGhXD/+CBeViiV4ORu4TsEfL+rzM+BIPyvbf5GDBPs+nxyUJ
- Sf+RjIOfVKNH76+Xzd+Ctk1bfcxpzSF5DKWoPacS+u7CtKiO56DwwgdiE3w/icuO7fyKziVAM
- Se46vmhmq61yCYmrTKjr7LxZZSk2XgxMDu+HlEiVa3oFJ9N+83ZcqKhHxrM9ZCPm+9g4rn0lV
- 54Nf6g/sANuMDnSQ1LOmHGrG0UcVkaVaUbRdHbdrlGXj6xa4OIQGmuoxgCLk=
+References: <20191021205426.28825-1-rjones@gateworks.com>
+In-Reply-To: <20191021205426.28825-1-rjones@gateworks.com>
+From: Bobby Jones <rjones@gateworks.com>
+Date: Thu, 7 Nov 2019 11:10:19 -0800
+Message-ID: <CALAE=UAEFobA2SXOTJWAqexg+VNN_VTXGLGH+VwqqjKkuFwddg@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: imx: ventana: add fxos8700 on gateworks boards
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, 
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
+ Marco Felsch <m.felsch@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_110958_171389_D4C3749B 
-X-CRM114-Status: GOOD (  11.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191107_111032_094426_AC695978 
+X-CRM114-Status: GOOD (  17.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.15 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -106,31 +89,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello Shawn,
 
-Am 07.11.19 um 18:59 schrieb Florian Fainelli:
-> On 11/7/19 3:20 AM, Catalin Marinas wrote:
->> Hi Nicolas,
-...
->> Sorry, I just realised I can't merge this as it depends on a patch
->> that's only in -next: 7dbe8c62ceeb ("ARM: dts: Add minimal Raspberry Pi
->> 4 support").
->>
->> I'll queue the second patch in the series to fix the regression
->> introduces by the ZONE_DMA patches and, AFAICT, the dts update can be
->> queued independently.
-> I will take it directly, unless you have more stuff coming Stefan?
-Please take. Thanks
+I just wanted to follow up with this and see if you had a chance to
+look at this. I submitted this after responding to Marco on my initial
+submission but haven't heard anything since and didn't want it to fall
+through the cracks. It may be worth mentioning that both the bindings
+for the fxos8700 and lsm9ds1 have been accepted by iio.
 
-Stefan
+In addition to this submission I have the following that I'd like to
+check in on as well:
+
+[PATCH] ARM: dts: imx: imx6qdl-gw553x.dtsi: add lsm9ds1 iio imu/magn support
+[PATCH] ARM: dts: imx: Add GW5907
+[PATCH] ARM: dts: imx: Add GW5912
+[PATCH] ARM: dts: imx: Add GW5913
+[PATCH] ARM: dts: imx: Add GW5910
+
+Please let me know if there's anything I can do. Thanks!
+
+Regards,
+Bobby
+
+
+
+
+On Mon, Oct 21, 2019 at 1:54 PM Robert Jones <rjones@gateworks.com> wrote:
+>
+> Add fxos8700 iio imu entries for Gateworks ventana SBCs.
+>
+> Signed-off-by: Robert Jones <rjones@gateworks.com>
+> ---
+>  arch/arm/boot/dts/imx6qdl-gw52xx.dtsi | 5 +++++
+>  arch/arm/boot/dts/imx6qdl-gw53xx.dtsi | 5 +++++
+>  arch/arm/boot/dts/imx6qdl-gw54xx.dtsi | 5 +++++
+>  3 files changed, 15 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/imx6qdl-gw52xx.dtsi b/arch/arm/boot/dts/imx6qdl-gw52xx.dtsi
+> index 1a9a9d9..2d7d01e 100644
+> --- a/arch/arm/boot/dts/imx6qdl-gw52xx.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-gw52xx.dtsi
+> @@ -313,6 +313,11 @@
+>                 interrupts = <12 2>;
+>                 wakeup-gpios = <&gpio7 12 GPIO_ACTIVE_LOW>;
+>         };
+> +
+> +       fxos8700@1e {
+> +               compatible = "nxp,fxos8700";
+> +               reg = <0x1e>;
+> +       };
+>  };
+>
+>  &ldb {
+> diff --git a/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi b/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi
+> index 54b2bea..bf1a2c6 100644
+> --- a/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi
+> @@ -304,6 +304,11 @@
+>                 interrupts = <11 2>;
+>                 wakeup-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
+>         };
+> +
+> +       fxos8700@1e {
+> +               compatible = "nxp,fxos8700";
+> +               reg = <0x1e>;
+> +       };
+>  };
+>
+>  &ldb {
+> diff --git a/arch/arm/boot/dts/imx6qdl-gw54xx.dtsi b/arch/arm/boot/dts/imx6qdl-gw54xx.dtsi
+> index 1b6c133..d9e09a9 100644
+> --- a/arch/arm/boot/dts/imx6qdl-gw54xx.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-gw54xx.dtsi
+> @@ -361,6 +361,11 @@
+>                 interrupts = <12 2>;
+>                 wakeup-gpios = <&gpio7 12 GPIO_ACTIVE_LOW>;
+>         };
+> +
+> +       fxos8700@1e {
+> +               compatible = "nxp,fxos8700";
+> +               reg = <0x1e>;
+> +       };
+>  };
+>
+>  &ldb {
+> --
+> 2.9.2
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
