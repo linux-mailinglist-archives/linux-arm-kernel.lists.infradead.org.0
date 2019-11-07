@@ -2,79 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97D6EF3934
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 21:09:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96DCAF395F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 21:17:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=llhQSobQ4hiFZvr5gY92I3N30Z6VxTzvSGLKk3R+MuU=; b=KND6GpfzG7wVEa
-	caQ5neVIFb0cyHxxtqK4nXwj1o+6asYIcF2SutjdeXonUZViByTpX7Ond+q7vWk0cJS4sksNYZMaL
-	I+7k8NJPn/ztDrp5i4j12Z/iVwLh3A5xLPyclH/vnlEcSp1pZAUYcLiPNzKXj9mov2+UEDpjthClA
-	Us5IALtr84xc1/rhHvW7ZNp3ooLdnwMfnLhlr7aYM8dujPdpeZ6iyGwzC+PqNOg6uUi9W9yTtw4f6
-	ErrY0WMogIPaeX0FsNbf5isOjX7xtI49wpxQ26YY8b/78RZenUgmla5y0GwU9jZhaPrzwhAQqp9Fw
-	dI2uqFrlCsvRYLbRhdDA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wQ2Ov79zYtsovQwbRIhurII8DEPiL6in6DB0mT/wbBE=; b=pDmaD5h+b+qMnO
+	5DBNRiVrdRpxl2u80ohbp7p7QkbIyEfufTIZDhA+2DZgbPQsj0bXS+SjdmroUZr+WMGBfig2vcgOw
+	Dxgy7gQv+/vzSHAOseiMUaHztHLWun/Zv1+TqFCEescwSPbDQFhGJjLy2KFQmOKoW4f46900VLZ0B
+	/4pEozDLHTDGcqbntamfyGzRuCslXQpfDrOW1g+T35u8dao4LBMb+4c4U1h1eQAqO8VP7ECn3xQ50
+	KQH8qkKhnnQvNrg0RhHQuh9Y9gAf4XDOKp1AlR8pphfYdMKU87VIHHS2iad4RfE32ai/tpMCiuI1Z
+	W92i1i2l5RbHdP/6nWrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSo5V-0001Yd-45; Thu, 07 Nov 2019 20:09:01 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iSoDZ-0006Ah-5R; Thu, 07 Nov 2019 20:17:21 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSo5J-0001WX-An
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 20:08:50 +0000
-Received: by mail-ot1-f66.google.com with SMTP id m15so3131259otq.7
+ id 1iSoDL-00069W-UE
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 20:17:09 +0000
+Received: by mail-wr1-x444.google.com with SMTP id f2so4496926wrs.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 12:08:47 -0800 (PST)
+ Thu, 07 Nov 2019 12:17:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8Eh1A+XBqcPZEFBnh+HgUCyw+82+aoc7YA8bWZyx/XU=;
+ b=HdbGDG/bD9rfLuXChKqfIL0GLBdwAQkoeEUR08XO5vmvDP4d9n5jwJzBtM5nafVUXy
+ IbxdQZMZkDC143pI38WUWa9gkoPM4Ct8HTsfcpCvJyXbPWy6b1amMm4RNAayLLmuWkCF
+ ot/OuCxCp8MppEtlxsnDIRm0zBzr2Y3olP1hj3Cfuhfe83eyDO1jtOrMhJgItBHinr5L
+ NNo8Jeg3Xsvw+g9kiTxfMp/D1kolWj04wOkYmWlZHv4bo6wUkwhs7rp1K3ce/3oKRlrN
+ cSVTDjamow1Jbjv7k3iY237zJd4PIhhBdAypb7a7ki5+2AsUX8w0g22P+oMjeBuyTZyv
+ 65xA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=/M+7NEa9F4hcyStwS+O2CXj/DuZPkBH6ed1KATiGvQk=;
- b=MqVukZi6Taab6KiR6aVYL8ptCnrUolGWB/58P439Gcntwg7VpTfgmWO/Qq9W0OCfxQ
- 0AeTp8Lk+BoLThznuM1gs3rOqdTrmCzUJZiM4S5kkE/nPVR26sNDSLs4Qc293lMnm2en
- eIMNx0Hj6KBTN/GVbU0ELHFnqAeTdk3EeUXRoUnGIIhcMoJSE+z0ZkDTyOAZS31bntIX
- H6qvX/fV4HVClm4/mPwqdXUypTIG+ATt9ZTxuNA6/kjKkyHsRTwABZajzqCbUG8B+EXv
- 33tes8AdGwSzbBR9QqmoxI+emzfBLlszG2dHWtRMi9zzN9nsf7KQNIeykeEEQrFL5SJX
- w9dg==
-X-Gm-Message-State: APjAAAUHZshfks4rqjwl33HMKckUl7e8lpKaJVRI2tgwmMNQON0Pa/XU
- LzTPfOok0DiXfC6SJbPrwtAIP8hCFi7L9n8mLt8=
-X-Google-Smtp-Source: APXvYqxSdxE5q8o7kot3Q3VPWpmjiPKminjmiI4HTAqtu6579k67BzPvoy6LhYBLhEbydlStEWo7/83897A46FJL54w=
-X-Received: by 2002:a9d:73cd:: with SMTP id m13mr4644863otk.145.1573157326980; 
- Thu, 07 Nov 2019 12:08:46 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8Eh1A+XBqcPZEFBnh+HgUCyw+82+aoc7YA8bWZyx/XU=;
+ b=NBxZAGlNLmdPVq5ye1Kpc+HtwOXDKZm20/jXW048HoQJ5ON2NQxQJWWKxnB2GIU2rW
+ 8MHN+vde3AwrRNODQWfqopuXVlMnJ08bWFzrgs/mG3uFUY8q3oLMic/zdDugkZocYOAQ
+ B1pferqnzPsCjkR5+V/PKt6H07CUI0uQiVX8Y1rAdMbbZmptwI25EYPW2V/v40slPUuk
+ DWLLa0Dkw09i5SF92Kbjn2VDW6LBYrUMniDz1l3IxyVQobNPVwsGfVp18+tCUgU7N8un
+ oD26iPBIyGzWjqe2qB/uxw4rW5Ejms5FBoXYSD+vpJH7R4FHoCw/XJRYIhv0PRFG+lEB
+ n6gA==
+X-Gm-Message-State: APjAAAX6HtuOxIj8gvbNebNU78n0AzcFwfD3B13nxIpAzEoW/gxknLDe
+ zdOHaw/BKjYWA9u+RybijpxnWg==
+X-Google-Smtp-Source: APXvYqxskYQg9q985hoq9WCm5QC668oyfjuHraw4eT/RktdibeQ6Rb2kp4vLE3njmdl9xUCiiFZ/Nw==
+X-Received: by 2002:a5d:5262:: with SMTP id l2mr4768386wrc.113.1573157826508; 
+ Thu, 07 Nov 2019 12:17:06 -0800 (PST)
+Received: from localhost.localdomain ([95.147.198.88])
+ by smtp.gmail.com with ESMTPSA id d11sm3215162wrn.28.2019.11.07.12.17.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 07 Nov 2019 12:17:05 -0800 (PST)
+From: Lee Jones <lee.jones@linaro.org>
+To: gregkh@google.com
+Subject: [PATCH 01/10] ASoC: max98090: remove 24-bit format support if RJ is 0
+Date: Thu,  7 Nov 2019 20:16:53 +0000
+Message-Id: <20191107201702.27023-1-lee.jones@linaro.org>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-References: <20191106193609.19645-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20191106193609.19645-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <CAMuHMdVZwgVnq2kwjNJQHfvUH0sk6M7Hz-AJR82jMOsCNfW9wQ@mail.gmail.com>
- <CA+V-a8swtOUaxKnCdiTV5wvvxLEJ6XdODL=7bvQmFKY0zQTj2w@mail.gmail.com>
-In-Reply-To: <CA+V-a8swtOUaxKnCdiTV5wvvxLEJ6XdODL=7bvQmFKY0zQTj2w@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 7 Nov 2019 21:08:35 +0100
-Message-ID: <CAMuHMdXkbWkQgswMNL7Dw7_jucH+MsuAW+-CjoGVYsm=tjShRw@mail.gmail.com>
-Subject: Re: [PATCH 3/5] PCI: rcar: Add R-Car PCIe endpoint device tree
- bindings
-To: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_120849_368404_7A8B5A5A 
-X-CRM114-Status: GOOD (  30.07  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191107_121708_109123_F6BFC986 
+X-CRM114-Status: GOOD (  10.90  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,134 +94,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, "Lad,
- Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Arnd Bergmann <arnd@arndb.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-pci <linux-pci@vger.kernel.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Magnus Damm <magnus.damm@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>
+Cc: Sasha Levin <sashal@kernel.org>, linux-kernel@vger.kernel.org,
+ Yu-Hsuan Hsu <yuhsuan@chromium.org>, Mark Brown <broonie@kernel.org>,
+ Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
+From: Yu-Hsuan Hsu <yuhsuan@chromium.org>
 
-On Thu, Nov 7, 2019 at 10:26 AM Lad, Prabhakar
-<prabhakar.csengg@gmail.com> wrote:
-> On Thu, Nov 7, 2019 at 8:44 AM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > On Wed, Nov 6, 2019 at 8:36 PM Lad Prabhakar <prabhakar.csengg@gmail.com> wrote:
-> > > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > >
-> > > This patch adds the bindings for the R-Car PCIe endpoint driver.
-> > >
-> > > Signed-off-by: Lad, Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> >
-> > Thanks for your patch!
-> >
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
-> > > @@ -0,0 +1,43 @@
-> > > +* Renesas R-Car PCIe Endpoint Controller DT description
-> > > +
-> > > +Required properties:
-> > > +           "renesas,pcie-ep-r8a774c0" for the R8A774C0 SoC;
-> > > +           "renesas,pcie-ep-rcar-gen3" for a generic R-Car Gen3 or
-> > > +                                    RZ/G2 compatible device.
-> >
-> > Unless I'm missing something, this is for the exact same hardware block as
-> > Documentation/devicetree/bindings/pci/rcar-pci.txt?
-> > So shouldn't you amend those bindings, instead of adding new compatible
-> > values?
-> > Please remember that DT describes hardware, not software policy.
-> > So IMHO choosing between host and endpoint is purely a configuration
-> > issue, and could be indicated by the presence or lack of some DT properties.
-> > E.g. host mode requires both "bus-range" and "device_type" properties,
-> > so their absence could indicate endpoint mode.
-> >
-> yes its the same hardware block as described in the rcar-pci.txt, I
-> did think about amending it
-> but  it might turn out to be bit messy,
->
-> required properties host ======required properties Endpoint
-> ====================||==================
-> 1: reg                                || reg
-> 2:bus-range                      || reg names
-> 3: device_type                  || resets
-> 4: ranges                          || clocks
-> 5: dma-ranges                  || clock-names
-> 6: interrupts                      ||
-> 7: interrupt-cells               ||
-> 8: interrupt-map-mask     ||
-> 9: clocks                          ||
-> 10: clock-names             ||
+[ Upstream commit 5628c8979642a076f91ee86c3bae5ad251639af0 ]
 
-We have a similar situation with SPI, where a controller can operate in
-master or slave mode, based on the absence or presence of the
-"spi-slave" DT property.
+The supported formats are S16_LE and S24_LE now. However, by datasheet
+of max98090, S24_LE is only supported when it is in the right justified
+mode. We should remove 24-bit format if it is not in that mode to avoid
+triggering error.
 
-> and if I go ahead with the same compatible string that would mean to
-> add support for endpoint
-> mode in the host driver itself. I did follow the examples of
+Signed-off-by: Yu-Hsuan Hsu <yuhsuan@chromium.org>
+Signed-off-by: Mark Brown <broonie@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+Signed-off-by: Lee Jones <lee.jones@linaro.org>
+Change-Id: I68110cd295e9cd1c692bbd3cc3fbc247d92759a0
+---
+ sound/soc/codecs/max98090.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
-You can still have two separate drivers, binding against the same
-compatible value.  Just let the .probe() function return -ENODEV if it
-discovers (by looking at DT properties) if the node is configured for
-the other mode.
-Which brings us to my next questions: is there any code that could be
-shared between the drivers for the two modes?
-
-> rockchip/cadence/designware where
-> its the same hardware block but has two different binding files one
-> for host mode and other for
-> endpoint mode.
-
-Having two separate DT binding documents sounds fine to me, if unifying
-them makes things too complex.
-However, I think they should use the same compatible value, because the
-hardware block is the same, but just used in a different mode.
-
-Rob/Mark: Any input from the DT maintainers?
-
-> > > +- reg: Five register ranges as listed in the reg-names property
-> > > +- reg-names: Must include the following names
-> > > +       - "apb-base"
-> > > +       - "memory0"
-> > > +       - "memory1"
-> > > +       - "memory2"
-> > > +       - "memory3"
-> >
-> > What is the purpose of the last 4 regions?
-> > Can they be chosen by the driver, at runtime?
-> >
-> no the driver cannot choose them at runtime, as these are the only
-> PCIE memory(0/1/2/3) ranges
-> in the AXI address space where host memory can be mapped.
-
-Are they fixed by the PCIe hardware, i.e. could they be looked up by the
-driver based on the compatible value?
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
+diff --git a/sound/soc/codecs/max98090.c b/sound/soc/codecs/max98090.c
+index 607f68597c21..25565f364af8 100644
+--- a/sound/soc/codecs/max98090.c
++++ b/sound/soc/codecs/max98090.c
+@@ -1847,6 +1847,21 @@ static const int dmic_comp[6][6] = {
+ 	{7, 8, 3, 3, 3, 3}
+ };
+ 
++static int max98090_dai_startup(struct snd_pcm_substream *substream,
++				struct snd_soc_dai *dai)
++{
++	struct snd_soc_component *component = dai->component;
++	struct max98090_priv *max98090 = snd_soc_component_get_drvdata(component);
++	unsigned int fmt = max98090->dai_fmt;
++
++	/* Remove 24-bit format support if it is not in right justified mode. */
++	if ((fmt & SND_SOC_DAIFMT_FORMAT_MASK) != SND_SOC_DAIFMT_RIGHT_J) {
++		substream->runtime->hw.formats = SNDRV_PCM_FMTBIT_S16_LE;
++		snd_pcm_hw_constraint_msbits(substream->runtime, 0, 16, 16);
++	}
++	return 0;
++}
++
+ static int max98090_dai_hw_params(struct snd_pcm_substream *substream,
+ 				   struct snd_pcm_hw_params *params,
+ 				   struct snd_soc_dai *dai)
+@@ -2274,6 +2289,7 @@ EXPORT_SYMBOL_GPL(max98090_mic_detect);
+ #define MAX98090_FORMATS (SNDRV_PCM_FMTBIT_S16_LE | SNDRV_PCM_FMTBIT_S24_LE)
+ 
+ static struct snd_soc_dai_ops max98090_dai_ops = {
++	.startup = max98090_dai_startup,
+ 	.set_sysclk = max98090_dai_set_sysclk,
+ 	.set_fmt = max98090_dai_set_fmt,
+ 	.set_tdm_slot = max98090_set_tdm_slot,
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.24.0
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
