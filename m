@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4B7DF2534
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 03:20:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CDCDF2537
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 03:20:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7iVUXlh0eqibvfCUXgc/mxc0o6H0hGT45Ly40FHILzc=; b=MHxaxFg55y6mfp
-	o/bWlNYOt3VAzJTeHtgTuyoTAItdv97c+xQW5UIji0BIFcnOlo73crjbaingcdGWmTYGugh75yIgO
-	EUFQ8AtubckNWzZEJUEqqgV3zbJUsy38lntW4EjK2NFDKGrBtU8bqQi9778xTy29dAHLf/lNPCfHd
-	fnBZ0NUj2PoM3jaT3yRrsJt3VKNe4ebFiypl1q883yKdJiOlVkeF4STyH4fZqiRT9UYWlWWezBmiN
-	3h6TZHFE4L8FmPgxzpceU2hjZoohjEHPMwQFbJY/rSe7dFTSry+nvD3hD38Igr6/mKDyYaHQjgBHR
-	D8BTtVADMafSc+2+M9RQ==;
+	List-Owner; bh=1f1Q0B7qGdTVMHkZMNdhbVvYv4T0A3Qt4cuY4WTO8sA=; b=StdHpP5gMcrYbD
+	UFA4In3HnC0YmdxVCmcdikIVrA/0E+BQx+/b6kMy8jplSB4EMbIoOVpXTSligigYWew7WK8h9HCW9
+	Sshnhc58nIf/OCA4Q6J+e4pX6i9asY11iv4/lg1pTsRWe9JczI09Q9SSIkwCoI+Od7pDpq626g6Nx
+	ysz52NEnH/CZmubJ3QgAWIQqgB6gjL3no+uzMFmzvtDyZTxxFEHX7H7TYiIEf8cJpI/az+vmhYuxj
+	jlMmsfdXnEQQEPwFaVHg7PymXzp4PBDQ0HESMKecN/nxGCmMxrToQwMfcyBvR02jU7gCHI4U4wi4Q
+	qscbmvpPqC1rR5V3ngEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSXPP-0001ES-Da; Thu, 07 Nov 2019 02:20:27 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iSXPl-0001Vt-6S; Thu, 07 Nov 2019 02:20:49 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSXPG-0001Cs-5s
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 02:20:20 +0000
-Received: by mail-pl1-x644.google.com with SMTP id w8so374362plq.5
+ id 1iSXPZ-0001UJ-DA
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 02:20:39 +0000
+Received: by mail-pf1-x442.google.com with SMTP id v19so1148955pfm.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 Nov 2019 18:20:17 -0800 (PST)
+ Wed, 06 Nov 2019 18:20:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=H+QqKLPEQoeG1GGGgw3cHviviQT0DnHW7MBvGPeHz6k=;
- b=ArKI6GjaGqnXyXXJugquFesbMPo4+FgiRDM8C38iV5D242vyprAXN+S3nkmPK/OMVm
- SuIClw+4vYZMtzpL46SY9Q1c3tqqHMt0C8odoR6ghGzVtvoR1QVVjHRYjpR2GFqSu03K
- RoNm7pOKyX1kbfrT+ftQrMhpwUX2OZgavt9vT/tSLAOtvJJo4zc/k6uuAEQ/gt5nH3zl
- WaLigY0cKkQ+WUTN3M6i0YtWSKn2GA8f51dMOZawULnuJZ2X6p3irFUE5iLeE5YX4Csr
- fMucxcs03GCVx4tnBl1cSjKFf0ttE/ivjDB3O9/CHD/VLXG3Mxd7nKFHuRS3J9nizG/X
- NL8g==
+ bh=7nVUVPTizlGkprPOHGMGuKiTavG+4pamQJDarm5kvv0=;
+ b=G4sld1CnF+WGUMEYhkeg7b2c/ddWHkENgd9t/sjURqESd/spTRn3DckkUV+ggVqpxs
+ DX9+prVgoROWZ5ZTikOoUSh3NE/f56x4Np5XPl2GPeFRBsBi+riqR1pLcOWV0xUehBKf
+ wmp5tm/wSCDSFyRRXxKDWl6js6NUHbeQ5AnxmEHoYGfK13eYs+rAXMrJjSP7M7pX2ldn
+ i0v+116tgdd7LnHQ8iJ9Grkx8U7+zNxOumG3V2S6JaYKQm/sTmaVAi9KggcL62NTKoNH
+ sKC2yS3w1LireYqKif9W7OwD+6eWDWBfqJVc/eB1HBlNPY0DLVBj4/tFqdZKKbhpfWpk
+ /BoA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=H+QqKLPEQoeG1GGGgw3cHviviQT0DnHW7MBvGPeHz6k=;
- b=EilKJZXhPhhp+P84ba7q/qNacCkaGUf19vXBf1KIr9j2CNxLwwVe+YbkQ6hd4sT9jk
- vfYt3MqUkbAzo4WkN1hrXVV9SJtSVr8SBbC+7T6QljLjI4skHBsXVB0kDPYpSs9/9s9m
- KYSGiE1o/YiFRAOx7ajpF2Yp+nt+vOhDSBu4QedhY5Dml9oQWZ7wYrNMFmk6O+ybqmM7
- a82kQfPPLInV8DPQMQC8+OBPPxLU8ru7Sz67JnHqcOUSEFAL7n0M4M/ZoJoPmDkHoivf
- URPA3PXVaET1WiPvLkA9GtJ6+0tq/5UsUCD77c+Bfv9jsctUiQCjk2r95Ya2tUgsjLub
- B3PA==
-X-Gm-Message-State: APjAAAVUI+M5wjsnP9L5lRwAQ6cuZIh8uvBYPJYJmW7PaqKKTJaFYOR/
- v6ATDXCZ00cqkgV4iDngAmX2Hw==
-X-Google-Smtp-Source: APXvYqw5NEouYeHvrSFPg8kUw7qbtEhGDZ0vtBPCr/SO2elR5vBWUuBiUcos9vmJW6rYBJKddhrR3w==
-X-Received: by 2002:a17:902:8208:: with SMTP id
- x8mr1033222pln.232.1573093217114; 
- Wed, 06 Nov 2019 18:20:17 -0800 (PST)
+ bh=7nVUVPTizlGkprPOHGMGuKiTavG+4pamQJDarm5kvv0=;
+ b=I+sqx6VWu8uTq9vb97jsQ8Tx2N4IVSCjm1UCAITUCSUMOYui0QpL12MmCe4yCIF5X1
+ 4MKOILNPb8TNJUZ15/Il2jU4rgiONTnSZzjCysq6qcPDyBG9D8/H5Wr0TjtKLPWchDCt
+ +VhjlSdoqhP3Nh5t0jQ83oJz7eryDoZ7SX2VZJZT1hG7JKgv0hUXpmP9aeV7RFzmndLS
+ aqzQrM65OLGgaPn0HSxRJ3JECe7mIyaIQRZMQMFr3JrYyIYKyO9srrGiDjOb7d5K1V6U
+ Gk3QMZT4IN7q3rr9Rx46HbepBgoA3TumnW57V1vrgvsmugSCqCw7FYACuGPvXzqv0QsY
+ r0Vw==
+X-Gm-Message-State: APjAAAWNspGw13stQaMU17OWpTzy9olNut3y0L3ecNFwwnxpe4VAFene
+ V5kCDqvLPfRmd/P2f/shLDWrgg==
+X-Google-Smtp-Source: APXvYqwONm0UK9rYybGAoObi3hSqRbZAToeZCLsdFmnHfwr+0izG5T3e9gW6wi0eJH6dtm/LZyXAwg==
+X-Received: by 2002:a17:90a:634c:: with SMTP id
+ v12mr1614939pjs.27.1573093236794; 
+ Wed, 06 Nov 2019 18:20:36 -0800 (PST)
 Received: from localhost ([122.171.110.253])
- by smtp.gmail.com with ESMTPSA id j126sm354534pfg.4.2019.11.06.18.20.15
+ by smtp.gmail.com with ESMTPSA id w2sm342736pfj.22.2019.11.06.18.20.35
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 06 Nov 2019 18:20:16 -0800 (PST)
-Date: Thu, 7 Nov 2019 07:50:12 +0530
+ Wed, 06 Nov 2019 18:20:36 -0800 (PST)
+Date: Thu, 7 Nov 2019 07:50:32 +0530
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: Amit Kucheria <amit.kucheria@linaro.org>
-Subject: Re: [PATCH 06/11] thermal: mediatek: Appease the kernel-doc deity
-Message-ID: <20191107022012.o7wfyoerhomc3ztu@vireshk-i7>
+Subject: Re: [PATCH 07/11] thermal: rockchip: Appease the kernel-doc deity
+Message-ID: <20191107022032.feqnv3gguywai6cj@vireshk-i7>
 References: <cover.1573046440.git.amit.kucheria@linaro.org>
- <2961e4ac4b32ea7db8b5f6916751a5c02ee85960.1573046440.git.amit.kucheria@linaro.org>
- <20191107021929.hsuyzswcl27n7wqt@vireshk-i7>
+ <290895a22aa8a13c13b3a4ae77c13244b4ecee58.1573046440.git.amit.kucheria@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191107021929.hsuyzswcl27n7wqt@vireshk-i7>
+In-Reply-To: <290895a22aa8a13c13b3a4ae77c13244b4ecee58.1573046440.git.amit.kucheria@linaro.org>
 User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_182018_216132_1D557617 
-X-CRM114-Status: GOOD (  19.76  )
+X-CRM114-CacheID: sfid-20191106_182037_454429_6C91327F 
+X-CRM114-Status: GOOD (  22.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,9 +103,9 @@ Cc: Amit Kucheria <amit.kucheria@verdurent.com>,
  Heiko Stuebner <heiko@sntech.de>,
  Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
  Amit Daniel Kachhap <amit.kachhap@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, edubezval@gmail.com,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ edubezval@gmail.com, linux-rockchip@lists.infradead.org,
  Kukjin Kim <kgene@kernel.org>, Guillaume La Roque <glaroque@baylibre.com>,
  linux-pm@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
  Thierry Reding <thierry.reding@gmail.com>, Jun Nie <jun.nie@linaro.org>,
@@ -117,94 +116,156 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07-11-19, 07:49, Viresh Kumar wrote:
-> On 06-11-19, 18:58, Amit Kucheria wrote:
-> > Replace a comment starting with /** by simply /* to avoid having it
-> > interpreted as a kernel-doc comment. Describe missing function
-> > parameters where needed.
-> > 
-> > Fixes up the following warnings when compiled with make W=1:
-> > 
-> > linux.git/drivers/thermal/mtk_thermal.c:374: warning: cannot understand
-> > function prototype: 'const struct mtk_thermal_data mt8173_thermal_data =
-> > '
-> > linux.git/drivers/thermal/mtk_thermal.c:413: warning: cannot understand
-> > function prototype: 'const struct mtk_thermal_data mt2701_thermal_data =
-> > '
-> > linux.git/drivers/thermal/mtk_thermal.c:443: warning: cannot understand
-> > function prototype: 'const struct mtk_thermal_data mt2712_thermal_data =
-> > '
-> > linux.git/drivers/thermal/mtk_thermal.c:499: warning: cannot understand
-> > function prototype: 'const struct mtk_thermal_data mt8183_thermal_data =
-> > '
-> > linux.git/drivers/thermal/mtk_thermal.c:529: warning: Function parameter
-> > or member 'sensno' not described in 'raw_to_mcelsius'
-> > 
-> > Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
-> > ---
-> >  drivers/thermal/mtk_thermal.c | 12 ++++++------
-> >  1 file changed, 6 insertions(+), 6 deletions(-)
-> > 
-> > diff --git a/drivers/thermal/mtk_thermal.c b/drivers/thermal/mtk_thermal.c
-> > index acf4854cbb8b8..76e30603d4d58 100644
-> > --- a/drivers/thermal/mtk_thermal.c
-> > +++ b/drivers/thermal/mtk_thermal.c
-> > @@ -358,7 +358,7 @@ static const int mt7622_mux_values[MT7622_NUM_SENSORS] = { 0, };
-> >  static const int mt7622_vts_index[MT7622_NUM_SENSORS] = { VTS1 };
-> >  static const int mt7622_tc_offset[MT7622_NUM_CONTROLLER] = { 0x0, };
-> >  
-> > -/**
-> > +/*
-> >   * The MT8173 thermal controller has four banks. Each bank can read up to
-> >   * four temperature sensors simultaneously. The MT8173 has a total of 5
-> >   * temperature sensors. We use each bank to measure a certain area of the
-> > @@ -400,7 +400,7 @@ static const struct mtk_thermal_data mt8173_thermal_data = {
-> >  	.sensor_mux_values = mt8173_mux_values,
-> >  };
-> >  
-> > -/**
-> > +/*
-> >   * The MT2701 thermal controller has one bank, which can read up to
-> >   * three temperature sensors simultaneously. The MT2701 has a total of 3
-> >   * temperature sensors.
-> > @@ -430,7 +430,7 @@ static const struct mtk_thermal_data mt2701_thermal_data = {
-> >  	.sensor_mux_values = mt2701_mux_values,
-> >  };
-> >  
-> > -/**
-> > +/*
-> >   * The MT2712 thermal controller has one bank, which can read up to
-> >   * four temperature sensors simultaneously. The MT2712 has a total of 4
-> >   * temperature sensors.
-> > @@ -484,7 +484,7 @@ static const struct mtk_thermal_data mt7622_thermal_data = {
-> >  	.sensor_mux_values = mt7622_mux_values,
-> >  };
-> >  
-> > -/**
-> > +/*
-> >   * The MT8183 thermal controller has one bank for the current SW framework.
-> >   * The MT8183 has a total of 6 temperature sensors.
-> >   * There are two thermal controller to control the six sensor.
-> > @@ -495,7 +495,6 @@ static const struct mtk_thermal_data mt7622_thermal_data = {
-> >   * data, and this indeed needs the temperatures of the individual banks
-> >   * for making better decisions.
-> >   */
-> > -
-> >  static const struct mtk_thermal_data mt8183_thermal_data = {
-> >  	.auxadc_channel = MT8183_TEMP_AUXADC_CHANNEL,
-> >  	.num_banks = MT8183_NUM_SENSORS_PER_ZONE,
-> > @@ -519,7 +518,8 @@ static const struct mtk_thermal_data mt8183_thermal_data = {
-> >  
-> >  /**
-> >   * raw_to_mcelsius - convert a raw ADC value to mcelsius
-> > - * @mt:		The thermal controller
-> > + * @mt:	The thermal controller
-> > + * @sensno:	sensor number
-> >   * @raw:	raw ADC value
+On 06-11-19, 18:58, Amit Kucheria wrote:
+> Replace a comment starting with /** by simply /* to avoid having it
+> interpreted as a kernel-doc comment. Describe missing function
+> parameters where needed.
 > 
-> This doesn't look related to $subject
-
-I take this statement back :)
+> Fixes up the following warnings when compiled with make W=1:
+> 
+> linux.git/drivers/thermal/rockchip_thermal.c:27: warning: cannot
+> understand function prototype: 'enum tshut_mode '
+> linux.git/drivers/thermal/rockchip_thermal.c:37: warning: cannot
+> understand function prototype: 'enum tshut_polarity '
+> linux.git/drivers/thermal/rockchip_thermal.c:46: warning: cannot
+> understand function prototype: 'enum sensor_id '
+> linux.git/drivers/thermal/rockchip_thermal.c:56: warning: cannot
+> understand function prototype: 'enum adc_sort_mode '
+> linux.git/drivers/thermal/rockchip_thermal.c:123: warning: Function
+> parameter or member 'chn_id' not described in 'rockchip_tsadc_chip'
+> linux.git/drivers/thermal/rockchip_thermal.c:123: warning: Function
+> parameter or member 'control' not described in 'rockchip_tsadc_chip'
+> linux.git/drivers/thermal/rockchip_thermal.c:167: warning: Function
+> parameter or member 'sensors' not described in 'rockchip_thermal_data'
+> linux.git/drivers/thermal/rockchip_thermal.c:608: warning: Function
+> parameter or member 'grf' not described in 'rk_tsadcv2_initialize'
+> linux.git/drivers/thermal/rockchip_thermal.c:608: warning: Function
+> parameter or member 'regs' not described in 'rk_tsadcv2_initialize'
+> linux.git/drivers/thermal/rockchip_thermal.c:608: warning: Function
+> parameter or member 'tshut_polarity' not described in
+> 'rk_tsadcv2_initialize'
+> linux.git/drivers/thermal/rockchip_thermal.c:644: warning: Function
+> parameter or member 'grf' not described in 'rk_tsadcv3_initialize'
+> linux.git/drivers/thermal/rockchip_thermal.c:644: warning: Function
+> parameter or member 'regs' not described in 'rk_tsadcv3_initialize'
+> linux.git/drivers/thermal/rockchip_thermal.c:644: warning: Function
+> parameter or member 'tshut_polarity' not described in
+> 'rk_tsadcv3_initialize'
+> linux.git/drivers/thermal/rockchip_thermal.c:732: warning: Function
+> parameter or member 'regs' not described in 'rk_tsadcv3_control'
+> linux.git/drivers/thermal/rockchip_thermal.c:732: warning: Function
+> parameter or member 'enable' not described in 'rk_tsadcv3_control'
+> linux.git/drivers/thermal/rockchip_thermal.c:1211: warning: Function
+> parameter or member 'reset' not described in
+> 'rockchip_thermal_reset_controller'
+> 
+> Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
+> ---
+>  drivers/thermal/rockchip_thermal.c | 22 ++++++++++++++++------
+>  1 file changed, 16 insertions(+), 6 deletions(-)
+> 
+> diff --git a/drivers/thermal/rockchip_thermal.c b/drivers/thermal/rockchip_thermal.c
+> index 343c2f5c5a259..9ed8085bb7924 100644
+> --- a/drivers/thermal/rockchip_thermal.c
+> +++ b/drivers/thermal/rockchip_thermal.c
+> @@ -19,7 +19,7 @@
+>  #include <linux/mfd/syscon.h>
+>  #include <linux/pinctrl/consumer.h>
+>  
+> -/**
+> +/*
+>   * If the temperature over a period of time High,
+>   * the resulting TSHUT gave CRU module,let it reset the entire chip,
+>   * or via GPIO give PMIC.
+> @@ -29,7 +29,7 @@ enum tshut_mode {
+>  	TSHUT_MODE_GPIO,
+>  };
+>  
+> -/**
+> +/*
+>   * The system Temperature Sensors tshut(tshut) polarity
+>   * the bit 8 is tshut polarity.
+>   * 0: low active, 1: high active
+> @@ -39,7 +39,7 @@ enum tshut_polarity {
+>  	TSHUT_HIGH_ACTIVE,
+>  };
+>  
+> -/**
+> +/*
+>   * The system has two Temperature Sensors.
+>   * sensor0 is for CPU, and sensor1 is for GPU.
+>   */
+> @@ -48,7 +48,7 @@ enum sensor_id {
+>  	SENSOR_GPU,
+>  };
+>  
+> -/**
+> +/*
+>   * The conversion table has the adc value and temperature.
+>   * ADC_DECREMENT: the adc value is of diminishing.(e.g. rk3288_code_table)
+>   * ADC_INCREMENT: the adc value is incremental.(e.g. rk3368_code_table)
+> @@ -80,13 +80,14 @@ struct chip_tsadc_table {
+>  
+>  /**
+>   * struct rockchip_tsadc_chip - hold the private data of tsadc chip
+> - * @chn_id[SOC_MAX_SENSORS]: the sensor id of chip correspond to the channel
+> + * @chn_id: array of sensor ids of chip corresponding to the channel
+>   * @chn_num: the channel number of tsadc chip
+>   * @tshut_temp: the hardware-controlled shutdown temperature value
+>   * @tshut_mode: the hardware-controlled shutdown mode (0:CRU 1:GPIO)
+>   * @tshut_polarity: the hardware-controlled active polarity (0:LOW 1:HIGH)
+>   * @initialize: SoC special initialize tsadc controller method
+>   * @irq_ack: clear the interrupt
+> + * @control: enable/disable method for the tsadc controller
+>   * @get_temp: get the temperature
+>   * @set_alarm_temp: set the high temperature interrupt
+>   * @set_tshut_temp: set the hardware-controlled shutdown temperature
+> @@ -139,7 +140,7 @@ struct rockchip_thermal_sensor {
+>   * @chip: pointer to the platform/configuration data
+>   * @pdev: platform device of thermal
+>   * @reset: the reset controller of tsadc
+> - * @sensors[SOC_MAX_SENSORS]: the thermal sensor
+> + * @sensors: array of thermal sensors
+>   * @clk: the controller clock is divided by the exteral 24MHz
+>   * @pclk: the advanced peripherals bus clock
+>   * @grf: the general register file will be used to do static set by software
+> @@ -590,6 +591,9 @@ static int rk_tsadcv2_code_to_temp(const struct chip_tsadc_table *table,
+>  
+>  /**
+>   * rk_tsadcv2_initialize - initialize TASDC Controller.
+> + * @grf: the general register file will be used to do static set by software
+> + * @regs: the base address of tsadc controller
+> + * @tshut_polarity: the hardware-controlled active polarity (0:LOW 1:HIGH)
+>   *
+>   * (1) Set TSADC_V2_AUTO_PERIOD:
+>   *     Configure the interleave between every two accessing of
+> @@ -624,6 +628,9 @@ static void rk_tsadcv2_initialize(struct regmap *grf, void __iomem *regs,
+>  
+>  /**
+>   * rk_tsadcv3_initialize - initialize TASDC Controller.
+> + * @grf: the general register file will be used to do static set by software
+> + * @regs: the base address of tsadc controller
+> + * @tshut_polarity: the hardware-controlled active polarity (0:LOW 1:HIGH)
+>   *
+>   * (1) The tsadc control power sequence.
+>   *
+> @@ -723,6 +730,8 @@ static void rk_tsadcv2_control(void __iomem *regs, bool enable)
+>  
+>  /**
+>   * rk_tsadcv3_control - the tsadc controller is enabled or disabled.
+> + * @regs: the base address of tsadc controller
+> + * @enable: boolean flag to enable the controller
+>   *
+>   * NOTE: TSADC controller works at auto mode, and some SoCs need set the
+>   * tsadc_q_sel bit on TSADCV2_AUTO_CON[1]. The (1024 - tsadc_q) as output
+> @@ -1206,6 +1215,7 @@ rockchip_thermal_register_sensor(struct platform_device *pdev,
+>  
+>  /**
+>   * Reset TSADC Controller, reset all tsadc registers.
+> + * @reset: the reset controller of tsadc
+>   */
+>  static void rockchip_thermal_reset_controller(struct reset_control *reset)
+>  {
 
 Reviewed-by: Viresh Kumar <viresh.kumar@linaro.org>
 
