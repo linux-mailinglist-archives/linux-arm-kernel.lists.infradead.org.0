@@ -2,56 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 620C3F24FA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 03:09:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB6C5F2521
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 03:16:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=xTpdIGxxHeUOdZIxCjQNQH0OL/GvopDQwT1kKbr/vns=; b=mu3+VRj5MqrEikWQddKHkPe+9v
-	RWQFExuTzyuxId7qcEfENRDDpbN52FyLGO+6eoW2COpCrJo3OxnP6IdlU1kds5V57vJBuuIFyCbyz
-	Rr00Cza43/FyO/ssAXKQcWhF7BwCW+nSbofMklswxaIwqv5Hrh/DxVjbK9OV1RpK3Z+jKGC4YI9yz
-	63k0SalTUUyHQb7TBQoE1Nx5LWs56sKCpyGbOuK5x+G+/DHd+nweqHU859ZasfhrRoiwVwASzpjDy
-	ofcK3J0Fj5POHYHFO/An2HsgnxfM2jPIjdtHlx9eadQzATp+a3gdJpCe76RCTVrcUc9/bIqfPS+47
-	qlhyV/QQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=mINPQvM2CT7mP6ufgnA8VnpDIk2iQZ2WsJf19QPmdGw=; b=nud
+	bY2AY24fJXtokpOO2cQeWQvWBBP50RvgxAf0x/B8P0QbiE+/kkSKV2HJu51pOzWcR/rKbBccg0coD
+	edap/Hgz0PTK0SrJ8Ni7wdDLB3rreGmpu+eOmPVNkmIvyYvXoHTNVt+RFrTNpqXfeynx8xpbhXU0I
+	NLO+tMhXYSzmBg263R8EzIKayO1ldKCRXlXIHlm8VtBkp25ukTPvqbIP7LOHjEUlI6xFCHhMl5ims
+	n8rLKzNRzvVcDtTad6g9MZh18HXqiMd3yLC0yk1cDZLZl8zD6OfNRoBjNtYyg88/V/8ugRpB2Sbc8
+	LVOcJqDtKf8m69oUH5AbvphLYCGxiMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSXEP-0004Ec-7S; Thu, 07 Nov 2019 02:09:05 +0000
+	id 1iSXLn-0007SP-BT; Thu, 07 Nov 2019 02:16:43 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSXDb-0003Zl-Tx
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 02:08:17 +0000
+ id 1iSXLc-0007Ql-7o
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 02:16:36 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9972A1A0511;
- Thu,  7 Nov 2019 03:08:14 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D93AC1A0244;
+ Thu,  7 Nov 2019 03:16:30 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 893CE1A00B0;
- Thu,  7 Nov 2019 03:08:08 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id CBE841A00C2;
+ Thu,  7 Nov 2019 03:16:24 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id BFD5540282;
- Thu,  7 Nov 2019 10:08:00 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 12ED2402B1;
+ Thu,  7 Nov 2019 10:16:17 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- andrew.smirnov@gmail.com, manivannan.sadhasivam@linaro.org,
+ manivannan.sadhasivam@linaro.org, andrew.smirnov@gmail.com,
  marcel.ziswiler@toradex.com, sebastien.szymanski@armadeus.com,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 4/4] dt-bindings: arm: imx: Add the i.MX6SLL-EVK Rev-A board
-Date: Thu,  7 Nov 2019 10:06:33 +0800
-Message-Id: <1573092393-26885-4-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 1/2] ARM: dts: imx7d-sdb-reva: Add revision in board
+ compatible string
+Date: Thu,  7 Nov 2019 10:14:52 +0800
+Message-Id: <1573092893-10612-1-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1573092393-26885-1-git-send-email-Anson.Huang@nxp.com>
-References: <1573092393-26885-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_180816_146506_5AD340EE 
-X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-CacheID: sfid-20191106_181635_739336_DD571595 
+X-CRM114-Status: UNSURE (   6.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,27 +78,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add board binding for i.MX6SLL-EVK Rev-A board.
+i.MX7D SDB Rev-A board should use its own board compatible
+string instead of default i.MX7D SDB board.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-New patch.
----
- Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/boot/dts/imx7d-sdb-reva.dts | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index 2f7beda..a41d9e00 100644
---- a/Documentation/devicetree/bindings/arm/fsl.yaml
-+++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -164,6 +164,7 @@ properties:
-         items:
-           - enum:
-               - fsl,imx6sll-evk
-+              - fsl,imx6sll-evk-reva
-               - kobo,clarahd
-           - const: fsl,imx6sll
+diff --git a/arch/arm/boot/dts/imx7d-sdb-reva.dts b/arch/arm/boot/dts/imx7d-sdb-reva.dts
+index 7ce9d8c..cabdaa6 100644
+--- a/arch/arm/boot/dts/imx7d-sdb-reva.dts
++++ b/arch/arm/boot/dts/imx7d-sdb-reva.dts
+@@ -7,6 +7,9 @@
+ #include "imx7d-sdb.dts"
  
+ / {
++	model = "Freescale i.MX7 SabreSD RevA Board";
++	compatible = "fsl,imx7d-sdb-reva", "fsl,imx7d";
++
+ 	reg_usb_otg2_vbus: regulator-usb-otg2-vbus {
+ 		pinctrl-0 = <&pinctrl_usb_otg2_vbus_reg_reva>;
+ 		gpio = <&gpio4 7 GPIO_ACTIVE_HIGH>;
 -- 
 2.7.4
 
