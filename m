@@ -2,122 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7E4FF2CA4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 11:36:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6C0CF2CA9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 11:37:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dNNwRC3j3ylyQRW62eLmARcEWBEb0WknSSkTOOKoJGk=; b=kvigtFpVFF2EaJ
-	plutBMH0rxoI+u55/EbqCBj1YtaRDafznzcFqJuX8l/dWjAVlPQ98kSLJzkPOp7RCZ50E3zkvLVmk
-	HovQuljcs4DjUNsTphixtoaTMb0N68Dtw5IuBjZCoMhnTxVvKaxGxZfS4OdJNqgqnKIwBLF/tFgON
-	b02n1FXbg3g4VSAjK+jVZQTLlTKuWjkfDmUkusJhQ0T/IjU9ioncFDPd2g3HEXYQR32vxJiolJanY
-	eBiYUQE9a+xjImUhY9zI5hBiCRJPHtQWxcJy22OTICfmV8HibvlTXY8MY7/N/NkGb/2nf2jt+DP/y
-	wGEJlUGZHl08uzPkyeDA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TXxzbmjHz6sLhn7JZaiFveMEnn9+eQOmutV0QYlKK5M=; b=FmrVR0K6FVTUgG
+	NyPPC2Dro02hF3eNdRVUE+wotG5bjWqviMj0Y+d1eKzRxSItchK1nQAESy4C3ObOQliWG2PljzD5e
+	3/WT03eTkHPgq/EeVnlpjW8htLw4ztjHHIP1gBS7jPTxlrhWVK99kpc7OPE8Q4j9WWwUtQC1s8kTT
+	WzJnyfbvc+K0cFPUw0mAE1WeroW8v7LNaJcqTifSOpgVG3RYi+2cfqiKcXD/FaCRMZ25/JWUvm/2E
+	ypjhg3xS0xqUXZZZVSZOiHeERO46qN1uo5Z1jnCBeiAZ0E5uHL5J492+xkZQzAVwcDL9vJXEm0MN1
+	vzZTmCWlZvQB92FZm65A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSf9M-0001mI-G1; Thu, 07 Nov 2019 10:36:24 +0000
-Received: from mail-ve1eur01on060b.outbound.protection.outlook.com
- ([2a01:111:f400:fe1f::60b]
- helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1iSfA8-0002C6-Gt; Thu, 07 Nov 2019 10:37:12 +0000
+Received: from mail-dm3nam03on0600.outbound.protection.outlook.com
+ ([2a01:111:f400:fe49::600]
+ helo=NAM03-DM3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSf8Z-00012T-Q0
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 10:35:37 +0000
+ id 1iSf9y-0002BA-Ic
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 10:37:03 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=f0YyjL/WcMKwlNUb85K90O3op12NnJg4uOZU6lccrAsBhA7LfV9VgNgIvTNNEXSbVBekHOh7RUsIZb93Gf8nvu2fzg+kWKLyxAqnQJH7Zeez7ciluYShEADrb4Bzn6g8DknUe9il1JlKSy/J47oIxbLv1j9VPxiydjPBFroIdlzJBZEBAIYiLPFtWWvYamHCehGyib6RCjKZiO5p1HVhIjVGRP/89DkB0zankQliQacjKYgiMd70CsCfwbX0/lNaBh5ZpyiK2LPyLWZF+j/M60Eke010/GG8knHtqU7ZzNGnPZbZB7jNXI6u4MRPDBt+WyBM/Hy5dQDryCSxEGt2Mw==
+ b=GYjFKNcT5qNphoXkEgRNSwfdlbXPWyq4zyCF/JY/Q4mdAJnF+F5F2Y4ALMWdwhArGcta3txmgNKtWMwzTImTdGcxFutQViufkrEGuXkYdrZ2VraKubaKSkbnWm/YvuPlGHaLWoP8t+TwoB3P1+PbNeUIxWoznK8Ml1tGEfIHOD12VJ9cOhNMVXNc9nsdrY8glUcvc+iYUQxJCqcmHJ7Gw0LnlkIuFEwRgwtf+XycDrhnU5Xnuj7oJ9wcdsIxXaEO3EcBLJlJAfEC78moLiVii15G/CRfQMqGPWRZ7ANXvnFye4UYkxAwX9B9IFwhcSFvYI/w48DGuvPpGVyVTEk8bQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mgVsO4i3AdgxVuKPyXMkUN9Y2SvE690p5wzpZ6BlxMg=;
- b=HbIvoysBq5Pgf22EYHRyKSPkfn5NAGQ+36LIq5jCGBmgfZ0DaeVUrL/69DP9nLUY7jlOP6gfSz0UDLfaLqgG9B74S0yp2g7b/A8TDovdwPBb7XhA1/EI0tQ/X1voFUMXkRQM1dx+GWixp98uRmzxfxI2S1tADveWwheb9eLO+gcv/i5ZViJ46D32UZuW+gilczrlsPv8VpRhUkJd/wmsBdekkz3faO3dNOCdC3O+XJgNjhlqkn4Bc9KP9LcBlQz1T+xutnGlLkUgHuaHt5+gnP2WmjtnwI/26HyPuZLhx4Hj+2DMkm4GE1gZ1i7uSyS8V6NvYwPPmgKwODu60Yi7Bw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ bh=9FfM9peuImQcLNVHerNP+tLmwkHVjmfQC2uP9FIKvuk=;
+ b=YVndQMB0Jz1ZTXH+X2uQjmFg61N0ev6gN2WuDbyEdesNb3OokNt1st10MHQrSPURrqnzWbGXeLBL/lquLn6PwxwHP5Ho5cqKLMpha7sr9VKVMYdcY8Ny8sbCzP6BBN1ZNDuEU6L0y06A1wCQ2ejtZHIiJOf90rqaC4zyQHnw30+qrKv5E5ldnOB89FSl++r9Nv6R6joIJwiFTxglNAibqe5+2O8aiPkgHA0QeVFIgtZYS14/t50/q78V4AYQ8Mf1M9c0/3pnqQtHbi9Uub0K1fCfeqmXVYQoVr/QkKIx2EAKLFCudotBwJG1QTqkSNz8d5tpEPHdCtRCZEBXuu/VFA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mgVsO4i3AdgxVuKPyXMkUN9Y2SvE690p5wzpZ6BlxMg=;
- b=eBRJ+wYOo436/IumHq+iXxsMN2ImV6NTMknNoqPPFMjzz/f/vkayrkQy9+2+OFJ2oemu1xJhvyog8MvHGku/V1XXi2IjNUAaPU/AX9SoM4twIJgPeBZ5yMHtiKvl7jFxFv99eCyhzgIXAPlpJuiHnZLk6++VIm4o8R+sqjFevw0=
-Received: from AM6PR04MB4936.eurprd04.prod.outlook.com (20.177.34.20) by
- AM6PR04MB5543.eurprd04.prod.outlook.com (20.178.94.28) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.20; Thu, 7 Nov 2019 10:35:30 +0000
-Received: from AM6PR04MB4936.eurprd04.prod.outlook.com
- ([fe80::912a:3593:7e23:72d0]) by AM6PR04MB4936.eurprd04.prod.outlook.com
- ([fe80::912a:3593:7e23:72d0%7]) with mapi id 15.20.2430.023; Thu, 7 Nov 2019
- 10:35:30 +0000
-From: Fancy Fang <chen.fang@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
-Subject: [PATCH 2/2] arm64: dts: imx8mn: remove "simple-bus" for anatop
-Thread-Topic: [PATCH 2/2] arm64: dts: imx8mn: remove "simple-bus" for anatop
-Thread-Index: AQHVlVcTGcDZNqwodE+6bb4q1XT4Qg==
-Date: Thu, 7 Nov 2019 10:35:30 +0000
-Message-ID: <20191107103332.16485-2-chen.fang@nxp.com>
-References: <20191107103332.16485-1-chen.fang@nxp.com>
-In-Reply-To: <20191107103332.16485-1-chen.fang@nxp.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.17.1
-x-clientproxiedby: SG2PR02CA0050.apcprd02.prod.outlook.com
- (2603:1096:4:54::14) To AM6PR04MB4936.eurprd04.prod.outlook.com
- (2603:10a6:20b:8::20)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=chen.fang@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 1b727b75-9dda-4bf0-501c-08d7636e3617
-x-ms-traffictypediagnostic: AM6PR04MB5543:|AM6PR04MB5543:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB554304AFD192689E4EDF2355F3780@AM6PR04MB5543.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:660;
-x-forefront-prvs: 0214EB3F68
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(366004)(136003)(39860400002)(346002)(376002)(199004)(189003)(66556008)(14454004)(5660300002)(64756008)(66446008)(66946007)(54906003)(66476007)(99286004)(71190400001)(71200400001)(14444005)(316002)(110136005)(256004)(7736002)(478600001)(36756003)(2201001)(26005)(446003)(305945005)(11346002)(6436002)(4744005)(25786009)(1076003)(2501003)(8936002)(3846002)(186003)(6116002)(102836004)(81156014)(6506007)(52116002)(386003)(66066001)(76176011)(50226002)(81166006)(476003)(4326008)(6486002)(486006)(2616005)(2906002)(8676002)(86362001)(6512007)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB5543;
- H:AM6PR04MB4936.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: vb5/bX+h8a3W/gwQFbXTsVxa4wx/wBoc7ZFJoL8KfLfwN52OD017rkMFyXP9j5hthGOnQp3fMaKJ1zECXYZZb4EMhgygDJ0fABguPwlHad1/1aecF9tuOpTxXUSW+jwCHT2c3z+Fm74V8KOG5V2xKTtVWaHV3txkWrHYHNg0WM9im0NwTleJd5280ILlCxpQSK6rn5yJA4DxSRI3GTgCRzmKDpRrnP2SNqkVEi7KC5ODz/FXUsgXePSvEcU5HCyhZ9y418ovyeq35jL4hao1QLDFBEqVVqo36EZvaVRfsWu24hvUU7+NoRj5w8MiEq09QV2oAw3Q8XqQ4YiBmWBmKRzkQxqhDxxQaqUS1C1ONXpI9SIfCq7rOGaLFj5czb144pokBNETZiUWi7Z9ezHL0kvZm99m1rlNRR+6pKugAvqKraaV5+9j3BHMlU/SNVKd
+ bh=9FfM9peuImQcLNVHerNP+tLmwkHVjmfQC2uP9FIKvuk=;
+ b=fjseMZvhxgslgVFUdD8xN0H7Tec1fI5xUakS7l9F1R3aIEhJmgw+0iL/4zn/Uof80ZeOhvfKJfJqdXGTeVGu9woi0qpRqMhZmMcM7CSmTcy96A+TIvWOCvULeSgGWNCDzsbSCzacWirlmjqnE/7DknagMuw30XPAPoIZHF4PJBk=
+Received: from BN6PR02CA0040.namprd02.prod.outlook.com (2603:10b6:404:5f::26)
+ by BYAPR02MB4040.namprd02.prod.outlook.com (2603:10b6:a02:f8::14)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2430.23; Thu, 7 Nov
+ 2019 10:36:58 +0000
+Received: from SN1NAM02FT028.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e44::202) by BN6PR02CA0040.outlook.office365.com
+ (2603:10b6:404:5f::26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2430.22 via Frontend
+ Transport; Thu, 7 Nov 2019 10:36:58 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ SN1NAM02FT028.mail.protection.outlook.com (10.152.72.105) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2430.20
+ via Frontend Transport; Thu, 7 Nov 2019 10:36:58 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <rajan.vaja@xilinx.com>)
+ id 1iSf9t-0004Zo-RV; Thu, 07 Nov 2019 02:36:57 -0800
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <rajan.vaja@xilinx.com>)
+ id 1iSf9o-00026Z-Hg; Thu, 07 Nov 2019 02:36:52 -0800
+Received: from xsj-pvapsmtp01 (maildrop.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id xA7AahHX027859; 
+ Thu, 7 Nov 2019 02:36:43 -0800
+Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <rajan.vaja@xilinx.com>)
+ id 1iSf9e-00024W-S3; Thu, 07 Nov 2019 02:36:42 -0800
+From: Rajan Vaja <rajan.vaja@xilinx.com>
+To: michal.simek@xilinx.com, daniel.lezcano@linaro.org, tglx@linutronix.de
+Subject: [PATCH] drivers: clocksource: Use ttc driver as platform driver
+Date: Thu,  7 Nov 2019 02:36:28 -0800
+Message-Id: <1573122988-18399-1-git-send-email-rajan.vaja@xilinx.com>
+X-Mailer: git-send-email 2.7.4
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(376002)(136003)(396003)(39860400002)(189003)(199004)(51416003)(9786002)(47776003)(16586007)(7696005)(48376002)(126002)(476003)(107886003)(478600001)(70586007)(70206006)(5660300002)(316002)(50466002)(106002)(26005)(186003)(426003)(36756003)(81156014)(81166006)(8936002)(336012)(50226002)(36386004)(486006)(44832011)(305945005)(2616005)(356004)(8676002)(6666004)(2906002)(4326008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB4040; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1b727b75-9dda-4bf0-501c-08d7636e3617
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Nov 2019 10:35:30.4722 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: NqCnPnTmyD5sj8e9EnV7yrZgtI207QNASmb+ufP3o3g7/GpgponcCLyxvIs5/QE3vD7/sXxuspRCtnauvqf/pA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5543
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 5e1620ee-395b-4d7c-f361-08d7636e6ab1
+X-MS-TrafficTypeDiagnostic: BYAPR02MB4040:
+X-Microsoft-Antispam-PRVS: <BYAPR02MB404083E7AC41B941D745E772B7780@BYAPR02MB4040.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:962;
+X-Forefront-PRVS: 0214EB3F68
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 97L3NulMGWqSa+MVucHsTXhtOOqoQcP9fgxXUCniySPO+j/zPQdbppY190Krj12FlMZcjqYasIkSEQrkzhEBC2GI1IooX+EySPn1y1xHeYhGZrO6p3Ap7eeMFGgF2XnKXh0uOGhqReOfGENHt6QdaYBD1LQWI9L6/jgcBFQTzLvpQK3qmapm7L3Li8Sn5MQzW2Nk5X7tyns8mVq3oIjhCkqaQqOBKxRHzIV0gE7kWJysCKxqCoKTpmjy3VflRZYRMpfMT8iWmNO1CHARwKljrbYga90He9afUFpmTY3UJ+wSitbzmL0jM65thIJyGNMuvBad/K6jsr3aWUow72ysRoxY88led0XqPTcbjDMVWpXzpe0l78py4N0Ym5wPDrGtp16WAY11j2EL7II6dwBQexcKZOJV3tKKPQKIDCpiW/ywUvjHHUwSolcY5eTQOe3z
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Nov 2019 10:36:58.2703 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5e1620ee-395b-4d7c-f361-08d7636e6ab1
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB4040
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_023535_870455_62EA861C 
-X-CRM114-Status: GOOD (  11.78  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191107_023702_614631_E9FC6988 
+X-CRM114-Status: GOOD (  13.42  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe1f:0:0:0:60b listed in]
+ no trust [2a01:111:f400:fe49:0:0:0:600 listed in]
  [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,42 +139,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Jana Build <jana.build@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-devel@linux.nxdi.nxp.com" <linux-devel@linux.nxdi.nxp.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: JOLLYS@xilinx.com, Rajan Vaja <rajan.vaja@xilinx.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove "simple-bus" compatible for device anatop,
-since no child nodes exist under it and it is not
-a populated bus.
+Currently TTC driver is TIMER_OF_DECLARE type driver. Because of
+that, TTC driver may be initialized before other clock drivers. If
+TTC driver is dependent on that clock driver then initialization of
+TTC driver will failed.
 
-Signed-off-by: Fancy Fang <chen.fang@nxp.com>
+So use TTC driver as platform driver instead of using
+TIMER_OF_DECLARE.
+
+Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mn.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/clocksource/timer-cadence-ttc.c | 26 ++++++++++++++++++--------
+ 1 file changed, 18 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-index e91625063f8e..aa95f76de5ef 100644
---- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-@@ -349,7 +349,7 @@
+diff --git a/drivers/clocksource/timer-cadence-ttc.c b/drivers/clocksource/timer-cadence-ttc.c
+index 88fe2e9..38858e1 100644
+--- a/drivers/clocksource/timer-cadence-ttc.c
++++ b/drivers/clocksource/timer-cadence-ttc.c
+@@ -15,6 +15,8 @@
+ #include <linux/of_irq.h>
+ #include <linux/slab.h>
+ #include <linux/sched_clock.h>
++#include <linux/module.h>
++#include <linux/of_platform.h>
  
- 			anatop: anatop@30360000 {
- 				compatible = "fsl,imx8mn-anatop", "fsl,imx8mm-anatop",
--					     "syscon", "simple-bus";
-+					     "syscon";
- 				reg = <0x30360000 0x10000>;
- 			};
+ /*
+  * This driver configures the 2 16/32-bit count-up timers as follows:
+@@ -464,13 +466,7 @@ static int __init ttc_setup_clockevent(struct clk *clk,
+ 	return 0;
+ }
  
+-/**
+- * ttc_timer_init - Initialize the timer
+- *
+- * Initializes the timer hardware and register the clock source and clock event
+- * timers with Linux kernal timer framework
+- */
+-static int __init ttc_timer_init(struct device_node *timer)
++static int __init ttc_timer_probe(struct platform_device *pdev)
+ {
+ 	unsigned int irq;
+ 	void __iomem *timer_baseaddr;
+@@ -478,6 +474,7 @@ static int __init ttc_timer_init(struct device_node *timer)
+ 	static int initialized;
+ 	int clksel, ret;
+ 	u32 timer_width = 16;
++	struct device_node *timer = pdev->dev.of_node;
+ 
+ 	if (initialized)
+ 		return 0;
+@@ -532,4 +529,17 @@ static int __init ttc_timer_init(struct device_node *timer)
+ 	return 0;
+ }
+ 
+-TIMER_OF_DECLARE(ttc, "cdns,ttc", ttc_timer_init);
++static const struct of_device_id ttc_timer_of_match[] = {
++	{.compatible = "cdns,ttc"},
++	{},
++};
++
++MODULE_DEVICE_TABLE(of, ttc_timer_of_match);
++
++static struct platform_driver ttc_timer_driver = {
++	.driver = {
++		.name	= "cdns_ttc_timer",
++		.of_match_table = ttc_timer_of_match,
++	},
++};
++builtin_platform_driver_probe(ttc_timer_driver, ttc_timer_probe);
 -- 
-2.17.1
+2.7.4
 
 
 _______________________________________________
