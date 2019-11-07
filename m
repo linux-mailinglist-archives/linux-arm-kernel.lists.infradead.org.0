@@ -2,67 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CBFCF3643
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 18:53:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30D98F3636
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 18:52:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qx+RQg9griTIyAHbu/JsBfkBbHT3aFuHkZMhp/No6js=; b=aelvO3NUpME4DN
-	QZKg9iknMOhf4R+W+4iv/QVpWihGfwcy73bD3lB3LZgKaGSkFnw4kaVFq48M1cJDcu43RC2hnY5yy
-	qW7KAJv5XAphmviHXyPWnkHP5PgbwTSbrw22FOGnkqL+zBg55fZ5AnxzgZzYtGyhlXET6zm3HjEdO
-	1mNvoiLR7D+7wiS5PfnbJDL9ZwaYyIUJM2w8im/ZIbgGORNxtastjf7XbMhE3C64T2ajc2SKk8q14
-	J6qSB20cWd3vDKPrhMWYAl4QYmeVamzQoHNoxKj7/yMXvaOoEBDJHhahdQCKJi7xIwzqas7srRsX5
-	ALpJTc3NCGfl2JPkkVXA==;
+	List-Owner; bh=1uuhnMaFNcPnU1TeixRo4NhKsZeJFA9ieIGtbqWPn4Y=; b=LUnu+vSx5rmZiP
+	Biwl4lMRNes0hOsmX7xU3hWfhmEkq9kpaLqa4EKrLlEpKkxkbgn9IIx4g7AjA7NumwE/TarfHsZZM
+	BFnZ2ovW75d7VKJsQz7N+FVs4C8UcPnyWfYGl/1xAa/CmmnI11ZM/MO8mxZXdp3B1Ki3152zqDwVz
+	j0S7gWDx7Z+JP0qioLSzSazjrJ2BEVDHBuEpexvEzNlfSnsZuKSnvWdredqchRNU8Plcn2xyw3NrM
+	ZiLx3DL3KVJeoXfp9hDh9KYn5mvPDQa8R+SRfSmMM77VMzqc70tJb1UwyBpnZpiSRiYK6jz5Jc3iS
+	boT0HkmgAPRJCIjtM19w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSlyL-0007SH-8O; Thu, 07 Nov 2019 17:53:29 +0000
+	id 1iSlxi-0006tg-7j; Thu, 07 Nov 2019 17:52:50 +0000
 Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSlxG-0006he-NS
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 17:52:25 +0000
+ id 1iSlxG-0006hd-Hh
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 17:52:23 +0000
 Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA7Hj2PL030137;
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA7Hj4pe030207;
  Thu, 7 Nov 2019 17:51:28 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
  h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding; s=corp-2019-08-05;
- bh=T6u/MHPeS4W/M9y1AqLQfeosE/vR/LKfHRXL6C/2QKI=;
- b=oO/aIPPNvcmSvSJDTZtjHy0W2O6UdZlT7rcsOF/n4Bz/TF42OKqc/gFCZ+w9wp1PPiqj
- o2a33J1vzgg5bNaPGSwyOFcgByHWVVcyJvlAiBpDuxOD5/M2jNJrYUZMx/etdcuYft76
- iIcnSfkhlXjSPJ9F7qcgyhqKnVB4DQmP5AXC4c92rDLCR1zUdxYx5eGZq+W7ck6dnwKR
- eQNqo9wDX+262tU3eiqQuzgQNxBRC419btlng0UAJUIH9+UUWefFzfZElgLYj2WiLo0M
- 0V/n2r13vTMJSwFD+y5sFG9gOW+WjjWHReMuCDhJz/YRGjD/D8v7VB9+8ttkSEQhkzBO cA== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by userp2130.oracle.com with ESMTP id 2w41w17xu4-1
+ bh=R/fl3/e/tumWGOl5RHojvBvQAbaC+/s8svgyi4+7QQE=;
+ b=IkSZJ7LjDeXHhL69M8xJ1VI8qKK4fDWGntUFwllKOKdt0l5n6Wajn+3AKw5Y2+hItWGz
+ N654qokWH89wYyrDpZChgIo0EyZ1GuFkTNtbesNPJkhX+eUrsUSLMA9zqI5hMmt0S9dd
+ gHjkQatl9DumgaMrYc8WftedoFbTpIdq8Q7V1W2j3zBd+ZhKy6RdIZpftl6pPugPCZhD
+ 6ix1fgekERNzGAQAcWs2JVznCECtkW1iX/Vk/2EUz86KCn0icVpXsDni3gBAAdaC1mb1
+ mZi/Qrs4SQcz5ha/C/k7xTis7rTZkpt3ipllC9UhqYMKxOnG5hl2SP8Bwozilb4egu8z kg== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2130.oracle.com with ESMTP id 2w41w17xu5-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
  Thu, 07 Nov 2019 17:51:28 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA7HipI0011074;
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA7Hj2Ux083867;
  Thu, 7 Nov 2019 17:51:28 GMT
 Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by userp3020.oracle.com with ESMTP id 2w41whrn16-1
+ by aserp3020.oracle.com with ESMTP id 2w4k2w56h5-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
  Thu, 07 Nov 2019 17:51:27 +0000
 Received: from abhmp0018.oracle.com (abhmp0018.oracle.com [141.146.116.24])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id xA7HpImC007784;
- Thu, 7 Nov 2019 17:51:18 GMT
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id xA7HpKHp007794;
+ Thu, 7 Nov 2019 17:51:20 GMT
 Received: from neelam.us.oracle.com (/10.152.128.16)
  by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Thu, 07 Nov 2019 09:51:18 -0800
+ with ESMTP ; Thu, 07 Nov 2019 09:51:20 -0800
 From: Alex Kogan <alex.kogan@oracle.com>
 To: linux@armlinux.org.uk, peterz@infradead.org, mingo@redhat.com,
  will.deacon@arm.com, arnd@arndb.de, longman@redhat.com,
  linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, tglx@linutronix.de, bp@alien8.de,
  hpa@zytor.com, x86@kernel.org, guohanjun@huawei.com, jglauber@marvell.com
-Subject: [PATCH v6 1/5] locking/qspinlock: Rename mcs lock/unlock macros and
- make them more generic
-Date: Thu,  7 Nov 2019 12:46:18 -0500
-Message-Id: <20191107174622.61718-2-alex.kogan@oracle.com>
+Subject: [PATCH v6 2/5] locking/qspinlock: Refactor the qspinlock slow path
+Date: Thu,  7 Nov 2019 12:46:19 -0500
+Message-Id: <20191107174622.61718-3-alex.kogan@oracle.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <20191107174622.61718-1-alex.kogan@oracle.com>
 References: <20191107174622.61718-1-alex.kogan@oracle.com>
@@ -71,20 +70,20 @@ X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9434
  signatures=668685
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
  malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=735
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
  adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.0.1-1910280000 definitions=main-1911070165
 X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9434
  signatures=668685
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
  priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=818 adultscore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1910280000
  definitions=main-1911070165
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_095222_891042_1966E059 
-X-CRM114-Status: GOOD (  19.92  )
+X-CRM114-CacheID: sfid-20191107_095222_713699_71C9FC4D 
+X-CRM114-Status: GOOD (  16.79  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -122,154 +121,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The mcs unlock macro (arch_mcs_pass_lock) should accept the value to be
-stored into the lock argument as another argument. This allows using the
-same macro in cases where the value to be stored when passing the lock is
-different from 1.
+Move some of the code manipulating the spin lock into separate functions.
+This would allow easier integration of alternative ways to manipulate
+that lock.
 
 Signed-off-by: Alex Kogan <alex.kogan@oracle.com>
 Reviewed-by: Steve Sistare <steven.sistare@oracle.com>
 ---
- arch/arm/include/asm/mcs_spinlock.h |  6 +++---
- include/asm-generic/mcs_spinlock.h  |  4 ++--
- kernel/locking/mcs_spinlock.h       | 18 +++++++++---------
- kernel/locking/qspinlock.c          |  4 ++--
- kernel/locking/qspinlock_paravirt.h |  2 +-
- 5 files changed, 17 insertions(+), 17 deletions(-)
+ kernel/locking/qspinlock.c | 38 ++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 36 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/include/asm/mcs_spinlock.h b/arch/arm/include/asm/mcs_spinlock.h
-index 529d2cf4d06f..693fe6ce3c43 100644
---- a/arch/arm/include/asm/mcs_spinlock.h
-+++ b/arch/arm/include/asm/mcs_spinlock.h
-@@ -6,7 +6,7 @@
- #include <asm/spinlock.h>
- 
- /* MCS spin-locking. */
--#define arch_mcs_spin_lock_contended(lock)				\
-+#define arch_mcs_spin_lock(lock)				\
- do {									\
- 	/* Ensure prior stores are observed before we enter wfe. */	\
- 	smp_mb();							\
-@@ -14,9 +14,9 @@ do {									\
- 		wfe();							\
- } while (0)								\
- 
--#define arch_mcs_spin_unlock_contended(lock)				\
-+#define arch_mcs_pass_lock(lock, val)					\
- do {									\
--	smp_store_release(lock, 1);					\
-+	smp_store_release((lock), (val));				\
- 	dsb_sev();							\
- } while (0)
- 
-diff --git a/include/asm-generic/mcs_spinlock.h b/include/asm-generic/mcs_spinlock.h
-index 10cd4ffc6ba2..868da43dba7c 100644
---- a/include/asm-generic/mcs_spinlock.h
-+++ b/include/asm-generic/mcs_spinlock.h
-@@ -4,8 +4,8 @@
- /*
-  * Architectures can define their own:
-  *
-- *   arch_mcs_spin_lock_contended(l)
-- *   arch_mcs_spin_unlock_contended(l)
-+ *   arch_mcs_spin_lock(l)
-+ *   arch_mcs_pass_lock(l, val)
-  *
-  * See kernel/locking/mcs_spinlock.c.
-  */
-diff --git a/kernel/locking/mcs_spinlock.h b/kernel/locking/mcs_spinlock.h
-index 5e10153b4d3c..52d06ec6f525 100644
---- a/kernel/locking/mcs_spinlock.h
-+++ b/kernel/locking/mcs_spinlock.h
-@@ -21,7 +21,7 @@ struct mcs_spinlock {
- 	int count;  /* nesting count, see qspinlock.c */
- };
- 
--#ifndef arch_mcs_spin_lock_contended
-+#ifndef arch_mcs_spin_lock
- /*
-  * Using smp_cond_load_acquire() provides the acquire semantics
-  * required so that subsequent operations happen after the
-@@ -29,20 +29,20 @@ struct mcs_spinlock {
-  * ARM64 would like to do spin-waiting instead of purely
-  * spinning, and smp_cond_load_acquire() provides that behavior.
-  */
--#define arch_mcs_spin_lock_contended(l)					\
--do {									\
--	smp_cond_load_acquire(l, VAL);					\
-+#define arch_mcs_spin_lock(l)					\
-+do {								\
-+	smp_cond_load_acquire(l, VAL);				\
- } while (0)
- #endif
- 
--#ifndef arch_mcs_spin_unlock_contended
-+#ifndef arch_mcs_spin_unlock
- /*
-  * smp_store_release() provides a memory barrier to ensure all
-  * operations in the critical section has been completed before
-  * unlocking.
-  */
--#define arch_mcs_spin_unlock_contended(l)				\
--	smp_store_release((l), 1)
-+#define arch_mcs_pass_lock(l, val)				\
-+	smp_store_release((l), (val))
- #endif
- 
- /*
-@@ -91,7 +91,7 @@ void mcs_spin_lock(struct mcs_spinlock **lock, struct mcs_spinlock *node)
- 	WRITE_ONCE(prev->next, node);
- 
- 	/* Wait until the lock holder passes the lock down. */
--	arch_mcs_spin_lock_contended(&node->locked);
-+	arch_mcs_spin_lock(&node->locked);
- }
- 
- /*
-@@ -115,7 +115,7 @@ void mcs_spin_unlock(struct mcs_spinlock **lock, struct mcs_spinlock *node)
- 	}
- 
- 	/* Pass lock to next waiter. */
--	arch_mcs_spin_unlock_contended(&next->locked);
-+	arch_mcs_pass_lock(&next->locked, 1);
- }
- 
- #endif /* __LINUX_MCS_SPINLOCK_H */
 diff --git a/kernel/locking/qspinlock.c b/kernel/locking/qspinlock.c
-index 2473f10c6956..804c0fbd6328 100644
+index 804c0fbd6328..c06d1e8075d9 100644
 --- a/kernel/locking/qspinlock.c
 +++ b/kernel/locking/qspinlock.c
-@@ -470,7 +470,7 @@ void queued_spin_lock_slowpath(struct qspinlock *lock, u32 val)
- 		WRITE_ONCE(prev->next, node);
+@@ -288,6 +288,34 @@ static __always_inline u32  __pv_wait_head_or_lock(struct qspinlock *lock,
+ #define queued_spin_lock_slowpath	native_queued_spin_lock_slowpath
+ #endif
  
- 		pv_wait_node(node, prev);
--		arch_mcs_spin_lock_contended(&node->locked);
-+		arch_mcs_spin_lock(&node->locked);
++/*
++ * __try_clear_tail - try to clear tail by setting the lock value to
++ * _Q_LOCKED_VAL.
++ * @lock: Pointer to the queued spinlock structure
++ * @val: Current value of the lock
++ * @node: Pointer to the MCS node of the lock holder
++ */
++static __always_inline bool __try_clear_tail(struct qspinlock *lock,
++						   u32 val,
++						   struct mcs_spinlock *node)
++{
++	return atomic_try_cmpxchg_relaxed(&lock->val, &val, _Q_LOCKED_VAL);
++}
++
++/*
++ * __mcs_pass_lock - pass the MCS lock to the next waiter
++ * @node: Pointer to the MCS node of the lock holder
++ * @next: Pointer to the MCS node of the first waiter in the MCS queue
++ */
++static __always_inline void __mcs_pass_lock(struct mcs_spinlock *node,
++					    struct mcs_spinlock *next)
++{
++	arch_mcs_pass_lock(&next->locked, 1);
++}
++
++#define try_clear_tail	__try_clear_tail
++#define mcs_pass_lock		__mcs_pass_lock
++
+ #endif /* _GEN_PV_LOCK_SLOWPATH */
  
- 		/*
- 		 * While waiting for the MCS lock, the next pointer may have
-@@ -549,7 +549,7 @@ void queued_spin_lock_slowpath(struct qspinlock *lock, u32 val)
+ /**
+@@ -532,7 +560,7 @@ void queued_spin_lock_slowpath(struct qspinlock *lock, u32 val)
+ 	 *       PENDING will make the uncontended transition fail.
+ 	 */
+ 	if ((val & _Q_TAIL_MASK) == tail) {
+-		if (atomic_try_cmpxchg_relaxed(&lock->val, &val, _Q_LOCKED_VAL))
++		if (try_clear_tail(lock, val, node))
+ 			goto release; /* No contention */
+ 	}
+ 
+@@ -549,7 +577,7 @@ void queued_spin_lock_slowpath(struct qspinlock *lock, u32 val)
  	if (!next)
  		next = smp_cond_load_relaxed(&node->next, (VAL));
  
--	arch_mcs_spin_unlock_contended(&next->locked);
-+	arch_mcs_pass_lock(&next->locked, 1);
+-	arch_mcs_pass_lock(&next->locked, 1);
++	mcs_pass_lock(node, next);
  	pv_kick_node(lock, next);
  
  release:
-diff --git a/kernel/locking/qspinlock_paravirt.h b/kernel/locking/qspinlock_paravirt.h
-index e84d21aa0722..e98079414671 100644
---- a/kernel/locking/qspinlock_paravirt.h
-+++ b/kernel/locking/qspinlock_paravirt.h
-@@ -368,7 +368,7 @@ static void pv_kick_node(struct qspinlock *lock, struct mcs_spinlock *node)
- 	 *
- 	 * Matches with smp_store_mb() and cmpxchg() in pv_wait_node()
- 	 *
--	 * The write to next->locked in arch_mcs_spin_unlock_contended()
-+	 * The write to next->locked in arch_mcs_pass_lock()
- 	 * must be ordered before the read of pn->state in the cmpxchg()
- 	 * below for the code to work correctly. To guarantee full ordering
- 	 * irrespective of the success or failure of the cmpxchg(),
+@@ -574,6 +602,12 @@ EXPORT_SYMBOL(queued_spin_lock_slowpath);
+ #undef pv_kick_node
+ #undef pv_wait_head_or_lock
+ 
++#undef try_clear_tail
++#define try_clear_tail		__try_clear_tail
++
++#undef mcs_pass_lock
++#define mcs_pass_lock			__mcs_pass_lock
++
+ #undef  queued_spin_lock_slowpath
+ #define queued_spin_lock_slowpath	__pv_queued_spin_lock_slowpath
+ 
 -- 
 2.11.0 (Apple Git-81)
 
