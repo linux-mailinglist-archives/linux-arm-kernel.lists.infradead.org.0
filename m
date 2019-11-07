@@ -2,69 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51520F2DB2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 12:48:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA0BBF2DB8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 12:51:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z4UFTcwMXZVmRjTqbHb3zRYnWH7mSx1y6evO8BCuu7w=; b=CVFZMhSsuucXvk
-	jqB00k+CRAkAWC6tZeEiaF9A9RZ6lK0V3fAcaBroNGpsl5KM5SW1WWQ6MhwggBdpAJO1eXneFKRF9
-	+q44VXs39b97qP0jehwkkyS9dFKmoqBt4dXSp5SAdZ5Vd73rmadL/6ilADeHEsPEzcz/WFLJaONx1
-	N4HhrkAkAdTKHkLFn8+BuSQsXU0bSV/C/quAoKbztU/C0Q6s34QL80ThL08U8AHb6GWkhTndU+ZxS
-	sUUB06A9p7bZ692u6Pmg2Mad/cGY01CKKyucefro/yw2vylaQ1pkVDKqvKfVDMVoiKaQAxPnqd4mj
-	E4aTXm9coWa4IAGJ6xbQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=PQOzpgc8IYm+dV46Gb8S2vZcm62n31z1DkZC2u/cBTo=; b=Fk/p3sj8P8GTHVTLkYI8bXVSf
+	F0bAqTMhBnRcYYadIvGsxr5KNO/CzqGB2T/jHIfP5UBdYM5n0HlX7FAilqPF84jg/XH1xGP7ksW1j
+	E8CO+/byZvour9EtCDFqZmj27tCtmiutTFOeZqbiJuqVIJjbZtG3YzwqvKK4upjYcGbD5FlNyr5YA
+	jRCvQ2d5aUFeiKF6THrNce5Ok+senqO/EiktVeV546fw17+NyONbFiz/i7HOHanI5DwBJpNRt6p7X
+	82g80XM9cYHqI1YN+oPuhIO2ePfJy109AVrWRvi34hjuo/jFflnRC4oiaBAsns4HRk6tvHzpA6m00
+	HPY8LT2oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSgHJ-00064i-Q8; Thu, 07 Nov 2019 11:48:41 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iSgJU-0007cs-Dl; Thu, 07 Nov 2019 11:50:56 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSgH9-00064M-AQ
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 11:48:32 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0AAAA2166E;
- Thu,  7 Nov 2019 11:48:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573127311;
- bh=3imnQYV9vnOOyMoMuGz9bN2zW9noZspiY4wyiS3PcKw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=uK/fsmOxceO3wRwrmA+E/acdYdJ1hMVH9zmJLvufAWBxMgSmfkNFr2TIDlr+gLU6/
- NjQkMPDVVode2a55bOxIBlfOkz75/s56jRj0NF69Jt9b0hecEce2c3GKY6wNXHWNZv
- 8P+Qtby61KbPdkqLGR+H0N7d2tVdjHlhqGH7QhlU=
-Date: Thu, 7 Nov 2019 11:48:26 +0000
-From: Will Deacon <will@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>, steve.capper@arm.com
-Subject: Re: [PATCH] arm64: Do not mask out PTE_RDONLY in pte_same()
-Message-ID: <20191107114826.GC11587@willie-the-truck>
-References: <20191106154105.15176-1-catalin.marinas@arm.com>
+ id 1iSgJM-0007bC-9z
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 11:50:49 +0000
+Received: from lhreml706-cah.china.huawei.com (unknown [172.18.7.107])
+ by Forcepoint Email with ESMTP id 152E1C1D0D40B226AFED;
+ Thu,  7 Nov 2019 11:50:32 +0000 (GMT)
+Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
+ lhreml706-cah.china.huawei.com (10.201.108.47) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 7 Nov 2019 11:50:31 +0000
+Received: from [127.0.0.1] (10.202.226.46) by lhreml724-chm.china.huawei.com
+ (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5; Thu, 7 Nov 2019
+ 11:50:31 +0000
+Subject: Re: [PATCH] drivers/perf: hisi: update the sccl_id/ccl_id for certain
+ HiSilicon platform
+To: Will Deacon <will@kernel.org>, Shaokun Zhang <zhangshaokun@hisilicon.com>
+References: <1573113364-32531-1-git-send-email-zhangshaokun@hisilicon.com>
+ <20191107114041.GB11587@willie-the-truck>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <52f89b8c-0baf-77d0-4bbd-1e129f8e5ed2@huawei.com>
+Date: Thu, 7 Nov 2019 11:50:30 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191106154105.15176-1-catalin.marinas@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191107114041.GB11587@willie-the-truck>
+Content-Language: en-US
+X-Originating-IP: [10.202.226.46]
+X-ClientProxiedBy: lhreml703-chm.china.huawei.com (10.201.108.52) To
+ lhreml724-chm.china.huawei.com (10.201.108.75)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_034831_380156_EA8B2DC9 
-X-CRM114-Status: GOOD (  12.39  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191107_035048_493876_C1A4F7FE 
+X-CRM114-Status: GOOD (  16.51  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,47 +73,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: John Stultz <john.stultz@linaro.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Hanjun Guo <guohanjun@huawei.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 06, 2019 at 03:41:05PM +0000, Catalin Marinas wrote:
-> Following commit 73e86cb03cf2 ("arm64: Move PTE_RDONLY bit handling out
-> of set_pte_at()"), the PTE_RDONLY bit is no longer managed by
-> set_pte_at() but built into the PAGE_* attribute definitions.
-> Consequently, pte_same() must include this bit when checking two PTEs
-> for equality.
+On 07/11/2019 11:40, Will Deacon wrote:
+> Hi,
 > 
-> Remove the arm64-specific pte_same() function, practically reverting
-> commit 747a70e60b72 ("arm64: Fix copy-on-write referencing in HugeTLB")
+> On Thu, Nov 07, 2019 at 03:56:04PM +0800, Shaokun Zhang wrote:
+>> @@ -338,8 +339,10 @@ void hisi_uncore_pmu_disable(struct pmu *pmu)
+>>   
+>>   /*
+>>    * Read Super CPU cluster and CPU cluster ID from MPIDR_EL1.
+>> - * If multi-threading is supported, CCL_ID is the low 3-bits in MPIDR[Aff2]
+>> - * and SCCL_ID is the upper 5-bits of Aff2 field; if not, SCCL_ID
+>> + * If multi-threading is supported, On Huawei Kunpeng 920 SoC whose cpu
+>> + * core is tsv110, CCL_ID is the low 3-bits in MPIDR[Aff2] and SCCL_ID
+>> + * is the upper 5-bits of Aff2 field; while for other cpu types, SCCL_ID
+>> + * is in MPIDR[Aff3] and CCL_ID is in MPIDR[Aff2], if not, SCCL_ID
+>>    * is in MPIDR[Aff2] and CCL_ID is in MPIDR[Aff1].
+>>    */
+>>   static void hisi_read_sccl_and_ccl_id(int *sccl_id, int *ccl_id)
+>> @@ -347,12 +350,19 @@ static void hisi_read_sccl_and_ccl_id(int *sccl_id, int *ccl_id)
+>>   	u64 mpidr = read_cpuid_mpidr();
+>>   
+>>   	if (mpidr & MPIDR_MT_BITMASK) {
+>> -		int aff2 = MPIDR_AFFINITY_LEVEL(mpidr, 2);
+>> -
+>> -		if (sccl_id)
+>> -			*sccl_id = aff2 >> 3;
+>> -		if (ccl_id)
+>> -			*ccl_id = aff2 & 0x7;
+>> +		if (read_cpuid_part_number() == HISI_CPU_PART_TSV110) {
+>> +			int aff2 = MPIDR_AFFINITY_LEVEL(mpidr, 2);
+>> +
+>> +			if (sccl_id)
+>> +				*sccl_id = aff2 >> 3;
+>> +			if (ccl_id)
+>> +				*ccl_id = aff2 & 0x7;
+>> +		} else {
+>> +			if (sccl_id)
+>> +				*sccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 3);
+>> +			if (ccl_id)
+>> +				*ccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 2);
+>> +		}
 > 
-> Fixes: 73e86cb03cf2 ("arm64: Move PTE_RDONLY bit handling out of set_pte_at()")
-> Cc: <stable@vger.kernel.org> # 4.14.x-
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Steve Capper <steve.capper@arm.com>
-> Reported-by: John Stultz <john.stultz@linaro.org>
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> ---
-> 
-> Steve,
-> 
-> Could you please check that the original problem fixed by commit
-> 747a70e60b72 no longer exists after reverting it in 4.14 onwards?
+> [I prefer Mark's version, so please reply to indicate whether or not it
+>   works for you]
 
-In the meantime, I've pushed this out to for-next/fixes since the CI came
-back clean and it fixes John's issue (which I've confirmed locally too).
-Interestingly, I'm not at all sure the problem is related to the Mali
-driver. Some tracing suggests that the ART JIT thread is stuck on a write
-fault, which could be explained by a broken pte_same().
+Replying on Shaokun's behalf as he appears offline now.
 
-Steve -- if you could please run the libhugetlbfs test suite as described
-in 747a70e60b72 before tomorrow, that would be really great.
+In response to "> If TSV110 is always MT, ":
+
+It isn't. There are 2 spins of Huawei Kunpeng 920 SoC which includes 
+TaishanV110 aka TSV110: one has the MT bit set and the other without.
+
+We did ask for this not to be changed...
+
+> 
+> So I'll take this, but the lesson here seems to be that it's a terrible idea
+> to infer system topology from CPU ID registers. In future, I'm going to
+> insist that this comes from firmware tables because hacks like the above are
+> not sustainable.
+> 
+
+Hopefully it will not change again, but maybe we can use PPTT instead.
 
 Thanks,
+John
 
-Will
+> Will
+> .
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
