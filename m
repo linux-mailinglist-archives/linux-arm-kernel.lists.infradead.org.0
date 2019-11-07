@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0F75F2A8C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:26:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0EE3F2A92
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:26:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rFcqpE5e+PTcmeTeOslsUaSaJ+X3IGtcgVIUcjqSAmg=; b=LeiYL8YKcG2lHa
-	WydnZge+yP1r6oFPovk+qfY0OBMKm1YXD3hKQY2B5i9XFBtrHds2h0jogPf8SDDFdRTaKT7cMPn/f
-	rG8lcdLSXdRS9v67058zXyD6/6TODkF4fZgtKVeSHVDoAkjrWlQfgE90PusDfnE4V79L4zItHSBoc
-	DRlX7OxIWMYPpnyvr010zIS/Ec0DikT+3KlreasZKIdtl6tHyB67g6/n0EtRp3CDMYHFVjLIHJJda
-	Dts6Eyeu/Zhvufkdda6NxQFjb1MM1BD6WXRPZ2DpYglgQ8sFjH97nmyYvoyLlUXDs6GC6RbyE6Dnm
-	aTNSTUwubgPWqIcDZPoQ==;
+	List-Owner; bh=/3dpyEdFxBSoh6CO1Q+ZCzljoDmFHIIvLqhvsVQeC/E=; b=SwqNwEpSZmMeFk
+	elh7v11+iBjjjovg8YBB3JlIMMBO9om98Db3y2AqAQKkWz5s9oTsC7P0Irrz3q6cg9Has1mqIRJGp
+	5pBHb1khNvSs9xyKF4dmhPXPCoChabWpO/py+QW2/72dEHWBD6e3kA5fJt74InuFxi0vQymP9ot2I
+	vR+qoaqj5MeR6Cu0eNftB1aoNanDyU/bkNUMoIYXZQf7M4TdcUDNDhuHjYrXYML7BS/yY0l9nBQbe
+	6Bl9c0sNFU8GWqwGdM++eobWLR93NheKn1E8+T0MinTpCqUegBCTSRQny4bjK0TV24zPxHfhm7lDy
+	amGu7NF953b5Qul/hCIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSe3K-0006VZ-BP; Thu, 07 Nov 2019 09:26:06 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1iSe3l-0006ur-D7; Thu, 07 Nov 2019 09:26:33 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSe2y-0006KY-Li; Thu, 07 Nov 2019 09:25:45 +0000
-Received: by mail-ot1-x344.google.com with SMTP id 94so1407703oty.8;
- Thu, 07 Nov 2019 01:25:44 -0800 (PST)
+ id 1iSe3O-0006ju-EK
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 09:26:13 +0000
+Received: by mail-oi1-x244.google.com with SMTP id a14so1366123oid.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 07 Nov 2019 01:26:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=U8p26XYqH5TPqHeQad7U65Znhq7tW+I3xCdiHZkPSpw=;
- b=QHfIIwuD2yv6I76g8JQ2D3pTFBro5Jhl/JMGULBBB3QmkDldjRx8CNGkL31TzAll6b
- 7TH0ng15f4+P1S53c69OJTrUGN5DKrZNCO/hNdEiuGf8E9akHxAu1UUgCV33PMhyipjK
- wqqP7AVEBCrNUYL+rxd2BEmDqFEXCKjVD3QieWTN5PwpxJJZUvy8+7QX2n5PnVAmOjyZ
- qyjjtFO+GELGo1jcBkXENU3vVcVOTlGAouLwupNRtg7i6iaqw1YKIiN5eTjIHfwNWmj/
- DSVz7qYjs4qHromtabMMTi8NHJB4CG/9hJC/gI1kS8VbG5fznQRTrKhM+fCeU5R0f8RB
- FP/Q==
+ :cc; bh=svJecAxqhlBawitftrz5LXbFY8d5ATbDsx3obREbmBk=;
+ b=JaRiVyVnWoErWMwSLJsT3edCIFkLrM3bw9K+3t2YOtpGSIe5jPWeSfJJ3zV3UcGXyj
+ wwR2NS63eTI2jFJYHyvrY1LIrbvvYORCOjhiH8sOou1LG6PPH6s0hxYi668s+Ia/fGNp
+ mD+dKjP+i/vpXdma4xZtepheZ7yutdc9rzN+mceieTuhWlkhAMrPEFb/Jt3ett6SzSg9
+ ELmfrBZVVLKH9oU9mvJlKOogzz4Xf2ygwEAneNX6k9Q9/CL4uLnu6olfZ/Y8MyINIPDf
+ l05fDkGxYqctkz/xtGJFKge5gK+fg8G8ZLe5jNs9w3+fRrpZp6HQVuJW4G6WswW642hk
+ BRQw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=U8p26XYqH5TPqHeQad7U65Znhq7tW+I3xCdiHZkPSpw=;
- b=ujuQCOAGKHLoI5KNR4HVWmmLpyhu836DxlsWOcPO7QttDyfC0+rskFeyx59KsuJCKD
- 69Fjrv+pTJgdHc0FthL2wQdLWzlQE6JL4VGrYejz9NeEHAXlMcTUpEud/nNFlQYhUFT2
- zo3zNFsDPbo+xRBK3lOPDrnYFdLH8GPZXukobCdURFPOPekG75fcPE0xSBs5IkydXhWD
- qkw+/Xvs3EnGew8qjY0utWPV+4dJ7VDUOL1P4fLOJADhUzMcZi79PlOcf5n/OhwFsi2j
- uJycG/G9n8k+jghGc8bue8G63APYGWwRPBfZfW9Sh632xiK3YMZ74Gh0/xKidpoWgdwg
- rxAw==
-X-Gm-Message-State: APjAAAVVs56UxD6Xup54u7eow4HMOlQRdaYnEll487WPYYMJHzUqoWsb
- 9/IyC0UAXnKxWz0Dbt40mw9nD3R+qLP/azfaGvM=
-X-Google-Smtp-Source: APXvYqytqNiv5noMGnzCkM3rhghUIUChzKwN8or6v9tCbNWgAONdjfZGD/sKd5quAzzGMSJy96OxTz6jDoGYY1aFd9Q=
-X-Received: by 2002:a9d:1b0d:: with SMTP id l13mr171271otl.84.1573118743606;
- Thu, 07 Nov 2019 01:25:43 -0800 (PST)
+ bh=svJecAxqhlBawitftrz5LXbFY8d5ATbDsx3obREbmBk=;
+ b=OkIndQl32ADQzrlTc6RQCUyW+9LyMcIxsmXeX1pEueL5OgOH2ilEPxpz8zhDdI5KKc
+ 9BgrgEpnM2JVBhJR3uqLLoO9e/4ZJTmlE1ubJlaoUw6Uh45dRW4vnr+zgMHuycJEzSM9
+ HtOpJHKWO4Xq2WqfkHyTmsHVD4RWgiles80aGmYeWdD1vANvz0tBSbhD0JDR+l4kNH9F
+ lF6XKV6KcOMmJMb6hsyAbyS69G+XUtoJGGR63C39LPtNLeFSvYFGM1oANR+s/iEens3H
+ ZZbKuiJjP4RKXwhGx6r1KNmHDxel0yZzPGOwcuUr86w9GZrT0I0HetKPc3gcH5Y8ZzPI
+ 33Dw==
+X-Gm-Message-State: APjAAAWQEyEoCh4BPv0pnKVuGLKYljJ+/WwGk+5rnro7NkfnbHK1tKxb
+ QOBi6j02Nx32YI5PwQKgBsb7o/gkqXzs2mx7r1U=
+X-Google-Smtp-Source: APXvYqzl/mjJb58YCZv+1rPoz9YmBODStqICfxXp/t7vlm94pbfdzMz/foObeQbkPEnjt5Qa5497EWxx2Gk87u9uMzM=
+X-Received: by 2002:aca:5cc6:: with SMTP id q189mr2405318oib.101.1573118768684; 
+ Thu, 07 Nov 2019 01:26:08 -0800 (PST)
 MIME-Version: 1.0
-References: <20191106140748.13100-1-gch981213@gmail.com>
- <20191106140748.13100-3-gch981213@gmail.com>
- <20191107010928.GA14186@bogus>
-In-Reply-To: <20191107010928.GA14186@bogus>
-From: Chuanhong Guo <gch981213@gmail.com>
-Date: Thu, 7 Nov 2019 17:25:32 +0800
-Message-ID: <CAJsYDV+M4kH5aCcJxxLB7UMhT7VsRXJW+RYcykHMTZW+1ftC9w@mail.gmail.com>
-Subject: Re: [PATCH 2/2] dt-bindings: mtd: mtk-quadspi: update bindings for
- mmap flash read
-To: Rob Herring <robh@kernel.org>
+References: <20191106193609.19645-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20191106193609.19645-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CAMuHMdVZwgVnq2kwjNJQHfvUH0sk6M7Hz-AJR82jMOsCNfW9wQ@mail.gmail.com>
+In-Reply-To: <CAMuHMdVZwgVnq2kwjNJQHfvUH0sk6M7Hz-AJR82jMOsCNfW9wQ@mail.gmail.com>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Thu, 7 Nov 2019 09:25:42 +0000
+Message-ID: <CA+V-a8swtOUaxKnCdiTV5wvvxLEJ6XdODL=7bvQmFKY0zQTj2w@mail.gmail.com>
+Subject: Re: [PATCH 3/5] PCI: rcar: Add R-Car PCIe endpoint device tree
+ bindings
+To: Geert Uytterhoeven <geert@linux-m68k.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_012544_710044_DF70A8B0 
-X-CRM114-Status: GOOD (  16.39  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191107_012610_496253_C781E7B4 
+X-CRM114-Status: GOOD (  27.62  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (gch981213[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (gch981213[at]gmail.com)
+ provider (prabhakar.csengg[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -97,52 +97,149 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
  "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <tudor.ambarus@microchip.com>,
- Richard Weinberger <richard@nod.at>, open list <linux-kernel@vger.kernel.org>,
- linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Brian Norris <computersforpeace@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
+ <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, "Lad,
+ Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Arnd Bergmann <arnd@arndb.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-pci <linux-pci@vger.kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Magnus Damm <magnus.damm@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi!
+Hi Geert,
 
-On Thu, Nov 7, 2019 at 9:09 AM Rob Herring <robh@kernel.org> wrote:
+Thank you for the review.
+
+On Thu, Nov 7, 2019 at 8:44 AM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
 >
-> On Wed, Nov 06, 2019 at 10:07:48PM +0800, Chuanhong Guo wrote:
-> > update register descriptions and add an example binding using it.
-> >
-> > Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
-> > ---
-> >  .../devicetree/bindings/mtd/mtk-quadspi.txt   | 21 ++++++++++++++++++-
-> >  1 file changed, 20 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt b/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
-> > index a12e3b5c495d..4860f6e96f5a 100644
-> > --- a/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
-> > +++ b/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
-> > @@ -12,7 +12,10 @@ Required properties:
-> >                 "mediatek,mt7623-nor", "mediatek,mt8173-nor"
-> >                 "mediatek,mt7629-nor", "mediatek,mt8173-nor"
-> >                 "mediatek,mt8173-nor"
-> > -- reg:                 physical base address and length of the controller's register
-> > +- reg:                 Contains one or two entries, each of which is a tuple consisting of a
-> > +               physical address and length. The first entry is the address and length
-> > +               of the controller register set. The optional second entry is the address
-> > +               and length of the area where the nor flash is mapped to.
+> Hi Prabhakar,
 >
-> All the compatibles support 2 entries? If not, which ones?
+> On Wed, Nov 6, 2019 at 8:36 PM Lad Prabhakar <prabhakar.csengg@gmail.com> wrote:
+> > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> >
+> > This patch adds the bindings for the R-Car PCIe endpoint driver.
+> >
+> > Signed-off-by: Lad, Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+>
+> Thanks for your patch!
+>
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
+> > @@ -0,0 +1,43 @@
+> > +* Renesas R-Car PCIe Endpoint Controller DT description
+> > +
+> > +Required properties:
+> > +           "renesas,pcie-ep-r8a774c0" for the R8A774C0 SoC;
+> > +           "renesas,pcie-ep-rcar-gen3" for a generic R-Car Gen3 or
+> > +                                    RZ/G2 compatible device.
+>
+> Unless I'm missing something, this is for the exact same hardware block as
+> Documentation/devicetree/bindings/pci/rcar-pci.txt?
+> So shouldn't you amend those bindings, instead of adding new compatible
+> values?
+> Please remember that DT describes hardware, not software policy.
+> So IMHO choosing between host and endpoint is purely a configuration
+> issue, and could be indicated by the presence or lack of some DT properties.
+> E.g. host mode requires both "bus-range" and "device_type" properties,
+> so their absence could indicate endpoint mode.
+>
+yes its the same hardware block as described in the rcar-pci.txt, I
+did think about amending it
+but  it might turn out to be bit messy,
 
-It should be. I implemented it as an optional feature only because I
-don't know the mapped address space for all these chips and can't
-update every device trees.
+required properties host ======required properties Endpoint
+====================||==================
+1: reg                                || reg
+2:bus-range                      || reg names
+3: device_type                  || resets
+4: ranges                          || clocks
+5: dma-ranges                  || clock-names
+6: interrupts                      ||
+7: interrupt-cells               ||
+8: interrupt-map-mask     ||
+9: clocks                          ||
+10: clock-names             ||
 
-Regards,
-Chuanhong Guo
+and if I go ahead with the same compatible string that would mean to
+add support for endpoint
+mode in the host driver itself. I did follow the examples of
+rockchip/cadence/designware where
+its the same hardware block but has two different binding files one
+for host mode and other for
+endpoint mode.
+
+> > +- reg: Five register ranges as listed in the reg-names property
+> > +- reg-names: Must include the following names
+> > +       - "apb-base"
+> > +       - "memory0"
+> > +       - "memory1"
+> > +       - "memory2"
+> > +       - "memory3"
+>
+> What is the purpose of the last 4 regions?
+> Can they be chosen by the driver, at runtime?
+>
+no the driver cannot choose them at runtime, as these are the only
+PCIE memory(0/1/2/3) ranges
+in the AXI address space where host memory can be mapped.
+
+> > +- resets: Must contain phandles to PCIe-related reset lines exposed by IP block
+> > +- clocks: from common clock binding: clock specifiers for the PCIe controller
+> > +        clock.
+> > +- clock-names: from common clock binding: should be "pcie".
+> > +
+> > +Optional Property:
+> > +- max-functions: Maximum number of functions that can be configured (default 1).
+> > +
+> > +Example:
+> > +
+> > +SoC-specific DT Entry:
+> > +
+> > +       pcie_ep: pcie_ep@fe000000 {
+> > +               compatible = "renesas,pcie-r8a7791", "renesas,pcie-rcar-gen2";
+>
+> These compatible values do not match with the ones above
+> (but they match with what I'd like to see ;-)
+>
+my bad I'll update them to reflect the above.
+
+Cheers,
+--Prabhakar
+
+> > +               reg = <0 0xfe000000 0 0x80000>,
+> > +                       <0x0 0xfe100000 0 0x100000>,
+> > +                       <0x0 0xfe200000 0 0x200000>,
+> > +                       <0x0 0x30000000 0 0x8000000>,
+> > +                       <0x0 0x38000000 0 0x8000000>;
+> > +               reg-names = "apb-base", "memory0", "memory1", "memory2", "memory3";
+> > +               clocks = <&cpg CPG_MOD 319>;
+> > +               clock-names = "pcie";
+> > +               power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
+> > +               resets = <&cpg 319>;
+> > +       };
+>
+> Gr{oetje,eeting}s,
+>
+>                         Geert
+>
+> --
+> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+>
+> In personal conversations with technical people, I call myself a hacker. But
+> when I'm talking to journalists I just say "programmer" or something like that.
+>                                 -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
