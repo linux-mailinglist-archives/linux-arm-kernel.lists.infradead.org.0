@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0266CF2C41
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 11:31:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 843A2F2C93
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 11:34:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vItRxBbooyJnIweGHq2inKjVvgluanIdx6RC5pVdJ48=; b=gvn01f5nIq9kil
-	t5I1hdHK9cd+wg9iRyZezpFNUGZAXpURDeNtHDXFwrEWof5SIWvZb4WZdvlCatvp0bhVfRy4fOB8o
-	StdM97hiRQWoqiAVqTgNhFMF0Nl1JnXy9EZ6H5/12laXws3Sw0vEGwfw2tcd6c+WsbCNPbhMl7frZ
-	yWHjcYkrWhy0y9m3ayo1VO+4LM+mq1bSMvWna1NIuKhrVdMfHho5kjgowluXDx7tI1MwAfCJ7VhFs
-	7ShIWyJGaQfczcWn7lMUVfzrfNmaEzrmifcmP0cllTY+X8J6s/ifkRv/OYOlKtLPJXGPAmF/EWor1
-	r+Uipy81ANwkJyzFFMBA==;
+	List-Owner; bh=aeEbr36sfWgZwUi29EWYLAPvCUbaFfT+S/A6/VtVpCc=; b=JSpAuuDl6Iy5fv
+	eCGLouvQdEzp4QOM3y9YclKgfFrvPkWEvmCtcCHpy4JYS+WEApo/hxZ1ZzF/dg3eHmd1BqhGsCUiK
+	KHP1Gf1Ocb8DGQPLZnJUvRoQYRkmouolOTxDarC8C8Dzp3vjIiFXf3xZwrIgTzebUVNlCGIDl+C1C
+	ireDPGui3cvdTPCabhk7HL2Fg2tzvte+EzH5pJHQdx052ypRdLFxv+ayxUV0tqICmDHERx6elXA7c
+	7Xjolbm5HaP5hSIv2+EIj25XIC7KrZq8+iMirU3oBobORxhcwE/jk8tTwAZuJVFl3tpAVRTSlxUXp
+	PhQcuMJhaAEbHuO2gGMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSf4t-00048X-MY; Thu, 07 Nov 2019 10:31:47 +0000
-Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::8])
+	id 1iSf7m-0007Fn-55; Thu, 07 Nov 2019 10:34:46 +0000
+Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSf4L-0003uG-N5
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 10:31:15 +0000
+ id 1iSf4Q-0003uD-Eo
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 10:31:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1573122671;
  s=strato-dkim-0002; d=goldelico.com;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=JUFEWkDIRP0azyEcP43GRVaRk4iFbYhlL/y4F2cv+sQ=;
- b=RJsgRhl49WRLiJ5vka5x+Y5WPMS0EJZAIQtbQSx4pMWiI56rTwi3MKzxlnBcavKTJ4
- TG0WGMh5TFwJu5zayi3AbIu/lMenNHXfSdyhH2XyrYR5TKn9yEq7kN1uP2cCTqSKRHj1
- Uf198Rt5rysMRkeUkZXyb0m3lrWJQQZcyqOhXO4m1vPFJnZ2yY8u1+ADPpnFiDQUmlYu
- NMZTozOtsv2DbNIIsD/xVYFdOU/hovJC8BWPymDhpolwgx0/iAWrKpIFze4Bwz6dfgOn
- 8whFxv3i8VDc+FN+rG60RvCLdWvTVa1C+G541Cvxrga8475qKsQ8qjdH+ucCOmZMGOxw
- Sucg==
+ bh=k/zXWRFysUONFZ8EurLJhf/GewzB0f/HPeuH2i53BF8=;
+ b=XJCLvnD4wwfLWBHR7rSBlcIij8ghM7cB53PUugesrVKZfKvUYWmDpyMB8y0o+OF7lp
+ zFve7U4wVL37kYC0geO74U2XD5E+KohXWdlc8Lo1ji7LHbwYP/GB6AxrqdsGRdt8FOQV
+ I/QriYSW7WYMKKzsTRg8UTfjpQQ3CIF+hLLWeil9Sui+5gynUiWG3s0gSHNXcEYovk6q
+ jAC0FIa52YAFQcPKrDxLoypExbX0ZRxZJSIB/JQ04wzpsZ2lLSbkjS+ZPf287AWTFUpe
+ Qkc2/lvUPzAirO8DAOjkzi2vmlz1RHJQqBCrv8DDcHrL0WUetG+raQPf1SiW959FJFU9
+ WFWQ==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1OAA2UNf2M7PR5/L9P0"
 X-RZG-CLASS-ID: mo00
 Received: from iMac.fritz.box by smtp.strato.de (RZmta 44.29.0 DYNA|AUTH)
- with ESMTPSA id L09db3vA7AUudS4
+ with ESMTPSA id L09db3vA7AUvdS5
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
  521 ECDH bits, eq. 15360 bits RSA))
  (Client did not present a certificate);
- Thu, 7 Nov 2019 11:30:56 +0100 (CET)
+ Thu, 7 Nov 2019 11:30:57 +0100 (CET)
 From: "H. Nikolaus Schaller" <hns@goldelico.com>
 To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
  Tony Lindgren <tony@atomide.com>, Rob Herring <robh+dt@kernel.org>,
@@ -58,24 +58,24 @@ To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
  Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  John Stultz <john.stultz@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>
-Subject: [PATCH v3 11/12] net: wireless: ti: wl1251 use new
- SDIO_VENDOR_ID_TI_WL1251 definition
-Date: Thu,  7 Nov 2019 11:30:44 +0100
-Message-Id: <c5cbf6b891fade1afe3b70eb33823d7170233302.1573122644.git.hns@goldelico.com>
+Subject: [PATCH v3 12/12] net: wireless: ti: remove local VENDOR_ID and
+ DEVICE_ID definitions
+Date: Thu,  7 Nov 2019 11:30:45 +0100
+Message-Id: <3f2a982b3be2c90e5e0af5869df8580793b39882.1573122644.git.hns@goldelico.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <cover.1573122644.git.hns@goldelico.com>
 References: <cover.1573122644.git.hns@goldelico.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_023114_282995_83022C52 
-X-CRM114-Status: GOOD (  14.05  )
+X-CRM114-CacheID: sfid-20191107_023118_750046_CC5FE3D3 
+X-CRM114-Status: GOOD (  10.78  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5304:0:0:8 listed in]
+ low trust [2a01:238:20a:202:5304:0:0:9 listed in]
  [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -107,8 +107,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SDIO_VENDOR_ID_TI_WL1251 is now defined in mmc/sdio_ids.h separately
-from SDIO_VENDOR_ID_TI for wl1271.
+They are already included from mmc/sdio_ids.h and do not need
+a local definition.
 
 Fixes: 884f38607897 ("mmc: core: move some sdio IDs out of quirks file")
 
@@ -116,22 +116,48 @@ Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 Acked-by: Kalle Valo <kvalo@codeaurora.org>
 Cc: <stable@vger.kernel.org> # 4.11.0
 ---
- drivers/net/wireless/ti/wl1251/sdio.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/wireless/ti/wl1251/sdio.c | 8 --------
+ drivers/net/wireless/ti/wlcore/sdio.c | 8 --------
+ 2 files changed, 16 deletions(-)
 
 diff --git a/drivers/net/wireless/ti/wl1251/sdio.c b/drivers/net/wireless/ti/wl1251/sdio.c
-index c54a273713ed..42b55f3a50df 100644
+index 42b55f3a50df..3c4d5e38c66c 100644
 --- a/drivers/net/wireless/ti/wl1251/sdio.c
 +++ b/drivers/net/wireless/ti/wl1251/sdio.c
-@@ -52,7 +52,7 @@ static void wl1251_sdio_interrupt(struct sdio_func *func)
- }
+@@ -22,14 +22,6 @@
  
- static const struct sdio_device_id wl1251_devices[] = {
--	{ SDIO_DEVICE(SDIO_VENDOR_ID_TI, SDIO_DEVICE_ID_TI_WL1251) },
-+	{ SDIO_DEVICE(SDIO_VENDOR_ID_TI_WL1251, SDIO_DEVICE_ID_TI_WL1251) },
- 	{}
- };
- MODULE_DEVICE_TABLE(sdio, wl1251_devices);
+ #include "wl1251.h"
+ 
+-#ifndef SDIO_VENDOR_ID_TI
+-#define SDIO_VENDOR_ID_TI		0x104c
+-#endif
+-
+-#ifndef SDIO_DEVICE_ID_TI_WL1251
+-#define SDIO_DEVICE_ID_TI_WL1251	0x9066
+-#endif
+-
+ struct wl1251_sdio {
+ 	struct sdio_func *func;
+ 	u32 elp_val;
+diff --git a/drivers/net/wireless/ti/wlcore/sdio.c b/drivers/net/wireless/ti/wlcore/sdio.c
+index 7afaf35f2453..9fd8cf2d270c 100644
+--- a/drivers/net/wireless/ti/wlcore/sdio.c
++++ b/drivers/net/wireless/ti/wlcore/sdio.c
+@@ -26,14 +26,6 @@
+ #include "wl12xx_80211.h"
+ #include "io.h"
+ 
+-#ifndef SDIO_VENDOR_ID_TI
+-#define SDIO_VENDOR_ID_TI		0x0097
+-#endif
+-
+-#ifndef SDIO_DEVICE_ID_TI_WL1271
+-#define SDIO_DEVICE_ID_TI_WL1271	0x4076
+-#endif
+-
+ static bool dump = false;
+ 
+ struct wl12xx_sdio_glue {
 -- 
 2.23.0
 
