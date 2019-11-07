@@ -2,59 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55940F2888
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 08:56:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 808AEF288A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 08:56:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UQKtCsPu28EJ2qv3KCgewXDlXEYmbKDdbsS5qTpRcBQ=; b=ZD+Vhjyc7c21Zo
-	eCTzLvQDD1rm96HTirMz1UvG0BL3yTPVa0wS1CNNaHlffNnVvU0bvi2SkYZXMGYj/IR1dH2bNdbUB
-	HhuswOe5/Lp/x3rGsUcHSIln5ymkC5eWSNtqE6V1/D/wv+/Gs5Pslx0rp0+nMLyN5d+6mb3VGlG/V
-	l4MzGPDvyN8ZcPhqyCTOqvFHAYNuhCJPJuOkChVGn+bGrpKFNW/MsColLe2LOiV+qVKQ0HwIDBDfV
-	SoZDGNv7+Z616hMKox51Y36ZJDM2/Gt3DKNQ8uGsYJFZMWd+r/pJAqzvEuq1jbJHuiEmxPTsuBeqU
-	/pqF00WhyjcCqYkDA27w==;
+	List-Owner; bh=RaI5ZWpjPhGvjl1uashfX3veGL3sKInYGjvkibuw33s=; b=tTRfW62wMxRQnV
+	RMg0SITO1BEotMWFK8CO/TdDmZ2tatMXrj53Ae3zEXfW0XbujKakTQiZklgMi7uKUg9tujjQ4OFeh
+	njq0KI3Sr2TYPifGfBNntDB0oA355zjJiwzIdWhnyWP9ws0vcvTkmfq9hepipPRDnvGh2yXuB/8XH
+	uIfVhwnhE01vSMnaC0ozPmdZ7dFNZY/ROVDfzl4qHPPX1KhCZvOeCE8z0eaDlfsBvspYZJn5wxCzD
+	HC+hfGbhS10hyqz/Bdi0H3DKO40AuMz11AgNib9JykZpQr9Fex+veYKyhD0pOvbTfCPb3Bui2s4rX
+	nxbkiEwOwXb7hvtxz4Ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSceU-000652-9m; Thu, 07 Nov 2019 07:56:22 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1iScej-0006Kw-Mm; Thu, 07 Nov 2019 07:56:37 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSceG-0005vd-QE
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 07:56:10 +0000
-Received: from p5b06da22.dip0.t-ipconnect.de ([91.6.218.34] helo=nanos)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
- (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1iSce3-0000dt-Uf; Thu, 07 Nov 2019 08:55:56 +0100
-Date: Thu, 7 Nov 2019 08:55:54 +0100 (CET)
-From: Thomas Gleixner <tglx@linutronix.de>
-To: Jianyong Wu <jianyong.wu@arm.com>
-Subject: Re: [RFC PATCH v6 4/7] time: Add mechanism to recognize clocksource
- in time_get_snapshot
-In-Reply-To: <20191024110209.21328-5-jianyong.wu@arm.com>
-Message-ID: <alpine.DEB.2.21.1911070852551.1869@nanos.tec.linutronix.de>
-References: <20191024110209.21328-1-jianyong.wu@arm.com>
- <20191024110209.21328-5-jianyong.wu@arm.com>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+ id 1iSceP-00069b-1D
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 07:56:18 +0000
+Received: by mail-lf1-x141.google.com with SMTP id j14so828367lfb.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 Nov 2019 23:56:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7mVzEAC3PYZ6lpwiL+xf/9aZ7Qv1sjEzD+JY+8MBtWg=;
+ b=o/vg6xLElk2f7BrBS3YYNQnsdnM6poifIjeLagf3IT4HY0bFneDxgynYdByIcS7dHo
+ EzLmS6pL/TyvIYJdQEOzBEsnwOAM7Njv1CFAh7AuC54CbmAw47HZJmHVO7et+nczCN+W
+ 7+8o/Voh8wDjNUOFjhCx4CMK4KOz+BHiUSJCtkBLzC40fA5Qb0zg2BvUW7Hm+07pAMXB
+ 0lLuQBKWtKJ5TGKj2EMx7k5O722aqWp0xbmm+Bc3j5P+DXUw2Q0hnvWWj88ZONlxPSjo
+ npqEAZU/xnP17zcGp5HbfLkqVBsC7eilbm/0NAMCMG057MaAubYC5365OtbgJSB2ih+c
+ McEw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7mVzEAC3PYZ6lpwiL+xf/9aZ7Qv1sjEzD+JY+8MBtWg=;
+ b=RbTvJooeyhzyTZVGrX+qA//Z4bVPEz/jt478nrM0BVdQAlLDfwr9W3NR6zPQksjE0M
+ oWcuKhcQbMid1ERj1xhiPSADkOF8BkSFx9hUxBrb0Wni+3bZjdX7/GHgtikUqoPtjmZd
+ 7GemoRRNZLqTq241XLF1LBpo1PNLb+T1wOjsNY5A3J04B+LQeIs2pd2OBXSaVVOtXj0S
+ eHRkPCGA8Jtv/ybV3Yq9gAC1gZMuRzHqtYnecDWs9xUx/T5s37bkHKyyMRzOswRz5doC
+ Mqx5y7/MBLdqdOc3pMSuJMuNU6NZDlvQgWJFrtLZ7GoZHdCSW7iLVgazktBsYSV41b4Q
+ 04Zw==
+X-Gm-Message-State: APjAAAVg2E2fzoBOBShX6QrIicSAgCU7Mt6YVRw2MO4vexw0a7QD1tah
+ 1Z9vWmEp2d91dQhaFJuyFDfjsJt8Gj/tI4zovjfHIw==
+X-Google-Smtp-Source: APXvYqz/ohb7JsLP5oPlc3mF5OTWP6CRzEQS9/wJ3HgdeOitF87zrMa4v8J9ow3u2rGgz4TVrAbl+ne6JhgEadI2dHA=
+X-Received: by 2002:ac2:51dd:: with SMTP id u29mr1354160lfm.135.1573113373506; 
+ Wed, 06 Nov 2019 23:56:13 -0800 (PST)
 MIME-Version: 1.0
-X-Linutronix-Spam-Score: -1.0
-X-Linutronix-Spam-Level: -
-X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
- SHORTCIRCUIT=-0.0001
+References: <20191105124915.34100-1-broonie@kernel.org>
+In-Reply-To: <20191105124915.34100-1-broonie@kernel.org>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 7 Nov 2019 08:56:02 +0100
+Message-ID: <CACRpkdYps-xADSrObMyF4bMK8vm0bbE+d_o2V9W4iTFBTYBmTg@mail.gmail.com>
+Subject: Re: [PATCH] gpio: xgs-iproc: Fix section mismatch on device tree
+ match table
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_235609_015327_3D883860 
-X-CRM114-Status: GOOD (  12.82  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191106_235617_270623_1398CC37 
+X-CRM114-Status: GOOD (  10.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,49 +91,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark.Rutland@arm.com, justin.he@arm.com, kvm@vger.kernel.org,
- suzuki.poulose@arm.com, maz@kernel.org, richardcochran@gmail.com,
- yangbo.lu@nxp.com, linux-kernel@vger.kernel.org,
- sean.j.christopherson@intel.com, Kaly.Xin@arm.com, john.stultz@linaro.org,
- netdev@vger.kernel.org, pbonzini@redhat.com, nd@arm.com, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- Steve.Capper@arm.com
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Chris Packham <chris.packham@alliedtelesis.co.nz>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 24 Oct 2019, Jianyong Wu wrote:
-> From: Thomas Gleixner <tglx@linutronix.de>
+On Tue, Nov 5, 2019 at 1:49 PM Mark Brown <broonie@kernel.org> wrote:
+
+> The table of devicetree identifiers is annotated as __initconst
+> indicating that it can be discarded after kernel boot but it is
+> referenced from the driver struct which has no init annotation leading
+> to a linker warning:
 >
-> In some scenario like return device time to ptp_kvm guest,
-> we need identify the current clocksource outside core time code.
+> WARNING: vmlinux.o(.data+0x82d58): Section mismatch in reference from the variable bcm_iproc_gpio_driver to the variable .init.rodata:bcm_iproc_gpio_of_match
+> The variable bcm_iproc_gpio_driver references
+> the variable __initconst bcm_iproc_gpio_of_match
 >
-> This patch add a mechanism to recognize the current clocksource
-> by export clocksource id in time_get_snapshot.
+> Since drivers can be probed after init the lack of annotation on the
+> driver struct is correct so remove the annotation from the match table.
+>
+> Signed-off-by: Mark Brown <broonie@kernel.org>
 
-Please check Documentation/process/submitting-patches.rst and search for
-'This patch'.
+Oh thanks a LOT Mark!
 
-> diff --git a/include/linux/clocksource.h b/include/linux/clocksource.h
-> index b21db536fd52..ac8016b22734 100644
-> --- a/include/linux/clocksource.h
-> +++ b/include/linux/clocksource.h
-> @@ -19,6 +19,7 @@
->  #include <linux/of.h>
->  #include <asm/div64.h>
->  #include <asm/io.h>
-> +#include <linux/clocksource_ids.h>
+Hurriedly applied this with the ACKs and pushed out so
+linux-next starts working.
 
-Please place that include to the other linux includes. You might notice
-that there is ordering here.
+Quite interesting bug, I guess I'll comment on it in the other
+thread.
 
-But where is that include? It's not part of that series, so how is this
-supposed to compile?
-
-Thanks,
-
-	tglx
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
