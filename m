@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09AD2F2A59
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:14:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A25DF2A6A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:20:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	MIME-Version:Date:Message-ID:Subject:From:To:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=vZspSD532X4kl7UHJCGr1BzeCb6k+086g16dzi8bmj0=; b=rea
-	PwuNVDGgU55Pm+r0TSbL0uqXvl9f9cLGl8eitfX6rEk33MT7O0qaOeT2YdfS9Xc4nUfN19de9ih+b
-	C0wDeFH8w7HNCZNoYZShiSe3zL09ZuhUMycGEL16w5gc2VGtS9GEtVIwBdn5qumRB+stFpvy5B9T0
-	m7gNYkRguy3sp6GYFV+lgrTnXtZqYnpLregIhf3z2s5vOi/0P2adyHXUol/iRyEDe8hME6ywSswNo
-	dn49xWnz3bGR7IuO7QaLzkqJVslgQjUs90niDUrKSNQBx3XP4rR7JgQQj9nVJwraajFHKMlOBVj9n
-	Trgl6G8Y8OW9df8R5O+tFVwA0AnFs5Q==;
+	References:List-Owner; bh=ESeNAhxydxVfUAMs6XXi9PDQGduAvhtElTjIp5Ofzxc=; b=OZz
+	iDMnzXQDf48KhG/TCJaPb+Rz6X/D2h9WXFQ/nONqv6r1QxMDknfHmKt1hlMy/AR/jEJjb1kIyGQKM
+	YQUd+tT69X77lUMAyVJAUHa03zEzrLuf28yvPNLBCymsYPsd8BXaWqfOlrJRP16qxa6XcgShIxIr6
+	CoxAQcE6foOVwkwYDEfQkwrqJGeaCitRZ1TE1JA3awxcVUAy0UYSUVtbTa65LxaBSTXGw0kxOleGS
+	GpWR4mydaZ7mjWgHsC18oyIonjDE1HHgKdtWUC5fzW8/l3DIJgdQ5gwOVP3A4E6LzJJ+1XfgYWHPa
+	W380cR+hgLHDHlP4Rtd8aQ/3sB2aC3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSds5-0000Fk-FL; Thu, 07 Nov 2019 09:14:29 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iSdxN-0002N2-N7; Thu, 07 Nov 2019 09:19:57 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSdrv-0000Bc-EU
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 09:14:21 +0000
-Received: by mail-wm1-x343.google.com with SMTP id c17so1607552wmk.2
+ id 1iSdxG-0002M5-86
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 09:19:51 +0000
+Received: by mail-wm1-x331.google.com with SMTP id c17so1627712wmk.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 01:14:18 -0800 (PST)
+ Thu, 07 Nov 2019 01:19:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=monstr-eu.20150623.gappssmtp.com; s=20150623;
  h=to:cc:from:subject:openpgp:autocrypt:message-id:date:user-agent
- :mime-version; bh=Swbu71q0tCxl34b9CG63+jP6IpA7ku4P5rfHqVWH7/U=;
- b=EUfOgQuqZ7bv1/sTtzWFcp0l++7EhVMEeRwLmWkWCNX7HXek8Vj+QWnggYb5SAy2vU
- He9MQ9DkOcN8rEdkSRa7xtUQggqpR4GbK14tUWiZHE6XPmWelyzTKPPI/OmsOAoX5MDy
- T1Fr1bgLCdPI7c3w51PtZkU7ImIWLsfLep3n9XsFbPxya/ms913KDvsA5Qwcw3LqOQjY
- 6wukVapbQ34FqW6HDJa8GG6fkAJUpIzMNqiRzZUeJq4H1WeW57DiljN10WNm83heah47
- kzzZL918Nl++pwHVLd1HUiM9rpqrGsZsvmLNb21osOqPETVjNYsLad3xyd4JVfW9tzjb
- TVxA==
+ :mime-version; bh=Pv2BhqsJ6oy/DiBCgEyx5ZhZeylM3yEhJ9zUcmT6Hhk=;
+ b=h/G6RXMJFRYVzxEBhUkFODZT5eW+5yj6GSSfjw2jufoXhZMSXjKi4rrib3KnKb32zM
+ A3DnO5Y5XovMei1mLSFF4OrpOd+K1Y+vKMxU0N3sCvKJkpSH+cXD9Nwvb5Uo3lLOPSg7
+ gohMgO/4l1gZXM4xFeXuAaBRJuAhn3p8dclb16g4Fuxt9NATqX5p093udEswuResVg2O
+ GIvj2pDGIH3tOrtAqgfCxBhwKyDYpAYcyHTqdJV9M+3FKnLWwnJ+32r3HMUEOl5E5iyv
+ 9v3KiCOq7rMYE4BjhjqFFtpkziBy4EWWC/6Xmk0ARsgx4Hws7yJkO38zxMviI8Z3iqyT
+ jlDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:to:cc:from:subject:openpgp:autocrypt:message-id
  :date:user-agent:mime-version;
- bh=Swbu71q0tCxl34b9CG63+jP6IpA7ku4P5rfHqVWH7/U=;
- b=d6s1L0A6JBqAeHZzK5iRnnCI9c+7WFRGNWNpx1cu/dC4lvqOg12xdoXo0i7FwKc+bX
- 5qorw3XufE2xjkwIZBOPja+ZR8pksZFN2ebM/OrWzcQm6tZ0lOXMk7OFRuAPXpJRy2mi
- SPLIZ8jw0OQG8L+vfz2sCcNFAE7dxyguCcjpCsaz/U8DAEhj66DQZHpBZovPRg6DcJ92
- CL7Id8ub4N8Wu1h1xbNy6aLHIA+KSBl79OnM43kHGxvyxsyUqxPnDJUnNJ+XBBWIAijb
- XsiNwtifxyGNU7pEFsVCFFfNsB4wL8s2T71h6+Z74bsrDUYvjsqRBMw5P7Z6GF9Uuqrb
- j2Jw==
-X-Gm-Message-State: APjAAAW6WBt+OhSdRiRrLtXLs+boq9DEQUZ1s0j8nSIFINvEllVkh4oA
- isFsOn2plNh65qtZxrLf4MQfH0l56wqPvw==
-X-Google-Smtp-Source: APXvYqyAu/qHVKc5hUSkhNf+Z9xHgGa2N19uIPRlzfQkvwDaGh1V+/uUpqtGPbaxeUw0yYPEsDB0tQ==
-X-Received: by 2002:a1c:f618:: with SMTP id w24mr1798749wmc.155.1573118057232; 
- Thu, 07 Nov 2019 01:14:17 -0800 (PST)
-Received: from [173.194.76.108] ([149.199.62.130])
- by smtp.gmail.com with ESMTPSA id w81sm1766327wmg.5.2019.11.07.01.14.14
+ bh=Pv2BhqsJ6oy/DiBCgEyx5ZhZeylM3yEhJ9zUcmT6Hhk=;
+ b=D32RAfa7fv9RcovVhvioPN3vnxk8ggudvAuEVCyHcYBRGsMbCEs2HXLaGL8nmH6vAg
+ wQ+J5c8Yd1PuP3eKGrFX7jF6FV+AVhX6GuWmajNah/CjaCd6CYJIFwCvYgG5Fn0IRsAy
+ jrWPYv2vBMdQDa1u4o2id0i3yzigy58IfXaiIX1c+6gjGjY59nVWaWA4J+4VyfEirCoA
+ WWDPVXhI58KLbatT0yhObbeV2hFptMkoMa4GKsnAI1fCqTRD9LREVQK4/gO8yNFqa6FW
+ RnQTnqSWhLWaym8hhDZAYAYtMu7nhZ/scVU6HU2JezrL4WF2BnZGKSR65VzqKu97iMJO
+ 4qOw==
+X-Gm-Message-State: APjAAAWwEKMff9Q9sba9udymDJF96F8UKcZxWy5is2uKYexl2e9288Mb
+ N1q4nZ+ZhpyTZ5Oa+jJt7g+Zz5dTqjnpxQ==
+X-Google-Smtp-Source: APXvYqwaayfw7uiXjhYK65fdWubeoSlFWb4gS4kqp1CE4MirlDTCnKIxUyyAA0gb4V2iqJKZCxN0QQ==
+X-Received: by 2002:a1c:480a:: with SMTP id v10mr1884765wma.138.1573118388230; 
+ Thu, 07 Nov 2019 01:19:48 -0800 (PST)
+Received: from [173.194.76.109] ([149.199.62.130])
+ by smtp.gmail.com with ESMTPSA id a206sm1533143wmf.15.2019.11.07.01.19.45
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 07 Nov 2019 01:14:16 -0800 (PST)
+ Thu, 07 Nov 2019 01:19:47 -0800 (PST)
 To: arm-soc <arm@kernel.org>, soc@kernel.org
 From: Michal Simek <monstr@monstr.eu>
-Subject: [GIT PULL] arm64: dts: Xilinx DT changes for v5.5
+Subject: [GIT PULL] arm64: soc: Xilinx SoC changes for v5.5
 Openpgp: preference=signencrypt
 Autocrypt: addr=monstr@monstr.eu; keydata=
  mQINBFFuvDEBEAC9Amu3nk79+J+4xBOuM5XmDmljuukOc6mKB5bBYOa4SrWJZTjeGRf52VMc
@@ -149,21 +149,21 @@ Autocrypt: addr=monstr@monstr.eu; keydata=
  EwIAdQuPb2h1QLk5KnknUNikjdIZa9yRC5OnUDwV3ffG4Gsb+xtEL7eTLlbFPgBRUmvy6QbE
  9GjRSSvlab6Mj5tocPBA0CSsonfLCiHlOLvjdMsdmX5NDUpDCo5QMSNEfHEmV3p+A/NOQ/Hk
  Qg41tpHgK85MlNXw6MBWLgdXBSGdD0zVX4S4Gz+vwyY1
-Message-ID: <543394c2-ddff-33be-4c90-e01847539c64@monstr.eu>
-Date: Thu, 7 Nov 2019 10:14:09 +0100
+Message-ID: <6954a53c-6dab-c7a3-7257-58460ca952cb@monstr.eu>
+Date: Thu, 7 Nov 2019 10:19:40 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_011419_493788_5558F99B 
-X-CRM114-Status: GOOD (  14.58  )
+X-CRM114-CacheID: sfid-20191107_011950_290558_CC087623 
+X-CRM114-Status: GOOD (  15.21  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:331 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -182,34 +182,35 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arm <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============7514824663106744955=="
+Content-Type: multipart/mixed; boundary="===============5402851487828623223=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============7514824663106744955==
+--===============5402851487828623223==
 Content-Type: multipart/signed; micalg=pgp-sha1;
  protocol="application/pgp-signature";
- boundary="LiiQsj1QspnpGoLQ5cIg7Xe7udJMghH8M"
+ boundary="x1xtWqyahe8qFZQR1G0iQdvCsj6tmKP1Y"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---LiiQsj1QspnpGoLQ5cIg7Xe7udJMghH8M
-Content-Type: multipart/mixed; boundary="8vlCp8r0TymKoxKN4nRkdlim2J2sQKBy7";
+--x1xtWqyahe8qFZQR1G0iQdvCsj6tmKP1Y
+Content-Type: multipart/mixed; boundary="K6RuSu6o3cNws6vBZPnri8boIPuEkWKlN";
  protected-headers="v1"
 From: Michal Simek <monstr@monstr.eu>
 To: arm-soc <arm@kernel.org>, soc@kernel.org
 Cc: linux-arm <linux-arm-kernel@lists.infradead.org>
-Message-ID: <543394c2-ddff-33be-4c90-e01847539c64@monstr.eu>
-Subject: [GIT PULL] arm64: dts: Xilinx DT changes for v5.5
+Message-ID: <6954a53c-6dab-c7a3-7257-58460ca952cb@monstr.eu>
+Subject: [GIT PULL] arm64: soc: Xilinx SoC changes for v5.5
 
---8vlCp8r0TymKoxKN4nRkdlim2J2sQKBy7
+--K6RuSu6o3cNws6vBZPnri8boIPuEkWKlN
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
 Hi,
 
-please pull these DT patches to your tree.
+please pull these patches to your tree. They are extending current
+Xilinx firmware interface to cover new Xilinx chip called Versal.
 
 Thanks,
 Michal
@@ -221,30 +222,36 @@ The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c=
 
 are available in the Git repository at:
 
-  https://github.com/Xilinx/linux-xlnx.git tags/zynqmp-dt-for-v5.5
+  https://github.com/Xilinx/linux-xlnx.git tags/zynqmp-soc-for-v5.5
 
-for you to fetch changes up to b7178639516c74015361083c5c1641029f2642df:
+for you to fetch changes up to af3f1afac38d34083faad852172d0ec82749c046:
 
-  arm64: zynqmp: Add support for zynqmp nvmem firmware driver
-(2019-10-23 14:31:06 +0200)
-
-----------------------------------------------------------------
-arm64: dts: zynqmp: DT changes for v5.5
-
-- Add firmware node with fpga and nvmem support
+  firmware: xilinx: Add support for versal soc (2019-10-16 12:55:37 +0200=
+)
 
 ----------------------------------------------------------------
-Nava kishore Manne (3):
-      arm64: zynqmp: Add support for zynqmp fpga manager
-      arm64: zynqmp: Label whole PL part as fpga_full region
-      arm64: zynqmp: Add support for zynqmp nvmem firmware driver
+arm64: soc: Xilinx SoC changes for v5.5
 
-Rajan Vaja (1):
-      arm64: zynqmp: Add firmware DT node
+- Extend firmware interface to cover Versal chip
 
- arch/arm64/boot/dts/xilinx/zynqmp.dtsi | 29 ++++++++++++++++++++++++++++=
-+
- 1 file changed, 29 insertions(+)
+----------------------------------------------------------------
+Jolly Shah (2):
+      dt-bindings: firmware: Add bindings for Versal firmware
+      firmware: xilinx: Add support for versal soc
+
+Tejas Patel (1):
+      soc: xilinx: Set CAP_UNUSABLE requirement for versal while
+powering down domain
+
+ Documentation/devicetree/bindings/firmware/xilinx/xlnx,zynqmp-firmware.t=
+xt | 16 +++++++++++++++-
+ drivers/firmware/xilinx/zynqmp.c
+    |  8 ++++++--
+ drivers/soc/xilinx/zynqmp_pm_domains.c
+    | 10 ++++++++--
+ include/linux/firmware/xlnx-zynqmp.h
+    |  3 ++-
+ 4 files changed, 31 insertions(+), 6 deletions(-)
 
 --=20
 Michal Simek, Ing. (M.Eng), OpenPGP -> KeyID: FE3D1F91
@@ -255,24 +262,24 @@ U-Boot custodian - Xilinx Microblaze/Zynq/ZynqMP/Versal SoCs
 
 
 
---8vlCp8r0TymKoxKN4nRkdlim2J2sQKBy7--
+--K6RuSu6o3cNws6vBZPnri8boIPuEkWKlN--
 
---LiiQsj1QspnpGoLQ5cIg7Xe7udJMghH8M
+--x1xtWqyahe8qFZQR1G0iQdvCsj6tmKP1Y
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXcPgYQAKCRDKSWXLKUoM
-IdCdAJ9Pz6GQiC8gy0IjMVnAWiI9RqK/uACggvNojjDOVtWxX74e85r2KKhkxbE=
-=bxw8
+iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXcPhrAAKCRDKSWXLKUoM
+IVXxAJ9mKSYHDiZQ1vipu+dWBXEuaKtM0gCdHeWNqnVJoLNHrAOreDGEY8TB2Uc=
+=IXN1
 -----END PGP SIGNATURE-----
 
---LiiQsj1QspnpGoLQ5cIg7Xe7udJMghH8M--
+--x1xtWqyahe8qFZQR1G0iQdvCsj6tmKP1Y--
 
 
---===============7514824663106744955==
+--===============5402851487828623223==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -283,5 +290,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7514824663106744955==--
+--===============5402851487828623223==--
 
