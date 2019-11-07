@@ -2,65 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13117F3394
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 16:40:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5290F33B2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 16:45:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bvv+JcTnXomNetdOR9HoJfT1/L8DHkOrZIdrG+x7Igo=; b=PMMUTNMXT6tlslzt/h7JsleDM
-	OT5SLuBfRDOVA/sbBL+sTIBmgT+nDbZBI5cGEOkVcS+YuaXmtXTTaudfRRS3/inlsvoyTJfbNNUHF
-	n6LranqXMCTkRB8bZMG9madVtnWRhm710BJTbYCEVLUPmoU/FRT2sifpkC7JzSAFPPacFM9V8twv/
-	eLeOByd+tbTlT1gHZjkXPYAZMmM6/5rQEP78P4q/nuAQyp8ZCt712LoYLFCtD0vp8HrplX0pIJbfp
-	3rAVfNT/HLbdZtb3qSFyCZueBAgZXkjTlBEukGW/V/kxxTqjCIKbpYq+LDvzpOKgE/aRg5Q9qcxDa
-	Yb+dVS17g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qShL3te1aXBSLMuD8FFLEgUVa8S9Qvv+2OF+tbSGJxI=; b=SnnhKBdm47QVho
+	4wzUJz2QouebpMHiG/G+Y5ZPACDmwpDbH1Z0NgB8/USgE8fNka1HLcsz7J2HQsavMAFComTRHqoCu
+	dcUVplDbT4HDGHzgTMHqll7243wx4lpzoRCxNTykG6TA7vMyZO52wDlcPqK8mx0N/vIHVXrIhNa8p
+	xNTweSfKgJlNxmtEeYY3s+MvwAJJ7n1KOyoS44HuuPhVgnVe6NJd4MyDZer4OjF3Tir+++Da1NUYI
+	v9ePyV1mAgdI1qLKhgedt4ku/OwQ35BasRxfv9hDnSgNSbet7Xl/xujcq8ew4HV4/Kla6yTQXysWV
+	Huw0xlLbbyz5edU8fPcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSjtc-0005zc-Aw; Thu, 07 Nov 2019 15:40:28 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iSjyS-0008Hw-59; Thu, 07 Nov 2019 15:45:28 +0000
+Received: from mail-yb1-xb41.google.com ([2607:f8b0:4864:20::b41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSjtS-0005yd-MI; Thu, 07 Nov 2019 15:40:21 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iSjtP-0007sn-GF; Thu, 07 Nov 2019 16:40:15 +0100
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH 4/4] PCI: brcmstb: add MSI capability
-X-PHP-Originating-Script: 0:main.inc
+ id 1iSjyK-0008HW-0G
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 15:45:21 +0000
+Received: by mail-yb1-xb41.google.com with SMTP id r201so1085996ybc.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 07 Nov 2019 07:45:19 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=aBmDW367ezY0BrZwRlImNYpPUfZdn90ATxc3j+zJm30=;
+ b=JKiaOjQ8TzP09p3M2cZAk6u6sBMOJTVhK+SFIoX2eblEYJN7ISl31fVJEjhyKCqgts
+ WeYUc/O2s0kTmLaGomztgYsXen3MSvpTZhqh0UpzkQlRLm9/vRgya1Ez/otNM/yCMpeB
+ QBeimtb23jgePWPyTIOUBBVJljio9xk8q9xdsQx6+UHuEBULlKIT6HoDPhyOWQVFUahc
+ ll1bKe6DiFW3P0sc2QVRxqmNKR/4h9/U4YxL8VF3GDj/h3Ns1nPdJ9CR40tA6fzMhbuS
+ GmtkmdoS4IWu8ztNMOEOCZMzqqhabCVqnKPY4lOpm6ebaXKJOpjhuAzUZd+kSNup310M
+ zYBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=aBmDW367ezY0BrZwRlImNYpPUfZdn90ATxc3j+zJm30=;
+ b=mFmpXZnNrxziOUy+RIt+lUH71jXDeNGzfutFSz72ilIdIkfVIrQ0lSI+FDPxOrWnZB
+ wrVjM5gKDY7r9w9D9d0+7OsAyzzJl3ll7X3drW48F4kWKMafdEYMMQWkknQ3Novp9+iY
+ kIIVYMoAH6mDGQyT67336z4GZXyHMhSkdQ/1Frkv2m8Qr/foXlnyeQYc8IbhlGBtsV8T
+ yAwA2Lo8XW7mI6EJfga65Laaoe3m8FO8y+z/E8IAOxYbpaDxnoT9slrnZmsiGZE0tti+
+ sib1jgVX0/TlAUq42d2RId27QUTWO3F0U0JjqOAxjPQYEMnOzlKqkkYAE0XLj8NEY0v8
+ cP4A==
+X-Gm-Message-State: APjAAAXV18Z2ZfxCcdcx7gK1ZOOhUXowPtDMSz5tZtGNxTf4x9XxIw3L
+ TUk/Qyx6O4+zBNfVEA64NC6c8hVVAGjZXjyZ13k=
+X-Google-Smtp-Source: APXvYqwyubiCYdkp0wkVQciI245UgQvGVkHbhs94SRmToAzx6pJzULhB7lalNs2zsag4B/pA0r3B5sVmCmSB1I7uRqw=
+X-Received: by 2002:a25:c781:: with SMTP id w123mr3986907ybe.509.1573141518579; 
+ Thu, 07 Nov 2019 07:45:18 -0800 (PST)
 MIME-Version: 1.0
-Date: Thu, 07 Nov 2019 16:49:36 +0109
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <20191106214527.18736-5-nsaenzjulienne@suse.de>
-References: <20191106214527.18736-1-nsaenzjulienne@suse.de>
- <20191106214527.18736-5-nsaenzjulienne@suse.de>
-Message-ID: <f1154b65d422e2e37e3b320e662d4268@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: nsaenzjulienne@suse.de, andrew.murray@arm.com,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, lorenzo.pieralisi@arm.com,
- f.fainelli@gmail.com, mbrugger@suse.com, phil@raspberrypi.org,
- linux-kernel@vger.kernel.org, wahrenst@gmx.net, james.quinlan@broadcom.com,
- bhelgaas@google.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+References: <1573002091-9744-1-git-send-email-gkulkarni@marvell.com>
+ <1573002091-9744-2-git-send-email-gkulkarni@marvell.com>
+ <20191106112810.GA50610@lakrids.cambridge.arm.com>
+ <CAKTKpr6U8gUp4C9muN2cL4wn33o2LAa5QnTO2MSmfnBz8oUc=Q@mail.gmail.com>
+ <20191107145213.GB6888@lakrids.cambridge.arm.com>
+In-Reply-To: <20191107145213.GB6888@lakrids.cambridge.arm.com>
+From: Ganapatrao Kulkarni <gklkml16@gmail.com>
+Date: Thu, 7 Nov 2019 07:45:07 -0800
+Message-ID: <CAKTKpr70=hFdwq43SBM-1jmbNxc1suyn3XouQhsj2m4tM+jeUg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] perf/core: Adding capability to disable PMUs event
+ multiplexing
+To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_074019_027790_A1E70214 
-X-CRM114-Status: GOOD (  35.09  )
+X-CRM114-CacheID: sfid-20191107_074520_048169_56A9BA52 
+X-CRM114-Status: GOOD (  26.70  )
 X-Spam-Score: 1.7 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 BUG6152_INVALID_DATE_TZ_ABSURD No description available.
- 0.6 INVALID_DATE_TZ_ABSURD Invalid Date: header (timezone does not
- exist)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b41 listed in]
+ [list.dnswl.org]
+ 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
+ 1.0 HK_RANDOM_FROM         From username looks random
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gklkml16[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (gklkml16[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,567 +101,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- mbrugger@suse.com, linux-pci@vger.kernel.org, phil@raspberrypi.org,
- linux-kernel@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- james.quinlan@broadcom.com, Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org,
- wahrenst@gmx.net
+Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ "corbet@lwn.net" <corbet@lwn.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mingo@redhat.com" <mingo@redhat.com>, "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-11-06 22:54, Nicolas Saenz Julienne wrote:
-> From: Jim Quinlan <james.quinlan@broadcom.com>
+On Thu, Nov 7, 2019 at 6:52 AM Mark Rutland <mark.rutland@arm.com> wrote:
 >
-> This commit adds MSI to the Broadcom STB PCIe host controller. It 
-> does
-> not add MSIX since that functionality is not in the HW.  The MSI
-> controller is physically located within the PCIe block, however, 
-> there
-> is no reason why the MSI controller could not be moved elsewhere in
-> the future.
+> On Wed, Nov 06, 2019 at 03:28:46PM -0800, Ganapatrao Kulkarni wrote:
+> > Hi Peter, Mark,
+> >
+> > On Wed, Nov 6, 2019 at 3:28 AM Mark Rutland <mark.rutland@arm.com> wrote:
+> > >
+> > > On Wed, Nov 06, 2019 at 01:01:40AM +0000, Ganapatrao Prabhakerrao Kulkarni wrote:
+> > > > When PMUs are registered, perf core enables event multiplexing
+> > > > support by default. There is no provision for PMUs to disable
+> > > > event multiplexing, if PMUs want to disable due to unavoidable
+> > > > circumstances like hardware errata etc.
+> > > >
+> > > > Adding PMU capability flag PERF_PMU_CAP_NO_MUX_EVENTS and support
+> > > > to allow PMUs to explicitly disable event multiplexing.
+> > >
+> > > Even without multiplexing, this PMU activity can happen when switching
+> > > tasks, or when creating/destroying events, so as-is I don't think this
+> > > makes much sense.
+> > >
+> > > If there's an erratum whereby heavy access to the PMU can lockup the
+> > > core, and it's possible to workaround that by minimzing accesses, that
+> > > should be done in the back-end PMU driver.
+> >
+> > As said in errata,  If there are heavy access to memory like stream
+> > application running and along with that if PMU control registers are
+> > also accessed frequently, then CPU lockup is seen.
 >
-> Since the internal Brcmstb MSI controller is intertwined with the 
-> PCIe
-> controller, it is not its own platform device but rather part of the
-> PCIe platform device.
+> Ok. So the issue is the frequency of access to those registers.
 >
-> This is based on Jim's original submission[1] with some slight 
-> changes
-> regarding how pcie->msi_target_addr is decided.
->
-> [1] https://patchwork.kernel.org/patch/10605955/
->
-> Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
-> Co-developed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> ---
->  drivers/pci/controller/Kconfig        |   2 +-
->  drivers/pci/controller/pcie-brcmstb.c | 333 
-> +++++++++++++++++++++++++-
->  2 files changed, 332 insertions(+), 3 deletions(-)
->
-> diff --git a/drivers/pci/controller/Kconfig 
-> b/drivers/pci/controller/Kconfig
-> index 8b3aae91d8af..99b972ad3f2f 100644
-> --- a/drivers/pci/controller/Kconfig
-> +++ b/drivers/pci/controller/Kconfig
-> @@ -284,7 +284,7 @@ config VMD
->  config PCIE_BRCMSTB
->  	bool "Broadcom Brcmstb PCIe host controller"
->  	depends on ARCH_BRCMSTB || BMIPS_GENERIC
-> -	depends on OF
-> +	depends on OF && PCI_MSI
->  	depends on SOC_BRCMSTB
->  	default ARCH_BRCMSTB || BMIPS_GENERIC
->  	help
-> diff --git a/drivers/pci/controller/pcie-brcmstb.c
-> b/drivers/pci/controller/pcie-brcmstb.c
-> index 880ec11d06a1..26053e69b95f 100644
-> --- a/drivers/pci/controller/pcie-brcmstb.c
-> +++ b/drivers/pci/controller/pcie-brcmstb.c
-> @@ -1,6 +1,7 @@
->  // SPDX-License-Identifier: GPL-2.0
->  /* Copyright (C) 2009 - 2019 Broadcom */
->
-> +#include <linux/bitops.h>
->  #include <linux/clk.h>
->  #include <linux/compiler.h>
->  #include <linux/delay.h>
-> @@ -8,11 +9,13 @@
->  #include <linux/interrupt.h>
->  #include <linux/io.h>
->  #include <linux/ioport.h>
-> +#include <linux/irqchip/chained_irq.h>
->  #include <linux/irqdomain.h>
->  #include <linux/kernel.h>
->  #include <linux/list.h>
->  #include <linux/log2.h>
->  #include <linux/module.h>
-> +#include <linux/msi.h>
->  #include <linux/of_address.h>
->  #include <linux/of_irq.h>
->  #include <linux/of_pci.h>
-> @@ -46,6 +49,9 @@
->  #define PCIE_MISC_RC_BAR2_CONFIG_LO			0x4034
->  #define PCIE_MISC_RC_BAR2_CONFIG_HI			0x4038
->  #define PCIE_MISC_RC_BAR3_CONFIG_LO			0x403c
-> +#define PCIE_MISC_MSI_BAR_CONFIG_LO			0x4044
-> +#define PCIE_MISC_MSI_BAR_CONFIG_HI			0x4048
-> +#define PCIE_MISC_MSI_DATA_CONFIG			0x404c
->  #define PCIE_MISC_PCIE_CTRL				0x4064
->  #define PCIE_MISC_PCIE_STATUS				0x4068
->  #define PCIE_MISC_REVISION				0x406c
-> @@ -54,6 +60,7 @@
->  #define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LIMIT_HI		0x4084
->  #define PCIE_MISC_HARD_PCIE_HARD_DEBUG			0x4204
->  #define PCIE_INTR2_CPU_BASE				0x4300
-> +#define PCIE_MSI_INTR2_BASE				0x4500
->
->  /*
->   * Broadcom Settop Box PCIe Register Field shift and mask info. The
-> @@ -114,6 +121,8 @@
->
->  #define BRCM_NUM_PCIE_OUT_WINS		0x4
->  #define BRCM_MAX_SCB			0x4
-> +#define BRCM_INT_PCI_MSI_NR		32
-> +#define BRCM_PCIE_HW_REV_33		0x0303
->
->  #define BRCM_MSI_TARGET_ADDR_LT_4GB	0x0fffffffcULL
->  #define BRCM_MSI_TARGET_ADDR_GT_4GB	0xffffffffcULL
-> @@ -199,6 +208,33 @@ struct brcm_window {
->  	dma_addr_t size;
->  };
->
-> +struct brcm_msi {
-> +	struct device		*dev;
-> +	void __iomem		*base;
-> +	struct device_node	*dn;
-> +	struct irq_domain	*msi_domain;
-> +	struct irq_domain	*inner_domain;
-> +	struct mutex		lock; /* guards the alloc/free operations */
-> +	u64			target_addr;
-> +	int			irq;
-> +
-> +	/* intr_base is the base pointer for interrupt status/set/clr regs 
-> */
-> +	void __iomem		*intr_base;
-> +
-> +	/* intr_legacy_mask indicates how many bits are MSI interrupts */
-> +	u32			intr_legacy_mask;
-> +
-> +	/*
-> +	 * intr_legacy_offset indicates bit position of MSI_01. It is
-> +	 * to map the register bit position to a hwirq that starts at 0.
-> +	 */
-> +	u32			intr_legacy_offset;
-> +
-> +	/* used indicates which MSI interrupts have been alloc'd */
-> +	unsigned long		used;
-> +	unsigned int		rev;
-> +};
-> +
->  /* Internal PCIe Host Controller Information.*/
->  struct brcm_pcie {
->  	struct device		*dev;
-> @@ -211,7 +247,10 @@ struct brcm_pcie {
->  	bool			suspended;
->  	bool			ssc;
->  	int			gen;
-> +	u64			msi_target_addr;
->  	struct brcm_window	out_wins[BRCM_NUM_PCIE_OUT_WINS];
-> +	struct brcm_msi		*msi;
-> +	bool			msi_internal;
+> Which registers does that apply to?
 
-Do you need both of these fields? Is there any case where msi is valid
-and msi_internal is false?
-
->  	unsigned int		rev;
->  	const int		*reg_offsets;
->  	const int		*reg_field_info;
-> @@ -477,6 +516,267 @@ static void brcm_pcie_set_outbound_win(struct
-> brcm_pcie *pcie,
->  			   LIMIT, tmp);
->  }
+The control register which are used to start, stop the counter and the
+register which is used to set the event type.
 >
-> +static struct irq_chip brcm_msi_irq_chip = {
-> +	.name = "Brcm_MSI",
-> +	.irq_mask = pci_msi_mask_irq,
-> +	.irq_unmask = pci_msi_unmask_irq,
-> +};
-> +
-> +static struct msi_domain_info brcm_msi_domain_info = {
-> +	.flags	= (MSI_FLAG_USE_DEF_DOM_OPS | MSI_FLAG_USE_DEF_CHIP_OPS |
-> +		   MSI_FLAG_PCI_MSIX),
+> Is this the case for only reads, only writes, or both?
 
-Is there a particular reason for not supporting MultiMSI? I won't miss
-it, but it might be worth documenting the restriction if the HW cannot
-support it (though I can't immediately see why).
+It is write  issue, the h/w block has limited write buffers and
+overflow getting hardware in weird state, when memory transactions are
+high.
 
-> +	.chip	= &brcm_msi_irq_chip,
-> +};
-> +
-> +static void brcm_pcie_msi_isr(struct irq_desc *desc)
-> +{
-> +	struct irq_chip *chip = irq_desc_get_chip(desc);
-> +	struct brcm_msi *msi;
-> +	unsigned long status, virq;
-> +	u32 mask, bit, hwirq;
-> +	struct device *dev;
-> +
-> +	chained_irq_enter(chip, desc);
-> +	msi = irq_desc_get_handler_data(desc);
-> +	mask = msi->intr_legacy_mask;
-> +	dev = msi->dev;
-> +
-> +	while ((status = bcm_readl(msi->intr_base + STATUS) & mask)) {
-
-Is this loop really worth it? If, as I imagine, this register is at the
-end of a wet piece of string, this additional read (likely to return 
-zero)
-will have a measurable latency impact...
-
-> +		for_each_set_bit(bit, &status, BRCM_INT_PCI_MSI_NR) {
-> +			/* clear the interrupt */
-> +			bcm_writel(1 << bit, msi->intr_base + CLR);
-> +
-> +			/* Account for legacy interrupt offset */
-> +			hwirq = bit - msi->intr_legacy_offset;
-> +
-> +			virq = irq_find_mapping(msi->inner_domain, hwirq);
-> +			if (virq) {
-> +				if (msi->used & (1 << hwirq))
-> +					generic_handle_irq(virq);
-> +				else
-> +					dev_info(dev, "unhandled MSI %d\n",
-> +						 hwirq);
-
-Can this ever happen? If you've found the mapping in the irqdomain,
-the MSI obviously has been allocated. Or am I missing something?
-
-> +			} else {
-> +				/* Unknown MSI, just clear it */
-> +				dev_dbg(dev, "unexpected MSI\n");
-> +			}
-> +		}
-> +	}
-> +	chained_irq_exit(chip, desc);
-> +}
-> +
-> +static void brcm_compose_msi_msg(struct irq_data *data, struct 
-> msi_msg *msg)
-> +{
-> +	struct brcm_msi *msi = irq_data_get_irq_chip_data(data);
-> +	u32 temp;
-> +
-> +	msg->address_lo = lower_32_bits(msi->target_addr);
-> +	msg->address_hi = upper_32_bits(msi->target_addr);
-> +	temp = bcm_readl(msi->base + PCIE_MISC_MSI_DATA_CONFIG);
-
-Do you have to reload it from the HW?
-
-> +	msg->data = ((temp >> 16) & (temp & 0xffff)) | data->hwirq;
-> +}
-> +
-> +static int brcm_msi_set_affinity(struct irq_data *irq_data,
-> +				 const struct cpumask *mask, bool force)
-> +{
-> +	return -EINVAL;
-> +}
-> +
-> +static struct irq_chip brcm_msi_bottom_irq_chip = {
-> +	.name			= "Brcm_MSI",
-> +	.irq_compose_msi_msg	= brcm_compose_msi_msg,
-> +	.irq_set_affinity	= brcm_msi_set_affinity,
-> +};
-> +
-> +static int brcm_msi_alloc(struct brcm_msi *msi)
-> +{
-> +	int bit, hwirq;
-> +
-> +	mutex_lock(&msi->lock);
-> +	bit = ~msi->used ? ffz(msi->used) : -1;
-> +
-> +	if (bit >= 0 && bit < BRCM_INT_PCI_MSI_NR) {
-> +		msi->used |= (1 << bit);
-> +		hwirq = bit - msi->intr_legacy_offset;
-> +	} else {
-> +		hwirq = -ENOSPC;
-> +	}
-
-Please consider using bitmap_find_free_region() and co, instead of
-open coding your allocator.
-
-> +
-> +	mutex_unlock(&msi->lock);
-> +	return hwirq;
-> +}
-> +
-> +static void brcm_msi_free(struct brcm_msi *msi, unsigned long hwirq)
-> +{
-> +	mutex_lock(&msi->lock);
-> +	msi->used &= ~(1 << (hwirq + msi->intr_legacy_offset));
-> +	mutex_unlock(&msi->lock);
-> +}
-> +
-> +static int brcm_irq_domain_alloc(struct irq_domain *domain, unsigned
-> int virq,
-> +				 unsigned int nr_irqs, void *args)
-> +{
-> +	struct brcm_msi *msi = domain->host_data;
-> +	int hwirq;
-> +
-> +	hwirq = brcm_msi_alloc(msi);
-> +
-> +	if (hwirq < 0)
-> +		return hwirq;
-> +
-> +	irq_domain_set_info(domain, virq, (irq_hw_number_t)hwirq,
-> +			    &brcm_msi_bottom_irq_chip, domain->host_data,
-> +			    handle_simple_irq, NULL, NULL);
-
-simple_irq doesn't quite match what this does. This really should
-use an edge flow.
-
-> +	return 0;
-> +}
-> +
-> +static void brcm_irq_domain_free(struct irq_domain *domain,
-> +				 unsigned int virq, unsigned int nr_irqs)
-> +{
-> +	struct irq_data *d = irq_domain_get_irq_data(domain, virq);
-> +	struct brcm_msi *msi = irq_data_get_irq_chip_data(d);
-> +
-> +	brcm_msi_free(msi, d->hwirq);
-> +}
-> +
-> +static void brcm_msi_set_regs(struct brcm_msi *msi)
-> +{
-> +	u32 data_val, msi_lo, msi_hi;
-> +
-> +	if (msi->rev >= BRCM_PCIE_HW_REV_33) {
-> +		/*
-> +		 * ffe0 -- least sig 5 bits are 0 indicating 32 msgs
-> +		 * 6540 -- this is our arbitrary unique data value
-> +		 */
-> +		data_val = 0xffe06540;
-> +	} else {
-> +		/*
-> +		 * fff8 -- least sig 3 bits are 0 indicating 8 msgs
-> +		 * 6540 -- this is our arbitrary unique data value
-> +		 */
-> +		data_val = 0xfff86540;
-> +	}
-> +
-> +	/*
-> +	 * Make sure we are not masking MSIs.  Note that MSIs can be 
-> masked,
-> +	 * but that occurs on the PCIe EP device
-
-That's not a guarantee, specially with plain MultiMSI. I'm actually
-minded to move the masking to be purely local on the MSI controllers
-I maintain.
-
-> +	 */
-> +	bcm_writel(0xffffffff & msi->intr_legacy_mask,
-> +		   msi->intr_base + MASK_CLR);
-> +
-> +	msi_lo = lower_32_bits(msi->target_addr);
-> +	msi_hi = upper_32_bits(msi->target_addr);
-> +	/*
-> +	 * The 0 bit of PCIE_MISC_MSI_BAR_CONFIG_LO is repurposed to MSI
-> +	 * enable, which we set to 1.
-> +	 */
-> +	bcm_writel(msi_lo | 1, msi->base + PCIE_MISC_MSI_BAR_CONFIG_LO);
-> +	bcm_writel(msi_hi, msi->base + PCIE_MISC_MSI_BAR_CONFIG_HI);
-> +	bcm_writel(data_val, msi->base + PCIE_MISC_MSI_DATA_CONFIG);
-> +}
-> +
-> +static const struct irq_domain_ops msi_domain_ops = {
-> +	.alloc	= brcm_irq_domain_alloc,
-> +	.free	= brcm_irq_domain_free,
-> +};
-> +
-> +static int brcm_allocate_domains(struct brcm_msi *msi)
-> +{
-> +	struct fwnode_handle *fwnode = of_node_to_fwnode(msi->dn);
-> +	struct device *dev = msi->dev;
-> +
-> +	msi->inner_domain = irq_domain_add_linear(NULL, 
-> BRCM_INT_PCI_MSI_NR,
-> +						  &msi_domain_ops, msi);
-> +	if (!msi->inner_domain) {
-> +		dev_err(dev, "failed to create IRQ domain\n");
-> +		return -ENOMEM;
-> +	}
-> +
-> +	msi->msi_domain = pci_msi_create_irq_domain(fwnode,
-> +						    &brcm_msi_domain_info,
-> +						    msi->inner_domain);
-> +	if (!msi->msi_domain) {
-> +		dev_err(dev, "failed to create MSI domain\n");
-> +		irq_domain_remove(msi->inner_domain);
-> +		return -ENOMEM;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static void brcm_free_domains(struct brcm_msi *msi)
-> +{
-> +	irq_domain_remove(msi->msi_domain);
-> +	irq_domain_remove(msi->inner_domain);
-> +}
-> +
-> +static void brcm_msi_remove(struct brcm_pcie *pcie)
-> +{
-> +	struct brcm_msi *msi = pcie->msi;
-> +
-> +	if (!msi)
-> +		return;
-> +	irq_set_chained_handler(msi->irq, NULL);
-> +	irq_set_handler_data(msi->irq, NULL);
-> +	brcm_free_domains(msi);
-> +}
-> +
-> +static int brcm_pcie_enable_msi(struct brcm_pcie *pcie)
-> +{
-> +	struct brcm_msi *msi;
-> +	int irq, ret;
-> +	struct device *dev = pcie->dev;
-> +
-> +	irq = irq_of_parse_and_map(dev->of_node, 1);
-> +	if (irq <= 0) {
-> +		dev_err(dev, "cannot map msi intr\n");
-> +		return -ENODEV;
-> +	}
-> +
-> +	msi = devm_kzalloc(dev, sizeof(struct brcm_msi), GFP_KERNEL);
-> +	if (!msi)
-> +		return -ENOMEM;
-> +
-> +	msi->dev = dev;
-> +	msi->base = pcie->base;
-> +	msi->rev =  pcie->rev;
-> +	msi->dn = pcie->dn;
-> +	msi->target_addr = pcie->msi_target_addr;
-> +	msi->irq = irq;
-> +
-> +	ret = brcm_allocate_domains(msi);
-> +	if (ret)
-> +		return ret;
-
-You seem to rely on the devm_* allocators to cleanup on failure. But as 
-far
-as I can see, failing to initialize the MSI subsystem doesn't translate 
-in
-a PCIe init failure, hence keeping the memory around.
-
-> +
-> +	irq_set_chained_handler_and_data(msi->irq, brcm_pcie_msi_isr, msi);
-> +
-> +	if (msi->rev >= BRCM_PCIE_HW_REV_33) {
-> +		msi->intr_base = msi->base + PCIE_MSI_INTR2_BASE;
-> +		/*
-> +		 * This version of PCIe hw has only 32 intr bits
-> +		 * starting at bit position 0.
-> +		 */
-> +		msi->intr_legacy_mask = 0xffffffff;
-> +		msi->intr_legacy_offset = 0x0;
-> +		msi->used = 0x0;
-> +
-> +	} else {
-> +		msi->intr_base = msi->base + PCIE_INTR2_CPU_BASE;
-> +		/*
-> +		 * This version of PCIe hw has only 8 intr bits starting
-> +		 * at bit position 24.
-> +		 */
-> +		msi->intr_legacy_mask = 0xff000000;
-> +		msi->intr_legacy_offset = 24;
-> +		msi->used = 0x00ffffff;
-> +	}
-> +
-> +	brcm_msi_set_regs(msi);
-> +	pcie->msi = msi;
-> +
-> +	return 0;
-> +}
-> +
->  /* Configuration space read/write support */
->  static int cfg_index(int busnr, int devfn, int reg)
->  {
-> @@ -643,6 +943,18 @@ static int brcm_pcie_setup(struct brcm_pcie 
-> *pcie)
->  	if (ret)
->  		return ret;
 >
-> +	/*
-> +	 * We ideally want the MSI target address to be located in the 
-> 32bit
-> +	 * addressable memory area. Some devices might depend on it. This 
-> is
-> +	 * possible either when the inbound window is located above the 
-> lower
-> +	 * 4GB or when the inbound and outbound areas fit in the lower 4GB 
-> of
-> +	 * memory.
-> +	 */
-> +	if (rc_bar2_offset >= SZ_4G || (rc_bar2_size + rc_bar2_offset) <= 
-> SZ_4G)
-> +		pcie->msi_target_addr = BRCM_MSI_TARGET_ADDR_LT_4GB;
-> +	else
-> +		pcie->msi_target_addr = BRCM_MSI_TARGET_ADDR_GT_4GB;
-> +
->  	tmp = lower_32_bits(rc_bar2_offset);
->  	tmp = INSERT_FIELD(tmp, PCIE_MISC_RC_BAR2_CONFIG_LO, SIZE,
->  			   encode_ibar_size(rc_bar2_size));
-> @@ -816,6 +1128,9 @@ static int brcm_pcie_resume(struct device *dev)
->  	if (ret)
->  		return ret;
+> Does the frequency of access actually matter, or is is just more likely
+> that we see the issue with a greater number of accesses? i.e the
+> increased frequency increases the probability of hitting the issue.
+
+This is one scenario.
+Any higher access to PMU register, when memory is busy needs to be controlled.
+
 >
-> +	if (pcie->msi && pcie->msi_internal)
-> +		brcm_msi_set_regs(pcie->msi);
-> +
->  	pcie->suspended = false;
+> I'd really like a better description of the HW issue here.
 >
->  	return 0;
-> @@ -823,6 +1138,7 @@ static int brcm_pcie_resume(struct device *dev)
+> > I ran perf stat with 4 events of thuderx2 PMU as well as with 6 events
+> > for stream application.
+> > For 4 events run, there is no event multiplexing, where as for 6
+> > events run the events are multiplexed.
+> >
+> > For 4 event run:
+> > No of times pmu->add is called: 10
+> > No of times pmu->del is called: 10
+> > No of times pmu->read is called: 310
+> >
+> > For 6 events run:
+> > No of times pmu->add is called: 5216
+> > No of times pmu->del is called: 5216
+> > No of times pmu->read is called: 5216
+> >
+> > Issue happens when the add and del are called too many times as seen
+> > with 6 event case.
 >
->  static void _brcm_pcie_remove(struct brcm_pcie *pcie)
->  {
-> +	brcm_msi_remove(pcie);
->  	turn_off(pcie);
->  	clk_disable_unprepare(pcie->clk);
->  	clk_put(pcie->clk);
-> @@ -847,7 +1163,7 @@ MODULE_DEVICE_TABLE(of, brcm_pcie_match);
+> Sure, but I can achieve similar by creating/destroying events in a loop.
+> Multiplexing is _one_ way to cause this behaviour, but it's not the
+> _only_ way.
+
+I agree, there may be other use cases also, however i am trying to fix
+the common use case.
+
 >
->  static int brcm_pcie_probe(struct platform_device *pdev)
->  {
-> -	struct device_node *dn = pdev->dev.of_node;
-> +	struct device_node *dn = pdev->dev.of_node, *msi_dn;
->  	const struct of_device_id *of_id;
->  	const struct pcie_cfg_data *data;
->  	struct resource *res;
-> @@ -923,6 +1239,20 @@ static int brcm_pcie_probe(struct
-> platform_device *pdev)
->  	if (ret)
->  		goto fail;
+> > The PMU hardware control registers are programmed when add and del
+> > functions are called.
+> > For pmu->read no issues since no h/w issue with the data path.
 >
-> +	msi_dn = of_parse_phandle(pcie->dn, "msi-parent", 0);
-> +	/* Use the internal MSI if no msi-parent property */
-> +	if (!msi_dn)
-> +		msi_dn = pcie->dn;
-> +
-> +	if (pci_msi_enabled() && msi_dn == pcie->dn) {
-> +		ret = brcm_pcie_enable_msi(pcie);
-> +		if (ret)
-> +			dev_err(pcie->dev,
-> +				"probe of internal MSI failed: %d)", ret);
-> +		else
-> +			pcie->msi_internal = true;
-> +	}
-> +
->  	bridge->dev.parent = &pdev->dev;
->  	bridge->busnr = 0;
->  	bridge->ops = &brcm_pcie_ops;
-> @@ -944,7 +1274,6 @@ static int brcm_pcie_probe(struct 
-> platform_device *pdev)
->  	pcie->root_bus = bridge->bus;
+> As above, can you please describe the hardware conditions more
+> thoroughly?
 >
->  	return 0;
-> -
->  fail:
->  	_brcm_pcie_remove(pcie);
->  	return ret;
+> > This is UNCORE driver, not sure context switch has any influence on this?
+>
+> I believe that today it's possible for this to happen for cgroup events,
+> as non-sensical as it may be to have a cgroup-bound uncore PMU event.
+>
+> > Please suggest me, how can we fix this in back-end PMU driver without
+> > any perf core help?
+>
+> In order to do so, I need a better explanation of the underlying
+> hardware issue.
+
+I will try to put more explanation to erratum, however please let me
+know, if you have any specific questions.
+
+>
+> Thanks,
+> Mark.
 
 Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Ganapat
 
 _______________________________________________
 linux-arm-kernel mailing list
