@@ -2,56 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA9BFF2AF7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:42:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96C50F2B18
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:45:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=B0NsG0qJALUqh2pYshqZ/GFH6VHxdBco/Q8zD106P3I=; b=VnKxtqUr/oxfx9cAyt0VJCPMh
-	Q7ilwzZwtMvoUqtBiTgVvtw6tk5F4v+phWKEVKuaBN7Hn5wmhZKpXYjuV7dkRPqRszO/S9Zd8azmm
-	le8SxTXbTiBM7c/OLjCCYyhkKr3qI1Oehs6nWhpDwpWfCoEoshplNpddSCNjrW80g3EgAEb8TT7OL
-	QwUAyoOn+L2ti7o7fVWAqFofq8Ta2/JrgUEcgnQ5YoirJDfm8Yf23u+RzeeRmm5mp1fMcU0gT3NIc
-	zG8SlqeEhgzPCO25Di6qAxTCkSPLkB+wYZhpzK/0vDZ5lESCKAljUs7DrUjec4rfHNDwMQo3KpO0W
-	KdfWiXHKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/1AV5SGkPLEbIKtXuUfLAoC70Omb+UNRAyungA3L1Sw=; b=ThfSvOawEo379i
+	qrT/FYvIhUA5/DNaPqT1eQLYfNd5vu1vAuaZ6NObgvxrW8gfiPY1t7W8cj5UsojZK5tgMOF9PyCtg
+	eyvlcGrGJPKxiAyI26ON/hm3TFpw5R1a0jxMHaDcmQNhm0ZbgRpfNZaBYDPKSSG3IVNpzrQWDbugX
+	CtDYY84Ll+akwpsCgaOGmgf9Enu48ImAlYkOVB3+iCIZMPx3qu+iWs7HBygdaRXOf98oOkGFhOE5I
+	vkNAiE2XNFak8sMzDLGoQYr6VT1ornSplkrBjzJnuv0J5JGFZiSNAXx8oueB7HuQUGgpIOIZlLJYN
+	KfcYtm8KktaJnqgQ0dFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSeJN-0005Tt-Ub; Thu, 07 Nov 2019 09:42:41 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iSeLt-0006Dz-HG; Thu, 07 Nov 2019 09:45:17 +0000
+Received: from mail-eopbgr750082.outbound.protection.outlook.com
+ ([40.107.75.82] helo=NAM02-BL2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSeJG-0005TF-GB; Thu, 07 Nov 2019 09:42:36 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 71C67B1B8;
- Thu,  7 Nov 2019 09:42:32 +0000 (UTC)
-Message-ID: <b63a382c72bec9e52ea10f9d41aa45c6b1147eba.camel@suse.de>
-Subject: Re: [PATCH v2 1/2] ARM: dts: bcm2711: force CMA into first GB of
- memory
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stefan Wahren <wahrenst@gmx.net>, catalin.marinas@arm.com, 
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>, Mark
- Rutland <mark.rutland@arm.com>, Eric Anholt <eric@anholt.net>
-Date: Thu, 07 Nov 2019 10:42:30 +0100
-In-Reply-To: <09138a9d-40a5-4c5f-0cf4-1cb73579c600@gmx.net>
-References: <20191106095945.22933-1-nsaenzjulienne@suse.de>
- <20191106095945.22933-2-nsaenzjulienne@suse.de>
- <09138a9d-40a5-4c5f-0cf4-1cb73579c600@gmx.net>
-User-Agent: Evolution 3.34.1 
+ id 1iSeLc-00062S-ED
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 09:45:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=XEWRIjVGKKf/SYQpphYfzhgQEmXLPxD0R/+2O4Ilff9bfkRSfzJgK+iNJragbNy2wK5YTzWqTLfi9a89bxstty7JQEr515l6IYD7dzqu0vQY49HUaH44bLCKeolFw8B4xMtqId21oM6U+PLA49+0X2e8526fVSepybko4hbyMoGBGfysikgCWXeVJaT6lEcNQM++YBPE98PdjqAKMFojSyrwgVrKSrzknfvvY7NHnOgtbz/i3m0U445wCAiE6yjVpK2g41wSKLDsUu8SK/rxDOl72kh4bAIpKYorqFgDwU/467fCbBo5u7W+3Txl3dXsips6PwHWvk4Xr1ovoP6jzg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RulU0edXA1TyT6JnXSne76ErB8gsSd+JxwLwU1Ez/7I=;
+ b=Iy5wfpPI70b1MfyC/u4hs+sXxG9hAdlKwPf9avt5yUrLHq4cXv/t2e9xxryjSUfymLPKpIuM1saYPeP0CgC6FVtMWim6sWKfCK4LPipYOB67YZkEBsoq54ROx1AGS26fiV5N4eT53/KYQumQV7y3d+DPhqnuRHfXT/huiRgl6cLfcnPvm97CKdrGo4zX3QwzVevNxDqyhRRi3XsOsh+qHqpx56BuNOhhGsga2qSSXcHSWRau3+xKJoaxhhJ6TRFqu7ptOXItceoM/VXSYQH/0FjDW+UJnlJLOjHyjAe9NkkSuglb4T20+9yzUPnkcRSY/HeKnqjiix08BzrfHlVN7Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RulU0edXA1TyT6JnXSne76ErB8gsSd+JxwLwU1Ez/7I=;
+ b=P3H+eTJedW8Ogqm/aivCeDf7dZXu/LiQlogymavCwq/01iOjQn74kDKf+nCyESyWV1eSO0jUNeFkVv0C3+DIFwkx6nzaz7hKCUfBsnrpXgds0r3MMg4ss6Kea1pfz1+NrGi3B4+sw2xWdL1Uzfs+0IAKbhUGuWo+rbbOISfTvrQ=
+Received: from BN7PR02CA0014.namprd02.prod.outlook.com (2603:10b6:408:20::27)
+ by BL0PR02MB4404.namprd02.prod.outlook.com (2603:10b6:208:45::17)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2408.17; Thu, 7 Nov
+ 2019 09:44:50 +0000
+Received: from CY1NAM02FT053.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e45::203) by BN7PR02CA0014.outlook.office365.com
+ (2603:10b6:408:20::27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2430.22 via Frontend
+ Transport; Thu, 7 Nov 2019 09:44:50 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ CY1NAM02FT053.mail.protection.outlook.com (10.152.74.165) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2430.20
+ via Frontend Transport; Thu, 7 Nov 2019 09:44:49 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <rajan.vaja@xilinx.com>)
+ id 1iSeLR-0002k4-6n; Thu, 07 Nov 2019 01:44:49 -0800
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <rajan.vaja@xilinx.com>)
+ id 1iSeLM-000061-3x; Thu, 07 Nov 2019 01:44:44 -0800
+Received: from xsj-pvapsmtp01 (mailman.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id xA79ifL8012799; 
+ Thu, 7 Nov 2019 01:44:41 -0800
+Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <rajan.vaja@xilinx.com>)
+ id 1iSeLJ-00005Y-8T; Thu, 07 Nov 2019 01:44:41 -0800
+From: Rajan Vaja <rajan.vaja@xilinx.com>
+To: robh+dt@kernel.org, mark.rutland@arm.com, michal.simek@xilinx.com,
+ harini.katakam@xilinx.com, jan.kiszka@siemens.com,
+ ulf.hansson@linaro.org, xuwei5@hisilicon.com, mripard@kernel.org,
+ heiko@sntech.de
+Subject: [PATCH 0/3] arm64: dts: xilinx: Update dts for zynqmp
+Date: Thu,  7 Nov 2019 01:44:13 -0800
+Message-Id: <1573119856-13548-1-git-send-email-rajan.vaja@xilinx.com>
+X-Mailer: git-send-email 2.7.4
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(136003)(346002)(376002)(396003)(199004)(189003)(106002)(476003)(6666004)(356004)(51416003)(478600001)(7696005)(7416002)(48376002)(14444005)(50466002)(36756003)(305945005)(70206006)(26005)(4326008)(70586007)(16586007)(316002)(2616005)(486006)(36386004)(107886003)(81166006)(2906002)(44832011)(47776003)(186003)(426003)(5660300002)(8936002)(336012)(50226002)(8676002)(126002)(9786002)(81156014);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BL0PR02MB4404; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 5d976a5d-8391-43f9-01f4-08d7636721f4
+X-MS-TrafficTypeDiagnostic: BL0PR02MB4404:
+X-Microsoft-Antispam-PRVS: <BL0PR02MB4404BBEBC76170A052EF775AB7780@BL0PR02MB4404.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:4502;
+X-Forefront-PRVS: 0214EB3F68
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: ubG7FbwME05900hBpCkgsr61qKNbvFbBB1qFtEw5vpyzgAJYvUfQW/bfbzej8fZyUPALAsqeuZ7WyIU+S9z6opC3/gqC/kiwQmF8lgrMTrtCb4vZxGbSH277fHB/nhWMxUmZTR2VgoCnl4xTm2eP5GWHJPLA+duGZGL1xsGuZNFnRejyXg60DZD31LK9AfR4LEBnsoXFRiqRGox4Hf/8G+XHvZSMJ53wpLu19kkRExguwgr5wgygrX6qniWwkik6jvCZOUiq9SH1+tfXFlC//OTrIXHajK4mpuXUuxDDlghvInG/z6pf0GO0+t897uJe69xX8ye3Xf2ICfVHO/IYPVUmtBSMCp+30P1dv37G8Mdzmm+21WRWli1j82BMAPFaty/aovg8UfsUUW7IoEi2wi2M3Rhp/IGQZqKYPOAcpat0Xbt3K8d6iTDyyEJv8pWk
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Nov 2019 09:44:49.7074 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5d976a5d-8391-43f9-01f4-08d7636721f4
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB4404
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_014234_684987_FA3B0954 
-X-CRM114-Status: GOOD (  18.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191107_014500_481296_0A7F174F 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.75.82 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,129 +141,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2590330347157965906=="
+Cc: devicetree@vger.kernel.org, Rajan Vaja <rajan.vaja@xilinx.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Add support for clock and power domain nodes in dts for zynqmp.
 
---===============2590330347157965906==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-kpHq0CYDmXDh0eqViyTB"
+Rajan Vaja (3):
+  arm64: dts: xilinx: Add the clock nodes for zynqmp
+  arm64: dts: xilinx: Remove dtsi for fixed clock
+  arm64: dts: xilinx: Add the power nodes for zynqmp
 
+ arch/arm64/boot/dts/xilinx/zynqmp-clk-ccf.dtsi     | 222 +++++++++++++++++++++
+ arch/arm64/boot/dts/xilinx/zynqmp-clk.dtsi         | 213 --------------------
+ arch/arm64/boot/dts/xilinx/zynqmp-zc1232-revA.dts  |   4 +-
+ arch/arm64/boot/dts/xilinx/zynqmp-zc1254-revA.dts  |   4 +-
+ arch/arm64/boot/dts/xilinx/zynqmp-zc1275-revA.dts  |   2 +-
+ .../boot/dts/xilinx/zynqmp-zc1751-xm015-dc1.dts    |   4 +-
+ .../boot/dts/xilinx/zynqmp-zc1751-xm016-dc2.dts    |   4 +-
+ .../boot/dts/xilinx/zynqmp-zc1751-xm017-dc3.dts    |   4 +-
+ .../boot/dts/xilinx/zynqmp-zc1751-xm018-dc4.dts    |   4 +-
+ .../boot/dts/xilinx/zynqmp-zc1751-xm019-dc5.dts    |   4 +-
+ arch/arm64/boot/dts/xilinx/zynqmp-zcu100-revC.dts  |   4 +-
+ arch/arm64/boot/dts/xilinx/zynqmp-zcu102-revA.dts  |   4 +-
+ arch/arm64/boot/dts/xilinx/zynqmp-zcu104-revA.dts  |   4 +-
+ arch/arm64/boot/dts/xilinx/zynqmp-zcu106-revA.dts  |   4 +-
+ arch/arm64/boot/dts/xilinx/zynqmp-zcu111-revA.dts  |   4 +-
+ arch/arm64/boot/dts/xilinx/zynqmp.dtsi             |  72 ++++++-
+ 16 files changed, 318 insertions(+), 239 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/xilinx/zynqmp-clk-ccf.dtsi
+ delete mode 100644 arch/arm64/boot/dts/xilinx/zynqmp-clk.dtsi
 
---=-kpHq0CYDmXDh0eqViyTB
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+-- 
+2.7.4
 
-On Thu, 2019-11-07 at 07:23 +0100, Stefan Wahren wrote:
-> Hi Nicolas,
->=20
-> Am 06.11.19 um 10:59 schrieb Nicolas Saenz Julienne:
-> > arm64 places the CMA in ZONE_DMA32, which is not good enough for the
-> > Raspberry Pi 4 since it contains peripherals that can only address the
-> > first GB of memory. Explicitly place the CMA into that area.
-> >=20
-> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> >=20
-> > ---
-> >=20
-> > Changes since v1:
-> >   - Move into bcm2711.dtsi
-> >=20
-> >  arch/arm/boot/dts/bcm2711.dtsi | 20 ++++++++++++++++++++
-> >  1 file changed, 20 insertions(+)
-> >=20
-> > diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711=
-.dtsi
-> > index 1f3acd3363ea..6000a01652fa 100644
-> > --- a/arch/arm/boot/dts/bcm2711.dtsi
-> > +++ b/arch/arm/boot/dts/bcm2711.dtsi
-> > @@ -12,6 +12,26 @@
-> >=20
-> >  	interrupt-parent =3D <&gicv2>;
-> >=20
-> > +	reserved-memory {
-> > +		#address-cells =3D <2>;
-> > +		#size-cells =3D <1>;
-> > +		ranges;
-> > +
-> > +		/*
-> > +		 * arm64 reserves the CMA by default somewhere in ZONE_DMA32,
-> > +		 * that's not good enough for the Raspberry Pi 4 as some
->=20
-> sorry for the nitpicking but i hope the Raspberry Pi 4 B wont be the
-> only user of BCM2711.
-
-No worries :)
-
-It's better that way anyway.
-
->=20
-> So please s/Raspberry Pi 4/BCM2711/
->=20
-> Beside that:
->=20
-> Acked-by: Stefan Wahren <wahrenst@gmx.net>
-
-Thanks!
-
->=20
-> > +		 * devices can only address the lower 1G of memory (ZONE_DMA).
-> > +		 */
-> > +		linux,cma {
-> > +			compatible =3D "shared-dma-pool";
-> > +			size =3D <0x2000000>; /* 32MB */
-> > +			alloc-ranges =3D <0x0 0x00000000 0x40000000>;
-> > +			reusable;
-> > +			linux,cma-default;
-> > +		};
-> > +	};
-> > +
-> > +
-> >  	soc {
-> >  		/*
-> >  		 * Defined ranges:
->=20
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
-
---=-kpHq0CYDmXDh0eqViyTB
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3D5wYACgkQlfZmHno8
-x/6Z9wf+Ix7scgFz+3M7rFkw5LPO3vRxZIa27azCPt/YhruRqYjIFxhJRtvND+Bj
-aA7Lv1P9AayPq9Wzf+9SXpe8kV9075JIwkePxHpSxYRKQO2OxY9PyK79qgi/lEZG
-uFX3nwYBQL28v2DF+Sg12VLrtKuZI+azxLxiv936jZKV58RO+gfCHWulheO+MSiL
-8chl+ZRp0dUehw2squNSbwtcZnr/IcFLx5vDW+EaJdYwNqq+N07LlSeTqxNsPK9a
-RUkOOpOqjv6V8va7RVy4I07aAlRBHrCX34+hvTcZPJkXk3ev5XCGzPZBUPjlklYW
-V4IwN6QZQWEaEO0X/W+lryiJzePQ+w==
-=1rN1
------END PGP SIGNATURE-----
-
---=-kpHq0CYDmXDh0eqViyTB--
-
-
-
---===============2590330347157965906==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2590330347157965906==--
-
-
