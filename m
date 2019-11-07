@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EA9CF3970
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 21:19:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DECDF3971
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 21:19:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5MdAUJa56Xtm7xBWcBVcLuapE8XGs4TgYjrhYrSNfkQ=; b=J/xIQg24Z1/z7T
-	Z2bau0Rx2wGg+kJ7zB2cpfhUd3anzCDnuw/GGWzUXcpBv8oB16oa89OKAmdPMIfZ358nVZfitia+X
-	lt1Fk9COi0PIFza0cXgMhVLH5WGV5Hdbia6rdQ7pvmq6Cys40D2KUZLvjuI7psLYZVWEuYdv46JPm
-	dE11cg29MkUhpCh1DMSKGig6yI3x9arBEKzmVgApXfXSm1Ec6K1/x6WMeekASyQzzSkdZk3fQvN6X
-	nyKs5D12qqrbCHI9ZIyMToA5YAq7Y8daOBTPILt6EQwVFNBegQkvZtGrfc2KS/hkFA/RtGcXmoUYI
-	5ixQNPtiYDQ9N+tE3yRA==;
+	List-Owner; bh=4clwTdDExy5Ts4fTiY+rpt0HqR/QQCLALNvGfnOuniQ=; b=nlfHZc3wIPGWz8
+	wlSc2JxTYBWnwVS7/pQ5Ra5S59jiIrQ62U36od4aoygpl7V8wSLIKTKhnxHXG3HYBD/CMfr/5XV82
+	k9ejNIizAXS2JM6aANh/QgOnI3SVUniHtFOWO2JgqsflKlUxKcUZbnDFlnI91q2jrWOSC7eXsGGh4
+	/BlXOzTvskeYgHQ7DLQl4WeZBIyZReTuwTeTDI6arEe10GjsxLkZAxA07hFRU3YOVXwPJ51f878/y
+	KsruZRc3lpNpJEmpqS96vwMFaP2kXT/Tw1EfG5fOdIfUHRjy7RhMXUSdKqYmifgXhIdfJ1WR2wRlD
+	ZJNxA62eM9BzfA7w7U5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSoFE-0007ta-Gu; Thu, 07 Nov 2019 20:19:04 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iSoFT-00087w-I6; Thu, 07 Nov 2019 20:19:19 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSoDS-0006Dm-Lj
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 20:17:16 +0000
-Received: by mail-wr1-x442.google.com with SMTP id e6so4605875wrw.1
+ id 1iSoDU-0006Eo-4a
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 20:17:18 +0000
+Received: by mail-wm1-x344.google.com with SMTP id f3so3899759wmc.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 12:17:14 -0800 (PST)
+ Thu, 07 Nov 2019 12:17:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Qa6zPAo+YKu4/swyBIVIn4JlZMDMbBdI4/pSMmOsjVY=;
- b=UYGqinQHyqZIppvIcVqUyOQCgWCGngK6A/7+UHZglau2c8Oz6o2jzn0pUp/AczP1Ir
- JdegspDcYdAdzHIIGNKfyq1e0o3xm6PHtc6DyzYMqhCQz9FlSk06ALhiLY0HN9F4pSg5
- fVr9dizjSL1GRn4AvPgL71JHOBSG8NWS+y8bL6j63ZHDLGafFgapbMFEuZR3xE1qgekI
- H5sQGa/mQvD9Yfan4oOqnLq/IonTJazCq19dkJlFFCH6AICdlsy5Jh5vxGqGbhi5zqa6
- WR0MMzImLZmxr6M6nfTGO/tgLKV0Ty536p5nbF+igIw0CkFrVeSAY3zEy0lmjOosuCAu
- D4Cw==
+ bh=T+zsluzS/T4QlV+amlXXzj5zuhGksPk6IuGM8tASFHM=;
+ b=J69UedwDH6qm/d/QY5IaFKnLBYOqIVP0y9qtbza0hVQLaDDn7dW1HHq4iXHHLyTBzl
+ JzG4DDQFjUi576WuidaONs8q5hxghV9y8rlC42ZmP9n2OsIwUVPwixWPTssgCO9YMvNy
+ AoesUy4qA7O2zzgNtS25nLDcg1ZDEzqVmwEcYnC2AkDw90FIdravTeMVzm1qhn9Zy+0D
+ y26p6Cw4cEHXgX+8uwo6/w9xkh8XeGuJ89KNrHujCwCo6q0GNXGbht7l32zcYBNKClYn
+ LAVreQ2L6G19/YDVCyUnvStjOXvozavkSHR25B5mQYDeV6Cpt/k5Jlbte9FkaUBo8n5O
+ QoIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Qa6zPAo+YKu4/swyBIVIn4JlZMDMbBdI4/pSMmOsjVY=;
- b=pBGJLxDANcQA4PUGZbJedpPpQqgf4FHmNSL04C2uAuYowgqF8AbYTQmw5AKkrVsLw4
- T+EhYrQsy31Yr3s/Gxq62wVRUqhIpo9kSXI+KTHX1QywmyCSS4qWu1EwT820evzMhqcW
- 7hccDIXfawe8c+h1T5eAMyhGL6zhNA6DbJnXa0dxfQJlaSVpltIJqJ4UJRL4awAiSTJy
- 19r1OnBpaIZhwoBKA4B+v3wu+jYT6G/NManerK8AvgHQ5otbtioVlVbZAPKBxCLaPJVJ
- /zrCpnuNsZ77yjX1u2Jyyey/QJtGwUzZTbhdM1d8Uq9Q9ffpuePWtN+dP8G3EGG2+OF6
- DYgQ==
-X-Gm-Message-State: APjAAAXLR8G3Sk5VhkHgRzVbdI+C6EMBxAwuUDOpRbaXo2Yy+jMNwGmU
- dHNe9z0vmjy5iiCXBv7LDX+RnVB+LOw=
-X-Google-Smtp-Source: APXvYqyIDYZki3Hcy87XKUSJcJYOnIsQ54TNVpbKrjvGilXExqgL+p8sbIRuF7xsxoxBfxy89BNs+g==
-X-Received: by 2002:adf:fd4b:: with SMTP id h11mr4595221wrs.191.1573157833238; 
- Thu, 07 Nov 2019 12:17:13 -0800 (PST)
+ bh=T+zsluzS/T4QlV+amlXXzj5zuhGksPk6IuGM8tASFHM=;
+ b=ZadmVBq/Qi4cWTUz9IFCgR5wf/JHCShGY/n9YGtLDjIcF/X+Dx5JIBUj+jJt+0hYZQ
+ 9WcTByr81wfauEiiVYQvGdpSsIQchFpW1Jh+K4KoTxsvNpK6nR2hsxziF6uCgFqdtkpd
+ sSLe0rTds+u/VehokNdrKinK06HKCaKPTHIeT9fC8JHF7NCHaLgm4qBCbGQUTKT6b4Y3
+ O/VPsbqGYRdYz3ibfdmIHH4sAFj1/fjp4LneVgiyVTUNONCDCmCtgrBZ5+XER6qB0oSs
+ EX8xjd266DQMq8sFJaOSPjT8fzgoxVYD1Bav9zov93ywP3wbhe+dEjQl+Uhg+wrBQbK1
+ 206g==
+X-Gm-Message-State: APjAAAWDQhhYSgozZ1tyNMY7wqbcus0S++MVf29ZxANNdD2caUB14SSe
+ 2erOCkpk12tGgYv9jg5PEmnFog==
+X-Google-Smtp-Source: APXvYqyK+1+T6i/yZeGbXEMqaSWkBh7UUTFmvC0ZviyeqEbr6Z+uJWb/xiiKwTmnU2t6XRADAYsdzw==
+X-Received: by 2002:a1c:2155:: with SMTP id h82mr4601632wmh.94.1573157834195; 
+ Thu, 07 Nov 2019 12:17:14 -0800 (PST)
 Received: from localhost.localdomain ([95.147.198.88])
- by smtp.gmail.com with ESMTPSA id d11sm3215162wrn.28.2019.11.07.12.17.12
+ by smtp.gmail.com with ESMTPSA id d11sm3215162wrn.28.2019.11.07.12.17.13
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 12:17:12 -0800 (PST)
+ Thu, 07 Nov 2019 12:17:13 -0800 (PST)
 From: Lee Jones <lee.jones@linaro.org>
 To: gregkh@google.com
-Subject: [PATCH 08/10] bnx2x: Check if transceiver implements DDM before access
-Date: Thu,  7 Nov 2019 20:17:00 +0000
-Message-Id: <20191107201702.27023-8-lee.jones@linaro.org>
+Subject: [PATCH 09/10] ARM: davinci: da8xx: specify dma_coherent_mask for lcdc
+Date: Thu,  7 Nov 2019 20:17:01 +0000
+Message-Id: <20191107201702.27023-9-lee.jones@linaro.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191107201702.27023-1-lee.jones@linaro.org>
 References: <20191107201702.27023-1-lee.jones@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_121714_788921_8BD0600C 
-X-CRM114-Status: GOOD (  12.09  )
+X-CRM114-CacheID: sfid-20191107_121716_186206_90879CAF 
+X-CRM114-Status: GOOD (  12.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -96,75 +96,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- "Mauro S. M. Rodrigues" <maurosr@linux.vnet.ibm.com>,
- linux-kernel@vger.kernel.org, Sudarsana Reddy Kalluru <skalluru@marvell.com>,
- Lee Jones <lee.jones@linaro.org>, "David S . Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Sekhar Nori <nsekhar@ti.com>,
+ linux-kernel@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Mauro S. M. Rodrigues" <maurosr@linux.vnet.ibm.com>
+From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-[ Upstream commit cf18cecca911c0db96b868072665347efe6df46f ]
+[ Upstream commit 68f2515bb31a664ba3e2bc1eb78dd9f529b10067 ]
 
-Some transceivers may comply with SFF-8472 even though they do not
-implement the Digital Diagnostic Monitoring (DDM) interface described in
-the spec. The existence of such area is specified by the 6th bit of byte
-92, set to 1 if implemented.
+The lcdc device is missing the dma_coherent_mask definition causing the
+following warning on da850-evm:
 
-Currently, without checking this bit, bnx2x fails trying to read sfp
-module's EEPROM with the follow message:
+da8xx_lcdc da8xx_lcdc.0: found Sharp_LK043T1DG01 panel
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 1 at kernel/dma/mapping.c:247 dma_alloc_attrs+0xc8/0x110
+Modules linked in:
+CPU: 0 PID: 1 Comm: swapper Not tainted 5.2.0-rc3-00077-g16d72dd4891f #18
+Hardware name: DaVinci DA850/OMAP-L138/AM18x EVM
+[<c000fce8>] (unwind_backtrace) from [<c000d900>] (show_stack+0x10/0x14)
+[<c000d900>] (show_stack) from [<c001a4f8>] (__warn+0xec/0x114)
+[<c001a4f8>] (__warn) from [<c001a634>] (warn_slowpath_null+0x3c/0x48)
+[<c001a634>] (warn_slowpath_null) from [<c0065860>] (dma_alloc_attrs+0xc8/0x110)
+[<c0065860>] (dma_alloc_attrs) from [<c02820f8>] (fb_probe+0x228/0x5a8)
+[<c02820f8>] (fb_probe) from [<c02d3e9c>] (platform_drv_probe+0x48/0x9c)
+[<c02d3e9c>] (platform_drv_probe) from [<c02d221c>] (really_probe+0x1d8/0x2d4)
+[<c02d221c>] (really_probe) from [<c02d2474>] (driver_probe_device+0x5c/0x168)
+[<c02d2474>] (driver_probe_device) from [<c02d2728>] (device_driver_attach+0x58/0x60)
+[<c02d2728>] (device_driver_attach) from [<c02d27b0>] (__driver_attach+0x80/0xbc)
+[<c02d27b0>] (__driver_attach) from [<c02d047c>] (bus_for_each_dev+0x64/0xb4)
+[<c02d047c>] (bus_for_each_dev) from [<c02d1590>] (bus_add_driver+0xe4/0x1d8)
+[<c02d1590>] (bus_add_driver) from [<c02d301c>] (driver_register+0x78/0x10c)
+[<c02d301c>] (driver_register) from [<c000a5c0>] (do_one_initcall+0x48/0x1bc)
+[<c000a5c0>] (do_one_initcall) from [<c05cae6c>] (kernel_init_freeable+0x10c/0x1d8)
+[<c05cae6c>] (kernel_init_freeable) from [<c048a000>] (kernel_init+0x8/0xf4)
+[<c048a000>] (kernel_init) from [<c00090e0>] (ret_from_fork+0x14/0x34)
+Exception stack(0xc6837fb0 to 0xc6837ff8)
+7fa0:                                     00000000 00000000 00000000 00000000
+7fc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+7fe0: 00000000 00000000 00000000 00000000 00000013 00000000
+---[ end trace 8a8073511be81dd2 ]---
 
-ethtool -m enP5p1s0f1
-Cannot get Module EEPROM data: Input/output error
+Add a 32-bit mask to the platform device's definition.
 
-Because it fails to read the additional 256 bytes in which it is assumed
-to exist the DDM data.
+Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-This issue was noticed using a Mellanox Passive DAC PN 01FT738. The EEPROM
-data was confirmed by Mellanox as correct and similar to other Passive
-DACs from other manufacturers.
-
-Signed-off-by: Mauro S. M. Rodrigues <maurosr@linux.vnet.ibm.com>
-Acked-by: Sudarsana Reddy Kalluru <skalluru@marvell.com>
-Signed-off-by: David S. Miller <davem@davemloft.net>
+Signed-off-by: Sekhar Nori <nsekhar@ti.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
-Signed-off-by: Lee Jones <lee.jones@linaro.org>
-Change-Id: I4cae3b2ae3a298d6c0a7dd3fbf6fe97c1acba239
----
- drivers/net/ethernet/broadcom/bnx2x/bnx2x_ethtool.c | 3 ++-
- drivers/net/ethernet/broadcom/bnx2x/bnx2x_link.h    | 1 +
- 2 files changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/broadcom/bnx2x/bnx2x_ethtool.c b/drivers/net/ethernet/broadcom/bnx2x/bnx2x_ethtool.c
-index 2a518c998ecc..57014e89a3c6 100644
---- a/drivers/net/ethernet/broadcom/bnx2x/bnx2x_ethtool.c
-+++ b/drivers/net/ethernet/broadcom/bnx2x/bnx2x_ethtool.c
-@@ -1531,7 +1531,8 @@ static int bnx2x_get_module_info(struct net_device *dev,
- 	}
+Signed-off-by: Lee Jones <lee.jones@linaro.org>
+Change-Id: I835e72dbeb9ded2ffc7be0561f8f3544c3cc29ed
+---
+ arch/arm/mach-davinci/devices-da8xx.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/arch/arm/mach-davinci/devices-da8xx.c b/arch/arm/mach-davinci/devices-da8xx.c
+index e83874ba6e6d..49716ba0bbb1 100644
+--- a/arch/arm/mach-davinci/devices-da8xx.c
++++ b/arch/arm/mach-davinci/devices-da8xx.c
+@@ -626,6 +626,9 @@ static struct platform_device da8xx_lcdc_device = {
+ 	.id		= 0,
+ 	.num_resources	= ARRAY_SIZE(da8xx_lcdc_resources),
+ 	.resource	= da8xx_lcdc_resources,
++	.dev		= {
++		.coherent_dma_mask	= DMA_BIT_MASK(32),
++	}
+ };
  
- 	if (!sff8472_comp ||
--	    (diag_type & SFP_EEPROM_DIAG_ADDR_CHANGE_REQ)) {
-+	    (diag_type & SFP_EEPROM_DIAG_ADDR_CHANGE_REQ) ||
-+	    !(diag_type & SFP_EEPROM_DDM_IMPLEMENTED)) {
- 		modinfo->type = ETH_MODULE_SFF_8079;
- 		modinfo->eeprom_len = ETH_MODULE_SFF_8079_LEN;
- 	} else {
-diff --git a/drivers/net/ethernet/broadcom/bnx2x/bnx2x_link.h b/drivers/net/ethernet/broadcom/bnx2x/bnx2x_link.h
-index d9cce4c3899b..e909275ff2af 100644
---- a/drivers/net/ethernet/broadcom/bnx2x/bnx2x_link.h
-+++ b/drivers/net/ethernet/broadcom/bnx2x/bnx2x_link.h
-@@ -60,6 +60,7 @@
- #define SFP_EEPROM_DIAG_TYPE_ADDR		0x5c
- #define SFP_EEPROM_DIAG_TYPE_SIZE		1
- #define SFP_EEPROM_DIAG_ADDR_CHANGE_REQ		(1<<2)
-+#define SFP_EEPROM_DDM_IMPLEMENTED		(1<<6)
- #define SFP_EEPROM_SFF_8472_COMP_ADDR		0x5e
- #define SFP_EEPROM_SFF_8472_COMP_SIZE		1
- 
+ int __init da8xx_register_lcdc(struct da8xx_lcdc_platform_data *pdata)
 -- 
 2.24.0
 
