@@ -2,90 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EC28F347C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 17:16:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C744F3486
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 17:20:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iWKxRnCh5WEcm1ZVD8qQ8YIJZu/1j2xbCWB5r4opaLQ=; b=tzN1kHXpk8/xQO
-	RvAhXJ7qPsVKV60Gz6B1O/fGeL1TNLkLJyvCw8FM8Xn8PajNMbzUJgyaYl2ZnV8w36WTM9mEuvaQy
-	1NEyElhfUb6zwvG0jqTMs0M6UGQEoBd2TGWt0Tr3gHBzPMDgY5hLBWM3Z4jWWg/7SYcknm1eAJ3Ds
-	AK/OHgL8+k+7jI+TXy5SmI/1FdWvB8R0jPny/MFwJV0UEuOUlYxNYkbfYpoXsnw8BS7esqLQNWhj8
-	29uZ12ZBcY17NwHicn9zOCR0Y7HKVAqCq44LiGM0HLZRgLyZZ3l2gm6tR6sqxH8AnyZTndtGOv+pv
-	E7AhOR4B9U0mhKIqyyfQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zPvQIZn3kBQTrCK07iYlBAmOJuWJKksLZPbW5itnSnk=; b=eCoy1n86UGbW5/k4/seACcWJr
+	wWfydtjRlFQPieUryP8zpsx/gKnqDxhgFYoXbVPGPil+b8Xi7HzEVZwjDyBtYa1dzyLwuk2Hbd3Oi
+	FK38YBzXiwYyPSGdxlu+RioDZbmUpIFm/o1USrx5IY7eCqUYRQ0g4PBW0ftyfIOU56tCvGJ5vD4JS
+	HFEfr9jeFEIjiVBuFf1OkHTWFxiQHqGEjARrCZBlaM1OZWAPYo+juSb27/3NLpF8Pl7f4wl9PmryO
+	s0NARobyVYNmqKb22BmbuevD1uQ9R7xOcNryoyBzpCh+/AECfqKX7yX6vIzWRTbjO46dHM6NZPzva
+	KflVR68Rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSkSu-00039F-Gb; Thu, 07 Nov 2019 16:16:56 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1iSkWf-0004or-Cb; Thu, 07 Nov 2019 16:20:49 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSkSn-00038c-Di
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 16:16:50 +0000
-Received: by mail-lj1-x242.google.com with SMTP id e9so2890172ljp.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 08:16:48 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=H7kVd9FarYpVpIKscAjqYl6LRrnKSeFeSP0krGXflic=;
- b=rN6LrlHSKT2qOQK5ltr/br77qUF9yv79uygmhFo59z/vq0k9ViIIZikZtCuEiH0D9O
- Nu6V4QMAQ3F9Wq9d/aBstjFh86Oifi0mzmY1jz07EoMcuIiofNEksrlvwyzCVAdBsEIM
- FWzgH1QVhoH8vEBpmj4yDgDbmTCbMqx/sBsCu9r3pWhAtlrOQTngMvPamSxYakdQNa8r
- 3h7iMATyaMX4+1z002syjAofPeYqQK4+whpnFgpUjuhI7HJumenh8erI73xIqmziAx1N
- S+gqWwgVgnHyB5JBwZ5hoYdxLGOyh+inXFbGkGBX15DCKmTb6+sQTB4aZUXNKT2AlkJl
- E3eQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=H7kVd9FarYpVpIKscAjqYl6LRrnKSeFeSP0krGXflic=;
- b=FjYbvUiCk157+AuJMZ2yw6pgxG4hYjTa0u4F0huNf+gyVcO8J1bzaE698sZOJrtMCL
- 7ILszHp7WGClNP18NBe34H/Y73EOU0st95EHkHfFotDaNDkqppRZJqtZbwVVpjjRStcQ
- 7M1gOCx9DBliA/lspZSvSZI7nOkkf8t7kJpcsUtPSh/5G9wTNcnNc9zPUvp2fv48gldJ
- uz4vi6yIc0KDcO/yx0ACC2RUjpLQxxb5QPuRGfv/b7ipem6nKCLiCsWaStAIUy8+N5Fd
- Lna88QW5fye6i8cyOQXwCXKRpCrJxUAXuiy77mhcmRCjUfef6mJ7SBctfAYXvYHEbbIV
- FFEA==
-X-Gm-Message-State: APjAAAW/jpX4OOlxYgeRKC0bDqJlqgPXgm88RdPa0Fx0SvFWHZeUPQ/9
- CiZwfDiTWHzwP4KoDrWGJHl+Vw==
-X-Google-Smtp-Source: APXvYqzEarZA7i5yNLQDKnCZ6UdjoZrknJdst/e11rKs7LKIEVTzKZbJlEp2WGsGfTZOPtQx8Dn0dA==
-X-Received: by 2002:a2e:998a:: with SMTP id w10mr3111225lji.66.1573143406950; 
- Thu, 07 Nov 2019 08:16:46 -0800 (PST)
-Received: from jax (h-48-81.A175.priv.bahnhof.se. [94.254.48.81])
- by smtp.gmail.com with ESMTPSA id f3sm3263212lfp.0.2019.11.07.08.16.46
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 07 Nov 2019 08:16:46 -0800 (PST)
-Date: Thu, 7 Nov 2019 17:16:44 +0100
-From: Jens Wiklander <jens.wiklander@linaro.org>
-To: arm@kernel.org, soc@kernel.org
-Subject: Re: [GIT PULL] tee subsys fixes for v5.4
-Message-ID: <20191107161644.GA8304@jax>
-References: <20191107121159.GA9301@jax>
+ id 1iSkWX-0004oD-6F
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 16:20:42 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iSkWV-0008Qw-8Z; Thu, 07 Nov 2019 17:20:39 +0100
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH resend 0/2] ARM/decompressor: deal with disabled CP15
+ barrier instructions
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191107121159.GA9301@jax>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Date: Thu, 07 Nov 2019 17:30:00 +0109
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <20191106104918.26397-1-ardb@kernel.org>
+References: <20191106104918.26397-1-ardb@kernel.org>
+Message-ID: <36e25caa345f95ff785a814fcba5778f@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: ardb@kernel.org, linux-arm-kernel@lists.infradead.org,
+ rmk+kernel@armlinux.org.uk, linus.walleij@linaro.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_081649_526091_7C62145D 
-X-CRM114-Status: GOOD (  18.53  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191107_082041_379150_0A93263B 
+X-CRM114-Status: GOOD (  11.13  )
+X-Spam-Score: 1.7 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ 0.1 BUG6152_INVALID_DATE_TZ_ABSURD No description available.
+ 0.6 INVALID_DATE_TZ_ABSURD Invalid Date: header (timezone does not
+ exist)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,66 +68,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: rmk+kernel@armlinux.org.uk, linus.walleij@linaro.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On 2019-11-06 11:58, Ard Biesheuvel wrote:
+> [ Resending because --cc-cover didn't take ]
+>
+> While trying to test my v4.4 backport of the firmware/hypervisor
+> based spectre
+> v1/v2 mitigations for 32-bit ARM, I noticed that KVM/qemu failed to 
+> boot my
+> kernel while it booted fine under TCG emulation.
+>
+> As it turns out, KVM/qemu may instantiate the VCPU with support for 
+> CP15
+> barrier instructions disabled, causing them to UNDEF and crash the
+> decompressor.
+>
+> I already fixed the same issue for UEFI boot, but since v4.4 does not 
+> support
+> that, I only noticed now that this is an issue for bare metal as 
+> well.
+>
+> Cc: Russell King <rmk+kernel@armlinux.org.uk>
+> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Cc: Marc Zyngier <maz@kernel.org>
+>
+> Ard Biesheuvel (2):
+>   ARM/decompressor: avoid CP15 barrier instructions in v7 cache setup
+>     code
+>   Revert "ARM: 8857/1: efi: enable CP15 DMB instructions before 
+> cleaning
+>     the cache"
+>
+>  arch/arm/boot/compressed/head.S | 51 ++++++++++----------
+>  1 file changed, 26 insertions(+), 25 deletions(-)
 
-On Thu, Nov 07, 2019 at 01:11:59PM +0100, Jens Wiklander wrote:
-> Hello arm-soc maintainers,
-> 
-> Please pull these OP-TEE driver fixes. There's one user-after-free issue if
-> in the error handling path when the OP-TEE driver is initializing. There's
-> also one fix to to register dynamically allocated shared memory needed by
-> kernel clients communicating with secure world via memory references.
-> 
-> If you think it's too late for v5.4 please queue it for v5.5 instead.
+For the whole series:
 
-Please ignore this pull request.
+Acked-by: Marc Zyngier <maz@kernel.org>
 
-"tee: optee: Fix dynamic shm pool allocations" is not good without other
-patches, which are not included here.
-
-Sorry about the mess.
-
-Thanks,
-Jens
-
-> 
-> Thanks,
-> Jens
-> 
-> The following changes since commit 4f5cafb5cb8471e54afdc9054d973535614f7675:
-> 
->   Linux 5.4-rc3 (2019-10-13 16:37:36 -0700)
-> 
-> are available in the Git repository at:
-> 
->   git://git.linaro.org/people/jens.wiklander/linux-tee.git tags/tee-fixes-for-v5.4
-> 
-> for you to fetch changes up to 61435a63b15233428088ccb0ad34e19fc00416c9:
-> 
->   tee: optee: fix device enumeration error handling (2019-11-07 12:07:44 +0100)
-> 
-> ----------------------------------------------------------------
-> Two OP-TE driver fixes:
-> - Add proper cleanup on optee_enumerate_devices() failure
-> - Make sure to register kernel allocations of dynamic shared memory
-> 
-> ----------------------------------------------------------------
-> Jens Wiklander (1):
->       tee: optee: fix device enumeration error handling
-> 
-> Sumit Garg (1):
->       tee: optee: Fix dynamic shm pool allocations
-> 
->  drivers/tee/optee/core.c     | 20 ++++++++++++--------
->  drivers/tee/optee/shm_pool.c | 12 +++++++++++-
->  2 files changed, 23 insertions(+), 9 deletions(-)
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
