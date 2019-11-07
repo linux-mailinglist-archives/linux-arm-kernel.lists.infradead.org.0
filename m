@@ -2,47 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85E0AF26B7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 05:59:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76393F26B8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 05:59:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=DDEm5IrwGgYMUSbKm31D87AKQG54fNxNE6gO+1D0cO4=; b=DyL
-	1XGE6Z81Txabrp1Qm2mVnXznIMFEDqmiiHeAX2BOi+ayac50Fuqll7UQ62Em5bxZC60zIUrNMcd24
-	j1Ngdu8T9Rcw1Z6lFLrgLKJLIp/anAkpjcb0IUTIAuOIlEBNSZu4tDdFUKIvn1I08HIMrVHAMRxqF
-	Cq41KYSN0oBymJnGGngsTDtdDpZjyrUNp4EtbYXqpwlKlaSYaU0LTJE0jnzXE0xuJCwfY2v034/8s
-	Bcc+UHetatyC3/J+qoMHEES7Z4t8nf5NYtJZfNxMrzqWV525NDCzzFbuQoIVUB+aj71TgdcGdb/lZ
-	gShDXwiLLiTZHWkk4SaqVLrOgYcswQw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=fhzoF9hR49O2iS0oprBA5ViE3DNezWNVw6eIaugZ/vo=; b=NYZ/F9OlvttPZ2k8FXgfa/Fu9O
+	4Rk/8VQcURDWVoNu1OyU1YZYfYBFQAEuVvu4Wp4awezXKB47Bpip0ntcS6qd8SMAcCrOp02cdSX8H
+	Cf1oO3UajhoYLkgwo34FX0b9aQs96EghCl2Y8hHhO3QAybAcL5P/ICCW0AiqneDSicZbd70dLrLR1
+	6I1qhWIJ4JaEcOrRPQ3pbQ2JGIfFWi3vSihuSLkqjQ1ee95AE5XhJ9ijEnIDDy1bNyBMz9FM0YRPj
+	6B/BoJ1Kw+s1OQI/lYO4FK8vD9DvMxnU/qcO+N/9wLpqEuG2Mgs04RUDUuBRX554smYvC9zRHj+nn
+	0iJL0GEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSZt6-0001YS-6p; Thu, 07 Nov 2019 04:59:16 +0000
+	id 1iSZtK-0001fe-3b; Thu, 07 Nov 2019 04:59:30 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSZsx-0001XG-De
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 04:59:08 +0000
+ id 1iSZsx-0001XK-Rl
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 04:59:09 +0000
 Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 07 Nov 2019 13:59:04 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 6CFD8605F8;
- Thu,  7 Nov 2019 13:59:04 +0900 (JST)
+ by mx.socionext.com with ESMTP; 07 Nov 2019 13:59:06 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id B9291605F8;
+ Thu,  7 Nov 2019 13:59:06 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Thu, 7 Nov 2019 13:59:11 +0900
+ Thu, 7 Nov 2019 13:59:16 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id EC4601A0E9F;
- Thu,  7 Nov 2019 13:59:03 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 7DCE31A0E9F;
+ Thu,  7 Nov 2019 13:59:06 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>
-Subject: [PATCH 1/2] PCI: uniphier: Set mode register to host mode
-Date: Thu,  7 Nov 2019 13:58:14 +0900
-Message-Id: <1573102695-7018-1-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH 2/2] PCI: uniphier: Add checking whether PERST# is deasserted
+Date: Thu,  7 Nov 2019 13:58:15 +0900
+Message-Id: <1573102695-7018-2-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1573102695-7018-1-git-send-email-hayashi.kunihiko@socionext.com>
+References: <1573102695-7018-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_205907_583109_A1D5EB1E 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20191106_205908_008258_A80C1A8E 
+X-CRM114-Status: GOOD (  12.61  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,42 +76,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to avoid effect of the initial mode depending on SoCs,
-this patch sets the mode register to host(RC) mode.
+When PERST# is asserted once, EP configuration will be initialized.
+If PERST# has been already deasserted, it isn't necessary to assert
+here.
+
+This checks whether PERST# is deasserted using PCL_PINMON register,
+and adds omit controlling PERST#.
 
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- drivers/pci/controller/dwc/pcie-uniphier.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ drivers/pci/controller/dwc/pcie-uniphier.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/drivers/pci/controller/dwc/pcie-uniphier.c b/drivers/pci/controller/dwc/pcie-uniphier.c
-index 3f30ee4..8fd7bad 100644
+index 8fd7bad..1ea4220 100644
 --- a/drivers/pci/controller/dwc/pcie-uniphier.c
 +++ b/drivers/pci/controller/dwc/pcie-uniphier.c
-@@ -33,6 +33,10 @@
- #define PCL_PIPEMON			0x0044
- #define PCL_PCLK_ALIVE			BIT(15)
+@@ -22,6 +22,9 @@
  
-+#define PCL_MODE			0x8000
-+#define PCL_MODE_REGEN			BIT(8)
-+#define PCL_MODE_REGVAL			BIT(0)
+ #include "pcie-designware.h"
+ 
++#define PCL_PINMON			0x0028
++#define PCL_PINMON_PERST_OUT		BIT(16)
 +
- #define PCL_APP_READY_CTRL		0x8008
- #define PCL_APP_LTSSM_ENABLE		BIT(0)
- 
-@@ -85,6 +89,12 @@ static void uniphier_pcie_init_rc(struct uniphier_pcie_priv *priv)
- {
- 	u32 val;
- 
-+	/* set RC MODE */
-+	val = readl(priv->base + PCL_MODE);
-+	val |= PCL_MODE_REGEN;
-+	val &= ~PCL_MODE_REGVAL;
-+	writel(val, priv->base + PCL_MODE);
-+
- 	/* use auxiliary power detection */
- 	val = readl(priv->base + PCL_APP_PM0);
+ #define PCL_PINCTRL0			0x002c
+ #define PCL_PERST_PLDN_REGEN		BIT(12)
+ #define PCL_PERST_NOE_REGEN		BIT(11)
+@@ -100,6 +103,11 @@ static void uniphier_pcie_init_rc(struct uniphier_pcie_priv *priv)
  	val |= PCL_SYS_AUX_PWR_DET;
+ 	writel(val, priv->base + PCL_APP_PM0);
+ 
++	/* return if PERST# is already deasserted */
++	val = readl(priv->base + PCL_PINMON);
++	if (val & PCL_PINMON_PERST_OUT)
++		return;
++
+ 	/* assert PERST# */
+ 	val = readl(priv->base + PCL_PINCTRL0);
+ 	val &= ~(PCL_PERST_NOE_REGVAL | PCL_PERST_OUT_REGVAL
 -- 
 2.7.4
 
