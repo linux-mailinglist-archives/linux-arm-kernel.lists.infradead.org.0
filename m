@@ -2,59 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83FDEF2DC5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 12:55:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3010DF2DC9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 12:56:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cx2poDBylEd+IsfIQk8K00Y0P+uNvA5PcO2K74pw3j0=; b=X69kEKbt7EhyQhZ9RrLUVDGEt
-	uf8MmLj8nj653UI5e9VBMwhrQRv5MMPZpUMPHZBO0MxZyphoCodHv+FGH2CGwQDBDqB65GlQHmcZk
-	TCcxzg12JugrwrjeJVfQ9OYssbyw1R7X/Zoo9mN3YQLyWPKlVjRLIFuMmYvwfbj9QWXmsUoAQquel
-	vOYF7b2zss1jQmi7iHsktEK/4dqY/C24WibgptNCTMmwZOwNmpxmjgKDN7jxMSoBZB1J/05FP/hnx
-	1hjzauYVtzA3zTkd5yBSNW85tCRR8qlTmHsznjwY2laO23DMgfhsNOxvKD//qvTjrxDfNeqhgIsic
-	dWlEBKZ7w==;
+	 bh=Bk4fRCvSyDv+Bh2NOPwh8eY69kpcoX27sZWUgbtafPE=; b=EAY2A8yY33YP0joRYC3PKj0xM
+	GWSkaFaoBsM+WlnRvVqmkfSMp8ZCq7UFXTlIiNT/I5WkWNbztoYjY0jCTVtEmpCGkf+RttDFxerB9
+	0GrwmAGNF2b/VygfJyIQkWskqICAKSabFqqLM0q0e2m9saJGH8h3vaLy4RMlETmucU2v9AkykmjQA
+	ZaZ+cRSTudEL9vCLUR8WD2E/y+VXC/2aYo1e7izMbr9jP+lI1z6SLtxpRnHQaDd79MkRGLse9JAUu
+	971asuWS1bWyTwFogIKUPE9aX7DTWo8nNr4HZ6yvgav7qC+suOreyMnLOlq0BqL4Z884YgS1x4/Mr
+	1rzlrs4Aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSgO0-0001Ki-Qc; Thu, 07 Nov 2019 11:55:36 +0000
+	id 1iSgOU-0001rS-Os; Thu, 07 Nov 2019 11:56:06 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSgNa-0000tO-FK
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 11:55:12 +0000
+ id 1iSgOG-0001o9-CM
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 11:55:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=bFYfMh3ofowwoVD7DHXVwSujDixuflnDqD6gtHXdr54=; b=f8hx5COPzcFQoi6rtEA4Jsw0E
- lQ2WGkBx6lolSmsmcZGiEFwiYQyOMuyxbBU34jpNEm78LXytE9C6XB5skQIfYfTPb0/iGKtRmcf4F
- IP4udolto9JPceJCxH8AIFFQUVyao440ozD33zwez+ct0kkcDXvgDWdyunEqzW8VSQlG0=;
+ bh=iHlXGtTG3blZ6wKTwLxKq3oEwBwhxS47/spmMRLMzdY=; b=K/UJzHdCs9fwV96Yji6p6gWE/
+ jMLeuXh+3eUByTdf2+mklAcdNAqP3OIGRCfrSlyf0pYM2buraM2dWLRx2gdJb6YIkSXbT0QEljedz
+ 3B+7cDRAiw74kq1pZ6Qb0+CmMlIagDCI/9wkzhOsntg9x62ieTcaWY+8+P6uNEwgtrRIc=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iSgNX-0004FK-PT; Thu, 07 Nov 2019 11:55:07 +0000
+ id 1iSgOC-0004FS-V1; Thu, 07 Nov 2019 11:55:48 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id F25AC27431AF; Thu,  7 Nov 2019 11:55:06 +0000 (GMT)
-Date: Thu, 7 Nov 2019 11:55:06 +0000
+ id 50BC527431AF; Thu,  7 Nov 2019 11:55:48 +0000 (GMT)
+Date: Thu, 7 Nov 2019 11:55:48 +0000
 From: Mark Brown <broonie@kernel.org>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH v7 1/4] arm64: Add initial support for E0PD
-Message-ID: <20191107115506.GB6159@sirena.co.uk>
-References: <20191106130052.10642-1-broonie@kernel.org>
- <20191106130052.10642-2-broonie@kernel.org>
- <04d20903-f7f0-18d4-b671-4c382a47c5e2@arm.com>
+To: Christoph Fritz <chf.fritz@googlemail.com>
+Subject: Re: [PATCH 3/4] dt-bindings: regulator: describe da906x buck
+ regulator modes
+Message-ID: <20191107115548.GC6159@sirena.co.uk>
+References: <1573121050-4728-1-git-send-email-chf.fritz@googlemail.com>
+ <1573121050-4728-4-git-send-email-chf.fritz@googlemail.com>
 MIME-Version: 1.0
-In-Reply-To: <04d20903-f7f0-18d4-b671-4c382a47c5e2@arm.com>
+In-Reply-To: <1573121050-4728-4-git-send-email-chf.fritz@googlemail.com>
 X-Cookie: I've read SEVEN MILLION books!!
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_035510_591342_636F189C 
-X-CRM114-Status: GOOD (  13.77  )
+X-CRM114-CacheID: sfid-20191107_035552_441989_1AD7ECF6 
+X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -80,66 +81,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8543882923593705061=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Support Opensource <support.opensource@diasemi.com>,
+ Lee Jones <lee.jones@linaro.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7698008593132567081=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8543882923593705061==
+--===============7698008593132567081==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="R3G7APHDIzY6R/pk"
+	protocol="application/pgp-signature"; boundary="JWEK1jqKZ6MHAcjA"
 Content-Disposition: inline
 
 
---R3G7APHDIzY6R/pk
+--JWEK1jqKZ6MHAcjA
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Thu, Nov 07, 2019 at 10:12:30AM +0000, Suzuki K Poulose wrote:
+On Thu, Nov 07, 2019 at 11:04:09AM +0100, Christoph Fritz wrote:
+> This patch adds DT description of da906x buck regulator modes.
 
-> > +static void cpu_enable_e0pd(struct arm64_cpu_capabilities const *cap)
-> > +{
-> > +	/*
-> > +	 * The cpu_enable() callback gets called even on CPUs that
-> > +	 * don't detect the feature so we need to verify if we can
-> > +	 * enable.
-> > +	 */
-> > +	if (this_cpu_has_cap(ARM64_HAS_E0PD))
-> > +		sysreg_clear_set(tcr_el1, 0, TCR_E0PD1);
-> > +}
+Please submit patches using subject lines reflecting the style for the
+subsystem, this makes it easier for people to identify relevant patches.
+Look at what existing commits in the area you're changing are doing and
+make sure your subject lines visually resemble what they're doing.
+There's no need to resubmit to fix this alone.
 
-> Given that this is a SYSTEM_FEATURE now, we don't need the extra check.
-> All CPUs are guaranteed to have the feature, otherwise they would be
-> rejected early.
-
-It's not strictly required but it does no harm, helps people who are
-doing CPU local stuff see that this might be an issue if they just look
-at other users rather than the header and it means that if someone
-changes things (I'm actually been sitting on a patch for that but I want
-to postpone any discussion about that until after at least the initial
-three patches are merged).
-
---R3G7APHDIzY6R/pk
+--JWEK1jqKZ6MHAcjA
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3EBhoACgkQJNaLcl1U
-h9Cbnwf+LZdn0AZp73EeTxWut4/UWnPvtUrRjggOfM2es2QTG0ZT18yC7YMaS3zZ
-oKfBkgJmviE7zXWODHyu18Ij2FhJS9bYGj+2qQe0RT0gSAWcmUIfAo3iKOqnOSS9
-7I41tIMmrLfZZQ/Mc+RjIQ+bxEPEHe0WLHo+vrczcT9dCPUbKQEteCgnOaHxr8Ya
-C5vrhPa3HCEPC8psqG7QDMHe3whCAWaiMMM41j27H4WfsCBp2dAjpO+o8VYWyAiH
-M2b5ogyonYmK+qg1k2zyfGE1B6KnlVK2h/uruzvWE/Eq5VPWJDXfZjcc4EyYMjPX
-K99UkWkGfiCedjKzSIW6eN0aeFKYiQ==
-=+9w4
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3EBkMACgkQJNaLcl1U
+h9DFYwf+K+6Qv4srSebiFY++rlxALTFBrd/T7KJR2yrAhocBG0I9XWBns9OzMgQi
+1Ff7vMnWBiE0CAVpK1MTPD0E86pxX5EoSGS65rl9gq5SRCXLSje+va3qbzUW7x79
+20f0+cGUdTyaROEauNYrrLdxJnW3c/dNEqGtOnQfYQ72ejDQYSXX5bZwO5ay8oU3
+7S2ByVjf1qUXnpBH0W6kbDmnwRdvtRN7gh9Pbc0tcItDop6bQmVPckRYw3Qll7Y4
+Qe53MkwaODM5Mv97D4pGUGVkW0eYLPNckegdlGmS8jZg5Ubh4uGchTplFVj8eu3d
+FNuOOMzELazOxzyjsbSG7MeGZPY0Hg==
+=NCpx
 -----END PGP SIGNATURE-----
 
---R3G7APHDIzY6R/pk--
+--JWEK1jqKZ6MHAcjA--
 
 
---===============8543882923593705061==
+--===============7698008593132567081==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -150,5 +139,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8543882923593705061==--
+--===============7698008593132567081==--
 
