@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E089F2AAF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:30:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4053CF2ABA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 10:32:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vab4IY5pxrVI01gWzzPqYTBI8hBQ+c2L9V4TbNOslTw=; b=dcpENSkC15irQ4
-	lWzIs6KS/sI043b7VLjXjUCmiiW97834EWXQ3BkpNgObd1C32ivtkxakFcTNUaHNazEcIXUIPvP3w
-	g3eIprP8ddL/qgfU7TI5PNeYxqW9FvI7kBH/hkS219iVqhbde67r1OqHJOqxki05jVjo3OIN7OCVk
-	4VGJS4Tr0eMovONB0V6wDJEmwy1TK/vQwQcJTHX/7FKG18nBXz6w0swhtgIUTH8bR5jKzLKyyP/3G
-	UgKHVVV0EpD/ydLK683YEltKXL9nF03x0DbdaHQmhGZuf4lseq6m8l/HVF2HQEB0d5GLSzOQUgArU
-	EMhI05zojuWLu7I37Tbg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9FPxjVzPDwO8EBfxLoQcs/WW9clSjNErLZVzNUlCChU=; b=u8nLPr/sTbCQEM
+	sAX/v++i9qoEtQLmrkq98gWH6Rb8+0CizBNHWGPsE4oYM6LWYrhDNgz6vkoEFmc/rkb+zeEMHXQJm
+	78fZxmnAE8y7hKQZxloPOPoeXOa5OFnWPWj+m+eVWHe2y1gpze+P1CgweD11W5X+A0KBiCL18hzAD
+	ExT5XHgl/qLCDCR8lYnnUhTUhPsdV6AeEfj1lGH05h9+RTxpKEZgO3COTpoBIH/w1AHqDoQh/bBnh
+	4a55ix4UnBfJE9cVdSJ3+ndXvJJU3EMj4qjmO2i8FKWWcQwgsRq6x+igLSNxa0RmCbCc7dmquREBB
+	zjXv7YHk2H0ad8bZtLcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSe7g-0000bV-EA; Thu, 07 Nov 2019 09:30:36 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iSe9C-0001Ju-V3; Thu, 07 Nov 2019 09:32:10 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSe74-0007XR-4S; Thu, 07 Nov 2019 09:29:59 +0000
-Received: by mail-wr1-x441.google.com with SMTP id j15so2170578wrw.5;
- Thu, 07 Nov 2019 01:29:56 -0800 (PST)
+ id 1iSe8p-00018M-PP; Thu, 07 Nov 2019 09:31:49 +0000
+Received: by mail-ot1-x341.google.com with SMTP id z6so1449043otb.2;
+ Thu, 07 Nov 2019 01:31:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=O+PJ1ZZn/46Tl9iY76CTFXkJGMuUClMcIKHPnfX67PU=;
- b=ExSSkNBMRaqpENwcyHoUMKVHRx3ERHMBPqqA7vNtUGEM8uyNE+q89FAIx4p/bXQ80y
- xuuu2alYaeIc/YDffYAgPI/VkJ9LWRJrTxHFGX8VWQwysDcT+y1iZ0LXPGqx00A3yVUI
- 0VXzjUXBPH0RN7eascN/a8xn9B+qwMneU0yD8OKnU5gMKBaaBfvomqid6hshuXeTbDMB
- +VXKMjc2+5O0+iCl8fM083zJgKxW+htnmS36fEw+vt+5jfq6OYKIEJ8ddX6lXd5Y3pPY
- EWUw/neg7duyc37aqN/EAe7EW/YXhUU08xGynlny2LoQgwIOXX6phgXUqroQbuYk/JGa
- eZvg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Iuasj2afgMJAzja6uysg+1QDLDZRD47UOISLXL9pb2M=;
+ b=mAChVYxcoSkGwnhp7ff0QokhxUd9QPmLoT9Cn1E5xIr6i0h+cx4rUyZ+2s5Xciwe/i
+ Kq4kM1DVxxmaURAxoZGrw+n/+u10deLVn2EQpK/BzXp8JvX+qpdFP6mu/BJgzNKVqvus
+ Zf8mTPaeOflRCP43BUE0t5I5xFGekUFkw0KjgYSTC3QxMZV3o/1Hm4mLGZ2ntTOtERUF
+ F7kYt6w5xMOSvINLjuEcwvaqvMMNY6g6uy/k2pa3Gv9Gd4uBV6k2YrUj+N+54vPfLVnB
+ Movv9Q+DXqaspibA9j9xhl8o1i20Y1d74H70SIvtktZr5MOD0HjDgGD8jXq9Rm6axuHc
+ h2eg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=O+PJ1ZZn/46Tl9iY76CTFXkJGMuUClMcIKHPnfX67PU=;
- b=N2uB95is4PJr/xiOx80p1VtzL+XjQYY3IRKffHIH8lDViRlVERpBKY1HTQOMW5+ffD
- XPAm+atOzTx6bbY0CDOX5IVp9HLlI/U1re+51AZFvIVClJWOTzdOmm3vSbcKj94nPAzl
- FVPaqZ4/z3qM5I+UiDOC1nH50LRXmdgJeXDibao8mLbFN7fuLVL/JBQCDgWSfB7zHaLb
- 4TH9s5G2qvGzMyLvs/9i9PrDwpWcB+ghdFSs84evLhPfx21N1/Oknbo3aNX2mVzfebTF
- KbXHo3AY2h5hIAb1+btA+WDmQ/xJ/eKOpBb3pX11bab0gb4rHftjli8dg+G5d3oam5j7
- bDlA==
-X-Gm-Message-State: APjAAAVPPIVZkbgesT1yEMGYnWfvuJl4pW1oeNHQ1vY+OpB87cRm7bMw
- fqRIBOZ1mykXt+thD1W9NtE=
-X-Google-Smtp-Source: APXvYqwiYbI6O8+aUPp6Ep2W/Inr6Kp4MKn0CHA3p1g484JYEvk7zEomTG0WmL9mVQ81Yz5M61a3fA==
-X-Received: by 2002:adf:9d87:: with SMTP id p7mr1829599wre.11.1573118995612;
- Thu, 07 Nov 2019 01:29:55 -0800 (PST)
-Received: from localhost.localdomain ([197.254.95.38])
- by smtp.googlemail.com with ESMTPSA id v8sm2323607wra.79.2019.11.07.01.29.53
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 01:29:54 -0800 (PST)
-From: Wambui Karuga <wambui.karugax@gmail.com>
-To: hjc@rock-chips.com, heiko@sntech.de, airlied@linux.ie, daniel@ffwll.ch,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] drm/rockchip: use DRM_DEV_ERROR for log output
-Date: Thu,  7 Nov 2019 12:29:45 +0300
-Message-Id: <20191107092945.15513-1-wambui.karugax@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Iuasj2afgMJAzja6uysg+1QDLDZRD47UOISLXL9pb2M=;
+ b=BtZ2e/alMrsCTZ9HX3PY5DG8KWsAT5EXIPDXNHDQMr9mBAG8OF9GsSGNNWcy3YUYwe
+ v9X1nyhjTC+93HoMSvz8sU4pIKBcr7HonQE9g+hbwazzffpQPt6adZ8bIc8K4W1d2sYx
+ nB5EW1iXKPFzRYCla+GrgqoTh32rSKsudg675GdvdWF6Bql6xPcI/3WHiFhFY9fxO/NU
+ 6k7RX+cfmI1srkVjHby7rn1vYgTPmzcdzjr9rjF73ooAiKf9wxmWYzUa3XZaUHz4aH0w
+ 4y8kkR3vSk8nXLap1Bu2oy0Ba4/3zJAtzJA1U3oC3Ha+4KYUlP+ssVt95oMURmkmijUE
+ gYgg==
+X-Gm-Message-State: APjAAAVix6tDzo5rrg1ygjbU7+99JnZebgNURpPaopiTUw+FJRBHRDEv
+ yvwpMlASKLFie8mo7pCNUvJUdfMnRIA/CsuKrmg=
+X-Google-Smtp-Source: APXvYqxM2u5buXTzjVMjKs0NiT8xZ4gQE9rzxlSnRNK0x5jTIg9zCq0fAgqpl2XlavGpu0oHc0B6P/uQpa0ir3k8lhM=
+X-Received: by 2002:a9d:1b0d:: with SMTP id l13mr193968otl.84.1573119106712;
+ Thu, 07 Nov 2019 01:31:46 -0800 (PST)
+MIME-Version: 1.0
+References: <20191106140748.13100-1-gch981213@gmail.com>
+ <20191106140748.13100-2-gch981213@gmail.com>
+ <bc917a56-e688-d701-2279-87df460d6055@ti.com>
+In-Reply-To: <bc917a56-e688-d701-2279-87df460d6055@ti.com>
+From: Chuanhong Guo <gch981213@gmail.com>
+Date: Thu, 7 Nov 2019 17:31:35 +0800
+Message-ID: <CAJsYDVJgUNxLhcO9iLKwRZHPQ9FT8XuKQq8ru_djD2nryT5o9A@mail.gmail.com>
+Subject: Re: [PATCH 1/2] mtd: mtk-quadspi: add support for memory-mapped flash
+ reading
+To: Vignesh Raghavendra <vigneshr@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_012958_282146_A16C95BA 
-X-CRM114-Status: GOOD (  10.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191107_013147_823807_08DC02B1 
+X-CRM114-Status: GOOD (  13.87  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gch981213[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wambui.karugax[at]gmail.com)
+ provider (gch981213[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,36 +95,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, open list <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-mtd@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace the use of the dev_err macro with the DRM_DEV_ERROR
-DRM helper macro.
+Hi!
 
-Signed-off-by: Wambui Karuga <wambui.karugax@gmail.com>
----
- drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+On Thu, Nov 7, 2019 at 2:05 PM Vignesh Raghavendra <vigneshr@ti.com> wrote:
+> > @@ -272,6 +273,11 @@ static ssize_t mtk_nor_read(struct spi_nor *nor, loff_t from, size_t length,
+> >       mtk_nor_set_read_mode(mtk_nor);
+> >       mtk_nor_set_addr(mtk_nor, addr);
+> >
+> > +     if (mtk_nor->flash_base) {
+> > +             memcpy_fromio(buffer, mtk_nor->flash_base + from, length);
+> > +             return length;
+> > +     }
+> > +
+>
+> Don't you need to check if access is still within valid memory mapped
+> window?
 
-diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-index bc073ec5c183..5f23cf702cb4 100644
---- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-+++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-@@ -916,7 +916,7 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
- 	}
- 
- 	if (!dsi->cdata) {
--		dev_err(dev, "no dsi-config for %s node\n", np->name);
-+		DRM_DEV_ERROR(dev, "no dsi-config for %s node\n", np->name);
- 		return -EINVAL;
- 	}
- 
--- 
-2.17.1
+The mapped area is 256MB and I don't quite believe there will be such
+a big NOR flash.
+I'll add a check here in the next version.
 
+>
+> >       for (i = 0; i < length; i++) {
+> >               ret = mtk_nor_execute_cmd(mtk_nor, MTK_NOR_PIO_READ_CMD);
+> >               if (ret < 0)
+> > @@ -475,6 +481,11 @@ static int mtk_nor_drv_probe(struct platform_device *pdev)
+> >       if (IS_ERR(mtk_nor->base))
+> >               return PTR_ERR(mtk_nor->base);
+> >
+> > +     res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
+> > +     mtk_nor->flash_base = devm_ioremap_resource(&pdev->dev, res);
+>
+> There is a single API now: devm_platform_ioremap_resource().
+
+Cool. I'll change it.
+Should I add another patch to change the same mapping operation right
+above this piece of code?
+
+Regards,
+Chuanhong Guo
 
 _______________________________________________
 linux-arm-kernel mailing list
