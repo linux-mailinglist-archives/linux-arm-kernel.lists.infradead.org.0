@@ -2,81 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8765DF28C7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 09:10:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42415F28F9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 09:20:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tUFjR6He6Jqml116WrHsuA7KZ/VRavoo9abn1xdZxVY=; b=PeKTRmUgMiT94G
-	zGWMBFDkSOAKY2Kzx1jGerGbaHGEmNzCWXbrPWDTNA0Jq3ef4tZwkiAuBfx4/uDbmX0jm9SOH/HWu
-	7ubaqrmYtCxjh/iNdUpX4JW4CGHzQ1Q9A2TjVGhDIN03AjaLx2QveTuCkA5CwfoWw4pVHR1uk47Xj
-	wpky4LonCUXMwcjA2DaVrxGLlDE3WpuFklsx5Z+mc4rvem6MnYDutd7F7yK1lHOspzz0MJPa9hD76
-	huDO+yNxXpGfItBJwpLH2/4U0ap3AIPN5V82NKeJfsLfDy6A42bgRkYmQzPnnAZ5xG97KKd4H28cV
-	6Xba1DeE7iFWmensJhKQ==;
+	List-Owner; bh=K58gu4oFxDWEkwdOTTDeEDZu09wyy9VHUmnmhD1eBQM=; b=j+yeOtqi+ldQ97
+	Efqq2KC0/UlgOVD8CXPeeOT56Ljo3Y5G2JeHCTZXTkj6y1lK7IM5hXrPuxYCwH/glr6XGKAnisq2R
+	l0pWcEkPpiGe7W+VmqgeGMVQajHY1yuul4tyb6wGr8HZzXlBTN+fXMSP/3rRuwOhZ7tDQltl7dxy2
+	utvOrjqKFQCc6KnPBnZhdiK59X+LtJkhsiTO43bjz8NzGonret+N3OgGjzOVWpr8Q9V4UPzT8BUQP
+	vvw2Dtz3iuGwLxlqerM2X5ydvgLcBsa9itlzWzWWZpxChbRZcrpsqF2J/SjCl0brrVdWxvpTn/GlJ
+	eyNwbJ+8sAljm8Pj3mMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iScsP-0004GH-B1; Thu, 07 Nov 2019 08:10:45 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1iSd1x-0007Zq-IA; Thu, 07 Nov 2019 08:20:37 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iScsH-0004F2-Mf
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 08:10:39 +0000
-Received: by mail-oi1-x244.google.com with SMTP id n16so1220495oig.2
+ id 1iSd1o-0007ZP-NA
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 08:20:30 +0000
+Received: by mail-lj1-x242.google.com with SMTP id q2so1211940ljg.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 00:10:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Thu, 07 Nov 2019 00:20:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1Ln1GAykiZS8RusuR4H+KQoetDdyYBnG1RhAd3RuDvU=;
- b=XIQjJ1KkwJwDO2WBDAlhOf60GzfwCkkbNwnxofI1gvr56DlMnJZNb4jHhH9l+siPjy
- 7XUMhHNlxMeUd0C8IsfA/1LUeakE2mhibVwGsvSfeeV6D1unTFUY+jfFqzTPIcRQl5X+
- gWKfPOXD3nsSRoQRnk8+d5iIA5qxdNdnYM0aAjr5pCDue/7MNTnR9v4pFaetY9pKAOIL
- RcPun1cI3Qh9hzQ1HJD8sMy57glLs6u3q1iXmG7lA0FwoChXUDNfAOgr2ETpotB//xIX
- UnxYVtmQXIYLoaVGsh7uTHXu6+JIFIEnRncdelUnehHP33ZJr4CmSpidqTtDpVy7SPn3
- mHlQ==
+ :cc; bh=DlF4imC2yuisAQo2SgUCy1P9SylqUN75hyqh76y3GuU=;
+ b=aR0m+nKjgA8feFlTBlwL84cE9daL5eeq25n5+TiO9llQb9TsmGAwBzMrydUeOVpqcd
+ G/NOnRqUmqV9FDnFABUvFStxGmc4lYiT1CO71XxvWX8QHiG+QuYeULshpCobKFsWAsYm
+ tdhQ8t6991g/IUrvBhXPOW8BhPBS86zZJGQOc82tWlYl1GOQvr9MTGWvpPLFiIeR9lEr
+ foMt76rS4g+F3J5BvZ1hmIknazOLP6jdC15sbiF4dtMlHzvLlDlwdEVWxYVkVYDLBy/H
+ 2YD/40djhB6z1791duVFLnjNJBICD/pXuSn9Wyozo1Bsi0Bqg8js/iowtRmXORd7WJzi
+ n1iw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=1Ln1GAykiZS8RusuR4H+KQoetDdyYBnG1RhAd3RuDvU=;
- b=cpQ780hhawkuPM7n8LMPsBTY1VwBBbtVbwispO3NV8CdxcVJ0WzTtE0UCC+S9pIX8q
- 7bw0agnDtbYOg8mrplkc/PZSV65vdhDnM0iEQtaehdsYuslATmlrecPLRNOFNx+1HWkZ
- uUVnfWT+DZVmUZsSoZZz/WTS+rppBij6ZhmULYostSxOvZqR5UezB+OO711OKm1lR2ON
- LMsJKZqu1vrXiGFOxu3wnu4VI8HPdGOCVBB/99ria6u9RWW1p2zQ2gKb+wd06xCIv3hd
- GeMly+T7icmVfbfXY4P/AstNfyirYtp1xksLDy1Mp97LgkxHJLrPEICjGaSiJkAuzESS
- 8MJA==
-X-Gm-Message-State: APjAAAW8SuIoPFI1zqYuCBx2aCcf9eBALRJLb6I3FhP0oEQkC/QqQRac
- /oHvw/yikHj6lrhw9p+ETPFEOSjQnepmy3R32bE=
-X-Google-Smtp-Source: APXvYqyCsRHXrlcNyFDdWgqpUGNUi9JY2dnU8nu8fLaBJBr7i8H4CEPtAXOaCsi6gmrcZ/dmVtw/Dn8k5G1I4v7yMqw=
-X-Received: by 2002:a05:6808:3cf:: with SMTP id
- o15mr2227687oie.7.1573114236156; 
- Thu, 07 Nov 2019 00:10:36 -0800 (PST)
+ bh=DlF4imC2yuisAQo2SgUCy1P9SylqUN75hyqh76y3GuU=;
+ b=YLpbLL+CFLyQuwo73tTADTRkgxFmbciNvfGci0luNS8Z3ESejeWZ+ggiUYiaQ3lUk6
+ 0IjoMn8k27lDUTY4mAIAK2rg6POcdk5pp3wdFjnpWqmK39qfqaKAbkfngdjLBGY6MHYf
+ yIG4fqF0Vub4foJIkfodFBUUmhoBmTv9ka3Rw4YVDmsrAeGWloFz4rDnP9BLzsUzXMq0
+ qdmhpe1jjWiZYxVCabyAySIk1H/QnrNz4adObmfh1xtL/6JxuUpWqPwB3GX2G/TAvInQ
+ 8J9gZwz/ZDrTlJ+m5SGLgyCRvL3m5S1ktjSmNt4ATtrcnjZoLu0ZcPelQFh5WlLUXxy0
+ MmNg==
+X-Gm-Message-State: APjAAAXt+shNEd40YnPMvzgreAl8OAU4+2+MSOPaSR0wR9fNOh/4H1sf
+ SSyRSRK8t8yUmgAENfjF/R2jSVcDFBJQDs9JUErLkA==
+X-Google-Smtp-Source: APXvYqxJbhcWq+G1f8Jk5lv3i720/gVAo6L3L+y4Wi2RhTUP1I1SjMgB/XswEKoQSm7d2gl5jZMd4ClfaG2HxTvfJoQ=
+X-Received: by 2002:a05:651c:1202:: with SMTP id
+ i2mr1417186lja.218.1573114826673; 
+ Thu, 07 Nov 2019 00:20:26 -0800 (PST)
 MIME-Version: 1.0
-References: <20191106193609.19645-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20191106193609.19645-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <OSBPR01MB210380ACAF35B2FE94F1589EB8780@OSBPR01MB2103.jpnprd01.prod.outlook.com>
-In-Reply-To: <OSBPR01MB210380ACAF35B2FE94F1589EB8780@OSBPR01MB2103.jpnprd01.prod.outlook.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Thu, 7 Nov 2019 08:10:09 +0000
-Message-ID: <CA+V-a8vJrJ8Rw5OgYZN7o_i1R9ZZUfmuMWnzA0PF+pZus0o1SQ@mail.gmail.com>
-Subject: Re: [PATCH 3/5] PCI: rcar: Add R-Car PCIe endpoint device tree
- bindings
-To: Biju Das <biju.das@bp.renesas.com>
+References: <cover.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
+ <fcd51b067bafa571b3d9879a3afc31e8c764100d.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
+In-Reply-To: <fcd51b067bafa571b3d9879a3afc31e8c764100d.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 7 Nov 2019 09:20:15 +0100
+Message-ID: <CACRpkdZm823gEkpw8hYfuLp99ssKtGQMcEcZHC34xd2kQPYH-A@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] gpio: Add definition for GPIO direction
+To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_001037_763179_CF1704FE 
-X-CRM114-Status: GOOD (  23.26  )
+X-CRM114-CacheID: sfid-20191107_002028_893881_85A7E7BB 
+X-CRM114-Status: GOOD (  10.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (prabhakar.csengg[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,100 +92,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Chris Paterson <Chris.Paterson2@renesas.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Arnd Bergmann <arnd@arndb.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Magnus Damm <magnus.damm@gmail.com>,
+Cc: Kuppuswamy Sathyanarayanan <sathyanarayanan.kuppuswamy@linux.intel.com>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ David Daney <david.daney@cavium.com>,
+ "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
+ <alsa-devel@alsa-project.org>, Peter Tyser <ptyser@xes-inc.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Fabio Estevam <festevam@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Kevin Hilman <khilman@kernel.org>,
+ Michal Simek <michal.simek@xilinx.com>, Marek Behun <marek.behun@nic.cz>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ Joel Stanley <joel@jms.id.au>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Bamvor Jian Zhang <bamv2005@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-pwm@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
+ Charles Keepax <ckeepax@opensource.cirrus.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Linux-OMAP <linux-omap@vger.kernel.org>,
+ Matti Vaittinen <mazziesaccount@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Richard Fitzgerald <rf@opensource.cirrus.com>,
+ Santosh Shilimkar <ssantosh@kernel.org>, linux-tegra@vger.kernel.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Scott Branden <sbranden@broadcom.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Andrew Jeffery <andrew@aj.id.au>, "Enrico Weigelt,
+ metux IT consult" <info@metux.net>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- Will Deacon <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Marek Vasut <marek.vasut+renesas@gmail.com>
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Thorsten Scherer <t.scherer@eckelmann.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, patches@opensource.cirrus.com,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Biju,
+On Wed, Nov 6, 2019 at 9:51 AM Matti Vaittinen
+<matti.vaittinen@fi.rohmeurope.com> wrote:
 
-Thank you for the review.
+> At least for me it is difficult to remember the meaning of GPIO
+> direction values. Define GPIO_LINE_DIRECTION_IN and
+> GPIO_LINE_DIRECTION_OUT so that occasional GPIO contributors would
+> not need to always check the meaning of hard coded values 1 and 0.
+>
+> Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
 
-On Thu, Nov 7, 2019 at 7:39 AM Biju Das <biju.das@bp.renesas.com> wrote:
->
-> Hi Prabhakar,
->
-> Thanks for the patch
->
-> > Subject: [PATCH 3/5] PCI: rcar: Add R-Car PCIe endpoint device tree bindings
-> >
-> > From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> >
-> > This patch adds the bindings for the R-Car PCIe endpoint driver.
-> >
-> > Signed-off-by: Lad, Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > ---
-> >  .../devicetree/bindings/pci/rcar-pci-ep.txt   | 43 +++++++++++++++++++
-> >  1 file changed, 43 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
-> >
-> > diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
-> > b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
-> > new file mode 100644
-> > index 000000000000..b8c8616ca007
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.txt
-> > @@ -0,0 +1,43 @@
-> > +* Renesas R-Car PCIe Endpoint Controller DT description
-> > +
-> > +Required properties:
-> > +         "renesas,pcie-ep-r8a774c0" for the R8A774C0 SoC;
-> > +         "renesas,pcie-ep-rcar-gen3" for a generic R-Car Gen3 or
-> > +                                  RZ/G2 compatible device.
-> > +
-> > +         When compatible with the generic version, nodes must list the
-> > +         SoC-specific version corresponding to the platform first
-> > +         followed by the generic version.
-> > +
-> > +- reg: Five register ranges as listed in the reg-names property
-> > +- reg-names: Must include the following names
-> > +     - "apb-base"
-> > +     - "memory0"
-> > +     - "memory1"
-> > +     - "memory2"
-> > +     - "memory3"
-> > +- resets: Must contain phandles to PCIe-related reset lines exposed by IP
-> > block
-> > +- clocks: from common clock binding: clock specifiers for the PCIe controller
-> > +      clock.
-> > +- clock-names: from common clock binding: should be "pcie".
-> > +
-> > +Optional Property:
-> > +- max-functions: Maximum number of functions that can be configured
-> > (default 1).
-> > +
-> > +Example:
-> > +
-> > +SoC-specific DT Entry:
-> > +
-> > +     pcie_ep: pcie_ep@fe000000 {
-> > +             compatible = "renesas,pcie-r8a7791", "renesas,pcie-rcar-
-> > gen2";
->
-> I believe it is currently tested on RZ/G2E. so please use the same.
->
-Yes you are correct its tested on RZ/G2E board, ill fix it in next iteration.
+Patch applied.
 
-Cheers,
---Prabhakar
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
