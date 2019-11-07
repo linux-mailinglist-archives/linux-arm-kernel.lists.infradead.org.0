@@ -2,51 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E838F31C9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 15:52:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F958F31D7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 15:54:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zcx+n3WgX8QN+P3GOqK0PukxHoxGmCf1T2zzltPtw4s=; b=SjTSrZsA9HcQYi
-	b59LDuXBMRJH2fcdawPBNHjIx4cMLnT2JTb01pbxGG/erK13Pc61kmxpA24Gr+eoYDWmNqwWjIVWB
-	MbjBKgWGbQ7DDNNaTYJKfylH4Uk3psS75Q5C1LZZdqdK1p4eJffTFhziM826Sqesj2RphVHsm53XU
-	7vuXiVSPmxs646io1SBVjRmbwboeoYrBNYJtwVNZCZCnqj50ZT4Xy0fYTd1+iE74wi91/bN8a2TtF
-	78N6bc0e5CMc20a/7NGfs/dwyb4pbKsUHPT3smIdSYntg1Qbmq0qbl1H+p0Uu/pr3jZEI5rflJA7i
-	5+M4lNaesel5UwX7UY3A==;
+	List-Owner; bh=PvCdoUrkBl3jFFxG4eDdQlp8n2xp3fwjI/ZWe1MUswo=; b=LeNi4SaD0hto6x
+	nRGLI0BW/wmypkW2bOVU4HtFXMPJbEg/5kZWdrNj2fSqBsLavIDwPDjf5rw6eJywhrJsNiuQZBg/3
+	a9Mfm2BXZRzwVY3WG5eX7IoW3eJX1DrwuNKD135xeZVkA0bf1sK0Wi19o1l0Dr/jloP3VxH3ce0JK
+	9F88wEv4GRLZCodd40+g6LFNF6ZmcQwK+TB90r1AP6KrfGw2PRiSVjo6sNlNIHHSFQN+kOuVYb8CQ
+	WYEpLYIjVBT3nrlXEG+5xtXga3EmzlvbNVVzB+jJwLubeweZDEPjrVAtyXoz/DOiH6vsRz8BYYeAc
+	H+QfXkaMA6LknHwz68aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSj9B-000141-7g; Thu, 07 Nov 2019 14:52:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSj92-000131-58
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 14:52:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7742731B;
- Thu,  7 Nov 2019 06:52:17 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3DD573F71A;
- Thu,  7 Nov 2019 06:52:16 -0800 (PST)
-Date: Thu, 7 Nov 2019 14:52:14 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Ganapatrao Kulkarni <gklkml16@gmail.com>
-Subject: Re: [PATCH 1/2] perf/core: Adding capability to disable PMUs event
- multiplexing
-Message-ID: <20191107145213.GB6888@lakrids.cambridge.arm.com>
-References: <1573002091-9744-1-git-send-email-gkulkarni@marvell.com>
- <1573002091-9744-2-git-send-email-gkulkarni@marvell.com>
- <20191106112810.GA50610@lakrids.cambridge.arm.com>
- <CAKTKpr6U8gUp4C9muN2cL4wn33o2LAa5QnTO2MSmfnBz8oUc=Q@mail.gmail.com>
+	id 1iSjBQ-0001Zz-Kv; Thu, 07 Nov 2019 14:54:48 +0000
+Received: from cloudserver094114.home.pl ([79.96.170.134])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSjBH-0001Y4-Eq
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 14:54:41 +0000
+Received: from 79.184.254.83.ipv4.supernova.orange.pl (79.184.254.83) (HELO
+ kreacher.localnet)
+ by serwer1319399.home.pl (79.96.170.134) with SMTP (IdeaSmtpServer 0.83.292)
+ id 2b552d6f1ba461aa; Thu, 7 Nov 2019 15:54:28 +0100
+From: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+To: Jonathan Cameron <jonathan.cameron@huawei.com>
+Subject: Re: [PATCH V5 1/4] ACPI: Support Generic Initiator only domains
+Date: Thu, 07 Nov 2019 15:54:28 +0100
+Message-ID: <1768519.laKBN70clK@kreacher>
+In-Reply-To: <20191018134656.00000f70@huawei.com>
+References: <20191004114330.104746-1-Jonathan.Cameron@huawei.com>
+ <1895971.7mY3IlW731@kreacher> <20191018134656.00000f70@huawei.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKTKpr6U8gUp4C9muN2cL4wn33o2LAa5QnTO2MSmfnBz8oUc=Q@mail.gmail.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_065220_284210_0F804D4B 
-X-CRM114-Status: GOOD (  20.88  )
+X-CRM114-CacheID: sfid-20191107_065439_660978_D1F01FF1 
+X-CRM114-Status: GOOD (  14.48  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,98 +57,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "peterz@infradead.org" <peterz@infradead.org>,
- "corbet@lwn.net" <corbet@lwn.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mingo@redhat.com" <mingo@redhat.com>, "will@kernel.org" <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-acpi@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
+ linuxarm@huawei.com, Keith Busch <keith.busch@intel.com>, linux-mm@kvack.org,
+ jglisse@redhat.com, Andrew Morton <akpm@linux-foundation.org>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 06, 2019 at 03:28:46PM -0800, Ganapatrao Kulkarni wrote:
-> Hi Peter, Mark,
+On Friday, October 18, 2019 2:46:56 PM CET Jonathan Cameron wrote:
+> On Fri, 18 Oct 2019 12:18:33 +0200
+> "Rafael J. Wysocki" <rjw@rjwysocki.net> wrote:
 > 
-> On Wed, Nov 6, 2019 at 3:28 AM Mark Rutland <mark.rutland@arm.com> wrote:
-> >
-> > On Wed, Nov 06, 2019 at 01:01:40AM +0000, Ganapatrao Prabhakerrao Kulkarni wrote:
-> > > When PMUs are registered, perf core enables event multiplexing
-> > > support by default. There is no provision for PMUs to disable
-> > > event multiplexing, if PMUs want to disable due to unavoidable
-> > > circumstances like hardware errata etc.
-> > >
-> > > Adding PMU capability flag PERF_PMU_CAP_NO_MUX_EVENTS and support
-> > > to allow PMUs to explicitly disable event multiplexing.
-> >
-> > Even without multiplexing, this PMU activity can happen when switching
-> > tasks, or when creating/destroying events, so as-is I don't think this
-> > makes much sense.
-> >
-> > If there's an erratum whereby heavy access to the PMU can lockup the
-> > core, and it's possible to workaround that by minimzing accesses, that
-> > should be done in the back-end PMU driver.
+> > On Friday, October 4, 2019 1:43:27 PM CEST Jonathan Cameron wrote:
+> > > Generic Initiators are a new ACPI concept that allows for the
+> > > description of proximity domains that contain a device which
+> > > performs memory access (such as a network card) but neither
+> > > host CPU nor Memory.
+> > > 
+> > > This patch has the parsing code and provides the infrastructure
+> > > for an architecture to associate these new domains with their
+> > > nearest memory processing node.
+> > > 
+> > > Signed-off-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>  
+> > 
+> > This depends on the series from Dan at:
+> > 
+> > https://lore.kernel.org/linux-acpi/CAPcyv4gBSX58CWH4HZ28w0_cZRzJrhgdEFHa2g8KDqyv8aFqZQ@mail.gmail.com/T/#m1acce3ae8f29f680c0d95fd1e840e703949fbc48
+> > 
+> Hi Rafael,
 > 
-> As said in errata,  If there are heavy access to memory like stream
-> application running and along with that if PMU control registers are
-> also accessed frequently, then CPU lockup is seen.
-
-Ok. So the issue is the frequency of access to those registers.
-
-Which registers does that apply to?
-
-Is this the case for only reads, only writes, or both?
-
-Does the frequency of access actually matter, or is is just more likely
-that we see the issue with a greater number of accesses? i.e the
-increased frequency increases the probability of hitting the issue.
-
-I'd really like a better description of the HW issue here.
-
-> I ran perf stat with 4 events of thuderx2 PMU as well as with 6 events
-> for stream application.
-> For 4 events run, there is no event multiplexing, where as for 6
-> events run the events are multiplexed.
+> Yes. Cover letter mentions it was rebased on v4 of that series.
 > 
-> For 4 event run:
-> No of times pmu->add is called: 10
-> No of times pmu->del is called: 10
-> No of times pmu->read is called: 310
+> > AFAICS, so please respin when that one hits the Linus' tree.
 > 
-> For 6 events run:
-> No of times pmu->add is called: 5216
-> No of times pmu->del is called: 5216
-> No of times pmu->read is called: 5216
+> Sure, though that pushes it out another cycle and it's beginning to
+> get a bit silly (just rebases since April).
 > 
-> Issue happens when the add and del are called too many times as seen
-> with 6 event case.
+> I guess it can't be helped given the series hits several trees.
 
-Sure, but I can achieve similar by creating/destroying events in a loop.
-Multiplexing is _one_ way to cause this behaviour, but it's not the
-_only_ way.
+I've just applied the Dan's series and I can take patch [1/4] from this one,
+but for the [2-3/4] I'd like to get some ACKs from the arm64 and x86 people
+respectively.
 
-> The PMU hardware control registers are programmed when add and del
-> functions are called.
-> For pmu->read no issues since no h/w issue with the data path.
+Thanks!
 
-As above, can you please describe the hardware conditions more
-thoroughly?
 
-> This is UNCORE driver, not sure context switch has any influence on this?
 
-I believe that today it's possible for this to happen for cgroup events,
-as non-sensical as it may be to have a cgroup-bound uncore PMU event.
-
-> Please suggest me, how can we fix this in back-end PMU driver without
-> any perf core help?
-
-In order to do so, I need a better explanation of the underlying
-hardware issue.
-
-Thanks,
-Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
