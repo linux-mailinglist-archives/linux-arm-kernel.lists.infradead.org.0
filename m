@@ -2,46 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42441F2CAA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 11:37:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 978B0F2CD4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 11:52:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zZFbRqOTwidNWv/kp0AOEIJYEM8DXRcYKXXH+xpaRp0=; b=sXkU6Xg7+S9LYm
-	uCGpXdPNRdX7Cqlu2pwLorrTwISY7uMmsMM/v/Dt7jtITbHcAYYCikD5zhOqS6HqcXhnZiLaYsWOD
-	GQpLFc/OkDxo/ANLx499TEvRJ0kO8IVhrmV4xXyiPmeXAU6rwNQrvGbyfTHADw0UaCOfvU2gCXdfk
-	82WAwBjjYMep7OzZkcro9Jz7Wbedyw9jeK82bR+HfJP9Rc/4ztB45+5RbW7O2q9T0ZSO3YHQUc9Wn
-	KlJyaGbtRtiDBHl/zKFRWr8oksuqbMBvhnxYuIgr0f0Cb7VUskFF7dyIS4mXCm78YLuVwQG0cuT9i
-	O0OASIj2U6lwcBETCHhQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IRxdKpWp+jR9bPqaFxTkvPyuF0De277FHa6y1eT07jA=; b=TYjmD7iYEWcpYJ
+	+E5j0IEwrPOfdrazFh1rzxVc+HXzm6MJ5dsbx/B+ov32MZWMsfTB+znltv0GxgEiiytwbURIwg9qc
+	pKDdv3CPnRzaBVNuksmte3KIKVqJ5hkWBF2T2P37Yv/l0bEfIKM9cUB+pDX0hbmC6aq0FDLLuRwl/
+	pjA97FvqLFI1Cfk3VRHQmSD9JGb50OVjWxBQQfwoOuOxZDxwrwIdFj9b5GOPUllNOkwETH8Cd7p4n
+	GR5gdoqxYzYeA2Z+I8Vuf32KWu66xVb/BFHUyF2a9OlQdm8AE8B6fx4ba9bcGSJ60F4PfBHD3eEyZ
+	HHwBQsZ0B14y9Q+5SYEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSfAN-0002PO-Pa; Thu, 07 Nov 2019 10:37:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSfA6-0002HB-2c; Thu, 07 Nov 2019 10:37:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EB1091FB;
- Thu,  7 Nov 2019 02:37:08 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 50D633F71A;
- Thu,  7 Nov 2019 02:37:08 -0800 (PST)
-Date: Thu, 7 Nov 2019 10:37:06 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH 2/4] ARM: dts: bcm2711: Enable PCIe controller
-Message-ID: <20191107103705.GX9723@e119886-lin.cambridge.arm.com>
-References: <20191106214527.18736-1-nsaenzjulienne@suse.de>
- <20191106214527.18736-3-nsaenzjulienne@suse.de>
+	id 1iSfOL-0000Da-Tm; Thu, 07 Nov 2019 10:51:53 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSfOE-0000Cb-Dt; Thu, 07 Nov 2019 10:51:47 +0000
+X-UUID: 2f170b03c3304620837236923105da65-20191107
+X-UUID: 2f170b03c3304620837236923105da65-20191107
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <mark-mc.lee@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 713636648; Thu, 07 Nov 2019 02:51:41 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 7 Nov 2019 02:51:36 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 7 Nov 2019 18:51:34 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Thu, 7 Nov 2019 18:51:34 +0800
+From: MarkLee <Mark-MC.Lee@mediatek.com>
+To: "David S. Miller" <davem@davemloft.net>, Sean Wang
+ <sean.wang@mediatek.com>, John Crispin <john@phrozen.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Andrew Lunn <andrew@lunn.ch>
+Subject: [PATCH net] net: ethernet: mediatek: rework GDM setup flow
+Date: Thu, 7 Nov 2019 18:51:35 +0800
+Message-ID: <20191107105135.1403-1-Mark-MC.Lee@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191106214527.18736-3-nsaenzjulienne@suse.de>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_023710_191841_A1725CBE 
-X-CRM114-Status: GOOD (  19.19  )
+X-CRM114-CacheID: sfid-20191107_025146_469492_1A11B2A7 
+X-CRM114-Status: GOOD (  13.24  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -49,6 +57,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,102 +70,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- mbrugger@suse.com, linux-pci@vger.kernel.org, phil@raspberrypi.org,
- linux-kernel@vger.kernel.org, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, james.quinlan@broadcom.com,
- f.fainelli@gmail.com, linux-arm-kernel@lists.infradead.org,
- Stefan Wahren <wahrenst@gmx.net>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org, Jakub
+ Kicinski <jakub.kicinski@netronome.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rene van Dorst <opensource@vdorst.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ MarkLee <Mark-MC.Lee@mediatek.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 06, 2019 at 10:45:24PM +0100, Nicolas Saenz Julienne wrote:
-> This enables bcm2711's PCIe bus, wich is hardwired to a VIA Technologies
+net: ethernet: mediatek: rework GDM setup flow
 
-s/wich/which/
+The mt762x GDM block is mainly used to setup the HW 
+internal rx path - from GMAC port to RX DMA engine(PDMA/QDMA). 
+And the internal packet switching engine(PSE) is responsed 
+to do the data forward/drop following the GDM configuration.
 
-> XHCI USB 3.0 controller.
-> 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> ---
->  arch/arm/boot/dts/bcm2711.dtsi | 47 ++++++++++++++++++++++++++++++++++
->  1 file changed, 47 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
-> index a9d84e28f245..c7b2e7b57da6 100644
-> --- a/arch/arm/boot/dts/bcm2711.dtsi
-> +++ b/arch/arm/boot/dts/bcm2711.dtsi
-> @@ -288,6 +288,53 @@
->  		arm,cpu-registers-not-fw-configured;
->  	};
->  
-> +	scb {
-> +		compatible = "simple-bus";
-> +		#address-cells = <2>;
-> +		#size-cells = <1>;
-> +
-> +		ranges = <0x0 0x7c000000  0x0 0xfc000000  0x03800000>,
-> +			 <0x6 0x00000000  0x6 0x00000000  0x40000000>;
-> +
-> +		pcie_0: pcie@7d500000 {
-> +			compatible = "brcm,bcm2711-pcie";
-> +			reg = <0x0 0x7d500000 0x9310>;
-> +			msi-controller;
-> +			msi-parent = <&pcie_0>;
-> +			#address-cells = <3>;
-> +			#interrupt-cells = <1>;
-> +			#size-cells = <2>;
-> +			linux,pci-domain = <0>;
+This pacth target to simpfy the GDM setup flow by integrating 
+them into one single function "mtk_gdm_config".
+Besides, accroding to the mt762x HW design, it is recommended to 
+enable PSE to forward data after DMA has been started and 
+set PSE to drop all data before stopping DMA. 
 
-pci-domain is unlikely to be needed here.
+Note, mt7628 is a different IP from other mt762x, so we exclude it
+in mtk_gdm_config function.
 
-> +			brcm,enable-ssc;
-> +			interrupts = <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
-> +			interrupt-names = "pcie", "msi";
-> +			interrupt-map-mask = <0x0 0x0 0x0 0x7>;
-> +			interrupt-map = <0 0 0 1 &gicv2 GIC_SPI 143
-> +							IRQ_TYPE_LEVEL_HIGH
-> +					 0 0 0 2 &gicv2 GIC_SPI 144
-> +							IRQ_TYPE_LEVEL_HIGH
-> +					 0 0 0 3 &gicv2 GIC_SPI 145
-> +							IRQ_TYPE_LEVEL_HIGH
-> +					 0 0 0 4 &gicv2 GIC_SPI 146
-> +							IRQ_TYPE_LEVEL_HIGH>;
-> +
-> +			ranges = <0x02000000 0x0 0xf8000000 0x6 0x00000000
-> +				  0x0 0x04000000>;
+Signed-off-by: MarkLee <Mark-MC.Lee@mediatek.com>
+---
+ drivers/net/ethernet/mediatek/mtk_eth_soc.c | 44 ++++++++++++++-------
+ drivers/net/ethernet/mediatek/mtk_eth_soc.h |  2 +
+ 2 files changed, 31 insertions(+), 15 deletions(-)
 
-Is legacy I/O supported by this controller?
+diff --git a/drivers/net/ethernet/mediatek/mtk_eth_soc.c b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
+index 703adb96429e..7220abb3e731 100644
+--- a/drivers/net/ethernet/mediatek/mtk_eth_soc.c
++++ b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
+@@ -2180,6 +2180,31 @@ static int mtk_start_dma(struct mtk_eth *eth)
+ 	return 0;
+ }
+ 
++static void mtk_gdm_config(struct mtk_eth *eth, u32 config)
++{
++	int i;
++
++	if (MTK_HAS_CAPS(eth->soc->caps, MTK_SOC_MT7628))
++		return;
++
++	for (i = 0; i < 2; i++) {
++		u32 val = mtk_r32(eth, MTK_GDMA_FWD_CFG(i));
++
++		/* Always enable RX checksum */
++		val |= MTK_GDMA_ICS_EN | MTK_GDMA_TCS_EN | MTK_GDMA_UCS_EN;
++
++		/* default setup the forward port to send frame to PDMA */
++		val &= ~0xffff;
++
++		val |= config;
++
++		mtk_w32(eth, val, MTK_GDMA_FWD_CFG(i));
++	}
++	/*Reset and enable PSE*/
++	mtk_w32(eth, RST_GL_PSE, MTK_RST_GL);
++	mtk_w32(eth, 0, MTK_RST_GL);
++}
++
+ static int mtk_open(struct net_device *dev)
+ {
+ 	struct mtk_mac *mac = netdev_priv(dev);
+@@ -2200,6 +2225,8 @@ static int mtk_open(struct net_device *dev)
+ 		if (err)
+ 			return err;
+ 
++		mtk_gdm_config(eth, MTK_GDMA_TO_PDMA);
++
+ 		napi_enable(&eth->tx_napi);
+ 		napi_enable(&eth->rx_napi);
+ 		mtk_tx_irq_enable(eth, MTK_TX_DONE_INT);
+@@ -2252,6 +2279,8 @@ static int mtk_stop(struct net_device *dev)
+ 	if (!refcount_dec_and_test(&eth->dma_refcnt))
+ 		return 0;
+ 
++	mtk_gdm_config(eth, MTK_GDMA_DROP_ALL);
++
+ 	mtk_tx_irq_disable(eth, MTK_TX_DONE_INT);
+ 	mtk_rx_irq_disable(eth, MTK_RX_DONE_INT);
+ 	napi_disable(&eth->tx_napi);
+@@ -2375,8 +2404,6 @@ static int mtk_hw_init(struct mtk_eth *eth)
+ 	mtk_w32(eth, 0, MTK_QDMA_DELAY_INT);
+ 	mtk_tx_irq_disable(eth, ~0);
+ 	mtk_rx_irq_disable(eth, ~0);
+-	mtk_w32(eth, RST_GL_PSE, MTK_RST_GL);
+-	mtk_w32(eth, 0, MTK_RST_GL);
+ 
+ 	/* FE int grouping */
+ 	mtk_w32(eth, MTK_TX_DONE_INT, MTK_PDMA_INT_GRP1);
+@@ -2385,19 +2412,6 @@ static int mtk_hw_init(struct mtk_eth *eth)
+ 	mtk_w32(eth, MTK_RX_DONE_INT, MTK_QDMA_INT_GRP2);
+ 	mtk_w32(eth, 0x21021000, MTK_FE_INT_GRP);
+ 
+-	for (i = 0; i < MTK_MAC_COUNT; i++) {
+-		u32 val = mtk_r32(eth, MTK_GDMA_FWD_CFG(i));
+-
+-		/* setup the forward port to send frame to PDMA */
+-		val &= ~0xffff;
+-
+-		/* Enable RX checksum */
+-		val |= MTK_GDMA_ICS_EN | MTK_GDMA_TCS_EN | MTK_GDMA_UCS_EN;
+-
+-		/* setup the mac dma */
+-		mtk_w32(eth, val, MTK_GDMA_FWD_CFG(i));
+-	}
+-
+ 	return 0;
+ 
+ err_disable_pm:
+diff --git a/drivers/net/ethernet/mediatek/mtk_eth_soc.h b/drivers/net/ethernet/mediatek/mtk_eth_soc.h
+index 76bd12cb8150..b8bcfdfc995e 100644
+--- a/drivers/net/ethernet/mediatek/mtk_eth_soc.h
++++ b/drivers/net/ethernet/mediatek/mtk_eth_soc.h
+@@ -84,6 +84,8 @@
+ #define MTK_GDMA_ICS_EN		BIT(22)
+ #define MTK_GDMA_TCS_EN		BIT(21)
+ #define MTK_GDMA_UCS_EN		BIT(20)
++#define MTK_GDMA_DROP_ALL	0x7777
++#define MTK_GDMA_TO_PDMA	0x0
+ 
+ /* Unicast Filter MAC Address Register - Low */
+ #define MTK_GDMA_MAC_ADRL(x)	(0x508 + (x * 0x1000))
+-- 
+2.17.1
 
-> +			/*
-> +			 * The wrapper around the PCIe block has a bug
-> +			 * preventing it from accessing beyond the first 3GB of
-> +			 * memory. As the bus DMA mask is rounded up to the
-> +			 * closest power of two of the dma-range size, we're
-> +			 * forced to set the limit at 2GB. This can be
-> +			 * harmlessly changed in the future once the DMA code
-> +			 * handles non power of two DMA limits.
-> +			 */
-> +			dma-ranges = <0x02000000 0x0 0x00000000 0x0 0x00000000
-> +				      0x0 0x80000000>;
-> +		};
-> +	};
-
-Thanks,
-
-Andrew Murray
-
-> +
->  	cpus: cpus {
->  		#address-cells = <1>;
->  		#size-cells = <0>;
-> -- 
-> 2.23.0
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
