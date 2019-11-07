@@ -2,76 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0F6EF30FA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 15:14:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DAAAF310C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 15:15:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=emp1gRGKVOlk5fSBYk2l7gZqsMyF1ZNl7HWr6VzPSv8=; b=ALG
-	TRNzuaUO2/RQ1LaVfoPoDyGbOmKkEawfec9bioLH5OdorzG2607bgqQXuJ4rqjiGCxXiuLLdtdApl
-	cdxogA84aMoNE8NUcH0chLP5VPLwMsDueT7DmKRHPkl0mAj4hsXlyut1lfYIYsRifusTtTBtJzAgG
-	1vgdpTmh873+ccBc7KmVHJ3TaIVmjVa46RiyH5JRmBEDOQSb2BPDgoCLi+jH7F4DVwoGuEfFrsJNt
-	hbMLnadlDW9TVfu0+/J3vWGcnBfQZVdQca/XzTrlI3BrlOF2U2P9C8TrAax8X+mABcVpuGwsVvPl7
-	33LOamY+s4hEsvdneBRzdx8tBS6BisQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=VunCCt8Wrlr68WTjwEEM4SQEYTNd2nhGXi313G3SOKs=; b=T2RJaCpUsaZRaCl1HBnkFC0l6B
+	IEaxMK0ulR8/+rsaPdyBWht6rHWYEMz/LV289JPB/UlyvZoNe1JoRbzI67Xcy7/gmkpjvyYtyaZD0
+	43DYFv3/cX4UAHfGBjG9nkk7eBcxKWq4bEjXVR7CeOKCRWlbIZdR8o0mpirWd693CstC/kk5EpMEa
+	tfeZvPplkl8Am9M+1uo9e+1smzWT373WiUrHoeZbuYERLu5SzbMoi09io59TEhGuGxnF59zN64yu6
+	FttymYZNYvT2nXkRWOmoWLclxA3M9MeJGlwJ3eW87KdAsvXxJh0apM+jw7JZ4QPgX0Fp4QVwbaMBh
+	33pHmDbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSiYX-0007Gv-7K; Thu, 07 Nov 2019 14:14:37 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iSiZA-0007SL-QC; Thu, 07 Nov 2019 14:15:16 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSiYN-0007GK-5J
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 14:14:28 +0000
-Received: by mail-wr1-x443.google.com with SMTP id j15so3201878wrw.5
+ id 1iSiYS-0007Hv-4H
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 14:14:33 +0000
+Received: by mail-wm1-x343.google.com with SMTP id q130so2608457wme.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 06:14:24 -0800 (PST)
+ Thu, 07 Nov 2019 06:14:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=SySlf9LlN4iQ5DOxcm689bd9gGZWJLbEiQiXadmQ1Pk=;
- b=UHfr/Fy0eKNYcLbTRmDFkD8ByLbeJuZ98PewgJnQ9K47BY1w6YNNND/1frcRFyjHYs
- ykqLJocw8egu1fRyxlZkcz9UWGaPlleM7yTcft6cZIXFqB6A2yo6aIBWX8+R1hM2XhWo
- 5exEx26Z6Qvoo62u6gmzfkHWLvNa5ncHQKYxImXIWbhffMRQHk/bhDwe2ysIVZWakJW0
- h+f/th2fALLj8N3unjhmpXSGtR/s7yp5oMwkriW9fTWoGEZYrexFikYEyjesQM9Zm65Q
- YWO4i+iMmmOAAOTOBhzi8THEfdgTj6R9BqZiik9wy7sHGRchD4hMvevOHnGJua2e6gap
- 2W9A==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=z4v4wVl3s1hArrGKDQlCf3SAy+2jZtyPSY8RHpRjW/c=;
+ b=gS289DGLAlmjTsIrrI+HnfOBs+MFe6Z+dMKRM77pwCmaqmab3zS/UDr4LGAIccnnoj
+ PYrHQNF5s4/Ih6zl2gbemqnAbWBI5KZ1/la/tOIjs7Z1mEm6RUTlmwSd10j4EvE1y6dW
+ RsyplNNZnac1XgHliHIM29YvJlXckXAD80h4vAYw1R7utQbpsjeMZK5CO5C5q42vjLcZ
+ ElJ16ZMLWl3a4pFdrMUJk8C0/A/Og+Td8uC0OmSWoVCviiPxMrNZhrK2IkPaxbaf/raj
+ MgVpm6kSFTyXyj34AndF/Vv5M8JU1kxfeuPS6cD5OLrLD9yTmp2GcVmknxjmj+xqTnIP
+ Msog==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=SySlf9LlN4iQ5DOxcm689bd9gGZWJLbEiQiXadmQ1Pk=;
- b=Y0QTevP5wRiJPBqSzIiB1ivmBYf3uPWDR/aOFS68s2bFreu024fL06xBc5lfb+zXQN
- jXV4mR/JJI3BMh4EBmcsBVR++1YSG2NBO0F1t3Ad8aLBROx37laXkhdzmAzseAlN2iow
- Ijwq47XJzHiUx3O9O5ygNWGhcehYQ1ruLIIdrgGBhk/g/3IGjomSdIL52AAr75PrXBOm
- XGgFjkWecEv9cQ9vpvc7teTjDrDm6mr5S29TfEMqgKgZmjMdRjkhuxnFr8NdAnBzfEBP
- p02UTL6vJMl90I///r4nOT7vnik1GxEAlGfOjXO3NyyTo8YV9O5gnHqxoGizOKfkYprQ
- 5YCQ==
-X-Gm-Message-State: APjAAAVDuP26F4oPJE31SMG151jf5/W2im1udVbSmRYnHpzn1AUaWKiU
- coKjTHRYMcwDZJ96cjwOs8Mm27uc6HI=
-X-Google-Smtp-Source: APXvYqz3a62TlecYMknedHe56Nzvz4QPMUm0c4y7nxYBP+UKHA+WI3HCrJm0EKZ9PUZYV+Hho7vQ5w==
-X-Received: by 2002:a05:6000:11c4:: with SMTP id
- i4mr3054296wrx.277.1573136063599; 
- Thu, 07 Nov 2019 06:14:23 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=z4v4wVl3s1hArrGKDQlCf3SAy+2jZtyPSY8RHpRjW/c=;
+ b=HoZXeB9QM/JjKV5js+agDtqqDVOJRoNat9bE4LMUPo9LS/Zjyw4Xh8vTt83zaArdiT
+ iN35nizwNrd5N6tG4YQ0XftFzQ92K1vjtwhhNPlY5y5Rn8zwIJCYNGcuy2g/x/QyT/QO
+ 3LCQ+mnXKuB634+YnB69oABFIs1KnHeszqoKkuwaN5qdVuD0ICL8cb0PQhLZgvFhvVbo
+ +0RaobKA0/+OpJ+32b+TaDMSnKuWCw8y71dfq0QP8LiFfEKJ6JOj3cGBxX6V13oqzDxD
+ UV7MhyKf54eUlUTjCRC0Z57mPXLEouUPo5pdp/HHu0a5yQH89skleEMLEURTYLCCtJhX
+ 9Vig==
+X-Gm-Message-State: APjAAAUmonioThH8sFiRP6z8gxS1eVnzCIJMYv41KEoFgX+IbMLizMsR
+ ekYwxKVFAREUfur/7eX5Mdc=
+X-Google-Smtp-Source: APXvYqwYVZfRRrimnVJdMUO6UWxwQXvnQ3zdZ6Jzu5hsncWSH8RirMg9CVbBRICD2N/Qud6kBs4XGw==
+X-Received: by 2002:a05:600c:20c9:: with SMTP id
+ y9mr3019835wmm.72.1573136069870; 
+ Thu, 07 Nov 2019 06:14:29 -0800 (PST)
 Received: from stbsrv-and-01.and.broadcom.net ([192.19.231.250])
- by smtp.gmail.com with ESMTPSA id b1sm2453888wrw.77.2019.11.07.06.14.21
+ by smtp.gmail.com with ESMTPSA id b1sm2453888wrw.77.2019.11.07.06.14.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 06:14:22 -0800 (PST)
+ Thu, 07 Nov 2019 06:14:28 -0800 (PST)
 From: Al Cooper <alcooperx@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 00/13] phy: usb: Updates to Broadcom STB USB PHY driver
-Date: Thu,  7 Nov 2019 09:13:26 -0500
-Message-Id: <20191107141339.6079-1-alcooperx@gmail.com>
+Subject: [PATCH 01/13] phy: usb: EHCI DMA may lose a burst of DMA data for
+ 7255xA0 family
+Date: Thu,  7 Nov 2019 09:13:27 -0500
+Message-Id: <20191107141339.6079-2-alcooperx@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191107141339.6079-1-alcooperx@gmail.com>
+References: <20191107141339.6079-1-alcooperx@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_061427_202284_35DFEA73 
-X-CRM114-Status: UNSURE (   9.65  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191107_061432_191373_FC6C13CB 
+X-CRM114-Status: GOOD (  14.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,36 +111,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-- Add support for 7216 and 7211 Broadcom SoCs which use the new
-  Synopsis USB Controller.
-- Add support for USB Wake
-- Add various bug fixes.
+When the EHCI controller received a 512 byte USB packet that
+had to be broken into 2 256 byte bursts across the SCB bus AND
+there was a following 512 byte USB packet, the second burst of
+data from the first packet was sometimes being lost. If the
+burst size was changed to 128 bytes via the EBR_SCB_SIZE field
+in the USB_CTRL_EBRIDGE register we'd see the 4th 128 byte burst
+of the first packet being lost. This problem became much worse
+if other threads were running that accessed memory, like a memcpy
+test. Setting the EBR_SCB_SIZE to 512, which prevents breaking
+the EHCI USB packet (max size of 512 bytes) into bursts, fixed
+the problem.
 
-Al Cooper (13):
-  phy: usb: EHCI DMA may lose a burst of DMA data for 7255xA0 family
-  phy: usb: Get all drivers that use USB clks using correct
-    enable/disable
-  phy: usb: Put USB phys into IDDQ on suspend to save power in S2 mode
-  phy: usb: Add "wake on" functionality
-  phy: usb: Restructure in preparation for adding 7216 USB support
-  dt-bindings: Add Broadcom STB USB PHY binding document
-  phy: usb: Add support for new Synopsis USB controller on the 7216
-  phy: usb: Add support for new Synopsis USB controller on the 7211b0
-  phy: usb: fix driver to defer on clk_get defer
-  phy: usb: PHY's MDIO registers not accessible without device installed
-  phy: usb: bdc: Fix occasional failure with BDC on 7211
-  phy: usb: USB driver is crashing during S3 resume on 7216
-  phy: usb: Add support for wake and USB low power mode for 7211 S2/S5
+Signed-off-by: Al Cooper <alcooperx@gmail.com>
+---
+ drivers/phy/broadcom/phy-brcm-usb-init.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
- .../bindings/phy/brcm,brcmstb-usb-phy.txt     |  69 ++-
- drivers/phy/broadcom/Makefile                 |   2 +-
- .../phy/broadcom/phy-brcm-usb-init-synopsis.c | 414 ++++++++++++++++++
- drivers/phy/broadcom/phy-brcm-usb-init.c      | 226 +++++-----
- drivers/phy/broadcom/phy-brcm-usb-init.h      | 148 ++++++-
- drivers/phy/broadcom/phy-brcm-usb.c           | 264 +++++++++--
- 6 files changed, 938 insertions(+), 185 deletions(-)
- create mode 100644 drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c
-
+diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.c b/drivers/phy/broadcom/phy-brcm-usb-init.c
+index 3c53625f8bc2..56d9b314a8d0 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb-init.c
++++ b/drivers/phy/broadcom/phy-brcm-usb-init.c
+@@ -42,6 +42,7 @@
+ #define   USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK		0x80000000 /* option */
+ #define USB_CTRL_EBRIDGE		0x0c
+ #define   USB_CTRL_EBRIDGE_ESTOP_SCB_REQ_MASK		0x00020000 /* option */
++#define   USB_CTRL_EBRIDGE_EBR_SCB_SIZE_MASK		0x00000f80 /* option */
+ #define USB_CTRL_OBRIDGE		0x10
+ #define   USB_CTRL_OBRIDGE_LS_KEEP_ALIVE_MASK		0x08000000
+ #define USB_CTRL_MDIO			0x14
+@@ -176,6 +177,7 @@ static const struct id_to_type id_to_type_table[] = {
+ 	{ 0x33900000, BRCM_FAMILY_3390A0 },
+ 	{ 0x72500010, BRCM_FAMILY_7250B0 },
+ 	{ 0x72600000, BRCM_FAMILY_7260A0 },
++	{ 0x72550000, BRCM_FAMILY_7260A0 },
+ 	{ 0x72680000, BRCM_FAMILY_7271A0 },
+ 	{ 0x72710000, BRCM_FAMILY_7271A0 },
+ 	{ 0x73640000, BRCM_FAMILY_7364A0 },
+@@ -948,6 +950,17 @@ void brcm_usb_init_eohci(struct brcm_usb_init_params *params)
+ 	if (params->selected_family == BRCM_FAMILY_7271A0)
+ 		/* Enable LS keep alive fix for certain keyboards */
+ 		USB_CTRL_SET(ctrl, OBRIDGE, LS_KEEP_ALIVE);
++
++	if (params->family_id == 0x72550000) {
++		/*
++		 * Make the burst size 512 bytes to fix a hardware bug
++		 * on the 7255a0. See HW7255-24.
++		 */
++		reg = brcmusb_readl(USB_CTRL_REG(ctrl, EBRIDGE));
++		reg &= ~USB_CTRL_MASK(EBRIDGE, EBR_SCB_SIZE);
++		reg |= 0x800;
++		brcmusb_writel(reg, USB_CTRL_REG(ctrl, EBRIDGE));
++	}
+ }
+ 
+ void brcm_usb_init_xhci(struct brcm_usb_init_params *params)
 -- 
 2.17.1
 
