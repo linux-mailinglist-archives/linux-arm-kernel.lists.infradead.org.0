@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADACBF36BB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 19:13:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD9E3F36F1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 19:24:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dQBR41jOvC88jdZoxPorndKdvnuWKNQSXeqCkppkVa4=; b=QXZr9dVGqRDE5O
-	Kal4DyuEDKQdi2BzuE5uvzVdfN3KCGTG+squNOGOjinuopm1YOZR3q59K9hGxoInYaZ4MKYiCUf56
-	jwBQHS1weA4wgBQnJqaquFA2DW7Kc4WwEs7x5qMkmpnI3+3RQFxPjgRJWMTTuiXqbqp0hOq+ltapN
-	bx48kjHKZEpXJbqEHFaiGrl3q6TEU1zRe012kcGX1pZAJQluTE0jtc7CrEOkBDYpyzt9NSqgKLI8n
-	A5a+SyaNcXi4aY6I594BNtpfphdu7aAX8+a0o09ZlcQ+XgKtpik66Tg7kYJqlXPkAMW60WB6I10+q
-	uACzt29xhV9o5AA83l5g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=mEUUuhg9VGhaRwNWl5uZxmHitbzfJY668s8qqrrY1u8=; b=vCfyR+e/8QvXme1pL9Nn2pejy
+	ahPGlo5cNBxaeQbtWAsyFng9YTweHwH9YsEpCwS30sKwA4Mj0FDP/Z8VPWQ26NyWBUs3rDaKO+aQ2
+	RxGNKaSojA0bBA+0QKKMNiVDgj3a2GqWx2D3AdV+Qbwcox/1K/Y6Ed6WpbUiiIGOGwAUj0uPuQ3VR
+	wPRjhL5VVjcqhCcaFsmcnUPs+i7Ty6Y60qEvlim5ivW5VBb7TjujD4aM/CXdjfZz8sXK4J8T20O3v
+	qMN1uGLEOBeGZ1BqUNopmvgqa173h3o5buU6ZbDd0E/baXZY4IRlOq4695bBNd3LC+MHF8LSIKjMR
+	jpBJEOgDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSmHl-0007Wc-2a; Thu, 07 Nov 2019 18:13:33 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iSmSC-0002gW-6V; Thu, 07 Nov 2019 18:24:20 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSmHc-0007W4-N7
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 18:13:26 +0000
-Received: from litschi.hi.pengutronix.de
- ([2001:67c:670:100:feaa:14ff:fe6a:8db5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <m.tretter@pengutronix.de>)
- id 1iSmHR-0001kB-TM; Thu, 07 Nov 2019 19:13:13 +0100
-Date: Thu, 7 Nov 2019 19:13:11 +0100
-From: Michael Tretter <m.tretter@pengutronix.de>
-To: Rajan Vaja <rajan.vaja@xilinx.com>
-Subject: Re: [PATCH] clk: zynqmp: Fix divider calculation
-Message-ID: <20191107191311.4e0d58b2@litschi.hi.pengutronix.de>
-In-Reply-To: <1573117574-9316-1-git-send-email-rajan.vaja@xilinx.com>
-References: <1573117574-9316-1-git-send-email-rajan.vaja@xilinx.com>
-Organization: Pengutronix
-X-Mailer: Claws Mail 3.14.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
+ id 1iSmS1-0002fz-68; Thu, 07 Nov 2019 18:24:10 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 707D4ACA5;
+ Thu,  7 Nov 2019 18:24:07 +0000 (UTC)
+Message-ID: <2dcc3fca914a454006bcf2e9bd4479a30228e9fa.camel@suse.de>
+Subject: Re: [PATCH 2/4] ARM: dts: bcm2711: Enable PCIe controller
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Stefan Wahren <wahrenst@gmx.net>, Andrew Murray <andrew.murray@arm.com>,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
+ bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Eric Anholt <eric@anholt.net>
+Date: Thu, 07 Nov 2019 19:24:03 +0100
+In-Reply-To: <50074e33-17bf-d555-cbf6-4ec079472ecd@gmx.net>
+References: <20191106214527.18736-1-nsaenzjulienne@suse.de>
+ <20191106214527.18736-3-nsaenzjulienne@suse.de>
+ <50074e33-17bf-d555-cbf6-4ec079472ecd@gmx.net>
+User-Agent: Evolution 3.34.1 
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:feaa:14ff:fe6a:8db5
-X-SA-Exim-Mail-From: m.tretter@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_101324_754787_D98DEB03 
-X-CRM114-Status: GOOD (  23.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191107_102409_519782_CBA40625 
+X-CRM114-Status: GOOD (  20.34  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,189 +65,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tejas.patel@xilinx.com, sboyd@kernel.org, nava.manne@xilinx.com,
- mturquette@baylibre.com, michal.simek@xilinx.com, linux-kernel@vger.kernel.org,
- jollys@xilinx.com, kernel@pengutronix.de, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: f.fainelli@gmail.com, phil@raspberrypi.org, linux-kernel@vger.kernel.org,
+ james.quinlan@broadcom.com, mbrugger@suse.com
+Content-Type: multipart/mixed; boundary="===============7581043447771319413=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 07 Nov 2019 01:06:14 -0800, Rajan Vaja wrote:
-> Linux doesn't know maximum value of divisor that it can support.
-> zynqmp_clk_divider_round_rate() returns actual divider value
-> after calculating from parent rate and desired rate, even though
-> that rate is not supported by single divider of hardware. It is
-> also possible that such divisor value can be achieved through 2
-> different dividers. As, Linux tries to set such divisor value(out
-> of range) in single divider set divider is getting failed.
-> 
-> Fix the same by computing best possible combination of two
-> divisors which provides more accurate clock rate.
 
-This patch could be split into two patches. One for getting the maximum
-value of the divisor and one for calculating the best combination of
-the two clocks.
+--===============7581043447771319413==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-TlMxNcfADV/A26dcLaFO"
 
-> 
-> Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
-> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
-> ---
->  drivers/clk/zynqmp/divider.c         | 62 +++++++++++++++++++++++++++++++++++-
->  include/linux/firmware/xlnx-zynqmp.h |  3 +-
->  2 files changed, 63 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/clk/zynqmp/divider.c b/drivers/clk/zynqmp/divider.c
-> index d8f5b70d..d2be24e 100644
-> --- a/drivers/clk/zynqmp/divider.c
-> +++ b/drivers/clk/zynqmp/divider.c
-> @@ -2,7 +2,7 @@
->  /*
->   * Zynq UltraScale+ MPSoC Divider support
->   *
-> - *  Copyright (C) 2016-2018 Xilinx
-> + *  Copyright (C) 2016-2019 Xilinx
->   *
->   * Adjustable divider clock implementation
->   */
-> @@ -41,6 +41,7 @@ struct zynqmp_clk_divider {
->  	bool is_frac;
->  	u32 clk_id;
->  	u32 div_type;
-> +	u32 max_div;
 
-If the maximum value is 0xFFFF, shouldn't this be u16?
+--=-TlMxNcfADV/A26dcLaFO
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
->  };
->  
->  static inline int zynqmp_divider_get_val(unsigned long parent_rate,
-> @@ -88,6 +89,34 @@ static unsigned long zynqmp_clk_divider_recalc_rate(struct clk_hw *hw,
->  	return DIV_ROUND_UP_ULL(parent_rate, value);
->  }
->  
-> +static void zynqmp_compute_divider(struct clk_hw *hw,
-> +				   unsigned long rate,
-> +				   unsigned long parent_rate,
-> +				   u32 max_div,
-> +				   int *bestdiv)
+On Thu, 2019-11-07 at 18:44 +0100, Stefan Wahren wrote:
+> Hi Nicolas,
+>=20
+> please move this patch behind the driver patches, which is the better ord=
+er.
+>=20
+> Am 06.11.19 um 22:45 schrieb Nicolas Saenz Julienne:
+> > This enables bcm2711's PCIe bus, wich is hardwired to a VIA Technologie=
+s
+> > XHCI USB 3.0 controller.
+> AFAIU this only applies to the Raspberry Pi 4, since the VIA is outside
+> of the SoC.
+> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> > ---
+> >  arch/arm/boot/dts/bcm2711.dtsi | 47 ++++++++++++++++++++++++++++++++++
+> >  1 file changed, 47 insertions(+)
+> >=20
+> > diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711=
+.dtsi
+> > index a9d84e28f245..c7b2e7b57da6 100644
+> > --- a/arch/arm/boot/dts/bcm2711.dtsi
+> > +++ b/arch/arm/boot/dts/bcm2711.dtsi
+> > @@ -288,6 +288,53 @@
+> >  		arm,cpu-registers-not-fw-configured;
+> >  	};
+> >=20
+> > +	scb {
+> > +		compatible =3D "simple-bus";
+> > +		#address-cells =3D <2>;
+> > +		#size-cells =3D <1>;
+> > +
+> > +		ranges =3D <0x0 0x7c000000  0x0 0xfc000000  0x03800000>,
+> > +			 <0x6 0x00000000  0x6 0x00000000  0x40000000>;
+> > +
+> > +		pcie_0: pcie@7d500000 {
+> > +			compatible =3D "brcm,bcm2711-pcie";
+> > +			reg =3D <0x0 0x7d500000 0x9310>;
+> > +			msi-controller;
+> > +			msi-parent =3D <&pcie_0>;
+> > +			#address-cells =3D <3>;
+> > +			#interrupt-cells =3D <1>;
+> > +			#size-cells =3D <2>;
+> > +			linux,pci-domain =3D <0>;
+> > +			brcm,enable-ssc;
+> > +			interrupts =3D <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>,
+> > +				     <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
+> > +			interrupt-names =3D "pcie", "msi";
+> > +			interrupt-map-mask =3D <0x0 0x0 0x0 0x7>;
+> > +			interrupt-map =3D <0 0 0 1 &gicv2 GIC_SPI 143
+> > +							IRQ_TYPE_LEVEL_HIGH
+> > +					 0 0 0 2 &gicv2 GIC_SPI 144
+> > +							IRQ_TYPE_LEVEL_HIGH
+> > +					 0 0 0 3 &gicv2 GIC_SPI 145
+> > +							IRQ_TYPE_LEVEL_HIGH
+> > +					 0 0 0 4 &gicv2 GIC_SPI 146
+> > +							IRQ_TYPE_LEVEL_HIGH>;
+> > +
+> > +			ranges =3D <0x02000000 0x0 0xf8000000 0x6 0x00000000
+> > +				  0x0 0x04000000>;
+> > +			/*
+> > +			 * The wrapper around the PCIe block has a bug
+> > +			 * preventing it from accessing beyond the first 3GB of
+> > +			 * memory. As the bus DMA mask is rounded up to the
+> > +			 * closest power of two of the dma-range size, we're
+> > +			 * forced to set the limit at 2GB. This can be
+> > +			 * harmlessly changed in the future once the DMA code
+> > +			 * handles non power of two DMA limits.
+> > +			 */
+> > +			dma-ranges =3D <0x02000000 0x0 0x00000000 0x0 0x00000000
+> > +				      0x0 0x80000000>;
+> In case this bug will ever be fixed, do you see this as a future proof
+> practical solution?
 
-Return bestdiv instead of returning void and passing it as a pointer.
-Also maybe you can find a better name for this function.
+The dts I provide should work on any bcm2711 (fixed or not) and any future
+kernel, with the downside that we'll perform some unnecessary buffer bounci=
+ng.
 
-> +{
-> +	int div1;
-> +	int div2;
-> +	long error = LONG_MAX;
-> +	struct clk_hw *parent_hw = clk_hw_get_parent(hw);
-> +	struct zynqmp_clk_divider *pdivider = to_zynqmp_clk_divider(parent_hw);
-> +
-> +	if (!pdivider)
-> +		return;
-> +
-> +	*bestdiv = 1;
-> +	for (div1 = 1; div1 <= pdivider->max_div; div1++) {
-> +		for (div2 = 1; div2 <= max_div; div2++) {
+If we were able to address the whole 32bit address space on some future bcm=
+2711
+we'd be forced to update the dma-ranges in the bootloader based on the SoC
+revision.
 
-What happens, if the parent or this divider only supports divisors that
-are a power of 2?
+The driver should work with any sensible dma-range, I even did a test emula=
+ting
+the 4GB inbound memory setup.
 
-> +			long new_error = ((parent_rate / div1) / div2) - rate;
-> +
-> +			if (abs(new_error) < abs(error)) {
-> +				*bestdiv = div2;
-> +				error = new_error;
-> +			}
-> +		}
-> +	}
-> +}
-> +
->  /**
->   * zynqmp_clk_divider_round_rate() - Round rate of divider clock
->   * @hw:			handle between common and hardware-specific interfaces
-> @@ -125,8 +154,21 @@ static long zynqmp_clk_divider_round_rate(struct clk_hw *hw,
->  
->  	bestdiv = zynqmp_divider_get_val(*prate, rate);
->  
-> +	/*
-> +	 * In case of two divisors, compute best divider values and return
-> +	 * divider2 value based on compute value. div1 will  be automatically
-> +	 * set to optimum based on required total divider value.
-> +	 */
-> +	if (div_type == TYPE_DIV2 &&
-> +	    (clk_hw_get_flags(hw) & CLK_SET_RATE_PARENT)) {
-> +		zynqmp_compute_divider(hw, rate, *prate,
-> +				       divider->max_div, &bestdiv);
-> +	}
-> +
->  	if ((clk_hw_get_flags(hw) & CLK_SET_RATE_PARENT) && divider->is_frac)
->  		bestdiv = rate % *prate ? 1 : bestdiv;
-> +
-> +	bestdiv = min_t(u32, bestdiv, divider->max_div);
->  	*prate = rate * bestdiv;
->  
->  	return rate;
-> @@ -195,6 +237,9 @@ struct clk_hw *zynqmp_clk_register_divider(const char *name,
->  	struct clk_hw *hw;
->  	struct clk_init_data init;
->  	int ret;
-> +	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
-> +	struct zynqmp_pm_query_data qdata = {0};
-> +	u32 ret_payload[PAYLOAD_ARG_CNT];
->  
->  	/* allocate the divider */
->  	div = kzalloc(sizeof(*div), GFP_KERNEL);
-> @@ -215,6 +260,21 @@ struct clk_hw *zynqmp_clk_register_divider(const char *name,
->  	div->clk_id = clk_id;
->  	div->div_type = nodes->type;
->  
-> +	/*
-> +	 * To achieve best possible rate, maximum limit of divider is required
-> +	 * while computation. Get maximum supported divisor from firmware. To
-> +	 * maintain backward compatibility assign maximum possible value(0xFFFF)
-> +	 * if query for max divisor is not successful.
-> +	 */
-> +	qdata.qid = PM_QID_CLOCK_GET_MAX_DIVISOR;
-> +	qdata.arg1 = clk_id;
-> +	qdata.arg2 = nodes->type;
-> +	ret = eemi_ops->query_data(qdata, ret_payload);
-> +	if (ret)
-> +		div->max_div = 0XFFFF;
+Regards,
+Nicolas
 
-U16_MAX?
 
-Michael
+--=-TlMxNcfADV/A26dcLaFO
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
 
-> +	else
-> +		div->max_div = ret_payload[1];
-> +
->  	hw = &div->hw;
->  	ret = clk_hw_register(NULL, hw);
->  	if (ret) {
-> diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
-> index 778abbb..1edb6e9 100644
-> --- a/include/linux/firmware/xlnx-zynqmp.h
-> +++ b/include/linux/firmware/xlnx-zynqmp.h
-> @@ -2,7 +2,7 @@
->  /*
->   * Xilinx Zynq MPSoC Firmware layer
->   *
-> - *  Copyright (C) 2014-2018 Xilinx
-> + *  Copyright (C) 2014-2019 Xilinx
->   *
->   *  Michal Simek <michal.simek@xilinx.com>
->   *  Davorin Mista <davorin.mista@aggios.com>
-> @@ -105,6 +105,7 @@ enum pm_query_id {
->  	PM_QID_CLOCK_GET_PARENTS,
->  	PM_QID_CLOCK_GET_ATTRIBUTES,
->  	PM_QID_CLOCK_GET_NUM_CLOCKS = 12,
-> +	PM_QID_CLOCK_GET_MAX_DIVISOR,
->  };
->  
->  enum zynqmp_pm_reset_action {
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3EYUMACgkQlfZmHno8
+x/7I8gf+Krf4eAVjY+gGoFj4B/+Wk2M4/i71Ubp+SIWiZarPgzumoZIAaDv91+YO
+qwHAuQGIEnx8YvltDs3CkbNUJBzwuQAZQ9Ve652E8P/f4+wM+XVegdIWTk3M1G2/
+t2N8OH87E+Ag8pGV9bfAtFi7oyFC3a+HDGLTAN1RezBLzlnn1EhN7fr4xXT7lQA7
+HPmn9BjtUkQaXDMSghNPH9TaEVpEVxeRx9pXrDVaNQGeQN3RtfpznjbQj7GFHnG/
+HYtWFf8ha82VlW+9EoWIXxKx0GQgZq9pehmr3cFgETyxUFf0AQCgVE0yhOXW/f5X
+4xQXvqZLhwYBafJgw6LKn6qwz0vlpw==
+=9wr0
+-----END PGP SIGNATURE-----
+
+--=-TlMxNcfADV/A26dcLaFO--
+
+
+
+--===============7581043447771319413==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7581043447771319413==--
+
+
