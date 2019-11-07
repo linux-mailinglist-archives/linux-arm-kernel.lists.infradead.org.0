@@ -2,61 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B07FFF2855
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 08:47:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55940F2888
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 08:56:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oJV3VA5tgxoGAUTJ1wn+7jXdkMxQDn32+3mWaeyJgXw=; b=OPVlIF8oHmqzhY
-	tIcHQ0RvkcZVj4f0Ebi2A8jMMvXpt/9wLJzDWYv6CiigFxw42Zs+2GW9oh/eWqdGJYut7yKjkngjS
-	wGnwvhREROG6tOw/Vo1Ev2PN3lRFykcTZoKQBhzD7NodaJVPYVUZQKclz+xiRHR/ro7c8Sl8H2YKu
-	0cuN7uCtHNal3d0ZoLHuiILG5uQGtd1juaqrTzJjP1zrSlWbRtQtcrJamPdoHcrWkfI6KDWYzp0E4
-	PIPsqSo2cbILFAy8dVM3ytIcKJr38bexnHuV7jNWEXcVlGzw0owyFKwF3YjjVnJVflccV5hph1P/X
-	mrfFpE6QjKyHvvKqiyVw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UQKtCsPu28EJ2qv3KCgewXDlXEYmbKDdbsS5qTpRcBQ=; b=ZD+Vhjyc7c21Zo
+	eCTzLvQDD1rm96HTirMz1UvG0BL3yTPVa0wS1CNNaHlffNnVvU0bvi2SkYZXMGYj/IR1dH2bNdbUB
+	HhuswOe5/Lp/x3rGsUcHSIln5ymkC5eWSNtqE6V1/D/wv+/Gs5Pslx0rp0+nMLyN5d+6mb3VGlG/V
+	l4MzGPDvyN8ZcPhqyCTOqvFHAYNuhCJPJuOkChVGn+bGrpKFNW/MsColLe2LOiV+qVKQ0HwIDBDfV
+	SoZDGNv7+Z616hMKox51Y36ZJDM2/Gt3DKNQ8uGsYJFZMWd+r/pJAqzvEuq1jbJHuiEmxPTsuBeqU
+	/pqF00WhyjcCqYkDA27w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iScW3-0002Se-TO; Thu, 07 Nov 2019 07:47:39 +0000
-Received: from mx1.unisoc.com ([222.66.158.135] helo=SHSQR01.spreadtrum.com)
+	id 1iSceU-000652-9m; Thu, 07 Nov 2019 07:56:22 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iScVv-0002Qa-FR
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 07:47:33 +0000
-Received: from ig2.spreadtrum.com (bjmbx01.spreadtrum.com [10.0.64.7])
- by SHSQR01.spreadtrum.com with ESMTPS id xA77j9w1060787
- (version=TLSv1 cipher=AES256-SHA bits=256 verify=NO);
- Thu, 7 Nov 2019 15:45:09 +0800 (CST)
- (envelope-from lvqiang.huang@unisoc.com)
-Received: from localhost (10.0.74.59) by BJMBX01.spreadtrum.com (10.0.64.7)
- with Microsoft SMTP Server (TLS) id 15.0.847.32; Thu, 7 Nov 2019 15:45:14
- +0800
-From: Lvqiang <Lvqiang.Huang@unisoc.com>
-To: <linux@armlinux.org.uk>, <ebiederm@xmission.com>,
- <dave.hansen@linux.intel.com>, <anshuman.khandual@arm.com>,
- <akpm@linux-foundation.org>, <Lvqiang.Huang@unisoc.com>,
- <f.fainelli@gmail.com>, <will@kernel.org>, <tglx@linutronix.de>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH] ARM: check __ex_table in do_bad()
-Date: Thu, 7 Nov 2019 15:45:13 +0800
-Message-ID: <1573112713-10115-1-git-send-email-Lvqiang.Huang@unisoc.com>
-X-Mailer: git-send-email 1.7.9.5
+ id 1iSceG-0005vd-QE
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 07:56:10 +0000
+Received: from p5b06da22.dip0.t-ipconnect.de ([91.6.218.34] helo=nanos)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1iSce3-0000dt-Uf; Thu, 07 Nov 2019 08:55:56 +0100
+Date: Thu, 7 Nov 2019 08:55:54 +0100 (CET)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Jianyong Wu <jianyong.wu@arm.com>
+Subject: Re: [RFC PATCH v6 4/7] time: Add mechanism to recognize clocksource
+ in time_get_snapshot
+In-Reply-To: <20191024110209.21328-5-jianyong.wu@arm.com>
+Message-ID: <alpine.DEB.2.21.1911070852551.1869@nanos.tec.linutronix.de>
+References: <20191024110209.21328-1-jianyong.wu@arm.com>
+ <20191024110209.21328-5-jianyong.wu@arm.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-X-Originating-IP: [10.0.74.59]
-X-ClientProxiedBy: shcas04.spreadtrum.com (10.29.35.89) To
- BJMBX01.spreadtrum.com (10.0.64.7)
-X-MAIL: SHSQR01.spreadtrum.com xA77j9w1060787
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_234731_825093_97052CE8 
-X-CRM114-Status: UNSURE (   9.12  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191106_235609_015327_3D883860 
+X-CRM114-Status: GOOD (  12.82  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,82 +66,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mark.Rutland@arm.com, justin.he@arm.com, kvm@vger.kernel.org,
+ suzuki.poulose@arm.com, maz@kernel.org, richardcochran@gmail.com,
+ yangbo.lu@nxp.com, linux-kernel@vger.kernel.org,
+ sean.j.christopherson@intel.com, Kaly.Xin@arm.com, john.stultz@linaro.org,
+ netdev@vger.kernel.org, pbonzini@redhat.com, nd@arm.com, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ Steve.Capper@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, 24 Oct 2019, Jianyong Wu wrote:
+> From: Thomas Gleixner <tglx@linutronix.de>
+>
+> In some scenario like return device time to ptp_kvm guest,
+> we need identify the current clocksource outside core time code.
+>
+> This patch add a mechanism to recognize the current clocksource
+> by export clocksource id in time_get_snapshot.
 
-We got many crashs in for_each_frame+0x18 arch/arm/lib/backtrace.S
-    1003: ldr r2, [sv_pc, #-4]
+Please check Documentation/process/submitting-patches.rst and search for
+'This patch'.
 
-The backtrace is
-    dump_backtrace
-    show_stack
-    sched_show_task
-    show_state_filter
-    sysrq_handle_showstate_blocked
-    __handle_sysrq
-    write_sysrq_trigger
-    proc_reg_write
-    __vfs_write
-    vfs_write
-    sys_write
+> diff --git a/include/linux/clocksource.h b/include/linux/clocksource.h
+> index b21db536fd52..ac8016b22734 100644
+> --- a/include/linux/clocksource.h
+> +++ b/include/linux/clocksource.h
+> @@ -19,6 +19,7 @@
+>  #include <linux/of.h>
+>  #include <asm/div64.h>
+>  #include <asm/io.h>
+> +#include <linux/clocksource_ids.h>
 
-Related Kernel config
-    CONFIG_CPU_SW_DOMAIN_PAN=y
-    # CONFIG_ARM_UNWIND is not set
-    CONFIG_FRAME_POINTER=y
+Please place that include to the other linux includes. You might notice
+that there is ordering here.
 
-The task A was dumping the stack of an UN task B. However, the task B
-scheduled to run on another CPU, which cause it stack content changed.
-Then, task A may hit a page domain fault and die().
-    [520.661314] Unhandled fault: page domain fault (0x01b) at 0x32848c02
+But where is that include? It's not part of that series, so how is this
+supposed to compile?
 
-The addr 0x32848c02 is a valid user-space address.
-    PAGE DIRECTORY: d1854000
-      PGD: d1854ca0 => bb21e835
-      PMD: d1854ca0 => bb21e835
-      PTE: bb21e120 => afffa79f
+Thanks,
 
-With CONFIG_CPU_SW_DOMAIN_PAN=y, a page domain fault occurred.
-    { do_bad, SIGSEGV, SEGV_ACCERR, "page domain fault"},
-
-Without check the __ex_table entry, do_bad() just return fault and die().
-    .pushsection __ex_table,"a"
-    .long	1003b, 1006b
-
-This patch try __ex_table in do_bad(), the same as in __do_kernel_fault().
-
-Signed-off-by: Lvqiang <Lvqiang.Huang@unisoc.com>
----
- arch/arm/mm/fault.c |    5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
-diff --git a/arch/arm/mm/fault.c b/arch/arm/mm/fault.c
-index bd0f482..22f45df 100644
---- a/arch/arm/mm/fault.c
-+++ b/arch/arm/mm/fault.c
-@@ -487,11 +487,14 @@ static inline bool access_error(unsigned int fsr, struct vm_area_struct *vma)
- #endif /* CONFIG_ARM_LPAE */
- 
- /*
-- * This abort handler always returns "fault".
-+ * Checks __ex_table before returns "fault".
-  */
- static int
- do_bad(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
- {
-+	if (fixup_exception(regs))
-+		return 0;
-+
- 	return 1;
- }
- 
--- 
-1.7.9.5
-
-
+	tglx
 
 _______________________________________________
 linux-arm-kernel mailing list
