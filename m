@@ -2,74 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2549F3782
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 19:47:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7594FF37C4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 20:01:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2+eZVtlA/QI94BS6duqCHQDpkQRn+2ced/yMaZXCd2A=; b=Bv6J3d0daLOOzp
-	c0pWKm2CoIW0NWJTSqTL6ddWIPELf9feldgFv/E+YHPe2cRIMZCAcnBKwDRuZPwW98zlK7vPbTAFU
-	ZaJN99gSQxpNV/tjsu5OBA4iKsPaNBp0Y8yGB5LLpTs46QAO1woG7hBXQP1/DnSqpdhmsBQJRIzJw
-	RBZLX3do1xfIKK62Wq2vW1JnKTwD8I4++GPg7s3XQdw7N2SOweBkOz3Y+ybSDBav4emzWDWoqqtYi
-	k5+PWMrzWD9OJeIYDokrd6AYOiK0gDhprnrt9qQk1+CTuGC/7SQT0VvZRS5iWQT0wni+/W8JoRW1p
-	sH4JyHPeM7UZnnKK8FwA==;
+	List-Owner; bh=tSQkC84B+lWzWOZXwTLctRfSeY4B3oSTCOxya+6tH6o=; b=MwFdo54qGH1hOT
+	jQBNbdSqk2HSX7Va3pCFK7seSNmAjkf2aZWhzRQZy9MZ5whhHZeeD1otefO2gy8x8h5TGHg8FneYx
+	aogNFXf9otNFkcUb/ytmC8bg+FCiCzsmflnkaP3sblVY6nUXZHgMGzRWUJZzLUURJiLYsMrMSZmpV
+	TIXyr0D0NUpKLCSpj66DlcvMHxvKDP0CQuNLxbuN8cJ3sl3WgVxwGixD2y9Br0t1tVoKAVcw/JB2N
+	rZ/fV0Hy5T8Ke+28rQ8bX+sDRrHWoZqLcN0fFjw46/uUslSrGw+bT3RDBbf1l2yS3233g3vQErIj9
+	hFWwr1xp1rxx1L0deu2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSmoc-00043T-NJ; Thu, 07 Nov 2019 18:47:30 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1iSn2L-00014c-RI; Thu, 07 Nov 2019 19:01:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSmoV-00042S-LK
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 18:47:25 +0000
-Received: by mail-il1-x141.google.com with SMTP id m5so2786523ilq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 10:47:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LlH/emK43X7VQlux0XjazW6nVpP1+OhxUnqAKnN/vBs=;
- b=JEB1F12iTYfjJYno9PiUHEyIvfvFi+cWQhuSPBKHPuy1ugZuXn4+uxYA3Ey4McDqlF
- PvDtJzEOxJSnnwrAitdgUXRRfeq3SlbXPFIE6k67sa3xWjywqkMIXl2xZ9MziBmUPsAl
- QX+sIqfsd0HwsZoDRs/WK9nqC6eBfcG0Vm9gLGk8eQg56BI/CqY5tritxhJkvt3pb2a5
- uCR5rJtp8GXjIT4bMlrgdU4gghxt2xZNnrZRtp0lqc0S4lQ5JDbicq98gKRi039be6sD
- LumACIvxVvtdh2nbwrwLoZJm2SfXnunI5xJzIHARQGFZ8A8Qw0M/nwMrX0Oah7XPbLBt
- FE8A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=LlH/emK43X7VQlux0XjazW6nVpP1+OhxUnqAKnN/vBs=;
- b=YOEP/kCIVQjK9iNG/Uril+V8B96LPD1B40w0Hdr5qaeZO1y8mubpvTEMi7F8WhJSwv
- VqatrJcVFXvGLbTnWV0/jc/x/rDtsZrIGQK6zprxFEeWnkTZkWmKbSd2cWSJth1s/BWW
- N3jGjyijaOr67sqPln0QgegL2n+DDKfbhfqAL+OqSyFmFOyQNuDC3GZzPSQd2AiNLwXY
- yUonste2tpbliExpwe71rhqA/EV7Jnhv2GuGHtXtAh6xlTYV0WErsR69J5GwFAxoIp5x
- pxnIAg7oqeKw0u69n/hnAa5UMo+FrIOgsJvAErS2NpyajFD/p1hRmoEKQdOkkcypD/AP
- ECAA==
-X-Gm-Message-State: APjAAAUVwYbmyVxDuupL2PRliOGEB6lSqSrTRUhmsZpRbJQEFVBf3xaH
- cnDz+FubdIIVK8tgab1zBWrbiNSzr4IYSjPcwRrAuA==
-X-Google-Smtp-Source: APXvYqzAVWigadbsfFuHoFmMfkvGVyLArpcA4tXnCqWDWZyByyzokkk8+aogfdz1WchCA9laZjOZIHtQihQ5pjFV66o=
-X-Received: by 2002:a92:350a:: with SMTP id c10mr6317836ila.140.1573152441970; 
- Thu, 07 Nov 2019 10:47:21 -0800 (PST)
+ id 1iSn2F-000140-2v
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 19:01:36 +0000
+Received: from quaco.ghostprotocols.net (179-240-172-58.3g.claro.net.br
+ [179.240.172.58])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 46B5821882;
+ Thu,  7 Nov 2019 19:01:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573153294;
+ bh=mLv9srSdCScvSK+KObTSW8M2mnct2ipluEZmZHHVwpk=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=DP0hI2tG8tarJZYhxakyNh6eIUS8hLP86qHzkV4XQ5jN3qYsuvj0ktVNl3buzQ03H
+ 39S1qnMNQ0bnzOCj3RC1I1gN5lCnO35Jo/wb71dWnwSV5jL1/dvmxns74SeFFBGUZ7
+ WCztfe0a/EUeY0nb8BMMvaTgqYeChAwQzAhK/X38=
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Ingo Molnar <mingo@kernel.org>,
+	Thomas Gleixner <tglx@linutronix.de>
+Subject: [PATCH 08/63] perf cs-etm: Fix definition of macro TO_CS_QUEUE_NR
+Date: Thu,  7 Nov 2019 15:59:16 -0300
+Message-Id: <20191107190011.23924-9-acme@kernel.org>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20191107190011.23924-1-acme@kernel.org>
+References: <20191107190011.23924-1-acme@kernel.org>
 MIME-Version: 1.0
-References: <20191106115651.113943-1-weiyongjun1@huawei.com>
-In-Reply-To: <20191106115651.113943-1-weiyongjun1@huawei.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Thu, 7 Nov 2019 11:47:11 -0700
-Message-ID: <CANLsYkxKAC9FLYkFjuehj_oFHTVyd=8_R8bAKjPxTXQyAGkwYw@mail.gmail.com>
-Subject: Re: [PATCH -next] coresight: replicator: Fix missing spin_lock_init()
-To: Wei Yongjun <weiyongjun1@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_104723_757636_A80D1EEA 
-X-CRM114-Status: GOOD (  16.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191107_110135_169707_91DA9D3B 
+X-CRM114-Status: GOOD (  12.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -79,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,51 +77,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Arnaldo Carvalho de Melo <acme@redhat.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>, Clark Williams <williams@redhat.com>,
+ coresight ml <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
+ linux-perf-users@vger.kernel.org,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Yabin Cui <yabinc@google.com>, kernel-janitors@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+ Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
+ Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
+ Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 6 Nov 2019 at 04:57, Wei Yongjun <weiyongjun1@huawei.com> wrote:
->
-> The driver allocates the spinlock but not initialize it.
-> Use spin_lock_init() on it to initialize it correctly.
->
-> This is detected by Coccinelle semantic patch.
->
-> Fixes: 0093875ad129 ("coresight: Serialize enabling/disabling a link device.")
-> Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
-> ---
->  drivers/hwtracing/coresight/coresight-replicator.c | 1 +
->  1 file changed, 1 insertion(+)
->
-> diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
-> index 43304196a1a6..e7dc1c31d20d 100644
-> --- a/drivers/hwtracing/coresight/coresight-replicator.c
-> +++ b/drivers/hwtracing/coresight/coresight-replicator.c
-> @@ -248,6 +248,7 @@ static int replicator_probe(struct device *dev, struct resource *res)
->         }
->         dev->platform_data = pdata;
->
-> +       spin_lock_init(&drvdata->spinlock);
+From: Leo Yan <leo.yan@linaro.org>
 
-I have applied both patches but removed the "Fixes" line since the
-commit is only visible in my local coresight next tree.
+Macro TO_CS_QUEUE_NR definition has a typo, which uses 'trace_id_chan'
+as its parameter, this doesn't match with its definition body which uses
+'trace_chan_id'.  So renames the parameter to 'trace_chan_id'.
 
-Thanks,
-Mathieu
+It's luck to have a local variable 'trace_chan_id' in the function
+cs_etm__setup_queue(), even we wrongly define the macro TO_CS_QUEUE_NR,
+the local variable 'trace_chan_id' is used rather than the macro's
+parameter 'trace_id_chan'; so the compiler doesn't complain for this
+before.
 
->         desc.type = CORESIGHT_DEV_TYPE_LINK;
->         desc.subtype.link_subtype = CORESIGHT_DEV_SUBTYPE_LINK_SPLIT;
->         desc.ops = &replicator_cs_ops;
->
->
->
+After renaming the parameter, it leads to a compiling error due
+cs_etm__setup_queue() has no variable 'trace_id_chan'.  This patch uses
+the variable 'trace_chan_id' for the macro so that fixes the compiling
+error.
+
+Signed-off-by: Leo Yan <leo.yan@linaro.org>
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Jiri Olsa <jolsa@redhat.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+Cc: coresight ml <coresight@lists.linaro.org>
+Cc: linux-arm-kernel@lists.infradead.org
+Link: http://lore.kernel.org/lkml/20191021074808.25795-1-leo.yan@linaro.org
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+---
+ tools/perf/util/cs-etm.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+index 4ba0f871f086..f5f855fff412 100644
+--- a/tools/perf/util/cs-etm.c
++++ b/tools/perf/util/cs-etm.c
+@@ -110,7 +110,7 @@ static int cs_etm__decode_data_block(struct cs_etm_queue *etmq);
+  * encode the etm queue number as the upper 16 bit and the channel as
+  * the lower 16 bit.
+  */
+-#define TO_CS_QUEUE_NR(queue_nr, trace_id_chan)	\
++#define TO_CS_QUEUE_NR(queue_nr, trace_chan_id)	\
+ 		      (queue_nr << 16 | trace_chan_id)
+ #define TO_QUEUE_NR(cs_queue_nr) (cs_queue_nr >> 16)
+ #define TO_TRACE_CHAN_ID(cs_queue_nr) (cs_queue_nr & 0x0000ffff)
+@@ -819,7 +819,7 @@ static int cs_etm__setup_queue(struct cs_etm_auxtrace *etm,
+ 	 * Note that packets decoded above are still in the traceID's packet
+ 	 * queue and will be processed in cs_etm__process_queues().
+ 	 */
+-	cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_id_chan);
++	cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_chan_id);
+ 	ret = auxtrace_heap__add(&etm->heap, cs_queue_nr, timestamp);
+ out:
+ 	return ret;
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
