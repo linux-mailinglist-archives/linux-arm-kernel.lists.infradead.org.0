@@ -2,90 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D9B9F2DC4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 12:55:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83FDEF2DC5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 12:55:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=79/CeU6C3aXV7JlH2XvwA8Q8Z9pc+j+iecb2RQx/eW0=; b=N8/+o2eA+p/NOl
-	RzVlFOq4dmxWXM0J20p7jqTvK7/CbowaqZE7W6LbgFzrtjvY3vdbo2kE1NxiRiOY1r35Xii8QHjKW
-	hABPkVtUO1f4P0xWVFBDINzmQRBbL8cVrkoZnPuaXwnhvFpoZw5jiqqNF5qgFLegDi3rDapg4LXbv
-	4klVv2A6TfWJrNlLg05eQrqCpCYgNvqMyOkdPgtYwHihHy56Yr2SGH9bnYt6D5M+G12dmXVLQDIwn
-	aPVdaiWSaGa5Q8S7gxo17tndqMruoartw/c2QLvZrZ1rSYHwJci0AbczYMYAq/dFhAnpIZPZUVVkx
-	g1SrqAncyi0C7MaB4J+w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cx2poDBylEd+IsfIQk8K00Y0P+uNvA5PcO2K74pw3j0=; b=X69kEKbt7EhyQhZ9RrLUVDGEt
+	uf8MmLj8nj653UI5e9VBMwhrQRv5MMPZpUMPHZBO0MxZyphoCodHv+FGH2CGwQDBDqB65GlQHmcZk
+	TCcxzg12JugrwrjeJVfQ9OYssbyw1R7X/Zoo9mN3YQLyWPKlVjRLIFuMmYvwfbj9QWXmsUoAQquel
+	vOYF7b2zss1jQmi7iHsktEK/4dqY/C24WibgptNCTMmwZOwNmpxmjgKDN7jxMSoBZB1J/05FP/hnx
+	1hjzauYVtzA3zTkd5yBSNW85tCRR8qlTmHsznjwY2laO23DMgfhsNOxvKD//qvTjrxDfNeqhgIsic
+	dWlEBKZ7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSgNh-0000R1-2b; Thu, 07 Nov 2019 11:55:17 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iSgO0-0001Ki-Qc; Thu, 07 Nov 2019 11:55:36 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSgNR-0008J9-NY
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 11:55:03 +0000
-Received: by mail-wr1-x442.google.com with SMTP id r10so2716498wrx.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 03:55:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=Ayk5We1vI12jLcW3zDErdcAcqNSpWsXr0NVSETpZ+JY=;
- b=LY4v6pcmezZwNcfXllRMIlIjE5qYGtgxeDhF7eBdaYPb609c6eo6pIgq4c6K+FqEoC
- zOxS/HgDxakHr18mXqyWj8cSn4feSZNsUjMXog5Y6AagnyEL9DWa0LKNH27cqIeixJR+
- fvGQ24iVw9AXyh9U+iUKb8ks05Wh9U/iNIMcYtHT7IkZVo+++N7kV68Vs4ATLZ1zA39k
- yT5+8kK4aDbxSp+TxPKeEtBaGAcWxkHoZkGXBZVDzSKz4eUbTR6u+YEx15NmKunp2aGu
- kzLSIWjQX7eTE7XW6L5VLZh2AmZSCk8y5kvmTCuoGrilR1aCC99UOx6jiLjgoV5UztwW
- 7Nfg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=Ayk5We1vI12jLcW3zDErdcAcqNSpWsXr0NVSETpZ+JY=;
- b=FXEvqU7jd703MD6ST7OMsbI9AXyntWVgPVD9dpOo8BCws7WlS0cDNTJUoknXspUBt3
- +JZHwPxJ5VxHezuEFq+zPZWoAqzCNmnz4tu03hnqhskPUyO0UTze3S1zDqy4g4KYoW2s
- MAytNql0FUBRaODX5K25Vcl4QoLlSlzFTVj/uaFpsigq7noUqoCr+TzRHvKuHE3CQVpP
- QUO4keB1x4RdMgbxlqY5CykHvbFLUBrC63mNXUZ8F3XxzSki94Eq9Stji+Pl1DDWg4wT
- Gfi3Y4nfzGywi/a0Nu/s867zdpF+FlTPkEsofBu+xxGUd6cxxePLHNbmgaXJ7EdiJMje
- Me1w==
-X-Gm-Message-State: APjAAAXA9y0T1Jt4pGPvGBZIQqQkhblHHEvzHmr9ko1YzX2I6Rpu498X
- 3CpeeRYqMV9CHgJECmxIVvGfjg==
-X-Google-Smtp-Source: APXvYqxuJubr7r9uEWSKkiOKjKqi6rliFvlqVHCYYa/EMNvKvqAwJaUcEoDweUzbvue1MK61Zb183g==
-X-Received: by 2002:adf:e488:: with SMTP id i8mr2465007wrm.302.1573127699748; 
- Thu, 07 Nov 2019 03:54:59 -0800 (PST)
-Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
- [86.9.19.6])
- by smtp.gmail.com with ESMTPSA id s21sm1895785wmh.28.2019.11.07.03.54.58
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 03:54:58 -0800 (PST)
-Date: Thu, 7 Nov 2019 11:54:56 +0000
-From: Daniel Thompson <daniel.thompson@linaro.org>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH 1/1] mfd: mfd-core: Honour Device Tree's request to
- disable a child-device
-Message-ID: <20191107115456.esxtcgo2pt7eq3v5@holly.lan>
-References: <20191107111950.1189-1-lee.jones@linaro.org>
+ id 1iSgNa-0000tO-FK
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 11:55:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=bFYfMh3ofowwoVD7DHXVwSujDixuflnDqD6gtHXdr54=; b=f8hx5COPzcFQoi6rtEA4Jsw0E
+ lQ2WGkBx6lolSmsmcZGiEFwiYQyOMuyxbBU34jpNEm78LXytE9C6XB5skQIfYfTPb0/iGKtRmcf4F
+ IP4udolto9JPceJCxH8AIFFQUVyao440ozD33zwez+ct0kkcDXvgDWdyunEqzW8VSQlG0=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iSgNX-0004FK-PT; Thu, 07 Nov 2019 11:55:07 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id F25AC27431AF; Thu,  7 Nov 2019 11:55:06 +0000 (GMT)
+Date: Thu, 7 Nov 2019 11:55:06 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v7 1/4] arm64: Add initial support for E0PD
+Message-ID: <20191107115506.GB6159@sirena.co.uk>
+References: <20191106130052.10642-1-broonie@kernel.org>
+ <20191106130052.10642-2-broonie@kernel.org>
+ <04d20903-f7f0-18d4-b671-4c382a47c5e2@arm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191107111950.1189-1-lee.jones@linaro.org>
+In-Reply-To: <04d20903-f7f0-18d4-b671-4c382a47c5e2@arm.com>
+X-Cookie: I've read SEVEN MILLION books!!
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_035501_788489_99EBF7E4 
-X-CRM114-Status: GOOD (  15.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191107_035510_591342_636F189C 
+X-CRM114-Status: GOOD (  13.77  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -98,56 +80,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: baohua@kernel.org, stephan@gerhold.net, arnd@arndb.de,
- linus.walleij@linaro.org, linux-kernel@vger.kernel.org, broonie@kernel.org,
- Barry Song <Baohua.Song@csr.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8543882923593705061=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 07, 2019 at 11:19:50AM +0000, Lee Jones wrote:
-> Until now, MFD has assumed all child devices passed to it (via
-> mfd_cells) are to be registered. It does not take into account
-> requests from Device Tree and the like to disable child devices
-> on a per-platform basis.
-> 
-> Well now it does.
-> 
-> Link: https://www.spinics.net/lists/arm-kernel/msg366309.html
-> Link: https://lkml.org/lkml/2019/8/22/1350
-> 
-> Reported-by: Barry Song <Baohua.Song@csr.com>
-> Reported-by: Stephan Gerhold <stephan@gerhold.net>
-> Signed-off-by: Lee Jones <lee.jones@linaro.org>
 
-Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
+--===============8543882923593705061==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="R3G7APHDIzY6R/pk"
+Content-Disposition: inline
 
-> ---
->  drivers/mfd/mfd-core.c | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/drivers/mfd/mfd-core.c b/drivers/mfd/mfd-core.c
-> index cb3e0a14bbdd..f5a73af60dd4 100644
-> --- a/drivers/mfd/mfd-core.c
-> +++ b/drivers/mfd/mfd-core.c
-> @@ -152,6 +152,11 @@ static int mfd_add_device(struct device *parent, int id,
->  	if (parent->of_node && cell->of_compatible) {
->  		for_each_child_of_node(parent->of_node, np) {
->  			if (of_device_is_compatible(np, cell->of_compatible)) {
-> +				if (!of_device_is_available(np)) {
-> +					/* Ignore disabled devices error free */
-> +					ret = 0;
-> +					goto fail_alias;
-> +				}
->  				pdev->dev.of_node = np;
->  				pdev->dev.fwnode = &np->fwnode;
->  				break;
-> -- 
-> 2.24.0
-> 
+
+--R3G7APHDIzY6R/pk
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Thu, Nov 07, 2019 at 10:12:30AM +0000, Suzuki K Poulose wrote:
+
+> > +static void cpu_enable_e0pd(struct arm64_cpu_capabilities const *cap)
+> > +{
+> > +	/*
+> > +	 * The cpu_enable() callback gets called even on CPUs that
+> > +	 * don't detect the feature so we need to verify if we can
+> > +	 * enable.
+> > +	 */
+> > +	if (this_cpu_has_cap(ARM64_HAS_E0PD))
+> > +		sysreg_clear_set(tcr_el1, 0, TCR_E0PD1);
+> > +}
+
+> Given that this is a SYSTEM_FEATURE now, we don't need the extra check.
+> All CPUs are guaranteed to have the feature, otherwise they would be
+> rejected early.
+
+It's not strictly required but it does no harm, helps people who are
+doing CPU local stuff see that this might be an issue if they just look
+at other users rather than the header and it means that if someone
+changes things (I'm actually been sitting on a patch for that but I want
+to postpone any discussion about that until after at least the initial
+three patches are merged).
+
+--R3G7APHDIzY6R/pk
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3EBhoACgkQJNaLcl1U
+h9Cbnwf+LZdn0AZp73EeTxWut4/UWnPvtUrRjggOfM2es2QTG0ZT18yC7YMaS3zZ
+oKfBkgJmviE7zXWODHyu18Ij2FhJS9bYGj+2qQe0RT0gSAWcmUIfAo3iKOqnOSS9
+7I41tIMmrLfZZQ/Mc+RjIQ+bxEPEHe0WLHo+vrczcT9dCPUbKQEteCgnOaHxr8Ya
+C5vrhPa3HCEPC8psqG7QDMHe3whCAWaiMMM41j27H4WfsCBp2dAjpO+o8VYWyAiH
+M2b5ogyonYmK+qg1k2zyfGE1B6KnlVK2h/uruzvWE/Eq5VPWJDXfZjcc4EyYMjPX
+K99UkWkGfiCedjKzSIW6eN0aeFKYiQ==
+=+9w4
+-----END PGP SIGNATURE-----
+
+--R3G7APHDIzY6R/pk--
+
+
+--===============8543882923593705061==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8543882923593705061==--
+
