@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD861F2C8F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 11:33:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D00BF2C90
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 11:34:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1gL8djNXm1mDuLHy2fLFQgld7NkZ4jN2iAEM8qmVtuQ=; b=GMriCzJRlcY997
-	5hmJgiQeyMxL1vwwU4nfmZuTAvM/jSk0KLJmJJJoDP6ZCSKkMG6a6Ygx6mDzhqp6mkj1kWj9HSvEA
-	9CYkBIXv/5LS9v9Mt/YRpuKtvL238mS76QZd4w/+BSbX1HsTPnPBnWSoLuIKjOHSR+QG0heZqSi3Y
-	6WPxys5AgePXE9A5QGKD/drpcJh4HNqHqBLF9yU88Dz+/HGe/vKLTAl1Peavt7lfLQPeVvFaD945Z
-	okNBo2Q1Usp/srr4j5VtLykGadsn+5rn23t4rL19g8AVeHTW+DGGR0ON1GdNBbP+KeFe2AdZVjTTO
-	E1otxgkjG3v1fzzMP3oQ==;
+	List-Owner; bh=pC/N28Z8zRqaBRiLP1CkJVlo3WuMjamXtbvJf9ggfQk=; b=UYujV32vP6V/a+
+	Tiwck4Y0dNR5B8nbJpZo8ET4jn6zDQZw54nbaop2A6s6/1pfj7RFoeCIa1xyUe2cXAYgEsoNO7dtc
+	5FIi6CtlKocTYb570zbiRhZUS/w7b01T9d37tCHh+xw3Y6V5xc5JhIEqv9xyejD7Bakgo2B2dRXlr
+	nzKoqGB5pH/KwLZx6RoeYRfSTyzagMPtzv8A2hKspbIP19fAwbp7QeYBi+8BLbhpjvjQbjJsmsNK6
+	DIfWd+kg9+Xcs/2GryGIk3x52X0Y4FomB6GyzVCSSctX7dVuOTLCVwK2ncm/fPDTRerIYhCqodMwD
+	uGRqg4hGT3twlaEFH7Sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSf6h-0006KU-2R; Thu, 07 Nov 2019 10:33:39 +0000
-Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::10])
+	id 1iSf76-0006df-5y; Thu, 07 Nov 2019 10:34:04 +0000
+Received: from mo6-p04-ob.smtp.rzone.de ([2a01:238:20a:202:5304::6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSf4Q-0003to-3S
+ id 1iSf4P-0003tm-9g
  for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 10:31:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1573122669;
  s=strato-dkim-0002; d=goldelico.com;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=ghbGYZ5e/JMttXQLnmZ61iznAlH5vCDYTJ/MRrpzqB0=;
- b=sYN3NYg7ZWqA+BkSlrUhVkymky/E4qK2z6qUC+JLBJPh4A2vhQgj+GdFnpVpEYEw2n
- dMCKtwGoV+gmjetAtIf1xgBqIoHMu5F6BQ/H0rH2T9A/8F/ROVBzWL1irIg5CBcYncEw
- Xp1YWinXAFyKD/vy3zAugnDEhjtVAGXyqMraNGqY8fCceWBP23s8MFRnnRnFdgokXnNu
- uw1LtncIpdGLcTvfoJPmQCCERyPiba2qxA4MHmlO+uSdU6K4DJ80rvcQ1xh3uDiTIAEb
- eyG9z7aVY67m2BThmVVOyVIIWSEMszZNMyxqC3dVbJ2Fcc2xnZaKBFFZu3D/HG5GsdFG
- TOFA==
+ bh=IlCRjv0CTyLkVn2wwwsmH6O8lEqmq9Ui0QvF+uYgs+E=;
+ b=fQLya/Msmb3wYmLzXQ5cLZRbZl0gxoZr+c4WamAZuDyoRb7pKvNVMoxz7vPPNoGhS/
+ 7+J1YaJi8lQ8ZWcZBGzjTdKRXzzZJeTq7l9q1BL6ThVgaPjAumyWNiPrmoMkcSuLuSMV
+ 34dIJ/IIW2sclvy2CmTveklLNL1jcTb0NzzOkrGbDc+j7vKQDLD95uoGzt4i3nJEjxw5
+ pN9vqRYM35BNYxeIK4o+mnbVAQgyWM+/x8ovLdTbX1TsBE8tTdXFq4ojoib1Bv67oO+S
+ cg61PjXJKoAyV8eDFLH89ymW36dKEfmbWFdBVO83+O7tyPpi1s9+FFycMBEk6nJf4VTm
+ kOoA==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1OAA2UNf2M7PR5/L9P0"
 X-RZG-CLASS-ID: mo00
 Received: from iMac.fritz.box by smtp.strato.de (RZmta 44.29.0 DYNA|AUTH)
- with ESMTPSA id L09db3vA7AUsdS0
+ with ESMTPSA id L09db3vA7AUsdS2
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
  521 ECDH bits, eq. 15360 bits RSA))
  (Client did not present a certificate);
@@ -58,24 +58,23 @@ To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
  Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  John Stultz <john.stultz@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>
-Subject: [PATCH v3 08/12] mmc: host: omap-hsmmc: remove init_card pdata
- callback from pdata
-Date: Thu,  7 Nov 2019 11:30:41 +0100
-Message-Id: <3254fc364a5237122491188ae4ecfed0759d8de8.1573122644.git.hns@goldelico.com>
+Subject: [PATCH v3 09/12] mmc: sdio: fix wl1251 vendor id
+Date: Thu,  7 Nov 2019 11:30:42 +0100
+Message-Id: <e3342a0118feb492a2e2af57956093511232f1d6.1573122644.git.hns@goldelico.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <cover.1573122644.git.hns@goldelico.com>
 References: <cover.1573122644.git.hns@goldelico.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_023118_319867_4D7F42F5 
-X-CRM114-Status: GOOD (  14.34  )
+X-CRM114-CacheID: sfid-20191107_023117_565635_CF17A346 
+X-CRM114-Status: GOOD (  12.85  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5304:0:0:10 listed in]
+ low trust [2a01:238:20a:202:5304:0:0:6 listed in]
  [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -100,52 +99,44 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: devicetree@vger.kernel.org, letux-kernel@openphoenux.org,
  linux-mmc@vger.kernel.org, kernel@pyra-handheld.com,
  linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- netdev@vger.kernel.org, linux-omap@vger.kernel.org,
+ stable@vger.kernel.org, netdev@vger.kernel.org, linux-omap@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now as we have removed the last user (pandora_wl1251_init_card)
-of this callback, we can remove it from the hsmmc code.
+v4.11-rc1 did introduce a patch series that rearranged the
+sdio quirks into a header file. Unfortunately this did forget
+to handle SDIO_VENDOR_ID_TI differently between wl1251 and
+wl1271 with the result that although the wl1251 was found on
+the sdio bus, the firmware did not load any more and there was
+no interface registration.
 
-Suggested-by: Ulf Hansson <ulf.hansson@linaro.org>
+This patch defines separate constants to be used by sdio quirks
+and drivers.
+
+Fixes: 884f38607897 ("mmc: core: move some sdio IDs out of quirks file")
+
 Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
+Cc: <stable@vger.kernel.org> # 4.11.0
 ---
- drivers/mmc/host/omap_hsmmc.c            | 4 +---
- include/linux/platform_data/hsmmc-omap.h | 3 ---
- 2 files changed, 1 insertion(+), 6 deletions(-)
+ include/linux/mmc/sdio_ids.h | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/mmc/host/omap_hsmmc.c b/drivers/mmc/host/omap_hsmmc.c
-index a7192731ac13..b8c040691bab 100644
---- a/drivers/mmc/host/omap_hsmmc.c
-+++ b/drivers/mmc/host/omap_hsmmc.c
-@@ -1510,9 +1510,7 @@ static void omap_hsmmc_init_card(struct mmc_host *mmc, struct mmc_card *card)
- {
- 	struct omap_hsmmc_host *host = mmc_priv(mmc);
+diff --git a/include/linux/mmc/sdio_ids.h b/include/linux/mmc/sdio_ids.h
+index d1a5d5df02f5..08b25c02b5a1 100644
+--- a/include/linux/mmc/sdio_ids.h
++++ b/include/linux/mmc/sdio_ids.h
+@@ -71,6 +71,8 @@
  
--	if (mmc_pdata(host)->init_card)
--		mmc_pdata(host)->init_card(card);
--	else if (card->type == MMC_TYPE_SDIO || card->type == MMC_TYPE_SD_COMBO) {
-+	if (card->type == MMC_TYPE_SDIO || card->type == MMC_TYPE_SD_COMBO) {
- 		struct device_node *np = mmc_dev(mmc)->of_node;
+ #define SDIO_VENDOR_ID_TI			0x0097
+ #define SDIO_DEVICE_ID_TI_WL1271		0x4076
++#define SDIO_VENDOR_ID_TI_WL1251		0x104c
++#define SDIO_DEVICE_ID_TI_WL1251		0x9066
  
- 		/*
-diff --git a/include/linux/platform_data/hsmmc-omap.h b/include/linux/platform_data/hsmmc-omap.h
-index e79d238ff18f..7124a5f4bf06 100644
---- a/include/linux/platform_data/hsmmc-omap.h
-+++ b/include/linux/platform_data/hsmmc-omap.h
-@@ -67,9 +67,6 @@ struct omap_hsmmc_platform_data {
- 	/* string specifying a particular variant of hardware */
- 	char *version;
- 
--	/* if we have special card, init it using this callback */
--	void (*init_card)(struct mmc_card *card);
--
- 	const char *name;
- 	u32 ocr_mask;
- };
+ #define SDIO_VENDOR_ID_STE			0x0020
+ #define SDIO_DEVICE_ID_STE_CW1200		0x2280
 -- 
 2.23.0
 
