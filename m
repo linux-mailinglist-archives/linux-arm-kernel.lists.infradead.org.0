@@ -2,90 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93630F2FF2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 14:39:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCCA1F30D7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 15:06:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pLyb+s6yhuR5tRcd8pPyvwxeWvhhcxT1viWyHDG4T/A=; b=sWGNuJCg62q5I/
-	LYdlMClIpFoHcoiECTVJAF5hNUNGEJKbtf92ghdZdS8VI4k9YT9PIZrf7wdZqPA2YawxdNB0xeGnp
-	o/wGGSf6BXfgtffz7qWqkOzSxpeKZqw5inprjzJ3NZmjofOcwdQBLIMGphHtdUz0knNLKV99KN+tr
-	Mg4ZYBRhKRgLOiwcqiBCqQV9UXbtLYw2x7TQRlsh59lSR+dlNf11WkFbdVSO/IIGemNsNEs2syTaF
-	7F3Y0sTzHD/MMn/vrbHxzaRvS1B+35+V+8x2OLvWW+uXwWAhKl5kDUbx2R9jgE6ZJbZFCU6XmMPaJ
-	QnA+XpnO+RBKuTO7TbIA==;
+	List-Owner; bh=OtIltJbxXT/on+mhSydxZTNER/2GKvvw6ho5Lon74sY=; b=mGzeil2Rz8STdY
+	8rAUaBNkY9JKOAcWw8yoe+9zVL8f5QM7/q7S3WXhZqlUDlslfsQZ0k2dwhKqghfEMfp34qJGl4+ch
+	vyRnNCRRRLvzJov5Wb8sBKBmFF0Ytd9rGq3KRiuFmi8krUrULwngCqVav3dIK3QHBmtP6BnzF8Fvk
+	IyyHUVxDZpvzQkSciCcmYQEMsnMqY1N7HjCdS8HOdkOQ83WOSyYMhdyVuWONYO2k1cB2qCFfmxx4p
+	Nyp3FjGc7Mt/dyEsvU4PMfBh8GYQFEcrLU04RxDdyhkd0kEUiekJoeEUqN8wgWdJkvw3q3Spzy0Wn
+	fDDsc0InubwRDIWD8++Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSi05-0000IF-OV; Thu, 07 Nov 2019 13:39:01 +0000
-Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
+	id 1iSiQZ-0004d6-Hl; Thu, 07 Nov 2019 14:06:23 +0000
+Received: from mail-vk1-xa32.google.com ([2607:f8b0:4864:20::a32])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iShzx-0000HK-VU
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 13:38:55 +0000
-Received: by mail-yb1-xb43.google.com with SMTP id y18so921314ybs.7
+ id 1iSiQS-0004ck-5v
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 14:06:17 +0000
+Received: by mail-vk1-xa32.google.com with SMTP id t184so609175vka.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 05:38:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=UR+FMpDRyPvXwNuet63hIA/KDaiYBztB4W2oxpuqt4A=;
- b=csf58IPg/w9lQ2Nl9oTvOEkFzDSskXTPBRw8RrWxLtI2rQy0W4i6vmQjsgLc6BoO+F
- YTwCDTgQVpF7vOqHSlyNAoDkvZPu8DoGhp4BImq5C36qnqFYH+f7ZnATq69eSOifv8Vu
- FSqy2tMQSkpc+MJ5dsMIbD4sVXsKkMrstvBaLhTvk8DoTkXYAaB+uta+3AVkJanTarNL
- EIIb/RnSDc0la+ZBS/pl2Qde1zl1wO453vc7F21/7iTG+a8J6RH+7gXYi/0zBvk5chRL
- se/x7c6J5b1pPsDWS+s/sbSoRs1b+WqYISDDPF9PZqfyCv6ZkcTYwGvP8qxTeqBIOwJ2
- PJTA==
+ Thu, 07 Nov 2019 06:06:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=verdurent-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hfccBQDXdKkofhhfdt33ltAt0xyMjhjwgr+Vw2ehaGU=;
+ b=Mlz5zdqk9lqu+fG5wQH6AtKKww0+S9o3Sjn/moVy8ybUyCwUpcA9cpwcBRGF1fl96q
+ tWGYNsQEF9w0MPmlMtillsBwlO7fmhmprZPMCdx6tr+lf+httR44lwucHs1mSMIdV9sQ
+ vuQ+UWXtgrxZunQJr3RucRO8ScYy1w76Ufwx/yD8m+fjpOPDuwfGBgiTrf03Mk53LWcr
+ lqLHPSGDmArpGJPAwKUlpntO5p0590geNTchseiYXyLXCRhtwmWbfJ97mp+CWMp6tNvv
+ dfaN2KnPilkNIhp6BPKZOMuwurN14D8dmS3lOhJxzuSMsUuR8wekEHzvoHigYLGi0abX
+ lIJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=UR+FMpDRyPvXwNuet63hIA/KDaiYBztB4W2oxpuqt4A=;
- b=MJxa0a8kQrjNtd+aI3smzPuLeUrlrZojb2O0/+8DMWx/O1b7Qqa6a2+7jRwniRMRfx
- qhYTmJI8mWW0nbxshk3+Yk1dQtCc2s1I+DkrWoY1iaVTpB4MraFM75nGytGCxyFeZkR5
- SeIJt3IM0P0aoBAvZLaekdWU07RevjXEN10UY3qRp8C7gk5+qXH2So7+6n5v1e6BiJEA
- 9EU/raRU689+ZJSMVvRgJtOS/SbzHixGWUswg8tR1qXPVTu2YLNP96oGWFXfVsXZsmP9
- jlrWw6pl6Px8eHebU0n6yewouTD3RMwEPi9FAnfE2gkVyWmZBW96O1XQJB07zpC/pZye
- NJFw==
-X-Gm-Message-State: APjAAAVicqCYUYUHZxciQBRoXJ/xd/xcl9GNh8TiVbwuKpCn5H7OTQ/v
- E6RfIrG88ztheF5DjmAgYVD/8Q==
-X-Google-Smtp-Source: APXvYqxMAOnQy88pixXrXkLY51EbFIn3dNn0lEnxFRVO0u+p/OxQmgx371p0fYm+lPnMmM6+RPfj8A==
-X-Received: by 2002:a5b:d07:: with SMTP id y7mr3445302ybp.313.1573133932475;
- Thu, 07 Nov 2019 05:38:52 -0800 (PST)
-Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id i125sm750756ywa.68.2019.11.07.05.38.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 05:38:51 -0800 (PST)
-Date: Thu, 7 Nov 2019 08:38:51 -0500
-From: Sean Paul <sean@poorly.run>
-To: Joe Perches <joe@perches.com>
-Subject: Re: [PATCH] drm/rockchip: use DRM_DEV_ERROR for log output
-Message-ID: <20191107133851.GF63329@art_vandelay>
-References: <20191107092945.15513-1-wambui.karugax@gmail.com>
- <4c74db2614cefe23f888d0643c2d7c356086745a.camel@perches.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hfccBQDXdKkofhhfdt33ltAt0xyMjhjwgr+Vw2ehaGU=;
+ b=ay2AagOtwKchSPYWPyQkvwil4uJzpF7kvorPy1WAu0A5s7RcYN5lb9xJM/qu8vQUHy
+ dMVXj5lxCgi5aUUJaU9VzZL112Agm6rHA/R0jRZ0C9ClzBkD8xE2Rxdd/p0mT/h0wjdr
+ 09GLEw+lMSsRGGgqnVigr+Of5Mbx1ps5FjtzUW5GzFOpwKtxl+QSI3xuxjBq8mSgMZlW
+ mlaKBjfmJyAM8BG14wa2jAPDQ8R2UWkkk2xv0u40R7GDZsaXDSOMo6bjrEhJuzifoqiV
+ tBtaBscjJTh+D/PUSFv/6VolaJAm0Q/pFmp00wrplyZNCeX7ba6RUn3I3+v1PnZ9AH6B
+ eWgg==
+X-Gm-Message-State: APjAAAXrPzIOpmsD1NSPYo7Rb43LVRKqk7kHtQ394W91e2xn5P4v6e0g
+ aWDeLIxHgtir+IyTq44qng9mUAGFKwj5GIrsPaUxPw==
+X-Google-Smtp-Source: APXvYqy3/Q2k+TcLkmUJSckC+YwKpjDcsNUVnGIkRuGNn9Jn7imd7+88YzAMU0JnNqJhJzwEJdXaNf15e1nP0SrN1/Q=
+X-Received: by 2002:a1f:7387:: with SMTP id o129mr2941513vkc.73.1573135574411; 
+ Thu, 07 Nov 2019 06:06:14 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4c74db2614cefe23f888d0643c2d7c356086745a.camel@perches.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <1573068840-13098-1-git-send-email-agross@kernel.org>
+ <1573068840-13098-2-git-send-email-agross@kernel.org>
+In-Reply-To: <1573068840-13098-2-git-send-email-agross@kernel.org>
+From: Amit Kucheria <amit.kucheria@verdurent.com>
+Date: Thu, 7 Nov 2019 19:36:03 +0530
+Message-ID: <CAHLCerN7buq82RmmFkoSi_n8g8sSe9VO2utcXuEGM3xG3HcRTg@mail.gmail.com>
+Subject: Re: [GIT PULL] Qualcomm ARM64 DT updates for 5.5
+To: Andy Gross <agross@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_053854_061127_C3191927 
-X-CRM114-Status: GOOD (  16.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191107_060616_245704_422939EA 
+X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a32 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -98,62 +89,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, airlied@linux.ie, hjc@rock-chips.com,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, daniel@ffwll.ch,
- linux-arm-kernel@lists.infradead.org, Wambui Karuga <wambui.karugax@gmail.com>
+Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ lakml <linux-arm-kernel@lists.infradead.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 07, 2019 at 01:54:22AM -0800, Joe Perches wrote:
-> On Thu, 2019-11-07 at 12:29 +0300, Wambui Karuga wrote:
-> > Replace the use of the dev_err macro with the DRM_DEV_ERROR
-> > DRM helper macro.
-> 
-> The commit message should show the reason _why_ you are doing
-> this instead of just stating that you are doing this.
-> 
-> It's not that dev_err is uncommon in drivers/gpu/drm.
-> 
+(Removing arm-soc)
 
-It is uncommon (this is the sole instance) in rockchip, however. So it makes
-sense to convert the dev_* prints in rockchip to DRM_DEV for consistency.
+Hi Andy,
 
-Wambui, could you also please convert the dev_warn instance as well?
+On Thu, Nov 7, 2019 at 1:04 AM Andy Gross <agross@kernel.org> wrote:
+>
+> Arnd, Olof, and Kevin,
+>
+> I have one slight faux paux in this pull request.  A drivers: soc change got
+> into my arm64 DTS branch and while it is innocuous, it wasn't easy to fix
+> without messing up a lot of people who depend on the SHAs not changing.  So I'm
+> sorry for this inclusion.  I'll scrub this better next time.
+>
+> Andy
 
-I'll apply this to drm-misc-next and expand on the commit message a bit.
+> ----------------------------------------------------------------
+> Amit Kucheria (5):
+>       arm64: dts: qcs404: thermal: Add interrupt support
+>       arm64: dts: msm8998: thermal: Add interrupt support
+>       arm64: dts: msm8996: thermal: Add interrupt support
+>       arm64: dts: sdm845: thermal: Add interrupt support
+>       arm64: dts: msm8916: thermal: Fixup HW ids for cpu sensors
 
-Thanks,
+One of my patches to add interrupt support to msm8916 tsens is missing
+here. Specifically this one:
+https://patchwork.kernel.org/patch/11201853/
 
-Sean
+Will there be a second PR this cycle?
 
-> $ git grep -w dev_err drivers/gpu/drm | wc -l
-> 1950
-> $ git grep -w DRM_DEV_ERROR drivers/gpu/drm | wc -l
-> 756
-> 
-> > diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-> []
-> > @@ -916,7 +916,7 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
-> >  	}
-> >  
-> >  	if (!dsi->cdata) {
-> > -		dev_err(dev, "no dsi-config for %s node\n", np->name);
-> > +		DRM_DEV_ERROR(dev, "no dsi-config for %s node\n", np->name);
-> >  		return -EINVAL;
-> >  	}
-> 
-> 
-> 
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
-
--- 
-Sean Paul, Software Engineer, Google / Chromium OS
+Regards,
+Amit
 
 _______________________________________________
 linux-arm-kernel mailing list
