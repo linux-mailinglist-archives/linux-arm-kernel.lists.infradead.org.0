@@ -2,51 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5469CF34F6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 17:50:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4239AF352C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 17:57:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cFK4hEATK4TcnMi9r0H/CLh9+6psZ5+VrQ5OhiyW4Yk=; b=XTA/ZxQIPZV0GO
-	6cT3WIbuuySr+oyiNhOMb5ETtakveAXF99U3fDDRw1MgsFWaT9l3RXYrS93kbHBwgOFIc8/mLWNy2
-	2KAdiR7LQastFPOfknUWpOQxfrQOHMC0tdGHq0AJdmsnjPVrsVzcl097QIZ36iJFYRnUhR2luCeQd
-	guGlz2DU5IqTJJxhFuRt6NJlTADQKOnR+lqQu/MOT1h0YWZPaqlhuXvWy/zt3Ne/Sglewb6clbke/
-	yzk/7bUFNknhm5rqVoEu6yjt0aNGRUuUZBLAJwGT7SqRHh3RF7wDCEzsnNqu2D3TJwniTQmdxg41l
-	4UYyLCou+YmLJVi6TUWQ==;
+	List-Owner; bh=I0USYxfGLF45FXjpvWRfMBLHsgYj1TvyoJFsiPHH8Ds=; b=myduHG3jdn6Kgr
+	eut3R3dKaTJqFqCbzrotFwjDbHmGPPUjbioaIK1FCUaS0lniGySjmsOV8AWX4VJYcS2eL9YKS0IPf
+	RfeUN4mbmek8Gq2R7IIUje3OITcIocSbcCggp5yeGTPueI0aiFARSdhQtX7es9P5QTaFXB8vrZ3Yj
+	3OtNE0scoQ1oVVm32wFr51kTz0tryAuQAOnDncM3oZ/ymgF47eOzGaJvnj2EHKYFVWX3MFkoxI5n+
+	9lVzWhcXt/hhzXNkN+AuFUSiNIMlCL8Y9jqobi0Bj6t2ymwz43ZR0TynEcs93dGDJLnr1r4VOyw2y
+	DBvGw6ka3tfYM64805nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSkyt-0007VB-96; Thu, 07 Nov 2019 16:49:59 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSkyl-0007UG-IW
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 16:49:53 +0000
-Received: from litschi.hi.pengutronix.de
- ([2001:67c:670:100:feaa:14ff:fe6a:8db5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <m.tretter@pengutronix.de>)
- id 1iSkyR-0001OE-Fq; Thu, 07 Nov 2019 17:49:31 +0100
-Date: Thu, 7 Nov 2019 17:49:28 +0100
-From: Michael Tretter <m.tretter@pengutronix.de>
-To: Rajan Vaja <rajan.vaja@xilinx.com>
-Subject: Re: [PATCH] clk: zynqmp: Add support for custom type flags
-Message-ID: <20191107174928.71a921f0@litschi.hi.pengutronix.de>
-In-Reply-To: <1573117086-7405-1-git-send-email-rajan.vaja@xilinx.com>
-References: <1573117086-7405-1-git-send-email-rajan.vaja@xilinx.com>
-Organization: Pengutronix
-X-Mailer: Claws Mail 3.14.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
+	id 1iSl5Y-0002ek-AU; Thu, 07 Nov 2019 16:56:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSl5P-0002dO-Gu
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 16:56:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B97CB31B;
+ Thu,  7 Nov 2019 08:56:37 -0800 (PST)
+Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4C3873F719;
+ Thu,  7 Nov 2019 08:56:37 -0800 (PST)
+Date: Thu, 7 Nov 2019 17:56:36 +0100
+From: Christoffer Dall <christoffer.dall@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH 0/2] KVM: arm64: Reduce occurence of GICv4 doorbells on
+ non-oversubscribed systems
+Message-ID: <20191107165636.GB17608@e113682-lin.lund.arm.com>
+References: <20191107160412.30301-1-maz@kernel.org>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:feaa:14ff:fe6a:8db5
-X-SA-Exim-Mail-From: m.tretter@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20191107160412.30301-1-maz@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_084951_610421_EAD2AF5B 
-X-CRM114-Status: GOOD (  19.53  )
+X-CRM114-CacheID: sfid-20191107_085643_607798_08A9AB27 
+X-CRM114-Status: GOOD (  16.14  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,99 +61,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gustavo@embeddedor.com, sboyd@kernel.org, mturquette@baylibre.com,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de,
- jolly.shah@xilinx.com, linux-clk@vger.kernel.org, dan.carpenter@oracle.com
+Cc: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 07 Nov 2019 00:58:06 -0800, Rajan Vaja wrote:
-> Store extra custom type flags received from firmware.
+On Thu, Nov 07, 2019 at 04:04:10PM +0000, Marc Zyngier wrote:
+> As I was cleaning up some of the GICv4 code to make way for GICv4.1 it
+> occured to me that we could drastically reduce the impact of the GICv4
+> doorbells on systems that are not oversubscribed (each vcpu "owns" a
+> physical CPU).
 > 
-> Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
-> Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
-> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> ---
->  drivers/clk/zynqmp/clkc.c    | 8 +++++++-
->  drivers/clk/zynqmp/divider.c | 4 ++--
->  2 files changed, 9 insertions(+), 3 deletions(-)
+> The technique borrows its logic from the way we disable WFE trapping
+> when a vcpu is the only process on the CPU run-queue. If this vcpu is
+> the target of VLPIs, it is then beneficial not to trap blocking WFIs
+> and to leave the vcpu waiting for interrupts in guest state.
 > 
-> diff --git a/drivers/clk/zynqmp/clkc.c b/drivers/clk/zynqmp/clkc.c
-> index a11f93e..0dea55e 100644
-> --- a/drivers/clk/zynqmp/clkc.c
-> +++ b/drivers/clk/zynqmp/clkc.c
-> @@ -2,7 +2,7 @@
->  /*
->   * Zynq UltraScale+ MPSoC clock controller
->   *
-> - *  Copyright (C) 2016-2018 Xilinx
-> + *  Copyright (C) 2016-2019 Xilinx
->   *
->   * Based on drivers/clk/zynq/clkc.c
->   */
-> @@ -86,6 +86,8 @@ struct topology_resp {
->  #define CLK_TOPOLOGY_TYPE		GENMASK(3, 0)
->  #define CLK_TOPOLOGY_FLAGS		GENMASK(23, 8)
->  #define CLK_TOPOLOGY_TYPE_FLAGS		GENMASK(31, 24)
-> +#define CLK_TOPOLOGY_TYPE_FLAG2		GENMASK(7, 4)
-
-What kind of function do these flags indicate? The name is really not
-obvious to me.
-
-I would prefer if the defines are kept in the order of the bits in the
-field, i.e., the new define should go between CLK_TOPOLOGY_TYPE and
-CLK_TOPOLOGY_FLAGS.
-
-> +#define CLK_TOPOLOGY_TYPE_FLAG_BITS	8
->  	u32 topology[CLK_GET_TOPOLOGY_RESP_WORDS];
->  };
->  
-> @@ -396,6 +398,10 @@ static int __zynqmp_clock_get_topology(struct clock_topology *topology,
->  		topology[*nnodes].type_flag =
->  				FIELD_GET(CLK_TOPOLOGY_TYPE_FLAGS,
->  					  response->topology[i]);
-> +		topology[*nnodes].type_flag |=
-> +			FIELD_GET(CLK_TOPOLOGY_TYPE_FLAG2,
-> +				  response->topology[i]) <<
-> +			CLK_TOPOLOGY_TYPE_FLAG_BITS;
-
-Shifting the new flags into the existing type_flag field seems like a
-source for code that is really difficult to read. Maybe use a new field
-in the topology for the new flags with a proper name?
-
->  		(*nnodes)++;
->  	}
->  
-> diff --git a/drivers/clk/zynqmp/divider.c b/drivers/clk/zynqmp/divider.c
-> index d8f5b70d..d376529 100644
-> --- a/drivers/clk/zynqmp/divider.c
-> +++ b/drivers/clk/zynqmp/divider.c
-> @@ -2,7 +2,7 @@
->  /*
->   * Zynq UltraScale+ MPSoC Divider support
->   *
-> - *  Copyright (C) 2016-2018 Xilinx
-> + *  Copyright (C) 2016-2019 Xilinx
->   *
->   * Adjustable divider clock implementation
->   */
-> @@ -37,7 +37,7 @@
->   */
->  struct zynqmp_clk_divider {
->  	struct clk_hw hw;
-> -	u8 flags;
-> +	u16 flags;
-
-This change looks unrelated to the remaining patch.
-
-Michael
-
->  	bool is_frac;
->  	u32 clk_id;
->  	u32 div_type;
+> All we need to do here is to track whether VLPIs are associated to a
+> vcpu (which is easily done by using a counter that we update on MAPI,
+> DISCARD and MOVI).
+> 
+> It has been *very lightly* tested on a D05, and behaved pretty well in
+> my limited test cases (I get almost no doorbell at all in the non
+> oversubscribed case, and the usual hailstorm as soon as there is
+> oversubscription). I'd welcome some testing on more current HW.
+> 
+Reviewed-by: Christoffer Dall <christoffer.dall@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
