@@ -2,73 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C244BF364E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 18:54:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CBFCF3643
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 Nov 2019 18:53:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rQNqcq2UoRdBNb72Imj0AGfBzkpx04LLgQCBNXHWOQ0=; b=hXM7zIqsbHSh3R
-	I3v2fbtHw9sEDemcmpcDSjXgX7glfukmn4hnLw/Uh2gM2gfVVPT3rl2QarqMBanlf24FUTEpD8GlK
-	FwPYgzn4uqpiIZ3ZTKWraEpl83jorwgKgVhlC+SHieknfcWdbmf2MleqRqXeBQC1sFOBm4zMpG8Lp
-	U1moN6lB9A43MS6vkSExMd3FodK8JmoCvZQWhYm+BltuUsCGHaeTvhMslMsTqrNKmkGQ4b7HLQCnJ
-	j7EVnpwxVS0sd30j75hodRZVrRhEl1KHcGUd+Yoq/Tit5qm68clq7gV9nZb86FE3ji6LpFM90Y6sA
-	sYqkqtnIjjbaJzW0AjpA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Qx+RQg9griTIyAHbu/JsBfkBbHT3aFuHkZMhp/No6js=; b=aelvO3NUpME4DN
+	QZKg9iknMOhf4R+W+4iv/QVpWihGfwcy73bD3lB3LZgKaGSkFnw4kaVFq48M1cJDcu43RC2hnY5yy
+	qW7KAJv5XAphmviHXyPWnkHP5PgbwTSbrw22FOGnkqL+zBg55fZ5AnxzgZzYtGyhlXET6zm3HjEdO
+	1mNvoiLR7D+7wiS5PfnbJDL9ZwaYyIUJM2w8im/ZIbgGORNxtastjf7XbMhE3C64T2ajc2SKk8q14
+	J6qSB20cWd3vDKPrhMWYAl4QYmeVamzQoHNoxKj7/yMXvaOoEBDJHhahdQCKJi7xIwzqas7srRsX5
+	ALpJTc3NCGfl2JPkkVXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSlzE-0008Hw-Hp; Thu, 07 Nov 2019 17:54:24 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1iSlyL-0007SH-8O; Thu, 07 Nov 2019 17:53:29 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSlyp-00088Y-C4
- for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 17:54:05 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA7Hj18W001450;
- Thu, 7 Nov 2019 17:53:28 GMT
+ id 1iSlxG-0006he-NS
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 Nov 2019 17:52:25 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA7Hj2PL030137;
+ Thu, 7 Nov 2019 17:51:28 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
  h=from : to : cc :
- subject : date : message-id : mime-version : content-type :
+ subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding; s=corp-2019-08-05;
- bh=cP3odovDn+b8l22dKmKV8q2Mp2Ep7jYU9ngn8YvoPEM=;
- b=kkeppDWvq5LseXZ7DDEvhTVO157mnZGu2hk+C2ampz6VYdXmimU/BI55qnSltRC7wvqb
- JvK2X4EoTDAz19GgqiYLpegozuIkVm0ah6krBTu2h0njH2HQ1GX2zUNHW7pzerIEL4/L
- rclTXKC5HUVechhOgMd7MbdTXECda04KULLkYhowwdzlw38jQ/U7r+lWut8Er6RDshBv
- ZgkmtJxp2yTq5G4Qb8NvQ7+eXbg37waxFHbdxPFnxgaEWAcgH76lj5gm+VWPCqZQ76mD
- XeBGa/sifmgf3XhFQL1tJIShcNhm3xaVI/5A5SIu0cDfjl41yYlQljQpsyQXBwl0X7K/ yQ== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 2w41w0yx6t-1
+ bh=T6u/MHPeS4W/M9y1AqLQfeosE/vR/LKfHRXL6C/2QKI=;
+ b=oO/aIPPNvcmSvSJDTZtjHy0W2O6UdZlT7rcsOF/n4Bz/TF42OKqc/gFCZ+w9wp1PPiqj
+ o2a33J1vzgg5bNaPGSwyOFcgByHWVVcyJvlAiBpDuxOD5/M2jNJrYUZMx/etdcuYft76
+ iIcnSfkhlXjSPJ9F7qcgyhqKnVB4DQmP5AXC4c92rDLCR1zUdxYx5eGZq+W7ck6dnwKR
+ eQNqo9wDX+262tU3eiqQuzgQNxBRC419btlng0UAJUIH9+UUWefFzfZElgLYj2WiLo0M
+ 0V/n2r13vTMJSwFD+y5sFG9gOW+WjjWHReMuCDhJz/YRGjD/D8v7VB9+8ttkSEQhkzBO cA== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2130.oracle.com with ESMTP id 2w41w17xu4-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 07 Nov 2019 17:53:28 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA7Hj29l038325;
- Thu, 7 Nov 2019 17:51:27 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3030.oracle.com with ESMTP id 2w41wffu1d-1
+ Thu, 07 Nov 2019 17:51:28 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xA7HipI0011074;
+ Thu, 7 Nov 2019 17:51:28 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3020.oracle.com with ESMTP id 2w41whrn16-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
  Thu, 07 Nov 2019 17:51:27 +0000
 Received: from abhmp0018.oracle.com (abhmp0018.oracle.com [141.146.116.24])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id xA7HpHGR009182;
- Thu, 7 Nov 2019 17:51:17 GMT
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id xA7HpImC007784;
+ Thu, 7 Nov 2019 17:51:18 GMT
 Received: from neelam.us.oracle.com (/10.152.128.16)
  by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Thu, 07 Nov 2019 09:51:16 -0800
+ with ESMTP ; Thu, 07 Nov 2019 09:51:18 -0800
 From: Alex Kogan <alex.kogan@oracle.com>
 To: linux@armlinux.org.uk, peterz@infradead.org, mingo@redhat.com,
  will.deacon@arm.com, arnd@arndb.de, longman@redhat.com,
  linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, tglx@linutronix.de, bp@alien8.de,
  hpa@zytor.com, x86@kernel.org, guohanjun@huawei.com, jglauber@marvell.com
-Subject: [PATCH v6 0/5] Add NUMA-awareness to qspinlock
-Date: Thu,  7 Nov 2019 12:46:17 -0500
-Message-Id: <20191107174622.61718-1-alex.kogan@oracle.com>
+Subject: [PATCH v6 1/5] locking/qspinlock: Rename mcs lock/unlock macros and
+ make them more generic
+Date: Thu,  7 Nov 2019 12:46:18 -0500
+Message-Id: <20191107174622.61718-2-alex.kogan@oracle.com>
 X-Mailer: git-send-email 2.19.1
+In-Reply-To: <20191107174622.61718-1-alex.kogan@oracle.com>
+References: <20191107174622.61718-1-alex.kogan@oracle.com>
 MIME-Version: 1.0
 X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9434
  signatures=668685
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
  malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=735
  adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.0.1-1910280000 definitions=main-1911070165
 X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9434
@@ -76,19 +79,19 @@ X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9434
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
  priorityscore=1501 malwarescore=0
  suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=818 adultscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1910280000
  definitions=main-1911070165
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_095359_521289_803AD9D8 
-X-CRM114-Status: GOOD (  24.23  )
+X-CRM114-CacheID: sfid-20191107_095222_891042_1966E059 
+X-CRM114-Status: GOOD (  19.92  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -114,126 +117,164 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: alex.kogan@oracle.com, dave.dice@oracle.com, rahul.x.yadav@oracle.com,
  steven.sistare@oracle.com, daniel.m.jordan@oracle.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TWlub3IgY2hhbmdlcyBmcm9tIHY1LCBtYWlubHkgYmFzZWQgb24gZmVlZGJhY2sgZnJvbSBMb25n
-bWFuOgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tCgotIE1ha2UgdGhlIGludHJhIG5vZGUgaGFuZG9mZiB0aHJlc2hvbGQgYSBjb25m
-aWd1cmFibGUgcGFyYW1ldGVyIAp2aWEgdGhlIG5ldyBrZXJuZWwgYm9vdCBjb21tYW5kLWxpbmUg
-b3B0aW9uICJudW1hX3NwaW5sb2NrX3RocmVzaG9sZCIuCgotIEFkZCBkb2N1bWVudGF0aW9uIG9m
-IG5ldyBjb21tYW5kLWxpbmUgb3B0aW9ucyBpbiBrZXJuZWwtcGFyYW1ldGVycy50eHQuCgotIFNt
-YWxsIGZpeCBpbiBjbmFfdHJ5X2NoYW5nZV90YWlsKCkgKHVzZSBjbXB4aGdfcmVsYXhlZCgpKS4K
-Ci0gU21hbGwgZml4IGluIGNuYV9pbml0X25vZGVzKCkgKHJldHVybiAwKS4KCi0gTWlub3IgY2hh
-bmdlcyBpbiBjbmFfcGFzc19sb2NrKCkuIAoKClN1bW1hcnkKLS0tLS0tLQoKTG9jayB0aHJvdWdo
-cHV0IGNhbiBiZSBpbmNyZWFzZWQgYnkgaGFuZGluZyBhIGxvY2sgdG8gYSB3YWl0ZXIgb24gdGhl
-CnNhbWUgTlVNQSBub2RlIGFzIHRoZSBsb2NrIGhvbGRlciwgcHJvdmlkZWQgY2FyZSBpcyB0YWtl
-biB0byBhdm9pZApzdGFydmF0aW9uIG9mIHdhaXRlcnMgb24gb3RoZXIgTlVNQSBub2Rlcy4gVGhp
-cyBwYXRjaCBpbnRyb2R1Y2VzIENOQQooY29tcGFjdCBOVU1BLWF3YXJlIGxvY2spIGFzIHRoZSBz
-bG93IHBhdGggZm9yIHFzcGlubG9jay4gSXQgaXMKZW5hYmxlZCB0aHJvdWdoIGEgY29uZmlndXJh
-dGlvbiBvcHRpb24gKE5VTUFfQVdBUkVfU1BJTkxPQ0tTKS4KCkNOQSBpcyBhIE5VTUEtYXdhcmUg
-dmVyc2lvbiBvZiB0aGUgTUNTIGxvY2suIFNwaW5uaW5nIHRocmVhZHMgYXJlCm9yZ2FuaXplZCBp
-biB0d28gcXVldWVzLCBhIG1haW4gcXVldWUgZm9yIHRocmVhZHMgcnVubmluZyBvbiB0aGUgc2Ft
-ZQpub2RlIGFzIHRoZSBjdXJyZW50IGxvY2sgaG9sZGVyLCBhbmQgYSBzZWNvbmRhcnkgcXVldWUg
-Zm9yIHRocmVhZHMKcnVubmluZyBvbiBvdGhlciBub2Rlcy4gVGhyZWFkcyBzdG9yZSB0aGUgSUQg
-b2YgdGhlIG5vZGUgb24gd2hpY2gKdGhleSBhcmUgcnVubmluZyBpbiB0aGVpciBxdWV1ZSBub2Rl
-cy4gQWZ0ZXIgYWNxdWlyaW5nIHRoZSBNQ1MgbG9jayBhbmQKYmVmb3JlIGFjcXVpcmluZyB0aGUg
-c3BpbmxvY2ssIHRoZSBsb2NrIGhvbGRlciBzY2FucyB0aGUgbWFpbiBxdWV1ZQpsb29raW5nIGZv
-ciBhIHRocmVhZCBydW5uaW5nIG9uIHRoZSBzYW1lIG5vZGUgKHByZS1zY2FuKS4gSWYgZm91bmQg
-KGNhbGwKaXQgdGhyZWFkIFQpLCBhbGwgdGhyZWFkcyBpbiB0aGUgbWFpbiBxdWV1ZSBiZXR3ZWVu
-IHRoZSBjdXJyZW50IGxvY2sKaG9sZGVyIGFuZCBUIGFyZSBtb3ZlZCB0byB0aGUgZW5kIG9mIHRo
-ZSBzZWNvbmRhcnkgcXVldWUuICBJZiBzdWNoIFQKaXMgbm90IGZvdW5kLCB3ZSBtYWtlIGFub3Ro
-ZXIgc2NhbiBvZiB0aGUgbWFpbiBxdWV1ZSBhZnRlciBhY3F1aXJpbmcgCnRoZSBzcGlubG9jayB3
-aGVuIHVubG9ja2luZyB0aGUgTUNTIGxvY2sgKHBvc3Qtc2NhbiksIHN0YXJ0aW5nIGF0IHRoZQpu
-b2RlIHdoZXJlIHByZS1zY2FuIHN0b3BwZWQuIElmIGJvdGggc2NhbnMgZmFpbCB0byBmaW5kIHN1
-Y2ggVCwgdGhlCk1DUyBsb2NrIGlzIHBhc3NlZCB0byB0aGUgZmlyc3QgdGhyZWFkIGluIHRoZSBz
-ZWNvbmRhcnkgcXVldWUuIElmIHRoZQpzZWNvbmRhcnkgcXVldWUgaXMgZW1wdHksIHRoZSBNQ1Mg
-bG9jayBpcyBwYXNzZWQgdG8gdGhlIG5leHQgdGhyZWFkIGluIHRoZQptYWluIHF1ZXVlLiBUbyBh
-dm9pZCBzdGFydmF0aW9uIG9mIHRocmVhZHMgaW4gdGhlIHNlY29uZGFyeSBxdWV1ZSwgdGhvc2UK
-dGhyZWFkcyBhcmUgbW92ZWQgYmFjayB0byB0aGUgaGVhZCBvZiB0aGUgbWFpbiBxdWV1ZSBhZnRl
-ciBhIGNlcnRhaW4KbnVtYmVyIG9mIGludHJhLW5vZGUgbG9jayBoYW5kLW9mZnMuCgpNb3JlIGRl
-dGFpbHMgYXJlIGF2YWlsYWJsZSBhdCBodHRwczovL2FyeGl2Lm9yZy9hYnMvMTgxMC4wNTYwMC4K
-CldlIGhhdmUgZG9uZSBzb21lIHBlcmZvcm1hbmNlIGV2YWx1YXRpb24gd2l0aCB0aGUgbG9ja3Rv
-cnR1cmUgbW9kdWxlCmFzIHdlbGwgYXMgd2l0aCBzZXZlcmFsIGJlbmNobWFya3MgZnJvbSB0aGUg
-d2lsbC1pdC1zY2FsZSByZXBvLgpUaGUgZm9sbG93aW5nIGxvY2t0b3J0dXJlIHJlc3VsdHMgYXJl
-IGZyb20gYW4gT3JhY2xlIFg1LTQgc2VydmVyCihmb3VyIEludGVsIFhlb24gRTctODg5NSB2MyBA
-IDIuNjBHSHogc29ja2V0cyB3aXRoIDE4IGh5cGVydGhyZWFkZWQKY29yZXMgZWFjaCkuIEVhY2gg
-bnVtYmVyIHJlcHJlc2VudHMgYW4gYXZlcmFnZSAob3ZlciAyNSBydW5zKSBvZiB0aGUKdG90YWwg
-bnVtYmVyIG9mIG9wcyAoeDEwXjcpIHJlcG9ydGVkIGF0IHRoZSBlbmQgb2YgZWFjaCBydW4uIFRo
-ZSAKc3RhbmRhcmQgZGV2aWF0aW9uIGlzIGFsc28gcmVwb3J0ZWQgaW4gKCksIGFuZCBpbiBnZW5l
-cmFsIGlzIGFib3V0IDMlCmZyb20gdGhlIGF2ZXJhZ2UuIFRoZSAnc3RvY2snIGtlcm5lbCBpcyB2
-NS40LjAtcmM1LApjb21taXQgN2M1ZTEzNmEwMmJhLCBjb21waWxlZCBpbiB0aGUgZGVmYXVsdCBj
-b25maWd1cmF0aW9uLiAKJ3BhdGNoLUNOQScgaXMgdGhlIG1vZGlmaWVkIGtlcm5lbCB3aXRoIE5V
-TUFfQVdBUkVfU1BJTkxPQ0tTIHNldDsgCnRoZSBzcGVlZHVwIGlzIGNhbGN1bGF0ZWQgZGl2aWRp
-bmcgJ3BhdGNoLUNOQScgYnkgJ3N0b2NrJy4KCiN0aHIgIAkgc3RvY2sgICAgICAgIHBhdGNoLUNO
-QSAgIHNwZWVkdXAgKHBhdGNoLUNOQS9zdG9jaykKICAxICAyLjcyNiAoMC4xMDcpICAyLjcyOSAo
-MC4wOTYpICAxLjAwMQogIDIgIDIuNjU2ICgwLjExMykgIDIuNjY2ICgwLjExNikgIDEuMDA0CiAg
-NCAgNC4xNDcgKDAuMDg1KSAgNC4yNTUgKDAuMTM1KSAgMS4wMjYKICA4ICA1LjM4OCAoMC4xNDYp
-ICA2LjY0MiAoMC4xNTUpICAxLjIzMwogMTYgIDYuNjg4ICgwLjE1MikgIDguMDM1ICgwLjE2Mikg
-IDEuMjAyCiAzMiAgNy4zODkgKDAuMjAzKSAgOC43NTEgKDAuMTkyKSAgMS4xODQKIDM2ICA3LjQy
-MCAoMC4xNzkpICA4LjgxOCAoMC4xNzMpICAxLjE4OAogNzIgIDYuNDg5ICgwLjEyMikgIDkuNDAz
-ICgwLjI1MikgIDEuNDQ5CjEwOCAgNi4xNjMgKDAuMDc4KSAgOS41MDQgKDAuMTc3KSAgMS41NDIK
-MTQyICA1LjczNiAoMC4xMDUpICA5LjM3MSAoMC4xODEpICAxLjYzNAoKVGhlIGZvbGxvd2luZyB0
-YWJsZXMgY29udGFpbiB0aHJvdWdocHV0IHJlc3VsdHMgKG9wcy91cykgZnJvbSB0aGUgc2FtZQpz
-ZXR1cCBmb3Igd2lsbC1pdC1zY2FsZS9vcGVuMV90aHJlYWRzOiAKCiN0aHIgIAkgc3RvY2sgICAg
-ICAgIHBhdGNoLUNOQSAgIHNwZWVkdXAgKHBhdGNoLUNOQS9zdG9jaykKICAxICAwLjUzMyAoMC4w
-MDEpICAwLjUzNCAoMC4wMDIpICAxLjAwMwogIDIgIDAuNzg3ICgwLjAyMCkgIDAuODAxICgwLjAy
-MikgIDEuMDE3CiAgNCAgMS40MTggKDAuMDMxKSAgMS40MjEgKDAuMDIyKSAgMS4wMDIKICA4ICAx
-Ljc0NSAoMC4xMTIpICAxLjczNiAoMC4xMDQpICAwLjk5NQogMTYgIDEuNzc5ICgwLjEwNCkgIDEu
-Njk2ICgwLjA5MCkgIDAuOTUzCiAzMiAgMC45MjMgKDAuMDYwKSAgMS42MzQgKDAuMTA5KSAgMS43
-NzEKIDM2ICAwLjg5OSAoMC4wODcpICAxLjYzNiAoMC4xMDgpICAxLjgyMQogNzIgIDAuODM3ICgw
-LjAzOCkgIDEuNjE1ICgwLjA4NikgIDEuOTI4CjEwOCAgMC44NDEgKDAuMDQ0KSAgMS43MTUgKDAu
-MDg3KSAgMi4wNDEKMTQyICAwLjgwMiAoMC4wNDApICAxLjczNCAoMC4wODUpICAyLjE2MwoKYW5k
-IHdpbGwtaXQtc2NhbGUvbG9jazJfdGhyZWFkczoKCiN0aHIgIAkgc3RvY2sgICAgICAgIHBhdGNo
-LUNOQSAgIHNwZWVkdXAgKHBhdGNoLUNOQS9zdG9jaykKICAxICAxLjU5MCAoMC4wMTMpICAxLjU4
-MyAoMC4wMTApICAwLjk5NQogIDIgIDIuNzE0ICgwLjA1NCkgIDIuNjk3ICgwLjA1MSkgIDAuOTk0
-CiAgNCAgNS4yNTEgKDAuMzExKSAgNS4yNTIgKDAuMjE3KSAgMS4wMDAKICA4ICA0LjM1OCAoMC4z
-MDEpICA0LjMwOSAoMC4zMDUpICAwLjk4OQogMTYgIDQuMjE5ICgwLjE0MCkgIDQuMTYxICgwLjEx
-NCkgIDAuOTg2CiAzMiAgMi41NDcgKDAuMTE3KSAgNC4xMzQgKDAuMDg0KSAgMS42MjMKIDM2ICAy
-LjU2MCAoMC4wNzEpICA0LjEyNyAoMC4xMjIpICAxLjYxMgogNzIgIDEuOTgyICgwLjA4NikgIDQu
-MDk3ICgwLjEwNikgIDIuMDY3CjEwOCAgMi4xMTQgKDAuMDg5KSAgNC4wODIgKDAuMTA1KSAgMS45
-MzAKMTQyICAxLjkyMyAoMC4xMDApICA0LjAyNCAoMC4wODYpICAyLjA5MwoKT3VyIGV2YWx1YXRp
-b24gc2hvd3MgdGhhdCBDTkEgYWxzbyBpbXByb3ZlcyBwZXJmb3JtYW5jZSBvZiB1c2VyIAphcHBs
-aWNhdGlvbnMgdGhhdCBoYXZlIGhvdCBwdGhyZWFkIG11dGV4ZXMuIFRob3NlIG11dGV4ZXMgYXJl
-IApibG9ja2luZywgYW5kIHdhaXRpbmcgdGhyZWFkcyBwYXJrIGFuZCB1bnBhcmsgdmlhIHRoZSBm
-dXRleCAKbWVjaGFuaXNtIGluIHRoZSBrZXJuZWwuIEdpdmVuIHRoYXQga2VybmVsIGZ1dGV4IGNo
-YWlucywgd2hpY2gKYXJlIGhhc2hlZCBieSB0aGUgbXV0ZXggYWRkcmVzcywgYXJlIGVhY2ggcHJv
-dGVjdGVkIGJ5IGEgCmNoYWluLXNwZWNpZmljIHNwaW4gbG9jaywgdGhlIGNvbnRlbnRpb24gb24g
-YSB1c2VyLW1vZGUgbXV0ZXggCnRyYW5zbGF0ZXMgaW50byBjb250ZW50aW9uIG9uIGEga2VybmVs
-IGxldmVsIHNwaW5sb2NrLiAKCkhlcmUgYXJlIHRoZSByZXN1bHRzIGZvciB0aGUgbGV2ZWxkYiDi
-gJhyZWFkcmFuZG9t4oCZIGJlbmNobWFyazoKCiN0aHIgIAkgc3RvY2sgICAgICAgIHBhdGNoLUNO
-QSAgIHNwZWVkdXAgKHBhdGNoLUNOQS9zdG9jaykKICAxICAwLjUzMyAoMC4wMTQpICAwLjUzMyAo
-MC4wMTYpICAxLjAwMQogIDIgIDAuNjY3ICgwLjAyOSkgIDAuNjY5ICgwLjAyNykgIDEuMDAzCiAg
-NCAgMC42OTkgKDAuMDE4KSAgMC43MTQgKDAuMDI2KSAgMS4wMjEKICA4ICAwLjY5MiAoMC4wMjAp
-ICAwLjY5NiAoMC4wMjYpICAxLjAwNQogMTYgIDAuNzMwICgwLjAyOSkgIDAuNzMzICgwLjAyNykg
-IDEuMDA0CiAzMiAgMC43MjYgKDAuMDM0KSAgMC45NzggKDAuMTE4KSAgMS4zNDgKIDM2ICAwLjc0
-MCAoMC4wNDIpICAxLjA5OSAoMC4xMTEpICAxLjQ4NQogNzIgIDAuNjcxICgwLjAzMykgIDEuMTY3
-ICgwLjAyMSkgIDEuNzM5CjEwOCAgMC42MzMgKDAuMDE3KSAgMS4xNjEgKDAuMDI4KSAgMS44MzQK
-MTQyICAwLjYwNiAoMC4wMTYpICAxLjE0NCAoMC4wMTgpICAxLjg4NwoKQWRkaXRpb25hbCBwZXJm
-b3JtYW5jZSBudW1iZXJzIGFyZSBhdmFpbGFibGUgaW4gcHJldmlvdXMgcmV2aXNpb25zCm9mIHRo
-ZSBzZXJpZXMuCgpGdXJ0aGVyIGNvbW1lbnRzIGFyZSB3ZWxjb21lIGFuZCBhcHByZWNpYXRlZC4K
-CkFsZXggS29nYW4gKDUpOgogIGxvY2tpbmcvcXNwaW5sb2NrOiBSZW5hbWUgbWNzIGxvY2svdW5s
-b2NrIG1hY3JvcyBhbmQgbWFrZSB0aGVtIG1vcmUKICAgIGdlbmVyaWMKICBsb2NraW5nL3FzcGlu
-bG9jazogUmVmYWN0b3IgdGhlIHFzcGlubG9jayBzbG93IHBhdGgKICBsb2NraW5nL3FzcGlubG9j
-azogSW50cm9kdWNlIENOQSBpbnRvIHRoZSBzbG93IHBhdGggb2YgcXNwaW5sb2NrCiAgbG9ja2lu
-Zy9xc3BpbmxvY2s6IEludHJvZHVjZSBzdGFydmF0aW9uIGF2b2lkYW5jZSBpbnRvIENOQQogIGxv
-Y2tpbmcvcXNwaW5sb2NrOiBJbnRyb2R1Y2UgdGhlIHNodWZmbGUgcmVkdWN0aW9uIG9wdGltaXph
-dGlvbiBpbnRvCiAgICBDTkEKCiBEb2N1bWVudGF0aW9uL2FkbWluLWd1aWRlL2tlcm5lbC1wYXJh
-bWV0ZXJzLnR4dCB8ICAxOCArKwogYXJjaC9hcm0vaW5jbHVkZS9hc20vbWNzX3NwaW5sb2NrLmgg
-ICAgICAgICAgICAgfCAgIDYgKy0KIGFyY2gveDg2L0tjb25maWcgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgIHwgIDE5ICsrCiBhcmNoL3g4Ni9pbmNsdWRlL2FzbS9xc3BpbmxvY2suaCAg
-ICAgICAgICAgICAgICB8ICAgNCArCiBhcmNoL3g4Ni9rZXJuZWwvYWx0ZXJuYXRpdmUuYyAgICAg
-ICAgICAgICAgICAgICB8ICA3MCArKysrKysKIGluY2x1ZGUvYXNtLWdlbmVyaWMvbWNzX3NwaW5s
-b2NrLmggICAgICAgICAgICAgIHwgICA0ICstCiBrZXJuZWwvbG9ja2luZy9tY3Nfc3BpbmxvY2su
-aCAgICAgICAgICAgICAgICAgICB8ICAyMCArLQoga2VybmVsL2xvY2tpbmcvcXNwaW5sb2NrLmMg
-ICAgICAgICAgICAgICAgICAgICAgfCAgNzcgKysrKystCiBrZXJuZWwvbG9ja2luZy9xc3Bpbmxv
-Y2tfY25hLmggICAgICAgICAgICAgICAgICB8IDMxNSArKysrKysrKysrKysrKysrKysrKysrKysK
-IGtlcm5lbC9sb2NraW5nL3FzcGlubG9ja19wYXJhdmlydC5oICAgICAgICAgICAgIHwgICAyICst
-CiAxMCBmaWxlcyBjaGFuZ2VkLCA1MTIgaW5zZXJ0aW9ucygrKSwgMjMgZGVsZXRpb25zKC0pCiBj
-cmVhdGUgbW9kZSAxMDA2NDQga2VybmVsL2xvY2tpbmcvcXNwaW5sb2NrX2NuYS5oCgotLSAKMi4x
-MS4wIChBcHBsZSBHaXQtODEpCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+The mcs unlock macro (arch_mcs_pass_lock) should accept the value to be
+stored into the lock argument as another argument. This allows using the
+same macro in cases where the value to be stored when passing the lock is
+different from 1.
+
+Signed-off-by: Alex Kogan <alex.kogan@oracle.com>
+Reviewed-by: Steve Sistare <steven.sistare@oracle.com>
+---
+ arch/arm/include/asm/mcs_spinlock.h |  6 +++---
+ include/asm-generic/mcs_spinlock.h  |  4 ++--
+ kernel/locking/mcs_spinlock.h       | 18 +++++++++---------
+ kernel/locking/qspinlock.c          |  4 ++--
+ kernel/locking/qspinlock_paravirt.h |  2 +-
+ 5 files changed, 17 insertions(+), 17 deletions(-)
+
+diff --git a/arch/arm/include/asm/mcs_spinlock.h b/arch/arm/include/asm/mcs_spinlock.h
+index 529d2cf4d06f..693fe6ce3c43 100644
+--- a/arch/arm/include/asm/mcs_spinlock.h
++++ b/arch/arm/include/asm/mcs_spinlock.h
+@@ -6,7 +6,7 @@
+ #include <asm/spinlock.h>
+ 
+ /* MCS spin-locking. */
+-#define arch_mcs_spin_lock_contended(lock)				\
++#define arch_mcs_spin_lock(lock)				\
+ do {									\
+ 	/* Ensure prior stores are observed before we enter wfe. */	\
+ 	smp_mb();							\
+@@ -14,9 +14,9 @@ do {									\
+ 		wfe();							\
+ } while (0)								\
+ 
+-#define arch_mcs_spin_unlock_contended(lock)				\
++#define arch_mcs_pass_lock(lock, val)					\
+ do {									\
+-	smp_store_release(lock, 1);					\
++	smp_store_release((lock), (val));				\
+ 	dsb_sev();							\
+ } while (0)
+ 
+diff --git a/include/asm-generic/mcs_spinlock.h b/include/asm-generic/mcs_spinlock.h
+index 10cd4ffc6ba2..868da43dba7c 100644
+--- a/include/asm-generic/mcs_spinlock.h
++++ b/include/asm-generic/mcs_spinlock.h
+@@ -4,8 +4,8 @@
+ /*
+  * Architectures can define their own:
+  *
+- *   arch_mcs_spin_lock_contended(l)
+- *   arch_mcs_spin_unlock_contended(l)
++ *   arch_mcs_spin_lock(l)
++ *   arch_mcs_pass_lock(l, val)
+  *
+  * See kernel/locking/mcs_spinlock.c.
+  */
+diff --git a/kernel/locking/mcs_spinlock.h b/kernel/locking/mcs_spinlock.h
+index 5e10153b4d3c..52d06ec6f525 100644
+--- a/kernel/locking/mcs_spinlock.h
++++ b/kernel/locking/mcs_spinlock.h
+@@ -21,7 +21,7 @@ struct mcs_spinlock {
+ 	int count;  /* nesting count, see qspinlock.c */
+ };
+ 
+-#ifndef arch_mcs_spin_lock_contended
++#ifndef arch_mcs_spin_lock
+ /*
+  * Using smp_cond_load_acquire() provides the acquire semantics
+  * required so that subsequent operations happen after the
+@@ -29,20 +29,20 @@ struct mcs_spinlock {
+  * ARM64 would like to do spin-waiting instead of purely
+  * spinning, and smp_cond_load_acquire() provides that behavior.
+  */
+-#define arch_mcs_spin_lock_contended(l)					\
+-do {									\
+-	smp_cond_load_acquire(l, VAL);					\
++#define arch_mcs_spin_lock(l)					\
++do {								\
++	smp_cond_load_acquire(l, VAL);				\
+ } while (0)
+ #endif
+ 
+-#ifndef arch_mcs_spin_unlock_contended
++#ifndef arch_mcs_spin_unlock
+ /*
+  * smp_store_release() provides a memory barrier to ensure all
+  * operations in the critical section has been completed before
+  * unlocking.
+  */
+-#define arch_mcs_spin_unlock_contended(l)				\
+-	smp_store_release((l), 1)
++#define arch_mcs_pass_lock(l, val)				\
++	smp_store_release((l), (val))
+ #endif
+ 
+ /*
+@@ -91,7 +91,7 @@ void mcs_spin_lock(struct mcs_spinlock **lock, struct mcs_spinlock *node)
+ 	WRITE_ONCE(prev->next, node);
+ 
+ 	/* Wait until the lock holder passes the lock down. */
+-	arch_mcs_spin_lock_contended(&node->locked);
++	arch_mcs_spin_lock(&node->locked);
+ }
+ 
+ /*
+@@ -115,7 +115,7 @@ void mcs_spin_unlock(struct mcs_spinlock **lock, struct mcs_spinlock *node)
+ 	}
+ 
+ 	/* Pass lock to next waiter. */
+-	arch_mcs_spin_unlock_contended(&next->locked);
++	arch_mcs_pass_lock(&next->locked, 1);
+ }
+ 
+ #endif /* __LINUX_MCS_SPINLOCK_H */
+diff --git a/kernel/locking/qspinlock.c b/kernel/locking/qspinlock.c
+index 2473f10c6956..804c0fbd6328 100644
+--- a/kernel/locking/qspinlock.c
++++ b/kernel/locking/qspinlock.c
+@@ -470,7 +470,7 @@ void queued_spin_lock_slowpath(struct qspinlock *lock, u32 val)
+ 		WRITE_ONCE(prev->next, node);
+ 
+ 		pv_wait_node(node, prev);
+-		arch_mcs_spin_lock_contended(&node->locked);
++		arch_mcs_spin_lock(&node->locked);
+ 
+ 		/*
+ 		 * While waiting for the MCS lock, the next pointer may have
+@@ -549,7 +549,7 @@ void queued_spin_lock_slowpath(struct qspinlock *lock, u32 val)
+ 	if (!next)
+ 		next = smp_cond_load_relaxed(&node->next, (VAL));
+ 
+-	arch_mcs_spin_unlock_contended(&next->locked);
++	arch_mcs_pass_lock(&next->locked, 1);
+ 	pv_kick_node(lock, next);
+ 
+ release:
+diff --git a/kernel/locking/qspinlock_paravirt.h b/kernel/locking/qspinlock_paravirt.h
+index e84d21aa0722..e98079414671 100644
+--- a/kernel/locking/qspinlock_paravirt.h
++++ b/kernel/locking/qspinlock_paravirt.h
+@@ -368,7 +368,7 @@ static void pv_kick_node(struct qspinlock *lock, struct mcs_spinlock *node)
+ 	 *
+ 	 * Matches with smp_store_mb() and cmpxchg() in pv_wait_node()
+ 	 *
+-	 * The write to next->locked in arch_mcs_spin_unlock_contended()
++	 * The write to next->locked in arch_mcs_pass_lock()
+ 	 * must be ordered before the read of pn->state in the cmpxchg()
+ 	 * below for the code to work correctly. To guarantee full ordering
+ 	 * irrespective of the success or failure of the cmpxchg(),
+-- 
+2.11.0 (Apple Git-81)
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
