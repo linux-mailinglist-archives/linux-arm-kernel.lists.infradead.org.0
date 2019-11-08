@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CA56F52CF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:46:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE39BF52CE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:46:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=J0OBUtIlsELn0pp+06NIiKEll4LDypPzq213aSDX/G8=; b=fH1
-	UB8Z1lMDdonh02K2HElNL00HtYT+tkt7ZSjXguhMlWxF60Wbh6aEVyf1TxpfdSgpgSPCwYyue/Fct
-	H8Vbj+ivULFxmgzxzkhIL7j6yirp2soF6Osd7lbjAYFq9ZSAIbAjHxYYZzfOk/His/xq9D3y4+q1p
-	lJiISYXXVoBU/0AR5KJRZGT5qHkS9yZVSN6wU9xHQiuMXKdqRyMm4P8yA3+omljXRg7uEJQ34UFi6
-	gTY+/GLKrzAIDe2MrllPNHjiXGDUFbYYrefuEgMayPAycuubGvkPAvXpMPB3gcOD/cxm3Tq1/TXbn
-	UQJQqCN6WsUv4Gbsoxisy3PP4H/02FQ==;
+	References:List-Owner; bh=VlUlXf4RBZ7k6ZXqAUMBmpz8VOCwy9lAD3vezexVAfA=; b=AZL
+	8i4VINNEkF8ZszzgEGqi1XgK5pADx++jJLllaUhiqlwpbmIbjDcJSiZrmVSX0Ty0Q1HPXyGfNrJKf
+	nIwUb9BEb7YcptHWcnh5IBQ9zccUvO0ZwqvPv+HLAOyjH3sBNHnOe9L45XxdhbF8OOiPEJKRY04GE
+	8aZ+fe237PAk+iE+6uZbGruh/jc5gchqfg0w6NlssuGOFIvvuVJAqLH+FHEI/inVmlY371ix/hrpV
+	+Ytsi9Le+sbp4YimswOHmuWzhPBOMXNqvITSeZcSq097T2yP0imvncWhkoixfu6zhcLpVahkvY876
+	J2SZHmcVZilFKBvExOOiZHhI++5VhWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT8LF-0001Md-05; Fri, 08 Nov 2019 17:46:37 +0000
+	id 1iT8Ku-0000yt-9I; Fri, 08 Nov 2019 17:46:16 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT8KQ-0000ne-CV
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:45:49 +0000
+ id 1iT8KQ-0000ng-DK
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:45:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=DMUVFTdCbC7Gxi5sCnOhp5LoH9fF6ZNavOGSLsOo8EM=; b=MpCdeyALQ1b8
- l1ZcztoM2Sh6pgjU25g3x65GQiOK7DXRBDAJE6pRhpukakFQa62cdk88IKAiOi580CCJwZqi2sxxm
- Az+lY1mgVs/u64EMr2FrFElRGnTnWbLtXIrS6fzLHSkymN3nqr5hE1dFG3ejgTvAbc5FWEvntFH4l
- u0zi8=;
+ List-Archive; bh=nARUHk6NPWqiybUpjTO1cBzFlZvx1wgLOH8dJtePUDI=; b=Lfe4wb5hoS93
+ SELbSpijrC1Udf9xrjfqvTbKDOMC31fRJjh9TDINHDdM+qCl3zJL0i5FWsRL15kAVKRkFqwW/TcbB
+ h+LHqJLGq5Y+mb5n19coA4PlsSicFJZo2H8z0mfFqKs1RBjc9V181LCV1XZymXa/EtsXNZnVB1hH8
+ chbks=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iT8KN-0007qI-Rn; Fri, 08 Nov 2019 17:45:43 +0000
+ id 1iT8KO-0007qK-1y; Fri, 08 Nov 2019 17:45:44 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 40D712741702; Fri,  8 Nov 2019 17:45:43 +0000 (GMT)
+ id 7A0102741703; Fri,  8 Nov 2019 17:45:43 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Applied "spi: zynq-qspi: Do the actual hardware initialization later
- in the probe" to the spi tree
-In-Reply-To: <20191108140744.1734-7-miquel.raynal@bootlin.com>
+Subject: Applied "spi: zynq-qspi: Clarify the select chip function" to the spi
+ tree
+In-Reply-To: <20191108140744.1734-6-miquel.raynal@bootlin.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191108174543.40D712741702@ypsilon.sirena.org.uk>
+Message-Id: <20191108174543.7A0102741703@ypsilon.sirena.org.uk>
 Date: Fri,  8 Nov 2019 17:45:43 +0000 (GMT)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_094546_554459_16D636C9 
-X-CRM114-Status: GOOD (  17.14  )
+X-CRM114-CacheID: sfid-20191108_094546_552354_FEF91C77 
+X-CRM114-Status: GOOD (  15.95  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -92,7 +92,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: zynq-qspi: Do the actual hardware initialization later in the probe
+   spi: zynq-qspi: Clarify the select chip function
 
 has been applied to the spi tree at
 
@@ -117,56 +117,69 @@ to this mail.
 Thanks,
 Mark
 
-From 8f16292d8b492ca6b0d58ac0769de1c1a7bbb544 Mon Sep 17 00:00:00 2001
+From dffaf7439979e6dbb820633bb4f44dcadcac847e Mon Sep 17 00:00:00 2001
 From: Miquel Raynal <miquel.raynal@bootlin.com>
-Date: Fri, 8 Nov 2019 15:07:43 +0100
-Subject: [PATCH] spi: zynq-qspi: Do the actual hardware initialization later
- in the probe
+Date: Fri, 8 Nov 2019 15:07:42 +0100
+Subject: [PATCH] spi: zynq-qspi: Clarify the select chip function
 
-Supporting more than one CS will need some tweaking of the linear
-configuration register which is (rightfully) initialized in the
-hardware initialization helper. The extra initialization needs the
-knowledge of the actual number of CS, which is retrieved by reading
-the value of the num-cs DT property.
+The code used to assert and de-assert a chip select line is very
+complicated for no reason. Simplify the logic by either setting or
+resetting the concerned bit, which actually only changes an electrical
+state.
 
-As the initialization helper is called pretty early and might be
-called much later in the probe without side effect, let's delay it a
-bit so that the number of CS will be available when running this
-helper. This way, adding support for multiple CS lines in a next patch
-will be eased.
+Update the comment to reflect that there is no possibility to actually
+choose a CS as the default (CS0) will be driven in any case.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Link: https://lore.kernel.org/r/20191108140744.1734-7-miquel.raynal@bootlin.com
+Link: https://lore.kernel.org/r/20191108140744.1734-6-miquel.raynal@bootlin.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-zynq-qspi.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/spi/spi-zynq-qspi.c | 17 ++++++-----------
+ 1 file changed, 6 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/spi/spi-zynq-qspi.c b/drivers/spi/spi-zynq-qspi.c
-index 80e51c894eaa..e76f9c9738f0 100644
+index 70ecefd817f7..80e51c894eaa 100644
 --- a/drivers/spi/spi-zynq-qspi.c
 +++ b/drivers/spi/spi-zynq-qspi.c
-@@ -657,9 +657,6 @@ static int zynq_qspi_probe(struct platform_device *pdev)
- 		goto clk_dis_pclk;
- 	}
+@@ -50,7 +50,6 @@
+ #define ZYNQ_QSPI_CONFIG_BDRATE_MASK	GENMASK(5, 3) /* Baud Rate Mask */
+ #define ZYNQ_QSPI_CONFIG_CPHA_MASK	BIT(2) /* Clock Phase Control */
+ #define ZYNQ_QSPI_CONFIG_CPOL_MASK	BIT(1) /* Clock Polarity Control */
+-#define ZYNQ_QSPI_CONFIG_SSCTRL_MASK	BIT(10) /* Slave Select Mask */
+ #define ZYNQ_QSPI_CONFIG_FWIDTH_MASK	GENMASK(7, 6) /* FIFO width */
+ #define ZYNQ_QSPI_CONFIG_MSTREN_MASK	BIT(0) /* Master Mode */
  
--	/* QSPI controller initializations */
--	zynq_qspi_init_hw(xqspi);
--
- 	xqspi->irq = platform_get_irq(pdev, 0);
- 	if (xqspi->irq <= 0) {
- 		ret = -ENXIO;
-@@ -690,6 +687,10 @@ static int zynq_qspi_probe(struct platform_device *pdev)
- 	ctlr->setup = zynq_qspi_setup_op;
- 	ctlr->max_speed_hz = clk_get_rate(xqspi->refclk) / 2;
- 	ctlr->dev.of_node = np;
-+
-+	/* QSPI controller initializations */
-+	zynq_qspi_init_hw(xqspi);
-+
- 	ret = devm_spi_register_controller(&pdev->dev, ctlr);
- 	if (ret) {
- 		dev_err(&pdev->dev, "spi_register_master failed\n");
+@@ -62,7 +61,7 @@
+  */
+ #define ZYNQ_QSPI_CONFIG_BAUD_DIV_MAX	GENMASK(2, 0) /* Baud rate maximum */
+ #define ZYNQ_QSPI_CONFIG_BAUD_DIV_SHIFT	3 /* Baud rate divisor shift */
+-#define ZYNQ_QSPI_CONFIG_PCS		10 /* Peripheral Chip Select */
++#define ZYNQ_QSPI_CONFIG_PCS		BIT(10) /* Peripheral Chip Select */
+ 
+ /*
+  * QSPI Interrupt Registers bit Masks
+@@ -287,16 +286,12 @@ static void zynq_qspi_chipselect(struct spi_device *spi, bool assert)
+ 	struct zynq_qspi *xqspi = spi_controller_get_devdata(ctlr);
+ 	u32 config_reg;
+ 
++	/* Ground the line to assert the CS */
+ 	config_reg = zynq_qspi_read(xqspi, ZYNQ_QSPI_CONFIG_OFFSET);
+-	if (assert) {
+-		/* Select the slave */
+-		config_reg &= ~ZYNQ_QSPI_CONFIG_SSCTRL_MASK;
+-		config_reg |= (((~(BIT(spi->chip_select))) <<
+-				ZYNQ_QSPI_CONFIG_PCS) &
+-				ZYNQ_QSPI_CONFIG_SSCTRL_MASK);
+-	} else {
+-		config_reg |= ZYNQ_QSPI_CONFIG_SSCTRL_MASK;
+-	}
++	if (assert)
++		config_reg &= ~ZYNQ_QSPI_CONFIG_PCS;
++	else
++		config_reg |= ZYNQ_QSPI_CONFIG_PCS;
+ 
+ 	zynq_qspi_write(xqspi, ZYNQ_QSPI_CONFIG_OFFSET, config_reg);
+ }
 -- 
 2.20.1
 
