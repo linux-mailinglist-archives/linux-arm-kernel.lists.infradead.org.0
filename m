@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F402F5A89
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 23:07:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4F05F5A95
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 23:07:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sulTNG5TtlEfHRiXawq/S7QRu8pXIAdDRVwe9InXNIM=; b=QlOl6GvinnDqSe
-	vjMl9ZFaX+IrufBXbbG0fvxXd46CaB7Sn+ZpWQnAJwen3/0e85MxSzUJFX2ibD01Zf/u+pMBqiqcR
-	+AkDwpAQOI6A5AfYv3zlAYz5BGw/ETX8d8yecRnBI3/bDEI3370jRqE4BxB9w1eJSFAKKj1Q/vyXu
-	yh7kXlcq77J2zS3pWM0cuOhkWS1bFHSigc9OosG0OcdPDnGpFPSfH7Kc6tl0xYwHWM8jeqX6KORfH
-	UXv1Gj+dSuNSlO/+DVdp/2cLhALcMIrmRX7hhhtCLfZbaeNe6Mv0vYaiFbjmdD6IN2+szZTh3Gnd7
-	QSvdJ01t9khdq2XS4Jeg==;
+	List-Owner; bh=pX83VvuH2P+aU7MPLpuwYqawhTvXzxZrBo1tNv5jSHY=; b=Wo+ekhSUJ+++kD
+	VuYzP43xp0VykIdDOKsoGZ/1n/wOTtI4d8BzeuybwN1PlETiD4ORy4dFwoDheXOZmqwOa/i7tP4N1
+	p5S+Y4gQsU4s6Eafcu3vQp7DTyUkEyIN/B/RyN9+lVz13eWTflVYR2LGR4GBZ3AFN4U3jPPDROaMc
+	yGiM3Ma3PYGIYXFyUYjeaqDWhD+rROBOOIP3K/hkT275nrW5Xvuh3oEnTtsbNIVlAaFXuTjy/IDnj
+	0QtulhbG9hRZZ5WdBnbOjIsmgApgI9togeF+RGD6XI1pdBR4iMrzK6QCaJaC675SvVcyRQN3hNsCv
+	XN3q2Yq6Cr7VarTSkLzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTCPf-0003e5-Hv; Fri, 08 Nov 2019 22:07:27 +0000
+	id 1iTCQ0-0003xQ-HR; Fri, 08 Nov 2019 22:07:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTCPV-0003ca-HW; Fri, 08 Nov 2019 22:07:18 +0000
+ id 1iTCPg-0003nk-D1; Fri, 08 Nov 2019 22:07:29 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 150422084D;
- Fri,  8 Nov 2019 22:07:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DA7F321848;
+ Fri,  8 Nov 2019 22:07:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573250837;
- bh=F9598YJ7umblSSscgKD6bsQHkgKqFEeeQhpYqMVujj0=;
+ s=default; t=1573250848;
+ bh=gLwm52RY9G/9492fo3p2MflMQXw59u4hMZtGnCihRjI=;
  h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
- b=qmmxDqIczTRF6/bWq+R0BzxMQqujVYIpWuBVIn4pclepcyJjht82PY/zGNpM0nanz
- 5aTU5BjMKzw1wakefOXN5VOhuvdNk+hHjnUMq6g6sYWZPfVEoq0pxJ5aK6ccWo4sGr
- R0J5rqpNkhSakh/X8E9tTnOwlwYQPaYhRN1B6tp0=
+ b=nX5Fa3AXOotSVNgz+B4jYyonyO9RE9BQ3kFBxu0zn8Q18WcuTvegmFPzPBt4AW4CJ
+ EfRdNBOoGtyKd3Ry7sXe2l1NJGVMvJNNVFu2CjeLACYvPiXqeKhadRBcYuAF0k/+qF
+ yZ3gj8Or59VrVJqO3VE5/YX41ow5SrsYAYpopDOE=
 MIME-Version: 1.0
-In-Reply-To: <20191027162328.1177402-2-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20191027162328.1177402-4-martin.blumenstingl@googlemail.com>
 References: <20191027162328.1177402-1-martin.blumenstingl@googlemail.com>
- <20191027162328.1177402-2-martin.blumenstingl@googlemail.com>
+ <20191027162328.1177402-4-martin.blumenstingl@googlemail.com>
 From: Stephen Boyd <sboyd@kernel.org>
 To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
  jbrunet@baylibre.com, khilman@baylibre.com, linux-amlogic@lists.infradead.org,
  narmstrong@baylibre.com
-Subject: Re: [PATCH v2 1/5] dt-bindings: clock: add the Amlogic Meson8 DDR
- clock controller binding
+Subject: Re: [PATCH v2 3/5] clk: meson: meson8b: use of_clk_hw_register to
+ register the clocks
 User-Agent: alot/0.8.1
-Date: Fri, 08 Nov 2019 14:07:16 -0800
-Message-Id: <20191108220717.150422084D@mail.kernel.org>
+Date: Fri, 08 Nov 2019 14:07:27 -0800
+Message-Id: <20191108220727.DA7F321848@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_140717_601438_639BD611 
-X-CRM114-Status: UNSURE (   7.57  )
+X-CRM114-CacheID: sfid-20191108_140728_480935_6B36C494 
+X-CRM114-Status: UNSURE (   6.04  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,7 +80,6 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Rob Herring <robh@kernel.org>,
  Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
  linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
@@ -89,18 +88,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Martin Blumenstingl (2019-10-27 09:23:24)
-> Amlogic Meson8, Meson8b and Meson8m2 SoCs have a DDR clock controller in
-> the MMCBUS registers. There is no public documentation on this, but the
-> GPL u-boot sources from the Amlogic BSP show that:
-> - it uses the same XTAL input as the main clock controller
-> - it contains a PLL which seems to be implemented just like the other
->   PLLs in this SoC
-> - there is a power-of-two PLL post-divider
+Quoting Martin Blumenstingl (2019-10-27 09:23:26)
+> Switch from clk_hw_register to of_clk_hw_register so we can use
+> clk_parent_data.fw_name. This will be used to get the "xtal", "ddr_pll"
+> and possibly others from the .dtb.
 > 
-> Add the documentation and header file for this DDR clock controller.
-> 
-> Reviewed-by: Rob Herring <robh@kernel.org>
 > Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 > ---
 
