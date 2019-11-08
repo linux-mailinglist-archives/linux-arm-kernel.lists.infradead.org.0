@@ -2,78 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35DE6F41E4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 09:14:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 294A6F4215
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 09:29:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M1wOu4wKLL0ud9iSScrj/IvDYVZRTMfq7Sw1Ja7iT6Q=; b=ekOiE/SEXNW6ee
-	6JCTUtboZa8+KZJ44q52K1LFWIFz5wp7TbMcJCQPEcGdt7nchEQ6ovzeTfDrpbhEeU1FN9btnoWkb
-	PdkPPqULEgEaej7789WKuFNvr07LZiVnHrE6S5WygGxFImvSxBNX8z1PH+3rOgxNpDI4oR7gFvDhC
-	fO/6Zm5tS/e0RFpJ3F03sQ4n6yKB55NWfGfhK1WxGiWP+6BN0eRN/PLpVenvcr3DOitUG3kCCzZf8
-	DY/efd6QcdnjPHtmpr0h4hc4gT/v03hmd09SYEM3fB+7NuXdN6RFEOMZMmy/bl/3Hz4yZnC+ZBYfK
-	C6tkhI1sUuKimJSKdAqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=01DOlpovK3C04O0L2nHT4KgGmCZtvAhEFVmcvFdWKXI=; b=nhE/3MddezjThfs14vaG5jSFO
+	8kyN3Z8Ofoli72w7h/oOxp4w+i5LLX8bxAnvNn6NCCEWokqsMRpdnPvMzJMwwq9poIJ7RhnsiI6Uj
+	Pjub47hZ8WySd1CVtz/lt3OFLk8PGUMXmSfme+/JuLgPsON73p1T/grAM2EkUhsr1l76tFkE/aFoV
+	lAX6ml3iXM7lAsXIH+KgFMYKfNx0G8vARDwJbPvlU9HSsgV6ZCnOKewxJKcrpU3rxJsXsftdX1Tlt
+	oBpEG6/ajpzYmix6UdFrlsWaft35rAqu71xbbnswrpf2BmNGnTfIyKl/RyvizyOgwxuMUrxYKmRTs
+	LR4zxenAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSzPE-0008Vs-Ou; Fri, 08 Nov 2019 08:14:08 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iSze2-0005SS-EW; Fri, 08 Nov 2019 08:29:26 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSzP3-0008VA-Lq; Fri, 08 Nov 2019 08:13:58 +0000
-X-UUID: e281e83cdbf54713aeeb88feaa1d44de-20191108
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=xBlkyXC6QXDUVtiAo1Ep4CtUp9rzUNb55vuuwtwgRxQ=; 
- b=gaNzLAbHUbPc8cHrLJOCkW0kG80ufIGtRF9iUaqDaRtsVQh8ow/lZUTpXlzHkhwouwrhoa21FFfCtS57v/v6pwjhTJvW4jAuON/iUmw/aSuFcmWC7kIVENw0Wf65Tk2ZBpSHD7KJxJVMtyTRWB33G0p+Oa/7YKSqEFo251Z65m0=;
-X-UUID: e281e83cdbf54713aeeb88feaa1d44de-20191108
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <mark-mc.lee@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 279056674; Fri, 08 Nov 2019 00:13:38 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 8 Nov 2019 00:13:28 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 8 Nov 2019 16:13:26 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 8 Nov 2019 16:13:26 +0800
-Message-ID: <1573200809.10348.9.camel@mtksdccf07>
-Subject: Re: [PATCH net] net: ethernet: mediatek: rework GDM setup flow
-From: mtk15127 <Mark-MC.Lee@mediatek.com>
-To: David Miller <davem@davemloft.net>
-Date: Fri, 8 Nov 2019 16:13:29 +0800
-In-Reply-To: <20191107.154922.1123372183066604716.davem@davemloft.net>
-References: <20191107105135.1403-1-Mark-MC.Lee@mediatek.com>
- <20191107.154922.1123372183066604716.davem@davemloft.net>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1iSzdt-0005RW-Tg
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 08:29:20 +0000
+Received: from aptenodytes (lfbn-tou-1-421-123.w86-206.abo.wanadoo.fr
+ [86.206.246.123])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 8DD8924000F;
+ Fri,  8 Nov 2019 08:29:07 +0000 (UTC)
+Date: Fri, 8 Nov 2019 09:29:07 +0100
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH] phy: allwinner: Fix GENMASK misuse
+Message-ID: <20191108082907.GA848664@aptenodytes>
+References: <20191020134229.1216351-3-megous@megous.com>
+ <20191107204645.13739-1-rikard.falkeborn@gmail.com>
+ <20191107233914.GW25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20191107233914.GW25745@shell.armlinux.org.uk>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_001357_723362_F09AB197 
-X-CRM114-Status: GOOD (  10.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191108_002918_092446_6E1F3316 
+X-CRM114-Status: GOOD (  14.95  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.230 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,43 +62,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, andrew@lunn.ch, jakub.kicinski@netronome.com,
- devicetree@vger.kernel.org, netdev@vger.kernel.org, sean.wang@mediatek.com,
- linux-kernel@vger.kernel.org, opensource@vdorst.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, john@phrozen.org, matthias.bgg@gmail.com,
- Mark-MC.Lee@mediatek.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: megous@megous.com, mark.rutland@arm.com, arnd@arndb.de,
+ devicetree@vger.kernel.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, Rikard Falkeborn <rikard.falkeborn@gmail.com>,
+ kishon@ti.com, linux-sunxi@googlegroups.com, robh+dt@kernel.org,
+ mripard@kernel.org, tglx@linutronix.de, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org, icenowy@aosc.io
+Content-Type: multipart/mixed; boundary="===============9139196263510158391=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-11-07 at 15:49 -0800, David Miller wrote:
-> From: MarkLee <Mark-MC.Lee@mediatek.com>
-> Date: Thu, 7 Nov 2019 18:51:35 +0800
-> 
-> > +	for (i = 0; i < 2; i++) {
-> 
-> This is a regression, because in the existing code...
-> 
-> > -	for (i = 0; i < MTK_MAC_COUNT; i++) {
-> 
-> the proper macro is used instead of a magic constant.
- Yes, you are right, I make a mistake here, will correct it in the next
-patch
-> 
-> You're doing so many things in one change, it's hard to review
-> and audit.
-> 
-> If you're going to consolidate code, do that only in one change.
-> 
-> Then make other functional changes such as putting the chip into
-> GDMA_DROP_ALL mode during the stop operation etc.
-Thanks for your suggestion, I will separate these changes into
-a patch series to make every change to be more clear for its 
-purpose.
 
+--===============9139196263510158391==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="vtzGhvizbBRQ85DL"
+Content-Disposition: inline
+
+
+--vtzGhvizbBRQ85DL
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+On Thu 07 Nov 19, 23:39, Russell King - ARM Linux admin wrote:
+> On Thu, Nov 07, 2019 at 09:46:45PM +0100, Rikard Falkeborn wrote:
+> > Arguments are supposed to be ordered high then low.
+> >=20
+> > Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
+> > ---
+> > Spotted while trying to add compile time checks of GENMASK arguments.
+> > Patch has only been compile tested.
+>=20
+> My feeling, personally, is that GENMASK() really isn't worth the pain
+> it causes.  Can we instead get rid of this thing and just use easier
+> to understand and less error-prone hex masks please?
+
+One advantage it has is that is matches the order in which bit fields are
+usually given in datasheets, so I personally found that it makes verificati=
+on
+of fields much more straightforward and immediate.
+
+My 2 cents are that it makes sense for hardware registers.
+
+Note that I have recently introduced a SHIFT_AND_MASK_BITS macro[0] for a V=
+4L2
+driver, that I (and Mauro) would like to move to linux/bits.h eventually.
+
+> I don't care what anyone else says, personally I'm going to stick with
+> using hex masks as I find them way easier to get right first time than
+> a problematical opaque macro - and I really don't want the effort of
+> finding out that I've got the arguments wrong when I build it.  It's
+> just _way_ easier and less error prone to use a hex mask straight off.
+
+I guess it's a matter of personal habit.
+
+[0]: https://git.linuxtv.org/media_tree.git/commit/?id=3D06eff2150d4db991ca=
+236f3d05a9dc0101475aea
+
+Cheers,
+
+Paul
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--vtzGhvizbBRQ85DL
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl3FJ1MACgkQ3cLmz3+f
+v9HD6QgAnn9qVrsChDkN0XT8+hfqz14mCavgmtmc/ATR+52Gp7hcnN1ADnJ1lK5D
+Fg3+wdQMcs3sxpVFFPvfr1mNlGy1/OCSUerruFRSXwj+oMdv3E5foi7Y5GdrS5G2
+bUFCVGT9h5MS7TrwHoiLV7I8ZgRg2/j1MyPWH4sgjSpres2BwU+0vkxh8DvJc+Hm
+tJx1mzGPSFsA+RoRHdfRtSAE3iDcNibJXnct/qz6s+wtZRT/lTrAeoO2Cd6683dU
+FbegbM5v+j7dhZpZ7bkbgaKrCd9EAfKYpu0WP1YOUEGes00K5J4fhvk9RpA/+l9p
+l6BhN4YGDy1HqSdqxIzSiN4JXUNtag==
+=aPHq
+-----END PGP SIGNATURE-----
+
+--vtzGhvizbBRQ85DL--
+
+
+--===============9139196263510158391==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============9139196263510158391==--
+
