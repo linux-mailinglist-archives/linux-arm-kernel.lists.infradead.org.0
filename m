@@ -2,62 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E9BBF3EE3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 05:27:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DFC4F3EED
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 05:30:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TJP7zHNuCytxoq/YKaPnFZjDxWUR1Ou4UlrOtQXwOKI=; b=VmEsDC2Ck5wvQH
-	mWvZpZ4Cir/L2/LDVZsbC5N6vHADIkFeAMxYvCRq5eYo+Pp2oPuYnF0NDoxadjVjuaj3m1f9wmE3x
-	WOy3jyXuQOZwmfp7FlZgFKSQ80w7gcBVZ2boa4XTyPCUC3rUvKQHfFPiFgneNdewcXnCIvWyCNqEl
-	vzAFmw2KSm6nCkcVhEYV261NzwEJOFXmxuOQxGb8WWAljTv1l73PbemaVX/+mDweGKPkNdIyQztQZ
-	LGWT1xipvUFAl22FlJjkii04wDvd5KAOjPx3+raBzvCupje86OG1u2A7Qnt0o5xOuYj9/rX86X9pw
-	2PFok2jXnEXRhZccSQng==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6gCR76lErJP/CRx1ODDRIscorcRLw79ZTejKRwI8KPo=; b=hykGgAKXz4p7TMv8Yig1hQjyK
+	/z8NM6e4A3c6PADHVGM+PTim/Bg8OlkZ+V5hwjLVknQ3+PBibGm/MeLS8bG6RLWA1JoT54XH4Ry38
+	SIkVp/cC9E3Y0rVzdXdNiBkbx5Z1+9irW/stZeaqHWXKP+fuQszKmhbbDMxSkp90df2ITKCFKumoL
+	f0lqke1zgnbxPLM5W6QtdWH7IIh58EAtnHA6BaB/Q9r/fS4i1GtUiPbwnGNgCJlWyCH835BaG56L8
+	PRWXzPQkSLQxaxhG6HM7x9+K33yPta7wAI3hRhkMqpafdgQbPrbdaQJjh/MosE5rB2mwpdSJDVAGa
+	/aVkwYFvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSvrh-0007mF-VJ; Fri, 08 Nov 2019 04:27:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSvrW-0007lL-AF; Fri, 08 Nov 2019 04:27:07 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EFEA630E;
- Thu,  7 Nov 2019 20:27:00 -0800 (PST)
-Received: from [10.163.1.237] (unknown [10.163.1.237])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0B3AF3F6C4;
- Thu,  7 Nov 2019 20:26:43 -0800 (PST)
-Subject: Re: [PATCH V8] mm/debug: Add tests validating architecture page table
- helpers
-To: Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- Andrew Morton <akpm@linux-foundation.org>
-References: <1572240562-23630-1-git-send-email-anshuman.khandual@arm.com>
- <e0aa8d49-5511-15e4-f413-62c99eea4fab@arm.com>
- <e0dc3636-8c6e-0177-9a7f-fefd28c74f27@synopsys.com>
- <dc2746c9-bde4-ac00-88d1-2bd1cea1f105@arm.com>
- <b93ffe1f-b198-a042-ecd4-b0f2b0171f72@synopsys.com>
- <da665683-6946-b411-57f9-e1689d4b50fe@arm.com>
- <c204de13-48e7-015f-1a09-263fce7882f1@synopsys.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <a4c5f1cd-7d9e-0f97-5e0e-19d17adc5b33@arm.com>
-Date: Fri, 8 Nov 2019 09:57:18 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1iSvul-00018k-0D; Fri, 08 Nov 2019 04:30:27 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSvub-00017x-VF; Fri, 08 Nov 2019 04:30:19 +0000
+Received: by mail-pl1-x642.google.com with SMTP id e3so3188462plt.7;
+ Thu, 07 Nov 2019 20:30:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:cc:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding;
+ bh=GEvPrgPPegoWDjxGYmMInikn90DDnMAOw8xBaDl5kZA=;
+ b=pGQ+a/83A9/0Nc2QLG/lrr1EYbt/bjvX3SE4LpTBgZGf0KilWjqO6VeOG6Jwcb1D23
+ fj+jvlUeTjjSw255ZQykSDw3AJVbte/f/cE1oLe8M6sGNMwYNJK9ALY+tjxZheqDchxu
+ uAZMm1A8J8KM9d9f92xRrv1AInfaJSQbOM4UjupIdxR+V8PDnlIAOjTNsXdQqC1CSA9i
+ 7NDAIlAd9wtaEkQI0UHHeMwVQpIhz75MXzB4PVA2lnJTqpyORABxoTq5C4z7RED5Jagj
+ p7JTWMZQtDHju/NCEn/n/ZU5jW56e2cp+KSQRvmhV5kQrLQKAhFZLEAm61D2fgLPindm
+ WN9g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:cc:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding;
+ bh=GEvPrgPPegoWDjxGYmMInikn90DDnMAOw8xBaDl5kZA=;
+ b=J66x3lxlaLjyvkwB42JLrxY7ZTfXeUlRAzivD6d/expJQ0pa/OrWhyt9m+LxQIqvhX
+ a8ao8guKEk1532VhBVt21ixZYEPUBl5JZcT8xBfgCvfxz+yUpKLhQb35IKBxADaxs4dg
+ TTyaqyhSAqBJhFCvmluaN3A7gL/sw6dJkd5mn3xd8OuXvP6PPuv4FAKRwvhXU1xiu+5L
+ l+M76vwsrbhFayvGslIuNJop8BvYjvP7cCQMrN30zo39OKeoTHnu33vk1cevSMMlKkcm
+ yJxsWV/3cponbA+JtmZFWhFQm9NQq2y2UmObukHTjEyzTeBYL0+m3qLpWskB52NYr2Ki
+ HtUw==
+X-Gm-Message-State: APjAAAX94QTh+YVNCYFkv+WIuNOxTt/y5DAhR/mXNyqNyd8N/W0XeAFk
+ TtzWaKLEmMPReV8A+2b8efg=
+X-Google-Smtp-Source: APXvYqwQ686n7vNnzVLImLtqcTfZ3PQU/gu1LdOpnaXjAFca86+mHnqZ1aY/PwV9eAq6yZBUTvdpJw==
+X-Received: by 2002:a17:90a:bf04:: with SMTP id
+ c4mr10812587pjs.5.1573187416969; 
+ Thu, 07 Nov 2019 20:30:16 -0800 (PST)
+Received: from [192.168.1.101] (122-58-182-39-adsl.sparkbb.co.nz.
+ [122.58.182.39])
+ by smtp.gmail.com with ESMTPSA id x70sm4621756pfd.132.2019.11.07.20.30.01
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 07 Nov 2019 20:30:16 -0800 (PST)
+Subject: Re: [PATCH v3 05/13] m68k: mm: use pgtable-nopXd instead of
+ 4level-fixup
+To: Geert Uytterhoeven <geert@linux-m68k.org>, Mike Rapoport <rppt@kernel.org>
+References: <1572850587-20314-1-git-send-email-rppt@kernel.org>
+ <1572850587-20314-6-git-send-email-rppt@kernel.org>
+ <CAMuHMdUG3V7uxzhbetw75vVeobeP0-bQySb3r=0V5XujUF123g@mail.gmail.com>
+ <20191104094748.GB23288@rapoport-lnx>
+ <CAMuHMdVHsNyLxhaxZcVdLvQ1PUnb=2_+ECPWVD0234V+qu+kOw@mail.gmail.com>
+From: Michael Schmitz <schmitzmic@gmail.com>
+Message-ID: <3d908bbf-0469-c53b-dd86-87df98f40ee7@gmail.com>
+Date: Fri, 8 Nov 2019 17:29:58 +1300
+User-Agent: Mozilla/5.0 (X11; Linux ppc; rv:45.0) Gecko/20100101 Icedove/45.4.0
 MIME-Version: 1.0
-In-Reply-To: <c204de13-48e7-015f-1a09-263fce7882f1@synopsys.com>
-Content-Language: en-US
+In-Reply-To: <CAMuHMdVHsNyLxhaxZcVdLvQ1PUnb=2_+ECPWVD0234V+qu+kOw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_202706_442087_0A60B53B 
-X-CRM114-Status: GOOD (  16.73  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191107_203018_031928_EF3E3F8A 
+X-CRM114-Status: GOOD (  12.99  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (schmitzmic[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,114 +103,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
- "linux-sh@vger.kernel.org" <linux-sh@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, James Hogan <jhogan@kernel.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- Dave Hansen <dave.hansen@intel.com>, Paul Mackerras <paulus@samba.org>,
- "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>,
- Dan Williams <dan.j.williams@intel.com>,
- "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, Michael Ellerman <mpe@ellerman.id.au>,
- "x86@kernel.org" <x86@kernel.org>,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- "linux-snps-arc@lists.infradead.org" <linux-snps-arc@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Ingo Molnar <mingo@kernel.org>, Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, Vlastimil Babka <vbabka@suse.cz>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ Linux MM <linux-mm@kvack.org>, sparclinux <sparclinux@vger.kernel.org>,
+ Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
+ Greg Ungerer <gerg@linux-m68k.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Linux-Arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
+ Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>, Sam Creasey <sammy@sammy.net>,
+ Arnd Bergmann <arnd@arndb.de>, Jeff Dike <jdike@addtoit.com>,
+ linux-um@lists.infradead.org, linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "David S. Miller" <davem@davemloft.net>, alpha <linux-alpha@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAxMS8wOC8yMDE5IDEyOjM1IEFNLCBWaW5lZXQgR3VwdGEgd3JvdGU6Cj4gT24gMTEvNi8x
-OSA4OjQ0IFBNLCBBbnNodW1hbiBLaGFuZHVhbCB3cm90ZToKPj4KPj4+Cj4+Pj4gICAqLwo+Pj4+
-IC0jaWZkZWYgQ09ORklHX1RSQU5TUEFSRU5UX0hVR0VQQUdFCj4+Pj4gKyNpZmRlZiBDT05GSUdf
-SEFWRV9BUkNIX1RSQU5TUEFSRU5UX0hVR0VQQUdFCj4+Pj4gICNpbmNsdWRlIDxhc20vaHVnZXBh
-Z2UuaD4KPj4+PiAgI2VuZGlmCj4+PiBUaGlzIGluIHdyb25nLsKgIENPTkZJR19IQVZFX0FSQ0hf
-VFJBTlNQQVJFTlRfSFVHRVBBR0UgaXMgYSBqdXN0IGEgZ2x1ZSB0b2dnbGUsCj4+PiB1c2VkIG9u
-bHkgaW4gS2NvbmZpZyBmaWxlcyAoYW5kIG5vdCBpbiBhbnkgIkMiIGNvZGUpLsKgIEl0IGVuYWJs
-ZXMgZ2VuZXJpYyBLY29uZmlnCj4+PiBjb2RlIHRvIGFsbG93IHZpc2liaWxpdHkgb2YgQ09ORklH
-X1RSQU5TUEFSRU5UX0hVR0VQQUdFIHcvbyBldmVyeSBhcmNoIG5lZWRpbmcgdG8KPj4+IGRvIGEg
-bWUgdG9vLgo+Pj4KPj4+IEkgdGhpbmsgeW91IG5lZWQgdG8gdXNlIENPTkZJR19UUkFOU1BBUkVO
-VF9IVUdFUEFHRSB0byBndWFyZCBhcHByb3ByaWF0ZSB0ZXN0cy4gSQo+Pj4gdW5kZXJzdGFuZCB0
-aGF0IGl0IG9ubHkKPj4gV2UgY2FuIHByb2JhYmx5IHJlcGxhY2UgQ09ORklHX0hBVkVfQVJDSF9U
-UkFOU1BBUkVOVF9IVUdFUEFHRSB3cmFwcGVyIHdpdGgKPj4gQ09ORklHX1RSQU5TUEFSRU5UX0hV
-R0VQQUdFLiBCdXQgQ09ORklHX0hBVkVfQVJDSF9UUkFOU1BBUkVOVF9IVUdFUEFHRV9QVUQKPj4g
-ZXhwbGljaXRseSBkZXBlbmRzIG9uIENPTkZJR19UUkFOU1BBUkVOVF9IVUdFUEFHRSBhcyBhIHBy
-ZXJlcXVpc2l0ZS4gQ291bGQKPj4geW91IHBsZWFzZSBjb25maXJtIGlmIHRoZSBmb2xsb3dpbmcg
-Y2hhbmdlIG9uIHRoaXMgdGVzdCB3aWxsIHdvcmsgb24gQVJDCj4+IHBsYXRmb3JtIGZvciBib3Ro
-IFRIUCBhbmQgIVRIUCBjYXNlcyA/IFRoYW5rIHlvdS4KPj4KPj4gZGlmZiAtLWdpdCBhL21tL2Rl
-YnVnX3ZtX3BndGFibGUuYyBiL21tL2RlYnVnX3ZtX3BndGFibGUuYwo+PiBpbmRleCA2MjFhYzA5
-Li45OWViYzdjIDEwMDY0NAo+PiAtLS0gYS9tbS9kZWJ1Z192bV9wZ3RhYmxlLmMKPj4gKysrIGIv
-bW0vZGVidWdfdm1fcGd0YWJsZS5jCj4+IEBAIC02Nyw3ICs2Nyw3IEBAIHN0YXRpYyB2b2lkIF9f
-aW5pdCBwdGVfYmFzaWNfdGVzdHModW5zaWduZWQgbG9uZyBwZm4sIHBncHJvdF90IHByb3QpCj4+
-ICAJV0FSTl9PTihwdGVfd3JpdGUocHRlX3dycHJvdGVjdChwdGUpKSk7Cj4+ICB9Cj4+ICAKPj4g
-LSNpZmRlZiBDT05GSUdfSEFWRV9BUkNIX1RSQU5TUEFSRU5UX0hVR0VQQUdFCj4+ICsjaWZkZWYg
-Q09ORklHX1RSQU5TUEFSRU5UX0hVR0VQQUdFCj4+ICBzdGF0aWMgdm9pZCBfX2luaXQgcG1kX2Jh
-c2ljX3Rlc3RzKHVuc2lnbmVkIGxvbmcgcGZuLCBwZ3Byb3RfdCBwcm90KQo+PiAgewo+PiAgCXBt
-ZF90IHBtZCA9IHBmbl9wbWQocGZuLCBwcm90KTsKPj4gQEAgLTg1LDkgKzg1LDYgQEAgc3RhdGlj
-IHZvaWQgX19pbml0IHBtZF9iYXNpY190ZXN0cyh1bnNpZ25lZCBsb25nIHBmbiwgcGdwcm90X3Qg
-cHJvdCkKPj4gIAkgKi8KPj4gIAlXQVJOX09OKCFwbWRfYmFkKHBtZF9ta2h1Z2UocG1kKSkpOwo+
-PiAgfQo+PiAtI2Vsc2UKPj4gLXN0YXRpYyB2b2lkIF9faW5pdCBwbWRfYmFzaWNfdGVzdHModW5z
-aWduZWQgbG9uZyBwZm4sIHBncHJvdF90IHByb3QpIHsgfQo+PiAtI2VuZGlmCj4+ICAKPj4gICNp
-ZmRlZiBDT05GSUdfSEFWRV9BUkNIX1RSQU5TUEFSRU5UX0hVR0VQQUdFX1BVRAo+PiAgc3RhdGlj
-IHZvaWQgX19pbml0IHB1ZF9iYXNpY190ZXN0cyh1bnNpZ25lZCBsb25nIHBmbiwgcGdwcm90X3Qg
-cHJvdCkKPj4gQEAgLTExMiw2ICsxMDksMTAgQEAgc3RhdGljIHZvaWQgX19pbml0IHB1ZF9iYXNp
-Y190ZXN0cyh1bnNpZ25lZCBsb25nIHBmbiwgcGdwcm90X3QgcHJvdCkKPj4gICNlbHNlCj4+ICBz
-dGF0aWMgdm9pZCBfX2luaXQgcHVkX2Jhc2ljX3Rlc3RzKHVuc2lnbmVkIGxvbmcgcGZuLCBwZ3By
-b3RfdCBwcm90KSB7IH0KPj4gICNlbmRpZgo+PiArI2Vsc2UKPj4gK3N0YXRpYyB2b2lkIF9faW5p
-dCBwbWRfYmFzaWNfdGVzdHModW5zaWduZWQgbG9uZyBwZm4sIHBncHJvdF90IHByb3QpIHsgfQo+
-PiArc3RhdGljIHZvaWQgX19pbml0IHB1ZF9iYXNpY190ZXN0cyh1bnNpZ25lZCBsb25nIHBmbiwg
-cGdwcm90X3QgcHJvdCkgeyB9Cj4+ICsjZW5kaWYKPiAKPiBGYWlscyB0byBidWlsZCBmb3IgVEhQ
-IGNhc2Ugc2luY2UKPiAKPiBDT05GSUdfVFJBTlNQQVJFTlRfSFVHRVBBR0U9eQo+IENPTkZJR19I
-QVZFX0FSQ0hfVFJBTlNQQVJFTlRfSFVHRVBBR0VfUFVEPW4KPiAKPiAuLi9tbS9kZWJ1Z192bV9w
-Z3RhYmxlLmM6MTEyOjIwOiBlcnJvcjogcmVkZWZpbml0aW9uIG9mIOKAmHBtZF9iYXNpY190ZXN0
-c+KAmQo+IAoKSG1tLCByZWFsbHkgPyBXaXRoIGFybTY0IGRlZmNvbmZpZyB3ZSBoYXZlIHRoZSBz
-YW1lIGRlZmF1bHQgY29tYmluYXRpb24Kd2hlcmUgaXQgYnVpbGRzLgoKQ09ORklHX1RSQU5TUEFS
-RU5UX0hVR0VQQUdFPXkKQ09ORklHX0hBVkVfQVJDSF9UUkFOU1BBUkVOVF9IVUdFUEFHRT15CkNP
-TkZJR19IQVZFX0FSQ0hfVFJBTlNQQVJFTlRfSFVHRVBBR0VfUFVEPW4JLyogSXQgc2hvdWxkIG5v
-dCBldmVuIGFwcGVhciAqLwoKV2l0aCB0aGUgYWJvdmUgY2hhbmdlLCB3ZSBoYXZlIG5vdwoKI2lm
-ZGVmIENPTkZJR19UUkFOU1BBUkVOVF9IVUdFUEFHRQpzdGF0aWMgdm9pZCBfX2luaXQgcG1kX2Jh
-c2ljX3Rlc3RzKHVuc2lnbmVkIGxvbmcgcGZuLCBwZ3Byb3RfdCBwcm90KQp7Ci0tLS0KLS0tLQp9
-CgojaWZkZWYgQ09ORklHX0hBVkVfQVJDSF9UUkFOU1BBUkVOVF9IVUdFUEFHRV9QVUQKc3RhdGlj
-IHZvaWQgX19pbml0IHB1ZF9iYXNpY190ZXN0cyh1bnNpZ25lZCBsb25nIHBmbiwgcGdwcm90X3Qg
-cHJvdCkKewotLS0tCi0tLS0KfQojZWxzZSAvKiAhQ09ORklHX0hBVkVfQVJDSF9UUkFOU1BBUkVO
-VF9IVUdFUEFHRV9QVUQgKi8Kc3RhdGljIHZvaWQgX19pbml0IHB1ZF9iYXNpY190ZXN0cyh1bnNp
-Z25lZCBsb25nIHBmbiwgcGdwcm90X3QgcHJvdCkgeyB9CiNlbmRpZgojZWxzZQkvKiAhQ09ORklH
-X1RSQU5TUEFSRU5UX0hVR0VQQUdFICovCnN0YXRpYyB2b2lkIF9faW5pdCBwbWRfYmFzaWNfdGVz
-dHModW5zaWduZWQgbG9uZyBwZm4sIHBncHJvdF90IHByb3QpIHsgfQpzdGF0aWMgdm9pZCBfX2lu
-aXQgcHVkX2Jhc2ljX3Rlc3RzKHVuc2lnbmVkIGxvbmcgcGZuLCBwZ3Byb3RfdCBwcm90KSB7IH0K
-I2VuZGlmCgpXaGVuICFDT05GSUdfVFJBTlNQQVJFTlRfSFVHRVBBR0UKCi0gRHVtbXkgZGVmaW5p
-dGlvbnMgZm9yIHBtZF9iYXNpY190ZXN0cygpIGFuZCBwdWRfYmFzaWNfdGVzdHMoKQoKV2hlbiBD
-T05GSUdfVFJBTlNQQVJFTlRfSFVHRVBBR0UgYW5kICFDT05GSUdfSEFWRV9BUkNIX1RSQU5TUEFS
-RU5UX0hVR0VQQUdFX1BVRAoKLSBBY3R1YWwgcG1kX2Jhc2ljX3Rlc3RzKCkgYW5kIGR1bW15IHB1
-ZF9iYXNpY190ZXN0cygpCgpXaGVuIENPTkZJR19UUkFOU1BBUkVOVF9IVUdFUEFHRSBhbmQgQ09O
-RklHX0hBVkVfQVJDSF9UUkFOU1BBUkVOVF9IVUdFUEFHRV9QVUQKCi0gQWN0dWFsIHBtZF9iYXNp
-Y190ZXN0cygpIGFuZCBwdWRfYmFzaWNfdGVzdHMoKQoKVGVzdGVkIHRoaXMgb24gYXJtNjQgd2hp
-Y2ggZG9lcyBub3QgaGF2ZSBDT05GSUdfSEFWRV9BUkNIX1RSQU5TUEFSRU5UX0hVR0VQQUdFX1BV
-RApmb3IgVEhQIGFuZCAhVEhQIGFuZCBvbiB4ODYgd2hpY2ggaGFzIENPTkZJR19IQVZFX0FSQ0hf
-VFJBTlNQQVJFTlRfSFVHRVBBR0VfUFVECmZvciBUSFAgYW5kICFUSFAgd2hpY2ggYmFzaWNhbGx5
-IGNvdmVyZWQgYWxsIGNvbWJpbmF0aW9uIGZvciB0aGVzZSBjb25maWdzLgoKSXMgdGhlcmUgc29t
-ZXRoaW5nIEkgYW0gc3RpbGwgbWlzc2luZyBpbiBwbGFpbiBzaWdodCA6KQoKLSBBbnNodW1hbgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+Hi Geert,
+
+Am 04.11.2019 um 22:53 schrieb Geert Uytterhoeven:
+>>> This indeed boots fine on ARAnyM, which emulates on 68040.
+>>> It would be good to have some boot testing on '020/030, too.
+>>
+>> To be honest, I have no idea how to to that :)
+>
+> Sure. This was more a request for the fellow m68k users.
+> But don't worry too much about it.  If it breaks '020/'030, we can fix
+> that later.
+
+Boots fine on 030, too.
+
+Cheers,
+
+	Michael
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
