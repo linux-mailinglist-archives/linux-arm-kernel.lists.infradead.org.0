@@ -2,89 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3383F4CF2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:16:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37FA2F4CF5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:17:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YPWLmOcSIJBhJerDC5WxPxdTVG0mifJb8y+xUSQqRtI=; b=RUpkStsC2g5nMv
-	TrRK8p6t7U97RxZAZwphsiHEjJ3eq95Lql82AsaIOuMT8/VZoJ75LJZGgpZ/9pvzuLicVwf/WtFix
-	n8JbRMw30nAdl9Hn1XgPHnHp9Wv4AE4Smw3D3T6h0pdSiq/zB+/tIwyd0+K8nax8YKKl3aZmvFIag
-	dA5Awf3OQGjDafqB4syp+QCC3PQmULNTOMjaU95I/LTYETzmAiSVLzFY7bOxlquGTkFwDcqNlU3SM
-	s0OkQhTslJyQ6X5Rhh6gPX9BRLnt4GF4VDxNPxpxIvucTKN2k98AVK4s42F7T5QlarEn5iRNDDcax
-	/1CW4Vme/GY1Vws6ZZfw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yjCLJAjlD3IuKY5XAAmYdS6v/xeeyjgrlpyFU8spJHk=; b=aJeGlPvwxkL9nj
+	dRG6VzjEF4mJFUkbfAIkhA0LaBsXgI14rITnh+/uGHApgwmNQqt2NxV2leRL/LKPlz1OBN95UR54C
+	Wlt4cLk/X3AVRyvqVKrbJypa/MP9iKsLTlt4kjgCrpMPyGFM5/E9kSH1XTdajcQpJkxzr08xPX9/l
+	QR5NmhBcsBSTrRObAHuieHvlYD9yjUCSD+xj+NOJmy3krbihNVX3ocjXEdT0yXXDNgum6n0U3F3t3
+	KY6QKdplCSIo49+h02g3frZDMxFdvEUAZcudYxSKIjYkqBU0Dj5S2WDlpwm3K4rJ8KrF4wwaNb3s+
+	w7EVyCfuMz6bXwJ4sZGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT47m-0003Ts-S4; Fri, 08 Nov 2019 13:16:26 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iT48J-0003xr-0k; Fri, 08 Nov 2019 13:16:59 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT3uF-0004xA-TY
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:32 +0000
-Received: by mail-lf1-x143.google.com with SMTP id d6so4019437lfc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 05:02:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=rasmusvillemoes.dk; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=eoU6yRz6gH6qOWyRe/vJLGf2pgvTpCjyg96xNihJCPI=;
- b=O/6AGo/ZGsFlsmLzJdyEPO3mV8xhZwNRXLRrD1SwfTKq6IMDjQUNw7j0VpK1oVFyLL
- wc5e8wLviGXZ87K0ZB9XM3865S7c5VlogZhWCTbefzWUbe06CEYaPSev0sIHG2QmP0NR
- 92+WT/4laZ948//hxG0mEeosoGrg8VxvjMNyk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=eoU6yRz6gH6qOWyRe/vJLGf2pgvTpCjyg96xNihJCPI=;
- b=X+xXQb+WluO7q0S9YbaCINoDORSUnkH/y1eDl57jq4qnv1kE03yPfjOc6XuKQa7QXJ
- mByfpTyCmfr5rC0t1nZ5ZbiC7VD4kX1hNIf6aptJych2k+/VSfSiqrmQVXKELthjuKS2
- BkN9jsX+h0HDHxK5ApiIlVXbiqiSI9nAjX0cOl0dvdl4yo9CJ++ZFqIlZ7lwEj7oT2JD
- Jmrwflr1PRTuCiawTj4wWqfAi3MGfH2HTdh0jZgcN/LClbfJTcphqXcQ+LpD2zJO0BeT
- sfStkoAeUURpCZTMZNTiSr7npHQqtDZVFOVUn4CPSNnsl5dD/fsiBhm3/wj9yuxSlIn/
- pmfg==
-X-Gm-Message-State: APjAAAVi8b6ZYO7kUkgCWgW+g+MVMCXczQHqMSz5/cM41rEn189tKu6c
- juPOfK8TY74fg488yHP6iICxxA==
-X-Google-Smtp-Source: APXvYqwxS6IOvsV8gHqknaTDjoYrWzUraN+5B9FEomuPHvbNlLsU0KSDBbHmOzMq8nrZpelvp/lTbQ==
-X-Received: by 2002:ac2:5097:: with SMTP id f23mr6576512lfm.90.1573218146378; 
- Fri, 08 Nov 2019 05:02:26 -0800 (PST)
-Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.02.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 05:02:25 -0800 (PST)
-From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
- Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v4 47/47] soc: fsl: qe: remove PPC32 dependency from
- CONFIG_QUICC_ENGINE
-Date: Fri,  8 Nov 2019 14:01:23 +0100
-Message-Id: <20191108130123.6839-48-linux@rasmusvillemoes.dk>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
-References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
+ id 1iT3uT-00058O-Cv
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:43 +0000
+Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id CD6587B9FF91A25B08F4;
+ Fri,  8 Nov 2019 21:02:33 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS414-HUB.china.huawei.com
+ (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Fri, 8 Nov 2019
+ 21:02:25 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <leoyang.li@nxp.com>, <alexandre.belloni@bootlin.com>
+Subject: [PATCH -next] soc: fsl: Enable COMPILE_TEST
+Date: Fri, 8 Nov 2019 21:02:13 +0800
+Message-ID: <20191108130213.23684-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_050228_164635_3794B450 
-X-CRM114-Status: GOOD (  12.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191108_050241_638587_2800FB09 
+X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,46 +62,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Wood <oss@buserror.net>, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: YueHaibing <yuehaibing@huawei.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are also ARM and ARM64 based SOCs with a QUICC Engine, and the
-core QE code as well as net/wan/fsl_ucc_hdlc and tty/serial/ucc_uart
-has now been modified to not rely on ppcisms.
+When do COMPILE_TEST buiding for RTC_DRV_FSL_FTM_ALARM,
+we get this warning:
 
-So extend the architectures that can select QUICC_ENGINE, and add the
-rather modest requirements of OF && HAS_IOMEM.
+WARNING: unmet direct dependencies detected for FSL_RCPM
+  Depends on [n]: PM_SLEEP [=y] && (ARM || ARM64)
+  Selected by [m]:
+  - RTC_DRV_FSL_FTM_ALARM [=m] && RTC_CLASS [=y] && (ARCH_LAYERSCAPE || SOC_LS1021A || COMPILE_TEST [=y])
 
-The core code as well as the ucc_uart driver has been tested on an
-LS1021A (arm), and it has also been tested that the QE code still
-works on an mpc8309 (ppc).
+This enable COMPILE_TEST for FSL_RCPM to fix the issue.
 
-Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Fixes: e1c2feb1efa2 ("rtc: fsl-ftm-alarm: allow COMPILE_TEST")
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- drivers/soc/fsl/qe/Kconfig | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+In commit c6c2d36bc46f ("rtc: fsl-ftm-alarm: Fix build error without PM_SLEEP")
+I posted a wrong kconfig warning(which PM_SLEEP is n), sorry for confusion.
+---
+ drivers/soc/fsl/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/soc/fsl/qe/Kconfig b/drivers/soc/fsl/qe/Kconfig
-index cfa4b2939992..f1974f811572 100644
---- a/drivers/soc/fsl/qe/Kconfig
-+++ b/drivers/soc/fsl/qe/Kconfig
-@@ -5,7 +5,8 @@
+diff --git a/drivers/soc/fsl/Kconfig b/drivers/soc/fsl/Kconfig
+index 4df32bc..e142662 100644
+--- a/drivers/soc/fsl/Kconfig
++++ b/drivers/soc/fsl/Kconfig
+@@ -43,7 +43,7 @@ config DPAA2_CONSOLE
  
- config QUICC_ENGINE
- 	bool "QUICC Engine (QE) framework support"
--	depends on FSL_SOC && PPC32
-+	depends on OF && HAS_IOMEM
-+	depends on PPC32 || ARM || ARM64 || COMPILE_TEST
- 	select GENERIC_ALLOCATOR
- 	select CRC32
+ config FSL_RCPM
+ 	bool "Freescale RCPM support"
+-	depends on PM_SLEEP && (ARM || ARM64)
++	depends on PM_SLEEP && (ARM || ARM64 || COMPILE_TEST)
  	help
+ 	  The NXP QorIQ Processors based on ARM Core have RCPM module
+ 	  (Run Control and Power Management), which performs all device-level
 -- 
-2.23.0
+2.7.4
+
 
 
 _______________________________________________
