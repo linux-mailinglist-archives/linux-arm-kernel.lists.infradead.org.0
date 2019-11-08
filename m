@@ -2,75 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F568F3E55
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 04:19:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8098CF3E66
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 04:29:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bSuEsyoWnIygmO5QD/W4LSg2w4E0jm1ZuVd+XIEyxbg=; b=o20VZg2/tsbNYB
-	In54x+JEzeVv0zNSSXM2mNqsv4wUbgCPwdIsuw+gg9T9H2H1O6/mR4dHiRWlVg5qBLVLu2UTmk4bB
-	RRUMCxCKgQMqHmbV9a5lBG4DWXEiJBYjZ32ubA1LEWP9h6dR/ayzHan8dtOiNILVgP1Du8ZhY65p4
-	4125LfAgCUn/8RJ4czuTyfucsq3hEwlM8mPV+xdZK6IVTMAaHV1dtIa6bqvNpsYD3qmgUb3OkNoTl
-	yWIa8nW+X+9W1sPlip9+8mAcz+xrbFIn90FwCzxMeGh/BGUqExqMOAGXWD6R7+yK7aQcPbqOl5lLb
-	09IGJBaQ0vJ9NsUW1iUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NN9BmvLOg21o/eev4lL21WVc5I1+O0o+ksxuOItkU7w=; b=caieKrEc5CbKMl
+	rXwUuuQkSHvLY8yqFFacC/YUFf7QvFlzM68CpgtaE/KGHQpKtz0ib66h9rqy8Dpzc8kBbw2GE6IWD
+	YSkfwAXC7V6xECSemy1BJ7My58aZsto//C/IryA5ieRQaWV5aGhTEpapPJoI0wvXyD2LHu6mUqyFa
+	jnbFkCixw5Tgs4VirGnDLb9f2WNJdxStvtxZ43AWQTvzE15VqfgTT7O9aXp9BdDbhshkQYex85iHe
+	R6VuYpmAomWKa712Y0Rhp7WOGC9jWal2xHQI1KAOguR+hv1k49YeYQtTEs5bH2DCWpb1+Z1uo44L7
+	ofrCsMfAbRjaQVwTlo7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSunj-00085A-I3; Fri, 08 Nov 2019 03:19:07 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iSuxg-000376-RP; Fri, 08 Nov 2019 03:29:24 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSunZ-00084f-FX
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 03:18:58 +0000
-Received: from localhost (mobile-107-92-63-247.mycingular.net [107.92.63.247])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 215742084D;
- Fri,  8 Nov 2019 03:18:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573183136;
- bh=xt29T8BQ5Ybg+79CQWKq0HVKX+jG/2dpLfMwTw9mF7c=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=wneKloIVW1UmK29rzt/FE4sxapyCJkm6HISLK0cVNIPsPbzxiUy467StbawxD+3t6
- r3xCXZesdKLd0jbBCM3I9LVwsGPU3b4hbJadvYXA/jws+bL8Voho5Mu/b1Bh+WQ0Os
- e6GWPdITyDq7XwgsKq0D1OT1KYM0GQnv4vwhA3jo=
-Date: Thu, 7 Nov 2019 21:18:54 -0600
-From: Andy Gross <agross@kernel.org>
-To: Amit Kucheria <amit.kucheria@verdurent.com>
-Subject: Re: [GIT PULL] Qualcomm ARM64 DT updates for 5.5
-Message-ID: <20191108031854.GA12993@hector.lan>
-Mail-Followup-To: Amit Kucheria <amit.kucheria@verdurent.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- lakml <linux-arm-kernel@lists.infradead.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <1573068840-13098-1-git-send-email-agross@kernel.org>
- <1573068840-13098-2-git-send-email-agross@kernel.org>
- <CAHLCerN7buq82RmmFkoSi_n8g8sSe9VO2utcXuEGM3xG3HcRTg@mail.gmail.com>
+ id 1iSuxX-00036e-Oq
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 03:29:17 +0000
+Received: by mail-pl1-x643.google.com with SMTP id ay6so3122135plb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 07 Nov 2019 19:29:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=BJCUfp8ZkVX+2Q/E2RA51yP281dLV5q+tGMP1kt6Ef8=;
+ b=U/LqZXmxhh8yeGmbBFtUj4NR77Lm5hbRR8wTVSBW4aTEN2ZGLfadqRN7ImQUIFSqUy
+ sjK0vvA9nvsEcVG+6F7ZEUbp1oDqZVs7y3wsDjSShszolJglwr6/8GnSQGffR/vrqK+j
+ Pk+tGPaNICEovggBuwTNSv8EYKs3WKMsIVm5qaPBReQe/0tp1wHMQSyO0bUvBrOKbyTp
+ nzJYu8ogUNwqNBa3ZGf087wPssKKXmt16lX17ocJvg3xQ+ySNGOkmgDE0M+dT2XGtRQd
+ kOcLa4MvDCWjT/kF9JBmFHW2SjQexsv/GBZfWlG25fy1fdBWyX7hn1MzYuCRfDwCxdTf
+ eepQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
+ :mime-version:content-transfer-encoding;
+ bh=BJCUfp8ZkVX+2Q/E2RA51yP281dLV5q+tGMP1kt6Ef8=;
+ b=E6CBnz/GOBsNC0Xf+0ZHxpsgumlQ+Mf4pB025kJJlHF4pnPgzh5HSiR9t7/Ys4iPMO
+ J3RBgrz/S83XVYXpvBDYj+gi6WLnIcsYih5JIu2w2/og9KdYbcy9COxokm0FGfRJVG0U
+ doD+obhT+9jhrBS5LSClFGEQqqivusK7MHGydn4OoeUmIiQoy0g77QFtzSo/arVzo80O
+ zLUD5D/MT0i5kQA5uZSvLGMfOlIN3F4tZzU4AhN0jFokXxFwgKHBDYdf4fa3xcK5wGVC
+ +07Pvzn4Nzke4I2Pn/Sd/eUOOmfJH6PtT+KSs0neZdBJP97A3pdJ+AhONrWim5Kk1tUY
+ vdsg==
+X-Gm-Message-State: APjAAAUwMedfwVPZ53DZ1k8RBca0DkGG0VOMqLfuYOls97QD5Y0DmNcM
+ iSV2Se6FjcI1wiDfAiCpxJ4=
+X-Google-Smtp-Source: APXvYqwUYaLV2Q5lctEAObWGMEHLJbNchUOQ++A589z1HlK7NWtmUmy5xzScfJRPCcXhohywYKP0ag==
+X-Received: by 2002:a17:902:bb8f:: with SMTP id
+ m15mr4371359pls.121.1573183754056; 
+ Thu, 07 Nov 2019 19:29:14 -0800 (PST)
+Received: from voyager.ibm.com ([36.255.48.244])
+ by smtp.gmail.com with ESMTPSA id c13sm4219194pfo.5.2019.11.07.19.29.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 07 Nov 2019 19:29:13 -0800 (PST)
+From: Joel Stanley <joel@jms.id.au>
+To: Wim Van Sebroeck <wim@linux-watchdog.org>,
+ Guenter Roeck <linux@roeck-us.net>, linux-watchdog@vger.kernel.org
+Subject: [PATCH] watchdog: aspeed: Fix clock behaviour for ast2600
+Date: Fri,  8 Nov 2019 13:59:05 +1030
+Message-Id: <20191108032905.22463-1-joel@jms.id.au>
+X-Mailer: git-send-email 2.24.0.rc1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHLCerN7buq82RmmFkoSi_n8g8sSe9VO2utcXuEGM3xG3HcRTg@mail.gmail.com>
-User-Agent: Mutt/1.5.23.1 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_191857_540043_71BD6C1C 
-X-CRM114-Status: GOOD (  13.51  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191107_192915_830943_A5F6FA48 
+X-CRM114-Status: GOOD (  13.65  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,48 +100,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- lakml <linux-arm-kernel@lists.infradead.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: Ryan Chen <ryan_chen@aspeedtech.com>, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
+ =?UTF-8?q?C=C3=A9dric=20Le=20Goater?= <clg@kaod.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 07, 2019 at 07:36:03PM +0530, Amit Kucheria wrote:
-> (Removing arm-soc)
-> 
-> Hi Andy,
-> 
-> On Thu, Nov 7, 2019 at 1:04 AM Andy Gross <agross@kernel.org> wrote:
-> >
-> > Arnd, Olof, and Kevin,
-> >
-> > I have one slight faux paux in this pull request.  A drivers: soc change got
-> > into my arm64 DTS branch and while it is innocuous, it wasn't easy to fix
-> > without messing up a lot of people who depend on the SHAs not changing.  So I'm
-> > sorry for this inclusion.  I'll scrub this better next time.
-> >
-> > Andy
-> 
-> > ----------------------------------------------------------------
-> > Amit Kucheria (5):
-> >       arm64: dts: qcs404: thermal: Add interrupt support
-> >       arm64: dts: msm8998: thermal: Add interrupt support
-> >       arm64: dts: msm8996: thermal: Add interrupt support
-> >       arm64: dts: sdm845: thermal: Add interrupt support
-> >       arm64: dts: msm8916: thermal: Fixup HW ids for cpu sensors
-> 
-> One of my patches to add interrupt support to msm8916 tsens is missing
-> here. Specifically this one:
-> https://patchwork.kernel.org/patch/11201853/
-> 
-> Will there be a second PR this cycle?
+The ast2600 no longer uses bit 4 in the control register to indicate a
+1MHz clock (It now controls weather this watchdog is reset by a SOC
+reset). This means we do not want to set it. It also does not need to be
+set for the ast2500, as it is read-only on that SoC.
 
-I can work up another and throw it on top.
+The comment next to the clock rate selection wandered away from where it
+was set, so put it back next to the register setting it's describing.
 
+Fixes: b3528b487448 ("watchdog: aspeed: Add support for AST2600")
+Signed-off-by: Joel Stanley <joel@jms.id.au>
+---
+ drivers/watchdog/aspeed_wdt.c | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
 
-Andy
+diff --git a/drivers/watchdog/aspeed_wdt.c b/drivers/watchdog/aspeed_wdt.c
+index 4ec0906bf12c..7e00960651fa 100644
+--- a/drivers/watchdog/aspeed_wdt.c
++++ b/drivers/watchdog/aspeed_wdt.c
+@@ -258,11 +258,6 @@ static int aspeed_wdt_probe(struct platform_device *pdev)
+ 	if (IS_ERR(wdt->base))
+ 		return PTR_ERR(wdt->base);
+ 
+-	/*
+-	 * The ast2400 wdt can run at PCLK, or 1MHz. The ast2500 only
+-	 * runs at 1MHz. We chose to always run at 1MHz, as there's no
+-	 * good reason to have a faster watchdog counter.
+-	 */
+ 	wdt->wdd.info = &aspeed_wdt_info;
+ 	wdt->wdd.ops = &aspeed_wdt_ops;
+ 	wdt->wdd.max_hw_heartbeat_ms = WDT_MAX_TIMEOUT_MS;
+@@ -278,7 +273,16 @@ static int aspeed_wdt_probe(struct platform_device *pdev)
+ 		return -EINVAL;
+ 	config = ofdid->data;
+ 
+-	wdt->ctrl = WDT_CTRL_1MHZ_CLK;
++	/*
++	 * On clock rates:
++	 *  - ast2400 wdt can run at PCLK, or 1MHz
++	 *  - ast2500 only runs at 1MHz, hard coding bit 4 to 1
++	 *  - ast2600 always runs at 1MHz
++	 *
++	 * Set the ast2400 to run at 1MHz as it simplifies the driver.
++	 */
++	if (of_device_is_compatible(np, "aspeed,ast2400-wdt"))
++		wdt->ctrl = WDT_CTRL_1MHZ_CLK;
+ 
+ 	/*
+ 	 * Control reset on a per-device basis to ensure the
+-- 
+2.24.0.rc1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
