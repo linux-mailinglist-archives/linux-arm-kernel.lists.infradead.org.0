@@ -2,56 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A01BFF517D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 17:47:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2042EF5186
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 17:49:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NSZWkg8imZbPjE9YSpdffQHA2AM34TUpM7BVEIPeNNI=; b=GKt5yxlL/dkdQM
-	oNfe4mXP/v76Pq0YfqUYoQs8ctm52HHLQFeQYTIvwsaCCfWwlaDEZDrKopRrwroUPDrSEmwoZ1u4r
-	UREy2Y73hNAOk+2+6bYUn1CugtLzraLh+hcs2CYp5dPrGgCF8gvF02DJCPyP1lG5gulC/GMKimTXi
-	KuDNZYBfuZTTDwsdp2yILpPwycO2wPuQcsOaBp8o3fygCu5ec2/upuNTiL5LgVJ8JjwcLgV7gewnv
-	tpy8qDr6xvUtMPKxcjtiJpD0FYK1RUSQgwk3glRqgEDGm1H2UbRjTvt7oxW7Z51stvHW+A+APHZh3
-	boFdpeoOw3lXJKesswqA==;
+	List-Owner; bh=sPvgaQRbvzKlHBm9cR26lxi5WVnXrK2gXwBRphCbvMU=; b=iNFDZVxLqkZLCX
+	XFA36HemxWHmeyTamoT8rZ7TwlPz8uC+kHiZkG2RHdbFaVtitT4WbvxPszoyJqOiTuhH5mABiirA8
+	6oP0uHcsPMTnf07XbLTWIVV8Wjw4R9j5EPNIC9Yf3oDIc5ru0TghQPIz/IUDB4QfEdNs0EeM7WS9N
+	6VEQAd29ajFq7jNOhS3IvLXk3beuRPlae7rMqir+cY3v7IPjkt16MVqDhoeR/syzHzOpSdd0l8MnR
+	k7g3a2jFaA9t5dtN7TKakXNBRoMwAaFWWs4hY66T9J34QRaRfD6+2BEf1Q6gCQBaL8/I+IRxVcd88
+	UgGh2qdbxPW3mcpe1LOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT7QJ-0007La-Nf; Fri, 08 Nov 2019 16:47:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT7QC-0007L8-0C
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 16:47:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5AE127A7;
- Fri,  8 Nov 2019 08:47:38 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8D8863F71A;
- Fri,  8 Nov 2019 08:47:37 -0800 (PST)
-Date: Fri, 8 Nov 2019 16:47:35 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v3 2/2] arm64: kaslr: Check command line before looking
- for a seed
-Message-ID: <20191108164735.GK11465@lakrids.cambridge.arm.com>
-References: <20191108162001.11737-1-broonie@kernel.org>
- <20191108162001.11737-3-broonie@kernel.org>
+	id 1iT7RV-0007tn-Nd; Fri, 08 Nov 2019 16:49:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iT7RO-0007tM-Dp
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 16:48:55 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EA1C22178F;
+ Fri,  8 Nov 2019 16:48:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573231734;
+ bh=9w0yj2YakXAi8n7djqtc+u+Gst/eMLDRpOqSpIO+PbM=;
+ h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
+ b=cwFruo+s6FIdcnltcZTO1uzlzvCFUQn4AfTGqqEaPcp7m10fznEESpWHOpJG4FNuj
+ YupXHvI//X/Wcca950+q3tzgDQ3h4he8U8iDZ7wSin1Lwra4ICJZEvsklftPKvbvQ5
+ ZXur/0ZzPEyniH+s0ji4nzcKxnWcBguh34pw7h64=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191108162001.11737-3-broonie@kernel.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20191010020725.3990-3-andrew@aj.id.au>
+References: <20191010020725.3990-1-andrew@aj.id.au>
+ <20191010020725.3990-3-andrew@aj.id.au>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Andrew Jeffery <andrew@aj.id.au>, linux-clk@vger.kernel.org
+Subject: Re: [PATCH v2 2/2] clk: ast2600: Add RMII RCLK gates for all four MACs
+User-Agent: alot/0.8.1
+Date: Fri, 08 Nov 2019 08:48:53 -0800
+Message-Id: <20191108164853.EA1C22178F@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_084740_088805_5465328A 
-X-CRM114-Status: GOOD (  18.01  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191108_084854_487047_2801A5E4 
+X-CRM114-Status: UNSURE (   5.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,62 +77,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, mturquette@baylibre.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, joel@jms.id.au,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 08, 2019 at 04:20:01PM +0000, Mark Brown wrote:
-> Now that we print diagnostics at boot the reason why we do not initialise
-> KASLR matters. Currently we check for a seed before we check if the user
-> has explicitly disabled KASLR on the command line which will result in
-> misleading diagnostics so reverse the order of those checks. We still
-> parse the seed from the DT early so that if the user has both provided a
-> seed and disabled KASLR on the command line we still mask the seed on
-> the command line.
+Quoting Andrew Jeffery (2019-10-09 19:07:25)
+> RCLK is a fixed 50MHz clock derived from HPLL/HCLK that is described by a
+> single gate for each MAC.
 > 
-> Signed-off-by: Mark Brown <broonie@kernel.org>
-
-Acked-by: Mark Rutland <mark.rutland@arm.com>
-
-Mark.
-
+> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 > ---
->  arch/arm64/kernel/kaslr.c | 9 +++++----
->  1 file changed, 5 insertions(+), 4 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
-> index 0039dc50e556..c09f12ab6525 100644
-> --- a/arch/arm64/kernel/kaslr.c
-> +++ b/arch/arm64/kernel/kaslr.c
-> @@ -108,10 +108,6 @@ u64 __init kaslr_early_init(u64 dt_phys)
->  	 * Retrieve (and wipe) the seed from the FDT
->  	 */
->  	seed = get_kaslr_seed(fdt);
-> -	if (!seed) {
-> -		kaslr_status = KASLR_DISABLED_NO_SEED;
-> -		return 0;
-> -	}
->  
->  	/*
->  	 * Check if 'nokaslr' appears on the command line, and
-> @@ -124,6 +120,11 @@ u64 __init kaslr_early_init(u64 dt_phys)
->  		return 0;
->  	}
->  
-> +	if (!seed) {
-> +		kaslr_status = KASLR_DISABLED_NO_SEED;
-> +		return 0;
-> +	}
-> +
->  	/*
->  	 * OK, so we are proceeding with KASLR enabled. Calculate a suitable
->  	 * kernel image offset from the seed. Let's place the kernel in the
-> -- 
-> 2.20.1
-> 
+
+Applied to clk-next
+
 
 _______________________________________________
 linux-arm-kernel mailing list
