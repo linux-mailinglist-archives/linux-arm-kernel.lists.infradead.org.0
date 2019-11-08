@@ -2,62 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 559EDF45BB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 12:31:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95495F4642
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 12:41:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:From:To:Subject:MIME-Version
-	:References:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cqA6aY7x53MrB77N48ZAbWsXUYUq6bg8ebmHq+Qu1pU=; b=PG56DVIbJLX19g
-	tYdjDQmOc+GRh2byP/4WMWYLHQrURIRxRyO8U1U/jbbgGVM4qMi5/zzo3386nTvtcIwBOGNdbK4c8
-	/eazykh4ZCtu2rJZg0ytYwQVzcciKcxI4KXLqo1I/o4kXdldjEsRKixhCR1LddHgZClbuIm2F/OZI
-	TbXoW+eozV3Etyr30Q3O+jD+X+eroT+ZZO2Jz0x/ixQF8vVjk2wdizP472t749VDtjZufTqLkpimd
-	jhM4Xh79KxVJcUyF/As+V4c4Qm0ixDHTy4/yfX035dLlNLYKTmYJjqIKiQcgHLVOvNb9YtNrQ3otm
-	wDjeo4jtAylB0kWglegQ==;
+	List-Owner; bh=uJcEeV9/96r08yIxMVlKS7coN7NRySG9cmjbEWpOLP4=; b=bNnyhchVtK9Luf
+	hSE7pEEaikTcWM5Q8AQMevXqRlkDP0NCCIXHyCnBxeWQwh7U/i3NISPSTtDV6XnyiFFsNFqsVQp93
+	xAxdSOy12vueW+lpKHZjoqGzQJpjwKBQmP2AuV/lF/IjhjDtAJsjO6jAz6PIj2kJnWZQgkDFfJa6j
+	+72Js06Z0GdzjeVLc3IuM8u28I8hhU/JJd0f/0kwgbPjXGmyZGIQOZj7xAk1/dRJ3O3MJ+k6W/Q+8
+	63yVLjGFMPFiBNFOBqPd3DF2gzTIWmqBMGd9FRHISIXPumPw62ZHBrTTINl32Z33uecUbobxwkhWT
+	yAB7H8eeVaa2EJpKs4/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT2Uc-0004l5-G0; Fri, 08 Nov 2019 11:31:54 +0000
-Received: from balrog.mythic-beasts.com ([2a00:1098:0:82:1000:0:2:1])
+	id 1iT2dj-0001eE-U3; Fri, 08 Nov 2019 11:41:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT2US-0004kX-Hz
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 11:31:45 +0000
-Received: from [199.195.250.187] (port=44020 helo=hermes.aosc.io)
- by balrog.mythic-beasts.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92.3)
- (envelope-from <icenowy@aosc.io>)
- id 1iT2T2-0007Mv-7W; Fri, 08 Nov 2019 11:31:28 +0000
-Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
- icenowy@aosc.io)
- by hermes.aosc.io (Postfix) with ESMTPSA id C845041447;
- Fri,  8 Nov 2019 11:29:51 +0000 (UTC)
-Date: Fri, 08 Nov 2019 19:29:21 +0800
-In-Reply-To: <20191107214514.kcz42mcehyrrif4o@core.my.home>
-References: <20191020134229.1216351-3-megous@megous.com>
- <20191107204645.13739-1-rikard.falkeborn@gmail.com>
- <20191107214514.kcz42mcehyrrif4o@core.my.home>
+ id 1iT2dF-0001PA-L6
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 11:40:51 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A168521D7E;
+ Fri,  8 Nov 2019 11:40:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573213249;
+ bh=zgtQn59xKSHLgHf3t2ThmqyQQy/k5Hd9egH/wHnXQc4=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=0iLX8P4p3Uc0jtDTOUntuGCZghvtYLu/qRo1HuHDfwlbIRBOU7CJV/Ndle2o57FcJ
+ P+brYzKHvLz/9XUxGzMRT1YFHN0kWIi3PSrYxfLqriqsRoIrWWbwwRbFRaOr8XstZ6
+ Lwtr5+LA1SdxrxGJwjLVStNdnXNU7uJznPJcCO8Q=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 4.19 116/205] firmware: arm_scmi: use strlcpy to
+ ensure NULL-terminated strings
+Date: Fri,  8 Nov 2019 06:36:23 -0500
+Message-Id: <20191108113752.12502-116-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191108113752.12502-1-sashal@kernel.org>
+References: <20191108113752.12502-1-sashal@kernel.org>
 MIME-Version: 1.0
-Subject: Re: [PATCH] phy: allwinner: Fix GENMASK misuse
-To: =?UTF-8?Q?Ond=C5=99ej_Jirman?= <megous@megous.com>,
- Rikard Falkeborn <rikard.falkeborn@gmail.com>
-From: Icenowy Zheng <icenowy@aosc.io>
-Message-ID: <F563E52E-72BF-4297-A14F-DDE2B490DADB@aosc.io>
-X-BlackCat-Spam-Score: 14
-X-Spam-Status: No, score=1.4
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_033144_595366_1A46403B 
-X-CRM114-Status: GOOD (  13.69  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191108_034049_755826_F473FB4F 
+X-CRM114-Status: GOOD (  11.52  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a00:1098:0:82:1000:0:2:1 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,38 +80,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, arnd@arndb.de,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
- kishon@ti.com, paul.kocialkowski@bootlin.com, linux-sunxi@googlegroups.com,
- robh+dt@kernel.org, tglx@linutronix.de, wens@csie.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Olof Johansson <olof@lixom.net>, Sasha Levin <sashal@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgrkuo4gMjAxOeW5tDEx5pyIOOaXpSBHTVQrMDg6MDAg5LiK5Y2INTo0NToxNCwgIk9uZMWZZWog
-SmlybWFuIiA8bWVnb3VzQG1lZ291cy5jb20+IOWGmeWIsDoKPkhlbGxvIFJpa2FyZCwKPgo+T24g
-VGh1LCBOb3YgMDcsIDIwMTkgYXQgMDk6NDY6NDVQTSArMDEwMCwgUmlrYXJkIEZhbGtlYm9ybiB3
-cm90ZToKPj4gQXJndW1lbnRzIGFyZSBzdXBwb3NlZCB0byBiZSBvcmRlcmVkIGhpZ2ggdGhlbiBs
-b3cuCj4+IAo+PiBTaWduZWQtb2ZmLWJ5OiBSaWthcmQgRmFsa2Vib3JuIDxyaWthcmQuZmFsa2Vi
-b3JuQGdtYWlsLmNvbT4KPj4gLS0tCj4+IFNwb3R0ZWQgd2hpbGUgdHJ5aW5nIHRvIGFkZCBjb21w
-aWxlIHRpbWUgY2hlY2tzIG9mIEdFTk1BU0sgYXJndW1lbnRzLgo+PiBQYXRjaCBoYXMgb25seSBi
-ZWVuIGNvbXBpbGUgdGVzdGVkLgo+Cj50aGFuayB5b3UhCj4KPlRlc3RlZC1ieTogT25kcmVqIEpp
-cm1hbiA8bWVnb3VzQG1lZ291cy5jb20+CgpEb2VzIGl0IGFmZmVjdCBvciBmaXggdGhlIHBlcmZv
-cm1hbmNlPwoKPgo+cmVnYXJkcywKPglvLgo+Cj4+ICBkcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5
-LXN1bjUwaS11c2IzLmMgfCAyICstCj4+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyks
-IDEgZGVsZXRpb24oLSkKPj4gCj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9hbGx3aW5uZXIv
-cGh5LXN1bjUwaS11c2IzLmMKPmIvZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW41MGktdXNi
-My5jCj4+IGluZGV4IDExNjlmM2U4M2E2Zi4uYjFjMDRmNzFhMzFkIDEwMDY0NAo+PiAtLS0gYS9k
-cml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjUwaS11c2IzLmMKPj4gKysrIGIvZHJpdmVycy9w
-aHkvYWxsd2lubmVyL3BoeS1zdW41MGktdXNiMy5jCj4+IEBAIC00OSw3ICs0OSw3IEBACj4+ICAj
-ZGVmaW5lIFNVTlhJX0xPU19CSUFTKG4pCQkoKG4pIDw8IDMpCj4+ICAjZGVmaW5lIFNVTlhJX0xP
-U19CSUFTX01BU0sJCUdFTk1BU0soNSwgMykKPj4gICNkZWZpbmUgU1VOWElfVFhWQk9PU1RMVkwo
-bikJCSgobikgPDwgMCkKPj4gLSNkZWZpbmUgU1VOWElfVFhWQk9PU1RMVkxfTUFTSwkJR0VOTUFT
-SygwLCAyKQo+PiArI2RlZmluZSBTVU5YSV9UWFZCT09TVExWTF9NQVNLCQlHRU5NQVNLKDIsIDAp
-Cj4+ICAKPj4gIHN0cnVjdCBzdW41MGlfdXNiM19waHkgewo+PiAgCXN0cnVjdCBwaHkgKnBoeTsK
-Pj4gLS0gCj4+IDIuMjQuMAo+PiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+From: Sudeep Holla <sudeep.holla@arm.com>
+
+[ Upstream commit ca64b719a1e665ac7449b6a968059176af7365a8 ]
+
+Replace all the memcpy() for copying name strings from the firmware with
+strlcpy() to make sure we are bounded by the source buffer size and we
+also always have NULL-terminated strings.
+
+This is needed to avoid out of bounds accesses if the firmware returns
+a non-terminated string.
+
+Reported-by: Olof Johansson <olof@lixom.net>
+Acked-by: Olof Johansson <olof@lixom.net>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/firmware/arm_scmi/base.c    | 2 +-
+ drivers/firmware/arm_scmi/clock.c   | 2 +-
+ drivers/firmware/arm_scmi/perf.c    | 2 +-
+ drivers/firmware/arm_scmi/power.c   | 2 +-
+ drivers/firmware/arm_scmi/sensors.c | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
+index 9dff33ea6416f..204390297f4bd 100644
+--- a/drivers/firmware/arm_scmi/base.c
++++ b/drivers/firmware/arm_scmi/base.c
+@@ -208,7 +208,7 @@ static int scmi_base_discover_agent_get(const struct scmi_handle *handle,
+ 
+ 	ret = scmi_do_xfer(handle, t);
+ 	if (!ret)
+-		memcpy(name, t->rx.buf, SCMI_MAX_STR_SIZE);
++		strlcpy(name, t->rx.buf, SCMI_MAX_STR_SIZE);
+ 
+ 	scmi_xfer_put(handle, t);
+ 
+diff --git a/drivers/firmware/arm_scmi/clock.c b/drivers/firmware/arm_scmi/clock.c
+index e4119eb34986c..30fc04e284312 100644
+--- a/drivers/firmware/arm_scmi/clock.c
++++ b/drivers/firmware/arm_scmi/clock.c
+@@ -111,7 +111,7 @@ static int scmi_clock_attributes_get(const struct scmi_handle *handle,
+ 
+ 	ret = scmi_do_xfer(handle, t);
+ 	if (!ret)
+-		memcpy(clk->name, attr->name, SCMI_MAX_STR_SIZE);
++		strlcpy(clk->name, attr->name, SCMI_MAX_STR_SIZE);
+ 	else
+ 		clk->name[0] = '\0';
+ 
+diff --git a/drivers/firmware/arm_scmi/perf.c b/drivers/firmware/arm_scmi/perf.c
+index 64342944d9175..87c99d296ecd3 100644
+--- a/drivers/firmware/arm_scmi/perf.c
++++ b/drivers/firmware/arm_scmi/perf.c
+@@ -174,7 +174,7 @@ scmi_perf_domain_attributes_get(const struct scmi_handle *handle, u32 domain,
+ 			dom_info->mult_factor =
+ 					(dom_info->sustained_freq_khz * 1000) /
+ 					dom_info->sustained_perf_level;
+-		memcpy(dom_info->name, attr->name, SCMI_MAX_STR_SIZE);
++		strlcpy(dom_info->name, attr->name, SCMI_MAX_STR_SIZE);
+ 	}
+ 
+ 	scmi_xfer_put(handle, t);
+diff --git a/drivers/firmware/arm_scmi/power.c b/drivers/firmware/arm_scmi/power.c
+index cfa033b05aed5..62f3401a1f01e 100644
+--- a/drivers/firmware/arm_scmi/power.c
++++ b/drivers/firmware/arm_scmi/power.c
+@@ -106,7 +106,7 @@ scmi_power_domain_attributes_get(const struct scmi_handle *handle, u32 domain,
+ 		dom_info->state_set_notify = SUPPORTS_STATE_SET_NOTIFY(flags);
+ 		dom_info->state_set_async = SUPPORTS_STATE_SET_ASYNC(flags);
+ 		dom_info->state_set_sync = SUPPORTS_STATE_SET_SYNC(flags);
+-		memcpy(dom_info->name, attr->name, SCMI_MAX_STR_SIZE);
++		strlcpy(dom_info->name, attr->name, SCMI_MAX_STR_SIZE);
+ 	}
+ 
+ 	scmi_xfer_put(handle, t);
+diff --git a/drivers/firmware/arm_scmi/sensors.c b/drivers/firmware/arm_scmi/sensors.c
+index 27f2092b9882a..b53d5cc9c9f6c 100644
+--- a/drivers/firmware/arm_scmi/sensors.c
++++ b/drivers/firmware/arm_scmi/sensors.c
+@@ -140,7 +140,7 @@ static int scmi_sensor_description_get(const struct scmi_handle *handle,
+ 			s = &si->sensors[desc_index + cnt];
+ 			s->id = le32_to_cpu(buf->desc[cnt].id);
+ 			s->type = SENSOR_TYPE(attrh);
+-			memcpy(s->name, buf->desc[cnt].name, SCMI_MAX_STR_SIZE);
++			strlcpy(s->name, buf->desc[cnt].name, SCMI_MAX_STR_SIZE);
+ 		}
+ 
+ 		desc_index += num_returned;
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
