@@ -2,46 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 787F5F4F5A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 16:21:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1399F4F60
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 16:21:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OwB3VocaR8ybcwy3MdEgKsICQBK1dblyxfSCZwHszNY=; b=BSBZV2ndO7THIa
-	3XUV3HZdhaQUwm8vFYTjBPWeyY3vUjb+G3czvTl7EX7QhmOs6g0bAig1rTDYLkSCUgA+3mqDo6bNf
-	P/MJInbuOWiuK7FrZT1r8cua59sh3haSrjbtqUTZaqB0UQclOFyk8RVODUlyZsBnLHrnh8atkhqZl
-	VVbpY6UfXzrOMr/6QAzFCGRERMdSTMN1iG+3G/jcoOZITXFVVcx8Yx/Yj4MtVBo1ed1LTCo7nWN83
-	n+kuA6GhdNrqSc8AeQLIUbMpXe1cUVNChPyz3t7NlhWyOoWvxu3CrPOTQKl06cLT71H2C/uNc3l5/
-	ZY3F/vfRORfAaL7Z09PA==;
+	List-Owner; bh=XXXMv7W6eZgA5kYdhoZ7PubwOpRsR6hsqpSJ1XIrPIs=; b=bO+9clVXT5aWmJ
+	UGUi+optIQdoKbEiDiCr4swegxXHoD2/Yu9RHLmupQ7hjRVFIFlRt0WrlQyRgPnOTshbV1H/2P0ae
+	AGLn5XXrgdp++Um3f+u5f2IgSRsS+OfOSpd4RR/EPU+p5CCFUCIPz2bmQDcvz3AWa+7qxEzoTzxwp
+	t7MSxYlCHXLzQJi8IOwqM7teKYv/IazyyLlyf8WZ95/WTFnqEyQxwV77UmX4y6AoY5WF1aMHYzwnM
+	HGGIXBjGOwMUFr0NU4R0c4/lJMv0VV1zTvT9W1JpLCunDTDIskrbKDJPCOdLblN0DXfbgHhqNE4LW
+	MFNO2zxDY+ypdn/7kLxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT64c-0002hV-Ur; Fri, 08 Nov 2019 15:21:18 +0000
+	id 1iT658-00039S-Uk; Fri, 08 Nov 2019 15:21:50 +0000
 Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT64D-0002SB-0c
- for linux-arm-kernel@lists.infradead.orG; Fri, 08 Nov 2019 15:20:54 +0000
+ id 1iT64x-00038f-Be
+ for linux-arm-kernel@lists.infradead.orG; Fri, 08 Nov 2019 15:21:40 +0000
 Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
  by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
- id 1iT646-0007It-T8; Fri, 08 Nov 2019 23:20:46 +0800
+ id 1iT64q-0007NY-Ij; Fri, 08 Nov 2019 23:21:32 +0800
 Received: from herbert by gondobar with local (Exim 4.89)
  (envelope-from <herbert@gondor.apana.org.au>)
- id 1iT646-00079Y-N6; Fri, 08 Nov 2019 23:20:46 +0800
-Date: Fri, 8 Nov 2019 23:20:46 +0800
+ id 1iT64o-0007AV-VB; Fri, 08 Nov 2019 23:21:30 +0800
+Date: Fri, 8 Nov 2019 23:21:30 +0800
 From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Julia Lawall <julia.lawall@lip6.fr>
-Subject: Re: [PATCH] crypto: fix memdup.cocci warnings
-Message-ID: <20191108152046.wciljfignuauqdb4@gondor.apana.org.au>
-References: <alpine.DEB.2.21.1911010953590.2883@hadrien>
+To: Tudor.Ambarus@microchip.com
+Subject: Re: [PATCH] crypto: atmel - Fix selection of CRYPTO_AUTHENC
+Message-ID: <20191108152130.k5kftsyqqfjjoifm@gondor.apana.org.au>
+References: <20191028073907.pbk6j5fvi7ludbvx@gondor.apana.org.au>
+ <20191101164027.22478-1-tudor.ambarus@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <alpine.DEB.2.21.1911010953590.2883@hadrien>
+In-Reply-To: <20191101164027.22478-1-tudor.ambarus@microchip.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_072053_247701_590BBB55 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20191108_072139_581353_55AC6E14 
+X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -60,38 +62,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@lists.01.org, linux-kernel@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Corentin Labbe <clabbe.montjoie@gmail.com>, linux-crypto@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: alexandre.belloni@bootlin.com, Ludovic.Desroches@microchip.com,
+ linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 01, 2019 at 09:55:34AM +0100, Julia Lawall wrote:
-> From: kbuild test robot <lkp@intel.com>
+On Fri, Nov 01, 2019 at 04:40:37PM +0000, Tudor.Ambarus@microchip.com wrote:
+> From: Tudor Ambarus <tudor.ambarus@microchip.com>
 > 
-> Use kmemdup rather than duplicating its implementation
+> The following error is raised when CONFIG_CRYPTO_DEV_ATMEL_AES=y and
+> CONFIG_CRYPTO_DEV_ATMEL_AUTHENC=m:
+> drivers/crypto/atmel-aes.o: In function `atmel_aes_authenc_setkey':
+> atmel-aes.c:(.text+0x9bc): undefined reference to `crypto_authenc_extractkeys'
+> Makefile:1094: recipe for target 'vmlinux' failed
 > 
-> Generated by: scripts/coccinelle/api/memdup.cocci
+> Fix it by moving the selection of CRYPTO_AUTHENC under
+> config CRYPTO_DEV_ATMEL_AES.
 > 
-> Fixes: f08fcced6d00 ("crypto: allwinner - Add sun8i-ss cryptographic offloader")
-> CC: Corentin Labbe <clabbe.montjoie@gmail.com>
-> Signed-off-by: kbuild test robot <lkp@intel.com>
-> Signed-off-by: Julia Lawall <julia.lawall@lip6.fr>
+> Fixes: 89a82ef87e01 ("crypto: atmel-authenc - add support to...")
+> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
 > ---
-> 
-> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/herbert/cryptodev-2.6.git master
-> head:   298b4c604008025b134bc6fccbc4018449945d60
-> commit: f08fcced6d0017c39cb6eccb571290867119d049 [154/163] crypto: allwinner - Add sun8i-ss cryptographic offloader
-> :::::: branch date: 3 hours ago
-> :::::: commit date: 3 hours ago
-> 
-> Please take the patch only if it's a positive warning. Thanks!
-> 
->  sun8i-ss-cipher.c |    6 ++----
->  1 file changed, 2 insertions(+), 4 deletions(-)
+>  drivers/crypto/Kconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 
 Patch applied.  Thanks.
 -- 
