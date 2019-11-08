@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 059DCF524C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:11:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A678DF5255
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:11:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XHjSVBbzWfgHHOHJRA39jgJrsBa4yrNybjELuORh2j4=; b=p/+mM0piRlPPrM
-	9kWV3XypepoNVvo9a4wiEKBh/cdtag0ryz1v4Pm4rFmnDg22BhWTRu+paCzqALGD37aXK9vy5zDej
-	rR+lip3Vo6BZthX+2DC3Z5X7MpSxo1PuYmCFqFaMn6e4Bx48XeT+XeGoJRQCoEXm0cuFcAbtP/O/Y
-	TL0Ueib4MX+gktREXCRFcC9E+1lxu5i6ngmPGRT7LLwkIYVbFoLqXmnfTzbeMxFKr/NlgV7L8knj9
-	rPi+nwja16E7GP9ts7YgjKD9U1Md5gamT6zCz8q22ay2RxUtMOqud7qpggjto9uHF7UD5Xli8by6p
-	vWFeeRxo+K6mB+2lLQqQ==;
+	List-Owner; bh=FILf+4bC63iU+vw1G9VJ5ZTXXeaKScgXDMvHovlDIfA=; b=HUyKkH6S4ZwIAR
+	Sor9a1WX/smIiH+1ZZSOVAAtVCvKE/veDpYDzJigl1VI5QUqft0pO6+3TbrhnB4yMakEt3LiaK9kh
+	Yau5lyEOgCHMHItDbqxg1OVB6xj/oDj8ICqfA9blxA6P7SxuC1v25y576YpGyN3R5jP3TXJL/h+ry
+	7/1HiLEzGnYlHuU2OTN87iZsOvMEPES+U9Fdv/g+/HrMdPmV9kPq5Rv8O/MQ0f7UyMT/eOsYuxkBO
+	HfqY0wu8Ks6bBZi0EQLIX+jITxZefaP34zJIR7YT47chfXNhXof0D8rj68sEKRDiy5V8ts5Z65Bmv
+	ym+w2WQi9hrr7lIRV34A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT7nB-0003kS-1k; Fri, 08 Nov 2019 17:11:25 +0000
+	id 1iT7nV-0004DJ-Q0; Fri, 08 Nov 2019 17:11:45 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT7my-0003aE-HH
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:11:13 +0000
+ id 1iT7nN-0004Ca-Ub
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:11:39 +0000
 Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id D4BDB817C;
- Fri,  8 Nov 2019 17:11:45 +0000 (UTC)
-Date: Fri, 8 Nov 2019 09:11:06 -0800
+ by muru.com (Postfix) with ESMTPS id 6A97381A1;
+ Fri,  8 Nov 2019 17:12:11 +0000 (UTC)
+Date: Fri, 8 Nov 2019 09:11:32 -0800
 From: Tony Lindgren <tony@atomide.com>
 To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Subject: Re: [PATCH v3 06/12] omap: pdata-quirks: remove openpandora quirks
- for mmc3 and wl1251
-Message-ID: <20191108171106.GL5610@atomide.com>
+Subject: Re: [PATCH v3 07/12] omap: remove omap2_hsmmc_info in old hsmmc.[ch]
+ and update Makefile
+Message-ID: <20191108171132.GM5610@atomide.com>
 References: <cover.1573122644.git.hns@goldelico.com>
- <ff450c14eb1e13d2db6533fa06e069c5bec3a0c4.1573122644.git.hns@goldelico.com>
+ <c3e0a1392dd6d44fe8bde0161c508007f4abdd5f.1573122644.git.hns@goldelico.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ff450c14eb1e13d2db6533fa06e069c5bec3a0c4.1573122644.git.hns@goldelico.com>
+In-Reply-To: <c3e0a1392dd6d44fe8bde0161c508007f4abdd5f.1573122644.git.hns@goldelico.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_091112_612577_D97AEA17 
-X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-CacheID: sfid-20191108_091138_021627_2078025D 
+X-CRM114-Status: UNSURE (   8.13  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,24 +76,19 @@ Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
  linux-omap@vger.kernel.org, Allison Randal <allison@lohutok.net>,
  linux-arm-kernel@lists.infradead.org,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Sakari Ailus <sakari.ailus@linux.intel.com>, netdev@vger.kernel.org
+ linux-kernel@vger.kernel.org, Sakari Ailus <sakari.ailus@linux.intel.com>,
+ netdev@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 * H. Nikolaus Schaller <hns@goldelico.com> [191107 10:32]:
-> With a wl1251 child node of mmc3 in the device tree decoded
-> in omap_hsmmc.c to handle special wl1251 initialization, we do
-> no longer need to instantiate the mmc3 through pdata quirks.
-> 
-> We also can remove the wlan regulator and reset/interrupt definitions
-> and do them through device tree.
-> 
-> Fixes: 81eef6ca9201 ("mmc: omap_hsmmc: Use dma_request_chan() for requesting DMA channel")
+> There is a new driver in drivers/mmc/host/omap_hsmmc.c
+> configured by CONFIG_MMC_OMAP_HS and the last user
+> was the pdata-quirks for pandora.
 
-Good to see this go away:
+Thanks for doing this:
 
 Acked-by: Tony Lindgren <tony@atomide.com>
 
