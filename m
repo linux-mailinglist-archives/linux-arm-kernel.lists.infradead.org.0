@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B08BF4CDD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:13:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 676C5F4CE1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:14:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pMlXgstFR3o9hx6RJ+dlk4tE4IMbS4iIJEMRuvDkE48=; b=C2aC/M0NBHWGRU
-	jKRVPZqvxaJgo+6WrxGZoZNEM+3ohkWChEG5YTLebQVyUVCZeNPHkuGhBgh1QFEQcXg6+LKQbaPCO
-	S8qjEGPGCO2yrbf+kvKuLNsyo5MrbNQ1R6PWDwFGGSCSonUM6CZlwwUMK/6fZiQXnifrnapzjxbYx
-	S4gva03EI7dSD+Jt0K5C4zJEq3/6GbEtxaMRwwzs/IXS7OKfmnrxbLWrHQr7+QSRRku7WgKfZhEz9
-	U6Ir6SliqDOx1MHWcaq0LRx4uB7vJD31z2jVwLux11o06xz315u49dSV5Wc5eLLvcK94P+bdUCMOL
-	+XUfEIR1c+wcGoiuhy+A==;
+	List-Owner; bh=fcUnh6dcycj+XAorCasyuErNqVsOqBdss3ycmDlaM18=; b=KeKk6fTR7+KLYw
+	jisXWw+yX6wcExfWNPnqOBHP+8EutrwXNRVS8GYSPBAvult+xRWJek0LwFDZLX7RHorBc8t/vwcSY
+	8GWwXlL093PqZjhLvdh1LJbbf6SlSb8Jj+7LmDm+j4m1TNzfZu+jDE0iU4zRrdPpxqJOHGw7JG8j2
+	C22EYr7ldyMeYQbYAMzWRttuuXKYjuFAi6kCFJL31Rbkg+so044x9zElK4LKiTuEyjnZlz52cOTX0
+	O5VLzFlQlTa+sGtwK+OCCyEAG0tR/y3YZrt7zkdE0EmIbu97fCAS/rwL7rTBIP2DfJ93zESfYGVqS
+	UDyIKBqHUZ0fBONkEtFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT44x-00089v-7G; Fri, 08 Nov 2019 13:13:31 +0000
+	id 1iT45G-0008RP-3U; Fri, 08 Nov 2019 13:13:50 +0000
 Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT3u4-0004oV-8B
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:18 +0000
-Received: by mail-lj1-x244.google.com with SMTP id g3so6104958ljl.11
+ id 1iT3u5-0004pQ-Ou
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:20 +0000
+Received: by mail-lj1-x244.google.com with SMTP id 139so6138396ljf.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 05:02:16 -0800 (PST)
+ Fri, 08 Nov 2019 05:02:17 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=nGAR/RezFR3p4yZ/WuemAtPhyGpYuWvNUP10WcDqxdQ=;
- b=E2itMeYzpcpcvPiEYcR7QgT0vf86pgTt+txJLe4ypE1iKN4ygJjlMfIdTBHaIbca7l
- 8TpMr7BlmS1pHXW8Lc8yrYYMbrYpZ6OWxpbB6h/El0hJa3CJ4u+D0CSxshybjUOT8noF
- QvazWxYu0noVka+ujfegXunMpmQNGUILv+4L4=
+ bh=VA9GbHfmKtODbCm0QoKaPVG8lLjwOAvz4Dj0Clq1FXQ=;
+ b=ghv2Fitdi+5CpOHryA/uKu7tvP1mIrcR7EQ6Boj2/RIU2+jYku8qiRim9NlU1bMI9t
+ jibRIInuK9ovNCl4B0NJGdUU3ySNR4YSeno58I0x0vbag1VAvxIje3y/7NhG3ERCFGnp
+ ox4wBxv0EYbYTQMQ1MAeNcI4UNMBZJ7Jq/bJ4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=nGAR/RezFR3p4yZ/WuemAtPhyGpYuWvNUP10WcDqxdQ=;
- b=ghl+jmYUU9RIqTI2JCrt1r6HmVdaHSPLvKSQO1n514MCw/YzK02PzE7Shu9mybiZDH
- ErUdH0qDzrMOm9vRCQ8D16gUmJuw0iPlhs69Z0PdXGmtXO0UbEsXCPNc1cuMfsth6Oc9
- 42UHoHmbfkwXJZyzlNbLsXYSNePI85ct3zBeMo3wqJkLhRTsyFyTU0DXUYaP/NGAYNtk
- iYdsUTKIzz1j/oI1kQfBdL5FMxAdrrAP8kafR2AqO88kO4wn1wetL1nK9InO+iOATEB8
- Y+eP72aLfiFgTRnyf+L5oXT5ACcLLwZLb7b+Gy6B+9pN9Z4AGl66LhGyngcIKoineb9/
- BWJg==
-X-Gm-Message-State: APjAAAXEp4bmGaO04XYN57JnJ3Zi/a40YPOfq/d2mJenIibFAOlRCNax
- l31BiBqdlMtHQs8qaHUhWj99kA==
-X-Google-Smtp-Source: APXvYqxRVlzGHosXYr2fWpCL9TuHFktXGiL0j9+nCag9bKeXu8pwMfcJUWqBOjQJYoqb1ThzLR2FBQ==
-X-Received: by 2002:a2e:9b4b:: with SMTP id o11mr6798538ljj.252.1573218134744; 
- Fri, 08 Nov 2019 05:02:14 -0800 (PST)
+ bh=VA9GbHfmKtODbCm0QoKaPVG8lLjwOAvz4Dj0Clq1FXQ=;
+ b=OsFPFRqhgy5dwSuGH71ApmkvVzNyQdTsnJM2pPk7PYwwznkK19PHSCO/108upQ1J1M
+ hb8pX5K5dYOjpOppMhigk9p2s7rel3pMNv8RWMyZgRO1oh4ciuoidMvJ+Kh7L6tmVuqL
+ 3tjWThIV9Wooexsb31jVSjApKUqJDhIyRQrJrEpq7k7nY3hVw07n5OGWGiGPFsfN150L
+ wm5hwUrUeoToXrezow32OpRaztRBWKz7t4r/5p5jm4k/nBHaVnUjJaOE79kGpClI2rP1
+ L3t0pY4tPdiJkdxXa5QVOLGb+G6x2a8yaPU20Fu7r3TolITSO5AhVrejGjAZlgi+8sYY
+ QnGg==
+X-Gm-Message-State: APjAAAVtq8+Ay8YqppHulxOYESnAxr2Ya1xn1CwLGask+qVdTG84czz7
+ cT5tUYc73UsCFC65Qnm+K5coe5n8JGesGf3d
+X-Google-Smtp-Source: APXvYqyoMqCjl5BXnYcK2ml6PASxOb4ksaKGHBnk0QjLBR1ADRWrjlHrHrSVaMf4Baj7cALCi+3dFg==
+X-Received: by 2002:a2e:9119:: with SMTP id m25mr6927156ljg.24.1573218135990; 
+ Fri, 08 Nov 2019 05:02:15 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.02.13
+ by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.02.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 05:02:14 -0800 (PST)
+ Fri, 08 Nov 2019 05:02:15 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v4 37/47] soc: fsl: qe: drop broken lazy call of
- cpm_muram_init()
-Date: Fri,  8 Nov 2019 14:01:13 +0100
-Message-Id: <20191108130123.6839-38-linux@rasmusvillemoes.dk>
+Subject: [PATCH v4 38/47] soc: fsl: qe: refactor cpm_muram_alloc_common to
+ prevent BUG on error path
+Date: Fri,  8 Nov 2019 14:01:14 +0100
+Message-Id: <20191108130123.6839-39-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_050216_348603_93D70CF7 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20191108_050218_481780_A38D0840 
+X-CRM114-Status: GOOD (  12.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -104,44 +104,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-cpm_muram_alloc_common() tries to support a kind of lazy
-initialization - if the muram_pool has not been created yet, it calls
-cpm_muram_init(). Now, cpm_muram_alloc_common() is always called under
+If the kmalloc() fails, we try to undo the gen_pool allocation we've
+just done. Unfortunately, start has already been modified to subtract
+the GENPOOL_OFFSET bias, so we're freeing something that very likely
+doesn't exist in the gen_pool, meaning we hit the
 
-	spin_lock_irqsave(&cpm_muram_lock, flags);
+ kernel BUG at lib/genalloc.c:399!
+ Internal error: Oops - BUG: 0 [#1] PREEMPT SMP ARM
+ ...
+ [<803fd0e8>] (gen_pool_free) from [<80426bc8>] (cpm_muram_alloc_common+0xb0/0xc8)
+ [<80426bc8>] (cpm_muram_alloc_common) from [<80426c28>] (cpm_muram_alloc+0x48/0x80)
+ [<80426c28>] (cpm_muram_alloc) from [<80428214>] (ucc_slow_init+0x110/0x4f0)
+ [<80428214>] (ucc_slow_init) from [<8044a718>] (qe_uart_request_port+0x3c/0x1d8)
 
-and cpm_muram_init() does gen_pool_create() (which implies a
-GFP_KERNEL allocation) and ioremap(), not to mention the fun that
-ensues from cpm_muram_init() doing
+(this was tested by just injecting a random failure by adding
+"|| (get_random_int()&7) == 0" to the "if (!entry)" condition).
 
-	spin_lock_init(&cpm_muram_lock);
-
-In other words, this has never worked, so nobody can have been relying
-on it.
-
-cpm_muram_init() is called from a subsys_initcall (either from
-cpm_init() in arch/powerpc/sysdev/cpm_common.c or, via qe_reset(),
-from qe_init() in drivers/soc/fsl/qe/qe.c).
+Refactor the code so we do the kmalloc() first, meaning that's the
+thing that needs undoing in case gen_pool_alloc_algo() then
+fails. This allows a later cleanup to move the locking from the
+callers into the _common function, keeping the kmalloc() out of the
+critical region and then, hopefully (if all the muram_alloc callers
+allow) change it to a GFP_KERNEL allocation.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/soc/fsl/qe/qe_common.c | 3 ---
- 1 file changed, 3 deletions(-)
+ drivers/soc/fsl/qe/qe_common.c | 16 +++++++---------
+ 1 file changed, 7 insertions(+), 9 deletions(-)
 
 diff --git a/drivers/soc/fsl/qe/qe_common.c b/drivers/soc/fsl/qe/qe_common.c
-index 4437f4e14d2c..feb33ec1c3d6 100644
+index feb33ec1c3d6..bc9b436684df 100644
 --- a/drivers/soc/fsl/qe/qe_common.c
 +++ b/drivers/soc/fsl/qe/qe_common.c
-@@ -119,9 +119,6 @@ static s32 cpm_muram_alloc_common(unsigned long size,
+@@ -119,23 +119,21 @@ static s32 cpm_muram_alloc_common(unsigned long size,
  	struct muram_block *entry;
  	s32 start;
  
--	if (!muram_pool && cpm_muram_init())
--		goto out2;
--
++	entry = kmalloc(sizeof(*entry), GFP_ATOMIC);
++	if (!entry)
++		return -ENOMEM;
  	start = gen_pool_alloc_algo(muram_pool, size, algo, data);
- 	if (!start)
- 		goto out2;
+-	if (!start)
+-		goto out2;
++	if (!start) {
++		kfree(entry);
++		return -ENOMEM;
++	}
+ 	start = start - GENPOOL_OFFSET;
+ 	memset_io(cpm_muram_addr(start), 0, size);
+-	entry = kmalloc(sizeof(*entry), GFP_ATOMIC);
+-	if (!entry)
+-		goto out1;
+ 	entry->start = start;
+ 	entry->size = size;
+ 	list_add(&entry->head, &muram_block_list);
+ 
+ 	return start;
+-out1:
+-	gen_pool_free(muram_pool, start, size);
+-out2:
+-	return -ENOMEM;
+ }
+ 
+ /*
 -- 
 2.23.0
 
