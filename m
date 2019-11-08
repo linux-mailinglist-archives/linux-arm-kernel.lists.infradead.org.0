@@ -2,98 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AC60F4490
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 11:34:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B93FDF449B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 11:35:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u8CAyjYErNkRmO7mmdYwGWJywsdQbH6/08PdS4+FkLM=; b=mjpddeJ6I4y+Qj
-	4oT6EYC7L8KcNJBsYFgoyugmW67jQyQOvPGlIDeP40qm+axRub7ir+VUv68MySnEMtb8qHbgaJUJr
-	49TlZCnlnbiXXSSzCQKaytD3N6EvEac/lOD/kt0boNCriqw5uolQrotGBuP5Z76OTmCiPOY3wTs37
-	nDjyQAtAcNJaV/Fw1y5dSQZfcN5c/6/n7O5Rf21oJEUxZlBCipabYJMXzNfxCuMrLzrlBawGFxTAG
-	p/Bx6Ix0GbXbyknWmEH5RfbAKsTybzpyaYJd9jqWsh3BGEQuxRPwdv24I6p7+/xQSRpeAyjlfGh1I
-	mEb5bNu0Yc6Olhr7ha4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CEeUUy95V1rDFK29kwAclaGIFhVOphXgv/oQCyi/Gf8=; b=CuXd1foBZldGl2+pP7cG8lGZe
+	PyLfztFMoQ/C5M+KTZ6QVeOavD7WKuzLy7vn51Xe+PywtI9Em7jxJRVwdoHzgKVR7soLep0CvS7P0
+	c2AXICveac1o0Z5aS9qa56yYPkmBCc/CPBFLQUKkXIVJZLRzdASqE3g5XUInhFXhx6/RUFKkUG034
+	SAzbftsMLMeVliUAN4647H71BuuOgMNak+j5Lru8D2LW9NC8se7WUymCX9qpiOEBF0F00aCswV+OL
+	qVUalB9KSHuNS1L20ptN4H5D3XWlw6ZiId1TBj7S3mFPG1RLY5S/9MQa1V2JJojQEiJSMDmqF9Tva
+	8VkO56wIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT1b2-0001qH-Ni; Fri, 08 Nov 2019 10:34:28 +0000
-Received: from mail-pl1-x636.google.com ([2607:f8b0:4864:20::636])
+	id 1iT1cK-0003Kt-Qu; Fri, 08 Nov 2019 10:35:48 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT1as-0001pp-GT
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 10:34:19 +0000
-Received: by mail-pl1-x636.google.com with SMTP id az9so3047306plb.11
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 02:34:17 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=43HgKc1Co5mZNEWbvwPEy71M/E2HSo/P90VB2LKFpvE=;
- b=lQit6rEqsiQQ3LC8uCNVHmp3cSNHe3QLN2QVkjmz65QAyCanhHOJ/atvWD35GbMKsH
- 7FQhw6F+/zj2EoHIyn4/g6wlJCCqMX8R2k5BzoTICWhOIsMaKZyKQ52DzhDR5C8BfiIE
- y6JL6i8ggi9BLIOGl2eYiEiOoI0181mdGtNLkO3BAA31iOIGdwDBB33Spt/pDlOWAn5A
- YxeXWN6kS8nSp60N1Bnejgsz6+WHhS5E2m2ttAOu7OLG5NVdUzOKluUGXY0H/e/KFfAa
- UFnv9+tClh85MYwbgscdQ0vcMXSAaQgcDK/J48N9jDrLvQsx/YsRC2TXf0pa9NvybTuY
- PYPw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=43HgKc1Co5mZNEWbvwPEy71M/E2HSo/P90VB2LKFpvE=;
- b=UMfBCP40bA3uakLL67Xg1XpslxJ71zzxUHLUbAeW1ufxq2Irf/oyW70io23rEq48ek
- Oi526/fvwC+lNXfO5Oa/meJY2W6jkZdogbdU+hbr6r7CJaFFXTljvpaFoLvjbNsLR1Ou
- Ttxy4O883+pSMLf/16osV70uN3bDZPVhYl45lNTbbq4o/slGq6R2f/QoffiKya29BjGt
- tmzRX7iQ/kOPUrxBqJPvtI/33YAcyVNrLrV0ePPeEqtdPAQTtY/L0EDKh07nI78U/89E
- ZPpPcq03v6OET4Iq1eg1AfKbRYXh5TvzAnQPXZyvJc8ub/Dx+10TM4ah2/ZYiC+7UVM/
- czbA==
-X-Gm-Message-State: APjAAAWZuvY2DMkfQ8dwWdJfc+rtvev6b0R9ab96sHFZ2t0UQa3fBLUJ
- 9KJ0YvuGTIHKirNGPgq3UlA=
-X-Google-Smtp-Source: APXvYqypcTD2j+TfxoxpwPnhis2mVHDXc/Yyk9JKNzK1iHJBAz2tB9NyVTvWB2zmA38YKuz+gzUAEg==
-X-Received: by 2002:a17:902:bc84:: with SMTP id
- bb4mr9229023plb.143.1573209256899; 
- Fri, 08 Nov 2019 02:34:16 -0800 (PST)
-Received: from bubble.grove.modra.org
- ([2406:3400:51d:8cc0:75bc:1342:3e74:ea62])
- by smtp.gmail.com with ESMTPSA id h66sm6145301pfg.23.2019.11.08.02.34.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 02:34:15 -0800 (PST)
-Received: by bubble.grove.modra.org (Postfix, from userid 1000)
- id 1A2BC80607; Fri,  8 Nov 2019 21:04:12 +1030 (ACDT)
-Date: Fri, 8 Nov 2019 21:04:12 +1030
-From: Alan Modra <amodra@gmail.com>
-To: Nathan Chancellor <natechancellor@gmail.com>
-Subject: Re: GENERATE_SHLIB_SCRIPT vs. EMBEDDED
-Message-ID: <20191108103411.GU6708@bubble.grove.modra.org>
-References: <fb6030c6-f96d-8219-61f9-548dfc9c5b5a@redhat.com>
- <20191028235341.GD3663@bubble.grove.modra.org>
- <20191105040135.GG6708@bubble.grove.modra.org>
- <CAKdteOa8Mf_MOd4Hf8jkcCcgo4bPH8Lss2QCHMu5BBog6N+19Q@mail.gmail.com>
- <20191105100317.GI6708@bubble.grove.modra.org>
- <20191107073700.GA22249@ubuntu-m2-xlarge-x86>
- <20191107074330.GP6708@bubble.grove.modra.org>
- <20191107172514.GA9267@ubuntu-m2-xlarge-x86>
- <20191107234842.GS6708@bubble.grove.modra.org>
- <20191108051839.GA35767@ubuntu-m2-xlarge-x86>
+ id 1iT1cD-0003KC-5L
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 10:35:42 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xA8ARHkc030061; Fri, 8 Nov 2019 11:35:30 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=C7Ytb5ccJx46yUXyoXndkBMI9CQtxWg5KpH5r3iInZ8=;
+ b=GH9uAbmNuzAIytWfQHvJoGGcaa3XfQizakPDih9XTMQcZNv9yhOju/+XEwD4dxMSI6Et
+ MYAEj0TBlE1+zZj1WX/k00K4MA/26XQLwWeyUnpBmEOdzBDBNbdypQ0BZzflaf8BJOz7
+ O/0OGDlxp3dnVm4cSnw9csIVXklDl+80lcd5vGDItgAMhtlHmLyh2z5jRgtowtpdyXYJ
+ 3FQuE9kZv35hNGwaI6s2LdO/E2srBP4ovFUwTVnJzax/VeQDlLG3rT9N5MOlbafFP+2R
+ 1TkjiJ9OaxFD89XLs3rqxWGcTNpX6T1WMPD0OeQ3PssVxWMrlpA2Ejms/k0v8F27yeLk 7g== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2w41vmu27x-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 08 Nov 2019 11:35:30 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 93442100034;
+ Fri,  8 Nov 2019 11:35:26 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7CB1F2B0FED;
+ Fri,  8 Nov 2019 11:35:26 +0100 (CET)
+Received: from lmecxl0912.lme.st.com (10.75.127.50) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 8 Nov
+ 2019 11:35:23 +0100
+Subject: Re: [PATCH V4 net-next 0/4] net: ethernet: stmmac: cleanup clock and
+ optimization
+To: David Miller <davem@davemloft.net>, <christophe.roullier@st.com>
+References: <20191107084757.17910-1-christophe.roullier@st.com>
+ <20191107.152640.1457462659040029467.davem@davemloft.net>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <8c4efcce-b46f-ac94-a367-50ff5d78c8a2@st.com>
+Date: Fri, 8 Nov 2019 11:35:23 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191108051839.GA35767@ubuntu-m2-xlarge-x86>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191107.152640.1457462659040029467.davem@davemloft.net>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-08_02:2019-11-07,2019-11-08 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_023418_568649_F7874E65 
-X-CRM114-Status: UNSURE (   8.15  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191108_023541_641797_E56E6181 
+X-CRM114-Status: GOOD (  13.78  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:636 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (amodra[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -113,27 +98,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Christophe Lyon <christophe.lyon@linaro.org>,
- binutils <binutils@sourceware.org>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, robh@kernel.org, devicetree@vger.kernel.org,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org, joabreu@synopsys.com,
+ andrew@lunn.ch, mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I'm reverting the patch.  My reasons for making it in the first place
-were bogus.  The ELF file header and program headers are of course
-still present in a file created by targets that set EMBEDDED, and the
-fact that EMBEDDED stops them being included in the memory image only
-affects some uses of those headers.  I still don't recommend creating
-shared libraries for Linux using -maarch64elf but the resulting shared
-library isn't as silly as what I thought.
+Hi David
 
--- 
-Alan Modra
-Australia Development Lab, IBM
+On 11/8/19 12:26 AM, David Miller wrote:
+> From: Christophe Roullier <christophe.roullier@st.com>
+> Date: Thu, 7 Nov 2019 09:47:53 +0100
+> 
+>> Some improvements:
+>>   - manage syscfg as optional clock,
+>>   - update slew rate of ETH_MDIO pin,
+>>   - Enable gating of the MAC TX clock during TX low-power mode
+>>
+>> V4: Update with Andrew Lunn remark
+> 
+> This is mostly ARM DT updates, which tree should this go through?
+> 
+> I don't want to step on toes this time :-)
+> 
+
+I'll take DT patches in my STM32 tree.
+
+Thanks
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
