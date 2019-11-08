@@ -2,57 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63C25F51E7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:02:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14AA6F51EC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:02:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nEIb+xDeUap5O0AsU06ImDNroomokdw+60/DIPj5NU0=; b=UNCFXoxjfXZoDq
-	BBX4lPMVab186tmKAOQ43IVtfLWmbfUbW9m3Kk+t5yKmgeixU7yvG2I13sClCkBiCF1zxblphJp21
-	6xf8ZLnOjZ3muNmmLKxEblCeQKjfQy2mSQnJkVGmlnFEuWuM7IsMAfmzeJpfWC9PoHDKPk3uhycB2
-	/nikTg9q53xuBEMLaj0lwG9kNAVSUJMFCXellFNsC88G718y7BYZp1AJLMGXwVp0ILYD7YevmSdaW
-	ZFsmkgGIMZz06UbewAHTdKZO5qQmZ7HnouxVBTyXojrubBiUfahHgxuTS8WEqL6pWfrf7UvHsMhK5
-	q+SWYVRFB7QrilySuyqA==;
+	List-Owner; bh=CBFPPbx+8yFtnJ8VIHcRayqcd3WVZZ5FS9BPZUVTQIc=; b=BSA/JXT+Fq12z+
+	6Zbtn/amndcMKq2qE0cJeWO02ctNs9T0VA92dQQ3IefgEED47KhRYJJiUHdhcDKjFItJSmYittM6g
+	iI0cIEgO8ArR5dWJIJJSgtOhkbcD6jZ5cynSCEcDuVfebsCiIJALmuHX0JzyHhw41aurrtc3DorF4
+	o6SSWqO8R92VH4EtA4Ce8nPWWl+/nG3XBj+4YnbxExJPq/0ncV19/FDHP71Bk3qgkwqlJCWP2y10G
+	HYH8eWp0c5c3xo1YnA5pEQf1ZBgNsm7E80dJuvkRzwwpo1eACymzj97uioRS471tDMjbyMLgubVPi
+	M+WEjPk0uJeyc5KRg9Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT7e3-0006P2-Us; Fri, 08 Nov 2019 17:01:59 +0000
+	id 1iT7eV-0006wL-DP; Fri, 08 Nov 2019 17:02:27 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT7dS-0005yf-Nv
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:01:25 +0000
+ id 1iT7dS-0005yj-Nx
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:01:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From
  :Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=EtnYr3LmwKuyA2P1mwmaYRggzxzGk7Qd45KJnaTEU0E=; b=CdSk8kcelJI4onOoxuWD3LqkhV
- u4WpAApEVMyrIwaRRyRVFDXJMhCR+HMIOYONH/gAjH9UnToGvkmBpY/D+5JJfRWqyLHHW8S2XY6Ih
- dVFI4qpcrddj0bu7Noco0ZHqgR6v3ev/r42dCB+ZInHah1SnWYe0mB4MSm/+7llYPtQ4=;
+ bh=dHLu4I4IeakEPcBskvxRwRTP3yxuTffQ4Byo2kwAkfI=; b=VQOeicqHvn2lwZTa7/gYMhbF0Q
+ Yndit00hI3dsE0AUaIckVHggMjdC2C2oIw5O8RJDf3ETv+gRyUcCvm31qK/loMNNAxTHwz5M+KmTj
+ qL7rNO2IRy9z31Sv2jOnCEiwgrb8ZPuZnivxYJet5eYp9OXuDiGeCLiwWL04MoD5fOdQ=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iT7dP-0007jZ-6w; Fri, 08 Nov 2019 17:01:19 +0000
+ id 1iT7dP-0007ja-9M; Fri, 08 Nov 2019 17:01:19 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 8114F2741702; Fri,  8 Nov 2019 17:01:18 +0000 (GMT)
+ id A5D672741705; Fri,  8 Nov 2019 17:01:18 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: [PATCH v8 3/4] arm64: Don't use KPTI where we have E0PD
-Date: Fri,  8 Nov 2019 17:01:15 +0000
-Message-Id: <20191108170116.32105-4-broonie@kernel.org>
+Subject: [PATCH v8 4/4] arm64: Use a variable to store non-global mappings
+ decision
+Date: Fri,  8 Nov 2019 17:01:16 +0000
+Message-Id: <20191108170116.32105-5-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191108170116.32105-1-broonie@kernel.org>
 References: <20191108170116.32105-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_090122_835750_0E5182F1 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20191108_090122_944060_2E2CB900 
+X-CRM114-Status: GOOD (  23.36  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -84,40 +85,171 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since E0PD is intended to fulfil the same role as KPTI we don't need to
-use KPTI on CPUs where E0PD is available, we can rely on E0PD instead.
-Change the check that forces KPTI on when KASLR is enabled to check for
-E0PD before doing so, CPUs with E0PD are not expected to be affected by
-meltdown so should not need to enable KPTI for other reasons.
+Refactor the code which checks to see if we need to use non-global
+mappings to use a variable instead of checking with the CPU capabilities
+each time, doing the initial check for KPTI early in boot before we
+start allocating memory so we still avoid transitioning to non-global
+mappings in common cases.
 
-Since E0PD is a system capability we will still enable KPTI if any of
-the CPUs in the system lacks E0PD, this will rewrite any global mappings
-that were established in systems where some but not all CPUs support
-E0PD.  We may transiently have a mix of global and non-global mappings
-while booting since we use the local CPU when deciding if KPTI will be
-required prior to completing CPU enumeration but any global mappings
-will be converted to non-global ones when KPTI is applied.
+Since this variable always matches our decision about non-global
+mappings this means we can also combine arm64_kernel_use_ng_mappings()
+and arm64_unmap_kernel_at_el0() into a single function, the variable
+simply stores the result and the decision code is elsewhere. We could
+just have the users check the variable directly but having a function
+makes it clear that these uses are read-only.
 
-KPTI can still be forced on from the command line if required.
+The result is that we simplify the code a bit and reduces the amount of
+code executed at runtime.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/include/asm/mmu.h | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ arch/arm64/include/asm/mmu.h          | 80 ++-------------------------
+ arch/arm64/include/asm/pgtable-prot.h |  4 +-
+ arch/arm64/kernel/cpufeature.c        | 48 +++++++++++++++-
+ arch/arm64/kernel/setup.c             |  7 +++
+ 4 files changed, 58 insertions(+), 81 deletions(-)
 
 diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
-index 55e285fff262..2e2a0ade883c 100644
+index 2e2a0ade883c..e4d862420bb4 100644
 --- a/arch/arm64/include/asm/mmu.h
 +++ b/arch/arm64/include/asm/mmu.h
-@@ -38,10 +38,23 @@ static inline bool arm64_kernel_unmapped_at_el0(void)
- static inline bool kaslr_requires_kpti(void)
+@@ -29,84 +29,11 @@ typedef struct {
+  */
+ #define ASID(mm)	((mm)->context.id.counter & 0xffff)
+ 
+-static inline bool arm64_kernel_unmapped_at_el0(void)
+-{
+-	return IS_ENABLED(CONFIG_UNMAP_KERNEL_AT_EL0) &&
+-	       cpus_have_const_cap(ARM64_UNMAP_KERNEL_AT_EL0);
+-}
++extern bool arm64_use_ng_mappings;
+ 
+-static inline bool kaslr_requires_kpti(void)
+-{
+-	bool tx1_bug;
+-	u64 ftr;
+-
+-	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
+-		return false;
+-
+-	/*
+-	 * E0PD does a similar job to KPTI so can be used instead
+-	 * where available. This will only run before the cpufeature
+-	 * code has usefully run and we eventually check on all CPUs so
+-	 * we can and must check locally.
+-	 */
+-	if (IS_ENABLED(CONFIG_ARM64_E0PD)) {
+-		ftr = read_sysreg_s(SYS_ID_AA64MMFR2_EL1);
+-		if ((ftr >> ID_AA64MMFR2_E0PD_SHIFT) & 0xf)
+-			return false;
+-	}
+-
+-	/*
+-	 * Systems affected by Cavium erratum 24756 are incompatible
+-	 * with KPTI.
+-	 */
+-	if (!IS_ENABLED(CONFIG_CAVIUM_ERRATUM_27456)) {
+-		tx1_bug = false;
+-#ifndef MODULE
+-	} else if (!static_branch_likely(&arm64_const_caps_ready)) {
+-		extern const struct midr_range cavium_erratum_27456_cpus[];
+-
+-		tx1_bug = is_midr_in_range_list(read_cpuid_id(),
+-						cavium_erratum_27456_cpus);
+-#endif
+-	} else {
+-		tx1_bug = __cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_27456);
+-	}
+-	if (tx1_bug)
+-		return false;
+-
+-	return kaslr_offset() > 0;
+-}
+-
+-static inline bool arm64_kernel_use_ng_mappings(void)
++static inline bool arm64_kernel_unmapped_at_el0(void)
  {
- 	bool tx1_bug;
+-	/* What's a kpti? Use global mappings if we don't know. */
+-	if (!IS_ENABLED(CONFIG_UNMAP_KERNEL_AT_EL0))
+-		return false;
+-
+-	/*
+-	 * Note: this function is called before the CPU capabilities have
+-	 * been configured, so our early mappings will be global. If we
+-	 * later determine that kpti is required, then
+-	 * kpti_install_ng_mappings() will make them non-global.
+-	 */
+-	if (arm64_kernel_unmapped_at_el0())
+-		return true;
+-
+-	/*
+-	 * Once we are far enough into boot for capabilities to be
+-	 * ready we will have confirmed if we are using non-global
+-	 * mappings so don't need to consider anything else here.
+-	 */
+-	if (static_branch_likely(&arm64_const_caps_ready))
+-		return false;
+-
+-	/*
+-	 * KASLR is enabled so we're going to be enabling kpti on non-broken
+-	 * CPUs regardless of their susceptibility to Meltdown. Rather
+-	 * than force everybody to go through the G -> nG dance later on,
+-	 * just put down non-global mappings from the beginning
+-	 */
+-	return kaslr_requires_kpti();
++	return arm64_use_ng_mappings;
+ }
+ 
+ typedef void (*bp_hardening_cb_t)(void);
+@@ -160,6 +87,7 @@ extern void create_pgd_mapping(struct mm_struct *mm, phys_addr_t phys,
+ 			       pgprot_t prot, bool page_mappings_only);
+ extern void *fixmap_remap_fdt(phys_addr_t dt_phys, int *size, pgprot_t prot);
+ extern void mark_linear_text_alias_ro(void);
++extern bool kaslr_requires_kpti(void);
+ 
+ #define INIT_MM_CONTEXT(name)	\
+ 	.pgd = init_pg_dir,
+diff --git a/arch/arm64/include/asm/pgtable-prot.h b/arch/arm64/include/asm/pgtable-prot.h
+index 9a21b84536f2..eb1c6f83343d 100644
+--- a/arch/arm64/include/asm/pgtable-prot.h
++++ b/arch/arm64/include/asm/pgtable-prot.h
+@@ -26,8 +26,8 @@
+ #define _PROT_DEFAULT		(PTE_TYPE_PAGE | PTE_AF | PTE_SHARED)
+ #define _PROT_SECT_DEFAULT	(PMD_TYPE_SECT | PMD_SECT_AF | PMD_SECT_S)
+ 
+-#define PTE_MAYBE_NG		(arm64_kernel_use_ng_mappings() ? PTE_NG : 0)
+-#define PMD_MAYBE_NG		(arm64_kernel_use_ng_mappings() ? PMD_SECT_NG : 0)
++#define PTE_MAYBE_NG		(arm64_kernel_unmapped_at_el0() ? PTE_NG : 0)
++#define PMD_MAYBE_NG		(arm64_kernel_unmapped_at_el0() ? PMD_SECT_NG : 0)
+ 
+ #define PROT_DEFAULT		(_PROT_DEFAULT | PTE_MAYBE_NG)
+ #define PROT_SECT_DEFAULT	(_PROT_SECT_DEFAULT | PMD_MAYBE_NG)
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 0d551af06421..8e6265a728b9 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -47,6 +47,9 @@ static struct arm64_cpu_capabilities const __ro_after_init *cpu_hwcaps_ptrs[ARM6
+ /* Need also bit for ARM64_CB_PATCH */
+ DECLARE_BITMAP(boot_capabilities, ARM64_NPATCHABLE);
+ 
++bool arm64_use_ng_mappings = false;
++EXPORT_SYMBOL(arm64_use_ng_mappings);
++
+ /*
+  * Flag to indicate if we have computed the system wide
+  * capabilities based on the boot time active CPUs. This
+@@ -961,6 +964,46 @@ has_useable_cnp(const struct arm64_cpu_capabilities *entry, int scope)
+ 	return has_cpuid_feature(entry, scope);
+ }
+ 
++bool kaslr_requires_kpti(void)
++{
++	bool tx1_bug;
 +	u64 ftr;
- 
- 	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
- 		return false;
- 
++
++	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
++		return false;
++
 +	/*
 +	 * E0PD does a similar job to KPTI so can be used instead
 +	 * where available. This will only run before the cpufeature
@@ -130,9 +262,73 @@ index 55e285fff262..2e2a0ade883c 100644
 +			return false;
 +	}
 +
++	/*
++	 * Systems affected by Cavium erratum 24756 are incompatible
++	 * with KPTI.
++	 */
++	if (!IS_ENABLED(CONFIG_CAVIUM_ERRATUM_27456)) {
++		tx1_bug = false;
++	} else if (!static_branch_likely(&arm64_const_caps_ready)) {
++		extern const struct midr_range cavium_erratum_27456_cpus[];
++
++		tx1_bug = is_midr_in_range_list(read_cpuid_id(),
++						cavium_erratum_27456_cpus);
++	} else {
++		tx1_bug = __cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_27456);
++	}
++	if (tx1_bug)
++		return false;
++
++	return kaslr_offset() > 0;
++}
++
+ static bool __meltdown_safe = true;
+ static int __kpti_forced; /* 0: not forced, >0: forced on, <0: forced off */
+ 
+@@ -1038,7 +1081,6 @@ kpti_install_ng_mappings(const struct arm64_cpu_capabilities *__unused)
+ 	extern kpti_remap_fn idmap_kpti_install_ng_mappings;
+ 	kpti_remap_fn *remap_fn;
+ 
+-	static bool kpti_applied = false;
+ 	int cpu = smp_processor_id();
+ 
  	/*
- 	 * Systems affected by Cavium erratum 24756 are incompatible
- 	 * with KPTI.
+@@ -1046,7 +1088,7 @@ kpti_install_ng_mappings(const struct arm64_cpu_capabilities *__unused)
+ 	 * it already or we have KASLR enabled and therefore have not
+ 	 * created any global mappings at all.
+ 	 */
+-	if (kpti_applied || kaslr_offset() > 0)
++	if (arm64_use_ng_mappings)
+ 		return;
+ 
+ 	remap_fn = (void *)__pa_symbol(idmap_kpti_install_ng_mappings);
+@@ -1056,7 +1098,7 @@ kpti_install_ng_mappings(const struct arm64_cpu_capabilities *__unused)
+ 	cpu_uninstall_idmap();
+ 
+ 	if (!cpu)
+-		kpti_applied = true;
++		arm64_use_ng_mappings = true;
+ 
+ 	return;
+ }
+diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+index 56f664561754..b6f9455d7ca3 100644
+--- a/arch/arm64/kernel/setup.c
++++ b/arch/arm64/kernel/setup.c
+@@ -285,6 +285,13 @@ void __init setup_arch(char **cmdline_p)
+ 
+ 	*cmdline_p = boot_command_line;
+ 
++	/*
++	 * If know now we are going to need KPTI then use non-global
++	 * mappings from the start, avoiding the cost of rewriting
++	 * everything later.
++	 */
++	arm64_use_ng_mappings = kaslr_requires_kpti();
++
+ 	early_fixmap_init();
+ 	early_ioremap_init();
+ 
 -- 
 2.20.1
 
