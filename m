@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FBD2F4DCC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:08:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19246F4DD1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:09:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iTsWRYg8RrCOlvn3HmDQMIo9AF+5SspnEZyKrz8CJ08=; b=CcCvkGv3pX1IDJ
-	DA7Pzrup+FHMxbGUfRQdePgAwuGEom4VYvyFhrNblgXc6FPXwHu3dWD9m5qg5v8y3bVBJKajdb7xv
-	/9nOPZJzMcvdvmt/E7yOk5uJf3X1QRiXzGLzWJtZl5b3Ak2nXJHgmN7SXy7rm0GIC1k5AQ+NVFAiJ
-	g4oUzebgecg2L2f5CWumwGBRGwGggM05GhpIcuufb0ZNHwu9g0vNNiI0wmjxU3pyEgDMb+NrnP3f2
-	sj6oufG98yyjJjCrVuznWOtp5n9fnlgl62CMRl3hVyBh1549MuSxJArOyRg2LpsPrjWzvDCRP+kBV
-	cRVLI9BtFouZFj7hPQGA==;
+	List-Owner; bh=GF9NQVFHztkZEzrzIFmW5SkDrb0R/QrvtBz4/J37ttc=; b=X1ejwHccTOQoVy
+	bBqct/ZTvBRP8l3G53Znz5K3UUxSTetSCHxfAr3uY3CEeh0JPbuZ8ljCrym0sik7dGvCEr24xAh/J
+	5pTKpi4gMzKEJFPegEtIzsIdZgQwJemzKhy8aXszAdJlVJ9Vg9+L7AqdHlIZYsfTkr5e0nRJOyf0F
+	Tg1ifIHzu/1v+K6cmJiH4DP8rLYIj8oXrWIJEY8u8F5ckQfFlmeTD2q1VpvfoimzpIb/bPtzLYGY8
+	67MW+3dge/VKzXbeekDNLT2y29fve4mz+Xzb2IP4Xy1CXEe9Dz/VPbMQ53giAIpMTWcOCzp5r3DIF
+	n7EEiiOum3qjGRXGCA2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT4wU-0006vm-72; Fri, 08 Nov 2019 14:08:50 +0000
+	id 1iT4xE-0007pV-0w; Fri, 08 Nov 2019 14:09:36 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT4w5-0006me-2U
- for linux-arm-kernel@bombadil.infradead.org; Fri, 08 Nov 2019 14:08:25 +0000
+ id 1iT4w6-0006mz-Ni
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 08 Nov 2019 14:08:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=uADukR/qjRRTeD2EWNfE15sniF6OQFg9fHQRvsVzUOM=; b=fSZPEVTayi/Ah17FnnljB/KOnc
- zGo6Dq/C90da1eHtGeuiube4Iz21DKxHtpOFJMix4pZ7uNWVcksyNpQ6VwgTuMFse5ZPUaX41LqCc
- O0Q1HZwpyGJxbv+5bIswoUxyWpQWek4LXWnZwwZvPpTAL8Ms4vE0nStLmsJY9Pwz0C7QVMX3FaeyN
- DbEllkNFtC1RrjglirKqt1NB1fEGrIkIrHJ+YBRjiU483WUGVvsLxyiyxlyj5m7iQ6CpJKvbroiDZ
- Z8CUpFW8V99HxPhuviH2wfeP0fYTsQtCYt+8Xd8qEmHGWJn9Kstvb3scyRjrE8HyTQl51EdEM1rZD
- YbRR/oVA==;
+ bh=dIRbBYG71cZZFw4UcRztvJ+2vqxn76RUZDnbysl16dw=; b=q4gWGahQIMLw7S7FQeOfyXMHSS
+ TIhwJTehIpP96Jm98c8d0vUx4vATJibIw7nsyNxYIJNSrRMeBm0msmHzk2ZXeAoKiANxK6nsAj2zs
+ Zk+Pn3aKmBKSUrOQMrrW3sQEj0DQ8l0W6YgDmWmU8zWYVNe0kN5YsyJPoCARNqg8xfLckCanc4uyz
+ J3CBXVWmNFlC+TtiVz4J7F/HDr4pINvlmCQq1jkkwPXUr7OZno/4wA+F0Iw04K4MxtULKgl/yt4UJ
+ pxqGKvvY8hy3pCFJK1lcRGeh9BfkvdUtFuQGidWjItCUBdaqzwZwBPubK6ADuRoGh7B/vcUn1qXiY
+ X4musVMQ==;
 Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT4w1-00044u-PY
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 14:08:23 +0000
+ id 1iT4w4-00044w-AD
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 14:08:25 +0000
 X-Originating-IP: 86.206.246.123
 Received: from localhost.localdomain
  (lfbn-tou-1-421-123.w86-206.abo.wanadoo.fr [86.206.246.123])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 26DDC2000E;
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id D7FE920010;
  Fri,  8 Nov 2019 14:07:50 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Mark Brown <broonie@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
  Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>
-Subject: [PATCH v2 4/7] spi: zynq-qspi: Enhance the Linear CFG bit definitions
-Date: Fri,  8 Nov 2019 15:07:41 +0100
-Message-Id: <20191108140744.1734-5-miquel.raynal@bootlin.com>
+Subject: [PATCH v2 5/7] spi: zynq-qspi: Clarify the select chip function
+Date: Fri,  8 Nov 2019 15:07:42 +0100
+Message-Id: <20191108140744.1734-6-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191108140744.1734-1-miquel.raynal@bootlin.com>
 References: <20191108140744.1734-1-miquel.raynal@bootlin.com>
@@ -85,33 +85,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Using masks makes sense when manipulating fields of several bits. When
-only one bit is involved, it is usual to just use the BIT() macro but
-in this case using the term mask is abusive. Fix the #define macros
-and their comments.
+The code used to assert and de-assert a chip select line is very
+complicated for no reason. Simplify the logic by either setting or
+resetting the concerned bit, which actually only changes an electrical
+state.
+
+Update the comment to reflect that there is no possibility to actually
+choose a CS as the default (CS0) will be driven in any case.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- drivers/spi/spi-zynq-qspi.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/spi/spi-zynq-qspi.c | 17 ++++++-----------
+ 1 file changed, 6 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/spi/spi-zynq-qspi.c b/drivers/spi/spi-zynq-qspi.c
-index 78711fe955f4..1151443ec830 100644
+index 1151443ec830..9adfcc66b02b 100644
 --- a/drivers/spi/spi-zynq-qspi.c
 +++ b/drivers/spi/spi-zynq-qspi.c
-@@ -99,9 +99,9 @@
-  * It is named Linear Configuration but it controls other modes when not in
-  * linear mode also.
+@@ -51,7 +51,6 @@
+ #define ZYNQ_QSPI_CONFIG_BDRATE_MASK	GENMASK(5, 3) /* Baud Rate Mask */
+ #define ZYNQ_QSPI_CONFIG_CPHA_MASK	BIT(2) /* Clock Phase Control */
+ #define ZYNQ_QSPI_CONFIG_CPOL_MASK	BIT(1) /* Clock Polarity Control */
+-#define ZYNQ_QSPI_CONFIG_SSCTRL_MASK	BIT(10) /* Slave Select Mask */
+ #define ZYNQ_QSPI_CONFIG_FWIDTH_MASK	GENMASK(7, 6) /* FIFO width */
+ #define ZYNQ_QSPI_CONFIG_MSTREN_MASK	BIT(0) /* Master Mode */
+ 
+@@ -63,7 +62,7 @@
   */
--#define ZYNQ_QSPI_LCFG_TWO_MEM_MASK	BIT(30) /* LQSPI Two memories Mask */
--#define ZYNQ_QSPI_LCFG_SEP_BUS_MASK	BIT(29) /* LQSPI Separate bus Mask */
--#define ZYNQ_QSPI_LCFG_U_PAGE_MASK	BIT(28) /* LQSPI Upper Page Mask */
-+#define ZYNQ_QSPI_LCFG_TWO_MEM		BIT(30) /* LQSPI Two memories */
-+#define ZYNQ_QSPI_LCFG_SEP_BUS		BIT(29) /* LQSPI Separate bus */
-+#define ZYNQ_QSPI_LCFG_U_PAGE		BIT(28) /* LQSPI Upper Page */
+ #define ZYNQ_QSPI_CONFIG_BAUD_DIV_MAX	GENMASK(2, 0) /* Baud rate maximum */
+ #define ZYNQ_QSPI_CONFIG_BAUD_DIV_SHIFT	3 /* Baud rate divisor shift */
+-#define ZYNQ_QSPI_CONFIG_PCS		10 /* Peripheral Chip Select */
++#define ZYNQ_QSPI_CONFIG_PCS		BIT(10) /* Peripheral Chip Select */
  
- #define ZYNQ_QSPI_LCFG_DUMMY_SHIFT	8
+ /*
+  * QSPI Interrupt Registers bit Masks
+@@ -288,16 +287,12 @@ static void zynq_qspi_chipselect(struct spi_device *spi, bool assert)
+ 	struct zynq_qspi *xqspi = spi_controller_get_devdata(ctlr);
+ 	u32 config_reg;
  
++	/* Ground the line to assert the CS */
+ 	config_reg = zynq_qspi_read(xqspi, ZYNQ_QSPI_CONFIG_OFFSET);
+-	if (assert) {
+-		/* Select the slave */
+-		config_reg &= ~ZYNQ_QSPI_CONFIG_SSCTRL_MASK;
+-		config_reg |= (((~(BIT(spi->chip_select))) <<
+-				ZYNQ_QSPI_CONFIG_PCS) &
+-				ZYNQ_QSPI_CONFIG_SSCTRL_MASK);
+-	} else {
+-		config_reg |= ZYNQ_QSPI_CONFIG_SSCTRL_MASK;
+-	}
++	if (assert)
++		config_reg &= ~ZYNQ_QSPI_CONFIG_PCS;
++	else
++		config_reg |= ZYNQ_QSPI_CONFIG_PCS;
+ 
+ 	zynq_qspi_write(xqspi, ZYNQ_QSPI_CONFIG_OFFSET, config_reg);
+ }
 -- 
 2.20.1
 
