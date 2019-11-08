@@ -2,154 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE197F5299
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:33:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25B1FF52D3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:47:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1eWHWyjVeZgW03RkUeL7jIn9n7oqT+mfzFC/9Mj3ECI=; b=oMRcwTQNieOZJa
-	NrUxsVDrMP6GKUDEYZ29ooJaJPN7bXU2w1vF+xa17OC+wb5EM2ecpfgZjiPUK2SjO+QE0nffXtntO
-	kkmA/PMghdMM64FBRDN67SlaKO/FUFvpL4VPecqWVxEsSx2Rndm9ufch5aQ4nr3hMXP0hOTNUkntq
-	GR3Z9xRlD84MtrMbrsMNxobz01mw/2cEEtzNXZArLoPj7wMD6m+pRB4QRV0FtdZmPN0Gy5x+Vqdby
-	euLnMxq+Viab8GpY9chKaoVrmAb+An2seftEtIGCi6C3NcXXl27TMXyX3UwygtfrmyNFrbp97J6b1
-	Mxm1q62D6NCGCub2sCxA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=jhC5FjSOvJg8umi0WqHXhNSiVP/UiGF2vXwyMi9uoO8=; b=Awg
+	lBUhmnDnhpA87xs+zeR4Dko5u8SeLsVvo/DPfy6ghQ9g7FXtH3jnKG6xXacj2B97JUlk86NwEh875
+	0/E6swSRQ5b/aZJWyCPzlx+3b2MGwJacISm5yWxZ7AHozlPH8HQF6yN0KwIvn4ANpT/ftib0qoNWu
+	TircGPKV8QfzpWDZTjcbq/kxXgc2vseky/nvhMaNghf4oJVQsDjsrPV+fZS/F61XVsaNZX1xfgDdl
+	+F3gsJtxnO5s6Lv7DGOcpopw9Eht0GnDQtfAsvdAf53mcz4y2CyYO+SDQmf723C0vHZId/VAFQZYH
+	t3G7915R7Uu0CikGw1qRWIDqSJrCL8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT880-0004I1-4v; Fri, 08 Nov 2019 17:32:56 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iT8M0-0002At-FF; Fri, 08 Nov 2019 17:47:24 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT87q-0004H9-Hw
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:32:47 +0000
-Received: by mail-pl1-x644.google.com with SMTP id a18so4375611plm.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 09:32:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=oKdyN5QHZoducM/ZXJxz3ZlwgGx1VFjyrtRYK1vSGOw=;
- b=VlIjjGo9wPWQYUId1PNwpaIGKKfgjL4nM2OMxquC6X6biTqHRBe4ElKTUI6DYENqJh
- 7PnM2MzB/bNqHcCFo1YyYo7pqX9rSNp/vrRd9V0tQASrW2y5dMdNrtg5+bNNtbciYeYq
- SZNMOSC5mkMPD9i0X+mQ+AD5JRQyRTU5tZsRn+xHQUo66vMowuP9NtYVtceY21+FfwrW
- mIZfZR7R2bBpeheHG9YmGQtjGgsIiyxcbYddpDsTyAypWhqgLRisA186hOElEofAtJ2X
- FT4nUbOfdHZhbUToSH59WtICv90YGLzKqVet2rrps1jTGtioYuClUpOpOJY/0j5y7D2x
- 6olA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=oKdyN5QHZoducM/ZXJxz3ZlwgGx1VFjyrtRYK1vSGOw=;
- b=JcCZ3BCVPySX2gCXDGOPTRpAhKv8P5iF2wL8w1Q2YYX50FTvxYXyFG5YT+l+mX+tLM
- I1rC1/BleLSRplJkiP7w3xVZ4V3ET9lZUgkGpfrvFMpYjEkZFoztAkd0jqWc/kMKLyLk
- Fnmo+nT+RR2oNQLgKaduvqerIvaeUWq6jWmLG77WNfa+otSirJ57M9MOva88Luh4Y0O/
- JadxAYI6sN3IKAJBtsKUeh6iKrSqYulObZ/MJaVTgWX02CDeiIVJj77UbQVZtcVDynnD
- TleyNBTQ9qvzPIQoCQ0BmJI6vncapbOjhKzt0phDCNfFZc4dyzZm2fhTINXFZBJYOphy
- +/tQ==
-X-Gm-Message-State: APjAAAUep/Er26qLXHyIXjLD0jDtOupxsRNhKxCWRaRYIge2K8661SNL
- GwK9Blx55p8cdjiXkJIke1A=
-X-Google-Smtp-Source: APXvYqwb45pSgVATa0i21etTa/b4FwNHcVy+qnWffOVo4v2j9PVsF1D4xGE5DWG6AOlbBbaLf06aqg==
-X-Received: by 2002:a17:902:59d9:: with SMTP id
- d25mr8320829plj.250.1573234365740; 
- Fri, 08 Nov 2019 09:32:45 -0800 (PST)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id e71sm6076638pgc.91.2019.11.08.09.32.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 08 Nov 2019 09:32:45 -0800 (PST)
-Subject: Re: [PATCH V10 2/2] mailbox: introduce ARM SMC based mailbox
-To: Peng Fan <peng.fan@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>
-References: <1569824287-4263-1-git-send-email-peng.fan@nxp.com>
- <1569824287-4263-3-git-send-email-peng.fan@nxp.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <2c8fa412-33c2-57c7-20b7-37b3b70ce524@gmail.com>
-Date: Fri, 8 Nov 2019 09:32:43 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <1569824287-4263-3-git-send-email-peng.fan@nxp.com>
-Content-Language: en-US
+ id 1iT8KQ-0000nd-CW
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:45:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=054D4IehVPi3LXAnly7Ia/RvdD/amczeyU/c9Ai/ERk=; b=ifjQ14ueFA6R
+ CrcdqsQPtx3JfDZ9F5xYLMAEo0Jd/7uTe4Oh3fhEeIIYZPKiB94Ee/F7TpSppEt+3UBsTGsJAJA0p
+ pn7N6mwfyFXlrZTomrScTbzNAmJyghigcI8I1TVViMbnedaui2/X5/zRMTPf2Mch/yCdflL1lEw0H
+ /dHqg=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iT8KN-0007qJ-UO; Fri, 08 Nov 2019 17:45:44 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 0D58E2741460; Fri,  8 Nov 2019 17:45:42 +0000 (GMT)
+From: Mark Brown <broonie@kernel.org>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Applied "spi: zynq-qspi: Support two chip selects" to the spi tree
+In-Reply-To: <20191108140744.1734-8-miquel.raynal@bootlin.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20191108174543.0D58E2741460@ypsilon.sirena.org.uk>
+Date: Fri,  8 Nov 2019 17:45:42 +0000 (GMT)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_093246_618549_7397A788 
-X-CRM114-Status: GOOD (  21.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191108_094546_559661_4736205F 
+X-CRM114-Status: GOOD (  18.36  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -163,92 +77,157 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
+Cc: Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>,
+ Michal Simek <michal.simek@xilinx.com>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peng,
+The patch
 
-On 9/29/19 11:20 PM, Peng Fan wrote:
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> This mailbox driver implements a mailbox which signals transmitted data
-> via an ARM smc (secure monitor call) instruction. The mailbox receiver
-> is implemented in firmware and can synchronously return data when it
-> returns execution to the non-secure world again.
-> An asynchronous receive path is not implemented.
-> This allows the usage of a mailbox to trigger firmware actions on SoCs
-> which either don't have a separate management processor or on which such
-> a core is not available. A user of this mailbox could be the SCP
-> interface.
+   spi: zynq-qspi: Support two chip selects
 
-Sorry for not spotting this, or rather asking this earlier, but I do
-have one question below.
+has been applied to the spi tree at
 
-[snip]
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.5
 
-> +static int arm_smc_send_data(struct mbox_chan *link, void *data)
-> +{
-> +	struct arm_smc_chan_data *chan_data = link->con_priv;
-> +	struct arm_smccc_mbox_cmd *cmd = data;
-> +	unsigned long ret;
-> +
-> +	if (ARM_SMCCC_IS_64(chan_data->function_id)) {
-> +		ret = chan_data->invoke_smc_mbox_fn(chan_data->function_id,
-> +						    cmd->args_smccc64[0],
-> +						    cmd->args_smccc64[1],
-> +						    cmd->args_smccc64[2],
-> +						    cmd->args_smccc64[3],
-> +						    cmd->args_smccc64[4],
-> +						    cmd->args_smccc64[5]);
-> +	} else {
-> +		ret = chan_data->invoke_smc_mbox_fn(chan_data->function_id,
-> +						    cmd->args_smccc32[0],
-> +						    cmd->args_smccc32[1],
-> +						    cmd->args_smccc32[2],
-> +						    cmd->args_smccc32[3],
-> +						    cmd->args_smccc32[4],
-> +						    cmd->args_smccc32[5]);
-> +	}
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-Why did not we use unsigned long for the args_smccc[] array to be bit
-width independent, this is what the PSCI infrastructure does and it
-looks a lot nicer IMHO. More question below.
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-[snip]
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-> +
-> +#ifndef _LINUX_ARM_SMCCC_MBOX_H_
-> +#define _LINUX_ARM_SMCCC_MBOX_H_
-> +
-> +#include <linux/types.h>
-> +
-> +/**
-> + * struct arm_smccc_mbox_cmd - ARM SMCCC message structure
-> + * @args_smccc32/64:	actual usage of registers is up to the protocol
-> + *			(within the SMCCC limits)
-> + */
-> +struct arm_smccc_mbox_cmd {
-> +	union {
-> +		u32 args_smccc32[6];
-> +		u64 args_smccc64[6];
-> +	};
-> +};
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
-Why is this being moved to a separate header file and not within the
-driver's main file? It is not like we offer the ability for a driver to
-embed this ARM SMC mailbox driver as a library, and customize the values
-of the SMC arguments (maybe we should do that, as a later patch) except
-for the function_id. If you have a "public" header, there is usually a
-service or some configuration that your driver would offer, which is not
-the case here.
+Thanks,
+Mark
+
+From d575c9b7c8b4c5ddfb1aa75ac91fdcc20ce328c4 Mon Sep 17 00:00:00 2001
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+Date: Fri, 8 Nov 2019 15:07:44 +0100
+Subject: [PATCH] spi: zynq-qspi: Support two chip selects
+
+The Zynq QSPI controller features 2 CS. When the num-cs DT property
+is set to 2, the hardware will be initialized to support having two
+devices connected over each CS.
+
+In this case, both CS lines are driven by the state of the U_PAGE
+(upper page) bit. When unset, the lower page (CS0) is selected,
+otherwise it is the upper page (CS1).
+
+Change tested on a custom design featuring two SPI-NORs with different
+CS on the Zynq-7000 QSPI bus.
+
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Link: https://lore.kernel.org/r/20191108140744.1734-8-miquel.raynal@bootlin.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/spi/spi-zynq-qspi.c | 33 +++++++++++++++++++++++++--------
+ 1 file changed, 25 insertions(+), 8 deletions(-)
+
+diff --git a/drivers/spi/spi-zynq-qspi.c b/drivers/spi/spi-zynq-qspi.c
+index e76f9c9738f0..17641157354d 100644
+--- a/drivers/spi/spi-zynq-qspi.c
++++ b/drivers/spi/spi-zynq-qspi.c
+@@ -114,8 +114,8 @@
+  */
+ #define ZYNQ_QSPI_MODEBITS			(SPI_CPOL | SPI_CPHA)
+ 
+-/* Default number of chip selects */
+-#define ZYNQ_QSPI_DEFAULT_NUM_CS	1
++/* Maximum number of chip selects */
++#define ZYNQ_QSPI_MAX_NUM_CS		2
+ 
+ /**
+  * struct zynq_qspi - Defines qspi driver instance
+@@ -159,6 +159,7 @@ static inline void zynq_qspi_write(struct zynq_qspi *xqspi, u32 offset,
+ /**
+  * zynq_qspi_init_hw - Initialize the hardware
+  * @xqspi:	Pointer to the zynq_qspi structure
++ * @num_cs:	Number of connected CS (to enable dual memories if needed)
+  *
+  * The default settings of the QSPI controller's configurable parameters on
+  * reset are
+@@ -176,7 +177,7 @@ static inline void zynq_qspi_write(struct zynq_qspi *xqspi, u32 offset,
+  *	- Set the little endian mode of TX FIFO and
+  *	- Enable the QSPI controller
+  */
+-static void zynq_qspi_init_hw(struct zynq_qspi *xqspi)
++static void zynq_qspi_init_hw(struct zynq_qspi *xqspi, unsigned int num_cs)
+ {
+ 	u32 config_reg;
+ 
+@@ -184,7 +185,12 @@ static void zynq_qspi_init_hw(struct zynq_qspi *xqspi)
+ 	zynq_qspi_write(xqspi, ZYNQ_QSPI_IDIS_OFFSET, ZYNQ_QSPI_IXR_ALL_MASK);
+ 
+ 	/* Disable linear mode as the boot loader may have used it */
+-	zynq_qspi_write(xqspi, ZYNQ_QSPI_LINEAR_CFG_OFFSET, 0);
++	config_reg = 0;
++	/* At the same time, enable dual mode if more than 1 CS is available */
++	if (num_cs > 1)
++		config_reg |= ZYNQ_QSPI_LCFG_TWO_MEM;
++
++	zynq_qspi_write(xqspi, ZYNQ_QSPI_LINEAR_CFG_OFFSET, config_reg);
+ 
+ 	/* Clear the RX FIFO */
+ 	while (zynq_qspi_read(xqspi, ZYNQ_QSPI_STATUS_OFFSET) &
+@@ -286,6 +292,17 @@ static void zynq_qspi_chipselect(struct spi_device *spi, bool assert)
+ 	struct zynq_qspi *xqspi = spi_controller_get_devdata(ctlr);
+ 	u32 config_reg;
+ 
++	/* Select the lower (CS0) or upper (CS1) memory */
++	if (ctlr->num_chipselect > 1) {
++		config_reg = zynq_qspi_read(xqspi, ZYNQ_QSPI_LINEAR_CFG_OFFSET);
++		if (!spi->chip_select)
++			config_reg &= ~ZYNQ_QSPI_LCFG_U_PAGE;
++		else
++			config_reg |= ZYNQ_QSPI_LCFG_U_PAGE;
++
++		zynq_qspi_write(xqspi, ZYNQ_QSPI_LINEAR_CFG_OFFSET, config_reg);
++	}
++
+ 	/* Ground the line to assert the CS */
+ 	config_reg = zynq_qspi_read(xqspi, ZYNQ_QSPI_CONFIG_OFFSET);
+ 	if (assert)
+@@ -673,9 +690,9 @@ static int zynq_qspi_probe(struct platform_device *pdev)
+ 	ret = of_property_read_u32(np, "num-cs",
+ 				   &num_cs);
+ 	if (ret < 0) {
+-		ctlr->num_chipselect = ZYNQ_QSPI_DEFAULT_NUM_CS;
+-	} else if (num_cs > ZYNQ_QSPI_DEFAULT_NUM_CS) {
+-		dev_err(&pdev->dev, "anything but CS0 is not yet supported\n");
++		ctlr->num_chipselect = 1;
++	} else if (num_cs > ZYNQ_QSPI_MAX_NUM_CS) {
++		dev_err(&pdev->dev, "only 2 chip selects are available\n");
+ 		goto remove_master;
+ 	} else {
+ 		ctlr->num_chipselect = num_cs;
+@@ -689,7 +706,7 @@ static int zynq_qspi_probe(struct platform_device *pdev)
+ 	ctlr->dev.of_node = np;
+ 
+ 	/* QSPI controller initializations */
+-	zynq_qspi_init_hw(xqspi);
++	zynq_qspi_init_hw(xqspi, ctlr->num_chipselect);
+ 
+ 	ret = devm_spi_register_controller(&pdev->dev, ctlr);
+ 	if (ret) {
 -- 
-Florian
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
