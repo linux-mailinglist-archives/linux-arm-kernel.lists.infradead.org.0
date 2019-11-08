@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D06EEF4CE2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:14:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4515DF4CE7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:14:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V8NcjURa+xZUsvxDMOm0tIEQIFAEdw4T52S4vWFd01w=; b=BQc0X2I2+JwrO2
-	6UPfTDVXxvYlKeKPUPfPEJRZqs8XvdOz0Bdja6PXy3z09UpGIvxptSGmMh5742j65Bubt105XsWdC
-	GV/PWEEe1s/AlMpi64nV7ki2ysu8eZMnQX5s/ICkFGfmiOWZSVAyJVSvjXPO/LtgWf13JRa0fXZxN
-	vo9BQEPDAiO8ZElEGN0yPHpRitKQpn4HkiDZPWezWDAfMPlwycichYprh9nvPGcV4gl3Uk/F9ao9H
-	rfye6WZTUvuM8USX9ExAMLLw4mWstARQXGTKS/dSU0UDTT77Abw5Tnfknfanv9PG9CnbMuPAUUqFZ
-	pEKkG6jTL7iFQlezjucQ==;
+	List-Owner; bh=ksARTpNh9fB/0Oml8tmfxVuPawOLRnfRSmCQ+QIflZI=; b=tHxaydge4Xzq5y
+	FBHohVBOT7+Nz/jR2BiQbzoJ9hqHbDe6cSI5qVHgwmkXL/ICsQweLA+HXc6SXkU1mb/DlAvWFkHgK
+	RbGFcQv+19Twk57GMeQfoxfgEK6Zt5Ws82qoQuAjvCGtAK7Y4Jby7tJ+PqO47KBxdtuSsfRG8oK3j
+	R854qZb2Fh6SRO31r1H0QYy8ta3MgKl0ZjkLVCaocBkUulgBKKulAJUYuzBh47TPyiCQAR3WlS32s
+	bHucLPmlO5VpDJOLkuKbsx9+RuNmgjO20cYtiYLMKPirUThyhZgGwtXX46WplyY8kOvyqEp9Phm+A
+	iJjRtCWSnsKuk2hkHdGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT45X-0000EL-Tz; Fri, 08 Nov 2019 13:14:07 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iT468-0000i9-FH; Fri, 08 Nov 2019 13:14:44 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT3u7-0004qF-4y
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:23 +0000
-Received: by mail-lj1-x244.google.com with SMTP id v8so6133547ljh.5
+ id 1iT3u7-0004r7-S8
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:25 +0000
+Received: by mail-lj1-x243.google.com with SMTP id m9so6114833ljh.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 05:02:18 -0800 (PST)
+ Fri, 08 Nov 2019 05:02:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=lTNGYmdFYnmbZW7BpDJGzJwkDqsYkg29EXzmXFmW/h8=;
- b=H5JuEuP5tLO+DynLcAFFP0N09+DzlW9tVKmrQ/dVJFts+vd+dHMtpA2iNiybLkrIue
- teBl/LORkM1qYI0PXUTGYUWBT+8bbWRDFfPbAjjljgCudgvFBX7mGvhQWjv0Q8EWQIuE
- PeMjAXLmxtZUTyKdS4F/EuhaR1nxaUmqhlnAI=
+ bh=zHMD7aDRcAnceTlZ0tE45j1n7viMV+uwJbkB9Il7bT8=;
+ b=eGaarsbw1EKw6pefhZScDY8YR32XWY0OK62VQmAXGwS02Lsok7Cew24ssbH7+23CdV
+ pCNtXVY4hCMr1BBWQwaJnKG9A3nmttVVy/tw2ceMFowkpf0wPbzqZCdgPNs2LC+HYuL1
+ fGPRoMpFjxf4hp3B19FgA4ZCX5/HrxQzcKJAY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=lTNGYmdFYnmbZW7BpDJGzJwkDqsYkg29EXzmXFmW/h8=;
- b=kLGGkQiZRitB0od9N7DzdWco9kxnP6A6cD6YOsWVcpaV4/Zb+09BSxYVtDgso4YdqT
- yQeFlm1Q9IEeMIIHFCx/Jb2HwLKsF5N7BB2iCAw4W8TeteJSDKBnN2dbTQGbsJSvr2mr
- 0wb28ZwMu+CLs/juVIvxqlFckJ/botieZWLbqkCiasOKTu9/tEoOClS9uazIIsZthp+i
- gVSN7MfeUv4Y6pccJwir5pVAE/CIQ4f9HWUrCjsr9MgGRIc6Sql3wbRWIXO0vyqhY0Kp
- kDAgm49NOMWuldkRjcfWXXmBIt6Xk0NrfFdN+NRSR5KZMrmIwYCkDp3q06Bh4GjH9fM+
- JN2Q==
-X-Gm-Message-State: APjAAAWeP5OkJFsjz6OMBmcCUkPWDt64KfSVbv68IWSEHmqu4fKWwpuF
- 3i6H0SAQfNaEu8i3sHrTSYHXvc/E6K0J2d1Z
-X-Google-Smtp-Source: APXvYqzP460JuRM8sVvJMljDGfhC7vukmbMbViHsvnghQLYn1lNCibVb6RIJWYFwFeSahEYRQku9KA==
-X-Received: by 2002:a2e:894b:: with SMTP id b11mr6885689ljk.118.1573218137226; 
- Fri, 08 Nov 2019 05:02:17 -0800 (PST)
+ bh=zHMD7aDRcAnceTlZ0tE45j1n7viMV+uwJbkB9Il7bT8=;
+ b=V9g7abc0DyAWCqoh1gI2SlgwjE6CsksX5+khZiAG8DIj3qaSXwDZwjArGTKYsXtBsI
+ 2Wq2vPWpKQORnLWlyKpcDOToRrprwO2iDMGR7kttNO6ueRepcSRL/fDqv48H8mw/YST2
+ NqFLFX7FEXoceHeBkzyqFh3m9jA85Ks4QGciRh3QeQDrAjAfA7oX3FvfCP4ROlktPv/W
+ nx4sbsVXDjv3PcxkaXcVpCb4m5+0YduhSLv9eEEGBnLhFTLW9cvDBVNhtTzLk0l87ZJS
+ 3e8iDF6cWkimbP+X1LgkdU7XbTUtP665Zzxfg4d/ffaCdgMICBBmZ6SDK3hmAnSEfP6d
+ x30g==
+X-Gm-Message-State: APjAAAXkvtPN8lhDOWPPQszzNaYynKtZltsJIXGmTOb0VL6orwOk2Pon
+ lLSKH9NGEZqOn9p4cXCV3qOIlA==
+X-Google-Smtp-Source: APXvYqyMeD/Z3Mfx+EKRD5Ea/1OpAHbYHw/xX9JRktv3gCIUdIApbq1aUzUWDJoePEO2SvwM0dFnVg==
+X-Received: by 2002:a2e:94d6:: with SMTP id r22mr6708575ljh.7.1573218138299;
+ Fri, 08 Nov 2019 05:02:18 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.02.16
+ by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.02.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 05:02:16 -0800 (PST)
+ Fri, 08 Nov 2019 05:02:17 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v4 39/47] soc: fsl: qe: avoid IS_ERR_VALUE in ucc_slow.c
-Date: Fri,  8 Nov 2019 14:01:15 +0100
-Message-Id: <20191108130123.6839-40-linux@rasmusvillemoes.dk>
+Subject: [PATCH v4 40/47] soc: fsl: qe: drop use of IS_ERR_VALUE in
+ qe_sdma_init()
+Date: Fri,  8 Nov 2019 14:01:16 +0100
+Message-Id: <20191108130123.6839-41-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_050219_438508_4F9F9DA9 
-X-CRM114-Status: GOOD (  15.55  )
+X-CRM114-CacheID: sfid-20191108_050222_581944_414D1C16 
+X-CRM114-Status: GOOD (  12.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,112 +104,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When trying to build this for a 64-bit platform, one gets warnings
-from using IS_ERR_VALUE on something which is not sizeof(long).
-
-Instead, change the various *_offset fields to store a signed integer,
-and simply check for a negative return from qe_muram_alloc(). Since
-qe_muram_free() now accepts and ignores a negative argument, we only
-need to make sure these fields are initialized with -1, and we can
-just unconditionally call qe_muram_free() in ucc_slow_free().
-
-Note that the error case for us_pram_offset failed to set that field
-to 0 (which, as noted earlier, is anyway a bogus sentinel value).
+Now that qe_muram_alloc() returns s32, adapt qe_sdma_init() and avoid
+another few IS_ERR_VALUE() uses.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/soc/fsl/qe/ucc_slow.c | 22 +++++++++-------------
- include/soc/fsl/qe/ucc_slow.h |  6 +++---
- 2 files changed, 12 insertions(+), 16 deletions(-)
+ drivers/soc/fsl/qe/qe.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/soc/fsl/qe/ucc_slow.c b/drivers/soc/fsl/qe/ucc_slow.c
-index 9b55fd0f50c6..274d34449846 100644
---- a/drivers/soc/fsl/qe/ucc_slow.c
-+++ b/drivers/soc/fsl/qe/ucc_slow.c
-@@ -154,6 +154,9 @@ int ucc_slow_init(struct ucc_slow_info * us_info, struct ucc_slow_private ** ucc
- 			__func__);
- 		return -ENOMEM;
- 	}
-+	uccs->rx_base_offset = -1;
-+	uccs->tx_base_offset = -1;
-+	uccs->us_pram_offset = -1;
+diff --git a/drivers/soc/fsl/qe/qe.c b/drivers/soc/fsl/qe/qe.c
+index ec511840db3c..5bf279c679ef 100644
+--- a/drivers/soc/fsl/qe/qe.c
++++ b/drivers/soc/fsl/qe/qe.c
+@@ -365,16 +365,16 @@ EXPORT_SYMBOL(qe_put_snum);
+ static int qe_sdma_init(void)
+ {
+ 	struct sdma __iomem *sdma = &qe_immr->sdma;
+-	static unsigned long sdma_buf_offset = (unsigned long)-ENOMEM;
++	static s32 sdma_buf_offset = -ENOMEM;
  
- 	/* Fill slow UCC structure */
- 	uccs->us_info = us_info;
-@@ -179,7 +182,7 @@ int ucc_slow_init(struct ucc_slow_info * us_info, struct ucc_slow_private ** ucc
- 	/* Get PRAM base */
- 	uccs->us_pram_offset =
- 		qe_muram_alloc(UCC_SLOW_PRAM_SIZE, ALIGNMENT_OF_UCC_SLOW_PRAM);
--	if (IS_ERR_VALUE(uccs->us_pram_offset)) {
-+	if (uccs->us_pram_offset < 0) {
- 		printk(KERN_ERR "%s: cannot allocate MURAM for PRAM", __func__);
- 		ucc_slow_free(uccs);
- 		return -ENOMEM;
-@@ -206,10 +209,9 @@ int ucc_slow_init(struct ucc_slow_info * us_info, struct ucc_slow_private ** ucc
- 	uccs->rx_base_offset =
- 		qe_muram_alloc(us_info->rx_bd_ring_len * sizeof(struct qe_bd),
- 				QE_ALIGNMENT_OF_BD);
--	if (IS_ERR_VALUE(uccs->rx_base_offset)) {
-+	if (uccs->rx_base_offset < 0) {
- 		printk(KERN_ERR "%s: cannot allocate %u RX BDs\n", __func__,
- 			us_info->rx_bd_ring_len);
--		uccs->rx_base_offset = 0;
- 		ucc_slow_free(uccs);
- 		return -ENOMEM;
- 	}
-@@ -217,9 +219,8 @@ int ucc_slow_init(struct ucc_slow_info * us_info, struct ucc_slow_private ** ucc
- 	uccs->tx_base_offset =
- 		qe_muram_alloc(us_info->tx_bd_ring_len * sizeof(struct qe_bd),
- 			QE_ALIGNMENT_OF_BD);
--	if (IS_ERR_VALUE(uccs->tx_base_offset)) {
-+	if (uccs->tx_base_offset < 0) {
- 		printk(KERN_ERR "%s: cannot allocate TX BDs", __func__);
--		uccs->tx_base_offset = 0;
- 		ucc_slow_free(uccs);
- 		return -ENOMEM;
- 	}
-@@ -352,14 +353,9 @@ void ucc_slow_free(struct ucc_slow_private * uccs)
- 	if (!uccs)
- 		return;
+ 	if (!sdma)
+ 		return -ENODEV;
  
--	if (uccs->rx_base_offset)
--		qe_muram_free(uccs->rx_base_offset);
--
--	if (uccs->tx_base_offset)
--		qe_muram_free(uccs->tx_base_offset);
--
--	if (uccs->us_pram)
--		qe_muram_free(uccs->us_pram_offset);
-+	qe_muram_free(uccs->rx_base_offset);
-+	qe_muram_free(uccs->tx_base_offset);
-+	qe_muram_free(uccs->us_pram_offset);
+ 	/* allocate 2 internal temporary buffers (512 bytes size each) for
+ 	 * the SDMA */
+-	if (IS_ERR_VALUE(sdma_buf_offset)) {
++	if (sdma_buf_offset < 0) {
+ 		sdma_buf_offset = qe_muram_alloc(512 * 2, 4096);
+-		if (IS_ERR_VALUE(sdma_buf_offset))
++		if (sdma_buf_offset < 0)
+ 			return -ENOMEM;
+ 	}
  
- 	if (uccs->us_regs)
- 		iounmap(uccs->us_regs);
-diff --git a/include/soc/fsl/qe/ucc_slow.h b/include/soc/fsl/qe/ucc_slow.h
-index 8696fdea2ae9..d187a6be83bc 100644
---- a/include/soc/fsl/qe/ucc_slow.h
-+++ b/include/soc/fsl/qe/ucc_slow.h
-@@ -185,7 +185,7 @@ struct ucc_slow_private {
- 	struct ucc_slow_info *us_info;
- 	struct ucc_slow __iomem *us_regs; /* Ptr to memory map of UCC regs */
- 	struct ucc_slow_pram *us_pram;	/* a pointer to the parameter RAM */
--	u32 us_pram_offset;
-+	s32 us_pram_offset;
- 	int enabled_tx;		/* Whether channel is enabled for Tx (ENT) */
- 	int enabled_rx;		/* Whether channel is enabled for Rx (ENR) */
- 	int stopped_tx;		/* Whether channel has been stopped for Tx
-@@ -194,8 +194,8 @@ struct ucc_slow_private {
- 	struct list_head confQ;	/* frames passed to chip waiting for tx */
- 	u32 first_tx_bd_mask;	/* mask is used in Tx routine to save status
- 				   and length for first BD in a frame */
--	u32 tx_base_offset;	/* first BD in Tx BD table offset (In MURAM) */
--	u32 rx_base_offset;	/* first BD in Rx BD table offset (In MURAM) */
-+	s32 tx_base_offset;	/* first BD in Tx BD table offset (In MURAM) */
-+	s32 rx_base_offset;	/* first BD in Rx BD table offset (In MURAM) */
- 	struct qe_bd *confBd;	/* next BD for confirm after Tx */
- 	struct qe_bd *tx_bd;	/* next BD for new Tx request */
- 	struct qe_bd *rx_bd;	/* next BD to collect after Rx */
 -- 
 2.23.0
 
