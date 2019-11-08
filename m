@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D9FAF4CEC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:15:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9309F4CF1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:16:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BlK6c7xZ5q9g71ZAnYOuAk1sXqLlChLwPSD72NqVj6s=; b=LQdKeJ58vacsGO
-	vZmMdSqEJ2ap2rhW/a7hOEAWnC9PWtXwTO5pAluaCpo0X4uAorMuklSypTvSJPmb1sFYkMuAu2b5m
-	a1cbG7VmcqSB7Bm8x1tEUkuhb7CoETqg9EywxMTt1L1mn3m5AfLj4ZgxosWIDl46A49DgxDIRpJwC
-	9aSQ9xiNUbDSM32I/xWnYxJXxIqXNOXvK4JtF/+ZFwSKw2CpSTM5S2CmiHKm6SpCiTvudbOWFaDGS
-	JwYyr9KR90GFVEjdb9rGtxCis85h9fz20j0pjyuEWMO2E6wGrPAUpom8AzLdGfAqR3mF53YmtUPRs
-	GWYk0el93nJeeRNdD6Kw==;
+	List-Owner; bh=81UwloymLW7uenfNLo3Ix+XzW2xhp5URfilUXm/xlVo=; b=fcz3EGxIKnayHG
+	DXl6kKogk0WHZmWxOfHqDaVQZSKHDwJms23OdsflLR0shw2NOQzhRgX4qvHcfYzsBgOgP44VoRSlL
+	EdC9ypfcojYBGhdRsQCMu2I6NJquN0eNLxG/YZee5VG3VTkn5BCI4//ddQK+F4fUdhvcGZ1I8sc4h
+	gqWQIs64qb7Mq1r5inBeQD8VzK1wkiHqtwIveV8p/bk7pH/sjmasfulpNIKbZ51s+66Ieex6jZch9
+	0jd9Vtd1pCnUqODT+aMIFmdDed94K0PRIYHDZxdLWIFko05yDRRIq9ACHPKdS1R6Msl8+Eb8wApqm
+	qIoHn/IWmUGfDZwoMrBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT470-0002oB-IY; Fri, 08 Nov 2019 13:15:38 +0000
+	id 1iT47Y-0003Ha-0R; Fri, 08 Nov 2019 13:16:12 +0000
 Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT3uC-0004ty-B0
+ id 1iT3uD-0004ut-HR
  for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:29 +0000
-Received: by mail-lf1-x144.google.com with SMTP id j14so4395390lfb.8
+Received: by mail-lf1-x144.google.com with SMTP id y6so4423572lfj.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 05:02:24 -0800 (PST)
+ Fri, 08 Nov 2019 05:02:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=SKjk4xtgUQ/kA6JZGPtMJVtONpNy6V4lFIeGBwHjI8g=;
- b=fbtFc25QQKF1HYy9EJWgNQgGlj4NvVM/SZQzlg+mehsa55gfaar01ZvOzQEFiHiJS8
- NIWL01E4b4KculB+YonomNkzR6/ye1LnowBIkbJ9/0ahn29mzO+PzUdzYz/FKdLUGozG
- 3Bl1Mlzo2VusjD/D//znojGiimZguwgG2m4r0=
+ bh=2QjvBFt/Ahp0rywmkIDhfkZ7dAuBAKpWua4zqIA54R0=;
+ b=XVACoOOuXlxl4Cy3V/J8sGSeCCFw8ZKOKZ7FqB/K3JgCxUCJ1xCj/Mqawr8e2qIujx
+ O7k1zBR8675/UVFNVWJud7B7gGy4eRxvGFDaQiIdBxLuh/UvxbGJ2jiZIbbPNPtq2kf0
+ ZABUDJvpYchPCeIhdPhVBPmgejb6251Cuy5iE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=SKjk4xtgUQ/kA6JZGPtMJVtONpNy6V4lFIeGBwHjI8g=;
- b=uTG6ezWwY8Qwjft8RZ8jwZp0KwnPiRLNzu4v5loRfCFNtGLZCOvT96DaeUFsI46vku
- WL6WRwQNzXOw2JStwcZujjDOndD9ARuqAhVxmOTKF6ZwfZ1U5Nc4EoAZXucTGcdaqrj9
- UGKAY/KANush9DGfJXru1T3d4/dcxIwXhVriARFtXHn0PbUJzERaFWwbJAxHZQUl71gT
- 0w7MFYuyjq48IIh2vIhtxrN2jd1Wtuebvy8BqUmdDLygQBKNtBGq9dElNRK/jYnu6ejP
- 4LMF5SKcjgkUhTJG+RzQChCifssIRB6z8qq1jWhS4EGcf8vaz2bJ13RfrRN+DRR8bigb
- 3p5w==
-X-Gm-Message-State: APjAAAVs1agLwvtb686H63ruIb4aK232aPIuMRAI2VgV01vjB0Fl4mRt
- ykEDgG47fCRSPap/FNWUXKrvU5qt7w9VzO1L
-X-Google-Smtp-Source: APXvYqwH4Au0vtX7CvDcjAgRV7H9RHuuGAfZs53rG3gF/CjSF6Puxm/KMJghDcukVOdVzQRBjC2v/w==
-X-Received: by 2002:a19:f107:: with SMTP id p7mr6505066lfh.91.1573218142811;
- Fri, 08 Nov 2019 05:02:22 -0800 (PST)
+ bh=2QjvBFt/Ahp0rywmkIDhfkZ7dAuBAKpWua4zqIA54R0=;
+ b=E2QJ66a+bHMNrawkTTtlRkkvXCPwRKo2yr1Y8cofTkTv8BiR9eEcFubgrkgWMlFTZM
+ VtFP66ylqDHqYBJ10MAES4M9eiti5AToL4WeIMQrClA4b1eKzvhyS3oq8bnaXFgoaX1A
+ O2+1bhyiY3WIkOBnIIRtKVVjrl3+8pQbcJ9ZEu2g3TkaxZn/GpY4gkHRF+wbCSfodrQh
+ aUfMJ8pcRgS/8HtZq1wCL0D9nScBJYrpr04LfPqL9geqlA17tenoGtxCndyV19tr5v7v
+ 8brKDxCJba5mZ4LNKU7QkOE+9/LcqjCsfwlUk3ez/y+u0pmDUW65TDOGZmGJ/wsiXce+
+ 5QYw==
+X-Gm-Message-State: APjAAAW54O7YP/PMn8wPgCzPEIUCniCAlpTYgLApLM7lTKf/sukHCg28
+ xZ0Ybe4YYj60Prg17yxxUyxH0w==
+X-Google-Smtp-Source: APXvYqwScoFAHiImQMnrTZk87e9zBJh2EkwdHqWoi9bG9XRi4pfN3RXUv9ZB5CXwEIsQqOH7j53G/g==
+X-Received: by 2002:a19:820e:: with SMTP id e14mr6605403lfd.29.1573218143917; 
+ Fri, 08 Nov 2019 05:02:23 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.02.21
+ by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.02.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 05:02:22 -0800 (PST)
+ Fri, 08 Nov 2019 05:02:23 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v4 44/47] net/wan/fsl_ucc_hdlc: fix reading of __be16 registers
-Date: Fri,  8 Nov 2019 14:01:20 +0100
-Message-Id: <20191108130123.6839-45-linux@rasmusvillemoes.dk>
+Subject: [PATCH v4 45/47] net/wan/fsl_ucc_hdlc: reject muram offsets above 64K
+Date: Fri,  8 Nov 2019 14:01:21 +0100
+Message-Id: <20191108130123.6839-46-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_050224_467313_7777BE05 
-X-CRM114-Status: GOOD (  11.68  )
+X-CRM114-CacheID: sfid-20191108_050225_645587_11A625C0 
+X-CRM114-Status: GOOD (  11.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -103,35 +103,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When releasing the allocated muram resource, we rely on reading back
-the offsets from the riptr/tiptr registers. But those registers are
-__be16 (and we indeed write them using iowrite16be), so we can't just
-read them back with a normal C dereference.
+Qiang Zhao points out that these offsets get written to 16-bit
+registers, and there are some QE platforms with more than 64K
+muram. So it is possible that qe_muram_alloc() gives us an allocation
+that can't actually be used by the hardware, so detect and reject
+that.
 
-This is not currently a real problem, since for now the driver is
-PPC32-only. But it will soon be allowed to be used on arm and arm64 as
-well.
-
+Reported-by: Qiang Zhao <qiang.zhao@nxp.com>
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/net/wan/fsl_ucc_hdlc.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/net/wan/fsl_ucc_hdlc.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/drivers/net/wan/fsl_ucc_hdlc.c b/drivers/net/wan/fsl_ucc_hdlc.c
-index 405b24a5a60d..8d13586bb774 100644
+index 8d13586bb774..f029eaa7cfc0 100644
 --- a/drivers/net/wan/fsl_ucc_hdlc.c
 +++ b/drivers/net/wan/fsl_ucc_hdlc.c
-@@ -732,8 +732,8 @@ static int uhdlc_open(struct net_device *dev)
+@@ -245,6 +245,11 @@ static int uhdlc_init(struct ucc_hdlc_private *priv)
+ 		ret = -ENOMEM;
+ 		goto free_riptr;
+ 	}
++	if (riptr != (u16)riptr || tiptr != (u16)tiptr) {
++		dev_err(priv->dev, "MURAM allocation out of addressable range\n");
++		ret = -ENOMEM;
++		goto free_tiptr;
++	}
  
- static void uhdlc_memclean(struct ucc_hdlc_private *priv)
- {
--	qe_muram_free(priv->ucc_pram->riptr);
--	qe_muram_free(priv->ucc_pram->tiptr);
-+	qe_muram_free(ioread16be(&priv->ucc_pram->riptr));
-+	qe_muram_free(ioread16be(&priv->ucc_pram->tiptr));
- 
- 	if (priv->rx_bd_base) {
- 		dma_free_coherent(priv->dev,
+ 	/* Set RIPTR, TIPTR */
+ 	iowrite16be(riptr, &priv->ucc_pram->riptr);
 -- 
 2.23.0
 
