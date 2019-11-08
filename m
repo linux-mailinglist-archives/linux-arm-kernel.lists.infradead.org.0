@@ -2,73 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 400F0F515D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 17:43:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 465CAF5176
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 17:47:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8XecDtyfiK6tahvFE/WtpR73FHJA80C1eMvtNOz5w2Q=; b=NtkFr50W8hPPKB
-	wKY8GyC7UoU6kN588y9eeDytde1NClBA4JT/+6xH7gVI6jpCmIi3RoOc2XUeXFN+V8enQ2MFFQT4d
-	hRj7JaKMDwGOFfKPWyw2iH2RF4QgfIJZelr4M3Ev3knovWlduFenB+OLVRT+9ya4/Ej8UlOQNddHd
-	v8Km5LBtUMgn5qweKAoZrAsN7KeTGt81GTNhacwRQh5n8Cl45tw7KAdaZEkPYsDKLG9beTJBUFmSP
-	78EvIMv/UhZgdmhz2yen7irIqsQODyYia6vqlIwSYKzj0OjV7RnZRnq7ued17k0nO6aoxEjyKVbol
-	zbIv1i/CIvi465yU7YgQ==;
+	List-Owner; bh=YGZAeVZBg9TCKz209xh5M1UiX8zYvNoT2M7tkmEnG4A=; b=h0fOqExddJ4SDU
+	/eHIGSrcumY6k0Lc+gd46SrzbuZHPlOMNPYtfNV9LP9KmdV6k11MKCw8JNwI7VmnC5MjHETLPtFB1
+	uC1I38Gatik9BZ1PbCTox2ji03zPdIV7RwOjo3MW979FvpGHokr4E85MWm173OwP1NkWRrF0XybW8
+	3MUhc8Ught2gsLc9vzJQ9CT7LXaeWA0Waf5ZtolQLrmXhC/Oe/yAcqq2Vc0DZIQT+yO8JsoEk2/oe
+	PqpSld0WRe0rr5+X7k45xMnMRgqbOexOKGuJgXbkni8FrwzLPmEKBRsHkGjqHLHhLpRU343XOVFvF
+	y0fUyp0TbYLKQCPJuqKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT7Lj-0003vf-KX; Fri, 08 Nov 2019 16:43:03 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT7Lb-0003qA-LZ
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 16:42:57 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 44B1F206A3;
- Fri,  8 Nov 2019 16:42:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573231375;
- bh=g4CoKvF3KBeAiTVPLjlckAUsjTuuIjtO+HohvgouYnY=;
- h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
- b=0ZpsztU1FYRY6L52Ezgj7+jOOs1x/hVT/ozS92H5H+GQTKKKDb+rMwk7lVULhGsF/
- dGkdS59Ii91Y5vgj+xTa/pyKyS5XkSwV6lSpK4251lQ1R6b0j49oYgNTuw3uUfeI3I
- WaQv+j6fKwqgsZhzEUdOkSDt+Np7ZYDzDQDg98no=
+	id 1iT7PP-00073l-Lc; Fri, 08 Nov 2019 16:46:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iT7PI-00072q-OO
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 16:46:46 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DDA9F46A;
+ Fri,  8 Nov 2019 08:46:39 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 036793F71A;
+ Fri,  8 Nov 2019 08:46:38 -0800 (PST)
+Date: Fri, 8 Nov 2019 16:46:36 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v3 1/2] arm64: kaslr: Announce KASLR status on boot
+Message-ID: <20191108164636.GJ11465@lakrids.cambridge.arm.com>
+References: <20191108162001.11737-1-broonie@kernel.org>
+ <20191108162001.11737-2-broonie@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <CACPK8Xe7dmeVjQYObzOw9LdwxH3+1XTcU+RJOZo5C69j8d-yOg@mail.gmail.com>
-References: <20191010020725.3990-1-andrew@aj.id.au>
- <20191010020725.3990-2-andrew@aj.id.au>
- <CACPK8XcGgGsoLNpCccKPb-5bojQS4c5BePewwocc-z29On7Rjg@mail.gmail.com>
- <20191107230029.75ED72178F@mail.kernel.org>
- <CACPK8Xe7dmeVjQYObzOw9LdwxH3+1XTcU+RJOZo5C69j8d-yOg@mail.gmail.com>
-From: Stephen Boyd <sboyd@kernel.org>
-To: Joel Stanley <joel@jms.id.au>
-Subject: Re: [PATCH v2 1/2] dt-bindings: clock: Add AST2600 RMII RCLK gate
- definitions
-User-Agent: alot/0.8.1
-Date: Fri, 08 Nov 2019 08:42:54 -0800
-Message-Id: <20191108164255.44B1F206A3@mail.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20191108162001.11737-2-broonie@kernel.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_084255_727644_999FFADF 
-X-CRM114-Status: GOOD (  16.89  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191108_084644_881923_BEBB1411 
+X-CRM114-Status: GOOD (  23.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,65 +62,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
- Michael Turquette <mturquette@baylibre.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Joel Stanley (2019-11-08 03:29:41)
-> On Thu, 7 Nov 2019 at 23:00, Stephen Boyd <sboyd@kernel.org> wrote:
-> >
-> > Quoting Joel Stanley (2019-10-31 21:50:42)
-> > > Hi clock maintainers,
-> > >
-> > > On Thu, 10 Oct 2019 at 02:06, Andrew Jeffery <andrew@aj.id.au> wrote:
-> > > >
-> > > > The AST2600 has an explicit gate for the RMII RCLK for each of the four
-> > > > MACs.
-> > > >
-> > > > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-> > >
-> > > I needed this patch and the aspeed-clock.h one for the aspeed dts
-> > > tree, so I've put them in a branch called "aspeed-clk-for-v5.5" and
-> > > merged that into the aspeed tree. Could you merge that into the clock
-> > > tree when you get to merging these ones?
-> > >
-> > > https://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git/log/?h=aspeed-clk-for-v5.5
-> > >
-> >
-> > Can you send a pull request please?
+On Fri, Nov 08, 2019 at 04:20:00PM +0000, Mark Brown wrote:
+> Currently the KASLR code is silent at boot unless it forces on KPTI in
+> which case a message will be printed for that. This can lead to users
+> incorrectly believing their system has the feature enabled when it in
+> fact does not, and if they notice the problem the lack of any
+> diagnostics makes it harder to understand the problem. Add an initcall
+> which prints a message showing the status of KASLR during boot to make
+> the status clear.
 > 
-> Sure. Here you go. Let me know if you need it in a separate email.
+> This is particularly useful in cases where we don't have a seed. It
+> seems to be a relatively common error for system integrators and
+> administrators to enable KASLR in their configuration but not provide
+> the seed at runtime, often due to seed provisioning breaking at some
+> later point after it is initially enabled and verified.
 > 
-> The following changes since commit d8d9ad83a497f78edd4016df0919a49628dcafbc:
+> Signed-off-by: Mark Brown <broonie@kernel.org>
+> ---
+>  arch/arm64/kernel/kaslr.c | 41 ++++++++++++++++++++++++++++++++++++---
+>  1 file changed, 38 insertions(+), 3 deletions(-)
 > 
->   dt-bindings: clock: Add AST2600 RMII RCLK gate definitions
-> (2019-11-01 15:01:18 +1030)
-> 
-> are available in the Git repository at:
-> 
->   git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git
-> tags/aspeed-5.5-clk
-> 
-> for you to fetch changes up to d8d9ad83a497f78edd4016df0919a49628dcafbc:
-> 
->   dt-bindings: clock: Add AST2600 RMII RCLK gate definitions
-> (2019-11-01 15:01:18 +1030)
-> 
-> ----------------------------------------------------------------
-> ASPEED clock device tree bindings for 5.5
-> 
-> ----------------------------------------------------------------
+> diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
+> index 416f537bf614..0039dc50e556 100644
+> --- a/arch/arm64/kernel/kaslr.c
+> +++ b/arch/arm64/kernel/kaslr.c
+> @@ -19,6 +19,14 @@
+>  #include <asm/pgtable.h>
+>  #include <asm/sections.h>
+>  
+> +enum kaslr_status {
+> +	KASLR_ENABLED,
+> +	KASLR_DISABLED_CMDLINE,
+> +	KASLR_DISABLED_NO_SEED,
+> +	KASLR_DISABLED_FDT_REMAP,
+> +};
+> +
+> +enum kaslr_status __ro_after_init kaslr_status;
 
-The diffstat got lost? Anyway, thanks! I pulled it into clk-next.
+This can probably be __initdata since it's only consumed by an __init
+call.
 
+Otherwise this looks sound to me; with that:
+
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+
+Thanks,
+Mark.
+
+>  u64 __ro_after_init module_alloc_base;
+>  u16 __initdata memstart_offset_seed;
+>  
+> @@ -91,15 +99,19 @@ u64 __init kaslr_early_init(u64 dt_phys)
+>  	 */
+>  	early_fixmap_init();
+>  	fdt = fixmap_remap_fdt(dt_phys, &size, PAGE_KERNEL);
+> -	if (!fdt)
+> +	if (!fdt) {
+> +		kaslr_status = KASLR_DISABLED_FDT_REMAP;
+>  		return 0;
+> +	}
+>  
+>  	/*
+>  	 * Retrieve (and wipe) the seed from the FDT
+>  	 */
+>  	seed = get_kaslr_seed(fdt);
+> -	if (!seed)
+> +	if (!seed) {
+> +		kaslr_status = KASLR_DISABLED_NO_SEED;
+>  		return 0;
+> +	}
+>  
+>  	/*
+>  	 * Check if 'nokaslr' appears on the command line, and
+> @@ -107,8 +119,10 @@ u64 __init kaslr_early_init(u64 dt_phys)
+>  	 */
+>  	cmdline = kaslr_get_cmdline(fdt);
+>  	str = strstr(cmdline, "nokaslr");
+> -	if (str == cmdline || (str > cmdline && *(str - 1) == ' '))
+> +	if (str == cmdline || (str > cmdline && *(str - 1) == ' ')) {
+> +		kaslr_status = KASLR_DISABLED_CMDLINE;
+>  		return 0;
+> +	}
+>  
+>  	/*
+>  	 * OK, so we are proceeding with KASLR enabled. Calculate a suitable
+> @@ -170,3 +184,24 @@ u64 __init kaslr_early_init(u64 dt_phys)
+>  
+>  	return offset;
+>  }
+> +
+> +static int __init kaslr_init(void)
+> +{
+> +	switch (kaslr_status) {
+> +	case KASLR_ENABLED:
+> +		pr_info("KASLR enabled\n");
+> +		break;
+> +	case KASLR_DISABLED_CMDLINE:
+> +		pr_info("KASLR disabled on command line\n");
+> +		break;
+> +	case KASLR_DISABLED_NO_SEED:
+> +		pr_warn("KASLR disabled due to lack of seed\n");
+> +		break;
+> +	case KASLR_DISABLED_FDT_REMAP:
+> +		pr_warn("KASLR disabled due to FDT remapping failure\n");
+> +		break;
+> +	}
+> +
+> +	return 0;
+> +}
+> +core_initcall(kaslr_init)
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
