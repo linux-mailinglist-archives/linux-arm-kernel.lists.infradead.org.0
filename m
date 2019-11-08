@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70727F52D1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:47:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C86D3F52CC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:46:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=h/pThK0YTLtnoxdMe4x6zCeA8CaFRcgfv7PanR9tFQQ=; b=TwZ
-	jT3R28c1LRLPE0LSBHUQHgdcjzktfn1L93/tIVjrSq5oWJjm6Mf5V+k0nzEmYFnEBYmyu43fl062S
-	0Cxyx4i7d3FCfNYa2y1r2evEsRlR/T+YlkHRhZLJpraukJVjuoudnW9IrIA2+tFtPfsYuTnRhj2LW
-	LNPwIa18vFkIyrPyeiTIH33kGx1oBaH/cjBBQ1J+Uxy/KlYkBV8ZMGW35Ec6cY2ufDeTwcmvNU8F5
-	XX+x/Tb4Y3TeB26fzDo9LMoCzEdzGCmRrRxMFPh6GHYMXO5J/MBoJSKDTesIRPe9ZT2cNBK5wsvp+
-	D2JK38+JIIevfa/MCftUYX6lenfWHww==;
+	References:List-Owner; bh=DtclnLBNk4SVBArmVvbg3SfJNW+5kx/INUZlpGHP/Po=; b=eWn
+	s3TYnuk2MPe9ezO52U7X82U0FJeB0zGKm7T7iTS34DrspVdCzeiv2K51qQ3oxWdxm+FHSRJM2H+Fe
+	zZcQRJs7rQBj4HGJfUlN77Hsfitl1YLJ4BVYV4tm/0kd4ZnOHJlErKLVFEGBDw2HHXLfN/N6kYWw1
+	YYQuCAQYnqR11a1M69VaV6UlCvGnuJ75FXroZYEsDFLI1pZsNpnHwsTl+408R27FKdF09sIZ69+o5
+	bjyGr7lkURoLG1xwRn1XWyVNF3vMljwybin+FoLp3mQyd3noGBOvhza7qDRAkcF5Tgrb4id9fD4qb
+	oJJ3P+AoF5tJICZeZy1+Ob6tCUpAhiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT8LZ-0001iK-AH; Fri, 08 Nov 2019 17:46:57 +0000
+	id 1iT8Kd-0000pP-Eu; Fri, 08 Nov 2019 17:45:59 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT8KQ-0000nf-DL
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:45:49 +0000
+ id 1iT8KQ-0000nh-DJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:45:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=JKTfmpSbVBqbZWbMm4R+jzpwWjaKYvvCqN2w5M/OpNs=; b=L0W6e9ERLt2r
- JqpHHi0qzrZxKhfRIC+jqikX6FCaQxa6UP6F5m1gNacq4vUy3v4Nw9mmIV3pC8GQT0O+gYjdXlmOy
- 4/k/6TeNQwO9ZZohLjsxGSfC2zGKSiyEAxwKzeIuh909vRCxbt9d8fg16R3VenqiuTWUIlD+XNUMY
- 983Tw=;
+ List-Archive; bh=YYCLXF1oV8zvZZPrT6FMd2ouZinjg9kcL02wPvjPTa0=; b=QqUEIz7ASjCq
+ Y1G40/SoHQanp4IfjnQKuusLELLpSY0tlfPzkcjOLuCon/4cdEX+doAMONovMx2X0gDJb9xlV4dzp
+ nM3sZLPyKRTDJSC0n/HLisSZbHLnXAhC4tvbyxxvD64b1K6wKWtqZQCLEaN9J0FvgxMXrnAhAYelt
+ pqVk4=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iT8KO-0007qQ-Gj; Fri, 08 Nov 2019 17:45:44 +0000
+ id 1iT8KO-0007qL-9G; Fri, 08 Nov 2019 17:45:44 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id F28452741702; Fri,  8 Nov 2019 17:45:43 +0000 (GMT)
+ id B52C92741704; Fri,  8 Nov 2019 17:45:43 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Applied "spi: zynq-qspi: Keep the bitfields naming consistent" to the
- spi tree
-In-Reply-To: <20191108140744.1734-4-miquel.raynal@bootlin.com>
+Subject: Applied "spi: zynq-qspi: Enhance the Linear CFG bit definitions" to
+ the spi tree
+In-Reply-To: <20191108140744.1734-5-miquel.raynal@bootlin.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191108174543.F28452741702@ypsilon.sirena.org.uk>
+Message-Id: <20191108174543.B52C92741704@ypsilon.sirena.org.uk>
 Date: Fri,  8 Nov 2019 17:45:43 +0000 (GMT)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_094546_553290_4EDACBA8 
-X-CRM114-Status: GOOD (  14.47  )
+X-CRM114-CacheID: sfid-20191108_094546_551990_E7596F4A 
+X-CRM114-Status: GOOD (  14.20  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -92,7 +92,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: zynq-qspi: Keep the bitfields naming consistent
+   spi: zynq-qspi: Enhance the Linear CFG bit definitions
 
 has been applied to the spi tree at
 
@@ -117,69 +117,40 @@ to this mail.
 Thanks,
 Mark
 
-From 941be723735113028361c4664cd10134d3d27006 Mon Sep 17 00:00:00 2001
+From 044ac826200f08adebe3207a618d829279e9f3b1 Mon Sep 17 00:00:00 2001
 From: Miquel Raynal <miquel.raynal@bootlin.com>
-Date: Fri, 8 Nov 2019 15:07:40 +0100
-Subject: [PATCH] spi: zynq-qspi: Keep the bitfields naming consistent
+Date: Fri, 8 Nov 2019 15:07:41 +0100
+Subject: [PATCH] spi: zynq-qspi: Enhance the Linear CFG bit definitions
 
-Most of the bits/bitfields #define'd in this driver are composed with:
-1/ the driver prefix
-2/ the name of the register they apply to
-
-Keep the naming consistent by applying this rule to the CONFIG register
-internals. These definitions will be used in a following change set.
+Using masks makes sense when manipulating fields of several bits. When
+only one bit is involved, it is usual to just use the BIT() macro but
+in this case using the term mask is abusive. Fix the #define macros
+and their comments.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Link: https://lore.kernel.org/r/20191108140744.1734-4-miquel.raynal@bootlin.com
+Link: https://lore.kernel.org/r/20191108140744.1734-5-miquel.raynal@bootlin.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-zynq-qspi.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ drivers/spi/spi-zynq-qspi.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/spi/spi-zynq-qspi.c b/drivers/spi/spi-zynq-qspi.c
-index 9f53ea08adf7..530533b6c974 100644
+index 530533b6c974..70ecefd817f7 100644
 --- a/drivers/spi/spi-zynq-qspi.c
 +++ b/drivers/spi/spi-zynq-qspi.c
-@@ -60,9 +60,9 @@
-  * These are the values used in the calculation of baud rate divisor and
-  * setting the slave select.
+@@ -98,9 +98,9 @@
+  * It is named Linear Configuration but it controls other modes when not in
+  * linear mode also.
   */
--#define ZYNQ_QSPI_BAUD_DIV_MAX		GENMASK(2, 0) /* Baud rate maximum */
--#define ZYNQ_QSPI_BAUD_DIV_SHIFT	3 /* Baud rate divisor shift in CR */
--#define ZYNQ_QSPI_SS_SHIFT		10 /* Slave Select field shift in CR */
-+#define ZYNQ_QSPI_CONFIG_BAUD_DIV_MAX	GENMASK(2, 0) /* Baud rate maximum */
-+#define ZYNQ_QSPI_CONFIG_BAUD_DIV_SHIFT	3 /* Baud rate divisor shift */
-+#define ZYNQ_QSPI_CONFIG_PCS		10 /* Peripheral Chip Select */
+-#define ZYNQ_QSPI_LCFG_TWO_MEM_MASK	BIT(30) /* LQSPI Two memories Mask */
+-#define ZYNQ_QSPI_LCFG_SEP_BUS_MASK	BIT(29) /* LQSPI Separate bus Mask */
+-#define ZYNQ_QSPI_LCFG_U_PAGE_MASK	BIT(28) /* LQSPI Upper Page Mask */
++#define ZYNQ_QSPI_LCFG_TWO_MEM		BIT(30) /* LQSPI Two memories */
++#define ZYNQ_QSPI_LCFG_SEP_BUS		BIT(29) /* LQSPI Separate bus */
++#define ZYNQ_QSPI_LCFG_U_PAGE		BIT(28) /* LQSPI Upper Page */
  
- /*
-  * QSPI Interrupt Registers bit Masks
-@@ -292,7 +292,7 @@ static void zynq_qspi_chipselect(struct spi_device *spi, bool assert)
- 		/* Select the slave */
- 		config_reg &= ~ZYNQ_QSPI_CONFIG_SSCTRL_MASK;
- 		config_reg |= (((~(BIT(spi->chip_select))) <<
--				ZYNQ_QSPI_SS_SHIFT) &
-+				ZYNQ_QSPI_CONFIG_PCS) &
- 				ZYNQ_QSPI_CONFIG_SSCTRL_MASK);
- 	} else {
- 		config_reg |= ZYNQ_QSPI_CONFIG_SSCTRL_MASK;
-@@ -331,7 +331,7 @@ static int zynq_qspi_config_op(struct zynq_qspi *xqspi, struct spi_device *spi)
- 	 *      ----------------
- 	 *      111 - divide by 256
- 	 */
--	while ((baud_rate_val < ZYNQ_QSPI_BAUD_DIV_MAX)  &&
-+	while ((baud_rate_val < ZYNQ_QSPI_CONFIG_BAUD_DIV_MAX)  &&
- 	       (clk_get_rate(xqspi->refclk) / (2 << baud_rate_val)) >
- 		spi->max_speed_hz)
- 		baud_rate_val++;
-@@ -347,7 +347,7 @@ static int zynq_qspi_config_op(struct zynq_qspi *xqspi, struct spi_device *spi)
- 		config_reg |= ZYNQ_QSPI_CONFIG_CPOL_MASK;
+ #define ZYNQ_QSPI_LCFG_DUMMY_SHIFT	8
  
- 	config_reg &= ~ZYNQ_QSPI_CONFIG_BDRATE_MASK;
--	config_reg |= (baud_rate_val << ZYNQ_QSPI_BAUD_DIV_SHIFT);
-+	config_reg |= (baud_rate_val << ZYNQ_QSPI_CONFIG_BAUD_DIV_SHIFT);
- 	zynq_qspi_write(xqspi, ZYNQ_QSPI_CONFIG_OFFSET, config_reg);
- 
- 	return 0;
 -- 
 2.20.1
 
