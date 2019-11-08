@@ -2,91 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2553F508F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 17:06:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14B3BF50F2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 17:21:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tZVRKrJmur5LIevAEdKaERDoTyYWCIaugKqZ0BbvAeQ=; b=O1YzyLc4a3mqmf
-	xI7dCoXjTUtHBYiSf5p3g8EnZyPxV096edEpgoYMUpLEbzRGuFJ28BMljygG/mnwX3vo9tc7lQhMF
-	+gs3KIusGE8iU4519t3wvgXOMNKEQVSX+Lf1Tg41CfKJQVXLCA62FSxea9G1NezHdp6c3fVU7CbyZ
-	GKoWDLYiJtcE2rEFR4BBgyAZnnW1haOU9pH9j18OCAKSRVcviqXFcqb2wOQOSFfsVDh/IX1MJ/fNd
-	MLtg4CFFj54q+WXBhH5GTkxMDYRLQk9XeqhKAXZsBMuJCU/ICs1WpUAKvqXjjDqtsWwF1kgOAjMqG
-	LCJqXiEJnv1LAGSPQl2w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=l8+nQJ9yRjMErjkUG1CMMpsGgsjw6wZCyvNEQEGOIdc=; b=GYA9wWCdow0QjR
+	upQsF0nYRKW3vU5Cftw388rwOd5wNB1ZNxWxqeJ3eMmfDNM/m31PhiYoT5LBoLlj+llKc1NrHIlAQ
+	ejWx38yXGPMJ8eKHzwyU1eOaZZnw8vd5vZeMU9PfXGUCgvPm3OqpQKRsJT+EnrJkCZxGWGWb0C5kA
+	Q+/6TkVCKP0/RCr1soxtgPGOaWsW0dGlQRcJk1DOYikfIcxuDhpLSAQ9OX4N8llQSn8DsaJ7ullcC
+	TG5tgEBb9HTXeJhU/obGI0/x5KegwBU5UnWchLRLemR4vtTjpdqthizr20ktVhUqBvgorcS6T50iU
+	UbN4UHtA1neQ8vpAXZxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT6m9-0005re-Dj; Fri, 08 Nov 2019 16:06:17 +0000
-Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
+	id 1iT70F-00034s-Nd; Fri, 08 Nov 2019 16:20:51 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT6ly-0005pr-GI
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 16:06:08 +0000
-Received: by mail-yb1-xb43.google.com with SMTP id g38so2977562ybe.11
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 08:06:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=pp2jWlCqJKLEk+ibjFXlnfbIxOH3q9oKQMy0Ofpc8qE=;
- b=P9+KNuvnFxtHeZW47U9PU1hLw36tD6FBGxejakql8CpvkHWnHxaE2Hsb7Ult2eNypQ
- GfJOBVChlOCUTlmcZG1H+puAgs5DttZdWxZliRFToxhKWccMxT/b0VI05a347WPVP9uY
- k7uIoL08R6YWDSolqaXK0cW9gcfV0NEyYlPI/6raUnB5Wu3yOQDEuVXKPK6QQxDjte/u
- NVLBdMqcIJgzkTG+cvIjn3mPQZoK1A6pS4Fu3joklD3YiDU64B/sUcyDfbqSe+hzpfk+
- gTOUloLnBFdK5+BdO1A3eNjqBPcRGLwipGEtRn6GhK6iCkiDvxjT1gEVcYKAzdmzi6Q1
- yoCg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=pp2jWlCqJKLEk+ibjFXlnfbIxOH3q9oKQMy0Ofpc8qE=;
- b=LZwlXOCzjmYftHQhGK4PxFyl1ld4OTiTlGgT16fyYaNceSg7YmvRoRNnVfdwErq9F1
- rz04MhGgHMIJKLncpFLJM70hKGj4jABFUKxnfFE192pcjCS6VL9R91KmPmsJGmagGmFK
- ADmelyr/w1a08u9rT+5ogh8gEkp4ThxdtqtToCEw0orHwGDRFJT/VFlXLPmarwtv4el/
- iD30ys8P2nR0yb4UXIp5snuhgeiewOnkAT3/RV2vsHGfOmlbups4+ewmAIOvDArEwV9F
- YRkfD1QLubAjv1fJ68oTsYeYNadBagwm/Hz1oqnl9L/DG/JltKhCgamAIzsqIwf9qKyh
- 2uMA==
-X-Gm-Message-State: APjAAAU3rM2zTrxEE3CE+cApklfnes0KnB59HecdXmsYpDgGnmwHPmeb
- mZqOR/XeduKkynhOq7aObQrXHw==
-X-Google-Smtp-Source: APXvYqwHJn8rPwXJPMSPwZbAmzYjmDgS/hvf7KYotndLpNLBWxDPVgII5ANOE6uR/uxdy54DyxixSw==
-X-Received: by 2002:a25:c64b:: with SMTP id k72mr9417242ybf.4.1573229163819;
- Fri, 08 Nov 2019 08:06:03 -0800 (PST)
-Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id 138sm2987950ywr.46.2019.11.08.08.06.03
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 08:06:03 -0800 (PST)
-Date: Fri, 8 Nov 2019 11:06:02 -0500
-From: Sean Paul <sean@poorly.run>
-To: Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-Subject: Re: [PATCH] drm/rockchip: use DRM_DEV_ERROR for log output
-Message-ID: <20191108160602.GG63329@art_vandelay>
-References: <20191107092945.15513-1-wambui.karugax@gmail.com>
- <20191107133851.GF63329@art_vandelay>
- <20191108124630.GA10207@wambui> <4996186.DxzAFJqeGu@diego>
+ id 1iT6zX-00025W-W6
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 16:20:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Content-Transfer-Encoding:
+ MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=V43qp90K/37TJcN7KLrJZAIG6gwk6BfFwBs5NUeTePc=; b=g9ST0HRb7DolASkmVe7bCp6mI
+ 6xWPb2VhlMSD1eDwt+Q9Qb97XxUMxDvHP4STKFE4F/O5F56sX99W92bsPXk7bOxnb4B22ankqgSUi
+ FSegagLIjjodIBHGWIdXg/bOsc1+koUW/Qp/Odw2w0JhJNUD+vawk++4dZdxWqeZJl0F8=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iT6zT-0007du-N9; Fri, 08 Nov 2019 16:20:03 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id C46D22741450; Fri,  8 Nov 2019 16:20:02 +0000 (GMT)
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH v3 0/2] Improve KASLR diagnostics
+Date: Fri,  8 Nov 2019 16:19:59 +0000
+Message-Id: <20191108162001.11737-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4996186.DxzAFJqeGu@diego>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_080606_592568_5E27DB68 
-X-CRM114-Status: GOOD (  24.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191108_082008_046539_BC505FA3 
+X-CRM114-Status: UNSURE (   7.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
- [list.dnswl.org]
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -100,138 +77,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- daniel@ffwll.ch, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, Wambui Karuga <wambui.karugax@gmail.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 08, 2019 at 03:06:44PM +0100, Heiko St=FCbner wrote:
-> Hi,
-> =
+This series provides diagnostics on boot for KASLR to improve usability
+at runtime.
 
-> [it seems your Reply-To mail header is set strangely as
-> Reply-To: 20191107133851.GF63329@art_vandelay
-> which confuses my MTA]
-> =
+v3: Still mask the seed from FDT when disabling from the command line.
+v2: Defer the print to a core_initcall() so we don't try and print
+    before printk() can cope, covering other less common error cases as
+    well and also an explicit message when KASLR is enabled.
 
-> Am Freitag, 8. November 2019, 13:46:30 CET schrieb Wambui Karuga:
-> > On Thu, Nov 07, 2019 at 08:38:51AM -0500, Sean Paul wrote:
-> > > On Thu, Nov 07, 2019 at 01:54:22AM -0800, Joe Perches wrote:
-> > > > On Thu, 2019-11-07 at 12:29 +0300, Wambui Karuga wrote:
-> > > > > Replace the use of the dev_err macro with the DRM_DEV_ERROR
-> > > > > DRM helper macro.
-> > > > =
+Mark Brown (2):
+  arm64: kaslr: Announce KASLR status on boot
+  arm64: kaslr: Check command line before looking for a seed
 
-> > > > The commit message should show the reason _why_ you are doing
-> > > > this instead of just stating that you are doing this.
-> > > > =
+ arch/arm64/kernel/kaslr.c | 44 +++++++++++++++++++++++++++++++++++----
+ 1 file changed, 40 insertions(+), 4 deletions(-)
 
-> > > > It's not that dev_err is uncommon in drivers/gpu/drm.
-> > > > =
+-- 
+2.20.1
 
-> > > =
-
-> > > It is uncommon (this is the sole instance) in rockchip, however. So i=
-t makes
-> > > sense to convert the dev_* prints in rockchip to DRM_DEV for consiste=
-ncy.
-> > > =
-
-> > > Wambui, could you also please convert the dev_warn instance as well?
-> > > =
-
-> > Hey, Sean.
-> > Trying to convert this dev_warn instance, but the corresponding DRM_WARN
-> > macro does not take the dev parameter which seems to be useful in the
-> > original output.
-> > Should I still convert it to DRM_WARN without the hdmi->dev parameter?
-> =
-
-> There exists DRM_DEV_ERROR, DRM_DEV_INFO and DRM_DEV_DEBUG to
-> handle actual devices. Interestingly there is no DRM_DEV_WARN though.
-> =
-
-> So depending on what Sean suggest another option would be to add the
-> missing DRM_DEV_WARN and then use it to replace the dev_warn.
-
-Yep, this sounds good to me me.
-
-Sean
-
-> =
-
-> =
-
-> Heiko
-> =
-
-> =
-
-> =
-
-> > =
-
-> > Thanks,
-> > wambui
-> > > I'll apply this to drm-misc-next and expand on the commit message a b=
-it.
-> > > =
-
-> > > Thanks,
-> > > =
-
-> > > Sean
-> > > =
-
-> > > > $ git grep -w dev_err drivers/gpu/drm | wc -l
-> > > > 1950
-> > > > $ git grep -w DRM_DEV_ERROR drivers/gpu/drm | wc -l
-> > > > 756
-> > > > =
-
-> > > > > diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/dr=
-ivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
-> > > > []
-> > > > > @@ -916,7 +916,7 @@ static int dw_mipi_dsi_rockchip_probe(struct =
-platform_device *pdev)
-> > > > >  	}
-> > > > >  =
-
-> > > > >  	if (!dsi->cdata) {
-> > > > > -		dev_err(dev, "no dsi-config for %s node\n", np->name);
-> > > > > +		DRM_DEV_ERROR(dev, "no dsi-config for %s node\n", np->name);
-> > > > >  		return -EINVAL;
-> > > > >  	}
-> > > > =
-
-> > > > =
-
-> > > > =
-
-> > > > _______________________________________________
-> > > > dri-devel mailing list
-> > > > dri-devel@lists.freedesktop.org
-> > > > https://lists.freedesktop.org/mailman/listinfo/dri-devel
-> > > =
-
-> > =
-
-> =
-
-> =
-
-> =
-
-> =
-
-
--- =
-
-Sean Paul, Software Engineer, Google / Chromium OS
 
 _______________________________________________
 linux-arm-kernel mailing list
