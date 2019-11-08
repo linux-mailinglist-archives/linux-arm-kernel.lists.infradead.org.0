@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19D37F4C6F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:04:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC2C8F4C70
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:04:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=omXSnIDn5m1mrqS6mGETw1zyvYLCVaQBzuzJx9tNajs=; b=Rt86Oe2Q+XNqkQ
-	9EryY28NWdCj7666enk+D3bZyH7Hbu8zxUXYAUNl201OFUslXqUThavOAAO7tuLkS6PeOKruVklhx
-	8u1TyCYhxfayPgf3+RZligktxgsIpF7ZnATPkwTiY3M/hmvzBEe+lGL9QGXFVn3rvjrr8kxDV1Xk2
-	pwW+Yi3T0au+liU9CAEaUICKdwOo1IxZyGZkdHgLLnNuwDWuMGirpfBw6NHAaSR0xtNZE9zouhNMQ
-	rcNwZOEsq0Ue/UdcOeiwc9Vdn3kO/ZoPT0fxWnI5Gxw0agpuvCvTaPJiHPbxwk/m+rURnM+5QvlwS
-	Lr9Xk30TH7H5OpJfKyCQ==;
+	List-Owner; bh=fISdushcCsYoL56jLSzOEkfJwopttDZaQxqRbpsxhMA=; b=KfSNWIiFAzg6cw
+	TwMIDS2xOOblKkvqb5jN5hsgHq/kzy5RUwXYvC+vEybLrFNumTI8C81ocVbbxkGA+pvOEb5Lqie//
+	0KD9BQii6R7UfBNbR761VIGkUbpR2JsJrImc9rhgtlgadBe70zkPXp4Hg9hywbmZbTaKuUHSTZE1J
+	QEZwOhinOMbS2isSIMM6BkbqiCvjBDGIYkl/OC+v9wCWeN6AEM+Rbp0BCggontqM/1I7UINQjgGHw
+	52r4LKDv020pTnx/iNwhw744WyPyeiyK9071ymswQMCuPP8MSvSWEN3KaJAzYLxoH2+vdRe1uPPWH
+	NHneYZrdgRtgvip0ZSaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT3vy-0006Fb-Ux; Fri, 08 Nov 2019 13:04:14 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iT3wF-0006VQ-U0; Fri, 08 Nov 2019 13:04:31 +0000
+Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT3tT-0004Ht-87
+ id 1iT3tU-0004IA-Bp
  for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:01:42 +0000
-Received: by mail-lf1-x142.google.com with SMTP id j14so4393376lfb.8
+Received: by mail-lj1-x22e.google.com with SMTP id p18so6128625ljc.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 05:01:38 -0800 (PST)
+ Fri, 08 Nov 2019 05:01:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=KU/n1Q/VNXJbWwIQys/qt9rGcT4PXz5RLqrj6x2UwvM=;
- b=HJOJZkxwDS0medOsmpThvkVAMPgReePyoCZfeE53ipRTRMDB0W6c5pAuf6ddW16YzH
- bTOd+bBAagLh5RkQgulpK6Rx2eot8KegFwHr4WplwoCtgkFmTv4Kl1wWcO7q9ySV5I6z
- pMMrXUWvpVqVoyCYDeiFszP4vKVSXYmeRZehM=
+ bh=kyeKnOkwmKeZFZzRl62UDL9FeDrPQAcAwjRLFXYmB4s=;
+ b=AWL4BlnxggywgAuCQF9TZmvfyD1xgx+d4KcuFAXs5z0SjvgeOT8ufhw+0kLd6irh+k
+ LWFYtzapxaTuBh/+hzavZstnGb4XF7eUmqtgUl25ZK4pjgZG3d9UIH1hjWv04ZBgdYit
+ n1G4bDAqkSP9msbsWTTT49q+Qpi/lQ/IdwTJc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=KU/n1Q/VNXJbWwIQys/qt9rGcT4PXz5RLqrj6x2UwvM=;
- b=bw73eyWGAWe3PA8qNL9n7s/3eXckHNaHSmFUbqGRNB69TpOCAph8jgL2z8nM3ke1hj
- DfSe06ZJIcCh44iMNYkr0uO6AO7pAXp5P0in34oIf9oqKAQ75Q8sfqYFGmm50mvBB2ug
- 4QkWoNK99UhAVUSjkHqkVj35wZjd+0yQ58MsurK0UgqcIvhcN0E6ioeAnfoHA8Z06hMV
- 3mft+oyNIXnAvEK5Y5xt3Q+vpYo9saaE1l1w/5adCtsIehv6MDw0ePf9WeZRtRnDf9dO
- aN+Aki+mGUEUVxu3MYRKrKhY0IyK4WT0kFhhDgOmxHXIuVJeuL9g3ipfvMM5a2yHKsxl
- EV5Q==
-X-Gm-Message-State: APjAAAWAQRmharzl4yOD0dak3fENmFFmxeZb2JQ1XwDBGImEyXYHSQOI
- TSye2cIv5342u0v7BLwZ3rY+jw==
-X-Google-Smtp-Source: APXvYqwV1QSJeo2zO51t+HaG52pdBxkjO72k8ABUQOFAqLzD+fyt+4MoIaNvkXvy8mC20ecsyTXyqQ==
-X-Received: by 2002:a19:5e53:: with SMTP id z19mr6167585lfi.111.1573218096769; 
- Fri, 08 Nov 2019 05:01:36 -0800 (PST)
+ bh=kyeKnOkwmKeZFZzRl62UDL9FeDrPQAcAwjRLFXYmB4s=;
+ b=B1Dm3WWYI+C8NlVKoFHvB3/IUqrXO33iDvG4ve7WuPKJ1fgb1Z4Wj4aqab7MJZV7Ok
+ 16El7WBov/nwNNCSbsiHjUhn89GR7FRo8TwLRNY8bLR+LIpsGIl+d5qBYpvTm0vkgb76
+ PrMIqMs0MviPIDdH4A10GJnCMqKbFBBft0befCy0OD2QtYkWpK9PFw/c96RpfakjuVvL
+ abccurwhKvABDpnvA29ZUyHolDu513w0xUFHycJTvc8tsx82xfyUgVFIjXs8en/iF5yS
+ /XNgIT6N/dmymhaIPMhhqMTJH4lToN7CVBfBJLPaETIAF2JIHr5cqxKJ2EGxnOn0ieJW
+ 0jAg==
+X-Gm-Message-State: APjAAAUnsDan3QDrOrb8uauhUhBVG8L1ib3tJO58BOQjr3WQptJkNW19
+ 6Sqb02qr7d6oz1L+l3K4LDcBiA==
+X-Google-Smtp-Source: APXvYqxxzgl3V5o2TwDPF+SxfEJQQMlY/U/MArtCXbnEjF83JFE0HGJ+v+jIFpYrTXQzamx1BSnEhw==
+X-Received: by 2002:a2e:558:: with SMTP id 85mr6764276ljf.67.1573218098161;
+ Fri, 08 Nov 2019 05:01:38 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.01.35
+ by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.01.36
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 05:01:36 -0800 (PST)
+ Fri, 08 Nov 2019 05:01:37 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v4 07/47] soc: fsl: qe: qe.c: guard use of pvr_version_is()
- with CONFIG_PPC32
-Date: Fri,  8 Nov 2019 14:00:43 +0100
-Message-Id: <20191108130123.6839-8-linux@rasmusvillemoes.dk>
+Subject: [PATCH v4 08/47] soc: fsl: qe: drop unneeded #includes
+Date: Fri,  8 Nov 2019 14:00:44 +0100
+Message-Id: <20191108130123.6839-9-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_050139_462733_B115B4DB 
-X-CRM114-Status: GOOD (  11.78  )
+X-CRM114-CacheID: sfid-20191108_050140_439275_64948FFC 
+X-CRM114-Status: UNSURE (   8.51  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:22e listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,52 +104,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit e5c5c8d23fef (soc/fsl/qe: only apply QE_General4 workaround on
-affected SoCs) introduced use of pvr_version_is(), saying
-
-    The QE_General4 workaround is only valid for the MPC832x and MPC836x
-    SoCs. The other SoCs that embed a QUICC engine are not affected by this
-    hardware bug and thus can use the computed divisors (this was
-    successfully tested on the T1040).
-
-I'm reading the above as saying that the errata does not apply to the
-ARM-based SOCs with QUICC engine. In any case, use of pvr_version_is()
-must be guarded by CONFIG_PPC32 before we can remove the PPC32
-dependency from CONFIG_QUICC_ENGINE, so introduce qe_general4_errata()
-to keep the necessary #ifdeffery localized to a trivial helper.
+These includes are not actually needed, and asm/rheap.h and
+sysdev/fsl_soc.h are PPC-specific, hence prevent compiling QE for
+other architectures.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/soc/fsl/qe/qe.c | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
+ drivers/soc/fsl/qe/qe.c    | 5 -----
+ drivers/soc/fsl/qe/qe_io.c | 2 --
+ 2 files changed, 7 deletions(-)
 
 diff --git a/drivers/soc/fsl/qe/qe.c b/drivers/soc/fsl/qe/qe.c
-index 85737e6f5b62..1d8aa62c7ddf 100644
+index 1d8aa62c7ddf..a4763282ea68 100644
 --- a/drivers/soc/fsl/qe/qe.c
 +++ b/drivers/soc/fsl/qe/qe.c
-@@ -197,6 +197,14 @@ EXPORT_SYMBOL(qe_get_brg_clk);
- #define PVR_VER_836x	0x8083
- #define PVR_VER_832x	0x8084
+@@ -26,13 +26,8 @@
+ #include <linux/crc32.h>
+ #include <linux/mod_devicetable.h>
+ #include <linux/of_platform.h>
+-#include <asm/irq.h>
+-#include <asm/page.h>
+-#include <asm/pgtable.h>
+ #include <soc/fsl/qe/immap_qe.h>
+ #include <soc/fsl/qe/qe.h>
+-#include <asm/prom.h>
+-#include <asm/rheap.h>
  
-+static bool qe_general4_errata(void)
-+{
-+#ifdef CONFIG_PPC32
-+	return pvr_version_is(PVR_VER_836x) || pvr_version_is(PVR_VER_832x);
-+#endif
-+	return false;
-+}
-+
- /* Program the BRG to the given sampling rate and multiplier
-  *
-  * @brg: the BRG, QE_BRG1 - QE_BRG16
-@@ -223,7 +231,7 @@ int qe_setbrg(enum qe_clock brg, unsigned int rate, unsigned int multiplier)
- 	/* Errata QE_General4, which affects some MPC832x and MPC836x SOCs, says
- 	   that the BRG divisor must be even if you're not using divide-by-16
- 	   mode. */
--	if (pvr_version_is(PVR_VER_836x) || pvr_version_is(PVR_VER_832x))
-+	if (qe_general4_errata())
- 		if (!div16 && (divisor & 1) && (divisor > 3))
- 			divisor++;
+ static void qe_snums_init(void);
+ static int qe_sdma_init(void);
+diff --git a/drivers/soc/fsl/qe/qe_io.c b/drivers/soc/fsl/qe/qe_io.c
+index 5e3471ac09dd..f6b10f38b2f4 100644
+--- a/drivers/soc/fsl/qe/qe_io.c
++++ b/drivers/soc/fsl/qe/qe_io.c
+@@ -18,8 +18,6 @@
+ 
+ #include <asm/io.h>
+ #include <soc/fsl/qe/qe.h>
+-#include <asm/prom.h>
+-#include <sysdev/fsl_soc.h>
+ 
+ #undef DEBUG
  
 -- 
 2.23.0
