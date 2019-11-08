@@ -2,43 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98CE6F3C78
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 01:04:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A7CEF3C77
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 01:04:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=U0mCpIEgtCOOyLpCi/yScVH1stj0X0B5eX7tcMxSmf0=; b=cqgUs7ZfQC7/zp
-	WMxBepA5XyTvaYMbo5O2CrTocDICrlq/bNpNSA5s1uqdDbbiEiYPATKzP2SOQduxk6rDlDOLBglvV
-	YcLJ/QIYCAQlfUjlBZLtwbf9aI840ZF3oW6FxhFD4SVXj7kSP6EwL1BChzvUf7SEpb5rpRqmZwgYg
-	VxoEVSQqnaAgefdiTlwIzHpuNa9SCVwqBVR4PmfyGpyo1wwrLN61tfHFCDY+ULZbpqdMNyimqWIOs
-	h2S2kh0ZUmw5BGtE2RPBKPZbOFLRRAhBW1Jkn25BTKYYX8J54SUQhe3VZiAt8cNj0f5b2gHMnDJAh
-	eSpIaXk/ui3P1Taopdfg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=k/F2XyAnKW52TBAIR26+wVW6b7V8NzYEPzpFGV1UJoo=; b=oZGk73+iaBO+5n
+	V7UtkWgUSXV/LkN7V+sEuGrNv4PS9+UeUB8AS98MgTpHqjgJSplCjDSHvmlZ6fOR7/2wNW1YGYxiA
+	BFdBpNqNUcxUO838OCcgAcNTzcTCwyiAKB/ScezLP2bAksl6qQ9xmfbA80XTL0AtRv1qnJAta/hyc
+	kljHramlIjK0FxvdRCjQjs2nyO3NJgItLJRlvkk6zQdX5uOl0RGQFOMsnBzNUQSjTpEmL/taO79ON
+	+8/V6DLkWQyOAN8pD+44WueyC7meopzBipgNQhrCPyG8F6B6F9SNeR74qC9nwG7V8QWP5TdbmNVMT
+	2KcUG7VJ7ODO9oWAEobA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSrlF-0007AY-7K; Fri, 08 Nov 2019 00:04:21 +0000
+	id 1iSrl0-0006yJ-A1; Fri, 08 Nov 2019 00:04:06 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSrkE-0006Os-6D; Fri, 08 Nov 2019 00:03:21 +0000
+ id 1iSrkE-0006P3-Du; Fri, 08 Nov 2019 00:03:22 +0000
 Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
  helo=phil.fritz.box)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.89) (envelope-from <heiko.stuebner@theobroma-systems.com>)
- id 1iSrjz-00065H-Jt; Fri, 08 Nov 2019 01:03:03 +0100
+ id 1iSrk0-00065H-8a; Fri, 08 Nov 2019 01:03:04 +0100
 From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 To: dri-devel@lists.freedesktop.org,
 	a.hajda@samsung.com
-Subject: [PATCH v2 0/5] dw-mipi-dsi support for Rockchip px30
-Date: Fri,  8 Nov 2019 01:02:48 +0100
-Message-Id: <20191108000253.8560-1-heiko.stuebner@theobroma-systems.com>
+Subject: [PATCH v2 1/5] drm/bridge/synopsys: dsi: move phy_ops callbacks
+ around panel enablement
+Date: Fri,  8 Nov 2019 01:02:49 +0100
+Message-Id: <20191108000253.8560-2-heiko.stuebner@theobroma-systems.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191108000253.8560-1-heiko.stuebner@theobroma-systems.com>
+References: <20191108000253.8560-1-heiko.stuebner@theobroma-systems.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_160318_410954_39C20379 
-X-CRM114-Status: UNSURE (   8.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191107_160318_630786_DF47612F 
+X-CRM114-Status: GOOD (  10.49  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
@@ -69,30 +71,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds support for the dsi controller on the px30.
-The main difference to previous incarnations is the use of an
-external dphy for the output.
+If implementation-specific phy_ops need to be defined they probably
+should be enabled before trying to talk to the panel and disabled only
+after the panel was disabled.
 
-changes in v2:
-- drop handling the dphy-pll manually, instead use the regular
-  phy configuration operations, thanks Laurent for the suggestion
-- add missing px30 compatible to the binding and make
-  binding changes separate patches
+Right now they are enabled last and disabled first, so might make it
+impossible to talk to some panels - example for this being the px30
+with an external Innosilicon dphy that needs the phy to be enabled
+to transfer commands to the panel.
 
+So move the calls appropriately.
 
-Heiko Stuebner (5):
-  drm/bridge/synopsys: dsi: move phy_ops callbacks around panel
-    enablement
-  dt-bindings: display: rockchip-dsi: document external phys
-  drm/rockchip: add ability to handle external dphys in mipi-dsi
-  dt-bindings: display: rockchip-dsi: add px30 compatible
-  drm/rockchip: dsi: add px30 support
+Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+---
+ drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
 
- .../display/rockchip/dw_mipi_dsi_rockchip.txt | 13 ++-
- drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 13 ++-
- .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   | 95 ++++++++++++++++++-
- 3 files changed, 106 insertions(+), 15 deletions(-)
-
+diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+index 675442bfc1bd..49f5600a1dea 100644
+--- a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
++++ b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
+@@ -797,9 +797,6 @@ static void dw_mipi_dsi_bridge_post_disable(struct drm_bridge *bridge)
+ 	struct dw_mipi_dsi *dsi = bridge_to_dsi(bridge);
+ 	const struct dw_mipi_dsi_phy_ops *phy_ops = dsi->plat_data->phy_ops;
+ 
+-	if (phy_ops->power_off)
+-		phy_ops->power_off(dsi->plat_data->priv_data);
+-
+ 	/*
+ 	 * Switch to command mode before panel-bridge post_disable &
+ 	 * panel unprepare.
+@@ -816,6 +813,9 @@ static void dw_mipi_dsi_bridge_post_disable(struct drm_bridge *bridge)
+ 	 */
+ 	dsi->panel_bridge->funcs->post_disable(dsi->panel_bridge);
+ 
++	if (phy_ops->power_off)
++		phy_ops->power_off(dsi->plat_data->priv_data);
++
+ 	if (dsi->slave) {
+ 		dw_mipi_dsi_disable(dsi->slave);
+ 		clk_disable_unprepare(dsi->slave->pclk);
+@@ -882,6 +882,9 @@ static void dw_mipi_dsi_mode_set(struct dw_mipi_dsi *dsi,
+ 
+ 	/* Switch to cmd mode for panel-bridge pre_enable & panel prepare */
+ 	dw_mipi_dsi_set_mode(dsi, 0);
++
++	if (phy_ops->power_on)
++		phy_ops->power_on(dsi->plat_data->priv_data);
+ }
+ 
+ static void dw_mipi_dsi_bridge_mode_set(struct drm_bridge *bridge,
+@@ -898,15 +901,11 @@ static void dw_mipi_dsi_bridge_mode_set(struct drm_bridge *bridge,
+ static void dw_mipi_dsi_bridge_enable(struct drm_bridge *bridge)
+ {
+ 	struct dw_mipi_dsi *dsi = bridge_to_dsi(bridge);
+-	const struct dw_mipi_dsi_phy_ops *phy_ops = dsi->plat_data->phy_ops;
+ 
+ 	/* Switch to video mode for panel-bridge enable & panel enable */
+ 	dw_mipi_dsi_set_mode(dsi, MIPI_DSI_MODE_VIDEO);
+ 	if (dsi->slave)
+ 		dw_mipi_dsi_set_mode(dsi->slave, MIPI_DSI_MODE_VIDEO);
+-
+-	if (phy_ops->power_on)
+-		phy_ops->power_on(dsi->plat_data->priv_data);
+ }
+ 
+ static enum drm_mode_status
 -- 
 2.23.0
 
