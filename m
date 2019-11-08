@@ -2,72 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5004FF4E39
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:36:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B185EF4E46
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:39:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AYNR1EJXknpDQ3sG7+yrzdl+vZUV+FbmIgul5uKbEKc=; b=nePW0rF7n762l97PenB3MkoOH
-	5M5MOEvatoWdbdMzffpeSikP2rJXGXa+0VlBsmpPp3Ixq+JPpKVANMYayZCK1L9GSoM/RkIPXcrDv
-	SVEr2iNJ66B8D5CXmFwxDbAHYHd/q9bRogNaPsIjDACeah3JQh+L0P1uXtsSd5DJKRo7Q3acXKKne
-	RnhcemMKunJXOXCQ4bcmK3yy8XRAM/nAD7Koam36PsP5dVz79HZZDGPIDmMZeGOeKgeIMl5MfeyoE
-	Rz7FS3jDsonEc9kZROQ3M1CsPuLkRDCcCMsPVk9cXptCkrnw5oksVwgZFFkRYKTZ7vn+f4AuxHy+r
-	1DJK6f34w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kM1F4iFxRl+KvWG8BzmRrqwGFS8yJ+Ci85agRk2c2JY=; b=b4a
+	Os07fj6A9CjDvdW5VQN+xYChNTyuOhj2yi7dvwI2oygPhu8LFJ6e8Q81Fbn+LMdgIM6fUvP03WTGL
+	0rtJHotFymdWJ6KrVm9iM6F7I8MG2XHakvbMTsb/vSEMVjsMXH6zK+Az1b6iNB9AuXGpf23tqVLXx
+	nJM/PWmiJ3y8K0CjDZMQ6YvGWe8y6CovxZiordzRRGz40kuDitlfjFab/VSUu1ZNeANIxJC+fcxL4
+	sDWDr7JQ7GC8/ujUnked0+oDqdTXXEoCk3qKXNcH9ok5qaPLag3r0f8X4vaFmvZnVkn+ZiU5KIBax
+	18OmPCTqyclye++YkB+LUdj1BxVcZ9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT5Ms-0004Gy-2t; Fri, 08 Nov 2019 14:36:06 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+	id 1iT5QV-0004o0-4u; Fri, 08 Nov 2019 14:39:51 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT5Mj-0004GD-7Q
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 14:35:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=kLfXvQkC42L9tczjPcJq75OcxcztTAqs9D1ZZfjvAhk=; b=ClWfAB/IoOsWuKCAKV/+IAte8
- YkI/YccN97xAYCmTaR7SpXrWNCBx6t0OEcZMQIvnUxr0kzgM0PIS3XQ4M4bNpChht5juT2Pu6U2Rt
- Sg6WP236YFYZGbMB3YIwIFEV8hJqisX1KP7jroyYRoG6+QZks+PtAlmyvGOeiZBF6eKqw=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=ypsilon.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1iT5Mh-0007R9-1Y; Fri, 08 Nov 2019 14:35:55 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 4550A2741450; Fri,  8 Nov 2019 14:35:54 +0000 (GMT)
-Date: Fri, 8 Nov 2019 14:35:54 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH] arm64: kaslr: Print warning if KASLR is disabled due to
- lack of seed
-Message-ID: <20191108143554.GF5532@sirena.co.uk>
-References: <20191107121241.8458-1-broonie@kernel.org>
- <20191108133830.GB22834@arrakis.emea.arm.com>
- <20191108141426.GC11465@lakrids.cambridge.arm.com>
-MIME-Version: 1.0
-In-Reply-To: <20191108141426.GC11465@lakrids.cambridge.arm.com>
-X-Cookie: Life is like a simile.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1iT5QN-0004nM-GF
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 14:39:44 +0000
+Received: by mail-qt1-x844.google.com with SMTP id o49so6700605qta.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 08 Nov 2019 06:39:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=RmwEvoW3HuUY3jG9aEbZl5oKhjluz4IlXhdXT/DcXXU=;
+ b=rF0S0OZY9SmrfGt+8Qd9dryxNIjDQ4HrmubcSQrzHQI5nRRVVHKZG7h00k3ULzgggt
+ 6CBYAljrcRr5bvADX+LR/EApByCNzop6HCo6VmBUYb6mj9b6m+MYoETPS3uIim655pkH
+ mDhfxoq9hcTKJZTjM2nQM4ZAToSY5zz1hWtjo3o58vyJ8rRByX14s1IWEPX+b0KnXuK8
+ JuVVnTXl6ApcMphFjDqTvVjbAQyZIJHx1jJIOwaOH7Ba1KW1ZZzFIKqaBcJWk8M2ayBw
+ QKLG2v/Y+KB/KGPdiDG+3cvhd43cU4rvseKJmg7AmJTiSta8yGJW/7DQXHoHff9/PSL6
+ yTig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=RmwEvoW3HuUY3jG9aEbZl5oKhjluz4IlXhdXT/DcXXU=;
+ b=bepjrYFUeDG8tRuIa0UzIrOhegwoNvELnrHvDWyS9Lez4sxaKyFUE9foepJ24q0A+u
+ yMLz3pBGYAP2OWzshccgbsfVLCUEQSCJidLwRicxDL/DBN6x2hTNwmDz2e2mS6Bk3OCq
+ Ozs1OEdlQfRLG5b3Wpm+oKjAlzKXIvF64B3j93KQpZUtpSphEeyRNxQoVuHLDrpOlZIu
+ +TB1yPS9vS8fbJWidDwvGtWOKC43eiw8tqk1epoxOJiUKxM+EoGNRbDuGwjtSDrTepfy
+ dPajNLuaaC8QWAYZla0IJ5FBWEMQn+mjvnA3VsWr6Y6FNmL1zqMQa95b9bDF5Ki9du8Q
+ h1IA==
+X-Gm-Message-State: APjAAAU4QpfCcnVhGdezUrVIxeFbX2guBROib8GuYb7FaCciG8gY2OxX
+ 56ZsFlZgjgyGv0kglbOEXUU=
+X-Google-Smtp-Source: APXvYqzd1/vgw/GgrzHLj9tsmbA41xcWjMXsaHW3F1X6jJc6/JyG8y93yoDpAGxIB3JM4Fjo7Zvdyw==
+X-Received: by 2002:aed:222b:: with SMTP id n40mr10785820qtc.109.1573223980411; 
+ Fri, 08 Nov 2019 06:39:40 -0800 (PST)
+Received: from fabio-Latitude-E5450.nxp.com
+ ([2804:14c:482:99:1a50:482f:3e7:284a])
+ by smtp.gmail.com with ESMTPSA id t20sm2559189qtq.55.2019.11.08.06.39.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 08 Nov 2019 06:39:39 -0800 (PST)
+From: Fabio Estevam <festevam@gmail.com>
+To: shawnguo@kernel.org
+Subject: [PATCH] ARM: dts: e60k02: Pass the memory unit address
+Date: Fri,  8 Nov 2019 11:39:36 -0300
+Message-Id: <20191108143936.7746-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_063557_269525_8FF3E10D 
-X-CRM114-Status: GOOD (  12.19  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191108_063943_565892_C041C7F8 
+X-CRM114-Status: GOOD (  10.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,79 +94,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+Cc: andreas@kemnade.info, Fabio Estevam <festevam@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1560936337955648363=="
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The following build warning is seen with W=1: 
 
---===============1560936337955648363==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="eDB11BtaWSyaBkpc"
-Content-Disposition: inline
+  DTC     arch/arm/boot/dts/imx6sll-kobo-clarahd.dtb
+arch/arm/boot/dts/e60k02.dtsi:51.9-53.4: Warning (unit_address_vs_reg): /memory: node has a reg or ranges property, but no unit name
 
+Pass the memory unit address to fix the problem.
 
---eDB11BtaWSyaBkpc
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+While at it, also pass 'device_type = "memory"', which is recommended
+for memory nodes.
 
-On Fri, Nov 08, 2019 at 02:14:27PM +0000, Mark Rutland wrote:
+Signed-off-by: Fabio Estevam <festevam@gmail.com>
+---
+ arch/arm/boot/dts/e60k02.dtsi | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-> To avoid surprises, I think it'd be best to log that state later, in
+diff --git a/arch/arm/boot/dts/e60k02.dtsi b/arch/arm/boot/dts/e60k02.dtsi
+index 6472b056a001..a9433c8432a6 100644
+--- a/arch/arm/boot/dts/e60k02.dtsi
++++ b/arch/arm/boot/dts/e60k02.dtsi
+@@ -48,7 +48,8 @@
+ 		};
+ 	};
+ 
+-	memory {
++	memory@80000000 {
++		device_type = "memory";
+ 		reg = <0x80000000 0x20000000>;
+ 	};
+ 
+-- 
+2.17.1
 
-I was just going to add an initcall in kaslr.c to keep things together.
-
-> setup.c. We can also do that consistently, so that the user has a
-> positive message when KASLR is in use.
-
-So long as people are happy announcing it, I didn't add anything since I
-wasn't clear if this was a deliberate decision to not provide
-information but I see now it was more likely just the fact that it's
-running too early to reliably print.
-
-> enum kaslr_status {
-> 	KASLR_ENABLED,
-> 	KASLR_DISABLED,
-> 	KASLR_NO_SEED,
-> };
-
-> enum kaslr_status __ro_after_init kaslr_status;
-
-> ... and switch on that in setup.c.
-
-Having the enum seems like it spreads the code out for unclear
-advantage, apart from the logging nothing particularly cares about
-anything other than the enabled/disabled decision.
-
---eDB11BtaWSyaBkpc
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3FfUkACgkQJNaLcl1U
-h9D9jggAgD4YzTOU/0yTHZcWbyPcmy8G2Ec3JuGP2KV8TG3KJ61QxROtM0f1Z1hE
-eR/pSfqFfAxgM5uPsJBfMaWO/XHGJzePtk46t63b9E6db7vG1tOrKwXa6ZX3jBQG
-LhUEq1mkiifMzyLxKAGhOUf6w+9g55pW9ddX8fIBizfca5FK5mmXNE7V6IfX5D7t
-3iGrNJ9VlA8+w2Jzse+76lox0zWTdpKcmnlKcmRLy+XYhJrKEtx93JmznntEw5cz
-cTbJL30Mya7qKi08ct4fZmBRwpniGVoZqk6ObKD9zjgElD0wIfb3TQiSNbolKOv4
-tD7xYlZYPxygIIcNzUhtWayV7W8kxQ==
-=kSgj
------END PGP SIGNATURE-----
-
---eDB11BtaWSyaBkpc--
-
-
---===============1560936337955648363==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1560936337955648363==--
-
