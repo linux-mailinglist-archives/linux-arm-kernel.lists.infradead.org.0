@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68E68F4EB1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:48:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F4DFF4EB8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:50:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cuL8JHUbrZx/uS9ZgMXGXzY1e2p2R5RTgiYfsBKLWU8=; b=fF+RfLA+tW1Tu0
-	qYS8U8l7slXVURRUwRPrbuy57D2wnFymI6xF98SBH/f3+/G7xLalFnocE3wCbAbQAbxQcGs/bIxS4
-	jO2eS9EYWd2xH24B5k/0UdBhdUbBkwoIHl3vvnPRE3mHuFODk88ZoZkuybzASXI223XU/kZkuC79d
-	at9Mg5c7Golxy6/gdPyoNU4cp17m4GjgDlFbPRkg4TD1bzUiOR3PQLNssiZkK/ZQB86ikEBsOEleV
-	UbGELjMdDID9FeStSCuCL0mjXzpqkQtvT4QvZN56d6+kjl6JLF7+oagpUvMpdoKQ/Op3tKTdoEOby
-	Due08c8ZiY5PGZs1GGOA==;
+	List-Owner; bh=iTQLzyDfqUbnEujazlFTPTvyUSFiOlBvjwjB/0nd4zo=; b=QuRQnOVXpxbZ+n
+	JSYFqVavd6ACw8X3L27ZntRBpyndbG60ceOcagKVT9s5KDIru9wwKVb8HzPD0QaYFBz1027zL1xDC
+	4PLYVpNxYJaCl7gNjsX8qxxj1HdtejiW/USL4z6CTy2wN2adRE5QvQzlcI85TqbCPGOt7GlcXirLB
+	lRFTyUXUwFfcmaw/qsFWgfxfAShDik43tVAMv0LNvoz7ZTk3jT5xOqizv9QD1VZulhdQFsH2C/pna
+	w+0u4mTUw5WC9iUVjlTZ94C3bWwVFkTpGT1Dl3WuftqRWKvnxqMog65ln9K2lLJHh4mdbAruSy2xL
+	nDiWmVVwjMIKeokxMU/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT5YZ-0004v5-6A; Fri, 08 Nov 2019 14:48:11 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT5Y8-0004dr-3k; Fri, 08 Nov 2019 14:47:45 +0000
-Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iT5Y2-0001jJ-4t; Fri, 08 Nov 2019 15:47:38 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
-Subject: Re: [PATCH] clk: rockchip: make clk_half_divider_ops static
-Date: Fri, 08 Nov 2019 15:47:37 +0100
-Message-ID: <3569233.5vzpmiOc6b@diego>
-In-Reply-To: <20191017105348.8061-1-ben.dooks@codethink.co.uk>
-References: <20191017105348.8061-1-ben.dooks@codethink.co.uk>
+	id 1iT5aw-000770-Vi; Fri, 08 Nov 2019 14:50:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iT5ah-00076S-VV
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 14:50:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 93E4E46A;
+ Fri,  8 Nov 2019 06:50:23 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 768A53F71A; Fri,  8 Nov 2019 06:50:22 -0800 (PST)
+Date: Fri, 8 Nov 2019 14:50:20 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH v10 00/12] Add arm64/signal initial kselftest support
+Message-ID: <20191108145020.GF22834@arrakis.emea.arm.com>
+References: <20191025175717.15154-1-cristian.marussi@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191025175717.15154-1-cristian.marussi@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_064744_381025_702B37F3 
-X-CRM114-Status: UNSURE (   8.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191108_065024_058123_84CAA648 
+X-CRM114-Status: GOOD (  13.77  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,30 +60,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@lists.codethink.co.uk, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: suzuki.poulose@arm.com, andreyknvl@google.com,
+ linux-kselftest@vger.kernel.org, amit.kachhap@arm.com, shuah@kernel.org,
+ dave.martin@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Donnerstag, 17. Oktober 2019, 12:53:48 CET schrieb Ben Dooks (Codethink):
-> The clk_half_divider_ops is not used outside or declared
-> outside of drivers/clk/rockchip/clk-half-divider.c so make
-> it static to avoid the following warning:
-> 
-> drivers/clk/rockchip/clk-half-divider.c:142:22: warning: symbol 'clk_half_divider_ops' was not declared. Should it be static?
-> 
-> Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
+Cristian, Shuah,
 
-applied for 5.5
+On Fri, Oct 25, 2019 at 06:57:05PM +0100, Cristian Marussi wrote:
+> Cristian Marussi (12):
+>   kselftest: arm64: extend toplevel skeleton Makefile
+>   kselftest: arm64: mangle_pstate_invalid_compat_toggle and common utils
+>   kselftest: arm64: mangle_pstate_invalid_daif_bits
+>   kselftest: arm64: mangle_pstate_invalid_mode_el[123][ht]
+>   kselftest: arm64: extend test_init functionalities
+>   kselftest: arm64: add helper get_current_context
+>   kselftest: arm64: fake_sigreturn_bad_magic
+>   kselftest: arm64: fake_sigreturn_bad_size_for_magic0
+>   kselftest: arm64: fake_sigreturn_missing_fpsimd
+>   kselftest: arm64: fake_sigreturn_duplicated_fpsimd
+>   kselftest: arm64: fake_sigreturn_bad_size
+>   kselftest: arm64: fake_sigreturn_misaligned_sp
 
-Thanks
-Heiko
+I queued these patches through the arm64 tree and plan to send them to
+Linus for 5.5. Please let me know if there are any objections.
 
+I'd also like to propose the maintainers update below for the arm64
+specific selftests:
 
+------------------------8<-------------------------------
+From 629ac5665380c0c65e44e0aaf717090905204555 Mon Sep 17 00:00:00 2001
+From: Catalin Marinas <catalin.marinas@arm.com>
+Date: Fri, 8 Nov 2019 14:46:54 +0000
+Subject: [PATCH] MAINTAINERS: Add arm64 selftests to the ARM64 PORT entry
+
+Since these are tests specific to the arm64 architecture, it makes sense
+for the arm64 maintainers to gatekeep the corresponding changes.
+
+Cc: Shuah Khan <shuah@kernel.org>
+Cc: Will Deacon <will@kernel.org>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+---
+ MAINTAINERS | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/MAINTAINERS b/MAINTAINERS
+index a69e6db80c79..553c64308060 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -2609,6 +2609,7 @@ S:	Maintained
+ F:	arch/arm64/
+ X:	arch/arm64/boot/dts/
+ F:	Documentation/arm64/
++F:	tools/testing/selftests/arm64/
+ 
+ AS3645A LED FLASH CONTROLLER DRIVER
+ M:	Sakari Ailus <sakari.ailus@iki.fi>
 
 _______________________________________________
 linux-arm-kernel mailing list
