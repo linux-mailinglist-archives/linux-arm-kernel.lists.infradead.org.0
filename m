@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66D57F4CE8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:15:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D9FAF4CEC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:15:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RAEH4kZigNzxm8NuTA7+q4yuFXglxWX0gcttJa5Bs00=; b=Z1knM8aWg704p9
-	X0Yy7qSq0VHtPedKZDITGsR2q0cw5tVK4AGmeISF/TNF9CwJ7s9U6+ovSVyGuAPZdmt2hFiR1W+N4
-	RP8mqE0JZnaHpeIABW8khz9MfdUUC1UGRDhGeYnUMvS8VF2UgA5M7JB+GxzC9X6n7ypxZelZIzlla
-	uLwWn1wS2QmWl5bzYObNNaihLDHEo+KHEeS3zHCmD8uxlSzzbOmb9Va4ZzaB6y3bQ8E9jgJJy7N2r
-	CE4ggqW5KgjVIG4R9CjKf1nyzdcT8mDsHy3QZdCg+fV17KNvSZJfT7DXa6I6GsQ3qmaBRk6ZZrXKW
-	4w4I7nz08EjAf+BR66vA==;
+	List-Owner; bh=BlK6c7xZ5q9g71ZAnYOuAk1sXqLlChLwPSD72NqVj6s=; b=LQdKeJ58vacsGO
+	vZmMdSqEJ2ap2rhW/a7hOEAWnC9PWtXwTO5pAluaCpo0X4uAorMuklSypTvSJPmb1sFYkMuAu2b5m
+	a1cbG7VmcqSB7Bm8x1tEUkuhb7CoETqg9EywxMTt1L1mn3m5AfLj4ZgxosWIDl46A49DgxDIRpJwC
+	9aSQ9xiNUbDSM32I/xWnYxJXxIqXNOXvK4JtF/+ZFwSKw2CpSTM5S2CmiHKm6SpCiTvudbOWFaDGS
+	JwYyr9KR90GFVEjdb9rGtxCis85h9fz20j0pjyuEWMO2E6wGrPAUpom8AzLdGfAqR3mF53YmtUPRs
+	GWYk0el93nJeeRNdD6Kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT46N-000115-Eg; Fri, 08 Nov 2019 13:14:59 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iT470-0002oB-IY; Fri, 08 Nov 2019 13:15:38 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT3uB-0004sH-QU
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:27 +0000
-Received: by mail-lf1-x143.google.com with SMTP id v8so4386889lfa.12
+ id 1iT3uC-0004ty-B0
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:29 +0000
+Received: by mail-lf1-x144.google.com with SMTP id j14so4395390lfb.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 05:02:23 -0800 (PST)
+ Fri, 08 Nov 2019 05:02:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=IVdoGLW+H0ZKnJRayTBX6GqWyaD6YHKGaBDMMFO7/WI=;
- b=XGWfSCSUEAVnpUU/P6J3Qpi258NYlF3UJQSunn16SlUdmsp2q+W8Bk2e/nwHBQtUA0
- fTuY1Ravcq9bFl1d3rl/f799vNBuCYFEgPCX2t9OqCPlkEeIvRZyKcQb8orXRDyeqpLG
- r3uSJRO/BS/Xt5o6Y8WDp/Fl9289KO+LrOKYM=
+ bh=SKjk4xtgUQ/kA6JZGPtMJVtONpNy6V4lFIeGBwHjI8g=;
+ b=fbtFc25QQKF1HYy9EJWgNQgGlj4NvVM/SZQzlg+mehsa55gfaar01ZvOzQEFiHiJS8
+ NIWL01E4b4KculB+YonomNkzR6/ye1LnowBIkbJ9/0ahn29mzO+PzUdzYz/FKdLUGozG
+ 3Bl1Mlzo2VusjD/D//znojGiimZguwgG2m4r0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=IVdoGLW+H0ZKnJRayTBX6GqWyaD6YHKGaBDMMFO7/WI=;
- b=ad8FS4lnepp9h6O/TP9thl2fYb2KDmB0Y/AJZdWry8+HnjPV5ERn3iS8Dkp6HeetUx
- J9LJHlODI9A41oHVmKBsk1MfXwEMJdpGY6cJQ1+OywkyGo1LlR4qdmeC0JnB6v/tYTYR
- zOfT6F36Uc2+WAJYrhP8INGtGJJw/tWq9oCiPr8UGH+zdFqyOdYqNrIuVxARqcpbQLqr
- qp7jIdabI88tb1krS5NEbpJAdKDZAHPisax3AqQ8zXnH5aHw9Laos0t2HGXulskvh2/G
- H0a3ECkowZcN8YTW8i9iHxwV0ItBk4d4c7lzIf+Bo1lHgxBWuC0HTaVsf1vP+KFZJzYd
- LPOw==
-X-Gm-Message-State: APjAAAUeDr/N7WBUb9kIICOKoM4HvHwvtydwO1jwz0nXti4w2iFTXRfL
- b4/nzlF+L3TTKE6hc1UcZKES+w==
-X-Google-Smtp-Source: APXvYqwfxfaitvaPMgKPzDm4mZzVxujIi4YRrNIWmv3dBUm4XchC7Z1ld8b5BxN/rmHZMQ6u7CZ4hg==
-X-Received: by 2002:a19:148:: with SMTP id 69mr6994219lfb.76.1573218141700;
- Fri, 08 Nov 2019 05:02:21 -0800 (PST)
+ bh=SKjk4xtgUQ/kA6JZGPtMJVtONpNy6V4lFIeGBwHjI8g=;
+ b=uTG6ezWwY8Qwjft8RZ8jwZp0KwnPiRLNzu4v5loRfCFNtGLZCOvT96DaeUFsI46vku
+ WL6WRwQNzXOw2JStwcZujjDOndD9ARuqAhVxmOTKF6ZwfZ1U5Nc4EoAZXucTGcdaqrj9
+ UGKAY/KANush9DGfJXru1T3d4/dcxIwXhVriARFtXHn0PbUJzERaFWwbJAxHZQUl71gT
+ 0w7MFYuyjq48IIh2vIhtxrN2jd1Wtuebvy8BqUmdDLygQBKNtBGq9dElNRK/jYnu6ejP
+ 4LMF5SKcjgkUhTJG+RzQChCifssIRB6z8qq1jWhS4EGcf8vaz2bJ13RfrRN+DRR8bigb
+ 3p5w==
+X-Gm-Message-State: APjAAAVs1agLwvtb686H63ruIb4aK232aPIuMRAI2VgV01vjB0Fl4mRt
+ ykEDgG47fCRSPap/FNWUXKrvU5qt7w9VzO1L
+X-Google-Smtp-Source: APXvYqwH4Au0vtX7CvDcjAgRV7H9RHuuGAfZs53rG3gF/CjSF6Puxm/KMJghDcukVOdVzQRBjC2v/w==
+X-Received: by 2002:a19:f107:: with SMTP id p7mr6505066lfh.91.1573218142811;
+ Fri, 08 Nov 2019 05:02:22 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.02.20
+ by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.02.21
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 05:02:21 -0800 (PST)
+ Fri, 08 Nov 2019 05:02:22 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v4 43/47] net/wan/fsl_ucc_hdlc: avoid use of IS_ERR_VALUE()
-Date: Fri,  8 Nov 2019 14:01:19 +0100
-Message-Id: <20191108130123.6839-44-linux@rasmusvillemoes.dk>
+Subject: [PATCH v4 44/47] net/wan/fsl_ucc_hdlc: fix reading of __be16 registers
+Date: Fri,  8 Nov 2019 14:01:20 +0100
+Message-Id: <20191108130123.6839-45-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_050224_082566_1BFCAB55 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20191108_050224_467313_7777BE05 
+X-CRM114-Status: GOOD (  11.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,72 +103,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When building this on a 64-bit platform gcc rightly warns that the
-error checking is broken (-ENOMEM stored in an u32 does not compare
-greater than (unsigned long)-MAX_ERRNO). Instead, now that
-qe_muram_alloc() returns s32, use that type to store the return value
-and use standard kernel style "ret < 0".
+When releasing the allocated muram resource, we rely on reading back
+the offsets from the riptr/tiptr registers. But those registers are
+__be16 (and we indeed write them using iowrite16be), so we can't just
+read them back with a normal C dereference.
+
+This is not currently a real problem, since for now the driver is
+PPC32-only. But it will soon be allowed to be used on arm and arm64 as
+well.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/net/wan/fsl_ucc_hdlc.c | 10 +++++-----
- drivers/net/wan/fsl_ucc_hdlc.h |  2 +-
- 2 files changed, 6 insertions(+), 6 deletions(-)
+ drivers/net/wan/fsl_ucc_hdlc.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/net/wan/fsl_ucc_hdlc.c b/drivers/net/wan/fsl_ucc_hdlc.c
-index ce6af7d5380f..405b24a5a60d 100644
+index 405b24a5a60d..8d13586bb774 100644
 --- a/drivers/net/wan/fsl_ucc_hdlc.c
 +++ b/drivers/net/wan/fsl_ucc_hdlc.c
-@@ -84,8 +84,8 @@ static int uhdlc_init(struct ucc_hdlc_private *priv)
- 	int ret, i;
- 	void *bd_buffer;
- 	dma_addr_t bd_dma_addr;
--	u32 riptr;
--	u32 tiptr;
-+	s32 riptr;
-+	s32 tiptr;
- 	u32 gumr;
+@@ -732,8 +732,8 @@ static int uhdlc_open(struct net_device *dev)
  
- 	ut_info = priv->ut_info;
-@@ -195,7 +195,7 @@ static int uhdlc_init(struct ucc_hdlc_private *priv)
- 	priv->ucc_pram_offset = qe_muram_alloc(sizeof(struct ucc_hdlc_param),
- 				ALIGNMENT_OF_UCC_HDLC_PRAM);
+ static void uhdlc_memclean(struct ucc_hdlc_private *priv)
+ {
+-	qe_muram_free(priv->ucc_pram->riptr);
+-	qe_muram_free(priv->ucc_pram->tiptr);
++	qe_muram_free(ioread16be(&priv->ucc_pram->riptr));
++	qe_muram_free(ioread16be(&priv->ucc_pram->tiptr));
  
--	if (IS_ERR_VALUE(priv->ucc_pram_offset)) {
-+	if (priv->ucc_pram_offset < 0) {
- 		dev_err(priv->dev, "Can not allocate MURAM for hdlc parameter.\n");
- 		ret = -ENOMEM;
- 		goto free_tx_bd;
-@@ -233,14 +233,14 @@ static int uhdlc_init(struct ucc_hdlc_private *priv)
- 
- 	/* Alloc riptr, tiptr */
- 	riptr = qe_muram_alloc(32, 32);
--	if (IS_ERR_VALUE(riptr)) {
-+	if (riptr < 0) {
- 		dev_err(priv->dev, "Cannot allocate MURAM mem for Receive internal temp data pointer\n");
- 		ret = -ENOMEM;
- 		goto free_tx_skbuff;
- 	}
- 
- 	tiptr = qe_muram_alloc(32, 32);
--	if (IS_ERR_VALUE(tiptr)) {
-+	if (tiptr < 0) {
- 		dev_err(priv->dev, "Cannot allocate MURAM mem for Transmit internal temp data pointer\n");
- 		ret = -ENOMEM;
- 		goto free_riptr;
-diff --git a/drivers/net/wan/fsl_ucc_hdlc.h b/drivers/net/wan/fsl_ucc_hdlc.h
-index 8b3507ae1781..71d5ad0a7b98 100644
---- a/drivers/net/wan/fsl_ucc_hdlc.h
-+++ b/drivers/net/wan/fsl_ucc_hdlc.h
-@@ -98,7 +98,7 @@ struct ucc_hdlc_private {
- 
- 	unsigned short tx_ring_size;
- 	unsigned short rx_ring_size;
--	u32 ucc_pram_offset;
-+	s32 ucc_pram_offset;
- 
- 	unsigned short encoding;
- 	unsigned short parity;
+ 	if (priv->rx_bd_base) {
+ 		dma_free_coherent(priv->dev,
 -- 
 2.23.0
 
