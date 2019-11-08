@@ -2,67 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E305CF549D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 20:39:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14EA3F55D7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 21:02:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+FCHnh/Zys97F9vPsHfUvQ4tqBp6jNb1RPQJxRvaOng=; b=lUjxTUY5DkSi6/
-	f2FyRtA2ncP/+bp0698rY0XW1MmTPjEYbzBfkJ4zAuCOO8QwluafLtV2Wvg+0e9pOfF28ZjYc5yDV
-	CVVpTYp8bg1xIIQL8E1Qi2UgMSv37ZF+lSN/EbGmz24fo9o4MhG2Emim1dswW/jPGG16mtkjue7xt
-	+zJ3U/Bdg1/XJZqyLhtpQ5MRH89eRc+/wSE5xKEPOmBEt9LlsV1vXiFIl2BkqikSkMqgFy9LgVR9r
-	P0+uAe2zzIpAZikYUvQVhFf6gVLCZblgD7rd7zhAi4dS2LXnckBuWzPelepW9pAv96QAgTfO8xUzH
-	Ym4j8q2gu2UtfjMK7Z9g==;
+	List-Owner; bh=qbxF/DV5HmJr0hkk8saJ0ctAn/rW7SIIW8oTJaPwOTk=; b=JL4C5Zpqs0Urv3
+	w4xnv5nuAWHF4NaoBqtjeU9gV+bKPD2pCc/bfNN5zTKgc6zVPyVFIHBevWD9yOkGjbRYcv9h1hr/E
+	jFcd0Ll3z2OaPdqTQ7DT9StXrTPFjKaNYvV+gqyZynwjV9XXamFwMhevhPxw7unu+cPpsoakzdWZh
+	cHJbov3b30A2GycjyfsDi1oW3uv177+s6zK8YXp+ELFmvljWvHElQn/rt27nzyXcqV89xuq0Lswwe
+	Ru4ax2RPGAvoaT+6KmZrU+XfGJMfdctD1ks76yu5LTBRCBnFHnDDgEDjyhX0lZkYrpTMMRGImkGnQ
+	9dDQomFzN2KMiiL4uV/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTA6T-0006wE-BY; Fri, 08 Nov 2019 19:39:29 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iTAT6-00071o-23; Fri, 08 Nov 2019 20:02:52 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTA6J-0006vp-VR; Fri, 08 Nov 2019 19:39:21 +0000
-Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
- [73.231.172.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D217D206A3;
- Fri,  8 Nov 2019 19:39:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573241958;
- bh=ZAG84ge+L09XKgou0cB1i9iO9e81rb3QTPdTqxlkr0M=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=oOxy4Wdb4vPsF8JbCZye3J9lKbP/LMOZJElWEhVMQVaYL7+6B1J0BGc9MF2bWwzIe
- hJQ4mkhDTLCWz1YMTNy3sdABtaukOID5braecKND/vaunUuII+0rvnF1cM4tNsnIHJ
- g/+gXCN4sGzLG0kAmdQW86n+ifO0YSktrgbS0Gu8=
-Date: Fri, 8 Nov 2019 11:39:17 -0800
-From: Andrew Morton <akpm@linux-foundation.org>
-To: Mike Rapoport <rppt@kernel.org>
-Subject: Re: [PATCH v4 05/13] m68k: mm: use pgtable-nopXd instead of
- 4level-fixup
-Message-Id: <20191108113917.a9c6ebb8373cc95fd684b734@linux-foundation.org>
-In-Reply-To: <1572938135-31886-6-git-send-email-rppt@kernel.org>
-References: <1572938135-31886-1-git-send-email-rppt@kernel.org>
- <1572938135-31886-6-git-send-email-rppt@kernel.org>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ id 1iTASx-000715-8H
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 20:02:44 +0000
+Received: by mail-il1-x143.google.com with SMTP id s5so6212272iln.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 08 Nov 2019 12:02:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=mYf/nyD6rltSVBlJ1rEzYYkSo9gCsLs6tcnYeIJug6o=;
+ b=hULN7kc6Ntx0VJDf3/r/Ug9KysUhIby/9+oydfz0Fpzli6ZoQi5By2We85qloWst6B
+ KxA7mlmhvc4EGkfx4O5/Rjo3X4lURuasgZxveoz5Rwc7Vu3TEPnThe95kgYLEtF/T9NS
+ 2d3emfu3AjAaSsvEo1kUuny8w3oBima7EHy72jpIdQJZYvTqOgozrbFgbFfJPN10rZts
+ E5uMw+UwJ8+Efan0vuD+xVy7VFvetRj4c7eIuMVTxPNafABcb0qCm6CJX+POcsypAcSO
+ I5muVAbCYSUVpAjhtGzYGl88oG9TF1ym7IOsepCWEORdapjFaCV1D2GUqlWBkEtzoWuY
+ +eyg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=mYf/nyD6rltSVBlJ1rEzYYkSo9gCsLs6tcnYeIJug6o=;
+ b=KrvH8DugUqgSaLVZHYLPi0aUrNlVaamEoT91tvnmmrt3ryQaxLxcYIm9IBQgrhAx0A
+ AEVbxgh4OQ+z+BjW7beUSO9a5q84lr1n/cXiluA1NvtS4O/Z3QqRgjFFpjAo0GhmFJcN
+ 0hRXM1h1uR4yeqPrI3aKWDNzOBGFpx09ibowL6LEBal0Z3abKtjf+OJ2gyiKlK299O2I
+ P0UP9PD1K6/D5SxrV2Yet6S9kUii/UYk/qRUUOB6dMjJbfiMXxKJDsyCdWWD6jMoFIl3
+ r8N8CEAJm9chhd7M7gK0GRTVyssT21BFpAXsis9eQYlhB3549O2xhDNPLIltaEsK5B3H
+ GPHQ==
+X-Gm-Message-State: APjAAAXXqZ52FDGNaWcOoO/AnAT44Rsi0AWPZ6OVIL+5xOtjBGhTvUPc
+ UBVFa72S0P8UdQ36XMrgs7UUNXzozDfu4KhpOy8=
+X-Google-Smtp-Source: APXvYqwFjCYO6s12BEyvIYjLOyp6JD59hgPbNgslBpXqVMXVo7xFRqxpwstlboDNb3up2WkJsPVmP6NtsZNsXXoTNKo=
+X-Received: by 2002:a92:ca8d:: with SMTP id t13mr14120645ilo.58.1573243361073; 
+ Fri, 08 Nov 2019 12:02:41 -0800 (PST)
+MIME-Version: 1.0
+References: <20191007220540.30690-1-aford173@gmail.com>
+ <20191022162223.GU5610@atomide.com>
+ <CAHCN7xLy975mxX+cm56PMx-TKODEZjYPfMHb=byspKxYXXq7OA@mail.gmail.com>
+ <20191022221919.GF5610@atomide.com>
+ <1CE62E4E-1A38-448C-9197-8FA16747F942@goldelico.com>
+ <20191023143646.GG5610@atomide.com>
+In-Reply-To: <20191023143646.GG5610@atomide.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Fri, 8 Nov 2019 14:02:29 -0600
+Message-ID: <CAHCN7xKi4oSoVbRM=-D1s2GnMig8xs6iYNwUWj2Ohfj+1okx=Q@mail.gmail.com>
+Subject: Re: [PATCH 1/2] configs: ARM: omap2plus: Enable OMAP3_THERMAL
+To: Tony Lindgren <tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_113920_038841_6ADC5450 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191108_120243_296448_5F513D29 
+X-CRM114-Status: GOOD (  34.04  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (aford173[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,42 +99,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-m68k@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- linux-mm@kvack.org, sparclinux@vger.kernel.org,
- Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
- Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
- Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
- Jeff Dike <jdike@addtoit.com>, Sam Creasey <sammy@sammy.net>,
- Arnd Bergmann <arnd@arndb.de>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-um@lists.infradead.org, Greentime Hu <green.hu@gmail.com>,
- "Kirill A. Shutemov" <kirill@shutemov.name>,
- linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, linux-alpha@vger.kernel.org,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <adam.ford@logicpd.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  5 Nov 2019 09:15:27 +0200 Mike Rapoport <rppt@kernel.org> wrote:
+On Wed, Oct 23, 2019 at 9:36 AM Tony Lindgren <tony@atomide.com> wrote:
+>
+> * H. Nikolaus Schaller <hns@goldelico.com> [191023 04:42]:
+> >
+> > > Am 23.10.2019 um 00:19 schrieb Tony Lindgren <tony@atomide.com>:
+> > >
+> > > * Adam Ford <aford173@gmail.com> [191022 19:01]:
+> > >> On Tue, Oct 22, 2019 at 11:22 AM Tony Lindgren <tony@atomide.com> wrote:
+> > >>>
+> > >>> Hi,
+> > >>>
+> > >>> * Adam Ford <aford173@gmail.com> [191007 15:06]:
+> > >>>> The some in the OMAP3 family have a bandgap thermal sensor, but
+> > >>>> omap2plus has it disabled.
+> > >>>>
+> > >>>> This patch enables the OMAP3_THERMAL by default like the rest of
+> > >>>> the OMAP family.
+> > >>>
+> > >>> Looks like this breaks off mode during idle for omap3, and that's
+> > >>> probably why it never got enabled. The difference in power
+> > >>> consumption during idle is about 7mW vs 32mW for the SoC as
+> > >>> measured from torpedo shunt for main_battery_som.
+> > >>>
+> > >>> I think the right fix might be simply to add handling for
+> > >>> CPU_CLUSTER_PM_ENTER to the related thermal driver to disable
+> > >>> it during idle like we have for gpio-omap.c for example.
+> > >>
+> > >> I am not sure I know where to start on fixing that issue.  Would you
+> > >> entertain enabling the driver if we set the device tree to 'disabled'
+> > >> by default?  This way if people want to to use it, it can be enabled
+> > >> on a per-device option.  Once the power stuff gets resolved, we might
+> > >> be able to enable it by default.  For people who are planning on using
+> > >> the DM3730 @ 1GHz in high temp environments, I am not sure they'll
+> > >> care about low power.
+> > >
+> > > They should both work fine together though. They are not mutually
+> > > exclusive features.
+> > >
+> > >> I'll try to look into it when I have time, but I was hoping a
+> > >> compromise might be a reasonable work-around.
+> > >
+> > > It should be hopefully a trivial fix.. I have not looked at the
+> > > driver code though.
+> >
+> > If I am taken right, it is the drivers/thermal/ti-soc-thermal/ti-*.c
+> > which is a common driver for omap3, omap4, omap5. They only differ
+> > in the thermal data and which registers and bits are used to access
+> > the ADC.
+>
+> Yes so it seems. Enabling OMAP3_THERMAL adds support to
+> of_ti_bandgap_match[] for omap3 and causes the issue.
+>
+> > So is this problem with off mode also known for omap4 and omap5?
+>
+> Probably. But we don't have off mode working for omap4, and
+> it cannot be used for omap5 AFAIK.
+>
+> My guess is we need to call clk_disable() and call
+> ti_bandgap_save_ctxt() on CPU_CLUSTER_PM_ENTER similar to
+> what ti_bandgap_suspend does. And then restore it on
+> CPU_CLUSTER_PM_EXIT.
+>
+> There's a similar example already in gpio_omap_cpu_notifier().
+> Not sure if there is some related errata to deal with too,
+> probably the old Nokia n900 or n9 would provide some hints
+> on what exactly needs to be done.
 
-> m68k has two or three levels of page tables and can use appropriate
-> pgtable-nopXd and folding of the upper layers.
-> 
-> Replace usage of include/asm-generic/4level-fixup.h and explicit
-> definitions of __PAGETABLE_PxD_FOLDED in m68k with
-> include/asm-generic/pgtable-nopmd.h for two-level configurations and with
-> include/asm-generic/pgtable-nopud.h for three-lelve configurations and
-> adjust page table manipulation macros and functions accordingly.
+I 'think' I have a patch ready that does what you're asking, but I
+will fully admit that I don't completely grasp what's going on.
 
-This one was messed up by linux-next changes in arch/m68k/mm/kmap.c. 
-Can you please take a look?
+I'll submit it as an RFC, but I am not even sure I understand what to
+put into the description, so if you're OK with reviewing the RFC, feel
+free to mark up the actual commit message as well.
+
+From what I can see, the changes haven't negatively impact stuff. I
+didn't see the power consumption go up before, so I am not sure I can
+replicate your findings.
+
+It'll be posted shortly.
+
+adam
+>
+> Regards,
+>
+> Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
