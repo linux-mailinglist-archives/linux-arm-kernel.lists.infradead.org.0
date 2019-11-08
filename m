@@ -2,54 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56105F4E1E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:30:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0953F4E31
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:34:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cczFsbLydj5fivGlG0TjJiwdWOkt4fD+wcJkXsKXFfg=; b=gHt2d7Z5Ws+yGU
-	60NrxnfzNKBpGRhBM23JUAWpcwZQ3coHhNm/sXcPyrctV/pmMmLIXXDSrtPSWOcM93H4tFIixjQIr
-	CEYgE6UMXoyJmNdnDX4Hllu1YQTyH/dHpO54DEq9QsKT0KaE4m4aLSw/H+IQQEBWtAD2s+l/ox9vQ
-	e2aUDra7k2DLXb+rgkTkf2hIENdULwftMw3hkg+0DDSFW69VqdD+kKXh51i0tgaLc6VVU2tDeCYal
-	G2r+4GveqqlL/3EQoc5pcsX+r78LOP/bi13tSfUwP4//zNwCSAFRCqjIQVMGowKiD/XV4lHx53u+I
-	jzZqi3aIDDSgk2HQJ0cQ==;
+	List-Owner; bh=IhLyI9iTMY+ooVXvsC5vyOxoHksUHwuvXtLL4Q/C0vU=; b=ctfjjw5IhKR/X1
+	bhIYzoWCEKANlOo68cB3m05arKIcti5T3bklBTGFdiaWQomMGPq4aL+jAoNEtnpL9PsweaV4eY7mj
+	F+kVh+BM2fXqqiV5aORJLYFQkX16ZqPaTavJ50UXD+Fsd827TnfzDJ9zxWmu5pW8AjUuJym6COs1I
+	31u/Wtu1grxhK8axGZpwErS7aMFJMHSJlY1SR0/FNbecxQfIrB4arDUpXAZKOpRS5uiVX3yeIzdY1
+	6vlW6AmNTKA2E7R76mym4pQ8FzDFo9EHFmLJ25kGygkaTy1nUYD9cpGGSBCktDGLM6vUOAIgQevrc
+	LMsZu7pSxXRBA7Dm0AOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT5Ha-0002Dj-A2; Fri, 08 Nov 2019 14:30:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT5HS-0002DJ-56
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 14:30:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0EE0D46A;
- Fri,  8 Nov 2019 06:30:29 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5C4DE3F719;
- Fri,  8 Nov 2019 06:30:28 -0800 (PST)
-Date: Fri, 8 Nov 2019 14:30:26 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Richard Henderson <richard.henderson@linaro.org>
-Subject: Re: [PATCH v5] arm64: Implement archrandom.h for ARMv8.5-RNG
-Message-ID: <20191108143025.GD11465@lakrids.cambridge.arm.com>
-References: <20191108135751.3218-1-rth@twiddle.net>
+	id 1iT5LU-0002eQ-3K; Fri, 08 Nov 2019 14:34:40 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iT5LK-0002dp-67; Fri, 08 Nov 2019 14:34:31 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iT5Kx-0001br-PV; Fri, 08 Nov 2019 15:34:07 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v1 2/7] arm64: dts: Use IRQ flags for legacy PCI IRQ
+ interrupts
+Date: Fri, 08 Nov 2019 15:34:06 +0100
+Message-ID: <4293211.PqsBVBjssI@phil>
+In-Reply-To: <20191104163834.8932-3-andrew.murray@arm.com>
+References: <20191104163834.8932-1-andrew.murray@arm.com>
+ <20191104163834.8932-3-andrew.murray@arm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191108135751.3218-1-rth@twiddle.net>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_063030_282358_4864EAD6 
-X-CRM114-Status: GOOD (  26.57  )
+X-CRM114-CacheID: sfid-20191108_063430_380108_FA5F26DE 
+X-CRM114-Status: GOOD (  12.91  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,190 +58,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- ard.biesheuvel@linaro.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Liviu Dudau <liviu.dudau@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Michal Simek <michal.simek@xilinx.com>, Wei Xu <xuwei5@hisilicon.com>,
+ linux-rockchip@lists.infradead.org, Andy Gross <agross@kernel.org>,
+ Tsahee Zidenberg <tsahee@annapurnalabs.com>,
+ Tom Lendacky <thomas.lendacky@amd.com>,
+ Antoine Tenart <antoine.tenart@bootlin.com>, linux-arm-msm@vger.kernel.org,
+ Robert Richter <rrichter@cavium.com>, Rob Herring <robh+dt@kernel.org>,
+ Jayachandran C <jnair@caviumnetworks.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Brijesh Singh <brijeshkumar.singh@amd.com>, Li Yang <leoyang.li@nxp.com>,
+ Suravee Suthikulpanit <suravee.suthikulpanit@amd.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 08, 2019 at 02:57:51PM +0100, Richard Henderson wrote:
-> From: Richard Henderson <richard.henderson@linaro.org>
+Am Montag, 4. November 2019, 17:38:16 CET schrieb Andrew Murray:
+> Replace magic numbers used to describe legacy PCI IRQ interrupts
+> with #define.
 > 
-> Expose the ID_AA64ISAR0.RNDR field to userspace, as the
-> RNG system registers are always available at EL0.
-> 
-> Signed-off-by: Richard Henderson <richard.henderson@linaro.org>
-> ---
-> v2: Use __mrs_s and fix missing cc clobber (Mark),
->     Log rng failures with pr_warn (Mark),
+> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
 
-When I suggested this, I meant in the probe path.
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> index cede1ad81be2..bb68826bac6f 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> @@ -242,11 +242,11 @@
+>  			     <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH 0>,
+>  			     <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH 0>;
+>  		interrupt-names = "sys", "legacy", "client";
+> -		interrupt-map-mask = <0 0 0 7>;
+> -		interrupt-map = <0 0 0 1 &pcie0_intc 0>,
+> -				<0 0 0 2 &pcie0_intc 1>,
+> -				<0 0 0 3 &pcie0_intc 2>,
+> -				<0 0 0 4 &pcie0_intc 3>;
+> +		interrupt-map-mask = <0 0 0 IRQ_INT_ALL>;
+> +		interrupt-map = <0 0 0 IRQ_INTA &pcie0_intc 0>,
+> +				<0 0 0 IRQ_INTB &pcie0_intc 1>,
+> +				<0 0 0 IRQ_INTC &pcie0_intc 2>,
+> +				<0 0 0 IRQ_INTD &pcie0_intc 3>;
+>  		linux,pci-domain = <0>;
+>  		max-link-speed = <1>;
+>  		msi-map = <0x0 &its 0x0 0x1000>;
 
-Since it can legitimately fail at runtime, I don't think it's worth
-logging there. Maybe it's worth recording stats, but the generic wrapper
-could do that.
-
-[...]
-
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index 80f459ad0190..456d5c461cbf 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -119,6 +119,7 @@ static void cpu_enable_cnp(struct arm64_cpu_capabilities const *cap);
->   * sync with the documentation of the CPU feature register ABI.
->   */
->  static const struct arm64_ftr_bits ftr_id_aa64isar0[] = {
-> +	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_RNDR_SHIFT, 4, 0),
-
-If we're going to expose this to userspace, it must be a system feature.
-If all the boto CPUs have the feature, we'll advertise it to userspace,
-and therefore must mandate it for late-onlined CPUs.
-
->  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_TS_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_FHM_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_DP_SHIFT, 4, 0),
-> @@ -1565,6 +1566,18 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
->  		.sign = FTR_UNSIGNED,
->  		.min_field_value = 1,
->  	},
-> +#endif
-> +#ifdef CONFIG_ARCH_RANDOM
-> +	{
-> +		.desc = "Random Number Generator",
-> +		.capability = ARM64_HAS_RNG,
-> +		.type = ARM64_CPUCAP_WEAK_LOCAL_CPU_FEATURE,
-
-As above, if we're advertisting this to userspace and/or VMs, this must
-be a system-wide feature, and cannot be a weak local feature.
-
-> +		.matches = has_cpuid_feature,
-> +		.sys_reg = SYS_ID_AA64ISAR0_EL1,
-> +		.field_pos = ID_AA64ISAR0_RNDR_SHIFT,
-> +		.sign = FTR_UNSIGNED,
-> +		.min_field_value = 1,
-> +	},
->  #endif
->  	{},
->  };
-> diff --git a/arch/arm64/kernel/random.c b/arch/arm64/kernel/random.c
-> new file mode 100644
-> index 000000000000..e7ff29dd637c
-> --- /dev/null
-> +++ b/arch/arm64/kernel/random.c
-> @@ -0,0 +1,82 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Random number generation using ARMv8.5-RNG.
-> + */
-> +
-> +#include <linux/random.h>
-> +#include <linux/ratelimit.h>
-> +#include <linux/printk.h>
-> +#include <linux/preempt.h>
-> +#include <asm/cpufeature.h>
-> +
-> +static inline bool has_random(void)
-> +{
-> +	/*
-> +	 * We "have" RNG if either
-> +	 * (1) every cpu in the system has RNG, or
-> +	 * (2) in a non-preemptible context, current cpu has RNG.
-> +	 *
-> +	 * Case 1 is the expected case when RNG is deployed, but
-> +	 * case 2 is present as a backup.  Case 2 has two effects:
-> +	 * (A) rand_initialize() is able to use the instructions
-> +	 * when present in the boot cpu, which happens before
-> +	 * secondary cpus are enabled and before features are
-> +	 * resolved for the full system.
-> +	 * (B) add_interrupt_randomness() is able to use the
-> +	 * instructions when present on the current cpu, in case
-> +	 * some big/little system only has RNG on big cpus.
-> +	 *
-> +	 * We can use __cpus_have_const_cap because we then fall
-> +	 * back to checking the current cpu.
-> +	 */
-> +	return __cpus_have_const_cap(ARM64_HAS_RNG) ||
-> +	       (!preemptible() && this_cpu_has_cap(ARM64_HAS_RNG));
-> +}
-
-We don't bother with special-casing local handling mismatch like this
-for other features. I'd ratehr that:
-
-* On the boot CPU, prior to detecting secondaries, we can seed the usual
-  pool with the RNG if the boot CPU has it.
-
-* Once secondaries are up, if the feature is present system-wide, we can
-  make use of the feature as a system-wide feature. If not, we don't use
-  the RNG.
+For the Rockchip part
+Acked-by: Heiko Stuebner <heiko@sntech.de>
 
 
-[...]
-
-> +bool arch_get_random_long(unsigned long *v)
-> +{
-> +	bool ok;
-> +
-> +	if (!has_random())
-> +		return false;
-> +
-> +	/*
-> +	 * Reads of RNDR set PSTATE.NZCV to 0b0000 on success,
-> +	 * and set PSTATE.NZCV to 0b0100 otherwise.
-> +	 */
-> +	asm volatile(
-> +		__mrs_s("%0", SYS_RNDR_EL0) "\n"
-> +	"	cset %w1, ne\n"
-> +	: "=r"(*v), "=r"(ok)
-
-Nit: place a space between the constraint and the bracketed variable, as
-we do elsewhere.
-
-> +	:
-> +	: "cc");
-> +
-> +	if (unlikely(!ok))
-> +		pr_warn_ratelimited("cpu%d: sys_rndr failed\n",
-> +				    read_cpuid_id());
-> +	return ok;
-> +}
-
-... so this can be:
-
-bool arch_get_random_long(unsigned long *v)
-{
-	bool ok;
-
-	if (!cpus_have_const_cap(ARM64_HAS_RNG))
-		return false;
-
-	/*
-	 * Reads of RNDR set PSTATE.NZCV to 0b0000 on success,
-	 * and set PSTATE.NZCV to 0b0100 otherwise.
-	 */
-	asm volatile(
-		__mrs_s("%0", SYS_RNDR_EL0) "\n"
-	"	cset %w1, ne\n"
-	: "=r" (*v), "=r" (ok)
-	:
-	: "cc");
-
-	return ok;
-}
-
-...with similar for arch_get_random_seed_long().
-
-[...]
-
->  config RANDOM_TRUST_CPU
->  	bool "Trust the CPU manufacturer to initialize Linux's CRNG"
-> -	depends on X86 || S390 || PPC
-> +	depends on X86 || S390 || PPC || ARM64
-
-Can't that depend on ARCH_RANDOM instead?
-
-Thanks,
-Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
