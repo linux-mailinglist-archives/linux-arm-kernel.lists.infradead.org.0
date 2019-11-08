@@ -2,88 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1973EF45B5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 12:30:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 559EDF45BB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 12:31:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:From:To:Subject:MIME-Version
+	:References:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PjCfS4R48lRPW2OuV3RCDLdMyl2nTZybrvQ2s2EBs90=; b=mVe++PMUtG1mhd
-	CIRiXj2F6sl7Z5jViD4gIMgJzuxaxF7ZxwYPvitCbGFz/p0PcIjInAGBJZlh0tSpH3BGD1XivUS9G
-	pixNiaXkh5bx9YiFpCbi44z1yCjimzpizq5f6mYypqDOcKvuIrMu/dJVKyi+Co9Hr+fkTaGNU04Wt
-	Sf9L2U6pWSOUrVy2rZD9q0t9BXw66L9AIryTpGB11sDfsNFw9OW09Y0SPWS/VEJkY9hr/y7Dvf6Cr
-	qIKc2BcUjqBm3O1ImaX7SsRQLD7WPy1Gqu6K3E6R7R3lz4zfRVk3jzOzTjqZ1gGCAZGt15EA/oKpd
-	UEVMq/Lb6kn/bM2ERWDw==;
+	List-Owner; bh=cqA6aY7x53MrB77N48ZAbWsXUYUq6bg8ebmHq+Qu1pU=; b=PG56DVIbJLX19g
+	tYdjDQmOc+GRh2byP/4WMWYLHQrURIRxRyO8U1U/jbbgGVM4qMi5/zzo3386nTvtcIwBOGNdbK4c8
+	/eazykh4ZCtu2rJZg0ytYwQVzcciKcxI4KXLqo1I/o4kXdldjEsRKixhCR1LddHgZClbuIm2F/OZI
+	TbXoW+eozV3Etyr30Q3O+jD+X+eroT+ZZO2Jz0x/ixQF8vVjk2wdizP472t749VDtjZufTqLkpimd
+	jhM4Xh79KxVJcUyF/As+V4c4Qm0ixDHTy4/yfX035dLlNLYKTmYJjqIKiQcgHLVOvNb9YtNrQ3otm
+	wDjeo4jtAylB0kWglegQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT2Sr-00031L-JJ; Fri, 08 Nov 2019 11:30:05 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1iT2Uc-0004l5-G0; Fri, 08 Nov 2019 11:31:54 +0000
+Received: from balrog.mythic-beasts.com ([2a00:1098:0:82:1000:0:2:1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT2Sh-00030P-G5
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 11:29:57 +0000
-Received: by mail-qt1-x844.google.com with SMTP id t8so6108627qtc.6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 03:29:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=19tliVy/iIF1NdAW0nZ7cVhCkJOFQ8X7U9RXNc+1Lro=;
- b=iGMI9aiSpFkL2Xcx4lkbR0yhLSgF8bW9F0DM80XakAiuf87a3LhSrmEqWIMzZyTbqA
- fkvDVTPzY9blj61tPjO+wW0caVDkIA2zMoLqO3dO7V8u9M9KGCAKoglxHxAar5UVcmEo
- hxXdCIR+AvMno0NkoNHKMLQCXxI9cNeaSFE7o=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=19tliVy/iIF1NdAW0nZ7cVhCkJOFQ8X7U9RXNc+1Lro=;
- b=OpY1lc5GLLle4k0mmMA73zD7H6TmI74487xikDP6dpZF25zp6UOC0n11+LIliOG+6Z
- zN+EllfY169ZsCVAQxG7cyQEPJY/P57QfOkly3YnkTT6hmA+ffFhjnW1CvDd0DDfMK1U
- lNWMZe++jWLYJpA0tAN33lf9T6zKi9cTj7eoB1fOoXIod8qZ24kuri6e4tURyU801Ry4
- 7hOql8qtk4KuAjY0PlRGhYCIbaXO2UAABL/5ppP19OXRuSzXP7vHVnxookM0G5MJ81+V
- t1RRPnKxzSBfm+rSSAp3iRZHGofOIBqGBsFQt39znEssQHFigZvIC47pOmKwnT7cA/qw
- nyiA==
-X-Gm-Message-State: APjAAAWhpLR2T0mp55ulKAwgTlKU9GBvFgfvcFR+jj8XLLLcHeq6IvU5
- NQJyQVW/PlYK8FYsG+0qAuZucZiwCPUg5Xhs2+c=
-X-Google-Smtp-Source: APXvYqwKJZ6bO/qaUDabsFFu/MQ2R2cYOCy4YbyBPX5qBunktYtwdlI59RKnWWOSZiCLoSbjjip5Dos01Fg2X3vQ3QI=
-X-Received: by 2002:aed:3baf:: with SMTP id r44mr9788084qte.255.1573212592983; 
- Fri, 08 Nov 2019 03:29:52 -0800 (PST)
+ id 1iT2US-0004kX-Hz
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 11:31:45 +0000
+Received: from [199.195.250.187] (port=44020 helo=hermes.aosc.io)
+ by balrog.mythic-beasts.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92.3)
+ (envelope-from <icenowy@aosc.io>)
+ id 1iT2T2-0007Mv-7W; Fri, 08 Nov 2019 11:31:28 +0000
+Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
+ icenowy@aosc.io)
+ by hermes.aosc.io (Postfix) with ESMTPSA id C845041447;
+ Fri,  8 Nov 2019 11:29:51 +0000 (UTC)
+Date: Fri, 08 Nov 2019 19:29:21 +0800
+In-Reply-To: <20191107214514.kcz42mcehyrrif4o@core.my.home>
+References: <20191020134229.1216351-3-megous@megous.com>
+ <20191107204645.13739-1-rikard.falkeborn@gmail.com>
+ <20191107214514.kcz42mcehyrrif4o@core.my.home>
 MIME-Version: 1.0
-References: <20191010020725.3990-1-andrew@aj.id.au>
- <20191010020725.3990-2-andrew@aj.id.au>
- <CACPK8XcGgGsoLNpCccKPb-5bojQS4c5BePewwocc-z29On7Rjg@mail.gmail.com>
- <20191107230029.75ED72178F@mail.kernel.org>
-In-Reply-To: <20191107230029.75ED72178F@mail.kernel.org>
-From: Joel Stanley <joel@jms.id.au>
-Date: Fri, 8 Nov 2019 11:29:41 +0000
-Message-ID: <CACPK8Xe7dmeVjQYObzOw9LdwxH3+1XTcU+RJOZo5C69j8d-yOg@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: clock: Add AST2600 RMII RCLK gate
- definitions
-To: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH] phy: allwinner: Fix GENMASK misuse
+To: =?UTF-8?Q?Ond=C5=99ej_Jirman?= <megous@megous.com>,
+ Rikard Falkeborn <rikard.falkeborn@gmail.com>
+From: Icenowy Zheng <icenowy@aosc.io>
+Message-ID: <F563E52E-72BF-4297-A14F-DDE2B490DADB@aosc.io>
+X-BlackCat-Spam-Score: 14
+X-Spam-Status: No, score=1.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_032955_701732_9108F3FD 
-X-CRM114-Status: GOOD (  16.15  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191108_033144_595366_1A46403B 
+X-CRM114-Status: GOOD (  13.69  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a00:1098:0:82:1000:0:2:1 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,64 +69,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
- Michael Turquette <mturquette@baylibre.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, arnd@arndb.de,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ kishon@ti.com, paul.kocialkowski@bootlin.com, linux-sunxi@googlegroups.com,
+ robh+dt@kernel.org, tglx@linutronix.de, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 7 Nov 2019 at 23:00, Stephen Boyd <sboyd@kernel.org> wrote:
->
-> Quoting Joel Stanley (2019-10-31 21:50:42)
-> > Hi clock maintainers,
-> >
-> > On Thu, 10 Oct 2019 at 02:06, Andrew Jeffery <andrew@aj.id.au> wrote:
-> > >
-> > > The AST2600 has an explicit gate for the RMII RCLK for each of the four
-> > > MACs.
-> > >
-> > > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-> >
-> > I needed this patch and the aspeed-clock.h one for the aspeed dts
-> > tree, so I've put them in a branch called "aspeed-clk-for-v5.5" and
-> > merged that into the aspeed tree. Could you merge that into the clock
-> > tree when you get to merging these ones?
-> >
-> > https://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git/log/?h=aspeed-clk-for-v5.5
-> >
->
-> Can you send a pull request please?
-
-Sure. Here you go. Let me know if you need it in a separate email.
-
-The following changes since commit d8d9ad83a497f78edd4016df0919a49628dcafbc:
-
-  dt-bindings: clock: Add AST2600 RMII RCLK gate definitions
-(2019-11-01 15:01:18 +1030)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git
-tags/aspeed-5.5-clk
-
-for you to fetch changes up to d8d9ad83a497f78edd4016df0919a49628dcafbc:
-
-  dt-bindings: clock: Add AST2600 RMII RCLK gate definitions
-(2019-11-01 15:01:18 +1030)
-
-----------------------------------------------------------------
-ASPEED clock device tree bindings for 5.5
-
-----------------------------------------------------------------
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cgrkuo4gMjAxOeW5tDEx5pyIOOaXpSBHTVQrMDg6MDAg5LiK5Y2INTo0NToxNCwgIk9uZMWZZWog
+SmlybWFuIiA8bWVnb3VzQG1lZ291cy5jb20+IOWGmeWIsDoKPkhlbGxvIFJpa2FyZCwKPgo+T24g
+VGh1LCBOb3YgMDcsIDIwMTkgYXQgMDk6NDY6NDVQTSArMDEwMCwgUmlrYXJkIEZhbGtlYm9ybiB3
+cm90ZToKPj4gQXJndW1lbnRzIGFyZSBzdXBwb3NlZCB0byBiZSBvcmRlcmVkIGhpZ2ggdGhlbiBs
+b3cuCj4+IAo+PiBTaWduZWQtb2ZmLWJ5OiBSaWthcmQgRmFsa2Vib3JuIDxyaWthcmQuZmFsa2Vi
+b3JuQGdtYWlsLmNvbT4KPj4gLS0tCj4+IFNwb3R0ZWQgd2hpbGUgdHJ5aW5nIHRvIGFkZCBjb21w
+aWxlIHRpbWUgY2hlY2tzIG9mIEdFTk1BU0sgYXJndW1lbnRzLgo+PiBQYXRjaCBoYXMgb25seSBi
+ZWVuIGNvbXBpbGUgdGVzdGVkLgo+Cj50aGFuayB5b3UhCj4KPlRlc3RlZC1ieTogT25kcmVqIEpp
+cm1hbiA8bWVnb3VzQG1lZ291cy5jb20+CgpEb2VzIGl0IGFmZmVjdCBvciBmaXggdGhlIHBlcmZv
+cm1hbmNlPwoKPgo+cmVnYXJkcywKPglvLgo+Cj4+ICBkcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5
+LXN1bjUwaS11c2IzLmMgfCAyICstCj4+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyks
+IDEgZGVsZXRpb24oLSkKPj4gCj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9hbGx3aW5uZXIv
+cGh5LXN1bjUwaS11c2IzLmMKPmIvZHJpdmVycy9waHkvYWxsd2lubmVyL3BoeS1zdW41MGktdXNi
+My5jCj4+IGluZGV4IDExNjlmM2U4M2E2Zi4uYjFjMDRmNzFhMzFkIDEwMDY0NAo+PiAtLS0gYS9k
+cml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjUwaS11c2IzLmMKPj4gKysrIGIvZHJpdmVycy9w
+aHkvYWxsd2lubmVyL3BoeS1zdW41MGktdXNiMy5jCj4+IEBAIC00OSw3ICs0OSw3IEBACj4+ICAj
+ZGVmaW5lIFNVTlhJX0xPU19CSUFTKG4pCQkoKG4pIDw8IDMpCj4+ICAjZGVmaW5lIFNVTlhJX0xP
+U19CSUFTX01BU0sJCUdFTk1BU0soNSwgMykKPj4gICNkZWZpbmUgU1VOWElfVFhWQk9PU1RMVkwo
+bikJCSgobikgPDwgMCkKPj4gLSNkZWZpbmUgU1VOWElfVFhWQk9PU1RMVkxfTUFTSwkJR0VOTUFT
+SygwLCAyKQo+PiArI2RlZmluZSBTVU5YSV9UWFZCT09TVExWTF9NQVNLCQlHRU5NQVNLKDIsIDAp
+Cj4+ICAKPj4gIHN0cnVjdCBzdW41MGlfdXNiM19waHkgewo+PiAgCXN0cnVjdCBwaHkgKnBoeTsK
+Pj4gLS0gCj4+IDIuMjQuMAo+PiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
+ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
