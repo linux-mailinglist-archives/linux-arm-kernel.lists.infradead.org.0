@@ -2,72 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4484F4CB0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:09:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 020D1F4CAE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:09:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zbr+m00gCWAD2pIOdnS3lC+/KG9aQnQUAGM2jR0RuII=; b=rfhUhSI2g8X/hQ
-	bxmCVp+2sNVH+zYA2KkkGDcDwsHYrQiM0NH+I1IXKVIL/7RnKmENsvezsYNyygznqx3TY9ZZP9err
-	zx2bx7UV8U4wRQTUCR8HhYAcnzvJbd09VY7qbpuXdgp0sasL6F85X6saz33UK451seWFtksXb/XEz
-	SHt+M0N21slL4/OGb0QbEFMlQO20tf7mElRNjvTn7olxPj/B5v7BT7wRawnASFs6evfYWdnPiRjJs
-	6ylEtSWBZqcTLsTQJItrTPE/uVrl0tJsxeXjMnQf7E8sZfNfCgJABOthtjE+cJW1Rr2x2INsXaDCF
-	44ZnYEKlKcrguOCn6DHg==;
+	List-Owner; bh=Tb08JHneizceBh9LaEabLCVslQquEdKFKTQJA0plLQk=; b=B5gIbYvENaS/uU
+	TN3wyMzmpEtGvrZUXw+34aho5i7lp5kKfIhoQdXxN/cP5ob6WUTP+7SHFWGzxYWrluzQHmVE+dKsl
+	b7OUoQOX88dF+3l8byxiERKI0JDEHSXot2tDxr9jyFaRx5Bq7XOqD4JBTS98ZI79/jld1lFn4LZp2
+	cmHo2mEKsQpE0HnX7s0wPxyLi9gChSAJj1XePidT1u8oucO4sn31HTt3mTPr7o4O6t+iDOH/p5X1r
+	PqwFX/FTOiYyTscCS/QTN1oMGDlkkVwCerEXkPFtx4QnxiAHv406fU1xNNQOoQqEw5Swpx6MiZNnz
+	ptyfG6anYuIiZ+BFN06g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT40w-0003Lb-6A; Fri, 08 Nov 2019 13:09:22 +0000
+	id 1iT40S-0002tq-BD; Fri, 08 Nov 2019 13:08:52 +0000
 Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT3tn-0004ZR-Dl
+ id 1iT3tn-0004aG-Jn
  for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:01 +0000
-Received: by mail-lj1-x244.google.com with SMTP id g3so6103961ljl.11
+Received: by mail-lj1-x244.google.com with SMTP id y23so6101766ljh.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 05:01:58 -0800 (PST)
+ Fri, 08 Nov 2019 05:01:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=1C8bi+Glp22eU2mPHcIIhRfHNSQMvhbk1zxbdzRB++Q=;
- b=ZJaCGSD/arZGUVVsA5xq44Wxb64fr04WyEwSqeiMjW/L1bVDA+aRYM5sWnLo9sepTk
- TEYKJVX4TsUvrSj/LBfKdVrHXqqZUd2PojOxysRopWU2rsgOWmwVffTPBZ9VIs+RV9VH
- MU/RAqLHFpt23mFgSHXKebqI6NeVbe7jcxiAI=
+ bh=/C1Eg1dR+pzbI0uF0+AzerXAuAR/n78tvkDzoMBSgLI=;
+ b=e/P1lD7zvmjURhmsvbX23QE+8ASowwEgb4BpM1IFfQWI91Tr3jDWiq0X6CrLk99wVN
+ mPk6Txdn0NvIKorqKDh7HBcWVDg2Ic5Yi9fVd1R5QMWlVvOdwlxoWhTPHcB8cInVr8Dv
+ yoknf6mGfRANkmWuDMLpwcTHs5OfxaRyfaFd0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=1C8bi+Glp22eU2mPHcIIhRfHNSQMvhbk1zxbdzRB++Q=;
- b=H+QZD1e/fIhR3fA5PVjVM5kRdBKr5nuWK7+ViM3oSyLqF86ja7StbdXyUrXXDL34Bk
- nDFk3GLT9RP+jQYiOeJU3tU4mHIaTxPFKEF3TLZ7rQZHgXmP5FkYaTXTjtAKB6T0Jphv
- GeUSV2lF1yhuHOcDjukf+pX4BppeGpwfAOgsYSdi4kggoymvSHmbvcIh8BJ33KfcbEQT
- ZkZr/u6J9T2zMSzaQsgdQmKwNFYG8Iloiw2Zs0Am8giGWfbmw6hVuZZcn++O7v9qg+OK
- 7VhxH4Al4F/JhGAaYU9qQhtRGWO+VY/F2TthteNdfRmJToZNJx2vePvkBVt2G0M44NkB
- qe7Q==
-X-Gm-Message-State: APjAAAWY/BChenFsgzntnAZLC2lZVS9LpFpA70rg5WfBZen3+EI9gft5
- 0gNWLADvGWDjTLZOkc7e7bem+g==
-X-Google-Smtp-Source: APXvYqwWLpxibry98XoXovz1dothFdNyuvaZNGn+39NnRK53Lft+7SISDG4Rx9pkkMNEWGx3k3O/UQ==
-X-Received: by 2002:a2e:884c:: with SMTP id z12mr6614926ljj.41.1573218117142; 
- Fri, 08 Nov 2019 05:01:57 -0800 (PST)
+ bh=/C1Eg1dR+pzbI0uF0+AzerXAuAR/n78tvkDzoMBSgLI=;
+ b=nDyxdm1L1zmzlnwbgxKVe14HrvyY8tj8H1cIzQthq5Kw8TWxNnsSDsI5qM7Dp29jhb
+ dnHTmSVnJhLeAwGJlLK4R4/QgP8MyPonnXX3/J0InOvaGN0GSXTES//38CkSlMLzjNcR
+ vaR2B+rUW7bOjj1Odtk+4ufWDPh+m9r/Q+lAMiNLechtOSCg9aAg29V3r1hSP2/Nk0ju
+ Ayrd0XlqFmhS0kN+APo+WqqneEHo90OhVvZjcSllH3OEuNnU8pqtLigAm+qWFDGF77x/
+ oK0njFBStDgrNHZAtD84IFm1WdcFGTJnWqJBqf7OjW20jcPESTEHISdErBByFRAZedKM
+ pwVA==
+X-Gm-Message-State: APjAAAURtCwv7e9dTUDXYLz3GLwTGTN/Rh/d5rKTkDMH2QvCIdeVitOh
+ 4r7qH13CWkJT4t9FdnvVW2WcFA==
+X-Google-Smtp-Source: APXvYqxZ1oqYp4p6l2IsGiGO+a6bcfmX2jCuzyyob5hxO/rAt/CL2aEGqAw4ukWNphNhXQIN4rIjrw==
+X-Received: by 2002:a2e:b5a2:: with SMTP id f2mr6611603ljn.108.1573218118236; 
+ Fri, 08 Nov 2019 05:01:58 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.01.56
+ by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.01.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 05:01:56 -0800 (PST)
+ Fri, 08 Nov 2019 05:01:57 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v4 23/47] soc: fsl: qe: qe_io.c: don't open-code
- of_parse_phandle()
-Date: Fri,  8 Nov 2019 14:00:59 +0100
-Message-Id: <20191108130123.6839-24-linux@rasmusvillemoes.dk>
+Subject: [PATCH v4 24/47] soc: fsl: qe: qe_io.c: access device tree property
+ using be32_to_cpu
+Date: Fri,  8 Nov 2019 14:01:00 +0100
+Message-Id: <20191108130123.6839-25-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_050159_618480_8B65A3DF 
-X-CRM114-Status: GOOD (  10.29  )
+X-CRM114-CacheID: sfid-20191108_050159_785053_279C610C 
+X-CRM114-Status: UNSURE (   8.66  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -104,40 +105,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+We need to apply be32_to_cpu to make this work correctly on
+little-endian hosts.
+
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/soc/fsl/qe/qe_io.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+ drivers/soc/fsl/qe/qe_io.c | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/soc/fsl/qe/qe_io.c b/drivers/soc/fsl/qe/qe_io.c
-index f6b10f38b2f4..99aeb01586bd 100644
+index 99aeb01586bd..61dd8eb8c0fe 100644
 --- a/drivers/soc/fsl/qe/qe_io.c
 +++ b/drivers/soc/fsl/qe/qe_io.c
-@@ -141,7 +141,6 @@ EXPORT_SYMBOL(par_io_data_set);
- int par_io_of_config(struct device_node *np)
+@@ -142,7 +142,7 @@ int par_io_of_config(struct device_node *np)
  {
  	struct device_node *pio;
--	const phandle *ph;
  	int pio_map_len;
- 	const unsigned int *pio_map;
+-	const unsigned int *pio_map;
++	const __be32 *pio_map;
  
-@@ -150,14 +149,12 @@ int par_io_of_config(struct device_node *np)
- 		return -1;
+ 	if (par_io == NULL) {
+ 		printk(KERN_ERR "par_io not initialized\n");
+@@ -167,9 +167,15 @@ int par_io_of_config(struct device_node *np)
  	}
  
--	ph = of_get_property(np, "pio-handle", NULL);
--	if (ph == NULL) {
-+	pio = of_parse_phandle(np, "pio-handle", 0);
-+	if (pio == NULL) {
- 		printk(KERN_ERR "pio-handle not available\n");
- 		return -1;
+ 	while (pio_map_len > 0) {
+-		par_io_config_pin((u8) pio_map[0], (u8) pio_map[1],
+-				(int) pio_map[2], (int) pio_map[3],
+-				(int) pio_map[4], (int) pio_map[5]);
++		u8 port        = be32_to_cpu(pio_map[0]);
++		u8 pin         = be32_to_cpu(pio_map[1]);
++		int dir        = be32_to_cpu(pio_map[2]);
++		int open_drain = be32_to_cpu(pio_map[3]);
++		int assignment = be32_to_cpu(pio_map[4]);
++		int has_irq    = be32_to_cpu(pio_map[5]);
++
++		par_io_config_pin(port, pin, dir, open_drain,
++				  assignment, has_irq);
+ 		pio_map += 6;
+ 		pio_map_len -= 6;
  	}
- 
--	pio = of_find_node_by_phandle(*ph);
--
- 	pio_map = of_get_property(pio, "pio-map", &pio_map_len);
- 	if (pio_map == NULL) {
- 		printk(KERN_ERR "pio-map is not set!\n");
 -- 
 2.23.0
 
