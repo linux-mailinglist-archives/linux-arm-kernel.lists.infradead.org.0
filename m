@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F627F4376
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 10:36:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CACC3F4379
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 10:37:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
 	In-Reply-To:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7POn9G72yaMxrzWhLBF3p6xGoLRo+dckQg3m3+T5yU0=; b=S15aLPwZNP8ovG
-	YwW3W0Znvk7d4m5RzFyM5VnZxHtqsTbU2jg9L0BRswYrqtBKdciPfYMtNoaOEjig04cQxaPOz9gU/
-	g1HkxVrMo6ggHrWn3NExDxi6k+yFwmYmgB+9RuURVlx/Pxno7OtEs9wJhDicUU/g8wuLF+czIC0MP
-	QxBFmNnt4sR1cu3PZ7EMRwn8TpN8NM/hr6YW39LlJolJXdcyrWzcRVbnBXQ0e2gpNfu5nRp8qoHmj
-	c66HVjRrr5K6SEPF84nurMgz34BgqmYq9P1/3sMXDoZgP9l7EuukJoLcb6Vb1OQtPPPBzYWIkTpRg
-	zRV65Xq17qs0UC/mrW4g==;
+	List-Owner; bh=Qd8w9RcMBJWAgNuSpgeJhfdMinJJ9l2GYUbSk6yNAgA=; b=hKVf2i+6q6AMv7
+	PETROLRcHS1K9GZYYgHFZX4k/+2HbPJfk64pqTj7C6/QBShTdYiWx5AsXJHTzMQ1VhWXG1azN9TJS
+	loHI0lUf0+K6ZwfTGfC1O5OwhOH/okROt8k+qQK2myLwL/4qXXK2EdkY0dmPJ77PyzazWg96u+0LR
+	0ufgiUDUxKzu5GpsP3KW1hZWyyCSQ5TLF3endPqbObSwhIXVu7QarsVZSrDsOO//BNam1CN1vboPM
+	Es8vSIN5DUQIn5c9T8HTYfFIn5z82dcSE4sFU72ISirLoqmhx+qIx6sXlzF9i1f/c/0CDr7228HXr
+	sTigzuz/XVJ8p6i0s7RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT0hF-0003ft-Cv; Fri, 08 Nov 2019 09:36:49 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1iT0hn-0004AP-9J; Fri, 08 Nov 2019 09:37:23 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT0gY-0003Dr-Tc
+ id 1iT0gZ-0003Du-4W
  for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 09:36:08 +0000
-Received: from pps.filterd (m0098416.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- xA89WpBg139625
- for <linux-arm-kernel@lists.infradead.org>; Fri, 8 Nov 2019 04:36:03 -0500
-Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2w53xacb2w-1
+Received: from pps.filterd (m0098410.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ xA89WGWJ146325
+ for <linux-arm-kernel@lists.infradead.org>; Fri, 8 Nov 2019 04:36:05 -0500
+Received: from e06smtp01.uk.ibm.com (e06smtp01.uk.ibm.com [195.75.94.97])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2w53pscpp3-1
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Fri, 08 Nov 2019 04:36:03 -0500
+ for <linux-arm-kernel@lists.infradead.org>; Fri, 08 Nov 2019 04:36:04 -0500
 Received: from localhost
- by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ by e06smtp01.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
  Violators will be prosecuted
  for <linux-arm-kernel@lists.infradead.org> from <alistair@popple.id.au>;
  Fri, 8 Nov 2019 09:36:01 -0000
 Received: from b06cxnps3074.portsmouth.uk.ibm.com (9.149.109.194)
- by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
+ by e06smtp01.uk.ibm.com (192.168.101.131) with IBM ESMTP SMTP Gateway:
  Authorized Use Only! Violators will be prosecuted; 
  (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
  Fri, 8 Nov 2019 09:35:58 -0000
 Received: from d06av25.portsmouth.uk.ibm.com (d06av25.portsmouth.uk.ibm.com
  [9.149.105.61])
  by b06cxnps3074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- xA89ZvnI57933912
+ xA89ZvSc66453662
  (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
  Fri, 8 Nov 2019 09:35:57 GMT
 Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 9DF6E11C04A;
+ by IMSVA (Postfix) with ESMTP id 47BA711C05C;
  Fri,  8 Nov 2019 09:35:57 +0000 (GMT)
 Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 498D811C05E;
- Fri,  8 Nov 2019 09:35:57 +0000 (GMT)
+ by IMSVA (Postfix) with ESMTP id E79C111C05B;
+ Fri,  8 Nov 2019 09:35:56 +0000 (GMT)
 Received: from ozlabs.au.ibm.com (unknown [9.192.253.14])
  by d06av25.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Fri,  8 Nov 2019 09:35:57 +0000 (GMT)
+ Fri,  8 Nov 2019 09:35:56 +0000 (GMT)
 Received: from townsend.localnet (unknown [9.81.221.11])
  (using TLSv1.2 with cipher DHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ozlabs.au.ibm.com (Postfix) with ESMTPSA id 42310A020A;
- Fri,  8 Nov 2019 20:35:55 +1100 (AEDT)
+ by ozlabs.au.ibm.com (Postfix) with ESMTPSA id 5A0B0A01E3;
+ Fri,  8 Nov 2019 20:35:54 +1100 (AEDT)
 From: Alistair Popple <alistair@popple.id.au>
 To: Joel Stanley <joel@jms.id.au>
-Subject: Re: [PATCH v2 01/11] fsi: Add fsi-master class
-Date: Fri, 08 Nov 2019 20:17:49 +1100
-In-Reply-To: <20191108051945.7109-2-joel@jms.id.au>
+Subject: Re: [PATCH v2 02/11] fsi: Move master attributes to fsi-master class
+Date: Fri, 08 Nov 2019 20:18:57 +1100
+In-Reply-To: <20191108051945.7109-3-joel@jms.id.au>
 References: <20191108051945.7109-1-joel@jms.id.au>
- <20191108051945.7109-2-joel@jms.id.au>
+ <20191108051945.7109-3-joel@jms.id.au>
 MIME-Version: 1.0
 X-TM-AS-GCONF: 00
-x-cbid: 19110809-0028-0000-0000-000003B416AB
+x-cbid: 19110809-4275-0000-0000-0000037BEAE7
 X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19110809-0029-0000-0000-00002477177D
-Message-Id: <2193954.caYg6ACHYT@townsend>
+x-cbparentid: 19110809-4276-0000-0000-0000388F3ECB
+Message-Id: <1875965.3q8Q5IJkUj@townsend>
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-11-08_02:, , signatures=0
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
@@ -84,15 +83,15 @@ X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
  mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
  scancount=1 engine=8.0.1-1910280000 definitions=main-1911080093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_013607_076049_AB5142FC 
-X-CRM114-Status: GOOD (  28.49  )
+X-CRM114-CacheID: sfid-20191108_013607_182749_B8E40B01 
+X-CRM114-Status: GOOD (  26.08  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -116,70 +115,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support for the new paths has been added to our user space tools as well so it 
-shouldn't change anything there.
-
 Acked-by: Alistair Popple <alistair@popple.id.au>
 
-On Friday, 8 November 2019 4:19:35 PM AEDT Joel Stanley wrote:
+On Friday, 8 November 2019 4:19:36 PM AEDT Joel Stanley wrote:
 > From: Jeremy Kerr <jk@ozlabs.org>
 > 
-> This change adds a device class for FSI masters, allowing access under
-> /sys/class/fsi-master/, and easier udev rules.
+> Populate fsi_master_class->dev_attrs with the existing attribute
+> definitions, so we don't need to explicitly register.
 > 
 > Signed-off-by: Jeremy Kerr <jk@ozlabs.org>
 > Signed-off-by: Joel Stanley <joel@jms.id.au>
 > ---
->  drivers/fsi/fsi-core.c | 13 +++++++++++++
->  1 file changed, 13 insertions(+)
+>  drivers/fsi/fsi-core.c | 23 +++++++++--------------
+>  1 file changed, 9 insertions(+), 14 deletions(-)
 > 
 > diff --git a/drivers/fsi/fsi-core.c b/drivers/fsi/fsi-core.c
-> index 1f76740f33b6..0861f6097b33 100644
+> index 0861f6097b33..c773c65a5058 100644
 > --- a/drivers/fsi/fsi-core.c
 > +++ b/drivers/fsi/fsi-core.c
-> @@ -1241,6 +1241,10 @@ static ssize_t master_break_store(struct device *dev,
+> @@ -1241,8 +1241,17 @@ static ssize_t master_break_store(struct device *dev,
 >  
 >  static DEVICE_ATTR(break, 0200, NULL, master_break_store);
 >  
-> +struct class fsi_master_class = {
-> +	.name = "fsi-master",
+> +static struct attribute *master_attrs[] = {
+> +	&dev_attr_break.attr,
+> +	&dev_attr_rescan.attr,
+> +	NULL
 > +};
 > +
+> +ATTRIBUTE_GROUPS(master);
+> +
+>  struct class fsi_master_class = {
+>  	.name = "fsi-master",
+> +	.dev_groups = master_groups,
+>  };
+>  
 >  int fsi_master_register(struct fsi_master *master)
->  {
->  	int rc;
-> @@ -1249,6 +1253,7 @@ int fsi_master_register(struct fsi_master *master)
->  	mutex_init(&master->scan_lock);
->  	master->idx = ida_simple_get(&master_ida, 0, INT_MAX, GFP_KERNEL);
->  	dev_set_name(&master->dev, "fsi%d", master->idx);
-> +	master->dev.class = &fsi_master_class;
+> @@ -1261,20 +1270,6 @@ int fsi_master_register(struct fsi_master *master)
+>  		return rc;
+>  	}
 >  
->  	rc = device_register(&master->dev);
->  	if (rc) {
-> @@ -1350,8 +1355,15 @@ static int __init fsi_init(void)
->  	rc = bus_register(&fsi_bus_type);
->  	if (rc)
->  		goto fail_bus;
-> +
-> +	rc = class_register(&fsi_master_class);
-> +	if (rc)
-> +		goto fail_class;
-> +
->  	return 0;
->  
-> + fail_class:
-> +	bus_unregister(&fsi_bus_type);
->   fail_bus:
->  	unregister_chrdev_region(fsi_base_dev, FSI_CHAR_MAX_DEVICES);
->  	return rc;
-> @@ -1360,6 +1372,7 @@ postcore_initcall(fsi_init);
->  
->  static void fsi_exit(void)
->  {
-> +	class_unregister(&fsi_master_class);
->  	bus_unregister(&fsi_bus_type);
->  	unregister_chrdev_region(fsi_base_dev, FSI_CHAR_MAX_DEVICES);
->  	ida_destroy(&fsi_minor_ida);
+> -	rc = device_create_file(&master->dev, &dev_attr_rescan);
+> -	if (rc) {
+> -		device_del(&master->dev);
+> -		ida_simple_remove(&master_ida, master->idx);
+> -		return rc;
+> -	}
+> -
+> -	rc = device_create_file(&master->dev, &dev_attr_break);
+> -	if (rc) {
+> -		device_del(&master->dev);
+> -		ida_simple_remove(&master_ida, master->idx);
+> -		return rc;
+> -	}
+> -
+>  	np = dev_of_node(&master->dev);
+>  	if (!of_property_read_bool(np, "no-scan-on-init")) {
+>  		mutex_lock(&master->scan_lock);
 > 
 
 
