@@ -2,56 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 931ECF4D31
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:31:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89C65F4D57
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:38:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gJGvAC3egiNt526uiWQzixqpHuXx+/IfMNdtW4kb9QY=; b=gVR512RWvREIrC
-	WmVdmF0cWNf+srYmraBmHg1tf5fK35798WRGE22nujIjSdcqUOB8pjs6c/az5HpF1S9LHdaWwUIgY
-	CMxnoA5VhsRKfYQvmyI5iU5SH5RQCdRk82ns3dKgTr5+rMxy2EO+2y7jfM4XgbJaXAGql9t06wAiX
-	lwu9TILvSu09QIs/Yn+EQFVdgTCCoDTQozixHF7LyKtpXt/vScxExxJiJfS0cDuXstldgrbH4kNTb
-	vjubVIt2w46PIKk2P1J8I4eiMcb7uNRFSnlcZiCHjMVuCN5YC7kmD2F0c4fBZbngbSWFmagRiAOnw
-	BTiA7F7+Zs9fd1GZVqEQ==;
+	List-Owner; bh=iKIhph0WbKZOzEEBd9tJ8Lf3arA8RArUvwcstmeTuXE=; b=HgBaqI+Dur7HnK
+	b7UjJaQnpzU25u8Nd1lcCrEHMkg+Usd04Q1iddHDAkVUr/1bA2dFLwtmgUT/9jq3GQVDCn1thhfpp
+	sxwnlDsugpDFKu/RGJDCrhn3ZXs3//yNhsQUPulE4yM6HBjadNel8r7XZicEyrGiq5mEsro2R2SCe
+	GByG+lZ0M4krS4c4+yPjCcSG4+PXalczs1ymozIKtXr8hNX+yze10K5RiJHWcILwSCox8NdCtBVru
+	hoVvS036BMhMGZYAZw6qlMLTIjL+8+Vc3gByypbdRmD1dTGCA5AzWse2MaahQR40BWsL/mhpUJtaB
+	U4LWKtSh53Ui11mOGWOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT4Mj-00022I-VM; Fri, 08 Nov 2019 13:31:53 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT4Mc-00021g-G7
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:31:48 +0000
-X-Originating-IP: 86.206.246.123
-Received: from xps13 (lfbn-tou-1-421-123.w86-206.abo.wanadoo.fr
- [86.206.246.123]) (Authenticated sender: miquel.raynal@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 6C124C000E;
- Fri,  8 Nov 2019 13:31:35 +0000 (UTC)
-Date: Fri, 8 Nov 2019 14:31:34 +0100
-From: Miquel Raynal <miquel.raynal@bootlin.com>
+	id 1iT4TL-0004Hr-Nk; Fri, 08 Nov 2019 13:38:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iT4TE-0004HG-K8
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:38:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B064046A;
+ Fri,  8 Nov 2019 05:38:33 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 257AE3F719; Fri,  8 Nov 2019 05:38:33 -0800 (PST)
+Date: Fri, 8 Nov 2019 13:38:31 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
 To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH 1/7] spi: zynq-qspi: Anything else than CS0 is not
- supported yet
-Message-ID: <20191108143134.1490f092@xps13>
-In-Reply-To: <20191108120732.GB5532@sirena.co.uk>
-References: <20191108105920.19014-1-miquel.raynal@bootlin.com>
- <20191108105920.19014-2-miquel.raynal@bootlin.com>
- <20191108120732.GB5532@sirena.co.uk>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Subject: Re: [PATCH] arm64: kaslr: Print warning if KASLR is disabled due to
+ lack of seed
+Message-ID: <20191108133830.GB22834@arrakis.emea.arm.com>
+References: <20191107121241.8458-1-broonie@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191107121241.8458-1-broonie@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_053146_670345_B6FA82CB 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191108_053836_704081_73E61B17 
+X-CRM114-Status: GOOD (  12.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,26 +61,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>,
- Tudor Ambarus <Tudor.Ambarus@microchip.com>,
- Michal Simek <michal.simek@xilinx.com>, linux-spi@vger.kernel.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWFyaywKCk1hcmsgQnJvd24gPGJyb29uaWVAa2VybmVsLm9yZz4gd3JvdGUgb24gRnJpLCA4
-IE5vdiAyMDE5IDEyOjA3OjMyICswMDAwOgoKPiBPbiBGcmksIE5vdiAwOCwgMjAxOSBhdCAxMTo1
-OToxNEFNICswMTAwLCBNaXF1ZWwgUmF5bmFsIHdyb3RlOgo+ID4gVW5saWtlIHdoYXQgdGhlIGRy
-aXZlciBpcyBjdXJyZW50bHkgYWR2ZXJ0aXppbmcsIENTMCBvbmx5IGNhbiBiZSB1c2VkLAo+ID4g
-Q1MxIGlzIG5vdCBzdXBwb3J0ZWQgYXQgYWxsLiBQcmV2ZW50IHBlb3BsZSB0byB1c2UgQ1MxLiAg
-Cj4gCj4gVGhpcyAoYW5kIHRoZSByZXN0IG9mIHRoZSBzZXJpZXMpIGRvZXNuJ3QgYXBwbHkgYWdh
-aW5zdCBjdXJyZW50IGNvZGUsCj4gcGxlYXNlIGNoZWNrIGFuZCByZXNlbmQuCgpNeSBiYWQsIEkg
-dGhvdWdodCBJIHdhcyB3b3JraW5nIG9uIGEgdjUuMyB3aGlsZSBJIHdhcyBvbiBhIHY1LjEuIExl
-dCBtZQpyZWJhc2UgYW5kIHJlc2VuZCB0aGUgd2hvbGUgcGF0Y2hzZXQuIFNvcnJ5IGZvciB0aGUg
-bWlzdGFrZS4KClRoYW5rcywKTWlxdcOobAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
-LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Nov 07, 2019 at 12:12:41PM +0000, Mark Brown wrote:
+> diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
+> index 416f537bf614..c2ba5e783ada 100644
+> --- a/arch/arm64/kernel/kaslr.c
+> +++ b/arch/arm64/kernel/kaslr.c
+> @@ -98,8 +98,10 @@ u64 __init kaslr_early_init(u64 dt_phys)
+>  	 * Retrieve (and wipe) the seed from the FDT
+>  	 */
+>  	seed = get_kaslr_seed(fdt);
+> -	if (!seed)
+> +	if (!seed) {
+> +		pr_warn("No seed available for KASLR, disabling\n");
+>  		return 0;
+> +	}
+>  
+>  	/*
+>  	 * Check if 'nokaslr' appears on the command line, and
+
+For some reason, this patch locks up the VM on TX2, stuck in a recursive
+fault. Too early for a printk?
+
+-- 
+Catalin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
