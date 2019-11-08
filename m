@@ -2,93 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C39F2F417A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 08:43:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00D53F417C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 08:46:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tUWHdjWtxaLeR72Idu3ADQff0ptR9vryXICbdlG3UrE=; b=LN0HBGpT4oa0YN
-	9Q7qNXurWY4arHn8Hfu5oSqpb1s7KHKpZ3S7yvaOij8L0sP8CfavmohXET3SecA23FCkOyWJJk5Xb
-	alXsaptTUTLnzyJU//ClEo3f2vjV1fwak44/OkoXUpRnBQq/EeNuZPRh9XsRgDLerL58ptwGaJZ2j
-	i8WP0LgXrH4capK/uo02LfT+evfZu6XTvj0NViy/WZ1WtAGWvC2K2uNKyMVFo1opwb9pOyuGFf9IL
-	hQASKq3m+bg0V7ZmRSeJDwcvnjmItc5NqXnA+QSkx7ghcgR6AK4IrO0weZon/uTMPrISIvb4S/R3R
-	wejtWe78Q2CRHgaMVi6w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4NaETZX2MI3/msEdeGE18dbldA+kEyZSS0KRTfMAFG0=; b=FOXeNh9ReaSo4RFFbnE/F7IR3
+	2cepJDH87IXDddUy8C9bPsnu+XQXuBVXpgd1XaBdTjz5NFKGF+oEjDpxLRfqbidsvUMFcx0sr/MbE
+	rIeEmeRza0PvJJT4MXkW4L3MyFXJThVGOzlzgLPN8uaENkKVmLsWasJ2WSJi1JE1LbzQygIOxzm85
+	3TQqdxRtBU/hdBvARmnBdkcxCxVU9JJFjFwQAKdP4J0J+ylXC0OGicrXEZKjVPc4nsKGJABM8MEgf
+	bMr3Xvkegd5Dy9jDkH6l4AsoqqkVnF3gqEjPyyccFYXOdWckKpu6iqMptr0bJAvapUgcXcNL85jqj
+	sg3abEj3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSyvD-0004Hb-9f; Fri, 08 Nov 2019 07:43:07 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iSyya-0005xS-3z; Fri, 08 Nov 2019 07:46:36 +0000
+Received: from hel-mailgw-01.vaisala.com ([193.143.230.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSyv6-0004HE-9T
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 07:43:01 +0000
-Received: by mail-wr1-x442.google.com with SMTP id i10so5846661wrs.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 23:42:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=gNQtn7/uUN2ljx3dU/Odyrx4tv892gHBGI+Z3nZ9LAE=;
- b=AqCytg1X3jPH8kgfye9A9jb26I9SMoTFC+22F5Z1CyA3qarF0mZnlSuzvwb0qbQMNh
- p6nUXeqy2SAXn2BqmdUMXbMHmiqCvUrIrpZV+9BEwAFJa5QR8ENkHo3gNx1jkGOK6pw2
- 8F2O4VDu/fgPfLNkpj6rf3BEvsg3oesPbqlR1fuqYEkCFOoP5zERf3x3qQErK9gFZVa+
- i1q39NN4t9jYLtqzXMYKNn1z2/9NUwQ/8v4nTJJsv6iZ6c8sFEreNfdb3zB/4lwA5jPb
- N0ZMhXUEALlO3YIOBxbBi7yZQR8o7o7hSCufXESr+QSJ2kFKTfckgSOF1G5NDeMhDRbV
- ZDKQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=gNQtn7/uUN2ljx3dU/Odyrx4tv892gHBGI+Z3nZ9LAE=;
- b=bFEQUgtTkfrZHVwj+kCWxkWsoJ2sFSMB3hI1a571KmPiGymyG++5/c1YPRdKiMSX45
- jyjjgxF7bgjStnvZ+Py7cLOKafIBxBhnP8fhUj9eaVxQT/jsO8ojgklgcRpNjax/mm8w
- arVI3x26FDyj+zb4vVicNKCG4b4VXZ9lhBj0nOUh/HyQ9BY3Q1rD995qxErJbhEyNO78
- 6QNmZfJOm21kRk9EEiDPldYluLoPAczbq8VKhqfzGjOCsooEAOzaVhPZRp0VarnUQvRf
- CDJzZASj2TyAT7MNXR4jdIpDtzx02xpKrCniIOctsf7ZOU0C95cFpJS9aBN+kLv7AUFA
- pkZQ==
-X-Gm-Message-State: APjAAAWr6b+o/F+aK5e34Yda7a9ADruj4r/EmQhjhALRkwVH0RViKpBs
- OTT6XJWkVAOUJR5GBqvnBy+1ew==
-X-Google-Smtp-Source: APXvYqxYjGaklh3lrhXXSL51hFVk11rNwqJLwFJ6E2Q13uV91J5H5IknfpzHN6C/DoGyNbBlcr1N9g==
-X-Received: by 2002:a5d:5306:: with SMTP id e6mr5554996wrv.187.1573198978705; 
- Thu, 07 Nov 2019 23:42:58 -0800 (PST)
-Received: from dell ([95.147.198.88])
- by smtp.gmail.com with ESMTPSA id a15sm4465660wrw.10.2019.11.07.23.42.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 23:42:58 -0800 (PST)
-Date: Fri, 8 Nov 2019 07:42:55 +0000
-From: Lee Jones <lee.jones@linaro.org>
-To: gregkh@google.com
-Subject: Re: [PATCH 01/10] ASoC: max98090: remove 24-bit format support if RJ
- is 0
-Message-ID: <20191108074255.GB18902@dell>
-References: <20191107201702.27023-1-lee.jones@linaro.org>
+ id 1iSyyR-0005wd-UW
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 07:46:29 +0000
+IronPort-SDR: 129yQmbdZKXsCpBsztJCh70TKG3VOg30OJA9nvUB1XkuM9/6xxbG+4rlO3IR+KWJR7gO1YRqjp
+ Ry52xx1RkFvgy6lE30muLhQT3Rxj9YcbNmfSYl7oYQik3SvD+Bg4wjDbB9fy7EK9qUfMWk9TH9
+ l+4cPNpX0qQm51kjGtiZidRnz30S0Bbyp1Fi+g8vCfFHzz2hBI9T0MY9O2/mvej/cGFA0e/TIr
+ P3QRGBRbrzj6fbSGG9HO0vAGbkXEM8OJ3Tbvd1Fyf1UwxUlXoH34YAAERzAq66MQjiDPzwoOKO
+ vnk=
+X-IronPort-AV: E=Sophos;i="5.68,280,1569272400"; d="scan'208";a="254656674"
+Subject: Re: [PATCH v2 0/2] Add definition for GPIO direction
+To: Sebastian Reichel <sebastian.reichel@collabora.com>,
+ "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>,
+ Ian Ray <ian.ray@ge.com>
+References: <cover.1573029228.git.matti.vaittinen@fi.rohmeurope.com>
+ <20191106120846.5bunrqj3uz4khih5@earth.universe>
+ <ddcd02cc6c709837a28cae2cbfa672c506927659.camel@fi.rohmeurope.com>
+ <20191106142441.GC32742@smile.fi.intel.com>
+ <CACRpkdZ2F3zR2bdHgUV9GJX8iSojiM34BTWizTV_z+j7sS4jtw@mail.gmail.com>
+ <2ca76ecb58b9e6377925d6790ff4f7722604f57b.camel@fi.rohmeurope.com>
+ <20191107120859.zoml7cmxbtaetjsk@earth.universe>
+From: Nandor Han <nandor.han@vaisala.com>
+Message-ID: <8722c9bd-6fc9-681a-d5e0-b8c7884ea69c@vaisala.com>
+Date: Fri, 8 Nov 2019 09:46:16 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191107201702.27023-1-lee.jones@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191107120859.zoml7cmxbtaetjsk@earth.universe>
+Content-Language: en-US
+X-OriginalArrivalTime: 08 Nov 2019 07:46:15.0948 (UTC)
+ FILETIME=[99AD64C0:01D59608]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_234300_337439_8D7BE7E5 
-X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-CacheID: sfid-20191107_234628_332545_2FDB9340 
+X-CRM114-Status: UNSURE (   9.17  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [193.143.230.17 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,27 +74,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Mark Brown <broonie@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Yu-Hsuan Hsu <yuhsuan@chromium.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "geert+renesas@glider.be" <geert+renesas@glider.be>,
+ "andrew@aj.id.au" <andrew@aj.id.au>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="windows-1252"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCAwNyBOb3YgMjAxOSwgTGVlIEpvbmVzIHdyb3RlOgoKPiBGcm9tOiBZdS1Ic3VhbiBI
-c3UgPHl1aHN1YW5AY2hyb21pdW0ub3JnPgo+IAo+IFsgVXBzdHJlYW0gY29tbWl0IDU2MjhjODk3
-OTY0MmEwNzZmOTFlZTg2YzNiYWU1YWQyNTE2MzlhZjAgXQoKUGxlYXNlIGlnbm9yZSB0aGlzLCBp
-dCB3YXMgbm90IG1lYW50IGZvciBwdWJsaWMgcmV2aWV3LgoKRm9yIHNvbWUgcmVhc29uIC0tc3Vw
-cHJlc3MtY2M9YWxsIGJyb2tlIHdoZW4gdXBncmFkaW5nIHllc3RlcmRheS4KClNvcnJ5IGZvciB0
-aGUgbm9pc2UuCgo+IFRoZSBzdXBwb3J0ZWQgZm9ybWF0cyBhcmUgUzE2X0xFIGFuZCBTMjRfTEUg
-bm93LiBIb3dldmVyLCBieSBkYXRhc2hlZXQKPiBvZiBtYXg5ODA5MCwgUzI0X0xFIGlzIG9ubHkg
-c3VwcG9ydGVkIHdoZW4gaXQgaXMgaW4gdGhlIHJpZ2h0IGp1c3RpZmllZAo+IG1vZGUuIFdlIHNo
-b3VsZCByZW1vdmUgMjQtYml0IGZvcm1hdCBpZiBpdCBpcyBub3QgaW4gdGhhdCBtb2RlIHRvIGF2
-b2lkCj4gdHJpZ2dlcmluZyBlcnJvci4KCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10KTGluYXJv
-IFNlcnZpY2VzIFRlY2huaWNhbCBMZWFkCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3
-YXJlIGZvciBBUk0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9n
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+On 11/7/19 2:08 PM, Sebastian Reichel wrote:
+> Hi,
+> =
+
+> On Thu, Nov 07, 2019 at 08:52:11AM +0000, Vaittinen, Matti wrote:
+>> That reminded me.. I got 'unknown recipient' replies
+>> <nandor.han@ge.com>: 550 5.1.1 No such user - pp
+>> <semi.malinen@ge.com>: 550 5.1.1 No such user - pp
+>>
+>> from both Semi and Nandor - who seem to be the only maintainers listed
+>> for XRA1403 GPIO EXPANDER in MAINTAINERS.
+>>
+>> XRA1403 GPIO EXPANDER
+>> M:      Nandor Han <nandor.han@ge.com>
+>> M:      Semi Malinen <semi.malinen@ge.com>
+>> L:      linux-gpio@vger.kernel.org
+>> S:      Maintained
+>> F:      drivers/gpio/gpio-xra1403.c
+>> F:      Documentation/devicetree/bindings/gpio/gpio-xra1403.txt
+>>
+>> Anyone knows new mail addresses or perhaps the separate entry
+>> for XRA1403 should be removed?
+> =
+
+> +cc new mail address from Nandor Han
+> +cc Ian Ray with valid GE mail address
+> =
+
+> -- Sebastian
+> =
+
+
+Thanks Sebastian.
+
+Matti, I did review the gpio-xra1403 changes and LGTM.
+
+According with the datasheet, 1 means direction input:
+
+XRA1403 datasheet (https://www.maxlinear.com/ds/xra1403_100_092011.pdf)
+```
+  Setting these bits to =921=92 will enable the GPIOs as inputs.
+```
+
+Note: I will update also the maintainers list.
+
+Nandor
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
