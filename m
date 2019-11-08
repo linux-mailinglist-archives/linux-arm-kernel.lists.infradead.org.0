@@ -2,53 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 392CFF4EAE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:47:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68E68F4EB1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:48:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=e0B2995u6Dn3NL8lKrfc2/NstSUJ3TPE4IRw1KNbyHQ=; b=fXK2+zIMFyCgEwSsru2KDl6870
-	DWAcm9QD5/oFS9cKDpt7fmb7R190sIJKRMlswmdKnVYV2j2aLp3DPZRisrlQCJtFYaPcjZr0v4eZE
-	LK3sSq2TWs+K5RzL1EgzVxWI7OBTsDvJVZN3/1xAzT9zUZ0PoJoi+5BgbnI1FDzBlMk5uHC+wlwfZ
-	jHahADU8Djq/pIQKXsUxDiYUMmLQbe3BefSTFB5F9v5q/Xp8w5+/LzFuSeQ3bHjF2CEZCtxzmD+aL
-	mchqdcOFdNqvyJp/nAflboWdHVlGKSZOqJhXK9S+l5QSYVRSUp1A0fvgsgueJ3ReMmd/m/Y5pvgLV
-	Jw7LwRkA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cuL8JHUbrZx/uS9ZgMXGXzY1e2p2R5RTgiYfsBKLWU8=; b=fF+RfLA+tW1Tu0
+	qYS8U8l7slXVURRUwRPrbuy57D2wnFymI6xF98SBH/f3+/G7xLalFnocE3wCbAbQAbxQcGs/bIxS4
+	jO2eS9EYWd2xH24B5k/0UdBhdUbBkwoIHl3vvnPRE3mHuFODk88ZoZkuybzASXI223XU/kZkuC79d
+	at9Mg5c7Golxy6/gdPyoNU4cp17m4GjgDlFbPRkg4TD1bzUiOR3PQLNssiZkK/ZQB86ikEBsOEleV
+	UbGELjMdDID9FeStSCuCL0mjXzpqkQtvT4QvZN56d6+kjl6JLF7+oagpUvMpdoKQ/Op3tKTdoEOby
+	Due08c8ZiY5PGZs1GGOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT5YG-0004ab-UD; Fri, 08 Nov 2019 14:47:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT5Tm-0007eC-0I
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 14:43:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 487157A7;
- Fri,  8 Nov 2019 06:43:13 -0800 (PST)
-Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.44])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 26E563F719;
- Fri,  8 Nov 2019 06:43:12 -0800 (PST)
-From: Andre Przywara <andre.przywara@arm.com>
-To: Andrew Jones <drjones@redhat.com>,
-	Paolo Bonzini <pbonzini@redhat.com>
-Subject: [kvm-unit-tests PATCH 17/17] arm: gic: Test Group0 SPIs
-Date: Fri,  8 Nov 2019 14:42:40 +0000
-Message-Id: <20191108144240.204202-18-andre.przywara@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191108144240.204202-1-andre.przywara@arm.com>
-References: <20191108144240.204202-1-andre.przywara@arm.com>
+	id 1iT5YZ-0004v5-6A; Fri, 08 Nov 2019 14:48:11 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iT5Y8-0004dr-3k; Fri, 08 Nov 2019 14:47:45 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iT5Y2-0001jJ-4t; Fri, 08 Nov 2019 15:47:38 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
+Subject: Re: [PATCH] clk: rockchip: make clk_half_divider_ops static
+Date: Fri, 08 Nov 2019 15:47:37 +0100
+Message-ID: <3569233.5vzpmiOc6b@diego>
+In-Reply-To: <20191017105348.8061-1-ben.dooks@codethink.co.uk>
+References: <20191017105348.8061-1-ben.dooks@codethink.co.uk>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_064314_177949_32B6ACAA 
-X-CRM114-Status: GOOD (  18.24  )
+X-CRM114-CacheID: sfid-20191108_064744_381025_702B37F3 
+X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,195 +57,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, Alexandru Elisei <alexandru.elisei@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- kvm@vger.kernel.org
-MIME-Version: 1.0
+Cc: linux-kernel@lists.codethink.co.uk, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ linux-rockchip@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With the newly gained building blocks we can now actually test Group 0
-interrupts on our emulated/virtualized GIC.
-The least common denominator for the groups usage on both GICv2 and
-GICv3 is to configure group 0 interrupts to trigger FIQs, and group 1
-interrupts to trigger IRQs.
-For testing this we first configure our test SPI to belong to group 0,
-then trigger it to see that it is actually delivered as an FIQ, and not as
-an IRQ.
-The we change the group to become 1, and trigger again, this time
-expecting the opposite behaviour.
+Am Donnerstag, 17. Oktober 2019, 12:53:48 CET schrieb Ben Dooks (Codethink):
+> The clk_half_divider_ops is not used outside or declared
+> outside of drivers/clk/rockchip/clk-half-divider.c so make
+> it static to avoid the following warning:
+> 
+> drivers/clk/rockchip/clk-half-divider.c:142:22: warning: symbol 'clk_half_divider_ops' was not declared. Should it be static?
+> 
+> Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
 
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
----
- arm/gic.c | 103 ++++++++++++++++++++++++++++++++++++++++++++++++++++--
- 1 file changed, 101 insertions(+), 2 deletions(-)
+applied for 5.5
 
-diff --git a/arm/gic.c b/arm/gic.c
-index 43a272b..9942314 100644
---- a/arm/gic.c
-+++ b/arm/gic.c
-@@ -276,6 +276,22 @@ static void irqs_enable(void)
- 	local_irq_enable();
- }
- 
-+static void fiqs_enable(void)
-+{
-+#ifdef __arm__
-+	install_exception_handler(EXCPTN_FIQ, fiq_handler);
-+#else
-+	install_irq_handler(EL1H_FIQ, fiq_handler);
-+#endif
-+	if (gic_version() == 3) {
-+		gicv3_write_grpen0(1);
-+	} else {
-+		gicv2_enable_fiq(true);
-+		gicv2_enable_group1(true);
-+	}
-+	local_fiq_enable();
-+}
-+
- static void ipi_send(void)
- {
- 	irqs_enable();
-@@ -598,6 +614,7 @@ static void spi_configure_irq(int irq, int cpu)
- 
- #define IRQ_STAT_NONE		0
- #define IRQ_STAT_IRQ		1
-+#define IRQ_STAT_FIQ		2
- #define IRQ_STAT_TYPE_MASK	0x3
- #define IRQ_STAT_NO_CLEAR	4
- 
-@@ -617,14 +634,21 @@ static bool trigger_and_check_spi(const char *test_name,
- 	cpumask_clear(&cpumask);
- 	switch (irq_stat & IRQ_STAT_TYPE_MASK) {
- 	case IRQ_STAT_NONE:
-+		ret &= (check_acked(NULL, &cpumask, 0) >= 0);
-+		ret &= (check_acked(test_name, &cpumask, 1) >= 0);
- 		break;
- 	case IRQ_STAT_IRQ:
-+		ret &= (check_acked(NULL, &cpumask, 0) >= 0);
-+		cpumask_set_cpu(cpu, &cpumask);
-+		ret &= (check_acked(test_name, &cpumask, 1) >= 0);
-+		break;
-+	case IRQ_STAT_FIQ:
-+		ret &= (check_acked(NULL, &cpumask, 1) >= 0);
- 		cpumask_set_cpu(cpu, &cpumask);
-+		ret &= (check_acked(test_name, &cpumask, 0) >= 0);
- 		break;
- 	}
- 
--	ret = (check_acked(test_name, &cpumask, 1) >= 0);
--
- 	/* Clean up pending bit in case this IRQ wasn't taken. */
- 	if (!(irq_stat & IRQ_STAT_NO_CLEAR))
- 		gic_set_irq_bit(SPI_IRQ, GICD_ICPENDR);
-@@ -657,6 +681,9 @@ static void spi_test_smp(void)
- 	int cpu;
- 	int cores = 1;
- 
-+	if (nr_cpus > 8)
-+		printf("triggering SPIs on all %d cores, takes %d seconds\n",
-+		       nr_cpus, (nr_cpus - 1) * 3 / 2);
- 	wait_on_ready();
- 	for_each_present_cpu(cpu) {
- 		if (cpu == smp_processor_id())
-@@ -671,6 +698,46 @@ static void spi_test_smp(void)
- }
- 
- #define GICD_CTLR_ENABLE_BOTH (GICD_CTLR_ENABLE_G0 | GICD_CTLR_ENABLE_G1)
-+#define EXPECT_FIQ	true
-+#define EXPECT_IRQ	false
-+
-+/*
-+ * Check whether our SPI interrupt is correctly delivered as an FIQ or as
-+ * an IRQ, as configured.
-+ * This tries to enable the two groups independently, to check whether
-+ * the relation group0->FIQ and group1->IRQ holds.
-+ */
-+static void gic_check_irq_delivery(void *gicd_base, bool as_fiq)
-+{
-+	u32 reg = readl(gicd_base + GICD_CTLR) & ~GICD_CTLR_ENABLE_BOTH;
-+	int cpu = smp_processor_id();
-+
-+	/* Check that both groups disabled block the IRQ. */
-+	writel(reg, gicd_base + GICD_CTLR);
-+	trigger_and_check_spi("no IRQs with both groups disabled",
-+			      IRQ_STAT_NONE, cpu);
-+
-+	/* Check that just the *other* group enabled blocks the IRQ. */
-+	if (as_fiq)
-+		writel(reg | GICD_CTLR_ENABLE_G1, gicd_base + GICD_CTLR);
-+	else
-+		writel(reg | GICD_CTLR_ENABLE_G0, gicd_base + GICD_CTLR);
-+	trigger_and_check_spi("no IRQs with just the other group enabled",
-+			      IRQ_STAT_NONE, cpu);
-+
-+	/* Check that just this group enabled fires the IRQ. */
-+	if (as_fiq)
-+		writel(reg | GICD_CTLR_ENABLE_G0, gicd_base + GICD_CTLR);
-+	else
-+		writel(reg | GICD_CTLR_ENABLE_G1, gicd_base + GICD_CTLR);
-+	trigger_and_check_spi("just this group enabled",
-+			      as_fiq ? IRQ_STAT_FIQ : IRQ_STAT_IRQ, cpu);
-+
-+	/* Check that both groups enabled fires the IRQ. */
-+	writel(reg | GICD_CTLR_ENABLE_BOTH, gicd_base + GICD_CTLR);
-+	trigger_and_check_spi("both groups enabled",
-+			      as_fiq ? IRQ_STAT_FIQ : IRQ_STAT_IRQ, cpu);
-+}
- 
- /*
-  * Check the security state configuration of the GIC.
-@@ -711,6 +778,9 @@ static bool gicv3_check_security(void *gicd_base)
-  * Check whether this works as expected (as Linux will not use this feature).
-  * We can only verify this state on a GICv3, so we check it there and silently
-  * assume it's valid for GICv2.
-+ * GICv2 and GICv3 handle the groups differently, but we use the common
-+ * denominator (Group0 as FIQ, Group1 as IRQ) and rely on the GIC library for
-+ * abstraction.
-  */
- static void test_irq_group(void *gicd_base)
- {
-@@ -754,6 +824,35 @@ static void test_irq_group(void *gicd_base)
- 	gic_set_irq_group(SPI_IRQ, !reg);
- 	report("IGROUPR is writable", gic_get_irq_group(SPI_IRQ) != reg);
- 	gic_set_irq_group(SPI_IRQ, reg);
-+
-+	/*
-+	 * Configure group 0 interrupts as FIQs, install both an FIQ and IRQ
-+	 * handler and allow both types to be delivered to the core.
-+	 */
-+	irqs_enable();
-+	fiqs_enable();
-+
-+	/* Configure one SPI to be a group0 interrupt. */
-+	gic_set_irq_group(SPI_IRQ, 0);
-+	spi_configure_irq(SPI_IRQ, smp_processor_id());
-+	report_prefix_push("FIQ");
-+	gic_check_irq_delivery(gicd_base, EXPECT_FIQ);
-+	report_prefix_pop();
-+
-+	/* Configure the SPI to be a group1 interrupt instead. */
-+	gic_set_irq_group(SPI_IRQ, 1);
-+	report_prefix_push("IRQ");
-+	gic_check_irq_delivery(gicd_base, EXPECT_IRQ);
-+	report_prefix_pop();
-+
-+	/* Reset the IRQ to the default group. */
-+	if (is_gicv3)
-+		gic_set_irq_group(SPI_IRQ, 1);
-+	else
-+		gic_set_irq_group(SPI_IRQ, 0);
-+	gic_disable_irq(SPI_IRQ);
-+
-+	report_prefix_pop();
- }
- 
- static void spi_send(void)
--- 
-2.17.1
+Thanks
+Heiko
+
 
 
 _______________________________________________
