@@ -2,93 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8098CF3E66
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 04:29:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1A28F3E89
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 04:51:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NN9BmvLOg21o/eev4lL21WVc5I1+O0o+ksxuOItkU7w=; b=caieKrEc5CbKMl
-	rXwUuuQkSHvLY8yqFFacC/YUFf7QvFlzM68CpgtaE/KGHQpKtz0ib66h9rqy8Dpzc8kBbw2GE6IWD
-	YSkfwAXC7V6xECSemy1BJ7My58aZsto//C/IryA5ieRQaWV5aGhTEpapPJoI0wvXyD2LHu6mUqyFa
-	jnbFkCixw5Tgs4VirGnDLb9f2WNJdxStvtxZ43AWQTvzE15VqfgTT7O9aXp9BdDbhshkQYex85iHe
-	R6VuYpmAomWKa712Y0Rhp7WOGC9jWal2xHQI1KAOguR+hv1k49YeYQtTEs5bH2DCWpb1+Z1uo44L7
-	ofrCsMfAbRjaQVwTlo7A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=73O85btq54Ew/Ubimn8gZKIM5A8XRqkk9pmx2R2/ZVQ=; b=EkgIfI8c+3MluO
+	V3D+1iUeOzWXwlJnMmTk39gd795B/FAQTMALt7Y9KHlmSCzEvWPivtcaPBmNde1cLfY+OOrplrJK3
+	RYFeKocC9Tn5FECYewElYOOm2RpVkLJGtO9+2GmDS4HXswLQ0Y50twTWQMdWfXAgdbrmuaY/Cl8pz
+	pBhyUpDH2mW+UHC+lOLa6bTrqC42EoljYAAuVX9uLDqLvTNskPp1c8m8OqS72YVwSnehjUzqhFvo7
+	FvdXQ9ai7gaTcv8DjjHmukNLkkLL3N034IH4CRl8VDLjpdx1NGj4PKRiq59UbFL//k9yZKQCdabZB
+	RpxFLJoHKZOxm7oq0YxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSuxg-000376-RP; Fri, 08 Nov 2019 03:29:24 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iSvJI-0002Ox-Fz; Fri, 08 Nov 2019 03:51:44 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSuxX-00036e-Oq
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 03:29:17 +0000
-Received: by mail-pl1-x643.google.com with SMTP id ay6so3122135plb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 19:29:14 -0800 (PST)
+ id 1iSvIt-0002FK-G1; Fri, 08 Nov 2019 03:51:20 +0000
+Received: by mail-ot1-x343.google.com with SMTP id t4so4086689otr.1;
+ Thu, 07 Nov 2019 19:51:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=BJCUfp8ZkVX+2Q/E2RA51yP281dLV5q+tGMP1kt6Ef8=;
- b=U/LqZXmxhh8yeGmbBFtUj4NR77Lm5hbRR8wTVSBW4aTEN2ZGLfadqRN7ImQUIFSqUy
- sjK0vvA9nvsEcVG+6F7ZEUbp1oDqZVs7y3wsDjSShszolJglwr6/8GnSQGffR/vrqK+j
- Pk+tGPaNICEovggBuwTNSv8EYKs3WKMsIVm5qaPBReQe/0tp1wHMQSyO0bUvBrOKbyTp
- nzJYu8ogUNwqNBa3ZGf087wPssKKXmt16lX17ocJvg3xQ+ySNGOkmgDE0M+dT2XGtRQd
- kOcLa4MvDCWjT/kF9JBmFHW2SjQexsv/GBZfWlG25fy1fdBWyX7hn1MzYuCRfDwCxdTf
- eepQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=rhuDy7k1YQ8fNXLKpPn/sc6C1FLdaiYWgUMBjQg/bFo=;
+ b=E0tKYfwwrZDCdsh04gyklOIRSpMjrcZf7XFyRLcpx8x0pxA4Humn44TwuUQLZfK/1b
+ DIJAUa72iHHl3W8JOk9gC0IoqX+RzQFpVTlLZbUsAIV+H8JULQJjB7WF+xoI4A7ibEeb
+ x4OmdARMasC/SpvW/Qxj/m8VVxYvMnAHuzB5pYghTduxlcAih6ob712gkfAOl0RUFWfv
+ 6bj1niVXsQ8yZlejOg7g+4vxz+99Xjublz3dvnsnE+PC00dP5xGPe1roWntjK5FEmWsz
+ JgDdCFE8U/7BdNPxiBYtudoex4LpRAacGADeazvwjutcDrZ0v61hhKDNtV75Kab+ZWHC
+ TCZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=BJCUfp8ZkVX+2Q/E2RA51yP281dLV5q+tGMP1kt6Ef8=;
- b=E6CBnz/GOBsNC0Xf+0ZHxpsgumlQ+Mf4pB025kJJlHF4pnPgzh5HSiR9t7/Ys4iPMO
- J3RBgrz/S83XVYXpvBDYj+gi6WLnIcsYih5JIu2w2/og9KdYbcy9COxokm0FGfRJVG0U
- doD+obhT+9jhrBS5LSClFGEQqqivusK7MHGydn4OoeUmIiQoy0g77QFtzSo/arVzo80O
- zLUD5D/MT0i5kQA5uZSvLGMfOlIN3F4tZzU4AhN0jFokXxFwgKHBDYdf4fa3xcK5wGVC
- +07Pvzn4Nzke4I2Pn/Sd/eUOOmfJH6PtT+KSs0neZdBJP97A3pdJ+AhONrWim5Kk1tUY
- vdsg==
-X-Gm-Message-State: APjAAAUwMedfwVPZ53DZ1k8RBca0DkGG0VOMqLfuYOls97QD5Y0DmNcM
- iSV2Se6FjcI1wiDfAiCpxJ4=
-X-Google-Smtp-Source: APXvYqwUYaLV2Q5lctEAObWGMEHLJbNchUOQ++A589z1HlK7NWtmUmy5xzScfJRPCcXhohywYKP0ag==
-X-Received: by 2002:a17:902:bb8f:: with SMTP id
- m15mr4371359pls.121.1573183754056; 
- Thu, 07 Nov 2019 19:29:14 -0800 (PST)
-Received: from voyager.ibm.com ([36.255.48.244])
- by smtp.gmail.com with ESMTPSA id c13sm4219194pfo.5.2019.11.07.19.29.10
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 19:29:13 -0800 (PST)
-From: Joel Stanley <joel@jms.id.au>
-To: Wim Van Sebroeck <wim@linux-watchdog.org>,
- Guenter Roeck <linux@roeck-us.net>, linux-watchdog@vger.kernel.org
-Subject: [PATCH] watchdog: aspeed: Fix clock behaviour for ast2600
-Date: Fri,  8 Nov 2019 13:59:05 +1030
-Message-Id: <20191108032905.22463-1-joel@jms.id.au>
-X-Mailer: git-send-email 2.24.0.rc1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=rhuDy7k1YQ8fNXLKpPn/sc6C1FLdaiYWgUMBjQg/bFo=;
+ b=cw/FRrgWSYpSVH1Kf3WEj0pxaBPlFS3UZvYpm1+Pj36DKzSO/1JDSR/tW6wLg5XJOr
+ cur6hQccijyxfscwtArGr7Q+49t9t2ue8hAgHP+w2RdQv7ZW1E+LFlB34SL40/cm1GHB
+ 5osdTKDrqCtJ6e24mHR0iydDElcgoCHiDqFBA63NPdQ1LZJ5zwEOmwlZ7hXBawZte/ft
+ cxlxMKr9QDCSpnI9bafEs7bwMuXuhbZrtvT4/hafzozz2M9OWXjYRlk5S5glcPMYSbEV
+ GW3yu0dIf0ZR7TeHv2laBPHWVHau1BxCKnsTdfKE7RVvPiguWXunRKGaPJpXFKTqe8OM
+ OYsA==
+X-Gm-Message-State: APjAAAUKqegDK3YjaZujtTymS/Z6emimlwR/JyZKWVFlumrpqRCOUYhV
+ GHPRUSeUJnqspOM1RzFPd2xfcSEGgCZ/S5a1NEnF3HBh
+X-Google-Smtp-Source: APXvYqy2t/kO5ZRGsn5pm8g1lSt5wtAL2Dz+sn0BJoP+m3eFEMrEvRM44WhCuk2uQLh+OC2wKvuDp/aXC2cBaaLmIIw=
+X-Received: by 2002:a9d:6b81:: with SMTP id b1mr6069691otq.70.1573185077890;
+ Thu, 07 Nov 2019 19:51:17 -0800 (PST)
 MIME-Version: 1.0
+References: <20191106140748.13100-1-gch981213@gmail.com>
+ <20191106140748.13100-3-gch981213@gmail.com>
+In-Reply-To: <20191106140748.13100-3-gch981213@gmail.com>
+From: Chuanhong Guo <gch981213@gmail.com>
+Date: Fri, 8 Nov 2019 11:51:06 +0800
+Message-ID: <CAJsYDVJ8zFBJBQHVgyWE1joqGhsq9AibKqrgCZToySPT3p0PnA@mail.gmail.com>
+Subject: Re: [PATCH 2/2] dt-bindings: mtd: mtk-quadspi: update bindings for
+ mmap flash read
+To: linux-mtd@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_192915_830943_A5F6FA48 
-X-CRM114-Status: GOOD (  13.65  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191107_195119_556765_5183A98A 
+X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gch981213[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
+ provider (gch981213[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,66 +95,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ryan Chen <ryan_chen@aspeedtech.com>, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
- =?UTF-8?q?C=C3=A9dric=20Le=20Goater?= <clg@kaod.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, open list <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The ast2600 no longer uses bit 4 in the control register to indicate a
-1MHz clock (It now controls weather this watchdog is reset by a SOC
-reset). This means we do not want to set it. It also does not need to be
-set for the ast2500, as it is read-only on that SoC.
+Hi!
 
-The comment next to the clock rate selection wandered away from where it
-was set, so put it back next to the register setting it's describing.
+On Wed, Nov 6, 2019 at 10:08 PM Chuanhong Guo <gch981213@gmail.com> wrote:
+>
+> update register descriptions and add an example binding using it.
+>
+> Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
 
-Fixes: b3528b487448 ("watchdog: aspeed: Add support for AST2600")
-Signed-off-by: Joel Stanley <joel@jms.id.au>
----
- drivers/watchdog/aspeed_wdt.c | 16 ++++++++++------
- 1 file changed, 10 insertions(+), 6 deletions(-)
+I'll abandon this patchset and implement DMA reading instead.
 
-diff --git a/drivers/watchdog/aspeed_wdt.c b/drivers/watchdog/aspeed_wdt.c
-index 4ec0906bf12c..7e00960651fa 100644
---- a/drivers/watchdog/aspeed_wdt.c
-+++ b/drivers/watchdog/aspeed_wdt.c
-@@ -258,11 +258,6 @@ static int aspeed_wdt_probe(struct platform_device *pdev)
- 	if (IS_ERR(wdt->base))
- 		return PTR_ERR(wdt->base);
- 
--	/*
--	 * The ast2400 wdt can run at PCLK, or 1MHz. The ast2500 only
--	 * runs at 1MHz. We chose to always run at 1MHz, as there's no
--	 * good reason to have a faster watchdog counter.
--	 */
- 	wdt->wdd.info = &aspeed_wdt_info;
- 	wdt->wdd.ops = &aspeed_wdt_ops;
- 	wdt->wdd.max_hw_heartbeat_ms = WDT_MAX_TIMEOUT_MS;
-@@ -278,7 +273,16 @@ static int aspeed_wdt_probe(struct platform_device *pdev)
- 		return -EINVAL;
- 	config = ofdid->data;
- 
--	wdt->ctrl = WDT_CTRL_1MHZ_CLK;
-+	/*
-+	 * On clock rates:
-+	 *  - ast2400 wdt can run at PCLK, or 1MHz
-+	 *  - ast2500 only runs at 1MHz, hard coding bit 4 to 1
-+	 *  - ast2600 always runs at 1MHz
-+	 *
-+	 * Set the ast2400 to run at 1MHz as it simplifies the driver.
-+	 */
-+	if (of_device_is_compatible(np, "aspeed,ast2400-wdt"))
-+		wdt->ctrl = WDT_CTRL_1MHZ_CLK;
- 
- 	/*
- 	 * Control reset on a per-device basis to ensure the
--- 
-2.24.0.rc1
-
+Regards,
+Chuanhong Guo
 
 _______________________________________________
 linux-arm-kernel mailing list
