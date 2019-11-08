@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE2D0F3F9F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 06:20:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 409F7F3FA5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 06:20:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZcIkhJr72HtpkTgGAvsOs35WqD9G/p8KqNWFVO1RJUs=; b=JsMZiJhk7bKxIS
-	XSJnmINQyZ6HOEGUjHU8Jt0aVJHD5mlpYooBasFSZyzdFPvKyXy9TtWjVqOGexbGZ1xkulpHI0/ay
-	rIA1y5r/+vxzI8tWe6/8mtBiTxbqz3kZwdhSF2gDBR8esr5SQVyWbdfoIMd9hjpzp1bkNptoG4fur
-	Q/rwhsTgv+4rpQOSMJfKfxt7dth+CZ61183XXdG6VPgAbMS12x9zcASPC9F+l0tnCvizIGjYqF7q7
-	CIJmLOS+O+cqVYY6dpBvxgmnO0dod6ns29GdgpYnhHLO8dND8iBR6d6rNLgYcJXAqvsZWVncApmo2
-	zeNz4plOBeb1k8QXub5Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wj8vh8GmSz30VLM8J+dtcS2imbZvEofOfzxPApq4ecw=; b=LuVmcRAnLN0XMZ
+	QL8mpuOYQPeGi9Rg39SXyQBfdA39U5MTOqyPcBE9XSJ+DY9SCkJ+YUP70ezuI9l6w3etw64vyFZ5y
+	pRWCqsYr/Vn3wEDaNAaPYM1HBsnlQ9CPnPLSRsFTcDblzkdhw24hZm7hI6wN+O5b1dBwUZH7K90nC
+	zS1fJJUu2TqhJsF+7mj8jo+x1qm2jefuKTbaOfk2QrZMONReZfcQbFouHHO1+RFY6chucoBUqLu8r
+	5xsYmoiIUXxUId+gUE5iE2JSmWRk6KtSev7NlGoBy+Xr5LuJJOnLxmlgeP/p7weuhgOs/Sdeu3dyA
+	6hxOHFy0r3rpwInGJbxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSwgw-0001zS-Ej; Fri, 08 Nov 2019 05:20:14 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iSwhD-00032e-Jw; Fri, 08 Nov 2019 05:20:31 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSwgi-0001fy-UD
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 05:20:02 +0000
-Received: by mail-pf1-x443.google.com with SMTP id c13so3882662pfp.5
+ id 1iSwgn-00028p-H0
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 05:20:07 +0000
+Received: by mail-pl1-x642.google.com with SMTP id l4so3239751plt.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 21:20:00 -0800 (PST)
+ Thu, 07 Nov 2019 21:20:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=eFsH+L829oE/OwopODh0Rlc4QU2iHdxkZ2p54c8xCJE=;
- b=giOoN2iCH2gl4XYTC0DGivxErEzR5sLnO1BZwomEBJoVbi1J6uhyraLvE7dTiDRgey
- RkWQdvxY70+dcIFsnXXexmPODvZCOPIlDXW/h7JVh2rwqwO4IcSi2Xp2LHO5jmI6n6tB
- bSG64yvooZ4nvkoNm4Qujv/rOpUCB7Xx4fKc7nozepHxazodVWLgjGT1QV2j9BUqLXOb
- sjJOLcPM7mW+l1DR7IwNuGUDOOCUmyFf2w9zUslEEMAWW2Y2q7OpRZz42SNw2lhx5IQO
- UHG1cfVpvu3+COKSodN2RSBXIdlb06DLj4zDduX2n4+TrzKvHoGLE0BgQiEZD1irrt4k
- GUgw==
+ h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=yc0niyL+e0o1G++JHufjcorcLLXvUhYDXt59boslzgg=;
+ b=VqXvYCt3yjpIemP9x5nAW9klS4OYDVtIurvAczrm8dcH4b8jG/vIFrq7HA1zhqdEn1
+ WMmjWTT2tVk9wuQjqUzpDZlm/M8CCbwrETRX7+w+0nUluHW3CNl2B/iGn3Ja6NnEbsXp
+ kf8vL/FOvPYedRq62dRG9jVGyG7wieYlyIv4oBqusl9akmvh0RKK6TKcIeooBUcOob/I
+ H7lb4QLWxAzI8BaclZ2jWIpDuwDKY52OplmZwGyNALIK1a6EBhRcfKBfeCy2IvL3Xpao
+ amyUwRxPbHN4UXXl8WWQKP/7RN3AW2p44AoRbPCEUf0riQEEJjiWwtQlnYHOykFdN9c8
+ p44g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=eFsH+L829oE/OwopODh0Rlc4QU2iHdxkZ2p54c8xCJE=;
- b=Pd84l1W0+NmrpBwjRod2kM3b/hZ2rwhC3V3Q2mxH0AvUUkreBm6B4KBQldRFw77XAE
- EXloZW0Y19im0KISy4rfW3Z1QGGi9HYse/qXBZCBvqZC2cB4BiYW/xq1+8HP19vFdnJh
- km7rGCiZkCq4nHi35vzJpiMCeYuUuF5x+AJ5jgH1dDPJXkiyOlT3PgXMN9eZMZAv8zuf
- vhOc47YNnKWOlif+E+3c4/Q2SMRPPFof+t8vHMhBS2lXzWakte5N0LxQtDwiBgPPuXdM
- H0J8T5yHuwGohyFvIWkAjSjTB7qfR2zce5KGWnKii4TWdRsSClwVjmFObORXBDPU60R5
- i7iQ==
-X-Gm-Message-State: APjAAAVJiFBdq325vifEef7QCRjJX87r0xFAal44o76/0/BRVN4W74lZ
- g6Wk5O388KaaQsvuFLlKmxE=
-X-Google-Smtp-Source: APXvYqyH/KD6c9XA8sPBchDP+LUk0Aegmnor+q9X7ysQCpoU4EoBt0as0FnheT5yRmG7x8dClNiuiQ==
-X-Received: by 2002:a63:234c:: with SMTP id u12mr9239958pgm.384.1573190399697; 
- Thu, 07 Nov 2019 21:19:59 -0800 (PST)
+ :in-reply-to:references:mime-version:content-transfer-encoding;
+ bh=yc0niyL+e0o1G++JHufjcorcLLXvUhYDXt59boslzgg=;
+ b=c/LKTjuLkJ2FconOj+9AQS8N7PASKdoRi6vMCFaWqJ6GsGdxAhzlnd5BlOUMlyQnh/
+ 8naGGwrIirRpOpXGi9Pk8bruFRcq6OqOAumt6B/eAbiEV9FzCPEj7aS4ah+PhWWHNXk2
+ /q5ipTMxz88f0FgW/qFTCgTa9QHj7oD/CZHrOFj8DILEZ+Q9YTd28GUGJQ5FkLH5dxGK
+ fA2qMn9EJl8hfNaG4Ra/Ck+5aAUnSPJJJCW2ZT+knDXLMd3O/V+1nB9NNX/kvoyjMd+Q
+ LA6SbXhAn51dgPkz4VZcSxnw+31mTm8dmWFYGkq7uvP2zihvnnXWKXBhMHE/uudSq0iZ
+ UFsA==
+X-Gm-Message-State: APjAAAV2HsejwQ+38cTF/1r2zmc2COyhP8hVr2JOAlO2Tb0Im3SFlzyb
+ O40ccTO9RqIEKeCt2SxFUJU=
+X-Google-Smtp-Source: APXvYqxc7+DDnJiPlXxQJe9LqipaDRCwapIGhvHz7o6az10ji38/hskICugffhdh+/IZ6mIRKsHrrg==
+X-Received: by 2002:a17:90a:9741:: with SMTP id
+ i1mr10898615pjw.41.1573190404659; 
+ Thu, 07 Nov 2019 21:20:04 -0800 (PST)
 Received: from voyager.ibm.com ([36.255.48.244])
- by smtp.gmail.com with ESMTPSA id v19sm3798443pjr.14.2019.11.07.21.19.55
+ by smtp.gmail.com with ESMTPSA id v19sm3798443pjr.14.2019.11.07.21.20.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 21:19:59 -0800 (PST)
+ Thu, 07 Nov 2019 21:20:04 -0800 (PST)
 From: Joel Stanley <joel@jms.id.au>
 To: Rob Herring <robh+dt@kernel.org>, Greg KH <gregkh@linuxfoundation.org>,
  Jeremy Kerr <jk@ozlabs.org>
-Subject: [PATCH v2 00/11] fsi: Patches for 5.5
-Date: Fri,  8 Nov 2019 15:49:34 +1030
-Message-Id: <20191108051945.7109-1-joel@jms.id.au>
+Subject: [PATCH v2 01/11] fsi: Add fsi-master class
+Date: Fri,  8 Nov 2019 15:49:35 +1030
+Message-Id: <20191108051945.7109-2-joel@jms.id.au>
 X-Mailer: git-send-email 2.24.0.rc1
+In-Reply-To: <20191108051945.7109-1-joel@jms.id.au>
+References: <20191108051945.7109-1-joel@jms.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_212000_997761_6F2566F0 
-X-CRM114-Status: GOOD (  12.90  )
+X-CRM114-CacheID: sfid-20191107_212005_624033_2EBCF7D3 
+X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -108,55 +111,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series forms the FSI pull request for 5.5.
+From: Jeremy Kerr <jk@ozlabs.org>
 
-1-3 adds a FSI class type and updates the documentation for the sysfs files
-4-7 makes some cleanups and fixes to the fsi core
-8-10 adds the support for the FSI master in the ASPEED AST2600 BMC 
+This change adds a device class for FSI masters, allowing access under
+/sys/class/fsi-master/, and easier udev rules.
 
-The driver has been tested on hardware for most operations. Future
-enhancements include robust error recovery, DMA support and interrupt
-support.
+Signed-off-by: Jeremy Kerr <jk@ozlabs.org>
+Signed-off-by: Joel Stanley <joel@jms.id.au>
+---
+ drivers/fsi/fsi-core.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-The fix for byte order registers is not squashed in as Andrew's commit
-message is a piece of art that deserves to be in the kernel history. It
-does not need to go to stable as it fixes a patch earlier in this
-series.
-
-Andrew Jeffery (3):
-  trace: fsi: Print transfer size unsigned
-  fsi: core: Fix small accesses and unaligned offsets via sysfs
-  fsi: aspeed: Fix OPB0 byte order register values
-
-Jeremy Kerr (2):
-  fsi: Add fsi-master class
-  fsi: Move master attributes to fsi-master class
-
-Joel Stanley (5):
-  ABI: Update FSI path documentation
-  fsi: Move defines to common header
-  dt-bindings: fsi: Add description of FSI master
-  fsi: Add ast2600 master driver
-  fsi: aspeed: Add trace points
-
-kbuild test robot (1):
-  fsi: fsi_master_class can be static
-
- Documentation/ABI/testing/sysfs-bus-fsi       |  16 +-
- .../bindings/fsi/fsi-master-aspeed.txt        |  24 +
- drivers/fsi/Kconfig                           |   8 +
- drivers/fsi/Makefile                          |   1 +
- drivers/fsi/fsi-core.c                        |  67 ++-
- drivers/fsi/fsi-master-aspeed.c               | 544 ++++++++++++++++++
- drivers/fsi/fsi-master-hub.c                  |  46 --
- drivers/fsi/fsi-master.h                      |  71 +++
- include/trace/events/fsi.h                    |   6 +-
- include/trace/events/fsi_master_aspeed.h      |  77 +++
- 10 files changed, 785 insertions(+), 75 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/fsi/fsi-master-aspeed.txt
- create mode 100644 drivers/fsi/fsi-master-aspeed.c
- create mode 100644 include/trace/events/fsi_master_aspeed.h
-
+diff --git a/drivers/fsi/fsi-core.c b/drivers/fsi/fsi-core.c
+index 1f76740f33b6..0861f6097b33 100644
+--- a/drivers/fsi/fsi-core.c
++++ b/drivers/fsi/fsi-core.c
+@@ -1241,6 +1241,10 @@ static ssize_t master_break_store(struct device *dev,
+ 
+ static DEVICE_ATTR(break, 0200, NULL, master_break_store);
+ 
++struct class fsi_master_class = {
++	.name = "fsi-master",
++};
++
+ int fsi_master_register(struct fsi_master *master)
+ {
+ 	int rc;
+@@ -1249,6 +1253,7 @@ int fsi_master_register(struct fsi_master *master)
+ 	mutex_init(&master->scan_lock);
+ 	master->idx = ida_simple_get(&master_ida, 0, INT_MAX, GFP_KERNEL);
+ 	dev_set_name(&master->dev, "fsi%d", master->idx);
++	master->dev.class = &fsi_master_class;
+ 
+ 	rc = device_register(&master->dev);
+ 	if (rc) {
+@@ -1350,8 +1355,15 @@ static int __init fsi_init(void)
+ 	rc = bus_register(&fsi_bus_type);
+ 	if (rc)
+ 		goto fail_bus;
++
++	rc = class_register(&fsi_master_class);
++	if (rc)
++		goto fail_class;
++
+ 	return 0;
+ 
++ fail_class:
++	bus_unregister(&fsi_bus_type);
+  fail_bus:
+ 	unregister_chrdev_region(fsi_base_dev, FSI_CHAR_MAX_DEVICES);
+ 	return rc;
+@@ -1360,6 +1372,7 @@ postcore_initcall(fsi_init);
+ 
+ static void fsi_exit(void)
+ {
++	class_unregister(&fsi_master_class);
+ 	bus_unregister(&fsi_bus_type);
+ 	unregister_chrdev_region(fsi_base_dev, FSI_CHAR_MAX_DEVICES);
+ 	ida_destroy(&fsi_minor_ida);
 -- 
 2.24.0.rc1
 
