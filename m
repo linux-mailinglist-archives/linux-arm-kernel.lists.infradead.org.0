@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A96F9F519C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 17:52:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F839F51B3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 17:56:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ng7QhWi1AvdZodo1MlljBlzhEJGzHVL2PoGZ+OVbgI4=; b=Y6EU5c9+/bvZyp
-	mWlYOIqlJMik6Et32CfcKd1EB60j08SJVBJrpozve0WqqqxXUBEkWJc3EJoUaidwVyvzLX4onNesu
-	FhM9BTZCQBJ702X2N3ztlUzspPPamnRn5vI69aR/qAPCCqDwfu2ishcHV1AixaCl3OSTqnbRcivCl
-	c9i0Fm6ATHl/FU4ZbsHZz8tWy5dnSNeqQA7XpFc3Y/NjQHY8sxOIM/7m0E6y3TyCHVAzeVv4JPuP0
-	UiRV3h3OWXJetvD8sboB49GUzdU9cZHXUgyhfk9QTibqtexJnl8ZoTytXzPZCksIC28k1vsHCBh2p
-	FOv4V9ThRwh5024/lvhQ==;
+	List-Owner; bh=EtnhyTF2EW02E7B5pFw4nXFF4HaG4SMa7TNbnvymzkE=; b=rESNrvFEGKZlJv
+	OTq4T/fai/gSjhEX7LfRCpxChKNEgFhrSR22NDh1LijviLxYuFg+nPXCI87Eh0XFFNpCH1NWlLULL
+	4WcckyaKCbHvMaejLE9CIDyicRm3bBmp1OjgEy1wQMJUzFj+vKihUVJwUTGCSUZhBoiWA0O+N0Nxt
+	elGPOhz9MxJ2JfCqsZz1NrsO+rdT3ua2Fdiiw/o8+fkekxlTBcTfdfRr7SVBKESzSJh1nqnC5jvpq
+	kovfStWqey8EbKkKrewngIsteHibe24WeNDNMuVfmne2YY3JA55i/SSGsdX/yX52yqN7IA3oB5CEZ
+	gH9D3f2erM108k7mIlFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT7VD-0001Nt-Sn; Fri, 08 Nov 2019 16:52:51 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT7V2-0001NK-SF; Fri, 08 Nov 2019 16:52:42 +0000
-Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iT7Uy-0002QA-3f; Fri, 08 Nov 2019 17:52:36 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Markus Reichl <m.reichl@fivetechno.de>
-Subject: Re: [PATCH v3] arm64: dts: rockchip: Split rk3399-roc-pc for with and
- without mezzanine board.
-Date: Fri, 08 Nov 2019 17:52:35 +0100
-Message-ID: <4421021.f1aGTiCmcP@diego>
-In-Reply-To: <616df0fa-a503-1a57-12b6-43bcd674db8c@fivetechno.de>
-References: <7293c5f6-a07f-cf51-954f-92907879eea2@fivetechno.de>
- <1628743.87kQKnQNn8@diego>
- <616df0fa-a503-1a57-12b6-43bcd674db8c@fivetechno.de>
+	id 1iT7YX-0003JU-Lz; Fri, 08 Nov 2019 16:56:17 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iT7YO-0003IF-Rw
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 16:56:10 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 0355D80D4;
+ Fri,  8 Nov 2019 16:56:33 +0000 (UTC)
+Date: Fri, 8 Nov 2019 08:55:54 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: Benoit Parrot <bparrot@ti.com>
+Subject: Re: [Patch v2 3/5] ARM: dts: dra7: add vpe clkctrl node
+Message-ID: <20191108165554.GF5610@atomide.com>
+References: <20191104203841.3628-1-bparrot@ti.com>
+ <20191104203841.3628-4-bparrot@ti.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191104203841.3628-4-bparrot@ti.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_085241_060553_5BBF6428 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20191108_085608_940220_DA5E0F81 
+X-CRM114-Status: GOOD (  13.05  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -59,75 +60,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Tero Kristo <t-kristo@ti.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Hans Verkuil <hverkuil@xs4all.nl>,
+ Rob Herring <robh+dt@kernel.org>, linux-omap@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Markus,
+Hi,
 
-Am Freitag, 8. November 2019, 16:18:39 CET schrieb Markus Reichl:
-> Am 08.11.19 um 15:41 schrieb Heiko St=FCbner:
-> > Am Montag, 4. November 2019, 16:22:25 CET schrieb Markus Reichl:
-> >> For rk3399-roc-pc is a mezzanine board available that carries M.2 and
-> >> POE interfaces. Use it with a separate dts.
-> >> =
+* Benoit Parrot <bparrot@ti.com> [191104 20:39]:
+> Add clkctrl nodes for VPE module.
 
-> >> ---
-> >> v3: Use enum in binding and full name in compatible string and file na=
-me.
-> >> v2: Add new compatible string for roc-pc with mezzanine board.
-> >> --
-> >> =
+Can you please add a comment describing that we currently need to
+use custom node names here instead of the standard naming?
 
-> >> Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
-> >> ---
-> >>  .../devicetree/bindings/arm/rockchip.yaml     |   4 +-
-> >>  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
-> >>  .../dts/rockchip/rk3399-roc-pc-mezzanine.dts  |  72 ++
-> >>  .../arm64/boot/dts/rockchip/rk3399-roc-pc.dts | 757 +----------------
-> >>  .../boot/dts/rockchip/rk3399-roc-pc.dtsi      | 770 ++++++++++++++++++
-> >>  5 files changed, 847 insertions(+), 757 deletions(-)
-> >>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzani=
-ne.dts
-> >>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-> >> =
+I can queue this and other dts change once I have an immutable clock
+changes branch from Tero.
 
-> > =
+Or if Tero wants to also pick up the clock node dtsi patch I can ack it,
+up to Tero.
 
-> >> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts b/arch/arm=
-64/boot/dts/rockchip/rk3399-roc-pc.dts
-> >> index 7e07dae33d0f..cd4195425309 100644
-> >> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-> >> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
-> >> @@ -4,764 +4,9 @@
-> > =
+Regards,
 
-> > This whole hunk fails to apply against my current branch for 5.5
-> > which contain your other patches [0].
-> > =
-
-> > And the moved block is obviously so big that I can't really check
-> > which part is somehow different, so I'd ask you to rebase this
-> > patch accordingly, so that it applies again.
-> =
-
-> Yes, will rebase and come with v4.
-
-Not wanting to put any pressure on you, but do you have an estimate
-for this? I need to do my second (and final) round of pull requests for
-v5.5, so it would of course be interesting if it's sensible to wait for
-your respin ;-)
-
-Thanks
-Heiko
+Tony
 
 
-
+> Signed-off-by: Benoit Parrot <bparrot@ti.com>
+> ---
+>  arch/arm/boot/dts/dra7xx-clocks.dtsi | 18 ++++++++++++++++--
+>  1 file changed, 16 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/dra7xx-clocks.dtsi b/arch/arm/boot/dts/dra7xx-clocks.dtsi
+> index 93e1eb83bed9..d1c2406ec71c 100644
+> --- a/arch/arm/boot/dts/dra7xx-clocks.dtsi
+> +++ b/arch/arm/boot/dts/dra7xx-clocks.dtsi
+> @@ -1591,10 +1591,10 @@
+>  
+>  	rtc_cm: rtc-cm@700 {
+>  		compatible = "ti,omap4-cm";
+> -		reg = <0x700 0x100>;
+> +		reg = <0x700 0x60>;
+>  		#address-cells = <1>;
+>  		#size-cells = <1>;
+> -		ranges = <0 0x700 0x100>;
+> +		ranges = <0 0x700 0x60>;
+>  
+>  		rtc_clkctrl: rtc-clkctrl@20 {
+>  			compatible = "ti,clkctrl";
+> @@ -1603,6 +1603,20 @@
+>  		};
+>  	};
+>  
+> +	vpe_cm: vpe-cm@760 {
+> +		compatible = "ti,omap4-cm";
+> +		reg = <0x760 0xc>;
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		ranges = <0 0x760 0xc>;
+> +
+> +		vpe_clkctrl: vpe-clkctrl@0 {
+> +			compatible = "ti,clkctrl";
+> +			reg = <0x0 0xc>;
+> +			#clock-cells = <2>;
+> +		};
+> +	};
+> +
+>  };
+>  
+>  &cm_core {
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
