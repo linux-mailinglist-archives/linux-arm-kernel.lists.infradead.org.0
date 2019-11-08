@@ -2,72 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A24FBF4CF9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:18:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7F9DF4D20
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:26:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=s82uO42MiSOkUCJMfX4fWMfCdFM4gy8XaunrDkklZiA=; b=mFNrUNdj5nS//Mtdq5n+rL3ps6
-	mdVk0jD9/ZRopQl/sh/BYsbdz6gOUuAI57Fqo87A9rXMfwiMlMhhv7LVG2bFKtAyMrcpTEicK20st
-	j5JcciiFLUn8vryHaDYUOMGsKDL0boojcQg8lsFdw9RcPy7xaP2GfD1tmf6Nrk22f9pfEBlQ3Oulc
-	S+6igrtmQPHgQxjmx96SdrSY6syM1ijlDQD897OiKtQx3LcmQFe77WQgO+IIJdFMcG0hBfMQw68qf
-	0gQ4LVIKQA52Xm34JUemjyOB8bGckCwPy4WPGmDv+B5RiPkDJYrRL/kARQVpk3JGFnW3yR0BZFslA
-	tpnT/O5A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QaNQ5Xig5TtSLYRvtL6G95j45zZ99kydj45oV+5ebn8=; b=Z9Dp2M4FjTWiXF
+	QXbvGFlB3OxI4RJeMTDNJOOTprP15PjluTljlJWR6L5VzwKsRmpSzv0gO0N6wBtlugREjHiYhtgsv
+	SdQ8rKwxh/yYhD1f0AAtC0YMsEGA2xTHQJ6bE2bzx2PiP8f0krRtqH5IstD86FAQGxNaV32hpFk9f
+	b4XFENk+tE+veqnuXXMfGFn9pDQWBHHhGsiSGQbvEVQpkoVjI7n0lqEOnilhbA7NM/m3SvvsW4sy0
+	3S583zZWmNRPi7eOB3zsersN3257bJFQl4g1xITy8c4J44//g3hHZh5fkPg/j7494s7p7r+xEgSJj
+	Xn0goXQtg0Kyh9XQQYeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT49I-0004ns-L1; Fri, 08 Nov 2019 13:18:00 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iT4Gw-0008Kf-MT; Fri, 08 Nov 2019 13:25:54 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT3vg-0006Ct-W0
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:03:59 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xA8D3rZb116736;
- Fri, 8 Nov 2019 07:03:53 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573218233;
- bh=HIUSzyiPCSHX0P/8Lhv75xwgFuWbF64kvsPiOio5AgY=;
- h=To:CC:From:Subject:Date;
- b=uLC+2AgVHEUK9DGWP6x2yiW9iAOedxRmDAU/Ce+3lBo31weSJxDDd/Ygd9BI3FvQf
- etEU8/HV8hOExz0f6Hoa1lMuA1LfTRVGK1TnY5ZB22lpEk2IbZiXSSMClpKPEzYpBI
- 6yA48vlaIKNOiHK1GNJijxz4q1bfirQu+o0OWSgI=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xA8D3rcV030249
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 8 Nov 2019 07:03:53 -0600
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 8 Nov
- 2019 07:03:36 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 8 Nov 2019 07:03:36 -0600
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xA8D3mMR116071;
- Fri, 8 Nov 2019 07:03:50 -0600
-To: <arm@kernel.org>, <soc@kernel.org>
-From: Tero Kristo <t-kristo@ti.com>
-Subject: [GIT PULL] ARM64: Texas Instruments DT changes for 5.5
-Message-ID: <681f1bb5-d28c-a302-690a-82f0be4a7f34@ti.com>
-Date: Fri, 8 Nov 2019 15:03:48 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iT4Gp-0008Jp-ND
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:25:49 +0000
+Received: by mail-lf1-x129.google.com with SMTP id d6so4073493lfc.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 08 Nov 2019 05:25:46 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=EoxLq8xAiahmtAG02Jh5To+ku+zEc7SRqeg+jbZoqaM=;
+ b=uwpTC9QTf7HPtj4ETXyWQnDnTlxrbasCpJck+g4wX7pU0OLcCSelaDoSd7xTTeYNVS
+ 2Fg4dD5JVrZaqu+2rOGHQbsm3qv7jMTemR+jrqjMvixu/YeC+7w0+ssERZYGfwqTq/5O
+ j7AXvjVZ5jSGn3zLN68EKksBJXA2iSZkFqVCBu5UCLA2mHb4onL5stJRqmf5Kg9XeLQF
+ Ql++ch3NXH7z8aAhFHXfORXMMt2GOZNT8lnt8nfxPkh/AQPiSWoAmuD5jzV+C0Z56nZE
+ QcqkEFIs6Q02Nh2KJyqu5AegYolftHvD0nUzAoY7JMiev+6imhgfc7piTk1Z9e44UBUz
+ wqug==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=EoxLq8xAiahmtAG02Jh5To+ku+zEc7SRqeg+jbZoqaM=;
+ b=rphXS93Fp+piRHqP6MW/8NtllmMl7xKX69WyQsix2lXX+4Nw5rpUWOF2kG6LIosz2a
+ x/Oi6wFD3tAK3iwNH8XU0TQZ8i21xODVDOIEzINLSTxKZsI3hFw+DzN5IlpE0NRFvWJE
+ kVNu8K4UHwzoqInUkmarZrjwuTJnQ1VChLxyvjbj9Ui2/9VHwZMqSy+96GOW6FtJqLt+
+ q6wep4IothbbzOC6sPEJEmFsiv5JtK+A6pOWaBqBzgfrnkunuSggyPpUzwew+3GffoNO
+ ktZRVA6RmCeBHakri13ftcyKSNeILnT5oAbBeOqOL7zHU354kixVYSV2tyIus78xO8sn
+ rJiQ==
+X-Gm-Message-State: APjAAAWC5Ec0bYEor7NIZ0QSrwt3ucgeY/Pv8FoNC1U0vgJyAQXYaSIr
+ QHQnmrs9tJGJqNXiP4u6bOXXwXG7s85YqqMBpfJ89w==
+X-Google-Smtp-Source: APXvYqwb/LRpvMMAZIgxfWG70/wUGzF+Iv52O6bA5Mu7o8I4M2h1xs4Mo6+ju8QtVBufTmiqNKv/sdxwN/xRBIU0CPk=
+X-Received: by 2002:ac2:533a:: with SMTP id f26mr5736269lfh.86.1573219545608; 
+ Fri, 08 Nov 2019 05:25:45 -0800 (PST)
 MIME-Version: 1.0
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20191108013543.183804-1-yuehaibing@huawei.com>
+In-Reply-To: <20191108013543.183804-1-yuehaibing@huawei.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 8 Nov 2019 14:25:33 +0100
+Message-ID: <CACRpkdbb05CMkwA9Um+xgAOif76GEaA4WYuZGQS1Lq8UbUpS+A@mail.gmail.com>
+Subject: Re: [PATCH -next] gpio: xgs-iproc: Fix platform_no_drv_owner.cocci
+ warnings
+To: YueHaibing <yuehaibing@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_050357_210417_1026AF28 
-X-CRM114-Status: GOOD (  13.09  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191108_052547_764633_A8A015CB 
+X-CRM114-Status: UNSURE (   7.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:129 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -77,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,72 +92,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Faiz Abbas <faiz_abbas@ti.com>, "Anna,
- Suman" <s-anna@ti.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Roger Quadros <rogerq@ti.com>
+Cc: Scott Branden <sbranden@broadcom.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Ray Jui <rjui@broadcom.com>, kernel-janitors@vger.kernel.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello arm-soc-maintainers,
+On Fri, Nov 8, 2019 at 2:36 AM YueHaibing <yuehaibing@huawei.com> wrote:
 
-Please pull these TI ARM64 SoC DT changes towards 5.5.
+> Remove .owner field if calls are used which set it automatically
+> Generated by: scripts/coccinelle/api/platform_no_drv_owner.cocci
+>
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 
--Tero
+Patch applied.
 
----
-
-The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
-
-   Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
-
-are available in the Git repository at:
-
-   git://git.kernel.org/pub/scm/linux/kernel/git/kristo/linux 
-tags/ti-k3-soc-for-v5.5
-
-for you to fetch changes up to 49e19745e4b55ceb5d4d9199a5860044284f5c69:
-
-   arm64: dts: ti: k3-j721e-common-proc-board: Add USB ports (2019-11-08 
-11:41:54 +0200)
-
-----------------------------------------------------------------
-Texas Instruments K3 SoC family changes for 5.5
-
-- Add USB support for J721E
-- Add mailbox support for AM65x and J721E
-- Add MMC/SD support for J721E
-- Disable WP for AM654 MMC0
-
-----------------------------------------------------------------
-Faiz Abbas (3):
-       arm64: dts: ti: j721e-main: Add SDHCI nodes
-       arm64: dts: ti: j721e-common-proc-board: Add Support for eMMC and 
-SD card
-       arm64: dts: ti: k3-am654-base-board: Add disable-wp for mmc0
-
-Roger Quadros (2):
-       arm64: dts: ti: k3-j721e-main: add USB controller nodes
-       arm64: dts: ti: k3-j721e-common-proc-board: Add USB ports
-
-Suman Anna (4):
-       arm64: dts: ti: k3-am65-main: Add mailbox cluster nodes
-       arm64: dts: ti: k3-am65-base-board: Add IPC sub-mailbox nodes for 
-R5Fs
-       arm64: dts: ti: k3-j721e-main: Add mailbox cluster nodes
-       arm64: dts: ti: k3-j721e-common-proc-board: Add IPC sub-mailbox nodes
-
-  arch/arm64/boot/dts/ti/k3-am65-main.dtsi           | 108 ++++++++++
-  arch/arm64/boot/dts/ti/k3-am654-base-board.dts     |  59 ++++++
-  .../boot/dts/ti/k3-j721e-common-proc-board.dts     | 162 +++++++++++++++
-  arch/arm64/boot/dts/ti/k3-j721e-main.dtsi          | 218 
-+++++++++++++++++++++
-  arch/arm64/boot/dts/ti/k3-j721e.dtsi               |   2 +
-  5 files changed, 549 insertions(+)
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
