@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 597F7F4541
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 12:01:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 232A6F4539
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 12:00:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NS2pUfEu5zAziJhmKVKFZkCan/I5N/oyXWuyuAcvFMU=; b=bDvOgVHEr7Lmsk
-	omo+MAfVQid/T7Kn0h0YcY/RZAFRRFQToyj3x72cRfRR4UHLfdYCi/U5tN6NsL7VUr4L0g7iNEjfY
-	QgyOfzCxnl7+5lmQu9/184UUMspcHDufLHLpfjqcKOik81JPj6t8huxPjF1lNO8cDzs5H82ZoerU6
-	KwtIEjePJwsF4Q9lcHH9gl3lhV+Q9jx1lB4du5qLDOFclk5uHMpLMYix9QAJ8PeM67s1MXYN1fdaM
-	vNDDeESkwDRtQJE3o9SzRj0L1YW92jJ6GrgJ7ItXjjjquG/OUR/LEvQHl452f3v1Q6k0WQIZ/AG7B
-	irL/yzq8jUYlSIhF65nQ==;
+	List-Owner; bh=5Wnd/33ga71bUwintQ1ME80WiNmcWrCKiMRINOJbzFw=; b=LDAAxu+F1rKum3
+	3LwyxlOujcAkDQxIBRb9POBh1VgJ5Bm0pHmOwJeoXF6EleqHi1R0GXtxl9dYRfEN0FGuh7lyqb1Ga
+	If5hQrcYXdcrJ99v2gjHfVStJ1BUmiBnbLZbzfhzho3bfiyoAwmqgQMtjaPyL/jvXKFlkqVUBvOna
+	GWyg7cdS6rjDdvsFxCKr6iEiRTvjYbPXZBtQBv2t9i1Sh5GhmxpHPBGyOXTSHCjxN0hTeeSOMRgne
+	UBkO7T1e6nbbCvzoJ3lircAeZGbh7X9MrCSFdcogOcn8f90Yd1wuLeAquzlCe7y+LUS1f9Y8LKzlz
+	kD9rGYY7pFXEj7b6WHyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT21D-0008DK-65; Fri, 08 Nov 2019 11:01:31 +0000
+	id 1iT20Y-0007TN-Mz; Fri, 08 Nov 2019 11:00:50 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT1zL-0005Fj-BK
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 10:59:40 +0000
+ id 1iT1zL-0005Fh-BK
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 10:59:39 +0000
 X-Originating-IP: 86.206.246.123
 Received: from localhost.localdomain
  (lfbn-tou-1-421-123.w86-206.abo.wanadoo.fr [86.206.246.123])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 3B8F2E001A;
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id E13E7E0009;
  Fri,  8 Nov 2019 10:59:26 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Mark Brown <broonie@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
  Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>
-Subject: [PATCH 3/7] spi: zynq-qspi: Keep the bitfields naming consistent
-Date: Fri,  8 Nov 2019 11:59:16 +0100
-Message-Id: <20191108105920.19014-4-miquel.raynal@bootlin.com>
+Subject: [PATCH 4/7] spi: zynq-qspi: Enhance the Linear CFG bit definitions
+Date: Fri,  8 Nov 2019 11:59:17 +0100
+Message-Id: <20191108105920.19014-5-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191108105920.19014-1-miquel.raynal@bootlin.com>
 References: <20191108105920.19014-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_025935_557122_4FD4CCD1 
-X-CRM114-Status: GOOD (  10.67  )
+X-CRM114-CacheID: sfid-20191108_025935_551615_AAD7350E 
+X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -74,62 +75,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Most of the bits/bitfields #define'd in this driver are composed with:
-1/ the driver prefix
-2/ the name of the register they apply to
+Using masks makes sense when manipulating fields of several bits. When
+only one bit is involved, let's just use the BIT() macro to define the
+actual bit instead of the needed shift to obtain it and use a better
+naming.
 
-Keep the naming consistent by applying this rule to the CONFIG register
-internals. These definitions will be used in a following change set.
+These definitions will be used in a following change.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- drivers/spi/spi-zynq-qspi.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ drivers/spi/spi-zynq-qspi.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/spi/spi-zynq-qspi.c b/drivers/spi/spi-zynq-qspi.c
-index 399c3ca33abb..11a484aa3186 100644
+index 11a484aa3186..34c24b2ad3cf 100644
 --- a/drivers/spi/spi-zynq-qspi.c
 +++ b/drivers/spi/spi-zynq-qspi.c
-@@ -61,9 +61,9 @@
-  * These are the values used in the calculation of baud rate divisor and
-  * setting the slave select.
+@@ -99,9 +99,9 @@
+  * It is named Linear Configuration but it controls other modes when not in
+  * linear mode also.
   */
--#define ZYNQ_QSPI_BAUD_DIV_MAX		7 /* Baud rate divisor maximum */
--#define ZYNQ_QSPI_BAUD_DIV_SHIFT	3 /* Baud rate divisor shift in CR */
--#define ZYNQ_QSPI_SS_SHIFT		10 /* Slave Select field shift in CR */
-+#define ZYNQ_QSPI_CONFIG_BAUD_DIV_MAX	7 /* Baud rate divisor maximum */
-+#define ZYNQ_QSPI_CONFIG_BAUD_DIV_SHIFT	3 /* Baud rate divisor shift */
-+#define ZYNQ_QSPI_CONFIG_PCS		10 /* Peripheral Chip Select */
+-#define ZYNQ_QSPI_LCFG_TWO_MEM_MASK	0x40000000 /* LQSPI Two memories Mask */
+-#define ZYNQ_QSPI_LCFG_SEP_BUS_MASK	0x20000000 /* LQSPI Separate bus Mask */
+-#define ZYNQ_QSPI_LCFG_U_PAGE_MASK	0x10000000 /* LQSPI Upper Page Mask */
++#define ZYNQ_QSPI_LCFG_TWO_MEM		BIT(30) /* LQSPI Two memories */
++#define ZYNQ_QSPI_LCFG_SEP_BUS		BIT(29) /* LQSPI Separate bus */
++#define ZYNQ_QSPI_LCFG_U_PAGE		BIT(28) /* LQSPI Upper Page */
  
- /*
-  * QSPI Interrupt Registers bit Masks
-@@ -318,7 +318,7 @@ static void zynq_qspi_chipselect(struct spi_device *spi, bool assert)
- 		/* Select the slave */
- 		config_reg &= ~ZYNQ_QSPI_CONFIG_SSCTRL_MASK;
- 		config_reg |= (((~(BIT(spi->chip_select))) <<
--				ZYNQ_QSPI_SS_SHIFT) &
-+				ZYNQ_QSPI_CONFIG_PCS) &
- 				ZYNQ_QSPI_CONFIG_SSCTRL_MASK);
- 	} else {
- 		config_reg |= ZYNQ_QSPI_CONFIG_SSCTRL_MASK;
-@@ -349,7 +349,7 @@ static int zynq_qspi_config_op(struct zynq_qspi *xqspi, struct spi_device *spi)
- 	u32 config_reg, baud_rate_val = 0;
+ #define ZYNQ_QSPI_LCFG_DUMMY_SHIFT	8
  
- 	/* Set the clock frequency */
--	while ((baud_rate_val < ZYNQ_QSPI_BAUD_DIV_MAX)  &&
-+	while ((baud_rate_val < ZYNQ_QSPI_CONFIG_BAUD_DIV_MAX)  &&
- 	       (clk_get_rate(xqspi->refclk) / (2 << baud_rate_val)) >
- 		spi->max_speed_hz)
- 		baud_rate_val++;
-@@ -364,7 +364,7 @@ static int zynq_qspi_config_op(struct zynq_qspi *xqspi, struct spi_device *spi)
- 		config_reg |= ZYNQ_QSPI_CONFIG_CPOL_MASK;
- 
- 	config_reg &= ~ZYNQ_QSPI_CONFIG_BDRATE_MASK;
--	config_reg |= (baud_rate_val << ZYNQ_QSPI_BAUD_DIV_SHIFT);
-+	config_reg |= (baud_rate_val << ZYNQ_QSPI_CONFIG_BAUD_DIV_SHIFT);
- 	zynq_qspi_write(xqspi, ZYNQ_QSPI_CONFIG_OFFSET, config_reg);
- 
- 	return 0;
 -- 
 2.20.1
 
