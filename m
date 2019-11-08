@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25B1FF52D3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:47:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CA56F52CF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:46:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=jhC5FjSOvJg8umi0WqHXhNSiVP/UiGF2vXwyMi9uoO8=; b=Awg
-	lBUhmnDnhpA87xs+zeR4Dko5u8SeLsVvo/DPfy6ghQ9g7FXtH3jnKG6xXacj2B97JUlk86NwEh875
-	0/E6swSRQ5b/aZJWyCPzlx+3b2MGwJacISm5yWxZ7AHozlPH8HQF6yN0KwIvn4ANpT/ftib0qoNWu
-	TircGPKV8QfzpWDZTjcbq/kxXgc2vseky/nvhMaNghf4oJVQsDjsrPV+fZS/F61XVsaNZX1xfgDdl
-	+F3gsJtxnO5s6Lv7DGOcpopw9Eht0GnDQtfAsvdAf53mcz4y2CyYO+SDQmf723C0vHZId/VAFQZYH
-	t3G7915R7Uu0CikGw1qRWIDqSJrCL8g==;
+	References:List-Owner; bh=J0OBUtIlsELn0pp+06NIiKEll4LDypPzq213aSDX/G8=; b=fH1
+	UB8Z1lMDdonh02K2HElNL00HtYT+tkt7ZSjXguhMlWxF60Wbh6aEVyf1TxpfdSgpgSPCwYyue/Fct
+	H8Vbj+ivULFxmgzxzkhIL7j6yirp2soF6Osd7lbjAYFq9ZSAIbAjHxYYZzfOk/His/xq9D3y4+q1p
+	lJiISYXXVoBU/0AR5KJRZGT5qHkS9yZVSN6wU9xHQiuMXKdqRyMm4P8yA3+omljXRg7uEJQ34UFi6
+	gTY+/GLKrzAIDe2MrllPNHjiXGDUFbYYrefuEgMayPAycuubGvkPAvXpMPB3gcOD/cxm3Tq1/TXbn
+	UQJQqCN6WsUv4Gbsoxisy3PP4H/02FQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT8M0-0002At-FF; Fri, 08 Nov 2019 17:47:24 +0000
+	id 1iT8LF-0001Md-05; Fri, 08 Nov 2019 17:46:37 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT8KQ-0000nd-CW
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:45:50 +0000
+ id 1iT8KQ-0000ne-CV
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:45:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=054D4IehVPi3LXAnly7Ia/RvdD/amczeyU/c9Ai/ERk=; b=ifjQ14ueFA6R
- CrcdqsQPtx3JfDZ9F5xYLMAEo0Jd/7uTe4Oh3fhEeIIYZPKiB94Ee/F7TpSppEt+3UBsTGsJAJA0p
- pn7N6mwfyFXlrZTomrScTbzNAmJyghigcI8I1TVViMbnedaui2/X5/zRMTPf2Mch/yCdflL1lEw0H
- /dHqg=;
+ List-Archive; bh=DMUVFTdCbC7Gxi5sCnOhp5LoH9fF6ZNavOGSLsOo8EM=; b=MpCdeyALQ1b8
+ l1ZcztoM2Sh6pgjU25g3x65GQiOK7DXRBDAJE6pRhpukakFQa62cdk88IKAiOi580CCJwZqi2sxxm
+ Az+lY1mgVs/u64EMr2FrFElRGnTnWbLtXIrS6fzLHSkymN3nqr5hE1dFG3ejgTvAbc5FWEvntFH4l
+ u0zi8=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iT8KN-0007qJ-UO; Fri, 08 Nov 2019 17:45:44 +0000
+ id 1iT8KN-0007qI-Rn; Fri, 08 Nov 2019 17:45:43 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 0D58E2741460; Fri,  8 Nov 2019 17:45:42 +0000 (GMT)
+ id 40D712741702; Fri,  8 Nov 2019 17:45:43 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Applied "spi: zynq-qspi: Support two chip selects" to the spi tree
-In-Reply-To: <20191108140744.1734-8-miquel.raynal@bootlin.com>
+Subject: Applied "spi: zynq-qspi: Do the actual hardware initialization later
+ in the probe" to the spi tree
+In-Reply-To: <20191108140744.1734-7-miquel.raynal@bootlin.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191108174543.0D58E2741460@ypsilon.sirena.org.uk>
-Date: Fri,  8 Nov 2019 17:45:42 +0000 (GMT)
+Message-Id: <20191108174543.40D712741702@ypsilon.sirena.org.uk>
+Date: Fri,  8 Nov 2019 17:45:43 +0000 (GMT)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_094546_559661_4736205F 
-X-CRM114-Status: GOOD (  18.36  )
+X-CRM114-CacheID: sfid-20191108_094546_554459_16D636C9 
+X-CRM114-Status: GOOD (  17.14  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -91,7 +92,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: zynq-qspi: Support two chip selects
+   spi: zynq-qspi: Do the actual hardware initialization later in the probe
 
 has been applied to the spi tree at
 
@@ -116,115 +117,56 @@ to this mail.
 Thanks,
 Mark
 
-From d575c9b7c8b4c5ddfb1aa75ac91fdcc20ce328c4 Mon Sep 17 00:00:00 2001
+From 8f16292d8b492ca6b0d58ac0769de1c1a7bbb544 Mon Sep 17 00:00:00 2001
 From: Miquel Raynal <miquel.raynal@bootlin.com>
-Date: Fri, 8 Nov 2019 15:07:44 +0100
-Subject: [PATCH] spi: zynq-qspi: Support two chip selects
+Date: Fri, 8 Nov 2019 15:07:43 +0100
+Subject: [PATCH] spi: zynq-qspi: Do the actual hardware initialization later
+ in the probe
 
-The Zynq QSPI controller features 2 CS. When the num-cs DT property
-is set to 2, the hardware will be initialized to support having two
-devices connected over each CS.
+Supporting more than one CS will need some tweaking of the linear
+configuration register which is (rightfully) initialized in the
+hardware initialization helper. The extra initialization needs the
+knowledge of the actual number of CS, which is retrieved by reading
+the value of the num-cs DT property.
 
-In this case, both CS lines are driven by the state of the U_PAGE
-(upper page) bit. When unset, the lower page (CS0) is selected,
-otherwise it is the upper page (CS1).
-
-Change tested on a custom design featuring two SPI-NORs with different
-CS on the Zynq-7000 QSPI bus.
+As the initialization helper is called pretty early and might be
+called much later in the probe without side effect, let's delay it a
+bit so that the number of CS will be available when running this
+helper. This way, adding support for multiple CS lines in a next patch
+will be eased.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Link: https://lore.kernel.org/r/20191108140744.1734-8-miquel.raynal@bootlin.com
+Link: https://lore.kernel.org/r/20191108140744.1734-7-miquel.raynal@bootlin.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-zynq-qspi.c | 33 +++++++++++++++++++++++++--------
- 1 file changed, 25 insertions(+), 8 deletions(-)
+ drivers/spi/spi-zynq-qspi.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/spi/spi-zynq-qspi.c b/drivers/spi/spi-zynq-qspi.c
-index e76f9c9738f0..17641157354d 100644
+index 80e51c894eaa..e76f9c9738f0 100644
 --- a/drivers/spi/spi-zynq-qspi.c
 +++ b/drivers/spi/spi-zynq-qspi.c
-@@ -114,8 +114,8 @@
-  */
- #define ZYNQ_QSPI_MODEBITS			(SPI_CPOL | SPI_CPHA)
+@@ -657,9 +657,6 @@ static int zynq_qspi_probe(struct platform_device *pdev)
+ 		goto clk_dis_pclk;
+ 	}
  
--/* Default number of chip selects */
--#define ZYNQ_QSPI_DEFAULT_NUM_CS	1
-+/* Maximum number of chip selects */
-+#define ZYNQ_QSPI_MAX_NUM_CS		2
- 
- /**
-  * struct zynq_qspi - Defines qspi driver instance
-@@ -159,6 +159,7 @@ static inline void zynq_qspi_write(struct zynq_qspi *xqspi, u32 offset,
- /**
-  * zynq_qspi_init_hw - Initialize the hardware
-  * @xqspi:	Pointer to the zynq_qspi structure
-+ * @num_cs:	Number of connected CS (to enable dual memories if needed)
-  *
-  * The default settings of the QSPI controller's configurable parameters on
-  * reset are
-@@ -176,7 +177,7 @@ static inline void zynq_qspi_write(struct zynq_qspi *xqspi, u32 offset,
-  *	- Set the little endian mode of TX FIFO and
-  *	- Enable the QSPI controller
-  */
--static void zynq_qspi_init_hw(struct zynq_qspi *xqspi)
-+static void zynq_qspi_init_hw(struct zynq_qspi *xqspi, unsigned int num_cs)
- {
- 	u32 config_reg;
- 
-@@ -184,7 +185,12 @@ static void zynq_qspi_init_hw(struct zynq_qspi *xqspi)
- 	zynq_qspi_write(xqspi, ZYNQ_QSPI_IDIS_OFFSET, ZYNQ_QSPI_IXR_ALL_MASK);
- 
- 	/* Disable linear mode as the boot loader may have used it */
--	zynq_qspi_write(xqspi, ZYNQ_QSPI_LINEAR_CFG_OFFSET, 0);
-+	config_reg = 0;
-+	/* At the same time, enable dual mode if more than 1 CS is available */
-+	if (num_cs > 1)
-+		config_reg |= ZYNQ_QSPI_LCFG_TWO_MEM;
-+
-+	zynq_qspi_write(xqspi, ZYNQ_QSPI_LINEAR_CFG_OFFSET, config_reg);
- 
- 	/* Clear the RX FIFO */
- 	while (zynq_qspi_read(xqspi, ZYNQ_QSPI_STATUS_OFFSET) &
-@@ -286,6 +292,17 @@ static void zynq_qspi_chipselect(struct spi_device *spi, bool assert)
- 	struct zynq_qspi *xqspi = spi_controller_get_devdata(ctlr);
- 	u32 config_reg;
- 
-+	/* Select the lower (CS0) or upper (CS1) memory */
-+	if (ctlr->num_chipselect > 1) {
-+		config_reg = zynq_qspi_read(xqspi, ZYNQ_QSPI_LINEAR_CFG_OFFSET);
-+		if (!spi->chip_select)
-+			config_reg &= ~ZYNQ_QSPI_LCFG_U_PAGE;
-+		else
-+			config_reg |= ZYNQ_QSPI_LCFG_U_PAGE;
-+
-+		zynq_qspi_write(xqspi, ZYNQ_QSPI_LINEAR_CFG_OFFSET, config_reg);
-+	}
-+
- 	/* Ground the line to assert the CS */
- 	config_reg = zynq_qspi_read(xqspi, ZYNQ_QSPI_CONFIG_OFFSET);
- 	if (assert)
-@@ -673,9 +690,9 @@ static int zynq_qspi_probe(struct platform_device *pdev)
- 	ret = of_property_read_u32(np, "num-cs",
- 				   &num_cs);
- 	if (ret < 0) {
--		ctlr->num_chipselect = ZYNQ_QSPI_DEFAULT_NUM_CS;
--	} else if (num_cs > ZYNQ_QSPI_DEFAULT_NUM_CS) {
--		dev_err(&pdev->dev, "anything but CS0 is not yet supported\n");
-+		ctlr->num_chipselect = 1;
-+	} else if (num_cs > ZYNQ_QSPI_MAX_NUM_CS) {
-+		dev_err(&pdev->dev, "only 2 chip selects are available\n");
- 		goto remove_master;
- 	} else {
- 		ctlr->num_chipselect = num_cs;
-@@ -689,7 +706,7 @@ static int zynq_qspi_probe(struct platform_device *pdev)
- 	ctlr->dev.of_node = np;
- 
- 	/* QSPI controller initializations */
+-	/* QSPI controller initializations */
 -	zynq_qspi_init_hw(xqspi);
-+	zynq_qspi_init_hw(xqspi, ctlr->num_chipselect);
- 
+-
+ 	xqspi->irq = platform_get_irq(pdev, 0);
+ 	if (xqspi->irq <= 0) {
+ 		ret = -ENXIO;
+@@ -690,6 +687,10 @@ static int zynq_qspi_probe(struct platform_device *pdev)
+ 	ctlr->setup = zynq_qspi_setup_op;
+ 	ctlr->max_speed_hz = clk_get_rate(xqspi->refclk) / 2;
+ 	ctlr->dev.of_node = np;
++
++	/* QSPI controller initializations */
++	zynq_qspi_init_hw(xqspi);
++
  	ret = devm_spi_register_controller(&pdev->dev, ctlr);
  	if (ret) {
+ 		dev_err(&pdev->dev, "spi_register_master failed\n");
 -- 
 2.20.1
 
