@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7145F4C9C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:06:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35905F4C9D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:06:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2uop+uugMNyuf0RdnBE6eJLSh2NI/mnUeN0Pt1MLFBw=; b=T9ViTIbR/Svoe+
-	QrH9FdK5gRYtjesY11F/eyG6hOOCnWkqVaX337oJTgXVpkhwFAnMFxb2lhO1Ccay8If2yvd/0e8db
-	/JEARoXmmrDWf4tJOxESmGVOB8JuHY7VcKH88rIJYXB7ux3Gt2wI51haI0dXgi5WCn8yEs27EcCUC
-	XzOOMccVoQmA+DqIzCQYh09mnpUXcPsUYSrKdIbZYVfEoSDRZf2GQHxMyIlGnZU6IQmiLgPuOPwQF
-	AUok99IVkzxhRd8R4saAFGPQcuY1iI4RSkJwMgKoiu4+ihL6elT2m1cwFGGqzG7n1ezYKYUfKOzZE
-	UKx7MOvNmDBYkc1S/yYQ==;
+	List-Owner; bh=LoM3MN/wIbf5vUbC0WnvKvtgLGOjqezb5Th5IYTnBjE=; b=ktiXNwfmC0RlqK
+	huWapHUtbRnd6yhXNquAMosqo9DR4/U55QpdNManZpVspXdLdhRIVEV+H0bmS8vcGQq2VuTPckLBe
+	bYjaH84gRFzPEAIVIRJgdTV9mKaBM/znfiTLoZtLN1hsAdEiOCAQP9qtH0Pdt4/f2vOTqVycrSlZU
+	yzSBPdrR5gtKLQf74/3Xemkobe74yzcUs/avynQeZGzLMjEjE7msIRCznCVbX24mvCZSmOJxFo85B
+	hgO+3RCh9BTGza4CIPu+/4AlHj8fdNszCIM51E9cysZewH3v2YwmOWC9ylPuQ1uUooi1W/96hgm4M
+	1hn7as11RYvL6zNjcb/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT3xw-0000k2-U0; Fri, 08 Nov 2019 13:06:16 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1iT3yL-0000xi-1W; Fri, 08 Nov 2019 13:06:41 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT3tb-0004NN-Na
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:01:49 +0000
-Received: by mail-lf1-x141.google.com with SMTP id q28so4419725lfa.5
+ id 1iT3tc-0004OP-Eb
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:01:50 +0000
+Received: by mail-lj1-x244.google.com with SMTP id n5so6122877ljc.9
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 05:01:46 -0800 (PST)
+ Fri, 08 Nov 2019 05:01:48 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=jc+8R+PtxSGR+WKCXh82E6vFl/rmsOl6moV7TXDxFX4=;
- b=DHGXNL3FwDnFN1h0TodDE2uyaNOuN9R8G3PKs/v6XWU5PQWHGA1bkRdiYmr8ZHmt7j
- ypFz6rqutfze2tlaMFen1OEki3V4FVAfqY1YzaLd+eDPrm/UufAhhuyH7fKEVpd5p1Ua
- dbn/6Y63qUxYYDUJMfVTTaxWCNBJ6gQwjghJU=
+ bh=ALLDdvAQ5LNMRJEx4JjrDqX3dC2+C2shaJm9tn1b0pg=;
+ b=KccFI/3GaKAoQobc70NX/i6oW+HrrX0pUL/gIKrjKKrpOqtxDSmpb5uuQS0+es4ria
+ H6meLyWBaIv+qyTi8GiSt9Mg8M+ehrNayrK1rikyK2tRG+NomPv8TIMb0R+8oU6k9/71
+ ++28OkGsJQfVw1KZ/2De0kjfdxbGnD6485PtY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=jc+8R+PtxSGR+WKCXh82E6vFl/rmsOl6moV7TXDxFX4=;
- b=TFhRCI8dkn88z5V1CoF0zo2YldQXQijrOWjkEqAKJuFwGIQKVcnwxMdMxVGjjL2/TK
- Pr4Kj3bSOkle3TGxcooLcIldbcP8HKLWqm0XkAqSBl6dv+GFrLZz992zUZm+nXmNZd+s
- cki2pLq/Gew/tAMjzoabnUxg1/0oyPHXEF0o1RhDT/GK4caeyinxxiBlk+ADKzKrjP3D
- F1AaIr+aXktjDpVqmj0VX25an78VbwIaDOGcT/hY1Dnaq2cpKjaBayzHcH/KG83E37KA
- yl6erwvqxGJu7H0DQvpIZFsDTakj9n1vJ5nZGjS3TrRKLVN8AcSV4Gyfb6brK//jtMzb
- oR/w==
-X-Gm-Message-State: APjAAAVAn22WOy0MZn2I5v6kQy9V/bc1QS5dnn4Q04FHFjHh0zJndn78
- 22k7XvZ2X3gCzlKtFIJRmBLCkg==
-X-Google-Smtp-Source: APXvYqwbDJNvRFgoz1Gh1V6nLMxZw08ojqlEbbksBCfcH0Aoo0v0AKrmQdBMsXhZdZeoPocQbV8PdA==
-X-Received: by 2002:a19:8c1c:: with SMTP id o28mr6599461lfd.105.1573218105404; 
- Fri, 08 Nov 2019 05:01:45 -0800 (PST)
+ bh=ALLDdvAQ5LNMRJEx4JjrDqX3dC2+C2shaJm9tn1b0pg=;
+ b=dI3NyB+Hb1mvggQDZJqGGpktqK46RRb2P7bvPQYfdJql1LIdTq2aKuS1HViM+hN93c
+ xrsNu867f3W5NGSmnNhKPC4dFPQATnEWux++2bOC3ecYjZuNYdffRlOWTu6kNfSR2VcU
+ 6OY9q14F2xl8mkgFADOuGjIE6DF7kPUHiIpQpHzKAo7nQWPO7sMoSc/LLYxIarJqhPqC
+ qCzYrg928tF9R3Tal3T4u7mh4PFyMUWpRWPNzEiZUCecT1vdQTQRfPeMaG0jbSmyDaVB
+ J9khfifCMC3ku8O8Nwg07LIW22Zg/bdm/HO0JD5+UY731bK1QuMvOyKdnOkzRaMxS3NO
+ 7ufw==
+X-Gm-Message-State: APjAAAV71q+juP7zIMQCSzsDyJ3VJD0GINd01lFsxKnZyFMnVBL8CPCE
+ L/YEsCl8kRTDMMOEoWAF1KxJgA==
+X-Google-Smtp-Source: APXvYqyPJ7+j0XrnR3VvM/RefmXTzMkX53Jjn3rVz3ZpRQRqWrTsNNSlcp1DhvW1RAIILfsLRZPyPA==
+X-Received: by 2002:a2e:8695:: with SMTP id l21mr2346203lji.53.1573218106712; 
+ Fri, 08 Nov 2019 05:01:46 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.01.44
+ by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.01.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 05:01:44 -0800 (PST)
+ Fri, 08 Nov 2019 05:01:46 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v4 13/47] powerpc/83xx: remove mpc83xx_ipic_and_qe_init_IRQ
-Date: Fri,  8 Nov 2019 14:00:49 +0100
-Message-Id: <20191108130123.6839-14-linux@rasmusvillemoes.dk>
+Subject: [PATCH v4 14/47] powerpc/85xx: remove mostly pointless
+ mpc85xx_qe_init()
+Date: Fri,  8 Nov 2019 14:00:50 +0100
+Message-Id: <20191108130123.6839-15-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_050147_848009_F50E527E 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20191108_050148_567921_100696AF 
+X-CRM114-Status: GOOD (  11.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,119 +104,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is now exactly the same as mpc83xx_ipic_init_IRQ, so just use
-that directly.
+Since commit 302c059f2e7b (QE: use subsys_initcall to init qe),
+mpc85xx_qe_init() has done nothing apart from possibly emitting a
+pr_err(). As part of reducing the amount of QE-related code in
+arch/powerpc/ (and eventually support QE on other architectures),
+remove this low-hanging fruit.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- arch/powerpc/platforms/83xx/km83xx.c      | 2 +-
- arch/powerpc/platforms/83xx/misc.c        | 7 -------
- arch/powerpc/platforms/83xx/mpc832x_mds.c | 2 +-
- arch/powerpc/platforms/83xx/mpc832x_rdb.c | 2 +-
- arch/powerpc/platforms/83xx/mpc836x_mds.c | 2 +-
- arch/powerpc/platforms/83xx/mpc836x_rdk.c | 2 +-
- arch/powerpc/platforms/83xx/mpc83xx.h     | 5 -----
- 7 files changed, 5 insertions(+), 17 deletions(-)
+ arch/powerpc/platforms/85xx/common.c          | 23 -------------------
+ arch/powerpc/platforms/85xx/corenet_generic.c |  2 --
+ arch/powerpc/platforms/85xx/mpc85xx.h         |  2 --
+ arch/powerpc/platforms/85xx/mpc85xx_mds.c     |  1 -
+ arch/powerpc/platforms/85xx/mpc85xx_rdb.c     |  1 -
+ arch/powerpc/platforms/85xx/twr_p102x.c       |  1 -
+ 6 files changed, 30 deletions(-)
 
-diff --git a/arch/powerpc/platforms/83xx/km83xx.c b/arch/powerpc/platforms/83xx/km83xx.c
-index 5c6227f7bc37..3d89569e9e71 100644
---- a/arch/powerpc/platforms/83xx/km83xx.c
-+++ b/arch/powerpc/platforms/83xx/km83xx.c
-@@ -177,7 +177,7 @@ define_machine(mpc83xx_km) {
- 	.name		= "mpc83xx-km-platform",
- 	.probe		= mpc83xx_km_probe,
- 	.setup_arch	= mpc83xx_km_setup_arch,
--	.init_IRQ	= mpc83xx_ipic_and_qe_init_IRQ,
-+	.init_IRQ	= mpc83xx_ipic_init_IRQ,
- 	.get_irq	= ipic_get_irq,
- 	.restart	= mpc83xx_restart,
- 	.time_init	= mpc83xx_time_init,
-diff --git a/arch/powerpc/platforms/83xx/misc.c b/arch/powerpc/platforms/83xx/misc.c
-index 6935a5b9fbd1..1d8306eb2958 100644
---- a/arch/powerpc/platforms/83xx/misc.c
-+++ b/arch/powerpc/platforms/83xx/misc.c
-@@ -88,13 +88,6 @@ void __init mpc83xx_ipic_init_IRQ(void)
- 	ipic_set_default_priority();
+diff --git a/arch/powerpc/platforms/85xx/common.c b/arch/powerpc/platforms/85xx/common.c
+index fe0606439b5a..a554b6d87cf7 100644
+--- a/arch/powerpc/platforms/85xx/common.c
++++ b/arch/powerpc/platforms/85xx/common.c
+@@ -86,29 +86,6 @@ void __init mpc85xx_cpm2_pic_init(void)
+ #endif
+ 
+ #ifdef CONFIG_QUICC_ENGINE
+-void __init mpc85xx_qe_init(void)
+-{
+-	struct device_node *np;
+-
+-	np = of_find_compatible_node(NULL, NULL, "fsl,qe");
+-	if (!np) {
+-		np = of_find_node_by_name(NULL, "qe");
+-		if (!np) {
+-			pr_err("%s: Could not find Quicc Engine node\n",
+-					__func__);
+-			return;
+-		}
+-	}
+-
+-	if (!of_device_is_available(np)) {
+-		of_node_put(np);
+-		return;
+-	}
+-
+-	of_node_put(np);
+-
+-}
+-
+ void __init mpc85xx_qe_par_io_init(void)
+ {
+ 	struct device_node *np;
+diff --git a/arch/powerpc/platforms/85xx/corenet_generic.c b/arch/powerpc/platforms/85xx/corenet_generic.c
+index 8c1bb3941642..27ac38f7e1a9 100644
+--- a/arch/powerpc/platforms/85xx/corenet_generic.c
++++ b/arch/powerpc/platforms/85xx/corenet_generic.c
+@@ -56,8 +56,6 @@ void __init corenet_gen_setup_arch(void)
+ 	swiotlb_detect_4g();
+ 
+ 	pr_info("%s board\n", ppc_md.name);
+-
+-	mpc85xx_qe_init();
  }
  
--#ifdef CONFIG_QUICC_ENGINE
--void __init mpc83xx_ipic_and_qe_init_IRQ(void)
--{
--	mpc83xx_ipic_init_IRQ();
--}
--#endif /* CONFIG_QUICC_ENGINE */
--
- static const struct of_device_id of_bus_ids[] __initconst = {
- 	{ .type = "soc", },
- 	{ .compatible = "soc", },
-diff --git a/arch/powerpc/platforms/83xx/mpc832x_mds.c b/arch/powerpc/platforms/83xx/mpc832x_mds.c
-index 1c73af104d19..6fa5402ebf20 100644
---- a/arch/powerpc/platforms/83xx/mpc832x_mds.c
-+++ b/arch/powerpc/platforms/83xx/mpc832x_mds.c
-@@ -101,7 +101,7 @@ define_machine(mpc832x_mds) {
- 	.name 		= "MPC832x MDS",
- 	.probe 		= mpc832x_sys_probe,
- 	.setup_arch 	= mpc832x_sys_setup_arch,
--	.init_IRQ	= mpc83xx_ipic_and_qe_init_IRQ,
-+	.init_IRQ	= mpc83xx_ipic_init_IRQ,
- 	.get_irq 	= ipic_get_irq,
- 	.restart 	= mpc83xx_restart,
- 	.time_init 	= mpc83xx_time_init,
-diff --git a/arch/powerpc/platforms/83xx/mpc832x_rdb.c b/arch/powerpc/platforms/83xx/mpc832x_rdb.c
-index 87f68ca06255..622c625d5ce4 100644
---- a/arch/powerpc/platforms/83xx/mpc832x_rdb.c
-+++ b/arch/powerpc/platforms/83xx/mpc832x_rdb.c
-@@ -219,7 +219,7 @@ define_machine(mpc832x_rdb) {
- 	.name		= "MPC832x RDB",
- 	.probe		= mpc832x_rdb_probe,
- 	.setup_arch	= mpc832x_rdb_setup_arch,
--	.init_IRQ	= mpc83xx_ipic_and_qe_init_IRQ,
-+	.init_IRQ	= mpc83xx_ipic_init_IRQ,
- 	.get_irq	= ipic_get_irq,
- 	.restart	= mpc83xx_restart,
- 	.time_init	= mpc83xx_time_init,
-diff --git a/arch/powerpc/platforms/83xx/mpc836x_mds.c b/arch/powerpc/platforms/83xx/mpc836x_mds.c
-index 5b484da9533e..219a83ab6c00 100644
---- a/arch/powerpc/platforms/83xx/mpc836x_mds.c
-+++ b/arch/powerpc/platforms/83xx/mpc836x_mds.c
-@@ -208,7 +208,7 @@ define_machine(mpc836x_mds) {
- 	.name		= "MPC836x MDS",
- 	.probe		= mpc836x_mds_probe,
- 	.setup_arch	= mpc836x_mds_setup_arch,
--	.init_IRQ	= mpc83xx_ipic_and_qe_init_IRQ,
-+	.init_IRQ	= mpc83xx_ipic_init_IRQ,
- 	.get_irq	= ipic_get_irq,
- 	.restart	= mpc83xx_restart,
- 	.time_init	= mpc83xx_time_init,
-diff --git a/arch/powerpc/platforms/83xx/mpc836x_rdk.c b/arch/powerpc/platforms/83xx/mpc836x_rdk.c
-index b7119e443920..b4aac2cde849 100644
---- a/arch/powerpc/platforms/83xx/mpc836x_rdk.c
-+++ b/arch/powerpc/platforms/83xx/mpc836x_rdk.c
-@@ -41,7 +41,7 @@ define_machine(mpc836x_rdk) {
- 	.name		= "MPC836x RDK",
- 	.probe		= mpc836x_rdk_probe,
- 	.setup_arch	= mpc836x_rdk_setup_arch,
--	.init_IRQ	= mpc83xx_ipic_and_qe_init_IRQ,
-+	.init_IRQ	= mpc83xx_ipic_init_IRQ,
- 	.get_irq	= ipic_get_irq,
- 	.restart	= mpc83xx_restart,
- 	.time_init	= mpc83xx_time_init,
-diff --git a/arch/powerpc/platforms/83xx/mpc83xx.h b/arch/powerpc/platforms/83xx/mpc83xx.h
-index d343f6ce2599..f37d04332fc7 100644
---- a/arch/powerpc/platforms/83xx/mpc83xx.h
-+++ b/arch/powerpc/platforms/83xx/mpc83xx.h
-@@ -72,11 +72,6 @@ extern int mpc837x_usb_cfg(void);
- extern int mpc834x_usb_cfg(void);
- extern int mpc831x_usb_cfg(void);
- extern void mpc83xx_ipic_init_IRQ(void);
--#ifdef CONFIG_QUICC_ENGINE
--extern void mpc83xx_ipic_and_qe_init_IRQ(void);
--#else
--#define mpc83xx_ipic_and_qe_init_IRQ mpc83xx_ipic_init_IRQ
--#endif /* CONFIG_QUICC_ENGINE */
+ static const struct of_device_id of_device_ids[] = {
+diff --git a/arch/powerpc/platforms/85xx/mpc85xx.h b/arch/powerpc/platforms/85xx/mpc85xx.h
+index fa23f9b0592c..cb84c5c56c36 100644
+--- a/arch/powerpc/platforms/85xx/mpc85xx.h
++++ b/arch/powerpc/platforms/85xx/mpc85xx.h
+@@ -10,10 +10,8 @@ static inline void __init mpc85xx_cpm2_pic_init(void) {}
+ #endif /* CONFIG_CPM2 */
  
- #ifdef CONFIG_PCI
- extern void mpc83xx_setup_pci(void);
+ #ifdef CONFIG_QUICC_ENGINE
+-extern void mpc85xx_qe_init(void);
+ extern void mpc85xx_qe_par_io_init(void);
+ #else
+-static inline void __init mpc85xx_qe_init(void) {}
+ static inline void __init mpc85xx_qe_par_io_init(void) {}
+ #endif
+ 
+diff --git a/arch/powerpc/platforms/85xx/mpc85xx_mds.c b/arch/powerpc/platforms/85xx/mpc85xx_mds.c
+index 4bc49e5ec0b6..fb05b4d5bf1e 100644
+--- a/arch/powerpc/platforms/85xx/mpc85xx_mds.c
++++ b/arch/powerpc/platforms/85xx/mpc85xx_mds.c
+@@ -237,7 +237,6 @@ static void __init mpc85xx_mds_qe_init(void)
+ {
+ 	struct device_node *np;
+ 
+-	mpc85xx_qe_init();
+ 	mpc85xx_qe_par_io_init();
+ 	mpc85xx_mds_reset_ucc_phys();
+ 
+diff --git a/arch/powerpc/platforms/85xx/mpc85xx_rdb.c b/arch/powerpc/platforms/85xx/mpc85xx_rdb.c
+index 14b5a61d49c1..80a80174768c 100644
+--- a/arch/powerpc/platforms/85xx/mpc85xx_rdb.c
++++ b/arch/powerpc/platforms/85xx/mpc85xx_rdb.c
+@@ -72,7 +72,6 @@ static void __init mpc85xx_rdb_setup_arch(void)
+ 	fsl_pci_assign_primary();
+ 
+ #ifdef CONFIG_QUICC_ENGINE
+-	mpc85xx_qe_init();
+ 	mpc85xx_qe_par_io_init();
+ #if defined(CONFIG_UCC_GETH) || defined(CONFIG_SERIAL_QE)
+ 	if (machine_is(p1025_rdb)) {
+diff --git a/arch/powerpc/platforms/85xx/twr_p102x.c b/arch/powerpc/platforms/85xx/twr_p102x.c
+index b099f5607120..9abb1e9f73c4 100644
+--- a/arch/powerpc/platforms/85xx/twr_p102x.c
++++ b/arch/powerpc/platforms/85xx/twr_p102x.c
+@@ -57,7 +57,6 @@ static void __init twr_p1025_setup_arch(void)
+ 	fsl_pci_assign_primary();
+ 
+ #ifdef CONFIG_QUICC_ENGINE
+-	mpc85xx_qe_init();
+ 	mpc85xx_qe_par_io_init();
+ 
+ #if IS_ENABLED(CONFIG_UCC_GETH) || IS_ENABLED(CONFIG_SERIAL_QE)
 -- 
 2.23.0
 
