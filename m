@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C86D3F52CC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:46:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 601EDF52D2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:47:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=DtclnLBNk4SVBArmVvbg3SfJNW+5kx/INUZlpGHP/Po=; b=eWn
-	s3TYnuk2MPe9ezO52U7X82U0FJeB0zGKm7T7iTS34DrspVdCzeiv2K51qQ3oxWdxm+FHSRJM2H+Fe
-	zZcQRJs7rQBj4HGJfUlN77Hsfitl1YLJ4BVYV4tm/0kd4ZnOHJlErKLVFEGBDw2HHXLfN/N6kYWw1
-	YYQuCAQYnqR11a1M69VaV6UlCvGnuJ75FXroZYEsDFLI1pZsNpnHwsTl+408R27FKdF09sIZ69+o5
-	bjyGr7lkURoLG1xwRn1XWyVNF3vMljwybin+FoLp3mQyd3noGBOvhza7qDRAkcF5Tgrb4id9fD4qb
-	oJJ3P+AoF5tJICZeZy1+Ob6tCUpAhiw==;
+	References:List-Owner; bh=/2QdRJixen24NZq5kVIAKYH7+A4tY9+uslUU/SApS7w=; b=IOa
+	WAY4e3CQzA9XCODtxMcUceTK7AlbrDojemokwflzzRfic6opIrjxowcCQdSxGyc0+hFHp0216osUm
+	gMXMu0ljZn822KZqQVHpYdKjxsWvIEKbVUG0nCOyRypa2cgr8liL9WvncpLeeMhwMZfPTEySQtkFR
+	9qmH0sznq+Nf1c48odMadCJU/p7zAa+4RMGUsGnB6xUhBWwU+zxrjXYG8zBG+ydPwEs1h91HxL/+z
+	nlaT8CNABricjD1gYIQ/Vjkzxu3W8mxgB7Mz2JEZxoBSim2hWiZddFapJ0UuWrFqZCtRdfbiMAVXt
+	ISJduhHrYdH6dDNRxalt+NNnptkgvFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT8Kd-0000pP-Eu; Fri, 08 Nov 2019 17:45:59 +0000
+	id 1iT8Ll-0001y6-0z; Fri, 08 Nov 2019 17:47:09 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT8KQ-0000nh-DJ
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:45:48 +0000
+ id 1iT8KQ-0000nq-UD
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:45:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=YYCLXF1oV8zvZZPrT6FMd2ouZinjg9kcL02wPvjPTa0=; b=QqUEIz7ASjCq
- Y1G40/SoHQanp4IfjnQKuusLELLpSY0tlfPzkcjOLuCon/4cdEX+doAMONovMx2X0gDJb9xlV4dzp
- nM3sZLPyKRTDJSC0n/HLisSZbHLnXAhC4tvbyxxvD64b1K6wKWtqZQCLEaN9J0FvgxMXrnAhAYelt
- pqVk4=;
+ List-Archive; bh=b3C7gijS/8kKmdHw0Z9BScpM80WNvZGBHgxJyi74e4w=; b=kWYYL+yr8lt5
+ ojW52H7Al0bOFfMD9+FpIl4i0Rm2RVSZwQIDl7sOEqpHv6sA269A1ppVp0AroJD6Kl8kgLB/Bwsrj
+ NSRCBySkXlEMUYFBCLkhS5LphiA4YLkbosTjxz79DAUxpct8yEK2IU/HZtDZoGD6WXJn0oow+Pl1N
+ f68dI=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iT8KO-0007qL-9G; Fri, 08 Nov 2019 17:45:44 +0000
+ id 1iT8KO-0007qU-NI; Fri, 08 Nov 2019 17:45:44 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id B52C92741704; Fri,  8 Nov 2019 17:45:43 +0000 (GMT)
+ id 3BA1A2741460; Fri,  8 Nov 2019 17:45:44 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Applied "spi: zynq-qspi: Enhance the Linear CFG bit definitions" to
- the spi tree
-In-Reply-To: <20191108140744.1734-5-miquel.raynal@bootlin.com>
+Subject: Applied "spi: zynq-qspi: Anything else than CS0 is not supported yet"
+ to the spi tree
+In-Reply-To: <20191108140744.1734-2-miquel.raynal@bootlin.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191108174543.B52C92741704@ypsilon.sirena.org.uk>
-Date: Fri,  8 Nov 2019 17:45:43 +0000 (GMT)
+Message-Id: <20191108174544.3BA1A2741460@ypsilon.sirena.org.uk>
+Date: Fri,  8 Nov 2019 17:45:44 +0000 (GMT)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_094546_551990_E7596F4A 
-X-CRM114-Status: GOOD (  14.20  )
+X-CRM114-CacheID: sfid-20191108_094546_972113_71D62718 
+X-CRM114-Status: GOOD (  16.54  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -92,7 +92,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: zynq-qspi: Enhance the Linear CFG bit definitions
+   spi: zynq-qspi: Anything else than CS0 is not supported yet
 
 has been applied to the spi tree at
 
@@ -117,40 +117,42 @@ to this mail.
 Thanks,
 Mark
 
-From 044ac826200f08adebe3207a618d829279e9f3b1 Mon Sep 17 00:00:00 2001
+From 087622d09472f96f1f5d6ced36ca75c92e86af21 Mon Sep 17 00:00:00 2001
 From: Miquel Raynal <miquel.raynal@bootlin.com>
-Date: Fri, 8 Nov 2019 15:07:41 +0100
-Subject: [PATCH] spi: zynq-qspi: Enhance the Linear CFG bit definitions
+Date: Fri, 8 Nov 2019 15:07:38 +0100
+Subject: [PATCH] spi: zynq-qspi: Anything else than CS0 is not supported yet
 
-Using masks makes sense when manipulating fields of several bits. When
-only one bit is involved, it is usual to just use the BIT() macro but
-in this case using the term mask is abusive. Fix the #define macros
-and their comments.
+Unlike what the driver is currently advertizing, CS0 only can be used,
+CS1 is not supported at all. Prevent people to use CS1.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Link: https://lore.kernel.org/r/20191108140744.1734-5-miquel.raynal@bootlin.com
+Link: https://lore.kernel.org/r/20191108140744.1734-2-miquel.raynal@bootlin.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-zynq-qspi.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/spi/spi-zynq-qspi.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/spi/spi-zynq-qspi.c b/drivers/spi/spi-zynq-qspi.c
-index 530533b6c974..70ecefd817f7 100644
+index b1c56e9d7c94..9f53ea08adf7 100644
 --- a/drivers/spi/spi-zynq-qspi.c
 +++ b/drivers/spi/spi-zynq-qspi.c
-@@ -98,9 +98,9 @@
-  * It is named Linear Configuration but it controls other modes when not in
-  * linear mode also.
-  */
--#define ZYNQ_QSPI_LCFG_TWO_MEM_MASK	BIT(30) /* LQSPI Two memories Mask */
--#define ZYNQ_QSPI_LCFG_SEP_BUS_MASK	BIT(29) /* LQSPI Separate bus Mask */
--#define ZYNQ_QSPI_LCFG_U_PAGE_MASK	BIT(28) /* LQSPI Upper Page Mask */
-+#define ZYNQ_QSPI_LCFG_TWO_MEM		BIT(30) /* LQSPI Two memories */
-+#define ZYNQ_QSPI_LCFG_SEP_BUS		BIT(29) /* LQSPI Separate bus */
-+#define ZYNQ_QSPI_LCFG_U_PAGE		BIT(28) /* LQSPI Upper Page */
+@@ -680,10 +680,14 @@ static int zynq_qspi_probe(struct platform_device *pdev)
  
- #define ZYNQ_QSPI_LCFG_DUMMY_SHIFT	8
+ 	ret = of_property_read_u32(np, "num-cs",
+ 				   &num_cs);
+-	if (ret < 0)
++	if (ret < 0) {
+ 		ctlr->num_chipselect = ZYNQ_QSPI_DEFAULT_NUM_CS;
+-	else
++	} else if (num_cs > ZYNQ_QSPI_DEFAULT_NUM_CS) {
++		dev_err(&pdev->dev, "anything but CS0 is not yet supported\n");
++		goto remove_master;
++	} else {
+ 		ctlr->num_chipselect = num_cs;
++	}
  
+ 	ctlr->mode_bits =  SPI_RX_DUAL | SPI_RX_QUAD |
+ 			    SPI_TX_DUAL | SPI_TX_QUAD;
 -- 
 2.20.1
 
