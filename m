@@ -2,47 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBF00F5231
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:06:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39A25F5240
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:10:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3UurscdnAqf2x5TzkWUYACoixLH+mzHg4fT1H8V28jw=; b=GhHjwUTcIJeg/2
-	aJiY7e2XlIq+4/mWMUBuLGvIDXxiPkpAvAwrPtejYcaE4XTMdauCL8DzVSNzpXcAggqgJXzEHMaiu
-	54BO3lIPbtz2YRulG5CDO4tMjmeQyGRn2hEPk1uAthiL0XfZcTWwXMO174oOqIlGaxm/OnzAsBAgR
-	TPdSUQdxPFvyobmzEVxhvfsGnxtfOwvIRTm1EI742wfaYt+AYeD1qeMUNR/fnxhEnkePFDsCGqVbc
-	szts92aUoMS/ynohsn9zacpRLBBDf+fXb7fhI2DgpgB9s43pbQYdeptn7ZVwU5wU9dSaxWWeAje/R
-	aPEhn9ASArImWStvpJ3A==;
+	List-Owner; bh=vT44nTT6Sqi3K2uJ3WC9IT5/mYttAwC2so1yDT6hpfI=; b=cYYuQRhVYB+6mG
+	lzUFT5CvRbflqQNPPU/e4gnNI3xXXAEvMZh3PstylJ0QqFszZXUkk+Y7JMg2tfe7YJ05ZX4v4AuyY
+	6bQeqTFtOPIHnGY00vg3F3m7fE6BBfdLzqaxExBlEWo4yhCi4oEmfwMBcjexuJ3kiOpAHQiIuj31q
+	izAXkMy8YYVdf9h//L3J1nY7JzE2ZXmx67KcEHAXvo+Bs6XNwUz/mn00TP1VApPg7UyP6dK1r43XW
+	aji+9njMERjJwcuV+EFgF3k4joRmkzmko29JKfdUui06zv7xba9EN/q3AVlYdpR8mvgYZbb2YWZcg
+	gu4Yor9g+8ooDMkn0S5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT7io-0000s1-5i; Fri, 08 Nov 2019 17:06:54 +0000
+	id 1iT7mB-0002ZD-1Y; Fri, 08 Nov 2019 17:10:23 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT7if-0000rd-Fu
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:06:46 +0000
+ id 1iT7m3-0002YQ-0w
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:10:16 +0000
 Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id BBC8480D4;
- Fri,  8 Nov 2019 17:07:20 +0000 (UTC)
-Date: Fri, 8 Nov 2019 09:06:41 -0800
+ by muru.com (Postfix) with ESMTPS id 012E380D4;
+ Fri,  8 Nov 2019 17:10:47 +0000 (UTC)
+Date: Fri, 8 Nov 2019 09:10:08 -0800
 From: Tony Lindgren <tony@atomide.com>
-To: Benoit Parrot <bparrot@ti.com>
-Subject: Re: [Patch v2 3/5] ARM: dts: dra7: add vpe clkctrl node
-Message-ID: <20191108170641.GI5610@atomide.com>
-References: <20191104203841.3628-1-bparrot@ti.com>
- <20191104203841.3628-4-bparrot@ti.com>
- <20191108165554.GF5610@atomide.com>
- <20191108170231.ubwfu2nvcwjfabas@ti.com>
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
+Subject: Re: [PATCH v3 03/12] ARM: dts: pandora-common: define wl1251 as
+ child node of mmc3
+Message-ID: <20191108171008.GJ5610@atomide.com>
+References: <cover.1573122644.git.hns@goldelico.com>
+ <bd14b481105b21a0c1882a1ea34281893233db31.1573122644.git.hns@goldelico.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191108170231.ubwfu2nvcwjfabas@ti.com>
+In-Reply-To: <bd14b481105b21a0c1882a1ea34281893233db31.1573122644.git.hns@goldelico.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_090645_569882_169EE919 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191108_091015_107806_D4D11050 
+X-CRM114-Status: GOOD (  10.89  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,46 +61,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tero Kristo <t-kristo@ti.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Hans Verkuil <hverkuil@xs4all.nl>,
- Rob Herring <robh+dt@kernel.org>, linux-omap@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ devicetree@vger.kernel.org, Yangtao Li <tiny.windzz@gmail.com>,
+ linux-wireless@vger.kernel.org, Kefeng Wang <wangkefeng.wang@huawei.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, netdev@vger.kernel.org,
+ linux-omap@vger.kernel.org, "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Kalle Valo <kvalo@codeaurora.org>, Petr Mladek <pmladek@suse.com>,
+ =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, Rob Herring <robh+dt@kernel.org>,
+ John Stultz <john.stultz@linaro.org>, David Sterba <dsterba@suse.com>,
+ Thomas Gleixner <tglx@linutronix.de>, letux-kernel@openphoenux.org,
+ Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Sakari Ailus <sakari.ailus@linux.intel.com>, kernel@pyra-handheld.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Benoit Parrot <bparrot@ti.com> [191108 17:00]:
-> Tony Lindgren <tony@atomide.com> wrote on Fri [2019-Nov-08 08:55:54 -0800]:
-> > Hi,
-> > 
-> > * Benoit Parrot <bparrot@ti.com> [191104 20:39]:
-> > > Add clkctrl nodes for VPE module.
-> > 
-> > Can you please add a comment describing that we currently need to
-> > use custom node names here instead of the standard naming?
+* H. Nikolaus Schaller <hns@goldelico.com> [191107 10:33]:
+> Since v4.7 the dma initialization requires that there is a
+> device tree property for "rx" and "tx" channels which is
+> not provided by the pdata-quirks initialization.
 > 
-> Tony, what do you mean "custom node name" here?
-> I followed the exact same syntax that was already there... confused..
+> By conversion of the mmc3 setup to device tree this will
+> finally allows to remove the OpenPandora wlan specific omap3
+> data-quirks.
+> 
+> Fixes: 81eef6ca9201 ("mmc: omap_hsmmc: Use dma_request_chan() for requesting DMA channel")
 
-Oh sorry for being unclear. Yeah so the conclusion of the discussion was
-that we still need custom node names for now.
+Probably best to queue this all via the mmc tree when no more comments:
 
-And for patch "[PATCH] clk: ti: add clkctrl data dra7 sgx" I added you to
-Cc, and it has this in the patch description:
-
-"Note that because of the current dts node name dependency for mapping to
- clock domain, we must still use "gpu-clkctrl@" naming instead of generic
- "clock@" naming for the node. And because of this, it's probably best to
- apply the dts node addition together along with the other clock changes."
-
-So can you please add something similar to your clock node patches too
-to explain why we cannot use standard node names there?
-
-Regards,
-
-Tony
+Acked-by: Tony Lindgren <tony@atomide.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
