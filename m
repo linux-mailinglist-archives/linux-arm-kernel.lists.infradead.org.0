@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C5C2F3FC4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 06:23:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5EE20F3FC6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 06:23:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X0E8zfZska+hpZeSMliS5LQwp+sOfBHjzWfuCgxHL4Y=; b=DhokJIIBbLYoCK
-	Xsc0WCf4hEDLy00RUgxCslW8BsvxY62++mmfyWGKuqVRWdIxGeX2/15roTq+Hwf+OnnBnFZq60roN
-	Azs1EmVJHQjI/vRLh6TLg7oUUCwD9H++0EtY5zgi8IUQlS/FY/I9exx0kT2tUga704Si32ikTGZUE
-	2YeSp4jbqLxrXMgKYmsAUUHRaJo2dedd6bfzKUAwP/1LsLouI+bkseMjOpypQoHH3k3tZqTPyKe5N
-	8VDscZnuokrrpWJRfT5AeVhWRHVtHEvH7hYmLBl5NRU+rpUdvgTRuF9+SEhXrep2vAQ/yw3fYFcdh
-	DNBCpUpkG5h1iGQZZkeA==;
+	List-Owner; bh=rKMM0yZueQW9l/2ZMJcwJh+4J6ZstpkMQRV5j3EY9To=; b=PlmemKPnlNT/Oa
+	o6W85AedOfoP7hvV48LVw57ZD3T6Q/NzOEWOhklw4ZuySI9ynmw8v24LTUFqfhc8vBsSef0mSE18E
+	Hh6OfxCBXpZBiNId9K/DIpn01D/F2rMOEkTzS8uyYYmzOSdpPGHp2qS3oTQp2GJAl501zHxLNc9O1
+	NDJqINYCmwsvzn8GLmrzJdb9p8D/vMLJ4gND+jl7A3Y1QD5ad0umfjnjDzmIrRwWK69AAaCNXhHRn
+	9jzQ3EYY/fq9zX1ZUxc1Llv+o5aGpWWje9J9CzTUG9qhhoqf6lo9vGHUsiatUi9+xSubaSO+0rKZt
+	W6MIhDMMY+JPzj3rhBKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSwja-0005ZC-TO; Fri, 08 Nov 2019 05:22:58 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iSwjn-0005rE-Ca; Fri, 08 Nov 2019 05:23:11 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSwhb-0003ib-By
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 05:20:57 +0000
-Received: by mail-pl1-x641.google.com with SMTP id s10so3287194plp.2
+ id 1iSwhf-0003oq-U5
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 05:21:01 +0000
+Received: by mail-pg1-x542.google.com with SMTP id k13so3323473pgh.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 Nov 2019 21:20:54 -0800 (PST)
+ Thu, 07 Nov 2019 21:20:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=BrSCYYt5uv3Xj+d3we2tNppwdrCJ/ZJWLFSrmqcGBRo=;
- b=MhlJ0TKo/+JKtKDsOMJfCvSVaU7SRAI/53zvs21Uxpqd2fVltgOmhUw2wGVXjJrnf4
- XKChYSHwHr+2kYqjTLmrV2R7V7wvvKZ82xO2FPQUX/lWOj0PEjHJ+l0h0aKSNCVK2NSM
- JnShWoTenORutECEwhFeICjZPtHyKCEhNYuIavPPlGvLOoJFPDcupN4gzFccVChzYtdN
- f9dujcWhBvfV47wkYdlnoVYkhF0XoAaqKTtduVudVSLVSqb/SE2skJhfOLEybAub/SYT
- HewfHo12V3FZo/niFBwJ3Qc9IBaq5lvoIoA2DljwZ8UyF3mgEpLx61nJMdFpjmaivl4A
- Htog==
+ bh=pGFx+amGu93F2A50py9iOALjdTJpw7/ItloLfCzH0sg=;
+ b=FxjdFP0WXWrfIrLD+8gcWy/umEQbWOunx9yjkSz/LLLs4K/VyjyX0EgEYa5CMm5F6w
+ SAUoch3awY5CzsHatHgtVRC9h1rmotllGqaN7eQVFoLIwA4Q7Zfr1e8Z2B18dGZ8xAu8
+ QoYbA/t5omu9u3U2icdTWcCYwlPbKzMHqD+IgJulOgosUZgxH5W3MHmYQI71tuBjOFFx
+ BR8e64XCMSY5iGEB4Z+DLlWTaRinUpFPqPcq4EDdv7x59vVinY1VwRfkEjmIHzX0rDCi
+ +62w0PF625kC9XHstmRDdqFR5vEHmEAF85ioDHVJZVjWR+jFhBb7oYGuTP7cAbiCvHCX
+ TScg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=BrSCYYt5uv3Xj+d3we2tNppwdrCJ/ZJWLFSrmqcGBRo=;
- b=kO9pOByYa3iVPUokqSAo1/mIZAZOuxMR/5Wkid2OxeH2Bd28LoEs1nnmosWxhTV9HX
- KtCg/9C6UOPQCJUqpN9QUtFPuS4x6R1RCK6ove2VKX5IEYFGcVnFP1D8gRUNiD/hpXO/
- s1PFDoHNceBsgCV8krSWRRHN5ez3GtmZxerapzzQ8sFy/lU2TSFPZ/2Qv3N49FPUh+M5
- TMW6+tjKT98ybK8L6xiGZqiQniZFM0mZoWMa/SWaxQf45n3mIKJqH6mAMhJZiKmP/eUj
- D6x+rKE1jxZgT4LnNgS3jFoSTAtp0HVWWWXzbY6C8YhB0cz7j1ozKMiGnyYoqi34gWH+
- +6ww==
-X-Gm-Message-State: APjAAAVGSeFLSlRudR5nNTHm3eLgdIq5zn2TjVnrK+ZRdx6z0Z3EzsiZ
- xOrnvRtdqIcm38aetezy09XyQ8tW+bfbcQ==
-X-Google-Smtp-Source: APXvYqyRzZcn8bDT1qTq02KNEt9UXS/4vlqBy54qzIiyqsiCXJfHND9OOB71hNviccEf9bdv8fJSAw==
-X-Received: by 2002:a17:902:a987:: with SMTP id
- bh7mr8100812plb.181.1573190453257; 
- Thu, 07 Nov 2019 21:20:53 -0800 (PST)
+ bh=pGFx+amGu93F2A50py9iOALjdTJpw7/ItloLfCzH0sg=;
+ b=eECfZ8cBzGEvWlkMs5WrtQD+lyJWAH89Hm1kxJVOSS5+9QSyHOIRJy38yDbTE9W+iG
+ k70y1ywVBcgBYWjR2Gqb3UV3PCcghgx06H5tj5nsQgFXfFZOAUXYtiewLitda1XjWKMT
+ 8H6pod+5YI69+4tR/T7q6afKibO6yPWxCMZrEbfHdZdR44qLjCgY9IM3LdDXFhKnOrgM
+ 8dhszf4nAwiIITbR67VlzrC4bwVaR8QoTDpwxv5jMDqVMKiCSsuKRGqmuC27x/vIjm9y
+ EWH1k2R+gXnczD/wCetfg2VzJ0seomYlL2b+fx2I+vfIWcF5iKR95Z33dWvlMWTCwgbF
+ 6ZBQ==
+X-Gm-Message-State: APjAAAWX4FHTJCJAi7/YSY1BSXTa0NHKT1Zs78bv21dbnvw9jjFi7dcn
+ TXwpT3uaxjjMlUmKjwgf17I=
+X-Google-Smtp-Source: APXvYqxciNZfaCcNzGy2TBZD43B3E6OOWrVWrEa5IIAHVWjFI1D487hSYs23XimTIBVclBiUU770SA==
+X-Received: by 2002:a63:234c:: with SMTP id u12mr9244517pgm.384.1573190458914; 
+ Thu, 07 Nov 2019 21:20:58 -0800 (PST)
 Received: from voyager.ibm.com ([36.255.48.244])
- by smtp.gmail.com with ESMTPSA id v19sm3798443pjr.14.2019.11.07.21.20.48
+ by smtp.gmail.com with ESMTPSA id v19sm3798443pjr.14.2019.11.07.21.20.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 Nov 2019 21:20:52 -0800 (PST)
+ Thu, 07 Nov 2019 21:20:58 -0800 (PST)
 From: Joel Stanley <joel@jms.id.au>
 To: Rob Herring <robh+dt@kernel.org>, Greg KH <gregkh@linuxfoundation.org>,
  Jeremy Kerr <jk@ozlabs.org>
-Subject: [PATCH v2 10/11] fsi: aspeed: Add trace points
-Date: Fri,  8 Nov 2019 15:49:44 +1030
-Message-Id: <20191108051945.7109-11-joel@jms.id.au>
+Subject: [PATCH v2 11/11] fsi: aspeed: Fix OPB0 byte order register values
+Date: Fri,  8 Nov 2019 15:49:45 +1030
+Message-Id: <20191108051945.7109-12-joel@jms.id.au>
 X-Mailer: git-send-email 2.24.0.rc1
 In-Reply-To: <20191108051945.7109-1-joel@jms.id.au>
 References: <20191108051945.7109-1-joel@jms.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_212055_458310_5A908FFC 
-X-CRM114-Status: GOOD (  13.68  )
+X-CRM114-CacheID: sfid-20191107_212059_991331_AC8FE53F 
+X-CRM114-Status: GOOD (  13.43  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -102,164 +101,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alistar Popple <alistair@popple.id.au>,
- Eddie James <eajames@linux.ibm.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>, Ingo Molnar <mingo@redhat.com>,
- linux-arm-kernel@lists.infradead.org, linux-fsi@lists.ozlabs.org
+Cc: devicetree@vger.kernel.org, Andrew Jeffery <andrew@aj.id.au>,
+ Alistar Popple <alistair@popple.id.au>, Eddie James <eajames@linux.ibm.com>,
+ linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-fsi@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These trace points help with debugging the FSI master. They show the low
-level reads, writes and error states of the master.
+From: Andrew Jeffery <andrew@aj.id.au>
 
+The data byte order selection registers in the APB2OPB primarily expose some
+internal plumbing necessary to get correct write accesses onto the OPB.
+OPB write cycles require "data mirroring" across the 32-bit data bus to
+support variable data width slaves that don't implement "byte enables".
+For slaves that do implement byte enables the master can signal which
+bytes on the data bus the slave should consider valid.
+
+The data mirroring behaviour is specified by the following table:
+
+    +-----------------+----------+-----------------------------------+
+    |                 |          |          32-bit Data Bus          |
+    +---------+-------+----------+---------+---------+-------+-------+
+    |         |       |          |         |         |       |       |
+    |   ABus  | Mn_BE |  Request |   Dbus  |   Dbus  |  Dbus |  Dbus |
+    | (30:31) | (0:3) | Transfer |   0:7   |   8:15  | 16:23 | 24:31 |
+    |         |       |   Size   |  byte0  |  byte1  | byte2 | byte3 |
+    +---------+-------+----------+---------+---------+-------+-------+
+    |    00   |  1111 | fullword |  byte0  |  byte1  | byte2 | byte3 |
+    +---------+-------+----------+---------+---------+-------+-------+
+    |    00   |  1110 | halfword |  byte0  |  byte1  | byte2 |       |
+    +---------+-------+----------+---------+---------+-------+-------+
+    |    01   |  0111 |   byte   | _byte1_ |  byte1  | byte2 | byte3 |
+    +---------+-------+----------+---------+---------+-------+-------+
+    |    00   |  1100 | halfword |  byte0  |  byte1  |       |       |
+    +---------+-------+----------+---------+---------+-------+-------+
+    |    01   |  0110 |   byte   | _byte1_ |  byte1  | byte2 |       |
+    +---------+-------+----------+---------+---------+-------+-------+
+    |    10   |  0011 | halfword | _byte2_ | _byte3_ | byte2 | byte3 |
+    +---------+-------+----------+---------+---------+-------+-------+
+    |    00   |  1000 |   byte   |  byte0  |         |       |       |
+    +---------+-------+----------+---------+---------+-------+-------+
+    |    01   |  0100 |   byte   | _byte1_ |  byte1  |       |       |
+    +---------+-------+----------+---------+---------+-------+-------+
+    |    10   |  0010 |   byte   | _byte2_ |         | byte2 |       |
+    +---------+-------+----------+---------+---------+-------+-------+
+    |    11   |  0001 |   byte   | _byte3_ | _byte3_ |       | byte3 |
+    +---------+-------+----------+---------+---------+-------+-------+
+
+Mirrored data values are highlighted by underscores in the Dbus columns.
+The values in the ABus and Request Transfer Size columns correspond to
+values in the field names listed in the write data order select register
+descriptions.
+
+Similar configuration registers are exposed for reads which enables the
+secondary purpose of configuring hardware endian conversions. It appears the
+data bus byte order is switched around in hardware so set the registers such
+that we can access the correct values for all widths. The values were
+determined by experimentation on hardware against fixed CFAM register
+values to configure the read data order, then in combination with the
+table above and the register layout documentation in the AST2600
+datasheet performing write/read cycles to configure the write data order
+registers.
+
+Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 Signed-off-by: Joel Stanley <joel@jms.id.au>
 ---
-v2: remove unnecessary semicolon
----
- drivers/fsi/fsi-master-aspeed.c          | 22 +++++++
- include/trace/events/fsi_master_aspeed.h | 77 ++++++++++++++++++++++++
- 2 files changed, 99 insertions(+)
- create mode 100644 include/trace/events/fsi_master_aspeed.h
+ drivers/fsi/fsi-master-aspeed.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/fsi/fsi-master-aspeed.c b/drivers/fsi/fsi-master-aspeed.c
-index d1b83f035483..95e226ac78b9 100644
+index 95e226ac78b9..f49742b310c2 100644
 --- a/drivers/fsi/fsi-master-aspeed.c
 +++ b/drivers/fsi/fsi-master-aspeed.c
-@@ -77,6 +77,9 @@ static const u32 fsi_base = 0xa0000000;
- #define XFER_HALFWORD	(BIT(0))
- #define XFER_BYTE	(0)
+@@ -459,11 +459,11 @@ static int fsi_master_aspeed_probe(struct platform_device *pdev)
+ 	writel(fsi_base, aspeed->base + OPB_FSI_BASE);
  
-+#define CREATE_TRACE_POINTS
-+#include <trace/events/fsi_master_aspeed.h>
-+
- #define FSI_LINK_ENABLE_SETUP_TIME	10	/* in mS */
+ 	/* Set read data order */
+-	writel(0x0011bb1b, aspeed->base + OPB0_READ_ORDER1);
++	writel(0x00030b1b, aspeed->base + OPB0_READ_ORDER1);
  
- #define DEFAULT_DIVISOR			14
-@@ -102,6 +105,8 @@ static int __opb_write(struct fsi_master_aspeed *aspeed, u32 addr,
+ 	/* Set write data order */
+-	writel(0x0011bb1b, aspeed->base + OPB0_WRITE_ORDER1);
+-	writel(0xffaa5500, aspeed->base + OPB0_WRITE_ORDER2);
++	writel(0x0011101b, aspeed->base + OPB0_WRITE_ORDER1);
++	writel(0x0c330f3f, aspeed->base + OPB0_WRITE_ORDER2);
  
- 	status = readl(base + OPB0_STATUS);
- 
-+	trace_fsi_master_aspeed_opb_write(addr, val, transfer_size, status, reg);
-+
- 	/* Return error when poll timed out */
- 	if (ret)
- 		return ret;
-@@ -149,6 +154,10 @@ static int __opb_read(struct fsi_master_aspeed *aspeed, uint32_t addr,
- 
- 	result = readl(base + OPB0_FSI_DATA_R);
- 
-+	trace_fsi_master_aspeed_opb_read(addr, transfer_size, result,
-+			readl(base + OPB0_STATUS),
-+			reg);
-+
- 	/* Return error when poll timed out */
- 	if (ret)
- 		return ret;
-@@ -196,6 +205,19 @@ static int check_errors(struct fsi_master_aspeed *aspeed, int err)
- {
- 	int ret;
- 
-+	if (trace_fsi_master_aspeed_opb_error_enabled()) {
-+		__be32 mresp0, mstap0, mesrb0;
-+
-+		opb_readl(aspeed, ctrl_base + FSI_MRESP0, &mresp0);
-+		opb_readl(aspeed, ctrl_base + FSI_MSTAP0, &mstap0);
-+		opb_readl(aspeed, ctrl_base + FSI_MESRB0, &mesrb0);
-+
-+		trace_fsi_master_aspeed_opb_error(
-+				be32_to_cpu(mresp0),
-+				be32_to_cpu(mstap0),
-+				be32_to_cpu(mesrb0));
-+	}
-+
- 	if (err == -EIO) {
- 		/* Check MAEB (0x70) ? */
- 
-diff --git a/include/trace/events/fsi_master_aspeed.h b/include/trace/events/fsi_master_aspeed.h
-new file mode 100644
-index 000000000000..a355ceacc33f
---- /dev/null
-+++ b/include/trace/events/fsi_master_aspeed.h
-@@ -0,0 +1,77 @@
-+/* SPDX-License-Identifier: GPL-2.0-or-later */
-+
-+#undef TRACE_SYSTEM
-+#define TRACE_SYSTEM fsi_master_aspeed
-+
-+#if !defined(_TRACE_FSI_MASTER_ASPEED_H) || defined(TRACE_HEADER_MULTI_READ)
-+#define _TRACE_FSI_MASTER_ASPEED_H
-+
-+#include <linux/tracepoint.h>
-+
-+TRACE_EVENT(fsi_master_aspeed_opb_read,
-+	TP_PROTO(uint32_t addr, size_t size, uint32_t result, uint32_t status, uint32_t irq_status),
-+	TP_ARGS(addr, size, result, status, irq_status),
-+	TP_STRUCT__entry(
-+		__field(uint32_t,  addr)
-+		__field(size_t,    size)
-+		__field(uint32_t,  result)
-+		__field(uint32_t,  status)
-+		__field(uint32_t,  irq_status)
-+		),
-+	TP_fast_assign(
-+		__entry->addr = addr;
-+		__entry->size = size;
-+		__entry->result = result;
-+		__entry->status = status;
-+		__entry->irq_status = irq_status;
-+		),
-+	TP_printk("addr %08x size %zu: result %08x sts: %08x irq_sts: %08x",
-+		__entry->addr, __entry->size, __entry->result,
-+		__entry->status, __entry->irq_status
-+	   )
-+);
-+
-+TRACE_EVENT(fsi_master_aspeed_opb_write,
-+	TP_PROTO(uint32_t addr, uint32_t val, size_t size, uint32_t status, uint32_t irq_status),
-+	TP_ARGS(addr, val, size, status, irq_status),
-+	TP_STRUCT__entry(
-+		__field(uint32_t,    addr)
-+		__field(uint32_t,    val)
-+		__field(size_t,    size)
-+		__field(uint32_t,  status)
-+		__field(uint32_t,  irq_status)
-+		),
-+	TP_fast_assign(
-+		__entry->addr = addr;
-+		__entry->val = val;
-+		__entry->size = size;
-+		__entry->status = status;
-+		__entry->irq_status = irq_status;
-+		),
-+	TP_printk("addr %08x val %08x size %zu status: %08x irq_sts: %08x",
-+		__entry->addr, __entry->val, __entry->size,
-+		__entry->status, __entry->irq_status
-+		)
-+	);
-+
-+TRACE_EVENT(fsi_master_aspeed_opb_error,
-+	TP_PROTO(uint32_t mresp0, uint32_t mstap0, uint32_t mesrb0),
-+	TP_ARGS(mresp0, mstap0, mesrb0),
-+	TP_STRUCT__entry(
-+		__field(uint32_t,  mresp0)
-+		__field(uint32_t,  mstap0)
-+		__field(uint32_t,  mesrb0)
-+		),
-+	TP_fast_assign(
-+		__entry->mresp0 = mresp0;
-+		__entry->mstap0 = mstap0;
-+		__entry->mesrb0 = mesrb0;
-+		),
-+	TP_printk("mresp0 %08x mstap0 %08x mesrb0 %08x",
-+		__entry->mresp0, __entry->mstap0, __entry->mesrb0
-+		)
-+	);
-+
-+#endif
-+
-+#include <trace/define_trace.h>
+ 	/*
+ 	 * Select OPB0 for all operations.
 -- 
 2.24.0.rc1
 
