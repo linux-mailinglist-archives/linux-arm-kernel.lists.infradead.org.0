@@ -2,100 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2BEAF4E0F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:25:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56105F4E1E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:30:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zu10YS7tEQw+zFho5QVrx96zMgxwwxE5tJYvhsZfMgo=; b=njNYbDSekN7KvOqdR8uys5H9A
-	5mWkJMWmS4pwXoziw5ll3tyh/jnOaxK29/8hb2wVzF1hxRkaDlwNFp2aVAeUrgj5nuIO++dcFTf1P
-	SVcOUTPZP90Ffk5Z4QYZuo3xhZzW0liMw9MTmftpL3Hg/xG47zIHFBg0JZDflc+BJH1fGMztPcbVo
-	DGTAtZZEBTYDA3sSdleuc17LRZmjpk+v8rhJrvbo1YIYKBmqmPwprWxlm6hCSQgXa1JFStU2jeiJD
-	7svPJVXzcahNrb65MYVNkPOUk94oL+QN+xYVVwHty/0ParOwLnj5Ihy3YBw/V70CXi+xfir7TxuF9
-	lPXyWvEBQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cczFsbLydj5fivGlG0TjJiwdWOkt4fD+wcJkXsKXFfg=; b=gHt2d7Z5Ws+yGU
+	60NrxnfzNKBpGRhBM23JUAWpcwZQ3coHhNm/sXcPyrctV/pmMmLIXXDSrtPSWOcM93H4tFIixjQIr
+	CEYgE6UMXoyJmNdnDX4Hllu1YQTyH/dHpO54DEq9QsKT0KaE4m4aLSw/H+IQQEBWtAD2s+l/ox9vQ
+	e2aUDra7k2DLXb+rgkTkf2hIENdULwftMw3hkg+0DDSFW69VqdD+kKXh51i0tgaLc6VVU2tDeCYal
+	G2r+4GveqqlL/3EQoc5pcsX+r78LOP/bi13tSfUwP4//zNwCSAFRCqjIQVMGowKiD/XV4lHx53u+I
+	jzZqi3aIDDSgk2HQJ0cQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT5Cd-0000Hb-OH; Fri, 08 Nov 2019 14:25:31 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT5CG-0007op-2V
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 14:25:09 +0000
-Received: by mail-pf1-x444.google.com with SMTP id c184so4708178pfb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 06:25:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=2QPC8QnLvdDe0xE5A31AT6LtAT7sdxDY8gfcrh4eodY=;
- b=MeMYs8yFEuniNnvauAknagNHFZeN4tBHxXi5NvT/F5Mm+4ANQO0gLGN36OijIBL4U0
- VgWur1KJ1tkOzo15JLqCylVrw/VcOOocPxhGPvJ76blM+SUdL7QYTN4LkK1VAF9I1hUb
- zXtRTdBZkUPMQISS5tJW155CDGXvUnJlKOV4MYXk4VMVuqcBVfh6kYmsnt963S16tuSj
- J99keTacAUtKqeqVvGK0jXjXg38lQAJ0chytk8U1/0xgWu+OSXFdga4/+9uX6xaS99GV
- B07/MfD8pHf4wOqypNtrufgvu+EnqrZXj65MNYwr+iqMjKnRqjN0wQYt+gUT4iXkz8ly
- 08GQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=2QPC8QnLvdDe0xE5A31AT6LtAT7sdxDY8gfcrh4eodY=;
- b=aLkVCMwC8ElUQjbeCDOCM5CpSC3Hg/VtnKVgpHFiyQZJ/zESKKNjIuqle6UKPSDGND
- V51cO8e/dGSlAGlMpbuwFwhXZ9FWoiNliLkAs1fvpn0Cgip7xmFIn8hxlUPU6QSEYjRM
- Jc8aFclrziIv2j5OCH41cf40GDv6SqUC8tEfmagg9M0zsTgneM/A3+pHn4f6g4UqnnFU
- UtSJQ1YkdVkEo7ynRJy5WTExVEpJtSOQr2XohEWfl9eZYKPHhQh/toLnloB/Tl8O8+a3
- HQh14kaOGFhSbhEkwR/L7RgLQVuTQLXMi1KHyf1UOT6WX1kq0D3xHfOS92TALKGftdyX
- DSNg==
-X-Gm-Message-State: APjAAAUVJciafZpWLHHH+qGOe/ACKQfMSseZjr0sXpQR7A+efjQWpyin
- JhtJMt/RSZVWUx1TZyrEq/hwSCV9
-X-Google-Smtp-Source: APXvYqw6YWG2/tHoaCVNv0mQYgzPu7Ea3OvB1jHTE/F/Zp5kt8YcYZKCCuxIwv66sDmc5Zu5WBaKbA==
-X-Received: by 2002:a65:41c5:: with SMTP id b5mr12021246pgq.78.1573223106517; 
- Fri, 08 Nov 2019 06:25:06 -0800 (PST)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- q199sm6075664pfq.147.2019.11.08.06.25.05
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 08 Nov 2019 06:25:05 -0800 (PST)
-Subject: Re: [PATCH] watchdog: aspeed: Fix clock behaviour for ast2600
-To: Joel Stanley <joel@jms.id.au>, Wim Van Sebroeck <wim@linux-watchdog.org>, 
- linux-watchdog@vger.kernel.org
-References: <20191108032905.22463-1-joel@jms.id.au>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <74f32d61-856d-623f-2f37-965d9331aba0@roeck-us.net>
-Date: Fri, 8 Nov 2019 06:25:04 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iT5Ha-0002Dj-A2; Fri, 08 Nov 2019 14:30:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iT5HS-0002DJ-56
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 14:30:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0EE0D46A;
+ Fri,  8 Nov 2019 06:30:29 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5C4DE3F719;
+ Fri,  8 Nov 2019 06:30:28 -0800 (PST)
+Date: Fri, 8 Nov 2019 14:30:26 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Richard Henderson <richard.henderson@linaro.org>
+Subject: Re: [PATCH v5] arm64: Implement archrandom.h for ARMv8.5-RNG
+Message-ID: <20191108143025.GD11465@lakrids.cambridge.arm.com>
+References: <20191108135751.3218-1-rth@twiddle.net>
 MIME-Version: 1.0
-In-Reply-To: <20191108032905.22463-1-joel@jms.id.au>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191108135751.3218-1-rth@twiddle.net>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_062508_179709_9AD43A48 
-X-CRM114-Status: GOOD (  23.20  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191108_063030_282358_4864EAD6 
+X-CRM114-Status: GOOD (  26.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,69 +61,190 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ryan Chen <ryan_chen@aspeedtech.com>, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
- =?UTF-8?Q?C=c3=a9dric_Le_Goater?= <clg@kaod.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ ard.biesheuvel@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/7/19 7:29 PM, Joel Stanley wrote:
-> The ast2600 no longer uses bit 4 in the control register to indicate a
-> 1MHz clock (It now controls weather this watchdog is reset by a SOC
-> reset). This means we do not want to set it. It also does not need to be
-> set for the ast2500, as it is read-only on that SoC.
+On Fri, Nov 08, 2019 at 02:57:51PM +0100, Richard Henderson wrote:
+> From: Richard Henderson <richard.henderson@linaro.org>
 > 
-> The comment next to the clock rate selection wandered away from where it
-> was set, so put it back next to the register setting it's describing.
+> Expose the ID_AA64ISAR0.RNDR field to userspace, as the
+> RNG system registers are always available at EL0.
 > 
-> Fixes: b3528b487448 ("watchdog: aspeed: Add support for AST2600")
-> Signed-off-by: Joel Stanley <joel@jms.id.au>
-
-Reviewed-by: Guenter Roeck <linux@roeck-us.net>
-
+> Signed-off-by: Richard Henderson <richard.henderson@linaro.org>
 > ---
->   drivers/watchdog/aspeed_wdt.c | 16 ++++++++++------
->   1 file changed, 10 insertions(+), 6 deletions(-)
-> 
-> diff --git a/drivers/watchdog/aspeed_wdt.c b/drivers/watchdog/aspeed_wdt.c
-> index 4ec0906bf12c..7e00960651fa 100644
-> --- a/drivers/watchdog/aspeed_wdt.c
-> +++ b/drivers/watchdog/aspeed_wdt.c
-> @@ -258,11 +258,6 @@ static int aspeed_wdt_probe(struct platform_device *pdev)
->   	if (IS_ERR(wdt->base))
->   		return PTR_ERR(wdt->base);
->   
-> -	/*
-> -	 * The ast2400 wdt can run at PCLK, or 1MHz. The ast2500 only
-> -	 * runs at 1MHz. We chose to always run at 1MHz, as there's no
-> -	 * good reason to have a faster watchdog counter.
-> -	 */
->   	wdt->wdd.info = &aspeed_wdt_info;
->   	wdt->wdd.ops = &aspeed_wdt_ops;
->   	wdt->wdd.max_hw_heartbeat_ms = WDT_MAX_TIMEOUT_MS;
-> @@ -278,7 +273,16 @@ static int aspeed_wdt_probe(struct platform_device *pdev)
->   		return -EINVAL;
->   	config = ofdid->data;
->   
-> -	wdt->ctrl = WDT_CTRL_1MHZ_CLK;
-> +	/*
-> +	 * On clock rates:
-> +	 *  - ast2400 wdt can run at PCLK, or 1MHz
-> +	 *  - ast2500 only runs at 1MHz, hard coding bit 4 to 1
-> +	 *  - ast2600 always runs at 1MHz
-> +	 *
-> +	 * Set the ast2400 to run at 1MHz as it simplifies the driver.
-> +	 */
-> +	if (of_device_is_compatible(np, "aspeed,ast2400-wdt"))
-> +		wdt->ctrl = WDT_CTRL_1MHZ_CLK;
->   
->   	/*
->   	 * Control reset on a per-device basis to ensure the
-> 
+> v2: Use __mrs_s and fix missing cc clobber (Mark),
+>     Log rng failures with pr_warn (Mark),
 
+When I suggested this, I meant in the probe path.
+
+Since it can legitimately fail at runtime, I don't think it's worth
+logging there. Maybe it's worth recording stats, but the generic wrapper
+could do that.
+
+[...]
+
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index 80f459ad0190..456d5c461cbf 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -119,6 +119,7 @@ static void cpu_enable_cnp(struct arm64_cpu_capabilities const *cap);
+>   * sync with the documentation of the CPU feature register ABI.
+>   */
+>  static const struct arm64_ftr_bits ftr_id_aa64isar0[] = {
+> +	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_RNDR_SHIFT, 4, 0),
+
+If we're going to expose this to userspace, it must be a system feature.
+If all the boto CPUs have the feature, we'll advertise it to userspace,
+and therefore must mandate it for late-onlined CPUs.
+
+>  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_TS_SHIFT, 4, 0),
+>  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_FHM_SHIFT, 4, 0),
+>  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_DP_SHIFT, 4, 0),
+> @@ -1565,6 +1566,18 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+>  		.sign = FTR_UNSIGNED,
+>  		.min_field_value = 1,
+>  	},
+> +#endif
+> +#ifdef CONFIG_ARCH_RANDOM
+> +	{
+> +		.desc = "Random Number Generator",
+> +		.capability = ARM64_HAS_RNG,
+> +		.type = ARM64_CPUCAP_WEAK_LOCAL_CPU_FEATURE,
+
+As above, if we're advertisting this to userspace and/or VMs, this must
+be a system-wide feature, and cannot be a weak local feature.
+
+> +		.matches = has_cpuid_feature,
+> +		.sys_reg = SYS_ID_AA64ISAR0_EL1,
+> +		.field_pos = ID_AA64ISAR0_RNDR_SHIFT,
+> +		.sign = FTR_UNSIGNED,
+> +		.min_field_value = 1,
+> +	},
+>  #endif
+>  	{},
+>  };
+> diff --git a/arch/arm64/kernel/random.c b/arch/arm64/kernel/random.c
+> new file mode 100644
+> index 000000000000..e7ff29dd637c
+> --- /dev/null
+> +++ b/arch/arm64/kernel/random.c
+> @@ -0,0 +1,82 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Random number generation using ARMv8.5-RNG.
+> + */
+> +
+> +#include <linux/random.h>
+> +#include <linux/ratelimit.h>
+> +#include <linux/printk.h>
+> +#include <linux/preempt.h>
+> +#include <asm/cpufeature.h>
+> +
+> +static inline bool has_random(void)
+> +{
+> +	/*
+> +	 * We "have" RNG if either
+> +	 * (1) every cpu in the system has RNG, or
+> +	 * (2) in a non-preemptible context, current cpu has RNG.
+> +	 *
+> +	 * Case 1 is the expected case when RNG is deployed, but
+> +	 * case 2 is present as a backup.  Case 2 has two effects:
+> +	 * (A) rand_initialize() is able to use the instructions
+> +	 * when present in the boot cpu, which happens before
+> +	 * secondary cpus are enabled and before features are
+> +	 * resolved for the full system.
+> +	 * (B) add_interrupt_randomness() is able to use the
+> +	 * instructions when present on the current cpu, in case
+> +	 * some big/little system only has RNG on big cpus.
+> +	 *
+> +	 * We can use __cpus_have_const_cap because we then fall
+> +	 * back to checking the current cpu.
+> +	 */
+> +	return __cpus_have_const_cap(ARM64_HAS_RNG) ||
+> +	       (!preemptible() && this_cpu_has_cap(ARM64_HAS_RNG));
+> +}
+
+We don't bother with special-casing local handling mismatch like this
+for other features. I'd ratehr that:
+
+* On the boot CPU, prior to detecting secondaries, we can seed the usual
+  pool with the RNG if the boot CPU has it.
+
+* Once secondaries are up, if the feature is present system-wide, we can
+  make use of the feature as a system-wide feature. If not, we don't use
+  the RNG.
+
+
+[...]
+
+> +bool arch_get_random_long(unsigned long *v)
+> +{
+> +	bool ok;
+> +
+> +	if (!has_random())
+> +		return false;
+> +
+> +	/*
+> +	 * Reads of RNDR set PSTATE.NZCV to 0b0000 on success,
+> +	 * and set PSTATE.NZCV to 0b0100 otherwise.
+> +	 */
+> +	asm volatile(
+> +		__mrs_s("%0", SYS_RNDR_EL0) "\n"
+> +	"	cset %w1, ne\n"
+> +	: "=r"(*v), "=r"(ok)
+
+Nit: place a space between the constraint and the bracketed variable, as
+we do elsewhere.
+
+> +	:
+> +	: "cc");
+> +
+> +	if (unlikely(!ok))
+> +		pr_warn_ratelimited("cpu%d: sys_rndr failed\n",
+> +				    read_cpuid_id());
+> +	return ok;
+> +}
+
+... so this can be:
+
+bool arch_get_random_long(unsigned long *v)
+{
+	bool ok;
+
+	if (!cpus_have_const_cap(ARM64_HAS_RNG))
+		return false;
+
+	/*
+	 * Reads of RNDR set PSTATE.NZCV to 0b0000 on success,
+	 * and set PSTATE.NZCV to 0b0100 otherwise.
+	 */
+	asm volatile(
+		__mrs_s("%0", SYS_RNDR_EL0) "\n"
+	"	cset %w1, ne\n"
+	: "=r" (*v), "=r" (ok)
+	:
+	: "cc");
+
+	return ok;
+}
+
+...with similar for arch_get_random_seed_long().
+
+[...]
+
+>  config RANDOM_TRUST_CPU
+>  	bool "Trust the CPU manufacturer to initialize Linux's CRNG"
+> -	depends on X86 || S390 || PPC
+> +	depends on X86 || S390 || PPC || ARM64
+
+Can't that depend on ARCH_RANDOM instead?
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
