@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36EA0F50F0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 17:20:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29324F50EE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 17:20:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IRhzNe+koXUK9fcbXHQv0lppMBPrh8MKka81dH+xsKs=; b=Y//x7ahzkFYD2Z
-	eorOz0QQwdEprNc2HPvloj6DRSZr5JLmuW+Ax25q3+vWig2REcVB58vsie/bPfBZT8l9Pq3LL+MhH
-	YGrnmamw201wRUfbRrb9xvONkkQVGpvW/EraT010pH2EuVdYwAew8M91OdjRkoHGvxmaLNXTcjse+
-	c1b9crFNuyv5kXGxafqu3FVx4v5EYpvxzoZtzB3qTM45aL+gT4mlFsyIEhxs8TxmoQFD9mzvizoHQ
-	2dcJlI33FeKrwLQiAqqJvlb4dABtStNkPYHaF2HBlL4YIt+xSLE98zOw0ECoVXyxL/+uzUNbVtd48
-	wbrjoM3cvjsEdyDlO4LQ==;
+	List-Owner; bh=lDLoF163U7mUoVmSQc+apaocx8NLwPTxfQUrRk0PxLs=; b=aKN477HJSR5Dqe
+	UZEsR8hiwsxZkKDL+5hxRG44vlkge40Jg2Py32LzugZyJZvyLs8jGhVh1PZ1fs1X44faziNNxIO61
+	1OfRUxNSFzqomQkYUlBME6AEb/Ho/Y9/UL60SYHZeWBIeJ+kUTrFZc97SEnlFnxRWZcbXcCuGX0xi
+	eVpud2mPbeTlhFxmS8YdHI9IoAGCz811+nZ34/61OfelkQZ1QesIo4RMzZI8VgoiaAabd0iDB99DM
+	tSz/P9RqyWSZ5blfT3zKn5T9NVbKTJNYVbI0iAuvyOibrOkom5WnjiE1aeV0wW/AK6I2AVStL5xYC
+	ewC4LRksg+Z35YBbdFAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT6zx-0002k2-A8; Fri, 08 Nov 2019 16:20:33 +0000
+	id 1iT6zj-0002L3-RJ; Fri, 08 Nov 2019 16:20:19 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT6zW-0001ps-0f
+ id 1iT6zV-0001n7-Rg
  for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 16:20:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Content-Transfer-Encoding:
@@ -29,30 +29,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  :Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From
  :Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=UP8sz3VMM6gDtXw3B2Xz6o2Ev4+XxpPWW9yRz0iej2g=; b=pm+WJhVlCMfso1FITbxJ2yLgDz
- X/IPc/GtbGVKfJc/DC0Ii0VA3nhtM2JQ0EUd+GClWg1FSm3OmbjR2X5Bz4xPhnZvuhylJUatInraN
- uIKC/TXEwAp8pmNNxWC59JltAAxif2PG+SFjtO/LthR+MaQK1R50Rv16RnOEcGk2Co8o=;
+ bh=ew3ogKlXBoxc+2Xx91c/83BnYWnobgaDV0o3CeSH+Yc=; b=IR1HpFjeVv2Q9qF9u4kMXWPvcb
+ jQ6/5NwYGUe/Xfxbus+bFC7jO8qt2lDTctRPBXll4sl75722YRFBUmbyIWTIySdQfm54el38wvV6U
+ eX9Q+5P2R1WyyfdZwYYwNv+mTZpwu9ON5dt1ZGER6PZ9nTZSw5r3VZ/Fh6NfN2MzPyzU=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iT6zT-0007dv-L0; Fri, 08 Nov 2019 16:20:03 +0000
+ id 1iT6zT-0007dt-Kz; Fri, 08 Nov 2019 16:20:03 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id DB9192740A38; Fri,  8 Nov 2019 16:20:02 +0000 (GMT)
+ id EC6DB2741460; Fri,  8 Nov 2019 16:20:02 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v3 1/2] arm64: kaslr: Announce KASLR status on boot
-Date: Fri,  8 Nov 2019 16:20:00 +0000
-Message-Id: <20191108162001.11737-2-broonie@kernel.org>
+Subject: [PATCH v3 2/2] arm64: kaslr: Check command line before looking for a
+ seed
+Date: Fri,  8 Nov 2019 16:20:01 +0000
+Message-Id: <20191108162001.11737-3-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191108162001.11737-1-broonie@kernel.org>
 References: <20191108162001.11737-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_082006_087237_B9D5DEF5 
-X-CRM114-Status: GOOD (  15.78  )
+X-CRM114-CacheID: sfid-20191108_082005_923285_CF355044 
+X-CRM114-Status: GOOD (  13.75  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -84,103 +85,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently the KASLR code is silent at boot unless it forces on KPTI in
-which case a message will be printed for that. This can lead to users
-incorrectly believing their system has the feature enabled when it in
-fact does not, and if they notice the problem the lack of any
-diagnostics makes it harder to understand the problem. Add an initcall
-which prints a message showing the status of KASLR during boot to make
-the status clear.
-
-This is particularly useful in cases where we don't have a seed. It
-seems to be a relatively common error for system integrators and
-administrators to enable KASLR in their configuration but not provide
-the seed at runtime, often due to seed provisioning breaking at some
-later point after it is initially enabled and verified.
+Now that we print diagnostics at boot the reason why we do not initialise
+KASLR matters. Currently we check for a seed before we check if the user
+has explicitly disabled KASLR on the command line which will result in
+misleading diagnostics so reverse the order of those checks. We still
+parse the seed from the DT early so that if the user has both provided a
+seed and disabled KASLR on the command line we still mask the seed on
+the command line.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/kernel/kaslr.c | 41 ++++++++++++++++++++++++++++++++++++---
- 1 file changed, 38 insertions(+), 3 deletions(-)
+ arch/arm64/kernel/kaslr.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
-index 416f537bf614..0039dc50e556 100644
+index 0039dc50e556..c09f12ab6525 100644
 --- a/arch/arm64/kernel/kaslr.c
 +++ b/arch/arm64/kernel/kaslr.c
-@@ -19,6 +19,14 @@
- #include <asm/pgtable.h>
- #include <asm/sections.h>
- 
-+enum kaslr_status {
-+	KASLR_ENABLED,
-+	KASLR_DISABLED_CMDLINE,
-+	KASLR_DISABLED_NO_SEED,
-+	KASLR_DISABLED_FDT_REMAP,
-+};
-+
-+enum kaslr_status __ro_after_init kaslr_status;
- u64 __ro_after_init module_alloc_base;
- u16 __initdata memstart_offset_seed;
- 
-@@ -91,15 +99,19 @@ u64 __init kaslr_early_init(u64 dt_phys)
- 	 */
- 	early_fixmap_init();
- 	fdt = fixmap_remap_fdt(dt_phys, &size, PAGE_KERNEL);
--	if (!fdt)
-+	if (!fdt) {
-+		kaslr_status = KASLR_DISABLED_FDT_REMAP;
- 		return 0;
-+	}
- 
- 	/*
+@@ -108,10 +108,6 @@ u64 __init kaslr_early_init(u64 dt_phys)
  	 * Retrieve (and wipe) the seed from the FDT
  	 */
  	seed = get_kaslr_seed(fdt);
--	if (!seed)
-+	if (!seed) {
-+		kaslr_status = KASLR_DISABLED_NO_SEED;
- 		return 0;
-+	}
+-	if (!seed) {
+-		kaslr_status = KASLR_DISABLED_NO_SEED;
+-		return 0;
+-	}
  
  	/*
  	 * Check if 'nokaslr' appears on the command line, and
-@@ -107,8 +119,10 @@ u64 __init kaslr_early_init(u64 dt_phys)
- 	 */
- 	cmdline = kaslr_get_cmdline(fdt);
- 	str = strstr(cmdline, "nokaslr");
--	if (str == cmdline || (str > cmdline && *(str - 1) == ' '))
-+	if (str == cmdline || (str > cmdline && *(str - 1) == ' ')) {
-+		kaslr_status = KASLR_DISABLED_CMDLINE;
+@@ -124,6 +120,11 @@ u64 __init kaslr_early_init(u64 dt_phys)
  		return 0;
-+	}
+ 	}
  
++	if (!seed) {
++		kaslr_status = KASLR_DISABLED_NO_SEED;
++		return 0;
++	}
++
  	/*
  	 * OK, so we are proceeding with KASLR enabled. Calculate a suitable
-@@ -170,3 +184,24 @@ u64 __init kaslr_early_init(u64 dt_phys)
- 
- 	return offset;
- }
-+
-+static int __init kaslr_init(void)
-+{
-+	switch (kaslr_status) {
-+	case KASLR_ENABLED:
-+		pr_info("KASLR enabled\n");
-+		break;
-+	case KASLR_DISABLED_CMDLINE:
-+		pr_info("KASLR disabled on command line\n");
-+		break;
-+	case KASLR_DISABLED_NO_SEED:
-+		pr_warn("KASLR disabled due to lack of seed\n");
-+		break;
-+	case KASLR_DISABLED_FDT_REMAP:
-+		pr_warn("KASLR disabled due to FDT remapping failure\n");
-+		break;
-+	}
-+
-+	return 0;
-+}
-+core_initcall(kaslr_init)
+ 	 * kernel image offset from the seed. Let's place the kernel in the
 -- 
 2.20.1
 
