@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1886F4FA7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 16:29:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38A26F4FA9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 16:29:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u3yM1cttzpTvMVZux1chf7Z8hqyPUPeqRHJoFgI/t7s=; b=S1OJi7CwRvAha1
-	xH/AzWA514iWY64I40qlOAO1PeOvxFItOIEQQxZtAKX/57j24DRhzSf8hm6+jfRTh82emN4WtxIqO
-	OOoMzz0QLuzPnhYEeIZxh1clA04ka0gGOPqYNTVlDjFTvHoD+JA6ZN4sF9qZ1suDS+ymiQ+cPMEQn
-	x88/+ps66lSjOe2tkkKTQd/h8lOvqdS11/qALjgd4lr/AVVJoBLlRNprP8N+A/LeVyNtlSz0JZvlm
-	XzTehF9X73QbT2eOoHX8NPR9VsD+A8U92gEWJDUC0+rDqxRCiLRbatmT5XO/lXXaDflwjr8Fy5YkO
-	SncE9X4Uj14Du6vM4aXg==;
+	List-Owner; bh=ecYqf+bljCal9tcyfr9+CEYE3VwwNxqpiEm0Zu/3zTA=; b=qEK4Cj52++uTDm
+	xZDGk7dNZ0ZRcmlD8fb+mgByBxLR15yHWJikw4KmX5Xhg+OkU6kbVr5ndBFgdOgy86w5cf9cyoBFn
+	yuf7tx4CRt9TWTUTCYRHzUlBLWL6MRGw9cor3ALUkVSII6bvTyYqr7ADdVBREtxaJt4G3CrfHJ0YN
+	IgJvRUdFsuLje4po+EB7jsKe7GZGsxbreMzDoe97YnE3es2Qu2i4s7H1yyfmUVxCsQiMhf/nZ1HaV
+	dZb19hz8CFrrY0e4IfkWZcGMWogaUvQqhV0cxBzOVIu70Q6DttzemOYYIlFY6v8su3LpcKwj7Td0B
+	j4/PQlgtP9CNkAbL8ZyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT6Bw-0006y1-73; Fri, 08 Nov 2019 15:28:52 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iT6CH-0007AW-M2; Fri, 08 Nov 2019 15:29:13 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT6A5-00053X-4e
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 15:26:58 +0000
-Received: by mail-wm1-x341.google.com with SMTP id c22so6645915wmd.1
+ id 1iT6A6-00057u-DO
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 15:27:00 +0000
+Received: by mail-wr1-x443.google.com with SMTP id i10so7491738wrs.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 07:26:57 -0800 (PST)
+ Fri, 08 Nov 2019 07:26:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=XcF4FI/xEJT2ddBZxLwsH4kwVBtXhLcA/n4y2uy3gfU=;
- b=BDQ7ZeC9LB/2Lh6DQj16J8t0f6umU/jbny0nZwuikklVbgDi7dCWTbWMm0aRjLi005
- V9skokHIp4EKef66gOqo4I/nTxWGvc+9S6EKjBlJxyLdKbQSqZqWvqeY+Z77HTqkfX16
- 4JkmEuH7gjM/RdLJO9BN/Vyp34vnY9Hjxh0xTuSOc2pbbXcqJvbeKLT8KPs3B6zuGeSk
- oQeEJyv8qFljGOOQ55RrjTk0fCjjESA+CfjKaY7SQ8SZ3HRmaDrfbgz8Gb5nIqgT00q+
- AA1hFm+CnyswDokicO8N1z95D2kGm5pzZtaKebbBgrFl7rKhfqfepJE34J7LhtfZSbFY
- G1Pg==
+ bh=FjGV9dHEsXE/CXRMwyPeo6zW+qyz6ot3r0JcxY8EA5E=;
+ b=Stc/zRTgvuJV42ldqRHlqe8DkziQ/xZI3K/M//32mxdJaRU1jz2L5/fMxZ1QFhpcGb
+ EvSLry3iFu8329VB2GuTsvuMtRKQtUr6NhZe+OfFoUtq8NdYCPynlIwHbw/GjFUbmRC+
+ H6gal8DBpakRVo3SnhTJfseRLFp1XqfFkb3D3NUiwdPCcqFJAIgPj+gGr6Z9Up4EP+4P
+ 8+Ut1quAnJxAurGbZKQH/VrQGWCWm7la8zmxc89J8tDCxR4MRqdAj9qnVky2l9P/QGSc
+ 7hQrDyjXx2qQgCLFiaNFaKInDn2CY6ehhHcEYqTjArSQZFKJgu0xbSGyle/kTSvYSm0a
+ jagQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=XcF4FI/xEJT2ddBZxLwsH4kwVBtXhLcA/n4y2uy3gfU=;
- b=LkBulNKCgSq06YEjRyIy8qkFMNdewnJ3pKStdYx5OBE0GRIeD66yg3eHtfT49A+my/
- f/ut+RhpNieeJIYteGloOrgWPGjzy7kKoRXiiDXsTAiDet9g+ibTuVyaASJs7jfAX6zR
- BSsgtLKkCzj2vHNIHdQGbjaKjVcKDnaOcR5RVgnwaKCBMwl/XILGZAiv/bpg7Lfb6iCi
- 1E6vmo9m3pPb/RFaEgs3859kYZY4oHZiyGJvz6kCA6QGvWWi9AcEW/X48sDvi0ttfHrF
- bxY+DcDShg5rwy+wn/Gv1JABFZUf1DpqNNvrKBtaxFAycJH3Eo/zq/rYAzsD1Vc9h1rZ
- NUfw==
-X-Gm-Message-State: APjAAAXzHLcRPv5aH1K46WTDRIXoUgY6eNtBvBdHXAlz/rNhrEJlFyhb
- DfGGd8sndiq5zESrYiorEV8tfQ==
-X-Google-Smtp-Source: APXvYqzgCicwCZbEjPp1W/xKMCJmORJ4A/9v+uL6ZQTDFPmzJrCekPgMET2BLRpL/BAud9T+NepWPQ==
-X-Received: by 2002:a1c:9917:: with SMTP id b23mr8603435wme.42.1573226815904; 
- Fri, 08 Nov 2019 07:26:55 -0800 (PST)
+ bh=FjGV9dHEsXE/CXRMwyPeo6zW+qyz6ot3r0JcxY8EA5E=;
+ b=e+GyYkjHY3GZ9EqhWIcW15LT2+1xsIfHDShtCTOlBws4nqPyY2S4LRVjibX73eEbGt
+ GND6anHHPTeBuTfRErz2ew8jYpoFVwapnaRsiv7pjg2wJsJ2JFP4g9m5yl+87rtriLns
+ ZXH/POtPjokjoc/oWrwqBwEPtgkC74blxWTN794letai41wstc0RFh0KZ9mD2eRHya4I
+ fGXkyEQm9lpacCo3N6JuBsczm57MixO+HedfECptujYbDWCYuj9EUagNzQiRr7luIiMe
+ bQZosbBZ5CmEjhVANZfuiz6ujsuS7yknENbRZlQnQ2I8nL+Q0ZcBJqHUlWt/V+3uoeOi
+ 9pug==
+X-Gm-Message-State: APjAAAVkpx0fRSa9/LMLG8bHltQe1pfx5Csg+H483UVNHQz23P02CAe4
+ PUTkpZ3eQWJWGJR0hKAKoVUN8g==
+X-Google-Smtp-Source: APXvYqyYxAoUhXJzLGprymri1AM4kybRhlq/Xshi8NVcy8x0x8VatgjfP55PcG/0utxa9PrTdLVdag==
+X-Received: by 2002:a5d:4c4e:: with SMTP id n14mr9845340wrt.260.1573226817077; 
+ Fri, 08 Nov 2019 07:26:57 -0800 (PST)
 Received: from localhost.localdomain ([85.195.192.192])
- by smtp.gmail.com with ESMTPSA id w18sm6579232wrp.31.2019.11.08.07.26.54
+ by smtp.gmail.com with ESMTPSA id w18sm6579232wrp.31.2019.11.08.07.26.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 07:26:55 -0800 (PST)
+ Fri, 08 Nov 2019 07:26:56 -0800 (PST)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
  linux-acpi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 7/8] iommu/arm-smmu-v3: Improve add_device() error handling
-Date: Fri,  8 Nov 2019 16:25:07 +0100
-Message-Id: <20191108152508.4039168-8-jean-philippe@linaro.org>
+Subject: [PATCH v2 8/8] iommu/arm-smmu-v3: Add support for PCI PASID
+Date: Fri,  8 Nov 2019 16:25:08 +0100
+Message-Id: <20191108152508.4039168-9-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191108152508.4039168-1-jean-philippe@linaro.org>
 References: <20191108152508.4039168-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_072657_389675_D7CF2083 
-X-CRM114-Status: GOOD (  15.04  )
+X-CRM114-CacheID: sfid-20191108_072658_471380_8C807ACA 
+X-CRM114-Status: GOOD (  15.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,74 +107,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Let add_device() clean up after itself. The iommu_bus_init() function
-does call remove_device() on error, but other sites (e.g. of_iommu) do
-not.
+Enable PASID for PCI devices that support it. Since the SSID tables are
+allocated by arm_smmu_attach_dev(), PASID has to be enabled early enough.
+arm_smmu_dev_feature_enable() would be too late, since by that time the
+main DMA domain has already been attached. Do it in add_device() instead.
 
-Don't free level-2 stream tables because we'd have to track if we
-allocated each of them or if they are used by other endpoints. It's not
-worth the hassle since they are managed resources.
-
-Reviewed-by: Eric Auger <eric.auger@redhat.com>
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/iommu/arm-smmu-v3.c | 28 +++++++++++++++++++++-------
- 1 file changed, 21 insertions(+), 7 deletions(-)
+ drivers/iommu/arm-smmu-v3.c | 51 ++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 50 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 82eac89ee187..88ec0bf33492 100644
+index 88ec0bf33492..3ee313c08325 100644
 --- a/drivers/iommu/arm-smmu-v3.c
 +++ b/drivers/iommu/arm-smmu-v3.c
-@@ -2826,14 +2826,16 @@ static int arm_smmu_add_device(struct device *dev)
- 	for (i = 0; i < master->num_sids; i++) {
- 		u32 sid = master->sids[i];
+@@ -2633,6 +2633,49 @@ static void arm_smmu_disable_ats(struct arm_smmu_master *master)
+ 	atomic_dec(&smmu_domain->nr_ats_masters);
+ }
  
--		if (!arm_smmu_sid_in_range(smmu, sid))
--			return -ERANGE;
-+		if (!arm_smmu_sid_in_range(smmu, sid)) {
-+			ret = -ERANGE;
-+			goto err_free_master;
-+		}
++static int arm_smmu_enable_pasid(struct arm_smmu_master *master)
++{
++	int ret;
++	int features;
++	int num_pasids;
++	struct pci_dev *pdev;
++
++	if (!dev_is_pci(master->dev))
++		return -ENOSYS;
++
++	pdev = to_pci_dev(master->dev);
++
++	features = pci_pasid_features(pdev);
++	if (features < 0)
++		return -ENOSYS;
++
++	num_pasids = pci_max_pasids(pdev);
++	if (num_pasids <= 0)
++		return -ENOSYS;
++
++	ret = pci_enable_pasid(pdev, features);
++	if (!ret)
++		master->ssid_bits = min_t(u8, ilog2(num_pasids),
++					  master->smmu->ssid_bits);
++	return ret;
++}
++
++static void arm_smmu_disable_pasid(struct arm_smmu_master *master)
++{
++	struct pci_dev *pdev;
++
++	if (!dev_is_pci(master->dev))
++		return;
++
++	pdev = to_pci_dev(master->dev);
++
++	if (!pdev->pasid_enabled)
++		return;
++
++	master->ssid_bits = 0;
++	pci_disable_pasid(pdev);
++}
++
+ static void arm_smmu_detach_dev(struct arm_smmu_master *master)
+ {
+ 	unsigned long flags;
+@@ -2841,13 +2884,16 @@ static int arm_smmu_add_device(struct device *dev)
  
- 		/* Ensure l2 strtab is initialised */
- 		if (smmu->features & ARM_SMMU_FEAT_2_LVL_STRTAB) {
- 			ret = arm_smmu_init_l2_strtab(smmu, sid);
- 			if (ret)
--				return ret;
-+				goto err_free_master;
- 		}
- 	}
+ 	master->ssid_bits = min(smmu->ssid_bits, fwspec->num_pasid_bits);
  
-@@ -2843,13 +2845,25 @@ static int arm_smmu_add_device(struct device *dev)
++	/* Note that PASID must be enabled before, and disabled after ATS */
++	arm_smmu_enable_pasid(master);
++
+ 	if (!(smmu->features & ARM_SMMU_FEAT_2_LVL_CDTAB))
  		master->ssid_bits = min_t(u8, master->ssid_bits,
  					  CTXDESC_LINEAR_CDMAX);
  
-+	ret = iommu_device_link(&smmu->iommu, dev);
-+	if (ret)
-+		goto err_free_master;
-+
+ 	ret = iommu_device_link(&smmu->iommu, dev);
+ 	if (ret)
+-		goto err_free_master;
++		goto err_disable_pasid;
+ 
  	group = iommu_group_get_for_dev(dev);
--	if (!IS_ERR(group)) {
--		iommu_group_put(group);
--		iommu_device_link(&smmu->iommu, dev);
-+	if (IS_ERR(group)) {
-+		ret = PTR_ERR(group);
-+		goto err_unlink;
- 	}
+ 	if (IS_ERR(group)) {
+@@ -2860,6 +2906,8 @@ static int arm_smmu_add_device(struct device *dev)
  
--	return PTR_ERR_OR_ZERO(group);
-+	iommu_group_put(group);
-+	return 0;
-+
-+err_unlink:
-+	iommu_device_unlink(&smmu->iommu, dev);
-+err_free_master:
-+	kfree(master);
-+	fwspec->iommu_priv = NULL;
-+	return ret;
+ err_unlink:
+ 	iommu_device_unlink(&smmu->iommu, dev);
++err_disable_pasid:
++	arm_smmu_disable_pasid(master);
+ err_free_master:
+ 	kfree(master);
+ 	fwspec->iommu_priv = NULL;
+@@ -2880,6 +2928,7 @@ static void arm_smmu_remove_device(struct device *dev)
+ 	arm_smmu_detach_dev(master);
+ 	iommu_group_remove_device(dev);
+ 	iommu_device_unlink(&smmu->iommu, dev);
++	arm_smmu_disable_pasid(master);
+ 	kfree(master);
+ 	iommu_fwspec_free(dev);
  }
- 
- static void arm_smmu_remove_device(struct device *dev)
 -- 
 2.23.0
 
