@@ -2,72 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AC14F4DD9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:10:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1447EF4DCB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 15:08:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ETdEnxXlePHpv3yyUgNr3ApNh5zTz0RpDUrnw6VZU74=; b=oLkOgR2xKhkSAg
-	S0IXt4S33zrCCDKU8zQy+T40ddzxYowqVd+uheJnrrAOZ76fxcEGQ60iv2zt4u0JCiOHDCe04ojIP
-	CQopwEwuP+T3lohwhHuIR/V6V3nHiPg38f/0rQtjOav9JsCMC4HZ3tnt8GL4beK4ChFegCClaFu0X
-	qLYgYdj12z7YIttSDp4zYdxcF7Ji1CSk9yhgQTdjyN4aatiq/cUGFD3sV0X2u8/jqie2xtL6w/nRw
-	+3gqVMUaCtFo9WqOJ/LLslRWqXdObcDCmbbRDBj1nWm12upUoGrzc3sLpIlaaeQwGOXlHq4G6IDpY
-	XN/SyoxJz06FBHimx+IQ==;
+	List-Owner; bh=KU78p68wN7cSXh+XnXo6LHncam/N5/3727+Kx9fWNxg=; b=cnK8QneR6y18Ge
+	31KjYVFEI1b8DUULHo5Wx0dRjofuqAyhdOiech3U7nHWEh1KFKsPzysEZfCZktAGkqZWO5mbMjyuu
+	VtK6M7LURELlbP9QGDaR5+2IJvyeDo0L1Zq92k0q5OLsvXHd+fLNZCNEGP8C1PHLh9fpOWTnTrv/b
+	mionxzc4eFB//WyygHJRndzw/+cz2bK3fsuWrtFXcDDMnzcab5QtuHw1udcEILm3PtPC0u4GM0Nth
+	TlfEKc/oUXr0m/ihnkIJIG9zWVcgGB0kqHlXELugUSHgHwjQ0PY097vTtlrrVOjGN8GZnKrIo2Ob8
+	nicYDnciLqjdoY9psWNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT4yC-0002AL-V9; Fri, 08 Nov 2019 14:10:37 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1iT4wD-0006n2-Tq; Fri, 08 Nov 2019 14:08:33 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT4wA-0006r9-R3
- for linux-arm-kernel@bombadil.infradead.org; Fri, 08 Nov 2019 14:08:30 +0000
+ id 1iT4w5-0006mf-2U
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 08 Nov 2019 14:08:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=xA0cX5X/Y7jat8grCqpD1sOGVRzZcJmvZ9p2WYzh3vE=; b=HAixXYSqRhTz7znaxN2A3nfYDP
- sEXnN22aMsYGbjrwtdEgVFr29xbNt/S1cJ41c0PemitCOKPOt5ECCpA0BrNZbO0URNgRWv+jK0ycB
- f6Rlc6znSiFlezv0Q+wEvDugNqYdOj3w9K7s79tEbY6vuwmjVUh0PN379+sbUB7e/KCGMtbF6aRcl
- oj521acNb4Lz12KATIQ5G2iQNaahQwEYfvoZpjjoD1DN0QeIUEBt6AN/onLZQjiviUeMlD26m0m1A
- 1fQKZap5aiOr3ExgGzZCYlZDhCIytEbjnL5WUVwQhXQmkqkxR/9e2eH/ErgibvNDxMgkdPHCHlsiQ
- 8Tp3XW9A==;
+ bh=gzTUYBIkXJ1W57nblxZsmDdm+3bOHZeJ65BTgfsNUL0=; b=AjtEofHBCY1pL6YSLWFzEpCEOR
+ oIuqZmANLGbPYtOfareJWlE6jGC0qkTC2oCvni7vpdXMsdmHEhCH+TnTmiWAjHe7wfcn4ouHaZDfy
+ x3FMI8a0p4/gC8LB/THEEVx1sGXt3HbBw6vjXbiYRRfs+/zfXz2VycfNSaBFudlAFcNphhg1bHLCQ
+ C2vULl/6MQ0X1O/n2QQDSmQmnaE5DyRy5hB4pzpcMW07RKRlspGFEZO0Pl06v4S5ED/JuCJPoeW/M
+ Hyq/ONO87TqXLJ9bg8NDvzWaJ/RCsWQnGQ0OLKYhAiZzPcd+DTs1Cr4WWDsf/01j/zYg3bTvhA1/X
+ ahRmpMVA==;
 Received: from relay7-d.mail.gandi.net ([217.70.183.200])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT4we-00056h-3x
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 14:09:02 +0000
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iT4w1-00044t-OW
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 14:08:23 +0000
 X-Originating-IP: 86.206.246.123
 Received: from localhost.localdomain
  (lfbn-tou-1-421-123.w86-206.abo.wanadoo.fr [86.206.246.123])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 8BC8F20006;
- Fri,  8 Nov 2019 14:07:47 +0000 (UTC)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 51C8620002;
+ Fri,  8 Nov 2019 14:07:48 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Mark Brown <broonie@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
  Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>
-Subject: [PATCH v2 1/7] spi: zynq-qspi: Anything else than CS0 is not
- supported yet
-Date: Fri,  8 Nov 2019 15:07:38 +0100
-Message-Id: <20191108140744.1734-2-miquel.raynal@bootlin.com>
+Subject: [PATCH v2 2/7] spi: zynq-qspi: Keep the naming consistent across the
+ driver
+Date: Fri,  8 Nov 2019 15:07:39 +0100
+Message-Id: <20191108140744.1734-3-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191108140744.1734-1-miquel.raynal@bootlin.com>
 References: <20191108140744.1734-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_140900_216893_071B1356 
-X-CRM114-Status: GOOD (  14.18  )
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [217.70.183.200 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,35 +86,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Unlike what the driver is currently advertizing, CS0 only can be used,
-CS1 is not supported at all. Prevent people to use CS1.
+In this driver (and also in a lot of other drivers in drivers/spi/),
+the spi_controller structure is sometimes referred as 'ctlr' and
+sometimes as 'ctrl'. Grepping there shows that 'ctlr' seems to be more
+common so keep the naming consistent in this driver and s/ctrl/ctlr/.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- drivers/spi/spi-zynq-qspi.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ drivers/spi/spi-zynq-qspi.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/spi/spi-zynq-qspi.c b/drivers/spi/spi-zynq-qspi.c
-index 5cf6993ddce5..713f9a03a40a 100644
+index 713f9a03a40a..641691f5dedf 100644
 --- a/drivers/spi/spi-zynq-qspi.c
 +++ b/drivers/spi/spi-zynq-qspi.c
-@@ -681,10 +681,14 @@ static int zynq_qspi_probe(struct platform_device *pdev)
+@@ -284,8 +284,8 @@ static void zynq_qspi_txfifo_op(struct zynq_qspi *xqspi, unsigned int size)
+  */
+ static void zynq_qspi_chipselect(struct spi_device *spi, bool assert)
+ {
+-	struct spi_controller *ctrl = spi->master;
+-	struct zynq_qspi *xqspi = spi_controller_get_devdata(ctrl);
++	struct spi_controller *ctlr = spi->master;
++	struct zynq_qspi *xqspi = spi_controller_get_devdata(ctlr);
+ 	u32 config_reg;
  
- 	ret = of_property_read_u32(np, "num-cs",
- 				   &num_cs);
--	if (ret < 0)
-+	if (ret < 0) {
- 		ctlr->num_chipselect = ZYNQ_QSPI_DEFAULT_NUM_CS;
--	else
-+	} else if (num_cs > ZYNQ_QSPI_DEFAULT_NUM_CS) {
-+		dev_err(&pdev->dev, "anything but CS0 is not yet supported\n");
-+		goto remove_master;
-+	} else {
- 		ctlr->num_chipselect = num_cs;
-+	}
+ 	config_reg = zynq_qspi_read(xqspi, ZYNQ_QSPI_CONFIG_OFFSET);
+@@ -365,10 +365,10 @@ static int zynq_qspi_config_op(struct zynq_qspi *xqspi, struct spi_device *spi)
+  */
+ static int zynq_qspi_setup_op(struct spi_device *spi)
+ {
+-	struct spi_controller *ctrl = spi->master;
+-	struct zynq_qspi *qspi = spi_controller_get_devdata(ctrl);
++	struct spi_controller *ctlr = spi->master;
++	struct zynq_qspi *qspi = spi_controller_get_devdata(ctlr);
  
- 	ctlr->mode_bits =  SPI_RX_DUAL | SPI_RX_QUAD |
- 			    SPI_TX_DUAL | SPI_TX_QUAD;
+-	if (ctrl->busy)
++	if (ctlr->busy)
+ 		return -EBUSY;
+ 
+ 	clk_enable(qspi->refclk);
 -- 
 2.20.1
 
