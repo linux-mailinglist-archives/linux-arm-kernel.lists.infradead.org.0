@@ -2,55 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A678DF5255
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:11:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5506CF525F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 18:13:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FILf+4bC63iU+vw1G9VJ5ZTXXeaKScgXDMvHovlDIfA=; b=HUyKkH6S4ZwIAR
-	Sor9a1WX/smIiH+1ZZSOVAAtVCvKE/veDpYDzJigl1VI5QUqft0pO6+3TbrhnB4yMakEt3LiaK9kh
-	Yau5lyEOgCHMHItDbqxg1OVB6xj/oDj8ICqfA9blxA6P7SxuC1v25y576YpGyN3R5jP3TXJL/h+ry
-	7/1HiLEzGnYlHuU2OTN87iZsOvMEPES+U9Fdv/g+/HrMdPmV9kPq5Rv8O/MQ0f7UyMT/eOsYuxkBO
-	HfqY0wu8Ks6bBZi0EQLIX+jITxZefaP34zJIR7YT47chfXNhXof0D8rj68sEKRDiy5V8ts5Z65Bmv
-	ym+w2WQi9hrr7lIRV34A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Emr5nrm400MXWQnArq+0Mj+Ig8LxYzAV5H/1dcwdm08=; b=mPlGX8Se52tQF3
+	qT0fUvBy+xwbOmKw2qXFaTQejna7unD9W5NCJ/AtiUDgoKRpFivIBYrzTs37wXg4Gr1fs6D9F8qmo
+	VWWWOXrTWfClIWA0DXoeq8diQoQ2RS4ej8zn6Qyscj8ffiS9EcRr7O4Hyb1gRoU9SwEyaHvNoxZsd
+	SBab2IyXYRQM7cew01LljQpcbrLDB540tWaTgFDLsKJmVglkO7xYyvEjkIn0b/QBfKSpCvFkV3AW5
+	mAK4sqoS1wbiMMVUQbNkohTL+Ul7uDWdJIwUChuv27dfExf1ITd35GdKH9NnEhMOhCe2LFndl05GM
+	R+rxvoO4wYHMqqS9pR1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT7nV-0004DJ-Q0; Fri, 08 Nov 2019 17:11:45 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT7nN-0004Ca-Ub
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:11:39 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 6A97381A1;
- Fri,  8 Nov 2019 17:12:11 +0000 (UTC)
-Date: Fri, 8 Nov 2019 09:11:32 -0800
-From: Tony Lindgren <tony@atomide.com>
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Subject: Re: [PATCH v3 07/12] omap: remove omap2_hsmmc_info in old hsmmc.[ch]
- and update Makefile
-Message-ID: <20191108171132.GM5610@atomide.com>
-References: <cover.1573122644.git.hns@goldelico.com>
- <c3e0a1392dd6d44fe8bde0161c508007f4abdd5f.1573122644.git.hns@goldelico.com>
+	id 1iT7oi-0004YT-4c; Fri, 08 Nov 2019 17:13:00 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iT7oW-0004X8-Cn
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 17:12:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Content-Transfer-Encoding:
+ MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=5t3aCnp4aTornyUqAhXLqPxQM6ip0uGUbLJYR2Z4rBs=; b=TLe24R6luQBf/fTFfkXgbzxbU
+ Q7e85mwvs2dBre3Qta35IFj5HYp8iANwY2qlND8FyRXJMU1gZPDViOFHjfBzk6tTSK9EunzuTu9Fz
+ a1yZoxDLLnD8PfKgXwA67Rrqh1h2PuKEoYGS8dfqPzsWADtMxtYnL0oM/XSdhvUSnNr6g=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iT7oU-0007lW-Ia; Fri, 08 Nov 2019 17:12:46 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id AE4EB2741460; Fri,  8 Nov 2019 17:12:45 +0000 (GMT)
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH v4 0/2] Improve KASLR diagnostics
+Date: Fri,  8 Nov 2019 17:12:42 +0000
+Message-Id: <20191108171244.48781-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c3e0a1392dd6d44fe8bde0161c508007f4abdd5f.1573122644.git.hns@goldelico.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_091138_021627_2078025D 
-X-CRM114-Status: UNSURE (   8.13  )
+X-CRM114-CacheID: sfid-20191108_091248_435445_FEB16332 
+X-CRM114-Status: UNSURE (   7.40  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,35 +77,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- devicetree@vger.kernel.org, Yangtao Li <tiny.windzz@gmail.com>,
- linux-wireless@vger.kernel.org, Kefeng Wang <wangkefeng.wang@huawei.com>,
- Bjorn Helgaas <bhelgaas@google.com>, letux-kernel@openphoenux.org,
- "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Kalle Valo <kvalo@codeaurora.org>, Petr Mladek <pmladek@suse.com>,
- =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
- kernel@pyra-handheld.com, Alexios Zavras <alexios.zavras@intel.com>,
- Rob Herring <robh+dt@kernel.org>, John Stultz <john.stultz@linaro.org>,
- David Sterba <dsterba@suse.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-omap@vger.kernel.org, Allison Randal <allison@lohutok.net>,
- linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Sakari Ailus <sakari.ailus@linux.intel.com>,
- netdev@vger.kernel.org
+Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* H. Nikolaus Schaller <hns@goldelico.com> [191107 10:32]:
-> There is a new driver in drivers/mmc/host/omap_hsmmc.c
-> configured by CONFIG_MMC_OMAP_HS and the last user
-> was the pdata-quirks for pandora.
+This series provides diagnostics on boot for KASLR to improve usability
+at runtime.
 
-Thanks for doing this:
+v4: Make kaslr_status static __initdata rather than __ro_after_init.
+v3: Still mask the seed from FDT when disabling from the command line.
+v2: Defer the print to a core_initcall() so we don't try and print
+    before printk() can cope, covering other less common error cases as
+    well and also an explicit message when KASLR is enabled.
 
-Acked-by: Tony Lindgren <tony@atomide.com>
+Mark Brown (2):
+  arm64: kaslr: Announce KASLR status on boot
+  arm64: kaslr: Check command line before looking for a seed
+
+ arch/arm64/kernel/kaslr.c | 44 +++++++++++++++++++++++++++++++++++----
+ 1 file changed, 40 insertions(+), 4 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
