@@ -2,52 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24CF7F5AED
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 23:33:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2411F5B1F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 23:40:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QCSLkTZux6r0U2DBcQdBsw7Nrln1PwdTAPB6vBa3NA8=; b=FI6GTWSLvZ4V40
-	h7ZBK6mtJjZ9+qbmOTxcvqOA7M50tAiV3neSamki/SfBquuReBqdHlivXrxYeJWf4MYl7DIMTwt8c
-	GoULqO77ReYnAmZHlSVqGNsrJJwlU8SSG/nS15jey9HBodiheL1Zw3mzCRJkXYJx5inFvm91AhJbu
-	FbSkPyMpP/ZqwpehOicZn6yDGLSthDT47UCNp0ZO7bXXcbpqOvwreVco31XdIxCxjgl56p8wQB2KI
-	jwkhc6AG5BRxOE1gxBzd/oec/jITUlMIflu/jqFO2YnZEjjhJWsfkB+QVerp5B6aVwzpui3qNJ5g+
-	FTHIpjaV0EmCIm7PezIA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=g8POHXL62M6lIG8udo875o0++Ujqbdlxvk2QTVgaHGI=; b=D5J
+	coPYomTQcVZNv9nWnD8L3UEeiMJVsILLpsy8Vh7yAsHbPHnsm8HQnTKDw8dPErBKN7HRvF9BTCk4P
+	Nu1pirvn3AJqiwiFXaD7/+N1cKigCWiiKRBLCdecYgX41Tr7jmqQpPeHSdlAn+j7BnPDsDN3o35pj
+	H5HK3ruVdiSo3jsSZoRrsP0ofXBTdWSJEl/UPCjaJzLSU/ICL9AlSNWwS0YS7Jf+wQtlgRRlRDGDT
+	ue7xihnGrlOMqBkP1BS5gL7oj3YDOMkwhPfg3l5ecs+HXSnfiVzvIZvQ6C/CDwR45lg9cfB3OEWSX
+	HRH4/7gZm/YhoK/lRfwoX0nbwMTGMyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTCoL-0004Qn-NU; Fri, 08 Nov 2019 22:32:57 +0000
-Received: from relay.sw.ru ([185.231.240.75])
+	id 1iTCva-0000Qy-CS; Fri, 08 Nov 2019 22:40:26 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTCo8-0004Fh-PP
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 22:32:46 +0000
-Received: from [192.168.15.61] by relay.sw.ru with esmtp (Exim 4.92.3)
- (envelope-from <aryabinin@virtuozzo.com>)
- id 1iTCnz-0006wD-JO; Sat, 09 Nov 2019 01:32:35 +0300
-Subject: Re: [PATCH v3 1/2] kasan: detect negative size in memory operation
- function
-To: Walter Wu <walter-zh.wu@mediatek.com>,
- Alexander Potapenko <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>
-References: <20191104020519.27988-1-walter-zh.wu@mediatek.com>
-From: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Message-ID: <34bf9c08-d2f2-a6c6-1dbe-29b1456d8284@virtuozzo.com>
-Date: Sat, 9 Nov 2019 01:31:12 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <20191104020519.27988-1-walter-zh.wu@mediatek.com>
-Content-Language: en-US
+ id 1iTCvO-0000Nb-Ay
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 22:40:16 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6086F1A01BE;
+ Fri,  8 Nov 2019 23:40:09 +0100 (CET)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 48F2F1A0181;
+ Fri,  8 Nov 2019 23:40:09 +0100 (CET)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 387D5205CD;
+ Fri,  8 Nov 2019 23:40:08 +0100 (CET)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>, MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH v4 0/6] PM / devfreq: Add dynamic scaling for imx8m ddr
+ controller
+Date: Sat,  9 Nov 2019 00:39:50 +0200
+Message-Id: <cover.1573252696.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_143244_829576_B62D3C68 
-X-CRM114-Status: GOOD (  19.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191108_144014_663330_D8A07436 
+X-CRM114-Status: GOOD (  11.16  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,189 +66,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, kasan-dev@googlegroups.com,
- wsd_upstream <wsd_upstream@mediatek.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
+ Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
+ Alexandre Bailon <abailon@baylibre.com>, linux-clk@vger.kernel.org,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Matthias Kaehlcke <mka@chromium.org>, linux-imx@nxp.com,
+ devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Martin Kepplinger <martink@posteo.de>, linux-arm-kernel@lists.infradead.org,
+ Dong Aisheng <aisheng.dong@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This adds support for dynamic scaling of the DDR Controller (ddrc) present in
+imx8m series. Actual frequency switching is implemented inside TF-A, this
+driver wraps the SMC calls and synchronizes the clk tree.
 
+DRAM frequency switching requires clock manipulation but during this operation
+DRAM itself is briefly inaccessible so this operation is performed a SMC call
+to by TF-A which runs from a SRAM area. Upon returning to linux the clock tree
+is updated to correspond to hardware configuration.
 
-On 11/4/19 5:05 AM, Walter Wu wrote:
+This is handled via CLK_GET_RATE_NO_CACHE for dividers but muxes are handled
+manually: the driver will prepare/enable the new parents ahead of switching (so
+that the expected roots are enabled) and afterwards it will call clk_set_parent
+to ensure the parents in clock framework are up-to-date.
 
-> 
-> diff --git a/mm/kasan/common.c b/mm/kasan/common.c
-> index 6814d6d6a023..4ff67e2fd2db 100644
-> --- a/mm/kasan/common.c
-> +++ b/mm/kasan/common.c
-> @@ -99,10 +99,14 @@ bool __kasan_check_write(const volatile void *p, unsigned int size)
->  }
->  EXPORT_SYMBOL(__kasan_check_write);
->  
-> +extern bool report_enabled(void);
-> +
->  #undef memset
->  void *memset(void *addr, int c, size_t len)
->  {
-> -	check_memory_region((unsigned long)addr, len, true, _RET_IP_);
-> +	if (report_enabled() &&
-> +	    !check_memory_region((unsigned long)addr, len, true, _RET_IP_))
-> +		return NULL;
->  
->  	return __memset(addr, c, len);
->  }
-> @@ -110,8 +114,10 @@ void *memset(void *addr, int c, size_t len)
->  #undef memmove
->  void *memmove(void *dest, const void *src, size_t len)
->  {
-> -	check_memory_region((unsigned long)src, len, false, _RET_IP_);
-> -	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-> +	if (report_enabled() &&
-> +	   (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-> +	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_)))
-> +		return NULL;
->  
->  	return __memmove(dest, src, len);
->  }
-> @@ -119,8 +125,10 @@ void *memmove(void *dest, const void *src, size_t len)
->  #undef memcpy
->  void *memcpy(void *dest, const void *src, size_t len)
->  {
-> -	check_memory_region((unsigned long)src, len, false, _RET_IP_);
-> -	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-> +	if (report_enabled() &&
+This series is atomically useful and roughly similar to devfreq drivers for
+tegra and rockchip.
 
-            report_enabled() checks seems to be useless.
+Running at lower dram rates saves power but can affect the functionality of
+other blocks in the chip (display, vpu etc). Support for in-kernel constraints
+will some separately.
 
-> +	   (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-> +	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_)))
-> +		return NULL;
->  
->  	return __memcpy(dest, src, len);
->  }
-> diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
-> index 616f9dd82d12..02148a317d27 100644
-> --- a/mm/kasan/generic.c
-> +++ b/mm/kasan/generic.c
-> @@ -173,6 +173,11 @@ static __always_inline bool check_memory_region_inline(unsigned long addr,
->  	if (unlikely(size == 0))
->  		return true;
->  
-> +	if (unlikely((long)size < 0)) {
+Angus/Martin: You previously attempted to test on purism boards, this updated
+version should work without hacks and has no dependencies.
 
-        if (unlikely(addr + size < addr)) {
+Changes since v3:
+* Rename to imx8m-ddrc. Similar blocks are present on imx7d and imx8qxp/imx8qm
+but soc integration is different.
+* Move dt bindings to /memory-controllers/fsl/
+* Fix dt validation issues
+* Fix imx8mm.dtsi ddrc referencing ddrc_opp_table which is only defined in evk
+* Move opps to child of ddrc device node
+* Only add imx_ddrc_get_dev_status in perf patch.
+* Adjust print messages
+Link to v3: https://patchwork.kernel.org/cover/11221935/
 
-> +		kasan_report(addr, size, write, ret_ip);
-> +		return false;
-> +	}
-> +
->  	if (unlikely((void *)addr <
->  		kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
->  		kasan_report(addr, size, write, ret_ip);
-> diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
-> index 36c645939bc9..52a92c7db697 100644
-> --- a/mm/kasan/generic_report.c
-> +++ b/mm/kasan/generic_report.c
-> @@ -107,6 +107,24 @@ static const char *get_wild_bug_type(struct kasan_access_info *info)
->  
->  const char *get_bug_type(struct kasan_access_info *info)
->  {
-> +	/*
-> +	 * If access_size is negative numbers, then it has three reasons
-> +	 * to be defined as heap-out-of-bounds bug type.
-> +	 * 1) Casting negative numbers to size_t would indeed turn up as
-> +	 *    a large size_t and its value will be larger than ULONG_MAX/2,
-> +	 *    so that this can qualify as out-of-bounds.
-> +	 * 2) If KASAN has new bug type and user-space passes negative size,
-> +	 *    then there are duplicate reports. So don't produce new bug type
-> +	 *    in order to prevent duplicate reports by some systems
-> +	 *    (e.g. syzbot) to report the same bug twice.
-> +	 * 3) When size is negative numbers, it may be passed from user-space.
-> +	 *    So we always print heap-out-of-bounds in order to prevent that
-> +	 *    kernel-space and user-space have the same bug but have duplicate
-> +	 *    reports.
-> +	 */
- 
-Completely fail to understand 2) and 3). 2) talks something about *NOT* producing new bug
-type, but at the same time you code actually does that.
-3) says something about user-space which have nothing to do with kasan.
+Leonard Crestez (6):
+  clk: imx8m: Set CLK_GET_RATE_NOCACHE on dram clocks
+  clk: imx: Mark dram pll on 8mm and 8mn with CLK_GET_RATE_NOCACHE
+  dt-bindings: memory: Add bindings for imx8m ddr controller
+  PM / devfreq: Add dynamic scaling for imx8m ddr controller
+  PM / devfreq: imx8m-ddrc: Measure bandwidth with perf
+  arm64: dts: imx8m: Add ddr controller nodes
 
-> +	if ((long)info->access_size < 0)
+ .../memory-controllers/fsl/imx8m-ddrc.yaml    |  61 ++
+ arch/arm64/boot/dts/freescale/imx8mm-evk.dts  |  18 +
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi     |  13 +-
+ .../boot/dts/freescale/imx8mn-ddr4-evk.dts    |  18 +
+ arch/arm64/boot/dts/freescale/imx8mn.dtsi     |  13 +-
+ arch/arm64/boot/dts/freescale/imx8mq-evk.dts  |  24 +
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi     |  13 +-
+ drivers/clk/imx/clk-imx8mm.c                  |  13 +-
+ drivers/clk/imx/clk-imx8mn.c                  |  14 +-
+ drivers/clk/imx/clk-imx8mq.c                  |  15 +-
+ drivers/clk/imx/clk-pll14xx.c                 |   7 +
+ drivers/clk/imx/clk.h                         |   1 +
+ drivers/devfreq/Kconfig                       |  10 +
+ drivers/devfreq/Makefile                      |   1 +
+ drivers/devfreq/imx8m-ddrc.c                  | 569 ++++++++++++++++++
+ 15 files changed, 777 insertions(+), 13 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
+ create mode 100644 drivers/devfreq/imx8m-ddrc.c
 
-        if (info->access_addr + info->access_size < info->access_addr)
+-- 
+2.17.1
 
-> +		return "heap-out-of-bounds";
-> +
->  	if (addr_has_shadow(info->access_addr))
->  		return get_shadow_bug_type(info);
->  	return get_wild_bug_type(info);
-> diff --git a/mm/kasan/report.c b/mm/kasan/report.c
-> index 621782100eaa..c79e28814e8f 100644
-> --- a/mm/kasan/report.c
-> +++ b/mm/kasan/report.c
-> @@ -446,7 +446,7 @@ static void print_shadow_for_address(const void *addr)
->  	}
->  }
->  
-> -static bool report_enabled(void)
-> +bool report_enabled(void)
->  {
->  	if (current->kasan_depth)
->  		return false;
-> diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
-> index 0e987c9ca052..b829535a3ad7 100644
-> --- a/mm/kasan/tags.c
-> +++ b/mm/kasan/tags.c
-> @@ -86,6 +86,11 @@ bool check_memory_region(unsigned long addr, size_t size, bool write,
->  	if (unlikely(size == 0))
->  		return true;
->  
-> +	if (unlikely((long)size < 0)) {
-
-        if (unlikely(addr + size < addr)) {
-
-> +		kasan_report(addr, size, write, ret_ip);
-> +		return false;
-> +	}
-> +
->  	tag = get_tag((const void *)addr);
->  
->  	/*
-> diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
-> index 969ae08f59d7..f7ae474aef3a 100644
-> --- a/mm/kasan/tags_report.c
-> +++ b/mm/kasan/tags_report.c
-> @@ -36,6 +36,24 @@
->  
->  const char *get_bug_type(struct kasan_access_info *info)
->  {
-> +	/*
-> +	 * If access_size is negative numbers, then it has three reasons
-> +	 * to be defined as heap-out-of-bounds bug type.
-> +	 * 1) Casting negative numbers to size_t would indeed turn up as
-> +	 *    a large size_t and its value will be larger than ULONG_MAX/2,
-> +	 *    so that this can qualify as out-of-bounds.
-> +	 * 2) If KASAN has new bug type and user-space passes negative size,
-> +	 *    then there are duplicate reports. So don't produce new bug type
-> +	 *    in order to prevent duplicate reports by some systems
-> +	 *    (e.g. syzbot) to report the same bug twice.
-> +	 * 3) When size is negative numbers, it may be passed from user-space.
-> +	 *    So we always print heap-out-of-bounds in order to prevent that
-> +	 *    kernel-space and user-space have the same bug but have duplicate
-> +	 *    reports.
-> +	 */
-> +	if ((long)info->access_size < 0)
-
-        if (info->access_addr + info->access_size < info->access_addr)
-
-> +		return "heap-out-of-bounds";
-> +
->  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
->  	struct kasan_alloc_meta *alloc_meta;
->  	struct kmem_cache *cache;
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
