@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBF72F4CE5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:14:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB1B7F4CEA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 Nov 2019 14:15:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QhYrvMLj04NqAQnGmL2tMKu5FXTooTC8w3mVVR9YRX8=; b=ppmtmhXopN7FuQ
-	ufAuSS11ECfJMhslJGvsmgxMystUyH7ue1byYyppZbfd/TfStmVpYoFgW+pIRcuIsABuN8Ato8+O0
-	tYmgHj7+beEU8K4Uzlja2CM3O/tFDCzZcTGlbtvw/w4OIQTF27cMARIfF7HCBAgMhfyfNB/pqj/ae
-	8pBuFv+Ym6dB1xdoBvsdmJAe6bVJWqrXd3nG9Ir/EYfKXMka65/dpQ+f7tz238IZ4yQF/jxsStHxH
-	+WpuJGRFhcZ4sjjMMdJxz9O+z8kmos8TzjT4nmR4GSdxFnNx0nkhdBtJGKM1Vz74CZrFsA9/2JG0D
-	bwyolAMuHgHfYqFOn3/g==;
+	List-Owner; bh=EZCSoIymDvcKNR3AtsUgsb9o5Svz05n0+CGNj8rlyEY=; b=SKIpELB40m67VK
+	afasIkZdolThBFoHZlu3ZhVRp+fah4LK0sAETZHYVWqcVwr7Dt4+mq8KPiUv1/OY542XmkyVSf4g2
+	RcsZ2Qq7MsMAQ28bN5W31P1T88qH1m8sAuFR265JRaiYMjooAk8CL1AC4P8tlbJBqk6+B6CO4QQGi
+	n7hCsdjbpL1x+jebYb5ip+NB9JsrwwX+B00xG0kXKNaGrlso9o02E7qEsPBMEvlXTJwflNuw3qhwT
+	wk+YHv2X+yaLMR6+SNpTMSp+vDyfW3HHXy7IipmBSx/7LueETFel9r2frSGtIcOVXQflO0yL20PPl
+	Zgs4bbIVOgstghotrcag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT45p-0000Rf-6G; Fri, 08 Nov 2019 13:14:25 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1iT46l-0001Kw-6d; Fri, 08 Nov 2019 13:15:23 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT3u9-0004s0-1l
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:24 +0000
-Received: by mail-lj1-x243.google.com with SMTP id g3so6105206ljl.11
+ id 1iT3uA-0004s8-1A
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 13:02:26 +0000
+Received: by mail-lf1-x141.google.com with SMTP id y6so4423423lfj.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 05:02:20 -0800 (PST)
+ Fri, 08 Nov 2019 05:02:21 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=FL4wefDICHo32h9247H9jmqyY6zv5MUtAqMoiveQx9g=;
- b=WM3db+UZNX0xYRn8xFInkWCZ/gGBxlESeid8dXGQU2p17G2KmYfmQKEJM/6nxdjVkz
- dcCfwIBMRd3gygzYVu0IHJtJgUPU16y1N7AQMDT6+xP5d6gPmR+R/fMCMBXpDEu/jhZJ
- wIS2GKrKi2LdTuVlyChuB3CdPaAYkTSGlI7eg=
+ bh=uKxtxAnStDtPqjNJxBgJ+/b3/LBB3oZn+H7vofIc/Cg=;
+ b=OMJjEfRd48l9yUpyE2357XcIsRJLdOdGu6cqnnbciUlwZHeZovkZpyp0t0N/AXUB0G
+ mmPymXL+MPaOrKkaQbKIZvzq8vi1p6BeMnR73GkDYliRrt73eSaJgjoKJvIjcrt4ppVh
+ teAlmhXN/Smyo6qtACnfhoCrC+ohYMOVNT7Ag=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=FL4wefDICHo32h9247H9jmqyY6zv5MUtAqMoiveQx9g=;
- b=Mskt0hpM1+M2vGmYLc1UnbCA2KItj8sB1yCNP3/zGFtRB4xaceyhSJo1vO7mL1J5Pw
- vNg3yyUU4pEl7uzmXEL/RXI0mABQNbZc18siY39ZcQw8SydT59FhCay3AxigIVCGCay2
- tFhk0LJSLYckfybfAJE63l6aYnOpoq8sCnfb8JBt4gP8JVzTvpUEClSAjy0Cqe5nAAX6
- 9N6sfo2NCbXVoiwj4erVoG0v8dU82YewKRWhfWeQHTgj2eMCsZ9GSvUQtlVh7zD3jf57
- IH1ADohRh09aqn2VtERhzAB9XY6qeRm/pRvzJujI1Imc6QgOqDj6xMurh8VXjwicuKGd
- RneQ==
-X-Gm-Message-State: APjAAAUJpfR7yViNw9uz/UyvvfB9Ld+WziQK2k0s99dwWInQDJzuNvl3
- LsLzXqX4+dv8EOvKoRbheJ4pXw==
-X-Google-Smtp-Source: APXvYqzCkS9lqjETR7JbwYC8m9Tz96BZoapb1R12xn90SEX0h1M81nDkrgY6B1mLpdktlcuraWeZvg==
-X-Received: by 2002:a2e:9a53:: with SMTP id k19mr5922502ljj.246.1573218139469; 
- Fri, 08 Nov 2019 05:02:19 -0800 (PST)
+ bh=uKxtxAnStDtPqjNJxBgJ+/b3/LBB3oZn+H7vofIc/Cg=;
+ b=gAEnD6Bcqr2A/t9F5EEjGPttsu9ECNkO//FiQNwQ0wzt4FKc8vt8aReT5XHTxNw2ZX
+ LegYwyc8CvfQm2PsWiTY5onJX8nXe/KhDFUFs9r9d2sRRfEZI0Zytgm+jvXHvDwExmMA
+ BiczPMeGWG1xHXs6AytRQKN6MVxlHHU08mT7AkzhvbjXFdahoCwOPSeE24emE4smfVLy
+ pbLhBjbUGeF7vKszdY25Rg2TmZHIAiQ9EX+KtswzeR9kRMXymakcpNDu0o4WlusaCF+e
+ XTyp9+0BplMAIyoiUNMOCxlLOhhUYCfIxEdqvsB39hmr2nM3UeSEGWqR4ilk0zgsYZDj
+ vuvg==
+X-Gm-Message-State: APjAAAVsxeSgwFHQXnAXA10IsxwLtOwzKE7H0JzjcXG78ldA95rpTKVF
+ 86wkYiDQDrlbjb9CchtpTe+8zQ==
+X-Google-Smtp-Source: APXvYqzW9GccVQq0zDWdsR9ctlnzwu1b/T1nps4OEjOIXr9eNiXW/Fjo4xt7Q+aH6wPhZ4yaknWlsg==
+X-Received: by 2002:a19:706:: with SMTP id 6mr1175198lfh.93.1573218140577;
+ Fri, 08 Nov 2019 05:02:20 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.02.18
+ by smtp.gmail.com with ESMTPSA id d28sm2454725lfn.33.2019.11.08.05.02.19
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 05:02:18 -0800 (PST)
+ Fri, 08 Nov 2019 05:02:20 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v4 41/47] soc: fsl: qe: drop pointless check in qe_sdma_init()
-Date: Fri,  8 Nov 2019 14:01:17 +0100
-Message-Id: <20191108130123.6839-42-linux@rasmusvillemoes.dk>
+Subject: [PATCH v4 42/47] soc: fsl: qe: avoid IS_ERR_VALUE in ucc_fast.c
+Date: Fri,  8 Nov 2019 14:01:18 +0100
+Message-Id: <20191108130123.6839-43-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_050222_572466_0A6B696D 
-X-CRM114-Status: UNSURE (   9.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191108_050222_624483_4C667F49 
+X-CRM114-Status: GOOD (  13.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,29 +103,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The sdma member of struct qe_immap is not at offset zero, so even if
-qe_immr wasn't initialized yet (i.e. NULL), &qe_immr->sdma would not
-be NULL.
+When building this on a 64-bit platform gcc rightly warns that the
+error checking is broken (-ENOMEM stored in an u32 does not compare
+greater than (unsigned long)-MAX_ERRNO). Instead, change the
+ucc_fast_[tr]x_virtual_fifo_base_offset members to s32 and use an
+ordinary check-for-negative. Also, this avoids treating 0 as "this
+cannot have been returned from qe_muram_alloc() so don't free it".
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/soc/fsl/qe/qe.c | 3 ---
- 1 file changed, 3 deletions(-)
+ drivers/soc/fsl/qe/ucc_fast.c | 15 ++++++---------
+ include/soc/fsl/qe/ucc_fast.h |  4 ++--
+ 2 files changed, 8 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/soc/fsl/qe/qe.c b/drivers/soc/fsl/qe/qe.c
-index 5bf279c679ef..96c2057d8d8e 100644
---- a/drivers/soc/fsl/qe/qe.c
-+++ b/drivers/soc/fsl/qe/qe.c
-@@ -367,9 +367,6 @@ static int qe_sdma_init(void)
- 	struct sdma __iomem *sdma = &qe_immr->sdma;
- 	static s32 sdma_buf_offset = -ENOMEM;
+diff --git a/drivers/soc/fsl/qe/ucc_fast.c b/drivers/soc/fsl/qe/ucc_fast.c
+index ca0452497a20..ad6193ea4597 100644
+--- a/drivers/soc/fsl/qe/ucc_fast.c
++++ b/drivers/soc/fsl/qe/ucc_fast.c
+@@ -197,6 +197,8 @@ int ucc_fast_init(struct ucc_fast_info * uf_info, struct ucc_fast_private ** ucc
+ 			__func__);
+ 		return -ENOMEM;
+ 	}
++	uccf->ucc_fast_tx_virtual_fifo_base_offset = -1;
++	uccf->ucc_fast_rx_virtual_fifo_base_offset = -1;
  
--	if (!sdma)
--		return -ENODEV;
+ 	/* Fill fast UCC structure */
+ 	uccf->uf_info = uf_info;
+@@ -265,10 +267,9 @@ int ucc_fast_init(struct ucc_fast_info * uf_info, struct ucc_fast_private ** ucc
+ 	/* Allocate memory for Tx Virtual Fifo */
+ 	uccf->ucc_fast_tx_virtual_fifo_base_offset =
+ 	    qe_muram_alloc(uf_info->utfs, UCC_FAST_VIRT_FIFO_REGS_ALIGNMENT);
+-	if (IS_ERR_VALUE(uccf->ucc_fast_tx_virtual_fifo_base_offset)) {
++	if (uccf->ucc_fast_tx_virtual_fifo_base_offset < 0) {
+ 		printk(KERN_ERR "%s: cannot allocate MURAM for TX FIFO\n",
+ 			__func__);
+-		uccf->ucc_fast_tx_virtual_fifo_base_offset = 0;
+ 		ucc_fast_free(uccf);
+ 		return -ENOMEM;
+ 	}
+@@ -278,10 +279,9 @@ int ucc_fast_init(struct ucc_fast_info * uf_info, struct ucc_fast_private ** ucc
+ 		qe_muram_alloc(uf_info->urfs +
+ 			   UCC_FAST_RECEIVE_VIRTUAL_FIFO_SIZE_FUDGE_FACTOR,
+ 			   UCC_FAST_VIRT_FIFO_REGS_ALIGNMENT);
+-	if (IS_ERR_VALUE(uccf->ucc_fast_rx_virtual_fifo_base_offset)) {
++	if (uccf->ucc_fast_rx_virtual_fifo_base_offset < 0) {
+ 		printk(KERN_ERR "%s: cannot allocate MURAM for RX FIFO\n",
+ 			__func__);
+-		uccf->ucc_fast_rx_virtual_fifo_base_offset = 0;
+ 		ucc_fast_free(uccf);
+ 		return -ENOMEM;
+ 	}
+@@ -384,11 +384,8 @@ void ucc_fast_free(struct ucc_fast_private * uccf)
+ 	if (!uccf)
+ 		return;
+ 
+-	if (uccf->ucc_fast_tx_virtual_fifo_base_offset)
+-		qe_muram_free(uccf->ucc_fast_tx_virtual_fifo_base_offset);
 -
- 	/* allocate 2 internal temporary buffers (512 bytes size each) for
- 	 * the SDMA */
- 	if (sdma_buf_offset < 0) {
+-	if (uccf->ucc_fast_rx_virtual_fifo_base_offset)
+-		qe_muram_free(uccf->ucc_fast_rx_virtual_fifo_base_offset);
++	qe_muram_free(uccf->ucc_fast_tx_virtual_fifo_base_offset);
++	qe_muram_free(uccf->ucc_fast_rx_virtual_fifo_base_offset);
+ 
+ 	if (uccf->uf_regs)
+ 		iounmap(uccf->uf_regs);
+diff --git a/include/soc/fsl/qe/ucc_fast.h b/include/soc/fsl/qe/ucc_fast.h
+index e9cc46042a83..ba0e838f962a 100644
+--- a/include/soc/fsl/qe/ucc_fast.h
++++ b/include/soc/fsl/qe/ucc_fast.h
+@@ -188,9 +188,9 @@ struct ucc_fast_private {
+ 	int stopped_tx;		/* Whether channel has been stopped for Tx
+ 				   (STOP_TX, etc.) */
+ 	int stopped_rx;		/* Whether channel has been stopped for Rx */
+-	u32 ucc_fast_tx_virtual_fifo_base_offset;/* pointer to base of Tx
++	s32 ucc_fast_tx_virtual_fifo_base_offset;/* pointer to base of Tx
+ 						    virtual fifo */
+-	u32 ucc_fast_rx_virtual_fifo_base_offset;/* pointer to base of Rx
++	s32 ucc_fast_rx_virtual_fifo_base_offset;/* pointer to base of Rx
+ 						    virtual fifo */
+ #ifdef STATISTICS
+ 	u32 tx_frames;		/* Transmitted frames counter. */
 -- 
 2.23.0
 
