@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9B79F5C57
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 Nov 2019 01:39:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3F60F5C59
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 Nov 2019 01:40:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V+dk+FOoo2eVKZ0QFw1x6X4eYlhPJ+pdnoeg9+RKp+E=; b=b8WcyV8DKDqjpa
-	KSEdhqNGCU3bILJSz71t6BQZWRxgXG1yILS7LAZ68qLqa7Qc4IX8EaDJebuW1m264jLvup7qszeKj
-	MhHz54SKeiNC4x3N7sekRIcQDfzMcGjZpDziBfoPVGjsZyFCyoQsgUW3Y3YguGVolWuj/SSQOLis/
-	mrQKrsgVmhRIYcEiThAK8MpN/tRvRCcd2Ef1IdlrECM8jXiUwzrnCuxwKKL9mwufskvt0e6T/TeBH
-	UTx7pASWxegaWcM9VIcf+jN9AU/XkyD7cBwP2kvRreJXxILpDXJdVlXY1ej15oPmwUqmRA9u+ZNbT
-	MoeCJxPjuvQktGdGfVhA==;
+	List-Owner; bh=F3SV0Zcq6Zfu3UO7r1tUgw1Y+bTUJ2m7pxTzCSQa+gM=; b=eUqYsbZtcxttsB
+	voyml7yM8ZSUuc0sk184SclMsqoy4/m8vLXN77jgUEhMZwro2jV1KaGy1QAsvQTcSxhRDUmSbER1F
+	VxbxAqKvG3st7aDVGjjeR1dZTrU8/jIp25q5XF214kDBUzn4Q/1e/4/PI+SSUetz3AUO3td+0ZECz
+	sHvdpViGPWql6ZVV6yadImzQHATK/T42bXlqPibvIsony3C76V6zlnYDYXMMHSJADoakN5gsroORr
+	J3DwFLF388eWJ/VvLs0WlFTRWqO1dUINWeTKb/BBfy5XrVrnNiTJV1dy7FrKpjLcalEak+Lygf/5d
+	nJlEN+EtsKb+qbU7c0Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTEms-0006DI-7w; Sat, 09 Nov 2019 00:39:34 +0000
+	id 1iTEnA-0006M1-0v; Sat, 09 Nov 2019 00:39:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTEmi-00069O-1q
- for linux-arm-kernel@lists.infradead.org; Sat, 09 Nov 2019 00:39:25 +0000
+ id 1iTEml-0006En-QY
+ for linux-arm-kernel@lists.infradead.org; Sat, 09 Nov 2019 00:39:29 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CD2502084D;
- Sat,  9 Nov 2019 00:39:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6B2522084D;
+ Sat,  9 Nov 2019 00:39:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573259962;
- bh=a4IHuZ61Ijn02rgp1IVvNjlu4o9WcpWH0qgKMKOhXEs=;
+ s=default; t=1573259967;
+ bh=Zoy+Jor0H6I7/s2IE2TARJT4+Ubh8LGgJ+gtSJ+8LbY=;
  h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
- b=F+QVh3FPu2f6iuZdfwfen7v/CoZqm37zXzLStBKSRV46FSCwCO6wf8KtP4g/c3Ik2
- 9vFJtd8UhMVNg5ZwXUZkWUS1UX40mLJdRkYrhZs+83BwnWYPkskIsC/U+0T26iHmYw
- xclolNxKAcwP9hbjblTV1/xFhlpMrYv2JqedjsJc=
+ b=nyup2dHU9/Ot1e1cVH2wGG5dNaYe8A0krkENP84atRDzdP7txwC85ZNonphd7QlPN
+ Ya3tHHs3tYbSjre7QAiDCt+PFvoAz+MtT+JJTPIPVQXMu1EdJODEvOUfVTWQ+HqAM8
+ FBcCFv1Iu1LYQHLFfac3wa4rfPewn7sGfKHnlTlg=
 MIME-Version: 1.0
-In-Reply-To: <20191016125919.1773898-3-thierry.reding@gmail.com>
+In-Reply-To: <20191016125919.1773898-2-thierry.reding@gmail.com>
 References: <20191016125919.1773898-1-thierry.reding@gmail.com>
- <20191016125919.1773898-3-thierry.reding@gmail.com>
+ <20191016125919.1773898-2-thierry.reding@gmail.com>
 From: Stephen Boyd <sboyd@kernel.org>
 To: Michael Turquette <mturquette@baylibre.com>,
  Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH 2/5] clk: tegra: Move SOR0 implementation to Tegra124
+Subject: Re: [PATCH 1/5] clk: tegra: Remove last remains of
+ TEGRA210_CLK_SOR1_SRC
 User-Agent: alot/0.8.1
-Date: Fri, 08 Nov 2019 16:39:22 -0800
-Message-Id: <20191109003922.CD2502084D@mail.kernel.org>
+Date: Fri, 08 Nov 2019 16:39:26 -0800
+Message-Id: <20191109003927.6B2522084D@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_163924_114427_28440FCD 
-X-CRM114-Status: UNSURE (   7.48  )
+X-CRM114-CacheID: sfid-20191108_163927_916938_77F02938 
+X-CRM114-Status: UNSURE (   8.06  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -86,13 +87,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Thierry Reding (2019-10-16 05:59:16)
+Quoting Thierry Reding (2019-10-16 05:59:15)
 > From: Thierry Reding <treding@nvidia.com>
 > 
-> The SOR0 clock on Tegra210 is very different from the SOR0 clock found
-> on Tegra124. Move the Tegra124 implementation to the Tegra124 driver so
-> that a custom implementation can be provided on Tegra210 without
-> clashing with the existing clock.
+> Later SoC generations implement this clock as SOR1_OUT. For consistency,
+> the Tegra210 implementation was adapted to match the same name in commit
+> 4d1dc4018573 ("dt-bindings: clock: tegra: Add sor1_out clock").
+> 
+> Clean up the remaining pieces by adopting the new name for the internal
+> identifiers and remove the old alias. Note that since both SOR1_SRC and
+> SOR1_OUT were referring to the same device tree clock ID, this does not
+> break device tree ABI.
 > 
 > Signed-off-by: Thierry Reding <treding@nvidia.com>
 > ---
