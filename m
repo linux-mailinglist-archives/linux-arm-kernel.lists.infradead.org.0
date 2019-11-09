@@ -2,88 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5576EF5E8F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 Nov 2019 11:57:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12E5AF5E98
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 Nov 2019 12:08:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=B4MHBBhErIN53aks4pcxBqaFRdSyA1F8trBd7mni5/U=; b=gA7
-	O/VEH2Wzmbe7tyzIqa/ipGMNbzs3+T9/YMxL3HcCRdflkJd1CZZmAemGy/xUC3iwVIlxMgABcFGB+
-	RL6pK+wMx8sRiQyNayqShxMLapsIRa2hs0hMxdKYb6TB6c/jDePfiwY5y6uah1PFmXx7fNSmkTo16
-	rN4QvivIi2X+wHlCBFFzqwwqKpcJJoPRww/33uErP3CgOWlzfwwWj+funBEhYwHgth2ZBXTiC36GS
-	1hi8WR1jeVd/XQ1jmBAgKh3rS4cIsT9uEvRwd7eRP/9RFotOUJomEXD12PpIWaDtIKo+mHRjCdQ4l
-	hrtIWT2q0fLvyqpl8euy3SDMJegQX2g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MM/XKO/+A3zNtKvGq7Z8W7obUGe2uAN/MhyUuzOMefg=; b=FPK53Zm/cxzHgX
+	0dED1oZeGe1nOFszi7mZ5VTFcQK8aE22zJBST2IIrN1OdaNqiRamNwf4Yu7k9po0VrnBRtMKp9qED
+	CyS+yOjVLVougURstwHfE4bITq1BuTr9kto0Xg0ozyFiMqA2Fl5DUNdW5CeDlcZCh66HaxouWp67d
+	sYWM2hM/TV8b/NGRyjvSxFvHZImR+b70ILZyaJAlfAO5ZHXpR4Kn38mKlwnNQV/pMH09vfapOza43
+	nYrGX1B5F9/y6SxT1I8ycYovHv6m29ND+P0NWUh08Zadf8WLlI9QNROclQCmwcBYlJcA9d80YvCmT
+	QNzD/Zz91Ek8c2SMn7Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTOQU-0003SU-Dg; Sat, 09 Nov 2019 10:57:06 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iTObI-0006uG-IM; Sat, 09 Nov 2019 11:08:16 +0000
+Received: from lb2-smtp-cloud7.xs4all.net ([194.109.24.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTOQN-0003S7-Aa
- for linux-arm-kernel@lists.infradead.org; Sat, 09 Nov 2019 10:57:00 +0000
-Received: by mail-wm1-x344.google.com with SMTP id u18so985903wmc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 09 Nov 2019 02:56:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=JHLfdo8EDYpxKc5h1UVzYd5rkwgO5xInaju1os9b+ho=;
- b=SfmDrMNFhZrsAWXRX9Nk5Koc/lkJ6XYxu32hCyrsCin2aAcMyn0oie0m+oobQbQ74W
- 9YhqazEroPzLtEjVmTQD7BcMEaaaXl795pYJp9bme3oBttWkPqXjrm9SE43wmJDyFu11
- o1VT3TOucgjsyqvcDOwOVZWq3C5Wu21rNAmN4vCC/fYG8MbRGMhMZYs4EZKa2OWO2o2q
- F7jhzABV386Zk9F4v4LFklNGpqqE7GUs/55ny5MeUh8ABfp85taeVVfAdskUG8+53NZ0
- RtGWo1z1VPJB5JoCJ4N25e3toiXE0LjsNte7cSPp4tX5oTFuFFGiUfGXsboDvYYDGuBo
- ITKg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=JHLfdo8EDYpxKc5h1UVzYd5rkwgO5xInaju1os9b+ho=;
- b=MS3vVQME4ly7VVfRFfyTXdBfCI/dZPycwYc56nc2Y2KZpNWFV39R4qHUYcJSiDOVCr
- 3UlExFa5NamZPnJ8W1b4Mojmn+3O09TZnmckle1i6lV8aMD+K8tLDWAToQ6l8OY0Gdgq
- OO9pJms+ZYkZZz4n8frCU8I1ZJFUx/uFsm0+CLlIzsyijaNenRPUHKrGwBOrKi5gOWac
- T6PAhvq1CD76IsJUpknoO/MF7VQVNVfOQTltSKgl7W8AMS87TwpLWcws7+GgwKaco8jO
- UMupZ9aDWvrd7SiQ8DnF3n/k5yH/QH7qfNKxzetJd7481JjkllUb8e+P2Ez/zpELKfNJ
- w1yw==
-X-Gm-Message-State: APjAAAXigl3RfnE7eNdXuRaB4XuoF+ZXbZRRH/T2gzrqA1wVYq5BsiHa
- KMMieVcONJ+GU6IFEF0LORc=
-X-Google-Smtp-Source: APXvYqxhXAZg/XDWVA2jUZjEBESbC0l9FJaojQQtz3TAEVdRDHSDneX5AN2Bqc3wy8oUC8OTUHaU8A==
-X-Received: by 2002:a1c:6146:: with SMTP id v67mr12605556wmb.102.1573297017263; 
- Sat, 09 Nov 2019 02:56:57 -0800 (PST)
-Received: from localhost.localdomain ([86.121.29.241])
- by smtp.gmail.com with ESMTPSA id l10sm14846296wrg.90.2019.11.09.02.56.55
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 09 Nov 2019 02:56:56 -0800 (PST)
-From: Vladimir Oltean <olteanv@gmail.com>
-To: shawnguo@kernel.org,
-	mark.rutland@arm.com,
-	devicetree@vger.kernel.org
-Subject: [PATCH] ARM: dts: ls1021a-tsn: Use interrupts for the SGMII PHYs
-Date: Sat,  9 Nov 2019 12:56:42 +0200
-Message-Id: <20191109105642.30700-1-olteanv@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1iTObA-0006tg-Q7; Sat, 09 Nov 2019 11:08:10 +0000
+Received: from [192.168.2.10] ([46.9.232.237])
+ by smtp-cloud7.xs4all.net with ESMTPA
+ id TOb3iwTk7PMT8TOb6iPBE6; Sat, 09 Nov 2019 12:08:05 +0100
+Subject: Re: [PATCH] media: rockchip/rga: fix potential use after free
+To: Pan Bian <bianpan2016@163.com>, Jacob Chen <jacob-chen@iotwrt.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Heiko Stuebner <heiko@sntech.de>
+References: <1572969354-8967-1-git-send-email-bianpan2016@163.com>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <e89f6a90-4899-0945-e11a-67be6a28e7c0@xs4all.nl>
+Date: Sat, 9 Nov 2019 12:08:01 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <1572969354-8967-1-git-send-email-bianpan2016@163.com>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfAEIQNDj0MrkNwMDONLTaAveOQTV90nc/m7292hp5RhbHodvPvVOF7YABtpCI5/hudEn1y22ZqA+1Zv8Q5vySCxJngJ6HhmqrH0G4Pbt7P+WOd0lz5Y4
+ 63/JBeAViow65qolHk+fGi3DH5TAgkFqMuZyXAoygqjBxjI/S2NCX4SYVCL5wvIpNseOd29oQlXoTF6BPxGwODycBm/YXesDN/5rRDPxhPSdkdkx6ze4KaX/
+ rIRLjaZ0DUHD0Q5blMv6aM+rE2gn/llYsl1ETROOdfA3aHM7GZ/aBax1Vb5CFJfB/rFttkCOqDlGu0X+fH53RGgAg4cza3jzMzgoxrlYQ+9534j/mKlg7JcY
+ X5BUCQK0PuMiecZaAZ4JadtiuegxK/ePgPiemh52wAr2qxgako0xpEPjqnh2HHDBtVfIUhF5tV0O+mDwtS3ikCxbAjMRyQUywTz2KwIoccd+y/+sjuoIwD+3
+ MfVUAq0p1Ft5fY6e
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191109_025659_390239_AD840F52 
-X-CRM114-Status: GOOD (  10.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191109_030809_007742_1B0C3467 
+X-CRM114-Status: GOOD (  15.35  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.28 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (olteanv[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,59 +66,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org, leoyang.li@nxp.com,
- robh+dt@kernel.org, Vladimir Oltean <olteanv@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On the LS1021A-TSN board, the 2 Atheros AR8031 PHYs for eth0 and eth1
-have interrupt lines connected to the shared IRQ2_B LS1021A pin.
+On 11/5/19 4:55 PM, Pan Bian wrote:
+> The variable vga->vfd is an alias for vfd. Therefore, releasing vfd and
+> then unregister vga->vfd will lead to a use after free bug. In fact, the
+> free operation and the unregister operation are reversed.
+> 
+> Signed-off-by: Pan Bian <bianpan2016@163.com>
+> ---
+>  drivers/media/platform/rockchip/rga/rga.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
+> index e9ff12b6b5bb..613b868fce33 100644
+> --- a/drivers/media/platform/rockchip/rga/rga.c
+> +++ b/drivers/media/platform/rockchip/rga/rga.c
+> @@ -901,9 +901,9 @@ static int rga_probe(struct platform_device *pdev)
+>  	return 0;
+>  
+>  rel_vdev:
+> -	video_device_release(vfd);
+> -unreg_video_dev:
+>  	video_unregister_device(rga->vfd);
+> +unreg_video_dev:
+> +	video_device_release(vfd);
+>  unreg_v4l2_dev:
+>  	v4l2_device_unregister(&rga->v4l2_dev);
+>  err_put_clk:
+> 
 
-The interrupts are active low, but the GICv2 controller does not support
-active-low and falling-edge interrupts, so the only mode it can be
-configured in is rising-edge.
+This isn't right, you need to update the goto labels as well.
 
-The interrupt number was obtained by subtracting 32 from the listed
-interrupt ID from LS1021ARM.pdf Table 5-1. Interrupt assignments.
+With this change unreg_video_dev releases the vdev, while rel_vdev
+unregisters it. Very confusing.
 
-Switching to interrupts offloads the PHY library from the task of
-polling the MDIO status and AN registers (1, 4, 5) every second.
+I'd also rename unreg_video_dev to unreg_vdev to be consistent with
+rel_vdev.
 
-Unfortunately, the BCM5464R quad PHY connected to the switch does not
-appear to have an interrupt line routed to the SoC.
+Regards,
 
-Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
----
- arch/arm/boot/dts/ls1021a-tsn.dts | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/arch/arm/boot/dts/ls1021a-tsn.dts b/arch/arm/boot/dts/ls1021a-tsn.dts
-index 5b7689094b70..4532b2bd3fd1 100644
---- a/arch/arm/boot/dts/ls1021a-tsn.dts
-+++ b/arch/arm/boot/dts/ls1021a-tsn.dts
-@@ -203,11 +203,15 @@
- 	/* AR8031 */
- 	sgmii_phy1: ethernet-phy@1 {
- 		reg = <0x1>;
-+		/* SGMII1_PHY_INT_B: connected to IRQ2, active low */
-+		interrupts = <GIC_SPI 165 IRQ_TYPE_EDGE_RISING>;
- 	};
- 
- 	/* AR8031 */
- 	sgmii_phy2: ethernet-phy@2 {
- 		reg = <0x2>;
-+		/* SGMII2_PHY_INT_B: connected to IRQ2, active low */
-+		interrupts = <GIC_SPI 165 IRQ_TYPE_EDGE_RISING>;
- 	};
- 
- 	/* BCM5464 quad PHY */
--- 
-2.17.1
-
+	Hans
 
 _______________________________________________
 linux-arm-kernel mailing list
