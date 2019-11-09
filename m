@@ -2,89 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B0CAF5C0E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 Nov 2019 00:49:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9B79F5C57
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 Nov 2019 01:39:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3f7M55Ua3bgUavQhVmJdHQT5jv1td0sRQl7JxGEkJ2o=; b=Pb9NdG4DL3KnLe
-	0ksPajdONVcn/OHkdrABuxIT3vTahrhfhVtgtWa/BycthQXcU0YXVOClVyYvsGbt9zUhxqfBzC5+g
-	on1Nn9/g/4z/MN29OzqOYPyE2ZXc4TMF5bJmL/JJSQtfvvwsIi9FXRzxc5BrT87Swe+dZ1NeAQxo7
-	4iolgtAVHtaUPYP33ncCc87IdFmv62Cnyh7Hk+P3Sp/kdJYIzUI+JF8aWi4yqmimJCd/UVB0ZsB75
-	iOimLDaNCOnlUUTNdGnakKuCDhAMuMl/Nf5sndxMRnonS/LOB753cHKZar0FyB+yCJKq4AISMGXtv
-	MIrQnEOOkP3axx2l0pyg==;
+	List-Owner; bh=V+dk+FOoo2eVKZ0QFw1x6X4eYlhPJ+pdnoeg9+RKp+E=; b=b8WcyV8DKDqjpa
+	KSEdhqNGCU3bILJSz71t6BQZWRxgXG1yILS7LAZ68qLqa7Qc4IX8EaDJebuW1m264jLvup7qszeKj
+	MhHz54SKeiNC4x3N7sekRIcQDfzMcGjZpDziBfoPVGjsZyFCyoQsgUW3Y3YguGVolWuj/SSQOLis/
+	mrQKrsgVmhRIYcEiThAK8MpN/tRvRCcd2Ef1IdlrECM8jXiUwzrnCuxwKKL9mwufskvt0e6T/TeBH
+	UTx7pASWxegaWcM9VIcf+jN9AU/XkyD7cBwP2kvRreJXxILpDXJdVlXY1ej15oPmwUqmRA9u+ZNbT
+	MoeCJxPjuvQktGdGfVhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTE01-0007dm-1b; Fri, 08 Nov 2019 23:49:05 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1iTEms-0006DI-7w; Sat, 09 Nov 2019 00:39:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTDzt-0007d1-4y
- for linux-arm-kernel@lists.infradead.org; Fri, 08 Nov 2019 23:48:58 +0000
-Received: by mail-oi1-f195.google.com with SMTP id a14so6805712oid.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 15:48:56 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XMVjsfRFCMgyyIBo6SJuyhGa3vmCkYAAcBk1J2DsBuY=;
- b=HCIFi+2QMkA+Zp4aMbkYUahdsyAdljT+1o6cHu2Upw3BEkQdVQPqCWWU91fmobcRrH
- CREvQDinMXxIq04EMADAKRD3N3VFM0958vakt51ci7VzPaNscnWf/BzFw7kKROiTrhxG
- KZrWJJ20qmZR2jZHg3VwZJ/NEEUVS/cXXFMgjaoIvlzxsv8KP/jAVG7CnNMoPT8FS+OP
- LuxyRJbNguQ5Cvat1Chm5h+yA98J5lXY0gLG4/Gs/3bd68v+0FN9/SHkE0cyulUb3a3O
- fZ92m/SA2nvULP5CahQ1tXxzdoiWfS7svGZeHL59wexWZarkbZpLaJtqj6Cnw+jpNf1f
- uj+Q==
-X-Gm-Message-State: APjAAAXEL7WSZ5j8NA4h8ZGcB3fIDAfL2cnVBUvgJfmqa1UMcANZCTY7
- tpdL9l6frfwyq0moD3/AjvCoXvXMENI=
-X-Google-Smtp-Source: APXvYqzJ562Hfx7q1GRQ7zK+RGsCAt1R3k86GIVjgNFqFgTxfTAq2dc8dTZODeYBNWUfZyOG5Cj/ew==
-X-Received: by 2002:aca:6c1:: with SMTP id 184mr11913514oig.84.1573256935637; 
- Fri, 08 Nov 2019 15:48:55 -0800 (PST)
-Received: from mail-ot1-f50.google.com (mail-ot1-f50.google.com.
- [209.85.210.50])
- by smtp.gmail.com with ESMTPSA id z20sm2391710otk.22.2019.11.08.15.48.54
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 08 Nov 2019 15:48:55 -0800 (PST)
-Received: by mail-ot1-f50.google.com with SMTP id t4so6720567otr.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 Nov 2019 15:48:54 -0800 (PST)
-X-Received: by 2002:a05:6830:17c2:: with SMTP id
- p2mr11400428ota.74.1573256934498; 
- Fri, 08 Nov 2019 15:48:54 -0800 (PST)
+ id 1iTEmi-00069O-1q
+ for linux-arm-kernel@lists.infradead.org; Sat, 09 Nov 2019 00:39:25 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CD2502084D;
+ Sat,  9 Nov 2019 00:39:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573259962;
+ bh=a4IHuZ61Ijn02rgp1IVvNjlu4o9WcpWH0qgKMKOhXEs=;
+ h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
+ b=F+QVh3FPu2f6iuZdfwfen7v/CoZqm37zXzLStBKSRV46FSCwCO6wf8KtP4g/c3Ik2
+ 9vFJtd8UhMVNg5ZwXUZkWUS1UX40mLJdRkYrhZs+83BwnWYPkskIsC/U+0T26iHmYw
+ xclolNxKAcwP9hbjblTV1/xFhlpMrYv2JqedjsJc=
 MIME-Version: 1.0
-References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
- <20191108130123.6839-48-linux@rasmusvillemoes.dk>
-In-Reply-To: <20191108130123.6839-48-linux@rasmusvillemoes.dk>
-From: Li Yang <leoyang.li@nxp.com>
-Date: Fri, 8 Nov 2019 17:48:43 -0600
-X-Gmail-Original-Message-ID: <CADRPPNQwnmPCh8nzQ5vBTLoieO-r2u0huh17mwcinhfhNgo04A@mail.gmail.com>
-Message-ID: <CADRPPNQwnmPCh8nzQ5vBTLoieO-r2u0huh17mwcinhfhNgo04A@mail.gmail.com>
-Subject: Re: [PATCH v4 47/47] soc: fsl: qe: remove PPC32 dependency from
- CONFIG_QUICC_ENGINE
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+In-Reply-To: <20191016125919.1773898-3-thierry.reding@gmail.com>
+References: <20191016125919.1773898-1-thierry.reding@gmail.com>
+ <20191016125919.1773898-3-thierry.reding@gmail.com>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Michael Turquette <mturquette@baylibre.com>,
+ Thierry Reding <thierry.reding@gmail.com>
+Subject: Re: [PATCH 2/5] clk: tegra: Move SOR0 implementation to Tegra124
+User-Agent: alot/0.8.1
+Date: Fri, 08 Nov 2019 16:39:22 -0800
+Message-Id: <20191109003922.CD2502084D@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_154857_193358_E0DBDCDB 
-X-CRM114-Status: GOOD (  17.18  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191108_163924_114427_28440FCD 
+X-CRM114-Status: UNSURE (   7.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pku.leo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,56 +78,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
- lkml <linux-kernel@vger.kernel.org>, Scott Wood <oss@buserror.net>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Qiang Zhao <qiang.zhao@nxp.com>
+Cc: linux-tegra@vger.kernel.org, Peter De Schrijver <pdeschrijver@nvidia.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Jon Hunter <jonathanh@nvidia.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 8, 2019 at 7:05 AM Rasmus Villemoes
-<linux@rasmusvillemoes.dk> wrote:
->
-> There are also ARM and ARM64 based SOCs with a QUICC Engine, and the
-> core QE code as well as net/wan/fsl_ucc_hdlc and tty/serial/ucc_uart
-> has now been modified to not rely on ppcisms.
->
-> So extend the architectures that can select QUICC_ENGINE, and add the
-> rather modest requirements of OF && HAS_IOMEM.
->
-> The core code as well as the ucc_uart driver has been tested on an
-> LS1021A (arm), and it has also been tested that the QE code still
-> works on an mpc8309 (ppc).
->
-> Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Quoting Thierry Reding (2019-10-16 05:59:16)
+> From: Thierry Reding <treding@nvidia.com>
+> 
+> The SOR0 clock on Tegra210 is very different from the SOR0 clock found
+> on Tegra124. Move the Tegra124 implementation to the Tegra124 driver so
+> that a custom implementation can be provided on Tegra210 without
+> clashing with the existing clock.
+> 
+> Signed-off-by: Thierry Reding <treding@nvidia.com>
 > ---
->  drivers/soc/fsl/qe/Kconfig | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/soc/fsl/qe/Kconfig b/drivers/soc/fsl/qe/Kconfig
-> index cfa4b2939992..f1974f811572 100644
-> --- a/drivers/soc/fsl/qe/Kconfig
-> +++ b/drivers/soc/fsl/qe/Kconfig
-> @@ -5,7 +5,8 @@
->
->  config QUICC_ENGINE
->         bool "QUICC Engine (QE) framework support"
-> -       depends on FSL_SOC && PPC32
-> +       depends on OF && HAS_IOMEM
-> +       depends on PPC32 || ARM || ARM64 || COMPILE_TEST
 
-Can you also add PPC64?  It is also used on some PPC64 platforms
-(QorIQ T series).
+Acked-by: Stephen Boyd <sboyd@kernel.org>
 
->         select GENERIC_ALLOCATOR
->         select CRC32
->         help
-> --
-> 2.23.0
->
 
 _______________________________________________
 linux-arm-kernel mailing list
