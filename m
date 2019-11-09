@@ -2,107 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6A95F5FFB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 Nov 2019 16:19:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E074F6002
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 Nov 2019 16:22:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
-	From:Reply-To:To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fdYK1xFXpeQBBgd1OY37yieYSAaXWtafsifCpDuzGZw=; b=WOjLXSUz3BC+BE
-	fo/EoKLL0ozwTyhxYDlVG9iEUGwX5Q8Jdcl81qo15wW3T1o1a2ZI9CkS/7DlE7x/lH+p/tjiDpRuk
-	8f8rDdihJcjENe8iWCJJyjsoEfMedZu33m9zC4q5T9PKtWJt2wZgPw7BrETB2ixA/hleOLP5ezWiY
-	SE0JrM7cslGCcnZRupS47KxnLUYJ7W9zMkHohTrq6F01b2FrhYRqyjurEJO/A5FfQsgZI7KUIFuRy
-	4REQKg44vxshAnHacmBnzKmBDMqfiMMJzYL/63D1SMPeT39kX84QsD1kjg8qU3EU9OuqEWlsw+muh
-	EH/zhNduTnp6NG9HQuxw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Jktq152vaxZ8NpChBgxa9XBuLS1fVy0XHzrVqL3zzss=; b=QQAph+b1qYvMrd
+	RSc0UonZUdsIH4NWmSVwOpltcwVD1uqzfgH1FqzHsnVWvZN7weJJaeQy2+iOUOF95G5Nn6863FH7n
+	UzA0kSbpkI/Am0GPsybJbZApypxA9qCAnP8FGJUDSRJtgXneFeyuoRB3QfqqRK+Acd7daNFCCde3K
+	UEAt8i229EDRQrgcL0Um34qF26RyRY1DjRzk+i1QQAZFIMH9ojPXu3qrQLGSLYwW97hviIt8roIn9
+	il/e/2gj5RKKZ1gSSiIXnJje6YumMECSp7USwgZivA1LGJYiixjGp8XOf8dLp6TXFlnib9nlbpOfI
+	QWuwe4SKV3JdXFK24/+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTSWJ-00074B-HD; Sat, 09 Nov 2019 15:19:23 +0000
-Received: from mail-oln040092011065.outbound.protection.outlook.com
- ([40.92.11.65] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
+	id 1iTSYu-00009P-27; Sat, 09 Nov 2019 15:22:04 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTSW9-00073m-QO
- for linux-arm-kernel@lists.infradead.org; Sat, 09 Nov 2019 15:19:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=eTkwKklhXavMmvjNrZ754NSN1BvrxVJue2PmHl1JauT8XrjQSYiTlbsTeBeSahQ4zE+ldn7ZS68ujtaSf1cMKk0aXi45lnENmb3E7BEV14pHtvvx0C7lID41xfpUGZhfWMSZwEw6fuWL0WCC92AXy+KcGzTOKo9SZGjaLSoj/Ti4H37BBjwpqpiBBZm1rK5X8GIF2oMvLMPzR4dieSsmRl6281/7Kn6pH8HT+8aCPYmNMvy1DwCw95Hl/ARSD+CCUUbVd85gUuM5elD91nMR0WbnSDl4sgpIbURZ2oDCYdsSTWEGEJ9NtEZFE82BMg+gwnmQvhSXDr8GooB4gvrg/w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=24aRtsX6mT+03xlbWXh3riemFGEBfKJsqAAF2Ius4f8=;
- b=ofworCtGn23wCU538UED3+I3EruRG2dui9T8lDXbTpQM3AOlKDn6jLpiE5EPuctD/KgFpYjQnrN1mfS5O3KLdjHSExl1oZP/Z2cc5NWeWVkpTpAhMFqzfLUE0qGbr/OOWMAgplLMEQqa1m6K4yhWMnOahmSUKwyr+ZxqT2zyICq5LKYAwUygWIQ/MlHRrFfIVwyg17VK1xzHndjvRzFm8jtZ9DBAaZmSsCoN8aMtgZpO867BJ6XuX/ESRkgVQppB0lo0IaEyvjRgL999GQppDhp4QasC1aXKYfReeV+KdgZe0uY0Ui482ok4R3tjDrtMRmFg3UWXzZa7VJRgL2yMug==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=24aRtsX6mT+03xlbWXh3riemFGEBfKJsqAAF2Ius4f8=;
- b=anUUKl59jY+ITyyk+lwEApeuUERuM/u0tEdrHLhTDGpkClGEg1kgzCKThh459dmZsvDV3G9KUgKN+ccQxLHQav0Dk7AyHDLdyo1KgZm6CBLBS2PKdQRc2RvTBVeiB7phppEOc427sQ+SXSUYPPyykJOngFPZfam9h7goRlxgn8X9fYeRd5ZdQ6fUqD4rnWhcwyMmgc8IIs1ICaeNFVt1DSCmI0CU5uOhwPpc8IysvuZOzU89HFlTqTr5EVjgpiyPHUM3x4B65NygTvhi+hWecwuW3T3M3AqVytGdOWramxOMlrqfK59zhnosnpGlV6q1R7Ym8IOCc/z/sulyUm+xEA==
-Received: from SN1NAM04FT006.eop-NAM04.prod.protection.outlook.com
- (10.152.88.58) by SN1NAM04HT206.eop-NAM04.prod.protection.outlook.com
- (10.152.89.114) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2430.20; Sat, 9 Nov
- 2019 15:19:10 +0000
-Received: from BN8PR08MB5779.namprd08.prod.outlook.com (10.152.88.60) by
- SN1NAM04FT006.mail.protection.outlook.com (10.152.88.166) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.20 via Frontend Transport; Sat, 9 Nov 2019 15:19:10 +0000
-Received: from BN8PR08MB5779.namprd08.prod.outlook.com
- ([fe80::f97c:4f94:f334:b4a8]) by BN8PR08MB5779.namprd08.prod.outlook.com
- ([fe80::f97c:4f94:f334:b4a8%7]) with mapi id 15.20.2430.023; Sat, 9 Nov 2019
- 15:19:10 +0000
-From: Tian Yunhao <t123yh@outlook.com>
-Subject: [PATCH] clk: sunxi-ng: v3s: Fix incorrect number of hw_clks.
-Thread-Topic: [PATCH] clk: sunxi-ng: v3s: Fix incorrect number of hw_clks.
-Thread-Index: AQHVlxEJWpAangI0i0+h9tdLzyboXQ==
-Date: Sat, 9 Nov 2019 15:19:09 +0000
-Message-ID: <BN8PR08MB57792366D78997180A698AF8897A0@BN8PR08MB5779.namprd08.prod.outlook.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: HK0PR03CA0081.apcprd03.prod.outlook.com
- (2603:1096:203:72::21) To BN8PR08MB5779.namprd08.prod.outlook.com
- (2603:10b6:408:ae::10)
-x-incomingtopheadermarker: OriginalChecksum:6399F06F539F879EE770EC39982E5737CD76597A66A9E99D7236E9C4A196F324;
- UpperCasedChecksum:8473CBAE29CDAF40D2B1779800ADAE9F6DB55AD14540B6C043F239210B39F2D2;
- SizeAsReceived:7616; Count:47
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.23.0
-x-tmn: [E81gp6A4ShbCWhADvgulnSETwYOUwMB8QkeM8GsIubaA34qKfMHc+uAUl0LuXwrS]
-x-microsoft-original-message-id: <20191109151823.22711-1-t123yh@outlook.com>
-x-ms-publictraffictype: Email
-x-incomingheadercount: 47
-x-eopattributedmessage: 0
-x-ms-office365-filtering-correlation-id: 4d7bd1a8-d050-4410-4cb8-08d765282b40
-x-ms-exchange-slblob-mailprops: Ad+mZByrAbQhvslxRqTrNk0ITAfnUsm6lD1E/c6Bts5b+Il8O2vU84HFnrfiVP+NdcUO/EdjIErYSgZnblC2G+EkK87GhzWHe8HZag85KIY1mAvumt/geX+JvrCBuyK/yNgH1RB5FwGmZn8C5sgSezK26uT7/z3ixxyqQqLWGg24LB8EqbJ6pqx6+9uNLxKiLmdwRKxYc5ZXqPE5grVyvqbsV2Imh4qhRL/6rmQaPkrZ8edM059DOD7osR8fVg3vOiVAfJ5WRSKe8EZw8QXqEF6mex30qoOXMe/T4a7rfkvkCrPhKzH9hHhhoAWhWVQtXjtOr9eyQ0qIIXPnpjDCUL3wN1iR5iqN+imfzEawnU8LFWBDNUHJe8KWo0Ye1MNloE/g9SyeDa8IADjSdstmk5mijyy0g0ZqYr2rWdDwH6mEJgPlNAecMuGqf1BrTEJVX7c4FsbCKMYVxfDNOh+EywkrtU6VGt/z7IHRe3kErSrMOqjoCzZXuHQbVcAFg8PrCivIz0/jU9jW9H428fUjR46B12keuKnqFNAd7uNHms3TUL3305UGQaXYwUEqXveTCCXnsPNDLdhUi2BsRGhiOKtoE5VxYyOw1fjrXCfsZdl2KWXtb91Ijxvi7bKiHqagldhhcg83KHEydU38Mia8V1rKFSNLTkCv
-x-ms-traffictypediagnostic: SN1NAM04HT206:
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: V1CIXLTeI+yUMivJPAB8y+Xl53imJ8n8Iuy8IhX6eO7HJQkcSOGeKR8x2d1HasgrZ58e6JMMmbysSORJw6tSTDbneCAWZfwBLz0E+sBXBqvbmRxhLuZuNie+GjB/xs17F1e3cNBqh9VjopzSKFVBHY40Bp6+UfXDfDyS0Yj+bR+BC2iA0IFSSiBpxKsttW1l
-x-ms-exchange-transport-forked: True
+ id 1iTSYl-000092-Dx
+ for linux-arm-kernel@lists.infradead.org; Sat, 09 Nov 2019 15:21:56 +0000
+Received: by mail-ed1-x544.google.com with SMTP id a24so4779879edt.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 09 Nov 2019 07:21:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+ :cc; bh=7B3KT7m27I86KEF7GR0Y9+xEe3Sei4avLWRZmXEU+Jk=;
+ b=sEGkHO5Nw1u6YcsssOPb+qWLT0+J4O2g+quMEbopIoR6AUc5cls51K6fTJeGB4Suoq
+ o1vH2h12opauX6KqHDFayhjEdKbrE2K9fckiFR3/hgHJaLsorO3YQWMo+8s5e6vSoWq6
+ oOEiBc2ewlQZpvHryuICklYX/lWxwkH6ZsmdYNNZhKuje91eIzG2RyZsAyOpjjQXO1Yu
+ MKUgHshy0nAs+3KHhQEZG7V4S608gU5RtcBjbDzz+TJuoho8xN/PMw96ShwFV3ixY082
+ SegwMBa1VZYHYPa9eYkXap7eVhgyyGzbLU+8EvO+NCkrvvf7XDURyzFhiZMtNt71w9YJ
+ J9Aw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+ :message-id:subject:to:cc;
+ bh=7B3KT7m27I86KEF7GR0Y9+xEe3Sei4avLWRZmXEU+Jk=;
+ b=XIaz1e6xHJjxIn7VFx6hAW7ZqVKHDD/qy8AKcRWB0DGCRwm9sSa6X5EIMQg2CtT2Mr
+ F7lu2wrVjPVsF8nYyONpbi9nPa8htIg15/8FOnDXJyZBCC7k/kq080AXJU+6Ck3ecBQ5
+ 5hE3d/fnPkShgWRyOw33D5bdXg4AsfxsWXXJZhhDPIDpxGxvUClhubeLeH8hUzjPgLjT
+ kYVm0LeZJXiX3Y1kqArrirtcDJkVu43DyhDa3o16sV0b2VmQPsD9jEmHiJdU3HFq3cr3
+ ncod7pZV9jyCgrdBM7bOaivYZyHTV1MIuPScWVzsOnNrUqvifW+pnYPIIJUzPx6J8XkG
+ HODg==
+X-Gm-Message-State: APjAAAXp6ojNIc35u44s8FbRU+DVyl9Hkmw4c/GwyhmnUmjLFZApRnH/
+ kN0qfus8lsIjZRdk4cGYh6pr13wm0Zx6mB/I3Cg=
+X-Google-Smtp-Source: APXvYqw2xy+TORlK9D3NsUd6J7Zs/SmAvifrskcUq5ND66YP9APND+9oBSZCimLdnMzy1MQF2p48oh0a34pC8u3dbWo=
+X-Received: by 2002:a50:b63b:: with SMTP id b56mr16737146ede.165.1573312912091; 
+ Sat, 09 Nov 2019 07:21:52 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4d7bd1a8-d050-4410-4cb8-08d765282b40
-X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Nov 2019 15:19:10.1971 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Internet
-X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN1NAM04HT206
+Received: by 2002:a17:906:12cf:0:0:0:0 with HTTP; Sat, 9 Nov 2019 07:21:51
+ -0800 (PST)
+In-Reply-To: <20191109150953.GJ22978@lunn.ch>
+References: <20191109105642.30700-1-olteanv@gmail.com>
+ <20191109150953.GJ22978@lunn.ch>
+From: Vladimir Oltean <olteanv@gmail.com>
+Date: Sat, 9 Nov 2019 17:21:51 +0200
+Message-ID: <CA+h21hoqkE2D03BHrFeU+STbK8pStRRFu+x7+9j2nwFf+EHJNg@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: ls1021a-tsn: Use interrupts for the SGMII PHYs
+To: Andrew Lunn <andrew@lunn.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191109_071914_029157_A5BFC1F1 
-X-CRM114-Status: GOOD (  10.27  )
-X-Spam-Score: 2.5 (++)
+X-CRM114-CacheID: sfid-20191109_072155_497874_62926328 
+X-CRM114-Status: GOOD (  11.49  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.11.65 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 1.2 MISSING_HEADERS        Missing To: header
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (t123yh[at]outlook.com)
+ provider (olteanv[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -111,8 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 1.5 MALFORMED_FREEMAIL     Bad headers on message from free email
- service
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,55 +95,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tian yunhao <t123yh@outlook.com>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, leoyang.li@nxp.com, robh+dt@kernel.org,
+ shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The hws field of sun8i_v3s_hw_clks has only 74
-members. However, the number specified by CLK_NUMBER
-is 77 (= CLK_I2S0 + 1). This leads to runtime segmentation
-fault that is not always reproducible.
+On 09/11/2019, Andrew Lunn <andrew@lunn.ch> wrote:
+> On Sat, Nov 09, 2019 at 12:56:42PM +0200, Vladimir Oltean wrote:
+>> On the LS1021A-TSN board, the 2 Atheros AR8031 PHYs for eth0 and eth1
+>> have interrupt lines connected to the shared IRQ2_B LS1021A pin.
+>>
+>> The interrupts are active low, but the GICv2 controller does not support
+>> active-low and falling-edge interrupts, so the only mode it can be
+>> configured in is rising-edge.
+>
+> Hi Vladimir
+>
+> So how does this work? The rising edge would occur after the interrupt
+> handler has completed? What triggers the interrupt handler?
+>
+> 	Andrew
+>
 
-This patch adds a protective field [CLK_NUMBER] which ensures
-ARRAY_SIZE(.hws) is always greater than .num, thus eliminates
-this error.
+Hi Andrew,
 
-Signed-off-by: Yunhao Tian <t123yh@outlook.com>
----
- drivers/clk/sunxi-ng/ccu-sun8i-v3s.c | 2 ++
- 1 file changed, 2 insertions(+)
+I hope I am not terribly confused about this. I thought I am telling
+the interrupt controller to raise an IRQ as a result of the
+low-to-high transition of the electrical signal. Experimentation sure
+seems to agree with me. So the IRQ is generated immediately _after_
+the PHY has left the line in open drain and it got pulled up to Vdd.
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-v3s.c b/drivers/clk/sunxi-ng/ccu-sun8i-v3s.c
-index 5c779eec454b..de7fce7f32e6 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-v3s.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-v3s.c
-@@ -617,6 +617,7 @@ static struct clk_hw_onecell_data sun8i_v3s_hw_clks = {
- 		[CLK_AVS]		= &avs_clk.common.hw,
- 		[CLK_MBUS]		= &mbus_clk.common.hw,
- 		[CLK_MIPI_CSI]		= &mipi_csi_clk.common.hw,
-+		[CLK_NUMBER]    = NULL,
- 	},
- 	.num	= CLK_NUMBER,
- };
-@@ -699,6 +700,7 @@ static struct clk_hw_onecell_data sun8i_v3_hw_clks = {
- 		[CLK_AVS]		= &avs_clk.common.hw,
- 		[CLK_MBUS]		= &mbus_clk.common.hw,
- 		[CLK_MIPI_CSI]		= &mipi_csi_clk.common.hw,
-+		[CLK_NUMBER]    = NULL,
- 	},
- 	.num	= CLK_NUMBER,
- };
--- 
-2.23.0
+Thanks,
+-Vladimir
 
+[Sorry for the repost, for some reason Gmail decided to send this
+email as html earlier]
 
 _______________________________________________
 linux-arm-kernel mailing list
