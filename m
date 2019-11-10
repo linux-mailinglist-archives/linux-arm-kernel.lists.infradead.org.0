@@ -2,66 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECAD1F6AE7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 19:47:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3404F6B25
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 20:43:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4etlISIKv7/DlNa642mHMLLBGTKfnad3KztTNucUSOI=; b=S6wazuFdvr1ffp
-	lXSiao1cUlmm5lmMiBbn/iGfhELBao0rhbO3lJyFozpn9xdmirtYCnpmAoxIGz5aXhxbZyZ16MbJC
-	qhj8pgwlRK2Z/R4qrZPqasj5TYISYmkmY3cIS1SQu0BZg29ovjucQHCc1G7AdHxkKW6Xk3iCt938r
-	NxZ0U9IYTUx3ABpGvMOKLUzaD51c4Qce21N9R5ew9SjEoyGBn/XVoHKgSLEtVZY0koy7I41/IlGDZ
-	sr0p46AJiRp5cA20tNSFX5vjbVZLqly/551y3sE22aqrxJDF6p8+O0jaJ9tx154kJ3rhGunq56VT4
-	JUa4kZ9IzFYnYa4iwvvg==;
+	List-Owner; bh=BwExHd7jq1sIv2KIAqp6q77BIuWiG0SGmW9NuOzMT+o=; b=nlFBWVW1g3YGSi
+	432RfgeyRLMAhnuVEeV/h/L1GWyl6hibgG+Vpd6OhbLina3NCTLxY7RArmXCZfAYYnXJ/4xOy+1Ul
+	N/w39owbUky/DIzFw9gNzdD8NksamJuPBhdIUJaxZI2CQ3vacOOpNlM42Uj2qev9S6UeaUCXBI/sv
+	GisTBdeQGMpqcqpf3JjczXlCp7lfYVYjpBoK9r1sTHRkl9nbqtO5JQKnx+R11ERBgMfj0MsTbyqiN
+	Io5lg6s8y5u/tmHIyNTGsm/0gcYmQ9V8EfQ0lLcYjoEQOeV4Mg5zKyV7aAFLTvGNvtTsuzRPB4dIV
+	/pu0SToXEFzM2PpusG9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTsFY-00027O-Oo; Sun, 10 Nov 2019 18:47:48 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iTt79-0003OM-Fk; Sun, 10 Nov 2019 19:43:11 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTsFK-00024p-NM; Sun, 10 Nov 2019 18:47:37 +0000
-Received: by mail-wm1-x342.google.com with SMTP id q70so11073648wme.1;
- Sun, 10 Nov 2019 10:47:32 -0800 (PST)
+ id 1iTt72-0003NL-A4; Sun, 10 Nov 2019 19:43:05 +0000
+Received: by mail-wm1-x341.google.com with SMTP id j18so1660318wmk.1;
+ Sun, 10 Nov 2019 11:43:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=gBMxX7bvC1MO8wNO3MhM7n7vRAgCv1NW8GyQ+Y9eEF4=;
- b=Tf7QdASrr9/RSpTHdTOeZvsaNIH4QzrdPFVM9hIpOMPRL7U9Qw6KoBvIxzsAjknygE
- 06xBBQdoATmfW7+sIkULtXtmd/mt7E/R6VV5fAfdHcCAwHh4pg9y0PlCOz13CUwcvowT
- Of+lHEyfCqQStkyhT//lSVUr2UW1B2qqusCDI47CsPRxvlQDufjun0t0qwWZ3X5EK2US
- UDNdcsPyDVNpvciq2aR/6T1VmewRZlu5WTeoKKANvHvf5qaF8ee0UdS2iwx3D3f+nr3T
- A/NGkWCH3TaEPKBPGmdS81FJaFoDEB+wYWipr+0+iSFujYy3sMtV529wI7+d3PmVzZbw
- 3JNw==
+ bh=0ERIbyU+62RDKkuyfUPzZUSe1FFHvxlCgQktwAbE+sA=;
+ b=gQ8/92fpg3vcqG02QlEM6gFMXSpp9Ph9D2+nj0qwCKurqR6YhPnxrqFAjRIJvE0lrx
+ QvhOS81QZ8U0SLJaQfN9xJgWxt8hv/pI2PyYRhIiJBJF8KPC/TN8cnS5PBj+rFFwaF/b
+ O0kfMDmJKovijb9kgGSUQRC2nA3/L0wWRImGV64Sbcs2WacXpzfENtkhZuRYOU1k1L0I
+ BifJsSQsffT5rjAqn0YPltjHC2R0RpD/zsZA0FjxSdRAHjl7rG5qHQBmt+W3dTMlZEbl
+ xk0DfAvn0jFR7JOI8QyfItmeLLGSq8FIl3WIyi0tUBtv9E8roINSuR+ENCyat7T0s7Uh
+ DI9g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=gBMxX7bvC1MO8wNO3MhM7n7vRAgCv1NW8GyQ+Y9eEF4=;
- b=NfU8jyonFD0vEN0iypMicyo/E2PCaeMaGVqt/lZOJuAS2Ndj6UnD7voNCc+klvpzXX
- da1Sb0mSKlsuEivzRzbBQKfQgfyvODTieTVi0pgEdf08vmtOY7apww6wM+7jsUIAAaVY
- JFNaGfahlff0Xtjlg7uxNvIkA2Y5aKVOPMy+iYdhEC8QHBICUt8o9C/bn+e4bwVRRR93
- r85g+w2/twwIqxqeZjRFvoe9KyREpDVPyyHeLcavrAK60RUBfYZlLmAkUF0owVjmJaLn
- w0GnaHC1I2ReuXq6lnTV7MRxhiSySpzpPXyAJr2xbXkuivyFCP93bZUTErRkZ7sp3TrB
- y7rw==
-X-Gm-Message-State: APjAAAX51mYYWyaRR2AvDFEqO/Ml+oaYEDYDyKMk5zoKYAzpzjn9oSG9
- DDUSvDd1WliC7qxftGzjNx9G8FSGvpI=
-X-Google-Smtp-Source: APXvYqyqSOytsLUyXfOK4VzO/3X0ZnefmlSDFm/utIICKphWzgzWcYlkZAAjt/enFEfoloWFD1YUww==
-X-Received: by 2002:a05:600c:20e:: with SMTP id
- 14mr16490375wmi.107.1573411649579; 
- Sun, 10 Nov 2019 10:47:29 -0800 (PST)
+ bh=0ERIbyU+62RDKkuyfUPzZUSe1FFHvxlCgQktwAbE+sA=;
+ b=Bjs/eTM+Wagc5ixN0sTNqWlUUGOvk1f60O5n0zdSIqor1a6KRRbpUsuWdtYzyuVGXr
+ 5j9oj7199UO5IvQUajGWMp0Lvp0su+QhI6og/ABZ731zbbq/Y4VFV2KCQWcBr8/PBHK+
+ MeYGQfHrYZEHvlfDntXn62Pqp3ospcZBN3d3i0DJdcMIE29XostiCIIDGVDZpmQtSIRd
+ 1g/xYElMfUgT+/JeMurPXZZaCqJfcXhPWc4wd5PsaPde1E5plPtzV2/heSuyhdaVvS8R
+ XOqdUedW936Xoij1Y43o6ES8awgrHYFVZLMzeo/erMvhekZM/uTIQ1p/eDapRXRo4eg3
+ HA3w==
+X-Gm-Message-State: APjAAAV+/cM182mrXAO6ZLM98lFP8HzloAjp+3QKoJn/XLrkhoQ5UHOa
+ bZRa7t0/qyxFMyzhh8IiLD0EPkRjiDo=
+X-Google-Smtp-Source: APXvYqxU+z4FOp9Y3j/HWJpJGGZDN36lb/Gvc1apgoOLKuG1pccbejXbQ+6Iltqxrzyx1hfd4qf9OA==
+X-Received: by 2002:a1c:5fc4:: with SMTP id
+ t187mr18344973wmb.142.1573414982196; 
+ Sun, 10 Nov 2019 11:43:02 -0800 (PST)
 Received: from ziggy.stardust ([95.169.226.39])
- by smtp.gmail.com with ESMTPSA id b17sm12834792wrr.37.2019.11.10.10.47.27
+ by smtp.gmail.com with ESMTPSA id k14sm376055wrw.46.2019.11.10.11.43.00
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 10 Nov 2019 10:47:28 -0800 (PST)
-Subject: Re: [PATCH 2/3] soc: mediatek: pwrap: add pwrap driver for MT6779 SoCs
-To: Argus Lin <argus.lin@mediatek.com>
-References: <1570088901-23211-1-git-send-email-argus.lin@mediatek.com>
- <1570088901-23211-3-git-send-email-argus.lin@mediatek.com>
- <b2f881e2-959e-eccf-e62e-54c510608aaa@gmail.com>
- <1571033065.19600.23.camel@mtkswgap22>
+ Sun, 10 Nov 2019 11:43:01 -0800 (PST)
+Subject: Re: [PATCHi v3 1/3] arm64: dts: mt8183: add dsi node
+To: Jitao Shi <jitao.shi@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20191028115039.96555-1-jitao.shi@mediatek.com>
+ <20191028115039.96555-2-jitao.shi@mediatek.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -136,23 +136,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  Y1aFdU79pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlI
  FZ6fsEKIAN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+
  r2JwH1CJjrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <daa0340e-57fd-d6be-8ba1-1618ecf3be5e@gmail.com>
-Date: Sun, 10 Nov 2019 19:47:26 +0100
+Message-ID: <50c4f50d-f0ca-da0d-bfad-d2fabacfb5ed@gmail.com>
+Date: Sun, 10 Nov 2019 20:43:00 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.1.1
 MIME-Version: 1.0
-In-Reply-To: <1571033065.19600.23.camel@mtkswgap22>
+In-Reply-To: <20191028115039.96555-2-jitao.shi@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_104734_792436_378D30CB 
-X-CRM114-Status: GOOD (  27.83  )
+X-CRM114-CacheID: sfid-20191110_114304_375576_97FA8ED7 
+X-CRM114-Status: GOOD (  16.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -176,15 +176,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- wsd_upstream@mediatek.com, Chenglin Xu <chenglin.xu@mediatek.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Sean Wang <sean.wang@mediatek.com>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- henryc.chen@mediatek.com, flora.fu@mediatek.com,
- Rob Herring <robh+dt@kernel.org>,
- Christophe Jaillet <christophe.jaillet@wanadoo.fr>,
- linux-mediatek@lists.infradead.org, Chen Zhong <chen.zhong@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: srv_heupstream@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -192,268 +184,60 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 14/10/2019 08:04, Argus Lin wrote:
-> On Fri, 2019-10-04 at 01:26 +0200, Matthias Brugger wrote:
->>
->> On 03/10/2019 09:48, Argus Lin wrote:
->>> MT6779 is a highly integrated SoCs, it uses MT6359 for power
->>> management. This patch adds pwrap driver to access MT6359.
->>> Pwrap of MT6779 support dynamic priority meichanism, sequence
->>
->> mechanism
-> I will fix it.
->>
->>> monitor and starvation mechanism to make transaction more
->>> reliable. WDT setting only need to init when it is zero,
->>> otherwise keep current value. When setting interrupt enable
->>
->> that's mt6779 specific?
-> It is common code. The PWRAP_WDT_UNIT and PWRAP_WDT_SRC_EN default value
-> is zero. Different project can have different value, I think we can
-> check if it has been initialized.
+On 28/10/2019 12:50, Jitao Shi wrote:
+> Add dsi and mipitx nodes to the mt8183
 > 
-> Two methods execute pwrap_init at different product line.
-> 1. at bootloader(Smart phone/Tablet/Auto)
-> PWRAP_WDT_UNIT and PWRAP_WDT_SRC_EN has been initialized at bootloader,
-> we don't need to initialize it at kernel again.
-> 2. at kernel(Some specific Tablet)
-> PWRAP_WDT_UNIT and PWRAP_WDT_SRC_EN is zero, just initialize them at
-> kernel.
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> ---
+>  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 24 ++++++++++++++++++++++++
+>  1 file changed, 24 insertions(+)
 > 
+> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+> index 2857583f5d60..bb0d53be6a25 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+> @@ -649,6 +649,16 @@
+>  			#clock-cells = <1>;
+>  		};
+>  
+> +		mipi_tx0: mipi-dphy@11e50000 {
+> +			compatible = "mediatek,mt8183-mipi-tx";
+> +			reg = <0 0x11e50000 0 0x1000>;
+> +			clocks = <&apmixedsys CLK_APMIXED_MIPID0_26M>;
+> +			clock-names = "ref_clk";
+> +			#clock-cells = <0>;
+> +			#phy-cells = <0>;
+> +			clock-output-names = "mipi_tx0_pll";
+> +		};
+> +
+>  		efuse: efuse@11f10000 {
+>  			compatible = "mediatek,mt8183-efuse",
+>  				     "mediatek,efuse";
+> @@ -670,6 +680,20 @@
+>  			#clock-cells = <1>;
+>  		};
+>  
+> +		dsi0: dsi@14014000 {
+> +			compatible = "mediatek,mt8183-dsi";
+> +			reg = <0 0x14014000 0 0x1000>;
+> +			interrupts = <GIC_SPI 236 IRQ_TYPE_LEVEL_LOW>;
+> +			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
+> +			mediatek,syscon-dsi = <&mmsys 0x140>;
 
-Well normally what we do at kernel level, we just initialize the devices with
-the needed value, even if it already was initialized by the bootloader. Does
-this break anything if we initialize the device a second time? The reason behind
-this is, that it makes the driver easier to read and independent from any
-bootloader changes.
+mediatek,syscon-dsi isn't defined anywhere and not used in the driver. Please
+delete.
 
->>
->>> flag at pwrap_probe, read current setting then do logical OR
->>> operation with wrp->master->int_en_all.
->>
->> same here, only specific to mt6779?
-> same reason like why check WDT_UNIT == 0. What we do in the past is to
-> overwrite pwrap_int_en use the same value at bootloader.
-> If pwrap_int_en has been initialized, it is better to read current
-> value, OR new value at kernel then write new one.
->>
->>>
->>> Signed-off-by: Argus Lin <argus.lin@mediatek.com>
->>> ---
->>>  drivers/soc/mediatek/mtk-pmic-wrap.c | 85 ++++++++++++++++++++++++++++++++----
->>>  1 file changed, 77 insertions(+), 8 deletions(-)
->>>
->>> diff --git a/drivers/soc/mediatek/mtk-pmic-wrap.c b/drivers/soc/mediatek/mtk-pmic-wrap.c
->>> index c725315..fa8daf2 100644
->>> --- a/drivers/soc/mediatek/mtk-pmic-wrap.c
->>> +++ b/drivers/soc/mediatek/mtk-pmic-wrap.c
->>> @@ -497,6 +497,45 @@ enum pwrap_regs {
->>>  	[PWRAP_DCM_DBC_PRD] =		0x1E0,
->>>  };
->>>
->>> +static int mt6779_regs[] = {
->>> +	[PWRAP_MUX_SEL] =		0x0,
->>> +	[PWRAP_WRAP_EN] =		0x4,
->>> +	[PWRAP_DIO_EN] =		0x8,
->>> +	[PWRAP_RDDMY] =			0x20,
->>> +	[PWRAP_CSHEXT_WRITE] =		0x24,
->>> +	[PWRAP_CSHEXT_READ] =		0x28,
->>> +	[PWRAP_CSLEXT_WRITE] =		0x2C,
->>> +	[PWRAP_CSLEXT_READ] =		0x30,
->>> +	[PWRAP_EXT_CK_WRITE] =		0x34,
->>> +	[PWRAP_STAUPD_CTRL] =		0x3C,
->>> +	[PWRAP_STAUPD_GRPEN] =		0x40,
->>> +	[PWRAP_EINT_STA0_ADR] =		0x44,
->>> +	[PWRAP_HARB_HPRIO] =		0x68,
->>> +	[PWRAP_HIPRIO_ARB_EN] =		0x6C,
->>> +	[PWRAP_MAN_EN] =		0x7C,
->>> +	[PWRAP_MAN_CMD] =		0x80,
->>> +	[PWRAP_WACS0_EN] =		0x8C,
->>> +	[PWRAP_WACS1_EN] =		0x94,
->>> +	[PWRAP_WACS2_EN] =		0x9C,
->>> +	[PWRAP_INIT_DONE0] =		0x90,
->>> +	[PWRAP_INIT_DONE1] =		0x98,
->>> +	[PWRAP_INIT_DONE2] =		0xA0,
->>> +	[PWRAP_INT_EN] =		0xBC,
->>> +	[PWRAP_INT_FLG_RAW] =		0xC0,
->>> +	[PWRAP_INT_FLG] =		0xC4,
->>> +	[PWRAP_INT_CLR] =		0xC8,
->>> +	[PWRAP_INT1_EN] =		0xCC,
->>> +	[PWRAP_INT1_FLG] =		0xD4,
->>> +	[PWRAP_INT1_CLR] =		0xD8,
->>> +	[PWRAP_TIMER_EN] =		0xF0,
->>> +	[PWRAP_WDT_UNIT] =		0xF8,
->>> +	[PWRAP_WDT_SRC_EN] =		0xFC,
->>> +	[PWRAP_WDT_SRC_EN_1] =		0x100,
->>> +	[PWRAP_WACS2_CMD] =		0xC20,
->>> +	[PWRAP_WACS2_RDATA] =		0xC24,
->>> +	[PWRAP_WACS2_VLDCLR] =		0xC28,
->>> +};
->>> +
->>>  static int mt6797_regs[] = {
->>>  	[PWRAP_MUX_SEL] =		0x0,
->>>  	[PWRAP_WRAP_EN] =		0x4,
->>> @@ -945,6 +984,7 @@ enum pmic_type {
->>>  enum pwrap_type {
->>>  	PWRAP_MT2701,
->>>  	PWRAP_MT6765,
->>> +	PWRAP_MT6779,
->>>  	PWRAP_MT6797,
->>>  	PWRAP_MT7622,
->>>  	PWRAP_MT8135,
->>> @@ -1377,6 +1417,7 @@ static int pwrap_init_cipher(struct pmic_wrapper *wrp)
->>>  		break;
->>>  	case PWRAP_MT2701:
->>>  	case PWRAP_MT6765:
->>> +	case PWRAP_MT6779:
->>>  	case PWRAP_MT6797:
->>>  	case PWRAP_MT8173:
->>>  	case PWRAP_MT8516:
->>> @@ -1468,8 +1509,10 @@ static int pwrap_init_security(struct pmic_wrapper *wrp)
->>>  	pwrap_writel(wrp, 0x0, PWRAP_SIG_MODE);
->>>  	pwrap_writel(wrp, wrp->slave->dew_regs[PWRAP_DEW_CRC_VAL],
->>>  		     PWRAP_SIG_ADR);
->>> -	pwrap_writel(wrp,
->>> -		     wrp->master->arb_en_all, PWRAP_HIPRIO_ARB_EN);
->>> +	if (pwrap_readl(wrp, PWRAP_HIPRIO_ARB_EN) == 0) {
->>
->> Did you make sure that this holds for all SoCs that are supported by the driver?
->> If so, why do we need this in mt6779 and didn't need that in the others?
->> Even more, mt6779 does not have the security capbaility, so why do you change
->> this code?
-> revert it.
->>> +		pwrap_writel(wrp,
->>> +			     wrp->master->arb_en_all, PWRAP_HIPRIO_ARB_EN);
->>> +	}
->>
->> I just realize that we write PWRAP_HIPRIO_ARB_EN twice if the slave supports
->> security. Do we really need that?
->>
-> revert it.
-> pwrap_init_security and pwrap_init do not called at MT6779. I will
-> revert this change.
->>>
->>>  	return 0;
->>>  }
->>> @@ -1581,7 +1624,10 @@ static int pwrap_init(struct pmic_wrapper *wrp)
->>>
->>>  	pwrap_writel(wrp, 1, PWRAP_WRAP_EN);
->>>
->>> -	pwrap_writel(wrp, wrp->master->arb_en_all, PWRAP_HIPRIO_ARB_EN);
->>> +	if (pwrap_readl(wrp, PWRAP_HIPRIO_ARB_EN) == 0) {
->>> +		pwrap_writel(wrp,
->>> +			     wrp->master->arb_en_all, PWRAP_HIPRIO_ARB_EN);
->>> +	}
->>>
->>>  	pwrap_writel(wrp, 1, PWRAP_WACS2_EN);
->>>
->>> @@ -1783,6 +1829,19 @@ static irqreturn_t pwrap_interrupt(int irqno, void *dev_id)
->>>  	.init_soc_specific = NULL,
->>>  };
->>>
->>> +static const struct pmic_wrapper_type pwrap_mt6779 = {
->>> +	.regs = mt6779_regs,
->>> +	.type = PWRAP_MT6779,
->>> +	.arb_en_all = 0,
->>> +	.int_en_all = 0,
->>> +	.int1_en_all = 0,
->>> +	.spi_w = PWRAP_MAN_CMD_SPI_WRITE,
->>> +	.wdt_src = 0,
->>> +	.caps = 0,
->>> +	.init_reg_clock = pwrap_common_init_reg_clock,
->>> +	.init_soc_specific = NULL,
->>> +};
->>> +
->>>  static const struct pmic_wrapper_type pwrap_mt6797 = {
->>>  	.regs = mt6797_regs,
->>>  	.type = PWRAP_MT6797,
->>> @@ -1868,6 +1927,9 @@ static irqreturn_t pwrap_interrupt(int irqno, void *dev_id)
->>>  		.compatible = "mediatek,mt6765-pwrap",
->>>  		.data = &pwrap_mt6765,
->>>  	}, {
->>> +		.compatible = "mediatek,mt6779-pwrap",
->>> +		.data = &pwrap_mt6779,
->>> +	}, {
->>>  		.compatible = "mediatek,mt6797-pwrap",
->>>  		.data = &pwrap_mt6797,
->>>  	}, {
->>> @@ -1898,6 +1960,7 @@ static int pwrap_probe(struct platform_device *pdev)
->>>  	struct device_node *np = pdev->dev.of_node;
->>>  	const struct of_device_id *of_slave_id = NULL;
->>>  	struct resource *res;
->>> +	u32 int_en;
->>>
->>>  	if (np->child)
->>>  		of_slave_id = of_match_node(of_slave_match_tbl, np->child);
->>> @@ -1995,23 +2058,29 @@ static int pwrap_probe(struct platform_device *pdev)
->>>  	}
->>>
->>>  	/* Initialize watchdog, may not be done by the bootloader */
->>> -	pwrap_writel(wrp, 0xf, PWRAP_WDT_UNIT);
->>> +	if (pwrap_readl(wrp, PWRAP_WDT_UNIT) == 0)
->>
->> Same here, why do we need it in mt6779 and did you test if it does not break any
->> older SoC?
-> It is common code. The PWRAP_WDT_UNIT and PWRAP_WDT_SRC_EN default value
-> is zero. Different project can have different value, I think we can
-> check if it has been initialized.
-> 
-> Two methods execute pwrap_init at different product line.
-> 1. at bootloader(Smart phone/Tablet/Auto)
-> PWRAP_WDT_UNIT and PWRAP_WDT_SRC_EN has been initialized at bootloader,
-> we don't need to initialize it at kernel again.
-
-Same here, if it's just a "we don't need" and it does not break anything, then I
-prefer to just initialize it again.
-
-> 2. at kernel(Some specific Tablet)
-> PWRAP_WDT_UNIT and PWRAP_WDT_SRC_EN is zero, just initialize them at
-> kernel.
->>
->>> +		pwrap_writel(wrp, 0xf, PWRAP_WDT_UNIT);
->>>  	/*
->>>  	 * Since STAUPD was not used on mt8173 platform,
->>>  	 * so STAUPD of WDT_SRC which should be turned off
->>>  	 */
->>> -	pwrap_writel(wrp, wrp->master->wdt_src, PWRAP_WDT_SRC_EN);
->>> +	if (pwrap_readl(wrp, PWRAP_WDT_SRC_EN) == 0)
->>> +		pwrap_writel(wrp, wrp->master->wdt_src, PWRAP_WDT_SRC_EN);
->>>  	if (HAS_CAP(wrp->master->caps, PWRAP_CAP_WDT_SRC1))
->>>  		pwrap_writel(wrp, wrp->master->wdt_src, PWRAP_WDT_SRC_EN_1);
->>>
->>>  	pwrap_writel(wrp, 0x1, PWRAP_TIMER_EN);
->>> -	pwrap_writel(wrp, wrp->master->int_en_all, PWRAP_INT_EN);
->>> +	int_en = pwrap_readl(wrp, PWRAP_INT_EN);
->>> +	pwrap_writel(wrp, (int_en) | (wrp->master->int_en_all), PWRAP_INT_EN);
->>
->> Looks ok to me, is it a bug fix, or only needed for mt6779?
-> It is common code.
-
-Ok, I understand that's not a bug fix, but it makes the code more robust. As it
-is independent from mt6779, please provide it as a separate patch.
-
-Regards,
-Matthias
-
->>
->>>  	/*
->>>  	 * We add INT1 interrupt to handle starvation and request exception
->>>  	 * If we support it, we should enable it here.
->>>  	 */
->>> -	if (HAS_CAP(wrp->master->caps, PWRAP_CAP_INT1_EN))
->>> -		pwrap_writel(wrp, wrp->master->int1_en_all, PWRAP_INT1_EN);
->>> +	if (HAS_CAP(wrp->master->caps, PWRAP_CAP_INT1_EN)) {
->>> +		int_en = pwrap_readl(wrp, PWRAP_INT1_EN);
->>> +		pwrap_writel(wrp, (int_en) | wrp->master->int1_en_all,
->>> +			     PWRAP_INT1_EN);
->>> +	}
->>>
->>>  	irq = platform_get_irq(pdev, 0);
->>>  	ret = devm_request_irq(wrp->dev, irq, pwrap_interrupt,
->>> --
->>> 1.8.1.1.dirty
->>>
-> 
+> +			clocks = <&mmsys CLK_MM_DSI0_MM>,
+> +				<&mmsys CLK_MM_DSI0_IF>,
+> +				<&mipi_tx0>;
+> +			clock-names = "engine", "digital", "hs";
+> +			phys = <&mipi_tx0>;
+> +			phy-names = "dphy";
+> +		};
+> +
+>  		imgsys: syscon@15020000 {
+>  			compatible = "mediatek,mt8183-imgsys", "syscon";
+>  			reg = <0 0x15020000 0 0x1000>;
 > 
 
 _______________________________________________
