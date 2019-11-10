@@ -2,66 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3404F6B25
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 20:43:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FC2CF6B38
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 21:15:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BwExHd7jq1sIv2KIAqp6q77BIuWiG0SGmW9NuOzMT+o=; b=nlFBWVW1g3YGSi
-	432RfgeyRLMAhnuVEeV/h/L1GWyl6hibgG+Vpd6OhbLina3NCTLxY7RArmXCZfAYYnXJ/4xOy+1Ul
-	N/w39owbUky/DIzFw9gNzdD8NksamJuPBhdIUJaxZI2CQ3vacOOpNlM42Uj2qev9S6UeaUCXBI/sv
-	GisTBdeQGMpqcqpf3JjczXlCp7lfYVYjpBoK9r1sTHRkl9nbqtO5JQKnx+R11ERBgMfj0MsTbyqiN
-	Io5lg6s8y5u/tmHIyNTGsm/0gcYmQ9V8EfQ0lLcYjoEQOeV4Mg5zKyV7aAFLTvGNvtTsuzRPB4dIV
-	/pu0SToXEFzM2PpusG9Q==;
+	List-Owner; bh=pl3LVilr5e/1Z+VksZ0JmfdgAbdYwV+AvKBpaLWIkxw=; b=onTEwPajEJHQFa
+	udBvde0ho4bED1FmbtuWiLTEG6GLM8CUwS0RSVLbM4jpZBU7R73B/UzZdrr1pEuyanNTEplcbLzZH
+	0H5EDTN6DG+VvMMGMxjfDRyMlUtHiwpBQrNTRNkkTccxOTExq6NBjypXRmNT1JTn6tA2mzDYToy42
+	CVB7mLkPn28q3xoqB8gUVU2YcpdAyD0YJa05MQuSbP4WdfZzK1DDSQZFClhd43qRFeg5PxR82ucs6
+	GJfWE9JyPvSkgL0RuiRvsQ9+/FLYITzCQD9ZHZfRGSnhfdZC9LHM7X4EBpz1vizNRAaR9Md/FQCXv
+	F41Os87z1qfNMnGifd3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTt79-0003OM-Fk; Sun, 10 Nov 2019 19:43:11 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iTtcC-0004hm-AT; Sun, 10 Nov 2019 20:15:16 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTt72-0003NL-A4; Sun, 10 Nov 2019 19:43:05 +0000
-Received: by mail-wm1-x341.google.com with SMTP id j18so1660318wmk.1;
- Sun, 10 Nov 2019 11:43:03 -0800 (PST)
+ id 1iTtbw-0004Sa-Hf; Sun, 10 Nov 2019 20:15:02 +0000
+Received: by mail-wr1-x443.google.com with SMTP id z10so7100325wrs.12;
+ Sun, 10 Nov 2019 12:14:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=0ERIbyU+62RDKkuyfUPzZUSe1FFHvxlCgQktwAbE+sA=;
- b=gQ8/92fpg3vcqG02QlEM6gFMXSpp9Ph9D2+nj0qwCKurqR6YhPnxrqFAjRIJvE0lrx
- QvhOS81QZ8U0SLJaQfN9xJgWxt8hv/pI2PyYRhIiJBJF8KPC/TN8cnS5PBj+rFFwaF/b
- O0kfMDmJKovijb9kgGSUQRC2nA3/L0wWRImGV64Sbcs2WacXpzfENtkhZuRYOU1k1L0I
- BifJsSQsffT5rjAqn0YPltjHC2R0RpD/zsZA0FjxSdRAHjl7rG5qHQBmt+W3dTMlZEbl
- xk0DfAvn0jFR7JOI8QyfItmeLLGSq8FIl3WIyi0tUBtv9E8roINSuR+ENCyat7T0s7Uh
- DI9g==
+ bh=quKcGUOxBX/EpAZRL1w9/S/Fbg+9kzJyGXf32cZprXs=;
+ b=nc3+0FJt/Z4B79GZFUL46cFs/E6csANbAwdtqzP1SFZTtM21B3r5MniiROvwgulfQp
+ SJlmishPqPCYwFxkiT1S1+mW0wlQle+yw07MDqyl7m2KFo3M6NJpdsS50Lu9eXauvz8g
+ qhRdjgEjYpO6I0g7+Q4llvv/9KRRCWJbl026RhURdkj7o5r8h/vOQ0NRjE48ZJA8L1uw
+ pJ60vkpLhJPlcj31FwCBbvnp+2dAh1N8uJJz4DQcQocWan6qTDPnF0+GbYG/2S8W8GGQ
+ AbfsncpZgbEDzT9yy2KAzPXXFDDWjLMrcqJUx8Wdlbuw+LnH0XFZi6ALi1btivkwxsVJ
+ p/cQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=0ERIbyU+62RDKkuyfUPzZUSe1FFHvxlCgQktwAbE+sA=;
- b=Bjs/eTM+Wagc5ixN0sTNqWlUUGOvk1f60O5n0zdSIqor1a6KRRbpUsuWdtYzyuVGXr
- 5j9oj7199UO5IvQUajGWMp0Lvp0su+QhI6og/ABZ731zbbq/Y4VFV2KCQWcBr8/PBHK+
- MeYGQfHrYZEHvlfDntXn62Pqp3ospcZBN3d3i0DJdcMIE29XostiCIIDGVDZpmQtSIRd
- 1g/xYElMfUgT+/JeMurPXZZaCqJfcXhPWc4wd5PsaPde1E5plPtzV2/heSuyhdaVvS8R
- XOqdUedW936Xoij1Y43o6ES8awgrHYFVZLMzeo/erMvhekZM/uTIQ1p/eDapRXRo4eg3
- HA3w==
-X-Gm-Message-State: APjAAAV+/cM182mrXAO6ZLM98lFP8HzloAjp+3QKoJn/XLrkhoQ5UHOa
- bZRa7t0/qyxFMyzhh8IiLD0EPkRjiDo=
-X-Google-Smtp-Source: APXvYqxU+z4FOp9Y3j/HWJpJGGZDN36lb/Gvc1apgoOLKuG1pccbejXbQ+6Iltqxrzyx1hfd4qf9OA==
-X-Received: by 2002:a1c:5fc4:: with SMTP id
- t187mr18344973wmb.142.1573414982196; 
- Sun, 10 Nov 2019 11:43:02 -0800 (PST)
+ bh=quKcGUOxBX/EpAZRL1w9/S/Fbg+9kzJyGXf32cZprXs=;
+ b=F9xfFfe+hBcMcdb2/HPFNLcNzaDjufM7P9RgbIWJ/CfwjYFSl1iKdOhfVBLZrfmFPZ
+ Lt/gUSwJrd/c7RbdDHTCRzHSXrGZXP5WXohPQZWpz1Ms0dZrbCB04AK/eFpwDdVLabiZ
+ nUx7hWbJdttBnubYGY0+Qg55smfABn+q++EusETbkwUAlulH8svTGU6BYWtrzEGsSFUS
+ l0i9mQjQWMfcsZX5xnmBmPVIHKXIr6bTzRkN4sAF9RzA0VnRX9QT+Xg+c0N46sYc2RrJ
+ YZ/0DajpRD3iSO6yCpklcdrKI6xYkIcJdcd/HXwG830ZMTd/F8kHfGNTHu7wzDws/ErB
+ 9bpw==
+X-Gm-Message-State: APjAAAWRmp4zSltz3btgLVU82lAPJyXFQ3cceXxgOAV5Ve1UZmKorv6n
+ +v8OkBRFbqzrI2LML+3zJd4EuZXddYw=
+X-Google-Smtp-Source: APXvYqzzVfvoGrxeL/ZrXA4zG4dubPqDHPgl8238wrVlxG2TLmM1QxC379GshQ6MY5gAbu9hTs6EUg==
+X-Received: by 2002:a5d:570a:: with SMTP id a10mr12343444wrv.107.1573416897732; 
+ Sun, 10 Nov 2019 12:14:57 -0800 (PST)
 Received: from ziggy.stardust ([95.169.226.39])
- by smtp.gmail.com with ESMTPSA id k14sm376055wrw.46.2019.11.10.11.43.00
+ by smtp.gmail.com with ESMTPSA id z189sm19599662wmc.25.2019.11.10.12.14.55
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 10 Nov 2019 11:43:01 -0800 (PST)
-Subject: Re: [PATCHi v3 1/3] arm64: dts: mt8183: add dsi node
-To: Jitao Shi <jitao.shi@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20191028115039.96555-1-jitao.shi@mediatek.com>
- <20191028115039.96555-2-jitao.shi@mediatek.com>
+ Sun, 10 Nov 2019 12:14:56 -0800 (PST)
+Subject: Re: [PATCH v2 1/2] dt-bindings: mediatek: update bindings for MT8183
+ systimer
+To: Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Dehui Sun <dehui.sun@mediatek.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+References: <1572242984-30460-1-git-send-email-dehui.sun@mediatek.com>
+ <1572242984-30460-2-git-send-email-dehui.sun@mediatek.com>
+ <e28e1419-a259-45d9-fd23-32ccc9aa8021@linaro.org>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -136,23 +137,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  Y1aFdU79pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlI
  FZ6fsEKIAN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+
  r2JwH1CJjrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <50c4f50d-f0ca-da0d-bfad-d2fabacfb5ed@gmail.com>
-Date: Sun, 10 Nov 2019 20:43:00 +0100
+Message-ID: <a9682f28-1ea0-efb3-c2f2-bb0e2173c827@gmail.com>
+Date: Sun, 10 Nov 2019 21:14:55 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.1.1
 MIME-Version: 1.0
-In-Reply-To: <20191028115039.96555-2-jitao.shi@mediatek.com>
+In-Reply-To: <e28e1419-a259-45d9-fd23-32ccc9aa8021@linaro.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_114304_375576_97FA8ED7 
-X-CRM114-Status: GOOD (  16.37  )
+X-CRM114-CacheID: sfid-20191110_121500_615592_246085CD 
+X-CRM114-Status: GOOD (  14.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -176,7 +177,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: srv_heupstream@mediatek.com
+Cc: devicetree@vger.kernel.org, weiyi.lu@mediatek.com,
+ srv_heupstream@mediatek.com, erin.lo@mediatek.com,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -184,60 +188,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 28/10/2019 12:50, Jitao Shi wrote:
-> Add dsi and mipitx nodes to the mt8183
+On 28/10/2019 10:34, Daniel Lezcano wrote:
+> On 28/10/2019 07:09, Dehui Sun wrote:
+>> This commit adds mt8183 compatible node in mtk-timer binding document.
+>>
+>> Reviewed-by: Rob Herring <robh@kernel.org>
+>> Signed-off-by: Dehui Sun <dehui.sun@mediatek.com>
 > 
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> ---
->  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 24 ++++++++++++++++++++++++
->  1 file changed, 24 insertions(+)
+> Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> index 2857583f5d60..bb0d53be6a25 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> @@ -649,6 +649,16 @@
->  			#clock-cells = <1>;
->  		};
->  
-> +		mipi_tx0: mipi-dphy@11e50000 {
-> +			compatible = "mediatek,mt8183-mipi-tx";
-> +			reg = <0 0x11e50000 0 0x1000>;
-> +			clocks = <&apmixedsys CLK_APMIXED_MIPID0_26M>;
-> +			clock-names = "ref_clk";
-> +			#clock-cells = <0>;
-> +			#phy-cells = <0>;
-> +			clock-output-names = "mipi_tx0_pll";
-> +		};
-> +
->  		efuse: efuse@11f10000 {
->  			compatible = "mediatek,mt8183-efuse",
->  				     "mediatek,efuse";
-> @@ -670,6 +680,20 @@
->  			#clock-cells = <1>;
->  		};
->  
-> +		dsi0: dsi@14014000 {
-> +			compatible = "mediatek,mt8183-dsi";
-> +			reg = <0 0x14014000 0 0x1000>;
-> +			interrupts = <GIC_SPI 236 IRQ_TYPE_LEVEL_LOW>;
-> +			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> +			mediatek,syscon-dsi = <&mmsys 0x140>;
 
-mediatek,syscon-dsi isn't defined anywhere and not used in the driver. Please
-delete.
+Applied
 
-> +			clocks = <&mmsys CLK_MM_DSI0_MM>,
-> +				<&mmsys CLK_MM_DSI0_IF>,
-> +				<&mipi_tx0>;
-> +			clock-names = "engine", "digital", "hs";
-> +			phys = <&mipi_tx0>;
-> +			phy-names = "dphy";
-> +		};
-> +
->  		imgsys: syscon@15020000 {
->  			compatible = "mediatek,mt8183-imgsys", "syscon";
->  			reg = <0 0x15020000 0 0x1000>;
+>> ---
+>>  Documentation/devicetree/bindings/timer/mediatek,mtk-timer.txt | 1 +
+>>  1 file changed, 1 insertion(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/timer/mediatek,mtk-timer.txt b/Documentation/devicetree/bindings/timer/mediatek,mtk-timer.txt
+>> index 74c3ead..0d25648 100644
+>> --- a/Documentation/devicetree/bindings/timer/mediatek,mtk-timer.txt
+>> +++ b/Documentation/devicetree/bindings/timer/mediatek,mtk-timer.txt
+>> @@ -21,6 +21,7 @@ Required properties:
+>>  	* "mediatek,mt6577-timer" for MT6577 and all above compatible timers (GPT)
+>>  
+>>  	For those SoCs that use SYST
+>> +	* "mediatek,mt8183-timer" for MT8183 compatible timers (SYST)
+>>  	* "mediatek,mt7629-timer" for MT7629 compatible timers (SYST)
+>>  	* "mediatek,mt6765-timer" for MT6765 and all above compatible timers (SYST)
+>>  
+>>
+> 
 > 
 
 _______________________________________________
