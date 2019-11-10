@@ -2,71 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7ABA3F6B57
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 21:32:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3820F6B5A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 21:34:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZzuXk6ja2kqS5b12eyY/IojE8NERXINy/Jgi13jMTEc=; b=twfaBilYqabPIb
-	AGGOuxNaI81ESlHhIncPLX2kMBVe0g3SDFuh/g1wT9hGf20wqYm/DXd9yNJ5Kw+9MvLpYwEQH9eum
-	Ei7Fh4QrJz1gNfz017g7ZPzVufeUF6OPASS7aKBMJORIp9FMA4Eh6IVIgzrw1bzwijHvTItSmLkRe
-	1QursICwJEdDJKtDmICI6PC+hM6Qyi/Jcx7TSQqyFDCFG4nFKFaQMtD+QDEr73fAbUa5fkLkk3lU8
-	q7csF3a8CilkKnWOZfZ8Iovqhf712Rmhr1vmSFdVgpTV+L0vUYCSxfqagxXpWJppQNPw4iz+dSNaN
-	JHskVlWFJQ3mZFBpsPcg==;
+	List-Owner; bh=hexch+se2/rekyjB6G7d0fHpPynlTUzFTq19vzZqAjw=; b=Ca6rP66WTHDGD8
+	mIVso2e6tRMwy1WDtiN1HGLM2+DssI7ZpyXx1UjfH5baORi5HFxCkkskv8OIvUTqVFc3qqAO2CDPa
+	SuzLwSKSC3Oky+Kd+2qM/ethibqfAVF5uFwFi5Dqu2S33Zp1c8eyy0nZlMAZP5yUliRvuTGqSDlDl
+	t0wKnXVj+mJHOkG5/42750wmbyNXz5hqR2BJk3GQz27kLakfhVvTFe8C5eILCD9v3rmfPM6ITdv61
+	S5yyF9rNoj0nJeK887isnoVfCXWSsFPk/QG3dCRkEAUN7j02hQhqVnb86eTRu77OADdnhj9Ygy1j+
+	BeqXeQaWxUpLB9gJqBNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTttD-0004AY-05; Sun, 10 Nov 2019 20:32:51 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iTtuY-0004QL-6k; Sun, 10 Nov 2019 20:34:14 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTtt3-0004A3-1O
- for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 20:32:45 +0000
-Received: by mail-pl1-x644.google.com with SMTP id j12so6831036plt.9
+ id 1iTtuP-0004Q0-8F
+ for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 20:34:06 +0000
+Received: by mail-pg1-x542.google.com with SMTP id q22so7994823pgk.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 10 Nov 2019 12:32:40 -0800 (PST)
+ Sun, 10 Nov 2019 12:34:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=cGsR5WngjJ6vlJ/9N7eXh+HPWceHblVfJN5R+oJU0ho=;
- b=fVy+394BGOzOnm65Hb7ehesJCIphLGVZYc/9Rimg/RazDJ2/E4iAyEMPLz2Tvs+so9
- cFcYAHCQbz4Nre+CwYacNZtO6AVqdyL1rhsj2655W8rPPbkH8l7N2wxbzNVEMsh2v2sO
- fiiCUfGKubfY6eCJXUnPFbFD8O9oNhL8upC+KsGi+MCRIY0v8b03x+9xt9IRS9swVwpC
- yAjL1A8+IhMOLd9iDrBzuHBpg205+8HwVDgXgQUPI/wdobFPG1GCzMAiGlAzYUlzSa6u
- 6KJfVmZN5hR7Vxvs9I/7oV0yoHlpsGZ4Nz7CqQxuIEUZijAgDh/VrOmv9k4HCibwdhwe
- sq1A==
+ bh=zeyXL9EBqLifVcUFGXVoKedqOJMbrsEvfongGwHV/ug=;
+ b=Dno+oIX1vTGCT0rXZqaFwWCPIMoquTxttsMhY2oPYJdJ3gs8lyhWiA+C4G3oWbQAo6
+ Zd3Kek81Ni1VOCD0T3gUIIo4OQxj2rVlZ6WegGCGXhfFVUjUXxJfZh3mqeZ9PQlfR6xr
+ J1bXD7OjMqmMd78ySNhc/2SjxvC2e+2NiV55qwHVu/WSV48hjD/Yb4KdIkAcjaA652y0
+ yrupZI6Tt4LB9m9Z+3/X0Pgdsas+bRpmlcPrcm9lPQQpyzgnLORy87mS6QO8+W8tt5Lx
+ 3Uw4u7TV1+ZUWBZNUY1eUkoJj5RxCRm6UCB3z+TFnu4lFU1w2Pi0cSWPaEO6NuEUE5SV
+ ddFQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=cGsR5WngjJ6vlJ/9N7eXh+HPWceHblVfJN5R+oJU0ho=;
- b=X7hrnLdUEBNGwCqYLP0wAvXXkpFqsjURnw/+bUuojrYCWjPPS3dbBV0leBPs6K2+Zk
- 7D2KDTX1t1nYQyfY+SBU5B/p/1KHhJZuWp6ylterW09hP4iJMJoR9wSGS0RFmprpXSGV
- 2Oa2JzqqVrhk6mdqeRqovk1YLTS5CW9FOgorvH09gZhZVESBGNt11Y/okSB2cSwyJSGw
- CNWr/SUaSzm/ws50Gcjqz+kp881Oe3GsRydnhUeRLbR0jt3aV2lzBntCSpicTxQHGsZb
- 1n7wU73N2bgBhtzRiIyFXwucralXxDBlvcwL9fD2KJ7qrVAO3cN3vbTWmA7w2LkU9rfF
- Vh7Q==
-X-Gm-Message-State: APjAAAVWUgoEs92UPNkOI2l1aNJiAZVNS+mMUd4rNnpB8c7aFlhm3UCj
- ycbwJgz5DaUVooD7c+cT+rRdKqUN
-X-Google-Smtp-Source: APXvYqz2iV9/I/iJ1sYmdc/5PANZgu0jsuKh1WpOj1SEhxX4aAXpXPTx4axizD+Xmbt9aKqnmE12aw==
-X-Received: by 2002:a17:902:7790:: with SMTP id
- o16mr20489198pll.47.1573417960034; 
- Sun, 10 Nov 2019 12:32:40 -0800 (PST)
+ bh=zeyXL9EBqLifVcUFGXVoKedqOJMbrsEvfongGwHV/ug=;
+ b=Fb1a8skFn27RTK9n1jxiF09Q+dOg30ruIcy97mx7MYQnUlyYZjK/uYM4my5GYqtP5c
+ xpB7pJ9P5Kogny8twLlYu89Sf120+ViukhlhqlMCrrXcteHM2KYLdHNCS4Euo4ayzMp1
+ RZXH/POhv85IWCk7BS2uCg/xOE5TvCNVSppC3UibktYVjRLm74pwNG1LAbZaeNk4gWVZ
+ YbfihLVlUAbY8ZY1m+wmeyAcQQuoEsFPpBTD4EbTtgMUEOquJ5JDY5UFbT7/oJ1GM3a/
+ RWiFiB1F09p6VgEJFEPIZTq5UkMHIHVO+qZ9W/LUghzg1aQkMHJwcg1Z4o5k0ai6bAGD
+ UKhA==
+X-Gm-Message-State: APjAAAVISAVCrF5uV8sNYv7ivqFa1KlCeu9b6FPw2J/0R1sCVuArg6kV
+ +kAxbKvYF1jqARdI3Ro+V5oUhzdq
+X-Google-Smtp-Source: APXvYqwWVqu7+x5/fmHTc0obYn2IVB6bV3vaHoNJ2Hf6k3sD6KI/M2RZvcbhlacYZ/0HyYJleTLrFQ==
+X-Received: by 2002:a63:fe47:: with SMTP id x7mr25923321pgj.112.1573418044380; 
+ Sun, 10 Nov 2019 12:34:04 -0800 (PST)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- c16sm11775027pfo.34.2019.11.10.12.32.38
+ j10sm12473243pfn.128.2019.11.10.12.34.03
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 10 Nov 2019 12:32:39 -0800 (PST)
-Subject: Re: [PATCH V3 net-next 6/7] net: bcmgenet: Add RGMII_RXID and
- RGMII_ID support
+ Sun, 10 Nov 2019 12:34:03 -0800 (PST)
+Subject: Re: [PATCH V3 net-next 5/7] net: bcmgenet: Refactor register access
+ in bcmgenet_mii_config
 To: Stefan Wahren <wahrenst@gmx.net>,
  Matthias Brugger <matthias.bgg@kernel.org>,
  Matthias Brugger <mbrugger@suse.com>, "David S . Miller"
  <davem@davemloft.net>, Florian Fainelli <f.fainelli@gmail.com>
 References: <1573326009-2275-1-git-send-email-wahrenst@gmx.net>
- <1573326009-2275-7-git-send-email-wahrenst@gmx.net>
+ <1573326009-2275-6-git-send-email-wahrenst@gmx.net>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -122,23 +121,23 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <741ffd9e-2f38-5605-2c44-e6411bf5d8d8@gmail.com>
-Date: Sun, 10 Nov 2019 12:32:38 -0800
+Message-ID: <0a6ba358-b1a8-9a57-1e29-6443f07929e5@gmail.com>
+Date: Sun, 10 Nov 2019 12:34:02 -0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <1573326009-2275-7-git-send-email-wahrenst@gmx.net>
+In-Reply-To: <1573326009-2275-6-git-send-email-wahrenst@gmx.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_123243_802987_E2722869 
-X-CRM114-Status: GOOD (  19.06  )
+X-CRM114-CacheID: sfid-20191110_123405_317670_DACA621B 
+X-CRM114-Status: GOOD (  16.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -174,41 +173,57 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 11/9/2019 11:00 AM, Stefan Wahren wrote:
-> This adds the missing support for the PHY modes RGMII_RXID and
-> RGMII_ID. Based on the used register settings in the downstream tree
-> the mode RGMII_RXID is necessary for the Raspberry Pi 4.
+> The register access in bcmgenet_mii_config() is a little bit opaque and
+> not easy to extend. In preparation for the missing RGMII PHY modes
+> move the real register access to the end of the function. This make
+> the code easier to read and extend.
 > 
 > Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+You will most likely have to resubmit this patch series after Doug's
+recent GENET changes:
 
-> ---
->  drivers/net/ethernet/broadcom/genet/bcmmii.c | 10 ++++++++++
->  1 file changed, 10 insertions(+)
-> 
-> diff --git a/drivers/net/ethernet/broadcom/genet/bcmmii.c b/drivers/net/ethernet/broadcom/genet/bcmmii.c
-> index 8f7b2c0..9091e5b 100644
-> --- a/drivers/net/ethernet/broadcom/genet/bcmmii.c
-> +++ b/drivers/net/ethernet/broadcom/genet/bcmmii.c
-> @@ -273,6 +273,16 @@ int bcmgenet_mii_config(struct net_device *dev, bool init)
->  		phy_name = "external RGMII (TX delay)";
->  		port_ctrl = PORT_MODE_EXT_GPHY;
->  		break;
-> +
-> +	case PHY_INTERFACE_MODE_RGMII_RXID:
-> +		phy_name = "external RGMII (RX delay)";
-> +		port_ctrl = PORT_MODE_EXT_GPHY;
-> +		break;
-> +
-> +	case PHY_INTERFACE_MODE_RGMII_ID:
-> +		phy_name = "external RGMII (RX/TX delay)";
-> +		port_ctrl = PORT_MODE_EXT_GPHY;
-> +		break;
+https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/drivers/net/ethernet/broadcom/genet?id=3a55402c93877d291b0a612d25edb03d1b4b93ac
+https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/drivers/net/ethernet/broadcom/genet?id=6b6d017fccb4693767d2fcae9ef2fd05243748bb
+https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/drivers/net/ethernet/broadcom/genet?id=0686bd9d5e6863f60e4bb1e78e6fe7bb217a0890
 
-Technically for this one we should probably make sure that we do set
-id_mode_dis in order for the MAC not to add the delay and leave the PHY
-to do it though I don't have such a configuration handy to
-prove/disprove that is necessary.
+And while you are at it with this patch, you may even take a step
+further and do something like this for the INTERNAL and MOCA PHYs:
+
+diff --git a/drivers/net/ethernet/broadcom/genet/bcmmii.c
+b/drivers/net/ethernet/broadcom/genet/bcmmii.c
+index dbe18cdf6c1b..e363a824d662 100644
+--- a/drivers/net/ethernet/broadcom/genet/bcmmii.c
++++ b/drivers/net/ethernet/broadcom/genet/bcmmii.c
+@@ -218,6 +218,7 @@ int bcmgenet_mii_config(struct net_device *dev, bool
+init)
+
+        switch (priv->phy_interface) {
+        case PHY_INTERFACE_MODE_INTERNAL:
++               phy_name = "internal PHY";
+        case PHY_INTERFACE_MODE_MOCA:
+                /* Irrespective of the actually configured PHY speed (100 or
+                 * 1000) GENETv4 only has an internal GPHY so we will
+just end
+@@ -229,14 +230,8 @@ int bcmgenet_mii_config(struct net_device *dev,
+bool init)
+                else
+                        port_ctrl = PORT_MODE_INT_EPHY;
+
+-               bcmgenet_sys_writel(priv, port_ctrl, SYS_PORT_CTRL);
+-
+-               if (priv->internal_phy) {
+-                       phy_name = "internal PHY";
+-               } else if (priv->phy_interface == PHY_INTERFACE_MODE_MOCA) {
++               if (!phy_name)
+                        phy_name = "MoCA";
+-                       bcmgenet_moca_phy_setup(priv);
+-               }
+                break;
+
+such that all the port_ctrl and the phy_name are set within the same
+location and the register write/configuration is done after the mode has
+been determined.
 -- 
 Florian
 
