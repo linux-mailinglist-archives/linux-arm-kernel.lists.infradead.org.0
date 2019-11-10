@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 284D1F6B4A
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 21:24:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87C74F6B4B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 21:24:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0t1TDkPPJ8f3LD0As5O8c8zSaDVcSVe5UtSvRsDIQpo=; b=uJN1P80AXMq7Vd
-	MruTQGvYzi3McPpdTV2wkRh1hhjEKpdSu+w5PCa6MlkeOKNWIYWPjTIEpCQhaJZd2Gt3dypdjUwIf
-	z0xy8GU3s6/McxZyfCjwwMWbKnAnPVA6PtNTKIKMx3rzajrRqLQrCPOmPm6k6T4ACY8/Sezhp9ae5
-	gm2tnPmXaRJRE5p2giP35cgxJnaZHdvkOtQX0bzizHIQoQ8B+o2c+CfJ51oCeYwiZFW/tdJZ8iT51
-	8NDW697G7gbQB4Dtj2m3BfpKzKBsqWLZ60ykRaSGogz4laWckDTiJ8vOciRbOjCmPnApKAz1IRnVU
-	aabZXZI0D4neytnsdubg==;
+	List-Owner; bh=vmkfiGCgjjsMLDwIQZDRJFIjA9Jp+WRItSTdUvC64ek=; b=fqG5hDov9zfwgW
+	ISR54KRCTQ7QccMzNKwevw+hH7rIN3k5UqhHzP7bG795ghnZNAEOgLwPbjs0ZRGU96kSRMMicNuy9
+	tHIcITul1u5BniogaN7sjDLnP2bUdkJ8pwSGttYx1WCrueLN/vtrZBvcdjIN+xK/ieMyPeHechR8l
+	2UBrdlPmJi4E5hjqFtpHNFUPluaj2ewZt8kvc1zoJcW9Mfjmda6IatqC9Apx6Wdyo8OQqEMf7Cvle
+	+FShxqejxUAjLMgIgmAX0Gyzz9GC6eeE+dbDUDWO/cn973SAZnS+d0gm36wIwtRbPV7oy1VJyN4iG
+	jcO5IG6ip+Vj+hkIsi1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTtkc-00087f-Qm; Sun, 10 Nov 2019 20:23:58 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iTtkp-0008KI-TY; Sun, 10 Nov 2019 20:24:11 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTtkI-0007v8-RL
- for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 20:23:40 +0000
-Received: by mail-pl1-x644.google.com with SMTP id o9so6837446plk.6
+ id 1iTtkW-0008BM-8H
+ for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 20:23:53 +0000
+Received: by mail-pf1-x443.google.com with SMTP id x28so9092548pfo.6
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 10 Nov 2019 12:23:36 -0800 (PST)
+ Sun, 10 Nov 2019 12:23:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=iN+xv8v9D9JfZ/LZf+pgNVU6nBLOWe5c4BzmZwWLFBA=;
- b=imioP+oxecvJjU6Xmb47BPcvvMDZqgr/hKpGeLRLxZ/V599nLNqet6aRcgK+OmIbcj
- +mEd7hmDo1W3panNCu8rrXOlcn9SycRlixZkPPS10KfLvjOaBqakqr/Ig9p4E8CJe+BX
- 8XCF2K+tUFhaPRGfyTfk09dUo2e3+WSJ/NaNnE48Ldy0FaoN+v0G+shPUziMlPgnoLUT
- A5LRrdcZWlFGWO2OGDqPetFd30vB27n+v6k41cdVrN53TZrW+DYVQivTusCnAQjZ8Mzs
- swYK/uO6J32TomM/21Rhj91NhqFGVAUzuJchldoKnMzOJcmpkTqLyl7Pep88RFDVVTKz
- /6tg==
+ bh=XfsqRg4Quhz0cvGHHa5PymJPXuDB7J2u42uw2a8NbBQ=;
+ b=olbWGtHynTSmjTH0PVicbArTcBnztzLY63lwzlrUpZdQJHRrdS+eHUJsqGSx0KRhOS
+ 8qzg5VmcRl3vEc1B4xKdAMKyJm88WVvZ/ZeieeEZ6+mBT2V10jb4j2RW+u50WNCJ3d+x
+ RSsPWO4GD/D/p6F0NDdrL/T61FFYEQiW8Ym8fWrUjyqECPmb8+0mrji2iup350AFkC5b
+ +dUVdsRfnA3zWTmMNpFkgrV0c6LNoyJrQH8rcyiTseTXyj2dfQdqPMYnPynOhKI688Nu
+ 4afloT3ueq5NpaydyNmCFAm+3ICJcJEpE2mgGibI6q88HKQxlvwxT0j2P7HLISokg17z
+ hRow==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=iN+xv8v9D9JfZ/LZf+pgNVU6nBLOWe5c4BzmZwWLFBA=;
- b=N+g+rkKRuABnAkQKbHDgrhDQqYwsFkoY3Dnp8hWrakYQHgZBmhapEKVMqxgm5Ez3DB
- 68YrmXYub0tjt4Vu2TV56fU3dQb+3mdi2vJe57v61Dd74SWIsBVf+yXA8Vacy4PmG2HE
- wwuGpTQo4454hiq8/R9+3xF5usxqPdAZYK5Sy5tfUvyJ9k0f16XiDK4frTYX5j7Hoetn
- 00pQ/B4zZnbbgQsswRMM9dD5ddEKn93mboKAio+MKu5/dVg67HdAaEvjjkbI2x8KlWJl
- MMaPnLgW1wNMhN1CHvIneYo61oQNbnvPTBXgVgKMk7A5XhnOvPDeGYO4PL7uOFPOTTRo
- /e7g==
-X-Gm-Message-State: APjAAAXUj3vjOJFhemHcZTsO31In6GykATylRvsDtbgS90PNLHN7qiPh
- HCvwkT6DkLod1Nklkgp/aGHlNRXW
-X-Google-Smtp-Source: APXvYqy3Iq+I0qSFej4jUr7IllPRd0VfjvmG0sMoZC8P+B3v7Bs905GnM53i/xBfWyYuKhIKwjOHKw==
-X-Received: by 2002:a17:902:b184:: with SMTP id
- s4mr3217179plr.236.1573417415588; 
- Sun, 10 Nov 2019 12:23:35 -0800 (PST)
+ bh=XfsqRg4Quhz0cvGHHa5PymJPXuDB7J2u42uw2a8NbBQ=;
+ b=gEIOqHuVStWXtZ6cAFpSgVu0xWWiI2fj2KS3Es3qwlP+Y+8ZLmDereztvbBRv+l/YO
+ C4wqtiRuXj1Eo9L6TApO3O/gtAMlJa7BLm4cvnIa7R5NGi+yCHSbBqDrd/MsCPyQTGhH
+ dOprjUzO4H5f8y7wJkI7ldQv2aHcps7sMUhQWzIvcMjdgylEQCliVFvmI0kocgZSiEts
+ pMB6+bnTxRksYkiqbZlf6ZraddDY0inV5XVuOthFHR2PFF0Nirn17M95sQ9MtviJBD1k
+ xaGZmj6o6Ket5B8xNtogDf3uWIKG0zmLWej++kYHJ+GiiI61lmBK3rDLYwYUeer2NZ8U
+ O+9Q==
+X-Gm-Message-State: APjAAAU8jWTcXFlAa6gPAtB5rEkbAGa07twhc/Gi9Q/P/AQKiPiqRK1C
+ NBZe+okRjTHBo55HCOzOOhBEGbBZ
+X-Google-Smtp-Source: APXvYqya7x/01nMLaXR4ldc1pnbOr41wog6CoaRSkOTxjR2OOn9vdg5f3Ufi7tXJL828NTzGSW4F1Q==
+X-Received: by 2002:a17:90a:268c:: with SMTP id
+ m12mr28855132pje.69.1573417431273; 
+ Sun, 10 Nov 2019 12:23:51 -0800 (PST)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- b7sm5821220pjo.3.2019.11.10.12.23.34
+ z10sm4570577pgg.39.2019.11.10.12.23.49
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 10 Nov 2019 12:23:34 -0800 (PST)
-Subject: Re: [PATCH V3 net-next 3/7] dt-bindings: net: bcmgenet: Add BCM2711
- support
+ Sun, 10 Nov 2019 12:23:50 -0800 (PST)
+Subject: Re: [PATCH V3 net-next 1/7] net: bcmgenet: Avoid touching
+ non-existent interrupt
 To: Stefan Wahren <wahrenst@gmx.net>,
  Matthias Brugger <matthias.bgg@kernel.org>,
  Matthias Brugger <mbrugger@suse.com>, "David S . Miller"
  <davem@davemloft.net>, Florian Fainelli <f.fainelli@gmail.com>
 References: <1573326009-2275-1-git-send-email-wahrenst@gmx.net>
- <1573326009-2275-4-git-send-email-wahrenst@gmx.net>
+ <1573326009-2275-2-git-send-email-wahrenst@gmx.net>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -122,24 +122,23 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <5c68208a-db3a-96df-0358-00d83acfc235@gmail.com>
-Date: Sun, 10 Nov 2019 12:23:33 -0800
+Message-ID: <fa75d3ae-147b-8537-9cc5-522a7dc5a5d2@gmail.com>
+Date: Sun, 10 Nov 2019 12:23:49 -0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <1573326009-2275-4-git-send-email-wahrenst@gmx.net>
+In-Reply-To: <1573326009-2275-2-git-send-email-wahrenst@gmx.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_122339_040419_A2A07A7A 
-X-CRM114-Status: UNSURE (   9.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191110_122352_384467_90732C1F 
+X-CRM114-Status: GOOD (  13.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -175,13 +174,21 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 11/9/2019 11:00 AM, Stefan Wahren wrote:
-> The BCM2711 has some modifications to the GENET v5. So add this SoC
-> specific compatible.
+> As platform_get_irq() now prints an error when the interrupt does not
+> exist, we are getting a confusing error message in case the optional
+> WOL IRQ is not defined:
 > 
-> Suggested-by: Florian Fainelli <f.fainelli@gmail.com>
+>   bcmgenet fd58000.ethernet: IRQ index 2 not found
+> 
+> Fix this by using the platform_get_irq_optional().
+> 
+> Fixes: 7723f4c5ecdb8d83 ("driver core: platform: Add an error message to platform_get_irq*()")
 > Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+I still don't think this warrant a Fixes tag, as this is not a bug
+per-se, just a minor annoyance:
+
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
 Florian
 
