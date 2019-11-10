@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3A8CF623C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 03:41:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 863B1F62DA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 03:46:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sKID9WSMcvfesV66Mc2ve2+J8IyDL1WhCV0PAtcOIUA=; b=mElTwTWTqrH8Bd
-	7G4phtKJyAq0iVl2MaonqWNMXaslFOjMR1bXlztWnGq4r4VX8+2RGWhkcStx0DHVDMvLSNywo53nY
-	bFJjlqQzJS9W7n1eaC9jzPRSBuU6zh15KfudHSDF0aL1H6O6ZTCXycO8f7Eh7hW6QFTkufIVqKmLf
-	Eoga8fo82NnEL57pDoFWtR7Wgbepoic4JQzmTq+73XczBPbpBnFkqTuZ9P/BYCuOSUBIzEecOU6zg
-	A/dciVmPBq67f3QTVirWOr7YUhKNVOb5oinbZARjFoGYth9kshHG8XFgRi057CGsJA6/NMTJ9oe/i
-	0MUj2jwy5SvO/74Gyv2A==;
+	List-Owner; bh=s1CoDjeB/4aXT2ZCZXjs3YmTSv3UionzvpoSy/60mZU=; b=s3nbGjWfyam8un
+	7Du+eo+SSA1S7kg3ZUzIvS80z/a6rIOqs0vIXUZz+O+nXR6J7bYQDbBn5fn/xdOXFyziJTKrtNhW1
+	lviMxwfsMLdDyLRcR4ZMG1emB/tAsmhh7BXtEll9dSRP7SXJzudZBr3zdP4qCa0cPH4zPujWCRBI7
+	4eOFs8EMkXn2ZKyelEWQhllSTJ15viUyJOT10S2d/tquvYwo0Xj8C9/CnAzztLxaoI9oCwtcOa1kr
+	BcG5hKMpUcKMzPUSPtWw4oXkVeYJCLehYLPtbdp9msS5sHua/t8F+qyqsYpQAfmsI3wt4u4JfXKZ1
+	xskJG0gkNF9AU0mx9NNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTdAE-0000pO-KG; Sun, 10 Nov 2019 02:41:18 +0000
+	id 1iTdF1-0003O9-9C; Sun, 10 Nov 2019 02:46:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTdA6-0000oA-Qw
- for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 02:41:12 +0000
+ id 1iTdEu-0003NN-MZ
+ for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 02:46:10 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8262E21019;
- Sun, 10 Nov 2019 02:41:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5809F2085B;
+ Sun, 10 Nov 2019 02:46:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573353670;
- bh=tXpvznd+oBOZN2eCbwim3PFiLXJbR9UB2tAzNx1l3vY=;
+ s=default; t=1573353968;
+ bh=yd/2s7NgD5N/H4tCXDGVVAgmUhkj7AtVXMSL9P/ctck=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=DndFncJe+wcKkYO5SVNKHXJTqDGpf1JX7gTBOf0zZ6gATDmSgsMnVvxEhQ5dHvPCM
- 4x/RkdE1MpZq8UGrGYPAP2cFg4G/WA0FaiF12fGwdZQEnFCQZcjOeebCQZy23oEykq
- gYwuuNsGXJPLa42lrskjU4ZQPVellkGRaaLgNcv8=
+ b=NLo+7FU5KSHjF2/4vfa2EImOP+gR3NUxgn6KkezdbSMoVkUzpykfZ42y090ObMvBp
+ 7F46CbwP2upAvhF46h6pdbAuiSwWK4HHTK8mI+4ZmQK72vLzFiiZjjAsmOdHMMAChG
+ N7W0iBcZihpoDdLBiVqVyyPCi8qzuvAcS2Q/FA0o=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 036/191] libfdt: Ensure INT_MAX is defined in
+Subject: [PATCH AUTOSEL 4.14 016/109] libfdt: Ensure INT_MAX is defined in
  libfdt_env.h
-Date: Sat,  9 Nov 2019 21:37:38 -0500
-Message-Id: <20191110024013.29782-36-sashal@kernel.org>
+Date: Sat,  9 Nov 2019 21:44:08 -0500
+Message-Id: <20191110024541.31567-16-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191110024013.29782-1-sashal@kernel.org>
-References: <20191110024013.29782-1-sashal@kernel.org>
+In-Reply-To: <20191110024541.31567-1-sashal@kernel.org>
+References: <20191110024541.31567-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191109_184110_891530_5C80A2B1 
+X-CRM114-CacheID: sfid-20191109_184608_758024_9699D2B1 
 X-CRM114-Status: GOOD (  10.88  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -126,7 +126,7 @@ index 07437816e0986..b36c0289a308e 100644
  typedef __be32 fdt32_t;
  typedef __be64 fdt64_t;
 diff --git a/arch/powerpc/boot/libfdt_env.h b/arch/powerpc/boot/libfdt_env.h
-index 2a0c8b1bf1479..2abc8e83b95e9 100644
+index f52c31b1f48fa..39155d3b2cefa 100644
 --- a/arch/powerpc/boot/libfdt_env.h
 +++ b/arch/powerpc/boot/libfdt_env.h
 @@ -5,6 +5,8 @@
@@ -137,14 +137,14 @@ index 2a0c8b1bf1479..2abc8e83b95e9 100644
 +
  #include "of.h"
  
- typedef unsigned long uintptr_t;
+ typedef u32 uint32_t;
 diff --git a/include/linux/libfdt_env.h b/include/linux/libfdt_env.h
-index c6ac1fe7ec68a..edb0f0c309044 100644
+index 14997285e53d3..1aa707ab19bbf 100644
 --- a/include/linux/libfdt_env.h
 +++ b/include/linux/libfdt_env.h
 @@ -2,6 +2,7 @@
- #ifndef LIBFDT_ENV_H
- #define LIBFDT_ENV_H
+ #ifndef _LIBFDT_ENV_H
+ #define _LIBFDT_ENV_H
  
 +#include <linux/kernel.h>	/* For INT_MAX */
  #include <linux/string.h>
