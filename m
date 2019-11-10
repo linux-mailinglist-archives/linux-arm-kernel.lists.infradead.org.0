@@ -2,157 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF151F6B8E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 22:11:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EFE2F6B9F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 22:31:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dxbfD87htbQbHxhzt1kUaqtGutK9B5dIHjKB7rLKCGI=; b=CLoQQ//OOYyELp
-	RI/+UFhuSjGowhcSYQJpqdqlQxB5Ls6tdxAXFDD+710y8PR8R+eIjVS7ec36amIR4/JhPbZfsb8ti
-	ffzrcw4OMjNUyG4K7g0twiRPLJWxiouycSBS9DknDMowqg5gWrX0xYuKJ1fcWkQfigBBPfEpJjX6y
-	c2ddFwkZ5SEsQSS4iH3Iq3wQZXIDFhkxHPFsM7YrjKNcVhqJl3/HCD8YDSzl3KMwl3th8IhSkHlw7
-	SnHpKfxhaGiefwtFFV0sDqxvRVs6+dFWwxHsmbW5iXOQC3Xfh+MbHQMcp94+qIestZUfj5yk+5nhJ
-	aea4+kGij75J/sRYBH8w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Gx/MORhWWi2l1L5pAp0vti9jLF+FmmnDvoWrepfNVsg=; b=SRprOTRCzrk56e
+	7I3Z8DqQSTjxr1+cRPYDiid2HRDIYgaM23FQXMGfgctMRcvDU5kXEtEtrkdRTekiq/ASdWpVN86hy
+	4PD4ExIDp5GbKOUhn3DNkNeAZQ73sh9QrG6NKL+ePr9RGbdpCgmV3+71Z59cyOmMTynTzFzprkGvS
+	yKzJVmdAjBpwzoxQdTcwTp9ze/ICLQ9hww5l/WO4SxhVC/2Yy4uRIObScyzSy+9N8kDRFupXW6cJC
+	N/cTF5jdxgnvjKtsHROQKksCppGKb1LYbYLP7FCTQ3TJIHVxU185BnIQ1O6+0s8pvEJlz2GPxTZN/
+	Zr0oxTC6v++ZI7gEi+dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTuU6-0000Mw-Jj; Sun, 10 Nov 2019 21:10:58 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iTung-0006Rv-Ec; Sun, 10 Nov 2019 21:31:12 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTuTz-0000MT-2v
- for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 21:10:52 +0000
-Received: by mail-pg1-x543.google.com with SMTP id l24so8013120pgh.10
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 10 Nov 2019 13:10:50 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=uO9zmV9a2x6iKxFuEwh3fTFyRX731Ma1YCTw6lzpfWw=;
- b=W5ws8lnbtSrsmuwCCsiepkAnIXAkxti/Bcl1lvcYbUvLq8FAFf007u0QZQ3mGM3Ct6
- iN0J2rRzgowARRuiuFDw7s53E2PPAqpuxkAxmKA0JCaSt0lH5gILJcTyqJUAS+pwS4g5
- 0Eap82DCAVms4lCVIxzDNeBca8tID/NK8pEwFNXm6MQTbfExcFOWLEbDbi6BIWR4hlej
- VpdjUYBJKLo0Bm4PFI2Fgmz6VqaefAfnEONqCl7jQpXQWI3nrkJ4BfxZbLieL0M3K7xb
- W/a/qEWUioNz1WC37V4wjxsZinX+OCKPRA5zZ58Js7Tb7TopFwWJ7qF48EeNgX3f3vjz
- ZBcg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=uO9zmV9a2x6iKxFuEwh3fTFyRX731Ma1YCTw6lzpfWw=;
- b=YkO+AYeGEHNZ8ESuaQZr3nX4gB00rsMoCt4smgr/kXmVhKt/Xz7YXNH6yVBu1uhoTV
- VKCvSP+O+Rs9+mqKclpjyt0GH/HxhfRmXVuLAlKc8b0XNoMQtTLohGKuQITOQ5wiUBHI
- SXqmrXfxNLrH6GNWpbqw8eRmqGNsA7fDNs+BqEqayFLm+s+bAMlOuevx3VYAzAHdE0uu
- JOFC+0zNxH9OLOR8J9ObGd0Ugzzyrx7w7iU5jD5wc28zeZg8fo9Qcvema25OhPWJJVcT
- UjsN8+c/4lqHFMF1UgCvNtatXuSEuMoeXlWN4YoAQvW5StwWHpyBpMa4a6hTizqsCJER
- mycA==
-X-Gm-Message-State: APjAAAUfPcBZo0ViD+laVIE4f4OOIV7eCCC3fsdLXKFGGsQgxNE0M/sf
- I2OS7+9JbTHVULXUwOVTRdBZGrSS
-X-Google-Smtp-Source: APXvYqwIj/ZfLnC37FiBgWYyMsU4SVx6LwZyKpCh+b7EG6SXhjYl5I/7qmn8wYtdNjZxv/WRxNQFug==
-X-Received: by 2002:a63:7887:: with SMTP id
- t129mr25071872pgc.144.1573420249978; 
- Sun, 10 Nov 2019 13:10:49 -0800 (PST)
-Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id
- z10sm4616119pgg.39.2019.11.10.13.10.48
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 10 Nov 2019 13:10:49 -0800 (PST)
-Subject: Re: [PATCH V3 net-next 1/7] net: bcmgenet: Avoid touching
- non-existent interrupt
-To: Stefan Wahren <wahrenst@gmx.net>,
- Matthias Brugger <matthias.bgg@kernel.org>,
- Matthias Brugger <mbrugger@suse.com>, "David S . Miller"
- <davem@davemloft.net>
-References: <1573326009-2275-1-git-send-email-wahrenst@gmx.net>
- <1573326009-2275-2-git-send-email-wahrenst@gmx.net>
- <fa75d3ae-147b-8537-9cc5-522a7dc5a5d2@gmail.com>
- <3aaf1b3d-7425-5073-f5cf-5ae672f4b008@gmx.net>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; keydata=
- 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
- a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <56e0a8ba-e6ed-9a43-5cba-a2119e0fda84@gmail.com>
-Date: Sun, 10 Nov 2019 13:10:47 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1iTunY-0006RQ-FV
+ for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 21:31:06 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 10 Nov 2019 13:31:01 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.68,290,1569308400"; d="scan'208";a="405018231"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga006.fm.intel.com with ESMTP; 10 Nov 2019 13:30:58 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1iTunR-000Fxb-Sm; Mon, 11 Nov 2019 05:30:57 +0800
+Date: Mon, 11 Nov 2019 05:30:49 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Alex Kogan <alex.kogan@oracle.com>
+Subject: Re: [PATCH v6 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+Message-ID: <201911110540.8p3UoQAR%lkp@intel.com>
+References: <20191107174622.61718-4-alex.kogan@oracle.com>
 MIME-Version: 1.0
-In-Reply-To: <3aaf1b3d-7425-5073-f5cf-5ae672f4b008@gmx.net>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191107174622.61718-4-alex.kogan@oracle.com>
+X-Patchwork-Hint: ignore
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_131051_153582_C3CADD0F 
-X-CRM114-Status: GOOD (  16.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191110_133104_532325_24FF7A11 
+X-CRM114-Status: GOOD (  19.35  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.43 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -164,53 +71,230 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Doug Berger <opendmb@gmail.com>, netdev@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, kbuild-all@lists.01.org,
+ arnd@arndb.de, peterz@infradead.org, dave.dice@oracle.com,
+ jglauber@marvell.com, x86@kernel.org, will.deacon@arm.com,
+ linux@armlinux.org.uk, steven.sistare@oracle.com, linux-kernel@vger.kernel.org,
+ rahul.x.yadav@oracle.com, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
+ alex.kogan@oracle.com, longman@redhat.com, tglx@linutronix.de,
+ daniel.m.jordan@oracle.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Alex,
+
+Thank you for the patch! Perhaps something to improve:
+
+[auto build test WARNING on linus/master]
+[cannot apply to v5.4-rc6 next-20191108]
+[if your patch is applied to the wrong git tree, please drop us a note to help
+improve the system. BTW, we also suggest to use '--base' option to specify the
+base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+
+url:    https://github.com/0day-ci/linux/commits/Alex-Kogan/locking-qspinlock-Rename-mcs-lock-unlock-macros-and-make-them-more-generic/20191109-180535
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git 0058b0a506e40d9a2c62015fe92eb64a44d78cd9
+reproduce:
+        # apt-get install sparse
+        # sparse version: v0.6.1-21-gb31adac-dirty
+        make ARCH=x86_64 allmodconfig
+        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
+
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
 
 
-On 11/10/2019 12:57 PM, Stefan Wahren wrote:
-> Hi Florian,
-> 
-> Am 10.11.19 um 21:23 schrieb Florian Fainelli:
->>
->> On 11/9/2019 11:00 AM, Stefan Wahren wrote:
->>> As platform_get_irq() now prints an error when the interrupt does not
->>> exist, we are getting a confusing error message in case the optional
->>> WOL IRQ is not defined:
->>>
->>>   bcmgenet fd58000.ethernet: IRQ index 2 not found
->>>
->>> Fix this by using the platform_get_irq_optional().
->>>
->>> Fixes: 7723f4c5ecdb8d83 ("driver core: platform: Add an error message to platform_get_irq*()")
->>> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
->> I still don't think this warrant a Fixes tag, as this is not a bug
->> per-se, just a minor annoyance:
-> 
-> this confuses me. In V2 you said this about patch "net: bcmgenet: Fix
-> error handling on IRQ retrieval".
-> 
-> Is it possible you commented the wrong patch last time?
+sparse warnings: (new ones prefixed by >>)
 
-In v2, on patch 1, I wrote this:
+   kernel/locking/qspinlock.c:450:14: sparse: sparse: incorrect type in assignment (different modifiers) @@    expected struct mcs_spinlock *[assigned] node @@    got ct mcs_spinlock *[assigned] node @@
+   kernel/locking/qspinlock.c:450:14: sparse:    expected struct mcs_spinlock *[assigned] node
+   kernel/locking/qspinlock.c:450:14: sparse:    got struct mcs_spinlock [pure] *
+   kernel/locking/qspinlock.c:498:22: sparse: sparse: incorrect type in assignment (different modifiers) @@    expected struct mcs_spinlock *prev @@    got struct struct mcs_spinlock *prev @@
+   kernel/locking/qspinlock.c:498:22: sparse:    expected struct mcs_spinlock *prev
+   kernel/locking/qspinlock.c:498:22: sparse:    got struct mcs_spinlock [pure] *
+>> kernel/locking/qspinlock_cna.h:141:60: sparse: sparse: incorrect type in initializer (different modifiers) @@    expected struct mcs_spinlock *tail_2nd @@    got struct struct mcs_spinlock *tail_2nd @@
+>> kernel/locking/qspinlock_cna.h:141:60: sparse:    expected struct mcs_spinlock *tail_2nd
+>> kernel/locking/qspinlock_cna.h:141:60: sparse:    got struct mcs_spinlock [pure] *
+   kernel/locking/qspinlock.c:450:14: sparse: sparse: incorrect type in assignment (different modifiers) @@    expected struct mcs_spinlock *[assigned] node @@    got ct mcs_spinlock *[assigned] node @@
+   kernel/locking/qspinlock.c:450:14: sparse:    expected struct mcs_spinlock *[assigned] node
+   kernel/locking/qspinlock.c:450:14: sparse:    got struct mcs_spinlock [pure] *
+   kernel/locking/qspinlock.c:498:22: sparse: sparse: incorrect type in assignment (different modifiers) @@    expected struct mcs_spinlock *prev @@    got struct struct mcs_spinlock *prev @@
+   kernel/locking/qspinlock.c:498:22: sparse:    expected struct mcs_spinlock *prev
+   kernel/locking/qspinlock.c:498:22: sparse:    got struct mcs_spinlock [pure] *
+>> kernel/locking/qspinlock_cna.h:107:18: sparse: sparse: incorrect type in assignment (different modifiers) @@    expected struct mcs_spinlock *tail_2nd @@    got struct struct mcs_spinlock *tail_2nd @@
+   kernel/locking/qspinlock_cna.h:107:18: sparse:    expected struct mcs_spinlock *tail_2nd
+   kernel/locking/qspinlock_cna.h:107:18: sparse:    got struct mcs_spinlock [pure] *
+>> kernel/locking/qspinlock_cna.h:240:61: sparse: sparse: incorrect type in argument 2 (different modifiers) @@    expected struct mcs_spinlock *pred_start @@    got struct struct mcs_spinlock *pred_start @@
+>> kernel/locking/qspinlock_cna.h:240:61: sparse:    expected struct mcs_spinlock *pred_start
+   kernel/locking/qspinlock_cna.h:240:61: sparse:    got struct mcs_spinlock [pure] *
+   kernel/locking/qspinlock_cna.h:252:26: sparse: sparse: incorrect type in assignment (different modifiers) @@    expected struct mcs_spinlock *tail_2nd @@    got struct struct mcs_spinlock *tail_2nd @@
+   kernel/locking/qspinlock_cna.h:252:26: sparse:    expected struct mcs_spinlock *tail_2nd
+   kernel/locking/qspinlock_cna.h:252:26: sparse:    got struct mcs_spinlock [pure] *
+   kernel/locking/qspinlock.c:450:14: sparse: sparse: incorrect type in assignment (different modifiers) @@    expected struct mcs_spinlock *[assigned] node @@    got ct mcs_spinlock *[assigned] node @@
+   kernel/locking/qspinlock.c:450:14: sparse:    expected struct mcs_spinlock *[assigned] node
+   kernel/locking/qspinlock.c:450:14: sparse:    got struct mcs_spinlock [pure] *
+   kernel/locking/qspinlock.c:498:22: sparse: sparse: incorrect type in assignment (different modifiers) @@    expected struct mcs_spinlock *prev @@    got struct struct mcs_spinlock *prev @@
+   kernel/locking/qspinlock.c:498:22: sparse:    expected struct mcs_spinlock *prev
+   kernel/locking/qspinlock.c:498:22: sparse:    got struct mcs_spinlock [pure] *
 
-Not sure if the Fixes tag is necessary here, this is kind of an
-exceptional case anyway since you should be specifying valid interrupt
-resources to begin with.
+vim +141 kernel/locking/qspinlock_cna.h
 
-and on v2, on patch 2, I just suggested using
-platform_get_irq_optional() but did not comment on your choice of Fixes:
-tag, but now I just did, and for the same reasons as patch #1, I think
-this is not necessary.
--- 
-Florian
+    90	
+    91	static inline bool cna_try_change_tail(struct qspinlock *lock, u32 val,
+    92					       struct mcs_spinlock *node)
+    93	{
+    94		struct mcs_spinlock *head_2nd, *tail_2nd;
+    95		u32 new;
+    96	
+    97		/* If the secondary queue is empty, do what MCS does. */
+    98		if (node->locked <= 1)
+    99			return __try_clear_tail(lock, val, node);
+   100	
+   101		/*
+   102		 * Try to update the tail value to the last node in the secondary queue.
+   103		 * If successful, pass the lock to the first thread in the secondary
+   104		 * queue. Doing those two actions effectively moves all nodes from the
+   105		 * secondary queue into the main one.
+   106		 */
+ > 107		tail_2nd = decode_tail(node->locked);
+   108		head_2nd = tail_2nd->next;
+   109		new = ((struct cna_node *)tail_2nd)->encoded_tail + _Q_LOCKED_VAL;
+   110	
+   111		if (atomic_try_cmpxchg_relaxed(&lock->val, &val, new)) {
+   112			/*
+   113			 * Try to reset @next in tail_2nd to NULL, but no need to check
+   114			 * the result - if failed, a new successor has updated it.
+   115			 */
+   116			cmpxchg_relaxed(&tail_2nd->next, head_2nd, NULL);
+   117			arch_mcs_pass_lock(&head_2nd->locked, 1);
+   118			return true;
+   119		}
+   120	
+   121		return false;
+   122	}
+   123	
+   124	/*
+   125	 * cna_splice_tail -- splice nodes in the main queue between [first, last]
+   126	 * onto the secondary queue.
+   127	 */
+   128	static void cna_splice_tail(struct mcs_spinlock *node,
+   129				    struct mcs_spinlock *first,
+   130				    struct mcs_spinlock *last)
+   131	{
+   132		/* remove [first,last] */
+   133		node->next = last->next;
+   134	
+   135		/* stick [first,last] on the secondary queue tail */
+   136		if (node->locked <= 1) { /* if secondary queue is empty */
+   137			/* create secondary queue */
+   138			last->next = first;
+   139		} else {
+   140			/* add to the tail of the secondary queue */
+ > 141			struct mcs_spinlock *tail_2nd = decode_tail(node->locked);
+   142			struct mcs_spinlock *head_2nd = tail_2nd->next;
+   143	
+   144			tail_2nd->next = first;
+   145			last->next = head_2nd;
+   146		}
+   147	
+   148		node->locked = ((struct cna_node *)last)->encoded_tail;
+   149	}
+   150	
+   151	/*
+   152	 * cna_scan_main_queue - scan the main waiting queue looking for the first
+   153	 * thread running on the same NUMA node as the lock holder. If found (call it
+   154	 * thread T), move all threads in the main queue between the lock holder and
+   155	 * T to the end of the secondary queue and return 0; otherwise, return the
+   156	 * encoded pointer of the last scanned node in the primary queue (so a
+   157	 * subsequent scan can be resumed from that node)
+   158	 *
+   159	 * Schematically, this may look like the following (nn stands for numa_node and
+   160	 * et stands for encoded_tail).
+   161	 *
+   162	 *   when cna_scan_main_queue() is called (the secondary queue is empty):
+   163	 *
+   164	 *  A+------------+   B+--------+   C+--------+   T+--------+
+   165	 *   |mcs:next    | -> |mcs:next| -> |mcs:next| -> |mcs:next| -> NULL
+   166	 *   |mcs:locked=1|    |cna:nn=0|    |cna:nn=2|    |cna:nn=1|
+   167	 *   |cna:nn=1    |    +--------+    +--------+    +--------+
+   168	 *   +----------- +
+   169	 *
+   170	 *   when cna_scan_main_queue() returns (the secondary queue contains B and C):
+   171	 *
+   172	 *  A+----------------+    T+--------+
+   173	 *   |mcs:next        | ->  |mcs:next| -> NULL
+   174	 *   |mcs:locked=C.et | -+  |cna:nn=1|
+   175	 *   |cna:nn=1        |  |  +--------+
+   176	 *   +--------------- +  +-----+
+   177	 *                             \/
+   178	 *          B+--------+   C+--------+
+   179	 *           |mcs:next| -> |mcs:next| -+
+   180	 *           |cna:nn=0|    |cna:nn=2|  |
+   181	 *           +--------+    +--------+  |
+   182	 *               ^                     |
+   183	 *               +---------------------+
+   184	 *
+   185	 * The worst case complexity of the scan is O(n), where n is the number
+   186	 * of current waiters. However, the amortized complexity is close to O(1),
+   187	 * as the immediate successor is likely to be running on the same node once
+   188	 * threads from other nodes are moved to the secondary queue.
+   189	 */
+   190	static u32 cna_scan_main_queue(struct mcs_spinlock *node,
+   191				       struct mcs_spinlock *pred_start)
+   192	{
+   193		struct cna_node *cn = (struct cna_node *)node;
+   194		struct cna_node *cni = (struct cna_node *)READ_ONCE(pred_start->next);
+   195		struct cna_node *last;
+   196		int my_numa_node = cn->numa_node;
+   197	
+   198		/* find any next waiter on 'our' NUMA node */
+   199		for (last = cn;
+   200		     cni && cni->numa_node != my_numa_node;
+   201		     last = cni, cni = (struct cna_node *)READ_ONCE(cni->mcs.next))
+   202			;
+   203	
+   204		/* if found, splice any skipped waiters onto the secondary queue */
+   205		if (cni) {
+   206			if (last != cn)	/* did we skip any waiters? */
+   207				cna_splice_tail(node, node->next,
+   208						(struct mcs_spinlock *)last);
+   209			return 0;
+   210		}
+   211	
+   212		return last->encoded_tail;
+   213	}
+   214	
+   215	__always_inline u32 cna_pre_scan(struct qspinlock *lock,
+   216					  struct mcs_spinlock *node)
+   217	{
+   218		struct cna_node *cn = (struct cna_node *)node;
+   219	
+   220		cn->pre_scan_result = cna_scan_main_queue(node, node);
+   221	
+   222		return 0;
+   223	}
+   224	
+   225	static inline void cna_pass_lock(struct mcs_spinlock *node,
+   226					 struct mcs_spinlock *next)
+   227	{
+   228		struct cna_node *cn = (struct cna_node *)node;
+   229		struct mcs_spinlock *next_holder = next, *tail_2nd;
+   230		u32 val = 1;
+   231	
+   232		u32 scan = cn->pre_scan_result;
+   233	
+   234		/*
+   235		 * check if a successor from the same numa node has not been found in
+   236		 * pre-scan, and if so, try to find it in post-scan starting from the
+   237		 * node where pre-scan stopped (stored in @pre_scan_result)
+   238		 */
+   239		if (scan > 0)
+ > 240			scan = cna_scan_main_queue(node, decode_tail(scan));
+
+---
+0-DAY kernel test infrastructure                 Open Source Technology Center
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
 
 _______________________________________________
 linux-arm-kernel mailing list
