@@ -2,66 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53E58F6B3D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 21:15:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B59FBF6B47
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 21:23:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N8zvL1F1VvmsFiMTQgVF2skr0etTVNc7cDjWiP4eI5A=; b=ukMDq/J9HQEfbN
-	4nSnaQk8ZC6i4kMw7gVrOy1qHDUoP2DVSODUvfg1XR+Kqf4b4s4A/V7ktaEIePRm60FuHTuzd1rmb
-	eIt1h7cPvgs7YzzKUtjuawknSc/VCHe1QpWuVJEGrEK7MNL5Z+4sdlarKJ3q1nuVPWn04UlmTcCEG
-	i0tW9kF4+abb/sQb62615xKBKAjzTIhdB8r0ye9Qs/b6/CT8LuNtgNBXbHOjkE9opBWtpVyrsHAl0
-	95NgD/ICD7tzONDVn2AHAoOHTwZxlnbTRUYyq9B3M6agabOpbuEALIRKGTC0unCYF1u/nC8gset3f
-	aP5F+bPh4pRm6iDFGVJQ==;
+	List-Owner; bh=ZDYMn5R4UaBRzFNdJXAvsjH4fyGz47ihoFxq65u92iM=; b=Md9sv/nDsqMpwy
+	r2zcxmkwbA89P52Zfe0sKHz2rJjzuDCQrBbbL+hAKFUmAlKNEvpufNZxNzISSGykS5cBo/rpQx0Fc
+	LgMIhZcu/sCrtoqAes77BqATGB/HYaeHGiW4qWyxDdxUDe4ZGXzbU1KHwJF3Nkh9BZk8VvwmEYiJt
+	1juJBLz1mVDxbhtz7SgQNH7a85DwiOLke0JLRjl6pqhFTcMODbA60QbxkqT2wMgWH4cCeKlLzai0A
+	kHuTzNq+euj5maLzKLRQQceUAlrVaij9kTutgFg4C2jCTNMRzKJBkbPvdvyPw2UfjLWWHTDw4WOYk
+	wTAHcqQhWojASwO+qpWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTtcX-000607-79; Sun, 10 Nov 2019 20:15:37 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iTtkI-0007pj-B7; Sun, 10 Nov 2019 20:23:38 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTtcK-0005xa-SY; Sun, 10 Nov 2019 20:15:26 +0000
-Received: by mail-wr1-x442.google.com with SMTP id p4so12397267wrm.8;
- Sun, 10 Nov 2019 12:15:24 -0800 (PST)
+ id 1iTtk7-0007pA-Sg; Sun, 10 Nov 2019 20:23:29 +0000
+Received: by mail-wm1-x341.google.com with SMTP id c17so11215022wmk.2;
+ Sun, 10 Nov 2019 12:23:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=hnA+DGRSH+UJ48bHZH8NzolNWEJgQsv7XrV6s0qnF/M=;
- b=WKQpSFu5bTmtvP4e2tCMap23TVwRZZzxnziApAFk1JaLkwMWETka988iSGf7B6iY8p
- W4vozok0bIUDzPPW9PaOW0lpv3JFQ6sN3gZvhXt9Vo7mWFaKBUbQWCKY8r8KT1JS0rX4
- mqcwMQ/GtsZsraRYSpG/O97TKehxT6iDpFJzW9+ITl/teseEfOXhPR//3z5J4GgiaZI0
- 53SsAGNuz2rB6+L1ZgCtOm7iovf0Y7WUxRfWw6KQFVtckMTTPvPj59h0TTPo7xzzhAkz
- p5n2z5vDpDBBKFDq+/xVPCz/f8DpkRlmd87kB9l1+c39JQUFWW1XF1th8Prx5mCEg7jl
- S05Q==
+ bh=Jg0ky2iRvbPWB2jD5swuaQZV83rOO1qppabnhyJNYlE=;
+ b=TbXE0jNKdTIxtedDxj3crBUpdRvfpWoAceDICQyUGLe3Y2Fy1eQaUH9kxIjsnzFeU8
+ 34mEv0wn4XbUm3vbmAKzvUDJw+YVpWsWHxtaUjtQeW8iodCSXo1PtJY8dRfBosrz1mfB
+ M1831IJe1yregFzFOBkEyqyGdNojM03upWxiePZNoLOh6rSHKrNKViu5lmDvAzJafVgi
+ E/b5ukDe4h/M9leKjNfa78BqJox5Nr+Bt35NQ1wy5FY39d5ldK2rOjpWO/2wGkjGaV8b
+ FSjSxZ0FGIUvgTAaxtEU+wpEdnHDqO/My2lcNxItuYGRQHpGl9Jh0bMwcxMMNJsv6Ijv
+ S9Fg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=hnA+DGRSH+UJ48bHZH8NzolNWEJgQsv7XrV6s0qnF/M=;
- b=PhYbMrStxDRDbeRTHrey84jmVLS1vbuuAe+fur6yZbg2jKnAKBOj6L0JW5wg4qT/Gx
- OXXi1I1MmIHRYs+Ue3OqgqCbJxLNCqiVQ+zGA8i24WTOpfvUwBVM6rp2y/mGbdqOJqbZ
- kcOomDEB3vGx2j3/3B7V1zsZYxD6wbsUrYWYjcVHxqoVcke2oBcdrIpH5rz1POMmrmy8
- COxjEFkek3O7ppHUtNGOp9A9DVAkXb3CXwjUa4CHrM10MoHFk7eBj+lUkOesI2djkbU5
- s1UYqOPS8lf7e25VO5QqV2TvFn3A+obIhYKBUjQfAkZbp1OtgCWPbrxCUcC66ylQgHPm
- VvhQ==
-X-Gm-Message-State: APjAAAVNP7ABiQcPY9PeAOz/4qynH1wMpDmQxs48GQsQmfMmgev8TbLw
- AlS9nVVVtPRIOJvZMEmqWp0=
-X-Google-Smtp-Source: APXvYqwwdBnAls0tUi6VQ5lXIPAsQMsuAKpE/eOrUpd+D4s1gXdKbzJp//o6c6Jq1rWfJm36322gig==
-X-Received: by 2002:adf:f743:: with SMTP id z3mr17107172wrp.200.1573416923118; 
- Sun, 10 Nov 2019 12:15:23 -0800 (PST)
+ bh=Jg0ky2iRvbPWB2jD5swuaQZV83rOO1qppabnhyJNYlE=;
+ b=YFh6I1J7vhUtgJvMuFyqgvkJp7hT7Azhz+VW3myuO9mVq2X5cKCQrqjpXkh/4xw0L5
+ vUDaJcWr06ORAMQecTAenG/fqmgDt1Ov5SgZLdcpMeK2QyQ0/7SAHDKKhlaiUoIB7ofr
+ wf8n5/nhsSJ9FUcBK8t1n7z/I/XWmn7TBoLSB4Ra1PAMjFxU9+VrtCbRq6vGORX/X0yZ
+ Mf4Xylx0NjvjYXROCk45/WId/BZayfY05eyQ+HJ8vNxVBUrIHJvKOUhnsBwMahR25U7s
+ OOB5qwDogO6xlDVFzbIzL5YqPMef7TUXSORrXuL1XMJuFfa8EDpHTxHKeldxCTy67k21
+ Rf3A==
+X-Gm-Message-State: APjAAAU4VCm1CWFKI4Fuoi1/VvuDu2vEl0Yq20FVSuEWNa9NSchvXlxH
+ rMNeKelAj5T/gOHjYo2ZkWw=
+X-Google-Smtp-Source: APXvYqzvkjHHfCLkUjjjlgz0kTlag/5+HX/xD3PwmsHrgprRFjmkPkOWw/+wyqWZyTtXcJbAHJ588Q==
+X-Received: by 2002:a1c:5fc4:: with SMTP id
+ t187mr18437872wmb.142.1573417406188; 
+ Sun, 10 Nov 2019 12:23:26 -0800 (PST)
 Received: from ziggy.stardust ([95.169.226.39])
- by smtp.gmail.com with ESMTPSA id j22sm22467428wrd.41.2019.11.10.12.15.21
+ by smtp.gmail.com with ESMTPSA id f13sm12738958wrq.96.2019.11.10.12.23.24
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 10 Nov 2019 12:15:22 -0800 (PST)
-Subject: Re: [PATCH v2 2/2] arm64: dts: mt8183: add systimer0 device node
-To: Dehui Sun <dehui.sun@mediatek.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Thomas Gleixner <tglx@linutronix.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-References: <1572242984-30460-1-git-send-email-dehui.sun@mediatek.com>
- <1572242984-30460-3-git-send-email-dehui.sun@mediatek.com>
+ Sun, 10 Nov 2019 12:23:25 -0800 (PST)
+Subject: Re: [PATCH] serial: 8250-mtk: Use platform_get_irq_optional() for
+ optional irq
+To: Frank Wunderlich <frank-w@public-files.de>,
+ linux-mediatek@lists.infradead.org
+References: <20191027062117.20389-1-frank-w@public-files.de>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -136,23 +135,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  Y1aFdU79pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlI
  FZ6fsEKIAN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+
  r2JwH1CJjrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <18a0f55b-9371-f741-52a3-cff4eced55f9@gmail.com>
-Date: Sun, 10 Nov 2019 21:15:20 +0100
+Message-ID: <1e18621e-fa29-eae8-8720-45d6f75caf7c@gmail.com>
+Date: Sun, 10 Nov 2019 21:23:24 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.1.1
 MIME-Version: 1.0
-In-Reply-To: <1572242984-30460-3-git-send-email-dehui.sun@mediatek.com>
+In-Reply-To: <20191027062117.20389-1-frank-w@public-files.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_121524_930102_BD4102A9 
-X-CRM114-Status: GOOD (  15.87  )
+X-CRM114-CacheID: sfid-20191110_122327_929961_A7597E1F 
+X-CRM114-Status: GOOD (  20.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -176,10 +175,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, weiyi.lu@mediatek.com,
- srv_heupstream@mediatek.com, erin.lo@mediatek.com,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -187,39 +185,49 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 28/10/2019 07:09, Dehui Sun wrote:
-> Add systimer0 device node for MT8183.
-
-I renamed systemer0 to systimer.
-
-Applied, thanks!
-
+On 27/10/2019 07:21, Frank Wunderlich wrote:
+> As platform_get_irq() now prints an error when the interrupt does not
+> exist, this warnings are printed on bananapi-r2:
 > 
-> Signed-off-by: Dehui Sun <dehui.sun@mediatek.com>
+> [    4.935780] mt6577-uart 11004000.serial: IRQ index 1 not found
+> [    4.962589] 11002000.serial: ttyS1 at MMIO 0x11002000 (irq = 202, base_baud = 1625000) is a ST16650V2
+> [    4.972127] mt6577-uart 11002000.serial: IRQ index 1 not found
+> [    4.998927] 11003000.serial: ttyS2 at MMIO 0x11003000 (irq = 203, base_baud = 1625000) is a ST16650V2
+> [    5.008474] mt6577-uart 11003000.serial: IRQ index 1 not found
+> 
+> Fix this by calling platform_get_irq_optional() instead.
+> 
+> now it looks like this:
+> 
+> [    4.872751] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+> 
+> Fixes: 7723f4c5ecdb8d83 ("driver core: platform: Add an error message to platform_get_irq*()")
+> 
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
+
 > ---
->  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 9 +++++++++
->  1 file changed, 9 insertions(+)
+> changes since v1:
+> 	https://patchwork.kernel.org/patch/11213813/
+> 	change from platform_irq_count to platform_get_irq_optional
+> ---
+>  drivers/tty/serial/8250/8250_mtk.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> index 7e23179..40145dc 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> @@ -326,6 +326,15 @@
->  			clock-names = "spi", "wrap";
->  		};
+> diff --git a/drivers/tty/serial/8250/8250_mtk.c b/drivers/tty/serial/8250/8250_mtk.c
+> index b411ba4eb5e9..4d067f515f74 100644
+> --- a/drivers/tty/serial/8250/8250_mtk.c
+> +++ b/drivers/tty/serial/8250/8250_mtk.c
+> @@ -544,7 +544,7 @@ static int mtk8250_probe(struct platform_device *pdev)
+>  	pm_runtime_set_active(&pdev->dev);
+>  	pm_runtime_enable(&pdev->dev);
 >  
-> +		systimer: timer@10017000 {
-> +			compatible = "mediatek,mt8183-timer",
-> +				     "mediatek,mt6765-timer";
-> +			reg = <0 0x10017000 0 0x1000>;
-> +			interrupts = <GIC_SPI 200 IRQ_TYPE_LEVEL_HIGH>;
-> +			clocks = <&topckgen CLK_TOP_CLK13M>;
-> +			clock-names = "clk13m";
-> +		};
-> +
->  		auxadc: auxadc@11001000 {
->  			compatible = "mediatek,mt8183-auxadc",
->  				     "mediatek,mt8173-auxadc";
+> -	data->rx_wakeup_irq = platform_get_irq(pdev, 1);
+> +	data->rx_wakeup_irq = platform_get_irq_optional(pdev, 1);
+>  
+>  	return 0;
+>  }
 > 
 
 _______________________________________________
