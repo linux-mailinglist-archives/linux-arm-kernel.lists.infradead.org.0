@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BF1DF6B4D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 21:25:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCD0FF6B4F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 21:26:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mOQWAQ+sRuFYfnm3vxTbk5si1PPfhDOrAMuZsmadeEo=; b=T3NEYEAFO6/mRq
-	gJiSowWyTATOpp/bihHpfZI3NwAI5xV4unBJrk5hPItuvNiRJwNZhm8aKhHUrhLT+ptw6E8wqg9h3
-	ydiPSwgCGV8flMFH0wT/Tz+nvEPKL4OE0hHJjL3hHiH0s3HDRVbYUdm7G8qgVUQK96wL5G+g8EcIk
-	bZJt/R0kw+Fea4rFwKeOuZsMlPeqK/u+ITsjPR4504Cc783ytHCUhBoEKT35SGPJNYNqj/NWpU3Ak
-	Ghnv67uo3p+bV+wq77BUpi3CD1pM10+pk9AGh81y4g84w1T2mcl7O/lZyYlsQOfJVKwl+ED4NIiQl
-	WWeyB7s0i+2s5a4Pvniw==;
+	List-Owner; bh=aLhiFW9EYgvSLnJLjAGMrv21J/6eyTY3xxS8Bwmnauc=; b=LB06h3PwrrTBmi
+	jqj7RleSjswmtLHMAlIXip44KykSzuGh2iG6BiOBQIyM1vnSyuXQWPK/evJLsQ0YZS3TzZG5GS0zs
+	I0KUpDLZYKsaBbQ977V0WhZ22dK/Ko4mbjxRKeLRURu38fHGs9PZnBTaOBE4O95gUeblwEmVtNz+J
+	Gi6aUQnpHHd8e++AktxO2JVsog1a/Ne90lmio2Pfmh52NMXBP46yXrxQIvVhcD1B4LsVtEEBdPcpR
+	VJ1g/Rg1dfcyOZ/COMvwYpeiT4LBfYWrMuueAKh3XBXmccnOBFtYlryNBANqxJwix4hca+oh7mTdZ
+	KvuCXIZL33q8bYU30OtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTtlp-0000Pp-IQ; Sun, 10 Nov 2019 20:25:13 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iTtml-0001te-4W; Sun, 10 Nov 2019 20:26:11 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTtlX-0000PF-UK
- for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 20:24:57 +0000
-Received: by mail-pg1-x541.google.com with SMTP id z24so7963982pgu.4
+ id 1iTtmd-0001tE-TH
+ for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 20:26:05 +0000
+Received: by mail-pg1-x543.google.com with SMTP id 29so7957214pgm.6
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 10 Nov 2019 12:24:55 -0800 (PST)
+ Sun, 10 Nov 2019 12:26:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=dh9ncICb4yqeK0Pc0Q/QhXMWgi5mXnDAbtoLhJ9uxQw=;
- b=AgMASCJWxp8ed+3GDD0f436W3fndcP4XoMBuxGMEmhRRB3WA6qtJJIZu/d9og8aefk
- lJWgzvkgwR+kfPRoskAB8GBOxStCWCImR/tDS9VJaJOJXFrzrqjts2HyE7eCsQ6iXgZs
- NodqETnQYD3hxj7af4kns4q/BlCG9+c+YTU88cG+3oSerIVSo8uiL/17uuzHlx4W41xq
- zw8fHWbwt7xJRnZjO9pFYsds39XOCwejKO4I4iq1+OHBYbMZwziB16S3Q/DuCb8IjYt8
- dKkFHsNf6wgL+ZVIf0rvV9j9KvP/cYDj8l5GvS4BvXl7qDlZqMHs5+aTcK4ziqm+/lny
- sFQA==
+ bh=QMZVeFANfG/X5h0Mfj24NAxkL4BSkECd5usnEeND7Mo=;
+ b=g/WjcTR5SK4aII+yTvXdE+njqdBP/6PeP17EfsqBD/EfwIhmWZ52/uSDy7dWAT/k07
+ 1VwwHByRyjS6IQOiNPxEx/GSrJwuWkNt3Gr4N0VPPoNsjM1pjVfsKI07aVIiqkpzz0gi
+ wv3VCSkRIPPSRuJ4t14BGm6mzu5T6chtpbUBUxVxJUyM7rEnYHx1+QmP1RrEaOoo3li5
+ e94DO0wJs78X/PeUuQq9G9fHxNXM6YZOghvMgMBmDw6ggk1LRCEBwL2XW9UgMEVyaH5x
+ TK/X2LrF2JbjSZIPJcqEVXPBVwbKBLXxbR734yp3wAZVGUi14uxIyyj4/GxvxQZhg9DL
+ TywA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=dh9ncICb4yqeK0Pc0Q/QhXMWgi5mXnDAbtoLhJ9uxQw=;
- b=VleVpTapJXp04It74GAIC53tgm4OdcwlnVV/qlCaeKClvLTH/JN9q3zftL4HQdqZKp
- GrUHQKBI9aQTVbzTgMZTT0BQsb79l+AR4HkKoH6vCnrWKPDyqLmFj9itF3IMjwfAzVVi
- 734nmSbDkJOW2FY9L11s8AqcrfbehXXQKNkDig/SEnbFuO6abvbomV0K/qoV1Bv5NeNT
- CQvD+ViaM84o0XRYi7nnDpYepevTU9Jly6r9PI2Y+lzFZCj49fANlyTx55sGWt1HuMS0
- kF4Fl8g9VmTtgVNJL2VXyO1W4zTF2tDStAJuIBF5K7TkR3RO1XCbSE0oKeRGMqDXV444
- FnQQ==
-X-Gm-Message-State: APjAAAUQBDR0SZzy/vxpKkoeX+qOE/HeZ7K6gwj55hlEhCcFM9xw+dGu
- m5Ycy05J4lE9GGSp+DrWy1KjdwV3
-X-Google-Smtp-Source: APXvYqx5xiDXdW10ASH3MO/3HEN1mlYD62GdwEPzlgxN1yIGp6rgVdCQ2TO7mh5pEbICBdE5oVU/8Q==
-X-Received: by 2002:a65:6492:: with SMTP id e18mr19859262pgv.111.1573417495162; 
- Sun, 10 Nov 2019 12:24:55 -0800 (PST)
+ bh=QMZVeFANfG/X5h0Mfj24NAxkL4BSkECd5usnEeND7Mo=;
+ b=g/AvuePNAqWL82IRk/77mcF91KCzkskOXaro+s7Y2iEc6e+qiv2bR830qUGkJZaZuo
+ +IBlsrSxFvgpuADK2eX0UfFaV3SvYmV0DjH7WnwGDWYZq7yNAmn5h64Bk2Dja8u/pkrm
+ oQItDESHRSdSBEai47AHzr2TEVLkgYnlnZVZjNnpottvQqkhvw/JfjLWMyDp96CvJucg
+ J/opsSeq9CbTxtgBi+zn3yc45bpxkRlVgWtatCWHJYbWq/22EmJJiujvuT9CKSKBWRKs
+ /i2KqiDXy6EAS4OPQTgdKr87hfdhVUPzT7SR47lYa06eG6luApKO340BkYdyebf4pyCC
+ rAwA==
+X-Gm-Message-State: APjAAAUl4pYZJ7It780c/hj2zqmVOrtoegSW+LV+NETcWbmcsXHjqry2
+ ShOrmDxR3tkEqI1sd8PVHfWtzHqc
+X-Google-Smtp-Source: APXvYqzZpQO8pkBP1HE2HZIgifodV6nWfXqBH3IwSAstn6jvZBZp6VhvztN3t4GmAIuizFtmUVlK5Q==
+X-Received: by 2002:a62:7dce:: with SMTP id
+ y197mr25576741pfc.164.1573417563175; 
+ Sun, 10 Nov 2019 12:26:03 -0800 (PST)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- q8sm11707764pgg.15.2019.11.10.12.24.53
+ b137sm1419572pga.91.2019.11.10.12.26.01
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 10 Nov 2019 12:24:54 -0800 (PST)
-Subject: Re: [PATCH V3 net-next 2/7] net: bcmgenet: Fix error handling on IRQ
- retrieval
+ Sun, 10 Nov 2019 12:26:02 -0800 (PST)
+Subject: Re: [PATCH V3 net-next 4/7] net: bcmgenet: Add BCM2711 support
 To: Stefan Wahren <wahrenst@gmx.net>,
  Matthias Brugger <matthias.bgg@kernel.org>,
  Matthias Brugger <mbrugger@suse.com>, "David S . Miller"
  <davem@davemloft.net>, Florian Fainelli <f.fainelli@gmail.com>
 References: <1573326009-2275-1-git-send-email-wahrenst@gmx.net>
- <1573326009-2275-3-git-send-email-wahrenst@gmx.net>
+ <1573326009-2275-5-git-send-email-wahrenst@gmx.net>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -121,23 +121,23 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <77ab5768-5298-2c9a-20f3-42c96744ea70@gmail.com>
-Date: Sun, 10 Nov 2019 12:24:53 -0800
+Message-ID: <26066bfd-2049-5c22-4ed5-251e11005422@gmail.com>
+Date: Sun, 10 Nov 2019 12:26:00 -0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <1573326009-2275-3-git-send-email-wahrenst@gmx.net>
+In-Reply-To: <1573326009-2275-5-git-send-email-wahrenst@gmx.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_122455_975487_4D7EB55F 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20191110_122603_948324_C7C7B12E 
+X-CRM114-Status: GOOD (  13.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -173,8 +173,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 11/9/2019 11:00 AM, Stefan Wahren wrote:
-> This fixes the error handling for the mandatory IRQs. There is no need
-> for the error message anymore, this is now handled by platform_get_irq.
+> The BCM2711 needs a different maximum DMA burst length. If not set
+> accordingly a timeout in the transmit queue happens and no package
+> can be sent. So use the new compatible to derive this value.
+> 
+> Until now the GENET HW version was used as the platform identifier.
+> This doesn't work with SoC-specific modifications, so introduce a proper
+> platform data structure.
 > 
 > Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 
