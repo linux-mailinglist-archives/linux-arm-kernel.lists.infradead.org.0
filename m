@@ -2,60 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26599F6973
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 15:29:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0C42F69B3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 Nov 2019 16:32:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GCgfWUcLsP+ad2Ua1h6gsKY2408cu2RsJZMzt0x0qW4=; b=nu0HClk/PHEIR9
-	qMy5k3vYro+SgjoXGRhvutf9zWB5pU6JnIR6yEpd4Eh0BJDciHSCGNq4eI8nZj6svbnM2B26I4NQH
-	KZPogczHhJGy3BCKSzeaisHy+7+H5feb3htKOIcAiCD1KCOAJ345eXH5NE4hJmFRag5PDMQ6nXMXQ
-	LTC/+vzsnojyFVUX1xTW0h/FvQVL2UM0rfmmPmw4JV2vgDk0a9/+jYIGMy/rHUZLAxnm7llMGHmQX
-	QHf7e/3TxI4VcCp+I3cRgkMjrRtMIEFlBjbm/twRkgXypqxetx8Mk8A1RK227GqElvY+1482HNbIa
-	2+KgZN+ZonbdlFMC7DvA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OejIY4EV8qqyoTpeZQaV5maA9s5eOkxFVypKFS3LwK8=; b=fMQaag5ddX556+
+	9MktTtfuTydB93drgDhDTSjfqlcoiwO9+F2wS8CZdL71lPK3g8dWHrSjAhA7LW6YsLHMuuHPpfPaW
+	3mfKYaH++wYNv7u0PivnXU2pADrjuaubFiWB1jAJTQDS6s+YDiaNc+iVd14WAVJxGjRZMkLAFdMqy
+	deddtwEnt1vE+biO4fDCij9t4woEVWg2CCe3fh72R7OoxxktN7tiP1ahQGl/maYHXxFHQ0QseAHoT
+	sYf1t/0j2CJ5f2Na570IcrtGwz3x1D7DPABFawEPMECdCjdvFNBJbyGQ382K+MwQtA6fELLgnOYW9
+	3EWvxfLRAwG1i719Kikw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iToDY-0000W6-2L; Sun, 10 Nov 2019 14:29:28 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iTpCC-0005Qi-5d; Sun, 10 Nov 2019 15:32:08 +0000
+Received: from forward104j.mail.yandex.net ([2a02:6b8:0:801:2::107])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iToDO-0000VT-SK
- for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 14:29:20 +0000
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why)
- by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
- (Exim 4.80) (envelope-from <maz@kernel.org>)
- id 1iToDL-0002g2-Vn; Sun, 10 Nov 2019 15:29:16 +0100
-Date: Sun, 10 Nov 2019 14:29:14 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH 2/3] kvm: arm: VGIC: Scan all IRQs when interrupt group
- gets enabled
-Message-ID: <20191110142914.6ffdfdfa@why>
-In-Reply-To: <20191108174952.740-3-andre.przywara@arm.com>
-References: <20191108174952.740-1-andre.przywara@arm.com>
- <20191108174952.740-3-andre.przywara@arm.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iTpC1-0005PC-Ee
+ for linux-arm-kernel@lists.infradead.org; Sun, 10 Nov 2019 15:32:01 +0000
+Received: from forward103q.mail.yandex.net (forward103q.mail.yandex.net
+ [IPv6:2a02:6b8:c0e:50:0:640:b21c:d009])
+ by forward104j.mail.yandex.net (Yandex) with ESMTP id 5D05A4A11C7;
+ Sun, 10 Nov 2019 18:31:47 +0300 (MSK)
+Received: from mxback7q.mail.yandex.net (mxback7q.mail.yandex.net
+ [IPv6:2a02:6b8:c0e:41:0:640:cbbf:d618])
+ by forward103q.mail.yandex.net (Yandex) with ESMTP id 5572161E0005;
+ Sun, 10 Nov 2019 18:31:47 +0300 (MSK)
+Received: from vla5-9cb0c276d29e.qloud-c.yandex.net
+ (vla5-9cb0c276d29e.qloud-c.yandex.net [2a02:6b8:c18:3588:0:640:9cb0:c276])
+ by mxback7q.mail.yandex.net (mxback/Yandex) with ESMTP id FSAetauLC0-VkeGYqD8; 
+ Sun, 10 Nov 2019 18:31:47 +0300
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=golovin.in; s=mail;
+ t=1573399907; bh=J9gGtCi1bqhoTbjtK0ZLFDb2RPEmtebHwiHCJTTfQV4=;
+ h=Subject:To:From:Cc:Date:Message-Id;
+ b=ucwdZ079I8uW6r0LnYZ6jCy87vyQV/a6SlR1OCEI9A8r0pCWur7Fsl0l1ylRp3pRs
+ hP2VnvyYLwr+9Ubr+KsA9K644hmpAFsP8dQgaVC+IVoJ/+OYI1CBDuoxmim/V8pnOf
+ n9wWCRy2u1z8KR2O7Nx/GutWx28wD4GXy0+pyx10=
+Authentication-Results: mxback7q.mail.yandex.net;
+ dkim=pass header.i=@golovin.in
+Received: by vla5-9cb0c276d29e.qloud-c.yandex.net (smtp/Yandex) with ESMTPSA
+ id 5WwNymo0nq-Vi0mgFID; Sun, 10 Nov 2019 18:31:45 +0300
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (Client certificate not present)
+From: Dmitry Golovin <dima@golovin.in>
+To: 
+Subject: [PATCH] ARM: kbuild: use correct nm executable
+Date: Sun, 10 Nov 2019 17:30:39 +0200
+Message-Id: <20191110153043.111710-1-dima@golovin.in>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: andre.przywara@arm.com, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, kvm@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_062919_061974_14763B57 
-X-CRM114-Status: GOOD (  28.72  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191110_073157_855860_D63D0A7A 
+X-CRM114-Status: GOOD (  10.60  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:6b8:0:801:2:0:0:107 listed in] [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,173 +84,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- kvm@vger.kernel.org
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, Nicolas Pitre <nico@fluxnic.net>,
+ Matthias Maennich <maennich@google.com>, Russell King <linux@armlinux.org.uk>,
+ Stefan Agner <stefan@agner.ch>, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ clang-built-linux@googlegroups.com,
+ Nathan Chancellor <natechancellor@gmail.com>, Dmitry Golovin <dima@golovin.in>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri,  8 Nov 2019 17:49:51 +0000
-Andre Przywara <andre.przywara@arm.com> wrote:
+Since $(NM) variable can be easily overridden for the whole build, it's
+better to use it instead of $(CROSS_COMPILE)nm. The use of $(CROSS_COMPILE)
+prefixed variables where their calculated equivalents can be used is
+incorrect. This fixes issues with builds where $(NM) is set to llvm-nm.
 
-> Our current VGIC emulation code treats the "EnableGrpX" bits in GICD_CTLR
-> as a single global interrupt delivery switch, where in fact the GIC
-> architecture asks for this being separate for the two interrupt groups.
-> 
-> To implement this properly, we have to slightly adjust our design, to
-> *not* let IRQs from a disabled interrupt group be added to the ap_list.
-> 
-> As a consequence, enabling one group requires us to re-evaluate every
-> pending IRQ and potentially add it to its respective ap_list. Similarly
-> disabling an interrupt group requires pending IRQs to be removed from
-> the ap_list (as long as they have not been activated yet).
-> 
-> Implement a rather simple, yet not terribly efficient algorithm to
-> achieve this: For each VCPU we iterate over all IRQs, checking for
-> pending ones and adding them to the list. We hold the ap_list_lock
-> for this, to make this atomic from a VCPU's point of view.
-> 
-> When an interrupt group gets disabled, we can't directly remove affected
-> IRQs from the ap_list, as a running VCPU might have already activated
-> them, which wouldn't be immediately visible to the host.
-> Instead simply kick all VCPUs, so that they clean their ap_list's
-> automatically when running vgic_prune_ap_list().
-> 
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> ---
->  virt/kvm/arm/vgic/vgic.c | 88 ++++++++++++++++++++++++++++++++++++----
->  1 file changed, 80 insertions(+), 8 deletions(-)
-> 
-> diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
-> index 3b88e14d239f..28d9ff282017 100644
-> --- a/virt/kvm/arm/vgic/vgic.c
-> +++ b/virt/kvm/arm/vgic/vgic.c
-> @@ -339,6 +339,38 @@ int vgic_dist_enable_group(struct kvm *kvm, int group, bool status)
->  	return 0;
->  }
->  
-> +/*
-> + * Check whether a given IRQs need to be queued to this ap_list, and do
-> + * so if that's the case.
-> + * Requires the ap_list_lock to be held (but not the irq lock).
-> + *
-> + * Returns 1 if that IRQ has been added to the ap_list, and 0 if not.
-> + */
-> +static int queue_enabled_irq(struct kvm *kvm, struct kvm_vcpu *vcpu,
-> +			     int intid)
+Link: https://github.com/ClangBuiltLinux/linux/issues/766
+Signed-off-by: Dmitry Golovin <dima@golovin.in>
+Suggested-by: Nick Desaulniers <ndesaulniers@google.com>
+Cc: Matthias Maennich <maennich@google.com>
+---
+ arch/arm/boot/compressed/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-true/false seems better than 1/0.
-
-> +{
-> +	struct vgic_irq *irq = vgic_get_irq(kvm, vcpu, intid);
-> +	int ret = 0;
-> +
-> +	raw_spin_lock(&irq->irq_lock);
-> +	if (!irq->vcpu && vcpu == vgic_target_oracle(irq)) {
-> +		/*
-> +		 * Grab a reference to the irq to reflect the
-> +		 * fact that it is now in the ap_list.
-> +		 */
-> +		vgic_get_irq_kref(irq);
-> +		list_add_tail(&irq->ap_list,
-> +			      &vcpu->arch.vgic_cpu.ap_list_head);
-
-Two things:
-- This should be the job of vgic_queue_irq_unlock. Why are you
-  open-coding it?
-- What if the interrupt isn't pending? Non-pending, non-active
-  interrupts should not be on the AP list!
-
-> +		irq->vcpu = vcpu;
-> +
-> +		ret = 1;
-> +	}
-> +	raw_spin_unlock(&irq->irq_lock);
-> +	vgic_put_irq(kvm, irq);
-> +
-> +	return ret;
-> +}
-> +
->  /*
->   * The group enable status of at least one of the groups has changed.
->   * If enabled is true, at least one of the groups got enabled.
-> @@ -346,17 +378,57 @@ int vgic_dist_enable_group(struct kvm *kvm, int group, bool status)
->   */
->  void vgic_rescan_pending_irqs(struct kvm *kvm, bool enabled)
->  {
-> +	int cpuid;
-> +	struct kvm_vcpu *vcpu;
-> +
->  	/*
-> -	 * TODO: actually scan *all* IRQs of the VM for pending IRQs.
-> -	 * If a pending IRQ's group is now enabled, add it to its ap_list.
-> -	 * If a pending IRQ's group is now disabled, kick the VCPU to
-> -	 * let it remove this IRQ from its ap_list. We have to let the
-> -	 * VCPU do it itself, because we can't know the exact state of an
-> -	 * IRQ pending on a running VCPU.
-> +	 * If no group got enabled, we only have to potentially remove
-> +	 * interrupts from ap_lists. We can't do this here, because a running
-> +	 * VCPU might have ACKed an IRQ already, which wouldn't immediately
-> +	 * be reflected in the ap_list.
-> +	 * So kick all VCPUs, which will let them re-evaluate their ap_lists
-> +	 * by running vgic_prune_ap_list(), removing no longer enabled
-> +	 * IRQs.
-> +	 */
-> +	if (!enabled) {
-> +		vgic_kick_vcpus(kvm);
-> +
-> +		return;
-> +	}
-> +
-> +	/*
-> +	 * At least one group went from disabled to enabled. Now we need
-> +	 * to scan *all* IRQs of the VM for newly group-enabled IRQs.
-> +	 * If a pending IRQ's group is now enabled, add it to the ap_list.
-> +	 *
-> +	 * For each VCPU this needs to be atomic, as we need *all* newly
-> +	 * enabled IRQs in be in the ap_list to determine the highest
-> +	 * priority one.
-> +	 * So grab the ap_list_lock, then iterate over all private IRQs and
-> +	 * all SPIs. Once the ap_list is updated, kick that VCPU to
-> +	 * forward any new IRQs to the guest.
->  	 */
-> +	kvm_for_each_vcpu(cpuid, vcpu, kvm) {
-> +		unsigned long flags;
-> +		int i;
->  
-> -	 /* For now just kick all VCPUs, as the old code did. */
-> -	vgic_kick_vcpus(kvm);
-> +		raw_spin_lock_irqsave(&vcpu->arch.vgic_cpu.ap_list_lock, flags);
-> +
-> +		for (i = 0; i < VGIC_NR_PRIVATE_IRQS; i++)
-> +			queue_enabled_irq(kvm, vcpu, i);
-> +
-> +		for (i = VGIC_NR_PRIVATE_IRQS;
-> +		     i < kvm->arch.vgic.nr_spis + VGIC_NR_PRIVATE_IRQS; i++)
-> +			queue_enabled_irq(kvm, vcpu, i);
-
-On top of my questions above, what happens to LPIs? And if a group has
-been disabled, how do you retire these interrupts from the AP list?
-
-> +
-> +                raw_spin_unlock_irqrestore(&vcpu->arch.vgic_cpu.ap_list_lock,
-> +                                           flags);
-> +
-> +		if (kvm_vgic_vcpu_pending_irq(vcpu)) {
-> +			kvm_make_request(KVM_REQ_IRQ_PENDING, vcpu);
-> +			kvm_vcpu_kick(vcpu);
-> +		}
-> +	}
->  }
->  
->  bool vgic_dist_group_enabled(struct kvm *kvm, int group)
-
-Thanks,
-
-	M.
+diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
+index 9219389bbe61..a1e883c5e5c4 100644
+--- a/arch/arm/boot/compressed/Makefile
++++ b/arch/arm/boot/compressed/Makefile
+@@ -121,7 +121,7 @@ ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin -I$(obj)
+ asflags-y := -DZIMAGE
+ 
+ # Supply kernel BSS size to the decompressor via a linker symbol.
+-KBSS_SZ = $(shell echo $$(($$($(CROSS_COMPILE)nm $(obj)/../../../../vmlinux | \
++KBSS_SZ = $(shell echo $$(($$($(NM) $(obj)/../../../../vmlinux | \
+ 		sed -n -e 's/^\([^ ]*\) [AB] __bss_start$$/-0x\1/p' \
+ 		       -e 's/^\([^ ]*\) [AB] __bss_stop$$/+0x\1/p') )) )
+ LDFLAGS_vmlinux = --defsym _kernel_bss_size=$(KBSS_SZ)
+@@ -165,7 +165,7 @@ $(obj)/bswapsdi2.S: $(srctree)/arch/$(SRCARCH)/lib/bswapsdi2.S
+ # The .data section is already discarded by the linker script so no need
+ # to bother about it here.
+ check_for_bad_syms = \
+-bad_syms=$$($(CROSS_COMPILE)nm $@ | sed -n 's/^.\{8\} [bc] \(.*\)/\1/p') && \
++bad_syms=$$($(NM) $@ | sed -n 's/^.\{8\} [bc] \(.*\)/\1/p') && \
+ [ -z "$$bad_syms" ] || \
+   ( echo "following symbols must have non local/private scope:" >&2; \
+     echo "$$bad_syms" >&2; false )
 -- 
-Jazz is not dead. It just smells funny...
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
