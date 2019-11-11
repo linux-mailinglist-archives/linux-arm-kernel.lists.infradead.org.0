@@ -2,152 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A9FAF74D2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 14:29:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24DBBF74DC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 14:29:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HM80YHbQbOPCuDSHUTgjqkTcCJJwXzLRXclWPC7UKy4=; b=vA199uZwOIpcmU
-	OYekyq4cKh9gme6SD2HQOV8DA7mduVImThj5wMuTDCcxCENxgFaclmIagUMJbMmXiAkryTUg3LTMj
-	g1olYYdil7uDEMfaDHFJ7Tfw9XWzSK4D4X/zl9vaK+kzwTOo29hQmBAA2+SBPAGjM/EtMtjsl7H7K
-	wi48FFRFUZFgAvhs/7rLW2hmJNK+evan32HR6EZrWl5pwm0T/0BV/XG2Xr+5RykDQuSo8tWEe+Z1I
-	Xv7SfrBlGMwz+B5qyoGfR+tYEvRKW8+G7pbNycM91hYqvAsuoOGdFk0uFlUTyUIfYOerlMDDQyQp2
-	mEAzEHvKowkTLngH5fZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=z+6WkbCPBVIjofyq6FYZ8HWQeMzt7fgiX9LirjlfsFU=; b=Pf20RKBxwUBJVuZErybMyvkZ5
+	qUWt/Ua+2DuHvRsK0kA9bcrxOIRSwt1Si8juiY40CY+cd1N0VlfN3xHYcXr8lhcjY0eeCMsy409Md
+	Y+9pZ1+hoszHUfi7/ALeTb+ZEZYPfBoqUJXPntPuKpYxP+XGfXVk9Cgarb4Bde51vJpkyeIVYsnRz
+	NhQ+ywr/aNJOq/gmOgYTzXTHbfsdzD4d80CPnTC6hvF0tXaHaj2ULEPmkP1l5vwIf8p9/MOnpRwtT
+	uVKZ4qXZnhZ7NOQeTcs8Jd7EDu1CGobWsZn7AarqaHvE1IjdbMPaNLODoTG+KAK6ViXttQE2r4iII
+	lGkOC4uJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU9kl-0006rk-Lc; Mon, 11 Nov 2019 13:29:11 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1iU9l5-00076l-9D; Mon, 11 Nov 2019 13:29:31 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU9ke-0006qu-0v
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 13:29:05 +0000
-Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
- Eugen.Hristev@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
- envelope-from="Eugen.Hristev@microchip.com";
- x-sender="Eugen.Hristev@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa4.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
- envelope-from="Eugen.Hristev@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa4.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: Ay5tq2Nixy8b/tO9y8IWZu/xAAYwk+tA0JvYCV2b6NQmI3t28RlAmyMRZj+Fk07ROIvCE/7eD+
- rdorvjCC4ePeNIVXYOBZfkW7z7/8RNClIT4YNrqqOq3Mn7qnmyx6/j61Gzjwu6Gq9izJ+mFv1X
- 6GvFYopcos1hCNtRP/VfbgbDlqSUhM824Aovsm0Ywf0LvZoPnJzU2huhTrk4xv1B8VQdx0slr9
- ZkPgwFSOXUkOCES23h+4Y1ojyKLtgf9I8U0Q/dvrq+T2tw8neFK2esY/kfQX/4+7eii9cQmBcT
- qLM=
-X-IronPort-AV: E=Sophos;i="5.68,293,1569308400"; d="scan'208";a="54880412"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 11 Nov 2019 06:29:02 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 11 Nov 2019 06:29:00 -0700
-Received: from NAM04-BN3-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5
- via Frontend Transport; Mon, 11 Nov 2019 06:29:00 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=N0W8uQsqDKV/0tvIslgZg32f6RlmolCN4iH5waGo3Ja0gLNk76W38pvmeCsgKgOM+EIgP4ixM7CowOgKcDTlEjyQTWM9SfNJOcANdh0PyTrKZPtmMa27OHxnhoOD+s2zufE8sXAO64CqQynZn/RHtf6JhG0GbdI5zxuDaMVmKCthq9QfwnIQT0t5KOq4X92yoZhFUQCqHKcQhfSPqmJ26EhPu9CaD+yzHV984k9SJ+DRgSKeIEXM3PJLlR8EqYQ+2f8BlhdqrcTKcHMbt14/d0M5OFzlDLC64ZZHWTY5qyPeaJ6oLfkFlPZoXrbyDJD2rQcA2k64TNFROmpEWQXDRA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GDLf4SjLygW5bsSavWlu47+tUSzFyMIhYeFOzkX1XOE=;
- b=TR2e8EsD9SfyDeFdIZtCjIMIjOzg4QSKcN0DyAUtO7L+Q28PliJuPpsWZAr4cuNODeLpGRnmvTuJawXyyLuEXABtszemfb+eqTUhi/GN5TaqIMqzSvIP5B1RI4JxI3hNsSSqs0F8xRZDhnnEAtksItGJfYoYGkBPr0mo9xH0VERVgm0tXgL+Jrt74u8QeuLtQwuzLMNG+8XNlEDmTcq4+69mA7zC80qoI94YveaHBebj506wr8G8gS96MBxPKpzuRurYk1ZL23RdNxFurUQcikQe/NZw4/92Gjy29fJmMuCzHgqboZCiJsh8MTLznuFMaNU/SElPKbCNY3K9IPgkfw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GDLf4SjLygW5bsSavWlu47+tUSzFyMIhYeFOzkX1XOE=;
- b=tVIhWB0/RTR7ki+tQG7FlQbVAbjwUcZDoj3IgX4q3siBeJz2/K/cLomKFI7TekBKhwPGdVBkzH9A4qwJGjy63SRT7yJaKHIU1qZtNyddKfBD3WywsZr06JR/dNPATvGNeZ9PH+s1xt7FEQqRFh/StFodtqQfY8YpRLqP5DBpAJc=
-Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
- DM5PR11MB1449.namprd11.prod.outlook.com (10.172.36.20) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.20; Mon, 11 Nov 2019 13:28:57 +0000
-Received: from DM5PR11MB1242.namprd11.prod.outlook.com
- ([fe80::d594:bcd0:98a9:d2c8]) by DM5PR11MB1242.namprd11.prod.outlook.com
- ([fe80::d594:bcd0:98a9:d2c8%4]) with mapi id 15.20.2430.027; Mon, 11 Nov 2019
- 13:28:57 +0000
-From: <Eugen.Hristev@microchip.com>
-To: <mturquette@baylibre.com>, <sboyd@kernel.org>,
- <alexandre.belloni@bootlin.com>, <linux-clk@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH] clk: at91: sam9x60-pll: adapt PMC_PLL_ACR default value
-Thread-Topic: [PATCH] clk: at91: sam9x60-pll: adapt PMC_PLL_ACR default value
-Thread-Index: AQHVmJP4gkFvDXEvgEe8yodmIU1IZg==
-Date: Mon, 11 Nov 2019 13:28:57 +0000
-Message-ID: <1573478913-19737-1-git-send-email-eugen.hristev@microchip.com>
-Accept-Language: en-US, ro-RO
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM0PR07CA0003.eurprd07.prod.outlook.com
- (2603:10a6:208:ac::16) To DM5PR11MB1242.namprd11.prod.outlook.com
- (2603:10b6:3:14::8)
-x-mailer: git-send-email 2.7.4
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d3aba037-487f-4e8c-5dcd-08d766ab1ae0
-x-ms-traffictypediagnostic: DM5PR11MB1449:
-x-ms-exchange-purlcount: 1
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM5PR11MB1449E834529C0B0C551A144DE8740@DM5PR11MB1449.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3173;
-x-forefront-prvs: 0218A015FA
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(376002)(39860400002)(136003)(346002)(396003)(199004)(189003)(81166006)(81156014)(256004)(14454004)(478600001)(186003)(66446008)(316002)(966005)(8676002)(6512007)(8936002)(6306002)(54906003)(50226002)(52116002)(5660300002)(6486002)(66946007)(110136005)(2501003)(476003)(7736002)(26005)(19627235002)(71190400001)(486006)(71200400001)(107886003)(6506007)(99286004)(102836004)(2906002)(4326008)(86362001)(305945005)(64756008)(66556008)(66476007)(3846002)(386003)(6116002)(6436002)(25786009)(36756003)(2201001)(2616005)(66066001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1449;
- H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: YAFuhW+ratvUl5tv16s2UdEvLa1mmBZSdHMDrL+BMK2v36fAoGWOA2tx4DzxL4vYsOmcH2WqVV22SF38wk0323kZgjHYIg18k+js0hdFTuCpQLYp2W5jzC93LnP0vz8G1AE2j7dH42DFvo1GrH3hPKliOk81+5ZNCyOu9xLpd1rhkh+kHhRTFLnLMxxDrOt3ThdHseCgKqt72DGFlNE7YMvtVgI3EubAX8Pt5FS667hUz8LFmUeWqBdPee+EUH6NdcAd6kmW6smhD87hhZ9trIqVsi+cVyI7TmkumC+fmqDQvE2T8EXXUkDne+JqUZHKgn6HiVLl6Ry2KJOeC8Ljk2wKQsd2ywtCCw+kVEWvr9JG4tWqjzasa7ASPeMg9MzLjmWLrsG5eHe4+6b2IwZ/L+FYC008kJ6zAlJHl7mdUtNVWYl7t9usJHO00En18Gp1pMBpALdDVI+8ctaOODbpEqeLKtjol54CSJfZ5jzmlUc=
+ id 1iU9kr-00073Q-IS; Mon, 11 Nov 2019 13:29:19 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iU9km-0001uY-H2; Mon, 11 Nov 2019 14:29:12 +0100
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [PATCH 4/4] PCI: brcmstb: add MSI capability
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: d3aba037-487f-4e8c-5dcd-08d766ab1ae0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Nov 2019 13:28:57.4805 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 4CYPko8o8LQvvv0Pjd/DV7PyrNYh+/xALlDnLALEZONFQlTiwhkWWgyKHpAq1h3QuCF0sD6hSt16Ay1fB5fkBUMTQupzSc+IhJyTjX+MAqw=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1449
+Date: Mon, 11 Nov 2019 14:38:33 +0109
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <86aeec16bc04d17372db5e33ffec0d5621973116.camel@suse.de>
+References: <20191106214527.18736-1-nsaenzjulienne@suse.de>
+ <20191106214527.18736-5-nsaenzjulienne@suse.de>
+ <f1154b65d422e2e37e3b320e662d4268@www.loen.fr>
+ <86aeec16bc04d17372db5e33ffec0d5621973116.camel@suse.de>
+Message-ID: <e12adb8d4f3be328318c8b911f4ba611@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: nsaenzjulienne@suse.de, andrew.murray@arm.com,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, lorenzo.pieralisi@arm.com,
+ f.fainelli@gmail.com, mbrugger@suse.com, phil@raspberrypi.org,
+ linux-kernel@vger.kernel.org, wahrenst@gmx.net, james.quinlan@broadcom.com,
+ bhelgaas@google.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_052904_164694_41F5C2DE 
-X-CRM114-Status: UNSURE (   7.61  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191111_052917_765062_A11A07B9 
+X-CRM114-Status: GOOD (  24.97  )
+X-Spam-Score: 1.7 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.6 INVALID_DATE_TZ_ABSURD Invalid Date: header (timezone does not
+ exist)
+ 0.1 BUG6152_INVALID_DATE_TZ_ABSURD No description available.
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -159,56 +74,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Eugen.Hristev@microchip.com, Ludovic.Desroches@microchip.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ mbrugger@suse.com, linux-pci@vger.kernel.org, phil@raspberrypi.org,
+ linux-kernel@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ james.quinlan@broadcom.com, Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org,
+ wahrenst@gmx.net
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Eugen Hristev <eugen.hristev@microchip.com>
+Hi Nicolas,
 
-Product datasheet recommends different values for UPLL and PLLA analog control
-register.
-Adapt accordingly.
+On 2019-11-11 12:31, Nicolas Saenz Julienne wrote:
+> Hi Marc,
+> thanks for the review!
+>
+> On Thu, 2019-11-07 at 16:49 +0109, Marc Zyngier wrote:
+>> On 2019-11-06 22:54, Nicolas Saenz Julienne wrote:
+>> > From: Jim Quinlan <james.quinlan@broadcom.com>
+>> >
+>> > This commit adds MSI to the Broadcom STB PCIe host controller. It
+>> > does
+>> > not add MSIX since that functionality is not in the HW.  The MSI
+>> > controller is physically located within the PCIe block, however,
+>> > there
+>> > is no reason why the MSI controller could not be moved elsewhere 
+>> in
+>> > the future.
+>> >
+>> > Since the internal Brcmstb MSI controller is intertwined with the
+>> > PCIe
+>> > controller, it is not its own platform device but rather part of 
+>> the
+>> > PCIe platform device.
+>> >
+>> > This is based on Jim's original submission[1] with some slight
+>> > changes
+>> > regarding how pcie->msi_target_addr is decided.
+>> >
+>> > [1] https://patchwork.kernel.org/patch/10605955/
+>> >
+>> > Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
+>> > Co-developed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+>> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+>> > ---
+>> >  drivers/pci/controller/Kconfig        |   2 +-
+>> >  drivers/pci/controller/pcie-brcmstb.c | 333
+>> > +++++++++++++++++++++++++-
+>> >  2 files changed, 332 insertions(+), 3 deletions(-)
 
-Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
----
+[...]
 
-datasheet link http://ww1.microchip.com/downloads/en/DeviceDoc/SAM9X60-Data-Sheet-DS60001579A.pdf
-chapter 57.7.10 optimal setting of the PLLA and PLLUTMI
+>> > +static struct msi_domain_info brcm_msi_domain_info = {
+>> > +	.flags	= (MSI_FLAG_USE_DEF_DOM_OPS | MSI_FLAG_USE_DEF_CHIP_OPS |
+>> > +		   MSI_FLAG_PCI_MSIX),
+>>
+>> Is there a particular reason for not supporting MultiMSI? I won't 
+>> miss
+>> it, but it might be worth documenting the restriction if the HW 
+>> cannot
+>> support it (though I can't immediately see why).
+>
+> There is no actual restriction. As Jim tells me, there never was the 
+> need for
+> it. If it's fine with you, we'll leave that as an enhancement for the 
+> future,
+> specially since the RPi's XHCI device only uses one MSI interrupt.
 
- drivers/clk/at91/clk-sam9x60-pll.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+Sure, that's fine. But as soon as someone takes this SoC and sticks it 
+on
+a different board (RPi CM4 anyone?), this will become a requirement (I 
+thought
+MultiMSI dead 4 years ago, and have been proved wrong many times 
+since).
 
-diff --git a/drivers/clk/at91/clk-sam9x60-pll.c b/drivers/clk/at91/clk-sam9x60-pll.c
-index 34b8178..dfb354a 100644
---- a/drivers/clk/at91/clk-sam9x60-pll.c
-+++ b/drivers/clk/at91/clk-sam9x60-pll.c
-@@ -25,7 +25,8 @@
- #define		PMC_PLL_CTRL1_MUL_MSK		GENMASK(30, 24)
- 
- #define PMC_PLL_ACR	0x18
--#define		PMC_PLL_ACR_DEFAULT		0x1b040010UL
-+#define		PMC_PLL_ACR_DEFAULT_UPLL	0x12020010UL
-+#define		PMC_PLL_ACR_DEFAULT_PLLA	0x00020010UL
- #define		PMC_PLL_ACR_UTMIVR		BIT(12)
- #define		PMC_PLL_ACR_UTMIBG		BIT(13)
- #define		PMC_PLL_ACR_LOOP_FILTER_MSK	GENMASK(31, 24)
-@@ -88,7 +89,10 @@ static int sam9x60_pll_prepare(struct clk_hw *hw)
- 	}
- 
- 	/* Recommended value for PMC_PLL_ACR */
--	val = PMC_PLL_ACR_DEFAULT;
-+	if (pll->characteristics->upll)
-+		val = PMC_PLL_ACR_DEFAULT_UPLL;
-+	else
-+		val = PMC_PLL_ACR_DEFAULT_PLLA;
- 	regmap_write(regmap, PMC_PLL_ACR, val);
- 
- 	regmap_write(regmap, PMC_PLL_CTRL1,
+>
+>> > +	.chip	= &brcm_msi_irq_chip,
+>> > +};
+>> > +
+>> > +static void brcm_pcie_msi_isr(struct irq_desc *desc)
+>> > +{
+>> > +	struct irq_chip *chip = irq_desc_get_chip(desc);
+>> > +	struct brcm_msi *msi;
+>> > +	unsigned long status, virq;
+>> > +	u32 mask, bit, hwirq;
+>> > +	struct device *dev;
+>> > +
+>> > +	chained_irq_enter(chip, desc);
+>> > +	msi = irq_desc_get_handler_data(desc);
+>> > +	mask = msi->intr_legacy_mask;
+>> > +	dev = msi->dev;
+>> > +
+>> > +	while ((status = bcm_readl(msi->intr_base + STATUS) & mask)) {
+>>
+>> Is this loop really worth it? If, as I imagine, this register is at 
+>> the
+>> end of a wet piece of string, this additional read (likely to return
+>> zero)
+>> will have a measurable latency impact...
+>
+> I think this one was cargo-culted, TBH this pattern is all over the 
+> place.
+> Though, now that you point it out, I can't really provide a 
+> justification for
+> it. Maybe Jim can contradict me here, but It's working fine without 
+> it.
+
+I know this pattern is ultra common (hey, the GIC uses it), but I'm
+somehow doubtful of its benefit. On GICv3, not reading the status
+register again has given us a performance boost for most workloads.
+
+[...]
+
+>> > +	/*
+>> > +	 * Make sure we are not masking MSIs.  Note that MSIs can be
+>> > masked,
+>> > +	 * but that occurs on the PCIe EP device
+>>
+>> That's not a guarantee, specially with plain MultiMSI. I'm actually
+>> minded to move the masking to be purely local on the MSI controllers
+>> I maintain.
+>
+> Sorry, I'm a little lost here. The way I understand it after reset, 
+> even with
+> multiMSI, on the EP side all vectors are umasked. So it would make
+> sense to do
+> the same on the controller.
+>
+> The way I see it, we want to avoid using this register anyway, as
+> with multiMSI
+> we'd only get function wide masking, which I guess is not all that 
+> useful.
+
+Yeah, I wasn't 100% clear. Unless you have MSI-X, there is no guarantee
+to have a mask bit per MSI. Multi-MSI definitely has only this problem.
+
+My advice would be to let the PCI layer deal with enabling/disabling
+interrupts at the endpoint level, and let this driver manage the
+masking at its own level, using the MASK registers.
+
+Thanks,
+
+         M.
 -- 
-2.7.4
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
