@@ -2,54 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF4D0F6FAC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 09:25:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72E68F6FB3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 09:29:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nSs54oqiCWJOXNrJAHfGp2dkTtW6SkN2rpU/Hvkthso=; b=Q/GfOsLAXoEMTF
-	ljt04O74R0GgL2IE/mqcy4WbiKUypolSHzG2QYGJr0+9jte1mbAhWWMQpeh/pdieIM51t+ZC51Bs6
-	QRFDxsVBivjUd5deKlrobVNOPJ9Rs61nITxPHGqP4Ia/Bs413hNcBtxAWDATXHjHvOsta076pm25d
-	3B6wbiYDbpeGdyvuh7A/g1QLEeqEmub93A7bor6sPf7VQjlUTOMTKoVBqVsfGglnoQy79C2NyAj0f
-	Q/yMeOs1NUE3aAiuVIDZDVH1rbueBGz4iCQNK7Fj9Db4fOOQ1RviBiYezkkw26HPU7HdsW4osSM4g
-	XS+Lv5mZXB0UHCRgrBaA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Kg0V8GhAwvSklUx/Svy0iH9trkV9zAeu3d/XuXAcFGI=; b=dXK
+	4Rn7IuaqCtbs1kqQBQpJ+JxoMe/aCpnRXCRu/NICUdVkzc7PlAdjBOXKQbXpETDThBbgJlyJnPzrv
+	BiN492N8KEel7YdQnDQbDjQJlsOFCktzCa9qgyeaSD4ja81/Wd46rNpQemtd83UGxkW4cbi8TUXCS
+	OJ/mu+vI+CmsEnraV1/uctZqZ3d40BO0nSOsxnD1DNGQouZnuGDwK8gwMvZ6fkZTWEOzmJNPrw1z8
+	rNRdVi6E4abwIHsceBzloTS8+AMq7zN/sjevDxSPXNHXcY+QxLOjFIgTKW5NxPAREqhH0NthBL8Q3
+	LgEirizNL4ilJzhOy3M2YBl9BGA5HbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU50j-00040x-4C; Mon, 11 Nov 2019 08:25:21 +0000
-Received: from relay.sw.ru ([185.231.240.75])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU50W-0002pR-K1
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 08:25:10 +0000
-Received: from [172.16.25.5] by relay.sw.ru with esmtp (Exim 4.92.3)
- (envelope-from <aryabinin@virtuozzo.com>)
- id 1iU50L-00018h-TL; Mon, 11 Nov 2019 11:24:58 +0300
-Subject: Re: [PATCH v3 1/2] kasan: detect negative size in memory operation
- function
-To: Dmitry Vyukov <dvyukov@google.com>
-References: <20191104020519.27988-1-walter-zh.wu@mediatek.com>
- <34bf9c08-d2f2-a6c6-1dbe-29b1456d8284@virtuozzo.com>
- <CACT4Y+bfGrJemwyMVqd2Kt19mF2i=3GwXRKHP0qGJaT_5OhSCA@mail.gmail.com>
-From: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Message-ID: <20df03c5-e733-98b0-84e9-8d52ddce5c98@virtuozzo.com>
-Date: Mon, 11 Nov 2019 11:24:36 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <CACT4Y+bfGrJemwyMVqd2Kt19mF2i=3GwXRKHP0qGJaT_5OhSCA@mail.gmail.com>
-Content-Language: en-US
+	id 1iU54P-0004Rf-GD; Mon, 11 Nov 2019 08:29:09 +0000
+Received: from mail-m972.mail.163.com ([123.126.97.2])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iU54G-0004Qt-0Q; Mon, 11 Nov 2019 08:29:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+ s=s110527; h=From:Subject:Date:Message-Id; bh=IXLiI1+30Yp1RuwY8a
+ 32SvH9+dLBFK6vlJn+vl0EBD4=; b=jhlJHk32iaOL14/7IKFs9pVbyX4D/1jRo4
+ OXp1ELbN0c78vZb76E9lhgCTrKrgTejCqJ5h8HJGTROMBBS8GW1IECYYfzQZ5FL6
+ vgfMmJax8Xs5oKHB21V1VC9ySa39QDiPTXeF1RLOSnmhE491JH2x0gtPMLuXEG90
+ OpCM8x3xQ=
+Received: from localhost.localdomain (unknown [202.112.113.212])
+ by smtp2 (Coremail) with SMTP id GtxpCgDXMCOsG8ld_t9zAg--.4268S3;
+ Mon, 11 Nov 2019 16:28:35 +0800 (CST)
+From: Pan Bian <bianpan2016@163.com>
+To: Jacob Chen <jacob-chen@iotwrt.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH v2] media: rockchip/rga: fix potential use after free
+Date: Mon, 11 Nov 2019 16:28:22 +0800
+Message-Id: <1573460902-18563-1-git-send-email-bianpan2016@163.com>
+X-Mailer: git-send-email 2.7.4
+X-CM-TRANSID: GtxpCgDXMCOsG8ld_t9zAg--.4268S3
+X-Coremail-Antispam: 1Uf129KBjvJXoW7Ar4DAr4ruFW3urW8KFWUCFg_yoW8WF15pa
+ 1kGa4xKFWFg3yUuwsrJr4DuFyrGa4Iya1FkrW3G34SkFy3KryDt34xJFyFqFWUZ3s7CFWa
+ yw43tr47Ca10vFJanT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+ 9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07UJgA7UUUUU=
+X-Originating-IP: [202.112.113.212]
+X-CM-SenderInfo: held01tdqsiiqw6rljoofrz/xtbBZBNqclQHHkd+IQAAs6
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_002508_661306_E034D0CC 
-X-CRM114-Status: GOOD (  15.59  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191111_002900_597767_92071DCE 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [123.126.97.2 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (bianpan2016[at]163.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (bianpan2016[at]163.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,58 +82,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Walter Wu <walter-zh.wu@mediatek.com>,
- wsd_upstream <wsd_upstream@mediatek.com>, LKML <linux-kernel@vger.kernel.org>,
- kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
- Alexander Potapenko <glider@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-rockchip@lists.infradead.org, Pan Bian <bianpan2016@163.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The variable vga->vfd is an alias for vfd. Therefore, releasing vfd and
+then unregister vga->vfd will lead to a use after free bug. In fact, the
+free operation and the unregister operation are reversed.
 
+Signed-off-by: Pan Bian <bianpan2016@163.com>
+---
+v2: update the goto label names consistently
+---
+ drivers/media/platform/rockchip/rga/rga.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-On 11/11/19 10:57 AM, Dmitry Vyukov wrote:
-> On Fri, Nov 8, 2019 at 11:32 PM Andrey Ryabinin <aryabinin@virtuozzo.com> wrote:
+diff --git a/drivers/media/platform/rockchip/rga/rga.c b/drivers/media/platform/rockchip/rga/rga.c
+index e9ff12b6b5bb..d2297abafc69 100644
+--- a/drivers/media/platform/rockchip/rga/rga.c
++++ b/drivers/media/platform/rockchip/rga/rga.c
+@@ -863,7 +863,7 @@ static int rga_probe(struct platform_device *pdev)
+ 	if (IS_ERR(rga->m2m_dev)) {
+ 		v4l2_err(&rga->v4l2_dev, "Failed to init mem2mem device\n");
+ 		ret = PTR_ERR(rga->m2m_dev);
+-		goto unreg_video_dev;
++		goto rel_vdev;
+ 	}
+ 
+ 	pm_runtime_get_sync(rga->dev);
+@@ -892,7 +892,7 @@ static int rga_probe(struct platform_device *pdev)
+ 	ret = video_register_device(vfd, VFL_TYPE_GRABBER, -1);
+ 	if (ret) {
+ 		v4l2_err(&rga->v4l2_dev, "Failed to register video device\n");
+-		goto rel_vdev;
++		goto unreg_dev;
+ 	}
+ 
+ 	v4l2_info(&rga->v4l2_dev, "Registered %s as /dev/%s\n",
+@@ -900,10 +900,10 @@ static int rga_probe(struct platform_device *pdev)
+ 
+ 	return 0;
+ 
++unreg_dev:
++	video_unregister_device(rga->vfd);
+ rel_vdev:
+ 	video_device_release(vfd);
+-unreg_video_dev:
+-	video_unregister_device(rga->vfd);
+ unreg_v4l2_dev:
+ 	v4l2_device_unregister(&rga->v4l2_dev);
+ err_put_clk:
+-- 
+2.7.4
 
->>> diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
->>> index 36c645939bc9..52a92c7db697 100644
->>> --- a/mm/kasan/generic_report.c
->>> +++ b/mm/kasan/generic_report.c
->>> @@ -107,6 +107,24 @@ static const char *get_wild_bug_type(struct kasan_access_info *info)
->>>
->>>  const char *get_bug_type(struct kasan_access_info *info)
->>>  {
->>> +     /*
->>> +      * If access_size is negative numbers, then it has three reasons
->>> +      * to be defined as heap-out-of-bounds bug type.
->>> +      * 1) Casting negative numbers to size_t would indeed turn up as
->>> +      *    a large size_t and its value will be larger than ULONG_MAX/2,
->>> +      *    so that this can qualify as out-of-bounds.
->>> +      * 2) If KASAN has new bug type and user-space passes negative size,
->>> +      *    then there are duplicate reports. So don't produce new bug type
->>> +      *    in order to prevent duplicate reports by some systems
->>> +      *    (e.g. syzbot) to report the same bug twice.
->>> +      * 3) When size is negative numbers, it may be passed from user-space.
->>> +      *    So we always print heap-out-of-bounds in order to prevent that
->>> +      *    kernel-space and user-space have the same bug but have duplicate
->>> +      *    reports.
->>> +      */
->>
->> Completely fail to understand 2) and 3). 2) talks something about *NOT* producing new bug
->> type, but at the same time you code actually does that.
->> 3) says something about user-space which have nothing to do with kasan.
-> 
-> The idea was to use one of the existing bug titles so that syzbot does
-> not produce 2 versions for OOBs where size is user-controlled. We
-> don't know if it's overflow from heap, global or stack, but heap is
-> the most common bug, so saying heap overflow will reduce chances of
-> producing duplicates the most.
-> But for all of this to work we do need to use one of the existing bug titles.
-
-The "heap-out-of-bounds" is not one of the existing bug titles.
 
 _______________________________________________
 linux-arm-kernel mailing list
