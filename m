@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 574D8F76C8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 15:44:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59E9FF76C9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 15:44:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=nSk975NVxAYBmiQwQAi92Rb/rZTveNncI1nDH0TP1qU=; b=DZkjAeHO4cw0Q3VmhoBVz++/mc
-	WGIKxawrye4ZUdut7IB+VNywL8haWHnhVNQL91mFK6NrL7dnWbH7iehAIBWc/1Vn1bjvDP2cmcVu4
-	gM2OkX9yDkM//XpGSslDG0yt/SrsuterUyv0af1VJQCjwDLS3MpDtvCUCOiXJqOoAhltKSeHBgUJr
-	5Cm+giFli44iO8N+H48RaBVS2DiV0lATfTy8l/zTlEefEmLurrd+/LDAeGjrgY0kf6nLudF4mTf7j
-	mGHGb7Fy8HndFK0dKDjj6Ffe7GIV8FmazUxNOYAMI5BfyokDLgfI4EFVQ97+tlStrJHdDYJKMT8aB
-	Yn24y7jA==;
+	bh=j3XBzRiwm/m57DJ2jXfM+ugBuh34lBbVFZ56GSFGH8g=; b=bsu1zSyi5xXcYsJSO4oUP3Ka5Z
+	nTxbMAnhyJDHw41bepz/Dq6jVetMoPKLlTEVcfOQ+QBn3RdGvNCCX57rTr0Uw3iIXWFyzLCTape3X
+	PnKiL9YfO5p+Ew84QI8Xx5fH5JDbB++VftIHdAhBCBfqQn6Fx1gKYWzx1EWLXRCCUYGpuDiH8HcNv
+	RJ6ii7eAF8TGxmNZ4LBXzQFdl9WV4o51GzFblf6auQwwNYg+neJ9cqBHJzgjpXMKA5zpZpHiKhzDM
+	2rMnvlgMpwOzRXLBl0xJDSu+dyaBjP+ixRySHJKGmKp99GhMOUYSmk9faaesmG4i5uDMgrCCOxeYt
+	baMFjTiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUAv9-0003NN-Fs; Mon, 11 Nov 2019 14:43:59 +0000
+	id 1iUAvN-0003aZ-QM; Mon, 11 Nov 2019 14:44:13 +0000
 Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUAuC-0002Zj-RB
+ id 1iUAuC-0002Zh-RC
  for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 14:43:04 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 60BF3C08B5;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 70FD2C08B9;
  Mon, 11 Nov 2019 14:42:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1573483379; bh=IZywiHnu0e/BLA3nx1WdYdgGskrAid2hLTgOAWQdqjk=;
+ t=1573483379; bh=PrBumZoUjPLZvImVQfgkZgeXA8mceoK9SRTpxM8SziE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=KkR/BIX8vddGWEkkLm4uiUf179j0bjDAsHPvzqkso0E7hP1+df2H45OoSGTow382S
- WXZY1ML3qLdUhff7l0M8PIHWzUXDnkR9KQrcQfduBQOWiYOgnpEmLIaaaQq9E9w7rM
- l0Nu/eg50xYDry2N++GYq8c1rkvCq/XXMFAlpI5WVMJQfTdRBXe41AP/74qAosPJok
- MyJhWBsx5ZuTE7XiKhuCGIH6GrURa89OoVfhnfBTHu5KhJZRQVvVR4Ze9Z4TuBxUfV
- C/+LgprPirbUXRc5XmcBE2KvDZbrYhqWqBngTqP9KGTRuuRf457ib52H0rxHMIzYEv
- H0KGrYH0mLvDg==
+ b=JwYItn5/1rdXTkTz1az/ugnrsf8vdRlf2/7hpku12lv1VoziQ37/VFqYz4rOgHwxI
+ 4C8KR08RGmnhKQ8LZoyY9liFPIN4vVSTSusFbKSmOe/j+YwVrfggk3bTUBUtpKZKkt
+ yIsGzT/mhzTi9uAu8pcshWS7vbkWyCxsD4993TtSKAr2Vm3V1alwP8kHN1KAHyg/2O
+ ec6Z3Kg27vChJEzU19mStaMqnz8Gd1VMB6MvnSKtHYL63TzhO9PldEF5lvrxAHt3gI
+ KPHLUHzE5p7rVMhqGY7jwUSnvbBYr8iImjwx8JxB6P452t41ewumsnHZDISiLMXXif
+ GD1i0FOsXcFfg==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id DD711A0248;
+ by mailhost.synopsys.com (Postfix) with ESMTP id F2C00A024C;
  Mon, 11 Nov 2019 14:42:56 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 2/6] net: stmmac: gmac4+: Add Split Header support
-Date: Mon, 11 Nov 2019 15:42:35 +0100
-Message-Id: <8708744c518d29fa51e43f5c2cd14a4927835db5.1573482991.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next 3/6] net: stmmac: xgmac: Add C45 PHY support in the
+ MDIO callbacks
+Date: Mon, 11 Nov 2019 15:42:36 +0100
+Message-Id: <37a284c640a3e071811fa50838cfe3a319f50fb0.1573482991.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1573482991.git.Jose.Abreu@synopsys.com>
 References: <cover.1573482991.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1573482991.git.Jose.Abreu@synopsys.com>
 References: <cover.1573482991.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_064300_958626_8DA3ED1E 
-X-CRM114-Status: GOOD (  15.15  )
+X-CRM114-CacheID: sfid-20191111_064300_952127_2CDC1BA5 
+X-CRM114-Status: GOOD (  15.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -95,10 +96,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-GMAC4+ cores also support the Split Header feature.
+Add the support for C45 PHYs in the MDIO callbacks for XGMAC. This was
+tested using Synopsys DesignWare XPCS.
 
-Add the support for Split Header feature in the RX path following the
-same implementation logic that XGMAC followed.
+v2:
+- Pull out the readl_poll_timeout() calls into common code (Andrew)
 
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
@@ -113,172 +115,133 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac4.h       |  7 +++++++
- drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c | 21 ++++++++++++++++++---
- drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h |  1 +
- drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c   | 19 +++++++++++++++++++
- drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h   |  1 +
- 5 files changed, 46 insertions(+), 3 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c | 58 +++++++++++++++++++----
+ 1 file changed, 48 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-index 07e97f45755d..2dc70d104161 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-@@ -14,6 +14,7 @@
- 
- /*  MAC registers */
- #define GMAC_CONFIG			0x00000000
-+#define GMAC_EXT_CONFIG			0x00000004
- #define GMAC_PACKET_FILTER		0x00000008
- #define GMAC_HASH_TAB(x)		(0x10 + (x) * 4)
- #define GMAC_VLAN_TAG			0x00000050
-@@ -188,6 +189,11 @@ enum power_event {
- #define GMAC_CONFIG_TE			BIT(1)
- #define GMAC_CONFIG_RE			BIT(0)
- 
-+/* MAC extended config */
-+#define GMAC_CONFIG_HDSMS		GENMASK(22, 20)
-+#define GMAC_CONFIG_HDSMS_SHIFT		20
-+#define GMAC_CONFIG_HDSMS_256		(0x2 << GMAC_CONFIG_HDSMS_SHIFT)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+index 40c42637ad75..cfe5d8b73142 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
+@@ -41,20 +41,32 @@
+ #define MII_XGMAC_BUSY			BIT(22)
+ #define MII_XGMAC_MAX_C22ADDR		3
+ #define MII_XGMAC_C22P_MASK		GENMASK(MII_XGMAC_MAX_C22ADDR, 0)
++#define MII_XGMAC_PA_SHIFT		16
++#define MII_XGMAC_DA_SHIFT		21
 +
- /* MAC HW features0 bitmap */
- #define GMAC_HW_FEAT_SAVLANINS		BIT(27)
- #define GMAC_HW_FEAT_ADDMAC		BIT(18)
-@@ -211,6 +217,7 @@ enum power_event {
- #define GMAC_HW_HASH_TB_SZ		GENMASK(25, 24)
- #define GMAC_HW_FEAT_AVSEL		BIT(20)
- #define GMAC_HW_TSOEN			BIT(18)
-+#define GMAC_HW_FEAT_SPHEN		BIT(17)
- #define GMAC_HW_ADDR64			GENMASK(15, 14)
- #define GMAC_HW_TXFIFOSIZE		GENMASK(10, 6)
- #define GMAC_HW_RXFIFOSIZE		GENMASK(4, 0)
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c
-index 707ab5eba8da..3e14da69f378 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c
-@@ -83,9 +83,10 @@ static int dwmac4_wrback_get_rx_status(void *data, struct stmmac_extra_stats *x,
- 	if (unlikely(rdes3 & RDES3_OWN))
- 		return dma_own;
- 
--	/* Verify rx error by looking at the last segment. */
--	if (likely(!(rdes3 & RDES3_LAST_DESCRIPTOR)))
-+	if (unlikely(rdes3 & RDES3_CONTEXT_DESCRIPTOR))
- 		return discard_frame;
-+	if (likely(!(rdes3 & RDES3_LAST_DESCRIPTOR)))
-+		return rx_not_ls;
- 
- 	if (unlikely(rdes3 & RDES3_ERROR_SUMMARY)) {
- 		if (unlikely(rdes3 & RDES3_GIANT_PACKET))
-@@ -188,7 +189,7 @@ static void dwmac4_set_tx_owner(struct dma_desc *p)
- 
- static void dwmac4_set_rx_owner(struct dma_desc *p, int disable_rx_ic)
- {
--	p->des3 = cpu_to_le32(RDES3_OWN | RDES3_BUFFER1_VALID_ADDR);
-+	p->des3 |= cpu_to_le32(RDES3_OWN | RDES3_BUFFER1_VALID_ADDR);
- 
- 	if (!disable_rx_ic)
- 		p->des3 |= cpu_to_le32(RDES3_INT_ON_COMPLETION_EN);
-@@ -492,6 +493,18 @@ static void dwmac4_set_vlan(struct dma_desc *p, u32 type)
- 	p->des2 |= cpu_to_le32(type & TDES2_VLAN_TAG_MASK);
- }
- 
-+static int dwmac4_get_rx_header_len(struct dma_desc *p, unsigned int *len)
++static int stmmac_xgmac2_c45_format(struct stmmac_priv *priv, int phyaddr,
++				    int phyreg, u32 *hw_addr)
 +{
-+	*len = le32_to_cpu(p->des2) & RDES2_HL;
++	u32 tmp;
++
++	/* Set port as Clause 45 */
++	tmp = readl(priv->ioaddr + XGMAC_MDIO_C22P);
++	tmp &= ~BIT(phyaddr);
++	writel(tmp, priv->ioaddr + XGMAC_MDIO_C22P);
++
++	*hw_addr = (phyaddr << MII_XGMAC_PA_SHIFT) | (phyreg & 0xffff);
++	*hw_addr |= (phyreg >> MII_DEVADDR_C45_SHIFT) << MII_XGMAC_DA_SHIFT;
 +	return 0;
 +}
-+
-+static void dwmac4_set_sec_addr(struct dma_desc *p, dma_addr_t addr)
-+{
-+	p->des2 = cpu_to_le32(lower_32_bits(addr));
-+	p->des3 = cpu_to_le32(upper_32_bits(addr) | RDES3_BUFFER2_VALID_ADDR);
-+}
-+
- const struct stmmac_desc_ops dwmac4_desc_ops = {
- 	.tx_status = dwmac4_wrback_get_tx_status,
- 	.rx_status = dwmac4_wrback_get_rx_status,
-@@ -519,6 +532,8 @@ const struct stmmac_desc_ops dwmac4_desc_ops = {
- 	.set_sarc = dwmac4_set_sarc,
- 	.set_vlan_tag = dwmac4_set_vlan_tag,
- 	.set_vlan = dwmac4_set_vlan,
-+	.get_rx_header_len = dwmac4_get_rx_header_len,
-+	.set_sec_addr = dwmac4_set_sec_addr,
- };
  
- const struct stmmac_mode_ops dwmac4_ring_mode_ops = {
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h b/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h
-index 0d7b3bbcd5a7..6d92109dc9aa 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h
-@@ -109,6 +109,7 @@
- #define RDES2_L4_FILTER_MATCH		BIT(28)
- #define RDES2_L3_L4_FILT_NB_MATCH_MASK	GENMASK(27, 26)
- #define RDES2_L3_L4_FILT_NB_MATCH_SHIFT	26
-+#define RDES2_HL			GENMASK(9, 0)
+ static int stmmac_xgmac2_c22_format(struct stmmac_priv *priv, int phyaddr,
+ 				    int phyreg, u32 *hw_addr)
+ {
+-	unsigned int mii_data = priv->hw->mii.data;
+ 	u32 tmp;
  
- /* RDES3 (write back format) */
- #define RDES3_PACKET_SIZE_MASK		GENMASK(14, 0)
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-index b24c89572745..36a0af8bf89f 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-@@ -368,6 +368,7 @@ static void dwmac4_get_hw_feature(void __iomem *ioaddr,
- 	dma_cap->hash_tb_sz = (hw_cap & GMAC_HW_HASH_TB_SZ) >> 24;
- 	dma_cap->av = (hw_cap & GMAC_HW_FEAT_AVSEL) >> 20;
- 	dma_cap->tsoen = (hw_cap & GMAC_HW_TSOEN) >> 18;
-+	dma_cap->sphen = (hw_cap & GMAC_HW_FEAT_SPHEN) >> 17;
+ 	/* HW does not support C22 addr >= 4 */
+ 	if (phyaddr > MII_XGMAC_MAX_C22ADDR)
+ 		return -ENODEV;
+-	/* Wait until any existing MII operation is complete */
+-	if (readl_poll_timeout(priv->ioaddr + mii_data, tmp,
+-			       !(tmp & MII_XGMAC_BUSY), 100, 10000))
+-		return -EBUSY;
  
- 	dma_cap->addr64 = (hw_cap & GMAC_HW_ADDR64) >> 14;
- 	switch (dma_cap->addr64) {
-@@ -460,6 +461,22 @@ static void dwmac4_set_bfsize(void __iomem *ioaddr, int bfsize, u32 chan)
- 	writel(value, ioaddr + DMA_CHAN_RX_CONTROL(chan));
+ 	/* Set port as Clause 22 */
+ 	tmp = readl(priv->ioaddr + XGMAC_MDIO_C22P);
+@@ -62,7 +74,7 @@ static int stmmac_xgmac2_c22_format(struct stmmac_priv *priv, int phyaddr,
+ 	tmp |= BIT(phyaddr);
+ 	writel(tmp, priv->ioaddr + XGMAC_MDIO_C22P);
+ 
+-	*hw_addr = (phyaddr << 16) | (phyreg & 0x1f);
++	*hw_addr = (phyaddr << MII_XGMAC_PA_SHIFT) | (phyreg & 0x1f);
+ 	return 0;
  }
  
-+static void dwmac4_enable_sph(void __iomem *ioaddr, bool en, u32 chan)
-+{
-+	u32 value = readl(ioaddr + GMAC_EXT_CONFIG);
-+
-+	value &= ~GMAC_CONFIG_HDSMS;
-+	value |= GMAC_CONFIG_HDSMS_256; /* Segment max 256 bytes */
-+	writel(value, ioaddr + GMAC_EXT_CONFIG);
-+
-+	value = readl(ioaddr + DMA_CHAN_CONTROL(chan));
-+	if (en)
-+		value |= DMA_CONTROL_SPH;
-+	else
-+		value &= ~DMA_CONTROL_SPH;
-+	writel(value, ioaddr + DMA_CHAN_CONTROL(chan));
-+}
-+
- const struct stmmac_dma_ops dwmac4_dma_ops = {
- 	.reset = dwmac4_dma_reset,
- 	.init = dwmac4_dma_init,
-@@ -486,6 +503,7 @@ const struct stmmac_dma_ops dwmac4_dma_ops = {
- 	.enable_tso = dwmac4_enable_tso,
- 	.qmode = dwmac4_qmode,
- 	.set_bfsize = dwmac4_set_bfsize,
-+	.enable_sph = dwmac4_enable_sph,
- };
+@@ -75,17 +87,28 @@ static int stmmac_xgmac2_mdio_read(struct mii_bus *bus, int phyaddr, int phyreg)
+ 	u32 tmp, addr, value = MII_XGMAC_BUSY;
+ 	int ret;
  
- const struct stmmac_dma_ops dwmac410_dma_ops = {
-@@ -514,4 +532,5 @@ const struct stmmac_dma_ops dwmac410_dma_ops = {
- 	.enable_tso = dwmac4_enable_tso,
- 	.qmode = dwmac4_qmode,
- 	.set_bfsize = dwmac4_set_bfsize,
-+	.enable_sph = dwmac4_enable_sph,
- };
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h
-index 5299fa1001a3..589931795847 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h
-@@ -110,6 +110,7 @@
- #define DMA_CHAN_STATUS(x)		(DMA_CHANX_BASE_ADDR(x) + 0x60)
++	/* Wait until any existing MII operation is complete */
++	if (readl_poll_timeout(priv->ioaddr + mii_data, tmp,
++			       !(tmp & MII_XGMAC_BUSY), 100, 10000))
++		return -EBUSY;
++
+ 	if (phyreg & MII_ADDR_C45) {
+-		return -EOPNOTSUPP;
++		phyreg &= ~MII_ADDR_C45;
++
++		ret = stmmac_xgmac2_c45_format(priv, phyaddr, phyreg, &addr);
++		if (ret)
++			return ret;
+ 	} else {
+ 		ret = stmmac_xgmac2_c22_format(priv, phyaddr, phyreg, &addr);
+ 		if (ret)
+ 			return ret;
++
++		value |= MII_XGMAC_SADDR;
+ 	}
  
- /* DMA Control X */
-+#define DMA_CONTROL_SPH			BIT(24)
- #define DMA_CONTROL_MSS_MASK		GENMASK(13, 0)
+ 	value |= (priv->clk_csr << priv->hw->mii.clk_csr_shift)
+ 		& priv->hw->mii.clk_csr_mask;
+-	value |= MII_XGMAC_SADDR | MII_XGMAC_READ;
++	value |= MII_XGMAC_READ;
  
- /* DMA Tx Channel X Control register defines */
+ 	/* Wait until any existing MII operation is complete */
+ 	if (readl_poll_timeout(priv->ioaddr + mii_data, tmp,
+@@ -115,17 +138,28 @@ static int stmmac_xgmac2_mdio_write(struct mii_bus *bus, int phyaddr,
+ 	u32 addr, tmp, value = MII_XGMAC_BUSY;
+ 	int ret;
+ 
++	/* Wait until any existing MII operation is complete */
++	if (readl_poll_timeout(priv->ioaddr + mii_data, tmp,
++			       !(tmp & MII_XGMAC_BUSY), 100, 10000))
++		return -EBUSY;
++
+ 	if (phyreg & MII_ADDR_C45) {
+-		return -EOPNOTSUPP;
++		phyreg &= ~MII_ADDR_C45;
++
++		ret = stmmac_xgmac2_c45_format(priv, phyaddr, phyreg, &addr);
++		if (ret)
++			return ret;
+ 	} else {
+ 		ret = stmmac_xgmac2_c22_format(priv, phyaddr, phyreg, &addr);
+ 		if (ret)
+ 			return ret;
++
++		value |= MII_XGMAC_SADDR;
+ 	}
+ 
+ 	value |= (priv->clk_csr << priv->hw->mii.clk_csr_shift)
+ 		& priv->hw->mii.clk_csr_mask;
+-	value |= phydata | MII_XGMAC_SADDR;
++	value |= phydata;
+ 	value |= MII_XGMAC_WRITE;
+ 
+ 	/* Wait until any existing MII operation is complete */
+@@ -363,6 +397,10 @@ int stmmac_mdio_register(struct net_device *ndev)
+ 		goto bus_register_fail;
+ 	}
+ 
++	/* Looks like we need a dummy read for XGMAC only and C45 PHYs */
++	if (priv->plat->has_xgmac)
++		stmmac_xgmac2_mdio_read(new_bus, 0, MII_ADDR_C45);
++
+ 	if (priv->plat->phy_node || mdio_node)
+ 		goto bus_register_done;
+ 
 -- 
 2.7.4
 
