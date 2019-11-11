@@ -2,56 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7155F767F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 15:36:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B833F7681
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 15:37:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ohLNAVmxn2FZWabPgjI17CGb5V5ara+Oz9hk0calHHo=; b=NWxkN2jTJXDtRN7zuTBkpc3S4
-	KIiYjWZPhPaD2oqhZfxnyHg2zWtigOw2Bv/X+Y8I0Zn1COsx1yq8ggrql0Lt0m5PW3mYndfvZKsf/
-	LVtJQuxES3rNtjWIkTI7tqVgsu5uU3HYPZQKVFU3idqcaR3s8sU3+Htq2jUxiB4f0SdOHapnlP6ju
-	uhbdG5+U4cr0l6de1r2cFmeWCH2Nj5h9Xvcltkt1vBs0DB7xX4tBPuLq6tEqUajDq7HElUqiVxWKz
-	C52pxtyTgC1ERqLKWzRpfAM5Yv0GfN7rNZehYGJccPvl9VwoOKdJ8qxpSNjlLVkD8Kev62mIgv8Zz
-	Ce2XIKMiA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KwNQA+vgya2Nt3sC4xvEnWnQp+7AmPSevqh294woCbA=; b=MfA04cPc6KbA1w
+	qI6mpdbbLUCmiBsqxfppGhsp5vMzD2kr89LvfCE247GpMRvN0h2MARcOAr4oNbsC5Ogcj5Ht3O3fm
+	hMCV3zusb/w/acJpHTPk84A4ptTv4WiweZdRTaJZZgs1RgPhHboXZRUXI8pwqgvxFDGYYZYzlY/z5
+	ybj8s+wtpwGG5Qao1oZed8OfrzK+ZHogyCPxnUzroFYd+D3t7S5r+65ifZwg9wn7S1N0uo+rywAag
+	1ENx1N0aQnsPpUBculiyoHX0076IjTc5XZgQMdBGv8E4mK3LYrBK/GtDphrT3Aenx52FmS/DPhCKv
+	XFz+Cyk/ZEJU2WFFymlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUAo9-0006pM-6U; Mon, 11 Nov 2019 14:36:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUAo1-0006os-AW
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 14:36:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4866631B;
- Mon, 11 Nov 2019 06:36:36 -0800 (PST)
-Received: from localhost.localdomain (unknown [10.1.196.67])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AF8633F52E;
- Mon, 11 Nov 2019 06:36:35 -0800 (PST)
-Subject: Re: [PATCH v8 3/4] arm64: Don't use KPTI where we have E0PD
-To: Mark Brown <broonie@kernel.org>, Catalin Marinas
- <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-References: <20191108170116.32105-1-broonie@kernel.org>
- <20191108170116.32105-4-broonie@kernel.org>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <5d846391-8d16-4b85-a83f-b48e636e2834@arm.com>
-Date: Mon, 11 Nov 2019 14:36:34 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+	id 1iUAoa-000787-Dq; Mon, 11 Nov 2019 14:37:12 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUAoQ-00077U-T8
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 14:37:04 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id ECE18214E0;
+ Mon, 11 Nov 2019 14:37:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573483022;
+ bh=St7ZnV5WSa+yszDcbQGqtCcdVAO1nZ3efPLKJ2qswg4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=vFVvRPU0o3E4Rfl2RAfAAvItIYq3+SRTw2zPaCArwNfgUnw/DVX9zhjbOzLtdjhHn
+ IbSSPpJ4Fq/uxMOq+Xf96Hd8rmpv2vCxp6gWSx3iq8mhGzXzQfuOK+DjLt6u++8YY4
+ CRJ0R/AlPz6gdJZphnyAK1J1zuqe/GRh/brPPwS8=
+Date: Mon, 11 Nov 2019 14:36:57 +0000
+From: Will Deacon <will@kernel.org>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH 1/2] iommu/arm-smmu-v3: Don't display an error when IRQ
+ lines are missing
+Message-ID: <20191111143656.GA10488@willie-the-truck>
+References: <20191111111721.4145919-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20191108170116.32105-4-broonie@kernel.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191111111721.4145919-1-jean-philippe@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_063637_408042_AA7854A9 
-X-CRM114-Status: GOOD (  23.80  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191111_063702_954181_82ABBA34 
+X-CRM114-Status: GOOD (  16.81  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,62 +77,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: iommu@lists.linux-foundation.org, robin.murphy@arm.com, joro@8bytes.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 08/11/2019 17:01, Mark Brown wrote:
-> Since E0PD is intended to fulfil the same role as KPTI we don't need to
-> use KPTI on CPUs where E0PD is available, we can rely on E0PD instead.
-> Change the check that forces KPTI on when KASLR is enabled to check for
-> E0PD before doing so, CPUs with E0PD are not expected to be affected by
-> meltdown so should not need to enable KPTI for other reasons.
+On Mon, Nov 11, 2019 at 12:17:20PM +0100, Jean-Philippe Brucker wrote:
+> Since commit 7723f4c5ecdb ("driver core: platform: Add an error message
+> to platform_get_irq*()"), platform_get_irq_byname() displays an error
+> when the IRQ isn't found. Since the SMMUv3 driver uses that function to
+> query which interrupt method is available, the message is now displayed
+> during boot for any SMMUv3 that doesn't implement the combined
+> interrupt, or that implements MSIs.
 > 
-> Since E0PD is a system capability we will still enable KPTI if any of
-> the CPUs in the system lacks E0PD, this will rewrite any global mappings
-> that were established in systems where some but not all CPUs support
-> E0PD.  We may transiently have a mix of global and non-global mappings
-> while booting since we use the local CPU when deciding if KPTI will be
-> required prior to completing CPU enumeration but any global mappings
-> will be converted to non-global ones when KPTI is applied.
+> [   20.700337] arm-smmu-v3 arm-smmu-v3.7.auto: IRQ combined not found
+> [   20.706508] arm-smmu-v3 arm-smmu-v3.7.auto: IRQ eventq not found
+> [   20.712503] arm-smmu-v3 arm-smmu-v3.7.auto: IRQ priq not found
+> [   20.718325] arm-smmu-v3 arm-smmu-v3.7.auto: IRQ gerror not found
 > 
-> KPTI can still be forced on from the command line if required.
+> Use platform_get_irq_byname_optional() to avoid displaying a spurious
+> error.
 > 
-> Signed-off-by: Mark Brown <broonie@kernel.org>
+> Fixes: 7723f4c5ecdb ("driver core: platform: Add an error message to platform_get_irq*()")
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 > ---
->   arch/arm64/include/asm/mmu.h | 13 +++++++++++++
->   1 file changed, 13 insertions(+)
+>  drivers/iommu/arm-smmu-v3.c | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
 > 
-> diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
-> index 55e285fff262..2e2a0ade883c 100644
-> --- a/arch/arm64/include/asm/mmu.h
-> +++ b/arch/arm64/include/asm/mmu.h
-> @@ -38,10 +38,23 @@ static inline bool arm64_kernel_unmapped_at_el0(void)
->   static inline bool kaslr_requires_kpti(void)
->   {
->   	bool tx1_bug;
-> +	u64 ftr;
->   
->   	if (!IS_ENABLED(CONFIG_RANDOMIZE_BASE))
->   		return false;
->   
-> +	/*
-> +	 * E0PD does a similar job to KPTI so can be used instead
-> +	 * where available. This will only run before the cpufeature
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index bfa4a0f39ed0..a89797f346a4 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -5207,19 +5207,19 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
+>  
+>  	/* Interrupt lines */
+>  
+> -	irq = platform_get_irq_byname(pdev, "combined");
+> +	irq = platform_get_irq_byname_optional(pdev, "combined");
+>  	if (irq > 0)
+>  		smmu->combined_irq = irq;
+>  	else {
+> -		irq = platform_get_irq_byname(pdev, "eventq");
+> +		irq = platform_get_irq_byname_optional(pdev, "eventq");
+>  		if (irq > 0)
+>  			smmu->evtq.q.irq = irq;
+>  
+> -		irq = platform_get_irq_byname(pdev, "priq");
+> +		irq = platform_get_irq_byname_optional(pdev, "priq");
+>  		if (irq > 0)
+>  			smmu->priq.q.irq = irq;
+>  
+> -		irq = platform_get_irq_byname(pdev, "gerror");
+> +		irq = platform_get_irq_byname_optional(pdev, "gerror");
+>  		if (irq > 0)
+>  			smmu->gerr_irq = irq;
+>  	}
 
-s/This will only run/This will run/ ?
+Thanks, looks mechanical enough for me:
 
-> +	 * code has usefully run and we eventually check on all CPUs so
-> +	 * we can and must check locally.
-> +	 */
+Acked-by: Will Deacon <will@kernel.org>
 
-Otherwise looks fine to me:
-
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
