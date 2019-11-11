@@ -2,78 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24014F723C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 11:34:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDE25F723B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 11:34:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j9lCVvbxht/KkJgYqp0DweTypg+H8bUDaKbQBIAPedw=; b=sl/soHLchEvUNq
-	oYkpXIzt4DdXbg67XXHqWVj1Ta5Xgb0euZx1atbNWPocQAO6PCENFfIT/ref4evE3aj7S42knREq6
-	X/OCcOdr363/vIdKv+cvK71c8vqxzjAyoMauKG4d6r0ajbEE3+trruiQWB45VABNe66QRvJ3XIWRe
-	+p/q5L+c7a1ve4mcPQAnRSDc+J6D5bgbn3rgeoea8J1uFKs7L0ygdq6wurFVWcBagf5G8pENiCf0V
-	PeO2ECFSJ1DBePznUC7I1nJROS8Dyq43sPrtkq4QJpiKvlCOebmoWfce1xINgUEfQu0lp3JRRIdf7
-	rosvB58ow5D/orL8PMzQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4sQxN0cLKjZApcTrhA4jfMy+lxu/mSMsjO8qqP/ojCY=; b=CYtVv8ulEdJaB2
+	b/5RD5ZdOtX9ahLGIo7pijWHxgDbvUm2sBS7BPzRvnnhKjgaczr36Pf7rZ8z5TxlbEuMOppb2biyL
+	8rs4GWDD7G8bfyh61EMqmDJtjMHVDKTNkrU3+4AkaPwjnrLTk6cjN68FXoQQOGQPdNwewaPkSnebk
+	SVbFTg/+1J9BkJ4UqHtCKAXyj8IK3ctTPUFJcdsAbdy/q4J4FQw3ih98TiYTT8SghYBlV1pctUy3e
+	UjjAI6p6vE+4IfjXTlaO7L4kc/9yyci9vvaLTspkxA8kSLNxMbR3FhWo5gemkGTHbm/D+2o/sJxe+
+	HPq9m++WykmOzxBO8sVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU71i-0005iN-Iu; Mon, 11 Nov 2019 10:34:30 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1iU71Q-0005PN-L6; Mon, 11 Nov 2019 10:34:12 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU6yj-0004jG-Ca; Mon, 11 Nov 2019 10:31:27 +0000
-Received: from mail-qv1-f53.google.com ([209.85.219.53]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MVMuN-1iMjEK225v-00SLBi; Mon, 11 Nov 2019 11:31:23 +0100
-Received: by mail-qv1-f53.google.com with SMTP id cg2so4636703qvb.10;
- Mon, 11 Nov 2019 02:31:23 -0800 (PST)
-X-Gm-Message-State: APjAAAV1uHu6Q9+5m/uXVIpS6aLRZNpwjsRLO7wPNQ86ddVV0hzCMTr6
- 87gTGnuJHk7ow0OQV4tIW5MidzrDPQyych2ZXgs=
-X-Google-Smtp-Source: APXvYqxD4F/fwy7LIVnyFzyiMun+f+kScDaMuxMbPMHFdHwTAmNy4Oax48ObAzH1ZmZyCVG2W0sxl5/9Apu79krhc7g=
-X-Received: by 2002:a0c:a9cc:: with SMTP id c12mr4561842qvb.222.1573468282069; 
- Mon, 11 Nov 2019 02:31:22 -0800 (PST)
+ id 1iU6xz-0004Do-Vm
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 10:30:43 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xABAUaL6024709;
+ Mon, 11 Nov 2019 04:30:36 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1573468236;
+ bh=J49vO9a5Q6nbdkFfwrMnpwhRrLhy3uz8gGzESzCD4oo=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=J0pC0vQNOwWzcvvyyQL76SmlVuEzN0Z+CjL83wyC4lp4rBJiQ2R1WTU+ky0182CGU
+ FTXTm6Qn7grF70n77I6mtxC44f2VRRamde1Mg5BmLaZlzhLGa12VcCNxC08G61KIOA
+ d5uzuQB+yddSy3ouqSKbKhg+hMh59KTqSgK/uEBU=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xABAUZfl057030
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 11 Nov 2019 04:30:35 -0600
+Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 11
+ Nov 2019 04:30:17 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 11 Nov 2019 04:30:17 -0600
+Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xABAUVBd048429;
+ Mon, 11 Nov 2019 04:30:31 -0600
+Subject: Re: [PATCH v4 15/15] dmaengine: ti: k3-udma: Add glue layer for non
+ DMAengine users
+To: Vinod Koul <vkoul@kernel.org>
+References: <20191101084135.14811-1-peter.ujfalusi@ti.com>
+ <20191101084135.14811-16-peter.ujfalusi@ti.com>
+ <20191111061258.GS952516@vkoul-mobl>
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Message-ID: <6d4d2fcc-502b-4b41-cd71-8942741f4ad8@ti.com>
+Date: Mon, 11 Nov 2019 12:31:46 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191029064834.23438-12-hch@lst.de>
- <mhng-33ea9141-2440-4a2d-8133-62094486fc48@palmer-si-x1c4>
- <CAMuHMdVuDp_8UDeWv8tdPAH5JS84=-yfwZjOk-YQcoYKM9za+w@mail.gmail.com>
-In-Reply-To: <CAMuHMdVuDp_8UDeWv8tdPAH5JS84=-yfwZjOk-YQcoYKM9za+w@mail.gmail.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 11 Nov 2019 11:31:05 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a2a7jwmAKhh3WsowCmvdQpsde5A5nz+3NXRn7amhwUxQg@mail.gmail.com>
-Message-ID: <CAK8P3a2a7jwmAKhh3WsowCmvdQpsde5A5nz+3NXRn7amhwUxQg@mail.gmail.com>
-Subject: Re: [PATCH 11/21] asm-generic: don't provide ioremap for CONFIG_MMU
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-X-Provags-ID: V03:K1:jKdc7SN7TlzrItssvWUahVJz3hDP5Cd0ZmKt98s8caMUYUIeg1a
- XJXJHK48OYgZsi5ooE+SHRbls5mfsDSjjzdKxqV+7TQ0haWZIl00SRFE+1uHGmmMSiQQEjk
- j4XE6F0yAlv0Od2pv/6TeFS/cNJKAI4Ztq4dRUpnq4tr/aod/9rdK+VMdZt8elxgT1Pk7Jn
- b+CGKaZnlfyAqgTx7I6VA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:9bijUwidQcU=:k4e4fsccf7b1kQBRUXFfF7
- 2x6C2BMR87xGd6DUQHtPI68UisFEiQ3fhUeQ8z9c9f0LWWCM00QB+Q6QuX3q4oAMTsC17HKyE
- OS9U7UukFKmm19uDbnHKZfQmXJk51+VlZberOhVicpewkMPELJACdUHCAmPGR3V3e6fVRVJq8
- 14ERn9U4sYWuG8ug7rEGcNxN7YRPcZgbngeeCgEhiKqqVZnKK0pCzpcUEOzOKz6vRBB5OfJDA
- l4UwCJ5roQnrlHNOfjtwMXdOmsofksZPZzV0yEuVt91QLmxq8X97yfgMfWfUoBvsU00+ctxho
- mobkd5fIjNBhz/CEyr/zwRCWk9VKbT95UUYTmHhKHgcHNu0XvvGNoRAMlRURXS13K7cWivOOb
- ADCx4ENJaBl5f2ZJi9ObpaxMYKMcXguX0qigZ1XXUDOVKOFjWKrBjpm5GEB9gFbWntqC3muuP
- n3LqZOhnhUGgCjLTs9yPPvTcUrsnqJIaSKeqI0WJ6ci9kU/jM//kc8xhn6qVDe8DqqJ4vl4yu
- IM53gbIB1IagmQ8ijskWfXjGAs1TubKWj0Jyqvn22RhLH59CdoBF237PzFTIqYm0PlzTKoXJw
- k1lTucluSyDydUojgOKhDG8f7fHj3mZeiP6QLPCufVDPYLEl7Nd5Nwy2pHtUO38YQ2NyQnWF2
- LFkyYjl5yjdRTdwV7F3JvL0QncNnzYQ/Xme/aIk3YFUpea4Xcx9nd+T3rvqgk1ufAx5SMqStT
- kf3OGv3Anm04oi+e3bn8VN7IiLiykMJ4vEIsZNL6CY714bZUdIHdOmxJxnWHA9u3umW42//MQ
- PMaCuSA5nXjKNjyAHTQ7XJ/OJoXhkbmUaFFiX4di26SFdmNnFMf4EdBdbmKzjRwv3E7LEmWvP
- uGNX4U82rMksGM+SEnQw==
+In-Reply-To: <20191111061258.GS952516@vkoul-mobl>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_023125_719658_C481EF63 
-X-CRM114-Status: GOOD (  10.74  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191111_023040_087728_5D99D6E5 
+X-CRM114-Status: GOOD (  11.95  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,53 +94,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
- Linux-sh list <linux-sh@vger.kernel.org>, linux-mips@vger.kernel.org,
- Guo Ren <guoren@kernel.org>, sparclinux <sparclinux@vger.kernel.org>,
- linux-riscv@lists.infradead.org, Vincent Chen <deanbo422@gmail.com>,
- Christoph Hellwig <hch@lst.de>, Linux-Arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>,
- "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
- the arch/x86 maintainers <x86@kernel.org>,
- arcml <linux-snps-arc@lists.infradead.org>, linux-xtensa@linux-xtensa.org,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Openrisc <openrisc@lists.librecores.org>, Greentime Hu <green.hu@gmail.com>,
- "moderated list:NIOS2 ARCHITECTURE" <nios2-dev@lists.rocketboards.org>,
- Guan Xuetao <gxt@pku.edu.cn>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Palmer Dabbelt <palmer@dabbelt.com>, alpha <linux-alpha@vger.kernel.org>,
- MTD Maling List <linux-mtd@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: nm@ti.com, devicetree@vger.kernel.org, grygorii.strashko@ti.com,
+ lokeshvutla@ti.com, j-keerthy@ti.com, linux-kernel@vger.kernel.org,
+ t-kristo@ti.com, tony@atomide.com, robh+dt@kernel.org, ssantosh@kernel.org,
+ dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 6, 2019 at 7:16 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
->
-> Hi Palmer,
->
-> On Wed, Nov 6, 2019 at 7:11 PM Palmer Dabbelt <palmer@dabbelt.com> wrote:
-> > It looks like the difference in prototype between the architectures is between
-> >
-> >     void __iomem *ioremap(resource_size_t, size_t)
-> >     void __iomem *ioremap(phys_addr_t, size_t)
-> >     void __iomem *ioremap(phys_addr_t, unsigned long)
-> >     void __iomem *ioremap(unsigned long, unsigned long)
-> >
-> > shouldn't they all just be that first one?  In other words, wouldn't it be
-> > better to always provide the generic ioremap prototype and unify the ports
-> > instead?
->
-> Agreed. But I'd go for the second one.
-
-Right, phys_addr_t is the correct type here, resource_size_t is just a generic
-type that is at least as long as any resource, and usually the same as
-phys_addr_t, which is supposed to be used for physical addresses.
-
-      Arnd
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAxMS8xMS8yMDE5IDguMTIsIFZpbm9kIEtvdWwgd3JvdGU6Cj4gT24gMDEtMTEtMTksIDEw
+OjQxLCBQZXRlciBVamZhbHVzaSB3cm90ZToKPj4gRnJvbTogR3J5Z29yaWkgU3RyYXNoa28gPGdy
+eWdvcmlpLnN0cmFzaGtvQHRpLmNvbT4KPj4KPj4gQ2VydGFpbiB1c2VycyBjYW4gbm90IHVzZSBy
+aWdodCBub3cgdGhlIERNQWVuZ2luZSBBUEkgZHVlIHRvIG1pc3NpbmcKPj4gZmVhdHVyZXMgaW4g
+dGhlIGNvcmUuIFByaW1lIGV4YW1wbGUgaXMgTmV0d29ya2luZy4KPj4KPj4gVGhlc2UgdXNlcnMg
+Y2FuIHVzZSB0aGUgZ2x1ZSBsYXllciBpbnRlcmZhY2UgdG8gYXZvaWQgbWlzdXNlIG9mIERNQWVu
+Z2luZQo+PiBBUEkgYW5kIHdoZW4gdGhlIGNvcmUgZ2FpbnMgdGhlIG5lZWRlZCBmZWF0dXJlcyB0
+aGV5IGNhbiBiZSBjb252ZXJ0ZWQgdG8KPj4gdXNlIGdlbmVyaWMgQVBJLgo+IAo+IENhbiB5b3Ug
+YWRkIHNvbWUgbm90ZXMgb24gd2hhdCBhbGwgZmVhdHVyZXMgZG9lcyB0aGlzIGxheWVyIGltcGxl
+bWVudC4uCgpJbiB0aGUgY29tbWl0IG1lc3NhZ2Ugb3IgaW4gdGhlIGNvZGU/CgotIFDDqXRlcgoK
+VGV4YXMgSW5zdHJ1bWVudHMgRmlubGFuZCBPeSwgUG9ya2thbGFua2F0dSAyMiwgMDAxODAgSGVs
+c2lua2kuClktdHVubnVzL0J1c2luZXNzIElEOiAwNjE1NTIxLTQuIEtvdGlwYWlra2EvRG9taWNp
+bGU6IEhlbHNpbmtpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCg==
