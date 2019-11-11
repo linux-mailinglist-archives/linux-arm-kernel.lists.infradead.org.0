@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74A45F6E6D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 07:10:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93EA1F6E71
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 07:12:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=37SNRJR1GIFzMqXWoAeJYTFDjufzSCwjrvdBujg0GBg=; b=hv3OEupk1d2vVx
-	N05klhks/0oLiAwBWy1lkwTPqVUI7MH4DyDcldfq3PT4yv9BYBk6b8NzOxPwIfvTsEjJlaJLmK4+9
-	nmce/AdKiVqzDgeESVd1tnazNMS9txme6CkNutYQ/yPbsdxqfPM4lLTFXMyUJR0jk6xFYfccL8How
-	wm2kBMW7wVBVl87QyfOrVrI/dkY6NNbiQIvqdo+UR9ZsCETfnkCoYMmllFyS505CStqwa3U1OF6Dn
-	JaFixdTIwy8LdmB1Pd+7tUueWniPWRibVfBwD8AnifqMmpFAFWxOsxZUgPmgZ2/TupCfPqbdhGLYs
-	LkvYrAiJ5Ts+RW6XXAiw==;
+	List-Owner; bh=acAjyk9KDlYyIQh9Ilo0pgEsdBS02yf4YGpJo0i7P/I=; b=mtMp9H9C+Eo0js
+	StIJbj7VvGKpoJKyvmiS6jMBqSqSMplEUvkETnRspFHtferjqZSvXWigm5ri27yEQ2aYxxe+Z0/bY
+	3emw79IakH8MOmz/WSX+NQeE9ma+z49ij6/q44rkFg6Z+VNwli3jbMPdKCkzPbzr5O38oBaQEyNRY
+	Yw/65EoXca+0K1tFEuoBTpJBPCmzHFR7XhC1T863nSCeTcd4N+RamO2uMX3UFeLUAqUGn+jXMGttq
+	1LA2EdxKZcWxTPgOlO/kStzDScj9OQ8zdQVcRdmJ29Dn1/gWNpXCpYRx2n5Yke7t5ZX5rjakAF3yP
+	g8ukynQwmDM3JdRH/sVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU2tm-0000ID-1e; Mon, 11 Nov 2019 06:10:02 +0000
+	id 1iU2vx-000203-NH; Mon, 11 Nov 2019 06:12:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU2tb-0000Hi-4d
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 06:09:52 +0000
+ id 1iU2vl-0001zU-O1
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 06:12:06 +0000
 Received: from localhost (unknown [106.201.42.77])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1DDDF20679;
- Mon, 11 Nov 2019 06:09:49 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6EE6A2067B;
+ Mon, 11 Nov 2019 06:12:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573452590;
- bh=qgj3ToNBsbbCIzf/cArvU0XfhuPYM0eDrqW+5UsfeMs=;
+ s=default; t=1573452725;
+ bh=LXWYG1ROjwSH1hn5KYvqLWtCtUw0B3W+w0MZMaAcIaw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ehTDjrENf8AQoSP7oLkpm+Br34A+/wWRwJ0GSd5MLZResRbCwvtv13ZUU2Fpb9EIC
- dkBGrJfaWXZdAitp6fLDHCnn12aTSRm+xIO6qYmXArcEk7ckD1DWZIGthGufIDyVCF
- cpl28NaY67WaBvQ97FkwOSQuxzm/KId345SahEAI=
-Date: Mon, 11 Nov 2019 11:39:43 +0530
+ b=IsnMSCFw5ZbH23zLhgAFCwVg2FwK5kCYILOEY/l88c2/tQn3gFEdKtlk33mBg9g2s
+ z76+MU+MyTYq5lhTxgbkUjLpv8zwtT63VYdiVEXHjuhKuYNo+CsAcCs1ao2cduNY/W
+ T21t7yjRDnOuRFezqAU7K6ee7PAD95SVrXme2VgU=
+Date: Mon, 11 Nov 2019 11:41:59 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PATCH v4 12/15] dmaengine: ti: New driver for K3 UDMA -
- split#4: dma_device callbacks 1
-Message-ID: <20191111060943.GQ952516@vkoul-mobl>
+Subject: Re: [PATCH v4 14/15] dmaengine: ti: New driver for K3 UDMA -
+ split#6: Kconfig and Makefile
+Message-ID: <20191111061159.GR952516@vkoul-mobl>
 References: <20191101084135.14811-1-peter.ujfalusi@ti.com>
- <20191101084135.14811-13-peter.ujfalusi@ti.com>
+ <20191101084135.14811-15-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191101084135.14811-13-peter.ujfalusi@ti.com>
+In-Reply-To: <20191101084135.14811-15-peter.ujfalusi@ti.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_220951_202870_BEA499DB 
-X-CRM114-Status: UNSURE (   7.20  )
+X-CRM114-CacheID: sfid-20191110_221205_802413_C3643325 
+X-CRM114-Status: UNSURE (   6.80  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -89,28 +89,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01-11-19, 10:41, Peter Ujfalusi wrote:
+> +config TI_K3_UDMA
+> +	tristate "Texas Instruments UDMA support"
+> +	depends on ARCH_K3 || COMPILE_TEST
+> +	depends on TI_SCI_PROTOCOL
+> +	depends on TI_SCI_INTA_IRQCHIP
+> +	select DMA_ENGINE
+> +	select DMA_VIRTUAL_CHANNELS
+> +	select TI_K3_RINGACC
+> +	select TI_K3_PSIL
+> +	default y
 
-> +/* Not much yet */
-
-?
-
-> +static enum dma_status udma_tx_status(struct dma_chan *chan,
-> +				      dma_cookie_t cookie,
-> +				      struct dma_tx_state *txstate)
-> +{
-> +	struct udma_chan *uc = to_udma_chan(chan);
-> +	enum dma_status ret;
-> +	unsigned long flags;
-> +
-> +	spin_lock_irqsave(&uc->vc.lock, flags);
-> +
-> +	ret = dma_cookie_status(chan, cookie, txstate);
-> +
-> +	if (!udma_is_chan_running(uc))
-> +		ret = DMA_COMPLETE;
-
-so a paused channel will result in dma complete status?
+Again no default y!
 
 -- 
 ~Vinod
