@@ -2,68 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F531F6E9A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 07:41:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BE88F6E9E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 07:44:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QiYTpYweeEB0tRdICW2oBQ1kCrgdgC+yJwIgl+/yXcc=; b=rhb8Bm8qhg/c/O
-	22v5w5Z6x2dDOkoZ4v0QWRPnbcrQK0tK95aWzNg3mu+o4mKa2XwxjBhw6VkA3zXPKQtd8ndsB4dIs
-	jOXzEaa2B1yMOSvWgQowAggRXdGQeK/FkNzOiduLYqFKJQkC/GrGeD7Wfo2vcUpfpxn8MB2VhfO9f
-	GtGgwIdHTGrt1SRIvOM42wyJ1cF49VFUm8mTkfipmr3hUVc7JBR1eFo8df8crwzkbkmtiskCQ683v
-	slO1R20d6AN7HK0upQrD0/3SAAGfrji+zz5M7iqH1QRw1JNaahqr6f0Pa1v6kIrYt/kFb3t44W8sc
-	mgWXF42GvDPXHl7skAIQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6pcJWic8ItCETNAxzLZQlFge3OmCppavaoArpVFDetg=; b=n/4uDqQFsdEoAu
+	v5PXflcNFdy/ce80c/bV5w4I/+RLXW3FYZfF99/kM7BL1CeeHvIdbccI2yEg/rBhEw7eI6Mjz5CR7
+	RcAaU+L5PMXYfy1dvbKchnNZVlwUeaPLQWbwjw1OJoMJpqmFmD7TdTVBqU54ojSnggbIuC0MeX/C6
+	lhQkcdStHQ8rh2tT7Bq1hS9wWpCEeqUE4ac2AsoiCKx2O1ovl6jD/yY70/Grmdc6EFYcgtOTZTUvl
+	2Tz0ZKldcdd5aSN80//hToMv9xgD98sSYKjgnlinD+nSsKT1JPfikKLyoFjQxt3bI6r+KQKsuY6G3
+	bCjAjUFcy886jkm9VvQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU3Nb-0004gK-AK; Mon, 11 Nov 2019 06:40:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iU3R4-0005DB-5S; Mon, 11 Nov 2019 06:44:26 +0000
+Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU3NT-0004fj-Gx; Mon, 11 Nov 2019 06:40:44 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4C61420818;
- Mon, 11 Nov 2019 06:40:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573454442;
- bh=cktYl62Ynev3YcbNhpece5Z14fVDGbQyuOjqOeQf4Gc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=D9AYN0qRT9g+HjcozyPSfAxeXGwrD/p62xk0fGvNIEwwbe+jeCiTdU8Z02UVy8mBU
- 6EhCkCncoqGPQRkmPCtjtIcB0iFmEimLIfokLW8QumwPcVen8DJd5ozAHFuDbPRuWF
- ps+wnu+3R+bj461e+l6N90ZizCpBxyUGAqcNdeRQ=
-Date: Mon, 11 Nov 2019 07:40:40 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
-Subject: Re: [PATCH] base: soc: Export soc_device_to_device() helper
-Message-ID: <20191111064040.GA3502217@kroah.com>
-References: <20191103013645.9856-3-afaerber@suse.de>
- <20191111045609.7026-1-afaerber@suse.de>
- <20191111052741.GB3176397@kroah.com>
- <586fa37c-6292-aca4-fa7c-73064858afaf@suse.de>
+ id 1iU3Qt-0005Bc-Jp; Mon, 11 Nov 2019 06:44:17 +0000
+Received: from [10.28.39.106] (10.28.39.106) by mail-sz.amlogic.com
+ (10.28.11.5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Mon, 11 Nov
+ 2019 14:44:28 +0800
+Subject: Re: [PATCH v5 1/3] pinctrl: meson: add a new callback for SoCs fixup
+To: Neil Armstrong <narmstrong@baylibre.com>, Linus Walleij
+ <linus.walleij@linaro.org>, <linux-gpio@vger.kernel.org>
+References: <1573203636-7436-1-git-send-email-qianggui.song@amlogic.com>
+ <1573203636-7436-2-git-send-email-qianggui.song@amlogic.com>
+ <54809378-d4b0-2013-eb22-d6570eff2a8c@baylibre.com>
+From: Qianggui Song <qianggui.song@amlogic.com>
+Message-ID: <ce76e0e0-62b4-ca89-5d56-982b021af72c@amlogic.com>
+Date: Mon, 11 Nov 2019 14:44:28 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <586fa37c-6292-aca4-fa7c-73064858afaf@suse.de>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <54809378-d4b0-2013-eb22-d6570eff2a8c@baylibre.com>
+Content-Language: en-US
+X-Originating-IP: [10.28.39.106]
+X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
+ (10.28.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_224043_593228_BABE51D3 
-X-CRM114-Status: GOOD (  13.16  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191110_224415_659414_0E901506 
+X-CRM114-Status: GOOD (  17.49  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,53 +64,261 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-realtek-soc@lists.infradead.org, "Rafael J. Wysocki" <rafael@kernel.org>,
- linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Carlo Caione <carlo@caione.org>, linux-amlogic@lists.infradead.org,
+ Xingyu Chen <xingyu.chen@amlogic.com>, Jerome Brunet <jbrunet@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 11, 2019 at 06:42:05AM +0100, Andreas F=E4rber wrote:
-> Hi Greg,
-> =
 
-> Am 11.11.19 um 06:27 schrieb Greg Kroah-Hartman:
-> > On Mon, Nov 11, 2019 at 05:56:09AM +0100, Andreas F=E4rber wrote:
-> >> Use of soc_device_to_device() in driver modules causes a build failure.
-> >> Given that the helper is nicely documented in include/linux/sys_soc.h,
-> >> let's export it as GPL symbol.
-> > =
 
-> > I thought we were fixing the soc drivers to not need this.  What
-> > happened to that effort?  I thought I had patches in my tree (or
-> > someone's tree) that did some of this work already, such that this
-> > symbol isn't needed anymore.
-> =
+On 2019/11/8 20:50, Neil Armstrong wrote:
+> Hi,
+> 
+> On 08/11/2019 10:00, Qianggui Song wrote:
+>> In meson_pinctrl_parse_dt, it contains two parts: reg parsing and
+>> SoC relative fixup for AO. Several fixups in the same code make it hard
+>> to maintain, so move all fixups to each SoC's callback and make
+>> meson_pinctrl_parse_dt just do the reg parsing, separate these two
+>> parts.Overview of all current Meson SoCs fixup is as below:
+>>
+>> +------+--------------------------------------+--------------------------+
+>> |      |                                      |                          |
+>> | SoC  |                EE domain             |        AO domain         |
+>> +------+--------------------------------------+--------------------------+
+>> |m8    | parse regs:                          | parse regs:              |
+>> |m8b   |   gpio,mux,pull,pull-enable(skip ds) |    gpio,mux,pull(skip ds)|
+>> |gxl   | fixup:                               | fixup:                   |
+>> |gxbb  |   no                                 |     pull-enable = pull;  |
+>> |axg   |                                      |                          |
+>> +------+--------------------------------------+--------------------------+
+>> |g12a  | parse regs:                          | parse regs:              |
+>> |sm1   |   gpio,mux,pull,pull-enable,ds       |   gpio,mux,ds            |
+>> |      | fixup:                               | fixup:                   |
+>> |      |   no                                 |   pull = gpio;           |
+>> |      |                                      |   pull-enable = gpio;    |
+>> +------+--------------------------------------+--------------------------+
+>> |a1 or | parse regs:                                                     |
+>> |later |  gpio/mux (without ao domain)                                   |
+>> |SoCs  | fixup:                                                          |
+>> |      |  pull = gpio; pull-enable = gpio; ds = gpio;                    |
+>> +------+-----------------------------------------------------------------+
+>> Since m8-axg share the same ao fixup, make a common function
+>> meson8_aobus_parse_dt_extra to do the job.
+>>
+>> Signed-off-by: Qianggui Song <qianggui.song@amlogic.com>
+>> ---
+>>  drivers/pinctrl/meson/pinctrl-meson-axg.c  |  1 +
+>>  drivers/pinctrl/meson/pinctrl-meson-g12a.c |  9 +++++++++
+>>  drivers/pinctrl/meson/pinctrl-meson-gxbb.c |  1 +
+>>  drivers/pinctrl/meson/pinctrl-meson-gxl.c  |  1 +
+>>  drivers/pinctrl/meson/pinctrl-meson.c      | 25 ++++++++++++++++++-------
+>>  drivers/pinctrl/meson/pinctrl-meson.h      |  5 +++++
+>>  drivers/pinctrl/meson/pinctrl-meson8.c     |  1 +
+>>  drivers/pinctrl/meson/pinctrl-meson8b.c    |  1 +
+>>  8 files changed, 37 insertions(+), 7 deletions(-)
+>>
+>> diff --git a/drivers/pinctrl/meson/pinctrl-meson-axg.c b/drivers/pinctrl/meson/pinctrl-meson-axg.c
+>> index ad502eda4afa..072765db93d7 100644
+>> --- a/drivers/pinctrl/meson/pinctrl-meson-axg.c
+>> +++ b/drivers/pinctrl/meson/pinctrl-meson-axg.c
+>> @@ -1066,6 +1066,7 @@
+>>  	.num_banks	= ARRAY_SIZE(meson_axg_aobus_banks),
+>>  	.pmx_ops	= &meson_axg_pmx_ops,
+>>  	.pmx_data	= &meson_axg_aobus_pmx_banks_data,
+>> +	.parse_dt	= meson8_aobus_parse_dt_extra,
+>>  };
+>>  
+>>  static const struct of_device_id meson_axg_pinctrl_dt_match[] = {
+>> diff --git a/drivers/pinctrl/meson/pinctrl-meson-g12a.c b/drivers/pinctrl/meson/pinctrl-meson-g12a.c
+>> index 582665fd362a..41850e3c0091 100644
+>> --- a/drivers/pinctrl/meson/pinctrl-meson-g12a.c
+>> +++ b/drivers/pinctrl/meson/pinctrl-meson-g12a.c
+>> @@ -1362,6 +1362,14 @@
+>>  	.num_pmx_banks	= ARRAY_SIZE(meson_g12a_aobus_pmx_banks),
+>>  };
+>>  
+>> +static int meson_g12a_aobus_parse_dt_extra(struct meson_pinctrl *pc)
+>> +{
+>> +	pc->reg_pull = pc->reg_gpio;
+>> +	pc->reg_pullen = pc->reg_gpio;
+>> +
+>> +	return 0;
+>> +}
+>> +
+>>  static struct meson_pinctrl_data meson_g12a_periphs_pinctrl_data = {
+>>  	.name		= "periphs-banks",
+>>  	.pins		= meson_g12a_periphs_pins,
+>> @@ -1388,6 +1396,7 @@
+>>  	.num_banks	= ARRAY_SIZE(meson_g12a_aobus_banks),
+>>  	.pmx_ops	= &meson_axg_pmx_ops,
+>>  	.pmx_data	= &meson_g12a_aobus_pmx_banks_data,
+>> +	.parse_dt	= meson_g12a_aobus_parse_dt_extra,
+>>  };
+>>  
+>>  static const struct of_device_id meson_g12a_pinctrl_dt_match[] = {
+>> diff --git a/drivers/pinctrl/meson/pinctrl-meson-gxbb.c b/drivers/pinctrl/meson/pinctrl-meson-gxbb.c
+>> index 5bfa56f3847e..926b9997159a 100644
+>> --- a/drivers/pinctrl/meson/pinctrl-meson-gxbb.c
+>> +++ b/drivers/pinctrl/meson/pinctrl-meson-gxbb.c
+>> @@ -851,6 +851,7 @@
+>>  	.num_funcs	= ARRAY_SIZE(meson_gxbb_aobus_functions),
+>>  	.num_banks	= ARRAY_SIZE(meson_gxbb_aobus_banks),
+>>  	.pmx_ops	= &meson8_pmx_ops,
+>> +	.parse_dt	= meson8_aobus_parse_dt_extra,
+>>  };
+>>  
+>>  static const struct of_device_id meson_gxbb_pinctrl_dt_match[] = {
+>> diff --git a/drivers/pinctrl/meson/pinctrl-meson-gxl.c b/drivers/pinctrl/meson/pinctrl-meson-gxl.c
+>> index 72c5373c8dc1..8b1a49f5da43 100644
+>> --- a/drivers/pinctrl/meson/pinctrl-meson-gxl.c
+>> +++ b/drivers/pinctrl/meson/pinctrl-meson-gxl.c
+>> @@ -820,6 +820,7 @@
+>>  	.num_funcs	= ARRAY_SIZE(meson_gxl_aobus_functions),
+>>  	.num_banks	= ARRAY_SIZE(meson_gxl_aobus_banks),
+>>  	.pmx_ops	= &meson8_pmx_ops,
+>> +	.parse_dt 	= meson8_aobus_parse_dt_extra,
+>>  };
+>>  
+>>  static const struct of_device_id meson_gxl_pinctrl_dt_match[] = {
+>> diff --git a/drivers/pinctrl/meson/pinctrl-meson.c b/drivers/pinctrl/meson/pinctrl-meson.c
+>> index 8bba9d053d9f..a812c6d986d9 100644
+>> --- a/drivers/pinctrl/meson/pinctrl-meson.c
+>> +++ b/drivers/pinctrl/meson/pinctrl-meson.c
+>> @@ -625,7 +625,7 @@ static struct regmap *meson_map_resource(struct meson_pinctrl *pc,
+>>  
+>>  	i = of_property_match_string(node, "reg-names", name);
+>>  	if (of_address_to_resource(node, i, &res))
+>> -		return ERR_PTR(-ENOENT);
+>> +		return NULL;
+>>  
+>>  	base = devm_ioremap_resource(pc->dev, &res);
+>>  	if (IS_ERR(base))
+>> @@ -665,26 +665,24 @@ static int meson_pinctrl_parse_dt(struct meson_pinctrl *pc,
+>>  	pc->of_node = gpio_np;
+>>  
+>>  	pc->reg_mux = meson_map_resource(pc, gpio_np, "mux");
+>> -	if (IS_ERR(pc->reg_mux)) {
+>> +	if (IS_ERR_OR_NULL(pc->reg_mux)) {
+>>  		dev_err(pc->dev, "mux registers not found\n");
+>>  		return PTR_ERR(pc->reg_mux);
+> 
+> If pc->reg_mux is NULL, it will return "0" here, which is wrong.
+> 
+> Either keep the return ERR_PTR(-ENOENT); in meson_map_resource, or
+> 	return pc->reg_mux ? -ENOENT : PTR_ERR(pc->reg_mux);
+> 
+ Thanks. ERR_PTR(-ENOENT) to NULL make below region easy to handle, I
+will change to "return pc->reg_mux ? -ENOENT : PTR_ERR(pc->reg_mux);"
 
-> I do still see this function used in next-20191108 in drivers/soc/.
-> =
-
-> I'll be happy to adjust my RFC driver if someone points me to how!
-
-Look at c31e73121f4c ("base: soc: Handle custom soc information sysfs
-entries") for how you can just use the default attributes for the soc to
-create the needed sysfs files, instead of having to do it "by hand"
-which is racy and incorrect.
-
-> Given the current struct layout, a type cast might work (but ugly).
-> Or if we stay with my current RFC driver design, we could use the
-> platform_device instead of the soc_device (which would clutter the
-> screen more than "soc soc0:") or resort to pr_info() w/o device.
-
-Ick, no, don't cast blindly.  What do you need the pointer for?  Is this
-for in-tree code?
-
-thanks,
-
-greg k-h
+>>  	}
+>>  
+>>  	pc->reg_gpio = meson_map_resource(pc, gpio_np, "gpio");
+>> -	if (IS_ERR(pc->reg_gpio)) {
+>> +	if (IS_ERR_OR_NULL(pc->reg_gpio)) {
+>>  		dev_err(pc->dev, "gpio registers not found\n");
+>>  		return PTR_ERR(pc->reg_gpio);
+> 
+> Ditto
+will do as above.
+> 
+>>  	}
+>>  
+>>  	pc->reg_pull = meson_map_resource(pc, gpio_np, "pull");
+>> -	/* Use gpio region if pull one is not present */
+>>  	if (IS_ERR(pc->reg_pull))
+>> -		pc->reg_pull = pc->reg_gpio;
+>> +		pc->reg_pull = NULL;
+>>  
+>>  	pc->reg_pullen = meson_map_resource(pc, gpio_np, "pull-enable");
+>> -	/* Use pull region if pull-enable one is not present */
+>>  	if (IS_ERR(pc->reg_pullen))
+>> -		pc->reg_pullen = pc->reg_pull;
+>> +		pc->reg_pullen = NULL;
+>>  
+>>  	pc->reg_ds = meson_map_resource(pc, gpio_np, "ds");
+>>  	if (IS_ERR(pc->reg_ds)) {
+>> @@ -692,6 +690,19 @@ static int meson_pinctrl_parse_dt(struct meson_pinctrl *pc,
+>>  		pc->reg_ds = NULL;
+>>  	}
+>>  
+>> +	if (pc->data->parse_dt)
+>> +		return pc->data->parse_dt(pc);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +int meson8_aobus_parse_dt_extra(struct meson_pinctrl *pc)
+>> +{
+>> +	if (!pc->reg_pull)
+>> +		return -EINVAL;
+>> +
+>> +	pc->reg_pullen = pc->reg_pull;
+>> +
+>>  	return 0;
+>>  }
+>>  
+>> diff --git a/drivers/pinctrl/meson/pinctrl-meson.h b/drivers/pinctrl/meson/pinctrl-meson.h
+>> index c696f3241a36..bfa1d3599333 100644
+>> --- a/drivers/pinctrl/meson/pinctrl-meson.h
+>> +++ b/drivers/pinctrl/meson/pinctrl-meson.h
+>> @@ -11,6 +11,8 @@
+>>  #include <linux/regmap.h>
+>>  #include <linux/types.h>
+>>  
+>> +struct meson_pinctrl;
+>> +
+>>  /**
+>>   * struct meson_pmx_group - a pinmux group
+>>   *
+>> @@ -114,6 +116,7 @@ struct meson_pinctrl_data {
+>>  	unsigned int num_banks;
+>>  	const struct pinmux_ops *pmx_ops;
+>>  	void *pmx_data;
+>> +	int (*parse_dt)(struct meson_pinctrl *pc);
+>>  };
+>>  
+>>  struct meson_pinctrl {
+>> @@ -171,3 +174,5 @@ int meson_pmx_get_groups(struct pinctrl_dev *pcdev,
+>>  
+>>  /* Common probe function */
+>>  int meson_pinctrl_probe(struct platform_device *pdev);
+>> +/* Common ao groups extra dt parse function for SoCs before g12a  */
+>> +int meson8_aobus_parse_dt_extra(struct meson_pinctrl *pc);
+>> diff --git a/drivers/pinctrl/meson/pinctrl-meson8.c b/drivers/pinctrl/meson/pinctrl-meson8.c
+>> index 0b97befa6335..dd17100efdcf 100644
+>> --- a/drivers/pinctrl/meson/pinctrl-meson8.c
+>> +++ b/drivers/pinctrl/meson/pinctrl-meson8.c
+>> @@ -1103,6 +1103,7 @@
+>>  	.num_funcs	= ARRAY_SIZE(meson8_aobus_functions),
+>>  	.num_banks	= ARRAY_SIZE(meson8_aobus_banks),
+>>  	.pmx_ops	= &meson8_pmx_ops,
+>> +	.parse_dt	= &meson8_aobus_parse_dt_extra,
+>>  };
+>>  
+>>  static const struct of_device_id meson8_pinctrl_dt_match[] = {
+>> diff --git a/drivers/pinctrl/meson/pinctrl-meson8b.c b/drivers/pinctrl/meson/pinctrl-meson8b.c
+>> index a7de388388e6..2d5339edd0b7 100644
+>> --- a/drivers/pinctrl/meson/pinctrl-meson8b.c
+>> +++ b/drivers/pinctrl/meson/pinctrl-meson8b.c
+>> @@ -962,6 +962,7 @@
+>>  	.num_funcs	= ARRAY_SIZE(meson8b_aobus_functions),
+>>  	.num_banks	= ARRAY_SIZE(meson8b_aobus_banks),
+>>  	.pmx_ops	= &meson8_pmx_ops,
+>> +	.parse_dt	= &meson8_aobus_parse_dt_extra,
+>>  };
+>>  
+>>  static const struct of_device_id meson8b_pinctrl_dt_match[] = {
+>>
+> 
+> .
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
