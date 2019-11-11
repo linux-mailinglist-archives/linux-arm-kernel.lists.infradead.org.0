@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB9CEF75B2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 14:55:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D7C3F75B3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 14:55:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QkY2TN7rC1VA0/6/uQrXwVT0m44sVjjpBWANTjjw9oY=; b=A4ggro9O2Padd6
-	UQpaNf23VNTVlqelfmmtYhDdqBrrPahv88uWvQLO39MRaD5JcC7VFSrzahCbL3Hkx9dWLunX8+wQu
-	Y7D+RuGbRLIdCZDZCMtYHblhVva2gEU2thTJASDMDt4sa6Zt6v9YliGFQr86RepXHIfTZvHMH444h
-	DonTonoufr2A6fMRfsoRhUqWMSIhUwtf0nbiLhHM9qJCTgM2YKzL6mNypmDocxtGg0VRGYXYq2FPh
-	mpzEH0eSqS1Y/slYWmuoO4+RoUgqsHSeI/+m1lN1WnVpE6wC/HD6bIukmYbJ6FsKnh4ALKy9R2WEi
-	lyRvsGiV0XuYpZGwaksA==;
+	List-Owner; bh=HPqkUfwxq6Vki5BaUoHIL77r9jkHqQ7XsijP2vbCmaE=; b=TkuZrm+m8LOw3A
+	ogArKbm6ZFCKPQrqUN3ePoixMxIPqsKc2D2Xwd+fgRjEK0/0vIaDqXkJCu10kJ6CazFzpBg57f+5x
+	aR3eoLWj/Jv19dU/uM7V2b60Gz95zIs4apC7j/elfMM5nzhRctvDN1DbrahBshJ47oGD4KtcfObCe
+	ODbG2tZbSgoYOfFQNtFl7odWlOoBA5vFXbGt8WExc+T0fB8p6XcZWrBiF6ajTifP8KTOdsV/B7K1N
+	7hrscvY/YaP1NdbWNG7nOfpXLBAfD06/Ilx/8WhbTwbhYcuqSZsnoVYy6DZTzF/59PjtePvslaqw4
+	9lPNO66hTMv1dzX6Vl1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUAA3-0002ht-LQ; Mon, 11 Nov 2019 13:55:19 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1iUAAJ-0004MM-AC; Mon, 11 Nov 2019 13:55:35 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUA7d-0000lD-Mp
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 13:52:59 +0000
+ id 1iUA7g-0000nl-LZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 13:53:01 +0000
 Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xABDqjDR013849;
- Mon, 11 Nov 2019 07:52:45 -0600
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xABDqmhb059710;
+ Mon, 11 Nov 2019 07:52:48 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573480365;
- bh=dC7TuRxrfBtQ3p2PCAibNTAreoacyGGgq/3yJ9Vgf24=;
+ s=ti-com-17Q1; t=1573480368;
+ bh=g+Bs8AcPiZkKkiuy1LdtDXfdFl5qi/DFw6rzLivui2Y=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=tRlf4ChVXD3tfcu8eWcRtiSoPV7BpNRfpRehZ+KpiiwaGCqRDNsRD+yr/ziN29MZp
- /xJ5DzIEFKDxJy5LoKuN9ntg+qmeQenyZrdxeIeVDdOdckc+aVVqL/zzDh81VyauDE
- R9fXgqpHzN2fGAVxCQC7aKRR3Zp29ce0u19RldWY=
-Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xABDqjVD111431
+ b=SoIm6noNi9HhBa/aVBdFqh9kTSzbDPwQiUIEYptKmF2LocpiEHM0RQ+7fwTx+jtIh
+ 7oPrMkmseUDFhvm1XR1x4vOeJbES4+oEohgH8BoMRq3XRwlabkICzns8SLC1v0M8GQ
+ D4xK2R1ayxq6a0/8KKNn0NqApaBk7VetviaBsuEo=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xABDqmVV111569
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 11 Nov 2019 07:52:45 -0600
-Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 11 Nov 2019 07:52:48 -0600
+Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 11
- Nov 2019 07:52:27 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ Nov 2019 07:52:31 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE107.ent.ti.com
+ (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 11 Nov 2019 07:52:26 -0600
+ Frontend Transport; Mon, 11 Nov 2019 07:52:31 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id xABDqE8s097668;
- Mon, 11 Nov 2019 07:52:41 -0600
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id xABDqE8t097668;
+ Mon, 11 Nov 2019 07:52:44 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <vkoul@kernel.org>, <robh+dt@kernel.org>, <nm@ti.com>,
  <ssantosh@kernel.org>
-Subject: [PATCH v5 07/15] dmaengine: ti: k3 PSI-L remote endpoint configuration
-Date: Mon, 11 Nov 2019 15:53:22 +0200
-Message-ID: <20191111135330.8235-8-peter.ujfalusi@ti.com>
+Subject: [PATCH v5 08/15] dt-bindings: dma: ti: Add document for K3 UDMA
+Date: Mon, 11 Nov 2019 15:53:23 +0200
+Message-ID: <20191111135330.8235-9-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191111135330.8235-1-peter.ujfalusi@ti.com>
 References: <20191111135330.8235-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_055250_150671_25BD60C9 
-X-CRM114-Status: GOOD (  18.22  )
+X-CRM114-CacheID: sfid-20191111_055252_860566_05DF29E0 
+X-CRM114-Status: GOOD (  17.89  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,707 +94,136 @@ Cc: devicetree@vger.kernel.org, grygorii.strashko@ti.com, lokeshvutla@ti.com,
  j-keerthy@ti.com, linux-kernel@vger.kernel.org, t-kristo@ti.com,
  tony@atomide.com, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In K3 architecture the DMA operates within threads. One end of the thread
-is UDMAP, the other is on the peripheral side.
-
-The UDMAP channel configuration depends on the needs of the remote
-endpoint and it can be differ from peripheral to peripheral.
-
-This patch adds database for am654 and j721e and small API to fetch the
-PSI-L endpoint configuration from the database which should only used by
-the DMA driver(s).
-
-Another API is added for native peripherals to give possibility to pass new
-configuration for the threads they are using, which is needed to be able to
-handle changes caused by different firmware loaded for the peripheral for
-example.
-
-Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
----
- drivers/dma/ti/Kconfig         |   3 +
- drivers/dma/ti/Makefile        |   1 +
- drivers/dma/ti/k3-psil-am654.c | 175 ++++++++++++++++++++++++++
- drivers/dma/ti/k3-psil-j721e.c | 222 +++++++++++++++++++++++++++++++++
- drivers/dma/ti/k3-psil-priv.h  |  39 ++++++
- drivers/dma/ti/k3-psil.c       |  97 ++++++++++++++
- include/linux/dma/k3-psil.h    |  71 +++++++++++
- 7 files changed, 608 insertions(+)
- create mode 100644 drivers/dma/ti/k3-psil-am654.c
- create mode 100644 drivers/dma/ti/k3-psil-j721e.c
- create mode 100644 drivers/dma/ti/k3-psil-priv.h
- create mode 100644 drivers/dma/ti/k3-psil.c
- create mode 100644 include/linux/dma/k3-psil.h
-
-diff --git a/drivers/dma/ti/Kconfig b/drivers/dma/ti/Kconfig
-index d507c24fbf31..72f3d2728178 100644
---- a/drivers/dma/ti/Kconfig
-+++ b/drivers/dma/ti/Kconfig
-@@ -34,5 +34,8 @@ config DMA_OMAP
- 	  Enable support for the TI sDMA (System DMA or DMA4) controller. This
- 	  DMA engine is found on OMAP and DRA7xx parts.
- 
-+config TI_K3_PSIL
-+	bool
-+
- config TI_DMA_CROSSBAR
- 	bool
-diff --git a/drivers/dma/ti/Makefile b/drivers/dma/ti/Makefile
-index 113e59ec9c32..f8d912ad7eaf 100644
---- a/drivers/dma/ti/Makefile
-+++ b/drivers/dma/ti/Makefile
-@@ -2,4 +2,5 @@
- obj-$(CONFIG_TI_CPPI41) += cppi41.o
- obj-$(CONFIG_TI_EDMA) += edma.o
- obj-$(CONFIG_DMA_OMAP) += omap-dma.o
-+obj-$(CONFIG_TI_K3_PSIL) += k3-psil.o k3-psil-am654.o k3-psil-j721e.o
- obj-$(CONFIG_TI_DMA_CROSSBAR) += dma-crossbar.o
-diff --git a/drivers/dma/ti/k3-psil-am654.c b/drivers/dma/ti/k3-psil-am654.c
-new file mode 100644
-index 000000000000..7da9242b6114
---- /dev/null
-+++ b/drivers/dma/ti/k3-psil-am654.c
-@@ -0,0 +1,175 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ *  Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com
-+ *  Author: Peter Ujfalusi <peter.ujfalusi@ti.com>
-+ */
-+
-+#include <linux/kernel.h>
-+
-+#include "k3-psil-priv.h"
-+
-+#define PSIL_PDMA_XY_TR(x)				\
-+	{						\
-+		.thread_id = x,				\
-+		.ep_config = {				\
-+			.ep_type = PSIL_EP_PDMA_XY,	\
-+		},					\
-+	}
-+
-+#define PSIL_PDMA_XY_PKT(x)				\
-+	{						\
-+		.thread_id = x,				\
-+		.ep_config = {				\
-+			.ep_type = PSIL_EP_PDMA_XY,	\
-+			.pkt_mode = 1,			\
-+		},					\
-+	}
-+
-+#define PSIL_ETHERNET(x)				\
-+	{						\
-+		.thread_id = x,				\
-+		.ep_config = {				\
-+			.ep_type = PSIL_EP_NATIVE,	\
-+			.pkt_mode = 1,			\
-+			.needs_epib = 1,		\
-+			.psd_size = 16,			\
-+		},					\
-+	}
-+
-+#define PSIL_SA2UL(x, tx)				\
-+	{						\
-+		.thread_id = x,				\
-+		.ep_config = {				\
-+			.ep_type = PSIL_EP_NATIVE,	\
-+			.pkt_mode = 1,			\
-+			.needs_epib = 1,		\
-+			.psd_size = 64,			\
-+			.notdpkt = tx,			\
-+		},					\
-+	}
-+
-+/* PSI-L source thread IDs, used for RX (DMA_DEV_TO_MEM) */
-+struct psil_ep am654_src_ep_map[] = {
-+	/* SA2UL */
-+	PSIL_SA2UL(0x4000, 0),
-+	PSIL_SA2UL(0x4001, 0),
-+	PSIL_SA2UL(0x4002, 0),
-+	PSIL_SA2UL(0x4003, 0),
-+	/* PRU_ICSSG0 */
-+	PSIL_ETHERNET(0x4100),
-+	PSIL_ETHERNET(0x4101),
-+	PSIL_ETHERNET(0x4102),
-+	PSIL_ETHERNET(0x4103),
-+	/* PRU_ICSSG1 */
-+	PSIL_ETHERNET(0x4200),
-+	PSIL_ETHERNET(0x4201),
-+	PSIL_ETHERNET(0x4202),
-+	PSIL_ETHERNET(0x4203),
-+	/* PRU_ICSSG2 */
-+	PSIL_ETHERNET(0x4300),
-+	PSIL_ETHERNET(0x4301),
-+	PSIL_ETHERNET(0x4302),
-+	PSIL_ETHERNET(0x4303),
-+	/* PDMA0 - McASPs */
-+	PSIL_PDMA_XY_TR(0x4400),
-+	PSIL_PDMA_XY_TR(0x4401),
-+	PSIL_PDMA_XY_TR(0x4402),
-+	/* PDMA1 - SPI0-4 */
-+	PSIL_PDMA_XY_PKT(0x4500),
-+	PSIL_PDMA_XY_PKT(0x4501),
-+	PSIL_PDMA_XY_PKT(0x4502),
-+	PSIL_PDMA_XY_PKT(0x4503),
-+	PSIL_PDMA_XY_PKT(0x4504),
-+	PSIL_PDMA_XY_PKT(0x4505),
-+	PSIL_PDMA_XY_PKT(0x4506),
-+	PSIL_PDMA_XY_PKT(0x4507),
-+	PSIL_PDMA_XY_PKT(0x4508),
-+	PSIL_PDMA_XY_PKT(0x4509),
-+	PSIL_PDMA_XY_PKT(0x450a),
-+	PSIL_PDMA_XY_PKT(0x450b),
-+	PSIL_PDMA_XY_PKT(0x450c),
-+	PSIL_PDMA_XY_PKT(0x450d),
-+	PSIL_PDMA_XY_PKT(0x450e),
-+	PSIL_PDMA_XY_PKT(0x450f),
-+	PSIL_PDMA_XY_PKT(0x4510),
-+	PSIL_PDMA_XY_PKT(0x4511),
-+	PSIL_PDMA_XY_PKT(0x4512),
-+	PSIL_PDMA_XY_PKT(0x4513),
-+	/* PDMA1 - USART0-2 */
-+	PSIL_PDMA_XY_PKT(0x4514),
-+	PSIL_PDMA_XY_PKT(0x4515),
-+	PSIL_PDMA_XY_PKT(0x4516),
-+	/* CPSW0 */
-+	PSIL_ETHERNET(0x7000),
-+	/* MCU_PDMA0 - ADCs */
-+	PSIL_PDMA_XY_TR(0x7100),
-+	PSIL_PDMA_XY_TR(0x7101),
-+	PSIL_PDMA_XY_TR(0x7102),
-+	PSIL_PDMA_XY_TR(0x7103),
-+	/* MCU_PDMA1 - MCU_SPI0-2 */
-+	PSIL_PDMA_XY_PKT(0x7200),
-+	PSIL_PDMA_XY_PKT(0x7201),
-+	PSIL_PDMA_XY_PKT(0x7202),
-+	PSIL_PDMA_XY_PKT(0x7203),
-+	PSIL_PDMA_XY_PKT(0x7204),
-+	PSIL_PDMA_XY_PKT(0x7205),
-+	PSIL_PDMA_XY_PKT(0x7206),
-+	PSIL_PDMA_XY_PKT(0x7207),
-+	PSIL_PDMA_XY_PKT(0x7208),
-+	PSIL_PDMA_XY_PKT(0x7209),
-+	PSIL_PDMA_XY_PKT(0x720a),
-+	PSIL_PDMA_XY_PKT(0x720b),
-+	/* MCU_PDMA1 - MCU_USART0 */
-+	PSIL_PDMA_XY_PKT(0x7212),
-+};
-+
-+/* PSI-L destination thread IDs, used for TX (DMA_MEM_TO_DEV) */
-+struct psil_ep am654_dst_ep_map[] = {
-+	/* SA2UL */
-+	PSIL_SA2UL(0xc000, 1),
-+	PSIL_SA2UL(0xc001, 1),
-+	/* PRU_ICSSG0 */
-+	PSIL_ETHERNET(0xc100),
-+	PSIL_ETHERNET(0xc101),
-+	PSIL_ETHERNET(0xc102),
-+	PSIL_ETHERNET(0xc103),
-+	PSIL_ETHERNET(0xc104),
-+	PSIL_ETHERNET(0xc105),
-+	PSIL_ETHERNET(0xc106),
-+	PSIL_ETHERNET(0xc107),
-+	/* PRU_ICSSG1 */
-+	PSIL_ETHERNET(0xc200),
-+	PSIL_ETHERNET(0xc201),
-+	PSIL_ETHERNET(0xc202),
-+	PSIL_ETHERNET(0xc203),
-+	PSIL_ETHERNET(0xc204),
-+	PSIL_ETHERNET(0xc205),
-+	PSIL_ETHERNET(0xc206),
-+	PSIL_ETHERNET(0xc207),
-+	/* PRU_ICSSG2 */
-+	PSIL_ETHERNET(0xc300),
-+	PSIL_ETHERNET(0xc301),
-+	PSIL_ETHERNET(0xc302),
-+	PSIL_ETHERNET(0xc303),
-+	PSIL_ETHERNET(0xc304),
-+	PSIL_ETHERNET(0xc305),
-+	PSIL_ETHERNET(0xc306),
-+	PSIL_ETHERNET(0xc307),
-+	/* CPSW0 */
-+	PSIL_ETHERNET(0xf000),
-+	PSIL_ETHERNET(0xf001),
-+	PSIL_ETHERNET(0xf002),
-+	PSIL_ETHERNET(0xf003),
-+	PSIL_ETHERNET(0xf004),
-+	PSIL_ETHERNET(0xf005),
-+	PSIL_ETHERNET(0xf006),
-+	PSIL_ETHERNET(0xf007),
-+};
-+
-+struct psil_ep_map am654_ep_map = {
-+	.name = "am654",
-+	.src = am654_src_ep_map,
-+	.src_count = ARRAY_SIZE(am654_src_ep_map),
-+	.dst = am654_dst_ep_map,
-+	.dst_count = ARRAY_SIZE(am654_dst_ep_map),
-+};
-diff --git a/drivers/dma/ti/k3-psil-j721e.c b/drivers/dma/ti/k3-psil-j721e.c
-new file mode 100644
-index 000000000000..a609d496fddd
---- /dev/null
-+++ b/drivers/dma/ti/k3-psil-j721e.c
-@@ -0,0 +1,222 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ *  Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com
-+ *  Author: Peter Ujfalusi <peter.ujfalusi@ti.com>
-+ */
-+
-+#include <linux/kernel.h>
-+
-+#include "k3-psil-priv.h"
-+
-+#define PSIL_PDMA_XY_TR(x)				\
-+	{						\
-+		.thread_id = x,				\
-+		.ep_config = {				\
-+			.ep_type = PSIL_EP_PDMA_XY,	\
-+		},					\
-+	}
-+
-+#define PSIL_PDMA_XY_PKT(x)				\
-+	{						\
-+		.thread_id = x,				\
-+		.ep_config = {				\
-+			.ep_type = PSIL_EP_PDMA_XY,	\
-+			.pkt_mode = 1,			\
-+		},					\
-+	}
-+
-+#define PSIL_PDMA_MCASP(x)				\
-+	{						\
-+		.thread_id = x,				\
-+		.ep_config = {				\
-+			.ep_type = PSIL_EP_PDMA_XY,	\
-+			.pdma_acc32 = 1,		\
-+			.pdma_burst = 1,		\
-+		},					\
-+	}
-+
-+#define PSIL_ETHERNET(x)				\
-+	{						\
-+		.thread_id = x,				\
-+		.ep_config = {				\
-+			.ep_type = PSIL_EP_NATIVE,	\
-+			.pkt_mode = 1,			\
-+			.needs_epib = 1,		\
-+			.psd_size = 16,			\
-+		},					\
-+	}
-+
-+#define PSIL_SA2UL(x, tx)				\
-+	{						\
-+		.thread_id = x,				\
-+		.ep_config = {				\
-+			.ep_type = PSIL_EP_NATIVE,	\
-+			.pkt_mode = 1,			\
-+			.needs_epib = 1,		\
-+			.psd_size = 64,			\
-+			.notdpkt = tx,			\
-+		},					\
-+	}
-+
-+/* PSI-L source thread IDs, used for RX (DMA_DEV_TO_MEM) */
-+struct psil_ep j721e_src_ep_map[] = {
-+	/* SA2UL */
-+	PSIL_SA2UL(0x4000, 0),
-+	PSIL_SA2UL(0x4001, 0),
-+	PSIL_SA2UL(0x4002, 0),
-+	PSIL_SA2UL(0x4003, 0),
-+	/* PRU_ICSSG0 */
-+	PSIL_ETHERNET(0x4100),
-+	PSIL_ETHERNET(0x4101),
-+	PSIL_ETHERNET(0x4102),
-+	PSIL_ETHERNET(0x4103),
-+	/* PRU_ICSSG1 */
-+	PSIL_ETHERNET(0x4200),
-+	PSIL_ETHERNET(0x4201),
-+	PSIL_ETHERNET(0x4202),
-+	PSIL_ETHERNET(0x4203),
-+	/* PDMA6 (PSIL_PDMA_MCASP_G0) - McASP0-2 */
-+	PSIL_PDMA_MCASP(0x4400),
-+	PSIL_PDMA_MCASP(0x4401),
-+	PSIL_PDMA_MCASP(0x4402),
-+	/* PDMA7 (PSIL_PDMA_MCASP_G1) - McASP3-11 */
-+	PSIL_PDMA_MCASP(0x4500),
-+	PSIL_PDMA_MCASP(0x4501),
-+	PSIL_PDMA_MCASP(0x4502),
-+	PSIL_PDMA_MCASP(0x4503),
-+	PSIL_PDMA_MCASP(0x4504),
-+	PSIL_PDMA_MCASP(0x4505),
-+	PSIL_PDMA_MCASP(0x4506),
-+	PSIL_PDMA_MCASP(0x4507),
-+	PSIL_PDMA_MCASP(0x4508),
-+	/* PDMA8 (PDMA_MISC_G0) - SPI0-1 */
-+	PSIL_PDMA_XY_PKT(0x4600),
-+	PSIL_PDMA_XY_PKT(0x4601),
-+	PSIL_PDMA_XY_PKT(0x4602),
-+	PSIL_PDMA_XY_PKT(0x4603),
-+	PSIL_PDMA_XY_PKT(0x4604),
-+	PSIL_PDMA_XY_PKT(0x4605),
-+	PSIL_PDMA_XY_PKT(0x4606),
-+	PSIL_PDMA_XY_PKT(0x4607),
-+	/* PDMA9 (PDMA_MISC_G1) - SPI2-3 */
-+	PSIL_PDMA_XY_PKT(0x460c),
-+	PSIL_PDMA_XY_PKT(0x460d),
-+	PSIL_PDMA_XY_PKT(0x460e),
-+	PSIL_PDMA_XY_PKT(0x460f),
-+	PSIL_PDMA_XY_PKT(0x4610),
-+	PSIL_PDMA_XY_PKT(0x4611),
-+	PSIL_PDMA_XY_PKT(0x4612),
-+	PSIL_PDMA_XY_PKT(0x4613),
-+	/* PDMA10 (PDMA_MISC_G2) - SPI4-5 */
-+	PSIL_PDMA_XY_PKT(0x4618),
-+	PSIL_PDMA_XY_PKT(0x4619),
-+	PSIL_PDMA_XY_PKT(0x461a),
-+	PSIL_PDMA_XY_PKT(0x461b),
-+	PSIL_PDMA_XY_PKT(0x461c),
-+	PSIL_PDMA_XY_PKT(0x461d),
-+	PSIL_PDMA_XY_PKT(0x461e),
-+	PSIL_PDMA_XY_PKT(0x461f),
-+	/* PDMA11 (PDMA_MISC_G3) */
-+	PSIL_PDMA_XY_PKT(0x4624),
-+	PSIL_PDMA_XY_PKT(0x4625),
-+	PSIL_PDMA_XY_PKT(0x4626),
-+	PSIL_PDMA_XY_PKT(0x4627),
-+	PSIL_PDMA_XY_PKT(0x4628),
-+	PSIL_PDMA_XY_PKT(0x4629),
-+	PSIL_PDMA_XY_PKT(0x4630),
-+	PSIL_PDMA_XY_PKT(0x463a),
-+	/* PDMA13 (PDMA_USART_G0) - UART0-1 */
-+	PSIL_PDMA_XY_PKT(0x4700),
-+	PSIL_PDMA_XY_PKT(0x4701),
-+	/* PDMA14 (PDMA_USART_G1) - UART2-3 */
-+	PSIL_PDMA_XY_PKT(0x4702),
-+	PSIL_PDMA_XY_PKT(0x4703),
-+	/* PDMA15 (PDMA_USART_G2) - UART4-9 */
-+	PSIL_PDMA_XY_PKT(0x4704),
-+	PSIL_PDMA_XY_PKT(0x4705),
-+	PSIL_PDMA_XY_PKT(0x4706),
-+	PSIL_PDMA_XY_PKT(0x4707),
-+	PSIL_PDMA_XY_PKT(0x4708),
-+	PSIL_PDMA_XY_PKT(0x4709),
-+	/* CPSW9 */
-+	PSIL_ETHERNET(0x4a00),
-+	/* CPSW0 */
-+	PSIL_ETHERNET(0x7000),
-+	/* MCU_PDMA0 (MCU_PDMA_MISC_G0) - SPI0 */
-+	PSIL_PDMA_XY_PKT(0x7100),
-+	PSIL_PDMA_XY_PKT(0x7101),
-+	PSIL_PDMA_XY_PKT(0x7102),
-+	PSIL_PDMA_XY_PKT(0x7103),
-+	/* MCU_PDMA1 (MCU_PDMA_MISC_G1) - SPI1-2 */
-+	PSIL_PDMA_XY_PKT(0x7200),
-+	PSIL_PDMA_XY_PKT(0x7201),
-+	PSIL_PDMA_XY_PKT(0x7202),
-+	PSIL_PDMA_XY_PKT(0x7203),
-+	PSIL_PDMA_XY_PKT(0x7204),
-+	PSIL_PDMA_XY_PKT(0x7205),
-+	PSIL_PDMA_XY_PKT(0x7206),
-+	PSIL_PDMA_XY_PKT(0x7207),
-+	/* MCU_PDMA2 (MCU_PDMA_MISC_G2) - UART0 */
-+	PSIL_PDMA_XY_PKT(0x7300),
-+	/* MCU_PDMA_ADC - ADC0-1 */
-+	PSIL_PDMA_XY_TR(0x7400),
-+	PSIL_PDMA_XY_TR(0x7401),
-+	PSIL_PDMA_XY_TR(0x7402),
-+	PSIL_PDMA_XY_TR(0x7403),
-+	/* SA2UL */
-+	PSIL_SA2UL(0x7500, 0),
-+	PSIL_SA2UL(0x7501, 0),
-+};
-+
-+/* PSI-L destination thread IDs, used for TX (DMA_MEM_TO_DEV) */
-+struct psil_ep j721e_dst_ep_map[] = {
-+	/* SA2UL */
-+	PSIL_SA2UL(0xc000, 1),
-+	PSIL_SA2UL(0xc001, 1),
-+	/* PRU_ICSSG0 */
-+	PSIL_ETHERNET(0xc100),
-+	PSIL_ETHERNET(0xc101),
-+	PSIL_ETHERNET(0xc102),
-+	PSIL_ETHERNET(0xc103),
-+	PSIL_ETHERNET(0xc104),
-+	PSIL_ETHERNET(0xc105),
-+	PSIL_ETHERNET(0xc106),
-+	PSIL_ETHERNET(0xc107),
-+	/* PRU_ICSSG1 */
-+	PSIL_ETHERNET(0xc200),
-+	PSIL_ETHERNET(0xc201),
-+	PSIL_ETHERNET(0xc202),
-+	PSIL_ETHERNET(0xc203),
-+	PSIL_ETHERNET(0xc204),
-+	PSIL_ETHERNET(0xc205),
-+	PSIL_ETHERNET(0xc206),
-+	PSIL_ETHERNET(0xc207),
-+	/* CPSW9 */
-+	PSIL_ETHERNET(0xca00),
-+	PSIL_ETHERNET(0xca01),
-+	PSIL_ETHERNET(0xca02),
-+	PSIL_ETHERNET(0xca03),
-+	PSIL_ETHERNET(0xca04),
-+	PSIL_ETHERNET(0xca05),
-+	PSIL_ETHERNET(0xca06),
-+	PSIL_ETHERNET(0xca07),
-+	/* CPSW0 */
-+	PSIL_ETHERNET(0xf000),
-+	PSIL_ETHERNET(0xf001),
-+	PSIL_ETHERNET(0xf002),
-+	PSIL_ETHERNET(0xf003),
-+	PSIL_ETHERNET(0xf004),
-+	PSIL_ETHERNET(0xf005),
-+	PSIL_ETHERNET(0xf006),
-+	PSIL_ETHERNET(0xf007),
-+	/* SA2UL */
-+	PSIL_SA2UL(0xf500, 1),
-+};
-+
-+struct psil_ep_map j721e_ep_map = {
-+	.name = "j721e",
-+	.src = j721e_src_ep_map,
-+	.src_count = ARRAY_SIZE(j721e_src_ep_map),
-+	.dst = j721e_dst_ep_map,
-+	.dst_count = ARRAY_SIZE(j721e_dst_ep_map),
-+};
-diff --git a/drivers/dma/ti/k3-psil-priv.h b/drivers/dma/ti/k3-psil-priv.h
-new file mode 100644
-index 000000000000..f74420653d8a
---- /dev/null
-+++ b/drivers/dma/ti/k3-psil-priv.h
-@@ -0,0 +1,39 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ *  Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com
-+ */
-+
-+#ifndef K3_PSIL_PRIV_H_
-+#define K3_PSIL_PRIV_H_
-+
-+#include <linux/dma/k3-psil.h>
-+
-+struct psil_ep {
-+	u32 thread_id;
-+	struct psil_endpoint_config ep_config;
-+};
-+
-+/**
-+ * struct psil_ep_map - PSI-L thread ID configuration maps
-+ * @name:	Name of the map, set it to the name of the SoC
-+ * @src:	Array of source PSI-L thread configurations
-+ * @src_count:	Number of entries in the src array
-+ * @dst:	Array of destination PSI-L thread configurations
-+ * @dst_count:	Number of entries in the dst array
-+ *
-+ * In case of symmetric configuration for a matching src/dst thread (for example
-+ * 0x4400 and 0xc400) only the src configuration can be present. If no dst
-+ * configuration found the code will look for (dst_thread_id & ~0x8000) to find
-+ * the symmetric match.
-+ */
-+struct psil_ep_map {
-+	char *name;
-+	struct psil_ep	*src;
-+	int src_count;
-+	struct psil_ep	*dst;
-+	int dst_count;
-+};
-+
-+struct psil_endpoint_config *psil_get_ep_config(u32 thread_id);
-+
-+#endif /* K3_PSIL_PRIV_H_ */
-diff --git a/drivers/dma/ti/k3-psil.c b/drivers/dma/ti/k3-psil.c
-new file mode 100644
-index 000000000000..47e5e06d3292
---- /dev/null
-+++ b/drivers/dma/ti/k3-psil.c
-@@ -0,0 +1,97 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ *  Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com
-+ *  Author: Peter Ujfalusi <peter.ujfalusi@ti.com>
-+ */
-+
-+#include <linux/kernel.h>
-+#include <linux/device.h>
-+#include <linux/module.h>
-+#include <linux/mutex.h>
-+#include <linux/of.h>
-+
-+#include "k3-psil-priv.h"
-+
-+extern struct psil_ep_map am654_ep_map;
-+extern struct psil_ep_map j721e_ep_map;
-+
-+static DEFINE_MUTEX(ep_map_mutex);
-+static struct psil_ep_map *soc_ep_map;
-+
-+struct psil_endpoint_config *psil_get_ep_config(u32 thread_id)
-+{
-+	int i;
-+
-+	mutex_lock(&ep_map_mutex);
-+	if (!soc_ep_map) {
-+		if (of_machine_is_compatible("ti,am654")) {
-+			soc_ep_map = &am654_ep_map;
-+		} else if (of_machine_is_compatible("ti,j721e")) {
-+			soc_ep_map = &j721e_ep_map;
-+		} else {
-+			pr_err("PSIL: No compatible machine found for map\n");
-+			return ERR_PTR(-ENOTSUPP);
-+		}
-+		pr_debug("%s: Using map for %s\n", __func__, soc_ep_map->name);
-+	}
-+	mutex_unlock(&ep_map_mutex);
-+
-+	if (thread_id & K3_PSIL_DST_THREAD_ID_OFFSET && soc_ep_map->dst) {
-+		/* check in destination thread map */
-+		for (i = 0; i < soc_ep_map->dst_count; i++) {
-+			if (soc_ep_map->dst[i].thread_id == thread_id)
-+				return &soc_ep_map->dst[i].ep_config;
-+		}
-+	}
-+
-+	thread_id &= ~K3_PSIL_DST_THREAD_ID_OFFSET;
-+	if (soc_ep_map->src) {
-+		for (i = 0; i < soc_ep_map->src_count; i++) {
-+			if (soc_ep_map->src[i].thread_id == thread_id)
-+				return &soc_ep_map->src[i].ep_config;
-+		}
-+	}
-+
-+	return ERR_PTR(-ENOENT);
-+}
-+EXPORT_SYMBOL_GPL(psil_get_ep_config);
-+
-+int psil_set_new_ep_config(struct device *dev, const char *name,
-+			   struct psil_endpoint_config *ep_config)
-+{
-+	struct psil_endpoint_config *dst_ep_config;
-+	struct of_phandle_args dma_spec;
-+	u32 thread_id;
-+	int index;
-+
-+	if (!dev || !dev->of_node)
-+		return -EINVAL;
-+
-+	index = of_property_match_string(dev->of_node, "dma-names", name);
-+	if (index < 0)
-+		return index;
-+
-+	if (of_parse_phandle_with_args(dev->of_node, "dmas", "#dma-cells",
-+				       index, &dma_spec))
-+		return -ENOENT;
-+
-+	thread_id = dma_spec.args[0];
-+
-+	dst_ep_config = psil_get_ep_config(thread_id);
-+	if (IS_ERR(dst_ep_config)) {
-+		pr_err("PSIL: thread ID 0x%04x not defined in map\n",
-+		       thread_id);
-+		of_node_put(dma_spec.np);
-+		return PTR_ERR(dst_ep_config);
-+	}
-+
-+	memcpy(dst_ep_config, ep_config, sizeof(*dst_ep_config));
-+
-+	of_node_put(dma_spec.np);
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(psil_set_new_ep_config);
-+
-+MODULE_DESCRIPTION("TI K3 PSI-L endpoint database");
-+MODULE_AUTHOR("Peter Ujfalusi <peter.ujfalusi@ti.com>");
-+MODULE_LICENSE("GPL v2");
-diff --git a/include/linux/dma/k3-psil.h b/include/linux/dma/k3-psil.h
-new file mode 100644
-index 000000000000..61d5cc0ad601
---- /dev/null
-+++ b/include/linux/dma/k3-psil.h
-@@ -0,0 +1,71 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ *  Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com
-+ */
-+
-+#ifndef K3_PSIL_H_
-+#define K3_PSIL_H_
-+
-+#include <linux/types.h>
-+
-+#define K3_PSIL_DST_THREAD_ID_OFFSET 0x8000
-+
-+struct device;
-+
-+/**
-+ * enum udma_tp_level - Channel Throughput Levels
-+ * @UDMA_TP_NORMAL:	Normal channel
-+ * @UDMA_TP_HIGH:	High Throughput channel
-+ * @UDMA_TP_ULTRAHIGH:	Ultra High Throughput channel
-+ */
-+enum udma_tp_level {
-+	UDMA_TP_NORMAL = 0,
-+	UDMA_TP_HIGH,
-+	UDMA_TP_ULTRAHIGH,
-+	UDMA_TP_LAST,
-+};
-+
-+/**
-+ * enum psil_endpoint_type - PSI-L Endpoint type
-+ * @PSIL_EP_NATIVE:	Normal channel
-+ * @PSIL_EP_PDMA_XY:	XY mode PDMA
-+ * @PSIL_EP_PDMA_MCAN:	MCAN mode PDMA
-+ * @PSIL_EP_PDMA_AASRC: AASRC mode PDMA
-+ */
-+enum psil_endpoint_type {
-+	PSIL_EP_NATIVE = 0,
-+	PSIL_EP_PDMA_XY,
-+	PSIL_EP_PDMA_MCAN,
-+	PSIL_EP_PDMA_AASRC,
-+};
-+
-+/**
-+ * struct psil_endpoint_config - PSI-L Endpoint configuration
-+ * @ep_type:		PSI-L endpoint type
-+ * @pkt_mode:		If set, the channel must be in Packet mode, otherwise in
-+ *			TR mode
-+ * @notdpkt:		TDCM must be suppressed on the TX channel
-+ * @needs_epib:		Endpoint needs EPIB
-+ * @psd_size:		If set, PSdata is used by the endpoint
-+ * @channel_tpl:	Desired throughput level for the channel
-+ * @pdma_acc32:		ACC32 must be enabled on the PDMA side
-+ * @pdma_burst:		BURST must be enabled on the PDMA side
-+ */
-+struct psil_endpoint_config {
-+	enum psil_endpoint_type ep_type;
-+
-+	unsigned pkt_mode:1;
-+	unsigned notdpkt:1;
-+	unsigned needs_epib:1;
-+	u32 psd_size;
-+	enum udma_tp_level channel_tpl;
-+
-+	/* PDMA properties, valid for PSIL_EP_PDMA_* */
-+	unsigned pdma_acc32:1;
-+	unsigned pdma_burst:1;
-+};
-+
-+int psil_set_new_ep_config(struct device *dev, const char *name,
-+			   struct psil_endpoint_config *ep_config);
-+
-+#endif /* K3_PSIL_H_ */
--- 
-Peter
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TmV3IGJpbmRpbmcgZG9jdW1lbnQgZm9yClRleGFzIEluc3RydW1lbnRzIEszIE5BVlNTIFVuaWZp
+ZWQgRE1BIOKAkyBQZXJpcGhlcmFsIFJvb3QgQ29tcGxleCAoVURNQS1QKS4KClVETUEtUCBpcyBp
+bnRyb2R1Y2VkIGFzIHBhcnQgb2YgdGhlIEszIGFyY2hpdGVjdHVyZSBhbmQgY2FuIGJlIGZvdW5k
+IGluCkFNNjU0IGFuZCBqNzIxZS4KClNpZ25lZC1vZmYtYnk6IFBldGVyIFVqZmFsdXNpIDxwZXRl
+ci51amZhbHVzaUB0aS5jb20+Ci0tLQogLi4uL2RldmljZXRyZWUvYmluZGluZ3MvZG1hL3RpL2sz
+LXVkbWEueWFtbCAgIHwgMTkyICsrKysrKysrKysrKysrKysrKwogMSBmaWxlIGNoYW5nZWQsIDE5
+MiBpbnNlcnRpb25zKCspCiBjcmVhdGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi9kZXZpY2V0
+cmVlL2JpbmRpbmdzL2RtYS90aS9rMy11ZG1hLnlhbWwKCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0
+aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZG1hL3RpL2szLXVkbWEueWFtbCBiL0RvY3VtZW50YXRp
+b24vZGV2aWNldHJlZS9iaW5kaW5ncy9kbWEvdGkvazMtdWRtYS55YW1sCm5ldyBmaWxlIG1vZGUg
+MTAwNjQ0CmluZGV4IDAwMDAwMDAwMDAwMC4uNWE2MGMzZmM2ZjVjCi0tLSAvZGV2L251bGwKKysr
+IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2RtYS90aS9rMy11ZG1hLnlhbWwK
+QEAgLTAsMCArMSwxOTIgQEAKKyMgU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4wLW9u
+bHkgT1IgQlNELTItQ2xhdXNlKQorJVlBTUwgMS4yCistLS0KKyRpZDogaHR0cDovL2RldmljZXRy
+ZWUub3JnL3NjaGVtYXMvZG1hL3RpL2szLXVkbWEueWFtbCMKKyRzY2hlbWE6IGh0dHA6Ly9kZXZp
+Y2V0cmVlLm9yZy9tZXRhLXNjaGVtYXMvY29yZS55YW1sIworCit0aXRsZTogVGV4YXMgSW5zdHJ1
+bWVudHMgSzMgTkFWU1MgVW5pZmllZCBETUEgRGV2aWNlIFRyZWUgQmluZGluZ3MKKworbWFpbnRh
+aW5lcnM6CisgIC0gUGV0ZXIgVWpmYWx1c2kgPHBldGVyLnVqZmFsdXNpQHRpLmNvbT4KKworZGVz
+Y3JpcHRpb246IHwKKyAgVGhlIFVETUEtUCBpcyBpbnRlbmRlZCB0byBwZXJmb3JtIHNpbWlsYXIg
+KGJ1dCBzaWduaWZpY2FudGx5IHVwZ3JhZGVkKQorICBmdW5jdGlvbnMgYXMgdGhlIHBhY2tldC1v
+cmllbnRlZCBETUEgdXNlZCBvbiBwcmV2aW91cyBTb0MgZGV2aWNlcy4gVGhlIFVETUEtUAorICBt
+b2R1bGUgc3VwcG9ydHMgdGhlIHRyYW5zbWlzc2lvbiBhbmQgcmVjZXB0aW9uIG9mIHZhcmlvdXMg
+cGFja2V0IHR5cGVzLgorICBUaGUgVURNQS1QIGlzIGFyY2hpdGVjdGVkIHRvIGZhY2lsaXRhdGUg
+dGhlIHNlZ21lbnRhdGlvbiBhbmQgcmVhc3NlbWJseSBvZgorICBTb0MgRE1BIGRhdGEgc3RydWN0
+dXJlIGNvbXBsaWFudCBwYWNrZXRzIHRvL2Zyb20gc21hbGxlciBkYXRhIGJsb2NrcyB0aGF0IGFy
+ZQorICBuYXRpdmVseSBjb21wYXRpYmxlIHdpdGggdGhlIHNwZWNpZmljIHJlcXVpcmVtZW50cyBv
+ZiBlYWNoIGNvbm5lY3RlZAorICBwZXJpcGhlcmFsLgorICBNdWx0aXBsZSBUeCBhbmQgUnggY2hh
+bm5lbHMgYXJlIHByb3ZpZGVkIHdpdGhpbiB0aGUgRE1BIHdoaWNoIGFsbG93IG11bHRpcGxlCisg
+IHNlZ21lbnRhdGlvbiBvciByZWFzc2VtYmx5IG9wZXJhdGlvbnMgdG8gYmUgb25nb2luZy4gVGhl
+IERNQSBjb250cm9sbGVyCisgIG1haW50YWlucyBzdGF0ZSBpbmZvcm1hdGlvbiBmb3IgZWFjaCBv
+ZiB0aGUgY2hhbm5lbHMgd2hpY2ggYWxsb3dzIHBhY2tldAorICBzZWdtZW50YXRpb24gYW5kIHJl
+YXNzZW1ibHkgb3BlcmF0aW9ucyB0byBiZSB0aW1lIGRpdmlzaW9uIG11bHRpcGxleGVkIGJldHdl
+ZW4KKyAgY2hhbm5lbHMgaW4gb3JkZXIgdG8gc2hhcmUgdGhlIHVuZGVybHlpbmcgRE1BIGhhcmR3
+YXJlLiBBbiBleHRlcm5hbCBETUEKKyAgc2NoZWR1bGVyIGlzIHVzZWQgdG8gY29udHJvbCB0aGUg
+b3JkZXJpbmcgYW5kIHJhdGUgYXQgd2hpY2ggdGhpcyBtdWx0aXBsZXhpbmcKKyAgb2NjdXJzIGZv
+ciBUcmFuc21pdCBvcGVyYXRpb25zLiBUaGUgb3JkZXJpbmcgYW5kIHJhdGUgb2YgUmVjZWl2ZSBv
+cGVyYXRpb25zCisgIGlzIGluZGlyZWN0bHkgY29udHJvbGxlZCBieSB0aGUgb3JkZXIgaW4gd2hp
+Y2ggYmxvY2tzIGFyZSBwdXNoZWQgaW50byB0aGUgRE1BCisgIG9uIHRoZSBSeCBQU0ktTCBpbnRl
+cmZhY2UuCisKKyAgVGhlIFVETUEtUCBhbHNvIHN1cHBvcnRzIGFjdGluZyBhcyBib3RoIGEgVVRD
+IGFuZCBVRE1BLUMgZm9yIGl0cyBpbnRlcm5hbAorICBjaGFubmVscy4gQ2hhbm5lbHMgaW4gdGhl
+IFVETUEtUCBjYW4gYmUgY29uZmlndXJlZCB0byBiZSBlaXRoZXIgUGFja2V0LUJhc2VkCisgIG9y
+IFRoaXJkLVBhcnR5IGNoYW5uZWxzIG9uIGEgY2hhbm5lbCBieSBjaGFubmVsIGJhc2lzLgorCisg
+IEFsbCB0cmFuc2ZlcnMgd2l0aGluIE5BVlNTIGlzIGRvbmUgYmV0d2VlbiBQU0ktTCBzb3VyY2Ug
+YW5kIGRlc3RpbmF0aW9uCisgIHRocmVhZHMuCisgIFRoZSBwZXJpcGhlcmFscyBzZXJ2aWNlZCBi
+eSBVRE1BIGNhbiBiZSBQU0ktTCBuYXRpdmUgKHNhMnVsLCBjcHN3LCBldGMpIG9yCisgIGxlZ2Fj
+eSwgbm9uIFBTSS1MIG5hdGl2ZSBwZXJpcGhlcmFscy4gSW4gdGhlIGxhdGVyIGNhc2UgYSBzcGVj
+aWFsLCBzbWFsbCBQRE1BCisgIGlzIHRhc2tlZCB0byBhY3QgYXMgYSBicmlkZ2UgYmV0d2VlbiB0
+aGUgUFNJLUwgZmFicmljIGFuZCB0aGUgbGVnYWN5CisgIHBlcmlwaGVyYWwuCisKKyAgUERNQXMg
+Y2FuIGJlIGNvbmZpZ3VyZWQgdmlhIFVETUFQIHBlZXIgcmVnaXN0ZXJzIHRvIG1hdGNoIHdpdGgg
+dGhlCisgIGNvbmZpZ3VyYXRpb24gb2YgdGhlIGxlZ2FjeSBwZXJpcGhlcmFsLgorCithbGxPZjoK
+KyAgLSAkcmVmOiAiLi4vZG1hLWNvbnRyb2xsZXIueWFtbCMiCisKK3Byb3BlcnRpZXM6CisgICIj
+ZG1hLWNlbGxzIjoKKyAgICBjb25zdDogMQorICAgIGRlc2NyaXB0aW9uOiB8CisgICAgICBUaGUg
+Y2VsbCBpcyB0aGUgUFNJLUwgIHRocmVhZCBJRCBvZiB0aGUgcmVtb3RlICh0byBVRE1BUCkgZW5k
+LgorICAgICAgVmFsaWQgcmFuZ2VzIGZvciB0aHJlYWQgSUQgZGVwZW5kcyBvbiB0aGUgZGF0YSBt
+b3ZlbWVudCBkaXJlY3Rpb246CisgICAgICBmb3Igc291cmNlIHRocmVhZCBJRHMgKHJ4KTogMCAt
+IDB4N2ZmZgorICAgICAgZm9yIGRlc3RpbmF0aW9uIHRocmVhZCBJRHMgKHR4KTogMHg4MDAwIC0g
+MHhmZmZmCisKKyAgICAgIFBMZWFzZSByZWZlciB0byB0aGUgZGV2aWNlIGRvY3VtZW50YXRpb24g
+Zm9yIHRoZSBQU0ktTCB0aHJlYWQgbWFwIGFuZCBhbHNvCisgICAgICB0aGUgUFNJLUwgcGVyaXBo
+ZXJhbCBjaGFwdGVyIGZvciB0aGUgY29ycmVjdCB0aHJlYWQgSUQuCisKKyAgY29tcGF0aWJsZToK
+KyAgICBvbmVPZjoKKyAgICAgIC0gZGVzY3JpcHRpb246IGZvciBBTTY1NAorICAgICAgICBpdGVt
+czoKKyAgICAgICAgICAtIGVudW06CisgICAgICAgICAgICAgIC0gdGksYW02NTQtbmF2c3MtbWFp
+bi11ZG1hcAorICAgICAgICAgICAgICAtIHRpLGFtNjU0LW5hdnNzLW1jdS11ZG1hcAorCisgICAg
+ICAtIGRlc2NyaXB0aW9uOiBmb3IgSjcyMUUKKyAgICAgICAgaXRlbXM6CisgICAgICAgICAgLSBl
+bnVtOgorICAgICAgICAgICAgICAtIHRpLGo3MjFlLW5hdnNzLW1haW4tdWRtYXAKKyAgICAgICAg
+ICAgICAgLSB0aSxqNzIxZS1uYXZzcy1tY3UtdWRtYXAKKworICByZWc6CisgICAgbWF4SXRlbXM6
+IDMKKworICByZWctbmFtZXM6CisgICBpdGVtczoKKyAgICAgLSBjb25zdDogZ2NmZworICAgICAt
+IGNvbnN0OiByY2hhbnJ0CisgICAgIC0gY29uc3Q6IHRjaGFucnQKKworICBtc2ktcGFyZW50OiB0
+cnVlCisKKyAgdGksc2NpOgorICAgIGRlc2NyaXB0aW9uOiBwaGFuZGxlIHRvIFRJLVNDSSBjb21w
+YXRpYmxlIFN5c3RlbSBjb250cm9sbGVyIG5vZGUKKyAgICBhbGxPZjoKKyAgICAgIC0gJHJlZjog
+L3NjaGVtYXMvdHlwZXMueWFtbCMvZGVmaW5pdGlvbnMvcGhhbmRsZQorCisgIHRpLHNjaS1kZXYt
+aWQ6CisgICAgZGVzY3JpcHRpb246IFRJLVNDSSBkZXZpY2UgaWQgb2YgVURNQVAKKyAgICBhbGxP
+ZjoKKyAgICAgIC0gJHJlZjogL3NjaGVtYXMvdHlwZXMueWFtbCMvZGVmaW5pdGlvbnMvdWludDMy
+CisKKyAgdGkscmluZ2FjYzoKKyAgICBkZXNjcmlwdGlvbjogcGhhbmRsZSB0byB0aGUgcmluZyBh
+Y2NlbGVyYXRvciBub2RlCisgICAgYWxsT2Y6CisgICAgICAtICRyZWY6IC9zY2hlbWFzL3R5cGVz
+LnlhbWwjL2RlZmluaXRpb25zL3BoYW5kbGUKKworICB0aSxzY2ktcm0tcmFuZ2UtdGNoYW46Cisg
+ICAgZGVzY3JpcHRpb246IHwKKyAgICAgIEFycmF5IG9mIFVETUEgdGNoYW4gcmVzb3VyY2Ugc3Vi
+dHlwZXMgZm9yIHJlc291cmNlIGFsbG9jYXRpb24gZm9yIHRoaXMKKyAgICAgIGhvc3QKKyAgICBh
+bGxPZjoKKyAgICAgIC0gJHJlZjogL3NjaGVtYXMvdHlwZXMueWFtbCMvZGVmaW5pdGlvbnMvdWlu
+dDMyLWFycmF5CisgICAgbWluSXRlbXM6IDEKKyAgICAjIFNob3VsZCBiZSBlbm91Z2gKKyAgICBt
+YXhJdGVtczogMjU1CisKKyAgdGksc2NpLXJtLXJhbmdlLXJjaGFuOgorICAgIGRlc2NyaXB0aW9u
+OiB8CisgICAgICBBcnJheSBvZiBVRE1BIHJjaGFuIHJlc291cmNlIHN1YnR5cGVzIGZvciByZXNv
+dXJjZSBhbGxvY2F0aW9uIGZvciB0aGlzCisgICAgICBob3N0CisgICAgYWxsT2Y6CisgICAgICAt
+ICRyZWY6IC9zY2hlbWFzL3R5cGVzLnlhbWwjL2RlZmluaXRpb25zL3VpbnQzMi1hcnJheQorICAg
+IG1pbkl0ZW1zOiAxCisgICAgIyBTaG91bGQgYmUgZW5vdWdoCisgICAgbWF4SXRlbXM6IDI1NQor
+CisgIHRpLHNjaS1ybS1yYW5nZS1yZmxvdzoKKyAgICBkZXNjcmlwdGlvbjogfAorICAgICAgQXJy
+YXkgb2YgVURNQSByZmxvdyByZXNvdXJjZSBzdWJ0eXBlcyBmb3IgcmVzb3VyY2UgYWxsb2NhdGlv
+biBmb3IgdGhpcworICAgICAgaG9zdAorICAgIGFsbE9mOgorICAgICAgLSAkcmVmOiAvc2NoZW1h
+cy90eXBlcy55YW1sIy9kZWZpbml0aW9ucy91aW50MzItYXJyYXkKKyAgICBtaW5JdGVtczogMQor
+ICAgICMgU2hvdWxkIGJlIGVub3VnaAorICAgIG1heEl0ZW1zOiAyNTUKKworcmVxdWlyZWQ6Cisg
+IC0gY29tcGF0aWJsZQorICAtICIjZG1hLWNlbGxzIgorICAtIHJlZworICAtIHJlZy1uYW1lcwor
+ICAtIG1zaS1wYXJlbnQKKyAgLSB0aSxzY2kKKyAgLSB0aSxzY2ktZGV2LWlkCisgIC0gdGkscmlu
+Z2FjYworICAtIHRpLHNjaS1ybS1yYW5nZS10Y2hhbgorICAtIHRpLHNjaS1ybS1yYW5nZS1yY2hh
+bgorICAtIHRpLHNjaS1ybS1yYW5nZS1yZmxvdworCitleGFtcGxlczoKKyAgLSB8KworICAgIGNi
+YXNzX21haW4geworICAgICAgICAjYWRkcmVzcy1jZWxscyA9IDwyPjsKKyAgICAgICAgI3NpemUt
+Y2VsbHMgPSA8Mj47CisKKyAgICAgICAgY2Jhc3NfbWFpbl9uYXZzczogbmF2c3NAMzA4MDAwMDAg
+eworICAgICAgICAgICAgY29tcGF0aWJsZSA9ICJzaW1wbGUtbWZkIjsKKyAgICAgICAgICAgICNh
+ZGRyZXNzLWNlbGxzID0gPDI+OworICAgICAgICAgICAgI3NpemUtY2VsbHMgPSA8Mj47CisgICAg
+ICAgICAgICBkbWEtY29oZXJlbnQ7CisgICAgICAgICAgICBkbWEtcmFuZ2VzOworICAgICAgICAg
+ICAgcmFuZ2VzID0gPDB4MDAgMHgzMDgwMDAwMCAweDAwIDB4MzA4MDAwMDAgMHgwMCAweDBiYzAw
+MDAwPjsKKworICAgICAgICAgICAgdGksc2NpLWRldi1pZCA9IDwxMTg+OworCisgICAgICAgICAg
+ICBtYWluX3VkbWFwOiBkbWEtY29udHJvbGxlckAzMTE1MDAwMCB7CisgICAgICAgICAgICAgICAg
+Y29tcGF0aWJsZSA9ICJ0aSxhbTY1NC1uYXZzcy1tYWluLXVkbWFwIjsKKyAgICAgICAgICAgICAg
+ICByZWcgPSA8MHgwIDB4MzExNTAwMDAgMHgwIDB4MTAwPiwKKyAgICAgICAgICAgICAgICAgICAg
+ICA8MHgwIDB4MzQwMDAwMDAgMHgwIDB4MTAwMDAwPiwKKyAgICAgICAgICAgICAgICAgICAgICA8
+MHgwIDB4MzUwMDAwMDAgMHgwIDB4MTAwMDAwPjsKKyAgICAgICAgICAgICAgICByZWctbmFtZXMg
+PSAiZ2NmZyIsICJyY2hhbnJ0IiwgInRjaGFucnQiOworICAgICAgICAgICAgICAgICNkbWEtY2Vs
+bHMgPSA8MT47CisKKyAgICAgICAgICAgICAgICB0aSxyaW5nYWNjID0gPCZyaW5nYWNjPjsKKwor
+ICAgICAgICAgICAgICAgIG1zaS1wYXJlbnQgPSA8JmludGFfbWFpbl91ZG1hc3M+OworCisgICAg
+ICAgICAgICAgICAgdGksc2NpID0gPCZkbXNjPjsKKyAgICAgICAgICAgICAgICB0aSxzY2ktZGV2
+LWlkID0gPDE4OD47CisKKyAgICAgICAgICAgICAgICB0aSxzY2ktcm0tcmFuZ2UtdGNoYW4gPSA8
+MHgxPiwgLyogVFhfSENIQU4gKi8KKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICA8MHgyPjsgLyogVFhfQ0hBTiAqLworICAgICAgICAgICAgICAgIHRpLHNjaS1ybS1yYW5n
+ZS1yY2hhbiA9IDwweDQ+LCAvKiBSWF9IQ0hBTiAqLworICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgIDwweDU+OyAvKiBSWF9DSEFOICovCisgICAgICAgICAgICAgICAgdGks
+c2NpLXJtLXJhbmdlLXJmbG93ID0gPDB4Nj47IC8qIEdQIFJGTE9XICovCisgICAgICAgICAgICB9
+OworICAgICAgICB9OworCisgICAgICAgIG1jYXNwMDogbWNhc3BAMDJCMDAwMDAgeworICAgICAg
+ICAgICAgZG1hcyA9IDwmbWFpbl91ZG1hcCAweGM0MDA+LCA8Jm1haW5fdWRtYXAgMHg0NDAwPjsK
+KyAgICAgICAgICAgIGRtYS1uYW1lcyA9ICJ0eCIsICJyeCI7CisgICAgICAgIH07CisKKyAgICAg
+ICAgY3J5cHRvOiBjcnlwdG9ANEUwMDAwMCB7CisgICAgICAgICAgICBjb21wYXRpYmxlID0gInRp
+LHNhMnVsLWNyeXB0byI7CisKKyAgICAgICAgICAgIGRtYXMgPSA8Jm1haW5fdWRtYXAgMHhjMDAw
+PiwgPCZtYWluX3VkbWFwIDB4NDAwMD4sIDwmbWFpbl91ZG1hcCAweDQwMDE+OworICAgICAgICAg
+ICAgZG1hLW5hbWVzID0gInR4IiwgInJ4MSIsICJyeDIiOworICAgICAgICB9OworICAgIH07Ci0t
+IApQZXRlcgoKVGV4YXMgSW5zdHJ1bWVudHMgRmlubGFuZCBPeSwgUG9ya2thbGFua2F0dSAyMiwg
+MDAxODAgSGVsc2lua2kuClktdHVubnVzL0J1c2luZXNzIElEOiAwNjE1NTIxLTQuIEtvdGlwYWlr
+a2EvRG9taWNpbGU6IEhlbHNpbmtpCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
