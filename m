@@ -2,115 +2,162 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1244DF73B4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 13:19:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91381F73BC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 13:21:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MAhyHDgQKSeOeeo2Za2CgGQ3I0U2K7PqXFYLcSV0+F4=; b=bsTiQYorh9m6dS
-	WhVv/Cet04nLPeNGcg4veH0UIbnXceebO5nfXyBy2PEZJVAHWZg6ek/H/TMjgjcQiXML99eTOeaKY
-	V0kvuLRCKfpnsqPTmkSG5nMa686mYqg8wbpbXu8UF++oAJXzs/WaRaSNFlr1AUZxCQEniY67mhbH3
-	jl9hIEjAkm92DQITNVZ3kKLsolHrI+Mjt/DB16iOz+CSS7eBmcsJXEF1uOe0x6NGkJkSX0BpAOMv0
-	bUiI9fMCWz2ZN8mCJYWsdCTeWDYGnZvCxJ+mqZMh1e08sQfRCS9+UEn5rf0uQC77l+FL083rv80PH
-	Vcq+e49Y/5mdjAG1PS5Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=a/f1xwnuS08QzmKalFbHMGa7kt/JYoffv3vUncS98F0=; b=rnY4P6uVO3fJ59
+	2nRK2sjfXJthZxhEIRAulF9iRIN7ogeuUmJfMx4/UQOb0BiVEn/5L2mlq3n+PRXevvxt+hxcmJNzn
+	Q59D6Qpi8FDJhZ4eA8bhbi+xqus6S57i6/d2OYA4QcOQL6WhVS54xDOrm0wSaa9VlshlS5vqN6tdB
+	3JI1+11Zf5VTuW2DltD56RJI/PzW2Ol7sSKq4gtTQ2Hji3Os+XbmwJkBY9UPA7iC+CJKBIPnFC7NR
+	pKwEsM+GL9K+aO6QGblvtDIETsl3uigCT2EvBLuj+2OxYRtnEFAoDAtr0rOSZ9YwCTysS78LHkvRi
+	arNzGAxQ8hD+1YqhsbzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU8fQ-0006OV-UW; Mon, 11 Nov 2019 12:19:36 +0000
-Received: from mail-dm3nam03on0600.outbound.protection.outlook.com
- ([2a01:111:f400:fe49::600]
- helo=NAM03-DM3-obe.outbound.protection.outlook.com)
+	id 1iU8gy-0007uQ-FD; Mon, 11 Nov 2019 12:21:12 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU8fH-0006Nx-N6
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 12:19:29 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JpKoVjs84rhfeCmAyfIbx0Af7CGABHhz6r855meB9Vjy1EIVOBpO3iNSSR19VgVZKzO0H3KuBJ3s7jdGG1fHkel8ZHlJDB6IlVCu92lF8tZrRe1ZmbXfEX7Nq5958vX6VSFK5pmSXS7Krwif9Dm21ZMb7yZLcxl41yXkFfAqeUyDqJycKR5GIPISu7ut9uRP2kQCGkuAQuuBgt+LfYtmPJd0VYV6sidUUdevLeww1k0+cjVdPaTh/KOarzBNO0zyGIzx0svi65YuGcO/qwaQJpMqOuvP45VLhUnSq3Nh+4+H/3I46W5ugNX5wRpyuYd3KG4kwbmykxpXJMmsSLjiDg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KI7psLc+KipriYCBSjka7e03nAsGcSfEMa7hCccwIPc=;
- b=QltYyAPCP4ENaYw409Uso+/9tEs9PVsESMIg12gY7ZAQlndhdt+HxtnrU5EzMJttERacFIIVkOQvdiPxUlev6EF0j4Mc/CZQFL5bEZe/YigkZkRxFNjgkJ4/liKhW7PJEjZIkQyfQ8XuS5Z8ODtHB9mHqcBOhnnp+sYiTs1HaqYh3GA68aIQooL7el10l8ZRBnxlkfOB2wSwhl1I+bmdgXzd37QKmyuj9Du4WtHHwYSAPZmSp3QVSTgro1hKDZl4y1BkNDxDFbbHR9rwU/UzfyuBYib7jqDaAG+LhmZmamD4dBh6GuIagChLUgOxCglMYc24mRtd2NzMx2V4P1/QhA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KI7psLc+KipriYCBSjka7e03nAsGcSfEMa7hCccwIPc=;
- b=fu03YDwIZrgJnr3XGpoToyZjOu0hGy2RCgfX2D8LpEH5DzvftBP3ZhgLJZeYmCMqpUctfB3QUN5KVn+TFb/JrYbP2rZsb97MJgOHDlUojNNjd0a3d/PXBDdK4xIEWE53X3VYzRQVseCPCb41O6fut3dO1I1zWVYctdqcnnYUPNw=
-Received: from BYAPR02MB4055.namprd02.prod.outlook.com (52.135.202.143) by
- BYAPR02MB5191.namprd02.prod.outlook.com (20.176.254.94) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.25; Mon, 11 Nov 2019 12:19:22 +0000
-Received: from BYAPR02MB4055.namprd02.prod.outlook.com
- ([fe80::fccc:d399:e650:9a9e]) by BYAPR02MB4055.namprd02.prod.outlook.com
- ([fe80::fccc:d399:e650:9a9e%5]) with mapi id 15.20.2430.027; Mon, 11 Nov 2019
- 12:19:22 +0000
-From: Rajan Vaja <RAJANV@xilinx.com>
-To: Michael Tretter <m.tretter@pengutronix.de>
-Subject: RE: [PATCH] clk: zynqmp: Add support for clock with
- CLK_DIVIDER_POWER_OF_TWO flag
-Thread-Topic: [PATCH] clk: zynqmp: Add support for clock with
- CLK_DIVIDER_POWER_OF_TWO flag
-Thread-Index: AQHVlUkv/SfvLcaY5E2Ze3HWYusTcKd//yyAgAXQRjA=
-Date: Mon, 11 Nov 2019 12:19:22 +0000
-Message-ID: <BYAPR02MB4055DF3A4FC080C746C21825B7740@BYAPR02MB4055.namprd02.prod.outlook.com>
-References: <1573116902-7240-1-git-send-email-rajan.vaja@xilinx.com>
- <20191107185751.4bb873d9@litschi.hi.pengutronix.de>
-In-Reply-To: <20191107185751.4bb873d9@litschi.hi.pengutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=RAJANV@xilinx.com; 
-x-originating-ip: [149.199.62.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: ebb6734f-7cae-4790-a78e-08d766a162a2
-x-ms-traffictypediagnostic: BYAPR02MB5191:|BYAPR02MB5191:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR02MB5191A757F9FA20FC707C354CB7740@BYAPR02MB5191.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 0218A015FA
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(136003)(376002)(366004)(39860400002)(396003)(13464003)(199004)(189003)(5660300002)(6116002)(14454004)(478600001)(6436002)(52536014)(4326008)(6246003)(229853002)(25786009)(9686003)(3846002)(66946007)(66556008)(64756008)(66446008)(66476007)(76116006)(55016002)(486006)(256004)(14444005)(71190400001)(71200400001)(446003)(11346002)(66066001)(81166006)(8936002)(476003)(8676002)(81156014)(99286004)(186003)(74316002)(7696005)(76176011)(6506007)(53546011)(33656002)(86362001)(2906002)(7736002)(305945005)(102836004)(6916009)(316002)(54906003)(26005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB5191;
- H:BYAPR02MB4055.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 7NkyRJS5ZeaSqXOE96o+JFIsgjm6yDZcwlfpzFNXEXkvDwwjzEdZ6fD7NnenwdHfRhZ4K4PH5mhRUDkP9RFXZMIPr42Ao2zI3/Sd95HaG08+BsvhdeU8rCr1mqcJdQMjx9VnyoKOAly6Ch7NSPdXGWsQkSRJlCBvQ1l3KWZEEVyw7FeI/LFhAqHDOXCXs4c8K0R2ez/N7Zoct5BQShIdQpBK7m4PlQv2IeVRWq/XwjJoPhMlchBAiUiDI0Gc+Dfpp2m4XVLartvi5Po9ZYRVN6cvFJP2jm9UiJdbGTDc+26hFlrwY1H/yRXvZJ4IYiRiF8AQLl41LuHvixr1lumhj5kfzSL5ntZnVlyzFyQoUPR6lR1xqSCwYAwarJf8k+KZy7FeAR7I09r/qtrQrDZZ0qs3BRM7mzplEBmtMDm6HjfzQpSW54Ux3zAN7Ag1JMks
+ id 1iU8go-0007sp-ID; Mon, 11 Nov 2019 12:21:04 +0000
+Received: by mail-wm1-x342.google.com with SMTP id c22so13011341wmd.1;
+ Mon, 11 Nov 2019 04:20:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:cc:from:subject:autocrypt:message-id:date:user-agent
+ :mime-version:content-language:content-transfer-encoding;
+ bh=4/DEoOzAEG1d3atRsWym3bi5EGYSgj+kTBF4VBkbjzQ=;
+ b=rYhQ4sU1w5ZPdQoBBpgdgzwDaWzU9NtVb9bKlua7r+ZytHMBeEPtk1qCDBj5iOn92U
+ i5jvNuw5sjp4xCW8/YAT4css31l5v73e3GkPxpoYFrb3agAcv9TtGOJF8Xw/dp6u6zrM
+ x+xJ6wZNBYcNGAdY1TKe27WVWi0XRuBGqkg+rfV+kKlRQ723d8NXPFQ9AKzvSyBnzZdT
+ KYpiygwRxnnl4S0F+oUi9BnxYw/xEEQvJgLnON6sOIG4SqmXQlDAvfboKGXyn4M6uvWm
+ +vnqkkDseA1H73TGpS5S5mj0uTEpEDQfjubxCgV1LlNpjzMdK9Qeyt+hHeWthPoVj1WM
+ HOsQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:from:subject:autocrypt:message-id:date
+ :user-agent:mime-version:content-language:content-transfer-encoding;
+ bh=4/DEoOzAEG1d3atRsWym3bi5EGYSgj+kTBF4VBkbjzQ=;
+ b=LCgHS3jXayTtF+C6Uxm48zN6R81DgWW2MUZwtbqM63mxFmbwqZdxpecp5BFbMYEVaX
+ uAiezHZf4SPllmNMFat9h3X8wqvUoAKeKp3IiiwKSJHSGw9L8I+THf5rsn3Ecddb3gcQ
+ l7JFDRFYmxlkQoHykT3gRVBmNvGM1/donOoCerqKdObbwE8EX5ONyU1r1lRRTQs26tO1
+ NITr3nL1GV5cZDK1N4Q+v1huIZmgv3YS0rcj4s285oYmJYjh8fOS4BFxUQo7Pa27A9Vq
+ F0PrXdRSr0mO902gZokyMmCMnFIh1kmmxkINfkdZR9aUMGSTY0gcCjVm6PXY3wcouAF3
+ +6yQ==
+X-Gm-Message-State: APjAAAUq53h63ghDqIwxxeLl7rIXMSwGCt9dj7AspnnUnBBXQoEXMYbA
+ 3bp2CanT6yBz7f7OmyWunLw=
+X-Google-Smtp-Source: APXvYqzRxGuqNGRtwsVacYnZnO1gmwiB9J7F9ihYoyQAEgnNtJkCkzzIzAaLJPkb1+DA1W8O0szgWw==
+X-Received: by 2002:a1c:ed16:: with SMTP id l22mr19878920wmh.151.1573474855805; 
+ Mon, 11 Nov 2019 04:20:55 -0800 (PST)
+Received: from ziggy.stardust ([95.169.226.39])
+ by smtp.gmail.com with ESMTPSA id d199sm15424212wmd.35.2019.11.11.04.20.54
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 11 Nov 2019 04:20:55 -0800 (PST)
+To: soc@kernel.org
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [GIT PULL] ARM: dts32 updates for v5.5
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ r2JwH1CJjrHWeQEI2ucSKsNa8FllDmG/fQ==
+Message-ID: <82f16220-d0e1-6e32-088e-c889ef6bdff3@gmail.com>
+Date: Mon, 11 Nov 2019 13:20:53 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ebb6734f-7cae-4790-a78e-08d766a162a2
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Nov 2019 12:19:22.5250 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: wT+PecjJVOO9a1z/mZbU1riu72WjQ5Ln600eMP+rVw5J+J9DWP7tvBlRC0/o+Sj6OZTLJ9u1rfDmVjFcSVCQ0w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB5191
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_041927_909242_80F28361 
-X-CRM114-Status: GOOD (  22.78  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191111_042102_607096_FC2AB89C 
+X-CRM114-Status: GOOD (  13.04  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe49:0:0:0:600 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (matthias.bgg[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,170 +169,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Radhey Shyam Pandey <radheys@xilinx.com>, Tejas Patel <TEJASP@xilinx.com>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jolly Shah <JOLLYS@xilinx.com>, Michal Simek <michals@xilinx.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+Cc: Josef Friedl <josef.friedl@speed.at>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-mediatek@lists.infradead.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Michael,
+Hi Olof and Arnd,
 
-Thanks for review.
+Please take the following pull-request into account.
 
-> -----Original Message-----
-> From: Michael Tretter <m.tretter@pengutronix.de>
-> Sent: 07 November 2019 11:28 PM
-> To: Rajan Vaja <RAJANV@xilinx.com>
-> Cc: mturquette@baylibre.com; sboyd@kernel.org; Michal Simek
-> <michals@xilinx.com>; Jolly Shah <JOLLYS@xilinx.com>; linux-clk@vger.kernel.org;
-> linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Tejas Patel
-> <TEJASP@xilinx.com>; Radhey Shyam Pandey <radheys@xilinx.com>;
-> kernel@pengutronix.de
-> Subject: Re: [PATCH] clk: zynqmp: Add support for clock with
-> CLK_DIVIDER_POWER_OF_TWO flag
-> 
-> EXTERNAL EMAIL
-> 
-> On Thu, 07 Nov 2019 00:55:02 -0800, Rajan Vaja wrote:
-> > From: Tejas Patel <tejas.patel@xilinx.com>
-> >
-> > Existing clock divider functions is not checking for
-> > base of divider. So, if any clock divider is power of 2
-> > then clock rate calculation will be wrong.
-> >
-> > Add support to calculate divider value for the clocks
-> > with CLK_DIVIDER_POWER_OF_TWO flag.
-> >
-> > Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
-> > Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-> > Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
-> > ---
-> >  drivers/clk/zynqmp/divider.c | 36 +++++++++++++++++++++++++++++++-----
-> >  1 file changed, 31 insertions(+), 5 deletions(-)
-> >
-> > diff --git a/drivers/clk/zynqmp/divider.c b/drivers/clk/zynqmp/divider.c
-> > index d8f5b70d..ce63cf5 100644
-> > --- a/drivers/clk/zynqmp/divider.c
-> > +++ b/drivers/clk/zynqmp/divider.c
-> > @@ -2,7 +2,7 @@
-> >  /*
-> >   * Zynq UltraScale+ MPSoC Divider support
-> >   *
-> > - *  Copyright (C) 2016-2018 Xilinx
-> > + *  Copyright (C) 2016-2019 Xilinx
-> >   *
-> >   * Adjustable divider clock implementation
-> >   */
-> > @@ -44,9 +44,26 @@ struct zynqmp_clk_divider {
-> >  };
-> >
-> >  static inline int zynqmp_divider_get_val(unsigned long parent_rate,
-> > -                                      unsigned long rate)
-> > +                                      unsigned long rate, u16 flags)
-> >  {
-> > -     return DIV_ROUND_CLOSEST(parent_rate, rate);
-> > +     int up, down;
-> > +     unsigned long up_rate, down_rate;
-> > +
-> > +     if (flags & CLK_DIVIDER_POWER_OF_TWO) {
-> > +             up = DIV_ROUND_UP_ULL((u64)parent_rate, rate);
-> > +             down = parent_rate / rate;
-> 
-> Maybe use DIV_ROUND_DOWN_ULL()?
-[Rajan] Ok. Will update in next version .
+Thanks a lot,
+Matthias
 
-> 
-> > +
-> > +             up = __roundup_pow_of_two(up);
-> > +             down = __rounddown_pow_of_two(down);
-> > +
-> > +             up_rate = DIV_ROUND_UP_ULL((u64)parent_rate, up);
-> > +             down_rate = DIV_ROUND_UP_ULL((u64)parent_rate, down);
-> > +
-> > +             return (rate - up_rate) <= (down_rate - rate) ? up : down;
-> 
-> The calculation looks correct. Maybe there could be a common helper
-> with the _div_round_closest() function?
-[Rajan] _div_round_closest() is static function, and yes there is divider_round_rate_parent()
-which ultimately uses _div_round_closest(), but it requires divider width which is not exposed
-by firmware to driver.
- 
-> 
-> > +
-> > +     } else {
-> > +             return DIV_ROUND_CLOSEST(parent_rate, rate);
-> > +     }
-> >  }
-> >
-> >  /**
-> > @@ -78,6 +95,9 @@ static unsigned long zynqmp_clk_divider_recalc_rate(struct
-> clk_hw *hw,
-> >       else
-> >               value = div >> 16;
-> >
-> > +     if (divider->flags & CLK_DIVIDER_POWER_OF_TWO)
-> > +             value = 1 << value;
-> 
-> Not sure, but I think a small helper similar to _get_div() would help
-> with the readability. Just hide the difference between the normal and
-> power of two divisors behind some helper functions.
-[Rajan] _git_dev() requires divider width which is not exposed
-by firmware to user. So _get_div() can't used here. Also, there is no similar
-helper available in linux. Correct me if I am missing something.
+---
 
-Thanks,
-Rajan
-> 
-> Michael
-> 
-> > +
-> >       if (!value) {
-> >               WARN(!(divider->flags & CLK_DIVIDER_ALLOW_ZERO),
-> >                    "%s: Zero divisor and CLK_DIVIDER_ALLOW_ZERO not set\n",
-> > @@ -120,10 +140,13 @@ static long zynqmp_clk_divider_round_rate(struct
-> clk_hw *hw,
-> >               else
-> >                       bestdiv  = bestdiv >> 16;
-> >
-> > +             if (divider->flags & CLK_DIVIDER_POWER_OF_TWO)
-> > +                     bestdiv = 1 << bestdiv;
-> > +
-> >               return DIV_ROUND_UP_ULL((u64)*prate, bestdiv);
-> >       }
-> >
-> > -     bestdiv = zynqmp_divider_get_val(*prate, rate);
-> > +     bestdiv = zynqmp_divider_get_val(*prate, rate, divider->flags);
-> >
-> >       if ((clk_hw_get_flags(hw) & CLK_SET_RATE_PARENT) && divider->is_frac)
-> >               bestdiv = rate % *prate ? 1 : bestdiv;
-> > @@ -151,7 +174,7 @@ static int zynqmp_clk_divider_set_rate(struct clk_hw
-> *hw, unsigned long rate,
-> >       int ret;
-> >       const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
-> >
-> > -     value = zynqmp_divider_get_val(parent_rate, rate);
-> > +     value = zynqmp_divider_get_val(parent_rate, rate, divider->flags);
-> >       if (div_type == TYPE_DIV1) {
-> >               div = value & 0xFFFF;
-> >               div |= 0xffff << 16;
-> > @@ -160,6 +183,9 @@ static int zynqmp_clk_divider_set_rate(struct clk_hw
-> *hw, unsigned long rate,
-> >               div |= value << 16;
-> >       }
-> >
-> > +     if (divider->flags & CLK_DIVIDER_POWER_OF_TWO)
-> > +             div = __ffs(div);
-> > +
-> >       ret = eemi_ops->clock_setdivider(clk_id, div);
-> >
-> >       if (ret)
+The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
+
+  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
+
+are available in the Git repository at:
+
+  https://git.kernel.org/pub/scm/linux/kernel/git/matthias.bgg/linux.git/
+tags/v5.4-next-dts
+
+for you to fetch changes up to 4ab88db095c3a2ebbd6108cafcf327326f989ff8:
+
+  arm: dts: mt6323: add keys, power-controller, rtc and codec (2019-11-10
+21:39:44 +0100)
+
+----------------------------------------------------------------
+mt6323 pmic:
+add nodes for RTC, keys, codec and power-controller
+
+----------------------------------------------------------------
+Josef Friedl (1):
+      arm: dts: mt6323: add keys, power-controller, rtc and codec
+
+ arch/arm/boot/dts/mt6323.dtsi | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+
 
 _______________________________________________
 linux-arm-kernel mailing list
