@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99D7EF7180
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 11:10:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B104F719C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 11:11:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/SwzomdBmE3MoVSUE9YuACR/LSVUe5oB8m9UWt6See4=; b=P2COiHwVokugI7
-	Oz14In/rSjtOg/Q5OQcqzurbpPFjrUpLU9MuHnlr2i4aFAP2j5EzHkh7uIdi+exPA8A4f9YAOpI6x
-	ASUihq1WrA1M5pkjKkDS47/qA46Ec2hZQTC5lgHzv8+Wm+QrbSdAHhtH0EnDnuD5FABNgMsJWq5sv
-	bwCGdAYQGgqxbNSzUjEG9gUnHeE4OFVewTt2Q0FtbrG5W/qRCYkUn4xRzemUnTP4dHVGcF41cnQFV
-	cjvx7wJqm0OxoC/F5nCCfLI37oRBktFwiRnoscvgbkE4k88acDgaSewyHa6liPDvleDI2rgyM21wg
-	Io0oLHOvsQAH3W+W0hRg==;
+	List-Owner; bh=SBbofxX2a7w+cB9Y6Wacp4DEGHcr4GRYtHsaWx6oySk=; b=FElw0nIgQpT2Rx
+	3ZzUVcHU6VvJ2ZCDtpcjUJJaCnprY6oEvYwfIBTqBbQ3z5IKsWRbklxrm+PimlybVicvUnIH2iUEf
+	u5M21drmTMkz/+NjHumC9JtxGv3iA9NkyfrHxeHoC8hG2+IRQbqMquh5NQ7sm6qIf2iBhFrj75ntW
+	eqxJ2SbiDrucJmkI50WdqX7XhqDbsTPHjyf7mY64pCUrekr/VhWJLXXtj2EgiDJ6DtPO+1E5GcDIn
+	U/mBsc38pU6xfqj3/DgekkjIduSoMuCEI0toDqdXBksxYsH6ifvYWLNQwqCVoov+I5A3ZMM9fWnbL
+	jFkAy3TL0ooKvP10SOPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU6ec-0004uz-V8; Mon, 11 Nov 2019 10:10:38 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1iU6fl-0005it-OY; Mon, 11 Nov 2019 10:11:49 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU6eR-0004to-Ng; Mon, 11 Nov 2019 10:10:29 +0000
-Received: from mail-qt1-f178.google.com ([209.85.160.178]) by
- mrelayeu.kundenserver.de (mreue109 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1N6KMR-1hoCDI1u4f-016fjm; Mon, 11 Nov 2019 11:10:25 +0100
-Received: by mail-qt1-f178.google.com with SMTP id o49so15061952qta.7;
- Mon, 11 Nov 2019 02:10:25 -0800 (PST)
-X-Gm-Message-State: APjAAAWI/SJPAR5BTJja7Tcokwsf2epO6QM5fyMoZb+qtveVcHuit417
- rx4VI0sG5j2KRxlq5Krbz+4zF7uNexSDGkvfJ5c=
-X-Google-Smtp-Source: APXvYqyqP0GEnKlLDcc3YXGxYPpIsc43oy+/l9orRIfJHYpq8HDGEADC0l7WhZk0kMzg516CeAScWIBjk4MnQDDCwV4=
-X-Received: by 2002:ac8:1908:: with SMTP id t8mr24584774qtj.18.1573467024165; 
- Mon, 11 Nov 2019 02:10:24 -0800 (PST)
+ id 1iU6fI-0005TJ-E1; Mon, 11 Nov 2019 10:11:21 +0000
+Received: from mail-qv1-f44.google.com ([209.85.219.44]) by
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MVrXh-1iMAZE1CPl-00Rp8i; Mon, 11 Nov 2019 11:11:17 +0100
+Received: by mail-qv1-f44.google.com with SMTP id x14so4639521qvu.0;
+ Mon, 11 Nov 2019 02:11:16 -0800 (PST)
+X-Gm-Message-State: APjAAAVmdCrLJpajd9I/R2B+6Y8eRW+QvnMUFrtmGFL7eO6xlU8yhCMq
+ tBYN63EhMi6ihjsSj3+QKn7Zyg6v6DNwE3lciqk=
+X-Google-Smtp-Source: APXvYqyPlYZ0IqFyt+F/Kw+2cGPdhPemO7nTBHjMV2hNTSSGSuWp0EuM7jgO4bHxqVV9VdMKLREBG37EpIWZ8cUBhPs=
+X-Received: by 2002:a05:6214:2c2:: with SMTP id
+ g2mr4941532qvu.210.1573467075908; 
+ Mon, 11 Nov 2019 02:11:15 -0800 (PST)
 MIME-Version: 1.0
 References: <20191029064834.23438-1-hch@lst.de>
- <20191029064834.23438-13-hch@lst.de>
-In-Reply-To: <20191029064834.23438-13-hch@lst.de>
+ <20191029064834.23438-18-hch@lst.de>
+In-Reply-To: <20191029064834.23438-18-hch@lst.de>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 11 Nov 2019 11:10:07 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a28UDPEP7Bqu_wEXsfwSpT-5i30STB2iX3RfxdvbfzrNQ@mail.gmail.com>
-Message-ID: <CAK8P3a28UDPEP7Bqu_wEXsfwSpT-5i30STB2iX3RfxdvbfzrNQ@mail.gmail.com>
-Subject: Re: [PATCH 12/21] arch: rely on asm-generic/io.h for default
- ioremap_* definitions
+Date: Mon, 11 Nov 2019 11:10:59 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a0zfmup8DYQQnT3GNCkgcv9cWxejj2QAr+FmYWs46ZuHQ@mail.gmail.com>
+Message-ID: <CAK8P3a0zfmup8DYQQnT3GNCkgcv9cWxejj2QAr+FmYWs46ZuHQ@mail.gmail.com>
+Subject: Re: [PATCH 17/21] lib: provide a simple generic ioremap implementation
 To: Christoph Hellwig <hch@lst.de>
-X-Provags-ID: V03:K1:fQX32YRZ7MFYqktrGadEAUXdbqRuZ4SulAjtrqxyTp0DuPF/I4S
- ANIMFHovIsglz//xUx23TR904ba3Z2MIdcPzW4CyydXRFYrXBGQj0SlMj7tAAE4EHQ1qZUt
- DQUhK/C4bmAF+6NWq4k7sVyDrvD06BSbsm5s3Bwv6juBiqKvDc9xB+yq7mPHGBQdg8AX12I
- oTfmBvio7BFg5dsFP8Tyw==
+X-Provags-ID: V03:K1:ByRBg0qTUoED5t/7wEr819rdCDHJtByTBUe1tntgCKGW8jzGtuO
+ arDiyykTCJjK4pSF0o4Hb01EYqK7ErXN6exIV5AkcT0OZB7ha3S1XS7SGS1w0tFgiIWhiVQ
+ 8/mPhhd/qr+G1EGMpNzwIANX6cy1PbjxgVremdzDTAP3oBq3mjK2DB0GNZHM2ohBYYXXS7K
+ 6d4DQ5ulF3FkyJW5hfvqg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:3v4ypQ8zeXk=:W6yi7Ju1qhjcxtjekngn8M
- tUSbvtWSmZYCXQw0V0SpoMCezGyjsY879/X4WA5KeTRDqPGTHX+bBxvnDK4AtxykFhS/yBcCz
- /v7BsAqKjbdm256T+9vKYTakd3KsoUguUpO8QAI0eYCU7wGuvPfBsNiNXUjMTCFKuZvCuBEfy
- +/Ncf4kwKV7xCHrf82pDI7GOKzLetXdAMGfbAZirutGVWRV2lK9/ou7ZIKFUDEuuptP123Nox
- W8fq5G6zovWGjROCwyrNMV5x2fq+gFh9xueJalURST9Xfxf5TZ1MFxeVIbJ4TCd6UgV4439ZV
- s5NDxjl8shqnp4aisTTOns9bzXgnLausYgEWZps/FREOo+4LtZnu3FeRuT/zw5GK5DHZXu9WV
- VCWPAjlAwJs3NdUPhfccna9/h0HHAwMZk9KMaVjlH6x2pAP3tafnJxTAzaUxM3QroWOyZOVdx
- xajoPqTAdNmxTM+zaEHANLnX1i9cJ1C9GHGHkhL4Bsa762kPK+/d1wh/JH2oOXGuc1iXPNlox
- D6SgSizKajDWfJYkeyLjr/afm2Vx/OPbsHs3ZC8FDhmjrzHFEE8Sx1m6wD+t1Hjjt2AYIgz0J
- 0pJVsTkFwHRTtCqMOeRErw5cPD3PpZn6pa9Ruy/eF6yUzxduTpSCWFiVzgBlMhRB3eFcsVjXg
- hMgkgnjJLp1PMNZ6a6Fnl0fVod3ZnY2rzI3DhMdXoU45IrmqlDUeVtKjperyipG0Omc85PZzs
- +D5fW+yBqgQSyjT2conQ8mVsfTzPu5Owh0JWbB41VM3NUeSHrOuYoLpZQlCxnks10CmsGWFJF
- 0XtJOebNOexrbpcHg5MZVIctaqJiMX/p4Izyt4h+UuKdjHAKK7MSaYFgFkHaUS/RVx+PYCA1L
- M6q9mxTAzh2zUik+hitQ==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:4DlXVzwhzRE=:Kl2ap7rgV+rWTxfHIRu26V
+ qDnOr8A3il8uOWIHstLxfahsl4GxhU95J2zOiOsb/lMSCuFAIwwUsihIAEumhHPkN+IyYHTJF
+ O/NWhAgZIv40+lFIHTadQbkfiNT2SAl/kscRPXpFdIriO/STamto8Zx19iRQDlsGsrRFXOKJ/
+ I7GjcyJnnT4bB1QsDx1Dy6G2PryNb8DdGZTDquOGiXZfJhlI+EM7CZdiBqrixOoUpBgpqlB5/
+ T3hI5Lhg2+thju6ieXO2OvrueeWhpw1lIZJ8xc4P5J4KX28RfPZCPsMa854KPjLPfEQ/fzRIM
+ 4VXDXg45HliwBhBFDGMMdAnFj3lC9mYB1BPjaFPltMpmdZeBpLnKivT+ewQYb7W3T2Uvj3eku
+ SmvLiYLBmEnLEnPOFh89SMGVf9qR0gLHzcEjqiyrLVaoGfHNLrpGN/Vhjz77xEtNwdErQe3Jf
+ rF7rbDlGAX7t2KTq4egyod3W89qviCUcND87bFZ1zHfrr/Wc3eMfQfPYk/PS73rA+lhXV8CRE
+ sJdYaqAtBdKfP2ds/gnl1VrKNwQpdGHvMcm8/Mw0CDZPsici2OuvGrYwDpbJ77KY/lGUbZeVM
+ awxopdUtizbz6yy455J003Y7BYP7QtH8Vvw1X6VwWyTJ7j7U1Lqs1qzjYZ/Ax78CJJBWC6+mw
+ 4AQJ1qJ/+4PoYoAvaPoLTncVmLGDwM0oMnJncStY7elZxvBn+2y0ymZWff40TKxCzZFfQT+zb
+ jazT5AbwZA1F4ajvHqQM7ied36QnARPp45NFjoxPjpHibORQ5RFtQzQAbrkYpMldNXb2BC0Vk
+ XyjSMbf+CmBGF+Hy15jweTlhOtk4ynYo0XWLNVC8Uu5O0JZYw+2L8zYVNgRSabBLSj0lzDpZQ
+ LPDtZVdZYjuhjjo9LbUA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_021028_062965_62E2A4E4 
-X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-CacheID: sfid-20191111_021120_761334_2CC24D6F 
+X-CRM114-Status: UNSURE (   7.86  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,7 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
+ no trust [212.227.126.135 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -109,13 +109,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Tue, Oct 29, 2019 at 7:49 AM Christoph Hellwig <hch@lst.de> wrote:
 >
-> Various architectures that use asm-generic/io.h still defined their
-> own default versions of ioremap_nocache, ioremap_wt and ioremap_wc
-> that point back to plain ioremap directly or indirectly.  Remove these
-> definitions and rely on asm-generic/io.h instead.  For this to work
-> the backup ioremap_* defintions needs to be changed to purely cpp
-> macros instea of inlines to cover for architectures like openrisc
-> that only define ioremap after including <asm-generic/io.h>.
+> A lot of architectures reuse the same simple ioremap implementation, so
+> start lifting the most simple variant to lib/ioremap.c.  It provides
+> ioremap_prot and iounmap, plus a default ioremap that uses prot_noncached,
+> although that can be overridden by asm/io.h.
 >
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
 
