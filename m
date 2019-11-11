@@ -2,69 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67D97F6EEF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 08:15:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACF27F6F00
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 08:23:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EbbWd14r7ael+ICQDw+KyBDGM25IWONBRkhH3VpITwQ=; b=tm1R/6JWVNwwX3
-	BYHmUEKVb2sSUK5mQ+SWTJ768ZbBYBK0TqQsOggJqdVBRKzFTdFtrH5hmabiZQAVWyhpRD+HU9D4M
-	GeCHALGWz568v/1SC/Y7JimS5Kg2k7FqtBXjY6RzkFl4VUk/lnuQs6dFIM0ZAUvAaM/9yr9eXlK7R
-	ZX/R/UKLLMrWgukaC9FC0eJxx9SRm9//AFYDIUILhErq/WNXX8xA5DKYtfEjjYJtyA/Y19KpIxGmY
-	kBqca28mLBHGoUSD1Ku/xfEziMSZoB52Z5rSFjURAiBsO2Tnt4RTrwqgcwJC6Jx2urANjAu0fuFAX
-	nFbtRXM/x0+QwswPBlEg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bXqd5c2qNNaaCV8pgYI4VmH4a6WUSfioz5vchVpwb38=; b=TrVVIoYQ29cJuY
+	mySoXzdUljhuLCKFIX596k5AIdR1vxpPIFDP8SbN6/7rADTy7gxIitBgs7kZtlAAyVNrHhYRpUww2
+	pKD3X71twF/a3rMm0Nz/RQfA6KcrQuw6ofgHRL5aFBAoDRsRE8JK2F/wf2q+g/SPfJGxX7mTWrAM+
+	4RDBHHudI7PU2n4GrJsNAxjlmmDqnuCIncI9m6+1NmNGQLrofMEXY36Su/e4VA3r/YQVufLo7EeTS
+	Jx9pfoHQZawIIOT8sxZ46e8UaClYJnQ+sgiebz5jSVx4aFfcQGSWhT57hP0X5YMLedcUEWWNmB2Dc
+	7vyaMkkin6ZJGxwLrEPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU3ut-0001e6-GZ; Mon, 11 Nov 2019 07:15:15 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iU42X-0004pl-EM; Mon, 11 Nov 2019 07:23:09 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU3uY-0001dT-2H
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 07:14:58 +0000
-X-UUID: 75d2374e740248eea4acb7bd3525f022-20191110
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=ZET29UGGhorDG5MNMT5K7ddGjyv/P0hiwCQLJxUqtP4=; 
- b=aPVHgi82AH2ACnByaoYvGuHl4DEhcbZrnEjU57fAmRqjgqninzURpz/dwuWPPgCoxE9ckxQsBLIrSsSMavL1YEwsxR2WAg1QpnK7edrP4wpkj9lZJHzOGVI6mCPKihhcWoLaR7g+w6EX/O14h+IQgCffE1UbovoLLf38ktA8Kjw=;
-X-UUID: 75d2374e740248eea4acb7bd3525f022-20191110
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1592935334; Sun, 10 Nov 2019 23:15:00 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 10 Nov 2019 23:14:24 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 11 Nov 2019 15:14:23 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 11 Nov 2019 15:14:22 +0800
-Message-ID: <1573456464.20611.45.camel@mtksdccf07>
-Subject: Re: [PATCH v3 1/2] kasan: detect negative size in memory operation
- function
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Date: Mon, 11 Nov 2019 15:14:24 +0800
-In-Reply-To: <34bf9c08-d2f2-a6c6-1dbe-29b1456d8284@virtuozzo.com>
-References: <20191104020519.27988-1-walter-zh.wu@mediatek.com>
- <34bf9c08-d2f2-a6c6-1dbe-29b1456d8284@virtuozzo.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1iU42P-0004pG-Ty
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 07:23:03 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAB7Mo9H020255;
+ Mon, 11 Nov 2019 01:22:50 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1573456970;
+ bh=ARjva5ASHxGvNYQYfpbT0ZrbsWnn8VD961j4MKSYmaA=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=RceyAqmcB8REiupGn3XULgm076zDGv2sdj5PuU1MR6m6D3yUXswJzj/QkorZEv6j7
+ gQoN4SkRYl0IQetYDlzmd1J4k4aCqT0PLqDSSirKRMWjyKMAfZnG2464vzuGRMAS/p
+ ekblp5gq32pBxbQewAwziaYcerO46tWp490grLRA=
+Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAB7Mor9123768;
+ Mon, 11 Nov 2019 01:22:50 -0600
+Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 11
+ Nov 2019 01:22:31 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 11 Nov 2019 01:22:47 -0600
+Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAB7MidJ062267;
+ Mon, 11 Nov 2019 01:22:45 -0600
+Subject: Re: [PATCH v4 01/15] bindings: soc: ti: add documentation for k3
+ ringacc
+To: Vinod Koul <vkoul@kernel.org>
+References: <20191101084135.14811-1-peter.ujfalusi@ti.com>
+ <20191101084135.14811-2-peter.ujfalusi@ti.com>
+ <20191111040747.GJ952516@vkoul-mobl>
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Message-ID: <0cf34ab7-97cf-06e5-b8cb-50a0846a8b97@ti.com>
+Date: Mon, 11 Nov 2019 09:24:00 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20191111040747.GJ952516@vkoul-mobl>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_231456_054794_BA427A89 
-X-CRM114-Status: GOOD (  21.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191110_232302_104438_F1852127 
+X-CRM114-Status: GOOD (  17.88  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -74,8 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,261 +93,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
- kasan-dev@googlegroups.com, linux-mm@kvack.org,
- Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, Dmitry Vyukov <dvyukov@google.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: nm@ti.com, devicetree@vger.kernel.org, grygorii.strashko@ti.com,
+ lokeshvutla@ti.com, j-keerthy@ti.com, linux-kernel@vger.kernel.org,
+ t-kristo@ti.com, tony@atomide.com, robh+dt@kernel.org, ssantosh@kernel.org,
+ dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 2019-11-09 at 01:31 +0300, Andrey Ryabinin wrote:
-> 
-> On 11/4/19 5:05 AM, Walter Wu wrote:
-> 
-> > 
-> > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
-> > index 6814d6d6a023..4ff67e2fd2db 100644
-> > --- a/mm/kasan/common.c
-> > +++ b/mm/kasan/common.c
-> > @@ -99,10 +99,14 @@ bool __kasan_check_write(const volatile void *p, unsigned int size)
-> >  }
-> >  EXPORT_SYMBOL(__kasan_check_write);
-> >  
-> > +extern bool report_enabled(void);
-> > +
-> >  #undef memset
-> >  void *memset(void *addr, int c, size_t len)
-> >  {
-> > -	check_memory_region((unsigned long)addr, len, true, _RET_IP_);
-> > +	if (report_enabled() &&
-> > +	    !check_memory_region((unsigned long)addr, len, true, _RET_IP_))
-> > +		return NULL;
-> >  
-> >  	return __memset(addr, c, len);
-> >  }
-> > @@ -110,8 +114,10 @@ void *memset(void *addr, int c, size_t len)
-> >  #undef memmove
-> >  void *memmove(void *dest, const void *src, size_t len)
-> >  {
-> > -	check_memory_region((unsigned long)src, len, false, _RET_IP_);
-> > -	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-> > +	if (report_enabled() &&
-> > +	   (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-> > +	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_)))
-> > +		return NULL;
-> >  
-> >  	return __memmove(dest, src, len);
-> >  }
-> > @@ -119,8 +125,10 @@ void *memmove(void *dest, const void *src, size_t len)
-> >  #undef memcpy
-> >  void *memcpy(void *dest, const void *src, size_t len)
-> >  {
-> > -	check_memory_region((unsigned long)src, len, false, _RET_IP_);
-> > -	check_memory_region((unsigned long)dest, len, true, _RET_IP_);
-> > +	if (report_enabled() &&
-> 
->             report_enabled() checks seems to be useless.
-> 
-
-Hi Andrey,
-
-If it doesn't have report_enable(), then it will have below the error.
-We think it should be x86 shadow memory is invalid value before KASAN
-initialized, it will have some misjudgments to do directly return when
-it detects invalid shadow value in memset()/memcpy()/memmove(). So we
-add report_enable() to avoid this happening. but we should only use the
-condition "current->kasan_depth == 0" to determine if KASAN is
-initialized. And we try it is pass at x86.
-
-
->> [    0.029609] RIP: 0010:clear_page_orig+0x12/0x40
->> [    0.030247] Code: 90 90 90 90 90 90 90 90 b9 00 02 00 00 31 c0 f3
-48 ab c3 0f 1f 44 00 00 31 c0 b9 40 00 00 00 66 0f 1f 84 00 00 00 00 00
-ff c9 <48> 89 07 48 89 47 08 48 89 47 10 48 89 47 18 48 89 47 20 48 89
-47
->> [    0.032943] RSP: 0000:ffffffffb1e07c48 EFLAGS: 00010016 ORIG_RAX:
-0000000000000002
->> [    0.034010] RAX: 0000000000000000 RBX: 0000000778000000 RCX:
-000000000000003f
->> [    0.035056] RDX: 000000000000002c RSI: 2000040000000000 RDI:
-0000000000000000
->> [    0.036068] RBP: ffffffffb1e07c78 R08: 0000000000000003 R09:
-0000000000000007
->> [    0.037066] R10: ffffffffb1e07d48 R11: fffffbfff689abdc R12:
-ffffffffb1c3c6d0
->> [    0.038057] R13: 0000000000000000 R14: 0000000000000001 R15:
-0000000000000001
->> [    0.039049] FS:  0000000000000000(0000) GS:ffffffffb1f32000(0000)
-knlGS:0000000000000000
->> [    0.040290] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
->> [    0.041134] CR2: 0000000000000000 CR3: 000000003adba000 CR4:
-00000000000606b0
->> [    0.042128] Call Trace:
->> [    0.042482]  ? alloc_low_pages+0x1b1/0x1d6
->> [    0.043062]  alloc_low_page+0x15/0x1e
->> [    0.043619]  __kernel_physical_mapping_init+0x121/0x2f9
->> [    0.044354]  kernel_physical_mapping_init+0x15/0x1e
->> [    0.045081]  init_memory_mapping+0x357/0x465
->> [    0.045684]  ? alloc_low_pages+0x1d6/0x1d6
->> [    0.046314]  ? __kasan_check_read+0x2b/0x36
->> [    0.046914]  init_mem_mapping+0x26d/0x4f2
->> [    0.047524]  ? 0xffffffffaf400000
->> [    0.047994]  setup_arch+0xa6f/0xf9d
->> [    0.048490]  start_kernel+0xdb/0x9ce
->> [    0.049001]  ? mem_encrypt_init+0x12/0x12
->> [    0.049567]  ? x86_early_init_platform_quirks+0x8f/0x124
->> [    0.050314]  ? __asan_loadN+0x31/0x3a
->> [    0.050878]  x86_64_start_reservations+0x40/0x49
->> [    0.051614]  x86_64_start_kernel+0xfb/0x105
->> [    0.052212]  secondary_startup_64+0xb6/0xc0
-
-
-
-> > +	   (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
-> > +	    !check_memory_region((unsigned long)dest, len, true, _RET_IP_)))
-> > +		return NULL;
-> >  
-> >  	return __memcpy(dest, src, len);
-> >  }
-> > diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
-> > index 616f9dd82d12..02148a317d27 100644
-> > --- a/mm/kasan/generic.c
-> > +++ b/mm/kasan/generic.c
-> > @@ -173,6 +173,11 @@ static __always_inline bool check_memory_region_inline(unsigned long addr,
-> >  	if (unlikely(size == 0))
-> >  		return true;
-> >  
-> > +	if (unlikely((long)size < 0)) {
-> 
->         if (unlikely(addr + size < addr)) {
-> 
-> > +		kasan_report(addr, size, write, ret_ip);
-> > +		return false;
-> > +	}
-> > +
-> >  	if (unlikely((void *)addr <
-> >  		kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
-> >  		kasan_report(addr, size, write, ret_ip);
-> > diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
-> > index 36c645939bc9..52a92c7db697 100644
-> > --- a/mm/kasan/generic_report.c
-> > +++ b/mm/kasan/generic_report.c
-> > @@ -107,6 +107,24 @@ static const char *get_wild_bug_type(struct kasan_access_info *info)
-> >  
-> >  const char *get_bug_type(struct kasan_access_info *info)
-> >  {
-> > +	/*
-> > +	 * If access_size is negative numbers, then it has three reasons
-> > +	 * to be defined as heap-out-of-bounds bug type.
-> > +	 * 1) Casting negative numbers to size_t would indeed turn up as
-> > +	 *    a large size_t and its value will be larger than ULONG_MAX/2,
-> > +	 *    so that this can qualify as out-of-bounds.
-> > +	 * 2) If KASAN has new bug type and user-space passes negative size,
-> > +	 *    then there are duplicate reports. So don't produce new bug type
-> > +	 *    in order to prevent duplicate reports by some systems
-> > +	 *    (e.g. syzbot) to report the same bug twice.
-> > +	 * 3) When size is negative numbers, it may be passed from user-space.
-> > +	 *    So we always print heap-out-of-bounds in order to prevent that
-> > +	 *    kernel-space and user-space have the same bug but have duplicate
-> > +	 *    reports.
-> > +	 */
->  
-> Completely fail to understand 2) and 3). 2) talks something about *NOT* producing new bug
-> type, but at the same time you code actually does that.
-> 3) says something about user-space which have nothing to do with kasan.
-> 
-about 2)
-We originally think the heap-out-of-bounds is similar to
-heap-buffer-overflow, maybe we should change the bug type to
-heap-buffer-overflow.
-
-about 3)
-Our idea is just to always print "heap-out-of-bounds" and don't
-differentiate if the size come from user-space or not.
-
-
-> > +	if ((long)info->access_size < 0)
-> 
->         if (info->access_addr + info->access_size < info->access_addr)
-> 
-> > +		return "heap-out-of-bounds";
-> > +
-> >  	if (addr_has_shadow(info->access_addr))
-> >  		return get_shadow_bug_type(info);
-> >  	return get_wild_bug_type(info);
-> > diff --git a/mm/kasan/report.c b/mm/kasan/report.c
-> > index 621782100eaa..c79e28814e8f 100644
-> > --- a/mm/kasan/report.c
-> > +++ b/mm/kasan/report.c
-> > @@ -446,7 +446,7 @@ static void print_shadow_for_address(const void *addr)
-> >  	}
-> >  }
-> >  
-> > -static bool report_enabled(void)
-> > +bool report_enabled(void)
-> >  {
-> >  	if (current->kasan_depth)
-> >  		return false;
-> > diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
-> > index 0e987c9ca052..b829535a3ad7 100644
-> > --- a/mm/kasan/tags.c
-> > +++ b/mm/kasan/tags.c
-> > @@ -86,6 +86,11 @@ bool check_memory_region(unsigned long addr, size_t size, bool write,
-> >  	if (unlikely(size == 0))
-> >  		return true;
-> >  
-> > +	if (unlikely((long)size < 0)) {
-> 
->         if (unlikely(addr + size < addr)) {
-> 
-Thanks. We will change it in v4.
-
-> > +		kasan_report(addr, size, write, ret_ip);
-> > +		return false;
-> > +	}
-> > +
-> >  	tag = get_tag((const void *)addr);
-> >  
-> >  	/*
-> > diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
-> > index 969ae08f59d7..f7ae474aef3a 100644
-> > --- a/mm/kasan/tags_report.c
-> > +++ b/mm/kasan/tags_report.c
-> > @@ -36,6 +36,24 @@
-> >  
-> >  const char *get_bug_type(struct kasan_access_info *info)
-> >  {
-> > +	/*
-> > +	 * If access_size is negative numbers, then it has three reasons
-> > +	 * to be defined as heap-out-of-bounds bug type.
-> > +	 * 1) Casting negative numbers to size_t would indeed turn up as
-> > +	 *    a large size_t and its value will be larger than ULONG_MAX/2,
-> > +	 *    so that this can qualify as out-of-bounds.
-> > +	 * 2) If KASAN has new bug type and user-space passes negative size,
-> > +	 *    then there are duplicate reports. So don't produce new bug type
-> > +	 *    in order to prevent duplicate reports by some systems
-> > +	 *    (e.g. syzbot) to report the same bug twice.
-> > +	 * 3) When size is negative numbers, it may be passed from user-space.
-> > +	 *    So we always print heap-out-of-bounds in order to prevent that
-> > +	 *    kernel-space and user-space have the same bug but have duplicate
-> > +	 *    reports.
-> > +	 */
-> > +	if ((long)info->access_size < 0)
-> 
->         if (info->access_addr + info->access_size < info->access_addr)
-> 
-Thanks. We will change it in v4.
-
-> > +		return "heap-out-of-bounds";
-> > +
-> >  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
-> >  	struct kasan_alloc_meta *alloc_meta;
-> >  	struct kmem_cache *cache;
-> > 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAxMS8xMS8yMDE5IDYuMDcsIFZpbm9kIEtvdWwgd3JvdGU6Cj4gT24gMDEtMTEtMTksIDEw
+OjQxLCBQZXRlciBVamZhbHVzaSB3cm90ZToKPj4gRnJvbTogR3J5Z29yaWkgU3RyYXNoa28gPGdy
+eWdvcmlpLnN0cmFzaGtvQHRpLmNvbT4KPj4KPj4gVGhlIFJpbmcgQWNjZWxlcmF0b3IgKFJJTkdB
+Q0Mgb3IgUkEpIHByb3ZpZGVzIGhhcmR3YXJlIGFjY2VsZXJhdGlvbiB0bwo+PiBlbmFibGUgc3Ry
+YWlnaHRmb3J3YXJkIHBhc3Npbmcgb2Ygd29yayBiZXR3ZWVuIGEgcHJvZHVjZXIgYW5kIGEgY29u
+c3VtZXIuCj4+IFRoZXJlIGlzIG9uZSBSSU5HQUNDIG1vZHVsZSBwZXIgTkFWU1Mgb24gVEkgQU02
+NXggYW5kIGo3MjFlLgo+Pgo+PiBUaGlzIHBhdGNoIGludHJvZHVjZXMgUklOR0FDQyBkZXZpY2Ug
+dHJlZSBiaW5kaW5ncy4KPj4KPj4gU2lnbmVkLW9mZi1ieTogR3J5Z29yaWkgU3RyYXNoa28gPGdy
+eWdvcmlpLnN0cmFzaGtvQHRpLmNvbT4KPj4gU2lnbmVkLW9mZi1ieTogUGV0ZXIgVWpmYWx1c2kg
+PHBldGVyLnVqZmFsdXNpQHRpLmNvbT4KPj4gUmV2aWV3ZWQtYnk6IFJvYiBIZXJyaW5nIDxyb2Jo
+QGtlcm5lbC5vcmc+Cj4+IC0tLQo+PiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3Mvc29jL3RpL2sz
+LXJpbmdhY2MudHh0IHwgNTkgKysrKysrKysrKysrKysrKysrKwo+PiAgMSBmaWxlIGNoYW5nZWQs
+IDU5IGluc2VydGlvbnMoKykKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2Rl
+dmljZXRyZWUvYmluZGluZ3Mvc29jL3RpL2szLXJpbmdhY2MudHh0Cj4+Cj4+IGRpZmYgLS1naXQg
+YS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvc29jL3RpL2szLXJpbmdhY2MudHh0
+IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3NvYy90aS9rMy1yaW5nYWNjLnR4
+dAo+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+PiBpbmRleCAwMDAwMDAwMDAwMDAuLjg2OTU0Y2Y0
+ZmE5OQo+PiAtLS0gL2Rldi9udWxsCj4+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9i
+aW5kaW5ncy9zb2MvdGkvazMtcmluZ2FjYy50eHQKPj4gQEAgLTAsMCArMSw1OSBAQAo+PiArKiBU
+ZXhhcyBJbnN0cnVtZW50cyBLMyBOYXZpZ2F0b3JTUyBSaW5nIEFjY2VsZXJhdG9yCj4+ICsKPj4g
+K1RoZSBSaW5nIEFjY2VsZXJhdG9yIChSQSkgaXMgYSBtYWNoaW5lIHdoaWNoIGNvbnZlcnRzIHJl
+YWQvd3JpdGUgYWNjZXNzZXMKPj4gK2Zyb20vdG8gYSBjb25zdGFudCBhZGRyZXNzIGludG8gY29y
+cmVzcG9uZGluZyByZWFkL3dyaXRlIGFjY2Vzc2VzIGZyb20vdG8gYQo+PiArY2lyY3VsYXIgZGF0
+YSBzdHJ1Y3R1cmUgaW4gbWVtb3J5LiBUaGUgUkEgZWxpbWluYXRlcyB0aGUgbmVlZCBmb3IgZWFj
+aCBETUEKPj4gK2NvbnRyb2xsZXIgd2hpY2ggbmVlZHMgdG8gYWNjZXNzIHJpbmcgZWxlbWVudHMg
+ZnJvbSBoYXZpbmcgdG8ga25vdyB0aGUgY3VycmVudAo+PiArc3RhdGUgb2YgdGhlIHJpbmcgKGJh
+c2UgYWRkcmVzcywgY3VycmVudCBvZmZzZXQpLiBUaGUgRE1BIGNvbnRyb2xsZXIKPj4gK3BlcmZv
+cm1zIGEgcmVhZCBvciB3cml0ZSBhY2Nlc3MgdG8gYSBzcGVjaWZpYyBhZGRyZXNzIHJhbmdlICh3
+aGljaCBtYXBzIHRvIHRoZQo+PiArc291cmNlIGludGVyZmFjZSBvbiB0aGUgUkEpIGFuZCB0aGUg
+UkEgcmVwbGFjZXMgdGhlIGFkZHJlc3MgZm9yIHRoZSB0cmFuc2FjdGlvbgo+PiArd2l0aCBhIG5l
+dyBhZGRyZXNzIHdoaWNoIGNvcnJlc3BvbmRzIHRvIHRoZSBoZWFkIG9yIHRhaWwgZWxlbWVudCBv
+ZiB0aGUgcmluZwo+PiArKGhlYWQgZm9yIHJlYWRzLCB0YWlsIGZvciB3cml0ZXMpLgo+PiArCj4+
+ICtUaGUgUmluZyBBY2NlbGVyYXRvciBpcyBhIGhhcmR3YXJlIG1vZHVsZSB0aGF0IGlzIHJlc3Bv
+bnNpYmxlIGZvciBhY2NlbGVyYXRpbmcKPj4gK21hbmFnZW1lbnQgb2YgdGhlIHBhY2tldCBxdWV1
+ZXMuIFRoZSBLMyBTb0NzIGNhbiBoYXZlIG1vcmUgdGhhbiBvbmUgUkEgaW5zdGFuY2VzCj4+ICsK
+Pj4gK1JlcXVpcmVkIHByb3BlcnRpZXM6Cj4+ICstIGNvbXBhdGlibGUJOiBNdXN0IGJlICJ0aSxh
+bTY1NC1uYXZzcy1yaW5nYWNjIjsKPj4gKy0gcmVnCQk6IFNob3VsZCBjb250YWluIHJlZ2lzdGVy
+IGxvY2F0aW9uIGFuZCBsZW5ndGggb2YgdGhlIGZvbGxvd2luZwo+PiArCQkgIG5hbWVkIHJlZ2lz
+dGVyIHJlZ2lvbnMuCj4+ICstIHJlZy1uYW1lcwk6IHNob3VsZCBiZQo+PiArCQkgICJydCIgLSBU
+aGUgUkEgUmluZyBSZWFsLXRpbWUgQ29udHJvbC9TdGF0dXMgUmVnaXN0ZXJzCj4+ICsJCSAgImZp
+Zm9zIiAtIFRoZSBSQSBRdWV1ZXMgUmVnaXN0ZXJzCj4+ICsJCSAgInByb3h5X2djZmciIC0gVGhl
+IFJBIFByb3h5IEdsb2JhbCBDb25maWcgUmVnaXN0ZXJzCj4+ICsJCSAgInByb3h5X3RhcmdldCIg
+LSBUaGUgUkEgUHJveHkgRGF0YXBhdGggUmVnaXN0ZXJzCj4+ICstIHRpLG51bS1yaW5ncwk6IE51
+bWJlciBvZiByaW5ncyBzdXBwb3J0ZWQgYnkgUkEKPj4gKy0gdGksc2NpLXJtLXJhbmdlLWdwLXJp
+bmdzIDogVEktU0NJIFJNIHN1YnR5cGUgZm9yIEdQIHJpbmcgcmFuZ2UKPj4gKy0gdGksc2NpCTog
+cGhhbmRsZSBvbiBUSS1TQ0kgY29tcGF0aWJsZSBTeXN0ZW0gY29udHJvbGxlciBub2RlCj4+ICst
+IHRpLHNjaS1kZXYtaWQJOiBUSS1TQ0kgZGV2aWNlIGlkCj4+ICstIG1zaS1wYXJlbnQJOiBwaGFu
+ZGxlIGZvciAidGksc2NpLWludGEiIGludGVycnVwdCBjb250cm9sbGVyCj4+ICsKPj4gK09wdGlv
+bmFsIHByb3BlcnRpZXM6Cj4+ICsgLS0gdGksZG1hLXJpbmctcmVzZXQtcXVpcmsgOiBlbmFibGUg
+cmluZ2FjYyAvIHVkbWEgcmluZyBzdGF0ZSBpbnRlcm9wZXJhYmlsaXR5Cj4+ICsJCSAgaXNzdWUg
+c29mdHdhcmUgdy9hCj4+ICsKPj4gK0V4YW1wbGU6Cj4+ICsKPj4gK3JpbmdhY2M6IHJpbmdhY2NA
+M2MwMDAwMDAgewo+PiArCWNvbXBhdGlibGUgPSAidGksYW02NTQtbmF2c3MtcmluZ2FjYyI7Cj4+
+ICsJcmVnID0JPDB4MCAweDNjMDAwMDAwIDB4MCAweDQwMDAwMD4sCj4+ICsJCTwweDAgMHgzODAw
+MDAwMCAweDAgMHg0MDAwMDA+LAo+PiArCQk8MHgwIDB4MzExMjAwMDAgMHgwIDB4MTAwPiwKPj4g
+KwkJPDB4MCAweDMzMDAwMDAwIDB4MCAweDQwMDAwPjsKPj4gKwlyZWctbmFtZXMgPSAicnQiLCAi
+Zmlmb3MiLAo+PiArCQkgICAgInByb3h5X2djZmciLCAicHJveHlfdGFyZ2V0IjsKPj4gKwl0aSxu
+dW0tcmluZ3MgPSA8ODE4PjsKPj4gKwl0aSxzY2ktcm0tcmFuZ2UtZ3AtcmluZ3MgPSA8MHgyPjsg
+LyogR1AgcmluZyByYW5nZSAqLwo+PiArCXRpLGRtYS1yaW5nLXJlc2V0LXF1aXJrOwo+PiArCXRp
+LHNjaSA9IDwmZG1zYz47Cj4+ICsJdGksc2NpLWRldi1pZCA9IDwxODc+Owo+IAo+IHdoeSBkbyB3
+ZSBuZWVkIGRldi1pZCBmb3I/IGRvZXNuJ3QgcGhhbmRsZSB0aGUgbGluZSBhYm92ZSBoZWxwPwoK
+dGhlIHRpLHNjaS1kZXYtaWQgaXMgdGhlIGRldmljZSBJRCBvZiB0aGUgcmluZyBhY2NlbGVyYXRv
+ciB3aGljaCBpcwpuZWVkZWQgZm9yIHRoZSByZXNvdXJjZSBtYW5hZ2VtZW50IGltcGxlbWVudGVk
+IGluIHN5c2Z3LgoKVGhpcyBpcyBiYXNlZCBvbiBob3cgdGhlIHRpLHNjaS1pbnRhIGJpbmRpbmcg
+aGFzIGRlZmluZWQgaXQ6CkRvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9pbnRlcnJ1
+cHQtY29udHJvbGxlci90aSxzY2ktaW50YS50eHQKCkknbGwgdXBkYXRlIHRoZSBkb2N1bWVudCB0
+byBtYWtlIGl0IGNsZWFyLgoKLSBQw6l0ZXIKClRleGFzIEluc3RydW1lbnRzIEZpbmxhbmQgT3ks
+IFBvcmtrYWxhbmthdHUgMjIsIDAwMTgwIEhlbHNpbmtpLgpZLXR1bm51cy9CdXNpbmVzcyBJRDog
+MDYxNTUyMS00LiBLb3RpcGFpa2thL0RvbWljaWxlOiBIZWxzaW5raQoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
