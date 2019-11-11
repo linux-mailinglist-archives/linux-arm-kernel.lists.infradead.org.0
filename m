@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AE96F71EF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 11:29:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CDCAF7203
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 11:30:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IcJs+wVB55O2X1KEd27nrB8b1/k6O98zZVonsnvVIPE=; b=qNFzSu2lGQFaka
-	jB/iwjZPaPrvJLOBEYBM/zwCdzqZxC240KvvVhaR/kPVXhWteWtVBbdGYEgwKcsM6BXQy3rR5jelm
-	CD4SRYNC2sHn45ycSBxFpAG88PVAe3ZZOuPltF0t1ncC2nJI0+gL/Tzan7K2SSIZokcqHDqW9fpO5
-	1jhINFd8qhHsZfI0GC71kNuumOk3I7A7i3HsbUQgK7T8IN16UlChy0rrCWNrXQ+vf1vH1B97UFtgW
-	zvFkmrEAXsssNIHq8yM5gfIghNesr8P28ouxO+2eoYZkeRehZTVUCRwTmiwcdHYZ37RnAIFwmtg5k
-	IszShDTXkKGz2hgrXPkQ==;
+	List-Owner; bh=Xrh5cA1y0gCJmAE/SFrTXN+rfMuaJ7UBpeN3tU95dnA=; b=uySdXKkGgd6MgJ
+	n5DL4RbWeLQkcldFotqLOD0lxhuiZnMnfeWKjuXbePl9Xf1eZSZYKRmsbX/rt1jFD9Xjhum0MeRKt
+	kN5HD4PNjkw9A8afSbDtb65cDFwJc5i7xSnyfaGmWnWAR8f33Lr5WiJaJxtfMAtVbHHxnzv8SsO9G
+	Pc8Uy16O7ehiCDFl6fOBj2w3ToDI0EmsXa8zck/pXvzP4vunzBVGwzxWahJGXcqshu6bNkDvSYO3N
+	K7aquMp8a1e2kD/HbhcNB/O34/h3m89EcOZ9CbwVwPEhVqAU9YhJEUsp00VauKqk902p/M1zW3ay3
+	SfZgeRZ2tyebLXIibfIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU6wT-0002eh-UD; Mon, 11 Nov 2019 10:29:05 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1iU6x8-0002yF-FE; Mon, 11 Nov 2019 10:29:46 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU6vD-0002Mi-Ug; Mon, 11 Nov 2019 10:27:53 +0000
-Received: from mail-qk1-f180.google.com ([209.85.222.180]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MAwsT-1iaPNJ4BL7-00BMOw; Mon, 11 Nov 2019 11:27:45 +0100
-Received: by mail-qk1-f180.google.com with SMTP id m4so10676129qke.9;
- Mon, 11 Nov 2019 02:27:44 -0800 (PST)
-X-Gm-Message-State: APjAAAVOcaIXowaYWV26OnNq7OfHeOnLV2fRtEIOO0GSew5a98ZTMHYh
- mE+WuWLHN4Sxip34FD94sW/A42YP4l0l/bAyvOY=
-X-Google-Smtp-Source: APXvYqyGcZLqyAcsV/LYDmC4LmwcrdvTKQ+w9XPWbssEa676VSOvhgPE+TuvbqMkbxFWBQMzT6WHPBHBJZYF9AVQbpE=
-X-Received: by 2002:a37:4f0a:: with SMTP id d10mr9711437qkb.286.1573468063366; 
- Mon, 11 Nov 2019 02:27:43 -0800 (PST)
+ id 1iU6w2-0002df-Tg
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 10:28:45 +0000
+X-UUID: 2a6eb4d841ab4182952dc5b1be7c4db0-20191111
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=Uo09G+Mt+uFPoRjbYnLMUPPU/rQnCSKkFsV6CT6/YM4=; 
+ b=X3BPNePRXGKJ657K5HiUcPOU82BEKqVSrq7Hu6msvac7UrlfTeNedap83FY7Avn4sYInMms1z0KpPSkyQd46wIuj96LQMYlFVIJKZeJOzXq2w4NFiU38RWCXnMccoBMHcK8n+coiCVGHXjjurFzGa//0EnlnHO4I3sAatmGmUf0=;
+X-UUID: 2a6eb4d841ab4182952dc5b1be7c4db0-20191111
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1636575857; Mon, 11 Nov 2019 02:29:00 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 11 Nov 2019 02:28:32 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 11 Nov 2019 18:28:31 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 11 Nov 2019 18:28:30 +0800
+Message-ID: <1573468113.20611.61.camel@mtksdccf07>
+Subject: Re: [PATCH v3 1/2] kasan: detect negative size in memory operation
+ function
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>
+Date: Mon, 11 Nov 2019 18:28:33 +0800
+In-Reply-To: <CACT4Y+bxWCF0WCkVxi+Qq3pztAXf2g-eBG5oexmQsQ65xrmiRw@mail.gmail.com>
+References: <20191104020519.27988-1-walter-zh.wu@mediatek.com>
+ <34bf9c08-d2f2-a6c6-1dbe-29b1456d8284@virtuozzo.com>
+ <1573456464.20611.45.camel@mtksdccf07>
+ <757f0296-7fa0-0e5e-8490-3eca52da41ad@virtuozzo.com>
+ <1573467150.20611.57.camel@mtksdccf07>
+ <CACT4Y+bxWCF0WCkVxi+Qq3pztAXf2g-eBG5oexmQsQ65xrmiRw@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-References: <20191029064834.23438-1-hch@lst.de>
- <20191029064834.23438-11-hch@lst.de>
- <CAK8P3a2o4R+E2hTrHrmNy7K1ki3_98aWE5a-fjkQ_NWW=xd_gQ@mail.gmail.com>
- <20191111101531.GA12294@lst.de>
-In-Reply-To: <20191111101531.GA12294@lst.de>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 11 Nov 2019 11:27:27 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a0rTvfPP2LUMw8EC0xz5gfZP5+NUkoaZBJrtYYfr6YRig@mail.gmail.com>
-Message-ID: <CAK8P3a0rTvfPP2LUMw8EC0xz5gfZP5+NUkoaZBJrtYYfr6YRig@mail.gmail.com>
-Subject: Re: [PATCH 10/21] asm-generic: ioremap_uc should behave the same with
- and without MMU
-To: Christoph Hellwig <hch@lst.de>
-X-Provags-ID: V03:K1:g9LlT8Z1JHlzLB6SNSfcO5sWp/l6U2N6RVGHBkyacWeU05aoYIN
- +hFxshQYDzrPC6c18BQZJc3mfAQTSf6iou6ij8jkt0ce+cDXyArfGGaE6XP6nLN/rvoq+TE
- mrEWISxLedZq5md78FxyL7YlCAtM4ljyuq3ZGLXtLTCOvAaoa5FyPWZDSLRuk4SG7Tvn3rh
- gITCvRxDQjCsF4+8CP09g==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Ra7eKRFULgs=:181SuxpQ2oHpLjUgLQ4Ikm
- OJ7kslICPvSPsSnnTLGheLfQwX5N96Rz1y69ZV1rtdkrUYppn2dw81yioagcbX0M9oXcxptFb
- gygm4EQ62RCWfRmIenWLs2MbL6pybRE2cdMCNntZ8E/JGFIIQkAhTNoUpDlJROPNrZgLo9Qwd
- +hEKo4TfaVkItYcOxBN/nTgZWv7qLd9lBJ4f50+5/FM7Et6dOcFtEVm+Q7z/2lq783K4tWF/r
- 5L8K1oKhGqTNU7/k9DonTPwJ7HPSgOEessSxeFHd/BNqDJ8o+jWEVP6LGhJguLrx+Fxf6EXS3
- kWS2vLPwmC5pWMo7z9mJM3CTSzx35XoQOzxrE1hqjoeOwG5p6VTDeUFXWlMqEpqqzHlSii3Zz
- CrI0VOb02ijsDx6BrKUJaJuBZ0d2BHC5Tyax+LDjSxknYxp/lu63IRnTy2bM/uIipPZnqZ5hk
- CMpAfUD/1RsgshLrXCqG8A0yj+src+zL4k6AVHIDcuKoneQaNjFXkLA2AgjOwg9Wb9v0roR3s
- 3hRCPBKTUl++7OPGBw14iPl3EgqXrcCGgg5r/6Kv3f7n+b3OjbY/lEwSKlHmYEc2mP0cJMhRo
- qi3918i4z4N3AeTuIe2jLG1qeF6UKMe2l70dxCDL6X7YMPryIje6dmPmvUG/chdsLZCh5udql
- 3rtiVI0K0DI/uhUIferGIvR7dzHdZNjctrWroMej4uhqmxa/aTbdYwGsyXNTXCYoOWQiKHWk8
- 6LodxYsLgI9YuRBxvfh5fFSWDumV/EyAtXb5hl/F6cbGYTPVkKx1G1de69gou5/jvVpsDixZA
- LmRgz3FeqARcuWLO3wQu7mtbUo4RymSgy9fC9GsWnvOfE/Wt84TAs5+dAo1xYS1S8PTOeakuA
- rVDLtiTX1KikAag1X1Ug==
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_022748_290080_0BBA46D6 
-X-CRM114-Status: GOOD (  15.84  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191111_022838_979607_999F3CA3 
+X-CRM114-Status: GOOD (  26.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.130 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,74 +91,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Guo Ren <guoren@kernel.org>, sparclinux <sparclinux@vger.kernel.org>,
- linux-riscv@lists.infradead.org, Vincent Chen <deanbo422@gmail.com>,
- linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>,
- "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
- the arch/x86 maintainers <x86@kernel.org>,
- "open list:SYNOPSYS ARC ARCHITECTURE" <linux-snps-arc@lists.infradead.org>,
- linux-xtensa@linux-xtensa.org, linux-m68k <linux-m68k@lists.linux-m68k.org>,
- openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
- "moderated list:NIOS2 ARCHITECTURE" <nios2-dev@lists.rocketboards.org>,
- Guan Xuetao <gxt@pku.edu.cn>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
- linux-mips@vger.kernel.org, alpha <linux-alpha@vger.kernel.org>,
- linux-mtd <linux-mtd@lists.infradead.org>
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
+ Linux-MM <linux-mm@kvack.org>, Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 11, 2019 at 11:15 AM Christoph Hellwig <hch@lst.de> wrote:
->
-> On Mon, Nov 11, 2019 at 11:09:05AM +0100, Arnd Bergmann wrote:
-> > Maybe we could move the definition into the atyfb driver itself?
+On Mon, 2019-11-11 at 11:17 +0100, Dmitry Vyukov wrote:
+> On Mon, Nov 11, 2019 at 11:12 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > On 11/11/19 10:14 AM, Walter Wu wrote:
+> > > > On Sat, 2019-11-09 at 01:31 +0300, Andrey Ryabinin wrote:
+> > > >>
+> > > >> On 11/4/19 5:05 AM, Walter Wu wrote:
+> > > >>
+> > > >>>
+> > > >>> diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> > > >>> index 6814d6d6a023..4ff67e2fd2db 100644
+> > > >>> --- a/mm/kasan/common.c
+> > > >>> +++ b/mm/kasan/common.c
+> > > >>> @@ -99,10 +99,14 @@ bool __kasan_check_write(const volatile void *p, unsigned int size)
+> > > >>>  }
+> > > >>>  EXPORT_SYMBOL(__kasan_check_write);
+> > > >>>
+> > > >>> +extern bool report_enabled(void);
+> > > >>> +
+> > > >>>  #undef memset
+> > > >>>  void *memset(void *addr, int c, size_t len)
+> > > >>>  {
+> > > >>> - check_memory_region((unsigned long)addr, len, true, _RET_IP_);
+> > > >>> + if (report_enabled() &&
+> > > >>> +     !check_memory_region((unsigned long)addr, len, true, _RET_IP_))
+> > > >>> +         return NULL;
+> > > >>>
+> > > >>>   return __memset(addr, c, len);
+> > > >>>  }
+> > > >>> @@ -110,8 +114,10 @@ void *memset(void *addr, int c, size_t len)
+> > > >>>  #undef memmove
+> > > >>>  void *memmove(void *dest, const void *src, size_t len)
+> > > >>>  {
+> > > >>> - check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > > >>> - check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > > >>> + if (report_enabled() &&
+> > > >>> +    (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
+> > > >>> +     !check_memory_region((unsigned long)dest, len, true, _RET_IP_)))
+> > > >>> +         return NULL;
+> > > >>>
+> > > >>>   return __memmove(dest, src, len);
+> > > >>>  }
+> > > >>> @@ -119,8 +125,10 @@ void *memmove(void *dest, const void *src, size_t len)
+> > > >>>  #undef memcpy
+> > > >>>  void *memcpy(void *dest, const void *src, size_t len)
+> > > >>>  {
+> > > >>> - check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > > >>> - check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > > >>> + if (report_enabled() &&
+> > > >>
+> > > >>             report_enabled() checks seems to be useless.
+> > > >>
+> > > >
+> > > > Hi Andrey,
+> > > >
+> > > > If it doesn't have report_enable(), then it will have below the error.
+> > > > We think it should be x86 shadow memory is invalid value before KASAN
+> > > > initialized, it will have some misjudgments to do directly return when
+> > > > it detects invalid shadow value in memset()/memcpy()/memmove(). So we
+> > > > add report_enable() to avoid this happening. but we should only use the
+> > > > condition "current->kasan_depth == 0" to determine if KASAN is
+> > > > initialized. And we try it is pass at x86.
+> > > >
+> > >
+> > > Ok, I see. It just means that check_memory_region() return incorrect result in early stages of boot.
+> > > So, the right way to deal with this would be making kasan_report() to return bool ("false" if no report and "true" if reported)
+> > > and propagate this return value up to check_memory_region().
+> > >
+> > This changes in v4.
 > >
-> > As I understand it, the difference between ioremap()/ioremap_nocache()
-> > and ioremap_uc() only exists on pre-PAT x86-32 systems (i.e. 486, P5,
-> > Ppro, PII, K6, VIA C3), while on more modern systems (all non-x86,
-> > PentiumIII, Athlon, VIA C7)  those three are meant to be synonyms
-> > anyway.
->
-> That's not how I understood it.  Based on the code and the UC-
-> explanation ioremap_uc always overrides the MTRR, which can still
-> be present on more modern x86 systems.
+> > >
+> > > >>> diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
+> > > >>> index 36c645939bc9..52a92c7db697 100644
+> > > >>> --- a/mm/kasan/generic_report.c
+> > > >>> +++ b/mm/kasan/generic_report.c
+> > > >>> @@ -107,6 +107,24 @@ static const char *get_wild_bug_type(struct kasan_access_info *info)
+> > > >>>
+> > > >>>  const char *get_bug_type(struct kasan_access_info *info)
+> > > >>>  {
+> > > >>> + /*
+> > > >>> +  * If access_size is negative numbers, then it has three reasons
+> > > >>> +  * to be defined as heap-out-of-bounds bug type.
+> > > >>> +  * 1) Casting negative numbers to size_t would indeed turn up as
+> > > >>> +  *    a large size_t and its value will be larger than ULONG_MAX/2,
+> > > >>> +  *    so that this can qualify as out-of-bounds.
+> > > >>> +  * 2) If KASAN has new bug type and user-space passes negative size,
+> > > >>> +  *    then there are duplicate reports. So don't produce new bug type
+> > > >>> +  *    in order to prevent duplicate reports by some systems
+> > > >>> +  *    (e.g. syzbot) to report the same bug twice.
+> > > >>> +  * 3) When size is negative numbers, it may be passed from user-space.
+> > > >>> +  *    So we always print heap-out-of-bounds in order to prevent that
+> > > >>> +  *    kernel-space and user-space have the same bug but have duplicate
+> > > >>> +  *    reports.
+> > > >>> +  */
+> > > >>
+> > > >> Completely fail to understand 2) and 3). 2) talks something about *NOT* producing new bug
+> > > >> type, but at the same time you code actually does that.
+> > > >> 3) says something about user-space which have nothing to do with kasan.
+> > > >>
+> > > > about 2)
+> > > > We originally think the heap-out-of-bounds is similar to
+> > > > heap-buffer-overflow, maybe we should change the bug type to
+> > > > heap-buffer-overflow.
+> > >
+> > > There is no "heap-buffer-overflow".
+> > >
+> > If I remember correctly, "heap-buffer-overflow" is one of existing bug
+> > type in user-space? Or you want to expect to see an existing bug type in
+> > kernel space?
+> 
+> Existing bug in KASAN.
+> KASAN and ASAN bugs will never match regardless of what we do. They
+> are simply in completely different code. So aligning titles between
+> kernel and userspace will not lead to any better deduplication.
 
-As I understand, the point is that on PAT-enabled systems, the
-normal ioremap() *also* overrides the MTRR, citing from
-Documentation/x86/pat.rst:
-
-  ====  =======  ===  =========================  =====================
-  MTRR  Non-PAT  PAT  Linux ioremap value        Effective memory type
-  ====  =======  ===  =========================  =====================
-        PAT                                        Non-PAT |  PAT
-        |PCD                                               |
-        ||PWT                                              |
-        |||                                                |
-  WC    000      WB   _PAGE_CACHE_MODE_WB             WC   |   WC
-  WC    001      WC   _PAGE_CACHE_MODE_WC             WC*  |   WC
-  WC    010      UC-  _PAGE_CACHE_MODE_UC_MINUS       WC*  |   UC
-  WC    011      UC   _PAGE_CACHE_MODE_UC             UC   |   UC
-  ====  =======  ===  =========================  =====================
-
-> In fact I remember a patch
-> floating around very recently adding another ioremap_uc caller in
-> some Atom platform device driver that works around buggy MTRR
-> tables.  Also this series actually adds a new override and a few
-> callers for ia64 platform code, which works very similar to x86
-> based on the comments in the code.  That being said I'm not sure
-> the callers in ia64 are really required, but it was the safest thing
-> to do as part of this cleanup.
-
-Ok, fair enough. Let's just go with your version for now, if only to not
-hold your series up more. I'd still suggest we change atyfb to only
-use ioremap_uc() on i386 and maybe ia64. I can send a patch for that.
-
-      Arnd
-
+Ok, it seems like to print "out-of-bounds". Simple and easy to know it.
+Thanks Dmitry.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
