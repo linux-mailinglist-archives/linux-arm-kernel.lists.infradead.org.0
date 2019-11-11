@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46454F6C4D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 02:30:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2725AF6C4F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 02:31:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=wkue6FtVuF7TdNbHyRiv9eVv9qusfdu+YFHYgrr6EN0=; b=rUa
-	8lgDDYzu4YqUx5deD+YVdKilfcBg4A7v9drgok3+oHK4Icpux1sgMOm+V2//9xFruatM7yZ8DEt39
-	2e9ml8e8Uz2r2cHco773hDGTulzdLxiCc9joglqkYeJtlFDl/rcNL4fCmgshJJpGtTTxZHieWvHsu
-	KSkt4jUZNglDU+fdYQRfmvNTF4CHmNcj2DUWyfggs+Bci8lIt//ixRP6F8YIBtylhJSOLXhp0lX/v
-	LAZWKN2W8+AOCcZqdXqESlEG4FnHqvqB2ChiI7CwfRkNurqc1ZrWGYUBNyL4ph23iMg4SUdkQFrZz
-	VpYMUSbLbLzP64l4Z1xzkyt7iqatneQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=yuZKHeykZgZKd4OWK1EyJrCh49yk5NmgNwfvNzbJnZI=; b=sI9xTqjJ+pq0z/cE/SD4fuVbD+
+	7GDmpvC2/JvfSIGUUPegtw6lLjSDiJorw/PgI/Gp2n0lYlaZSewBnLVC+EjBd13V4rgV4KgcB2aHa
+	M4uUSlVNrXRy17a7HH/thBELEmjHt8SN9V1UopOgIuwkZj94sGDExPiHgA51ugqxOqFpas0afIG12
+	9hozI9ycCwMnOYWsDoy/p9IE7Wj40aWZXw3L3rjYqz7uz2zHavcoFv3HjQsFLa0mMx3zn9sFvi527
+	nTwcb9CGekvxOt82lFpB544roYfnQqXATYyM2U0eiUZyiySrmd3/U17mjZGQEI/vMN2RoQUqbfqVb
+	qJZkvgJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTyXd-00037c-GV; Mon, 11 Nov 2019 01:30:53 +0000
+	id 1iTyXx-0003F4-07; Mon, 11 Nov 2019 01:31:13 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTyXV-00031J-D0
+ id 1iTyXV-00031M-D1
  for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 01:30:46 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 450BB2008F3;
- Mon, 11 Nov 2019 02:30:41 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 746482008FB;
+ Mon, 11 Nov 2019 02:30:42 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 34B1A2002C8;
- Mon, 11 Nov 2019 02:30:35 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 33A242008F1;
+ Mon, 11 Nov 2019 02:30:36 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 7827A402A9;
- Mon, 11 Nov 2019 09:30:27 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id D6A79402C7;
+ Mon, 11 Nov 2019 09:30:28 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -41,15 +42,16 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  marcel.ziswiler@toradex.com, sebastien.szymanski@armadeus.com,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 1/4] ARM: dts: imx6sll: Update usdhc fallback compatible to
- support HS400 mode
-Date: Mon, 11 Nov 2019 09:28:49 +0800
-Message-Id: <1573435732-30361-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 2/4] ARM: dts: imx6sll-evk: Add eMMC support
+Date: Mon, 11 Nov 2019 09:28:50 +0800
+Message-Id: <1573435732-30361-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1573435732-30361-1-git-send-email-Anson.Huang@nxp.com>
+References: <1573435732-30361-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_173045_579418_DBEB6326 
-X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-CacheID: sfid-20191110_173045_716327_A0E9AAC4 
+X-CRM114-Status: UNSURE (   8.60  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,49 +80,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The i.MX6SLL SoC can support HS400 mode, hence "fsl,imx7d-usdhc"
-should be used as compatible string to support HS400 mode by
-default.
+i.MX6SLL EVK board has eMMC connected on uSDHC2, add support
+for it.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-Changes since V1:
-	- improve commit message, no code change.
+No changes.
 ---
- arch/arm/boot/dts/imx6sll.dtsi | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ arch/arm/boot/dts/imx6sll-evk.dts | 67 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 67 insertions(+)
 
-diff --git a/arch/arm/boot/dts/imx6sll.dtsi b/arch/arm/boot/dts/imx6sll.dtsi
-index 85aa8bb..1c8101f 100644
---- a/arch/arm/boot/dts/imx6sll.dtsi
-+++ b/arch/arm/boot/dts/imx6sll.dtsi
-@@ -698,7 +698,7 @@
- 			};
+diff --git a/arch/arm/boot/dts/imx6sll-evk.dts b/arch/arm/boot/dts/imx6sll-evk.dts
+index 3e1d32f..29b284c 100644
+--- a/arch/arm/boot/dts/imx6sll-evk.dts
++++ b/arch/arm/boot/dts/imx6sll-evk.dts
+@@ -109,6 +109,14 @@
+ 		enable-active-high;
+ 	};
  
- 			usdhc1: mmc@2190000 {
--				compatible = "fsl,imx6sll-usdhc", "fsl,imx6sx-usdhc";
-+				compatible = "fsl,imx6sll-usdhc", "fsl,imx7d-usdhc";
- 				reg = <0x02190000 0x4000>;
- 				interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
- 				clocks = <&clks IMX6SLL_CLK_USDHC1>,
-@@ -712,7 +712,7 @@
- 			};
++	reg_sd2_vmmc: regulator-sd2-vmmc {
++		compatible = "regulator-fixed";
++		regulator-name = "eMMC-VCCQ";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++		regulator-boot-on;
++	};
++
+ 	reg_sd3_vmmc: regulator-sd3-vmmc {
+ 		compatible = "regulator-fixed";
+ 		pinctrl-names = "default";
+@@ -314,6 +322,17 @@
+ 	status = "okay";
+ };
  
- 			usdhc2: mmc@2194000 {
--				compatible = "fsl,imx6sll-usdhc", "fsl,imx6sx-usdhc";
-+				compatible = "fsl,imx6sll-usdhc", "fsl,imx7d-usdhc";
- 				reg = <0x02194000 0x4000>;
- 				interrupts = <GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
- 				clocks = <&clks IMX6SLL_CLK_USDHC2>,
-@@ -726,7 +726,7 @@
- 			};
++&usdhc2 {
++	pinctrl-names = "default", "state_100mhz", "state_200mhz";
++	pinctrl-0 = <&pinctrl_usdhc2>;
++	pinctrl-1 = <&pinctrl_usdhc2_100mhz>;
++	pinctrl-2 = <&pinctrl_usdhc2_200mhz>;
++	vqmmc-supply = <&reg_sd2_vmmc>;
++	bus-width = <8>;
++	no-removable;
++	status = "okay";
++};
++
+ &usdhc3 {
+ 	pinctrl-names = "default", "state_100mhz", "state_200mhz";
+ 	pinctrl-0 = <&pinctrl_usdhc3>;
+@@ -403,6 +422,54 @@
+ 		>;
+ 	};
  
- 			usdhc3: mmc@2198000 {
--				compatible = "fsl,imx6sll-usdhc", "fsl,imx6sx-usdhc";
-+				compatible = "fsl,imx6sll-usdhc", "fsl,imx7d-usdhc";
- 				reg = <0x02198000 0x4000>;
- 				interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
- 				clocks = <&clks IMX6SLL_CLK_USDHC3>,
++	pinctrl_usdhc2: usdhc2grp {
++		fsl,pins = <
++			MX6SLL_PAD_SD2_CMD__SD2_CMD		0x17059
++			MX6SLL_PAD_SD2_CLK__SD2_CLK		0x13059
++			MX6SLL_PAD_SD2_DATA0__SD2_DATA0		0x17059
++			MX6SLL_PAD_SD2_DATA1__SD2_DATA1		0x17059
++			MX6SLL_PAD_SD2_DATA2__SD2_DATA2		0x17059
++			MX6SLL_PAD_SD2_DATA3__SD2_DATA3		0x17059
++			MX6SLL_PAD_SD2_DATA4__SD2_DATA4		0x17059
++			MX6SLL_PAD_SD2_DATA5__SD2_DATA5		0x17059
++			MX6SLL_PAD_SD2_DATA6__SD2_DATA6		0x17059
++			MX6SLL_PAD_SD2_DATA7__SD2_DATA7		0x17059
++			MX6SLL_PAD_GPIO4_IO21__SD2_STROBE	0x413059
++		>;
++	};
++
++	pinctrl_usdhc2_100mhz: usdhc2grp_100mhz {
++		fsl,pins = <
++			MX6SLL_PAD_SD2_CMD__SD2_CMD		0x170b9
++			MX6SLL_PAD_SD2_CLK__SD2_CLK		0x130b9
++			MX6SLL_PAD_SD2_DATA0__SD2_DATA0		0x170b9
++			MX6SLL_PAD_SD2_DATA1__SD2_DATA1		0x170b9
++			MX6SLL_PAD_SD2_DATA2__SD2_DATA2		0x170b9
++			MX6SLL_PAD_SD2_DATA3__SD2_DATA3		0x170b9
++			MX6SLL_PAD_SD2_DATA4__SD2_DATA4		0x170b9
++			MX6SLL_PAD_SD2_DATA5__SD2_DATA5		0x170b9
++			MX6SLL_PAD_SD2_DATA6__SD2_DATA6		0x170b9
++			MX6SLL_PAD_SD2_DATA7__SD2_DATA7		0x170b9
++			MX6SLL_PAD_GPIO4_IO21__SD2_STROBE	0x4130b9
++		>;
++	};
++
++	pinctrl_usdhc2_200mhz: usdhc2grp_200mhz {
++		fsl,pins = <
++			MX6SLL_PAD_SD2_CMD__SD2_CMD		0x170f9
++			MX6SLL_PAD_SD2_CLK__SD2_CLK		0x130f9
++			MX6SLL_PAD_SD2_DATA0__SD2_DATA0		0x170f9
++			MX6SLL_PAD_SD2_DATA1__SD2_DATA1		0x170f9
++			MX6SLL_PAD_SD2_DATA2__SD2_DATA2		0x170f9
++			MX6SLL_PAD_SD2_DATA3__SD2_DATA3		0x170f9
++			MX6SLL_PAD_SD2_DATA4__SD2_DATA4		0x170f9
++			MX6SLL_PAD_SD2_DATA5__SD2_DATA5		0x170f9
++			MX6SLL_PAD_SD2_DATA6__SD2_DATA6		0x170f9
++			MX6SLL_PAD_SD2_DATA7__SD2_DATA7		0x170f9
++			MX6SLL_PAD_GPIO4_IO21__SD2_STROBE	0x4130f9
++		>;
++	};
++
+ 	pinctrl_usbotg1: usbotg1grp {
+ 		fsl,pins = <
+ 			MX6SLL_PAD_EPDC_PWR_COM__USB_OTG1_ID 0x17059
 -- 
 2.7.4
 
