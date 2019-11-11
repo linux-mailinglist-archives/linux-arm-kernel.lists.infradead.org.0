@@ -2,89 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6338F75EF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 15:05:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E420F7618
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 15:12:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/NpEw+Ar1O7D+vtBRms2jIFa9qzqyPsguQR56UZKIIw=; b=CmiYf15DAfTXs0
-	8d5zfa/tnNVbgwYfO2x7dKRCGQd5ObgGk6ZoEsdxr65UzqiwEmb+xHsmH8Utaw8FK4laU2GnDMpuX
-	WfkEaCQCXSOeyXOGZ4yR1gcVP7CkiROHL7jp+Ka50Oq8LOXHrP3UT2rFwzr2eJ0sJuvn1r8CB3BiF
-	qpHOq+vaFF6dnfbfrrFag1qKLHc7TbF7vrxU9JEPYWf+UF4+7G0Pwby78aTMSLwL33Vv4BLwB87nQ
-	WHOdS3FO5W/7XYboMRSMPqRQEguSCBlU/owc6yEsSwSZuT2YeSx7yIdGWPyN4tbbQhZERAbDa54YV
-	QYe93h5FcW9T4dRnd6VQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Dfiyi7O8BTHpPGvcwB9mAjsmMeohmtPv86k6TvIidl0=; b=qXla8GcLDK9yUg
+	2oUJkN+zW6J5EraCktbazuVq31/2oR33OGcmRDqdsdkAnALz915k66pGL7sDSA7Lex/KPpHxfN60W
+	COhJO7UgVb39ecgJCe371iDyakFBX95UJocj5IbFJ6MP2u1fOAH6pnSFiyCpE4oh4TTXo6MaH3/oq
+	gwf1eGjbuqsd9icQ18r9QuHcLv95aBgp5Jofir9eLObilUZ3Ch9S0vfHLJyHro35tBKaIcOaDnGy/
+	5ANOEiOaStOEX6o+TeLt1U9pGqpd5N2IEm5yeswLGRUT8RGPvdnqMB8O6VavnQnTkfXKNauPbKTV2
+	cM7ybyWb6MgaOLj+yn4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUAKE-0001ce-Cy; Mon, 11 Nov 2019 14:05:50 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUAK4-0001as-UL; Mon, 11 Nov 2019 14:05:42 +0000
-Received: by mail-ot1-x342.google.com with SMTP id n23so11290797otr.13;
- Mon, 11 Nov 2019 06:05:39 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=hkWWZbsPhAe/B+lg1NTrPkrZfdIPdtnDPLZ91eTI/hg=;
- b=lwVw/MSbrrSR96HQiTRGjp4qyBLP9BUVvOJ7zUjQCJ+Bl51zdrH0ZeOYPfQadmnrQv
- LC5pnKVzGGUcbXy6983YIevobRGuUKI8LfdKq87vJVZ+tQLGuXqUNjr6WV+SKGRZeNG5
- SAUmQffDJJdfo3GY1YHH0dmHFc7/IFMLCI++HYj0MOvgYZwynSc8XJ58ylbJ0pq+J+3d
- tw4DkYPn71ln2qqUxDBP/pCGu2ZTb0zVjMcLZjiGi/NSbiSK3er1e+4bLrJoUjs79t5Q
- XRTuWN3LbqzYx5ByPRiLLGnmUAIv/qwtEknadUJmdAlv4XPahOJY0XdT9crvnySe5hmr
- KWJQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=hkWWZbsPhAe/B+lg1NTrPkrZfdIPdtnDPLZ91eTI/hg=;
- b=lHbJZyTKNEjbN9dPt2mTtf0smfnYANBwK07HoMJCFgWAj8zsVCGDD7NjwczuwRFN1U
- YXggJltNcknOU9XOyZvq1+HwpkhhtpLGRqFkuHCpS+1DIKQnqVPKJYSt+y6ATfAXCcKa
- lkfY7UlL4DVm1dmtaL4Y4JTq0UJnASth7VT2KcmCenFf6xm/IaxtsWF+ET7X8KpBbXcE
- SDME+suKTjUCBbuW11IvW0QPnGXapbaVd8WtMXjfJZKEo/5FiZjICO1cy5FreHBqr6bG
- 80ron4XCuudHA2okpxwceZ4fLD14vHXVcykH78+kOwzUUwQJV6igFoG8HJIG/u5yTobr
- T0RA==
-X-Gm-Message-State: APjAAAVF0BFnrmn74SgbkHWBuy78CeUeFtzCdESt8cNFAGvHHoZSxTQM
- ceH0wZGMmIy9VXic94eYWyefVooVnCcsK0evPaA=
-X-Google-Smtp-Source: APXvYqwKDHSLwIppJngXejpzqHPV4YxZhwzU8jDUQEbttYpesGP+AXtsC0jFnvcDk5ZDCNQNKmxcyJVC4p07NzbkNRQ=
-X-Received: by 2002:a05:6830:3:: with SMTP id c3mr8817650otp.15.1573481138383; 
- Mon, 11 Nov 2019 06:05:38 -0800 (PST)
+	id 1iUAQo-0003ll-9Z; Mon, 11 Nov 2019 14:12:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUAQb-0003iy-P4
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 14:12:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C4EB831B;
+ Mon, 11 Nov 2019 06:12:22 -0800 (PST)
+Received: from e112269-lin.cambridge.arm.com (e112269-lin.cambridge.arm.com
+ [10.1.194.43])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6DDD83F534;
+ Mon, 11 Nov 2019 06:12:21 -0800 (PST)
+From: Steven Price <steven.price@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Will Deacon <will@kernel.org>
+Subject: [PATCH 0/2] arm64: Workaround for Cortex-A55 erratum 1530923
+Date: Mon, 11 Nov 2019 14:11:55 +0000
+Message-Id: <20191111141157.55062-1-steven.price@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20191014141718.22603-1-narmstrong@baylibre.com>
- <20191014141718.22603-2-narmstrong@baylibre.com>
- <20191023201141.GA21235@bogus>
- <CA+3zgmsJPsvXgsjDQKKrSG+UNdY3SK+hKCTD2X3hGG+OXejHig@mail.gmail.com>
- <CAKgpwJWU3jB0DWEKE09TOV+YLceBFJ75ZirAXQbuhj8v3FwjXg@mail.gmail.com>
-In-Reply-To: <CAKgpwJWU3jB0DWEKE09TOV+YLceBFJ75ZirAXQbuhj8v3FwjXg@mail.gmail.com>
-From: Tim <elatllat@gmail.com>
-Date: Mon, 11 Nov 2019 09:05:27 -0500
-Message-ID: <CA+3zgmtJqN-3Q-kjMhh58B+T7z_1TA-C6be7+UP6nuQb7eq=8A@mail.gmail.com>
-Subject: Re: [PATCH 1/3] doc: dt: bindings: usb: dwc3: Update entries for
- disabling SS instances in park mode
-To: Jun Li <lijun.kernel@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_060540_980274_FAA0A78B 
-X-CRM114-Status: GOOD (  19.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191111_061225_862129_3F8D38A6 
+X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (elatllat[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,49 +60,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Felipe Balbi <balbi@kernel.org>, Jianxin Pan <jianxin.pan@amlogic.com>,
- devicetree@vger.kernel.org, khilman@baylibre.com, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
- Dongjin Kim <tobetter@gmail.com>, linux-amlogic@lists.infradead.org,
- Rob Herring <robh@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
+ Steven Price <steven.price@arm.com>, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U3BlY3VsYXRpb247CgpNYXliZSB0aGUga2VybmVsIG1haW50YWluZXJzIHByZWZlciB0byBvcHRp
-bWlzdGljYWxseSBwZXJtaXQgZnV0dXJlCnByb2R1Y3RzIHRvIGVhc2lseSByZW1vdmUgd29ya2Fy
-b3VuZHMgdmlhIHF1aXJrIGZsYWdzLgpFdmVuIGlmIGRhdGEgZnJvbSB0ZXN0aW5nIHdlcmUgc2hv
-d24sIGFuZCBpdCBkaWQgbm90IGltcGFjdApwZXJmb3JtYW5jZSwgY29kZSByZWR1Y3Rpb24gYW5k
-IGNsYXJpdHkgYXJlIGRlc2lyYWJsZS4KCk9uIFN1biwgTm92IDEwLCAyMDE5IGF0IDg6NTggUE0g
-SnVuIExpIDxsaWp1bi5rZXJuZWxAZ21haWwuY29tPiB3cm90ZToKPgo+IEhpIE5laWwKPgo+IEFz
-IEkgZ290IHRoZSBpbmZvcm1hdGlvbiBmcm9tIFN5bm9wc3lzLCB0aGlzIGJ1ZyBleGlzdHMgb24g
-Y3VycmVudCBJUCB2ZXJzaW9ucywKPiBhbmQgcGVyIG15IHRlc3RzIHdpdGggZXh0ZXJuYWwgVVNC
-MyBodWIgKyAyIFN1cGVyIHNwZWVkIHVkaXNrcyBvbiBkYXRhCj4gcmVhZCBieSBkZCwgSSBjYW4g
-cmVwcm9kdWNlIHRoaXMgaXNzdWUgd2l0aCBkaWZmZXJlbnQga2VybmVsIHZlcnNpb25zLCBhbHNv
-IEkKPiBkaWRuJ3Qgc2VlIG9idmlvdXMgcGVyZm9ybWFuY2UgZHJvcCBieSBkZCB0ZXN0cyBhZnRl
-ciBkaXNhYmxlIHBhcmsgbW9kZSBmb3IKPiBzdXBlciBzcGVlZCwgc28gc2hvdWxkIHdlIGp1c3Qg
-ZGlzYWJsZSBpdCBieSBkZWZhdWx0IHNvIG5vIG5lZWQgYSBxdWlyaz8KPgo+IExpIEp1bgo+Cj4g
-VGltIDxlbGF0bGxhdEBnbWFpbC5jb20+IOS6jjIwMTnlubQxMeaciDEx5pel5ZGo5LiAIOS4iuWN
-iDg6NDLlhpnpgZPvvJoKPiA+Cj4gPiBUaGFua3MgZm9yIHdvcmtpbmcgb24gdGhpcyBOZWlsLAo+
-ID4gSXMgdGhlcmUgc29tZXRoaW5nIHRoYXQgbmVlZHMgZG9pbmcgZm9yIHRoaXMgcGF0Y2ggdG8g
-bWFrZSBpdCBpbnRvIDUuMyBvciA1LjQ/Cj4gPiBBcyBwcmV2aW91c2x5IG1lbnRpb25lZCB0aGUg
-cGF0Y2ggc2V0IGZpeGVzIHRoZSBpc3N1ZSBvbiBhZmZlY3RlZCBoYXJkd2FyZTsKPiA+ICAgICBo
-dHRwczovL3BhdGNod29yay5rZXJuZWwub3JnL3BhdGNoLzExMTY0NTE1Lwo+ID4KPiA+Cj4gPgo+
-ID4gT24gV2VkLCBPY3QgMjMsIDIwMTkgYXQgNDoxMSBQTSBSb2IgSGVycmluZyA8cm9iaEBrZXJu
-ZWwub3JnPiB3cm90ZToKPiA+ID4KPiA+ID4gT24gTW9uLCBPY3QgMTQsIDIwMTkgYXQgMDQ6MTc6
-MTZQTSArMDIwMCwgTmVpbCBBcm1zdHJvbmcgd3JvdGU6Cj4gPiA+ID4gVGhpcyBwYXRjaCB1cGRh
-dGVzIHRoZSBkb2N1bWVudGF0aW9uIHdpdGggdGhlIGluZm9ybWF0aW9uIHJlbGF0ZWQKPiA+ID4g
-PiB0byB0aGUgcXVpcmtzIHRoYXQgbmVlZHMgdG8gYmUgYWRkZWQgZm9yIGRpc2FibGluZyBhbGwg
-U3VwZXJTcGVlZCBYSENpCj4gPiA+ID4gaW5zdGFuY2VzIGluIHBhcmsgbW9kZS4KPiA+ID4gPgo+
-ID4gPiA+IENDOiBEb25namluIEtpbSA8dG9iZXR0ZXJAZ21haWwuY29tPgo+ID4gPiA+IENjOiBK
-aWFueGluIFBhbiA8amlhbnhpbi5wYW5AYW1sb2dpYy5jb20+Cj4gPiA+ID4gUmVwb3J0ZWQtYnk6
-IFRpbSA8ZWxhdGxsYXRAZ21haWwuY29tPgo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IE5laWwgQXJt
-c3Ryb25nIDxuYXJtc3Ryb25nQGJheWxpYnJlLmNvbT4KPiA+ID4gPiAtLS0KPiA+ID4gPiAgRG9j
-dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9kd2MzLnR4dCB8IDIgKysKPiA+ID4g
-PiAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKQo+ID4gPgo+ID4gPiBTaWdoLCB3aGF0
-J3Mgb25lIG1vcmUgdG8gdGhlIG5ldmVyIGVuZGluZyBsaXN0IG9mIHF1aXJrcy4uLgo+ID4gPgo+
-ID4gPiBBY2tlZC1ieTogUm9iIEhlcnJpbmcgPHJvYmhAa2VybmVsLm9yZz4KCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+This series enables a workaround for Cortex-A55 erratum 1530923. The
+erratum potentially allows TLB entries to be allocated as a result of a
+speculative AT instruction. This may happen in the middle of a guest
+world switch while the relevant VMSA configuration is in an inconsistent
+state, leading to erroneous content being allocated into TLBs.
+
+The existing workaround for Cortex-A76 erratum 1165522 is the same, so
+the first patch renames this workaround to a generic name
+(SPECULATIVE_AT), the second patch then adds the detection for the
+Cortex-A55 erratum 1530923.
+
+Steven Price (2):
+  arm64: Rename WORKAROUND_1165522 to SPECULATIVE_AT
+  arm64: Workaround for Cortex-A55 erratum 1530923
+
+ Documentation/arm64/silicon-errata.rst |  2 ++
+ arch/arm64/Kconfig                     | 17 +++++++++++++++++
+ arch/arm64/include/asm/cpucaps.h       |  2 +-
+ arch/arm64/include/asm/kvm_host.h      |  2 +-
+ arch/arm64/include/asm/kvm_hyp.h       |  7 +++----
+ arch/arm64/kernel/cpu_errata.c         | 23 ++++++++++++++++++-----
+ arch/arm64/kvm/hyp/switch.c            |  6 +++---
+ arch/arm64/kvm/hyp/tlb.c               |  8 ++++----
+ 8 files changed, 49 insertions(+), 18 deletions(-)
+
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
