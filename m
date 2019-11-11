@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A142F809A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 20:52:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D72DF809D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 20:53:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ANJ6cvS9lYLLI/uzVyfXjcRj+I1XlcWld8L6qPPOCfI=; b=gEF9g3fpT4JYgZDJmKs9dz2Dzb
-	QXXYbOi1a1RmhvWHDYYJ7L1Mvi9uoaQieMqaHcM8CBeZUwHSv5x2PdIWRjCJPJZ+YrIU0eXHhtku0
-	cANkXkfSxV2wXp9q8dXr3P/1e5Utl/Ckeb9fJaR3BJ4HzjqfL7qdflz5Tvo6hvpVUr+NF3T6g4o/w
-	QeIS6cwEEH7v61rbQVBRwbUz7wpHq73dOtAumZskNHuxaBHD+r8gr8RbZXSgWSPwhhlB5bzT/u6mn
-	ksvsOzBlR94rzTI3QM7NizkWQmyCQyDHPAbCwCb/c1scO7DRlyO/50RJ04ECFA7EogFf/JL4S7nkd
-	SKOOplmQ==;
+	bh=Bw8He4WOMPwfPtLw50VeruUJ0TWzit2uLOS++nR6ZWg=; b=iNWTjaA37G+dXhlPFm7WgGzqVy
+	yIME6dn3UwoPn4p7qjMUs1MKMRIOjzmC+iu1p1Ds0NQCDSzZhf1YWPfblDLYbookBWWuV1BqWkqra
+	iXQx/f2rTL515DRE7IwFMiSOrX+CM8dZuZLClofPGIfznpTzGYfiVUh0lOwYYLWtlj+5C/GyLb2eh
+	J1BiXUJErOHhN+wjngwLvBXNcIKv/vxqozEFK0CB1FxBfWJrG32xogKuyfqccbulh05Tz6adrC4q6
+	VWP9lJVM+hXncrdxcUEiMagxPWJ9JiY+hb9u+e7xRbAav2thhIAXCDi8ifJ/nu+FPzAdJt1rzhvtX
+	8y+HwOPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUFji-0002Lm-Mj; Mon, 11 Nov 2019 19:52:30 +0000
+	id 1iUFkL-000386-Np; Mon, 11 Nov 2019 19:53:09 +0000
 Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUFih-0001cy-45
+ id 1iUFih-0001cv-44
  for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 19:51:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
  s=badeba3b8450; t=1573501793;
- bh=2nqc6rODnsja5qmJqja77SOFP0+FHJgseIDW5uO6jdg=;
+ bh=am5k+ShH8U/QfQdyBRZNILtXr6ux5dgQyoLfNDeiNlM=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=AVblzHIfGzgF26rvCYE17NbdW2olTXt01mTERyPtXCpSF2tZMVEQd9cfb6Wvvy63n
- m3TZIJUyTupfc2obcP37bCm8WHxeu83DnLX3/Us/ryR6C1xGek1iqabJAXhn8/B05Z
- pB1CLff+Phf7vBpYOkmnfoipqm7F8DXE+AtWrQps=
+ b=ZWLhzips9JEVDIrybY6YZcYBeIVNzxFEKx90FCwd2Yiba8sDGCabOeWQ347jmVkr7
+ ogVIhSnMlCy45GR5EjCClDrm3fXviNF7L7mKdH6W5/MiD3CMKn7EB3KMm/4a06aBHU
+ uZqFYg9N9RGBN5PsEVU3JvL8fdUFDi8zGLmo67wg=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.112]) by mail.gmx.com
  (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 1MsYv3-1hbRzG0TUJ-00txqX; Mon, 11 Nov 2019 20:49:53 +0100
+ 1MGz1V-1ihfgw2UBX-00E9p7; Mon, 11 Nov 2019 20:49:53 +0100
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Matthias Brugger <matthias.bgg@kernel.org>,
  Matthias Brugger <mbrugger@suse.com>,
  "David S . Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>,
  Florian Fainelli <f.fainelli@gmail.com>
-Subject: [PATCH V5 net-next 6/7] net: bcmgenet: Add RGMII_RXID support
-Date: Mon, 11 Nov 2019 20:49:25 +0100
-Message-Id: <1573501766-21154-7-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH V5 net-next 7/7] ARM: dts: bcm2711-rpi-4: Enable GENET support
+Date: Mon, 11 Nov 2019 20:49:26 +0100
+Message-Id: <1573501766-21154-8-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1573501766-21154-1-git-send-email-wahrenst@gmx.net>
 References: <1573501766-21154-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:ZOJfpg6u3NfseTrJXBluY7EW2RZP4PqNGXGc9v9JvJyVbCBP+yg
- 8nsEbKeJB74U3TnkStTI4ItXCmosERWXr39/a/Nezuq1bmiTiRX2pLO6S+DjC3+iWaeNRTn
- wYw5E40IG3FBwEqwpaTyWI1MXXzVY0BpaPPFz6bdWj70n/ecR/4LluJ/1FkzlWF4ycxH/T5
- WZAsbauvHgTfi78LiyrGw==
+X-Provags-ID: V03:K1:UbrYrgHW74lfPA+tgJPjDhRQ6IU7i7clWdYMrwjznjqM4z8OCOv
+ 9soJZvWh6RiQjlx86Z4/ybxzlbBbCNoWCxQlfbKHxsUtUJapUW6VkMLllv8A6l7+DKr0up1
+ ttn3VEs/6ZR1/JwC/HOvqKkvM3mCvjip6er3QlQeVsN+hQZE2GCRPObWy2qgkIvbZqajF/3
+ ROvXvD0XmLIqc4aQSP1rQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Z2sjTrTeI0U=:OUB7VCuUxbWWJwulchHDg0
- XoqjilVPHJfyZ6PgueQaQ4q3H1peQgot7oXyN9Rxt0Z2Z/jiMcL8+68DLG5rDvBT7NbpP3eqH
- XDFXC75Ugs2YzaeFN3FowmBGuRLk+aqbAZM9jD2G/WezQPO4e7aIbZn2wjm2MM7rC16hHT6VA
- 7/fyQTFd/b+9t49qcPCQoE9XPoggcdX6JmQ0QSzRPXm5fmzz2ymc/6t/8oqd7l3T9yDvC8ui6
- ya67seQTkZZMv3fiu5m1Lf71p/ZZc6pROPBYypzjGQLj/UaqOaftMk7YgyZN6vLkWeRrDnDIW
- reDBfbpVhW7LLjdTV+Qw3U3Cn+xOJeEOR4D0ZRIXuZSbh8LRLs9keXP5R1msVByo1mvNU7GMn
- tXH/Kzebc+fDpWDC124+/yCx7MvGRqbvdtUTyNCr+kZ+5uhfecMhN8z2NPFQuhFnYvzLtUHgZ
- ntUsE3ZZuIdfLgQyRsrLF1pOOwQ2qffJ/zLdCImgFGybpofZ4oBhEFpZB+QXMcoOGdmOTTS2W
- lCzqfVnTdwZLr6zEm646UfULczKmZ0SKvYxvy/51UN52KIsasn8KIuDZ+Gm4N5KCH9chzEF90
- xOTkR5OEI9SfudDTEGQO+O84ns7OsAVf2QynejE0kCoRwdEBAjCVcd703WK7dFyb6HijeaH5y
- 8U2jy4rRYgV0k6Rp2qjgefQcxGxyanUjl0i2KM6iCkto+KvS6lNTXjghdNDxlpzQKDs+AOUSw
- bOZjG2oXnwpWpWAjQptwdR8DQbuzVj+6vxI0necVd2Wqf9SDxkkG57iLBEnp2cx7o4ZfLPwsA
- M1ov64mA+UgjXG8kQXS7V0ioX2/HMR96cbAWdnU3/5EvbGxs+fWvX55IoQzH1+QcRDBNdN4wM
- /+h8ysR0fbmqTZYLC0cJCM6d9zZYMZhA6uMrhT+Tlal45xCm5O+OBLYHV/uYGBWhSlTVZXVDW
- +nPxoK0VkEfjQJUPJJgP0gK82vkCQyQQfqaH9Ui3nn5bUG+Mf/MFERIhQ/44rz7Me7pw7h1eX
- 3WkI/IGzPmmr182kyPJ0yiDehlsIGz3fzTB3SNE/9Gdy0VK7izFIQggGEVKRClHGex+1Zlekz
- 1Kzh/DVHb0yZlNyDgRXEFpyY3SYznsmQhzZ6tMY/eWdOeOgNiDAcFBt+tbzrY22xTR3uYekHv
- W1wNLtEYn9C1c+Wz2zBGdCAVw0q12GekHRHUIay9IoqbqnUg4nohQznXm5cgro6kmgc0eQEFl
- 4sPVhdqxNcqGjj4+p8j/H+tYgGZel/k4uEl0Etw==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:grgUlR0qMM0=:g+87Wk7DpT63/3SlHoio/H
+ QTUC9LkZyBoxnpDHuuTBxZ/sMXjNFqsmoWwwM2K+4MblutuXqlS4LSx6XAto5aNy5VDpvDVr3
+ TeukniDGy+yKwRev2xXONw9DYmMCGX/CPQfzx1/ZBuh9Zu9t+KoTBx/rUlFdGgXO4hyEGdKHJ
+ UOOA+tbd95sjl/72JNSNcophpZkRTX4n5LB53ye3OnxxBUKDe0NMhs5cmgn4z2wmb0OzQTPeK
+ v/+4gOLM7ebmIqchn6JVJx4UgaMMLmryU9TDCn3Y0/R6MK+R8nl5DzK9nPFfYPMhcpys0gJoz
+ DzYwn1bzopphNrPyKVz4dQVQ8KnEurKaMeJA791iWl3dSdaJgdx9Y5EfM3vzOGRlwSgQIFAy2
+ n1uBj3fkakArQ1PWdY4Pwj8GrjZL2RaOF/NCJSfDkBfVpwGrYi2Wv4QaUsPBi+/N0bYxnuns3
+ 64zBjryA+Wc7EDF3CGRs//6C2F9Nxi8WT9sUjSz1+zfGv1a2J34qvKj5N6KlrW97i9jytGp++
+ qmds288WQfB1aOAUVS9+OIDzlogo0HgFpmc8jWNXvOnfpmsPpfD97Gqb9iOGchjgLDPNzTshl
+ RLjKvGqQ7NBwStZkAMW+aXZG4kWRIa8PoQNSudd7qaXFsvcxf4FQl0C6XwyBn1bGXsM3x5zKn
+ v4vtMQARqStBLrQpwBfzUogAFjX8eV8wh6/ynFcugCQNzlyPAGtVIMI7weinOJbIWcSd97FxD
+ 44mlK961rBcPBKnKssezG3ujTgMzaYS3GoWVUndhTmHMK0EqB1JR2uk/7fYFCwJrnMAdrP1Re
+ v/QaGTh6TxXjhCUs5DMV/z/VQzNTpcOIWKvxi2hJLCp5oGCR5Qpbn6tG3rVEhO9G4bapQoNBz
+ NnbuortocfuBz5itzKt3kbP3DhNB/bSFqko8fMcqAOht1OCcl734k2NWv5pemPxIcJLN3CxfX
+ Dk0i2s+aCoKNKyj4Jy/TQ3ZUmDhcvQDQxP+uOLK8/FXXHOKUBvvTEq/nUCRi4q2Xy/DguPc/e
+ Dfl026/Hx2EmacHN7BvXV2fow57s1hn6E9ThXG9Jg/dZsNsniuOu0NBojv61W+CfyvqlUehYt
+ 2zUo3kipSI/irjy5lJ1gl9G+Z87s6h5gMRsIX4aw0eQNoZZWghmawg8POkiAU0geDOkkgJV0s
+ rIRz2cXTRziCZrLf0AY8i/LEuLsMH3CGTbyLtTxtwcak9P7RhUd/+2oGP02Lt3MaE6kScdQiN
+ VyE18gITYg62+tlQUO54NRoHQ2JhoNBOHHsJSCw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_115127_482543_32CCF38E 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191111_115127_487448_6834BBAB 
+X-CRM114-Status: GOOD (  11.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -114,31 +113,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds the missing support for the PHY mode RGMII_RXID.
-It's necessary for the Raspberry Pi 4.
+This enables the Gigabit Ethernet support on the Raspberry Pi 4.
+The defined PHY mode is equivalent to the default register settings
+in the downstream tree.
 
+Signed-off-by: Matthias Brugger <mbrugger@suse.com>
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- drivers/net/ethernet/broadcom/genet/bcmmii.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 17 +++++++++++++++++
+ arch/arm/boot/dts/bcm2711.dtsi        | 26 ++++++++++++++++++++++++++
+ 2 files changed, 43 insertions(+)
 
-diff --git a/drivers/net/ethernet/broadcom/genet/bcmmii.c b/drivers/net/ethernet/broadcom/genet/bcmmii.c
-index 021ce9e..6392a25 100644
---- a/drivers/net/ethernet/broadcom/genet/bcmmii.c
-+++ b/drivers/net/ethernet/broadcom/genet/bcmmii.c
-@@ -270,6 +270,11 @@ int bcmgenet_mii_config(struct net_device *dev, bool init)
- 		phy_name = "external RGMII (TX delay)";
- 		port_ctrl = PORT_MODE_EXT_GPHY;
- 		break;
+diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+index cccc1cc..1b5a835 100644
+--- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
++++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+@@ -19,6 +19,10 @@
+ 		reg = <0 0 0>;
+ 	};
+
++	aliases {
++		ethernet0 = &genet;
++	};
 +
-+	case PHY_INTERFACE_MODE_RGMII_RXID:
-+		phy_name = "external RGMII (RX delay)";
-+		port_ctrl = PORT_MODE_EXT_GPHY;
-+		break;
- 	default:
- 		dev_err(kdev, "unknown phy mode: %d\n", priv->phy_interface);
- 		return -EINVAL;
+ 	leds {
+ 		act {
+ 			gpios = <&gpio 42 GPIO_ACTIVE_HIGH>;
+@@ -97,6 +101,19 @@
+ 	status = "okay";
+ };
+
++&genet {
++	phy-handle = <&phy1>;
++	phy-mode = "rgmii-rxid";
++	status = "okay";
++};
++
++&genet_mdio {
++	phy1: ethernet-phy@1 {
++		/* No PHY interrupt */
++		reg = <0x1>;
++	};
++};
++
+ /* uart0 communicates with the BT module */
+ &uart0 {
+ 	pinctrl-names = "default";
+diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
+index ac83dac..a571223 100644
+--- a/arch/arm/boot/dts/bcm2711.dtsi
++++ b/arch/arm/boot/dts/bcm2711.dtsi
+@@ -305,6 +305,32 @@
+ 			cpu-release-addr = <0x0 0x000000f0>;
+ 		};
+ 	};
++
++	scb {
++		compatible = "simple-bus";
++		#address-cells = <2>;
++		#size-cells = <1>;
++
++		ranges = <0x0 0x7c000000  0x0 0xfc000000  0x03800000>;
++
++		genet: ethernet@7d580000 {
++			compatible = "brcm,bcm2711-genet-v5";
++			reg = <0x0 0x7d580000 0x10000>;
++			#address-cells = <0x1>;
++			#size-cells = <0x1>;
++			interrupts = <GIC_SPI 157 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>;
++			status = "disabled";
++
++			genet_mdio: mdio@e14 {
++				compatible = "brcm,genet-mdio-v5";
++				reg = <0xe14 0x8>;
++				reg-names = "mdio";
++				#address-cells = <0x0>;
++				#size-cells = <0x1>;
++			};
++		};
++	};
+ };
+
+ &clk_osc {
 --
 2.7.4
 
