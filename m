@@ -2,76 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABC66F7A83
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 19:09:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E2B1F7A8D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 19:11:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QHZXA6FJFMvHLJUh7gjYYQcLCY5XXbpxseGwFFVDEqA=; b=ZP9p4Nq44eFFPI
-	EqQe2KGCLlXKEST8f51X9QdEfbYp8kmxMvl0LgkONr05m2gxI8hGT83JuPoHzwtuEaFyqlZgsY7fE
-	dkhB9GKAuTnOUW6bkId7aM7Jz5d8+8+P0LIRDOETcYR9BbxVTW3cYaDqd4+INeBrPSUFDpNgHqCz6
-	g1RI1A6Vbxxq2SOR7j+CgRjMekcHB6CCyM6c9ntOVsXG258Bppi5lEm3pWVHbUs+cV/HyefT7mD0h
-	nY8WUKe/jPHXJweKrms9ZmUdem/FiJUu4If+XhfDUhvOy8z9DGHgP/jXbAZvFTPLwExmRBLcOvHBq
-	Ol/W1+7SK1JCqHOOLEdQ==;
+	List-Owner; bh=kjAV19F7nehK6FFSYaeLsHuKN/qV1y/BIz+fGV0W1Ac=; b=XEp/186hLM7haM
+	2u+XctG690YS4tGbW0NBy48C4XtNzUSdUl87pazO/Cj3aePsPY8ffmeTN+svamlGZJZN0LGA0H0U8
+	ma9kryNqKDcS+cdX/TEjD9kZ106WAK1aHYFoLEip8ix/hOQSq0G+Z2wwdhcEueqPB8oY+MYR7iy7Y
+	Qrt7CRmJM4PJFphsjewui/8F6JZMpVcqyofC/LGvsN33xaMMpr5YU6WdoQWZsLA6pXS7xycF95QMd
+	F5y9CHbkBXbDb3YBiIAoMv3cV2H64/AAMqbKc6CzJu9cjyPOwsaRX1h4iCiQlgnhYgHEulMgbBCUV
+	daZ+y6obwi3zL9tgEc0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUE7j-0005uX-7Z; Mon, 11 Nov 2019 18:09:11 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1iUEAP-0008H8-Ot; Mon, 11 Nov 2019 18:11:57 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUE7c-0005tq-Tp
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 18:09:06 +0000
-Received: by mail-ot1-f65.google.com with SMTP id r24so11978526otk.12
+ id 1iUEAH-0008FK-9X
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 18:11:50 +0000
+Received: by mail-ot1-f66.google.com with SMTP id u13so12034016ote.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 Nov 2019 10:09:03 -0800 (PST)
+ Mon, 11 Nov 2019 10:11:48 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=pB6c4pFOe94ggxtiHB2kKLTOBOYOEpvnXnv9wnKmZAU=;
- b=VjRgitfI0YR74an80pAFcLU4AzcpEAY1qM/M+sYdoXGPTRHMZ5XFgaRcN5MR+B/FuN
- 8C3hn3pYehXsDMICdrJMs/WGLKcwzKaitkskX14iEKJBqrJDhjnjpaBIGqTdG084tLqx
- jNkC/u2oPWYVwHL5lNo+OXje+5yabmCiTFKPbjbEIrgc90GqE6Bm2HXQXBwZ98qMdavN
- vHJ2oGAv0Edg3PWKiBIbzjIykUjcQjeRtVqzZKkwlcEJ8nbePZqOqjLHbbErgf0p1rwp
- r2c5PPL1dA4yIB2BySKDo+pFY0kmee68qaNHra67vsU/IcGEyqeg8DS7g7jgFYmW5W2H
- LcPg==
-X-Gm-Message-State: APjAAAWD6mr56/TA4B+c8Lyl8uK5ACsQ1bp5oTRvmtYSO1JXJED5RMNi
- /jM5JXUl7fAPohlHZOIg/cFJ15P7oKxtCDRnE/c=
-X-Google-Smtp-Source: APXvYqwz3yURFWyrc4txNYG5Aijjty7ogMGADNC5Z1wYd4gVa5brKlAgJqkxDayccnlPhvVhacX5bel06VJjIpOaGlc=
-X-Received: by 2002:a05:6830:2363:: with SMTP id
- r3mr22934879oth.39.1573495742542; 
- Mon, 11 Nov 2019 10:09:02 -0800 (PST)
+ bh=3pgVptoZYzsTOg+Xnbn8wJxFJTLIjKkmJmwvN7XoJgQ=;
+ b=dy1D2lVWKngwvyAl1BIUPpL1tLDOtX9fuqzRzz5gTY7qRAel3vKovlQ7UxGleLNTTL
+ DMlLOM8wsLod6UckBRGzuDmNaHIpGNWfltSLJbSfCNGo4bKJniLSpk3azEyhRkNmOV9P
+ l/zdxBrPkRlnyJrjgzONZmCtHNNRF4TZ3b10Rg/xgPeqfFs5rZNODvLnW9S+5FJ28IuO
+ evex0uptim5oAJq86s8LpQzy6gt2ePcrAiWu4iSzatld0AxsDFBfmq+vaG0hGkyNNQ7V
+ ffsJ45MGssKfEsIs+Zl2NP48KtOxVFRjPPDmIO2YdpbGAaTtcHOZY1aAYp1PimBklhfc
+ J5PA==
+X-Gm-Message-State: APjAAAUqT9s+ZzsqUpImN/8mq+b4JG+5HuaMlxnSds/roupspoMQV4Ha
+ jSsgHotX4Wo8HLeufVXJ7ROQxsKe
+X-Google-Smtp-Source: APXvYqyYfYQRP2op++LiPoGgWYk1P+EfrbHqjjEKfGMuZYc8xoPnrTWieRSzOZ74B0UtAI7Jt3Uutw==
+X-Received: by 2002:a9d:365:: with SMTP id 92mr23510708otv.9.1573495907383;
+ Mon, 11 Nov 2019 10:11:47 -0800 (PST)
+Received: from mail-oi1-f177.google.com (mail-oi1-f177.google.com.
+ [209.85.167.177])
+ by smtp.gmail.com with ESMTPSA id j8sm5367628otj.42.2019.11.11.10.11.45
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 11 Nov 2019 10:11:45 -0800 (PST)
+Received: by mail-oi1-f177.google.com with SMTP id v138so12291110oif.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 11 Nov 2019 10:11:45 -0800 (PST)
+X-Received: by 2002:aca:1702:: with SMTP id j2mr240762oii.13.1573495904943;
+ Mon, 11 Nov 2019 10:11:44 -0800 (PST)
 MIME-Version: 1.0
-References: <20191011000609.29728-1-keescook@chromium.org>
- <20191011000609.29728-12-keescook@chromium.org>
- <CAMuHMdXfPyti1wFBb0hhf3CeDSQ=zVv7cV-taeYCmDswMQkXPQ@mail.gmail.com>
- <201911110922.17A2112B0@keescook>
-In-Reply-To: <201911110922.17A2112B0@keescook>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 11 Nov 2019 19:08:51 +0100
-Message-ID: <CAMuHMdUJ8QPvqf51nVmOg1Zm20SNT7pXR72z=qmco=ecwawZ7A@mail.gmail.com>
-Subject: Re: [PATCH v2 11/29] vmlinux.lds.h: Replace RODATA with RO_DATA
-To: Kees Cook <keescook@chromium.org>
+References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
+ <20191108130123.6839-48-linux@rasmusvillemoes.dk>
+ <CADRPPNQwnmPCh8nzQ5vBTLoieO-r2u0huh17mwcinhfhNgo04A@mail.gmail.com>
+ <14894529-a6bd-9b7e-eacc-06d5e49cc8e8@rasmusvillemoes.dk>
+In-Reply-To: <14894529-a6bd-9b7e-eacc-06d5e49cc8e8@rasmusvillemoes.dk>
+From: Li Yang <leoyang.li@nxp.com>
+Date: Mon, 11 Nov 2019 12:11:33 -0600
+X-Gmail-Original-Message-ID: <CADRPPNQHtRhZOw0DuTQoPF_RgFHSFG4rGCtETFvCCSS8H6i=iQ@mail.gmail.com>
+Message-ID: <CADRPPNQHtRhZOw0DuTQoPF_RgFHSFG4rGCtETFvCCSS8H6i=iQ@mail.gmail.com>
+Subject: Re: [PATCH v4 47/47] soc: fsl: qe: remove PPC32 dependency from
+ CONFIG_QUICC_ENGINE
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_100904_961367_AC64A31A 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20191111_101149_336046_3865D9EE 
+X-CRM114-Status: GOOD (  17.09  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
+ provider (pku.leo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
+ [209.85.210.66 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
@@ -86,77 +98,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Michal Simek <monstr@monstr.eu>,
- the arch/x86 maintainers <x86@kernel.org>,
- "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
- linux-c6x-dev@linux-c6x.org, Arnd Bergmann <arnd@arndb.de>,
- linux-xtensa@linux-xtensa.org, Michael Ellerman <mpe@ellerman.id.au>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, Borislav Petkov <bp@alien8.de>,
- Parisc List <linux-parisc@vger.kernel.org>, Andy Lutomirski <luto@kernel.org>,
- alpha <linux-alpha@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rick Edgecombe <rick.p.edgecombe@intel.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Scott Wood <oss@buserror.net>, linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ lkml <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Qiang Zhao <qiang.zhao@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Kees,
-
-On Mon, Nov 11, 2019 at 6:23 PM Kees Cook <keescook@chromium.org> wrote:
-> On Mon, Nov 11, 2019 at 05:58:06PM +0100, Geert Uytterhoeven wrote:
-> > On Fri, Oct 11, 2019 at 2:07 AM Kees Cook <keescook@chromium.org> wrote:
-> > > There's no reason to keep the RODATA macro: replace the callers with
-> > > the expected RO_DATA macro.
-> > >
-> > > Signed-off-by: Kees Cook <keescook@chromium.org>
-> > > ---
-> > >  arch/alpha/kernel/vmlinux.lds.S      | 2 +-
-> > >  arch/ia64/kernel/vmlinux.lds.S       | 2 +-
-> > >  arch/microblaze/kernel/vmlinux.lds.S | 2 +-
-> > >  arch/mips/kernel/vmlinux.lds.S       | 2 +-
-> > >  arch/um/include/asm/common.lds.S     | 2 +-
-> > >  arch/xtensa/kernel/vmlinux.lds.S     | 2 +-
-> > >  include/asm-generic/vmlinux.lds.h    | 4 +---
-> > >  7 files changed, 7 insertions(+), 9 deletions(-)
-> >
-> > Somehow you missed:
-> >
-> >     arch/m68k/kernel/vmlinux-std.lds:  RODATA
-> >     arch/m68k/kernel/vmlinux-sun3.lds:      RODATA
+On Mon, Nov 11, 2019 at 1:36 AM Rasmus Villemoes
+<linux@rasmusvillemoes.dk> wrote:
 >
-> Argh. I've sent a patch; sorry and thanks for catching this. For my own
-> cross-build testing, which defconfig targets will hit these two linker
-> scripts?
-
-vmlinux-sun3.lds: sun3_defconfig
-vmlinux-std.lds: All other classic 680x0 targets with an MMU, e.g. plain
-                 defconfig aka multi_defconfig.
-
-> > Leading to build failures in next-20191111:
+> On 09/11/2019 00.48, Li Yang wrote:
+> > On Fri, Nov 8, 2019 at 7:05 AM Rasmus Villemoes
+> > <linux@rasmusvillemoes.dk> wrote:
+> >>
+> >> There are also ARM and ARM64 based SOCs with a QUICC Engine, and the
+> >> core QE code as well as net/wan/fsl_ucc_hdlc and tty/serial/ucc_uart
+> >> has now been modified to not rely on ppcisms.
+> >>
+> >> So extend the architectures that can select QUICC_ENGINE, and add the
+> >> rather modest requirements of OF && HAS_IOMEM.
+> >>
+> >> The core code as well as the ucc_uart driver has been tested on an
+> >> LS1021A (arm), and it has also been tested that the QE code still
+> >> works on an mpc8309 (ppc).
+> >>
+> >> Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> >> ---
+> >>  drivers/soc/fsl/qe/Kconfig | 3 ++-
+> >>  1 file changed, 2 insertions(+), 1 deletion(-)
+> >>
+> >> diff --git a/drivers/soc/fsl/qe/Kconfig b/drivers/soc/fsl/qe/Kconfig
+> >> index cfa4b2939992..f1974f811572 100644
+> >> --- a/drivers/soc/fsl/qe/Kconfig
+> >> +++ b/drivers/soc/fsl/qe/Kconfig
+> >> @@ -5,7 +5,8 @@
+> >>
+> >>  config QUICC_ENGINE
+> >>         bool "QUICC Engine (QE) framework support"
+> >> -       depends on FSL_SOC && PPC32
+> >> +       depends on OF && HAS_IOMEM
+> >> +       depends on PPC32 || ARM || ARM64 || COMPILE_TEST
 > >
-> >     /opt/cross/kisskb/gcc-4.6.3-nolibc/m68k-linux/bin/m68k-linux-ld:./arch/m68k/kernel/vmlinux.lds:29:
-> > syntax error
-> >     make[1]: *** [/kisskb/src/Makefile:1075: vmlinux] Error 1
-> >
-> > Reported-by: noreply@ellerman.id.au
-> > http://kisskb.ellerman.id.au/kisskb/buildresult/14022846/
+> > Can you also add PPC64?  It is also used on some PPC64 platforms
+> > (QorIQ T series).
+>
+> Sure, but if that's the only thing in the whole series, perhaps you
+> could amend it when applying instead of me sending all 47 patches again.
 
-Gr{oetje,eeting}s,
+Sure.  I can do that.
 
-                        Geert
+>
+> Should PPC32 || PPC64 be spelled PPC?
 
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+Yes.  That will be good.
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Regards,
+Leo
 
 _______________________________________________
 linux-arm-kernel mailing list
