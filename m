@@ -2,120 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CEDBF6F42
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 08:55:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1D2AF6F49
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 08:58:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c86E2dDNUQm8DHKOmWojLqbUnOqFzCJFOsn6ZTM3OM8=; b=NQvvjUg9CvneW5
-	PBzdKQ/PEQdLcd4e/hfabQK39vIqiLpfMEtmg5gi2V0AekByvFKYCDkZa35ZDIwHIrqb9cIQp1S0J
-	cYoPOxp1wHmYmU+ULL4i5tDYoowx0iC4RZKEd1piSpqP91mnSxUhxifdkFIVzep502HZMH1QWBYAB
-	8+LRz2N4R5a8oy1HeHEfXTA+Pznp0Lz7m8V7T9w0q+1yJ8x4C24dY/2b3FoNhD4CZ0XwKZkajPYyH
-	MVq/lhwUbTIF7Zm3qTTZYOa1gRLbUkgPfsisAYjO+HNxNLfhX7SCKVynAn/etghFXL876MWH41S7E
-	MBcU6E/9jeBSmX/y47Xg==;
+	List-Owner; bh=Xa+t0Q/+y7SAdS0DGW3A/lqEy/rn64A34JegNL0gj0E=; b=ulxYuUoznWViMj
+	Tcs5svUhX1RvdABzwEfpJlZLVXlkKkZzIDrSpN7OP3gLBn96P3rUH//6vBYHhZu2GDARkPZ8c6+uI
+	bIY+0OmEmBenI9mAWzu73fbSvnNnbjt6FerlivcfTa3S0O0cdVYVm3+owgJ/T1CAiDB/nUr1Ls9fk
+	TRJSVDxxVQcxRaIzdqDwFibGu5UxP2YHdKeAajg4Rz2s0jrjnpZSZ6WVBWWeNvA5OBuF0wr7gi01o
+	D7yObvhHHjDSh3ZXWa63NuTwxjNhfddHOcJxy1xaQh2Sefuu97A+1tvQInuxE2BC7lLh/o3xboFbp
+	pQ6QHsJFZ+XGIHdFzeUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU4XQ-00085w-IT; Mon, 11 Nov 2019 07:55:04 +0000
-Received: from mail-eopbgr20068.outbound.protection.outlook.com ([40.107.2.68]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1iU4aI-0001GU-VL; Mon, 11 Nov 2019 07:58:03 +0000
+Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU4XB-00085S-0B
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 07:54:50 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mANoakNXYnhzeIkh14cErE2NjZE5zv4a9MbRNc1Sfe85dyEd60rFutps4lrlYvRNulO6qPrhR7Ei+7zZGmfc1oFxicLiS4KCFeSWlBJk99KF5zDVRhNmjkII31nCP4lsbycgmr3cZ7dy3bqLXUVBnHUKcG1vK2fSssa1G9K998uCSnJUHLQAkjXnO6fWGF6OBBAevn8N3EqgNySC8H6f8Rp0BZjZUX9h5CtxBoLPB7Jb5EnaesIRXQnCzN8AAcqE47q08i8HtacUsvpHHsUUpMQddozGdU6giAX6TIOMiOkQkqVP4SHTM5KG7D5Q6t26oLwcmgoRGtyctlPynxQ5iw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CvbbnzIryOVVl80iIfs8Ei12JSMdoYhPRXKeWzn0DPY=;
- b=NuTJASCnvFwWqsPzzNAZ5jrcYwYBQhydVSzHw75Krbtd5xTA3cZEc7wGOP7iQqJzQCtCbdSquRoqSzi3knejRJ5WKtSjgpThbbIdvt7Tb06n32zyfJzy9K5MjRx8KilMpFN3s5yLBxoZKEQCRbsrXqXVGXBk7ovwl/ijdq69bttxuOTsb7DyFR3KCoyYaF6eSTGtjdmxxy/Mh74N7BMO6bpaeByRJ0sQGcMrIXVz6jw3BAF+O08xopsvXLSvItEIRYhLRVLuvgIXbyxLxzykNFXYRkcMPgaoU6uxXFPQ1WzkbyIj5V4qcQ2wfIZQkVaGLIclhXJv2wHye0fCKyXlCw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CvbbnzIryOVVl80iIfs8Ei12JSMdoYhPRXKeWzn0DPY=;
- b=W6mXA4S5ZIt+1KilR30CLXWKqGc1FibgQtb6/p5soBP06r9wNUd/RgkQthns2ZfDvhN+UR591m0BLMBVqsNXND5fn9DvQ3M+KdA6rhWzCXOLg0KPKx5FMF/9dtEXHaW1hHBLd2NZlZqXQFwKz8NZcftE8qDO/ly+AYTcDhcdWe8=
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB4915.eurprd04.prod.outlook.com (20.176.215.212) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.20; Mon, 11 Nov 2019 07:54:43 +0000
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::fd44:1b14:587c:9fde]) by AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::fd44:1b14:587c:9fde%7]) with mapi id 15.20.2430.023; Mon, 11 Nov 2019
- 07:54:43 +0000
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Martin Kepplinger <martink@posteo.de>
-Subject: Re: [RFC 0/2] Add workaround for core wake-up on IPI for i.MX8MQ
-Thread-Topic: [RFC 0/2] Add workaround for core wake-up on IPI for i.MX8MQ
-Thread-Index: AQHVH4Y/3naZJOmQTkOgrNdQmlNuA6eCDj6AgAAIBACAACkeAIAETB+A
-Date: Mon, 11 Nov 2019 07:54:42 +0000
-Message-ID: <20191111075441.usbd62w45vxnwcj4@fsr-ub1664-175>
-References: <d217a9d2-fc60-e057-6775-116542e39e8d@posteo.de>
- <7d3a868a-768c-3cb1-c6d8-bf5fcd1ddd1c@posteo.de>
- <20191030080727.7pcvhd4466dproy4@fsr-ub1664-175>
- <523f92bd-7e89-b48a-afd0-0a9a8bca8344@posteo.de>
- <20191104103525.qjkxh2zhhgaaectk@fsr-ub1664-175>
- <433f3f03-f780-c327-f1e8-fbf046a8374c@posteo.de>
- <VI1PR04MB70231EA80BB20C9A84B1B799EE790@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <c3519156-9769-980b-d9e7-af372ced8797@posteo.de>
- <20191108115002.cqzvpxydzwos64vp@fsr-ub1664-175>
- <26d3834d-6fba-be48-5b3c-5abf86d121a7@posteo.de>
-In-Reply-To: <26d3834d-6fba-be48-5b3c-5abf86d121a7@posteo.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM0PR0102CA0015.eurprd01.prod.exchangelabs.com
- (2603:10a6:208:14::28) To AM0PR04MB5779.eurprd04.prod.outlook.com
- (2603:10a6:208:131::23)
-x-originating-ip: [89.37.124.34]
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=abel.vesa@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 3bf65f17-5e22-4542-ab74-08d7667c695c
-x-ms-traffictypediagnostic: AM0PR04MB4915:|AM0PR04MB4915:
-x-ms-exchange-purlcount: 2
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB491592FFE9EA7310769BEAA5F6740@AM0PR04MB4915.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0218A015FA
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(7916004)(396003)(376002)(346002)(39860400002)(366004)(136003)(189003)(199004)(51914003)(6486002)(229853002)(9686003)(478600001)(1076003)(33716001)(966005)(14454004)(6436002)(8676002)(316002)(6512007)(14444005)(256004)(45080400002)(81156014)(81166006)(6306002)(3846002)(6116002)(44832011)(54906003)(86362001)(6246003)(8936002)(186003)(7736002)(53546011)(7416002)(4326008)(26005)(476003)(6916009)(486006)(99286004)(66556008)(64756008)(66446008)(2906002)(66476007)(71190400001)(71200400001)(102836004)(76176011)(25786009)(66066001)(386003)(6506007)(66946007)(5660300002)(11346002)(52116002)(305945005)(446003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4915;
- H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: sIamg94k+hsDMYsTke51ZCjGgQRHKX4xnAi/WYpCAzFexa1b2f7oft3Jn5MDINVAG4HjDgHc7gntRFjp9J7xUQuuW3tTd4n2UMY0SurVhn0YOx85VDxDoQ2HTPLMWrpOm1bDbcq3A7O9sN9+cyr+V77em87bOeVDgvoZLWEM76rIgEO8/5y8xA2p/sLM9dBu8Ei2O5xvqc6eVzEuLhRHRfc+Gry4ciCfNMMlh+p9dO0w3obMNtYQM0cF0WgS0hVma/rDcNyqcDrQRt/Ky6VOuWq17jwPdjf6UzzoMGzwMXuN0HAIG1pSTf7PRAa+nrZPY+viOW4vnSC5Oe0qMOy5Ohw3rD2ubw9DfYCpALAGQrGE+cOEHNj+Xi6Z7mdbu0GEAHJRDy1y8oy+blBfwPG8erqHGktlPbobomvlegi/W16QnpJ98H22m00P6r4XeQEZ6wxsWyWwTMK5Q1RMYTGgNqHGNCS+QZW9jWj4H3HAFM4=
-Content-ID: <F43DEB12F722184E9DC093EBCA2D3D1D@eurprd04.prod.outlook.com>
+ id 1iU4a7-0001FS-Fb
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 07:57:53 +0000
+Received: by mail-qv1-xf44.google.com with SMTP id s18so4507941qvr.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 10 Nov 2019 23:57:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=H7y4zy6OrzaKCbmt5VnQkSfOPrSCD4IzJM4CsQhV4vc=;
+ b=g63j6COvu8/gYONRQt9DCMBKG/vdfAoAIq4kFVCoQhW0YwHdPfzPFVjXRltUzcXy2M
+ 4M19/g5navLrOWvbxmDK/dkpTzke5fDPVwWhmBPpgXLTx40JhXcXvRV6iiqyWyzya82P
+ BU8PgrRkZoODSqCPT2homm3jFH4r+tvEgnMem6528jRA3HsYRbAEMVMobBxRwCJnBlO5
+ 4vKiHw+Y9wHjBbI3BACQ6pwr5HzfcSSTpN/LA6x4Hb3pJFzbHdMx8Otzz6pMqk9NDAhI
+ rDzRU5zSfuaBi543fvixREZ3C9D/JjYgJzpgOlHzGoYxwHBzTlm0mtHSt4p0sxQJNRCq
+ OKsg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=H7y4zy6OrzaKCbmt5VnQkSfOPrSCD4IzJM4CsQhV4vc=;
+ b=dyqVdEnMNjg98dTpMXB+vZ11Tgp1o6+VrehemlEIjFuEis70yf8Nh/fhb277z7oNwu
+ VwhhhhSOCUFrAbN3yFEyxCS+yt0aOmp7p+9/TPrQ8vewiYwWnrOu2KeVa/lN8TY+gwi6
+ 4qOT+ejhAGf0oFQV+H424EKm+5yQ5AYWgKLtBuyHmKzL/Jsj1slypBKRgWNg7/NAxRvB
+ AH9ZOd3LeaF8FCdqqh4QekmkNJApK/LsEROciY7SlGEsMvlL5AqFeYYzmd8lkeTFOaMt
+ 4/rqEwm6qeDaO9AkkwCSvi1WLhYuOBRLg1eFekjqIRdjR8dTNOAtue4K2I71+tZxgeMO
+ sJKQ==
+X-Gm-Message-State: APjAAAXYE7bQ19ZvT6Hv/EtlIvODMjLJEEhCHPqPE8XN2ILkaC9qJAty
+ An4Xwz+kPUyPKW+w8UwCmrPuL+FRpFRNFpISxyrGDA==
+X-Google-Smtp-Source: APXvYqwfegIIk1e1zoYpAwU83F6r6f1P4e2x+T1xLBRYcBCusyP997BoiwHQt2Bm/a3lw7Hh2aH9A36AFHU/5KoT4bs=
+X-Received: by 2002:a05:6214:8ee:: with SMTP id
+ dr14mr22829788qvb.122.1573459067244; 
+ Sun, 10 Nov 2019 23:57:47 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3bf65f17-5e22-4542-ab74-08d7667c695c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Nov 2019 07:54:43.2969 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: rUi6IY7vbePC1I3FB68Jzv2P+B4kCyH67K9sNreDmuZO0ehn+1CjYbfuFaZ3MOool6wbDri4gC4pTaTnDoIjtA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4915
+References: <20191104020519.27988-1-walter-zh.wu@mediatek.com>
+ <34bf9c08-d2f2-a6c6-1dbe-29b1456d8284@virtuozzo.com>
+In-Reply-To: <34bf9c08-d2f2-a6c6-1dbe-29b1456d8284@virtuozzo.com>
+From: Dmitry Vyukov <dvyukov@google.com>
+Date: Mon, 11 Nov 2019 08:57:35 +0100
+Message-ID: <CACT4Y+bfGrJemwyMVqd2Kt19mF2i=3GwXRKHP0qGJaT_5OhSCA@mail.gmail.com>
+Subject: Re: [PATCH v3 1/2] kasan: detect negative size in memory operation
+ function
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_235449_123980_0741266A 
-X-CRM114-Status: GOOD (  17.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191110_235751_548928_C8EE210E 
+X-CRM114-Status: GOOD (  19.26  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.68 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -123,6 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -134,66 +96,195 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Jacky Bai <ping.bai@nxp.com>,
- Carlo Caione <ccaione@baylibre.com>, Marc Zyngier <marc.zyngier@arm.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Thomas Gleixner <tglx@linutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: Walter Wu <walter-zh.wu@mediatek.com>,
+ wsd_upstream <wsd_upstream@mediatek.com>, LKML <linux-kernel@vger.kernel.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
+ Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-11-08 15:17:12, Martin Kepplinger wrote:
-> On 08.11.19 12:50, Abel Vesa wrote:
-> > On 19-11-08 12:21:21, Martin Kepplinger wrote:
-> > 
-> >> Hi Leonard, hi Abel,
-> >>
-> >> Thanks for having a look! To sum up this problem and not to get confused:
-> >>
-> >> We have the workaround that changes irq-imx-gpcv2 from this very email
-> >> thread, to be used with mainline ATF. when applying Abel's recent diff,
-> >> Linux 5.4 boots but I still don't have a cpuidle driver.
-> >>
-> >> When I enable CONFIG_ARM_PSCI_CPUIDLE, the kernel hangs during boot
-> >> (after probing mmc, but that doesn't tell much)
-> >>
-> >> What do I miss?
-> >>
-> > 
-> > OK, please fetch the branches called "imx8mq-err11171" from both following github repos and give it a try:
-> > 
-> > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fabelvesa%2Flinux.git&amp;data=02%7C01%7Cabel.vesa%40nxp.com%7C663191bd4af6489d08f808d764565ca2%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637088194388256459&amp;sdata=HydsZLtPExbRx7qDByTI%2FCYFGYS67fU9FDsLmHy7x7o%3D&amp;reserved=0
-> > 
-> > and
-> > 
-> > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fabelvesa%2Farm-trusted-firmware.git&amp;data=02%7C01%7Cabel.vesa%40nxp.com%7C663191bd4af6489d08f808d764565ca2%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637088194388256459&amp;sdata=zkCpOrEvoiNGj7BBuVuHzTWmBFaZk0SCuePOKZA3T2o%3D&amp;reserved=0
-> > 
-> > I just tested it. Works with defconfig.
-> > 
-> 
-> thanks for the reminder. I was missing IMX_SCU_PD appearently.
-> 
+On Fri, Nov 8, 2019 at 11:32 PM Andrey Ryabinin <aryabinin@virtuozzo.com> wrote:
+> > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> > index 6814d6d6a023..4ff67e2fd2db 100644
+> > --- a/mm/kasan/common.c
+> > +++ b/mm/kasan/common.c
+> > @@ -99,10 +99,14 @@ bool __kasan_check_write(const volatile void *p, unsigned int size)
+> >  }
+> >  EXPORT_SYMBOL(__kasan_check_write);
+> >
+> > +extern bool report_enabled(void);
+> > +
+> >  #undef memset
+> >  void *memset(void *addr, int c, size_t len)
+> >  {
+> > -     check_memory_region((unsigned long)addr, len, true, _RET_IP_);
+> > +     if (report_enabled() &&
+> > +         !check_memory_region((unsigned long)addr, len, true, _RET_IP_))
+> > +             return NULL;
+> >
+> >       return __memset(addr, c, len);
+> >  }
+> > @@ -110,8 +114,10 @@ void *memset(void *addr, int c, size_t len)
+> >  #undef memmove
+> >  void *memmove(void *dest, const void *src, size_t len)
+> >  {
+> > -     check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > -     check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > +     if (report_enabled() &&
+> > +        (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
+> > +         !check_memory_region((unsigned long)dest, len, true, _RET_IP_)))
+> > +             return NULL;
+> >
+> >       return __memmove(dest, src, len);
+> >  }
+> > @@ -119,8 +125,10 @@ void *memmove(void *dest, const void *src, size_t len)
+> >  #undef memcpy
+> >  void *memcpy(void *dest, const void *src, size_t len)
+> >  {
+> > -     check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > -     check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > +     if (report_enabled() &&
+>
+>             report_enabled() checks seems to be useless.
+>
+> > +        (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
+> > +         !check_memory_region((unsigned long)dest, len, true, _RET_IP_)))
+> > +             return NULL;
+> >
+> >       return __memcpy(dest, src, len);
+> >  }
+> > diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
+> > index 616f9dd82d12..02148a317d27 100644
+> > --- a/mm/kasan/generic.c
+> > +++ b/mm/kasan/generic.c
+> > @@ -173,6 +173,11 @@ static __always_inline bool check_memory_region_inline(unsigned long addr,
+> >       if (unlikely(size == 0))
+> >               return true;
+> >
+> > +     if (unlikely((long)size < 0)) {
+>
+>         if (unlikely(addr + size < addr)) {
+>
+> > +             kasan_report(addr, size, write, ret_ip);
+> > +             return false;
+> > +     }
+> > +
+> >       if (unlikely((void *)addr <
+> >               kasan_shadow_to_mem((void *)KASAN_SHADOW_START))) {
+> >               kasan_report(addr, size, write, ret_ip);
+> > diff --git a/mm/kasan/generic_report.c b/mm/kasan/generic_report.c
+> > index 36c645939bc9..52a92c7db697 100644
+> > --- a/mm/kasan/generic_report.c
+> > +++ b/mm/kasan/generic_report.c
+> > @@ -107,6 +107,24 @@ static const char *get_wild_bug_type(struct kasan_access_info *info)
+> >
+> >  const char *get_bug_type(struct kasan_access_info *info)
+> >  {
+> > +     /*
+> > +      * If access_size is negative numbers, then it has three reasons
+> > +      * to be defined as heap-out-of-bounds bug type.
+> > +      * 1) Casting negative numbers to size_t would indeed turn up as
+> > +      *    a large size_t and its value will be larger than ULONG_MAX/2,
+> > +      *    so that this can qualify as out-of-bounds.
+> > +      * 2) If KASAN has new bug type and user-space passes negative size,
+> > +      *    then there are duplicate reports. So don't produce new bug type
+> > +      *    in order to prevent duplicate reports by some systems
+> > +      *    (e.g. syzbot) to report the same bug twice.
+> > +      * 3) When size is negative numbers, it may be passed from user-space.
+> > +      *    So we always print heap-out-of-bounds in order to prevent that
+> > +      *    kernel-space and user-space have the same bug but have duplicate
+> > +      *    reports.
+> > +      */
+>
+> Completely fail to understand 2) and 3). 2) talks something about *NOT* producing new bug
+> type, but at the same time you code actually does that.
+> 3) says something about user-space which have nothing to do with kasan.
 
-There is no SCU on 8MQ so I don't think that was the problem.
+The idea was to use one of the existing bug titles so that syzbot does
+not produce 2 versions for OOBs where size is user-controlled. We
+don't know if it's overflow from heap, global or stack, but heap is
+the most common bug, so saying heap overflow will reduce chances of
+producing duplicates the most.
+But for all of this to work we do need to use one of the existing bug titles.
 
-Maybe something else.
-
-> thanks for the effort, I hope this is useful for others too.
-
-I'll try to keep those up-to-date.
-
-> 
->                          martin
-> 
+> > +     if ((long)info->access_size < 0)
+>
+>         if (info->access_addr + info->access_size < info->access_addr)
+>
+> > +             return "heap-out-of-bounds";
+> > +
+> >       if (addr_has_shadow(info->access_addr))
+> >               return get_shadow_bug_type(info);
+> >       return get_wild_bug_type(info);
+> > diff --git a/mm/kasan/report.c b/mm/kasan/report.c
+> > index 621782100eaa..c79e28814e8f 100644
+> > --- a/mm/kasan/report.c
+> > +++ b/mm/kasan/report.c
+> > @@ -446,7 +446,7 @@ static void print_shadow_for_address(const void *addr)
+> >       }
+> >  }
+> >
+> > -static bool report_enabled(void)
+> > +bool report_enabled(void)
+> >  {
+> >       if (current->kasan_depth)
+> >               return false;
+> > diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
+> > index 0e987c9ca052..b829535a3ad7 100644
+> > --- a/mm/kasan/tags.c
+> > +++ b/mm/kasan/tags.c
+> > @@ -86,6 +86,11 @@ bool check_memory_region(unsigned long addr, size_t size, bool write,
+> >       if (unlikely(size == 0))
+> >               return true;
+> >
+> > +     if (unlikely((long)size < 0)) {
+>
+>         if (unlikely(addr + size < addr)) {
+>
+> > +             kasan_report(addr, size, write, ret_ip);
+> > +             return false;
+> > +     }
+> > +
+> >       tag = get_tag((const void *)addr);
+> >
+> >       /*
+> > diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
+> > index 969ae08f59d7..f7ae474aef3a 100644
+> > --- a/mm/kasan/tags_report.c
+> > +++ b/mm/kasan/tags_report.c
+> > @@ -36,6 +36,24 @@
+> >
+> >  const char *get_bug_type(struct kasan_access_info *info)
+> >  {
+> > +     /*
+> > +      * If access_size is negative numbers, then it has three reasons
+> > +      * to be defined as heap-out-of-bounds bug type.
+> > +      * 1) Casting negative numbers to size_t would indeed turn up as
+> > +      *    a large size_t and its value will be larger than ULONG_MAX/2,
+> > +      *    so that this can qualify as out-of-bounds.
+> > +      * 2) If KASAN has new bug type and user-space passes negative size,
+> > +      *    then there are duplicate reports. So don't produce new bug type
+> > +      *    in order to prevent duplicate reports by some systems
+> > +      *    (e.g. syzbot) to report the same bug twice.
+> > +      * 3) When size is negative numbers, it may be passed from user-space.
+> > +      *    So we always print heap-out-of-bounds in order to prevent that
+> > +      *    kernel-space and user-space have the same bug but have duplicate
+> > +      *    reports.
+> > +      */
+> > +     if ((long)info->access_size < 0)
+>
+>         if (info->access_addr + info->access_size < info->access_addr)
+>
+> > +             return "heap-out-of-bounds";
+> > +
+> >  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> >       struct kasan_alloc_meta *alloc_meta;
+> >       struct kmem_cache *cache;
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
