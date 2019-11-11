@@ -2,87 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65798F70F3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 10:40:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72004F715E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 11:08:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UvCaaxfPxbiWC9fRVY5Ec52c0ap0A6UXS9WoIx/7Qts=; b=Q9aTicVrs3j3Pc
-	rYPKY1vizhm+ryBY5fRxHiE6XUcOQK/pQ9gen8BvrQIniidg4RBuxcg6bWc6IKPBrA9bwKmKjyBPW
-	tWuxFjws4y6by+UT1UAjnAS12SIhF7WymN7SuqEbN+bcuGID+7HtsAND5h+NRp8pmRq8pqUI477J6
-	b1yha1S/QDbeEmzE9wuMBq7E3xbktUEmnqeOPwXLE5Th5KTNiCDDQkmQDytEQCNEsUfTGfe97dSNm
-	cT+ZMVLFpe4v4jLgiiObm5i2qC/TNPFUhZwUGtBCHqxWluQm1KyYwCNSX3fAYXWWG35CroI3XTHJb
-	X5b8VBtNmnXQ3dE4umQw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YyDSKjIgAnmqf6kaE1m23UQd/8xsgevdC2xKIX6LRp8=; b=tzIQYE2qD4U1k1
+	31NEyE1tS9Y66GDOS/vs+qo1rQbmfFtEb1lRbFokdOgnul8tcEoodOXCNSetIRvFiprHCydJAcMFJ
+	931AYhxMowEW1yncYs8Ma0rkzB0yxF0pPFQDlPW4Csj/A+fEHXOQ504FMaEWVN4mGO+3IbYXuGedG
+	ZzJLP96cJ8QUM1C8LTGu88YByknVfxozBCuYn8PDWweM8nM6yaJ6zYL359gGfhRjp8S8m8WPSPBQ+
+	IpbgvLF3HITrS15Zo0U/88mgppzdHKbBs9FbTd51kcMxZg62P9VnmvR9bahF5k8bip9DcOU9oL8oL
+	qUtLgCyO/W2v56y4BJkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU6B0-0005sJ-Jf; Mon, 11 Nov 2019 09:40:02 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iU6c2-0002LC-56; Mon, 11 Nov 2019 10:07:58 +0000
+Received: from mail-eopbgr700056.outbound.protection.outlook.com
+ ([40.107.70.56] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU6Ao-0005pN-T3
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 09:39:52 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAB9deam107948;
- Mon, 11 Nov 2019 03:39:40 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573465180;
- bh=BEXZAIpRzxqNeefh/J9C5EiDlt0B/TXLhAEH6e8HpHk=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=TfHXEZamg58rdWlK5BysZV02AQQQj4UU7QrHapkWnMxQ72oxEdzvHcEsimBil1wd6
- lIv6CticHJZrV5CnF2Wvc1LS51J6EAP0NNB2ojI1Ni1R8wx7dk5/zdc+zQD6o+kLjX
- Xs7IUjaUFXCKeqpsS6D3oBG9JK6xefyD/07vDVUc=
-Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xAB9ddRZ118324
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 11 Nov 2019 03:39:40 -0600
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 11
- Nov 2019 03:39:21 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 11 Nov 2019 03:39:21 -0600
-Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAB9dZnY090658;
- Mon, 11 Nov 2019 03:39:36 -0600
-Subject: Re: [PATCH v4 11/15] dmaengine: ti: New driver for K3 UDMA - split#3:
- alloc/free chan_resources
-To: Vinod Koul <vkoul@kernel.org>
-References: <20191101084135.14811-1-peter.ujfalusi@ti.com>
- <20191101084135.14811-12-peter.ujfalusi@ti.com>
- <20191111060625.GP952516@vkoul-mobl>
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Message-ID: <33c88201-3311-0438-ead5-63ea14a0b153@ti.com>
-Date: Mon, 11 Nov 2019 11:40:51 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191111060625.GP952516@vkoul-mobl>
+ id 1iU6bo-0002KV-Kb
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 10:07:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=a/mdbG3lwq0t7a4SRYLm4RFbeSbMdRJXQeMvzUR8EvnIz/QldQjfNiByUTpJ0hwVueJ8areDDfjKV991eqkShoWErOMwICFUsj+y8X3xgjY1bN7XA6Fjs18uMm+fC6rUUrDr4AxfMO6JwrYcC9EFeC1VaI10u4MN/d18nYS+mU6oJw+1cAEa8RjZP2Ft/gjCnQrNcYh0J81CnT7cPmjKHbtiyVdmXrFwh7jrctI02ieElFLzYcozvfg+Ea9KzC0Nvmn6nOFGKY5OCz6IIx+dT/Pa1cQginaDsKJh8uUek7DWJQDC8pcvBDm4mp95Fe5vfCTsSldHEgYpNAfSe3dxZw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=P1tzBBQdTc0VJTTTfMcMbtrx8bQpf4qsqBt3In9OZ+0=;
+ b=HO7Hpzg3AnfWacY5Euw//WcKqh5mHepZF8Lb8GwfDR6UcXi72OjQpxnOwDDA+3J+15SnyGUvR8S8Wxx30cDUpiZVmbG3ZJquFV/1UohnZQFeuz+aJMnmItvpMTBdLsj57DDkthu2yoVjhx2Fn1P0l+Ianatf6kk+Q51efODRfglxtjZPKRu6YMVKZqIu+zHRAV5WgI4Bi7ttkfzXT5lYmqzN5kvH9Vhixv51sSfMydafm9nR79oaHW9Gdlph1H1NFVWUqrF6wDnM3iLStupbMc3dDeNl6cgFwNCtsdFOOOL5iPP3T4ZVn6JIbhsJ6whYrTMy7jJ/BNbKmSR82YcJYg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=P1tzBBQdTc0VJTTTfMcMbtrx8bQpf4qsqBt3In9OZ+0=;
+ b=e9oC1zTs6pre5uvCz0khZgyWRjKwqoioZF0be6yx4SSM0Rler18txT57pZC5QW31WCNaawM3ulU4jjS2T0oMVRcGkg+2RTQN1ckNpITyaEtEsbeWmnwsDoyCwcnHrYUa96V49xBGRLihhbHaJHu1Me/3GpWSzqNLxYQT4XqHWDk=
+Received: from MN2PR02MB6029.namprd02.prod.outlook.com (52.132.174.207) by
+ MN2PR02MB6429.namprd02.prod.outlook.com (52.132.172.27) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2430.20; Mon, 11 Nov 2019 10:07:38 +0000
+Received: from MN2PR02MB6029.namprd02.prod.outlook.com
+ ([fe80::7c98:7d3:f15a:27f]) by MN2PR02MB6029.namprd02.prod.outlook.com
+ ([fe80::7c98:7d3:f15a:27f%3]) with mapi id 15.20.2430.027; Mon, 11 Nov 2019
+ 10:07:38 +0000
+From: Manish Narani <MNARANI@xilinx.com>
+To: Rob Herring <robh@kernel.org>
+Subject: RE: [PATCH v5 4/8] dt-bindings: mmc: Add optional generic properties
+ for mmc
+Thread-Topic: [PATCH v5 4/8] dt-bindings: mmc: Add optional generic properties
+ for mmc
+Thread-Index: AQHVkHqBcCBapDuL00GCzGyd3h/hfad7qj+AgAojF2A=
+Date: Mon, 11 Nov 2019 10:07:37 +0000
+Message-ID: <MN2PR02MB6029D371F580123CB32BE148C1740@MN2PR02MB6029.namprd02.prod.outlook.com>
+References: <1572588353-110682-1-git-send-email-manish.narani@xilinx.com>
+ <1572588353-110682-5-git-send-email-manish.narani@xilinx.com>
+ <20191104231427.GA7606@bogus>
+In-Reply-To: <20191104231427.GA7606@bogus>
+Accept-Language: en-US
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=MNARANI@xilinx.com; 
+x-originating-ip: [149.199.50.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 2f62a6d2-f43d-4488-2fb0-08d7668efb4b
+x-ms-traffictypediagnostic: MN2PR02MB6429:|MN2PR02MB6429:
+x-ld-processed: 657af505-d5df-48d0-8300-c31994686c5c,ExtAddr
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MN2PR02MB642999F18C15BAFE91305F36C1740@MN2PR02MB6429.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 0218A015FA
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(396003)(346002)(376002)(39860400002)(136003)(13464003)(199004)(189003)(6436002)(186003)(54906003)(107886003)(86362001)(66446008)(74316002)(6116002)(305945005)(55016002)(66066001)(66946007)(66476007)(66556008)(76116006)(64756008)(102836004)(14444005)(256004)(316002)(53546011)(6246003)(71200400001)(71190400001)(229853002)(478600001)(81156014)(7736002)(6506007)(6916009)(76176011)(7696005)(9686003)(81166006)(25786009)(14454004)(26005)(33656002)(99286004)(11346002)(7416002)(2906002)(4326008)(476003)(8936002)(5660300002)(8676002)(52536014)(486006)(3846002)(446003)(41533002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR02MB6429;
+ H:MN2PR02MB6029.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 0PqwUlr9GQ42Ws9EGD4hMSvyHYfcOAo1uJWtFo2a+ooWPa+LIeumfOKIQbSrw8mWrPPbFkqtn3xSyj+O8BJhW1yxjUIM01fXOmnLm07woIeeGZSg/hpauWfhnenQDEsnr6yva6Wnkz2B4H/wFoivLJFqPAlSTC0KPlY3qwx3szTzAv8XF6C9GPq7kwX+ziKMl5nN8J6BGrqUO4AmrT+966u+8sQTejBZwnmhlmvpyB1SF6dQXlV3vSim2yoxfoLCTIYfDhkIoaW56Hv7z9bD9bjUbagGTgQcYNNNi4hRuSz+FXuti9Gq/2ASFS3a35MGYu7kJ/oO3TTpCK+Ox39tLHYzFMjwva8m5Pfq9Qksxz+UhGpRlaXnMONYXXkFRqP1jJgNK4RO84OCR15yEU30HRZQTfZbBo2K0uWd7f7i5PspHsQ9+2z+ES41erd93DbD
+MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2f62a6d2-f43d-4488-2fb0-08d7668efb4b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Nov 2019 10:07:38.0534 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: QgazfYqm8otzNZT4mDmCUqlfu4qugG2BMVsEExGigG6ZHxVMnzBlkwggtihVthqxgDiv2DOc5XrJ26TK8VdK9Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR02MB6429
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_013951_069663_73DB5197 
-X-CRM114-Status: GOOD (  21.45  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191111_020744_680414_E2D21770 
+X-CRM114-Status: GOOD (  18.65  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.70.56 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,157 +122,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, devicetree@vger.kernel.org, grygorii.strashko@ti.com,
- lokeshvutla@ti.com, j-keerthy@ti.com, linux-kernel@vger.kernel.org,
- t-kristo@ti.com, tony@atomide.com, robh+dt@kernel.org, ssantosh@kernel.org,
- dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
+ Nava kishore Manne <navam@xilinx.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ "adrian.hunter@intel.com" <adrian.hunter@intel.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jolly Shah <JOLLYS@xilinx.com>, Rajan Vaja <RAJANV@xilinx.com>,
+ Michal Simek <michals@xilinx.com>, git <git@xilinx.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAxMS8xMS8yMDE5IDguMDYsIFZpbm9kIEtvdWwgd3JvdGU6Cj4gT24gMDEtMTEtMTksIDEw
-OjQxLCBQZXRlciBVamZhbHVzaSB3cm90ZToKPj4gU3BsaXQgcGF0Y2ggZm9yIHJldmlldyBjb250
-YWluaW5nOiBjaGFubmVsIHJzb3VyY2UgYWxsb2NhdGlvbiBhbmQgZnJlZQo+IAo+IHMvcnNvdXJj
-ZS9yZXNvdXJjZQoKSSdsbCB0cnkgdG8gcmVtZW1iZXIgdG8gZml4IHVwIHRoaXMgdGVtcG9yYWxs
-eSBjb21taXQgbWVzc2FnZSwgYXQgdGhlCmVuZCB0aGVzZSBzcGxpdCBwYXRjaGVzIGFyZSBnb2lu
-ZyB0byBiZSBzcXVhc2hlZCBpbnRvIG9uZSBjb21taXQgd2hlbgp0aGluZ3MgYXJlIHJlYWR5IHRv
-IGJlIGFwcGxpZWQuCgo+PiArc3RhdGljIGludCB1ZG1hX3Rpc2NpX3R4X2NoYW5uZWxfY29uZmln
-KHN0cnVjdCB1ZG1hX2NoYW4gKnVjKQo+PiArewo+PiArCXN0cnVjdCB1ZG1hX2RldiAqdWQgPSB1
-Yy0+dWQ7Cj4+ICsJc3RydWN0IHVkbWFfdGlzY2lfcm0gKnRpc2NpX3JtID0gJnVkLT50aXNjaV9y
-bTsKPj4gKwljb25zdCBzdHJ1Y3QgdGlfc2NpX3JtX3VkbWFwX29wcyAqdGlzY2lfb3BzID0gdGlz
-Y2lfcm0tPnRpc2NpX3VkbWFwX29wczsKPj4gKwlzdHJ1Y3QgdWRtYV90Y2hhbiAqdGNoYW4gPSB1
-Yy0+dGNoYW47Cj4+ICsJaW50IHRjX3JpbmcgPSBrM19yaW5nYWNjX2dldF9yaW5nX2lkKHRjaGFu
-LT50Y19yaW5nKTsKPj4gKwlzdHJ1Y3QgdGlfc2NpX21zZ19ybV91ZG1hcF90eF9jaF9jZmcgcmVx
-X3R4ID0geyAwIH07Cj4+ICsJdTMyIG1vZGUsIGZldGNoX3NpemU7Cj4+ICsJaW50IHJldCA9IDA7
-Cj4+ICsKPj4gKwlpZiAodWMtPnBrdF9tb2RlKSB7Cj4+ICsJCW1vZGUgPSBUSV9TQ0lfUk1fVURN
-QVBfQ0hBTl9UWVBFX1BLVF9QQlJSOwo+PiArCQlmZXRjaF9zaXplID0gY3BwaTVfaGRlc2NfY2Fs
-Y19zaXplKHVjLT5uZWVkc19lcGliLCB1Yy0+cHNkX3NpemUsCj4+ICsJCQkJCQkgICAwKTsKPj4g
-Kwl9IGVsc2Ugewo+PiArCQltb2RlID0gVElfU0NJX1JNX1VETUFQX0NIQU5fVFlQRV8zUkRQX1BC
-UlI7Cj4+ICsJCWZldGNoX3NpemUgPSBzaXplb2Yoc3RydWN0IGNwcGk1X2Rlc2NfaGRyX3QpOwo+
-PiArCX0KPj4gKwo+PiArCXJlcV90eC52YWxpZF9wYXJhbXMgPQo+PiArCQlUSV9TQ0lfTVNHX1ZB
-TFVFX1JNX1VETUFQX0NIX1BBVVNFX09OX0VSUl9WQUxJRCB8Cj4+ICsJCVRJX1NDSV9NU0dfVkFM
-VUVfUk1fVURNQVBfQ0hfVFhfRklMVF9FSU5GT19WQUxJRCB8Cj4+ICsJCVRJX1NDSV9NU0dfVkFM
-VUVfUk1fVURNQVBfQ0hfVFhfRklMVF9QU1dPUkRTX1ZBTElEIHwKPj4gKwkJVElfU0NJX01TR19W
-QUxVRV9STV9VRE1BUF9DSF9DSEFOX1RZUEVfVkFMSUQgfAo+PiArCQlUSV9TQ0lfTVNHX1ZBTFVF
-X1JNX1VETUFQX0NIX1RYX1NVUFJfVERQS1RfVkFMSUQgfAo+PiArCQlUSV9TQ0lfTVNHX1ZBTFVF
-X1JNX1VETUFQX0NIX0ZFVENIX1NJWkVfVkFMSUQgfAo+PiArCQlUSV9TQ0lfTVNHX1ZBTFVFX1JN
-X1VETUFQX0NIX0NRX1FOVU1fVkFMSUQ7Cj4gCj4gYnVuY2ggb2YgdGhlc2UgYXJlIHJlcGVhdCwg
-eW91IGNhbiBkZWZpbmUgYSBDT01NT05fVkFMSURfUEFSQU1TIGFuZCB1c2UKPiB0aGF0ICsgc3Bl
-Y2lmaWMgb25lcy4uCgpPSywgSSdsbCB0cnkgdG8gc2FuaXRpemUgdGhlc2UgYSBiaXQuCgo+PiAr
-Cj4+ICsJcmVxX3R4Lm5hdl9pZCA9IHRpc2NpX3JtLT50aXNjaV9kZXZfaWQ7Cj4+ICsJcmVxX3R4
-LmluZGV4ID0gdGNoYW4tPmlkOwo+PiArCXJlcV90eC50eF9wYXVzZV9vbl9lcnIgPSAwOwo+PiAr
-CXJlcV90eC50eF9maWx0X2VpbmZvID0gMDsKPj4gKwlyZXFfdHgudHhfZmlsdF9wc3dvcmRzID0g
-MDsKPiAKPiBpIHRoaW5rIGluaXRpYWxpemF0aW9uIHRvIDAgaXMgc3VwZXJmbHVvdXMKCkluZGVl
-ZCwgSSdsbCByZW1vdmUgdGhlc2UuCgo+PiArCXJlcV90eC50eF9jaGFuX3R5cGUgPSBtb2RlOwo+
-PiArCXJlcV90eC50eF9zdXByX3RkcGt0ID0gdWMtPm5vdGRwa3Q7Cj4+ICsJcmVxX3R4LnR4X2Zl
-dGNoX3NpemUgPSBmZXRjaF9zaXplID4+IDI7Cj4+ICsJcmVxX3R4LnR4Y3FfcW51bSA9IHRjX3Jp
-bmc7Cj4+ICsJaWYgKHVjLT5lcF90eXBlID09IFBTSUxfRVBfUERNQV9YWSkgewo+PiArCQkvKiB3
-YWl0IGZvciBwZWVyIHRvIGNvbXBsZXRlIHRoZSB0ZWFyZG93biBmb3IgUERNQXMgKi8KPj4gKwkJ
-cmVxX3R4LnZhbGlkX3BhcmFtcyB8PQo+PiArCQkJCVRJX1NDSV9NU0dfVkFMVUVfUk1fVURNQVBf
-Q0hfVFhfVERUWVBFX1ZBTElEOwo+PiArCQlyZXFfdHgudHhfdGR0eXBlID0gMTsKPj4gKwl9Cj4+
-ICsKPj4gKwlyZXQgPSB0aXNjaV9vcHMtPnR4X2NoX2NmZyh0aXNjaV9ybS0+dGlzY2ksICZyZXFf
-dHgpOwo+PiArCWlmIChyZXQpCj4+ICsJCWRldl9lcnIodWQtPmRldiwgInRjaGFuJWQgY2ZnIGZh
-aWxlZCAlZFxuIiwgdGNoYW4tPmlkLCByZXQpOwo+PiArCj4+ICsJcmV0dXJuIHJldDsKPj4gK30K
-Pj4gKwo+PiArc3RhdGljIGludCB1ZG1hX3Rpc2NpX3J4X2NoYW5uZWxfY29uZmlnKHN0cnVjdCB1
-ZG1hX2NoYW4gKnVjKQo+PiArewo+PiArCXN0cnVjdCB1ZG1hX2RldiAqdWQgPSB1Yy0+dWQ7Cj4+
-ICsJc3RydWN0IHVkbWFfdGlzY2lfcm0gKnRpc2NpX3JtID0gJnVkLT50aXNjaV9ybTsKPj4gKwlj
-b25zdCBzdHJ1Y3QgdGlfc2NpX3JtX3VkbWFwX29wcyAqdGlzY2lfb3BzID0gdGlzY2lfcm0tPnRp
-c2NpX3VkbWFwX29wczsKPj4gKwlzdHJ1Y3QgdWRtYV9yY2hhbiAqcmNoYW4gPSB1Yy0+cmNoYW47
-Cj4+ICsJaW50IGZkX3JpbmcgPSBrM19yaW5nYWNjX2dldF9yaW5nX2lkKHJjaGFuLT5mZF9yaW5n
-KTsKPj4gKwlpbnQgcnhfcmluZyA9IGszX3JpbmdhY2NfZ2V0X3JpbmdfaWQocmNoYW4tPnJfcmlu
-Zyk7Cj4+ICsJc3RydWN0IHRpX3NjaV9tc2dfcm1fdWRtYXBfcnhfY2hfY2ZnIHJlcV9yeCA9IHsg
-MCB9Owo+PiArCXN0cnVjdCB0aV9zY2lfbXNnX3JtX3VkbWFwX2Zsb3dfY2ZnIGZsb3dfcmVxID0g
-eyAwIH07Cj4+ICsJdTMyIG1vZGUsIGZldGNoX3NpemU7Cj4+ICsJaW50IHJldCA9IDA7Cj4+ICsK
-Pj4gKwlpZiAodWMtPnBrdF9tb2RlKSB7Cj4+ICsJCW1vZGUgPSBUSV9TQ0lfUk1fVURNQVBfQ0hB
-Tl9UWVBFX1BLVF9QQlJSOwo+PiArCQlmZXRjaF9zaXplID0gY3BwaTVfaGRlc2NfY2FsY19zaXpl
-KHVjLT5uZWVkc19lcGliLAo+PiArCQkJCQkJCXVjLT5wc2Rfc2l6ZSwgMCk7Cj4+ICsJfSBlbHNl
-IHsKPj4gKwkJbW9kZSA9IFRJX1NDSV9STV9VRE1BUF9DSEFOX1RZUEVfM1JEUF9QQlJSOwo+PiAr
-CQlmZXRjaF9zaXplID0gc2l6ZW9mKHN0cnVjdCBjcHBpNV9kZXNjX2hkcl90KTsKPj4gKwl9Cj4+
-ICsKPj4gKwlyZXFfcngudmFsaWRfcGFyYW1zID0KPj4gKwkJVElfU0NJX01TR19WQUxVRV9STV9V
-RE1BUF9DSF9QQVVTRV9PTl9FUlJfVkFMSUQgfAo+PiArCQlUSV9TQ0lfTVNHX1ZBTFVFX1JNX1VE
-TUFQX0NIX0ZFVENIX1NJWkVfVkFMSUQgfAo+PiArCQlUSV9TQ0lfTVNHX1ZBTFVFX1JNX1VETUFQ
-X0NIX0NRX1FOVU1fVkFMSUQgfAo+PiArCQlUSV9TQ0lfTVNHX1ZBTFVFX1JNX1VETUFQX0NIX0NI
-QU5fVFlQRV9WQUxJRCB8Cj4+ICsJCVRJX1NDSV9NU0dfVkFMVUVfUk1fVURNQVBfQ0hfUlhfSUdO
-T1JFX1NIT1JUX1ZBTElEIHwKPj4gKwkJVElfU0NJX01TR19WQUxVRV9STV9VRE1BUF9DSF9SWF9J
-R05PUkVfTE9OR19WQUxJRCB8Cj4+ICsJCVRJX1NDSV9NU0dfVkFMVUVfUk1fVURNQVBfQ0hfUlhf
-RkxPV0lEX1NUQVJUX1ZBTElEIHwKPj4gKwkJVElfU0NJX01TR19WQUxVRV9STV9VRE1BUF9DSF9S
-WF9GTE9XSURfQ05UX1ZBTElEOwo+PiArCj4+ICsJcmVxX3J4Lm5hdl9pZCA9IHRpc2NpX3JtLT50
-aXNjaV9kZXZfaWQ7Cj4+ICsJcmVxX3J4LmluZGV4ID0gcmNoYW4tPmlkOwo+PiArCXJlcV9yeC5y
-eF9mZXRjaF9zaXplID0gIGZldGNoX3NpemUgPj4gMjsKPj4gKwlyZXFfcngucnhjcV9xbnVtID0g
-cnhfcmluZzsKPj4gKwlyZXFfcngucnhfcGF1c2Vfb25fZXJyID0gMDsKPj4gKwlyZXFfcngucnhf
-Y2hhbl90eXBlID0gbW9kZTsKPj4gKwlyZXFfcngucnhfaWdub3JlX3Nob3J0ID0gMDsKPj4gKwly
-ZXFfcngucnhfaWdub3JlX2xvbmcgPSAwOwo+PiArCXJlcV9yeC5mbG93aWRfc3RhcnQgPSAwOwo+
-PiArCXJlcV9yeC5mbG93aWRfY250ID0gMDsKPj4gKwo+PiArCXJldCA9IHRpc2NpX29wcy0+cnhf
-Y2hfY2ZnKHRpc2NpX3JtLT50aXNjaSwgJnJlcV9yeCk7Cj4+ICsJaWYgKHJldCkgewo+PiArCQlk
-ZXZfZXJyKHVkLT5kZXYsICJyY2hhbiVkIGNmZyBmYWlsZWQgJWRcbiIsIHJjaGFuLT5pZCwgcmV0
-KTsKPj4gKwkJcmV0dXJuIHJldDsKPj4gKwl9Cj4+ICsKPj4gKwlmbG93X3JlcS52YWxpZF9wYXJh
-bXMgPQo+PiArCQlUSV9TQ0lfTVNHX1ZBTFVFX1JNX1VETUFQX0ZMT1dfRUlORk9fUFJFU0VOVF9W
-QUxJRCB8Cj4+ICsJCVRJX1NDSV9NU0dfVkFMVUVfUk1fVURNQVBfRkxPV19QU0lORk9fUFJFU0VO
-VF9WQUxJRCB8Cj4+ICsJCVRJX1NDSV9NU0dfVkFMVUVfUk1fVURNQVBfRkxPV19FUlJPUl9IQU5E
-TElOR19WQUxJRCB8Cj4+ICsJCVRJX1NDSV9NU0dfVkFMVUVfUk1fVURNQVBfRkxPV19ERVNDX1RZ
-UEVfVkFMSUQgfAo+PiArCQlUSV9TQ0lfTVNHX1ZBTFVFX1JNX1VETUFQX0ZMT1dfREVTVF9RTlVN
-X1ZBTElEIHwKPj4gKwkJVElfU0NJX01TR19WQUxVRV9STV9VRE1BUF9GTE9XX1NSQ19UQUdfSElf
-U0VMX1ZBTElEIHwKPj4gKwkJVElfU0NJX01TR19WQUxVRV9STV9VRE1BUF9GTE9XX1NSQ19UQUdf
-TE9fU0VMX1ZBTElEIHwKPj4gKwkJVElfU0NJX01TR19WQUxVRV9STV9VRE1BUF9GTE9XX0RFU1Rf
-VEFHX0hJX1NFTF9WQUxJRCB8Cj4+ICsJCVRJX1NDSV9NU0dfVkFMVUVfUk1fVURNQVBfRkxPV19E
-RVNUX1RBR19MT19TRUxfVkFMSUQgfAo+PiArCQlUSV9TQ0lfTVNHX1ZBTFVFX1JNX1VETUFQX0ZM
-T1dfRkRRMF9TWjBfUU5VTV9WQUxJRCB8Cj4+ICsJCVRJX1NDSV9NU0dfVkFMVUVfUk1fVURNQVBf
-RkxPV19GRFExX1FOVU1fVkFMSUQgfAo+PiArCQlUSV9TQ0lfTVNHX1ZBTFVFX1JNX1VETUFQX0ZM
-T1dfRkRRMl9RTlVNX1ZBTElEIHwKPj4gKwkJVElfU0NJX01TR19WQUxVRV9STV9VRE1BUF9GTE9X
-X0ZEUTNfUU5VTV9WQUxJRDsKPj4gKwo+PiArCWZsb3dfcmVxLm5hdl9pZCA9IHRpc2NpX3JtLT50
-aXNjaV9kZXZfaWQ7Cj4+ICsJZmxvd19yZXEuZmxvd19pbmRleCA9IHJjaGFuLT5pZDsKPj4gKwo+
-PiArCWlmICh1Yy0+bmVlZHNfZXBpYikKPj4gKwkJZmxvd19yZXEucnhfZWluZm9fcHJlc2VudCA9
-IDE7Cj4+ICsJZWxzZQo+PiArCQlmbG93X3JlcS5yeF9laW5mb19wcmVzZW50ID0gMDsKPj4gKwlp
-ZiAodWMtPnBzZF9zaXplKQo+PiArCQlmbG93X3JlcS5yeF9wc2luZm9fcHJlc2VudCA9IDE7Cj4+
-ICsJZWxzZQo+PiArCQlmbG93X3JlcS5yeF9wc2luZm9fcHJlc2VudCA9IDA7Cj4+ICsJZmxvd19y
-ZXEucnhfZXJyb3JfaGFuZGxpbmcgPSAxOwo+PiArCWZsb3dfcmVxLnJ4X2Rlc2NfdHlwZSA9IDA7
-Cj4+ICsJZmxvd19yZXEucnhfZGVzdF9xbnVtID0gcnhfcmluZzsKPj4gKwlmbG93X3JlcS5yeF9z
-cmNfdGFnX2hpX3NlbCA9IDI7Cj4+ICsJZmxvd19yZXEucnhfc3JjX3RhZ19sb19zZWwgPSA0Owo+
-PiArCWZsb3dfcmVxLnJ4X2Rlc3RfdGFnX2hpX3NlbCA9IDU7Cj4+ICsJZmxvd19yZXEucnhfZGVz
-dF90YWdfbG9fc2VsID0gNDsKPiAKPiBjYW4gd2UgZ2V0IHJpZCBvZiBtYWdpYyBudW1iZXJzIGhl
-cmUgYW5kIGVsc2V3aGVyZSwgb3IgYXQgbGVhc3QgY29tbWVudAo+IG9uIHdoYXQgdGhlc2UgbWVh
-bi4uCgpUcnVlLCBJJ2xsIGNsZWFuIGl0IHVwLgoKPj4gK3N0YXRpYyBpbnQgdWRtYV9hbGxvY19j
-aGFuX3Jlc291cmNlcyhzdHJ1Y3QgZG1hX2NoYW4gKmNoYW4pCj4+ICt7Cj4+ICsJc3RydWN0IHVk
-bWFfY2hhbiAqdWMgPSB0b191ZG1hX2NoYW4oY2hhbik7Cj4+ICsJc3RydWN0IHVkbWFfZGV2ICp1
-ZCA9IHRvX3VkbWFfZGV2KGNoYW4tPmRldmljZSk7Cj4+ICsJY29uc3Qgc3RydWN0IHVkbWFfbWF0
-Y2hfZGF0YSAqbWF0Y2hfZGF0YSA9IHVkLT5tYXRjaF9kYXRhOwo+PiArCXN0cnVjdCBrM19yaW5n
-ICppcnFfcmluZzsKPj4gKwl1MzIgaXJxX3VkbWFfaWR4Owo+PiArCWludCByZXQ7Cj4+ICsKPj4g
-KwlpZiAodWMtPnBrdF9tb2RlIHx8IHVjLT5kaXIgPT0gRE1BX01FTV9UT19NRU0pIHsKPj4gKwkJ
-dWMtPnVzZV9kbWFfcG9vbCA9IHRydWU7Cj4+ICsJCS8qIGluIGNhc2Ugb2YgTUVNX1RPX01FTSB3
-ZSBoYXZlIG1heGltdW0gb2YgdHdvIFRScyAqLwo+PiArCQlpZiAodWMtPmRpciA9PSBETUFfTUVN
-X1RPX01FTSkgewo+PiArCQkJdWMtPmhkZXNjX3NpemUgPSBjcHBpNV90cmRlc2NfY2FsY19zaXpl
-KAo+PiArCQkJCQlzaXplb2Yoc3RydWN0IGNwcGk1X3RyX3R5cGUxNV90KSwgMik7Cj4+ICsJCQl1
-Yy0+cGt0X21vZGUgPSBmYWxzZTsKPj4gKwkJfQo+PiArCX0KPj4gKwo+PiArCWlmICh1Yy0+dXNl
-X2RtYV9wb29sKSB7Cj4+ICsJCXVjLT5oZGVzY19wb29sID0gZG1hX3Bvb2xfY3JlYXRlKHVjLT5u
-YW1lLCB1ZC0+ZGRldi5kZXYsCj4+ICsJCQkJCQkgdWMtPmhkZXNjX3NpemUsIHVkLT5kZXNjX2Fs
-aWduLAo+PiArCQkJCQkJIDApOwo+PiArCQlpZiAoIXVjLT5oZGVzY19wb29sKSB7Cj4+ICsJCQlk
-ZXZfZXJyKHVkLT5kZGV2LmRldiwKPj4gKwkJCQkiRGVzY3JpcHRvciBwb29sIGFsbG9jYXRpb24g
-ZmFpbGVkXG4iKTsKPj4gKwkJCXVjLT51c2VfZG1hX3Bvb2wgPSBmYWxzZTsKPj4gKwkJCXJldHVy
-biAtRU5PTUVNOwo+PiArCQl9Cj4+ICsJfQo+PiArCj4+ICsJLyoKPj4gKwkgKiBNYWtlIHN1cmUg
-dGhhdCB0aGUgY29tcGxldGlvbiBpcyBpbiBhIGtub3duIHN0YXRlOgo+PiArCSAqIE5vIHRlYXJk
-b3duLCB0aGUgY2hhbm5lbCBpcyBpZGxlCj4+ICsJICovCj4+ICsJcmVpbml0X2NvbXBsZXRpb24o
-JnVjLT50ZWFyZG93bl9jb21wbGV0ZWQpOwo+PiArCWNvbXBsZXRlX2FsbCgmdWMtPnRlYXJkb3du
-X2NvbXBsZXRlZCk7Cj4gCj4gc2hvdWxkIHdlIG5vdCBjb21wbGV0ZSBmaXJzdCBhbmQgdGhlbiBk
-byByZWluaXQgdG8gYnJpbmcgYSBjbGVhbiBzdGF0ZT8KClRoZSByZWFzb24gd2h5IGl0IGlzIGxp
-a2UgdGhpcyBpcyB0aGF0IHRoZSB1ZG1hX3N5bmNocm9uaXplKCkgaXMKY2hlY2tpbmcgdGhlIGNv
-bXBsZXRpb24gYW5kIGlmIHRoZSBjbGllbnQgcmVxdWVzdGVkIHRoZSBjaGFubmVsIGFuZApjYWxs
-cyB0ZXJtaW5hdGVfYWxsX3N5bmMoKSB3aXRob3V0IGFueSB0cmFuc2ZlciB0aGVuIG5vIG9uZSB3
-aWxsIG1hcmsKdGhlIGNvbXBsZXRpb24gY29tcGxldGVkLgoKPj4gKwl1Yy0+c3RhdGUgPSBVRE1B
-X0NIQU5fSVNfSURMRTsKPj4gKwo+PiArCXN3aXRjaCAodWMtPmRpcikgewo+PiArCWNhc2UgRE1B
-X01FTV9UT19NRU06Cj4gCj4gY2FuIHlvdSBleHBsYWluIHdoeSBhIGFsbG9jYXRpb24gc2hvdWxk
-IGJlIGNoYW5uZWwgZGVwZW5kZW50LCBzaG91bGRuJ3QKPiB0aGVzZSB0aGluZ3MgYmUgZG9uZSBp
-biBwcmVwXyBjYWxscz8KCkEgY2hhbm5lbCBjYW4gbm90IGNoYW5nZSBkaXJlY3Rpb24sIGl0IGlz
-IGVpdGhlciBNRU1fVE9fREVWLCBERVZfVE9fTUVNCm9yIE1FTV9UT19NRU0gYW5kIGl0IGlzIHNl
-dCB3aGVuIHRoZSBjaGFubmVsIGlzIHJlcXVlc3RlZC4KCj4gSSBsb29rZWQgYWhlYWQgYW5kIGNo
-ZWNrZWQgdGhlIHByZXBfIGNhbGxzIGFuZCB3ZSBjYW4gdXNlIGFueSBkaXJlY3Rpb24KPiBzbyB0
-aGlzIHNvbWVob3cgZG9lc24ndCBtYWtlIHNlbnNlIQoKSSdtIGNoZWNraW5nIGluIHRoZSBwcmVw
-IGNhbGxiYWNrcyBpZiB0aGUgcmVxdWVzdGVkIGRpcmVjdGlvbiBpcwptYXRjaGluZyB3aXRoIHRo
-ZSBjaGFubmVsIGRpcmVjdGlvbi4KCkkganVzdCBjYW4gbm90IGNoYW5nZSB0aGUgY2hhbm5lbCBk
-aXJlY3Rpb24gcnVudGltZS4KCi0gUMOpdGVyCgpUZXhhcyBJbnN0cnVtZW50cyBGaW5sYW5kIE95
-LCBQb3Jra2FsYW5rYXR1IDIyLCAwMDE4MCBIZWxzaW5raS4KWS10dW5udXMvQnVzaW5lc3MgSUQ6
-IDA2MTU1MjEtNC4gS290aXBhaWtrYS9Eb21pY2lsZTogSGVsc2lua2kKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
-ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Rob,
+
+
+> -----Original Message-----
+> From: Rob Herring <robh@kernel.org>
+> Sent: Tuesday, November 5, 2019 4:44 AM
+> To: Manish Narani <MNARANI@xilinx.com>
+> Cc: ulf.hansson@linaro.org; mark.rutland@arm.com;
+> adrian.hunter@intel.com; Michal Simek <michals@xilinx.com>; Jolly Shah
+> <JOLLYS@xilinx.com>; Nava kishore Manne <navam@xilinx.com>; Rajan Vaja
+> <RAJANV@xilinx.com>; linux-mmc@vger.kernel.org;
+> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-arm-
+> kernel@lists.infradead.org; git <git@xilinx.com>
+> Subject: Re: [PATCH v5 4/8] dt-bindings: mmc: Add optional generic
+> properties for mmc
+> 
+> On Fri, Nov 01, 2019 at 11:35:49AM +0530, Manish Narani wrote:
+> > Add optional properties for mmc hosts which are used to set clk delays
+> > for different speed modes in the controller.
+> >
+> > Signed-off-by: Manish Narani <manish.narani@xilinx.com>
+> > ---
+> >  .../bindings/mmc/mmc-controller.yaml          | 92 +++++++++++++++++++
+> >  1 file changed, 92 insertions(+)
+> >
+> > diff --git a/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
+> b/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
+> > index 080754e0ef35..87a83d966851 100644
+> > --- a/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
+> > +++ b/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
+> > @@ -212,6 +212,98 @@ properties:
+> >      description:
+> >        eMMC HS400 enhanced strobe mode is supported
+> >
+> > +  # Below mentioned are the clock (phase) delays which are to be
+> configured
+> > +  # in the controller while switching to particular speed mode. The range
+> > +  # of values are 0 to 359 degrees.
+> > +
+> > +  clk-phase-legacy:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +      - minimum: 0
+> > +      - maximum: 359
+> > +    description:
+> > +      Input/Output Clock Delay pair in degrees for Legacy Mode.
+> > +
+> > +  clk-phase-mmc-hs:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +      - minimum: 0
+> > +      - maximum: 359
+> > +    description:
+> > +      Input/Output Clock Delay pair degrees for MMC HS.
+> > +
+> > +  clk-phase-sd-hs:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +      - minimum: 0
+> > +      - maximum: 359
+> > +    description:
+> > +      Input/Output Clock Delay pair in degrees for SD HS.
+> > +
+> > +  clk-phase-uhs-sdr12:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +      - minimum: 0
+> > +      - maximum: 359
+> > +    description:
+> > +      Input/Output Clock Delay pair in degrees for SDR12.
+> > +
+> > +  clk-phase-uhs-sdr25:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +      - minimum: 0
+> > +      - maximum: 359
+> > +    description:
+> > +      Input/Output Clock Delay pair in degrees for SDR25.
+> > +
+> > +  clk-phase-uhs-sdr50:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +      - minimum: 0
+> > +      - maximum: 359
+> > +    description:
+> > +      Input/Output Clock Delay pair in degrees for SDR50.
+> > +
+> > +  clk-phase-uhs-sdr104:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +      - minimum: 0
+> > +      - maximum: 359
+> > +    description:
+> > +      Input/Output Clock Delay pair in degrees for SDR104.
+> > +
+> > +  clk-phase-uhs-ddr50:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +      - minimum: 0
+> > +      - maximum: 359
+> > +    description:
+> > +      Input/Output Clock Delay pair in degrees for SD DDR50.
+> > +
+> > +  clk-phase-mmc-ddr52:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +      - minimum: 0
+> > +      - maximum: 359
+> > +    description:
+> > +      Input/Output Clock Delay pair in degrees for MMC DDR52.
+> > +
+> > +  clk-phase-mmc-hs200:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +      - minimum: 0
+> > +      - maximum: 359
+> > +    description:
+> > +      Input/Output Clock Delay pair in degrees for MMC HS200.
+> > +
+> > +  clk-phase-mmc-hs400:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +      - minimum: 0
+> > +      - maximum: 359
+> > +    description:
+> > +      Input/Output Clock Delay pair in degrees for MMC HS400.
+> 
+> This can be condensed into:
+> 
+> patternProperties:
+> 
+> "^clk-phase-(legacy|sd-hs|mmc-(hs|hs[24]00|ddr52)|uhs-
+> (sdr(12|25|50|104)|ddr50))$":
+> 
+> Or if you want to divide them between SD and MMC ones, that would be
+> fine for me.
+
+Below change should work? Please review.
+
+--- a/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
++++ b/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
+@@ -333,6 +333,16 @@ patternProperties:
+     required:
+       - reg
+
++  "^clk-phase-(legacy|sd-hs|mmc-(hs|hs[24]00|ddr52)|uhs-(sdr(12|25|50|104)|ddr50))$":
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++      - minimum: 0
++      - maximum: 359
++    description:
++      Set the clock (phase) delays which are to be configured in the
++      controller while switching to particular speed mode. These values
++      are in pair of degrees.
++
+ dependencies:
+   cd-debounce-delay-ms: [ cd-gpios ]
+   fixed-emmc-driver-type: [ non-removable ]
+@@ -351,6 +361,7 @@ examples:
+         keep-power-in-suspend;
+         wakeup-source;
+         mmc-pwrseq = <&sdhci0_pwrseq>;
++        clk-phase-sd-hs = <63>, <72>;
+     };
+
+   - |
+
+Thanks,
+Manish
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
