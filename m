@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78DADF8099
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 20:52:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61F19F809F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 20:53:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,76 +11,76 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=HfjsnRHEAa/uu/FXMj8UgawXCsmDvM3fdiMW2x/tXu4=; b=FOVY13hHeW9w/PWF66swvYqzBz
-	TDSDgNFS5vDJzsANm8JAXTtUX1+m+BGBd+ib2FP3C83gQSUy8jc6JBX0BVPwg2hLjhwkPUnvXfWeu
-	TLLb5KqDgfRiqMCgQ8OuaeAx5hbrf+Eo9vfVKyG8PGH34RIg1du8ozO4DboZ9NoIn0ac9tpg+PiBl
-	TF9/0rAWGnkqnhmGaRJCDB1AVOP2/QT9+brbscDzsvoMaDD/KolfZHV0rHBpr7FaRd24iMnFgYU9L
-	4zeGL71LqIqwoEW4wC39p/VVbJ9Sa4hG8LVPpZdkDjDH5JUnnySNCs/YFSQDlS9ncNcNYN5kjJRkW
-	BAOp2EWg==;
+	bh=RBKsWYQF8FftJT1Z0eSEqmH7B0BzQvEOtdd1GE2CT94=; b=aP8wjzKowd8+SOcmNPTn/pr5HH
+	MOjaxFMOrMDSog9cAd53pE/HcIAe7vPQxUoqogGJl8zmHrIjHyei6fz+EaRKL8ZmAcc4fG/xHGR+E
+	SUic3b+i4n8rWyaf7Z7TQYG1grHttn82TembKevM5DqjR+ANA3Wfi9lPsg9oz5HIM/3saF4f9y9Rh
+	fetWhAPUwtOgNUDGSpNz2D06ulMGse5n/a6pZQL9L6RY2HrxnGtajTdAM3/QWIBboxAytUJcTgweK
+	jG+D2CJ2BDiuCp1BEOBwhT9NdnyCzq/FTxe+S+l6/Lbhjh2EuE1yPZSlTtv7eABVI1tgLEzjE63Jr
+	N7y9dBiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUFjV-00028r-92; Mon, 11 Nov 2019 19:52:17 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1iUFkb-0003NH-Vg; Mon, 11 Nov 2019 19:53:25 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUFih-0001cx-0Y
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 19:51:31 +0000
+ id 1iUFih-0001cz-44
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 19:51:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1573501790;
- bh=taWXA58DvTrq62BOOg57Z2EuKGOOTGhqKhyK1g3A/ds=;
+ s=badeba3b8450; t=1573501791;
+ bh=PDcMlsTNCVoRx2qfDTLufTFxlXCLrYMeLsjNAqTRG/Q=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=A/KBgjd1cp+GvJFSlgecj+stsDiZqZb0fqtukpXswiuTZyjGziEGdvACPHvUrkJoz
- NgzQnfxBmq5XUIk+E4K8HlbPyH2Jgv7vqwD7IldAzeDDyEEze8w0Wnv1OrH4tQxs1v
- qsOX3XBOHXTSa+H3hmVW9Vwc4SSlYqt/t35+DQSs=
+ b=e6VDnkqN/GjWfXRN+3RPAetHrQKaByV8xvtUpUs6fCMz+5mi1DrODshBgX9aJnI7F
+ DLG2l5bEcSgrxrsNOUDVYYbMuZiEhPBndkjZ746PFt9O61k5THZXuLh1Z5BbzZtR1G
+ N70bfmX//GMAWCGHNkhcAoX72wFBkq+6zYAo8iYM=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.112]) by mail.gmx.com
  (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 1MzyuS-1hjQCG32zW-00x0eO; Mon, 11 Nov 2019 20:49:50 +0100
+ 1Mk0JW-1i1TSZ0meu-00kRZO; Mon, 11 Nov 2019 20:49:51 +0100
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Matthias Brugger <matthias.bgg@kernel.org>,
  Matthias Brugger <mbrugger@suse.com>,
  "David S . Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>,
  Florian Fainelli <f.fainelli@gmail.com>
-Subject: [PATCH V5 net-next 1/7] net: bcmgenet: Avoid touching non-existent
- interrupt
-Date: Mon, 11 Nov 2019 20:49:20 +0100
-Message-Id: <1573501766-21154-2-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH V5 net-next 2/7] net: bcmgenet: Fix error handling on IRQ
+ retrieval
+Date: Mon, 11 Nov 2019 20:49:21 +0100
+Message-Id: <1573501766-21154-3-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1573501766-21154-1-git-send-email-wahrenst@gmx.net>
 References: <1573501766-21154-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:Vn23tgDCDcdTg1xYnHdkw2UX8yHSxhCJJqMtechmWWjMUjg8tzL
- 3k8eiqfqsYa5eQWFLLN+tG95x64undUG+VcacSddSHVC3s3CzzS6zDGsiGo0X5ES+4RbCrR
- eA6/vgROl4A1iv6FA2i+19mzwq6jDYzuKFarmMLE+66SFW8rUw8vZYOhxf0Jewphbi3auVw
- eIngeFYtyoi61dFpWrfAw==
+X-Provags-ID: V03:K1:dM7skxclhbRUMKWP3MbL6zRTCYfjFKuM73YgvozwoH1DWTlJBlu
+ illYPB9DIL8Lla6T4g/TzHImP8HKEcJXDniUnPbeDmg8C/0PZgi+UmNAsLYdGFkYhr1Tm43
+ EWgG4ZVTea1IWnJbo6nLBNNk/O72Cn+KG23UAocPBabWpSdv7BmOUlWzCV0LgWHHZQHZ591
+ sl8TxybCfnR5+RgkRqYQg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ko8Y9vRapm4=:P7iuRZplRHa5+9NnbcC6V1
- YCWl7UfqaEjTqF3M5JbtOQXI0i09hwW0hvv+qurfCyWCnEgRjs2NXM/INqLLpnwFXRceY9kIx
- Yk8y9FDwP+JMu0thxOgw/3XD5fDBaEAnMx4oWhXapAuGCAn1IsoXSCCNqgQWxMMVW0IHebN10
- JMwKCOKuDI1TL+jwGrUcftw32hKLGSUxmY4PKb19H1Mm9MAmARKLdqNIbBkfJgJS1xsSyvmsO
- 5xh36By4G5uaZJXaKYQCe6N1nr07UDlelIR++/hjg+/aloHNzzRtvx8gwC/7gQuBEL6l9l3pg
- 5ZEod4QYvsr2ps29/JkClzCHPe1Mp70lqKNBOxCPyhmtPBXv/IXstvAC2pbaLlXLajHVzsYpP
- S81TPOrKnSleosii2nPYJ3+YaLcscDUgPogZS/1zZom8nzd1n3GwFQ/cMwhaCqHvO81il63E2
- KZaEEXjuNmE45QLWLTLCMc7WGsGjU0mHdQASc8EH14/KI29ogOacVXeNhSPeEYAfDJKiYwn55
- /YtnHstMoyG9uDRU8D1fa0nsHVAWDYJtpLTOhiB4/43PVyhS6ieO2LVGy2yUXi41AZtz/J+pc
- qEqYbTCZ1Vg3p3IuOa7on6cYMA3YedinV3wBNGF2pLJ2Ni267K1jDTkJP9LB+J7imgypl/u9w
- 9AlCFAjZ+jpUBVEsCMGYYNy8Au7GMRqtKMDrR09WgonrpJMOQ+AlYiSGgHoRFN3bmo77A65SI
- jpl8y3h19tphwzU7Nh4l+vAVaBdaChUIp8YIZbemzmPFo5cFBrStOhAyAFnXn22kbOKyML/oj
- AoBprc7NdD56xQ5nW5/46xMEXHicVhl4ONtPVqNRXnRzxbEiNH4Y4W275jTBk5Bwba2kadKyg
- tan0zmPi9FR0F0bLZ/I8az5xSR715DAq0Q4SPuCo3esxolaXq063uIRiTNqhRnVebMYzL2zCg
- TYXPqs7dSOcFri8Of6OCjov6Mb7+MaoOvDDBwEaW7mTlfF3gjmxtCBmIgAqRuTNuAWOj48ByV
- k9xWct2Nm1vXTIGDYtFRgZRwKV8eRAfFSmbGb2/CooKnbDkBkodSL9rJuJyVCuCReGe7ysNU/
- GKfqstmzyD6Z1StZs7CCa/wlljw/Z7roneIkh6nxr6hNqhfUpGkyCNe0ljUuB3i2NGLtgj+Dm
- rVZFbVJHcXDvrKFWhd6LFAb2wtZS4xrQhFy52skfokmnXIQjfqKi+i4TA2vVgXYQ+7cw0SbUl
- 2Q4nDCSXo5zy6aZVVKtWk5uUM7qTnMvQcsJCuww==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ao/Namynt30=:74ucEwRxe5+EmU0eXIzQjF
+ DjWYmZZ7+x2ExYuwzQEBUad6d/p00KSqazR0d2H8yLy/0/z7mWgN6bgJ3Jv7aK0grD+gL2wfM
+ ynYFNK1361/q4t3S2s7sYopp5/GJ4ob8LlO6lnn5wIIjJTt1MqMnwbo7RRlIpGYy2ydLBEH5G
+ CQ6G5btVXh1rRBSgOnQDElFR1OEUmzNfYMQxYFHAjSQysbQGExWQspWCNrk6cErV1kQUNsZl0
+ WA1Dr2E2xXccYgQKRgJxIffhTj8AWIBkh9s52ddLPhfo29Z+67ih1PtYp0+LLKjRWN+dfAy9Y
+ eTPSeIaQWLbX3BeC79lH7VhWL58l+2VP9dJlgXT7TbxTKXxyRkH8PUkSPoDBhqcS9abAgXmM6
+ 1JcLysRtNbYmkF2hKS2a2ThpKIiD26JBKaIS2MJgHhTIYXRkamVxmDNpVCLVmGn4wFpkco+Kn
+ p1AbiiiEHCHYdeMkD/R1RE0cIos6N4MnNQty9WkOct3K7arhiLqCfHufDnXvgEXhvHkig4Vr4
+ Ntpg+iy3OCDFng1TdyVuuGDnUxieW6y6bHMeZSI+yEp798wfFfDZUIJyHkx4W9rGuil+sHX7w
+ Ldn0Ly7HJdyTRiEa2flgNZKkbfO0lJNUMfcpGGKQCrIkMU9WyFp1NJIFDid6fhEIL8/L6OGgp
+ sQhJPTQTfnC2hnu1hxUSX1JONdyciCvTXCb3BS75L0pFwk2TwK18pAvvJEwjkuHBm7W0rQ8RZ
+ 6KKxxP3+Cfv0JDt2lZLuwKE3lOnSIRRK+qtrxiZBulmfORp29SShtiLweyoP2W5FbhLBT/e9K
+ iBehdjYKTkq3JF04ebQZvGByLPldQ4hPCf9CM3i8kNfs9fpbDYz5IhCEytsMCsFJTHcGVEysE
+ wFb7ct2PIgsYBmfOeUhfoYZRu1detYW2HHaivR2ZEP1RIQd9Fj8ra4B4j4zvIFQGW1RhkWXXT
+ jhmNVWG/epi7ueQ4SU40sL1l3wcf9xZE8/hapUuaIOrzGdWvIjJ6dwLEqfroFnuK1xtO5XLZL
+ 8B8GOYteByW7ZoqXWkUSSJc7v+qTYLQwyxFHL5DvDaCn0yjPs06MBcz9fG7fbIri6yqgDL/5j
+ MtL9t3A4c5NaXGJBEcKtRB2oszjPGr2sUoAohpGe4/5qKsjCsHD3g0y9cE2HN8i/43bq0FHW8
+ IfB45zNxhcBKGovHRYoYaL3c/Qg4Y4c5FyuJ1I+cEVmC7y+27F9Dh5NgRpGvdu4XybzLcPPwZ
+ cbcDh9bTp8/QbdWVPOdWYzT3UyniAqsofJgkrQA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_115127_354054_B2817176 
-X-CRM114-Status: GOOD (  11.43  )
+X-CRM114-CacheID: sfid-20191111_115127_521827_6C75D6CB 
+X-CRM114-Status: GOOD (  12.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.18 listed in list.dnswl.org]
+ no trust [212.227.15.15 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,33 +114,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As platform_get_irq() now prints an error when the interrupt does not
-exist, we are getting a confusing error message in case the optional
-WOL IRQ is not defined:
-
-  bcmgenet fd58000.ethernet: IRQ index 2 not found
-
-Fix this by using the platform_get_irq_optional().
+This fixes the error handling for the mandatory IRQs. There is no need
+for the error message anymore, this is now handled by platform_get_irq.
 
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 Acked-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- drivers/net/ethernet/broadcom/genet/bcmgenet.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/ethernet/broadcom/genet/bcmgenet.c | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/net/ethernet/broadcom/genet/bcmgenet.c b/drivers/net/ethernet/broadcom/genet/bcmgenet.c
-index 3504f77..575f162 100644
+index 575f162..ee4d8ef 100644
 --- a/drivers/net/ethernet/broadcom/genet/bcmgenet.c
 +++ b/drivers/net/ethernet/broadcom/genet/bcmgenet.c
-@@ -3459,7 +3459,7 @@ static int bcmgenet_probe(struct platform_device *pdev)
+@@ -3458,13 +3458,16 @@ static int bcmgenet_probe(struct platform_device *pdev)
+
  	priv = netdev_priv(dev);
  	priv->irq0 = platform_get_irq(pdev, 0);
++	if (priv->irq0 < 0) {
++		err = priv->irq0;
++		goto err;
++	}
  	priv->irq1 = platform_get_irq(pdev, 1);
--	priv->wol_irq = platform_get_irq(pdev, 2);
+-	priv->wol_irq = platform_get_irq_optional(pdev, 2);
+-	if (!priv->irq0 || !priv->irq1) {
+-		dev_err(&pdev->dev, "can't find IRQs\n");
+-		err = -EINVAL;
++	if (priv->irq1 < 0) {
++		err = priv->irq1;
+ 		goto err;
+ 	}
 +	priv->wol_irq = platform_get_irq_optional(pdev, 2);
- 	if (!priv->irq0 || !priv->irq1) {
- 		dev_err(&pdev->dev, "can't find IRQs\n");
- 		err = -EINVAL;
+
+ 	if (dn)
+ 		macaddr = of_get_mac_address(dn);
 --
 2.7.4
 
