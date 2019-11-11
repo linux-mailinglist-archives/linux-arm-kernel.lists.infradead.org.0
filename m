@@ -2,82 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C77DF6BF4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 01:35:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B67EF6BFA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 01:38:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=g5nD8ICebWF8x07KHrBlCeoxgQavOoXWtf5sdREmpxM=; b=Zf+sYjzhBd573g
-	88KwcN+XlWUYAWl2xIAgmOA8D7f1i1/U62it1GdK7Vo7MK3C/ym9IxZlZb/CMX6h54T6feZ6kr4PQ
-	iakfk0GWt/D4jfppEtZWX6dmcK6YjXz2KmwhX+a/AeojabMN3aMbqCTKupdDePS9TK+U+q0tPPxog
-	+J5CZbVwuR0EbhLI74+U8hZygE+j3bm5TwKnwciv4m/BKsNeFZ92mfSBeY9ghGuqzSDZGTiFi49re
-	NJj3kOuSElcXHYjSevHBTL80fsewckWFP4ek4k/ilZDruOgRfJx0QVN3pwgi/kaaNB0rCGDbRhXOc
-	du8QbR4PklHlD8u7sIZg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ONBpXVKlv4tC0RKLoW4NWP0m5ORkvxnG7ZTgWRrGOBA=; b=Wbc4Sbe61rbwJk
+	PbMYKD6S2lytjINAr6ImmnT+6UWtKANPzgRqH4r3n52MXFGR1xsrweDoiw8daaEojoTqfzii/lr0T
+	Gltws/pA0stp3cHHdhJYiU+wp2Ps7ALUfd6ylvl86rJMgntGmfG9kPF2zQndaKLetBoIJ+w8krT+n
+	pwSP2YN2ffmBmQEewovu4236xY/jXuPIxY6VRG/UcXx9FE13PKtH6LAmnQVBG1pIQhaoubP+LOVtL
+	b/hzSTHak3NmBCd9q/XiTlRJQk+aJyKD9uBIvuruwBREqMZ2VM4Zka5NH8tbY8f9KEpVgw6ZnpSk8
+	KE8HgFkWVZk93kP/dCbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTxfx-0005dE-LE; Mon, 11 Nov 2019 00:35:25 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iTxj5-00061W-L4; Mon, 11 Nov 2019 00:38:39 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTxfn-0005cT-19
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 00:35:16 +0000
-Received: by mail-pf1-x441.google.com with SMTP id z4so9407002pfn.12
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 10 Nov 2019 16:35:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version;
- bh=MAQjdlepd8UIKchdOYWIna5btP7Z4rHfZh8LcCkk8Gc=;
- b=RXfSp74JRF+Q9oswISr1qzBeEsMI2+g7x2mF+E5M6hBHrbB/8AueTFM+XFzVgc2LEO
- KIf9rcmtyLer3qJ9LULtPE1yPEk5lH5N7xapkm3AXZGR3ciNmxBHWhskJZTIu6PYVMRL
- GYOHJ7kPmYSCuH0Oj6Nbowl7PxmIGIJ/bzs4rkM9aDEftsUms8ktdaBtF8h/sdyoaAyz
- SgTJ9vqFjNOPUj//aIS40Wdt38Xf2HIOSHPzRvDoZDUbyyU8noj4x5XxpH6/Gjpmjv5D
- 6Z0b1k2dkYQtFTq/koe0t+IHylaplOVSWNs1/DT40CmKIT2f1AGmM66uuiOYci47IpsJ
- iHng==
+ id 1iTxiu-000607-G3; Mon, 11 Nov 2019 00:38:29 +0000
+Received: by mail-ot1-x343.google.com with SMTP id v24so9898615otp.5;
+ Sun, 10 Nov 2019 16:38:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=MITFevQWeaD5O2RIoepB+ZayRpQUR0r8MODVnsurmHw=;
+ b=hrxyRkvuCqPmRi7dOr6QloTOriYLjemurMepZlY4zMaONRKmf056kDCZBXfufatBYT
+ Mai7D42x0uoj2oUgL7U8hWi/jIGE3EuAq7I7/wIpIDvlFE10oEBMCxAJTS39t5h+7j6K
+ OjShnzfNpkOzT2F/vE+X/QkXbfF6Qxsy9GbJtxOn8V0ZBtq/5g985Akok7ymRYpjyk9N
+ npZZeL+0TWPrcRnHA4jmEmFcPB7q29Pag+derE8iJWjHs0txUquuoO8imPxADPumcpJx
+ Xkr0qV5fXsDWD1r2ynDPlOC6ZjHhJrVA+OyFujJe8uMjC+TSwW+ghYYa5MB4gLiuii4I
+ Urcw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version;
- bh=MAQjdlepd8UIKchdOYWIna5btP7Z4rHfZh8LcCkk8Gc=;
- b=rGhHKtQXi1iU2xjeqEah/y+5yOG/5zB64eh7laBK7LK/eu4vvKfu3oPdXypPgq+A69
- aW0MpyaaBfCRrrsCTBLS99a2rCQ+Ch0P1EzJSFeDzvWUBfBfq+I7CJhAh0KtxXM9iM5J
- Co2/5/vwWoso26iZOP1MVa7mweyfdjrVd4LSIEuOTBGi3ej3HpEmQYyrkSnaFvj/u10o
- DuqsHNqgL/T60sqoNLzVyPWMwyRNGCLTJvofd8d9IQ883C6MdB4wIGkx54BE9f/1qKEW
- pSWeIWOhxtPbRnueO+QBiCa7+TI+VquGXwqg9RSHn7hKHPh6o/YG6QyHff/M/DuzzLNa
- ZvEg==
-X-Gm-Message-State: APjAAAWJs8vWIhGsaGVNrwcimR5pzWm94OouuNi3xZ4vvLzbw/q4mDeQ
- 74xbQrTmrw3bCx60GoOSn34gBw==
-X-Google-Smtp-Source: APXvYqzphW5yoF8c9ArzqIBLhXJz8xl7kLt2GySGU5GViL8HOQ9POZ83Zzl9WPmPuFdongVoUPEOKQ==
-X-Received: by 2002:a62:770d:: with SMTP id s13mr26871073pfc.239.1573432511177; 
- Sun, 10 Nov 2019 16:35:11 -0800 (PST)
-Received: from localhost ([2601:602:9200:a1a5:7c60:912:1380:6df8])
- by smtp.gmail.com with ESMTPSA id l24sm11946947pff.151.2019.11.10.16.35.10
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 10 Nov 2019 16:35:10 -0800 (PST)
-From: Kevin Hilman <khilman@baylibre.com>
-To: soc@kernel.org
-Subject: [GIT PULL] soc: amlogic: updates for v5.5
-Date: Mon, 11 Nov 2019 01:35:08 +0100
-Message-ID: <7hftivs11f.fsf@baylibre.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MITFevQWeaD5O2RIoepB+ZayRpQUR0r8MODVnsurmHw=;
+ b=CR0/JF5NVNAHu2VImSnCjAl7NDavIHys/zQfKJrrrTFmQrqljg334M8k6a9n0PJbhU
+ VTMK3iUd16xGdg/UNFvJH0N8nTuJOr9FOgkTl515VGej946ILaHrId3zzU3cyFYmoQxD
+ a/RxV+/LGMaW/ZAPJ6DnOqxuEbEZDvbV/YzlzTORr5wD4+83d+mFO27PQfyVj3tZQbWR
+ rGMtcZ/dvKeyQI9KSFK62plhzSAPJTV/z/U9lRPkVXlcsjdkRJdfXYUs2pQWmawqQr0e
+ Sb+inNHIWNmJnu7E7jNWC/a/t7VxoGkndhAMMVnKWQ6h6IAXlFad9XTXfmh4h0ZrLXbH
+ iKqA==
+X-Gm-Message-State: APjAAAVseIZapypCwgChQFnm1FwkVEbAR7IVPOJwf/nEejpo4iTEx3QS
+ i1OvDtqU5wa1I2mDi/5i9eGaWd9U3c9jJjd8BrR3VQaEKC8=
+X-Google-Smtp-Source: APXvYqxe/TyVhscrKc4YzaCaKaXtvQ/H7LFIz4ExngxMQYvTn0rZl5BW6m1HBPuay1wW4pphbzjm7aq+P5J+K7PBqMM=
+X-Received: by 2002:a05:6830:1149:: with SMTP id
+ x9mr18153786otq.47.1573432707368; 
+ Sun, 10 Nov 2019 16:38:27 -0800 (PST)
 MIME-Version: 1.0
+References: <20191014141718.22603-1-narmstrong@baylibre.com>
+ <20191014141718.22603-2-narmstrong@baylibre.com>
+ <20191023201141.GA21235@bogus>
+In-Reply-To: <20191023201141.GA21235@bogus>
+From: Tim <elatllat@gmail.com>
+Date: Sun, 10 Nov 2019 19:38:16 -0500
+Message-ID: <CA+3zgmsJPsvXgsjDQKKrSG+UNdY3SK+hKCTD2X3hGG+OXejHig@mail.gmail.com>
+Subject: Re: [PATCH 1/3] doc: dt: bindings: usb: dwc3: Update entries for
+ disabling SS instances in park mode
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_163515_070070_21334709 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191110_163828_559033_1EE58114 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (elatllat[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,53 +94,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: balbi@kernel.org, Jianxin Pan <jianxin.pan@amlogic.com>,
+ devicetree@vger.kernel.org, khilman@baylibre.com, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Dongjin Kim <tobetter@gmail.com>,
+ linux-amlogic@lists.infradead.org, Rob Herring <robh@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
+Thanks for working on this Neil,
+Is there something that needs doing for this patch to make it into 5.3 or 5.4?
+As previously mentioned the patch set fixes the issue on affected hardware;
+    https://patchwork.kernel.org/patch/11164515/
 
-  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
 
-are available in the Git repository at:
 
-  https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git tags/amlogic-drivers
-
-for you to fetch changes up to fdfc6997bd083acd066db99792694fa8a31a6cac:
-
-  soc: amlogic: meson-gx-socinfo: Fix S905D3 ID for VIM3L (2019-11-06 11:12:58 -0800)
-
-----------------------------------------------------------------
-soc: amlogic: updates for v5.5
-
-Highlights
-- socinfo: more SoC IDs
-- firmware: misc secure-monitor cleanups
-
-----------------------------------------------------------------
-Andy Shevchenko (1):
-      firmware: meson_sm: use %*ph to print small buffer
-
-Carlo Caione (3):
-      firmware: meson_sm: Mark chip struct as static const
-      nvmem: meson-efuse: bindings: Add secure-monitor phandle
-      firmware: meson_sm: Rework driver as a proper platform driver
-
-Christian Hewitt (2):
-      soc: amlogic: meson-gx-socinfo: Add S905X3 ID for VIM3L
-      soc: amlogic: meson-gx-socinfo: Fix S905D3 ID for VIM3L
-
-Jianxin Pan (1):
-      soc: amlogic: meson-gx-socinfo: Add A1 and A113L IDs
-
- Documentation/devicetree/bindings/nvmem/amlogic-efuse.txt |   6 +++++
- drivers/firmware/meson/meson_sm.c                         | 110 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------
- drivers/nvmem/meson-efuse.c                               |  24 +++++++++++++++++---
- drivers/soc/amlogic/meson-gx-socinfo.c                    |   3 +++
- include/linux/firmware/meson/meson_sm.h                   |  15 ++++++++-----
- 5 files changed, 105 insertions(+), 53 deletions(-)
+On Wed, Oct 23, 2019 at 4:11 PM Rob Herring <robh@kernel.org> wrote:
+>
+> On Mon, Oct 14, 2019 at 04:17:16PM +0200, Neil Armstrong wrote:
+> > This patch updates the documentation with the information related
+> > to the quirks that needs to be added for disabling all SuperSpeed XHCi
+> > instances in park mode.
+> >
+> > CC: Dongjin Kim <tobetter@gmail.com>
+> > Cc: Jianxin Pan <jianxin.pan@amlogic.com>
+> > Reported-by: Tim <elatllat@gmail.com>
+> > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> > ---
+> >  Documentation/devicetree/bindings/usb/dwc3.txt | 2 ++
+> >  1 file changed, 2 insertions(+)
+>
+> Sigh, what's one more to the never ending list of quirks...
+>
+> Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
