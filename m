@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AC47F73C2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 13:22:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D235F73CB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 13:24:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
 	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DaWQ7REgPkAv6VA9R0xSnRz+B62QMqwmi+3DU8zjsQs=; b=NY0/PuzRtl7WlW
-	8UpGn2x5N0xIwK3h11wggJJD6ullX5hSujWyHXVnJe8IYYbOY41VtUpLT5IywquGuN1VK/Hkowcvh
-	077BkLmMwyA5epa6vRQ32UUL/oIj1j+W6yxWsbDYPStTt3N6A0F1lukysqvrd5bcLW5VqABf69c5t
-	fGFwPC4bi51nUK/iyH3oupGeBLy7at5z5hUZNHcwj0WcKWxOd0HlOvM8yv8S2UnyHfMiSqd4O6DMP
-	xX/vpkg5+6Q1+2GbJeBtHEoE6qtyoDUSMnw+AQWmdpQIkVxARaKnBGQrRUHjl3k/T1KOnDjrJaCO3
-	9J7IgZZiFMRUuboxL/Bg==;
+	List-Owner; bh=ZDFyIkaWQ5I3+c2zQSGTdf5tBZKLFhhpgKpeF2zoHfU=; b=QTxOhhnmK1etQl
+	nABPoJZV3Mua9oBvcbEV0pYvz7Z6F+w6l3L6pBJ2rB0AfaD46Is7IpeaLo8/gzJkHk4Szk6imF4wC
+	1PXMOF06zZ7Q0p1e7uO2UeWTSRdiBFU/ad98FdjhaLSvJOZrhmGplWc3QFihbLXOYxqkgYjwBa59k
+	J0FWNZZ8hiPaeA2/nC7Pr6h2+8PTQb7eKk6HBd+2/H7CLUoyot+1k18QHfZrylaWyPCqUqqv70sss
+	ny/yshX79YD3/nZXvnkiusg56XEYkDQHzs/ywcG/kSFWi9fvOc4sRicVWj3qLkPNyh+B4+Yk5ZeyH
+	oWgwY1YKVz4cvt1D0AsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU8ib-0008H2-8d; Mon, 11 Nov 2019 12:22:53 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iU8jp-0000Hy-VD; Mon, 11 Nov 2019 12:24:09 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU8iP-0008Ec-DU; Mon, 11 Nov 2019 12:22:42 +0000
-Received: by mail-wm1-x341.google.com with SMTP id z26so13081442wmi.4;
- Mon, 11 Nov 2019 04:22:40 -0800 (PST)
+ id 1iU8jb-0000Dv-Pw; Mon, 11 Nov 2019 12:23:57 +0000
+Received: by mail-wm1-x344.google.com with SMTP id 8so13017590wmo.0;
+ Mon, 11 Nov 2019 04:23:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=to:cc:from:subject:autocrypt:message-id:date:user-agent
  :mime-version:content-language:content-transfer-encoding;
- bh=oBUWihfFL5fw4bGOgHQbm5/EIXZLgCl09qqlGuj5Ebo=;
- b=nlUw93FCu7JtmOLAc392og9hfJkYj5x5Lv09R7al5x7tCfTt+2C9fDRaFelf3/LSiU
- +7yGSW29JGnKn8M7grKJ/iJUxa7Mv16KIxQRZ9FqyFnMzNRcqadIzpmexPUZwHjWblVx
- 3wFnLiXKArfaLzHGoLHjyuijU0ybckPOasSQV93pQ+13NMdd5YUYJ8EA2ojYdB3oKB0T
- 3wfQdS9LGxEu8vNzCbF0TdC2M7+3lHLdXifAIAyWuDHO8WHa5XhCOd2kQeQyIfO8lGdq
- 6QRFBGpjmo6V+qVVWgx/SdyUbiwIyN7wa1HB6W+UHRA2XAnpun0+CrnywkfUX1nhHQQT
- UD8g==
+ bh=gWR2Q0iRX4tL8YpKyEd9/McJr976/bArBAm2SjDmBeo=;
+ b=YQW736wo3yoEgM0dVSUCs07e93pBP3U6tJmTCmiYIjwiqpOfBenOql7Vmh86RDVygb
+ 2F2/R8Vu0AtKqfGmnOPoJBh8kfWZBzjoYd1SOa8fguFmpsM8DRo8WGDVpJSOKvPHApm4
+ n6i63nUZcEGb/5v1omirN/VbBM0Vl+OhUvrWxuXpkhATh7N7oMVUps8kbo+cFtYG9D+g
+ pOgmvkHGrHMm8LZkh5LbndhwbAcEVbFjtwlMz/myAqZ8S/aqkOIreYi7av00wEVeQIiz
+ /1B8aEztfmGKxctiv3zVcFF6v69LK1MKIz3KAt2f19wLUnPBmGqQ5x+pSxjhWbdWYJDy
+ 0vkA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:to:cc:from:subject:autocrypt:message-id:date
  :user-agent:mime-version:content-language:content-transfer-encoding;
- bh=oBUWihfFL5fw4bGOgHQbm5/EIXZLgCl09qqlGuj5Ebo=;
- b=mRQJV0aABzzLuhfh1nU0Uv5odUIr5GLWbllTJDfYXQqzwnfTfYTlIPtDhA+6npB9rT
- Z8R/Az4Dm93x9wymZcIzmzUTpNC1leLtGfdsOnnbsiWenjXi4kCcIgw21V8biP1F27GN
- CyUgrdAtqPgBk9sFaj4H28zAVYV2H6deR8r6vXsssno+JHbwx6321+2VeDFRmFEgUDBf
- yi2WwQmTxD7iOnybwNTtSOTLAKUzGFEKKhr2R0sI2/+BeONbC48ymawMinGyXCxC46rd
- ihLwYfmthVjCndoGMY/Kj+zJYANCfgm1AXKITpaLeHWbN4maXmVord0a7zBklDcOpEL4
- TNOA==
-X-Gm-Message-State: APjAAAVUindYXOfpytoDUxirPoQyB3OYbWAFNc/IlNbA8crdp11EWHY8
- kAG+eXQWnwPDGJHeDrByGSfLnGGyRSM=
-X-Google-Smtp-Source: APXvYqxolAMxfDjz7Rx/AGKue5B9tB2KtPDmhqcigtkCATntbCR5LKwRFcnQF7/F0xX6hESnYi5/gA==
-X-Received: by 2002:a05:600c:2191:: with SMTP id
- e17mr20803255wme.101.1573474959700; 
- Mon, 11 Nov 2019 04:22:39 -0800 (PST)
+ bh=gWR2Q0iRX4tL8YpKyEd9/McJr976/bArBAm2SjDmBeo=;
+ b=VajuP7rRQcDDWRgPmR6S2cTiJnvdJEDmNfgsDHeTzMzHC1zs2nIXm18ucaaloVpHLm
+ PjVrLTU7k0W0LpuktUO1BuQ+k12i2NkvzZQOghcLbDISIY8c+z+pFq1ugRZdsRwErnE4
+ ABhm7CKkvwPg+Znp3ybMp6+4mTox+YyZnDDXMjC/8Q2Zw52gJAibr8LqMTWR8hTGdinv
+ 6St8h+zmZNEcEoKa0MKPbrbUlM2tkryJEC/J6XAawf2Hlk8fyF+BuqezP3JwioSN01PV
+ llKiXSHDKrAHjDStWzVuXdm1CczhatQo+BV68AJ8yhPR6huXC+FVcltjzokr6WW9fyKm
+ KlGQ==
+X-Gm-Message-State: APjAAAUWZv1115JaOiClNw2zPgzy2QlCz/yyGQjpGwakLHwlP4w+yd8b
+ hgPhfk8zM39YO0RFnS3Qli0=
+X-Google-Smtp-Source: APXvYqxHBM+vS3u0FymnD/VhQSR9++V5gF19m1r7dzusbIx17u/1HqA+IxRjXsDdkzgCdH95YfUMXQ==
+X-Received: by 2002:a05:600c:a:: with SMTP id g10mr5737824wmc.69.1573475034037; 
+ Mon, 11 Nov 2019 04:23:54 -0800 (PST)
 Received: from ziggy.stardust ([95.169.226.39])
- by smtp.gmail.com with ESMTPSA id u7sm26517390wre.59.2019.11.11.04.22.38
+ by smtp.gmail.com with ESMTPSA id u203sm20031421wme.34.2019.11.11.04.23.52
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 11 Nov 2019 04:22:39 -0800 (PST)
+ Mon, 11 Nov 2019 04:23:53 -0800 (PST)
 To: soc@kernel.org
 From: Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [GIT PULL] arm64: dts64 updates for v5.5
+Subject: [GIT PULL] soc: updates for v5.5
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
  fL3eT7ZsYV5nur7zctmJ+vbszoOASXUpfq8M+S5hU2w7sBaVk5rpH9yW8CUWz2+ZpQXPJcFa
@@ -131,22 +130,22 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  Y1aFdU79pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlI
  FZ6fsEKIAN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+
  r2JwH1CJjrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <4d3984bd-4bb3-b8c4-6e02-19a7185cd682@gmail.com>
-Date: Mon, 11 Nov 2019 13:22:37 +0100
+Message-ID: <294422a4-37b2-def5-5d32-8988f27c3a5b@gmail.com>
+Date: Mon, 11 Nov 2019 13:23:51 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.1.1
 MIME-Version: 1.0
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_042241_458993_7713FDB8 
-X-CRM114-Status: GOOD (  13.96  )
+X-CRM114-CacheID: sfid-20191111_042355_862484_5B6C55CF 
+X-CRM114-Status: GOOD (  12.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (matthias.bgg[at]gmail.com)
@@ -170,9 +169,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dehui Sun <dehui.sun@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-mediatek@lists.infradead.org>,
+Cc: "moderated list:ARM/Mediatek SoC support"
+ <linux-mediatek@lists.infradead.org>, Weiyi Lu <weiyi.lu@mediatek.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -181,7 +179,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Olof and Arnd,
 
-Please take the following pull-request into account.
+Please have a look on the following updates of drivers/soc for v5.5
 
 Thanks a lot,
 Matthias
@@ -195,24 +193,25 @@ The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 are available in the Git repository at:
 
   https://git.kernel.org/pub/scm/linux/kernel/git/matthias.bgg/linux.git/
-tags/v5.4-next-dts64
+tags/v5.4-next-soc
 
-for you to fetch changes up to 5bc8e2875ffbc5d1679b0966d48308f3d93637d4:
+for you to fetch changes up to 662c9d55c5ccb37f3920ecab9720f2ebf2a6ca18:
 
-  arm64: dts: mt8183: add systimer0 device node (2019-11-10 21:14:18 +0100)
-
-----------------------------------------------------------------
-mt8183:
-add systimer node and bindings
+  soc: mediatek: Refactor bus protection control (2019-11-07 10:11:04 +0100)
 
 ----------------------------------------------------------------
-Dehui Sun (2):
-      dt-bindings: mediatek: update bindings for MT8183 systimer
-      arm64: dts: mt8183: add systimer0 device node
+refactor code of mtk-scpsys
 
- Documentation/devicetree/bindings/timer/mediatek,mtk-timer.txt | 1 +
- arch/arm64/boot/dts/mediatek/mt8183.dtsi                       | 9 +++++++++
- 2 files changed, 10 insertions(+)
+----------------------------------------------------------------
+Weiyi Lu (5):
+      soc: mediatek: Refactor polling timeout and documentation
+      soc: mediatek: Refactor regulator control
+      soc: mediatek: Refactor clock control
+      soc: mediatek: Refactor sram control
+      soc: mediatek: Refactor bus protection control
+
+ drivers/soc/mediatek/mtk-scpsys.c | 214 ++++++++++++++++++++++++++------------
+ 1 file changed, 146 insertions(+), 68 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
