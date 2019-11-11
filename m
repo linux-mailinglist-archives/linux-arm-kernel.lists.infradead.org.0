@@ -2,87 +2,151 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 110EAF7FDC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 20:26:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71A92F7FF7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 20:31:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PmX77/YE/in0rQdP6QXlDehFfta/Qlv7isY+LIlxIOs=; b=OSCDa20A67kVMM
-	Ak1BT3Q+uMa3ubV1+wGycXHWn8xZ1HYn/P9UsISrlM6c/NyXnlELg2gxei+bRqWfrlOHbT91uG+2I
-	aFEM5+0Z/q2XQTYpsJ8/deYoituUYdJWjdklMiq0jYgsr2lEoCJmyRrppwtWyqDC0Ys+y0I2ph1gu
-	1we9zr1BXNMdtt6p75cQ5FEU1hcIMvM1gwWcB0O6zZtmUGETT3nrQWom8JDls/9TkSPnCov/7vvzc
-	dpL3Qtuih9GttAB8sgsGoDSo0v0EgZzyxfVuPDaFcPA3cQp201Ke6RlE3pgT7LZSuCyhR8xlB2Zje
-	QvlC1cKq3lct1GdfQNbA==;
+	List-Owner; bh=qlMAWIdzl0As/hmS9k2iM6yq0UmjQB1JIXtfBWkAHHU=; b=uxJjuVju9LC4Nr
+	11c90+hvaHZ3teAIKVkzin+X5N21vWxghJ7nABzdRHJt38jWgSMP8apZ2khi62q24ebvkeqywBmPo
+	aGhpbro9EWJW2uQ45h6cj/wdPkvYzv0RrfzKQblyKqhm1uNWrxj7i4Rjy7xlRrkUwYucHvLRbj+65
+	EcLftPG6kiReiE0UJakaBrlpEggumROfEi+nI/mvFfYv2YAL//VoU/M8/9r+2ASwWQXyUuUqDKaJF
+	0SmdyQhhX74TSr06zI12z+quC32PktlVzJsb3oNpuhGjT+D68DdudobKF4z8YAyd58Z7itiA1wVuz
+	GISjgxbnIGZiG5bQXprw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUFKq-0006pH-Jl; Mon, 11 Nov 2019 19:26:48 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1iUFPg-0000pB-Lq; Mon, 11 Nov 2019 19:31:48 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUFKS-0006b6-Ob; Mon, 11 Nov 2019 19:26:26 +0000
-Received: by mail-oi1-x243.google.com with SMTP id l20so12497227oie.10;
- Mon, 11 Nov 2019 11:26:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tZzh1Ex9ZdXCo9TXeCCIknPHlre0k+c4oPEzpW65C30=;
- b=S6Qh/qIU+Y1N82mm958h1PBbGUral3TH1yFTB7b5i1T02F2nMJ5/MS1daY11cKqUzJ
- bvag4kgaJyCeBv94BgfK5TVojYsFoEhcqf+o0qGJ6oRdpqGDxWd6DqeUqd1ne/I1FUfj
- y8CsCvNxAAZUzk7bZZrqSfiLo8ByC7SEDDWFJ/wnH8BiKXwDoC5/vKcosm+wo0u6pPXn
- vXvc4BCKP15K+ofeXxnwNfRZCyfCSa1RyD+inrAIPAc28thGpUNy05cZcJqtbjBvqcmv
- iXkxc0ovV33KbqbSvMnqewrEctZd4syiVTZ3peVkDRAdo4EGOcH+pnhb4diGHoNMVCvt
- 75Og==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tZzh1Ex9ZdXCo9TXeCCIknPHlre0k+c4oPEzpW65C30=;
- b=B78ZmDizpO7W9kmm2Ok4+bwETwgFBp4QBNuen8kUaZ+46/TRv+lwP7YG6z06eTLceA
- rLw7zwElLhBzat8dXH4sfhhiKv1bE3hhzC41e41wSXLa8tBVnpvAw7exSyXKLYrPBRb0
- 2jtxwkymcusH+bb7eluWyDq8w1OmI8yvUhs7ozfCL2YW6NeJM2fO/yO4bEAH2ORyuuDb
- BlsBUpjoRnKNXUETRiErbXBBHIrU8jkjG00Tmh2FNrQhnPWvAsYOw5Rn//BH4cTOFgJ0
- 9iURs9DXRAXoBaH4+zRAeqGsakM1JhJ0RlQsCJEAJ/7ntLCE9087eUJroim6xwk4szsu
- 1dVw==
-X-Gm-Message-State: APjAAAWziVmtpRaEPySYcLsng4X1qqFg43MgmtZJRRTKiOCAjOdjbEH2
- ohEvbIqin6OFcFI+v8nvWHdsugjB/DPDbp4JZQs=
-X-Google-Smtp-Source: APXvYqycLeytYmMe71q7G23bQ7Ku/ehgUySrFtbrdw+1tpqpbASH71BGLABOtIFpVmbsi5fGIZ433uPaxD0juq+3BWY=
-X-Received: by 2002:aca:6547:: with SMTP id j7mr529837oiw.98.1573500383120;
- Mon, 11 Nov 2019 11:26:23 -0800 (PST)
+ id 1iUFPJ-0000db-DR; Mon, 11 Nov 2019 19:31:26 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Tudor.Ambarus@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="Tudor.Ambarus@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: FEfGy5qTihuC4jlkDyUBdR+auqca+2EHWxBPhrfBPDQrILroIdSpBd/tQ+1CblZ2OvCOKPRkVj
+ +p4xSxcKLt5ooEFtGEmXQiBfmsvx8kPvZfQbJWB/y9Mpxrl3hzdhAuUxx0ZOWcufj9uqeLw/62
+ 14uQZJu3afIJW7zGOkiy8ymcLk6qES4ED2QzUb6d1694ZQRKQbhyn0VvvpcdLWM7uHPNPY5bm3
+ zyH/fJxVH3XDdp/vga4+6L11d++dDtDic2NtobRKlPXfxigcs47th6NdjJB97qQZ94bJRP/n+w
+ jeg=
+X-IronPort-AV: E=Sophos;i="5.68,293,1569308400"; d="scan'208";a="53780624"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 11 Nov 2019 12:31:08 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 11 Nov 2019 12:31:07 -0700
+Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Mon, 11 Nov 2019 12:31:08 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=atMcqY5HJB2gcBf1duuJt6CXoImVzh0TPlursD0dvKFjOOOKYCWR4AKV7+EqzX9u1xxcwS05/tGbQHwEtIGWvjW2nP9SGXZ3ZZUlmqxedxVgAbsYhtHOehIlShsVDkb848EBhL79xcAy4pxw/z4DBleiR71TZ8QdTVTuVLZWr3Dt+8jshyBKfm1hgVr2e/zkjTabdi7jQzq95jzMrgIkdKxoX0hguGZCERryQmvgZPEmXT95H6EMUsFHGRsn5F2t7p+SrQxcFA9uFu4irztgjxP8Sq5azjBHEwT4103L6YQTlnJsnY4Qp7XGf2rnEXS5045bd/Yu5s3frCDh3YU+KA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Nu7A3C6/rkD4IQ4w6cLmt9cxQoMeEbLnJco6IF3W4JM=;
+ b=eRlJnjUbIQUhESNCfcPZEeEiCmh/WzJmyOO2tDXcaapneP67PVfPffGZxOsj7y8GAHO+XGDyVTFmrWTXZJ1TUWTTVX1rbNZuB7X8wWL1B5tpIWuN3JvplPaEF8ZjkV7Oi4ab/I/KXUj1wUdfar17QBRuelq50iEzK+/w5mjke1TAmACT5sUqF9YQJLP3y67CylElcpgeShd5V8JvLOcOECgOFC7uEx19LosGd7Kt2oWFFYsg9ptDQAbwAVypvSTmkjJD+8BAVtTJJk5RwjsjVusZ0ccwaYPgCkbsX7Kky6z13v1/q6lSh1/blx8WGC2FTw1tmzKwpEjJXgJt9ZCrdA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Nu7A3C6/rkD4IQ4w6cLmt9cxQoMeEbLnJco6IF3W4JM=;
+ b=gOnjispq15ZcWRaMt4BXR9LWuRZSN1fB9oyCov/fBRGzYeMaG8PuKVqXAZ0OqlhsX8xile7G/MNOlOia1t67wy6gKa9ZOzsc0Ysst8yWHMvIWXmn2aVjm+WjUmhhUttL0sklqcu1tzVqWWRam3KbqVDt6aBiNn8sKmLQfmkWX0g=
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com (52.135.39.157) by
+ MN2PR11MB4352.namprd11.prod.outlook.com (52.135.38.94) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2430.22; Mon, 11 Nov 2019 19:31:07 +0000
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::c09c:36c8:3301:4457]) by MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::c09c:36c8:3301:4457%5]) with mapi id 15.20.2430.027; Mon, 11 Nov 2019
+ 19:31:07 +0000
+From: <Tudor.Ambarus@microchip.com>
+To: <manivannan.sadhasivam@linaro.org>, <shawnguo@kernel.org>,
+ <s.hauer@pengutronix.de>, <robh+dt@kernel.org>
+Subject: Re: [PATCH v2 4/4] mtd: spi-nor: Add support for w25q256jw
+Thread-Topic: [PATCH v2 4/4] mtd: spi-nor: Add support for w25q256jw
+Thread-Index: AQHVjwDJaBck4npwFkmE20mgXgcXzqeGbxIA
+Date: Mon, 11 Nov 2019 19:31:06 +0000
+Message-ID: <6beea8ea-ff6e-033b-8670-5da7529587b5@microchip.com>
+References: <20191030090124.24900-1-manivannan.sadhasivam@linaro.org>
+ <20191030090124.24900-5-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20191030090124.24900-5-manivannan.sadhasivam@linaro.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: VI1P194CA0044.EURP194.PROD.OUTLOOK.COM
+ (2603:10a6:803:3c::33) To MN2PR11MB4448.namprd11.prod.outlook.com
+ (2603:10b6:208:193::29)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [5.12.60.46]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 39233312-8ab7-4a04-5a14-08d766ddb29e
+x-ms-traffictypediagnostic: MN2PR11MB4352:
+x-microsoft-antispam-prvs: <MN2PR11MB435245304B00AAF0E2F2BDB6F0740@MN2PR11MB4352.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3383;
+x-forefront-prvs: 0218A015FA
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(346002)(396003)(39860400002)(366004)(376002)(199004)(189003)(6512007)(446003)(11346002)(26005)(186003)(66066001)(6116002)(3846002)(2906002)(52116002)(102836004)(476003)(486006)(386003)(6506007)(53546011)(71200400001)(2201001)(66476007)(7416002)(4326008)(6246003)(31696002)(99286004)(14454004)(71190400001)(478600001)(76176011)(2501003)(86362001)(2616005)(66946007)(110136005)(229853002)(316002)(305945005)(8676002)(31686004)(7736002)(66446008)(36756003)(6436002)(8936002)(54906003)(4744005)(5660300002)(64756008)(66556008)(6486002)(14444005)(256004)(81166006)(81156014)(25786009)(138113003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB4352;
+ H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: ywyUxNQumyI5GZbgbd3VgcwILYtFolLXZuAVl6QNlgKbkKPBYYQ228HFkra1SeelSntNue8cYgShoZWg3XnDiFdBXVG7PFdBmQqvIro1NxQobBd0eh2juHA5MrISWAAcYfCzwHNnexGkfbQvDTB/+6C3IqmsiZ49tDJcL9xUMtUh7RYj3OGu7m22N8jNJu6nzaFjfrzJFOjiPOvqdxM62SFvGM/Pg+6umAoMLV5v7L1Qf2l0GLqJb11IG1ra9UDjC9hikgl1zzDP6RigLB9VQfI3Yd+PAOfQ94QTQDUF6yg+53x5309GygaSFXjnzhX+hQ0FB4wKVUHtvWW2HEoUizC3BrU3/deq+H6YQtTsr4Usk0sDVZztWkbbzJRbYvPbvdB4wjuGV+LA/oepzw0J0y0RIhE7Ik0mhOQ3WgMBgK4NAjIk7PgP0+1G1kAKGx3c
+x-ms-exchange-transport-forked: True
+Content-ID: <561E7C717FA13647BC7CA59001417AB8@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-References: <20190907174833.19957-1-katsuhiro@katsuster.net>
- <CA+E=qVdvKxzFcU-09Ucn1Fr0FdkwSsPcLr8vPn2wsu6-DD1gqg@mail.gmail.com>
- <abc648cc-0b5d-b407-b74b-639833ba196b@katsuster.net>
- <CA+E=qVdy-wqmR+XOms5S2zMp+B0vM7Dj_fk9N=08-1WjfKDm0Q@mail.gmail.com>
-In-Reply-To: <CA+E=qVdy-wqmR+XOms5S2zMp+B0vM7Dj_fk9N=08-1WjfKDm0Q@mail.gmail.com>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Mon, 11 Nov 2019 11:25:57 -0800
-Message-ID: <CA+E=qVdLzHbNTemMSmhA=-0dsNumQZJhjE-EnXBDu+j7sXTnVw@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: add analog audio nodes on
- rk3399-rockpro64
-To: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+X-MS-Exchange-CrossTenant-Network-Message-Id: 39233312-8ab7-4a04-5a14-08d766ddb29e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Nov 2019 19:31:07.0030 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 9KxwLrI9kO5a7tz2k30Qkfuj4DANSDugONC/K/LAe/4cJpwvwAZVyrHkIKEGNboBYIv88Kp2EQRjJr1ndtgwJ5ZHav8pz2rnHW0UdSetUjU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB4352
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_112624_837825_B02E86D9 
-X-CRM114-Status: GOOD (  27.63  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191111_113125_499709_71EF3FC1 
+X-CRM114-Status: GOOD (  11.08  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,220 +158,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Heiko Stuebner <heiko@sntech.de>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, richard@nod.at, marek.vasut@gmail.com,
+ vigneshr@ti.com, dwmw2@infradead.org, linux-kernel@vger.kernel.org,
+ darshak.patel@einfochips.com, linux-mtd@lists.infradead.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, miquel.raynal@bootlin.com, computersforpeace@gmail.com,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org,
+ prajose.john@einfochips.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Nov 10, 2019 at 9:40 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
->
-> On Sun, Nov 10, 2019 at 7:30 PM Katsuhiro Suzuki
-> <katsuhiro@katsuster.net> wrote:
-> >
-> > Hello Vasily,
->
-> Hi Katsuhiro,
->
-> Thanks for response!
 
-Looks like on my board codec sits at address 0x10, and according to
-schematics that's what its address is supposed to be.
 
-See http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
+On 10/30/2019 11:01 AM, Manivannan Sadhasivam wrote:
+> Add MTD support for w25q256jw SPI NOR chip from Winbond. This chip
+> supports dual/quad I/O mode with 512 blocks of memory organized in
+> 64KB sectors. In addition to this, there is also small 4KB sectors
+> available for flexibility. The device has been validated using Thor96
+> board.
+> 
+> Cc: Marek Vasut <marek.vasut@gmail.com>
+> Cc: Tudor Ambarus <tudor.ambarus@microchip.com>
+> Cc: David Woodhouse <dwmw2@infradead.org>
+> Cc: Brian Norris <computersforpeace@gmail.com>
+> Cc: Miquel Raynal <miquel.raynal@bootlin.com>
+> Cc: Richard Weinberger <richard@nod.at>
+> Cc: Vignesh Raghavendra <vigneshr@ti.com>
+> Cc: linux-mtd@lists.infradead.org
+> Signed-off-by: Darshak Patel <darshak.patel@einfochips.com>
+> [Mani: cleaned up for upstream]
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> ---
+>  drivers/mtd/spi-nor/spi-nor.c | 2 ++
+>  1 file changed, 2 insertions(+)
 
-Codec address is selected by pin CE of ES8316, and on rockpro64 it
-goes to GND through R226. So address should be 0x10.
-
-> > Thank you for reporting.
-> >
-> > On 2019/11/11 9:17, Vasily Khoruzhick wrote:
-> > > On Sat, Sep 7, 2019 at 10:48 AM Katsuhiro Suzuki
-> > > <katsuhiro@katsuster.net> wrote:
-> > >>
-> > >> This patch adds audio codec (Everest ES8316) and I2S audio nodes for
-> > >> RK3399 RockPro64.
-> > >
-> > > Hi Katsuhiro,
-> > >
-> > > I tested your patch with my rockpro64 on 5.4-rc6 which has your other
-> > > patches to es8316 driver, but apparently it doesn't work.
-> > >
-> > > 'alsamixer' complains 'cannot load mixer controls: No such device or
-> > > address' and if I try to play audio with mpg123 it pretends that it
-> > > plays something but there's no sound.
-> > >
-> > > Any idea what can be wrong?
-> > >
-> >
-> > Do you use defconfig? If so I guess we need turn on more configs:
-> >
-> > - simple-graph-card driver (CONFIG_SND_AUDIO_GRAPH_CARD)
-> > - ES8316 (SND_SOC_ES8316)
->
-> I have these enabled, card is present in /proc/asound/cards, but
-> alsamixer doesn't work with it.
->
-> > FYI) ASoC related status or logs in my environment as follows:
-> >
-> > root@rockpro64:~# uname -a
-> > Linux rockpro64 5.4.0-rc6-next-20191108 #169 SMP PREEMPT Mon Nov 11 12:21:44 JST 2019 aarch64 GNU/Linux
->
-> I'm running 5.4.0-rc6  (commit
-> 00aff6836241ae5654895dcea10e6d4fc5878ca6) with your patch "arm64: dts:
-> rockchip: add analog audio nodes on rk3399-rockpro64" on top of it.
->
-> > root@rockpro64:~# dmesg | grep -i asoc
-> > [   21.509903] asoc-simple-card hdmi-sound: i2s-hifi <-> ff8a0000.i2s mapping ok
-> > [   21.510550] asoc-simple-card hdmi-sound: ASoC: no DMI vendor name!
-> > [   21.567906] asoc-audio-graph-card sound: ES8316 HiFi <-> ff890000.i2s mapping ok
-> > [   21.568565] asoc-audio-graph-card sound: ASoC: no DMI vendor name!
->
-> Similar here:
->
-> [vasilykh@rockpro64 ~]$ dmesg | grep -i asoc
-> [   15.627685] asoc-audio-graph-card sound: ES8316 HiFi <->
-> ff890000.i2s mapping ok
-> [   16.250196] asoc-simple-card hdmi-sound: i2s-hifi <-> ff8a0000.i2s mapping ok
->
-> > root@rockpro64:~# cat /proc/asound/pcm
-> > 00-00: ff8a0000.i2s-i2s-hifi i2s-hifi-0 : ff8a0000.i2s-i2s-hifi i2s-hifi-0 : playback 1
-> > 01-00: ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : playback 1 : capture 1
->
-> Same here:
->
-> [vasilykh@rockpro64 ~]$ cat /proc/asound/pcm
-> 00-00: ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : ff890000.i2s-ES8316
-> HiFi ES8316 HiFi-0 : playback 1 : capture 1
-> 01-00: ff8a0000.i2s-i2s-hifi i2s-hifi-0 : ff8a0000.i2s-i2s-hifi
-> i2s-hifi-0 : playback
->
-> > root@rockpro64:~# cat /sys/kernel/debug/asoc/components
-> > hdmi-audio-codec.3.auto
-> > ff8a0000.i2s
-> > ff8a0000.i2s
-> > ff890000.i2s
-> > ff890000.i2s
-> > ff880000.i2s
-> > ff880000.i2s
-> > es8316.1-0011
-> > snd-soc-dummy
-> > snd-soc-dummy
->
-> Same here.
->
-> > root@rockpro64:~# cat /sys/kernel/debug/asoc/dais
-> > i2s-hifi
-> > ff8a0000.i2s
-> > ff890000.i2s
-> > ff880000.i2s
-> > ES8316 HiFi
-> > snd-soc-dummy-dai
->
-> Same here.
->
-> Yet alsamixer doesn't work for me. It terminates with 'cannot load
-> mixer controls: No such device or address'. Strace shows that fails
-> here:
->
-> openat(AT_FDCWD, "/dev/snd/controlC0", O_RDWR|O_CLOEXEC) = 3
-> fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
-> ioctl(3, SNDRV_CTL_IOCTL_PVERSION, 0xfffffd3ad04c) = 0
-> fcntl(3, F_GETFL)                       = 0x20002 (flags O_RDWR|O_LARGEFILE)
-> fcntl(3, F_SETFL, O_RDWR|O_NONBLOCK|O_LARGEFILE) = 0
-> ioctl(3, SNDRV_CTL_IOCTL_ELEM_LIST, 0xfffffd3ad228) = 0
-> ioctl(3, SNDRV_CTL_IOCTL_ELEM_LIST, 0xfffffd3ad228) = 0
-> ioctl(3, SNDRV_CTL_IOCTL_ELEM_INFO, 0xfffffd3ace38) = 0
-> ioctl(3, SNDRV_CTL_IOCTL_ELEM_READ, 0xfffffd3ac160) = -1 ENXIO (No
-> such device or address)
->
-> Looks like it fails to talk to the codec?
->
-> mpg123 thinks that it's playing audio, but my headphones connected to
-> 3.5mm output are silent.
->
-> Regards,
-> Vasily
->
->
-> > Best Regards,
-> > Katsuhiro Suzuki
-> >
-> >
-> > > Regards,
-> > > Vasily
-> > >
-> > >> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-> > >> ---
-> > >>   .../boot/dts/rockchip/rk3399-rockpro64.dts    | 28 +++++++++++++++++++
-> > >>   1 file changed, 28 insertions(+)
-> > >>
-> > >> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> > >> index 0401d4ec1f45..8b1e6382b140 100644
-> > >> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> > >> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-> > >> @@ -81,6 +81,12 @@
-> > >>                  reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
-> > >>          };
-> > >>
-> > >> +       sound {
-> > >> +               compatible = "audio-graph-card";
-> > >> +               label = "rockchip,rk3399";
-> > >> +               dais = <&i2s1_p0>;
-> > >> +       };
-> > >> +
-> > >>          vcc12v_dcin: vcc12v-dcin {
-> > >>                  compatible = "regulator-fixed";
-> > >>                  regulator-name = "vcc12v_dcin";
-> > >> @@ -470,6 +476,20 @@
-> > >>          i2c-scl-rising-time-ns = <300>;
-> > >>          i2c-scl-falling-time-ns = <15>;
-> > >>          status = "okay";
-> > >> +
-> > >> +       es8316: codec@11 {
-> > >> +               compatible = "everest,es8316";
-> > >> +               reg = <0x11>;
-> > >> +               clocks = <&cru SCLK_I2S_8CH_OUT>;
-> > >> +               clock-names = "mclk";
-> > >> +               #sound-dai-cells = <0>;
-> > >> +
-> > >> +               port {
-> > >> +                       es8316_p0_0: endpoint {
-> > >> +                               remote-endpoint = <&i2s1_p0_0>;
-> > >> +                       };
-> > >> +               };
-> > >> +       };
-> > >>   };
-> > >>
-> > >>   &i2c3 {
-> > >> @@ -505,6 +525,14 @@
-> > >>          rockchip,playback-channels = <2>;
-> > >>          rockchip,capture-channels = <2>;
-> > >>          status = "okay";
-> > >> +
-> > >> +       i2s1_p0: port {
-> > >> +               i2s1_p0_0: endpoint {
-> > >> +                       dai-format = "i2s";
-> > >> +                       mclk-fs = <256>;
-> > >> +                       remote-endpoint = <&es8316_p0_0>;
-> > >> +               };
-> > >> +       };
-> > >>   };
-> > >>
-> > >>   &i2s2 {
-> > >> --
-> > >> 2.23.0.rc1
-> > >>
-> > >>
-> > >> _______________________________________________
-> > >> linux-arm-kernel mailing list
-> > >> linux-arm-kernel@lists.infradead.org
-> > >> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > >
-> >
-
+Applied to spi-nor/next. Thanks.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
