@@ -2,82 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40BDBF725B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 11:40:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18747F727A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 11:48:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N175SaLL8D84njnR4z8GYgkoTBvOlhPnlhCrcrGIP70=; b=Ki3FHh92Z36yFT
-	S9KeE5g1SIHI3pSSrhYa7l1D52VaalqfA5FSP2yG6ckByp2YU8q5Po3/w9384GEIn170u+x4qySgl
-	RikH3lUzzgNcHskYEKDJtCwEa2csHtBFDMD9SuNoCDO581VOT9nJ4k/GRuKMS8qMVwSP3YIK7FlEp
-	4vMGKPtBHJY9ryX1hDGjG4FaKfjcLMiExyyhUFHHgMub7OMY0kHSg6XZB/QTnox+2a3luSLO4Y1YW
-	E477Gz6HjBisWtZg4BJ/aOUjCBFAkXn0xPvnHwRjKBSWyVqJ77V8a6mqzEgcnqY8p5YjUAwsMCbkM
-	n+ZUf0D2uEXYoEItomRA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d/gbNdPMc+rokzAOiKChVXLY3mZYBBz7L8LqFR+bZtg=; b=eeQK7DbUngVnDM
+	A41HVI3Smg7qWyt2mzNWQY8r3/0MLVB0i9FK5gps/pNsDdXe42cV/w7jUl2FSEkmEMamf3Y4v9ZLK
+	O2Vg6XNOQAV4G1DZczZHkBGp0ccSNFkz/2nYL9iy0abVJe33RN0gZmr+9vCEmHCV996uBz+1XXjWS
+	kCw3/MqkaVDZRV8fJIcqMI3wsbkRnjV17HP/zkAPKdWSrUdrdvjj2Ux7rTZQJcE1l+p0UQ9CsTPIO
+	io9skDvuKJED5NsWNCcJ2Hoz1oh6ihwAa83gs0eIupIMcgNrZSumdDhLJiLnKMxE3Ug3GDpClIKnX
+	HJxFeXouXUsP2tdhcghg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU77H-0002nj-E2; Mon, 11 Nov 2019 10:40:15 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1iU7FK-0005yB-OR; Mon, 11 Nov 2019 10:48:34 +0000
+Received: from mail-sh.amlogic.com ([58.32.228.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU73r-0007Da-8g; Mon, 11 Nov 2019 10:36:45 +0000
-Received: from mail-qv1-f49.google.com ([209.85.219.49]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MWRmF-1iNnXP0AYN-00XpAX; Mon, 11 Nov 2019 11:36:40 +0100
-Received: by mail-qv1-f49.google.com with SMTP id cg2so4641828qvb.10;
- Mon, 11 Nov 2019 02:36:39 -0800 (PST)
-X-Gm-Message-State: APjAAAXu36BrpYql+w3vgiGP2nWyAxigBq+F9ZkFKXIoFn/ocoMEM6v4
- 7h5y26h57G81/0b894i6MnxyhCQhRU61ZM7MAxA=
-X-Google-Smtp-Source: APXvYqwG9UjDI7BT4/zArLXJROi41Jfl0ozvIqGD8Z6sQp9Psd5jWuuWMeGtnWBnULPRq767xF7AmE4x/PyrFGraS9U=
-X-Received: by 2002:a0c:a9cc:: with SMTP id c12mr4580319qvb.222.1573468598676; 
- Mon, 11 Nov 2019 02:36:38 -0800 (PST)
+ id 1iU7Cn-0003Ss-Lu; Mon, 11 Nov 2019 10:46:17 +0000
+Received: from [10.18.29.227] (10.18.29.227) by mail-sh.amlogic.com
+ (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Mon, 11 Nov
+ 2019 18:46:03 +0800
+Subject: Re: [PATCH v4 2/4] firmware: meson_sm: Add secure power domain support
+To: Kevin Hilman <khilman@baylibre.com>, <linux-amlogic@lists.infradead.org>
+References: <1572868028-73076-1-git-send-email-jianxin.pan@amlogic.com>
+ <1572868028-73076-3-git-send-email-jianxin.pan@amlogic.com>
+ <7hk188stcy.fsf@baylibre.com>
+From: Jianxin Pan <jianxin.pan@amlogic.com>
+Message-ID: <420073b1-0a3f-1bfd-4422-34f8cd7e0d2d@amlogic.com>
+Date: Mon, 11 Nov 2019 18:46:03 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191029064834.23438-1-hch@lst.de>
- <20191029064834.23438-4-hch@lst.de>
-In-Reply-To: <20191029064834.23438-4-hch@lst.de>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 11 Nov 2019 11:36:22 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a3k2KRyhCy4OWJkToNBiw_mw0e_A=Ta6UANMMF3EXnhmA@mail.gmail.com>
-Message-ID: <CAK8P3a3k2KRyhCy4OWJkToNBiw_mw0e_A=Ta6UANMMF3EXnhmA@mail.gmail.com>
-Subject: Re: [PATCH 03/21] ia64: rename ioremap_nocache to ioremap_uc
-To: Christoph Hellwig <hch@lst.de>
-X-Provags-ID: V03:K1:Kw/w2SXZ9llr0PYVM5zwgWdveEKzv7xOcQoWhgQgBv6k1bp+rKH
- TkE+THeCYTVFmtTVIuKsogXQX8g6RB420RrRruUGz/yqPYGPgmEId71qaLX2+AYJZPVAHpE
- TwfbkiT2mNSU7m5Vi2nOaH022qnJJhLvFZi0/kK03opZvkYo5KKtnj8AX+K+XfrAhdE5NzU
- 7ezF5iP+SiinKpwoUJTgg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:nEUIB33ED7M=:IL7V/vQ9Udnq1tGSwHcFnr
- nsWsOUlfOS/W92OmQbeSQJqPxo/I2WZ5QtKN+lsxCyAxFW/nQ7FeGA1lPftBM/hg15rM5YmBG
- HIQfOXWVuRxH31FSpWDD1Ke9N/2ZfQozMCWVEPvM+GIUaWs2+Cd+8JY30vXtgKNQ1FtCGTrm+
- bXYMQ+2qsK2b1G28NtbObeh6Wv99/sVZNLdcJKHLb34d2NFiPw8LHZUf5jPDlQw5mi6lLNhyo
- WWo+g7sp1VdO9QD0+cSR/gePMBmbBzLbOJYMv+LEq8X2QJTzpvVYOoX+y6T8cGL/NdIVCpNLw
- bUxBV5HRyudfrZpLBUDqzOzNj4pW4PoYzFGIdQXx4NuPUuF7HRoix3i/KsCBMLZqgC2NaVNIu
- dGyE15zj+QllF4l2CHWa5nr73W3ylHjHUOgCWVqk4gebYIC13cxkqAKctAYrYZ7kk3mk54VZg
- CLA91KZNOJvICCx9Cx9VrvgUVogXrXbkTWV3HRKkh4mLP+gNSVAl2hv8WJ/trrKpH1h3eD54R
- FtkiCEpgU8JjdIoW3jUSFgo0fmwjlqBIXYrLQQNXOr45ncPjnc+LZxHSn88R38lHYAP3vk7nu
- 8AKZPG3ClnPiiYZBHliCvYFHWHAzZ+vvFHAL/g54oLfY/Ayh3YLVXX3bIKWOrhSGYWJF1KBJt
- 0kk0tEyx2J5LmtEi/qRouU2OINgxfFRrvsS9m+RT1TrqroQItNI+qjsly4/VTTauV2WHzvr96
- +5KKf558NWEuy62P7VUQ9T3HGudpaMYh7KbSeQSvIPBblGPQGGD9AntWXEt5ALOcLU4myCFrr
- KODzJBJV6cOZQwz4g1QHhAQFkOQFNSBTQp9/ykCGbDe0g1szPOJD/UARqwKKpqq3827exEInm
- xcLbeHXirdaLR7ClqWM1A+xQEH71uf1RWcr1V+uPZO3ZH+D3Iv3gX+mPT89vO2pLvhPucf8j+
- YSgERX5x+KdRe+xn+pPNMdLD8mpF0scSVRsIbw4iaoQCKpAVgUC0W+OAUKtA6lbO1bJR4Q88v
- RaG60yX/f+SWEhugv65LHjC9MADrff8/ukUNlR3VhTgUVmDvo30reffwMCgKgijeAQ==
+In-Reply-To: <7hk188stcy.fsf@baylibre.com>
+Content-Language: en-US
+X-Originating-IP: [10.18.29.227]
+X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
+ (10.18.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_023643_599916_A92917C0 
-X-CRM114-Status: UNSURE (   9.50  )
+X-CRM114-CacheID: sfid-20191111_024600_119028_C4432A8C 
+X-CRM114-Status: UNSURE (   9.44  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,44 +64,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Guo Ren <guoren@kernel.org>, sparclinux <sparclinux@vger.kernel.org>,
- linux-riscv@lists.infradead.org, Vincent Chen <deanbo422@gmail.com>,
- linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>,
- "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
- the arch/x86 maintainers <x86@kernel.org>,
- "open list:SYNOPSYS ARC ARCHITECTURE" <linux-snps-arc@lists.infradead.org>,
- linux-xtensa@linux-xtensa.org, linux-m68k <linux-m68k@lists.linux-m68k.org>,
- openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
- "moderated list:NIOS2 ARCHITECTURE" <nios2-dev@lists.rocketboards.org>,
- Guan Xuetao <gxt@pku.edu.cn>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
- linux-mips@vger.kernel.org, alpha <linux-alpha@vger.kernel.org>,
- linux-mtd <linux-mtd@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Victor Wan <victor.wan@amlogic.com>, linux-pm@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
+ Xingyu Chen <xingyu.chen@amlogic.com>, linux-arm-kernel@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 29, 2019 at 7:48 AM Christoph Hellwig <hch@lst.de> wrote:
->
-> On ia64 ioremap_nocache fails if attributes don't match.  Not other
-> architectures does this, and we plan to get rid of ioremap_nocache.
-> So get rid of the special semantics and define ioremap_nocache in
-> terms of ioremap as no portable driver could rely on the behavior
-> anyway.
->
-> However x86 implements ioremap_uc in a similar way as the ia64
-> version of ioremap_nocache, in that it ignores the firmware tables.
-> Switch ia64 to override ioremap_uc instead.
->
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+Hi Kevin,
 
-Good idea,
+Please see my comments below:
 
-Reviewed-by: Arnd Bergmann <arnd@arndb.de>
+On 2019/11/10 4:11, Kevin Hilman wrote:
+> Jianxin Pan <jianxin.pan@amlogic.com> writes:
+> 
+>> The Amlogic Meson A1/C1 Secure Monitor implements calls to control power
+>> domain.
+>>
+>> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+>> ---
+>>  drivers/firmware/meson/meson_sm.c       | 2 ++
+>>  include/linux/firmware/meson/meson_sm.h | 2 ++
+>>  2 files changed, 4 insertions(+)
+>>
+[...]
+>> diff --git a/include/linux/firmware/meson/meson_sm.h b/include/linux/firmware/meson/meson_sm.h
+>> index 6669e2a..4ed3989 100644
+>> --- a/include/linux/firmware/meson/meson_sm.h
+>> +++ b/include/linux/firmware/meson/meson_sm.h
+>> @@ -12,6 +12,8 @@ enum {
+>>  	SM_EFUSE_WRITE,
+>>  	SM_EFUSE_USER_MAX,
+>>  	SM_GET_CHIP_ID,
+>> +	SM_PWRC_SET,
+>> +	SM_PWRC_GET,
+> 
+> These new IDs are unique to the A1/C1 family.  Maybe we should add a
+> prefix to better indicate that.  Maybe:
+> 
+>        SM_A1_PWRC_SET,
+>        SM_A1_PWRC_GET,
+> 
+> Thoughts?
+> 
+I consulted with the internal VLSI team, and it's likely that the latter new SOC will follow A1/C1.
+And then it may become common function in the future.
+> Kevin
+> 
+> .
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
