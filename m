@@ -2,143 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A509F6D56
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 04:33:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF176F6D5E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 04:37:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dk6ihizE5tbD+fwcJFdFrNJ13sBpGWEx0HBRS6pti8c=; b=KF14mggWd+xuNj
-	OztAH+fBdqh+AzpvM1byq5RQU96sQjXu8BGWeg+iBBfIWQ8EeLI9SeY91ZZB7wqmqARFhNnNtxofd
-	YU25T+bGS6S+JP6SjzAiH1Mi2/t8JxeK07G9/WG6RZHvSLDySrUAYqeobDK1Smp73SwJKHIJe5FMI
-	JLOho8H4y7iAop6ukBYwASP04ru6mAXQSlrLhORJHdx0NLwQi5ebrwms2+ttyYMZdqiqAcpfLEuWS
-	+jLxSMl0wxLM6yHKuBcckA1LETyPPaNfRFCTrHMDMwhba7dZbcoXEZ19hOwrPWhUjR5vB2fQDSSSO
-	bgOUU0MeflT9wdKXj6rA==;
+	List-Owner; bh=b0+DiQvo1ZqRD60LBnHPlJ6E2KyulU+qkW91h69yWZQ=; b=TSfDl6iT3dnVDv
+	SL5N+oFUZsWm7C85ziHqSRAbA5BXlPO+f6QU3w5lmWcSUMYvI+pXcc5A9CdWXN9pT5lx14yuwMgqD
+	wWkpHTyRsmWvUMgn5r5hme3dd8U75AdMpxlU6R503tNMUAx/RVrLeou23TFxGNbYhXOUDqRdOZZUo
+	/tJghP9JvP4ienwiBP/NKBJvN3xzS6WyKgX+M1z7fKiIwyWqAZXkZ01XU/yXyt9gu8b/w5eKV7UQB
+	EhepjWFJV1lcIlb7AfKHKD3ECuqOEQjFtLCNsC1hYvOJQuDRinNmgSwn7qe4q8AQgE1+1FfRKWLzN
+	wYtSn5tyasrG4WZkCTww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU0S7-0006Lj-SR; Mon, 11 Nov 2019 03:33:19 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iU0Vk-0007um-Dm; Mon, 11 Nov 2019 03:37:04 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU0Rz-0006LF-Mj
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 03:33:13 +0000
-Received: by mail-pg1-x543.google.com with SMTP id r18so8504930pgu.13
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 10 Nov 2019 19:33:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=lmohQQHG5b0VjIucRK0zCtfPLIKpOYx6SuBhvWpwt8Q=;
- b=p3rNSDyqMqdGlYs9xJiPagjFGtw7vtBNPnE4Lyz8J27175AB+bqxuwfRgz7GgULFJh
- zw3rN3F/oxgWjxWB0KhsJlre/kFaW77ozAznP7IlKMf5Unuw2BpAY8RAq424jKrRYZ+W
- Funi1QWFYPhGhSTUHrEzbC9Q4Yc9ncXm1o3KintkNKwyG0VNlCtwj4j/CVlyNXZxJa9L
- hlp6BcWD1E2a5cCbbQZKhcNpPRZYrgDC2dT/cbLajy3lp7uqeG5kMI+yYpSkDZ4XUfGp
- pmx6WonJInPkeXch8q/MdYwL1tjo+dsQgJPRz5xhDkkup7nv6xfqQGNJugC6wNDcA14r
- BowQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=lmohQQHG5b0VjIucRK0zCtfPLIKpOYx6SuBhvWpwt8Q=;
- b=aBTEeMZlvXFuEvOaUgxlPU9vaCJf5+7Qef3fnyE9dl4i+ABL1Iy3X3Xytfx38lqqYH
- 3eNz2hiRDBZvEVxmr7UCNFhNqIKJtBEz2A/qr9NBFTsQBBc8VgKlp9MH+Qnm5Rdz63T2
- BZvUiJqRUgnVQ5sRPpLuD54hH525QSWIyt9CyuNjbZVNxVetIZpJiGQf+7Map7wHGuz+
- 99WPhgGoJ3sBIQjIAKBEGtyJdX1gAooOfCVg45baMCPZiMVS2XnrxV9TEnW5RjCAmBj6
- sze7yKIQT2NqGUr6tQDlN6dlhp1M5eICyaaCXzryr1N+Laf3XasiuS7IH6CJ5zCsRM55
- wQgA==
-X-Gm-Message-State: APjAAAXyUqbbnyspCFR5kWZMC1avJMoA+eazU/Xq8dtczZF47/7pJFak
- 6lEl42wzDRqrJxm1yX0Nf6o=
-X-Google-Smtp-Source: APXvYqzmN2XJKCzBt56cbcoWH9WIh9m+vFl4SnsvLJ7WxgLimmrQgErmUutXPEb53176NtT2vfB55g==
-X-Received: by 2002:a17:90a:ba18:: with SMTP id
- s24mr30187129pjr.69.1573443191052; 
- Sun, 10 Nov 2019 19:33:11 -0800 (PST)
-Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id
- j14sm12174195pfi.168.2019.11.10.19.33.09
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 10 Nov 2019 19:33:10 -0800 (PST)
-Subject: Re: [PATCH] ARM: spectre-v2: remove Brahma-B53 from hardening
-To: Florian Fainelli <f.fainelli@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20191031220053.2720-1-f.fainelli@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; keydata=
- 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
- a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <64597efe-c5f5-4dc2-05c6-bf10f04ec148@gmail.com>
-Date: Sun, 10 Nov 2019 19:33:09 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1iU0Vb-0007uK-H3
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 03:36:57 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAB3abTv129761;
+ Sun, 10 Nov 2019 21:36:37 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1573443397;
+ bh=NGl+cjCsJiM7+yT+llqpQfLL+t0dbhH4tKRXyQlZxFw=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=eRv4wHEjc1UMBodvQhvEME/+xNSPrDEWxqUQk+Bx3eHbzo5anuwt9WKRN1TQ8ibgN
+ dzR9rhp5ePYMHT1zSfPrAE0RY10ZAsCps22mcIlPlkOptnQY7Y1FYnCPz3io3PVV83
+ B6XEc7zL0ArYYiQU0v6CuqNPPIEKMoXCIj7rXx6U=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xAB3aaYP114012
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Sun, 10 Nov 2019 21:36:36 -0600
+Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Sun, 10
+ Nov 2019 21:36:19 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE111.ent.ti.com
+ (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Sun, 10 Nov 2019 21:36:19 -0600
+Received: from [172.24.190.117] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAB3aXhA043092;
+ Sun, 10 Nov 2019 21:36:33 -0600
+Subject: Re: [PATCH] irqchip/ti-sci-inta: Use ERR_CAST inlined function
+ instead of ERR_PTR(PTR_ERR(...))
+To: Markus Elfring <Markus.Elfring@web.de>,
+ <linux-arm-kernel@lists.infradead.org>,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ Nishanth Menon <nm@ti.com>, Santosh Shilimkar <ssantosh@kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Thomas Gleixner <tglx@linutronix.de>
+References: <776b7135-26af-df7d-c3a9-4339f7bf1f15@web.de>
+From: Lokesh Vutla <lokeshvutla@ti.com>
+Message-ID: <670cd9a2-2083-bb5e-7bfc-58d5c90ec756@ti.com>
+Date: Mon, 11 Nov 2019 09:05:39 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20191031220053.2720-1-f.fainelli@gmail.com>
+In-Reply-To: <776b7135-26af-df7d-c3a9-4339f7bf1f15@web.de>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_193311_743180_A5DAAE22 
-X-CRM114-Status: GOOD (  13.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191110_193655_694979_3CA8D44C 
+X-CRM114-Status: GOOD (  18.21  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -147,6 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -158,10 +96,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Doug Berger <opendmb@gmail.com>, catalin.marinas@arm.com,
- Russell King <linux@armlinux.org.uk>, open list <linux-kernel@vger.kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, will@kernel.org,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: kernel-janitors@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -169,28 +104,63 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 10/31/2019 3:00 PM, Florian Fainelli wrote:
-> From: Doug Berger <opendmb@gmail.com>
+On 05/11/19 5:00 PM, Markus Elfring wrote:
+> From: Markus Elfring <elfring@users.sourceforge.net>
+> Date: Tue, 5 Nov 2019 12:19:39 +0100
 > 
-> When the default processor handling was added to the function
-> cpu_v7_spectre_init() it only excluded other ARM implemented processor
-> cores. The Broadcom Brahma B53 core is not implemented by ARM so it
-> ended up falling through into the set of processors that attempt to use
-> the ARM_SMCCC_ARCH_WORKAROUND_1 service to harden the branch predictor.
+> A coccicheck run provided information like the following.
 > 
-> Since this workaround is not necessary for the Brahma-B53 this commit
-> explicitly checks for it and prevents it from applying a branch
-> predictor hardening workaround.
+> drivers/irqchip/irq-ti-sci-inta.c:250:9-16: WARNING: ERR_CAST can be used
+> with vint_desc.
 > 
-> Fixes: 10115105cb3a ("ARM: spectre-v2: add firmware based hardening")
-> Signed-off-by: Doug Berger <opendmb@gmail.com>
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+> Generated by: scripts/coccinelle/api/err_cast.cocci
+> 
+> Thus adjust the exception handling in one if branch.
+> 
+> Fixes: 9f1463b86c13277d0bd88d5ee359577ef40f4da7 ("irqchip/ti-sci-inta: Add support for Interrupt Aggregator driver")
 
-Submitted:
+Fixes: 9f1463b86c13 ("irqchip/ti-sci-inta: Add support for Interrupt Aggregator
+driver")
 
-https://www.armlinux.org.uk/developer/patches/viewpatch.php?id=8937/1
--- 
-Florian
+With this:
+
+Reviewed-by: Lokesh Vutla <lokeshvutla@ti.com>
+
+Thanks and regards,
+Lokesh
+
+
+> Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+> ---
+>  drivers/irqchip/irq-ti-sci-inta.c | 5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/irqchip/irq-ti-sci-inta.c b/drivers/irqchip/irq-ti-sci-inta.c
+> index ef4d625d2d80..8f6e6b08eadf 100644
+> --- a/drivers/irqchip/irq-ti-sci-inta.c
+> +++ b/drivers/irqchip/irq-ti-sci-inta.c
+> @@ -246,8 +246,8 @@ static struct ti_sci_inta_event_desc *ti_sci_inta_alloc_irq(struct irq_domain *d
+>  	/* No free bits available. Allocate a new vint */
+>  	vint_desc = ti_sci_inta_alloc_parent_irq(domain);
+>  	if (IS_ERR(vint_desc)) {
+> -		mutex_unlock(&inta->vint_mutex);
+> -		return ERR_PTR(PTR_ERR(vint_desc));
+> +		event_desc = ERR_CAST(vint_desc);
+> +		goto unlock;
+>  	}
+> 
+>  	free_bit = find_first_zero_bit(vint_desc->event_map,
+> @@ -259,6 +259,7 @@ static struct ti_sci_inta_event_desc *ti_sci_inta_alloc_irq(struct irq_domain *d
+>  	if (IS_ERR(event_desc))
+>  		clear_bit(free_bit, vint_desc->event_map);
+> 
+> +unlock:
+>  	mutex_unlock(&inta->vint_mutex);
+>  	return event_desc;
+>  }
+> --
+> 2.23.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
