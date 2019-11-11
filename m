@@ -2,95 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D72DF809D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 20:53:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3F46F80A2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 20:53:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Bw8He4WOMPwfPtLw50VeruUJ0TWzit2uLOS++nR6ZWg=; b=iNWTjaA37G+dXhlPFm7WgGzqVy
-	yIME6dn3UwoPn4p7qjMUs1MKMRIOjzmC+iu1p1Ds0NQCDSzZhf1YWPfblDLYbookBWWuV1BqWkqra
-	iXQx/f2rTL515DRE7IwFMiSOrX+CM8dZuZLClofPGIfznpTzGYfiVUh0lOwYYLWtlj+5C/GyLb2eh
-	J1BiXUJErOHhN+wjngwLvBXNcIKv/vxqozEFK0CB1FxBfWJrG32xogKuyfqccbulh05Tz6adrC4q6
-	VWP9lJVM+hXncrdxcUEiMagxPWJ9JiY+hb9u+e7xRbAav2thhIAXCDi8ifJ/nu+FPzAdJt1rzhvtX
-	8y+HwOPw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=RDVKRZLiwY3DmFxH2CXKo06grGlo4GSQRl/RIA3x68w=; b=ONJWAmhtw/x1DjQ/q9M4k7eQR
+	aDKZAlBLhhnRK46Hqx39LiFbbfk+6sRbd/Qj/5YnLFEFpu7VkZB8LadRqILzaGuBP+g0kgEGYMDGr
+	YFEXn2i1vQa+ee2SiQfX6p0WtxE4R1tJRv8mQWmpdR56KXlKQSb9cLiOsGHgUkPMsoiXynEVMs42R
+	VDwj7NcG2eYq7KofG1GkPDyVcydMrXAHKVdbRiOVuV6oQuAHXjH56BudmX7gsAgsaGw9zPgnQaIfJ
+	AhhSPyoouu3S7X2YqGU2St84+2yTLlNQWEgnD+yE8kE41GjbzGteaWaI6nWrE/eiWZ+MerslOKkEI
+	FjhIS9eiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUFkL-000386-Np; Mon, 11 Nov 2019 19:53:09 +0000
-Received: from mout.gmx.net ([212.227.15.15])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUFih-0001cv-44
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 19:51:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1573501793;
- bh=am5k+ShH8U/QfQdyBRZNILtXr6ux5dgQyoLfNDeiNlM=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=ZWLhzips9JEVDIrybY6YZcYBeIVNzxFEKx90FCwd2Yiba8sDGCabOeWQ347jmVkr7
- ogVIhSnMlCy45GR5EjCClDrm3fXviNF7L7mKdH6W5/MiD3CMKn7EB3KMm/4a06aBHU
- uZqFYg9N9RGBN5PsEVU3JvL8fdUFDi8zGLmo67wg=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from localhost.localdomain ([37.4.249.112]) by mail.gmx.com
- (mrgmx004 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 1MGz1V-1ihfgw2UBX-00E9p7; Mon, 11 Nov 2019 20:49:53 +0100
-From: Stefan Wahren <wahrenst@gmx.net>
-To: Matthias Brugger <matthias.bgg@kernel.org>,
- Matthias Brugger <mbrugger@suse.com>,
- "David S . Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>
-Subject: [PATCH V5 net-next 7/7] ARM: dts: bcm2711-rpi-4: Enable GENET support
-Date: Mon, 11 Nov 2019 20:49:26 +0100
-Message-Id: <1573501766-21154-8-git-send-email-wahrenst@gmx.net>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1573501766-21154-1-git-send-email-wahrenst@gmx.net>
-References: <1573501766-21154-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:UbrYrgHW74lfPA+tgJPjDhRQ6IU7i7clWdYMrwjznjqM4z8OCOv
- 9soJZvWh6RiQjlx86Z4/ybxzlbBbCNoWCxQlfbKHxsUtUJapUW6VkMLllv8A6l7+DKr0up1
- ttn3VEs/6ZR1/JwC/HOvqKkvM3mCvjip6er3QlQeVsN+hQZE2GCRPObWy2qgkIvbZqajF/3
- ROvXvD0XmLIqc4aQSP1rQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:grgUlR0qMM0=:g+87Wk7DpT63/3SlHoio/H
- QTUC9LkZyBoxnpDHuuTBxZ/sMXjNFqsmoWwwM2K+4MblutuXqlS4LSx6XAto5aNy5VDpvDVr3
- TeukniDGy+yKwRev2xXONw9DYmMCGX/CPQfzx1/ZBuh9Zu9t+KoTBx/rUlFdGgXO4hyEGdKHJ
- UOOA+tbd95sjl/72JNSNcophpZkRTX4n5LB53ye3OnxxBUKDe0NMhs5cmgn4z2wmb0OzQTPeK
- v/+4gOLM7ebmIqchn6JVJx4UgaMMLmryU9TDCn3Y0/R6MK+R8nl5DzK9nPFfYPMhcpys0gJoz
- DzYwn1bzopphNrPyKVz4dQVQ8KnEurKaMeJA791iWl3dSdaJgdx9Y5EfM3vzOGRlwSgQIFAy2
- n1uBj3fkakArQ1PWdY4Pwj8GrjZL2RaOF/NCJSfDkBfVpwGrYi2Wv4QaUsPBi+/N0bYxnuns3
- 64zBjryA+Wc7EDF3CGRs//6C2F9Nxi8WT9sUjSz1+zfGv1a2J34qvKj5N6KlrW97i9jytGp++
- qmds288WQfB1aOAUVS9+OIDzlogo0HgFpmc8jWNXvOnfpmsPpfD97Gqb9iOGchjgLDPNzTshl
- RLjKvGqQ7NBwStZkAMW+aXZG4kWRIa8PoQNSudd7qaXFsvcxf4FQl0C6XwyBn1bGXsM3x5zKn
- v4vtMQARqStBLrQpwBfzUogAFjX8eV8wh6/ynFcugCQNzlyPAGtVIMI7weinOJbIWcSd97FxD
- 44mlK961rBcPBKnKssezG3ujTgMzaYS3GoWVUndhTmHMK0EqB1JR2uk/7fYFCwJrnMAdrP1Re
- v/QaGTh6TxXjhCUs5DMV/z/VQzNTpcOIWKvxi2hJLCp5oGCR5Qpbn6tG3rVEhO9G4bapQoNBz
- NnbuortocfuBz5itzKt3kbP3DhNB/bSFqko8fMcqAOht1OCcl734k2NWv5pemPxIcJLN3CxfX
- Dk0i2s+aCoKNKyj4Jy/TQ3ZUmDhcvQDQxP+uOLK8/FXXHOKUBvvTEq/nUCRi4q2Xy/DguPc/e
- Dfl026/Hx2EmacHN7BvXV2fow57s1hn6E9ThXG9Jg/dZsNsniuOu0NBojv61W+CfyvqlUehYt
- 2zUo3kipSI/irjy5lJ1gl9G+Z87s6h5gMRsIX4aw0eQNoZZWghmawg8POkiAU0geDOkkgJV0s
- rIRz2cXTRziCZrLf0AY8i/LEuLsMH3CGTbyLtTxtwcak9P7RhUd/+2oGP02Lt3MaE6kScdQiN
- VyE18gITYg62+tlQUO54NRoHQ2JhoNBOHHsJSCw==
+	id 1iUFkq-0003gm-VD; Mon, 11 Nov 2019 19:53:41 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUFiq-0001jT-7o
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 19:51:37 +0000
+Received: from localhost (x4db75ae4.dyn.telefonica.de [77.183.90.228])
+ by pokefinder.org (Postfix) with ESMTPSA id 569DA2C0428;
+ Mon, 11 Nov 2019 20:51:35 +0100 (CET)
+Date: Mon, 11 Nov 2019 20:51:34 +0100
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Alain Volmat <alain.volmat@st.com>
+Subject: Re: [PATCH] i2c: i2c-stm32f7: report dma error during probe
+Message-ID: <20191111195134.GG1608@kunai>
+References: <1571921521-8502-1-git-send-email-alain.volmat@st.com>
+MIME-Version: 1.0
+In-Reply-To: <1571921521-8502-1-git-send-email-alain.volmat@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_115127_487448_6834BBAB 
-X-CRM114-Status: GOOD (  11.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191111_115136_447491_AC84A63E 
+X-CRM114-Status: UNSURE (   7.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.15 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ no trust [88.99.104.3 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,106 +59,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Doug Berger <opendmb@gmail.com>,
- netdev@vger.kernel.org, Eric Anholt <eric@anholt.net>,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org,
+ pierre-yves.mordret@st.com, linux-i2c@vger.kernel.org, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4495687658069053305=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This enables the Gigabit Ethernet support on the Raspberry Pi 4.
-The defined PHY mode is equivalent to the default register settings
-in the downstream tree.
 
-Signed-off-by: Matthias Brugger <mbrugger@suse.com>
-Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
----
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 17 +++++++++++++++++
- arch/arm/boot/dts/bcm2711.dtsi        | 26 ++++++++++++++++++++++++++
- 2 files changed, 43 insertions(+)
+--===============4495687658069053305==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="HB4mHL4PVvkpZAgW"
+Content-Disposition: inline
 
-diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-index cccc1cc..1b5a835 100644
---- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-+++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-@@ -19,6 +19,10 @@
- 		reg = <0 0 0>;
- 	};
 
-+	aliases {
-+		ethernet0 = &genet;
-+	};
-+
- 	leds {
- 		act {
- 			gpios = <&gpio 42 GPIO_ACTIVE_HIGH>;
-@@ -97,6 +101,19 @@
- 	status = "okay";
- };
+--HB4mHL4PVvkpZAgW
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-+&genet {
-+	phy-handle = <&phy1>;
-+	phy-mode = "rgmii-rxid";
-+	status = "okay";
-+};
-+
-+&genet_mdio {
-+	phy1: ethernet-phy@1 {
-+		/* No PHY interrupt */
-+		reg = <0x1>;
-+	};
-+};
-+
- /* uart0 communicates with the BT module */
- &uart0 {
- 	pinctrl-names = "default";
-diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
-index ac83dac..a571223 100644
---- a/arch/arm/boot/dts/bcm2711.dtsi
-+++ b/arch/arm/boot/dts/bcm2711.dtsi
-@@ -305,6 +305,32 @@
- 			cpu-release-addr = <0x0 0x000000f0>;
- 		};
- 	};
-+
-+	scb {
-+		compatible = "simple-bus";
-+		#address-cells = <2>;
-+		#size-cells = <1>;
-+
-+		ranges = <0x0 0x7c000000  0x0 0xfc000000  0x03800000>;
-+
-+		genet: ethernet@7d580000 {
-+			compatible = "brcm,bcm2711-genet-v5";
-+			reg = <0x0 0x7d580000 0x10000>;
-+			#address-cells = <0x1>;
-+			#size-cells = <0x1>;
-+			interrupts = <GIC_SPI 157 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>;
-+			status = "disabled";
-+
-+			genet_mdio: mdio@e14 {
-+				compatible = "brcm,genet-mdio-v5";
-+				reg = <0xe14 0x8>;
-+				reg-names = "mdio";
-+				#address-cells = <0x0>;
-+				#size-cells = <0x1>;
-+			};
-+		};
-+	};
- };
+On Thu, Oct 24, 2019 at 02:52:00PM +0200, Alain Volmat wrote:
+> Distinguish between the case where dma information is not provided
+> within the DT and the case of an error during the dma init.
+> Exit the probe with error in case of an error during dma init.
+>=20
+> Fixes: bb8822cbbc53 ("i2c: i2c-stm32: Add generic DMA API")
+>=20
+> Signed-off-by: Alain Volmat <alain.volmat@st.com>
 
- &clk_osc {
---
-2.7.4
+Applied to for-next, thanks!
 
+
+--HB4mHL4PVvkpZAgW
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl3Ju8YACgkQFA3kzBSg
+KbZO1g/9Ejg7dTPbsECJT9cFjP1yXrbGjFWabztNPI9cB407mc32FMMHolmR+e7t
+Qar4sss2ieh/Rf+AG13KAk5y8VQ+0ioVReojH968fYVPPOxrx2G58rhOYiZnvz8p
+BWZ6/wJGn66eJtSP7OfdyXKdDuewHrlE0GWx0hHxhEf6clN4bSbKyvcUIEUu3Z0R
+91vC3pIxRY+6uEGSeFSnl+2m+zClqdP8kdAHW0vpNzPjjkJyhLWZTi/So0CN4Ymc
+mL2MEAI6Epl4MADbMqXvSFViGbDeTMfK0WVnxnWIKCivOviWwbvzb7RGf+uF8wzG
+mOX3rWgyHWe6laUDpvsVJ8gqJ7kQbEXAKitU9ERmFAmUSHGwjx69zWM8S4aF7J7m
+sBkXaU7tp1L56wtoiy/v3UoDVMAkYkcTj6pXwsINgvNE44GslOdbHQwdd0p6Elgb
+ivH0H7Sv+mRZU9ZPYot8rG4jKg2hQKS0dpKWo7d5nCmWf0unpRCmKxBSjdi8Kddr
+8Qp4BXyjPm3GhsELW+Cpwz2n7VBcxRfHXW9v8BAng1pqgBkShfpB4zT4sLcltRjj
+3+TfkDPjpqPGjmQRozWvSP5E34HXR7luMWr2TrD/2wxOsBZr6+q0TDOj3Uii6cxx
+ZeKVrXSY1Xgg5tboDZSEYfY1WrsIfUF5NKduYnc21SsUbsQ+z9w=
+=XSn5
+-----END PGP SIGNATURE-----
+
+--HB4mHL4PVvkpZAgW--
+
+
+--===============4495687658069053305==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4495687658069053305==--
+
