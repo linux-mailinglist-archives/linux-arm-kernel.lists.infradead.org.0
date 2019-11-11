@@ -2,71 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6BEFF8141
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 21:30:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DB33F8144
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 21:32:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AGhnsGPzg3LNpDzvZscYRpOqO5v9oMZn9IBp4jVoF1A=; b=UW+OApQM3IKk2Q
-	mMi8OomloBediGLbH2Cl/avYy4xb3mjvtJzAgEt/n0wr9FDoQRqsC/4anf/dvK2Wm6w9/8DtG26xj
-	t79eOnpBBmdcAmR9seQXfwugv4JMOdSIitt2LFK8crKuQLfP4SNcSBIq7UZOXEV1eFm8rj2MoiJjN
-	njq/CwjgiRq+g07ieMDHQGPYf8J955rnVz42yTwJgIBPEctvBpGvP1BJXtS3Oml0lUtGHNsbbJxtc
-	3w7msvXrXhCCX0wNjQI5cvUVskQ7gTL0yHnJf5unMWPJJKhBaVBOoOe+cTHAHoQuCw6IfG3VV8q5g
-	PsnJn25ZqL81kWMUoYvw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zwA71TeLQLYvIFEn2DxyYDiMr+BfmlF198to0m2//jc=; b=bnIYlzXt+PMXfF
+	KZP2US+BPiYeTtomuzwmIyjWuIcCE5YvJ0DAXwJF0EoPX8SUVeQXKjJL+JyQmCsGGLDipSqcueuGe
+	YQhJPM9wxP+T4tA5iaJCfi428JZ+wpK91WXe8tFTk84x6EXizrXz8LR7OWxPtL6r7ZBgCoOJlW7ng
+	ULsnMYOoEQOU0v9rOeFIpZ2yG84xID4ZHJbISbPwYGphlrOXBF41UKY3HULRzGMWEeDCLTqa2i5BS
+	hkcucqOEh4Iwqt6ullhfK9mCSDiQWmbVaeaf08IAYnfXcNLCJSpiGA1TcPnHLBSYwdujcX7LJLf+n
+	yawtIgRPkpbBXrE54kUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUGKd-0002PE-Dy; Mon, 11 Nov 2019 20:30:39 +0000
-Received: from mail.andi.de1.cc ([2a01:238:4321:8900:456f:ecd6:43e:202c])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUGKX-0002Og-36
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 20:30:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=kemnade.info; s=20180802; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=QElYDqEnVjhgR2amDU3Lld5k4da0izVAi5qsqFodSsI=; b=Wgt/j1h3vFwJqKl/wU63e1862o
- qLvDu1qTUpBxaG5WJSkrtfvtgTlvAYlZrZc4iF1Fp3vDLHPBSYBM0C1pkhNTgAWQtg8a0hTe4LlRp
- EargSxDXqVuz0oEgJKO6EZMKS/2Bnx3lJUzSnNXxQD5kc9i/ML5EE4zrstdEmXSiIc2Q=;
-Received: from p200300ccff07dd001a3da2fffebfd33a.dip0.t-ipconnect.de
- ([2003:cc:ff07:dd00:1a3d:a2ff:febf:d33a] helo=aktux)
- by mail.andi.de1.cc with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <andreas@kemnade.info>)
- id 1iUGKM-00015Q-Ur; Mon, 11 Nov 2019 21:30:23 +0100
-Received: from andi by aktux with local (Exim 4.92)
- (envelope-from <andreas@kemnade.info>)
- id 1iUGKM-0006Iy-G2; Mon, 11 Nov 2019 21:30:22 +0100
-From: Andreas Kemnade <andreas@kemnade.info>
-To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] ARM: dts: e60k02: fix power button
-Date: Mon, 11 Nov 2019 21:29:59 +0100
-Message-Id: <20191111202959.24189-1-andreas@kemnade.info>
-X-Mailer: git-send-email 2.20.1
+	id 1iUGMR-0002gv-BB; Mon, 11 Nov 2019 20:32:31 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUGMJ-0002ge-E7
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 20:32:24 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 838C38047;
+ Mon, 11 Nov 2019 20:32:59 +0000 (UTC)
+Date: Mon, 11 Nov 2019 12:32:20 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: Aaro Koskinen <aaro.koskinen@iki.fi>
+Subject: Re: [PATCH] ARM: OMAP1: drop duplicated dependency on ARCH_OMAP1
+Message-ID: <20191111203220.GX5610@atomide.com>
+References: <20191111171034.28896-1-uwe@kleine-koenig.org>
+ <20191111185101.GA27282@darkstar.musicnaut.iki.fi>
 MIME-Version: 1.0
-X-Spam-Score: -1.0 (-)
+Content-Disposition: inline
+In-Reply-To: <20191111185101.GA27282@darkstar.musicnaut.iki.fi>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_123033_283775_C111E106 
-X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-CacheID: sfid-20191111_123223_513619_C3D8A073 
+X-CRM114-Status: UNSURE (   8.92  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,49 +61,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "H . Nikolaus Schaller" <hns@goldelico.com>,
- Andreas Kemnade <andreas@kemnade.info>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The power button was only producing irqs, but no key events,
-Forced power down with long key press works, so probably
-only a short spike arrives at the SoC.
-Further investigation shows that LDORTC2 is off after boot
-of the vendor kernel. LDORTC2 is shared with a GPIO at the pmic
-which probably transfers the button press to the SoC.
-That regulator off at boot, so "regulator-boot-on" is definitively
-wrong. So remove that.
-
-Reported-by: H. Nikolaus Schaller <hns@goldelico.com>
-Signed-off-by: Andreas Kemnade <andreas@kemnade.info>
----
- arch/arm/boot/dts/e60k02.dtsi | 5 -----
- 1 file changed, 5 deletions(-)
-
-diff --git a/arch/arm/boot/dts/e60k02.dtsi b/arch/arm/boot/dts/e60k02.dtsi
-index a0ade2ba7a21..33e02bd2b59d 100644
---- a/arch/arm/boot/dts/e60k02.dtsi
-+++ b/arch/arm/boot/dts/e60k02.dtsi
-@@ -356,11 +356,6 @@
- 				regulator-name = "LDORTC1";
- 				regulator-boot-on;
- 			};
--
--			ldortc2_reg: LDORTC2 {
--				regulator-name = "LDORTC2";
--				regulator-boot-on;
--			};
- 		};
- 	};
- };
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+KiBBYXJvIEtvc2tpbmVuIDxhYXJvLmtvc2tpbmVuQGlraS5maT4gWzE5MTExMSAxODo1MV06Cj4g
+SGksCj4gCj4gT24gTW9uLCBOb3YgMTEsIDIwMTkgYXQgMDY6MTA6MzRQTSArMDEwMCwgVXdlIEts
+ZWluZS1Lw7ZuaWcgd3JvdGU6Cj4gPiBBbGwgb2YgYXJjaC9hcm0vbWFjaC1vbWFwMS9LY29uZmln
+IGlzIGVuY2xvc2VkIGluIGEgYmlnICJpZiBBUkNIX09NQVAxIgo+ID4gYW5kIHNvIGV2ZXJ5IHN5
+bWJvbCBhbHJlYWR5IGhhcyBhIGRlcGVuZGVuY3kgb24gQVJDSF9PTUFQMSBldmVuIHdpdGhvdXQK
+PiA+IG1lbnRpb25pbmcgaXQgaW4gdGhlaXIgbGlzdCBvZiBkZXBlbmRlbmNpZXMuCj4gPiAKPiA+
+IEFsc28gZGVwZW5kZW5jaWVzIG9uIEFSQ0hfT01BUCBjYW4gYmUgZHJvcHBlZCBhcyBpdCBpcyBz
+ZWxlY3RlZCBieQo+ID4gQVJDSF9PTUFQMS4KPiA+IAo+ID4gU2lnbmVkLW9mZi1ieTogVXdlIEts
+ZWluZS1Lw7ZuaWcgPHV3ZUBrbGVpbmUta29lbmlnLm9yZz4KPiAKPiBBY2tlZC1ieTogQWFybyBL
+b3NraW5lbiA8YWFyby5rb3NraW5lbkBpa2kuZmk+CgpUaGFua3MgYXBwbHlpbmcgaW50byBvbWFw
+LWZvci01LjUvb21hcDEuCgpSZWdhcmRzLAoKVG9ueQoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
