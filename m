@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8725CF7667
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 15:31:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AA06F766A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 15:31:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1hQPRrZPFs5REJZecOTaFEihmdkGLdzuBhWo+wCJ0yQ=; b=gJGR/0MHgjbv6P
-	bQjBqkCK7crVgdqhGMoLckLuo7u8sHBumBnCDanVrdEO7ouNeG60h5T2y2Mq71v482CO6MQKQO9Yt
-	/z5kkzfTVCAVjC6rJEEMGmfboVOLwwGNMrjK6H8hr5yVzNEFbBtkDHg+av4XGng++PtrmhY5eTsZD
-	ArXMdCbnrX5kF8pA7/RftAYiWQC+fwuQdFAAMBgyBpnKkqnSH7nubmkIzEnaDioXxI0Bq2OhTvPIl
-	APjsyYnMYUYPMuy7UztDEPHB9No1R8HaQT2iQvfVrY9Z+XE163l6qd6Cg6U7WOu8TtOtp5vjWbXMN
-	2m7vFZfTqsqPEmGOLI5Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Byk/Ya90PA1JrjUVhKSmiQsi1lyA96X1XwY5NHginrY=; b=RKxy4u9MY3ml9IB9UiK7jZRJw
+	gAEGDQ0d7jYy8ip3Z8Xrvv5BxOskJxnkrsZU/UUoPItju54OqRQYeGyMh6Wzus8B6ltxME2yc93Cd
+	pTSw0zgIO2yawaw6fWpE8peG5aM3xSgQoAsJM1ZO7MvYkC38jSXrT+s5w3uU7/9NdjG2PyjDaqAaY
+	Cju3yBjZLnaktDAABzBR9yvyvkwKZ0anPgUEUxfGitPJFxsv7MQNQ/WeyH+r3whnrczEsmSf2sUMX
+	mCQ9tMKubZa9VSjkNDNvHRuFLYX5i8bQv7O2WNDDU1BOzLTb1lAN50YV9WeYpgFlLdyLcTAHOsPZX
+	GOJbCHDQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUAj3-0004TR-S6; Mon, 11 Nov 2019 14:31:29 +0000
+	id 1iUAjF-0004bo-Mw; Mon, 11 Nov 2019 14:31:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUAiv-0004T2-Qw
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 14:31:23 +0000
+ id 1iUAiy-0004TY-54
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 14:31:25 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 005A831B;
- Mon, 11 Nov 2019 06:31:19 -0800 (PST)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 196583F52E;
- Mon, 11 Nov 2019 06:31:16 -0800 (PST)
-Date: Mon, 11 Nov 2019 14:31:11 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH v2 00/13] cpuidle: psci: Support hierarchical CPU
- arrangement
-Message-ID: <20191111143111.GA10020@bogus>
-References: <20191029164438.17012-1-ulf.hansson@linaro.org>
- <CAPDyKFpiMK_P+4+n9wHc+68X6j44XOoTm=J8OXz5HkqoMxOsOg@mail.gmail.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6AD7131B;
+ Mon, 11 Nov 2019 06:31:23 -0800 (PST)
+Received: from localhost.localdomain (unknown [10.1.196.67])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D3BA23F52E;
+ Mon, 11 Nov 2019 06:31:22 -0800 (PST)
+Subject: Re: [PATCH v8 2/4] arm64: Factor out checks for KASLR in KPTI code
+ into separate function
+To: Mark Brown <broonie@kernel.org>, Catalin Marinas
+ <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+References: <20191108170116.32105-1-broonie@kernel.org>
+ <20191108170116.32105-3-broonie@kernel.org>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <cf44e71f-4d8b-7f9e-501c-f73e5b9f25b6@arm.com>
+Date: Mon, 11 Nov 2019 14:31:21 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAPDyKFpiMK_P+4+n9wHc+68X6j44XOoTm=J8OXz5HkqoMxOsOg@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191108170116.32105-3-broonie@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_063121_912823_BB3C04BA 
-X-CRM114-Status: GOOD (  15.15  )
+X-CRM114-CacheID: sfid-20191111_063124_247298_84C69E6E 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,43 +64,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Linux PM <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Rob Herring <robh+dt@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
- Lina Iyer <ilina@codeaurora.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 11, 2019 at 12:00:52PM +0100, Ulf Hansson wrote:
-> On Tue, 29 Oct 2019 at 17:44, Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> >
-> > Changes in v2:
-> >         - Avoid to affect the non-OSI path with specific changes for OSI. This
-> >         forced me to re-order the series and a caused more or less minor changes
-> >         to most of the patches.
-> >         - Updated the DT bindings for PSCI to clarify and to include the "psci"
-> >         name of the PM domain to attach to.
-> >         - Replaced patch1 with another patch from Sudeep, solving the same
-> >         problem, but in a different way.
->
-> Hi Sudeep and Lorenzo,
->
-> Apologize for nagging you about reviews, again. Can you please have a
-> look at the new version!?
 
-I will take a look later this week, sorry for the delay.
 
---
-Regards,
-Sudeep
+On 08/11/2019 17:01, Mark Brown wrote:
+> In preparation for integrating E0PD support with KASLR factor out the
+> checks for interaction between KASLR and KPTI done in boot context into
+> a new function kaslr_requires_kpti(), in the process clarifying the
+> distinction between what we do in boot context and what we do at
+> runtime.
+> 
+> Signed-off-by: Mark Brown <broonie@kernel.org>
+
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
