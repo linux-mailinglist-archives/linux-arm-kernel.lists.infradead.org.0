@@ -2,69 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 294CFF7450
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 13:46:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E58DF7459
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 13:53:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=W7c6h5NX8QVeGnSHdwwTLN4PkdEaL8Lls0XuVQgpYgM=; b=AgUqurBxASwLdHJAgZwNPphZG
-	l6eCMizpqXuguyrd6JtTNXoUjr1snIVF/YHepHt+R/PtsQjzon/Yo7gLgg2VYfbR2V6PQ8uNSGoh6
-	Lqnfx3+SIehTh0l5fayr+/EF1ksKAjxmhvvuWjbyKUAgSAOPkbO39+A+IZLUtiiLFujlpVuOTaLrv
-	k6+UZ7pURE1rky8FAUKTTYwk7aqfltvzpoAa+NBONRznkNlfUzLIXbVglLlzPnye40er9DRKLr1W+
-	yFWS3LzwpGUuGsZ1lYNt8Z6Un+ulQZrK4qszSEtK6OuT8Lahgg67yi+shoMw7GCtq5h/qKA8tUGzb
-	SErhOYB8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=X0VzkRw6Upl50AysrKHh97ob5f3zzVCC0ECkbisDvEE=; b=l3iDP7hurlTnuKB4nQ73ey+Vz4
+	U5pbO+2GWqQ/CWtFIwAXsLQZHiD9BkKnCfJo1IQBM2RA1kmT06XNeN2xF7qph0krrw2KTBR69THQx
+	TXZJBc38rwGbVMaWoVL2dqEo0V5RQABH6pq0g13DGACWVF5VxEJwIwe9noqlHctGbG1aZ0kkczJba
+	+TR6eIGkuCI0irQIWXRBuE6HX7n0VeIDGaceODGJ2cPLJcWh8oyuT3w4lIUs1P4FdEd35ESTtaoKg
+	ynNcedXV2bRad+saLg2RTr06QoJwV4rLcmxpqvZaF2iUQqTHA+SfcsS50LH5xiOr23hkoH0GJDLLi
+	21ZFTpSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU94r-0000kj-W8; Mon, 11 Nov 2019 12:45:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iU9Cf-0003BT-Uh; Mon, 11 Nov 2019 12:53:57 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU94k-0000kC-CV
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 12:45:47 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 81A512067B;
- Mon, 11 Nov 2019 12:45:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573476346;
- bh=WDxipH3XLB+HfXaUZVK+cmzbhva8WgS/ApH5twhhsWc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=SSUQBKR6JLC3ewYFOQo4yHy+RGXZpUGmrE7icwLKEYPpw3bdXBepxFdp68ZXSr75B
- IvMrYpO2hXuFGD0v11QZ049hbuzuBxUN9nSmbp1LRRYw4PD+ZPT2Nd7JaEI2m9VHcL
- mKbHd2FEvQjOL0SeE7dW1r2m5uLbQ81g1A9MXPX8=
-Date: Mon, 11 Nov 2019 13:45:42 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Corentin Labbe <clabbe@baylibre.com>
-Subject: Re: [PATCH] clk: sunxi: use of_device_get_match_data
-Message-ID: <20191111124542.GO4345@gilmour.lan>
-References: <1573403720-7916-1-git-send-email-clabbe@baylibre.com>
+ id 1iU9CY-0003AJ-Fl
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 12:53:52 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 127483CF316A9869D55E;
+ Mon, 11 Nov 2019 20:53:38 +0800 (CST)
+Received: from [127.0.0.1] (10.57.101.250) by DGGEMS413-HUB.china.huawei.com
+ (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Mon, 11 Nov 2019
+ 20:53:30 +0800
+From: Wei Xu <xuwei5@hisilicon.com>
+Subject: [GIT PULL v2] Hisilicon driver updates for v5.5
+To: <soc@kernel.org>, "arm@kernel.org" <arm@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Olof Johansson <olof@lixom.net>,
+ "Arnd Bergmann" <arnd@arndb.de>
+Message-ID: <5DC959B9.80301@hisilicon.com>
+Date: Mon, 11 Nov 2019 20:53:13 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
+ Thunderbird/38.2.0
 MIME-Version: 1.0
-In-Reply-To: <1573403720-7916-1-git-send-email-clabbe@baylibre.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Originating-IP: [10.57.101.250]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_044546_443062_B1EA0DA3 
-X-CRM114-Status: UNSURE (   8.37  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191111_045350_692873_FD3BFB07 
+X-CRM114-Status: GOOD (  11.28  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,56 +67,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: emilio@elopez.com.ar, mturquette@baylibre.com, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, sboyd@kernel.org, wens@csie.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8502448722970981964=="
+Cc: Salil Mehta <salil.mehta@huawei.com>, jinying@hisilicon.com,
+ Tangkunshan <tangkunshan@huawei.com>, John Garry <john.garry@huawei.com>,
+ Linuxarm <linuxarm@huawei.com>,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ huangdaode <huangdaode@hisilicon.com>, "xuwei \(O\)" <xuwei5@huawei.com>,
+ Jonathan Cameron <jonathan.cameron@huawei.com>,
+ "Liguozhu \(Kenneth\)" <liguozhu@hisilicon.com>,
+ Zhangyi ac <zhangyi.ac@huawei.com>, Shiju Jose <shiju.jose@huawei.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi ARM-SoC team,
 
---===============8502448722970981964==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="/JIF1IJL1ITjxcV4"
-Content-Disposition: inline
+Please consider to pull the following changes.
+Thanks!
+
+Best Regards,
+Wei
+
+---
+
+The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
+
+   Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
+
+are available in the Git repository at:
+
+   git://github.com/hisilicon/linux-hisi.git tags/hisi-drivers-for-5.5
+
+for you to fetch changes up to f361c863b3bfa602da37d7a94d90a5dfee0d08fe:
+
+   logic_pio: Build into a library (2019-11-05 08:48:07 +0800)
+
+----------------------------------------------------------------
+ARM64: hisi: SoC driver updates for 5.5
+
+- check the LOGIC_PIO_INDIRECT region ops at registration instead of
+   in the IO port accessors to optimise the lib/ligic_pio.c
+
+- add the hisi LPC driver to the build test for the other architectures
+   except ALPHA, C6X, HEXAGON and PARISC as they do not define 
+{read,write}sb
+   by updating the hisi LPC Kconfig and adding a dummy PIO_INDIRECT_SIZE
+
+- clean the sparse complains of the hisi LPC driver
+
+- build logic_pio into a lib to avoid including in the vmlinux when not
+   referenced
+
+----------------------------------------------------------------
+John Garry (5):
+       lib: logic_pio: Enforce LOGIC_PIO_INDIRECT region ops are set at 
+registration
+       logic_pio: Define PIO_INDIRECT_SIZE for !CONFIG_INDIRECT_PIO
+       bus: hisi_lpc: Clean some types
+       bus: hisi_lpc: Expand build test coverage
+       logic_pio: Build into a library
+
+  drivers/bus/Kconfig       |  5 +++--
+  drivers/bus/hisi_lpc.c    |  9 ++++-----
+  include/linux/logic_pio.h |  4 ++--
+  lib/Makefile              |  2 +-
+  lib/logic_pio.c           | 14 ++++++++------
+  5 files changed, 18 insertions(+), 16 deletions(-)
 
 
---/JIF1IJL1ITjxcV4
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Sun, Nov 10, 2019 at 04:35:20PM +0000, Corentin Labbe wrote:
-> The usage of of_device_get_match_data reduce the code size a bit.
->
-> Signed-off-by: Corentin Labbe <clabbe@baylibre.com>
-
-Queued for 5.6, thanks!
-Maxime
-
---/JIF1IJL1ITjxcV4
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXclX9gAKCRDj7w1vZxhR
-xXQrAQCuBvWXvw9bB/NYXgGhHA5eGk4zCcGrX2njuT6ALJldIAEA+N8WJYaZVKxA
-jDggN/JLd5CcVAR68UGM79sdoFQlags=
-=venc
------END PGP SIGNATURE-----
-
---/JIF1IJL1ITjxcV4--
-
-
---===============8502448722970981964==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8502448722970981964==--
-
