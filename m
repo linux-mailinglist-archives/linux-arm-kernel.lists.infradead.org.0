@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B72E7F818B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 21:50:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 567A9F8197
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 21:53:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S3a3VgR7l4lS/1ooGu4Brsn8ytP4dbYZpAht54wna9w=; b=Sfrsxe3Iri3v4g
-	APXr7WSX6jyHwDMGqqwIOu2T7d2fYKOTsE/a3yvJ2wL81y/VwxsqVXpzZprrY+qQQsoZsQpXt4O7K
-	OaXxIls3qAtmBkPIG7T+feYYEVOnanjrHcFzWjaFg9qKVWaYht0Le1Asrv8kQ2kjdV1lE/6P1F+I/
-	NHoRFFOh8XTYsgmQMxVAKKqX149TK/2/sY7+gdGjKdul1gZhTLmN5TEQgvK+ORuWFb8dig+2UDx2v
-	aOrOrLEFepDL4psD3wT8mIiQ/rcBAhl6uzeVQUt3j16D1zS1Y2FhA6egiubYN5CpI0XlrBpb+tGcK
-	XT/O0hJvRRPYhYi/YdLg==;
+	List-Owner; bh=xcodycQK/K1asSd/XbNR0o4tlGJ9p4QW3LdBLpg2yNY=; b=m2xmGDCaVzTlnr
+	7Iczxj+uwuuIPPFKW9XupdtjAsl9cnxCCdw1utwM6jls7DuNQEMNqF8GG5IO+yABJohot5pk+DkEi
+	FPGro3gwFT3J/ouwuAFcy0p2WsT1IvG6A48aK4VO5m5wEgcKOPq1wF2AKzUQjDcvCntMBZOdJPd9s
+	jnUhhvEA9xb9rd3LF4wdHyvZxKEcTDzwEtQ9XQlMH85KczXf6AqvBl2hji1++P2sj/RCw7gFFeUtV
+	eXcr+rx9LouJ3Qk1plpFsTbcV5nYFeDYDGo5McMvA2Ji4lRrgH4X7ZZzYWLo2dM9bta0p8R92cK5R
+	sc+CPUKWG4glvaibXmYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUGdT-0000WV-AX; Mon, 11 Nov 2019 20:50:07 +0000
+	id 1iUGgZ-0002LC-Q4; Mon, 11 Nov 2019 20:53:19 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUGdG-0000WC-4C
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 20:49:55 +0000
+ id 1iUGgS-0002KP-9z
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 20:53:13 +0000
 Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 3C2F48047;
- Mon, 11 Nov 2019 20:50:30 +0000 (UTC)
-Date: Mon, 11 Nov 2019 12:49:50 -0800
+ by muru.com (Postfix) with ESMTPS id 1E7958047;
+ Mon, 11 Nov 2019 20:53:48 +0000 (UTC)
+Date: Mon, 11 Nov 2019 12:53:08 -0800
 From: Tony Lindgren <tony@atomide.com>
-To: "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>
-Subject: Re: [PATCH] OMAP2: fixup doc comments in omap_device
-Message-ID: <20191111204950.GZ5610@atomide.com>
-References: <20191106115945.4298-1-ben.dooks@codethink.co.uk>
+To: Markus Elfring <Markus.Elfring@web.de>
+Subject: Re: [PATCH] ARM: OMAP2+: Add missing put_device() call in
+ omapdss_init_of()
+Message-ID: <20191111205308.GA5610@atomide.com>
+References: <112eb5b9-bca7-41ca-efc9-1104b6063f75@web.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191106115945.4298-1-ben.dooks@codethink.co.uk>
+In-Reply-To: <112eb5b9-bca7-41ca-efc9-1104b6063f75@web.de>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_124954_205870_6CFCFABE 
-X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-CacheID: sfid-20191111_125312_384290_47F91E96 
+X-CRM114-Status: UNSURE (   8.91  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.5 (++)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,37 +61,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@lists.codethink.co.uk, linux-omap@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org
+Cc: LKML <linux-kernel@vger.kernel.org>, kernel-janitors@vger.kernel.org,
+ Sebastian Reichel <sebastian.reichel@collabora.com>,
+ Russell King <linux@armlinux.org.uk>, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Ben Dooks (Codethink) <ben.dooks@codethink.co.uk> [191106 04:00]:
-> The documentation comments in this file are out of
-> date with the code, so fix this to avoid the
-> following warnings:
+* Markus Elfring <Markus.Elfring@web.de> [191109 08:38]:
+> From: Markus Elfring <elfring@users.sourceforge.net>
+> Date: Sat, 9 Nov 2019 17:19:35 +0100
 > 
-> arch/arm/mach-omap2/omap_device.c:133: warning: Function parameter or member 'pdev' not described in 'omap_device_build_from_dt'
-> arch/arm/mach-omap2/omap_device.c:133: warning: Excess function parameter 'pdev_name' description in 'omap_device_build_from_dt'
-> arch/arm/mach-omap2/omap_device.c:133: warning: Excess function parameter 'pdev_id' description in 'omap_device_build_from_dt'
-> arch/arm/mach-omap2/omap_device.c:133: warning: Excess function parameter 'oh' description in 'omap_device_build_from_dt'
-> arch/arm/mach-omap2/omap_device.c:133: warning: Excess function parameter 'pdata' description in 'omap_device_build_from_dt'
-> arch/arm/mach-omap2/omap_device.c:133: warning: Excess function parameter 'pdata_len' description in 'omap_device_build_from_dt'
-> arch/arm/mach-omap2/omap_device.c:309: warning: Function parameter or member 'pdev' not described in 'omap_device_get_context_loss_count'
-> arch/arm/mach-omap2/omap_device.c:309: warning: Excess function parameter 'od' description in 'omap_device_get_context_loss_count'
-> arch/arm/mach-omap2/omap_device.c:335: warning: Function parameter or member 'ohs' not described in 'omap_device_alloc'
-> arch/arm/mach-omap2/omap_device.c:335: warning: Function parameter or member 'oh_cnt' not described in 'omap_device_alloc'
-> arch/arm/mach-omap2/omap_device.c:335: warning: Excess function parameter 'oh' description in 'omap_device_alloc'
-> arch/arm/mach-omap2/omap_device.c:335: warning: Excess function parameter 'pdata' description in 'omap_device_alloc'
-> arch/arm/mach-omap2/omap_device.c:335: warning: Excess function parameter 'pdata_len' description in 'omap_device_alloc'
-> arch/arm/mach-omap2/omap_device.c:659: warning: Function parameter or member 'pdev' not described in 'omap_device_register'
-> arch/arm/mach-omap2/omap_device.c:659: warning: Excess function parameter 'od' description in 'omap_device_register'
-> arch/arm/mach-omap2/omap_device.c:682: warning: Function parameter or member 'pdev' not described in 'omap_device_enable'
-> arch/arm/mach-omap2/omap_device.c:682: warning: Excess function parameter 'od' description in 'omap_device_enable'
-> arch/arm/mach-omap2/omap_device.c:713: warning: Function parameter or member 'pdev' not described in 'omap_device_idle'
-> arch/arm/mach-omap2/omap_device.c:713: warning: Excess function parameter 'od' description in 'omap_device_idle'
+> A coccicheck run provided information like the following.
+> 
+> arch/arm/mach-omap2/display.c:268:2-8: ERROR: missing put_device;
+> call of_find_device_by_node on line 258, but without a corresponding
+> object release within this function.
+> 
+> Generated by: scripts/coccinelle/free/put_device.cocci
+> 
+> Thus add the missed function call to fix the exception handling for
+> this function implementation.
 
 Thanks applying into omap-for-v5.5/soc.
 
