@@ -2,54 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 567A9F8197
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 21:53:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 166CAF81D8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 22:05:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xcodycQK/K1asSd/XbNR0o4tlGJ9p4QW3LdBLpg2yNY=; b=m2xmGDCaVzTlnr
-	7Iczxj+uwuuIPPFKW9XupdtjAsl9cnxCCdw1utwM6jls7DuNQEMNqF8GG5IO+yABJohot5pk+DkEi
-	FPGro3gwFT3J/ouwuAFcy0p2WsT1IvG6A48aK4VO5m5wEgcKOPq1wF2AKzUQjDcvCntMBZOdJPd9s
-	jnUhhvEA9xb9rd3LF4wdHyvZxKEcTDzwEtQ9XQlMH85KczXf6AqvBl2hji1++P2sj/RCw7gFFeUtV
-	eXcr+rx9LouJ3Qk1plpFsTbcV5nYFeDYDGo5McMvA2Ji4lRrgH4X7ZZzYWLo2dM9bta0p8R92cK5R
-	sc+CPUKWG4glvaibXmYg==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NisoOdDwHUNuEk0hPFMBOanWVK8HrUHZcmkMLNy/iL4=; b=Jd2dTEghdTcvmQ
+	Txpsi7PENJsC0ueMB/WhtgJ3N7XOkW9ADRnohdGeyuEs7TcEdh6nIFzmkPEkjU2PV5yE+vt+P6XSI
+	jsZRlj4BeHNHCpGfIxapvQ4cd/E6NeiglBoGbgvYBpBqf+TqGdQL0TnZ3k9IhsB/ksjh0LoOq+BZo
+	xTSD/yZ4RJR44OW47fBq/ckKyd7vv82aTlscdxt7lgWH95NjVYDmZd76N29fUA0RuprlEJ4p/5Gb4
+	BO7py0V0BgmJCGn3mfK9HzQylTE+FnEH08u9jSkLDJnLIEas/7Oj8ntwIK11IEDN42X8h15N2zg8u
+	SZ94PB2sjRxy9XwP7GZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUGgZ-0002LC-Q4; Mon, 11 Nov 2019 20:53:19 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUGgS-0002KP-9z
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 20:53:13 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 1E7958047;
- Mon, 11 Nov 2019 20:53:48 +0000 (UTC)
-Date: Mon, 11 Nov 2019 12:53:08 -0800
-From: Tony Lindgren <tony@atomide.com>
-To: Markus Elfring <Markus.Elfring@web.de>
-Subject: Re: [PATCH] ARM: OMAP2+: Add missing put_device() call in
- omapdss_init_of()
-Message-ID: <20191111205308.GA5610@atomide.com>
-References: <112eb5b9-bca7-41ca-efc9-1104b6063f75@web.de>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <112eb5b9-bca7-41ca-efc9-1104b6063f75@web.de>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+	id 1iUGsF-0007Ko-3V; Mon, 11 Nov 2019 21:05:23 +0000
+Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::2])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUGs6-00074d-EC
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 21:05:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1573506307;
+ s=strato-dkim-0002; d=goldelico.com;
+ h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=XOJHmHRtuAQ7wjdWplmhsAQvacfKl4UjW8S4Huymubg=;
+ b=SmU2ThFqDuq8j8hMcMtK7WTa6jsZsGyj58VPNr4XRmBdGSBEmM4VJNy1VU5JGQIKmQ
+ ayPtHOg6oVjLEgRn2yLqDNQ9uS4tJHX3K4zm5h3TUrz5TAJiRR1NSxhSFCfKbI9PIDCO
+ hQXx4S7U2KiBXT7x+OVFUhQ6D7Zvhc8+gBVv6FyIaPZnnpWO99yAXPyD12nASCUav06s
+ Nv7dOSqZtqJ+B/r6emn4I/l/AESQZFP2kdVIycdd7pP8qRaRzbiy70pljKdj7w0jUlMN
+ oroEYBgGG3VbzKXnI+/93A+W159qWr42Bno2nLuRy5PxM8LBsylH9fKxodEv+EYlYLg+
+ AYdg==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj7wpz8NMGH/vrwDOsGQ=="
+X-RZG-CLASS-ID: mo00
+Received: from imac.fritz.box by smtp.strato.de (RZmta 44.29.0 DYNA|AUTH)
+ with ESMTPSA id L09db3vABL56xKG
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve secp521r1 with 521 ECDH
+ bits, eq. 15360 bits RSA)) (Client did not present a certificate);
+ Mon, 11 Nov 2019 22:05:06 +0100 (CET)
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+Subject: Re: [PATCH] ARM: dts: e60k02: fix power button
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <20191111202959.24189-1-andreas@kemnade.info>
+Date: Mon, 11 Nov 2019 22:05:05 +0100
+Message-Id: <7FB23F5A-91C7-414F-A5B8-AE6E62048022@goldelico.com>
+References: <20191111202959.24189-1-andreas@kemnade.info>
+To: Andreas Kemnade <andreas@kemnade.info>
+X-Mailer: Apple Mail (2.3124)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_125312_384290_47F91E96 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191111_130515_064537_058FEF18 
+X-CRM114-Status: GOOD (  12.45  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5301:0:0:2 listed in]
+ [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,34 +81,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: LKML <linux-kernel@vger.kernel.org>, kernel-janitors@vger.kernel.org,
- Sebastian Reichel <sebastian.reichel@collabora.com>,
- Russell King <linux@armlinux.org.uk>, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh+dt@kernel.org,
+ shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Markus Elfring <Markus.Elfring@web.de> [191109 08:38]:
-> From: Markus Elfring <elfring@users.sourceforge.net>
-> Date: Sat, 9 Nov 2019 17:19:35 +0100
-> 
-> A coccicheck run provided information like the following.
-> 
-> arch/arm/mach-omap2/display.c:268:2-8: ERROR: missing put_device;
-> call of_find_device_by_node on line 258, but without a corresponding
-> object release within this function.
-> 
-> Generated by: scripts/coccinelle/free/put_device.cocci
-> 
-> Thus add the missed function call to fix the exception handling for
-> this function implementation.
 
-Thanks applying into omap-for-v5.5/soc.
+> Am 11.11.2019 um 21:29 schrieb Andreas Kemnade <andreas@kemnade.info>:
+> 
+> The power button was only producing irqs, but no key events,
+> Forced power down with long key press works, so probably
+> only a short spike arrives at the SoC.
+> Further investigation shows that LDORTC2 is off after boot
+> of the vendor kernel. LDORTC2 is shared with a GPIO at the pmic
+> which probably transfers the button press to the SoC.
+> That regulator off at boot, so "regulator-boot-on" is definitively
+> wrong. So remove that.
+> 
+> Reported-by: H. Nikolaus Schaller <hns@goldelico.com>
+> Signed-off-by: Andreas Kemnade <andreas@kemnade.info>
+> ---
+> arch/arm/boot/dts/e60k02.dtsi | 5 -----
+> 1 file changed, 5 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/e60k02.dtsi b/arch/arm/boot/dts/e60k02.dtsi
+> index a0ade2ba7a21..33e02bd2b59d 100644
+> --- a/arch/arm/boot/dts/e60k02.dtsi
+> +++ b/arch/arm/boot/dts/e60k02.dtsi
+> @@ -356,11 +356,6 @@
+> 				regulator-name = "LDORTC1";
+> 				regulator-boot-on;
+> 			};
+> -
+> -			ldortc2_reg: LDORTC2 {
+> -				regulator-name = "LDORTC2";
+> -				regulator-boot-on;
+> -			};
+> 		};
+> 	};
+> };
+> -- 
+> 2.20.1
+> 
 
-Tony
+Also:
+
+Tested-by: H. Nikolaus Schaller <hns@goldelico.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
