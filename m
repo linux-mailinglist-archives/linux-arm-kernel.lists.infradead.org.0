@@ -2,84 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F9F3F79EC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 18:28:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F028CF7A0D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 18:35:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qr0vpfvlejQbl1DU+GwDzuK0XDQgSP8+eratXLJfcFA=; b=hfaAYqqAv352lY
-	skpLefNSkOGsCTELkIVQcwdQy0/KvwRRkbD/xwqK5Y3541yxcF7QLZqtwOLzmufiI9RVT/fMjO6Yh
-	lzpc6URMP2vcS1ylPmuP3H8f/xLFU/5QLgzmiSDDcgy1K+n17sulIJw3/X1Y5moLQDR7yQwMRPUAk
-	Rb+Q9vMw/oEK6XDgVOJjyDGdn/OaXZAtEhVRfi+JQOaovJwUczzKzSKGdbIgGgciMfIl1m5Ho1akc
-	f+q140wWMGiSFzdWZds7vWg4Dam6kFnIW/P8nN7tF4U21nqGzno78Q5LoT/PVU3T6KA5AYZCdPFZf
-	A7YaFR1NFdGwBgQtCIiQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qfHlFCpScVuzWlaHTaKMURzRVbjEtwsHJjbEtKH+/Js=; b=RAy2pJItxDmg2E+XWkmxrMVdy
+	S+6o0VbYb6SuAxTRfTEX4RIfoKoXXG5mjjxWgVvyiwoQS5e3g3kBzpDw5KJM6YikxsGmE9pVj+Psc
+	ylA4Jm72Ee5KY6wT8UJbh5Tz5f5Yn8ZEabxjYtlto82/LXtGm0kIvwhpkhB1aYFWqa9Ai7n5ov6ws
+	npGq/z1axJ0C8GbcvC8eYv0gLRDRySdl4Z3wAJMwDGO9utW6EpCmsobKBR2aYZJHW33wuwYQ+ti+A
+	sKCGkoTfhXxU9vXCFMxNg6+Jc9ao6wP5FNgdb53xAEB2O1H6OhuJSDGuy4foiQusmbZJjV+CQP4AI
+	RJJ5IJWZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUDUW-0000GR-60; Mon, 11 Nov 2019 17:28:40 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1iUDbI-0003tn-GZ; Mon, 11 Nov 2019 17:35:40 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUDUN-0000F4-Uv
- for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 17:28:33 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id u6so8892202vsp.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 Nov 2019 09:28:31 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1OTu7RzLc243iGue7chxiy8Vk2YRX4D1tgtKssbyxYs=;
- b=t5ZpWPMLeBDEvkNCdWobOXpY1rn8mKKbhlJAqH/nClIIPOo8xtotQlHbtDHya4Is2h
- oMEZKC6Qh/5PvNDFNmY7Qo0a3QcMJk8QVG0lTAlBXtjVdwYFZGnwxEfUmx0l/jfycAlA
- wQB0V12uNIgPHHMkZZzhcbKeXCUVhZeNQYZb9vvA6OAYGiQ1jyh3DqSXYUX4O4VUgcbM
- nntC2qRDQHoKCArmi5zgZ9chZOb3Z+WZDSz02rWVMpT8A+tmZWrPjxhJ990eCDT4/D7z
- 1KGN6yioFbYO0lWiOBt1hF/sQINuGYPnD6hUG9Ty9K/hpA13WopK8gW42j8mHxk+adXW
- OKDQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1OTu7RzLc243iGue7chxiy8Vk2YRX4D1tgtKssbyxYs=;
- b=bMdgBIZXSESxuipRr4dEWU7vBy0lWPDAKWuMHrVHEut0PAI2JUkWcNCAkl1Knzs2/F
- PPER7ie6LS8FaTOdS7GDt3DKD5H1P2e1d6j0lF2GjFNyRoK4yzWDa4EYagpI2yBh3uad
- DORQQiSsumhRc1dCavtM9EKoAELuS68CjsVR6FhoFTLTHKNgTvI1PXCl+Fzs/PjuXqNx
- b9CEtL29Leir5kwLcCgAIezY08ftlpQ2pIfsKxdhRT/wVlZ2ZpLc9wyNBPS/6p/Nxhgp
- in1rNAS84MXELFJnuJ8y2AJ0XSqH09+kFK+EGCCoUA/GcL9NHZnHDRv3JyyDJtyD/a0c
- u/CQ==
-X-Gm-Message-State: APjAAAUqZqWzU7srrZKdZfnbrmOqj9kOHhehzyL5llnIXmEPOKnfAAvt
- eHhi1RqARKD/S6NZH++rrn/NroJG9q69Lc323z6YuA==
-X-Google-Smtp-Source: APXvYqwilC07dl1RnIx5npEnNIV0hBMmZ1Z8YLoBy1QbElednuBWAi2IH+P4714/fpUNZRzKUbKdgOH1iwmWYFORaFA=
-X-Received: by 2002:a67:ef4e:: with SMTP id k14mr10817201vsr.165.1573493310523; 
- Mon, 11 Nov 2019 09:28:30 -0800 (PST)
+ id 1iUDb6-0003sk-33
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 17:35:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=GlQJdcse6wO1nHPeRjgm0snqCR0okS99BVp/xqVRpiY=; b=cdX7Ac0A4CqBU+v0mannGiJ+H
+ 7NsaQS9+uir92uYkkB2874BsR+aoLOS0G0Av6p1tZe4W+lFJhem2xVt+Lj7usmPOdpn6ViBd91xBS
+ 21p6jNdqGN99ptsq1QEeq0lFisnnopjqZMSE39ycEV0GfVkcrGIbLxTTp+3XMVg6ilK+8=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1iUDb3-00056s-Hq; Mon, 11 Nov 2019 17:35:25 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id AC7BF27429EB; Mon, 11 Nov 2019 17:35:24 +0000 (GMT)
+Date: Mon, 11 Nov 2019 17:35:24 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v8 1/4] arm64: Add initial support for E0PD
+Message-ID: <20191111173524.GC4264@sirena.co.uk>
+References: <20191108170116.32105-1-broonie@kernel.org>
+ <20191108170116.32105-2-broonie@kernel.org>
+ <97449111-a649-8e78-7f33-afbfae293eaf@arm.com>
 MIME-Version: 1.0
-References: <f03c978c-86de-b8bb-22c2-177d7fafed94@fivetechno.de>
-In-Reply-To: <f03c978c-86de-b8bb-22c2-177d7fafed94@fivetechno.de>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 11 Nov 2019 18:27:54 +0100
-Message-ID: <CAPDyKFqn06LZZMXLD2o-M6A0R6KU97PFUTN=NgYnMtf=ESULTA@mail.gmail.com>
-Subject: Re: arm64: dts: rockchip: Add SDR104 mode to SD-card I/F on
- rk3399-roc-pc
-To: Markus Reichl <m.reichl@fivetechno.de>
+In-Reply-To: <97449111-a649-8e78-7f33-afbfae293eaf@arm.com>
+X-Cookie: A lie in time saves nine.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_092831_996385_467817F8 
-X-CRM114-Status: GOOD (  13.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191111_093528_134444_AEC1A023 
+X-CRM114-Status: GOOD (  12.11  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
+ no trust [172.104.155.198 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,64 +80,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Heiko Stuebner <heiko@sntech.de>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6740045904983630893=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 11 Nov 2019 at 15:13, Markus Reichl <m.reichl@fivetechno.de> wrote:
->
-> Add SDR104 capability and regulators to SD card node.
-> While at it, fix a typo in lcd pinctrl and remove two
-> undocumented bindings from pmic.
->
-> Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
-> ---
->  .../boot/dts/rockchip/rk3399-roc-pc.dtsi      | 31 +++++++++++++++----
->  1 file changed, 25 insertions(+), 6 deletions(-)
->
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-> index 33df95e384b4..e86a6db54499 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-> @@ -135,6 +135,20 @@
->                 vin-supply = <&vcc_1v8>;
->         };
->
-> +       vcc3v0_sd: vcc3v0-sd {
-> +               compatible = "regulator-fixed";
-> +               enable-active-high;
-> +               gpio = <&gpio4 RK_PD6 GPIO_ACTIVE_HIGH>;
-> +               pinctrl-names = "default";
-> +               pinctrl-0 = <&vcc3v0_sd_en>;
-> +               regulator-name = "vcc3v0_sd";
-> +               regulator-always-on;
 
-This looks odd. A GPIO regulator being always on?
+--===============6740045904983630893==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="CblX+4bnyfN0pR09"
+Content-Disposition: inline
 
-> +               regulator-boot-on;
-> +               regulator-min-microvolt = <3000000>;
-> +               regulator-max-microvolt = <3000000>;
-> +               vin-supply = <&vcc3v3_sys>;
-> +       };
 
-Assumes this powers an SDIO embedded card. Often those have a specific
-power sequence, just wanted to make sure the above are really
-sufficient? No delays or external clock needed?
+--CblX+4bnyfN0pR09
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-[...]
+On Mon, Nov 11, 2019 at 02:22:33PM +0000, Suzuki K Poulose wrote:
+> On 08/11/2019 17:01, Mark Brown wrote:
 
-Kind regards
-Uffe
+> > +	/*
+> > +	 * The cpu_enable() callback gets called even on CPUs that
+> > +	 * don't detect the feature so we need to verify if we can
+> > +	 * enable.
+> > +	 */
+> > +	if (this_cpu_has_cap(ARM64_HAS_E0PD))
+> > +		sysreg_clear_set(tcr_el1, 0, TCR_E0PD1);
+
+> As mentioned in the previous version, this could set a superfluous model
+> for people to do the same check for future SYSTEM_FEATURE type capabilities.
+> I leave it to the maintainers.
+
+To also reiterate the check doesn't hurt anything and avoids the
+potential for future breakage if the capability gets changed (which
+would be good to do).
+
+--CblX+4bnyfN0pR09
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3Jm9sACgkQJNaLcl1U
+h9DmJwf/fxqH/Vhl/65JZWWFB8QNEN96T8bT3WzNYb1Mq1razoIDsXSLA8a8r+rM
+dpy80CFxr/obLK5EHcp0xoNK6QXxexThGbeW5ohk33u9NHTnywcPNUCGWncX5YLO
+QYpgs9u7m2p102yQt1xtnRC57MOpQoYLt1QtBXMUv7Mkh9skexfb3lFglz5GFGmc
+Ip5Sq6P7qahIAAagxpxsfAnIbP9m0v5Lcb0qqQtOWA5ti7Fz78p6YMzEPjzJfqr5
++Sqnh6g3DXuv469+aBxLULNA+uLfMVQ6ZzaUxRfgwvzEh5RnMHJky5mn5ECmIoZs
+yxtddNbwGlh8yqYqpF0DaM63eur66g==
+=O4WX
+-----END PGP SIGNATURE-----
+
+--CblX+4bnyfN0pR09--
+
+
+--===============6740045904983630893==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6740045904983630893==--
+
