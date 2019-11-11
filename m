@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91381F73BC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 13:21:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AC47F73C2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 13:22:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
 	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=a/f1xwnuS08QzmKalFbHMGa7kt/JYoffv3vUncS98F0=; b=rnY4P6uVO3fJ59
-	2nRK2sjfXJthZxhEIRAulF9iRIN7ogeuUmJfMx4/UQOb0BiVEn/5L2mlq3n+PRXevvxt+hxcmJNzn
-	Q59D6Qpi8FDJhZ4eA8bhbi+xqus6S57i6/d2OYA4QcOQL6WhVS54xDOrm0wSaa9VlshlS5vqN6tdB
-	3JI1+11Zf5VTuW2DltD56RJI/PzW2Ol7sSKq4gtTQ2Hji3Os+XbmwJkBY9UPA7iC+CJKBIPnFC7NR
-	pKwEsM+GL9K+aO6QGblvtDIETsl3uigCT2EvBLuj+2OxYRtnEFAoDAtr0rOSZ9YwCTysS78LHkvRi
-	arNzGAxQ8hD+1YqhsbzA==;
+	List-Owner; bh=DaWQ7REgPkAv6VA9R0xSnRz+B62QMqwmi+3DU8zjsQs=; b=NY0/PuzRtl7WlW
+	8UpGn2x5N0xIwK3h11wggJJD6ullX5hSujWyHXVnJe8IYYbOY41VtUpLT5IywquGuN1VK/Hkowcvh
+	077BkLmMwyA5epa6vRQ32UUL/oIj1j+W6yxWsbDYPStTt3N6A0F1lukysqvrd5bcLW5VqABf69c5t
+	fGFwPC4bi51nUK/iyH3oupGeBLy7at5z5hUZNHcwj0WcKWxOd0HlOvM8yv8S2UnyHfMiSqd4O6DMP
+	xX/vpkg5+6Q1+2GbJeBtHEoE6qtyoDUSMnw+AQWmdpQIkVxARaKnBGQrRUHjl3k/T1KOnDjrJaCO3
+	9J7IgZZiFMRUuboxL/Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU8gy-0007uQ-FD; Mon, 11 Nov 2019 12:21:12 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iU8ib-0008H2-8d; Mon, 11 Nov 2019 12:22:53 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU8go-0007sp-ID; Mon, 11 Nov 2019 12:21:04 +0000
-Received: by mail-wm1-x342.google.com with SMTP id c22so13011341wmd.1;
- Mon, 11 Nov 2019 04:20:57 -0800 (PST)
+ id 1iU8iP-0008Ec-DU; Mon, 11 Nov 2019 12:22:42 +0000
+Received: by mail-wm1-x341.google.com with SMTP id z26so13081442wmi.4;
+ Mon, 11 Nov 2019 04:22:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=to:cc:from:subject:autocrypt:message-id:date:user-agent
  :mime-version:content-language:content-transfer-encoding;
- bh=4/DEoOzAEG1d3atRsWym3bi5EGYSgj+kTBF4VBkbjzQ=;
- b=rYhQ4sU1w5ZPdQoBBpgdgzwDaWzU9NtVb9bKlua7r+ZytHMBeEPtk1qCDBj5iOn92U
- i5jvNuw5sjp4xCW8/YAT4css31l5v73e3GkPxpoYFrb3agAcv9TtGOJF8Xw/dp6u6zrM
- x+xJ6wZNBYcNGAdY1TKe27WVWi0XRuBGqkg+rfV+kKlRQ723d8NXPFQ9AKzvSyBnzZdT
- KYpiygwRxnnl4S0F+oUi9BnxYw/xEEQvJgLnON6sOIG4SqmXQlDAvfboKGXyn4M6uvWm
- +vnqkkDseA1H73TGpS5S5mj0uTEpEDQfjubxCgV1LlNpjzMdK9Qeyt+hHeWthPoVj1WM
- HOsQ==
+ bh=oBUWihfFL5fw4bGOgHQbm5/EIXZLgCl09qqlGuj5Ebo=;
+ b=nlUw93FCu7JtmOLAc392og9hfJkYj5x5Lv09R7al5x7tCfTt+2C9fDRaFelf3/LSiU
+ +7yGSW29JGnKn8M7grKJ/iJUxa7Mv16KIxQRZ9FqyFnMzNRcqadIzpmexPUZwHjWblVx
+ 3wFnLiXKArfaLzHGoLHjyuijU0ybckPOasSQV93pQ+13NMdd5YUYJ8EA2ojYdB3oKB0T
+ 3wfQdS9LGxEu8vNzCbF0TdC2M7+3lHLdXifAIAyWuDHO8WHa5XhCOd2kQeQyIfO8lGdq
+ 6QRFBGpjmo6V+qVVWgx/SdyUbiwIyN7wa1HB6W+UHRA2XAnpun0+CrnywkfUX1nhHQQT
+ UD8g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:to:cc:from:subject:autocrypt:message-id:date
  :user-agent:mime-version:content-language:content-transfer-encoding;
- bh=4/DEoOzAEG1d3atRsWym3bi5EGYSgj+kTBF4VBkbjzQ=;
- b=LCgHS3jXayTtF+C6Uxm48zN6R81DgWW2MUZwtbqM63mxFmbwqZdxpecp5BFbMYEVaX
- uAiezHZf4SPllmNMFat9h3X8wqvUoAKeKp3IiiwKSJHSGw9L8I+THf5rsn3Ecddb3gcQ
- l7JFDRFYmxlkQoHykT3gRVBmNvGM1/donOoCerqKdObbwE8EX5ONyU1r1lRRTQs26tO1
- NITr3nL1GV5cZDK1N4Q+v1huIZmgv3YS0rcj4s285oYmJYjh8fOS4BFxUQo7Pa27A9Vq
- F0PrXdRSr0mO902gZokyMmCMnFIh1kmmxkINfkdZR9aUMGSTY0gcCjVm6PXY3wcouAF3
- +6yQ==
-X-Gm-Message-State: APjAAAUq53h63ghDqIwxxeLl7rIXMSwGCt9dj7AspnnUnBBXQoEXMYbA
- 3bp2CanT6yBz7f7OmyWunLw=
-X-Google-Smtp-Source: APXvYqzRxGuqNGRtwsVacYnZnO1gmwiB9J7F9ihYoyQAEgnNtJkCkzzIzAaLJPkb1+DA1W8O0szgWw==
-X-Received: by 2002:a1c:ed16:: with SMTP id l22mr19878920wmh.151.1573474855805; 
- Mon, 11 Nov 2019 04:20:55 -0800 (PST)
+ bh=oBUWihfFL5fw4bGOgHQbm5/EIXZLgCl09qqlGuj5Ebo=;
+ b=mRQJV0aABzzLuhfh1nU0Uv5odUIr5GLWbllTJDfYXQqzwnfTfYTlIPtDhA+6npB9rT
+ Z8R/Az4Dm93x9wymZcIzmzUTpNC1leLtGfdsOnnbsiWenjXi4kCcIgw21V8biP1F27GN
+ CyUgrdAtqPgBk9sFaj4H28zAVYV2H6deR8r6vXsssno+JHbwx6321+2VeDFRmFEgUDBf
+ yi2WwQmTxD7iOnybwNTtSOTLAKUzGFEKKhr2R0sI2/+BeONbC48ymawMinGyXCxC46rd
+ ihLwYfmthVjCndoGMY/Kj+zJYANCfgm1AXKITpaLeHWbN4maXmVord0a7zBklDcOpEL4
+ TNOA==
+X-Gm-Message-State: APjAAAVUindYXOfpytoDUxirPoQyB3OYbWAFNc/IlNbA8crdp11EWHY8
+ kAG+eXQWnwPDGJHeDrByGSfLnGGyRSM=
+X-Google-Smtp-Source: APXvYqxolAMxfDjz7Rx/AGKue5B9tB2KtPDmhqcigtkCATntbCR5LKwRFcnQF7/F0xX6hESnYi5/gA==
+X-Received: by 2002:a05:600c:2191:: with SMTP id
+ e17mr20803255wme.101.1573474959700; 
+ Mon, 11 Nov 2019 04:22:39 -0800 (PST)
 Received: from ziggy.stardust ([95.169.226.39])
- by smtp.gmail.com with ESMTPSA id d199sm15424212wmd.35.2019.11.11.04.20.54
+ by smtp.gmail.com with ESMTPSA id u7sm26517390wre.59.2019.11.11.04.22.38
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 11 Nov 2019 04:20:55 -0800 (PST)
+ Mon, 11 Nov 2019 04:22:39 -0800 (PST)
 To: soc@kernel.org
 From: Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [GIT PULL] ARM: dts32 updates for v5.5
+Subject: [GIT PULL] arm64: dts64 updates for v5.5
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
  fL3eT7ZsYV5nur7zctmJ+vbszoOASXUpfq8M+S5hU2w7sBaVk5rpH9yW8CUWz2+ZpQXPJcFa
@@ -130,22 +131,22 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  Y1aFdU79pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlI
  FZ6fsEKIAN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+
  r2JwH1CJjrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <82f16220-d0e1-6e32-088e-c889ef6bdff3@gmail.com>
-Date: Mon, 11 Nov 2019 13:20:53 +0100
+Message-ID: <4d3984bd-4bb3-b8c4-6e02-19a7185cd682@gmail.com>
+Date: Mon, 11 Nov 2019 13:22:37 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.1.1
 MIME-Version: 1.0
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_042102_607096_FC2AB89C 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20191111_042241_458993_7713FDB8 
+X-CRM114-Status: GOOD (  13.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (matthias.bgg[at]gmail.com)
@@ -169,7 +170,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Josef Friedl <josef.friedl@speed.at>,
+Cc: Dehui Sun <dehui.sun@mediatek.com>,
  "moderated list:ARM/Mediatek SoC support"
  <linux-mediatek@lists.infradead.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
@@ -194,24 +195,24 @@ The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 are available in the Git repository at:
 
   https://git.kernel.org/pub/scm/linux/kernel/git/matthias.bgg/linux.git/
-tags/v5.4-next-dts
+tags/v5.4-next-dts64
 
-for you to fetch changes up to 4ab88db095c3a2ebbd6108cafcf327326f989ff8:
+for you to fetch changes up to 5bc8e2875ffbc5d1679b0966d48308f3d93637d4:
 
-  arm: dts: mt6323: add keys, power-controller, rtc and codec (2019-11-10
-21:39:44 +0100)
-
-----------------------------------------------------------------
-mt6323 pmic:
-add nodes for RTC, keys, codec and power-controller
+  arm64: dts: mt8183: add systimer0 device node (2019-11-10 21:14:18 +0100)
 
 ----------------------------------------------------------------
-Josef Friedl (1):
-      arm: dts: mt6323: add keys, power-controller, rtc and codec
+mt8183:
+add systimer node and bindings
 
- arch/arm/boot/dts/mt6323.dtsi | 27 +++++++++++++++++++++++++++
- 1 file changed, 27 insertions(+)
+----------------------------------------------------------------
+Dehui Sun (2):
+      dt-bindings: mediatek: update bindings for MT8183 systimer
+      arm64: dts: mt8183: add systimer0 device node
 
+ Documentation/devicetree/bindings/timer/mediatek,mtk-timer.txt | 1 +
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi                       | 9 +++++++++
+ 2 files changed, 10 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
