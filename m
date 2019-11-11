@@ -2,63 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 350F2F7FFB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 20:32:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F288EF8038
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 20:34:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yGXOAdE3E0MFqR/qseMPmYvgGO4opHUkFhzmUagezgc=; b=uxFKHaZbmRBdCE
-	S92PWkvjeMiS/nawwijupvsdHAXysORDPXuq5rv5ATNcAE/BjJUR+KlN81BYrupU4bPCAhRm7Gn4g
-	YmcPg/jJyU6QZ/hDK3MNt9y3aIUzntBkws0KG5kOTOWsKBaU4xWn+0oYRcmx5ikQF2AKPabom4kjf
-	PtqlTttGJ46o3P1bMZCbHpjKGBmeFAc7eKBuEHYcpBCZKuF1T+nddocQfkvDR7F1+F1sn7uFNkFID
-	iqxquxNFMe32HRUYMaUn8dvKNdtUzYaQi/uA+wD5AoTAx3ef5950MNwKSF3R1y/93rUMQV7ZMAxGQ
-	Vw0RCMrfcTVgkRdF0sUw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=inKUOOInvuqWLfHYW4//hzrQSLZOeHJP9il7qG0V/qg=; b=iscBA/Spgwtcfb
+	MqZazqe6SuFhOpdZ3QTKC59uaYs629WsMDCA4S+z0jY14xLar3tqIAWNNv4OzU543h71TuXp/p5jB
+	zDCgS7mcLYMHXtIZT0p/tx1pl/JlXZi7L4+cjEdgwH8C9BNpgE9tIfnEfi6ED2m6y3klkMqG9KoKB
+	Qoq/ex1+jDwN0Up5VwmBZtOugWXg9ZjN/RRBKpfaSZwdW4BSb/mWoBjhGuXG50042n++XiGDbTV+A
+	tRKSUKupPyE4zALKIJotN+NjKwMZIuLTPRqDsnRUNflMeUGhqazaP3ACh+8yjLEB3J36tUUaTqOjt
+	Uz3BvHHHZkqCSJXSZ0Wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUFQ9-0001FS-9v; Mon, 11 Nov 2019 19:32:17 +0000
-Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
+	id 1iUFRs-0001s2-VO; Mon, 11 Nov 2019 19:34:04 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUFPw-0001Cc-2o; Mon, 11 Nov 2019 19:32:06 +0000
-Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
- (helo=hermes.fivetechno.de); authenticated
- by wp126.webpack.hosteurope.de running ExIM with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- id 1iUFPr-00017a-Bc; Mon, 11 Nov 2019 20:31:59 +0100
-X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
- linuxbbg.five-lan.de
-Received: from dell2.five-lan.de (pD9E89174.dip0.t-ipconnect.de
- [217.232.145.116]) (authenticated bits=0)
- by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
- xABJVvBQ021691
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
- Mon, 11 Nov 2019 20:31:58 +0100
-Subject: Re: arm64: dts: rockchip: Add SDR104 mode to SD-card I/F on
- rk3399-roc-pc
-To: Ulf Hansson <ulf.hansson@linaro.org>
-References: <f03c978c-86de-b8bb-22c2-177d7fafed94@fivetechno.de>
- <CAPDyKFqn06LZZMXLD2o-M6A0R6KU97PFUTN=NgYnMtf=ESULTA@mail.gmail.com>
-From: Markus Reichl <m.reichl@fivetechno.de>
-Message-ID: <e69268d2-4a3f-3cd8-fc2e-57ae52ad337a@fivetechno.de>
-Date: Mon, 11 Nov 2019 20:31:57 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1iUFRR-0001bu-ST; Mon, 11 Nov 2019 19:33:39 +0000
+Received: from mail-qk1-f174.google.com ([209.85.222.174]) by
+ mrelayeu.kundenserver.de (mreue107 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1Mqal4-1i83mp1JtQ-00mcRG; Mon, 11 Nov 2019 20:33:35 +0100
+Received: by mail-qk1-f174.google.com with SMTP id m4so12200354qke.9;
+ Mon, 11 Nov 2019 11:33:34 -0800 (PST)
+X-Gm-Message-State: APjAAAUm3OaeNlMLxZh4h+rF2AdeGNqTwJXQgTl8xCPDO7o4LT4RRTm8
+ 8p5KtOrc30b7BGOFsR1BG4Qs7tDPFLDV4Rew8pQ=
+X-Google-Smtp-Source: APXvYqzRT3LvGe5JvZLYKm1upZpHxk2xc9ns43ZUwTpi/JlFXD7dYhA8+4Mt4XVDG2f3/qLjEL/Ms2I9EThmbgvV8Jg=
+X-Received: by 2002:a37:58d:: with SMTP id 135mr2321779qkf.394.1573500813881; 
+ Mon, 11 Nov 2019 11:33:33 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <CAPDyKFqn06LZZMXLD2o-M6A0R6KU97PFUTN=NgYnMtf=ESULTA@mail.gmail.com>
-Content-Language: de-DE
-X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1573500724;
- a73da61f; 
-X-HE-SMSGID: 1iUFPr-00017a-Bc
+References: <20191029064834.23438-1-hch@lst.de>
+ <20191029064834.23438-11-hch@lst.de>
+ <CAK8P3a2o4R+E2hTrHrmNy7K1ki3_98aWE5a-fjkQ_NWW=xd_gQ@mail.gmail.com>
+ <20191111101531.GA12294@lst.de>
+ <CAK8P3a0rTvfPP2LUMw8EC0xz5gfZP5+NUkoaZBJrtYYfr6YRig@mail.gmail.com>
+ <20191111102923.GA12974@lst.de>
+In-Reply-To: <20191111102923.GA12974@lst.de>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 11 Nov 2019 20:33:17 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a2b=td4JhYOcK1jUshh8Mp-5_w4v+dAr_JjnH783=ptBQ@mail.gmail.com>
+Message-ID: <CAK8P3a2b=td4JhYOcK1jUshh8Mp-5_w4v+dAr_JjnH783=ptBQ@mail.gmail.com>
+Subject: Re: [PATCH 10/21] asm-generic: ioremap_uc should behave the same with
+ and without MMU
+To: Christoph Hellwig <hch@lst.de>
+X-Provags-ID: V03:K1:XqHvjXsTTLtCO1MpI1zIKe4xvKa1W75U4RDv5wuFKa5vFjZF7zX
+ /7s73j13+MeM4CjCKt/eYQRCZUZVo2r9fgvnwdypXYpe1KdjU9CsBMye7u3ZHnKUw4LdiPM
+ p9RJZgDPhyJcatrsTpqAvldTCqGTMbGeyadWqu+kasaAR8q4NCxDu5X8q2btAhm+0GYU/Om
+ iZk2U2rOrRWgF6vU+tu1Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:bYY3orYqOrE=:nQHsC0DpcC1tRug8l8pvFN
+ 1c0IydG+fsazx53qmPZqfmQzUDxunp18MLCV8p+RyUlwCpCv9HqM4UUwxi0wuse4UhvAQsBcW
+ WTUaJNq3DcWnGxi30SSbM1GwPh1vlAoEfyLz0es6J3dd2sC59oW75tz4iuzewB0MOGyTl2NH/
+ S/8Aliy03a/3kwxUOhyu5EyCJ4AUEC9KCugDu+51+2cpYDC7AE8ptPvfY8boJFXN6CQ8AOKNz
+ U0GjPJPHbShNr3zxTfPl97c6poUzGQu0tOvqjFr08gaxRrqOPpL6O504S6+WbGYOo9/WqcBOe
+ 0dqg9/11+mrU3WN3ZIPyMuH/qyC+gjkNsAwZG1L2yd68vDJ6FibpaS3VKEKz+/ZrM/RzELVcw
+ Y2X5ySGqxOVPktw9/bDam1HQpCNQfsXCTlJ4ILQtrkCIU6KoulRiXcldSp7MZT4+T/4IyvJLF
+ m5T7wtBNZHcbGoxKdhHsIUxtlPeBzJ+Y6x+C65a2KKXnfM3u3IjCD5kGion3qwu2NU641fctp
+ hOPmr6CzDl89lhZbem6t18cYq1cC5EsTj7NrdO1euqVHOZ4werx1B1AKPNWT2+ZUoHpdvmPSr
+ IDMsvpIL2QfPFk8hzODlCILNQOaubWogzPDWvz2ymxDCH7tz9hHOFKfxnH1ulyOLb0PhP6O3W
+ +6P9zjyvnRtzTSFShtNTGjYW5NTvNe9ZrJaPzwuh5XOMJ9H3nWYE9sdNU977njphP1X9+GtYp
+ HO0Ac/b4RSdDdSUbltp2rWDTXv8hS4Snp4RNisRMAo74T0RhEy4vny1G3o8SBeANVQ+744pJN
+ 8fFEnrCQaerY0gfh2z1UKVh0j3oJCJRs5WRQyRBCpusTD8uCjS+trr+si2xoSHgYbWHss8lMa
+ 2/6c7pjsjoZjzu8snTzQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_113204_271389_6A892002 
-X-CRM114-Status: GOOD (  16.56  )
+X-CRM114-CacheID: sfid-20191111_113338_216645_269634E5 
+X-CRM114-Status: GOOD (  10.80  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,58 +89,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Heiko Stuebner <heiko@sntech.de>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Guo Ren <guoren@kernel.org>, sparclinux <sparclinux@vger.kernel.org>,
+ linux-riscv@lists.infradead.org, Vincent Chen <deanbo422@gmail.com>,
+ linux-arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>,
+ "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ "open list:SYNOPSYS ARC ARCHITECTURE" <linux-snps-arc@lists.infradead.org>,
+ linux-xtensa@linux-xtensa.org, linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
+ "moderated list:NIOS2 ARCHITECTURE" <nios2-dev@lists.rocketboards.org>,
+ Guan Xuetao <gxt@pku.edu.cn>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
+ linux-mips@vger.kernel.org, alpha <linux-alpha@vger.kernel.org>,
+ linux-mtd <linux-mtd@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgVWxmLAoKQW0gMTEuMTEuMTkgdW0gMTg6Mjcgc2NocmllYiBVbGYgSGFuc3NvbjoKPiBPbiBN
-b24sIDExIE5vdiAyMDE5IGF0IDE1OjEzLCBNYXJrdXMgUmVpY2hsIDxtLnJlaWNobEBmaXZldGVj
-aG5vLmRlPiB3cm90ZToKPj4KPj4gQWRkIFNEUjEwNCBjYXBhYmlsaXR5IGFuZCByZWd1bGF0b3Jz
-IHRvIFNEIGNhcmQgbm9kZS4KPj4gV2hpbGUgYXQgaXQsIGZpeCBhIHR5cG8gaW4gbGNkIHBpbmN0
-cmwgYW5kIHJlbW92ZSB0d28KPj4gdW5kb2N1bWVudGVkIGJpbmRpbmdzIGZyb20gcG1pYy4KPj4K
-Pj4gU2lnbmVkLW9mZi1ieTogTWFya3VzIFJlaWNobCA8bS5yZWljaGxAZml2ZXRlY2huby5kZT4K
-Pj4gLS0tCj4+ICAuLi4vYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJvYy1wYy5kdHNpICAgICAg
-fCAzMSArKysrKysrKysrKysrKystLS0tCj4+ICAxIGZpbGUgY2hhbmdlZCwgMjUgaW5zZXJ0aW9u
-cygrKSwgNiBkZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9k
-dHMvcm9ja2NoaXAvcmszMzk5LXJvYy1wYy5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2Nr
-Y2hpcC9yazMzOTktcm9jLXBjLmR0c2kKPj4gaW5kZXggMzNkZjk1ZTM4NGI0Li5lODZhNmRiNTQ0
-OTkgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJv
-Yy1wYy5kdHNpCj4+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJv
-Yy1wYy5kdHNpCj4+IEBAIC0xMzUsNiArMTM1LDIwIEBACj4+ICAgICAgICAgICAgICAgICB2aW4t
-c3VwcGx5ID0gPCZ2Y2NfMXY4PjsKPj4gICAgICAgICB9Owo+Pgo+PiArICAgICAgIHZjYzN2MF9z
-ZDogdmNjM3YwLXNkIHsKPj4gKyAgICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAicmVndWxhdG9y
-LWZpeGVkIjsKPj4gKyAgICAgICAgICAgICAgIGVuYWJsZS1hY3RpdmUtaGlnaDsKPj4gKyAgICAg
-ICAgICAgICAgIGdwaW8gPSA8JmdwaW80IFJLX1BENiBHUElPX0FDVElWRV9ISUdIPjsKPj4gKyAg
-ICAgICAgICAgICAgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+ICsgICAgICAgICAgICAg
-ICBwaW5jdHJsLTAgPSA8JnZjYzN2MF9zZF9lbj47Cj4+ICsgICAgICAgICAgICAgICByZWd1bGF0
-b3ItbmFtZSA9ICJ2Y2MzdjBfc2QiOwo+PiArICAgICAgICAgICAgICAgcmVndWxhdG9yLWFsd2F5
-cy1vbjsKPiAKPiBUaGlzIGxvb2tzIG9kZC4gQSBHUElPIHJlZ3VsYXRvciBiZWluZyBhbHdheXMg
-b24/CgpUaGlzIGlzIGEgc3RhbmRhcmQgbWljcm8gU0QgY2FyZCBzb2NrZXQgdGhhdCBjYW4gYWxz
-byBiZSB1c2VkIGZvcgpib290aW5nIHRoZSBib2FyZC4gSSB3YW50ZWQgdG8gYmUgY2F1dGlvdXMg
-YW5kIHN0YXJ0Cndvcmtpbmcgd2l0aCBpdCBhbmQgc2V2ZXJhbCBTRCBjYXJkcyBhbmQgZXhwbG9y
-ZSB0aGUgY2FwYWJpbGl0aWVzLgoKT24gdGhpcyBib2FyZCBuZWFybHkgYWxsIHJlZ3VsYXRvcnMg
-YXJlIHN0aWxsIGNvbnRpbm91c2x5CnN3aXRjaGVkIG9uLiBJIHBsYW4gdG8gcmVtb3ZlIHRoZSBh
-bHdheXMtb24gcHJvcGVydGllcyBzdGVwCmJ5IHN0ZXAgZnJvbSB0aGUgcmVndWxhdG9ycyB3aGVu
-IHRoZSBib2FyZCBydW5zIHN0YWJsZSB3aXRoIGl0J3MKY29tcG9uZW50cyBhbGwgZW5ibGVkLiAK
-Cj4gCj4+ICsgICAgICAgICAgICAgICByZWd1bGF0b3ItYm9vdC1vbjsKPj4gKyAgICAgICAgICAg
-ICAgIHJlZ3VsYXRvci1taW4tbWljcm92b2x0ID0gPDMwMDAwMDA+Owo+PiArICAgICAgICAgICAg
-ICAgcmVndWxhdG9yLW1heC1taWNyb3ZvbHQgPSA8MzAwMDAwMD47Cj4+ICsgICAgICAgICAgICAg
-ICB2aW4tc3VwcGx5ID0gPCZ2Y2MzdjNfc3lzPjsKPj4gKyAgICAgICB9Owo+IAo+IEFzc3VtZXMg
-dGhpcyBwb3dlcnMgYW4gU0RJTyBlbWJlZGRlZCBjYXJkLiBPZnRlbiB0aG9zZSBoYXZlIGEgc3Bl
-Y2lmaWMKPiBwb3dlciBzZXF1ZW5jZSwganVzdCB3YW50ZWQgdG8gbWFrZSBzdXJlIHRoZSBhYm92
-ZSBhcmUgcmVhbGx5Cj4gc3VmZmljaWVudD8gTm8gZGVsYXlzIG9yIGV4dGVybmFsIGNsb2NrIG5l
-ZWRlZD8KCkl0J3Mgbm90IGVtYmVkZGVkLCBqdXN0IGEgc3RhbmRhcmQgwrVTRCBwbHVnLiBJdCBp
-cyBhbHJlYWR5IGVuYWJsZWQKYnkgbWFpbmxpbmUgVS1Cb290IGFuZCBlamVjdGluZyBhbmQgaW5z
-ZXJ0aW5nIHRoZSBjYXJkIHdvcmtzIGZpbmUuCgotLQpHcnXDnywKTWFya3VzCj4gCj4gWy4uLl0K
-PiAKPiBLaW5kIHJlZ2FyZHMKPiBVZmZlCj4gCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
-cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Mon, Nov 11, 2019 at 11:29 AM Christoph Hellwig <hch@lst.de> wrote:
+>
+> On Mon, Nov 11, 2019 at 11:27:27AM +0100, Arnd Bergmann wrote:
+> > Ok, fair enough. Let's just go with your version for now, if only to not
+> > hold your series up more. I'd still suggest we change atyfb to only
+> > use ioremap_uc() on i386 and maybe ia64. I can send a patch for that.
+>
+> I don't think we even need it on ia64.  But lets kick off a dicussion
+> with the atyfb, x86 and ia64 maintainers after this series is in.
+> Which was kinda my plan anyway.
+
+I missed your reply and already sent my patch now. I guess it doesn't
+hurt to discuss that in parallel. Anyway I think that this patch is the
+last one you want an Ack from me for (let me know if I missed one), so
+
+Reviewed-by: Arnd Bergmann <arnd@arndb.de>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
