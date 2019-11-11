@@ -2,58 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A35B1F7698
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 15:39:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41892F7695
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 15:39:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JikfUuyb/Yae2llrH7bomhU2M40za1S2L0QoxwKzHLE=; b=Xu1FHN/5ZctGn7
-	Fexoij7fs6mp1NtpVc5ylPyJAUDrGUcVY9fuidKVDStK7pNaD3JdDtp29X8Z2AdNNa3sRO8qb9jHg
-	ZEJLRQ5VvfML4KuPL/HdHrdWOAa1De/FsezydBJjSeN31+ZdubYdH0+fN1N7lNiRjLwL7gMZ2nYEh
-	9pRrt3LPG+BsvvqS35c1iQ+kjhV9EVjFBcJQ+QDu8ZAOPo4zG4QTOkVwB+gQgxujuj3cFVjDxdY+h
-	gf9jTuueBpKD38goFtc9zyFtHU8o5ZskH0+Gy3UQ5w/hLTqpdRv4wQYv3SsBHYoxhXUq4rS4LlLWc
-	XHD4jlaxDCIQIjwe5o3A==;
+	List-Owner; bh=ZNiCNHiEHjzGhng/lRjtD8vWhs1gV/pkxMP3c4e5E2k=; b=qXTLITUFnfC9GP
+	VJrcPB7BR74HVGTJkVJFK80nb5htX6iFDhEfmdGAEvsDjO9/EAcjPSZfqNgkORfoFxzMj82UnJ8u+
+	Bd14aqJwaFVvP2tkb2QkH/ccQusZnSzYfvzWugVY0N16r9fu7IcZ6UlWqn9Li6w+5VZr5jWnG13bp
+	Sq3HmUSJJmnFVvBQM+Jf6MnNEZaZZXFQFalHBRWhp98AGMj+71Ou/SeFmUyu4vOPOmlzbjAzYH+Db
+	jq6gsOhRc68rqfaNWcXJKc4Ihlk5M0FDB98LdKczbrchNf9alD/hCtO/DGPBUUwrxNxq2s1y2s5rt
+	X1Hq8Nt3Oxw7LdlTlRtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUAqP-0008Pi-SB; Mon, 11 Nov 2019 14:39:05 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iUAqD-0008EU-4f; Mon, 11 Nov 2019 14:38:53 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUAq0-0008Ci-4x
+ id 1iUAq0-0008Db-Vd
  for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 14:38:42 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 3B3698D7F6835BD3B569;
- Mon, 11 Nov 2019 22:38:31 +0800 (CST)
-Received: from localhost (10.202.226.61) by DGGEMS410-HUB.china.huawei.com
- (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0; Mon, 11 Nov 2019
- 22:38:23 +0800
-Date: Mon, 11 Nov 2019 14:38:11 +0000
-From: Jonathan Cameron <jonathan.cameron@huawei.com>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v2 4/8] iommu/arm-smmu-v3: Prepare for SSID support
-Message-ID: <20191111143811.000006cc@huawei.com>
-In-Reply-To: <20191108152508.4039168-5-jean-philippe@linaro.org>
-References: <20191108152508.4039168-1-jean-philippe@linaro.org>
- <20191108152508.4039168-5-jean-philippe@linaro.org>
-Organization: Huawei
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
+Received: by mail-wr1-x443.google.com with SMTP id l7so3320811wrp.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 11 Nov 2019 06:38:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=KdKS5nQgloGgR5hKS/9aF3v1RXwuBZu05wTCxgCw21A=;
+ b=qDvfYWYnoKzB5oxYuBjtx6IjWb7zOjzkJJbCLW5gCzQ09UK4EsJlUUKrG2eQyMzvxs
+ TTAxr+nMMw9Fgfch8JWcfkgyJa082CWBBWNgjcbW2KHkNekZD6tARZ04iNwiJLEX5vAz
+ BoOVFbDk4e60WexgUJqHzDPqUHuqg5MEPIejpHPxpPeapEQfx944sVC81s1/muzwr6cp
+ OISAzJJ/Koo62J6gYNx2YGMH/RG3qZLfN/tomb+BeIwokFipy4iMaJbX7s56usvLLhoj
+ Y69/gXYfCWygWts94KIztyE5MZs+z50qX/dJbIVORFR9QjF+zCdaycuwRn6XHHN0OmW+
+ PFXQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=KdKS5nQgloGgR5hKS/9aF3v1RXwuBZu05wTCxgCw21A=;
+ b=YefX7ZHP9EuWmgsFBol2aeStJ8M6K6xG2VV2QwRHtaXmfDwAbn/1pXK+taSvVrfYOg
+ 1+ToaebVDxo0aSGvSBarYO2p/f6FfzBr3ZTXlE88/E2BM9Brd8+pjFWh1bKF5jgFMAuJ
+ 2du0v3oFnOfnxfCJZbCpOe637MEbdzFTd09B1vI4d3DKa5nSXkUNn7qiKzBRszOLWEzM
+ mgi0v9CfhzXlxa4hELNtQNf9wJi+JtQHOSx4owmNTfbfME+U7eeM/7uxrRYPwtlal2CV
+ ku07EteyvjANp4+YBYv/MMLEks/iHpaUFNZuJeJR0y8Tcfhcw2z8VoEuD3pQ/KCN9ofx
+ kxyg==
+X-Gm-Message-State: APjAAAVoa0nTfhr3Vv4QG+h/8rNzeKs7Rq0gb9gDE5cPkzzOIFZ5RFnB
+ m61IYR1kQb37NxAwKPNAJic=
+X-Google-Smtp-Source: APXvYqxWUQDGc4T8bsgFxDf9/WvrPBbK2l4Rdn+Tc8Zrm9TYJXoiuG7/CU42I9qEaAfWSq8bE2L6OQ==
+X-Received: by 2002:adf:fd91:: with SMTP id d17mr20770388wrr.214.1573483118704; 
+ Mon, 11 Nov 2019 06:38:38 -0800 (PST)
+Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
+ by smtp.gmail.com with ESMTPSA id x205sm24164485wmb.5.2019.11.11.06.38.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 11 Nov 2019 06:38:37 -0800 (PST)
+From: Thierry Reding <thierry.reding@gmail.com>
+To: soc@kernel.org,
+	arm@kernel.org
+Subject: [GIT PULL v2 3/8] memory: tegra: Changes for v5.5-rc1
+Date: Mon, 11 Nov 2019 15:38:36 +0100
+Message-Id: <20191111143836.4027200-1-thierry.reding@gmail.com>
+X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191102144521.3863321-3-thierry.reding@gmail.com>
+References: <20191102144521.3863321-3-thierry.reding@gmail.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.202.226.61]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_063840_529200_04B388D5 
-X-CRM114-Status: GOOD (  25.50  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191111_063841_014283_86C8F1E1 
+X-CRM114-Status: GOOD (  15.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thierry.reding[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,307 +99,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- eric.auger@redhat.com, robin.murphy@arm.com, joro@8bytes.org,
- sudeep.holla@arm.com, rjw@rjwysocki.net, linux-acpi@vger.kernel.org,
- iommu@lists.linux-foundation.org, robh+dt@kernel.org, guohanjun@huawei.com,
- zhangfei.gao@linaro.org, will@kernel.org, linux-arm-kernel@lists.infradead.org,
- lenb@kernel.org
+Cc: linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 8 Nov 2019 16:25:04 +0100
-Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
+Hi ARM SoC maintainers,
 
-> When a master supports substream ID, allocate a table with multiple
-> context descriptors for its stage-1 domain. For the moment S1CDMax is
-> still 0 in the STE, so the additional context descriptors are ignored.
-> 
-> Context descriptor tables are allocated once for the first master attached
-> to a domain. Therefore attaching multiple devices with different SSID
-> sizes is tricky, and we currently don't support it.
-> 
-> As a future improvement it would be nice to at least support attaching a
-> SSID-capable device to a domain that isn't using SSID, by reallocating the
-> SSID table. This would allow supporting a SSID-capable device that is in
-> the same IOMMU group as a bridge, for example. Varying SSID size is less
-> of a concern, since the PCIe specification "highly recommends" that
-> devices supporting PASID implement all 20 bits of it.
-> 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
 
-Hmm. There are several different refactors in here alongside a few new
-bits.  Would be nice to break it up more to make life even easier for
-reviewers.   It's not 'so' complex that it's really a problem though
-so could leave it as is if you really want to.
+  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
 
-One carry over inline on zeroing a coherent allocation...
+are available in the Git repository at:
 
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.5-memory-v2
 
+for you to fetch changes up to 141bef44e123c101c0da0443ab6b3cfa750f251a:
 
-> ---
->  drivers/iommu/arm-smmu-v3.c | 117 ++++++++++++++++++++++++++----------
->  1 file changed, 85 insertions(+), 32 deletions(-)
-> 
-> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> index 33488da8f742..122bed0168a3 100644
-> --- a/drivers/iommu/arm-smmu-v3.c
-> +++ b/drivers/iommu/arm-smmu-v3.c
-> @@ -553,16 +553,22 @@ struct arm_smmu_strtab_l1_desc {
->  	dma_addr_t			l2ptr_dma;
->  };
->  
-> +struct arm_smmu_ctx_desc {
-> +	u16				asid;
-> +	u64				ttbr;
-> +	u64				tcr;
-> +	u64				mair;
-> +};
-> +
-> +struct arm_smmu_cd_table {
-> +	__le64				*ptr;
-> +	dma_addr_t			ptr_dma;
-> +};
-> +
->  struct arm_smmu_s1_cfg {
-> -	__le64				*cdptr;
-> -	dma_addr_t			cdptr_dma;
-> -
-> -	struct arm_smmu_ctx_desc {
-> -		u16	asid;
-> -		u64	ttbr;
-> -		u64	tcr;
-> -		u64	mair;
-> -	}				cd;
-> +	u8				s1cdmax;
-> +	struct arm_smmu_cd_table	table;
-> +	struct arm_smmu_ctx_desc	cd;
+  memory: tegra: Consolidate registers definition into common header (2019-11-11 14:55:27 +0100)
 
-It might have been a tiny bit nicer to have a precursor patch
-that did the change to a pair of structs. Then only functional
-changes would be in here.
+This is an updated pull request which now no longer pulls in the core
+common clock framework change because it's not required by any of the
+code in this pull request.
 
->  };
->  
->  struct arm_smmu_s2_cfg {
-> @@ -1450,6 +1456,31 @@ static int arm_smmu_cmdq_issue_sync(struct arm_smmu_device *smmu)
->  }
->  
->  /* Context descriptor manipulation functions */
-> +static int arm_smmu_alloc_cd_leaf_table(struct arm_smmu_device *smmu,
-> +					struct arm_smmu_cd_table *table,
-> +					size_t num_entries)
-> +{
-> +	size_t size = num_entries * (CTXDESC_CD_DWORDS << 3);
-> +
-> +	table->ptr = dmam_alloc_coherent(smmu->dev, size, &table->ptr_dma,
-> +					 GFP_KERNEL | __GFP_ZERO);
+Thanks,
+Thierry
 
-We dropped dma_zalloc_coherent because we now zero in dma_alloc_coherent
-anyway.  Hence I'm fairly sure that __GFP_ZERO should have no effect.
+----------------------------------------------------------------
+memory: tegra: Changes for v5.5-rc1
 
-https://lore.kernel.org/patchwork/patch/1031536/
+This contains a couple of fixes and adds support for EMC frequency
+scaling on Tegra30.
 
-Am I missing some special corner case here?
+----------------------------------------------------------------
+Dmitry Osipenko (11):
+      clk: tegra: Add Tegra20/30 EMC clock implementation
+      memory: tegra: Don't set EMC rate to maximum on probe for Tegra20
+      memory: tegra: Adapt for Tegra20 clock driver changes
+      memory: tegra: Include io.h instead of iopoll.h
+      memory: tegra: Pre-configure debug register on Tegra20
+      memory: tegra: Print a brief info message about EMC timings
+      memory: tegra: Increase handshake timeout on Tegra20
+      memory: tegra: Do not handle error from wait_for_completion_timeout()
+      memory: tegra: Introduce Tegra30 EMC driver
+      memory: tegra: Ensure timing control debug features are disabled
+      memory: tegra: Consolidate registers definition into common header
 
-> +	if (!table->ptr) {
-> +		dev_warn(smmu->dev,
-> +			 "failed to allocate context descriptor table\n");
-> +		return -ENOMEM;
-> +	}
-> +	return 0;
-> +}
-> +
-> +static void arm_smmu_free_cd_leaf_table(struct arm_smmu_device *smmu,
-> +					struct arm_smmu_cd_table *table,
-> +					size_t num_entries)
-> +{
-> +	size_t size = num_entries * (CTXDESC_CD_DWORDS << 3);
-> +
-> +	dmam_free_coherent(smmu->dev, size, table->ptr, table->ptr_dma);
-> +}
-> +
->  static u64 arm_smmu_cpu_tcr_to_cd(u64 tcr)
->  {
->  	u64 val = 0;
-> @@ -1471,6 +1502,7 @@ static void arm_smmu_write_ctx_desc(struct arm_smmu_device *smmu,
->  				    struct arm_smmu_s1_cfg *cfg)
->  {
->  	u64 val;
-> +	__le64 *cdptr = cfg->table.ptr;
-The changes in here would all be in purely mechanical refactor of the structure
-patch.
->  
->  	/*
->  	 * We don't need to issue any invalidation here, as we'll invalidate
-> @@ -1488,12 +1520,29 @@ static void arm_smmu_write_ctx_desc(struct arm_smmu_device *smmu,
->  	if (smmu->features & ARM_SMMU_FEAT_STALL_FORCE)
->  		val |= CTXDESC_CD_0_S;
->  
-> -	cfg->cdptr[0] = cpu_to_le64(val);
-> +	cdptr[0] = cpu_to_le64(val);
->  
->  	val = cfg->cd.ttbr & CTXDESC_CD_1_TTB0_MASK;
-> -	cfg->cdptr[1] = cpu_to_le64(val);
-> +	cdptr[1] = cpu_to_le64(val);
->  
-> -	cfg->cdptr[3] = cpu_to_le64(cfg->cd.mair);
-> +	cdptr[3] = cpu_to_le64(cfg->cd.mair);
-> +}
-> +
-> +static int arm_smmu_alloc_cd_tables(struct arm_smmu_domain *smmu_domain)
-> +{
-> +	struct arm_smmu_device *smmu = smmu_domain->smmu;
-> +	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
-> +
-> +	return arm_smmu_alloc_cd_leaf_table(smmu, &cfg->table,
-> +					    1 << cfg->s1cdmax);
-> +}
-> +
-> +static void arm_smmu_free_cd_tables(struct arm_smmu_domain *smmu_domain)
-> +{
-> +	struct arm_smmu_device *smmu = smmu_domain->smmu;
-> +	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
-> +
-> +	arm_smmu_free_cd_leaf_table(smmu, &cfg->table, 1 << cfg->s1cdmax);
->  }
->  
->  /* Stream table manipulation functions */
-> @@ -1624,7 +1673,7 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
->  		   !(smmu->features & ARM_SMMU_FEAT_STALL_FORCE))
->  			dst[1] |= cpu_to_le64(STRTAB_STE_1_S1STALLD);
->  
-> -		val |= (s1_cfg->cdptr_dma & STRTAB_STE_0_S1CTXPTR_MASK) |
-> +		val |= (s1_cfg->table.ptr_dma & STRTAB_STE_0_S1CTXPTR_MASK) |
->  			FIELD_PREP(STRTAB_STE_0_CFG, STRTAB_STE_0_CFG_S1_TRANS);
->  	}
->  
-> @@ -2138,12 +2187,8 @@ static void arm_smmu_domain_free(struct iommu_domain *domain)
->  	if (smmu_domain->stage == ARM_SMMU_DOMAIN_S1) {
->  		struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
->  
-> -		if (cfg->cdptr) {
-> -			dmam_free_coherent(smmu_domain->smmu->dev,
-> -					   CTXDESC_CD_DWORDS << 3,
-> -					   cfg->cdptr,
-> -					   cfg->cdptr_dma);
-> -
-> +		if (cfg->table.ptr) {
-> +			arm_smmu_free_cd_tables(smmu_domain);
->  			arm_smmu_bitmap_free(smmu->asid_map, cfg->cd.asid);
->  		}
->  	} else {
-> @@ -2156,6 +2201,7 @@ static void arm_smmu_domain_free(struct iommu_domain *domain)
->  }
->  
->  static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
-> +				       struct arm_smmu_master *master,
->  				       struct io_pgtable_cfg *pgtbl_cfg)
->  {
->  	int ret;
-> @@ -2167,19 +2213,19 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
->  	if (asid < 0)
->  		return asid;
->  
-> -	cfg->cdptr = dmam_alloc_coherent(smmu->dev, CTXDESC_CD_DWORDS << 3,
-> -					 &cfg->cdptr_dma,
-> -					 GFP_KERNEL | __GFP_ZERO);
-> -	if (!cfg->cdptr) {
-> -		dev_warn(smmu->dev, "failed to allocate context descriptor\n");
-> -		ret = -ENOMEM;
-> +	cfg->s1cdmax = master->ssid_bits;
-> +
-> +	ret = arm_smmu_alloc_cd_tables(smmu_domain);
-> +	if (ret)
->  		goto out_free_asid;
-> -	}
->  
->  	cfg->cd.asid	= (u16)asid;
->  	cfg->cd.ttbr	= pgtbl_cfg->arm_lpae_s1_cfg.ttbr[0];
->  	cfg->cd.tcr	= pgtbl_cfg->arm_lpae_s1_cfg.tcr;
->  	cfg->cd.mair	= pgtbl_cfg->arm_lpae_s1_cfg.mair[0];
-> +
-> +	arm_smmu_write_ctx_desc(smmu, cfg);
-> +
->  	return 0;
->  
->  out_free_asid:
-> @@ -2188,6 +2234,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
->  }
->  
->  static int arm_smmu_domain_finalise_s2(struct arm_smmu_domain *smmu_domain,
-> +				       struct arm_smmu_master *master,
->  				       struct io_pgtable_cfg *pgtbl_cfg)
->  {
->  	int vmid;
-> @@ -2204,7 +2251,8 @@ static int arm_smmu_domain_finalise_s2(struct arm_smmu_domain *smmu_domain,
->  	return 0;
->  }
->  
-> -static int arm_smmu_domain_finalise(struct iommu_domain *domain)
-> +static int arm_smmu_domain_finalise(struct iommu_domain *domain,
-> +				    struct arm_smmu_master *master)
->  {
->  	int ret;
->  	unsigned long ias, oas;
-> @@ -2212,6 +2260,7 @@ static int arm_smmu_domain_finalise(struct iommu_domain *domain)
->  	struct io_pgtable_cfg pgtbl_cfg;
->  	struct io_pgtable_ops *pgtbl_ops;
->  	int (*finalise_stage_fn)(struct arm_smmu_domain *,
-> +				 struct arm_smmu_master *,
->  				 struct io_pgtable_cfg *);
->  	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
->  	struct arm_smmu_device *smmu = smmu_domain->smmu;
-> @@ -2266,7 +2315,7 @@ static int arm_smmu_domain_finalise(struct iommu_domain *domain)
->  	domain->geometry.aperture_end = (1UL << pgtbl_cfg.ias) - 1;
->  	domain->geometry.force_aperture = true;
->  
-> -	ret = finalise_stage_fn(smmu_domain, &pgtbl_cfg);
-> +	ret = finalise_stage_fn(smmu_domain, master, &pgtbl_cfg);
->  	if (ret < 0) {
->  		free_io_pgtable_ops(pgtbl_ops);
->  		return ret;
-> @@ -2419,7 +2468,7 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
->  
->  	if (!smmu_domain->smmu) {
->  		smmu_domain->smmu = smmu;
-> -		ret = arm_smmu_domain_finalise(domain);
-> +		ret = arm_smmu_domain_finalise(domain, master);
->  		if (ret) {
->  			smmu_domain->smmu = NULL;
->  			goto out_unlock;
-> @@ -2431,6 +2480,13 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
->  			dev_name(smmu->dev));
->  		ret = -ENXIO;
->  		goto out_unlock;
-> +	} else if (smmu_domain->stage == ARM_SMMU_DOMAIN_S1 &&
-> +		   master->ssid_bits != smmu_domain->s1_cfg.s1cdmax) {
-> +		dev_err(dev,
-> +			"cannot attach to incompatible domain (%u SSID bits != %u)\n",
-> +			smmu_domain->s1_cfg.s1cdmax, master->ssid_bits);
-> +		ret = -EINVAL;
-> +		goto out_unlock;
->  	}
->  
->  	master->domain = smmu_domain;
-> @@ -2438,9 +2494,6 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
->  	if (smmu_domain->stage != ARM_SMMU_DOMAIN_BYPASS)
->  		master->ats_enabled = arm_smmu_ats_supported(master);
->  
-> -	if (smmu_domain->stage == ARM_SMMU_DOMAIN_S1)
-> -		arm_smmu_write_ctx_desc(smmu, &smmu_domain->s1_cfg);
-> -
+Thierry Reding (3):
+      Merge branch 'for-5.5/clk' into for-5.5/memory
+      memory: tegra: Set DMA mask based on supported address bits
+      memory: tegra: Add gr2d and gr3d to DRM IOMMU group
 
-Whilst it seems fine, perhaps a note on the 'why' of moving this into
-finalise_s1 would be good in the patch description.
-
->  	arm_smmu_install_ste_for_dev(master);
->  
->  	spin_lock_irqsave(&smmu_domain->devices_lock, flags);
-
-
+ drivers/clk/tegra/Makefile          |    2 +
+ drivers/clk/tegra/clk-tegra20-emc.c |  293 +++++++++
+ drivers/clk/tegra/clk-tegra20.c     |   55 +-
+ drivers/clk/tegra/clk-tegra30.c     |   38 +-
+ drivers/clk/tegra/clk.h             |    3 +
+ drivers/memory/tegra/Kconfig        |   10 +
+ drivers/memory/tegra/Makefile       |    1 +
+ drivers/memory/tegra/mc.c           |   52 +-
+ drivers/memory/tegra/mc.h           |   74 ++-
+ drivers/memory/tegra/tegra114.c     |   10 +-
+ drivers/memory/tegra/tegra124.c     |   30 +-
+ drivers/memory/tegra/tegra20-emc.c  |  134 ++--
+ drivers/memory/tegra/tegra30-emc.c  | 1232 +++++++++++++++++++++++++++++++++++
+ drivers/memory/tegra/tegra30.c      |   34 +-
+ include/linux/clk/tegra.h           |   11 +
+ include/soc/tegra/mc.h              |    2 +-
+ 16 files changed, 1779 insertions(+), 202 deletions(-)
+ create mode 100644 drivers/clk/tegra/clk-tegra20-emc.c
+ create mode 100644 drivers/memory/tegra/tegra30-emc.c
 
 _______________________________________________
 linux-arm-kernel mailing list
