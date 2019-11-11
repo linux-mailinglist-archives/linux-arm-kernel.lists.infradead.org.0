@@ -2,63 +2,151 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D44DF6D4D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 04:30:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A509F6D56
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 Nov 2019 04:33:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yBERtpFqhEt5nkU7fWgSjjpa9Zt0EGyOQnEni1rCUZc=; b=LCwJuCqzn7xOqj2mrJwauFHgv
-	Qp3ZerGLZMXjD7agwdZ2GG0W+M47MenQ3uWEcS5QYiV4cDJcVk2j/qeBg43vfvLST+d/bhjcOTBh4
-	/qVyoOqijgpT+yQ7zVU5SMTDVdYNX9iX8osqOUVBCzuNGTO/7u99cyWA8akTGbvaAQ7eDC9ZsAyBn
-	lbtg69QKlnkXb3QkxfLmiMSmRbasjJ24a5TqW+FkhHlRx8jVJfk6LB7zDcboIdWTQUvALIAggsJa5
-	WPFNEybqpTTTEV1JotF6RQlWSrR9ItxU6gl9BL/gMbCUodvO9yTzSY9qyHh/sKppsjSPYCh5sGF0A
-	NC7km6NFQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Dk6ihizE5tbD+fwcJFdFrNJ13sBpGWEx0HBRS6pti8c=; b=KF14mggWd+xuNj
+	OztAH+fBdqh+AzpvM1byq5RQU96sQjXu8BGWeg+iBBfIWQ8EeLI9SeY91ZZB7wqmqARFhNnNtxofd
+	YU25T+bGS6S+JP6SjzAiH1Mi2/t8JxeK07G9/WG6RZHvSLDySrUAYqeobDK1Smp73SwJKHIJe5FMI
+	JLOho8H4y7iAop6ukBYwASP04ru6mAXQSlrLhORJHdx0NLwQi5ebrwms2+ttyYMZdqiqAcpfLEuWS
+	+jLxSMl0wxLM6yHKuBcckA1LETyPPaNfRFCTrHMDMwhba7dZbcoXEZ19hOwrPWhUjR5vB2fQDSSSO
+	bgOUU0MeflT9wdKXj6rA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU0PC-00060O-JH; Mon, 11 Nov 2019 03:30:18 +0000
-Received: from www1102.sakura.ne.jp ([219.94.129.142])
+	id 1iU0S7-0006Lj-SR; Mon, 11 Nov 2019 03:33:19 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU0P2-0005O0-Eu; Mon, 11 Nov 2019 03:30:10 +0000
-Received: from fsav108.sakura.ne.jp (fsav108.sakura.ne.jp [27.133.134.235])
- by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id xAB3U1uw022710;
- Mon, 11 Nov 2019 12:30:01 +0900 (JST)
- (envelope-from katsuhiro@katsuster.net)
-Received: from www1102.sakura.ne.jp (219.94.129.142)
- by fsav108.sakura.ne.jp (F-Secure/fsigk_smtp/550/fsav108.sakura.ne.jp);
- Mon, 11 Nov 2019 12:30:01 +0900 (JST)
-X-Virus-Status: clean(F-Secure/fsigk_smtp/550/fsav108.sakura.ne.jp)
-Received: from [192.168.1.2] (121.252.232.153.ap.dti.ne.jp [153.232.252.121])
- (authenticated bits=0)
- by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id xAB3U0F8022658
- (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=NO);
- Mon, 11 Nov 2019 12:30:01 +0900 (JST)
- (envelope-from katsuhiro@katsuster.net)
-Subject: Re: [PATCH] arm64: dts: rockchip: add analog audio nodes on
- rk3399-rockpro64
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-References: <20190907174833.19957-1-katsuhiro@katsuster.net>
- <CA+E=qVdvKxzFcU-09Ucn1Fr0FdkwSsPcLr8vPn2wsu6-DD1gqg@mail.gmail.com>
-From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
-Message-ID: <abc648cc-0b5d-b407-b74b-639833ba196b@katsuster.net>
-Date: Mon, 11 Nov 2019 12:30:00 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1iU0Rz-0006LF-Mj
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 Nov 2019 03:33:13 +0000
+Received: by mail-pg1-x543.google.com with SMTP id r18so8504930pgu.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 10 Nov 2019 19:33:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=lmohQQHG5b0VjIucRK0zCtfPLIKpOYx6SuBhvWpwt8Q=;
+ b=p3rNSDyqMqdGlYs9xJiPagjFGtw7vtBNPnE4Lyz8J27175AB+bqxuwfRgz7GgULFJh
+ zw3rN3F/oxgWjxWB0KhsJlre/kFaW77ozAznP7IlKMf5Unuw2BpAY8RAq424jKrRYZ+W
+ Funi1QWFYPhGhSTUHrEzbC9Q4Yc9ncXm1o3KintkNKwyG0VNlCtwj4j/CVlyNXZxJa9L
+ hlp6BcWD1E2a5cCbbQZKhcNpPRZYrgDC2dT/cbLajy3lp7uqeG5kMI+yYpSkDZ4XUfGp
+ pmx6WonJInPkeXch8q/MdYwL1tjo+dsQgJPRz5xhDkkup7nv6xfqQGNJugC6wNDcA14r
+ BowQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=lmohQQHG5b0VjIucRK0zCtfPLIKpOYx6SuBhvWpwt8Q=;
+ b=aBTEeMZlvXFuEvOaUgxlPU9vaCJf5+7Qef3fnyE9dl4i+ABL1Iy3X3Xytfx38lqqYH
+ 3eNz2hiRDBZvEVxmr7UCNFhNqIKJtBEz2A/qr9NBFTsQBBc8VgKlp9MH+Qnm5Rdz63T2
+ BZvUiJqRUgnVQ5sRPpLuD54hH525QSWIyt9CyuNjbZVNxVetIZpJiGQf+7Map7wHGuz+
+ 99WPhgGoJ3sBIQjIAKBEGtyJdX1gAooOfCVg45baMCPZiMVS2XnrxV9TEnW5RjCAmBj6
+ sze7yKIQT2NqGUr6tQDlN6dlhp1M5eICyaaCXzryr1N+Laf3XasiuS7IH6CJ5zCsRM55
+ wQgA==
+X-Gm-Message-State: APjAAAXyUqbbnyspCFR5kWZMC1avJMoA+eazU/Xq8dtczZF47/7pJFak
+ 6lEl42wzDRqrJxm1yX0Nf6o=
+X-Google-Smtp-Source: APXvYqzmN2XJKCzBt56cbcoWH9WIh9m+vFl4SnsvLJ7WxgLimmrQgErmUutXPEb53176NtT2vfB55g==
+X-Received: by 2002:a17:90a:ba18:: with SMTP id
+ s24mr30187129pjr.69.1573443191052; 
+ Sun, 10 Nov 2019 19:33:11 -0800 (PST)
+Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id
+ j14sm12174195pfi.168.2019.11.10.19.33.09
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 10 Nov 2019 19:33:10 -0800 (PST)
+Subject: Re: [PATCH] ARM: spectre-v2: remove Brahma-B53 from hardening
+To: Florian Fainelli <f.fainelli@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20191031220053.2720-1-f.fainelli@gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; keydata=
+ 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
+ a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
+Message-ID: <64597efe-c5f5-4dc2-05c6-bf10f04ec148@gmail.com>
+Date: Sun, 10 Nov 2019 19:33:09 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <CA+E=qVdvKxzFcU-09Ucn1Fr0FdkwSsPcLr8vPn2wsu6-DD1gqg@mail.gmail.com>
+In-Reply-To: <20191031220053.2720-1-f.fainelli@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_193008_825150_C2D53007 
-X-CRM114-Status: GOOD (  19.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191110_193311_743180_A5DAAE22 
+X-CRM114-Status: GOOD (  13.77  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,153 +158,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Heiko Stuebner <heiko@sntech.de>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>
+Cc: Doug Berger <opendmb@gmail.com>, catalin.marinas@arm.com,
+ Russell King <linux@armlinux.org.uk>, open list <linux-kernel@vger.kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, will@kernel.org,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Vasily,
 
-Thank you for reporting.
 
-On 2019/11/11 9:17, Vasily Khoruzhick wrote:
-> On Sat, Sep 7, 2019 at 10:48 AM Katsuhiro Suzuki
-> <katsuhiro@katsuster.net> wrote:
->>
->> This patch adds audio codec (Everest ES8316) and I2S audio nodes for
->> RK3399 RockPro64.
+On 10/31/2019 3:00 PM, Florian Fainelli wrote:
+> From: Doug Berger <opendmb@gmail.com>
 > 
-> Hi Katsuhiro,
+> When the default processor handling was added to the function
+> cpu_v7_spectre_init() it only excluded other ARM implemented processor
+> cores. The Broadcom Brahma B53 core is not implemented by ARM so it
+> ended up falling through into the set of processors that attempt to use
+> the ARM_SMCCC_ARCH_WORKAROUND_1 service to harden the branch predictor.
 > 
-> I tested your patch with my rockpro64 on 5.4-rc6 which has your other
-> patches to es8316 driver, but apparently it doesn't work.
+> Since this workaround is not necessary for the Brahma-B53 this commit
+> explicitly checks for it and prevents it from applying a branch
+> predictor hardening workaround.
 > 
-> 'alsamixer' complains 'cannot load mixer controls: No such device or
-> address' and if I try to play audio with mpg123 it pretends that it
-> plays something but there's no sound.
-> 
-> Any idea what can be wrong?
-> 
+> Fixes: 10115105cb3a ("ARM: spectre-v2: add firmware based hardening")
+> Signed-off-by: Doug Berger <opendmb@gmail.com>
+> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 
-Do you use defconfig? If so I guess we need turn on more configs:
+Submitted:
 
-- simple-graph-card driver (CONFIG_SND_AUDIO_GRAPH_CARD)
-- ES8316 (SND_SOC_ES8316)
-
-
-FYI) ASoC related status or logs in my environment as follows:
-
-root@rockpro64:~# uname -a
-Linux rockpro64 5.4.0-rc6-next-20191108 #169 SMP PREEMPT Mon Nov 11 12:21:44 JST 2019 aarch64 GNU/Linux
-
-root@rockpro64:~# dmesg | grep -i asoc
-[   21.509903] asoc-simple-card hdmi-sound: i2s-hifi <-> ff8a0000.i2s mapping ok
-[   21.510550] asoc-simple-card hdmi-sound: ASoC: no DMI vendor name!
-[   21.567906] asoc-audio-graph-card sound: ES8316 HiFi <-> ff890000.i2s mapping ok
-[   21.568565] asoc-audio-graph-card sound: ASoC: no DMI vendor name!
-
-root@rockpro64:~# cat /proc/asound/pcm
-00-00: ff8a0000.i2s-i2s-hifi i2s-hifi-0 : ff8a0000.i2s-i2s-hifi i2s-hifi-0 : playback 1
-01-00: ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : playback 1 : capture 1
-
-root@rockpro64:~# cat /sys/kernel/debug/asoc/components
-hdmi-audio-codec.3.auto
-ff8a0000.i2s
-ff8a0000.i2s
-ff890000.i2s
-ff890000.i2s
-ff880000.i2s
-ff880000.i2s
-es8316.1-0011
-snd-soc-dummy
-snd-soc-dummy
-
-root@rockpro64:~# cat /sys/kernel/debug/asoc/dais
-i2s-hifi
-ff8a0000.i2s
-ff890000.i2s
-ff880000.i2s
-ES8316 HiFi
-snd-soc-dummy-dai
-
-Best Regards,
-Katsuhiro Suzuki
-
-
-> Regards,
-> Vasily
-> 
->> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
->> ---
->>   .../boot/dts/rockchip/rk3399-rockpro64.dts    | 28 +++++++++++++++++++
->>   1 file changed, 28 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
->> index 0401d4ec1f45..8b1e6382b140 100644
->> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
->> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
->> @@ -81,6 +81,12 @@
->>                  reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
->>          };
->>
->> +       sound {
->> +               compatible = "audio-graph-card";
->> +               label = "rockchip,rk3399";
->> +               dais = <&i2s1_p0>;
->> +       };
->> +
->>          vcc12v_dcin: vcc12v-dcin {
->>                  compatible = "regulator-fixed";
->>                  regulator-name = "vcc12v_dcin";
->> @@ -470,6 +476,20 @@
->>          i2c-scl-rising-time-ns = <300>;
->>          i2c-scl-falling-time-ns = <15>;
->>          status = "okay";
->> +
->> +       es8316: codec@11 {
->> +               compatible = "everest,es8316";
->> +               reg = <0x11>;
->> +               clocks = <&cru SCLK_I2S_8CH_OUT>;
->> +               clock-names = "mclk";
->> +               #sound-dai-cells = <0>;
->> +
->> +               port {
->> +                       es8316_p0_0: endpoint {
->> +                               remote-endpoint = <&i2s1_p0_0>;
->> +                       };
->> +               };
->> +       };
->>   };
->>
->>   &i2c3 {
->> @@ -505,6 +525,14 @@
->>          rockchip,playback-channels = <2>;
->>          rockchip,capture-channels = <2>;
->>          status = "okay";
->> +
->> +       i2s1_p0: port {
->> +               i2s1_p0_0: endpoint {
->> +                       dai-format = "i2s";
->> +                       mclk-fs = <256>;
->> +                       remote-endpoint = <&es8316_p0_0>;
->> +               };
->> +       };
->>   };
->>
->>   &i2s2 {
->> --
->> 2.23.0.rc1
->>
->>
->> _______________________________________________
->> linux-arm-kernel mailing list
->> linux-arm-kernel@lists.infradead.org
->> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
-
+https://www.armlinux.org.uk/developer/patches/viewpatch.php?id=8937/1
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
