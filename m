@@ -2,63 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45339F929E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:32:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FA07F92A0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:32:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CVQjizBlRU6zpIM62YuQ+i+Wp+P0WExaJ4MMBy3acpo=; b=U9JUsEzIS9xlXw
-	p1Rcoh+D0E3HsRx8clsfYBbXajou/s36BvWsvFWumeA5JZ8JChA/HEBIVALxlM2y/yCDC3BG3CRIj
-	0kOREJ1tbWCeUpA9F00ZkG9a/fpCkMFKKmdt3MHEKfqa5YfKhhNF3CiSIxFCDGp1/DUx9wVc4+vml
-	WbEEoStWVpnBs6dwDYzzFKKXd1VdxLaU2ZyujIo2qYJoBpzENVuDVmnqa59N15iW9Tm7l1dVgV7bb
-	bJ3Ql3G3yQtpTjGHYZFpkrUVU29KwdVv9KtkJ26i3WPF7SLh/RMZrlUyam8IwAFVil2S64rFGSkF1
-	bXBrBarhwvmRqM0MOMdw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y+7jOvzG05t0AOcX9IlSToMy1EwASyWJX0hb7uhNzR4=; b=NAnII3k6cWavmm
+	xFBU7nndd0e1GPS6EVuHAwRDe9y1NmdGWs/Kga9p0aGCYX3jNgiGAarwxYRFh9Db9W7MPqHe7MEcH
+	Gp1QbRhNCCd69iQ9Mr7DWW5rKisKYY6PMima0rOmuKe2NuAZt9czrNWVgTSnV4uHva3aUxaNRJbZ8
+	K4n7sIgci6cw9r+U1vqvOFTuEdobBWmChGb7oEYmPEEFnp2cKNOWDU+I+XrigNrxBetxVlvGCBZwf
+	kNgUm8wRbCDcboGhwxknThov/wffDXPweq+u+zQwKUz7COiI26m1xf7LztnjbXdSBHHPntiefSKvs
+	iGMkDO7/3ouRCb6/MXCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUXDI-0007FF-06; Tue, 12 Nov 2019 14:32:12 +0000
+	id 1iUXDf-0007Ts-AS; Tue, 12 Nov 2019 14:32:35 +0000
 Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUXD3-0007Di-SJ
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:31:59 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xACEVn6X014751;
- Tue, 12 Nov 2019 08:31:49 -0600
+ id 1iUXD5-0007F0-WB
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:32:01 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xACEVqO5014766;
+ Tue, 12 Nov 2019 08:31:52 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573569109;
- bh=eqDXkdRx3Q6H+gxxdh7mbTefYiQt+16uNQd/29L6a4I=;
- h=From:To:CC:Subject:Date;
- b=sJuIshYzqq2XN/e/aiIRPZF7ZyxYeryYwBVtp9dJtLL4qGOELhSmzajvQ9QASzgl6
- DFy8i6P1AdviQFf7/W8Vz5gXg8zyVheDN3hPnxYbVZMzz9o0RpaO4pffWpO4SoNY2j
- 8vGFJKwHLsmnWHaz9144VGrub2Gy6U7xQNag48Wg=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xACEVnMf127633
+ s=ti-com-17Q1; t=1573569112;
+ bh=SrEGW4i7yjeGxteEupp6hdS4iZlr2G083XuAg3UxTfQ=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=nuhL/PCiQq3uOJaLoB2frJBxIA0/jtcoKl+wknqk142e4Pj8tj2JnRnAkm73j+z0d
+ NoIdnJmgS/pXiBTCC+w8O84uUflFQjjWpEd4/UNpTTvggGnsura3RYBdtSOtsGxdbd
+ J4YDdcpd9/niKABf2HL9Jx6Uh5MhH/ma52Frh7iA=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xACEVqvj031423
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 12 Nov 2019 08:31:49 -0600
-Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 12 Nov 2019 08:31:52 -0600
+Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 12
- Nov 2019 08:31:31 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ Nov 2019 08:31:34 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE111.ent.ti.com
+ (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 12 Nov 2019 08:31:31 -0600
+ Frontend Transport; Tue, 12 Nov 2019 08:31:34 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xACEVjUJ050451;
- Tue, 12 Nov 2019 08:31:46 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xACEVjUK050451;
+ Tue, 12 Nov 2019 08:31:49 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <t-kristo@ti.com>, <nm@ti.com>
-Subject: [PATCH 0/9] arm64: dts: ti: UDMAP and McASP support
-Date: Tue, 12 Nov 2019 16:32:52 +0200
-Message-ID: <20191112143301.3168-1-peter.ujfalusi@ti.com>
+Subject: [PATCH 1/9] arm64: dts: ti: k3-am65-main: Correct main NAVSS
+ representation
+Date: Tue, 12 Nov 2019 16:32:53 +0200
+Message-ID: <20191112143301.3168-2-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191112143301.3168-1-peter.ujfalusi@ti.com>
+References: <20191112143301.3168-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_063157_995041_0204607C 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20191112_063200_070823_92CB8A5E 
+X-CRM114-Status: GOOD (  12.15  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -94,45 +97,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+NAVSS is a subsystem containing different IPs, it is not really a bus.
+Change the compatible from "simple-bus" to "simple-mfd" to reflect that.
 
-This series will enable DMA and adds the McASP nodes for am654 and j721e.
-
-The DT bindings for DMA is not expected to change much anymore:
-v5 of the UDMAP bindings patch is:
-https://lore.kernel.org/lkml/20191111135330.8235-9-peter.ujfalusi@ti.com/
-
-While adding the DMA support I have noticed few issues which is also fixed by
-this series.
-
-I have included the McASP nodes as well to have examples for other peripherals
-on how he binding should be used.
-
-I have been using this set on top of linux-next (the series is generated on top
-of next-20191112) with audio on am654-evm and j721e evm + ivi card.
-
-Regards,
-Peter
+Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
-Peter Ujfalusi (9):
-  arm64: dts: ti: k3-am65-main: Correct main NAVSS representation
-  arm64: dts: ti: k3-am65-main: Move secure proxy under cbass_main_navss
-  arm64: dts: ti: k3-am65: DMA support
-  arm64: dts: ti: k3-am654-main: Add McASP nodes
-  arm64: dts: ti: k3-j721e: Correct the address for MAIN NAVSS
-  arm64: dts: ti: k3-j721e-main: Correct main NAVSS representation
-  arm64: dts: ti: k3-j721e-main: Move secure proxy and smmu under
-    main_navss
-  arm64: dts: ti: k3-j721e: DMA support
-  arm64: dts: ti: k3-j721e-main: Add McASP nodes
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
- arch/arm64/boot/dts/ti/k3-am65-main.dtsi      | 122 ++++++-
- arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi       |  46 +++
- arch/arm64/boot/dts/ti/k3-j721e-main.dtsi     | 312 ++++++++++++++++--
- .../boot/dts/ti/k3-j721e-mcu-wakeup.dtsi      |  45 +++
- arch/arm64/boot/dts/ti/k3-j721e.dtsi          |   2 +-
- 5 files changed, 491 insertions(+), 36 deletions(-)
-
+diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+index efb24579922c..e40f7acbec42 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+@@ -385,8 +385,8 @@ intr_main_gpio: interrupt-controller0 {
+ 		ti,sci-rm-range-girq = <0x1>;
+ 	};
+ 
+-	cbass_main_navss: interconnect0 {
+-		compatible = "simple-bus";
++	cbass_main_navss: navss@30800000 {
++		compatible = "simple-mfd";
+ 		#address-cells = <2>;
+ 		#size-cells = <2>;
+ 		ranges;
 -- 
 Peter
 
