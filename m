@@ -2,82 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF7A0F97C1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 18:55:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D655F9803
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 19:00:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gahUNK5hyB0AObCd7fES7jmWMzbOACeVzOtmyhsNzOI=; b=NfKsltJf2nrIGS
-	M46eMpoS0y2/F2VWkO6oUf5l7K8bsB/A7VGcrzGwzw3Lmbt3ZE1ttna0782ujz5GSbCSAs9jhd1nU
-	K1flLDnn/fF97zrPRlKcvr1ctBZqMB9ZoW/u4MFVBbzCycVveo//YnoDd7ZlH66FIIau7vdqbdniV
-	W2I2m9PPmRrUDe5+yqNBEQ0m0moS95AvYMx+UPMP39KFABezdrp8X2pOpG4s8eAYk2bomMLcG9tru
-	DykZuAJmsr+q4P+JBrmA+RWtRAbL7OG3Bp5GbaPb7Y5vup3O08k0N25/y4JcrWqte4V1+/qrn/Jlm
-	KkVqLtca+JL9WtTWXTVw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LZIClBCfEjL3kE5KyIfVYVikcj/j3IwquNlYLwvVjKI=; b=bfm1owalYOU7gn
+	1ujBYT0H4bPpFJO/zZTNCc/Gpyonx9MovK+QF3j59eF/lRpA0ZWa9SHpbauXcTwE5XsTg9UWFB7JQ
+	UyqcuaoXhls3rYQKA5nVkeJK8JgH5L78/LkapsG/TWZCTrQjTPMG/XNNMH9oi4Pu95zaAM6PGQy6I
+	kEedOEw4QGJEr6S697DhIV6Yjs+IWvV5gKsbA44bmhaOwCKkD2N/qj5dWnYES4qdQCK4imMFpbxp5
+	iENEuVcCPn/4XspU0l2fMsCl3U6C0Gf3cmhf0V0T3RSdD0LVquwD28ok6zVN06XGtM9FKG2rwgpog
+	2SkxAVsshdM/UgejKhrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUaOE-0001HY-DP; Tue, 12 Nov 2019 17:55:42 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1iUaSL-00029o-0e; Tue, 12 Nov 2019 17:59:57 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUaO1-0001Gp-Px
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 17:55:31 +0000
-Received: by mail-ot1-x343.google.com with SMTP id u13so15103357ote.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 Nov 2019 09:55:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=intel-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tCv2FQBw3uAaqPVc/dzQiuHcwn8UohPz3qZnrpSfyuQ=;
- b=C+ntd6G4tkppkODd3gwiKjTQhhK2l2MZf3wR6Ptp0PyuFytkzu6QfE584Sbbdf/D3C
- yEeUylkvPlmS2sqFDsYOJ6hojpwGhB/SwDLTgTptnW6SPofVq6cI8TYWq0TFz3/Gf5KZ
- Dmh4JNcd33JvDQL7r5MsR4qfWI/O+roq5EeK93V+zBhhxZhgcoBPokBVtbsie8dhqURP
- 6rgFDIsdc0JuIGcv+vBuYng3/8q75nmwIVr85qIvJArIFkCh6iZzr+70xHsWDLyqlg/e
- KsvIrL37fUeH9X3hcGFQcN7V8aimc7HVOeNG6PF5EqdnJg3zvHFXVqOgQdJIaPrr6Ptl
- Up3w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tCv2FQBw3uAaqPVc/dzQiuHcwn8UohPz3qZnrpSfyuQ=;
- b=cTd2VQgZ8b8e6zhZySoAVkCm5DnZ6bB5E5bocuJOkhKuQjMEMgQPYzAvfQJeiPIBMk
- /4Zgh9OCFEbgTaA4/fg7cM0YQt02uE4pYSwPD71RxQO94fLTu7tUmesFNDWRLA9cxncs
- BcbaMoTNoVpbnrGioyYXVf2iada1DaCLZDDiGc7ARyhnNpFRjw3RPZcxw1Icy/D7yEEn
- YK5WU5VqAOQIc8PomioYDzUWT5gjQvoMsv5wgmO86FkNRu9DCMOQaVD3wIg1WGI0I6NO
- OtBKK1zLcJSfxznltYMHNjhpLtn51kz90/znVvnVOtublDFVuM9dyMlsyPu6juyhKI0W
- eWDA==
-X-Gm-Message-State: APjAAAWAmfkN0DKXoja/TRS/iKM6vR4ZOSw5QCk52/mCkS7VVCwqfZ+j
- SOlTF9izJISHzDD8j/uudXfHYKs+K13sEP0ghmcRXw==
-X-Google-Smtp-Source: APXvYqzejJzlhvFyHrEWCARW40GL40VL1ngc5hPC/CkFTIvPmZvq8BBGIVD/77UhBUvFLaBGC0UJsY82ebD4LRLlsDI=
-X-Received: by 2002:a05:6830:1b70:: with SMTP id
- d16mr13052039ote.71.1573581328478; 
- Tue, 12 Nov 2019 09:55:28 -0800 (PST)
+ id 1iUaSD-00028J-1l
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 17:59:50 +0000
+Received: by verein.lst.de (Postfix, from userid 2005)
+ id DB8AF68BE1; Tue, 12 Nov 2019 18:59:40 +0100 (CET)
+Date: Tue, 12 Nov 2019 18:59:40 +0100
+From: Torsten Duwe <duwe@lst.de>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: [PATCH] drm/bridge: fix anx6345 compilation for v5.5
+Message-ID: <20191112175940.GA13539@lst.de>
 MIME-Version: 1.0
-References: <20191004114330.104746-1-Jonathan.Cameron@huawei.com>
- <20191004114330.104746-2-Jonathan.Cameron@huawei.com>
-In-Reply-To: <20191004114330.104746-2-Jonathan.Cameron@huawei.com>
-From: Dan Williams <dan.j.williams@intel.com>
-Date: Tue, 12 Nov 2019 09:55:17 -0800
-Message-ID: <CAPcyv4jZG-5s6NsS-_-oNG45y0Qb1mVD_s8cCGqLYtzvHqEo+Q@mail.gmail.com>
-Subject: Re: [PATCH V5 1/4] ACPI: Support Generic Initiator only domains
-To: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+Content-Disposition: inline
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_095529_847808_BDE18413 
-X-CRM114-Status: GOOD (  12.09  )
+X-CRM114-CacheID: sfid-20191112_095949_388154_69318997 
+X-CRM114-Status: GOOD (  16.07  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [213.95.11.211 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,39 +56,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ACPI <linux-acpi@vger.kernel.org>, Tao Xu <tao3.xu@intel.com>,
- X86 ML <x86@kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linuxarm <linuxarm@huawei.com>, Keith Busch <keith.busch@intel.com>,
- Linux MM <linux-mm@kvack.org>,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
+ Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ add Tao Xu ]
 
-On Fri, Oct 4, 2019 at 4:45 AM Jonathan Cameron
-<Jonathan.Cameron@huawei.com> wrote:
->
-> Generic Initiators are a new ACPI concept that allows for the
-> description of proximity domains that contain a device which
-> performs memory access (such as a network card) but neither
-> host CPU nor Memory.
->
-> This patch has the parsing code and provides the infrastructure
-> for an architecture to associate these new domains with their
-> nearest memory processing node.
+The anx6345 driver originally was copied from anx78xx.c, which has meanwhile
+seen a few changes. In particular, the removal of drm_dp_link helpers and the
+discontinuation to include drm_bridge.h from drm_crtc.h breaks compilation
+in linux-5.5. Apply equivalents of these changes to anx6345.c.
 
-Thanks for this Jonathan. May I ask how this was tested? Tao has been
-working on qemu support for HMAT [1]. I have not checked if it already
-supports generic initiator entries, but it would be helpful to include
-an example of how the kernel sees these configurations in practice.
+Signed-off-by: Torsten Duwe <duwe@suse.de>
 
-[1]: http://patchwork.ozlabs.org/cover/1096737/
+---
+
+The commits in question are ff1e8fb68ea06 and ee68c743f8d07, but I guess the
+next rebase will change these. next-20191112 plus the anx6345-v5a series plus
+this patch compile cleanly on arm64.
+
+--- a/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
++++ b/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
+@@ -19,6 +19,7 @@
+ #include <linux/types.h>
+ 
+ #include <drm/drm_atomic_helper.h>
++#include <drm/drm_bridge.h>
+ #include <drm/drm_crtc.h>
+ #include <drm/drm_crtc_helper.h>
+ #include <drm/drm_dp_helper.h>
+@@ -49,7 +50,6 @@ struct anx6345 {
+ 	struct i2c_client *client;
+ 	struct edid *edid;
+ 	struct drm_connector connector;
+-	struct drm_dp_link link;
+ 	struct drm_panel *panel;
+ 	struct regulator *dvdd12;
+ 	struct regulator *dvdd25;
+@@ -96,7 +96,7 @@ static ssize_t anx6345_aux_transfer(stru
+ static int anx6345_dp_link_training(struct anx6345 *anx6345)
+ {
+ 	unsigned int value;
+-	u8 dp_bw;
++	u8 dp_bw, dpcd[2];
+ 	int err;
+ 
+ 	err = anx6345_clear_bits(anx6345->map[I2C_IDX_TXCOM],
+@@ -144,18 +143,34 @@ static int anx6345_dp_link_training(stru
+ 	if (err)
+ 		return err;
+ 
+-	/* Check link capabilities */
+-	err = drm_dp_link_probe(&anx6345->aux, &anx6345->link);
+-	if (err < 0) {
+-		DRM_ERROR("Failed to probe link capabilities: %d\n", err);
+-		return err;
+-	}
++	/*
++	 * Power up the sink (DP_SET_POWER register is only available on DPCD
++	 * v1.1 and later).
++	 */
++	if (anx6345->dpcd[DP_DPCD_REV] >= 0x11) {
++		err = drm_dp_dpcd_readb(&anx6345->aux, DP_SET_POWER, &dpcd[0]);
++		if (err < 0) {
++			DRM_ERROR("Failed to read DP_SET_POWER register: %d\n",
++				  err);
++			return err;
++		}
++
++		dpcd[0] &= ~DP_SET_POWER_MASK;
++		dpcd[0] |= DP_SET_POWER_D0;
++
++		err = drm_dp_dpcd_writeb(&anx6345->aux, DP_SET_POWER, dpcd[0]);
++		if (err < 0) {
++			DRM_ERROR("Failed to power up DisplayPort link: %d\n",
++				  err);
++			return err;
++		}
+ 
+-	/* Power up the sink */
+-	err = drm_dp_link_power_up(&anx6345->aux, &anx6345->link);
+-	if (err < 0) {
+-		DRM_ERROR("Failed to power up DisplayPort link: %d\n", err);
+-		return err;
++		/*
++		 * According to the DP 1.1 specification, a "Sink Device must
++		 * exit the power saving state within 1 ms" (Section 2.5.3.1,
++		 * Table 5-52, "Sink Control Field" (register 0x600).
++		 */
++		usleep_range(1000, 2000);
+ 	}
+ 
+ 	/* Possibly enable downspread on the sink */
+@@ -194,20 +209,28 @@ static int anx6345_dp_link_training(stru
+ 	if (err)
+ 		return err;
+ 
+-	value = drm_dp_link_rate_to_bw_code(anx6345->link.rate);
++	dpcd[0] = drm_dp_max_link_rate(anx6345->dpcd);
++	dpcd[0] = drm_dp_link_rate_to_bw_code(dpcd[0]);
+ 	err = regmap_write(anx6345->map[I2C_IDX_DPTX],
+-			   SP_DP_MAIN_LINK_BW_SET_REG, value);
++			   SP_DP_MAIN_LINK_BW_SET_REG, dpcd[0]);
+ 	if (err)
+ 		return err;
+ 
++	dpcd[1] = drm_dp_max_lane_count(anx6345->dpcd);
++
+ 	err = regmap_write(anx6345->map[I2C_IDX_DPTX],
+-			   SP_DP_LANE_COUNT_SET_REG, anx6345->link.num_lanes);
++			   SP_DP_LANE_COUNT_SET_REG, dpcd[1]);
+ 	if (err)
+ 		return err;
+ 
+-	err = drm_dp_link_configure(&anx6345->aux, &anx6345->link);
++	if (drm_dp_enhanced_frame_cap(anx6345->dpcd))
++		dpcd[1] |= DP_LANE_COUNT_ENHANCED_FRAME_EN;
++
++	err = drm_dp_dpcd_write(&anx6345->aux, DP_LINK_BW_SET, dpcd,
++				sizeof(dpcd));
++
+ 	if (err < 0) {
+-		DRM_ERROR("Failed to configure DisplayPort link: %d\n", err);
++		DRM_ERROR("Failed to configure link: %d\n", err);
+ 		return err;
+ 	}
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
