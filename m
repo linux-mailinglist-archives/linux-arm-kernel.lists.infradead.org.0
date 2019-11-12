@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DA17F9079
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 14:21:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F0A9F9078
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 14:21:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pw/4J02dPOcFrUNHcdo0XqvTKVErgGIweAjxcnkCsao=; b=LUbdkeG2P5sNJ9
-	e29fo9P3KGCluiKQ4BZRHeGF/6Eef0KfjS1hRglUSj41D/ZjV/mwVJB97W+AIVqbj751YMkUIIj+I
-	8L2Z633qoCFkMOHSbnSiv9r14U2VQ6sufOgHteArsgnNUFCTa6eCe4L6gt15RXD6pAq9ttBHpjijf
-	joe7V4zocq969sqCBWpZIfN+cDb51cZysnaX0Pe5/cb9ipid8jaxQdeHovDsG5a9TVJvCRnYmn8ek
-	iUMziK1hYNdDv+jqoZOqr98Q7CVOaD8wQdc/Ng6eUecmnfeXwuMhzGgxTkZCJfMhNhcWlZKyxjCpq
-	MRJ8DP7gLtFbZ8TJrVdA==;
+	List-Owner; bh=O6VA6jdlWwgWCA+UdFzGf3YXqWW8X8CV3PeRFs/FKQI=; b=duATSlauA0FWG9
+	WgAkV+wAIqsEKobmE9lnEB3OGs7LhauqONH9GbVwfmX+8aIWXKp3SqYDmHSb6zIsFe4mhEK5HplTk
+	Of4slBDdffjgOMsFB6YGpvD3q/2Lyb8/pKGJxofOW5kzn1uPyIWt81maMcUGinthFEEbaJvswXpQE
+	2fHaDtBZGqSWJwb1uGNoy6qoXGDiMZuZ0ADEz60QDdMuoLz4tspEeJ56rnVPhSb3OwsZDGVDx57C8
+	4xK6XV/liXSr750f5ZUPwuRxe/y+8wga+helczKQvwG+KnzHBIV9CaG2GkRrYZby/6LGgzd0tW+I6
+	sFP7g8Pa8Gw7iewKgGnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUW6X-0002mU-Gi; Tue, 12 Nov 2019 13:21:09 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iUW6L-0002XC-Ey; Tue, 12 Nov 2019 13:20:57 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUW5l-0002IW-Tv
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 13:20:27 +0000
-Received: by mail-lf1-x143.google.com with SMTP id z12so12796530lfj.9
+ id 1iUW5l-0002IV-SB
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 13:20:26 +0000
+Received: by mail-lf1-x144.google.com with SMTP id y186so7019602lfa.1
  for <linux-arm-kernel@lists.infradead.org>;
  Tue, 12 Nov 2019 05:20:21 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=U/A2f9kHIFOCYbqEWyI5d4hToF+Uq4/YnGy8bo4uWSk=;
- b=gM8MrR8fpyn4D3f/S9EA8B8+euhGtgB+lGz82qjsDCTe1bJ1kiHnsQYFbiW/5akGyH
- 0mp2q9cT8A/OkZQgMiiVMsZSMYP7lzx+i0+PscS5YENMZjpxjMRfriZdcUEGItBE4t1y
- tuIfz4VW5ZZL40S/NoLsb+KAqWW86ZFGdIV1s=
+ bh=cKIBvY0x1yD+bD+aWV0JUrzlsZTikuF2aQL24o02BNY=;
+ b=cIRUpNYVEGfnB4/ePtiAKp638xTywK5olGdZniL8LqHCeTTnZP6CM6JV2Ms3GrXRRk
+ AqCiiJuz0X+oxu5/+deCblXULlE5Tkm2SG7JtZFx1fYH/5HPrn5ZW9YDBVfBzofobcwy
+ k6zuthunUE9C/THVN4JviAwdYW2x0a0efbMF8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=U/A2f9kHIFOCYbqEWyI5d4hToF+Uq4/YnGy8bo4uWSk=;
- b=N8jW7gkfIDac431zrbyB5myqCQtDxZoAHwptD+QGw/VvFBIWr+Qb6TN6LIEeZId4VA
- cLlWltJiKvznbqCmNYBR/IO5//f8OnFUSE6sINMBin7vlr3xuy6/SzE1fo6jfRxARPr7
- gqukmM3A99P3AvTnrFb+AGLJJBVIIq49tHy7938EEGPPxZ215Sh5TnwLH/pE8woh9t6B
- 1Pfornqj/61xG9BoUxm6Pq++fxpHtzpzVp3Y5d4Bzd9rtaIf6AP5Tvmw4zJyeXxYfkEI
- obMz5uQB+U1YBB1mqrHmr8SEvGPKvNl5zHkexwOWMOmpesLSSFah0wncEhCHktmmspiq
- jdvA==
-X-Gm-Message-State: APjAAAUc668WH9X6TYa3X8nqATlxbB+kwGfIUshIFW/ztqDmUX/HSkMa
- cpQr5aCSviAeyR2PzJjhVDtsSw==
-X-Google-Smtp-Source: APXvYqz/sFZqp2pxbjkEJ36q/AU0dl23QXcsNzmg6b9X5nHorefiUNSVmG7PoCczzVrEgRSF7p9rHw==
-X-Received: by 2002:a19:c514:: with SMTP id w20mr19905250lfe.143.1573564815900; 
- Tue, 12 Nov 2019 05:20:15 -0800 (PST)
+ bh=cKIBvY0x1yD+bD+aWV0JUrzlsZTikuF2aQL24o02BNY=;
+ b=BjlLNpOxGC+auv8nm5L6ptndL00IPCKtXIcpr9vBdElYGAruoI5l+9iYGVCg3MXGe2
+ FHO53NWMKLOuacdpcaHzg4xDQleU8BWY5AoydbsagI3uZ8ODSOckx31cXxxf84JSlUXj
+ 8xqhelTr96DiO9k9915dq2BVjNjN44JYWLkSXi7fAHeM1wfwMkLP/3MTEziZkRt35Kiq
+ NPNxFyXfiBT3cFszcHxILt8c31SzgTLYFNH0nQFKMHLog1Fyxygzmz+HxRhmIXEU+wgA
+ XYbI2nqOTAj2EFW09C5izuptxz7fFaqFBBcx6Xy3/0blI4fQkHhOuIf33g+GD8zmaCkJ
+ oc4g==
+X-Gm-Message-State: APjAAAU2aOZzxDSvLo5zhTWL8lGV3kMSml586sKLtwQk1beCZ1F+qX/X
+ QA+ni77twCwQkzLJtRvHXug9Ig==
+X-Google-Smtp-Source: APXvYqx9C+B7+dzh+DExhVDk9zF6QbqRPQQJ9ESPQGY6lCuTE2m4r60+gVHrE26XPfc47YPvGhzkIQ==
+X-Received: by 2002:ac2:5deb:: with SMTP id z11mr6866390lfq.35.1573564817247; 
+ Tue, 12 Nov 2019 05:20:17 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id f20sm869050lfc.75.2019.11.12.05.20.14
+ by smtp.gmail.com with ESMTPSA id f20sm869050lfc.75.2019.11.12.05.20.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 Nov 2019 05:20:15 -0800 (PST)
+ Tue, 12 Nov 2019 05:20:16 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 1/2] ARM: dts: ls1021a: add node describing external interrupt
- lines
-Date: Tue, 12 Nov 2019 14:20:09 +0100
-Message-Id: <20191112132010.18274-2-linux@rasmusvillemoes.dk>
+Subject: [PATCH 2/2] ARM: dts: ls1021a-tsn: Use interrupts for the SGMII PHYs
+Date: Tue, 12 Nov 2019 14:20:10 +0100
+Message-Id: <20191112132010.18274-3-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191112132010.18274-1-linux@rasmusvillemoes.dk>
 References: <20191112132010.18274-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_052022_007351_CF85B069 
-X-CRM114-Status: GOOD (  10.10  )
+X-CRM114-CacheID: sfid-20191112_052021_923033_D0122E64 
+X-CRM114-Status: GOOD (  10.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,44 +103,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds a node describing the six external interrupt lines IRQ0-IRQ5
-with configurable polarity.
+From: Vladimir Oltean <olteanv@gmail.com>
 
+On the LS1021A-TSN board, the 2 Atheros AR8031 PHYs for eth0 and eth1
+have interrupt lines connected to the shared IRQ2_B LS1021A pin.
+
+Switching to interrupts offloads the PHY library from the task of
+polling the MDIO status and AN registers (1, 4, 5) every second.
+
+Unfortunately, the BCM5464R quad PHY connected to the switch does not
+appear to have an interrupt line routed to the SoC.
+
+Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- arch/arm/boot/dts/ls1021a.dtsi | 19 +++++++++++++++++++
- 1 file changed, 19 insertions(+)
+ arch/arm/boot/dts/ls1021a-tsn.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm/boot/dts/ls1021a.dtsi b/arch/arm/boot/dts/ls1021a.dtsi
-index 2f6977ada447..0855b1fe98e0 100644
---- a/arch/arm/boot/dts/ls1021a.dtsi
-+++ b/arch/arm/boot/dts/ls1021a.dtsi
-@@ -216,6 +216,25 @@
- 			compatible = "fsl,ls1021a-scfg", "syscon";
- 			reg = <0x0 0x1570000 0x0 0x10000>;
- 			big-endian;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+			ranges = <0x0 0x0 0x1570000 0x10000>;
-+
-+			extirq: interrupt-controller@1ac {
-+				compatible = "fsl,ls1021a-extirq";
-+				#interrupt-cells = <2>;
-+				#address-cells = <0>;
-+				interrupt-controller;
-+				reg = <0x1ac 4>;
-+				interrupt-map =
-+					<0 0 &gic GIC_SPI 163 IRQ_TYPE_LEVEL_HIGH>,
-+					<1 0 &gic GIC_SPI 164 IRQ_TYPE_LEVEL_HIGH>,
-+					<2 0 &gic GIC_SPI 165 IRQ_TYPE_LEVEL_HIGH>,
-+					<3 0 &gic GIC_SPI 167 IRQ_TYPE_LEVEL_HIGH>,
-+					<4 0 &gic GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>,
-+					<5 0 &gic GIC_SPI 169 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-map-mask = <0xffffffff 0x0>;
-+			};
- 		};
+diff --git a/arch/arm/boot/dts/ls1021a-tsn.dts b/arch/arm/boot/dts/ls1021a-tsn.dts
+index 5b7689094b70..135d36461af4 100644
+--- a/arch/arm/boot/dts/ls1021a-tsn.dts
++++ b/arch/arm/boot/dts/ls1021a-tsn.dts
+@@ -203,11 +203,15 @@
+ 	/* AR8031 */
+ 	sgmii_phy1: ethernet-phy@1 {
+ 		reg = <0x1>;
++		/* SGMII1_PHY_INT_B: connected to IRQ2, active low */
++		interrupts-extended = <&extirq 2 IRQ_TYPE_EDGE_FALLING>;
+ 	};
  
- 		crypto: crypto@1700000 {
+ 	/* AR8031 */
+ 	sgmii_phy2: ethernet-phy@2 {
+ 		reg = <0x2>;
++		/* SGMII2_PHY_INT_B: connected to IRQ2, active low */
++		interrupts-extended = <&extirq 2 IRQ_TYPE_EDGE_FALLING>;
+ 	};
+ 
+ 	/* BCM5464 quad PHY */
 -- 
 2.23.0
 
