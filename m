@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98C63F9552
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:16:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B03D7F9553
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:16:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,57 +11,57 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=urml0NJNmu9VvdZ7GkenOqYZ/5pHABefM/2CivQmUiw=; b=Q8IKvk2VcEDEFh4e4ZyOkRSJgC
-	HVGqn22HCdulneFydFeYPlbN21sCHVFXcbBunnnD0l1XzanGoynOROfGxauaDGiMwp3m4WjkJOapv
-	K040NKXRDEHCv2IDhOsrMBNIuN/XGzTZXkBMY7OkYq70p/C9P0K4oRcQPzDPbzcT0Q8fQusowJwTl
-	+HRItVy2bDyxNUVY2qs4mm5orqTIh/yVb+/jak/zk09MXPWhgZ89At0nk7OhjEUlf5hHlm8zE8ABN
-	+8LvRw1SXuqa3VGUtY2PpS9+vJmRy6hiX4J/4ifbPbA7udPSB+Q7c0Awl6Ob/M9GvVULnL3RQyCnI
-	QDnXtQ3g==;
+	bh=XkZuRwLHtIQj77FZgNIrY4xhdLhwLseTrgXBmCGUbaE=; b=FsPSDlUOGGvyX67gkpaxvgrMg6
+	0o18pXSWvbIeMX59UShK8VlGZvBCUbbyRyt2u4YqsQhnuyIDPS72aUd75nY8/x9fV/RNbLe95h5Q7
+	ldsiRTg8C78uAgtLvalG7QCRpDRnex9hn2pstfkt1qCqQJCJJiciQrCTwfrAxPspPxFi6kLws0oZ1
+	763eqkEKYv/zt5B2C4lfun0tx7zDASb9//fjleTtVne4IYgQ7wlXTpxowVJGJhXPcglHSWltFMKH1
+	gwx9If8ZHf0NBkQX2ZmQRACh0/UGUwxT8kmO9JJB37vJrwN1DSie+Mom1+xns5PRRELjMcNoj+IdU
+	snkbicWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUYpi-00072c-Qm; Tue, 12 Nov 2019 16:15:58 +0000
-Received: from forward101j.mail.yandex.net ([5.45.198.241])
+	id 1iUYpy-0007D0-Bv; Tue, 12 Nov 2019 16:16:14 +0000
+Received: from forward105p.mail.yandex.net ([77.88.28.108])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUYpL-0006iP-Pq
+ id 1iUYpM-0006kv-Lg
  for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 16:15:38 +0000
-Received: from mxback2j.mail.yandex.net (mxback2j.mail.yandex.net
- [IPv6:2a02:6b8:0:1619::10b])
- by forward101j.mail.yandex.net (Yandex) with ESMTP id 52E5E1BE0AAF;
- Tue, 12 Nov 2019 19:15:29 +0300 (MSK)
+Received: from mxback14o.mail.yandex.net (mxback14o.mail.yandex.net
+ [IPv6:2a02:6b8:0:1a2d::65])
+ by forward105p.mail.yandex.net (Yandex) with ESMTP id E4F3A4D404C2;
+ Tue, 12 Nov 2019 19:15:32 +0300 (MSK)
 Received: from sas2-b0ca3cd64eaa.qloud-c.yandex.net
  (sas2-b0ca3cd64eaa.qloud-c.yandex.net [2a02:6b8:c14:718c:0:640:b0ca:3cd6])
- by mxback2j.mail.yandex.net (mxback/Yandex) with ESMTP id qAOEPxtQ1J-FSBuHfsw; 
- Tue, 12 Nov 2019 19:15:29 +0300
+ by mxback14o.mail.yandex.net (mxback/Yandex) with ESMTP id eOGnp5Fk7e-FWou1XhH;
+ Tue, 12 Nov 2019 19:15:32 +0300
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=emlid.com; s=mail;
- t=1573575329; bh=6LRj9/yHqqgPSr9wQgB4nEDjgzH2EFEU+mphXY9tyTs=;
+ t=1573575332; bh=LjAghBh1BDWqK1SF6XGDyVfVWTAl0FT+2g+kElww2jA=;
  h=In-Reply-To:Subject:To:From:Cc:References:Date:Message-Id;
- b=c8azoBvZdDL3idj6kFueTslJQ++YdmnuOeb3sejleaFDviQtyIXN3bemMDfw5PIjh
- jqHJq5YVzkabRwUoDk4ZbRbaQvT/5i/xtfZcC3BTZzNdv+TgTMay3lQQ9ZuN3NuMmu
- CtTMXuebxqaCzXrTQr1472dp8UjyMgu0hoPPIhns=
-Authentication-Results: mxback2j.mail.yandex.net; dkim=pass header.i=@emlid.com
+ b=pLtDSjj4lrttT7VMB4HOxSwqo8PGaUM4MBGGsyzIK+k/D6PpsEDTeGUB3hbcOYFf5
+ /eY5auI62HnatOwEAoT8ykLgdIg7xbCKYtMiX/38XRVQwppkPokBNMh1Xt1I0uQ7KQ
+ S6LGvtL83AMsw1n/awvFNitkgFBdNH+ab7xdPMEM=
+Authentication-Results: mxback14o.mail.yandex.net;
+ dkim=pass header.i=@emlid.com
 Received: by sas2-b0ca3cd64eaa.qloud-c.yandex.net (smtp/Yandex) with ESMTPSA
- id xY2rOY0rn4-FRUCS09J; Tue, 12 Nov 2019 19:15:28 +0300
+ id xY2rOY0rn4-FVUCRr75; Tue, 12 Nov 2019 19:15:31 +0300
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (Client certificate not present)
 From: Georgii Staroselskii <georgii.staroselskii@emlid.com>
 To: mripard@kernel.org, wens@csie.org, robh+dt@kernel.org, mark.rutland@arm.com
-Subject: [PATCH v2 1/3] arm: dts: allwinner: Split out non-SoC specific parts
- of Neutis N5
-Date: Tue, 12 Nov 2019 19:15:18 +0300
-Message-Id: <1573575320-29546-2-git-send-email-georgii.staroselskii@emlid.com>
+Subject: [PATCH v2 2/3] arm: dts: sunxi: Add Neutis N5H3 support
+Date: Tue, 12 Nov 2019 19:15:19 +0300
+Message-Id: <1573575320-29546-3-git-send-email-georgii.staroselskii@emlid.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1573575320-29546-1-git-send-email-georgii.staroselskii@emlid.com>
 References: <1573575320-29546-1-git-send-email-georgii.staroselskii@emlid.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_081536_208038_2506A461 
-X-CRM114-Status: GOOD (  12.69  )
+X-CRM114-CacheID: sfid-20191112_081537_105434_9F2BCF2A 
+X-CRM114-Status: GOOD (  12.76  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [5.45.198.241 listed in list.dnswl.org]
+ low trust [77.88.28.108 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,387 +91,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A new variant of Emlid Neutis has been inroduced. This one uses H3
-instead of H5. The boards are essentially the same. This commit moves
-non-SoC-specific parts out so that the common parts could be reused with
-ease.
+Emlid Neutis N5H3 is a version of Emlid Neutis SoM with H3 instead of H5
+inside.
+
+6eeb4180d4b9 ("ARM: dts: sunxi: h3-h5: Add Bananapi M2+ v1.2 device")
+was used as reference.
 
 Signed-off-by: Georgii Staroselskii <georgii.staroselskii@emlid.com>
 ---
- arch/arm/boot/dts/sunxi-h3-h5-emlid-neutis.dtsi    | 170 +++++++++++++++++++++
- .../sun50i-h5-emlid-neutis-n5-devboard.dts         |  95 +-----------
- .../dts/allwinner/sun50i-h5-emlid-neutis-n5.dtsi   |  64 +-------
- 3 files changed, 175 insertions(+), 154 deletions(-)
- create mode 100644 arch/arm/boot/dts/sunxi-h3-h5-emlid-neutis.dtsi
+ arch/arm/boot/dts/Makefile                         |  1 +
+ .../dts/sun8i-h3-emlid-neutis-n5h3-devboard.dts    | 72 ++++++++++++++++++++++
+ arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3.dtsi  | 11 ++++
+ 3 files changed, 84 insertions(+)
+ create mode 100644 arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3-devboard.dts
+ create mode 100644 arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3.dtsi
 
-diff --git a/arch/arm/boot/dts/sunxi-h3-h5-emlid-neutis.dtsi b/arch/arm/boot/dts/sunxi-h3-h5-emlid-neutis.dtsi
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index 3f13b88..c997b0c 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -1119,6 +1119,7 @@ dtb-$(CONFIG_MACH_SUN8I) += \
+ 	sun8i-h3-orangepi-plus2e.dtb \
+ 	sun8i-h3-orangepi-zero-plus2.dtb \
+ 	sun8i-h3-rervision-dvk.dtb \
++	sun8i-h3-emlid-neutis-n5h3-devboard.dtb \
+ 	sun8i-r16-bananapi-m2m.dtb \
+ 	sun8i-r16-nintendo-nes-classic.dtb \
+ 	sun8i-r16-nintendo-super-nes-classic.dtb \
+diff --git a/arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3-devboard.dts b/arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3-devboard.dts
 new file mode 100644
-index 00000000..fc67e30
+index 00000000..02fbe00
 --- /dev/null
-+++ b/arch/arm/boot/dts/sunxi-h3-h5-emlid-neutis.dtsi
-@@ -0,0 +1,170 @@
++++ b/arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3-devboard.dts
+@@ -0,0 +1,72 @@
 +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
 +/*
-+ * DTSI for Emlid Neutis SoMs.
++ * DTS for Emlid Neutis N5 Dev board.
++ *
++ * Copyright (C) 2019 Georgii Staroselskii <georgiii.staroselskii@emlid.com>
++ */
++
++/dts-v1/;
++
++#include "sun8i-h3-emlid-neutis-n5h3.dtsi"
++
++/ {
++	model = "Emlid Neutis N5H3 Developer board";
++	compatible = "emlid,neutis-n5h3-devboard",
++		     "emlid,neutis-n5h3",
++		     "allwinner,sun8i-h3";
++
++	vdd_cpux: gpio-regulator {
++		compatible = "regulator-gpio";
++		regulator-name = "vdd-cpux";
++		regulator-type = "voltage";
++		regulator-boot-on;
++		regulator-always-on;
++		regulator-min-microvolt = <1100000>;
++		regulator-max-microvolt = <1300000>;
++		regulator-ramp-delay = <50>; /* 4ms */
++		gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; /* PL6 */
++		gpios-states = <0x1>;
++		states = <1100000 0x0>, <1300000 0x1>;
++	};
++
++	connector {
++		compatible = "hdmi-connector";
++		type = "a";
++
++		port {
++			hdmi_con_in: endpoint {
++				remote-endpoint = <&hdmi_out_con>;
++			};
++		};
++	};
++
++};
++
++&cpu0 {
++	cpu-supply = <&vdd_cpux>;
++};
++
++&codec {
++	status = "okay";
++};
++
++&emac {
++	phy-handle = <&int_mii_phy>;
++	phy-mode = "mii";
++	allwinner,leds-active-low;
++	status = "okay";
++};
++
++&hdmi {
++	status = "okay";
++};
++
++&hdmi_out {
++	hdmi_out_con: endpoint {
++		remote-endpoint = <&hdmi_con_in>;
++	};
++};
++
++&i2c1 {
++	status = "okay";
++};
+diff --git a/arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3.dtsi b/arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3.dtsi
+new file mode 100644
+index 00000000..eedd5da
+--- /dev/null
++++ b/arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3.dtsi
+@@ -0,0 +1,11 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/*
++ * DTSI for Emlid Neutis N5 SoM.
 + *
 + * Copyright (C) 2019 Georgii Staroselskii <georgii.staroselskii@emlid.com>
 + */
 +
-+#include "sunxi-common-regulators.dtsi"
++/dts-v1/;
 +
-+#include <dt-bindings/gpio/gpio.h>
-+
-+/ {
-+	aliases {
-+		serial0 = &uart0;
-+	};
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
-+	wifi_pwrseq: wifi_pwrseq {
-+		compatible = "mmc-pwrseq-simple";
-+		reset-gpios = <&pio 2 7 GPIO_ACTIVE_LOW>; /* PC7 */
-+		post-power-on-delay-ms = <200>;
-+		clocks = <&rtc 1>;
-+		clock-names = "ext_clock";
-+	};
-+};
-+
-+&cpu0 {
-+	cpu-supply = <&vdd_cpux>;
-+};
-+
-+&reg_usb0_vbus {
-+	gpio = <&r_pio 0 9 GPIO_ACTIVE_HIGH>;   /* PL9 */
-+	status = "okay";
-+};
-+
-+
-+&de {
-+	status = "okay";
-+};
-+
-+&ohci0 {
-+	status = "okay";
-+};
-+
-+&ohci1 {
-+	status = "okay";
-+};
-+
-+&ohci2 {
-+	status = "okay";
-+};
-+
-+&ohci3 {
-+	status = "okay";
-+};
-+
-+
-+&ehci0 {
-+	status = "okay";
-+};
-+
-+&ehci1 {
-+	status = "okay";
-+};
-+
-+&ehci2 {
-+	status = "okay";
-+};
-+
-+&ehci3 {
-+	status = "okay";
-+};
-+
-+&mmc0 {
-+	vmmc-supply = <&reg_vcc3v3>;
-+	bus-width = <4>;
-+	cd-gpios = <&pio 5 6 GPIO_ACTIVE_LOW>; /* PF6 */
-+	status = "okay";
-+};
-+
-+
-+&mmc1 {
-+	vmmc-supply = <&reg_vcc3v3>;
-+	vqmmc-supply = <&reg_vcc3v3>;
-+	mmc-pwrseq = <&wifi_pwrseq>;
-+	bus-width = <4>;
-+	non-removable;
-+	status = "okay";
-+
-+	brcmf: wifi@1 {
-+		reg = <1>;
-+		compatible = "brcm,bcm4329-fmac";
-+		interrupt-parent = <&r_pio>;
-+		interrupts = <0 5 IRQ_TYPE_LEVEL_LOW>;	/* PL5 */
-+		interrupt-names = "host-wake";
-+	};
-+};
-+
-+&mmc2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&mmc2_8bit_pins>;
-+	vmmc-supply = <&reg_vcc3v3>;
-+	bus-width = <8>;
-+	non-removable;
-+	cap-mmc-hw-reset;
-+	status = "okay";
-+};
-+
-+&uart0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart0_pa_pins>;
-+	status = "okay";
-+};
-+
-+
-+&uart1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
-+	uart-has-rtscts;
-+	status = "okay";
-+
-+	bluetooth {
-+		compatible = "brcm,bcm43438-bt";
-+		clocks = <&rtc 1>;
-+		clock-names = "lpo";
-+		vbat-supply = <&reg_vcc3v3>;
-+		vddio-supply = <&reg_vcc3v3>;
-+		shutdown-gpios = <&pio 2 4 GPIO_ACTIVE_HIGH>; /* PC4 */
-+		device-wakeup-gpios = <&r_pio 0 7 GPIO_ACTIVE_HIGH>; /* PL7 */
-+	};
-+};
-+
-+&uart2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart2_pins>;
-+	status = "okay";
-+};
-+
-+&uart3 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart3_pins>;
-+	status = "okay";
-+};
-+
-+&usbphy {
-+	usb0_id_det-gpios = <&r_pio 0 8 GPIO_ACTIVE_HIGH>; /* PL8 */
-+	usb0_vbus-supply = <&reg_usb0_vbus>;
-+	status = "okay";
-+};
-+
-+&usb_otg {
-+	dr_mode = "otg";
-+	status = "okay";
-+};
-+
-+&codec {
-+	allwinner,audio-routing =
-+		"Line Out", "LINEOUT",
-+		"LINEIN", "Line In",
-+		"MIC1", "Mic",
-+		"MIC2", "Mic",
-+		"Mic",  "MBIAS";
-+};
-+
-+&i2c0 {
-+	status = "okay";
-+};
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5-devboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5-devboard.dts
-index c924090..fb96d35 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5-devboard.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5-devboard.dts
-@@ -15,35 +15,6 @@
- 		     "emlid,neutis-n5",
- 		     "allwinner,sun50i-h5";
- 
--	aliases {
--		serial0 = &uart0;
--	};
--
--	chosen {
--		stdout-path = "serial0:115200n8";
--	};
--
--	connector {
--		compatible = "hdmi-connector";
--		type = "a";
--
--		port {
--			hdmi_con_in: endpoint {
--				remote-endpoint = <&hdmi_out_con>;
--			};
--		};
--	};
--
--	reg_usb0_vbus: usb0-vbus {
--		compatible = "regulator-fixed";
--		regulator-name = "usb0-vbus";
--		regulator-min-microvolt = <5000000>;
--		regulator-max-microvolt = <5000000>;
--		enable-active-high;
--		gpio = <&r_pio 0 9 GPIO_ACTIVE_HIGH>;   /* PL9 */
--		status = "okay";
--	};
--
- 	vdd_cpux: gpio-regulator {
- 		compatible = "regulator-gpio";
- 		regulator-name = "vdd-cpux";
-@@ -59,33 +30,11 @@
- 	};
- };
- 
--&codec {
--	allwinner,audio-routing =
--		"Line Out", "LINEOUT",
--		"LINEIN", "Line In",
--		"MIC1", "Mic",
--		"MIC2", "Mic",
--		"Mic",  "MBIAS";
--	status = "okay";
--};
--
--&de {
--	status = "okay";
--};
--
--&ehci0 {
--	status = "okay";
--};
--
--&ehci1 {
--	status = "okay";
--};
--
--&ehci2 {
--	status = "okay";
-+&cpu0 {
-+	cpu-supply = <&vdd_cpux>;
- };
- 
--&ehci3 {
-+&codec {
- 	status = "okay";
- };
- 
-@@ -106,42 +55,6 @@
- 	};
- };
- 
--&mmc0 {
--	vmmc-supply = <&reg_vcc3v3>;
--	bus-width = <4>;
--	cd-gpios = <&pio 5 6 GPIO_ACTIVE_LOW>; /* PF6 */
--	status = "okay";
--};
--
--&ohci0 {
--	status = "okay";
--};
--
--&ohci1 {
--	status = "okay";
--};
--
--&ohci2 {
--	status = "okay";
--};
--
--&ohci3 {
--	status = "okay";
--};
--
--&uart0 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&uart0_pa_pins>;
--	status = "okay";
--};
--
--&usb_otg {
--	dr_mode = "otg";
--	status = "okay";
--};
--
--&usbphy {
--	usb0_id_det-gpios = <&r_pio 0 8 GPIO_ACTIVE_HIGH>; /* PL8 */
--	usb0_vbus-supply = <&reg_usb0_vbus>;
-+&i2c1 {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5.dtsi
-index 5bec574..7df7308 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5.dtsi
-@@ -8,66 +8,4 @@
- /dts-v1/;
- 
- #include "sun50i-h5.dtsi"
--
--#include <dt-bindings/gpio/gpio.h>
--
--/ {
--	reg_vcc3v3: vcc3v3 {
--		compatible = "regulator-fixed";
--		regulator-name = "vcc3v3";
--		regulator-min-microvolt = <3300000>;
--		regulator-max-microvolt = <3300000>;
--	};
--
--	wifi_pwrseq: wifi_pwrseq {
--		compatible = "mmc-pwrseq-simple";
--		reset-gpios = <&pio 2 7 GPIO_ACTIVE_LOW>; /* PC7 */
--		post-power-on-delay-ms = <200>;
--		clocks = <&rtc 1>;
--		clock-names = "ext_clock";
--	};
--};
--
--&mmc1 {
--	vmmc-supply = <&reg_vcc3v3>;
--	vqmmc-supply = <&reg_vcc3v3>;
--	mmc-pwrseq = <&wifi_pwrseq>;
--	bus-width = <4>;
--	non-removable;
--	status = "okay";
--
--	brcmf: wifi@1 {
--		reg = <1>;
--		compatible = "brcm,bcm4329-fmac";
--		interrupt-parent = <&r_pio>;
--		interrupts = <0 5 IRQ_TYPE_LEVEL_LOW>;	/* PL5 */
--		interrupt-names = "host-wake";
--	};
--};
--
--&mmc2 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&mmc2_8bit_pins>;
--	vmmc-supply = <&reg_vcc3v3>;
--	bus-width = <8>;
--	non-removable;
--	cap-mmc-hw-reset;
--	status = "okay";
--};
--
--&uart1 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
--	uart-has-rtscts;
--	status = "okay";
--
--	bluetooth {
--		compatible = "brcm,bcm43438-bt";
--		clocks = <&rtc 1>;
--		clock-names = "lpo";
--		vbat-supply = <&reg_vcc3v3>;
--		vddio-supply = <&reg_vcc3v3>;
--		shutdown-gpios = <&pio 2 4 GPIO_ACTIVE_HIGH>; /* PC4 */
--		device-wakeup-gpios = <&r_pio 0 7 GPIO_ACTIVE_HIGH>; /* PL7 */
--	};
--};
++#include "sun8i-h3.dtsi"
 +#include <arm/sunxi-h3-h5-emlid-neutis.dtsi>
 -- 
 2.7.4
