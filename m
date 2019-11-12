@@ -2,91 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E49FF91A7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:12:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84920F91D2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:19:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HiDX6rRf23/oBLOAJ+RgMUlYh50cgf3eOZJYO7rAmbE=; b=tNyG+bX6w73P8h
-	U/Q2X9+8lh3FIKjL1k/W7Qnly6nbyz5CTBtBLNjDs3tvRCC92+czBo3y2XO1SUu/+F32XALOetD7J
-	UCkgbky5fR3uMqBbpdx1pvbZiR1PRzm+oGLuHP8FxY+XGsGfupXYYKSxH5QXr3Rmd3ECqZoWPL1wU
-	vHsTlxYIZta/OC5WjDQDNevAirLPTwaRLHb8HOOmI08mWOacjLJTYLT545Yx564QqdiEbWwRcH4xj
-	OFDKuQ+6MJYRg0dQtqL4EJCQiM/cNlb7WmShsiOpNnSKR8AyZ9uOU2eRegEKuvB6LzbY8KU08LWnl
-	/tWiIdQC4czvRy0DZW+w==;
+	List-Owner; bh=7K7RTVNYiKz3ZHXM7y0eTb9ZDBuPuOLlKj6kwKKsVA0=; b=PeuuBhQv/0kQil
+	U+RqcOl+zOAv2tV1FBnRxPhApPFLNqsRKVGU0gLxqlqEoXixUb8db1HE/ezvmsG0yReFA1gGnICh/
+	Xy9nN3q37L2MW8bLNGmUhqtftb0rZsocYOcjj9bktKi+Uci4YYijjPAPXmRMhWVGI8tglWeQ8ib2b
+	ZtyDK8FvUbFAOizISVu+tEcW0TBTb4UEJXy2f2I4PgZfv9Ac3TSu4iqWq9RugSyvFQ86NRt/nBGLw
+	8iRXbhnNsheM/4W5wwrblkuTT+ZbWAuEjhw/06J1G4EyRhCVosNlEKcDgz8WOIR273hXpEtm5+dS/
+	bJ6NG3E3/XC/YpkSztCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUWu7-0001bO-0F; Tue, 12 Nov 2019 14:12:23 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1iUX0h-00045b-F1; Tue, 12 Nov 2019 14:19:11 +0000
+Received: from mx1.unisoc.com ([222.66.158.135] helo=SHSQR01.spreadtrum.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUWtz-0001b4-9L
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:12:16 +0000
-Received: by mail-ed1-x543.google.com with SMTP id a24so11345543edt.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 Nov 2019 06:12:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KxSPlrqtEzHjDjmMoesMoA1oYmvT3buCd5ykJgz1zH4=;
- b=azxIbnR14SLX1EEBSNv3knBGIxYmKTsERV55xjemZBeEqgKPTy37mAxU7sFe2Rj/tf
- OY1Jisto9ME9u6C31XRuv2Sh6WwETVDHCBCGdGvfUpUafPdNZRrn7hg8Fcc6kJVqsL+N
- LDHra+Z0UDv49RtAlISWxn5bNJ65EXgriDHyOUw/jwOjySmNy/jmAbtwONICQJBTaP6I
- QF5kBz2CAuZ6yfB3/QV7SzKo9ofZBaV/TfsijKaGB0av6B+9x7LaikNc5YYLvTJKHzeK
- XZd39b7WwXlmuRPFEF/Xj4h87odt64jwzcjSVZx+vuArqAIJ+o1WeDZS/hjln6zSd+zW
- aGog==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=KxSPlrqtEzHjDjmMoesMoA1oYmvT3buCd5ykJgz1zH4=;
- b=cC/+bUMbK0NJri5IfLxJWCf5qk3Rcle0/rGT9pkXrch5qXM8d2YkFXkIcu9kSPX1qX
- NM2sjxLqYNRaIEApqr9ro+hU0ecGTTpPFv7I1HDBGt4d9X9NfjST4iTDAFcYNNC/sCvr
- 1PvtmeCLGXr0cVpEVWZGT2GCvNZX3VI4wdaexF7+iRrtC4RQbsTjeySEYEsvcTdhHYpr
- cB55hwTLmHMWXxbRMBz2aqlXSU+26qe1fCIujUpnF/OK46RahutjcZ2pBT2joGjMOlUs
- 7D+kXJ6t1CAt6XOtzlrEqS+zUonSMfvOieO9Uss7UPEZ0gKlpPliIlDDIaZfLomZU0O7
- I56w==
-X-Gm-Message-State: APjAAAWLU/NJvWXPQ+wksSRvermSASdeo0xytU7WebAWQiIaAWXFcXTs
- SmsVmo6z4ho3KWb6lunlSYZwSGp6sKL8owx8oPg=
-X-Google-Smtp-Source: APXvYqx6gy2SiezBYVxCNFX0y4S7P2z/l2MUZWIDu9IBINqX69LmFc046Aug3tBhXJobpzrUhTTqryc2NmW89CYErdw=
-X-Received: by 2002:a50:91c4:: with SMTP id h4mr33376125eda.36.1573567933749; 
- Tue, 12 Nov 2019 06:12:13 -0800 (PST)
+ id 1iUX06-0003Wk-Eg; Tue, 12 Nov 2019 14:18:39 +0000
+Received: from ig2.spreadtrum.com (bjmbx01.spreadtrum.com [10.0.64.7])
+ by SHSQR01.spreadtrum.com with ESMTPS id xACEFOFK069216
+ (version=TLSv1 cipher=AES256-SHA bits=256 verify=NO);
+ Tue, 12 Nov 2019 22:15:25 +0800 (CST)
+ (envelope-from lvqiang.huang@unisoc.com)
+Received: from BJMBX01.spreadtrum.com (10.0.64.7) by BJMBX01.spreadtrum.com
+ (10.0.64.7) with Microsoft SMTP Server (TLS) id 15.0.847.32; Tue, 12 Nov 2019
+ 22:15:07 +0800
+Received: from BJMBX01.spreadtrum.com ([fe80::54e:9a:129d:fac7]) by
+ BJMBX01.spreadtrum.com ([fe80::54e:9a:129d:fac7%16]) with mapi id
+ 15.00.0847.030; Tue, 12 Nov 2019 22:14:55 +0800
+From: =?gb2312?B?u8bCwMe/IChMdnFpYW5nIEh1YW5nKQ==?= <lvqiang.huang@unisoc.com>
+To: Mark-PK Tsai <mark-pk.tsai@mediatek.com>
+Subject: Re: [PATCH] ARM: fix race in for_each_frame
+Thread-Topic: [PATCH] ARM: fix race in for_each_frame
+Thread-Index: AQHVmV2AMhVdltuogk6mbCoumJ6bbKeHlGHg
+Date: Tue, 12 Nov 2019 14:14:54 +0000
+Message-ID: <C1108AB0-9156-426F-A933-486B4F5C91CF@unisoc.com>
+References: <20191112132937.19335-1-mark-pk.tsai@mediatek.com>
+In-Reply-To: <20191112132937.19335-1-mark-pk.tsai@mediatek.com>
+Accept-Language: zh-CN, en-US
+Content-Language: zh-CN
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
 MIME-Version: 1.0
-References: <20191112132010.18274-1-linux@rasmusvillemoes.dk>
- <20191112132010.18274-3-linux@rasmusvillemoes.dk>
- <CA+h21hqw16o0TqOV1WWYYcOs3YWJe=xq_K0=miU+BFTA31OTmQ@mail.gmail.com>
- <6d4292fcb0cf290837306388bdfe9b0f@www.loen.fr>
- <CA+h21hpE-Nu_Sh1fRizUoEs082ev=9nzuumSXDrk-QTXdnEbzg@mail.gmail.com>
- <aee81d64979bb72b63a8889fb7193c3f@www.loen.fr>
-In-Reply-To: <aee81d64979bb72b63a8889fb7193c3f@www.loen.fr>
-From: Vladimir Oltean <olteanv@gmail.com>
-Date: Tue, 12 Nov 2019 16:12:02 +0200
-Message-ID: <CA+h21hqxpy-n6HBkyGSKFEm_CujG5x3Y3Wj-frj0OSwbVWgCng@mail.gmail.com>
-Subject: Re: [PATCH 2/2] ARM: dts: ls1021a-tsn: Use interrupts for the SGMII
- PHYs
-To: Marc Zyngier <maz@kernel.org>
+X-MAIL: SHSQR01.spreadtrum.com xACEFOFK069216
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_061215_348111_5C56C612 
-X-CRM114-Status: GOOD (  20.42  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191112_061835_953147_441F5722 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (olteanv[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,111 +70,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Andrew Lunn <andrew@lunn.ch>, netdev <netdev@vger.kernel.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- lkml <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
+ "alix.wu@mediatek.com" <alix.wu@mediatek.com>,
+ =?gb2312?B?s/6298C0IChFbmxhaSBDaHUp?= <enlai.chu@unisoc.com>,
+ "eddy.lin@mediatek.com" <eddy.lin@mediatek.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "yj.chiang@mediatek.com" <yj.chiang@mediatek.com>,
+ "phil.chang@mediatek.com" <phil.chang@mediatek.com>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>, "info@metux.net" <info@metux.net>,
+ "mike-sl.lin@mediatek.com" <mike-sl.lin@mediatek.com>,
+ "allison@lohutok.net" <allison@lohutok.net>
+Content-Type: text/plain; charset="gb2312"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 12 Nov 2019 at 16:04, Marc Zyngier <maz@kernel.org> wrote:
->
-> On 2019-11-12 15:03, Vladimir Oltean wrote:
-> > On Tue, 12 Nov 2019 at 15:49, Marc Zyngier <maz@kernel.org> wrote:
-> >>
-> >> On 2019-11-12 14:53, Vladimir Oltean wrote:
-> >> > On Tue, 12 Nov 2019 at 15:20, Rasmus Villemoes
-> >> > <linux@rasmusvillemoes.dk> wrote:
-> >> >>
-> >> >> From: Vladimir Oltean <olteanv@gmail.com>
-> >> >>
-> >> >> On the LS1021A-TSN board, the 2 Atheros AR8031 PHYs for eth0 and
-> >> >> eth1
-> >> >> have interrupt lines connected to the shared IRQ2_B LS1021A pin.
-> >> >>
-> >> >> Switching to interrupts offloads the PHY library from the task of
-> >> >> polling the MDIO status and AN registers (1, 4, 5) every second.
-> >> >>
-> >> >> Unfortunately, the BCM5464R quad PHY connected to the switch does
-> >> >> not
-> >> >> appear to have an interrupt line routed to the SoC.
-> >> >>
-> >> >> Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
-> >> >> Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-> >> >> ---
-> >> >>  arch/arm/boot/dts/ls1021a-tsn.dts | 4 ++++
-> >> >>  1 file changed, 4 insertions(+)
-> >> >>
-> >> >> diff --git a/arch/arm/boot/dts/ls1021a-tsn.dts
-> >> >> b/arch/arm/boot/dts/ls1021a-tsn.dts
-> >> >> index 5b7689094b70..135d36461af4 100644
-> >> >> --- a/arch/arm/boot/dts/ls1021a-tsn.dts
-> >> >> +++ b/arch/arm/boot/dts/ls1021a-tsn.dts
-> >> >> @@ -203,11 +203,15 @@
-> >> >>         /* AR8031 */
-> >> >>         sgmii_phy1: ethernet-phy@1 {
-> >> >>                 reg = <0x1>;
-> >> >> +               /* SGMII1_PHY_INT_B: connected to IRQ2, active
-> >> low
-> >> >> */
-> >> >> +               interrupts-extended = <&extirq 2
-> >> >> IRQ_TYPE_EDGE_FALLING>;
-> >> >>         };
-> >> >>
-> >> >>         /* AR8031 */
-> >> >>         sgmii_phy2: ethernet-phy@2 {
-> >> >>                 reg = <0x2>;
-> >> >> +               /* SGMII2_PHY_INT_B: connected to IRQ2, active
-> >> low
-> >> >> */
-> >> >> +               interrupts-extended = <&extirq 2
-> >> >> IRQ_TYPE_EDGE_FALLING>;
-> >> >>         };
-> >> >>
-> >> >>         /* BCM5464 quad PHY */
-> >> >> --
-> >> >> 2.23.0
-> >> >>
-> >> >
-> >> > +netdev and Andrew for this patch, since the interrupt polarity
-> >> > caught
-> >> > his attention in v1.
-> >>
-> >> Certainly, the comments and the interrupt specifier do not match.
-> >> Which one is true?
-> >>
-> >>          M.
-> >> --
-> >> Jazz is not dead. It just smells funny...
-> >
-> > The interrupt specifier certainly works. So that points to an issue
-> > with the description. What do you mean, exactly? Does "active low"
-> > mean "level-triggered"? How would you have described this?
->
-> Active Low definitely implies level triggered. And if that's how it
-> is described in the TRM, than the interrupt specifier is wrong, and
-> just *seem to work* because the level goes back to high between two
-> interrupts.
->
-> Also, shared *edge* interrupts do not work, full stop. So I'm pretty
-> convinced that what you have here is just wrong.
->
->          M.
-> --
-> Jazz is not dead. It just smells funny...
-
-Ok, I've tested both interrupts with IRQ_TYPE_LEVEL_LOW and they still
-work. I'll let Rasmus re-send if there is no trouble with the dtsi
-patch. Sorry for the trouble and thanks for teaching me something new.
-
-Cheers,
--Vladimir
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQo+INTaIDIwMTnE6jEx1MIxMsjVo6wyMTozMaOsTWFyay1QSyBUc2FpIDxtYXJrLXBrLnRzYWlA
+bWVkaWF0ZWsuY29tPiDQtLXAo7oNCj4gDQo+IFRoZSBzdl9wYywgd2hpY2ggaXMgc2F2ZWQgaW4g
+dGhlIHN0YWNrLCBtYXkgYmUgYW4gaW52YWxpZCBhZGRyZXNzDQo+IGlmIHRoZSB0YXJnZXQgdGhy
+ZWFkIGlzIHJ1bm5pbmcgb24gYW5vdGhlciBwcm9jZXNzb3IgaW4gdGhlIG1lYW50aW1lLg0KPiBJ
+dCB3aWxsIGNhdXNlIGtlcm5lbCBjcmFzaCBhdCBgbGRyIHIyLCBbc3ZfcGMsICMtNF1gLg0KPiAN
+Cj4gQ2hlY2sgaWYgc3ZfcGMgaXMgdmFsaWQgYmVmb3JlIHVzZSBpdCBsaWtlIHVud2luZF9mcmFt
+ZSBpbg0KPiBhcmNoL2FybS9rZXJuZWwvdW53aW5kLmMuDQo+IA0KPiBTaWduZWQtb2ZmLWJ5OiBN
+aWtlLVNMIExpbiA8bWlrZS1zbC5saW5AbWVkaWF0ZWsuY29tPg0KPiBTaWduZWQtb2ZmLWJ5OiBN
+YXJrLVBLIFRzYWkgPG1hcmstcGsudHNhaUBtZWRpYXRlay5jb20+DQo+IC0tLQ0KPiBhcmNoL2Fy
+bS9saWIvYmFja3RyYWNlLlMgfCA1ICsrKysrDQo+IDEgZmlsZSBjaGFuZ2VkLCA1IGluc2VydGlv
+bnMoKykNCj4gDQo+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9saWIvYmFja3RyYWNlLlMgYi9hcmNo
+L2FybS9saWIvYmFja3RyYWNlLlMNCj4gaW5kZXggNTgyOTI1MjM4ZDY1Li44NGYwNjM4MWJiZmIg
+MTAwNjQ0DQo+IC0tLSBhL2FyY2gvYXJtL2xpYi9iYWNrdHJhY2UuUw0KPiArKysgYi9hcmNoL2Fy
+bS9saWIvYmFja3RyYWNlLlMNCj4gQEAgLTY0LDYgKzY0LDExIEBAIGZvcl9lYWNoX2ZyYW1lOiAg
+ICB0c3QgICAgZnJhbWUsIG1hc2sgICAgICAgIEAgQ2hlY2sgZm9yIGFkZHJlc3MgZXhjZXB0aW9u
+cw0KPiAgICAgICAgc3ViICAgIHN2X3BjLCBzdl9wYywgb2Zmc2V0ICAgIEAgQ29ycmVjdCBQQyBm
+b3IgcHJlZmV0Y2hpbmcNCj4gICAgICAgIGJpYyAgICBzdl9wYywgc3ZfcGMsIG1hc2sgICAgQCBt
+YXNrIFBDL0xSIGZvciB0aGUgbW9kZQ0KPiANCj4gKyAgICAgICAgbW92ICAgIHIwLCBzdl9wYw0K
+PiArICAgICAgICBibCAgICBrZXJuZWxfdGV4dF9hZGRyZXNzICAgIEAgY2hlY2sgaWYgc3ZfcGMg
+aXMgdmFsaWQNCj4gKyAgICAgICAgY21wICAgIHIwLCAjMCAgICAgICAgICAgIEAgaWYgc3ZfcGMg
+aXMgbm90IGtlcm5lbCB0ZXh0DQo+ICsgICAgICAgIGJlcSAgICAxMDA2ZiAgICAgICAgICAgIEAg
+YWRkcmVzcywgYWJvcnQgYmFja3RyYWNlDQo+ICsNCg0KVGhlIHN2X3BjIGNhbiBiZSBhIGtlcm5l
+bCBtb2R1bGUgdGV4dC4gDQoNCj4gMTAwMzogICAgICAgIGxkciAgICByMiwgW3N2X3BjLCAjLTRd
+ICAgIEAgaWYgc3RtZmQgc3AhLCB7YXJnc30gZXhpc3RzLA0KPiAgICAgICAgbGRyICAgIHIzLCAu
+TGRzaSs0ICAgICAgICBAIGFkanVzdCBzYXZlZCAncGMnIGJhY2sgb25lDQo+ICAgICAgICB0ZXEg
+ICAgcjMsIHIyLCBsc3IgIzExICAgICAgICBAIGluc3RydWN0aW9uDQo+IC0tIA0KPiAyLjE4LjAN
+Cg0KDQo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09DQpUaGlzIGVtYWlsIChpbmNsdWRpbmcgaXRzIGF0dGFj
+aG1lbnRzKSBpcyBpbnRlbmRlZCBvbmx5IGZvciB0aGUgcGVyc29uIG9yIGVudGl0eSB0byB3aGlj
+aCBpdCBpcyBhZGRyZXNzZWQgYW5kIG1heSBjb250YWluIGluZm9ybWF0aW9uIHRoYXQgaXMgcHJp
+dmlsZWdlZCwgY29uZmlkZW50aWFsIG9yIG90aGVyd2lzZSBwcm90ZWN0ZWQgZnJvbSBkaXNjbG9z
+dXJlLiBVbmF1dGhvcml6ZWQgdXNlLCBkaXNzZW1pbmF0aW9uLCBkaXN0cmlidXRpb24gb3IgY29w
+eWluZyBvZiB0aGlzIGVtYWlsIG9yIHRoZSBpbmZvcm1hdGlvbiBoZXJlaW4gb3IgdGFraW5nIGFu
+eSBhY3Rpb24gaW4gcmVsaWFuY2Ugb24gdGhlIGNvbnRlbnRzIG9mIHRoaXMgZW1haWwgb3IgdGhl
+IGluZm9ybWF0aW9uIGhlcmVpbiwgYnkgYW55b25lIG90aGVyIHRoYW4gdGhlIGludGVuZGVkIHJl
+Y2lwaWVudCwgb3IgYW4gZW1wbG95ZWUgb3IgYWdlbnQgcmVzcG9uc2libGUgZm9yIGRlbGl2ZXJp
+bmcgdGhlIG1lc3NhZ2UgdG8gdGhlIGludGVuZGVkIHJlY2lwaWVudCwgaXMgc3RyaWN0bHkgcHJv
+aGliaXRlZC4gSWYgeW91IGFyZSBub3QgdGhlIGludGVuZGVkIHJlY2lwaWVudCwgcGxlYXNlIGRv
+IG5vdCByZWFkLCBjb3B5LCB1c2Ugb3IgZGlzY2xvc2UgYW55IHBhcnQgb2YgdGhpcyBlLW1haWwg
+dG8gb3RoZXJzLiBQbGVhc2Ugbm90aWZ5IHRoZSBzZW5kZXIgaW1tZWRpYXRlbHkgYW5kIHBlcm1h
+bmVudGx5IGRlbGV0ZSB0aGlzIGUtbWFpbCBhbmQgYW55IGF0dGFjaG1lbnRzIGlmIHlvdSByZWNl
+aXZlZCBpdCBpbiBlcnJvci4gSW50ZXJuZXQgY29tbXVuaWNhdGlvbnMgY2Fubm90IGJlIGd1YXJh
+bnRlZWQgdG8gYmUgdGltZWx5LCBzZWN1cmUsIGVycm9yLWZyZWUgb3IgdmlydXMtZnJlZS4gVGhl
+IHNlbmRlciBkb2VzIG5vdCBhY2NlcHQgbGlhYmlsaXR5IGZvciBhbnkgZXJyb3JzIG9yIG9taXNz
+aW9ucy4gDQqxvtPKvP68sMbkuL28/r7f09Cxo8Pc0NTWyqOsyty3qMLJsaO7pLK7tcPQucK2o6y9
+9reiy824+LG+08q8/sv51rjM2LaoytW8/sjLoaPRz737t8e+rcrayKjKudPDoaLQ+7SroaK3orK8
+u/K4tNbGsb7Tyrz+u/LG5MTayN2ho8j0t8e4w8zYtqjK1bz+yMujrMfrzvDUxLbBoaK4tNbGoaIg
+yrnTw7vyxfvCtrG+08q8/rXEyM66zsTayN2ho8j0zvPK1bG+08q8/qOsx+u008+1zbPW0NPAvsPQ
+1Mm+s/2xvtPKvP68sMv509C4vbz+o6yyotLUu9i4tNPKvP61xLe9yr28tL/MuObWqreivP7Iy6Gj
+zt63qLGj1qS7pcGqzfjNqNDFvLDKsaGisLLIq6Gizt7O87vyt8C2vqGjt6K8/sjLttTIzrrOtO3C
+qb75sruz0LWj1PDIzqGjDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
