@@ -2,53 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78BD7F952C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:09:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14106F9551
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:15:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9hb15Loo8OxT+yIX5ShLJZoMHVpRJC5l5/f/ITfrJjw=; b=JGddSZ/jSrfWf7
-	JgRckzAZIFks8AixNBo+jWHr6eR4hu9VfWewrMkx8IrlP3qDOyDj44UPIthnEIG1fSpcaNRvtD2Vn
-	24pV4eA3VKYczZ40hxeUSd2oIoxFduv9bPksuNGmrSi4/HBscV/mTvCYWkAToZ/ncGal4p4OCbbac
-	1mK0Y+wV4grFYUDq+AGrKWcvATNmB5mDBCSKSTybribq0qCcagKvIX+gVgfz8JPdPSF2DrmefVWKC
-	3VuU/mWr+okMGvPM8wkGZW+ZKSkHOU34tSfJmjy7XZgg7TZGTPX0fJIpvG+oi1oERwChVdZincB7z
-	gLgloXLg45mIwjMfygGg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BTA5OPiLpYK0zsypreqnoDTWUMQE3v5RyaTjtdfQ4LU=; b=cGs
+	9MZNo9uqbG2AFrtvDjkkCtRM3p0n/1voQJcxxNvEOoJK376m6Zow0PzWDHWKyEmPksTNSo3sj0GOJ
+	T8pPCpqp8o3a7DUtC1+CghgTw2TC+oaDku0VP3hPMcPt4JGchDwTVgIJ91fBuNal34s6bIx+l/Z/k
+	mmg/IVNwM3JMz9jUtJy0J/gJCnp/HqPAnFuZ4J+ipGk3WGRbLuS2xXwYQx/mschFptU57CSB58cp9
+	BUuK6ZysFWYuYMKEK+WqMy/vU1UCeYCUVBlqzRolhFdSktN+wvo//9GO4J0wDhPoO7zLB0slZ/Ztv
+	tl/RHJa5s4qP3BSCAT9OUlH3BVgjqiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUYjA-0002tJ-00; Tue, 12 Nov 2019 16:09:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUYiz-0002sQ-CF
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 16:09:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 639A3D6E;
- Tue, 12 Nov 2019 08:09:00 -0800 (PST)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 29C753F534; Tue, 12 Nov 2019 08:08:59 -0800 (PST)
-Date: Tue, 12 Nov 2019 16:08:57 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Vincent Whitchurch <vincent.whitchurch@axis.com>
-Subject: Re: [PATCH v2] buffer: Fix I/O error due to ARM read-after-read hazard
-Message-ID: <20191112160855.GA22025@arrakis.emea.arm.com>
-References: <20191112130244.16630-1-vincent.whitchurch@axis.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191112130244.16630-1-vincent.whitchurch@axis.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1iUYpY-0006mZ-CW; Tue, 12 Nov 2019 16:15:48 +0000
+Received: from forward106p.mail.yandex.net ([2a02:6b8:0:1472:2741:0:8b7:109])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1iUYpH-0006cS-Rv
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 16:15:34 +0000
+Received: from mxback17j.mail.yandex.net (mxback17j.mail.yandex.net
+ [IPv6:2a02:6b8:0:1619::93])
+ by forward106p.mail.yandex.net (Yandex) with ESMTP id B9C081C80B74;
+ Tue, 12 Nov 2019 19:15:25 +0300 (MSK)
+Received: from sas2-b0ca3cd64eaa.qloud-c.yandex.net
+ (sas2-b0ca3cd64eaa.qloud-c.yandex.net [2a02:6b8:c14:718c:0:640:b0ca:3cd6])
+ by mxback17j.mail.yandex.net (mxback/Yandex) with ESMTP id XWnrc2GOJP-FOuKbAxa;
+ Tue, 12 Nov 2019 19:15:25 +0300
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=emlid.com; s=mail;
+ t=1573575325; bh=rtRQozycSUUlCTa8Bg9BnGG8vc/daDegUx3PTAif/aE=;
+ h=Subject:To:From:Cc:Date:Message-Id;
+ b=m/mq7iI18bmFn3U9QCH2ENxYZDMe40BV4IjHw4VWzLQd3uWYfsQHCv1cZ2WFLfE9Y
+ 1AGE5hgj5mPauyYwyZsvXcFnGe4bxM6OWHnXbuIrj9Kp4KNTFsOUn2vZpbdRvpF6Dh
+ 4/TZXQ34f/l/0BAkamHTgMddFQHJLjKtbWUXnn7Y=
+Authentication-Results: mxback17j.mail.yandex.net;
+ dkim=pass header.i=@emlid.com
+Received: by sas2-b0ca3cd64eaa.qloud-c.yandex.net (smtp/Yandex) with ESMTPSA
+ id xY2rOY0rn4-FOUCsr3m; Tue, 12 Nov 2019 19:15:24 +0300
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (Client certificate not present)
+From: Georgii Staroselskii <georgii.staroselskii@emlid.com>
+To: mripard@kernel.org, wens@csie.org, robh+dt@kernel.org, mark.rutland@arm.com
+Subject: [PATCH v2 0/3] Neutis N5H3 support
+Date: Tue, 12 Nov 2019 19:15:17 +0300
+Message-Id: <1573575320-29546-1-git-send-email-georgii.staroselskii@emlid.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_080903_560057_65DFC8C9 
-X-CRM114-Status: GOOD (  15.71  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191112_081532_111043_BD89828D 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:6b8:0:1472:2741:0:8b7:109 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,64 +81,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: axboe@kernel.dk, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Vincent Whitchurch <rabinv@axis.com>, torvalds@linux-foundation.org,
- linux@armlinux.org.uk, linux-kernel@vger.kernel.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-arm-kernel@lists.infradead.org,
+ Georgii Staroselskii <georgii.staroselskii@emlid.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 12, 2019 at 02:02:44PM +0100, Vincent Whitchurch wrote:
-> On my dual-core ARM Cortex-A9, reading from squashfs (over
-> dm-verity/ubi/mtd) in a loop for hundreds of hours invariably results in
-> a read failure in squashfs_read_data().  The errors occur because the
-> buffer_uptodate() check fails after wait_on_buffer().  Further debugging
-> shows that the bh was in fact uptodate and that there is no actual I/O
-> error in the lower layers.
-> 
-> The problem is caused by the read-after-read hazards in the ARM
-> Cortex-A9 MPCore (erratum #761319, see [1]).  The code generated by the
-> compiler for the combination of the wait_on_buffer() and
-> buffer_uptodate() calls reads the flags value twice from memory (see the
-> excerpt of the assembly below).  The new value of the BH_Lock flag is
-> seen but the new value of BH_Uptodate is not even though both the bits
-> are read from the same memory location.
-> 
->  27c:	9d08      	ldr	r5, [sp, #32]
->  27e:	2400      	movs	r4, #0
->  280:	e006      	b.n	290 <squashfs_read_data+0x290>
->  282:	6803      	ldr	r3, [r0, #0]
->  284:	07da      	lsls	r2, r3, #31
->  286:	f140 810d 	bpl.w	4a4 <squashfs_read_data+0x4a4>
->  28a:	3401      	adds	r4, #1
->  28c:	42bc      	cmp	r4, r7
->  28e:	da08      	bge.n	2a2 <squashfs_read_data+0x2a2>
->  290:	f855 0f04 	ldr.w	r0, [r5, #4]!
->  294:	6803      	ldr	r3, [r0, #0]
->  296:	0759      	lsls	r1, r3, #29
->  298:	d5f3      	bpl.n	282 <squashfs_read_data+0x282>
->  29a:	f7ff fffe 	bl	0 <__wait_on_buffer>
-> 
-> Work around this problem by adding a DMB between the two reads of
-> bh->flags, as recommended in the ARM document.  With this barrier, no
-> failures have been seen in more than 5000 hours of the same test.
-> 
-> [1] http://infocenter.arm.com/help/topic/com.arm.doc.uan0004a/UAN0004A_a9_read_read.pdf
+Emlid Neutis board has another variant with H3 instead of H5. This patchset
+adds support for this board by moving common bits to
+sunxi-h3-h5-emlid-neutis.dtsi and then including it in processor-specific DTS.
 
-I thought we were going to fix the compiler. I found an old thread here:
+Changes from V1:
 
-https://gcc.gnu.org/ml/gcc-patches/2014-06/msg00714.html
+- moved HDMI nodes from DTSI to DTS
+- added dt-bindings for Neutis N5H3
+- made use of an array of pins in gpio-regulator node
 
-Also cc'ing Richard Earnshaw as he may been involved in the gcc
-discussion at the time.
+Georgii Staroselskii (3):
+  arm: dts: allwinner: Split out non-SoC specific parts of Neutis N5
+  arm: dts: sunxi: Add Neutis N5H3 support
+  dt-bindings: arm: sunxi: add Neutis N5H3
 
-While you can add some barrier here, there may be other cases where this
-can go wrong.
+ Documentation/devicetree/bindings/arm/sunxi.yaml   |   6 +
+ arch/arm/boot/dts/Makefile                         |   1 +
+ .../dts/sun8i-h3-emlid-neutis-n5h3-devboard.dts    |  72 +++++++++
+ arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3.dtsi  |  11 ++
+ arch/arm/boot/dts/sunxi-h3-h5-emlid-neutis.dtsi    | 170 +++++++++++++++++++++
+ .../sun50i-h5-emlid-neutis-n5-devboard.dts         |  95 +-----------
+ .../dts/allwinner/sun50i-h5-emlid-neutis-n5.dtsi   |  64 +-------
+ 7 files changed, 265 insertions(+), 154 deletions(-)
+ create mode 100644 arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3-devboard.dts
+ create mode 100644 arch/arm/boot/dts/sun8i-h3-emlid-neutis-n5h3.dtsi
+ create mode 100644 arch/arm/boot/dts/sunxi-h3-h5-emlid-neutis.dtsi
 
 -- 
-Catalin
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
