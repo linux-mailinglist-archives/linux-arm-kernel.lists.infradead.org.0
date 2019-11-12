@@ -2,82 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9FA9F9B4C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 21:55:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02245F9B53
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 21:56:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=11bqSu4JaxqT47IqejLf/MXyu5FkNUbMSUtXca4M0kY=; b=E5kjyX6N9fziqC
-	5mzg0ir1sOxOeypsTeihVSlswj7t6vG7GciI/AyUWpQkskk1h5HA79uVJjyMU92DYRXAxtiycDGCU
-	lOWTv3MOklzNs3T2Fy+um5r8du4kI2gZ9+8mZJ2nVZGca/4+/g6eltz8MMO6Uds13AIx2KfDl3538
-	70UPJDDb396JjPsbRylReAGLdgA/hhH5z5MqpYRKy8xbjo0uAQd293bAsu5jCnEQ5RA+ytZJoFTSt
-	cNWu4dMu1204oO/pkxuD6dGU6O1WbufUfozmluXrNavyA99lHIEDmeuIrY2gKrZeWpf4y345WmJCP
-	g48UTmrM7zpbPjJfshlQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+0iJYUGlChV1yaQRlKkkIWD7/YhOQrx0Bwrws9zDduI=; b=GIOrW102hcHb5I
+	JsDInGDe3EBNkkawEC76q9KwVR9XqQwsAvQtDR1prNHPQ+FVLZACTCURCD6TGJwm8XxaYOWPLlWmF
+	c4qiUrS+v4bG2ZxY/dCN5juLMIhWIK0OsjU+qRQoUAE2NM1AmroSrfuWdAFsFqxiaph6LrlqXtvoo
+	rZ5SCOjMvC59A5c0F6CPSB1BBxbkIbsZeil/XuFdJmFmUh9MYyCOV6xmWNv8dVqLR4oMMm0iy/wWB
+	6SWX0SKK3jqf6FHzieJz64zi4/2R6nXmsw5WQDEL7SOo2pMP4ndmpmnzrsWT+Xm4vae7wDt4NKQ2n
+	2YmVxh1uG2FP0if6uxgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUdCD-0007Fp-S4; Tue, 12 Nov 2019 20:55:29 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iUdDE-0007z1-O8; Tue, 12 Nov 2019 20:56:32 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUdBw-0006Nf-To
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 20:55:14 +0000
-Received: by mail-pf1-x443.google.com with SMTP id c13so14199386pfp.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 Nov 2019 12:55:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=p3sGAQxZSRJH4UZHNpIdLrEGYPs7j+wXkkL7B23DozY=;
- b=jzJxHJOhBgrxXGo+3hwTEULMtqhW32uUMjkXF6xooOB4YLF0fDp9kjF2ZcEXOqjPmZ
- wb3eB6O717UcTt+tyAbO8B80zA3u9jbuMXSpdMqJOUrOIw/6tlJouhIZBM+a5PnCN1vj
- lat++UKcoOXZLI/EBlS4RFvn1FgV/ybJGuQ4A=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=p3sGAQxZSRJH4UZHNpIdLrEGYPs7j+wXkkL7B23DozY=;
- b=n4Ds+ATovn5UMoD6cZOzcE+UoJyGEGKwTdbI5eBoTaVHZaYbWMzbNnRoRl1uqvsh+R
- zsyPSaDi432vxF/HrKcG2Lz3idrST9y4E17EKrl8xIjsU4RikiHJXf2Gjn1/6ILb3mG5
- lfk8R+Do5g/DD9uatv0DoDYWu1XLKyAzaGNF3/vY5+IIUf9IdbRKFpt5SvguOd6x3cpm
- ya07Vwn7GPS0nnOPk54tax2Tmcv+FLuccoKthbdLOy6cUL9BNHMEIPRxqKIm1CgsWOLl
- JV07yUi5IbawdLMHoFHENRo6Mejo6WY28uqnOFc6eVNDJZo8t2zXx1n7U67W2s25ywP+
- 5FxQ==
-X-Gm-Message-State: APjAAAW2XuFGN3Ksp1aoHZqQ6ncnSIJ4uYUH4Sw35F3cKQ4t3jOTnzWZ
- q5HMSC+948C/2W5c7kuczry++w==
-X-Google-Smtp-Source: APXvYqwhpXomPvDY55lP5tiV27rDluqLmojMV7DK9uMTENiwD2XDmRYC37Ogc+dw1yE3QtfbhDL3ZQ==
-X-Received: by 2002:a17:90a:cd03:: with SMTP id
- d3mr9056375pju.137.1573592111764; 
- Tue, 12 Nov 2019 12:55:11 -0800 (PST)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id l74sm11993pje.29.2019.11.12.12.55.10
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 Nov 2019 12:55:10 -0800 (PST)
-Date: Tue, 12 Nov 2019 12:55:09 -0800
-From: Kees Cook <keescook@chromium.org>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH v2 11/29] vmlinux.lds.h: Replace RODATA with RO_DATA
-Message-ID: <201911121252.25720DC6@keescook>
-References: <20191011000609.29728-1-keescook@chromium.org>
- <20191011000609.29728-12-keescook@chromium.org>
- <CAMuHMdXfPyti1wFBb0hhf3CeDSQ=zVv7cV-taeYCmDswMQkXPQ@mail.gmail.com>
- <201911110922.17A2112B0@keescook>
- <CAMuHMdUJ8QPvqf51nVmOg1Zm20SNT7pXR72z=qmco=ecwawZ7A@mail.gmail.com>
+ id 1iUdD4-0007y9-Ip
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 20:56:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1573592180;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=iWnDUrwMNWzeWSYABRZ4rErF0Ev5zOYIDNIsGxLphw8=;
+ b=IgPrwTZErTHR2TmPEIJ0lRiIVKIcmM1mPJNAF7b/rx7rJ6u6ydjiEEWPKKy/BOV5l3nCF0
+ xKHSRYUVjxQf9QHdA59z6q8O6H3sloPsyADjBUVrDOcLPN1IC/D0rxCb6dNBbHutVLofxc
+ U+X1yeyuYJrpx5Q/eP2PzK2yBIVqg1c=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-195-x35vS6cbODWuRti3I0hJ_Q-1; Tue, 12 Nov 2019 15:56:17 -0500
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8BDBE800C61;
+ Tue, 12 Nov 2019 20:56:16 +0000 (UTC)
+Received: from [10.36.116.54] (ovpn-116-54.ams2.redhat.com [10.36.116.54])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 52A2D66089;
+ Tue, 12 Nov 2019 20:56:14 +0000 (UTC)
+Subject: Re: [kvm-unit-tests PATCH 05/17] arm: gic: Prepare IRQ handler for
+ handling SPIs
+To: Andre Przywara <andre.przywara@arm.com>, Andrew Jones
+ <drjones@redhat.com>, Paolo Bonzini <pbonzini@redhat.com>
+References: <20191108144240.204202-1-andre.przywara@arm.com>
+ <20191108144240.204202-6-andre.przywara@arm.com>
+From: Auger Eric <eric.auger@redhat.com>
+Message-ID: <76947b00-816b-9363-a9d6-5e4ef92b74c5@redhat.com>
+Date: Tue, 12 Nov 2019 21:56:12 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdUJ8QPvqf51nVmOg1Zm20SNT7pXR72z=qmco=ecwawZ7A@mail.gmail.com>
+In-Reply-To: <20191108144240.204202-6-andre.przywara@arm.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-MC-Unique: x35vS6cbODWuRti3I0hJ_Q-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_125513_017801_F1883690 
-X-CRM114-Status: GOOD (  14.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191112_125622_707757_8A24FE22 
+X-CRM114-Status: GOOD (  17.95  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -87,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,63 +93,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Michal Simek <monstr@monstr.eu>,
- the arch/x86 maintainers <x86@kernel.org>,
- "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
- linux-c6x-dev@linux-c6x.org, Arnd Bergmann <arnd@arndb.de>,
- linux-xtensa@linux-xtensa.org, Michael Ellerman <mpe@ellerman.id.au>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, Borislav Petkov <bp@alien8.de>,
- Parisc List <linux-parisc@vger.kernel.org>, Andy Lutomirski <luto@kernel.org>,
- alpha <linux-alpha@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rick Edgecombe <rick.p.edgecombe@intel.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Marc Zyngier <maz@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, kvm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 11, 2019 at 07:08:51PM +0100, Geert Uytterhoeven wrote:
-> Hi Kees,
-> 
-> On Mon, Nov 11, 2019 at 6:23 PM Kees Cook <keescook@chromium.org> wrote:
-> > On Mon, Nov 11, 2019 at 05:58:06PM +0100, Geert Uytterhoeven wrote:
-> > > On Fri, Oct 11, 2019 at 2:07 AM Kees Cook <keescook@chromium.org> wrote:
-> > > > There's no reason to keep the RODATA macro: replace the callers with
-> > > > the expected RO_DATA macro.
-> > > >
-> > > > Signed-off-by: Kees Cook <keescook@chromium.org>
-> > > > ---
-> > > >  arch/alpha/kernel/vmlinux.lds.S      | 2 +-
-> > > >  arch/ia64/kernel/vmlinux.lds.S       | 2 +-
-> > > >  arch/microblaze/kernel/vmlinux.lds.S | 2 +-
-> > > >  arch/mips/kernel/vmlinux.lds.S       | 2 +-
-> > > >  arch/um/include/asm/common.lds.S     | 2 +-
-> > > >  arch/xtensa/kernel/vmlinux.lds.S     | 2 +-
-> > > >  include/asm-generic/vmlinux.lds.h    | 4 +---
-> > > >  7 files changed, 7 insertions(+), 9 deletions(-)
-> > >
-> > > Somehow you missed:
-> > >
-> > >     arch/m68k/kernel/vmlinux-std.lds:  RODATA
-> > >     arch/m68k/kernel/vmlinux-sun3.lds:      RODATA
-> >
-> > Argh. I've sent a patch; sorry and thanks for catching this. For my own
-> > cross-build testing, which defconfig targets will hit these two linker
-> > scripts?
-> 
-> vmlinux-sun3.lds: sun3_defconfig
-> vmlinux-std.lds: All other classic 680x0 targets with an MMU, e.g. plain
->                  defconfig aka multi_defconfig.
+Hi Andre,
 
-Excellent, thank you; I've updated my multi-arch build list. :)
+On 11/8/19 3:42 PM, Andre Przywara wrote:
+> So far our IRQ handler routine checks that the received IRQ is actually
+> the one SGI (IPI) that we are using for our testing.
+> 
+> To make the IRQ testing routine more versatile, also allow the IRQ to be
+> one test SPI (shared interrupt).
+> We use the penultimate IRQ of the first SPI group for that purpose.
+I don't get the above sentence. What do you mean by group here?
+> 
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> ---
+>  arm/gic.c | 9 +++++++--
+>  1 file changed, 7 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arm/gic.c b/arm/gic.c
+> index eca9188..c909668 100644
+> --- a/arm/gic.c
+> +++ b/arm/gic.c
+> @@ -23,6 +23,7 @@
+>  
+>  #define IPI_SENDER	1
+>  #define IPI_IRQ		1
+> +#define SPI_IRQ		(GIC_FIRST_SPI + 30)
+>  
+>  struct gic {
+>  	struct {
+> @@ -162,8 +163,12 @@ static void irq_handler(struct pt_regs *regs __unused)
+>  
+>  	smp_rmb(); /* pairs with wmb in stats_reset */
+>  	++acked[smp_processor_id()];
+> -	check_ipi_sender(irqstat);
+> -	check_irqnr(irqnr, IPI_IRQ);
+> +	if (irqnr < GIC_NR_PRIVATE_IRQS) {
+> +		check_ipi_sender(irqstat);
+> +		check_irqnr(irqnr, IPI_IRQ);
+> +	} else {
+> +		check_irqnr(irqnr, SPI_IRQ);
+I think I would rather have different handlers per test.
+I have rebased the ITS series and I use a different LPI handler there.
+I think you shouldn't be obliged to hardcode a specific intid in the
+handler.
 
--- 
-Kees Cook
+Can't we have
+static void setup_irq(handler_t handler)?
+
+Thanks
+
+Eric
+
+> +	}
+>  	smp_wmb(); /* pairs with rmb in check_acked */
+>  }
+>  
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
