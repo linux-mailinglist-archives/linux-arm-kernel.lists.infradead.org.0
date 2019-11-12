@@ -2,89 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BEA5F9775
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 18:43:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBA2AF97B8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 18:54:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AU8rRIqAzDaLMnsNTYyX683hIea2SLRYXD6UzHwoYTQ=; b=jTvVvBY/fVXjmH
-	9qBwAiTgRtht7ANMzzdUDPwne9PL4AeyqUJa7+AmPrpt5KQJTShpGm31B+mJ9HROqPFo7VS7p1NbH
-	ZkF9hpfW7AV+l4/5bwTlmkgDHgETeaERkHCwXKZvnWtJuu23KwYVLy2dwLimu6eafLVGk+2qgVpKJ
-	ffaDa3iqySsSBdTfUKAx+V4/zTRoEfAavxuCeGyhuplg+wZi3KhhcFo++Q/JPxO3i95plk2IQWVej
-	u1GwHdYQseHg5Do1+Lxouj4rjFV/i6wl4+2w1r7vkB7+BE1S6tiEDpBGXqKzEtYqXLLEF04Ten3gw
-	h8LTAkZ+XULzlWAkyrwA==;
+	List-Owner; bh=l/70tbRySTTjCcjwlAXWLSAFCpGdVhhTaBVDldrtoj4=; b=Pw2GKJp/1dVp/A
+	RH7z2odiwhpRB4YPXpa2M/S4ET4Zx0ACZrRAlqbKO0g3aoIq4T0/RJXN/4ePqvvlTOf4VGao4260l
+	FuMeUS1AuVsZf2cpyifuiWxIUXgR7Df3OwJm/E6FeV4egJ59YnPgb3FxC2J64PDKyLBaojczZv08w
+	pfEujR0voGuRuQvxfBECYZhP9/HwQccFZmTfIiYEcVZUhJWblA3p+hcLRr2Lxs9SflruuMcsfZ27N
+	FLtrIMOtPHLt4cJRFP5QrG3HOOmSIj0PrzWitqZUPSf5dqWjdfagzbaa85wSCXVCFoLq5cZuZmflV
+	DYmVm+GuDH+IDGv/MIXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUaCT-00045U-O3; Tue, 12 Nov 2019 17:43:33 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iUaNC-0008CM-Jc; Tue, 12 Nov 2019 17:54:38 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUaCI-00044F-RF
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 17:43:26 +0000
-Received: by mail-pg1-x541.google.com with SMTP id q22so12343127pgk.2
+ id 1iUaN2-0008An-4f
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 17:54:29 +0000
+Received: by mail-lf1-x141.google.com with SMTP id d6so13187859lfc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 Nov 2019 09:43:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ Tue, 12 Nov 2019 09:54:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=w7MsKAbnhTOI/PwrqDE4qAaT5Rd571pVr2jNCX1vMLU=;
- b=cNd0enXkHOlBT1RG/B0zjwD+dSmow8c5nRzzi8wByRqtyyGRqlP/90puPVUHT2bUvK
- mQbcgkMcKJEggwR6BNgwUe1k3iHRcU9Nv+09wp+5mSHD85bbCwFpPmC1Bq/N6KycgvLc
- ktBjH+xZqmnKF96hvkiWDDnKXCucxoU7OZ2iPuTzsZieGoXXvmVO8nkdSVmcKoQ0Sag5
- 1wb5p1gG2njNuZjWDs23kq4PuD0d3VD2P6xrsZEftYQbFuKC9dq5RM4h98lnbR6yHj+6
- V3hTuXYKq51KvsQAjJmhlCEiu8IU0QIfTP+HvBkhjozUwwD6bX/8o2pKUCVaRPm4q9kZ
- e6Ow==
+ :cc; bh=C9/3cBw+s1St4spxQYIlofga3jANKje6wVfYU7Z8I14=;
+ b=XArryZV/v4RmtTO4Uz8dg1dXkxZB1fxbh+wisjfXATawAXtZq8WaEDH0Xo5G0TfMHC
+ GpvFN/7I4mKoAqw8+MhDIyW+CxF8fSw7n3q6QTJsVFKwHaHAuMEbhXUmfpTnaN/xr2Pe
+ /LxmamUpQTbHpSF6mu+lfYlInTwgYktnh3+xc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=w7MsKAbnhTOI/PwrqDE4qAaT5Rd571pVr2jNCX1vMLU=;
- b=CbGQFEC24i3cHX+WrBEybwxY8xT2G1hFnzVsQbVAzRMbMLS9WFlRT6NwnRgLaKLhhE
- a6RM+QeeKCKc2Pl3MSRhkxCjreusdqbMuuDVCUGEHKKI21LtYg8WcEjMyxXVha/NpKgd
- ehwz+jU1awf1wG5qvb1Q+Qz9xRUUK4sfJS328o8Ih8ZvAXS9sP5RtDzsPrJC1Afp4zNk
- qhAUa2w8lpSCANL8cEFk2Aop6GJ3jJJ7YKfteCQrqmhO2fdQGjfRMZIwC00W2NSzbrEH
- txxfulFEQ4fFE3V9SVDRFSt2KIWSW1/6r90h2Gtfb3znx0HH9Ki3eIFgzc1Ocb4iYkzo
- +rTQ==
-X-Gm-Message-State: APjAAAW2+MAlCu0ovnsV53+QTyTtynAZgodjTGSnUjtKo67mVV2y4iZV
- 8CpaVR2sgQXh3fUgp65ayzNLeg1W6tHobDc3putnMw==
-X-Google-Smtp-Source: APXvYqx+JS9StvmX4eZx5rKWcGRb9+ijR8E7BlPSw/fF4TuTW1nUyMaiKhwUBG/mh+SI5JEZV6dnXnwYygBOz5G6Css=
-X-Received: by 2002:a63:5a03:: with SMTP id o3mr36165069pgb.381.1573580597463; 
- Tue, 12 Nov 2019 09:43:17 -0800 (PST)
+ bh=C9/3cBw+s1St4spxQYIlofga3jANKje6wVfYU7Z8I14=;
+ b=tc7+nb7Bf6YTxm9PBsqbzj4dHl5d2RK8mEiva9ZoDMxyx64FtsJL0wFYD8F/iB+jnU
+ PJNxL5PO77AFDnEz8W6bi2rXAVYnIrshyk7KJzcR21F57tMO3QwA0aS34/uLNcbMdJ7v
+ WoNYGhV+2ISCmPzyW8lYTkABYComhEkT4FHdLpIuxMtyk7kZ+DDfl75mroe2aiLIyNFn
+ ipk66qAdJFFiKPn3vDcYFZmXtGabDGFl9WYLUweBv/BbWut1rGHjrgZEWdjMdg42tRPJ
+ ucr4KDpYY86PUxN3lIdx4AuTdZwqoZaHQtrx49Dm6KsNpZRczySgI+yxrueHfZiFhYtl
+ r5PQ==
+X-Gm-Message-State: APjAAAWXncnzwobQfKOvjKYOf37avN1DTJMPh1sI05Ne5gA0CErGoYSR
+ 83DgbT3iXd3QXSL/oqIAzieY5gHiGhY=
+X-Google-Smtp-Source: APXvYqyzDdsSvAq3QEZBPyLmZBc+RxpTwJ7HCx3QKaQ4cDh9/psqkn9W+DWL+7ozena/R8QUmF43uA==
+X-Received: by 2002:a05:6512:62:: with SMTP id
+ i2mr2721127lfo.187.1573581265172; 
+ Tue, 12 Nov 2019 09:54:25 -0800 (PST)
+Received: from mail-lj1-f177.google.com (mail-lj1-f177.google.com.
+ [209.85.208.177])
+ by smtp.gmail.com with ESMTPSA id w12sm6624484ljj.0.2019.11.12.09.54.23
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 12 Nov 2019 09:54:24 -0800 (PST)
+Received: by mail-lj1-f177.google.com with SMTP id n21so18828890ljg.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 12 Nov 2019 09:54:23 -0800 (PST)
+X-Received: by 2002:a05:651c:331:: with SMTP id
+ b17mr21291645ljp.133.1573581263488; 
+ Tue, 12 Nov 2019 09:54:23 -0800 (PST)
 MIME-Version: 1.0
-References: <20191110153043.111710-1-dima@golovin.in>
-In-Reply-To: <20191110153043.111710-1-dima@golovin.in>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Tue, 12 Nov 2019 09:43:05 -0800
-Message-ID: <CAKwvOdnwKP5gRVmvKou1UoqHn7Fi-uoGFeAMf2dWoaEy0fibzA@mail.gmail.com>
-Subject: Re: [PATCH] ARM: kbuild: use correct nm executable
-To: Dmitry Golovin <dima@golovin.in>
+References: <20191112130244.16630-1-vincent.whitchurch@axis.com>
+ <20191112160855.GA22025@arrakis.emea.arm.com>
+In-Reply-To: <20191112160855.GA22025@arrakis.emea.arm.com>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Tue, 12 Nov 2019 09:54:07 -0800
+X-Gmail-Original-Message-ID: <CAHk-=wi=LHkmw9SS066X_00TszjWzj-5t4F3ODua8W_tagVb=w@mail.gmail.com>
+Message-ID: <CAHk-=wi=LHkmw9SS066X_00TszjWzj-5t4F3ODua8W_tagVb=w@mail.gmail.com>
+Subject: Re: [PATCH v2] buffer: Fix I/O error due to ARM read-after-read hazard
+To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_094324_919328_5D7145D5 
-X-CRM114-Status: GOOD (  18.27  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191112_095428_199626_A9DF35F8 
+X-CRM114-Status: GOOD (  11.18  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,80 +103,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Nicolas Pitre <nico@fluxnic.net>, Matthias Maennich <maennich@google.com>,
- Russell King <linux@armlinux.org.uk>, Stefan Agner <stefan@agner.ch>,
- LKML <linux-kernel@vger.kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Nathan Chancellor <natechancellor@gmail.com>,
+Cc: Jens Axboe <axboe@kernel.dk>, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Vincent Whitchurch <rabinv@axis.com>,
+ Vincent Whitchurch <vincent.whitchurch@axis.com>,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Will Deacon <will@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Nov 10, 2019 at 7:31 AM Dmitry Golovin <dima@golovin.in> wrote:
+On Tue, Nov 12, 2019 at 8:09 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
 >
-> Since $(NM) variable can be easily overridden for the whole build, it's
-> better to use it instead of $(CROSS_COMPILE)nm. The use of $(CROSS_COMPILE)
-> prefixed variables where their calculated equivalents can be used is
-> incorrect. This fixes issues with builds where $(NM) is set to llvm-nm.
->
-> Link: https://github.com/ClangBuiltLinux/linux/issues/766
-> Signed-off-by: Dmitry Golovin <dima@golovin.in>
-> Suggested-by: Nick Desaulniers <ndesaulniers@google.com>
-> Cc: Matthias Maennich <maennich@google.com>
+> While you can add some barrier here, there may be other cases where this
+> can go wrong.
 
-Thanks for the patch Dima.
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-You should wait a week from when you first sent this patch, then
-submit it to rmk's patch queue:
-https://www.armlinux.org.uk/developer/patches/section.php?section=0
-You should create an account there.  On
-https://www.armlinux.org.uk/developer/patches/add.php,
+Yeah, that patch isn't going to be accepted. We don't add random arch
+workarounds to core header files like that - particularly when it's
+not at all clear that there aren't hundreds of other cases where that
+cpu errata can trigger..
 
-Summary -> first line from commit
-Kernel version -> base repo you wrote the patch against, see examples
-https://www.armlinux.org.uk/developer/patches/section.php?section=0
-Patch notes -> rest of commit body (with all these reviewed by tags added)
-
-More info: https://www.armlinux.org.uk/developer/
-
-> ---
->  arch/arm/boot/compressed/Makefile | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
-> index 9219389bbe61..a1e883c5e5c4 100644
-> --- a/arch/arm/boot/compressed/Makefile
-> +++ b/arch/arm/boot/compressed/Makefile
-> @@ -121,7 +121,7 @@ ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin -I$(obj)
->  asflags-y := -DZIMAGE
->
->  # Supply kernel BSS size to the decompressor via a linker symbol.
-> -KBSS_SZ = $(shell echo $$(($$($(CROSS_COMPILE)nm $(obj)/../../../../vmlinux | \
-> +KBSS_SZ = $(shell echo $$(($$($(NM) $(obj)/../../../../vmlinux | \
->                 sed -n -e 's/^\([^ ]*\) [AB] __bss_start$$/-0x\1/p' \
->                        -e 's/^\([^ ]*\) [AB] __bss_stop$$/+0x\1/p') )) )
->  LDFLAGS_vmlinux = --defsym _kernel_bss_size=$(KBSS_SZ)
-> @@ -165,7 +165,7 @@ $(obj)/bswapsdi2.S: $(srctree)/arch/$(SRCARCH)/lib/bswapsdi2.S
->  # The .data section is already discarded by the linker script so no need
->  # to bother about it here.
->  check_for_bad_syms = \
-> -bad_syms=$$($(CROSS_COMPILE)nm $@ | sed -n 's/^.\{8\} [bc] \(.*\)/\1/p') && \
-> +bad_syms=$$($(NM) $@ | sed -n 's/^.\{8\} [bc] \(.*\)/\1/p') && \
->  [ -z "$$bad_syms" ] || \
->    ( echo "following symbols must have non local/private scope:" >&2; \
->      echo "$$bad_syms" >&2; false )
-> --
-> 2.23.0
->
-
-
--- 
-Thanks,
-~Nick Desaulniers
+                Linus
 
 _______________________________________________
 linux-arm-kernel mailing list
