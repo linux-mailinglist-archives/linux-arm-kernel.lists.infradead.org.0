@@ -2,73 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA26CF9871
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 19:19:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7E87F9882
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 19:22:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2lYjhL2V2KEm0M9tBTsBZRG/poVecBcaLSxAhGPbv4E=; b=VciGqBn1tHHGm6
-	TNnhtjb0B2T64ulFOAHJQdc3E5wgeItH0BEtSPN8OUU4rZS7fP6R0WQHE0situiutPYc4qhDnCQMa
-	jofmcz7bQPRiEhAi7/hrhJh0LbLUAeXhCmQWsl1KEsWIKJx55zKdChc2CoO8yvmVCHsMD9N00DAVa
-	CScL/39K355pxinCJs8uHCALoQm9u36WKZq/hKC17iZHypk2VE0+cZOX9FWN08ldInMGRLuL4jyRy
-	VReQxWMRYC4l/1OF+cY/VfPyerttp67GxtS5PBYUw0y77H4NnA8RD/SykZVh/CxqLze24Bz/YcbAx
-	6ZqMU8ybgoh7ZZUB2B2w==;
+	List-Owner; bh=f4+JMFv29bRRDU5b5x1wSliIBeFPkyowu5iWWJa61r8=; b=N2nynrHRzFkJj6
+	SoYsQUVuZVtPw+z6XiGWh4pJk8T8yaKYI1uam6F7PlchZwum/Mao6wTKQEw+EPWh48dvPqQ5Ha2PG
+	0+8Tn78GlTyMAcuVGoowN7PSOb2j8hj7H4ixEIP7FhW8ehb+KeWksNvZJPwkBjxNuvDo/Ag/PNppt
+	pxvYNWjxlrv9LTWKlr7Fgtk7M4VEwgEFfjD2vys9MnEylT/TgZKqaNlLxGNEWfLTzqyQkMJuCaFMP
+	sKHmi/kmLhci6IUm9D6MG+Ux5tVTc5IzbzHRTJEnw0SbA3pTiwmyRXxPOvIstDjWudXwl5V2KvGEg
+	56+u7Dg6SEZ3Q7h6OPSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUakl-0001PL-0A; Tue, 12 Nov 2019 18:18:59 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1iUao8-0003LF-5t; Tue, 12 Nov 2019 18:22:28 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUakd-0001OR-Ii; Tue, 12 Nov 2019 18:18:52 +0000
-Received: by mail-ot1-f68.google.com with SMTP id c19so15108158otr.11;
- Tue, 12 Nov 2019 10:18:50 -0800 (PST)
+ id 1iUany-0003KH-Gi
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 18:22:20 +0000
+Received: by mail-oi1-x244.google.com with SMTP id m193so15720349oig.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 12 Nov 2019 10:22:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=1zuYDebMJ/okDBHwgQg9Ko+/yuHAItkCB5r+xtn/gVU=;
+ b=HaUYgNK5z9hM0u3S5tvMsLOyHp+WxD02EoIo6ZwYeUW263957WAxFCCsBoFlM9UhzK
+ +buTc7LtUro3bpc0TqG0u6Z6VeA/LlU1zEzpQukJQXqBNlaxMssvSwsGZW1czxmeFtIY
+ S0A/fo2QfFxG79cDQoAviXaOQt8kwPVegBvWo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=XTjrI15sJKpXt7dvewwDXHz0pV+jFPaIY5CBR1+M5B8=;
- b=GtlS3cPl3u82RMNCZsaEkoG96tLlpe6qOSi6jcCRZvTrgHLiubX2lqpYV2Xr1WfwIN
- 1uytoh6avP3OiB34qVcZonHXuNfWnaAf6FOeufvy5ouOa2lsgifX9LOZbmhSC4XEPMmA
- U9WfWWCeTpMMhmbJzAj8y7B8WiaTdgtSouabB/me8Jo+s5ZEtEZTMsWtFOGbqsf8HN0n
- Ahzq0yId7TLhLWf/9weFsCQcoMd6V/TzkVKIKh+KVQUHXtCjBy0DTbCxzBoKew+b5o2Z
- 6rL0DWczTwc3AuWb+8iOA2SKZMpxbzewFpgz7ZhSS7Up5EPWRREKJBFq8f1pErdAdPJi
- v/GQ==
-X-Gm-Message-State: APjAAAW0sOMTuLHFgGXr9eahk47CVN1HA7mlpZ4dXH/QoExs1KoPadJu
- zKJly4oPBJ3+i0uskJxssuy8Ez5jeXU8wN+kE0M=
-X-Google-Smtp-Source: APXvYqzD+0NmN816zDyFVW7CaZTRm/xP/54mEwEWwWhYEoQSfE5Y17LnYKLFTjDPUOLhknTl9poWdDu1inn62pEqTEM=
-X-Received: by 2002:a9d:5511:: with SMTP id l17mr2705329oth.145.1573582728911; 
- Tue, 12 Nov 2019 10:18:48 -0800 (PST)
+ bh=1zuYDebMJ/okDBHwgQg9Ko+/yuHAItkCB5r+xtn/gVU=;
+ b=f/DAuqWOLIe+iCyC5pAQjsGmBV95PCV+n05pbPv3bonvlEUEOxsiIxwaBldxG/C7/Z
+ g3LNSCI56PL0YhlrR8luFnYoV1M5/OORAok0oky/LR+ILIEjruQFnUu8zky2AIh4Z+kn
+ WAzeu32G2rIdC6hYvOqFLKG2SGUMKYEfw2vv6FVC/knRRhhn9jAifAkcx+R2GKgixe46
+ f/SxgdSEcETAvFMUiHmeUSqhVgaQTnR+Im6iHQD64vp65McPbgnMlOg4QesM3AIDAtT9
+ V1MyMF7pTIvABqhG34UDinOgGf6OqWMXEdX5nWTugeoHbM0CHZmeFL5WQYrsheldztId
+ MXUg==
+X-Gm-Message-State: APjAAAWNwY5gS/m7DxtJ29yI41Qn3+1ios7K7O6iIpOJxPPymtqg8aQY
+ yTS88G0GVFAhtM1c09F4fsDFF6IzVm3dpadmJzdgnQ==
+X-Google-Smtp-Source: APXvYqxWyFwnVlRZzJ+e7TO6RyGTp8L2UIQfJV/REpyHFM3+xax+tNjNNAtMmM4kjxFbc20wLGXUy8mwcfSl9sfs8Gs=
+X-Received: by 2002:aca:ead7:: with SMTP id i206mr292992oih.128.1573582935361; 
+ Tue, 12 Nov 2019 10:22:15 -0800 (PST)
 MIME-Version: 1.0
-References: <20191112141819.GA22076@localhost.localdomain>
-In-Reply-To: <20191112141819.GA22076@localhost.localdomain>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 12 Nov 2019 19:18:37 +0100
-Message-ID: <CAMuHMdW2aXF1dcs74joHu4q9xDoPAGmNFwUuVtPVSfFx9EgMmA@mail.gmail.com>
-Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
-To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+References: <20191112175940.GA13539@lst.de>
+In-Reply-To: <20191112175940.GA13539@lst.de>
+From: Daniel Vetter <daniel@ffwll.ch>
+Date: Tue, 12 Nov 2019 19:22:01 +0100
+Message-ID: <CAKMK7uGN4=b-aaymXhs8MaS6GeShy8KMuTYv2O2L0uZBatQJtA@mail.gmail.com>
+Subject: Re: [PATCH] drm/bridge: fix anx6345 compilation for v5.5
+To: Torsten Duwe <duwe@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_101851_613240_C94A7D08 
-X-CRM114-Status: GOOD (  15.04  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191112_102218_610095_5DE74A59 
+X-CRM114-Status: GOOD (  22.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,72 +87,157 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Patrice Chotard <patrice.chotard@st.com>, Paul Cercueil <paul@crapouillou.net>,
- Eric Anholt <eric@anholt.net>, linux-stm32@st-md-mailman.stormreply.com,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Gregory Clement <gregory.clement@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Andy Gross <agross@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>,
- Matti Vaittinen <mazziesaccount@gmail.com>, Ray Jui <rjui@broadcom.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- linux-mediatek@lists.infradead.org,
- linux-rpi-kernel <linux-rpi-kernel@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Scott Branden <sbranden@broadcom.com>, Sean Wang <sean.wang@kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Stefan Wahren <wahrenst@gmx.net>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-oxnas@groups.io
+ Maxime Ripard <mripard@kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Harald Geyer <harald@ccbib.org>, Sean Paul <seanpaul@chromium.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 12, 2019 at 3:18 PM Matti Vaittinen
-<matti.vaittinen@fi.rohmeurope.com> wrote:
-> Use newly added GPIO defines GPIO_LINE_DIRECTION_IN and
-> GPIO_LINE_DIRECTION_OUT instead of using hard-coded 1 and 0.
+On Tue, Nov 12, 2019 at 6:59 PM Torsten Duwe <duwe@lst.de> wrote:
 >
-> Main benefit is to make it easier to see which values mean IN and which
-> OUT. As a side effect this helps GPIO framework to change the direction
-> defines to something else if ever needed.
 >
-> Please note that return value from get_direction call on
-> pinctrl-axp209 driver was changed. Previously pinctrl-axp209 might have
-> returned value 2 for direction INPUT.
+> The anx6345 driver originally was copied from anx78xx.c, which has meanwhile
+> seen a few changes. In particular, the removal of drm_dp_link helpers and the
+> discontinuation to include drm_bridge.h from drm_crtc.h breaks compilation
+> in linux-5.5. Apply equivalents of these changes to anx6345.c.
 >
-> Signed-off-by: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+> Signed-off-by: Torsten Duwe <duwe@suse.de>
 
-For:
+Wait ... Maxime pushed this and it never compiled? What's going on here?
+-Daniel
 
->  drivers/pinctrl/pinctrl-rza1.c                |  5 ++++-
->  drivers/pinctrl/pinctrl-rza2.c                |  6 +++---
+>
+> ---
+>
+> The commits in question are ff1e8fb68ea06 and ee68c743f8d07, but I guess the
+> next rebase will change these. next-20191112 plus the anx6345-v5a series plus
+> this patch compile cleanly on arm64.
+>
+> --- a/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
+> +++ b/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
+> @@ -19,6 +19,7 @@
+>  #include <linux/types.h>
+>
+>  #include <drm/drm_atomic_helper.h>
+> +#include <drm/drm_bridge.h>
+>  #include <drm/drm_crtc.h>
+>  #include <drm/drm_crtc_helper.h>
+>  #include <drm/drm_dp_helper.h>
+> @@ -49,7 +50,6 @@ struct anx6345 {
+>         struct i2c_client *client;
+>         struct edid *edid;
+>         struct drm_connector connector;
+> -       struct drm_dp_link link;
+>         struct drm_panel *panel;
+>         struct regulator *dvdd12;
+>         struct regulator *dvdd25;
+> @@ -96,7 +96,7 @@ static ssize_t anx6345_aux_transfer(stru
+>  static int anx6345_dp_link_training(struct anx6345 *anx6345)
+>  {
+>         unsigned int value;
+> -       u8 dp_bw;
+> +       u8 dp_bw, dpcd[2];
+>         int err;
+>
+>         err = anx6345_clear_bits(anx6345->map[I2C_IDX_TXCOM],
+> @@ -144,18 +143,34 @@ static int anx6345_dp_link_training(stru
+>         if (err)
+>                 return err;
+>
+> -       /* Check link capabilities */
+> -       err = drm_dp_link_probe(&anx6345->aux, &anx6345->link);
+> -       if (err < 0) {
+> -               DRM_ERROR("Failed to probe link capabilities: %d\n", err);
+> -               return err;
+> -       }
+> +       /*
+> +        * Power up the sink (DP_SET_POWER register is only available on DPCD
+> +        * v1.1 and later).
+> +        */
+> +       if (anx6345->dpcd[DP_DPCD_REV] >= 0x11) {
+> +               err = drm_dp_dpcd_readb(&anx6345->aux, DP_SET_POWER, &dpcd[0]);
+> +               if (err < 0) {
+> +                       DRM_ERROR("Failed to read DP_SET_POWER register: %d\n",
+> +                                 err);
+> +                       return err;
+> +               }
+> +
+> +               dpcd[0] &= ~DP_SET_POWER_MASK;
+> +               dpcd[0] |= DP_SET_POWER_D0;
+> +
+> +               err = drm_dp_dpcd_writeb(&anx6345->aux, DP_SET_POWER, dpcd[0]);
+> +               if (err < 0) {
+> +                       DRM_ERROR("Failed to power up DisplayPort link: %d\n",
+> +                                 err);
+> +                       return err;
+> +               }
+>
+> -       /* Power up the sink */
+> -       err = drm_dp_link_power_up(&anx6345->aux, &anx6345->link);
+> -       if (err < 0) {
+> -               DRM_ERROR("Failed to power up DisplayPort link: %d\n", err);
+> -               return err;
+> +               /*
+> +                * According to the DP 1.1 specification, a "Sink Device must
+> +                * exit the power saving state within 1 ms" (Section 2.5.3.1,
+> +                * Table 5-52, "Sink Control Field" (register 0x600).
+> +                */
+> +               usleep_range(1000, 2000);
+>         }
+>
+>         /* Possibly enable downspread on the sink */
+> @@ -194,20 +209,28 @@ static int anx6345_dp_link_training(stru
+>         if (err)
+>                 return err;
+>
+> -       value = drm_dp_link_rate_to_bw_code(anx6345->link.rate);
+> +       dpcd[0] = drm_dp_max_link_rate(anx6345->dpcd);
+> +       dpcd[0] = drm_dp_link_rate_to_bw_code(dpcd[0]);
+>         err = regmap_write(anx6345->map[I2C_IDX_DPTX],
+> -                          SP_DP_MAIN_LINK_BW_SET_REG, value);
+> +                          SP_DP_MAIN_LINK_BW_SET_REG, dpcd[0]);
+>         if (err)
+>                 return err;
+>
+> +       dpcd[1] = drm_dp_max_lane_count(anx6345->dpcd);
+> +
+>         err = regmap_write(anx6345->map[I2C_IDX_DPTX],
+> -                          SP_DP_LANE_COUNT_SET_REG, anx6345->link.num_lanes);
+> +                          SP_DP_LANE_COUNT_SET_REG, dpcd[1]);
+>         if (err)
+>                 return err;
+>
+> -       err = drm_dp_link_configure(&anx6345->aux, &anx6345->link);
+> +       if (drm_dp_enhanced_frame_cap(anx6345->dpcd))
+> +               dpcd[1] |= DP_LANE_COUNT_ENHANCED_FRAME_EN;
+> +
+> +       err = drm_dp_dpcd_write(&anx6345->aux, DP_LINK_BW_SET, dpcd,
+> +                               sizeof(dpcd));
+> +
+>         if (err < 0) {
+> -               DRM_ERROR("Failed to configure DisplayPort link: %d\n", err);
+> +               DRM_ERROR("Failed to configure link: %d\n", err);
+>                 return err;
+>         }
+>
 
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-Acked-by: Geert Uytterhoeven <geert+renesas@glider.be>
-
-Gr{oetje,eeting}s,
-
-                        Geert
 
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Daniel Vetter
+Software Engineer, Intel Corporation
++41 (0) 79 365 57 48 - http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
