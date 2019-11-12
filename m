@@ -2,54 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A110F988E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 19:23:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1367F98D1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 19:35:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/yQnSr0OHTvd4Oz7pKRC6Ledn0QRmKGRzcrnV32FoOE=; b=JoTS0/9b9d6XXL
-	gghPuhYSqk725y1NTFASJXaxgcbsRaSRdSDo/kNoVgPNzxJku71KoPko/sVGU+Vtk7qC819CxT6rB
-	xNaT/LmxhW0xD/jrV0FfjX9z5qJFvIre9GML3jKiHbRkcnPmt3Asix5N8C6cWCOQtVVrlcS6JDKbG
-	b3A/Dhsuar22AKWCg6+RErz6d5bny/BAeEphUnYBMLZOlce/XRFRKSjo6t6d+i3LzeS+wQFUcUsFx
-	aGZAzv0Rkb3wW0jwgoF/zwoVgUwf4u5emEF2E21I4wvBkKeB3nWuS91oj2ChkUvE+u+DS0vXrauKr
-	OR83gyAd+rZfyJzCtxgQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1oa2BbNAqg1h+ZL4Ch25mKHSP70MCK8n3ukYTxthNhE=; b=dhWvJe1PKYWJMmcl2YxtcIIVg
+	yjXfMNWYMxFxgNxnRwgK5aREoLQhkHujWnyxwxolGrJc/7TSIKn7llgjDDtuj9Jxs7G4fy1ujuMrS
+	GNphXkCxLDIO5g0RFWqkwEko1Jnf59RjvaUj06g6ASAo6ElTj0GIxSBkEv3v18VrddADNJ8RQKfwc
+	lDgoQt8lDI+RsW3QuCf4KP7fgGbdnqw2mfwIirHU1oMSaSfgf/6HHumFJ1cn5kAr+khztDG1vG7eo
+	Qv8AO8Hs5lHi3Ik4SYvbdtZvtTM7vvcL7Ph+01ZKMjU72XGbN9zd6XQ8qvEndWsneS2dWbpkYwUSn
+	BFfa8WmYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUapP-0004NT-2H; Tue, 12 Nov 2019 18:23:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUaoX-0003qU-LR
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 18:23:07 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DE60E30E;
- Tue, 12 Nov 2019 10:22:52 -0800 (PST)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- A41563F534; Tue, 12 Nov 2019 10:22:51 -0800 (PST)
-Date: Tue, 12 Nov 2019 18:22:49 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v2] buffer: Fix I/O error due to ARM read-after-read hazard
-Message-ID: <20191112182249.GB22025@arrakis.emea.arm.com>
-References: <20191112130244.16630-1-vincent.whitchurch@axis.com>
- <20191112160855.GA22025@arrakis.emea.arm.com>
- <20191112180034.GB19889@willie-the-truck>
+	id 1iUb0V-0000yr-Fk; Tue, 12 Nov 2019 18:35:15 +0000
+Received: from www1102.sakura.ne.jp ([219.94.129.142])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUb0J-0000KX-4u; Tue, 12 Nov 2019 18:35:05 +0000
+Received: from fsav405.sakura.ne.jp (fsav405.sakura.ne.jp [133.242.250.104])
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id xACIYvN7074712;
+ Wed, 13 Nov 2019 03:34:57 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Received: from www1102.sakura.ne.jp (219.94.129.142)
+ by fsav405.sakura.ne.jp (F-Secure/fsigk_smtp/550/fsav405.sakura.ne.jp);
+ Wed, 13 Nov 2019 03:34:57 +0900 (JST)
+X-Virus-Status: clean(F-Secure/fsigk_smtp/550/fsav405.sakura.ne.jp)
+Received: from [192.168.1.2] (121.252.232.153.ap.dti.ne.jp [153.232.252.121])
+ (authenticated bits=0)
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id xACIYvUA074709
+ (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=NO);
+ Wed, 13 Nov 2019 03:34:57 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Subject: Re: [PATCH] arm64: dts: rockchip: add analog audio nodes on
+ rk3399-rockpro64
+To: Vasily Khoruzhick <anarsoul@gmail.com>
+References: <20190907174833.19957-1-katsuhiro@katsuster.net>
+ <CA+E=qVdvKxzFcU-09Ucn1Fr0FdkwSsPcLr8vPn2wsu6-DD1gqg@mail.gmail.com>
+ <abc648cc-0b5d-b407-b74b-639833ba196b@katsuster.net>
+ <CA+E=qVdy-wqmR+XOms5S2zMp+B0vM7Dj_fk9N=08-1WjfKDm0Q@mail.gmail.com>
+ <CA+E=qVdLzHbNTemMSmhA=-0dsNumQZJhjE-EnXBDu+j7sXTnVw@mail.gmail.com>
+ <81666aeb-f3d0-e653-6597-0711a05f9b8d@katsuster.net>
+ <CA+E=qVcgs=2T_9axUCJwTKgmKhjsJJ9mUfvYJbyjg59rGGjcTg@mail.gmail.com>
+ <CA+E=qVe5QmJ8-zSbKj23mb-GksjD+qN=aFaCT7OGUYPYc9Y_ow@mail.gmail.com>
+From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+Message-ID: <1ecd115a-1d33-020d-4a09-6fc451588920@katsuster.net>
+Date: Wed, 13 Nov 2019 03:34:56 +0900
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191112180034.GB19889@willie-the-truck>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CA+E=qVe5QmJ8-zSbKj23mb-GksjD+qN=aFaCT7OGUYPYc9Y_ow@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_102253_800551_3718612A 
-X-CRM114-Status: GOOD (  26.57  )
+X-CRM114-CacheID: sfid-20191112_103503_526675_5AE1F7AF 
+X-CRM114-Status: GOOD (  24.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -62,100 +76,306 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: axboe@kernel.dk, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Vincent Whitchurch <rabinv@axis.com>,
- Vincent Whitchurch <vincent.whitchurch@axis.com>, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, torvalds@linux-foundation.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-rockchip@lists.infradead.org, Heiko Stuebner <heiko@sntech.de>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 12, 2019 at 06:00:35PM +0000, Will Deacon wrote:
-> On Tue, Nov 12, 2019 at 04:08:57PM +0000, Catalin Marinas wrote:
-> > On Tue, Nov 12, 2019 at 02:02:44PM +0100, Vincent Whitchurch wrote:
-> > > On my dual-core ARM Cortex-A9, reading from squashfs (over
-> > > dm-verity/ubi/mtd) in a loop for hundreds of hours invariably results in
-> > > a read failure in squashfs_read_data().  The errors occur because the
-> > > buffer_uptodate() check fails after wait_on_buffer().  Further debugging
-> > > shows that the bh was in fact uptodate and that there is no actual I/O
-> > > error in the lower layers.
-> > > 
-> > > The problem is caused by the read-after-read hazards in the ARM
-> > > Cortex-A9 MPCore (erratum #761319, see [1]).  The code generated by the
-> > > compiler for the combination of the wait_on_buffer() and
-> > > buffer_uptodate() calls reads the flags value twice from memory (see the
-> > > excerpt of the assembly below).  The new value of the BH_Lock flag is
-> > > seen but the new value of BH_Uptodate is not even though both the bits
-> > > are read from the same memory location.
-> > > 
-> > >  27c:	9d08      	ldr	r5, [sp, #32]
-> > >  27e:	2400      	movs	r4, #0
-> > >  280:	e006      	b.n	290 <squashfs_read_data+0x290>
-> > >  282:	6803      	ldr	r3, [r0, #0]
-> > >  284:	07da      	lsls	r2, r3, #31
-> > >  286:	f140 810d 	bpl.w	4a4 <squashfs_read_data+0x4a4>
-> > >  28a:	3401      	adds	r4, #1
-> > >  28c:	42bc      	cmp	r4, r7
-> > >  28e:	da08      	bge.n	2a2 <squashfs_read_data+0x2a2>
-> > >  290:	f855 0f04 	ldr.w	r0, [r5, #4]!
-> > >  294:	6803      	ldr	r3, [r0, #0]
-> > >  296:	0759      	lsls	r1, r3, #29
-> > >  298:	d5f3      	bpl.n	282 <squashfs_read_data+0x282>
-> > >  29a:	f7ff fffe 	bl	0 <__wait_on_buffer>
-> > > 
-> > > Work around this problem by adding a DMB between the two reads of
-> > > bh->flags, as recommended in the ARM document.  With this barrier, no
-> > > failures have been seen in more than 5000 hours of the same test.
-> > > 
-> > > [1] http://infocenter.arm.com/help/topic/com.arm.doc.uan0004a/UAN0004A_a9_read_read.pdf
-> > 
-> > I thought we were going to fix the compiler. I found an old thread here:
-> > 
-> > https://gcc.gnu.org/ml/gcc-patches/2014-06/msg00714.html
-> > 
-> > Also cc'ing Richard Earnshaw as he may been involved in the gcc
-> > discussion at the time.
-> > 
-> > While you can add some barrier here, there may be other cases where this
-> > can go wrong.
+On 2019/11/12 14:49, Vasily Khoruzhick wrote:
+> On Mon, Nov 11, 2019 at 9:43 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
+>>
+>> On Mon, Nov 11, 2019 at 9:34 PM Katsuhiro Suzuki
+>> <katsuhiro@katsuster.net> wrote:
+>>>
+>>> Hello Vasily,
+>>>
+>>> Thank you for valuable information.
+>>>
+>>> On 2019/11/12 4:25, Vasily Khoruzhick wrote:
+>>>> On Sun, Nov 10, 2019 at 9:40 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
+>>>>>
+>>>>> On Sun, Nov 10, 2019 at 7:30 PM Katsuhiro Suzuki
+>>>>> <katsuhiro@katsuster.net> wrote:
+>>>>>>
+>>>>>> Hello Vasily,
+>>>>>
+>>>>> Hi Katsuhiro,
+>>>>>
+>>>>> Thanks for response!
+>>>>
+>>>> Looks like on my board codec sits at address 0x10, and according to
+>>>> schematics that's what its address is supposed to be.
+>>>>
+>>>> See http://files.pine64.org/doc/rockpro64/rockpro64_v21-SCH.pdf
+>>>>
+>>>> Codec address is selected by pin CE of ES8316, and on rockpro64 it
+>>>> goes to GND through R226. So address should be 0x10.
+>>>>
+>>>
+>>> Yes, I agree. The schematics both v2.0 and v2.1 say that ES8316
+>>> address is 0x10. Thank you for pointing.
+>>>
+>>> But I wonder that my RockPro64 behavior is strange, he is in address
+>>> 0x11. (R226 on my board is broken...??)
+>>>
+>>> root@rockpro64:~# i2cdetect 1
+>>> WARNING! This program can confuse your I2C bus, cause data loss and worse!
+>>> I will probe file /dev/i2c-1.
+>>> I will probe address range 0x03-0x77.
+>>> Continue? [Y/n] y
+>>>        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+>>> 00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+>>> 10: -- UU -- -- -- -- -- -- -- -- -- -- -- -- -- --
+>>> 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+>>> 30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+>>> 40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+>>> 50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+>>> 60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+>>> 70: -- -- -- -- -- -- -- --
+>>>
+>>> I plan to check R226 resistance value to judge R226 is broken or not
+>>> after return to home. And share the result with you.
+>>> Please give me a time.
+>>
+>> Thanks for confirming that on your board it's on address 0x11. I
+>> checked with some other rockpro64 owners and they have it on 0x10, but
+>> looks like we have boards with codec on different address in the wild.
 > 
-> Hmm, and afaict, even if the compiler was modified to emit LDREX instructions
-> for volatile loads, it wouldn't help in this case because test_bit() isn't
-> using READ_ONCE().
-
-I think changing volatile accesses to LDREX in gcc wasn't acceptable
-since they may read Device memory and not allowed on ARM.
-
-> It's also slightly odd that the proposed patch makes the code look like:
+> Another datapoint is that my board is 2.0. If yours is 2.1 it can be a
+> difference between 2.0 and 2.1.
 > 
-> 	for (i = 0; i < b; i++) {
-> 		if (buffer_locked(bh)) {
-> 			__wait_on_buffer(bh);
-> 			smp_rmb();
-> 		}
 
-The proposed patch actually keeps smp_rmb() outside the 'if' block but
-your point below still stands.
+I'm using v2.1 board.
 
-> 		if (!buffer_uptodate(bh[i]))
-> 			goto block_release;
-> 	}
+
+I'll share the checking result. It's a little strange.
+
+1) Voltage of CE pin of ES8316
+
+It is 1.8V when booting linux-next kernel.
+
+
+2) My board
+
+I can't find no crack nor broken parts on my board.
+
+
+2) R225, R226
+
+As you know, RockPro64 board has no silk print so we cannot know
+perfectly which resistance is R226. So this is my assumption.
+
+        PCIe, SD card slot
+           (top)
+LAN (left)ES8316(right) USB, reset button
+
+On the left space of ES8316 there is no resistance, only a pattern.
+This is maybe R225. And 10K resistance on the right side of a
+pattern. I assume this is R226.
+
+If my assumption is correctly, board implementation and schematics
+are different.
+
+schematics of v2.1 gets something wrong...??
+
+
+>>> Best Regards,
+>>> Katsuhiro Suzuki
+>>>
+>>>
+>>>>>> Thank you for reporting.
+>>>>>>
+>>>>>> On 2019/11/11 9:17, Vasily Khoruzhick wrote:
+>>>>>>> On Sat, Sep 7, 2019 at 10:48 AM Katsuhiro Suzuki
+>>>>>>> <katsuhiro@katsuster.net> wrote:
+>>>>>>>>
+>>>>>>>> This patch adds audio codec (Everest ES8316) and I2S audio nodes for
+>>>>>>>> RK3399 RockPro64.
+>>>>>>>
+>>>>>>> Hi Katsuhiro,
+>>>>>>>
+>>>>>>> I tested your patch with my rockpro64 on 5.4-rc6 which has your other
+>>>>>>> patches to es8316 driver, but apparently it doesn't work.
+>>>>>>>
+>>>>>>> 'alsamixer' complains 'cannot load mixer controls: No such device or
+>>>>>>> address' and if I try to play audio with mpg123 it pretends that it
+>>>>>>> plays something but there's no sound.
+>>>>>>>
+>>>>>>> Any idea what can be wrong?
+>>>>>>>
+>>>>>>
+>>>>>> Do you use defconfig? If so I guess we need turn on more configs:
+>>>>>>
+>>>>>> - simple-graph-card driver (CONFIG_SND_AUDIO_GRAPH_CARD)
+>>>>>> - ES8316 (SND_SOC_ES8316)
+>>>>>
+>>>>> I have these enabled, card is present in /proc/asound/cards, but
+>>>>> alsamixer doesn't work with it.
+>>>>>
+>>>>>> FYI) ASoC related status or logs in my environment as follows:
+>>>>>>
+>>>>>> root@rockpro64:~# uname -a
+>>>>>> Linux rockpro64 5.4.0-rc6-next-20191108 #169 SMP PREEMPT Mon Nov 11 12:21:44 JST 2019 aarch64 GNU/Linux
+>>>>>
+>>>>> I'm running 5.4.0-rc6  (commit
+>>>>> 00aff6836241ae5654895dcea10e6d4fc5878ca6) with your patch "arm64: dts:
+>>>>> rockchip: add analog audio nodes on rk3399-rockpro64" on top of it.
+>>>>>
+>>>>>> root@rockpro64:~# dmesg | grep -i asoc
+>>>>>> [   21.509903] asoc-simple-card hdmi-sound: i2s-hifi <-> ff8a0000.i2s mapping ok
+>>>>>> [   21.510550] asoc-simple-card hdmi-sound: ASoC: no DMI vendor name!
+>>>>>> [   21.567906] asoc-audio-graph-card sound: ES8316 HiFi <-> ff890000.i2s mapping ok
+>>>>>> [   21.568565] asoc-audio-graph-card sound: ASoC: no DMI vendor name!
+>>>>>
+>>>>> Similar here:
+>>>>>
+>>>>> [vasilykh@rockpro64 ~]$ dmesg | grep -i asoc
+>>>>> [   15.627685] asoc-audio-graph-card sound: ES8316 HiFi <->
+>>>>> ff890000.i2s mapping ok
+>>>>> [   16.250196] asoc-simple-card hdmi-sound: i2s-hifi <-> ff8a0000.i2s mapping ok
+>>>>>
+>>>>>> root@rockpro64:~# cat /proc/asound/pcm
+>>>>>> 00-00: ff8a0000.i2s-i2s-hifi i2s-hifi-0 : ff8a0000.i2s-i2s-hifi i2s-hifi-0 : playback 1
+>>>>>> 01-00: ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : playback 1 : capture 1
+>>>>>
+>>>>> Same here:
+>>>>>
+>>>>> [vasilykh@rockpro64 ~]$ cat /proc/asound/pcm
+>>>>> 00-00: ff890000.i2s-ES8316 HiFi ES8316 HiFi-0 : ff890000.i2s-ES8316
+>>>>> HiFi ES8316 HiFi-0 : playback 1 : capture 1
+>>>>> 01-00: ff8a0000.i2s-i2s-hifi i2s-hifi-0 : ff8a0000.i2s-i2s-hifi
+>>>>> i2s-hifi-0 : playback
+>>>>>
+>>>>>> root@rockpro64:~# cat /sys/kernel/debug/asoc/components
+>>>>>> hdmi-audio-codec.3.auto
+>>>>>> ff8a0000.i2s
+>>>>>> ff8a0000.i2s
+>>>>>> ff890000.i2s
+>>>>>> ff890000.i2s
+>>>>>> ff880000.i2s
+>>>>>> ff880000.i2s
+>>>>>> es8316.1-0011
+>>>>>> snd-soc-dummy
+>>>>>> snd-soc-dummy
+>>>>>
+>>>>> Same here.
+>>>>>
+>>>>>> root@rockpro64:~# cat /sys/kernel/debug/asoc/dais
+>>>>>> i2s-hifi
+>>>>>> ff8a0000.i2s
+>>>>>> ff890000.i2s
+>>>>>> ff880000.i2s
+>>>>>> ES8316 HiFi
+>>>>>> snd-soc-dummy-dai
+>>>>>
+>>>>> Same here.
+>>>>>
+>>>>> Yet alsamixer doesn't work for me. It terminates with 'cannot load
+>>>>> mixer controls: No such device or address'. Strace shows that fails
+>>>>> here:
+>>>>>
+>>>>> openat(AT_FDCWD, "/dev/snd/controlC0", O_RDWR|O_CLOEXEC) = 3
+>>>>> fcntl(3, F_SETFD, FD_CLOEXEC)           = 0
+>>>>> ioctl(3, SNDRV_CTL_IOCTL_PVERSION, 0xfffffd3ad04c) = 0
+>>>>> fcntl(3, F_GETFL)                       = 0x20002 (flags O_RDWR|O_LARGEFILE)
+>>>>> fcntl(3, F_SETFL, O_RDWR|O_NONBLOCK|O_LARGEFILE) = 0
+>>>>> ioctl(3, SNDRV_CTL_IOCTL_ELEM_LIST, 0xfffffd3ad228) = 0
+>>>>> ioctl(3, SNDRV_CTL_IOCTL_ELEM_LIST, 0xfffffd3ad228) = 0
+>>>>> ioctl(3, SNDRV_CTL_IOCTL_ELEM_INFO, 0xfffffd3ace38) = 0
+>>>>> ioctl(3, SNDRV_CTL_IOCTL_ELEM_READ, 0xfffffd3ac160) = -1 ENXIO (No
+>>>>> such device or address)
+>>>>>
+>>>>> Looks like it fails to talk to the codec?
+>>>>>
+>>>>> mpg123 thinks that it's playing audio, but my headphones connected to
+>>>>> 3.5mm output are silent.
+>>>>>
+>>>>> Regards,
+>>>>> Vasily
+>>>>>
+>>>>>
+>>>>>> Best Regards,
+>>>>>> Katsuhiro Suzuki
+>>>>>>
+>>>>>>
+>>>>>>> Regards,
+>>>>>>> Vasily
+>>>>>>>
+>>>>>>>> Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+>>>>>>>> ---
+>>>>>>>>     .../boot/dts/rockchip/rk3399-rockpro64.dts    | 28 +++++++++++++++++++
+>>>>>>>>     1 file changed, 28 insertions(+)
+>>>>>>>>
+>>>>>>>> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+>>>>>>>> index 0401d4ec1f45..8b1e6382b140 100644
+>>>>>>>> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+>>>>>>>> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+>>>>>>>> @@ -81,6 +81,12 @@
+>>>>>>>>                    reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
+>>>>>>>>            };
+>>>>>>>>
+>>>>>>>> +       sound {
+>>>>>>>> +               compatible = "audio-graph-card";
+>>>>>>>> +               label = "rockchip,rk3399";
+>>>>>>>> +               dais = <&i2s1_p0>;
+>>>>>>>> +       };
+>>>>>>>> +
+>>>>>>>>            vcc12v_dcin: vcc12v-dcin {
+>>>>>>>>                    compatible = "regulator-fixed";
+>>>>>>>>                    regulator-name = "vcc12v_dcin";
+>>>>>>>> @@ -470,6 +476,20 @@
+>>>>>>>>            i2c-scl-rising-time-ns = <300>;
+>>>>>>>>            i2c-scl-falling-time-ns = <15>;
+>>>>>>>>            status = "okay";
+>>>>>>>> +
+>>>>>>>> +       es8316: codec@11 {
+>>>>>>>> +               compatible = "everest,es8316";
+>>>>>>>> +               reg = <0x11>;
+>>>>>>>> +               clocks = <&cru SCLK_I2S_8CH_OUT>;
+>>>>>>>> +               clock-names = "mclk";
+>>>>>>>> +               #sound-dai-cells = <0>;
+>>>>>>>> +
+>>>>>>>> +               port {
+>>>>>>>> +                       es8316_p0_0: endpoint {
+>>>>>>>> +                               remote-endpoint = <&i2s1_p0_0>;
+>>>>>>>> +                       };
+>>>>>>>> +               };
+>>>>>>>> +       };
+>>>>>>>>     };
+>>>>>>>>
+>>>>>>>>     &i2c3 {
+>>>>>>>> @@ -505,6 +525,14 @@
+>>>>>>>>            rockchip,playback-channels = <2>;
+>>>>>>>>            rockchip,capture-channels = <2>;
+>>>>>>>>            status = "okay";
+>>>>>>>> +
+>>>>>>>> +       i2s1_p0: port {
+>>>>>>>> +               i2s1_p0_0: endpoint {
+>>>>>>>> +                       dai-format = "i2s";
+>>>>>>>> +                       mclk-fs = <256>;
+>>>>>>>> +                       remote-endpoint = <&es8316_p0_0>;
+>>>>>>>> +               };
+>>>>>>>> +       };
+>>>>>>>>     };
+>>>>>>>>
+>>>>>>>>     &i2s2 {
+>>>>>>>> --
+>>>>>>>> 2.23.0.rc1
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> _______________________________________________
+>>>>>>>> linux-arm-kernel mailing list
+>>>>>>>> linux-arm-kernel@lists.infradead.org
+>>>>>>>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>>>>>>>
+>>>>>>
+>>>>
+>>>
 > 
-> whereas there are other potential RAR orderings between buffer_locked()
-> and __wait_on_buffer() and also probably between successive iterations
-> of the loop.
-> 
-> So, really, the only way I see to solve this is for us to use READ_ONCE
-> consistently for all relaxed atomic loads (KCSAN is starting to tread on
-> this), and then to patch READ_ONCE to emit a DMB at runtime for arch/arm/
-> (maybe a static key would work if you can avoid the recursion).
 
-OK, so this includes changing test_bit() to perform a READ_ONCE.
-
--- 
-Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
