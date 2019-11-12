@@ -2,68 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C917F915E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:04:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89038F9197
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:10:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8zJ7C/R2XP2CUN4ZGIm0bZReD6uEJsFql8c/91U/Mhs=; b=Gb9jz24qVmqIM3IwygXl6e8rH
-	zbeyV3ZEVGwOiMTWW6MZNXr8MKzdI/FynCKNy42lT3CreXbaItFNil49XXkZ6/etDCRkafcZ/v0PL
-	LhywVgicGoBJKlb9s9M/Fiks3yRI+QTtk13wYO8HFdeghGWP2Xka3lMxZBkSUjNa7Iirbn2Zx3Fmg
-	IJm9j12Q2LENONxf5YmcD92Btxg2Mp/r2FHZ2WoIWbNtPKFhMMlKJx+mnqE+udGss99EMoqBGn3rY
-	RrfXBifF+KX+GH+LTDHbJPACfV3M0lBLxtlbh5LWzLhHlpxktkS+sI2rZNnV0KUYvWf2saWaOE6eY
-	A+j7jozhA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lgt7W/edQ2j79qSzpAVf+dQgVsEMje+UvX4PCWOE5fo=; b=UOkJog1UANZ9qk
+	oQjMbjLdVd0SreMKBxabNctFy2kwidCXG5pSipVuYo7s+BL+NlyYse7PVGHX9NxMaoqomdZ/at4SW
+	W420nTuHqdocAb2Oc1VyxKST010/92hpSGZrDolm2h3WgUz3CYbLsTXJRlKVUzJRleHczURl+mf5f
+	Y/vZDpN02hdV2lTBo7OLDVwwbfTUJisWAnT1qCe0q/2C2ophYbHDgCN1e49AQY25cpNUDJ9V1KogD
+	oh8qVj3GGJJYUEZO2AcB37rl2l7og1cUWnlU13baNHsDHXNeK16UeEWKr03G1uZfaXXFOFGToI2Jr
+	5tU2NXXEPzoUBJcZaurA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUWmH-00069s-8E; Tue, 12 Nov 2019 14:04:17 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iUWrj-0008Nm-84; Tue, 12 Nov 2019 14:09:55 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUWmA-00069Q-2X
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:04:11 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iUWm5-0008Hj-04; Tue, 12 Nov 2019 15:04:05 +0100
-To: Vladimir Oltean <olteanv@gmail.com>
-Subject: Re: [PATCH 2/2] ARM: dts: ls1021a-tsn: Use interrupts for the SGMII
- PHYs
-X-PHP-Originating-Script: 0:main.inc
+ id 1iUWrb-0008KU-F9
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:09:49 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xACDuqqN018120; Tue, 12 Nov 2019 15:09:41 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=jHbqLIGkDg3TeVdZ4Rvu7IZ9xT2WoUqaOpJODt681lE=;
+ b=tBu0QLNI68RaJwYBheyd5T0hxfD/tTLo2T6geljr+ZzAt42Zo1YMgKgsUbGYA0aydXbY
+ ez+sPAnHAOgqKs6Uk/i9xffBHOMVAvGkc/SYOF68OCyRLPCdM20WqoRkx+w9jTt15URC
+ 1QhKO7ORGLGCdr1zPiyhKSWXefezcd3UBDYgPrJV8mX+8f0mhPU0z4iK18IJkO5tlQL5
+ SC35B+XeXEX280bQdmm35tPoIGHmAOB3cbvYnpZzA/UKczHqY0aGVBGhkpS58oPKOghp
+ aRgPl3G+l/HX4G2SAvcmAwk2fAPsjGpfr3ktMHDVI5TOgXW3v/XSlIjRMHfQV5rNu9Cm tg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2w7psb2j5j-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 12 Nov 2019 15:09:41 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2382810002A;
+ Tue, 12 Nov 2019 15:09:41 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 10DA12C1604;
+ Tue, 12 Nov 2019 15:09:41 +0100 (CET)
+Received: from SFHDAG5NODE3.st.com (10.75.127.15) by SFHDAG3NODE1.st.com
+ (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 12 Nov
+ 2019 15:09:40 +0100
+Received: from SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47]) by
+ SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47%20]) with mapi id
+ 15.00.1473.003; Tue, 12 Nov 2019 15:09:40 +0100
+From: Fabien DESSENNE <fabien.dessenne@st.com>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Subject: Re: [PATCH v2] remoteproc: stm32: fix probe error case
+Thread-Topic: [PATCH v2] remoteproc: stm32: fix probe error case
+Thread-Index: AQHVfOJqz28evgfEckmKeaDvWZiFgaeGrWIAgAENuoA=
+Date: Tue, 12 Nov 2019 14:09:40 +0000
+Message-ID: <392808fa-1504-233f-234b-0cca21886c17@st.com>
+References: <1570433991-16353-1-git-send-email-fabien.dessenne@st.com>
+ <20191111220416.GB3108315@builder>
+In-Reply-To: <20191111220416.GB3108315@builder>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.51]
+Content-ID: <95ED63541F302C428DC02C0FF61927C7@st.com>
 MIME-Version: 1.0
-Date: Tue, 12 Nov 2019 15:13:25 +0109
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <CA+h21hpE-Nu_Sh1fRizUoEs082ev=9nzuumSXDrk-QTXdnEbzg@mail.gmail.com>
-References: <20191112132010.18274-1-linux@rasmusvillemoes.dk>
- <20191112132010.18274-3-linux@rasmusvillemoes.dk>
- <CA+h21hqw16o0TqOV1WWYYcOs3YWJe=xq_K0=miU+BFTA31OTmQ@mail.gmail.com>
- <6d4292fcb0cf290837306388bdfe9b0f@www.loen.fr>
- <CA+h21hpE-Nu_Sh1fRizUoEs082ev=9nzuumSXDrk-QTXdnEbzg@mail.gmail.com>
-Message-ID: <aee81d64979bb72b63a8889fb7193c3f@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: olteanv@gmail.com, linux@rasmusvillemoes.dk,
- shawnguo@kernel.org, leoyang.li@nxp.com, robh+dt@kernel.org,
- mark.rutland@arm.com, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- netdev@vger.kernel.org, andrew@lunn.ch
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-12_04:2019-11-11,2019-11-12 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_060410_258290_4F80F333 
-X-CRM114-Status: GOOD (  13.87  )
-X-Spam-Score: 1.7 (+)
+X-CRM114-CacheID: sfid-20191112_060947_982148_7C6B1C84 
+X-CRM114-Status: GOOD (  21.82  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 BUG6152_INVALID_DATE_TZ_ABSURD No description available.
- 0.6 INVALID_DATE_TZ_ABSURD Invalid Date: header (timezone does not
- exist)
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,101 +105,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Andrew Lunn <andrew@lunn.ch>, netdev <netdev@vger.kernel.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- lkml <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Ohad Ben-Cohen <ohad@wizery.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ Loic PALLARDY <loic.pallardy@st.com>,
+ Arnaud POULIQUEN <arnaud.pouliquen@st.com>,
+ "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-11-12 15:03, Vladimir Oltean wrote:
-> On Tue, 12 Nov 2019 at 15:49, Marc Zyngier <maz@kernel.org> wrote:
->>
->> On 2019-11-12 14:53, Vladimir Oltean wrote:
->> > On Tue, 12 Nov 2019 at 15:20, Rasmus Villemoes
->> > <linux@rasmusvillemoes.dk> wrote:
->> >>
->> >> From: Vladimir Oltean <olteanv@gmail.com>
->> >>
->> >> On the LS1021A-TSN board, the 2 Atheros AR8031 PHYs for eth0 and
->> >> eth1
->> >> have interrupt lines connected to the shared IRQ2_B LS1021A pin.
->> >>
->> >> Switching to interrupts offloads the PHY library from the task of
->> >> polling the MDIO status and AN registers (1, 4, 5) every second.
->> >>
->> >> Unfortunately, the BCM5464R quad PHY connected to the switch does
->> >> not
->> >> appear to have an interrupt line routed to the SoC.
->> >>
->> >> Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
->> >> Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
->> >> ---
->> >>  arch/arm/boot/dts/ls1021a-tsn.dts | 4 ++++
->> >>  1 file changed, 4 insertions(+)
->> >>
->> >> diff --git a/arch/arm/boot/dts/ls1021a-tsn.dts
->> >> b/arch/arm/boot/dts/ls1021a-tsn.dts
->> >> index 5b7689094b70..135d36461af4 100644
->> >> --- a/arch/arm/boot/dts/ls1021a-tsn.dts
->> >> +++ b/arch/arm/boot/dts/ls1021a-tsn.dts
->> >> @@ -203,11 +203,15 @@
->> >>         /* AR8031 */
->> >>         sgmii_phy1: ethernet-phy@1 {
->> >>                 reg = <0x1>;
->> >> +               /* SGMII1_PHY_INT_B: connected to IRQ2, active 
->> low
->> >> */
->> >> +               interrupts-extended = <&extirq 2
->> >> IRQ_TYPE_EDGE_FALLING>;
->> >>         };
->> >>
->> >>         /* AR8031 */
->> >>         sgmii_phy2: ethernet-phy@2 {
->> >>                 reg = <0x2>;
->> >> +               /* SGMII2_PHY_INT_B: connected to IRQ2, active 
->> low
->> >> */
->> >> +               interrupts-extended = <&extirq 2
->> >> IRQ_TYPE_EDGE_FALLING>;
->> >>         };
->> >>
->> >>         /* BCM5464 quad PHY */
->> >> --
->> >> 2.23.0
->> >>
->> >
->> > +netdev and Andrew for this patch, since the interrupt polarity
->> > caught
->> > his attention in v1.
->>
->> Certainly, the comments and the interrupt specifier do not match.
->> Which one is true?
->>
->>          M.
->> --
->> Jazz is not dead. It just smells funny...
+Hi Bjorn,
+
+
+On 11/11/2019 11:04 PM, Bjorn Andersson wrote:
+> On Mon 07 Oct 00:39 PDT 2019, Fabien Dessenne wrote:
 >
-> The interrupt specifier certainly works. So that points to an issue
-> with the description. What do you mean, exactly? Does "active low"
-> mean "level-triggered"? How would you have described this?
+>> If the rproc driver is probed before the mailbox driver and if the rproc
+>> Device Tree node has some mailbox properties, the rproc driver probe
+>> shall be deferred instead of being probed without mailbox support.
+>>
+>> Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
+>> ---
+>> Changes since v1: test IS_ERR() before checking PTR_ERR()
+>> ---
+>>   drivers/remoteproc/stm32_rproc.c | 10 ++++++++--
+>>   1 file changed, 8 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+>> index 2cf4b29..a507332 100644
+>> --- a/drivers/remoteproc/stm32_rproc.c
+>> +++ b/drivers/remoteproc/stm32_rproc.c
+>> @@ -310,7 +310,7 @@ static const struct stm32_mbox stm32_rproc_mbox[MBOX_NB_MBX] = {
+>>   	}
+>>   };
+>>   
+>> -static void stm32_rproc_request_mbox(struct rproc *rproc)
+>> +static int stm32_rproc_request_mbox(struct rproc *rproc)
+>>   {
+>>   	struct stm32_rproc *ddata = rproc->priv;
+>>   	struct device *dev = &rproc->dev;
+>> @@ -329,10 +329,14 @@ static void stm32_rproc_request_mbox(struct rproc *rproc)
+>>   
+>>   		ddata->mb[i].chan = mbox_request_channel_byname(cl, name);
+>>   		if (IS_ERR(ddata->mb[i].chan)) {
+>> +			if (PTR_ERR(ddata->mb[i].chan) == -EPROBE_DEFER)
+>> +				return -EPROBE_DEFER;
+> If for some reason you get EPROBE_DEFER when i > 0 you need to
+> mbox_free_channel() channels [0..i) before returning.
 
-Active Low definitely implies level triggered. And if that's how it
-is described in the TRM, than the interrupt specifier is wrong, and
-just *seem to work* because the level goes back to high between two
-interrupts.
+The mailbox framework returns EPROBE_DIFFER to inform that the mailbox 
+provider has not registered yet. I do not expected to have a success 
+followed by a EPROBE_DEFER error.
 
-Also, shared *edge* interrupts do not work, full stop. So I'm pretty
-convinced that what you have here is just wrong.
+But in the very special case where we use two different mailbox 
+providers this may happen.
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+I will send an updated version, thanks for pointing this.
 
+BR
+
+Fabien
+
+>
+> Regards,
+> Bjorn
+>
+>>   			dev_warn(dev, "cannot get %s mbox\n", name);
+>>   			ddata->mb[i].chan = NULL;
+>>   		}
+>>   	}
+>> +
+>> +	return 0;
+>>   }
+>>   
+>>   static int stm32_rproc_set_hold_boot(struct rproc *rproc, bool hold)
+>> @@ -596,7 +600,9 @@ static int stm32_rproc_probe(struct platform_device *pdev)
+>>   	if (ret)
+>>   		goto free_rproc;
+>>   
+>> -	stm32_rproc_request_mbox(rproc);
+>> +	ret = stm32_rproc_request_mbox(rproc);
+>> +	if (ret)
+>> +		goto free_rproc;
+>>   
+>>   	ret = rproc_add(rproc);
+>>   	if (ret)
+>> -- 
+>> 2.7.4
+>>
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
