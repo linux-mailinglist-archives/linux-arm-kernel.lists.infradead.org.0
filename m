@@ -2,107 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D02E7F90E2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 14:44:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92BDFF90E7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 14:44:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=5pndmgnbttE4V68TJiyfjJpxv1gk0C8YUf7Bnjchzkg=; b=e/UpzbhC4pkY5o
-	yi6HxdG3lho+vfYAR7UxtVQEkhnJNbeADjk3AJW4WfVI1vz+QYQmHOwxlE92lUV33Edr6l8uVsPvc
-	YTDlSXXAQl9pK0VBhO12EkDzzgjfYtM4L2NuobbeCl8DTCBsKtlcr9JkzqWktnyZBpy4DLoOgTu8J
-	gjrfHSNeoM9hiLkcq/b4+SJpbXTGExuNFj9ejIn9E433uh7bgviAAnYBfQWKrADvnQbvwg9dpTIJJ
-	qp2EgVEyJQ1Do/ZltmKG4wygNtANvSn6hVNaq/NE9LeG97xn8gTV5MPwu9/GLfuWFZSTbGhDQY6fb
-	1xUG9ylAU06lVahT8J/w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SaEGksbuYLzUPKYG8zMPZ0G1VEAq5Uc5KhRNwo/9pek=; b=kXxpZsG4n6LCPV
+	T1VHAoIs/++ax0DKAXtiZL+L1PtfN6H/kpB3JJ1BP0sqIFTnvxEAh2LPmXGOFzg39vIcMnSE8OoQM
+	DpEhXVIdqh0gMqW5vOOKbmzZNXyQlkt+x0BDkwrj5GKIkDF6lGN2jxDJtk36ARZpGn2knD42Y83TJ
+	iil4KYboVN8Qu6Bgq5xlsbveoQle+KhieSHfh2711g7c6iT3eL/ccDobszm6QiAgmf+rpI7MoP0Le
+	0NXtfgq7x0HFa5aFBV2Yv4LhLqWN4h9jzsPCkZXag84beTIg3q2vgy6TI5dp9EtB8tITePKgVAj40
+	FMV99XB6YpHxle7fMzmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUWSV-0003Fa-Ug; Tue, 12 Nov 2019 13:43:51 +0000
-Received: from mail-eopbgr20049.outbound.protection.outlook.com ([40.107.2.49]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1iUWTH-0003eK-GU; Tue, 12 Nov 2019 13:44:39 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUWSI-0003Bm-CQ
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 13:43:39 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=W0cxoxdhJleLm2AD0g1BF4srK3fZ2m5UR8AFb5D7mhLuXkBteWZSXU7aK2oNRyCsohJ+BVXLVmEiEnyLCTVS7tdwf+Fa7TsZ5dybckpa7JurNoURRyCC0omLR4CBckR2qWKYtqJ9kxQkEhcB1GdpyFqNAYj2O7bY4cla9ZwxCaCTyvPaF/OUj12O8QZ7S6hAuFFOJahrsYb2Ees4h7/VNFtQjtxayGfpHzZpwbiRpz/mXnygJ+9b2SSMJpC7Y4Ht7c7uztY6fIxcbddjp68LAPFJh6YsujAgsuFJozUX447yleI7b4LWPBfpHvZeiv/mqa3JizCI+V3lidxoRw3zhw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RvMS3MnR+OVag5l/7OjETDYlKEje4ZsT7YnEeaFqzLI=;
- b=Y9bhA/9efF+hMOh3oC+bNiiuT5g/oMD7jt13j0yi5PleL2TJkFZRUN4cDHnr6YDoYeBu+Z9oJO1s98lXXzZ7JxowEvM4s7woq7TpRsc5ISyi3K64BzCqZbvyu4f5KYppnX+OI3/jYxiOS4un7YKczGX3BATNuiI1U7KJZR4WSPa0AZCLXxmjhFmQdImCheJ0Miy/BIBNr4oGSv1YlcjRdBMtkmILA6bvs6gB1qWeEXgptf0lW1TknpkqUT2fAeGAqyTVJqOCbFSNDjHmCtXcgI/lOyw6wlv31QnECp82mH0hfaK1pFWxBJ6AShP658Nsmp3Gw/t/BuO/L2KV9iNJBQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RvMS3MnR+OVag5l/7OjETDYlKEje4ZsT7YnEeaFqzLI=;
- b=Y7/Pgg6OHpNKFoSQRMqWaw2WKtFkgWacd3Lp4TvFQM8OYxKMRkgv39GLqQsoR3RRgSsgcZnf1373a7J8Xw0/ByGOQNDry4niw/91ltEwpMqabRfbxGNZSgs9+iO6iZ8CfwIRgkr60HCgc79eodPGegR2ynFVslvsjChuSz3v/VQ=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB3277.eurprd04.prod.outlook.com (10.170.231.142) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2451.22; Tue, 12 Nov 2019 13:43:35 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::dd0c:72dc:e462:16b3]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::dd0c:72dc:e462:16b3%5]) with mapi id 15.20.2430.027; Tue, 12 Nov 2019
- 13:43:35 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Abel Vesa <abel.vesa@nxp.com>, Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v4 1/6] clk: imx8m: Set CLK_GET_RATE_NOCACHE on dram clocks
-Thread-Topic: [PATCH v4 1/6] clk: imx8m: Set CLK_GET_RATE_NOCACHE on dram
- clocks
-Thread-Index: AQHVloV8DX9ZS8xtzEe77doMKYgOwQ==
-Date: Tue, 12 Nov 2019 13:43:35 +0000
-Message-ID: <VI1PR04MB702387DCA9DB5A0A3F6288EDEE770@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <cover.1573252696.git.leonard.crestez@nxp.com>
- <0e0eeeee546a3bb664935184d66866f1c66458ce.1573252696.git.leonard.crestez@nxp.com>
- <20191112111803.c5624in2masqipqf@fsr-ub1664-175>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 490628d5-dcda-4fd8-2c60-08d7677650b6
-x-ms-traffictypediagnostic: VI1PR04MB3277:|VI1PR04MB3277:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB327775FC29CE0703F6AA72A8EE770@VI1PR04MB3277.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-forefront-prvs: 021975AE46
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(376002)(396003)(346002)(136003)(39860400002)(189003)(199004)(76176011)(6246003)(54906003)(110136005)(316002)(256004)(14444005)(55016002)(9686003)(305945005)(7416002)(5660300002)(74316002)(66066001)(44832011)(33656002)(478600001)(3846002)(2906002)(14454004)(6116002)(7736002)(86362001)(81156014)(26005)(486006)(446003)(186003)(476003)(229853002)(53546011)(52536014)(102836004)(25786009)(6436002)(6506007)(71190400001)(71200400001)(7696005)(99286004)(66476007)(64756008)(8676002)(81166006)(66556008)(66446008)(8936002)(76116006)(66946007)(91956017)(4326008)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3277;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: vrCzU2araRXbTyDe9NwWjmIVHmRqqQjIiQhYkZ8qkvF09+3wrPJ83HR5YQRWTWxORvBUxvSIJqh8xLQTy+C1lplLe8O4jOoD6xrsAoI1c3nMvh7bLKPqZqWKqPZFUEojecEIp4TNabFcw8/q2ngb1jO48raee4If6PdKSTpYiwPRCI8BmPViKcB6lr45IPdUmB8Ybz6H/fWAXvnpdXJEYkedtaYS7KPa3gxW11TS/OjxJu1zNh/JYiNDz1Vzib056Bv0RzslTXXwoIFgx14YoQuF6NvOVGmbsIejJepco7Bo2065hh9yDTXViZWNTEW0PxoMGT/ob8rR7SrcuZEwGkcSr/qOxVXaQWE7dLDZyRdYz91Cw9jAEGWNkqhGfBzMtKMq6Lu5y6hFWq/8fliYqU8oOPKBSu2AGS7DooJ98tlWqCTmi9hX903lpIazC/FR
+ id 1iUWT7-0003db-Pb
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 13:44:31 +0000
+Received: by mail-ed1-x542.google.com with SMTP id b5so14907480eds.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 12 Nov 2019 05:44:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gXwOc0pJ6hqLtPP5MF3njwCDDhwJ+LtuEm52q4JdFG0=;
+ b=YwcU2/mITcV4eLtuCPb7UvqNbE8wHLtLX/4m397nu8Ryp88ewpHBgxlJ1IB8gkm/4D
+ +y1zXkERVtNiYvtmcqA/ADrdJsNZd299zT6m+hZ3c/uSjcWwqOydkDXZKTG0ubCfpAxP
+ ySLfu1WWcUYFbJPmqrkVi56XkRw4sjEL/6hfDwSuUa1tY2xYk/7LkTNhAS5WxFJjIegZ
+ N5ZCaAi5dXg1YsV7viSgFpNHCw/3qlIqSCH24n3MVoSz1ppEHhSdBibhjzSvZk41K6yb
+ IHqYq40KcXiUX0IV4GA5YpfvxyUkaFbr9NL0u3slJap8qUMWvzk8Ipabi9HMPk5T21US
+ jCFA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gXwOc0pJ6hqLtPP5MF3njwCDDhwJ+LtuEm52q4JdFG0=;
+ b=cpk2YACxzLQ14vJSWUoELQStRGrlOi5dv4Fm1c2XOvj97uDxVQhn6uziMGa+3UZQwi
+ eMjC/ac7gVBGjVeBbZYBiTSBU7xQW7gmQaTZK4qG6YgOAOjIyaLfVvpWxA7qU346VW9L
+ ujC+Y8Q8YwURuXcswHddh1FURrxmqJ8uMeoxLtbDXmOL4G2xvjsVKzE6j+P7vCOQBKGR
+ 4FoR0Tx82Iq/im2QMzDLn1+4IWjt8FaJ50jXepn1wFpHO6O4i+bXFqGA49LUYRZ5zgfE
+ QgLNIX0VkfZtwxfkU/OHBieWFxAVbx32fMcCVlFNIIr+nH6eBxEFyc/GOWMZWzkQJ/75
+ kOzg==
+X-Gm-Message-State: APjAAAXYZXs+5dmpFUtERgaXEZakW1ivrHAJ4sDf4IYprBpicDlNenjK
+ xq9pDfbId3BDtbfrrNJUumisYvHol5aum0Cvtf4=
+X-Google-Smtp-Source: APXvYqwEfukonUP8KqyQ+bKuKOQ1O/aGrq59NYnVrf1rT78e31Bw/atAL5285NQic4/J5nTNN05SD0UaFdCbcBRbuL4=
+X-Received: by 2002:a50:b63b:: with SMTP id b56mr33037948ede.165.1573566267462; 
+ Tue, 12 Nov 2019 05:44:27 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 490628d5-dcda-4fd8-2c60-08d7677650b6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Nov 2019 13:43:35.1653 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Lm6TD9vyh/KawvPhUvQ4r0exUEKLbjZj5PT7I/wwSH5qQsScvl5kfmnuu9RWcYVdP9Pq0fhGkjhqtJCQ9a3Mug==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3277
+References: <20191112132010.18274-1-linux@rasmusvillemoes.dk>
+ <20191112132010.18274-3-linux@rasmusvillemoes.dk>
+In-Reply-To: <20191112132010.18274-3-linux@rasmusvillemoes.dk>
+From: Vladimir Oltean <olteanv@gmail.com>
+Date: Tue, 12 Nov 2019 15:44:16 +0200
+Message-ID: <CA+h21hqw16o0TqOV1WWYYcOs3YWJe=xq_K0=miU+BFTA31OTmQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] ARM: dts: ls1021a-tsn: Use interrupts for the SGMII
+ PHYs
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_054338_438672_610C6102 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20191112_054429_827668_BE46BAF9 
+X-CRM114-Status: GOOD (  16.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.49 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (olteanv[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -121,78 +94,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
- Saravana Kannan <saravanak@google.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Martin Kepplinger <martink@posteo.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "Rafael J.
- Wysocki" <rjw@rjwysocki.net>, Kyungmin Park <kyungmin.park@samsung.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Andrew Lunn <andrew@lunn.ch>, Marc Zyngier <maz@kernel.org>,
+ lkml <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, netdev <netdev@vger.kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12.11.2019 13:18, Abel Vesa wrote:
-> On 19-11-09 00:39:51, Leonard Crestez wrote:
->> These clocks are only modified as part of DRAM frequency switches during
->> which DRAM itself is briefly inaccessible. The switch is performed with
->> a SMC call to by TF-A which runs from a SRAM area; upon returning to
->> linux several clocks bits are modified and we need to update them.
->>
->> For rate bits an easy solution is to just mark with
->> CLK_GET_RATE_NOCACHE so that new rates are always read back from
->> registers.
->>
->> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
->> ---
->>   drivers/clk/imx/clk-imx8mm.c | 11 +++++++++--
->>   drivers/clk/imx/clk-imx8mn.c | 12 ++++++++++--
->>   drivers/clk/imx/clk-imx8mq.c | 15 +++++++++++----
->>   3 files changed, 30 insertions(+), 8 deletions(-)
+On Tue, 12 Nov 2019 at 15:20, Rasmus Villemoes <linux@rasmusvillemoes.dk> wrote:
+>
+> From: Vladimir Oltean <olteanv@gmail.com>
+>
+> On the LS1021A-TSN board, the 2 Atheros AR8031 PHYs for eth0 and eth1
+> have interrupt lines connected to the shared IRQ2_B LS1021A pin.
+>
+> Switching to interrupts offloads the PHY library from the task of
+> polling the MDIO status and AN registers (1, 4, 5) every second.
+>
+> Unfortunately, the BCM5464R quad PHY connected to the switch does not
+> appear to have an interrupt line routed to the SoC.
+>
+> Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
+> Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> ---
+>  arch/arm/boot/dts/ls1021a-tsn.dts | 4 ++++
+>  1 file changed, 4 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/ls1021a-tsn.dts b/arch/arm/boot/dts/ls1021a-tsn.dts
+> index 5b7689094b70..135d36461af4 100644
+> --- a/arch/arm/boot/dts/ls1021a-tsn.dts
+> +++ b/arch/arm/boot/dts/ls1021a-tsn.dts
+> @@ -203,11 +203,15 @@
+>         /* AR8031 */
+>         sgmii_phy1: ethernet-phy@1 {
+>                 reg = <0x1>;
+> +               /* SGMII1_PHY_INT_B: connected to IRQ2, active low */
+> +               interrupts-extended = <&extirq 2 IRQ_TYPE_EDGE_FALLING>;
+>         };
+>
+>         /* AR8031 */
+>         sgmii_phy2: ethernet-phy@2 {
+>                 reg = <0x2>;
+> +               /* SGMII2_PHY_INT_B: connected to IRQ2, active low */
+> +               interrupts-extended = <&extirq 2 IRQ_TYPE_EDGE_FALLING>;
+>         };
+>
+>         /* BCM5464 quad PHY */
+> --
+> 2.23.0
+>
 
->> --- a/drivers/clk/imx/clk-imx8mn.c
->> +++ b/drivers/clk/imx/clk-imx8mn.c
->> @@ -428,12 +428,20 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
->>   	clks[IMX8MN_CLK_AHB] = imx8m_clk_composite_critical("ahb", imx8mn_ahb_sels, base + 0x9000);
->>   	clks[IMX8MN_CLK_AUDIO_AHB] = imx8m_clk_composite("audio_ahb", imx8mn_audio_ahb_sels, base + 0x9100);
->>   	clks[IMX8MN_CLK_IPG_ROOT] = imx_clk_divider2("ipg_root", "ahb", base + 0x9080, 0, 1);
->>   	clks[IMX8MN_CLK_IPG_AUDIO_ROOT] = imx_clk_divider2("ipg_audio_root", "audio_ahb", base + 0x9180, 0, 1);
->>   	clks[IMX8MN_CLK_DRAM_CORE] = imx_clk_mux2_flags("dram_core_clk", base + 0x9800, 24, 1, imx8mn_dram_core_sels, ARRAY_SIZE(imx8mn_dram_core_sels), CLK_IS_CRITICAL);
->> -	clks[IMX8MN_CLK_DRAM_ALT] = imx8m_clk_composite("dram_alt", imx8mn_dram_alt_sels, base + 0xa000);
->> -	clks[IMX8MN_CLK_DRAM_APB] = imx8m_clk_composite_critical("dram_apb", imx8mn_dram_apb_sels, base + 0xa080);
->> +
->> +	/*
->> +	 * DRAM clocks are manipulated from TF-A outside clock framework.
->> +	 * Mark with GET_RATE_NOCACHE to always read div value from hardware
->> +	 */
->> +	clks[IMX8MN_CLK_DRAM_ALT] = __imx8m_clk_composite("dram_alt", imx8mn_dram_alt_sels, base + 0xa000,
->> +			CLK_GET_RATE_NOCACHE);
->> +	clks[IMX8MN_CLK_DRAM_APB] = __imx8m_clk_composite("dram_apb", imx8mn_dram_apb_sels, base + 0xa080,
->> +			CLK_IS_CRITICAL | CLK_GET_RATE_NOCACHE);
-> 
-> nitpick: I think it looks better if we stick to one line each clock.
-> I know it's against the 80 chars rule, but at least is consistent.
-
-Yes, there are longer lines in the imx8m* files anyway.
-
-If I fix this (in all instances) can I also add a "reviewed-by"?
-
---
-Regards,
-Leonard
++netdev and Andrew for this patch, since the interrupt polarity caught
+his attention in v1.
 
 _______________________________________________
 linux-arm-kernel mailing list
