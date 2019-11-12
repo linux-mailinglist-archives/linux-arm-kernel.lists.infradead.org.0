@@ -2,120 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D598F8DF8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 12:18:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77AE4F8E8A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 12:24:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HAod4TTcTuiPFBftS8l92vyljY4hXsUGfitts9rCa78=; b=Rnjy8RxJTbVJaz
-	I4T91IsNyFjfKoM2KnAqi0w1TDKqh9m/xjdkkAHR/SuBI+uWYHLYPnO/hXz1YRoqMn9JPJDv9qB2E
-	4x4CzMCw6Kdl0EPS6X51CTXlR5aSAF8MgWfwo0tntLNp55P0nGwUgG1pDzeAwJiCgeiqmGkzJdsFd
-	24shFRtMM6JciWZhf3mJ6oY+H6DssiW9VanJ8AxL/IfZ97OGMHmggQol+QK+Y+0ojmysPY2iFnY5k
-	R505Zacc114UVYlVEGQXRQ1OmtPiE1xxz6H2jyVTagtzKwUUa6Q+1vDCfs75SP/QyC49Zfn4FYt7N
-	MClXBMHpdxatQnWgef0g==;
+	List-Owner; bh=DKCLIe2+5JZBxBAS/B0IUINe6oulnaw7YXdpfByK+2k=; b=UQJD1N7RmDcAq1
+	JpZOUAyit+/Drv0inKxUq8bG3T5sDaI7MQWlDMdfOat/xEXKmxm2WUyPPT4WDNgfONKL8MwIkecP/
+	PqaFXdhtsXMRm7xniWJg2MfKcS9GMF02LHt2iIjam9PieBO9EdqTNrTjrm9YwKAz5L1WG06bTzSW3
+	Y1+XA5ARbWoTsK9/GqtpE26rSXHUFq9K7NbzLb4pRBI7EAjWWffCmDDDIulvRhTOcJHaIcnHa3MMD
+	VAdmkFdTzxO67t7Wu4vdyG05FfJM//O/SO/yfg5FKufk8iUotV3g6i5I2wx4y0hDI0YykJJ6h/Mue
+	Yd8nYk13D/3WwtF0A6hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUUCF-0004fQ-DV; Tue, 12 Nov 2019 11:18:55 +0000
-Received: from mail-eopbgr20045.outbound.protection.outlook.com ([40.107.2.45]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUUC4-0004dw-VF
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 11:18:46 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UHwNlqFbnCqp9/RyW5BZwMkuUVEbpnEpGN+eW6sn+3l3qWwrO6NRlbZOD63YTwVJo2TCc7u6yItPP4zBj28zCRK/DLF1IHiTNY8fQ/FkFhtCtTPGg1wVcN95ans+YkJg4L4ds6II5JziUUsNKab5oZa+j0R+kDA8O2J4idwj2nuUMldXyen4KBQQgcxKjqHviMoG8WMhV1vla7ftke+8VAKDPVGQw51Ez5RnDOpAgM5SNXFMgrVQzDziD1P3aAwiZDSm6o1uGxrRCoKHKimRvIQoOHPQozQjw+G7y3afBpBZ3EtAfQbdzKBlaD7ZxyFgwSXixIs5rGVxtBETK8xgcA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WT6j0VAgO9guqVEcCYsSLa/Vn+AN7lcTN5uVzEmKe4U=;
- b=Cl/MNZ0zkMP4auwyAkXAi7HpGF0LAML/ljeL4bUifT7fpoRR5ArOVhkZWA1mLQyDyOod7ps3p9DtJbm9fxM6pIV7+dZbeh1ZkTJe7ZS53YSGfPm2soCFyXf8XYclcpUVst1Pvk+nRLlEeKMV1T06DUr+T6Aw0iP6LYCeVpb9Ntukbb34sPF2y3fSGO5F5yQ6Gzqgi6ODm7+dub9LvyiuZpCfTVUYj6ik9HmOn1gyOUKN1ePprrwnJu0EmAP5YNsa1O4cHf348aCfSIGTQlf9KmcPe6T9RF736wfsupg7uSjBG+/4eNnpEQVPTU1u7mQYTweDHs4JEpP5NBwG3UFOXQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WT6j0VAgO9guqVEcCYsSLa/Vn+AN7lcTN5uVzEmKe4U=;
- b=S6/8OSeOnbAM0skUuxyLIl3iPwqQR/7FOOoH3rPqnTdzeG7u1aPb88TqwS+sIvlWVUmIjBPkOs5WSRDEiQfK9tVQqZwxtUvgPyNl0fjAMG7fFMnIFS9hXq8q+8yfT1L0CBOwGTUG5YYRqJT4oXNRvYHNTNRjUCsWwfK7qdNzKS4=
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB4051.eurprd04.prod.outlook.com (52.134.125.21) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.24; Tue, 12 Nov 2019 11:18:41 +0000
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::fd44:1b14:587c:9fde]) by AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::fd44:1b14:587c:9fde%7]) with mapi id 15.20.2430.027; Tue, 12 Nov 2019
- 11:18:41 +0000
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH v4 2/6] clk: imx: Mark dram pll on 8mm and 8mn with
- CLK_GET_RATE_NOCACHE
-Thread-Topic: [PATCH v4 2/6] clk: imx: Mark dram pll on 8mm and 8mn with
- CLK_GET_RATE_NOCACHE
-Thread-Index: AQHVloV7TZnkkId7Yky0Y9av5sUpE6eHaNKA
-Date: Tue, 12 Nov 2019 11:18:41 +0000
-Message-ID: <20191112111839.jlshj6w567hzh6e7@fsr-ub1664-175>
-References: <cover.1573252696.git.leonard.crestez@nxp.com>
- <e6230f49275e10e0cea625a8d806f3850ac2a29c.1573252696.git.leonard.crestez@nxp.com>
-In-Reply-To: <e6230f49275e10e0cea625a8d806f3850ac2a29c.1573252696.git.leonard.crestez@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM0PR02CA0032.eurprd02.prod.outlook.com
- (2603:10a6:208:3e::45) To AM0PR04MB5779.eurprd04.prod.outlook.com
- (2603:10a6:208:131::23)
-x-originating-ip: [89.37.124.34]
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=abel.vesa@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 2deb979e-6c56-4ff8-468a-08d76762125a
-x-ms-traffictypediagnostic: AM0PR04MB4051:|AM0PR04MB4051:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB4051DEDDC2EBDBDAB132571FF6770@AM0PR04MB4051.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2657;
-x-forefront-prvs: 021975AE46
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(7916004)(4636009)(366004)(199004)(189003)(66946007)(6436002)(9686003)(71200400001)(71190400001)(6512007)(1076003)(229853002)(14454004)(256004)(66476007)(64756008)(66446008)(6862004)(66066001)(4326008)(66556008)(6246003)(5660300002)(33716001)(6486002)(44832011)(6636002)(52116002)(7736002)(486006)(76176011)(476003)(446003)(25786009)(11346002)(54906003)(498600001)(86362001)(6116002)(3846002)(2906002)(7416002)(8936002)(6506007)(386003)(99286004)(53546011)(81166006)(81156014)(305945005)(26005)(186003)(8676002)(102836004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4051;
- H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: wTGoxY4cLG2SahgiiDBcg7IvS5VBTMsWd5XDpq92iZD/+/UDJettZS7V230Ktsw10UQ444S5NCLYb76W5PyElWBBkQ19agNtO1505YxCJ3q+1b0JtwAZjoa3ub+tzypaSD6+qP04iG7muDYIFmefnjLOznaB+hy2h4y6Jhthibk9+29FL++kmFSh7crW1PSKo7UCPDsCB5//AHPSGR76V3nKBN+lsZrkDyq/LUBbgcq7oLB5t5uf0AVwKu11puLEsrsX9B4syAzF49tjJooS0Yr/gxfdb3b1ji3v4PqL8Bw31SxjG5MvEhtLHcvPOLp3nZIG9vEgzdnVqvCZdcrUKoe3Arak4huXO9qzX3zcYKZj8nEemmhkmaoo0ww5tr2trToUD50S/NFow+Z2yCOQdgmLGJjXX5YZDOtv21VPDhQlft3/MLpy/b86ZtFSYghr
-Content-ID: <5C8B47F4FE43BA4E867456A48B2087B8@eurprd04.prod.outlook.com>
+	id 1iUUHf-0006aq-CL; Tue, 12 Nov 2019 11:24:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUUHT-0006a2-Te
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 11:24:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 088E831B;
+ Tue, 12 Nov 2019 03:24:19 -0800 (PST)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A44EA3F6C4;
+ Tue, 12 Nov 2019 03:24:17 -0800 (PST)
+Date: Tue, 12 Nov 2019 11:24:14 +0000
+From: Andre Przywara <andre.przywara@arm.com>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH V10 2/2] mailbox: introduce ARM SMC based mailbox
+Message-ID: <20191112112414.10f3f88e@donnerap.cambridge.arm.com>
+In-Reply-To: <2c8fa412-33c2-57c7-20b7-37b3b70ce524@gmail.com>
+References: <1569824287-4263-1-git-send-email-peng.fan@nxp.com>
+ <1569824287-4263-3-git-send-email-peng.fan@nxp.com>
+ <2c8fa412-33c2-57c7-20b7-37b3b70ce524@gmail.com>
+Organization: ARM
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2deb979e-6c56-4ff8-468a-08d76762125a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Nov 2019 11:18:41.0295 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: QquLOKwYWRWLxk4rwA1kzQp/NQSqJEp+wxBn12/TboXQhLRvG9T7gIyq17C3B5yJo1hMpFBGNtrhUTHtvugJBA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4051
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_031845_006721_28CAA951 
-X-CRM114-Status: GOOD (  19.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191112_032420_045305_DB6D3E91 
+X-CRM114-Status: GOOD (  30.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.45 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,129 +63,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
- Saravana Kannan <saravanak@google.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- dl-linux-imx <linux-imx@nxp.com>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Martin Kepplinger <martink@posteo.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
+ Peng Fan <peng.fan@nxp.com>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-11-09 00:39:52, Leonard Crestez wrote:
-> DRAM frequency switches are executed in firmware and can change the
-> configuration of the DRAM PLL outside linux. Mark these CLKs with
-> CLK_GET_RATE_NOCACHE so we always read back the PLL config registers and
-> recalculate rates.
-> 
-> In current DRAM frequency tables on 8mm/8mn only the maximum frequency
-> uses the PLL so it's always configured in the same way. However reading
-> back the PLL configuration is the correct behavior and allows additional
-> setpoints in the future.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+On Fri, 8 Nov 2019 09:32:43 -0800
+Florian Fainelli <f.fainelli@gmail.com> wrote:
 
-This one looks fine.
+Hi Florian,
 
-Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+> On 9/29/19 11:20 PM, Peng Fan wrote:
+> > From: Peng Fan <peng.fan@nxp.com>
+> > 
+> > This mailbox driver implements a mailbox which signals transmitted data
+> > via an ARM smc (secure monitor call) instruction. The mailbox receiver
+> > is implemented in firmware and can synchronously return data when it
+> > returns execution to the non-secure world again.
+> > An asynchronous receive path is not implemented.
+> > This allows the usage of a mailbox to trigger firmware actions on SoCs
+> > which either don't have a separate management processor or on which such
+> > a core is not available. A user of this mailbox could be the SCP
+> > interface.  
+> 
+> Sorry for not spotting this, or rather asking this earlier, but I do
+> have one question below.
+> 
+> [snip]
+> 
+> > +static int arm_smc_send_data(struct mbox_chan *link, void *data)
+> > +{
+> > +	struct arm_smc_chan_data *chan_data = link->con_priv;
+> > +	struct arm_smccc_mbox_cmd *cmd = data;
+> > +	unsigned long ret;
+> > +
+> > +	if (ARM_SMCCC_IS_64(chan_data->function_id)) {
+> > +		ret = chan_data->invoke_smc_mbox_fn(chan_data->function_id,
+> > +						    cmd->args_smccc64[0],
+> > +						    cmd->args_smccc64[1],
+> > +						    cmd->args_smccc64[2],
+> > +						    cmd->args_smccc64[3],
+> > +						    cmd->args_smccc64[4],
+> > +						    cmd->args_smccc64[5]);
+> > +	} else {
+> > +		ret = chan_data->invoke_smc_mbox_fn(chan_data->function_id,
+> > +						    cmd->args_smccc32[0],
+> > +						    cmd->args_smccc32[1],
+> > +						    cmd->args_smccc32[2],
+> > +						    cmd->args_smccc32[3],
+> > +						    cmd->args_smccc32[4],
+> > +						    cmd->args_smccc32[5]);
+> > +	}  
+> 
+> Why did not we use unsigned long for the args_smccc[] array to be bit
+> width independent, this is what the PSCI infrastructure does and it
+> looks a lot nicer IMHO. More question below.
 
-> ---
->  drivers/clk/imx/clk-imx8mm.c  | 2 +-
->  drivers/clk/imx/clk-imx8mn.c  | 2 +-
->  drivers/clk/imx/clk-pll14xx.c | 7 +++++++
->  drivers/clk/imx/clk.h         | 1 +
->  4 files changed, 10 insertions(+), 2 deletions(-)
+Huh, interestingly I think this comes from the combination of the two problems you point out, which evolved separately:
+Earlier we had no exported interface between the transport driver and the mailbox client, just a void pointer. So using "long" in the structure would not work, because it would behave differently between arm32 and arm64 kernels. But the firmware interface would always be fixed to one of the two calling conventions, regardless of the kernel "bitness", as advertised by the upper bits of the function ID.
+So we introduced explicit types that are used depending on the firmware-advertised calling convention. The idea was that any packed data any client would provide would always end up in consecutive registers in the firmware.
+Now we explicitly advertise the expected message structure in the new header file, so we could go back to unsigned long here, indeed. A 32-bit kernel could never use the 64-bit calling convention, so long would fit. In a 64-bit kernel the compiler would either downgrade the long argument to the 32-bit arguments the firmware expects, or keep it long.
+So it might be worth a short to go back to long.
+
 > 
-> diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
-> index c58f988191a5..d500bac3afa1 100644
-> --- a/drivers/clk/imx/clk-imx8mm.c
-> +++ b/drivers/clk/imx/clk-imx8mm.c
-> @@ -326,11 +326,11 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
->  	clks[IMX8MM_SYS_PLL3_REF_SEL] = imx_clk_mux("sys_pll3_ref_sel", base + 0x114, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
->  
->  	clks[IMX8MM_AUDIO_PLL1] = imx_clk_pll14xx("audio_pll1", "audio_pll1_ref_sel", base, &imx_1443x_pll);
->  	clks[IMX8MM_AUDIO_PLL2] = imx_clk_pll14xx("audio_pll2", "audio_pll2_ref_sel", base + 0x14, &imx_1443x_pll);
->  	clks[IMX8MM_VIDEO_PLL1] = imx_clk_pll14xx("video_pll1", "video_pll1_ref_sel", base + 0x28, &imx_1443x_pll);
-> -	clks[IMX8MM_DRAM_PLL] = imx_clk_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_pll);
-> +	clks[IMX8MM_DRAM_PLL] = imx_clk_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_dram_pll);
->  	clks[IMX8MM_GPU_PLL] = imx_clk_pll14xx("gpu_pll", "gpu_pll_ref_sel", base + 0x64, &imx_1416x_pll);
->  	clks[IMX8MM_VPU_PLL] = imx_clk_pll14xx("vpu_pll", "vpu_pll_ref_sel", base + 0x74, &imx_1416x_pll);
->  	clks[IMX8MM_ARM_PLL] = imx_clk_pll14xx("arm_pll", "arm_pll_ref_sel", base + 0x84, &imx_1416x_pll);
->  	clks[IMX8MM_SYS_PLL1] = imx_clk_fixed("sys_pll1", 800000000);
->  	clks[IMX8MM_SYS_PLL2] = imx_clk_fixed("sys_pll2", 1000000000);
-> diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
-> index ca78cb1249a7..9c605ca1b631 100644
-> --- a/drivers/clk/imx/clk-imx8mn.c
-> +++ b/drivers/clk/imx/clk-imx8mn.c
-> @@ -323,11 +323,11 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
->  	clks[IMX8MN_SYS_PLL3_REF_SEL] = imx_clk_mux("sys_pll3_ref_sel", base + 0x114, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
->  
->  	clks[IMX8MN_AUDIO_PLL1] = imx_clk_pll14xx("audio_pll1", "audio_pll1_ref_sel", base, &imx_1443x_pll);
->  	clks[IMX8MN_AUDIO_PLL2] = imx_clk_pll14xx("audio_pll2", "audio_pll2_ref_sel", base + 0x14, &imx_1443x_pll);
->  	clks[IMX8MN_VIDEO_PLL1] = imx_clk_pll14xx("video_pll1", "video_pll1_ref_sel", base + 0x28, &imx_1443x_pll);
-> -	clks[IMX8MN_DRAM_PLL] = imx_clk_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_pll);
-> +	clks[IMX8MN_DRAM_PLL] = imx_clk_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_dram_pll);
->  	clks[IMX8MN_GPU_PLL] = imx_clk_pll14xx("gpu_pll", "gpu_pll_ref_sel", base + 0x64, &imx_1416x_pll);
->  	clks[IMX8MN_VPU_PLL] = imx_clk_pll14xx("vpu_pll", "vpu_pll_ref_sel", base + 0x74, &imx_1416x_pll);
->  	clks[IMX8MN_ARM_PLL] = imx_clk_pll14xx("arm_pll", "arm_pll_ref_sel", base + 0x84, &imx_1416x_pll);
->  	clks[IMX8MN_SYS_PLL1] = imx_clk_fixed("sys_pll1", 800000000);
->  	clks[IMX8MN_SYS_PLL2] = imx_clk_fixed("sys_pll2", 1000000000);
-> diff --git a/drivers/clk/imx/clk-pll14xx.c b/drivers/clk/imx/clk-pll14xx.c
-> index 5c458199060a..a6d31a7262ef 100644
-> --- a/drivers/clk/imx/clk-pll14xx.c
-> +++ b/drivers/clk/imx/clk-pll14xx.c
-> @@ -65,10 +65,17 @@ struct imx_pll14xx_clk imx_1443x_pll = {
->  	.type = PLL_1443X,
->  	.rate_table = imx_pll1443x_tbl,
->  	.rate_count = ARRAY_SIZE(imx_pll1443x_tbl),
->  };
->  
-> +struct imx_pll14xx_clk imx_1443x_dram_pll = {
-> +	.type = PLL_1443X,
-> +	.rate_table = imx_pll1443x_tbl,
-> +	.rate_count = ARRAY_SIZE(imx_pll1443x_tbl),
-> +	.flags = CLK_GET_RATE_NOCACHE,
-> +};
-> +
->  struct imx_pll14xx_clk imx_1416x_pll = {
->  	.type = PLL_1416X,
->  	.rate_table = imx_pll1416x_tbl,
->  	.rate_count = ARRAY_SIZE(imx_pll1416x_tbl),
->  };
-> diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
-> index bc5bb6ac8636..81122c9ab842 100644
-> --- a/drivers/clk/imx/clk.h
-> +++ b/drivers/clk/imx/clk.h
-> @@ -50,10 +50,11 @@ struct imx_pll14xx_clk {
->  	int flags;
->  };
->  
->  extern struct imx_pll14xx_clk imx_1416x_pll;
->  extern struct imx_pll14xx_clk imx_1443x_pll;
-> +extern struct imx_pll14xx_clk imx_1443x_dram_pll;
->  
->  #define imx_clk_cpu(name, parent_name, div, mux, pll, step) \
->  	imx_clk_hw_cpu(name, parent_name, div, mux, pll, step)->clk
->  
->  #define clk_register_gate2(dev, name, parent_name, flags, reg, bit_idx, \
-> -- 
-> 2.17.1
+> [snip]
 > 
+> > +
+> > +#ifndef _LINUX_ARM_SMCCC_MBOX_H_
+> > +#define _LINUX_ARM_SMCCC_MBOX_H_
+> > +
+> > +#include <linux/types.h>
+> > +
+> > +/**
+> > + * struct arm_smccc_mbox_cmd - ARM SMCCC message structure
+> > + * @args_smccc32/64:	actual usage of registers is up to the protocol
+> > + *			(within the SMCCC limits)
+> > + */
+> > +struct arm_smccc_mbox_cmd {
+> > +	union {
+> > +		u32 args_smccc32[6];
+> > +		u64 args_smccc64[6];
+> > +	};
+> > +};  
+> 
+> Why is this being moved to a separate header file and not within the
+> driver's main file? It is not like we offer the ability for a driver to
+> embed this ARM SMC mailbox driver as a library, and customize the values
+> of the SMC arguments (maybe we should do that, as a later patch) except
+> for the function_id.
+
+I wouldn't call it a "library", but indeed we expose the transport protocol to the mailbox client. It seems that the mailbox framework is not really clear here, it just states that (at least in many cases) the mailbox client knows about the transport protocol, even though the separation between the two suggests otherwise. This probably stems back from the days, where mailboxes were directly used by their users, without providing any kind of abstraction.
+So going with this, the SMC mailbox transport driver enforces a specific transport protocol for the payload, namely the six SMCCC defined registers. So we make this available, so any mailbox client knows what to expect. At the end of the day on the other end there will be some firmware probably expecting specific data in specific registers - or no data at all, as in the simple doorbell case we intend to use for SCPI/SCMI.
+
+> If you have a "public" header, there is usually a
+> service or some configuration that your driver would offer, which is not
+> the case here.
+
+If you want to use the mailbox just as a doorbell (as in our case), it doesn't matter, so we can as well expose the underlying transport protocol.
+
+Cheers,
+Andre.
 
 _______________________________________________
 linux-arm-kernel mailing list
