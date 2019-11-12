@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2F3AF8814
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 06:37:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9298F8818
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 06:37:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xzFd5MGKN7eVr5Ce2aQmABpWQtZTmWa4N4vjDJjCgpM=; b=hEw+BP4oICG1Su
-	B5P/Vh7hSuLYi4Vi5kuOLZjOrSHe10mc7bL6wcCE59pENSl1Y2Euv3BiQXREXUm+7Zbouz6sa/Z8R
-	xaHY/xH/tMY5Z9jCL7qGWLoBbD45o21A3v7+XKZz4JGY6uXDTTqpRS+DK9UbweSr5njuR4/VMFzqZ
-	CwS7EZdfkQ2Qlr9+lOmDG0HSdfx+rsT4UwvfZBBW4nIXf5CV+Ac79v/oMPJnJI7NpBxjKH9y4sj7P
-	3BsZGKM6aaKorLMHmJriM/JwmPWPPEcHJd3Nk2yngl/LzlEwpV++8blXCbldFU1I/Pn2pZ7R1cFtJ
-	YKsNmBBpJ2sqDnjzER4A==;
+	List-Owner; bh=J3V3H2S8zJ/+OpF0f56DsGpcWWrgyZvTt2HE+KVMVpc=; b=rP21WTF8EbUG8G
+	8oM35fP90xMEIkKfogq21TLtCxqPalU0tXLH1+nMzbNHa/QjHNlQTL6bby2HoBT9+YFjfy7QsCG0z
+	gRL9MuMV787uuGhNOPQLCfKrAGGk5s2jB5SLP8HOayMTIjTY7HgHxn95eSxYNJ+SohaXdJGr51yjP
+	J404hLbGOu9yRjbS9JoFccPRH085qDZPLIn7BApyHPNIof08ISzKTul/qQnV4dRU5ZfJxFPf56lb/
+	n/hUPhsg6NA+tq1spzljGNVQzt+IOWj4ZUjjNk9KROuTSd5kkaFzZxLGbzpeI7x25r6/e6TVKYKrY
+	RvAqSQPoQEEqPHtwCydQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUOrK-0007yC-FY; Tue, 12 Nov 2019 05:36:58 +0000
+	id 1iUOrs-0008JB-Ia; Tue, 12 Nov 2019 05:37:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUOqo-0007ig-JD
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 05:36:28 +0000
+ id 1iUOre-0008IS-FO
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 05:37:19 +0000
 Received: from localhost (unknown [122.167.70.123])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6960321783;
- Tue, 12 Nov 2019 05:36:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 54CF02084F;
+ Tue, 12 Nov 2019 05:37:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573536986;
- bh=YDjjnafho2uCvMpxMXlnLJhhfTeoSuyoFzfDVXn7/m4=;
+ s=default; t=1573537038;
+ bh=DY28ZU9iJjrpae4knOfkZebu2FgGI1JEdHocfirJtGU=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sP/sZWa6JWAiI7hq87AEWqr9AfSulRdI9YTrCKxSrQ9hoL4y7OXcCBvFDo6lhJO0f
- FeJ/Vqsm9SzcuKMOUI1LrLDl4Fp3KOIMDqB1bOIZf5z1Xn5+3hQ0ld7AfxnpvhMfIT
- NS+jfbiH+eK3W0HryxKa7RJk06UWxK51nrET6tF0=
-Date: Tue, 12 Nov 2019 11:06:21 +0530
+ b=Ne9ss+MVsI/j6Y/+Q5x3RMKfDe5np4vko2s3/+2sXfpBN/jAr0RvQO6Rl0Hs4lq17
+ 2lnc6rDPlVkKSU6bH+s7oJKE4rM3Ley2L1M4JT76AOC5cA1fnUZ5roRpINGLiRcrVh
+ 5Xkpl6VeEXsVQiRXSXd+XGAnKlWysyWckSPyS0KI=
+Date: Tue, 12 Nov 2019 11:07:14 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PATCH v4 12/15] dmaengine: ti: New driver for K3 UDMA -
- split#4: dma_device callbacks 1
-Message-ID: <20191112053621.GW952516@vkoul-mobl>
+Subject: Re: [PATCH v4 15/15] dmaengine: ti: k3-udma: Add glue layer for non
+ DMAengine users
+Message-ID: <20191112053714.GX952516@vkoul-mobl>
 References: <20191101084135.14811-1-peter.ujfalusi@ti.com>
- <20191101084135.14811-13-peter.ujfalusi@ti.com>
- <20191111060943.GQ952516@vkoul-mobl>
- <6d73f6e1-6d85-d468-2e69-47d36ed75807@ti.com>
+ <20191101084135.14811-16-peter.ujfalusi@ti.com>
+ <20191111061258.GS952516@vkoul-mobl>
+ <6d4d2fcc-502b-4b41-cd71-8942741f4ad8@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <6d73f6e1-6d85-d468-2e69-47d36ed75807@ti.com>
+In-Reply-To: <6d4d2fcc-502b-4b41-cd71-8942741f4ad8@ti.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_213626_723158_70191412 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191111_213718_533531_9F795D1B 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: -3.7 (---)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-3.7 points)
@@ -93,33 +92,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11-11-19, 12:29, Peter Ujfalusi wrote:
-> On 11/11/2019 8.09, Vinod Koul wrote:
-> > On 01-11-19, 10:41, Peter Ujfalusi wrote:
-
-> >> +static enum dma_status udma_tx_status(struct dma_chan *chan,
-> >> +				      dma_cookie_t cookie,
-> >> +				      struct dma_tx_state *txstate)
-> >> +{
-> >> +	struct udma_chan *uc = to_udma_chan(chan);
-> >> +	enum dma_status ret;
-> >> +	unsigned long flags;
-> >> +
-> >> +	spin_lock_irqsave(&uc->vc.lock, flags);
-> >> +
-> >> +	ret = dma_cookie_status(chan, cookie, txstate);
-> >> +
-> >> +	if (!udma_is_chan_running(uc))
-> >> +		ret = DMA_COMPLETE;
-> > 
-> > so a paused channel will result in dma complete status?
+On 11-11-19, 12:31, Peter Ujfalusi wrote:
 > 
-> The channel is still enabled (running), the pause only sets a bit in the
-> channel's real time control register.
+> 
+> On 11/11/2019 8.12, Vinod Koul wrote:
+> > On 01-11-19, 10:41, Peter Ujfalusi wrote:
+> >> From: Grygorii Strashko <grygorii.strashko@ti.com>
+> >>
+> >> Certain users can not use right now the DMAengine API due to missing
+> >> features in the core. Prime example is Networking.
+> >>
+> >> These users can use the glue layer interface to avoid misuse of DMAengine
+> >> API and when the core gains the needed features they can be converted to
+> >> use generic API.
+> > 
+> > Can you add some notes on what all features does this layer implement..
+> 
+> In the commit message or in the code?
 
-Okay and which cases will channel not be running i.e., you return
-DMA_COMPLETE above?
+commit here so that we know what to expect.
 
+Thanks
 -- 
 ~Vinod
 
