@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B73C2F9525
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:08:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78BD7F952C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:09:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L3ERJ9UbjLBDp6yQ1GMgAEJVV72yLsoIbTrzf69l1IU=; b=BDhKUuvOQdJQXU
-	kuoxm/Bdq2f7EkPA8PobVtLwoH+J+54cxRROhy8JIVGIOhsNsRxHXwtR7FngJzz52Xtb02PDNnIWt
-	A2ZyUTq5aHXOLSJVe60cl4GcGWXfzzayf0Gp1Wb1bUuJoBTqkOzjKLFMbVu5Qe7KkaQfUv8g/MZKK
-	yBDZYhOIxcvvCeOlGyZzeQfg8DtIWc9fFBSDhN2Zw2bdJlsfS77eMpQiXdN0tuNzTeuIXqFdD6hnN
-	zsCQKG11pwAi42dMJgajBdXoAYjuC5Z7cjej3tIAJuUIEyDxSPOftEgJAfxjDpli4fJsfGE/YuRio
-	UhyOL59T6gr7P6uVNxow==;
+	List-Owner; bh=9hb15Loo8OxT+yIX5ShLJZoMHVpRJC5l5/f/ITfrJjw=; b=JGddSZ/jSrfWf7
+	JgRckzAZIFks8AixNBo+jWHr6eR4hu9VfWewrMkx8IrlP3qDOyDj44UPIthnEIG1fSpcaNRvtD2Vn
+	24pV4eA3VKYczZ40hxeUSd2oIoxFduv9bPksuNGmrSi4/HBscV/mTvCYWkAToZ/ncGal4p4OCbbac
+	1mK0Y+wV4grFYUDq+AGrKWcvATNmB5mDBCSKSTybribq0qCcagKvIX+gVgfz8JPdPSF2DrmefVWKC
+	3VuU/mWr+okMGvPM8wkGZW+ZKSkHOU34tSfJmjy7XZgg7TZGTPX0fJIpvG+oi1oERwChVdZincB7z
+	gLgloXLg45mIwjMfygGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUYiT-0002ac-GC; Tue, 12 Nov 2019 16:08:29 +0000
-Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUYiL-0002Zr-Pk; Tue, 12 Nov 2019 16:08:23 +0000
-Received: by theia.8bytes.org (Postfix, from userid 1000)
- id E60A52E2; Tue, 12 Nov 2019 17:08:11 +0100 (CET)
-Date: Tue, 12 Nov 2019 17:08:10 +0100
-From: Joerg Roedel <joro@8bytes.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] iommu/rockchip: Don't provoke WARN for harmless IRQs
-Message-ID: <20191112160810.GB3884@8bytes.org>
-References: <82cba203551939399d219e4cb6c602315fd0c410.1573498518.git.robin.murphy@arm.com>
+	id 1iUYjA-0002tJ-00; Tue, 12 Nov 2019 16:09:12 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUYiz-0002sQ-CF
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 16:09:05 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 639A3D6E;
+ Tue, 12 Nov 2019 08:09:00 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 29C753F534; Tue, 12 Nov 2019 08:08:59 -0800 (PST)
+Date: Tue, 12 Nov 2019 16:08:57 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Vincent Whitchurch <vincent.whitchurch@axis.com>
+Subject: Re: [PATCH v2] buffer: Fix I/O error due to ARM read-after-read hazard
+Message-ID: <20191112160855.GA22025@arrakis.emea.arm.com>
+References: <20191112130244.16630-1-vincent.whitchurch@axis.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <82cba203551939399d219e4cb6c602315fd0c410.1573498518.git.robin.murphy@arm.com>
+In-Reply-To: <20191112130244.16630-1-vincent.whitchurch@axis.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_080821_987690_81EC0082 
-X-CRM114-Status: GOOD (  11.98  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191112_080903_560057_65DFC8C9 
+X-CRM114-Status: GOOD (  15.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [81.169.241.247 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,30 +60,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, maz@kernel.org, linux-rockchip@lists.infradead.org,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+Cc: axboe@kernel.dk, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Vincent Whitchurch <rabinv@axis.com>, torvalds@linux-foundation.org,
+ linux@armlinux.org.uk, linux-kernel@vger.kernel.org, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 11, 2019 at 06:55:18PM +0000, Robin Murphy wrote:
-> Although we don't generally expect IRQs to fire for a suspended IOMMU,
-> there are certain situations (particularly with debug options) where
-> we might legitimately end up with the pm_runtime_get_if_in_use() call
-> from rk_iommu_irq() returning 0. Since this doesn't represent an actual
-> error, follow the other parts of the driver and save the WARN_ON()
-> condition for a genuine negative value. Even if we do have spurious
-> IRQs due to a wedged VOP asserting the shared line, it's not this
-> driver's job to try to second-guess the IRQ core to warn about that.
+On Tue, Nov 12, 2019 at 02:02:44PM +0100, Vincent Whitchurch wrote:
+> On my dual-core ARM Cortex-A9, reading from squashfs (over
+> dm-verity/ubi/mtd) in a loop for hundreds of hours invariably results in
+> a read failure in squashfs_read_data().  The errors occur because the
+> buffer_uptodate() check fails after wait_on_buffer().  Further debugging
+> shows that the bh was in fact uptodate and that there is no actual I/O
+> error in the lower layers.
 > 
-> Reported-by: Vasily Khoruzhick <anarsoul@gmail.com>
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> ---
->  drivers/iommu/rockchip-iommu.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> The problem is caused by the read-after-read hazards in the ARM
+> Cortex-A9 MPCore (erratum #761319, see [1]).  The code generated by the
+> compiler for the combination of the wait_on_buffer() and
+> buffer_uptodate() calls reads the flags value twice from memory (see the
+> excerpt of the assembly below).  The new value of the BH_Lock flag is
+> seen but the new value of BH_Uptodate is not even though both the bits
+> are read from the same memory location.
+> 
+>  27c:	9d08      	ldr	r5, [sp, #32]
+>  27e:	2400      	movs	r4, #0
+>  280:	e006      	b.n	290 <squashfs_read_data+0x290>
+>  282:	6803      	ldr	r3, [r0, #0]
+>  284:	07da      	lsls	r2, r3, #31
+>  286:	f140 810d 	bpl.w	4a4 <squashfs_read_data+0x4a4>
+>  28a:	3401      	adds	r4, #1
+>  28c:	42bc      	cmp	r4, r7
+>  28e:	da08      	bge.n	2a2 <squashfs_read_data+0x2a2>
+>  290:	f855 0f04 	ldr.w	r0, [r5, #4]!
+>  294:	6803      	ldr	r3, [r0, #0]
+>  296:	0759      	lsls	r1, r3, #29
+>  298:	d5f3      	bpl.n	282 <squashfs_read_data+0x282>
+>  29a:	f7ff fffe 	bl	0 <__wait_on_buffer>
+> 
+> Work around this problem by adding a DMB between the two reads of
+> bh->flags, as recommended in the ARM document.  With this barrier, no
+> failures have been seen in more than 5000 hours of the same test.
+> 
+> [1] http://infocenter.arm.com/help/topic/com.arm.doc.uan0004a/UAN0004A_a9_read_read.pdf
 
-Applied, thanks.
+I thought we were going to fix the compiler. I found an old thread here:
+
+https://gcc.gnu.org/ml/gcc-patches/2014-06/msg00714.html
+
+Also cc'ing Richard Earnshaw as he may been involved in the gcc
+discussion at the time.
+
+While you can add some barrier here, there may be other cases where this
+can go wrong.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
