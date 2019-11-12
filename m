@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E219F99B3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 20:28:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9AD8F99B6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 20:28:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DTS1TY989XNSRf5BIpc306GuC2iXBx5Dr4PsYO2yqaM=; b=IUFKVcDIF+3wpk
-	m7Akc0MdnJLCIKuiRFy/GIhk2Pi4l5sM1jH48L9J6gb2KDBye9P7we19KNjwlQ7Hf/rSJqWxp8hW3
-	DuyQv/9DfVvTLA99dkR1qf9DwSbY1Z62cdb1nmz0t2fYNFZ4ymMktYkRZx7nOLZhp02Ofagr4+pDC
-	hpYHwYaNbfDDSVLFUBbgnUPZydleHRwr4qjza9sGf3cfZdG1EVQ8rBHlP0PigYZYbIWXCEU+DNqiH
-	w7oDHGeX3tFv7D4d6jMLWEhFSTJm1BMNCbELAS6GT6Se8m/pF5ri16brZxYpdRhV1vBk+qVsnXXqn
-	7foXO9pG3asUrSXBA/lA==;
+	List-Owner; bh=hlJ+TT59Og++3p+lQbbVQOJpzdk58qBE6fu8VlQml8o=; b=tpEK4oEIItx5nh
+	tmTYOcCU9CgmPcFObTCV8DcQYHPjKasTrOXdwZGUOJEz/V1m1TDiwl8IDSJpirDbKAuyW2wc/F+cB
+	1j7z97KkruVBlweeLj7GXLvfCpBXT66zxfXQucPkMnWcpNxwscaQWbcUyua2LGg3eC5qNlZF5PXWJ
+	dqsvcgNdfChPC5KhJx7T2aei8hUHh6IJ7Ud6sB3Ez/lyGDCWh/L6qFBSz/lQ6qTQd5anPAOta9QTH
+	/rS7IAyh3L5LkM41s+hojU43/TRb1Te/MyWh2yq5v7ZLChlVwdcV1BAmFFfT7a7RMsEzTPhshWQN4
+	cBfDVrOiKtF2fT4MumKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUbpT-0007Bh-0v; Tue, 12 Nov 2019 19:27:55 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1iUbqA-0007RC-HQ; Tue, 12 Nov 2019 19:28:38 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUbpM-0007B2-1g
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 19:27:49 +0000
-Received: by mail-oi1-f193.google.com with SMTP id e9so15910758oif.8
+ id 1iUbq2-0007QZ-B6
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 19:28:33 +0000
+Received: by mail-oi1-f195.google.com with SMTP id i185so15902241oif.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 Nov 2019 11:27:47 -0800 (PST)
+ Tue, 12 Nov 2019 11:28:30 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=Y4VJU4JPIoN8kP/oz54y8Wq1pxD+B52sbN7PsTOLQlY=;
- b=BWIhzaWWC3E/xRkrm1y3x6UhqN+LnKg1WDblzhdlOBAF32Cplre2gVw32uuFeatW12
- B3GD9+un1tdPUrpFADX5xcrCGJYu78dFk2tcFYGE8KhftrgmZPLWEwR8fb86RZZ0WI2Y
- Qjo0XsTtawXDfssAr5x4YYradrg2/mIBYcdlz3sYS1mtF40q2Lt2yB94mXIR1Slt7qBv
- kXdDcinFdDSCDElnOwVH1vF0bJ65zw0WQ5jtiOMeqHf7wzADTEa/RfZy2U7vPmlcypRw
- W9LA8pN+Ut29fjnP1iigBOtRKlUEkL26vnKMaW8YhyAPz9DfCYopPw25hg+y0U7vwlwQ
- T3IQ==
-X-Gm-Message-State: APjAAAVHzphWg3ioaFZpgfdjlMaaCN/wm/E+LkR1GtOXemRwEnGCCktL
- TVAUXkcw8vqBvl73ISYa4A==
-X-Google-Smtp-Source: APXvYqz4Jkfw6OOk4L5JFnxQar5zpZUQ12T/aVbn6qghLtQRbJWl1rIMeQ2geyDRfOhX2lw8P+1LcA==
-X-Received: by 2002:aca:5006:: with SMTP id e6mr501570oib.127.1573586866587;
- Tue, 12 Nov 2019 11:27:46 -0800 (PST)
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1f1t/vx7cjzieQA+2HB6mtVDWaZlhCcx6hNFD68YUMg=;
+ b=BFSNkSMqMDdQpv4vluhWmXBEUJmyQluBXDeuNZ4kNgQXu2SI1AZu7DwOiYd/bwb3hN
+ diVEifccimJ/jexLhe/y+JQPnUIjZeCTSOT31C8n/bHNorC3xkjZGXIEEpdQXo39DZbu
+ VYAXWPzY4pFxSbpeBOwZQVMOI42OhlvnBxkIEx9U/zeEek0GhzoeGatHCG04aY01TDi4
+ edlSsv5C3pb/0RT/mt5pQeUbC6aLE5SfQtn7pPC/NLZd5PkDzMx7SMM6vPRLhi2I9YfN
+ mTdxTEaGzLKY4cezlS+3Na1pYoOaGS9BBkpk+EpYV2ZzchO2A3VwpESsalVoyG6TeB+x
+ KUPw==
+X-Gm-Message-State: APjAAAVtzWQFD32S35JeSvnzbEVBvuZcXNL0b0d1P90Iflt3BNFGsSRe
+ /KXvuaJY43pMHeUEPBLBMQ==
+X-Google-Smtp-Source: APXvYqzGgQOQC2/469EBUJJsFsEKSD9Q14S9vX3Bn2KAqFS+UEKvvAoHAngSDKJXbrXmpNbXhc15CQ==
+X-Received: by 2002:a05:6808:8d3:: with SMTP id
+ k19mr466822oij.171.1573586909412; 
+ Tue, 12 Nov 2019 11:28:29 -0800 (PST)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 202sm6330662oii.39.2019.11.12.11.27.45
+ by smtp.gmail.com with ESMTPSA id t2sm5366972otm.75.2019.11.12.11.28.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 Nov 2019 11:27:46 -0800 (PST)
-Date: Tue, 12 Nov 2019 13:27:45 -0600
+ Tue, 12 Nov 2019 11:28:28 -0800 (PST)
+Date: Tue, 12 Nov 2019 13:28:28 -0600
 From: Rob Herring <robh@kernel.org>
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PATCH v5 08/15] dt-bindings: dma: ti: Add document for K3 UDMA
-Message-ID: <20191112192745.GA20639@bogus>
-References: <20191111135330.8235-1-peter.ujfalusi@ti.com>
- <20191111135330.8235-9-peter.ujfalusi@ti.com>
+To: Stefan Wahren <wahrenst@gmx.net>
+Subject: Re: [PATCH V5 net-next 3/7] dt-bindings: net: bcmgenet: Add BCM2711
+ support
+Message-ID: <20191112192828.GA21918@bogus>
+References: <1573501766-21154-1-git-send-email-wahrenst@gmx.net>
+ <1573501766-21154-4-git-send-email-wahrenst@gmx.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191111135330.8235-9-peter.ujfalusi@ti.com>
+In-Reply-To: <1573501766-21154-4-git-send-email-wahrenst@gmx.net>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_112748_092467_BF245CB4 
-X-CRM114-Status: GOOD (  10.45  )
+X-CRM114-CacheID: sfid-20191112_112832_160689_922FF73D 
+X-CRM114-Status: GOOD (  11.49  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -78,7 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
+ [209.85.167.195 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,26 +93,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, devicetree@vger.kernel.org, grygorii.strashko@ti.com,
- lokeshvutla@ti.com, j-keerthy@ti.com, linux-kernel@vger.kernel.org,
- t-kristo@ti.com, tony@atomide.com, vkoul@kernel.org, robh+dt@kernel.org,
- ssantosh@kernel.org, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ netdev@vger.kernel.org, Eric Anholt <eric@anholt.net>,
+ Matthias Brugger <mbrugger@suse.com>, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@kernel.org>, Doug Berger <opendmb@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Stefan Wahren <wahrenst@gmx.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCAxMSBOb3YgMjAxOSAxNTo1MzoyMyArMDIwMCwgUGV0ZXIgVWpmYWx1c2kgd3JvdGU6
-Cj4gTmV3IGJpbmRpbmcgZG9jdW1lbnQgZm9yCj4gVGV4YXMgSW5zdHJ1bWVudHMgSzMgTkFWU1Mg
-VW5pZmllZCBETUEg4oCTIFBlcmlwaGVyYWwgUm9vdCBDb21wbGV4IChVRE1BLVApLgo+IAo+IFVE
-TUEtUCBpcyBpbnRyb2R1Y2VkIGFzIHBhcnQgb2YgdGhlIEszIGFyY2hpdGVjdHVyZSBhbmQgY2Fu
-IGJlIGZvdW5kIGluCj4gQU02NTQgYW5kIGo3MjFlLgo+IAo+IFNpZ25lZC1vZmYtYnk6IFBldGVy
-IFVqZmFsdXNpIDxwZXRlci51amZhbHVzaUB0aS5jb20+Cj4gLS0tCj4gIC4uLi9kZXZpY2V0cmVl
-L2JpbmRpbmdzL2RtYS90aS9rMy11ZG1hLnlhbWwgICB8IDE5MiArKysrKysrKysrKysrKysrKysK
-PiAgMSBmaWxlIGNoYW5nZWQsIDE5MiBpbnNlcnRpb25zKCspCj4gIGNyZWF0ZSBtb2RlIDEwMDY0
-NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZG1hL3RpL2szLXVkbWEueWFtbAo+
-IAoKUmV2aWV3ZWQtYnk6IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5vcmc+CgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Mon, 11 Nov 2019 20:49:22 +0100, Stefan Wahren wrote:
+> 
+> The BCM2711 has some modifications to the GENET v5. So add this SoC
+> specific compatible.
+> 
+> Suggested-by: Florian Fainelli <f.fainelli@gmail.com>
+> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+> ---
+>  Documentation/devicetree/bindings/net/brcm,bcmgenet.txt | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+
+Acked-by: Rob Herring <robh@kernel.org>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
