@@ -2,66 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C25EF922D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:25:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26C98F9237
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:26:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3G2em5AmD2l1fntkuIj0gRH6C2uE94NBzxKfdu+LMMg=; b=kyrvzDrrS3MNYZ
-	IZlzWO+AFdwwEuFJVVCo8AxF1V7un63JpSQVlUM9XdlWvZH3xSeJskJILrk3RflGy7E9Quj5xiFYn
-	PwK3UptWt/g7cp+EbuNwOKV0FpYbBPYlO1u35gMUi4sxWh+0ymBbDSoVjjdWynzm9AZyisMh8L6S3
-	vAllN2dRz0tBtATgZ4cSG+dqTmq1521oXoWwuFPJOBgZZYnDrgucmuKVd943gGV1V3X88wDk8Qi0Y
-	/9zaO6rFvmWt1+2gALMzI6a5iNwRJCkNm4b8vyjQPc8RjOT7L7cVSQKU6pi1cby4ND+89nUkW6GOs
-	q9Dyh6vpm61mq1X7lylw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Pu2dibF1s0pYz/RD78uj9o+ekrzTd/AQ+LQqciBcTsU=; b=o/zLnZgub/LMzr
+	+ZJR39oG22SvLpj+rjR/hjmwWob0FrIiDDUETLpp4jr2Mvw7YdHMaOhafvYO4k4a/R00M8/DDlPLK
+	YPA5iEm5N0+VlUDFdwerkpMOr81NcV2d8Xf7trunIAufjfxf45AF/F0/uVDEjrb630X/HEGugU5er
+	SRI/OYRaJvlVWJRC84h4CEpxYhk26H0iMa1Ff2XKMy2P4fe8P6lYeQ1ZuGhNki+6bs9oMM9Obwqa3
+	j/pj/bZbi6inAxSrGhCAaQu303eUUU7PhkooX+Ma+v3pOYRjSGNnDFWDXmBQMHiHQCnIL+dBvoO29
+	TAYh63KlXXgcxj6OXFZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUX6o-0007Xq-34; Tue, 12 Nov 2019 14:25:30 +0000
+	id 1iUX7H-0000WF-Ch; Tue, 12 Nov 2019 14:25:59 +0000
 Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUX5R-0006eX-U5
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:24:07 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xACEO3qh097838;
- Tue, 12 Nov 2019 08:24:03 -0600
+ id 1iUX6G-0007ZZ-Fi
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:24:58 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xACEOrBt098073;
+ Tue, 12 Nov 2019 08:24:53 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573568643;
- bh=tPqdhNixIKdQvbkA4FXOFaYElMurFZuh15DBk3awDgM=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=N/2bLdDUVGZPiJaNp65GX3W/6JnhNmB1w+ET6MJvSjVNWVxcr65dZc9+q6Fr+lecx
- LaoWY/JHp+KzpbgqCbHT9u8dP6dl5fcxorOzJ0zcUS2eOWyk/ENTF8XNZdPdTRBYN1
- l7AmeCmFjEHpINE/WUoyf49GjFKxSnCqT8UGK1dY=
-Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xACEO3Sa018760
+ s=ti-com-17Q1; t=1573568693;
+ bh=Z/GDAOp5hkp+SYDfUmkON22BaPQPy5r+LjA+Gy96kHM=;
+ h=From:To:CC:Subject:Date;
+ b=M69IsmgHTFR6OJYf6whr65S1Yd9+vFcfX/t4OPZtPj91NXnK6ZuPzvaz1XXL+92oz
+ V4AqxYWH3/8JcD1j90L13AaICbnzFAhzVVtDwW3g49OEq5kXeDKL6OuxGddP5ZvNfV
+ HCWHqTHoUPKi7IS/cn5FoNbyY9K1YAQxyjSi/hE0=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xACEOrJn115938
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 12 Nov 2019 08:24:03 -0600
-Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 12 Nov 2019 08:24:53 -0600
+Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 12
- Nov 2019 08:24:03 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ Nov 2019 08:24:35 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 12 Nov 2019 08:24:03 -0600
+ Frontend Transport; Tue, 12 Nov 2019 08:24:35 -0600
 Received: from uda0869644b.dal.design.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xACENwTk099408;
- Tue, 12 Nov 2019 08:24:03 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xACEOrBf036029;
+ Tue, 12 Nov 2019 08:24:53 -0600
 From: Benoit Parrot <bparrot@ti.com>
 To: Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>
-Subject: [Patch v4 3/3] ARM: dts: dra7: Add ti-sysc node for VPE
-Date: Tue, 12 Nov 2019 08:26:57 -0600
-Message-ID: <20191112142657.22898-4-bparrot@ti.com>
+Subject: [Patch v3 00/10] ARM: dts: dra7: add cal nodes 
+Date: Tue, 12 Nov 2019 08:27:43 -0600
+Message-ID: <20191112142753.22976-1-bparrot@ti.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191112142657.22898-1-bparrot@ti.com>
-References: <20191112142657.22898-1-bparrot@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_062406_061088_A8E8D17F 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20191112_062456_629074_0E8C4405 
+X-CRM114-Status: GOOD (  12.34  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -98,56 +96,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add VPE node as a child of l4 interconnect in order for it to probe
-using ti-sysc.
+This patch series adds the needed clkctrl and ty-sysc nodes for CAL module.
+It also adds support for the module in related dtsi and dts for DRA72,
+DRA76 and AM654 SoC.
 
-Signed-off-by: Benoit Parrot <bparrot@ti.com>
----
- arch/arm/boot/dts/dra7-l4.dtsi | 28 +++++++++++++++++++++++++---
- 1 file changed, 25 insertions(+), 3 deletions(-)
+Changes since v2:
+- Add non-standard clock node naming to commit message as per Tony's
+  comment
 
-diff --git a/arch/arm/boot/dts/dra7-l4.dtsi b/arch/arm/boot/dts/dra7-l4.dtsi
-index ea0e7c19eb4e..0917231a20e2 100644
---- a/arch/arm/boot/dts/dra7-l4.dtsi
-+++ b/arch/arm/boot/dts/dra7-l4.dtsi
-@@ -4158,12 +4158,34 @@
- 			ranges = <0x0 0x1b0000 0x10000>;
- 		};
- 
--		target-module@1d0000 {			/* 0x489d0000, ap 27 30.0 */
--			compatible = "ti,sysc";
--			status = "disabled";
-+		target-module@1d0010 {			/* 0x489d0000, ap 27 30.0 */
-+			compatible = "ti,sysc-omap4", "ti,sysc";
-+			reg = <0x1d0010 0x4>;
-+			reg-names = "sysc";
-+			ti,sysc-midle = <SYSC_IDLE_FORCE>,
-+					<SYSC_IDLE_NO>,
-+					<SYSC_IDLE_SMART>;
-+			ti,sysc-sidle = <SYSC_IDLE_FORCE>,
-+					<SYSC_IDLE_NO>,
-+					<SYSC_IDLE_SMART>;
-+			clocks = <&vpe_clkctrl DRA7_VPE_VPE_CLKCTRL 0>;
-+			clock-names = "fck";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x0 0x1d0000 0x10000>;
-+
-+			vpe: vpe@0 {
-+				compatible = "ti,dra7-vpe";
-+				reg = <0x0000 0x120>,
-+				      <0x0700 0x80>,
-+				      <0x5700 0x18>,
-+				      <0xd000 0x400>;
-+				reg-names = "vpe_top",
-+					    "sc",
-+					    "csc",
-+					    "vpdma";
-+				interrupts = <GIC_SPI 354 IRQ_TYPE_LEVEL_HIGH>;
-+			};
- 		};
- 	};
- };
+Changes since v1:
+- Fix clock name to make it generic
+- Updated the binding to use ti,camerrx-control instead of sycon_camerrx
+- Split off the clk code into its own patch
+- Add clk mailing list as requested
+
+Benoit Parrot (10):
+  clk: ti: dra7: add cam clkctrl data
+  ARM: dts: dra7: add cam clkctrl node
+  ARM: OMAP: DRA7xx: Make CAM clock domain SWSUP only
+  ARM: dts: dra7-l4: Add ti-sysc node for CAM
+  ARM: dts: DRA72: Add CAL dtsi node
+  arm: dts: dra72-evm-common: Add entries for the CSI2 cameras
+  arm: dtsi: dra76x: Add CAL dtsi node
+  arm: dts: dra76-evm: Add CAL and OV5640 nodes
+  arm64: dts: k3-am65-main Add CAL node
+  arm64: dts: k3-am654-base-board: Add CSI2 OV5640 camera
+
+ arch/arm/boot/dts/dra7-l4.dtsi                | 43 ++++++++++++++++---
+ arch/arm/boot/dts/dra72-evm-common.dtsi       | 35 +++++++++++++++
+ arch/arm/boot/dts/dra72x.dtsi                 | 43 +++++++++++++++++++
+ arch/arm/boot/dts/dra76-evm.dts               | 39 +++++++++++++++++
+ arch/arm/boot/dts/dra76x.dtsi                 | 43 +++++++++++++++++++
+ arch/arm/boot/dts/dra7xx-clocks.dtsi          | 14 ++++++
+ arch/arm/mach-omap2/clockdomains7xx_data.c    |  2 +-
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi      | 23 ++++++++++
+ .../arm64/boot/dts/ti/k3-am654-base-board.dts | 36 ++++++++++++++++
+ drivers/clk/ti/clk-7xx.c                      | 19 ++++++++
+ include/dt-bindings/clock/dra7.h              | 10 +++++
+ 11 files changed, 300 insertions(+), 7 deletions(-)
+
 -- 
 2.17.1
 
