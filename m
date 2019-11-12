@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23106F9E0D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 00:18:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AABD1F9E1B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 00:20:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BhD/p0Sh1NCG8HzAr6SAzrmHXmsZ6qSHTzSqFAgHuvQ=; b=VjdGpXa3B/9a7Q
-	F1BbNJwi/P2KMIT4/CjJgcbc19F/mLqC0NfIn0crxBTdMv9mEToZaSFBVfFmySl4xeEQ3kPkeECIM
-	KpB10eH47b33hXHHw2jsG/2USxl1+Ze+TaHxJepHonXltY2b/QaDQBG03+viv38g19HFa+WIdA1t6
-	yiMpPPpKEx3omHuAD3LsnXrwEpuwiDrTHfwGKAb9oOeDunOngqTii7MNRLYFbidpYaN1TEs//YKDI
-	8peCUNEBODvdrTwC6CSPSYAKJDnmQhBQmZyH79LwNYGOlEgyN8SPTolTIlU+VBoTfQP6fhFTZHney
-	965cygjzAVpq/TUjPEuw==;
+	List-Owner; bh=ShBb8887OEYWMHVtU/ZNNb9YIImvKHe2xXRF7llCatI=; b=AbDiEEvTvcZHGu
+	hU3OjrjQgllQrjGekAmKLbjO9PGLYnR1eHh0czD4hNAYAJVlkOohsAzBPNhSx4WQd1ky0v750N2HE
+	aNp+Qg3LInOiNnExS9DR2YW4tXAvk4uKiqtKi0+wLa0idmimfZ+/UJ4PhNirxnWkuAo7wL3FaVGtQ
+	2l7HEuMqcvgcx2G8q8kjHSfvBbo2zA7KhjOe9VzxgLchHw9+eAPZVzJ3H0II5NOrYE09r47edIUUH
+	5dGRbSA1qBG9hwtAoSAWhBqHdXFYPx/IUg/RlMPVXpmP30bF/O1FSTdOBS/iRNSwokyMF3w2JqU3n
+	bK1cAWVeXIytH+cZWwkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUfQ5-0003G4-5B; Tue, 12 Nov 2019 23:17:57 +0000
-Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+	id 1iUfSI-0003ku-7W; Tue, 12 Nov 2019 23:20:14 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUfPv-0003FN-CN
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 23:17:48 +0000
-Received: by mail-lj1-x236.google.com with SMTP id v8so351196ljh.5
+ id 1iUfS1-0003kb-Br
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 23:19:58 +0000
+Received: by mail-lj1-x243.google.com with SMTP id p18so352010ljc.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 Nov 2019 15:17:46 -0800 (PST)
+ Tue, 12 Nov 2019 15:19:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LIflrWKP50iYK8//oCk2tWTFXozYzLmXIwfV667z38A=;
- b=PNa+J2mYKXMZqAUoDMzX0KUDv3Kyt6nEFoZ2A6dqCsdWHd/+om99vZDSq83XQqCC4M
- LCxzwZWEcdAUqRXZRH2bBQqCt6GLWa5ZGSXmMZRXE8EUs2KPKN5eLRopGkRZG+JzyFav
- dA7WFBfoY1eG6BK8ALXm0CZJxc5IWF3NPTr3FtI8AWd2Xt9sxVIIaOsPiPz6VbYrzeyM
- W6HryYPqgBk4lzubEIp6ESQ8Ph8C1zPvO+qYynxEjLMTW5hPB+WqUfFkxSS8bEbkJns2
- 0Y76W3k2caHIlNVNoNkFVMbAvLWG4e3X3n3FWZ0Xs0kyW/HcS5461tqBTaUJFvlFp1rt
- fpCA==
+ :cc; bh=GMjwveH3CUuLmsxzUrrc19s3Wz8y9XDlrlIq+OXDB/o=;
+ b=mAXOhi/zUV3TiTyp9nCQ+06pCmLgs3jTZA914CYgYmfDQFhlj0lvAEkMt7LUkjk8c7
+ yiRAjDtkLchtZfvJxM7yir7R/ceWA3qiLdyUA9Wd9ntw3qY1oRo87fn3SVSXmJyITUkj
+ tS3JrOvImdDr07jeeW7n/dETixbXrsusRgAaQallO4JrOTa8QBhF86KpHnBT6VRoJyp1
+ p4NRaskU7mOtgoV5F19pWcSdP0UqbIZYcpTFZ9fGjofPOk1sAA2YC4MsjBPrfi6/E5XS
+ 9SAKtDCOkWHh0LFOZTb2/jNTOWDf92AEFBeqrkaLLlrfs4uRnrY0uS4sVPjC+YgfptZn
+ gQ8Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=LIflrWKP50iYK8//oCk2tWTFXozYzLmXIwfV667z38A=;
- b=lNnfdPiJIvG24TN1/rZzwkeWyHbwI9mKyV8R5Sc3Y2ylASIwcIrDNZICcOj4IN+iF/
- O6GFW5MFJVJC6z05KYlwy4+3IipCwiJzDMyivZZ1n5x130eGYSKXNSXC67H/z2hiTmcU
- bXgFVbdkL9Xy5v4OVjJWhTmGuSwAr/wx5SCTdIYExJdZsv5KTMg4gcXBzufnEP54WbAi
- QAuH4aDsFlzzim63mOHZl/nxITbQ9+BBi/mca2/+Rq4KYylpS4bCXbIBKJcEW3nKWOha
- sOzuKaJtiSu6cME6xkXIMLP3uEz5t5C3f+/4pN22jZCwUPxLWQW5dREffFezrdPYjbZA
- 27vQ==
-X-Gm-Message-State: APjAAAWmV5tQg86TpUPztXRK4+41oIH69t0A/XIwKFa3Ar3AgomAUBXa
- q/zqTURzU27YQbGmBNA4Gf3LrUTAruvbEnZxy/Y=
-X-Google-Smtp-Source: APXvYqyiLn4l/vK/xsmhu6N/3INF3zPy1lwX0qjKsVVRCGKK0WOh5xXLyk9+epm/72hEtkvaBpn8VeB1nb70JN092o4=
-X-Received: by 2002:a05:651c:d3:: with SMTP id 19mr197085ljr.202.1573600665005; 
- Tue, 12 Nov 2019 15:17:45 -0800 (PST)
+ bh=GMjwveH3CUuLmsxzUrrc19s3Wz8y9XDlrlIq+OXDB/o=;
+ b=FND/Dop7zim5HEuqlTuMwx22WtmgOMxm1za7HLEsH0ISISVlYQfan+XHSGQUqY7/ql
+ hC1njTgkVTo9MDNXwQEZffmCrw0nhs0ERoLJqlw1HmXbg/liJZ8GnG6a/hFthLnD3Ajq
+ DyVtFGBvaC19L5DBT7CmIIqT+76jCr8oLLs0fMegXsFK8Od3akqiemLhaAdc6Dtolt2+
+ TzA+y1N1US5E8jwt3JNXLATOGh2S+o7LSqpQxgQcwk4QLF/DfMv48mpDa33GrXrNnw5W
+ hygDZghfFPOj/WT/ywM/BZxzdrNSnQ/0oim9tN+BxzOaP8fvsHfhq/AhuJ5t+RyoZAH+
+ iqQg==
+X-Gm-Message-State: APjAAAXxwkBnD4a9ULrg9obtZyVC9mmWdrtB48v7RbfDmDk+z++ChVlG
+ PS8aLWbubdWBPMzg5JO00fP9kbqcmeoqsZGCD3I=
+X-Google-Smtp-Source: APXvYqwVXiqCC0PuqZq7mcUeN3z5CHKrDqFe9eCwZIGLh5LdIV2o9g66iNddxCo3PGbxNDaeVk/V9lLsVlH9ntASnLs=
+X-Received: by 2002:a05:651c:387:: with SMTP id e7mr220451ljp.0.1573600795494; 
+ Tue, 12 Nov 2019 15:19:55 -0800 (PST)
 MIME-Version: 1.0
-References: <1573586526-15007-1-git-send-email-oliver.graute@gmail.com>
- <1573586526-15007-3-git-send-email-oliver.graute@gmail.com>
-In-Reply-To: <1573586526-15007-3-git-send-email-oliver.graute@gmail.com>
+References: <1573586526-15007-4-git-send-email-oliver.graute@gmail.com>
+ <1573593892-25693-1-git-send-email-oliver.graute@gmail.com>
+In-Reply-To: <1573593892-25693-1-git-send-email-oliver.graute@gmail.com>
 From: Fabio Estevam <festevam@gmail.com>
-Date: Tue, 12 Nov 2019 20:17:33 -0300
-Message-ID: <CAOMZO5DX_-zSHJjDigK2c=dVLEMxvfd_dFCu=0fbyjht1gsr=A@mail.gmail.com>
-Subject: Re: [PATCHv7 2/3] ARM: dts: Add support for i.MX6 UltraLite DART
- Variscite Customboard
+Date: Tue, 12 Nov 2019 20:19:44 -0300
+Message-ID: <CAOMZO5DYssbnVsemV+U24wbVoYM3LM3ZZtFwWHonXLHKF0Y+kg@mail.gmail.com>
+Subject: Re: [PATCH v2 3/3] dt-bindings: arm: fsl: Add Variscite i.MX6UL
+ compatibles
 To: Oliver Graute <oliver.graute@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_151747_441005_7CA9331E 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20191112_151957_405359_CB10D699 
+X-CRM114-Status: GOOD (  13.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:236 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (festevam[at]gmail.com)
@@ -94,13 +94,17 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Neil Armstrong <narmstrong@baylibre.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Neil Armstrong <narmstrong@baylibre.com>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>,
  Sascha Hauer <s.hauer@pengutronix.de>, Marco Felsch <m.felsch@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
  NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
  Shawn Guo <shawnguo@kernel.org>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
@@ -109,47 +113,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Oliver,
+On Tue, Nov 12, 2019 at 6:25 PM Oliver Graute <oliver.graute@gmail.com> wrote:
+>
+> Add the compatibles for Variscite i.MX6UL compatibles
+>
+> Signed-off-by: Oliver Graute <oliver.graute@gmail.com>
+> ---
+>  Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
+>  1 file changed, 1 insertion(+)
+>
+> diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+> index f79683a..d0c7e60 100644
+> --- a/Documentation/devicetree/bindings/arm/fsl.yaml
+> +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+> @@ -182,6 +182,7 @@ properties:
+>                - fsl,imx6ul-14x14-evk      # i.MX6 UltraLite 14x14 EVK Board
+>                - kontron,imx6ul-n6310-som  # Kontron N6310 SOM
+>                - kontron,imx6ul-n6311-som  # Kontron N6311 SOM
+> +              - variscite,6ulcustomboard" # i.MX UltraLite Carrier-board
 
-On Tue, Nov 12, 2019 at 4:22 PM Oliver Graute <oliver.graute@gmail.com> wrote:
+I guess what you mean is:
 
-> +&lcdif {
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&pinctrl_lcdif>;
-> +       display = <&display0>;
-> +       status = "okay";
-> +
-> +       display0: display0 {
-> +               bits-per-pixel = <16>;
-> +               bus-width = <24>;
-> +
-> +               display-timings {
-> +                       native-mode = <&timing0>;
-> +                       timing0: timing0 {
-> +                               clock-frequency =<35000000>;
-> +                               hactive = <800>;
-> +                               vactive = <480>;
-> +                               hfront-porch = <40>;
-> +                               hback-porch = <40>;
-> +                               hsync-len = <48>;
-> +                               vback-porch = <29>;
-> +                               vfront-porch = <13>;
-> +                               vsync-len = <3>;
-> +                               hsync-active = <0>;
-> +                               vsync-active = <0>;
-> +                               de-active = <1>;
-> +                               pixelclk-active = <0>;
-> +                       };
-> +               };
-> +       };
-> +};
-
-You are using the deprecated bindings.
-
-Please switch to the DRM bindings as stated at
-Documentation/devicetree/bindings/display/mxsfb.txt
-
-You should also add your panel to the simple panel driver.
+variscite,imx6ul-var-6ulcustomboard # i.MX6 UltraLite Carrier-board
 
 _______________________________________________
 linux-arm-kernel mailing list
