@@ -2,66 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93DCCF925C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:28:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C855CF9267
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:29:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/lMzgQrOumI9ln2mpNaOIKOyPsGiKFYhcqVHDI9/vNE=; b=bpj9UMntWPP7Sg
-	xcoqTMnRqN4aqp47KJesmOjscg7n8VjeRroGDYd2VWI486eSKF0hSpuXiV+NUBKE/XfHvbni2x4vY
-	7wu3+yBtZSxQY0GUPaFu/kvL/v9sYQQMPgbtZuMSPl/Q54y7oaxAR0789CF575xKfvBfBP6OsiRKC
-	y6IuPH2d/7FcoqfgfXHKadz80gfyHcmq1XVwJafQpy29hplMevrsgTVmPDt/V+0klWbkUrfRFCcjF
-	Lpm7dUaMmanZ6jrLw8Ycr0UJZ4HfAdE3OJTBtgG6iEZeK/gJfN6EdyTmrW43cNmswsRurIt2GJSi+
-	x+YN0ek3nXC39YwVJ7yg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YXBIg0xFrOmA5EWLXln2qk+RBqVwZsAk0Vi43VX4Axo=; b=PFaFRGSMN1sY1q
+	+ND2t61+Cs+1VxCFs+T7keq5fdENZrHo8B/84cClOQ3VjgrjTvYj06JEH3HBInHk/Jay6kmuEjjB5
+	VEIh+FFI7pWE1Iase0kswbWJRVGd7K7YU6J+nN1maPJy8jg5k35Fr2ZY4Fbl8kIXfeNQT8YvnGAad
+	E06N0cWnB/KK8j6HIvRkKHYrzoQAUHZXVGaOKRLbOGygZh/XB6Zn30lRiQF76PI51kOx+inPBHZYd
+	ThRm6rgz9k0E3XTns2iT0nmkBkPWO9mTtwAXvUfeS5j2rY4OtjbSsnjF4KnL2oDgtDQ32yKv6N4UU
+	A/9u5/fVxTh9EED2uSTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUXA9-0003bK-9q; Tue, 12 Nov 2019 14:28:57 +0000
+	id 1iUXAU-0003yH-Vh; Tue, 12 Nov 2019 14:29:18 +0000
 Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUX6T-0007jX-1r
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:25:11 +0000
+ id 1iUX7p-0001Wm-71
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:26:34 +0000
 Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xACEP6DI098167;
- Tue, 12 Nov 2019 08:25:06 -0600
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xACEQV8S098659;
+ Tue, 12 Nov 2019 08:26:31 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573568706;
- bh=JbeuG6x+HZ6/ASKy0zgpiATKRBUjPk9l7qqUTTj/NzQ=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=Sgvj1b5KT+2deYZ/Lq1EZoG7Og+AhEPV/tsDp7aah2JSo+epCnJyQ3ZNHagJI6hWh
- Eybqpbtpu8H3anBQ9hPgJceD3xh+uojADWH5Qk/EPtCPHIfHnBr3tHJW3Lz0E72Mym
- KCN2TuzBkaGa/oyoN0CBjAoipri2FzDgM9bwHs8c=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xACEP6o8030971;
- Tue, 12 Nov 2019 08:25:06 -0600
-Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ s=ti-com-17Q1; t=1573568791;
+ bh=anO7SNWwiXlY2/qwTzzyhWcIR7ms5orGxlRME2mhQ+g=;
+ h=From:To:CC:Subject:Date;
+ b=E8IvR/WugdeprIvqxpg1Bhx+BJXkJCZL3Qx9SNZxfGmpKfdVr2wAN4aA8uFZszM1Q
+ ZuU4/BL76BjcUIvwiIwK8/Kv99Cz4JAZ4nkZfe6xMJktdsOq8oliA2QnDBQR1EgGGk
+ C7t91jOAg2GCZBJhi89IhPPXEMMhMGG5sICH0skE=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xACEQVsK033636;
+ Tue, 12 Nov 2019 08:26:31 -0600
+Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 12
- Nov 2019 08:24:48 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ Nov 2019 08:26:12 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 12 Nov 2019 08:24:48 -0600
+ Frontend Transport; Tue, 12 Nov 2019 08:26:30 -0600
 Received: from uda0869644b.dal.design.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xACEOrBp036029;
- Tue, 12 Nov 2019 08:25:05 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xACEQUtt040290;
+ Tue, 12 Nov 2019 08:26:30 -0600
 From: Benoit Parrot <bparrot@ti.com>
 To: Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>
-Subject: [Patch v3 10/10] arm64: dts: k3-am654-base-board: Add CSI2 OV5640
- camera
-Date: Tue, 12 Nov 2019 08:27:53 -0600
-Message-ID: <20191112142753.22976-11-bparrot@ti.com>
+Subject: [Patch v2 0/3] ARM: dts: am43x-vpfe/ov2659.patch
+Date: Tue, 12 Nov 2019 08:29:26 -0600
+Message-ID: <20191112142929.23058-1-bparrot@ti.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191112142753.22976-1-bparrot@ti.com>
-References: <20191112142753.22976-1-bparrot@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_062509_252109_65877793 
-X-CRM114-Status: GOOD (  14.82  )
+X-CRM114-CacheID: sfid-20191112_062633_335153_1B118627 
+X-CRM114-Status: GOOD (  11.64  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -98,74 +95,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for the OV5640 CSI camera:
-- add the OV5640 nodes
-- add the CAL node linkage
-- enable CAL node
+This patch series adds the missing camera endpoint (ov2659) as well as
+the required source clocks nodes for the sensor.
 
-Signed-off-by: Benoit Parrot <bparrot@ti.com>
----
- .../arm64/boot/dts/ti/k3-am654-base-board.dts | 36 +++++++++++++++++++
- 1 file changed, 36 insertions(+)
+On the am437x-sk-evm the camera sensor is sourced from clkout1 but that
+clock nodes/tree was removed as it was unsed at the time, we are
+re-adding the needed clock nodes here.
 
-diff --git a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-index 1102b84f853d..73290c646334 100644
---- a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-+++ b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-@@ -53,6 +53,12 @@
- 			gpios = <&wkup_gpio0 27 GPIO_ACTIVE_LOW>;
- 		};
- 	};
-+
-+	clk_ov5640_fixed: clock {
-+		compatible = "fixed-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <24000000>;
-+	};
- };
- 
- &wkup_pmx0 {
-@@ -184,6 +190,23 @@
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&main_i2c1_pins_default>;
- 	clock-frequency = <400000>;
-+
-+	ov5640@3c {
-+		compatible = "ovti,ov5640";
-+		reg = <0x3c>;
-+
-+		clocks = <&clk_ov5640_fixed>;
-+		clock-names = "xclk";
-+
-+		port {
-+			csi2_cam0: endpoint {
-+				remote-endpoint = <&csi2_phy0>;
-+				clock-lanes = <0>;
-+				data-lanes = <1 2>;
-+			};
-+		};
-+	};
-+
- };
- 
- &main_i2c2 {
-@@ -280,3 +303,16 @@
- &pcie1_ep {
- 	status = "disabled";
- };
-+
-+&cal {
-+	status = "okay";
-+};
-+
-+&csi2_0 {
-+	csi2_phy0: endpoint@0 {
-+		remote-endpoint = <&csi2_cam0>;
-+		clock-lanes = <0>;
-+		data-lanes = <1 2>;
-+	};
-+};
-+
+Changes since v1:
+- Fix clock name to make it generic
+- Add non-standard clock node naming to commit message as per Tony's
+  comment
+- Rename all clock nodes to use '-' instead of '_'
+
+Benoit Parrot (2):
+  ARM: dts: am437x-sk-evm: Add VPFE and OV2659 entries
+  ARM: dts: am43x-epos-evm: Add VPFE and OV2659 entries
+
+Tero Kristo (1):
+  ARM: dts: am43xx: add support for clkout1 clock
+
+ arch/arm/boot/dts/am437x-sk-evm.dts  | 27 +++++++++++++-
+ arch/arm/boot/dts/am43x-epos-evm.dts | 23 +++++++++++-
+ arch/arm/boot/dts/am43xx-clocks.dtsi | 54 ++++++++++++++++++++++++++++
+ 3 files changed, 102 insertions(+), 2 deletions(-)
+
 -- 
 2.17.1
 
