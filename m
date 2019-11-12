@@ -2,61 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 488E7F88EE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 07:53:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65880F8924
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 07:55:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G280YBk8ouh1290VkPVNt58sxAoHjxcIxJqNqOdwfiw=; b=g60dfmeEoQOpub
-	mS35yL052Tqyoj7kWoUNgSxesyoIs2ZBsr1WfwNzIEcjqkoA9QE6kpfrgPtG9w0Rls/rEnO4Gky1x
-	RYyQf5vuWzQ+797Oky6fqwMyFgSxd6bQpZxqwXwJgiyctQy/+zRHzAH+9sLUSIhnpGTVhxx0XLK6b
-	B89tfZ+2Mxsw7lRORIyeu3vR718+YuaKVSVGeZW0xigLY/QWe4SC8GtKuiKeMQUS8lAiItzkKD3By
-	rIu3ixyBAzAkZpp30QbDClRKf+ALJrJ8l9he222U1p5CXO/3WJskDCTXT1KTuJy5G2uDO6xBMZDHh
-	22cyNRpToyV5k6bKRc4A==;
+	List-Owner; bh=ZD46OgwlwtskHwmeS3F4X4wTspaE2uOPcN2ca1inID0=; b=t4EGrPwIhmhGYy
+	TrT8bgTKz+99SKcuFPlV62pXKcFrIjQO6XBCCKj1wMm+gDTCCfNDeXeki3Y+ZqGb7hal+YZqwIUms
+	AuYeXeHJsMrwTCAzUMFmgE8ofZT6e9xUXusv9SvyTUfp4C2I9q5/NuVN3CfC9C4ZWT5LGdzn0qkwv
+	Rpa60rNF2UaNmdcdRKd21lTjSk66bASMqnwiSCSYaPyRMzX+tnA4Ax4rGzr8lYnF7gQjTG7sgQjmu
+	SFaM+vODZGMyjbEbUc8l+1VGLvCutyooGgcFZSLlDrPLnzCivtszIkP0R0mO3BTZpNp8ekNpmo0Q/
+	4qsxWW96/Jgq0ACxSXnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUQ3b-0003uQ-F0; Tue, 12 Nov 2019 06:53:43 +0000
+	id 1iUQ5b-0006z6-BF; Tue, 12 Nov 2019 06:55:47 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUQ2L-0002s9-HM; Tue, 12 Nov 2019 06:52:26 +0000
-X-UUID: 8fc6ab0a92624470b8c3633a67437345-20191111
+ id 1iUQ2a-0003CD-Tq; Tue, 12 Nov 2019 06:52:43 +0000
+X-UUID: 3c097d8e360d4079b85289dcd067261d-20191111
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=vDFSM74U/LzojcaYIm3VI+fWNTtXUiPpAVNSlvTMG4A=; 
- b=tLQ9I43dMBZSbU3sIfhc4JX+Trg1YSDEwuWgrOeJwF2u5rKyAhHupKGLuBytv8yepM+Skw5FeM9U7Zy9zcfrw9Cyoy5hF64fUa1epwZZmLcz6XZDanVfN4W612X32xYtxRXr9yh6ht/BLxcw0vLHbguWmELVSUykZ4kUed2yz/c=;
-X-UUID: 8fc6ab0a92624470b8c3633a67437345-20191111
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ bh=0AF6cseuQredUqsiggIl4tlgW63R0K0b7Na++x5d55U=; 
+ b=iFX20S1dd1EiFQsk9GJQEeVOWEakPjsq51LW+MhkggciJEYbGLLnCR6WNnol++nSiFvqpzxZSxgMR3HPuAKTrv+il2gbhqUauteNoBmGdmvyAImQrNeelBomn1meQzvb9jmEmg2L6ym8tv8ZJR1iU2vWsYA+eb8tTakW+X2oFeQ=;
+X-UUID: 3c097d8e360d4079b85289dcd067261d-20191111
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1523044147; Mon, 11 Nov 2019 22:52:22 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 11 Nov 2019 22:52:20 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 12 Nov 2019 14:52:12 +0800
+ with ESMTP id 2115623134; Mon, 11 Nov 2019 22:52:39 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 11 Nov 2019 22:52:16 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by mtkcas07.mediatek.inc
+ (172.21.101.84) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 12 Nov 2019 14:52:14 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 12 Nov 2019 14:52:11 +0800
+ Transport; Tue, 12 Nov 2019 14:52:13 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Felipe Balbi
  <balbi@kernel.org>
-Subject: [PATCH v2 06/13] usb: musb: dsps: create debugfs directory under usb
- root
-Date: Tue, 12 Nov 2019 14:51:52 +0800
-Message-ID: <1573541519-28488-6-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [PATCH v2 07/13] usb: dwc2: create debugfs directory under usb root
+Date: Tue, 12 Nov 2019 14:51:53 +0800
+Message-ID: <1573541519-28488-7-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1573541519-28488-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1573541519-28488-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_225225_607709_D941F92E 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20191111_225241_130383_82A17C72 
+X-CRM114-Status: GOOD (  12.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -115,7 +114,7 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Now the USB gadget subsystem can use the USB debugfs root directory,
-so move dsps's directory from the root of the debugfs filesystem into
+so move dwc2's directory from the root of the debugfs filesystem into
 the root of usb
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
@@ -123,22 +122,22 @@ Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 v2:
   1. abandon new API usb_debugfs_create_dir(), and use usb_debug_root
 ---
- drivers/usb/musb/musb_dsps.c | 2 +-
+ drivers/usb/dwc2/debugfs.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/usb/musb/musb_dsps.c b/drivers/usb/musb/musb_dsps.c
-index 327d4f7baaf7..88923175f71e 100644
---- a/drivers/usb/musb/musb_dsps.c
-+++ b/drivers/usb/musb/musb_dsps.c
-@@ -411,7 +411,7 @@ static int dsps_musb_dbg_init(struct musb *musb, struct dsps_glue *glue)
- 	char buf[128];
+diff --git a/drivers/usb/dwc2/debugfs.c b/drivers/usb/dwc2/debugfs.c
+index 7f62f4cdc265..b8f2790abf91 100644
+--- a/drivers/usb/dwc2/debugfs.c
++++ b/drivers/usb/dwc2/debugfs.c
+@@ -770,7 +770,7 @@ int dwc2_debugfs_init(struct dwc2_hsotg *hsotg)
+ 	int			ret;
+ 	struct dentry		*root;
  
- 	sprintf(buf, "%s.dsps", dev_name(musb->controller));
--	root = debugfs_create_dir(buf, NULL);
-+	root = debugfs_create_dir(buf, usb_debug_root);
- 	glue->dbgfs_root = root;
+-	root = debugfs_create_dir(dev_name(hsotg->dev), NULL);
++	root = debugfs_create_dir(dev_name(hsotg->dev), usb_debug_root);
+ 	hsotg->debug_root = root;
  
- 	glue->regset.regs = dsps_musb_regs;
+ 	debugfs_create_file("params", 0444, root, hsotg, &params_fops);
 -- 
 2.23.0
 _______________________________________________
