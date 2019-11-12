@@ -2,90 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27E6AF9507
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:03:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B73C2F9525
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:08:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XXvfj8pV+xj96IwZt2QUmxBi7i7RSuy0GJGT5fvNHNo=; b=bMCK6oY9isxEmv
-	4fP2c40BMiDMR3ZUsUg3ed105C6Myia/lHU1R/qJDPPsx/IKyHPBVCyOajlV9qA7AfohdlK7CfXxX
-	sYVItXjZmG0ypg9VbtODcLUSdqDKQrdYhkduTauje24Oni0FujMurdppA1mtu0AIOMjJUMF7jWJV0
-	PX31mxsb7ZPNSo8JhklZ4kw0WaDGQa9zRHyveqYPnHoxpMVvO1aPy6+vgMsmaZuzySFcEBiR9w0S2
-	jHWeqBb/RKJkyxj5uc1Dpm6YXZh29lF6dGCGzE5GC5DBNwBOCCRzsoKKRjPHTvucHpcy7jRYf6fIX
-	2b/ny8/lPvF3RdEQgIqA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L3ERJ9UbjLBDp6yQ1GMgAEJVV72yLsoIbTrzf69l1IU=; b=BDhKUuvOQdJQXU
+	kuoxm/Bdq2f7EkPA8PobVtLwoH+J+54cxRROhy8JIVGIOhsNsRxHXwtR7FngJzz52Xtb02PDNnIWt
+	A2ZyUTq5aHXOLSJVe60cl4GcGWXfzzayf0Gp1Wb1bUuJoBTqkOzjKLFMbVu5Qe7KkaQfUv8g/MZKK
+	yBDZYhOIxcvvCeOlGyZzeQfg8DtIWc9fFBSDhN2Zw2bdJlsfS77eMpQiXdN0tuNzTeuIXqFdD6hnN
+	zsCQKG11pwAi42dMJgajBdXoAYjuC5Z7cjej3tIAJuUIEyDxSPOftEgJAfxjDpli4fJsfGE/YuRio
+	UhyOL59T6gr7P6uVNxow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUYd3-0000cN-Ll; Tue, 12 Nov 2019 16:02:53 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1iUYiT-0002ac-GC; Tue, 12 Nov 2019 16:08:29 +0000
+Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUYc8-0000WJ-60
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 16:01:57 +0000
-Received: by mail-lj1-x241.google.com with SMTP id d5so8907693ljl.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 Nov 2019 08:01:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4kdtfZv1UWGs4z6mZX1Xj2hNLNvOhEkV9MFCDyUM5WY=;
- b=Vb1PBepHxX3U8dmOFv17pjejpZizz7XnsepoMKFySZxszgEZoBT3aII0a7WvybC8EL
- jn7pvOgzymp7/xN46tuKOiNL33sfWFhTAO4NnVtdbeKd3DZ4+Kjbomt31ocY6v3PulLZ
- w7HFQPiV8MZ5oulC2anS8lGnKusuGZme/ldc3KmWuaRIMYfFsww/O9yoa69voPa7ssJx
- 0wZoZvJPD/2JYo0UQDTUV94lukvVKDeUMyq4d1f6ByiaFyGbcQwzlKgBk58jMNjSBcCL
- dsBjjId+R+R7t7dghP0ljBOMGWvWVY78IKWcPH38+OtyjyB1eAvNqsUvjM2XsROzJmVS
- 2KSg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4kdtfZv1UWGs4z6mZX1Xj2hNLNvOhEkV9MFCDyUM5WY=;
- b=oTR6I9lLPU2HXF8hsy+NfUh0PE38n/itCrLh6anv2+BoinXvEIq+n9CAYtvSs+8qQ7
- rTcbJCvxXcbBsNVmWEl4DWY3NGa3y0hWzE7/CZGsvt5nzPcRFCHx7b6EdPXYTW3s04LN
- VmcS7xIgww1MuC9V++BdK2BYiLQi3ITxqWde7bS1TqflD1DRkWCJJEKBgMOgnv050csa
- 8cEFE3beuuP0TJpkuy9wBZRIQrc70bc4Ej34x6GPo7hT1IioYwYiXhcrfx2ck0WyShi7
- tPrOZGbYJAdlm2FvKCqJtwp8QpdURWVTlA22pCUDZM30q5EvIlRSHEC/1eYKMNxWxKka
- 3sAw==
-X-Gm-Message-State: APjAAAVAv8m/pR9FXYeIhVmf85oTVrJ4UHY9xEYzVmlaqILz1M5Vcj8R
- 6zxAvG/CGV8wxTG8orVlB0Nddw==
-X-Google-Smtp-Source: APXvYqxN/R60ymZE5BgyfVYlnYrvwIMdBjJapz4sBo4B+ExwAHn5hXfIq+WgqZCPqVQMVlWLa5VvyA==
-X-Received: by 2002:a05:651c:1025:: with SMTP id
- w5mr9990594ljm.68.1573574513469; 
- Tue, 12 Nov 2019 08:01:53 -0800 (PST)
-Received: from localhost (c-413e70d5.07-21-73746f28.bbcust.telenor.se.
- [213.112.62.65])
- by smtp.gmail.com with ESMTPSA id v21sm8394109lfe.68.2019.11.12.08.01.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 Nov 2019 08:01:52 -0800 (PST)
-From: Anders Roxell <anders.roxell@linaro.org>
-To: catalin.marinas@arm.com
-Subject: [PATCH] arm64: Kconfig: add a choice for endianess
-Date: Tue, 12 Nov 2019 17:01:44 +0100
-Message-Id: <20191112160144.8357-1-anders.roxell@linaro.org>
-X-Mailer: git-send-email 2.20.1
+ id 1iUYiL-0002Zr-Pk; Tue, 12 Nov 2019 16:08:23 +0000
+Received: by theia.8bytes.org (Postfix, from userid 1000)
+ id E60A52E2; Tue, 12 Nov 2019 17:08:11 +0100 (CET)
+Date: Tue, 12 Nov 2019 17:08:10 +0100
+From: Joerg Roedel <joro@8bytes.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] iommu/rockchip: Don't provoke WARN for harmless IRQs
+Message-ID: <20191112160810.GB3884@8bytes.org>
+References: <82cba203551939399d219e4cb6c602315fd0c410.1573498518.git.robin.murphy@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <82cba203551939399d219e4cb6c602315fd0c410.1573498518.git.robin.murphy@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_080156_300570_6AD4A7FA 
-X-CRM114-Status: UNSURE (   8.24  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191112_080821_987690_81EC0082 
+X-CRM114-Status: GOOD (  11.98  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ no trust [81.169.241.247 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,60 +57,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anders Roxell <anders.roxell@linaro.org>, john.garry@huawei.com,
- will@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: heiko@sntech.de, maz@kernel.org, linux-rockchip@lists.infradead.org,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When building allmodconfig KCONFIG_ALLCONFIG=$(pwd)/arch/arm64/configs/defconfig
-CONFIG_CPU_BIG_ENDIAN gets enabled. Which tends not to be what most
-people wants. Another concern that thas come up is that ACPI in't built
-for an allmodconfig kernel today since that also depends on !CPU_BIG_ENDIAN.
+On Mon, Nov 11, 2019 at 06:55:18PM +0000, Robin Murphy wrote:
+> Although we don't generally expect IRQs to fire for a suspended IOMMU,
+> there are certain situations (particularly with debug options) where
+> we might legitimately end up with the pm_runtime_get_if_in_use() call
+> from rk_iommu_irq() returning 0. Since this doesn't represent an actual
+> error, follow the other parts of the driver and save the WARN_ON()
+> condition for a genuine negative value. Even if we do have spurious
+> IRQs due to a wedged VOP asserting the shared line, it's not this
+> driver's job to try to second-guess the IRQ core to warn about that.
+> 
+> Reported-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>  drivers/iommu/rockchip-iommu.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 
-Rework so that we introduce a 'choice' and default the choice to
-CPU_LITTLE_ENDIAN. That means that when we build an allmodconfig kernel
-it will default to CPU_LITTLE_ENDIAN that most people tends to want.
-
-Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
----
- arch/arm64/Kconfig | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
-
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 64764ca92fca..62f83c234a61 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -877,11 +877,24 @@ config ARM64_PA_BITS
- 	default 48 if ARM64_PA_BITS_48
- 	default 52 if ARM64_PA_BITS_52
- 
-+choice
-+	prompt "Endianess"
-+	default CPU_LITTLE_ENDIAN
-+	help
-+	  Choose what mode you plan on running your kernel in.
-+
- config CPU_BIG_ENDIAN
-        bool "Build big-endian kernel"
-        help
-          Say Y if you plan on running a kernel in big-endian mode.
- 
-+config CPU_LITTLE_ENDIAN
-+	bool "Build little-endian kernel"
-+	help
-+	  Say Y if you plan on running a kernel in little-endian mode.
-+
-+endchoice
-+
- config SCHED_MC
- 	bool "Multi-core scheduler support"
- 	help
--- 
-2.20.1
-
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
