@@ -2,91 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5420F967C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 18:02:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D178F96A3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 18:08:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hndK3UhWw2QdRiWnE9sb/4wU0af9l7tA1Alyi9DX58A=; b=K68LhFUyoQac0y
-	/MkAamXigVvhPvzLS+G9FbZIeIPg19NmI9rZTN8rJG9YtYN0zLE95HNS200e75+PEO/uybCW5hrkc
-	XF2UJFZVx2kNmZ4DDbV2sw64BejVjaPSGQJBNAD5L+J+BZKTfZiBkm/A7CSrUUiaIQSxdx9YctQWx
-	Ezre8dYC/M63F0qA7y/uAM56RkE+YBOZXXokqUIGYD+xEg5CWDd7r+ARfm1F66X4pqvO4QGXXQQ5j
-	d8Fq+s38+/bzQoW27wI9UDRBjtnf767nSosN69VU62izMsbyNa6OGiwBT85uEvtwuvruSsacTABwN
-	mccE+VmtctG1VX/PCVRw==;
+	List-Owner; bh=/d3z6oitnnhFwexRoRRBhPExr+/TsQCajLWRqtphJVc=; b=c5Sqw/d64UPv3+
+	myochlqEZjwS4AOkejmLoW1P5erpxcajaiNgpDqb8SHBKJjSS/SDajhbVvZPbMoiq0XXbj3tiTprf
+	KHl9jZIKe6Qhq67stIp3LiYlpUG4Jihl6ojwDdPbRLqqT00YjilvgkJCuqpguOPWEzqvofxqLhaCY
+	JHNjQ0AO754vSG4O5s4xef/Hi1CAIonwXyHB5J2bMo8oVqs9G36Ji4Y94NqhqNDu2k4qSUZZLlNeo
+	qlpy7EoayzHBawI2rpdplKXMUN0kdq5jqq6nFkvmXK9YjSXwX7d3X6cts5Ha8b38UiuJwk6pF0mSw
+	2jZFKGGltbasK2TucUsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUZYH-0002yr-Fe; Tue, 12 Nov 2019 17:02:01 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iUZeH-0005hA-NP; Tue, 12 Nov 2019 17:08:13 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUZY6-0002vn-TS
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 17:01:53 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 3so13770207pfb.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 Nov 2019 09:01:50 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=GDojT++zYyimFKXjGTgtIMvoNwjyBW8FizODRtTHlkU=;
- b=gqdeS5lER8xfVdf3MPfzRhQWtIdYGVkfvSEfkEikV5sK+iUbNyoUDxfqd0+Gf8qRon
- qIHWABuQ6RrIuV9KP9et/nCefEYxwgv0VU6xWDH/6WigGjakxakLa/uAk/OZfK6aVs7K
- LvkNK+dcIIHQrnxcoqA/IqdlZjyzz32xgRlYjaX7VbauzkexzJ8FhEebDZqN5k6CV5bv
- 1E2P4sJBj7B20dAtY+vRdNYhwg7+Crzg+hEcAIZsxPn2ZVIiajYUgAJYOPGKF8JwDcwE
- 0IZzMwP9eCWaBLOLkKUPL66WfWRvEgGNsCoRadK6bSa6QAU6DElkyAo1XDy0qVlKPQZg
- tUWA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=GDojT++zYyimFKXjGTgtIMvoNwjyBW8FizODRtTHlkU=;
- b=c9iBGhIsPkFMngqtVQnM8YOgHt+P1MM7m6roHp0GWUSvg3Lu2/+w9YuihvPONJjOUn
- AqFa6JhZUVClpAbq9u+Jt5VS6TUeIWXLG4Jlw1XwWD9UEa2Z8YuCayQUCy9PjrGvsjZa
- vC2CZwUrTHa+J/sDkFOQdgVrQiqGLGgBn32vGipTqR7JB/T5gJtp6krWSkwLOuGPrnwY
- mwijKQPeZgz4CiQFvcYjq7iJPd1E19ujxBsHLDGFNPonuKKWH9QGaf4sSU7XUUx42S35
- lRhveg5hVXoSUl0w7D4K0IrEn45Q/fjU2T/esXwFhfBdeOf6T4JJsV3WXieQwGmFmrRU
- IZ3Q==
-X-Gm-Message-State: APjAAAW3St1I/JC0KZ2oUza/6VDjDaaqsxyMuT6SHl971hinRqHjxLGE
- dDAuTmsxW94foEuP9lIaBzbtuQ==
-X-Google-Smtp-Source: APXvYqw4G8Nv44pA6Fs7EzjALZ0qCpPOe1DYkXKQWUmcJweMaKJlE6IhOyuyuFHl+85B3ZJqZHBicw==
-X-Received: by 2002:aa7:85d7:: with SMTP id z23mr38064618pfn.24.1573578109877; 
- Tue, 12 Nov 2019 09:01:49 -0800 (PST)
-Received: from yoga (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id y138sm20294845pfb.174.2019.11.12.09.01.47
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 Nov 2019 09:01:48 -0800 (PST)
-Date: Tue, 12 Nov 2019 09:01:44 -0800
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
-Message-ID: <20191112170144.GF3797@yoga>
-References: <20191112141819.GA22076@localhost.localdomain>
+ id 1iUZe8-0005gK-1h
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 17:08:06 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 5A1FB471603A22B30AD3;
+ Wed, 13 Nov 2019 01:07:50 +0800 (CST)
+Received: from localhost (10.202.226.61) by DGGEMS402-HUB.china.huawei.com
+ (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Wed, 13 Nov 2019
+ 01:07:43 +0800
+Date: Tue, 12 Nov 2019 17:07:34 +0000
+From: Jonathan Cameron <jonathan.cameron@huawei.com>
+To: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+Subject: Re: [PATCH V5 1/4] ACPI: Support Generic Initiator only domains
+Message-ID: <20191112170734.0000621a@huawei.com>
+In-Reply-To: <1768519.laKBN70clK@kreacher>
+References: <20191004114330.104746-1-Jonathan.Cameron@huawei.com>
+ <1895971.7mY3IlW731@kreacher> <20191018134656.00000f70@huawei.com>
+ <1768519.laKBN70clK@kreacher>
+Organization: Huawei
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191112141819.GA22076@localhost.localdomain>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+X-Originating-IP: [10.202.226.61]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_090150_952218_529EE72E 
-X-CRM114-Status: GOOD (  13.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191112_090804_259752_6E45E56F 
+X-CRM114-Status: GOOD (  17.79  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,56 +66,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Patrice Chotard <patrice.chotard@st.com>, Paul Cercueil <paul@crapouillou.net>,
- Eric Anholt <eric@anholt.net>, linux-stm32@st-md-mailman.stormreply.com,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Gregory Clement <gregory.clement@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- linux-rockchip@lists.infradead.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Andy Gross <agross@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-msm@vger.kernel.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>, mazziesaccount@gmail.com,
- Ray Jui <rjui@broadcom.com>, linux-gpio@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
- Sean Wang <sean.wang@kernel.org>, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, Stefan Wahren <wahrenst@gmx.net>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, linux-oxnas@groups.io
+Cc: Ingo Molnar <mingo@kernel.org>, lorenzo.pieralisi@arm.com,
+ linux-acpi@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
+ linuxarm@huawei.com, Keith Busch <keith.busch@intel.com>, linux-mm@kvack.org,
+ jglisse@redhat.com, guohanjun@huawei.com,
+ Andrew Morton <akpm@linux-foundation.org>, will@kernel.org, Dan
+ Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue 12 Nov 06:18 PST 2019, Matti Vaittinen wrote:
-> diff --git a/drivers/pinctrl/qcom/pinctrl-msm.c b/drivers/pinctrl/qcom/pinctrl-msm.c
-> index 763da0be10d6..8844ca1261d5 100644
-> --- a/drivers/pinctrl/qcom/pinctrl-msm.c
-> +++ b/drivers/pinctrl/qcom/pinctrl-msm.c
-> @@ -485,8 +485,8 @@ static int msm_gpio_get_direction(struct gpio_chip *chip, unsigned int offset)
->  
->  	val = msm_readl_ctl(pctrl, g);
->  
-> -	/* 0 = output, 1 = input */
-> -	return val & BIT(g->oe_bit) ? 0 : 1;
-> +	return val & BIT(g->oe_bit) ? GPIO_LINE_DIRECTION_OUT :
-> +				      GPIO_LINE_DIRECTION_IN;
->  }
->  
+On Thu, 7 Nov 2019 15:54:28 +0100
+"Rafael J. Wysocki" <rjw@rjwysocki.net> wrote:
 
-For pinctrl-msm
+> On Friday, October 18, 2019 2:46:56 PM CET Jonathan Cameron wrote:
+> > On Fri, 18 Oct 2019 12:18:33 +0200
+> > "Rafael J. Wysocki" <rjw@rjwysocki.net> wrote:
+> >   
+> > > On Friday, October 4, 2019 1:43:27 PM CEST Jonathan Cameron wrote:  
+> > > > Generic Initiators are a new ACPI concept that allows for the
+> > > > description of proximity domains that contain a device which
+> > > > performs memory access (such as a network card) but neither
+> > > > host CPU nor Memory.
+> > > > 
+> > > > This patch has the parsing code and provides the infrastructure
+> > > > for an architecture to associate these new domains with their
+> > > > nearest memory processing node.
+> > > > 
+> > > > Signed-off-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>    
+> > > 
+> > > This depends on the series from Dan at:
+> > > 
+> > > https://lore.kernel.org/linux-acpi/CAPcyv4gBSX58CWH4HZ28w0_cZRzJrhgdEFHa2g8KDqyv8aFqZQ@mail.gmail.com/T/#m1acce3ae8f29f680c0d95fd1e840e703949fbc48
+> > >   
+> > Hi Rafael,
+> > 
+> > Yes. Cover letter mentions it was rebased on v4 of that series.
+> >   
+> > > AFAICS, so please respin when that one hits the Linus' tree.  
+> > 
+> > Sure, though that pushes it out another cycle and it's beginning to
+> > get a bit silly (just rebases since April).
+> > 
+> > I guess it can't be helped given the series hits several trees.  
+> 
+> I've just applied the Dan's series and I can take patch [1/4] from this one,
+> but for the [2-3/4] I'd like to get some ACKs from the arm64 and x86 people
+> respectively.
 
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Thanks Rafael!
 
-Regards,
-Bjorn
+Absolutely understood on the need for Acks.
+
+For ARM let us try a few more CCs
+
++CC Will, Lorenzo, Hanjun.
+
+Also Ingo on basis of showing a passing interest in the x86 patch
+previously.  Otherwise I think we have the x86 people most like to
+comment already cc'd.
+
+https://patchwork.kernel.org/cover/11174247/ has the full series.
+
+I'd appreciate anyone who has time taking a look at these.  The
+actual actions in the architectures are very simple, but I may well
+be missing some subtlety.
+
+> 
+> Thanks!
+> 
+Thanks,
+
+Jonathan
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
