@@ -2,85 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA52FF895C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 08:09:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EF44F8969
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 08:12:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K8BumQco4XgYGgorcs4zC/ST6DHrp5jVS8zT1fzOexU=; b=dw+6l5Hg8ae9d8
-	e1X2TFM1mFULn6nEgCROraTYGBGOEiujHUtDzJ2gGCS6+fydQbrb8g0plmOhyDbulFoHiqP7GPs4T
-	PLXP0NNYZyIaU9ntUQdT7leoYncznC0vlQZIpwODPmOwEvmlNQL1qgB6yGymSEA9Nk2sy42Qlo1Ax
-	/X/Fe4ac87Uxq+EHJEu/pFRkikL+6OQG+BLdIBzwVwXXfSmZuAOby/ji9Lt5jqJ+115OP5TFXcAdr
-	x38gROPN67AU02HsEs90+jE8iy4I+i6tQVb2Yxqlyn0f9sZtKncd94iyDNwNZbdsoWlFahL4mLD6U
-	4rIv8+KVfSSPPJgUSxLw==;
+	List-Owner; bh=oON3yPaLNIBVH8wpH8Hw9PtBP18NF7njxh0WKj/4Ck8=; b=adG3cgUFaMo4DT
+	jwTeRjpTFM4IStZkA8pX6RXRVRB18857m93Li/5nU6pAMxRTAomUN1DkNu89jO1NTREdjKX5G7xay
+	zIxDf7F+vNFvX+ILeImvlyLWF+rmBGrUvflQTa1QHlhb1Gdq5VqChKqJAy7KlLXocF7NCD0jDtTgY
+	ody8TQLHTESaKhMrb/44JmQbxCv4JJEPHIySOzMhLV6rmVZ8yEgh2HVT/Wlmcs9tog6UgcQdUbyVB
+	sSlFseYqRUbqhdKewTR9enRUnE6BdKG8kUWurZj66WM4IlkCu8ITj8Kn9HwhdBSMakE2pJMX22DIa
+	o5WxixGP5+BUfEXMagqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUQIP-0005OZ-0R; Tue, 12 Nov 2019 07:09:01 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iUQLu-0007RF-IP; Tue, 12 Nov 2019 07:12:38 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUQIC-0005Kd-LX
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 07:08:51 +0000
-Received: by mail-pf1-x441.google.com with SMTP id r4so12670678pfl.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 Nov 2019 23:08:48 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=zK78FnAOmv3761AstDJXelt5t5xR2XRW77fvH5frBqE=;
- b=EsEiW+5kyUCExkdffD7tH/HTw0VFRrIgj4HiXF8XKU+s8+YxXn15j5ZruCiQly6Mdb
- q7GX8wD3efvZPwCoSj7sgXxq6EuWXVchXS2z7IqZ6Qo1NVyCKPGhME4O6BACvUwJRwkm
- 2N9+FGswolsCy1Dl5C1Xua2F9aQHKDYZEPwPr02tW8pUuelj9NQNUcZPBdofEnH1/bTo
- t/3DrJ3shlpgHJGaMlcvL9OzVafIt6V5fKWM/ObUzBh08LU/lTr5ciKtaj0wtFx0hyhz
- OvdFweNPtGmC0DTkjjKIXg3EFo4gDiMVrNmpQDThE8CG1+yZBKI7nLU7tAdZVnqhxFED
- FQCQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=zK78FnAOmv3761AstDJXelt5t5xR2XRW77fvH5frBqE=;
- b=DNd+28Awnl/SNMWV2Ty0WaZfDhfItyz8t63KDiXxrc6dQniVRST9sfnSv7u5xOfL31
- gK6ub58MjmS15eQHaLsrFd4Jt4mA1lNNVqbRFVlTdhOqBJBFVjyXeEr8Yl1/sPcG+iYE
- GXTdz+NGkw2dfYdtd9gWglBuYZ1TxYmRogPDFVtzcU3sQkEK8LrYZLsFTERQCG+CKdlO
- 9hOJk1/6WUsOx6c6yPWOQup73Yg6JDKJeiwE2OOAuub8qo3b+t59CxELLb76pTPfABJg
- 0lw1IbBNRm0mUSaERVW5zTBpSczYtcXbBUO/IE9S9+2zsDtU49NJV+dZwJsuWKMvORZE
- pqag==
-X-Gm-Message-State: APjAAAVaFMXBZQKgJWwF62v9CTrtegorWcRaJjxrkU+8HOfMeel32J7Y
- D4/2d/w3Hmc1aBNfXhwCIDxI7Q==
-X-Google-Smtp-Source: APXvYqwE4C2wT2seRucgaO6gP6vKq4NKee7ygjFHmTDw+i/soL0w6a48b/EcGkDtS6QcPMZ7gFUutg==
-X-Received: by 2002:a63:a05c:: with SMTP id u28mr35047901pgn.333.1573542527714; 
- Mon, 11 Nov 2019 23:08:47 -0800 (PST)
-Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id o1sm15092669pgm.1.2019.11.11.23.08.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 Nov 2019 23:08:47 -0800 (PST)
-Date: Mon, 11 Nov 2019 23:08:45 -0800
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Pi-Hsun Shih <pihsun@chromium.org>
-Subject: Re: [PATCH v20 3/4] rpmsg: add rpmsg support for mt8183 SCP.
-Message-ID: <20191112070845.GR3108315@builder>
-References: <20191014075812.181942-1-pihsun@chromium.org>
- <20191014075812.181942-4-pihsun@chromium.org>
- <20191111231023.GD3108315@builder>
- <CANdKZ0frU9+dRYeMaJjjKm6emxj41c_jBk_RX3G7bXn_oXKp4g@mail.gmail.com>
+ id 1iUQLl-0007QA-NW; Tue, 12 Nov 2019 07:12:31 +0000
+X-UUID: 6855864cb12a4ed18eabed881c083db8-20191111
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=Z8nkDd87nqB6TMe3KppZYI70npGkzQs4p3QaevqC/mg=; 
+ b=KNuo0RNe5yA1qiUFxfuyiE79LWSXisMrO83y4l0JmYwAGsx00rVlI31C/vjPMWzqZ6WVu35Amq0I2NGl32a7dl5q+ze1QAki53Z8QKSSJMYFYin++ZeFM87gTkl8bkQi4o0e66fIp+HKL5vd3gNsLHvQ8vSRJFvADS5TPD2K1m4=;
+X-UUID: 6855864cb12a4ed18eabed881c083db8-20191111
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <mark-mc.lee@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2011575710; Mon, 11 Nov 2019 23:12:23 -0800
+Received: from mtkmbs05dr.mediatek.inc (172.21.101.97) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 11 Nov 2019 23:12:21 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs05dr.mediatek.inc (172.21.101.97) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 12 Nov 2019 15:12:20 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 12 Nov 2019 15:12:20 +0800
+Message-ID: <1573542740.10348.12.camel@mtksdccf07>
+Subject: Re: [PATCH net,v2 1/3] net: ethernet: mediatek: Integrate GDM/PSE
+ setup operations
+From: mtk15127 <Mark-MC.Lee@mediatek.com>
+To: David Miller <davem@redhat.com>
+Date: Tue, 12 Nov 2019 15:12:20 +0800
+In-Reply-To: <20191111.215617.1625420574702786179.davem@redhat.com>
+References: <20191111065129.30078-1-Mark-MC.Lee@mediatek.com>
+ <20191111065129.30078-2-Mark-MC.Lee@mediatek.com>
+ <20191111.215617.1625420574702786179.davem@redhat.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CANdKZ0frU9+dRYeMaJjjKm6emxj41c_jBk_RX3G7bXn_oXKp4g@mail.gmail.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_230848_737303_5C98C2C7 
-X-CRM114-Status: GOOD (  13.70  )
+X-CRM114-CacheID: sfid-20191111_231229_771400_B387F32C 
+X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -90,6 +75,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,45 +88,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>,
- "open list:REMOTE PROCESSOR \(REMOTEPROC\) SUBSYSTEM"
- <linux-remoteproc@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, andrew@lunn.ch, jakub.kicinski@netronome.com,
+ devicetree@vger.kernel.org, netdev@vger.kernel.org, sean.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, opensource@vdorst.com, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, john@phrozen.org, matthias.bgg@gmail.com,
+ Mark-MC.Lee@mediatek.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 11 Nov 22:42 PST 2019, Pi-Hsun Shih wrote:
-> On Tue, Nov 12, 2019 at 7:10 AM Bjorn Andersson
-> <bjorn.andersson@linaro.org> wrote:
-> > On Mon 14 Oct 00:58 PDT 2019, Pi-Hsun Shih wrote:
-> > > diff --git a/drivers/remoteproc/mtk_scp.c b/drivers/remoteproc/mtk_scp.c
-[..]
-> > > +static struct mtk_rpmsg_info mtk_scp_rpmsg_info = {
-> > > +     .send_ipi = scp_ipi_send,
-> > > +     .register_ipi = scp_ipi_register,
-> > > +     .unregister_ipi = scp_ipi_unregister,
-> >
-> > These are exported symbols, so unless you see a need to support
-> > alternative implementations in the near future just skip the function
-> > pointers and call them directly.
-> >
+On Mon, 2019-11-11 at 21:56 -0800, David Miller wrote:
+> From: MarkLee <Mark-MC.Lee@mediatek.com>
+> Date: Mon, 11 Nov 2019 14:51:27 +0800
 > 
-> Yes there is request from MTK that they do want to reuse the mtk_rpmsg
-> driver for things other than mtk_scp, so there's a need to support
-> alternative implementations for this.
+> > +static void mtk_gdm_config(struct mtk_eth *eth, u32 config)
+> > +{
+> > +	int i;
+> > +
+> > +	for (i = 0; i < MTK_MAC_COUNT; i++) {
+> > +		u32 val = mtk_r32(eth, MTK_GDMA_FWD_CFG(i));
+> > +
+> > +		/* default setup the forward port to send frame to PDMA */
+> > +		val &= ~0xffff;
+> > +
+> > +		/* Enable RX checksum */
+> > +		val |= MTK_GDMA_ICS_EN | MTK_GDMA_TCS_EN | MTK_GDMA_UCS_EN;
+> > +
+> > +		val |= config;
+> > +
+> > +		mtk_w32(eth, val, MTK_GDMA_FWD_CFG(i));
+> > +	}
+> > +	/*Reset and enable PSE*/
 > 
+> Please put spaces before and after the comment sentence, like:
+> 
+> 	/* Reset and enable PSE */
+> 
+Thanks for the reminder, will correct it in the next patch.
 
-Fair enough, let's leave it like this for now!
-
-Looking forward to the next revision of the patches.
-
-Regards,
-Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
