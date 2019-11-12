@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE330F9B44
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 21:53:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9FA9F9B4C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 21:55:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K7+uZ7+vx9poEAy8cDIxgneRaD8kHVTu6R2D+XB5IQk=; b=S3iugZNZxkR1xC
-	kIarwrmToWagUHJL3IhRP9nvLbmIFezDJT1CQ8EUcUej8xDEel0E4YrmqPsJI0ZOo8ZcGzKCwY3yc
-	uuYtdceLKZXrb1yq8PTLk/89jpPE9utvA9pea254iRObMSmNMBybzkI7GqE8ZTStXui8v1OMD6v8w
-	9p4NufC7TVXdjXaEdKmH0WddeAzX5NLmJBxseK49apUpFQ7Ud+zEiRfDpsoZH4emdxj/MC6jrK/MJ
-	bEZW74vpk+pbC6QuZIbpL1/EAAAQvoW35gvl0yDjuoiPJuNL+IT7KfvSOOW5d3c0F7QoZXYqJgHbG
-	VNljA7MEc94IwGwt9REg==;
+	List-Owner; bh=11bqSu4JaxqT47IqejLf/MXyu5FkNUbMSUtXca4M0kY=; b=E5kjyX6N9fziqC
+	5mzg0ir1sOxOeypsTeihVSlswj7t6vG7GciI/AyUWpQkskk1h5HA79uVJjyMU92DYRXAxtiycDGCU
+	lOWTv3MOklzNs3T2Fy+um5r8du4kI2gZ9+8mZJ2nVZGca/4+/g6eltz8MMO6Uds13AIx2KfDl3538
+	70UPJDDb396JjPsbRylReAGLdgA/hhH5z5MqpYRKy8xbjo0uAQd293bAsu5jCnEQ5RA+ytZJoFTSt
+	cNWu4dMu1204oO/pkxuD6dGU6O1WbufUfozmluXrNavyA99lHIEDmeuIrY2gKrZeWpf4y345WmJCP
+	g48UTmrM7zpbPjJfshlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUd9o-0005Z3-Dm; Tue, 12 Nov 2019 20:53:00 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1iUdCD-0007Fp-S4; Tue, 12 Nov 2019 20:55:29 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUd9e-0005XY-AC; Tue, 12 Nov 2019 20:52:51 +0000
-Received: by mail-oi1-x243.google.com with SMTP id i185so16146669oif.9;
- Tue, 12 Nov 2019 12:52:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=V2BRORY0hBHLizKfzIfi2QGRpqicf8QMY3QuvWoI+ds=;
- b=gjNesBSfjAvc4kesedeMADClQCu4hYTWbOTzUGLfZvlLFHPbuM4uJjGELh0sbQgDWN
- 8lrWkP3Yvl8mvcsN4mKb4KCZ3qe4W6A0A7z9ixxdQE383EV8AEXqsi6eCrI5JEytcBvH
- vHA+l6bcOI//BOa+LE7IUWgnSHG9QZwKwI/3YrPNpoUOah6UEQSffUi+8IzTzuDDYU92
- LkFRFw9yqI50wotbSj3BbpSdI2AI/irw9T4DcvU56MUdwu0JW0gIfdH+y+PHsEDXvZx9
- J0EYZEmpPKTRcSTm0s1R3uKbwhfWEINfK24+MPxL/QAyKUNs+iDoATkUt1gjVy3EDP13
- iQsg==
+ id 1iUdBw-0006Nf-To
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 20:55:14 +0000
+Received: by mail-pf1-x443.google.com with SMTP id c13so14199386pfp.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 12 Nov 2019 12:55:12 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=p3sGAQxZSRJH4UZHNpIdLrEGYPs7j+wXkkL7B23DozY=;
+ b=jzJxHJOhBgrxXGo+3hwTEULMtqhW32uUMjkXF6xooOB4YLF0fDp9kjF2ZcEXOqjPmZ
+ wb3eB6O717UcTt+tyAbO8B80zA3u9jbuMXSpdMqJOUrOIw/6tlJouhIZBM+a5PnCN1vj
+ lat++UKcoOXZLI/EBlS4RFvn1FgV/ybJGuQ4A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=V2BRORY0hBHLizKfzIfi2QGRpqicf8QMY3QuvWoI+ds=;
- b=NdJd05StLHo5YDusqGfmHQdEeMHHKyq0gFYAfyGW6PT5YNYxpuf/gntAu8ZV12OOnp
- m321vwMtYGjxs017051yX78Da5Fti0lqu0Ia3+IBqexlJP/dzEEAUq4FfCRXehQeQbC5
- gj2e5XSujH5Tu6AM8HkCOGr87W25FcpJJYSNywzTJ+S3DwjOsjXeKsSYK35T1d5kF13F
- 9mNtuYJgdsKTGn5N9ypYt26ULVoJx3aIP9jIhW+xLNeZpANtlybgf2v6MR9zlBZMlF+7
- vgz4UYBleiRGD1eI/p5mmFLFtFZSsynb/KxIvNVArjmaPdska3hlkK6nksnclv2X29TI
- yHWA==
-X-Gm-Message-State: APjAAAXUL1JbFyHuj21BKNCH6myus1Y8xX2cLLvimySpqcQIXoQE+3Yg
- S7sYE7ucdgB7qpjRdj6QhdcWBwcdc0w3hI3mLjo=
-X-Google-Smtp-Source: APXvYqxRmF9qWBGxWM/Cn8ef+fuoL+vr7DkcDUoMRHpMSQl4VaTZvY3t+hLVbva6IXpLe8AdpMoa1ZtmkoCdXt1j/qw=
-X-Received: by 2002:a05:6808:20f:: with SMTP id
- l15mr852673oie.39.1573591968888; 
- Tue, 12 Nov 2019 12:52:48 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=p3sGAQxZSRJH4UZHNpIdLrEGYPs7j+wXkkL7B23DozY=;
+ b=n4Ds+ATovn5UMoD6cZOzcE+UoJyGEGKwTdbI5eBoTaVHZaYbWMzbNnRoRl1uqvsh+R
+ zsyPSaDi432vxF/HrKcG2Lz3idrST9y4E17EKrl8xIjsU4RikiHJXf2Gjn1/6ILb3mG5
+ lfk8R+Do5g/DD9uatv0DoDYWu1XLKyAzaGNF3/vY5+IIUf9IdbRKFpt5SvguOd6x3cpm
+ ya07Vwn7GPS0nnOPk54tax2Tmcv+FLuccoKthbdLOy6cUL9BNHMEIPRxqKIm1CgsWOLl
+ JV07yUi5IbawdLMHoFHENRo6Mejo6WY28uqnOFc6eVNDJZo8t2zXx1n7U67W2s25ywP+
+ 5FxQ==
+X-Gm-Message-State: APjAAAW2XuFGN3Ksp1aoHZqQ6ncnSIJ4uYUH4Sw35F3cKQ4t3jOTnzWZ
+ q5HMSC+948C/2W5c7kuczry++w==
+X-Google-Smtp-Source: APXvYqwhpXomPvDY55lP5tiV27rDluqLmojMV7DK9uMTENiwD2XDmRYC37Ogc+dw1yE3QtfbhDL3ZQ==
+X-Received: by 2002:a17:90a:cd03:: with SMTP id
+ d3mr9056375pju.137.1573592111764; 
+ Tue, 12 Nov 2019 12:55:11 -0800 (PST)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id l74sm11993pje.29.2019.11.12.12.55.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 12 Nov 2019 12:55:10 -0800 (PST)
+Date: Tue, 12 Nov 2019 12:55:09 -0800
+From: Kees Cook <keescook@chromium.org>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH v2 11/29] vmlinux.lds.h: Replace RODATA with RO_DATA
+Message-ID: <201911121252.25720DC6@keescook>
+References: <20191011000609.29728-1-keescook@chromium.org>
+ <20191011000609.29728-12-keescook@chromium.org>
+ <CAMuHMdXfPyti1wFBb0hhf3CeDSQ=zVv7cV-taeYCmDswMQkXPQ@mail.gmail.com>
+ <201911110922.17A2112B0@keescook>
+ <CAMuHMdUJ8QPvqf51nVmOg1Zm20SNT7pXR72z=qmco=ecwawZ7A@mail.gmail.com>
 MIME-Version: 1.0
-References: <20191027162328.1177402-1-martin.blumenstingl@googlemail.com>
- <20191027162328.1177402-3-martin.blumenstingl@googlemail.com>
- <20191108221652.32FA2206C3@mail.kernel.org>
- <1jd0dxf1uz.fsf@starbuckisacylon.baylibre.com>
-In-Reply-To: <1jd0dxf1uz.fsf@starbuckisacylon.baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 12 Nov 2019 21:52:38 +0100
-Message-ID: <CAFBinCBnUs0JdHT3TS+1++NMHtgbMvoT7RYRCnB0eNgs4L-2CA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/5] clk: meson: add a driver for the Meson8/8b/8m2 DDR
- clock controller
-To: Jerome Brunet <jbrunet@baylibre.com>
+Content-Disposition: inline
+In-Reply-To: <CAMuHMdUJ8QPvqf51nVmOg1Zm20SNT7pXR72z=qmco=ecwawZ7A@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_125250_377248_478621EB 
-X-CRM114-Status: GOOD (  13.34  )
+X-CRM114-CacheID: sfid-20191112_125513_017801_F1883690 
+X-CRM114-Status: GOOD (  14.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -85,6 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,45 +99,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Neil Armstrong <narmstrong@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
- khilman@baylibre.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux-Arch <linux-arch@vger.kernel.org>,
+ linux-s390 <linux-s390@vger.kernel.org>, Michal Simek <monstr@monstr.eu>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
+ linux-c6x-dev@linux-c6x.org, Arnd Bergmann <arnd@arndb.de>,
+ linux-xtensa@linux-xtensa.org, Michael Ellerman <mpe@ellerman.id.au>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, Borislav Petkov <bp@alien8.de>,
+ Parisc List <linux-parisc@vger.kernel.org>, Andy Lutomirski <luto@kernel.org>,
+ alpha <linux-alpha@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rick Edgecombe <rick.p.edgecombe@intel.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jerome,
-
-On Tue, Nov 12, 2019 at 6:20 PM Jerome Brunet <jbrunet@baylibre.com> wrote:
->
->
-> >> +static const struct of_device_id meson8_ddr_clkc_match_table[] = {
-> >> +       { .compatible = "amlogic,meson8-ddr-clkc" },
-> >> +       { .compatible = "amlogic,meson8b-ddr-clkc" },
-> >> +       { /* sentinel */ },
+On Mon, Nov 11, 2019 at 07:08:51PM +0100, Geert Uytterhoeven wrote:
+> Hi Kees,
+> 
+> On Mon, Nov 11, 2019 at 6:23 PM Kees Cook <keescook@chromium.org> wrote:
+> > On Mon, Nov 11, 2019 at 05:58:06PM +0100, Geert Uytterhoeven wrote:
+> > > On Fri, Oct 11, 2019 at 2:07 AM Kees Cook <keescook@chromium.org> wrote:
+> > > > There's no reason to keep the RODATA macro: replace the callers with
+> > > > the expected RO_DATA macro.
+> > > >
+> > > > Signed-off-by: Kees Cook <keescook@chromium.org>
+> > > > ---
+> > > >  arch/alpha/kernel/vmlinux.lds.S      | 2 +-
+> > > >  arch/ia64/kernel/vmlinux.lds.S       | 2 +-
+> > > >  arch/microblaze/kernel/vmlinux.lds.S | 2 +-
+> > > >  arch/mips/kernel/vmlinux.lds.S       | 2 +-
+> > > >  arch/um/include/asm/common.lds.S     | 2 +-
+> > > >  arch/xtensa/kernel/vmlinux.lds.S     | 2 +-
+> > > >  include/asm-generic/vmlinux.lds.h    | 4 +---
+> > > >  7 files changed, 7 insertions(+), 9 deletions(-)
+> > >
+> > > Somehow you missed:
+> > >
+> > >     arch/m68k/kernel/vmlinux-std.lds:  RODATA
+> > >     arch/m68k/kernel/vmlinux-sun3.lds:      RODATA
 > >
-> > Super nitpick, drop the comma above so that nothing can follow this.
->
-> I don't think it is worth reposting the series Martin.
-> If it is ok with you, I'll just apply it with Stephen comments
-I am more than happy with this.
-just to confirm, you would address all three comments from Stephen:
-- including clk-provider.h
-- use devm_platform_ioremap_resource
-- trailing comma after the sentinel
+> > Argh. I've sent a patch; sorry and thanks for catching this. For my own
+> > cross-build testing, which defconfig targets will hit these two linker
+> > scripts?
+> 
+> vmlinux-sun3.lds: sun3_defconfig
+> vmlinux-std.lds: All other classic 680x0 targets with an MMU, e.g. plain
+>                  defconfig aka multi_defconfig.
 
-> In the future, I would prefer if you could separate the series for clock
-> (intended for Neil and myself) and the DT one (intended for Kevin)
-sorry, we discussed this previously but I completely forgot about it
-when I re-sent this series
-I'll be more careful next time
+Excellent, thank you; I've updated my multi-arch build list. :)
 
-
-
-Martin
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
