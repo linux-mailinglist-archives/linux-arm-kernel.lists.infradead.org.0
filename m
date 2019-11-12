@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF4A4F8891
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 07:30:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 585C0F8892
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 07:30:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XodjuzsD4KaA6Z9jdZRYXMJFP4xDABUFo9wuwIkuxVk=; b=TXa9EE5O+6LoYq
-	JbN2cO/NKNiK/6Aw2zVvgtirWvR6CuCPOkm39VxXeYXiLteV9C9dwBdaCYx+kPWn3XuBx5eCRCJKE
-	5bMK8r/TVldtiHW4RR1J5SRCSgMWV/+D9YlTIJO9qXwoTZxP8w4WHwyMSN5aVHrFP9P2bVpTh5pMD
-	0HQgClSOaHhspYgwMBRuR0YT09iFiPpxJMyUO7Kgf8ltFwkb9ZNWx2rCkSxYqSHzlqcLuMbEsyhZx
-	3B37F4M9gD0AzSkZb5wKDqdYsF/CNl/AJ9dM6qWEud6U1ChRtJnJZSZXWbCkgWeSeItH9g0XjYe4k
-	E+VgtOaL9eueLZSmkRDg==;
+	List-Owner; bh=Kh91KPubho19DIaBOdwhHXyzDSzDfEN9M4apDDr9Nsg=; b=pGUwSidLbI8gsR
+	Znu+7nLH8WiyNSldq0mRiA8T8sLVhLqJKMtIoNJicbGU9ciJ+2iQDqUZGlPDT1HuzCacPF8ZuaucK
+	jBiC9/0V8uFBCSQ9jA5sCS815PA0aCEvkjIbpjv39Pr/TxJPufkknXKMidhDtcpEVzD3hI/gshmge
+	r6PLRWMJmcK490Rp7ExpNNOEK7sUr+jrrM5ukGl9hCi4TDYbRdpURD+NsfckiGNTzmyYSVqBRFi+k
+	CnXAHp6b3QmeyKaaYw6/rk5Lr+SpZSbYVc6Normw2SAMHMcNPcyd9yQu719PbD/En7HzREAFyd8d5
+	NMzElQfzyydBir5mp2Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUPgz-0001V7-Be; Tue, 12 Nov 2019 06:30:21 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iUPhI-0002wy-LO; Tue, 12 Nov 2019 06:30:40 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUPfw-0000ta-5q
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 06:29:17 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 193so12577083pfc.13
+ id 1iUPfz-0000w6-FQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 06:29:20 +0000
+Received: by mail-pg1-x544.google.com with SMTP id w11so11132018pga.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 Nov 2019 22:29:16 -0800 (PST)
+ Mon, 11 Nov 2019 22:29:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=UUDGU5bEK87zS/zvlEOKFxc9b+Lh+WyGcJ2az77spzU=;
- b=P9PYlZgua/JfV89heBJgV98TMQ1fAx+Av1ZqdGidwAkRfFx9jMLlyIOewz1DdLTVyw
- Ns8I10lupzo1siKw1nmXKsxAg24aO/KDa0ldzvMvVlTglIXiiO0Hfi2xS1sM19y7dyjj
- CqZotFtKtjwZnnvNmOjVIf8LmhHr+cVY6XEuP2h1XKA5R0JEt1ios+ojFoZzS5iEoTar
- OtLOB3FlOREz4WC0T9VAiLOe6D04eBP+Ygo10RvPjo6DS/y0qFJJFTjL19t/acSRbNup
- n+uWAtc/i7uGSW8UJKIPHjBUourFI9wTA+mFODNSDr8+C1ldjkQS133eX1Tzgb0vZcNM
- 2PVg==
+ bh=dNvJ2cs4tAGXPExkj7A0Re52pBXDxSxw0BIjvNkjJu8=;
+ b=F7OVifkjIrygr9D4R4XtO3tVFDVrpBonHzRqGyS2DVefX7FsMEa/jf8CMjIxiynXFB
+ LYIfmNyzluotu/u6ostkZaTt6uPbqCvj1Xx8PrVWCmVuCsCjAnzvCz9M1L6jaiHdiFoT
+ oJ0t9lPpK1cdAL68kofm0RehcQstgxKSsYY75CDIYV3u5SGhgH3ZYyDcI9guNl3SGiCv
+ KJ9a3oxTci6V8jblG99MmTgQtYaIaiisdoOWuSrRdvQyfRxkpj85THXTDnqDxLnvmyzp
+ M6t3Es3v9k0NsRHGcHc0k7QhVz/7lwLQFEwbXiL1bUwOKSK2rqpzVK4GmKwx34joI1s/
+ Y2TQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=UUDGU5bEK87zS/zvlEOKFxc9b+Lh+WyGcJ2az77spzU=;
- b=TJucJ62ELmypejgoAaKMh0AyxEpYr+bgbyLhsHsJpCQ2dLltvE35r8ng20FtT04JLR
- D4dKB0yqb93tiF9voClXWbFew48bLNrwsYSwGperzpQcWivSq45TwgimUfdDEgIDPeOu
- jC5s2AI++lAY/sndPaJBitWooFKHFwErqNu2uzr9sVaKejisr50eqlmEnqjN9eSywzf1
- /w9rmGSyXUBbL+MR93wveRzsDr6ZS9op0kuL4hW8E/zX4NZR0kYc3UJQztOJNlTvcSfd
- 0dtW1sBNJwLMPj9oQ9Er4rawI9cZPDK+WvzOG4PUHbY7G2en+tPEEj9CF2P+Xf2mzpQW
- BuCQ==
-X-Gm-Message-State: APjAAAVGptlM7aLa9vcW3ik364XMwNw0xudtohMNrrw38HBEzMol0o8w
- m6Spjlb5JMTYaIroCAkzoR8=
-X-Google-Smtp-Source: APXvYqyHE2Nv+8XZ3okYhk6S/FI2JZ4VYd65cFUTQ0SXTUhJGGxPHG2Oeqf6Ux1G9ymGLeb4cLnb8Q==
-X-Received: by 2002:a17:90a:f013:: with SMTP id
- bt19mr4259314pjb.16.1573540155266; 
- Mon, 11 Nov 2019 22:29:15 -0800 (PST)
+ bh=dNvJ2cs4tAGXPExkj7A0Re52pBXDxSxw0BIjvNkjJu8=;
+ b=epuTo6K4NK2vkwxgyhkXlx7j4ebovri1NFih1nDHXzyIXyYibTkdUA8ScDRi3kVtsF
+ LwBwio8f2Nt3qNZBRaCaVtp1BcOd1rDBpEZUyvEe7G9pwbomDSO9kwKN/bdCCr7liMDn
+ 1DYcg2nl3/2SluKGeABgPvFcMHtJpOnbZmMd+aS3mroTJ7ESvguGnNkq0+dySN+Q1r6q
+ AtoOAAIbZg0apx6N6mnXSPFl+poJjcSz4ONuxrV7WcpfHHvqsV4HKLcJAAuRhcL6dtiq
+ wDwH0ZTH3W/k2WRxgruZP/t1dJC8hKhzLEm+6cT3zEl8J8J37fL9cvxnbVcfP4v1g241
+ D4qQ==
+X-Gm-Message-State: APjAAAVeWEkEPCk+A4fgK6KjMQfhOLaNI9/k+dzJb11fSldz7eNPeQnz
+ da2sZCQ93wh/WEbTtCCSW0M=
+X-Google-Smtp-Source: APXvYqzqXFq5V6oZb0+sSrZU/+YjVel/HfInYAtocN5GTsK1ZEzVr8+r/pAY5LYYpaa1Ss7xWmUITw==
+X-Received: by 2002:a63:e647:: with SMTP id p7mr14590379pgj.47.1573540158249; 
+ Mon, 11 Nov 2019 22:29:18 -0800 (PST)
 Received: from voyager.ibm.com ([36.255.48.244])
- by smtp.gmail.com with ESMTPSA id x20sm18573707pfa.186.2019.11.11.22.29.12
+ by smtp.gmail.com with ESMTPSA id x20sm18573707pfa.186.2019.11.11.22.29.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 Nov 2019 22:29:14 -0800 (PST)
+ Mon, 11 Nov 2019 22:29:17 -0800 (PST)
 From: Joel Stanley <joel@jms.id.au>
 To: Andrew Jeffery <andrew@aj.id.au>,
  =?UTF-8?q?C=C3=A9dric=20Le=20Goater?= <clg@kaod.org>
-Subject: [PATCH 3/5] ARM: config: aspeed-g4: Add MMC, and cleanup
-Date: Tue, 12 Nov 2019 16:58:55 +1030
-Message-Id: <20191112062857.32638-4-joel@jms.id.au>
+Subject: [PATCH 4/5] ARM: configs: multi_v7: ASPEED network, gpio, FSI
+Date: Tue, 12 Nov 2019 16:58:56 +1030
+Message-Id: <20191112062857.32638-5-joel@jms.id.au>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191112062857.32638-1-joel@jms.id.au>
 References: <20191112062857.32638-1-joel@jms.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_222916_234808_673B40AE 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20191111_222919_598173_14FB84A8 
+X-CRM114-Status: UNSURE (   7.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (joel.stan[at]gmail.com)
@@ -110,83 +110,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PCA muxes now depend on I2C_MUX. SPI si now required by SPI-NOR.
-
-Add the eMMC driver, and remove the FSI SBEFIFO which is not used on AST2400
-systems.
-
-The remaining changes are cleanups from regenerating the defconfig.
+Enable drivers used by the ASPEED SoCs so the multi v7 defconfig can run
+on those boards.
 
 Signed-off-by: Joel Stanley <joel@jms.id.au>
 ---
- arch/arm/configs/aspeed_g4_defconfig | 18 ++++++++++++------
- 1 file changed, 12 insertions(+), 6 deletions(-)
+ arch/arm/configs/multi_v7_defconfig | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/arch/arm/configs/aspeed_g4_defconfig b/arch/arm/configs/aspeed_g4_defconfig
-index 1857df992484..303f75a3baec 100644
---- a/arch/arm/configs/aspeed_g4_defconfig
-+++ b/arch/arm/configs/aspeed_g4_defconfig
-@@ -132,10 +132,12 @@ CONFIG_ASPEED_BT_IPMI_BMC=y
- CONFIG_HW_RANDOM_TIMERIOMEM=y
- # CONFIG_I2C_COMPAT is not set
- CONFIG_I2C_CHARDEV=y
-+CONFIG_I2C_MUX=y
- CONFIG_I2C_MUX_PCA9541=y
- CONFIG_I2C_MUX_PCA954x=y
- CONFIG_I2C_ASPEED=y
- CONFIG_I2C_FSI=y
-+CONFIG_SPI=y
- CONFIG_GPIOLIB=y
- CONFIG_GPIO_SYSFS=y
- CONFIG_GPIO_ASPEED=y
-@@ -185,6 +187,12 @@ CONFIG_USB_CONFIGFS_F_LB_SS=y
- CONFIG_USB_CONFIGFS_F_FS=y
- CONFIG_USB_CONFIGFS_F_HID=y
- CONFIG_USB_CONFIGFS_F_PRINTER=y
-+CONFIG_MMC=y
-+# CONFIG_PWRSEQ_EMMC is not set
-+# CONFIG_PWRSEQ_SIMPLE is not set
-+CONFIG_MMC_SDHCI=y
-+CONFIG_MMC_SDHCI_PLTFM=y
-+CONFIG_MMC_SDHCI_OF_ASPEED=y
- CONFIG_NEW_LEDS=y
- CONFIG_LEDS_CLASS=y
- CONFIG_LEDS_CLASS_FLASH=y
-@@ -216,7 +224,6 @@ CONFIG_FSI_MASTER_GPIO=y
- CONFIG_FSI_MASTER_HUB=y
- CONFIG_FSI_MASTER_AST_CF=y
- CONFIG_FSI_SCOM=y
--CONFIG_FSI_SBEFIFO=y
- CONFIG_FANOTIFY=y
- CONFIG_OVERLAY_FS=y
- CONFIG_TMPFS=y
-@@ -231,7 +238,6 @@ CONFIG_SQUASHFS_ZSTD=y
- # CONFIG_NETWORK_FILESYSTEMS is not set
- CONFIG_HARDENED_USERCOPY=y
- CONFIG_FORTIFY_SOURCE=y
--# CONFIG_CRYPTO_ECHAINIV is not set
- CONFIG_CRYPTO_HMAC=y
- CONFIG_CRYPTO_SHA256=y
- CONFIG_CRYPTO_USER_API_HASH=y
-@@ -247,14 +253,14 @@ CONFIG_DEBUG_INFO_REDUCED=y
- CONFIG_DEBUG_INFO_DWARF4=y
- CONFIG_GDB_SCRIPTS=y
- CONFIG_STRIP_ASM_SYMS=y
-+CONFIG_SCHED_STACK_END_CHECK=y
-+CONFIG_PANIC_ON_OOPS=y
-+CONFIG_PANIC_TIMEOUT=-1
- CONFIG_SOFTLOCKUP_DETECTOR=y
- # CONFIG_DETECT_HUNG_TASK is not set
- CONFIG_WQ_WATCHDOG=y
--CONFIG_PANIC_ON_OOPS=y
--CONFIG_PANIC_TIMEOUT=-1
- # CONFIG_SCHED_DEBUG is not set
--CONFIG_SCHED_STACK_END_CHECK=y
- CONFIG_FUNCTION_TRACER=y
--# CONFIG_RUNTIME_TESTING_MENU is not set
- CONFIG_DEBUG_WX=y
- CONFIG_DEBUG_USER=y
-+# CONFIG_RUNTIME_TESTING_MENU is not set
+diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
+index 13ba53286901..124f50dc9cc7 100644
+--- a/arch/arm/configs/multi_v7_defconfig
++++ b/arch/arm/configs/multi_v7_defconfig
+@@ -244,6 +244,7 @@ CONFIG_BGMAC_BCMA=y
+ CONFIG_SYSTEMPORT=m
+ CONFIG_MACB=y
+ CONFIG_NET_CALXEDA_XGMAC=y
++CONFIG_FTGMAC100=m
+ CONFIG_GIANFAR=y
+ CONFIG_HIX5HD2_GMAC=y
+ CONFIG_E1000E=y
+@@ -437,6 +438,7 @@ CONFIG_PINCTRL_MSM8X74=y
+ CONFIG_PINCTRL_MSM8916=y
+ CONFIG_PINCTRL_QCOM_SPMI_PMIC=y
+ CONFIG_PINCTRL_QCOM_SSBI_PMIC=y
++CONFIG_GPIO_ASPEED_SGPIO=y
+ CONFIG_GPIO_DAVINCI=y
+ CONFIG_GPIO_DWAPB=y
+ CONFIG_GPIO_EM=y
+@@ -1041,6 +1043,13 @@ CONFIG_ROCKCHIP_EFUSE=m
+ CONFIG_NVMEM_IMX_OCOTP=y
+ CONFIG_NVMEM_SUNXI_SID=y
+ CONFIG_NVMEM_VF610_OCOTP=y
++CONFIG_FSI=m
++CONFIG_FSI_MASTER_GPIO=m
++CONFIG_FSI_MASTER_HUB=m
++CONFIG_FSI_MASTER_ASPEED=m
++CONFIG_FSI_SCOM=m
++CONFIG_FSI_SBEFIFO=m
++CONFIG_FSI_OCC=m
+ CONFIG_EXT4_FS=y
+ CONFIG_AUTOFS4_FS=y
+ CONFIG_MSDOS_FS=y
 -- 
 2.24.0
 
