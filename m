@@ -2,80 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FDE9F891E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 07:55:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C1D6F891D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 07:55:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UFj3LfyZRIda5l6aWJJyohgtwrM66uT2Pswob+lK1/M=; b=FcXGpeDRQhHZOH
-	qIHrXyqfxCneYynsPego57ywxqVl88lqlnUs0FbaPhrf2qFBLmeONRO2PNixukSH9SJZoaCtjYHlX
-	hWx0fG04bU3GL82o05KMgsRHeb7Uyug1jSShZYC7aqDk3Fc6ogRWVf/LRgrG2BLvWWVc4QKgzr1eu
-	6lPM95DHwZ8ytw/lntzbKzaQuagqJPx0mKYyC5+zIRcL99HZO4+hoYCyK5WRCbeOnptlKYSVNzpSQ
-	fO7xNtZhQaCyUKeHqqVuzIu3FkCPSDZfwLnhA9jF2bq/+GxS4fhaTcUZ8YeckJB5i0rIJlYvA0tBE
-	JC4r2eDxEnQ5NQA6ldWA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8qLvv+CRxbjwuPscIjjGpr55/OXWOEY8I0DEotopeOo=; b=e66S2YfpgiDUQg
+	3UGDPfVnKi5I7+gAAEUn3I/4jWQ40MBQe2CKdnUIL5BdOxkdUrDUgy0aMIUFmLBCmrY517xTXfFy6
+	F37N7JBr1ZRyHwk+uOkQl5aki5OOcJZiL9MT3BqvedJrJiv49AVE7VFozPBads1MwK0zk4Y0uDs9d
+	hDTLDm3MiH4teqfZns2F8Md23rhVhqF2CKIdx1ZbSXh4O+iXI5pcNlFcLXymLjXGrugVy6gfcaDcl
+	RwttUAlF8xx3lYwkiqRv6EJ3AGqq010JakU32hgddPJrLZOcUeYovm1JeZNBdzgBeEGXC8bR+JIAR
+	gyuTFnEEAEX2nB38bCFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUQ4y-0005D7-4o; Tue, 12 Nov 2019 06:55:08 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUQ2V-00037G-8a; Tue, 12 Nov 2019 06:52:37 +0000
-X-UUID: 89aca546d7934a43b7478ebba615a1ab-20191111
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=wdSA5MhsOB9Ng3BYMmOZcpPo2w0m19TKE7PUEysk4/I=; 
- b=SkP0IbH/QLcjU2jsExzjgYU1k9VtsALKCJE6i0+bOJ8il7W+JBAO8INgUqhoW5yd2xMYC9HyydvrOQ/MwMsEC7auD6Kw6wxkn7bcxQnEBO7aOPvbrFEqjQsqEl2xZYVHAhBCOgPGhwJxn49M3rbWF5sSUqJbNc10PDUuIHpE8eM=;
-X-UUID: 89aca546d7934a43b7478ebba615a1ab-20191111
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 577759287; Mon, 11 Nov 2019 22:52:29 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 11 Nov 2019 22:52:27 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 12 Nov 2019 14:52:25 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Tue, 12 Nov 2019 14:52:26 +0800
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
- <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
- <matthias.bgg@gmail.com>
-Subject: [PATCH v4 0/2] fix the missing underflow in memory operation function
-Date: Tue, 12 Nov 2019 14:52:25 +0800
-Message-ID: <20191112065225.6971-1-walter-zh.wu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+	id 1iUQ4k-00050m-4l; Tue, 12 Nov 2019 06:54:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUQ2U-00035f-Of; Tue, 12 Nov 2019 06:52:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 741C81FB;
+ Mon, 11 Nov 2019 22:52:33 -0800 (PST)
+Received: from [10.163.1.187] (unknown [10.163.1.187])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6BA6A3F52E;
+ Mon, 11 Nov 2019 22:55:07 -0800 (PST)
+Subject: Re: [PATCH V9] mm/debug: Add tests validating architecture page table
+ helpers
+To: Ingo Molnar <mingo@kernel.org>
+References: <1573532326-24084-1-git-send-email-anshuman.khandual@arm.com>
+ <20191112062951.GA100264@gmail.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <fe6b8140-1017-d081-570c-62213fe39624@arm.com>
+Date: Tue, 12 Nov 2019 12:22:45 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20191112062951.GA100264@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_225235_332463_58D71915 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191111_225234_871595_E1940A7F 
+X-CRM114-Status: GOOD (  16.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,52 +62,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Walter Wu <walter-zh.wu@mediatek.com>,
- wsd_upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
- kasan-dev@googlegroups.com, linux-mm@kvack.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patchsets help to produce KASAN report when size is negative numbers
-in memory operation function. It is helpful for programmer to solve the 
-undefined behavior issue. Patch 1 based on Dmitry's review and
-suggestion, patch 2 is a test in order to verify the patch 1. 
 
-[1]https://bugzilla.kernel.org/show_bug.cgi?id=199341 
-[2]https://lore.kernel.org/linux-arm-kernel/20190927034338.15813-1-walter-zh.wu@mediatek.com/ 
 
-Walter Wu (2): 
-kasan: detect negative size in memory operation function 
-kasan: add test for invalid size in memmove
----
-Changes in v2:
-fix the indentation, thanks for the reminder Matthew.
+On 11/12/2019 11:59 AM, Ingo Molnar wrote:
+> 
+> * Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+> 
+>> +config DEBUG_VM_PGTABLE
+>> +	bool "Debug arch page table for semantics compliance"
+>> +	depends on MMU
+>> +	depends on DEBUG_VM
+>> +	depends on ARCH_HAS_DEBUG_VM_PGTABLE
+>> +	help
+>> +	  This option provides a debug method which can be used to test
+>> +	  architecture page table helper functions on various platforms in
+>> +	  verifying if they comply with expected generic MM semantics. This
+>> +	  will help architecture code in making sure that any changes or
+>> +	  new additions of these helpers still conform to expected
+>> +	  semantics of the generic MM.
+>> +
+>> +	  If unsure, say N.
+> 
+> Since CONFIG_DEBUG_VM is generally disabled in distro kernel packages, 
+> why not make this 'default y' to maximize testing coverage? The code size 
+> increase should be minimal, and DEBUG_VM increases size anyway.
 
-Changes in v3:
-Add a confition for memory operation function, need to
-avoid the false alarm when KASAN un-initialized.
+Sure, will do.
 
-Changes in v4:
-modify negative size condition
-modify comments
-modify the fixed code about early stages of boot
----
- include/linux/kasan.h     |  2 +-
- lib/test_kasan.c          | 18 ------------------
- mm/kasan/common.c         | 25 +++++++------------------
- mm/kasan/generic.c        |  9 ++++-----
- mm/kasan/generic_report.c | 11 -----------
- mm/kasan/kasan.h          |  2 +-
- mm/kasan/report.c         |  5 ++++-
- mm/kasan/tags.c           |  9 ++++-----
- mm/kasan/tags_report.c    | 11 -----------
- 9 files changed, 21 insertions(+), 71 deletions(-)
+> 
+> Other than that this looks good to me:
+> 
+>   Reviewed-by: Ingo Molnar <mingo@kernel.org>
 
--- 
-2.18.0
+Thank you.
+
+> 
+> Thanks,
+> 
+> 	Ingo
+> 
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
