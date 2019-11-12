@@ -2,74 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9298F8818
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 06:37:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C171AF8822
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 06:40:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J3V3H2S8zJ/+OpF0f56DsGpcWWrgyZvTt2HE+KVMVpc=; b=rP21WTF8EbUG8G
-	8oM35fP90xMEIkKfogq21TLtCxqPalU0tXLH1+nMzbNHa/QjHNlQTL6bby2HoBT9+YFjfy7QsCG0z
-	gRL9MuMV787uuGhNOPQLCfKrAGGk5s2jB5SLP8HOayMTIjTY7HgHxn95eSxYNJ+SohaXdJGr51yjP
-	J404hLbGOu9yRjbS9JoFccPRH085qDZPLIn7BApyHPNIof08ISzKTul/qQnV4dRU5ZfJxFPf56lb/
-	n/hUPhsg6NA+tq1spzljGNVQzt+IOWj4ZUjjNk9KROuTSd5kkaFzZxLGbzpeI7x25r6/e6TVKYKrY
-	RvAqSQPoQEEqPHtwCydQ==;
+	List-Owner; bh=YQButa/cwxJomjl3o8EwaAGHI093MpeVrueGOJ9FFnw=; b=Lm+QfrSNlZF+3q
+	6ScTHAkIEEYtnssNnghhs3mAn0qkbPCa+5x+Uloh1vGdp7as8qrYAWfeiWooSJOvE4q3ruTWH0P/s
+	KtmaUo7eI3tCDUncEpGMrAjVVLTH8wbc2lFsB/tAIEQt/NB3ruDOUacuc1olh1D6cak4iMIFFkm+j
+	UxNvgIOCFKiR7BjxwGPTfGijk+kRBjZj9CUgo1HXyhxIzwxajcK07KAw/OaEyAnDgnRLPgL2TdM75
+	ud6zCUQcC9GWBfBTqJRya6lEcEnC6zJVeqPyP2dBNO4y7W/Em1/0ZizMgs5RNfUS6LftscspGb7Ev
+	6FX8BT2aFGPAQQPVj8UA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUOrs-0008JB-Ia; Tue, 12 Nov 2019 05:37:32 +0000
+	id 1iUOuY-0001dO-MO; Tue, 12 Nov 2019 05:40:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUOre-0008IS-FO
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 05:37:19 +0000
-Received: from localhost (unknown [122.167.70.123])
+ id 1iUOuM-00011E-EJ; Tue, 12 Nov 2019 05:40:07 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 54CF02084F;
- Tue, 12 Nov 2019 05:37:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 817A02084F;
+ Tue, 12 Nov 2019 05:40:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573537038;
- bh=DY28ZU9iJjrpae4knOfkZebu2FgGI1JEdHocfirJtGU=;
+ s=default; t=1573537206;
+ bh=DHULJ5PDA2aurBq/UHbqIfg+vBBq4iEHEwdqVLa0Rak=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Ne9ss+MVsI/j6Y/+Q5x3RMKfDe5np4vko2s3/+2sXfpBN/jAr0RvQO6Rl0Hs4lq17
- 2lnc6rDPlVkKSU6bH+s7oJKE4rM3Ley2L1M4JT76AOC5cA1fnUZ5roRpINGLiRcrVh
- 5Xkpl6VeEXsVQiRXSXd+XGAnKlWysyWckSPyS0KI=
-Date: Tue, 12 Nov 2019 11:07:14 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PATCH v4 15/15] dmaengine: ti: k3-udma: Add glue layer for non
- DMAengine users
-Message-ID: <20191112053714.GX952516@vkoul-mobl>
-References: <20191101084135.14811-1-peter.ujfalusi@ti.com>
- <20191101084135.14811-16-peter.ujfalusi@ti.com>
- <20191111061258.GS952516@vkoul-mobl>
- <6d4d2fcc-502b-4b41-cd71-8942741f4ad8@ti.com>
+ b=EIdklnhR1wHAYbf9dcmZZxeSETsXhU1RQofV1TABiA/LMIwkDJkONzhxeGrMd9WEb
+ 2YK+IKes8uDqeh0oeI+DUgPMeA3THWY3Hv/yBaurld+YtEEiCThT5vKHsWJbjw/kl4
+ aEkJL5Ymp45+COr4Cr2hcDGVlVHJoUbuiF33Zil0=
+Date: Tue, 12 Nov 2019 06:40:03 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
+Subject: Re: [PATCH] soc: amlogic: socinfo: Avoid soc_device_to_device()
+Message-ID: <20191112054003.GD1210104@kroah.com>
+References: <20191111221521.1587-1-afaerber@suse.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <6d4d2fcc-502b-4b41-cd71-8942741f4ad8@ti.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20191111221521.1587-1-afaerber@suse.de>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_213718_533531_9F795D1B 
-X-CRM114-Status: GOOD (  11.75  )
-X-Spam-Score: -3.7 (---)
+X-CRM114-CacheID: sfid-20191111_214006_515380_317134FA 
+X-CRM114-Status: GOOD (  16.64  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-3.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [122.167.70.123 listed in dnsbl.sorbs.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -82,39 +72,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, devicetree@vger.kernel.org, grygorii.strashko@ti.com,
- lokeshvutla@ti.com, j-keerthy@ti.com, linux-kernel@vger.kernel.org,
- t-kristo@ti.com, tony@atomide.com, robh+dt@kernel.org, ssantosh@kernel.org,
- dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11-11-19, 12:31, Peter Ujfalusi wrote:
-> 
-> 
-> On 11/11/2019 8.12, Vinod Koul wrote:
-> > On 01-11-19, 10:41, Peter Ujfalusi wrote:
-> >> From: Grygorii Strashko <grygorii.strashko@ti.com>
-> >>
-> >> Certain users can not use right now the DMAengine API due to missing
-> >> features in the core. Prime example is Networking.
-> >>
-> >> These users can use the glue layer interface to avoid misuse of DMAengine
-> >> API and when the core gains the needed features they can be converted to
-> >> use generic API.
-> > 
-> > Can you add some notes on what all features does this layer implement..
-> 
-> In the commit message or in the code?
+On Mon, Nov 11, 2019 at 11:15:21PM +0100, Andreas F=E4rber wrote:
+> The helper soc_device_to_device() is considered deprecated.
+> For a driver __init function the predictable prefix text
+> "soc soc0:" from dev_info() does not add real value, so use
+> pr_info() to emit the info text without such prefix.
+> =
 
-commit here so that we know what to expect.
+> While at it, normalize the casing of "detected" for GX.
+> =
 
-Thanks
--- 
-~Vinod
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Cc: Neil Armstrong <narmstrong@baylibre.com>
+> Signed-off-by: Andreas F=E4rber <afaerber@suse.de>
+> ---
+>  drivers/soc/amlogic/meson-gx-socinfo.c | 4 +---
+>  drivers/soc/amlogic/meson-mx-socinfo.c | 4 ++--
+>  2 files changed, 3 insertions(+), 5 deletions(-)
+> =
+
+> diff --git a/drivers/soc/amlogic/meson-gx-socinfo.c b/drivers/soc/amlogic=
+/meson-gx-socinfo.c
+> index 01fc0d20a70d..105b819bbd5f 100644
+> --- a/drivers/soc/amlogic/meson-gx-socinfo.c
+> +++ b/drivers/soc/amlogic/meson-gx-socinfo.c
+> @@ -129,7 +129,6 @@ static int __init meson_gx_socinfo_init(void)
+>  	struct device_node *np;
+>  	struct regmap *regmap;
+>  	unsigned int socinfo;
+> -	struct device *dev;
+>  	int ret;
+>  =
+
+>  	/* look up for chipid node */
+> @@ -192,9 +191,8 @@ static int __init meson_gx_socinfo_init(void)
+>  		kfree(soc_dev_attr);
+>  		return PTR_ERR(soc_dev);
+>  	}
+> -	dev =3D soc_device_to_device(soc_dev);
+>  =
+
+> -	dev_info(dev, "Amlogic Meson %s Revision %x:%x (%x:%x) Detected\n",
+> +	pr_info("Amlogic Meson %s Revision %x:%x (%x:%x) detected\n",
+
+This should message should just be removed entirely.
+
+>  			soc_dev_attr->soc_id,
+>  			socinfo_to_major(socinfo),
+>  			socinfo_to_minor(socinfo),
+> diff --git a/drivers/soc/amlogic/meson-mx-socinfo.c b/drivers/soc/amlogic=
+/meson-mx-socinfo.c
+> index 78f0f1aeca57..7db2c94a7130 100644
+> --- a/drivers/soc/amlogic/meson-mx-socinfo.c
+> +++ b/drivers/soc/amlogic/meson-mx-socinfo.c
+> @@ -167,8 +167,8 @@ static int __init meson_mx_socinfo_init(void)
+>  		return PTR_ERR(soc_dev);
+>  	}
+>  =
+
+> -	dev_info(soc_device_to_device(soc_dev), "Amlogic %s %s detected\n",
+> -		 soc_dev_attr->soc_id, soc_dev_attr->revision);
+> +	pr_info("Amlogic %s %s detected\n",
+> +		soc_dev_attr->soc_id, soc_dev_attr->revision);
+
+Same here, no need to polute the kernel log for when all is going just
+fine.
+
+That's why we created "common" driver init helpers, to prevent the
+ability for this type of noise from even being able to be created at
+all.
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
