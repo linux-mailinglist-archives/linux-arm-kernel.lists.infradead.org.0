@@ -2,64 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7736DF9585
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:24:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6E2EF95DD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:43:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BkBzKvY7ZMiDadwyC6BFSxmTPMAyrgw8UPCY+mXzg4c=; b=GJ770UcTgZpKF18rT6xvaMjmU
-	cRwOM0OvWYGquuh0QpUAmHGGL6iaUJ+3V2DyUesCO1xXECRuhbCY4pncDet1W4DUkORt98OhtzxeJ
-	7B2rE9Kr0J4lRUZLbJQgkX07A9L1aQJEDbg8jw2zVcLG+pfEIEuSiXm84uTRlVf8NOFi+1Ag2Msm9
-	3uutLvE4OhzhN84Z0LGcTK+ZnY4untOIyCrn6oYoaHTx5eM9oi0yeXVKjk+S5LQFTaeHDhp+Gwog/
-	7aHZZsKRm0dCyy70r93rSRLnj4GmpkHSL3k0jxVcJogGYa+c/ZTuW5R0E07oXA3P7SPZa9mtPYOUP
-	tKzFL5ccg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Szlkp6TBuCL5rfU+ebAM5+47VPRA//1QGaBIQ8S6Wd0=; b=FA/sGsEtcaCPDu
+	ml2EFR31X8QyabBL5pBzgbWt9IewHxWqYdie4FU4tlra1HLRSGoo15lo7sEtKAVQa+HoHzBJs69mA
+	vzCa6jzd+rMqS6wAMQbDZM/gx4GAQFY1ROcVpk5iHy9ifPOJ0mOZCymoQVp92u22FN7cNUW4phcOw
+	WDRw+Ye67BfVotP+xBBgM+RPpRE2HGeem+yFQWIt/1QRm2lu1iYFvBR/mbhsD3d6ZQW/FggrqZWAJ
+	yfcG3aXek1hxfzEhwQgZLfgsUhEjZbtvE/E6/KJ0Zl9R9LwdL+CFqbicPdyKfKzqeKn1nRzXEys1A
+	+VU37KopgJegrmS2cOYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUYyJ-00017T-8C; Tue, 12 Nov 2019 16:24:51 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUYyB-00015J-5G
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 16:24:44 +0000
-Received: from lhreml703-cah.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id 5885442030B8FF11AA90;
- Tue, 12 Nov 2019 16:24:33 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- lhreml703-cah.china.huawei.com (10.201.108.44) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 12 Nov 2019 16:24:32 +0000
-Received: from [127.0.0.1] (10.202.226.46) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 12 Nov
- 2019 16:24:32 +0000
-Subject: Re: [PATCH] arm64: Kconfig: add a choice for endianess
-To: Anders Roxell <anders.roxell@linaro.org>, <catalin.marinas@arm.com>
-References: <20191112160144.8357-1-anders.roxell@linaro.org>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <e44db1ec-e562-18c4-ca6f-96e4279564ed@huawei.com>
-Date: Tue, 12 Nov 2019 16:24:31 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+	id 1iUZFs-0001TA-3t; Tue, 12 Nov 2019 16:43:00 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUZFk-0001SY-2S
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 16:42:53 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 259E730E;
+ Tue, 12 Nov 2019 08:42:50 -0800 (PST)
+Received: from [10.1.196.63] (e123195-lin.cambridge.arm.com [10.1.196.63])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 362573F534;
+ Tue, 12 Nov 2019 08:42:49 -0800 (PST)
+Subject: Re: [kvm-unit-tests PATCH 09/17] arm: gic: Add test for flipping
+ GICD_CTLR.DS
+To: Andre Przywara <andre.przywara@arm.com>, Andrew Jones
+ <drjones@redhat.com>, Paolo Bonzini <pbonzini@redhat.com>
+References: <20191108144240.204202-1-andre.przywara@arm.com>
+ <20191108144240.204202-10-andre.przywara@arm.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <2e14ccd4-89f4-aa90-cc58-bebf0e2eeede@arm.com>
+Date: Tue, 12 Nov 2019 16:42:48 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20191112160144.8357-1-anders.roxell@linaro.org>
+In-Reply-To: <20191108144240.204202-10-andre.przywara@arm.com>
 Content-Language: en-US
-X-Originating-IP: [10.202.226.46]
-X-ClientProxiedBy: lhreml713-chm.china.huawei.com (10.201.108.64) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_082443_348510_EAA71C2F 
-X-CRM114-Status: GOOD (  15.20  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191112_084252_200054_BC8D4F61 
+X-CRM114-Status: GOOD (  27.69  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,70 +64,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: will@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Marc Zyngier <maz@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, kvm@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/11/2019 16:01, Anders Roxell wrote:
-> When building allmodconfig KCONFIG_ALLCONFIG=$(pwd)/arch/arm64/configs/defconfig
-> CONFIG_CPU_BIG_ENDIAN gets enabled. Which tends not to be what most
-> people wants. Another concern that thas come up is that ACPI in't built
+Hi,
 
-/s/wants/want/, s/thas/has/, s/in't/isn't/
+On 11/8/19 2:42 PM, Andre Przywara wrote:
+> The DS (Disable Security) bit in the GICv3 GICD_CTLR register controls
+> access to Group 0 interrupts from the non-secure side.
+> The KVM VGIC emulation provides a "GIC with a single security state",
+> so both groups should be accessible.
+> Provide a test to check this bit can be set to one. The current KVM
+> emulation should treat this is as RAO/WI (which we also check here). It
+> would be architecturally compliant though to have this bit at 0 as well,
+> so we refrain from treating different behaviour as a FAIL.
 
-> for an allmodconfig kernel today since that also depends on !CPU_BIG_ENDIAN.
-> 
-> Rework so that we introduce a 'choice' and default the choice to
-> CPU_LITTLE_ENDIAN. That means that when we build an allmodconfig kernel
-> it will default to CPU_LITTLE_ENDIAN that most people tends to want.
-> 
-> Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
+Are we not testing KVM? Why are we not treating a behaviour different than what
+KVM should emulate as a fail?
 
-FWIW, apart from spelling mistakes:
-
-Reviewed-by: John Garry <john.garry@huawei.com>
-
+> However we use this as a gateway for further Group 0 IRQ tests.
+>
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 > ---
->   arch/arm64/Kconfig | 13 +++++++++++++
->   1 file changed, 13 insertions(+)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 64764ca92fca..62f83c234a61 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -877,11 +877,24 @@ config ARM64_PA_BITS
->   	default 48 if ARM64_PA_BITS_48
->   	default 52 if ARM64_PA_BITS_52
->   
-> +choice
-> +	prompt "Endianess"
+>  arm/gic.c            | 62 ++++++++++++++++++++++++++++++++++++++++++++
+>  lib/arm/asm/gic-v3.h |  1 +
+>  2 files changed, 63 insertions(+)
+>
+> diff --git a/arm/gic.c b/arm/gic.c
+> index 304b7b9..c882a24 100644
+> --- a/arm/gic.c
+> +++ b/arm/gic.c
+> @@ -531,6 +531,8 @@ static void gic_test_mmio(void)
+>  	reg = readl(gic_dist_base + GICD_TYPER);
+>  	nr_irqs = GICD_TYPER_IRQS(reg);
+>  	report_info("number of implemented SPIs: %d", nr_irqs - GIC_FIRST_SPI);
+> +	report_info("GIC %s security extension",
+> +		reg & (1U << 10) ? "has" : "does not have");
+>  
+>  	if (gic_version() == 0x2)
+>  		test_typer_v2(reg);
+> @@ -638,6 +640,60 @@ static void spi_test_smp(void)
+>  	report("SPI delievered on all cores", cores == nr_cpus);
+>  }
+>  
+> +/*
+> + * Check the security state configuration of the GIC.
+> + * Test whether we can switch to a single security state, to test both
+> + * group 0 and group 1 interrupts.
+> + * Architecturally a GIC can be configured in different ways, so we don't
+> + * insist on the current way KVM emulates the GIC.
+> + */
+> +static bool gicv3_check_security(void *gicd_base)
 
-Should this be "Endianness"?
+You don't need gicd_base as a parameter, you know this is called only on a gicv3.
 
-> +	default CPU_LITTLE_ENDIAN
-> +	help
-> +	  Choose what mode you plan on running your kernel in.
+> +{
+> +	u32 ctlr = readl(gicd_base + GICD_CTLR);
 > +
->   config CPU_BIG_ENDIAN
->          bool "Build big-endian kernel"
->          help
->            Say Y if you plan on running a kernel in big-endian mode.
->   
-> +config CPU_LITTLE_ENDIAN
-> +	bool "Build little-endian kernel"
-> +	help
-> +	  Say Y if you plan on running a kernel in little-endian mode.
+> +	if (ctlr & GICD_CTLR_DS) {
+> +		writel(ctlr & ~GICD_CTLR_DS, gicd_base + GICD_CTLR);
+> +		ctlr = readl(gicd_base + GICD_CTLR);
+> +		if (!(ctlr & GICD_CTLR_DS))
+> +			report_info("GIC allowing two security states");
+> +		else
+> +			report_info("GIC is one security state only");
+> +	} else {
+> +		report_info("GIC resets to two security states");
+> +	}
 > +
-> +endchoice
+> +	writel(ctlr | GICD_CTLR_DS, gicd_base + GICD_CTLR);
+> +	ctlr = readl(gicd_base + GICD_CTLR);
+> +	report("switching to single security state", ctlr & GICD_CTLR_DS);
 > +
->   config SCHED_MC
->   	bool "Multi-core scheduler support"
->   	help
-> 
+> +	/* Group0 delivery only works in single security state. */
+> +	return ctlr & GICD_CTLR_DS;
+> +}
+> +
+> +/*
+> + * The GIC architecture describes two interrupt groups, group 0 and group 1.
+> + * On bare-metal systems, running in non-secure world on a GIC with the
+> + * security extensions, there is only one group available: group 1.
+> + * However in the kernel KVM emulates a GIC with only one security state,
+> + * so both groups are available to guests.
+> + * Check whether this works as expected (as Linux will not use this feature).
+> + * We can only verify this state on a GICv3, so we check it there and silently
+> + * assume it's valid for GICv2.
+> + */
+> +static void test_irq_group(void *gicd_base)
+> +{
+> +	bool is_gicv3 = (gic_version() == 3);
+> +
+> +	report_prefix_push("GROUP");
+> +	gic_enable_defaults();
 
+Why is this here if you're only testing GICD_CTLR.DS emulation? Rebase artifact?
+
+> +
+> +	if (is_gicv3) {
+
+You can remove the variable is_gicv3 and use gic_version() directly (as you do in
+spi_send). Or you can call test_irq_group from spi_send when gic_version is 3 and
+drop the check entirely.
+
+> +		/* GICv3 features a bit to read and set the security state. */
+> +		if (!gicv3_check_security(gicd_base))
+> +			return;
+> +	}
+> +}
+> +
+>  static void spi_send(void)
+>  {
+>  	irqs_enable();
+> @@ -647,6 +703,12 @@ static void spi_send(void)
+>  	if (nr_cpus > 1)
+>  		spi_test_smp();
+>  
+> +	if (gic_version() == 3)
+> +		test_irq_group(gicv3_dist_base());
+> +
+> +	if (gic_version() == 2)
+> +		test_irq_group(gicv2_dist_base());
+
+test_irq_group run an actual test for gicv3 only, I think you can remove the call
+when gic_version is 2.
+
+Thanks,
+Alex
+> +
+>  	check_spurious();
+>  	exit(report_summary());
+>  }
+> diff --git a/lib/arm/asm/gic-v3.h b/lib/arm/asm/gic-v3.h
+> index 8cfaed1..2eaf944 100644
+> --- a/lib/arm/asm/gic-v3.h
+> +++ b/lib/arm/asm/gic-v3.h
+> @@ -19,6 +19,7 @@
+>   * group1 enable bits with respect to that view.
+>   */
+>  #define GICD_CTLR_RWP			(1U << 31)
+> +#define GICD_CTLR_DS			(1U << 6)
+>  #define GICD_CTLR_ARE_NS		(1U << 4)
+>  #define GICD_CTLR_ENABLE_G1A		(1U << 1)
+>  #define GICD_CTLR_ENABLE_G1		(1U << 0)
 
 _______________________________________________
 linux-arm-kernel mailing list
