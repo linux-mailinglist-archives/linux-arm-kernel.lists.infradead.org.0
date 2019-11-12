@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29237F9207
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:24:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C64E9F9208
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:24:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tgC3BZ6AdHXiI5TwcwYzQR6OAZci3RPbo86PpdWnAUY=; b=t75zWEnQVSCuyf
-	wrRNvJY7u3g9hPm4vNkA/B84hc6URrZ3bjAcpgc+8rhHewT4F7Bwd0SDsDmimw6Ckx5DpUTMV0DJC
-	IWrmocYH/xeVNSWTGxWzs3f1ZSxmUhEaDIBimZchbpRrgQ5mBLHUHudFbwSnZ5cypQT6Xj9YB/VKy
-	CZB4O3CeVbcEvRGB889/S+5jwSQBVzDEE+a2fLmr7JleCx5BZnEtMTLFZoZIoXrsneKY0bj+5EcIj
-	fB0XKy2Lqph9DCszxfnZc63MCTQzHeciQ9xpHR1syx1iYFjpXXbtRJeXvaHwyDHBTPo12SJq1vtdM
-	nBZGGGTlAJrr28WwMtZA==;
+	List-Owner; bh=VzVY9IMxPR16QUc23hxaRMFvtqSwUJD/TAfJg2tQ8K4=; b=i+Z3w3KQAjS6GT
+	M2oD2UrKMqf4zq1HgqJ/8Y9hvHwlVSNhx9fYgJuvdZ6A3pBu6byZRWlJgkwoO9/hqAwLS/yGbt3h+
+	CFMNxybA5+RUdaj/oMmSie/1x+hvkUrdsUg4br4PZCiibNUolw437YzlJJZU+5EIbcwBcXFxrlWTn
+	q0XFKQO4AS2STcXp1E0j3neCMLqYEcMNfJOtSy1pBRCwebRxMFjDnD6KcZJYQfms7KeCGD1tEOXFK
+	4gc7VubEBH4kwu/KM8v2fJgk/vRwfnE9VsLXmn1ylEmHwiKNhnHhHJA9411c0JMTgPCvRv0UNr1AW
+	9gu+6LPCWWce0kyjMCYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUX5t-0006rv-Hl; Tue, 12 Nov 2019 14:24:33 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iUX6A-00078o-MD; Tue, 12 Nov 2019 14:24:50 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUX5Q-0006dz-2a
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:24:05 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xACEO0ac044161;
- Tue, 12 Nov 2019 08:24:00 -0600
+ id 1iUX5R-0006eV-U4
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:24:07 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xACEO3pB097817;
+ Tue, 12 Nov 2019 08:24:03 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573568640;
- bh=1Bhj4EOWi0ydAwvul89PG3T7dhu8tO1R32BihtUQ0BY=;
+ s=ti-com-17Q1; t=1573568643;
+ bh=NNNJ0BRTjwHZiUV7fQUT519sy594Hbn5jTWgRKu/2Cg=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=Asp6hfSOZNzLZbt/akt03FPex2juJ2m70mm87A79qiv6iPXjKnKXIbVxGaTGOKjoU
- cEtThwh/fwwOjvEylALrSQXa4qgQGuP0IrfVYTcfdBt/oO+lqVY/f0xBR1bjYEKY9C
- HuaZyoX3Ix7AO8z4klgUIbbAOT1+bkL2eGiELoT4=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xACEO02o114664
+ b=ZjEK2kNmdgtV1TJNnyARrirhq7d26l85vNFxtfsA3qTPkAPfoHXH6U6XJHts6L/de
+ uZqAKlTvuRRX0sCAMXC77G6BejApOm3H6Y5lu2XGfk++E/+2Rq8Z49GMfkPZgHOgwS
+ itjWFI9J4LO/FEqhoxnAm2WFXAfWVhU6ThakZUqs=
+Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xACEO3QE009601
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 12 Nov 2019 08:24:00 -0600
-Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 12 Nov 2019 08:24:03 -0600
+Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 12
- Nov 2019 08:23:42 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ Nov 2019 08:23:44 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 12 Nov 2019 08:23:42 -0600
+ Frontend Transport; Tue, 12 Nov 2019 08:23:44 -0600
 Received: from uda0869644b.dal.design.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xACENwTi099408;
- Tue, 12 Nov 2019 08:23:59 -0600
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xACENwTj099408;
+ Tue, 12 Nov 2019 08:24:01 -0600
 From: Benoit Parrot <bparrot@ti.com>
 To: Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>
-Subject: [Patch v4 1/3] clk: ti: dra7: add vpe clkctrl data
-Date: Tue, 12 Nov 2019 08:26:55 -0600
-Message-ID: <20191112142657.22898-2-bparrot@ti.com>
+Subject: [Patch v4 2/3] ARM: dts: dra7: add vpe clkctrl node
+Date: Tue, 12 Nov 2019 08:26:56 -0600
+Message-ID: <20191112142657.22898-3-bparrot@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191112142657.22898-1-bparrot@ti.com>
 References: <20191112142657.22898-1-bparrot@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_062404_198264_2B23836A 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20191112_062406_060070_9F61408E 
+X-CRM114-Status: GOOD (  12.36  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,66 +98,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add clkctrl data for VPE.
+Add clkctrl nodes for VPE module.
+
+Note that because of the current dts node name dependency for mapping to
+clock domain, we must still use "vpe-clkctrl@" naming instead of generic
+"clock@" naming for the node. And because of this, it's probably best to
+apply the dts node addition together along with the other clock changes.
 
 Signed-off-by: Benoit Parrot <bparrot@ti.com>
 ---
- drivers/clk/ti/clk-7xx.c         |  6 ++++++
- include/dt-bindings/clock/dra7.h | 10 ++++++++++
- 2 files changed, 16 insertions(+)
+ arch/arm/boot/dts/dra7xx-clocks.dtsi | 18 ++++++++++++++++--
+ 1 file changed, 16 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/clk/ti/clk-7xx.c b/drivers/clk/ti/clk-7xx.c
-index b57fe09b428b..5dd9cad07542 100644
---- a/drivers/clk/ti/clk-7xx.c
-+++ b/drivers/clk/ti/clk-7xx.c
-@@ -146,6 +146,11 @@ static const struct omap_clkctrl_reg_data dra7_rtc_clkctrl_regs[] __initconst =
- 	{ 0 },
+diff --git a/arch/arm/boot/dts/dra7xx-clocks.dtsi b/arch/arm/boot/dts/dra7xx-clocks.dtsi
+index 93e1eb83bed9..d1c2406ec71c 100644
+--- a/arch/arm/boot/dts/dra7xx-clocks.dtsi
++++ b/arch/arm/boot/dts/dra7xx-clocks.dtsi
+@@ -1591,10 +1591,10 @@
+ 
+ 	rtc_cm: rtc-cm@700 {
+ 		compatible = "ti,omap4-cm";
+-		reg = <0x700 0x100>;
++		reg = <0x700 0x60>;
+ 		#address-cells = <1>;
+ 		#size-cells = <1>;
+-		ranges = <0 0x700 0x100>;
++		ranges = <0 0x700 0x60>;
+ 
+ 		rtc_clkctrl: rtc-clkctrl@20 {
+ 			compatible = "ti,clkctrl";
+@@ -1603,6 +1603,20 @@
+ 		};
+ 	};
+ 
++	vpe_cm: vpe-cm@760 {
++		compatible = "ti,omap4-cm";
++		reg = <0x760 0xc>;
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges = <0 0x760 0xc>;
++
++		vpe_clkctrl: vpe-clkctrl@0 {
++			compatible = "ti,clkctrl";
++			reg = <0x0 0xc>;
++			#clock-cells = <2>;
++		};
++	};
++
  };
  
-+static const struct omap_clkctrl_reg_data dra7_vpe_clkctrl_regs[] __initconst = {
-+	{ DRA7_VPE_VPE_CLKCTRL, NULL, CLKF_HW_SUP, "dpll_core_h23x2_ck" },
-+	{ 0 },
-+};
-+
- static const struct omap_clkctrl_reg_data dra7_coreaon_clkctrl_regs[] __initconst = {
- 	{ DRA7_COREAON_SMARTREFLEX_MPU_CLKCTRL, NULL, CLKF_SW_SUP, "wkupaon_iclk_mux" },
- 	{ DRA7_COREAON_SMARTREFLEX_CORE_CLKCTRL, NULL, CLKF_SW_SUP, "wkupaon_iclk_mux" },
-@@ -769,6 +774,7 @@ const struct omap_clkctrl_data dra7_clkctrl_data[] __initconst = {
- 	{ 0x4a005550, dra7_ipu_clkctrl_regs },
- 	{ 0x4a005620, dra7_dsp2_clkctrl_regs },
- 	{ 0x4a005720, dra7_rtc_clkctrl_regs },
-+	{ 0x4a005760, dra7_vpe_clkctrl_regs },
- 	{ 0x4a008620, dra7_coreaon_clkctrl_regs },
- 	{ 0x4a008720, dra7_l3main1_clkctrl_regs },
- 	{ 0x4a008920, dra7_ipu2_clkctrl_regs },
-diff --git a/include/dt-bindings/clock/dra7.h b/include/dt-bindings/clock/dra7.h
-index 72f2e8411523..2b765e579b2a 100644
---- a/include/dt-bindings/clock/dra7.h
-+++ b/include/dt-bindings/clock/dra7.h
-@@ -29,6 +29,11 @@
- #define DRA7_RTC_CLKCTRL_INDEX(offset)	((offset) - DRA7_RTC_CLKCTRL_OFFSET)
- #define DRA7_RTCSS_CLKCTRL	DRA7_RTC_CLKCTRL_INDEX(0x44)
- 
-+/* vpe clocks */
-+#define DRA7_VPE_CLKCTRL_OFFSET	0x60
-+#define DRA7_VPE_CLKCTRL_INDEX(offset)	((offset) - DRA7_VPE_CLKCTRL_OFFSET)
-+#define DRA7_VPE_CLKCTRL	DRA7_VPE_CLKCTRL_INDEX(0x64)
-+
- /* coreaon clocks */
- #define DRA7_SMARTREFLEX_MPU_CLKCTRL	DRA7_CLKCTRL_INDEX(0x28)
- #define DRA7_SMARTREFLEX_CORE_CLKCTRL	DRA7_CLKCTRL_INDEX(0x38)
-@@ -192,6 +197,11 @@
- /* rtc clocks */
- #define DRA7_RTC_RTCSS_CLKCTRL	DRA7_CLKCTRL_INDEX(0x44)
- 
-+/* vpe clocks */
-+#define DRA7_VPE_CLKCTRL_OFFSET	0x60
-+#define DRA7_VPE_CLKCTRL_INDEX(offset)	((offset) - DRA7_VPE_CLKCTRL_OFFSET)
-+#define DRA7_VPE_VPE_CLKCTRL	DRA7_VPE_CLKCTRL_INDEX(0x64)
-+
- /* coreaon clocks */
- #define DRA7_COREAON_SMARTREFLEX_MPU_CLKCTRL	DRA7_CLKCTRL_INDEX(0x28)
- #define DRA7_COREAON_SMARTREFLEX_CORE_CLKCTRL	DRA7_CLKCTRL_INDEX(0x38)
+ &cm_core {
 -- 
 2.17.1
 
