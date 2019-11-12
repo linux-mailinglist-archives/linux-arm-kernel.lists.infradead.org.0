@@ -2,82 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D589F92BC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:34:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DA96F92CD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 15:36:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eKKSyuT6mZQCdF7IByGAlaDO3Wi78d3ISDaahGaCUdk=; b=kPuE+6YHcuZ0gS
-	5ThAYZTP9XUDJNwUHfNe5NzfASmXhHfjKx3nnYyZT8zzt84C6LEF/BLU/vhUoszE4s9B8FA1JdH7q
-	tIK/HHiv141ojkr+XG+CpMCAZg6nbIgAwvC92yi2m8oLMWGA5VG1F5okdVVg0Imx9aqp0qIPWnPql
-	Shbz69FcM6UZO+U1Wid/d/B8N1y8FlQQU/eETRKsQtM7k6ZFVkvzaBVUfwULJ2dl02/C7q4rv/khc
-	mOqCXASzmW6FEZe9gZ0Ju/kr1wOavNtgwTNRb2fSBWDAeiHc8bIT5b9Dn87zGnzjhpsnJu+nbeLDH
-	Ur9yq1kUG8fMrgspUglQ==;
+	List-Owner; bh=1hgUlFPVb+yFOq+B6CtnhF9xEHoVD7FmOxKOeZFYxCE=; b=LPjexP22bDRzq0
+	EDCAxMBWDQ/zBPc4ytxboLZGw9aqjCsAymq9vUeKmaYNSQyLzRl0it1O7aoDjD4wD1IUtKvYFSCz+
+	k0Jrq8s3dwqYbeTYvRQBW0pP+HCK1JTwyUadDXZE2mZMNSKSlSTijuJMRjOiItA5hjRZmh6fY6LMR
+	/6puxdWtXOylgHwkcp7aqGO9WPqegQtncWlBNlOpTRO7xGZLpvTK/NrdVLNNG+lim9Qc0US8CFs+H
+	Egt0T9IrvZhiWzCq4etbjgmlXpyVayUw39OFgcNF1tRr/oz39F4hFDNtYRVmoPVJEgqvJmCDlgG88
+	4LXTEO5GHwNsCsQv9zgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUXFi-0001EP-5V; Tue, 12 Nov 2019 14:34:42 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1iUXHf-0003Og-TP; Tue, 12 Nov 2019 14:36:43 +0000
+Received: from mx1.unisoc.com ([222.66.158.135] helo=SHSQR01.spreadtrum.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUXDT-0007dT-W4
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 14:32:26 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xACEWKGw092800;
- Tue, 12 Nov 2019 08:32:20 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573569140;
- bh=zNIcC1uCXwSKHFPQlzg4E1OoxO4QJoxA+4UDNUjPHLA=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=LZAflZ9YaBLrlJ6b/OK//4TEg/ADzbyUHuNBAR3AcBPYP4gaZt+RV5fSqyAEaVT6p
- a6tviyNGZe0S+m9QuMxk+V1NbGH9YYQFRA2PaQvO7an8+d+u8Wu9x1HjWd+l33o1XH
- zWcGQr3MhpI41OSAxhw7FaoX67GfPWiY69CZjnNo=
-Received: from DLEE101.ent.ti.com (dlee101.ent.ti.com [157.170.170.31])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xACEWKEF025102
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 12 Nov 2019 08:32:20 -0600
-Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 12
- Nov 2019 08:32:00 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 12 Nov 2019 08:32:00 -0600
-Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xACEVjUS050451;
- Tue, 12 Nov 2019 08:32:15 -0600
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: <t-kristo@ti.com>, <nm@ti.com>
-Subject: [PATCH 9/9] arm64: dts: ti: k3-j721e-main: Add McASP nodes
-Date: Tue, 12 Nov 2019 16:33:01 +0200
-Message-ID: <20191112143301.3168-10-peter.ujfalusi@ti.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191112143301.3168-1-peter.ujfalusi@ti.com>
-References: <20191112143301.3168-1-peter.ujfalusi@ti.com>
+ id 1iUXHS-0003K2-Qy; Tue, 12 Nov 2019 14:36:34 +0000
+Received: from ig2.spreadtrum.com (bjmbx02.spreadtrum.com [10.0.64.8])
+ by SHSQR01.spreadtrum.com with ESMTPS id xACEZi85075277
+ (version=TLSv1 cipher=AES256-SHA bits=256 verify=NO);
+ Tue, 12 Nov 2019 22:35:44 +0800 (CST)
+ (envelope-from lvqiang.huang@unisoc.com)
+Received: from BJMBX01.spreadtrum.com (10.0.64.7) by BJMBX02.spreadtrum.com
+ (10.0.64.8) with Microsoft SMTP Server (TLS) id 15.0.847.32; Tue, 12 Nov 2019
+ 22:35:39 +0800
+Received: from BJMBX01.spreadtrum.com ([fe80::54e:9a:129d:fac7]) by
+ BJMBX01.spreadtrum.com ([fe80::54e:9a:129d:fac7%16]) with mapi id
+ 15.00.0847.030; Tue, 12 Nov 2019 22:35:39 +0800
+From: =?gb2312?B?u8bCwMe/IChMdnFpYW5nIEh1YW5nKQ==?= <lvqiang.huang@unisoc.com>
+To: Mark-PK Tsai <mark-pk.tsai@mediatek.com>
+Subject: Re: [PATCH] ARM: fix race in for_each_frame
+Thread-Topic: [PATCH] ARM: fix race in for_each_frame
+Thread-Index: AQHVmV2AMhVdltuogk6mbCoumJ6bbKeHmizY
+Date: Tue, 12 Nov 2019 14:35:38 +0000
+Message-ID: <64C83867-31FA-4243-A0EB-018AE9A83ACB@unisoc.com>
+References: <20191112132937.19335-1-mark-pk.tsai@mediatek.com>
+In-Reply-To: <20191112132937.19335-1-mark-pk.tsai@mediatek.com>
+Accept-Language: zh-CN, en-US
+Content-Language: zh-CN
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MAIL: SHSQR01.spreadtrum.com xACEZi85075277
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_063224_161415_73F2F6F7 
-X-CRM114-Status: GOOD (  11.72  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191112_063631_966376_68D0C49C 
+X-CRM114-Status: GOOD (  10.44  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,266 +69,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
+ "alix.wu@mediatek.com" <alix.wu@mediatek.com>,
+ =?gb2312?B?s/6298C0IChFbmxhaSBDaHUp?= <enlai.chu@unisoc.com>,
+ "eddy.lin@mediatek.com" <eddy.lin@mediatek.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "yj.chiang@mediatek.com" <yj.chiang@mediatek.com>,
+ "phil.chang@mediatek.com" <phil.chang@mediatek.com>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>, "info@metux.net" <info@metux.net>,
+ "mike-sl.lin@mediatek.com" <mike-sl.lin@mediatek.com>,
+ "allison@lohutok.net" <allison@lohutok.net>
+Content-Type: text/plain; charset="gb2312"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the nodes for McASP 0-11 and keep them disabled because several
-required properties are not present as they are board specific.
-
-Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
----
- arch/arm64/boot/dts/ti/k3-j721e-main.dtsi | 228 ++++++++++++++++++++++
- 1 file changed, 228 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-index 66583625dc95..276ac946d8d8 100644
---- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-@@ -636,4 +636,232 @@ usb1: usb@6400000 {
- 			dr_mode = "otg";
- 		};
- 	};
-+
-+	mcasp0: mcasp@02b00000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b00000 0x0 0x2000>,
-+			<0x0 0x02b08000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 544 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 545 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc400>, <&main_udmap 0x4400>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 174 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 174 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp1: mcasp@02b10000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b10000 0x0 0x2000>,
-+			<0x0 0x02b18000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 546 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 547 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc401>, <&main_udmap 0x4401>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 175 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 175 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp2: mcasp@02b20000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b20000 0x0 0x2000>,
-+			<0x0 0x02b28000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 548 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 549 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc402>, <&main_udmap 0x4402>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 176 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 176 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp3: mcasp@02b30000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b30000 0x0 0x2000>,
-+			<0x0 0x02b38000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 550 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 551 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc500>, <&main_udmap 0x4500>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 177 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 177 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp4: mcasp@02b40000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b40000 0x0 0x2000>,
-+			<0x0 0x02b48000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 552 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 553 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc501>, <&main_udmap 0x4501>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 178 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 178 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp5: mcasp@02b50000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b50000 0x0 0x2000>,
-+			<0x0 0x02b58000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 554 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 555 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc502>, <&main_udmap 0x4502>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 179 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 179 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp6: mcasp@02b60000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b60000 0x0 0x2000>,
-+			<0x0 0x02b68000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 556 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 557 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc503>, <&main_udmap 0x4503>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 180 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 180 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp7: mcasp@02b70000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b70000 0x0 0x2000>,
-+			<0x0 0x02b78000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 558 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 559 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc504>, <&main_udmap 0x4504>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 181 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 181 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp8: mcasp@02b80000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b80000 0x0 0x2000>,
-+			<0x0 0x02b88000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 560 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 561 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc505>, <&main_udmap 0x4505>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 182 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 182 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp9: mcasp@02b90000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b90000 0x0 0x2000>,
-+			<0x0 0x02b98000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 562 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 563 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc506>, <&main_udmap 0x4506>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 183 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 183 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp10: mcasp@02ba0000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02ba0000 0x0 0x2000>,
-+			<0x0 0x02ba8000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 564 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 565 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc507>, <&main_udmap 0x4507>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 184 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 184 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp11: mcasp@02bb0000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02bb0000 0x0 0x2000>,
-+			<0x0 0x02bb8000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 566 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 567 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc508>, <&main_udmap 0x4508>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 185 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 185 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
- };
--- 
-Peter
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RGVhciBNYXJrLA0KVGhhbmtzIGEgbG90IGZvciB0aGUgcmVwbHkuIA0KDQpBcyBzYWlkIGluIGxh
+c3QgcmVwbHksIHN2X3BjIGNhbiBiZSBhIG1vZHVsZSB0ZXh0LCB0aGVuIG1vcmUgY2hlY2sgbmVl
+ZGVkLg0KDQpBbmQgYmVzaWRlIGNyYXNoIGF0IDEwMDMsIHdlIG1heSBhbHNvIGdldCBjcmFzaCBh
+dCAxMDAxLCB0aGUgZnJhbWUgaXMgaW52YWxpZC4gKFRoZSBsYXN0IHN2X3B2IGlzIHZhbGlkIGFu
+ZCBzdl9mcmFtZSBpcyBpbnZhbGlkKSwgdGhlbiBtb3JlIGNoZWNrIG5lZWRlZC4gDQoNCkFuZCB3
+ZSBvZnRlbiBzaG93X2RhdGEgYXJvdW5kIHRoZSBnZW5lcmFsIHByb3Bvc2FsIHJlZ2lzdGVycyB3
+aGVuIGtlcm5lbCBjcmFzaC4gV2hlbiB0aGV5IGNvbnRhaW4gYW4gYWRkcmVzcyBtYXBwaW5nIGZv
+ciBhIGh3IHJlZ2lzdGVyIGJ1dCBjYW6hr3QgYWNjZXNzIGJlY2F1c2UgY2xvY2sgZ2F0ZWQsIGl0
+IHdpbGwgY3Jhc2ggYWdhaW4gYmVjYXVzZSBkb19iYWQoKSBpcyBpbnZvbHZlZC4gKGNvbnRpbnVv
+dXMgY3Jhc2ggaW4gYXJtIGFuZCBoYW5nIGF0IGRpZV9sb2NrIGluIGFybTY0KQ0KDQpTbywgd2h5
+IG5vdCBjaGVjayB0aGUgX19leF90YWJsZSBpbiBkb19iYWQoKSA/DQoNCj4g1NogMjAxOcTqMTHU
+wjEyyNWjrDIxOjMxo6xNYXJrLVBLIFRzYWkgPG1hcmstcGsudHNhaUBtZWRpYXRlay5jb20+INC0
+tcCjug0KPiANCj4gVGhlIHN2X3BjLCB3aGljaCBpcyBzYXZlZCBpbiB0aGUgc3RhY2ssIG1heSBi
+ZSBhbiBpbnZhbGlkIGFkZHJlc3MNCj4gaWYgdGhlIHRhcmdldCB0aHJlYWQgaXMgcnVubmluZyBv
+biBhbm90aGVyIHByb2Nlc3NvciBpbiB0aGUgbWVhbnRpbWUuDQo+IEl0IHdpbGwgY2F1c2Uga2Vy
+bmVsIGNyYXNoIGF0IGBsZHIgcjIsIFtzdl9wYywgIy00XWAuDQo+IA0KPiBDaGVjayBpZiBzdl9w
+YyBpcyB2YWxpZCBiZWZvcmUgdXNlIGl0IGxpa2UgdW53aW5kX2ZyYW1lIGluDQo+IGFyY2gvYXJt
+L2tlcm5lbC91bndpbmQuYy4NCj4gDQo+IFNpZ25lZC1vZmYtYnk6IE1pa2UtU0wgTGluIDxtaWtl
+LXNsLmxpbkBtZWRpYXRlay5jb20+DQo+IFNpZ25lZC1vZmYtYnk6IE1hcmstUEsgVHNhaSA8bWFy
+ay1way50c2FpQG1lZGlhdGVrLmNvbT4NCj4gLS0tDQo+IGFyY2gvYXJtL2xpYi9iYWNrdHJhY2Uu
+UyB8IDUgKysrKysNCj4gMSBmaWxlIGNoYW5nZWQsIDUgaW5zZXJ0aW9ucygrKQ0KPiANCj4gZGlm
+ZiAtLWdpdCBhL2FyY2gvYXJtL2xpYi9iYWNrdHJhY2UuUyBiL2FyY2gvYXJtL2xpYi9iYWNrdHJh
+Y2UuUw0KPiBpbmRleCA1ODI5MjUyMzhkNjUuLjg0ZjA2MzgxYmJmYiAxMDA2NDQNCj4gLS0tIGEv
+YXJjaC9hcm0vbGliL2JhY2t0cmFjZS5TDQo+ICsrKyBiL2FyY2gvYXJtL2xpYi9iYWNrdHJhY2Uu
+Uw0KPiBAQCAtNjQsNiArNjQsMTEgQEAgZm9yX2VhY2hfZnJhbWU6ICAgIHRzdCAgICBmcmFtZSwg
+bWFzayAgICAgICAgQCBDaGVjayBmb3IgYWRkcmVzcyBleGNlcHRpb25zDQo+ICAgICAgICBzdWIg
+ICAgc3ZfcGMsIHN2X3BjLCBvZmZzZXQgICAgQCBDb3JyZWN0IFBDIGZvciBwcmVmZXRjaGluZw0K
+PiAgICAgICAgYmljICAgIHN2X3BjLCBzdl9wYywgbWFzayAgICBAIG1hc2sgUEMvTFIgZm9yIHRo
+ZSBtb2RlDQo+IA0KPiArICAgICAgICBtb3YgICAgcjAsIHN2X3BjDQo+ICsgICAgICAgIGJsICAg
+IGtlcm5lbF90ZXh0X2FkZHJlc3MgICAgQCBjaGVjayBpZiBzdl9wYyBpcyB2YWxpZA0KPiArICAg
+ICAgICBjbXAgICAgcjAsICMwICAgICAgICAgICAgQCBpZiBzdl9wYyBpcyBub3Qga2VybmVsIHRl
+eHQNCj4gKyAgICAgICAgYmVxICAgIDEwMDZmICAgICAgICAgICAgQCBhZGRyZXNzLCBhYm9ydCBi
+YWNrdHJhY2UNCj4gKw0KPiAxMDAzOiAgICAgICAgbGRyICAgIHIyLCBbc3ZfcGMsICMtNF0gICAg
+QCBpZiBzdG1mZCBzcCEsIHthcmdzfSBleGlzdHMsDQo+ICAgICAgICBsZHIgICAgcjMsIC5MZHNp
+KzQgICAgICAgIEAgYWRqdXN0IHNhdmVkICdwYycgYmFjayBvbmUNCj4gICAgICAgIHRlcSAgICBy
+MywgcjIsIGxzciAjMTEgICAgICAgIEAgaW5zdHJ1Y3Rpb24NCj4gLS0gDQo+IDIuMTguMA0KDQoN
+Cj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT0NClRoaXMgZW1haWwgKGluY2x1ZGluZyBpdHMgYXR0YWNobWVu
+dHMpIGlzIGludGVuZGVkIG9ubHkgZm9yIHRoZSBwZXJzb24gb3IgZW50aXR5IHRvIHdoaWNoIGl0
+IGlzIGFkZHJlc3NlZCBhbmQgbWF5IGNvbnRhaW4gaW5mb3JtYXRpb24gdGhhdCBpcyBwcml2aWxl
+Z2VkLCBjb25maWRlbnRpYWwgb3Igb3RoZXJ3aXNlIHByb3RlY3RlZCBmcm9tIGRpc2Nsb3N1cmUu
+IFVuYXV0aG9yaXplZCB1c2UsIGRpc3NlbWluYXRpb24sIGRpc3RyaWJ1dGlvbiBvciBjb3B5aW5n
+IG9mIHRoaXMgZW1haWwgb3IgdGhlIGluZm9ybWF0aW9uIGhlcmVpbiBvciB0YWtpbmcgYW55IGFj
+dGlvbiBpbiByZWxpYW5jZSBvbiB0aGUgY29udGVudHMgb2YgdGhpcyBlbWFpbCBvciB0aGUgaW5m
+b3JtYXRpb24gaGVyZWluLCBieSBhbnlvbmUgb3RoZXIgdGhhbiB0aGUgaW50ZW5kZWQgcmVjaXBp
+ZW50LCBvciBhbiBlbXBsb3llZSBvciBhZ2VudCByZXNwb25zaWJsZSBmb3IgZGVsaXZlcmluZyB0
+aGUgbWVzc2FnZSB0byB0aGUgaW50ZW5kZWQgcmVjaXBpZW50LCBpcyBzdHJpY3RseSBwcm9oaWJp
+dGVkLiBJZiB5b3UgYXJlIG5vdCB0aGUgaW50ZW5kZWQgcmVjaXBpZW50LCBwbGVhc2UgZG8gbm90
+IHJlYWQsIGNvcHksIHVzZSBvciBkaXNjbG9zZSBhbnkgcGFydCBvZiB0aGlzIGUtbWFpbCB0byBv
+dGhlcnMuIFBsZWFzZSBub3RpZnkgdGhlIHNlbmRlciBpbW1lZGlhdGVseSBhbmQgcGVybWFuZW50
+bHkgZGVsZXRlIHRoaXMgZS1tYWlsIGFuZCBhbnkgYXR0YWNobWVudHMgaWYgeW91IHJlY2VpdmVk
+IGl0IGluIGVycm9yLiBJbnRlcm5ldCBjb21tdW5pY2F0aW9ucyBjYW5ub3QgYmUgZ3VhcmFudGVl
+ZCB0byBiZSB0aW1lbHksIHNlY3VyZSwgZXJyb3ItZnJlZSBvciB2aXJ1cy1mcmVlLiBUaGUgc2Vu
+ZGVyIGRvZXMgbm90IGFjY2VwdCBsaWFiaWxpdHkgZm9yIGFueSBlcnJvcnMgb3Igb21pc3Npb25z
+LiANCrG+08q8/rywxuS4vbz+vt/T0LGjw9zQ1NbKo6zK3Leowsmxo7uksru1w9C5wrajrL32t6LL
+zbj4sb7Tyrz+y/nWuMzYtqjK1bz+yMuho9HPvfu3x76tytrIqMq508OhotD7tKuhoreisry78ri0
+1saxvtPKvP678sbkxNrI3aGjyPS3x7jDzNi2qMrVvP7Iy6Osx+vO8NTEtsGhori01sahoiDKudPD
+u/LF+8K2sb7Tyrz+tcTIzrrOxNrI3aGjyPTO88rVsb7Tyrz+o6zH67TTz7XNs9bQ08C+w9DUyb6z
+/bG+08q8/rywy/nT0Li9vP6jrLKi0tS72Li008q8/rXEt73Kvby0v8y45taqt6K8/sjLoaPO3reo
+saPWpLulwarN+M2o0MW8sMqxoaKwssiroaLO3s7zu/K3wLa+oaO3orz+yMu21MjOus607cKpvvmy
+u7PQtaPU8MjOoaMNCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
