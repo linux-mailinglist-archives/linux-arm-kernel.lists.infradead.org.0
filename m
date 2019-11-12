@@ -2,76 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93BB9F9554
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:16:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7736DF9585
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 Nov 2019 17:24:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=EKahEEWs1ut7Kmgj4XFB09GY2Xkgxf+DkMSS+JAnMAs=; b=fhPaP36BCk2/ObzER6y0DSiIL+
-	rdH+X5jHPSnhlw4j7ma0bBqVPrQdJBTIo9f1BY2Kx/ODqSsDktD4qmP9HXWWzUo6BijLlJED6PPqQ
-	D6VXBRNy6mOUKj7usGRpaL4es9ENXAKDJSHLhuI8wHy5/OgmJSV+7YUAZHvsJPZufnv6rqIGUuZhw
-	6KxFbk8rv3Hv6R4cVvf46Cs+On3/3jYqizg2Wrr61kF+9n97spUnrtdgoAGbvLXkvA8Lv/2gNeSOX
-	esYxMNYKbUlUWMpdGzudCoFYl2WItoTfutqXankYpiMuyLNlixkZoVf/gNPbXXt/LqZddunAfU7ZH
-	ogahEBIw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BkBzKvY7ZMiDadwyC6BFSxmTPMAyrgw8UPCY+mXzg4c=; b=GJ770UcTgZpKF18rT6xvaMjmU
+	cRwOM0OvWYGquuh0QpUAmHGGL6iaUJ+3V2DyUesCO1xXECRuhbCY4pncDet1W4DUkORt98OhtzxeJ
+	7B2rE9Kr0J4lRUZLbJQgkX07A9L1aQJEDbg8jw2zVcLG+pfEIEuSiXm84uTRlVf8NOFi+1Ag2Msm9
+	3uutLvE4OhzhN84Z0LGcTK+ZnY4untOIyCrn6oYoaHTx5eM9oi0yeXVKjk+S5LQFTaeHDhp+Gwog/
+	7aHZZsKRm0dCyy70r93rSRLnj4GmpkHSL3k0jxVcJogGYa+c/ZTuW5R0E07oXA3P7SPZa9mtPYOUP
+	tKzFL5ccg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUYqD-0007Sy-8M; Tue, 12 Nov 2019 16:16:29 +0000
-Received: from forward105o.mail.yandex.net ([37.140.190.183])
+	id 1iUYyJ-00017T-8C; Tue, 12 Nov 2019 16:24:51 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUYpO-0006ng-Qr
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 16:15:40 +0000
-Received: from mxback26o.mail.yandex.net (mxback26o.mail.yandex.net
- [IPv6:2a02:6b8:0:1a2d::77])
- by forward105o.mail.yandex.net (Yandex) with ESMTP id B900842009FD;
- Tue, 12 Nov 2019 19:15:34 +0300 (MSK)
-Received: from sas2-b0ca3cd64eaa.qloud-c.yandex.net
- (sas2-b0ca3cd64eaa.qloud-c.yandex.net [2a02:6b8:c14:718c:0:640:b0ca:3cd6])
- by mxback26o.mail.yandex.net (mxback/Yandex) with ESMTP id wAUhPqhFEI-FXme36G9;
- Tue, 12 Nov 2019 19:15:34 +0300
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=emlid.com; s=mail;
- t=1573575334; bh=R8RCZlzqE9k0pY4Xp9aopkJtnf7AAfND0Zh6ZZKCFJM=;
- h=In-Reply-To:Subject:To:From:Cc:References:Date:Message-Id;
- b=vcRCm8S27m8pWYTV3RJK/LtB3Uud6Q/XJI1SOuiWKIaBe6KlWLW6ZnlU1MP7qA226
- h+WSTpKznvas7tWZJBFOnpqb1RWRzb8VqpT8mGmKucca9v+gm89DenRwe5HvbfcwGZ
- zFrzF2TIFkrhGZT5cfoAqajnWOa/9XS8uG0IKK0w=
-Authentication-Results: mxback26o.mail.yandex.net;
- dkim=pass header.i=@emlid.com
-Received: by sas2-b0ca3cd64eaa.qloud-c.yandex.net (smtp/Yandex) with ESMTPSA
- id xY2rOY0rn4-FWUCQr1N; Tue, 12 Nov 2019 19:15:33 +0300
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (Client certificate not present)
-From: Georgii Staroselskii <georgii.staroselskii@emlid.com>
-To: mripard@kernel.org, wens@csie.org, robh+dt@kernel.org, mark.rutland@arm.com
-Subject: [PATCH v2 3/3] dt-bindings: arm: sunxi: add Neutis N5H3
-Date: Tue, 12 Nov 2019 19:15:20 +0300
-Message-Id: <1573575320-29546-4-git-send-email-georgii.staroselskii@emlid.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1573575320-29546-1-git-send-email-georgii.staroselskii@emlid.com>
-References: <1573575320-29546-1-git-send-email-georgii.staroselskii@emlid.com>
+ id 1iUYyB-00015J-5G
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 16:24:44 +0000
+Received: from lhreml703-cah.china.huawei.com (unknown [172.18.7.107])
+ by Forcepoint Email with ESMTP id 5885442030B8FF11AA90;
+ Tue, 12 Nov 2019 16:24:33 +0000 (GMT)
+Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
+ lhreml703-cah.china.huawei.com (10.201.108.44) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Tue, 12 Nov 2019 16:24:32 +0000
+Received: from [127.0.0.1] (10.202.226.46) by lhreml724-chm.china.huawei.com
+ (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 12 Nov
+ 2019 16:24:32 +0000
+Subject: Re: [PATCH] arm64: Kconfig: add a choice for endianess
+To: Anders Roxell <anders.roxell@linaro.org>, <catalin.marinas@arm.com>
+References: <20191112160144.8357-1-anders.roxell@linaro.org>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <e44db1ec-e562-18c4-ca6f-96e4279564ed@huawei.com>
+Date: Tue, 12 Nov 2019 16:24:31 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
+MIME-Version: 1.0
+In-Reply-To: <20191112160144.8357-1-anders.roxell@linaro.org>
+Content-Language: en-US
+X-Originating-IP: [10.202.226.46]
+X-ClientProxiedBy: lhreml713-chm.china.huawei.com (10.201.108.64) To
+ lhreml724-chm.china.huawei.com (10.201.108.75)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_081539_067916_2F2025E7 
-X-CRM114-Status: UNSURE (   6.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191112_082443_348510_EAA71C2F 
+X-CRM114-Status: GOOD (  15.20  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [37.140.190.183 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,41 +71,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
- linux-arm-kernel@lists.infradead.org,
- Georgii Staroselskii <georgii.staroselskii@emlid.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: will@kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adds bindings for the new Emlid Neutis N5H3 board.
+On 12/11/2019 16:01, Anders Roxell wrote:
+> When building allmodconfig KCONFIG_ALLCONFIG=$(pwd)/arch/arm64/configs/defconfig
+> CONFIG_CPU_BIG_ENDIAN gets enabled. Which tends not to be what most
+> people wants. Another concern that thas come up is that ACPI in't built
 
-Signed-off-by: Georgii Staroselskii <georgii.staroselskii@emlid.com>
----
- Documentation/devicetree/bindings/arm/sunxi.yaml | 6 ++++++
- 1 file changed, 6 insertions(+)
+/s/wants/want/, s/thas/has/, s/in't/isn't/
 
-diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml b/Documentation/devicetree/bindings/arm/sunxi.yaml
-index 8a1e38a..dd2ac55 100644
---- a/Documentation/devicetree/bindings/arm/sunxi.yaml
-+++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
-@@ -470,6 +470,12 @@ properties:
-           - const: emlid,neutis-n5
-           - const: allwinner,sun50i-h5
- 
-+      - description: Emlid Neutis N5H3 Developper Board
-+        items:
-+          - const: emlid,neutis-n5h3-devboard
-+          - const: emlid,neutis-n5h3
-+          - const: allwinner,sun8i-h3
-+
-       - description: NextThing Co. CHIP
-         items:
-           - const: nextthing,chip
--- 
-2.7.4
+> for an allmodconfig kernel today since that also depends on !CPU_BIG_ENDIAN.
+> 
+> Rework so that we introduce a 'choice' and default the choice to
+> CPU_LITTLE_ENDIAN. That means that when we build an allmodconfig kernel
+> it will default to CPU_LITTLE_ENDIAN that most people tends to want.
+> 
+> Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
+
+FWIW, apart from spelling mistakes:
+
+Reviewed-by: John Garry <john.garry@huawei.com>
+
+> ---
+>   arch/arm64/Kconfig | 13 +++++++++++++
+>   1 file changed, 13 insertions(+)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 64764ca92fca..62f83c234a61 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -877,11 +877,24 @@ config ARM64_PA_BITS
+>   	default 48 if ARM64_PA_BITS_48
+>   	default 52 if ARM64_PA_BITS_52
+>   
+> +choice
+> +	prompt "Endianess"
+
+Should this be "Endianness"?
+
+> +	default CPU_LITTLE_ENDIAN
+> +	help
+> +	  Choose what mode you plan on running your kernel in.
+> +
+>   config CPU_BIG_ENDIAN
+>          bool "Build big-endian kernel"
+>          help
+>            Say Y if you plan on running a kernel in big-endian mode.
+>   
+> +config CPU_LITTLE_ENDIAN
+> +	bool "Build little-endian kernel"
+> +	help
+> +	  Say Y if you plan on running a kernel in little-endian mode.
+> +
+> +endchoice
+> +
+>   config SCHED_MC
+>   	bool "Multi-core scheduler support"
+>   	help
+> 
 
 
 _______________________________________________
