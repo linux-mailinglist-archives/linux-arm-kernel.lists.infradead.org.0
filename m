@@ -2,76 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA389FAFDF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 12:42:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5224FFAFE1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 12:42:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pS4czZDzdM88pjbc74NYzLJnbNHj33JyZS/OCW6LLoM=; b=q0v4LMDbfsHx39
-	utTbAxzsgMitRnstumQognnrZDzxX7c1VLrlGKe/2qbIF4C7HK+MxvGr5zO4o8nz6NSoEZuB4eE+A
-	a/THS58EmkQfGy9kNv1+dOkRSc8iT/1shuzBUM1h+dUln3ofgFHdJUF1QodOwPvf3p3wc1zlV85vH
-	xEoIhtdJDBsTqZkW8R25EACC7fPZ+60Qfw7i/swxQ9MO+un3/J0LkpXbO1CCKggqDG9ECaonPtpPN
-	0TqRGsJtVx2XP5txZMT3jhofocb2BvzBe+pBOxNsB6HLhaN8sxgB/Kjx9BaiexuBlD0HzMSsCLU1v
-	s+/qcdbfkdWnMrBSWzeg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cGwEf+1An+/lQZkRzmTX9MterlrKPfs2/npagtmBA10=; b=VAhuPmlv7RIU5u
+	bBIBKMI4JFNWAJfSQ/jhMW3RsiZW3gCmSo7FYzsDW3TPIgBMGv7tnQf0ND2lis9lYU1jxlzMRYufb
+	Qb32vSHXP34LNQ7UIEO4aq85AInrf+yMkivlrV9wx7WAfZZ481skYdGcRg3cI9NYx6BGXnIyJxRi9
+	8ksTWYjYpoUesLBien5RBsBkF9phk2dZqMb0zULLUIcSlo8GMgWsUaYiM1Ao86AdooKvCuB5+diky
+	NcdGx+sBgEzjbvz+4UNLUYzhLa5M0AHkUxqRD8O9JXPRNu1T8usvZJVsz38779SJFIuP7THSFLw5b
+	MrasQua946q/7PPDvvxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUr2C-00040f-6F; Wed, 13 Nov 2019 11:42:04 +0000
-Received: from conssluserg-02.nifty.com ([210.131.2.81])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUr1r-0003Nd-B8
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 11:41:45 +0000
-Received: from mail-vk1-f174.google.com (mail-vk1-f174.google.com
- [209.85.221.174]) (authenticated)
- by conssluserg-02.nifty.com with ESMTP id xADBfG9s007712
- for <linux-arm-kernel@lists.infradead.org>; Wed, 13 Nov 2019 20:41:17 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com xADBfG9s007712
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1573645277;
- bh=J6rJT8P5SnuQtYPsxB/K65h5d3rtBJCHsFkTNmOyQlQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=jg5JN1kyvIRVl+wnxWLogXC8ILKa+IPKGO3oktS6ZUotAb3IrHuk4Cd8D0jRpS+Z/
- nn4aw7dZ1b0YnJJ7AiKHjQ2t/Cu60ALE0Dh9E3WfRj2CTKfY0JUzC8ZchaQv0FppaG
- Fwy+yVGWbgh8TTCt820j9oWM9oW/tdMhKvpLE05p+HEk4CY8OYLGlPFutee/2rSxRW
- uBKiz4+K20hREfUyGRaxCJ8Ox9HxaPzJ3CDeJjbRXdUn34oD9JR64StlSm4xVn3BV0
- M49dIKUVvlEoFbtYI68+5VwbIlJ9NPgm31QO5fibO43FyIEoowXPOyocKhEDAk9wjx
- bZL9tMKtNoJnQ==
-X-Nifty-SrcIP: [209.85.221.174]
-Received: by mail-vk1-f174.google.com with SMTP id k19so471027vke.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 Nov 2019 03:41:17 -0800 (PST)
-X-Gm-Message-State: APjAAAVu9xv0UJpGudMMSGapKdoPQvlImuh4fI/3U6Xzc9RHisybAE3M
- ksZY3PGEexDgFLaUxohp49INCiGSGETluVxblUA=
-X-Google-Smtp-Source: APXvYqxqblFCrOJg10zfx2WK5ReUHCOH5foJoWAQQv3PyYkLJdqhdmg4TbDz/1KDQB+Qui2LDB57vmmLTKCspKoZrlo=
-X-Received: by 2002:a1f:4192:: with SMTP id o140mr1284724vka.26.1573645275987; 
- Wed, 13 Nov 2019 03:41:15 -0800 (PST)
+	id 1iUr2i-00058F-SJ; Wed, 13 Nov 2019 11:42:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUr1g-0002xS-6U
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 11:41:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 40B347A7;
+ Wed, 13 Nov 2019 03:41:28 -0800 (PST)
+Received: from e112269-lin.cambridge.arm.com (e112269-lin.cambridge.arm.com
+ [10.1.194.43])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DFA603F534;
+ Wed, 13 Nov 2019 03:41:26 -0800 (PST)
+From: Steven Price <steven.price@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Will Deacon <will@kernel.org>
+Subject: [PATCH v2 0/2] arm64: Workaround for Cortex-A55 erratum 1530923
+Date: Wed, 13 Nov 2019 11:41:16 +0000
+Message-Id: <20191113114118.2427-1-steven.price@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20190906154706.2449696-1-arnd@arndb.de>
- <CAMuHMdUMgDBo1gkvQ_Bd8mjMiPjdWWY=9AU6K1S7NcJy5jhvGQ@mail.gmail.com>
-In-Reply-To: <CAMuHMdUMgDBo1gkvQ_Bd8mjMiPjdWWY=9AU6K1S7NcJy5jhvGQ@mail.gmail.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Wed, 13 Nov 2019 20:40:39 +0900
-X-Gmail-Original-Message-ID: <CAK7LNASNp4jPYHmh3e4QYwenYbVrK69tvB_LLyK_ew1eqBNrEw@mail.gmail.com>
-Message-ID: <CAK7LNASNp4jPYHmh3e4QYwenYbVrK69tvB_LLyK_ew1eqBNrEw@mail.gmail.com>
-Subject: Re: [PATCH] ARM: don't export unused return_address()
-To: Arnd Bergmann <arnd@arndb.de>, Russell King <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_034143_770751_5C960843 
-X-CRM114-Status: GOOD (  16.47  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191113_034132_282230_DBAB1DFA 
+X-CRM114-Status: UNSURE (   9.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.81 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,72 +60,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert@linux-m68k.org>,
- Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
+ Steven Price <steven.price@arm.com>, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Oct 1, 2019 at 11:31 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
->
-> Hi Arnd,
->
-> On Fri, Sep 6, 2019 at 5:47 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> > Without the frame pointer enabled, return_address() is an inline
-> > function and does not need to be exported, as shown by this warning:
-> >
-> > WARNING: "return_address" [vmlinux] is a static EXPORT_SYMBOL_GPL
-> >
-> > Move the EXPORT_SYMBOL_GPL() into the #ifdef as well.
-> >
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
->
-> Thanks for your patch!
->
-> Tested-by: Geert Uytterhoeven <geert+renesas@glider.be>
->
-> > --- a/arch/arm/kernel/return_address.c
-> > +++ b/arch/arm/kernel/return_address.c
-> > @@ -53,6 +53,7 @@ void *return_address(unsigned int level)
-> >                 return NULL;
-> >  }
-> >
->
-> Checkpatch doesn't like the empty line above:
->
-> WARNING: EXPORT_SYMBOL(foo); should immediately follow its function/variable
->
-> > +EXPORT_SYMBOL_GPL(return_address);
-> > +
-> >  #endif /* if defined(CONFIG_FRAME_POINTER) && !defined(CONFIG_ARM_UNWIND) */
-> >
-> > -EXPORT_SYMBOL_GPL(return_address);
->
-> Gr{oetje,eeting}s,
->
->                         Geert
->
-> --
-> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
->
-> In personal conversations with technical people, I call myself a hacker. But
-> when I'm talking to journalists I just say "programmer" or something like that.
->                                 -- Linus Torvalds
+This series enables a workaround for Cortex-A55 erratum 1530923. The
+erratum potentially allows TLB entries to be allocated as a result of a
+speculative AT instruction. This may happen in the middle of a guest
+world switch while the relevant VMSA configuration is in an inconsistent
+state, leading to erroneous content being allocated into TLBs.
 
+There are existing workarounds for similar issues, 1165522 is
+effectively the same, and 1319367/1319537 is similar but without VHE
+support.  Rather than add to the selection of errata, the first patch
+combines the existing errata into one workaround.
 
+The second patch then adds the detection for the Cortex-A55 erratum
+1530923.
 
-What has happened to this patch?
+Changes since v1:
+ * Combine 1319367/1319537 into the same 'SPECULATIVE_AT' workaround.
 
-I still see this warning.
+Steven Price (2):
+  arm64: Combine workarounds for speculative AT errata
+  arm64: Workaround for Cortex-A55 erratum 1530923
 
-
+ Documentation/arm64/silicon-errata.rst |  2 ++
+ arch/arm64/Kconfig                     | 18 ++++++++++++++++++
+ arch/arm64/include/asm/cpucaps.h       |  5 ++---
+ arch/arm64/include/asm/kvm_host.h      |  4 ----
+ arch/arm64/include/asm/kvm_hyp.h       |  7 ++++---
+ arch/arm64/kernel/cpu_errata.c         | 25 +++++++++++++++++++------
+ arch/arm64/kvm/hyp/switch.c            | 10 +++++-----
+ arch/arm64/kvm/hyp/sysreg-sr.c         |  6 ++++--
+ arch/arm64/kvm/hyp/tlb.c               | 12 ++++++------
+ 9 files changed, 60 insertions(+), 29 deletions(-)
 
 -- 
-Best Regards
-Masahiro Yamada
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
