@@ -2,70 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40FE0FA4A0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 03:19:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2027EFA668
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 03:29:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QstAqckPhIG1vjQNAwNfQglAlQiUPTx1sOjpNCpuDMs=; b=f0Ye47wg7BgAGm
-	FRuDTEoWdS3TacH11VjPEv7kK+/gF0vdex+XUDuRuoRH1YU28vxmW2qDES5KigVeePmpZmDrvWVkW
-	UEBS+7lQlAMn9RVebYHmWRPT6vBg9Nmlb7YA0wob83Eu1Vq6E6+PPy7ycVEYwU8wwU+un5K/BaORb
-	Eqy0DOcbrhWurd+GkOIcOQT9LFcGe3Y3yCJSr6PogauPUz89EXdA0F1bS5xE07PJqp6aPgWKhlG/8
-	SYUwBHJlFvOyizA04IzJxW+enBVIO2zQ1hCDUsjXIvUwDRxEKBIlHyum/yJetsoRA7Nq+BgApFLM5
-	zgoX0lqo3FgXmqV0O4VA==;
+	List-Owner; bh=JIhjpXbX5nd2sJVOTGy6qbpGyrZu04KMuKEyYzgPyF8=; b=oX9lsM/CkJP1JT
+	thtgm2Vpfpxwi3EMbHkF5NqJg/RO7SU8H58SGBFiMHT1FfPKD9Yljjt+XVdGpAVnl2aZ36MdiLvNT
+	Sxcm4fZcT24wY8Itichmm4k+GvM01L6gah9hDNOnSFpKPGMYO6njx7RNgY0nfrpf2Kz+t4ZGuLLQ5
+	WxXnZAAFnT6IeivB59y+G7FlafndXmTej1x7QaiywNSAD8hkqX8cz5NPk238DN4YBTS2o+gApmThn
+	rpWpuyQJ195N3d4B+a1mJiE5YnBcI287gwN/UO75m6k3bqOG/hOifr3mtti29q6RiiluHEQwrJhiG
+	JhpnFXM1kmIsVSQG5UXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUiFn-0002ag-8F; Wed, 13 Nov 2019 02:19:31 +0000
-Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1iUiFd-0002ZC-RH; Wed, 13 Nov 2019 02:19:23 +0000
-Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID xAD2J7lm030129,
- This message is accepted by code: ctloc85258
-Received: from mail.realtek.com (RTITCAS11.realtek.com.tw[172.21.6.12])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id xAD2J7lm030129
- (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 13 Nov 2019 10:19:07 +0800
-Received: from RTEXMB02.realtek.com.tw (172.21.6.95) by
- RTITCAS11.realtek.com.tw (172.21.6.12) with Microsoft SMTP Server (TLS) id
- 14.3.468.0; Wed, 13 Nov 2019 10:19:07 +0800
-Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
- RTEXMB02.realtek.com.tw (172.21.6.95) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1779.2; Wed, 13 Nov 2019 10:19:07 +0800
-Received: from RTEXMB03.realtek.com.tw ([::1]) by RTEXMB03.realtek.com.tw
- ([fe80::3d7d:f7db:e1fb:307b%12]) with mapi id 15.01.1779.005; Wed, 13 Nov
- 2019 10:19:06 +0800
-From: James Tai <james.tai@realtek.com>
-To: =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>
-Subject: RE: [PATCH v2 0/2] Initial RTD1619 SoC and Realtek Mjolnir EVB support
-Thread-Topic: [PATCH v2 0/2] Initial RTD1619 SoC and Realtek Mjolnir EVB
- support
-Thread-Index: AdWWGJhW6hHY3ZYJQ8qKkqaxghH5QQB63IcAAHDoKfA=
-Date: Wed, 13 Nov 2019 02:19:06 +0000
-Message-ID: <569a8645d951428cbc1ce4bab3f42f3b@realtek.com>
-References: <43B123F21A8CFE44A9641C099E4196FFCF91F9CB@RTITMBSVM04.realtek.com.tw>
- <f2ce8745-e056-06a5-3d55-b00ab4d82414@suse.de>
-In-Reply-To: <f2ce8745-e056-06a5-3d55-b00ab4d82414@suse.de>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.21.190.187]
+	id 1iUiPs-0007m3-KQ; Wed, 13 Nov 2019 02:29:56 +0000
+Received: from zeniv.linux.org.uk ([195.92.253.2])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUiPi-0007kE-Vw
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 02:29:48 +0000
+Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1iUiP4-0000ox-FH; Wed, 13 Nov 2019 02:29:06 +0000
+Date: Wed, 13 Nov 2019 02:29:06 +0000
+From: Al Viro <viro@zeniv.linux.org.uk>
+To: Aleksa Sarai <cyphar@cyphar.com>
+Subject: Re: [PATCH v15 7/9] open: introduce openat2(2) syscall
+Message-ID: <20191113022906.GD26530@ZenIV.linux.org.uk>
+References: <20191105090553.6350-1-cyphar@cyphar.com>
+ <20191105090553.6350-8-cyphar@cyphar.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191105090553.6350-8-cyphar@cyphar.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_181922_151708_65A4FA8F 
-X-CRM114-Status: UNSURE (   6.70  )
+X-CRM114-CacheID: sfid-20191112_182947_026283_3641F16D 
+X-CRM114-Status: UNSURE (   9.07  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.92.253.2 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -78,30 +60,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, 'DTML' <devicetree@vger.kernel.org>,
- "linux-realtek-soc@lists.infradead.org"
- <linux-realtek-soc@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ Shuah Khan <shuah@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-m68k@lists.linux-m68k.org, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, libc-alpha@sourceware.org,
+ linux-parisc@vger.kernel.org, linux-api@vger.kernel.org,
+ Chanho Min <chanho.min@lge.com>, Jeff Layton <jlayton@kernel.org>,
+ Oleg Nesterov <oleg@redhat.com>, Eric Biederman <ebiederm@xmission.com>,
+ linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andreas,
- 
-> 1) The patches 1/2 and 2/2 are expected to be threaded to 0/2 (but not
-> 2/2 to 1/2). Please check your git [sendemail] config or use --thread
-> --no-chain-reply-to. That helps keep the series together when people start
-> replying to individual patches. If your Git config seems correct, it might also be
-> an issue with your SMTP server.
+On Tue, Nov 05, 2019 at 08:05:51PM +1100, Aleksa Sarai wrote:
+  
+> +/*
+> + * Arguments for how openat2(2) should open the target path. If @resolve is
+> + * zero, then openat2(2) operates very similarly to openat(2).
+> + *
+> + * However, unlike openat(2), unknown bits in @flags result in -EINVAL rather
+> + * than being silently ignored. @mode must be zero unless one of {O_CREAT,
+> + * O_TMPFILE} are set, and @upgrade_mask must be zero unless O_PATH is set.
+> + *
+> + * @flags: O_* flags.
+> + * @mode: O_CREAT/O_TMPFILE file mode.
+> + * @upgrade_mask: UPGRADE_* flags (to restrict O_PATH re-opening).
 
-The git config is correct. I'll check my SMTP server.
+???
 
-Regards,
-James
-
+> + * @resolve: RESOLVE_* flags.
+> + */
+> +struct open_how {
+> +	__aligned_u64 flags;
+> +	__u16 mode;
+> +	__u16 __padding[3]; /* must be zeroed */
+> +	__aligned_u64 resolve;
+> +};
 
 _______________________________________________
 linux-arm-kernel mailing list
