@@ -2,32 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6554FAB13
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 08:36:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA955FAB14
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 08:36:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rcYn+o0EJUDgxePUk6rWdLg/xZaibYzVbTnApA6M6Kw=; b=eeAluPevJorEW/
-	42+l5uOv16aSn7DnPAb+WRAHWRRHz3TJbEA6TGydnrJ3xeCzzteYSD9jIRBFcZ54EOqGC5wQkA3KX
-	4qUo7g56TuyQeD1ofxy2AOP/roubTq6RnaBFtRgsoS6fCF8j6tkaleFjOtw3vvYe1ituUoXBME1LU
-	bTX1fJH99T+zR/hGbAWCG3iaYk5teCNThEzcRpAGYC9Cmu7QmvzYH938rgyCZgmeRcLnu0+XJRaGX
-	98wlXdXGcl9TicUGlMb9me6F1lz9koUnvI/VXDfLQQ87kvyIxIBtlSh3rI/FO1M9QdhPHQuQyUDKj
-	Ngx/Ly1iP2qvOiCH70hg==;
+	List-Owner; bh=YPcK64beVs7utsDmENxy0jCFzSMvZqQvcTM3FFZw6AI=; b=pcfnDrpwh00CGi
+	vcRo98Z+VJO3myWSu+oaqI/bHAtrFlMHjxAvH2514jXxdgIdRyFfIgyZAXUJnHPMgTK4aLIrjaS6s
+	92QZGxN2YNGeQF6SWJ0b4/vt3LAXvOOVK81nPEX8GodvgesEMJKtp7lD+igkeHNCyms0WTewyOAeE
+	+eIZ6dM5rWJnPC1tY6H9uBZREsAKvP+C+sff41KiufjVDfWmcDJUWftNtvhr4mueWjANS3tA8cK8i
+	xXmCqhR+oonaT+Xmij/7JVNfSg0I4nhTklHkDKjzGicFGQ1dlnx0W0/XkmqGce9QjeZxmWe7nwRuo
+	hh39b7aWExwXMjS61Ohg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUnCP-0000TN-43; Wed, 13 Nov 2019 07:36:21 +0000
+	id 1iUnCe-0000iL-Mn; Wed, 13 Nov 2019 07:36:36 +0000
 Received: from [2001:4bb8:180:3806:c70:4a89:bc61:5] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUnBq-0008Tp-Td; Wed, 13 Nov 2019 07:35:47 +0000
+ id 1iUnBt-00006y-GA; Wed, 13 Nov 2019 07:35:49 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  iommu@lists.linux-foundation.org, Russell King <linux@armlinux.org.uk>
-Subject: [PATCH 2/3] dma-direct: avoid a forward declaration for phys_to_dma
-Date: Wed, 13 Nov 2019 08:35:38 +0100
-Message-Id: <20191113073539.9660-3-hch@lst.de>
+Subject: [PATCH 3/3] powerpc: remove support for NULL dev in __phys_to_dma /
+ __dma_to_phys
+Date: Wed, 13 Nov 2019 08:35:39 +0100
+Message-Id: <20191113073539.9660-4-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191113073539.9660-1-hch@lst.de>
 References: <20191113073539.9660-1-hch@lst.de>
@@ -50,69 +51,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Move dma_capable down a bit so that we don't need a forward declaration
-for phys_to_dma.
+Support for calling the DMA API functions without a valid device pointer
+was removed a while ago, so remove the stale support for that from the
+powerpc __phys_to_dma / __dma_to_phys helpers.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- include/linux/dma-direct.h | 30 ++++++++++++++----------------
- 1 file changed, 14 insertions(+), 16 deletions(-)
+ arch/powerpc/include/asm/dma-direct.h | 4 ----
+ 1 file changed, 4 deletions(-)
 
-diff --git a/include/linux/dma-direct.h b/include/linux/dma-direct.h
-index 991f8aa2676e..f8959f75e496 100644
---- a/include/linux/dma-direct.h
-+++ b/include/linux/dma-direct.h
-@@ -6,8 +6,6 @@
- #include <linux/memblock.h> /* for min_low_pfn */
- #include <linux/mem_encrypt.h>
+diff --git a/arch/powerpc/include/asm/dma-direct.h b/arch/powerpc/include/asm/dma-direct.h
+index e29e8a236b8d..abc154d784b0 100644
+--- a/arch/powerpc/include/asm/dma-direct.h
++++ b/arch/powerpc/include/asm/dma-direct.h
+@@ -4,15 +4,11 @@
  
--static inline dma_addr_t phys_to_dma(struct device *dev, phys_addr_t paddr);
--
- #ifdef CONFIG_ARCH_HAS_PHYS_TO_DMA
- #include <asm/dma-direct.h>
- #else
-@@ -26,20 +24,6 @@ static inline phys_addr_t __dma_to_phys(struct device *dev, dma_addr_t dev_addr)
- }
- #endif /* !CONFIG_ARCH_HAS_PHYS_TO_DMA */
- 
--static inline bool dma_capable(struct device *dev, dma_addr_t addr, size_t size)
--{
--	dma_addr_t end = addr + size - 1;
--
--	if (!dev->dma_mask)
--		return false;
--
--	if (!IS_ENABLED(CONFIG_ARCH_DMA_ADDR_T_64BIT) &&
--	    min(addr, end) < phys_to_dma(dev, PFN_PHYS(min_low_pfn)))
--		return false;
--
--	return end <= min_not_zero(*dev->dma_mask, dev->bus_dma_mask);
--}
--
- #ifdef CONFIG_ARCH_HAS_FORCE_DMA_UNENCRYPTED
- bool force_dma_unencrypted(struct device *dev);
- #else
-@@ -65,6 +49,20 @@ static inline phys_addr_t dma_to_phys(struct device *dev, dma_addr_t daddr)
- 	return __sme_clr(__dma_to_phys(dev, daddr));
+ static inline dma_addr_t __phys_to_dma(struct device *dev, phys_addr_t paddr)
+ {
+-	if (!dev)
+-		return paddr + PCI_DRAM_OFFSET;
+ 	return paddr + dev->archdata.dma_offset;
  }
  
-+static inline bool dma_capable(struct device *dev, dma_addr_t addr, size_t size)
-+{
-+	dma_addr_t end = addr + size - 1;
-+
-+	if (!dev->dma_mask)
-+		return false;
-+
-+	if (!IS_ENABLED(CONFIG_ARCH_DMA_ADDR_T_64BIT) &&
-+	    min(addr, end) < phys_to_dma(dev, PFN_PHYS(min_low_pfn)))
-+		return false;
-+
-+	return end <= min_not_zero(*dev->dma_mask, dev->bus_dma_mask);
-+}
-+
- u64 dma_direct_get_required_mask(struct device *dev);
- void *dma_direct_alloc(struct device *dev, size_t size, dma_addr_t *dma_handle,
- 		gfp_t gfp, unsigned long attrs);
+ static inline phys_addr_t __dma_to_phys(struct device *dev, dma_addr_t daddr)
+ {
+-	if (!dev)
+-		return daddr - PCI_DRAM_OFFSET;
+ 	return daddr - dev->archdata.dma_offset;
+ }
+ #endif /* ASM_POWERPC_DMA_DIRECT_H */
 -- 
 2.20.1
 
