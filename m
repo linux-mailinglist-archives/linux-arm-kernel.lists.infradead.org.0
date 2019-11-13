@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A767FAD63
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 10:44:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E125FAD65
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 10:44:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KANkU5eTAmCKQ6lnsi6fSccbmqkgwfhAtvXoMpBfRgk=; b=YSgnYqCGTTb8tx
-	cyibQqifEHXNXK2qWDjZJsiCx6Ah4pfnylqWtz29Oat/iq3n6iCV0DHN3XmTNFz7aa8QjOQFLt5H8
-	xsDrJa1fEZN9OEHsBitBOHRQcNy4UEg6JarcNQRlKSFDamSzD0/HL2XKME6rTLyWfTgJobUdYqp34
-	lv3acEvNriGe9yEFs9eaQkQqNzLJ8vPCCJVj1XktWIqAHpvvUzH0QURMD4mVFJdZOngtE1OyoLNxe
-	bfnMmef7Pga8BbKaOqC/opEgn/krQZJzT2jL1Q5h+Y0tjHzzgpSdOaqUMOImrretQ0etb0a/71xMw
-	SJ4wzxxQgKh2O8f1FPIA==;
+	List-Owner; bh=o9OfTOGb1XuAS+iMlAyf069AZE8XQQJjgEbsIh9Gi0w=; b=Edh3bvFvGYMPPE
+	Lst7gV7+ad0JDe+Pqjwu56/F6S0CaVRXFNomFQj1nuffEGEyoiHaZOh1HwBtI8NskAhU/4tzVhApm
+	xZXH1EtRCbda9Edogm4bAcRbIPZpcfKcCT6oV7xnJJlnKOwwKCVXsJNxEGN6ZUQKQUCKJ6aQwx/XT
+	UIb315F4HJ6Ea+eG6eWOy1nTM+sWwPTwOEDz0b684gcx1F0xisTexYN1sjDlxm7QOH+BehI0Oz31w
+	zM1vkS1IVcR7n/bBRQYnXUHJENOvognI2MaZe9PoEBwX3FhixoXBdH76TwjD64hfq34rV3RF3FEly
+	YBXXdKuVNiYdjoBiE1NA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUpCK-0001Gz-Vq; Wed, 13 Nov 2019 09:44:25 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iUpCb-0001Tk-M2; Wed, 13 Nov 2019 09:44:41 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUpAZ-0008Ix-3K
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 09:42:38 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAD9gMsZ082912;
- Wed, 13 Nov 2019 03:42:22 -0600
+ id 1iUpAd-0008Mt-UW
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 09:42:41 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAD9gRx2086688;
+ Wed, 13 Nov 2019 03:42:27 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573638142;
- bh=3x3rU9RLW9JRC3Q9uswDVAWWOQCpRFv6hqsq7AAr2eA=;
+ s=ti-com-17Q1; t=1573638147;
+ bh=ejmjEUvqs+1PhIX9IBENwt9urLUziMoMrCcf5MwMbKc=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=pxyY6RmoRry+v7ZDPTbg1OZkA6tj+IY/Bx/zIEw2DtfWFnLKbqw4KaE9yjaPYlEON
- Hezoe3HPRTz0lTXk9MrkdI22tQHMgr9wJfeF0BaQsi4hQ/9s5kcH/Dzkk253Ji93Ai
- g+WXaoBJHMkp5hzjJK5+xnSJ3FZM6X5RsEcK7qlY=
-Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAD9gM7n063299;
- Wed, 13 Nov 2019 03:42:22 -0600
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 13
- Nov 2019 03:42:04 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE107.ent.ti.com
+ b=jTJXup8L9t28/kwTXiVEs+c6CtsTvzmjmGd0DVGVfBPUe1eWxtLMjMNCI9TBIRgJz
+ Bt+S1yP/YhPY1ulG95RCBIfzqFCjr5uiiGU8WFKVCBCsHuYZgrLHogThWQXFd5T3CL
+ 0jpodkGxLNBvOsDDugW/Kv6JeeFcm1LwVR6ttQsE=
+Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xAD9gR5P002748
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 13 Nov 2019 03:42:27 -0600
+Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE107.ent.ti.com
  (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 13
+ Nov 2019 03:42:09 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE110.ent.ti.com
+ (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 13 Nov 2019 03:42:04 -0600
+ Frontend Transport; Wed, 13 Nov 2019 03:42:09 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAD9feM8072663;
- Wed, 13 Nov 2019 03:42:17 -0600
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAD9feM9072663;
+ Wed, 13 Nov 2019 03:42:22 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <broonie@kernel.org>, <radu_nicolae.pirea@upb.ro>, <shawnguo@kernel.org>, 
  <s.hauer@pengutronix.de>, <linus.walleij@linaro.org>,
  <agross@kernel.org>, <bjorn.andersson@linaro.org>, <andi@etezian.org>,
  <ldewangan@nvidia.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>
-Subject: [PATCH 8/9] spi: tegra114: Use dma_request_chan() directly for
+Subject: [PATCH 9/9] spi: tegra20-slink: Use dma_request_chan() directly for
  channel request
-Date: Wed, 13 Nov 2019 11:42:55 +0200
-Message-ID: <20191113094256.1108-9-peter.ujfalusi@ti.com>
+Date: Wed, 13 Nov 2019 11:42:56 +0200
+Message-ID: <20191113094256.1108-10-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191113094256.1108-1-peter.ujfalusi@ti.com>
 References: <20191113094256.1108-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_014235_231870_35608CFB 
-X-CRM114-Status: GOOD (  12.67  )
+X-CRM114-CacheID: sfid-20191113_014240_098608_E6FC745D 
+X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -107,19 +108,19 @@ dma_request_slave_channel_reason() is:
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- drivers/spi/spi-tegra114.c | 3 +--
+ drivers/spi/spi-tegra20-slink.c | 3 +--
  1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/drivers/spi/spi-tegra114.c b/drivers/spi/spi-tegra114.c
-index e6a450d9b4f0..fc40ab146c86 100644
---- a/drivers/spi/spi-tegra114.c
-+++ b/drivers/spi/spi-tegra114.c
-@@ -666,8 +666,7 @@ static int tegra_spi_init_dma_param(struct tegra_spi_data *tspi,
- 	dma_addr_t dma_phys;
+diff --git a/drivers/spi/spi-tegra20-slink.c b/drivers/spi/spi-tegra20-slink.c
+index 111fffc91435..51573f41ed12 100644
+--- a/drivers/spi/spi-tegra20-slink.c
++++ b/drivers/spi/spi-tegra20-slink.c
+@@ -599,8 +599,7 @@ static int tegra_slink_init_dma_param(struct tegra_slink_data *tspi,
  	int ret;
+ 	struct dma_slave_config dma_sconfig;
  
 -	dma_chan = dma_request_slave_channel_reason(tspi->dev,
--					dma_to_memory ? "rx" : "tx");
+-						dma_to_memory ? "rx" : "tx");
 +	dma_chan = dma_request_chan(tspi->dev, dma_to_memory ? "rx" : "tx");
  	if (IS_ERR(dma_chan)) {
  		ret = PTR_ERR(dma_chan);
