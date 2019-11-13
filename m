@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B925FB353
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 16:12:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2F8CFB365
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 16:13:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DXzSXjh4C0hwv8hm5GqqyIVMLCfCzkeZoiND3nDlFIQ=; b=evgZGgxDsT1hTxYY9LImtUmvEX
-	o0k84OXYZNLknZJwB7U4Iz30fGZoA8EuOzT6hydKXd45ysYu7sIjV2ZZ9pcksfN/f66OyuTERfyQh
-	smD9aiWJe8NGglP5QQC1RzhTVhtZL55EWhVHTV4Grc8ArFy+JNK15PsBHLJ1hf+8kmAEtn5MuWvYU
-	eUtBmhtTCM7cPnWpADZTrpU4uI95KEVWc2eHOy8sUZ3sv1uvH9QYzc4CrexWNwDgFrBe6XohEB/J/
-	AbJ8s45nIZncPv80clDiJmTHVPnztJ+8R/5oCVNnac8T270/XlhWVWrTSbFCsm4eAftHTnUCOHR76
-	w5e9HPIA==;
+	bh=DVs9ygOpuIqnhHGYeZvToAYS4nbbRamixs+j/Oe9MlI=; b=NicLpGyvbW0WaeGRo9QcngOKvc
+	0kOZ3Yfn8c3wGgg6u6+2Vf3fR2r322cQ8LhJsFh6tm50Gu8hITzIwsXD66eMA3MHXHbbwovLOM5Q7
+	fVTf46jq4frTRz91PYFFgSmODzUIMFexLar8/+0n+y2lqp3CZCaU+147ogJ2P0CYiL59lxhhi3NbQ
+	wr+Uc83d4o3hGBrpdRvVWfDYXtNg358f4bB84xEd6rMGZhvDQXdwarcrT8r0g5drLt24mVxRAKA5g
+	DGg0FpPqnQELxHmORufsIAF8L85V4ohNI4n8eQOQk0rfPTgcXkBKRH4tWxR84RkpW1SpIG0ztST6F
+	fFzuyoWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUuJt-0004Ut-81; Wed, 13 Nov 2019 15:12:33 +0000
+	id 1iUuL2-0005cn-Su; Wed, 13 Nov 2019 15:13:44 +0000
 Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUuJj-0004Sn-At
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 15:12:24 +0000
+ id 1iUuJj-0004Sk-Vn
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 15:12:26 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 1800CC0E93;
- Wed, 13 Nov 2019 15:12:20 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 35925C0E96;
+ Wed, 13 Nov 2019 15:12:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1573657941; bh=6mDOD0LZwNVU4TcplrWHtHQ3iiQNzYDGcKk37WCw+xw=;
+ t=1573657941; bh=Ip3ZDkHX7NjVjcJ1Wnwx1pavIU7mIEYu8qbPr6qGCVE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=Dve6IU/d/BmYWsNWIJPMMLF195bmaqnn9Fns472BTMLSp3r2lvALY5pMUg/s+HS+U
- 2QnxShdD1gUBlamUAUTsQydcFt5SECAEYllbme3F+ZfIhNFQEi4YvRavsmoDLM58Ic
- 2ZJBZ5J8N/GO0xPKejXZ75b9MTVHkBqAkBn79MRceRUACDw1Km11yTYw/N7cxSRoIV
- cqNuGbJVBj1PkfbprTZAXE8CVb9m0l9Elq4Yf6QsVJpK+JW+T9dINLkoYzJK3XDYjv
- MCX//KbbT4NK0nMgkd4H/erzCBSiqxJfMUU8HZcQv1rHhSo96dt4aq4KDz9QchRmOV
- 7WpEaAHW+4qCw==
+ b=RKjwJjIbQR+b7Qw8AJQTa1EuVAYkdBYBwdUPUj3HKxK5nhKYKRWpDhx4POpCBI6iX
+ sVkFCKeRJssVtG6zlC3NP2ZtrCHf74fupWBYwmK6Cl4m4nS/BYkb0SpRvXvPVJsXSw
+ utshHfdZHSs+9K5iyd8GS63XWDYic+ccPqomEDcUHGXJA1Z9zaoY/kX8YB8XBRzFU/
+ PxewJ9qPxkGL2xWv51Nm/89hQFqUpw5gvXggVdVfaet7xu0OWOjJq/uHdIk+QTvCUC
+ W+6fZLi9+pecHIpgLmfZq4i27xMVKWE2Ety9HT/8Ru/WDY4df82Ap8VvaJdFegOaQM
+ OM4kvyazqqGzg==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id AEF18A008E;
+ by mailhost.synopsys.com (Postfix) with ESMTP id B5DBDA008F;
  Wed, 13 Nov 2019 15:12:19 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 4/7] net: stmmac: gmac4+: Remove uneeded computation
+Subject: [PATCH net-next 5/7] net: stmmac: xgmac: Remove uneeded computation
  for RFA/RFD
-Date: Wed, 13 Nov 2019 16:12:05 +0100
-Message-Id: <5a9448921e64623d809224a3b42d136906b84dfb.1573657592.git.Jose.Abreu@synopsys.com>
+Date: Wed, 13 Nov 2019 16:12:06 +0100
+Message-Id: <6c27de99de61a9dfa65ba163b5d870cac9f6a249.1573657592.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 References: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 References: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_071223_393385_29B1D889 
+X-CRM114-CacheID: sfid-20191113_071224_035449_EDEFD8EB 
 X-CRM114-Status: GOOD (  11.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -115,14 +115,14 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c | 14 ++------------
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c | 14 ++------------
  1 file changed, 2 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-index 36a0af8bf89f..c15409030710 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-@@ -252,19 +252,9 @@ static void dwmac4_dma_rx_chan_op_mode(void __iomem *ioaddr, int mode,
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+index f148cb2061d8..22a7f0cc1b90 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+@@ -183,19 +183,9 @@ static void dwxgmac2_dma_rx_mode(void __iomem *ioaddr, int mode,
  			rfa = 0x01; /* Full-1.5K */
  			break;
  
