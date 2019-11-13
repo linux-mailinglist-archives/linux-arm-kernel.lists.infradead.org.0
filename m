@@ -2,56 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E721FAFAA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 12:27:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA389FAFDF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 12:42:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0O1gdWQpqlff8WrmNG7M8NYVfqqhIoX/yZf0tiEho3A=; b=d0nIJm5abqQDC6
-	rv6dHz8lwhJzH5lK3Q40YWi0xsIMJl92129PRtqts3EEP+CevNF2G3LaEh4IrV98MVdUT7lAFrGt1
-	r72imzhCTlOEXuSqi8MAIHdAjRyBSUQtKozLDtXTFOp9Wm7rdER0jA/wH2dy6LA2P0uFVJcFQUrLj
-	BI5XNoJfLUnhTi29TcpZGdNUcbxVO0V/+/A88sujlm/tg/y1gbWMleGxu14YEDB9r0bBqIRUJESjV
-	9Ch3InAV+/AgL6Foww6kFC8qphdxXziSBmqB9rcQcoJ0UI5q8maPT/eL5BV264N8Oe7S3Rd1kfMB2
-	8t5CMURDweg5PP9hzuXw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pS4czZDzdM88pjbc74NYzLJnbNHj33JyZS/OCW6LLoM=; b=q0v4LMDbfsHx39
+	utTbAxzsgMitRnstumQognnrZDzxX7c1VLrlGKe/2qbIF4C7HK+MxvGr5zO4o8nz6NSoEZuB4eE+A
+	a/THS58EmkQfGy9kNv1+dOkRSc8iT/1shuzBUM1h+dUln3ofgFHdJUF1QodOwPvf3p3wc1zlV85vH
+	xEoIhtdJDBsTqZkW8R25EACC7fPZ+60Qfw7i/swxQ9MO+un3/J0LkpXbO1CCKggqDG9ECaonPtpPN
+	0TqRGsJtVx2XP5txZMT3jhofocb2BvzBe+pBOxNsB6HLhaN8sxgB/Kjx9BaiexuBlD0HzMSsCLU1v
+	s+/qcdbfkdWnMrBSWzeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUqnn-0006YU-8y; Wed, 13 Nov 2019 11:27:11 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUqnc-0006XF-A6
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 11:27:02 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B3B447A7;
- Wed, 13 Nov 2019 03:26:56 -0800 (PST)
-Received: from [10.1.196.63] (e123195-lin.cambridge.arm.com [10.1.196.63])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C2B663F534;
- Wed, 13 Nov 2019 03:26:55 -0800 (PST)
-Subject: Re: [kvm-unit-tests PATCH 17/17] arm: gic: Test Group0 SPIs
-To: Andre Przywara <andre.przywara@arm.com>, Andrew Jones
- <drjones@redhat.com>, Paolo Bonzini <pbonzini@redhat.com>
-References: <20191108144240.204202-1-andre.przywara@arm.com>
- <20191108144240.204202-18-andre.przywara@arm.com>
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-Message-ID: <88a5d9f9-e5fe-8025-8857-dc78a5aa791a@arm.com>
-Date: Wed, 13 Nov 2019 11:26:54 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1iUr2C-00040f-6F; Wed, 13 Nov 2019 11:42:04 +0000
+Received: from conssluserg-02.nifty.com ([210.131.2.81])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUr1r-0003Nd-B8
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 11:41:45 +0000
+Received: from mail-vk1-f174.google.com (mail-vk1-f174.google.com
+ [209.85.221.174]) (authenticated)
+ by conssluserg-02.nifty.com with ESMTP id xADBfG9s007712
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 13 Nov 2019 20:41:17 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com xADBfG9s007712
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1573645277;
+ bh=J6rJT8P5SnuQtYPsxB/K65h5d3rtBJCHsFkTNmOyQlQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=jg5JN1kyvIRVl+wnxWLogXC8ILKa+IPKGO3oktS6ZUotAb3IrHuk4Cd8D0jRpS+Z/
+ nn4aw7dZ1b0YnJJ7AiKHjQ2t/Cu60ALE0Dh9E3WfRj2CTKfY0JUzC8ZchaQv0FppaG
+ Fwy+yVGWbgh8TTCt820j9oWM9oW/tdMhKvpLE05p+HEk4CY8OYLGlPFutee/2rSxRW
+ uBKiz4+K20hREfUyGRaxCJ8Ox9HxaPzJ3CDeJjbRXdUn34oD9JR64StlSm4xVn3BV0
+ M49dIKUVvlEoFbtYI68+5VwbIlJ9NPgm31QO5fibO43FyIEoowXPOyocKhEDAk9wjx
+ bZL9tMKtNoJnQ==
+X-Nifty-SrcIP: [209.85.221.174]
+Received: by mail-vk1-f174.google.com with SMTP id k19so471027vke.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 13 Nov 2019 03:41:17 -0800 (PST)
+X-Gm-Message-State: APjAAAVu9xv0UJpGudMMSGapKdoPQvlImuh4fI/3U6Xzc9RHisybAE3M
+ ksZY3PGEexDgFLaUxohp49INCiGSGETluVxblUA=
+X-Google-Smtp-Source: APXvYqxqblFCrOJg10zfx2WK5ReUHCOH5foJoWAQQv3PyYkLJdqhdmg4TbDz/1KDQB+Qui2LDB57vmmLTKCspKoZrlo=
+X-Received: by 2002:a1f:4192:: with SMTP id o140mr1284724vka.26.1573645275987; 
+ Wed, 13 Nov 2019 03:41:15 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191108144240.204202-18-andre.przywara@arm.com>
-Content-Language: en-US
+References: <20190906154706.2449696-1-arnd@arndb.de>
+ <CAMuHMdUMgDBo1gkvQ_Bd8mjMiPjdWWY=9AU6K1S7NcJy5jhvGQ@mail.gmail.com>
+In-Reply-To: <CAMuHMdUMgDBo1gkvQ_Bd8mjMiPjdWWY=9AU6K1S7NcJy5jhvGQ@mail.gmail.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Wed, 13 Nov 2019 20:40:39 +0900
+X-Gmail-Original-Message-ID: <CAK7LNASNp4jPYHmh3e4QYwenYbVrK69tvB_LLyK_ew1eqBNrEw@mail.gmail.com>
+Message-ID: <CAK7LNASNp4jPYHmh3e4QYwenYbVrK69tvB_LLyK_ew1eqBNrEw@mail.gmail.com>
+Subject: Re: [PATCH] ARM: don't export unused return_address()
+To: Arnd Bergmann <arnd@arndb.de>, Russell King <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_032700_441088_AB1514B8 
-X-CRM114-Status: GOOD (  27.93  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191113_034143_770751_5C960843 
+X-CRM114-Status: GOOD (  16.47  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.81 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,210 +83,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, kvm@vger.kernel.org
+Cc: Geert Uytterhoeven <geert@linux-m68k.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 11/8/19 2:42 PM, Andre Przywara wrote:
-> With the newly gained building blocks we can now actually test Group 0
-> interrupts on our emulated/virtualized GIC.
-> The least common denominator for the groups usage on both GICv2 and
-> GICv3 is to configure group 0 interrupts to trigger FIQs, and group 1
-> interrupts to trigger IRQs.
-> For testing this we first configure our test SPI to belong to group 0,
-> then trigger it to see that it is actually delivered as an FIQ, and not as
-> an IRQ.
-> The we change the group to become 1, and trigger again, this time
-> expecting the opposite behaviour.
+On Tue, Oct 1, 2019 at 11:31 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
 >
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> ---
->  arm/gic.c | 103 ++++++++++++++++++++++++++++++++++++++++++++++++++++--
->  1 file changed, 101 insertions(+), 2 deletions(-)
+> Hi Arnd,
 >
-> diff --git a/arm/gic.c b/arm/gic.c
-> index 43a272b..9942314 100644
-> --- a/arm/gic.c
-> +++ b/arm/gic.c
-> @@ -276,6 +276,22 @@ static void irqs_enable(void)
->  	local_irq_enable();
->  }
->  
-> +static void fiqs_enable(void)
-> +{
-> +#ifdef __arm__
-> +	install_exception_handler(EXCPTN_FIQ, fiq_handler);
-> +#else
-> +	install_irq_handler(EL1H_FIQ, fiq_handler);
-> +#endif
-> +	if (gic_version() == 3) {
-> +		gicv3_write_grpen0(1);
-> +	} else {
-> +		gicv2_enable_fiq(true);
-> +		gicv2_enable_group1(true);
+> On Fri, Sep 6, 2019 at 5:47 PM Arnd Bergmann <arnd@arndb.de> wrote:
+> > Without the frame pointer enabled, return_address() is an inline
+> > function and does not need to be exported, as shown by this warning:
+> >
+> > WARNING: "return_address" [vmlinux] is a static EXPORT_SYMBOL_GPL
+> >
+> > Move the EXPORT_SYMBOL_GPL() into the #ifdef as well.
+> >
+> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+>
+> Thanks for your patch!
+>
+> Tested-by: Geert Uytterhoeven <geert+renesas@glider.be>
+>
+> > --- a/arch/arm/kernel/return_address.c
+> > +++ b/arch/arm/kernel/return_address.c
+> > @@ -53,6 +53,7 @@ void *return_address(unsigned int level)
+> >                 return NULL;
+> >  }
+> >
+>
+> Checkpatch doesn't like the empty line above:
+>
+> WARNING: EXPORT_SYMBOL(foo); should immediately follow its function/variable
+>
+> > +EXPORT_SYMBOL_GPL(return_address);
+> > +
+> >  #endif /* if defined(CONFIG_FRAME_POINTER) && !defined(CONFIG_ARM_UNWIND) */
+> >
+> > -EXPORT_SYMBOL_GPL(return_address);
+>
+> Gr{oetje,eeting}s,
+>
+>                         Geert
+>
+> --
+> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+>
+> In personal conversations with technical people, I call myself a hacker. But
+> when I'm talking to journalists I just say "programmer" or something like that.
+>                                 -- Linus Torvalds
 
-Why do we enable group 1 here for GICv2? The commit message says that group 1
-interrupts will be delivered as IRQs.
 
-> +	}
-> +	local_fiq_enable();
-> +}
-> +
->  static void ipi_send(void)
->  {
->  	irqs_enable();
-> @@ -598,6 +614,7 @@ static void spi_configure_irq(int irq, int cpu)
->  
->  #define IRQ_STAT_NONE		0
->  #define IRQ_STAT_IRQ		1
-> +#define IRQ_STAT_FIQ		2
->  #define IRQ_STAT_TYPE_MASK	0x3
->  #define IRQ_STAT_NO_CLEAR	4
->  
-> @@ -617,14 +634,21 @@ static bool trigger_and_check_spi(const char *test_name,
->  	cpumask_clear(&cpumask);
->  	switch (irq_stat & IRQ_STAT_TYPE_MASK) {
->  	case IRQ_STAT_NONE:
-> +		ret &= (check_acked(NULL, &cpumask, 0) >= 0);
-> +		ret &= (check_acked(test_name, &cpumask, 1) >= 0);
->  		break;
->  	case IRQ_STAT_IRQ:
-> +		ret &= (check_acked(NULL, &cpumask, 0) >= 0);
-> +		cpumask_set_cpu(cpu, &cpumask);
-> +		ret &= (check_acked(test_name, &cpumask, 1) >= 0);
-> +		break;
-> +	case IRQ_STAT_FIQ:
-> +		ret &= (check_acked(NULL, &cpumask, 1) >= 0);
->  		cpumask_set_cpu(cpu, &cpumask);
-> +		ret &= (check_acked(test_name, &cpumask, 0) >= 0);
->  		break;
->  	}
->  
-> -	ret = (check_acked(test_name, &cpumask, 1) >= 0);
-> -
->  	/* Clean up pending bit in case this IRQ wasn't taken. */
->  	if (!(irq_stat & IRQ_STAT_NO_CLEAR))
->  		gic_set_irq_bit(SPI_IRQ, GICD_ICPENDR);
-> @@ -657,6 +681,9 @@ static void spi_test_smp(void)
->  	int cpu;
->  	int cores = 1;
->  
-> +	if (nr_cpus > 8)
-> +		printf("triggering SPIs on all %d cores, takes %d seconds\n",
-> +		       nr_cpus, (nr_cpus - 1) * 3 / 2);
 
-Can you explain how you got the elapsed time for triggering SPIs?
+What has happened to this patch?
 
->  	wait_on_ready();
->  	for_each_present_cpu(cpu) {
->  		if (cpu == smp_processor_id())
-> @@ -671,6 +698,46 @@ static void spi_test_smp(void)
->  }
->  
->  #define GICD_CTLR_ENABLE_BOTH (GICD_CTLR_ENABLE_G0 | GICD_CTLR_ENABLE_G1)
-> +#define EXPECT_FIQ	true
-> +#define EXPECT_IRQ	false
-> +
-> +/*
-> + * Check whether our SPI interrupt is correctly delivered as an FIQ or as
-> + * an IRQ, as configured.
-> + * This tries to enable the two groups independently, to check whether
-> + * the relation group0->FIQ and group1->IRQ holds.
-> + */
-> +static void gic_check_irq_delivery(void *gicd_base, bool as_fiq)
+I still see this warning.
 
-The function also checks for FIQs, as alluded to by the as_fiq parameter; also,
-most of the function does different things based on that parameter. I think it
-would be cleaner to split it into two functions, gic_check_irq_delivery and
-gic_check_fiq_delivery. That way you can have more clearer messages for
-trigger_and_check_spi and you get rid of the two defines above. At the very least,
-it should be renamed to something more appropriate for what it does, like
-gic_check_int_delivery.
 
-> +{
-> +	u32 reg = readl(gicd_base + GICD_CTLR) & ~GICD_CTLR_ENABLE_BOTH;
-> +	int cpu = smp_processor_id();
-> +
-> +	/* Check that both groups disabled block the IRQ. */
-> +	writel(reg, gicd_base + GICD_CTLR);
-> +	trigger_and_check_spi("no IRQs with both groups disabled",
-> +			      IRQ_STAT_NONE, cpu);
-> +
-> +	/* Check that just the *other* group enabled blocks the IRQ. */
-> +	if (as_fiq)
-> +		writel(reg | GICD_CTLR_ENABLE_G1, gicd_base + GICD_CTLR);
-> +	else
-> +		writel(reg | GICD_CTLR_ENABLE_G0, gicd_base + GICD_CTLR);
-> +	trigger_and_check_spi("no IRQs with just the other group enabled",
-> +			      IRQ_STAT_NONE, cpu);
-> +
-> +	/* Check that just this group enabled fires the IRQ. */
-> +	if (as_fiq)
-> +		writel(reg | GICD_CTLR_ENABLE_G0, gicd_base + GICD_CTLR);
-> +	else
-> +		writel(reg | GICD_CTLR_ENABLE_G1, gicd_base + GICD_CTLR);
-> +	trigger_and_check_spi("just this group enabled",
-> +			      as_fiq ? IRQ_STAT_FIQ : IRQ_STAT_IRQ, cpu);
-> +
-> +	/* Check that both groups enabled fires the IRQ. */
-> +	writel(reg | GICD_CTLR_ENABLE_BOTH, gicd_base + GICD_CTLR);
-> +	trigger_and_check_spi("both groups enabled",
-> +			      as_fiq ? IRQ_STAT_FIQ : IRQ_STAT_IRQ, cpu);
-> +}
->  
->  /*
->   * Check the security state configuration of the GIC.
-> @@ -711,6 +778,9 @@ static bool gicv3_check_security(void *gicd_base)
->   * Check whether this works as expected (as Linux will not use this feature).
->   * We can only verify this state on a GICv3, so we check it there and silently
->   * assume it's valid for GICv2.
-> + * GICv2 and GICv3 handle the groups differently, but we use the common
-> + * denominator (Group0 as FIQ, Group1 as IRQ) and rely on the GIC library for
-> + * abstraction.
->   */
->  static void test_irq_group(void *gicd_base)
->  {
-> @@ -754,6 +824,35 @@ static void test_irq_group(void *gicd_base)
->  	gic_set_irq_group(SPI_IRQ, !reg);
->  	report("IGROUPR is writable", gic_get_irq_group(SPI_IRQ) != reg);
->  	gic_set_irq_group(SPI_IRQ, reg);
-> +
-> +	/*
-> +	 * Configure group 0 interrupts as FIQs, install both an FIQ and IRQ
-> +	 * handler and allow both types to be delivered to the core.
-> +	 */
-> +	irqs_enable();
-> +	fiqs_enable();
-> +
-> +	/* Configure one SPI to be a group0 interrupt. */
-> +	gic_set_irq_group(SPI_IRQ, 0);
-> +	spi_configure_irq(SPI_IRQ, smp_processor_id());
-> +	report_prefix_push("FIQ");
-> +	gic_check_irq_delivery(gicd_base, EXPECT_FIQ);
-> +	report_prefix_pop();
-> +
-> +	/* Configure the SPI to be a group1 interrupt instead. */
-> +	gic_set_irq_group(SPI_IRQ, 1);
-> +	report_prefix_push("IRQ");
-> +	gic_check_irq_delivery(gicd_base, EXPECT_IRQ);
-> +	report_prefix_pop();
-> +
-> +	/* Reset the IRQ to the default group. */
-> +	if (is_gicv3)
-> +		gic_set_irq_group(SPI_IRQ, 1);
-> +	else
-> +		gic_set_irq_group(SPI_IRQ, 0);
-> +	gic_disable_irq(SPI_IRQ);
-> +
-> +	report_prefix_pop();
->  }
->  
->  static void spi_send(void)
+
+-- 
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
