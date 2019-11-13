@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CE98FAD60
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 10:43:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9D5FFAD61
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 10:43:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LrE9RLPY3/vRxn7zMonyJj2FF/x6V65oWhoa+bSX8gg=; b=U2mJi5z8tSx9x2
-	PhVc9vMlfOKpdNo9QWq3NAAeibx+HbG9T9l6WNP6lUZlUv9fKRhg1eMfK3A56f0GS4LcJUzuflZss
-	iXvAI1ce2CLz+LhDwub7X1xqW9KlBtyOJgUbgpntPmzb6kCzryaC6CxBRkIoNkwTsQCk6MsGLwdZH
-	KOMLxKDaV1J4HWS3IWPDU0e96+c0Zx53y2susjMXIGe8dvmQGeig60UH976qrTZMABEXUhK57v/D6
-	JnPmRF+ny8i0+Usew0yyHMfDrJbDiYeTUHjpeB7vp29NeAYCKtrWmk5PzNLsuc4XhccMo6Kjc69qY
-	vTh3IJDkKVbTOouPs1Zw==;
+	List-Owner; bh=wPO/1lAIK48liBSgJpKGVlfVyl4WPqOHixJtMUFKp3o=; b=Ho4hlaH+t2xKll
+	yOhraadG9rIlFGq0a/ViA444g6r9nl+qyMCAOvs5SKZoySERMRBM82OLFKO2kOYHJwVkH4VJp5g5Y
+	aLHuiq1wLmGaSHdjqUhyRaU8HU+ytMmh2XukbuZiHHfyDDPRvWexAqttwJJkvhR+5T7Qb0p8OtUik
+	peb970Seg9C4MbgGDp91xFccfrUUpKJBks5vZknwfwazK+F8vGtQp4m4kzbPkS6A+ly89zfgMJOMx
+	Wadvfvgq9aPSt0h+yKQ4S98QJW8P+DCTIlbYL1fGx0Z0LcIscn7ikXE+SOPo8rBQYQVUP5OQZFgTT
+	UiYJseihG5+E2aHjWK1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUpBX-0000Zf-VN; Wed, 13 Nov 2019 09:43:35 +0000
+	id 1iUpBn-0000m8-PD; Wed, 13 Nov 2019 09:43:51 +0000
 Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUpAL-00083W-15
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 09:42:22 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAD9g8uA063797;
- Wed, 13 Nov 2019 03:42:08 -0600
+ id 1iUpAQ-00088z-P1
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 09:42:28 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAD9gCs1063831;
+ Wed, 13 Nov 2019 03:42:12 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573638128;
- bh=KKS9sP1jn/T+EJqEWvgAhiMaS7E2CEh8yFxDixsH8fU=;
+ s=ti-com-17Q1; t=1573638132;
+ bh=OqtLYKj0zrMlp4PwJ4rkxdZq/2B0NiRl7pWO/Td8PyY=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=DcSD3IXdnr343GsXzvo3GAzXEWpMauuUZnel9H5c8HPtILXwBgTfPYH4V//s7OKzC
- 9/pYhNOtNXAAN+4dZWBuMxN4CL4g6MyHTvD5H6riLENUFe0VdoQGE6D4hk2/9afYIG
- eiUNf1w/livsfOFdpi8kom4gTuZ+30Cw64Bk0TzQ=
+ b=Ge+o5HHx1Y1Be2oLJo64/pQEj5SZaaBFIX1VoXVqyXsNyKr+cmPf14R6wM9ehwq5K
+ OWFWKMCLBuZTTtLEwJ2LEE0pCamNy8ETqVZjz8ALnSZNNTcDOxC6MT9FC1riN1P1+B
+ wYEZ3E/e9L1unOA0MK/zIvjJjt8ZuOUzdabSBFlg=
 Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xAD9g8L8081243
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xAD9gCQA002445
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 13 Nov 2019 03:42:08 -0600
-Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE103.ent.ti.com
+ Wed, 13 Nov 2019 03:42:12 -0600
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE103.ent.ti.com
  (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 13
- Nov 2019 03:41:50 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ Nov 2019 03:41:54 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 13 Nov 2019 03:41:50 -0600
+ Frontend Transport; Wed, 13 Nov 2019 03:41:54 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAD9feM5072663;
- Wed, 13 Nov 2019 03:42:03 -0600
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAD9feM6072663;
+ Wed, 13 Nov 2019 03:42:08 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <broonie@kernel.org>, <radu_nicolae.pirea@upb.ro>, <shawnguo@kernel.org>, 
  <s.hauer@pengutronix.de>, <linus.walleij@linaro.org>,
  <agross@kernel.org>, <bjorn.andersson@linaro.org>, <andi@etezian.org>,
  <ldewangan@nvidia.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>
-Subject: [PATCH 5/9] spi: pl022: Use dma_request_chan() directly for channel
+Subject: [PATCH 6/9] spi: qup: Use dma_request_chan() directly for channel
  request
-Date: Wed, 13 Nov 2019 11:42:52 +0200
-Message-ID: <20191113094256.1108-6-peter.ujfalusi@ti.com>
+Date: Wed, 13 Nov 2019 11:42:53 +0200
+Message-ID: <20191113094256.1108-7-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191113094256.1108-1-peter.ujfalusi@ti.com>
 References: <20191113094256.1108-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_014221_217848_A38B78E0 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20191113_014226_927684_1A725007 
+X-CRM114-Status: GOOD (  12.02  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -108,31 +108,27 @@ dma_request_slave_channel_reason() is:
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- drivers/spi/spi-pl022.c | 4 ++--
+ drivers/spi/spi-qup.c | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/spi/spi-pl022.c b/drivers/spi/spi-pl022.c
-index 3024c30e7f2e..66028ebbc336 100644
---- a/drivers/spi/spi-pl022.c
-+++ b/drivers/spi/spi-pl022.c
-@@ -1158,7 +1158,7 @@ static int pl022_dma_autoprobe(struct pl022 *pl022)
- 	int err;
+diff --git a/drivers/spi/spi-qup.c b/drivers/spi/spi-qup.c
+index 2f559e531100..dd3434a407ea 100644
+--- a/drivers/spi/spi-qup.c
++++ b/drivers/spi/spi-qup.c
+@@ -932,11 +932,11 @@ static int spi_qup_init_dma(struct spi_master *master, resource_size_t base)
+ 	int ret;
  
- 	/* automatically configure DMA channels from platform, normally using DT */
--	chan = dma_request_slave_channel_reason(dev, "rx");
-+	chan = dma_request_chan(dev, "rx");
- 	if (IS_ERR(chan)) {
- 		err = PTR_ERR(chan);
- 		goto err_no_rxchan;
-@@ -1166,7 +1166,7 @@ static int pl022_dma_autoprobe(struct pl022 *pl022)
+ 	/* allocate dma resources, if available */
+-	master->dma_rx = dma_request_slave_channel_reason(dev, "rx");
++	master->dma_rx = dma_request_chan(dev, "rx");
+ 	if (IS_ERR(master->dma_rx))
+ 		return PTR_ERR(master->dma_rx);
  
- 	pl022->dma_rx_channel = chan;
- 
--	chan = dma_request_slave_channel_reason(dev, "tx");
-+	chan = dma_request_chan(dev, "tx");
- 	if (IS_ERR(chan)) {
- 		err = PTR_ERR(chan);
- 		goto err_no_txchan;
+-	master->dma_tx = dma_request_slave_channel_reason(dev, "tx");
++	master->dma_tx = dma_request_chan(dev, "tx");
+ 	if (IS_ERR(master->dma_tx)) {
+ 		ret = PTR_ERR(master->dma_tx);
+ 		goto err_tx;
 -- 
 Peter
 
