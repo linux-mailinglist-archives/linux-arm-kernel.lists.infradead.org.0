@@ -2,139 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC656FA058
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 02:38:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE978FA0EF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 02:53:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=imXYklj/0+NiVf4bpS4kqn61dMKBS65WoaXRw9nSn+M=; b=KTBuTtgIprxpOg
-	87I1qvU8NX3hK7ssGVxLYdhZ01WYlrrht9I4JaTkr90bmi/uZ81EtJR8XO+K3TmhYS5YTopLk3vjM
-	Vu6PwWMQ3mB+zKj7mJGujLaiSKuP6nrG4KU8Hu3CIEdwc9JAZCIULulRVevRrugkM7joUPQcSTk8P
-	rrhoD6PSXkGKs5JyYEUFqIMQp+wDVNQEyzKxg56lsDb44f0BuM7BcfR1XMBWDP9unZTxCmaS1ziip
-	xbP/I+Cp80GDcWRTFeG2AO8yK0FVlrtP+MBsiyuQWW8XEfLD+qEi3Uj6vk1V6t9cieBCp9Dl6TBGB
-	bsxQPDgc4LVYVceyEZag==;
+	List-Owner; bh=OupwRzYcwPIccJfV+3IRvncashRHgqqsi9orxKY4QYs=; b=USdKDdSJm9Suuy
+	iTvw8xC4WHDzVPi4uSDiDAguAsRW4KHDK9a59HDstaOYB37fFm0dotxJlVcVCwzDCXP0ixojujz0W
+	XbAi0ILKh7Hfz8ZtVBlImEZKst2yaWVBs3G+mffhyDTwYUS49ViMhPudRXJeVkpLlyHIANz2JqLNa
+	vD6mFimeAlg1FmJQy5rqbqdr0h6y0rOq93iz6OWwKW21d4JTlb3C6wqXy+kRihRCyK9KjWuF5Mm3e
+	wmFNbqYdVrkEqcnQmUbZeDYjBmRTOXxmN5kYk5yUIwpDF44zn+nA2M309JFKbmlrNA17u9F7wtMlq
+	wD0db2mXfU92WamFhSJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUhbo-00069w-Cg; Wed, 13 Nov 2019 01:38:12 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1iUhr0-0004JU-2c; Wed, 13 Nov 2019 01:53:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUhbf-000691-KN
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 01:38:06 +0000
-Received: from epcas1p2.samsung.com (unknown [182.195.41.46])
- by mailout2.samsung.com (KnoxPortal) with ESMTP id
- 20191113013758epoutp02c19e5b0623624eb974d98dafd30cd976~WlR6B42wB1523515235epoutp02Q
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 Nov 2019 01:37:58 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
- 20191113013758epoutp02c19e5b0623624eb974d98dafd30cd976~WlR6B42wB1523515235epoutp02Q
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1573609078;
- bh=2S9pgnR5Onr6z/xDrnsFOe9XMO2xej4TY+lKfVJhOY0=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=MHbka8zP7UP5jyPC2/bJsgmOlAMhrGkR0/0otYTKxXWAYW5Mb7VW3yVf36ym8yxdk
- earadt6nAcOOmLG417uMWVK/jKp/VmoRoRFkkCbEXV9h3Tc4wXm5/jZjYIHqfIl5ym
- QfskP8r30oC2DOV17JIo3FhdMZYpBifjNBvsSJiI=
-Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTP id
- 20191113013757epcas1p4f6ffb7dc4a3c768b45cfb6a5adb0eabe~WlR5hy_hb2286522865epcas1p4p;
- Wed, 13 Nov 2019 01:37:57 +0000 (GMT)
-Received: from epsmges1p5.samsung.com (unknown [182.195.40.153]) by
- epsnrtp3.localdomain (Postfix) with ESMTP id 47CS0z2B7dzMqYkc; Wed, 13 Nov
- 2019 01:37:55 +0000 (GMT)
-Received: from epcas1p3.samsung.com ( [182.195.41.47]) by
- epsmges1p5.samsung.com (Symantec Messaging Gateway) with SMTP id
- 59.75.04068.37E5BCD5; Wed, 13 Nov 2019 10:37:55 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20191113013754epcas1p19c6ce750ffb6b8f896852b492970bf9c~WlR3BZ7-u1695016950epcas1p1j;
- Wed, 13 Nov 2019 01:37:54 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20191113013754epsmtrp26377045ecb1723cb1a00ab46f3d84ebf~WlR2-zW9K0202802028epsmtrp2s;
- Wed, 13 Nov 2019 01:37:54 +0000 (GMT)
-X-AuditID: b6c32a39-f5fff70000000fe4-76-5dcb5e733735
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- A8.33.24756.27E5BCD5; Wed, 13 Nov 2019 10:37:54 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20191113013754epsmtip1b0b0b6c4426ed6f7a36aa8d2688daa0d~WlR2m4HNZ0181001810epsmtip19;
- Wed, 13 Nov 2019 01:37:54 +0000 (GMT)
-Subject: Re: [PATCH v4 5/6] PM / devfreq: imx8m-ddrc: Measure bandwidth with
- perf
-To: Leonard Crestez <leonard.crestez@nxp.com>, MyungJoo Ham
- <myungjoo.ham@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>, Rob
- Herring <robh+dt@kernel.org>
-From: Chanwoo Choi <cw00.choi@samsung.com>
-Organization: Samsung Electronics
-Message-ID: <5c5d4237-c8f1-f59e-272e-84d2a8528054@samsung.com>
-Date: Wed, 13 Nov 2019 10:43:40 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iUhqo-0004Ha-EH
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 01:53:47 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5F383222CD;
+ Wed, 13 Nov 2019 01:53:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573610022;
+ bh=NouXRorkRrtpgDixB7XImri5OC4Rykp1q93l1bDDyYU=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=pcg1bHC1Z2DASpuAe678wbG2I95Unqb1w9un7phbNKO6BxJc1VJDvUtmilQLwuDWa
+ VrXdwHKfg6tVDkQFCw+w0ww9bZvtEyqxZW28/RW4xNoTZ6d5Cnhc9myoO6V86E3cuF
+ vIMp9VR0FulJ4JVnAx8J54XQbn0vdmZbF/kWBLOM=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 4.19 122/209] soc: fsl: bman_portals: defer probe
+ after bman's probe
+Date: Tue, 12 Nov 2019 20:48:58 -0500
+Message-Id: <20191113015025.9685-122-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191113015025.9685-1-sashal@kernel.org>
+References: <20191113015025.9685-1-sashal@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <VI1PR04MB702331A22024C6EDB57AC840EE770@VI1PR04MB7023.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA02TbUxTZxTHfdr70hIqd0XGY+O2cpdlGQmlBSsPUwxGt90MY0jYzLasYzfl
- Bhr6lt6iuH0YLrw2bMNM3KwiddhZC8mkdIpIwywVERwCC8ysY5LADDGjiB0LOMW1vS7h2++c
- /M85z/88ORKxfIBUSAxmO2czs0aaSMIuDb6WncV/NKpTrzVRKDj0I4lWRkcA+n7yOkB/t/aJ
- 0dzdMECXT+pRe2gMR909YQx9E/ARyNt6BUO3b18k0c+f/0Uiz8wyjnxz0zhabv4DR45HF8Qo
- +kUIIPevEyI07TmGo+jFOYAmRt5A4aMeAnWOXSPQrdFJHNUFQiRyBJ8QaH26G0ML/nTUvcIU
- vsC0OjyA6TrTBZilO3Ukc6pmAmNcvirG520imN+n+wmm59xnTHekV8Rci/SLmK+eqJlHg2mM
- f6oBY770ewET9b1YnPJB5a4Kji3jbErOrLeUGczlBXRRSeneUu0OtSZLk4/yaKWZNXEF9L79
- xVlvGoyx9dDKQ6yxKpYqZnmezt69y2apsnPKCgtvL6A5a5nRmm9V8ayJrzKXq/QW0+satTpH
- GxN+XFnhDc1iVuf71TML5/AaMPyWA0glkNoO79eOYg6QJJFTvQA2RZdFQvAQwDr/OhCCfwBs
- XF0jHUCSKHEsJgv5AID1Z4dAvJWcWgLwxt2iOKdSJfBp/VKi0xbqPICu3kAiEFPjEnja3SKK
- qwgqEw4s3CHinEJlwKnVuUQnGbUbDrR9h8UZo16BJx50YvHJadR7cHSFFSTPwZsn5xMSKaWD
- natuPM5iSgXvjTgxgdPhb/PtIoFfgpcXT4vjb4DULQm82n8cCAvYB121i7jAqfD+DT8psAJG
- IwFC4E/hhZshQihuBNA/MP6sIBcOuL8WCZwBr/zbBoRpm2FkpRkX1iWDjfVyQfIy/GV25pl8
- K+xoaCJaAO3c4Me5wYNzgwfnBg8ugHnB85yVN5VzvMaq3fjfPpA4nsz8XjA0tj8IKAmgk2Xw
- 7IhOjrOH+COmIIASMb1F1ls9rJPLytgjn3A2S6mtysjxQaCNrfuYWJGmt8RO0Wwv1WhzcnNz
- 0XbNDq1GQ6fL9px36+RUOWvnKjnOytn+rxNJpIoaMLiz7fD6wfYTmwojfamrrxaqHK6xnAwF
- 8+62Bm2mM+3S8JnkEtNjZXhvIKR/uvNh/uzWqQONeeF7Rdd/GKpu1ndte6fm7ZT6vp5xT/af
- 0s4pAxnSNX8rIw9i9bMH9kzWkosfqgJJLZG8tVrDZJi6anrc8VP0eNbRTdKO+QebU02HaYyv
- YDWZYhvP/gf1JHJKUgQAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA02SXUhTYRjHe3c+dlytTpviq5LhyItGlkLEexERRHW6icKCvpateZiWm2Nn
- mlaQRmpbpQWZuDR1rlqbiU5NK0XcNMxP5sdaaRaoJJKaLckKrTYLdvd7/s/vD8/FQ2EiCxFO
- Jat1rFYtT5GQAvyZUxIZoz3dLYsdtcUgx6sGPlro7gLo0UAHQN8KX2Bo/MMIQI3FClTW3keg
- 2roRHBW12ElkLXyOo/7+Gj7qvfqZjyzv5wlkH3cTaP7mGIEMP59gyHurHaCHb1w85LbcIZC3
- ZhwgV9deNJJtIZGtr41EPd0DBMppaecjg2OJRMvuWhxN1Yei2gVm9wam0GABTNWDKsDMeXL4
- zP0sF86U29MYu1VPMqPuZpKpM19hamebeEzbbDOPKViKZX46Q5j64Tycya+3AsZrjzy07oRg
- ZyKbkpzOarftOiNIsrZ/xDXG4xnvp8xEFujcbwAUBent0DCzxgAElIh+CaDe9ZQwgKC/eRi8
- 5+rAVhwxdDq5FWcGwC93fvB9jpiOh79z53i+RTD9GEBnQzHuGzB6iILXS6ykzxLR0zy4YE/w
- MUlLYeuUx5+vo6Pg8OI48LGQ3gVbS024j3E6Gt77YvNzCH0Mfmr0/HPWw9fFE/48iJZB2+JD
- /6UYvQXmeit4KxwK302U/eONsHGmBLsNxMaAujGgYgyoGAMq5QC3gjBWw6mUKi5OE6dmL2zl
- 5CouTa3cqkhV2YH/f6Sbm8CgOcEBaApI1ghhRZdMRMjTuUyVA0AKkwQLmzI6ZSJhojzzIqtN
- TdCmpbCcA0RQuCRUOKl+dVxEK+U69jzLaljt/y2PCgrPApdM39vyDmjch0MjgmMLhsKBdFOl
- fFCx/ytet1uszDHl94g3HSnKyu+ob15yVq/a8dicfW3s7eqTM3ume3VBSVTXwUSX0tu3zVah
- KOueqzbNXa+siNavPTdpMd3QEZ6jV6JsnSfv9se3PdIH70s1qn9Ft147ay05tfrycnxUaf55
- Cc4lyeOkmJaT/wGO9mP2OwMAAA==
-X-CMS-MailID: 20191113013754epcas1p19c6ce750ffb6b8f896852b492970bf9c
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191108224023epcas1p43cb02d83f5d9b8d8774405dcea03530f
-References: <cover.1573252696.git.leonard.crestez@nxp.com>
- <CGME20191108224023epcas1p43cb02d83f5d9b8d8774405dcea03530f@epcas1p4.samsung.com>
- <a25094eac4c0f740e0e33c04af699b39a4226a08.1573252696.git.leonard.crestez@nxp.com>
- <59f37128-45e8-763d-dd48-32baa864d2a6@samsung.com>
- <VI1PR04MB702331A22024C6EDB57AC840EE770@VI1PR04MB7023.eurprd04.prod.outlook.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_173804_023628_765F7162 
-X-CRM114-Status: GOOD (  35.67  )
+X-CRM114-CacheID: sfid-20191112_175346_285902_F397FEB1 
+X-CRM114-Status: GOOD (  11.72  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.25 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -154,357 +80,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Matthias Kaehlcke <mka@chromium.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Martin Kepplinger <martink@posteo.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
+Cc: Sasha Levin <sashal@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Leonard,
+From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
 
-On 11/12/19 10:17 PM, Leonard Crestez wrote:
-> On 11.11.2019 07:13, Chanwoo Choi wrote:
->> Hi Leonard,
->>
->> On 11/9/19 7:39 AM, Leonard Crestez wrote:
->>> The imx8m ddrc has a performance monitoring block attached which can
->>> be used to measure bandwidth usage and automatically adjust frequency.
->>>
->>> There is already a perf driver for that block so instead of implementing
->>> a devfreq events driver use the in-kernel perf API to implement
->>> get_dev_status directly.
->>>
->>> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
->>> ---
->>>   drivers/devfreq/imx8m-ddrc.c | 153 +++++++++++++++++++++++++++++++++++
->>>   1 file changed, 153 insertions(+)
->>>
->>> diff --git a/drivers/devfreq/imx8m-ddrc.c b/drivers/devfreq/imx8m-ddrc.c
->>> index 51903fee21a7..6372191f72d7 100644
->>> --- a/drivers/devfreq/imx8m-ddrc.c
->>> +++ b/drivers/devfreq/imx8m-ddrc.c
->>> @@ -11,10 +11,13 @@
->>>   #include <linux/pm_opp.h>
->>>   #include <linux/clk.h>
->>>   #include <linux/clk-provider.h>
->>>   #include <linux/arm-smccc.h>
->>>   
->>> +#include <asm/perf_event.h>
->>> +#include <linux/perf_event.h>
->>> +
->>>   #define IMX_SIP_DDR_DVFS			0xc2000004
->>>   
->>>   /* Values starting from 0 switch to specific frequency */
->>>   #define IMX_SIP_DDR_FREQ_SET_HIGH		0x00
->>>   
->>> @@ -78,10 +81,22 @@ struct imx8m_ddrc {
->>>   	struct clk *dram_alt;
->>>   	struct clk *dram_apb;
->>>   
->>>   	int freq_count;
->>>   	struct imx8m_ddrc_freq freq_table[IMX8M_DDRC_MAX_FREQ_COUNT];
->>> +
->>> +	/* For measuring load with perf events: */
->>> +	struct platform_device *pmu_pdev;
->>> +	struct pmu *pmu;
->>> +
->>> +	struct perf_event_attr rd_event_attr;
->>> +	struct perf_event_attr wr_event_attr;
->>> +	struct perf_event *rd_event;
->>> +	struct perf_event *wr_event;
->>> +
->>> +	u64 last_rd_val, last_rd_ena, last_rd_run;
->>> +	u64 last_wr_val, last_wr_ena, last_wr_run;
->>>   };
->>>   
->>>   static struct imx8m_ddrc_freq *imx8m_ddrc_find_freq(struct imx8m_ddrc *priv,
->>>   						    unsigned long rate)
->>>   {
->>> @@ -245,10 +260,131 @@ static int imx8m_ddrc_get_cur_freq(struct device *dev, unsigned long *freq)
->>>   	*freq = clk_get_rate(priv->dram_core);
->>>   
->>>   	return 0;
->>>   }
->>>   
->>> +static int imx8m_ddrc_get_dev_status(struct device *dev,
->>> +				     struct devfreq_dev_status *stat)
->>> +{
->>> +	struct imx8m_ddrc *priv = dev_get_drvdata(dev);
->>> +
->>> +	stat->current_frequency = clk_get_rate(priv->dram_core);
->>> +
->>> +	if (priv->rd_event && priv->wr_event) {
->>> +		u64 rd_delta, rd_val, rd_ena, rd_run;
->>> +		u64 wr_delta, wr_val, wr_ena, wr_run;
->>> +
->>> +		rd_val = perf_event_read_value(priv->rd_event,
->>> +					       &rd_ena, &rd_run);
->>> +		wr_val = perf_event_read_value(priv->wr_event,
->>> +					       &wr_ena, &wr_run);
->>> +
->>> +		rd_delta = (rd_val - priv->last_rd_val) *
->>> +			   (rd_ena - priv->last_rd_ena);
->>> +		do_div(rd_delta, rd_run - priv->last_rd_run);
->>> +		priv->last_rd_val = rd_val;
->>> +		priv->last_rd_ena = rd_ena;
->>> +		priv->last_rd_run = rd_run;
->>> +
->>> +		wr_delta = (wr_val - priv->last_wr_val) *
->>> +			   (wr_ena - priv->last_wr_ena);
->>> +		do_div(wr_delta, wr_run - priv->last_wr_run);
->>> +		priv->last_wr_val = wr_val;
->>> +		priv->last_wr_ena = wr_ena;
->>> +		priv->last_wr_run = wr_run;
->>> +
->>> +		/* magic numbers, possibly wrong */
->>> +		stat->busy_time = 4 * (rd_delta + wr_delta);
->>> +		stat->total_time = stat->current_frequency;
->>> +	} else {
->>> +		stat->busy_time = 0;
->>> +		stat->total_time = 0;
->>> +	}
->>> +
->>> +	return 0;
->>> +}
->>> +
->>> +static int imx8m_ddrc_perf_disable(struct imx8m_ddrc *priv)
->>> +{
->>> +	/* release and set to NULL */
->>> +	if (!IS_ERR_OR_NULL(priv->rd_event))
->>> +		perf_event_release_kernel(priv->rd_event);
->>> +	if (!IS_ERR_OR_NULL(priv->wr_event))
->>> +		perf_event_release_kernel(priv->wr_event);
->>> +	priv->rd_event = NULL;
->>> +	priv->wr_event = NULL;
->>> +
->>> +	return 0;
->>> +}
->>> +
->>> +static int imx8m_ddrc_perf_enable(struct imx8m_ddrc *priv)
->>
->> Actually, this function have to call the just function for enabling
->> the bandwidth monitoring instead of writing the detailed something.
->> It looks like that you move the part of the different device driver into here.
-> 
-> This is the code for enabling bandwith monitoring: it creates perf 
-> counters using in-kernel API. The perf api doesn't seem to expose 
-> anything else to enable/disable the counter after creation and honestly 
-> just create/destroy seems fine.
-> 
-> As far as I can tell bandwidth monitoring in devfreq is always enabled 
-> on probe anyway, no matter which governor is in use. It would be nice if 
-> devfreq drivers could receive a callback and dynamically acquire/release 
-> monitoring resources only when the ondemand governor is in used.
+[ Upstream commit e0940b34c40e95d1879691d2474d182c57aae0de ]
 
-As you commented, it doesn't matter to keep the enabling state of perf.
-Just, I want to say that I think that it is not proper to access
-the different device driver directly without any standard subsystem interface.
+A crash in bman portal probing could not be triggered (as is the case
+with qman portals) but it does make calls [1] into the bman driver so
+lets make sure the bman portal probing happens after bman's.
 
-> 
-> Until then this driver will permanently allocate 2 (out of 3) counters 
-> in ddr pmu hardware.
-> 
->>> +{
->>> +	int ret;
->>> +
->>> +	priv->rd_event_attr.size = sizeof(priv->rd_event_attr);
->>> +	priv->rd_event_attr.type = priv->pmu->type;
->>> +	priv->rd_event_attr.config = 0x2a;
->>> +
->>> +	priv->rd_event = perf_event_create_kernel_counter(
->>> +			&priv->rd_event_attr, 0, NULL, NULL, NULL);
->>> +	if (IS_ERR(priv->rd_event)) {
->>> +		ret = PTR_ERR(priv->rd_event);
->>> +		goto err;
->>> +	}
->>> +
->>> +	priv->wr_event_attr.size = sizeof(priv->wr_event_attr);
->>> +	priv->wr_event_attr.type = priv->pmu->type;
->>> +	priv->wr_event_attr.config = 0x2b;
->>> +
->>> +	priv->wr_event = perf_event_create_kernel_counter(
->>> +			&priv->wr_event_attr, 0, NULL, NULL, NULL);
->>> +	if (IS_ERR(priv->wr_event)) {
->>> +		ret = PTR_ERR(priv->wr_event);
->>> +		goto err;
->>> +	}
->>> +
->>> +	return 0;
->>> +
->>> +err:
->>> +	imx8m_ddrc_perf_disable(priv);
->>> +	return ret;
->>> +}
->>> +
->>> +static int imx8m_ddrc_init_events(struct device *dev,
->>> +				  struct device_node *events_node)
->>
->> ditto.
->>
->>> +{
->>> +	struct imx8m_ddrc *priv = dev_get_drvdata(dev);
->>> +	struct device_driver *driver;
->>> +
->>> +	/*
->>> +	 * We need pmu->type for perf_event_attr but there is no API for
->>> +	 * mapping device_node to pmu. Fetch private data for imx-ddr-pmu and
->>> +	 * cast that to a struct pmu instead.
->>> +	 */
->>> +	priv->pmu_pdev = of_find_device_by_node(events_node);
->>> +	if (!priv->pmu_pdev)
->>> +		return -EPROBE_DEFER;
->>> +	driver = priv->pmu_pdev->dev.driver;
->>> +	if (!driver)
->>> +		return -EPROBE_DEFER;
->>> +	if (strcmp(driver->name, "imx-ddr-pmu")) {
->>> +		dev_warn(dev, "devfreq-events node %pOF has unexpected driver %s\n",
->>> +				events_node, driver->name);
->>> +		return -ENODEV;
->>> +	}
->>> +
->>> +	priv->pmu = platform_get_drvdata(priv->pmu_pdev);
->>
->> It seems that you access the different device driver without
->> any standard interface from some linux kernel subsystem.
->>
->> For the communication or control between different device drivers,
->> we have to use the standard interface instead of direct access or call.
->> I think that it make it too tightly coupled driver between them.
->>
->> So, I developed the devfreq-event subsystem for this reason
->> in order to remove the non-standard direct access to other device driver.
->>
->> Unfortunately, I can't agree this approach. I don't prefer to use
->> the direct access of other device driver(imx-ddr-pmu). You need to
->> use standard interface provided from subsystem. or You need to make
->> the new device driver with devfreq-event subsystem.
-> 
-> This could be cleaned-up by adding a new API to "fetch struct pmu* by 
-> struct device_node*" as available for many other subsystems.
+[1]  bman_p_irqsource_add() (in bman) called by:
+       init_pcfg() called by:
+         bman_portal_probe()
 
-OK. I'll expect the next version with keeping the rule without
-any direct access between two device drivers.
+Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Signed-off-by: Li Yang <leoyang.li@nxp.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/soc/fsl/qbman/bman_portal.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
 
- The perf 
-> api is otherwise standard/generic and has a few other in-kernel users.
-
-> 
-> The perf driver for DDR PMU is already functional and useful for 
-> profiling and reusing it seem very worthwhile. If you're suggesting I 
-> implemented an unrelated "devfreq-event" driver then how would it get 
-> probed? There's only one PMU node in DT.
-
-No, I don't force to develop the new devfreq-event instead of exiting perf driver.
-As I said already,I think that it is not proper to access the different device driver
-directly without any standard subsystem interface.
-
-The following style access is not safe. Any device driver might change
-the platform data of the other device driver. 
-	priv->pmu = platform_get_drvdata(priv->pmu_pdev);
-
-If you support this patch with standard subsystem interface, I'm OK.
-Just, I don't want to access the data of different device driver.
-
-> 
-> I wouldn't mind to delay the monitoring part into a second series.
-> 
->>> +	if (!priv->pmu) {
->>> +		dev_err(dev, "devfreq-events device missing private data\n");
->>> +		return -EINVAL;
->>> +	}
->>> +
->>> +	dev_dbg(dev, "events from pmu %s\n", priv->pmu->name);
->>> +
->>> +	return imx8m_ddrc_perf_enable(priv);
->>> +}
->>> +
->>>   static int imx8m_ddrc_init_freq_info(struct device *dev)
->>>   {
->>>   	struct imx8m_ddrc *priv = dev_get_drvdata(dev);
->>>   	struct arm_smccc_res res;
->>>   	int index;
->>> @@ -328,17 +464,23 @@ static int imx8m_ddrc_check_opps(struct device *dev)
->>>   	return 0;
->>>   }
->>>   
->>>   static void imx8m_ddrc_exit(struct device *dev)
->>>   {
->>> +	struct imx8m_ddrc *priv = dev_get_drvdata(dev);
->>> +
->>> +	imx8m_ddrc_perf_disable(priv);
->>> +	platform_device_put(priv->pmu_pdev);
->>> +
->>>   	dev_pm_opp_of_remove_table(dev);
->>>   }
->>>   
->>>   static int imx8m_ddrc_probe(struct platform_device *pdev)
->>>   {
->>>   	struct device *dev = &pdev->dev;
->>>   	struct imx8m_ddrc *priv;
->>> +	struct device_node *events_node;
->>>   	const char *gov = DEVFREQ_GOV_USERSPACE;
->>>   	int ret;
->>>   
->>>   	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
->>>   	if (!priv)
->>> @@ -350,10 +492,19 @@ static int imx8m_ddrc_probe(struct platform_device *pdev)
->>>   	if (ret) {
->>>   		dev_err(dev, "failed to init firmware freq info: %d\n", ret);
->>>   		return ret;
->>>   	}
->>>   
->>> +	events_node = of_parse_phandle(dev->of_node, "devfreq-events", 0);
->>> +	if (events_node) {
->>> +		ret = imx8m_ddrc_init_events(dev, events_node);
->>> +		of_node_put(events_node);
->>> +		if (ret)
->>> +			goto err;
->>> +		gov = DEVFREQ_GOV_SIMPLE_ONDEMAND;
->>> +	}
->>> +
->>>   	priv->dram_core = devm_clk_get(dev, "core");
->>>   	priv->dram_pll = devm_clk_get(dev, "pll");
->>>   	priv->dram_alt = devm_clk_get(dev, "alt");
->>>   	priv->dram_apb = devm_clk_get(dev, "apb");
->>>   	if (IS_ERR(priv->dram_core) ||
->>> @@ -390,10 +541,12 @@ static int imx8m_ddrc_probe(struct platform_device *pdev)
->>>   	}
->>>   
->>>   	return 0;
->>>   
->>>   err:
->>> +	imx8m_ddrc_perf_disable(priv);
->>> +	platform_device_put(priv->pmu_pdev);
->>>   	dev_pm_opp_of_remove_table(dev);
->>>   	return ret;
->>>   }
->>>   
->>>   static const struct of_device_id imx8m_ddrc_of_match[] = {
-> 
-> 
-
-
+diff --git a/drivers/soc/fsl/qbman/bman_portal.c b/drivers/soc/fsl/qbman/bman_portal.c
+index 2f71f7df3465a..f9edd28894fda 100644
+--- a/drivers/soc/fsl/qbman/bman_portal.c
++++ b/drivers/soc/fsl/qbman/bman_portal.c
+@@ -91,7 +91,15 @@ static int bman_portal_probe(struct platform_device *pdev)
+ 	struct device_node *node = dev->of_node;
+ 	struct bm_portal_config *pcfg;
+ 	struct resource *addr_phys[2];
+-	int irq, cpu;
++	int irq, cpu, err;
++
++	err = bman_is_probed();
++	if (!err)
++		return -EPROBE_DEFER;
++	if (err < 0) {
++		dev_err(&pdev->dev, "failing probe due to bman probe error\n");
++		return -ENODEV;
++	}
+ 
+ 	pcfg = devm_kmalloc(dev, sizeof(*pcfg), GFP_KERNEL);
+ 	if (!pcfg)
 -- 
-Best Regards,
-Chanwoo Choi
-Samsung Electronics
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
