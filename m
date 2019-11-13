@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27B6BFB450
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 16:53:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C2EEFB455
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 16:53:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WmzlLtuAJjw+O8jvKm8AEzP5aTTQP9w7zq/4MwLfcqQ=; b=TadcgmKzZw1B5z
-	UyXLKI25NCxHrat7lfsJSmF2Otcs1JH88ZDMpxqvezyDT2vk7+MQXB/97bT77jk6EYHIiG6whK0TJ
-	ImhEMbKjgVLLfILoRg6b6RZVZyBwiRbaQk4E+Px26xW4IoY3Wb3KG1j7ksDNMmtnezRwWkmFK7tpz
-	OarHmrFCHG5eUIrftRFjHrJJamKXSaagyE6runqe2caKwwgkufEVZtKFFYqDQmeHwe3b/vLYUzgJ9
-	A0aMi9ysUgQHgg+wHWUXKFcEw2f54RGuMvriB9sbPPqE6OHMf2fUvOJkxX80Ff46wTnJOLHJV+HyZ
-	MpVwLx7k2gUxEQ/RcjYQ==;
+	List-Owner; bh=HgCsaKkaNDEBxTxQZ823HUUp3mXvhaei7yPENtfzXr0=; b=mrpUWlJGK+OSdP
+	id8ziNxt7i/MECRZKae0hPjtvIbwaSrEzQJpI+OAWLEEy9nLaqWreyFlJIiv3ywUe7e3khhlRkchX
+	rwJU3appd/knRUFpTAZpRnOLjHbma+We+8kyyjChQHOXdQiZJJcCkMtqlg5t7fMfVDxsgzKrVTdpA
+	ddB1rLl1veKAQtBq6wNLRqcACc72znPg7IvdRy0vbOftq+PUyEEA79cC1bDACkxAj6J1A9I+hSyTz
+	0EyPYJ5GfFQMZIfn4ntWl9YqvQ9POnBfgbNoGVclGWGskOYBXUbJkSfBGlbr6Rpcde0oIfJKJCNyE
+	zKpxOThytQM7G0NNtnbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUuxK-0004k8-Ug; Wed, 13 Nov 2019 15:53:18 +0000
+	id 1iUuxi-00058l-6Z; Wed, 13 Nov 2019 15:53:42 +0000
 Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUux6-0004i3-G7
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 15:53:05 +0000
+ id 1iUux7-0004i6-8l
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 15:53:07 +0000
 Received: from localhost (unknown [127.0.0.1])
- by mta-01.yadro.com (Postfix) with ESMTP id E46E9411D9;
- Wed, 13 Nov 2019 15:53:00 +0000 (UTC)
+ by mta-01.yadro.com (Postfix) with ESMTP id 20344412D2;
+ Wed, 13 Nov 2019 15:53:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
  content-type:content-type:content-transfer-encoding:mime-version
  :references:in-reply-to:x-mailer:message-id:date:date:subject
  :subject:from:from:received:received:received; s=mta-01; t=
- 1573660379; x=1575474780; bh=GLiHq3+6zZ2/iuahpZbFing2AcId/JGBvnZ
- w1df2dRQ=; b=HWXT7pWjLE0hc3scN76DKxhqlD8EaqQEJE3vDvCj1KEfMrSRIas
- sNDmO9bJCGuIg4Q5iKva6lflSFsfmq4orQwZ7yXbYXrXcpxbiJ+ktOTwMHLg69jB
- cAvvAQIQ8v82L7O6E1H8oFs41Orn6eqZfUVy2ygBSt8VqIYN6hXVo5QE=
+ 1573660380; x=1575474781; bh=u6VsNH8spieqcZMUkwhitlLPwcJWZA6GXjz
+ wh0sgyTs=; b=Lsyan+DYpW6IleLOjFmf3XpEK9zYBKXdYEnzmDUPEQS42b9Tiby
+ hkzVq2+4LuGLOW1Wh3/0ge3qIJZj2e20aqG4D2iugnJ7fbfcAmdlUzKXzukxNb3x
+ kFmSghKapTW9B5iuXXBpLI9qeSpr6Ktkp/JHTh3TJzOBpr/uEcCauUOk=
 X-Virus-Scanned: amavisd-new at yadro.com
 Received: from mta-01.yadro.com ([127.0.0.1])
  by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id SXm_l-p363AT; Wed, 13 Nov 2019 18:52:59 +0300 (MSK)
+ with ESMTP id 5Lco3oJBrAxV; Wed, 13 Nov 2019 18:53:00 +0300 (MSK)
 Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
  [172.17.10.102])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mta-01.yadro.com (Postfix) with ESMTPS id 0B1A1412D2;
+ by mta-01.yadro.com (Postfix) with ESMTPS id 4CECE42F12;
  Wed, 13 Nov 2019 18:52:59 +0300 (MSK)
 Received: from localhost.dev.yadro.com (172.17.15.69) by
  T-EXCH-02.corp.yadro.com (172.17.10.102) with Microsoft SMTP Server
@@ -50,9 +50,9 @@ Received: from localhost.dev.yadro.com (172.17.15.69) by
  15.1.669.32; Wed, 13 Nov 2019 18:52:53 +0300
 From: Ivan Mikhaylov <i.mikhaylov@yadro.com>
 To: 
-Subject: [PATCH 1/2] aspeed: dts: add sd card for vesnin
-Date: Wed, 13 Nov 2019 18:52:36 +0300
-Message-ID: <20191113155237.30646-2-i.mikhaylov@yadro.com>
+Subject: [PATCH 2/2] mmc: sdhci-of-aspeed: add inversion signal presence
+Date: Wed, 13 Nov 2019 18:52:37 +0300
+Message-ID: <20191113155237.30646-3-i.mikhaylov@yadro.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191113155237.30646-1-i.mikhaylov@yadro.com>
 References: <20191113155237.30646-1-i.mikhaylov@yadro.com>
@@ -61,9 +61,8 @@ X-Originating-IP: [172.17.15.69]
 X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
  T-EXCH-02.corp.yadro.com (172.17.10.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_075304_721885_B16C6109 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191113_075305_672159_B7A8960C 
+X-CRM114-Status: GOOD (  11.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -101,33 +100,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Presence signal is inverted for vesnin boards, 'cd-inverted' added
-for invertion signal enablement. Vesnin BMC uses microSD, there is
-no WP switch, 'disable-wp' is used for this purpose.
+Change the default .get_cd callback. Add inverted signal card detection
+check.
 
 Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
 
-diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-index a27c88d23056..7ae3436e0d99 100644
---- a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-@@ -232,3 +232,16 @@
- &wdt2 {
- 	aspeed,alt-boot;
+diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
+index 8962f6664381..8eded8a6ed8d 100644
+--- a/drivers/mmc/host/sdhci-of-aspeed.c
++++ b/drivers/mmc/host/sdhci-of-aspeed.c
+@@ -31,6 +31,7 @@ struct aspeed_sdc {
+ struct aspeed_sdhci {
+ 	struct aspeed_sdc *parent;
+ 	u32 width_mask;
++	u8 cd_inverted;
  };
+ 
+ static void aspeed_sdc_configure_8bit_mode(struct aspeed_sdc *sdc,
+@@ -143,6 +144,21 @@ static inline int aspeed_sdhci_calculate_slot(struct aspeed_sdhci *dev,
+ 	return (delta / 0x100) - 1;
+ }
+ 
++static int aspeed_get_cd(struct mmc_host *mmc)
++{
++	struct aspeed_sdhci *aspeed_sdhci;
++	struct sdhci_pltfm_host *pltfm_priv;
++	struct sdhci_host *host = mmc_priv(mmc);
 +
-+&sdmmc {
-+	status = "okay";
-+};
++	int presence = !!(sdhci_readl(host, SDHCI_PRESENT_STATE)
++			 & SDHCI_CARD_PRESENT);
 +
-+&sdhci1 {
-+	status = "okay";
++	pltfm_priv = sdhci_priv(host);
++	aspeed_sdhci = sdhci_pltfm_priv(pltfm_priv);
 +
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_sd2_default>;
-+	cd-inverted;
-+	disable-wp;
-+};
++	return presence ^ aspeed_sdhci->cd_inverted;
++}
++
+ static int aspeed_sdhci_probe(struct platform_device *pdev)
+ {
+ 	struct sdhci_pltfm_host *pltfm_host;
+@@ -183,6 +199,13 @@ static int aspeed_sdhci_probe(struct platform_device *pdev)
+ 		goto err_pltfm_free;
+ 	}
+ 
++	dev->cd_inverted = 0;
++	host->mmc_host_ops.get_cd = aspeed_get_cd;
++	if (of_property_read_bool(pdev->dev.of_node, "cd-inverted")) {
++		dev->cd_inverted = 1;
++		dev_info(&pdev->dev, "aspeed: sdhci: presence signal inversion enabled\n");
++	}
++
+ 	ret = mmc_of_parse(host->mmc);
+ 	if (ret)
+ 		goto err_sdhci_add;
 -- 
 2.20.1
 
