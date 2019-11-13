@@ -2,54 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FA36FB65D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 18:24:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DB08FB665
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 18:25:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LV6+xGI9crPn+JgBLB5jn1oZlZs1MH0AKa/xGkpCGdE=; b=BZB9x+piZAD22O
-	NWzxPs2pChuA4wY90tQKLpDz4/2GyUOMq6nYRphr8iKzQoODZm/Oku9ggen2eMSgZeOXb9fSou05E
-	2e/kFY3368q10Yelk05zYUIC0jAOdfkwadytt15XCv9441pb2gslPQfhdzEvRMx7GSWIFW4REXPtc
-	uRpEemik7baHStmsKB90sc+0jT7+nhAqa2t92oUkGoT3RNJG3KIh1YGxv8cfdthoCqhSaxsC+54Jn
-	cOD3wtd4pkADG4Y8Tei/yiCimaL5g94Q1hjsXViLMxWVUpm+uoHy9+iIrJNETHhDurYAsRzjG5w+8
-	eRNLl8u30Yq0zC/qqyAw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KKKo9nC7LD6zZpdjp6cc9fphykRI7Lvhh8u4wuYy9bE=; b=rzyMS7PVGSXkJm
+	jfztN0QrvvTpVxXjV/yCGDwHOwl8dO5wDa51SHD8sN5VGifNerIeqb6XB6LkTjDmfUMliLK/0RQb3
+	kDP9JRRRdV47CRvRMwAd6KpIwUuDBW1jn6aPenzjmR4zTpwW0gYutMSEzLQwMAKilhFtwgo78slzG
+	f9qYOtWY1NOZBAp08dA7UkG9OGe8Qcy8pLFm39nUht3piPgOzVbzMhOUF9mtH5pkgkEpd+mwRu2Zj
+	W87dGFausOHVfidV/lumHz1hp4tXpHUjYzG5a77lotrdOG2ctRIFRvZr62i5+2jsaXmzQNf/+8FLW
+	qMu4+aNJgCkkTqz1h01g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUwN4-0005Xq-8D; Wed, 13 Nov 2019 17:23:58 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUwME-0004yM-SV
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 17:23:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 572517A7;
- Wed, 13 Nov 2019 09:23:06 -0800 (PST)
-Received: from e112269-lin.cambridge.arm.com (e112269-lin.cambridge.arm.com
- [10.1.194.43])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 034EC3F534;
- Wed, 13 Nov 2019 09:23:04 -0800 (PST)
-From: Steven Price <steven.price@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
- Will Deacon <will@kernel.org>
-Subject: [PATCH v3 3/3] arm64: Workaround for Cortex-A55 erratum 1530923
-Date: Wed, 13 Nov 2019 17:22:52 +0000
-Message-Id: <20191113172252.12610-4-steven.price@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191113172252.12610-1-steven.price@arm.com>
-References: <20191113172252.12610-1-steven.price@arm.com>
+	id 1iUwOq-0007Dr-Lt; Wed, 13 Nov 2019 17:25:48 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUwOd-0007DH-Nb
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 17:25:41 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xADHMA1i002755; Wed, 13 Nov 2019 18:25:29 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=8jtImWavCrw85wxjiK84rn3kDNWNi5jgBLEtUg33Spo=;
+ b=XHQBKkOM82F7cd0cUFcxuRXBJxe+owe/lgMT1KfYbk40byD1Xl9Bm0qZadrWGqwOgDQS
+ 7TQ4GGkDrSYy8+i/G8Y89p10QQpznyl3pOIEEAN/tdZK0Wi85+5wen3kHRJLzcGoso5N
+ zMXTS4+oRUMxdo7Tq14aGPlD0161SdB7rA96dSpflsiL/2OVbViOYkRY9Y2ASucsjbeT
+ sDLx3rh4EAzI7W9UnulU5vSeHeSre0V5WXwiovLORWc6ct116U3jmFDt6+pHcvFVS/Yr
+ nbClOJFbIgF+w7CqLMTO+2llSeZEnGjbsacGAO9Y3iHA3sSEnfnt1zOApjPtXbjkZWXV 2A== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2w7psb9g09-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 13 Nov 2019 18:25:29 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7393910002A;
+ Wed, 13 Nov 2019 18:25:28 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 613B12BA7D0;
+ Wed, 13 Nov 2019 18:25:28 +0100 (CET)
+Received: from lmecxl0923.lme.st.com (10.75.127.47) by SFHDAG6NODE1.st.com
+ (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 13 Nov
+ 2019 18:25:27 +0100
+From: Ludovic Barre <ludovic.Barre@st.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH 1/1] mmc: mmci: add threaded irq to abort DPSM of
+ non-functional state
+Date: Wed, 13 Nov 2019 18:25:14 +0100
+Message-ID: <20191113172514.19052-1-ludovic.Barre@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG6NODE1.st.com
+ (10.75.127.16)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-13_04:2019-11-13,2019-11-13 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_092307_030182_CC06A11B 
-X-CRM114-Status: GOOD (  14.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191113_092539_314339_26D37791 
+X-CRM114-Status: GOOD (  18.18  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,143 +91,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ srinivas.kandagatla@linaro.org, Ludovic Barre <ludovic.barre@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cortex-A55 erratum 1530923 allows TLB entries to be allocated as a
-result of a speculative AT instruction. This may happen in the middle of
-a guest world switch while the relevant VMSA configuration is in an
-inconsistent state, leading to erroneous content being allocated into
-TLBs.
+From: Ludovic Barre <ludovic.barre@st.com>
 
-The same workaround as is used for Cortex-A76 erratum 1165522
-(WORKAROUND_SPECULATIVE_AT_NVE) can be used here. Note that this
-mandates the use of VHE on affected parts.
+If datatimeout occurs on R1B request, the Data Path State Machine stays
+in busy and is non-functional. Only a reset aborts the DPSM.
 
-Signed-off-by: Steven Price <steven.price@arm.com>
+Like a reset must be outside of critical section, this patch adds
+threaded irq function to release state machine. In this case,
+the mmc_request_done is called at the end of threaded irq and
+skipped into irq handler.
+
+Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
 ---
- Documentation/arm64/silicon-errata.rst |  2 ++
- arch/arm64/Kconfig                     | 13 +++++++++++++
- arch/arm64/include/asm/kvm_hyp.h       |  4 ++--
- arch/arm64/kernel/cpu_errata.c         |  6 +++++-
- arch/arm64/kvm/hyp/switch.c            |  4 ++--
- arch/arm64/kvm/hyp/tlb.c               |  4 ++--
- 6 files changed, 26 insertions(+), 7 deletions(-)
+ drivers/mmc/host/mmci.c | 44 ++++++++++++++++++++++++++++++++++++-----
+ drivers/mmc/host/mmci.h |  1 +
+ 2 files changed, 40 insertions(+), 5 deletions(-)
 
-diff --git a/Documentation/arm64/silicon-errata.rst b/Documentation/arm64/silicon-errata.rst
-index 899a72570282..b40cb3e0634e 100644
---- a/Documentation/arm64/silicon-errata.rst
-+++ b/Documentation/arm64/silicon-errata.rst
-@@ -88,6 +88,8 @@ stable kernels.
- +----------------+-----------------+-----------------+-----------------------------+
- | ARM            | Cortex-A76      | #1463225        | ARM64_ERRATUM_1463225       |
- +----------------+-----------------+-----------------+-----------------------------+
-+| ARM            | Cortex-A55      | #1530923        | ARM64_ERRATUM_1530923       |
-++----------------+-----------------+-----------------+-----------------------------+
- | ARM            | Neoverse-N1     | #1188873,1418040| ARM64_ERRATUM_1418040       |
- +----------------+-----------------+-----------------+-----------------------------+
- | ARM            | Neoverse-N1     | #1349291        | N/A                         |
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index defb68e45387..d2dd72c19560 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -532,6 +532,19 @@ config ARM64_ERRATUM_1165522
- 
- 	  If unsure, say Y.
- 
-+config ARM64_ERRATUM_1530923
-+	bool "Cortex-A55: Speculative AT instruction using out-of-context translation regime could cause subsequent request to generate an incorrect translation"
-+	default y
-+	select ARM64_WORKAROUND_SPECULATIVE_AT
-+	help
-+	  This option adds a workaround for ARM Cortex-A55 erratum 1530923.
+diff --git a/drivers/mmc/host/mmci.c b/drivers/mmc/host/mmci.c
+index 40e72c30ea84..ec6e249c87ca 100644
+--- a/drivers/mmc/host/mmci.c
++++ b/drivers/mmc/host/mmci.c
+@@ -556,6 +556,9 @@ static void mmci_dma_error(struct mmci_host *host)
+ static void
+ mmci_request_end(struct mmci_host *host, struct mmc_request *mrq)
+ {
++	if (host->irq_action == IRQ_WAKE_THREAD)
++		return;
 +
-+	  Affected Cortex-A55 cores (r0p0, r0p1, r1p0, r2p0) could end-up with
-+	  corrupted TLBs by speculating an AT instruction during a guest
-+	  context switch.
+ 	writel(0, host->base + MMCICOMMAND);
+ 
+ 	BUG_ON(host->data);
+@@ -1321,6 +1324,7 @@ mmci_cmd_irq(struct mmci_host *host, struct mmc_command *cmd,
+ 	} else if (host->variant->busy_timeout && busy_resp &&
+ 		   status & MCI_DATATIMEOUT) {
+ 		cmd->error = -ETIMEDOUT;
++		host->irq_action = IRQ_WAKE_THREAD;
+ 	} else {
+ 		cmd->resp[0] = readl(base + MMCIRESPONSE0);
+ 		cmd->resp[1] = readl(base + MMCIRESPONSE1);
+@@ -1532,9 +1536,9 @@ static irqreturn_t mmci_irq(int irq, void *dev_id)
+ {
+ 	struct mmci_host *host = dev_id;
+ 	u32 status;
+-	int ret = 0;
+ 
+ 	spin_lock(&host->lock);
++	host->irq_action = IRQ_HANDLED;
+ 
+ 	do {
+ 		status = readl(host->base + MMCISTATUS);
+@@ -1574,12 +1578,41 @@ static irqreturn_t mmci_irq(int irq, void *dev_id)
+ 		if (host->variant->busy_detect_flag)
+ 			status &= ~host->variant->busy_detect_flag;
+ 
+-		ret = 1;
+ 	} while (status);
+ 
+ 	spin_unlock(&host->lock);
+ 
+-	return IRQ_RETVAL(ret);
++	return host->irq_action;
++}
 +
-+	  If unsure, say Y.
++/*
++ * mmci_irq_threaded is call if the mmci host need to release state machines
++ * before to terminate the request.
++ * If datatimeout occurs on R1B request, the Data Path State Machine stays
++ * in busy and is non-functional. Only a reset can to abort the DPSM.
++ */
++static irqreturn_t mmci_irq_threaded(int irq, void *dev_id)
++{
++	struct mmci_host *host = dev_id;
++	unsigned long flags;
 +
- config ARM64_ERRATUM_1286807
- 	bool "Cortex-A76: Modification of the translation table for a virtual address might lead to read-after-read ordering violation"
- 	default y
-diff --git a/arch/arm64/include/asm/kvm_hyp.h b/arch/arm64/include/asm/kvm_hyp.h
-index 167a161dd596..a3a6a2ba9a63 100644
---- a/arch/arm64/include/asm/kvm_hyp.h
-+++ b/arch/arm64/include/asm/kvm_hyp.h
-@@ -91,8 +91,8 @@ static __always_inline void __hyp_text __load_guest_stage2(struct kvm *kvm)
- 	write_sysreg(kvm_get_vttbr(kvm), vttbr_el2);
++	if (host->rst) {
++		reset_control_assert(host->rst);
++		udelay(2);
++		reset_control_deassert(host->rst);
++	}
++
++	spin_lock_irqsave(&host->lock, flags);
++	writel(host->clk_reg, host->base + MMCICLOCK);
++	writel(host->pwr_reg, host->base + MMCIPOWER);
++	writel(MCI_IRQENABLE | host->variant->start_err,
++	       host->base + MMCIMASK0);
++
++	host->irq_action = IRQ_HANDLED;
++	mmci_request_end(host, host->mrq);
++	spin_unlock_irqrestore(&host->lock, flags);
++
++	return host->irq_action;
+ }
  
- 	/*
--	 * ARM erratum 1165522 requires the actual execution of the above
--	 * before we can switch to the EL1/EL0 translation regime used by
-+	 * ARM errata 1165522 and 1530923 require the actual execution of the
-+	 * above before we can switch to the EL1/EL0 translation regime used by
- 	 * the guest.
- 	 */
- 	asm(ALTERNATIVE("nop", "isb", ARM64_WORKAROUND_SPECULATIVE_AT_VHE));
-diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
-index c7f1f5398a44..c01e20317394 100644
---- a/arch/arm64/kernel/cpu_errata.c
-+++ b/arch/arm64/kernel/cpu_errata.c
-@@ -749,6 +749,10 @@ static const struct midr_range erratum_speculative_at_vhe_list[] = {
- #ifdef CONFIG_ARM64_ERRATUM_1165522
- 	/* Cortex A76 r0p0 to r2p0 */
- 	MIDR_RANGE(MIDR_CORTEX_A76, 0, 0, 2, 0),
-+#endif
-+#ifdef CONFIG_ARM64_ERRATUM_1530923
-+	/* Cortex A55 r0p0 to r2p0 */
-+	MIDR_RANGE(MIDR_CORTEX_A55, 0, 0, 2, 0),
- #endif
- 	{},
- };
-@@ -880,7 +884,7 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
- #endif
- #ifdef CONFIG_ARM64_WORKAROUND_SPECULATIVE_AT_VHE
- 	{
--		.desc = "ARM erratum 1165522",
-+		.desc = "ARM errata 1165522, 1530923",
- 		.capability = ARM64_WORKAROUND_SPECULATIVE_AT_VHE,
- 		ERRATA_MIDR_RANGE_LIST(erratum_speculative_at_vhe_list),
- 	},
-diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-index 0fc824bdf258..eae08ba82e95 100644
---- a/arch/arm64/kvm/hyp/switch.c
-+++ b/arch/arm64/kvm/hyp/switch.c
-@@ -158,8 +158,8 @@ static void deactivate_traps_vhe(void)
- 	write_sysreg(HCR_HOST_VHE_FLAGS, hcr_el2);
+ static void mmci_request(struct mmc_host *mmc, struct mmc_request *mrq)
+@@ -2071,8 +2104,9 @@ static int mmci_probe(struct amba_device *dev,
+ 			goto clk_disable;
+ 	}
  
- 	/*
--	 * ARM erratum 1165522 requires the actual execution of the above
--	 * before we can switch to the EL2/EL0 translation regime used by
-+	 * ARM errata 1165522 and 1530923 require the actual execution of the
-+	 * above before we can switch to the EL2/EL0 translation regime used by
- 	 * the host.
- 	 */
- 	asm(ALTERNATIVE("nop", "isb", ARM64_WORKAROUND_SPECULATIVE_AT_VHE));
-diff --git a/arch/arm64/kvm/hyp/tlb.c b/arch/arm64/kvm/hyp/tlb.c
-index ff4e73c9bafc..92f560e3e1aa 100644
---- a/arch/arm64/kvm/hyp/tlb.c
-+++ b/arch/arm64/kvm/hyp/tlb.c
-@@ -25,8 +25,8 @@ static void __hyp_text __tlb_switch_to_guest_vhe(struct kvm *kvm,
+-	ret = devm_request_irq(&dev->dev, dev->irq[0], mmci_irq, IRQF_SHARED,
+-			DRIVER_NAME " (cmd)", host);
++	ret = devm_request_threaded_irq(&dev->dev, dev->irq[0], mmci_irq,
++					mmci_irq_threaded, IRQF_SHARED,
++					DRIVER_NAME " (cmd)", host);
+ 	if (ret)
+ 		goto clk_disable;
  
- 	if (cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT_VHE)) {
- 		/*
--		 * For CPUs that are affected by ARM erratum 1165522, we
--		 * cannot trust stage-1 to be in a correct state at that
-+		 * For CPUs that are affected by ARM errata 1165522 or 1530923,
-+		 * we cannot trust stage-1 to be in a correct state at that
- 		 * point. Since we do not want to force a full load of the
- 		 * vcpu state, we prevent the EL1 page-table walker to
- 		 * allocate new TLBs. This is done by setting the EPD bits
+diff --git a/drivers/mmc/host/mmci.h b/drivers/mmc/host/mmci.h
+index 158e1231aa23..5e63c0596364 100644
+--- a/drivers/mmc/host/mmci.h
++++ b/drivers/mmc/host/mmci.h
+@@ -412,6 +412,7 @@ struct mmci_host {
+ 
+ 	struct timer_list	timer;
+ 	unsigned int		oldstat;
++	u32			irq_action;
+ 
+ 	/* pio stuff */
+ 	struct sg_mapping_iter	sg_miter;
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________
