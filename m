@@ -2,83 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE9F1FAA79
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 07:53:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C589AFAAA9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 08:13:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x25PCiI55jXrTfG9L7uSASTeW4eQc8MZwgQRGoMPzW0=; b=LHS50oU3Vmmwfu
-	TgJux3JTeMcP7rKVpW4PRH+E1lrwwLzLVh0EP/0xVqdhU4L21cDzjfEnA5nElIczFORMGBLyTOA+s
-	ayByZNQLyKJLTIuTSND6j3hqkqHOeSsf+adwXqUBp1U+jJG1XpKgl+GTId1bpdKZVYwxi1lOeJkT9
-	VvCXK3/pFzh2ITQl6up1b6L2rF/wtDuqSD7SeG1MYdEiqXIoEGtaUUUWZ3YMF7u1RyJDLZPQjQN6X
-	ebHdMSPiTBJsx1Iv1H8zXWEbwJ1maRFWZRL6Y9GOP6r4x3ttW9oF5bC0G5FvOZ11fih9CRHwMCWKd
-	rUy3ggfQ1dMntelvp5rw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kpGBqZY+b5U5dT6aCa7sKZ1151BGkFbrUrJSeSoNbr0=; b=EdR
+	doZJXQeRR9QPJ2rjzqSPqCfd8DoiGljUE3cWejX+KkMGTV/fxpJ43qFKMZYKFVklQ265u7LgtRkcC
+	5V/r9TpX5pI/rz0U5FjgO/2fTYGJ1QANeLKHAejV/BF8aarMp7Z6rhhbLQwcF+CL/D9+byJv/2ZQr
+	YMZR9/E+wY5RjL6IEKc7S03E782gEseabEP/o+CLcy2rcRVxy1/ahxSj+xy52osxrl6iD+V3Bllj1
+	yADKls2eGP4krcULSlgO3ZiLFkJiLPkE4v03CFHRQ0yM1XHHVCdRkjeou8RS51jWD1ouXQ7CX0EyO
+	qaqt8uNJT/GejFwUbW53VAg7pGYDnyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUmWb-0007V8-Me; Wed, 13 Nov 2019 06:53:09 +0000
-Received: from mailgate1.rohmeurope.com ([178.15.145.194])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUmWT-0007UG-EN; Wed, 13 Nov 2019 06:53:03 +0000
-X-AuditID: c0a8fbf4-199ff70000001fa6-37-5dcba8474e9a
-Received: from smtp.reu.rohmeu.com (will-cas002.reu.rohmeu.com
- [192.168.251.178])
- by mailgate1.rohmeurope.com (Symantec Messaging Gateway) with SMTP id
- 0C.B8.08102.748ABCD5; Wed, 13 Nov 2019 07:52:55 +0100 (CET)
-Received: from WILL-MAIL002.REu.RohmEu.com ([fe80::e0c3:e88c:5f22:d174]) by
- WILL-CAS002.REu.RohmEu.com ([fe80::fc24:4cbc:e287:8659%12]) with mapi id
- 14.03.0439.000; Wed, 13 Nov 2019 07:52:51 +0100
-From: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
-To: "lkp@intel.com" <lkp@intel.com>
-Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
-Thread-Topic: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
-Thread-Index: AQHVmWQOgs5cHlsmlU+Vdtkf5ZbC06eIlAaAgAAGWoA=
-Date: Wed, 13 Nov 2019 06:52:51 +0000
-Message-ID: <ac16492e11899ef4ec981f7f2e84714c7d61d2a7.camel@fi.rohmeurope.com>
-References: <20191112141819.GA22076@localhost.localdomain>
- <201911131438.KT6pnFZ7%lkp@intel.com>
-In-Reply-To: <201911131438.KT6pnFZ7%lkp@intel.com>
-Accept-Language: en-US, de-DE
-Content-Language: de-DE
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [213.255.186.46]
-Content-ID: <C743A44B714FD7408E8547FE06DD0021@de.rohmeurope.com>
-MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA02TbUxbZRiG855vYIccSmnfoUZXQnCaMTc1ebOvMJ3x8MNlxixLpgTPxpE2
- g7ZpiwP9IQzm1iIKrpmua0GhQGllzBYDTipNnVpXGRtkHQub46MjgluJ2+ICTLCHusGvc+e5
- n/u+3h/PYXDZJTqT0WhNokErlKioZCLgWvBueN0VLnihZmILuji5QKBjsTYafRsNAzR4I4ij
- zrqfCRTujxEoUDUM0HzsPI0cpz8HyO6qQEsTf5GoyjlMoIHaCEDWh+0Y8k5GSNTQP0AjX9ND
- gIbP2Sk0XH0ZoPCcB0ffTccwdHdsCUcNo2dpZIlESTRTPUGhPzuvkuhIzYvI3hoiUOO/nSQK
- fvo26vF9jSN76ApAn7UMEejWKR+FYp4oQCfO5KPZuZ3o15AZR3PBQSwvhz8y+wvFz44cpfnG
- bz7kbTcHKN4zdIziz054SL5hYAP/ve0Gzbd4+ym+yfwA41v6pjHe6zZTfGVgkOCvR/oovvb0
- IsH7nB/tUexP2XZAML3/lqZYu3HHuynqkako0Nenlrf1XqUrwRhrAUkM5F6CJ+q+oCwgmZFx
- VwC0Wh2kZMi4EIBO7zoLYBiK2wYt12hpLOeyYOs9Hy7t45w7DVZ12DDJSOe2w9GPhyhpX87t
- gL7ulITcAs19r0mS4LLhvU+ypGWW2w0D3X4iAToIL800L0OTuM2w3WldLgTcU9BcGVvWOKeE
- 3qkHZOLFHHT2DeIJnQGnJxf/n6ugf26ckFA4tx52nduYiOZBl6cLJPQ6aK0dpxNPSIO/nYoS
- 9UBhW0WwraRtq9K2VWnbqvRXgHQDWCpoSooFk7gp1yCW5Rp06tL456Cu1AsSF3q/FywF84MA
- Y0AQrGUwVQbbUx0ukKUe0BVVqAWjutBQViIagwAyuErO9paHCmRskVDxgWjQPbKeYAiVks0Z
- byiQcRLrkCjqRcMj90mGUUGWb4+XphnEYrH8PU2JacXGmCSpPDlTbhS1RaJBKDOpC6XbKDTG
- j0Oy1sS5prZ4nDXqhdL4NBG9AJ5n6qcdzThz3tHajMsIrU4rZipZvUTipFV1mfYxaAYoGaBK
- Z49KRWviv+njnpk4Aosjan66ICFMwoqVWQneOHyGkvu1mn/2bO1Wpveongn8fWuvW7F/RH/d
- vddv/zIn+/47xy86Zrb75ptAe93lrsKdebmvJN3Md6GsXc8eOt64b7Hn2ps55sOKBe2PntZw
- cYaXpDbf6fBtPbnbepd7uaklmxoThX7F6O21t0/+cGd+fceuP57e9zvlX5iqjaS+qiKMamHT
- c7jBKPwHB3TLUWMEAAA=
+	id 1iUmpt-0006JA-5S; Wed, 13 Nov 2019 07:13:05 +0000
+Received: from conuserg-08.nifty.com ([210.131.2.75])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUmpl-0006IH-GH
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 07:12:59 +0000
+Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
+ [153.142.97.92]) (authenticated)
+ by conuserg-08.nifty.com with ESMTP id xAD7COMU032236;
+ Wed, 13 Nov 2019 16:12:24 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-08.nifty.com xAD7COMU032236
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1573629145;
+ bh=hUWxEOEKcTupHyB6KArKI0LSBUkIGOpAbtR0Bqznip4=;
+ h=From:To:Cc:Subject:Date:From;
+ b=n2KG6wYPBHKlFa4U7nisZquYRQPFHb3BSAreElf0QkXQTiJENHMqnSbALDYfiHZqY
+ pIsnwIQcs8jEL2DpRIQLTn07+Ve9hVm+cgSEtJdZwR8/4enC6h6CNWoIZgz5YvWxQ6
+ MeluFmVWF4kSewTnyOC8VbaFPXSp9RuJ5UVKVAGweuDdsyZmDWNRfYku+O7mK2MCe9
+ rtu4hX2yS6Koz7Yt0FdcQ/6dB/tND35pbuOTNgs559ZDeTG5PRnQb7xz//FdzWuwBz
+ ZO65yUUdAB4G9TzB1DMhcCwqZufdrLG3efVvowwPSVZn3nyJlaX7QbLNeKxKq8U1Wr
+ VJcHK69Dntk4A==
+X-Nifty-SrcIP: [153.142.97.92]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>
+Subject: [PATCH v3] libfdt: define INT32_MAX and UINT32_MAX in libfdt_env.h
+Date: Wed, 13 Nov 2019 16:12:02 +0900
+Message-Id: <20191113071202.11287-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_225301_638244_78E5F74B 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191112_231257_761948_2A167182 
+X-CRM114-Status: GOOD (  10.62  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.15.145.194 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [210.131.2.75 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,89 +72,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "andrew@lunn.ch" <andrew@lunn.ch>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "heiko@sntech.de" <heiko@sntech.de>,
- "geert+renesas@glider.be" <geert+renesas@glider.be>,
- "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "patrice.chotard@st.com" <patrice.chotard@st.com>,
- "paul@crapouillou.net" <paul@crapouillou.net>,
- "eric@anholt.net" <eric@anholt.net>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "jason@lakedaemon.net" <jason@lakedaemon.net>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "wens@csie.org" <wens@csie.org>, "agross@kernel.org" <agross@kernel.org>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>,
- "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
- "sebastian.hesselbarth@gmail.com" <sebastian.hesselbarth@gmail.com>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
- "mazziesaccount@gmail.com" <mazziesaccount@gmail.com>,
- "rjui@broadcom.com" <rjui@broadcom.com>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "kbuild-all@lists.01.org" <kbuild-all@lists.01.org>,
- "sbranden@broadcom.com" <sbranden@broadcom.com>,
- "sean.wang@kernel.org" <sean.wang@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- "wahrenst@gmx.net" <wahrenst@gmx.net>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "linux-oxnas@groups.io" <linux-oxnas@groups.io>
+Cc: Michael Ellerman <mpe@ellerman.id.au>, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Paul Mackerras <paulus@samba.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The DTC v1.5.1 added references to (U)INT32_MAX.
 
-On Wed, 2019-11-13 at 14:30 +0800, kbuild test robot wrote:
-> Hi Matti,
-> 
-> Thank you for the patch! Perhaps something to improve:
-> 
-> [auto build test WARNING on 70d97e099bb426ecb3ad4bf31e88dbf2ef4b2e4c]
-> 
+This is no problem for user-space programs since <stdint.h> defines
+(U)INT32_MAX along with (u)int32_t.
 
->    480	static int wmt_gpio_get_direction(struct gpio_chip
-> *chip, unsigned offset)
->    481	{
->    482		struct wmt_pinctrl_data *data =
-> gpiochip_get_data(chip);
->    483		u32 bank = WMT_BANK_FROM_PIN(offset);
->    484		u32 bit = WMT_BIT_FROM_PIN(offset);
->    485		u32 reg_dir = data->banks[bank].reg_dir;
->    486		u32 val;
->    487	
->    488		val = readl_relaxed(data->base + reg_dir);
->    489		if (val & BIT(bit))
->  > 490			GPIO_LINE_DIRECTION_OUT;
+For the kernel space, libfdt_env.h needs to be adjusted before we
+pull in the changes.
 
-Right. Return is missing. I think I already fixed this - I guess I sent
-wrong version... Sorry guys. I'll do v3 with only this return added -
-and I'll send it to limited amount of recipients as I think most of you
-guys may not be interested. Probably to Linus W, Geert and GPIO list
-only. Let me know if you want to see the v3 (or other subsequent
-patches)
+In the kernel, we usually use s/u32 instead of (u)int32_t for the
+fixed-width types.
 
->    491	
->    492		return GPIO_LINE_DIRECTION_IN;
->    493	}
->    494	
-> 
-> ---
-> 0-DAY kernel test infrastructure                 Open Source
-> Technology Center
-> https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel
-> Corporation
+Accordingly, we already have S/U32_MAX for their max values.
+So, we should not add (U)INT32_MAX to <linux/limits.h> any more.
+
+Instead, add them to the in-kernel libfdt_env.h to compile the
+latest libfdt.
+
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+---
+
+My initial plan was to change this in a series of 3 patches
+since it is clean, and reduces the code.
+
+[1/3] https://lore.kernel.org/patchwork/patch/1147095/
+[2/3] https://lore.kernel.org/patchwork/patch/1147096/
+[3/3] https://lore.kernel.org/patchwork/patch/1147097/
+
+1/3 is stuck in the license bikeshed.
+
+For 2/3, I have not been able to get Ack from Russell.
+
+So, I chose a straight-forward fixup.
+
+
+Changes in v3:
+ - Resend as a single patch
+
+ arch/arm/boot/compressed/libfdt_env.h | 4 +++-
+ arch/powerpc/boot/libfdt_env.h        | 2 ++
+ include/linux/libfdt_env.h            | 3 +++
+ 3 files changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm/boot/compressed/libfdt_env.h b/arch/arm/boot/compressed/libfdt_env.h
+index b36c0289a308..6a0f1f524466 100644
+--- a/arch/arm/boot/compressed/libfdt_env.h
++++ b/arch/arm/boot/compressed/libfdt_env.h
+@@ -2,11 +2,13 @@
+ #ifndef _ARM_LIBFDT_ENV_H
+ #define _ARM_LIBFDT_ENV_H
+ 
++#include <linux/limits.h>
+ #include <linux/types.h>
+ #include <linux/string.h>
+ #include <asm/byteorder.h>
+ 
+-#define INT_MAX			((int)(~0U>>1))
++#define INT32_MAX	S32_MAX
++#define UINT32_MAX	U32_MAX
+ 
+ typedef __be16 fdt16_t;
+ typedef __be32 fdt32_t;
+diff --git a/arch/powerpc/boot/libfdt_env.h b/arch/powerpc/boot/libfdt_env.h
+index 2abc8e83b95e..9757d4f6331e 100644
+--- a/arch/powerpc/boot/libfdt_env.h
++++ b/arch/powerpc/boot/libfdt_env.h
+@@ -6,6 +6,8 @@
+ #include <string.h>
+ 
+ #define INT_MAX			((int)(~0U>>1))
++#define UINT32_MAX		((u32)~0U)
++#define INT32_MAX		((s32)(UINT32_MAX >> 1))
+ 
+ #include "of.h"
+ 
+diff --git a/include/linux/libfdt_env.h b/include/linux/libfdt_env.h
+index edb0f0c30904..1adf54aad2df 100644
+--- a/include/linux/libfdt_env.h
++++ b/include/linux/libfdt_env.h
+@@ -7,6 +7,9 @@
+ 
+ #include <asm/byteorder.h>
+ 
++#define INT32_MAX	S32_MAX
++#define UINT32_MAX	U32_MAX
++
+ typedef __be16 fdt16_t;
+ typedef __be32 fdt32_t;
+ typedef __be64 fdt64_t;
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
