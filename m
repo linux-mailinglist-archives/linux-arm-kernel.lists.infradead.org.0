@@ -2,62 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 903A8FAE88
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 11:29:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E02AFAE95
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 11:32:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jDaHiRm4a9xrOIm0vf5qCpUenNGXrg4x3H96rKIWXq0=; b=B8BwHSD3Fniffh
-	i2ni/ojuhWOwxcVaNOwk3I6kV2ElVw0f4txH/GqnVefR9OfdHf0qHfonSbdr9+g8xfFtgN9jUdHDs
-	Aje+p9txKcCvgh/dp2fpzpmJPVxqK9iyTzOIwikX6CGLiDe+W8v3A97Na4NQNpiK8USU3Yw+06/FK
-	xrEEOZ7BMMpDjUTtybH2lO5hZgWM0er1CUiUdsOIFVKDr+JXC6eld5gNVltDN62O5YDnf/ep6JFlA
-	J+51PQ4HI+WZLadpDlCHDGaPbU9IecjhYYFvllyqnIvY59IVG0hybzuMZCHwfiJleFp3rCIfnyX23
-	NUZn8fDk4Enp3rNgmi4g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l9twzIWMs1GBvUpffRPjmzlfkLRnZ4ZGEE2SxBHEY8Q=; b=NenDjtpf50Q+en
+	yoyoXQ1WJ5MRjR2uGSc1htMyEnJ8pPsThjxWdjtUDQqZzlgCU9869YJmlb/dxUsu7B8xaoW+Aes6O
+	TPdOuhDJkrNGKZ3RCavsEoVMYkUIeTne1MjLCTf9vWTnsaex1xub50NfSssI/7q2fVHCznRO5NulN
+	+6xS56ot+kozXviJzONVaR3LYdlOdvh6nyXp7PpZGaYlI9l+q6+KeeFxhMZ3GJo7GKpBtDdxCMAlT
+	BHsSzmFQ5/1hk8Kg9VWEWUpQBCY47qGl6KFqgv3+mNVdySzDEEU0Jd80ll5VUZ28ZhOfLUXD0fdq8
+	72x3e8TnfTJl5nQ+bOuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUpu2-00076w-Fl; Wed, 13 Nov 2019 10:29:34 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iUpwi-0000Fl-J2; Wed, 13 Nov 2019 10:32:20 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUpts-00075j-PC
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 10:29:26 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 70581201BC;
- Wed, 13 Nov 2019 11:29:23 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 4F96C20116;
- Wed, 13 Nov 2019 11:29:23 +0100 (CET)
-Subject: Re: [PATCH 2/3] mmc: mmci: Bail out from odd DMA on Ux500
-To: Linus Walleij <linus.walleij@linaro.org>,
- Ulf Hansson <ulf.hansson@linaro.org>
-References: <20191113075335.31775-1-linus.walleij@linaro.org>
- <20191113075335.31775-3-linus.walleij@linaro.org>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <1f500a2b-5c81-5423-4e56-61566919cbb9@free.fr>
-Date: Wed, 13 Nov 2019 11:29:23 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iUpwZ-0000Ew-QF
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 10:32:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=6kTYcY6cpyy5llPwJ7N/vU69PHHlS2avthqvOc/6Zi8=; b=AIBnTVIWDXTQwFEx88OnyedhR
+ IT7vFNnd6U5b0NBNkjKbK1TYzlbPBJP2sjqTfcD/njKYUoZ81kAbrA1r9D5Wmfu4B29WijtJb/e01
+ i+JyhnAF0mH04TbKC/u+v+ZOLBOn+WllY8roxOFz+CDZlsiFKUGOyVEfoWJvRhwHrAeqSa3A+OIov
+ lM7uIBp5CO/1FVyflkFTnK82XyjlrWf16yYbTCD4hMHdnXRl4/kaeYpsYGI/SqywT00le0QeURH9e
+ PP6AUgHP0CFMRos13UMF9Rg56kVoh1zgOBUlqHUxo1ryUMJV6p8iPQadNDJfNCzEFRir7zHPkpR+Y
+ BXMoMGHWA==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:34912)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iUpwJ-0003We-59; Wed, 13 Nov 2019 10:31:55 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iUpwF-0002NO-2l; Wed, 13 Nov 2019 10:31:51 +0000
+Date: Wed, 13 Nov 2019 10:31:51 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v2] buffer: Fix I/O error due to ARM read-after-read hazard
+Message-ID: <20191113103150.GL25745@shell.armlinux.org.uk>
+References: <20191112130244.16630-1-vincent.whitchurch@axis.com>
+ <20191112160855.GA22025@arrakis.emea.arm.com>
+ <20191112180034.GB19889@willie-the-truck>
+ <20191112182249.GB22025@arrakis.emea.arm.com>
+ <CAHk-=wg4vi27mnMVgZ-rzcEdDAjTXrY1Jyz3+=5STcY0bw4-jQ@mail.gmail.com>
+ <20191113102357.GA25875@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <20191113075335.31775-3-linus.walleij@linaro.org>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Wed Nov 13 11:29:23 2019 +0100 (CET)
+Content-Disposition: inline
+In-Reply-To: <20191113102357.GA25875@willie-the-truck>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_022925_113574_8EFAD595 
-X-CRM114-Status: GOOD (  20.65  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191113_023212_011361_485CDDFB 
+X-CRM114-Status: GOOD (  14.72  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,93 +91,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephan Gerhold <stephan@gerhold.net>, MMC <linux-mmc@vger.kernel.org>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Niklas Cassel <niklas.cassel@linaro.org>, Ludovic Barre <ludovic.barre@st.com>,
- Brian Masney <masneyb@onstation.org>
+Cc: Jens Axboe <axboe@kernel.dk>, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Vincent Whitchurch <rabinv@axis.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Vincent Whitchurch <vincent.whitchurch@axis.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 13/11/2019 08:53, Linus Walleij wrote:
-
-> The Ux500 (at least) can only deal with DMA transactions
-> starting and ending on an even 4-byte aligned address.
+On Wed, Nov 13, 2019 at 10:23:58AM +0000, Will Deacon wrote:
+> On Tue, Nov 12, 2019 at 10:39:01AM -0800, Linus Torvalds wrote:
+> > On Tue, Nov 12, 2019 at 10:22 AM Catalin Marinas
+> > <catalin.marinas@arm.com> wrote:
+> > >
+> > > OK, so this includes changing test_bit() to perform a READ_ONCE.
+> > 
+> > That's not going to happen.
 > 
-> The problem isn't in the DMA engine of the system as such:
-> the problem is in the state machine of the MMCI block that
-> has some features to handle single bytes but it seems like
-> it doesn't quite work.
-> 
-> This problem is probably caused by most of the testing
-> being done on mass storage, which will be 512-bytes aligned
-> blocks placed neatly in pages and practically never run into
-> this situation.
-> 
-> On SDIO (for example in WiFi adapters) this situation is
-> common.
-> 
-> By avoiding any such transfers with a special vendor flag,
-> we can bail out to PIO when an odd transfer is detected
-> while keeping DMA for large transfers of evenly aligned
-> packages also for SDIO.
-> 
-> Cc: Ludovic Barre <ludovic.barre@st.com>
-> Cc: Brian Masney <masneyb@onstation.org>
-> Cc: Stephan Gerhold <stephan@gerhold.net>
-> Cc: Niklas Cassel <niklas.cassel@linaro.org>
-> Cc: Russell King <rmk+kernel@armlinux.org.uk>
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
-> ---
-> ChangeLog v1->v3:
-> - New patch in v3 after discussion with Ulf
-> ---
->  drivers/mmc/host/mmci.c | 21 +++++++++++++++++++++
->  drivers/mmc/host/mmci.h | 10 ++++++++++
->  2 files changed, 31 insertions(+)
-> 
-> diff --git a/drivers/mmc/host/mmci.c b/drivers/mmc/host/mmci.c
-> index 3ffcdf78a428..a08cd845dddc 100644
-> --- a/drivers/mmc/host/mmci.c
-> +++ b/drivers/mmc/host/mmci.c
-> @@ -185,6 +185,7 @@ static struct variant_data variant_ux500 = {
->  	.irq_pio_mask		= MCI_IRQ_PIO_MASK,
->  	.start_err		= MCI_STARTBITERR,
->  	.opendrain		= MCI_OD,
-> +	.only_long_aligned_dma	= true,
->  	.init			= mmci_variant_init,
->  };
->  
-> @@ -219,6 +220,7 @@ static struct variant_data variant_ux500v2 = {
->  	.irq_pio_mask		= MCI_IRQ_PIO_MASK,
->  	.start_err		= MCI_STARTBITERR,
->  	.opendrain		= MCI_OD,
-> +	.only_long_aligned_dma	= true,
->  	.init			= ux500v2_variant_init,
->  };
->  
-> @@ -829,6 +831,25 @@ static int _mmci_dmae_prep_data(struct mmci_host *host, struct mmc_data *data,
->  	if (data->blksz * data->blocks <= variant->fifosize)
->  		return -EINVAL;
->  
-> +	/*
-> +	 * Handle the variants with DMA that is broken such that start and
-> +	 * end address must be aligned on a long (32bit) boundary for the DMA
-> +	 * to work. If this occurs, fall back to PIO.
-> +	 */
+> Ok, I'll stick my neck out here, but if test_bit() is being used to read
+> a bitmap that is being concurrently modified (e.g. by set_bit() which boils
+> down to atomic_long_or()), then why isn't READ_ONCE() required? Right now,
+> test_bit takes a 'const volatile unsigned long *addr' argument, so I don't
+> see that you'll get a change in codegen except on alpha and, with this
+> erratum, arm32.
 
-Nit: why use 'long' as a synonym for "32 bits" ?
+I'm not entirely clear what you're suggesting, so I'll just pick the
+scenario that I think you're talking about - but I'm not sure it's the
+one you're intending.
 
-Why not name the field "only_32b_aligned_dma" ?
+Using test_bit() in one thread and set_bit() on the same bit in another
+thread without locking is going to be racy by definition.  It's entirely
+possible for:
 
-(The size of C's long int is implementation-defined; most 64-bit platforms
-have a 64-bit long int.)
+	Thread 1			Thread 2
+	bit = test_bit(...);
+					set_bit(...);
+	/* use bit */
 
-Perhaps the ship has already sailed -- what with readl/writel...
+and here, bit == 0 but the bit has been set by thread 2.  Use of the
+result from test_bit() is inherently a non-atomic operation.
 
-Regards.
+This is why we have test_and_set_bit() and friends that atomically test
+that a bit is clear before setting it.  Where this is especially
+important is for some filesystems, as they use test_and_xxx_bit() to
+manage their allocation bitmaps.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
