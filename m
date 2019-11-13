@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27407FA141
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 02:56:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29471FA25C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 03:04:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lM3XkMKKdJ3Gup3VIapUeiMQf24CwH73FmNXuEI9IkY=; b=R7R5uKvcZFPJFu
-	d0TG2xAynnGsU6nA6BbykSkEjYWioCfse3J7xaPIFEhg99TwJpbTVhhyAn8A+e4RyaVgRmD2p3r1J
-	JrQlSqMYb9PfPlSr+ARJG55W3brgwo8SSTO7A5ZGlRdIYuKQc0Umv/aPQ2Jo89sdJta5l2vxS9rHM
-	fJmf4lEQINMICy8CKu6wBV+ozhlCjE24qQVjMVDDGwV4VkpTuquoTraN0SS+u332vmlDhHFCQI4zY
-	YCchK6GgNN7pw0uaoPppKPBvL6AaFtzUlsS/jWXSXkroJwZa8BlVTMoVCEt3stxp/h6JgAOda9CaO
-	/++svhn3Xyta416ly9/Q==;
+	List-Owner; bh=Gbs35+npe717AR4YZjnknp8+yr32WBLzmovh7Mx+KT0=; b=laJSVuNNv+VO6h
+	P6A/3OmwrRSF9Hk8qeE7YYWz/+NIHxQOjdEnQP1a3hmdAEBNxHq7UC9BfFfP31q9Vk3Vl7wpCBiEb
+	nIEUJuMGOqc8+ju9VAXqxNOwhKY+QEP7+YQEsV92E0vMq1iiOBHLSsN2JRkOPGGaCgPufwgc9PGX1
+	7OBMaCdRC1A6S19Vvcy7j3kYTdU3tH5apX/ZAXfpI4cnBztxx3OnS8Id9mlg5IcbjEgeMpdH53IkX
+	Nv74OWyvpEwNRIbG/V5vMeRMAWqcNzsQQ7AjHWbZn+87UYZi/FApPU9vWYTt24MJdpy8LIhmkAdZA
+	2gbmEOCkkOcypEOWZARQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUhtJ-0006wP-6a; Wed, 13 Nov 2019 01:56:17 +0000
+	id 1iUi0h-0003n6-0Z; Wed, 13 Nov 2019 02:03:55 +0000
 Received: from zeniv.linux.org.uk ([195.92.253.2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUhtB-0006vi-Bz
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 01:56:10 +0000
+ id 1iUi0V-0003mK-Ns
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 02:03:44 +0000
 Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1iUhsc-0007v0-Hn; Wed, 13 Nov 2019 01:55:34 +0000
-Date: Wed, 13 Nov 2019 01:55:34 +0000
+ Linux)) id 1iUhzv-0008C3-Ic; Wed, 13 Nov 2019 02:03:07 +0000
+Date: Wed, 13 Nov 2019 02:03:07 +0000
 From: Al Viro <viro@zeniv.linux.org.uk>
 To: Aleksa Sarai <cyphar@cyphar.com>
-Subject: Re: [PATCH v15 4/9] namei: LOOKUP_BENEATH: O_BENEATH-like scoped
+Subject: Re: [PATCH v15 5/9] namei: LOOKUP_IN_ROOT: chroot-like scoped
  resolution
-Message-ID: <20191113015534.GA26530@ZenIV.linux.org.uk>
+Message-ID: <20191113020307.GB26530@ZenIV.linux.org.uk>
 References: <20191105090553.6350-1-cyphar@cyphar.com>
- <20191105090553.6350-5-cyphar@cyphar.com>
+ <20191105090553.6350-6-cyphar@cyphar.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191105090553.6350-5-cyphar@cyphar.com>
+In-Reply-To: <20191105090553.6350-6-cyphar@cyphar.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_175609_409060_07F668F0 
-X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-CacheID: sfid-20191112_180343_781856_66C31E51 
+X-CRM114-Status: UNSURE (   8.67  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,9 +67,9 @@ Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
  Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
  David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
  sparclinux@vger.kernel.org, Christian Brauner <christian.brauner@ubuntu.com>,
- Shuah Khan <shuah@kernel.org>, linux-arch@vger.kernel.org,
+ Jiri Olsa <jolsa@redhat.com>, linux-arch@vger.kernel.org,
  linux-s390@vger.kernel.org, Tycho Andersen <tycho@tycho.ws>,
- Aleksa Sarai <asarai@suse.de>, Jiri Olsa <jolsa@redhat.com>,
+ Aleksa Sarai <asarai@suse.de>, Shuah Khan <shuah@kernel.org>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
  Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
  linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
@@ -91,30 +91,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 05, 2019 at 08:05:48PM +1100, Aleksa Sarai wrote:
+On Tue, Nov 05, 2019 at 08:05:49PM +1100, Aleksa Sarai wrote:
 
-Minor nit here - I'd split "move the conditional call of set_root()
-into nd_jump_root()" into a separate patch before that one.  Makes
-for fewer distractions in this one.  I'd probably fold "and be
-ready for errors other than -ECHILD" into the same preliminary
-patch.
-
-> +			/* Not currently safe for scoped-lookups. */
-> +			if (unlikely(nd->flags & LOOKUP_IS_SCOPED))
-> +				return ERR_PTR(-EXDEV);
-
-Also a candidate for doing in nd_jump_link()...
-
-> @@ -1373,8 +1403,11 @@ static int follow_dotdot_rcu(struct nameidata *nd)
->  	struct inode *inode = nd->inode;
+> @@ -2277,12 +2277,20 @@ static const char *path_init(struct nameidata *nd, unsigned flags)
 >  
->  	while (1) {
-> -		if (path_equal(&nd->path, &nd->root))
-> +		if (path_equal(&nd->path, &nd->root)) {
-> +			if (unlikely(nd->flags & LOOKUP_BENEATH))
-> +				return -EXDEV;
+>  	nd->m_seq = read_seqbegin(&mount_lock);
+>  
+> -	/* Figure out the starting path and root (if needed). */
+> -	if (*s == '/') {
+> +	/* Absolute pathname -- fetch the root. */
+> +	if (flags & LOOKUP_IN_ROOT) {
+> +		/* With LOOKUP_IN_ROOT, act as a relative path. */
+> +		while (*s == '/')
+> +			s++;
 
-Umm...  Are you sure it's not -ECHILD?
+Er...  Why bother skipping slashes?  I mean, not only link_path_walk()
+will skip them just fine, you are actually risking breakage in this:
+                if (*s && unlikely(!d_can_lookup(dentry))) {
+                        fdput(f);
+                        return ERR_PTR(-ENOTDIR);
+                }
+which is downstream from there with you patch, AFAICS.
 
 _______________________________________________
 linux-arm-kernel mailing list
