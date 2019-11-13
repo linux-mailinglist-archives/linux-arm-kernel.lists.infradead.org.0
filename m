@@ -2,73 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE978FA0EF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 02:53:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27407FA141
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 02:56:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OupwRzYcwPIccJfV+3IRvncashRHgqqsi9orxKY4QYs=; b=USdKDdSJm9Suuy
-	iTvw8xC4WHDzVPi4uSDiDAguAsRW4KHDK9a59HDstaOYB37fFm0dotxJlVcVCwzDCXP0ixojujz0W
-	XbAi0ILKh7Hfz8ZtVBlImEZKst2yaWVBs3G+mffhyDTwYUS49ViMhPudRXJeVkpLlyHIANz2JqLNa
-	vD6mFimeAlg1FmJQy5rqbqdr0h6y0rOq93iz6OWwKW21d4JTlb3C6wqXy+kRihRCyK9KjWuF5Mm3e
-	wmFNbqYdVrkEqcnQmUbZeDYjBmRTOXxmN5kYk5yUIwpDF44zn+nA2M309JFKbmlrNA17u9F7wtMlq
-	wD0db2mXfU92WamFhSJg==;
+	List-Owner; bh=lM3XkMKKdJ3Gup3VIapUeiMQf24CwH73FmNXuEI9IkY=; b=R7R5uKvcZFPJFu
+	d0TG2xAynnGsU6nA6BbykSkEjYWioCfse3J7xaPIFEhg99TwJpbTVhhyAn8A+e4RyaVgRmD2p3r1J
+	JrQlSqMYb9PfPlSr+ARJG55W3brgwo8SSTO7A5ZGlRdIYuKQc0Umv/aPQ2Jo89sdJta5l2vxS9rHM
+	fJmf4lEQINMICy8CKu6wBV+ozhlCjE24qQVjMVDDGwV4VkpTuquoTraN0SS+u332vmlDhHFCQI4zY
+	YCchK6GgNN7pw0uaoPppKPBvL6AaFtzUlsS/jWXSXkroJwZa8BlVTMoVCEt3stxp/h6JgAOda9CaO
+	/++svhn3Xyta416ly9/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUhr0-0004JU-2c; Wed, 13 Nov 2019 01:53:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iUhtJ-0006wP-6a; Wed, 13 Nov 2019 01:56:17 +0000
+Received: from zeniv.linux.org.uk ([195.92.253.2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUhqo-0004Ha-EH
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 01:53:47 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5F383222CD;
- Wed, 13 Nov 2019 01:53:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573610022;
- bh=NouXRorkRrtpgDixB7XImri5OC4Rykp1q93l1bDDyYU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pcg1bHC1Z2DASpuAe678wbG2I95Unqb1w9un7phbNKO6BxJc1VJDvUtmilQLwuDWa
- VrXdwHKfg6tVDkQFCw+w0ww9bZvtEyqxZW28/RW4xNoTZ6d5Cnhc9myoO6V86E3cuF
- vIMp9VR0FulJ4JVnAx8J54XQbn0vdmZbF/kWBLOM=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 122/209] soc: fsl: bman_portals: defer probe
- after bman's probe
-Date: Tue, 12 Nov 2019 20:48:58 -0500
-Message-Id: <20191113015025.9685-122-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191113015025.9685-1-sashal@kernel.org>
-References: <20191113015025.9685-1-sashal@kernel.org>
+ id 1iUhtB-0006vi-Bz
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 01:56:10 +0000
+Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1iUhsc-0007v0-Hn; Wed, 13 Nov 2019 01:55:34 +0000
+Date: Wed, 13 Nov 2019 01:55:34 +0000
+From: Al Viro <viro@zeniv.linux.org.uk>
+To: Aleksa Sarai <cyphar@cyphar.com>
+Subject: Re: [PATCH v15 4/9] namei: LOOKUP_BENEATH: O_BENEATH-like scoped
+ resolution
+Message-ID: <20191113015534.GA26530@ZenIV.linux.org.uk>
+References: <20191105090553.6350-1-cyphar@cyphar.com>
+ <20191105090553.6350-5-cyphar@cyphar.com>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+Content-Disposition: inline
+In-Reply-To: <20191105090553.6350-5-cyphar@cyphar.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_175346_285902_F397FEB1 
-X-CRM114-Status: GOOD (  11.72  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191112_175609_409060_07F668F0 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.92.253.2 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,57 +61,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Li Yang <leoyang.li@nxp.com>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Christian Brauner <christian.brauner@ubuntu.com>,
+ Shuah Khan <shuah@kernel.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Tycho Andersen <tycho@tycho.ws>,
+ Aleksa Sarai <asarai@suse.de>, Jiri Olsa <jolsa@redhat.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-m68k@lists.linux-m68k.org, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, libc-alpha@sourceware.org,
+ linux-parisc@vger.kernel.org, linux-api@vger.kernel.org,
+ Chanho Min <chanho.min@lge.com>, Jeff Layton <jlayton@kernel.org>,
+ Oleg Nesterov <oleg@redhat.com>, Eric Biederman <ebiederm@xmission.com>,
+ linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+On Tue, Nov 05, 2019 at 08:05:48PM +1100, Aleksa Sarai wrote:
 
-[ Upstream commit e0940b34c40e95d1879691d2474d182c57aae0de ]
+Minor nit here - I'd split "move the conditional call of set_root()
+into nd_jump_root()" into a separate patch before that one.  Makes
+for fewer distractions in this one.  I'd probably fold "and be
+ready for errors other than -ECHILD" into the same preliminary
+patch.
 
-A crash in bman portal probing could not be triggered (as is the case
-with qman portals) but it does make calls [1] into the bman driver so
-lets make sure the bman portal probing happens after bman's.
+> +			/* Not currently safe for scoped-lookups. */
+> +			if (unlikely(nd->flags & LOOKUP_IS_SCOPED))
+> +				return ERR_PTR(-EXDEV);
 
-[1]  bman_p_irqsource_add() (in bman) called by:
-       init_pcfg() called by:
-         bman_portal_probe()
+Also a candidate for doing in nd_jump_link()...
 
-Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-Signed-off-by: Li Yang <leoyang.li@nxp.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/soc/fsl/qbman/bman_portal.c | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
+> @@ -1373,8 +1403,11 @@ static int follow_dotdot_rcu(struct nameidata *nd)
+>  	struct inode *inode = nd->inode;
+>  
+>  	while (1) {
+> -		if (path_equal(&nd->path, &nd->root))
+> +		if (path_equal(&nd->path, &nd->root)) {
+> +			if (unlikely(nd->flags & LOOKUP_BENEATH))
+> +				return -EXDEV;
 
-diff --git a/drivers/soc/fsl/qbman/bman_portal.c b/drivers/soc/fsl/qbman/bman_portal.c
-index 2f71f7df3465a..f9edd28894fda 100644
---- a/drivers/soc/fsl/qbman/bman_portal.c
-+++ b/drivers/soc/fsl/qbman/bman_portal.c
-@@ -91,7 +91,15 @@ static int bman_portal_probe(struct platform_device *pdev)
- 	struct device_node *node = dev->of_node;
- 	struct bm_portal_config *pcfg;
- 	struct resource *addr_phys[2];
--	int irq, cpu;
-+	int irq, cpu, err;
-+
-+	err = bman_is_probed();
-+	if (!err)
-+		return -EPROBE_DEFER;
-+	if (err < 0) {
-+		dev_err(&pdev->dev, "failing probe due to bman probe error\n");
-+		return -ENODEV;
-+	}
- 
- 	pcfg = devm_kmalloc(dev, sizeof(*pcfg), GFP_KERNEL);
- 	if (!pcfg)
--- 
-2.20.1
-
+Umm...  Are you sure it's not -ECHILD?
 
 _______________________________________________
 linux-arm-kernel mailing list
