@@ -2,78 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A080FAD83
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 10:47:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F5D2FAD96
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 10:48:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=26olqAU4FnzURYSPd9Dwa5sJFX3F79biHpv3mikQQVo=; b=A+Ylyrt5/jAmnK
-	X1RdVdYUZ8+h9kMVuekJOQTgOMm9YP9MQJjbL2gW/5bEtaHCiyjdy5SRHtvsxT/TaJq40bBdpAmAW
-	lrgf5DZQgY0+mEDNkcKBxFgrvR7J8CazCJrAELLCZ/vZEtICxpzKSjQoY9UHT5xQPa8+nn784kRPE
-	wL8mg/KhHLGpjPQviXVZkWdvEIQs+RZRxLFhmlaBm7wJ6fAFHWX8KiIaV8+cd+VUmFtYhw7EkwE5H
-	ayp4O+Pa/BsElUgsgbSPyt9PHHM8BouVBvANo2KqqIorBQwROdhrdCwFEdbSXzHm320whZjnWhezL
-	mOyNreycnTVT5o4zXQFQ==;
+	List-Owner; bh=DWm3L3c6cg76+gbW15VK0ytaH1+pX6bNJ9lRmLrWawM=; b=hA/Z6OwCjfACk+
+	msZmfEbFsQYISx/2169RBG7GHasoOEaZQtrjoSFadDfarE8GgNSelYpkShHOooSVBOLXnOrbFBufm
+	V3XzTtihugfEhhRwjn6WrcfD96eFUwqBBV2BND/8FmT+0AqmqnMcUt0X4Dpqu9qoCYSvQroZT8yf3
+	+tysKYa8LXy9RRMOa08/pkkJZ9MAlmDCX9iTt2THEHRq451Caybfv1xizmZ43kBJtE7jMXTBRaVSO
+	S5FoDmr744o2RxzZSvPRUAXPVTRqpccC1jtSK78yDlK/lT96a3q2NSMTc9iRDHMsNuLaZf8j+H3FE
+	vgJigHJEpXdFsYQQN23g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUpFB-0003UY-GZ; Wed, 13 Nov 2019 09:47:21 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iUpG6-0003ul-UR; Wed, 13 Nov 2019 09:48:18 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUpEu-0003Ih-CQ; Wed, 13 Nov 2019 09:47:05 +0000
-X-UUID: 2baa54a2562646cfb215a32a5c3b32e3-20191113
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=XrPIxFrz8KAsDxRE5bqWiHwG0QJC6po6mUA88iq2bzo=; 
- b=ApuNDQkBMW05NIPoUhPC0+49wfgHJZB8lFtQjJStqrnVq52LCChWF3cvAdqc+VbdCu73HEtuyZrY0HZsLywh82hknzDVXrvVu1DiXWFuB+lI1sk074VwuBSqsMQtUkO9ppx8RWTfd8TuGRO5rhQIJ6XsV/nsQohg3m4kGYzngQI=;
-X-UUID: 2baa54a2562646cfb215a32a5c3b32e3-20191113
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <jiaxin.yu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1904798452; Wed, 13 Nov 2019 01:46:45 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 13 Nov 2019 01:46:52 -0800
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Wed, 13 Nov 2019 17:46:49 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 13 Nov 2019 17:46:49 +0800
-Message-ID: <1573638411.18096.8.camel@mhfsdcap03>
-Subject: Re: [PATCH v4 1/2] dt-bindings: mediatek: mt8183: Add #reset-cells
-From: Jiaxin Yu <jiaxin.yu@mediatek.com>
-To: <broonie@kernel.org>, <yingjoe.chen@mediatek.com>, <linux@roeck-us.net>,
- <p.zabel@pengutronix.de>
-Date: Wed, 13 Nov 2019 17:46:51 +0800
-In-Reply-To: <1571205548-13704-2-git-send-email-jiaxin.yu@mediatek.com>
-References: <1571205548-13704-1-git-send-email-jiaxin.yu@mediatek.com>
- <1571205548-13704-2-git-send-email-jiaxin.yu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iUpFu-0003sO-07
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 09:48:10 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 6CD6BC08E7C566C8E8DB;
+ Wed, 13 Nov 2019 17:47:57 +0800 (CST)
+Received: from localhost (10.202.226.61) by DGGEMS402-HUB.china.huawei.com
+ (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Wed, 13 Nov 2019
+ 17:47:49 +0800
+Date: Wed, 13 Nov 2019 09:47:42 +0000
+From: Jonathan Cameron <jonathan.cameron@huawei.com>
+To: Dan Williams <dan.j.williams@intel.com>
+Subject: Re: [PATCH V5 1/4] ACPI: Support Generic Initiator only domains
+Message-ID: <20191113094742.00000dc4@huawei.com>
+In-Reply-To: <CAPcyv4jZG-5s6NsS-_-oNG45y0Qb1mVD_s8cCGqLYtzvHqEo+Q@mail.gmail.com>
+References: <20191004114330.104746-1-Jonathan.Cameron@huawei.com>
+ <20191004114330.104746-2-Jonathan.Cameron@huawei.com>
+ <CAPcyv4jZG-5s6NsS-_-oNG45y0Qb1mVD_s8cCGqLYtzvHqEo+Q@mail.gmail.com>
+Organization: Huawei
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 99F43038FEAE211359C243B6074460598C726E1A8CF0837DFCDE8E9D7CCE06E92000:8
-X-MTK: N
+X-Originating-IP: [10.202.226.61]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_014704_451588_4E3D4F63 
-X-CRM114-Status: GOOD (  15.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191113_014809_000687_5BCEA7AD 
+X-CRM114-Status: GOOD (  19.02  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,118 +66,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, alsa-devel@alsa-project.org, yong.liang@mediatek.com,
- lgirdwood@gmail.com, perex@perex.cz, tzungbi@google.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, eason.yen@mediatek.com,
- wim@linux-watchdog.org, linux-arm-kernel@lists.infradead.org
+Cc: Linux ACPI <linux-acpi@vger.kernel.org>, Tao Xu <tao3.xu@intel.com>,
+ X86 ML <x86@kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linuxarm <linuxarm@huawei.com>, Keith
+ Busch <keith.busch@intel.com>, Linux MM <linux-mm@kvack.org>,
+ =?ISO-8859-1?Q?J=E9r=F4me?= Glisse <jglisse@redhat.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-10-16 at 13:59 +0800, Jiaxin Yu wrote:
-> From: "yong.liang" <yong.liang@mediatek.com>
+On Tue, 12 Nov 2019 09:55:17 -0800
+Dan Williams <dan.j.williams@intel.com> wrote:
+
+> [ add Tao Xu ]
 > 
-> Add #reset-cells property and update example
+> On Fri, Oct 4, 2019 at 4:45 AM Jonathan Cameron
+> <Jonathan.Cameron@huawei.com> wrote:
+> >
+> > Generic Initiators are a new ACPI concept that allows for the
+> > description of proximity domains that contain a device which
+> > performs memory access (such as a network card) but neither
+> > host CPU nor Memory.
+> >
+> > This patch has the parsing code and provides the infrastructure
+> > for an architecture to associate these new domains with their
+> > nearest memory processing node.  
 > 
-> Signed-off-by: yong.liang <yong.liang@mediatek.com>
-> ---
->  .../devicetree/bindings/watchdog/mtk-wdt.txt  | 10 ++++++---
->  .../reset-controller/mt2712-resets.h          | 22 +++++++++++++++++++
->  .../reset-controller/mt8183-resets.h          | 15 +++++++++++++
->  3 files changed, 44 insertions(+), 3 deletions(-)
->  create mode 100644 include/dt-bindings/reset-controller/mt2712-resets.h
+> Thanks for this Jonathan. May I ask how this was tested? Tao has been
+> working on qemu support for HMAT [1]. I have not checked if it already
+> supports generic initiator entries, but it would be helpful to include
+> an example of how the kernel sees these configurations in practice.
 > 
-> diff --git a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> index 3ee625d0812f..4dd36bd3f1ad 100644
-> --- a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> +++ b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> @@ -4,6 +4,7 @@ Required properties:
->  
->  - compatible should contain:
->  	"mediatek,mt2701-wdt", "mediatek,mt6589-wdt": for MT2701
-> +	"mediatek,mt2712-wdt", "mediatek,mt6589-wdt": for MT2712
->  	"mediatek,mt6589-wdt": for MT6589
->  	"mediatek,mt6797-wdt", "mediatek,mt6589-wdt": for MT6797
->  	"mediatek,mt7622-wdt", "mediatek,mt6589-wdt": for MT7622
-> @@ -16,11 +17,14 @@ Required properties:
->  
->  Optional properties:
->  - timeout-sec: contains the watchdog timeout in seconds.
-> +- #reset-cells: Should be 1.
->  
->  Example:
->  
-> -wdt: watchdog@10000000 {
-> -	compatible = "mediatek,mt6589-wdt";
-> -	reg = <0x10000000 0x18>;
-> +watchdog: watchdog@10007000 {
-> +	compatible = "mediatek,mt8183-wdt",
-> +		     "mediatek,mt6589-wdt";
-> +	reg = <0 0x10007000 0 0x100>;
->  	timeout-sec = <10>;
-> +	#reset-cells = <1>;
->  };
-> diff --git a/include/dt-bindings/reset-controller/mt2712-resets.h b/include/dt-bindings/reset-controller/mt2712-resets.h
-> new file mode 100644
-> index 000000000000..e81c8bb311b7
-> --- /dev/null
-> +++ b/include/dt-bindings/reset-controller/mt2712-resets.h
-> @@ -0,0 +1,22 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * Copyright (c) 2019 MediaTek Inc.
-> + * Author: Yong Liang <yong.liang@mediatek.com>
-> + */
-> +
-> +#ifndef _DT_BINDINGS_RESET_CONTROLLER_MT2712
-> +#define _DT_BINDINGS_RESET_CONTROLLER_MT2712
-> +
-> +#define MT2712_TOPRGU_INFRA_SW_RST				0
-> +#define MT2712_TOPRGU_MM_SW_RST					1
-> +#define MT2712_TOPRGU_MFG_SW_RST				2
-> +#define MT2712_TOPRGU_VENC_SW_RST				3
-> +#define MT2712_TOPRGU_VDEC_SW_RST				4
-> +#define MT2712_TOPRGU_IMG_SW_RST				5
-> +#define MT2712_TOPRGU_INFRA_AO_SW_RST				8
-> +#define MT2712_TOPRGU_USB_SW_RST				9
-> +#define MT2712_TOPRGU_APMIXED_SW_RST				10
-> +
-> +#define MT2712_TOPRGU_SW_RST_NUM				10
-> +
-> +#endif  /* _DT_BINDINGS_RESET_CONTROLLER_MT2712 */
-> diff --git a/include/dt-bindings/reset-controller/mt8183-resets.h b/include/dt-bindings/reset-controller/mt8183-resets.h
-> index 8804e34ebdd4..d582da6bedae 100644
-> --- a/include/dt-bindings/reset-controller/mt8183-resets.h
-> +++ b/include/dt-bindings/reset-controller/mt8183-resets.h
-> @@ -78,4 +78,19 @@
->  #define MT8183_INFRACFG_AO_I2C7_SW_RST				126
->  #define MT8183_INFRACFG_AO_I2C8_SW_RST				127
->  
-> +#define MT8183_TOPRGU_MM_SW_RST					1
-> +#define MT8183_TOPRGU_MFG_SW_RST				2
-> +#define MT8183_TOPRGU_VENC_SW_RST				3
-> +#define MT8183_TOPRGU_VDEC_SW_RST				4
-> +#define MT8183_TOPRGU_IMG_SW_RST				5
-> +#define MT8183_TOPRGU_MD_SW_RST					7
-> +#define MT8183_TOPRGU_CONN_SW_RST				9
-> +#define MT8183_TOPRGU_CONN_MCU_SW_RST				12
+> [1]: http://patchwork.ozlabs.org/cover/1096737/
 
-> +#define MT8183_TOPRGU_IPU0_SW_RST				14
-> +#define MT8183_TOPRGU_IPU1_SW_RST				15
-> +#define MT8183_TOPRGU_AUDIO_SW_RST				17
-> +#define MT8183_TOPRGU_CAMSYS_SW_RST				18
-> +
-> +#define MT8183_TOPRGU_SW_RST_NUM				18
-> +
->  #endif  /* _DT_BINDINGS_RESET_CONTROLLER_MT8183 */
+Tested against qemu with SRAT and SLIT table overrides from an
+initrd to actually create the node and give it distances
+(those all turn up correctly in the normal places).  DSDT override
+used to move an emulated network card into the GI numa node.  That
+currently requires the PCI patch referred to in the cover letter.
+On arm64 tested both on qemu and real hardware (overrides on tables
+even for real hardware as I can't persuade our BIOS team to implement
+Generic Initiators until an OS is actually using them.)
 
-Hi, Philipp && Guenter,
+Main real requirement is memory allocations then occur from one of
+the nodes at the minimal distance when you are do a devm_ allocation
+from a device assigned. Also need to be able to query the distances
+to allow load balancing etc.  All that works as expected.
 
-Could you help to review these two patches about mediatek reset
-controller? If this has any questions, please let me know, thanks a lot.
+It only has a fairly tangential connection to HMAT in that HMAT
+can provide information on GI nodes.  Given HMAT code is quite happy
+with memoryless nodes anyway it should work.  QEMU doesn't currently
+have support to create GI SRAT entries let alone HMAT using them.
 
-Jiaxin.Yu
+Whilst I could look at adding such support to QEMU, it's not
+exactly high priority to emulate something we can test easily
+by overriding the tables before the kernel reads them.
+
+I'll look at how hard it is to build an HMAT tables for my test
+configs based on the ones I used to test your HMAT patches a while
+back.  Should be easy if tedious.
+
+Jonathan
+
+
+ 
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
