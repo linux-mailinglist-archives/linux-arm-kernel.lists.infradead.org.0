@@ -2,59 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13C93FB6FB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 19:03:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BCC8FB6FF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 19:04:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7iwIh5HzeIzGoEeCfJX2DzZisznvX0rqXa/rG0JRdpA=; b=kreFxUxBf/kf7OV8lYPEcmGB8
-	e+XQchG5O96/7TaUxDtNnt3K+y8YHuvGDGYqNtyd8mHzRn5TSR0CkCKdnVPF5SfOBXvFl6iN28BvQ
-	9afHFHk2cFXk5XtEaA69o6cyGhjCR6X+3piLJXnRjJq/ThcmeGJvV+jloM5a2Y++D/trpGDdL2k47
-	59woK+XhbKFc8/I7zlMMCov88SLyxJmNYAWO+os1j2AcbjCOf/oSEEz8VAWTocVZAklWCS4nsmc0n
-	bgwl7qAko6aAn0ouFzY/AROhnJ6QA9euJBLcihxB0JH9nJQH1bm3NbUZxif+wx5VubjmQpV4GkYuG
-	4tRe8+fZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1ryMJ4Y+8v1m/6qAoA9eXj9Ptant9KewTosY82dEFlM=; b=mZo50eDW6LWsAQ
+	cbiYED5mRpV44z9qlhrp4g8IRCz8Mu+QcG+XMh6kayxnbDIpMBBJ5rLukO/8JYeWDB5L7zokMPHdT
+	6DSulfXX28iA/MBHTkHUCBq6sCPy/plPW+NQn/z6TkB6sYXZMVH1xNlxqgKONWF/egvovQ8Cs+nWx
+	SQtlFRLvf3Fd5v7R6pURondOqt/865oCJlG7cZMUtlGoP93A/PawKZvjVhfRPdjeaPpesuoSk0c8d
+	19tcTY0ndYelmkAvTk1Tlt+FuQqCV8hqf4laxCOZaDiVATxoFTHLtH5YyD/eCttZRFAXIzIepT98C
+	U70BqY2qrIOx/cPcLdRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUwyx-0006Ls-08; Wed, 13 Nov 2019 18:03:07 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUwyp-0006LU-Jo
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 18:03:01 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iUwyk-0005fc-Ur; Wed, 13 Nov 2019 19:02:54 +0100
-To: kbuild test robot <lkp@intel.com>
-Subject: Re: [arm-platforms:kvm-arm64/vcpu-xarray 42/49]
- arch/powerpc/kvm/powerpc.c:792:29: error: =?UTF-8?Q?=27kvmppc=5Fdecrement?=
- =?UTF-8?Q?er=5Fwakeup=27=20defined=20but=20not=20used?=
-X-PHP-Originating-Script: 0:main.inc
+	id 1iUx0C-0006f7-0Z; Wed, 13 Nov 2019 18:04:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUx04-0006ed-Al
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 18:04:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8E63630E;
+ Wed, 13 Nov 2019 10:04:13 -0800 (PST)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8A6A83F534;
+ Wed, 13 Nov 2019 10:04:12 -0800 (PST)
+Date: Wed, 13 Nov 2019 18:04:06 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: ARM SoC Team <arm@kernel.org>, SoC Team <soc@kernel.org>,
+ ALKML <linux-arm-kernel@lists.infradead.org>
+Subject: [GIT PULL] firmware: arm_scmi: fix for v5.5
+Message-ID: <20191113180406.GA12601@bogus>
 MIME-Version: 1.0
-Date: Wed, 13 Nov 2019 18:02:54 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <201911140103.uQVAr0CN%lkp@intel.com>
-References: <201911140103.uQVAr0CN%lkp@intel.com>
-Message-ID: <c11fdfaa843e2d0131680c864d061950@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: lkp@intel.com, sean.j.christopherson@intel.com,
- kbuild-all@lists.01.org, linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_100259_798184_A611FE5A 
-X-CRM114-Status: UNSURE (   8.64  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191113_100416_414532_9A05EEE1 
+X-CRM114-Status: GOOD (  11.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -67,41 +59,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@lists.01.org, linux-arm-kernel@lists.infradead.org,
- Sean Christopherson <sean.j.christopherson@intel.com>
+Cc: Olof Johansson <olof@lixom.net>, Sudeep Holla <sudeep.holla@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-11-13 17:51, kbuild test robot wrote:
-> tree:
-> https://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git
-> kvm-arm64/vcpu-xarray
-> head:   148748099363327d8cb56aafd386b70ac8c68837
-> commit: 64e6991c2234c3ba1e36f991302b1bbe1bb791f1 [42/49] KVM: PPC:
-> Move all vcpu init code into kvm_arch_vcpu_create()
-> config: powerpc-defconfig (attached as .config)
-> compiler: powerpc64-linux-gcc (GCC) 7.4.0
-> reproduce:
->         wget
-> 
-> https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross
-> -O ~/bin/make.cross
->         chmod +x ~/bin/make.cross
->         git checkout 64e6991c2234c3ba1e36f991302b1bbe1bb791f1
->         # save the attached .config to linux build tree
->         GCC_VERSION=7.4.0 make.cross ARCH=powerpc
->
-> If you fix the issue, kindly add following tag
-> Reported-by: kbuild test robot <lkp@intel.com>
+Hi ARM SoC Team,
 
-Well, this branch was not supposed to be tested at all...
-I guess it is too late to take it down :-(
+Sorry for the late pull request, but since it's a fix for bug reported
+recently, I am sending it anyway. It's too late for v5.4 and not that
+urgent IMO, so can go for v5.5
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Please pull !
+
+Regards,
+Sudeep
+
+-->8
+
+The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
+
+  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux.git tags/scmi-fix-5.5
+
+for you to fetch changes up to 9a6edfe32f3741163e7bf30f264cc114e7cb38b7:
+
+  firmware: arm_scmi: Fix doorbell ring logic for !CONFIG_64BIT (2019-11-13 11:48:32 +0000)
+
+----------------------------------------------------------------
+ARM SCMI fix for v5.5
+
+Just a single fix to correct the SCMI fast channel doorbell ring logic
+when CONFIG_64BIT is not set.
+
+----------------------------------------------------------------
+Sudeep Holla (1):
+      firmware: arm_scmi: Fix doorbell ring logic for !CONFIG_64BIT
+
+ drivers/firmware/arm_scmi/perf.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
