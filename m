@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F397FB5C9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 17:57:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39770FB5DA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 18:03:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	MIME-Version:References:Message-ID:In-Reply-To:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QywphWv8Mx4gXwueGs0jOdNyveLsrqrBGTLcEpY8O2k=; b=VWYbi4y4VvJpeCxuM9t0PrpDS
-	14pej1CS7mPRvbrn7Skn/atEtZx2dEoCud9hnQ1hLpVMsUBl/BqJ82bjc6mmSdQ2fpdV1MumQCM/s
-	qckndHd9Q83Q+w1Ky9ci7i0juWd/wL7SRfFf6aaH3MfmORMWUa7UaoizYb5H5pq6g3CRHjNDHnIDw
-	K3YHWLnXBYkw/4bRO6UdWVI2W8uJqyTZxT7R3V45p4CrD17WgIBvkJ+D2cRFOFJ6f7KIsCA4VDc0J
-	WdvdkM0HtNA+bkv0V8+oLkl4kAW1EoxNqvulYIEOkTMawPJgWf1eam/ENfOdfuMRHOfS80n9fwMjN
-	OzMx9sw8Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+trKzj31cgcdTZe1+umgtCZdKDic5GLs1dsyYg7Wq/g=; b=q0HBX9fEeZyKs1
+	J6wYOibO5+P8Xugyd+yKjOI852Cixnob2u7XvumWzVZdqA/WsRkStMYDqIpp4bvcOYuMM5z8iY5fP
+	uicbPhTjI64sA2zQI/mABiA9f5PRSn7YcczF+FievyjCfAnD534CotRdIsrcxLbDln97MiKgkBQJn
+	235c4Fq+0UYCg/CZkZT7I4X+JoM2mMf+8AhMJhDj2MZgFX1K9xD+4Q5aMd/w9LcFFV0pNCQFUeDK0
+	FnIePtz8oNpDxSzVHvN3b1k5Sv8H/ii/lTvHuzLMUORQhlFG4aGhwK+zybtg1XlKTkm3356oSVObU
+	58fz3Z4XO/k9HBcg7INw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUvxA-0007hH-AW; Wed, 13 Nov 2019 16:57:12 +0000
-Received: from pb-smtp20.pobox.com ([173.228.157.52])
+	id 1iUw3Q-0002bE-BF; Wed, 13 Nov 2019 17:03:40 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUvwy-0007fY-SQ
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 16:57:02 +0000
-Received: from pb-smtp20.pobox.com (unknown [127.0.0.1])
- by pb-smtp20.pobox.com (Postfix) with ESMTP id 20AD68A425;
- Wed, 13 Nov 2019 11:56:59 -0500 (EST)
- (envelope-from nico@fluxnic.net)
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=date:from:to
- :cc:subject:in-reply-to:message-id:references:mime-version
- :content-type; s=sasl; bh=pudSezJJWI5D7ZGH/IF+MpD7h3I=; b=uRPfX4
- vKo4OKXna7Y+91GWdi6TaykezvjDC7BBKE0E20ZisLzaZNK74KETZSOMRZywFzoi
- l2HDs4jb3gSXorRzIQ0hUgUJJ93qp+aVJQgkf2iaOmxBxxWMoGsdQ0Th8Ymx1VbX
- 985h3+Tf56Zgsd2WlDFTdL2G5eFS9KxrHd0co=
-Received: from pb-smtp20.sea.icgroup.com (unknown [127.0.0.1])
- by pb-smtp20.pobox.com (Postfix) with ESMTP id 1894A8A424;
- Wed, 13 Nov 2019 11:56:59 -0500 (EST)
- (envelope-from nico@fluxnic.net)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=fluxnic.net;
- h=date:from:to:cc:subject:in-reply-to:message-id:references:mime-version:content-type;
- s=2016-12.pbsmtp; bh=QmE2jItILXUvOoeWFAt50Cg29O3nq4PJ382w4qPIZ4Q=;
- b=HMzWf0A677dZLOgP1Be2DX1oawuadBHmJvQ5Eq/d0mMpyexQDOQBop31VKK9KSB3sGffBh+kwqIA7ifhgVcPkxARGOyRNZLJUknRZeWmIA7ADg19QoPfk1y6cZ7M/qCp3z7tPAuka3RdI/ktMQhGQ9pIXLZXj4qfUrqPcKo2JuA=
-Received: from yoda.home (unknown [24.203.50.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by pb-smtp20.pobox.com (Postfix) with ESMTPSA id EFECC8A423;
- Wed, 13 Nov 2019 11:56:55 -0500 (EST)
- (envelope-from nico@fluxnic.net)
-Received: from xanadu.home (xanadu.home [192.168.2.2])
- by yoda.home (Postfix) with ESMTPSA id 0E9462DA0227;
- Wed, 13 Nov 2019 11:56:54 -0500 (EST)
-Date: Wed, 13 Nov 2019 11:56:53 -0500 (EST)
-From: Nicolas Pitre <nico@fluxnic.net>
-To: =?ISO-8859-15?Q?Uwe_Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH/RFC] ARM: boot: Relax kernel image alignment for RZ/A
- with CS3 SDRAM
-In-Reply-To: <20191113104037.e45j37xoxeztvut3@pengutronix.de>
-Message-ID: <nycvar.YSQ.7.76.1911131151510.7180@knanqh.ubzr>
-References: <20191113102729.29303-1-geert+renesas@glider.be>
- <20191113104037.e45j37xoxeztvut3@pengutronix.de>
-User-Agent: Alpine 2.21 (LFD 202 2017-01-01)
+ id 1iUw3G-0002T2-V5
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 17:03:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=WQADSNrI4d/HxzMxBtQ+iwGnK4AsKuPRvo12BLZ2hYY=; b=dD6+CSQ/oWdT8C4qLFqsDE0HV
+ dzp2WMa/ykoPKGfI05NSUeIQ+iabkCgAM4fJTJfRioHfdk/Uvp9zA3QUFH/h5g5g9bJxUKbgsV8tb
+ q0yD4DgGXvvwf2hCbQeo0Nq4KkDMbkql0xiyDXMFSZ2QUAmvO7uC/U4+x410VSM3xs++hQ2MKguQV
+ 4k/jdBjPcrynl8RtDX8K8lrB3uDv4LulPiB4KQ4lFYZ2HNkynl1Uga58/xzSD1YRTQyPeX5rcYG98
+ NfnJv75jyVDK436ZZ5LwLHRMnhsiDuA1Ocv05Xv1gV/4ENT7xE9QkT7OFejCUzWFHfliMLIds8Awo
+ Zv8VRqbYw==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:39168)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iUw0s-0005cw-MT; Wed, 13 Nov 2019 17:01:02 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iUw0o-0002bS-Np; Wed, 13 Nov 2019 17:00:58 +0000
+Date: Wed, 13 Nov 2019 17:00:58 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH] ARM: don't export unused return_address()
+Message-ID: <20191113170058.GP25745@shell.armlinux.org.uk>
+References: <20190906154706.2449696-1-arnd@arndb.de>
+ <CAMuHMdUMgDBo1gkvQ_Bd8mjMiPjdWWY=9AU6K1S7NcJy5jhvGQ@mail.gmail.com>
+ <CAK7LNASNp4jPYHmh3e4QYwenYbVrK69tvB_LLyK_ew1eqBNrEw@mail.gmail.com>
+ <20191113114517.GO25745@shell.armlinux.org.uk>
+ <CAMuHMdXk9sWBpYWC-X6V3rp2e0+f5ebdRFFXn8Heuy0qkLq0GQ@mail.gmail.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="8323328-1842071205-1573664214=:7180"
-X-Pobox-Relay-ID: 996898E2-0636-11EA-95D8-B0405B776F7B-78420484!pb-smtp20.pobox.com
+Content-Disposition: inline
+In-Reply-To: <CAMuHMdXk9sWBpYWC-X6V3rp2e0+f5ebdRFFXn8Heuy0qkLq0GQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_085700_989029_CF5ABA0A 
-X-CRM114-Status: GOOD (  20.08  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191113_090331_001357_4ED95C58 
+X-CRM114-Status: GOOD (  20.11  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [173.228.157.52 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -89,68 +90,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
- Russell King <linux@armlinux.org.uk>, linux-renesas-soc@vger.kernel.org,
- Chris Brandt <chris.brandt@renesas.com>, Eric Miao <eric.miao@nvidia.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-  This message is in MIME format.  The first part should be readable text,
-  while the remaining parts are likely unreadable without MIME-aware tools.
+On Wed, Nov 13, 2019 at 02:15:00PM +0100, Geert Uytterhoeven wrote:
+> Hi Russell,
+> 
+> On Wed, Nov 13, 2019 at 12:45 PM Russell King - ARM Linux admin
+> <linux@armlinux.org.uk> wrote:
+> > On Wed, Nov 13, 2019 at 08:40:39PM +0900, Masahiro Yamada wrote:
+> > > On Tue, Oct 1, 2019 at 11:31 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+> > > > On Fri, Sep 6, 2019 at 5:47 PM Arnd Bergmann <arnd@arndb.de> wrote:
+> > > > > Without the frame pointer enabled, return_address() is an inline
+> > > > > function and does not need to be exported, as shown by this warning:
+> > > > >
+> > > > > WARNING: "return_address" [vmlinux] is a static EXPORT_SYMBOL_GPL
+> > > > >
+> > > > > Move the EXPORT_SYMBOL_GPL() into the #ifdef as well.
+> > > > >
+> > > > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> > > >
+> > > > Thanks for your patch!
+> > > >
+> > > > Tested-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> > > >
+> > > > > --- a/arch/arm/kernel/return_address.c
+> > > > > +++ b/arch/arm/kernel/return_address.c
+> > > > > @@ -53,6 +53,7 @@ void *return_address(unsigned int level)
+> > > > >                 return NULL;
+> > > > >  }
+> > > > >
+> > > >
+> > > > Checkpatch doesn't like the empty line above:
+> > > >
+> > > > WARNING: EXPORT_SYMBOL(foo); should immediately follow its function/variable
+> > > >
+> > > > > +EXPORT_SYMBOL_GPL(return_address);
+> > > > > +
+> > > > >  #endif /* if defined(CONFIG_FRAME_POINTER) && !defined(CONFIG_ARM_UNWIND) */
+> > > > >
+> > > > > -EXPORT_SYMBOL_GPL(return_address);
+> 
+> > > What has happened to this patch?
+> > >
+> > > I still see this warning.
+> >
+> > Simple - it got merged, it caused build regressions, it got dropped.
+> > A new version is pending me doing another round of patch merging.
+> 
+> I believe that was not Arnd's patch, but Ben Dooks' alternative solution[*]?
 
---8323328-1842071205-1573664214=:7180
-Content-Type: text/plain; charset=iso-8859-1
-Content-Transfer-Encoding: quoted-printable
+I don't keep track of who did what, sorry.
 
-On Wed, 13 Nov 2019, Uwe Kleine-K=F6nig wrote:
-
-> On Wed, Nov 13, 2019 at 11:27:29AM +0100, Geert Uytterhoeven wrote:
-> > The RZA2MEVB sub board has 64 MiB of SDRAM at 0x0C000000 (CS3 space).
->=20
-> This wording is misleading. You don't adapt the limit because 128 MiB >
-> the amount of RAM on that platform but because the alignment of the CS3
-> space isn't a multiple of 128 MiB. So I suggest:
->=20
-> 	On the RZA2MEVB the SDRAM's base is at 0x0C000000 which isn't
-> 	aligned to 128 MiB. So to ensure the assumptions of the
-> 	decompressor are valid the used alignment must be decreased.
->=20
-> > Hence the mask for CONFIG_AUTO_ZRELADDR needs to be changed, otherwis=
-e
-> > the system will crash because it will try to decompress a zImage or
-> > uImage to a non-RAM garbage address.
-> >=20
-> > Based on a patch in the BSP by Chris Brandt <chris.brandt@renesas.com=
->.
-> >=20
-> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > ---
-> > No idea what to do with the rest of the comment, or if this breaks
-> > existing platforms.
->=20
-> I would assume that it indeed breaks existing platforms. So maybe bette=
-r
-> make this configurable, default to 128 MiB and select it to 64 MiB on
-> the affected platform? If the resulting kernel supports also other
-> machines a warning (at compile time) might be a good idea.
-
-Better yet could involve fetching the actual physical RAM start address=20
-from the DTB when present. This 128 MB mask was just a shortcut to keep=20
-things simple.
-
-
-Nicolas
---8323328-1842071205-1573664214=:7180
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+> [*] Commit 0b0617e5a610fe12 ("ARM: 8918/1: only build return_address() if
+>     needed"), which I discovered in next-20191031 when checking if Arnd's
+>     patch was applied....
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---8323328-1842071205-1573664214=:7180--
-
