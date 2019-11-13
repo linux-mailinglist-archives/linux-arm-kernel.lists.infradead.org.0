@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29471FA25C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 03:04:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E69DCFA339
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 03:10:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gbs35+npe717AR4YZjnknp8+yr32WBLzmovh7Mx+KT0=; b=laJSVuNNv+VO6h
-	P6A/3OmwrRSF9Hk8qeE7YYWz/+NIHxQOjdEnQP1a3hmdAEBNxHq7UC9BfFfP31q9Vk3Vl7wpCBiEb
-	nIEUJuMGOqc8+ju9VAXqxNOwhKY+QEP7+YQEsV92E0vMq1iiOBHLSsN2JRkOPGGaCgPufwgc9PGX1
-	7OBMaCdRC1A6S19Vvcy7j3kYTdU3tH5apX/ZAXfpI4cnBztxx3OnS8Id9mlg5IcbjEgeMpdH53IkX
-	Nv74OWyvpEwNRIbG/V5vMeRMAWqcNzsQQ7AjHWbZn+87UYZi/FApPU9vWYTt24MJdpy8LIhmkAdZA
-	2gbmEOCkkOcypEOWZARQ==;
+	List-Owner; bh=wOaNdfknqjQZp1X9tDt2jo+vgm65+RuWw2hI8c/0MCY=; b=Pi1eCs0GzGqGHd
+	qshh7QpAISKCd3KibN/IFAbUIjUk7/NBj8/lK4Z24BF9N49g5sI7M/gzUUoEQ+1M0LkdEqeP5S9za
+	hsdBvWRQ79wONfFc3ulYlDBF6UtpBPDtFHEpS4zGyvLYakaKdqQTFggHE52WGPMU0ZGtfFhihMxfk
+	H+DXu2+M6boZ5W0DpCS9GrcUe8vSII+27HMUVImb7qjUtSnjVvD2RJWfnpa5WZOwVlPfbMx8FDx/k
+	ZSp31WapwIEA8r06hQbTq+3HS3E/6+UBm0ijqitr9ZiEIgEJT/dlb0QF9sVZ3b0GeFbLRLJuK2RT5
+	Auri/qzfbjxQWqwQrwKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUi0h-0003n6-0Z; Wed, 13 Nov 2019 02:03:55 +0000
+	id 1iUi6a-0006Rm-GE; Wed, 13 Nov 2019 02:10:00 +0000
 Received: from zeniv.linux.org.uk ([195.92.253.2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUi0V-0003mK-Ns
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 02:03:44 +0000
+ id 1iUi6Q-0006Qe-IF
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 02:09:51 +0000
 Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1iUhzv-0008C3-Ic; Wed, 13 Nov 2019 02:03:07 +0000
-Date: Wed, 13 Nov 2019 02:03:07 +0000
+ Linux)) id 1iUi5t-0008S0-DR; Wed, 13 Nov 2019 02:09:17 +0000
+Date: Wed, 13 Nov 2019 02:09:17 +0000
 From: Al Viro <viro@zeniv.linux.org.uk>
 To: Aleksa Sarai <cyphar@cyphar.com>
-Subject: Re: [PATCH v15 5/9] namei: LOOKUP_IN_ROOT: chroot-like scoped
- resolution
-Message-ID: <20191113020307.GB26530@ZenIV.linux.org.uk>
+Subject: Re: [PATCH v15 6/9] namei: LOOKUP_{IN_ROOT,BENEATH}: permit limited
+ ".." resolution
+Message-ID: <20191113020917.GC26530@ZenIV.linux.org.uk>
 References: <20191105090553.6350-1-cyphar@cyphar.com>
- <20191105090553.6350-6-cyphar@cyphar.com>
+ <20191105090553.6350-7-cyphar@cyphar.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191105090553.6350-6-cyphar@cyphar.com>
+In-Reply-To: <20191105090553.6350-7-cyphar@cyphar.com>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_180343_781856_66C31E51 
-X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-CacheID: sfid-20191112_180950_605621_4854F799 
+X-CRM114-Status: UNSURE (   7.73  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,9 +67,9 @@ Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
  Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
  David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
  sparclinux@vger.kernel.org, Christian Brauner <christian.brauner@ubuntu.com>,
- Jiri Olsa <jolsa@redhat.com>, linux-arch@vger.kernel.org,
+ Shuah Khan <shuah@kernel.org>, linux-arch@vger.kernel.org,
  linux-s390@vger.kernel.org, Tycho Andersen <tycho@tycho.ws>,
- Aleksa Sarai <asarai@suse.de>, Shuah Khan <shuah@kernel.org>,
+ Aleksa Sarai <asarai@suse.de>, Jiri Olsa <jolsa@redhat.com>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
  Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
  linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
@@ -91,27 +91,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 05, 2019 at 08:05:49PM +1100, Aleksa Sarai wrote:
+On Tue, Nov 05, 2019 at 08:05:50PM +1100, Aleksa Sarai wrote:
 
-> @@ -2277,12 +2277,20 @@ static const char *path_init(struct nameidata *nd, unsigned flags)
->  
->  	nd->m_seq = read_seqbegin(&mount_lock);
->  
-> -	/* Figure out the starting path and root (if needed). */
-> -	if (*s == '/') {
-> +	/* Absolute pathname -- fetch the root. */
-> +	if (flags & LOOKUP_IN_ROOT) {
-> +		/* With LOOKUP_IN_ROOT, act as a relative path. */
-> +		while (*s == '/')
-> +			s++;
+> One other possible alternative (which previous versions of this patch
+> used) would be to check with path_is_under() if there was a racing
+> rename or mount (after re-taking the relevant seqlocks). While this does
+> work, it results in possible O(n*m) behaviour if there are many renames
+> or mounts occuring *anywhere on the system*.
 
-Er...  Why bother skipping slashes?  I mean, not only link_path_walk()
-will skip them just fine, you are actually risking breakage in this:
-                if (*s && unlikely(!d_can_lookup(dentry))) {
-                        fdput(f);
-                        return ERR_PTR(-ENOTDIR);
-                }
-which is downstream from there with you patch, AFAICS.
+BTW, do you realize that open-by-fhandle (or working nfsd, for that matter)
+will trigger arseloads of write_seqlock(&rename_lock) simply on d_splice_alias()
+bringing disconnected subtrees in contact with parent?
 
 _______________________________________________
 linux-arm-kernel mailing list
