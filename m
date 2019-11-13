@@ -2,63 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD131FAB28
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 08:41:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF596FAB3E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 08:48:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a7J2Nv1liPH3dTKD0Xcya2Zq1dGMUK1u7L14wcLtb4c=; b=a8O1CECmZcxfOv
-	eF6b6+LPRg0fOUDxXOLJtme4pwG93sE+M0Xuw51Lif8vU/wM+KtotEyEKzFtsYr8XpFr1M4Kqk3wb
-	vUkbqd0kR8c5V97NjNyLiW59mIdq8hxItbyKnfSVagKXsH8/GSn8kH6H5ScJ1/KBNx2zqY7XICBUL
-	qxgZP0mZGeIS9SoqEzrSAk/vcmpRnNKvbJLoxXW+n2+iXBg5FV0mscx4k5aGK8CJTO+GpW6uIeLXJ
-	IYXwpV2u1yA7PyfvO2xGfKu4rzcXG1oOCJsJfnWIs/NNUq5r5OUEGloPxhTeu96l+XoxD0d2Kt/gM
-	1ty5FBxN6R4pLcd2FAVQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GuEgCyTcZEBEvWaCdUSbXv5gm7Hlc93cG/VyDgMx8Dw=; b=SoDKL0JX8dsWeANGiFW8qseSP
+	r13yP3XEFkIK1l1IV+4E0aAUSoKIkXE5qXtHdJ4uTlv16x4YT9NOLFMQkGQcegWDrTwzg3rcWABIs
+	JGoVRVEXbSGD4krL4gqWRuA1c+vsBZE8S2RX/bDHIGqRsfa74Pj9ivu7cXdLgJnAVKX6Fyk6K1/Nu
+	+yFo936or4ualjdWih18x73uZqVwaDftiRliwW4LkgYnpN2ykcGq4ajWRYUchFMbwZB06t3oTugOV
+	JHP/F2OkSAb9uUGhnwfHlAey5468tHN5+QGgDAuuwBic3a+XQB7RVDaR8QQeWCmVwLLgZWQstbsgi
+	kKWxd9WNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUnHM-0002z3-Ag; Wed, 13 Nov 2019 07:41:28 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iUnON-0005Mj-Dp; Wed, 13 Nov 2019 07:48:43 +0000
+Received: from mout-p-201.mailbox.org ([2001:67c:2050::465:201])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUnHE-0002yL-9B
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 07:41:21 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1iUnGz-0007gc-KI; Wed, 13 Nov 2019 08:41:05 +0100
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1iUnGy-0007xK-Ci; Wed, 13 Nov 2019 08:41:04 +0100
-Date: Wed, 13 Nov 2019 08:41:04 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCHv7 2/3] ARM: dts: Add support for i.MX6 UltraLite DART
- Variscite Customboard
-Message-ID: <20191113074104.nbcc6kopsr3ow4kt@pengutronix.de>
-References: <1573586526-15007-1-git-send-email-oliver.graute@gmail.com>
- <1573586526-15007-3-git-send-email-oliver.graute@gmail.com>
- <CAOMZO5DX_-zSHJjDigK2c=dVLEMxvfd_dFCu=0fbyjht1gsr=A@mail.gmail.com>
+ id 1iUnOD-0005MB-0Q
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 07:48:35 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47CcDY3vdYzQlBb;
+ Wed, 13 Nov 2019 08:48:29 +0100 (CET)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
+ [80.241.56.123]) (amavisd-new, port 10030)
+ with ESMTP id 3hMGDl1msr0T; Wed, 13 Nov 2019 08:48:23 +0100 (CET)
+Date: Wed, 13 Nov 2019 18:47:57 +1100
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Al Viro <viro@zeniv.linux.org.uk>
+Subject: Re: [PATCH v15 4/9] namei: LOOKUP_BENEATH: O_BENEATH-like scoped
+ resolution
+Message-ID: <20191113074757.5b4u5vlyx2u6pbn6@yavin.dot.cyphar.com>
+References: <20191105090553.6350-1-cyphar@cyphar.com>
+ <20191105090553.6350-5-cyphar@cyphar.com>
+ <20191113015534.GA26530@ZenIV.linux.org.uk>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOMZO5DX_-zSHJjDigK2c=dVLEMxvfd_dFCu=0fbyjht1gsr=A@mail.gmail.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 08:40:28 up 179 days, 13:58, 119 users,  load average: 0.13, 0.07,
- 0.01
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20191113015534.GA26530@ZenIV.linux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_234120_321392_BCF2308B 
-X-CRM114-Status: GOOD (  14.44  )
+X-CRM114-CacheID: sfid-20191112_234833_361066_5079DE5E 
+X-CRM114-Status: GOOD (  14.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,71 +66,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Neil Armstrong <narmstrong@baylibre.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Oliver Graute <oliver.graute@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Christian Brauner <christian.brauner@ubuntu.com>,
+ Shuah Khan <shuah@kernel.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Tycho Andersen <tycho@tycho.ws>,
+ Aleksa Sarai <asarai@suse.de>, Jiri Olsa <jolsa@redhat.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-m68k@lists.linux-m68k.org, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, libc-alpha@sourceware.org,
+ linux-parisc@vger.kernel.org, linux-api@vger.kernel.org,
+ Chanho Min <chanho.min@lge.com>, Jeff Layton <jlayton@kernel.org>,
+ Oleg Nesterov <oleg@redhat.com>, Eric Biederman <ebiederm@xmission.com>,
+ linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============4951231701318715579=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-11-12 20:17, Fabio Estevam wrote:
-> Hi Oliver,
-> 
-> On Tue, Nov 12, 2019 at 4:22 PM Oliver Graute <oliver.graute@gmail.com> wrote:
-> 
-> > +&lcdif {
-> > +       pinctrl-names = "default";
-> > +       pinctrl-0 = <&pinctrl_lcdif>;
-> > +       display = <&display0>;
-> > +       status = "okay";
-> > +
-> > +       display0: display0 {
-> > +               bits-per-pixel = <16>;
-> > +               bus-width = <24>;
-> > +
-> > +               display-timings {
-> > +                       native-mode = <&timing0>;
-> > +                       timing0: timing0 {
-> > +                               clock-frequency =<35000000>;
-> > +                               hactive = <800>;
-> > +                               vactive = <480>;
-> > +                               hfront-porch = <40>;
-> > +                               hback-porch = <40>;
-> > +                               hsync-len = <48>;
-> > +                               vback-porch = <29>;
-> > +                               vfront-porch = <13>;
-> > +                               vsync-len = <3>;
-> > +                               hsync-active = <0>;
-> > +                               vsync-active = <0>;
-> > +                               de-active = <1>;
-> > +                               pixelclk-active = <0>;
-> > +                       };
-> > +               };
-> > +       };
-> > +};
-> 
-> You are using the deprecated bindings.
-> 
-> Please switch to the DRM bindings as stated at
-> Documentation/devicetree/bindings/display/mxsfb.txt
-> 
-> You should also add your panel to the simple panel driver.
 
-That would be the best solution :)
+--===============4951231701318715579==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="odomi6wtik4yoblv"
+Content-Disposition: inline
 
-Regards,
-  Marco
+
+--odomi6wtik4yoblv
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On 2019-11-13, Al Viro <viro@zeniv.linux.org.uk> wrote:
+> Minor nit here - I'd split "move the conditional call of set_root()
+> into nd_jump_root()" into a separate patch before that one.  Makes
+> for fewer distractions in this one.  I'd probably fold "and be
+> ready for errors other than -ECHILD" into the same preliminary
+> patch.
+
+Will do.
+
+> > +			/* Not currently safe for scoped-lookups. */
+> > +			if (unlikely(nd->flags & LOOKUP_IS_SCOPED))
+> > +				return ERR_PTR(-EXDEV);
+>=20
+> Also a candidate for doing in nd_jump_link()...
+>=20
+> > @@ -1373,8 +1403,11 @@ static int follow_dotdot_rcu(struct nameidata *n=
+d)
+> >  	struct inode *inode =3D nd->inode;
+> > =20
+> >  	while (1) {
+> > -		if (path_equal(&nd->path, &nd->root))
+> > +		if (path_equal(&nd->path, &nd->root)) {
+> > +			if (unlikely(nd->flags & LOOKUP_BENEATH))
+> > +				return -EXDEV;
+>=20
+> Umm...  Are you sure it's not -ECHILD?
+
+It wouldn't hurt to be -ECHILD -- though it's not clear to me how likely
+a success would be in REF-walk if the parent components didn't already
+trigger an unlazy_walk() in RCU-walk.
+
+I guess that also means LOOKUP_NO_XDEV should trigger -ECHILD in
+follow_dotdot_rcu()?
+
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--odomi6wtik4yoblv
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXcu1KgAKCRCdlLljIbnQ
+EpYSAQDaNIB4LkhLlbFgkuRPiavU6vZ03HuSIHKseqaD6uMARwD+OcGzTDahyjJ6
+YeuKal+s33ETzSjupl7K2mKfYQpA2Q0=
+=nyQ8
+-----END PGP SIGNATURE-----
+
+--odomi6wtik4yoblv--
+
+
+--===============4951231701318715579==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4951231701318715579==--
+
