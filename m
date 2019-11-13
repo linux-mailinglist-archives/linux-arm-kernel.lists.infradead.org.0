@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C14DFFB368
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 16:14:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61BE0FB363
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 16:13:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=p5UO/7w/UV9OsXSzy4cGOeR+xkq00e3TwNJgFNmab8Y=; b=aC3WXZOhXHZ4BwgbiEnCVhpS34
-	DN0qQmyGLMePjvBKmS1Zf6uC+5QzKly0zRrVcEhPBJ0RKEVpVcV3uGjW9IAzJn26U329Bg4GHH6v1
-	Ue5lqt2itpCg3BmKiv+pdvp88d9xqtykRKDwHkTkqFhhecTscoyeh5QFHb1oNleiuxp0kMjyCZPlB
-	79zvLYwM1ZzoLxCRFvkj4ePVWz4GZvj4LjznYeKaf/2OHKUZvuFLS1ilrg3V4sK/fBWUvwlgEn1hN
-	w8nvqaZIeclr2+8xUDxUYS/HQTQ2XhzFauMumSuACssmJ7iBNovWhQznkqnlFpyD6vhn7wdOTz1dC
-	JnUf62tw==;
+	bh=mohkxyhTh4oy4cZWGaDkrRtmW1VX1OllCOnwcziFCMA=; b=BiylPHpLEC9BCFTktxRry12Ow+
+	vqVycLhyR6M30Jvayf8TRqe/5Kle/jiBLj0y3lZq9sWaKfiFwL6UFhdOUql2jg65YZesmz54h59Mo
+	WlDXyNeMJBUpEGKkNVe2mzfBMDgkrNDiqgvxXBwXya92JvoRzz6XPPvZTHeaS3ZPYX0XjFjAgz2aS
+	SiHXBtatHn3m9afWStCLzhQYVdCyqD5vRan0ggsfgDUXyQY0z+hwWxur83tX0jrlgCL+lr4Tw95Tj
+	6mxGmYGIP1k/hK020T3V1kOoXXkN1t//NBQ164fu0tabJ/+W8vndMmqcwJslVkiLA5u8g/5ODWRrS
+	Px5n4qAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUuLM-0005oB-Bb; Wed, 13 Nov 2019 15:14:04 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
+	id 1iUuKt-0005PG-FN; Wed, 13 Nov 2019 15:13:35 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUuJj-0004Sh-Vo
+ id 1iUuJj-0004Si-Ve
  for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 15:12:26 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 23FA0C0E95;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 38E03C0E98;
  Wed, 13 Nov 2019 15:12:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1573657941; bh=BDukAyowAZk0E3mYeClr0pY7CNQPO/82dQMmXYYRMf4=;
+ t=1573657941; bh=jjICtN6nRPvjHGBNW8f6sLnIxarejkUWdfnGT+fEkhE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=gGfeRKLy5OnSABPHpsoRpQ1oNQLxPjzk8yLPClR94JuQq7ZtODaNwFGxiGZrPST1Z
- bMDToDxnKjNzOlQXS+gAl0yW2nKZsibHY/mw7Bs+6JWXmNO4WT4nNnmucmBrR06ins
- AFufK4AZwNTmIrjsoA/ErdvDLVQrQi/RsNfMMCHiNLD/g1E5+KCyhzXHPzia2cTvpv
- u5Vs5zY/mB+9HOnrqiQ2HQXh41NpvtinEV1f5fEe/+O2PutWpUyLnDAOeTUJodw34o
- dGkwuIfVmrm1TTFdi3ERQ+3UKCSx0E5H9xZJhuBFXmsPSRLP9pmlS8UbmCycGaJZXe
- 93tdULeu7rNpw==
+ b=RffYW4TN54gSvtHNErDOxuzEPR6/DnIaT4qIvG4Z1jzdg0kzB8kOXEroRoYNEPPNh
+ DHY/OLqKtEUbb4/tMUuu822UcQv+BfDeLk66Q1glFxlSsx6gT5RWk27Il8pZDflgEM
+ 4f7HNGWeatmrf92VybDNnesbjHnyIRDd1pqJzlMF46p41EJj5NUfxU8jQnjC26IMWC
+ Vah+bJtb/vG53vdZRXa2LF30igCDU+J8hK8S2uVrbteRWiTvTX7RoUs/hJAiZghYpw
+ Wgwe+bLTF19xPBxDWALymorx+WFTld0ncIhQI+vjD0Yytzq9smLT2m9RH6LxeODkIz
+ UrkfjS4o6Xgsw==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id CE630A0094;
+ by mailhost.synopsys.com (Postfix) with ESMTP id E3509A0097;
  Wed, 13 Nov 2019 15:12:19 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 6/7] net: stmmac: Tune-up default coalesce settings
-Date: Wed, 13 Nov 2019 16:12:07 +0100
-Message-Id: <19636d3f37d1a202712e38c85f5a2d9bbbf8781c.1573657592.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next 7/7] net: stmmac: TX Coalesce should be per-packet
+Date: Wed, 13 Nov 2019 16:12:08 +0100
+Message-Id: <904a2b53a0957f6f82562a73dffb4d69218c99b5.1573657593.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 References: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 References: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_071224_037401_5DE2FD88 
-X-CRM114-Status: GOOD (  10.67  )
+X-CRM114-CacheID: sfid-20191113_071224_029834_BE9ED7A4 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,8 +97,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tune-up the defalt coalesce settings for optimal values. This gives the
-best performance in most of the use-cases.
+TX Coalesce settings are per packet and not per fragment because
+otherwise the coalesce would be different between TSO and non-TSO
+packets.
 
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
@@ -112,24 +114,31 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/common.h | 4 ++--
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h b/drivers/net/ethernet/stmicro/stmmac/common.h
-index 309ea12ea61f..b210e987a1db 100644
---- a/drivers/net/ethernet/stmicro/stmmac/common.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/common.h
-@@ -253,8 +253,8 @@ struct stmmac_safety_stats {
- #define STMMAC_COAL_TX_TIMER	1000
- #define STMMAC_MAX_COAL_TX_TICK	100000
- #define STMMAC_TX_MAX_FRAMES	256
--#define STMMAC_TX_FRAMES	1
--#define STMMAC_RX_FRAMES	25
-+#define STMMAC_TX_FRAMES	25
-+#define STMMAC_RX_FRAMES	0
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+index 6136ada20c8e..140abfcb54c6 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+@@ -3033,7 +3033,7 @@ static netdev_tx_t stmmac_tso_xmit(struct sk_buff *skb, struct net_device *dev)
+ 	tx_q->tx_skbuff[tx_q->cur_tx] = skb;
  
- /* Packets types */
- enum packets_types {
+ 	/* Manage tx mitigation */
+-	tx_q->tx_count_frames += nfrags + 1;
++	tx_q->tx_count_frames++;
+ 	if (likely(priv->tx_coal_frames > tx_q->tx_count_frames) &&
+ 	    !((skb_shinfo(skb)->tx_flags & SKBTX_HW_TSTAMP) &&
+ 	      priv->hwts_tx_en)) {
+@@ -3241,7 +3241,7 @@ static netdev_tx_t stmmac_xmit(struct sk_buff *skb, struct net_device *dev)
+ 	 * This approach takes care about the fragments: desc is the first
+ 	 * element in case of no SG.
+ 	 */
+-	tx_q->tx_count_frames += nfrags + 1;
++	tx_q->tx_count_frames++;
+ 	if (likely(priv->tx_coal_frames > tx_q->tx_count_frames) &&
+ 	    !((skb_shinfo(skb)->tx_flags & SKBTX_HW_TSTAMP) &&
+ 	      priv->hwts_tx_en)) {
 -- 
 2.7.4
 
