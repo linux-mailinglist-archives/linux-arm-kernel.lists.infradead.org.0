@@ -2,96 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37526FB19C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 14:42:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0E7AFB1BA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 14:50:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Z0y0TNj7/EHJg/yqHC8LFNFTNEEQL3tul2uaUj/6Ghw=; b=c6UAE1vHwRbhWyPqTF2vl2+NKN
-	wA0XPPowWHWLL2lOMKB2SLmQJbpgAiBHQXzyol+fqzPtiL7d6yYAhjvk9l9Ej9MQhhpNYWRHLbpV5
-	Yv60NaTP0mg0l0QC+uZfCJuQuSisZ4r2U9gC97x3hlzu5LbGb0e4gt05DziAGyZ5R+hrJ0e/JQLOp
-	4cpgD38KNQ1jVmVtgDEulb1T6XbdkAQ+fZ04SMsVkLlWskcr5bUFzW6OlZX7yyDjvXhuf/tWlveT5
-	E5hPIB5gt0yGSkzNtMSFxHmriiRIlV9sfN605YWLgRIdiR9aFlIU+a8HEphAelrcUn5+SzKhzP5Rl
-	bncx25uQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FqT1YHRfGtLuFs344Bc5d6qOkQ0VrrA4Sc7BYuViO4k=; b=MIvFthY9+J9/+dA4E13UnVbo2
+	zxx/m0MAL723ZJiuSFDcB3yYlSN/8ewbyyLKOvk/IINh65fC7oJUpiRHUCUi2nMAKtxvft4oQF+FV
+	H+O4DgsNHILfwU4mJEJFGu+mNkYBuJobn/lYHcvwTDUCYFrN9UAnHg0hd/NIgS3z/4tUinC2cVMFN
+	u7v8wtXizFIAdSjYoISg8fXLguUWpLuWCKQzg1VfjQZnJdETobxfJeWYE0EAyvYIrZloWCAtMNG8y
+	S8BvX0NzJok4mZA8FQeHueYSqPJsXYmIXF1NIEgcNczVveOu6iVghBoWv5mh1W8Kp7HfosxDhooei
+	UvFh5d8Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUsum-0002hg-Uj; Wed, 13 Nov 2019 13:42:32 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iUt29-0005Rw-9I; Wed, 13 Nov 2019 13:50:09 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUstP-0001ll-VN
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 13:41:10 +0000
-Received: by mail-wr1-x441.google.com with SMTP id n1so2390527wra.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 Nov 2019 05:41:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=g2lD/Zhk10aEU/jv34FPJDsmkoPVsN84DE48zUMY4rY=;
- b=k2HbZ4e6sjvmBWQoY2Pe+72IYXI7kCB4Ng+pgaB+8dz45evIo4X+tazizhpNaJicuW
- wu9Loy/C6H1KAVbNc1dLto3ukDp2xzZX4B3EGV98R90cxh9kbeQMVoxzdxrHqW5d4v7t
- pqMpeN9O3+vMMei7IBZPhCnFIOBDaseMyS88qexO5BFiBCJv58I3m+pE2LDSgYdqpDhg
- cJUcdMaSPXyKUistFyhvPH3Q1KR4xLKlsILfHVpzZnHkuZdVkXfIekr94tn+MGJSQ+cx
- vYUgLWa+Jn3+nnVHgUFc9vMpzUBIQKkyO5D6ND2TSYAqY2k2QhpGCWin2gw++AmJBQon
- NiDw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=g2lD/Zhk10aEU/jv34FPJDsmkoPVsN84DE48zUMY4rY=;
- b=h1iENd682fnSngsn42OHTjpATQ1M7wwjKxWguKqgXE8nQKP+MzMz8SjgJ943k2gNTD
- vOSEHSsAKbOpFPGMOdhSCGg2/Y9bhc04XJoL4kXtnincyhQlaccD9Tvgj8O8Rm8l6fYP
- c+kTxzp7zvkOEDtSGYYmdjyYO6mSTqXgF2e7oyl3kAF+bA2OsPe7cl38GixqbkJSnDNU
- 3wEAb/WAhK275KLTQXXntF3/qGy0xVR1rlLPY1XUVqcQ4R/lgH/+Px8dlsnbAr8dhnZV
- QwX/Xs3dU8A0oocImFnRICeBmFV4zxWcjc+6nF1lHiJuS4G8mRufFKXxQ90qVYm/Sup1
- nD6w==
-X-Gm-Message-State: APjAAAWDfqtMG+mcOAS1mC+d3DnJQWD5shZqfQF32rZ9EJ8ci4Eoy/wd
- cqHZlTpe8Q52G173FHWXPpc=
-X-Google-Smtp-Source: APXvYqycO5HiZc7MPLu7pM7pXGduRKfW/IStuxKimcQBGQLCOQcBh1dpMtENB6GL7jlCv07MW8MfXQ==
-X-Received: by 2002:adf:e701:: with SMTP id c1mr2929025wrm.166.1573652466781; 
- Wed, 13 Nov 2019 05:41:06 -0800 (PST)
-Received: from mars.home
- (HSI-KBW-109-192-080-035.hsi6.kabel-badenwuerttemberg.de. [109.192.80.35])
- by smtp.googlemail.com with ESMTPSA id r15sm4195831wrc.5.2019.11.13.05.41.05
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 13 Nov 2019 05:41:06 -0800 (PST)
-From: Christoph Fritz <chf.fritz@googlemail.com>
-To: Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- Mark Brown <broonie@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v2 4/4] ARM: dts: phycore-imx6: set buck regulator modes
- explicitly
-Date: Wed, 13 Nov 2019 14:40:16 +0100
-Message-Id: <1573652416-9848-5-git-send-email-chf.fritz@googlemail.com>
-X-Mailer: git-send-email 2.1.4
-In-Reply-To: <1573652416-9848-1-git-send-email-chf.fritz@googlemail.com>
-References: <1573652416-9848-1-git-send-email-chf.fritz@googlemail.com>
+ id 1iUt1u-0005Qp-Ge; Wed, 13 Nov 2019 13:49:55 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iUt1c-00023o-CE; Wed, 13 Nov 2019 14:49:36 +0100
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [PATCH v2 5/6] PCI: brcmstb: add MSI capability
+X-PHP-Originating-Script: 0:main.inc
+MIME-Version: 1.0
+Date: Wed, 13 Nov 2019 14:58:57 +0109
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <20191112155926.16476-6-nsaenzjulienne@suse.de>
+References: <20191112155926.16476-1-nsaenzjulienne@suse.de>
+ <20191112155926.16476-6-nsaenzjulienne@suse.de>
+Message-ID: <d8cae6625265f95441019e33129febcd@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: nsaenzjulienne@suse.de, andrew.murray@arm.com,
+ linux-kernel@vger.kernel.org, lorenzo.pieralisi@arm.com, f.fainelli@gmail.com,
+ bcm-kernel-feedback-list@broadcom.com, eric@anholt.net, wahrenst@gmx.net,
+ james.quinlan@broadcom.com, mbrugger@suse.com, phil@raspberrypi.org,
+ jeremy.linton@arm.com, bhelgaas@google.com, linux-pci@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_054108_049996_5A96F813 
-X-CRM114-Status: GOOD (  11.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191113_054954_699402_3DE2EB5B 
+X-CRM114-Status: UNSURE (   7.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.7 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (chf.fritz[at]googlemail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 BUG6152_INVALID_DATE_TZ_ABSURD No description available.
+ 0.6 INVALID_DATE_TZ_ABSURD Invalid Date: header (timezone does not
+ exist)
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,71 +72,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lee Jones <lee.jones@linaro.org>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Support Opensource <support.opensource@diasemi.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Florian Fainelli <f.fainelli@gmail.com>, mbrugger@suse.com,
+ linux-pci@vger.kernel.org, phil@raspberrypi.org, linux-kernel@vger.kernel.org,
+ jeremy.linton@arm.com, Eric Anholt <eric@anholt.net>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
+ james.quinlan@broadcom.com, Bjorn Helgaas <bhelgaas@google.com>,
+ andrew.murray@arm.com, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch sets initial buck regulator modes explicitly to a state this
-hardware needs. So a wrong initial mode set by bootloader or pmic itself
-does not interfere anymore.
+On 2019-11-12 17:08, Nicolas Saenz Julienne wrote:
+> From: Jim Quinlan <james.quinlan@broadcom.com>
+>
+> This commit adds MSI to the Broadcom STB PCIe host controller. It 
+> does
+> not add MSIX since that functionality is not in the HW.  The MSI
+> controller is physically located within the PCIe block, however, 
+> there
+> is no reason why the MSI controller could not be moved elsewhere in
+> the future.
+>
+> Since the internal Brcmstb MSI controller is intertwined with the 
+> PCIe
+> controller, it is not its own platform device but rather part of the
+> PCIe platform device.
+>
+> Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
+> Co-developed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
-Signed-off-by: Christoph Fritz <chf.fritz@googlemail.com>
----
- arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 5 +++++
- 1 file changed, 5 insertions(+)
+Reviewed-by: Marc Zyngier <maz@kernel.org>
 
-diff --git a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-index 6486df3..644625d 100644
---- a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-@@ -5,6 +5,7 @@
-  */
- 
- #include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/regulator/dlg,da9063-regulator.h>
- 
- / {
- 	aliases {
-@@ -109,6 +110,7 @@
- 				regulator-name = "vdd_arm";
- 				regulator-min-microvolt = <730000>;
- 				regulator-max-microvolt = <1380000>;
-+				regulator-initial-mode = <DA9063_BUCK_MODE_SYNC>;
- 				regulator-always-on;
- 			};
- 
-@@ -116,6 +118,7 @@
- 				regulator-name = "vdd_soc";
- 				regulator-min-microvolt = <730000>;
- 				regulator-max-microvolt = <1380000>;
-+				regulator-initial-mode = <DA9063_BUCK_MODE_SYNC>;
- 				regulator-always-on;
- 			};
- 
-@@ -123,6 +126,7 @@
- 				regulator-name = "vdd_ddr3";
- 				regulator-min-microvolt = <1500000>;
- 				regulator-max-microvolt = <1500000>;
-+				regulator-initial-mode = <DA9063_BUCK_MODE_SYNC>;
- 				regulator-always-on;
- 			};
- 
-@@ -130,6 +134,7 @@
- 				regulator-name = "vdd_eth";
- 				regulator-min-microvolt = <1200000>;
- 				regulator-max-microvolt = <1200000>;
-+				regulator-initial-mode = <DA9063_BUCK_MODE_SYNC>;
- 				regulator-always-on;
- 			};
- 
+         M.
 -- 
-2.1.4
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
