@@ -2,70 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4310AFAD13
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 10:35:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 592DCFAD17
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 10:36:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xFZOKN9lau4yZkevvjqC1t5+RaXfWaoaamr5Yu3+UxU=; b=dEfsTePISDz+ue
-	zolmQEswGMK3NkR/NG/1Wdv4RP0ag92Wtlwrg6Og6QPjrs7yykwuJRekuo1EErIcWMM0Lf2x+QYDC
-	bV0/IZ8FFV0IRmFseORY5BwPsCz1Diyfr8eRcsMwEviI8tRSJ+dRHXBtdYZivevG4oXfxyCO5G3L+
-	b4Qr+/ZLUqusCpESRelZU2HcWoJ+tYcbQXyXJGytv+15xGHpnYi4IR936Lz7LnQLkqrdv7AoaEMsI
-	7/9XsZ+a9NXzp57Sh/awgS4L1/r1XMchw+YA5wcAsllu8AbpA6Fg6BDqXcdhl1YVUSe/s9Ruxb0Im
-	Lqz/yIp5bpIPmpgoVCbw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oC5zlpK8e4Mvr/nlV9ED8bdh833YNR+x9SJyvzv7VwI=; b=LWXOikab/uvdFt
+	yT6XV66Ffl5ncB/mnNDIoiDHx43L2zSO0zIfweN5gAfZIDCY26ffI2LIQRZYJQ6Pb024hHtArizxG
+	fecOkwi6v8ASuu7Z/g0yq0xmAnIbNiAkoLFcv5F+1nGt5pNmhkHuY4YNbPJit3oLCq0Chw19wOC/k
+	FAB+fpDeBqecMZ9ynQ7smvrNZZCfv14mGTGHHV+AGVVvAg3i/7hqtb4k1+j0kyzR7XfDGa/3AvDWv
+	SBBX3OGwbxe4Emx1Y6DCGRX0QQ1Ec11jFmrS4+ioCJFpDwOflL74WjzrU06m1AHXyJb5Gt7/pYZDa
+	8hnNBwveQyZTOwWFNzSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUp3g-0004g2-Cx; Wed, 13 Nov 2019 09:35:28 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iUp4B-00056n-CF; Wed, 13 Nov 2019 09:35:59 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUp3O-0003xC-8v
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 09:35:12 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAD9Z3Gm120152;
- Wed, 13 Nov 2019 03:35:03 -0600
+ id 1iUp3Q-0004Dh-Cc
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 09:35:14 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAD9Z6mq061805;
+ Wed, 13 Nov 2019 03:35:06 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573637703;
- bh=mpwqDeEPMA78i0tTP2wIwxuQcnYymL4njjvgQPRuSt8=;
- h=From:To:CC:Subject:Date;
- b=E6cg3AUx/IewZbNFRoHl/hK0LGdooaYMCv4P2fU5ehl4waS8afixIsYa9UAt7ywYi
- 33poMU4+LHISbdbIAWU6Ow+F1W4JG4CI/kAkD2KA0ZPLxJN6CeIWklMOE+9oQizyfg
- PXebbMpEtcuFaq05Pr9+xkIsdJuNR/BULygZIgFQ=
-Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAD9Z3wW051207;
- Wed, 13 Nov 2019 03:35:03 -0600
-Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ s=ti-com-17Q1; t=1573637706;
+ bh=2QIKelmDaXX54OyPocUNCuVYJ6+os6iRrZK4Yb9LT3A=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=hJZjT9u0PRgW38yl6FFRtvC1klWTMZvOiLB457Ud6XeRuZGnTZ+leyldFSFCI/IOd
+ BDsH7t0AKEc14CPo9vtdjzW7qdqU8VYo39gnXdGoLH5r7Y5jlSyjWE0D2dnK1wIhCc
+ 6EwuAQVLQQrfQkZoZNriXEqbzsObrjPhkhp+7s+w=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xAD9Z6Dw073704
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 13 Nov 2019 03:35:06 -0600
+Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 13
- Nov 2019 03:34:45 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ Nov 2019 03:34:48 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 13 Nov 2019 03:34:45 -0600
+ Frontend Transport; Wed, 13 Nov 2019 03:34:48 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAD9Z0hT086866;
- Wed, 13 Nov 2019 03:35:01 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAD9Z0hU086866;
+ Wed, 13 Nov 2019 03:35:03 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <ulf.hansson@linaro.org>, <ludovic.desroches@microchip.com>
-Subject: [PATCH 0/2] mms: Use dma_request_chan() directly for channel request
-Date: Wed, 13 Nov 2019 11:36:14 +0200
-Message-ID: <20191113093616.32474-1-peter.ujfalusi@ti.com>
+Subject: [PATCH 1/2] mmc: atmel-mci: Use dma_request_chan() directly for
+ channel request
+Date: Wed, 13 Nov 2019 11:36:15 +0200
+Message-ID: <20191113093616.32474-2-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191113093616.32474-1-peter.ujfalusi@ti.com>
+References: <20191113093616.32474-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_013510_532855_EA95CB0B 
-X-CRM114-Status: UNSURE (   9.25  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191113_013512_639454_5701627B 
+X-CRM114-Status: GOOD (  14.31  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -95,24 +98,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-I'm going through the tree to remove dma_request_slave_channel_reason() as it
-is just:
+dma_request_slave_channel_reason() is:
 #define dma_request_slave_channel_reason(dev, name) \
 	dma_request_chan(dev, name)
 
-Regards,
-Peter
+Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
-Peter Ujfalusi (2):
-  mmc: atmel-mci: Use dma_request_chan() directly for channel request
-  mmc: moxart: Use dma_request_chan() directly for channel request
+ drivers/mmc/host/atmel-mci.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
- drivers/mmc/host/atmel-mci.c  | 3 +--
- drivers/mmc/host/moxart-mmc.c | 4 ++--
- 2 files changed, 3 insertions(+), 4 deletions(-)
-
+diff --git a/drivers/mmc/host/atmel-mci.c b/drivers/mmc/host/atmel-mci.c
+index 34c992d87529..6f065bb5c55a 100644
+--- a/drivers/mmc/host/atmel-mci.c
++++ b/drivers/mmc/host/atmel-mci.c
+@@ -2347,8 +2347,7 @@ static void atmci_cleanup_slot(struct atmel_mci_slot *slot,
+ 
+ static int atmci_configure_dma(struct atmel_mci *host)
+ {
+-	host->dma.chan = dma_request_slave_channel_reason(&host->pdev->dev,
+-							"rxtx");
++	host->dma.chan = dma_request_chan(&host->pdev->dev, "rxtx");
+ 
+ 	if (PTR_ERR(host->dma.chan) == -ENODEV) {
+ 		struct mci_platform_data *pdata = host->pdev->dev.platform_data;
 -- 
 Peter
 
