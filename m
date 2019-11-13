@@ -2,60 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBAD6FAE1E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 11:09:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A4F8FAE20
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 11:10:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8zNspCuwuqQhZPRcSqEowOkh/gR4f/VonZwlIOxyIK8=; b=GdaECx+WlpREuR
-	8eMm6mwDzPS8Xcdd2EZffcSsLEJNmy8R955E82NqM/ygA8gnm4XzmaXnaTlVwF2eBt2/pZMBEzNQN
-	mPTeEgugoGe0mQJEwDk0odIC5W56ciqOW97lhIxG53FB05oJZoJVG5J0BxE0t0FZomBmG/a2BV8HB
-	gqR293GSVNcjg+qnpA06dz7a4JPt8KJAI8kcM/rzSsp50damsUVPWQkXVvopTC5hlCxaKM/1RI+6G
-	7+z17XEajiWlpwYSGBJnGc3vNP9zq5ZFWBeOREeSRFBC7iwC+6rlM6rFr52OxixFyQYNfAM234GCA
-	cZtAFwLiqczQl+vhRlFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yIhvnlTdz2WAXQEBU2NrDiSE7QWju0TfknNqcR6lXLQ=; b=tVtZHT0ozu2QS9
+	XVVRdpEp7pBwlFfzvyWawR8oOtBSFP5XnUhjB+HHMq39cyq12L7OvonGMP78lv45y/7rO9L21cozn
+	eOhBzYfSUQM/m8ZAKwhPYyHf0KwhT24MgFYuqcQYtQqWmxS49kGX8MtT5u+Zx9wmAoN68a6Gsv3NF
+	cac5reuO4Koz3/ody/zU4tVV5suI2mp81b9HKiW6pJZQm3a7PU32lj338a04XHv53ZEifDW0MeV6Q
+	U+/yG3A55oqnv0O8BUj96gzoSKn7pVs+l6CpxQQBOMHEE9RVXE4ME4lVJZvXim8HdJPUrS8ag9rR0
+	bNk7yaqoZo6V1FGn7QeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUpas-0004uX-P2; Wed, 13 Nov 2019 10:09:46 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iUpbD-0005F1-9C; Wed, 13 Nov 2019 10:10:07 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUpaT-0004et-U4
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 10:09:23 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 2E01A201BC;
- Wed, 13 Nov 2019 11:09:17 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id EB88520116;
- Wed, 13 Nov 2019 11:09:16 +0100 (CET)
-Subject: Re: why no stack protector for vdso
-To: Linfeilong <linfeilong@huawei.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>
-References: <9711d978b96f4e18b684f91f90397c13@huawei.com>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <664634fb-5bc1-dd61-8a49-bff9a3ee32cc@free.fr>
-Date: Wed, 13 Nov 2019 11:09:16 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iUpaw-0005AU-QE
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 10:09:53 +0000
+Received: from windsurf (lfbn-tou-1-421-123.w86-206.abo.wanadoo.fr
+ [86.206.246.123])
+ (Authenticated sender: thomas.petazzoni@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 2DC7010000F;
+ Wed, 13 Nov 2019 10:09:38 +0000 (UTC)
+Date: Wed, 13 Nov 2019 11:09:38 +0100
+From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+To: Claudiu Beznea <claudiu.beznea@microchip.com>
+Subject: Re: [PATCH 01/13] ARM: at91: Kconfig: add sam9x60 pll config flag
+Message-ID: <20191113110938.5e7ee5cd@windsurf>
+In-Reply-To: <1573635069-30883-2-git-send-email-claudiu.beznea@microchip.com>
+References: <1573635069-30883-1-git-send-email-claudiu.beznea@microchip.com>
+ <1573635069-30883-2-git-send-email-claudiu.beznea@microchip.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4git49 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <9711d978b96f4e18b684f91f90397c13@huawei.com>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Wed Nov 13 11:09:17 2019 +0100 (CET)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_020922_166690_8F1F5180 
-X-CRM114-Status: GOOD (  10.45  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191113_020951_006157_9D2E3CD6 
+X-CRM114-Status: UNSURE (   6.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -68,52 +63,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Hushiyuan <hushiyuan@huawei.com>, Nathan Lynch <nathanl@linux.ibm.com>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Nathan Lynch <nathan_lynch@mentor.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
+ linux@armlinux.org.uk, ludovic.desroches@microchip.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 13/11/2019 10:21, linfeilong wrote:
+On Wed, 13 Nov 2019 10:50:57 +0200
+Claudiu Beznea <claudiu.beznea@microchip.com> wrote:
 
-> Dear Frascino,
+> Add SAM9X60's pll config flag.
+> 
+> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 
-[ Cultural note: full names are written in a different order in the "West"
-and in the "East". FWIW, his first name is Vincenzo ;-)
-cf. https://en.wikipedia.org/wiki/Personal_name#Name_order ]
+You should explain why this flag is needed, because as it is, this flag
+is here, then selected in your PATCH 2/13, but not used anywhere.
 
-> Can you help me to know why there is -fno-stack-protector in the Makefile of vdso?
-> I wonder if we can delete it, as for safety requirements. 
+Could you clarify this ?
 
-There appear to be 3 files you might be referring to:
+Thanks,
 
-arch/arm/vdso/Makefile:ccflags-y := -fPIC -fno-common -fno-builtin -fno-stack-protector
-arch/arm64/kernel/vdso/Makefile:ccflags-y := -fno-common -fno-builtin -fno-stack-protector -ffixed-x18
-arch/arm64/kernel/vdso32/Makefile:VDSO_CAFLAGS += -fPIC -fno-builtin -fno-stack-protector
-
-arch/arm/vdso/Makefile : 8512287a8165592466cb9cb347ba94892e9c56a5
-
-Maybe related:
-https://lore.kernel.org/patchwork/patch/143610/
-https://lwn.net/Articles/318565/
-
-> With -fstack-protector, gcc copies pt_regs into the callee's stack
-> frame to put it after the stack canary.  Of course it doesn't copy
-> back (as the callee owns the argument) and any change made to pt_regs
-> is lost on return.  This is currently worked around by adding
-> -fno-stack-protector to any file containing such functions.  We
-> really need to teach gcc about the calling convention.
-
-Maybe this is still true? (Although this was on x86_32)
-
-AFAICT, the option was added at this point:
-
-https://lore.kernel.org/linux-arm-kernel/CAASgrz0QfSfnggAf2C0bS7wXbdoPYtVHRhK0UfvT8pykjCowMA@mail.gmail.com/
-
-Regards.
+Thomas
+-- 
+Thomas Petazzoni, CTO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
