@@ -2,84 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1B5CFA794
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 04:50:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8420EFA7BA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 04:56:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8el8u0loaBR33UeRvX0c0+FOPvfTMGecv4GS+XouOOs=; b=WhV1PvrTTRVRZL
-	NeVjVUPh/2SjYWKvigKCemxF4lQxo1fGaKc8zl2X7CCnre6+9AOWSJN2xnGkjYgmLVmfSAP1Rk7L2
-	YujvfCL1uSiNEK5B3GInm8WHJU9MM8CKWJlT9vw1XClX373neHnmKLAff6Ic0CtXmIsjpA+DimTHY
-	jJc3uWM/ClffCnTj0fTs5tVRB8fp/M6BmVStTog4Flk2MRP3KeaM3xbLIuIJozie2tAuIalksS6GW
-	uwyuslOciqyhKpd0L4NLpmA6NYZWYyC2WSNZW8s4qrEHk4I/3aPIG35CbYbrb9MM624XiZDvoMIJj
-	qYShHgGlbkFUdE8va74g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CsZnhwIdnTBh2E68xVHFr+bq0MZiAfVTlQ+F9PoI0HM=; b=oV7F2IV7p0Wcd+auLUHFiPr8S
+	3MQvt/XfAVSvv9UwjjmPViI2SrpAkgHpleuxRAiitBtfsuqz+LZjDDXlK3Dgw3wPvcvDoAptmES0U
+	fbqJZSyISHgg6OGLfzEs8ArZ5nNSztuzZBU+Dd8tL9xYbYk0RsQA6O+8MtLAG0CtH571Wpo8BDTGm
+	nA73TrQLyIbPOy5jQHN2rg7QV1tKFZQExBSVhSRswB77baNce3h3aOvbqlTDtKyDnFl2SVXYnmJS7
+	is899OTuUwA2Auky+6/6iWYtX88uE8k/kwW0rygLpLXynIMldL20g0ePGZJ3G+Q8BGWvfQVoVtDwP
+	pmmmL4z/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUjfv-0008IK-60; Wed, 13 Nov 2019 03:50:35 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1iUjlX-00025H-DD; Wed, 13 Nov 2019 03:56:23 +0000
+Received: from mout-p-201.mailbox.org ([2001:67c:2050::465:201])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUjfk-0008Ha-Sl
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 03:50:26 +0000
-Received: by mail-oi1-f194.google.com with SMTP id j7so533749oib.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 Nov 2019 19:50:24 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=yw4W9gr9hr+ygb7liTr5wABF4oTbz4wbrBdFNYeRM54=;
- b=OZw6MH+EDN35hxa5mom3mz3sYtvLpBARoKaqtgT5F/9dFnxiqw9QpTWRsdSIMLr1f2
- jfs2KULsIHSO0Mbpa3h4gMB5kRPUjGZLUEotkB0rdUGpiUov11iKZvZhxwwe2QatCGhQ
- uiEe/Q1QV/qy6GPgJfEnMMsvCcUzBH6Be7aIOIA/xkZxpxbRGUC1rvQJHi02Rl81ttyr
- U0peWSHgBCML7HUTk/jLyAHMTdD91sileLpXuOMVOa7TIaTqHa9zMMnm0cNEyfg3KG31
- pDoroWMGv9QAoLd83TnUWUKe0BjW3J2D2Tc7wvR1XurQ19uo8IYL40OQS6IjcClyfs7d
- UBJw==
-X-Gm-Message-State: APjAAAUmn+VQIGDiUetWBKkfVdDI0jDPGA8BQkIrq3FDgqjWuLsMXBgw
- u3eACqCxac2EmkkH8pSbpw==
-X-Google-Smtp-Source: APXvYqzn9WyQ34a911h+OqumViXcb4qpJexBGHw1jIWOUAOxQ+CD347g2mXcZfFRKthfTJPvAD9XgA==
-X-Received: by 2002:aca:1101:: with SMTP id 1mr992738oir.103.1573617023608;
- Tue, 12 Nov 2019 19:50:23 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id k18sm271911oij.32.2019.11.12.19.50.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 Nov 2019 19:50:22 -0800 (PST)
-Date: Tue, 12 Nov 2019 21:50:22 -0600
-From: Rob Herring <robh@kernel.org>
-To: Kamel Bouhara <kamel.bouhara@bootlin.com>
-Subject: Re: [PATCH v3 1/2] dt-bindings: arm: at91: Document Kizboxmini and
- Smartkiz boards binding
-Message-ID: <20191113035022.GA27823@bogus>
-References: <20191106083643.1995-1-kamel.bouhara@bootlin.com>
+ id 1iUjlP-00024b-Pl
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 03:56:17 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47CW4V73MqzQlBG;
+ Wed, 13 Nov 2019 04:56:10 +0100 (CET)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
+ [80.241.56.122]) (amavisd-new, port 10030)
+ with ESMTP id ovfePb6AeJGC; Wed, 13 Nov 2019 04:56:05 +0100 (CET)
+Date: Wed, 13 Nov 2019 14:55:42 +1100
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Al Viro <viro@zeniv.linux.org.uk>
+Subject: Re: [PATCH v15 5/9] namei: LOOKUP_IN_ROOT: chroot-like scoped
+ resolution
+Message-ID: <20191113035542.3ckc7oudahn3xtnj@yavin.dot.cyphar.com>
+References: <20191105090553.6350-1-cyphar@cyphar.com>
+ <20191105090553.6350-6-cyphar@cyphar.com>
+ <20191113020307.GB26530@ZenIV.linux.org.uk>
+ <20191113024414.wlmvtjstpnkxa36n@yavin.dot.cyphar.com>
+ <20191113025941.GE26530@ZenIV.linux.org.uk>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191106083643.1995-1-kamel.bouhara@bootlin.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191113025941.GE26530@ZenIV.linux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_195024_931447_59CBA558 
-X-CRM114-Status: GOOD (  17.57  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191112_195616_133854_7EB8E861 
+X-CRM114-Status: GOOD (  19.06  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,125 +68,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Christian Brauner <christian.brauner@ubuntu.com>,
+ Jiri Olsa <jolsa@redhat.com>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Tycho Andersen <tycho@tycho.ws>,
+ Aleksa Sarai <asarai@suse.de>, Shuah Khan <shuah@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-m68k@lists.linux-m68k.org, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, libc-alpha@sourceware.org,
+ linux-parisc@vger.kernel.org, linux-api@vger.kernel.org,
+ Chanho Min <chanho.min@lge.com>, Jeff Layton <jlayton@kernel.org>,
+ Oleg Nesterov <oleg@redhat.com>, Eric Biederman <ebiederm@xmission.com>,
+ linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============5522604374746000554=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 06, 2019 at 09:36:42AM +0100, Kamel Bouhara wrote:
-> Document devicetree's bindings for the Overkiz's Kizbox Mini and
-> Smartkiz boards, based on a SAM9G25 Atmel SoC.
-> 
-> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> ---
-> Changes in v2
-> =============
-> 	- Added Kizboxmini Base board documentation
-> 	- Merged Smartkiz documentation as it is also a sam9g25 based
-> 	board
-> 
-> Changes in v3
-> =============
-> 	- Made a single items list with all the sam9g25 based boards and
-> 	put description into a comment.
-> 	- Fixed duplicated item in enum list and checked with 'make
-> 	dt_binding_check'
 
-Are you sure?
-
-> ---
->  Documentation/devicetree/bindings/arm/atmel-at91.yaml | 10 ++++++++++
->  1 file changed, 10 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/atmel-at91.yaml b/Documentation/devicetree/bindings/arm/atmel-at91.yaml
-> index 6dd8be401673..e4140e94864d 100644
-> --- a/Documentation/devicetree/bindings/arm/atmel-at91.yaml
-> +++ b/Documentation/devicetree/bindings/arm/atmel-at91.yaml
-> @@ -35,6 +35,16 @@ properties:
->                - atmel,at91sam9x60
->            - const: atmel,at91sam9
-> 
-> +        items:
-
-You are missing a '-' here, giving this:
-
-Traceback (most recent call last):
-  File "/usr/local/bin/dt-mk-schema", line 32, in <module>
-    schemas = dtschema.process_schemas(args.schemas, core_schema=(not 
-args.useronly))
-  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 
-475, in process_schemas
-    sch = process_schema(os.path.abspath(filename))
-  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 
-427, in process_schema
-    schema = load_schema(filename)
-  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 
-103, in load_schema
-    return yaml.load(f.read())
-  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/main.py", 
-line 341, in load
-    return constructor.get_single_data()
-  File 
-"/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", 
-line 113, in get_single_data
-    return self.construct_document(node)
-  File 
-"/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", 
-line 123, in construct_document
-    for _dummy in generator:
-  File 
-"/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", 
-line 723, in construct_yaml_map
-    value = self.construct_mapping(node)
-  File 
-"/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", 
-line 440, in construct_mapping
-    return BaseConstructor.construct_mapping(self, node, deep=deep)
-  File 
-"/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", 
-line 257, in construct_mapping
-    if self.check_mapping_key(node, key_node, mapping, key, value):
-  File 
-"/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", 
-line 295, in check_mapping_key
-    raise DuplicateKeyError(*args)
-ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
-  in "<unicode string>", line 23, column 9
-found duplicate key "items" with value "[]" (original value: "[]")
-  in "<unicode string>", line 38, column 9
-
-To suppress this check see:
-    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
-
-Duplicate keys will become an error in future releases, and are errors
-by default when using the new API.
-
-Documentation/devicetree/bindings/Makefile:33: recipe for target 
-'Documentation/devicetree/bindings/processed-schema.yaml' failed
+--===============5522604374746000554==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="j4f7d32jpyqpzflk"
+Content-Disposition: inline
 
 
-> +          - enum:
-> +                - overkiz,kizboxmini-base # Overkiz kizbox Mini Base Board
-> +                - overkiz,kizboxmini-mb   # Overkiz kizbox Mini Mother Board
-> +                - overkiz,kizboxmini-rd   # Overkiz kizbox Mini RailDIN
-> +                - overkiz,smartkiz        # Overkiz SmartKiz Board
-> +          - const: atmel,at91sam9g25
-> +          - const: atmel,at91sam9x5
-> +          - const: atmel,at91sam9
-> +
->        - items:
->            - enum:
->                - atmel,at91sam9g15
-> --
-> 2.24.0.rc1
-> 
+--j4f7d32jpyqpzflk
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On 2019-11-13, Al Viro <viro@zeniv.linux.org.uk> wrote:
+> On Wed, Nov 13, 2019 at 01:44:14PM +1100, Aleksa Sarai wrote:
+> > On 2019-11-13, Al Viro <viro@zeniv.linux.org.uk> wrote:
+> > > On Tue, Nov 05, 2019 at 08:05:49PM +1100, Aleksa Sarai wrote:
+> > >=20
+> > > > @@ -2277,12 +2277,20 @@ static const char *path_init(struct nameida=
+ta *nd, unsigned flags)
+> > > > =20
+> > > >  	nd->m_seq =3D read_seqbegin(&mount_lock);
+> > > > =20
+> > > > -	/* Figure out the starting path and root (if needed). */
+> > > > -	if (*s =3D=3D '/') {
+> > > > +	/* Absolute pathname -- fetch the root. */
+> > > > +	if (flags & LOOKUP_IN_ROOT) {
+> > > > +		/* With LOOKUP_IN_ROOT, act as a relative path. */
+> > > > +		while (*s =3D=3D '/')
+> > > > +			s++;
+> > >=20
+> > > Er...  Why bother skipping slashes?  I mean, not only link_path_walk()
+> > > will skip them just fine, you are actually risking breakage in this:
+> > >                 if (*s && unlikely(!d_can_lookup(dentry))) {
+> > >                         fdput(f);
+> > >                         return ERR_PTR(-ENOTDIR);
+> > >                 }
+> > > which is downstream from there with you patch, AFAICS.
+> >=20
+> > I switched to stripping the slashes at your suggestion a few revisions
+> > ago[1], and had (wrongly) assumed we needed to handle "/" somehow in
+> > path_init(). But you're quite right about link_path_walk() -- and I'd be
+> > more than happy to drop it.
+>=20
+> That, IIRC, was about untangling the weirdness around multiple calls of
+> dirfd_path_init() and basically went "we might want just strip the slashes
+> in case of that flag very early in the entire thing, so that later the
+> normal logics for absolute/relative would DTRT".
+
+Ah okay, I'd misunderstood the point you were making in that thread.
+
+> Since your check is right next to checking for absolute pathnames (and
+> not in the very beginning of path_init()), we might as well turn the
+> check for absolute pathname into *s =3D=3D '/' && !(flags &
+> LOOKUP_IN_ROOT) and be done with that.
+
+Yup, agreed.
+
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--j4f7d32jpyqpzflk
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXct+uwAKCRCdlLljIbnQ
+EpaMAQCKfJalyFfg/QA8aH/wuTwb0JmHpxt9HKverNfj5BncXAEA8J+s2/4xFPcn
+vy6IqraafPiOMkqsiqA03ofQ3tR8tQ4=
+=Qq3t
+-----END PGP SIGNATURE-----
+
+--j4f7d32jpyqpzflk--
+
+
+--===============5522604374746000554==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5522604374746000554==--
+
