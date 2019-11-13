@@ -2,56 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7665FAE29
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 11:11:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF86CFAE3B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 11:12:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ft0+uuZGL02l4EAkKTTHxAkOFn/+2Kgj5Sj9/1P28yA=; b=ANGV4b1C+9p9t1
-	XEpRUTmE+pkH0qVaOGBtI2ioS4zr+X5eUlvavqwf5v1ueskkfmxpU+l9Pc0bfi+PTCPh73CHuShAE
-	VcQ21XkLLTQu4lTuwU+OOjAztFlHFfVSY/j6aic2aJG0gy9u1Xe5cihq7foGn6UhWNrNx/gL3peLv
-	c7vyGmX13r+YOLrs0F7bVFTA4rylS61If1JvG9cLIAdSNU3LMNntmseTgsiwqa5nJnmwejZYgFq4K
-	r312hjlKbeVssT5H/at9UZsJFi2qOPKA3mYDJ8uM67KdyXWD3JLmfEYj8y1wP93CDcacV3A/J9AUd
-	4wOm9xFMoGf2oeepXRXw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9DjBb+L/MH1VcbKQDS1y4S7DTAR0NAex09/PvyROPmE=; b=czc
+	rAx1SrQmzARV5Mu1SWeaJByhyPpYBD33RAXQqQFtWtHGQjCJfM8w3r1X3wh1rU7SHOc6izfkxcABh
+	Ns9RNCLklVwvL2XVh6767k+NV58cRk+aVAntE4bXMgCnQbe4xCrPNxGuFs/zXwVBm5jhspKgxYmUB
+	9OoJyr+xKzUx6nqWz22U5ypNqhrRev+wyICnyIhgUr/W/PnuNPxL4iJwilXNVQ+Xq/wCrtypAnyYJ
+	ISnNJNym8PYlXLQ9dFvojhtxJ/BYqqM5KCykZrubS3MrzF6VTIAVNRVwllP6eMCTxSkGYH+ixazjh
+	90RREcXRmlID8rAa58//o2+9vq2efXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUpcL-0006mf-Sa; Wed, 13 Nov 2019 10:11:17 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1iUpdP-0007DU-RJ; Wed, 13 Nov 2019 10:12:23 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUpc7-0006lW-H0
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 10:11:05 +0000
-X-Originating-IP: 92.137.17.54
-Received: from kb-xps (alyon-657-1-975-54.w92-137.abo.wanadoo.fr
- [92.137.17.54]) (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 385BC1BF20A;
- Wed, 13 Nov 2019 10:10:49 +0000 (UTC)
-Date: Wed, 13 Nov 2019 11:10:47 +0100
-From: Kamel Bouhara <kamel.bouhara@bootlin.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v3 1/2] dt-bindings: arm: at91: Document Kizboxmini and
- Smartkiz boards binding
-Message-ID: <20191113101047.GB25624@kb-xps>
-References: <20191106083643.1995-1-kamel.bouhara@bootlin.com>
- <20191113035022.GA27823@bogus>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191113035022.GA27823@bogus>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+ id 1iUpdB-0007BO-Ux
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 10:12:11 +0000
+Received: by mail-wm1-x341.google.com with SMTP id q70so1338402wme.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 13 Nov 2019 02:12:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=qfsOH+V+FFt5Iv+QrGgZE8TPXjX+qzSLSAGyJ3kwIrE=;
+ b=tWbstU+FDUA1HwWfrqONQYhJnptM18pTgDImtEgJRnYbe6cRnq9xn2sqaZoCEupOh3
+ d2ttQcZQStn7nW+BP6Ns7HpLcqO6w9QNq5/KHknjlPqTu2/bc2Wsy1tmmPVC18xkq6EE
+ 2cxG7T1z0gZPO1SniOavy3d0gSW+Qj+nUrRYJJ/tw+G9BAeoN6q46DEnTug+BlCxMYjW
+ k6hty9B65FK6crBvzXrWZ6YMdUwaW3Hv9fL5O68URS+kD/IuXdeJrx/ggnWc1o4GLGmp
+ m4rZTZQGX02OCafVBuExt12p6K4AAGiIJs9fa/uQxNvUxSs70602RA/zVB34rI9KNLzD
+ Z+UQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=qfsOH+V+FFt5Iv+QrGgZE8TPXjX+qzSLSAGyJ3kwIrE=;
+ b=XLDL+jLqi3qLWgvCXtHFdBd5rT1WVsHU/IG9VeWiBEtMF0+xsNAOpoK9VPyV35LYhh
+ pSWqY5LwMGwHAGR5OR1+OMEXd/t+WAxbQiOqLT+z0jlYBytKD6SoXTdEJx+mOB2/RrO0
+ 23Q+8vsZAzNGZz/YG2Rh8zQWoXlu/nRDys5ljwUrFhieDGWFuCgtkvp0YRipAcdq39P+
+ 061YRwxg4Q6cQcEV2VPKR8Y5B8wPIJAqMrR8srAUIu2SBIqLc44c2/tKoTnUdjSq2s1V
+ qJxIcbvKH2SreSRr4ZeLDhsP5WT3f7mKSElwhyjCpcgRPQYQqvzrOKwtFWp46PLuUg9Z
+ fPQA==
+X-Gm-Message-State: APjAAAVtXJdIsET/1f4rzkc7mFn/ShWuysKS595sqSETk6jVEw5/kZFi
+ RCvvUqjH6DDgdzZpt7c42Kzeu+cd5P6NSw==
+X-Google-Smtp-Source: APXvYqxkzPwvpRNUgA8FlpHiQFDd/vZ51nEYdopSz5ykNVi0JX6FBUKuZB3kbQlmjO9NLh+/PsLYAA==
+X-Received: by 2002:a7b:c055:: with SMTP id u21mr2046674wmc.55.1573639926058; 
+ Wed, 13 Nov 2019 02:12:06 -0800 (PST)
+Received: from localhost.localdomain
+ (219.red-37-158-56.dynamicip.rima-tde.net. [37.158.56.219])
+ by smtp.gmail.com with ESMTPSA id j66sm1488993wma.19.2019.11.13.02.12.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 13 Nov 2019 02:12:05 -0800 (PST)
+From: richard.henderson@linaro.org
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v6 0/1] arm64: Implement archrandom.h for ARMv8.5-RNG
+Date: Wed, 13 Nov 2019 11:11:50 +0100
+Message-Id: <20191113101151.13389-1-richard.henderson@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_021103_841780_FE3B3A08 
-X-CRM114-Status: GOOD (  20.18  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191113_021210_074815_7D40F7D3 
+X-CRM114-Status: GOOD (  10.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,140 +92,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, Richard Henderson <richard.henderson@linaro.org>,
+ linux-crypto@vger.kernel.org, ard.biesheuvel@linaro.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 12, 2019 at 09:50:22PM -0600, Rob Herring wrote:
-> On Wed, Nov 06, 2019 at 09:36:42AM +0100, Kamel Bouhara wrote:
-> > Document devicetree's bindings for the Overkiz's Kizbox Mini and
-> > Smartkiz boards, based on a SAM9G25 Atmel SoC.
-> >
-> > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > ---
-> > Changes in v2
-> > =============
-> > 	- Added Kizboxmini Base board documentation
-> > 	- Merged Smartkiz documentation as it is also a sam9g25 based
-> > 	board
-> >
-> > Changes in v3
-> > =============
-> > 	- Made a single items list with all the sam9g25 based boards and
-> > 	put description into a comment.
-> > 	- Fixed duplicated item in enum list and checked with 'make
-> > 	dt_binding_check'
->
-> Are you sure?
->
-Yes, here is the command output I've got :
+From: Richard Henderson <richard.henderson@linaro.org>
 
-$ make ARCH=arm dt_binding_check \
-DT_SCHEMA_FILES="Documentation/devicetree/bindings/arm/atmel-at91.yaml" \
-DT_SCHEMA_FLAGS="-u"
- SCHEMA  Documentation/devicetree/bindings/processed-schema.yaml
- DTC     Documentation/devicetree/bindings/arm/atmel-at91.example.dt.yaml
- CHECK   Documentation/devicetree/bindings/arm/atmel-at91.example.dt.yaml
+Here's v6.  I believe I've collected all of the comments
+from both Ard and Mark across v4 and v5, as well as from
+the cafe in Lyon.
 
-> > ---
-> >  Documentation/devicetree/bindings/arm/atmel-at91.yaml | 10 ++++++++++
-> >  1 file changed, 10 insertions(+)
-> >
-> > diff --git a/Documentation/devicetree/bindings/arm/atmel-at91.yaml b/Documentation/devicetree/bindings/arm/atmel-at91.yaml
-> > index 6dd8be401673..e4140e94864d 100644
-> > --- a/Documentation/devicetree/bindings/arm/atmel-at91.yaml
-> > +++ b/Documentation/devicetree/bindings/arm/atmel-at91.yaml
-> > @@ -35,6 +35,16 @@ properties:
-> >                - atmel,at91sam9x60
-> >            - const: atmel,at91sam9
-> >
-> > +        items:
->
-> You are missing a '-' here, giving this:
->
-Yes but the log you're putting seems  more related to a python issue (2.6 vs 3)
-?
-> Traceback (most recent call last):
->   File "/usr/local/bin/dt-mk-schema", line 32, in <module>
->     schemas = dtschema.process_schemas(args.schemas, core_schema=(not
-> args.useronly))
->   File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line
-> 475, in process_schemas
->     sch = process_schema(os.path.abspath(filename))
->   File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line
-> 427, in process_schema
->     schema = load_schema(filename)
->   File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line
-> 103, in load_schema
->     return yaml.load(f.read())
->   File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/main.py",
-> line 341, in load
->     return constructor.get_single_data()
->   File
-> "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py",
-> line 113, in get_single_data
->     return self.construct_document(node)
->   File
-> "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py",
-> line 123, in construct_document
->     for _dummy in generator:
->   File
-> "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py",
-> line 723, in construct_yaml_map
->     value = self.construct_mapping(node)
->   File
-> "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py",
-> line 440, in construct_mapping
->     return BaseConstructor.construct_mapping(self, node, deep=deep)
->   File
-> "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py",
-> line 257, in construct_mapping
->     if self.check_mapping_key(node, key_node, mapping, key, value):
->   File
-> "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py",
-> line 295, in check_mapping_key
->     raise DuplicateKeyError(*args)
-> ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
->   in "<unicode string>", line 23, column 9
-> found duplicate key "items" with value "[]" (original value: "[]")
->   in "<unicode string>", line 38, column 9
->
-> To suppress this check see:
->     http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
->
-> Duplicate keys will become an error in future releases, and are errors
-> by default when using the new API.
->
-> Documentation/devicetree/bindings/Makefile:33: recipe for target
-> 'Documentation/devicetree/bindings/processed-schema.yaml' failed
->
->
-> > +          - enum:
-> > +                - overkiz,kizboxmini-base # Overkiz kizbox Mini Base Board
-> > +                - overkiz,kizboxmini-mb   # Overkiz kizbox Mini Mother Board
-> > +                - overkiz,kizboxmini-rd   # Overkiz kizbox Mini RailDIN
-> > +                - overkiz,smartkiz        # Overkiz SmartKiz Board
-> > +          - const: atmel,at91sam9g25
-> > +          - const: atmel,at91sam9x5
-> > +          - const: atmel,at91sam9
-> > +
-> >        - items:
-> >            - enum:
-> >                - atmel,at91sam9g15
-> > --
-> > 2.24.0.rc1
-> >
+I had thought about using a simple function pointer for
+arch_get_random_seed_long, but didn't see a good place
+where I could update that at the end of boot.
 
---
-Kamel Bouhara, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
+Which lead me to ALTERNATIVE_CB, which is way overkill,
+but is already part of the update infrastructure.
+
+Tested with qemu -cpu {max,cortex-a57}, which covers both
+sides of the alternative.  GDB breakpoints confirm that
+boot_get_random_seed_long is what is called from rand_initialize,
+and that this_cpu_has_cap returns the correct result.
+
+
+r~
+
+
+ Documentation/arm64/cpu-feature-registers.rst |  2 +
+ arch/arm64/include/asm/archrandom.h           | 55 +++++++++++++++
+ arch/arm64/include/asm/cpucaps.h              |  3 +-
+ arch/arm64/include/asm/sysreg.h               |  4 ++
+ arch/arm64/kernel/cpufeature.c                | 13 ++++
+ arch/arm64/kernel/random.c                    | 67 +++++++++++++++++++
+ arch/arm64/Kconfig                            | 12 ++++
+ arch/arm64/kernel/Makefile                    |  1 +
+ drivers/char/Kconfig                          |  4 +-
+ 9 files changed, 158 insertions(+), 3 deletions(-)
+ create mode 100644 arch/arm64/include/asm/archrandom.h
+ create mode 100644 arch/arm64/kernel/random.c
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
