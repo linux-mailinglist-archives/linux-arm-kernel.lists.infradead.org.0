@@ -2,82 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8000FB5E3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 18:04:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC81DFB5E7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 18:06:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wZLGCzeHlfvpSDqRYydrCguBGhtOF13l+NxqY53/W70=; b=aQiYGWqh4KSsv/
-	p29FjyH15H1pZDVEBjDy9uYa2SyaECrqsFl4zYRB1/svxwd6mlgtayv0+V5EZ0rIidwCPvWIPRsPp
-	uOEXlTwHj542MY7zRyt4dGKPzL0h6k1TGJfUU8w7Vq0MbdOBriTKeXbNZkN70hFJznui/YpQaf8Da
-	48af59fx3E7ACcORt3l3iEzfX32bJCn0Rt4X1+gZvizbwgyxbPSfhEDF0JBV9TbgV+i0H0kqu4Mp6
-	NvWoGbnYFzvBZon8L5EApiyDm1em0IFdNglqJTHXW1rrnIyX2WffoV9Ts1Tnrj18IxoTCbXHR2s1M
-	YVMZbgS+rDXqdZ7GMPNA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/KVnqwdW1eCXQMTXwW+AkcXGOLSWfPy2HvaaiMTLAlA=; b=ExoZ44avtgOPk7t40ZEllprZO
+	G8rga+OA2UTj/DfJDiAE6sIh/8k083WyIlIiPMbiWUh6ROnxZPx8xzvIPCsKW8YSLjmDckwINfDqQ
+	6ad9mDeLkxeSk9wZ3xj/5WXXLi4vfOO8gCY/nfF/wOpolJf+dD7oErtQOIveQM1fT913g6EuToOs+
+	Bw140SE76AXjbhkDoUv+YQcDCXrjSZYyzm1Edi2oJN199tbX5aoTBfuejW3zMPo1m1R0dt5qdR+RK
+	TW0x5p8yahPYd+xCEECgfNTEZgUqtB4xOYF+6HEi3aD+NAw9ySTvscnd5OYRJnJMsCFsh0J7oAyIi
+	IsXy7JXLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUw4U-00038G-Pu; Wed, 13 Nov 2019 17:04:46 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUw4O-00037s-3W
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 17:04:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=C2QNnRLON1yM7HplcQbHE6Soc3XK8SdkjG3qnRqou0s=; b=M/w2tVs3GhHvSL/BmJLeErQx8
- D40WW/t8ajXR/5N7kfi/V+5ft9/YXhH9ov5fsFhVcPyFv/5zYjalxbQDcWdKiPJaIqo4Yi4lAR+Fi
- aMZ+n+LdYEKNvIWC4ceznLR+t5YSZmc26nG60uvEIWOsUgB8ZtG+P5m/GZOdggcfaVljol1o4ucol
- Jd/igNztrjFvOFh4Pp/wbF9VF7knUXCi5QwXsdXMVVcmMVXLRigeXlIDryavyIccPDSgY0q1ZBI4y
- RYYZxiVCdG/paSpYRHina3DlK0YhC6hfAYw0kXuq79qhq6rZOOydImIpkUKWr6WFPBLbBqUZvkkWC
- u3x1woM8Q==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:55748)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iUw4B-0005e6-KM; Wed, 13 Nov 2019 17:04:27 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iUw49-0002bd-41; Wed, 13 Nov 2019 17:04:25 +0000
-Date: Wed, 13 Nov 2019 17:04:25 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH/RFC] ARM: boot: Relax kernel image alignment for RZ/A
- with CS3 SDRAM
-Message-ID: <20191113170425.GQ25745@shell.armlinux.org.uk>
-References: <20191113102729.29303-1-geert+renesas@glider.be>
- <20191113103919.GM25745@shell.armlinux.org.uk>
- <CAMuHMdXWsUChMA+_6sdavo8nd-9icX6nsN7unSfMMViOQrUVMQ@mail.gmail.com>
+	id 1iUw5c-0004y1-SJ; Wed, 13 Nov 2019 17:05:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUw5U-0004pd-N3
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 17:05:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4333C30E;
+ Wed, 13 Nov 2019 09:05:46 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 353E13F534;
+ Wed, 13 Nov 2019 09:05:45 -0800 (PST)
+Subject: Re: [PATCH] iommu/arm-smmu-v3: Populate VMID field for
+ CMDQ_OP_TLBI_NH_VA
+To: Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>, will@kernel.org
+References: <20191113161138.22336-1-shameerali.kolothum.thodi@huawei.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <e91b2c6e-ab0a-5908-bcd3-e62c5b7b536a@arm.com>
+Date: Wed, 13 Nov 2019 17:05:40 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdXWsUChMA+_6sdavo8nd-9icX6nsN7unSfMMViOQrUVMQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191113161138.22336-1-shameerali.kolothum.thodi@huawei.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_090440_147971_29BB423A 
-X-CRM114-Status: GOOD (  22.28  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191113_090548_799151_FB9D2BE6 
+X-CRM114-Status: GOOD (  15.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,73 +62,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>,
- Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: joro@8bytes.org, linuxarm@huawei.com, xuwei5@hisilicon.com,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 13, 2019 at 02:32:19PM +0100, Geert Uytterhoeven wrote:
-> Hi Russell,
-> 
-> On Wed, Nov 13, 2019 at 11:39 AM Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
-> > On Wed, Nov 13, 2019 at 11:27:29AM +0100, Geert Uytterhoeven wrote:
-> > > The RZA2MEVB sub board has 64 MiB of SDRAM at 0x0C000000 (CS3 space).
-> > > Hence the mask for CONFIG_AUTO_ZRELADDR needs to be changed, otherwise
-> > > the system will crash because it will try to decompress a zImage or
-> > > uImage to a non-RAM garbage address.
-> > >
-> > > Based on a patch in the BSP by Chris Brandt <chris.brandt@renesas.com>.
-> > >
-> > > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > > ---
-> > > No idea what to do with the rest of the comment, or if this breaks
-> > > existing platforms.
-> >
-> > We occasionally have discussions about this - the last one was a big
-> > one in Edinburgh, and the answer is we can't change this in mainline.
-> > They've also come up on the mailing lists as well.
-> >
-> > I'm not going to rehash this old argument yet again - the comment
-> > details the reason for it, and is there to prevent exactly this.
-> 
-> Sorry, I wasn't aware of that discussion.
-> I had a chat about this at ELC-E with Arnd, and he was open to this change.
-> 
-> > If someone is silly enough to come up with a platform that violates
-> > the documented 32-bit ARM booting protocol, then they can't expect
-> > the kernel to bend to their platform's requirements at the expense of
-> > already merged platforms.
-> 
-> Documentation/arm/booting.rst:
->   1. The kernel should be placed in the first 128MiB of RAM: check.
->   2. A safe location is just above the 128MiB boundary from start of RAM:
->      oops. Not all platforms have more than 128 MiB of RAM...
-> 
-> An alternative is to fall to the builtin 4 MiB of SRAM, or the 8 MiB of
-> HyperRAM on RZA2MEVB, but doing that requires using XIP.
-> Which brings us to your response in the other email:
-> 
-> > Are we going back to non-multi-platform kernels? ;)
-> 
-> Good question! ;-)
-> 
->   1. CONFIG_AUTO_ZRELADDR=n
->   2. CONFIG_XIP_KERNEL=y
+On 13/11/2019 4:11 pm, Shameer Kolothum wrote:
+> CMDQ_OP_TLBI_NH_VA requires VMID and this was missing since
+> commit 1c27df1c0a82 ("iommu/arm-smmu: Use correct address mask
+> for CMD_TLBI_S2_IPA"). Add it back.
 
-If you're using an XIP kernel, you are by definition not using the
-decompressor.
+Whoops indeed... although we do currently issue S1 invalidations with 
+the VMID hardcoded to 0, so nothing's actually broken as things stand.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
+
+> Fixes: 1c27df1c0a82 ("iommu/arm-smmu: Use correct address mask for CMD_TLBI_S2_IPA")
+> Signed-off-by: Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
+> ---
+> This came to light while verifying the "SMMUv3 Nested Stage Setup"
+> series by Eric. Please find the discusiion here,
+> https://lore.kernel.org/patchwork/cover/1099617/
+> ---
+>   drivers/iommu/arm-smmu-v3.c | 1 +
+>   1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 8da93e730d6f..9b5274346df0 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -856,6 +856,7 @@ static int arm_smmu_cmdq_build_cmd(u64 *cmd, struct arm_smmu_cmdq_ent *ent)
+>   		cmd[1] |= FIELD_PREP(CMDQ_CFGI_1_RANGE, 31);
+>   		break;
+>   	case CMDQ_OP_TLBI_NH_VA:
+> +		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_VMID, ent->tlbi.vmid);
+>   		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_ASID, ent->tlbi.asid);
+>   		cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_LEAF, ent->tlbi.leaf);
+>   		cmd[1] |= ent->tlbi.addr & CMDQ_TLBI_1_VA_MASK;
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
