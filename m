@@ -2,89 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE51FF9E50
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 00:45:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71D69F9F7D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 01:46:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LsvgBkbLHrT3m2xOrFh7RNPr7zZwpab6IzHjrH+ooh8=; b=IB+E9oPJmwKMh6
-	IaJeRsouE9aJqt6sAn9mnufb+ngJM5k5rZi1BBdn8BDUdscaw6YTxit8DKF+uRSV5N9k72hjEl6UM
-	liqKvRSxnNdKducDdD3mKoKAoTebaL9UwzgJ6d0v5aUrwrOxHqxYJHqoj5/YRCCTYwQMVNA8PchVv
-	K6hWV4L+EKWWu8x6dK0sW8FO9NqtkBoBGp+4fvH/cbTkLOthSnGA9Y8U2lICwPNDYlTZxSZOsz3yH
-	IE/3PV6m76uYx0iTz/vFEQ/OtBuWkiQ7m4dIOAtcSPkkZ/cuBvQKK97PHyAkv1+2OvWVF3PYXptyi
-	jAxy5IEtje6LUxqIM5Jw==;
+	List-Owner; bh=/ZMcURlX8k3r57cCRiRp6ORFJvyP+gjc7/5nPFTYnMg=; b=r4B8kOdcrmguXj
+	ZvmGOVqXQ5IxVZri+RRX6jbQYUCIoeJX9u/FvMaU77I+wtnRea/8GDKyXrvr0bDrxE+Jo0BtEofXL
+	2YYGsHaFqpM2tVkFcGIEgYXVoNyafVG9aGV+sCd5GbWBaimfwD2RxzF0ErALbMTtTEDUnTmDGDPHp
+	3kcb2Mo/QY7VFHz8IClMqYHfyqCQf8g/XxHtcLQsRgtHffLVwSkvjbyTfvrFsY8Tl2aljbduAtGHm
+	2TyHELp0tJK7pw9KG7q2Le+N0x5r4dyOh7V+O6pJtEfdiBofWUC0Bz2xQ+Gaik7Bfd7A2bhMmV9kv
+	gmTDjR95rHbeGtuOgN/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUfqH-0005sD-Hk; Tue, 12 Nov 2019 23:45:01 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iUgnY-0003vC-Qj; Wed, 13 Nov 2019 00:46:16 +0000
+Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUfq1-0005nn-2K
- for linux-arm-kernel@lists.infradead.org; Tue, 12 Nov 2019 23:44:46 +0000
-Received: by mail-pf1-x444.google.com with SMTP id r4so231614pfl.7
+ id 1iUgnP-0003uk-C4
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 00:46:08 +0000
+Received: by mail-vk1-xa41.google.com with SMTP id k24so158607vko.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 Nov 2019 15:44:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=EcHuuFp0uXLbkkRAA858XYtBunr2zA+LeQirH7UYVa4=;
- b=V8X9HHxHiG0Is+chnq9hKdAdntFAww1rSfsLxVyiP7E6i67FTXBjLe2zS+ZMOC8b1k
- Dx0K/KLvXeHKck7H32Glr39l0lktqFgwNo89bALI4mv0oKnxAMk8fH/ycmz15f5xUEiI
- MHSQl1bOX0rd1bQotssKgZXS0uaqqO2dwUxpU=
+ Tue, 12 Nov 2019 16:46:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=t+hVtjPqxsrSnn17bHB9qrQWeIT/PrqO1rTw4krXmCU=;
+ b=TiPN95bkizQ4voYbuODqSf9et1LPRMWqgdL5r1Yn3pOdgL46Onb4KQqOi0v50YMBhn
+ K8h0ocFtT/pSwPev59WWCHMjXQh6a6LTViN4tNmygkH4uX0fSTXGvu7xEVfGtruUAEM5
+ wv1Sch77i3POzdILwDoQydigQjYYwba2tuZr8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=EcHuuFp0uXLbkkRAA858XYtBunr2zA+LeQirH7UYVa4=;
- b=kzbyyv5UofAohR8ZFyV1rJ31B0DXRX3wNaYHlHq/O11tCOfSjMk0r2yGRpb/H/HZlf
- MLAwXD8XHI/5JVgbuYHRUoORdV696v53ZP9KGMYzM1Dak/hg0G9duH6548n+iAqsYZnK
- vEtydv9yns/5NASZSt37l6lJhnD3qWmxEiIwYNop8jcClQ2hqTJWFB4O0a2O9xk+LEbw
- 5vWFY/srVFVX4Jywg8I/N/fThzVukG6YzeHwAtsgaluoZTVe0+G975AWATTYl4X8mjFY
- 8Jtu60T4JzodlCefC6UByZ4AlkOX/hCDUDL+l+hqFIdFVSuByjfv2qCy1ikdzaE6Vkgj
- vZfQ==
-X-Gm-Message-State: APjAAAW9HnF0Rl2sEv7iB5awb5RtW6oChLxv4Z2VhlIhdCoZvWVTeUb9
- 9Tj4wI1Bv0ejZJCVa4Fdf9HkhA==
-X-Google-Smtp-Source: APXvYqy2qGlhbJhYD2XTlLrDucG7ETmNR5WevbQ8m/DZKdYkJBrkAiHNHZ0RU582wg1P7ojJiuH82g==
-X-Received: by 2002:a65:6149:: with SMTP id o9mr186489pgv.228.1573602284496;
- Tue, 12 Nov 2019 15:44:44 -0800 (PST)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id v10sm86650pfg.11.2019.11.12.15.44.43
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 Nov 2019 15:44:43 -0800 (PST)
-Date: Tue, 12 Nov 2019 15:44:42 -0800
-From: Kees Cook <keescook@chromium.org>
-To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v5 00/14] add support for Clang's Shadow Call Stack
-Message-ID: <201911121530.FA3D7321F@keescook>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191105235608.107702-1-samitolvanen@google.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=t+hVtjPqxsrSnn17bHB9qrQWeIT/PrqO1rTw4krXmCU=;
+ b=k/2OvmT6PUKDfHHYsKI6Tx6QbEOE7iE11CPPYvKyekbSF2trod6IH5BIS5oC4ohi7P
+ IbuMPRdzTC0VzctDwvY/UpJJh5lHhc8+9RC5HJ/GnayOY9/4TiKM0AKeRuW0SCJSJNdl
+ KDEL1JnzX6BOd8gNPLw3/zJle30g+C3Pg4KVtD//pqthOEK9YWd43tyTsztjQNOtmG7v
+ 8xg/SCNEGEdT7HMP8n6pBdRITUGxZBvTi9gGZPq8R7iqfZni7DsDkT7gU8cfsecs8jLZ
+ V09Q7F3z6xMr2yolDBt5P91f4nyPOmoN3Boq6gsbwFLolfNer1xBBj2kYG4ewUtXHs9e
+ OBTw==
+X-Gm-Message-State: APjAAAW0zwLj6n+vzcnsKoxuZSwq/qv2uaGPizOKWp7s1IdZODiL61Sv
+ Yg131RjAYr1AYJlbJh7uxTGmnKWyb76WSX/zEcUdfxev
+X-Google-Smtp-Source: APXvYqyD/YFJfofIxaZ9C+Thi8Xw8Bo6/1Jh5ZypX0pE48SaKQ9yBWXZi8hLvz9YCbAUiXB5OTBKyk9j9njE7OAilXc=
+X-Received: by 2002:a0c:a541:: with SMTP id y59mr432426qvy.107.1573605602886; 
+ Tue, 12 Nov 2019 16:40:02 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191105235608.107702-1-samitolvanen@google.com>
+References: <CACPK8Xe8XiJ+oEp3_AXO5Mox-mXWVrOJKQLJMKJxg1WdYCTzMw@mail.gmail.com>
+ <20191108183124.r2wdql4rmdbzx2up@localhost>
+In-Reply-To: <20191108183124.r2wdql4rmdbzx2up@localhost>
+From: Joel Stanley <joel@jms.id.au>
+Date: Wed, 13 Nov 2019 00:39:51 +0000
+Message-ID: <CACPK8XfVOGyr+ntuAhK7dOA=02PBKJYTSkv4HvoJWdppMeJNWg@mail.gmail.com>
+Subject: Re: [GIT PULL] ARM: aspeed: devicetree changes for 5.5
+To: Olof Johansson <olof@lixom.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_154445_140675_0AC2A732 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191112_164607_413873_8F3F997F 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
  [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,35 +93,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: clang-built-linux@googlegroups.com,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, Marc Zyngier <maz@kernel.org>,
- Jann Horn <jannh@google.com>, Nick Desaulniers <ndesaulniers@google.com>,
- linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- Sami Tolvanen <samitolvanen@google.com>, kernel-hardening@lists.openwall.com,
- Laura Abbott <labbott@redhat.com>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrew Jeffery <andrew@aj.id.au>, soc@kernel.org, arm <arm@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 05, 2019 at 03:55:54PM -0800, Sami Tolvanen wrote:
-> This patch series adds support for Clang's Shadow Call Stack
-> (SCS) mitigation, which uses a separately allocated shadow stack
-> to protect against return address overwrites. More information
+Hey Olof,
 
-Will, Catalin, Mark,
+On Fri, 8 Nov 2019 at 18:32, Olof Johansson <olof@lixom.net> wrote:
+> >
+> >   git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git \
+> >     tags/aspeed-5.5-devicetree
+>
+> This is a weird format. Mind changing your script to not put the '\' at EOL?
+> It's messing up the parsing scripts, and git doesn't use it.
 
-What's the next step here? I *think* all the comments have been
-addressed. Is it possible to land this via the arm tree for v5.5?
+I think I added that at your request. I'm happy to do whatever works for you.
 
-Thanks!
+> > ----------------------------------------------------------------
+>
+> ... also, there's no shortlog and no diffstat on the pull request. We usually
+> want to see those.
 
--- 
-Kees Cook
+In the past git request-pull created those. It seems to have stopped,
+as I got similar feedback on other pull requests.
+
+I guess we need to add that manually now.
+
+Cheers,
+
+Joel
 
 _______________________________________________
 linux-arm-kernel mailing list
