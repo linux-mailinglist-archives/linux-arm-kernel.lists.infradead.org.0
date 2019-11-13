@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF380FA6A2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 03:39:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6D59FA6AD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 03:40:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nqK1vHjDkvI8Oqc50ylAbrOAcjCo8TyCHT8qYiwngn8=; b=Bxqpb4Bmd4qOUz
-	BGUkDluyZI+9ir4atVJNHNqL2AHslPzjKk8NLvHuMLng3z4qryI48l0jTUOzreGa1tNIuFWDpozwd
-	wwSNanU0eX3zpCMs4SejlbH4Ne8lOwQssDF1/ilPBmQJ99ZZCjCkENgmaH6RgLKHlGC3M8eHCBKra
-	d75Dnheh8SPyQAqmGsV9Y+jk+xMMCqrkCkXWjL5Szbj91iRpiqDkKDh3kD5r1uh/16gA4OGsb/ow0
-	YD/5DMqr3hDoDrLH5VGZBUyUTb5cBtnRxiSK7iebNtGykU2oA1MhqRFShXLtE2Gas1IEjG3MUyAEK
-	DDO8oZVbC7gCKNfzRi9g==;
+	List-Owner; bh=gvNJCSRl7cdjtLwjcR2sh2jz9DajV4oMxrujjZqayXA=; b=TBbcgtUy5md2XE
+	i7ykqlkrvbyeH/27Kap7BGy5Sww+m2leO0jODEJOrzJnP6KJb4yVrrz9ItjcJKOGlZK89RRPKs1aF
+	uZ1/Rl0gwJSWzh9p5GJsnUEpPdfFtLVt1PTdeo7RCEtKDGO32gXCV+r/QbtovyffDLux4w+onZ2eO
+	4keGG/iJ1xsl3IkrrU7hGv+DvztzyjtquHyuzj1KCzHx+PrHGzaCThAI6qvQHf3trmrpUwfuCypZo
+	VwBKYx7ElnxH0O7e4vqMvTDKEAu6TpVirVI7VeBSfcXC0gWfNKpRpzQUhJIQDmk3emuggpJHG0cy7
+	4U/yJE6xu5PtpsH4hs4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUiYz-0003P6-R5; Wed, 13 Nov 2019 02:39:21 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iUiZs-0004D3-4t; Wed, 13 Nov 2019 02:40:16 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUiYq-0003O5-Ju; Wed, 13 Nov 2019 02:39:14 +0000
-X-UUID: cbc4b19c0fe9484b8b15e6e7d40991a5-20191112
+ id 1iUiYt-0003Op-LC; Wed, 13 Nov 2019 02:39:17 +0000
+X-UUID: f5dd1637057448cb9f42cb9650652806-20191112
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=+FkK1iCNCZ5mbqNEG+dK1JRhB0qOI3mgu4fpv9haJ5A=; 
- b=tQRA2bh0iNPUBTi4CfOkY8u8Yv4DCRNCkvY2RWnwdMLc1Plp4kVYlc+kpMz3geneQVBZHhHyqLlUDhxYBE0J3DNfD+DgwluC6N8TyHdCjiRFJowtFTQjlVbPj0KFZVkapG4P9a2Tb8/BgxVeYnEaBBY9DCGtyF6Ioq+9p0QYgYk=;
-X-UUID: cbc4b19c0fe9484b8b15e6e7d40991a5-20191112
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ bh=Xz5t62Az4ex1Dw4JbEiqpduOllpXnz09mFnqd5LCa2w=; 
+ b=sLm8JMGgQrZ9PhTMwDtM/yPmXF/iUqkXiJ0+eL6e7yeBpX8Q0+VzzufD+s8PL5aDfCwvsMDWZHUiH1PDtozRyuJzLxt7lJ/SyejcTWh8Rhcwe9eKa1ZwsbLRlG5CrI1reXC9l75EtaylUGIxWbDMNfkoZ5QvyF9+oPIqCsok/yU=;
+X-UUID: f5dd1637057448cb9f42cb9650652806-20191112
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <mark-mc.lee@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2066970205; Tue, 12 Nov 2019 18:39:05 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 12 Nov 2019 18:38:45 -0800
+ with ESMTP id 1308561894; Tue, 12 Nov 2019 18:39:05 -0800
+Received: from mtkmbs05dr.mediatek.inc (172.21.101.97) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 12 Nov 2019 18:38:46 -0800
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ mtkmbs05dr.mediatek.inc (172.21.101.97) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Wed, 13 Nov 2019 10:38:44 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -47,24 +47,23 @@ To: "David S. Miller" <davem@davemloft.net>, Sean Wang
  <sean.wang@mediatek.com>, John Crispin <john@phrozen.org>, Matthias Brugger
  <matthias.bgg@gmail.com>, Andrew Lunn <andrew@lunn.ch>
 Subject: [PATCH net,
- v3 2/3] net: ethernet: mediatek: Refine the timing of GDM/PSE setup
-Date: Wed, 13 Nov 2019 10:38:43 +0800
-Message-ID: <20191113023844.17800-3-Mark-MC.Lee@mediatek.com>
+ v3 3/3] net: ethernet: mediatek: Enable GDM GDMA_DROP_ALL mode
+Date: Wed, 13 Nov 2019 10:38:44 +0800
+Message-ID: <20191113023844.17800-4-Mark-MC.Lee@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20191113023844.17800-1-Mark-MC.Lee@mediatek.com>
 References: <20191113023844.17800-1-Mark-MC.Lee@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_183912_661608_748C16DB 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20191112_183915_708477_8CE903E4 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -99,12 +98,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Refine the timing of GDM/PSE setup, move it from mtk_hw_init 
-to mtk_open. This is recommended by the mt762x HW design to 
-do GDM/PSE setup only after PDMA has been started.
-
-We exclude mt7628 in mtk_gdm_config function since it is a old IP 
-and there is no GDM/PSE block on it.
+Enable GDM GDMA_DROP_ALL mode to drop all packet during the 
+stop operation. This is recommended by the mt762x HW design 
+to drop all packet from GMAC before stopping PDMA.
 
 Signed-off-by: MarkLee <Mark-MC.Lee@mediatek.com>
 --
@@ -114,41 +110,35 @@ v2->v3:
 * no change
 
 ---
- drivers/net/ethernet/mediatek/mtk_eth_soc.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ drivers/net/ethernet/mediatek/mtk_eth_soc.c | 2 ++
+ drivers/net/ethernet/mediatek/mtk_eth_soc.h | 1 +
+ 2 files changed, 3 insertions(+)
 
 diff --git a/drivers/net/ethernet/mediatek/mtk_eth_soc.c b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
-index 6e7a7fea2f52..b147ab0e44ce 100644
+index b147ab0e44ce..5fe1ab0c16cc 100644
 --- a/drivers/net/ethernet/mediatek/mtk_eth_soc.c
 +++ b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
-@@ -2184,6 +2184,9 @@ static void mtk_gdm_config(struct mtk_eth *eth, u32 config)
- {
- 	int i;
+@@ -2279,6 +2279,8 @@ static int mtk_stop(struct net_device *dev)
+ 	if (!refcount_dec_and_test(&eth->dma_refcnt))
+ 		return 0;
  
-+	if (MTK_HAS_CAPS(eth->soc->caps, MTK_SOC_MT7628))
-+		return;
++	mtk_gdm_config(eth, MTK_GDMA_DROP_ALL);
 +
- 	for (i = 0; i < MTK_MAC_COUNT; i++) {
- 		u32 val = mtk_r32(eth, MTK_GDMA_FWD_CFG(i));
+ 	mtk_tx_irq_disable(eth, MTK_TX_DONE_INT);
+ 	mtk_rx_irq_disable(eth, MTK_RX_DONE_INT);
+ 	napi_disable(&eth->tx_napi);
+diff --git a/drivers/net/ethernet/mediatek/mtk_eth_soc.h b/drivers/net/ethernet/mediatek/mtk_eth_soc.h
+index b16d8d9b196a..85830fe14a1b 100644
+--- a/drivers/net/ethernet/mediatek/mtk_eth_soc.h
++++ b/drivers/net/ethernet/mediatek/mtk_eth_soc.h
+@@ -85,6 +85,7 @@
+ #define MTK_GDMA_TCS_EN		BIT(21)
+ #define MTK_GDMA_UCS_EN		BIT(20)
+ #define MTK_GDMA_TO_PDMA	0x0
++#define MTK_GDMA_DROP_ALL       0x7777
  
-@@ -2222,6 +2225,8 @@ static int mtk_open(struct net_device *dev)
- 		if (err)
- 			return err;
- 
-+		mtk_gdm_config(eth, MTK_GDMA_TO_PDMA);
-+
- 		napi_enable(&eth->tx_napi);
- 		napi_enable(&eth->rx_napi);
- 		mtk_tx_irq_enable(eth, MTK_TX_DONE_INT);
-@@ -2405,8 +2410,6 @@ static int mtk_hw_init(struct mtk_eth *eth)
- 	mtk_w32(eth, MTK_RX_DONE_INT, MTK_QDMA_INT_GRP2);
- 	mtk_w32(eth, 0x21021000, MTK_FE_INT_GRP);
- 
--	mtk_gdm_config(eth, MTK_GDMA_TO_PDMA);
--
- 	return 0;
- 
- err_disable_pm:
+ /* Unicast Filter MAC Address Register - Low */
+ #define MTK_GDMA_MAC_ADRL(x)	(0x508 + (x * 0x1000))
 -- 
 2.17.1
 _______________________________________________
