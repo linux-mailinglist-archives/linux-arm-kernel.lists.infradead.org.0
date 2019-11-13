@@ -2,68 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87B2AFB627
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 18:17:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52AB3FB637
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 18:18:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hF5ijygez4DKaKYnz6m72dXPX1VRXn+ZhJERR8Uplrw=; b=Mlz00lBWkIfG6q
-	3GLfOSq2Si7EVWi5YzD3mvtMfpXB1x1gBM8ZGklw4amdeE7RvHdyJrFqcTtwO8NtzEa1CLO611Sqc
-	Kxh5CTNFvLw1DA1N8R3i8/ydetMxI2R8hV32b1KZAfeFRs6ZMxsRzEHonvchtI90sSWXZfcvQfhCY
-	hzNPc//fAXP8CHtMCJPeuOdgQyhhAHh8l6wSXNk0eJ9pSjAjWMaSGW1kpwKljxhD2HyLZPxHBV84Y
-	YqkVkFOy7dAf6h7fSyXhtSuSeXumYTLhfHItFBtq8rCV4HohD+AaVbmSiVMlcAeXtoC0XSDvGoWy2
-	zxon4GT1ZxtG2vzbQEZw==;
+	List-Owner; bh=eQgKmpfqS6kNXYZLGsB6OKNDcatPsOPpNmTaTXLS7IM=; b=KGAkYqiU9b4s7C
+	7tDmwTsdZdIiX1PwX+8sRLDSVXMxa6RHhm97mtET+cFiXY95dYlytPwBFYCrPL51QBAMFg8SBuDO6
+	B9X2io3V691qltQsdguBfkedHS1LJGmu3eu2/Y5JVF8IH3IKyNpJV6eDWhnbZ+FqywZCSJPb5CNhJ
+	xHiHdkTh1NRcjqQgZS03foo+9MgQEvtD871ZvMxMd2BpUNhu2wjqZGH29gAaWYHQS1I148sDGN7wc
+	lPI8BfvZDym5vAjGhImWYVib055JQ1y/5Sbs69wCtpYVIaEafheqCwGfpyNRFm4/E0MBU8aogRbZg
+	UJFiP+VFkaTjfXg5zcbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUwGJ-0002eo-U6; Wed, 13 Nov 2019 17:16:59 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iUwHt-0003Gd-Rg; Wed, 13 Nov 2019 17:18:37 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUwGA-0002du-JA
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 17:16:51 +0000
-Received: by mail-lf1-x142.google.com with SMTP id j26so2595255lfh.7
+ id 1iUwHj-0003Da-5F
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 17:18:28 +0000
+Received: by mail-lj1-x242.google.com with SMTP id g3so3433411ljl.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 Nov 2019 09:16:49 -0800 (PST)
+ Wed, 13 Nov 2019 09:18:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Tbmpc8I08dUNbz0TweIhlLBpMYWo1Ddtf0bugPdpg4o=;
- b=GpRaz3WzKyv4b6el90Iz4gY68k6ZMkDSEh2Hm5M0XVO2GvGiQXYLuOeRblysRbV95O
- /o9QxM7Dr9VjPZHJbmlPD+v+xOjqiSGlLuBd177bF9Y5icVTpiZRrTKok3ZZTQ/wDtBz
- OD0/VdGCoCIgoImm/TAEY+RuYIVJBGoif7u3rV8vKwf2bmxMkH46wFW8r/B8lLgHUY/j
- AYfLYXuLFlbVDpa/kxWt9gdsZixvnBRgFarHNgasLVY1VE/8+aqZM1tiw/DA61fKvNnp
- rwq1i9Eyg15IRctXukzSqaoYhr16QJbzTuSfXkLs7LUDp3Zvi+TCTQ1gaTePQTg2eWA7
- 0sHw==
+ :cc; bh=WgpjeDP92LtqHtJXxSWI//ZDvUBHvFnRmWqhhvkv3sU=;
+ b=KvuV0fh/hJQyvRYAMyLtyX7TtdrS4cRfCetdL0REIkE+MZASromLfykUpUl271O+CX
+ vFdpD6FCntAze0eiaLeCGewSPBYzWcMyf8dAip0r8ZYXAdwDlGykLbTwiivROOyI2jcu
+ UqZ9m0g904KiBxG4PAMdp1dQu69o/iLfXSGCuUSWnkAM1RZk4SKm02qXOtPg478nMo1w
+ 2u+noeVIBVZdLdjiJORmfrpGe4D8XpbYfR67n+nowmC4HyebMgPh4pG3a2eeWqFYwJwr
+ JuqVAGOMP2v4G0vVkcsS9JARWxnX0VZhRa5GgVLcIqhEySXkSYAdEzE9f/BdNMWNDQFQ
+ 6eXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Tbmpc8I08dUNbz0TweIhlLBpMYWo1Ddtf0bugPdpg4o=;
- b=JLDXW7CzhTadp4y3flguYz09A480Rngd1BfiCaMs5wfxaIpOeyFI5H+Jj+5Phtuzkb
- XMf6lGH1z0U3mrPfIsaFmynPW/n5H/LyZGs+Wuilmf06mmM6x7FBKXlIdX3WQzIiFAOu
- 0slAOOvec/4bvJ8LJMn9s0uIGypg2Mzhd5j2MpbDVL3YTIkyZQYmsgTxJRDEyt3HRbQL
- Tzi4pcZTZCtiQzrJL7INkp3wZCAq0ey1xlx1vf8zs/L2qAT59gF8OoJkCtHg6qtuVMGJ
- 1sALcEs9onez+iDAZYF1jVte1slank56l660qsGasWJKEkozMyevdUCE90NRYFy5pLdL
- bghQ==
-X-Gm-Message-State: APjAAAWdBhbjs8S/qG2rZf8w3RpoAko8lYrUjX7RChe3ABcPj8lBuBmd
- 4e1qELYcMatqoxd1QMO+rcaEujtyd/nO6j7CHhnrYA==
-X-Google-Smtp-Source: APXvYqzIPzbgpPUyvUtrneet0HOhaTTyNY9TeCNaIXTIuQ/Kcp/SiKtz7hsji0MJix60noP5lG6p8beaOSZpn4+OlKA=
-X-Received: by 2002:ac2:4a8f:: with SMTP id l15mr3446808lfp.5.1573665408550;
- Wed, 13 Nov 2019 09:16:48 -0800 (PST)
+ bh=WgpjeDP92LtqHtJXxSWI//ZDvUBHvFnRmWqhhvkv3sU=;
+ b=O9kJWrMAQIGeazghH7UsLq80ihzqzpvp5+fNwhPSyeUPOguRglk09de6iwylOwlwOu
+ lPPn3sSqcm1tV2gkaYS0SI05+6ULT4s91m55bmM0SmfEPdK/lQAWFS7x1+JH9szJIxRZ
+ O/gi6Cpc1uTrbi/cCGCmKxcCkGv9mv3sSVP5oM64+ZuVbZ929Y4mUexVWuHY4nMyrSFF
+ pb4mU68gtr9XAGFKIHzhTou+eHPQQgaXaNzzz3c9IpQK+OotdwFGtqUn9CwSsasr312q
+ DESbHslmBEL315UUaYUn1BYMtEF/9ErQ7gP0Ox4tm2qlv2dvY0BcXRw1QVXkv/JDdlOU
+ ZMuA==
+X-Gm-Message-State: APjAAAXymirEgB+NL2aDplzkAsAmjp0PXPH+4u4/rpz196d/2J7EP55h
+ PNFBM2emzgjun3tn5jRcM5XtG/fIGSW1bThRE033HQ==
+X-Google-Smtp-Source: APXvYqzb9LSbjvyTYyJro6roGfmfcXuB5wD3OhRztdb8g4aem5VqSxWcjf73KgosmX+l6Ndl56jWPa35+BrI2knRZzU=
+X-Received: by 2002:a2e:5c46:: with SMTP id q67mr3315497ljb.42.1573665504123; 
+ Wed, 13 Nov 2019 09:18:24 -0800 (PST)
 MIME-Version: 1.0
-References: <20191113094256.1108-1-peter.ujfalusi@ti.com>
- <20191113094256.1108-6-peter.ujfalusi@ti.com>
-In-Reply-To: <20191113094256.1108-6-peter.ujfalusi@ti.com>
+References: <20191112141819.GA22076@localhost.localdomain>
+ <201911131438.KT6pnFZ7%lkp@intel.com>
+ <ac16492e11899ef4ec981f7f2e84714c7d61d2a7.camel@fi.rohmeurope.com>
+ <CACRpkdYAmye8wT39fqy=LN+6pXDvrcQ0SyDTCvG7aSgea3Uumw@mail.gmail.com>
+ <b67faf875fd0060ad36db04b29c109f01e58ab1a.camel@fi.rohmeurope.com>
+In-Reply-To: <b67faf875fd0060ad36db04b29c109f01e58ab1a.camel@fi.rohmeurope.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 13 Nov 2019 18:16:37 +0100
-Message-ID: <CACRpkdZ=xM2GYTDDLKoFwwdqp09-UDOyqogDW5pLvg4QaZXR6Q@mail.gmail.com>
-Subject: Re: [PATCH 5/9] spi: pl022: Use dma_request_chan() directly for
- channel request
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Date: Wed, 13 Nov 2019 18:18:11 +0100
+Message-ID: <CACRpkdZy73oFmHcjGuxCCYD0kxWuAi4xp9s+fHVLcGXwPzc5TQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
+To: "Vaittinen, Matti" <Matti.Vaittinen@fi.rohmeurope.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_091650_705972_548C4370 
-X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-CacheID: sfid-20191113_091827_228524_D81D47CB 
+X-CRM114-Status: UNSURE (   9.98  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -93,33 +95,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Kukjin Kim <kgene@kernel.org>, MSM <linux-arm-msm@vger.kernel.org>,
- radu_nicolae.pirea@upb.ro, linux-spi <linux-spi@vger.kernel.org>,
+Cc: "andrew@lunn.ch" <andrew@lunn.ch>,
+ "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+ "heiko@sntech.de" <heiko@sntech.de>,
+ "geert+renesas@glider.be" <geert+renesas@glider.be>,
+ "narmstrong@baylibre.com" <narmstrong@baylibre.com>,
+ "patrice.chotard@st.com" <patrice.chotard@st.com>,
+ "paul@crapouillou.net" <paul@crapouillou.net>,
+ "eric@anholt.net" <eric@anholt.net>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "jason@lakedaemon.net" <jason@lakedaemon.net>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>, "lkp@intel.com" <lkp@intel.com>,
+ "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
+ "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "wens@csie.org" <wens@csie.org>, "agross@kernel.org" <agross@kernel.org>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "rjui@broadcom.com" <rjui@broadcom.com>,
+ "sebastian.hesselbarth@gmail.com" <sebastian.hesselbarth@gmail.com>,
+ "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
+ "mazziesaccount@gmail.com" <mazziesaccount@gmail.com>,
+ "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "linux-rpi-kernel@lists.infradead.org" <linux-rpi-kernel@lists.infradead.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "kbuild-all@lists.01.org" <kbuild-all@lists.01.org>,
+ "sbranden@broadcom.com" <sbranden@broadcom.com>,
+ "sean.wang@kernel.org" <sean.wang@kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Andy Gross <agross@kernel.org>, Laxman Dewangan <ldewangan@nvidia.com>,
- Mark Brown <broonie@kernel.org>, Andi Shyti <andi@etezian.org>,
- linux-tegra@vger.kernel.org,
- "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
- Jon Hunter <jonathanh@nvidia.com>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "wahrenst@gmx.net" <wahrenst@gmx.net>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ "linux-oxnas@groups.io" <linux-oxnas@groups.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 13, 2019 at 10:42 AM Peter Ujfalusi <peter.ujfalusi@ti.com> wrote:
+On Wed, Nov 13, 2019 at 11:06 AM Vaittinen, Matti
+<Matti.Vaittinen@fi.rohmeurope.com> wrote:
+> On Wed, 2019-11-13 at 10:40 +0100, Linus Walleij wrote:
 
-> dma_request_slave_channel_reason() is:
-> #define dma_request_slave_channel_reason(dev, name) \
->         dma_request_chan(dev, name)
+> > I think I already merged it, just send a new patch on top fixing the
+> > problem.
 >
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+> Hmm. Are you sure you did merge the pincontrol part already?
 
-Acked-by: Linus Walleij <linus.walleij@linaro.org>
+No I confused it for the GPIO part. Sorry!
+
+Please keep iterarating this patch.
 
 Yours,
 Linus Walleij
