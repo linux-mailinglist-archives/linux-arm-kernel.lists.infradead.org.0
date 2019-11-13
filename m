@@ -2,110 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31179FB075
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 13:26:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E449FB08A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 13:36:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YZnbz7NJHHyM9TOk0IHHK46i/S/1fnrrQn4gTMGK5ps=; b=ncQvIekwzk9thM
-	Cic+qUXH+P0Cokk5Suuc5XHooerIBkYGT+QL5Iw/SiV35lbmKW9tYzIKrlahA8X++4NBOtaDjqpql
-	5kLH+sKUBVEXRSqCOqjraECaKrhviSZ9lTj5hXUZ2Z9ClseMC8kf57YSNH1Ny9QyLI4t+1HkPKhVp
-	VcANchRBS4QSJO7axid3U9eETobiof9TZbj3gjKFmPBJUk9BDg6EmOBv6vGex52JfxsOgQPNQHkI9
-	aA1ZyTqE+0AZ2/ag4fxqU61JtRuzZdtSaxINJOWhRHmDlJ9lN7rjkohntcoPoY1Vjkxko3G5to5ks
-	WBq1sLaEKuJJ9x9gG7/Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=pTa9vYbQVOIW3DzRiz8khktHvkmEXP0EtWWS32Bro6U=; b=XieF0GtHw6dWPx
+	XUtB3Wcgl+PLMbQo9RnRqsolGowCQKkKo20eDSHNKVGb223KVsla5toKMgQ5UoLXTAq+czXgPFDmr
+	PbjzFaBnmt5tqtxUGEMohcIeEQY5BUb1NfDoLgfm9kGOTkCtRKCE+9wZGCvd5M2d7zdYxjmOvW73Y
+	M14bLpkyBmp3wdrIC+NM5WKOF99dyo+XpIuGB9A37UQ4sCyoCp0QecQ6rDTFORbltiyQ6LWnRP0xm
+	Zl3KejeSGuakC0xqaQZ+gQ4AiA8UHBpekFIM+vV7s++0FHekOAmUGFNsYNE8RH3+HUuRWEH0Cgxsm
+	LJMgYmtFq5Ys8voZMptQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUrii-0003mO-U0; Wed, 13 Nov 2019 12:26:00 +0000
-Received: from mail-eopbgr140073.outbound.protection.outlook.com
- ([40.107.14.73] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1iUrsF-0007yA-Eb; Wed, 13 Nov 2019 12:35:51 +0000
+Received: from mail-eopbgr00055.outbound.protection.outlook.com ([40.107.0.55]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUri9-0003Lt-LL
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 12:25:27 +0000
+ id 1iUrs6-0007wy-8u
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 12:35:44 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jpkWcc8YDoS18HRAkEQACKlhi84nxApCg08MPZTbk9XV0iRg8m+9017FnnKOua9xjCIAnAxL7YUS2nITnQbmZtbJFC8fjl4dyg+6n+vYEqeg+zzsSTis80cTj1qwHRDZJrK1WeSV4aVeGovwPj3rkMnH8TYkcIQRd8+WkFur4LdLV1+2kbPyfdqZcPyTSztTpkUiHQpEZ/6lUk44CfrVHLD/ZwJyUHZoCySLV3aUtxFuLKW/1YVpUIX6T/uaM9+Rx/4jsZGlcFHTINu0CbiolJHD7V4XwaLdkCU/zmjlpHwXGdRnFjFXWS9A2nB5qVpoa052Ozi3PZ8hEcxLeRUL8A==
+ b=Sikx7iF3SmyS8HSgLrvowGZOZOLEyLdqn90StQOqek1ryVwDGRb18+VfLm8XrhWXmGej/3FHAT+RyF0nAP+U6xJHuDfxrpuw79vu+ZjOKED2sh9Zq5GIg183JYd8ieUSu/QV/QU6O1cbSASZ+fb/4YF2/FzZCcxQOTGNzBIyTnVAp/q6OwiyXOl3dw9wprFvXtWWv9ArPneYj/Hv3nuUcrOyfLh6MrZ44q9cvbGAdKAgfZtE3e8eGvS4qcT42Sy0ezGpXCz2C62Hxk2iL3hQlogHbQToDJLGgicW2aRk/ZeXzkA1i1sZETbatcY4TCeUjkKkyeoMzzt8kKwjXKtdcw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9awv5pDMUgD3nyqQRd0DGfUiukExSMdEM6U3q3P1Kvk=;
- b=N64xqLoR2KeLx9IoaOxhW+0eVYDaAeMcbKl4RHfrn9AvTlRkFfp0tuLY3wC9GycBv8Nxtbhz5XmwV96jvLbG9SaqZ072c4OuZ+ibpDBaA0pCnB7FgecO4u0bsW0uNJFTlF7btwnZMib5rlwgGRWDzG6SyhBDbqIM7G29ymvZM4IOzVG4iKCgQxJp+zDjRSK6fqqJvuxY41aTRrvAXGjXIdeJAiBQjNnvqwuOmJKgpo5na4avVnJAXOwl/nooCjFCk0i0YNkQhRRPDMAiZj1Px1GmIwC4Gtcc+jOddyOQlf/aHoG0RDWUuerLBXIrPCT31Z5MXEWpgBxT+wlEUht/IQ==
+ bh=IB+XF+6Gne40W/itLQd8Aj6w0yJfmY850cj+E7Lx+ow=;
+ b=MYkuyMDEuDaTG8fY5KQ+Q32o5QuhF+jcItcsABY1hBTarnqMMvbTtAX1jqu05GVk5UaaFMaNJkHRnT/qXSEANf4P2Scjkur0mJ35OZNciAMnT1r4sDZOEpcyVJs8uKhIligux9E11l4PugSraQU0JLtgwu32h6BrGEixafxyqkON7PPoD+IJq3rjoO3KfElHr/839s0lY3XTr/L9RwnmgHZRlOiWZZ6FRAKyIc+cRIhjr86Jpvm10riBvVmNGpoH6WPMuSfB/9dpBi0V89XHuxc2s0WysALJhyX+A4rVxVFIbAWnkDV+/fXAm8S1A68SzfGnZ4lnwRcKumvr7u6oyw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9awv5pDMUgD3nyqQRd0DGfUiukExSMdEM6U3q3P1Kvk=;
- b=s9TuKWx/3mdkKXSWajNH//8iFLxUXSeJqRDE0UCzynUMiv5HYpBg3eNQVMu76Pf+YpKbskea9gwweP5uP3zb9/SyMt8Xur/VlHGWmaES8BdfXW4J567asjXDza0dNBTHsyGdEmmTzQqpZZa037lHq0e9VSzsbyd01pL4W8eczNU=
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB4499.eurprd04.prod.outlook.com (52.135.151.22) with Microsoft SMTP
+ bh=IB+XF+6Gne40W/itLQd8Aj6w0yJfmY850cj+E7Lx+ow=;
+ b=bk5UGVMqMhbDff25cA1o4e94tvvRqsSamp2lSogSkypxb9LLbNeIu5hZf6FDR6acM55yl7lJmACbCRiKZaOUVauYTnQtrom/eg7fiBDgYoIK444lsqxoae3lk2S3Vp22uocSwZbezkfDzJeGK7Ycp+xoTXCrJbkKQ75aLnVJWbQ=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB6928.eurprd04.prod.outlook.com (52.133.246.14) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.23; Wed, 13 Nov 2019 12:25:15 +0000
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::fd44:1b14:587c:9fde]) by AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::fd44:1b14:587c:9fde%7]) with mapi id 15.20.2430.027; Wed, 13 Nov 2019
- 12:25:15 +0000
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Aisheng Dong <aisheng.dong@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Sascha Hauer <kernel@pengutronix.de>, Jacky
- Bai <ping.bai@nxp.com>, Daniel Baluta <daniel.baluta@nxp.com>
-Subject: [PATCH 3/3] clk: imx8qxp: Add ACM driver
-Thread-Topic: [PATCH 3/3] clk: imx8qxp: Add ACM driver
-Thread-Index: AQHVmh1noYxDOD5oOE6Oh5sdRghxRg==
-Date: Wed, 13 Nov 2019 12:25:15 +0000
-Message-ID: <1573647909-31081-3-git-send-email-abel.vesa@nxp.com>
-References: <1573647909-31081-1-git-send-email-abel.vesa@nxp.com>
-In-Reply-To: <1573647909-31081-1-git-send-email-abel.vesa@nxp.com>
+ 15.20.2451.23; Wed, 13 Nov 2019 12:35:38 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::dd0c:72dc:e462:16b3]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::dd0c:72dc:e462:16b3%5]) with mapi id 15.20.2451.023; Wed, 13 Nov 2019
+ 12:35:38 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Chanwoo Choi <cw00.choi@samsung.com>, Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH v5 3/5] dt-bindings: memory: Add bindings for imx8m ddr
+ controller
+Thread-Topic: [PATCH v5 3/5] dt-bindings: memory: Add bindings for imx8m ddr
+ controller
+Thread-Index: AQHVmaNN8+lTgarJx0yj+3LD9AtsMg==
+Date: Wed, 13 Nov 2019 12:35:38 +0000
+Message-ID: <VI1PR04MB702328B4F8744FBF42E0D537EE760@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <cover.1573595318.git.leonard.crestez@nxp.com>
+ <CGME20191112215123epcas5p13e9eec7f2209a73bb1a6f09434ec91ba@epcas5p1.samsung.com>
+ <872fb6e3117955b679678280483f82b3d73dd376.1573595319.git.leonard.crestez@nxp.com>
+ <296a7e8a-78e5-62bb-e4e1-8f5a9095cb6d@samsung.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM0PR0402CA0014.eurprd04.prod.outlook.com
- (2603:10a6:208:15::27) To AM0PR04MB5779.eurprd04.prod.outlook.com
- (2603:10a6:208:131::23)
-x-originating-ip: [89.37.124.34]
-x-mailer: git-send-email 2.7.4
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=abel.vesa@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: a83bad4e-b93e-4fcf-83df-08d768348967
-x-ms-traffictypediagnostic: AM0PR04MB4499:|AM0PR04MB4499:
+x-ms-office365-filtering-correlation-id: bd5aa2c7-5031-4aed-0490-08d76835fd31
+x-ms-traffictypediagnostic: VI1PR04MB6928:|VI1PR04MB6928:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB4499E44AFBB37FFC34218DB9F6760@AM0PR04MB4499.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4714;
+x-microsoft-antispam-prvs: <VI1PR04MB6928E262B6635815F573262DEE760@VI1PR04MB6928.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5516;
 x-forefront-prvs: 0220D4B98D
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(346002)(396003)(366004)(136003)(376002)(199004)(189003)(446003)(486006)(44832011)(2616005)(71200400001)(66446008)(66476007)(102836004)(76176011)(86362001)(6506007)(386003)(71190400001)(64756008)(256004)(14444005)(5024004)(6512007)(476003)(66066001)(5660300002)(36756003)(66946007)(11346002)(4326008)(66556008)(6636002)(6436002)(26005)(186003)(2906002)(7736002)(110136005)(8676002)(52116002)(99286004)(8936002)(316002)(478600001)(54906003)(14454004)(6116002)(3846002)(50226002)(25786009)(6486002)(305945005)(81156014)(81166006)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4499;
- H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(4636009)(39860400002)(366004)(396003)(136003)(376002)(346002)(199004)(189003)(102836004)(55016002)(8936002)(86362001)(74316002)(305945005)(7736002)(6116002)(3846002)(486006)(81156014)(81166006)(8676002)(52536014)(476003)(66946007)(7696005)(66476007)(66556008)(7416002)(64756008)(66446008)(5660300002)(6506007)(44832011)(76176011)(2906002)(53546011)(6306002)(9686003)(99286004)(6436002)(33656002)(6246003)(26005)(71190400001)(446003)(966005)(14454004)(4326008)(229853002)(256004)(91956017)(76116006)(45080400002)(478600001)(316002)(25786009)(54906003)(186003)(71200400001)(66066001)(110136005)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6928;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: vxginrOtBh1sIBBSva+PaqMsWTaDw+oAET80AeyQ30CvzA/+W4eqbr7ULI+9bUJ7Wza6ch4MeDwLvuolpEDmzYBRKcB2bJa8G4snW1n/R8Y5sSRw8MDHa8HO0fn8PXZB0hfbdjwhusUmeGnxLpXrUQAhGXK5FyAsRbonSoK+DsSRmOSfOXj2MRbwcT36HGxNuUvsgATChYEsP3/aifpQHYiSbBN8TO4XYoUbNKmZSvUtGGUH/y3O9/EcnNfYkhmnrKTsNJxA8myEXDvc9txJ4Cten4ymHJEQ/L/UuCruxPRKLkEqwV61nf3VWTNr/BgYZDN7zXmiR4yYmv4S9P7UKMNAPSKNBUZWRZM9BtW0dnSQ3pPDfsiwYz2Y5moBEtQAG6fI8/rgOq8rvzBo9vaJZdBW1S87b9PVxyqlpbWoY/19KOkflrmj6onie7u4X1G0
+x-microsoft-antispam-message-info: MnyMAQLDXtldXg5WwAVI9Jy3BmPZ1Su/w4LP92enb+RqvyfgXHyXncCWDhxnFy9nQGIs0ZmNA5kjaMHqWYLts3p15Bv9SLx3tKdQJ40Db+ij0RjeXXLdutiBV/BtR8td3whTvFVI7F9wqz2DNONzRPLL3lLDX5fMJw0L07VK+5dkjOeYqxnZFs7sw90qeefwawdKy2ypkHX58jDmzKpZYTJDR9Jbdtc+2K0UO1+sqYRW17iTFsI0DZYzfeqoWfhR7ShOEYab3ef6Z09zOR4by7oOwpYkK2U+DOHIo/HEyDS2MEVNljovlCuvdfX71z6WVG/u5fryhtAEoCe9l3LTzuLHb5X7cdkpDcZXy/PIxYeAnTUMgDXI5CUHgKuc6Fckq6pGLqfIOH+1JKzC73RCYRgx9+LVDnPvSX5MwokKF0ls5YA9CJKZXGqcGtDI1x7y
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a83bad4e-b93e-4fcf-83df-08d768348967
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Nov 2019 12:25:15.1983 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: bd5aa2c7-5031-4aed-0490-08d76835fd31
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Nov 2019 12:35:38.4467 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: e3hqG4wWHX8XDMO3yQStSiqGZeVGH+epq0KKhuQRL8rvopziBIdzyHoyzeC6BGZGGVn6AQbWcJyW+QMJqGhhxQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4499
+X-MS-Exchange-CrossTenant-userprincipalname: HUZSr8CtgGMVTirejB/pimcC9XFoidmUJKj/aKmVLNxO87GewSdp5KEIkeum3W4YWsNqo4YEAUjPzKxgcV2TAw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6928
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_042525_724678_3C73464F 
-X-CRM114-Status: GOOD (  16.18  )
+X-CRM114-CacheID: sfid-20191113_043542_317735_492987CF 
+X-CRM114-Status: GOOD (  14.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.73 listed in list.dnswl.org]
+ no trust [40.107.0.55 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -126,246 +123,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abel Vesa <abel.vesa@nxp.com>, "S.j. Wang" <shengjiu.wang@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
+ Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
+ Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
  "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ MyungJoo Ham <myungjoo.ham@samsung.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Martin Kepplinger <martink@posteo.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According to the RM, the Audio Clock Mux (ACM) is a collection of control
-registers and multiplexers that are used to route the audio source clocks
-to the audio peripherals. Each audio peripheral has its dedicated audio
-clock mux (which differ based on usage) and control register.
-Control of ACM is behind the SCU firmware.
+On 13.11.2019 04:32, Chanwoo Choi wrote:
+> On 11/13/19 6:50 AM, Leonard Crestez wrote:
+>> Add devicetree bindings for the i.MX DDR Controller on imx8m series
+>> chips. It supports dynamic frequency switching between multiple data
+>> rates and this is exposed to Linux via the devfreq subsystem.
+>>
+>> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+>> ---
+>>   .../memory-controllers/fsl/imx8m-ddrc.yaml    | 57 +++++++++++++++++++
+>>   1 file changed, 57 insertions(+)
+>>   create mode 100644 Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
+>>
+>> diff --git a/Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml b/Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
+>> new file mode 100644
+>> index 000000000000..7c98e3509f75
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
+>> @@ -0,0 +1,57 @@
+>> +# SPDX-License-Identifier: GPL-2.0
+>> +%YAML 1.2
+>> +---
+>> +$id: https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetree.org%2Fschemas%2Fmemory-controllers%2Ffsl%2Fimx8m-ddrc.yaml%23&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7C23e819d42b664965975808d767e1c084%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637092091602846215&amp;sdata=frWd1MENZm%2FsPjQp%2FWbphMgkkCMtwsgV8hLQyIhC3%2BI%3D&amp;reserved=0
+>> +$schema: https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fdevicetree.org%2Fmeta-schemas%2Fcore.yaml%23&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7C23e819d42b664965975808d767e1c084%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637092091602846215&amp;sdata=4IweKQJO9ZsB%2B9QxixSQjfYOFm3%2FY7iMHFBSsquK1B0%3D&amp;reserved=0
+>> +
+>> +title: i.MX8M DDR Controller
+>> +
+>> +maintainers:
+>> +  - Leonard Crestez <leonard.crestez@nxp.com>
+>> +
+>> +properties:
+>> +  compatible:
+>> +    items:
+>> +      - enum:
+>> +        - fsl,imx8mn-ddrc
+>> +        - fsl,imx8mm-ddrc
+>> +        - fsl,imx8mq-ddrc
+>> +      - const: fsl,imx8m-ddrc
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +  clocks:
+>> +    maxItems: 4
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: core
+>> +      - const: pll
+>> +      - const: alt
+>> +      - const: apb
+>> +
+>> +  operating-points-v2: true
+>> +  opp-table: true
+>> +
+>> +required:
+>> +  - reg
+>> +  - compatible
+>> +  - clocks
+>> +  - clock-names
+>> +
+>> +additionalProperties: false
+>> +
+>> +examples:
+>> +  - |
+>> +    #include <dt-bindings/clock/imx8mm-clock.h>
+>> +    ddrc: memory-controller@3d400000 {
+>> +        compatible = "fsl,imx8mm-ddrc", "fsl,imx8m-ddrc";
+>> +        reg = <0x3d400000 0x400000>;
+> 
+> The probe() function doesn't get the IORESOURCE_MEM from dt?
+> Is it needed?
 
-ACM depends on SCU PD, so its init level has to be after SCU PD
-but before the LPCG. The fs_initcall ensures it's probed before LPCG clocks
-also avoiding unnecessary massive defer probe.
+This area is not currently mapped by the driver. As far as I understand 
+it's acceptable to "describe hardware" even if you don't use the full 
+description in driver code.
 
-Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
-Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
-Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
----
- drivers/clk/imx/Makefile          |   2 +-
- drivers/clk/imx/clk-imx8qxp-acm.c | 189 ++++++++++++++++++++++++++++++++++++++
- 2 files changed, 190 insertions(+), 1 deletion(-)
- create mode 100644 drivers/clk/imx/clk-imx8qxp-acm.c
+If I were to remove the "reg" area wouldn't I also have to move the node 
+outside of the bus to keep DT validation? It's better to keep the address.
 
-diff --git a/drivers/clk/imx/Makefile b/drivers/clk/imx/Makefile
-index 77a3d71..6186839 100644
---- a/drivers/clk/imx/Makefile
-+++ b/drivers/clk/imx/Makefile
-@@ -28,7 +28,7 @@ obj-$(CONFIG_MXC_CLK_SCU) += \
- obj-$(CONFIG_CLK_IMX8MM) += clk-imx8mm.o
- obj-$(CONFIG_CLK_IMX8MN) += clk-imx8mn.o
- obj-$(CONFIG_CLK_IMX8MQ) += clk-imx8mq.o
--obj-$(CONFIG_CLK_IMX8QXP) += clk-imx8qxp.o clk-imx8qxp-lpcg.o
-+obj-$(CONFIG_CLK_IMX8QXP) += clk-imx8qxp.o clk-imx8qxp-lpcg.o clk-imx8qxp-acm.o
- 
- obj-$(CONFIG_SOC_IMX1)   += clk-imx1.o
- obj-$(CONFIG_SOC_IMX21)  += clk-imx21.o
-diff --git a/drivers/clk/imx/clk-imx8qxp-acm.c b/drivers/clk/imx/clk-imx8qxp-acm.c
-new file mode 100644
-index 00000000..7c00fd3
---- /dev/null
-+++ b/drivers/clk/imx/clk-imx8qxp-acm.c
-@@ -0,0 +1,189 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright 2018 NXP
-+ *	Dong Aisheng <aisheng.dong@nxp.com>
-+ */
-+
-+#include <linux/clk-provider.h>
-+#include <linux/err.h>
-+#include <linux/io.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/of_device.h>
-+#include <linux/platform_device.h>
-+#include <linux/slab.h>
-+#include <linux/pm_domain.h>
-+
-+#include "clk.h"
-+#include "clk-scu.h"
-+
-+#include <dt-bindings/clock/imx8-clock.h>
-+
-+static const char * const aud_clk_sels[] = {
-+	"aud_rec_clk0_lpcg_clk",
-+	"aud_rec_clk1_lpcg_clk",
-+	"ext_aud_mclk0",
-+	"ext_aud_mclk1",
-+	"esai0_rx_clk",
-+	"esai0_rx_hf_clk",
-+	"esai0_tx_clk",
-+	"esai0_tx_hf_clk",
-+	"spdif0_rx",
-+	"sai0_rx_bclk",
-+	"sai0_tx_bclk",
-+	"sai1_rx_bclk",
-+	"sai1_tx_bclk",
-+	"sai2_rx_bclk",
-+	"sai3_rx_bclk",
-+};
-+
-+static const char * const mclk_out_sels[] = {
-+	"aud_rec_clk0_lpcg_clk",
-+	"aud_rec_clk1_lpcg_clk",
-+	"dummy",
-+	"dummy",
-+	"spdif0_rx",
-+	"dummy",
-+	"dummy",
-+	"sai4_rx_bclk",
-+};
-+
-+static const char * const sai_mclk_sels[] = {
-+	"aud_pll_div_clk0_lpcg_clk",
-+	"aud_pll_div_clk1_lpcg_clk",
-+	"acm_aud_clk0_sel",
-+	"acm_aud_clk1_sel",
-+};
-+
-+static const char * const esai_mclk_sels[] = {
-+	"aud_pll_div_clk0_lpcg_clk",
-+	"aud_pll_div_clk1_lpcg_clk",
-+	"acm_aud_clk0_sel",
-+	"acm_aud_clk1_sel",
-+};
-+
-+static const char * const spdif_mclk_sels[] = {
-+	"aud_pll_div_clk0_lpcg_clk",
-+	"aud_pll_div_clk1_lpcg_clk",
-+	"acm_aud_clk0_sel",
-+	"acm_aud_clk1_sel",
-+};
-+
-+static const char * const mqs_mclk_sels[] = {
-+	"aud_pll_div_clk0_lpcg_clk",
-+	"aud_pll_div_clk1_lpcg_clk",
-+	"acm_aud_clk0_sel",
-+	"acm_aud_clk1_sel",
-+};
-+
-+static int imx8qxp_acm_clk_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct device_node *np = dev->of_node;
-+	struct clk_onecell_data *clk_data;
-+	struct resource *res;
-+	struct clk **clks;
-+	void __iomem *base;
-+	int num_domains;
-+	int i;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	base = devm_ioremap(dev, res->start, resource_size(res));
-+	if (!base)
-+		return -ENOMEM;
-+
-+	clk_data = kzalloc(sizeof(*clk_data), GFP_KERNEL);
-+	if (!clk_data)
-+		return -ENOMEM;
-+
-+	clk_data->clks = kcalloc(IMX_ADMA_ACM_CLK_END,
-+					sizeof(*clk_data->clks), GFP_KERNEL);
-+	if (!clk_data->clks)
-+		return -ENOMEM;
-+
-+	clk_data->clk_num = IMX_ADMA_ACM_CLK_END;
-+
-+	clks = clk_data->clks;
-+
-+	num_domains = of_count_phandle_with_args(dev->of_node, "power-domains",
-+						 "#power-domain-cells");
-+	for (i = 0; i < num_domains; i++) {
-+		struct device *pd_dev;
-+		struct device_link *link;
-+
-+		pd_dev = dev_pm_domain_attach_by_id(&pdev->dev, i);
-+		if (IS_ERR(pd_dev))
-+			return PTR_ERR(pd_dev);
-+
-+		link = device_link_add(&pdev->dev, pd_dev,
-+			DL_FLAG_STATELESS |
-+			DL_FLAG_PM_RUNTIME |
-+			DL_FLAG_RPM_ACTIVE);
-+		if (IS_ERR(link))
-+			return PTR_ERR(link);
-+	}
-+
-+	clks[IMX_ADMA_EXT_AUD_MCLK0]     = imx_clk_fixed("ext_aud_mclk0", 0);
-+	clks[IMX_ADMA_EXT_AUD_MCLK1]     = imx_clk_fixed("ext_aud_mclk1", 0);
-+	clks[IMX_ADMA_ESAI0_RX_CLK]      = imx_clk_fixed("esai0_rx_clk", 0);
-+	clks[IMX_ADMA_ESAI0_RX_HF_CLK]   = imx_clk_fixed("esai0_rx_hf_clk", 0);
-+	clks[IMX_ADMA_ESAI0_TX_CLK]      = imx_clk_fixed("esai0_tx_clk", 0);
-+	clks[IMX_ADMA_ESAI0_TX_HF_CLK]   = imx_clk_fixed("esai0_tx_hf_clk", 0);
-+	clks[IMX_ADMA_SPDIF0_RX]         = imx_clk_fixed("spdif0_rx", 0);
-+	clks[IMX_ADMA_SAI0_RX_BCLK]      = imx_clk_fixed("sai0_rx_bclk", 0);
-+	clks[IMX_ADMA_SAI0_TX_BCLK]      = imx_clk_fixed("sai0_tx_bclk", 0);
-+	clks[IMX_ADMA_SAI1_RX_BCLK]      = imx_clk_fixed("sai1_rx_bclk", 0);
-+	clks[IMX_ADMA_SAI1_TX_BCLK]      = imx_clk_fixed("sai1_tx_bclk", 0);
-+	clks[IMX_ADMA_SAI2_RX_BCLK]      = imx_clk_fixed("sai2_rx_bclk", 0);
-+	clks[IMX_ADMA_SAI3_RX_BCLK]      = imx_clk_fixed("sai3_rx_bclk", 0);
-+	clks[IMX_ADMA_SAI4_RX_BCLK]      = imx_clk_fixed("sai4_rx_bclk", 0);
-+
-+
-+	clks[IMX_ADMA_ACM_AUD_CLK0_SEL] = imx_clk_mux("acm_aud_clk0_sel", base+0x000000, 0, 5, aud_clk_sels, ARRAY_SIZE(aud_clk_sels));
-+	clks[IMX_ADMA_ACM_AUD_CLK1_CLK]	= imx_clk_mux("acm_aud_clk1_sel", base+0x010000, 0, 5, aud_clk_sels, ARRAY_SIZE(aud_clk_sels));
-+
-+	clks[IMX_ADMA_ACM_MCLKOUT0_SEL]	= imx_clk_mux("acm_mclkout0_sel", base+0x020000, 0, 3, mclk_out_sels, ARRAY_SIZE(mclk_out_sels));
-+	clks[IMX_ADMA_ACM_MCLKOUT1_SEL]	= imx_clk_mux("acm_mclkout1_sel", base+0x030000, 0, 3, mclk_out_sels, ARRAY_SIZE(mclk_out_sels));
-+
-+	clks[IMX_ADMA_ACM_ASRC0_MUX_CLK_SEL] = imx_clk_mux("acm_asrc0_mclk_sel", base+0x040000, 0, 2, NULL, 0);
-+	clks[IMX_ADMA_ACM_ASRC1_MUX_CLK_SEL] = imx_clk_mux("acm_asrc1_mclk_sel", base+0x050000, 0, 2, NULL, 0);
-+
-+	clks[IMX_ADMA_ACM_ESAI0_MCLK_SEL] = imx_clk_mux("acm_esai0_mclk_sel", base+0x060000, 0, 2, esai_mclk_sels, ARRAY_SIZE(esai_mclk_sels));
-+	clks[IMX_ADMA_ACM_SAI0_MCLK_SEL] = imx_clk_mux("acm_sai0_mclk_sel", base+0x0E0000, 0, 2, sai_mclk_sels, ARRAY_SIZE(sai_mclk_sels));
-+	clks[IMX_ADMA_ACM_SAI1_MCLK_SEL] = imx_clk_mux("acm_sai1_mclk_sel", base+0x0F0000, 0, 2, sai_mclk_sels, ARRAY_SIZE(sai_mclk_sels));
-+	clks[IMX_ADMA_ACM_SAI2_MCLK_SEL] = imx_clk_mux("acm_sai2_mclk_sel", base+0x100000, 0, 2, sai_mclk_sels, ARRAY_SIZE(sai_mclk_sels));
-+	clks[IMX_ADMA_ACM_SAI3_MCLK_SEL] = imx_clk_mux("acm_sai3_mclk_sel", base+0x110000, 0, 2, sai_mclk_sels, ARRAY_SIZE(sai_mclk_sels));
-+	clks[IMX_ADMA_ACM_SAI4_MCLK_SEL] = imx_clk_mux("acm_sai4_mclk_sel", base+0x140000, 0, 2, sai_mclk_sels, ARRAY_SIZE(sai_mclk_sels));
-+	clks[IMX_ADMA_ACM_SAI5_MCLK_SEL] = imx_clk_mux("acm_sai5_mclk_sel", base+0x150000, 0, 2, sai_mclk_sels, ARRAY_SIZE(sai_mclk_sels));
-+
-+	clks[IMX_ADMA_ACM_SPDIF0_TX_CLK_SEL] = imx_clk_mux("acm_spdif0_mclk_sel", base+0x1A0000, 0, 2, spdif_mclk_sels, ARRAY_SIZE(spdif_mclk_sels));
-+	clks[IMX_ADMA_ACM_MQS_TX_CLK_SEL] = imx_clk_mux("acm_mqs_mclk_sel", base+0x1C0000, 0, 2, mqs_mclk_sels, ARRAY_SIZE(mqs_mclk_sels));
-+
-+	for (i = 0; i < clk_data->clk_num; i++) {
-+		if (IS_ERR(clks[i]))
-+			pr_warn("i.MX clk %u: register failed with %ld\n",
-+				i, PTR_ERR(clks[i]));
-+	}
-+
-+	return of_clk_add_provider(np, of_clk_src_onecell_get, clk_data);
-+}
-+
-+static const struct of_device_id imx8qxp_acm_match[] = {
-+	{ .compatible = "nxp,imx8qxp-acm", },
-+	{ /* sentinel */ }
-+};
-+
-+static struct platform_driver imx8qxp_acm_clk_driver = {
-+	.driver = {
-+		.name = "imx8qxp-acm",
-+		.of_match_table = imx8qxp_acm_match,
-+		.suppress_bind_attrs = true,
-+	},
-+	.probe = imx8qxp_acm_clk_probe,
-+};
-+
-+static int __init imx8qxp_acm_init(void)
-+{
-+	return platform_driver_register(&imx8qxp_acm_clk_driver);
-+}
-+fs_initcall(imx8qxp_acm_init);
--- 
-2.7.4
+Maybe it will be mapped in the future or maybe firmware will start to 
+parse linux DT instead of hardcoding SOC-specific addresses (this 
+already happens in some cases).
 
+>> +        clock-names = "core", "pll", "alt", "apb";
+>> +        clocks = <&clk IMX8MM_CLK_DRAM_CORE>,
+>> +                 <&clk IMX8MM_DRAM_PLL>,
+>> +                 <&clk IMX8MM_CLK_DRAM_ALT>,
+>> +                 <&clk IMX8MM_CLK_DRAM_APB>;
+>> +        operating-points-v2 = <&ddrc_opp_table>;
+>> +    };
 
 _______________________________________________
 linux-arm-kernel mailing list
