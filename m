@@ -2,58 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BAA5FAB55
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 08:53:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D358DFAB5C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 08:53:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+HAEuiQYkOIgf5Ibr7J6mm9o3RyUYO9aLiVip2r42Dk=; b=MCt86Jfl1zR/3ZNUloR32ItcT
-	fLkxMtB1EOGSff4bT9Imb7mGo8/WQxGq3LOhR95TsQFFhDWus52LJL2Xog/buZcke2OrYVgyFRr8i
-	svtQn3DjgEQi7uaKvxvQde0EaZcX9bMspNittmj4ybPQuE0bsGlmYwcVkyHhBOau8gl8eMwEGavTF
-	29QBOuc6ZAz5/a3dOykZ1ccC+RmHAyLlANaNehagcRBhw5R74ufoCqkgFfEXdg4/lRBotRf4BBbbX
-	6Mk5AqEA2dCfie5cNXfAmv0SX6xdKRtGI3lTt2bowhU3070QFJSf0y026CoHE6+2MS1g7Cpm2LvL1
-	XuM1Q+vjw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mfoAVITDkBbzALSj2TB+33h0OhJCix/T5FocJ19yCPY=; b=FtcntTCjEySwKq
+	rO97cyZ11b48NhqMg5CpGyi07Cy2de7AFZ3hDf2e/ru3Gq/fGc9Lv2OdV9Z7BP73t5HywejJZSxTV
+	tSVuXKxZ5S14Q5MMsWu1HTatUwxyETGBMkWQ7UwAzCDNXNQ6Ijdzc40cDpuUCuPFvSI9Kbq8a35bQ
+	K9zf+uUUUsd7sa1opQM+nNGXuJEpamnH+4GnARC5FXDmM8VeSr85olhmV3hCJPYKm9Yg1jnKrVgHm
+	XUZKDIkZYmXK77bI4X+SfrpHu5gC0KLhpGn1bEn4fDB9+jQslrvIrBAkQAiIBJoCSeVem7Ok+RtO5
+	vEGsAVMR4jRWY6Nzyn8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUnSh-0007H6-RC; Wed, 13 Nov 2019 07:53:11 +0000
-Received: from mout-p-201.mailbox.org ([80.241.56.171])
+	id 1iUnTR-0007b9-9j; Wed, 13 Nov 2019 07:53:57 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUnSW-0007GN-4k
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 07:53:01 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47CcKk24kPzQlBh;
- Wed, 13 Nov 2019 08:52:58 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter03.heinlein-hosting.de (spamfilter03.heinlein-hosting.de
- [80.241.56.117]) (amavisd-new, port 10030)
- with ESMTP id Bp_N38N4yiqo; Wed, 13 Nov 2019 08:52:50 +0100 (CET)
-Date: Wed, 13 Nov 2019 18:52:27 +1100
-From: Aleksa Sarai <cyphar@cyphar.com>
-To: Al Viro <viro@zeniv.linux.org.uk>
-Subject: Re: [PATCH v15 6/9] namei: LOOKUP_{IN_ROOT,BENEATH}: permit limited
- ".." resolution
-Message-ID: <20191113075227.lu5b5uvc2nuk76uk@yavin.dot.cyphar.com>
-References: <20191105090553.6350-1-cyphar@cyphar.com>
- <20191105090553.6350-7-cyphar@cyphar.com>
- <20191113020917.GC26530@ZenIV.linux.org.uk>
+ id 1iUnTF-0007Zk-EF
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 07:53:46 +0000
+Received: by mail-lj1-x244.google.com with SMTP id q2so1426951ljg.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 12 Nov 2019 23:53:43 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=XqEmLAzEQb9ps3ZlETCYtkOJ5L4AjuKlcBGtyB1ev2Y=;
+ b=URdTYiPPZI+OHS8Y85BIshRaCjUVitFN0qeuAdugtAmJ8F9vgjtPkpCYsrV87m+UkL
+ p3JzfSgYlS2qcthS7lixjMyYDeQAxpoEV4a65ZAhImKWQFu3Lr8oa5460070EyWTu13F
+ u1KXR0ZcAMwMjhwgoxYWSipM8okmYD1J4/eUTBwXp3QhSRsv8/uUNAxEc2UIHjcGSy0D
+ KrGfJKOJGZUKPYTlXuHNChKn/484p7Diy/9zc2WKOALA5QCp6iYOdyKyowuD77Qhggwy
+ V5VaZievWht7aKQhV3v/IXDKbLosRF1SYib2iZ+rVV3s+l4uY8Qj5oVNuNCwDiGNg/hp
+ 1CLw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=XqEmLAzEQb9ps3ZlETCYtkOJ5L4AjuKlcBGtyB1ev2Y=;
+ b=e7ndsWS76QIu3GtZn2NjVm7+6pBUpjHB0oa62Ep4zy04lGTmN/RA66eifmMC5mJoxC
+ GwZBWPNTwlx90xoD6Wyb0GqG3ojix7vTDQhwGjQgJBOfv8APHa/LoQ1L1Nhc8nHa5Qas
+ 6m8inoAc/Mt66oQjjWtNOGw0Qw1Tt353XuLfd7sqWhykcxMMm3nmWc5pX7Hcyx2QKL7X
+ 3XpspI1YgMBSC1eGbQQF7/vQ+TItvDh4et/5K5nYoEjGTSG0IqxexLD98yn58T+3J//J
+ 2XHtnLr8ZkQUp+aDWgc7l5znsKe0itxGG4RAFSjDBZ3MEjG7VklOXWycTrt8THM9LnSy
+ qgiA==
+X-Gm-Message-State: APjAAAXx28Zz9I15odAwBmQkQ1z9ZAJLxoSvhKYf6wclT5qfV5srFj5R
+ /Y1dHT3vVo7oNfv9clSr0Qe3FQ==
+X-Google-Smtp-Source: APXvYqxT+481QIW+ft1eL3zgVvBTr68GKAFTc1+PVVpmCMb21pTHaXGVZsUUj8P2J0TlZe8yQCUOlg==
+X-Received: by 2002:a05:651c:87:: with SMTP id 7mr1567752ljq.20.1573631621703; 
+ Tue, 12 Nov 2019 23:53:41 -0800 (PST)
+Received: from localhost.bredbandsbolaget
+ (c-79c8225c.014-348-6c756e10.bbcust.telenor.se. [92.34.200.121])
+ by smtp.gmail.com with ESMTPSA id j10sm610110lfc.43.2019.11.12.23.53.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 12 Nov 2019 23:53:40 -0800 (PST)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: Ulf Hansson <ulf.hansson@linaro.org>, linux-mmc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Stephan Gerhold <stephan@gerhold.net>
+Subject: [PATCH 0/3] MMCI odd buffer alignment fixes
+Date: Wed, 13 Nov 2019 08:53:32 +0100
+Message-Id: <20191113075335.31775-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20191113020917.GC26530@ZenIV.linux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_235300_487648_C45EB03A 
-X-CRM114-Status: GOOD (  15.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191112_235345_491281_229B6212 
+X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,96 +97,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, Christian Brauner <christian.brauner@ubuntu.com>,
- Shuah Khan <shuah@kernel.org>, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, Tycho Andersen <tycho@tycho.ws>,
- Aleksa Sarai <asarai@suse.de>, Jiri Olsa <jolsa@redhat.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
- linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
- linux-m68k@lists.linux-m68k.org, Andy Lutomirski <luto@kernel.org>,
- Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>, libc-alpha@sourceware.org,
- linux-parisc@vger.kernel.org, linux-api@vger.kernel.org,
- Chanho Min <chanho.min@lge.com>, Jeff Layton <jlayton@kernel.org>,
- Oleg Nesterov <oleg@redhat.com>, Eric Biederman <ebiederm@xmission.com>,
- linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- containers@lists.linux-foundation.org
-Content-Type: multipart/mixed; boundary="===============0415541523279176056=="
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Russell King <linux@arm.linux.org.uk>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This is an attempt to fix the three independent issues seen
+by Ulf in the MMCI driver.
 
---===============0415541523279176056==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="qprdfpbfkuvffdu5"
-Content-Disposition: inline
+I am unable to test patches 2 & 3 since I can't provoke the
+right traffic, but I hope Stephan can try it with his
+Broadcom WiFi.
 
+Linus Walleij (2):
+  mmc: mmci: Bail out from odd DMA on Ux500
+  mmc: mmci: Proper PIO residue handling
 
---qprdfpbfkuvffdu5
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Ulf Hansson (1):
+  mmc: mmci: Support odd block sizes for ux500v2 and qcom variant
 
-On 2019-11-13, Al Viro <viro@zeniv.linux.org.uk> wrote:
-> On Tue, Nov 05, 2019 at 08:05:50PM +1100, Aleksa Sarai wrote:
->=20
-> > One other possible alternative (which previous versions of this patch
-> > used) would be to check with path_is_under() if there was a racing
-> > rename or mount (after re-taking the relevant seqlocks). While this does
-> > work, it results in possible O(n*m) behaviour if there are many renames
-> > or mounts occuring *anywhere on the system*.
->=20
-> BTW, do you realize that open-by-fhandle (or working nfsd, for that matte=
-r)
-> will trigger arseloads of write_seqlock(&rename_lock) simply on d_splice_=
-alias()
-> bringing disconnected subtrees in contact with parent?
+ drivers/mmc/host/mmci.c | 166 ++++++++++++++++++++++++++++++++++++----
+ drivers/mmc/host/mmci.h |  18 ++++-
+ 2 files changed, 169 insertions(+), 15 deletions(-)
 
-I wasn't aware of that -- that makes path_is_under() even less viable.
-I'll reword it to be clearer that path_is_under() isn't a good idea and
-why we went with -EAGAIN over an in-kernel retry.
+-- 
+2.21.0
 
---=20
-Aleksa Sarai
-Senior Software Engineer (Containers)
-SUSE Linux GmbH
-<https://www.cyphar.com/>
-
---qprdfpbfkuvffdu5
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXcu2OAAKCRCdlLljIbnQ
-EtqZAQCjNdiANKBF7WCOTHUeD48U+o/7WczR7I/1WTsCcSBp9gEA6HgEdHKRHmol
-+5Fvn3Eg1Tya83fWQgWoVLu8i6CUUwE=
-=voMa
------END PGP SIGNATURE-----
-
---qprdfpbfkuvffdu5--
-
-
---===============0415541523279176056==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0415541523279176056==--
-
