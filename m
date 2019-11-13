@@ -2,27 +2,27 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B147FAC51
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 09:52:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02665FAC54
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 09:53:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zn6ESIS2ENDJ4Z93pYEMim+S1ZoNZP6H9JRFjTcAEr8=; b=WKonq86TeUcUFY
-	Gv5QdTPuz4oCArXmCiu9685es3zlPcLT9szMdeU2oA3cxl8rvXey2vHG6t6nF/A909x+7JmB2zvq5
-	FL6j3yUl4RSKaE9f6cK0OThbigDsBQgzyi0XHqLlxzNkOdid3dJ0T3wGcfFIW6OvJoe9BlOZMsIwj
-	uDp5SLxw+1WAI0UCxe4FiBAiLsyUPXOIFXIpV5PmRZxL4Cf1HQg6BfCdnaqbeg+OK0snpbAf035wl
-	/o0kv+VANyoxulFUYS6cPaJKEFc+0smjDobmKA1N4MpLiUvvJ54tgDtDlW+lUfnR+ivaIVVPjBt61
-	/KaW4Jjbxn4yB9QSV9YQ==;
+	List-Owner; bh=749kuzN0pKfc9UOEbQQ116x2AfiyafkDBMuCadwjPt4=; b=GRU+V5yPsqizEq
+	jcgXsoYWM50bjCI8BcrDJClLr2xNL+v9MBb9xSOZ/JbhOJdSjgQ++l6NfuegMpMW61RctVBnpoUvj
+	ePJJ5+ocltsiW7S39FAip9XmO6Qrrag/tkGGWGK1ajg0MnxGFf+lfhBV1EAe17ZFs3/y6nWZ4Lb3v
+	CrjvvnlGCRrjSmJ2jh1vbsIoReHyoLSF9KS7K+A0J0Iho6pEhHm3esLQREYSuoc7g7hjKLSPRPzcI
+	x98z/bCK4zTJkHsdZAJsczrlL7lsPiNKO0iWWPHUVLWvRkjjk2i3MIREL569De0ODmLx/Q3HelFqC
+	rfsY8/4ATbDBBqhM/oCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUoOK-0007W7-CS; Wed, 13 Nov 2019 08:52:44 +0000
+	id 1iUoOb-0007kF-Hw; Wed, 13 Nov 2019 08:53:01 +0000
 Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUoN8-00069U-QB
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 08:51:32 +0000
+ id 1iUoN9-0006Nv-Ua
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 08:51:33 +0000
 Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -45,35 +45,35 @@ Authentication-Results: esa5.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: tvg/4uIYh56pUM4sjn/t14sVYseF/i1E4HCtpcgpMWGkBQ73I2U9ZYQxtLu/sh5AlBM4PvkfZX
- JNjymk2rlzeiiK9cu1kTEMSajZvmfMaCfJg4N4n0iYdzWbKbELFgBq6nGr7sc2iDdY48CP8bML
- kNcFJjfqn2RLukR3/IX2BlHcpa6tFVAoQea4vPzzyjmVAKlDrFvz91NNATMxZWRbbgjUF6Uqiv
- QpJSguUejUcXB6Mo/ROkC+1TT315CvWAQelMHzY7o+QAqt5PyqROFdfpceWyz7VYa0xbGDIONV
- qaU=
-X-IronPort-AV: E=Sophos;i="5.68,299,1569308400"; d="scan'208";a="55397267"
+IronPort-SDR: PiIQixspSRPxW93OC+D9JWNEXyY9Pl7fyyRTJKgsapjC/zHknfgXLTuA6a5AftMax2x+0GTGZU
+ d5bvAnpkO6RBYQwS2T72pGUl6uPlcjU2R1V0/2y1kSpeMEdIkd1nuL9yW9ImBuvVFMMW9VcAib
+ YTAF7P51V0tw6a75j8Vm1i/JbvXKe5aAtPU2Vfk+xggTR3yiWOY16ZUvcQfurXAxO5EZyz2TjW
+ IJ0O8D1nysW+gb6kJpYg4j719Dg+dBPhc5l3lG5k99iXNhbmhBYCC5QCkW69j3KN69YCgCBXyl
+ JwI=
+X-IronPort-AV: E=Sophos;i="5.68,299,1569308400"; d="scan'208";a="55397274"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 Nov 2019 01:51:29 -0700
+ 13 Nov 2019 01:51:31 -0700
 Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 13 Nov 2019 01:51:28 -0700
+ 15.1.1713.5; Wed, 13 Nov 2019 01:51:30 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Wed, 13 Nov 2019 01:51:26 -0700
+ 15.1.1713.5 via Frontend Transport; Wed, 13 Nov 2019 01:51:28 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <linux@armlinux.org.uk>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>
-Subject: [PATCH 06/13] ARM: at91/defconfig: enable SAMA5D2's SHDWC
-Date: Wed, 13 Nov 2019 10:51:02 +0200
-Message-ID: <1573635069-30883-7-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 07/13] ARM: at91/defconfig: enable flexcom
+Date: Wed, 13 Nov 2019 10:51:03 +0200
+Message-ID: <1573635069-30883-8-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1573635069-30883-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1573635069-30883-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_005130_913037_5B225197 
+X-CRM114-CacheID: sfid-20191113_005132_040918_64238661 
 X-CRM114-Status: UNSURE (   7.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
@@ -103,7 +103,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add CONFIG_POWER_RESET_AT91_SAMA5D2_SHDWC.
+Enable flexcom.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
@@ -111,17 +111,17 @@ Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm/configs/at91_dt_defconfig b/arch/arm/configs/at91_dt_defconfig
-index e98bf377323c..a97b49423bf1 100644
+index a97b49423bf1..2318d9d4069e 100644
 --- a/arch/arm/configs/at91_dt_defconfig
 +++ b/arch/arm/configs/at91_dt_defconfig
-@@ -110,6 +110,7 @@ CONFIG_I2C_GPIO=y
- CONFIG_SPI=y
- CONFIG_SPI_ATMEL=y
- CONFIG_POWER_RESET=y
-+CONFIG_POWER_RESET_AT91_SAMA5D2_SHDWC=y
- CONFIG_POWER_SUPPLY=y
+@@ -115,6 +115,7 @@ CONFIG_POWER_SUPPLY=y
  # CONFIG_HWMON is not set
  CONFIG_WATCHDOG=y
+ CONFIG_AT91SAM9X_WATCHDOG=y
++CONFIG_MFD_ATMEL_FLEXCOM=y
+ CONFIG_MFD_ATMEL_HLCDC=y
+ CONFIG_REGULATOR=y
+ CONFIG_REGULATOR_FIXED_VOLTAGE=y
 -- 
 2.7.4
 
