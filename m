@@ -2,58 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CC28FB9C3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 21:27:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB02BFB9F4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 21:34:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XD1aEgCj9IczmNOfvHGcG/FaJh12G58gVQhaKvYWQ18=; b=jBNqSPniaBwUKl
-	kPdrycUC5cQejrcLZvYjbUSYGeUTA9UeD7ue68AJsgJkx/R5uCU8ObDvcSmvBYubkq757H9Qcxeb6
-	GLkRXbjWlQOW3J+by/wZvO3zG8RhOI2sM+rpabi+nNUj7eU5vH9JgqXeG1sXwkMsGAyteNvioj5Iw
-	Hr9747fHnN08Ewi8Sz7bD1CKZl6LOvu/wt4bIl/NNH4yyp/7+mMTGwzz3F9DDK5lCtRXHxZ9M1GTQ
-	6Q56MfVS/RvpHzjeOSSxhDsTfnAH6Tp6yhmy5uVx+8HXXkHTQh6IYhrvmON5ISX9uggMWo5Ozm1UZ
-	NJtEI2sFvJKLZnPtjWjw==;
+	List-Owner; bh=rTH+7M81q4X7x09LGyrtN4tRaylAjR2Un8DbbFMnqYk=; b=g+rTBtBV6QzyMS
+	vmYXG/ituBKSzGgIt8/bnvY/zBg80qwxHo3GxDoqHYbrf121EuExTbnK2JN8k/MAyfj3cqIgBlUez
+	tYoxiWJSr3Ypdi7wWIMZdK29+f288lag7Ffqo3l65uueQDqxPot5YoGlVQx4qH2n4PWAhM6mOUayT
+	eTaRiTBtXBL4mYY9YQco33hPszz4xaLsZ9KHjxMRAifUOvse3AzP6Pa4va+GHsujxyavhBQEE9LD9
+	BdaqfSu7wPo+JXnlS25fbyQ3+32fUhnDC6jNOKQA3i+g4YmgGkFNxRLQ/8ZcPh3K8ydRNcdj96DTh
+	7xO6QHGgg5921CrqHrew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUzEQ-0004q8-4Z; Wed, 13 Nov 2019 20:27:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iUzKz-0006lE-Si; Wed, 13 Nov 2019 20:34:01 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUzEH-0004pA-SZ
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 20:27:07 +0000
-Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
- [66.24.58.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E9155206E6;
- Wed, 13 Nov 2019 20:27:04 +0000 (UTC)
-Date: Wed, 13 Nov 2019 15:27:02 -0500
-From: Steven Rostedt <rostedt@goodmis.org>
-To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v4 08/17] kprobes: fix compilation without
- CONFIG_KRETPROBES
-Message-ID: <20191113152702.291884f3@gandalf.local.home>
-In-Reply-To: <20191101221150.116536-9-samitolvanen@google.com>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191101221150.116536-1-samitolvanen@google.com>
- <20191101221150.116536-9-samitolvanen@google.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
+ id 1iUzKs-0006kZ-1L
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 20:33:55 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:1e2::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 62EF21264D596;
+ Wed, 13 Nov 2019 12:33:52 -0800 (PST)
+Date: Wed, 13 Nov 2019 12:33:51 -0800 (PST)
+Message-Id: <20191113.123351.582951198063864661.davem@davemloft.net>
+To: colin.king@canonical.com
+Subject: Re: [PATCH][next] net: ethernet: stmmac: fix indentation issue
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20191113162238.102771-1-colin.king@canonical.com>
+References: <20191113162238.102771-1-colin.king@canonical.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Wed, 13 Nov 2019 12:33:52 -0800 (PST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_122705_938618_421DDFFB 
-X-CRM114-Status: GOOD (  16.92  )
-X-Spam-Score: -4.8 (----)
+X-CRM114-CacheID: sfid-20191113_123354_081468_5395B1A9 
+X-CRM114-Status: UNSURE (   5.44  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,96 +63,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>,
- Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ joabreu@synopsys.com, mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri,  1 Nov 2019 15:11:41 -0700
-Sami Tolvanen <samitolvanen@google.com> wrote:
+From: Colin King <colin.king@canonical.com>
+Date: Wed, 13 Nov 2019 16:22:38 +0000
 
-> kprobe_on_func_entry and arch_kprobe_on_func_entry need to be available
-> even if CONFIG_KRETPROBES is not selected.
+> From: Colin Ian King <colin.king@canonical.com>
 > 
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> Acked-by: Masami Hiramatsu <mhiramat@kernel.org>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-
-Acked-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
-
--- Steve
-
-> ---
->  kernel/kprobes.c | 38 +++++++++++++++++++-------------------
->  1 file changed, 19 insertions(+), 19 deletions(-)
+> There is a return statement that is indented too deeply, remove
+> the extraneous tab.
 > 
-> diff --git a/kernel/kprobes.c b/kernel/kprobes.c
-> index 53534aa258a6..b5e20a4669b8 100644
-> --- a/kernel/kprobes.c
-> +++ b/kernel/kprobes.c
-> @@ -1829,6 +1829,25 @@ unsigned long __weak arch_deref_entry_point(void *entry)
->  	return (unsigned long)entry;
->  }
->  
-> +bool __weak arch_kprobe_on_func_entry(unsigned long offset)
-> +{
-> +	return !offset;
-> +}
-> +
-> +bool kprobe_on_func_entry(kprobe_opcode_t *addr, const char *sym, unsigned long offset)
-> +{
-> +	kprobe_opcode_t *kp_addr = _kprobe_addr(addr, sym, offset);
-> +
-> +	if (IS_ERR(kp_addr))
-> +		return false;
-> +
-> +	if (!kallsyms_lookup_size_offset((unsigned long)kp_addr, NULL, &offset) ||
-> +						!arch_kprobe_on_func_entry(offset))
-> +		return false;
-> +
-> +	return true;
-> +}
-> +
->  #ifdef CONFIG_KRETPROBES
->  /*
->   * This kprobe pre_handler is registered with every kretprobe. When probe
-> @@ -1885,25 +1904,6 @@ static int pre_handler_kretprobe(struct kprobe *p, struct pt_regs *regs)
->  }
->  NOKPROBE_SYMBOL(pre_handler_kretprobe);
->  
-> -bool __weak arch_kprobe_on_func_entry(unsigned long offset)
-> -{
-> -	return !offset;
-> -}
-> -
-> -bool kprobe_on_func_entry(kprobe_opcode_t *addr, const char *sym, unsigned long offset)
-> -{
-> -	kprobe_opcode_t *kp_addr = _kprobe_addr(addr, sym, offset);
-> -
-> -	if (IS_ERR(kp_addr))
-> -		return false;
-> -
-> -	if (!kallsyms_lookup_size_offset((unsigned long)kp_addr, NULL, &offset) ||
-> -						!arch_kprobe_on_func_entry(offset))
-> -		return false;
-> -
-> -	return true;
-> -}
-> -
->  int register_kretprobe(struct kretprobe *rp)
->  {
->  	int ret = 0;
+> Signed-off-by: Colin Ian King <colin.king@canonical.com>
 
+Applied, thanks Colin.
 
 _______________________________________________
 linux-arm-kernel mailing list
