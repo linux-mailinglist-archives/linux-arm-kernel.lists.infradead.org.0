@@ -2,73 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B4FDFB370
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 16:16:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7611BFB3F9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 16:43:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BWMrQkPtROasUbFUMVZJgxGXJr+y+sdkE9LswdrgHSg=; b=sG9lYtd1SwrJ39
-	j8mznj66KX6iZgCRVLejjDyCYKwsKC/IfJ8h6OGbwbRpdQSU0O+2s7p2l49q7uFLX8UHKDaCjJcsb
-	o3X9P8++sD+emrTMQh72np1sNJ7Ng6nA+Dj33BCondQq775eM1QyNCKjbISzih0Aq3GwciqyQuCsZ
-	ZPYmX13IpbvFkOYrJLFUjOZwqpsmne48DBkJkxeQi0rgaJiIiPIJo5NOTaae+XlEV3pvT25VFWf6i
-	Huze+jLQlaRi2SG++1y9IdmyRxOvyDYrXYdZBNQ+HeqHOaBbEJJJZb5mz6QNEFvLimjWZmnvbn+1H
-	ePG89WmJYDFOikWPFGUw==;
+	List-Owner; bh=BVzlzTFV8nJkR/2wXmOeR3LkZFqDkWOJ7H2BFSwVMx8=; b=FcfTY1XRpyRNHx
+	RueHXcajuhYvphZFYDlS9vIHaj6rq227iVn1txks3m5Uk8/g+OBdlJP2dn9dyecCMtRKgdzbD7rOs
+	2W2APAafyBNlYboU1ITzmSx2HjEsoGiR8ToWUrSTAfLwECryvu26OIE+Yuc5hZ/mrtoBEFx88LfLN
+	JjePW4ew2SyGr5y4MZPgzip6RO749T0sw0IRslL9UULjBBLuNyE1BrRBqhzoCc9eZ+j1svh3sDqsV
+	bLktZ9NbyPJW8L+dBhOpow0hUo71yQi2wudBO28JooHaVvAzLBMURbKlohbLL2bn5Bcy7JKxznnnz
+	ufyVTV+CRtW6q/TvpxWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUuNG-0008D2-22; Wed, 13 Nov 2019 15:16:02 +0000
-Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
+	id 1iUuoA-0000pc-8S; Wed, 13 Nov 2019 15:43:50 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUuN4-0008CK-VK; Wed, 13 Nov 2019 15:15:52 +0000
-Received: by mail-vk1-xa41.google.com with SMTP id 70so636606vkz.8;
- Wed, 13 Nov 2019 07:15:50 -0800 (PST)
+ id 1iUuo0-0000oQ-1D; Wed, 13 Nov 2019 15:43:41 +0000
+Received: by mail-ua1-x944.google.com with SMTP id s25so806065uap.1;
+ Wed, 13 Nov 2019 07:43:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Tdx64IKqxKujdLSoPw+cjx2+bVR8WBgZkb8xil7EtMM=;
- b=Kiaj0N5S0qYuVlCpJBh03NNDuyWtcNFnOuJsukl9zdoiOeFcx8h4ED9IUaW/x4fITZ
- tYZ0Le24vH3+ac2xQ/6lGGC+9jq9R+JXkAVb5c8k/UtUgtPpEpiU3ULFRARyfY4dFdqg
- tZQdf67Tiwl23gMVa1lI8+BqS//VN6Y3kNX+XkjvoQN1V6JXq6UoiUXJjuRTOqHPXEdM
- jzzP+kAZDU9zY+J/O0raG0KPLhX41af5R0cHcBJUk+o7penJeGbFwOkqh+BP1+OyA5fe
- yr0GyhqxCK9Lej974x047/O+3wkrx097s9AYydjrreC5U2UMB99SKacR5BccrvtPV/iS
- XFzw==
+ :cc; bh=/Vi/nAUFrYq+Z81VivMqWJ6fhk9sFE6uoRaEGSyG7LY=;
+ b=eaXcyDxzW5Wq4bEa2mTFE+456S59OzhTQYiZPfJETT/aHklwJKeLmekruQ2WAfteKc
+ lmJYTJpHyTE5zmZ/adbDYCJg57zdTiwi2vmgSfSoZH5EjqfKfOgCQnf/SrBb0+RTPDTN
+ 4LgJWW2fe/2Rn+2bpAx6Vz7xHx1S2Xmn98gKFhpEX+7WpXY08hANvj3PL2lHeJW63yCu
+ 35Ef6Z1hxneuZTwcrd6Jaycuc/DDXkuWiOM5qkcRUBmWjTksUHMS43G5aao+gWCn5LWP
+ ooKIrc4c3CzmDKD2K2SFi/ikfdWfhM/wBQjJWui2L/IQqicpiy8LUCxXMhNKcOOqAJPD
+ JrMw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Tdx64IKqxKujdLSoPw+cjx2+bVR8WBgZkb8xil7EtMM=;
- b=Kn69JYxbD2AUlcjM23Tj2CEVPmiYqRYU3Fwrc9WAO2LbJzE/phmSnh89bxlDhAwWwW
- o0brnni9SFkOQhFB/txHYjLwL9XcluBeC2usrFCeRvf5r5GMk5c9ZK296l3tKW49P7qt
- h1I6swiF9t7KA/bfT7eBpHhIDM1fBnbfQZV/bK6tfLfIIFVCZmMaJ27Qi78tKRSaHby4
- 5nPMy2Y3bMHnMZXJvoieWLDkep7fGdVwXysK1ueFTMt+UFOIjjBr97VGjAEr6MQOxUYF
- WDCDx0XtIZtyE0p7dprIACvO7F1409su+iT9x1I5GTiwekPp9ZvR3UU9kxdGycD8JrKb
- I2+g==
-X-Gm-Message-State: APjAAAU6zHQoRG77qQXIkYQ5e4FW+wnhhGqFW4Z9WBSnozr34KiL3kMY
- CsRov1oZxz8Vl4aT6CAe3e3dQ1lcU2KG3Duq8co=
-X-Google-Smtp-Source: APXvYqwwACa+02CrVM7lnQq8G9xOFlxb696P1JSOC3QIO3M+yBf6hT1VsVmH1ipJUkNQQy14paArRCJowFOcazun1gI=
-X-Received: by 2002:a1f:a1ce:: with SMTP id k197mr1986349vke.28.1573658149379; 
- Wed, 13 Nov 2019 07:15:49 -0800 (PST)
+ bh=/Vi/nAUFrYq+Z81VivMqWJ6fhk9sFE6uoRaEGSyG7LY=;
+ b=OuIoIJ1cgFDAxcWXHH+ypc6BnYKFCpb1S9nHSfUWDwIq/VNwtTUUtRiGS8lzMkn6B6
+ Vp51BXn9BGywuwksoNa0rhS44nPW9T+PVns/yd4lYviHvV7Lm27eoxOtFN4CTdasLErc
+ P8D6IVqb5PCVlP5zPSPMbBiAOU6l3o/co6KSVe33yfWOW9G2pQ5wdl4GlzU07y9vhTMW
+ 4h4cZgkx0doGgIa1Ju/JxrzKWThK4WzcIXuVry+f7G2fVzYrbhvFy8frBDL1+pm6AYxz
+ PKSpkL/83/UGQ1ISUYEPxQRSpIAH1B49HhzzR1VBmDDTewj7RviarwwEWkEArcB4i59O
+ 44Dw==
+X-Gm-Message-State: APjAAAV2HZ7VPP5XrovljIH0Eol4ogZmpI/93JLviq/eYRXgUgjbVPJx
+ vWTHoa/rjO1dnKiKyven/rag4dso7Fs/aCg/Xih8T9+m
+X-Google-Smtp-Source: APXvYqyWd8hfrLRPwCngx48jvavKfYDtnbc3w9HChvejMMB4srKR3Nc94lmckPsm/62oZMiU7s0R6Oi/Qu5dSFVFGGc=
+X-Received: by 2002:ab0:14e8:: with SMTP id f37mr2198362uae.64.1573659815058; 
+ Wed, 13 Nov 2019 07:43:35 -0800 (PST)
 MIME-Version: 1.0
 References: <20191106163031.808061-1-adrian.ratiu@collabora.com>
- <20191106163031.808061-3-adrian.ratiu@collabora.com>
-In-Reply-To: <20191106163031.808061-3-adrian.ratiu@collabora.com>
+ <20191106163031.808061-4-adrian.ratiu@collabora.com>
+In-Reply-To: <20191106163031.808061-4-adrian.ratiu@collabora.com>
 From: Emil Velikov <emil.l.velikov@gmail.com>
-Date: Wed, 13 Nov 2019 15:15:22 +0000
-Message-ID: <CACvgo51TpL1GMwf-QFidsbAQ-GiE6ry+QHwmi9x0Nen9Gg4B1g@mail.gmail.com>
-Subject: Re: [PATCH v2 2/4] drm: bridge: dw_mipi_dsi: abstract register access
- using reg_fields
+Date: Wed, 13 Nov 2019 15:43:08 +0000
+Message-ID: <CACvgo50xc9NKgNn2uzGFbW1TwBDFRPmC3geCSC_63P-OXbm6DA@mail.gmail.com>
+Subject: Re: [PATCH v2 3/4] drm: imx: Add i.MX 6 MIPI DSI host driver
 To: Adrian Ratiu <adrian.ratiu@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_071551_010345_052450E3 
-X-CRM114-Status: GOOD (  16.13  )
+X-CRM114-CacheID: sfid-20191113_074340_076174_7B8E2A1F 
+X-CRM114-Status: GOOD (  11.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (emil.l.velikov[at]gmail.com)
@@ -93,10 +92,11 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Martyn Welch <martyn.welch@collabora.com>,
+ Sjoerd Simons <sjoerd.simons@collabora.com>,
  "Linux-Kernel@Vger. Kernel. Org" <linux-kernel@vger.kernel.org>,
  ML dri-devel <dri-devel@lists.freedesktop.org>,
- linux-rockchip <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com,
+ linux-rockchip <linux-rockchip@lists.infradead.org>, kernel@collabora.com,
  linux-stm32@st-md-mailman.stormreply.com,
  LAKML <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -104,70 +104,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Adrian,
-
 On Wed, 6 Nov 2019 at 16:31, Adrian Ratiu <adrian.ratiu@collabora.com> wrote:
 >
-> Register existence, address/offsets, field layouts, reserved bits and
-> so on differ between MIPI-DSI versions and between SoC vendor boards.
-> Despite these differences the hw IP and protocols are mostly the same
-> so the generic driver can be made to compensate these differences.
+> This adds support for the Synopsis DesignWare MIPI DSI v1.01 host
+> controller which is embedded in i.MX 6 SoCs.
 >
-> The current Rockchip and STM drivers hardcoded a lot of their common
-> definitions in the bridge code because they're based on DSI v1.30 and
-> 1.31 which are relatively close, but in order to support older/future
-> versions with more diverging layouts like the v1.01 present on imx6,
-> we abstract some of the register accesses via the regmap field APIs.
+> Based on following patches, but updated/extended to work with existing
+> support found in the kernel:
 >
-> The bridge detects the DSI core version and initializes the required
-> regmap register layout, so platform drivers will continue to use the
-> regmap as before. Other DSI versions / register layouts can easily be
-> added in the future by only changing the bridge code.
+> - drm: imx: Support Synopsys DesignWare MIPI DSI host controller
+>   Signed-off-by: Liu Ying <Ying.Liu@freescale.com>
 >
-> An additional benefit of using the reg_field API is that much of the
-> bit-shifting and masking boilerplate is removed because it's now
-> handled automatically by the regmap subsystem.
+> - ARM: dtsi: imx6qdl: Add support for MIPI DSI host controller
+>   Signed-off-by: Liu Ying <Ying.Liu@freescale.com>
 >
-> Not all register accesses have been converted: only the minimum diff
-> between the three host controller versions supported by the current
-> vendor platform drivers (rockchip, stm and now imx), more can be added
-> in the future as needed.
->
-> Suggested-by: Boris Brezillon <boris.brezillon@collabora.com>
 > Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 > Reviewed-by: Emil Velikov <emil.l.velikov@gmail.com>
-
-With the extra const mentioned below the patch is:
+With the const nitpick below, the patch is:
 Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
 
-> +
-> +static struct dw_mipi_dsi_variant dw_mipi_dsi_v130_v131_layout = {
-It's a non-const here, while we consider it a const below. I'd add the explicit
-const declaration here.
+Aside, for the future consider having a change log in the patch itself.
+What I tend to do is:
+ - v2: Keep DW version specifics in dw-mipi-dsi.c (Emil)
 
-> +#define INIT_FIELD(f) INIT_FIELD_CFG(field_##f, cfg_##f)
-> +#define INIT_FIELD_CFG(f, conf)                                                \
-> +       do {                                                            \
-> +               dsi->f = devm_regmap_field_alloc(dsi->dev, dsi->regs,   \
-> +                                                variant->conf);        \
-> +               if (IS_ERR(dsi->f))                                     \
-> +                       dev_warn(dsi->dev, "Ignoring regmap field " #f "\n"); \
-> +       } while (0)
-> +
-> +static int dw_mipi_dsi_regmap_fields_init(struct dw_mipi_dsi *dsi)
-> +{
-> +       const struct dw_mipi_dsi_variant *variant = &dw_mipi_dsi_v130_v131_layout;
-> +
+<snip>
 
-Having a closer look at the const-ness thing:
-devm_regmap_field_alloc() uses a read/write copy of the reg_field struct (5
-unsigned ints), even though it only uses them as read-only. A sensible way to
-improve is is to pass a "const struct reg_field *" instead.
+> +static struct dw_mipi_dsi_variant dw_mipi_dsi_v101_layout = {
 
-But that for another day ... might be worth adding a newbie regmap task for, if
-you can see where to file that.
+Nit: make this a const.
 
 
+> +       .cfg_dpi_vid =                  REG_FIELD(DSI_DPI_CFG, 0, 1),
+> +       .cfg_dpi_color_coding =         REG_FIELD(DSI_DPI_CFG, 2, 4),
+> +       .cfg_dpi_18loosely_en =         REG_FIELD(DSI_DPI_CFG, 10, 10),
+> +       .cfg_dpi_vsync_active_low =     REG_FIELD(DSI_DPI_CFG, 6, 6),
+> +       .cfg_dpi_hsync_active_low =     REG_FIELD(DSI_DPI_CFG, 7, 7),
+> +       .cfg_cmd_mode_en =              REG_FIELD(DSI_CMD_MODE_CFG_V101, 0, 0),
+> +       .cfg_cmd_mode_all_lp_en =       REG_FIELD(DSI_CMD_MODE_CFG_V101, 1, 12),
+> +       .cfg_cmd_mode_ack_rqst_en =     REG_FIELD(DSI_CMD_MODE_CFG_V101, 13, 13),
+> +       .cfg_cmd_pkt_status =           REG_FIELD(DSI_CMD_PKT_STATUS_V101, 0, 14),
+> +       .cfg_vid_mode_en =              REG_FIELD(DSI_VID_MODE_CFG_V101, 0, 0),
+> +       .cfg_vid_mode_type =            REG_FIELD(DSI_VID_MODE_CFG_V101, 1, 2),
+> +       .cfg_vid_mode_low_power =       REG_FIELD(DSI_VID_MODE_CFG_V101, 3, 8),
+> +       .cfg_vid_pkt_size =             REG_FIELD(DSI_VID_PKT_CFG, 0, 10),
+> +       .cfg_vid_hsa_time =             REG_FIELD(DSI_TMR_LINE_CFG, 0, 8),
+> +       .cfg_vid_hbp_time =             REG_FIELD(DSI_TMR_LINE_CFG, 9, 17),
+> +       .cfg_vid_hline_time =           REG_FIELD(DSI_TMR_LINE_CFG, 18, 31),
+> +       .cfg_vid_vsa_time =             REG_FIELD(DSI_VTIMING_CFG, 0, 3),
+> +       .cfg_vid_vbp_time =             REG_FIELD(DSI_VTIMING_CFG, 4, 9),
+> +       .cfg_vid_vfp_time =             REG_FIELD(DSI_VTIMING_CFG, 10, 15),
+> +       .cfg_vid_vactive_time =         REG_FIELD(DSI_VTIMING_CFG, 16, 26),
+> +       .cfg_phy_txrequestclkhs =       REG_FIELD(DSI_PHY_IF_CTRL, 0, 0),
+> +       .cfg_phy_bta_time =             REG_FIELD(DSI_PHY_TMR_CFG_V101, 0, 11),
+> +       .cfg_phy_lp2hs_time =           REG_FIELD(DSI_PHY_TMR_CFG_V101, 12, 19),
+> +       .cfg_phy_hs2lp_time =           REG_FIELD(DSI_PHY_TMR_CFG_V101, 20, 27),
+> +       .cfg_phy_testclr =              REG_FIELD(DSI_PHY_TST_CTRL0_V101, 0, 0),
+> +       .cfg_phy_unshutdownz =          REG_FIELD(DSI_PHY_RSTZ_V101, 0, 0),
+> +       .cfg_phy_unrstz =               REG_FIELD(DSI_PHY_RSTZ_V101, 1, 1),
+> +       .cfg_phy_enableclk =            REG_FIELD(DSI_PHY_RSTZ_V101, 2, 2),
+> +       .cfg_phy_nlanes =               REG_FIELD(DSI_PHY_IF_CFG_V101, 0, 1),
+> +       .cfg_phy_stop_wait_time =       REG_FIELD(DSI_PHY_IF_CFG_V101, 2, 9),
+> +       .cfg_phy_status =               REG_FIELD(DSI_PHY_STATUS_V101, 0, 0),
+> +       .cfg_pckhdl_cfg =               REG_FIELD(DSI_PCKHDL_CFG_V101, 0, 4),
+> +       .cfg_hstx_timeout_counter =     REG_FIELD(DSI_TO_CNT_CFG_V101, 0, 15),
+> +       .cfg_lprx_timeout_counter =     REG_FIELD(DSI_TO_CNT_CFG_V101, 16, 31),
+> +       .cfg_int_stat0 =                REG_FIELD(DSI_ERROR_ST0_V101, 0, 20),
+> +       .cfg_int_stat1 =                REG_FIELD(DSI_ERROR_ST1_V101, 0, 17),
+> +       .cfg_int_mask0 =                REG_FIELD(DSI_ERROR_MSK0_V101, 0, 20),
+> +       .cfg_int_mask1 =                REG_FIELD(DSI_ERROR_MSK1_V101, 0, 17),
+> +       .cfg_gen_hdr =                  REG_FIELD(DSI_GEN_HDR_V101, 0, 31),
+> +       .cfg_gen_payload =              REG_FIELD(DSI_GEN_PLD_DATA_V101, 0, 31),
+> +};
+if we start getting a lot of these, one way to keep things brief is to
+reuse the GEN._FEATURES approach in gpu/drm/i915/i915_pci.c
+
+Namely:
+#define 100_FEATURES \
+ .foo = ... \
+ .bar = ...
+
+.... v100_layout = {
+100_FEATURES,
+};
+... v101_layout = {
+100_FEATURES,
+// extra 101 changes
+.foo = ...101, \
+.bar = ...101
+};
+
+But that for another day.
+
+HTH
 -Emil
 
 _______________________________________________
