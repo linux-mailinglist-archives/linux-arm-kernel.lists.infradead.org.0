@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CB14FAC58
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 09:54:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B147FAC51
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 09:52:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0YLyrCa3zbxUsKt/i8iAVxaARczKOOaDl1A2Hd1UmoA=; b=LWvA55WUUcEMOA
-	aV8R0BZ56Xw0rwlfvpEWRGjPpMGbbp4564vbkbWwNyo8PxrJjbUlHcFg/zw2UVDoHiLDXMmd9MH6O
-	X4gbj/t/ejLT1p35iIvmrSI7/1B27gPEbaqsT9nvNi4PVI7RuiPn8ZAyg06zcNYZxmbsb6kGPVuWm
-	2m+sUDj4QmxVqKnAFJX2Sp3I0q5t/1DS7UphYAv/JXeo+6M4Ut87T/RGeZ+iynUEEF42uECuf40w0
-	4v9nLLIjoF7vgQtMkgMeatO32XoiTkEFysrJVOLI3XctM0DcbgueYuMUCqgis05vyN+GfT7BQxIa4
-	k964Si8GAAbqxTVBrGhQ==;
+	List-Owner; bh=Zn6ESIS2ENDJ4Z93pYEMim+S1ZoNZP6H9JRFjTcAEr8=; b=WKonq86TeUcUFY
+	Gv5QdTPuz4oCArXmCiu9685es3zlPcLT9szMdeU2oA3cxl8rvXey2vHG6t6nF/A909x+7JmB2zvq5
+	FL6j3yUl4RSKaE9f6cK0OThbigDsBQgzyi0XHqLlxzNkOdid3dJ0T3wGcfFIW6OvJoe9BlOZMsIwj
+	uDp5SLxw+1WAI0UCxe4FiBAiLsyUPXOIFXIpV5PmRZxL4Cf1HQg6BfCdnaqbeg+OK0snpbAf035wl
+	/o0kv+VANyoxulFUYS6cPaJKEFc+0smjDobmKA1N4MpLiUvvJ54tgDtDlW+lUfnR+ivaIVVPjBt61
+	/KaW4Jjbxn4yB9QSV9YQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUoPT-0000M7-Px; Wed, 13 Nov 2019 08:53:55 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1iUoOK-0007W7-CS; Wed, 13 Nov 2019 08:52:44 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUoNH-0006Sd-96
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 08:51:40 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ id 1iUoN8-00069U-QB
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 08:51:32 +0000
+Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="Claudiu.Beznea@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,47 +34,47 @@ Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
  a:smtpout.microchip.com a:mx1.microchip.iphmx.com
  a:mx2.microchip.iphmx.com include:servers.mcsv.net
  include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
+Received-SPF: None (esa5.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
+Authentication-Results: esa5.microchip.iphmx.com;
  dkim=none (message not signed) header.i=none;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: lUtVwfCw9WHSFcD9OfY8GbJLn44gvkcjBZAuXWfW0O7leVduFShaZ8sbB8alM2jXIQmJ4hXEVX
- vuOpmzHChKf5Fx6v223Z7oiobAtmN3sj1yy4Jb9L/UXVlLf4dJ/9cLsRtDyD/uN2aJdOKUg8uW
- WfVqWIuHvH5QTKYyYX9/pVZElr5Pb2P8xuOz1YP06GE8Sku6MpwHXy193tLwGS5aw6G8k0JgL9
- MG/BVwqncYzpgAjEmhQO3ZdzCNp0uHExfaXKzcN38HKvmtPJRbEZpmYWD4X96urLWjz9q6ZVQX
- cgw=
-X-IronPort-AV: E=Sophos;i="5.68,299,1569308400"; d="scan'208";a="56435331"
+IronPort-SDR: tvg/4uIYh56pUM4sjn/t14sVYseF/i1E4HCtpcgpMWGkBQ73I2U9ZYQxtLu/sh5AlBM4PvkfZX
+ JNjymk2rlzeiiK9cu1kTEMSajZvmfMaCfJg4N4n0iYdzWbKbELFgBq6nGr7sc2iDdY48CP8bML
+ kNcFJjfqn2RLukR3/IX2BlHcpa6tFVAoQea4vPzzyjmVAKlDrFvz91NNATMxZWRbbgjUF6Uqiv
+ QpJSguUejUcXB6Mo/ROkC+1TT315CvWAQelMHzY7o+QAqt5PyqROFdfpceWyz7VYa0xbGDIONV
+ qaU=
+X-IronPort-AV: E=Sophos;i="5.68,299,1569308400"; d="scan'208";a="55397267"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 Nov 2019 01:51:26 -0700
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 Nov 2019 01:51:29 -0700
 Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 13 Nov 2019 01:51:26 -0700
+ 15.1.1713.5; Wed, 13 Nov 2019 01:51:28 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Wed, 13 Nov 2019 01:51:23 -0700
+ 15.1.1713.5 via Frontend Transport; Wed, 13 Nov 2019 01:51:26 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <linux@armlinux.org.uk>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>
-Subject: [PATCH 05/13] ARM: at91/defconfig: enable atmel maxtouch
-Date: Wed, 13 Nov 2019 10:51:01 +0200
-Message-ID: <1573635069-30883-6-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 06/13] ARM: at91/defconfig: enable SAMA5D2's SHDWC
+Date: Wed, 13 Nov 2019 10:51:02 +0200
+Message-ID: <1573635069-30883-7-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1573635069-30883-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1573635069-30883-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_005139_400627_3F0B4ACF 
-X-CRM114-Status: UNSURE (   7.71  )
+X-CRM114-CacheID: sfid-20191113_005130_913037_5B225197 
+X-CRM114-Status: UNSURE (   7.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -82,7 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,7 +103,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable atmel maxtouch config option.
+Add CONFIG_POWER_RESET_AT91_SAMA5D2_SHDWC.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
@@ -111,17 +111,17 @@ Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm/configs/at91_dt_defconfig b/arch/arm/configs/at91_dt_defconfig
-index 5b5f86ce5c55..e98bf377323c 100644
+index e98bf377323c..a97b49423bf1 100644
 --- a/arch/arm/configs/at91_dt_defconfig
 +++ b/arch/arm/configs/at91_dt_defconfig
-@@ -99,6 +99,7 @@ CONFIG_KEYBOARD_GPIO=y
- # CONFIG_INPUT_MOUSE is not set
- CONFIG_INPUT_TOUCHSCREEN=y
- CONFIG_TOUCHSCREEN_ADS7846=y
-+CONFIG_TOUCHSCREEN_ATMEL_MXT=y
- # CONFIG_SERIO is not set
- CONFIG_LEGACY_PTY_COUNT=4
- CONFIG_SERIAL_ATMEL=y
+@@ -110,6 +110,7 @@ CONFIG_I2C_GPIO=y
+ CONFIG_SPI=y
+ CONFIG_SPI_ATMEL=y
+ CONFIG_POWER_RESET=y
++CONFIG_POWER_RESET_AT91_SAMA5D2_SHDWC=y
+ CONFIG_POWER_SUPPLY=y
+ # CONFIG_HWMON is not set
+ CONFIG_WATCHDOG=y
 -- 
 2.7.4
 
