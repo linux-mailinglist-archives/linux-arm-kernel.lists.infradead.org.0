@@ -2,153 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95B5AFAF72
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 12:15:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E721FAFAA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 12:27:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v4gKcAzOLdSvxIXv8cPekGcI816uZ2YLa8BHknjihR4=; b=HYz1wM6PWfSNIP
-	YJImjnUeSbH4OdwUz/4rUUwzn7jn+GnafMdt/tUrJL4/KVcFgoxlYys8gVdCYmyCniRHHQbjbSTQn
-	rXjFQ4ei+Qgtyzy+KIek7Ev8YUnPVbUKesiP8+SQu2IWIPcz68KA/ucTxy+QDKfQHUpZf0rE16lPw
-	kgm6Wz7TIJVCegNolPrCVnEU/AbCDsXttM+AmyWasRNwGbbVBg/UcqyyelDOmkn3zP2XQ540Lv6qL
-	7yQZZGkjpcSjJksJtRdj1PEvUr3tYqWhgqW1AkHrSgsHRuRwndce0INDRi14yrvh0+JBN1u8590sl
-	CFtv5RSktBBIV/ntw/jg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0O1gdWQpqlff8WrmNG7M8NYVfqqhIoX/yZf0tiEho3A=; b=d0nIJm5abqQDC6
+	rv6dHz8lwhJzH5lK3Q40YWi0xsIMJl92129PRtqts3EEP+CevNF2G3LaEh4IrV98MVdUT7lAFrGt1
+	r72imzhCTlOEXuSqi8MAIHdAjRyBSUQtKozLDtXTFOp9Wm7rdER0jA/wH2dy6LA2P0uFVJcFQUrLj
+	BI5XNoJfLUnhTi29TcpZGdNUcbxVO0V/+/A88sujlm/tg/y1gbWMleGxu14YEDB9r0bBqIRUJESjV
+	9Ch3InAV+/AgL6Foww6kFC8qphdxXziSBmqB9rcQcoJ0UI5q8maPT/eL5BV264N8Oe7S3Rd1kfMB2
+	8t5CMURDweg5PP9hzuXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUqcG-0002dZ-SS; Wed, 13 Nov 2019 11:15:16 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUqc9-0002c1-EQ
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 11:15:10 +0000
-Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa3.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa3.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: Cwk9j49k05muuy61Ma9931YppjH7Ayw5PoG3tpIgKHi0Lf8FsrVMw95eKPZIHCQWlMqw5obidp
- MU/bx3YsW5FFtRbHDQF9GVahe76gE+lX3y6lnhOe+7x/k1zk9YCZq599DI9v124NCp48ejOj1G
- gWIHU6YPULHXGeySLcDY1eHFdmJLQOj+FUsqnwu8Im3JvvKTBC5J3tuwKCLtqRLyMkEDC5UZ9+
- fs3sUvQAw76aTL+vwaoW+5BkDyRtixrrwIxID/VeZwKhGCiG7MGYgrI3afcnf9QKG80DNmvpVm
- vMY=
-X-IronPort-AV: E=Sophos;i="5.68,300,1569308400"; d="scan'208";a="56886588"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 Nov 2019 04:15:08 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 13 Nov 2019 04:15:09 -0700
-Received: from NAM02-SN1-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Wed, 13 Nov 2019 04:15:08 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JZ/JPXfeRUrnwXVqEXsvVtd+LWm1j5b0gOj4mhTrpEkICNe03WTPeiWAsBOINpySKnrRHhGKOXEhhs4sVX2c94wGr+ySlvrVzemPXXzrAFVMqY6yUGuz60pPW0TvEqhDgMM81E7HF2doGW4pfXyFHbWTwBg2Cs499DiRSqtTINlWUNAFjGi7bMfPaSRMSVGvThHS7V4gssYkLFWHf5BmPyp3QIdpoGujC8LZgFg9GsqzRUKBq2roU0gAbffPgetCF5EeUUF+ZplHBaBMBQJrz1pMzrHiIH/HM0JioAiYtHg+WSm2xQZ7PqoBnO9yiko+e9Ih/Hc058Mk45F7qeuTOg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Y/AHet2aaRlIDLXgDuPutYNnU8mwg7TxExXu5iCyG8w=;
- b=cCkaG2IzCFSax7b7mv8fY9I8MLvbXDNXfXi9XUvzRC4K6/gi9GjdKF9lJH03+VeYKno8YsOpvse49tE3DeFc3SVerolbAcw080RKGk9H5gjyS+UIgSJ/wZ+d0j1YZgTAsAnsWEKACBXypmCwIQ+xFnOpL/+n4nhL8o28syT7VNY78Ejb6j4+ydeaV8ZgGfxv1SfGzgcSLdoljKrb0pOsZPBbbFYMG2Rz6bpOYEOWi3MqAo2upGu8GIdsmOPNv8DHQSCsWHyIvdvoX8jE8ji+Kvjkvhw1EHsNZyLhkaR6gBGbmY/qTEMrKb8WSWXhuRxxgjt3eMI8xMcMhkcw901MVQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Y/AHet2aaRlIDLXgDuPutYNnU8mwg7TxExXu5iCyG8w=;
- b=s6yDoIKFA8Ssj47FfVHp9D4lP1BDdz9kF5XylYuGDd4NJWXEj37wvnlXMMlG+b06km/4ge+Vx4GCNJn+ERaue/3FgmTLTxmp1gFf4/b0j4L0UdlK8K+rRxETph2n3mfPbeLubmdoQjCRnRgWZczlsnY8R97DNrt7jFRax7oWW0M=
-Received: from BYAPR11MB3224.namprd11.prod.outlook.com (20.177.127.88) by
- BYAPR11MB3207.namprd11.prod.outlook.com (20.177.184.142) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2430.20; Wed, 13 Nov 2019 11:15:07 +0000
-Received: from BYAPR11MB3224.namprd11.prod.outlook.com
- ([fe80::f4eb:2c83:7aec:ee98]) by BYAPR11MB3224.namprd11.prod.outlook.com
- ([fe80::f4eb:2c83:7aec:ee98%3]) with mapi id 15.20.2430.023; Wed, 13 Nov 2019
- 11:15:07 +0000
-From: <Claudiu.Beznea@microchip.com>
-To: <linux@armlinux.org.uk>, <Nicolas.Ferre@microchip.com>,
- <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>
-Subject: Re: [PATCH 00/13] add defconfig support for SAM9X60
-Thread-Topic: [PATCH 00/13] add defconfig support for SAM9X60
-Thread-Index: AQHVmhOaxsb1PFuwzEKI4243iHeyKA==
-Date: Wed, 13 Nov 2019 11:15:07 +0000
-Message-ID: <fe877350-d50c-c2d8-a07f-0c577de08358@microchip.com>
-References: <1573635069-30883-1-git-send-email-claudiu.beznea@microchip.com>
-In-Reply-To: <1573635069-30883-1-git-send-email-claudiu.beznea@microchip.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM4PR08CA0058.eurprd08.prod.outlook.com
- (2603:10a6:205:2::29) To BYAPR11MB3224.namprd11.prod.outlook.com
- (2603:10b6:a03:77::24)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-tagtoolbar-keys: D20191113131500526
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: b9809fe8-3fc8-4495-194c-08d7682abd45
-x-ms-traffictypediagnostic: BYAPR11MB3207:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR11MB32074EE40873D3E4EA14813487760@BYAPR11MB3207.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 0220D4B98D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(346002)(376002)(39860400002)(396003)(136003)(199004)(189003)(71200400001)(64756008)(186003)(86362001)(53546011)(66446008)(6116002)(6436002)(6486002)(54906003)(305945005)(66066001)(66946007)(66476007)(66556008)(102836004)(256004)(316002)(6246003)(31686004)(71190400001)(229853002)(110136005)(478600001)(6512007)(7736002)(52116002)(25786009)(6506007)(2616005)(76176011)(8936002)(486006)(31696002)(6636002)(81166006)(2501003)(14454004)(26005)(446003)(99286004)(11346002)(386003)(2906002)(4326008)(5660300002)(476003)(8676002)(36756003)(3846002)(81156014);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR11MB3207;
- H:BYAPR11MB3224.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 7s50Zw0DHh5CGZaskgH9gsB+G+ny29tjwFHAK1sXYsk2LZ1A96i6PwKi+wEia7vyC6GmEYAQFOseVM9YTq1YjQePgRbkKxPVeDyGSJeXi/N/iiXzpxCi18WYJ0fVryASFrUnTYRvcSs2gDig2iFoIHOiHxdy2G5gXYcF1cOjBPFdpzIgCOc0hj0jXYc7wS0/lAjfs0nQO7+9UgXu01rzkj9EdE3yfj+QqjZsc8nXUcvw/iXQG5hb6A9bMM0T74t4QG3St7KLCrRzgCK6cQFGpBR26IdYR6ysUI4VIcK2AyGn5Ugwf0tEK+atbc9twHpxO/Ezn0Bwk9RVPd/5KgXLmzSYRmHIhIMXtIYAn/JEcEi/PymGri4AE8ljzM09CPGCuaoQ28S7KJe+Vgr/+3PhlJuw2133Q8sAQuC+KlXli1HFFt7uz7qe6DA+ovQj7Ick
-Content-ID: <B43A231ABEF0FC4BA13AEAB52BFFEE83@namprd11.prod.outlook.com>
+	id 1iUqnn-0006YU-8y; Wed, 13 Nov 2019 11:27:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iUqnc-0006XF-A6
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 11:27:02 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B3B447A7;
+ Wed, 13 Nov 2019 03:26:56 -0800 (PST)
+Received: from [10.1.196.63] (e123195-lin.cambridge.arm.com [10.1.196.63])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C2B663F534;
+ Wed, 13 Nov 2019 03:26:55 -0800 (PST)
+Subject: Re: [kvm-unit-tests PATCH 17/17] arm: gic: Test Group0 SPIs
+To: Andre Przywara <andre.przywara@arm.com>, Andrew Jones
+ <drjones@redhat.com>, Paolo Bonzini <pbonzini@redhat.com>
+References: <20191108144240.204202-1-andre.przywara@arm.com>
+ <20191108144240.204202-18-andre.przywara@arm.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <88a5d9f9-e5fe-8025-8857-dc78a5aa791a@arm.com>
+Date: Wed, 13 Nov 2019 11:26:54 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: b9809fe8-3fc8-4495-194c-08d7682abd45
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Nov 2019 11:15:07.1700 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Ub90rkXBAmeHpJ0nPPVZD76N1QAoYIkfMAlWDKbGxh+o8uj7mnONNfRIVdO6oGf2r8hO0Uqr+8wxSRdQR90X0NnpwDsY2GyamVLqA3JY7TE=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR11MB3207
+In-Reply-To: <20191108144240.204202-18-andre.przywara@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_031509_538815_D680EBCA 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191113_032700_441088_AB1514B8 
+X-CRM114-Status: GOOD (  27.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.153.233 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -160,7 +63,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Marc Zyngier <maz@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, kvm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -168,43 +72,202 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi,
 
-Please ignore this series for the moment.
+On 11/8/19 2:42 PM, Andre Przywara wrote:
+> With the newly gained building blocks we can now actually test Group 0
+> interrupts on our emulated/virtualized GIC.
+> The least common denominator for the groups usage on both GICv2 and
+> GICv3 is to configure group 0 interrupts to trigger FIQs, and group 1
+> interrupts to trigger IRQs.
+> For testing this we first configure our test SPI to belong to group 0,
+> then trigger it to see that it is actually delivered as an FIQ, and not as
+> an IRQ.
+> The we change the group to become 1, and trigger again, this time
+> expecting the opposite behaviour.
+>
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> ---
+>  arm/gic.c | 103 ++++++++++++++++++++++++++++++++++++++++++++++++++++--
+>  1 file changed, 101 insertions(+), 2 deletions(-)
+>
+> diff --git a/arm/gic.c b/arm/gic.c
+> index 43a272b..9942314 100644
+> --- a/arm/gic.c
+> +++ b/arm/gic.c
+> @@ -276,6 +276,22 @@ static void irqs_enable(void)
+>  	local_irq_enable();
+>  }
+>  
+> +static void fiqs_enable(void)
+> +{
+> +#ifdef __arm__
+> +	install_exception_handler(EXCPTN_FIQ, fiq_handler);
+> +#else
+> +	install_irq_handler(EL1H_FIQ, fiq_handler);
+> +#endif
+> +	if (gic_version() == 3) {
+> +		gicv3_write_grpen0(1);
+> +	} else {
+> +		gicv2_enable_fiq(true);
+> +		gicv2_enable_group1(true);
 
-Thank you,
-Claudiu Beznea
+Why do we enable group 1 here for GICv2? The commit message says that group 1
+interrupts will be delivered as IRQs.
 
-On 13.11.2019 10:50, Claudiu Beznea wrote:
-> Hi,
-> 
-> This series enables proper support for SAM9X60 in Kconfig and
-> defconfig.
-> 
-> Thank you,
-> Claudiu Beznea
-> 
-> Claudiu Beznea (8):
->   ARM: at91: Kconfig: add sam9x60 pll config flag
->   ARM: at91: Kconfig: add config flag for SAM9X60 SoC
->   ARM: at91/defconfig: use savedefconfig
->   ARM: at91/defconfig: add config option for SAM9X60 SoC
->   ARM: at91/defconfig: enable atmel maxtouch
->   ARM: at91/defconfig: enable SAMA5D2's SHDWC
->   ARM: at91/defconfig: enable flexcom
->   ARM: at91/defconfig: enable XDMAC
-> 
-> Codrin Ciubotariu (3):
->   ARM: at91/defconfig: Add I2S Multi-channel driver
->   ARM: at91/defconfig: Add driver for Audio PROTO board
->   ARM: at91/defconfig: enable CLASSD
-> 
-> Tudor Ambarus (2):
->   ARM: at91/defconfig: enable AT91_SAMA5D2_ADC
->   ARM: at91/defconfig: enable ATMEL_QUADSPI
-> 
->  arch/arm/configs/at91_dt_defconfig | 56 ++++++++++++++++++--------------------
->  arch/arm/mach-at91/Kconfig         | 13 +++++++++
->  2 files changed, 39 insertions(+), 30 deletions(-)
-> 
+> +	}
+> +	local_fiq_enable();
+> +}
+> +
+>  static void ipi_send(void)
+>  {
+>  	irqs_enable();
+> @@ -598,6 +614,7 @@ static void spi_configure_irq(int irq, int cpu)
+>  
+>  #define IRQ_STAT_NONE		0
+>  #define IRQ_STAT_IRQ		1
+> +#define IRQ_STAT_FIQ		2
+>  #define IRQ_STAT_TYPE_MASK	0x3
+>  #define IRQ_STAT_NO_CLEAR	4
+>  
+> @@ -617,14 +634,21 @@ static bool trigger_and_check_spi(const char *test_name,
+>  	cpumask_clear(&cpumask);
+>  	switch (irq_stat & IRQ_STAT_TYPE_MASK) {
+>  	case IRQ_STAT_NONE:
+> +		ret &= (check_acked(NULL, &cpumask, 0) >= 0);
+> +		ret &= (check_acked(test_name, &cpumask, 1) >= 0);
+>  		break;
+>  	case IRQ_STAT_IRQ:
+> +		ret &= (check_acked(NULL, &cpumask, 0) >= 0);
+> +		cpumask_set_cpu(cpu, &cpumask);
+> +		ret &= (check_acked(test_name, &cpumask, 1) >= 0);
+> +		break;
+> +	case IRQ_STAT_FIQ:
+> +		ret &= (check_acked(NULL, &cpumask, 1) >= 0);
+>  		cpumask_set_cpu(cpu, &cpumask);
+> +		ret &= (check_acked(test_name, &cpumask, 0) >= 0);
+>  		break;
+>  	}
+>  
+> -	ret = (check_acked(test_name, &cpumask, 1) >= 0);
+> -
+>  	/* Clean up pending bit in case this IRQ wasn't taken. */
+>  	if (!(irq_stat & IRQ_STAT_NO_CLEAR))
+>  		gic_set_irq_bit(SPI_IRQ, GICD_ICPENDR);
+> @@ -657,6 +681,9 @@ static void spi_test_smp(void)
+>  	int cpu;
+>  	int cores = 1;
+>  
+> +	if (nr_cpus > 8)
+> +		printf("triggering SPIs on all %d cores, takes %d seconds\n",
+> +		       nr_cpus, (nr_cpus - 1) * 3 / 2);
+
+Can you explain how you got the elapsed time for triggering SPIs?
+
+>  	wait_on_ready();
+>  	for_each_present_cpu(cpu) {
+>  		if (cpu == smp_processor_id())
+> @@ -671,6 +698,46 @@ static void spi_test_smp(void)
+>  }
+>  
+>  #define GICD_CTLR_ENABLE_BOTH (GICD_CTLR_ENABLE_G0 | GICD_CTLR_ENABLE_G1)
+> +#define EXPECT_FIQ	true
+> +#define EXPECT_IRQ	false
+> +
+> +/*
+> + * Check whether our SPI interrupt is correctly delivered as an FIQ or as
+> + * an IRQ, as configured.
+> + * This tries to enable the two groups independently, to check whether
+> + * the relation group0->FIQ and group1->IRQ holds.
+> + */
+> +static void gic_check_irq_delivery(void *gicd_base, bool as_fiq)
+
+The function also checks for FIQs, as alluded to by the as_fiq parameter; also,
+most of the function does different things based on that parameter. I think it
+would be cleaner to split it into two functions, gic_check_irq_delivery and
+gic_check_fiq_delivery. That way you can have more clearer messages for
+trigger_and_check_spi and you get rid of the two defines above. At the very least,
+it should be renamed to something more appropriate for what it does, like
+gic_check_int_delivery.
+
+> +{
+> +	u32 reg = readl(gicd_base + GICD_CTLR) & ~GICD_CTLR_ENABLE_BOTH;
+> +	int cpu = smp_processor_id();
+> +
+> +	/* Check that both groups disabled block the IRQ. */
+> +	writel(reg, gicd_base + GICD_CTLR);
+> +	trigger_and_check_spi("no IRQs with both groups disabled",
+> +			      IRQ_STAT_NONE, cpu);
+> +
+> +	/* Check that just the *other* group enabled blocks the IRQ. */
+> +	if (as_fiq)
+> +		writel(reg | GICD_CTLR_ENABLE_G1, gicd_base + GICD_CTLR);
+> +	else
+> +		writel(reg | GICD_CTLR_ENABLE_G0, gicd_base + GICD_CTLR);
+> +	trigger_and_check_spi("no IRQs with just the other group enabled",
+> +			      IRQ_STAT_NONE, cpu);
+> +
+> +	/* Check that just this group enabled fires the IRQ. */
+> +	if (as_fiq)
+> +		writel(reg | GICD_CTLR_ENABLE_G0, gicd_base + GICD_CTLR);
+> +	else
+> +		writel(reg | GICD_CTLR_ENABLE_G1, gicd_base + GICD_CTLR);
+> +	trigger_and_check_spi("just this group enabled",
+> +			      as_fiq ? IRQ_STAT_FIQ : IRQ_STAT_IRQ, cpu);
+> +
+> +	/* Check that both groups enabled fires the IRQ. */
+> +	writel(reg | GICD_CTLR_ENABLE_BOTH, gicd_base + GICD_CTLR);
+> +	trigger_and_check_spi("both groups enabled",
+> +			      as_fiq ? IRQ_STAT_FIQ : IRQ_STAT_IRQ, cpu);
+> +}
+>  
+>  /*
+>   * Check the security state configuration of the GIC.
+> @@ -711,6 +778,9 @@ static bool gicv3_check_security(void *gicd_base)
+>   * Check whether this works as expected (as Linux will not use this feature).
+>   * We can only verify this state on a GICv3, so we check it there and silently
+>   * assume it's valid for GICv2.
+> + * GICv2 and GICv3 handle the groups differently, but we use the common
+> + * denominator (Group0 as FIQ, Group1 as IRQ) and rely on the GIC library for
+> + * abstraction.
+>   */
+>  static void test_irq_group(void *gicd_base)
+>  {
+> @@ -754,6 +824,35 @@ static void test_irq_group(void *gicd_base)
+>  	gic_set_irq_group(SPI_IRQ, !reg);
+>  	report("IGROUPR is writable", gic_get_irq_group(SPI_IRQ) != reg);
+>  	gic_set_irq_group(SPI_IRQ, reg);
+> +
+> +	/*
+> +	 * Configure group 0 interrupts as FIQs, install both an FIQ and IRQ
+> +	 * handler and allow both types to be delivered to the core.
+> +	 */
+> +	irqs_enable();
+> +	fiqs_enable();
+> +
+> +	/* Configure one SPI to be a group0 interrupt. */
+> +	gic_set_irq_group(SPI_IRQ, 0);
+> +	spi_configure_irq(SPI_IRQ, smp_processor_id());
+> +	report_prefix_push("FIQ");
+> +	gic_check_irq_delivery(gicd_base, EXPECT_FIQ);
+> +	report_prefix_pop();
+> +
+> +	/* Configure the SPI to be a group1 interrupt instead. */
+> +	gic_set_irq_group(SPI_IRQ, 1);
+> +	report_prefix_push("IRQ");
+> +	gic_check_irq_delivery(gicd_base, EXPECT_IRQ);
+> +	report_prefix_pop();
+> +
+> +	/* Reset the IRQ to the default group. */
+> +	if (is_gicv3)
+> +		gic_set_irq_group(SPI_IRQ, 1);
+> +	else
+> +		gic_set_irq_group(SPI_IRQ, 0);
+> +	gic_disable_irq(SPI_IRQ);
+> +
+> +	report_prefix_pop();
+>  }
+>  
+>  static void spi_send(void)
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
