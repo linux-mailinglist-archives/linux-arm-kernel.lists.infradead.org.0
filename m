@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31653FB361
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 16:13:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EF2BFB362
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 16:13:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,61 +11,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=B53EvFsxc5wB0+mpvlfkenE7ficpSSAZgKNmKTqVJSY=; b=BYYv3LUZpMIN/DozveaVW+05H5
-	6ZegGd+HZMyH0RLfoTpnfAebt4xruXmgH3EQxsSLntfkGjPwa+2ZyuL0YJtiJ1AOBzRR2ywS6nt5O
-	NnCzca1ZxqScmJa2SPUnm1P5Y4xe6ygnlJYsKIpgwDUfMNXGqmV5Ih6ahTXYcX2CaTEoitDHzZ+6y
-	RVMIlv9owYsNifCP8W0X39W25ev3EIvVz4oDYK8pM/ytaYxYpghxqe15O+onIM83gVQixGKgLpgYQ
-	Ha6Vl7bogr2U75/kYdE/JqlgodVna6Ka8ZTioxL1/kuJwLaPb6s3MFUHpQ5EA7S7YQ6jAOLqon8LM
-	q/IJ2fZQ==;
+	bh=4jRjVmRZOxiiWzqyiwdvbOX2VJZhZ/j6faiD9J8fRCE=; b=GJgC4xW7q4U33Ia3p7lUUs4p+y
+	hqeaHFRaVMvyEREfBFK4szd6a5E22l18NhF1AKZKAOEVDuM0lnPN8tCN+mTmFqUoVl9bq//Eeb3Vb
+	9ho8CsVvch9aA0yv03JxPZEtLiqu2zFQ4gcuVY5YP+KBHD64rQOecVV6zy7+t7lG8Es2Tc5K0/MRI
+	vuZBoeckwiPjBdRjT0+Luf94IPr7o+Nz4U4gshVYLTgoDI3rQdXnQ/3+xF68goMzL+Pwu5eJJo6Un
+	ABgL8ckwGCxgYjO7d3EOeNStf3dEa/WCgmRrD1uRGHMvQqI1Q52nzmofPAGEWO4ZgCJWrenc3dKxs
+	z3535EMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUuKS-0004vn-V8; Wed, 13 Nov 2019 15:13:08 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1iUuKh-00059w-2O; Wed, 13 Nov 2019 15:13:23 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUuJj-0004Sl-BT
+ id 1iUuJj-0004So-Ex
  for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 15:12:26 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 14855C0E7E;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 1DC55C08F0;
  Wed, 13 Nov 2019 15:12:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1573657941; bh=bC1EJ9q8JnRvKNdotK/gUKSiGbh6PxTGJKtWEmLuQnY=;
+ t=1573657942; bh=rY6zutKLniNqqabMrkfKKBcTZrq785e+OQVzTb7ee0Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=En1R7OfCoMrVc0nyh8WSV6KoyZFdJpV5Q2OTTxQuq1JvOZET4r7uHtnbgjP/DMHC3
- WIwx0d1DupAXUU0fODpo60UySk+F+7TxCC840eMTvsXDzybu8COGJHQyWZG/twgl9U
- UkeWFi+zd+BxDETlfOyw19Pm4xR0xkDkb39jFJc0jfHJpLmqgRMu8f0G7BSO94LW0Q
- gMpQ5kL+bJQG1Mh+VXnQP/yiH4ouyi/x0XIDLMrxmUcw/5b35BOOckLzq8946XGd1t
- NjhvkWBINok7QLDAw6kJpTsvO+Nz0j8mRmi/lAqBadQpI8UMjvG6XVfoqp5DMUoCFg
- R/bXq5k7DRuXg==
+ b=aIQwonKpciVXovTS2F+Z0oN9cgfov9V9DC3aBB43muRg4GU1R/cvYzV7BW76EUWVj
+ KtdXhkIEnKHa6i9HvGhOcK0GT/rLhKbLDurRBUvg77z9Bkjd6MIb1NhPV2UjQDfvFK
+ IahvxFyZSQckbZKU82KAjQLwnNmWadK3qy2UtBjkbd2QNHJFnKndh35/SJuaiAFcqL
+ MzSlSVvSM4Gv+wA2iBl28Xo2PFWbvNwNpGNZnca5JgSBkcv+flMDEl2HEMMv+LmY3C
+ 7BTbYrltdK4j0kF/s8q4VmSzaKPoQR/ET0/FhTU7/i/Z2m8gGa5M4aBK+pqO5+GD+J
+ sHJQP8ThsxnXw==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 7957BA007F;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 80CBAA0083;
  Wed, 13 Nov 2019 15:12:19 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 1/7] net: stmmac: Do not set RX IC bit if RX Coalesce
- is zero
-Date: Wed, 13 Nov 2019 16:12:02 +0100
-Message-Id: <51b9d21bebde8f9694a2a9883733c7a16425cd72.1573657592.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next 2/7] net: stmmac: Setup a default RX Coalesce value
+ instead of the minimum
+Date: Wed, 13 Nov 2019 16:12:03 +0100
+Message-Id: <b85bd90a406e105bbe7524dbcf977bd3b59600a5.1573657592.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 References: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 References: <cover.1573657592.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_071223_409099_1847F430 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20191113_071223_579930_64F31654 
+X-CRM114-Status: GOOD (  13.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [198.182.47.102 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,9 +95,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We may only want to use the RX Watchdog so lets check if RX Coalesce
-settings are non-zero and only set the RX Interrupt on Completion bit if
-its not.
+For performance reasons, sometimes using the minimum RX Coalesce value
+is not optimal. Lets setup a default value that is optimal in most of
+the use cases.
 
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
@@ -115,23 +112,40 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/net/ethernet/stmicro/stmmac/common.h      | 1 +
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 7 ++++---
+ 2 files changed, 5 insertions(+), 3 deletions(-)
 
+diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h b/drivers/net/ethernet/stmicro/stmmac/common.h
+index 912bbb6515b2..309ea12ea61f 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/common.h
++++ b/drivers/net/ethernet/stmicro/stmmac/common.h
+@@ -248,6 +248,7 @@ struct stmmac_safety_stats {
+ /* Max/Min RI Watchdog Timer count value */
+ #define MAX_DMA_RIWT		0xff
+ #define MIN_DMA_RIWT		0x10
++#define DEF_DMA_RIWT		0xa0
+ /* Tx coalesce parameters */
+ #define STMMAC_COAL_TX_TIMER	1000
+ #define STMMAC_MAX_COAL_TX_TICK	100000
 diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 39b4efd521f9..e3677883ea30 100644
+index e3677883ea30..6136ada20c8e 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -3440,7 +3440,8 @@ static inline void stmmac_rx_refill(struct stmmac_priv *priv, u32 queue)
- 		rx_q->rx_count_frames += priv->rx_coal_frames;
- 		if (rx_q->rx_count_frames > priv->rx_coal_frames)
- 			rx_q->rx_count_frames = 0;
--		use_rx_wd = priv->use_riwt && rx_q->rx_count_frames;
-+		use_rx_wd = !priv->rx_coal_frames;
-+		use_rx_wd |= priv->use_riwt && rx_q->rx_count_frames;
+@@ -2605,9 +2605,10 @@ static int stmmac_hw_setup(struct net_device *dev, bool init_ptp)
+ 	priv->tx_lpi_timer = STMMAC_DEFAULT_TWT_LS;
  
- 		dma_wmb();
- 		stmmac_set_rx_owner(priv, p, use_rx_wd);
+ 	if (priv->use_riwt) {
+-		ret = stmmac_rx_watchdog(priv, priv->ioaddr, MIN_DMA_RIWT, rx_cnt);
+-		if (!ret)
+-			priv->rx_riwt = MIN_DMA_RIWT;
++		if (!priv->rx_riwt)
++			priv->rx_riwt = DEF_DMA_RIWT;
++
++		ret = stmmac_rx_watchdog(priv, priv->ioaddr, priv->rx_riwt, rx_cnt);
+ 	}
+ 
+ 	if (priv->hw->pcs)
 -- 
 2.7.4
 
