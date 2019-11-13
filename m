@@ -2,79 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24B6EFB193
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 14:41:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FB38FB194
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 14:41:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=HR3BKwtYQ07hpE/EkBXt1NhmoUkhRmlrF4z0S0O/EBY=; b=iuI
-	atDeEH6jEtuhErEhKofb17R/7Oq/rET+rItrhJFV9QRxcgA4t1INRn6zRiKaZ+zAe+to/PHHahVZm
-	85cMnVPPXhHR/JUK5tTYS1gaz3LtD9YRFSpNbYlqZCXt8pKYpQOycy/m3Va+wMOvVzjZnZOxuJlMH
-	LV27LWFT2S/Od/6nqJNLnX54mFG+BOFu6g17sRog+3wmLyXr99y1ypEpp4HeYvtC7to/Dkdqhq8cL
-	hbUUjxFNQTAv3q1EgJ3Iv2xnA5BGnu22X/Q2NplO/WJAGaxlPO/TDJ+naK0ZBvgQ7nI9aqoiKiKa1
-	65bTHlwVKvgY4lKO63Tgx07lt4L8Ztg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=zb52o/rXl4warxoEmAgfkV7Ow/JiNn64Gq1iAa2IxQE=; b=MR6g3Ou3LcHCkFfc9si9Xtvycx
+	NG4K79GJUouuK77fyblT+Kab0WFuPdnKnHIRzIcpS8BroxhK9RTGj0amEx/YVOyirCxzz1R6LL5H/
+	juZtavj0yIDGmrodnAYGFqdNwm4ZPwkkYESpStTxQeCR3L5O7TRB1E84JU0Vyac+sADZ0416DfyPR
+	iyl8iMcSssrg/IXMgFjS1yYRYEm1VPvoO4KstrXwV+YGHvw0tPY4I8R8hBSFpMFk/z4y48EsyLBgy
+	7ACzGHklxHi50z7/wBWIdQOA873b5mlHhe+fIlQbhHUC1Xs1lutvXzWsG9RBoG9FungmZj+Ly8IEk
+	Y4k6uwsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUstb-0001lU-MO; Wed, 13 Nov 2019 13:41:19 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iUstq-0001xT-Fs; Wed, 13 Nov 2019 13:41:34 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUstM-0001k2-8h
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 13:41:05 +0000
-Received: by mail-wm1-x342.google.com with SMTP id b17so2055824wmj.2
+ id 1iUstN-0001kD-5V
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 13:41:06 +0000
+Received: by mail-wr1-x441.google.com with SMTP id r10so2428409wrx.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 Nov 2019 05:41:03 -0800 (PST)
+ Wed, 13 Nov 2019 05:41:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=g9xxtnX7rcqQy4gHg8hcN4Gj7X4KIMRju+j/MHBoV8A=;
- b=hadli0Xo/McEOF/RELW9EA3FZsSOhl60Te50mTlkYDOo1DL4ofrH39xvKPYpWpDTlM
- hB/ld2RA/dUwevAa2DSY1ddG32okY5PiZUZ32X9YGTKPg/OQB9SXyL64oAyk2BhQ1yBm
- kV24X6LAVZCvgRN2TPfznZ41vebvCsbC/ReMy621H2hPCkFWaq7qfFS22BxlKObg2U49
- a4qXeETGc6jHl6q5WkF4bpkSTQtV/h9U5apXI6Rxfeco+4cfOENhguBY1BJ/+XSQDlDb
- jmgzbbdotXMtIPdwwpLCoUSgzt9ZlaqXAqzxKVBkCwR6gAaNB87EATeuofH3sf+CJhI2
- yJJg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=g0Reo92qEknJT+JrEapTAi5GfksVulSHB7AHlQhZpQI=;
+ b=iakvQVh7cNx5bXD4bxwf7dkBIfVjeJlyqfsMagf2SWHTpbsocpW47MTVX/0M9nNseq
+ M38FiXfEaEqR+CvoF6D3U38lBSRI/E3Taov1au7U9pwu6a6p6mNWy3huwbRdGB7JywSQ
+ 8LTsIyk+zzgs33ptiNzzExcftKdq/nDU0L6prx2DhqQHJlcTOgJ7Fmjf7sjnbyItPmBr
+ V3tWr6bNqfXgT/bjY3Zd+UZpRZ0gL+Sw+Qdmg7M0scahrcgkodqX+CcTGn1zR/TWLn6V
+ o8qdr+Fr9eGf3P7IgfkNNGLHtUWK0E1RAYfPGA5xOA/7+K4ZFiJCAcHewHrwiNEovxFj
+ QhTw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=g9xxtnX7rcqQy4gHg8hcN4Gj7X4KIMRju+j/MHBoV8A=;
- b=DsVml/VtVbJuGqvjjEGYMERWvgTwBScJyr1/YPXHJ4TqPqzBt33ATnO2X8R4pS4nMn
- 1A8MR0zc4ExlltWOUkd7eMlIIkHQboJ808ph8JF4DdigPA7e6BKzRFT2fo3y+pp7mx5h
- KRw/tol1tFp7SHxZrJdmX8ISsJdfexz/+G0cLEy3h2lC3t5RAF3AdOQwt3CW/6YOCt4g
- wjKUx+drSvkk94KE0nqnP4HHFEDD1ae1XqabjOxn3e/1tB/pwDJFDZGnzw876RIPOzNO
- D2vvuS9WPLeXOxhQzJhoWltEBODSsd+VQA/oOTwAmuBFFy0YYJWe/kx2+eBLGcndsYQz
- TzXQ==
-X-Gm-Message-State: APjAAAWk3XIMeIzuGbQGt1TCaGaLZF142uDD2jgOT/IaXIDOBkez582k
- vqZQPAJaB7Gr6G4PN5lNk/Q=
-X-Google-Smtp-Source: APXvYqwHB+Hi2YgtPl6gmGovtL5SEbLpwPTj9L7TLx7IIjPGWokO8dIh6umYiPftip08O4ohNJe1WQ==
-X-Received: by 2002:a1c:23c1:: with SMTP id j184mr2757804wmj.83.1573652462581; 
- Wed, 13 Nov 2019 05:41:02 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=g0Reo92qEknJT+JrEapTAi5GfksVulSHB7AHlQhZpQI=;
+ b=nmaYXP3Oll86YM6z484yZR+LCbs57N5IIOp6OsMAT9YR86SJZIGpr9xEpiw6Zhb1bz
+ avcorcDVLECdLMOAutqN5ccnovlAJ5AD7At6f23/HdJYckHNwKT0EROLRqZ4RJ1flFfd
+ 7TZAC3x2LTh2pJrI+TTsibdkl+c+3LH69euUZX+UYcUlNMEXVHDPL/vsjq3tiLwX5rUU
+ Tvu3FXnMQ+L1poVzNOYin09YDqyL7nJ1RXPBVw0UbDrqqLTfRiksKnFB6S/vyZoPENJA
+ g2T3DYb/eG5LpPt5awa0HwMAqS9rmnDRYQaCHD7/ClUkL1npf0tYKMNHJOimwv1Ds+yT
+ uwfw==
+X-Gm-Message-State: APjAAAWY69PBlIUm1a2jcsCwdb3RyKyMUTGsY1IBoMJ9d9sP1Erjh+Mi
+ oSxtMo3X+yam+OVKXyHKVa4=
+X-Google-Smtp-Source: APXvYqxtB/tHkCWuTXTACCflWIufqfG0V13c5vDCKObyaNE35kyrkhilP05Y3h7O5l41adByy9fcvQ==
+X-Received: by 2002:adf:e94e:: with SMTP id m14mr3002351wrn.233.1573652463766; 
+ Wed, 13 Nov 2019 05:41:03 -0800 (PST)
 Received: from mars.home
  (HSI-KBW-109-192-080-035.hsi6.kabel-badenwuerttemberg.de. [109.192.80.35])
- by smtp.googlemail.com with ESMTPSA id r15sm4195831wrc.5.2019.11.13.05.41.01
+ by smtp.googlemail.com with ESMTPSA id r15sm4195831wrc.5.2019.11.13.05.41.02
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 13 Nov 2019 05:41:01 -0800 (PST)
+ Wed, 13 Nov 2019 05:41:03 -0800 (PST)
 From: Christoph Fritz <chf.fritz@googlemail.com>
 To: Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
  Mark Brown <broonie@kernel.org>, Fabio Estevam <festevam@gmail.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v2 0/4] regulator da9062: support setting buck modes
-Date: Wed, 13 Nov 2019 14:40:12 +0100
-Message-Id: <1573652416-9848-1-git-send-email-chf.fritz@googlemail.com>
+Subject: [PATCH v2 1/4] regulator: da9062: refactor buck modes into header
+Date: Wed, 13 Nov 2019 14:40:13 +0100
+Message-Id: <1573652416-9848-2-git-send-email-chf.fritz@googlemail.com>
 X-Mailer: git-send-email 2.1.4
+In-Reply-To: <1573652416-9848-1-git-send-email-chf.fritz@googlemail.com>
+References: <1573652416-9848-1-git-send-email-chf.fritz@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_054104_332691_17A85E09 
-X-CRM114-Status: GOOD (  11.05  )
+X-CRM114-CacheID: sfid-20191113_054105_206982_5635D3C4 
+X-CRM114-Status: GOOD (  18.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (chf.fritz[at]googlemail.com)
@@ -107,31 +111,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset adds of_map_mode support to regulator da9062, documents
-its bindings and makes use of it in dts phycore-imx6 so that buck modes
-get configured explicitly for this hardware.
+This patch refactors buck modes into a header file so that device trees
+can make use of these mode constants.
 
-Changes in v2:
- - rename defines (and header filename) from 906X to 9063
- - explain usage of name da9063 in changelog
- - rename da906x_map_buck_mode() to da9062_map_buck_mode()
- - rebase patchset on top of next-20191113
- - adapt subject line of dt-bindings patch to reflect changes
-   in mfd sub-system
+The new header filename uses da9063 because DA9063 was the earlier chip
+and its driver code will want updating at some point in a similar manner.
 
-Christoph Fritz (4):
-  regulator: da9062: refactor buck modes into header
-  regulator: da9062: add of_map_mode support for bucks
-  dt-bindings: mfd: da9062: describe buck modes
-  ARM: dts: phycore-imx6: set buck regulator modes explicitly
-
- Documentation/devicetree/bindings/mfd/da9062.txt   |  4 ++
- arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi  |  5 +++
- drivers/regulator/da9062-regulator.c               | 49 ++++++++++++++--------
- .../dt-bindings/regulator/dlg,da9063-regulator.h   | 16 +++++++
- 4 files changed, 56 insertions(+), 18 deletions(-)
+Signed-off-by: Christoph Fritz <chf.fritz@googlemail.com>
+---
+ drivers/regulator/da9062-regulator.c               | 28 ++++++++--------------
+ .../dt-bindings/regulator/dlg,da9063-regulator.h   | 16 +++++++++++++
+ 2 files changed, 26 insertions(+), 18 deletions(-)
  create mode 100644 include/dt-bindings/regulator/dlg,da9063-regulator.h
 
+diff --git a/drivers/regulator/da9062-regulator.c b/drivers/regulator/da9062-regulator.c
+index 4b24518..601002e 100644
+--- a/drivers/regulator/da9062-regulator.c
++++ b/drivers/regulator/da9062-regulator.c
+@@ -16,6 +16,7 @@
+ #include <linux/regulator/of_regulator.h>
+ #include <linux/mfd/da9062/core.h>
+ #include <linux/mfd/da9062/registers.h>
++#include <dt-bindings/regulator/dlg,da9063-regulator.h>
+ 
+ /* Regulator IDs */
+ enum {
+@@ -75,14 +76,6 @@ struct da9062_regulators {
+ 	struct da9062_regulator			regulator[0];
+ };
+ 
+-/* BUCK modes */
+-enum {
+-	BUCK_MODE_MANUAL,	/* 0 */
+-	BUCK_MODE_SLEEP,	/* 1 */
+-	BUCK_MODE_SYNC,		/* 2 */
+-	BUCK_MODE_AUTO		/* 3 */
+-};
+-
+ /* Regulator operations */
+ 
+ /* Current limits array (in uA)
+@@ -112,13 +105,13 @@ static int da9062_buck_set_mode(struct regulator_dev *rdev, unsigned mode)
+ 
+ 	switch (mode) {
+ 	case REGULATOR_MODE_FAST:
+-		val = BUCK_MODE_SYNC;
++		val = DA9063_BUCK_MODE_SYNC;
+ 		break;
+ 	case REGULATOR_MODE_NORMAL:
+-		val = BUCK_MODE_AUTO;
++		val = DA9063_BUCK_MODE_AUTO;
+ 		break;
+ 	case REGULATOR_MODE_STANDBY:
+-		val = BUCK_MODE_SLEEP;
++		val = DA9063_BUCK_MODE_SLEEP;
+ 		break;
+ 	default:
+ 		return -EINVAL;
+@@ -145,14 +138,13 @@ static unsigned da9062_buck_get_mode(struct regulator_dev *rdev)
+ 
+ 	switch (val) {
+ 	default:
+-	case BUCK_MODE_MANUAL:
+ 		/* Sleep flag bit decides the mode */
+ 		break;
+-	case BUCK_MODE_SLEEP:
++	case DA9063_BUCK_MODE_SLEEP:
+ 		return REGULATOR_MODE_STANDBY;
+-	case BUCK_MODE_SYNC:
++	case DA9063_BUCK_MODE_SYNC:
+ 		return REGULATOR_MODE_FAST;
+-	case BUCK_MODE_AUTO:
++	case DA9063_BUCK_MODE_AUTO:
+ 		return REGULATOR_MODE_NORMAL;
+ 	}
+ 
+@@ -279,13 +271,13 @@ static int da9062_buck_set_suspend_mode(struct regulator_dev *rdev,
+ 
+ 	switch (mode) {
+ 	case REGULATOR_MODE_FAST:
+-		val = BUCK_MODE_SYNC;
++		val = DA9063_BUCK_MODE_SYNC;
+ 		break;
+ 	case REGULATOR_MODE_NORMAL:
+-		val = BUCK_MODE_AUTO;
++		val = DA9063_BUCK_MODE_AUTO;
+ 		break;
+ 	case REGULATOR_MODE_STANDBY:
+-		val = BUCK_MODE_SLEEP;
++		val = DA9063_BUCK_MODE_SLEEP;
+ 		break;
+ 	default:
+ 		return -EINVAL;
+diff --git a/include/dt-bindings/regulator/dlg,da9063-regulator.h b/include/dt-bindings/regulator/dlg,da9063-regulator.h
+new file mode 100644
+index 00000000..1de710d
+--- /dev/null
++++ b/include/dt-bindings/regulator/dlg,da9063-regulator.h
+@@ -0,0 +1,16 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++
++#ifndef _DT_BINDINGS_REGULATOR_DLG_DA9063_H
++#define _DT_BINDINGS_REGULATOR_DLG_DA9063_H
++
++/*
++ * These buck mode constants may be used to specify values in device tree
++ * properties (e.g. regulator-initial-mode).
++ * A description of the following modes is in the manufacturers datasheet.
++ */
++
++#define DA9063_BUCK_MODE_SLEEP		1
++#define DA9063_BUCK_MODE_SYNC		2
++#define DA9063_BUCK_MODE_AUTO		3
++
++#endif
 -- 
 2.1.4
 
