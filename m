@@ -2,86 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71D69F9F7D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 01:46:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C09DF9F8D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 01:47:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/ZMcURlX8k3r57cCRiRp6ORFJvyP+gjc7/5nPFTYnMg=; b=r4B8kOdcrmguXj
-	ZvmGOVqXQ5IxVZri+RRX6jbQYUCIoeJX9u/FvMaU77I+wtnRea/8GDKyXrvr0bDrxE+Jo0BtEofXL
-	2YYGsHaFqpM2tVkFcGIEgYXVoNyafVG9aGV+sCd5GbWBaimfwD2RxzF0ErALbMTtTEDUnTmDGDPHp
-	3kcb2Mo/QY7VFHz8IClMqYHfyqCQf8g/XxHtcLQsRgtHffLVwSkvjbyTfvrFsY8Tl2aljbduAtGHm
-	2TyHELp0tJK7pw9KG7q2Le+N0x5r4dyOh7V+O6pJtEfdiBofWUC0Bz2xQ+Gaik7Bfd7A2bhMmV9kv
-	gmTDjR95rHbeGtuOgN/g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=w9iN3l5uNV7lDQ41IAKvxi39ZXpGMBSENFYREo0o/Qo=; b=k5rjKTXCgpU7yjm5SnRQhLUVu
+	uDjg15Hy53aDINjLOn8dydTFU6MhXRFXrx3MaSoMRGb2UuC3qDMf3cne4tLOPJUpt4YHMfIitGtKQ
+	wg3hcCOpR6RzHgJBuqXhDfGGucPwq8vjqDa2YRCx1vUBAUp8ZQhftW0zJ76LJRR5x4rHfyZR8f9FA
+	n65/8p8avZDb7OQmmpwHnZF7VivS5bONqP39HXzwQE2HZivGVy1te648xh7AOmnCt7s/0OgTy9MyK
+	lPNkq50Hw+rHAS+MvsvAqKwBAmPSrJ8HZA9qKQz3XFXpUIQkJKOeQ9jZOnyM6wEayeAurVuGuFuVx
+	YcAQAHCcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUgnY-0003vC-Qj; Wed, 13 Nov 2019 00:46:16 +0000
-Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
+	id 1iUgod-0004Dt-II; Wed, 13 Nov 2019 00:47:23 +0000
+Received: from mout-p-101.mailbox.org ([80.241.56.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUgnP-0003uk-C4
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 00:46:08 +0000
-Received: by mail-vk1-xa41.google.com with SMTP id k24so158607vko.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 Nov 2019 16:46:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=t+hVtjPqxsrSnn17bHB9qrQWeIT/PrqO1rTw4krXmCU=;
- b=TiPN95bkizQ4voYbuODqSf9et1LPRMWqgdL5r1Yn3pOdgL46Onb4KQqOi0v50YMBhn
- K8h0ocFtT/pSwPev59WWCHMjXQh6a6LTViN4tNmygkH4uX0fSTXGvu7xEVfGtruUAEM5
- wv1Sch77i3POzdILwDoQydigQjYYwba2tuZr8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=t+hVtjPqxsrSnn17bHB9qrQWeIT/PrqO1rTw4krXmCU=;
- b=k/2OvmT6PUKDfHHYsKI6Tx6QbEOE7iE11CPPYvKyekbSF2trod6IH5BIS5oC4ohi7P
- IbuMPRdzTC0VzctDwvY/UpJJh5lHhc8+9RC5HJ/GnayOY9/4TiKM0AKeRuW0SCJSJNdl
- KDEL1JnzX6BOd8gNPLw3/zJle30g+C3Pg4KVtD//pqthOEK9YWd43tyTsztjQNOtmG7v
- 8xg/SCNEGEdT7HMP8n6pBdRITUGxZBvTi9gGZPq8R7iqfZni7DsDkT7gU8cfsecs8jLZ
- V09Q7F3z6xMr2yolDBt5P91f4nyPOmoN3Boq6gsbwFLolfNer1xBBj2kYG4ewUtXHs9e
- OBTw==
-X-Gm-Message-State: APjAAAW0zwLj6n+vzcnsKoxuZSwq/qv2uaGPizOKWp7s1IdZODiL61Sv
- Yg131RjAYr1AYJlbJh7uxTGmnKWyb76WSX/zEcUdfxev
-X-Google-Smtp-Source: APXvYqyD/YFJfofIxaZ9C+Thi8Xw8Bo6/1Jh5ZypX0pE48SaKQ9yBWXZi8hLvz9YCbAUiXB5OTBKyk9j9njE7OAilXc=
-X-Received: by 2002:a0c:a541:: with SMTP id y59mr432426qvy.107.1573605602886; 
- Tue, 12 Nov 2019 16:40:02 -0800 (PST)
+ id 1iUgoS-0004CR-Uz
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 00:47:15 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mout-p-101.mailbox.org (Postfix) with ESMTPS id 47CQtM1PgvzKm9q;
+ Wed, 13 Nov 2019 01:47:07 +0100 (CET)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
+ [80.241.56.122]) (amavisd-new, port 10030)
+ with ESMTP id rfbcH-n--HBG; Wed, 13 Nov 2019 01:47:00 +0100 (CET)
+Date: Wed, 13 Nov 2019 11:46:34 +1100
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v15 0/9] open: introduce openat2(2) syscall
+Message-ID: <20191113004634.tz7geloshltkafwj@yavin.dot.cyphar.com>
+References: <20191105090553.6350-1-cyphar@cyphar.com>
+ <20191111132404.y523iqicbn6fivx5@yavin.dot.cyphar.com>
+ <201911121457.7D02692@keescook>
 MIME-Version: 1.0
-References: <CACPK8Xe8XiJ+oEp3_AXO5Mox-mXWVrOJKQLJMKJxg1WdYCTzMw@mail.gmail.com>
- <20191108183124.r2wdql4rmdbzx2up@localhost>
-In-Reply-To: <20191108183124.r2wdql4rmdbzx2up@localhost>
-From: Joel Stanley <joel@jms.id.au>
-Date: Wed, 13 Nov 2019 00:39:51 +0000
-Message-ID: <CACPK8XfVOGyr+ntuAhK7dOA=02PBKJYTSkv4HvoJWdppMeJNWg@mail.gmail.com>
-Subject: Re: [GIT PULL] ARM: aspeed: devicetree changes for 5.5
-To: Olof Johansson <olof@lixom.net>
+In-Reply-To: <201911121457.7D02692@keescook>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_164607_413873_8F3F997F 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191112_164713_304669_07937F31 
+X-CRM114-Status: GOOD (  17.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,41 +65,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Jeffery <andrew@aj.id.au>, soc@kernel.org, arm <arm@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ Shuah Khan <shuah@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, libc-alpha@sourceware.org,
+ linux-parisc@vger.kernel.org, linux-api@vger.kernel.org,
+ Chanho Min <chanho.min@lge.com>, Jeff Layton <jlayton@kernel.org>,
+ Oleg Nesterov <oleg@redhat.com>, Eric Biederman <ebiederm@xmission.com>,
+ linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============5887090773367368558=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hey Olof,
 
-On Fri, 8 Nov 2019 at 18:32, Olof Johansson <olof@lixom.net> wrote:
-> >
-> >   git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git \
-> >     tags/aspeed-5.5-devicetree
->
-> This is a weird format. Mind changing your script to not put the '\' at EOL?
-> It's messing up the parsing scripts, and git doesn't use it.
+--===============5887090773367368558==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="7ndczamgwxls6q65"
+Content-Disposition: inline
 
-I think I added that at your request. I'm happy to do whatever works for you.
 
-> > ----------------------------------------------------------------
->
-> ... also, there's no shortlog and no diffstat on the pull request. We usually
-> want to see those.
+--7ndczamgwxls6q65
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-In the past git request-pull created those. It seems to have stopped,
-as I got similar feedback on other pull requests.
+On 2019-11-12, Kees Cook <keescook@chromium.org> wrote:
+> On Tue, Nov 12, 2019 at 12:24:04AM +1100, Aleksa Sarai wrote:
+> > On 2019-11-05, Aleksa Sarai <cyphar@cyphar.com> wrote:
+> > > This patchset is being developed here:
+> > >   <https://github.com/cyphar/linux/tree/openat2/master>
+> > >=20
+> > > Patch changelog:
+> > >  v15:
+> > >   * Fix code style for LOOKUP_IN_ROOT handling in path_init(). [Linus=
+ Torvalds]
+> > >   * Split out patches for each individual LOOKUP flag.
+> > >   * Reword commit messages to give more background information about =
+the
+> > >     series, as well as mention the semantics of each flag in more det=
+ail.
+> > > [...]
+> >=20
+> > Ping -- this patch hasn't been touched for a week. Thanks.
+>=20
+> If I've been following correctly, everyone is happy with this series.
+> (i.e. Linus's comment appear to have been addressed.)
+>=20
+> Perhaps the next question is should this go via a pull request by you to
+> Linus directly during the v5.5 merge window, via akpm, via akpm, via
+> Christian, or some other path? Besides Linus, it's not been clear who
+> should "claim" this series. :)
 
-I guess we need to add that manually now.
+Given the namei changes, I wanted to avoid stepping on Al's toes. Though
+he did review the series a few versions ago, the discussion didn't focus
+on the openat2(2) semantics (which have also changed since then). I'm
+not sure whether to interpret the silence to mean he's satisfied with
+things as they are, or if he hasn't had more time to look at the series.
 
-Cheers,
+As for which tree it should be routed to, I don't mind -- Christian is
+the most straight-forward choice (but if Al wants to route it, that's
+fine with me too).
 
-Joel
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--7ndczamgwxls6q65
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXctSZgAKCRCdlLljIbnQ
+Ej+PAP0UBMczq8p/OLMeyIryF0EfQ+noWktKHkfgvrRf7bKN7AEAiW1OItA5gtV4
+HiJnADyDHQw1h7livSSrD2X7HKS2BAA=
+=yOzJ
+-----END PGP SIGNATURE-----
+
+--7ndczamgwxls6q65--
+
+
+--===============5887090773367368558==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5887090773367368558==--
+
