@@ -2,61 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92DA8FB695
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 18:49:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 209A7FB69C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 18:51:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ig7Vi2CPKvwRhT3AwGyrrShoq1BO+IK97BbIMKCGKQY=; b=nnfRZE6VwGMkgO
-	GGWbiiAlmYz0mvvsciylwyUmGLYGoWgPD/X0lL0ZWKnsrF25gK4Og+Mtu/gf+qEmEKCBzQ22x4WOi
-	erub3Jw4s/lSNIlA7mjZRR3FZ9pQdsi2RO5tKNyqblQmNFLZWVRJnYCtSk01h484YhY6kNrnKeeX1
-	XWgvJ+kZAObMYeYET56K8n+LaW+9nnm0SlH/uRbHFTN3WSNwn5Ocvq7D6Ogm1CkXbyRtRh7md7sbo
-	ajFZacLxY1uloU78B2UkoqtfT0665dmrNL8kpqUt3ppd/pSEEBVdEOyVZ5uInJ4N00z40fUuNkdqZ
-	JLKzFyh7hj6ts8YjxJNg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:References:In-Reply-To:Message-ID:MIME-Version:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=A2JzAAeKFfM9MaD0pZrotUGQKlPupDCWtDAEZBYBRXE=; b=jwwKsfEcV2if9KC6pINpJAVQh
+	5pqBPz2YF9g/UWnA1DYf1/xCZjGFrwHHEYXvpxSnsn0OyC1aXvEqKNvnwT/A0MUI/UZsTZeMcxiZ/
+	KE6nugqifM09zX6aZqdXQ89py/ZdpfAt0yIKBhT7lwVq9Cj1nwN6CCrbwK3pdqc2zOYH0qbGBfLGa
+	0CpDy5G7Nb7C0KCdrUHllOtpxwmXv3itXisTUbq25Duh5UotQrVhM3pxfESZlAes+AxiXQb+7UmAa
+	7lKaK+HsRnH9PPcf/6y2trvZHYXO5C4Df8v4PgTR6Doz2CglYEpUDLFVTFKVb3eFuSTeW7fkTYHsQ
+	dqCi2v2Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUwlh-0000Bw-N6; Wed, 13 Nov 2019 17:49:25 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1iUwnV-0001y5-Mi; Wed, 13 Nov 2019 17:51:17 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUwlX-0000Am-P3
- for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 17:49:17 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 0E36FCA2DD50C4DA1289;
- Thu, 14 Nov 2019 01:49:03 +0800 (CST)
-Received: from localhost (10.202.226.61) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Thu, 14 Nov 2019
- 01:48:53 +0800
-Date: Wed, 13 Nov 2019 17:48:45 +0000
-From: Jonathan Cameron <jonathan.cameron@huawei.com>
-To: Tao Xu <tao3.xu@intel.com>
-Subject: Re: [PATCH V5 1/4] ACPI: Support Generic Initiator only domains
-Message-ID: <20191113174845.000009d3@huawei.com>
-In-Reply-To: <77b6a6e8-9d44-1e1c-3bf0-a8d04833598d@intel.com>
-References: <20191004114330.104746-1-Jonathan.Cameron@huawei.com>
- <20191004114330.104746-2-Jonathan.Cameron@huawei.com>
- <CAPcyv4jZG-5s6NsS-_-oNG45y0Qb1mVD_s8cCGqLYtzvHqEo+Q@mail.gmail.com>
- <20191113094742.00000dc4@huawei.com>
- <77b6a6e8-9d44-1e1c-3bf0-a8d04833598d@intel.com>
-Organization: Huawei
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
+ id 1iUwnH-0001w9-A5; Wed, 13 Nov 2019 17:51:07 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a17so5503223wmb.0;
+ Wed, 13 Nov 2019 09:51:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:mime-version:message-id:in-reply-to
+ :references:user-agent:content-transfer-encoding;
+ bh=qzzDBOvLkhrbh494Qc4Z0VlfmRg1EJQ03rXnO9Mftjk=;
+ b=Ckz+TG9tYlw0m9OttsGTs9nJCH7TOKM4uTw+Sa1nNydaUzRdKKXD1V4Buf42LHGqAe
+ iE2FkSfzKvj6vYGAsui4uPedXV0/g94qdd492aWhhMIzPyzugnvALXv1DN8sIbGJGBC0
+ NE51Ne1wBWIhu/FNZzS1s/P0BEwbdzrbtplWTY5NWzVYN/edYprM9kjqpWWTXpbXY9EV
+ 8LVPC6CrfzSPdoHCDXkSdds9fr8i5ZaBAG6Bjmcpp7s9sNDUVW5+ZrR6lquD8xI8KXjm
+ 5z6P9t72BlMdlR1dqIZChQbDAqLKh3ZSGLHTEO9eGCi6DtcaQ+TPM7kzHPgabJj7Qhlk
+ eYzA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:mime-version:message-id
+ :in-reply-to:references:user-agent:content-transfer-encoding;
+ bh=qzzDBOvLkhrbh494Qc4Z0VlfmRg1EJQ03rXnO9Mftjk=;
+ b=DlGXoq1XBxwyc7nSXIdoweOPi+S/VS8CsZdocHOFa2hw5T6FpCQzF59oIGatPjBZj/
+ Y6lSeI9YtzrtKHSvgFwigP+hsv6Y/Vhznm2TFr8ac2FO+uMj8LLYEoEuSdlup1zCvd7G
+ zMBtp+aKsvkLrhdwWLbPHp6FJP30hjw+DjuyXei1VZeCrMKkvvQXRhXirjHQsnMK0Eo8
+ jGo/G5VH4WxGp/bGz02eHmvSO/hlxbo0yc9elHH2nyXUXHXIYUlZMPsdq34/XDNIUygI
+ EkKG9i+5ILTUiYTUMqkvbKoW9jKfdq0BxnzrmxGhLWP4Mkjmyuv8Whyf6nTAQKpBw1pB
+ HO0A==
+X-Gm-Message-State: APjAAAW7OFVSpjp3Nh19ZhnqRUa/2ItPu0ah0pbDLgmyGhs/i19V3nJv
+ gQ8ib4DLVbx/elr+oEnpI38=
+X-Google-Smtp-Source: APXvYqxY92gjSsnH0FK0MObe+RVUZHrJMUlsHR/YtNeM6aP9bJMWxET2pTpHVRrEZmpw+lSUgwKswg==
+X-Received: by 2002:a7b:ce11:: with SMTP id m17mr3554877wmc.123.1573667461198; 
+ Wed, 13 Nov 2019 09:51:01 -0800 (PST)
+Received: from localhost ([94.73.41.211])
+ by smtp.gmail.com with ESMTPSA id m187sm391448wmf.35.2019.11.13.09.50.58
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 13 Nov 2019 09:51:00 -0800 (PST)
+From: Vicente Bergas <vicencb@gmail.com>
+To: Kever Yang <kever.yang@rock-chips.com>
+Subject: Re: [PATCH 3/3] arm64: dts: rk3399: Add init voltage for
+ =?iso-8859-1?Q?vdd=5Flog?=
+Date: Wed, 13 Nov 2019 18:50:57 +0100
 MIME-Version: 1.0
-X-Originating-IP: [10.202.226.61]
-X-CFilter-Loop: Reflected
+Message-ID: <977a15a9-8469-4821-ba13-8c2c59a145e7@gmail.com>
+In-Reply-To: <20191111005158.25070-3-kever.yang@rock-chips.com>
+References: <20191111005158.25070-1-kever.yang@rock-chips.com>
+ <20191111005158.25070-3-kever.yang@rock-chips.com>
+User-Agent: Trojita
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_094916_005779_B2EB21EB 
-X-CRM114-Status: GOOD (  30.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191113_095103_377905_7AA19AE9 
+X-CRM114-Status: GOOD (  15.45  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (vicencb[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,131 +98,186 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ACPI <linux-acpi@vger.kernel.org>, X86 ML <x86@kernel.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linuxarm <linuxarm@huawei.com>, Keith
- Busch <keith.busch@intel.com>, Linux MM <linux-mm@kvack.org>,
- =?ISO-8859-1?Q?J=E9r=F4me?= Glisse <jglisse@redhat.com>,
- Dan Williams <dan.j.williams@intel.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Alexis Ballier <aballier@gentoo.org>,
+ Soeren Moch <smoch@web.de>, Hugh Cole-Baker <sigmaris@gmail.com>,
+ Andy Yan <andyshrk@gmail.com>, Katsuhiro Suzuki <katsuhiro@katsuster.net>,
+ linux-rockchip@lists.infradead.org, Pragnesh Patel <Pragnesh_Patel@mentor.com>,
+ Peter Robinson <pbrobinson@gmail.com>, Nick Xie <nick@khadas.com>,
+ devicetree@vger.kernel.org, Elaine Zhang <zhangqing@rock-chips.com>,
+ Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
+ =?utf-8?B?QW5kcml1cyDFoHRpa29uYXM=?= <andrius@stikonas.eu>, heiko@sntech.de,
+ linux-kernel@vger.kernel.org, Oskari Lemmela <oskari@lemmela.net>,
+ Robin Murphy <robin.murphy@arm.com>, Vivek Unune <npcomplete13@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 13 Nov 2019 21:57:24 +0800
-Tao Xu <tao3.xu@intel.com> wrote:
+On Monday, November 11, 2019 1:51:58 AM CET, Kever Yang wrote:
+> Since there is no devfreq used for vdd_log, so the vdd_log(pwm regulator)
+> will be 'enable' with the dts node at a default PWM state with high or low
+> output. Both too high or too low for vdd_log is not good for the board,
+> add init voltage for driver to make the regulator get into a know output.
+>
+> Note that this will be used by U-Boot for init voltage output, and this
+> is very important for it may get system hang somewhere during system
+> boot up with regulator enable and without this init value.
 
-> On 11/13/2019 5:47 PM, Jonathan Cameron wrote:
-> > On Tue, 12 Nov 2019 09:55:17 -0800
-> > Dan Williams <dan.j.williams@intel.com> wrote:
-> >   
-> >> [ add Tao Xu ]
-> >>
-> >> On Fri, Oct 4, 2019 at 4:45 AM Jonathan Cameron
-> >> <Jonathan.Cameron@huawei.com> wrote:  
-> >>>
-> >>> Generic Initiators are a new ACPI concept that allows for the
-> >>> description of proximity domains that contain a device which
-> >>> performs memory access (such as a network card) but neither
-> >>> host CPU nor Memory.
-> >>>
-> >>> This patch has the parsing code and provides the infrastructure
-> >>> for an architecture to associate these new domains with their
-> >>> nearest memory processing node.  
-> >>
-> >> Thanks for this Jonathan. May I ask how this was tested? Tao has been
-> >> working on qemu support for HMAT [1]. I have not checked if it already
-> >> supports generic initiator entries, but it would be helpful to include
-> >> an example of how the kernel sees these configurations in practice.
-> >>
-> >> [1]: http://patchwork.ozlabs.org/cover/1096737/  
-> > 
-> > Tested against qemu with SRAT and SLIT table overrides from an
-> > initrd to actually create the node and give it distances
-> > (those all turn up correctly in the normal places).  DSDT override
-> > used to move an emulated network card into the GI numa node.  That
-> > currently requires the PCI patch referred to in the cover letter.
-> > On arm64 tested both on qemu and real hardware (overrides on tables
-> > even for real hardware as I can't persuade our BIOS team to implement
-> > Generic Initiators until an OS is actually using them.)
-> > 
-> > Main real requirement is memory allocations then occur from one of
-> > the nodes at the minimal distance when you are do a devm_ allocation
-> > from a device assigned. Also need to be able to query the distances
-> > to allow load balancing etc.  All that works as expected.
-> > 
-> > It only has a fairly tangential connection to HMAT in that HMAT
-> > can provide information on GI nodes.  Given HMAT code is quite happy
-> > with memoryless nodes anyway it should work.  QEMU doesn't currently
-> > have support to create GI SRAT entries let alone HMAT using them.
-> > 
-> > Whilst I could look at adding such support to QEMU, it's not
-> > exactly high priority to emulate something we can test easily
-> > by overriding the tables before the kernel reads them.
-> > 
-> > I'll look at how hard it is to build an HMAT tables for my test
-> > configs based on the ones I used to test your HMAT patches a while
-> > back.  Should be easy if tedious.
-> > 
-> > Jonathan
-> >   
-> Indeed, HMAT can support Generic Initiator, but as far as I know, QEMU 
-> only can emulate a node with cpu and memory, or memory-only. Even if we 
-> assign a node with cpu only, qemu will raise error. Considering 
-> compatibility, there are lots of work to do for QEMU if we change NUMA 
-> or SRAT table.
-> 
+Hi, just for reference: doing the math based on the Sapphire board
+schematic, the values for vdd_log are:
+|------|-------|
+| PWM  | Volts |
+|------|-------|
+| Hi-Z | 1.136 |
+|   0% | 1.356 |
+| 100% | .9167 |
+|------|-------|
+The datasheet states that the acceptable range for vdd_log is 0.8 .. 1.0
+So, an option could be to configure GPIO1_C3 as output high and vdd_log
+would be at the range's center.
 
-I faked up a quick HMAT table.
+Aside from math on paper, it has been tested. Setting GPIO1_C3 as output
+high gives a vdd_log of 0.922 measured volts and the board, so far, works
+fine.
 
-Used a configuration with 3x CPU and memory nodes, 1x memory only node
-and 1x GI node.  Two test cases, one where the GI initiator is further than
-the CPU containing nodes from the memory only node (realistic case for
-existing hardware). That behaves as expected and there are no
-/sys/node/bus/nodeX/access0 entries for the GI node
-+ appropriate ones for the memory only node as normal.
+Regards,
+  Vicente.
 
-The other case is more interesting we have the memory only node nearer
-to the GI node than to any of the CPUs.  In that case for x86 at least
-the HMAT code is happy to put an access0 directory GI in the GI node
-with empty access0/initiators and the memory node under access0/targets
-
-The memory only node is node4 and the GI node node3.
-
-So relevant dirs under /sys/bus/nodes/devices
-
-node3/access0/initators/ Empty
-node3/access0/targets/node4
-
-node4/access0/initators/[node3 read_bandwidth write_bandwith etc]
-node4/access0/targets/ Empty
-
-So the result current (I think - the HMAT interface still confuses
-me :) is that a GI node is treated like a CPU node.  This might mean
-there is no useful information available if you want to figure out
-which CPU containing node is nearest to Memory when the GI node is
-nearer still.
-
-Is this a problem?  I'm not sure...  
-
-If we don't want to include GI nodes then we can possibly
-use the node_state(N_CPU, x) method to check before considering
-them, or I guess parse SRAT to extract that info directly. 
-
-I tried this and it seems to work so can add patch doing this
-next version if we think this is the 'right' thing to do.
-
-So what do you think 'should' happen? 
-
-Jonathan
-
-
-
-
-
+> CC: Elaine Zhang <zhangqing@rock-chips.com>
+> CC: Peter Robinson <pbrobinson@gmail.com>
+> Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
+> ---
+>
+>  arch/arm64/boot/dts/rockchip/rk3399-evb.dts          | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-firefly.dts      | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts   | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts    | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts     | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts       | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts    | 1 +
+>  arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi    | 1 +
+>  9 files changed, 9 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts 
+> b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
+> index 77008dca45bc..fa241aeb11b0 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-evb.dts
+> @@ -65,6 +65,7 @@
+>  		regulator-name = "vdd_center";
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		regulator-always-on;
+>  		regulator-boot-on;
+>  		status = "okay";
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts 
+> b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+> index 92de83dd4dbc..4e45269fcdff 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-firefly.dts
+> @@ -208,6 +208,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <430000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc_sys>;
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts 
+> b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+> index c133e8d64b2a..692f3154edc3 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+> @@ -100,6 +100,7 @@
+>  		regulator-name = "vdd_log";
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		regulator-always-on;
+>  		regulator-boot-on;
+>  	};
+> diff --git 
+> a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi 
+> b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+> index 4944d78a0a1c..c2ac80d99301 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+> @@ -79,6 +79,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vsys_3v3>;
+>  	};
+>  
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts 
+> b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
+> index 73be38a53796..c32abcc4ddc1 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-leez-p710.dts
+> @@ -101,6 +101,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc5v0_sys>;
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts 
+> b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+> index 0541dfce924d..9d674c51f025 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-orangepi.dts
+> @@ -164,6 +164,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc_sys>;
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts 
+> b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+> index 19f7732d728c..7d856ce1d156 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dts
+> @@ -129,6 +129,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc3v3_sys>;
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts 
+> b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> index e544deb61d28..8fbccbc8bf47 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> @@ -174,6 +174,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1700000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc5v0_sys>;
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi 
+> b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
+> index 1bc1579674e5..f8e2cb8c0624 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-sapphire.dtsi
+> @@ -133,6 +133,7 @@
+>  		regulator-boot-on;
+>  		regulator-min-microvolt = <800000>;
+>  		regulator-max-microvolt = <1400000>;
+> +		regulator-init-microvolt = <950000>;
+>  		vin-supply = <&vcc_sys>;
+>  	};
+>  };
 
 
 _______________________________________________
