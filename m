@@ -2,51 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93649FB536
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 17:35:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D0B4FB53F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 Nov 2019 17:37:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Bm5xkDPAaE1mIVcNPlUJHXo224ZmFC8mZzZ8SBG0AqI=; b=AFDLTKuI4ns5FnE1F7LVXKgkc
-	B1PKUo46T5q1MXJYk9iv28zd2zPtFCrxe2AiBGaaU7of0weFOYFX9IdAKKRHCB5tQ1n77ImM/+S8c
-	pvAixCUxp7abo359uCk6jqpgUjhjJ7LNBECW5WWDuAPNVp5/xVGc8sCLXyitgxud+yzXkDer55Q+P
-	58vY3iMxNVFzOzFKFxXE2EiVd3SMsbFApon3phiKo1Sbp4y32TtP2obBfgMWxe31mTceNjs1R1O1e
-	7+1Ot4+YOT4xn9RfNwEB2hCDOdGAM4iZPsQODnMNMd7oUbGwPm2tO+ZZtVcoodtpM18LpVBx/I1cn
-	fDWbYVW7Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6ZNpDvdCPB1QMDtmcOwfkjVt8LyVqLaOMUysjpzSQBE=; b=WYWoEbE2YCPBrx
+	WNS7z0twzpda2Xux3s3Zf55d2mlYdPEWzlLT6C3JRF+65Pul2cWx1bZ3a6Ns5Ftm2w06aY7LvqvDy
+	7YVRoc5Lf2+Z4Rvfkv/ATuNc1amUCWSQyoYpwTOvXodU2bhl4EEgAM63PHsP0rzprmJfStby+Dsbk
+	UVyXUo0UxMqQwbMNFWVCLKHBmqjr6zWIJRLg6xMXCxdSSwRFhk2kTnKle7jv4wfO4rpIvoLn6ndFk
+	4+HzFDHKCf1TSTqP5LZ8ZWijZM5AXLhnZeE6n93eTuZ5uPJPR47GIYTWV89O5qE5wzOsS1JviBDSP
+	W7H7ROv0FN4mFGOfQzOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUvc6-0007ZO-6w; Wed, 13 Nov 2019 16:35:26 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1iUvdp-000858-LT; Wed, 13 Nov 2019 16:37:13 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUvbw-0007YR-Ep; Wed, 13 Nov 2019 16:35:18 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id 388EA28E964
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: Emil Velikov <emil.l.velikov@gmail.com>
-Subject: Re: [PATCH v2 1/4] drm: bridge: dw_mipi_dsi: access registers via a
- regmap
-In-Reply-To: <CACvgo51sNzSHCcix89giYEq=iGJa_-nYbgpOKY-MxPRGCM_cRQ@mail.gmail.com>
-References: <20191106163031.808061-1-adrian.ratiu@collabora.com>
- <20191106163031.808061-2-adrian.ratiu@collabora.com>
- <CACvgo51sNzSHCcix89giYEq=iGJa_-nYbgpOKY-MxPRGCM_cRQ@mail.gmail.com>
-Date: Wed, 13 Nov 2019 18:35:30 +0200
-Message-ID: <87r22bhgz1.fsf@iwork.i-did-not-set--mail-host-address--so-tickle-me>
+ id 1iUvdd-0007v2-KB
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 Nov 2019 16:37:03 +0000
+Received: by mail-lf1-x141.google.com with SMTP id v8so2464228lfa.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 13 Nov 2019 08:37:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZrrJxUm37MwzOHZARPAtPN97Qeo3bve+3YkG041g53s=;
+ b=Mn6BNFnYW1bkG15A7Sor9ynnXRgzP8PN+BRA0Iqrx/Fygjwn/rTGXLTIJm35Sniesy
+ cIGkmDclUGM4VNAEt5mOIOTLVdMJHHgip/K0K8i+kNa+1z4OL7zelRz1oW/0HveIQiRT
+ cnEhwtm8sDkFtYLDnz1AlwNWC51Y+epmEIytw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZrrJxUm37MwzOHZARPAtPN97Qeo3bve+3YkG041g53s=;
+ b=D92CVWTKplRjWrY4tlKIB6aa04TZutsM9t9+GI/84QxJx+HmSmnFnTVO7EgLqfRDmk
+ lyy9QdM+GocCkiBI0Nff7KFcrNuzF+kkwYYq2VJAwIHALBeFwducGhBX++Z5Hw0PKQcX
+ UMelbSN91eTluh4zYjgLBsx87o8wdqxTlm0IHa4tpXIr6hNsXq3wvJHJHOOis5soegmX
+ HmYmKWwSP/ZfKMlrbHoCPd+ltdK6u9LFtnzdpGJ8r9EJ64/dvc5AFpgVS0FcCR6UWY6C
+ o0TEennx3AIuaRk2OHWwhwhN6TqoVgIABqETUMPU7UE0crQ2qU8Iweh56ENYdSzyDfJC
+ +ngg==
+X-Gm-Message-State: APjAAAW8tqzv8MQ9Zp6IbETrSqj8tb7X6p2liMpjOhDAtmSSbgfHyRyD
+ KlLdHy2GwV32x1t6KbLR3agJU65kkYA=
+X-Google-Smtp-Source: APXvYqyKiMgRfeUi6oC8Ru35bMiJYI9Kfln/YFm4cV3N/G5pfb0HSGqpDiTgJ/k6BXzgFQqpMRTTmA==
+X-Received: by 2002:a19:7115:: with SMTP id m21mr127703lfc.27.1573663018221;
+ Wed, 13 Nov 2019 08:36:58 -0800 (PST)
+Received: from mail-lj1-f181.google.com (mail-lj1-f181.google.com.
+ [209.85.208.181])
+ by smtp.gmail.com with ESMTPSA id a8sm1077380ljb.11.2019.11.13.08.36.57
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 13 Nov 2019 08:36:57 -0800 (PST)
+Received: by mail-lj1-f181.google.com with SMTP id q2so3303681ljg.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 13 Nov 2019 08:36:57 -0800 (PST)
+X-Received: by 2002:a2e:22c1:: with SMTP id i184mr3290842lji.1.1573663016714; 
+ Wed, 13 Nov 2019 08:36:56 -0800 (PST)
 MIME-Version: 1.0
+References: <20191112130244.16630-1-vincent.whitchurch@axis.com>
+ <20191112160855.GA22025@arrakis.emea.arm.com>
+ <20191112180034.GB19889@willie-the-truck>
+ <20191112182249.GB22025@arrakis.emea.arm.com>
+ <CAHk-=wg4vi27mnMVgZ-rzcEdDAjTXrY1Jyz3+=5STcY0bw4-jQ@mail.gmail.com>
+ <20191113102357.GA25875@willie-the-truck>
+In-Reply-To: <20191113102357.GA25875@willie-the-truck>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Wed, 13 Nov 2019 08:36:40 -0800
+X-Gmail-Original-Message-ID: <CAHk-=wjmyEdYW4vEaNDP4UMB+H7wWneOwLUR3FmPG-Fb6U8dZg@mail.gmail.com>
+Message-ID: <CAHk-=wjmyEdYW4vEaNDP4UMB+H7wWneOwLUR3FmPG-Fb6U8dZg@mail.gmail.com>
+Subject: Re: [PATCH v2] buffer: Fix I/O error due to ARM read-after-read hazard
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_083516_632418_EC034B24 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191113_083701_719642_6BA3721C 
+X-CRM114-Status: GOOD (  13.12  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,67 +105,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, "Linux-Kernel@Vger. Kernel.
- Org" <linux-kernel@vger.kernel.org>,
- ML dri-devel <dri-devel@lists.freedesktop.org>,
- linux-rockchip <linux-rockchip@lists.infradead.org>,
- Boris Brezillon <boris.brezillon@collabora.com>, kernel@collabora.com,
- linux-stm32@st-md-mailman.stormreply.com,
- LAKML <linux-arm-kernel@lists.infradead.org>
+Cc: Jens Axboe <axboe@kernel.dk>, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Vincent Whitchurch <rabinv@axis.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Vincent Whitchurch <vincent.whitchurch@axis.com>,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 13 Nov 2019, Emil Velikov <emil.l.velikov@gmail.com> 
-wrote:
-> On Wed, 6 Nov 2019 at 16:30, Adrian Ratiu 
-> <adrian.ratiu@collabora.com> wrote: 
->> 
->> Convert the common bridge code and the two rockchip & stm 
->> drivers which currently use it to the regmap API in 
->> anticipation for further changes to make it more generic and 
->> add older DSI host controller support as found on i.mx6 based 
->> devices. 
->> 
->> The regmap becomes an internal state of the bridge. No 
->> functional changes other than requiring the platform drivers to 
->> use the pre-configured regmap supplied by the bridge after its 
->> probe() call instead of ioremp'ing the registers themselves. 
->> 
->> In subsequent commits the bridge will become able to detect the 
->> DSI host core version and init the regmap with different 
->> register layouts. The platform drivers will continue to use the 
->> regmap without modifications or worrying about the specific 
->> layout in use (in other words the layout is abstracted away via 
->> the regmap). 
->> 
->> Suggested-by: Boris Brezillon <boris.brezillon@collabora.com> 
->> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com> 
->> Reviewed-by: Emil Velikov <emil.l.velikov@gmail.com> 
-> 
-> I should have been clearer earlier - I didn't quite review the 
-> patch.  Is is now though.  Reviewed-by: Emil Velikov 
-> <emil.velikov@collabora.com>
-
-Sorry about that, I got confused and thought you reviewed it all.
- 
-> 
-> Admittedly a couple of nitpicks (DRIVER_NAME, zero initialize of 
-> val) could have been left out.  It's not a big deal, there's no 
-> need to polish those.
-
-I'll address them in v3 as well as updating your mail address.
-
-Thanks for reviewing!
-
+On Wed, Nov 13, 2019 at 2:24 AM Will Deacon <will@kernel.org> wrote:
 >
-> -Emil
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> Ok, I'll stick my neck out here, but if test_bit() is being used to read
+> a bitmap that is being concurrently modified (e.g. by set_bit() which boils
+> down to atomic_long_or()), then why isn't READ_ONCE() required? Right now,
+> test_bit takes a 'const volatile unsigned long *addr' argument, so I don't
+> see that you'll get a change in codegen except on alpha and, with this
+> erratum, arm32.
+
+You're right. We've moved back to actually having it volatile (or
+possibly never got away from it). My bad.
+
+At one point, we tried very hard to make test_bit() perform much
+better when you tested multiple bits, and I thought we ended up having
+that merged and didn't want to regress. But apparently we never did
+that, or it got undone.
+
+test_bit() is a very unfortunate interface, in that we actually use it
+in some situations where we _really_ would want to merge reads (not
+split them, but merge them). There are several cases where we do
+constant test-bits on the same word, and don't care about ordering.
+Things like thread flags etc.
+
+It's explicitly not ordered, so *merging* reads would be right and
+lovely, it's the "don't read twice" that is bad. But we have no way to
+tell the compiler that ;(
+
+Anyway, READ_ONCE() is ok by me when I look at the code, because as
+you say, it's already volatile (like my memory ;).
+
+           Linus
 
 _______________________________________________
 linux-arm-kernel mailing list
