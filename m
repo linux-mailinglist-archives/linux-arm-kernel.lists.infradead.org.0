@@ -2,89 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBC9DFBCD4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 01:04:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0928AFBD39
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 01:57:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	MIME-Version:Date:To:From:In-Reply-To:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AhnUVY7bb9888yMFDtaqbSSBfUpd7DBjIO2352Jw8yY=; b=dVf0pALXVeFzDU
-	8QxsO9Tyt7nrI6zxlnCalDa2pSAhXQfwEAI4SHkZy341hVPrWEUh1kgPz4adJu+6fTrr87QT70uzD
-	2/02HOcnsfWwvU2y5Ej4B/+5J2kuxADmKMccK8nHpEAxgxQ63y92L2VpYsG0JQTutTszk6D/xJ/jz
-	uW1XqDixeZnJdh/SDFTWVJr1wmdIBdal7stsJWSU77pVCRlqEADeu6x8bC8B8ryBxYgJI5GMzmO7o
-	4UZdZgdka59o03N0iWHcE9+0cq1obiI9kgZX8JXZqaGaIj6bdcE1T4aBPvZtIdgkekCOU2a46tEb1
-	0ITgBieAHnP9Anp4yKMw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ottPrTPrSkz/tZvfQXYZ9bBliuTrMAi0y+F4kE/jAaw=; b=VxaxMg1cX9wn9p
+	Szs5n31WXh81czR7ykJtzE//tTZJWzNl/C/c4t/IZvXFtTBrSPJES1cK/Lv+0MjZ3rDhbFQyX4PaK
+	cUtbQYzW/4pprwgPYY/eVPYtsFZoozD4F2OGQZhwadltPN2EWG0DOyQfeUHxvq5Y7As7CNdeZO8W/
+	LI6ggVKcNquabyWEDgYBs4aW2DOAMAUzLrndFr9lJqKxfcavn/5f/ESPhju2VGeGW3Z4K2rb5G8Ug
+	XhffLaHMIhP3VR27pv2jblBGnUTYuvzjeCMCzc4atnJ/W0yIwMRcrNhmOjxIfdngKOCh0iJead6Rd
+	uYNRFdJEgE1Kw0kXNU/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iV2cn-00063k-W1; Thu, 14 Nov 2019 00:04:37 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1iV3RW-0007UI-14; Thu, 14 Nov 2019 00:57:02 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iV2cY-00063E-0U
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 00:04:23 +0000
-Received: from pps.filterd (m0098420.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- xADNuS9j135154
- for <linux-arm-kernel@lists.infradead.org>; Wed, 13 Nov 2019 19:04:20 -0500
-Received: from smtp.notes.na.collabserv.com (smtp.notes.na.collabserv.com
- [192.155.248.82])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2w8utg0ce0-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 13 Nov 2019 19:04:20 -0500
-Received: from localhost
- by smtp.notes.na.collabserv.com with smtp.notes.na.collabserv.com ESMTP
- for <linux-arm-kernel@lists.infradead.org> from <miltonm@us.ibm.com>;
- Thu, 14 Nov 2019 00:04:19 -0000
-Received: from us1a3-smtp06.a3.dal06.isc4sb.com (10.146.103.243)
- by smtp.notes.na.collabserv.com (10.106.227.105) with
- smtp.notes.na.collabserv.com ESMTP; Thu, 14 Nov 2019 00:04:10 -0000
-Received: from us1a3-mail228.a3.dal06.isc4sb.com ([10.146.103.71])
- by us1a3-smtp06.a3.dal06.isc4sb.com
- with ESMTP id 2019111400040938-1142723 ;
- Thu, 14 Nov 2019 00:04:09 +0000 
-In-Reply-To: <20191113155237.30646-3-i.mikhaylov@yadro.com>
-From: "Milton Miller II" <miltonm@us.ibm.com>
-To: Ivan Mikhaylov <i.mikhaylov@yadro.com>
-Date: Thu, 14 Nov 2019 00:04:09 +0000
+ id 1iV3RO-0007TQ-4z
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 00:56:56 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id CC1238F9FB9B0664ABD0;
+ Thu, 14 Nov 2019 08:56:42 +0800 (CST)
+Received: from localhost.localdomain (10.69.192.56) by
+ DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
+ 14.3.439.0; Thu, 14 Nov 2019 08:56:36 +0800
+From: Shaokun Zhang <zhangshaokun@hisilicon.com>
+To: <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH v2] drivers/perf: hisi: Simplify hisi_read_sccl_and_ccl_id and
+ its comment
+Date: Thu, 14 Nov 2019 08:57:03 +0800
+Message-ID: <1573693023-64564-1-git-send-email-zhangshaokun@hisilicon.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Sensitivity: 
-Importance: Normal
-X-Priority: 3 (Normal)
-References: <20191113155237.30646-3-i.mikhaylov@yadro.com>,
- <20191113155237.30646-1-i.mikhaylov@yadro.com>
-X-Mailer: IBM iNotes ($HaikuForm 1054.1) | IBM Domino Build
- SCN1812108_20180501T0841_FP62 November 04, 2019 at 09:47
-X-LLNOutbound: False
-X-Disclaimed: 46159
-X-TNEFEvaluated: 1
-x-cbid: 19111400-9463-0000-0000-00000173B243
-X-IBM-SpamModules-Scores: BY=0; FL=0; FP=0; FZ=0; HX=0; KW=0; PH=0;
- SC=0.40962; ST=0; TS=0; UL=0; ISC=; MB=0.002686
-X-IBM-SpamModules-Versions: BY=3.00012103; HX=3.00000242; KW=3.00000007;
- PH=3.00000004; SC=3.00000292; SDB=6.01289727; UDB=6.00684066; IPR=6.01071925; 
- MB=3.00029520; MTD=3.00000008; XFM=3.00000015; UTC=2019-11-14 00:04:17
-X-IBM-AV-DETECTION: SAVI=unsuspicious REMOTE=unsuspicious XFE=unused
-X-IBM-AV-VERSION: SAVI=2019-11-13 22:35:31 - 6.00010644
-x-cbparentid: 19111400-9464-0000-0000-000049232CB6
-Message-Id: <OF20F73C7F.F32D5A9E-ON002584B1.00836403-002584B2.0000614A@notes.na.collabserv.com>
-Subject: Re:  [PATCH 2/2] mmc: sdhci-of-aspeed: add inversion signal presence
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-11-13_06:, , signatures=0
-X-Proofpoint-Spam-Reason: safe
+X-Originating-IP: [10.69.192.56]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_160422_173961_1C2680E8 
-X-CRM114-Status: GOOD (  12.29  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191113_165654_364537_7CA8B88F 
+X-CRM114-Status: GOOD (  11.93  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,88 +62,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
- linux-mmc@vger.kernel.org, Adrian Hunter <adrian.hunter@intel.com>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ Mark Rutland <mark.rutland@arm.com>, John Garry <john.garry@huawei.com>,
+ Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/13/2019 around 09:57AM in some time zone, Ivan Mikhaylov wrote:
->Change the default .get_cd callback. Add inverted signal card
->detection
->check.
->
->Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
->
->diff --git a/drivers/mmc/host/sdhci-of-aspeed.c
->b/drivers/mmc/host/sdhci-of-aspeed.c
->index 8962f6664381..8eded8a6ed8d 100644
->--- a/drivers/mmc/host/sdhci-of-aspeed.c
->+++ b/drivers/mmc/host/sdhci-of-aspeed.c
->@@ -31,6 +31,7 @@ struct aspeed_sdc {
-> struct aspeed_sdhci {
-> 	struct aspeed_sdc *parent;
-> 	u32 width_mask;
->+	u8 cd_inverted;
+hisi_read_sccl_and_ccl_id is not readable and its comment is a little
+confused, so simplify the function and its comment as Mark's suggestion.
 
-The mmc core/host.c checks the device tree and stores the
-result as mmc->caps2 & MMC_CAP2_CD_ACTIVE_HIGH
+Cc: John Garry <john.garry@huawei.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Suggested-by: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
+---
+ChangeLog from V2:
+    Address John's comment: remove the confusing 'Kunpeng 920' comment who
+has two types.
 
-This appears to be accessale as sdhci_host->mmc->caps2.
+ drivers/perf/hisilicon/hisi_uncore_pmu.c | 58 ++++++++++++++++++--------------
+ 1 file changed, 32 insertions(+), 26 deletions(-)
 
-Please reuse this bit like the other drivers.
-
-> };
-> 
-> static void aspeed_sdc_configure_8bit_mode(struct aspeed_sdc *sdc,
->@@ -143,6 +144,21 @@ static inline int
->aspeed_sdhci_calculate_slot(struct aspeed_sdhci *dev,
-> 	return (delta / 0x100) - 1;
-> }
-> 
->+static int aspeed_get_cd(struct mmc_host *mmc)
->+{
->+	struct aspeed_sdhci *aspeed_sdhci;
->+	struct sdhci_pltfm_host *pltfm_priv;
->+	struct sdhci_host *host = mmc_priv(mmc);
->+
->+	int presence = !!(sdhci_readl(host, SDHCI_PRESENT_STATE)
->+			 & SDHCI_CARD_PRESENT);
->+
->+	pltfm_priv = sdhci_priv(host);
->+	aspeed_sdhci = sdhci_pltfm_priv(pltfm_priv);
->+
->+	return presence ^ aspeed_sdhci->cd_inverted;
->+}
->+
-> static int aspeed_sdhci_probe(struct platform_device *pdev)
-> {
-> 	struct sdhci_pltfm_host *pltfm_host;
->@@ -183,6 +199,13 @@ static int aspeed_sdhci_probe(struct
->platform_device *pdev)
-> 		goto err_pltfm_free;
-> 	}
-> 
->+	dev->cd_inverted = 0;
->+	host->mmc_host_ops.get_cd = aspeed_get_cd;
->+	if (of_property_read_bool(pdev->dev.of_node, "cd-inverted")) {
->+		dev->cd_inverted = 1;
->+		dev_info(&pdev->dev, "aspeed: sdhci: presence signal inversion
->enabled\n");
->+	}
->+
-> 	ret = mmc_of_parse(host->mmc);
-> 	if (ret)
-> 		goto err_sdhci_add;
->-- 
->2.20.1
->
->
+diff --git a/drivers/perf/hisilicon/hisi_uncore_pmu.c b/drivers/perf/hisilicon/hisi_uncore_pmu.c
+index 96183e31b96a..584de8f807cc 100644
+--- a/drivers/perf/hisilicon/hisi_uncore_pmu.c
++++ b/drivers/perf/hisilicon/hisi_uncore_pmu.c
+@@ -337,38 +337,44 @@ void hisi_uncore_pmu_disable(struct pmu *pmu)
+ 	hisi_pmu->ops->stop_counters(hisi_pmu);
+ }
+ 
++
+ /*
+- * Read Super CPU cluster and CPU cluster ID from MPIDR_EL1.
+- * If multi-threading is supported, On Huawei Kunpeng 920 SoC whose cpu
+- * core is tsv110, CCL_ID is the low 3-bits in MPIDR[Aff2] and SCCL_ID
+- * is the upper 5-bits of Aff2 field; while for other cpu types, SCCL_ID
+- * is in MPIDR[Aff3] and CCL_ID is in MPIDR[Aff2], if not, SCCL_ID
+- * is in MPIDR[Aff2] and CCL_ID is in MPIDR[Aff1].
++ * The Super CPU Cluster (SCCL) and CPU Cluster (CCL) IDs can be
++ * determined from the MPIDR_EL1, but the encoding varies by CPU:
++ *
++ * - For MT variants of TSV110:
++ *   SCCL is Aff2[7:3], CCL is Aff2[2:0]
++ *
++ * - For other MT parts:
++ *   SCCL is Aff3[7:0], CCL is Aff2[7:0]
++ *
++ * - For non-MT parts:
++ *   SCCL is Aff2[7:0], CCL is Aff1[7:0]
+  */
+-static void hisi_read_sccl_and_ccl_id(int *sccl_id, int *ccl_id)
++static void hisi_read_sccl_and_ccl_id(int *scclp, int *cclp)
+ {
+ 	u64 mpidr = read_cpuid_mpidr();
+-
+-	if (mpidr & MPIDR_MT_BITMASK) {
+-		if (read_cpuid_part_number() == HISI_CPU_PART_TSV110) {
+-			int aff2 = MPIDR_AFFINITY_LEVEL(mpidr, 2);
+-
+-			if (sccl_id)
+-				*sccl_id = aff2 >> 3;
+-			if (ccl_id)
+-				*ccl_id = aff2 & 0x7;
+-		} else {
+-			if (sccl_id)
+-				*sccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 3);
+-			if (ccl_id)
+-				*ccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 2);
+-		}
++	int aff3 = MPIDR_AFFINITY_LEVEL(mpidr, 3);
++	int aff2 = MPIDR_AFFINITY_LEVEL(mpidr, 2);
++	int aff1 = MPIDR_AFFINITY_LEVEL(mpidr, 1);
++	bool mt = mpidr & MPIDR_MT_BITMASK;
++	int sccl, ccl;
++
++	if (mt && read_cpuid_part_number() == HISI_CPU_PART_TSV110) {
++		sccl = aff2 >> 3;
++		ccl = aff2 & 0x7;
++	} else if (mt) {
++		sccl = aff3;
++		ccl = aff2;
+ 	} else {
+-		if (sccl_id)
+-			*sccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 2);
+-		if (ccl_id)
+-			*ccl_id = MPIDR_AFFINITY_LEVEL(mpidr, 1);
++		sccl = aff2;
++		ccl = aff1;
+ 	}
++
++	if (scclp)
++		*scclp = sccl;
++	if (cclp)
++		*cclp = ccl;
+ }
+ 
+ /*
+-- 
+2.7.4
 
 
 _______________________________________________
