@@ -2,109 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 086C8FC849
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 15:01:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC7DEFC87E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 15:12:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RydPlrG79ShHIsnYYekucoYs4PytVuRYwqaF/v1wsEE=; b=NzkaWQ4StjBzGE
-	A2xWlg8cmAgQXOzVAkpIXYM0AZxesrK1x/02wtunNk17cef1q6lK8uk3td6lpsQ4cn37BFAK/Hm0N
-	gxXcNLWnTPo1KoDPsRpPMOLgdKHL+l6nkLLwZjhcNHLwwadiAftF3jITQeM/b5ctY3MVr/UJkHOce
-	n+p5TyKR744lX/NQDkoAgdFsSAYocbQLwC8gXHDAF7hqTbaw0Lcrqm5tuOToPh2q6xRzpDCEipzjd
-	LX5PcWo6Jy2hCp55yl6HebDwHYioUjMNTZIFOe7CP+HkZAN+eEYyNpRu6cHf0FiW25fSXB2UzKgC/
-	tX/JZ3v7CXpHTa9FpqBQ==;
+	List-Owner; bh=AAVvGt21IpHgCGrw37uBttsNcHr3JdcIQzQ5GI5EC6E=; b=sP3WcHZdxvISaE
+	04vsdYjYV4at41CmB9YTmS6p1yT58wKoP0wC+U1MHqycSdpgNi7U4gvgUWX86V/OUrpEqEpewR7vg
+	ysOjC30ZoARfpKVy5stOfStpbDp+9Bfju7LdSp4KZDSCjid7RXlx4ioh4i3lmdtrkc4InS62Drvqd
+	X0XN2JWDTJORgRLYiqh+MtHh3CVK1O2/lEwP5UD8ZqgncY/SYglEZZdkxflZyM7fz9prTVNQ7ODGu
+	kFScGysytok7P+KFueI1ALCQrT3beHa2IVL+eBCRfpFFlDLe6YG7g4y+OPRnuB/NfO++LTUxbZCxy
+	jO3tYR0IkJBjJCeLMyUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVFgI-00088j-Gs; Thu, 14 Nov 2019 14:01:06 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1iVFqo-0003S8-Sz; Thu, 14 Nov 2019 14:11:58 +0000
+Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVFfy-0007yL-TP; Thu, 14 Nov 2019 14:00:48 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAEE0HuM113268;
- Thu, 14 Nov 2019 08:00:17 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1573740017;
- bh=mg4UFFS2ESh3A7IuctheIaBbXKxvehMGp07JMFKAlm0=;
- h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=Mpbs4fWCHa2MujEWCR63FGFbtu7sEjAJx80a0Ie3U5gJrSh3wfAFT6V6CCCnse642
- ys+4ZwuS5AssKdj7NNk9DtoG1yhneDQGeDKK+yPRdcYOzOzy/47gmxnvex8/A/JEEJ
- O7RgDe6d2D6COjEaDcBw8754s23pS/NkxNYRndBA=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAEE0H5B116509;
- Thu, 14 Nov 2019 08:00:17 -0600
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 14
- Nov 2019 08:00:17 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 14 Nov 2019 08:00:17 -0600
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAEE0HRI130585;
- Thu, 14 Nov 2019 08:00:17 -0600
-Date: Thu, 14 Nov 2019 08:02:34 -0600
-From: Bin Liu <b-liu@ti.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH v2 05/13] usb: musb: create debugfs directory under usb
- root
-Message-ID: <20191114140234.GB5853@uda0271908>
-Mail-Followup-To: Bin Liu <b-liu@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Felipe Balbi <balbi@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Peter Chen <Peter.Chen@nxp.com>,
- Minas Harutyunyan <hminas@synopsys.com>,
- Cristian Birsan <cristian.birsan@microchip.com>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Kevin Cernekee <cernekee@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com,
- Daniel Mack <daniel@zonque.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>,
- Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Stephen Boyd <swboyd@chromium.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Colin Ian King <colin.king@canonical.com>,
- Biju Das <biju.das@bp.renesas.com>,
- Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
- Yangtao Li <tiny.windzz@gmail.com>, linux-media@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org
-References: <1573541519-28488-1-git-send-email-chunfeng.yun@mediatek.com>
- <1573541519-28488-5-git-send-email-chunfeng.yun@mediatek.com>
- <20191112152857.GA5853@uda0271908>
- <20191114032018.GA122287@kroah.com>
+ id 1iVFqg-0003R4-JR
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 14:11:51 +0000
+Received: by mail-vk1-xa42.google.com with SMTP id e205so1495097vke.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 Nov 2019 06:11:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=XSmwLWNo5Rh6fe+p8Uu7DFNnAFhXmFiTvhxWz1V+B8w=;
+ b=Zxy9Va/g5HeujT0G/Yr81ssNa+Mrn59GATo64imHO5v4yPYwyPPGs095S9yLGHZZct
+ 1hxeTUWiuBZWvi+O1vf0npeqW5PjS6EDcNVV/BuKq+FHtrEOxZldeFAkfves+9/Zc/nA
+ Jfl+7lufr0kMeZAOu4jE2erwkVZzPMxG8lpE6MQdIaqDuXXS5sdJm3+y9FiWm52EK2l3
+ WwyGBsnQjzhGRAggZDE4omJqyKpHbyv37Af0YKrpFhQbUSYZTgpsAw3qsoRhd/fdwACE
+ 5iSUjaPDvT/GCI+c4fijdDcGkjUJFX9Fldn0zizjgcTiajuBoo8z8CbjC/JqAxv7Pnw6
+ eStg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XSmwLWNo5Rh6fe+p8Uu7DFNnAFhXmFiTvhxWz1V+B8w=;
+ b=GPBUe/kHVCzkw1cd6oKRbybxa12c1rAO8W/BcXPWItIm/Zg3z2aGp9iMLgfeqOXTna
+ g94jrxffxLQqZsHF17w9JHdoPy11OypLVBOtOw7PH356q4O+B+Nrgw0RJBc9xhtTulje
+ E0wxgKKc4+amYWzhz4L2oW+eLbz5j23zxqvqhsIYw0Y9S/3Y9rnaOEaNtuVb1YPEXhEC
+ M/Y7jnSDx87QWgTEfM8IVyK8uI5HnWrCE8e/z9tm7kg7ggPOtUIy+Gnc6QLgJPMsMceA
+ keq5FxdSoEeyKaND4CGqHiEiUtiR85z0ejowlrfegJC1bk7fqAOPNL32MhCG5zcHwVGm
+ vXWQ==
+X-Gm-Message-State: APjAAAW2lgHTNB763p+7jU5JBCd9h0aNg7hqjVbxIj4AUPoiYK0HE7bS
+ Ao5WdzUB9yHNKPrvaJAFS9WqUXiJH4aKrHc5DorOov34xL8=
+X-Google-Smtp-Source: APXvYqxNH6tQ6y7J3OfkNA5oBwmBY5VTe296JKBsrF2xLv130hd/N0da6UeuSUpnmtRg4fw9qbywtQvMfesNLW0c7dc=
+X-Received: by 2002:a1f:2f51:: with SMTP id v78mr5258686vkv.101.1573740707355; 
+ Thu, 14 Nov 2019 06:11:47 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191114032018.GA122287@kroah.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <cover.1573122644.git.hns@goldelico.com>
+ <17b12e91c878dcb74160e3df5f88bc8a9e3f7fce.1573122644.git.hns@goldelico.com>
+In-Reply-To: <17b12e91c878dcb74160e3df5f88bc8a9e3f7fce.1573122644.git.hns@goldelico.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 14 Nov 2019 15:11:11 +0100
+Message-ID: <CAPDyKFpGU+tXC8thz52BQfKHNerzYSUroSihh6GpZELFm-1gRQ@mail.gmail.com>
+Subject: Re: [PATCH v3 01/12] Documentation: dt: wireless: update wl1251 for
+ sdio
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_060047_061730_B65CF226 
-X-CRM114-Status: GOOD (  17.17  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191114_061150_669670_1B2BCF6D 
+X-CRM114-Status: GOOD (  16.85  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -114,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,68 +92,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Chen <Peter.Chen@nxp.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
- Yangtao Li <tiny.windzz@gmail.com>, linux-kernel@vger.kernel.org,
- Minas Harutyunyan <hminas@synopsys.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Fabio Estevam <festevam@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>, Kevin Cernekee <cernekee@gmail.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- bcm-kernel-feedback-list@broadcom.com, NXP Linux Team <linux-imx@nxp.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Cristian Birsan <cristian.birsan@microchip.com>, linux-media@vger.kernel.org,
- Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Haojian Zhuang <haojian.zhuang@gmail.com>, Stephen Boyd <swboyd@chromium.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Biju Das <biju.das@bp.renesas.com>,
- Felipe Balbi <balbi@kernel.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-usb@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Colin Ian King <colin.king@canonical.com>, Shawn Guo <shawnguo@kernel.org>,
- Daniel Mack <daniel@zonque.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Kefeng Wang <wangkefeng.wang@huawei.com>, DTML <devicetree@vger.kernel.org>,
+ Tony Lindgren <tony@atomide.com>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, netdev <netdev@vger.kernel.org>,
+ linux-omap <linux-omap@vger.kernel.org>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, Kalle Valo <kvalo@codeaurora.org>,
+ Petr Mladek <pmladek@suse.com>,
+ =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, Rob Herring <robh+dt@kernel.org>,
+ John Stultz <john.stultz@linaro.org>, David Sterba <dsterba@suse.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+ Allison Randal <allison@lohutok.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>, kernel@pyra-handheld.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 14, 2019 at 11:20:18AM +0800, Greg Kroah-Hartman wrote:
-> On Tue, Nov 12, 2019 at 09:28:57AM -0600, Bin Liu wrote:
-> > Hi,
-> > 
-> > On Tue, Nov 12, 2019 at 02:51:51PM +0800, Chunfeng Yun wrote:
-> > > Now the USB gadget subsystem can use the USB debugfs root directory,
-> > > so move musb's directory from the root of the debugfs filesystem into
-> > > the root of usb
-> > 
-> > My opinion is this move is unnecessary. I breaks existing debug tools or
-> > documentation which is already published on Internet. 
-> 
-> Having a "root" directory for a single random driver seems like you are
-> making your driver a "very important" thing in the overall scheme of the
-> kernel, right?  What's wrong with using the usb subdirectory like all
+On Thu, 7 Nov 2019 at 11:32, H. Nikolaus Schaller <hns@goldelico.com> wrote:
+>
+> The standard method for sdio devices connected to
+> an sdio interface is to define them as a child node
+> like we can see with wlcore.
+>
+> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
+> Acked-by: Kalle Valo <kvalo@codeaurora.org>
+> ---
+>  .../bindings/net/wireless/ti,wl1251.txt       | 26 +++++++++++++++++++
+>  1 file changed, 26 insertions(+)
+>
+> diff --git a/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt b/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
+> index bb2fcde6f7ff..f38950560982 100644
+> --- a/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
+> +++ b/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
+> @@ -35,3 +35,29 @@ Examples:
+>                 ti,power-gpio = <&gpio3 23 GPIO_ACTIVE_HIGH>; /* 87 */
+>         };
+>  };
+> +
+> +&mmc3 {
+> +       vmmc-supply = <&wlan_en>;
+> +
+> +       bus-width = <4>;
+> +       non-removable;
+> +       ti,non-removable;
+> +       cap-power-off-card;
+> +
+> +       pinctrl-names = "default";
+> +       pinctrl-0 = <&mmc3_pins>;
+> +
+> +       #address-cells = <1>;
+> +       #size-cells = <0>;
+> +
+> +       wlan: wifi@1 {
+> +               compatible = "ti,wl1251";
+> +
+> +               reg = <1>;
+> +
+> +               interrupt-parent = <&gpio1>;
+> +               interrupts = <21 IRQ_TYPE_LEVEL_HIGH>;  /* GPIO_21 */
+> +
+> +               ti,wl1251-has-eeprom;
+> +       };
+> +};
 
-Agree, it wasn't the right thing to do at the first place. But now
-changing it adds support burden, because people very often refer to the
-old information on the internet which no longer matches to the new
-location. Basically, it is a cost of ABI change.
+One minor thing, the "ti,power-gpio" is not required anymore, as it's
+not needed for the SDIO case for pandora.
 
-> other USB drivers use (after this patch series is merged)?  That feels
-> like a much more "sane" way to handle the wide-open debugfs namespace.
+Please move it to an option section.
 
-Though I commented on this musb patch, my opinion is for this whole
-series, either drop the whole series or apply the whole series.
-
-> Yes, there are no rules when it comes to debugfs file names and
-> locations, but let's try to be sane please.
-
-Fine with me. I can still support questions such as "can't open
-/sys/kernel/debug/musb-hdrc.0/testmode: No such file or directory".
-
--Bin.
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
