@@ -2,84 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 745B4FCBA9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 18:18:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB805FCBAA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 18:19:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1UGLx4p1R/znJPWbDNJYaes+YY/KUWd5TL9B094GZUs=; b=HG4sO+k4Lop/1H
-	E1tkIVhV9h7T1bWe93oDBcHK8jEZNjGILwviAe3qGDZdpfaraSPX/nmwKS96OCFSfyv88ujrsgHf/
-	XS6LD/K4S5M+U9O8M2xZzR9QFNK+rN4uTlTTvqFNEY1+sVMbz4QjIR2Loxpy+dATr4rXoBKA4iqN5
-	uNmDn1rla9zI7hHWDx9+k4+D0e9YcERGpqZCzHmcMgVyMc4cYC2nqqOJfHl6FD8d7SET+WmTiCH5c
-	/pJUo/tJ52ktg7ASQW6flYemEw9YLDFPrGPc5iuVEiNq6KR7T4cFxlqsEw5/35ZUV2ZGxCgSUnDfS
-	vTVpiRaa3F+OIvhwIKXg==;
+	List-Owner; bh=GHh4y/Hr5wPFul6odTIS8jD75UkCP7I2N5Xhyu9qtnE=; b=c76pOUymML7GH5
+	SPmTf6L+KlXaiiHgjloF9Fc5hiBuvmuQwMV5vq+Ndd77OKaZgLZM/cMTCzolNP3QZnh3/f9+2lGwy
+	KcxbVNps/ChjpUlyKldWR7WEeDalMqC/96q9uOAQ3/qmSw0VWjPDvSN3EAaECRfBigkpRrQVg4c0i
+	Ql4Ag6SHsiW74LHU6H/J6pMFqmFEae7eOTCWXCieW8emKZ2O7vqmd1KmrFyBgo0KlNJGoaPAuNV0m
+	7oc70hg4n90ppak0khbXxRzCneDIPAxajNvPHwtNk++gLeArb9erTS2qwjsBDGD0Fg+HPSLX+JtGx
+	BThwHgtk4MGExfRJBQ/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVIlf-0001AX-0q; Thu, 14 Nov 2019 17:18:51 +0000
-Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1iVIlu-0001MT-St; Thu, 14 Nov 2019 17:19:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVIlS-000190-6N
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 17:18:39 +0000
-Received: by mail-il1-x142.google.com with SMTP id d83so6022296ilk.7
+ id 1iVIla-0001FW-TE
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 17:18:48 +0000
+Received: from mail-qk1-f169.google.com (mail-qk1-f169.google.com
+ [209.85.222.169])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4D15A2072C
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 09:18:35 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=f7reOlZqp6iwOkryxtYw5chswKvS9lLb7R9DbAzTcdk=;
- b=eBH4zUytcqB2NJQGehzzUs2Rd8EkW1/vxYlqC2L1UhI9UXREEztWk4LW3tOac5cCul
- VkgqPmE8y3rgdKmYdRu2B+ZExAu1qQI0a7dfWcrG3T6FDR2B1jWFizO5cJKEGw6SwRCF
- 8gbh/Iapie7nE1gbggHz9xRcC1TibRz8Bkyb8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=f7reOlZqp6iwOkryxtYw5chswKvS9lLb7R9DbAzTcdk=;
- b=KW0/+kSc0LglvE6W7Ievy0mUIL0QNluQoVhVoUzCA3OjUcyLZ7UhTNyiS8DjWRu7Rg
- aw3VSVrOtKwdtS3j5uFfzgmTW2vU4qJUDCE2ieSpSIxwTM3FQzH/91x71N+k+cf3e0sU
- 8w61wOi6Jv98iwtm7wrVfCtWcZnsGyrLtoT16eV3lqVPt6RYY3nwqE2tl0DmM3/foQAf
- mZFT6UtY+hRfgtF+3NktFEZVKtoOqPBizKw2I+VlKm9bHqn/YPS+CUH7VriJSG5W5kkK
- gPxJyK0E2+vUyGhJ06PSrAEdgt7gDmHRxz3icKEsorY1woeFd++00ZLtKr2hcxsFRRId
- OSTA==
-X-Gm-Message-State: APjAAAWyZaQ+lSP+y+jz68Fz3DeP44jjO00hYfQ2OtbSWVq1FbwFiRSz
- UbnEiPo/QhihxdLRxK9kp9X/4jJDlPY=
-X-Google-Smtp-Source: APXvYqwhQuwMqArlYjZz800euFBSK35gOe7BEfLWXYGS1mQ+MONCpC4/U6VIvioqBA0DRmno6JPhRQ==
-X-Received: by 2002:a92:1613:: with SMTP id r19mr10918577ill.10.1573751914244; 
- Thu, 14 Nov 2019 09:18:34 -0800 (PST)
-Received: from mail-io1-f42.google.com (mail-io1-f42.google.com.
- [209.85.166.42])
- by smtp.gmail.com with ESMTPSA id f25sm820271ila.71.2019.11.14.09.18.33
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 14 Nov 2019 09:18:33 -0800 (PST)
-Received: by mail-io1-f42.google.com with SMTP id q83so7718745iod.1
+ Thu, 14 Nov 2019 17:18:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573751925;
+ bh=ocz46gTCP/NUGPTiVuVJqGTutFbDRHy1wr+ZIMUnIJY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=FEltqMdfOa5s52eVq2HDJrCWY63pFr+eHadBHw1DVPLEAbhcAhRYFLbOR4NBVLJOA
+ U6JM/AfIJ9xq46+VbVjsuRKMHAsC4jkyCbI2duqLtUcj+iTIWEqphmPj10YvKLY7qM
+ j6fMRfMgAtoWRJIXpIcU0JimN8FIb592KhgMDKjw=
+Received: by mail-qk1-f169.google.com with SMTP id 71so5671868qkl.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 09:18:33 -0800 (PST)
-X-Received: by 2002:a6b:a0c:: with SMTP id z12mr124697ioi.142.1573751912819;
- Thu, 14 Nov 2019 09:18:32 -0800 (PST)
+ Thu, 14 Nov 2019 09:18:45 -0800 (PST)
+X-Gm-Message-State: APjAAAUsEn+v37C4Rbv/ni2tCPgr8WDSnbQA5N5+//cPBVpn7CfvJHTC
+ ocjBj7KZUEUNLIc9fj5xg1BNr7/ExOrMDygwHw==
+X-Google-Smtp-Source: APXvYqydolbw7U1IFwsmCdguELeny4+5hB8lSGa1lqgOoHuaINM81p54+J/thh41N+0dOQJlAExq8K8modx+6jO6l6Y=
+X-Received: by 2002:a37:30b:: with SMTP id 11mr8607360qkd.254.1573751924338;
+ Thu, 14 Nov 2019 09:18:44 -0800 (PST)
 MIME-Version: 1.0
-References: <20191112004700.185304-1-abhishekpandit@chromium.org>
- <3639233.d3cbfcQTlM@phil>
-In-Reply-To: <3639233.d3cbfcQTlM@phil>
-From: Doug Anderson <dianders@chromium.org>
-Date: Thu, 14 Nov 2019 09:18:19 -0800
-X-Gmail-Original-Message-ID: <CAD=FV=Vkto_n2sBSJSvDhoA3scdeW+OROP4geyUrhjnvn6meMQ@mail.gmail.com>
-Message-ID: <CAD=FV=Vkto_n2sBSJSvDhoA3scdeW+OROP4geyUrhjnvn6meMQ@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: rockchip: Add brcm bluetooth for rk3288-veyron
-To: Heiko Stuebner <heiko@sntech.de>
+References: <20191114164104.22782-1-alexandre.torgue@st.com>
+In-Reply-To: <20191114164104.22782-1-alexandre.torgue@st.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 14 Nov 2019 11:18:31 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqKJZwJ0MyRp37Y-F0ujPdVEKARd8qcUCN1xmawpkiffLg@mail.gmail.com>
+Message-ID: <CAL_JsqKJZwJ0MyRp37Y-F0ujPdVEKARd8qcUCN1xmawpkiffLg@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: interrupt-controller: Convert stm32-exti to
+ json-schema
+To: Alexandre Torgue <alexandre.torgue@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_091838_236074_5AA1F74B 
-X-CRM114-Status: GOOD (  18.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191114_091847_042571_7DBE9C71 
+X-CRM114-Status: GOOD (  21.50  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -101,81 +86,180 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, linux-bluetooth@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>,
- Abhishek Pandit-Subedi <abhishekpandit@chromium.org>,
- Matthias Kaehlcke <mka@chromium.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-stm32@st-md-mailman.stormreply.com,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Thu, Nov 14, 2019 at 5:45 AM Heiko Stuebner <heiko@sntech.de> wrote:
+On Thu, Nov 14, 2019 at 10:41 AM Alexandre Torgue
+<alexandre.torgue@st.com> wrote:
 >
-> Hi,
+> Convert the STM32 external interrupt controller (EXTI) binding to DT
+> schema format using json-schema.
 >
-> Am Dienstag, 12. November 2019, 01:47:00 CET schrieb Abhishek Pandit-Subedi:
-> > This enables the Broadcom uart bluetooth driver on uart0 and gives it
-> > ownership of its gpios. In order to use this, you must enable the
-> > following kconfig options:
-> > - CONFIG_BT_HCIUART_BCM
-> > - CONFIG_SERIAL_DEV
-> >
-> > This is applicable to rk3288-veyron series boards that use the bcm43540
-> > wifi+bt chips.
-> >
-> > As part of this change, also refactor the pinctrl across the various
-> > boards. All the boards using broadcom bluetooth shouldn't touch the
-> > bt_dev_wake pin.
-> >
-> > Signed-off-by: Abhishek Pandit-Subedi <abhishekpandit@chromium.org>
+> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+> ---
 >
-> looks good to me
-> @dianders: does this look ok to you too?
+> Hi Rob,
+>
+> I planned to use "additionalProperties: false" for this schema but as I add a
+> property under condition, I got an error (property added under contion seems
+> to be detected as an "additional" property and then error is raised).
+>
+> Is there a way to fix that ?
 
-Yes, but it's not ready to land yet.  Specifically the bindings are
-still being discussed [1].  Abhishek: you should probably add
-information about the fact that the bindings need to land first to
-your Commit-notes.  When the bindings land I'm happy to add my
-Reviewed-by.
+See below.
 
-For history, +Matthias and I both did an early review of this [2].
-Compared to that version the only diffs here (other than merge
-conflicts) are:
+>
+> regards
+> Alex
+>
+> diff --git a/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.txt b/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.txt
+> deleted file mode 100644
+> index cd01b2292ec6..000000000000
+> --- a/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.txt
+> +++ /dev/null
+> @@ -1,29 +0,0 @@
+> -STM32 External Interrupt Controller
+> -
+> -Required properties:
+> -
+> -- compatible: Should be:
+> -    "st,stm32-exti"
+> -    "st,stm32h7-exti"
+> -    "st,stm32mp1-exti"
+> -- reg: Specifies base physical address and size of the registers
+> -- interrupt-controller: Indentifies the node as an interrupt controller
+> -- #interrupt-cells: Specifies the number of cells to encode an interrupt
+> -  specifier, shall be 2
+> -- interrupts: interrupts references to primary interrupt controller
+> -  (only needed for exti controller with multiple exti under
+> -  same parent interrupt: st,stm32-exti and st,stm32h7-exti)
+> -
+> -Optional properties:
+> -
+> -- hwlocks: reference to a phandle of a hardware spinlock provider node.
+> -
+> -Example:
+> -
+> -exti: interrupt-controller@40013c00 {
+> -       compatible = "st,stm32-exti";
+> -       interrupt-controller;
+> -       #interrupt-cells = <2>;
+> -       reg = <0x40013C00 0x400>;
+> -       interrupts = <1>, <2>, <3>, <6>, <7>, <8>, <9>, <10>, <23>, <40>, <41>, <42>, <62>, <76>;
+> -};
+> diff --git a/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.yaml b/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.yaml
+> new file mode 100644
+> index 000000000000..39be37e1e532
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.yaml
+> @@ -0,0 +1,82 @@
+> +# SPDX-License-Identifier: GPL-2.0
 
--               pcm-parameters          = [01 02 00 01 01 00 00 00 00 00];
+If ST has copyright on the old binding, can you add BSD here.
 
-+
-+               brcm,bt-sco-routing     = [01];
-+               brcm,pcm-interface-rate = [02];
-+               brcm,pcm-sync-mode      = [01];
-+               brcm,pcm-clock-mode     = [01];
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/interrupt-controller/st,stm32-exti.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: STM32 External Interrupt Controller Device Tree Bindings
+> +
+> +maintainers:
+> +  - Alexandre Torgue <alexandre.torgue@st.com>
+> +  - Ludovic Barre <ludovic.barre@st.com>
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - items:
+> +        - enum:
+> +          - st,stm32-exti
+> +          - st,stm32h7-exti
+> +      - items:
+> +        - enum:
+> +          - st,stm32mp1-exti
+> +        - const: syscon
+> +
+> +  "#interrupt-cells":
+> +    const: 2
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupt-controller: true
+> +
+> +  hwlocks:
+> +    maxItems: 1
+> +    description:
+> +      Reference to a phandle of a hardware spinlock provider node.
+> +
+> +required:
+> +  - "#interrupt-cells"
+> +  - compatible
+> +  - reg
+> +  - interrupt-controller
+> +
+> +allOf:
+> +  - $ref: /schemas/interrupt-controller.yaml#
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - st,stm32-exti
+> +              - st,stm32h7-exti
+> +    then:
+> +      properties:
+> +        interrupts:
+> +          allOf:
+> +            - $ref: /schemas/types.yaml#/definitions/uint32-array
 
+Standard property, doesn't need a type. You just need 'maxItems' or an
+'items' list if the index is not meaningful. This appears to be the
+former case.
 
-> Just to confirm, I guess mickey and brain do not have the suspend_l pin
-> settings? [They only seem to get the default pinctrl state but not the
-> sleep state in @pinctrl]
+> +          description:
+> +            Interrupts references to primary interrupt controller
+> +      required:
+> +        - interrupts
 
-The suspend_l pin just goes to the EC and lets the EC know that we're
-in suspend.  I know for sure mickey has no EC.  I'd believe the same
-to be true of brain, though perhaps you and +Alexandru are the only
-two people with working brains?  I know I don't have one, as can be
-evidenced by some of the stupid things I do.  :-P  I would also note
-that this CL doesn't change whether or not mickey/brain control
-suspend_l.  They used to inherit from 'rk3288-veyron.dtsi' which
-didn't define it.
+You can move the definition to the main section as you only need
+'required' here. That should fix your additionalProperties issue.
 
-[1] https://lore.kernel.org/r/20191112230944.48716-5-abhishekpandit@chromium.org
-[2] https://crrev.com/c/1772261
+In hindsight, the mp1 case probably should have used interrupt-map.
 
--Doug
+> +
+> +examples:
+> +  - |
+> +    //Example 1
+> +    exti1: interrupt-controller@5000d000 {
+> +        compatible = "st,stm32mp1-exti", "syscon";
+> +        interrupt-controller;
+> +        #interrupt-cells = <2>;
+> +        reg = <0x5000d000 0x400>;
+> +    };
+> +
+> +    //Example 2
+> +    exti2: interrupt-controller@40013c00 {
+> +        compatible = "st,stm32-exti";
+> +        interrupt-controller;
+> +        #interrupt-cells = <2>;
+> +        reg = <0x40013C00 0x400>;
+> +        interrupts = <1>, <2>, <3>, <6>, <7>, <8>, <9>, <10>, <23>, <40>, <41>, <42>, <62>, <76>;
+> +    };
+> +
+> +...
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
