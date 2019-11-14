@@ -2,63 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 592ABFCDBA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 19:35:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C0B2FCE85
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 20:12:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=PkVXMbX/w5LNsml7p1+HihFzZIGdQsVkenCE7JtHsQw=; b=QTdAING+C88jknaq2vyQ+KSsdK
-	apdym+Zn9maN1DruJ08auIG2SdE6u8O2jHIcSqj1IGY9pCZ6eFWeoZcLVuHntG+waDsON6+LpIxch
-	8JKgua9DIAFGyMPUqLoRlSxDq4RxMzFN21MCuJvE4GSmO6EjZUGdU8hVtUcUZ91fWSLsahSOQLU8l
-	iMS7Emef4R94CJNnTNhdkxIzmZ4yZVIltMrx80p/kJdTNAxclt+lH7DFAy/I5bQqcxaAM9ftZdhcj
-	MCjVjNtdC4wD7sbtoeHADhLaOWyQh46xPE0xLTnq9+nD8uW12GpJFaSOK7U5yqULc2b3p1LSiKXSv
-	WP7NTGYA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eiPTPbs7y0oWV188WKJEKKgeLTYh70hm02gYP14Mmww=; b=P95ftgq7PkStCR
+	4tlZi04VQ7FweclibytI2r8w+5MMyS+XtbFzS8MlvjjpPvhL+Fg7D8sZEf22KIMYgiAIJXcGQR8cZ
+	r90lvbDX+2uoWL3pg6ctw6/tZuxQPVpNDd982Ethskl8W+pxTXPLyQgFWKLsH2IkrIs8tqSaYTSpG
+	FMny7PGjsbzudnTJIPA2QQOE0SpIgDFJmKnWZRo2AtL8HnqFFwKt2PZoXct9rnZ1GpclG2oKGPqFB
+	AOF5bSkQ4R4X1f8ExAo8BnG291lu3p0F3x6H/mOEMSDRBJYf62wMTcEE/jVxx+R9GeOwudHVmi9o3
+	Fj4ojiW3xu2/zvp2T5dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVJxa-0004di-4x; Thu, 14 Nov 2019 18:35:14 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1iVKXX-0001E0-PZ; Thu, 14 Nov 2019 19:12:23 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVJw0-0003V1-Bt
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 18:33:38 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id EAD8020007B;
- Thu, 14 Nov 2019 19:33:34 +0100 (CET)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CDD7F20005A;
- Thu, 14 Nov 2019 19:33:34 +0100 (CET)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 8D607205D5;
- Thu, 14 Nov 2019 19:33:33 +0100 (CET)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Chanwoo Choi <cw00.choi@samsung.com>, Stephen Boyd <sboyd@kernel.org>,
- Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v6 5/5] arm64: dts: imx8m: Add ddr controller nodes
-Date: Thu, 14 Nov 2019 20:33:22 +0200
-Message-Id: <8dc6436a9dfdf1c1fac37c4de1533c68ccd7015e.1573756360.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1573756360.git.leonard.crestez@nxp.com>
-References: <cover.1573756360.git.leonard.crestez@nxp.com>
-In-Reply-To: <cover.1573756360.git.leonard.crestez@nxp.com>
-References: <cover.1573756360.git.leonard.crestez@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iVKXM-0001DK-5A
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 19:12:13 +0000
+Received: by mail-ot1-f67.google.com with SMTP id z25so5856276oti.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 Nov 2019 11:12:11 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=+C86HU47Ruq8ie43k/9gRtCKU5MxuhIIqhntEz1NPZQ=;
+ b=cLXJyRdtvWvgh8EjI4x9cz59QqKybkdvDcQ7IG0zZ2tjE8CixYjgG7pOLwt/WIR+xq
+ qyAIFvVRjfyTcDOCviEhooRN7Gf1Ms3BVhCWEUZT+0Enz/gx6R+jq5OHzi4hgq4eJeyU
+ rLjOmvdBXixoPIw226Vjq3TJeuHNt5foKew7WtWTLKWFmMgXPImL3izjnu9c+uaMfjhB
+ d/1cudbgqTaWsr2cWo0z1sV8IYpJYiVIlmectjToyJwZs35W25Q8rd/oDyf69fwuEXaZ
+ 2F+ltgp0/FpojCotYjaXY/hrfXDf4PVCZIPgGsUZlozqBC5thivUPCUIqO7meM2KDvyI
+ 05ig==
+X-Gm-Message-State: APjAAAVLT9OjnsF2p4G0RFrurtrHOz2slWdGMb6frcneCGnH87ENXIzg
+ VfPvZ8SlHHnNg/TauL9RXg==
+X-Google-Smtp-Source: APXvYqyK9IS1/37lWqaHxvuWrpHCJsZDLpbEJyl9jVccb1gWuKI2tXRvRTaUMaR3uOkMFMa/eX1sYQ==
+X-Received: by 2002:a9d:5e1a:: with SMTP id d26mr7845139oti.96.1573758731278; 
+ Thu, 14 Nov 2019 11:12:11 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id s66sm2140530otb.65.2019.11.14.11.12.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 14 Nov 2019 11:12:10 -0800 (PST)
+Date: Thu, 14 Nov 2019 13:12:10 -0600
+From: Rob Herring <robh@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH V2 4/4] dt-bindings: arm: imx: Add the i.MX6SLL-EVK Rev-A
+ board
+Message-ID: <20191114191210.GA4324@bogus>
+References: <1573435732-30361-1-git-send-email-Anson.Huang@nxp.com>
+ <1573435732-30361-4-git-send-email-Anson.Huang@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1573435732-30361-4-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_103336_745891_937D3DD6 
-X-CRM114-Status: GOOD (  11.35  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191114_111212_195747_62D4A0CD 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,228 +94,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-clk@vger.kernel.org,
- MyungJoo Ham <myungjoo.ham@samsung.com>, linux-imx@nxp.com,
- devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Kepplinger <martink@posteo.de>,
- Silvano di Ninno <silvano.dininno@nxp.com>,
- linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, andrew.smirnov@gmail.com,
+ shawnguo@kernel.org, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ marcel.ziswiler@toradex.com, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, manivannan.sadhasivam@linaro.org, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is used by the imx-ddrc devfreq driver to implement dynamic
-frequency scaling of DRAM.
+On Mon, 11 Nov 2019 09:28:52 +0800, Anson Huang wrote:
+> Add board binding for i.MX6SLL-EVK Rev-A board.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+> No changes.
+> ---
+>  Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
+>  1 file changed, 1 insertion(+)
+> 
 
-Support for proactive scaling via interconnect will come later. The
-high-performance bus masters which need that (display, vpu, gpu) are
-mostly not yet enabled in upstream anyway.
-
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
----
- arch/arm64/boot/dts/freescale/imx8mm-evk.dts  | 18 ++++++++++++++
- arch/arm64/boot/dts/freescale/imx8mm.dtsi     | 10 ++++++++
- .../boot/dts/freescale/imx8mn-ddr4-evk.dts    | 18 ++++++++++++++
- arch/arm64/boot/dts/freescale/imx8mn.dtsi     | 10 ++++++++
- arch/arm64/boot/dts/freescale/imx8mq-evk.dts  | 24 +++++++++++++++++++
- arch/arm64/boot/dts/freescale/imx8mq.dtsi     | 10 ++++++++
- 6 files changed, 90 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-index 28ab17a277bb..ecf0d385c164 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-@@ -75,10 +75,28 @@
- 
- &A53_0 {
- 	cpu-supply = <&buck2_reg>;
- };
- 
-+&ddrc {
-+	operating-points-v2 = <&ddrc_opp_table>;
-+
-+	ddrc_opp_table: opp-table {
-+		compatible = "operating-points-v2";
-+
-+		opp-25M {
-+			opp-hz = /bits/ 64 <25000000>;
-+		};
-+		opp-100M {
-+			opp-hz = /bits/ 64 <100000000>;
-+		};
-+		opp-750M {
-+			opp-hz = /bits/ 64 <750000000>;
-+		};
-+	};
-+};
-+
- &fec1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_fec1>;
- 	phy-mode = "rgmii-id";
- 	phy-handle = <&ethphy0>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 6edbdfe2d0d7..3d4802375715 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -856,10 +856,20 @@
- 			#interrupt-cells = <3>;
- 			interrupt-controller;
- 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
- 		};
- 
-+		ddrc: memory-controller@3d400000 {
-+			compatible = "fsl,imx8mm-ddrc", "fsl,imx8m-ddrc";
-+			reg = <0x3d400000 0x400000>;
-+			clock-names = "core", "pll", "alt", "apb";
-+			clocks = <&clk IMX8MM_CLK_DRAM_CORE>,
-+				 <&clk IMX8MM_DRAM_PLL>,
-+				 <&clk IMX8MM_CLK_DRAM_ALT>,
-+				 <&clk IMX8MM_CLK_DRAM_APB>;
-+		};
-+
- 		ddr-pmu@3d800000 {
- 			compatible = "fsl,imx8mm-ddr-pmu", "fsl,imx8m-ddr-pmu";
- 			reg = <0x3d800000 0x400000>;
- 			interrupt-parent = <&gic>;
- 			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
-index 071949412caf..b051c927c11e 100644
---- a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
-@@ -15,10 +15,28 @@
- 
- &A53_0 {
- 	cpu-supply = <&buck2_reg>;
- };
- 
-+&ddrc {
-+	operating-points-v2 = <&ddrc_opp_table>;
-+
-+	ddrc_opp_table: opp-table {
-+		compatible = "operating-points-v2";
-+
-+		opp-25M {
-+			opp-hz = /bits/ 64 <25000000>;
-+		};
-+		opp-100M {
-+			opp-hz = /bits/ 64 <100000000>;
-+		};
-+		opp-600M {
-+			opp-hz = /bits/ 64 <600000000>;
-+		};
-+	};
-+};
-+
- &i2c1 {
- 	pmic@4b {
- 		compatible = "rohm,bd71847";
- 		reg = <0x4b>;
- 		pinctrl-0 = <&pinctrl_pmic>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-index e91625063f8e..3a79fdddc72b 100644
---- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-@@ -757,10 +757,20 @@
- 			#interrupt-cells = <3>;
- 			interrupt-controller;
- 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
- 		};
- 
-+		ddrc: memory-controller@3d400000 {
-+			compatible = "fsl,imx8mn-ddrc", "fsl,imx8m-ddrc";
-+			reg = <0x3d400000 0x400000>;
-+			clock-names = "core", "pll", "alt", "apb";
-+			clocks = <&clk IMX8MN_CLK_DRAM_CORE>,
-+				 <&clk IMX8MN_DRAM_PLL>,
-+				 <&clk IMX8MN_CLK_DRAM_ALT>,
-+				 <&clk IMX8MN_CLK_DRAM_APB>;
-+		};
-+
- 		ddr-pmu@3d800000 {
- 			compatible = "fsl,imx8mn-ddr-pmu", "fsl,imx8m-ddr-pmu";
- 			reg = <0x3d800000 0x400000>;
- 			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
- 		};
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq-evk.dts b/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
-index c36685916683..ee6dc5f07622 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
-@@ -103,10 +103,34 @@
- 
- &A53_3 {
- 	cpu-supply = <&buck2_reg>;
- };
- 
-+&ddrc {
-+	operating-points-v2 = <&ddrc_opp_table>;
-+
-+	ddrc_opp_table: opp-table {
-+		compatible = "operating-points-v2";
-+
-+		opp-25M {
-+			opp-hz = /bits/ 64 <25000000>;
-+		};
-+		opp-100M {
-+			opp-hz = /bits/ 64 <100000000>;
-+		};
-+		/*
-+		 * On imx8mq B0 PLL can't be bypassed so low bus is 166M
-+		 */
-+		opp-166M {
-+			opp-hz = /bits/ 64 <166935483>;
-+		};
-+		opp-800M {
-+			opp-hz = /bits/ 64 <800000000>;
-+		};
-+	};
-+};
-+
- &fec1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_fec1>;
- 	phy-mode = "rgmii-id";
- 	phy-handle = <&ethphy0>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-index 7f9319452b58..d1fcf9887f8b 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -1111,10 +1111,20 @@
- 			interrupt-controller;
- 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
- 			interrupt-parent = <&gic>;
- 		};
- 
-+		ddrc: memory-controller@3d400000 {
-+			compatible = "fsl,imx8mq-ddrc", "fsl,imx8m-ddrc";
-+			reg = <0x3d400000 0x400000>;
-+			clock-names = "core", "pll", "alt", "apb";
-+			clocks = <&clk IMX8MQ_CLK_DRAM_CORE>,
-+				 <&clk IMX8MQ_DRAM_PLL_OUT>,
-+				 <&clk IMX8MQ_CLK_DRAM_ALT>,
-+				 <&clk IMX8MQ_CLK_DRAM_APB>;
-+		};
-+
- 		ddr-pmu@3d800000 {
- 			compatible = "fsl,imx8mq-ddr-pmu", "fsl,imx8m-ddr-pmu";
- 			reg = <0x3d800000 0x400000>;
- 			interrupt-parent = <&gic>;
- 			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
--- 
-2.17.1
-
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
