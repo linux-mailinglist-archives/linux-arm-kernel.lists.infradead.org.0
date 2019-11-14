@@ -2,77 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49FBBFBDF2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 03:34:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2343FBE43
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 04:20:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qe+ZzKTlpuETio4xXu5n8BEQ0M+ZreD9UtbMAbwjlOI=; b=OmVTbC/blgJeMr
-	F8nvjqtXfzaCgdBFjhE7ihEJxH9H/GZh6IgJFA5yBnCZRBAEb2y1uk05FgAT5NCW4R1tGhTU/X56C
-	mhSvWTPn+n9KCoQZotXPmyyy8elR8zvW0/ZKbmw1ciFBa6IEm1X/aWx2lROSYYIqijdRrT70vDK/h
-	q3vdiT0xDGze+UJQT5zzqHYciEggR9opl92Q941M8KmpjRpfJx8vOusfspbAMKB7+OM5DpFSX6sdU
-	aWEeBmMjZvKKgZmUbgTuVwNa1aKNNh2ceGLux0MxpSrW8ORarZKjRdVsWB/oF0E210Ja+7FNWMek0
-	QQp30PbkuzKqZyBGjOYA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5ZIODpDfaTpRnCLYZ+Nop4taTZI0uz6VhAt8SXvdWls=; b=eDp1/ny2hv1Y4s
+	Qg8SDmmlNXWkLcMepeiHbaV89WdK/IR6LEyXBPUU/bdL/Q070DHI8HttV7b1ICW3FBbWOT2DAKtHk
+	c7s8X4+q1b6DR3H/cOH1roiwha6+zSG6CcfVk1Rrz8jUOzY/MpzN6Ttx6dJ7FONu0SLM+xeG2Xwpj
+	uZB6/mQ7wK6KaB9knzN3+g87Qv6AOi8M/zhIBrBvgIXylWIDmdOPekSHWKsoSTqGCcbTSsaTtRCck
+	GmJytd13RQmnwAhNdzAl87b7kJtBjt/PDAT+gS80TCIVWqPnRY8Doli/rMu2XVZelGHgeSyXzOmsb
+	3GglPM8u55z/bt05Xmgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iV4xG-0002As-BG; Thu, 14 Nov 2019 02:33:54 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iV5gM-0001u0-7T; Thu, 14 Nov 2019 03:20:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iV4x5-00029u-IA; Thu, 14 Nov 2019 02:33:45 +0000
-X-UUID: 4dd235c4d2234f9299126564d22a0cb4-20191113
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=jdpcBWc7HBlDBSHQj9W7l/lAc9ZUoty9ehXTUgWCTGw=; 
- b=DE1IpPyBL+mC1m1knTLKZFTpztGf8k13sLrkBIVTY6cyZX7Le3W/Huc0mCBlTe82eBmGGdmRI5p6xCcEzGIWGgk0rWP47CbEBZXXM86lDwTe2Kf1M/dQ7CGelnvi8/9ZPZkvSYG2hjOKWWyv05Lh/pAkHSveOOjHJTh2Q9HLqt0=;
-X-UUID: 4dd235c4d2234f9299126564d22a0cb4-20191113
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 759150441; Wed, 13 Nov 2019 18:33:30 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 13 Nov 2019 18:33:30 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 14 Nov 2019 10:33:21 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 14 Nov 2019 10:33:20 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Tianping Fang <tianping.fang@mediatek.com>
-Subject: [RFC PATCH] usb: mtu3: fix random remote wakeup
-Date: Thu, 14 Nov 2019 10:33:11 +0800
-Message-ID: <1573698791-24310-1-git-send-email-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
+ id 1iV5gE-0001t4-Ap; Thu, 14 Nov 2019 03:20:23 +0000
+Received: from localhost (unknown [124.219.31.93])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CBE25206F3;
+ Thu, 14 Nov 2019 03:20:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573701621;
+ bh=OtP6MQL/9zqWPLBJmcEhDTenHXMX6HLpeiVYH4UmMDE=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=gQLXWXktL91SJAhfZP1kDUlvFwg3yUAhxTlw3gEyBZm+csv1Fe3nn+RAgRYOGy8zH
+ MrSA9ov5qkWicZMsu5PnaUDmANrLHTjaP2NrEUP2gsBQBdTLLG9FbXwLZ1HPjT/uxn
+ CEEBcRjEjnPcIOLb6WihxH/e2FQ07IVp9PbR/Az4=
+Date: Thu, 14 Nov 2019 11:20:18 +0800
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Bin Liu <b-liu@ti.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Felipe Balbi <balbi@kernel.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Peter Chen <Peter.Chen@nxp.com>, Minas Harutyunyan <hminas@synopsys.com>,
+ Cristian Birsan <cristian.birsan@microchip.com>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Kevin Cernekee <cernekee@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, Daniel Mack <daniel@zonque.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Stephen Boyd <swboyd@chromium.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ Biju Das <biju.das@bp.renesas.com>,
+ Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, linux-media@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org
+Subject: Re: [PATCH v2 05/13] usb: musb: create debugfs directory under usb
+ root
+Message-ID: <20191114032018.GA122287@kroah.com>
+References: <1573541519-28488-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1573541519-28488-5-git-send-email-chunfeng.yun@mediatek.com>
+ <20191112152857.GA5853@uda0271908>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 2075714ACED72CBB15C4DCA956E5D8B2E8C542FC8427F2F77C2C39642685507E2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20191112152857.GA5853@uda0271908>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_183343_613512_862DD19C 
-X-CRM114-Status: UNSURE (   8.73  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191113_192022_395637_CD629BB0 
+X-CRM114-Status: GOOD (  13.26  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,62 +100,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Wakeup_signal will toggle status according to ssusb_ip_sleep signal
-after debounce time, so need add a delay time and wait for wakeup_signal
-toggle to complete, then enable the remote wakeup. Meanwhile reduce the
-debounce time of wakeup_signal. These will avoid spurious wakeup event.
+On Tue, Nov 12, 2019 at 09:28:57AM -0600, Bin Liu wrote:
+> Hi,
+> 
+> On Tue, Nov 12, 2019 at 02:51:51PM +0800, Chunfeng Yun wrote:
+> > Now the USB gadget subsystem can use the USB debugfs root directory,
+> > so move musb's directory from the root of the debugfs filesystem into
+> > the root of usb
+> 
+> My opinion is this move is unnecessary. I breaks existing debug tools or
+> documentation which is already published on Internet. 
 
-Signed-off-by: Tianping Fang <tianping.fang@mediatek.com>
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
-Note, depends on following patch not merged:
+Having a "root" directory for a single random driver seems like you are
+making your driver a "very important" thing in the overall scheme of the
+kernel, right?  What's wrong with using the usb subdirectory like all
+other USB drivers use (after this patch series is merged)?  That feels
+like a much more "sane" way to handle the wide-open debugfs namespace.
 
-    [v3,3/7] usb: mtu3: support ip-sleep wakeup for MT8183
-    https://patchwork.kernel.org/patch/11123151/
----
- drivers/usb/mtu3/mtu3_host.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+Yes, there are no rules when it comes to debugfs file names and
+locations, but let's try to be sane please.
 
-diff --git a/drivers/usb/mtu3/mtu3_host.c b/drivers/usb/mtu3/mtu3_host.c
-index 182c9439c15a..ca48ff751c8b 100644
---- a/drivers/usb/mtu3/mtu3_host.c
-+++ b/drivers/usb/mtu3/mtu3_host.c
-@@ -53,12 +53,12 @@ static void ssusb_wakeup_ip_sleep_set(struct ssusb_mtk *ssusb, bool enable)
- 	case SSUSB_UWK_V0:
- 		reg = ssusb->uwk_reg_base + PERI_WK_CTRL0;
- 		msk = (u32)(WC0_IS_EN | WC0_IS_C(0xf) | WC0_IS_P);
--		val = enable ? (WC0_IS_EN | WC0_IS_C(0x8)) : 0;
-+		val = enable ? (WC0_IS_EN | WC0_IS_C(0x3)) : 0;
- 		break;
- 	case SSUSB_UWK_V1:
- 		reg = ssusb->uwk_reg_base + PERI_WK_CTRL1;
- 		msk = WC1_IS_EN | WC1_IS_C(0xf) | WC1_IS_P;
--		val = enable ? (WC1_IS_EN | WC1_IS_C(0x8)) : 0;
-+		val = enable ? (WC1_IS_EN | WC1_IS_C(0x3)) : 0;
- 		break;
- 	case SSUSB_UWK_V2:
- 		reg = ssusb->uwk_reg_base + PERI_SSUSB_SPM_CTRL;
-@@ -197,6 +197,8 @@ int ssusb_host_disable(struct ssusb_mtk *ssusb, bool suspend)
- 			  (value & SSUSB_IP_SLEEP_STS), 100, 100000);
- 	if (ret)
- 		dev_err(ssusb->dev, "ip sleep failed!!!\n");
-+	else  /* wait for wakeup_signal toggle done after enter ip-sleep */
-+		usleep_range(245, 255);
- 
- 	return ret;
- }
--- 
-2.23.0
+thanks,
+
+greg k-h
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
