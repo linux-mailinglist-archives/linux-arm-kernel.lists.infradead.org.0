@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D79C6FC59D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 12:45:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77823FC598
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 12:43:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DVs9ygOpuIqnhHGYeZvToAYS4nbbRamixs+j/Oe9MlI=; b=Oc0kYgi/WcQb5rTMths5yEqamf
-	Ms5uAhwLQ+OKPClg/owXvugTIuutmNY5mEac3U+MQ0XVkV3pxnSQmsa2Rngsj1MwPxr2BLNeAAjW6
-	vOCYVX8HFA6X9LYzitrEb8DNoaF1x/nr7Id2EX5RLzWQJtAJ1sxu2v76yEk6tAyxznbIslGHKlJPm
-	wHtTm9rWw+f+D9iO36BJoMtKncIaPDvn8z3vxpTmWJkVarcxiy4fJWNXJQavycN80891hodxAi6cg
-	xr7KuowdeTkw/UdnNs7t0uCgEaQSxobyRi8tx7FDL9ufwBalLt9xTEUNq75klDEyio7M5WINM6xMZ
-	Kjm7sbng==;
+	bh=p5UO/7w/UV9OsXSzy4cGOeR+xkq00e3TwNJgFNmab8Y=; b=t+bLxBl3rCpI+wHFaInP38Mx54
+	LNues1V6kclVyijB98d82mzqbk94gHc0WzVJCkPbioXC+vcFYaxRELNOCXFJOXTjI3+dMtVIAOkOX
+	OtUnt3Ygl6HR75cyb6gRs1QNkuV3G4wTKTp0YGH1D8+gqzdNLxk8M+/yHcai/D27WdCvtewOrU019
+	FTSvDNOumKZ35vBqTPGRyc4DNuG3ic/Po/nT2iMcsQboN/7IFohqt9dqZIwg9dv5XfDqWkUS2RqyC
+	ieND6C1k0IK74VoSAs5eU1bnY83X3TZ4wS/ZEiuX2Gz7VPmCUDosPMqdq2RxJmHVPcOmOz3GVnC70
+	12nNun1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVDYi-0006OT-3H; Thu, 14 Nov 2019 11:45:08 +0000
+	id 1iVDXO-0005Gz-9i; Thu, 14 Nov 2019 11:43:46 +0000
 Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVDWe-0004lb-GR
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 11:43:01 +0000
+ id 1iVDWa-0004j3-IY
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 11:42:59 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id C6F35C04CB;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id C3D4FC04C9;
  Thu, 14 Nov 2019 11:42:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1573731780; bh=Ip3ZDkHX7NjVjcJ1Wnwx1pavIU7mIEYu8qbPr6qGCVE=;
+ t=1573731775; bh=BDukAyowAZk0E3mYeClr0pY7CNQPO/82dQMmXYYRMf4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=ZcuXCTiOyO4x7L2slGvboBjx9pAkBuAj2xDFb6RacVMwca/WGNqgEdv5uny8ri6kw
- ep2/bhLpzo68DDO0kSpFoGoBjS9TB79CFklOMiciQ2abw8RMwdMih3eAqfxZhPdTNa
- eRlaiwJVSf7WDRJOApAYav1J+aB3akErKDiqbFp30cQDl086VAmu9UHht4RYeef3n+
- GnePVc6ls7l5Yp3HznJ4WFefZdZs/12ai472ku1XtLH8gSVJ8CkP2mgPW+jpzHMZlm
- PHEpmSrPs6g0llMvg2+HfcotxCZzSVkLleGY7sam397Qjb3yValCZtXrx2ZIQs46ZE
- 6aZ99eiK4eNSw==
+ b=bnEw+8WS6FLPpjX+VHeICk1Ix9vz+43+cHEYi4UxdkgoxfoJopL1w236aKDtXr7Ub
+ C7Z92QuQHPRD0M5AnvInEt8B4wPFIMXA9/jDqY9ucN2SWQrbJ2EbBEPJK5y7khYNZC
+ C4115qlxccZloD+/HXRF3nXKZ8Xhb99cs2s3BawnTNQcuku7YUkMX9XWQLEa6vm+/+
+ h/Eo7nycMFJeGnSqpYj935DOZLRTY9CZUYU9mSkOcm906K3g6m78EVnBWM2aRRJ7xd
+ Xgl4+Gpk9DoZaS9VJCTrQU9t1JMaX1cLuHFE/7Ej5uWT4gfVVLw2htz+FBgqaghflh
+ QiZHqfrtQ+0og==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 72751A008C;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 7ACC0A0092;
  Thu, 14 Nov 2019 11:42:53 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH v2 net-next 4/7] net: stmmac: xgmac: Remove uneeded
- computation for RFA/RFD
-Date: Thu, 14 Nov 2019 12:42:48 +0100
-Message-Id: <10ee9bed71e3215c2d28c9e302962af72266f03d.1573731453.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH v2 net-next 5/7] net: stmmac: Tune-up default coalesce settings
+Date: Thu, 14 Nov 2019 12:42:49 +0100
+Message-Id: <c2131c06d9081a89308a8b9f2c4b4950f35b581f.1573731453.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1573731453.git.Jose.Abreu@synopsys.com>
 References: <cover.1573731453.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1573731453.git.Jose.Abreu@synopsys.com>
 References: <cover.1573731453.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_034300_586361_7976EA95 
-X-CRM114-Status: GOOD (  11.39  )
+X-CRM114-CacheID: sfid-20191114_034256_668705_B34C9C86 
+X-CRM114-Status: GOOD (  10.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,10 +95,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RFA and RFD should not be dependent on FIFO size. In fact, the more FIFO
-space we have, the later we can activate Flow Control. Let's use
-hard-coded values for RFA and RFD for all FIFO sizes with the exception
-of 4k, which is a special case.
+Tune-up the defalt coalesce settings for optimal values. This gives the
+best performance in most of the use-cases.
 
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
@@ -114,35 +111,24 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c | 14 ++------------
- 1 file changed, 2 insertions(+), 12 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/common.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-index f148cb2061d8..22a7f0cc1b90 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-@@ -183,19 +183,9 @@ static void dwxgmac2_dma_rx_mode(void __iomem *ioaddr, int mode,
- 			rfa = 0x01; /* Full-1.5K */
- 			break;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h b/drivers/net/ethernet/stmicro/stmmac/common.h
+index 309ea12ea61f..b210e987a1db 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/common.h
++++ b/drivers/net/ethernet/stmicro/stmmac/common.h
+@@ -253,8 +253,8 @@ struct stmmac_safety_stats {
+ #define STMMAC_COAL_TX_TIMER	1000
+ #define STMMAC_MAX_COAL_TX_TICK	100000
+ #define STMMAC_TX_MAX_FRAMES	256
+-#define STMMAC_TX_FRAMES	1
+-#define STMMAC_RX_FRAMES	25
++#define STMMAC_TX_FRAMES	25
++#define STMMAC_RX_FRAMES	0
  
--		case 8192:
--			rfd = 0x06; /* Full-4K */
--			rfa = 0x0a; /* Full-6K */
--			break;
--
--		case 16384:
--			rfd = 0x06; /* Full-4K */
--			rfa = 0x12; /* Full-10K */
--			break;
--
- 		default:
--			rfd = 0x06; /* Full-4K */
--			rfa = 0x1e; /* Full-16K */
-+			rfd = 0x07; /* Full-4.5K */
-+			rfa = 0x04; /* Full-3K */
- 			break;
- 		}
- 
+ /* Packets types */
+ enum packets_types {
 -- 
 2.7.4
 
