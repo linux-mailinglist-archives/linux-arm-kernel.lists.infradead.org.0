@@ -2,67 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67C6CFC730
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 14:18:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDD34FC750
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 14:25:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xExWkMBHPSZY3LR1LP3gWqwb/ryvoAloV+8S4xOHbcc=; b=M8eUf6kjo0TBMg
-	/EbHxV3wPhcol3cZo5Ii+8DyuamNyzBjwHZ5YMHOy7Xh9gclNJ0Tb+van9hlz1lYCD+bVqvPDsBKG
-	uGQnGui9tzq2GUk29wk0SD3R11uJqgQxob6pHvPHGPVD2Xl1sXfxKBxBfMGP5pHsEPtnCQtT1a2nL
-	2G8fWNGWTid/0qEJKJVH0MNNcb7Zj02XEAFA/EB4bSChzv3it04vX7ehGNfNp7XigGaTvFmvvOA0H
-	/DoWTeLKGTLDzpHFD1vk/cLECOJQMFYBZ3W4h7jjI9/cvY9xiqYiOT5ZnKUmlQjoAgTzBAeG3bgpE
-	2RnNavRzSaPwAp7UHM0Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ALC+Z4tHksGD4zk7bXTCyg9u2VrzkUzzu8ffd/vaTCI=; b=V5Q
+	XMwpLemXcB/Fe7sQE3bBGeiIwjtlmVcjeuqpzZ/x4L6HgnhvzP/eYPIyjKh2xBveRq7/nm2ydPDyq
+	6aXtPzGOc4s4D1LYbkHgvSlv8Irr8H3j5v6gYNcwXTWC6NKk7hc5c8uChT+UfEOEAnM6fGmQ82V0K
+	UnMBU666GSkC7BMDuj6gcZ8DsigZaZMbHcpleXVBtnFtmh62M0+qv9BVpvVnwbgsfKvkw3lzXXud8
+	OAOZZXNMGQRWZ8QhsuxPIMJ5Soy+rJKmqni5VLiUC37uqpi0ORye+Tl9YV9g7WNwevY3wEMpnpIJ9
+	PRXfopE4iCPG2aIPJ5K1SguL2ycMj5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVF15-00055J-12; Thu, 14 Nov 2019 13:18:31 +0000
-Received: from mail-out.m-online.net ([212.18.0.9])
+	id 1iVF7K-0007O6-0z; Thu, 14 Nov 2019 13:24:58 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVF0u-00054u-BK
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 13:18:22 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 47DMVb5X6Fz1rD98;
- Thu, 14 Nov 2019 14:18:15 +0100 (CET)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 47DMVb4RB2z1qqkC;
- Thu, 14 Nov 2019 14:18:15 +0100 (CET)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id K7cJ5rnNwN6r; Thu, 14 Nov 2019 14:18:14 +0100 (CET)
-X-Auth-Info: zgbQ9/AblcSW7JvQo2f0HLMRb+wSIAufYE37T+mnqFQ=
-Received: from chi.lan (p578adb1c.dip0.t-ipconnect.de [87.138.219.28])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Thu, 14 Nov 2019 14:18:14 +0100 (CET)
-From: Marek Vasut <marex@denx.de>
-To: dri-devel@lists.freedesktop.org
-Subject: [PATCH] drm/imx: parallel-display: Adjust bus_flags and bus_format
- handling
-Date: Thu, 14 Nov 2019 14:17:51 +0100
-Message-Id: <20191114131751.26746-1-marex@denx.de>
-X-Mailer: git-send-email 2.24.0.rc1
-MIME-Version: 1.0
+ id 1iVF7B-0007Mk-KO; Thu, 14 Nov 2019 13:24:50 +0000
+Received: by mail-wm1-x342.google.com with SMTP id l17so5662588wmh.0;
+ Thu, 14 Nov 2019 05:24:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=mH8gSNIgKvgPetxbf7rz5MC4m16Vu7th8OeEJ1GZ3WA=;
+ b=Bpr0h/OXlj7EmeJlqKo5Wxz48vyUoDHAdh0gSAeyCXdohmi5MPgIVj/TyCBuekAhF3
+ gFp1ZwAyxRa3FeV7WaFB4OKxsHBcczf9n3bWeyGQocy/bQpENfSzWnxjFeLPkLUP7jZh
+ oXApnfs7K0AeY1U4I6hYhIp5y1GAq+mMdoRjK7tzUcYNP0BghxA71HMGPkO9ouzmzmOk
+ UgAOfc4VFrmZUladOiDb+8iL6BPdGlzmcCH2CRPNVHF5OY/2EoZBPhJRAaJWei+bhj1j
+ Q25DDOekDlNrc0KXWe7VfOidfEK0JbYFGucPhFe/0fHohJAUZ/Sz5oOEHXwPXmvYmEMc
+ +Mrw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=mH8gSNIgKvgPetxbf7rz5MC4m16Vu7th8OeEJ1GZ3WA=;
+ b=gwiRhVcz1QMOQ20UlG/Xcq8GXmBmcINHxcng3bXS0h1goTDdS/QDAm5M7MLMdVW0nm
+ CpvPpbvPqWpZoEMD3T2UhabAXS99jSuL/VUYah6r3CWoZvF+VDxhEeTxoYuRkUP2aTRb
+ YjOjrEGPXneeKIa6q2UQV5vr3RiahAZHE5X+5luQ/im/7qNeP25C4EQ63mMuif4qhtm1
+ 6cYzjcScu2NAtt7CwORpocelNgVU5Tw6HBNEK5Fbm082er6Bh6RseU+AfjRoeSW8XNfg
+ /u7CuxjJVK6bNODKpEiLRU38rpzJ5gCctXKisk6rslxhHFX8qwnxFldzPbbTFLScvH2P
+ njYQ==
+X-Gm-Message-State: APjAAAUGxH+VZi3rOv+f/3NToKtlPmlMTTWIDOnVeYi70cnxsnGXdZEp
+ UIM1+2JLxrJxepPGqS6aFVc=
+X-Google-Smtp-Source: APXvYqy0OzeEgjEqEz2o9WYlfcRhLzpSJymbbl4yemx7SJZX9xmA8PesRQtNcL6r6/RyfFNg5SDURQ==
+X-Received: by 2002:a1c:5fc4:: with SMTP id t187mr8347004wmb.142.1573737887726; 
+ Thu, 14 Nov 2019 05:24:47 -0800 (PST)
+Received: from localhost.localdomain ([197.254.95.38])
+ by smtp.googlemail.com with ESMTPSA id a8sm5838054wme.11.2019.11.14.05.24.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 14 Nov 2019 05:24:46 -0800 (PST)
+From: Wambui Karuga <wambui.karugax@gmail.com>
+To: maarten.lankhorst@linux.intel.com, mripard@kernel.org, sean@poorly.run,
+ airlied@linux.ie, daniel@ffwll.ch, hjc@rock-chips.com
+Subject: [PATCH 0/2] add new DRM_DEV_WARN macro
+Date: Thu, 14 Nov 2019 16:24:34 +0300
+Message-Id: <20191114132436.7232-1-wambui.karugax@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_051820_690885_F26F3159 
-X-CRM114-Status: GOOD (  16.03  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191114_052449_692671_487D9236 
+X-CRM114-Status: UNSURE (   7.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.9 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.18.0.9 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wambui.karugax[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,78 +93,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@linux.ie>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ heiko@sntech.de, dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The bus_flags and bus_format handling logic does not seem to cover
-all potential usecases. Specifically, this seems to fail with an
-"edt,etm0700g0edh6" display attached to an 24bit display interface,
-with interface-pix-fmt = "rgb24" set in DT.
+This adds a new DRM_DEV_WARN helper macro for warnings log output that include
+device pointers. It also includes the use of the DRM_DEV_WARN macro in
+drm/rockchip to replace dev_warn.
 
-In this specific setup, the panel-simple.c driver entry for the display
-sets .bus_flags to non-zero value. However, as imxpd->bus_format is set
-from the DT property "interface-pix-fmt", imx_pd_encoder_atomic_check()
-will set imx_crtc_state->bus_flags = imxpd->bus_flags even though the
-imxpd->bus_flags is zero, while the di->bus_flags is correctly set by
-the panel-simple.c and non-zero. The result is incorrect flags being
-used for the display configuration and thus an image corruption.
-(Specifically, DRM_BUS_FLAG_PIXDATA_POSEDGE is not propagated and thus
-the ipuv3 clocks pixels on the wrong edge).
+Wambui Karuga (2):
+  drm/print: add DRM_DEV_WARN macro
+  drm/rockchip: use DRM_DEV_WARN macro in debug output
 
-This patch fixes the problem by overriding the imx_crtc_state->bus_format
-from the imxpd->bus_format only if the DT property "interface-pix-fmt" is
-present or if the DI provides no formats. Similarly for bus_flags, which
-are set from imxpd->bus_flags only if the DI provides no formats.
+ drivers/gpu/drm/rockchip/inno_hdmi.c | 3 ++-
+ include/drm/drm_print.h              | 9 +++++++++
+ 2 files changed, 11 insertions(+), 1 deletion(-)
 
-Signed-off-by: Marek Vasut <marex@denx.de>
-Cc: Daniel Vetter <daniel@ffwll.ch>
-Cc: David Airlie <airlied@linux.ie>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: linux-arm-kernel@lists.infradead.org
-To: dri-devel@lists.freedesktop.org
----
- drivers/gpu/drm/imx/parallel-display.c | 13 ++++++++-----
- 1 file changed, 8 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/gpu/drm/imx/parallel-display.c b/drivers/gpu/drm/imx/parallel-display.c
-index 35518e5de356..92f00b12c068 100644
---- a/drivers/gpu/drm/imx/parallel-display.c
-+++ b/drivers/gpu/drm/imx/parallel-display.c
-@@ -113,13 +113,16 @@ static int imx_pd_encoder_atomic_check(struct drm_encoder *encoder,
- 	struct drm_display_info *di = &conn_state->connector->display_info;
- 	struct imx_parallel_display *imxpd = enc_to_imxpd(encoder);
- 
--	if (!imxpd->bus_format && di->num_bus_formats) {
--		imx_crtc_state->bus_flags = di->bus_flags;
-+	if (imxpd->bus_format || !di->num_bus_formats)
-+		imx_crtc_state->bus_format = imxpd->bus_format;
-+	else
- 		imx_crtc_state->bus_format = di->bus_formats[0];
--	} else {
-+
-+	if (di->num_bus_formats)
-+		imx_crtc_state->bus_flags = di->bus_flags;
-+	else
- 		imx_crtc_state->bus_flags = imxpd->bus_flags;
--		imx_crtc_state->bus_format = imxpd->bus_format;
--	}
-+
- 	imx_crtc_state->di_hsync_pin = 2;
- 	imx_crtc_state->di_vsync_pin = 3;
- 
 -- 
-2.24.0.rc1
+2.17.1
 
 
 _______________________________________________
