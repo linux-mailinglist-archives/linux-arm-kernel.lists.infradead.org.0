@@ -2,92 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 770CFFCD50
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 19:22:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AF0BFCD52
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 19:22:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e6xtntQxBc6k0Yz6uMdHEczU7+lFAmoBNpQkVTVm0mM=; b=M0uoCit4R609he
-	6H+Y3vmA6b396NX7Jtt7zgBFtsF2BXRGRy/GzmV9GERLVpsrY4poLMbqG44miISVguWMmEsnRRJ1U
-	22rbvQD060yYbf2unx8XkoP49NkKmuVnrFk1ULRnf103aXztgeBr8E825GBB0+8bYg33ugMFcb9q4
-	+7ZbGU08p5y0o7QH9o5Wwvi0z4WrD2rj2w3kpGYIu6Bdcius4Il8/wBb9WGv8GLGNo+S78jeoB0uX
-	IhIKR42bqUF2vLVjbCMpEewZoSePHxU+51ZFMpQrHUodEWr3RHI3syO2VuCO0LMCriPY5bY+gdi8L
-	krneppELOe+qxVJhs14A==;
+	List-Owner; bh=PBzTXs+HJfxBKBXhMix4SvpwkcYTNwutx4oV1l0Adhk=; b=IvHDFx9Uc/4Sgr
+	aRw2Vu71hNPDy+EV545dtxm/lttsc72otZULU1SE7aSBFJWcigsyNTUvZJ9mb7/lZ4P7VtBI45kZC
+	H5BlNzyi1zEjBmDxmtX1olqXRLN5Kk9pBW5l9Im1bZpY1U1yrtrndMpqd+KL0ExrzkNORCw3dc9QJ
+	7RGMendRsqVnyGDd0hLKu/nInaaxu2cSjYZ80i2eB7cNKFDogCmrhnunRhCcmDSxOkygvKSPTgLxW
+	QLL6AghT92kEnPP/7zCDzGNjcay18qCnYue4YFUqXwppa/Ot6lTKpgJ9shP5MuGL4g0hpB0HkgAX2
+	xD9ULLr09DbwC/fBi7gQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVJkw-0006nd-NL; Thu, 14 Nov 2019 18:22:10 +0000
-Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
+	id 1iVJlI-00075L-7v; Thu, 14 Nov 2019 18:22:32 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVJkm-0006ms-Or
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 18:22:02 +0000
-Received: by mail-vk1-xa42.google.com with SMTP id d10so1720103vke.3
+ id 1iVJl4-000720-5D
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 18:22:20 +0000
+Received: by mail-oi1-f193.google.com with SMTP id n14so6126263oie.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 10:21:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+VmC0KbxXRLmjlMOB0/4aEHZOiDqNhhGvntSX5Ejh5I=;
- b=i3GWEGWzJoezpcuBDQQnlQIoJ+Rv+jSVSok9hmyrDnxtqt29OyhbbtJA/BshvyJ0A+
- xQHroDFiea8vnXV5pDykoN5dMiwmOr370jtxqYTkPulHU2uPmqNHn0Y0bdT1r0ZVnBlS
- T2AFQQUWhBYmf3HiqpDxsDJm1TuozHGfYl4zVe0KbiR+t0ApNOPZj9V3Hd1sjCaoALiv
- fUjmMBfQfH9Jl5MFqHJ1TgDLqhpp+zuhMmjfygnYWexjSfBGhw3XIu0vyYBE5DxvRUkX
- 1zUvQ9EidQToL3IbY2wUfRHA6WTAYCPlNFGfIhivzPV2RhF/5o/FJbT9aGP4HQrS+dCV
- 5gJg==
+ Thu, 14 Nov 2019 10:22:17 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=+VmC0KbxXRLmjlMOB0/4aEHZOiDqNhhGvntSX5Ejh5I=;
- b=cxofcXR9EZhjAEck3uxkB23D7lbRhw7rg8na4XMiSw6UxQU4MIUjoE1eXx+206N56M
- VAOQFyh5h5IdK1iayFyqhs8G/hPZGheSyCdbC1SG3/lFoI5N7rYwn0IRsQGsKqktWHAJ
- HvjY8pEIU4t8NROtutYtOwUFNSHZd+9kNguCVHStRa/0Hp3GVDOFD0mIyuzdd5CLGPBt
- j6C92iA+tp2Ec3WSM8nMi2cltZ1C3PVNDh1LS5vk5gzSUIq+TGRhf024gT/DnsyH/61Z
- RRrmIRsBPj247kO6Xq9klNvSK1pDWXyVADsKBPSgvrcSwUfXF/zOfQfMPbDc5Kcy83SF
- H0gg==
-X-Gm-Message-State: APjAAAWB5LLl/y9auyWgk8ng0p9VE9JOe1kUZ36fDlDQh8zqYSo6PWWV
- zYmshlr2zuz2GtFCCAedGLTd9OnrpMlE9e0jtFI8Vw==
-X-Google-Smtp-Source: APXvYqw2NIH+2yA3HN+TDprRqlq2TcrmfjkaRKWSAwLb7M4Vw9kp9ssltTe9lpDGejjqT6dY+zc0U+thx75uMkNYkNc=
-X-Received: by 2002:a1f:7d88:: with SMTP id y130mr6044142vkc.71.1573755717967; 
- Thu, 14 Nov 2019 10:21:57 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=3ZM0l7/aVkkc7/tbWYVkGWwf0qSsYfEVwIFWdU8EXKQ=;
+ b=B702j50vnZlKBVBUdYOjYwk9gyWbU+cQeH6ZKN/mENLGG09l71FhGDpFPcqs7GK+zg
+ p6ykeaXBqjtPwskxHi1/0+tQLEw2VTJJ24alFoIeX4Qxt8cNP4I3s4oAeKNkI9kEujVi
+ iLt5eHIC7PxEC1R4Q6WOnS0GaN9p6ysITmTVI/XkEcJgy9FFiL80IXyDadhZSOertdm5
+ qII9hvu6c+OHeuyhcAehUO4pd5KL4FFejrC51sIyUBr9mn4ePEoJXaIzue6RUF5nsC0H
+ Em75/awriv0tR/Cs7gDYNCxktqCCZoBlZ2J2h8jy8nftIYvCDfk1hVeR93qIrl4USjIA
+ SdXw==
+X-Gm-Message-State: APjAAAVcMZg54DBtd+DY/loRapB4E9u/buVATHapy7YCTQjp2aEE48oX
+ lYqDY8n2xJAk97Vj7tapzA==
+X-Google-Smtp-Source: APXvYqxgQRQdrim9O091TB59rW3d/3ojEsp/TMb0NUApED2QTgVSziIztxDUDPJ0tpPU7uU0F7UhOA==
+X-Received: by 2002:aca:4891:: with SMTP id v139mr2287416oia.175.1573755735866; 
+ Thu, 14 Nov 2019 10:22:15 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id i12sm2079082ota.10.2019.11.14.10.22.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 14 Nov 2019 10:22:15 -0800 (PST)
+Date: Thu, 14 Nov 2019 12:22:14 -0600
+From: Rob Herring <robh@kernel.org>
+To: Christophe Roullier <christophe.roullier@st.com>
+Subject: Re: [PATCH  2/2] dt-bindings: net: dwmac: Convert stm32 dwmac to DT
+ schema
+Message-ID: <20191114182214.GA22693@bogus>
+References: <20191108103526.22254-1-christophe.roullier@st.com>
+ <20191108103526.22254-3-christophe.roullier@st.com>
 MIME-Version: 1.0
-References: <20191112223046.176097-1-samitolvanen@google.com>
- <20191113200419.GE221701@gmail.com>
- <CABCJKudoBHo6rZoGMFproXjmexu16gonVKDPdnq9XDCmO2J2cw@mail.gmail.com>
- <CAKv+Gu85PY+A_XxB9DcmcoV8+nAJZGfAc59sj6XnOGyhDedNQA@mail.gmail.com>
-In-Reply-To: <CAKv+Gu85PY+A_XxB9DcmcoV8+nAJZGfAc59sj6XnOGyhDedNQA@mail.gmail.com>
-From: Sami Tolvanen <samitolvanen@google.com>
-Date: Thu, 14 Nov 2019 10:21:46 -0800
-Message-ID: <CABCJKudGdwmshFynZQZsPg4JJ+Yu0-GNp+aEjXdJAwu6zU5vtw@mail.gmail.com>
-Subject: Re: [PATCH] crypto: arm64/sha: fix function types
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20191108103526.22254-3-christophe.roullier@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_102200_832974_43484FB9 
-X-CRM114-Status: GOOD (  19.10  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191114_102218_340347_CD3F32EA 
+X-CRM114-Status: GOOD (  23.26  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,71 +92,266 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-crypto <linux-crypto@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>, Herbert Xu <herbert@gondor.apana.org.au>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Kees Cook <keescook@chromium.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
+ narmstrong@baylibre.com, martin.blumenstingl@googlemail.com,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, mcoquelin.stm32@gmail.com,
+ alexandru.ardelean@analog.com, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 14, 2019 at 1:45 AM Ard Biesheuvel
-<ard.biesheuvel@linaro.org> wrote:
->
-> On Wed, 13 Nov 2019 at 22:28, Sami Tolvanen <samitolvanen@google.com> wrote:
-> >
-> > On Wed, Nov 13, 2019 at 12:04 PM Eric Biggers <ebiggers@kernel.org> wrote:
-> > >
-> > > On Tue, Nov 12, 2019 at 02:30:46PM -0800, Sami Tolvanen wrote:
-> > > > Declare assembly functions with the expected function type
-> > > > instead of casting pointers in C to avoid type mismatch failures
-> > > > with Control-Flow Integrity (CFI) checking.
-> > > >
-> > > > Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> > > > ---
-> > > >  arch/arm64/crypto/sha1-ce-glue.c   | 12 +++++-------
-> > > >  arch/arm64/crypto/sha2-ce-glue.c   | 26 +++++++++++---------------
-> > > >  arch/arm64/crypto/sha256-glue.c    | 30 ++++++++++++------------------
-> > > >  arch/arm64/crypto/sha512-ce-glue.c | 23 ++++++++++-------------
-> > > >  arch/arm64/crypto/sha512-glue.c    | 13 +++++--------
-> > > >  5 files changed, 43 insertions(+), 61 deletions(-)
-> > > >
-> > > > diff --git a/arch/arm64/crypto/sha1-ce-glue.c b/arch/arm64/crypto/sha1-ce-glue.c
-> > > > index bdc1b6d7aff7..3153a9bbb683 100644
-> > > > --- a/arch/arm64/crypto/sha1-ce-glue.c
-> > > > +++ b/arch/arm64/crypto/sha1-ce-glue.c
-> > > > @@ -25,7 +25,7 @@ struct sha1_ce_state {
-> > > >       u32                     finalize;
-> > > >  };
-> > > >
-> > > > -asmlinkage void sha1_ce_transform(struct sha1_ce_state *sst, u8 const *src,
-> > > > +asmlinkage void sha1_ce_transform(struct sha1_state *sst, u8 const *src,
-> > > >                                 int blocks);
-> > >
-> > > Please update the comments in the corresponding assembly files too.
-> > >
-> > > Also, this change doesn't really make sense because the assembly functions still
-> > > expect struct sha1_ce_state, and they access sha1_ce_state::finalize which is
-> > > not present in struct sha1_state.  There should either be wrapper functions that
-> > > explicitly do the cast from sha1_state to sha1_ce_state, or there should be
-> > > comments in the assembly files that very clearly explain that although the
-> > > function prototype takes sha1_state, it's really assumed to be a sha1_ce_state.
-> >
-> > Agreed, this needs a comment explaining the type mismatch. I'm also
-> > fine with using wrapper functions and explicitly casting the
-> > parameters instead of changing function declarations. Herbert, Ard,
-> > any preferences?
-> >
->
-> I guess the former would be cleaner, using container_of() rather than
-> a blind cast to make the code more self-documenting. The extra branch
-> shouldn't really matter.
+On Fri, Nov 08, 2019 at 11:35:26AM +0100, Christophe Roullier wrote:
+> Convert stm32 dwmac to DT schema.
 
-Sure, using container_of() sounds like a better option, I'll use that
-in v2. Thanks!
+Lots of checkpatch errors with trailing WS.
 
-Sami
+> 
+> Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
+> ---
+>  .../devicetree/bindings/net/stm32-dwmac.txt   |  44 -----
+>  .../devicetree/bindings/net/stm32-dwmac.yaml  | 161 ++++++++++++++++++
+>  2 files changed, 161 insertions(+), 44 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/net/stm32-dwmac.txt
+>  create mode 100644 Documentation/devicetree/bindings/net/stm32-dwmac.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/net/stm32-dwmac.txt b/Documentation/devicetree/bindings/net/stm32-dwmac.txt
+> deleted file mode 100644
+> index a90eef11dc46..000000000000
+> --- a/Documentation/devicetree/bindings/net/stm32-dwmac.txt
+> +++ /dev/null
+> @@ -1,44 +0,0 @@
+> -STMicroelectronics STM32 / MCU DWMAC glue layer controller
+> -
+> -This file documents platform glue layer for stmmac.
+> -Please see stmmac.txt for the other unchanged properties.
+> -
+> -The device node has following properties.
+> -
+> -Required properties:
+> -- compatible:  For MCU family should be "st,stm32-dwmac" to select glue, and
+> -	       "snps,dwmac-3.50a" to select IP version.
+> -	       For MPU family should be "st,stm32mp1-dwmac" to select
+> -	       glue, and "snps,dwmac-4.20a" to select IP version.
+> -- clocks: Must contain a phandle for each entry in clock-names.
+> -- clock-names: Should be "stmmaceth" for the host clock.
+> -	       Should be "mac-clk-tx" for the MAC TX clock.
+> -	       Should be "mac-clk-rx" for the MAC RX clock.
+> -	       For MPU family need to add also "ethstp" for power mode clock
+> -- interrupt-names: Should contain a list of interrupt names corresponding to
+> -           the interrupts in the interrupts property, if available.
+> -		   Should be "macirq" for the main MAC IRQ
+> -		   Should be "eth_wake_irq" for the IT which wake up system
+> -- st,syscon : Should be phandle/offset pair. The phandle to the syscon node which
+> -	       encompases the glue register, and the offset of the control register.
+> -
+> -Optional properties:
+> -- clock-names:     For MPU family "eth-ck" for PHY without quartz
+> -- st,eth-clk-sel (boolean) : set this property in RGMII PHY when you want to select RCC clock instead of ETH_CLK125.
+> -- st,eth-ref-clk-sel (boolean) :  set this property in RMII mode when you have PHY without crystal 50MHz and want to select RCC clock instead of ETH_REF_CLK.
+> -
+> -Example:
+> -
+> -	ethernet@40028000 {
+> -		compatible = "st,stm32-dwmac", "snps,dwmac-3.50a";
+> -		reg = <0x40028000 0x8000>;
+> -		reg-names = "stmmaceth";
+> -		interrupts = <0 61 0>, <0 62 0>;
+> -		interrupt-names = "macirq", "eth_wake_irq";
+> -		clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
+> -		clocks = <&rcc 0 25>, <&rcc 0 26>, <&rcc 0 27>;
+> -		st,syscon = <&syscfg 0x4>;
+> -		snps,pbl = <8>;
+> -		snps,mixed-burst;
+> -		dma-ranges;
+> -	};
+> diff --git a/Documentation/devicetree/bindings/net/stm32-dwmac.yaml b/Documentation/devicetree/bindings/net/stm32-dwmac.yaml
+> new file mode 100644
+> index 000000000000..eb0fd831f59d
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/net/stm32-dwmac.yaml
+> @@ -0,0 +1,161 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +# Copyright 2019 BayLibre, SAS
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/net/stm32-dwmac.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: STMicroelectronics STM32 / MCU DWMAC glue layer controller
+> +
+> +maintainers:
+> +  - Alexandre Torgue <alexandre.torgue@st.com>
+> +  - Christophe Roullier <christophe.roullier@st.com>
+> +
+> +description:
+> +  This file documents platform glue layer for stmmac.
+> +
+> +# We need a select here so we don't match all nodes with 'snps,dwmac'
+> +select:
+> +  properties:
+> +    compatible:
+> +      contains:
+> +        enum:
+> +          - st,stm32-dwmac
+> +          - st,stm32mp1-dwmac
+> +  required:
+> +    - compatible
+> +
+> +allOf:
+> +  - $ref: "snps,dwmac.yaml#"
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - st,stm32-dwmac
+> +              - st,stm32mp1-dwmac
+> +    then:
+> +      properties:
+> +       clocks:
+> +         minItems: 3 
+> +         maxItems: 5
+> +         items:
+> +          - description: GMAC main clock
+> +          - description: MAC TX clock
+> +          - description: MAC RX clock
+> +          - description: For MPU family, used for power mode
+
+What does 'power mode' mean? IIRC, some DW MACs have a clock for WoL 
+called LPI or something. Are you sure this is ST specific and not DW 
+config or version specific?
+
+> +          - description: For MPU family, used for PHY without quartz
+
+It would be cleaner to define the clock always present and use a 
+fixed-clock when you have an external quartz. 
+
+> +
+> +       clock-names:
+> +         minItems: 3          
+> +         maxItems: 5
+> +         contains:
+> +          enum:
+> +            - stmmaceth
+> +            - mac-clk-tx
+> +            - mac-clk-rx
+> +            - ethstp
+> +            - eth-ck     
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - items:
+> +          - enum:
+> +              - st,stm32mp1-dwmac
+> +          - const: snps,dwmac-4.20a
+> +      - items:
+> +          - enum:
+> +              - st,stm32-dwmac
+> +          - const: snps,dwmac-4.10a
+> +      - items:
+> +          - enum:
+> +              - st,stm32-dwmac
+> +          - const: snps,dwmac-3.50a            
+> +
+> +  st,syscon:
+> +    allOf:
+> +      - $ref: "/schemas/types.yaml#/definitions/phandle-array"
+> +    description:
+> +      Should be phandle/offset pair. The phandle to the syscon node which
+> +      encompases the glue register, and the offset of the control register
+> +
+> +  st,eth-clk-sel:
+> +    description:
+> +      set this property in RGMII PHY when you want to select RCC clock instead of ETH_CLK125.
+> +    type: boolean
+> +    
+> +  st,eth-ref-clk-sel:
+> +    description:
+> +      set this property in RMII mode when you have PHY without crystal 50MHz and want to select RCC clock instead of ETH_REF_CLK.
+
+Wrap lines.
+
+> +    type: boolean   
+> +
+> +required:
+> +  - compatible
+> +  - clocks
+> +  - clock-names
+> +  - st,syscon
+> +
+> +examples:
+> + - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/stm32mp1-clks.h>
+> +    #include <dt-bindings/reset/stm32mp1-resets.h>
+> +    #include <dt-bindings/mfd/stm32h7-rcc.h>  
+> +    //Example 1
+> +     ethernet0: ethernet@5800a000 {
+> +       compatible = "st,stm32mp1-dwmac", "snps,dwmac-4.20a";
+> +       reg = <0x5800a000 0x2000>;
+> +       reg-names = "stmmaceth";
+> +       interrupts = <&intc GIC_SPI 61 IRQ_TYPE_LEVEL_HIGH>;
+> +       interrupt-names = "macirq";
+> +       clock-names = "stmmaceth",
+> +                     "mac-clk-tx",
+> +                     "mac-clk-rx",
+> +                     "ethstp",
+> +                     "eth-ck";				      
+> +       clocks = <&rcc ETHMAC>,
+> +                <&rcc ETHTX>,
+> +                <&rcc ETHRX>,
+> +                <&rcc ETHSTP>,
+> +                <&rcc ETHCK_K>;	
+> +       st,syscon = <&syscfg 0x4>;
+> +       snps,pbl = <2>;
+> +       snps,axi-config = <&stmmac_axi_config_0>;
+> +       snps,tso;
+> +       status = "disabled";
+> +       phy-mode = "rgmii";       
+> +       };
+> +
+> +    //Example 1 (MCU example)
+
+2 Example 1's?
+
+> +     ethernet1: ethernet@40028000 {
+> +       compatible = "st,stm32-dwmac", "snps,dwmac-3.50a";
+> +       reg = <0x40028000 0x8000>;
+> +       reg-names = "stmmaceth";
+> +       interrupts = <0 61 0>, <0 62 0>;
+> +       interrupt-names = "macirq", "eth_wake_irq";
+> +       clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
+> +       clocks = <&rcc 0 25>, <&rcc 0 26>, <&rcc 0 27>;
+> +       st,syscon = <&syscfg 0x4>;
+> +       snps,pbl = <8>;
+> +       snps,mixed-burst;
+> +       dma-ranges;
+> +       phy-mode = "mii";       
+> +       };
+> +
+> +    //Example 2 
+> +     ethernet2: ethernet@40027000 {
+> +       compatible = "st,stm32-dwmac", "snps,dwmac-4.10a";
+> +       reg = <0x40028000 0x8000>;
+> +       reg-names = "stmmaceth";
+> +       interrupts = <61>;
+> +       interrupt-names = "macirq";
+> +       clock-names = "stmmaceth", "mac-clk-tx", "mac-clk-rx";
+> +       clocks = <&rcc 62>, <&rcc 61>, <&rcc 60>;
+> +       st,syscon = <&syscfg 0x4>;
+> +       snps,pbl = <8>;
+> +       status = "disabled";
+> +       phy-mode = "mii";        
+> +       };
+> +
+> +       
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
