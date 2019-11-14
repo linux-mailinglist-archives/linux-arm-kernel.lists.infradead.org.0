@@ -2,95 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A0ABFCFC0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 21:36:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C161EFCFCE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 21:44:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9ZedQcSRoxF6gQdlim0xAIw87UZ5XzdY3VXeL76Paqc=; b=K9EhIm+c1WNHPDXBtNKrYHwnFS
-	P3hZGaSlEDofjS/Cbn67CLdPuonMBp5VNVprgG8KU3/fiNHuGnWT6hBBU5uhY8N9M7E+jmstT4MP1
-	LmPWyyTN8z5nZt05Ycji2m5rEKZfRw47AP3a4hWO7YVanyP8zVpS5SGIILk5dkb3/TITBps/ge1nC
-	wkZUDon5elC/MJR07FISynLqUT2ilM+ZImOgCPH8RDhS4LZyrgWkhQR63TFiNFz09mxGi0j/cObGS
-	NTW9HpNMXldQSf6GTimT1jtiHBxWwkp/8HYolSn0LDCff/qQVcQAbG0xzd7m22pdIH3Gy0ooodbwK
-	AX8GMRQw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GoG73M6QizkAQnzHBAmaq0dV7Y/okoOvjKjohUqLDNI=; b=ISA6akydluB2+HxynjYk3v4La
+	qh4mQPLALs5I1JfeCr5g+I45x2lUz5oTpKM79o0Id0cm7HZ4vOKaJ3fPc4yH/qqHfRCunoL7zy4Xp
+	K6GPHCTpF0VRwZt5wfr3c+ZOPkkT+c+I54jDxBLXqUFdY4BXXVL6SZ7NjyYmzJDR2vTTcSBidvZHm
+	6FXXfbshmQRjnp7ApOWPcyItoVxSltmRgBXG2RbpV9HXKlZJtKnuZuPKQqYiYNL3zVzGlgYu+ghpm
+	YvZY7RprjJo+HdxYFxtCH6+EWQVtSxhfs4HGmFp2f94LTdePAdgD4xpyWAxZuhi7hA67ZWFmutNY2
+	uBu1QsyEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVLqh-0002HZ-TT; Thu, 14 Nov 2019 20:36:15 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVLqY-0002GD-4Q
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 20:36:07 +0000
-Received: by mail-wm1-x344.google.com with SMTP id b17so7679453wmj.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 12:36:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=/T0Rg4n36uJouyisIYq+OO8Wawxqm7AHTLdrmHhfwqQ=;
- b=QjAuB1h0TJNq+R/eBV5ZaGcnL2pZ5kGnbAeZWcn1gpJybTwSKK/Zzadbrd0n9U/yUy
- A59YXwKP3qzMaUKNBWpi4YkXeZzrkEmeSBTv0YRXNIIyofOzs0YPu2HdFCTcRBP8uCzQ
- sPp6eNcJMJz895oTZKAoQYjao7O3RuvJ0UHg07Zi2snQageqQjTWd1cG23TIjpbWyaVS
- PaYnTDeikzJTl8aLycPmtk8Kgqe/zcnWWngaUtIeR0YB41jH5PcQLna4pdrlhmKv0q6g
- lltmj/tddiZlXNUG5Clig0ZA3Qc5KIhFDYVE6lSgR5srqWM7rCaiOQDkwcioJdP4aKeX
- GXog==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=/T0Rg4n36uJouyisIYq+OO8Wawxqm7AHTLdrmHhfwqQ=;
- b=S/vS8cync1Xvqdq1sLi8hWR1dOobMvnhG0wtjwtHcMM37j3Dr3+tVjtnC0h8pO4uiJ
- M2oC9/P4hJWMa6bXulp0rAThX8i91wVMjfER5kVyptuOma68h9ZxTtUayKlUV1JWG3NW
- 4IUwwm1jNi4CsWWoBqr8m+9d65TX18dr6VAtYfgnsvXly3KFEvIDT0wrjSiKKqS49kvU
- Z+Mlhm9QFihnxc1368xXOYyxFNtmY9frWFM/rmyK5+O4jYK75F6Ujy4Amtc2UQgoWv6f
- i5aKIShxzSYCkw2zyKnALjcnmN/1QZtHhE/4vERC1WFAljZiH8k421VcJkwd2A/CjotL
- BY9g==
-X-Gm-Message-State: APjAAAU8UXr27lziS0MSCq0JcfptdehIlD5NIq8EMSsAOmcRaLD47t8Q
- Bxv+bU3JVfIW61+xPBK0KlY=
-X-Google-Smtp-Source: APXvYqxco0B6kyD8XmcSzehMoYkUCYFnw99z4LvXd73jRYCdNM2xfHk1C1VpFemgIurnM6vbrKHahg==
-X-Received: by 2002:a1c:62c5:: with SMTP id w188mr9861447wmb.77.1573763764596; 
- Thu, 14 Nov 2019 12:36:04 -0800 (PST)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id g184sm7914263wma.8.2019.11.14.12.36.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 14 Nov 2019 12:36:03 -0800 (PST)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
- Matthias Brugger <matthias.bgg@kernel.org>,
- Matthias Brugger <mbrugger@suse.com>,
- "David S . Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH V5 net-next 7/7] ARM: dts: bcm2711-rpi-4: Enable GENET
- support
-Date: Thu, 14 Nov 2019 12:35:59 -0800
-Message-Id: <20191114203559.1250-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <1573501766-21154-8-git-send-email-wahrenst@gmx.net>
-References: <1573501766-21154-1-git-send-email-wahrenst@gmx.net>
- <1573501766-21154-8-git-send-email-wahrenst@gmx.net>
+	id 1iVLyE-0004Cx-PV; Thu, 14 Nov 2019 20:44:02 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iVLy6-0004CF-BA
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 20:43:56 +0000
+Received: from localhost (x4dbf5278.dyn.telefonica.de [77.191.82.120])
+ by pokefinder.org (Postfix) with ESMTPSA id 190892C03EE;
+ Thu, 14 Nov 2019 21:43:48 +0100 (CET)
+Date: Thu, 14 Nov 2019 21:43:47 +0100
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Subject: Re: [PATCH 0/4] i2c: Use dma_request_chan() directly for channel
+ request
+Message-ID: <20191114204347.GB7213@kunai>
+References: <20191113092235.30440-1-peter.ujfalusi@ti.com>
+MIME-Version: 1.0
+In-Reply-To: <20191113092235.30440-1-peter.ujfalusi@ti.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_123606_168674_EDCD7AC1 
-X-CRM114-Status: GOOD (  10.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191114_124354_534589_D51FBB08 
+X-CRM114-Status: UNSURE (   7.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,31 +60,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Doug Berger <opendmb@gmail.com>,
- netdev@vger.kernel.org, Eric Anholt <eric@anholt.net>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alexandre.belloni@bootlin.com, bjorn.andersson@linaro.org,
+ linux-arm-msm@vger.kernel.org, vkoul@kernel.org, linux-kernel@vger.kernel.org,
+ wsa+renesas@sang-engineering.com, ludovic.desroches@microchip.com,
+ agross@kernel.org, ldewangan@nvidia.com, linux-i2c@vger.kernel.org,
+ linux-tegra@vger.kernel.org, thierry.reding@gmail.com, digetx@gmail.com,
+ jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1967453832442293420=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 11 Nov 2019 20:49:26 +0100, Stefan Wahren <wahrenst@gmx.net> wrote:
-> This enables the Gigabit Ethernet support on the Raspberry Pi 4.
-> The defined PHY mode is equivalent to the default register settings
-> in the downstream tree.
-> 
-> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-> ---
 
-Applied to devicetree/next, thanks!
---
-Florian
+--===============1967453832442293420==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="oC1+HKm2/end4ao3"
+Content-Disposition: inline
+
+
+--oC1+HKm2/end4ao3
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Nov 13, 2019 at 11:22:31AM +0200, Peter Ujfalusi wrote:
+> Hi,
+>=20
+> I'm going through the tree to remove dma_request_slave_channel_reason() a=
+s it
+> is just:
+> #define dma_request_slave_channel_reason(dev, name) \
+> 	dma_request_chan(dev, name)
+>=20
+> Regards,
+> Peter
+
+Applied to for-next, thanks!
+
+
+--oC1+HKm2/end4ao3
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl3NvIMACgkQFA3kzBSg
+KbZ4KhAAqSIoupVPNUTy5EUS3aRgDo8MVkiIW1UWgvqLUQ0Zf1I1wOJg39JEPMg9
+mNEvOCYkNOI7W85SarY869oxjmFsKlXjyMk9791x+8cHwNqtMQ/5WW/8oxaPM4FW
+H936eUEkiqDivyXszx0lUbc/Df3a8nz71vSEyTfltMQ4ypIrOeRYHbvqmd/3lxpK
+YIkVGF2RO76ddQOMJEA7GY1o3CpBJDUDYMiziMuLSgxEdcv+LfiHTE4eqAnSbOFW
+nNkC++LLjSPNUl9OqiZTKT5R+umlMXgdRcTAOLxkOb9bYci6ETiTVtjihcLy86e4
+Zt1DQIZbyxc0bWkYUB0JpKgHfUxk7s7jk6zFMJtBdF5bpOJWSDl3yc6LNHBimeBK
+5AO042p6KsJw6ZCMpuQudrZyAn827OQd0qjffPG74fyj4nA8r1Wa3M+jcy/RnNUp
+tp/2l605JpN47LW4qJ8W23MrcTReoeJTHv/xyKQQxAclfiM7yEN7XvHOmegS/I4k
+4ehvvUvmlIV5CCB712Ci7sGJcafe7AD3aTZ/VL/up2GsakvJ0HrpSSkk3wrqW5ju
+lSf73hxh62sD6o6eZXwt8Jp1FtYCrQKkPCBXXi322d7dgzrQ+8O9T/ffkxGxNYoN
+9V420J1qtUXCWoLB+DUHE+IUPOQ5kSbn3R27WALZ4wxrAI2jfNQ=
+=LdkV
+-----END PGP SIGNATURE-----
+
+--oC1+HKm2/end4ao3--
+
+
+--===============1967453832442293420==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1967453832442293420==--
+
