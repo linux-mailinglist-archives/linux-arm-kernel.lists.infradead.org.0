@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2960FFCCEE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 19:16:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 770CFFCD50
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 19:22:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dg8jvNEPWA8qyfa5Jp15E/p55n545JE9oYWTC1kpMao=; b=ZXuqIpgn1OCyAN
-	lk4L6LV/lDydfK7xBn8HIe/6RmMrjYCqOu8MkrCLdFUYF3REY0LJ/1cOyyOmjGTJTpI5Zsia+vjzG
-	Ja0ppApPvIVdPmihKtrDE34+FrXOutfpHpF+iwAMCAAu1gqZkhKLYvkeGV8LSRunKjvu1ojNC/+PF
-	rl2+U7KLgQCfngQbB3KKC2Fv6zxII9+WlJERZk5nCw5jJrQVtI6iklRHWKWERpM/x4E97jMditq7r
-	KGIm3lwj39kJBsVORN8E1NPD4cGjNq43xtmURmgIdnSdCLsgAL3b2Nx0mb45OtGmR+yKKm8/qPskI
-	g0o0kExmKZTxykfLDf2w==;
+	List-Owner; bh=e6xtntQxBc6k0Yz6uMdHEczU7+lFAmoBNpQkVTVm0mM=; b=M0uoCit4R609he
+	6H+Y3vmA6b396NX7Jtt7zgBFtsF2BXRGRy/GzmV9GERLVpsrY4poLMbqG44miISVguWMmEsnRRJ1U
+	22rbvQD060yYbf2unx8XkoP49NkKmuVnrFk1ULRnf103aXztgeBr8E825GBB0+8bYg33ugMFcb9q4
+	+7ZbGU08p5y0o7QH9o5Wwvi0z4WrD2rj2w3kpGYIu6Bdcius4Il8/wBb9WGv8GLGNo+S78jeoB0uX
+	IhIKR42bqUF2vLVjbCMpEewZoSePHxU+51ZFMpQrHUodEWr3RHI3syO2VuCO0LMCriPY5bY+gdi8L
+	krneppELOe+qxVJhs14A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVJfL-0004he-K2; Thu, 14 Nov 2019 18:16:23 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1iVJkw-0006nd-NL; Thu, 14 Nov 2019 18:22:10 +0000
+Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVJfB-0004gc-BD
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 18:16:14 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id y23so4535862vso.1
+ id 1iVJkm-0006ms-Or
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 18:22:02 +0000
+Received: by mail-vk1-xa42.google.com with SMTP id d10so1720103vke.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 10:16:12 -0800 (PST)
+ Thu, 14 Nov 2019 10:21:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=VxmH23UIh9bgluRuYOUap2wtF++JOc1rV8xUaBpEJ7o=;
- b=mO2PVhZ16pDlTlYuVILvi8A75KjsItYV3DeXppoIPq3BwPbsDM/LW+NfkBp7Qk+ax3
- jC42FJ/4QTOWM+agweJCKLTAarRvevGAP+kn1yj3AgK8qbl5zqpNse1lpQSxZLOa8vPK
- LmriK1aIr1Yu4IPoPkCJfA6tn+GqX343TCODAOuTdCTrnSO5apUdtHjQYSL2WZvs6vQ0
- plS2lZ7eC8FbopssHnbg/0ysYBXqdJG1vvakPm9eNgI2fW1zczisBV420GWmv9uq5wri
- 8r7K1q+hYCqXDdjNMtVpHMBlhhpI9eX081Y6q9NDpmWpdzMr2SNw3sclCmvXtXzmkRAQ
- T3kQ==
+ :cc; bh=+VmC0KbxXRLmjlMOB0/4aEHZOiDqNhhGvntSX5Ejh5I=;
+ b=i3GWEGWzJoezpcuBDQQnlQIoJ+Rv+jSVSok9hmyrDnxtqt29OyhbbtJA/BshvyJ0A+
+ xQHroDFiea8vnXV5pDykoN5dMiwmOr370jtxqYTkPulHU2uPmqNHn0Y0bdT1r0ZVnBlS
+ T2AFQQUWhBYmf3HiqpDxsDJm1TuozHGfYl4zVe0KbiR+t0ApNOPZj9V3Hd1sjCaoALiv
+ fUjmMBfQfH9Jl5MFqHJ1TgDLqhpp+zuhMmjfygnYWexjSfBGhw3XIu0vyYBE5DxvRUkX
+ 1zUvQ9EidQToL3IbY2wUfRHA6WTAYCPlNFGfIhivzPV2RhF/5o/FJbT9aGP4HQrS+dCV
+ 5gJg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=VxmH23UIh9bgluRuYOUap2wtF++JOc1rV8xUaBpEJ7o=;
- b=CcKFKXrhPJ7qxGye6HVvRAKGGoda7/Xrm+GPgMp1L8zn6zfBwcbjBWLkWNsqQeabLC
- iPSV4XWHpv4xEFQ2jVWQ6O+HPuKuHt2Dl1LGCHwVMaUa3VA9MAEf6W8CbFPszNOWly32
- jnOvqN1z9Db53oXdrhR7P7X1l5p+/EvC/QrKUsYW8gO8p/F54A4dXQgIKvp5xC+CpDtG
- On8pdXPoJHEqyL/vB1D70myRvQanLVWjAPOIy7Q7l6thZ0fMxvQ7mQweMHLYUVs4bL61
- Sz7F6ebSPV6p7iyJB1sYazEZlQJsVHH2Z/UB7FWRgXl9LWZ/G66g/2Iqa+Np8op5mP2A
- d9/Q==
-X-Gm-Message-State: APjAAAX+iIqXy8ZTgFkCbYeh6MG1gZn0wWTbpgZvsFoi3jdZIcsfhtEV
- sHFHSKPwRXoNyG12lHVLsHMbrPok88Bq1Ulxu2ngiw==
-X-Google-Smtp-Source: APXvYqxRXH/rJzDlko//25OMTKBgGjGCR6O8nuS4Pzy2+D1/twDFtUQrSr+vpmJGm+Wy2gjuADPo9QY7+Ec7wJ2kGjw=
-X-Received: by 2002:a05:6102:2041:: with SMTP id
- q1mr6523378vsr.15.1573755370771; 
- Thu, 14 Nov 2019 10:16:10 -0800 (PST)
+ bh=+VmC0KbxXRLmjlMOB0/4aEHZOiDqNhhGvntSX5Ejh5I=;
+ b=cxofcXR9EZhjAEck3uxkB23D7lbRhw7rg8na4XMiSw6UxQU4MIUjoE1eXx+206N56M
+ VAOQFyh5h5IdK1iayFyqhs8G/hPZGheSyCdbC1SG3/lFoI5N7rYwn0IRsQGsKqktWHAJ
+ HvjY8pEIU4t8NROtutYtOwUFNSHZd+9kNguCVHStRa/0Hp3GVDOFD0mIyuzdd5CLGPBt
+ j6C92iA+tp2Ec3WSM8nMi2cltZ1C3PVNDh1LS5vk5gzSUIq+TGRhf024gT/DnsyH/61Z
+ RRrmIRsBPj247kO6Xq9klNvSK1pDWXyVADsKBPSgvrcSwUfXF/zOfQfMPbDc5Kcy83SF
+ H0gg==
+X-Gm-Message-State: APjAAAWB5LLl/y9auyWgk8ng0p9VE9JOe1kUZ36fDlDQh8zqYSo6PWWV
+ zYmshlr2zuz2GtFCCAedGLTd9OnrpMlE9e0jtFI8Vw==
+X-Google-Smtp-Source: APXvYqw2NIH+2yA3HN+TDprRqlq2TcrmfjkaRKWSAwLb7M4Vw9kp9ssltTe9lpDGejjqT6dY+zc0U+thx75uMkNYkNc=
+X-Received: by 2002:a1f:7d88:: with SMTP id y130mr6044142vkc.71.1573755717967; 
+ Thu, 14 Nov 2019 10:21:57 -0800 (PST)
 MIME-Version: 1.0
-References: <20191031195705.36916-1-samitolvanen@google.com>
- <20191114165730.GC5158@willie-the-truck>
-In-Reply-To: <20191114165730.GC5158@willie-the-truck>
+References: <20191112223046.176097-1-samitolvanen@google.com>
+ <20191113200419.GE221701@gmail.com>
+ <CABCJKudoBHo6rZoGMFproXjmexu16gonVKDPdnq9XDCmO2J2cw@mail.gmail.com>
+ <CAKv+Gu85PY+A_XxB9DcmcoV8+nAJZGfAc59sj6XnOGyhDedNQA@mail.gmail.com>
+In-Reply-To: <CAKv+Gu85PY+A_XxB9DcmcoV8+nAJZGfAc59sj6XnOGyhDedNQA@mail.gmail.com>
 From: Sami Tolvanen <samitolvanen@google.com>
-Date: Thu, 14 Nov 2019 10:15:59 -0800
-Message-ID: <CABCJKueJ-J5MPj4-qL230iM3Bu8Qc_4wsViRgt2nJD81_EVJLw@mail.gmail.com>
-Subject: Re: [RESEND PATCH v2] arm64: lse: fix LSE atomics with LLVM's
- integrated assembler
-To: Will Deacon <will@kernel.org>
+Date: Thu, 14 Nov 2019 10:21:46 -0800
+Message-ID: <CABCJKudGdwmshFynZQZsPg4JJ+Yu0-GNp+aEjXdJAwu6zU5vtw@mail.gmail.com>
+Subject: Re: [PATCH] crypto: arm64/sha: fix function types
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_101613_409795_4E10FE50 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20191114_102200_832974_43484FB9 
+X-CRM114-Status: GOOD (  19.10  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -99,40 +99,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Andrew Murray <andrew.murray@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-crypto <linux-crypto@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Herbert Xu <herbert@gondor.apana.org.au>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Kees Cook <keescook@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 14, 2019 at 8:57 AM Will Deacon <will@kernel.org> wrote:
+On Thu, Nov 14, 2019 at 1:45 AM Ard Biesheuvel
+<ard.biesheuvel@linaro.org> wrote:
 >
-> On Thu, Oct 31, 2019 at 12:57:05PM -0700, Sami Tolvanen wrote:
-> > Unlike gcc, clang considers each inline assembly block to be independent
-> > and therefore, when using the integrated assembler for inline assembly,
-> > any preambles that enable features must be repeated in each block.
+> On Wed, 13 Nov 2019 at 22:28, Sami Tolvanen <samitolvanen@google.com> wrote:
 > >
-> > This change defines __LSE_PREAMBLE and adds it to each inline assembly
-> > block that has LSE instructions, which allows them to be compiled also
-> > with clang's assembler.
+> > On Wed, Nov 13, 2019 at 12:04 PM Eric Biggers <ebiggers@kernel.org> wrote:
+> > >
+> > > On Tue, Nov 12, 2019 at 02:30:46PM -0800, Sami Tolvanen wrote:
+> > > > Declare assembly functions with the expected function type
+> > > > instead of casting pointers in C to avoid type mismatch failures
+> > > > with Control-Flow Integrity (CFI) checking.
+> > > >
+> > > > Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> > > > ---
+> > > >  arch/arm64/crypto/sha1-ce-glue.c   | 12 +++++-------
+> > > >  arch/arm64/crypto/sha2-ce-glue.c   | 26 +++++++++++---------------
+> > > >  arch/arm64/crypto/sha256-glue.c    | 30 ++++++++++++------------------
+> > > >  arch/arm64/crypto/sha512-ce-glue.c | 23 ++++++++++-------------
+> > > >  arch/arm64/crypto/sha512-glue.c    | 13 +++++--------
+> > > >  5 files changed, 43 insertions(+), 61 deletions(-)
+> > > >
+> > > > diff --git a/arch/arm64/crypto/sha1-ce-glue.c b/arch/arm64/crypto/sha1-ce-glue.c
+> > > > index bdc1b6d7aff7..3153a9bbb683 100644
+> > > > --- a/arch/arm64/crypto/sha1-ce-glue.c
+> > > > +++ b/arch/arm64/crypto/sha1-ce-glue.c
+> > > > @@ -25,7 +25,7 @@ struct sha1_ce_state {
+> > > >       u32                     finalize;
+> > > >  };
+> > > >
+> > > > -asmlinkage void sha1_ce_transform(struct sha1_ce_state *sst, u8 const *src,
+> > > > +asmlinkage void sha1_ce_transform(struct sha1_state *sst, u8 const *src,
+> > > >                                 int blocks);
+> > >
+> > > Please update the comments in the corresponding assembly files too.
+> > >
+> > > Also, this change doesn't really make sense because the assembly functions still
+> > > expect struct sha1_ce_state, and they access sha1_ce_state::finalize which is
+> > > not present in struct sha1_state.  There should either be wrapper functions that
+> > > explicitly do the cast from sha1_state to sha1_ce_state, or there should be
+> > > comments in the assembly files that very clearly explain that although the
+> > > function prototype takes sha1_state, it's really assumed to be a sha1_ce_state.
+> >
+> > Agreed, this needs a comment explaining the type mismatch. I'm also
+> > fine with using wrapper functions and explicitly casting the
+> > parameters instead of changing function declarations. Herbert, Ard,
+> > any preferences?
+> >
 >
-> Any chance LLVM can be fixed to avoid this bodge in the kernel?
+> I guess the former would be cleaner, using container_of() rather than
+> a blind cast to make the code more self-documenting. The extra branch
+> shouldn't really matter.
 
-Unfortunately, LLVM developers consider this to be a feature, not a
-bug, so it's unlikely that we can change how the integrated assembler
-works:
-
-  https://bugs.llvm.org/show_bug.cgi?id=19749
-
-Note that this patch is similar to be604c616ca7 ("arm64: sysreg: Make
-mrs_s and msr_s macros work with Clang and LTO"), which worked around
-the same issue in the sysreg code.
+Sure, using container_of() sounds like a better option, I'll use that
+in v2. Thanks!
 
 Sami
 
