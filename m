@@ -2,80 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95FAEFC4A9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 11:49:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AB34FC4DC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 11:58:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UNG4aHBS2WAYSVpODfTAQOugitpBz+n9o2xppNy0HIw=; b=AbnkLqXIIFkP6D
-	vLAwYVZLCS9Hx53oFU4dDX96AK5IHxc/2CJePXWbdRErtFVE+dEMLZihHruVkQEmdMFFylp4ZDOk/
-	JGuWWTf0TogBdkE7LHl7R6f+I5KE9JerT8WgrI8JtMcMU3iRd4Fo8LFhIm21b3WNo3ONIYm1efFxR
-	Nqw9ck9RKCIojvyKxkP+OtASc54yGuCAT+iEb/2iGQFle/dw6G+59i52p9l2bcDKMBDVlrzIvgbdY
-	7RT9gGsJ3hpeTcumloLcRkGtAyovPQAkGAoa4dQuohyw+pSj3mT3J/ilepyFPd3IPTPdq4mXSrLw2
-	LOgIyioyefJOQiW92WSQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+WIABukdIpdMcwCfqmFGrFoZmN/DQ6XUUI0cXspcMrw=; b=rF81KFAR0ypIVG
+	SaWa0AWd93Ob3j8m2qnZ3NGNyrxx2aL3SACxaTHQWF78CqBsyxHPCFj8KRBCicZCIC0RL+pbGt29G
+	7IqipAWUDll314cyb/8vQzw6Y0BLhAVes3p5Cip0Wb6SHZ6dZv+4r+26GID/ElOcIPejAtN/M3M38
+	7NllmkcPIYl/dnonrYRqpFYLQUdwKUvyBXKLhBiz+cuKgCKmcOqduF0PdwlTduaRycFKVADV7ASjt
+	r/cnAiN5myJjT2RmkZJ0jyjg1lozdV5qdfqZcJe3TLy+GmuiDAvhKTuB2lDNPvQZ/C9Wp3dZM2wJe
+	2FGGv7wiNEcukk14MSbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVCh0-0005vH-6K; Thu, 14 Nov 2019 10:49:38 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iVCpU-00013u-Pd; Thu, 14 Nov 2019 10:58:24 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVCgo-0005uH-09
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 10:49:28 +0000
-Received: by mail-wm1-x343.google.com with SMTP id c22so5344732wmd.1
+ id 1iVCpO-00013R-B6
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 10:58:19 +0000
+Received: by mail-wm1-x341.google.com with SMTP id 8so5378978wmo.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 02:49:25 -0800 (PST)
+ Thu, 14 Nov 2019 02:58:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=NwAeLrKvbbZMMrwnv1eozuX4/GetsOmlDvz+Gto4i+k=;
- b=gnFcIlbK+7rOK1QioyvQsJIa/QTWL2hkKkzE7GJZbWrUS7WHynwr3Ip67bsIsKiuUf
- /ZmIr/rM3wyntOQXhvbaUNK94VGUqQ8ltx0wfGiCgVFdll09HDwLZFqsp2QZ9o97IWtN
- DR5yz1J0s3S5NL6VkMS/jLwmefaM7oUlCI8JbQtfMEVe7I0c9ePaZ4Nhu92BY+3uvZ4i
- z6dkhcZT2LpvZEEIu8zQRqJtEseC8YuSPbnRRZDw5+EwyyqrMMs0ZAB33SzWiVQiJ8Hu
- et7fBdtOqMvrfmo4kJKQdgjcyz8CSK8hb4GZNgNZ1UybUgotG9JWv6xMEvRT6uWd0Ppj
- Aw9w==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lUDQmuDK49ImgwHVLgjE9X4paiR383d/ziyJit2HbDw=;
+ b=uqr9FAH6BQ7HESVl57/IfLRJbzZXTLbF2wXTTboVQw0KZFt3nmPkyWuA3rbJ3nFooJ
+ GBBn1lAcHoEkVrUl1Px9R87ovisLn98BFe4cHyQ34IWaOOLj5kKONpgT9azV6sqf5AFQ
+ 4FFwf1CDhdPxctlYTrdjZ/lpnmCyWz1nttXvgJv0E6Eunhni2s9RictuIk9p11tqoQeO
+ oEYr7RwlqfStQXgig2bZblBaYoBp1nI+M3fNBihSPD7M41fLR2YhjQgiUsat7wFCW/Bd
+ +FMoSMKrO40wztajwS1w9LAz1MXLTL15zc2Wh39+0AXmSNNtIHoWJjFSFaBz4EqHr/5L
+ OFlQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=NwAeLrKvbbZMMrwnv1eozuX4/GetsOmlDvz+Gto4i+k=;
- b=GW4XBmZscS1ob7D65oqkw3k3llqPBs6xkBu4aj0wK9GhghXCtW2igPMZ5BEzHpSpNc
- v8RkIHZdJuSQCBrrGu8T95TiAs2LTPLA3Eu6lvczF4U94UjRJOH8Cw1o/EEJ25RYLmuk
- VZwfmD8tv0v/f/w7P3kIPurkYTh6hk/oHAjzzv0HSiundw/MO/I+6+PUSlv1DLT4TDMh
- 6p9Z0u/FbLOZFAmUVMuLkcfnIrjxeyxp92UvQZ9plV/T4VpycARL2OhEP+XUc0lwL5SN
- UpbwUzDMvAFwIvwp2U9UPJSz9ZZukdZiQoopUQliNgZLOmU6v6jQ+cJL031psi/xcxlw
- Ih5A==
-X-Gm-Message-State: APjAAAVxazyoTB+E23hUsLlMSGSxibmWAYRBBTVeIj/NqmyIfasjdkc4
- X/ad7URVnGiYysizpspKJCA=
-X-Google-Smtp-Source: APXvYqz0PO/gUjWxdhePfi47Eljly0FCq+XLQE5Tvm4jyTpgfS8z6n7vRDQBxoW13zSWJU/D0T5RLg==
-X-Received: by 2002:a1c:dc09:: with SMTP id t9mr7014332wmg.65.1573728564499;
- Thu, 14 Nov 2019 02:49:24 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lUDQmuDK49ImgwHVLgjE9X4paiR383d/ziyJit2HbDw=;
+ b=biUsB2TuCr+vMdIgT6lfyJlfQxSkou8pQ5AqCRGDbzO+KnnGGczIygRIvOlVlGslFi
+ sSU++xmoWeb2svty5JwM5jvzSnP2pu4OFZ7bR2C5wTM3Ip369beBdwlktolHLukf63nP
+ EBRcSSQPjkKxG4RoOHmGSptsqN6OZGDtnGL4EFn33ItAVlHJaBpI6MfQD79YDtoS2f0S
+ Us48bCU8z7ocd5fmWQHYfXkdsiQ6cMcl7Di9CFNONYaIuPNUFgWSnOQ/y2o9h+0Opguq
+ ZKWiwlxtuWeEo0Cg0Q8G2RxzRzuzzg4pw69lVqCfzuAhUS7H2OOjmEsTytC5OVlAiuoK
+ hBTQ==
+X-Gm-Message-State: APjAAAW2z3/c/85M3wtSFIkTYScE2i0IIx4dyceJcAzW8xpKRm/BSzER
+ 1MOZIpI6oQ0Uo4Yowfpspu0=
+X-Google-Smtp-Source: APXvYqx2jCcvlo2boZJ1P3rOWROelM+uphB4pp6k229Qk5W3qr+3NetY+PuKuVIistmjIBMc/9ubzg==
+X-Received: by 2002:a7b:c24b:: with SMTP id b11mr7571066wmj.125.1573729096886; 
+ Thu, 14 Nov 2019 02:58:16 -0800 (PST)
 Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id k14sm7229301wrw.46.2019.11.14.02.49.23
+ by smtp.googlemail.com with ESMTPSA id b66sm6042770wmh.39.2019.11.14.02.58.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 14 Nov 2019 02:49:24 -0800 (PST)
+ Thu, 14 Nov 2019 02:58:16 -0800 (PST)
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
 To: davem@davemloft.net, herbert@gondor.apana.org.au, mripard@kernel.org,
  wens@csie.org
-Subject: [PATCH 2/2] crypto: sun4i-ss: remove dependency on not 64BIT
-Date: Thu, 14 Nov 2019 11:49:07 +0100
-Message-Id: <20191114104907.10645-2-clabbe.montjoie@gmail.com>
+Subject: [PATCH] crypto: sun4i-ss: use crypto_ahash_digestsize
+Date: Thu, 14 Nov 2019 11:58:13 +0100
+Message-Id: <20191114105813.13171-1-clabbe.montjoie@gmail.com>
 X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191114104907.10645-1-clabbe.montjoie@gmail.com>
-References: <20191114104907.10645-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_024926_996154_6704003A 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20191114_025818_406518_F407E3DA 
+X-CRM114-Status: GOOD (  12.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (clabbe.montjoie[at]gmail.com)
@@ -107,27 +105,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The driver now compile without warnings on 64bits, we can remove the
-!64BIT condition.
+The size of the digest is different between MD5 and SHA1 so instead of
+using the higher value (5 words), let's use crypto_ahash_digestsize().
 
 Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 ---
- drivers/crypto/allwinner/Kconfig | 2 +-
+ drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/crypto/allwinner/Kconfig b/drivers/crypto/allwinner/Kconfig
-index b3c9c34a30de..b0a5a0827483 100644
---- a/drivers/crypto/allwinner/Kconfig
-+++ b/drivers/crypto/allwinner/Kconfig
-@@ -7,7 +7,7 @@ config CRYPTO_DEV_ALLWINNER
- 
- config CRYPTO_DEV_SUN4I_SS
- 	tristate "Support for Allwinner Security System cryptographic accelerator"
--	depends on ARCH_SUNXI && !64BIT
-+	depends on ARCH_SUNXI
- 	depends on PM
- 	depends on CRYPTO_DEV_ALLWINNER
- 	select CRYPTO_MD5
+diff --git a/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c
+index ee518dcdba42..ec5d9ce24bb8 100644
+--- a/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c
++++ b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c
+@@ -227,7 +227,7 @@ static int sun4i_hash(struct ahash_request *areq)
+ 	 */
+ 	if (op->byte_count) {
+ 		ivmode = SS_IV_ARBITRARY;
+-		for (i = 0; i < 5; i++)
++		for (i = 0; i < crypto_ahash_digestsize(tfm) / 4; i++)
+ 			writel(op->hash[i], ss->base + SS_IV0 + i * 4);
+ 	}
+ 	/* Enable the device */
 -- 
 2.23.0
 
