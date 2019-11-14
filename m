@@ -2,68 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69B5CFBDCD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 03:21:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49FBBFBDF2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 03:34:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=UtHC61+kpf5Yi+Zmhb0VeW+N2Q0AImyJLoEFB13HrHE=; b=Qz2
-	puxL6LL7/P5uhLP4b4Y9Qmmz+2twrUENzPcLZ/8BHK+SoQBjOushi+/ecJrY7Mn6osDsyrU2Pv7h7
-	MKN+EASsgaa8KKIry1EGPwCoXW78nR774MLovwbjNqHUdCVFFkxeKIJgjpFuWKRkTykFcnM8lagzo
-	h1S9vjoMhyy9d51h5YraGWP6Tai+OFhPnai0QdPoOlwmjscTsZrdjqY9FkQca/XWTKGuCO9XU6+aV
-	Y1yZyK0HJb7LAY7k/1rkljlMiTGyhF1PdFGN7Vp22prWlg1JLBUxzSZuHZoaCyPz14Yu09n/SKilb
-	JBX0580yn0oCM/cS6goriNbaeC2fpaQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qe+ZzKTlpuETio4xXu5n8BEQ0M+ZreD9UtbMAbwjlOI=; b=OmVTbC/blgJeMr
+	F8nvjqtXfzaCgdBFjhE7ihEJxH9H/GZh6IgJFA5yBnCZRBAEb2y1uk05FgAT5NCW4R1tGhTU/X56C
+	mhSvWTPn+n9KCoQZotXPmyyy8elR8zvW0/ZKbmw1ciFBa6IEm1X/aWx2lROSYYIqijdRrT70vDK/h
+	q3vdiT0xDGze+UJQT5zzqHYciEggR9opl92Q941M8KmpjRpfJx8vOusfspbAMKB7+OM5DpFSX6sdU
+	aWEeBmMjZvKKgZmUbgTuVwNa1aKNNh2ceGLux0MxpSrW8ORarZKjRdVsWB/oF0E210Ja+7FNWMek0
+	QQp30PbkuzKqZyBGjOYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iV4la-0007DE-Ga; Thu, 14 Nov 2019 02:21:50 +0000
-Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
+	id 1iV4xG-0002As-BG; Thu, 14 Nov 2019 02:33:54 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iV4lT-0007CS-F2
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 02:21:45 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 47D4wt0X4jz9sNT;
- Thu, 14 Nov 2019 13:21:33 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
- s=201702; t=1573698096;
- bh=shChhN5EF9KgXRXrKBtuHFrRtChjGLsebmVlDt06m7Q=;
- h=Date:From:To:Cc:Subject:From;
- b=mVGXWZyInQ8ZghGJNyWcbcUdSEEWLCCQizt7pEjGbYO653gWawqyJ1FAbGvQCkS7L
- JY1YndT+cXSwGCiqHeIVOqCAT8af23iPhs7if4uIFz1YLzqFzFFA37WacNN1JkfZDK
- 6+hjsHxa94WVia0ZqOEWQGJyxryGnEkNbAVkwrHmWpjzEmHDrMwL7xJGsaT57ovSf6
- IpddjfzX7Yz1YnlY1c05Pz1xYnbXzRyNHnIuhSktJWxp91HHub7CWV8A7Htrqa0ORV
- 5KmZp8jlJIewQca4ME2k3QWka3PZXflLMYsDvKD+EJiP9i0GgoFYxvipwP4xNxYvl3
- 2wI5JjmfO7gUQ==
-Date: Thu, 14 Nov 2019 13:21:31 +1100
-From: Stephen Rothwell <sfr@canb.auug.org.au>
-To: Rob Herring <robherring2@gmail.com>, Olof Johansson <olof@lixom.net>,
- Arnd Bergmann <arnd@arndb.de>, ARM <linux-arm-kernel@lists.infradead.org>
-Subject: linux-next: manual merge of the devicetree tree with the arm-soc tree
-Message-ID: <20191114132131.56089c64@canb.auug.org.au>
+ id 1iV4x5-00029u-IA; Thu, 14 Nov 2019 02:33:45 +0000
+X-UUID: 4dd235c4d2234f9299126564d22a0cb4-20191113
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=jdpcBWc7HBlDBSHQj9W7l/lAc9ZUoty9ehXTUgWCTGw=; 
+ b=DE1IpPyBL+mC1m1knTLKZFTpztGf8k13sLrkBIVTY6cyZX7Le3W/Huc0mCBlTe82eBmGGdmRI5p6xCcEzGIWGgk0rWP47CbEBZXXM86lDwTe2Kf1M/dQ7CGelnvi8/9ZPZkvSYG2hjOKWWyv05Lh/pAkHSveOOjHJTh2Q9HLqt0=;
+X-UUID: 4dd235c4d2234f9299126564d22a0cb4-20191113
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 759150441; Wed, 13 Nov 2019 18:33:30 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 13 Nov 2019 18:33:30 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 14 Nov 2019 10:33:21 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 14 Nov 2019 10:33:20 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Tianping Fang <tianping.fang@mediatek.com>
+Subject: [RFC PATCH] usb: mtu3: fix random remote wakeup
+Date: Thu, 14 Nov 2019 10:33:11 +0800
+Message-ID: <1573698791-24310-1-git-send-email-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 2075714ACED72CBB15C4DCA956E5D8B2E8C542FC8427F2F77C2C39642685507E2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_182143_705120_B8CD587B 
-X-CRM114-Status: UNSURE (   7.34  )
+X-CRM114-CacheID: sfid-20191113_183343_613512_862DD19C 
+X-CRM114-Status: UNSURE (   8.73  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.4 (--)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,116 +84,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marian Mihailescu <mihailescu2m@gmail.com>,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>
-Content-Type: multipart/mixed; boundary="===============6350817823803066203=="
+Cc: devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============6350817823803066203==
-Content-Type: multipart/signed; boundary="Sig_/BB1LBtqI5ejPny06wVC/iyM";
- protocol="application/pgp-signature"; micalg=pgp-sha256
+Wakeup_signal will toggle status according to ssusb_ip_sleep signal
+after debounce time, so need add a delay time and wait for wakeup_signal
+toggle to complete, then enable the remote wakeup. Meanwhile reduce the
+debounce time of wakeup_signal. These will avoid spurious wakeup event.
 
---Sig_/BB1LBtqI5ejPny06wVC/iyM
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
+Signed-off-by: Tianping Fang <tianping.fang@mediatek.com>
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+Note, depends on following patch not merged:
 
-Hi all,
+    [v3,3/7] usb: mtu3: support ip-sleep wakeup for MT8183
+    https://patchwork.kernel.org/patch/11123151/
+---
+ drivers/usb/mtu3/mtu3_host.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-Today's linux-next merge of the devicetree tree got a conflict in:
-
-  Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
-
-between commit:
-
-  577dd5de0990 ("arm64: dts: juno: add GPU subsystem")
-
-from the arm-soc tree and commit:
-
-  3afd6389f320 ("dt-bindings: gpu: mali-midgard: add samsung exynos 5420 co=
-mpatible")
-
-from the devicetree tree.
-
-I fixed it up (see below) and can carry the fix as necessary. This
-is now fixed as far as linux-next is concerned, but any non trivial
-conflicts should be mentioned to your upstream maintainer when your tree
-is submitted for merging.  You may also want to consider cooperating
-with the maintainer of the conflicting tree to minimise any particularly
-complex conflicts.
-
---=20
-Cheers,
-Stephen Rothwell
-
-diff --cc Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
-index 018f3ae4b43c,c9bdf1074305..000000000000
---- a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
-+++ b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
-@@@ -21,11 -29,8 +29,12 @@@ properties
-        - items:
-            - enum:
-               - amlogic,meson-gxm-mali
-+              - realtek,rtd1295-mali
-            - const: arm,mali-t820
- +      - items:
- +          - enum:
- +             - arm,juno-mali
- +          - const: arm,mali-t624
-        - items:
-            - enum:
-               - rockchip,rk3288-mali
-@@@ -34,16 -40,8 +44,7 @@@
-            - enum:
-               - rockchip,rk3399-mali
-            - const: arm,mali-t860
--       - items:
--           - enum:
--              - samsung,exynos5250-mali
--           - const: arm,mali-t604
--       - items:
--           - enum:
--              - samsung,exynos5433-mali
--           - const: arm,mali-t760
- =20
--           # "arm,mali-t628"
- -          # "arm,mali-t624"
-            # "arm,mali-t830"
-            # "arm,mali-t880"
- =20
-
---Sig_/BB1LBtqI5ejPny06wVC/iyM
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl3MuisACgkQAVBC80lX
-0GzqRgf/VJZvk856gDSfif6dvyn2qDIRlIUcPqIyFw/t3FyYMGyzMFBvdeY5kgYL
-7iLDz7NSrMYfKnjUDL/HxiSAcAKUxuFu0R5hDpwnJqWda7pvWsLS5dY8+e8cIiOG
-S0XhpMwZSksWHvIekdZPtVmEDh5DYoH3NWDAVhMehrVs93IV9fe3eqcAHyYSBeZ2
-+iLBXn/j0DKW9kmRouMvk7rIAscozbgMXjH6CjZ9WzVCXnYnL134vdQu0tr4XDm+
-CCQcy3JILuVhoBxvDhqWTy1njJsKV6+zkFa3mF2rlRbm0ByIID3xS5SnJPi5MRc2
-lbja4SfiZ8hsQKel+Ga4OXIlXCAgag==
-=w8qt
------END PGP SIGNATURE-----
-
---Sig_/BB1LBtqI5ejPny06wVC/iyM--
-
-
---===============6350817823803066203==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+diff --git a/drivers/usb/mtu3/mtu3_host.c b/drivers/usb/mtu3/mtu3_host.c
+index 182c9439c15a..ca48ff751c8b 100644
+--- a/drivers/usb/mtu3/mtu3_host.c
++++ b/drivers/usb/mtu3/mtu3_host.c
+@@ -53,12 +53,12 @@ static void ssusb_wakeup_ip_sleep_set(struct ssusb_mtk *ssusb, bool enable)
+ 	case SSUSB_UWK_V0:
+ 		reg = ssusb->uwk_reg_base + PERI_WK_CTRL0;
+ 		msk = (u32)(WC0_IS_EN | WC0_IS_C(0xf) | WC0_IS_P);
+-		val = enable ? (WC0_IS_EN | WC0_IS_C(0x8)) : 0;
++		val = enable ? (WC0_IS_EN | WC0_IS_C(0x3)) : 0;
+ 		break;
+ 	case SSUSB_UWK_V1:
+ 		reg = ssusb->uwk_reg_base + PERI_WK_CTRL1;
+ 		msk = WC1_IS_EN | WC1_IS_C(0xf) | WC1_IS_P;
+-		val = enable ? (WC1_IS_EN | WC1_IS_C(0x8)) : 0;
++		val = enable ? (WC1_IS_EN | WC1_IS_C(0x3)) : 0;
+ 		break;
+ 	case SSUSB_UWK_V2:
+ 		reg = ssusb->uwk_reg_base + PERI_SSUSB_SPM_CTRL;
+@@ -197,6 +197,8 @@ int ssusb_host_disable(struct ssusb_mtk *ssusb, bool suspend)
+ 			  (value & SSUSB_IP_SLEEP_STS), 100, 100000);
+ 	if (ret)
+ 		dev_err(ssusb->dev, "ip sleep failed!!!\n");
++	else  /* wait for wakeup_signal toggle done after enter ip-sleep */
++		usleep_range(245, 255);
+ 
+ 	return ret;
+ }
+-- 
+2.23.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6350817823803066203==--
-
