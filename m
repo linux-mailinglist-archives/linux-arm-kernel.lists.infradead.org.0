@@ -2,86 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F1CBFC59E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 12:45:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBA65FC4AA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 11:49:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qJAuKit1bQH21J5PipAub+JcPWCBFriwVbFkHqpS+nM=; b=bkrIGixIsz51RW
-	LBDVgezo/eqfX2zpBZmsXVGbXqzDhGJ0Mssqez4Q2Y7UeaGQlhReY01OTZUaETA/P6A7pdN6Lc9mo
-	5dg+dAKBIVTV8R7Mu22HwdYNqjyca4LJA21PFOolHlcz5tSD2Z6w6L1pjJBUR42tSgRq4iT5fiztF
-	ZCPWQzDP4Iqrc9Hu3GqRYh/a61kPZzPm8OijlhNCJAtJOoChGwJFb75I/fIC/NmmTMedr8gsNAEcf
-	swqAKjzpFsyWDDnAYjka+NJl5TE+waGq0n9DXDb3ZlRJTPTVdfvSQQGdF6vcxnx7iXr8Y8LhDLhtM
-	mlR32b+/p9c+puq47tEQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gdH2mEzxYgICLDVHi46RTvDneLkcQVgb0vd/MdvwWIo=; b=ZLf6KH9gr6cdJk
+	ofAc3sppCb7DTYnspGTJaurqwYmF9yObnTOdKg2NlOXxKz0FyjU896xVkTKI51MbQn0801nLiucno
+	fCZ/87LzlIusMwUD+Boor9cmWMtJEhYcEqCu/32qTZKFaZ7gJxdxYIlDliuQMdoqRjZjPA7KxwEKK
+	JUXdMTU/SDtWZfV7PH9zgPq+YxPTvw2u21Pvt+A+EWNS9GWq1xT4YqsxzJuT36/4fK83rd0II5oaZ
+	HOxV/+epxi8O7NcpdO3rH31LBe5Mphnl+3cPFRKL3X6VCIMItt6miLlP0t6/6xqJpWFthSgo6adwa
+	ALvWWdL2xKLc7vdBXgRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVDZ2-0007vd-FG; Thu, 14 Nov 2019 11:45:28 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iVChD-000645-5x; Thu, 14 Nov 2019 10:49:51 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVDX8-0005Bs-Qb
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 11:43:35 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z10so6063747wrs.12
+ id 1iVCgn-0005uF-Py
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 10:49:28 +0000
+Received: by mail-wr1-x441.google.com with SMTP id r10so5909650wrx.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 03:43:29 -0800 (PST)
+ Thu, 14 Nov 2019 02:49:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=nQNqrubOlUUYZPppnjrDT5gghOk1RD7VpCkLrJlKMDQ=;
- b=lUaH7bFRd2dhXRSlw+qcr3GHuOtqyG8vd8F0OdlZgPharmpXM3PwpHtGslEKKUTnHM
- 27t6qBaIXKh9gGWzxI5rYY4nIBq7FD+trKsQmmL3xDJejBQR3R4DdVL8nb1tzR//uvRj
- kGodRl0qd5Q7uRKoUBYwmpofXZllW0DYzt235GAxRyTrvti+8qVzddQ9by8x7pKAmRXe
- oZzTv0uZpVpOU9vJGgVyUzS9zVrpykUkJv2/nPbOl5lSLoPCAhCrpVCqmDjSKuRW/Vca
- 5ZAbUDA5YTxZWn7QJi75URZ097xjC0+ScXkUI3I8/F9Gox0VW4ha0L4O0TMPn8yj+xst
- /b6g==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=PsHKqqY8IP1kGma0cvoxtMrhEOwaSBiNr+WZYaEGu0g=;
+ b=NOcHHWglfoKO58skQZauX0HJysJ9mN4S6+/mfw7RSDHMs8+6clX4CVpTzVYOz8R7dO
+ rBXc73FjmFa3n3a1Er6eaHQiAew4lci0+BOEzL8aq6lEvv0OVq6tJBqX58wCKBnYfUnN
+ /SeIUC20vxg7pm6jnlJKsf+8rqnfrNqglyC1N2+3zJjmUKpiW/DXD6sCtHuKAV0gxibc
+ LCwmj4J6LiSkPjn0l3YU2aZNkzGpxokdbcZuc2id8DKoQKm9jBjpfgALJ9uyQ9naKv39
+ NARuO18x4XX2ng9JxlMUgZYrQbscQ3HCnlSrEkXok7fCR9l7bSv0n92PDtqmYd3uruy/
+ NNrQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=nQNqrubOlUUYZPppnjrDT5gghOk1RD7VpCkLrJlKMDQ=;
- b=tPZ6QSAybotBQNoMzG4tK62fLspt7yrT1C4oTQzI38UiDMGaUFg20XC8Q3OIepR8Ug
- QqsfANdKITOtaQkm2DX86UJafoZHoIBTqTpF7Yu4Dn2zGlnBpsemoYGrq2t4qPr5brcL
- lNSWTudJFlqSIK+lKSf8z60T5XA3uaktSfcAx3IiYRJI4A8Xpu+ET7ak6asDVJszUo5d
- GzDjMKVQVR0aKbzSzrqSn+b8U11pOwmGLJJtXRKO/F8emn8r6woo54MYTYplPuoTuuLN
- n/vYW60DKpylDi309iS7EO08u0O2Y0wRK9Hm6iwi5bVXa/Z/7WVCKqmhHKBS2q947Yzm
- cNfg==
-X-Gm-Message-State: APjAAAW9aOQYJkf4IiOnBLTHVOjLgzlWK5Me07F7jwd37kD5MTmuDT7K
- 6+It3M9DAnlsLdJc9QFAalw=
-X-Google-Smtp-Source: APXvYqy88aC3vqt2wu5quF6h4AmdgM/VgNut4bo25B9uywblwPxT9Fv0GJagE45hAuflHj5UsL2a4A==
-X-Received: by 2002:adf:ef91:: with SMTP id d17mr7505042wro.145.1573731807811; 
- Thu, 14 Nov 2019 03:43:27 -0800 (PST)
-Received: from localhost ([193.47.161.132])
- by smtp.gmail.com with ESMTPSA id w18sm7021172wrp.31.2019.11.14.03.43.26
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 14 Nov 2019 03:43:26 -0800 (PST)
-Date: Thu, 14 Nov 2019 11:48:48 +0100
-From: "oliver.graute@gmail.com" <oliver.graute@gmail.com>
-To: "shawnguo@kernel.org" <shawnguo@kernel.org>
-Subject: Re: [RFC PATCH 1/1] arm64: dts: added basic DTS for qmx8 congatec
- board
-Message-ID: <20191114104848.GH4147@optiplex>
-References: <20191029122026.14208-1-oliver.graute@kococonnector.com>
- <20191029122026.14208-2-oliver.graute@kococonnector.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=PsHKqqY8IP1kGma0cvoxtMrhEOwaSBiNr+WZYaEGu0g=;
+ b=F2NaUY1R4U3Sj8CxpqGKmh46Yv8UGjYnLWJZanRyUn2fnLEhj2fDkTA3JuQ6L7Ietl
+ ZnZb22aP8LL5H3OSs8bcWPUjl0dGDbRMzMaMLTgnsPUV7a61Ayxdd7ESWkAr1Da1XUqJ
+ i2AC95Rknwc+lkKGMfB0vDzYsti4Y3Ack6le7K12PmDqCK+nbL41HrUXyRubhHXZAnL7
+ jlmVByE46L5e4e5/jXY0dMgxGiWPYzCRu0Wlg1c4nxm5YBTgi5ye75oHHJxsdQp/snje
+ NO8UhA5HBU+zhXjLCucxPZPFQwYohgDLMzEWZO8Oc38bvkoil889H6b9X8eU+63gVhQS
+ DNdQ==
+X-Gm-Message-State: APjAAAU6Swg9rscuV3BMgUUBWMUC6ZAlnuEN7CQv6B/AQ5WIwxnAN++2
+ yFqN2IxsWH1OrjI93NCSj90=
+X-Google-Smtp-Source: APXvYqzW70DVjuUaihSTDR9YctsEX5FZ+s1gUJ7ISZDeUN6w5dhrMPFEcE91FgX+8CB+6kXYCTA1CA==
+X-Received: by 2002:a5d:6b51:: with SMTP id x17mr8043604wrw.148.1573728563385; 
+ Thu, 14 Nov 2019 02:49:23 -0800 (PST)
+Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id k14sm7229301wrw.46.2019.11.14.02.49.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 14 Nov 2019 02:49:22 -0800 (PST)
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: davem@davemloft.net, herbert@gondor.apana.org.au, mripard@kernel.org,
+ wens@csie.org
+Subject: [PATCH 1/2] crypto: sun4i-ss: Fix 64-bit size_t warnings on
+ sun4i-ss-hash.c
+Date: Thu, 14 Nov 2019 11:49:06 +0100
+Message-Id: <20191114104907.10645-1-clabbe.montjoie@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191029122026.14208-2-oliver.graute@kococonnector.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_034331_015084_66DFD306 
-X-CRM114-Status: UNSURE (   9.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191114_024926_995524_8EA6682A 
+X-CRM114-Status: GOOD (  11.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (oliver.graute[at]gmail.com)
+ provider (clabbe.montjoie[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -102,38 +98,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "aisheng.dong@nxp.com" <aisheng.dong@nxp.com>,
- Mark Rutland <mark.rutland@arm.com>, "peng.fan@nxp.com" <peng.fan@nxp.com>,
- Pramod Kumar <pramod.kumar_1@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Fabio Estevam <festevam@gmail.com>,
- Bhaskar Upadhaya <bhaskar.upadhaya@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
+ linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/10/19, Oliver Graute wrote:
-> Add basic dts support for a Congatec iMX8QM Qseven Board
-> 
-> Product Page: https://www.congatec.com/de/produkte/qseven/conga-qmx8x.html
+If you try to compile this driver on a 64-bit platform then you
+will get warnings because it mixes size_t with unsigned int which
+only works on 32-bit.
 
-just noticed that above product link is wrong. The right one is this:
+This patch fixes all of the warnings on sun4i-ss-hash.c.
+Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+---
+ drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-https://www.congatec.com/de/produkte/qseven/conga-qmx8.html
+diff --git a/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c
+index 9930c9ce8971..91cf58db3845 100644
+--- a/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c
++++ b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c
+@@ -284,8 +284,8 @@ static int sun4i_hash(struct ahash_request *areq)
+ 			 */
+ 			while (op->len < 64 && i < end) {
+ 				/* how many bytes we can read from current SG */
+-				in_r = min3(mi.length - in_i, end - i,
+-					    64 - op->len);
++				in_r = min(end - i, 64 - op->len);
++				in_r = min_t(size_t, mi.length - in_i, in_r);
+ 				memcpy(op->buf + op->len, mi.addr + in_i, in_r);
+ 				op->len += in_r;
+ 				i += in_r;
+@@ -305,8 +305,8 @@ static int sun4i_hash(struct ahash_request *areq)
+ 		}
+ 		if (mi.length - in_i > 3 && i < end) {
+ 			/* how many bytes we can read from current SG */
+-			in_r = min3(mi.length - in_i, areq->nbytes - i,
+-				    ((mi.length - in_i) / 4) * 4);
++			in_r = min_t(size_t, mi.length - in_i, areq->nbytes - i);
++			in_r = min_t(size_t, ((mi.length - in_i) / 4) * 4, in_r);
+ 			/* how many bytes we can write in the device*/
+ 			todo = min3((u32)(end - i) / 4, rx_cnt, (u32)in_r / 4);
+ 			writesl(ss->base + SS_RXFIFO, mi.addr + in_i, todo);
+@@ -332,8 +332,8 @@ static int sun4i_hash(struct ahash_request *areq)
+ 	if ((areq->nbytes - i) < 64) {
+ 		while (i < areq->nbytes && in_i < mi.length && op->len < 64) {
+ 			/* how many bytes we can read from current SG */
+-			in_r = min3(mi.length - in_i, areq->nbytes - i,
+-				    64 - op->len);
++			in_r = min(areq->nbytes - i, 64 - op->len);
++			in_r = min_t(size_t, mi.length - in_i, in_r);
+ 			memcpy(op->buf + op->len, mi.addr + in_i, in_r);
+ 			op->len += in_r;
+ 			i += in_r;
+-- 
+2.23.0
 
-Best regards,
-
-Oliver
 
 _______________________________________________
 linux-arm-kernel mailing list
