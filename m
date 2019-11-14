@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54C44FC964
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 16:00:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29629FC966
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 16:01:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gg2Rq79vo6G4PEi4QJaDh77uRwMQQHHtJT/7D9K6Rho=; b=oJRS8iV+ghAfDC
-	BjXQXtud9ZfO820cnUlLBxn4GmmBbnF93nvqdXC22ckU6suosfEsXL80yFtHQ/gIp2H1FY2JfonOH
-	rIw7I9UQFk17xbEh3uq9vcfEpKK5Tbz/nfZnyk90NXTG/vvJQ+uDoZmQl2ioy5vfdaAoONi90yzID
-	P0bpaXepu2lqmOZBo+Hgaw4933f/L7LSRzpeio9wsyP/5orIdt59y++i0p4KPINZkC7zk9WzChZbB
-	wpPsGH37UuHaoAB3ohKx2C0798lSP9XDSyi+PT5FoM5wpLYMHGYj+fKYfgNy2gGKlgvRV6XXUEneH
-	suhCyit3csc9OSjSl/FA==;
+	List-Owner; bh=t2nyTk77ag8Vy39Z/d5imBEgUwmuWvkcw4D/1V3eu7I=; b=emSWmU5XYOrp6g
+	NQDprJ+J9dbh7TuPucF2Ixj8IdaSOrQFnaE5BY4cH6loQVWbO3i934PaF6sDQiGZOePb+m/yzvs4g
+	C+VP+lG1BEdyr/9K2Gg335cQtQqkJtEXrx8sp/mslCZbcnS6BDha7HdjQqBDMnMfmdF4UCrQUxKQK
+	daztjb0ZYLMM4zWucxORvykmo8s4j+j1RiEZku2gD+vd+aWM8n8RnPz0DqRlaRjUr5LHX5RLPh52F
+	mb9J3ed65NLbolcetfkPpSnnKDLhdG3/dx+9QT6ShwzI8QQTw84HO39Ht5BT6ePba71GHVkH3V/E5
+	qlxf7XQg5e00l68FTzzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVGbt-00081F-Pe; Thu, 14 Nov 2019 15:00:37 +0000
+	id 1iVGc8-0008EH-Ov; Thu, 14 Nov 2019 15:00:52 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVGbJ-0006P4-48
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 15:00:03 +0000
+ id 1iVGbK-0006RB-Fl
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 15:00:04 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8219BC8F;
- Thu, 14 Nov 2019 07:00:00 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D4107328;
+ Thu, 14 Nov 2019 07:00:01 -0800 (PST)
 Received: from ewhatever.cambridge.arm.com (ewhatever.cambridge.arm.com
  [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 63B813F52E;
- Thu, 14 Nov 2019 06:59:59 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B5F243F52E;
+ Thu, 14 Nov 2019 07:00:00 -0800 (PST)
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/5] arm64: mm: Workaround Cortex-A77 erratum 1542418 on ASID
- rollover
-Date: Thu, 14 Nov 2019 14:59:15 +0000
-Message-Id: <20191114145918.235339-3-suzuki.poulose@arm.com>
+Subject: [PATCH 3/5] arm64: Workaround Cortex-A77 erratum 1542418 on boot due
+ to kexec
+Date: Thu, 14 Nov 2019 14:59:16 +0000
+Message-Id: <20191114145918.235339-4-suzuki.poulose@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191114145918.235339-1-suzuki.poulose@arm.com>
 References: <20191114145918.235339-1-suzuki.poulose@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_070001_271942_CBD0B321 
-X-CRM114-Status: GOOD (  19.13  )
+X-CRM114-CacheID: sfid-20191114_070002_623181_1FCD1590 
+X-CRM114-Status: GOOD (  12.40  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,177 +71,101 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: James Morse <james.morse@arm.com>
 
-On affected Cortex-A77 cores, software relying on the
-prefetch-speculation-protection instead of explicit synchronisation may
-fetch a stale instruction from a CPU-specific cache. This violates the
-ordering rules for instruction fetches.
+Kexec allows us to inherit dirty ASIDs from a previous kernel. We can't
+wait until the next ASID rollover to cleanup, do it early as part of
+the cpu-errata's enable callback.
 
-This can only happen when the CPU correctly predicts the modified branch
-based on a previous ASID/VMID. The workaround is to prevent these
-predictions by selecting 60 ASIDs before an ASID is reused.
-
-Add this logic as a workaround in the asid-alloctor's per-cpu rollover
-path. When the first asid of the new generation is about to be used,
-select 60 different ASIDs before we do the TLB maintenance.
+This extends __arm64_workaround_1542418_asid_rollover() to put everything
+back as it was.
 
 Signed-off-by: James Morse <james.morse@arm.com>
-[ Added/modified commentary ]
+[ skip CPUs not affected, refactor cpu_enable callback ]
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- Documentation/arm64/silicon-errata.rst |  2 +
- arch/arm64/Kconfig                     | 16 ++++++++
- arch/arm64/include/asm/cpucaps.h       |  3 +-
- arch/arm64/kernel/cpu_errata.c         |  7 ++++
- arch/arm64/mm/context.c                | 56 +++++++++++++++++++++++++-
- 5 files changed, 82 insertions(+), 2 deletions(-)
+ arch/arm64/include/asm/mmu_context.h |  1 +
+ arch/arm64/kernel/cpu_errata.c       | 14 ++++++++++++++
+ arch/arm64/mm/context.c              | 17 +++++++++++++++++
+ 3 files changed, 32 insertions(+)
 
-diff --git a/Documentation/arm64/silicon-errata.rst b/Documentation/arm64/silicon-errata.rst
-index 5a09661330fc..a6a5ece00392 100644
---- a/Documentation/arm64/silicon-errata.rst
-+++ b/Documentation/arm64/silicon-errata.rst
-@@ -84,6 +84,8 @@ stable kernels.
- +----------------+-----------------+-----------------+-----------------------------+
- | ARM            | Cortex-A76      | #1463225        | ARM64_ERRATUM_1463225       |
- +----------------+-----------------+-----------------+-----------------------------+
-+| ARM            | Cortex-A77      | #1542418        | ARM64_ERRATUM_1542418       |
-++----------------+-----------------+-----------------+-----------------------------+
- | ARM            | Neoverse-N1     | #1188873,1418040| ARM64_ERRATUM_1418040       |
- +----------------+-----------------+-----------------+-----------------------------+
- | ARM            | Neoverse-N1     | #1349291        | N/A                         |
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 3f047afb982c..f0fc570ce05f 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -558,6 +558,22 @@ config ARM64_ERRATUM_1463225
+diff --git a/arch/arm64/include/asm/mmu_context.h b/arch/arm64/include/asm/mmu_context.h
+index 3827ff4040a3..434a5c661d78 100644
+--- a/arch/arm64/include/asm/mmu_context.h
++++ b/arch/arm64/include/asm/mmu_context.h
+@@ -247,6 +247,7 @@ switch_mm(struct mm_struct *prev, struct mm_struct *next,
  
- 	  If unsure, say Y.
+ void verify_cpu_asid_bits(void);
+ void post_ttbr_update_workaround(void);
++void arm64_workaround_1542418_asid_rollover(void);
  
-+config ARM64_ERRATUM_1542418
-+	bool "Cortex-A77: The core might fetch a stale instuction, violating the ordering of instruction fetches"
-+	default y
-+	help
-+	  This option adds a workaround for Arm Cortex-A77 erratum 1542418.
-+
-+	  On the affected Cortex-A77 cores (r0p0 and r1p0), software relying
-+	  on the prefetch-speculation-protection instead of explicit
-+	  synchronisation may fetch a stale instruction from a CPU-specific
-+	  cache. This violates the ordering rules for instruction fetches.
-+
-+	  Work around the erratum by ensuring that 60 ASIDs are selected
-+	  before any ASID is reused.
-+
-+	  If unsure, say Y.
-+
- config CAVIUM_ERRATUM_22375
- 	bool "Cavium erratum 22375, 24313"
- 	default y
-diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
-index ac1dbca3d0cd..1f90084e8a59 100644
---- a/arch/arm64/include/asm/cpucaps.h
-+++ b/arch/arm64/include/asm/cpucaps.h
-@@ -54,7 +54,8 @@
- #define ARM64_WORKAROUND_1463225		44
- #define ARM64_WORKAROUND_CAVIUM_TX2_219_TVM	45
- #define ARM64_WORKAROUND_CAVIUM_TX2_219_PRFM	46
-+#define ARM64_WORKAROUND_1542418		47
+ #endif /* !__ASSEMBLY__ */
  
--#define ARM64_NCAPS				47
-+#define ARM64_NCAPS				48
- 
- #endif /* __ASM_CPUCAPS_H */
 diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
-index 93f34b4eca25..a66d433d0113 100644
+index a66d433d0113..4656157ffa36 100644
 --- a/arch/arm64/kernel/cpu_errata.c
 +++ b/arch/arm64/kernel/cpu_errata.c
-@@ -926,6 +926,13 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
- 		.capability = ARM64_WORKAROUND_CAVIUM_TX2_219_PRFM,
- 		ERRATA_MIDR_RANGE_LIST(tx2_family_cpus),
- 	},
-+#endif
-+#ifdef CONFIG_ARM64_ERRATUM_1542418
-+	{
-+		.desc = "ARM erratum 1542418",
-+		.capability = ARM64_WORKAROUND_1542418,
-+		ERRATA_MIDR_RANGE(MIDR_CORTEX_A77, 0, 0, 1, 0),
-+	},
- #endif
- 	{
- 	}
-diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
-index b5e329fde2dd..ae3ee8e101d6 100644
---- a/arch/arm64/mm/context.c
-+++ b/arch/arm64/mm/context.c
-@@ -77,6 +77,58 @@ void verify_cpu_asid_bits(void)
- 	}
+@@ -12,6 +12,7 @@
+ #include <asm/cpu.h>
+ #include <asm/cputype.h>
+ #include <asm/cpufeature.h>
++#include <asm/mmu_context.h>
+ #include <asm/smp_plat.h>
+ 
+ static bool __maybe_unused
+@@ -650,6 +651,18 @@ needs_tx2_tvm_workaround(const struct arm64_cpu_capabilities *entry,
+ 	return false;
  }
  
-+
-+/*
-+ * When the CnP is active, the caller must have set the ttbr0 to reserved
-+ * before calling this function.
-+ * Upon completion, the caller must ensure to:
-+ *   - restore the ttbr0
-+ *   - execute isb() to synchronize the change.
-+ */
-+static void __arm64_workaround_1542418_asid_rollover(void)
++#ifdef CONFIG_ARM64_ERRATUM_1542418
++static void run_workaround_1542418_asid_rollover(const struct arm64_cpu_capabilities *c)
 +{
-+	phys_addr_t ttbr1_baddr;
-+	u64 idx, ttbr1;	/* ASID is in ttbr1 due to TCR_EL1.A1 */
-+
-+	if (!IS_ENABLED(CONFIG_ARM64_ERRATUM_1542418) ||
-+	    !cpus_have_const_cap(ARM64_WORKAROUND_1542418) ||
-+	    !this_cpu_has_cap(ARM64_WORKAROUND_1542418))
-+		return;
-+
 +	/*
-+	 * We're about to use an arbitrary set of ASIDs, which may have
-+	 * live entries in the TLB (and on other CPUs with CnP). Ensure
-+	 * that we can't allocate conflicting entries using this task's
-+	 * TTBR0.
++	 * If this CPU is affected by the erratum, run the workaround
++	 * to protect us in case we are running on a kexec'ed kernel.
 +	 */
-+	if (!system_supports_cnp())
++	if (c->matches(c, SCOPE_LOCAL_CPU))
++		arm64_workaround_1542418_asid_rollover();
++}
++#endif
++
+ #ifdef CONFIG_HARDEN_EL2_VECTORS
+ 
+ static const struct midr_range arm64_harden_el2_vectors[] = {
+@@ -932,6 +945,7 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
+ 		.desc = "ARM erratum 1542418",
+ 		.capability = ARM64_WORKAROUND_1542418,
+ 		ERRATA_MIDR_RANGE(MIDR_CORTEX_A77, 0, 0, 1, 0),
++		.cpu_enable = run_workaround_1542418_asid_rollover,
+ 	},
+ #endif
+ 	{
+diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
+index ae3ee8e101d6..ad4e78bb68ed 100644
+--- a/arch/arm64/mm/context.c
++++ b/arch/arm64/mm/context.c
+@@ -129,6 +129,23 @@ static void __arm64_workaround_1542418_asid_rollover(void)
+ 	 */
+ }
+ 
++void arm64_workaround_1542418_asid_rollover(void)
++{
++	u64 ttbr0 = read_sysreg(ttbr0_el1);
++
++	lockdep_assert_irqs_disabled();
++
++	/* Mirror check_and_switch_context() */
++	if (system_supports_cnp())
 +		cpu_set_reserved_ttbr0();
-+	/* else: the caller must have already set this */
 +
-+	ttbr1 = read_sysreg(ttbr1_el1);
-+	ttbr1_baddr = ttbr1 & ~TTBR_ASID_MASK;
++	__arm64_workaround_1542418_asid_rollover();
++	isb();
 +
-+	/*
-+	 * Select 60 asids to invalidate the branch history for this generation.
-+	 * If kpti is in use we avoid selecting a user asid as
-+	 * __sdei_asm_entry_trampoline() uses USER_ASID_FLAG to determine if
-+	 * the NMI interrupted the kpti trampoline. Avoid using the reserved
-+	 * asid 0.
-+	 */
-+	for (idx = 1; idx <= 61; idx++) {
-+		write_sysreg((idx2asid(idx) << 48) | ttbr1_baddr, ttbr1_el1);
-+		isb();
-+	}
-+
-+	/* restore the current ASID */
-+	write_sysreg(ttbr1, ttbr1_el1);
-+
-+	/*
-+	 * Rely on local_flush_tlb_all()'s isb to complete the ASID restore.
-+	 * check_and_switch_context() will call cpu_switch_mm() to (re)set ttbr0_el1.
-+	 */
++	write_sysreg(ttbr0, ttbr0_el1);
++	isb();
 +}
 +
  static void flush_context(void)
  {
  	int i;
-@@ -219,8 +271,10 @@ void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
- 		atomic64_set(&mm->context.id, asid);
- 	}
- 
--	if (cpumask_test_and_clear_cpu(cpu, &tlb_flush_pending))
-+	if (cpumask_test_and_clear_cpu(cpu, &tlb_flush_pending)) {
-+		__arm64_workaround_1542418_asid_rollover();
- 		local_flush_tlb_all();
-+	}
- 
- 	atomic64_set(&per_cpu(active_asids, cpu), asid);
- 	raw_spin_unlock_irqrestore(&cpu_asid_lock, flags);
 -- 
 2.23.0
 
