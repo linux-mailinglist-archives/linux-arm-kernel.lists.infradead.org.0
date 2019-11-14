@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8303FC53C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 12:24:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 849C9FC546
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 12:27:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=qYmrGUflMtfyJnAcVHoLdfK+vb6zKawHFQ961M5ZHp0=; b=M2e
-	2Q9V3DS/32Pk57eHN6uERq5dGxbTfQAIaxjCmf2Ym5I2ri7kJwWtst9d5x3nlFmCzN6Y3OnAUiHuT
-	vHHmHx+9H5jnRp1t01YApiXB7teEhOFNZ9e/YwySwTKfdf/ATTnwrPdVtN+Ijou1MquD2fyAbWKO3
-	Sna+gJT+Ehsjbu2eNejhygzJz8/Y1fJJKDTXVRPajShvc3R4VMfnIYnbgktCVJmI02v9svf2zsud6
-	KIYazE8YcG9K2KOITlikLsQk+Y74zzTL93Tz74GiTvY7KHeifvY2IvRGOF1hDxICRt+LyHLUgdVhW
-	eEyFqGIy3q+9Eh5yC8HbxPSpdlc81zg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XxDm2pkIwybGYyESNWt4cipdxQLp5DJyfncEg2St9yc=; b=XjE2ZEMmft8MLl
+	kLJF969unUOBtac0tWL3RGVa8lHJruz2SE7IgI3vMXZyheheE54OjQW8oYUkH+ykSsr03LeDsByh4
+	qunHYA7lGQXkNAkIM4y+LvymUXe8mHCQP0nt9VRSY4CAThcAOoCFI1N9eT6V6kZ0/wzQY492I87P+
+	dzIwTM2rDQNFh4+WeWQ9mqCFsSnc3x0wJl4bOrk7IbtRqh+Sj5SjlWAd9Aa9QjvmsXFJXXdeTMH2n
+	9jypCG8xvtV6ifGjg3HugBNIvYEOWopZKko5+h+9L19g0l9+TTrOlmjF4X6bH27kh5WrWgMDYZIsa
+	ZjWShoh+/Vx5xJQr/v8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVDE9-0005Lw-Dg; Thu, 14 Nov 2019 11:23:53 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1iVDHJ-0007Im-UU; Thu, 14 Nov 2019 11:27:09 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVDE0-0005Kn-45
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 11:23:45 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DE89D20001C;
- Thu, 14 Nov 2019 12:23:34 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6079D200428;
- Thu, 14 Nov 2019 12:23:30 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 73723402DE;
- Thu, 14 Nov 2019 19:23:24 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: dmitry.torokhov@gmail.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, robh@kernel.org,
- linux-input@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] Input: keyboard - imx_sc: Correct SCU message structure to
- avoid stack corruption
-Date: Thu, 14 Nov 2019 19:21:39 +0800
-Message-Id: <1573730499-2224-1-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iVDHA-0007Hj-6P
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 11:27:02 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 44CA1140E50BECD4D86A;
+ Thu, 14 Nov 2019 19:26:52 +0800 (CST)
+Received: from localhost (10.202.226.61) by DGGEMS402-HUB.china.huawei.com
+ (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Thu, 14 Nov 2019
+ 19:26:44 +0800
+Date: Thu, 14 Nov 2019 11:26:37 +0000
+From: Jonathan Cameron <jonathan.cameron@huawei.com>
+To: Dan Williams <dan.j.williams@intel.com>
+Subject: Re: [PATCH V5 1/4] ACPI: Support Generic Initiator only domains
+Message-ID: <20191114112504.00005b61@huawei.com>
+In-Reply-To: <CAPcyv4g5xUBp871+T26+se8WH9154g7V81qsToYAbXAALMuhKQ@mail.gmail.com>
+References: <20191004114330.104746-1-Jonathan.Cameron@huawei.com>
+ <20191004114330.104746-2-Jonathan.Cameron@huawei.com>
+ <CAPcyv4jZG-5s6NsS-_-oNG45y0Qb1mVD_s8cCGqLYtzvHqEo+Q@mail.gmail.com>
+ <20191113094742.00000dc4@huawei.com>
+ <77b6a6e8-9d44-1e1c-3bf0-a8d04833598d@intel.com>
+ <20191113174845.000009d3@huawei.com>
+ <CAPcyv4g5xUBp871+T26+se8WH9154g7V81qsToYAbXAALMuhKQ@mail.gmail.com>
+Organization: Huawei
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
+MIME-Version: 1.0
+X-Originating-IP: [10.202.226.61]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_032344_303641_D11F4F13 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191114_032700_580575_B3276135 
+X-CRM114-Status: GOOD (  42.72  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -69,56 +70,165 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Linux ACPI <linux-acpi@vger.kernel.org>, Tao Xu <tao3.xu@intel.com>,
+ X86 ML <x86@kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linuxarm <linuxarm@huawei.com>, Keith
+ Busch <keith.busch@intel.com>, Linux MM <linux-mm@kvack.org>,
+ =?ISO-8859-1?Q?J=E9r=F4me?= Glisse <jglisse@redhat.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SCU message's data field used for receiving response data
-from SCU should be 32-bit width, as SCU will send back 32-bit
-width data, correct it to avoid kernel panic of stack protection
-when CONFIG_CC_HAVE_STACKPROTECTOR_SYSREG is enabled.
+On Wed, 13 Nov 2019 15:20:01 -0800
+Dan Williams <dan.j.williams@intel.com> wrote:
 
-[    1.950768] Kernel panic - not syncing: stack-protector: Kernel stack is corrupted
-[    1.980607] Workqueue: events imx_sc_check_for_events
-[    1.985657] Call trace:
-[    1.988104]  dump_backtrace+0x0/0x140
-[    1.991768]  show_stack+0x14/0x20
-[    1.995090]  dump_stack+0xb4/0xf8
-[    1.998407]  panic+0x158/0x324
-[    2.001463]  print_tainted+0x0/0xa8
-[    2.004950]  imx_sc_check_for_events+0x18c/0x190
-[    2.009569]  process_one_work+0x198/0x320
-[    2.013579]  worker_thread+0x48/0x420
-[    2.017252]  kthread+0xf0/0x120
-[    2.020394]  ret_from_fork+0x10/0x18
-[    2.023977] SMP: stopping secondary CPUs
-[    2.027901] Kernel Offset: disabled
-[    2.031391] CPU features: 0x0002,2100600c
-[    2.035401] Memory Limit: none
+> On Wed, Nov 13, 2019 at 9:49 AM Jonathan Cameron
+> <jonathan.cameron@huawei.com> wrote:
+> >
+> > On Wed, 13 Nov 2019 21:57:24 +0800
+> > Tao Xu <tao3.xu@intel.com> wrote:
+> >  
+> > > On 11/13/2019 5:47 PM, Jonathan Cameron wrote:  
+> > > > On Tue, 12 Nov 2019 09:55:17 -0800
+> > > > Dan Williams <dan.j.williams@intel.com> wrote:
+> > > >  
+> > > >> [ add Tao Xu ]
+> > > >>
+> > > >> On Fri, Oct 4, 2019 at 4:45 AM Jonathan Cameron
+> > > >> <Jonathan.Cameron@huawei.com> wrote:  
+> > > >>>
+> > > >>> Generic Initiators are a new ACPI concept that allows for the
+> > > >>> description of proximity domains that contain a device which
+> > > >>> performs memory access (such as a network card) but neither
+> > > >>> host CPU nor Memory.
+> > > >>>
+> > > >>> This patch has the parsing code and provides the infrastructure
+> > > >>> for an architecture to associate these new domains with their
+> > > >>> nearest memory processing node.  
+> > > >>
+> > > >> Thanks for this Jonathan. May I ask how this was tested? Tao has been
+> > > >> working on qemu support for HMAT [1]. I have not checked if it already
+> > > >> supports generic initiator entries, but it would be helpful to include
+> > > >> an example of how the kernel sees these configurations in practice.
+> > > >>
+> > > >> [1]: http://patchwork.ozlabs.org/cover/1096737/  
+> > > >
+> > > > Tested against qemu with SRAT and SLIT table overrides from an
+> > > > initrd to actually create the node and give it distances
+> > > > (those all turn up correctly in the normal places).  DSDT override
+> > > > used to move an emulated network card into the GI numa node.  That
+> > > > currently requires the PCI patch referred to in the cover letter.
+> > > > On arm64 tested both on qemu and real hardware (overrides on tables
+> > > > even for real hardware as I can't persuade our BIOS team to implement
+> > > > Generic Initiators until an OS is actually using them.)
+> > > >
+> > > > Main real requirement is memory allocations then occur from one of
+> > > > the nodes at the minimal distance when you are do a devm_ allocation
+> > > > from a device assigned. Also need to be able to query the distances
+> > > > to allow load balancing etc.  All that works as expected.
+> > > >
+> > > > It only has a fairly tangential connection to HMAT in that HMAT
+> > > > can provide information on GI nodes.  Given HMAT code is quite happy
+> > > > with memoryless nodes anyway it should work.  QEMU doesn't currently
+> > > > have support to create GI SRAT entries let alone HMAT using them.
+> > > >
+> > > > Whilst I could look at adding such support to QEMU, it's not
+> > > > exactly high priority to emulate something we can test easily
+> > > > by overriding the tables before the kernel reads them.
+> > > >
+> > > > I'll look at how hard it is to build an HMAT tables for my test
+> > > > configs based on the ones I used to test your HMAT patches a while
+> > > > back.  Should be easy if tedious.
+> > > >
+> > > > Jonathan
+> > > >  
+> > > Indeed, HMAT can support Generic Initiator, but as far as I know, QEMU
+> > > only can emulate a node with cpu and memory, or memory-only. Even if we
+> > > assign a node with cpu only, qemu will raise error. Considering
+> > > compatibility, there are lots of work to do for QEMU if we change NUMA
+> > > or SRAT table.
+> > >  
+> >
+> > I faked up a quick HMAT table.
+> >
+> > Used a configuration with 3x CPU and memory nodes, 1x memory only node
+> > and 1x GI node.  Two test cases, one where the GI initiator is further than
+> > the CPU containing nodes from the memory only node (realistic case for
+> > existing hardware). That behaves as expected and there are no
+> > /sys/node/bus/nodeX/access0 entries for the GI node
+> > + appropriate ones for the memory only node as normal.
+> >
+> > The other case is more interesting we have the memory only node nearer
+> > to the GI node than to any of the CPUs.  In that case for x86 at least
+> > the HMAT code is happy to put an access0 directory GI in the GI node
+> > with empty access0/initiators and the memory node under access0/targets
+> >
+> > The memory only node is node4 and the GI node node3.
+> >
+> > So relevant dirs under /sys/bus/nodes/devices
+> >
+> > node3/access0/initators/ Empty
+> > node3/access0/targets/node4  
+> 
+> This makes sense node3 is an initiator, no other nodes can initiate to it.
+> 
+> > node4/access0/initators/[node3 read_bandwidth write_bandwith etc]
+> > node4/access0/targets/ Empty
+> >
+> > So the result current (I think - the HMAT interface still confuses
+> > me :) is that a GI node is treated like a CPU node.  This might mean
+> > there is no useful information available if you want to figure out
+> > which CPU containing node is nearest to Memory when the GI node is
+> > nearer still.
+> >
+> > Is this a problem?  I'm not sure...
+> >
+> > If we don't want to include GI nodes then we can possibly
+> > use the node_state(N_CPU, x) method to check before considering
+> > them, or I guess parse SRAT to extract that info directly.
+> >
+> > I tried this and it seems to work so can add patch doing this
+> > next version if we think this is the 'right' thing to do.
+> >
+> > So what do you think 'should' happen?  
+> 
+> I think this might be our first case for adding an "access1" instance
+> by default. I.e. in the case when access0 is not a cpu, then access1
+> is there to at least show the "local" cpu and let userspace see the
+> performance difference of cpu vs a specific-initiator access.
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- drivers/input/keyboard/imx_sc_key.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/input/keyboard/imx_sc_key.c b/drivers/input/keyboard/imx_sc_key.c
-index dd57daa..5379952 100644
---- a/drivers/input/keyboard/imx_sc_key.c
-+++ b/drivers/input/keyboard/imx_sc_key.c
-@@ -35,7 +35,7 @@ struct imx_key_drv_data {
- 
- struct imx_sc_msg_key {
- 	struct imx_sc_rpc_msg hdr;
--	u8 state;
-+	u32 state;
- };
- 
- static int imx_sc_key_notify(struct notifier_block *nb,
--- 
-2.7.4
+Hi Dan,
+
+Agreed that it makes sense to expand how we describe these cases a bit.
+To make sure I've understood correctly let me paraphrase what you
+are proposing (and tweak it a bit ;)
+
+Assuming for this purpose we don't put GIs in CPU nodes as that makes
+for really fiddly explanation. In reality the code will need to handle
+that.
+
+1) Leave access0 as it currently is with this series - so continue to
+   not distinguish between CPU nodes and Generic Initator containing ones?
+2) Add access 1 which is effectively access0 ignoring Generic Initiators?
+
+My feeling is that any existing users of access0 are definitely not going
+to be expecting generic initiators, so we might want to do this the other
+way around. access0 is only CPUs and memory, access1 is including
+generic initiators.  If there are no GIs don't expose access1 at all?
+
+For now we could simply block the GI visibility in access0 and deal
+with access1 as a separate series.  I suspect we will get push back
+as there are no known users of our new access1 so it may take a while
+to prove utility and get it accepted.
+
+Thanks,
+
+Jonathan
 
 
 _______________________________________________
