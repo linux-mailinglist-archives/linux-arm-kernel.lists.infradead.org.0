@@ -2,54 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 372B2FCAFF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 17:46:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A072FCB2A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 17:56:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vxwWsvBMyZi0PBVJmT79m3mpl0Pgez5xMhocKlvMJnA=; b=ReoBo3c5l/hTIr
-	cxzIy7WLvc+YDklnwOA2oNhR15U+jotTPyDdaaYlK8JfEtne5lwaXCqY9egEuPLybk9eXz2gizjbi
-	VMXFXrbQ5GmOiXjPatpjObolluEbqqLE57OK3BptlShJ0kP3Q0yKuy3aWMDRT8od5CmgeemVIr5Mg
-	nL1CBRk0Hdy5joYsYQHGUCiTZAahmob0DAlMMbCKaCTUPeP8z0ta5c90KBmdV/M/4lgQE0a85U+7n
-	k0rixwWbi2zRlH9zsze2rnod6Uaplu03yXPzEgGxKOax+Roc2lHjr8nj07Nm0tN7XJZ382/NTgIRZ
-	KmCMpGL9TCoDue07RI4w==;
+	List-Owner; bh=Qd3GjWhtWcUycDl4+xppchAb5WPE6It8Q8AUB6ornFM=; b=FfS+t/5GfxDJKI
+	871OuQ7lTiw3jAoc2q08fNIcztYJHkyNbcNObOSRQYPomeAGZ80sgd3c9GUXVghioVs1pIDJkknPD
+	Ai3PJ71PxAr7iGRhJeAGPPd72aQyP8HM+F3Pw7j1C/cyc1/VMd+VEC1FL6E33mJu1v4MkuFTFmQHq
+	ahGbhZJFmNwHtaAnQGjuhNia5BjNWpO+1RguJwy4sH53xM4xgfAkp3yv69vMGGHlQGlhaGvSpJhqy
+	tQPg0/e7J7UGhbyIzuX7t0WwlsCN/5MdkZD+pFOuXCpaZmeB5eGzyhL94Vn9UfAz81u8zHI3Edmk9
+	Z23b6sLGegumi+UDGOPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVIG2-0007av-Kc; Thu, 14 Nov 2019 16:46:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVIFu-0007aN-Tw
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 16:46:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 10CA7328;
- Thu, 14 Nov 2019 08:46:02 -0800 (PST)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D3053F52E;
- Thu, 14 Nov 2019 08:46:00 -0800 (PST)
-Date: Thu, 14 Nov 2019 16:45:55 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: ARM SoC Team <arm@kernel.org>, SoC Team <soc@kernel.org>,
- ALKML <linux-arm-kernel@lists.infradead.org>
-Subject: [GIT PULL v2] firmware: arm_scmi: fix for v5.5
-Message-ID: <20191114164555.GA19398@bogus>
-References: <20191113180406.GA12601@bogus>
+	id 1iVIPX-0002jP-DC; Thu, 14 Nov 2019 16:55:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iVIPP-0002j1-Lc
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 16:55:52 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0E967206EF;
+ Thu, 14 Nov 2019 16:55:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573750551;
+ bh=dmIjxufMZwDwYVYvIb2nm0yNxgfVrXjNxzLP6Pgh94o=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=IzGGwjyciTKlzmrZBe3z2LhKo3H5tzqUde6OJUAVSTyiyLtYTbl+vuvWjzRN8HKDn
+ NoTlA/uKqpf+EvzwPxFDRG6ohm9a5lc/gONOg5EEdHX0cmbDE8Ki6Ysl4re3bvZnAT
+ URRngKjUj0+p6Lluc4uYu8/7XQHtgwXIMSmSE13w=
+Date: Thu, 14 Nov 2019 16:55:44 +0000
+From: Will Deacon <will@kernel.org>
+To: Sami Tolvanen <samitolvanen@google.com>
+Subject: Re: [RESEND PATCH] arm64: fix alternatives with LLVM's integrated
+ assembler
+Message-ID: <20191114165544.GB5158@willie-the-truck>
+References: <20191031194652.118427-1-samitolvanen@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191113180406.GA12601@bogus>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191031194652.118427-1-samitolvanen@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_084603_010469_2BE93513 
-X-CRM114-Status: GOOD (  12.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191114_085551_728369_11A84A49 
+X-CRM114-Status: GOOD (  10.75  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,53 +77,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>, Sudeep Holla <sudeep.holla@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>
+Cc: Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, Marc Zyngier <maz@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM SoC Team,
+Hi Sami,
 
-Stephen Rothwell reported issue[1] with fixes tag in the commit. I have
-fixed the same and re-tagged it. Please drop the earlier PR and use
-this one based on your preference(I am not sure if want to ignore or
-fix it). Sorry for the silly mistake.
+Sorry -- I thought I'd already replied to this, but it had actually
+slipped through the cracks.
 
-Please pull !
+On Thu, Oct 31, 2019 at 12:46:52PM -0700, Sami Tolvanen wrote:
+> LLVM's integrated assembler fails with the following error when
+> building KVM:
+> 
+>   <inline asm>:12:6: error: expected absolute expression
+>    .if kvm_update_va_mask == 0
+>        ^
+>   <inline asm>:21:6: error: expected absolute expression
+>    .if kvm_update_va_mask == 0
+>        ^
+>   <inline asm>:24:2: error: unrecognized instruction mnemonic
+>           NOT_AN_INSTRUCTION
+>           ^
+>   LLVM ERROR: Error parsing inline asm
+> 
+> These errors come from ALTERNATIVE_CB and __ALTERNATIVE_CFG,
+> which test for the existence of the callback parameter in inline
+> assembly using the following expression:
+> 
+>   " .if " __stringify(cb) " == 0\n"
+> 
+> This works with GNU as, but isn't supported by LLVM. This change
+> splits __ALTERNATIVE_CFG and ALTINSTR_ENTRY into separate macros
+> to fix the LLVM build.
 
-Regards,
-Sudeep
+Please could you explain a bit more about the failure and why LLVM's
+integrated assembler rejects this? Could we use something like .ifb or
+.ifeqs instead?
 
-[1] https://lore.kernel.org/lkml/20191114202122.0f38eab6@canb.auug.org.au/
+Thanks,
 
--->8
-
-The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
-
-  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux.git tags/scmi-fix-5.5
-
-for you to fetch changes up to 7bd39bc6bfdf96f5df0f92199bbc1a3ee2f2adb8:
-
-  firmware: arm_scmi: Fix doorbell ring logic for !CONFIG_64BIT (2019-11-14 11:13:50 +0000)
-
-----------------------------------------------------------------
-ARM SCMI fix for v5.5
-
-Just a single fix to correct the SCMI fast channel doorbell ring logic
-when CONFIG_64BIT is not set.
-
-----------------------------------------------------------------
-Sudeep Holla (1):
-      firmware: arm_scmi: Fix doorbell ring logic for !CONFIG_64BIT
-
- drivers/firmware/arm_scmi/perf.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
