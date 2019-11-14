@@ -2,86 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C462FCE8C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 20:14:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A8D0FCEBD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 20:27:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GnILwyE0qvOl32cBOikuRhEjPVuCwbT5eFfc9H1bmvs=; b=WDg9Mnd2n7ouQm
-	gq4+v0dlrD8P0R7xiGQNgh99M3hPDBvKZ16Pcm2V09R74I/Mq5jhLzEzHVNpLAGIrCSKELxKEx3hI
-	cc25LfMNG0XtwLRMSPOJgEZCoxSqdPG06FXdXw73HL1LNJ9Opbd6ZO+CylRbbhCGST6ASlERvZcl1
-	MUMP5Rfw7ecBHP2v0FhpP2e6DDvPF3LytdtXiy87xCmv6+BDIh8qPMSdT74iKff6Bu6PTt5E9NeBR
-	y7UcmkGAI+/GcvblKmr0OoAsa7AEAsBQMaK4i7QQfFTJrR113CiQZYgS7zwqpH0wVYERTibGg4AYc
-	6G/9fCeVazBmltEZbsRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tjJ/FUQylwCfGg9rb8Dox10JjqYRxs9Xrt4AomdjSfM=; b=GggY8sK4n4GmUqTs0cmL3ojoS
+	tdvBDk8sjVfSPTTQeTtUzx2rF0scZD4xCvb25SNUnKkohWaH453/lIeZnSaN7e/crbLPrMtGE6dp5
+	JWJelARFIQecUsYi59Jl6efyjgwIu3GtQU4lzB32+YzulHjDoku0/AAyRp4r4Pgo8kt6f8EpaLdD9
+	Ke3quesZc4FCMn3uIgxIW8gheASRY2HtwS5oZYbs7Lk+jAQp7CyH10gJO1pMNuraTcXZVYxG2/RXk
+	/rd74lC1rr62+zd7NrkfURWXhw/7skqiOayH3EV/+R8mc/gH3cEwVXFBaUppGBkS0LpS8tSP8i5lK
+	chAsMi7mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVKZl-000244-64; Thu, 14 Nov 2019 19:14:41 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iVKmH-0007gi-3g; Thu, 14 Nov 2019 19:27:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVKZa-00022h-An; Thu, 14 Nov 2019 19:14:32 +0000
-Received: by mail-ot1-f66.google.com with SMTP id r24so5833263otk.12;
- Thu, 14 Nov 2019 11:14:30 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=kxLLQE/JqRR/Jbs96WVmwWzDnecL0QTETfc0TZ/qlQc=;
- b=WXJCaLavevKnHW3GcXy0SyRxY0yi+f2h1xfzw8IPIy2cUHow4RWb/dg4ijvWkup6Mt
- edgk4/tce0a4DozRHaLfIQWAo76rLTM6ThUngM7NrXej/eFly2wcGfnJOaO9RNMHj9st
- olYdiQhMjIIa/xgdpZP/GyEOXsPH0FRmYqVtkB2fmyzB0Rj/8D0vQPor92Vm2aZ7BBCe
- GKvZwxamDR3Ti28UTVhKOD0gQlnJBa4Wxzi80GvlQJQcRQ64GGYl3Kl8+YGkYsU0B5q0
- S5mt8kWBMUMqxFm6F3Yd2bTif/t9Ij0PA/NTyeHXG8ZNbUtdZUczRBkJEdNaEDnrYX4a
- yocQ==
-X-Gm-Message-State: APjAAAXKKf0N8eF1ak4w0weASdGvIbFTQiSaWLYNIrvYKBYu4YXKWBlA
- lnRuwxkIWariz4u47px6Jw==
-X-Google-Smtp-Source: APXvYqyfJ87LD/QB5c0TMX/wIWoYP6o9C36/6w/reacZ6clzrv95SPvMKEP9+KvMr6GemvBs7XNNOQ==
-X-Received: by 2002:a9d:4813:: with SMTP id c19mr8176906otf.337.1573758869585; 
- Thu, 14 Nov 2019 11:14:29 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id k18sm1965555oij.32.2019.11.14.11.14.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 14 Nov 2019 11:14:29 -0800 (PST)
-Date: Thu, 14 Nov 2019 13:14:28 -0600
-From: Rob Herring <robh@kernel.org>
-To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
-Subject: Re: [PATCH 6/7] dt-bindings: arm: realtek: Add RTD1395 and Banana Pi
- BPI-M4
-Message-ID: <20191114191428.GA8113@bogus>
-References: <20191111030434.29977-1-afaerber@suse.de>
- <20191111030434.29977-7-afaerber@suse.de>
+ id 1iVKmA-0007fj-3R
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 19:27:31 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DCE1120725;
+ Thu, 14 Nov 2019 19:27:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573759649;
+ bh=tlPXQr9K0JHcO9hjmUxoCvQEtHBTWA1pDKjwjzUu/S0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=k4MqYahsoAugDXrOcIbK0SghUV0BJpL74XNPnwi9gGFRl/NvKf7OmYraXPE7m8btL
+ 1bX2nsJcJFr8Rw9jTf3aLwf3/gDYESm+Kb0ziXquV/nuPP4EHDdnfaz//z8/Y8fEgw
+ cwbBbQD99JPc3Z67N/+MoASCdjiMllV6Tq4eBWsI=
+Date: Thu, 14 Nov 2019 20:27:25 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Corentin Labbe <clabbe@baylibre.com>
+Subject: Re: [PATCH v5 0/2] ARM64: dts: allwinner: Add devicetree for pineH64
+ modelB
+Message-ID: <20191114192725.GX4345@gilmour.lan>
+References: <1573746453-5123-1-git-send-email-clabbe@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191111030434.29977-7-afaerber@suse.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1573746453-5123-1-git-send-email-clabbe@baylibre.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_111430_373032_BE502D14 
-X-CRM114-Status: UNSURE (   7.23  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191114_112730_165241_EB52C341 
+X-CRM114-Status: GOOD (  10.14  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,30 +76,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
- Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, wens@csie.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3789716101205737165=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 11 Nov 2019 04:04:33 +0100, =3D?UTF-8?q?Andreas=3D20F=3DC3=3DA4rber=
-?=3D wrote:
-> Define compatible strings for Realtek RTD1395 SoC and BPI-M4 SBC.
-> =
 
-> Signed-off-by: Andreas F=E4rber <afaerber@suse.de>
-> ---
->  Documentation/devicetree/bindings/arm/realtek.yaml | 6 ++++++
->  1 file changed, 6 insertions(+)
-> =
+--===============3789716101205737165==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="JVdfu60Euw8Ey+/T"
+Content-Disposition: inline
 
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+--JVdfu60Euw8Ey+/T
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+On Thu, Nov 14, 2019 at 03:47:31PM +0000, Corentin Labbe wrote:
+> Hello
+>
+> Pineh64 have two existing model (A and B) with some hardware difference and
+> so need two different DT file.
+> But the current situation has only one file for both.
+> This serie fix this situation by being more clear on which DT file is
+> needed for both model.
+
+sorry I didn't tell you on v1, the prefix for arm64 is lowercase
+(unlike arm where it's uppercase).
+
+I've fixed it while applying, thanks!
+Maxime
+--JVdfu60Euw8Ey+/T
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXc2qnQAKCRDj7w1vZxhR
+xSWVAQCBPr2s0WW9ArMBn4OEKu8Q5C7BaeyG22Vq1rN5Z8PwVgEA533j7d1rP19K
+sGwHnhtbWexfClKTTe+6B1qfHaK5jwo=
+=AIGJ
+-----END PGP SIGNATURE-----
+
+--JVdfu60Euw8Ey+/T--
+
+
+--===============3789716101205737165==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3789716101205737165==--
+
