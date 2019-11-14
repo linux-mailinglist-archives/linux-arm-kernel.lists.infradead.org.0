@@ -2,81 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F03F7FC028
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 07:27:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADAEEFC04C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 07:43:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lOIS6VACXDoIxJmOWtfsc6uU7kY9vjV/DKmgpXnaWfU=; b=r4ZZBYJsAiF5GS
-	UqUfKj75MiNpOY3/rd4SSqcMl/FxsFvj9LdrS3vyyBwXv1a+jnpqHdsjB86BVV6zfu4rEO317Qxgg
-	NfXXZs3dYPwnhra0nR7v8afIR6lqW36hKusZk2/W97pZ3gNW6nHgqabA3/2Y1xxW3zxB9747Hucvm
-	03ZqseoukO7KLapAHkG8n0LeSXID4YxWddT3TYgkkNZ6KAMbtCnW6MIrqw0o4EugYhUIeGVIPnF+n
-	Xdb385XGMB9ZHnOC2pmDUuFhqb55Yt2g5HJcvy3V4uCAfyOh1swEtW/KergCzg73/gJdJQdcHuuEJ
-	+/LcqCUW2KGleGheaoOA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jgt7RYm8KP464p++lOsFfWe116zbkY9gCpNzyYdYll4=; b=rvcYkqAxwT9242
+	B2k4VWUBO1P1YX+xT6gMxCmIV56Qd7Yl+J+ibwfnfOdID2BTFdxXSm3Wr9LBT1p4buEX49fljXJCD
+	oC75SNOQTik/GPtCx8OyYBS+iOYN1dFNiXWTYrHd9Bf6um0L5UBrPTiDapURJ+bMqwu4I5/Mj3/2+
+	vNej1o6LLl7m8iztKGM7HTUYqomuOg7863PPDA8Bku38VqxxTCAJA7gz6+bxRFDg+Zd4iGA9zqAJP
+	6KE1dfeMRV88j00+PEUFHktgKqtPRJACD01712kziQ0iFyearnZcAsh5jziBgv2T/Bpij+03eVeP5
+	S9Hi9rjW7oLtAc4yAhFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iV8bS-0002rA-0I; Thu, 14 Nov 2019 06:27:38 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iV8qN-0007rZ-4K; Thu, 14 Nov 2019 06:43:03 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iV8bK-0002ql-5F
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 06:27:31 +0000
-Received: from mail-lj1-f169.google.com (mail-lj1-f169.google.com
- [209.85.208.169])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6ACE720715
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 06:27:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573712848;
- bh=8hzwCt1v1NdUbhpvZ5TqJJzC/rhyT2NofD4G90JdjLM=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=cYO1tXkg7eFtMudQwH2gz+1sxd41wi5O+dYXb27KzReNitNkK2hGYvpBKBbfIlfka
- W5oCDUvwBSb71gGh8s4FySNrNUuXK0JtfMmwt5TdA05AYDuOrMnPs8h6Y881txMUW3
- pqU0OaVbwouBVxzBLz6eyCpHuwp1lS7W5xOsENkw=
-Received: by mail-lj1-f169.google.com with SMTP id d5so5342148ljl.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 Nov 2019 22:27:28 -0800 (PST)
-X-Gm-Message-State: APjAAAU994wX798u8pFJWbkTBZVEw+3H4Dafdzdf9EGrN0Ejlf23ViHL
- gl+2+bMJiZJuIVAnFSs+J7sNJPKTMdkozxB+i+E=
-X-Google-Smtp-Source: APXvYqxLS447eYAoTkwwrZ8NQanUwXVmQzqjcphyQAiiCVNGGA//5Ap3b/PqZTjA8RvqQCvN6M1AOyz+5i1QDL1Kr1E=
-X-Received: by 2002:a2e:9842:: with SMTP id e2mr5294560ljj.93.1573712846541;
- Wed, 13 Nov 2019 22:27:26 -0800 (PST)
+ id 1iV8qB-0007qj-Sv
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 06:42:53 +0000
+Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 79F771C349B78791F986;
+ Thu, 14 Nov 2019 14:42:41 +0800 (CST)
+Received: from [127.0.0.1] (10.177.223.23) by DGGEMS414-HUB.china.huawei.com
+ (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Thu, 14 Nov 2019
+ 14:42:32 +0800
+Subject: Re: [PATCH v2 3/8] ACPI/IORT: Support PASID for platform devices
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ <iommu@lists.linux-foundation.org>, <devicetree@vger.kernel.org>,
+ <linux-acpi@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
+References: <20191108152508.4039168-1-jean-philippe@linaro.org>
+ <20191108152508.4039168-4-jean-philippe@linaro.org>
+From: Hanjun Guo <guohanjun@huawei.com>
+Message-ID: <c34e37aa-af9b-5560-9c98-2cb5c55904c3@huawei.com>
+Date: Thu, 14 Nov 2019 14:42:08 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.5.0
 MIME-Version: 1.0
-References: <20191113094256.1108-1-peter.ujfalusi@ti.com>
- <20191113094256.1108-8-peter.ujfalusi@ti.com>
-In-Reply-To: <20191113094256.1108-8-peter.ujfalusi@ti.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Thu, 14 Nov 2019 14:27:15 +0800
-X-Gmail-Original-Message-ID: <CAJKOXPe_vfDjJSbVOxFFDFO3OWPLFr_UffCqVZb4ahGF57aVYA@mail.gmail.com>
-Message-ID: <CAJKOXPe_vfDjJSbVOxFFDFO3OWPLFr_UffCqVZb4ahGF57aVYA@mail.gmail.com>
-Subject: Re: [PATCH 7/9] spi: s3c64xx: Use dma_request_chan() directly for
- channel request
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+In-Reply-To: <20191108152508.4039168-4-jean-philippe@linaro.org>
+Content-Language: en-US
+X-Originating-IP: [10.177.223.23]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_222730_222206_9AB8AE29 
-X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-CacheID: sfid-20191113_224252_102279_6D0EEF27 
+X-CRM114-Status: UNSURE (   9.23  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,35 +69,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linus.walleij@linaro.org, kgene@kernel.org, alexandre.belloni@bootlin.com,
- linux-arm-msm@vger.kernel.org, radu_nicolae.pirea@upb.ro,
- linux-spi@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- bjorn.andersson@linaro.org, vkoul@kernel.org, agross@kernel.org,
- ldewangan@nvidia.com, broonie@kernel.org, Andi Shyti <andi@etezian.org>,
- linux-tegra@vger.kernel.org, thierry.reding@gmail.com, jonathanh@nvidia.com,
- shawnguo@kernel.org, s.hauer@pengutronix.de,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, robin.murphy@arm.com,
+ joro@8bytes.org, jonathan.cameron@huawei.com, rjw@rjwysocki.net,
+ eric.auger@redhat.com, robh+dt@kernel.org, sudeep.holla@arm.com,
+ zhangfei.gao@linaro.org, will@kernel.org, lenb@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 13 Nov 2019 at 17:42, Peter Ujfalusi <peter.ujfalusi@ti.com> wrote:
->
-> dma_request_slave_channel_reason() is:
-> #define dma_request_slave_channel_reason(dev, name) \
->         dma_request_chan(dev, name)
->
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+On 2019/11/8 23:25, Jean-Philippe Brucker wrote:
+> Named component nodes in the IORT tables describe the number of
+> Substream ID bits (aka. PASID) supported by the device. Propagate this
+
+This feature is needed for HiSilicon Ascend AI chip, thanks
+for adding this.
+
+> value to the fwspec structure in order to enable PASID for platform
+> devices.
+> 
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 > ---
->  drivers/spi/spi-s3c64xx.c | 6 ++----
->  1 file changed, 2 insertions(+), 4 deletions(-)
+>  drivers/acpi/arm64/iort.c | 18 ++++++++++++++++++
+>  1 file changed, 18 insertions(+)
 
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+Acked-by: Hanjun Guo <guohanjun@huawei.com>
 
-Best regards,
-Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
