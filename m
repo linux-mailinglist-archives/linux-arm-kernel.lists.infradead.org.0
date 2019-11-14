@@ -2,74 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88C94FC848
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 15:01:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 086C8FC849
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 15:01:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=diUBK/MLn1RhkbBVKQgwS4wqYh8fMvBx8LdRcrc9IF8=; b=G+EAZcZeQKn+kB
-	k43DKuGnCRmtGpbql0j2lnM+jZ+i434Bfe7XSi8+lj67tXywobKK0iayDVEYmGMQvQ6OlKnqCeuzr
-	qFdS8BA+87OQalJpYp9RZWzFt7MnjYYbq875aKnB0EzLLJsFFoZaD6kijEHTTUqRaCb3czQAzESZB
-	caQYuxMMhATEcZOvfLieeS2CpJL82Pym9R9ZYjewdYBejk/Di5QRfyobXajmdR1YgcvVG2NfWl2bp
-	C05ibhug9OtmoR8ZMaJVGM8tPbj+kG0rEgYdVsN8LYpQUnArtTb8ikH4T7eyCAJZgzdLYv4dQ4n0J
-	ipD4MUKThyDphFYOdKIg==;
+	List-Owner; bh=RydPlrG79ShHIsnYYekucoYs4PytVuRYwqaF/v1wsEE=; b=NzkaWQ4StjBzGE
+	A2xWlg8cmAgQXOzVAkpIXYM0AZxesrK1x/02wtunNk17cef1q6lK8uk3td6lpsQ4cn37BFAK/Hm0N
+	gxXcNLWnTPo1KoDPsRpPMOLgdKHL+l6nkLLwZjhcNHLwwadiAftF3jITQeM/b5ctY3MVr/UJkHOce
+	n+p5TyKR744lX/NQDkoAgdFsSAYocbQLwC8gXHDAF7hqTbaw0Lcrqm5tuOToPh2q6xRzpDCEipzjd
+	LX5PcWo6Jy2hCp55yl6HebDwHYioUjMNTZIFOe7CP+HkZAN+eEYyNpRu6cHf0FiW25fSXB2UzKgC/
+	tX/JZ3v7CXpHTa9FpqBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVFg5-0007zD-L9; Thu, 14 Nov 2019 14:00:53 +0000
-Received: from mail-vk1-xa44.google.com ([2607:f8b0:4864:20::a44])
+	id 1iVFgI-00088j-Gs; Thu, 14 Nov 2019 14:01:06 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVFfw-0007y6-HI
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 14:00:45 +0000
-Received: by mail-vk1-xa44.google.com with SMTP id t184so1491480vka.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 06:00:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kJUZgKfy2YSWGNuA2+MgdU+Nr8ygHAVvjPLQAD+YtDs=;
- b=Um9OcmrFedBxkdzVXkY2EtsXLNyskuS4YLklz4fMGWFnU+aiTFGvjT8HDml+M1ErlU
- fsS2HvnmMPNZaNx6nyozf0V53f0VFp6xcqjCO4j/SyTSgEV9iAZTihxeQ7PGyd40EuHI
- OGz9A8awTDEhr1M6aH8bcBqUsMGiHgm5h+0V1RUhWC11o6vNM9h2zQrntTdVYVL1M3Bi
- hGaYX+MdnaFWX2GO5NxAwLqTuwWz0rIophmlgo4k9FYQyL4ySZg8VtdTMLPk4AS4wTA6
- 3AnLRIeEb6T64QF23YubjnKP0+NtmPoxHR7Du0y3xfiCBv8QQcETgLbxDir5/+in1E5+
- f+UQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kJUZgKfy2YSWGNuA2+MgdU+Nr8ygHAVvjPLQAD+YtDs=;
- b=M9yInZy4nhNFvXxgSWLa0/6vz5jeJHTllVPc5+mpjFkU19WzUNX3M1E0m5xaWC1PUa
- nDcjR1cOVyClOzZiRBL/rOjswPuRKiF519j5LNr1xc50vVP4PsFaMqzI4HCSXu927GBA
- Ogn8wGfXintgNKyGd30kga0O0zAr8zhwv0X3SExBvOfGpEyyKaws9HlDqUF0h8NiB+uT
- 9HdNRqYia7i36gJln0KM/EOnWkzqcy3S8vvXQBRybVlMCOypAHhRju9ahTqxJquGBBVy
- wf6smD5I1PamPYMJr4lhlJJtKme0igFKVjCKp12NWwZjokmmgHsk93DO0467LvEhfE6z
- 4BeA==
-X-Gm-Message-State: APjAAAXUllpLKcai8X/ClXCaCiqdM+nZY+y/WeBJt0/taLE7yeq/aEGl
- +5Ee95QnPaCRngXfc4zlOFM1MOcb+lvdEzE8L8Bzhw==
-X-Google-Smtp-Source: APXvYqxglOLg8xzv1EZ/UOAGOFLRVXU+F1KB1IDk6i8iCyI7W7PmXp6Hxwdfvs1NSaryF11w4xB1Cg/GYOTyEXWRt/c=
-X-Received: by 2002:a1f:fe0a:: with SMTP id l10mr5151920vki.59.1573740043247; 
- Thu, 14 Nov 2019 06:00:43 -0800 (PST)
+ id 1iVFfy-0007yL-TP; Thu, 14 Nov 2019 14:00:48 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAEE0HuM113268;
+ Thu, 14 Nov 2019 08:00:17 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1573740017;
+ bh=mg4UFFS2ESh3A7IuctheIaBbXKxvehMGp07JMFKAlm0=;
+ h=Date:From:To:CC:Subject:References:In-Reply-To;
+ b=Mpbs4fWCHa2MujEWCR63FGFbtu7sEjAJx80a0Ie3U5gJrSh3wfAFT6V6CCCnse642
+ ys+4ZwuS5AssKdj7NNk9DtoG1yhneDQGeDKK+yPRdcYOzOzy/47gmxnvex8/A/JEEJ
+ O7RgDe6d2D6COjEaDcBw8754s23pS/NkxNYRndBA=
+Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAEE0H5B116509;
+ Thu, 14 Nov 2019 08:00:17 -0600
+Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 14
+ Nov 2019 08:00:17 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Thu, 14 Nov 2019 08:00:17 -0600
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAEE0HRI130585;
+ Thu, 14 Nov 2019 08:00:17 -0600
+Date: Thu, 14 Nov 2019 08:02:34 -0600
+From: Bin Liu <b-liu@ti.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: Re: [PATCH v2 05/13] usb: musb: create debugfs directory under usb
+ root
+Message-ID: <20191114140234.GB5853@uda0271908>
+Mail-Followup-To: Bin Liu <b-liu@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Felipe Balbi <balbi@kernel.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Peter Chen <Peter.Chen@nxp.com>,
+ Minas Harutyunyan <hminas@synopsys.com>,
+ Cristian Birsan <cristian.birsan@microchip.com>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Kevin Cernekee <cernekee@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Daniel Mack <daniel@zonque.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>,
+ Robert Jarzmik <robert.jarzmik@free.fr>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Stephen Boyd <swboyd@chromium.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ Biju Das <biju.das@bp.renesas.com>,
+ Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, linux-media@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org
+References: <1573541519-28488-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1573541519-28488-5-git-send-email-chunfeng.yun@mediatek.com>
+ <20191112152857.GA5853@uda0271908>
+ <20191114032018.GA122287@kroah.com>
 MIME-Version: 1.0
-References: <1573736352-3597-1-git-send-email-eugen.hristev@microchip.com>
-In-Reply-To: <1573736352-3597-1-git-send-email-eugen.hristev@microchip.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 14 Nov 2019 15:00:07 +0100
-Message-ID: <CAPDyKFrrzNXxYywPW8cAZN86jBPoOFWt295o9ANm+0BrF4dehg@mail.gmail.com>
-Subject: Re: [PATCH] mmc: sdhci-of-at91: fix quirk2 overwrite
-To: Eugen.Hristev@microchip.com
+Content-Disposition: inline
+In-Reply-To: <20191114032018.GA122287@kroah.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_060044_583180_CA4DA97C 
-X-CRM114-Status: GOOD (  16.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191114_060047_061730_B65CF226 
+X-CRM114-Status: GOOD (  17.17  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a44 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -79,6 +114,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,53 +126,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ludovic Desroches <Ludovic.Desroches@microchip.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: Peter Chen <Peter.Chen@nxp.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, linux-kernel@vger.kernel.org,
+ Minas Harutyunyan <hminas@synopsys.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Fabio Estevam <festevam@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, Kevin Cernekee <cernekee@gmail.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ bcm-kernel-feedback-list@broadcom.com, NXP Linux Team <linux-imx@nxp.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Cristian Birsan <cristian.birsan@microchip.com>, linux-media@vger.kernel.org,
+ Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, Stephen Boyd <swboyd@chromium.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Biju Das <biju.das@bp.renesas.com>,
+ Felipe Balbi <balbi@kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-usb@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Colin Ian King <colin.king@canonical.com>, Shawn Guo <shawnguo@kernel.org>,
+ Daniel Mack <daniel@zonque.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 14 Nov 2019 at 13:59, <Eugen.Hristev@microchip.com> wrote:
->
-> From: Eugen Hristev <eugen.hristev@microchip.com>
->
-> The quirks2 are parsed and set (e.g. from DT) before the quirk for broken
-> HS200 is set in the driver.
-> The driver needs to enable just this flag, not rewrite the whole quirk set.
->
-> Fixes: 7871aa60ae00 ("mmc: sdhci-of-at91: add quirk for broken HS200")
-> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+On Thu, Nov 14, 2019 at 11:20:18AM +0800, Greg Kroah-Hartman wrote:
+> On Tue, Nov 12, 2019 at 09:28:57AM -0600, Bin Liu wrote:
+> > Hi,
+> > 
+> > On Tue, Nov 12, 2019 at 02:51:51PM +0800, Chunfeng Yun wrote:
+> > > Now the USB gadget subsystem can use the USB debugfs root directory,
+> > > so move musb's directory from the root of the debugfs filesystem into
+> > > the root of usb
+> > 
+> > My opinion is this move is unnecessary. I breaks existing debug tools or
+> > documentation which is already published on Internet. 
+> 
+> Having a "root" directory for a single random driver seems like you are
+> making your driver a "very important" thing in the overall scheme of the
+> kernel, right?  What's wrong with using the usb subdirectory like all
 
-Applied for fixes, adding a stable tag, thanks!
+Agree, it wasn't the right thing to do at the first place. But now
+changing it adds support burden, because people very often refer to the
+old information on the internet which no longer matches to the new
+location. Basically, it is a cost of ABI change.
 
-Kind regards
-Uffe
+> other USB drivers use (after this patch series is merged)?  That feels
+> like a much more "sane" way to handle the wide-open debugfs namespace.
 
-> ---
->
->  drivers/mmc/host/sdhci-of-at91.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/mmc/host/sdhci-of-at91.c b/drivers/mmc/host/sdhci-of-at91.c
-> index 496844a..5fe6684 100644
-> --- a/drivers/mmc/host/sdhci-of-at91.c
-> +++ b/drivers/mmc/host/sdhci-of-at91.c
-> @@ -389,7 +389,7 @@ static int sdhci_at91_probe(struct platform_device *pdev)
->         pm_runtime_use_autosuspend(&pdev->dev);
->
->         /* HS200 is broken at this moment */
-> -       host->quirks2 = SDHCI_QUIRK2_BROKEN_HS200;
-> +       host->quirks2 |= SDHCI_QUIRK2_BROKEN_HS200;
->
->         ret = sdhci_add_host(host);
->         if (ret)
-> --
-> 2.7.4
->
+Though I commented on this musb patch, my opinion is for this whole
+series, either drop the whole series or apply the whole series.
+
+> Yes, there are no rules when it comes to debugfs file names and
+> locations, but let's try to be sane please.
+
+Fine with me. I can still support questions such as "can't open
+/sys/kernel/debug/musb-hdrc.0/testmode: No such file or directory".
+
+-Bin.
 
 _______________________________________________
 linux-arm-kernel mailing list
