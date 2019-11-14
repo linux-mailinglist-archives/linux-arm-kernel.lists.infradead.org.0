@@ -2,65 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8DA1FC64C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 13:28:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2065FFC664
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 13:34:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=oE6X1k4kaBeqK0frFyGDGH/k7w5Ch9H6SYHxhQXxrmw=; b=koh
-	x5OfSR3lO1wr68xwfWmK46ZiQiCQKbSdJoQObQXIEFbMeBdKnGoOdq2F/403PKeQMx75hcvtmoPrq
-	S1BLvKpBAYiNlE+TRV18Xb5kFlSYS2858ER5EiKhl0D0aHQIKd5r1+6UDr1lwjrWO0i39UC/rt/B9
-	COh8W+til9WSA4XyOlrEAFx46206NWmVRXLTnK3QIuLiwpLVQvCYtaQvbznbXS1XmT2XgibR0ukem
-	Nr2hJvjE7Vs7GBbWKdXkD6CN4lj+P9YAq6MEFiVyEbMi8bemC0pFE3WRcy3FQ7uFZLSMOU6lFZJ1L
-	Rlx1CFafUVJhyvFGxhDrAff7H+uxo2A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0p1SBRD3qfaSNIc3aKLj4OtLsh9817lzY/o7XcHEv7w=; b=XpVWKZXNbKQkgO
+	Cx0UtZzn6NrEcHjKkwEmToU30zi94HOI67ec5ZZuLzQvLvSESBwa2Zv7XmCl9pu9n9Yi6kV9vu+jR
+	uDKGB9NDAQYgsdpbdYBlVGVite0yBMJSnb7qud3A3nNsgEC3cbUdXA7m/4ONG1tK7I+emJrRyObQS
+	faLLg8f6z/8/9Ks/kTQGlUGy/ubMTBU4TdR/N/SEeNHUVtKvh0VaHqFDcYlUo5jx92ElpTF+WvFYd
+	KcLqu9+fbvgrkquP8Kz2n8nYvHfOqh9/ZuLB02ddcRR1jX/lvppiQ5BYMi4Gi2O82aW3hbjqlEC9s
+	qEN+8gam3JBF3wg4fj+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVEEL-0000av-Od; Thu, 14 Nov 2019 12:28:09 +0000
-Received: from conuserg-12.nifty.com ([210.131.2.79])
+	id 1iVEKS-00038I-UM; Thu, 14 Nov 2019 12:34:28 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVEED-0000aN-1r
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 12:28:02 +0000
-Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
- [153.142.97.92]) (authenticated)
- by conuserg-12.nifty.com with ESMTP id xAECR7jJ000853;
- Thu, 14 Nov 2019 21:27:08 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-12.nifty.com xAECR7jJ000853
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1573734429;
- bh=9TSKJqihdLxzzA14xKVF4zpxiUSO4ACCxImJ7e5ZBeo=;
- h=From:To:Cc:Subject:Date:From;
- b=nyXT2As5MHTHfqOrIp9o1kyhAFrBnQrqX5MU4L6ulbeKtAcvXGHIwUFS2rrI1jXaP
- HmYp4HnnM0gvS17ztD+LbBjQvcITVD4UVpQP0uCRR2bY+hU/wcQ4ytbkH+vFoPnzuK
- D84XJUweb6v3K5ybcZjKJ56SDHMezOrtTlPha1xPjCXih7x2lkehI1qehcL7ttskvx
- yt/8uHbqa4GRgC79VmmgBtwkSfdWO05FNogy/ll/PR0v4r+PUfle2g4vSPtF7hQ2CM
- o+gQLe3+kwd2Vc0ZDMWOP20qH6MbLpU0+JB0m+EfndVxCLbTCOo+ytkHSJUIr9hs9y
- dJEJHy8Ce5pww==
-X-Nifty-SrcIP: [153.142.97.92]
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Andrew Murray <andrew.murray@arm.com>, linux-pci@vger.kernel.org
-Subject: [PATCH] PCI: uniphier: remove module code from built-in driver
-Date: Thu, 14 Nov 2019 21:26:54 +0900
-Message-Id: <20191114122654.1490-1-yamada.masahiro@socionext.com>
-X-Mailer: git-send-email 2.17.1
+ id 1iVEKI-00037j-CQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 12:34:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1573734856;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=4bFwAknYoXAgoIVT6IR8TxKpQxjPgCeYexMYT/nB6jM=;
+ b=bvYjf2QBhkHt2DFZOMfuXtm8BRsXPglhxHsONT0k838ZfKjJD7IBplf8pwXZ8wJsMcj6J3
+ wbnryHCJDNw3SUu7cL3mxvKdaIylWI8hj7w86knk5tveXVvcEx2RVD2rSSvnhUb4Use1GG
+ /HyFkh+po2FO8TKnW8lBRMjrhKcVCrQ=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-42-VPBqvAjWPvCmj8cUfEVnBg-1; Thu, 14 Nov 2019 07:32:30 -0500
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id BB417A41FD;
+ Thu, 14 Nov 2019 12:32:28 +0000 (UTC)
+Received: from kamzik.brq.redhat.com (unknown [10.43.2.160])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 319776B8CB;
+ Thu, 14 Nov 2019 12:32:27 +0000 (UTC)
+Date: Thu, 14 Nov 2019 13:32:24 +0100
+From: Andrew Jones <drjones@redhat.com>
+To: Alexandru Elisei <alexandru.elisei@arm.com>
+Subject: Re: [kvm-unit-tests PATCH 07/17] arm: gic: Extend check_acked() to
+ allow silent call
+Message-ID: <20191114123224.2b5jr73qqtgtc7na@kamzik.brq.redhat.com>
+References: <20191108144240.204202-1-andre.przywara@arm.com>
+ <20191108144240.204202-8-andre.przywara@arm.com>
+ <25598849-b195-3411-8092-b0656bcfb762@arm.com>
+MIME-Version: 1.0
+In-Reply-To: <25598849-b195-3411-8092-b0656bcfb762@arm.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-MC-Unique: VPBqvAjWPvCmj8cUfEVnBg-1
+X-Mimecast-Spam-Score: 0
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_042801_455763_D4A95FB1 
-X-CRM114-Status: UNSURE (   9.54  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191114_043418_495176_505DC13C 
+X-CRM114-Status: GOOD (  18.00  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.79 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -73,113 +91,190 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linux-kernel@vger.kernel.org,
- Paul Gortmaker <paul.gortmaker@windriver.com>,
- Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kvm@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Paolo Bonzini <pbonzini@redhat.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-builtin_platform_driver() and MODULE_* are always odd combination.
+On Tue, Nov 12, 2019 at 03:23:04PM +0000, Alexandru Elisei wrote:
+> check_acked is starting to become hard to read.
 
-The MODULE_* tags are never populated since CONFIG_PCIE_UNIPHIER is
-a bool option.
+Agreed. check_acked() could probably have some of its subtests factored
+out to improve its readability.
 
-You can see similar cleanups by:
-  git log --grep='explicitly non-modular'
+> The function itself is rather inconsistent, as it mixes regular
+> printf's with report_info's.
 
-Following those commits, remove all the MODULE_* tags and the driver
-detach code.
+Sounds good
 
-Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-Reviewed-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
----
+> The return value is also never used:
+> =
 
- drivers/pci/controller/dwc/pcie-uniphier.c | 31 +---------------------
- 1 file changed, 1 insertion(+), 30 deletions(-)
+> $ awk '/check_acked\(/ && !/const/' arm/gic.c
+> =A0=A0=A0 check_acked("IPI: self", &mask);
+> =A0=A0=A0 check_acked("IPI: directed", &mask);
+> =A0=A0=A0 check_acked("IPI: broadcast", &mask);
 
-diff --git a/drivers/pci/controller/dwc/pcie-uniphier.c b/drivers/pci/controller/dwc/pcie-uniphier.c
-index 3f30ee4a00b3..8c92b660a0f6 100644
---- a/drivers/pci/controller/dwc/pcie-uniphier.c
-+++ b/drivers/pci/controller/dwc/pcie-uniphier.c
-@@ -9,11 +9,11 @@
- #include <linux/bitfield.h>
- #include <linux/clk.h>
- #include <linux/delay.h>
-+#include <linux/init.h>
- #include <linux/interrupt.h>
- #include <linux/iopoll.h>
- #include <linux/irqchip/chained_irq.h>
- #include <linux/irqdomain.h>
--#include <linux/module.h>
- #include <linux/of_irq.h>
- #include <linux/pci.h>
- #include <linux/phy/phy.h>
-@@ -161,12 +161,6 @@ static void uniphier_pcie_irq_enable(struct uniphier_pcie_priv *priv)
- 	writel(PCL_RCV_INTX_ALL_ENABLE, priv->base + PCL_RCV_INTX);
- }
- 
--static void uniphier_pcie_irq_disable(struct uniphier_pcie_priv *priv)
--{
--	writel(0, priv->base + PCL_RCV_INT);
--	writel(0, priv->base + PCL_RCV_INTX);
--}
--
- static void uniphier_pcie_irq_ack(struct irq_data *d)
+That's good, since it's a void function :-)
+
+> =
+
+> What I'm thinking is that we can rewrite check_acked to return true/false=
+ (or
+> 0/1), meaning success or failure, remove the testname parameter, replace =
+the
+> printfs to report_info, and have the caller do a report based on the value
+> returned by check_acked.
+> =
+
+> Rough version, compile tested only, I'm sure it can be improved:
+> =
+
+> diff --git a/arm/gic.c b/arm/gic.c
+> index adb6aa464513..5453f2fd3d5f 100644
+> --- a/arm/gic.c
+> +++ b/arm/gic.c
+> @@ -60,11 +60,11 @@ static void stats_reset(void)
+> =A0=A0=A0=A0=A0=A0=A0 smp_wmb();
+> =A0}
+> =A0
+> -static void check_acked(const char *testname, cpumask_t *mask)
+> +static bool check_acked(cpumask_t *mask)
+
+We have several check_* functions in arm/gic.c, and they're all void
+functions. Changing this one to a bool would be inconsistent, but
+maybe that consistency isn't that important, or maybe they should all
+be bool?
+
+> =A0{
+> =A0=A0=A0=A0=A0=A0=A0 int missing =3D 0, extra =3D 0, unexpected =3D 0;
+> =A0=A0=A0=A0=A0=A0=A0 int nr_pass, cpu, i;
+> -=A0=A0=A0=A0=A0=A0 bool bad =3D false;
+> +=A0=A0=A0=A0=A0=A0 bool success =3D true;
+> =A0
+> =A0=A0=A0=A0=A0=A0=A0 /* Wait up to 5s for all interrupts to be delivered=
+ */
+> =A0=A0=A0=A0=A0=A0=A0 for (i =3D 0; i < 50; ++i) {
+> @@ -76,22 +76,21 @@ static void check_acked(const char *testname, cpumask=
+_t *mask)
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0=A0 acked[cpu] =3D=3D 1 : acked[cpu] =3D=3D 0;
+> =A0
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if =
+(bad_sender[cpu] !=3D -1) {
+> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0 printf("cpu%d received IPI from wrong sender %d\n",
+> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0 report_info("cpu%d received IPI from wrong sender
+> %d\n",
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 cpu, bad_sender[cpu]);
+> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0 bad =3D true;
+> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0 success =3D false;
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
+> =A0
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if =
+(bad_irq[cpu] !=3D -1) {
+> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0 printf("cpu%d received wrong irq %d\n",
+> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0 report_info("cpu%d received wrong irq %d\n",
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 cpu, bad_irq[cpu]);
+> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0 bad =3D true;
+> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0 success =3D false;
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (nr_pass =3D=3D nr_cpus)=
  {
- 	struct pcie_port *pp = irq_data_get_irq_chip_data(d);
-@@ -387,14 +381,6 @@ static int uniphier_pcie_host_enable(struct uniphier_pcie_priv *priv)
- 	return ret;
- }
- 
--static void uniphier_pcie_host_disable(struct uniphier_pcie_priv *priv)
--{
--	uniphier_pcie_irq_disable(priv);
--	phy_exit(priv->phy);
--	reset_control_assert(priv->rst);
--	clk_disable_unprepare(priv->clk);
--}
--
- static const struct dw_pcie_ops dw_pcie_ops = {
- 	.start_link = uniphier_pcie_establish_link,
- 	.stop_link = uniphier_pcie_stop_link,
-@@ -446,31 +432,16 @@ static int uniphier_pcie_probe(struct platform_device *pdev)
- 	return uniphier_add_pcie_port(priv, pdev);
- }
- 
--static int uniphier_pcie_remove(struct platform_device *pdev)
--{
--	struct uniphier_pcie_priv *priv = platform_get_drvdata(pdev);
--
--	uniphier_pcie_host_disable(priv);
--
--	return 0;
--}
--
- static const struct of_device_id uniphier_pcie_match[] = {
- 	{ .compatible = "socionext,uniphier-pcie", },
- 	{ /* sentinel */ },
- };
--MODULE_DEVICE_TABLE(of, uniphier_pcie_match);
- 
- static struct platform_driver uniphier_pcie_driver = {
- 	.probe  = uniphier_pcie_probe,
--	.remove = uniphier_pcie_remove,
- 	.driver = {
- 		.name = "uniphier-pcie",
- 		.of_match_table = uniphier_pcie_match,
- 	},
- };
- builtin_platform_driver(uniphier_pcie_driver);
--
--MODULE_AUTHOR("Kunihiko Hayashi <hayashi.kunihiko@socionext.com>");
--MODULE_DESCRIPTION("UniPhier PCIe host controller driver");
--MODULE_LICENSE("GPL v2");
--- 
-2.17.1
+> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 repor=
+t("%s", !bad, testname);
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if =
+(i)
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0=A0=A0=A0=A0=A0=A0 report_info("took more than %d ms", i * 100);
+> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 retur=
+n;
+> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 retur=
+n success;
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
+> =A0=A0=A0=A0=A0=A0=A0 }
+> =A0
+> @@ -107,9 +106,9 @@ static void check_acked(const char *testname, cpumask=
+_t *mask)
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
+> =A0=A0=A0=A0=A0=A0=A0 }
+> =A0
+> -=A0=A0=A0=A0=A0=A0 report("%s", false, testname);
+> =A0=A0=A0=A0=A0=A0=A0 report_info("Timed-out (5s). ACKS: missing=3D%d ext=
+ra=3D%d unexpected=3D%d",
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 missing, extra,=
+ unexpected);
+> +=A0=A0=A0=A0=A0=A0 return false;
+> =A0}
+> =A0
+> =A0static void check_spurious(void)
+> @@ -183,13 +182,11 @@ static void ipi_test_self(void)
+> =A0{
+> =A0=A0=A0=A0=A0=A0=A0 cpumask_t mask;
+> =A0
+> -=A0=A0=A0=A0=A0=A0 report_prefix_push("self");
+> =A0=A0=A0=A0=A0=A0=A0 stats_reset();
+> =A0=A0=A0=A0=A0=A0=A0 cpumask_clear(&mask);
+> =A0=A0=A0=A0=A0=A0=A0 cpumask_set_cpu(smp_processor_id(), &mask);
+> =A0=A0=A0=A0=A0=A0=A0 gic->ipi.send_self();
+> -=A0=A0=A0=A0=A0=A0 check_acked("IPI: self", &mask);
+> -=A0=A0=A0=A0=A0=A0 report_prefix_pop();
+> +=A0=A0=A0=A0=A0=A0 report("self", check_acked(&mask));
+> =A0}
+> =A0
+> =A0static void ipi_test_smp(void)
+> @@ -203,7 +200,7 @@ static void ipi_test_smp(void)
+> =A0=A0=A0=A0=A0=A0=A0 for (i =3D smp_processor_id() & 1; i < nr_cpus; i +=
+=3D 2)
+> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 cpumask_clear_cpu(i, &mask);
+> =A0=A0=A0=A0=A0=A0=A0 gic_ipi_send_mask(IPI_IRQ, &mask);
+> -=A0=A0=A0=A0=A0=A0 check_acked("IPI: directed", &mask);
+> +=A0=A0=A0=A0=A0=A0 report("directed", check_acked(&mask));
+> =A0=A0=A0=A0=A0=A0=A0 report_prefix_pop();
+
+Shouldn't we also drop the "target-list" prefix push/pop?
+
+> =A0
+> =A0=A0=A0=A0=A0=A0=A0 report_prefix_push("broadcast");
+> @@ -211,7 +208,7 @@ static void ipi_test_smp(void)
+> =A0=A0=A0=A0=A0=A0=A0 cpumask_copy(&mask, &cpu_present_mask);
+> =A0=A0=A0=A0=A0=A0=A0 cpumask_clear_cpu(smp_processor_id(), &mask);
+> =A0=A0=A0=A0=A0=A0=A0 gic->ipi.send_broadcast();
+> -=A0=A0=A0=A0=A0=A0 check_acked("IPI: broadcast", &mask);
+> +=A0=A0=A0=A0=A0=A0 report("broadcast", check_acked(&mask));
+> =A0=A0=A0=A0=A0=A0=A0 report_prefix_pop();
+> =A0}
+
+Shouldn't we also drop the "broadcast" prefix push/pop?
+
+> =A0
+> I've removed "IPI" from the report string because the prefixed was alread=
+y pushed
+> in main.
+> =
+
+> Andrew, what do you think? Are we missing something obvious? Do you have =
+a better
+> idea?
+
+I'm happy to see cleanups and haven't had a chance to look too closely at
+the gic tests in a while so I have no better ideas :-)
+
+Thanks,
+drew
 
 
 _______________________________________________
