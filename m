@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBBB3FC6A0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 13:54:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E816FC6A1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 13:54:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AhwmCvowuBWQHEYSde/EmozZgp4lvEeKqVmlZ30V7/Y=; b=gIXcUvUx9yMKVb
-	DoI05xOa7SRTqSHoH1AKi7/N8cVz36I2aZN+cIzY0tmyETGCZsmK/l7xwUFEDnNsrUq0JpnMpOPRt
-	jKjRHP7BeYQOffHQsbdS3+/+zAeWZMoGxQ5/p9BNy8gRv5YXZBflLYyTwjIu0ukx/Zvc80VVPLcpl
-	gvMcvEjvWdVprJIiGTyjwz59GPlN0MgiSQh6qZVc9MRymg76rWdhjwyIAGXur9I8QYfW0Jdm1QQCJ
-	yA5fpgYTWCB6weAM/46XuHir9RkCMqSsJALuNiwlwtHq57HyBqy5tODRuucq0zjgknV4WYVXB8Ng6
-	6VDDr6YRcdtJseqHps8Q==;
+	List-Owner; bh=rKFq3ujkHw3XujYWm/6plaWQtgj3DAG+Fj4K7QLFKUU=; b=HZzP9roXQw5h8b
+	GDSQiypUlrugV3OyWEFpEzxHfy2RwwkJEI/5jURPMil1FxkPWwxi3iOMCF/E7vU4nK6darzgvZ9zf
+	Z/81+h0OlhrFOhlNxFUCTLFj2lA9GmJT7R4zODpvpAUrrz0ZB8hBiukpdZ0UuVBOgDgXZYIx9aecK
+	CN9H2flYQf6sNJPTkiC7aMYEh6kH03leulf8xJ9z8vAVX82At4SXOCk4CmuRtYWkfTBgSLh/QMkAm
+	gMhwuW13rCcLYzmFqqpV3WUXWkhylC0BMRSM9orj9I86WJTy+r2OzJqI/4vDxI5zDU+VRuCLM1pCW
+	8wLgRxd6fuhykPvdSlpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVEdX-0001qn-My; Thu, 14 Nov 2019 12:54:11 +0000
-Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
+	id 1iVEdn-00022t-4S; Thu, 14 Nov 2019 12:54:27 +0000
+Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVEdN-0001pq-JK
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 12:54:03 +0000
-Received: by mail-vk1-xa43.google.com with SMTP id b64so963012vkg.0
+ id 1iVEdT-0001ss-A8
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 12:54:08 +0000
+Received: by mail-ua1-x942.google.com with SMTP id r22so1811386uam.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 04:54:00 -0800 (PST)
+ Thu, 14 Nov 2019 04:54:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=j7kaYv+E/e8ORn2Gy+9BvMNe/wGdZZ8Ltu87P0bR2PM=;
- b=jmdHDXBhhLyio2z3d9cvr0uOQLVHLSVGA2z0qYJ0zIbiAo2MFl8MKHWVLkO6Q1QBjI
- nEgVba6NRuH2arLCk89WtqyD60ns5PQ/ABDOj29hb9Ldw3HqqjxABeeBov79x0lCy3A3
- 1dKSzwQ+rrK15q38Y4AZJkv1wJeEQQE/wyh055dPZMKFzbRoQEQqjSOOXd4jR6kS1ZVb
- WrwOQFRQDHK1xcO6unINH3oMoi8ffSUFg4rvPzydLnGNliXQw3cUglJv22pXKzItg+hp
- KhRV8uCAZVvYZNpVo6wgwcLJ8QMOvFZ967e8VrI1A7x3UCYcCbA9hboWp+nvxDWRF4UR
- FnKg==
+ :cc; bh=4TabhCeemnbt5YWJd9CPxReqJBi1D8pdx95Mgt8aSEw=;
+ b=CB5Yu2xuaym93+UTMULc25a86wS48QqpxftBXsTLQdXzTUA0toqFuXQyvSaBG1ePNW
+ BoPd/uQG44ly2FV0t2Vxpg3zksylWpO/0dVJyu46UIvYM9aOoyzbocACIM1QxzaNDsj6
+ eDkqhqLy6my9dbZRpzQieGFrFS4vkno4wSRePgCV7+QoDzx+TC8J0sDIipQUz6Avo2zq
+ XvA/wZ5ALcek7yD+OMsBbr/0EEEjOaP8vGkeq6dz9TrRxu8kVzcuzPN7pKLSWCG6LvSV
+ ktnYHh0pbFCizUl7ZUEV5JSGOJzbCB+Ru1WZ8Fe4ZWNsjLMJLhsB1rIoGBKvokNKP0bU
+ ++NA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=j7kaYv+E/e8ORn2Gy+9BvMNe/wGdZZ8Ltu87P0bR2PM=;
- b=quWPea0bufZohGtGZZIk5tmm5X4U8HyMTI8FKVfojCZNv8R0IqR0uOsvhImBVKQnQU
- F0xjxRUKWgnYLcqnO7ubHwLRmnIPNBrZJy3y3o7wdsxXaQl8Qzawe7SaztQose6gA5rX
- YS4vkKU2bRYgHPY92hImTA5xTlkLO7mQOFbc7Ff+ebr/04lor2OFTaXPMnUEHx2JDLrN
- bwZ1yqOz3HIEmpGOlfYeu1ur90F5/3Hnizv0WlSm2clLQS81YT17JXUgO4bFGl57YcFY
- en93Quw+/AJ0mlVOOTny8texReIpGPa65YxTzfamubcHiVf/OudgLUWTxI7bWorFHyhy
- OUtw==
-X-Gm-Message-State: APjAAAWNTFoU51VfersDFFpkdMahL5D+5W+vf7avsQvs8z2SDk8OiD3s
- HXlV5Ahb7dy0ZZmjlj3kBTkhRFiGcSKeHmfwhaCpTw==
-X-Google-Smtp-Source: APXvYqyqmcQFAkEm9m1Jnd6vFouVrLC+OhhaXGWaFFzu1LdB9oTyBPhsXXff0IBdvNsBO1U1ZdQHtW10o/YdvuxHcPw=
-X-Received: by 2002:a1f:ee0f:: with SMTP id m15mr5092437vkh.43.1573736039900; 
- Thu, 14 Nov 2019 04:53:59 -0800 (PST)
+ bh=4TabhCeemnbt5YWJd9CPxReqJBi1D8pdx95Mgt8aSEw=;
+ b=Elj1YFt5kgIz+5Q1wYGTv4q2svZxRBEL1z1r5dvPdQjIii0nIp/9QwVRo8XahG/1T/
+ e0XYb2+T0a/30E3KKAI3gPx6OLnvW9p9HrGVIGz2YTHELg8Edsugd1n/ocAFom6N5plo
+ DC86dG7kerBUNQhDk94fNbSry5YiWqDKUb5zkGOLdKF1YrjuPPJrdUurnPWGoBmZHTQN
+ tv/nWxo6m8Afs4nhUz4SCImjONrn60FPy/VjciPDJj7KKE/22cfmbWg7YR09J2/vvT0A
+ bNv8OkUOfPHaWsg9pzuPZ61IcD/S0DUd5APQy2rBK/Nfc44+nn5ByPrmElAiWkopP7uW
+ LOwA==
+X-Gm-Message-State: APjAAAXZKlinKtiYGBm2pXiPlIe1I1mZsMGeGskE82hmP6UX2MAST8tM
+ 91ZlJFVFpmBKMfiqd1Gh6d9AXK/gucrR6qpBZDdWvw==
+X-Google-Smtp-Source: APXvYqwA+J0UCOgnwqppP3NKFyifvH6MtwSxKN//hr4/ukqNE2SPBmLZyMZVnkJC9I1HKis7De+7tL7O3dYz+TSI3W4=
+X-Received: by 2002:ab0:3399:: with SMTP id y25mr5316646uap.100.1573736046067; 
+ Thu, 14 Nov 2019 04:54:06 -0800 (PST)
 MIME-Version: 1.0
-References: <1572949321-8193-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1572949321-8193-1-git-send-email-peng.fan@nxp.com>
+References: <20191113093616.32474-1-peter.ujfalusi@ti.com>
+In-Reply-To: <20191113093616.32474-1-peter.ujfalusi@ti.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 14 Nov 2019 13:53:23 +0100
-Message-ID: <CAPDyKFoL7oJ+2hvi77N9=1hBKFgCXRUppcte1u=eF4z+Fz8TQw@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: mmc: fsl-imx-esdhc: add imx8m compatible
- string
-To: Peng Fan <peng.fan@nxp.com>
+Date: Thu, 14 Nov 2019 13:53:30 +0100
+Message-ID: <CAPDyKFp15ZMq1f_xwrPSRbhU4M4SXhRzigA9-QMNBGSZj-YtJA@mail.gmail.com>
+Subject: Re: [PATCH 0/2] mms: Use dma_request_chan() directly for channel
+ request
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_045401_764729_86A96275 
-X-CRM114-Status: GOOD (  12.36  )
+X-CRM114-CacheID: sfid-20191114_045407_376435_F422764E 
+X-CRM114-Status: GOOD (  10.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,62 +91,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+Cc: vkoul@kernel.org, Alexandre Belloni <alexandre.belloni@bootlin.com>,
  "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 5 Nov 2019 at 11:23, Peng Fan <peng.fan@nxp.com> wrote:
+On Wed, 13 Nov 2019 at 10:35, Peter Ujfalusi <peter.ujfalusi@ti.com> wrote:
 >
-> From: Peng Fan <peng.fan@nxp.com>
+> Hi,
 >
-> Add imx8mq/m/n compatible string
+> I'm going through the tree to remove dma_request_slave_channel_reason() as it
+> is just:
+> #define dma_request_slave_channel_reason(dev, name) \
+>         dma_request_chan(dev, name)
 >
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> Regards,
+> Peter
+> ---
+> Peter Ujfalusi (2):
+>   mmc: atmel-mci: Use dma_request_chan() directly for channel request
+>   mmc: moxart: Use dma_request_chan() directly for channel request
+>
+>  drivers/mmc/host/atmel-mci.c  | 3 +--
+>  drivers/mmc/host/moxart-mmc.c | 4 ++--
+>  2 files changed, 3 insertions(+), 4 deletions(-)
 
 Applied for next, thanks!
 
 Kind regards
 Uffe
-
-
-> ---
->
-> V1:
->  imx8mq/m/n.dtsi already use this compatible string,
->  but not listed in binding doc, so add it.
->
->  Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt | 3 +++
->  1 file changed, 3 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt b/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt
-> index f707b8bee304..2fb466ca2a9d 100644
-> --- a/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt
-> +++ b/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt
-> @@ -18,6 +18,9 @@ Required properties:
->                "fsl,imx6ull-usdhc"
->                "fsl,imx7d-usdhc"
->                "fsl,imx7ulp-usdhc"
-> +              "fsl,imx8mq-usdhc"
-> +              "fsl,imx8mm-usdhc"
-> +              "fsl,imx8mn-usdhc"
->                "fsl,imx8qxp-usdhc"
->
->  Optional properties:
-> --
-> 2.16.4
->
 
 _______________________________________________
 linux-arm-kernel mailing list
