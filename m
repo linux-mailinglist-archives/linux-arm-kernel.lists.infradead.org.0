@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B6A1FCF5A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 21:13:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2BBEFCFAB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 21:29:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,56 +11,87 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=m6OkYR46gIuI5C7Cd7EXOrx7u2NBhbzW1lxoXWI0bEE=; b=shB1VDwPXrlL6i0yU14AWLKLB8
-	hHGkR9ro85xv8lSSW9fWjQ0WJ+94yA0m12SdQ+mT31ySdJkICV6NsTMc30MyEp+m4EejKW8/tF3tm
-	k6ADGlezBOWjAUWS40rANUMny2YWLrlEm2sxb96/VB5HKh+y3anQ6lNc163BIG9tXue72ZimHvDW+
-	f68t4c4LH8sE8BZJU5zLu0YrcUgrJ77+DJhxI0xuKQL+XaQwyMXcQ77zl6oQzC814YFgdq9VoP9Xs
-	7m4g8/5ExBKdUtwCqaICgsjANel6YHu7p/9QXbtyLAwn1amiQPOuxRcXS9M1CCLXi82+/i40SeYSI
-	XhcwgvWA==;
+	bh=JsunhtRM2FR95w6rAJvjU96Gvs3WVBZaMRDlYnEZh/8=; b=cuFAg5c6ALRNqGCZdH1XUw0w8+
+	FRaKjMBoBXeQDeiqQ3N9GZuA3Xo1qQ7RXhHA/VchnNSF/k25U99Q4CRRibbqUjfpvACx9RB+SNFqp
+	NjYilSnXSKRxql5PzUlLYHGNNSnip9FyBd0EMCUfOOlw5tP2X2bBCP2L5b5vbwh1ETxqxBj7KFStL
+	p0PbgqwzSOSTuaPvWDMfeOSFNp7vL+Ltcqu8eqm6XftUZvnRHwg+R3zJxRN4fL1A0RwAUQ3q57IJ3
+	yxefbREyK5MZXiKykhagjvEIVYsT0B7/tLh5HSYGZ8HiCSgrOzNN7OS4yiTA0NfOO2hV+NONGFHYf
+	8TK7VqWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVLUA-0001by-Qv; Thu, 14 Nov 2019 20:12:58 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1iVLjd-0007Rd-9E; Thu, 14 Nov 2019 20:28:57 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVLS7-0008RA-Q5
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 20:10:54 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7552B200497;
- Thu, 14 Nov 2019 21:10:50 +0100 (CET)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 629A8200079;
- Thu, 14 Nov 2019 21:10:50 +0100 (CET)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 50C3C2060A;
- Thu, 14 Nov 2019 21:10:49 +0100 (CET)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Georgi Djakov <georgi.djakov@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>
-Subject: [PATCH RFC v6 9/9] arm64: dts: imx8m: Add interconnect provider
- properties
-Date: Thu, 14 Nov 2019 22:09:56 +0200
-Message-Id: <a8b8d1f916a9ba356fe1ce9c277516341853bf36.1573761527.git.leonard.crestez@nxp.com>
+ id 1iVLjV-0007RG-AA; Thu, 14 Nov 2019 20:28:50 +0000
+Received: by mail-wm1-x343.google.com with SMTP id l17so7201529wmh.0;
+ Thu, 14 Nov 2019 12:28:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=K5embLHTDP7uNIGocODuFu6GQnCP8W2lQWuJv19zdl8=;
+ b=oJCz2v2c5AYVz6Q6H4mdrlmjwMRXJl3QRv58ftEV+PhYZRrrjnkTSLO3STb7ZcfRgn
+ N2OLdvEU1DxyXboZFDZpSOISB7tOshCnak0Kmvoql7WD0duVFKIn6dtpQ985JtQEI+4B
+ 2MoxmgIvBkQoTRhr8/ofs1F7C2qk8ec+NGHsxYFy3RUzbhF4sM4yQB53OiBj9t4uGml4
+ 7s6q357K5SH9nJ/WCTb+p6Z+XSYUhBFp6S811kDcmcPrOvw8oY3ElY7IUj8IEiGV4xco
+ re2tlKjXgS0Z5vYsmtdntgVeM7iIqFDwlsO6N6StStT+9rOh8AbHHMeg/wPi7/SD2Lj4
+ AZFQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=K5embLHTDP7uNIGocODuFu6GQnCP8W2lQWuJv19zdl8=;
+ b=obMDKPdpdlvMQ8mciyiasXaxk3YdDRyx3gqJuuNm98s/zVXZBHhKVXRz5pzwmtSpFs
+ z5SmfLjuwTNFU5UxlCzdyC0xGvmUjQ0QRafIwIaPdgjz9lGyxmYAMSFNsOZrsjVkE/hz
+ 6JRh/a3WfaF9eabzxWEPS5D58wNuO4pLupN/Og2Vzy5G1/dMkbDzGAJFZCTb/oAWLTaN
+ W5+G12h2aYscH9kg4Be9ikREsu/ajIttOd6amrUrhYZqDEIwWp1NJeo70D3uvjLh3cMG
+ 8brBrMgnG96u+GDXHNxaHH2JJL3HoTV00HAqceB/x7sbJRg0LHL/08BtBe1xM9qdaZxs
+ 8f9Q==
+X-Gm-Message-State: APjAAAUGCM+t1qJwlAUnIyqO4II7o5sMfOvVE0z9zz/RG4alu05/oOY5
+ r1N9OWiiDD6/2/l7Pg2VT+s=
+X-Google-Smtp-Source: APXvYqyKPSnewY1soYVqWA6PQ+RofXvEux3LeOY/J6DXdBuJCVla8oCTl6/tXjcgmRorECdyF75imA==
+X-Received: by 2002:a05:600c:28c:: with SMTP id
+ 12mr9819309wmk.25.1573763327200; 
+ Thu, 14 Nov 2019 12:28:47 -0800 (PST)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id w19sm7276899wmk.36.2019.11.14.12.28.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 14 Nov 2019 12:28:46 -0800 (PST)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Eric Anholt <eric@anholt.net>,
+ Stefan Wahren <wahrenst@gmx.net>
+Subject: Re: [PATCH v2 1/2] ARM: dts: bcm2711: force CMA into first GB of
+ memory
+Date: Thu, 14 Nov 2019 12:28:42 -0800
+Message-Id: <20191114202842.32505-1-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1573761527.git.leonard.crestez@nxp.com>
-References: <cover.1573761527.git.leonard.crestez@nxp.com>
-In-Reply-To: <cover.1573761527.git.leonard.crestez@nxp.com>
-References: <cover.1573761527.git.leonard.crestez@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+In-Reply-To: <20191106095945.22933-2-nsaenzjulienne@suse.de>
+References: <20191106095945.22933-1-nsaenzjulienne@suse.de>
+ <20191106095945.22933-2-nsaenzjulienne@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_121052_146705_B0CCD668 
-X-CRM114-Status: UNSURE (   8.15  )
+X-CRM114-CacheID: sfid-20191114_122849_360356_031AFBBE 
+X-CRM114-Status: UNSURE (   9.76  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,143 +103,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Matthias Kaehlcke <mka@chromium.org>, linux-imx@nxp.com,
- devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Kepplinger <martink@posteo.de>,
- Silvano di Ninno <silvano.dininno@nxp.com>,
- linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
- Saravana Kannan <saravanak@google.com>, Stephen Boyd <sboyd@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Alexandre Bailon <abailon@baylibre.com>
+Cc: devicetree@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add #interconnect-cells on main &noc so that it will probe the platform
-interconnect providers. Other devices can request icc_paths like this:
+On Wed,  6 Nov 2019 10:59:44 +0100, Nicolas Saenz Julienne <nsaenzjulienne@suse.de> wrote:
+> arm64 places the CMA in ZONE_DMA32, which is not good enough for the
+> Raspberry Pi 4 since it contains peripherals that can only address the
+> first GB of memory. Explicitly place the CMA into that area.
+> 
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> 
+> ---
 
-	interconnects = <&noc BUS_MASTER_ID &noc BUS_SLAVE_ID>
-
-And interconnect-node-id properties on &noc and &ddrc, the interconnect
-provider will scan these and make PM QoS frequency requests in response
-to banddwith request from other drivers.
-
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
----
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 6 ++++++
- arch/arm64/boot/dts/freescale/imx8mn.dtsi | 6 ++++++
- arch/arm64/boot/dts/freescale/imx8mq.dtsi | 6 ++++++
- 3 files changed, 18 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index a7eafaedeb40..0a833c188b37 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -6,10 +6,11 @@
- #include <dt-bindings/clock/imx8mm-clock.h>
- #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/input/input.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/thermal/thermal.h>
-+#include <dt-bindings/interconnect/imx8mm.h>
- 
- #include "imx8mm-pinfunc.h"
- 
- / {
- 	interrupt-parent = <&gic>;
-@@ -777,10 +778,15 @@
- 		noc: interconnect@32700000 {
- 			compatible = "fsl,imx8mm-noc", "fsl,imx8m-noc";
- 			reg = <0x32700000 0x100000>;
- 			clocks = <&clk IMX8MM_CLK_NOC>;
- 			devfreq = <&ddrc>;
-+			#interconnect-cells = <1>;
-+			fsl,scalable-node-ids = <IMX8MM_ICN_NOC>,
-+						<IMX8MM_ICS_DRAM>;
-+			fsl,scalable-nodes = <&noc>,
-+					     <&ddrc>;
- 			operating-points-v2 = <&noc_opp_table>;
- 
- 			noc_opp_table: opp-table {
- 				compatible = "operating-points-v2";
- 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-index fd47f4aef666..b36e8f052e1f 100644
---- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-@@ -5,10 +5,11 @@
- 
- #include <dt-bindings/clock/imx8mn-clock.h>
- #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/input/input.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
-+#include <dt-bindings/interconnect/imx8mn.h>
- 
- #include "imx8mn-pinfunc.h"
- 
- / {
- 	interrupt-parent = <&gic>;
-@@ -673,10 +674,15 @@
- 		noc: interconnect@32700000 {
- 			compatible = "fsl,imx8mn-noc", "fsl,imx8m-noc";
- 			reg = <0x32700000 0x100000>;
- 			clocks = <&clk IMX8MN_CLK_NOC>;
- 			devfreq = <&ddrc>;
-+			#interconnect-cells = <1>;
-+			fsl,scalable-node-ids = <IMX8MN_ICN_NOC>,
-+						<IMX8MN_ICS_DRAM>;
-+			fsl,scalable-nodes = <&noc>,
-+					     <&ddrc>;
- 			operating-points-v2 = <&noc_opp_table>;
- 
- 			noc_opp_table: opp-table {
- 				compatible = "operating-points-v2";
- 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-index 55231ace5344..83e1a9a18c84 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -9,10 +9,11 @@
- #include <dt-bindings/reset/imx8mq-reset.h>
- #include <dt-bindings/gpio/gpio.h>
- #include "dt-bindings/input/input.h"
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/thermal/thermal.h>
-+#include <dt-bindings/interconnect/imx8mq.h>
- #include "imx8mq-pinfunc.h"
- 
- / {
- 	interrupt-parent = <&gpc>;
- 
-@@ -936,10 +937,15 @@
- 		noc: interconnect@32700000 {
- 			compatible = "fsl,imx8mq-noc", "fsl,imx8m-noc";
- 			reg = <0x32700000 0x100000>;
- 			clocks = <&clk IMX8MQ_CLK_NOC>;
- 			devfreq = <&ddrc>;
-+			#interconnect-cells = <1>;
-+			fsl,scalable-node-ids = <IMX8MQ_ICN_NOC>,
-+						<IMX8MQ_ICS_DRAM>;
-+			fsl,scalable-nodes = <&noc>,
-+					     <&ddrc>;
- 			operating-points-v2 = <&noc_opp_table>;
- 
- 			noc_opp_table: opp-table {
- 				compatible = "operating-points-v2";
- 
--- 
-2.17.1
-
+Applied to devicetree/next, thanks!
+--
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
