@@ -2,55 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFB30FD167
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 00:13:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72805FD183
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 00:23:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LGq1HDK9b2wxTGKqyi8993gwZqbD1KtwfH/NASTAHBU=; b=g8zPsjWfXlCJGn
-	NYkpYMe6JewOUwzT0pw5Vr3Lr8z6OlKjPO1xXD3t/q4L/xpBl+P5y5VkkSwo7ERFuguyPVdZDFvV3
-	3Tt4tnL8s+7kqkHCsG9TBExplrRmzHklyel/gWmM5B5KBL8oHSEW37vfoRW2osP4+imnACYCQiVNl
-	dK4AFLvSYLXEVROoWoUR2GwcwN+etHSigUtrWA8+aDAHe2eUKHD5HYeCcAxXSBny8mYZglDcvDLkh
-	mXNOupZTNsDIWiYvC7v37biIxG+iZvRGGizxksl9n3OuJrlZrd8qkOhKEvZbKw7BPlz5F7FhGM+O8
-	0V/7Dwf0C+3Cl88NBGsA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X2R9ooQBDGzSUPook7ZRgVQ3Hp+QL09vo3n27avHxpA=; b=fm9dT/oUD2DugP
+	6ZeTKPnyqH35cY3rp5hehs4/IrhCihmbcP5tzyYxLtVJ/115FCOKETcWbR3sQP4yM/LQ70kSDs6z1
+	y88SdXaf6o3KlVTOcb8PoOT6zfhJ27q5eeGkLuGRQ+lCCPS8Lutshpps/ojK+lBfnTMTJWua7I98L
+	UUIWroN4Jx4brjyHsy7cH+cTCXQoE9II64oY9d1bbuYQeb1qZcCjksdsurRXYIOmfIUE3x15l7jk6
+	W6R9leNfdMWgFHaEY6xWYIKJdlZ6DDi/oLGASb253x1PPu2s9GeDEJRTuwY4qPj7LMrky9a82wRFJ
+	e3czcJQcnHfI+1Vh+nTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVOJI-0008Bd-D2; Thu, 14 Nov 2019 23:13:56 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1iVOSO-0004aR-03; Thu, 14 Nov 2019 23:23:20 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVOJ8-0008Ar-86; Thu, 14 Nov 2019 23:13:48 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:1e2::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 6FC1014AC47DD;
- Thu, 14 Nov 2019 15:13:41 -0800 (PST)
-Date: Thu, 14 Nov 2019 15:13:40 -0800 (PST)
-Message-Id: <20191114.151340.735858877920708489.davem@davemloft.net>
-To: Mark-MC.Lee@mediatek.com
-Subject: Re: [PATCH net,v3 0/3] Rework mt762x GDM setup flow
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20191113023844.17800-1-Mark-MC.Lee@mediatek.com>
-References: <20191113023844.17800-1-Mark-MC.Lee@mediatek.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Thu, 14 Nov 2019 15:13:41 -0800 (PST)
+ id 1iVOSE-0004ZO-OD; Thu, 14 Nov 2019 23:23:12 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 243A1AE07;
+ Thu, 14 Nov 2019 23:23:06 +0000 (UTC)
+Subject: Re: [PATCH 3/7] arm64: dts: realtek: rtd129x: Introduce r-bus
+To: James Tai <james.tai@realtek.com>
+References: <20191111030434.29977-1-afaerber@suse.de>
+ <20191111030434.29977-4-afaerber@suse.de>
+ <f70d00d8b1f8446fb138b36c61d952f4@realtek.com>
+ <a4d9c42767ac4f3a9eacab72be224f3c@realtek.com>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <8003e143-19f7-1de6-6e23-dadbb134a2e0@suse.de>
+Date: Fri, 15 Nov 2019 00:23:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
+MIME-Version: 1.0
+In-Reply-To: <a4d9c42767ac4f3a9eacab72be224f3c@realtek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_151346_287050_B3DDDFFD 
-X-CRM114-Status: UNSURE (   7.37  )
+X-CRM114-CacheID: sfid-20191114_152310_931686_D1749EAF 
+X-CRM114-Status: UNSURE (   9.34  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,37 +65,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, andrew@lunn.ch, jakub.kicinski@netronome.com,
- devicetree@vger.kernel.org, netdev@vger.kernel.org, sean.wang@mediatek.com,
- linux-kernel@vger.kernel.org, opensource@vdorst.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, john@phrozen.org, matthias.bgg@gmail.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-realtek-soc@lists.infradead.org"
+ <linux-realtek-soc@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: MarkLee <Mark-MC.Lee@mediatek.com>
-Date: Wed, 13 Nov 2019 10:38:41 +0800
-
-> The mt762x GDM block is mainly used to setup the HW internal
-> rx path from GMAC to RX DMA engine(PDMA) and the packet
-> switching engine(PSE) is responsed to do the data forward
-> following the GDM configuration.
-> 
-> This patch set have three goals :
-> 
-> 1. Integrate GDM/PSE setup operations into single function "mtk_gdm_config"
-> 
-> 2. Refine the timing of GDM/PSE setup, move it from mtk_hw_init 
->    to mtk_open
-> 
-> 3. Enable GDM GDMA_DROP_ALL mode to drop all packet during the 
->    stop operation
-
-Series applied, thanks.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgSmFtZXMsCgpBbSAxMy4xMS4xOSB1bSAwNDowMiBzY2hyaWViIEphbWVzIFRhaToKPj4+ICsJ
+CXJidXM6IHItYnVzQDk4MDAwMDAwIHsKPj4+ICsJCQljb21wYXRpYmxlID0gInNpbXBsZS1idXMi
+Owo+Pj4gKwkJCXJlZyA9IDwweDk4MDAwMDAwIDB4MTAwMDAwPjsKPj4+ICsJCQkjYWRkcmVzcy1j
+ZWxscyA9IDwxPjsKPj4+ICsJCQkjc2l6ZS1jZWxscyA9IDwxPjsKPj4+ICsJCQlyYW5nZXMgPSA8
+MHgwIDB4OTgwMDAwMDAgMHgxMDAwMDA+Owo+Pj4gKwo+Pgo+PiBUaGUgci1idXMgc2l6ZSBvZiBS
+VEQxMzk1IGlzIDB4MjAwMDAwLgo+Pgo+IAo+IFNvcnJ5IGZvciB0aGUgdHlwby4gVGhlIHItYnVz
+IHNpemUgb2YgUlREMTI5NSBpcyAweDIwMDAwMC4KCkZpeGVkLgoKVGhhbmtzLApBbmRyZWFzCgoK
+LS0gClNVU0UgU29mdHdhcmUgU29sdXRpb25zIEdlcm1hbnkgR21iSApNYXhmZWxkc3RyLiA1LCA5
+MDQwOSBOw7xybmJlcmcsIEdlcm1hbnkKR0Y6IEZlbGl4IEltZW5kw7ZyZmZlcgpIUkIgMzY4MDkg
+KEFHIE7DvHJuYmVyZykKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
