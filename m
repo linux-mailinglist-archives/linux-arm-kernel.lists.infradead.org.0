@@ -2,69 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB805FCBAA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 18:19:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C967DFCBB1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 18:19:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GHh4y/Hr5wPFul6odTIS8jD75UkCP7I2N5Xhyu9qtnE=; b=c76pOUymML7GH5
-	SPmTf6L+KlXaiiHgjloF9Fc5hiBuvmuQwMV5vq+Ndd77OKaZgLZM/cMTCzolNP3QZnh3/f9+2lGwy
-	KcxbVNps/ChjpUlyKldWR7WEeDalMqC/96q9uOAQ3/qmSw0VWjPDvSN3EAaECRfBigkpRrQVg4c0i
-	Ql4Ag6SHsiW74LHU6H/J6pMFqmFEae7eOTCWXCieW8emKZ2O7vqmd1KmrFyBgo0KlNJGoaPAuNV0m
-	7oc70hg4n90ppak0khbXxRzCneDIPAxajNvPHwtNk++gLeArb9erTS2qwjsBDGD0Fg+HPSLX+JtGx
-	BThwHgtk4MGExfRJBQ/A==;
+	List-Owner; bh=Gbs6bKU1RNwroKglUuWNnOdglkuhCLpHGFbw0ISZMOI=; b=jzQPTY7AGWFciI
+	1mS2c3stCCtA4KEFFDqR7R3zZLI4KiYWfE4kThdfmO8Ax2Sv48jdZfj0Wg+uFhBnWt6i0E0vzP29e
+	L16XyLOQOQT0FleBfG0wFjfPqwvmN1j4KNHYhAaSJ7/6jczATjqY+dga2cgyhm1qoOF8fZxTJpERg
+	DlgezvNiARkZiSZ4pOby3R/wLlndCcGRckis1TqD96toRGFNcYdXsi0R/xyy/dlcHmWg1NNZanf6r
+	1C1Eq0anIfQDwUQWN+3DRgrQOMB7KYv+70JQFkyUPHrSvJxF7iKIEdczrJc+ZXTa9dssVRt9bmEhf
+	AMsq4yV6MYPOTS/SXZ7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVIlu-0001MT-St; Thu, 14 Nov 2019 17:19:06 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iVImg-0001ly-8h; Thu, 14 Nov 2019 17:19:54 +0000
+Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVIla-0001FW-TE
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 17:18:48 +0000
-Received: from mail-qk1-f169.google.com (mail-qk1-f169.google.com
- [209.85.222.169])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1iVImX-0001kZ-4m
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 17:19:46 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mta-01.yadro.com (Postfix) with ESMTP id 21B3A42E7D;
+ Thu, 14 Nov 2019 17:19:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
+ content-transfer-encoding:mime-version:user-agent:content-type
+ :content-type:organization:references:in-reply-to:date:date:from
+ :from:subject:subject:message-id:received:received:received; s=
+ mta-01; t=1573751977; x=1575566378; bh=P3FU1d3ro99r7uRl5lGjcNRn5
+ WqlYzCAmN7MBkdbr3Y=; b=LqdTURpIXk1RD39o6BfgxURK8wwxrfauvNYFNb6YL
+ 7tPSe2Xiua69ovHuZqN0lAj4Nq/33qjR3XOOvOVhCAfY3lw4FZRcTKhQqUvsObMt
+ itpqEASW82dQU5Vjy44qmb/ffpzTwtOHoS8AW26CUAM6t8P0aAESBbrur6WVnb73
+ tM=
+X-Virus-Scanned: amavisd-new at yadro.com
+Received: from mta-01.yadro.com ([127.0.0.1])
+ by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id k52oKM3PmY_C; Thu, 14 Nov 2019 20:19:37 +0300 (MSK)
+Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
+ [172.17.10.102])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4D15A2072C
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 17:18:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573751925;
- bh=ocz46gTCP/NUGPTiVuVJqGTutFbDRHy1wr+ZIMUnIJY=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=FEltqMdfOa5s52eVq2HDJrCWY63pFr+eHadBHw1DVPLEAbhcAhRYFLbOR4NBVLJOA
- U6JM/AfIJ9xq46+VbVjsuRKMHAsC4jkyCbI2duqLtUcj+iTIWEqphmPj10YvKLY7qM
- j6fMRfMgAtoWRJIXpIcU0JimN8FIb592KhgMDKjw=
-Received: by mail-qk1-f169.google.com with SMTP id 71so5671868qkl.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 09:18:45 -0800 (PST)
-X-Gm-Message-State: APjAAAUsEn+v37C4Rbv/ni2tCPgr8WDSnbQA5N5+//cPBVpn7CfvJHTC
- ocjBj7KZUEUNLIc9fj5xg1BNr7/ExOrMDygwHw==
-X-Google-Smtp-Source: APXvYqydolbw7U1IFwsmCdguELeny4+5hB8lSGa1lqgOoHuaINM81p54+J/thh41N+0dOQJlAExq8K8modx+6jO6l6Y=
-X-Received: by 2002:a37:30b:: with SMTP id 11mr8607360qkd.254.1573751924338;
- Thu, 14 Nov 2019 09:18:44 -0800 (PST)
+ by mta-01.yadro.com (Postfix) with ESMTPS id D050A411D9;
+ Thu, 14 Nov 2019 20:19:35 +0300 (MSK)
+Received: from localhost.localdomain (172.17.15.69) by
+ T-EXCH-02.corp.yadro.com (172.17.10.102) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id
+ 15.1.669.32; Thu, 14 Nov 2019 20:19:35 +0300
+Message-ID: <b443738f5e2a3c7ba96b329a8347374f7f934483.camel@yadro.com>
+Subject: Re: [PATCH v2 2/2] mmc: sdhci-of-aspeed: add inversion
+ sighttps://elixir.bootlin.com/linux/v4.6/ident/sdhci_opsnal presence
+From: Ivan Mikhaylov <i.mikhaylov@yadro.com>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Date: Thu, 14 Nov 2019 20:19:31 +0300
+In-Reply-To: <fcb5f8b5-40b9-6497-b24d-0b73e2525949@intel.com>
+References: <20191114125435.27756-1-i.mikhaylov@yadro.com>
+ <20191114125435.27756-3-i.mikhaylov@yadro.com>
+ <fcb5f8b5-40b9-6497-b24d-0b73e2525949@intel.com>
+Organization: YADRO
+User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
 MIME-Version: 1.0
-References: <20191114164104.22782-1-alexandre.torgue@st.com>
-In-Reply-To: <20191114164104.22782-1-alexandre.torgue@st.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 14 Nov 2019 11:18:31 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKJZwJ0MyRp37Y-F0ujPdVEKARd8qcUCN1xmawpkiffLg@mail.gmail.com>
-Message-ID: <CAL_JsqKJZwJ0MyRp37Y-F0ujPdVEKARd8qcUCN1xmawpkiffLg@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: interrupt-controller: Convert stm32-exti to
- json-schema
-To: Alexandre Torgue <alexandre.torgue@st.com>
+X-Originating-IP: [172.17.15.69]
+X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
+ T-EXCH-02.corp.yadro.com (172.17.10.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_091847_042571_7DBE9C71 
-X-CRM114-Status: GOOD (  21.50  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191114_091945_538756_EBFAD774 
+X-CRM114-Status: GOOD (  15.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -74,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,180 +93,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-stm32@st-md-mailman.stormreply.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org, Ulf
+ Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org, Rob
+ Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 14, 2019 at 10:41 AM Alexandre Torgue
-<alexandre.torgue@st.com> wrote:
->
-> Convert the STM32 external interrupt controller (EXTI) binding to DT
-> schema format using json-schema.
->
-> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
-> ---
->
-> Hi Rob,
->
-> I planned to use "additionalProperties: false" for this schema but as I add a
-> property under condition, I got an error (property added under contion seems
-> to be detected as an "additional" property and then error is raised).
->
-> Is there a way to fix that ?
+On Thu, 2019-11-14 at 15:10 +0200, Adrian Hunter wrote:
+> On 14/11/19 2:54 PM, Ivan Mikhaylov wrote:
+> > Change the default .get_cd callback. Add inverted signal card detection
+> > check.
+> > 
+> > Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
+> > 
+> > diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-
+> > aspeed.c
+> > index 8962f6664381..186559ee8fcc 100644
+> > --- a/drivers/mmc/host/sdhci-of-aspeed.c
+> > +++ b/drivers/mmc/host/sdhci-of-aspeed.c
+> > @@ -143,6 +143,19 @@ static inline int aspeed_sdhci_calculate_slot(struct
+> > aspeed_sdhci *dev,
+> >  	return (delta / 0x100) - 1;
+> >  }
+> >  
+> > +static int aspeed_get_cd(struct mmc_host *mmc)
+> > +{
+> > +	struct sdhci_host *host = mmc_priv(mmc);
+> > +
+> > +	int present = !!(sdhci_readl(host, SDHCI_PRESENT_STATE)
+> > +			 & SDHCI_CARD_PRESENT);
+> > +
+> > +	if (mmc->caps2 & MMC_CAP2_CD_ACTIVE_HIGH)
+> > +		present = !present;
+> 
+> Perhaps safer to flip the bit using CONFIG_MMC_SDHCI_IO_ACCESSORS and
+> ->readl() callback
+> 
 
-See below.
+Sorry, don't quite understand what you're saying. You want to instantiate
+'.read_l' callback instead of '.get_cd' in sdhci_ops and substitute the real
+value?
 
->
-> regards
-> Alex
->
-> diff --git a/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.txt b/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.txt
-> deleted file mode 100644
-> index cd01b2292ec6..000000000000
-> --- a/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.txt
-> +++ /dev/null
-> @@ -1,29 +0,0 @@
-> -STM32 External Interrupt Controller
-> -
-> -Required properties:
-> -
-> -- compatible: Should be:
-> -    "st,stm32-exti"
-> -    "st,stm32h7-exti"
-> -    "st,stm32mp1-exti"
-> -- reg: Specifies base physical address and size of the registers
-> -- interrupt-controller: Indentifies the node as an interrupt controller
-> -- #interrupt-cells: Specifies the number of cells to encode an interrupt
-> -  specifier, shall be 2
-> -- interrupts: interrupts references to primary interrupt controller
-> -  (only needed for exti controller with multiple exti under
-> -  same parent interrupt: st,stm32-exti and st,stm32h7-exti)
-> -
-> -Optional properties:
-> -
-> -- hwlocks: reference to a phandle of a hardware spinlock provider node.
-> -
-> -Example:
-> -
-> -exti: interrupt-controller@40013c00 {
-> -       compatible = "st,stm32-exti";
-> -       interrupt-controller;
-> -       #interrupt-cells = <2>;
-> -       reg = <0x40013C00 0x400>;
-> -       interrupts = <1>, <2>, <3>, <6>, <7>, <8>, <9>, <10>, <23>, <40>, <41>, <42>, <62>, <76>;
-> -};
-> diff --git a/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.yaml b/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.yaml
-> new file mode 100644
-> index 000000000000..39be37e1e532
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.yaml
-> @@ -0,0 +1,82 @@
-> +# SPDX-License-Identifier: GPL-2.0
+res = readl(base, reg);
+if (reg == SDHCI_PRESENT_STATE)
+	if (mmc->caps2 & MMC_CAP2_CD_ACTIVE_HIGH)
+		return !res;
+return res;
 
-If ST has copyright on the old binding, can you add BSD here.
+Something like this?
 
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/interrupt-controller/st,stm32-exti.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STM32 External Interrupt Controller Device Tree Bindings
-> +
-> +maintainers:
-> +  - Alexandre Torgue <alexandre.torgue@st.com>
-> +  - Ludovic Barre <ludovic.barre@st.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - items:
-> +        - enum:
-> +          - st,stm32-exti
-> +          - st,stm32h7-exti
-> +      - items:
-> +        - enum:
-> +          - st,stm32mp1-exti
-> +        - const: syscon
-> +
-> +  "#interrupt-cells":
-> +    const: 2
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupt-controller: true
-> +
-> +  hwlocks:
-> +    maxItems: 1
-> +    description:
-> +      Reference to a phandle of a hardware spinlock provider node.
-> +
-> +required:
-> +  - "#interrupt-cells"
-> +  - compatible
-> +  - reg
-> +  - interrupt-controller
-> +
-> +allOf:
-> +  - $ref: /schemas/interrupt-controller.yaml#
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - st,stm32-exti
-> +              - st,stm32h7-exti
-> +    then:
-> +      properties:
-> +        interrupts:
-> +          allOf:
-> +            - $ref: /schemas/types.yaml#/definitions/uint32-array
+>  
+> > +	host->mmc_host_ops.get_cd = aspeed_get_cd;
+> > +	if (of_property_read_bool(pdev->dev.of_node, "cd-inverted"))
+> > +		dev_info(&pdev->dev, "aspeed: sdhci: presence signal inversion
+> > enabled\n");
+> 
+> Is this print really needed?
+> 
+I can remove it if you think it's redundant.
 
-Standard property, doesn't need a type. You just need 'maxItems' or an
-'items' list if the index is not meaningful. This appears to be the
-former case.
+Thanks.
 
-> +          description:
-> +            Interrupts references to primary interrupt controller
-> +      required:
-> +        - interrupts
-
-You can move the definition to the main section as you only need
-'required' here. That should fix your additionalProperties issue.
-
-In hindsight, the mp1 case probably should have used interrupt-map.
-
-> +
-> +examples:
-> +  - |
-> +    //Example 1
-> +    exti1: interrupt-controller@5000d000 {
-> +        compatible = "st,stm32mp1-exti", "syscon";
-> +        interrupt-controller;
-> +        #interrupt-cells = <2>;
-> +        reg = <0x5000d000 0x400>;
-> +    };
-> +
-> +    //Example 2
-> +    exti2: interrupt-controller@40013c00 {
-> +        compatible = "st,stm32-exti";
-> +        interrupt-controller;
-> +        #interrupt-cells = <2>;
-> +        reg = <0x40013C00 0x400>;
-> +        interrupts = <1>, <2>, <3>, <6>, <7>, <8>, <9>, <10>, <23>, <40>, <41>, <42>, <62>, <76>;
-> +    };
-> +
-> +...
-> --
-> 2.17.1
->
 
 _______________________________________________
 linux-arm-kernel mailing list
