@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8DB5FC8BA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 15:20:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3741EFC8DB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 15:25:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Pu6sacXHGf12bMVx5wYi7jAsQbZgxS2w9v+Tw6y2k4=; b=QfIi1MQrzV7Suq
-	tSRtSLLUehExqSwd7ZNJKvpRX+ws/EmUfEcSroQPA/YB6jmsHpoQHHZmyhtJXmSgm1msqFUaOT0op
-	B9yCmwrxNIQ3ap7l0ARIxvvm8ydod4p2xcaF/6SBzdZZPNvxuD0dPLdjuINyRuWn1cVl2UR6jOdM2
-	HGVCwLIUa7xCzHNb9m2XO1AWYOJqL7wo8ABZnqy7zltOi/xm8k1U5HJ6zg6emYFStoND56HwasRN/
-	5gmZIqeh8vV6PEdfkddnXbnOLRXpOrlRiaT9vje2tFXngniBPoq4xeQGk1UIHebQZb5WSAHMcpx3P
-	aF64l0Wyer8ZPQFXovAg==;
+	List-Owner; bh=rFfkhOv52Tulp4Ui7XsK/QjyNpz45eNYEj7DJ6PYwaY=; b=ajHUXKOe1AYr0W
+	1JYeIbDrQbP817xzO1/gMiUajWLDniz7E2bTn0bsBFdsydDR2qyDrn8mTzbM5JRSdHvkKF2zHWkKS
+	Fdh0SL1PFPxHqu5oVYhHd2wwLN3QPBca2vuthRgC76tAAG4RudVFBLDbUwEsFMUMpW6bS0WBvH2vW
+	nRJMv87s2R1hCcunnwIHsyJc8RbB2m0/FwDm0o5wq8H8wuutqTATROEVZjYC8qdCvHKyhvq70JcLf
+	iyqsECADqmJraKXs+M9oXKyYHkiYYCjqYTz1QYoojjqtos9lUALi7aP3LzV3m5zomZHtpmKbewGs4
+	G3da+Txc70iPG1CMkPbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVFyA-0006Bb-AC; Thu, 14 Nov 2019 14:19:34 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVFxq-000620-Sy
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 14:19:16 +0000
-Received: from [5.158.153.52] (helo=nanos.tec.linutronix.de)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
- (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1iVFxe-00046J-A5; Thu, 14 Nov 2019 15:19:02 +0100
-Date: Thu, 14 Nov 2019 15:19:01 +0100 (CET)
-From: Thomas Gleixner <tglx@linutronix.de>
-To: Jianyong Wu <jianyong.wu@arm.com>
-Subject: Re: [RFC PATCH v7 4/7] time: Add mechanism to recognize clocksource
- in time_get_snapshot
-In-Reply-To: <20191114121358.6684-5-jianyong.wu@arm.com>
-Message-ID: <alpine.DEB.2.21.1911141507010.2507@nanos.tec.linutronix.de>
-References: <20191114121358.6684-1-jianyong.wu@arm.com>
- <20191114121358.6684-5-jianyong.wu@arm.com>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+	id 1iVG3p-00016a-Fy; Thu, 14 Nov 2019 14:25:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iVG3h-000164-A2
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 14:25:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6F453328;
+ Thu, 14 Nov 2019 06:25:15 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BD79B3F52E;
+ Thu, 14 Nov 2019 06:25:14 -0800 (PST)
+Date: Thu, 14 Nov 2019 14:25:12 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: richard.henderson@linaro.org
+Subject: Re: [PATCH v7] arm64: Implement archrandom.h for ARMv8.5-RNG
+Message-ID: <20191114142512.GC37865@lakrids.cambridge.arm.com>
+References: <20191114113932.26186-1-richard.henderson@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191114113932.26186-1-richard.henderson@linaro.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_061915_116267_0E903D76 
-X-CRM114-Status: GOOD (  13.36  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191114_062517_392998_CAB5C20E 
+X-CRM114-Status: GOOD (  12.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,65 +61,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark.Rutland@arm.com, justin.he@arm.com, kvm@vger.kernel.org,
- suzuki.poulose@arm.com, maz@kernel.org, richardcochran@gmail.com,
- yangbo.lu@nxp.com, linux-kernel@vger.kernel.org,
- sean.j.christopherson@intel.com, Kaly.Xin@arm.com, john.stultz@linaro.org,
- netdev@vger.kernel.org, pbonzini@redhat.com, nd@arm.com, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- Steve.Capper@arm.com
+Cc: linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ ard.biesheuvel@linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 14 Nov 2019, Jianyong Wu wrote:
-> From: Thomas Gleixner <tglx@linutronix.de>
-> In some scenario like return device time to ptp_kvm guest,
-> we need identify the current clocksource outside core time code.
-> A mechanism added to recognize the current clocksource
-> by export clocksource id in time_get_snapshot.
-
-Can you please replace that with the following:
-
- System time snapshots are not conveying information about the current
- clocksource which was used, but callers like the PTP KVM guest
- implementation have the requirement to evaluate the clocksource type to
- select the appropriate mechanism.
-
- Introduce a clocksource id field in struct clocksource which is by default
- set to CSID_GENERIC (0). Clocksource implementations can set that field to
- a value which allows to identify the clocksource.
-
- Store the clocksource id of the current clocksource in the
- system_time_snapshot so callers can evaluate which clocksource was used to
- take the snapshot and act accordingly.
-
-> diff --git a/include/linux/clocksource_ids.h b/include/linux/clocksource_ids.h
-> new file mode 100644
-> index 000000000000..93bec8426c44
-> --- /dev/null
-> +++ b/include/linux/clocksource_ids.h
-> @@ -0,0 +1,13 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +#ifndef _LINUX_CLOCKSOURCE_IDS_H
-> +#define _LINUX_CLOCKSOURCE_IDS_H
+On Thu, Nov 14, 2019 at 12:39:32PM +0100, richard.henderson@linaro.org wrote:
+> +bool arch_get_random_seed_long(unsigned long *v)
+> +{
+> +	bool ok;
 > +
-> +/* Enum to give clocksources a unique identifier */
-> +enum clocksource_ids {
-> +	CSID_GENERIC		= 0,
-> +	CSID_ARM_ARCH_COUNTER,
+> +	if (static_branch_likely(&arm64_const_caps_ready)) {
+> +		if (__cpus_have_const_cap(ARM64_HAS_RNG))
+> +			return arm64_rndr(v);
+> +		return false;
+> +	}
+> +
+> +	/*
+> +	 * Before const_caps_ready, check the current cpu.
+> +	 * This will generally be the boot cpu for rand_initialize().
+> +	 */
+> +	preempt_disable_notrace();
+> +	ok = this_cpu_has_cap(ARM64_HAS_RNG) && arm64_rndr(v);
+> +	preempt_enable_notrace();
+> +
+> +	return ok;
+> +}
 
-This should only add the infrastructure with just CSID_GENERIC in place.
+As I asked previously, please separate the common case and the boot-cpu
+init-time case into separate functions.
 
-The ARM_ARCH variant needs to come in a seperate patch which adds the enum
-and uses it in the corresponding driver. Seperate means a patch doing only
-that and nothing else, i.e. not hidden in some other patch which actually
-makes use of it.
+The runtime function should just check the RNG cap before using the
+instruction, without any preemption check or explicit check of
+arm64_const_caps_ready. i.e.
+
+static bool arm64_rndr(unsigned long *v)
+{
+	bool ok;
+
+	if (!cpus_have_const_cap(ARM64_HAS_RNG))
+		return false;
+
+	/*
+	 * Reads of RNDR set PSTATE.NZCV to 0b0000 on success,
+	 * and set PSTATE.NZCV to 0b0100 otherwise.
+	 */
+	asm volatile(
+		__mrs_s("%0", SYS_RNDR_EL0) "\n"
+	"       cset %w1, ne\n"
+	: "=r" (*v), "=r" (ok)
+	:
+	: "cc");
+
+	return ok;
+}
+
+Any boot-time seeding should be in a separate function that external
+callers cannot invoke at runtime. Either have an arch function that the
+common random code calls at init time on the boot CPU, or have some
+arch_add_foo_entropy() function that the arm64 code can call somewhere
+around setup_arch().
 
 Thanks,
-
-	tglx
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
