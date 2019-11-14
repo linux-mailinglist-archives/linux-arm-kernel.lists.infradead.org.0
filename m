@@ -2,63 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4649FC05C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 07:48:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B05A2FC07E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 08:06:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o/gXS/bDFNvTXT38EAQb0fs+olthoYgl5+p4EMz26tI=; b=SCOjBcOapIhvl4
-	tkexYqnAe+4NTjqzRXkidk1LMTEnHnAsOKeYCbBmhJCpysrCrp3bmgQXud2LinQV1b2Srfsz1YM77
-	jeXYw+/BPbVoXmMyO4ye3yDHQbkXyRbFw6VGLZRsupLWG/aXmuGDuUNDkUbdhK7f43nHHNZ5jp9aN
-	ThBgVTC904hnYRntEDHTCr3v/2Jhn5Tz2rbODUA9G58VrbIrlPdOCvO3bP5PnxzgONmx+08uPfTZt
-	g2/Jh0gkn20BJqG71fEcjsG6URF3058d1kcdv2yG922bxqiwry/xhJCmxq/jPiSXJRESu4eRHvof9
-	HzrMVjOWOUvefTz1pg1w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gi40KUZNZnrRZbJBQYVoF9WHrPjJWqJutfK6+Q/P4/s=; b=GYcS/TtC8KBAzr
+	zJnyy4cdnvPGejxjWIBcv0vQUopdPUptU6sM/ujhJty/ibAoqJwI+VNiqI2TTpvTYxyUwLPt59Jl6
+	VGPd3mwlyKHg/yt2gC3IKhrhHkb+M2kkhgDIYXuhGFpRu8Y4ZGcWsUGV8NcseTtXTJpI0+WhVOsJy
+	/IypXMCipEm7ZMiEtD7e8ZJQr12xWBD8/24kZdUU83nd2wWmxdnzzWhfeUvzPjDmcraFBs0trLYIq
+	130c8UpcO6750wKthfiw5Xbsec3oHGS9yr975pWAMtNQXNc5sr2sW1OaM+WhON92ueollUhC9kVtq
+	ENzC5r2LD4q9tEqsh0uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iV8vP-0001Xq-OP; Thu, 14 Nov 2019 06:48:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iV9Cc-0007nX-Hn; Thu, 14 Nov 2019 07:06:02 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iV8vE-0001Wx-Su; Thu, 14 Nov 2019 06:48:06 +0000
-Received: from localhost (unknown [223.226.110.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C114C20715;
- Thu, 14 Nov 2019 06:48:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573714084;
- bh=kwJjaG+SEqpT4/sq5ZdwWvkA07Xb/lWO0se3jKCGklU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Te48b4YPfaWP8IvK5q0sJ5iOQakxbMaqikYck9YuSFBl0OdWCMaf9cfjmgKlRtGMm
- IaKGxhh4bei9KOuaVcG+5mVLi5o8EdQZhRrQS1p3gop2tHEabuIlr3/8C5e443VjOA
- Ys7XLVG8cL3JzzFerBZzyW0MEW7aXw+Ee3wKas7A=
-Date: Thu, 14 Nov 2019 12:17:57 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Satendra Singh Thakur <sst2005@gmail.com>
-Subject: Re: [PATCH v1] dmaengine: mediatek: hsdma_probe: fixed a memory leak
- when devm_request_irq fails
-Message-ID: <20191114064757.GP952516@vkoul-mobl>
-References: <20191105165914.GD952516@vkoul-mobl>
- <20191109113523.6067-1-sst2005@gmail.com>
+ id 1iV9CV-0007mq-6s
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 07:05:56 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5dccfc990000>; Wed, 13 Nov 2019 23:04:57 -0800
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Wed, 13 Nov 2019 23:05:53 -0800
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Wed, 13 Nov 2019 23:05:53 -0800
+Received: from [10.26.11.169] (172.20.13.39) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 14 Nov
+ 2019 07:05:49 +0000
+Subject: Re: [PATCH 4/4] i2c: tegra: Use dma_request_chan() directly for
+ channel request
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <ludovic.desroches@microchip.com>, 
+ <agross@kernel.org>, <wsa+renesas@sang-engineering.com>,
+ <ldewangan@nvidia.com>
+References: <20191113092235.30440-1-peter.ujfalusi@ti.com>
+ <20191113092235.30440-5-peter.ujfalusi@ti.com>
+From: Jon Hunter <jonathanh@nvidia.com>
+Message-ID: <f30dcd10-69ea-3bf7-99b2-8d12fc5e4cc0@nvidia.com>
+Date: Thu, 14 Nov 2019 07:05:47 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191109113523.6067-1-sst2005@gmail.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20191113092235.30440-5-peter.ujfalusi@ti.com>
+X-Originating-IP: [172.20.13.39]
+X-ClientProxiedBy: HQMAIL107.nvidia.com (172.20.187.13) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1573715097; bh=O6KZFyLZuFHEE0pSxKeMDrvyD0ZoQtkJ/GCRvWgCOI8=;
+ h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
+ User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
+ X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=Kop+Xy25OEwejkOYPUki5yFu/wE3V2TRZSLTdL9ZwBNiV74MidPTkwLngo6wP9OCt
+ yINidW4LI0EIzHazIA08czYJYDjhLA6I82mHJD5y8zmYXVLpqvjxLOtkgKC8cH8jbh
+ eb599Q8qMFPUPEdrWRwE5+53ME9JMqOMbkVDczWPEbhk6iVEyCCFCIZRitDOrMJzVI
+ Lzmeh3Klywnr9XqW8+97lw3+N3Hp8nPsuScAoG3LaV9ZlOJJOm4DeDbeSCsHt1mtcu
+ U1eh954ISYvcs+bJYm2UUDLlY5ERYT3ogitpvhf581kvp47BzVY0oL7Je/lzr5K1on
+ PWn34Qx06XZDA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_224804_953134_CC4274E7 
-X-CRM114-Status: UNSURE (   6.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191113_230555_260173_5E4578C8 
+X-CRM114-Status: GOOD (  12.37  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [216.228.121.65 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -78,28 +95,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
- dmaengine@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
+Cc: alexandre.belloni@bootlin.com, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, thierry.reding@gmail.com,
+ linux-i2c@vger.kernel.org, linux-tegra@vger.kernel.org, digetx@gmail.com,
+ bjorn.andersson@linaro.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Satendra,
 
-On 09-11-19, 17:05, Satendra Singh Thakur wrote:
-> When devm_request_irq fails, currently, the function
-> dma_async_device_unregister gets called. This doesn't free
-> the resources allocated by of_dma_controller_register.
-> Therefore, we have called of_dma_controller_free for this purpose.
+On 13/11/2019 09:22, Peter Ujfalusi wrote:
+> dma_request_slave_channel_reason() is:
+> #define dma_request_slave_channel_reason(dev, name) \
+> 	dma_request_chan(dev, name)
+> 
+> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+> ---
+>  drivers/i2c/busses/i2c-tegra.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/i2c/busses/i2c-tegra.c b/drivers/i2c/busses/i2c-tegra.c
+> index c1683f9338b4..a98bf31d0e5c 100644
+> --- a/drivers/i2c/busses/i2c-tegra.c
+> +++ b/drivers/i2c/busses/i2c-tegra.c
+> @@ -413,7 +413,7 @@ static int tegra_i2c_init_dma(struct tegra_i2c_dev *i2c_dev)
+>  		return 0;
+>  	}
+>  
+> -	chan = dma_request_slave_channel_reason(i2c_dev->dev, "rx");
+> +	chan = dma_request_chan(i2c_dev->dev, "rx");
+>  	if (IS_ERR(chan)) {
+>  		err = PTR_ERR(chan);
+>  		goto err_out;
+> @@ -421,7 +421,7 @@ static int tegra_i2c_init_dma(struct tegra_i2c_dev *i2c_dev)
+>  
+>  	i2c_dev->rx_dma_chan = chan;
+>  
+> -	chan = dma_request_slave_channel_reason(i2c_dev->dev, "tx");
+> +	chan = dma_request_chan(i2c_dev->dev, "tx");
+>  	if (IS_ERR(chan)) {
+>  		err = PTR_ERR(chan);
+>  		goto err_out;
+> 
+Acked-by: Jon Hunter <jonathanh@nvidia.com>
 
-This should have been a v2! Anyway I have applied this and other patch
+Cheers!
+Jon
 
-Thanks
+
 -- 
-~Vinod
+nvpublic
 
 _______________________________________________
 linux-arm-kernel mailing list
