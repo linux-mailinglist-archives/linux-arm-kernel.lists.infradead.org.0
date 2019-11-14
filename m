@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC7DEFC87E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 15:12:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42E29FC889
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 15:13:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AAVvGt21IpHgCGrw37uBttsNcHr3JdcIQzQ5GI5EC6E=; b=sP3WcHZdxvISaE
-	04vsdYjYV4at41CmB9YTmS6p1yT58wKoP0wC+U1MHqycSdpgNi7U4gvgUWX86V/OUrpEqEpewR7vg
-	ysOjC30ZoARfpKVy5stOfStpbDp+9Bfju7LdSp4KZDSCjid7RXlx4ioh4i3lmdtrkc4InS62Drvqd
-	X0XN2JWDTJORgRLYiqh+MtHh3CVK1O2/lEwP5UD8ZqgncY/SYglEZZdkxflZyM7fz9prTVNQ7ODGu
-	kFScGysytok7P+KFueI1ALCQrT3beHa2IVL+eBCRfpFFlDLe6YG7g4y+OPRnuB/NfO++LTUxbZCxy
-	jO3tYR0IkJBjJCeLMyUg==;
+	List-Owner; bh=VvjeCUW3lzBO+Aiwth1s2HghkvblEXZr3QruVD2zlhc=; b=AbAkRVG5SnRcFu
+	Cv8+jenJOK2wnyFlcO0BTURBhJ+ETuGOsP6TReBhqrtwq71lyMwcC7vY7zTlSqoOsMtrH/hIK1+4s
+	rbOPTQNuav39OucChRDUne9gMOy6+HMLXni1edBDb5Si9T/9FAbr6htucXQXIrkLzX2jTQ2T7nG9A
+	0twzH8TRm73dXOkMp2Wzm+g6g/Z7oh+rA/32cNhmvcJR1dSTLKTMowUHRCkjM4srRRlptVaSho3Go
+	AKkGr8HUEdthKky5HZRdodv7rw0DjNqk388URtGCa7MtOBo2Oajfya1ezvF5l9zcS9mj4/U02iuNQ
+	GSHW7GKcxvA2lWD8Ymmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVFqo-0003S8-Sz; Thu, 14 Nov 2019 14:11:58 +0000
-Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
+	id 1iVFsN-0003sW-Iv; Thu, 14 Nov 2019 14:13:35 +0000
+Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVFqg-0003R4-JR
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 14:11:51 +0000
-Received: by mail-vk1-xa42.google.com with SMTP id e205so1495097vke.2
+ id 1iVFsD-0003rp-H1
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 14:13:26 +0000
+Received: by mail-ua1-x942.google.com with SMTP id z9so1905213uan.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 06:11:48 -0800 (PST)
+ Thu, 14 Nov 2019 06:13:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XSmwLWNo5Rh6fe+p8Uu7DFNnAFhXmFiTvhxWz1V+B8w=;
- b=Zxy9Va/g5HeujT0G/Yr81ssNa+Mrn59GATo64imHO5v4yPYwyPPGs095S9yLGHZZct
- 1hxeTUWiuBZWvi+O1vf0npeqW5PjS6EDcNVV/BuKq+FHtrEOxZldeFAkfves+9/Zc/nA
- Jfl+7lufr0kMeZAOu4jE2erwkVZzPMxG8lpE6MQdIaqDuXXS5sdJm3+y9FiWm52EK2l3
- WwyGBsnQjzhGRAggZDE4omJqyKpHbyv37Af0YKrpFhQbUSYZTgpsAw3qsoRhd/fdwACE
- 5iSUjaPDvT/GCI+c4fijdDcGkjUJFX9Fldn0zizjgcTiajuBoo8z8CbjC/JqAxv7Pnw6
- eStg==
+ :cc; bh=FJX4pImmW+1dIAMZK03BtkAIeMegqqUoxzHSgtg4Ca4=;
+ b=kTe0B79e9Q3wfvE896/JqCWZWDPTHUnKJF3MXGJCz0VulZPNVJNms03VWhWhosu0r5
+ 65u5iTmqWQfZhZU6bZ43HtCH3t9odmp08GyQa+kXxDCOH1M9z2/nD017md8ls95KA8VP
+ ScIOnZqRoEAnVGwumKypo7R1jHWTsqOLnL6eBU/RaI2+hdZynt2GBCuBi/hTtG43ri6w
+ rXa5aWAOZxBY1H9M1Y57rS3KQgGaa/rz8QLbkYvZ2P8SjOkhJh96iSXBPr0zCcnFlfWj
+ USwGVkvBZ+QWGkRyEY9OPWD6vy6WDksT8kV8rKsKHSBpk+Gwww5b9A0D0ZRiHDza1Lch
+ oI1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=XSmwLWNo5Rh6fe+p8Uu7DFNnAFhXmFiTvhxWz1V+B8w=;
- b=GPBUe/kHVCzkw1cd6oKRbybxa12c1rAO8W/BcXPWItIm/Zg3z2aGp9iMLgfeqOXTna
- g94jrxffxLQqZsHF17w9JHdoPy11OypLVBOtOw7PH356q4O+B+Nrgw0RJBc9xhtTulje
- E0wxgKKc4+amYWzhz4L2oW+eLbz5j23zxqvqhsIYw0Y9S/3Y9rnaOEaNtuVb1YPEXhEC
- M/Y7jnSDx87QWgTEfM8IVyK8uI5HnWrCE8e/z9tm7kg7ggPOtUIy+Gnc6QLgJPMsMceA
- keq5FxdSoEeyKaND4CGqHiEiUtiR85z0ejowlrfegJC1bk7fqAOPNL32MhCG5zcHwVGm
- vXWQ==
-X-Gm-Message-State: APjAAAW2lgHTNB763p+7jU5JBCd9h0aNg7hqjVbxIj4AUPoiYK0HE7bS
- Ao5WdzUB9yHNKPrvaJAFS9WqUXiJH4aKrHc5DorOov34xL8=
-X-Google-Smtp-Source: APXvYqxNH6tQ6y7J3OfkNA5oBwmBY5VTe296JKBsrF2xLv130hd/N0da6UeuSUpnmtRg4fw9qbywtQvMfesNLW0c7dc=
-X-Received: by 2002:a1f:2f51:: with SMTP id v78mr5258686vkv.101.1573740707355; 
- Thu, 14 Nov 2019 06:11:47 -0800 (PST)
+ bh=FJX4pImmW+1dIAMZK03BtkAIeMegqqUoxzHSgtg4Ca4=;
+ b=YnneHc1qnawIY9SARxMabHtRTUXAQAgnri/G1zEB/ABSOXrNsSC7FZMBhI6Y7qODQz
+ netyWEFPlNXHCuDdhO+8QHQS5vC0MQFPAuD2aA49kobEP1Qa+4RDvWuqALIz7zQFNgG7
+ nKzj6Q7mzJGSK7Ny9eJMqq6WLoJDSFl/UUSiQEcNq84+vXBY26+BOR6KlV4cG3zHsJxJ
+ rYbB5jmsHtDv3vsq3X3Mn3YvT2bYlRmmkdMRB2SJ2v1mPtedWMsf8J4ovun+/nqcseZD
+ 3g2gWgctj4AJmkct6hZrtDCh/7E4fNU4CY1w9XCo10ihAIs4PYDpm76bKOMkjVXSyEKR
+ Vq2g==
+X-Gm-Message-State: APjAAAXx41iYwsrfLe5FYxzbF1dLismzl0zZmHeDQqiFcwNQfLHI4Tqt
+ IkFv+0iNOw0rGPcShrcqU9v1r0ynrczyTO0nwqZY2Q==
+X-Google-Smtp-Source: APXvYqx4RK4gWYtCk+erym1uLlCEMYfvmcIf3PPkVWWUkOMrPhdQcGSzRSUDsyWVm4ZWkUAyeM62b0wXUC2Rr+arkK8=
+X-Received: by 2002:ab0:3399:: with SMTP id y25mr5562495uap.100.1573740804146; 
+ Thu, 14 Nov 2019 06:13:24 -0800 (PST)
 MIME-Version: 1.0
 References: <cover.1573122644.git.hns@goldelico.com>
- <17b12e91c878dcb74160e3df5f88bc8a9e3f7fce.1573122644.git.hns@goldelico.com>
-In-Reply-To: <17b12e91c878dcb74160e3df5f88bc8a9e3f7fce.1573122644.git.hns@goldelico.com>
+ <c128cf34cf3858538eac8abffa02a2af8ce845b2.1573122644.git.hns@goldelico.com>
+In-Reply-To: <c128cf34cf3858538eac8abffa02a2af8ce845b2.1573122644.git.hns@goldelico.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 14 Nov 2019 15:11:11 +0100
-Message-ID: <CAPDyKFpGU+tXC8thz52BQfKHNerzYSUroSihh6GpZELFm-1gRQ@mail.gmail.com>
-Subject: Re: [PATCH v3 01/12] Documentation: dt: wireless: update wl1251 for
- sdio
+Date: Thu, 14 Nov 2019 15:12:48 +0100
+Message-ID: <CAPDyKFomoH5U0XevwKcaHRjf1hEyyqZfv4K_DZhCB7kpuXda2g@mail.gmail.com>
+Subject: Re: [PATCH v3 02/12] net: wireless: ti: wl1251 add device tree support
 To: "H. Nikolaus Schaller" <hns@goldelico.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_061150_669670_1B2BCF6D 
-X-CRM114-Status: GOOD (  16.85  )
+X-CRM114-CacheID: sfid-20191114_061325_574020_EEF2FFE2 
+X-CRM114-Status: GOOD (  19.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -118,57 +117,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 7 Nov 2019 at 11:32, H. Nikolaus Schaller <hns@goldelico.com> wrote:
+On Thu, 7 Nov 2019 at 11:31, H. Nikolaus Schaller <hns@goldelico.com> wrote:
 >
-> The standard method for sdio devices connected to
-> an sdio interface is to define them as a child node
-> like we can see with wlcore.
+> We will have the wl1251 defined as a child node of the mmc interface
+> and can read setup for gpios, interrupts and the ti,use-eeprom
+> property from there instead of pdata to be provided by pdata-quirks.
+>
+> Fixes: 81eef6ca9201 ("mmc: omap_hsmmc: Use dma_request_chan() for requesting DMA channel")
 >
 > Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 > Acked-by: Kalle Valo <kvalo@codeaurora.org>
 > ---
->  .../bindings/net/wireless/ti,wl1251.txt       | 26 +++++++++++++++++++
->  1 file changed, 26 insertions(+)
+>  drivers/net/wireless/ti/wl1251/sdio.c | 13 +++++++++++++
+>  1 file changed, 13 insertions(+)
 >
-> diff --git a/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt b/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
-> index bb2fcde6f7ff..f38950560982 100644
-> --- a/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
-> +++ b/Documentation/devicetree/bindings/net/wireless/ti,wl1251.txt
-> @@ -35,3 +35,29 @@ Examples:
->                 ti,power-gpio = <&gpio3 23 GPIO_ACTIVE_HIGH>; /* 87 */
->         };
->  };
-> +
-> +&mmc3 {
-> +       vmmc-supply = <&wlan_en>;
-> +
-> +       bus-width = <4>;
-> +       non-removable;
-> +       ti,non-removable;
-> +       cap-power-off-card;
-> +
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&mmc3_pins>;
-> +
-> +       #address-cells = <1>;
-> +       #size-cells = <0>;
-> +
-> +       wlan: wifi@1 {
-> +               compatible = "ti,wl1251";
-> +
-> +               reg = <1>;
-> +
-> +               interrupt-parent = <&gpio1>;
-> +               interrupts = <21 IRQ_TYPE_LEVEL_HIGH>;  /* GPIO_21 */
-> +
-> +               ti,wl1251-has-eeprom;
-> +       };
-> +};
+> diff --git a/drivers/net/wireless/ti/wl1251/sdio.c b/drivers/net/wireless/ti/wl1251/sdio.c
+> index 677f1146ccf0..c54a273713ed 100644
+> --- a/drivers/net/wireless/ti/wl1251/sdio.c
+> +++ b/drivers/net/wireless/ti/wl1251/sdio.c
+> @@ -16,6 +16,9 @@
+>  #include <linux/irq.h>
+>  #include <linux/pm_runtime.h>
+>  #include <linux/gpio.h>
+> +#include <linux/of.h>
+> +#include <linux/of_gpio.h>
+> +#include <linux/of_irq.h>
+>
+>  #include "wl1251.h"
+>
+> @@ -217,6 +220,7 @@ static int wl1251_sdio_probe(struct sdio_func *func,
+>         struct ieee80211_hw *hw;
+>         struct wl1251_sdio *wl_sdio;
+>         const struct wl1251_platform_data *wl1251_board_data;
+> +       struct device_node *np = func->dev.of_node;
+>
+>         hw = wl1251_alloc_hw();
+>         if (IS_ERR(hw))
+> @@ -248,6 +252,15 @@ static int wl1251_sdio_probe(struct sdio_func *func,
+>                 wl->power_gpio = wl1251_board_data->power_gpio;
+>                 wl->irq = wl1251_board_data->irq;
+>                 wl->use_eeprom = wl1251_board_data->use_eeprom;
+> +       } else if (np) {
+> +               wl->use_eeprom =of_property_read_bool(np, "ti,wl1251-has-eeprom");
+> +               wl->power_gpio = of_get_named_gpio(np, "ti,power-gpio", 0);
 
-One minor thing, the "ti,power-gpio" is not required anymore, as it's
-not needed for the SDIO case for pandora.
+This isn't needed as it seems. Perhaps remove or keep it as optional?
 
-Please move it to an option section.
+> +               wl->irq = of_irq_get(np, 0);
+> +
+> +               if (wl->power_gpio == -EPROBE_DEFER || wl->irq == -EPROBE_DEFER) {
+> +                       ret = -EPROBE_DEFER;
+> +                       goto disable;
+> +               }
+>         }
+>
+>         if (gpio_is_valid(wl->power_gpio)) {
+> --
 
 Kind regards
 Uffe
