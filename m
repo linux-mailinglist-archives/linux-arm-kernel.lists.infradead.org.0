@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6CF8FC48B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 11:44:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9C4BFC48F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 11:45:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3DVzyZJKK1w4Olrvi8zlGsWaSQo3DOhDK3ZosnHxta8=; b=fjyQ/9jrYb7g4d
-	wx51/ysC0NzZ28BJae3iZElwgNTVWhHpGD0NNJuNabDV7J22VVw6oli1pLtveD/wQTuPKxc67KjVY
-	oj7H23eM9OAfx9QZ9h4OB0VbNB7hxd50uDYGv9wnQ1WwsgvjFo1M3mTN5/ODjxxuncyda3oj7t+yf
-	E/ODt7dMKRvdb3Uuqf7DGplQQFZ4bu25V0ciTAQDFed76t4oh8/XocybZep0uAZMUFm6EZL2g5PwV
-	GMK92KMksAdds7NVJzMLSBNDvXkDnV0xOyTNgZk+EjmDpnlxv1zUC/sFINQ8oVZG6zS2AA9VSNYIF
-	yug8ld3NxkfOALCbVcRw==;
+	List-Owner; bh=Q2pCXz3xbaHhnFJAWby0lQB3BCah2UD3mFSMgEo/5ww=; b=KVxZ6IyF8ww7EU
+	M7+JPMMfLZgnOY9i3YhNZbhR8kdLADtiqOjBP1PoxbD2oljbc03PuUKkmPqA9k/88QuY+cPXQ/oeZ
+	5IksZmd7O/FDoRISodHqkZrvohfnC2YV4yIie3N5jrC4xdNd3JPQq11YN1BwttsksT6eh+tenjwIN
+	ojMdFuxSIou2pMKLQhx21A3NDRo3DzKsisKRNT4sJLzw1O7exW+zmc5sT5r/28YTCukQBCY+BqQi8
+	J127Fx8s8DCg56+VswE5TIrdH/yGsA4BS7VEIvPRZcKDQnwAKU9bqH3ho7U2Gn2bq6gwNPxL6dLXP
+	XaMUX6eTJdWMCq5Ht16g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVCc5-0002Vl-EA; Thu, 14 Nov 2019 10:44:34 +0000
+	id 1iVCcg-00031d-Iw; Thu, 14 Nov 2019 10:45:10 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVCZh-0000Xe-JI; Thu, 14 Nov 2019 10:42:07 +0000
-X-UUID: 97c903ed303f4568993daa83c2e38f9d-20191114
+ id 1iVCZj-0000Ye-5o; Thu, 14 Nov 2019 10:42:09 +0000
+X-UUID: 2883dd2cadbc4609bbd260b971d6f715-20191114
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=/v3ZAT8MMQQn1PPsfQoog57z7OcnmZ7w9uOMGarZugY=; 
- b=syu3tUp6lna58QPhWBba55763BxJzF6t2O6L3uGMsDn07/JNmIb2sMun06KfMMSTQR3QOP4JyEqdkJh+6Z0IDu7ta0GtILkHoiaFWfgDKb2aldJc8knJffu0IKZkF1+6+8kx5E/cdbTjQAHjkesQIMdwt1t6334bbHKne6DcsCs=;
-X-UUID: 97c903ed303f4568993daa83c2e38f9d-20191114
+ bh=VZtdMLNhooktxJq5jkWDpDhrUN1fbUOcEximlph9dNE=; 
+ b=TypjwtNFtHYNeb1A/0GiXyLe2InHsw1JwsSLfnDlStOyxbMmFX8QnQ8ZNd9T2GXFS3JZrMJbFjHpmJB28xZeGwAFT2Qrq7KR0pbodFP7rxc3x7gyxxUrLGPsZ3LT+CuERhjMClAYVDB6q7xwVLwOx4m9zPk1Q1p4ZfWZUAfwWss=;
+X-UUID: 2883dd2cadbc4609bbd260b971d6f715-20191114
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1596701801; Thu, 14 Nov 2019 02:42:04 -0800
-Received: from MTKMBS06N2.mediatek.inc (172.21.101.130) by
+ with ESMTP id 2043399230; Thu, 14 Nov 2019 02:42:04 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 14 Nov 2019 02:41:49 -0800
+ 15.0.1395.4; Thu, 14 Nov 2019 02:41:51 -0800
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs06n2.mediatek.inc (172.21.101.130) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 14 Nov 2019 18:41:53 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 14 Nov 2019 18:41:54 +0800
 Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 14 Nov 2019 18:41:48 +0800
+ Transport; Thu, 14 Nov 2019 18:41:50 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Felipe Balbi
  <balbi@kernel.org>
-Subject: [PATCH v3 10/13] usb: gadget: udc: renesas_usb3: create debugfs
- directory under usb root
-Date: Thu, 14 Nov 2019 18:41:22 +0800
-Message-ID: <1573728085-29016-10-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [PATCH v3 11/13] usb: gadget: pxa27x: create debugfs directory under
+ usb root
+Date: Thu, 14 Nov 2019 18:41:23 +0800
+Message-ID: <1573728085-29016-11-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1573728085-29016-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1573728085-29016-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 662CFFC5D757F574D8AD256B9DEA6AC1A087CE590745DB105BB6C8C4E4FE39652000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_024205_688545_264C4C8E 
-X-CRM114-Status: GOOD (  12.94  )
+X-CRM114-CacheID: sfid-20191114_024207_319142_022AC22C 
+X-CRM114-Status: GOOD (  12.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -126,22 +125,22 @@ v3: no changes
 v2:
   1. abandon new API usb_debugfs_create_dir(), and use usb_debug_root
 ---
- drivers/usb/gadget/udc/renesas_usb3.c | 2 +-
+ drivers/usb/gadget/udc/pxa27x_udc.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/usb/gadget/udc/renesas_usb3.c b/drivers/usb/gadget/udc/renesas_usb3.c
-index e098f16c01cb..4dde69e7f6b1 100644
---- a/drivers/usb/gadget/udc/renesas_usb3.c
-+++ b/drivers/usb/gadget/udc/renesas_usb3.c
-@@ -2535,7 +2535,7 @@ static const struct file_operations renesas_usb3_b_device_fops = {
- static void renesas_usb3_debugfs_init(struct renesas_usb3 *usb3,
- 				      struct device *dev)
+diff --git a/drivers/usb/gadget/udc/pxa27x_udc.c b/drivers/usb/gadget/udc/pxa27x_udc.c
+index 014233252299..27ea46287772 100644
+--- a/drivers/usb/gadget/udc/pxa27x_udc.c
++++ b/drivers/usb/gadget/udc/pxa27x_udc.c
+@@ -207,7 +207,7 @@ static void pxa_init_debugfs(struct pxa_udc *udc)
  {
--	usb3->dentry = debugfs_create_dir(dev_name(dev), NULL);
-+	usb3->dentry = debugfs_create_dir(dev_name(dev), usb_debug_root);
+ 	struct dentry *root;
  
- 	debugfs_create_file("b_device", 0644, usb3->dentry, usb3,
- 			    &renesas_usb3_b_device_fops);
+-	root = debugfs_create_dir(udc->gadget.name, NULL);
++	root = debugfs_create_dir(udc->gadget.name, usb_debug_root);
+ 	udc->debugfs_root = root;
+ 
+ 	debugfs_create_file("udcstate", 0400, root, udc, &state_dbg_fops);
 -- 
 2.23.0
 _______________________________________________
