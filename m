@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1548AFC25F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 10:13:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A50D7FC26B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 10:16:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BKi7Y44PjLEE3VvCjDOLiJwQyK/iCvYlGBzGSdUMmqo=; b=hY8pa2sTcqzq5A
-	MuIa0FgN4TIItGHnltf83bFU5ah07WoDss5wjSJf0N69ndbXXkhTSAocRCPlzlvYWK+/QeW1waKPh
-	773HrA7x2RB7GknfYOjNkMq5SocyuEG3IVlHx7/qB3g7fZWz3fxUmqjeIZYcrLJBtR6Qh4Bf8YYT0
-	Mi/n6ErhIL2/rxUa8hzDoCzU/90ZcXNSpscZc5p/hQwLKJjk84XYn798JwL5dWD5H8NKi7lgot0uF
-	ZCavodya8BKOlJ+d8QFneiiPx1vqVyj1VIa6E1EP4usAoVDzQTy5HDnAa4rm7hmBNoebATGuymJWk
-	+Amv8VUVtiK2N7juc5Vg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IjmxZO4zwa6Z4kZTiTfnm48GnzzBxLfd8ZxLk9hluck=; b=BmtDFuI5/KNNCZvHatIp92ms9
+	JTCtQPhUsx+1ZaIEamwXQTAELdv5MnMNdMEcqdGt26vBzgz9EvC5FefwH90waPONzTCJ9u75Di3Bb
+	Mjb/8djpNeVt5D+P0H4l86XFxK8XYW3J5mU/1Q5v2iiUjU0xMAwO8U4uilvA81ydbJIrLFA7S55z+
+	Ys/daKnvbQaWFB01jmt8C9QiOs0ffbdYD0CeLWXrZW7je27muOkOIC1mh0Y6mRckf8fO1QpNPUUHS
+	7PVSj8DwyHqaNpElfDh3fOQusQgEaQi9m0ZOln9Zto41yAl2MR/05RiFsP66jGLUZnvEF0+kz7Y0F
+	Ttn23VN0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVBBc-0006mN-6z; Thu, 14 Nov 2019 09:13:08 +0000
-Received: from 1.mo7.mail-out.ovh.net ([178.33.45.51])
+	id 1iVBER-0000dT-KY; Thu, 14 Nov 2019 09:16:03 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVBBU-0006kG-Ak
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 09:13:01 +0000
-Received: from player773.ha.ovh.net (unknown [10.108.57.38])
- by mo7.mail-out.ovh.net (Postfix) with ESMTP id 4820113E5D6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 10:12:55 +0100 (CET)
-Received: from etezian.org (81-175-223-118.bb.dnainternet.fi [81.175.223.118])
- (Authenticated sender: andi@etezian.org)
- by player773.ha.ovh.net (Postfix) with ESMTPSA id 9889BC17ABBB;
- Thu, 14 Nov 2019 09:12:31 +0000 (UTC)
-Date: Thu, 14 Nov 2019 11:12:30 +0200
-From: Andi Shyti <andi@etezian.org>
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PATCH 7/9] spi: s3c64xx: Use dma_request_chan() directly for
- channel request
-Message-ID: <20191114091230.GB1249@jack.zhora.eu>
-References: <20191113094256.1108-1-peter.ujfalusi@ti.com>
- <20191113094256.1108-8-peter.ujfalusi@ti.com>
- <20191113234049.GA1249@jack.zhora.eu>
- <e453c716-7658-a9fd-324d-4d95ff1aa29c@ti.com>
+ id 1iVBEJ-0000QU-NN
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 09:15:57 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 14 Nov 2019 01:15:53 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.68,302,1569308400"; d="scan'208";a="203010612"
+Received: from shao2-debian.sh.intel.com (HELO [10.239.13.6]) ([10.239.13.6])
+ by fmsmga008.fm.intel.com with ESMTP; 14 Nov 2019 01:15:52 -0800
+Subject: Re: [kbuild-all] Re: [arm-platforms:kvm-arm64/vcpu-xarray 42/49]
+ arch/powerpc/kvm/powerpc.c:792:29: error: 'kvmppc_decrementer_wakeup' defined
+ but not used
+To: Marc Zyngier <maz@kernel.org>
+References: <201911140103.uQVAr0CN%lkp@intel.com>
+ <c11fdfaa843e2d0131680c864d061950@www.loen.fr>
+ <5f2c6f45-1607-c77a-ab08-9723701e9901@intel.com>
+ <20191114081853.39e64fc5@why>
+From: Rong Chen <rong.a.chen@intel.com>
+Message-ID: <108a7d74-ee28-7d38-a8db-5f8573312abd@intel.com>
+Date: Thu, 14 Nov 2019 17:15:33 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e453c716-7658-a9fd-324d-4d95ff1aa29c@ti.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
-X-Ovh-Tracer-Id: 1915718693274174139
-X-VR-SPAMSTATE: OK
-X-VR-SPAMSCORE: -100
-X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgedufedrudeffedgtddvucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuqfggjfdqfffguegfifdpvefjgfevmfevgfenuceurghilhhouhhtmecuhedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurhepfffhvffukfhfgggtuggjfgesthdtredttdervdenucfhrhhomheptehnughiucfuhhihthhiuceorghnughisegvthgviihirghnrdhorhhgqeenucfkpheptddrtddrtddrtddpkedurddujeehrddvvdefrdduudeknecurfgrrhgrmhepmhhouggvpehsmhhtphdqohhuthdphhgvlhhopehplhgrhigvrhejjeefrdhhrgdrohhvhhdrnhgvthdpihhnvghtpedtrddtrddtrddtpdhmrghilhhfrhhomheprghnughisegvthgviihirghnrdhorhhgpdhrtghpthhtoheplhhinhhugidqrghrmhdqkhgvrhhnvghlsehlihhsthhsrdhinhhfrhgruggvrggurdhorhhgnecuvehluhhsthgvrhfuihiivgeptd
+In-Reply-To: <20191114081853.39e64fc5@why>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_011300_517028_9725DDFA 
-X-CRM114-Status: GOOD (  11.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191114_011555_775180_171B8734 
+X-CRM114-Status: GOOD (  16.86  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.33.45.51 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.88 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,46 +71,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jonathanh@nvidia.com, alexandre.belloni@bootlin.com, s.hauer@pengutronix.de,
- linux-arm-msm@vger.kernel.org, radu_nicolae.pirea@upb.ro, broonie@kernel.org,
- linux-kernel@vger.kernel.org, krzk@kernel.org, linux-spi@vger.kernel.org,
- vkoul@kernel.org, kgene@kernel.org, ldewangan@nvidia.com, agross@kernel.org,
- Andi Shyti <andi@etezian.org>, linux-tegra@vger.kernel.org,
- thierry.reding@gmail.com, bjorn.andersson@linaro.org, shawnguo@kernel.org,
- linus.walleij@linaro.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org, kbuild-all@lists.01.org,
+ kbuild test robot <lkp@intel.com>,
+ Sean Christopherson <sean.j.christopherson@intel.com>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peter,
-
-> >>  	if (!is_polling(sdd)) {
-> >>  		/* Acquire DMA channels */
-> >> -		sdd->rx_dma.ch = dma_request_slave_channel_reason(&pdev->dev,
-> >> -								  "rx");
-> >> +		sdd->rx_dma.ch = dma_request_chan(&pdev->dev, "rx");
-> > 
-> > I have a little concern here. We have two funcions
-> > 'dma_request_chan' and  'dma_request_channel' don't we end up
-> > making some confusion here?
-> > 
-> > Wouldn't it make more sense renaming 'dma_request_chan' to
-> > 'dma_request_slave_channel_reason'?
-> 
-> The dma_request_channel() should go away. It was the old API before we
-> got the dma_slave_map for non DT (and non ACPI) platforms so we can get
-> rid of the filter function exports from DMA drivers to clients all over
-> the place.
-
-Yes, I agree... thanks!
-
-Acked-by: Andi Shyti <andi@etezian.org>
-
-Thanks,
-Andi
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAxMS8xNC8xOSA0OjE4IFBNLCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4gT24gVGh1LCAxNCBO
+b3YgMjAxOSAwODo1ODoxMCArMDgwMAo+IFJvbmcgQ2hlbiA8cm9uZy5hLmNoZW5AaW50ZWwuY29t
+PiB3cm90ZToKPgo+PiBPbiAxMS8xNC8xOSAyOjAyIEFNLCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4+
+PiBPbiAyMDE5LTExLTEzIDE3OjUxLCBrYnVpbGQgdGVzdCByb2JvdCB3cm90ZToKPj4+PiB0cmVl
+Ogo+Pj4+IGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L21h
+ei9hcm0tcGxhdGZvcm1zLmdpdAo+Pj4+IGt2bS1hcm02NC92Y3B1LXhhcnJheQo+Pj4+IGhlYWQ6
+wqDCoCAxNDg3NDgwOTkzNjMzMjdkOGNiNTZhYWZkMzg2YjcwYWM4YzY4ODM3Cj4+Pj4gY29tbWl0
+OiA2NGU2OTkxYzIyMzRjM2JhMWUzNmY5OTEzMDJiMWJiZTFiYjc5MWYxIFs0Mi80OV0gS1ZNOiBQ
+UEM6Cj4+Pj4gTW92ZSBhbGwgdmNwdSBpbml0IGNvZGUgaW50byBrdm1fYXJjaF92Y3B1X2NyZWF0
+ZSgpCj4+Pj4gY29uZmlnOiBwb3dlcnBjLWRlZmNvbmZpZyAoYXR0YWNoZWQgYXMgLmNvbmZpZykK
+Pj4+PiBjb21waWxlcjogcG93ZXJwYzY0LWxpbnV4LWdjYyAoR0NDKSA3LjQuMAo+Pj4+IHJlcHJv
+ZHVjZToKPj4+PiAgwqDCoMKgwqDCoMKgwqAgd2dldAo+Pj4+Cj4+Pj4gaHR0cHM6Ly9yYXcuZ2l0
+aHVidXNlcmNvbnRlbnQuY29tL2ludGVsL2xrcC10ZXN0cy9tYXN0ZXIvc2Jpbi9tYWtlLmNyb3Nz
+Cj4+Pj4gLU8gfi9iaW4vbWFrZS5jcm9zcwo+Pj4+ICDCoMKgwqDCoMKgwqDCoCBjaG1vZCAreCB+
+L2Jpbi9tYWtlLmNyb3NzCj4+Pj4gIMKgwqDCoMKgwqDCoMKgIGdpdCBjaGVja291dCA2NGU2OTkx
+YzIyMzRjM2JhMWUzNmY5OTEzMDJiMWJiZTFiYjc5MWYxCj4+Pj4gIMKgwqDCoMKgwqDCoMKgICMg
+c2F2ZSB0aGUgYXR0YWNoZWQgLmNvbmZpZyB0byBsaW51eCBidWlsZCB0cmVlCj4+Pj4gIMKgwqDC
+oMKgwqDCoMKgIEdDQ19WRVJTSU9OPTcuNC4wIG1ha2UuY3Jvc3MgQVJDSD1wb3dlcnBjCj4+Pj4K
+Pj4+PiBJZiB5b3UgZml4IHRoZSBpc3N1ZSwga2luZGx5IGFkZCBmb2xsb3dpbmcgdGFnCj4+Pj4g
+UmVwb3J0ZWQtYnk6IGtidWlsZCB0ZXN0IHJvYm90IDxsa3BAaW50ZWwuY29tPgo+Pj4gV2VsbCwg
+dGhpcyBicmFuY2ggd2FzIG5vdCBzdXBwb3NlZCB0byBiZSB0ZXN0ZWQgYXQgYWxsLi4uCj4+PiBJ
+IGd1ZXNzIGl0IGlzIHRvbyBsYXRlIHRvIHRha2UgaXQgZG93biA6LSgKPj4+Cj4+PiAgwqDCoMKg
+wqDCoMKgwqAgTS4KPj4gSGkgTWFyYywKPj4KPj4gVGhhbmtzIGZvciB0aGUgZXhwbGFuYXRpb24s
+IHdlJ2xsIGJsYWNrbGlzdCB0aGlzIGJyYW5jaCB0byBhdm9pZGluZyB0ZXN0IGl0IGFnYWluLgo+
+IFRoYW5rcyBSb25nLgo+Cj4gRm9yIG15IG93biBlZHVjYXRpb24sIGlzIHRoZXJlIGFuIG9mZmlj
+aWFsIHdheSB0byBwcmV2ZW50IHRoZSBrYnVpbGQKPiByb2JvdCBmcm9tIHRlc3RpbmcgY2VydGFp
+biBicmFuY2hlcz8gT3IgZmFpbGluZyB0aGF0LCBhIHdheSB0byB0ZWxsIGl0Cj4gdG8gb25seSBz
+ZW5kIHJlcG9ydHMgdG8gYSBjZXJ0YWluIGVtYWlsIGFkZHJlc3MgaW5zdGVhZCBvZiBzcGFtbWlu
+Zwo+IG1haWxpbmcgbGlzdHMgZm9yIGNvZGUgdGhhdCBpcyBleHBlY3RlZCB0byBiZSBwcm9ibGVt
+YXRpYz8KPgo+IENoZWVycywKPgo+IAlNLgoKSGkgTWFyYywKCkNvdWxkIHlvdSB0ZWxsIHVzIHRo
+ZSBicmFuY2ggcGF0dGVybiB0aGF0IHlvdSBkb24ndCB3YW50IGJvdCB0byB0ZXN0IG9yIAp0ZXN0
+IHRoZW0gYnV0IG9ubHkgcmVwb3J0IHRvIHlvdT8KV2UgaGF2ZSBhIHdpa2kgZm9yIHRoZSByZXBv
+IHNwZWMgCmh0dHBzOi8vZ2l0aHViLmNvbS9pbnRlbC9sa3AtdGVzdHMvd2lraS9SZXBvLVNwZWMs
+IGFuZCB0aGUgcHJvZmlsZQppcyBhdCAKaHR0cHM6Ly9naXRodWIuY29tL2ludGVsL2xrcC10ZXN0
+cy9ibG9iL21hc3Rlci9yZXBvL2xpbnV4L2FybS1wbGF0Zm9ybXMuCgpCZXN0IFJlZ2FyZHMsClJv
+bmcgQ2hlbgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
