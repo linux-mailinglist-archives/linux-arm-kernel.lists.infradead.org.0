@@ -2,83 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C125DFC9E8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 16:27:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEBB9FC9F0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 Nov 2019 16:29:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x02YadfuIIB3vvImfbGoYw095J2hcYuYTMwjVLYR5MU=; b=LIT4v8GLFaxWXW
-	bWJvId6HjBLkcwZCgG9EfoQFJd7E5kJUkoe97haNAoPuGKCLyHpyVG5uciXggao3YRzOJehf8RfRj
-	Y1RzJpq4kF2dka3J0nxt1wUDDAIdIJvfpgVg9O/g8e34+VKPEzSifQcScfVDDecTwwdTmePluo2nz
-	lQ2pxxovabIuOnyC7g5oEgIAS7419PvTzdpWtajtwOmJUen235vdU6kA+Z2brbNE7m/HH1RR0PwOh
-	NvyBF0nBvFMp6xf9Tw7X36dNVpZmDOZi0uKFUssU2yyxK5N+ub3AsRq78bqciFDQ5IYWg1ouC2Tej
-	+bRJjKgfi8CMDJbeJ/Qg==;
+	List-Owner; bh=VeAYVuJ1OISWnV60XCL2jKCiEWCNkHtqjn4zRlX1mwY=; b=sI4kAyARRYzGip
+	bZ7p1EwmEHUAIfDZae+ygu28KEs3n1Y/pJRUxV6/rI4/5F1DhHriSRqZvYI2aRISKIEkXTZkLzDUd
+	sJ2whqrQ4l45dyaZ5Z3eeYSzhtuDDUTxS4walILXBPd4U4q+94oCbjAiJyPH0j1aidAyPy8dbU/Oo
+	QQz0dm90FKg4T1pdv3z84DMplXBiEp19s7de+Ukv1koBxjQBq3m1JUmmXaC+EOxGCiXOWuCa45xQQ
+	VcLxaTd4iSFV4TJ/7cVTt9x7zkW8n12cD4Mdy5MiDw2g2bOObd21kniQd+KgH64HVWQcvEmM3njJb
+	QgTCykep8PbCTU0UMWsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVH2E-0001Cy-8S; Thu, 14 Nov 2019 15:27:50 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1iVH3Q-0001U7-QD; Thu, 14 Nov 2019 15:29:04 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVH22-0001CK-Kl
- for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 15:27:39 +0000
-Received: by mail-ot1-x344.google.com with SMTP id r24so5155523otk.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 07:27:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=VeY2MOcdaw6r8Ha9Eh1pv27RGxet0wBjyhB8nwJtLCk=;
- b=E9N2cNleSycQiDuGwZ+D654dUj+mEaTT0Od4euVyQpoOBSULhMe0pOdzpWK59wPvli
- 51UPfgDM/E6mfWUBs6ODMQGUiPxrUmztDY7i3xxthKvaSDh4D+3diA+0m5MZ4jo0lIut
- fO1pAxw5E6moagkNWVB+eMUpGn3ElVVRMfER30Mch4axBfTda+uUy1vVSG5nNierNRri
- ZTbcPm9spj2XanM2IM0hV7UFs72Ikxcl9eUMkRZX15oDIlbdCYBobYJUhT38may1hpkS
- 4YifZWRxZRTa6gbyfuMrTewbdi6HbtBZYo0gebulIbOiUh+EJaeCAjCRUj50kAfiv8WV
- xz0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=VeY2MOcdaw6r8Ha9Eh1pv27RGxet0wBjyhB8nwJtLCk=;
- b=YCs7pxCtJukxlGi6+AS9oCmBk7zBaKBxnIGGYKaQQOh/kArcOmNAZTmcJIfV6cakEn
- PFzduPMlVC1Zg+xcPusroCxe0LWs/wLdPsTpaIuCsLQ4GjPbUTPzzyg36vQG245Z6VXn
- psS9R2a9HAiUBobXVe59aMMhKUe0eOrYW+wsI6rBHbVbjDhM/8lVCZsRNIWBh5zJ09P7
- 5Didw9dIYouCW/vuw2j1SA24rswIAH7PlklCjF6FhhShs1sVxRNpem7HRnxt6Dg4S5pr
- Q1l9LglMAqIyyRytIpzfgJsHVlwyTPIN9OgPfg/TJe1vpdLcJTXQteZoFjWz268X8cC9
- Nlxw==
-X-Gm-Message-State: APjAAAUQlIskighlYrEWTcbyYLse0UBKdTPHyPB9eNhnB0GPCh/tQoxs
- ih3owJLKl4ZvhD7cGSvIzDsnd8bynMTedfxT/b52SQ==
-X-Google-Smtp-Source: APXvYqz6c/gHgYRtpNX09mwAgZqZcQnoq6B/kPCnPlGTV64hqbThdZMLMuxrXe0XfBKKQS1wp0ZTLQ/eHN/071eq9Zk=
-X-Received: by 2002:a9d:7f12:: with SMTP id j18mr7112499otq.221.1573745256587; 
- Thu, 14 Nov 2019 07:27:36 -0800 (PST)
+ id 1iVH3J-0001TZ-4n
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 Nov 2019 15:28:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=ElG8Ta8wnxyvEpph2Zdu0/QL/JmLef30hlFTtXPVY2w=; b=b/58ij9zk28SivK4r5tm14Hq55
+ iuccP5RskD/WgI5i93dWzWsR8CMNTJ098NMLPvjZbt/6jPB7gIH3M5QmOxZ7D5p2HOpaBNNQ8aLJa
+ vF7huaLIaHiyw8bLOJqBGBsmT2Ptjq11+iN+/Qc3/gy1AfDGhFpRoZHcXH0URtb6CrcA=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.92.2)
+ (envelope-from <andrew@lunn.ch>)
+ id 1iVH3A-0004kD-8P; Thu, 14 Nov 2019 16:28:48 +0100
+Date: Thu, 14 Nov 2019 16:28:48 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Subject: Re: [PATCH v2 2/2] ARM: dts: ls1021a-tsn: Use interrupts for the
+ SGMII PHYs
+Message-ID: <20191114152848.GR10875@lunn.ch>
+References: <20191114110254.32171-1-linux@rasmusvillemoes.dk>
+ <20191114110254.32171-3-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
-References: <20191108144240.204202-1-andre.przywara@arm.com>
- <20191108144240.204202-10-andre.przywara@arm.com>
- <2e14ccd4-89f4-aa90-cc58-bebf0e2eeede@arm.com>
- <7ca57a0c-3934-1778-e3f9-a3eee0658002@arm.com>
- <20191114141745.32d3b89c@donnerap.cambridge.arm.com>
- <90cdc695-f761-26bd-d2a7-f8655ce04463@arm.com>
- <187393bb-a32d-092d-d0ea-44c58a54d1de@arm.com>
-In-Reply-To: <187393bb-a32d-092d-d0ea-44c58a54d1de@arm.com>
-From: Peter Maydell <peter.maydell@linaro.org>
-Date: Thu, 14 Nov 2019 15:27:25 +0000
-Message-ID: <CAFEAcA_kcQwrnJxtCynX9+hMEvnFN0yBnim_Kn-uut5P4fshew@mail.gmail.com>
-Subject: Re: [kvm-unit-tests PATCH 09/17] arm: gic: Add test for flipping
- GICD_CTLR.DS
-To: Alexandru Elisei <alexandru.elisei@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20191114110254.32171-3-linux@rasmusvillemoes.dk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_072738_693254_629A005D 
-X-CRM114-Status: UNSURE (   6.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191114_072857_185956_2109B606 
+X-CRM114-Status: GOOD (  10.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -98,29 +77,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vladimir Murzin <vladimir.murzin@arm.com>, kvm-devel <kvm@vger.kernel.org>,
- Andre Przywara <andre.przywara@arm.com>, Marc Zyngier <maz@kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, kvmarm@lists.cs.columbia.edu,
- arm-mail-list <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Marc Zyngier <maz@kernel.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ netdev@vger.kernel.org, Vladimir Oltean <olteanv@gmail.com>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 14 Nov 2019 at 15:21, Alexandru Elisei <alexandru.elisei@arm.com> wrote:
-> TCG emulates a GIC with a single security state for me:
->
-> /usr/bin/qemu-system-aarch64 -nodefaults -machine virt,gic-version=3,accel=tcg
-> -cpu cortex-a57 -device virtio-serial-device -device virtconsole,chardev=ctd
-> -chardev testdev,id=ctd -device pci-testdev -display none -serial stdio -kernel
-> arm/gic.flat -append irq
+On Thu, Nov 14, 2019 at 12:02:53PM +0100, Rasmus Villemoes wrote:
+> From: Vladimir Oltean <olteanv@gmail.com>
+> 
+> On the LS1021A-TSN board, the 2 Atheros AR8031 PHYs for eth0 and eth1
+> have interrupt lines connected to the shared IRQ2_B LS1021A pin.
+> 
+> Switching to interrupts offloads the PHY library from the task of
+> polling the MDIO status and AN registers (1, 4, 5) every second.
+> 
+> Unfortunately, the BCM5464R quad PHY connected to the switch does not
+> appear to have an interrupt line routed to the SoC.
+> 
+> Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
+> Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 
-The virt board doesn't do EL3 by default, but if you add -machine secure=true
-to your command line then it it should emulate it, including a
-trustzone-aware GIC.
+Reviewed-by: Andrew Lunn <andrew@lunn.ch>
 
-thanks
--- PMM
+    Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
