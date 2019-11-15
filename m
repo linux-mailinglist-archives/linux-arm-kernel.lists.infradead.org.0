@@ -2,152 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A347AFDF48
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 14:49:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BE20FDF8F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 14:59:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yEV3FXw955oaaQaEFGFYpZi37zko31/r+D8cKf18jGQ=; b=tkBRNx8IcsulWx
-	qEK8nweZ9Doll4jKwSrQqQgH8DClKezs1Wtof33ZKXKYFIQzgcWwONLHCN7KaKokcW4jhMfeopQK4
-	f7wUFTEgM2MwA1Gp40etS/S1BPVFj2pCWA4KxbC07XD6uoP7oxCbrKGUrT3v59yXf9NV4qkxnHCQq
-	ofsgztm38VbxN1bl2qQbN2oa82oMXtqPJ/2PwNaVdgGzCG5t6NK3HjhcSpBn90+sU+me8y2Ctt89G
-	cYt6qscalkIwqLhBQozQsXX/SyFBq70AHp1GkKguUqNDtjr5fzJjFLedYFUEtEzIRXWcmXTJZv0LF
-	TD9tKgulnvn7Jg5MFckw==;
+	List-Owner; bh=YtlzyX4r1pByqAwJ2u8vWmrBz3pJd2BbgSidvjVXLgo=; b=nkvm89jGS9enfV
+	oZ4GOMLxRKUkDStjN8N7QM1CcN7nmNyYVtWAzGx1bzUl5kO1Nh7vOm0b9Mw/zZNWO4Pst66zODgYe
+	EP9iR6KjjcroYDs2XAKz3LJW+OY7CPvlwe8YxwwP7AA0Kf52dDoKb5tDx3UPB8V92x6EJ3DK19gcz
+	2T5M4JasyFy8ODgqXepOrrodFTl3N/sbZA9bbhE1eokDhcyCUyyIDD4+CcoNHxCqM4VOcnmO48o0u
+	ZdiXLl412g8qDluU+pcykb68oDclnZhfkwln8pow15Jm+xYLIOZaPVABBsUZHvOZ15TggiWa/Oe2q
+	hCJIbvGHrbE5r2I1TSEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVbyt-0002lQ-Iu; Fri, 15 Nov 2019 13:49:47 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVbyS-0002ZB-Mj
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 13:49:21 +0000
-Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
- Tudor.Ambarus@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="Tudor.Ambarus@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa6.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa6.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 04bJj8IRNnf31troyi8ebK52ffkHMGydyZWeXMOHhJc9y2oZ3piU4ItGNrJ/iJeU9a0s5UQPyV
- neJGQM7dIweBr7aTDG1sztvxnl9eA67UzVPNW+J9LKXnbVsDyIni4XLhedrARe57ytfH2DIxcL
- wiJGQEVLVe7baHdigsBTT+iAaUHxReYJAm5u7PkVlAaOcCPV/ceh390po/ZFUpO1uoaXClddBb
- OfmoFuFxFUkmWcB6BzN+8mfKqiT0MzJic1XmmsFkrJ8GxiqOVgrKUX3z53jSUco0OauJhRfr+A
- KKk=
-X-IronPort-AV: E=Sophos;i="5.68,308,1569308400"; d="scan'208";a="54484155"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 15 Nov 2019 06:49:12 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 15 Nov 2019 06:49:12 -0700
-Received: from NAM05-DM3-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.71) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Fri, 15 Nov 2019 06:49:12 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=TEdiAPrhmzUI/BKnf1zazvqoU+zRyzIEQkV3KgK5rZsZ00GnqzRt1vNzYpkf+bTVK4V9sbTJ1FbUSGOBF+A4Lwrk+96ESKneZXWcqpD05CW9e5L/8nl6HrdTUmliZScmASw1Osy9VM3f5Ke0++rUXrfEH1jJTxcOoFOSnWbm9KUG2aqKO/LCxgE9Gbk7nN/e+S2k34vksBGmr4WMz/GtmXE1zStlfWcglV5c64PoaHxakA/4ld1HDZlB7VXRNLE2e8P4USEn0T1Y+h9+J90ruKMzJLrZtdMIQlK8QOoIgOCdjB3AxbKNoGZVQ+xdVBoj1HGViWAONnbT2pBd7d4u6A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=h9OLMi37Bk/JbYXtwh3g7xif/bxtaYLtOIGFzJSiYvA=;
- b=GLMBWW2Keo2eWGcywrdvGF6jDEDh4tL66Tq7IarfYK+oI9IeUMGoBtS/vJUQmAXwcEISXW1bDcMRZtE1+FArJGEbDLNsTIixOonHhCgyZ+tBCLjopH4A+jtuBawDvDdJkECtl6ojhErKx5ZUJmv7TasViy5pHGAC3fUYd4koD51M3PRa9aonqMcs9d0dIJYH1j3erRoEmtHH93Dqnh+Z7xal0lX7W2p81dyGktTicaYQw2XvXBYj94XaZ5HzIvZ/NqbPiiEY3LDmNL2cxyGWOFGAYnnsBwWUYDEL7Z+Z6AVgzrHAFn/eyPjynCpVaW6mNWu4MYwCK6LZDBjKtZuFuA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=h9OLMi37Bk/JbYXtwh3g7xif/bxtaYLtOIGFzJSiYvA=;
- b=nxr2JUeAwGdcVu48oHZK/ucW8/wZVmgM0Bz6QW7NvtiT3mZQNA8jtM1vJ8A50481hY3TuHivUJaCJii82VfgiCjHaoyGjcovJRII9tbhv0De/WSmSmoYWfMDJM+62MUopHE5tZ8m4i6SHTRknsu5wpp1BABbiP8EhoZbKKuRSI8=
-Received: from MN2PR11MB4448.namprd11.prod.outlook.com (52.135.39.157) by
- MN2PR11MB4159.namprd11.prod.outlook.com (20.179.150.225) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2451.27; Fri, 15 Nov 2019 13:49:09 +0000
-Received: from MN2PR11MB4448.namprd11.prod.outlook.com
- ([fe80::84c:6e75:22df:cbc9]) by MN2PR11MB4448.namprd11.prod.outlook.com
- ([fe80::84c:6e75:22df:cbc9%5]) with mapi id 15.20.2451.027; Fri, 15 Nov 2019
- 13:49:09 +0000
-From: <Tudor.Ambarus@microchip.com>
-To: <herbert@gondor.apana.org.au>
-Subject: [PATCH 2/2] crypto: atmel-aes - Change data type for "lastc" buffer
-Thread-Topic: [PATCH 2/2] crypto: atmel-aes - Change data type for "lastc"
- buffer
-Thread-Index: AQHVm7t0zw6ysqDDnEebCGYj6j6T6A==
-Date: Fri, 15 Nov 2019 13:49:09 +0000
-Message-ID: <20191115134854.30190-2-tudor.ambarus@microchip.com>
-References: <20191115134854.30190-1-tudor.ambarus@microchip.com>
-In-Reply-To: <20191115134854.30190-1-tudor.ambarus@microchip.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: BE0P281CA0017.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:b10:a::27) To MN2PR11MB4448.namprd11.prod.outlook.com
- (2603:10b6:208:193::29)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.9.5
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 1c4c1684-9de8-4fe7-86bd-08d769d29697
-x-ms-traffictypediagnostic: MN2PR11MB4159:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MN2PR11MB41591725FE42FC856C53358CF0700@MN2PR11MB4159.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5516;
-x-forefront-prvs: 02229A4115
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(346002)(366004)(39860400002)(396003)(376002)(199004)(189003)(14444005)(102836004)(66446008)(6916009)(14454004)(2351001)(26005)(50226002)(6116002)(36756003)(71200400001)(3846002)(52116002)(99286004)(25786009)(8936002)(5660300002)(71190400001)(6506007)(6436002)(386003)(8676002)(6486002)(107886003)(2501003)(11346002)(66476007)(66946007)(66556008)(4744005)(6512007)(478600001)(64756008)(5640700003)(76176011)(446003)(1730700003)(81156014)(81166006)(186003)(1076003)(7736002)(305945005)(316002)(2616005)(4326008)(54906003)(486006)(476003)(256004)(66066001)(2906002)(86362001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB4159;
- H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 9xp5wU2A+7radu9up5MoS63YQ+faqeERPZFe2A5iE/yAnzRNm+/yATSaHQeyB/FDPh8S/WqE6rIVVUxRFdIpYERJAiyv0y0hAY97OiT3u8y3aYhYSHoILTUHFyE3IS9Wqjyp1hbnKXwCw+P50HXSJq021IsTfv+J6CtVAmCs7wFNLOQVx7vHvzY31SSOQeigSfDJV+Lot8h+iFsTPYJPe0FotIYk11ne8kwrfEId9HlL37QDwiRiurN/uILmLuqimMRjFI7a0Y+EYgdkNz9nrqiSbSyCQDDoEBDdqbj32M1/27zu28iGS61bFdzRbD5DDr2Ey2VPkmhq653TmXkAmcvW37AFeOdIzgDLj3T6F73MgYR1f94S1Yijcgg7YNmB4dxS6VTZ1se78VgRpa3P3VPYrPpThHRcnrT8v0J7QTdojxrivtYYeF+c7hxTqfvX
+	id 1iVc8a-0006BS-O0; Fri, 15 Nov 2019 13:59:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iVc8K-0006A5-4R
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 13:59:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 81360C86;
+ Fri, 15 Nov 2019 05:59:27 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CE2463F534;
+ Fri, 15 Nov 2019 05:59:24 -0800 (PST)
+Date: Fri, 15 Nov 2019 13:59:22 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Itaru Kitayama <itaru.kitayama@gmail.com>
+Subject: Re: [PATCHv2 7/8] arm64: implement ftrace with regs
+Message-ID: <20191115135922.GC41572@lakrids.cambridge.arm.com>
+References: <20191029165832.33606-1-mark.rutland@arm.com>
+ <20191029165832.33606-8-mark.rutland@arm.com>
+ <CANW9uyug8WKN2fR-FmcW-C_OO_OQ_AvukM+BR7wqiJ9eFQMO9Q@mail.gmail.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1c4c1684-9de8-4fe7-86bd-08d769d29697
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Nov 2019 13:49:09.0303 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: +AyJot5sSHg63/aroi/4RPt8cmpxEjz+5HmILDSVwrFLS5b7meUsWxNTgGs+iB8ZCaF3gZSue3zTb1GLB+sMaPWXBL5xZIIe9RkXWflPP/A=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB4159
+Content-Disposition: inline
+In-Reply-To: <CANW9uyug8WKN2fR-FmcW-C_OO_OQ_AvukM+BR7wqiJ9eFQMO9Q@mail.gmail.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_054920_775033_CA5FD179 
-X-CRM114-Status: GOOD (  10.02  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191115_055932_266441_2A26E0EB 
+X-CRM114-Status: GOOD (  31.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -159,45 +63,600 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, Tudor.Ambarus@microchip.com,
- linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: jthierry@redhat.com, linux-parisc@vger.kernel.org, peterz@infradead.org,
+ catalin.marinas@arm.com, deller@gmx.de, jpoimboe@redhat.com,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ rostedt@goodmis.org, James.Bottomley@hansenpartnership.com,
+ takahiro.akashi@linaro.org, will@kernel.org, mingo@redhat.com,
+ Torsten Duwe <duwe@lst.de>, jeyu@kernel.org, amit.kachhap@arm.com,
+ james.morse@arm.com, svens@stackframe.org, duwe@suse.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tudor Ambarus <tudor.ambarus@microchip.com>
+On Fri, Nov 15, 2019 at 07:05:39AM +0900, Itaru Kitayama wrote:
+> Is this feature avail even when building kernel with Clang?
 
-In case of in-place decryption, the "lastc" buffer is used to copy
-the last ciphertext block before the decryption of the message. It
-is later used to update the req->iv of the skcipher_request.
+Clang doesn't currently support -fpatchable-function-entry.
 
-"lastc" variable is not used to interact with the hardware, there
-is no restriction to be of type "u32". Change the type of "lastc"
-to "u8".
+Nick (Cc'd) created an LLVM bugzilla ticket for that:
 
-Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
----
- drivers/crypto/atmel-aes.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+  https://bugs.llvm.org/show_bug.cgi?id=43912
 
-diff --git a/drivers/crypto/atmel-aes.c b/drivers/crypto/atmel-aes.c
-index 3c88c164c3dc..91092504bc96 100644
---- a/drivers/crypto/atmel-aes.c
-+++ b/drivers/crypto/atmel-aes.c
-@@ -155,7 +155,7 @@ struct atmel_aes_authenc_ctx {
- 
- struct atmel_aes_reqctx {
- 	unsigned long		mode;
--	u32			lastc[AES_BLOCK_SIZE / sizeof(u32)];
-+	u8			lastc[AES_BLOCK_SIZE];
- };
- 
- #if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
--- 
-2.9.5
+... though it looks like that's having database issues at the moment.
 
+Thanks,
+Mark.
+
+> On Wed, Oct 30, 2019 at 2:01 Mark Rutland <mark.rutland@arm.com> wrote:
+> 
+>     From: Torsten Duwe <duwe@lst.de>
+> 
+>     This patch implements FTRACE_WITH_REGS for arm64, which allows a traced
+>     function's arguments (and some other registers) to be captured into a
+>     struct pt_regs, allowing these to be inspected and/or modified. This is
+>     a building block for live-patching, where a function's arguments may be
+>     forwarded to another function. This is also necessary to enable ftrace
+>     and in-kernel pointer authentication at the same time, as it allows the
+>     LR value to be captured and adjusted prior to signing.
+> 
+>     Using GCC's -fpatchable-function-entry=N option, we can have the
+>     compiler insert a configurable number of NOPs between the function entry
+>     point and the usual prologue. This also ensures functions are AAPCS
+>     compliant (e.g. disabling inter-procedural register allocation).
+> 
+>     For example, with -fpatchable-function-entry=2, GCC 8.1.0 compiles the
+>     following:
+> 
+>     | unsigned long bar(void);
+>     |
+>     | unsigned long foo(void)
+>     | {
+>     |         return bar() + 1;
+>     | }
+> 
+>     ... to:
+> 
+>     | <foo>:
+>     |         nop
+>     |         nop
+>     |         stp     x29, x30, [sp, #-16]!
+>     |         mov     x29, sp
+>     |         bl      0 <bar>
+>     |         add     x0, x0, #0x1
+>     |         ldp     x29, x30, [sp], #16
+>     |         ret
+> 
+>     This patch builds the kernel with -fpatchable-function-entry=2,
+>     prefixing each function with two NOPs. To trace a function, we replace
+>     these NOPs with a sequence that saves the LR into a GPR, then calls an
+>     ftrace entry assembly function which saves this and other relevant
+>     registers:
+> 
+>     | mov   x9, x30
+>     | bl    <ftrace-entry>
+> 
+>     Since patchable functions are AAPCS compliant (and the kernel does not
+>     use x18 as a platform register), x9-x18 can be safely clobbered in the
+>     patched sequence and the ftrace entry code.
+> 
+>     There are now two ftrace entry functions, ftrace_regs_entry (which saves
+>     all GPRs), and ftrace_entry (which saves the bare minimum). A PLT is
+>     allocated for each within modules.
+> 
+>     Signed-off-by: Torsten Duwe <duwe@suse.de>
+>     [Mark: rework asm, comments, PLTs, initialization, commit message]
+>     Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+>     Reviewed-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+>     Cc: AKASHI Takahiro <takahiro.akashi@linaro.org>
+>     Cc: Amit Daniel Kachhap <amit.kachhap@arm.com>
+>     Cc: Catalin Marinas <catalin.marinas@arm.com>
+>     Cc: Josh Poimboeuf <jpoimboe@redhat.com>
+>     Cc: Julien Thierry <jthierry@redhat.com>
+>     Cc: Will Deacon <will@kernel.org>
+>     ---
+>      arch/arm64/Kconfig               |   2 +
+>      arch/arm64/Makefile              |   5 ++
+>      arch/arm64/include/asm/ftrace.h  |  23 +++++++
+>      arch/arm64/include/asm/module.h  |   2 +-
+>      arch/arm64/kernel/entry-ftrace.S | 140
+>     +++++++++++++++++++++++++++++++++++++--
+>      arch/arm64/kernel/ftrace.c       |  84 +++++++++++++++++++----
+>      arch/arm64/kernel/module-plts.c  |   3 +-
+>      arch/arm64/kernel/module.c       |  18 +++--
+>      8 files changed, 252 insertions(+), 25 deletions(-)
+> 
+>     diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+>     index 950a56b71ff0..0ffb8596b8a1 100644
+>     --- a/arch/arm64/Kconfig
+>     +++ b/arch/arm64/Kconfig
+>     @@ -143,6 +143,8 @@ config ARM64
+>             select HAVE_DEBUG_KMEMLEAK
+>             select HAVE_DMA_CONTIGUOUS
+>             select HAVE_DYNAMIC_FTRACE
+>     +       select HAVE_DYNAMIC_FTRACE_WITH_REGS \
+>     +               if $(cc-option,-fpatchable-function-entry=2)
+>             select HAVE_EFFICIENT_UNALIGNED_ACCESS
+>             select HAVE_FAST_GUP
+>             select HAVE_FTRACE_MCOUNT_RECORD
+>     diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+>     index 2c0238ce0551..1fbe24d4fdb6 100644
+>     --- a/arch/arm64/Makefile
+>     +++ b/arch/arm64/Makefile
+>     @@ -95,6 +95,11 @@ ifeq ($(CONFIG_ARM64_MODULE_PLTS),y)
+>      KBUILD_LDS_MODULE      += $(srctree)/arch/arm64/kernel/module.lds
+>      endif
+> 
+>     +ifeq ($(CONFIG_DYNAMIC_FTRACE_WITH_REGS),y)
+>     +  KBUILD_CPPFLAGS += -DCC_USING_PATCHABLE_FUNCTION_ENTRY
+>     +  CC_FLAGS_FTRACE := -fpatchable-function-entry=2
+>     +endif
+>     +
+>      # Default value
+>      head-y         := arch/arm64/kernel/head.o
+> 
+>     diff --git a/arch/arm64/include/asm/ftrace.h b/arch/arm64/include/asm/
+>     ftrace.h
+>     index d48667b04c41..91fa4baa1a93 100644
+>     --- a/arch/arm64/include/asm/ftrace.h
+>     +++ b/arch/arm64/include/asm/ftrace.h
+>     @@ -11,9 +11,20 @@
+>      #include <asm/insn.h>
+> 
+>      #define HAVE_FUNCTION_GRAPH_FP_TEST
+>     +
+>     +#ifdef CONFIG_DYNAMIC_FTRACE_WITH_REGS
+>     +#define ARCH_SUPPORTS_FTRACE_OPS 1
+>     +#else
+>      #define MCOUNT_ADDR            ((unsigned long)_mcount)
+>     +#endif
+>     +
+>     +/* The BL at the callsite's adjusted rec->ip */
+>      #define MCOUNT_INSN_SIZE       AARCH64_INSN_SIZE
+> 
+>     +#define FTRACE_PLT_IDX         0
+>     +#define FTRACE_REGS_PLT_IDX    1
+>     +#define NR_FTRACE_PLTS         2
+>     +
+>      /*
+>       * Currently, gcc tends to save the link register after the local
+>     variables
+>       * on the stack. This causes the max stack tracer to report the function
+>     @@ -44,12 +55,24 @@ extern void return_to_handler(void);
+>      static inline unsigned long ftrace_call_adjust(unsigned long addr)
+>      {
+>             /*
+>     +        * Adjust addr to point at the BL in the callsite.
+>     +        * See ftrace_init_nop() for the callsite sequence.
+>     +        */
+>     +       if (IS_ENABLED(CONFIG_DYNAMIC_FTRACE_WITH_REGS))
+>     +               return addr + AARCH64_INSN_SIZE;
+>     +       /*
+>              * addr is the address of the mcount call instruction.
+>              * recordmcount does the necessary offset calculation.
+>              */
+>             return addr;
+>      }
+> 
+>     +#ifdef CONFIG_DYNAMIC_FTRACE_WITH_REGS
+>     +struct dyn_ftrace;
+>     +int ftrace_init_nop(struct module *mod, struct dyn_ftrace *rec);
+>     +#define ftrace_init_nop ftrace_init_nop
+>     +#endif
+>     +
+>      #define ftrace_return_address(n) return_address(n)
+> 
+>      /*
+>     diff --git a/arch/arm64/include/asm/module.h b/arch/arm64/include/asm/
+>     module.h
+>     index f80e13cbf8ec..1e93de68c044 100644
+>     --- a/arch/arm64/include/asm/module.h
+>     +++ b/arch/arm64/include/asm/module.h
+>     @@ -21,7 +21,7 @@ struct mod_arch_specific {
+>             struct mod_plt_sec      init;
+> 
+>             /* for CONFIG_DYNAMIC_FTRACE */
+>     -       struct plt_entry        *ftrace_trampoline;
+>     +       struct plt_entry        *ftrace_trampolines;
+>      };
+>      #endif
+> 
+>     diff --git a/arch/arm64/kernel/entry-ftrace.S b/arch/arm64/kernel/
+>     entry-ftrace.S
+>     index 33d003d80121..94720388957f 100644
+>     --- a/arch/arm64/kernel/entry-ftrace.S
+>     +++ b/arch/arm64/kernel/entry-ftrace.S
+>     @@ -7,10 +7,137 @@
+>       */
+> 
+>      #include <linux/linkage.h>
+>     +#include <asm/asm-offsets.h>
+>      #include <asm/assembler.h>
+>      #include <asm/ftrace.h>
+>      #include <asm/insn.h>
+> 
+>     +#ifdef CONFIG_DYNAMIC_FTRACE_WITH_REGS
+>     +/*
+>     + * Due to -fpatchable-function-entry=2, the compiler has placed two NOPs
+>     before
+>     + * the regular function prologue. For an enabled callsite, ftrace_init_nop
+>     () and
+>     + * ftrace_make_call() have patched those NOPs to:
+>     + *
+>     + *     MOV     X9, LR
+>     + *     BL      <entry>
+>     + *
+>     + * ... where <entry> is either ftrace_caller or ftrace_regs_caller.
+>     + *
+>     + * Each instrumented function follows the AAPCS, so here x0-x8 and x19-x30
+>     are
+>     + * live, and x9-x18 are safe to clobber.
+>     + *
+>     + * We save the callsite's context into a pt_regs before invoking and
+>     ftrace
+>     + * callbacks. So that we can get a sensible backtrace, we create a stack
+>     record
+>     + * for the callsite and the ftrace entry assembly. This is not sufficient
+>     for
+>     + * reliable stacktrace: until we create the callsite stack record, its
+>     caller
+>     + * is missing from the LR and existing chain of frame records.
+>     + */
+>     +       .macro  ftrace_regs_entry, allregs=0
+>     +       /* Make room for pt_regs, plus a callee frame */
+>     +       sub     sp, sp, #(S_FRAME_SIZE + 16)
+>     +
+>     +       /* Save function arguments (and x9 for simplicity) */
+>     +       stp     x0, x1, [sp, #S_X0]
+>     +       stp     x2, x3, [sp, #S_X2]
+>     +       stp     x4, x5, [sp, #S_X4]
+>     +       stp     x6, x7, [sp, #S_X6]
+>     +       stp     x8, x9, [sp, #S_X8]
+>     +
+>     +       /* Optionally save the callee-saved registers, always save the FP *
+>     /
+>     +       .if \allregs == 1
+>     +       stp     x10, x11, [sp, #S_X10]
+>     +       stp     x12, x13, [sp, #S_X12]
+>     +       stp     x14, x15, [sp, #S_X14]
+>     +       stp     x16, x17, [sp, #S_X16]
+>     +       stp     x18, x19, [sp, #S_X18]
+>     +       stp     x20, x21, [sp, #S_X20]
+>     +       stp     x22, x23, [sp, #S_X22]
+>     +       stp     x24, x25, [sp, #S_X24]
+>     +       stp     x26, x27, [sp, #S_X26]
+>     +       stp     x28, x29, [sp, #S_X28]
+>     +       .else
+>     +       str     x29, [sp, #S_FP]
+>     +       .endif
+>     +
+>     +       /* Save the callsite's SP and LR */
+>     +       add     x10, sp, #(S_FRAME_SIZE + 16)
+>     +       stp     x9, x10, [sp, #S_LR]
+>     +
+>     +       /* Save the PC after the ftrace callsite */
+>     +       str     x30, [sp, #S_PC]
+>     +
+>     +       /* Create a frame record for the callsite above pt_regs */
+>     +       stp     x29, x9, [sp, #S_FRAME_SIZE]
+>     +       add     x29, sp, #S_FRAME_SIZE
+>     +
+>     +       /* Create our frame record within pt_regs. */
+>     +       stp     x29, x30, [sp, #S_STACKFRAME]
+>     +       add     x29, sp, #S_STACKFRAME
+>     +       .endm
+>     +
+>     +ENTRY(ftrace_regs_caller)
+>     +       ftrace_regs_entry       1
+>     +       b       ftrace_common
+>     +ENDPROC(ftrace_regs_caller)
+>     +
+>     +ENTRY(ftrace_caller)
+>     +       ftrace_regs_entry       0
+>     +       b       ftrace_common
+>     +ENDPROC(ftrace_caller)
+>     +
+>     +ENTRY(ftrace_common)
+>     +       sub     x0, x30, #AARCH64_INSN_SIZE     // ip (callsite's BL insn)
+>     +       mov     x1, x9                          // parent_ip (callsite's
+>     LR)
+>     +       ldr_l   x2, function_trace_op           // op
+>     +       mov     x3, sp                          // regs
+>     +
+>     +GLOBAL(ftrace_call)
+>     +       bl      ftrace_stub
+>     +
+>     +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+>     +GLOBAL(ftrace_graph_call)              // ftrace_graph_caller();
+>     +       nop                             // If enabled, this will be
+>     replaced
+>     +                                       // "b ftrace_graph_caller"
+>     +#endif
+>     +
+>     +/*
+>     + * At the callsite x0-x8 and x19-x30 were live. Any C code will have
+>     preserved
+>     + * x19-x29 per the AAPCS, and we created frame records upon entry, so we
+>     need
+>     + * to restore x0-x8, x29, and x30.
+>     + */
+>     +ftrace_common_return:
+>     +       /* Restore function arguments */
+>     +       ldp     x0, x1, [sp]
+>     +       ldp     x2, x3, [sp, #S_X2]
+>     +       ldp     x4, x5, [sp, #S_X4]
+>     +       ldp     x6, x7, [sp, #S_X6]
+>     +       ldr     x8, [sp, #S_X8]
+>     +
+>     +       /* Restore the callsite's FP, LR, PC */
+>     +       ldr     x29, [sp, #S_FP]
+>     +       ldr     x30, [sp, #S_LR]
+>     +       ldr     x9, [sp, #S_PC]
+>     +
+>     +       /* Restore the callsite's SP */
+>     +       add     sp, sp, #S_FRAME_SIZE + 16
+>     +
+>     +       ret     x9
+>     +ENDPROC(ftrace_common)
+>     +
+>     +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+>     +ENTRY(ftrace_graph_caller)
+>     +       ldr     x0, [sp, #S_PC]
+>     +       sub     x0, x0, #AARCH64_INSN_SIZE      // ip (callsite's BL insn)
+>     +       add     x1, sp, #S_LR                   // parent_ip (callsite's
+>     LR)
+>     +       ldr     x2, [sp, #S_FRAME_SIZE]         // parent fp (callsite's
+>     FP)
+>     +       bl      prepare_ftrace_return
+>     +       b       ftrace_common_return
+>     +ENDPROC(ftrace_graph_caller)
+>     +#else
+>     +#endif
+>     +
+>     +#else /* CONFIG_DYNAMIC_FTRACE_WITH_REGS */
+>     +
+>      /*
+>       * Gcc with -pg will put the following code in the beginning of each
+>     function:
+>       *      mov x0, x30
+>     @@ -160,11 +287,6 @@ GLOBAL(ftrace_graph_call)          //
+>     ftrace_graph_caller();
+> 
+>             mcount_exit
+>      ENDPROC(ftrace_caller)
+>     -#endif /* CONFIG_DYNAMIC_FTRACE */
+>     -
+>     -ENTRY(ftrace_stub)
+>     -       ret
+>     -ENDPROC(ftrace_stub)
+> 
+>      #ifdef CONFIG_FUNCTION_GRAPH_TRACER
+>      /*
+>     @@ -184,7 +306,15 @@ ENTRY(ftrace_graph_caller)
+> 
+>             mcount_exit
+>      ENDPROC(ftrace_graph_caller)
+>     +#endif /* CONFIG_FUNCTION_GRAPH_TRACER */
+>     +#endif /* CONFIG_DYNAMIC_FTRACE */
+>     +#endif /* CONFIG_DYNAMIC_FTRACE_WITH_REGS */
+>     +
+>     +ENTRY(ftrace_stub)
+>     +       ret
+>     +ENDPROC(ftrace_stub)
+> 
+>     +#ifdef CONFIG_FUNCTION_GRAPH_TRACER
+>      /*
+>       * void return_to_handler(void)
+>       *
+>     diff --git a/arch/arm64/kernel/ftrace.c b/arch/arm64/kernel/ftrace.c
+>     index 822718eafdb4..aea652c33a38 100644
+>     --- a/arch/arm64/kernel/ftrace.c
+>     +++ b/arch/arm64/kernel/ftrace.c
+>     @@ -62,6 +62,19 @@ int ftrace_update_ftrace_func(ftrace_func_t func)
+>             return ftrace_modify_code(pc, 0, new, false);
+>      }
+> 
+>     +#ifdef CONFIG_ARM64_MODULE_PLTS
+>     +static struct plt_entry *get_ftrace_plt(struct module *mod, unsigned long
+>     addr)
+>     +{
+>     +       struct plt_entry *plt = mod->arch.ftrace_trampolines;
+>     +
+>     +       if (addr == FTRACE_ADDR)
+>     +               return &plt[FTRACE_PLT_IDX];
+>     +       if (addr == FTRACE_REGS_ADDR && IS_ENABLED
+>     (CONFIG_FTRACE_WITH_REGS))
+>     +               return &plt[FTRACE_REGS_PLT_IDX];
+>     +       return NULL;
+>     +}
+>     +#endif
+>     +
+>      /*
+>       * Turn on the call to ftrace_caller() in instrumented function
+>       */
+>     @@ -74,19 +87,7 @@ int ftrace_make_call(struct dyn_ftrace *rec, unsigned
+>     long addr)
+>             if (offset < -SZ_128M || offset >= SZ_128M) {
+>      #ifdef CONFIG_ARM64_MODULE_PLTS
+>                     struct module *mod;
+>     -
+>     -               /*
+>     -                * There is only one ftrace trampoline per module. For now,
+>     -                * this is not a problem since on arm64, all dynamic ftrace
+>     -                * invocations are routed via ftrace_caller(). This will
+>     need
+>     -                * to be revisited if support for multiple ftrace entry
+>     points
+>     -                * is added in the future, but for now, the pr_err() below
+>     -                * deals with a theoretical issue only.
+>     -                */
+>     -               if (addr != FTRACE_ADDR) {
+>     -                       pr_err("ftrace: far branches to multiple entry
+>     points unsupported inside a single module\n");
+>     -                       return -EINVAL;
+>     -               }
+>     +               struct plt_entry *plt;
+> 
+>                     /*
+>                      * On kernels that support module PLTs, the offset between
+>     the
+>     @@ -105,7 +106,13 @@ int ftrace_make_call(struct dyn_ftrace *rec, unsigned
+>     long addr)
+>                     if (WARN_ON(!mod))
+>                             return -EINVAL;
+> 
+>     -               addr = (unsigned long)mod->arch.ftrace_trampoline;
+>     +               plt = get_ftrace_plt(mod, addr);
+>     +               if (!plt) {
+>     +                       pr_err("ftrace: no module PLT for %ps\n", (void *)
+>     addr);
+>     +                       return -EINVAL;
+>     +               }
+>     +
+>     +               addr = (unsigned long)plt;
+>      #else /* CONFIG_ARM64_MODULE_PLTS */
+>                     return -EINVAL;
+>      #endif /* CONFIG_ARM64_MODULE_PLTS */
+>     @@ -117,6 +124,55 @@ int ftrace_make_call(struct dyn_ftrace *rec, unsigned
+>     long addr)
+>             return ftrace_modify_code(pc, old, new, true);
+>      }
+> 
+>     +#ifdef CONFIG_DYNAMIC_FTRACE_WITH_REGS
+>     +int ftrace_modify_call(struct dyn_ftrace *rec, unsigned long old_addr,
+>     +                       unsigned long addr)
+>     +{
+>     +       unsigned long pc = rec->ip;
+>     +       u32 old, new;
+>     +
+>     +       old = aarch64_insn_gen_branch_imm(pc, old_addr,
+>     +                                         AARCH64_INSN_BRANCH_LINK);
+>     +       new = aarch64_insn_gen_branch_imm(pc, addr,
+>     AARCH64_INSN_BRANCH_LINK);
+>     +
+>     +       return ftrace_modify_code(pc, old, new, true);
+>     +}
+>     +
+>     +/*
+>     + * The compiler has inserted two NOPs before the regular function
+>     prologue.
+>     + * All instrumented functions follow the AAPCS, so x0-x8 and x19-x30 are
+>     live,
+>     + * and x9-x18 are free for our use.
+>     + *
+>     + * At runtime we want to be able to swing a single NOP <-> BL to enable or
+>     + * disable the ftrace call. The BL requires us to save the original LR
+>     value,
+>     + * so here we insert a <MOV X9, LR> over the first NOP so the instructions
+>     + * before the regular prologue are:
+>     + *
+>     + * | Compiled | Disabled   | Enabled    |
+>     + * +----------+------------+------------+
+>     + * | NOP      | MOV X9, LR | MOV X9, LR |
+>     + * | NOP      | NOP        | BL <entry> |
+>     + *
+>     + * The LR value will be recovered by ftrace_regs_entry, and restored into
+>     LR
+>     + * before returning to the regular function prologue. When a function is
+>     not
+>     + * being traced, the MOV is not harmful given x9 is not live per the
+>     AAPCS.
+>     + *
+>     + * Note: ftrace_process_locs() has pre-adjusted rec->ip to be the address
+>     of
+>     + * the BL.
+>     + */
+>     +int ftrace_init_nop(struct module *mod, struct dyn_ftrace *rec)
+>     +{
+>     +       unsigned long pc = rec->ip - AARCH64_INSN_SIZE;
+>     +       u32 old, new;
+>     +
+>     +       old = aarch64_insn_gen_nop();
+>     +       new = aarch64_insn_gen_move_reg(AARCH64_INSN_REG_9,
+>     +                                       AARCH64_INSN_REG_LR,
+>     +                                       AARCH64_INSN_VARIANT_64BIT);
+>     +       return ftrace_modify_code(pc, old, new, true);
+>     +}
+>     +#endif
+>     +
+>      /*
+>       * Turn off the call to ftrace_caller() in instrumented function
+>       */
+>     diff --git a/arch/arm64/kernel/module-plts.c b/arch/arm64/kernel/
+>     module-plts.c
+>     index b182442b87a3..65b08a74aec6 100644
+>     --- a/arch/arm64/kernel/module-plts.c
+>     +++ b/arch/arm64/kernel/module-plts.c
+>     @@ -4,6 +4,7 @@
+>       */
+> 
+>      #include <linux/elf.h>
+>     +#include <linux/ftrace.h>
+>      #include <linux/kernel.h>
+>      #include <linux/module.h>
+>      #include <linux/sort.h>
+>     @@ -330,7 +331,7 @@ int module_frob_arch_sections(Elf_Ehdr *ehdr, Elf_Shdr
+>     *sechdrs,
+>                     tramp->sh_type = SHT_NOBITS;
+>                     tramp->sh_flags = SHF_EXECINSTR | SHF_ALLOC;
+>                     tramp->sh_addralign = __alignof__(struct plt_entry);
+>     -               tramp->sh_size = sizeof(struct plt_entry);
+>     +               tramp->sh_size = NR_FTRACE_PLTS * sizeof(struct plt_entry);
+>             }
+> 
+>             return 0;
+>     diff --git a/arch/arm64/kernel/module.c b/arch/arm64/kernel/module.c
+>     index 5f5bc3b94da7..00d21a420c60 100644
+>     --- a/arch/arm64/kernel/module.c
+>     +++ b/arch/arm64/kernel/module.c
+>     @@ -486,21 +486,31 @@ static const Elf_Shdr *find_section(const Elf_Ehdr
+>     *hdr,
+>             return NULL;
+>      }
+> 
+>     +static inline void __init_plt(struct plt_entry *plt, unsigned long addr)
+>     +{
+>     +       *plt = get_plt_entry(addr, plt);
+>     +}
+>     +
+>      int module_init_ftrace_plt(const Elf_Ehdr *hdr,
+>                                const Elf_Shdr *sechdrs,
+>                                struct module *mod)
+>      {
+>      #if defined(CONFIG_ARM64_MODULE_PLTS) && defined(CONFIG_DYNAMIC_FTRACE)
+>             const Elf_Shdr *s;
+>     -       struct plt_entry *plt;
+>     +       struct plt_entry *plts;
+> 
+>             s = find_section(hdr, sechdrs, ".text.ftrace_trampoline");
+>             if (!s)
+>                     return -ENOEXEC;
+> 
+>     -       plt = (void *)s->sh_addr;
+>     -       *plt = get_plt_entry(FTRACE_ADDR, plt);
+>     -       mod->arch.ftrace_trampoline = plt;
+>     +       plts = (void *)s->sh_addr;
+>     +
+>     +       __init_plt(&plts[FTRACE_PLT_IDX], FTRACE_ADDR);
+>     +
+>     +       if (IS_ENABLED(CONFIG_DYNAMIC_FTRACE_WITH_REGS))
+>     +               __init_plt(&plts[FTRACE_REGS_PLT_IDX], FTRACE_REGS_ADDR);
+>     +
+>     +       mod->arch.ftrace_trampolines = plts;
+>      #endif
+>             return 0;
+>      }
+>     --
+>     2.11.0
+> 
+> 
+>     _______________________________________________
+>     linux-arm-kernel mailing list
+>     linux-arm-kernel@lists.infradead.org
+>     http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
