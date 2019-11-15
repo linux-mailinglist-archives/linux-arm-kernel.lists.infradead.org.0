@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B5E5FE13D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 16:29:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD97AFE198
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 16:37:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xKWDNxH9ff6Xj/Plcc+HGqtgOLR8At2nQcGDXdi4wUE=; b=Eb9UFH+4lCx6VK
-	lxF789ydEtq8YyLdJyb+BVbYbuVPFpHsHjER3M0wfutjmr1zDUahY/bUhbbjOTKZgb32fc/pMY7Ul
-	8B2YWRc+0hm/NX9WXUNBxGLXWjgFy1pFc2YGFTFL7irpYU/s2+ti8+h4oWbA+HIv8MBV0cK/eWBk6
-	3gfv4EK+vfzYYKa2kv/wQC9lF2PwSoCxkEPdYzqyoOs/I1jzcJnWa5sdQ6R30Ci4v0CTQ1oxkRY8k
-	FUwfyD7V5qadOXoozCUJ47suaY2dteh5AkJ5XN6525vbiNxpQZbDoTaaROHaiFS4dTv1GTxtPmmVi
-	JYyhc0CYKma3QSsg8B/w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yfS4zZkTOVxazyWSfy9BL+sFe8dMEegoio/T/fNFuJ8=; b=SQ+spxXFCkZGZZ
+	MWyl0hpQYL5rLM0MW6R3iI29CHWuMLHUPAjTVhe9XDgBo3ZMlYN4KudFw5TSDdllfPZo45ZwZnukW
+	UvdKnAfzICRarVWy7Q2tTVzpXMHxX3wclDx2qsPBD9TkjY+Rxs0ZLjooyWj96ZpMyUhVRZGOVsACU
+	AOCs/nmci4PHsHnRz97jZ6R5uqf5KD5kc23vknAegZS/dtcCCM19md65Pe0htmEPDDTsW9b4VObTs
+	A6VuxvMnOdEVrJHlJknwKvZKHjW9r68SGE24mExk4GvoJgmNgwyMNyBJOwsLRrXVkqdAt2Iv1vGH2
+	sbqeoraC59Hf/+xZT7SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVdXh-0008Uy-NU; Fri, 15 Nov 2019 15:29:49 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVdXY-0008Ti-8A; Fri, 15 Nov 2019 15:29:42 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id EF00DB9E5;
- Fri, 15 Nov 2019 15:29:35 +0000 (UTC)
-Subject: Re: [PATCH v3 2/2] arm64: dts: realtek: Add RTD1619 SoC and Realtek
- Mjolnir EVB
-To: James Tai <james.tai@realtek.com>
-References: <73fb8106ec1a4665b59a2d187a576b71@realtek.com>
- <9cadb78c-99af-8948-e76f-c26f263693b3@suse.de>
- <fbc4dee61c2547458fa0791f38abaed2@realtek.com>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Organization: SUSE Software Solutions Germany GmbH
-Message-ID: <610ad23f-d133-8fd9-1741-80eb47157929@suse.de>
-Date: Fri, 15 Nov 2019 16:29:34 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+	id 1iVdf1-0003f3-A4; Fri, 15 Nov 2019 15:37:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iVdeq-0003dt-Jd
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 15:37:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A421530E;
+ Fri, 15 Nov 2019 07:37:10 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B1103F534;
+ Fri, 15 Nov 2019 07:37:08 -0800 (PST)
+Date: Fri, 15 Nov 2019 15:37:06 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Sami Tolvanen <samitolvanen@google.com>
+Subject: Re: [PATCH v5 05/14] add support for Clang's Shadow Call Stack (SCS)
+Message-ID: <20191115153705.GJ41572@lakrids.cambridge.arm.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191105235608.107702-1-samitolvanen@google.com>
+ <20191105235608.107702-6-samitolvanen@google.com>
 MIME-Version: 1.0
-In-Reply-To: <fbc4dee61c2547458fa0791f38abaed2@realtek.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191105235608.107702-6-samitolvanen@google.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_072940_584863_521F74D1 
-X-CRM114-Status: GOOD (  15.89  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191115_073712_733728_8CEB154C 
+X-CRM114-Status: GOOD (  21.53  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,163 +63,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, 'DTML' <devicetree@vger.kernel.org>,
- "linux-realtek-soc@lists.infradead.org"
- <linux-realtek-soc@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QW0gMTUuMTEuMTkgdW0gMTU6NTIgc2NocmllYiBKYW1lcyBUYWk6Cj4+PiBBZGQgRGV2aWNlIFRy
-ZWVzIGZvciBSZWFsdGVrIFJURDE2MTkgU29DIGZhbWlseSwgUlREMTYxOSBTb0MgYW5kCj4+PiBS
-ZWFsdGVrIE1qb2xuaXIgRVZCLgo+Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IEphbWVzIFRhaSA8amFt
-ZXMudGFpQHJlYWx0ZWsuY29tPgo+Pj4gLS0tCj4+Cj4+IExhY2tpbmcgdGhlIHJlcXVlc3RlZCBj
-aGFuZ2Vsb2cuCj4+Cj4+PiAgYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL01ha2VmaWxlICAg
-ICAgICAgIHwgICAyICsKPj4+ICAuLi4vYm9vdC9kdHMvcmVhbHRlay9ydGQxNjE5LW1qb2xuaXIu
-ZHRzICAgICAgfCAgNDAgKysrKysKPj4+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRk
-MTYxOS5kdHNpICAgICAgfCAgMTIgKysKPj4+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsv
-cnRkMTZ4eC5kdHNpICAgICAgfCAxNjMKPj4gKysrKysrKysrKysrKysrKysrCj4+PiAgNCBmaWxl
-cyBjaGFuZ2VkLCAyMTcgaW5zZXJ0aW9ucygrKQo+Pj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNo
-L2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTYxOS1tam9sbmlyLmR0cwo+Pj4gIGNyZWF0ZSBt
-b2RlIDEwMDY0NCBhcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTYxOS5kdHNpCj4+PiAg
-Y3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxNnh4LmR0
-c2kKPj4KPj4gU29tZWhvdyB0aGUgbGFzdCBodW5rIChydGQxNnh4LmR0c2kpIGRpZG4ndCBhcHBs
-eSB3aXRoIGdpdC1hbSBvciBwYXRjaCAtcDEsIG5vdAo+PiBzdXJlIHdoeS4gSSBoYXZlIG1hbnVh
-bGx5IGNvcGllZCB0aGUgZmlsZSBpbnRvIHBsYWNlIGFuZCBmaXhlZCB1cCBzb21lIG1vcmUKPj4g
-bml0cyBiZWxvdzoKPj4KPj4+Cj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9y
-ZWFsdGVrL01ha2VmaWxlCj4+PiBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9NYWtlZmls
-ZQo+Pj4gaW5kZXggNTU1NjM4YWRhNzIxLi5mYjVmMDU5NzhlY2MgMTAwNjQ0Cj4+PiAtLS0gYS9h
-cmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvTWFrZWZpbGUKPj4+ICsrKyBiL2FyY2gvYXJtNjQv
-Ym9vdC9kdHMvcmVhbHRlay9NYWtlZmlsZQo+Pj4gQEAgLTcsMyArNyw1IEBAIGR0Yi0kKENPTkZJ
-R19BUkNIX1JFQUxURUspICs9Cj4+IHJ0ZDEyOTUtcHJvYm94Mi1hdmEuZHRiCj4+PiAgZHRiLSQo
-Q09ORklHX0FSQ0hfUkVBTFRFSykgKz0gcnRkMTI5NS16aWRvby14OXMuZHRiCj4+Pgo+Pj4gIGR0
-Yi0kKENPTkZJR19BUkNIX1JFQUxURUspICs9IHJ0ZDEyOTYtZHM0MTguZHRiCj4+PiArCj4+PiAr
-ZHRiLSQoQ09ORklHX0FSQ0hfUkVBTFRFSykgKz0gcnRkMTYxOS1tam9sbmlyLmR0Ygo+Pj4gZGlm
-ZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxNjE5LW1qb2xuaXIuZHRz
-Cj4+PiBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxNjE5LW1qb2xuaXIuZHRzCj4+
-PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+Pj4gaW5kZXggMDAwMDAwMDAwMDAwLi42YWI3OTFhZjM4
-OTYKPj4+IC0tLSAvZGV2L251bGwKPj4+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRl
-ay9ydGQxNjE5LW1qb2xuaXIuZHRzCj4+PiBAQCAtMCwwICsxLDQwIEBACj4+PiArLy8gU1BEWC1M
-aWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4wLW9yLWxhdGVyIE9SIEJTRC0yLUNsYXVzZSkKPj4+
-ICsvKgo+Pj4gKyAqIENvcHlyaWdodCAoYykgMjAxOSBSZWFsdGVrIFNlbWljb25kdWN0b3IgQ29y
-cC4KPj4+ICsgKi8KPj4+ICsKPj4+ICsvZHRzLXYxLzsKPj4+ICsKPj4+ICsjaW5jbHVkZSAicnRk
-MTYxOS5kdHNpIgo+Pj4gKwo+Pj4gKy8gewo+Pj4gKwljb21wYXRpYmxlID0gInJlYWx0ZWsscnRk
-MTYxOSIsICJyZWFsdGVrLG1qb2xuaXIiOwo+Pgo+PiBPcmRlciBub3QgZml4ZWQgZnJvbSB2Mi4g
-VGhpcyBpcyBhIHNjaGVtYSB2aW9sYXRpb24gYW5kIGxvZ2ljYWxseSB3cm9uZy4KPj4KPj4+ICsJ
-bW9kZWw9ICJSZWFsdGVrIE1qb2xuaXIgRVZCIjsKPj4KPj4gU3BhY2UgbWlzc2luZyBiZWZvcmUg
-PS4gTWlzc2VkIHRoYXQgaW4gdjIuCj4+Cj4+PiArCj4+PiArCW1lbW9yeUAwIHsKPj4+ICsJCWRl
-dmljZV90eXBlID0gIm1lbW9yeSI7Cj4+PiArCQlyZWcgPSA8MHgwIDB4ODAwMDAwMDA+Owo+Pj4g
-Kwl9Owo+Pj4gKwo+Pj4gKwljaG9zZW4gewo+Pj4gKwkJc3Rkb3V0LXBhdGggPSAic2VyaWFsMDox
-MTUyMDBuOCI7Cj4+PiArCX07Cj4+PiArCj4+PiArCWFsaWFzZXMgewo+Pj4gKwkJc2VyaWFsMCA9
-ICZ1YXJ0MDsgLyogVGhlIFVBUlQwIGlzIGRlYnVnIGNvbnNvbGUgKi8KPj4+ICsJCXNlcmlhbDEg
-PSAmdWFydDE7IC8qIFRoZSBVQVJUMSBpcyBvbiBNLjIgc2xvdCAqLwo+Pj4gKwkJc2VyaWFsMiA9
-ICZ1YXJ0MjsgLyogVGhlIFVBUlQyIGlzIG9uIEdQSU8gY29ubmVjdG9yICovCj4+PiArCX07Cj4+
-PiArfTsKPj4+ICsKPj4+ICsmdWFydDAgewo+Pj4gKwlzdGF0dXMgPSAib2theSI7Cj4+PiArfTsK
-Pj4+ICsKPj4+ICsmdWFydDEgewo+Pj4gKwlzdGF0dXMgPSAiZGlzYWJsZWQiOwo+Pj4gK307Cj4+
-PiArCj4+PiArJnVhcnQyIHsKPj4+ICsJc3RhdHVzID0gImRpc2FibGVkIjsKPj4+ICt9Owo+Pgo+
-PiBUaGUgY29tbWVudHMgd2VyZSBpbnRlbmRlZCB0byBnbyBhYm92ZSBlYWNoIG5vZGUsIG5vdCBh
-ZnRlciB0aGUgYWxpYXNlcy4KPj4gSSd2ZSB0YWtlbiB0aGUgbGliZXJ0eSB0byBhbm5vdGF0ZSB0
-aGVtIGZ1cnRoZXIgd2l0aCB0aGVpciBQQ0IgbGFiZWwuCj4+Cj4+PiBkaWZmIC0tZ2l0IGEvYXJj
-aC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDE2MTkuZHRzaQo+Pj4gYi9hcmNoL2FybTY0L2Jv
-b3QvZHRzL3JlYWx0ZWsvcnRkMTYxOS5kdHNpCj4+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+Pj4g
-aW5kZXggMDAwMDAwMDAwMDAwLi5lNTJiZjcwOGIwNGUKPj4+IC0tLSAvZGV2L251bGwKPj4+ICsr
-KyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxNjE5LmR0c2kKPj4+IEBAIC0wLDAg
-KzEsMTIgQEAKPj4+ICsvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjAtb3ItbGF0
-ZXIgT1IgQlNELTItQ2xhdXNlKQo+Pj4gKy8qCj4+PiArICogUmVhbHRlayBSVEQxNjE5IFNvQwo+
-Pj4gKyAqCj4+PiArICogQ29weXJpZ2h0IChjKSAyMDE5IFJlYWx0ZWsgU2VtaWNvbmR1Y3RvciBD
-b3JwLgo+Pj4gKyAqLwo+Pj4gKwo+Pj4gKyNpbmNsdWRlICJydGQxNnh4LmR0c2kiCj4+PiArCj4+
-PiArLyB7Cj4+PiArCWNvbXBhdGlibGUgPSAicmVhbHRlayxydGQxNjE5IjsKPj4+ICt9Owo+Pj4g
-ZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxNnh4LmR0c2kKPj4+
-IGIvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDE2eHguZHRzaQo+Pj4gbmV3IGZpbGUg
-bW9kZSAxMDA2NDQKPj4+IGluZGV4IDAwMDAwMDAwMDAwMC4uZDliNTcyYTg3MGY1Cj4+PiAtLS0g
-L2Rldi9udWxsCj4+PiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTZ4eC5k
-dHNpCj4+PiBAQCAtMCwwICsxLDE2MyBAQAo+Pj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVy
-OiAoR1BMLTIuMC1vci1sYXRlciBPUiBCU0QtMi1DbGF1c2UpCj4+PiArLyoKPj4+ICsgKiBSZWFs
-dGVrIFJURDE2eHggU29DIGZhbWlseQo+Pj4gKyAqCj4+PiArICogQ29weXJpZ2h0IChjKSAyMDE5
-IFJlYWx0ZWsgU2VtaWNvbmR1Y3RvciBDb3JwLgo+Pj4gKyAqLwo+Pj4gKwo+Pj4gKyNpbmNsdWRl
-IDxkdC1iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9hcm0tZ2ljLmg+Cj4+PiArI2luY2x1
-ZGUgPGR0LWJpbmRpbmdzL2ludGVycnVwdC1jb250cm9sbGVyL2lycS5oPgo+Pj4gKwo+Pj4gKy97
-Cj4+Cj4+IFNwYWNlIG1pc3NpbmcuIE1pc3NlZCB0aGF0IGluIHYyLgo+Pgo+Pj4gKwlpbnRlcnJ1
-cHQtcGFyZW50ID0gPCZnaWM+Owo+Pj4gKwkjYWRkcmVzcy1jZWxscyA9IDwxPjsKPj4+ICsJI3Np
-emUtY2VsbHMgPSA8MT47Cj4+PiArCj4+PiArCWNwdXMgewo+Pj4gKwkJI2FkZHJlc3MtY2VsbHMg
-PSA8MT47Cj4+PiArCQkjc2l6ZS1jZWxscyA9IDwwPjsKPj4+ICsKPj4+ICsJCWNwdTA6IGNwdUAw
-IHsKPj4+ICsJCQlkZXZpY2VfdHlwZSA9ICJjcHUiOwo+Pj4gKwkJCWNvbXBhdGlibGUgPSAiYXJt
-LGNvcnRleC1hNTUiOwo+Pj4gKwkJCXJlZyA9IDwweDA+Owo+Pj4gKwkJCWVuYWJsZS1tZXRob2Qg
-PSAicHNjaSI7Cj4+PiArCQkJbmV4dC1sZXZlbC1jYWNoZSA9IDwmbDI+Owo+Pj4gKwkJfTsKPj4+
-ICsKPj4+ICsJCWNwdTE6IGNwdUAxMDAgewo+Pj4gKwkJCWRldmljZV90eXBlID0gImNwdSI7Cj4+
-PiArCQkJY29tcGF0aWJsZSA9ICJhcm0sY29ydGV4LWE1NSI7Cj4+PiArCQkJcmVnID0gPDB4MTAw
-PjsKPj4+ICsJCQllbmFibGUtbWV0aG9kID0gInBzY2kiOwo+Pj4gKwkJCW5leHQtbGV2ZWwtY2Fj
-aGUgPSA8JmwzPjsKPj4+ICsJCX07Cj4+PiArCj4+PiArCQljcHUyOiBjcHVAMjAwIHsKPj4+ICsJ
-CQlkZXZpY2VfdHlwZSA9ICJjcHUiOwo+Pj4gKwkJCWNvbXBhdGlibGUgPSAiYXJtLGNvcnRleC1h
-NTUiOwo+Pj4gKwkJCXJlZyA9IDwweDIwMD47Cj4+PiArCQkJZW5hYmxlLW1ldGhvZCA9ICJwc2Np
-IjsKPj4+ICsJCQluZXh0LWxldmVsLWNhY2hlID0gPCZsMz47Cj4+PiArCQl9Owo+Pj4gKwo+Pj4g
-KwkJY3B1MzogY3B1QDMwMCB7Cj4+PiArCQkJZGV2aWNlX3R5cGUgPSAiY3B1IjsKPj4+ICsJCQlj
-b21wYXRpYmxlID0gImFybSxjb3J0ZXgtYTU1IjsKPj4+ICsJCQlyZWcgPSA8MHgzMDA+Owo+Pj4g
-KwkJCWVuYWJsZS1tZXRob2QgPSAicHNjaSI7Cj4+PiArCQkJbmV4dC1sZXZlbC1jYWNoZSA9IDwm
-bDM+Owo+Pj4gKwkJfTsKPj4+ICsKPj4+ICsJCWNwdTQ6IGNwdUA0MDAgewo+Pj4gKwkJCWRldmlj
-ZV90eXBlID0gImNwdSI7Cj4+PiArCQkJY29tcGF0aWJsZSA9ICJhcm0sY29ydGV4LWE1NSI7Cj4+
-PiArCQkJcmVnID0gPDB4NDAwPjsKPj4+ICsJCQllbmFibGUtbWV0aG9kID0gInBzY2kiOwo+Pj4g
-KwkJCW5leHQtbGV2ZWwtY2FjaGUgPSA8JmwzPjsKPj4+ICsJCX07Cj4+PiArCj4+PiArCQljcHU1
-OiBjcHVANTAwIHsKPj4+ICsJCQlkZXZpY2VfdHlwZSA9ICJjcHUiOwo+Pj4gKwkJCWNvbXBhdGli
-bGUgPSAiYXJtLGNvcnRleC1hNTUiOwo+Pj4gKwkJCXJlZyA9IDwweDUwMD47Cj4+PiArCQkJZW5h
-YmxlLW1ldGhvZCA9ICJwc2NpIjsKPj4+ICsJCQluZXh0LWxldmVsLWNhY2hlID0gPCZsMz47Cj4+
-PiArCQl9Owo+Pj4gKwo+Pj4gKwkJbDI6IGwyLWNhY2hlIHsKPj4+ICsJCQljb21wYXRpYmxlID0g
-ImNhY2hlIjsKPj4+ICsJCQluZXh0LWxldmVsLWNhY2hlID0gPCZsMz47Cj4+PiArCj4+PiArCQl9
-Owo+Pj4gKwo+Pj4gKwkJbDM6IGwzLWNhY2hlIHsKPj4+ICsJCQljb21wYXRpYmxlID0gImNhY2hl
-IjsKPj4+ICsJCX07Cj4+PiArCX07Cj4+PiArCj4+PiArCXRpbWVyIHsKPj4+ICsJCWNvbXBhdGli
-bGUgPSAiYXJtLGFybXY4LXRpbWVyIjsKPj4+ICsJCWludGVycnVwdHMgPSA8R0lDX1BQSSAxMyBJ
-UlFfVFlQRV9MRVZFTF9MT1c+LAo+Pj4gKwkJCSAgICAgPEdJQ19QUEkgMTQgSVJRX1RZUEVfTEVW
-RUxfTE9XPiwKPj4+ICsJCQkgICAgIDxHSUNfUFBJIDExIElSUV9UWVBFX0xFVkVMX0xPVz4sCj4+
-PiArCQkJICAgICA8R0lDX1BQSSAxMCBJUlFfVFlQRV9MRVZFTF9MT1c+Owo+Pj4gKwl9Owo+Pj4g
-Kwo+Pj4gKwlhcm1fcG11OiBwbXUgewo+Pj4gKwkJY29tcGF0aWJsZSA9ICJhcm0sYXJtdjgtcG11
-djMiOwo+Pj4gKwkJaW50ZXJydXB0cyA9IDxHSUNfUFBJIDcgSVJRX1RZUEVfTEVWRUxfTE9XPjsK
-Pj4+ICsJfTsKPj4+ICsKPj4+ICsJcHNjaSB7Cj4+PiArCQljb21wYXRpYmxlID0gImFybSxwc2Np
-LTEuMCI7Cj4+PiArCQltZXRob2QgPSAic21jIjsKPj4+ICsJfTsKPj4+ICsKPj4+ICsJb3NjMjdN
-OiBvc2Mgewo+Pj4gKwkJY29tcGF0aWJsZSA9ICJmaXhlZC1jbG9jayI7Cj4+PiArCQljbG9jay1m
-cmVxdWVuY3kgPSA8MjcwMDAwMDA+Owo+Pj4gKwkJY2xvY2stb3V0cHV0LW5hbWVzID0gIm9zYzI3
-TSI7Cj4+PiArCQkjY2xvY2stY2VsbHMgPSA8MD47Cj4+PiArCX07Cj4+PiArCj4+PiArCXNvY0A5
-ODAwMDAwMCB7Cj4+Cj4+IElmIHRoZSBub2RlIGhhcyBhIHVuaXQgYWRkcmVzcywgaXQgYWxzbyBu
-ZWVkcyBhIHJlZyBwcm9wZXJ0eSB3aXRoIHRoYXQgdmFsdWUuIFNvCj4+IGxldCdzIGRyb3AgdGhl
-IHVuaXQgYWRkcmVzcy4KPj4KPj4+ICsJCWNvbXBhdGlibGUgPSAic2ltcGxlLWJ1cyI7Cj4+PiAr
-CQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKPj4+ICsJCSNzaXplLWNlbGxzID0gPDE+Owo+Pj4gKwkJ
-cmFuZ2VzID0gPDB4OTgwMDAwMDAgMHg5ODAwMDAwMCAweDY4MDAwMDAwPjsKPj4+ICsKPj4+ICsJ
-CXJidXM6IHItYnVzQDk4MDAwMDAwIHsKPj4+ICsJCQljb21wYXRpYmxlID0gInNpbXBsZS1idXMi
-Owo+Pj4gKwkJCXJlZyA9IDwweDk4MDAwMDAwIDB4MjAwMDAwPjsKPj4+ICsJCQkjYWRkcmVzcy1j
-ZWxscyA9IDwxPjsKPj4+ICsJCQkjc2l6ZS1jZWxscyA9IDwxPjsKPj4+ICsJCQlyYW5nZXMgPSA8
-MHgwIDB4OTgwMDAwMDAgMHgyMDAwMDA+Owo+Pj4gKwo+Pj4gKwkJCXVhcnQwOiBzZXJpYWwwQDc4
-MDAgewo+Pj4gKwkJCQljb21wYXRpYmxlID0gInNucHMsZHctYXBiLXVhcnQiOwo+Pj4gKwkJCQly
-ZWcgPSA8MHg3ODAwIDB4NDAwPjsKPj4+ICsJCQkJcmVnLXNoaWZ0ID0gPDI+Owo+Pj4gKwkJCQly
-ZWctaW8td2lkdGggPSA8ND47Cj4+PiArCQkJCWludGVycnVwdHMgPSA8R0lDX1NQSSA2OCBJUlFf
-VFlQRV9MRVZFTF9ISUdIPjsKPj4+ICsJCQkJY2xvY2stZnJlcXVlbmN5ID0gPDI3MDAwMDAwPjsK
-Pj4+ICsJCQkJc3RhdHVzID0gImRpc2FibGVkIjsKPj4+ICsJCQl9Owo+Pj4gKwo+Pj4gKwkJCXVh
-cnQxOiBzZXJpYWwxQDFiMjAwIHsKPj4+ICsJCQkJY29tcGF0aWJsZSA9ICJzbnBzLGR3LWFwYi11
-YXJ0IjsKPj4+ICsJCQkJcmVnID0gPDB4MWIyMDAgMHg0MDA+Owo+Pj4gKwkJCQlyZWctc2hpZnQg
-PSA8Mj47Cj4+PiArCQkJCXJlZy1pby13aWR0aCA9IDw0PjsKPj4+ICsJCQkJaW50ZXJydXB0cyA9
-IDxHSUNfU1BJIDg5IElSUV9UWVBFX0xFVkVMX0hJR0g+Owo+Pj4gKwkJCQljbG9jay1mcmVxdWVu
-Y3kgPSA8NDMyMDAwMDAwPjsKPj4+ICsJCQkJc3RhdHVzID0gImRpc2FibGVkIjsKPj4+ICsJCQl9
-Owo+Pj4gKwo+Pj4gKwkJCXVhcnQyOiBzZXJpYWwyQDFiNDAwIHsKPj4+ICsJCQkJY29tcGF0aWJs
-ZSA9ICJzbnBzLGR3LWFwYi11YXJ0IjsKPj4+ICsJCQkJcmVnID0gPDB4MWI0MDAgMHg0MDA+Owo+
-Pj4gKwkJCQlyZWctc2hpZnQgPSA8Mj47Cj4+PiArCQkJCXJlZy1pby13aWR0aCA9IDw0PjsKPj4+
-ICsJCQkJaW50ZXJydXB0cyA9IDxHSUNfU1BJIDkwIElSUV9UWVBFX0xFVkVMX0hJR0g+Owo+Pj4g
-KwkJCQljbG9jay1mcmVxdWVuY3kgPSA8NDMyMDAwMDAwPjsKPj4+ICsJCQkJc3RhdHVzID0gImRp
-c2FibGVkIjsKPj4+ICsJCQl9Owo+Pj4gKwkJfTsKPj4+ICsKPj4+ICsJCWdpYzogaW50ZXJydXB0
-LWNvbnRyb2xsZXJAZmYxMDAwMDAgewo+Pj4gKwkJCWNvbXBhdGlibGUgPSAiYXJtLGdpYy12MyI7
-Cj4+PiArCQkJcmVnID0gPDB4ZmYxMDAwMDAgMHgxMDAwMD4sCj4+PiArCQkJICAgICAgPDB4ZmYx
-NDAwMDAgMHhjMDAwMD47Cj4+PiArCQkJaW50ZXJydXB0LWNvbnRyb2xsZXI7Cj4+PiArCQkJI2lu
-dGVycnVwdC1jZWxscyA9IDwzPjsKPj4+ICsJCQlpbnRlcnJ1cHRzID0gPEdJQ19QUEkgOSBJUlFf
-VFlQRV9MRVZFTF9ISUdIPjsKPj4+ICsJCX07Cj4+PiArCX07Cj4+PiArfTsKPj4+ICsKPj4+ICsm
-YXJtX3BtdSB7Cj4+PiArCWludGVycnVwdC1hZmZpbml0eSA9IDwmY3B1MD4sIDwmY3B1MT4sIDwm
-Y3B1Mj4sCj4+PiArCQk8JmNwdTM+LCA8JmNwdTQ+LCA8JmNwdTU+Owo+Pj4gK307Cj4+Cj4+IE5v
-dyB0aGF0IHRoZXkncmUgaW4gdGhlIHNhbWUgZmlsZSwgdGhpcyBjYW4ganVzdCBnbyBpbnRvIHRo
-ZSBub2RlLgo+Pgo+IAo+IEknbGwgY29ycmVjdCB0aGVzZSBtaXN0YWtlcyBpbiBuZXh0IHZlcnNp
-b24uCj4gCgpObyBuZWVkIGZvciBhIHY0LCBJIGFscmVhZHkgaGF2ZSBpdCBxdWV1ZWQuCgpSZWdh
-cmRzLApBbmRyZWFzCgotLSAKU1VTRSBTb2Z0d2FyZSBTb2x1dGlvbnMgR2VybWFueSBHbWJICk1h
-eGZlbGRzdHIuIDUsIDkwNDA5IE7DvHJuYmVyZywgR2VybWFueQpHRjogRmVsaXggSW1lbmTDtnJm
-ZmVyCkhSQiAzNjgwOSAoQUcgTsO8cm5iZXJnKQoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Tue, Nov 05, 2019 at 03:55:59PM -0800, Sami Tolvanen wrote:
+> This change adds generic support for Clang's Shadow Call Stack,
+> which uses a shadow stack to protect return addresses from being
+> overwritten by an attacker. Details are available here:
+> 
+>   https://clang.llvm.org/docs/ShadowCallStack.html
+> 
+> Note that security guarantees in the kernel differ from the
+> ones documented for user space. The kernel must store addresses
+> of shadow stacks used by other tasks and interrupt handlers in
+> memory, which means an attacker capable reading and writing
+> arbitrary memory may be able to locate them and hijack control
+> flow by modifying shadow stacks that are not currently in use.
+> 
+> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+> Reviewed-by: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+> ---
+>  Makefile                       |   6 ++
+>  arch/Kconfig                   |  33 ++++++
+>  include/linux/compiler-clang.h |   6 ++
+>  include/linux/compiler_types.h |   4 +
+>  include/linux/scs.h            |  57 ++++++++++
+>  init/init_task.c               |   8 ++
+>  kernel/Makefile                |   1 +
+>  kernel/fork.c                  |   9 ++
+>  kernel/sched/core.c            |   2 +
+>  kernel/scs.c                   | 187 +++++++++++++++++++++++++++++++++
+>  10 files changed, 313 insertions(+)
+>  create mode 100644 include/linux/scs.h
+>  create mode 100644 kernel/scs.c
+> 
+> diff --git a/Makefile b/Makefile
+> index b37d0e8fc61d..7f3a4c5c7dcc 100644
+> --- a/Makefile
+> +++ b/Makefile
+> @@ -846,6 +846,12 @@ ifdef CONFIG_LIVEPATCH
+>  KBUILD_CFLAGS += $(call cc-option, -flive-patching=inline-clone)
+>  endif
+>  
+> +ifdef CONFIG_SHADOW_CALL_STACK
+> +CC_FLAGS_SCS	:= -fsanitize=shadow-call-stack
+> +KBUILD_CFLAGS	+= $(CC_FLAGS_SCS)
+> +export CC_FLAGS_SCS
+> +endif
+> +
+>  # arch Makefile may override CC so keep this after arch Makefile is included
+>  NOSTDINC_FLAGS += -nostdinc -isystem $(shell $(CC) -print-file-name=include)
+>  
+> diff --git a/arch/Kconfig b/arch/Kconfig
+> index 5f8a5d84dbbe..5e34cbcd8d6a 100644
+> --- a/arch/Kconfig
+> +++ b/arch/Kconfig
+> @@ -521,6 +521,39 @@ config STACKPROTECTOR_STRONG
+>  	  about 20% of all kernel functions, which increases the kernel code
+>  	  size by about 2%.
+>  
+> +config ARCH_SUPPORTS_SHADOW_CALL_STACK
+> +	bool
+> +	help
+> +	  An architecture should select this if it supports Clang's Shadow
+> +	  Call Stack, has asm/scs.h, and implements runtime support for shadow
+> +	  stack switching.
+> +
+> +config SHADOW_CALL_STACK_VMAP
+> +	bool
+> +	depends on SHADOW_CALL_STACK
+> +	help
+> +	  Use virtually mapped shadow call stacks. Selecting this option
+> +	  provides better stack exhaustion protection, but increases per-thread
+> +	  memory consumption as a full page is allocated for each shadow stack.
+
+The bool needs some display text to make it selectable.
+
+This should probably be below SHADOW_CALL_STACK so that when it shows up
+in menuconfig it's where you'd expect it to be.
+
+I locally hacked that in, but when building defconfig +
+SHADOW_CALL_STACK + SHADOW_CALL_STACK_VMAP, the build explodes as below:
+
+| [mark@lakrids:~/src/linux]% usellvm 9.0.0 usekorg 8.1.0 make ARCH=arm64 CROSS_COMPILE=aarch64-linux- CC=clang -j56 -s
+| arch/arm64/kernel/scs.c:28:7: error: use of undeclared identifier 'VMALLOC_START'
+|                                          VMALLOC_START, VMALLOC_END,
+|                                          ^
+| arch/arm64/kernel/scs.c:28:22: error: use of undeclared identifier 'VMALLOC_END'
+|                                          VMALLOC_START, VMALLOC_END,
+|                                                         ^
+| arch/arm64/kernel/scs.c:29:7: error: use of undeclared identifier 'SCS_GFP'
+|                                          SCS_GFP, PAGE_KERNEL,
+|                                          ^
+| arch/arm64/kernel/scs.c:29:16: error: use of undeclared identifier 'PAGE_KERNEL'
+|                                          SCS_GFP, PAGE_KERNEL,
+|                                                   ^
+| 4 errors generated.
+| scripts/Makefile.build:265: recipe for target 'arch/arm64/kernel/scs.o' failed
+| make[2]: *** [arch/arm64/kernel/scs.o] Error 1
+| scripts/Makefile.build:509: recipe for target 'arch/arm64/kernel' failed
+| make[1]: *** [arch/arm64/kernel] Error 2
+| Makefile:1655: recipe for target 'arch/arm64' failed
+| make: *** [arch/arm64] Error 2
+| make: *** Waiting for unfinished jobs....
+
+Other than that, this largely looks good to me!
+
+Thanks,
+Mark.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
