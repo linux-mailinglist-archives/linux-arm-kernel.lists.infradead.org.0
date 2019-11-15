@@ -2,61 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12AC9FE644
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 21:14:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFA04FE653
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 21:19:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D3gFH8T5nuMhHF6OGcBcMBfBxQPHLLmKUxPpIpu8bfg=; b=Cqyp07S+nRmUhb
-	T90cbNLbG8IcqD3naiwbDIl4Ay8d6nM8s5fVgQ9ZiTIkM/H6F1+5gYXHNp+e8RnKETBsh1F0W7E97
-	Un0wTQn+78445hJoI4b9RlgGYAqHhQlX+h7c3tit/1KVtOAo4edYyZefBghVNheIGoDgQmYMLrXJM
-	CYG6yTLxN4doW3UDAiwhb8EFyTbz/SQGWwcofhAfAkAtp/5+XiEnpzXXVBQ2KfpeHsxzmQeopaJwI
-	4Fj/3MDQMj5zrhj/1VrHrOv+HRetjFBNWUBYXQQ+NOxCY2peKWYM1Mm0oxEq2xv/4gKJQgeE2lX7c
-	7lkwkLiuQd/gkX/QAA5g==;
+	List-Owner; bh=FTmknfGCy76tJOWFoPgCpxF4jgO5+mgYUAm1sj6ylhI=; b=aySU2/S++0wjW5
+	Vondb4EU/MxjYqb74a+D+gH7Ri8+2U0djEg+eglV6QhuS+hDRgOAKWSekLSEtntjv2ht9s7sYJiX2
+	qPrYY9Y/isGzq+gdd8P6JTDIBgdcF8TIHk3T6ZgdtK7+X9s9yF69DTqnN5y0MmnUe7s7Ua93c0vfW
+	yGj990sjZBexIdKo27j6PMkx1PQyhlIv2YZru3ytaKU1CVoR8qK1b6XdLQDBCTCAuz8DWGX3YSSfU
+	tisfBiQZrf8ovHJbqteOFFkFc063C90fMLcpwEGBv2eWQkqQltKqyCchS5Yqcb5FsJurPZDiF2s5a
+	fuHN2ED+ZFpeJAF2rQQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVhz7-0004A7-IV; Fri, 15 Nov 2019 20:14:25 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iVi4J-00068z-Rp; Fri, 15 Nov 2019 20:19:47 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVhyy-00049U-A9
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 20:14:17 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1iVhys-0000VS-Rp; Fri, 15 Nov 2019 21:14:10 +0100
-Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1iVhyr-0000NS-RY; Fri, 15 Nov 2019 21:14:09 +0100
-Date: Fri, 15 Nov 2019 21:14:09 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Michael Grzeschik <m.grzeschik@pengutronix.de>
-Subject: Re: [PATCH v2] ARM: dts: imx25: fix usbhost1 node
-Message-ID: <20191115201409.5ztt7vrhf2btpoed@pengutronix.de>
-References: <20191111114655.9583-1-m.grzeschik@pengutronix.de>
- <20191115083415.28976-1-m.grzeschik@pengutronix.de>
+ id 1iVi4A-00068W-Gr
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 20:19:39 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id q21so7165201vsg.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 Nov 2019 12:19:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=JGaDR9v43Zv6SHpEarxzzn1nbL46+U2IHPBI4tRr2qU=;
+ b=sz3oYsEy6H86AvsBzq8AbZKdjQSN7okat4NCYezwXYe4Nn3roLSKspibusFC5eHUf/
+ XOZxYpYgje1RauUONtlip6AndrCc1FzEjmqFuEXf/69rqOVa2UBWi0fKU+Kei4F8RfQX
+ +7+vOdylQ6Vj7DNMXqMEOg93IKnt/XFB5vW7yWtdoQvsrjLwYpphuYBP9e1+Qbw3HkGs
+ UbQW5JMFNZJhDACwQBzv7KE+82hTDuxWS8H3YU+Y4iLbH+MU9i1tI1p103NI8UckIlSi
+ o8zaOjuCB9CXHD9+Ooztaj1GSDDxopXYagZX0MrPMJY7b/8XydSkeYdBXQfkOH969mBK
+ m3RQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=JGaDR9v43Zv6SHpEarxzzn1nbL46+U2IHPBI4tRr2qU=;
+ b=bK54mUQpZePFnMsB+f/Ubg97LYEjF0H/g4nBHh9KmOI6hquLI/8OjcpcqZkc1Si7GQ
+ zNOcsgbAIkoLbAzX3tTpQTdXW0+MJ4BevGhkkqNDM/H7jf6MRa0ErXZMES0BCtDmSEMM
+ cRGLIw3wV1FRrZDqcVJfBVqfG1BaBtkMhpHxr8HC9NtkBnZ8YDtEINPbiH+oMOSU9Np9
+ a2NBrXD+IvFHU0KcNyxKWxBN5aoU8i4mqAYTbdJCY5tegr3XwnQpY2sO3BGaXhJRSuA3
+ l0bGp0zL7AKSNrOGeZpmwQ1oYQqu3w2CHzzodYaheazrCuIF9ztu/0kp4EZp1odHztYF
+ 2e3Q==
+X-Gm-Message-State: APjAAAWVv5PmVZ10Fdt9iZBnmywHqX3PpoBTEnIwUpZMEyEoUwLOfHsU
+ deW8Sl8ZNxLtRxAn1p+oTFo1EmSrsDZZKON9TcoWng==
+X-Google-Smtp-Source: APXvYqyJJAtOC9yDRTQtthbybCklKzAJjxRAZgrd64ZfvgQMG7E3ZVIDa8qPXRTRklTlBbwY1FtJCZyMYntSX38nxGA=
+X-Received: by 2002:a67:db10:: with SMTP id z16mr6607389vsj.5.1573849174709;
+ Fri, 15 Nov 2019 12:19:34 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191115083415.28976-1-m.grzeschik@pengutronix.de>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191105235608.107702-1-samitolvanen@google.com>
+ <20191105235608.107702-15-samitolvanen@google.com>
+ <20191115152047.GI41572@lakrids.cambridge.arm.com>
+In-Reply-To: <20191115152047.GI41572@lakrids.cambridge.arm.com>
+From: Sami Tolvanen <samitolvanen@google.com>
+Date: Fri, 15 Nov 2019 12:19:20 -0800
+Message-ID: <CABCJKudm28QaKRxPHWgKuEfRvm=EvuUEmcAVOnNkbxBCJcYX5A@mail.gmail.com>
+Subject: Re: [PATCH v5 14/14] arm64: implement Shadow Call Stack
+To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_121416_352603_A1D55C90 
-X-CRM114-Status: GOOD (  15.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191115_121938_584087_9F3173E6 
+X-CRM114-Status: GOOD (  11.29  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,55 +99,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, shawnguo@kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Michael,
+On Fri, Nov 15, 2019 at 7:20 AM Mark Rutland <mark.rutland@arm.com> wrote:
+>
+> On Tue, Nov 05, 2019 at 03:56:08PM -0800, Sami Tolvanen wrote:
+> > This change implements shadow stack switching, initial SCS set-up,
+> > and interrupt shadow stacks for arm64.
+>
+> Each CPU also has an overflow stack, and two SDEI stacks, which should
+> presumably be given their own SCS. SDEI is effectively a software-NMI,
+> so it should almost certainly have the same treatement as IRQ.
 
-On Fri, Nov 15, 2019 at 09:34:15AM +0100, Michael Grzeschik wrote:
-> The usb port represented by &usbhost1 uses an USB phy internal to the
-> SoC. We add the phy_type to the base dtsi so the board dts only have to
-> overwrite it if they use a different configuration. While at it we also
-> pin the usbhost port to host mode and limit the speed of the phy to
-> full-speed only, which it is only capable of.
+Makes sense. I'll take a look at adding shadow stacks for the SDEI handler.
 
-The subject line suggests this is a fix but the commit log and the
-actual change don't support this. Maybe better:
+> Can we please fold this comment into the one above, and have:
+>
+>         /*
+>          * The callee-saved regs (x19-x29) should be preserved between
+>          * irq_stack_entry and irq_stack_exit.
+>          */
+>         .macro irq_stack_exit
+>         mov     sp, x19
+> #ifdef CONFIG_SHADOW_CALL_STACK
+>         mov     x18, x20
+> #endif
+>         .endm
 
-	ARM: dts: imx25: consolidate properties of usbhost1 in dtsi file
+Sure, I'll change this in the next version.
 
-? =
-
-
-> diff --git a/arch/arm/boot/dts/imx25.dtsi b/arch/arm/boot/dts/imx25.dtsi
-> index 9a097ef014af5..40b95a290bd6b 100644
-> --- a/arch/arm/boot/dts/imx25.dtsi
-> +++ b/arch/arm/boot/dts/imx25.dtsi
-> @@ -570,6 +570,9 @@
->  				clock-names =3D "ipg", "ahb", "per";
->  				fsl,usbmisc =3D <&usbmisc 1>;
->  				fsl,usbphy =3D <&usbphy1>;
-> +				maximum-speed =3D "full-speed";
-> +				phy_type =3D "serial";
-> +				dr_mode =3D "host";
-
-Would it make sense to split this patch in two? One that moves phy_type
-and dr_mode from the dts files using imx25.dtsi (which has no effects on
-the resulting dtb files). And another that adds maximum-speed.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
