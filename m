@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EDCEFE81D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 23:38:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A054FE81E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 23:38:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=r8amxKgHtULf/csKFN0VUpBpEHeH4VWGMMDmf5ARXZ0=; b=GCAKjBkobciqiQCh6P4OKeu2T3
-	N412Kpg4dmA8lkS+O2sZAgOwK6shtqeE22G3De11XHlNj+S2gn+5hjLoPKvV36f0kDtTNLGUPrtK4
-	Oc818i8rl3hM6YME+Sy30r1HUAa0VKz5xRO3hsTgMJqrKUWn7F+MsgT4pmtZ1+lX/DfNeDo75f6vb
-	FyvDnYJu/7Mt2ywhlzrwSGWTYEw/JBeQYMtcDBuGXzNzJZ2/vLKbIT58kb9DuWpCBI13zx6ORrvvi
-	pG36GeZ9TtQIneQ9lylLpVzEabZj0UGGUNKBA1wZ/MI568wsYJdbkNgwXTQ/bWQsqWJ0k82tq+jBQ
-	Lt0amHLA==;
+	bh=SG61icjPQp7y09v9LQZwRuBnGa56nV0RUj/bnvy3PUk=; b=M5hyZ0vJGcpPRXp60nllZtEZYF
+	VjbfJzH4pAtczRfzpJHOY0KsWZWoYuY/gtv5wqB5wVwh6ywpVaIHbPXZTTOSNwwm6ZMIacuhC5P5Z
+	GfRgsXEpmVo4cx8ly2FFnk7DGgn20AGr7stMCfYpVzr0+c/0kDyEKlGn+0USUICszCS1YvkpHOIR8
+	Y4vC2Ibn8/PSn8/veAwskmN9p+ECzWwBvJGBE8TQB/QmU0VLBuj4WUv67quj0cNwqqesI1sByLxsM
+	QUQ9Nm89WJBwLQ90HP0Bkr8Eq50MgRzn4xA8tBgT/+Osb8bNHGK0/Hgm5FEoyQhiFtEMvtu8CTx+s
+	Hm2tEwUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVkER-0003Hc-JL; Fri, 15 Nov 2019 22:38:23 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iVkEg-0003ZB-21; Fri, 15 Nov 2019 22:38:38 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVkAN-0007Gj-Ms
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 22:34:13 +0000
-Received: by mail-pl1-x641.google.com with SMTP id az9so5620237plb.11
+ id 1iVkAO-0007HI-NH
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 22:34:14 +0000
+Received: by mail-pf1-x442.google.com with SMTP id x28so7341412pfo.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 14:34:11 -0800 (PST)
+ Fri, 15 Nov 2019 14:34:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=f67vg1P6cp56FC+gFomHmc7P3PWgRttseTI8GzuDMDw=;
- b=xA6/rKgNfSpMNx7U2CIf58R0lskOLg3y9hYciTIt8ZD92F0abPfnJuNWvlOArEOELy
- Eg1q0mG7cr3zITCHPC3sYPPWPZpvKqTpZpqj0CiwzgBAHOv+44QxulLsvWlnsWu4gd8H
- iEOqm1GqavhvEBS16eTYSVDgdfFhUlNs4E2uzERBdCZlfSInyLMACfvujQG9qO/qlK0o
- Uxl2r/sRt1TU1QCCi/KATL4JehE2IfKdKDi6Uc6qegftMBClBcB7jv9K0QwVPVRGR5/u
- 9OJPcNqlrci4gxNVVvGbQUOYbTYXj8dLUk0yvBsQPmQBCW0m6Up7CMw0HPCnXfY/E4wQ
- KWAw==
+ bh=0FzUVopNzASq04/LVv5rKzD9cgfLq5ObIrBYoMo9qvk=;
+ b=lUnyeeCJ4IPMz/XNH2z+dyXgbsLnZDQySzkmpacsxLxrXVqQl5YYPtMDCr/HHxKjVR
+ hU7Y+LuaiVCYaAjIOQjWN7XE8ySh88tskiNLwFDvEcME9WjRgKWKI31q/MYW4ijhkG95
+ iB/cXtsbnEgCUngeVPLDAl6BX33rNqrbYi6fcdGtnxKTNTBQFt/aemX3uKRsgXeS0agk
+ m5dsnfapvZLJb77v9GDsdm0umUO3c/oDvqDF0UXRKla1EvNzWUNN+FQGF9bj+EE7X21B
+ IdzvJlAJMLMIe18u6ncmei3dFZe6zL8vc2bVx70r1wV15uwQTsYgUDsMuE3R/50EMWIJ
+ uu2g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=f67vg1P6cp56FC+gFomHmc7P3PWgRttseTI8GzuDMDw=;
- b=mJ8g81y9gDp/VoUMI4NRENqozU/Tf3V5c21mLn6G8IceQPVn5/P+NIo8zNnQWc+zSX
- NSc1uUdj3YzHg8XzVFUVL4GsvQReb5fDT755VhYspNEqxxwR0GZSbPOSlhsKH5CXM1l8
- lwXeA2BE6m100uLOOOBrsrIBtDfmHW/YSHLcKgIEdJou4ZZU/Fq3uCz0XN8WOqVDN8DR
- P7QljRMFgKUEYl3sBgKC0hLJphmoCXePwpqvuZ4U5WzJzbS1oo8uRyUihQ34SJDERaET
- ZgqozMCdbHdBqq1lPZ7N3GGimxx3aIzzF1Mv7EFe18COP4aQaHvmV7sxplVLEKvqr6r/
- oFLQ==
-X-Gm-Message-State: APjAAAWlYC2NcInd8SKUIpysqLAAfgyGL6AqNd9m+NNNlByqjwxeO4cy
- xyy5fXNtH6Dud25zrc2OwMWK6w==
-X-Google-Smtp-Source: APXvYqy5gmuKV2XPYe0CJ9Tar06N04Tv6DzHZfUu5lOREsiiyK0PNj9Ybul3RHjzrkIoJm7yH+3w2A==
-X-Received: by 2002:a17:902:ff14:: with SMTP id
- f20mr17167605plj.225.1573857250463; 
- Fri, 15 Nov 2019 14:34:10 -0800 (PST)
+ bh=0FzUVopNzASq04/LVv5rKzD9cgfLq5ObIrBYoMo9qvk=;
+ b=KVxf9msngpelbOS5qixyIihNOxlqLomwn1O7EoReZmZJFy3UuLAvNqDP8rzAgTL8je
+ bi9vNjYl51enlQc4mR/jGD675dFymw/CQ1hZXbokCiToBzyMSCtzoDO4i2cxf8iYmq6E
+ qdLY3n6Ll6n39ZWAF4ishgReIupCyhmvzbCS6h5Q+fBPsnvyega6evQN4qV5b1v4454S
+ hh12s//pWgOzelsJktKSwcRItsy9khqBPfK4thKSRaqgHiNCwUiGgJOGYOQsmxemYTiY
+ GYFbmiBGWlYOdtA1wQ0s1uwTyOqZEYAD4yj3KZNJLp6B9O7Z53LNvNbGZImB8J7s3hiA
+ SFZw==
+X-Gm-Message-State: APjAAAUL/XdzONSeWdboThpRJ8PcsbWYFdleKnuM53+HEaQyDtYCNE8q
+ 5LL+xmcuM5P8Jzox8AxefhTPxA==
+X-Google-Smtp-Source: APXvYqwIfu18fK0DfDJ9UvpBvk2czYs+yHL1APaCSoHaNFjaDFHmk39inhfdV0r/CZWJE79UEyL9tw==
+X-Received: by 2002:aa7:843d:: with SMTP id q29mr20193053pfn.156.1573857251386; 
+ Fri, 15 Nov 2019 14:34:11 -0800 (PST)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id m15sm11699724pfh.19.2019.11.15.14.34.09
+ by smtp.gmail.com with ESMTPSA id m15sm11699724pfh.19.2019.11.15.14.34.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 Nov 2019 14:34:09 -0800 (PST)
+ Fri, 15 Nov 2019 14:34:10 -0800 (PST)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: stable@vger.kernel.org
-Subject: [stable 4.19+][PATCH 15/20] ASoC: stm32: i2s: fix dma configuration
-Date: Fri, 15 Nov 2019 15:33:51 -0700
-Message-Id: <20191115223356.27675-15-mathieu.poirier@linaro.org>
+Subject: [stable 4.19+][PATCH 16/20] ASoC: stm32: i2s: fix 16 bit format
+ support
+Date: Fri, 15 Nov 2019 15:33:52 -0700
+Message-Id: <20191115223356.27675-16-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191115223356.27675-1-mathieu.poirier@linaro.org>
 References: <20191115223356.27675-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_143411_833826_BD172D92 
-X-CRM114-Status: GOOD (  11.37  )
+X-CRM114-CacheID: sfid-20191115_143412_795297_F5E2541A 
+X-CRM114-Status: GOOD (  12.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,61 +106,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Olivier Moysan <olivier.moysan@st.com>
 
-commit 1ac2bd16448997d9ec01922423486e1e85535eda upstream
+commit 0c4c68d6fa1bae74d450e50823c24fcc3cd0b171 upstream
 
-DMA configuration is not balanced on start/stop.
-Move DMA configuration to trigger callback.
+I2S supports 16 bits data in 32 channel length.
+However the expected driver behavior, is to
+set channel length to 16 bits when data format is 16 bits.
 
 Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 Cc: stable <stable@vger.kernel.org> # 4.19+
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- sound/soc/stm/stm32_i2s.c | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ sound/soc/stm/stm32_i2s.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/sound/soc/stm/stm32_i2s.c b/sound/soc/stm/stm32_i2s.c
-index 6d0bf78d114d..449bb7049a28 100644
+index 449bb7049a28..004d83091505 100644
 --- a/sound/soc/stm/stm32_i2s.c
 +++ b/sound/soc/stm/stm32_i2s.c
-@@ -488,7 +488,7 @@ static int stm32_i2s_configure(struct snd_soc_dai *cpu_dai,
- {
- 	struct stm32_i2s_data *i2s = snd_soc_dai_get_drvdata(cpu_dai);
- 	int format = params_width(params);
--	u32 cfgr, cfgr_mask, cfg1, cfg1_mask;
-+	u32 cfgr, cfgr_mask, cfg1;
- 	unsigned int fthlv;
- 	int ret;
- 
-@@ -529,15 +529,11 @@ static int stm32_i2s_configure(struct snd_soc_dai *cpu_dai,
- 	if (ret < 0)
- 		return ret;
- 
--	cfg1 = I2S_CFG1_RXDMAEN | I2S_CFG1_TXDMAEN;
--	cfg1_mask = cfg1;
--
- 	fthlv = STM32_I2S_FIFO_SIZE * I2S_FIFO_TH_ONE_QUARTER / 4;
--	cfg1 |= I2S_CFG1_FTHVL_SET(fthlv - 1);
--	cfg1_mask |= I2S_CFG1_FTHVL_MASK;
-+	cfg1 = I2S_CFG1_FTHVL_SET(fthlv - 1);
- 
- 	return regmap_update_bits(i2s->regmap, STM32_I2S_CFG1_REG,
--				  cfg1_mask, cfg1);
-+				  I2S_CFG1_FTHVL_MASK, cfg1);
- }
- 
- static int stm32_i2s_startup(struct snd_pcm_substream *substream,
-@@ -589,6 +585,10 @@ static int stm32_i2s_trigger(struct snd_pcm_substream *substream, int cmd,
- 		/* Enable i2s */
- 		dev_dbg(cpu_dai->dev, "start I2S\n");
- 
-+		cfg1_mask = I2S_CFG1_RXDMAEN | I2S_CFG1_TXDMAEN;
-+		regmap_update_bits(i2s->regmap, STM32_I2S_CFG1_REG,
-+				   cfg1_mask, cfg1_mask);
-+
- 		ret = regmap_update_bits(i2s->regmap, STM32_I2S_CR1_REG,
- 					 I2S_CR1_SPE, I2S_CR1_SPE);
- 		if (ret < 0) {
+@@ -501,7 +501,7 @@ static int stm32_i2s_configure(struct snd_soc_dai *cpu_dai,
+ 	switch (format) {
+ 	case 16:
+ 		cfgr = I2S_CGFR_DATLEN_SET(I2S_I2SMOD_DATLEN_16);
+-		cfgr_mask = I2S_CGFR_DATLEN_MASK;
++		cfgr_mask = I2S_CGFR_DATLEN_MASK | I2S_CGFR_CHLEN;
+ 		break;
+ 	case 32:
+ 		cfgr = I2S_CGFR_DATLEN_SET(I2S_I2SMOD_DATLEN_32) |
 -- 
 2.17.1
 
