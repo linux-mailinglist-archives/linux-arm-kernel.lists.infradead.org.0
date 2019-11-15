@@ -2,90 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FA27FE3EF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 18:29:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A68D5FE3FD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 18:31:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=svyXv483yNLSBpk2R0bjPBPFaE8IdL9t1N4fLw3drTc=; b=iOXVJBpFmpbovvbo4wrRokxoE
-	LEOfwJzK+gNZvsQNHzbjmdmy5OBNPGTXJ38TE2rRaT82amGgLETQzbBSaHTz34Lxm8/Zw45sr7Vdp
-	3Mkuv6MfsF5RfvxwXRUELnVa9B3fB3Cf1f++uYYSwVQqJOFA0hlTsh/SEdZeHkCc2ch62aj1qCqZk
-	JNHcWtaUfQwO6uv1TlgGRtebJ7v/MatMsVVdmVFoov9t6P1+yjm2E1oDiqD/DB+Q0UaSJuN/FK/xf
-	F4WRsTkYH0GpZXzCqS0evlipTe7JrQmrSQ92jPoAtfnoL6R8g4f74t5sOhwK0Hcf7cD3X8b+vldkW
-	ugNvhcHpA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Cbe3S16OmNXLceJ6k+CWnCqlGWmUinA8ovTLulJwZ/4=; b=PTyboGoV2uulFE
+	Cp3H/4Q6sZcQ8fQQb7gcN6XCXmu0heDexkHJn7g2HbiIGB0HM9hK69evogNckyw2yFqhmsimsg1UG
+	6PlTcJwllSkLAF58epjvQ2w9Eyv0NuIuuVD9Cz76ANtWNb4VSgmUBZ2nQRO5/CfO0dONNtY/X875G
+	NEhYxKfswoEF2Z/WHm+4AV6FyeLzrRU7GiB6C0zAP0u5XLKo6gmLx/G/N0yEFf3hsqNjP4U7X6ktO
+	R0KuxTeCtVO8bhe3bHiDlFtfoVmiURsAWe/3d8r/HXG4C+BLwlzixx4AthFPz86mE9g01/piI8XiF
+	lLUEF53IoO7B56WhCZSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVfP3-0001Nl-1Q; Fri, 15 Nov 2019 17:29:01 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVfOu-0001Mo-6Q
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 17:28:54 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xAFHR2Bb022462; Fri, 15 Nov 2019 18:28:35 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=Vv7O4F/V6ixbd+frkI+QsLdh11OHFWF8Mp0fyUbyBg0=;
- b=h2X6yxD6m5aDfzGWZpbtttJkSWPTPGMF/bYfW1y0BmuIFWW34L3iPPFXb9ZFRSYLRWzr
- SrFcLyKeGJtk7cUIg2JXzYuyMB9rWka9B/kq7nalJz1cil53mGaNeF11kRyuQT/Cx2oW
- bUhzLtmkXnt35aTBNMWBKT4sGgqcU4k1K8ZZLgJir0l+oHyzbi7R9PZwpswOAWHUN2cq
- axV1enA8CNNgA2sz5r9QwYffuPULi6FFgyJaQCPT6GbOciPA+aVv1g0YWqeUN2Yxz/dH
- /r+IamdHqcYoPgFMl2yuxwuKAqSrFJgKH0CtFsnrVKGjxLkAnr457pvO2Y1ZvVvXXL3G sQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2w7psbng5v-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 15 Nov 2019 18:28:35 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 50B4E10002A;
- Fri, 15 Nov 2019 18:28:33 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1AF022D3777;
- Fri, 15 Nov 2019 18:28:33 +0100 (CET)
-Received: from lmecxl0912.lme.st.com (10.75.127.50) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 15 Nov
- 2019 18:28:32 +0100
-Subject: Re: [PATCH] dt-bindings: interrupt-controller: Convert stm32-exti to
- json-schema
-To: Rob Herring <robh+dt@kernel.org>
-References: <20191114164104.22782-1-alexandre.torgue@st.com>
- <CAL_JsqKJZwJ0MyRp37Y-F0ujPdVEKARd8qcUCN1xmawpkiffLg@mail.gmail.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <7415fff5-030c-a65b-a405-a1197e166432@st.com>
-Date: Fri, 15 Nov 2019 18:28:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iVfR5-0003AL-To; Fri, 15 Nov 2019 17:31:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iVfQx-00039k-Mn
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 17:31:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DF2C531B;
+ Fri, 15 Nov 2019 09:30:57 -0800 (PST)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C1F7B3F6C4;
+ Fri, 15 Nov 2019 09:30:55 -0800 (PST)
+Date: Fri, 15 Nov 2019 17:30:53 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH v2 10/13] cpuidle: psci: Prepare to use OS initiated
+ suspend mode via PM domains
+Message-ID: <20191115173053.GE27170@bogus>
+References: <20191029164438.17012-1-ulf.hansson@linaro.org>
+ <20191029164438.17012-11-ulf.hansson@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <CAL_JsqKJZwJ0MyRp37Y-F0ujPdVEKARd8qcUCN1xmawpkiffLg@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG5NODE2.st.com (10.75.127.14) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-11-15_05:2019-11-15,2019-11-15 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20191029164438.17012-11-ulf.hansson@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_092852_693053_81F484D9 
-X-CRM114-Status: GOOD (  24.60  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191115_093059_783557_E7350070 
+X-CRM114-Status: GOOD (  15.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,195 +62,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-stm32@st-md-mailman.stormreply.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM
- ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, linux-arm-msm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Andy Gross <agross@kernel.org>,
+ Lina Iyer <ilina@codeaurora.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Lina Iyer <lina.iyer@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Oct 29, 2019 at 05:44:35PM +0100, Ulf Hansson wrote:
+> The per CPU variable psci_power_state, contains an array of fixed values,
+> which reflects the corresponding arm,psci-suspend-param parsed from DT, for
+> each of the available CPU idle states.
+>
+> This isn't sufficient when using the hierarchical CPU topology in DT, in
+> combination with having PSCI OS initiated (OSI) mode enabled. More
+> precisely, in OSI mode, Linux is responsible of telling the PSCI FW what
+> idle state the cluster (a group of CPUs) should enter, while in PSCI
+> Platform Coordinated (PC) mode, each CPU independently votes for an idle
+> state of the cluster.
+>
+> For this reason, introduce a per CPU variable called domain_state and
+> implement two helper functions to read/write its value. Then let the
+> domain_state take precedence over the regular selected state, when entering
+> and idle state.
+>
+> Finally, let's also avoid sprinkling the existing non-OSI path with
+> operations being specific for OSI.
+>
 
+Mostly looks good. I am still wondering if we can keep all OSI related
+info in the newly created structure and have psci_states outside it as
+before. And I was think psci_enter_idle_state_pc and psci_enter_idle_state_osi
+instead of single psci_enter_idle_state and assign/initialise state->enter
+based on the mode chosen. I had to closer look now and looks like enter
+is initialised in generic dt_idle_states. That said, what you have in this
+patch also looks OK to me, was just trying to avoid access to the new
+structure all together and keep the PC mode patch almost same as before
+when suspending. I will see what Lorenzo thinks about this.
 
-On 11/14/19 6:18 PM, Rob Herring wrote:
-> On Thu, Nov 14, 2019 at 10:41 AM Alexandre Torgue
-> <alexandre.torgue@st.com> wrote:
->>
->> Convert the STM32 external interrupt controller (EXTI) binding to DT
->> schema format using json-schema.
->>
->> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
->> ---
->>
->> Hi Rob,
->>
->> I planned to use "additionalProperties: false" for this schema but as I add a
->> property under condition, I got an error (property added under contion seems
->> to be detected as an "additional" property and then error is raised).
->>
->> Is there a way to fix that ?
-> 
-> See below.
-> 
->>
->> regards
->> Alex
->>
->> diff --git a/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.txt b/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.txt
->> deleted file mode 100644
->> index cd01b2292ec6..000000000000
->> --- a/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.txt
->> +++ /dev/null
->> @@ -1,29 +0,0 @@
->> -STM32 External Interrupt Controller
->> -
->> -Required properties:
->> -
->> -- compatible: Should be:
->> -    "st,stm32-exti"
->> -    "st,stm32h7-exti"
->> -    "st,stm32mp1-exti"
->> -- reg: Specifies base physical address and size of the registers
->> -- interrupt-controller: Indentifies the node as an interrupt controller
->> -- #interrupt-cells: Specifies the number of cells to encode an interrupt
->> -  specifier, shall be 2
->> -- interrupts: interrupts references to primary interrupt controller
->> -  (only needed for exti controller with multiple exti under
->> -  same parent interrupt: st,stm32-exti and st,stm32h7-exti)
->> -
->> -Optional properties:
->> -
->> -- hwlocks: reference to a phandle of a hardware spinlock provider node.
->> -
->> -Example:
->> -
->> -exti: interrupt-controller@40013c00 {
->> -       compatible = "st,stm32-exti";
->> -       interrupt-controller;
->> -       #interrupt-cells = <2>;
->> -       reg = <0x40013C00 0x400>;
->> -       interrupts = <1>, <2>, <3>, <6>, <7>, <8>, <9>, <10>, <23>, <40>, <41>, <42>, <62>, <76>;
->> -};
->> diff --git a/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.yaml b/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.yaml
->> new file mode 100644
->> index 000000000000..39be37e1e532
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/interrupt-controller/st,stm32-exti.yaml
->> @@ -0,0 +1,82 @@
->> +# SPDX-License-Identifier: GPL-2.0
-> 
-> If ST has copyright on the old binding, can you add BSD here.
-> 
-
-I will.
-
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/interrupt-controller/st,stm32-exti.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: STM32 External Interrupt Controller Device Tree Bindings
->> +
->> +maintainers:
->> +  - Alexandre Torgue <alexandre.torgue@st.com>
->> +  - Ludovic Barre <ludovic.barre@st.com>
->> +
->> +properties:
->> +  compatible:
->> +    oneOf:
->> +      - items:
->> +        - enum:
->> +          - st,stm32-exti
->> +          - st,stm32h7-exti
->> +      - items:
->> +        - enum:
->> +          - st,stm32mp1-exti
->> +        - const: syscon
->> +
->> +  "#interrupt-cells":
->> +    const: 2
->> +
->> +  reg:
->> +    maxItems: 1
->> +
->> +  interrupt-controller: true
->> +
->> +  hwlocks:
->> +    maxItems: 1
->> +    description:
->> +      Reference to a phandle of a hardware spinlock provider node.
->> +
->> +required:
->> +  - "#interrupt-cells"
->> +  - compatible
->> +  - reg
->> +  - interrupt-controller
->> +
->> +allOf:
->> +  - $ref: /schemas/interrupt-controller.yaml#
->> +  - if:
->> +      properties:
->> +        compatible:
->> +          contains:
->> +            enum:
->> +              - st,stm32-exti
->> +              - st,stm32h7-exti
->> +    then:
->> +      properties:
->> +        interrupts:
->> +          allOf:
->> +            - $ref: /schemas/types.yaml#/definitions/uint32-array
-> 
-> Standard property, doesn't need a type. You just need 'maxItems' or an
-> 'items' list if the index is not meaningful. This appears to be the
-> former case.
-
-ok
-
-> 
->> +          description:
->> +            Interrupts references to primary interrupt controller
->> +      required:
->> +        - interrupts
-> 
-> You can move the definition to the main section as you only need
-> 'required' here. That should fix your additionalProperties issue.
-> 
-Doing that it fails as I don't have interrupts define for mp1 
-compatible. Maybe I missed something ?
-
-> In hindsight, the mp1 case probably should have used interrupt-map.
-
-For MP1 driver is written differently and mapping is done inside the driver.
-
-> 
->> +
->> +examples:
->> +  - |
->> +    //Example 1
->> +    exti1: interrupt-controller@5000d000 {
->> +        compatible = "st,stm32mp1-exti", "syscon";
->> +        interrupt-controller;
->> +        #interrupt-cells = <2>;
->> +        reg = <0x5000d000 0x400>;
->> +    };
->> +
->> +    //Example 2
->> +    exti2: interrupt-controller@40013c00 {
->> +        compatible = "st,stm32-exti";
->> +        interrupt-controller;
->> +        #interrupt-cells = <2>;
->> +        reg = <0x40013C00 0x400>;
->> +        interrupts = <1>, <2>, <3>, <6>, <7>, <8>, <9>, <10>, <23>, <40>, <41>, <42>, <62>, <76>;
->> +    };
->> +
->> +...
->> --
->> 2.17.1
->>
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
