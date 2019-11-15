@@ -2,82 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D776AFE4FA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 19:35:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03D7AFE50D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 19:43:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l0lsvtzPuXzqBqjUwF2zRsr+IrZc3SuXiUYsc+5Jl+Y=; b=sAeRklmlWtDlXp
-	mSLJzQGDGz2IjlYEIKIdrze6bhRedg8TWormLrS2Td8bv5FFUuONfAc29OeTFKZuuSxY7GjW0cSKQ
-	DhtXdjRea8aBDzsTQl9Zgg5ZwK0sAbUNNumdYoXWWJZXidJQS1jIfWd6CkkyaS4ICqAgOE8AVRwZm
-	EW4KzXK/GfwwQXsdvHAmIpNKh3tkobnA1Ofl9Bw6TUmkb7RqoIzoOCPRJkTaNb36EtQgk7Ndm2XtW
-	1khHdG7ZA2riqn07xvHFKQlNC+wGKsOp37tkac7ALO1Pz3t3vOr8zJOKGVMWcIsNsQx8Bxnkx7Plv
-	tH/uugpU01iebjXX8uXw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=54vkyoBmoVQdXbNhKfEDqg3NPgeE4YjG9dpWDmzXbhE=; b=KsT
+	RScbsUjjUudBmTRXe86iRUuPbB9mqXYMqFzo+M8YnjiXubvV7b8bcUFRkc8GYrwB/QoCDFngp0HHv
+	rKLStpUD2eFRaPkz0goZTvmefYuTMcHEqw+k7a0qB2LEw/oV+Smsc3QovjjE37HzLyPXXWRx9Ryek
+	8cjAaNFf1ao+/tQ3zf2+YJjE2vQFUng4oGcNymut+6e4zRjVkmUhRkn1INmWZyq70fhOFZsePPRuC
+	S4VOV2SfbLdcAioT4Yj8WpjXlRfKAI/FCFK4cFNn01WEkqh6vdi/PrQSih3nsQ0CfAPMgl52fJvSL
+	z/9wU8om3ENnarhAqvy7Tq0SOt4nn/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVgQp-0000Ds-5X; Fri, 15 Nov 2019 18:34:55 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1iVgZN-0003Tv-UR; Fri, 15 Nov 2019 18:43:45 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVgQg-0000D6-D4
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 18:34:47 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id 190so6952908vss.8
+ id 1iVgZA-0003TB-UL
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 18:43:34 +0000
+Received: by mail-wr1-x442.google.com with SMTP id r10so12058253wrx.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 10:34:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=z/RQj5FqYPBFFb/BHpJq3oq0/JIX3F5mcr3Ic1KDLoA=;
- b=DPVoi3lqXCZqeWh9romeMaws5hqXk7f+VlyR9XfhSR/9BdSIhcYmEux7SQ5St6jgAv
- Qy7JHhLn5W/E49pgWgOuvApN0oQk7kKUVdvzqM0GYzY6xGnHrcu3/C3H75y46ixSvuca
- LjPAO51k95incrTQsuJOy8ZRL6zlZ92V+cSt7WAY8zd/QGfPmISheb/46Q0qXikywE7H
- 4Xh/pOiL99Mk+H/Q9TdrDS1OLq9XHIwJxh3HXyW7oVjDzKgHZwFJFMojZFKSuD9lUD8s
- TsrwyDeDC5tuRiLuIUH3CjrVYpkyH7ytqD6EnefisDfsVDoa6xNUGa6ZrfAwBeh0RQqM
- vZrQ==
+ Fri, 15 Nov 2019 10:43:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=agn5/+Ff+txwdkMYcl4dOnRhb7wogId0OeGIrqnhFKE=;
+ b=qghhLRcUIuP5ShnvL5clvj3Ew+W2ALCsWLbLPM5QqviPGCT6qn4NScW27VVUpaWPBk
+ oRX4p3UTPSZyh7vPQiuQ1wf/uuMAaSy/g22p8175W0zkubhz2MyZjvTCHzgj6jix46DC
+ bsSZj457R7IXZ5QzFQt2gdQG/XYQPgwMUdMOW/bLoTjvagllAaG4FWlUBcyf3svP2Uos
+ zhucpOF6ai8fgq8revALwXVvlcgwOrDZhSHakMbY5qClrkRHY3ZQ22jTwkqBtahuWNA4
+ c6A7xwWeg3hkZc4EeObtUrt1h/lff185xMTq6j/LVzK43QgO87l8qh5NkIeM2Af7kbr4
+ EzNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=z/RQj5FqYPBFFb/BHpJq3oq0/JIX3F5mcr3Ic1KDLoA=;
- b=WDM50PsJdqvsS//PzsTdCZfbCHia2fE9CY61SMuhJnfRmNjqWjisk5cjcdKknPKYj/
- bZIqjFKApi/Jg6Qvc7rTPduArwKf2McfEDgl1FbYY+lx4SEK5Al1WytQmUfSzc4sLjKY
- TnPS8PPIaV7dXSEw4sacetdL1SfGavRSrmmGBfa+YbmsGnJ4mQmE/+Nk4EmNjQAbk4UG
- FbdtHylA0wZcBsXSdnKZ/vfWjjGaMaATFDNE79v1oWR2QV+bI5jtYH0Y6GjajmuYSEKU
- Gl66fMGc3QFfwjIsw2xqlXGa15uL8QzoI8Pq7OXHrtBZWgQnU2Egc6keQcrI2h8xlE0s
- douA==
-X-Gm-Message-State: APjAAAUEjE6vyNu/YCUFNG8f5fWlT/twoJl95mGNPTGRu2XfUcrd29c4
- /IChZwiN0e1NdYMEjr4CCtn9X5LeV4lPcIyamJIwug==
-X-Google-Smtp-Source: APXvYqy9ZihhNwSz15zAc2n9wuqx0KKCFEmVQyQmPiar9gQiv4PEvu699gEh+PcCmRyXpyUO7fCyzGA8P+JoII/zuY4=
-X-Received: by 2002:a67:e951:: with SMTP id p17mr5243152vso.112.1573842878866; 
- Fri, 15 Nov 2019 10:34:38 -0800 (PST)
-MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191105235608.107702-1-samitolvanen@google.com>
- <20191105235608.107702-6-samitolvanen@google.com>
- <20191115153705.GJ41572@lakrids.cambridge.arm.com>
-In-Reply-To: <20191115153705.GJ41572@lakrids.cambridge.arm.com>
-From: Sami Tolvanen <samitolvanen@google.com>
-Date: Fri, 15 Nov 2019 10:34:25 -0800
-Message-ID: <CABCJKucsJxXJ6tBYSify-2FS-P1rC=vEKTo+HdhN2e0K9fcBow@mail.gmail.com>
-Subject: Re: [PATCH v5 05/14] add support for Clang's Shadow Call Stack (SCS)
-To: Mark Rutland <mark.rutland@arm.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=agn5/+Ff+txwdkMYcl4dOnRhb7wogId0OeGIrqnhFKE=;
+ b=DxAMaMk0s+StU91AGe32yTSFdLpRfkLY5ja5X/jbiaKsfnj/eYEgibxGoWXj7OXUPU
+ uovWwtR6zjQiKgOJ62X9IJI9d/mDvKtrOgNYIKtOxiGmzKAXDX9MqNdQxpptt6B2UaCF
+ DHDdCD+Wka7m6MgREJSUdU2pL8gqctGpS3uyKpjoMepGy8pyv5k8yI9l9AJuxJCBnMEO
+ OzgNmzGn2IJqK/G01LcnMNSMUdRzs9F7yMlj9bhvdLeS0g0CBldSv6E3QEFeqII7cJLk
+ Hu7M1PQbhdoOsdZkxnCEtYRTr/1l++U7CCI6pW5frmm51EBlNrSAsRRkfbukoNT7gEqr
+ SM7A==
+X-Gm-Message-State: APjAAAVLtTA0WrxOLvf8943FuH4KqCi197Hmj1sZb4tm5gwyeZYssvIN
+ qd+aVWLT8otsEXohANnE5Jk=
+X-Google-Smtp-Source: APXvYqy8rxlKN7DI2hT1o5s1rEAFlbHl7k3byVewAXowFyTRy4yq+mLGaWY+rDbAndFm3NdD3POjTg==
+X-Received: by 2002:adf:e386:: with SMTP id e6mr16077536wrm.397.1573843410941; 
+ Fri, 15 Nov 2019 10:43:30 -0800 (PST)
+Received: from stbsrv-and-01.and.broadcom.net ([192.19.231.250])
+ by smtp.gmail.com with ESMTPSA id g138sm2620989wmg.11.2019.11.15.10.43.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 15 Nov 2019 10:43:30 -0800 (PST)
+From: Al Cooper <alcooperx@gmail.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v2 00/13] phy: usb: Updates to Broadcom STB USB PHY driver
+Date: Fri, 15 Nov 2019 13:42:10 -0500
+Message-Id: <20191115184223.41504-1-alcooperx@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_103446_444348_14675EA2 
-X-CRM114-Status: GOOD (  11.15  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191115_104333_001728_7D8AEE9A 
+X-CRM114-Status: GOOD (  10.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alcooperx[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -86,8 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,44 +93,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, Al Cooper <alcooperx@gmail.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Srinath Mannam <srinath.mannam@broadcom.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 15, 2019 at 7:37 AM Mark Rutland <mark.rutland@arm.com> wrote:
-> > +config SHADOW_CALL_STACK_VMAP
-> > +     bool
-> > +     depends on SHADOW_CALL_STACK
-> > +     help
-> > +       Use virtually mapped shadow call stacks. Selecting this option
-> > +       provides better stack exhaustion protection, but increases per-thread
-> > +       memory consumption as a full page is allocated for each shadow stack.
->
-> The bool needs some display text to make it selectable.
->
-> This should probably be below SHADOW_CALL_STACK so that when it shows up
-> in menuconfig it's where you'd expect it to be.
->
-> I locally hacked that in, but when building defconfig +
-> SHADOW_CALL_STACK + SHADOW_CALL_STACK_VMAP, the build explodes as below:
+This patchset contains various updates to the Broadcom STB USB Driver.
+The updates include:
+- Add support for 7216 and 7211 Broadcom SoCs which use the new
+  Synopsis USB Controller.
+- Add support for USB Wake
+- Add various bug fixes.
 
-Ugh, thanks for pointing this out. I'll fix this in v6.
+v2 - Changes based on review feedback
+- Add vendor prefix to DT property "syscon-piarbctl"
+- Use standard "wakeup" instead of "wake" for DT "interrupt-names"
 
-Sami
+
+Al Cooper (13):
+  phy: usb: EHCI DMA may lose a burst of DMA data for 7255xA0 family
+  phy: usb: Get all drivers that use USB clks using correct
+    enable/disable
+  phy: usb: Put USB phys into IDDQ on suspend to save power in S2 mode
+  phy: usb: Add "wake on" functionality
+  phy: usb: Restructure in preparation for adding 7216 USB support
+  dt-bindings: Add Broadcom STB USB PHY binding document
+  phy: usb: Add support for new Synopsis USB controller on the 7216
+  phy: usb: Add support for new Synopsis USB controller on the 7211b0
+  phy: usb: fix driver to defer on clk_get defer
+  phy: usb: PHY's MDIO registers not accessible without device installed
+  phy: usb: bdc: Fix occasional failure with BDC on 7211
+  phy: usb: USB driver is crashing during S3 resume on 7216
+  phy: usb: Add support for wake and USB low power mode for 7211 S2/S5
+
+ .../bindings/phy/brcm,brcmstb-usb-phy.txt     |  69 ++-
+ drivers/phy/broadcom/Makefile                 |   2 +-
+ .../phy/broadcom/phy-brcm-usb-init-synopsis.c | 414 ++++++++++++++++++
+ drivers/phy/broadcom/phy-brcm-usb-init.c      | 226 +++++-----
+ drivers/phy/broadcom/phy-brcm-usb-init.h      | 148 ++++++-
+ drivers/phy/broadcom/phy-brcm-usb.c           | 269 ++++++++++--
+ 6 files changed, 943 insertions(+), 185 deletions(-)
+ create mode 100644 drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
