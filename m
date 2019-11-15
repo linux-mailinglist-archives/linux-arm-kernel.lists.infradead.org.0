@@ -2,83 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A37C5FDF25
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 14:42:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93773FDF2B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 14:43:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LNimMdmTCOZuRG9+2aM5VkRqQ2FmBVopN3XmjDjEgdQ=; b=MraKpIKsuP5kiY
-	MFEI5jGtTriFH8XCxybTGPT9UzSWAO+jE4SNRqmk1EYqAF7ebh+/yNxRkHAbfQRuulZ2SZL2KRhEE
-	UWVB4x7Fp6nMj7yadmXTu3pp1nVm8itZs5jIAfdz51WqIUKQr89MGM0mzc12cvh73I14Z44nHdKAL
-	Sc2uAUu3DMhC7zBYCmp2ChIrI6Bva0/BYAzpKmu50+juWt7/OYYOfTtGJ1yR7UK8yETYk9FamjA0g
-	iunlvEK69BQiARt2IlePJp8H8HfTWqHZ+uRQaOmFynZs3ZPXcHhQl+z/af6fv68wLo7Oh6RWMOHM+
-	AqYObuxph6EzYmF2ryng==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5B/eIwBuBuhQUXPl8Kb9ggR3gnV8HjQ0kKvx2Tf4ZZc=; b=S97bxHhH0GovqR
+	QC55OgBeZZulK6Rc9zjXVx+LLnccHJcTI3pj0FYsdGE6zFXpbZqyaoxKbONYOgvzPz0mPQe0yUP1S
+	PxKVRiEL0ZBlDfZm0tbtBm6W7nzMg53psyHlxZIEahU2eLON2iLJknEvdSiDU6eXrW3c6kYbn4k//
+	VX1CQaj2a2dHaH3OP3P1XDjvlir+jc01J7zTDXCVGMEw2db9q/RhnlQACqqZ3L03XN1MWjT8mWagS
+	zS+baY9C3w8otGVPfJ+8fUEcgBHADrHBmYXQgp9LSWJYXVvob1L2zIdTvKmRfLX5ludBKzDb10q4M
+	rjRi/19I180OYatihNmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVbsC-0008WG-IZ; Fri, 15 Nov 2019 13:42:52 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iVbtD-0000o1-RS; Fri, 15 Nov 2019 13:43:55 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVbs0-0008VI-Q8
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 13:42:42 +0000
-Received: by mail-lf1-x142.google.com with SMTP id d6so8081087lfc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 05:42:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=rasmusvillemoes.dk; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=7M8XWf+aSDuZ60G0e6vwA3UVsGqy52moHTICwgTGdKE=;
- b=Xma2EgzKd5UJeq5rjgYO/fzDuIC/Z9BgtHLjQs9+P5c/7/SXXE2ft7Hh+9GwYMfTE+
- 9du2iMEIHbg/0YaeyOJHFdSyMe9GMWHFRsBrm9DXPfQ+JJIx7HZWZ8DNnGCQrqRN50pY
- 8CiCBcoL8DRIdBmVshEqN4b0TeAtXiVOcIOLs=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=7M8XWf+aSDuZ60G0e6vwA3UVsGqy52moHTICwgTGdKE=;
- b=dp77MQr5KIoudM4qU4t+cpmghSvhL9aeragoWJ1aFFQW7K/Njld4htEmu/Q0BvD5Qj
- xcoHcrwssHJw5Biu/BZ7ia609nW7cTXJYp8EZltmGgIpxdqXvVf8xU0BM19Z+vBNMTBX
- TgFawsRFSOVtq0ixzVYxuezT/1b6KZf3+kjZ/9skicZe0yQvUEt5WYCqDZ0+Uhpuv8sc
- 9RvN9asC6k3Uky84+N3TB4rjE/NLm1YiPjJHQtC/vCNOR8piQQ0KkNdErz5JCFds9z/n
- u8U3tQgCufeKOS1Bu1s5BEUC8bxF1/vO4OeN8g/oCkdqbVlq4HGaE9EfzQAhKXxmPrTm
- vkhA==
-X-Gm-Message-State: APjAAAUt4xOpJWgZW/mSGHglgiq6psGOLyyA+iwkR5G4k8DB+12XBjnm
- QtKS7e5hIEghyy2TwZUo6TUIpA==
-X-Google-Smtp-Source: APXvYqwHN2Yvm0PLT+a7BaSRp11SLB5XySfnSHH3TF13kuNUSwKuiAUR9T+ZHUG0/JfvfbuuNjwNSA==
-X-Received: by 2002:ac2:43a3:: with SMTP id t3mr11623097lfl.150.1573825355715; 
- Fri, 15 Nov 2019 05:42:35 -0800 (PST)
-Received: from [172.16.11.28] ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id u4sm4063165ljj.87.2019.11.15.05.42.34
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 15 Nov 2019 05:42:35 -0800 (PST)
-Subject: Re: [PATCH v3 36/36] soc: fsl: qe: remove PPC32 dependency from
- CONFIG_QUICC_ENGINE
-To: kbuild test robot <lkp@intel.com>
-References: <20191101124210.14510-37-linux@rasmusvillemoes.dk>
- <201911152105.ojcD68ZC%lkp@intel.com>
-From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Message-ID: <41765275-dbd5-406e-8ba1-bd0f92b737ee@rasmusvillemoes.dk>
-Date: Fri, 15 Nov 2019 14:42:33 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iVbt1-0000mm-Mu; Fri, 15 Nov 2019 13:43:45 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAFDhENw021665;
+ Fri, 15 Nov 2019 07:43:14 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1573825394;
+ bh=0GMF8waTlZ/mMmEu9OdTiNMpJgRZ1U+24RV0VdCAq3s=;
+ h=Date:From:To:CC:Subject:References:In-Reply-To;
+ b=fXpOKUavZPJUxNL9lEFn7zZNVLFYuhGojcJgORZ0h/BB4qyRFo6mrlCOsH4ERQeHs
+ h9leKq2A0Fj6bzJ4IDPmzVMYiipwgHWHf4mYsJ2/6ss1dHgt4T7A8cxc/hktAUYZHd
+ PabnC59jQNgb5DLLinNwWV5dTN5f0x+2iBMNsWMU=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xAFDhELd079797
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 15 Nov 2019 07:43:14 -0600
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 15
+ Nov 2019 07:43:14 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Fri, 15 Nov 2019 07:43:14 -0600
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAFDhEow098885;
+ Fri, 15 Nov 2019 07:43:14 -0600
+Date: Fri, 15 Nov 2019 07:45:30 -0600
+From: Bin Liu <b-liu@ti.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: Re: [PATCH v2 05/13] usb: musb: create debugfs directory under usb
+ root
+Message-ID: <20191115134530.GB12511@uda0271908>
+Mail-Followup-To: Bin Liu <b-liu@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Felipe Balbi <balbi@kernel.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Peter Chen <Peter.Chen@nxp.com>,
+ Minas Harutyunyan <hminas@synopsys.com>,
+ Cristian Birsan <cristian.birsan@microchip.com>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Kevin Cernekee <cernekee@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Daniel Mack <daniel@zonque.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>,
+ Robert Jarzmik <robert.jarzmik@free.fr>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Stephen Boyd <swboyd@chromium.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ Biju Das <biju.das@bp.renesas.com>,
+ Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, linux-media@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org
+References: <1573541519-28488-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1573541519-28488-5-git-send-email-chunfeng.yun@mediatek.com>
+ <20191112152857.GA5853@uda0271908>
+ <20191114032018.GA122287@kroah.com>
+ <20191114140234.GB5853@uda0271908>
+ <20191115032153.GC793701@kroah.com>
 MIME-Version: 1.0
-In-Reply-To: <201911152105.ojcD68ZC%lkp@intel.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191115032153.GC793701@kroah.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_054240_850831_C0FDCD67 
-X-CRM114-Status: GOOD (  12.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191115_054343_850519_67AF501F 
+X-CRM114-Status: GOOD (  25.49  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,6 +117,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,35 +129,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>, kbuild-all@lists.01.org,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- Scott Wood <oss@buserror.net>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, Qiang Zhao <qiang.zhao@nxp.com>
+Cc: Peter Chen <Peter.Chen@nxp.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, linux-kernel@vger.kernel.org,
+ Minas Harutyunyan <hminas@synopsys.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Fabio Estevam <festevam@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, Kevin Cernekee <cernekee@gmail.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ bcm-kernel-feedback-list@broadcom.com, NXP Linux Team <linux-imx@nxp.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Cristian Birsan <cristian.birsan@microchip.com>, linux-media@vger.kernel.org,
+ Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, Stephen Boyd <swboyd@chromium.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Biju Das <biju.das@bp.renesas.com>,
+ Felipe Balbi <balbi@kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-usb@vger.kernel.org, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Colin Ian King <colin.king@canonical.com>, Shawn Guo <shawnguo@kernel.org>,
+ Daniel Mack <daniel@zonque.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/11/2019 14.31, kbuild test robot wrote:
-> Hi Rasmus,
+On Fri, Nov 15, 2019 at 11:21:53AM +0800, Greg Kroah-Hartman wrote:
+> On Thu, Nov 14, 2019 at 08:02:34AM -0600, Bin Liu wrote:
+> > On Thu, Nov 14, 2019 at 11:20:18AM +0800, Greg Kroah-Hartman wrote:
+> > > On Tue, Nov 12, 2019 at 09:28:57AM -0600, Bin Liu wrote:
+> > > > Hi,
+> > > > 
+> > > > On Tue, Nov 12, 2019 at 02:51:51PM +0800, Chunfeng Yun wrote:
+> > > > > Now the USB gadget subsystem can use the USB debugfs root directory,
+> > > > > so move musb's directory from the root of the debugfs filesystem into
+> > > > > the root of usb
+> > > > 
+> > > > My opinion is this move is unnecessary. I breaks existing debug tools or
+> > > > documentation which is already published on Internet. 
+> > > 
+> > > Having a "root" directory for a single random driver seems like you are
+> > > making your driver a "very important" thing in the overall scheme of the
+> > > kernel, right?  What's wrong with using the usb subdirectory like all
+> > 
+> > Agree, it wasn't the right thing to do at the first place. But now
+> > changing it adds support burden, because people very often refer to the
+> > old information on the internet which no longer matches to the new
+> > location. Basically, it is a cost of ABI change.
 > 
-> Thank you for the patch! Perhaps something to improve:
+> What information says that /sys/kernel/debug/mdev/ is the location for
+> this?  Is it in-kernel?
 
-Hello kbuild
+No, they are not in-kernel, but many places mainly on https://e2e.ti.com
+and http://processors.wiki.ti.com. It basically says to get musb
+regdump, cat /sys/kernel/debug/musb-hdrc.{0,1}/regdump, or to enter test
+mode, do echo _testmode_ > /sys/kernel/debug/musb-hdrc.{0,1}/testmode...
 
-Thanks for your reports, but this has already been fixed. Is there some
-way to indicate to the kbuild bot that it should stop using resources on
-a specific patch set? There's really no point in the bot doing lots of
-builds and sending out reports for a series that has already been
-superseded - and reviewers might easily think that the report concerns
-the latest revision. Perhaps something like
+> > > other USB drivers use (after this patch series is merged)?  That feels
+> > > like a much more "sane" way to handle the wide-open debugfs namespace.
+> > 
+> > Though I commented on this musb patch, my opinion is for this whole
+> > series, either drop the whole series or apply the whole series.
+> 
+> I've applied all but this one and 2 others that did not build properly.
 
-kbuild-ignore: <msg id of cover letter of revision N-1>
+Okay.
 
-in the cover-letter of revision N? Or is there some smarter (automatic)
-way of doing this?
+> > > Yes, there are no rules when it comes to debugfs file names and
+> > > locations, but let's try to be sane please.
+> > 
+> > Fine with me. I can still support questions such as "can't open
+> > /sys/kernel/debug/musb-hdrc.0/testmode: No such file or directory".
+> 
+> What tool looks for that?
 
-Rasmus
+I wrote a usb diagnosis tool called chkusb.sh, which basically checks
+usb related information in
+  - /proc/config.gz
+  - /lib/modules/`uname -r`/kernel/drivers/
+  - /proc/device-tree/
+  - /sys/device/
+  - /sys/kernel/debug/
+
+So whenever I got a report on e2e.ti.com saying that usb doesn't work, I
+just post this script and get a log which would give a clue if there was
+any fundamental mistake in kernel configuration or deployment.
+
+But not a big issue here for this tool regarding this patch set, I can
+update the script to check both locations - /sys/kernel/debug/ and
+/sys/kernel/debug/usb/.
+
+-Bin.
 
 _______________________________________________
 linux-arm-kernel mailing list
