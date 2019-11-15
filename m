@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51CB1FDDB1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 13:26:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69C3FFDDCC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 13:27:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=O63cA6RvMsC5NOtC4vM8d7GMaxDjb4a4nfsdsw0PH3I=; b=Pfu
-	EL2C99ttZFGqdzVuHcswiKkjLwKYNq4CY4Tsx78i741rNM0heF5yfn1pAiXheyGhrygtUMoFKy+qa
-	8sycNo8ALLfRULjphUb7tWBx9SaLWp8+LdwZfFaaZUHNZ6MZSR/Lt/SYYO8q5n+NTF7TAbib45SAz
-	cQI5UOEWPkNL79ToHbr1pEn12ZrMsEAajCxJhUVgYRJB4qPI1WeypVcjYcZY0a24KrV7ub8+NiSye
-	H4k/NhyD4mGPWp3D27O4tieJdQgkqG2aASRMPaQuLmlxmp4KQLffKhotQV8gP/7I2YOEieyAeWWIG
-	sw+zoqa5Y/Noo7hgaawZeJgS1QoPhxA==;
+	References:List-Owner; bh=Ic5hmi4lDzfhhy0+vy5PgHWCP93gVjSwYn20A5md4EM=; b=fDC
+	baZL0/RKtMmGzK8Mp3OA8ktfCD3nik3f4tUyKvIASA3b39Fd13H9ZfDlk8mHs7F3YA16ZsLZsLx3V
+	Yl7JMOltge7OtJD+pDsGge4aoENvfP6n9yi+MmY2BI3njpLaIGTUWcNlIBcW7NEox7C5nZ6sx4c2b
+	xh7gXDdjqXoEIQ34Eck+R++Gk1ASgO8z2KMGlWls+dmVY9I8DanoTPH6o55HdKUhw8ar0srJiVykK
+	piWPhHZKGssDqqOpeL2ZDOygOOab+hOvn1N3JOXOT/qCFUyO13E9/7NIu5j7rBWfXrPrULsp1QVC7
+	PtRYwbWIrjmzI/zeJ95YUSyO6ZYS99w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVagL-0003U1-Pr; Fri, 15 Nov 2019 12:26:33 +0000
+	id 1iVahb-0004jn-Oo; Fri, 15 Nov 2019 12:27:51 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVaf9-0002Xp-ID
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 12:25:21 +0000
+ id 1iVafA-0002YG-6N
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 12:25:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=fWOoEWrncpp1tBUkmKh+q/SzDQz68gyKjX3HADQBBAg=; b=wZ6Hnf8RqUCF
- vNEOfIUKj482smxvOpBKHA71fxQ/5J+thkYLPYLJ2tJVQ1O/WXEpt13+0ZJnK+zb7TcJIBcxsa85m
- Ya3fGE+4hP86h/Ky2aG1zR7Jqas3fz6gh064GpzPFZZX46fYzyko4AF7T0wc5m00IZGz8X/GyAe8Z
- LiOf8=;
+ List-Archive; bh=zQlcfRuhMf4DnEeKX3LiRwpF1ZNWngPsA1ocfsQAJzE=; b=bWUKS8m+8B1X
+ DdqO6H42DLaoYP49wf9+0PyLicG8abC5BI6AIdeLf34DSogA1Zif9eDhsW7CBzvieHDqa75qL0NiS
+ 3smsu664CVVZNzjrgO93U/z92JDUwhl4q4Gz1Z6X+3gduj1q4xams7XVgsrwVhGXOYvoUrhWHnKnU
+ ZSVKQ=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iVaf5-0000Ls-4F; Fri, 15 Nov 2019 12:25:15 +0000
+ id 1iVaf5-0000M0-Om; Fri, 15 Nov 2019 12:25:15 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 9A80B27415A7; Fri, 15 Nov 2019 12:25:14 +0000 (GMT)
+ id 3521B27415A7; Fri, 15 Nov 2019 12:25:15 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Applied "spi: tegra114: Use dma_request_chan() directly for channel
+Subject: Applied "spi: qup: Use dma_request_chan() directly for channel
  request" to the spi tree
-In-Reply-To: <20191113094256.1108-9-peter.ujfalusi@ti.com>
+In-Reply-To: <20191113094256.1108-7-peter.ujfalusi@ti.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191115122514.9A80B27415A7@ypsilon.sirena.org.uk>
-Date: Fri, 15 Nov 2019 12:25:14 +0000 (GMT)
+Message-Id: <20191115122515.3521B27415A7@ypsilon.sirena.org.uk>
+Date: Fri, 15 Nov 2019 12:25:15 +0000 (GMT)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_042519_635648_C2D6832F 
-X-CRM114-Status: GOOD (  13.76  )
+X-CRM114-CacheID: sfid-20191115_042520_283071_1EA529D4 
+X-CRM114-Status: GOOD (  12.59  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -81,10 +81,9 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: radu_nicolae.pirea@upb.ro, alexandre.belloni@bootlin.com,
  s.hauer@pengutronix.de, linux-arm-msm@vger.kernel.org,
  Mark Brown <broonie@kernel.org>, linux-spi@vger.kernel.org,
- linux-kernel@vger.kernel.org, krzk@kernel.org,
- Jon Hunter <jonathanh@nvidia.com>, vkoul@kernel.org, agross@kernel.org,
- ldewangan@nvidia.com, kgene@kernel.org, andi@etezian.org,
- linux-tegra@vger.kernel.org, thierry.reding@gmail.com,
+ linux-kernel@vger.kernel.org, krzk@kernel.org, jonathanh@nvidia.com,
+ vkoul@kernel.org, agross@kernel.org, ldewangan@nvidia.com, kgene@kernel.org,
+ andi@etezian.org, linux-tegra@vger.kernel.org, thierry.reding@gmail.com,
  bjorn.andersson@linaro.org, shawnguo@kernel.org, linus.walleij@linaro.org,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
@@ -95,7 +94,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: tegra114: Use dma_request_chan() directly for channel request
+   spi: qup: Use dma_request_chan() directly for channel request
 
 has been applied to the spi tree at
 
@@ -120,38 +119,40 @@ to this mail.
 Thanks,
 Mark
 
-From 4c973b98cdd3b413216fdb9655a420737c46a4cb Mon Sep 17 00:00:00 2001
+From 194e1d4bc262c2d23ba9a8a5c03855c372ea1b5c Mon Sep 17 00:00:00 2001
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Date: Wed, 13 Nov 2019 11:42:55 +0200
-Subject: [PATCH] spi: tegra114: Use dma_request_chan() directly for channel
- request
+Date: Wed, 13 Nov 2019 11:42:53 +0200
+Subject: [PATCH] spi: qup: Use dma_request_chan() directly for channel request
 
 dma_request_slave_channel_reason() is:
 #define dma_request_slave_channel_reason(dev, name) \
 	dma_request_chan(dev, name)
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Acked-by: Jon Hunter <jonathanh@nvidia.com>
-Link: https://lore.kernel.org/r/20191113094256.1108-9-peter.ujfalusi@ti.com
+Link: https://lore.kernel.org/r/20191113094256.1108-7-peter.ujfalusi@ti.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-tegra114.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/spi/spi-qup.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/spi/spi-tegra114.c b/drivers/spi/spi-tegra114.c
-index e6a450d9b4f0..fc40ab146c86 100644
---- a/drivers/spi/spi-tegra114.c
-+++ b/drivers/spi/spi-tegra114.c
-@@ -666,8 +666,7 @@ static int tegra_spi_init_dma_param(struct tegra_spi_data *tspi,
- 	dma_addr_t dma_phys;
+diff --git a/drivers/spi/spi-qup.c b/drivers/spi/spi-qup.c
+index 2f559e531100..dd3434a407ea 100644
+--- a/drivers/spi/spi-qup.c
++++ b/drivers/spi/spi-qup.c
+@@ -932,11 +932,11 @@ static int spi_qup_init_dma(struct spi_master *master, resource_size_t base)
  	int ret;
  
--	dma_chan = dma_request_slave_channel_reason(tspi->dev,
--					dma_to_memory ? "rx" : "tx");
-+	dma_chan = dma_request_chan(tspi->dev, dma_to_memory ? "rx" : "tx");
- 	if (IS_ERR(dma_chan)) {
- 		ret = PTR_ERR(dma_chan);
- 		if (ret != -EPROBE_DEFER)
+ 	/* allocate dma resources, if available */
+-	master->dma_rx = dma_request_slave_channel_reason(dev, "rx");
++	master->dma_rx = dma_request_chan(dev, "rx");
+ 	if (IS_ERR(master->dma_rx))
+ 		return PTR_ERR(master->dma_rx);
+ 
+-	master->dma_tx = dma_request_slave_channel_reason(dev, "tx");
++	master->dma_tx = dma_request_chan(dev, "tx");
+ 	if (IS_ERR(master->dma_tx)) {
+ 		ret = PTR_ERR(master->dma_tx);
+ 		goto err_tx;
 -- 
 2.20.1
 
