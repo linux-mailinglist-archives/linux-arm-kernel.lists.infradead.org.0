@@ -2,64 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FAD2FD3B5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 05:36:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DA9AFD3BF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 05:42:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wp2QTKbcQ/4UIJRGcWq2+8q+dlqLmX9ABc+tl8rVDE0=; b=k/q0OczVnUj8BY
-	rqIeBAGgtRRsKB8eSbGeMrvxcl0ag5z+3pEi4Zuq3Esy8rLxHdPmtCKozFyjkoyRjih9xibVI9Zhc
-	XckiUkwfV6BG5IKEVzvk7XPPxD74wE5Tn6iA7OZTn+TXr/CtFSL3sH0FyVlce5peeAWo83ePx46ga
-	aRL/408kUp7BDO2tcbCabbCGxXeqwYdmRbM0ub0lTlN4/2EkvRbOBXD5bL0g8q/+02lHNoWyHiwhA
-	i3aWJpCFHOU66tCva5KABpZAEL3XoYDfi28LeJrbcGvD/1iK0WM8h6I07rOx9GlSTvHAFjDI6rykZ
-	2tt6WxGczZNp4nnECO6w==;
+	List-Owner; bh=4MCVLbM8dGa4sDFAnXJHLa1O7fIVhtLzPAU3z1nbY7M=; b=fiJgS9mVe99FpE
+	PgbCidJ9qN2h9AKLZCXUqbHqtByj8RfXrw2DbxRnQoGfb8iiVQSAd47peTjgw/D2AwNSHsgpi5xaG
+	2KH7qccaQ77tbqRr3hA3E1au334co7T5LFSl1M/OZLn8R+v2wQsJ6LPzaFpp5zEGJLreUEqtBvJz+
+	ziD5D8dvYlvtYTEMDrxhmcjGJKcnbWUMzacxRaUHf6z5sEG7OkURJ1gVVopqWOYMz7JkIwdO7pgRH
+	fm48vuU8mMyT5rR0vqQT0u8A9bjKjGvDQi+TtYhL1XKRZyjpQxdFUtbnZK5PkhvWdQaipxXlPVOAd
+	SbO+LXP5ewduIdANQbnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVTLT-0001RL-Py; Fri, 15 Nov 2019 04:36:31 +0000
+	id 1iVTRV-0003M2-G8; Fri, 15 Nov 2019 04:42:45 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVTLL-0001Qp-Pz
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 04:36:25 +0000
-Received: from mail-qt1-f169.google.com (mail-qt1-f169.google.com
- [209.85.160.169])
+ id 1iVTRL-0003Ld-2V
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 04:42:36 +0000
+Received: from mail-qv1-f41.google.com (mail-qv1-f41.google.com
+ [209.85.219.41])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 305ED20730
+ by mail.kernel.org (Postfix) with ESMTPSA id 8252B2072B
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 04:36:22 +0000 (UTC)
+ Fri, 15 Nov 2019 04:42:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573792582;
- bh=MPH8c5t2q8tDKDcSoX1E0hyx3wDVfXgAkaiLLTOUl9c=;
+ s=default; t=1573792954;
+ bh=g3rlB32/6gd8dD5fY3MmF2bhvO5L4Q8Y+YT4GjFr3wQ=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=ZjZudCcCLdf/g3NWLZHBvRh82XdZnMk7eJ22sQiOlw7tmajsXZKqdyDAe98emgwvY
- 6nwvYvjTKteew+ll87yWHPn1c4j5ZnjfE9a9TggXJ8gjIhD6YjphSF3VjD6dWrKRdo
- PqU3R7d1u6K3zfYsHYrO7wKOKe9dIj3mDw5EZhWs=
-Received: by mail-qt1-f169.google.com with SMTP id y39so9553205qty.0
+ b=KGrd5zOZNBxWzcSvrPXyvSbFC3vxoGQoxybEK02Kveb4aW4JhvHNhVZ8hWxpFpRsY
+ nMc+/3ukHPjrlhfLtZM4uxDLglMA/kI06ihg4EoH25/6ElqmesHF4JwyKppZ1mic7B
+ H4tNC+rKqauChwU3xSHJPphJwawp0FskLwe2C62Q=
+Received: by mail-qv1-f41.google.com with SMTP id y18so3335799qve.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 20:36:22 -0800 (PST)
-X-Gm-Message-State: APjAAAVkC7lfcTs279Na3SkKPubIL+7S79DOu2xyGs2rI6Sdh16uq7AC
- a53hjcILQNlDh27J21Mtv5e+qdmiHsgIrCGVWuU=
-X-Google-Smtp-Source: APXvYqyEVfUJcKNuJBdUvGkZuJhPdcKZNhu5NkZlypIG9JAM/A9WKKwqK8Q92zF/Y3Kh5IOc/QoPwWQgkR3S7XljIAA=
-X-Received: by 2002:ac8:1858:: with SMTP id n24mr11375005qtk.334.1573792581301; 
- Thu, 14 Nov 2019 20:36:21 -0800 (PST)
+ Thu, 14 Nov 2019 20:42:34 -0800 (PST)
+X-Gm-Message-State: APjAAAWsBSMBX61ZEJRdkB7Zxfjh8DjTLCOGW2ZmLKsh8JVePY0S5cDz
+ 0lsXyyLedyZp/Yo3hv3Vgyca/n/oE83voClMzjE=
+X-Google-Smtp-Source: APXvYqzhjv5G4OmRuommd+stX/u8tXaIf+kgtocwlFijjGY3iPO27FpXOJ5UgCEDdEl/zBvDultfDqkQncbaw+8Q4dM=
+X-Received: by 2002:ad4:462d:: with SMTP id x13mr11789533qvv.105.1573792953648; 
+ Thu, 14 Nov 2019 20:42:33 -0800 (PST)
 MIME-Version: 1.0
 References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
- <20191108130123.6839-47-linux@rasmusvillemoes.dk>
-In-Reply-To: <20191108130123.6839-47-linux@rasmusvillemoes.dk>
+ <20191108130123.6839-46-linux@rasmusvillemoes.dk>
+In-Reply-To: <20191108130123.6839-46-linux@rasmusvillemoes.dk>
 From: Timur Tabi <timur@kernel.org>
-Date: Thu, 14 Nov 2019 22:35:43 -0600
-X-Gmail-Original-Message-ID: <CAOZdJXUX2cZfaQTkBdNrwD=jT2399rZzRFtDj6vNa==9Bmkh5A@mail.gmail.com>
-Message-ID: <CAOZdJXUX2cZfaQTkBdNrwD=jT2399rZzRFtDj6vNa==9Bmkh5A@mail.gmail.com>
-Subject: Re: [PATCH v4 46/47] net: ethernet: freescale: make UCC_GETH
- explicitly depend on PPC32
+Date: Thu, 14 Nov 2019 22:41:55 -0600
+X-Gmail-Original-Message-ID: <CAOZdJXUibQ6RM8O4CfkYBdGsg+LMcE2ZoZEQ4txn2yvquUWwCA@mail.gmail.com>
+Message-ID: <CAOZdJXUibQ6RM8O4CfkYBdGsg+LMcE2ZoZEQ4txn2yvquUWwCA@mail.gmail.com>
+Subject: Re: [PATCH v4 45/47] net/wan/fsl_ucc_hdlc: reject muram offsets above
+ 64K
 To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_203623_865621_CB2A7DCC 
-X-CRM114-Status: UNSURE (   9.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191114_204235_134522_A70F40A1 
+X-CRM114-Status: GOOD (  10.47  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -100,13 +99,18 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Fri, Nov 8, 2019 at 7:04 AM Rasmus Villemoes
 <linux@rasmusvillemoes.dk> wrote:
->
-> Currently, QUICC_ENGINE depends on PPC32, so this in itself does not
-> change anything. In order to allow removing the PPC32 dependency from
-> QUICC_ENGINE and avoid allmodconfig build failures, add this explicit
-> dependency.
 
-Can you add an explanation why we don't want ucc_geth on non-PowerPC platforms?
+> diff --git a/drivers/net/wan/fsl_ucc_hdlc.c b/drivers/net/wan/fsl_ucc_hdlc.c
+> index 8d13586bb774..f029eaa7cfc0 100644
+> --- a/drivers/net/wan/fsl_ucc_hdlc.c
+> +++ b/drivers/net/wan/fsl_ucc_hdlc.c
+> @@ -245,6 +245,11 @@ static int uhdlc_init(struct ucc_hdlc_private *priv)
+>                 ret = -ENOMEM;
+>                 goto free_riptr;
+>         }
+> +       if (riptr != (u16)riptr || tiptr != (u16)tiptr) {
+
+"riptr/tiptr > U16_MAX" is clearer.
 
 _______________________________________________
 linux-arm-kernel mailing list
