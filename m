@@ -2,88 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77513FD66A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 07:25:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33666FD677
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 07:32:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2V0OjI3jNttYZKUP7DYM4ueiq3zPKrv7SAC//s+zumE=; b=d54Q3+hf5OTl4e
-	kIxP1TI2Xln701RiE9cKLpIz2EAAkeEJMORsA88sucKfKG17LqqXd/O1n8hSvxi58FG/muztP7s1+
-	Bf1hsOJEdWM049AgJ418O2rSGY9l3MPBN5WGAzVn1ws2fXmA1CALArbR0VOrL8eL1kfEmNw85M5Pb
-	zuhXukKt7+3Mjt1AmJwSrWMmValaN5dWtOybFp46nxamk8TxhNO/Q5m0Pf5VEZdvBTmzvBta4xHcm
-	+jZ7xEyqn2YddARmBQtQO1ukzccbYt1Z/pdiRoA6q+FumeEXo1lOOxxeKfGEZ5557dLTQ/ALJy1JN
-	RfwoO4kIYHULXmpcIMtg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TPsg29q7ZuFrZ4e7FUP63XzQOlwen6bt3/4aCuB81jk=; b=tAbTm+zkxFMKdj
+	+fibsIC4ZzS9A8zuMhOL3VOg/h0ikeimgDn3t1Za/Zfm4736yGOBUsp6ICLm9EpKW9SsV9mXDI3Ip
+	GiHwKeLbTYUBkp9cFFknt7cWs3I5HGcf15gZreOW6+3qCFE7xkZqXPB+84MGCuX+i4zV/EiavqxXF
+	1jcJgCA4r9o/x+9NjO+vNr5v9kHbh7UDSrPMyB5O4sb1ZnUULzzayg9EKFzTpNaQkY5c8ZmZy2GWK
+	mAuXGdKmuAkuwux6SpQotyz6Y1w+y9X9uO74NorJl6+B0TNvjw8Dw7lKsNckveMaipgNoUnFuaY5C
+	4ze0+wLZtTNEDv09Zp/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVV2o-0006XI-Vn; Fri, 15 Nov 2019 06:25:22 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iVV9t-00012P-C5; Fri, 15 Nov 2019 06:32:41 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVV2c-0006Wz-49
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 06:25:11 +0000
-Received: by mail-pf1-x441.google.com with SMTP id p24so5954186pfn.4
+ id 1iVV9l-00011y-6p
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 06:32:34 +0000
+Received: by mail-pl1-x644.google.com with SMTP id bb5so3943910plb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 22:25:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=emY2gm5TsWVFMMimxBC4143icxj0Lbfx5oWae/Wjzvg=;
- b=deE53lHyv3gBGOhbVrzsmx5AS+FgnvHsukhfzzzf8IlWkABanwS1kPT7d9+GGS7SLq
- 9vgDdWBzjQ1sqInHEcAwxncYtJ9ANUZRYKU9e3lUOd0rEauvyQOD9S28eJFfG617YpuF
- v9tXvhSw8nJEdeJQuaapRemOoqJTWTdpmkzVOF+1dGRbcONQLOG2GyGC6JbevBPIaJ4L
- Lg2VVozbDvEVzmuh2GSMJ3eS9OpPNshjmxhJMnv6H47/BAvsCf7LY+TwKAMn6f/5M9F4
- 5Z6Nt4FOsLwyr6TplE5YbIDUAKYeKFg0armnFHusn0X4SgEYgFV0LJicnKyEZOcVx1hA
- ENjQ==
+ Thu, 14 Nov 2019 22:32:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=q3ePoHPIIdr3W7D+aaS4Z60EnVlbf0EDqLIH1S2hQUU=;
+ b=IDUmX0KGEbj6muhIKJyL7HEhTXwt+PkuOrsqDIMdJNfODpcksOOJ4zuhsAIsOr/Oce
+ U27ZwTq8v6TVX2+Mm7OMb2JyPNhU+gFqNK6itxctNYK+T7Beoe3iwMML41GMjVpy7iRW
+ p9QrS6/uZ7hhBUVoYO1vBF2n7h4u0ac3aKJM3Sv2mS82gGvsO9ZSsHCIng271RLEqKgc
+ ussy0+OzHFTn9oj0QukKglzMDdkO5Xk8PZSKKceMb0VCOSrLdyAgGnyrSGxVbGhJW3kf
+ iJ53JmuF4I2o6rTRRvcX3VwVUcWOuNhknIkWTpzAgKryWtidmIWwgK8nYkLweoAu4GC+
+ 4LOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=emY2gm5TsWVFMMimxBC4143icxj0Lbfx5oWae/Wjzvg=;
- b=c+prHUCDZJCWfDHt4ErIne0l3Q6EsJ0QFHXk+xVtykUoLm3Cz6q8g1wlaXvnIK1vRF
- ChbrdAJafody9lkA/nphW4ZGQuznyyRJVkfXZTko0QJmEC28SKvlKbmnKQmTablRIVr5
- nVnu5Q6nw0PmRzhTBD1yk1tzh5bPFfAJ4q8cO1yZ3LJuxNO81FD5PR+UtWk+zFDEAQ+6
- hxuuy3Bjnha0DBAiF++im3GDlqFku+orXaacDWF+Rh2s/jDihMThFddgnrSvZV62SRo/
- ZrnXZM4K8YyJo7FN/mytO8Lu0BKL4svH444ByKOvbUcYg1q8CFJ8zhn8aYJB8IzmAQ5t
- K7hQ==
-X-Gm-Message-State: APjAAAWnKJpcds9siGBCQMfxQDq7SEiBQwZN6/QGtto0AE/y5KOJ/Yn6
- XWW3GEdfPH+rY2onqfvwRgI=
-X-Google-Smtp-Source: APXvYqx2LRk8ZsBsVdFB5I3fmxd1WHEZUGZSqXkZVvYdDc+YC5TohGqEXM7LaPk0zlzoKpxMqoJlAQ==
-X-Received: by 2002:a17:90a:a616:: with SMTP id
- c22mr17996247pjq.46.1573799109294; 
- Thu, 14 Nov 2019 22:25:09 -0800 (PST)
-Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([202.120.40.82])
- by smtp.gmail.com with ESMTPSA id u9sm9256060pfm.102.2019.11.14.22.25.04
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=q3ePoHPIIdr3W7D+aaS4Z60EnVlbf0EDqLIH1S2hQUU=;
+ b=uktn7mJHQP+yq1FaqtWo9p4JCvxnKinzS8ZB3Sh+o9YogzpOzocIVMmhV3P9uau4gC
+ Hzf6I8SNErhc1mW+aGayn7Kt+oL3s555MuW69YcJue9ggg6qSfXCVC/tu9sJo04M0E4q
+ K6uS10r4B0yfLLtVuC64VB6/YnxVNCTWZ4tPel47n2/N91t6DnjI/zTpE9cWRxSZrxmC
+ 4j5MBvh357/SpsheMxSaTKvFCefOf5wx8W8TiqVdatWdSWyb9XgyeiVDIKesS5v/jRqX
+ jPGunqYSuk4HiZK05Nw1ySTYZE3Sj8h6o2lm3Jjt5MpAkzSb04PSw1W/OtR3xybRFJ4F
+ cliw==
+X-Gm-Message-State: APjAAAUm1u7Tx6tIzpSnHHJ/OaQ2r2iFm6S+zbk5X811y+6jOERuBjxz
+ fApu3lMwzQDJWJJauKPLPPNegA==
+X-Google-Smtp-Source: APXvYqwXmWhg5Qpo4vphioNQf1z/8vt/0yg96EIeaEoylI37/2yBLu1fWTS4R30QXtIhmfgqLJ6KzA==
+X-Received: by 2002:a17:90a:bf16:: with SMTP id
+ c22mr17129860pjs.83.1573799551704; 
+ Thu, 14 Nov 2019 22:32:31 -0800 (PST)
+Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id p16sm9058430pfn.171.2019.11.14.22.32.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 14 Nov 2019 22:25:08 -0800 (PST)
-From: Chuhong Yuan <hslester96@gmail.com>
-To: 
-Subject: [PATCH] net: gemini: add missed free_netdev
-Date: Fri, 15 Nov 2019 14:24:54 +0800
-Message-Id: <20191115062454.7025-1-hslester96@gmail.com>
-X-Mailer: git-send-email 2.24.0
+ Thu, 14 Nov 2019 22:32:30 -0800 (PST)
+Date: Thu, 14 Nov 2019 22:32:28 -0800
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Fabien Dessenne <fabien.dessenne@st.com>
+Subject: Re: [PATCH v3] remoteproc: stm32: fix probe error case
+Message-ID: <20191115063228.GS3108315@builder>
+References: <1573635167-24590-1-git-send-email-fabien.dessenne@st.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1573635167-24590-1-git-send-email-fabien.dessenne@st.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_222510_190175_1B9D4039 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.6 (+)
+X-CRM114-CacheID: sfid-20191114_223233_379159_F3C30532 
+X-CRM114-Status: GOOD (  20.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [202.120.40.82 listed in dnsbl.sorbs.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hslester96[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (hslester96[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -102,39 +99,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, Hans Ulli Kroll <ulli.kroll@googlemail.com>,
- Chuhong Yuan <hslester96@gmail.com>, linux-kernel@vger.kernel.org,
- "David S . Miller" <davem@davemloft.net>,
- Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org
+Cc: Ohad Ben-Cohen <ohad@wizery.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Loic Pallardy <loic.pallardy@st.com>,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This driver forgets to free allocated netdev in remove like
-what is done in probe failure.
-Add the free to fix it.
+On Wed 13 Nov 00:52 PST 2019, Fabien Dessenne wrote:
 
-Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
----
- drivers/net/ethernet/cortina/gemini.c | 1 +
- 1 file changed, 1 insertion(+)
+> If the rproc driver is probed before the mailbox driver and if the rproc
+> Device Tree node has some mailbox properties, the rproc driver probe
+> shall be deferred instead of being probed without mailbox support.
+> 
+> Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
+> ---
+> Changes since v2: free other requested mailboxes after one request fails
+> Changes since v1: test IS_ERR() before checking PTR_ERR()
+> ---
+>  drivers/remoteproc/stm32_rproc.c | 12 ++++++++++--
+>  1 file changed, 10 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+> index 2cf4b29..4b67480 100644
+> --- a/drivers/remoteproc/stm32_rproc.c
+> +++ b/drivers/remoteproc/stm32_rproc.c
+> @@ -310,7 +310,7 @@ static const struct stm32_mbox stm32_rproc_mbox[MBOX_NB_MBX] = {
+>  	}
+>  };
+>  
+> -static void stm32_rproc_request_mbox(struct rproc *rproc)
+> +static int stm32_rproc_request_mbox(struct rproc *rproc)
+>  {
+>  	struct stm32_rproc *ddata = rproc->priv;
+>  	struct device *dev = &rproc->dev;
+> @@ -329,10 +329,16 @@ static void stm32_rproc_request_mbox(struct rproc *rproc)
+>  
+>  		ddata->mb[i].chan = mbox_request_channel_byname(cl, name);
+>  		if (IS_ERR(ddata->mb[i].chan)) {
+> +			if (PTR_ERR(ddata->mb[i].chan) == -EPROBE_DEFER) {
+> +				ddata->mb[i].chan = NULL;
 
-diff --git a/drivers/net/ethernet/cortina/gemini.c b/drivers/net/ethernet/cortina/gemini.c
-index e736ce2c58ca..a8f4c69252ff 100644
---- a/drivers/net/ethernet/cortina/gemini.c
-+++ b/drivers/net/ethernet/cortina/gemini.c
-@@ -2524,6 +2524,7 @@ static int gemini_ethernet_port_remove(struct platform_device *pdev)
- 	struct gemini_ethernet_port *port = platform_get_drvdata(pdev);
- 
- 	gemini_port_remove(port);
-+	free_netdev(port->netdev);
- 	return 0;
- }
- 
--- 
-2.24.0
+So this relies on the caller jumping to stm32_rproc_free_mbox() to
+release a subset of ddata->mb[x].chan. While this works I find it error
+prone and would prefer the idiomatic solution of cleaning things up, in
+this function, before returning.
 
+So, could you please goto a snippet that loops backwards from i-- to 0
+calling mbox_free_channel() and then return -EPROBE_DEFER instead?
+
+Thanks,
+Bjorn
+
+> +				return -EPROBE_DEFER;
+> +			}
+>  			dev_warn(dev, "cannot get %s mbox\n", name);
+>  			ddata->mb[i].chan = NULL;
+>  		}
+>  	}
+> +
+> +	return 0;
+>  }
+>  
+>  static int stm32_rproc_set_hold_boot(struct rproc *rproc, bool hold)
+> @@ -596,7 +602,9 @@ static int stm32_rproc_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		goto free_rproc;
+>  
+> -	stm32_rproc_request_mbox(rproc);
+> +	ret = stm32_rproc_request_mbox(rproc);
+> +	if (ret)
+> +		goto free_mb;
+>  
+>  	ret = rproc_add(rproc);
+>  	if (ret)
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
