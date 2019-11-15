@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8B0DFE4C8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 19:18:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D776AFE4FA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 19:35:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fbP7gRGIn8dEGK4jg9jUqFlDNxhYOtHBGU6LCibeG6Q=; b=U0grmx3elk5yUkRFV6S4YkdfQ
-	T+2tQ9n82K/DATv5Iwv8JBw4NRFNIBAdBDrHLTd3HRuALI1UlfhKlUIp+ELAOrRDI9oFr38A3CAl7
-	LViVcJDtiIq6NEVDv0W/fMGL+zTo5K3b+1SQ1t8aTjnbYQGURZGqJgo/S6GfLbIHWWReNW2gnDw9g
-	7uAGYpaCliQ9gFzd+gh6KR8oQ1t0gAdkbAqkwAkvS0hh8Jb7xX/AGrNDSfeHk3VKtXTtqimk8IvB5
-	SQtYLBIeqsaSkn0vTr0Rp3vc4Rkg1LmC8tKOOJXkOYh3eslNytENP6Ua5WdaDWJVTWbgriB+XfcJG
-	rhunOPJPw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l0lsvtzPuXzqBqjUwF2zRsr+IrZc3SuXiUYsc+5Jl+Y=; b=sAeRklmlWtDlXp
+	mSLJzQGDGz2IjlYEIKIdrze6bhRedg8TWormLrS2Td8bv5FFUuONfAc29OeTFKZuuSxY7GjW0cSKQ
+	DhtXdjRea8aBDzsTQl9Zgg5ZwK0sAbUNNumdYoXWWJZXidJQS1jIfWd6CkkyaS4ICqAgOE8AVRwZm
+	EW4KzXK/GfwwQXsdvHAmIpNKh3tkobnA1Ofl9Bw6TUmkb7RqoIzoOCPRJkTaNb36EtQgk7Ndm2XtW
+	1khHdG7ZA2riqn07xvHFKQlNC+wGKsOp37tkac7ALO1Pz3t3vOr8zJOKGVMWcIsNsQx8Bxnkx7Plv
+	tH/uugpU01iebjXX8uXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVgAS-0003XA-4j; Fri, 15 Nov 2019 18:18:00 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iVgQp-0000Ds-5X; Fri, 15 Nov 2019 18:34:55 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVgAJ-0003We-DT
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 18:17:52 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xAFI7o6r005156; Fri, 15 Nov 2019 19:17:46 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=R0AG0K+FiTWH1VDAdSpoZmFq3tYATmR+PjAfYmovt68=;
- b=sdrq5T4a9WOf6MFyAas2MYoe3fnYWaZgrxVxFxJ5KqzpDfYchemixCcxUlh7Zz5tSRvj
- RbOPu21YJRFbI4Q3+XL4hSufxAnYEzTgPNUjHsxhS0yQlvzEPaiMDYyE55OFQuPzjuGo
- obZrA/vd8A2ekPxA0Nsal7TE9QEAbLnslc3RP/6f3Dzmf7R/l4Pye59h4aKFLAto9ZWg
- HsD9rEuP6q82yfuL2fOYw6lpslXv7tmMiFL7SZsJjQ9AmrROLcj2V4NYY46b7eBZf1NC
- gcLIq1Wm+zxAW9ZrsVJuYG+xCxNZywb1/dda6fQSUzyU2vipuArQ7RCTZVr5nmvfmm1R xg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2w7psfntuq-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 15 Nov 2019 19:17:46 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A840510002A;
- Fri, 15 Nov 2019 19:17:45 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 96E0D2129DA;
- Fri, 15 Nov 2019 19:17:45 +0100 (CET)
-Received: from lmecxl0912.lme.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 15 Nov
- 2019 19:17:44 +0100
-Subject: Re: [PATCH] ARM: dts: stm32: remove unused rng interrupt
-To: Benjamin Gaignard <benjamin.gaignard@st.com>, <robh+dt@kernel.org>,
- <mark.rutland@arm.com>, <lionel.debieve@st.com>
-References: <20191115100651.17754-1-benjamin.gaignard@st.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <b3759a65-99e1-d846-b60b-576dfa9c9f6e@st.com>
-Date: Fri, 15 Nov 2019 19:17:43 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iVgQg-0000D6-D4
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 18:34:47 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id 190so6952908vss.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 Nov 2019 10:34:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=z/RQj5FqYPBFFb/BHpJq3oq0/JIX3F5mcr3Ic1KDLoA=;
+ b=DPVoi3lqXCZqeWh9romeMaws5hqXk7f+VlyR9XfhSR/9BdSIhcYmEux7SQ5St6jgAv
+ Qy7JHhLn5W/E49pgWgOuvApN0oQk7kKUVdvzqM0GYzY6xGnHrcu3/C3H75y46ixSvuca
+ LjPAO51k95incrTQsuJOy8ZRL6zlZ92V+cSt7WAY8zd/QGfPmISheb/46Q0qXikywE7H
+ 4Xh/pOiL99Mk+H/Q9TdrDS1OLq9XHIwJxh3HXyW7oVjDzKgHZwFJFMojZFKSuD9lUD8s
+ TsrwyDeDC5tuRiLuIUH3CjrVYpkyH7ytqD6EnefisDfsVDoa6xNUGa6ZrfAwBeh0RQqM
+ vZrQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=z/RQj5FqYPBFFb/BHpJq3oq0/JIX3F5mcr3Ic1KDLoA=;
+ b=WDM50PsJdqvsS//PzsTdCZfbCHia2fE9CY61SMuhJnfRmNjqWjisk5cjcdKknPKYj/
+ bZIqjFKApi/Jg6Qvc7rTPduArwKf2McfEDgl1FbYY+lx4SEK5Al1WytQmUfSzc4sLjKY
+ TnPS8PPIaV7dXSEw4sacetdL1SfGavRSrmmGBfa+YbmsGnJ4mQmE/+Nk4EmNjQAbk4UG
+ FbdtHylA0wZcBsXSdnKZ/vfWjjGaMaATFDNE79v1oWR2QV+bI5jtYH0Y6GjajmuYSEKU
+ Gl66fMGc3QFfwjIsw2xqlXGa15uL8QzoI8Pq7OXHrtBZWgQnU2Egc6keQcrI2h8xlE0s
+ douA==
+X-Gm-Message-State: APjAAAUEjE6vyNu/YCUFNG8f5fWlT/twoJl95mGNPTGRu2XfUcrd29c4
+ /IChZwiN0e1NdYMEjr4CCtn9X5LeV4lPcIyamJIwug==
+X-Google-Smtp-Source: APXvYqy9ZihhNwSz15zAc2n9wuqx0KKCFEmVQyQmPiar9gQiv4PEvu699gEh+PcCmRyXpyUO7fCyzGA8P+JoII/zuY4=
+X-Received: by 2002:a67:e951:: with SMTP id p17mr5243152vso.112.1573842878866; 
+ Fri, 15 Nov 2019 10:34:38 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191115100651.17754-1-benjamin.gaignard@st.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG8NODE3.st.com (10.75.127.24) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-11-15_05:2019-11-15,2019-11-15 signatures=0
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191105235608.107702-1-samitolvanen@google.com>
+ <20191105235608.107702-6-samitolvanen@google.com>
+ <20191115153705.GJ41572@lakrids.cambridge.arm.com>
+In-Reply-To: <20191115153705.GJ41572@lakrids.cambridge.arm.com>
+From: Sami Tolvanen <samitolvanen@google.com>
+Date: Fri, 15 Nov 2019 10:34:25 -0800
+Message-ID: <CABCJKucsJxXJ6tBYSify-2FS-P1rC=vEKTo+HdhN2e0K9fcBow@mail.gmail.com>
+Subject: Re: [PATCH v5 05/14] add support for Clang's Shadow Call Stack (SCS)
+To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_101751_736857_CEFB44AB 
-X-CRM114-Status: GOOD (  17.55  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191115_103446_444348_14675EA2 
+X-CRM114-Status: GOOD (  11.15  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -86,6 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,41 +99,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
+On Fri, Nov 15, 2019 at 7:37 AM Mark Rutland <mark.rutland@arm.com> wrote:
+> > +config SHADOW_CALL_STACK_VMAP
+> > +     bool
+> > +     depends on SHADOW_CALL_STACK
+> > +     help
+> > +       Use virtually mapped shadow call stacks. Selecting this option
+> > +       provides better stack exhaustion protection, but increases per-thread
+> > +       memory consumption as a full page is allocated for each shadow stack.
+>
+> The bool needs some display text to make it selectable.
+>
+> This should probably be below SHADOW_CALL_STACK so that when it shows up
+> in menuconfig it's where you'd expect it to be.
+>
+> I locally hacked that in, but when building defconfig +
+> SHADOW_CALL_STACK + SHADOW_CALL_STACK_VMAP, the build explodes as below:
 
-On 11/15/19 11:06 AM, Benjamin Gaignard wrote:
-> Interrupt has never be used in rng driver so remove it from DT.
-> 
-> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-> ---
->   arch/arm/boot/dts/stm32f429.dtsi | 1 -
->   1 file changed, 1 deletion(-)
-> 
-> diff --git a/arch/arm/boot/dts/stm32f429.dtsi b/arch/arm/boot/dts/stm32f429.dtsi
-> index 5c8a826b3195..196817da0c1d 100644
-> --- a/arch/arm/boot/dts/stm32f429.dtsi
-> +++ b/arch/arm/boot/dts/stm32f429.dtsi
-> @@ -789,7 +789,6 @@
->   		rng: rng@50060800 {
->   			compatible = "st,stm32-rng";
->   			reg = <0x50060800 0x400>;
-> -			interrupts = <80>;
->   			clocks = <&rcc 0 STM32F4_AHB2_CLOCK(RNG)>;
->   
->   		};
-> 
+Ugh, thanks for pointing this out. I'll fix this in v6.
 
-Applied on stm32-next. Next time, please indicate (at least in the 
-commit title) for which SOC the patch is targeted.
-
-Alex
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
