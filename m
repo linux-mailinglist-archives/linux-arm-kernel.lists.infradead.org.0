@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17598FDA2C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 10:59:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D793DFDA74
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 11:05:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RbgGQWnY8fn8gvQh5RW/ia+vFxMmoxsmoonEF0npRTM=; b=UizbnjWjbl+Zx9WJ+TDtTerwK
-	QTnwKJN15yq0LK0XtDtG5RUY8uTSRO33XlT+phLo6zaRjGIP/mW9iuU1dVBeMgy42GL/Wrr/oqaV4
-	tC2i4sBnYorI7OL6BykXO4CPVAY0o27/Q08A8bSDBV/Zsc0DLKctJoc0wDcmDhT65/0TjGWfEgEsW
-	7eja4RV5ppbTof9t99rwO2kOGzHZw5eZ0Ldxb7mBulXGZDw1ne7n5oI84+APdq4NKQ/+gyOwVYld4
-	GA+aYIiwv4a/M4nX5K+EjSqbEXjhN8jjnLd2zfmfsqsXAyyqSuP+fCre2+nY+MAdyNywkGeNYmLZA
-	YeLnnWvvA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=6+RG+n7sa80YWGTZFSnZ6XMdPPl2+6WZm0JKCMpnmgo=; b=Uc04MxlV2sAhBE
+	RYowhQAxLlP0bGAUeMyzxxQLIcOcYaoitf0BCZD5R0+mEELi3LUV2AoiLBgeQGqhBg7ynqPrW9QJL
+	+/PxzgGOUa5A18vxhY2gzFNEAFtQ0NQSSX1UGsXddckT7TqjePGqhIb49pq69lehSUdhKZXrU/YCd
+	QYfNQU+T/lhewouMOdMETMsBeqJzjIO65gjxXjihOPPgJ0D11RkgvNRFgETXA3evBVX+Dv6oA5yqW
+	GVFN4Ocb8yU1luH++lX+Kb1dG6rGewJe8pY2g6FB1neNwqOqVE1myfRozk0Y4CIwWowK/NkYi3q0W
+	zhBHlxaPDBt5W3EcoUPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVYNa-0000EL-TP; Fri, 15 Nov 2019 09:59:02 +0000
-Received: from gecko.sbs.de ([194.138.37.40])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVYNP-000083-Sm
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 09:58:53 +0000
-Received: from mail1.sbs.de (mail1.sbs.de [192.129.41.35])
- by gecko.sbs.de (8.15.2/8.15.2) with ESMTPS id xAF9wYvb017753
- (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 15 Nov 2019 10:58:34 +0100
-Received: from [139.22.40.153] ([139.22.40.153])
- by mail1.sbs.de (8.15.2/8.15.2) with ESMTP id xAF9wWAJ021696;
- Fri, 15 Nov 2019 10:58:32 +0100
-Subject: Re: [PATCH 2/2] arm64: export __hyp_stub_vectors
-To: Peng Fan <peng.fan@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "will@kernel.org" <will@kernel.org>
-References: <1573810972-2159-1-git-send-email-peng.fan@nxp.com>
- <1573810972-2159-2-git-send-email-peng.fan@nxp.com>
-From: Jan Kiszka <jan.kiszka@siemens.com>
-Message-ID: <3aeabfb9-0680-08f6-49bc-38930c7a23df@siemens.com>
-Date: Fri, 15 Nov 2019 10:58:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+	id 1iVYTc-0002MF-BT; Fri, 15 Nov 2019 10:05:16 +0000
+Received: from 60-251-196-230.hinet-ip.hinet.net ([60.251.196.230]
+ helo=ironport.ite.com.tw)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iVYTE-0002KS-Td; Fri, 15 Nov 2019 10:04:54 +0000
+Received: from unknown (HELO mse.ite.com.tw) ([192.168.35.30])
+ by ironport.ite.com.tw with ESMTP; 15 Nov 2019 18:04:44 +0800
+Received: from csbcas.internal.ite.com.tw (csbcas1.internal.ite.com.tw
+ [192.168.65.46]) by mse.ite.com.tw with ESMTP id xAFA4gwv031714;
+ Fri, 15 Nov 2019 18:04:42 +0800 (GMT-8)
+ (envelope-from allen.chen@ite.com.tw)
+Received: from allen-VirtualBox.internal.ite.com.tw (192.168.70.14) by
+ csbcas1.internal.ite.com.tw (192.168.65.45) with Microsoft SMTP Server (TLS)
+ id 14.3.352.0; Fri, 15 Nov 2019 18:04:42 +0800
+From: allen <allen.chen@ite.com.tw>
+To: 
+Subject: [PATCH v4 0/4] IT6505 cover letter
+Date: Fri, 15 Nov 2019 17:52:16 +0800
+Message-ID: <1573811564-320-1-git-send-email-allen.chen@ite.com.tw>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-In-Reply-To: <1573810972-2159-2-git-send-email-peng.fan@nxp.com>
-Content-Language: en-US
+X-Originating-IP: [192.168.70.14]
+X-MAIL: mse.ite.com.tw xAFA4gwv031714
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_015852_222731_177D54E1 
-X-CRM114-Status: GOOD (  15.17  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191115_020453_090893_8C964912 
+X-CRM114-Status: UNSURE (   7.23  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 3.7 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (3.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 TVD_RCVD_IP            Message was received from an IP address
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [194.138.37.40 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
+ 3.3 TO_NO_BRKTS_DYNIP      To: lacks brackets and dynamic rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,68 +67,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alice Guo <alice.guo@nxp.com>,
- "ralf.ramsauer@oth-regensburg.de" <ralf.ramsauer@oth-regensburg.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "james.morse@arm.com" <james.morse@arm.com>,
- "allison@lohutok.net" <allison@lohutok.net>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
+Cc: Maxime Ripard <mripard@kernel.org>, "open list:OPEN FIRMWARE AND
+ FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
+ Jau-Chih Tseng <Jau-Chih.Tseng@ite.com.tw>, Allen Chen <allen.chen@ite.com.tw>,
+ Jonas Karlman <jonas@kwiboo.se>, open list <linux-kernel@vger.kernel.org>,
+ "open list:DRM
+ DRIVERS" <dri-devel@lists.freedesktop.org>, "open list:DRM DRIVERS FOR
+ NVIDIA TEGRA" <linux-tegra@vger.kernel.org>, "moderated list:ARM/Mediatek SoC
+ support" <linux-mediatek@lists.infradead.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Pi-Hsun Shih <pihsun@chromium.org>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ Shawn Guo <shawnguo@kernel.org>, Rob Herring <robh@kernel.org>, "moderated
+ list:ARM/Mediatek SoC support" <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15.11.19 10:45, Peng Fan wrote:
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> External hypervisors, like Jailhouse, need this address when they are
-> deactivated, in order to restore original state.
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
->   arch/arm64/include/asm/virt.h | 2 ++
->   arch/arm64/kernel/hyp-stub.S  | 1 +
->   2 files changed, 3 insertions(+)
-> 
-> diff --git a/arch/arm64/include/asm/virt.h b/arch/arm64/include/asm/virt.h
-> index 0958ed6191aa..b1b48353e3b3 100644
-> --- a/arch/arm64/include/asm/virt.h
-> +++ b/arch/arm64/include/asm/virt.h
-> @@ -62,6 +62,8 @@
->    */
->   extern u32 __boot_cpu_mode[2];
->   
-> +extern char __hyp_stub_vectors[];
-> +
->   void __hyp_set_vectors(phys_addr_t phys_vector_base);
->   void __hyp_reset_vectors(void);
->   
-> diff --git a/arch/arm64/kernel/hyp-stub.S b/arch/arm64/kernel/hyp-stub.S
-> index f17af9a39562..22b728fb14bd 100644
-> --- a/arch/arm64/kernel/hyp-stub.S
-> +++ b/arch/arm64/kernel/hyp-stub.S
-> @@ -38,6 +38,7 @@ ENTRY(__hyp_stub_vectors)
->   	ventry	el1_fiq_invalid			// FIQ 32-bit EL1
->   	ventry	el1_error_invalid		// Error 32-bit EL1
->   ENDPROC(__hyp_stub_vectors)
-> +EXPORT_SYMBOL(__hyp_stub_vectors);
->   
->   	.align 11
->   
-> 
+The IT6505 is a high-performance DisplayPort 1.1a transmitter, fully compliant with DisplayPort 1.1a, HDCP 1.3 specifications. The IT6505 supports color depth of up to 36 bits (12 bits/color) and ensures robust transmission of high-quality uncompressed video content, along with uncompressed and compressed digital audio content.
 
-While I would not dislike to have patch-free access in Jailhouse, I'm 
-not sure if an out-of-tree use case justifies this an export.
+This series contains document bindings, revert commit, add vendor prefix, Kconfig to control the function enable or not.
 
-Also, this lacks the arm equivalent to be complete.
+Allen Chen (2):
+  dt-bindings: Add binding for IT6505.
+  drm/bridge: add it6505 driver
 
-Jan
+allen (2):
+  dt-bindings: Add vendor prefix for ITE Tech. Inc.
+  Revert "drm/tegra: Move drm_dp_link helpers to Tegra DRM"
+
+ .../bindings/display/bridge/ite,it6505.txt         |   28 +
+ .../devicetree/bindings/vendor-prefixes.yaml       |    2 +
+ drivers/gpu/drm/bridge/Kconfig                     |    7 +
+ drivers/gpu/drm/bridge/Makefile                    |    1 +
+ drivers/gpu/drm/bridge/ite-it6505.c                | 2697 ++++++++++++++++++++
+ drivers/gpu/drm/drm_dp_helper.c                    |  128 +
+ drivers/gpu/drm/tegra/Makefile                     |    1 -
+ drivers/gpu/drm/tegra/dp.c                         |  876 -------
+ drivers/gpu/drm/tegra/dp.h                         |  177 --
+ drivers/gpu/drm/tegra/dpaux.c                      |    1 -
+ drivers/gpu/drm/tegra/sor.c                        |    1 -
+ include/drm/drm_dp_helper.h                        |   16 +
+ 12 files changed, 2879 insertions(+), 1056 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/display/bridge/ite,it6505.txt
+ create mode 100644 drivers/gpu/drm/bridge/ite-it6505.c
+ delete mode 100644 drivers/gpu/drm/tegra/dp.c
+ delete mode 100644 drivers/gpu/drm/tegra/dp.h
 
 -- 
-Siemens AG, Corporate Technology, CT RDA IOT SES-DE
-Corporate Competence Center Embedded Linux
+1.9.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
