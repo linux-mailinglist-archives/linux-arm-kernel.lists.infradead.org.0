@@ -2,58 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A490FFD84F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 10:03:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE274FD8B9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 10:21:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=eGGtx5N7rjBDgZgppmxDEFXHvUh6mmLBVoh5N5t3s54=; b=aE/4KBDnX8U1XswXu3OOIXoUl
-	J4f0qx08qOZhkgwu4Buw+cmvqWi5As2RQgbVTewXNznm9JH7vCmv+szFV8zQv9+HCKONBB3qCuiYG
-	q4vsXYyJBZuVw1JMV4KEEQ5sC/azSKZyxpKaCLdFNOJlieSw7HNFbj5I2CncQuJKCBdqCVE1+OPIX
-	eNx82mNE52DumZM3OYYSgXVaKwOEbB5Ecu/tqxHJI6+Xyw2ZwXAJB9N7PoQZ5R3TAA55bl+ynbQn9
-	U27bSLusokxwJB3IGeUvRwlw1jJt2CrI8OtPypv+9pW1mli8wKUbK/9KuS2mqYfmMxy3Ld98o4N/Q
-	ZiTjEreRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6qtetTdwlZl03omq9EoGWlYPt43G+TFfbGReWcl6Kpg=; b=eLwBq45PXHOir8
+	AjTZfmCjKUvA50U7YxJ36iAtHWjb7609Ft1uN/UjkOTxnliakrAzqj9kuX8MbHTULPj78kr8moA7C
+	FNULkBH4CrkK76p+CGjc5WpQfWZk2PU9X40W+lSAMWTgHXPUZSsLDljVGCeXyoAx6M4+2gmmDSS2d
+	R8CSiK3KqW8De7aB0WLnh6mff3+HTkjOXEbtlfKzICYHfjXaeVygk+IMwpxWSf+cCC8DJPJbi/G6J
+	nE741TSjbvUBFZJ2/I1P/VDgbsAWcPoxkQQIGdPAGWNVQL12SaJ9kAjiecsgKMamvMbLP0gYy48BB
+	PNNR3ZjGBakWjTMYpJXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVXVD-0008NQ-ND; Fri, 15 Nov 2019 09:02:51 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iVXnR-0007Ol-Fs; Fri, 15 Nov 2019 09:21:41 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVXV2-0008MG-Cx; Fri, 15 Nov 2019 09:02:42 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id BBB52B1A9;
- Fri, 15 Nov 2019 09:02:34 +0000 (UTC)
-Message-ID: <5bef91ad4e4a7ff9ba3f73c63ddb5f1605e82766.camel@suse.de>
-Subject: Re: [PATCH v3 1/2] ARM: dts: bcm2711: force CMA into first GB of
- memory
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Florian Fainelli <f.fainelli@gmail.com>, Stefan Wahren
- <wahrenst@gmx.net>,  Catalin Marinas <catalin.marinas@arm.com>
-Date: Fri, 15 Nov 2019 10:02:32 +0100
-In-Reply-To: <0bc15362-1579-b0c5-bd68-7fb5cc6b09a9@gmail.com>
-References: <20191107095611.18429-1-nsaenzjulienne@suse.de>
- <20191107095611.18429-2-nsaenzjulienne@suse.de>
- <20191107112020.GA16965@arrakis.emea.arm.com>
- <4f82d3b5-fe5e-03a5-220e-f1431cb3a50c@gmail.com>
- <8c84654e-f91e-7865-0cf7-99b30820b7d0@gmx.net>
- <0bc15362-1579-b0c5-bd68-7fb5cc6b09a9@gmail.com>
-User-Agent: Evolution 3.34.1 
+ id 1iVXnH-0007Mq-BC
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 09:21:32 +0000
+Received: by mail-wm1-x343.google.com with SMTP id l1so8904977wme.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 Nov 2019 01:21:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=oQB86j8FZQH4Sh7rDbVmMqNvIL9AFAXhmpfcG7mbgqg=;
+ b=Ld4XloE2FMFzkHUAG7n2jsiQXHCt5cLaiA94t087F7u+01dZJeZ0TRKPko5uVepFBd
+ ivSQf+gMl0XzwE6nw2V9W0qYXt0eV5v5UbehbFWKwbeTXDsPmN8p357V3VvmDe6y7oD1
+ b/jgpdfFOh0OLKqUH9XDrAKaEhu0GFl7FddtI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=oQB86j8FZQH4Sh7rDbVmMqNvIL9AFAXhmpfcG7mbgqg=;
+ b=GV3foT4wxoFXD9tRJqMVmHz4dbLTAB7nj3VGhlcxpN6mA3ie+4JppFYX0H1/wq+z/B
+ AB5/BT9fcVuNB4HDwsP3SZIF4tDlbvZjDPZMyvdsVGZ+gDmyN8hdNcaadiYcNZW2jLXy
+ +/XKcSkHgp9PD31lyHW/V8tOYLfE1K9Z+b10pZaNpiLueopUAUkQovffJA1eFGWwWx6F
+ P6bIDKd10rf06brBQhIK8JLnUgWzqPvqJtnVALqyXI+omp24N3jbP8CvdXinE1EhtAG6
+ RuweVNA24HbGxK87cNjbqX+m8dwUXODXgwOyVlJR5bCxppCGjTjjV6mCW0E1sVL32PDt
+ jCGg==
+X-Gm-Message-State: APjAAAUO3m67A9JGPjfJL8yblTnoU2UM4hnVLrRqrHGLs9kH+wGExlbf
+ k+8HxpA/19JH5NqsVYxSiDO6Lw==
+X-Google-Smtp-Source: APXvYqzfNw+xEwRsZgEJ5EaZ5mtAtKcnYpFttPkjdcMRICstqKjbeIL1lMoNPriAWVWuc8ftUFw/fQ==
+X-Received: by 2002:a7b:c762:: with SMTP id x2mr13261637wmk.128.1573809689026; 
+ Fri, 15 Nov 2019 01:21:29 -0800 (PST)
+Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
+ [212.51.149.96])
+ by smtp.gmail.com with ESMTPSA id 11sm8987506wmi.8.2019.11.15.01.21.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 15 Nov 2019 01:21:28 -0800 (PST)
+From: Daniel Vetter <daniel.vetter@ffwll.ch>
+To: DRI Development <dri-devel@lists.freedesktop.org>
+Subject: [PATCH 2/8] drm/atmel: ditch fb_create wrapper
+Date: Fri, 15 Nov 2019 10:21:14 +0100
+Message-Id: <20191115092120.4445-3-daniel.vetter@ffwll.ch>
+X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191115092120.4445-1-daniel.vetter@ffwll.ch>
+References: <20191115092120.4445-1-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_010240_585010_5502A30C 
-X-CRM114-Status: GOOD (  16.35  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191115_012131_443473_CFDFDD44 
+X-CRM114-Status: GOOD (  11.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,86 +94,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6984062652721067654=="
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Boris Brezillon <bbrezillon@kernel.org>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Daniel Vetter <daniel.vetter@intel.com>, Sam Ravnborg <sam@ravnborg.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Spotted while looking through them all.
 
---===============6984062652721067654==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-72XmPvCKktpU+1X9KyMC"
+Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
+Cc: Sam Ravnborg <sam@ravnborg.org>
+Cc: Boris Brezillon <bbrezillon@kernel.org>
+Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
+Cc: linux-arm-kernel@lists.infradead.org
+---
+ drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
 
+diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
+index 92640298ad41..8dc917a1270b 100644
+--- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
++++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
+@@ -557,12 +557,6 @@ static irqreturn_t atmel_hlcdc_dc_irq_handler(int irq, void *data)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct drm_framebuffer *atmel_hlcdc_fb_create(struct drm_device *dev,
+-		struct drm_file *file_priv, const struct drm_mode_fb_cmd2 *mode_cmd)
+-{
+-	return drm_gem_fb_create(dev, file_priv, mode_cmd);
+-}
+-
+ struct atmel_hlcdc_dc_commit {
+ 	struct work_struct work;
+ 	struct drm_device *dev;
+@@ -657,7 +651,7 @@ static int atmel_hlcdc_dc_atomic_commit(struct drm_device *dev,
+ }
+ 
+ static const struct drm_mode_config_funcs mode_config_funcs = {
+-	.fb_create = atmel_hlcdc_fb_create,
++	.fb_create = drm_gem_fb_create,
+ 	.atomic_check = drm_atomic_helper_check,
+ 	.atomic_commit = atmel_hlcdc_dc_atomic_commit,
+ };
+-- 
+2.24.0
 
---=-72XmPvCKktpU+1X9KyMC
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, 2019-11-14 at 12:35 -0800, Florian Fainelli wrote:
-> On 11/7/19 11:09 AM, Stefan Wahren wrote:
-> > Am 07.11.19 um 18:59 schrieb Florian Fainelli:
-> > > On 11/7/19 3:20 AM, Catalin Marinas wrote:
-> > > > Hi Nicolas,
-> > ...
-> > > > Sorry, I just realised I can't merge this as it depends on a patch
-> > > > that's only in -next: 7dbe8c62ceeb ("ARM: dts: Add minimal Raspberr=
-y Pi
-> > > > 4 support").
-> > > >=20
-> > > > I'll queue the second patch in the series to fix the regression
-> > > > introduces by the ZONE_DMA patches and, AFAICT, the dts update can =
-be
-> > > > queued independently.
-> > > I will take it directly, unless you have more stuff coming Stefan?
-> > Please take. Thanks
->=20
-> I picked up v2 because it had your explicit Acked-by tag, but amended in
-> a similar way to what Nicolas did, except s/Raspberry Pi 4/BCM2711/:
->=20
->=20
-https://github.com/Broadcom/stblinux/commit/d98a8dbdaec628f5c993cc711ba9ab9=
-8fe909f0f
->=20
-> neither of you will probably mind me having done that.
-
-All good, thanks!
-
-
---=-72XmPvCKktpU+1X9KyMC
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3OaakACgkQlfZmHno8
-x/52eQgApJu9OgrNdo/IjzBONKI1NqoPLPyGLsMVn+ebzEVoYvlfJKe5PIm3gDZ6
-9j6zy4BIXi3jYIXQEW3VMn5tINFqgsUmYXZGxjUqHr39BlzDs2zIq31+jaYJKLre
-SiGGAspZluS6FXzfPfNZRZDXYmol+LPsX6BTqnI58MsH75IdRumfIn6DpJwR82D8
-4mDgshkCwGkyivJ+EGXLBQNkAbBlQm11aVo1jMeuthS+V9GOTNu9JqTdVG8pJV3a
-LF/YxRDGIsAMGbNsrFXoVh8Yvl3TR8d4Ok/kExH1GNshnp0t/VgXmnvuUno848k7
-9wiCpY/dxKGwXkIzw3OanB5f7ZGrkw==
-=RjXb
------END PGP SIGNATURE-----
-
---=-72XmPvCKktpU+1X9KyMC--
-
-
-
---===============6984062652721067654==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6984062652721067654==--
-
-
