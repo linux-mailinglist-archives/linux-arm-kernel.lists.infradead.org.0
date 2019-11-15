@@ -2,88 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B88D5FDE98
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 14:10:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B57AFDEC0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 14:18:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BAndgcxtNjHcQqJcA2wdgSdJ52vVpxSh55YrsHSD12U=; b=O6ycR7pbPuEPUI8hqXKpuY7Uf
-	F6IDVLMyRGsAKKc3IIE5ATBMBr0O2UmURjl877ZIVyOxI+Fze2xzMjR1/K7STHtDnuxp2+PPEnkON
-	pWxYjML0elxJNCYkD8MM7Fke9nb5ktBV6681fJEmXkSebOR/iVtJTZuue9OXgR0pPylSfZNB+eMjG
-	eV7rrJSv+ixxqg1k1z/2M0uCEwcSLsgfUZRAWwyAevTeT0NgFwMtLptIwBGn3zzJwFUteVfct1E9K
-	RC6JJCu/zVXEPQXWs8jAtufTfL/GOIf8dNLDtJiUZjvQgDkSocM2YCNI6CH6d2V/xw69mw3MJw4J4
-	vcZA/UVnw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aM1eDBh9t/3K6fLkil3fS9sKzvLw/qlDh2zs4RvR2lk=; b=N95Kkf5dkK/OvY
+	Wh8kA2xDnkRtRZHR0CDUNd3mcNCnajmQn6plAtbKf1s07LWY5C+ugyf6LyFiDT6LfkJZSdjdDF2ZB
+	1GtI/DkOMaMs6DbnwcNUkUeMe4TDT29v7u3nqW0dy3Ic+sxJCauxnlaLDV2ErNvGYlsYO+tpoS9BE
+	WfYll6ygBpFVj8M3PZNuDhB8tejY/pkL3/mkNyMEXpLeEDJk1+O+HZV48uaWGo0mppexEytdDq+YR
+	yv4cP0MWUY2A5P4RiAML3YwCygoCNhysK0x6utPck19J+fIrmbLhF7VPqDnd9uge8UC52iWETbT+X
+	K2nGuRBBDg0ZBedyNvew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVbMz-0005tt-Sf; Fri, 15 Nov 2019 13:10:37 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iVbUW-0007gJ-DC; Fri, 15 Nov 2019 13:18:24 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVbMp-0005tW-Fx
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 13:10:29 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xAFD2Pcu022731; Fri, 15 Nov 2019 14:10:20 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=9rmwto7fOBN39SiXRHKuxkPMdmv3HZGhG7BMLDLWBXs=;
- b=it38MDpuYDLhG6jamaFeoXmLhqluiQEOXdJsj4ujecEVyW1onH6GHGQ0bekhkvwenlC4
- 07uZCgXKkx0GLS3DG1SG02fFxmzQtNHs9MuK4Pz5TXoWmcKAbNlOHN2BCJldDEnqfjYb
- uXeHsmFKaavG/nAr+2Y49GmfOCN/KXhigkGF+vFFfxlKV30IEGZpMmkEORjZgaCbBnBK
- 7T+hNMNL/xLdxrYWhIiwegLkhRGLrADw5ZA0YRiMyk6vGHQCXaMwJpJbndNQoM4uRsik
- CGA/8J750EcqctHJBrNmWyQdDKL1skR0tht2fjjbDjpTADlGZIlPuTmLczGgdHAu7GfY 3g== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2w7psbm8hg-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 15 Nov 2019 14:10:20 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id ED50910002A;
- Fri, 15 Nov 2019 14:10:19 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D6A6F2BC106;
- Fri, 15 Nov 2019 14:10:19 +0100 (CET)
-Received: from lmecxl0912.lme.st.com (10.75.127.49) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 15 Nov
- 2019 14:10:19 +0100
-Subject: Re: [PATCH 0/2] Add support for ADC on stm32mp157c-ed1
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-References: <1573231059-395-1-git-send-email-fabrice.gasnier@st.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <54a1b172-df71-0fec-cd40-e974dc70af34@st.com>
-Date: Fri, 15 Nov 2019 14:10:18 +0100
+ id 1iVbUN-0007f3-TR
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 13:18:17 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 15 Nov 2019 05:18:14 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.68,308,1569308400"; d="scan'208";a="203584337"
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.197])
+ ([10.237.72.197])
+ by fmsmga007.fm.intel.com with ESMTP; 15 Nov 2019 05:18:11 -0800
+Subject: Re: [PATCH v2 2/2] mmc: sdhci-of-aspeed: add inversion signal presence
+To: Ivan Mikhaylov <i.mikhaylov@yadro.com>
+References: <20191114125435.27756-1-i.mikhaylov@yadro.com>
+ <20191114125435.27756-3-i.mikhaylov@yadro.com>
+ <fcb5f8b5-40b9-6497-b24d-0b73e2525949@intel.com>
+ <b443738f5e2a3c7ba96b329a8347374f7f934483.camel@yadro.com>
+ <d177ef37-643e-442d-d536-750e0bb5e86d@intel.com>
+ <221381ebad0236625775bda5655fcd7c78455e6f.camel@yadro.com>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <5bd753c3-102b-d78c-c390-4f88ebb0e229@intel.com>
+Date: Fri, 15 Nov 2019 15:17:14 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <1573231059-395-1-git-send-email-fabrice.gasnier@st.com>
+In-Reply-To: <221381ebad0236625775bda5655fcd7c78455e6f.camel@yadro.com>
 Content-Language: en-US
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG3NODE2.st.com (10.75.127.8) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-11-15_03:2019-11-15,2019-11-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_051027_995531_A4730C88 
-X-CRM114-Status: GOOD (  15.65  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191115_051815_960702_84D4E20C 
+X-CRM114-Status: GOOD (  21.48  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,34 +74,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Fabrice
+On 15/11/19 2:56 PM, Ivan Mikhaylov wrote:
+> On Fri, 2019-11-15 at 09:20 +0200, Adrian Hunter wrote:
+>> On 14/11/19 7:19 PM, Ivan Mikhaylov wrote:
+>>> On Thu, 2019-11-14 at 15:10 +0200, Adrian Hunter wrote:
+>>> On 14/11/19 2:54 PM, Ivan Mikhaylov wrote:
+>>>>> Change the default .get_cd callback. Add inverted signal card detection
+>>>>> check.
+>>>>>
+>>>>> Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
+>>>>>
+>>>>> diff --git a/drivers/mmc/host/sdhci-of-aspeed.c
+>>>>> b/drivers/mmc/host/sdhci-of-
+>>>>> aspeed.c
+>>>>> index 8962f6664381..186559ee8fcc 100644
+>>>>> --- a/drivers/mmc/host/sdhci-of-aspeed.c
+>>>>> +++ b/drivers/mmc/host/sdhci-of-aspeed.c
+>>>>> @@ -143,6 +143,19 @@ static inline int
+>>>>> aspeed_sdhci_calculate_slot(struct
+>>>>> aspeed_sdhci *dev,
+>>>>>  	return (delta / 0x100) - 1;
+>>>>>  }
+>>>>>  
+>>>>> +static int aspeed_get_cd(struct mmc_host *mmc)
+>>>>> +{
+>>>>> +	struct sdhci_host *host = mmc_priv(mmc);
+>>>>> +
+>>>>> +	int present = !!(sdhci_readl(host, SDHCI_PRESENT_STATE)
+>>>>> +			 & SDHCI_CARD_PRESENT);
+>>>>> +
+>>>>> +	if (mmc->caps2 & MMC_CAP2_CD_ACTIVE_HIGH)
+>>>>> +		present = !present;
+>>>>
+>>>> Perhaps safer to flip the bit using CONFIG_MMC_SDHCI_IO_ACCESSORS and
+>>>> ->readl() callback
+>>
+>>
+>>> Sorry, don't quite understand what you're saying. You want to instantiate
+>>> '.read_l' callback instead of '.get_cd' in sdhci_ops and substitute the real
+>>> value?
+>>>
+>>> res = readl(base, reg);
+>>> if (reg == SDHCI_PRESENT_STATE)
+>>> 	if (mmc->caps2 & MMC_CAP2_CD_ACTIVE_HIGH)
+>>> 		return !res;
+>>
+>> Presumably just flip the SDHCI_CARD_PRESENT bit i.e.
+>>
+>> 		return res ^ SDHCI_CARD_PRESENT;
+>>
+>>> return res;
+>>>
+>>> Something like this?
+>>
+>> Yes
+>>
+> 
+> Don't you think it will bring a little overhead on any sdhci_readl plus
 
-On 11/8/19 5:37 PM, Fabrice Gasnier wrote:
-> This series adds support for digital-to-analog converter on
-> stm32mp157c-ed1 board:
-> - define pins that can be used for ADC
-> - configure ADC channels to use these
-> 
-> Fabrice Gasnier (2):
->    ARM: dts: stm32: add ADC pins used for stm32mp157c-ed1
->    ARM: dts: stm32: add ADC support to stm32mp157c-ed1
-> 
->   arch/arm/boot/dts/stm32mp157-pinctrl.dtsi |  6 ++++++
->   arch/arm/boot/dts/stm32mp157c-ed1.dts     | 16 ++++++++++++++++
->   2 files changed, 22 insertions(+)
-> 
-Series applied on stm32-next.
+Register accesses are usually slow (~1us) compared with logic.  Of course,
+I/O requests are even slower >100ms so it is unlikely that the overhead is
+significant.
 
-Regards
-Alex
+> sdhci_readl will not get the real value in case of inverted signal which seems
+> is not right from communication fairness between hw and sw? I took that approach
+
+One of the purposes of the accessors is to smooth over the difference
+between the SDHCI standard and actual hardware.  Given that
+SDHCI_PRESENT_STATE is also used in sdhci_set_card_detection() and
+sdhci_irq(), it is surprising that changing only ->get_cd() works correctly.
+
+> with .get_cd from variety of drivers in host/mmc but if you think it will be
+> better and safer with .read_l - I'll do that way. 
+> 
+> Sorry for the link in subject, didn't notice that I put it in previous message
+> somehow.
+> 
+> Thanks.
+> 
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
