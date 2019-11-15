@@ -2,56 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD97AFE198
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 16:37:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E118EFE220
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 16:59:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yfS4zZkTOVxazyWSfy9BL+sFe8dMEegoio/T/fNFuJ8=; b=SQ+spxXFCkZGZZ
-	MWyl0hpQYL5rLM0MW6R3iI29CHWuMLHUPAjTVhe9XDgBo3ZMlYN4KudFw5TSDdllfPZo45ZwZnukW
-	UvdKnAfzICRarVWy7Q2tTVzpXMHxX3wclDx2qsPBD9TkjY+Rxs0ZLjooyWj96ZpMyUhVRZGOVsACU
-	AOCs/nmci4PHsHnRz97jZ6R5uqf5KD5kc23vknAegZS/dtcCCM19md65Pe0htmEPDDTsW9b4VObTs
-	A6VuxvMnOdEVrJHlJknwKvZKHjW9r68SGE24mExk4GvoJgmNgwyMNyBJOwsLRrXVkqdAt2Iv1vGH2
-	sbqeoraC59Hf/+xZT7SQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=g6mI5YDuKDAsH924W7etArX2DI5E42Erwl397n/JmrI=; b=XJanFlSLtmljDC
+	RW4AG21IWEPDXisqI12T2FepcfVPPnbgyau1Se2Zx9KTlEB4pjsGxQvEKtzr5nVYbBG78No7/GY6/
+	I+eS0apKuqPLJ72xl32osxpUCQsxop1jTeHamzD8Q7VUO0h8yRkHvtw5iCoGEnbu5hpeZrvhjvT7Y
+	2g0oVMKZ9c/MGRZgj7IBFRWtrdDAg8AMiIGdktZSyX1druneIeOx90j2H5tvDPll9sODRT8BWj0yQ
+	dDbSycSPslFDOr1Oac7Y/y+cNwRSQmU7kkMEec8XvDVGtWTfkkk3OiYPKdy2awQure/w1teeWZZw4
+	2dQZxS7Ckqqp8JSg9khQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVdf1-0003f3-A4; Fri, 15 Nov 2019 15:37:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVdeq-0003dt-Jd
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 15:37:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A421530E;
- Fri, 15 Nov 2019 07:37:10 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B1103F534;
- Fri, 15 Nov 2019 07:37:08 -0800 (PST)
-Date: Fri, 15 Nov 2019 15:37:06 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v5 05/14] add support for Clang's Shadow Call Stack (SCS)
-Message-ID: <20191115153705.GJ41572@lakrids.cambridge.arm.com>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20191105235608.107702-1-samitolvanen@google.com>
- <20191105235608.107702-6-samitolvanen@google.com>
+	id 1iVdzx-0002dq-IG; Fri, 15 Nov 2019 15:59:01 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iVdzt-0002dh-0E
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 15 Nov 2019 15:58:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Z8Ij/vXKkRd12+abMepMcJTwPOB+fBV1xnOsclURsWo=; b=Qdjl+BJgFXPn4ukrwhL/NP3V+c
+ 9BJRceHnQo9xsNe3s9RYW0jACXo+dWXJWOHMFjPtgjSIJs+h9pLicyV01bq8LIPAqkcHXLFjUCNjU
+ SS2OII9f1vBmU1YenYplK6dsI+mjvWgnwRjTj1+QoElEq7aB4rnfnAR03/Zzt2NPsQXQpNyGjTnIO
+ kDlNHd2AKsI9NkKlPKbakkaLwtm7dYaawiyBYbv6/uunQCjtMMgzVSZiWeyM/3QONCNRlnOSQY1YV
+ YRkgQgtqGoTlkKRR8yKUGdMjmmMIppfaebkBCgEVWgo9z7apIIWKB1UkhgxM+4lA00C5+/3YnUdTK
+ WukDqyGw==;
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iVdzp-00012l-Hp
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 15:58:55 +0000
+X-Originating-IP: 90.66.177.178
+Received: from localhost (lfbn-1-2888-178.w90-66.abo.wanadoo.fr
+ [90.66.177.178]) (Authenticated sender: gregory.clement@bootlin.com)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 515674000B;
+ Fri, 15 Nov 2019 15:58:13 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Linus Walleij <linus.walleij@linaro.org>, linux-gpio@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] pinctrl: armada-37xx: Fix irq mask access in
+ armada_37xx_irq_set_type()
+Date: Fri, 15 Nov 2019 16:57:52 +0100
+Message-Id: <20191115155752.2562-1-gregory.clement@bootlin.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191105235608.107702-6-samitolvanen@google.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_073712_733728_8CEB154C 
-X-CRM114-Status: GOOD (  21.53  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,128 +74,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>,
- Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>, stable@vger.kernel.org,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 05, 2019 at 03:55:59PM -0800, Sami Tolvanen wrote:
-> This change adds generic support for Clang's Shadow Call Stack,
-> which uses a shadow stack to protect return addresses from being
-> overwritten by an attacker. Details are available here:
-> 
->   https://clang.llvm.org/docs/ShadowCallStack.html
-> 
-> Note that security guarantees in the kernel differ from the
-> ones documented for user space. The kernel must store addresses
-> of shadow stacks used by other tasks and interrupt handlers in
-> memory, which means an attacker capable reading and writing
-> arbitrary memory may be able to locate them and hijack control
-> flow by modifying shadow stacks that are not currently in use.
-> 
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-> Reviewed-by: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-> ---
->  Makefile                       |   6 ++
->  arch/Kconfig                   |  33 ++++++
->  include/linux/compiler-clang.h |   6 ++
->  include/linux/compiler_types.h |   4 +
->  include/linux/scs.h            |  57 ++++++++++
->  init/init_task.c               |   8 ++
->  kernel/Makefile                |   1 +
->  kernel/fork.c                  |   9 ++
->  kernel/sched/core.c            |   2 +
->  kernel/scs.c                   | 187 +++++++++++++++++++++++++++++++++
->  10 files changed, 313 insertions(+)
->  create mode 100644 include/linux/scs.h
->  create mode 100644 kernel/scs.c
-> 
-> diff --git a/Makefile b/Makefile
-> index b37d0e8fc61d..7f3a4c5c7dcc 100644
-> --- a/Makefile
-> +++ b/Makefile
-> @@ -846,6 +846,12 @@ ifdef CONFIG_LIVEPATCH
->  KBUILD_CFLAGS += $(call cc-option, -flive-patching=inline-clone)
->  endif
->  
-> +ifdef CONFIG_SHADOW_CALL_STACK
-> +CC_FLAGS_SCS	:= -fsanitize=shadow-call-stack
-> +KBUILD_CFLAGS	+= $(CC_FLAGS_SCS)
-> +export CC_FLAGS_SCS
-> +endif
-> +
->  # arch Makefile may override CC so keep this after arch Makefile is included
->  NOSTDINC_FLAGS += -nostdinc -isystem $(shell $(CC) -print-file-name=include)
->  
-> diff --git a/arch/Kconfig b/arch/Kconfig
-> index 5f8a5d84dbbe..5e34cbcd8d6a 100644
-> --- a/arch/Kconfig
-> +++ b/arch/Kconfig
-> @@ -521,6 +521,39 @@ config STACKPROTECTOR_STRONG
->  	  about 20% of all kernel functions, which increases the kernel code
->  	  size by about 2%.
->  
-> +config ARCH_SUPPORTS_SHADOW_CALL_STACK
-> +	bool
-> +	help
-> +	  An architecture should select this if it supports Clang's Shadow
-> +	  Call Stack, has asm/scs.h, and implements runtime support for shadow
-> +	  stack switching.
-> +
-> +config SHADOW_CALL_STACK_VMAP
-> +	bool
-> +	depends on SHADOW_CALL_STACK
-> +	help
-> +	  Use virtually mapped shadow call stacks. Selecting this option
-> +	  provides better stack exhaustion protection, but increases per-thread
-> +	  memory consumption as a full page is allocated for each shadow stack.
+As explained in the following commit a9a1a4833613 ("pinctrl:
+armada-37xx: Fix gpio interrupt setup") the armada_37xx_irq_set_type()
+function can be called before the initialization of the mask field.
 
-The bool needs some display text to make it selectable.
+That means that we can't use this field in this function and need to
+workaround it using hwirq.
 
-This should probably be below SHADOW_CALL_STACK so that when it shows up
-in menuconfig it's where you'd expect it to be.
+Fixes: 30ac0d3b0702 ("pinctrl: armada-37xx: Add edge both type gpio irq support")
+Cc: stable@vger.kernel.org
+Reported-by: Russell King <rmk+kernel@armlinux.org.uk>
+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+---
+ drivers/pinctrl/mvebu/pinctrl-armada-37xx.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-I locally hacked that in, but when building defconfig +
-SHADOW_CALL_STACK + SHADOW_CALL_STACK_VMAP, the build explodes as below:
+diff --git a/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c b/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
+index 9df4277a16be..aa9dcde0f069 100644
+--- a/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
++++ b/drivers/pinctrl/mvebu/pinctrl-armada-37xx.c
+@@ -595,10 +595,10 @@ static int armada_37xx_irq_set_type(struct irq_data *d, unsigned int type)
+ 		regmap_read(info->regmap, in_reg, &in_val);
+ 
+ 		/* Set initial polarity based on current input level. */
+-		if (in_val & d->mask)
+-			val |= d->mask;		/* falling */
++		if (in_val & BIT(d->hwirq % GPIO_PER_REG))
++			val |= BIT(d->hwirq % GPIO_PER_REG);	/* falling */
+ 		else
+-			val &= ~d->mask;	/* rising */
++			val &= ~(BIT(d->hwirq % GPIO_PER_REG));	/* rising */
+ 		break;
+ 	}
+ 	default:
+-- 
+2.24.0
 
-| [mark@lakrids:~/src/linux]% usellvm 9.0.0 usekorg 8.1.0 make ARCH=arm64 CROSS_COMPILE=aarch64-linux- CC=clang -j56 -s
-| arch/arm64/kernel/scs.c:28:7: error: use of undeclared identifier 'VMALLOC_START'
-|                                          VMALLOC_START, VMALLOC_END,
-|                                          ^
-| arch/arm64/kernel/scs.c:28:22: error: use of undeclared identifier 'VMALLOC_END'
-|                                          VMALLOC_START, VMALLOC_END,
-|                                                         ^
-| arch/arm64/kernel/scs.c:29:7: error: use of undeclared identifier 'SCS_GFP'
-|                                          SCS_GFP, PAGE_KERNEL,
-|                                          ^
-| arch/arm64/kernel/scs.c:29:16: error: use of undeclared identifier 'PAGE_KERNEL'
-|                                          SCS_GFP, PAGE_KERNEL,
-|                                                   ^
-| 4 errors generated.
-| scripts/Makefile.build:265: recipe for target 'arch/arm64/kernel/scs.o' failed
-| make[2]: *** [arch/arm64/kernel/scs.o] Error 1
-| scripts/Makefile.build:509: recipe for target 'arch/arm64/kernel' failed
-| make[1]: *** [arch/arm64/kernel] Error 2
-| Makefile:1655: recipe for target 'arch/arm64' failed
-| make: *** [arch/arm64] Error 2
-| make: *** Waiting for unfinished jobs....
-
-Other than that, this largely looks good to me!
-
-Thanks,
-Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
