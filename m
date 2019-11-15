@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28328FD772
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 08:57:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52F74FD781
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 09:01:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DhuS/GlxKMtx/BTyfXghElnz2+yW06M4PxS8iFlAGAk=; b=GJmKtMVlwmDHhP
-	A+wh308pX0tTltdsj9vlYlMlA6EGEzLnNCgS6QWBPLAkPMt6d7+1M+dDHdnqZEc6BSAhaVbrJuxAY
-	36mGx4dknswLkhZ9QW9Z3/JF5dtzRFlIGRozs1ZJvNB5vlTjgUlylwBzgH1mQDJnh0m0ZhLAgmfi/
-	A5KAicZWEMHRIoO7y/MyZpOCaeBQZYeT4S1s0/ewEaN5adz2HhaqTFwMHurwHH/2LKVoJf+L01ZLN
-	48BcfD3vmMEEC6+PB1ID6SRmc5MdoxVTFkRgdUaqpIs4oUjGCmT6qb91aA7RxYy7NX4WrkTecQZi9
-	+/gxJ6DesQCvop/Zkvrg==;
+	List-Owner; bh=+m+nmyjPx9UxaooCGkVPGtWFUl1g7h/n4Npl+R75OvE=; b=OKVl+aq+d429mf
+	nCqRSWIBRRSxrXLId1Px35sjQUlSmk2NJHQuocM77gGL3VPfV/iz6I1vSvg+RPaQTeyZLV9tSoPN2
+	xW4YFQw4UZ4fmYwm7tj49R1jZcTH01ckIur/+VGf0UK8wAN0+/FvloF0O2hCv6QePwdJSX9sxdXV7
+	s3XF+e9z+bCihgGiZBa1d3imMYineLgsJ3NgLNh3nrNbKDXGkyMNAkPkoU4SFfDOioqLoivsNaSF2
+	Se1Vcma31WKEhG0M21cVorKixlo2GQY8U7xbZ3iTvEs6TczLl1MBUl+mLMTS7nCRn5pdA1YBt0jbR
+	hmW2GG8V5zhxyxeBbVGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVWTm-0006Wn-3Z; Fri, 15 Nov 2019 07:57:18 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iVWXk-0008Nh-Hw; Fri, 15 Nov 2019 08:01:24 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVWTZ-0006WT-Pg
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 07:57:07 +0000
-Received: by mail-lf1-x142.google.com with SMTP id z12so7275029lfj.9
+ id 1iVWXX-0008NJ-Rk
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 08:01:13 +0000
+Received: by mail-lj1-x242.google.com with SMTP id d5so9663836ljl.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 Nov 2019 23:57:05 -0800 (PST)
+ Fri, 15 Nov 2019 00:01:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=zLHtq3yfrffU9o2nF0X7zoTmdgeT+a2HOFrUz+0J25Q=;
- b=BjHqHXiGMgpJVRBuo+lq+sEes/L+3Pgkfq4t22+sAm3ZkEfNZJjCgNxK0Lq2+SC82z
- q4IiSNGldEN1uq+0oO7YsbEQj/jG8NjDGr2TQGUPclpVxjdT+bLba2JJiXE7NvHKORtO
- xVd6o/D+7FumLWsNsyWQxMok7BRgJFk6bpv/4=
+ bh=K7AVtvzUjcO1cH7HI4QDDaRMFMqYOvK9VjNlChoFy28=;
+ b=WvPEQM25nYZqJtCFviyiD5ljzM/UmkIClduWS5T64tJiWhNJmgokv03NvNrxgyQS+y
+ +5ABXTxPcvc7NSKvwma9diqktx6g7QSNjbcBVdIQbuLjNfOH8c/sfbAmpgxGbu3j8NvN
+ SWQP/Ey72K1GHGzEJeMzAkIbyO7FCT+amG3Kw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=zLHtq3yfrffU9o2nF0X7zoTmdgeT+a2HOFrUz+0J25Q=;
- b=UbYgPZD9m8NakDyKrE2vvRDHcPysYkTol5kbRZlpG9oDJh3Rd7mn0rSdjghf0sUyM/
- obmrG9Gjulqvs5lrGJDeHvqWZCAeIx5d99Q01wY6Y4Nxkggm2CgNyxyvo1FwBVBtuh7e
- sYH5PXWri7whHPnCE6IcB7JhyjRkEutVRCf3GkcB6r4uVwuTK5nLs+bVU7cQDoUNyBiQ
- ihN+/xTilDpQNjypUu7mLueL4+EeOM4FBLeiyD9tsPLPGlmFqqkeDeMcifhao8Nw39lE
- hX5aEAny6lWqk9hzY5gwyQXNB/+NtsTJyJ3bPjSrmFGptmXZDe67WosdfBKZHzWrio+x
- 43DQ==
-X-Gm-Message-State: APjAAAV5SmlL/f9ZUwSPuFRdx0sbFDSB/EVG60Exx/QdKqtJ14TCIkqx
- I3XT8tw+ttUfHJRyR0EDnq2gbA==
-X-Google-Smtp-Source: APXvYqzS4mGv0Td6lhMx6P1LJw0rbb74jK3Vo5agUi9HiQO2P985F1jTJV8/p7ydSoDXjafwq0X1nQ==
-X-Received: by 2002:ac2:5236:: with SMTP id i22mr10287608lfl.19.1573804623889; 
- Thu, 14 Nov 2019 23:57:03 -0800 (PST)
+ bh=K7AVtvzUjcO1cH7HI4QDDaRMFMqYOvK9VjNlChoFy28=;
+ b=QZ8z42Rb5uPhTnHP9wOgFIgRkYC/zHaCSHZaVS3q0Bs8tWdFgtRy1gsE77xc8b0CQS
+ /mZoQPUimVVxNfB/32MUfGwmdW5Gntr4bAP/YC6noao0gwWOWtwcrRuty/ZLIMNnmM+t
+ y/dqDJ+I1WIjqOBWh2c4suL9LccUDj4KGQZMT8GqzkVf7iMH4MbasS8QOV6Ep10a3d/u
+ auulTSxDBBTXEdZk8CEe+2NniYVJSlur/SM9DuRyEB7PHknbMTt8HDoiXfQHVaT0g0Ki
+ ah1k5RjUnH18PU/IlNQoqQSxiruFSScIfNVRIz2NpZy/HRpUMbcGy/j+pD+ZY9l/3CIW
+ CHYA==
+X-Gm-Message-State: APjAAAUgNWKYZSdHArn7SP1wdBoCABvgP8Z712pQvmXeNhQvYy7wdaVR
+ j6IyjwncJmv3LTazvAvaJ+8GtA==
+X-Google-Smtp-Source: APXvYqzc04JNvBuLcN/d5H0lWI5kqLrC+8YRwhm+xzIsLHtvpNLGSz16bdRnRpDrrXnxVQ4J/enZ6Q==
+X-Received: by 2002:a2e:9ecf:: with SMTP id h15mr10034052ljk.173.1573804870160; 
+ Fri, 15 Nov 2019 00:01:10 -0800 (PST)
 Received: from [172.16.11.28] ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id z21sm4888837lfg.0.2019.11.14.23.57.02
+ by smtp.gmail.com with ESMTPSA id a11sm3426309ljm.60.2019.11.15.00.01.09
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 14 Nov 2019 23:57:03 -0800 (PST)
+ Fri, 15 Nov 2019 00:01:09 -0800 (PST)
 Subject: Re: [PATCH v4 32/47] serial: ucc_uart: use of_property_read_u32() in
  ucc_uart_probe()
 To: Timur Tabi <timur@kernel.org>
 References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
  <20191108130123.6839-33-linux@rasmusvillemoes.dk>
- <CAOZdJXVpDSk2AWT7pYjrsk5HUmAeosCNf8zWX1CEEtZshAh9Sw@mail.gmail.com>
+ <CAOZdJXU1ELqQh7TitAJW7bsmnj89wq3opJGVizC2B19nL_3_rQ@mail.gmail.com>
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Message-ID: <f584ea71-694f-3d3a-7228-9232531e3918@rasmusvillemoes.dk>
-Date: Fri, 15 Nov 2019 08:57:02 +0100
+Message-ID: <9f1a846b-c303-92fa-9620-f492ef940de7@rasmusvillemoes.dk>
+Date: Fri, 15 Nov 2019 09:01:08 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <CAOZdJXVpDSk2AWT7pYjrsk5HUmAeosCNf8zWX1CEEtZshAh9Sw@mail.gmail.com>
+In-Reply-To: <CAOZdJXU1ELqQh7TitAJW7bsmnj89wq3opJGVizC2B19nL_3_rQ@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_235705_833290_DBC43AA8 
-X-CRM114-Status: GOOD (  12.67  )
+X-CRM114-CacheID: sfid-20191115_000111_897389_315346C3 
+X-CRM114-Status: GOOD (  15.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,22 +111,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/11/2019 05.25, Timur Tabi wrote:
+On 14/11/2019 14.57, Timur Tabi wrote:
 > On Fri, Nov 8, 2019 at 7:03 AM Rasmus Villemoes
 > <linux@rasmusvillemoes.dk> wrote:
 >>
->> +       if (of_property_read_u32(np, "cell-index", &val) &&
->> +           of_property_read_u32(np, "device-id", &val)) {
+>> -       if (*iprop)
+>> -               qe_port->port.uartclk = *iprop;
+>> +       if (val)
+>> +               qe_port->port.uartclk = val;
+>>         else {
+>>                 /*
+>>                  * Older versions of U-Boot do not initialize the brg-frequency
+>>                  * property, so in this case we assume the BRG frequency is
+>>                  * half the QE bus frequency.
+>>                  */
 > 
-> I know that this is technically correct, but it's obfuscated IMHO.
-> 'val' is set correctly only when of_property_read_u32(...) is "false",
-> which is doubly-weird because of_property_read_u32(...) doesn't
-> actually return a boolean.
-> 
-> I would rather you break this into two if-statements like the original code.
+> This bug in older U-Boots is definitely PowerPC-specific, so could you
+> change this so that it reports an error on ARM if brg-frequency is
+> zero, and displays a warning on PowerPC?
 > 
 
-Sure, I can do that.
+That would be a separate patch, this patch is only concerned with
+eliminating the implicit assumption of the host being big-endian. And
+there's already been some pushback to adding arch-specific ifdefs (which
+I agree with, but as I responded there see as the lesser evil), so
+unless there's a very good reason to add that complexity, I'd rather not.
+
+Rasmus
 
 _______________________________________________
 linux-arm-kernel mailing list
