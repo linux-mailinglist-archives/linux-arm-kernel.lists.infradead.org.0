@@ -2,93 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39227FE5C3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 20:39:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12AC9FE644
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 21:14:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:From:Subject:To:References:
-	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hCjrlLHc3nAMZE4e9rGynIx3kShDFVTCXpUIU8dag3E=; b=tpgin+WXgMrL+M
-	HzXbpw5mbylL6MVEsM3svCFD383Ae2PsJDJFvSe894SRi5zQgF4TlHxnDfjoL99UiSNf9x8+PDSmz
-	qQUl2YVnpq6IbeUFHx7dLCMFcytemSKagO+G6qYrU4Cds4SxIbbzGJVU05DWBmKfji+YgO7iDlh9N
-	wf6/j8fLiK1/un/AxdtHreSOWrhuTWYRSR298xy4028/lym/gmjtx5VR7GN6QxKGEmrm/X7kGlbtG
-	DvN3akDQ+rPUKi/9stlgwvoEjyXoGOqkMXIwNM197C/tEAG+lFB1K80cr79SiAiPa51W99o04JnED
-	aPIytQ3f4nO3wBw6jEmg==;
+	List-Owner; bh=D3gFH8T5nuMhHF6OGcBcMBfBxQPHLLmKUxPpIpu8bfg=; b=Cqyp07S+nRmUhb
+	T90cbNLbG8IcqD3naiwbDIl4Ay8d6nM8s5fVgQ9ZiTIkM/H6F1+5gYXHNp+e8RnKETBsh1F0W7E97
+	Un0wTQn+78445hJoI4b9RlgGYAqHhQlX+h7c3tit/1KVtOAo4edYyZefBghVNheIGoDgQmYMLrXJM
+	CYG6yTLxN4doW3UDAiwhb8EFyTbz/SQGWwcofhAfAkAtp/5+XiEnpzXXVBQ2KfpeHsxzmQeopaJwI
+	4Fj/3MDQMj5zrhj/1VrHrOv+HRetjFBNWUBYXQQ+NOxCY2peKWYM1Mm0oxEq2xv/4gKJQgeE2lX7c
+	7lkwkLiuQd/gkX/QAA5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVhQo-00006a-Ql; Fri, 15 Nov 2019 19:38:58 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iVhz7-0004A7-IV; Fri, 15 Nov 2019 20:14:25 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVhQS-0008IB-7J
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 19:38:37 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 193so7130587pfc.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 11:38:35 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=message-id:mime-version:content-transfer-encoding:in-reply-to
- :references:cc:to:subject:from:user-agent:date;
- bh=rpIokldTgdr5Exrhz1mWV7HaLCSuNS/NOSl6iO2Uvg8=;
- b=UXpz2/GGf6m28T8JsRJL22/FmaujD4Zkm42D4hqF1gSN9xyzIKBP3jZPikdFoLutN0
- 1QwHjpjumV9GiZEurjnQujKejh1y/BRNClPVP3v+DWWoMqXo/U/+jfny1z67SpJ8Aedd
- x6F5L4BYk9ZEUUHmuomaBUpqdhxgthCmLWzwI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:mime-version
- :content-transfer-encoding:in-reply-to:references:cc:to:subject:from
- :user-agent:date;
- bh=rpIokldTgdr5Exrhz1mWV7HaLCSuNS/NOSl6iO2Uvg8=;
- b=RrDhjJeS+itVy70HT+PVd1iVsw4/3LnH7xudjV9QWQN6wcF8Ne+9zxKFebAfABj1E9
- G4O1yowfVzuXUsFqF3UTYqHm9Xy+Jeus67+ivD4AXbrsEeLKqqlTgYgs5jKHZerdDh/o
- 4EHlxhZlYzrjZkrhtQWQp87RVNBi8J0Wdyd5IL/8EbhLIbpowAOGl/F1tJ9oqDyHiWJq
- Tl9WYFd7jepOsujfT4OOdfxFCRYVj8nC1yZTBFsrusCnRylQfSLJCjWVe/rNEDaGO/Pv
- lPzAbJhw3NDT8UdVgIZ1Hpoo58K7lI+WQHqOvTfCpc3tnbjSoLSwe459XgXl5Yb6Lkis
- Y1DQ==
-X-Gm-Message-State: APjAAAUp/Mlyccg6NIUncyKmYzlZrlJ3UUSSt4uJpi37CK2xwA4PJwG7
- 86O5O4IM1CiGtI9lmUE3yA7XuQ==
-X-Google-Smtp-Source: APXvYqykqc5dyf2YeTH9F9RX5Ivj9h24yWKDFvAQmQ98bDBv24JthZfMkfiBfpD1ahLZlS9AfiPdcg==
-X-Received: by 2002:a65:6145:: with SMTP id o5mr17611208pgv.38.1573846714978; 
- Fri, 15 Nov 2019 11:38:34 -0800 (PST)
-Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id h23sm10528899pgg.58.2019.11.15.11.38.34
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 Nov 2019 11:38:34 -0800 (PST)
-Message-ID: <5dcefeba.1c69fb81.258f2.f70e@mx.google.com>
+ id 1iVhyy-00049U-A9
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 20:14:17 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iVhys-0000VS-Rp; Fri, 15 Nov 2019 21:14:10 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iVhyr-0000NS-RY; Fri, 15 Nov 2019 21:14:09 +0100
+Date: Fri, 15 Nov 2019 21:14:09 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Michael Grzeschik <m.grzeschik@pengutronix.de>
+Subject: Re: [PATCH v2] ARM: dts: imx25: fix usbhost1 node
+Message-ID: <20191115201409.5ztt7vrhf2btpoed@pengutronix.de>
+References: <20191111114655.9583-1-m.grzeschik@pengutronix.de>
+ <20191115083415.28976-1-m.grzeschik@pengutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <a2bb92de65e90768bf1d6b8c0b7fbd43cba704d2.1573814758.git.saiprakash.ranjan@codeaurora.org>
-References: <cover.1573814758.git.saiprakash.ranjan@codeaurora.org>
- <a2bb92de65e90768bf1d6b8c0b7fbd43cba704d2.1573814758.git.saiprakash.ranjan@codeaurora.org>
-To: Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- bjorn.andersson@linaro.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH 2/2] arm64: dts: sdm845: Update the device tree node for
- LLCC
-From: Stephen Boyd <swboyd@chromium.org>
-User-Agent: alot/0.8.1
-Date: Fri, 15 Nov 2019 11:38:33 -0800
+Content-Disposition: inline
+In-Reply-To: <20191115083415.28976-1-m.grzeschik@pengutronix.de>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_113836_317264_6C3CF37C 
-X-CRM114-Status: UNSURE (   6.11  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191115_121416_352603_A1D55C90 
+X-CRM114-Status: GOOD (  15.33  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,26 +68,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Rajendra Nayak <rnayak@codeaurora.org>, linux-arm-msm@vger.kernel.org,
- Doug Anderson <dianders@chromium.org>, linux-kernel@vger.kernel.org,
- Rishabh Bhatnagar <rishabhb@codeaurora.org>,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, shawnguo@kernel.org,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, festevam@gmail.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Sai Prakash Ranjan (2019-11-15 02:59:12)
-> LLCC cache-controller was renamed to system-cache-controller
-> to make schema pass the dt binding check. Update the device
-> tree node to reflect this change.
-> 
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> ---
+Hello Michael,
 
-Reviewed-by: Stephen Boyd <swboyd@chromium.org>
+On Fri, Nov 15, 2019 at 09:34:15AM +0100, Michael Grzeschik wrote:
+> The usb port represented by &usbhost1 uses an USB phy internal to the
+> SoC. We add the phy_type to the base dtsi so the board dts only have to
+> overwrite it if they use a different configuration. While at it we also
+> pin the usbhost port to host mode and limit the speed of the phy to
+> full-speed only, which it is only capable of.
 
+The subject line suggests this is a fix but the commit log and the
+actual change don't support this. Maybe better:
+
+	ARM: dts: imx25: consolidate properties of usbhost1 in dtsi file
+
+? =
+
+
+> diff --git a/arch/arm/boot/dts/imx25.dtsi b/arch/arm/boot/dts/imx25.dtsi
+> index 9a097ef014af5..40b95a290bd6b 100644
+> --- a/arch/arm/boot/dts/imx25.dtsi
+> +++ b/arch/arm/boot/dts/imx25.dtsi
+> @@ -570,6 +570,9 @@
+>  				clock-names =3D "ipg", "ahb", "per";
+>  				fsl,usbmisc =3D <&usbmisc 1>;
+>  				fsl,usbphy =3D <&usbphy1>;
+> +				maximum-speed =3D "full-speed";
+> +				phy_type =3D "serial";
+> +				dr_mode =3D "host";
+
+Would it make sense to split this patch in two? One that moves phy_type
+and dr_mode from the dts files using imx25.dtsi (which has no effects on
+the resulting dtb files). And another that adds maximum-speed.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
