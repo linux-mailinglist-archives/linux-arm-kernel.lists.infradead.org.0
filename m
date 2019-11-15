@@ -2,74 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85722FE4C1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 19:16:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8B0DFE4C8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 19:18:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cdYfcBbjq53BpCgCJwvQoem7gvot/CQTZpJcAipvbZ4=; b=n0Ft2eh0TSPZhl
-	G4zaj0lgQGS6vaNaHRn4qqu1Y7TKMcXPbpvPQHrjzf7v0607W6UCCzeiOcg60VoqJMXfTyZ+9FwJF
-	wbQdiuqofB42AzMIMIqLE14yZ+WINZI9ltgLyHjMqqQjdCiay5buocf+qxuTlkHmJd5FoiJO5NJjn
-	HnHD25tYzBVVjegYiO132H+/x/jjOJgfNofeS/Jwvl+5jng/lNzAwXBzQIGRFDysA1FXNYYIsKCpy
-	479BCkC1eecY2dZjzVY61cS0YLDV16cqYHp5bkjHR/Zx5JsEeRwX0G/AtaGwOkt2xKVuWNiXOTZw/
-	edDbgCk1L7Cm3uX2M7lA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fbP7gRGIn8dEGK4jg9jUqFlDNxhYOtHBGU6LCibeG6Q=; b=U0grmx3elk5yUkRFV6S4YkdfQ
+	T+2tQ9n82K/DATv5Iwv8JBw4NRFNIBAdBDrHLTd3HRuALI1UlfhKlUIp+ELAOrRDI9oFr38A3CAl7
+	LViVcJDtiIq6NEVDv0W/fMGL+zTo5K3b+1SQ1t8aTjnbYQGURZGqJgo/S6GfLbIHWWReNW2gnDw9g
+	7uAGYpaCliQ9gFzd+gh6KR8oQ1t0gAdkbAqkwAkvS0hh8Jb7xX/AGrNDSfeHk3VKtXTtqimk8IvB5
+	SQtYLBIeqsaSkn0vTr0Rp3vc4Rkg1LmC8tKOOJXkOYh3eslNytENP6Ua5WdaDWJVTWbgriB+XfcJG
+	rhunOPJPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVg9L-00039t-4q; Fri, 15 Nov 2019 18:16:51 +0000
-Received: from mail-il1-f193.google.com ([209.85.166.193])
+	id 1iVgAS-0003XA-4j; Fri, 15 Nov 2019 18:18:00 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVg9C-00039U-UF; Fri, 15 Nov 2019 18:16:44 +0000
-Received: by mail-il1-f193.google.com with SMTP id a7so9941845ild.6;
- Fri, 15 Nov 2019 10:16:42 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=rKdLjfAH1h2JYCzXLa2uKNlLJWREL+e9FB64JDOkPEo=;
- b=SV5NpAceThCWRpVy6JnUHqlg6N9YN4VJUoA0yyNRZItJZe1geUos/QxVwOFwHQDBbV
- hhM5qsNh0IzJ4ZUuKxFTTUqx3kmMqeuEfWPTPB5hlkeHgiOeooJP9U+4dc75c8y9rhdY
- U2a9TddyR/UBEway0HurwldJFbfK7goWBk95Ey0fBZ0tMHwyDA+eO6Ir7bM2p8niRcV/
- hS0+5cBXG+NZBQIjRvbOthu3Bj/h28sPv5EOEY/r8+R/7Bw0J1lklJ0Wv+EYKCYajAjL
- MI9zyy2yihdf8UYegzm8Xd+jZwMcZ/n0nHUsqLTwu4UZp6/ZNwkLmZXxBUVFGRgFar5B
- y4VA==
-X-Gm-Message-State: APjAAAVET2fhmcJRWcESNM5a2tIUYpLVT3kf8GYT62F6tlOTpifdShco
- u2+eDsIhPf8CXKQlnP7vWlNB2G2KouHq1IcQyQc=
-X-Google-Smtp-Source: APXvYqwdBJ8rNtN+EZdewVmchYbVuye3g8V5/SEW3mhTUGjUBd6v26ZhMBNZbxiFVwipN8ZIsSBw8LNVvdEOSPaXau0=
-X-Received: by 2002:a92:8605:: with SMTP id g5mr2238459ild.172.1573841801481; 
- Fri, 15 Nov 2019 10:16:41 -0800 (PST)
+ id 1iVgAJ-0003We-DT
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 18:17:52 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xAFI7o6r005156; Fri, 15 Nov 2019 19:17:46 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=R0AG0K+FiTWH1VDAdSpoZmFq3tYATmR+PjAfYmovt68=;
+ b=sdrq5T4a9WOf6MFyAas2MYoe3fnYWaZgrxVxFxJ5KqzpDfYchemixCcxUlh7Zz5tSRvj
+ RbOPu21YJRFbI4Q3+XL4hSufxAnYEzTgPNUjHsxhS0yQlvzEPaiMDYyE55OFQuPzjuGo
+ obZrA/vd8A2ekPxA0Nsal7TE9QEAbLnslc3RP/6f3Dzmf7R/l4Pye59h4aKFLAto9ZWg
+ HsD9rEuP6q82yfuL2fOYw6lpslXv7tmMiFL7SZsJjQ9AmrROLcj2V4NYY46b7eBZf1NC
+ gcLIq1Wm+zxAW9ZrsVJuYG+xCxNZywb1/dda6fQSUzyU2vipuArQ7RCTZVr5nmvfmm1R xg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2w7psfntuq-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 15 Nov 2019 19:17:46 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A840510002A;
+ Fri, 15 Nov 2019 19:17:45 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 96E0D2129DA;
+ Fri, 15 Nov 2019 19:17:45 +0100 (CET)
+Received: from lmecxl0912.lme.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 15 Nov
+ 2019 19:17:44 +0100
+Subject: Re: [PATCH] ARM: dts: stm32: remove unused rng interrupt
+To: Benjamin Gaignard <benjamin.gaignard@st.com>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>, <lionel.debieve@st.com>
+References: <20191115100651.17754-1-benjamin.gaignard@st.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <b3759a65-99e1-d846-b60b-576dfa9c9f6e@st.com>
+Date: Fri, 15 Nov 2019 19:17:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191115180825.10526-1-matwey@sai.msu.ru>
- <1708909.MJzrS8JzXa@diego>
-In-Reply-To: <1708909.MJzrS8JzXa@diego>
-From: "Matwey V. Kornilov" <matwey@sai.msu.ru>
-Date: Fri, 15 Nov 2019 21:16:29 +0300
-Message-ID: <CAJs94EYGmU3RYEP0bd387XEN=B_zA8rwGkJeSVqWycNPO95r=w@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: Enable PCIe for Radxa Rock Pi 4
- board
-To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
+In-Reply-To: <20191115100651.17754-1-benjamin.gaignard@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG8NODE3.st.com (10.75.127.24) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-15_05:2019-11-15,2019-11-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_101642_974965_06E1EECF 
-X-CRM114-Status: GOOD (  14.15  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191115_101751_736857_CEFB44AB 
+X-CRM114-Status: GOOD (  17.55  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.193 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (matwey.kornilov[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,50 +97,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- "moderated list:ARM/Rockchip SoC support"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-0L/RgiwgMTUg0L3QvtGP0LEuIDIwMTkg0LMuINCyIDIxOjE0LCBIZWlrbyBTdMO8Ym5lciA8aGVp
-a29Ac250ZWNoLmRlPjoKPgo+IEhpIE1hdHdleSwKPgo+IEFtIEZyZWl0YWcsIDE1LiBOb3ZlbWJl
-ciAyMDE5LCAxOTowODoyMSBDRVQgc2NocmllYiBNYXR3ZXkgVi4gS29ybmlsb3Y6Cj4gPiBSYWR4
-YSBSb2NrIFBpIDQgaXMgZXF1aXBwZWQgd2l0aCBNLjIgUENJZSBzbG90LAo+ID4gc28gZW5hYmxl
-IFBDSWUgZm9yIHRoZSBib2FyZC4KPiA+Cj4gPiBUaGUgY2hhbmdlcyBoYXMgYmVlbiB0ZXN0ZWQg
-d2l0aCBJbnRlbCBTU0QgNjYwcCBzZXJpZXMgZGV2aWNlLgo+ID4KPiA+ICAgICAwMTowMC4wIENs
-YXNzIDAxMDg6IERldmljZSA4MDg2OmYxYTggKHJldiAwMykKPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5
-OiBNYXR3ZXkgVi4gS29ybmlsb3YgPG1hdHdleUBzYWkubXN1LnJ1Pgo+ID4gLS0tCj4gPiAgYXJj
-aC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTktcm9jay1waS00LmR0cyB8IDE0ICsrKysr
-KysrKysrKysrCj4gPiAgMSBmaWxlIGNoYW5nZWQsIDE0IGluc2VydGlvbnMoKykKPiA+Cj4gPiBk
-aWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTktcm9jay1waS00
-LmR0cyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5LXJvY2stcGktNC5kdHMK
-PiA+IGluZGV4IDFhZTFlYmQ0ZWZkZC4uOWMyOTI3ZmFiYTQxIDEwMDY0NAo+ID4gLS0tIGEvYXJj
-aC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTktcm9jay1waS00LmR0cwo+ID4gKysrIGIv
-YXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzOTktcm9jay1waS00LmR0cwo+ID4gQEAg
-LTQ2Myw2ICs0NjMsMjAgQEAKPiA+ICAgICAgIHBtdTE4MzAtc3VwcGx5ID0gPCZ2Y2NfM3YwPjsK
-PiA+ICB9Owo+ID4KPiA+ICsmcGNpZV9waHkgewo+ID4gKyAgICAgc3RhdHVzID0gIm9rYXkiOwo+
-ID4gK307Cj4gPiArCj4gPiArJnBjaWUwIHsKPiA+ICsgICAgIHN0YXR1cyA9ICJva2F5IjsKPiA+
-ICsKPiA+ICsgICAgIGVwLWdwaW9zID0gPCZncGlvNCBSS19QRDMgR1BJT19BQ1RJVkVfSElHSD47
-Cj4gPiArICAgICBudW0tbGFuZXMgPSA8ND47Cj4gPiArICAgICBwaW5jdHJsLW5hbWVzID0gImRl
-ZmF1bHQiOwo+ID4gKyAgICAgcGluY3RybC0wID0gPCZwY2llX2Nsa3JlcW5iX2NwbT47Cj4gPiAr
-ICAgICBtYXgtbGluay1zcGVlZCA9IDwyPjsKPgo+IHRoZSBSb2NrUGkgc2NoZW1hdGljcyBzaG91
-bGQgYmUgYXZhaWxhYmxlLCBzbyBjb3VsZCB5b3UgYWxzbyBjaGVjawo+IHRoZSBzdXBwbHkgcmVn
-dWxhdG9ycyBhbmQgYWRkIHRoZW0gcGxlYXNlPwo+Cj4gVGhhbmtzCj4gSGVpa28KCkhpLAoKV2hh
-dCBkbyB5b3UgbWVhbj8gcGNpZSAzLjN2IHJlZ3VsYXRvciBpcyBhbHJlYWR5IGluIGR0cy4gSSd2
-ZSBjaGVja2VkCnRoYXQgaXRzIGdwaW8gaXMgY29ycmVjdGx5IGNvbmZpZ3VyZWQuCgo+Cj4KPiA+
-ICt9Owo+ID4gKwo+ID4gICZwaW5jdHJsIHsKPiA+ICAgICAgIGJ0IHsKPiA+ICAgICAgICAgICAg
-ICAgYnRfZW5hYmxlX2g6IGJ0LWVuYWJsZS1oIHsKPiA+Cj4KPgo+Cj4KCgotLSAKV2l0aCBiZXN0
-IHJlZ2FyZHMsCk1hdHdleSBWLiBLb3JuaWxvdi4KU3Rlcm5iZXJnIEFzdHJvbm9taWNhbCBJbnN0
-aXR1dGUsIExvbW9ub3NvdiBNb3Njb3cgU3RhdGUgVW5pdmVyc2l0eSwgUnVzc2lhCjExOTIzNCwg
-TW9zY293LCBVbml2ZXJzaXRldHNreSBwci1rIDEzLCArNyAoNDk1KSA5MzkyMzgyCgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
-IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi
+
+On 11/15/19 11:06 AM, Benjamin Gaignard wrote:
+> Interrupt has never be used in rng driver so remove it from DT.
+> 
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+> ---
+>   arch/arm/boot/dts/stm32f429.dtsi | 1 -
+>   1 file changed, 1 deletion(-)
+> 
+> diff --git a/arch/arm/boot/dts/stm32f429.dtsi b/arch/arm/boot/dts/stm32f429.dtsi
+> index 5c8a826b3195..196817da0c1d 100644
+> --- a/arch/arm/boot/dts/stm32f429.dtsi
+> +++ b/arch/arm/boot/dts/stm32f429.dtsi
+> @@ -789,7 +789,6 @@
+>   		rng: rng@50060800 {
+>   			compatible = "st,stm32-rng";
+>   			reg = <0x50060800 0x400>;
+> -			interrupts = <80>;
+>   			clocks = <&rcc 0 STM32F4_AHB2_CLOCK(RNG)>;
+>   
+>   		};
+> 
+
+Applied on stm32-next. Next time, please indicate (at least in the 
+commit title) for which SOC the patch is targeted.
+
+Alex
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
