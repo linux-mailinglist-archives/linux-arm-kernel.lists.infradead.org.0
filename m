@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 411F5FE528
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 19:44:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44D1FFE52A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 19:44:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=u9R3CFtCBgQVsJSJWeCS7G3A9OQazTvGGdA3jINaiKY=; b=ADBZLBG8PO9thQmF3ZgEzEQKfY
-	0/lQRB41w2J3A5EdSO+rtIcqM44HVddHpnB4QpIEQa/AuZpq10OqTnVR+J42553CekBBucPZnAIIZ
-	rtkftowcPXahjKAAlqZcmjmihw2I8yjnR1IRBVwyjMAjtBgZsd0D3yL8dgWv/w9oVI3T+0e42XRGo
-	rbZcWYMH5p4OaOTq0nLOLH0EGbSHDheJWQUqklpXS6eAe53IFezs1PuXHCQFl8Bi8Nw4PMzsjQ1EK
-	PBnwnfQzXBE+gpkZPlvWBlGmJGOCNjaVVXI71TXUuQVIEGQ25CnVmB1rThzC78msNpTvFgn9JVAOi
-	51bRdGug==;
+	bh=R5Luxcf9R0QGgZYntjF6eBaK+H9UR1LmiziKC43uf0Y=; b=XYM5Wm9Qz3+FquePTG0tyFcoyZ
+	cp45xI/C4z9SSnStMZxL+TMEGD1Y1HH5sKje/xjk4aDAO821I3TQyL4Zw9WR0z7Z/NdcvVFkayIOF
+	ojgIPVNzYqqb1iOSFUKEGqXKngIIf9HKc1XGQblYZiKKaEktxFB0xVthd4G2hQE47oV+CIhPXbdP1
+	8Q8po0ACkMqmJpu8e29YGAvDy5Xmu2fz6L5eMO52DUeEssWKCfZljEHYy1yUytdLMc1oZBRevQxvL
+	DzvbPbnFVnHqGmOtG61rR5wTYHTFJXhuB5sKhUCOiuMT09lQcU8IoWp63nBFSqgOD8UY/WmJ1YI64
+	X8ZPd+jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVga4-0003yZ-1k; Fri, 15 Nov 2019 18:44:28 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iVgaO-0004Jx-52; Fri, 15 Nov 2019 18:44:48 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVgZE-0003Ug-8e
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 18:43:37 +0000
-Received: by mail-wr1-x442.google.com with SMTP id s5so12069561wrw.2
+ id 1iVgZH-0003XH-4T
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 18:43:40 +0000
+Received: by mail-wr1-x443.google.com with SMTP id i10so12058920wrs.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 10:43:36 -0800 (PST)
+ Fri, 15 Nov 2019 10:43:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=jJrtiyNSy3kb+yNwZbjKaE7PnY4m0t7haj0Vxh+WdWs=;
- b=C9ATRsYZH/OrMHOZETIezEvXsLqR4T4sS6Frz/FBhKg51pxXHcLd7y4t06fTHG0pnA
- fdTu2HPEvyRbIyXz5qZ7pbDZ1kOV+5kdUkKZ6OLrje7nzpSpGp47BHxAu9eMvNn9jrxJ
- vbfGY4s8dq8+XWvjbUR4HNt9sBo3XhNaMBVhNGrQpWfeNefMClxNO3/gCsyowPL3lUn6
- v752E+gJEBnBS+wdMo/S50QFxOEgzB/MwfHQMVH6A9TbUeVwxYRJa8F8IIUmggjJ6KRR
- QlQQDS73/gDeQm540a5bSwaHjZYs8KN3/zI9kDjO77U92feum41HNH60bixq0aoOUDxb
- j3Mg==
+ bh=n5G8vs80VS3sA4MhM4cgPCr2IxsX3rpduYhIhTGIkuI=;
+ b=ZutM+W0ogPUSZhV90V1adFu/zwBzRsYtRS1uAYlG4aef/VnkwGi2d9gVcYL64IM5ll
+ m2i0Z+rY50kkNny175k25dNuaVBnetIp0+m8QhytKMEuwA3cBODcKz8wOsTCUDQGzGg1
+ zNASyVhOUr7HnLrm5Ytn9eVGogET5az9wq5YG9yBY7nDksALNmrVThs9RkaXneV8XeS2
+ +9ZysXdX8tFqAA8T3BvGaw3LfMR0fxgcUgKOHEOTg+PPiiFzgwDwLbokI6bQc33FOFwU
+ /kR6778Nn+1XcGfYe+lu/3wv8BXPH9Q0A7M/zz9Kyb3LF98Bp33cB2W4AfX8WmZIewAI
+ yqhQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=jJrtiyNSy3kb+yNwZbjKaE7PnY4m0t7haj0Vxh+WdWs=;
- b=aHWJTpiEYYcqOuGz9ZiR1c4fIz49uO5W8RYkgKyJ/O/wH8rdUWM7e+YkhprmwSIeGf
- QtSqRG3cuBoRJD33vCb75odJc/TYf1IPzFD4K+FW4MVPQguZgNsvcLHpF4dujBNKBPkV
- foNaqN7/dPZiEIRqGSuYyIZPaQeJHv5cEg7fyVsDlMGt7pp4GZ4DaaCk6S2bz0ZQc4Vj
- HE3Cj8gkb+ufg+7QMtrbZnpiZRsUoeoItV9KHdlnfx3vDzTJEGhzLuYYBbeqjvc62GLJ
- X47AnBenFxqvgK6C4dn9dOKH1mBfBQEqKDxfB3d7OT1rGz26RwqnTo/EexyurHRacdDS
- SQog==
-X-Gm-Message-State: APjAAAVUYAgoLxGtEOwG5CHHsVS5QcaFKX+Uupx0dQHlhvEZj68TCKEN
- ucKC9Shq6furZN4mcixKRUM=
-X-Google-Smtp-Source: APXvYqwxdV+JKop5BR8N2MhmkUjQn0btJGaNIVjC/AU3LC5pxMukp/B1JSfM8g+rzCLnNHjqFXy6EA==
-X-Received: by 2002:adf:9527:: with SMTP id 36mr16506548wrs.398.1573843414944; 
- Fri, 15 Nov 2019 10:43:34 -0800 (PST)
+ bh=n5G8vs80VS3sA4MhM4cgPCr2IxsX3rpduYhIhTGIkuI=;
+ b=XOSDJv0zlDF7bkj6uIWcs7x7wGb8HPJR6nBvPAjMSwNxnOcj1RGfEsAqGEcEsxHlqi
+ 24vnj0ce7pvy+JlAL2siwp3G14On3y/4HvgGu6Scf75QQePZtsIb3asK+eBns55VIrvO
+ f7eP1I7qsOl16CQUVpkhogrBqlkmvjSWZJhA4utsm987xFjSuvwGJw0xMX5Yo0AOQc+f
+ nlbVR0aEbiJDh8MkDtXZw/dDod9Uv+ppo+vRv6pJEbKd67Rm5SU0De5PgQAaWJLPCsoN
+ sOV/6e+ukcLW5crF45XqlaCYSC8/rTAnjtPcHQAGoyQot8LhOQTuH2MNWbQ8E/2OugWr
+ p8bA==
+X-Gm-Message-State: APjAAAVwvKY7STCqS3ALqFsTSABKW3C0on5tHAQWuRmec825uniK71xO
+ RoeMArpzj03CdxYmsJZHRv8=
+X-Google-Smtp-Source: APXvYqxhxd3N9xQeLfTjyCbbyVKUcioEYABPKnqb31gT+D/B4XCLxBys89EN1Ei8Fg3lKybqS4gl8w==
+X-Received: by 2002:a05:6000:1206:: with SMTP id
+ e6mr16943372wrx.113.1573843416930; 
+ Fri, 15 Nov 2019 10:43:36 -0800 (PST)
 Received: from stbsrv-and-01.and.broadcom.net ([192.19.231.250])
- by smtp.gmail.com with ESMTPSA id g138sm2620989wmg.11.2019.11.15.10.43.33
+ by smtp.gmail.com with ESMTPSA id g138sm2620989wmg.11.2019.11.15.10.43.35
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 Nov 2019 10:43:34 -0800 (PST)
+ Fri, 15 Nov 2019 10:43:36 -0800 (PST)
 From: Al Cooper <alcooperx@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 02/13] phy: usb: Get all drivers that use USB clks using
- correct enable/disable
-Date: Fri, 15 Nov 2019 13:42:12 -0500
-Message-Id: <20191115184223.41504-3-alcooperx@gmail.com>
+Subject: [PATCH v2 03/13] phy: usb: Put USB phys into IDDQ on suspend to save
+ power in S2 mode
+Date: Fri, 15 Nov 2019 13:42:13 -0500
+Message-Id: <20191115184223.41504-4-alcooperx@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191115184223.41504-1-alcooperx@gmail.com>
 References: <20191115184223.41504-1-alcooperx@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_104336_344249_D83D24B9 
-X-CRM114-Status: GOOD (  13.46  )
+X-CRM114-CacheID: sfid-20191115_104339_213649_6998003D 
+X-CRM114-Status: GOOD (  14.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -110,102 +111,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The BRCM USB Phy, ohci, ehci and xhci drivers all use the USB clocks
-but not all drivers use the clk_prepare_enable/clk_disable_unprepare
-versions to enable/disable the clocks. This change gets all drivers
-using the prepare version.
+Currently the Phy driver will put the USB phys into the max
+power saving mode (IDDQ) when there is no corresponding XHCI, EHCI
+or OHCI client (through rmmod, unbind or if the driver is not
+builtin). This change will also put the Phys into IDDQ mode
+on suspend so that S2 will get the additional power savings.
 
 Signed-off-by: Al Cooper <alcooperx@gmail.com>
 ---
- drivers/phy/broadcom/phy-brcm-usb.c | 28 ++++++++++++++--------------
- 1 file changed, 14 insertions(+), 14 deletions(-)
+ drivers/phy/broadcom/phy-brcm-usb-init.c |  2 --
+ drivers/phy/broadcom/phy-brcm-usb.c      | 11 +++++++++--
+ 2 files changed, 9 insertions(+), 4 deletions(-)
 
+diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.c b/drivers/phy/broadcom/phy-brcm-usb-init.c
+index 56d9b314a8d0..0e6b921072be 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb-init.c
++++ b/drivers/phy/broadcom/phy-brcm-usb-init.c
+@@ -1002,8 +1002,6 @@ void brcm_usb_uninit_common(struct brcm_usb_init_params *params)
+ 
+ void brcm_usb_uninit_eohci(struct brcm_usb_init_params *params)
+ {
+-	if (USB_CTRL_MASK_FAMILY(params, USB_PM, USB20_HC_RESETB))
+-		USB_CTRL_UNSET_FAMILY(params, USB_PM, USB20_HC_RESETB);
+ }
+ 
+ void brcm_usb_uninit_xhci(struct brcm_usb_init_params *params)
 diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
-index f5c1f2983a1d..217e3702ef4e 100644
+index 217e3702ef4e..634afc803778 100644
 --- a/drivers/phy/broadcom/phy-brcm-usb.c
 +++ b/drivers/phy/broadcom/phy-brcm-usb.c
-@@ -74,8 +74,8 @@ static int brcm_usb_phy_init(struct phy *gphy)
- 	 */
- 	mutex_lock(&priv->mutex);
- 	if (priv->init_count++ == 0) {
--		clk_enable(priv->usb_20_clk);
--		clk_enable(priv->usb_30_clk);
-+		clk_prepare_enable(priv->usb_20_clk);
-+		clk_prepare_enable(priv->usb_30_clk);
- 		brcm_usb_init_common(&priv->ini);
- 	}
- 	mutex_unlock(&priv->mutex);
-@@ -106,8 +106,8 @@ static int brcm_usb_phy_exit(struct phy *gphy)
- 	mutex_lock(&priv->mutex);
- 	if (--priv->init_count == 0) {
- 		brcm_usb_uninit_common(&priv->ini);
--		clk_disable(priv->usb_20_clk);
--		clk_disable(priv->usb_30_clk);
-+		clk_disable_unprepare(priv->usb_20_clk);
-+		clk_disable_unprepare(priv->usb_30_clk);
- 	}
- 	mutex_unlock(&priv->mutex);
- 	phy->inited = false;
-@@ -360,8 +360,8 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
- 	if (priv->has_eohci)
- 		brcm_usb_uninit_eohci(&priv->ini);
- 	brcm_usb_uninit_common(&priv->ini);
--	clk_disable(priv->usb_20_clk);
--	clk_disable(priv->usb_30_clk);
-+	clk_disable_unprepare(priv->usb_20_clk);
-+	clk_disable_unprepare(priv->usb_30_clk);
- 
- 	phy_provider = devm_of_phy_provider_register(dev, brcm_usb_phy_xlate);
- 
-@@ -381,8 +381,8 @@ static int brcm_usb_phy_suspend(struct device *dev)
+@@ -381,8 +381,15 @@ static int brcm_usb_phy_suspend(struct device *dev)
  	struct brcm_usb_phy_data *priv = dev_get_drvdata(dev);
  
  	if (priv->init_count) {
--		clk_disable(priv->usb_20_clk);
--		clk_disable(priv->usb_30_clk);
-+		clk_disable_unprepare(priv->usb_20_clk);
-+		clk_disable_unprepare(priv->usb_30_clk);
+-		clk_disable_unprepare(priv->usb_20_clk);
+-		clk_disable_unprepare(priv->usb_30_clk);
++		if (priv->phys[BRCM_USB_PHY_3_0].inited)
++			brcm_usb_uninit_xhci(&priv->ini);
++		if (priv->phys[BRCM_USB_PHY_2_0].inited)
++			brcm_usb_uninit_eohci(&priv->ini);
++		brcm_usb_uninit_common(&priv->ini);
++		if (priv->phys[BRCM_USB_PHY_3_0].inited)
++			clk_disable_unprepare(priv->usb_30_clk);
++		if (priv->phys[BRCM_USB_PHY_2_0].inited)
++			clk_disable_unprepare(priv->usb_20_clk);
  	}
  	return 0;
  }
-@@ -391,8 +391,8 @@ static int brcm_usb_phy_resume(struct device *dev)
- {
- 	struct brcm_usb_phy_data *priv = dev_get_drvdata(dev);
- 
--	clk_enable(priv->usb_20_clk);
--	clk_enable(priv->usb_30_clk);
-+	clk_prepare_enable(priv->usb_20_clk);
-+	clk_prepare_enable(priv->usb_30_clk);
- 	brcm_usb_init_ipp(&priv->ini);
- 
- 	/*
-@@ -405,13 +405,13 @@ static int brcm_usb_phy_resume(struct device *dev)
- 			brcm_usb_init_eohci(&priv->ini);
- 		} else if (priv->has_eohci) {
- 			brcm_usb_uninit_eohci(&priv->ini);
--			clk_disable(priv->usb_20_clk);
-+			clk_disable_unprepare(priv->usb_20_clk);
- 		}
- 		if (priv->phys[BRCM_USB_PHY_3_0].inited) {
- 			brcm_usb_init_xhci(&priv->ini);
- 		} else if (priv->has_xhci) {
- 			brcm_usb_uninit_xhci(&priv->ini);
--			clk_disable(priv->usb_30_clk);
-+			clk_disable_unprepare(priv->usb_30_clk);
- 		}
- 	} else {
- 		if (priv->has_xhci)
-@@ -419,8 +419,8 @@ static int brcm_usb_phy_resume(struct device *dev)
- 		if (priv->has_eohci)
- 			brcm_usb_uninit_eohci(&priv->ini);
- 		brcm_usb_uninit_common(&priv->ini);
--		clk_disable(priv->usb_20_clk);
--		clk_disable(priv->usb_30_clk);
-+		clk_disable_unprepare(priv->usb_20_clk);
-+		clk_disable_unprepare(priv->usb_30_clk);
- 	}
- 
- 	return 0;
 -- 
 2.17.1
 
