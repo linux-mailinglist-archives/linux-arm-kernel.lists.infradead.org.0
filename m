@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56391FE821
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 23:39:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 753D3FE828
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 23:39:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,64 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=OwK7SV9QtL9kEkMryXq+Svz8owYhYywz1wpK5wQaMLg=; b=qRQac62sqHt1UpCdiDRuxjy/yh
-	vueHMk0uoGFAW48dO8L39yd3MQxTMUytE1+6iZ7qAaycou0be4+Rxrskow/4KWslTfdSPdItvb/r8
-	U3ZXIMhSeDi0y/XsmcjX+5j1H2+ECPzEFG37VkJT9uV6I3ZRazl14vv10DMgwPZELLdnV0dDpbNNR
-	jiUeagiTiUu5jYMRceHsxEdaz5NXT4PFlcahQUBnpW/r+MEuDHogAQ7cLKziUekfzDQTPwh+BPrLH
-	9vMr5HtkW9JIoWEMh84LAsmhmMUNjB2PXjqzCDhmZSBYB675eEa6qfitvBWzZcjuUbff2PEdirbvo
-	1VFgcPhw==;
+	bh=P8agXz3k0KIGgYAhlmyYfH5JH39OgbqppSu5qqwnHVc=; b=A4RBMrgBPGWrm3S2+1HTYHO3QT
+	zKEHbYP/FEm4UcgKd+muDKEVzZt8RkiwK+yZqQ34rPp1jY2v2DKazldxpVT1JxP57TlSkOt17eD//
+	HCRqA5VBR1kDM1YkRFSSRbTHMMO1s1wY12YWXK1jwZE+t5z/sBCPq5JnoO3UgeqKTCjovq36NdoUQ
+	0+/lxWLp348PsHXeMeGkVEWCsATe+479KIna+d32cRAYzLV9p7KCW+TiL9pa69xBv2ULPDqQE5APN
+	4gukLtD1VPD7AjnpG5m0UjET6lRQjioUzrLLnL0lRBTgfDiFnhZ1F5iIs6AKKgTzYTqOrbGJgf++7
+	pFIPwS6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVkF0-0003le-QL; Fri, 15 Nov 2019 22:38:58 +0000
+	id 1iVkFZ-0004FM-S3; Fri, 15 Nov 2019 22:39:33 +0000
 Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVkAR-0007Km-Da
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 22:34:17 +0000
-Received: by mail-pl1-x642.google.com with SMTP id s10so5638709plp.2
+ id 1iVkAS-0007MA-T0
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 22:34:18 +0000
+Received: by mail-pl1-x642.google.com with SMTP id a18so5616894plm.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 14:34:15 -0800 (PST)
+ Fri, 15 Nov 2019 14:34:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=r1ouRyNa+k6U3bqzEPdoAfpCVsnWSnRUjkxZ+vQnSI0=;
- b=AkA2Dg+SrHTn4/EJ8QynEGN7oPoQ/Aw5fRHMyXpEW6Y6keS6gO6VdGp+FDJ81HaCck
- LfkmYzBp8QrNwaymjk9ee0qPdxlC88qX2CcJuOT+KoHhzb0ptMpflS2O2yk9g1xcwj+i
- OsUJI152IuEDboSfUp+G5xjZAwG1t7A0XU/A7qB4I1ptcuIK1x3v8NMEcAQoZZq4bi4E
- Be+sv3Xu57IO52n36rJiyMgg2w2e6EQhjAwLZeheDCHSoe140YiXAwaGdpXT8hHFrlti
- FWcDYu761P26xKgxM27ycYqxbciEuu1T6zlil6sWl1pcyhuIHyDlPl4vUH/r7fLTJUmm
- 52MA==
+ bh=FlA/WYoLeRABK4x8leOELB1KpW2VXeE/7KRkjFeheIs=;
+ b=EuCYF29XK/mB/F3BxjT3sWX6z88YjtNqs+w5TNJQP6w08JiRou935ewYfWNAW/g3Eg
+ FYlTO4DtoNdOTwlSxUFfeQtM32HB8UD4XiO9OLyVfO071D1lvVGMwJJWMxV7DW959l9H
+ 3cEwLuybSJy5RgNBVbsk3HFrKrWbg+s5SFLxWWx6v5gjbraobv8BFodgs84RA1TUiybx
+ 8wvlY+DBrzz7i+IYZ/fG8vjyNWly48fh5ZQWjCLhzQuBoYMt+ckcnb/GiIKLPGqHmTMR
+ H6s2ATHNqRlbPvsQBZJwh0jEIKkumM1yU/gS+DXe538ozDU9zHQll5wun9QYpe4w15+l
+ ifVg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=r1ouRyNa+k6U3bqzEPdoAfpCVsnWSnRUjkxZ+vQnSI0=;
- b=np/A5RSU5re7bim+W0XY0o2MVA8SWS/WIPH6T4yng+IQUVXKlExvy/G+GYNQgBkIyQ
- sQyfP/Lx7YTjvHz9BJKR3xYk0b/IgrO/moi4AJPMW4SbKOnk/J1+b+HL2hIlqrKD44eM
- rv4s9bsgmB018zlyGnNf2XE+7qS13YkoibVzZGARCKOtL3Um+CylO2Kz3AbSb38mRLJZ
- heqnXtw2giaq3p2JR+ziig6gM4oP3ZzIqj+D3tvC6RYqtx3PNNWfklVF//UQqH38/r34
- ixerqtVVQbEzO/QZgoX3vQFFbEITuJsEXzylvXSxKgwz5pq9k5QkM7CTy6bTaSmA4aTj
- p6MQ==
-X-Gm-Message-State: APjAAAWvebpccDvvr+zhplR7jEZO5LAjR7rHc2NZWSMlbq4986WZvdqh
- 4q2F/vqXkn2Z9d6GYx3aELlhTg==
-X-Google-Smtp-Source: APXvYqxC58jH+YVSM8IOmV0kV1VyZBdQVm7yePJM+Y2/BxjPAGsb3xhTH2/dY5iUX2I2iGcgQm94xQ==
-X-Received: by 2002:a17:90a:9705:: with SMTP id
- x5mr22110495pjo.37.1573857254692; 
- Fri, 15 Nov 2019 14:34:14 -0800 (PST)
+ bh=FlA/WYoLeRABK4x8leOELB1KpW2VXeE/7KRkjFeheIs=;
+ b=qtZfF2gjceBvZKzx0mWr7MLo34GatCoVkJzTbQ69ztnokUc24vJcgHMtK3BnYdZGEh
+ nm4a0ursFk6hl+k1mLQXIvYwsXFHPaMUvPflxhlIX952Z6bgt/4b/Q+PEVUjQiKQJgSc
+ WLujI9DczX9KszUly7FkAm4i1tVfw8xaT5uI3GbdVIlzbcNpsdBjpjvE8/H1y2yvpctG
+ YuxpGvDqZCJCQN/Mhfg3QFGp01P3UncUniBRflG0bdZjYIG5jRc00QzWb4nhyVQcAjQw
+ SHMSGcIAyLKLLTKmDtPlm/McvWee8JldUrtoOqoRr4HfHEmCX84pPn+LKHZyuw74rqfJ
+ HJXA==
+X-Gm-Message-State: APjAAAUhPekPhS0rW1+eTnlyANaCseHzfldTaL3yBVUV0uE3ngsOyFDA
+ Jb7YKJtjyv8fbZldFbYJNGlizw==
+X-Google-Smtp-Source: APXvYqwrPgGdAOCHvG+Dr9yqtqFxSjTdBheEMm1jF9StVEaJaadS7qR9/JmFNyQStGJT1dxmYiuHuQ==
+X-Received: by 2002:a17:90a:2385:: with SMTP id
+ g5mr22958192pje.117.1573857255728; 
+ Fri, 15 Nov 2019 14:34:15 -0800 (PST)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id m15sm11699724pfh.19.2019.11.15.14.34.13
+ by smtp.gmail.com with ESMTPSA id m15sm11699724pfh.19.2019.11.15.14.34.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 Nov 2019 14:34:14 -0800 (PST)
+ Fri, 15 Nov 2019 14:34:15 -0800 (PST)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: stable@vger.kernel.org
-Subject: [stable 4.19+][PATCH 19/20] media: ov5640: fix framerate update
-Date: Fri, 15 Nov 2019 15:33:55 -0700
-Message-Id: <20191115223356.27675-19-mathieu.poirier@linaro.org>
+Subject: [stable 4.19+][PATCH 20/20] dmaengine: stm32-dma: check whether
+ length is aligned on FIFO threshold
+Date: Fri, 15 Nov 2019 15:33:56 -0700
+Message-Id: <20191115223356.27675-20-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191115223356.27675-1-mathieu.poirier@linaro.org>
 References: <20191115223356.27675-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_143415_647814_D98986AE 
-X-CRM114-Status: GOOD (  11.49  )
+X-CRM114-CacheID: sfid-20191115_143416_976178_EEDA7E43 
+X-CRM114-Status: GOOD (  11.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -104,48 +105,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Hugues Fruchet <hugues.fruchet@st.com>
+From: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
 
-commit 0929983e49c81c1d413702cd9b83bb06c4a2555c upstream
+commit cc832dc8e32785a730ba07c3a357e17c201a5df8 upstream
 
-Changing framerate right before streamon had no effect,
-the new framerate value was taken into account only at
-next streamon, fix this.
+When a period length is not multiple of FIFO some data may be stuck
+within FIFO.
 
-Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
-Signed-off-by: Sakari Ailus <sakari.ailus@linux.intel.com>
-Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+Burst/FIFO Threshold/Period or buffer length check has to be hardened
+
+In any case DMA will grant any request from client but will degraded
+any parameters whether awkward.
+
+Signed-off-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
 Cc: stable <stable@vger.kernel.org> # 4.19+
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/media/i2c/ov5640.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/dma/stm32-dma.c | 20 ++++++--------------
+ 1 file changed, 6 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/media/i2c/ov5640.c b/drivers/media/i2c/ov5640.c
-index a3bbef682fb8..2023df14f828 100644
---- a/drivers/media/i2c/ov5640.c
-+++ b/drivers/media/i2c/ov5640.c
-@@ -2572,8 +2572,6 @@ static int ov5640_s_frame_interval(struct v4l2_subdev *sd,
- 	if (frame_rate < 0)
- 		frame_rate = OV5640_15_FPS;
+diff --git a/drivers/dma/stm32-dma.c b/drivers/dma/stm32-dma.c
+index 379e8d534e61..4903a408fc14 100644
+--- a/drivers/dma/stm32-dma.c
++++ b/drivers/dma/stm32-dma.c
+@@ -308,20 +308,12 @@ static bool stm32_dma_fifo_threshold_is_allowed(u32 burst, u32 threshold,
  
--	sensor->current_fr = frame_rate;
--	sensor->frame_interval = fi->interval;
- 	mode = ov5640_find_mode(sensor, frame_rate, mode->hact,
- 				mode->vact, true);
- 	if (!mode) {
-@@ -2581,7 +2579,10 @@ static int ov5640_s_frame_interval(struct v4l2_subdev *sd,
- 		goto out;
- 	}
+ static bool stm32_dma_is_burst_possible(u32 buf_len, u32 threshold)
+ {
+-	switch (threshold) {
+-	case STM32_DMA_FIFO_THRESHOLD_FULL:
+-		if (buf_len >= STM32_DMA_MAX_BURST)
+-			return true;
+-		else
+-			return false;
+-	case STM32_DMA_FIFO_THRESHOLD_HALFFULL:
+-		if (buf_len >= STM32_DMA_MAX_BURST / 2)
+-			return true;
+-		else
+-			return false;
+-	default:
+-		return false;
+-	}
++	/*
++	 * Buffer or period length has to be aligned on FIFO depth.
++	 * Otherwise bytes may be stuck within FIFO at buffer or period
++	 * length.
++	 */
++	return ((buf_len % ((threshold + 1) * 4)) == 0);
+ }
  
--	if (mode != sensor->current_mode) {
-+	if (mode != sensor->current_mode ||
-+	    frame_rate != sensor->current_fr) {
-+		sensor->current_fr = frame_rate;
-+		sensor->frame_interval = fi->interval;
- 		sensor->current_mode = mode;
- 		sensor->pending_mode_change = true;
- 	}
+ static u32 stm32_dma_get_best_burst(u32 buf_len, u32 max_burst, u32 threshold,
 -- 
 2.17.1
 
