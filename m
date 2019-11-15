@@ -2,80 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD346FE2DA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 17:31:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23815FE385
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 18:00:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=xAEYzTkcTKjoC7c8Ddb3P4Yl3MJ2eOjutMzpmZzf8fw=; b=tajV+ybXeZzzPRmz7eqnm+pjAV
-	92S+zO+WxAnHmqVM9m6VOsmQFxXh0V5rPkKOw0AmzhC9Ar+sKZnn0/hw4Uor+xdMNUYE1E2Wtsnjw
-	2t9EHfJBCNu3acowGUTreOE64N4GAjEHngqTNa5vpYOVUQ63+foDf/Bm+y2xDKbJZ7HFM2x/7RLcm
-	078IfrUw55fF+QtiQo+LRI32LHxUkNNGY1oCo/xyWPeIv/l/OppNcqtvxOU9OpU4QGUT2O78eUqjy
-	H9Jvo5x9sLfFBkYMrxLY0rXKLOF3xuqfupR7WEKasrj4xqqJyjgUHBv9oc3ybP/DkrLV+MKYthNBI
-	mj+CUAtQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ez3s/K9IMd747gB/8EFgW0IEwplKHuBF0QAgC4LZKRQ=; b=opvuBHMX0R+iwA
+	WQPi2P3NLCT6DA/IcOKb0zbyvUZPcPlrsU3cdf+yvKm9sXDFaCNym8CiOPsDCccLet+mLoGv6GTbo
+	+4J5ChYMUM8GOtStM3MnZqL1QZb2/xdt9ahemeM/ZshA6u7nwUgNcVeTM9U0wivJy46Hx0Bt3L4/T
+	RRlWoce4CaNYxuZBxZGUTvbH8gNQoO/SO5f68X/kK/98miL4gtceFD8MbARw28Gy/RVu20w9FpUkw
+	eywzRxKLHww3q2V0FTAILdD8W8jISXxx0OKaRHY+gsCDGAcepZnmTmp3bRsXr3fyqpQRaRMAqrwME
+	v5pTyxD4CbiCsiDrlxJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVeVS-00010v-EP; Fri, 15 Nov 2019 16:31:34 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iVexc-0005oN-Jx; Fri, 15 Nov 2019 17:00:40 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVeTv-0006zu-1q
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 16:30:00 +0000
-Received: by mail-pg1-x543.google.com with SMTP id f19so6225502pgk.11
+ id 1iVexT-0005nM-Tk
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 17:00:33 +0000
+Received: by mail-pl1-x644.google.com with SMTP id d7so5061200pls.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 08:29:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=vyxQq6l0DnXXPlNTL9PGBy7Itz+G0TwXgp9Tr10w+hM=;
- b=vYxpcpmYjKU505XimxG9aE30KFTlxC3O2y6sV+mQAjvNjy/GP0tyg9bWBnxqBHXyup
- kN/FSlMRPGm0nSAEWl/wfvXvZnmCw0CPqq9kszndciTlgHWqgGQT5hW+QPJd6k46wuQp
- EATT0nvCSJztIcTfqEfIFdt5472rcLHHooeMLtjHsmYqr2oo6MZZsZTcGCGAA1vakiop
- ilN1gfkgAc4BE5i9UcBtFMwuMdOHTbFb/vnntnFZyRIm5dbP39LKMxsF74gmUjuL5PkP
- TjSiPci8ZiI5PCKlVMZ5delLH/tJJiycPvCriQrKz28Bkoyr7NRbegbINpM++fZFlk1L
- z7RQ==
+ Fri, 15 Nov 2019 09:00:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=6KJTXmV3nRW8gUbGqQ4GcrDPQULApXAqF7C+3pqi6RM=;
+ b=lea72v0aKBO/HzkW9xRW0+gmfuKWuweJm8ZuZhTIE6ZspE9e3DdbgdeOqryeh2WpHs
+ 69VCzsotxdw11qrFs2/xzVdgNpKaC8lZYDeHIj6pnZlDX4VWEl4FWcoKYqGnAas8lUU4
+ 1dbEIwD9NKRURLHoHwSslyp2NZXgzpz91sk68=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=vyxQq6l0DnXXPlNTL9PGBy7Itz+G0TwXgp9Tr10w+hM=;
- b=kM0BjzRYbysh2mZrhgw10umJQ8vH5uAacoYY6u0oBpVNHgG6n++3mfL7FSE1/KnZzA
- 0DSn2tdcfsxYkFk6O9Ux0k8ujo7Gg2vdmuYVzguaYSjqT/spWzA1hyzyROrKmS1l7tlm
- xkA06i8rP5eujW+qyOHvTMLHGFoP/767sWCSik8vCXsUFXH3qBACZ/YU4D1eHsoWd1dm
- UhEguYHQsOfvPMGGEvnoHp3BjwswMS6BrkTST7DXcU9izRfhiHy52YiRTfSMJPZpjiTH
- x5CkrUAIRlU9DFY4P49rBfoaF8cCDgUfKDY6iJje2DORPlLzwbHa6wSTiU091YJzBuzn
- 574Q==
-X-Gm-Message-State: APjAAAWI909opmZG8+z7cLxXskJqfwY5+sCHp3DqdH/1rJZHJ4JnKrX/
- zPO4b4SFXsyzI9rRSlFKzgrJ
-X-Google-Smtp-Source: APXvYqyHvbWvUHsrotDXNo3Uqb/ciOmuTBbvH69h1MhX5fWECe2j+LdfQeiepIjfp6mk4OXar6ZLVw==
-X-Received: by 2002:a62:ae11:: with SMTP id q17mr7393595pff.103.1573835398499; 
- Fri, 15 Nov 2019 08:29:58 -0800 (PST)
-Received: from localhost.localdomain ([2409:4072:6183:6d55:8418:2bbc:e6d8:2b4])
- by smtp.gmail.com with ESMTPSA id y24sm12295288pfr.116.2019.11.15.08.29.52
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=6KJTXmV3nRW8gUbGqQ4GcrDPQULApXAqF7C+3pqi6RM=;
+ b=is2OAtAZK1xXIbF/EuxZ2JTeUf3WSOOqx2sUKbqPkT4AdZcvUcoMDadQWLoNZLdT6z
+ S04gdsdPEB8tW3q1gsoHqF6z0WX99Sk1XrZGuKFQsXNVZQ4eNuwu2xikhQ/BGVhY/XMB
+ KXxny9WprJN2dQvRKotZgZZtDluAQErOVA54gxWnM/i6EyBNLt4O5mJSIy5hIW97ci+W
+ VL2he3ZqldOKhCV8w6t8ILShy5eddNYv1WufIAV/Y35lW+UZLH3h/rkeHqMVp/MKOBd2
+ h2PSWaX1pJ0ga9DnwZrC7dH48EdF42Xm/tx9MVfHPt6gaE92SOMAOOhgxPtW1U+Hdqzq
+ +aug==
+X-Gm-Message-State: APjAAAUq3eCjQCmDQt1iPFGx6JQ1KzhVurr8m1kLcnzfIgzxNo7UKjcr
+ pCURedhNHaPVc8PxoHCC1raZYg==
+X-Google-Smtp-Source: APXvYqy13tvuu58lwI0ZashXZBglnAc01GHqKKGLWlQ1kA0mCtTgoAkAcwI/Gc3rB016Is7SqriZWA==
+X-Received: by 2002:a17:90a:b393:: with SMTP id
+ e19mr21641421pjr.115.1573837228497; 
+ Fri, 15 Nov 2019 09:00:28 -0800 (PST)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id i22sm8907804pjx.1.2019.11.15.09.00.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 Nov 2019 08:29:57 -0800 (PST)
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: sboyd@kernel.org,
-	mturquette@baylibre.com,
-	robh+dt@kernel.org
-Subject: [PATCH v7 7/7] MAINTAINERS: Add entry for BM1880 SoC clock driver
-Date: Fri, 15 Nov 2019 21:59:01 +0530
-Message-Id: <20191115162901.17456-8-manivannan.sadhasivam@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191115162901.17456-1-manivannan.sadhasivam@linaro.org>
-References: <20191115162901.17456-1-manivannan.sadhasivam@linaro.org>
+ Fri, 15 Nov 2019 09:00:27 -0800 (PST)
+Date: Fri, 15 Nov 2019 09:00:26 -0800
+From: Kees Cook <keescook@chromium.org>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH] clk: clkdev: Replace strlcpy with strscpy
+Message-ID: <201911150900.817CDE33@keescook>
+References: <1573812819-5030-1-git-send-email-peng.fan@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1573812819-5030-1-git-send-email-peng.fan@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_082959_108993_D21E33E7 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20191115_090031_982497_2FC294A2 
+X-CRM114-Status: GOOD (  17.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -86,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,42 +95,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- darren.tsao@bitmain.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, fisher.cheng@bitmain.com,
- alec.lin@bitmain.com, linux-clk@vger.kernel.org, haitao.suo@bitmain.com
-MIME-Version: 1.0
+Cc: Alice Guo <alice.guo@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add MAINTAINERS entry for Bitmain BM1880 SoC clock driver.
+On Fri, Nov 15, 2019 at 10:17:53AM +0000, Peng Fan wrote:
+> From: Peng Fan <peng.fan@nxp.com>
+> 
+> The implementation of strscpy() is more robust and safer.
+> 
+> The strscpy was introduced to fix some API problems around strlcpy.
+> strscpy is preferred to strlcpy() since the API doesn't require
+> reading memory from the src string beyond the specified "count" bytes,
+> and since the return value is easier to error-check than strlcpy()'s.
+> In addition, the implementation is robust to the string changing out
+> from underneath it, unlike the current strlcpy() implementation.
+> 
+> Cc: Kees Cook <keescook@chromium.org>
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
 
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
----
- MAINTAINERS | 2 ++
- 1 file changed, 2 insertions(+)
+Reviewed-by: Kees Cook <keescook@chromium.org>
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 52f3ac28b69e..40e9ba15ad2a 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1529,8 +1529,10 @@ M:	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- S:	Maintained
- F:	arch/arm64/boot/dts/bitmain/
-+F:	drivers/clk/clk-bm1880.c
- F:	drivers/pinctrl/pinctrl-bm1880.c
- F:	Documentation/devicetree/bindings/arm/bitmain.yaml
-+F:	Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.yaml
- F:	Documentation/devicetree/bindings/pinctrl/bitmain,bm1880-pinctrl.txt
- 
- ARM/CALXEDA HIGHBANK ARCHITECTURE
+-Kees
+
+> ---
+>  drivers/clk/clkdev.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/clk/clkdev.c b/drivers/clk/clkdev.c
+> index 0f2e3fcf0f19..ee56109bc0b4 100644
+> --- a/drivers/clk/clkdev.c
+> +++ b/drivers/clk/clkdev.c
+> @@ -165,7 +165,7 @@ vclkdev_alloc(struct clk_hw *hw, const char *con_id, const char *dev_fmt,
+>  
+>  	cla->cl.clk_hw = hw;
+>  	if (con_id) {
+> -		strlcpy(cla->con_id, con_id, sizeof(cla->con_id));
+> +		strscpy(cla->con_id, con_id, sizeof(cla->con_id));
+>  		cla->cl.con_id = cla->con_id;
+>  	}
+>  
+> -- 
+> 2.16.4
+> 
+
 -- 
-2.17.1
-
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
