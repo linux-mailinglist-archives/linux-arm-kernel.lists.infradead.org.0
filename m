@@ -2,144 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC7E8FD409
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 06:18:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F9E7FD46E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 06:33:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BSfricX6bvSQv92DG3bhgX44lS/QScwMPibVF5Ep6yM=; b=SOz8cDFxx5QYug
-	UlZpZGa20SmNP8QTFJY89Ub/mA8zORfDcpGC5tYwZq4XVV//PpZqhhGPuD0oYBHlfWpMv+jL37wQI
-	y85y/1VkTRRiAt61ntTh/KrdT18FqeZjtaQKfbhvNWyXMlijcucLlKVHjwZRkYdqzsO6G8vlcv3iE
-	6O9dLDDtqGJR3VpzkgHvO5utTUX/mX5coiilB4CmBsH5KZa+JztTod8fXQiKN2VL/Fx+StpgQCcRx
-	nevrwxe0EiOVkx622ydM9Qdc0m/tm66WHYWoujOT1c9Ao8hD+rHFvNQAK1GlFGIV1CJUJkmKrbm3c
-	TVDPaIRylC10HBahX/zw==;
+	List-Owner; bh=Mh89cezs4/fBeij4UpVTViFTdXnKsPQiHxnHclIxuPk=; b=UuDkpV0J+5PYO5
+	4FITEbejrKurxWUn+ZnXOp0qKcVqmcZV48+DPOpxSvi71kbs9uhzOIDVV3JeFl4+kt47mopyZMXz8
+	tPCu9oXBj6mviMTUmi9COaOxQtVGdLUzXgx88MFE5HWfaXo2JHL1/ZXk4kP2d9u3RbT2jfT6wXffo
+	k4rgZGqsM1cLJpvc2LsfpA2PIM3wdZyOQpqwqHvrD18VV4eTMOLHgOu8wp0CNZ9sE5jk8icLarJ8G
+	RI+Rqs0jfE0x68HK1UiFMdoyb74TBnbSLv8cvNKNol9Xzqg19qs+mccw60fSGCh2PnFM9C1VY/pfx
+	wozPQdXQQNM4Y2QgXFJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVTzY-00064K-1X; Fri, 15 Nov 2019 05:17:56 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1iVUEm-0002j6-Re; Fri, 15 Nov 2019 05:33:40 +0000
+Received: from mail-eopbgr1400091.outbound.protection.outlook.com
+ ([40.107.140.91] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVTzP-00063P-8j
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 05:17:49 +0000
-Received: from epcas1p4.samsung.com (unknown [182.195.41.48])
- by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20191115051742epoutp03fd42df59cf9ec1f2339a990debdc924a~XPkVykmsZ1089210892epoutp03W
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 05:17:42 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20191115051742epoutp03fd42df59cf9ec1f2339a990debdc924a~XPkVykmsZ1089210892epoutp03W
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1573795062;
- bh=p1sABqGlkGLf3lAdgyltr1ZXoyt31InAM+Rr2aci+AU=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=DEVcYwdWfJY1t3KiPnsCtWc8Cpff19Au9rUclFK6Ro0IIoKVonkYbdbrbBJksaBf0
- /tfPEDm+5CPk8NNVW2s7yvFvvH9NwrZEQ6HxRSUdV/s891PbEBe5pkoEs5SEh4e4aF
- SvIA9cNSCETCrn0l4N77EU8xCHO9jRW8dpgLL3Nw=
-Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTP id
- 20191115051742epcas1p4704cf1665590255431d0bce0967ff104~XPkVHU3RH1161511615epcas1p4d;
- Fri, 15 Nov 2019 05:17:42 +0000 (GMT)
-Received: from epsmges1p2.samsung.com (unknown [182.195.40.156]) by
- epsnrtp3.localdomain (Postfix) with ESMTP id 47DmnZ5DrWzMqYkj; Fri, 15 Nov
- 2019 05:17:38 +0000 (GMT)
-Received: from epcas1p4.samsung.com ( [182.195.41.48]) by
- epsmges1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
- F9.93.04135.2F43ECD5; Fri, 15 Nov 2019 14:17:38 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
- 20191115051738epcas1p4ebf0f6882c8680650d3e0eda3126f5c1~XPkRmezXe1161511615epcas1p4O;
- Fri, 15 Nov 2019 05:17:38 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20191115051738epsmtrp19837af5cd85989cda4f5e45f904a5a4a~XPkRlSXjP0881308813epsmtrp1w;
- Fri, 15 Nov 2019 05:17:38 +0000 (GMT)
-X-AuditID: b6c32a36-7e3ff70000001027-13-5dce34f2def4
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 5F.8A.24756.2F43ECD5; Fri, 15 Nov 2019 14:17:38 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20191115051737epsmtip13739d01d4fe43a292e77a29f76fc3485~XPkRItzze0235902359epsmtip1a;
- Fri, 15 Nov 2019 05:17:37 +0000 (GMT)
-Subject: Re: [PATCH v6 3/5] dt-bindings: memory: Add bindings for imx8m ddr
- controller
-To: Leonard Crestez <leonard.crestez@nxp.com>, Stephen Boyd
- <sboyd@kernel.org>, Rob Herring <robh+dt@kernel.org>
-From: Chanwoo Choi <cw00.choi@samsung.com>
-Organization: Samsung Electronics
-Message-ID: <08a89e18-ec63-79c3-e018-0cd2f3baad78@samsung.com>
-Date: Fri, 15 Nov 2019 14:23:22 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iVUEc-0002iJ-Ji; Fri, 15 Nov 2019 05:33:32 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=AHyMe8Qdb/jDcIyQQ3FFsQg18eP0uTejrY8N8QJSERGVVslmu0yigB4zEtK59d4CiXQKrEmx7OyWlznawXZDHtdqVIRRa3dwEsZACqcmRsmyrkF/Dhwsuup3l+kG7dKiWMnnOFvDBO2SRrPkwu6p7FGSYtQxDpEOVUkeXDI57EKZ3tn2VWV5vcr9nPOXn/DdxqMk2SKI7Ztx0kZkxkd8/NFnQe8leO9FPVLacVtVXQw8Vbw2Xk+jWdI1h9QqIum7P/YxtN9oNwQyBYPuJ7+xq2h4jFanp9QUtS+d9RUCyP0tpjJnQo7t/+NlX63PaMIJY2fML+PCplQ5NWygNKa7ww==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=j/QjK9zXBEM2paHzNigaYicDA3fBZrq+OXX76JnzceQ=;
+ b=coqxvdPX48/jQerU63eQFgWsrZOBPIGwXA0l1VWGviHIQcCzX6BYp4JUqGj7a8fz2ilmNL1vbCNzvjFTg4zcYs+moCC30MEGZYCOrSbxuKkKFPY9CAwE8A0PnizdvHRPKMWKSIQheMN8x7iVStut58Iomil1Fzx9jeTlHHClbe2qhGqJqpDp/PTY1GsM/kmSRXjr2aFKgPTjgvES/FHyxdAnbg8mCBxf97SNLQK4m5xCa0PbcP7noh+5VTFozx0eMqH+6c7FLeCmDFwBNMDbawVk/iB6+G00zuNOr4zBl0Nzfka1v/NA14GCAAezJ+RUhSLuTi7bH401JaP/STWH2Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=j/QjK9zXBEM2paHzNigaYicDA3fBZrq+OXX76JnzceQ=;
+ b=lla8BEypY6/YMvfvnpPhKpraAytko8sjZPnxdruYcNgmI6Kfbl/fDBQ2qPUIawDpiH6ZV4N9TOoPxO7sv6lZSYMjpCwBt98riOhQb6EXbocJ18XVdyA1EJMwQEOcsVGpinRW3rpm09y1c4nhcUxhtZWyWWuy3p2SrSr8smkAO2M=
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
+ TYAPR01MB3567.jpnprd01.prod.outlook.com (20.178.137.138) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2451.28; Fri, 15 Nov 2019 05:33:25 +0000
+Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::6998:f6cf:8cf1:2528]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
+ ([fe80::6998:f6cf:8cf1:2528%5]) with mapi id 15.20.2451.024; Fri, 15 Nov 2019
+ 05:33:25 +0000
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Felipe Balbi <balbi@kernel.org>
+Subject: RE: [PATCH v3 10/13] usb: gadget: udc: renesas_usb3: create debugfs
+ directory under usb root
+Thread-Topic: [PATCH v3 10/13] usb: gadget: udc: renesas_usb3: create debugfs
+ directory under usb root
+Thread-Index: AQHVmtgjs6kjMfHecE2BmiNGnS0AxqeLtQfg
+Date: Fri, 15 Nov 2019 05:33:24 +0000
+Message-ID: <TYAPR01MB454479F91B948904C213B94CD8700@TYAPR01MB4544.jpnprd01.prod.outlook.com>
+References: <1573728085-29016-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1573728085-29016-10-git-send-email-chunfeng.yun@mediatek.com>
+In-Reply-To: <1573728085-29016-10-git-send-email-chunfeng.yun@mediatek.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
+x-originating-ip: [150.249.235.54]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 24511005-60ea-49ab-79b8-08d7698d5624
+x-ms-traffictypediagnostic: TYAPR01MB3567:|TYAPR01MB3567:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <TYAPR01MB35670C3A550C1E32635DEAE8D8700@TYAPR01MB3567.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 02229A4115
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(396003)(366004)(346002)(136003)(39860400002)(376002)(189003)(199004)(6246003)(9686003)(66066001)(66476007)(66446008)(6116002)(71190400001)(71200400001)(14444005)(5660300002)(256004)(64756008)(66556008)(229853002)(8676002)(54906003)(4326008)(81166006)(8936002)(99286004)(55016002)(76116006)(6436002)(316002)(52536014)(110136005)(446003)(2906002)(14454004)(476003)(33656002)(11346002)(86362001)(7416002)(81156014)(7696005)(7406005)(486006)(186003)(478600001)(66946007)(74316002)(76176011)(26005)(7736002)(3846002)(305945005)(6506007)(25786009)(102836004);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:TYAPR01MB3567;
+ H:TYAPR01MB4544.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: renesas.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: lITUcqsRnYn1Eq8AkwXsMuJODq58lGPlQ7BzIVEzJv8fbhc77IpzvaqDsr5A6YyJJ4dO3wBpj0d5ieXYSuRxMAwIw8cIVwDJL/CNWs8JmfA7RLHEU+6fneDk78YwkQGYf3CtdxWble0JaJvFLZ0SWpn9H1Fp8MKMzE01M6jPqVcPlD9FhQbWY9D1MmFK3SdpCdjPAGUuTOUvR2f84ROyCjTuGKAcUjqTF/vL03JPur8KiOaVQmQSdqOTfVCi8OsT3WxdAPSt0azxlQrHXkewTneRG0GVdF/44jnfJn/VQHMckns11A3qJlJUuBQPa01aNOvrnL3g5Y6178tgh8WXnc17kmnmMfMeun0PGdkgCFwRkGb5qVQv7fcjWbDWwuL5Sxy3VuhY2zMeztp+x5LeG6u2zdsO3YWWDyy0Q7yS7x44gsIVOpGAwyBZL5kYzAB8
 MIME-Version: 1.0
-In-Reply-To: <58f3aea574bf3a38a42075e313fc2a5592c96ed2.1573756360.git.leonard.crestez@nxp.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Tf0xTVxTHc/t+tKgdzwrj0i0O35wJhEJLgV02MZtz5CXDBGOymEWGL/AC
- BPra9FEy3BLZFlAb/DkIow7phiBWE2ipgIzKQMbGD3EwrCiimxB1ZNQhK0MQtrYPM/77nnM+
- 53xzzs2VYYouqVKWyxdwRp7Np8l1eMu1SLXqafxQunqpLxJ1916WIu9AP0D1Iz8C9HdFO4Ym
- 748D1FqViWp6hghkbx7HUaXLQSJbxRUc3bjRJEXXv/hTihomZgnkmHQTaLbsHoHMixcwNHes
- B6C6W8MS5G44RaC5pkmAhvvfR+OfN5Do4lAXiQYHRghU4uqRInP3MolW3HYcPXaGobpaN4bs
- XuadzUyFuQEwl85eAsyTsRIpc6Z4GGesDhPjsB0lmbvuDpJpPneIsXvaJEyXp0PCnFhWM4vX
- QhnnzcM4c9xpA8ycY3Na8Ed523M4NoszRnB8pj4rl89Opj/Ym/FeRkKiWqPSJKE36Qie1XHJ
- 9K7UNFVKbr7vRnREIZtv8qXSWEGgY3dsN+pNBVxEjl4oSKY5Q1a+IckQI7A6wcRnx2TqdW9p
- 1Oq4BB94IC+nyvU7YahRflLd+JAoBh0hZhAkg1Q8nPf0kmawTqag2gA87RySiMFTABes1VIx
- mAfw7D0n+aLF8nwBFwsuAHtXVlapJwAuTRwPUJuofXDs2bKPkslCKCMs64vyMxj1rxS2WH/G
- /AxJRcHOx2MBPpjaAm8uTAK/llM7YO8/gwGNU2/AAW896Z8T6ps54GVFZCPsq5oKjA+iPoaj
- 9m3+NEaFwTtTNRJRvwZbZ77B/LaQGpXB2Zbm1QV2wdGpR6t6E5z+ySkVtRL+caJ0VX8KL/T1
- kGLzEQCdnb8QYkELO+u+kviNMSoSNrbHiukt8MpSNRCNX4IebxnhRyAlh0dKFSLyOvz1twmJ
- qMNh7eGj5ElAW9ZsY1mzgmXNCpb/zawAt4GXOYOgy+YEjSFu7WM7QOD7RCW2ge+GUrsBJQP0
- Bjm8cz1dQbCFQpGuG0AZRofIy2cG0xXyLLboIGfUZxhN+ZzQDRJ8tz6FKUMz9b7PyBdkaBLi
- tFotitckJmg0dJj83fN16Qoqmy3g8jjOwBlf9ElkQcpiEM7PW4qlSfXnirhjk+d3fi+3ydN3
- cx9GTwdvO+TK3McXchd1u41tKfSGt58/fDRXvv62tclVfnBrq61l/9XYVyu/fOWz9lqV6uTt
- xv3fPnDfL/X81R/jwU43fX134daeZwdS108TfGXJzpQfFsP5BzPRG0dYtza8SxLdwTdil/mr
- e2lcyGE1UZhRYP8DxCDSglQEAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTYRjHeXcuO4rD06b4amS0sIvmZSD0fgjJSjrQF6sPmWK65kEtN8eO
- l4wuGli5MhUv5bpoeGEtJTctzRRx01FuKtNc4qXImQWlkiaZeMlpgd9+vP/f/3meDy+FCesI
- HypZkcaqFNIUMemKvzKJfQPnQvtiQ0ydFDKaX/LRgqUHoNqBboB+lbZiyPFpFKDmchmq6Ooj
- kL5xFEf32w0k0pW+xlF/fwMf9d74wUfa8Z8EMjjsBPp59yOB1EvPMDSf3wVQzQcbD9m1RQSa
- b3AAZOuJQKM5WhI97+skkdUyQKDc9i4+UhtXSLRq1+PoW5MXqqmyY0i/wBz2ZUrVWsDUPakD
- zOxwLp95mG3DmUpDOmPQ5ZHMmL2NZBqrrzP6mRYe0znTxmMKVkKYJZMn0zR0C2fuNekAM2/w
- jXSPdj2UwKYkZ7Cq4LB416Ty9s+EssLn0uMXU0Q2aPNQAxcK0qFQs7yIq4ErJaTfADiwZiY2
- A29YZuvG1IBaZxE0mbhNZxpA24Mp4HREdBQc/rOCO9mDVsHW2gK+U8LoXArWW8r5zkBITwBY
- 33XAySTtDzu+DZNOdqd3waFFx8YgAR0Gzb+tG4zTftCyULvheK4v+No8/M/ZBt+VT+LOg1zo
- c/C9fo/zGaP3wuUnA9gme8GRyQreJu+EzdOPsEIg0mxpa7ZUNFsqmi2VSoDrgDer5OSJck6i
- lCjYzCBOKufSFYlBslS5AWz8If/9LWCwOs4IaAqI3QRwpDdWSEgzuCy5EUAKE3sISqatsUJB
- gjTrMqtKjVOlp7CcEWyncLGX4IvCfFZIJ0rT2Issq2RV/1Me5eKTDURX44U13qesq0fC/a3n
- tePHg5X7vu8+6giI8iuOm3U7HO13LCD8bOFtiU9VhPrtTF1DcfRJ0XT4pYP1gYGDUSVDKunQ
- iZj4XAkpS94RWVUUEzGVDyx37shQfdua5NDNhrQrMU19sgxzkHyi7Om1jrmZ4Mz54tNzOZ5n
- oi7sseWNiXEuSSrxx1Sc9C+wmLuuPwMAAA==
-X-CMS-MailID: 20191115051738epcas1p4ebf0f6882c8680650d3e0eda3126f5c1
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191114183338epcas1p2e3ded933b5a88056b97ddafd85e0be2a
-References: <cover.1573756360.git.leonard.crestez@nxp.com>
- <CGME20191114183338epcas1p2e3ded933b5a88056b97ddafd85e0be2a@epcas1p2.samsung.com>
- <58f3aea574bf3a38a42075e313fc2a5592c96ed2.1573756360.git.leonard.crestez@nxp.com>
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 24511005-60ea-49ab-79b8-08d7698d5624
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Nov 2019 05:33:24.8893 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 9wlpzJ/d525cY5R6Qu6qCINh/DW+snSR94J4uPnLnNnC7ujaRZuDpr0shK1TFargAj9z31jtoOoH5kYtEiuVkeN5mTLzLLLymkryYsytu8mIjwj0+dsb0kcFzlhs/bFE
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB3567
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_211747_549031_28FBA70B 
-X-CRM114-Status: GOOD (  23.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191114_213330_804089_4E1B065F 
+X-CRM114-Status: GOOD (  18.69  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.33 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.140.91 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -151,127 +119,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-clk@vger.kernel.org,
- MyungJoo Ham <myungjoo.ham@samsung.com>, linux-imx@nxp.com,
- devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Kepplinger <martink@posteo.de>,
- Silvano di Ninno <silvano.dininno@nxp.com>,
- linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
+Cc: Peter Chen <Peter.Chen@nxp.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ Yangtao Li <tiny.windzz@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Minas Harutyunyan <hminas@synopsys.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Fabio Estevam <festevam@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, Kevin Cernekee <cernekee@gmail.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Cristian Birsan <cristian.birsan@microchip.com>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>,
+ Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, Stephen Boyd <swboyd@chromium.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Bin Liu <b-liu@ti.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Biju Das <biju.das@bp.renesas.com>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Colin Ian King <colin.king@canonical.com>, Shawn Guo <shawnguo@kernel.org>,
+ Daniel Mack <daniel@zonque.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Leonard,
+Hi Chunfeng-san,
 
-On 11/15/19 3:33 AM, Leonard Crestez wrote:
-> Add devicetree bindings for the i.MX DDR Controller on imx8m series
-> chips. It supports dynamic frequency switching between multiple data
-> rates and this is exposed to Linux via the devfreq subsystem.
+> From: Chunfeng Yun, Sent: Thursday, November 14, 2019 7:41 PM
 > 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Now the USB gadget subsystem can use the USB debugfs root directory,
+> so move it's directory from the root of the debugfs filesystem into
+> the root of usb
+> 
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+
+Thank you for the patch! When I apply this patch on the Greg's usb.git /
+usb-next branch, the following warning happens:
+
+$ patch -p1 < ~/Downloads/v3-10-13-usb-gadget-udc-renesas_usb3-create-debugfs-directory-under-usb-root.patch
+patching file drivers/usb/gadget/udc/renesas_usb3.c
+Hunk #1 succeeded at 2536 (offset 1 line).
+
+I'm not sure we should fix it strictly though, this patch seems good to me. So,
+
+Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+
+And, I tested this patch on my environment and confirmed that
+the debug file moved from /sys/kernel/debug to /sys/kernel/debug/usb. So,
+
+Tested-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+
+Best regards,
+Yoshihiro Shimoda
+
+
 > ---
->  .../memory-controllers/fsl/imx8m-ddrc.yaml    | 72 +++++++++++++++++++
->  1 file changed, 72 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
+> v3: no changes
 > 
-> diff --git a/Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml b/Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
-> new file mode 100644
-> index 000000000000..c9e6c22cb5be
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
-> @@ -0,0 +1,72 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: https://protect2.fireeye.com/url?k=7d43eac6-20dfeba6-7d426189-0cc47a31307c-fcd69516893e0615&u=http://devicetree.org/schemas/memory-controllers/fsl/imx8m-ddrc.yaml#
-> +$schema: https://protect2.fireeye.com/url?k=b9d87e43-e4447f23-b9d9f50c-0cc47a31307c-9fbd3b55b25cfa6d&u=http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: i.MX8M DDR Controller
-> +
-> +maintainers:
-> +  - Leonard Crestez <leonard.crestez@nxp.com>
-> +
-> +description:
-> +  The DDRC block is integrated in i.MX8M for interfacing with DDR based
-> +  memories.
-> +
-> +  It supports switching between different frequencies at runtime but during
-> +  this process RAM itself becomes briefly inaccessible so actual frequency
-> +  switching is implemented by TF-A code which runs from a SRAM area.
-> +
-> +  The Linux driver for the DDRC doesn't even map registers (they're included
-> +  for the sake of "describing hardware"), it mostly just exposes firmware
-> +  capabilities through standard Linux mechanism like devfreq and OPP tables.
-> +
-> +properties:
-> +  compatible:
-> +    items:
-> +      - enum:
-> +        - fsl,imx8mn-ddrc
-> +        - fsl,imx8mm-ddrc
-> +        - fsl,imx8mq-ddrc
-> +      - const: fsl,imx8m-ddrc
-> +
-> +  reg:
-> +    maxItems: 1
-> +    description:
-> +      Base address and size of DDRC CTL area.
-> +      This is not currently mapped by the imx8m-ddrc driver.
-> +
-> +  clocks:
-> +    maxItems: 4
-> +
-> +  clock-names:
-> +    items:
-> +      - const: core
-> +      - const: pll
-> +      - const: alt
-> +      - const: apb
-> +
-> +  operating-points-v2: true
-> +  opp-table: true
-> +
-> +required:
-> +  - reg
-> +  - compatible
-> +  - clocks
-> +  - clock-names
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/imx8mm-clock.h>
-> +    ddrc: memory-controller@3d400000 {
-> +        compatible = "fsl,imx8mm-ddrc", "fsl,imx8m-ddrc";
-> +        reg = <0x3d400000 0x400000>;
-> +        clock-names = "core", "pll", "alt", "apb";
-> +        clocks = <&clk IMX8MM_CLK_DRAM_CORE>,
-> +                 <&clk IMX8MM_DRAM_PLL>,
-> +                 <&clk IMX8MM_CLK_DRAM_ALT>,
-> +                 <&clk IMX8MM_CLK_DRAM_APB>;
-> +        operating-points-v2 = <&ddrc_opp_table>;
-> +    };
+> v2:
+>   1. abandon new API usb_debugfs_create_dir(), and use usb_debug_root
+> ---
+>  drivers/usb/gadget/udc/renesas_usb3.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-
-Acked-by: Chanwoo Choi <cw00.choi@samsung.com>
-
-
--- 
-Best Regards,
-Chanwoo Choi
-Samsung Electronics
+> diff --git a/drivers/usb/gadget/udc/renesas_usb3.c b/drivers/usb/gadget/udc/renesas_usb3.c
+> index e098f16c01cb..4dde69e7f6b1 100644
+> --- a/drivers/usb/gadget/udc/renesas_usb3.c
+> +++ b/drivers/usb/gadget/udc/renesas_usb3.c
+> @@ -2535,7 +2535,7 @@ static const struct file_operations renesas_usb3_b_device_fops = {
+>  static void renesas_usb3_debugfs_init(struct renesas_usb3 *usb3,
+>  				      struct device *dev)
+>  {
+> -	usb3->dentry = debugfs_create_dir(dev_name(dev), NULL);
+> +	usb3->dentry = debugfs_create_dir(dev_name(dev), usb_debug_root);
+> 
+>  	debugfs_create_file("b_device", 0644, usb3->dentry, usb3,
+>  			    &renesas_usb3_b_device_fops);
+> --
+> 2.23.0
 
 _______________________________________________
 linux-arm-kernel mailing list
