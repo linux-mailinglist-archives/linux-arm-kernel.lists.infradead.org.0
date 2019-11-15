@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B652FE550
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 19:56:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38D12FE5B3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 20:34:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ze2U6Q2mcLFI86bdeOPNC3V98KxA8/ncHNZb/JrKeqo=; b=pwB1Esngyr+oF+
-	UOzY9/7EuUr6EWwlFPrvB4wgTsGtvus5CQpPkbb+Juj/vZ0w+fj4Kjr8Chvafb8GDdO+3/gaerzJO
-	gwuRrylPVkllMqPOH1ylEEMnuhDz3ISWf7A5fDr8zmUCfOSgS4qpJMwsBMYjFi2KdCOQGxZWcZYzp
-	FeJKSf/8Ep2FLJBr0zE2a8b3urEZzJGpCvhYgK6ghGZipkr4o607SqVrYPxAkVPyNVtLma8tM2LGe
-	rm9U2bdlzjNMiojBr4Oy5fuzm3xdfkJR6arn1y/Kr2OW0GAbZ4QHf6kzRCL0JJg7TUPrmBmY++5L+
-	MYOCW3G4HAT/LUY2GX6w==;
+	List-Owner; bh=byEOEj1Xcug4uy1UFEe+rCRhyTDCa74U0TJ0re+/i08=; b=EKXXfN3CTkHDob
+	uGq+Zkbu/t8uADk7oUfpETlC6QqUMar/tlye7YsKtB6VVKOzgYmJmfVsL1DPsWw6EcdR7Q9wlHmQb
+	T4SXAjvtq760WTDhUvV436rSoI9u3j0RysuNP0JmP+dSPJL+TwYotOqTe0oWzhC1yAt2kM/LC76fJ
+	1LLO6EzLBUiitvpVthDJn0R3iHFDJvVqDCP5sNbkslfh39vzbNzpYsN/qGu/8r2rCa8aHaHfVQiCz
+	adk1+odBhfTFHKHEJeZ1PYSSokoNP/19j7T3bljm4URmAqleeg9svrk0+gMiusgcrs6nQuaGhEV5a
+	bkghbKh8PCRzxepOgXoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVglG-0003iQ-19; Fri, 15 Nov 2019 18:56:02 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iVhMq-0006bP-Pg; Fri, 15 Nov 2019 19:34:52 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVgl8-0003hh-CJ
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 18:55:55 +0000
-Received: by mail-pg1-x541.google.com with SMTP id k1so5100735pgg.12
+ id 1iVhMh-0006a3-Vk
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 19:34:46 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 3so7142347pfb.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 10:55:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Fri, 15 Nov 2019 11:34:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=5/DV9l5vjoy566bD7j+28Px5X64vcSjdjpGgZ+iBNys=;
- b=H/KXp98I7VNkHc8aGry+k4qMOXigEvqS5f48d8OiOYilQ4J2JwVhl6GgokzI6hyV62
- XWkMKULwF03dKbwXHrV25fcvG4pFGGEMexDLJ+Yh3PK+hdPhnERKyqc4g3AzSJ3SGCJZ
- OyCkTZIxlmqlvqF1t+Fnyrlxhd1HP2fIBp/M5NcGjSuffzdMZKMyUk70LicNWBtTC9KY
- I3uBGnreTlwa5iuUJWIJvLlCr5Mbzk9WqyHIHjlGMetRB/9asxXqYDEDtQTGCPZIDZNb
- QWoUp0LtC4qbXAZ+ZD7roicUqYHW05JcJu8W8RRz9Xo7s6emVbzQ9YdMKkWyU+qHPNTs
- Oc1w==
+ bh=KxszWDeOWGIWijBL9B0pmi+TzXGhcCKiCV88GoXmYts=;
+ b=ix9xhWelBDVLrmeaMb833ads5aVSS8YENH9KOhh4LTYGmwVVhT3RyGN0CXYfbMgFib
+ FNru40g4F2quB7EAzfQoMZqboPGsJXOQiTeg3IUR9MvC1OPcIE55VwvU3TKyx35ZJY4H
+ xAAh6H1XqCZ+b/aJiP8MAtJCe/Zk4+jNu2xoqmGxoxsJVaWYjVrwb4ALKToqxKcVx+6u
+ D0RbPtxcufW8zyAjbHQhcf1zu7Mv4o37Y1u55m1mdTrNdGo3cFK2yMjKd9VjQxKTLNde
+ euS1YxNbjiP6M4QxNEcrRaEH2aq8OEOt0oVno5MXuzwHkH8Yv81bh91k4L+0C1Dz6pJj
+ e+Yw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=5/DV9l5vjoy566bD7j+28Px5X64vcSjdjpGgZ+iBNys=;
- b=s4ULK6WqO6lTf80BP8a4jPmKxcvWlGVOKnZJkw9QxIg+8dymKjFiWUqgiUFAWsL3wk
- XoNWH1GZrsFwuV6AGIIKLBMscjB7e0Y0J6/Uij7a8v0Ha58Is3lJPO/zzw2NM4uMJhZ2
- m/0RtjFbzsxw7nfqo1NVA1Ek6sPqa/SnLx0+JJ1xIRNUQufc6fXpCxUfLPWfw6AemExh
- WGV10BwvNFdTjW+T5G5G6RS7QHiZjtcZ0Ys1gNmFVu2AJ89Wy8USq5Syv6DUih2KNSv8
- SWyGsZSTfwJcA6IS+a+GZ+ke/TSdWq1HZhJ1kVxLB7+U16vefgzTv7AFFY0DwqZWHqSi
- wIdw==
-X-Gm-Message-State: APjAAAV+k6c4tvIElC6tW5koOH++CDGHnLBUFJk4/Ek0Tf0qqkqV5xa9
- QC7zejUj/2nzxPfoIEn8EtL+yg==
-X-Google-Smtp-Source: APXvYqxiuLVF6hREoHjpiqNAQJjrFwPI2aFPUGj4Kmc+5j35f5RvAklf22Il0U3b+Ud+37gdYfUmww==
-X-Received: by 2002:a63:d70e:: with SMTP id d14mr17742459pgg.10.1573844152375; 
- Fri, 15 Nov 2019 10:55:52 -0800 (PST)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id l62sm10835645pgl.24.2019.11.15.10.55.50
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 15 Nov 2019 10:55:51 -0800 (PST)
-Date: Fri, 15 Nov 2019 11:55:49 -0700
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Fabien Dessenne <fabien.dessenne@st.com>
-Subject: Re: [PATCH v4] remoteproc: stm32: fix probe error case
-Message-ID: <20191115185549.GA17332@xps15>
-References: <1573812188-19842-1-git-send-email-fabien.dessenne@st.com>
+ bh=KxszWDeOWGIWijBL9B0pmi+TzXGhcCKiCV88GoXmYts=;
+ b=LZe9xvmQQc+qKun9D+lCTa7lBebDLoY1H1RIhfNWRMcWVKbM9/Fado7Jm4QQ9Zg/8L
+ 9l0qEROKaKZ9twC553pkxUDN7qFIuWjc05DW8Fiw/jWWO490uyh4sK3wgfAVoSWKqyjc
+ w+kb1nIW5D7aCvKZdU/Ja3b5ja2jDEMWLfx4O4kl0p8sKMJMc/tR6DPGY201PFGtfbPz
+ anSJjjjjIkFR6XQ3y8L8qANZOKNgAnn+I4xnsTOZcai5zQ5p27kHXDd/g05AnOHV1H4G
+ iO/iao1zptnUO3CUyJgyHuldThv7uxeMr8GteM0f8eeDMmPn7v7SwB/V7gMiBIxCusWv
+ Si4g==
+X-Gm-Message-State: APjAAAUanoEVIhnsJQ6Vg/yV/xVa90bXNeP2bViAl0DqpplSmTRV8Ou4
+ amYGIcHjQ3WU0Z1OmkBQndM=
+X-Google-Smtp-Source: APXvYqwRG6vw52uUe5HQdn6dIY5Z9EccMoKVImiOfsEmWVxZNIwL/19Lgb1GiwMkKmO/xOPS3BRpXw==
+X-Received: by 2002:a63:e407:: with SMTP id a7mr17566589pgi.92.1573846478340; 
+ Fri, 15 Nov 2019 11:34:38 -0800 (PST)
+Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
+ by smtp.gmail.com with ESMTPSA id 12sm11435882pjm.11.2019.11.15.11.34.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 15 Nov 2019 11:34:37 -0800 (PST)
+Date: Fri, 15 Nov 2019 11:34:35 -0800
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH] Input: keyboard - imx_sc: Correct SCU message structure
+ to avoid stack corruption
+Message-ID: <20191115193435.GV13374@dtor-ws>
+References: <1573730499-2224-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1573812188-19842-1-git-send-email-fabien.dessenne@st.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <1573730499-2224-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_105554_429690_B2FD883D 
-X-CRM114-Status: GOOD (  22.64  )
+X-CRM114-CacheID: sfid-20191115_113444_021121_CD0B9F29 
+X-CRM114-Status: GOOD (  16.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (dmitry.torokhov[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -97,106 +100,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Loic Pallardy <loic.pallardy@st.com>,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>, linux-remoteproc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: robh@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
+ linux-input@vger.kernel.org, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Fabien,
+On Thu, Nov 14, 2019 at 07:21:39PM +0800, Anson Huang wrote:
+> The SCU message's data field used for receiving response data
+> from SCU should be 32-bit width, as SCU will send back 32-bit
+> width data, correct it to avoid kernel panic of stack protection
+> when CONFIG_CC_HAVE_STACKPROTECTOR_SYSREG is enabled.
+> 
+> [    1.950768] Kernel panic - not syncing: stack-protector: Kernel stack is corrupted
+> [    1.980607] Workqueue: events imx_sc_check_for_events
+> [    1.985657] Call trace:
+> [    1.988104]  dump_backtrace+0x0/0x140
+> [    1.991768]  show_stack+0x14/0x20
+> [    1.995090]  dump_stack+0xb4/0xf8
+> [    1.998407]  panic+0x158/0x324
+> [    2.001463]  print_tainted+0x0/0xa8
+> [    2.004950]  imx_sc_check_for_events+0x18c/0x190
+> [    2.009569]  process_one_work+0x198/0x320
+> [    2.013579]  worker_thread+0x48/0x420
+> [    2.017252]  kthread+0xf0/0x120
+> [    2.020394]  ret_from_fork+0x10/0x18
+> [    2.023977] SMP: stopping secondary CPUs
+> [    2.027901] Kernel Offset: disabled
+> [    2.031391] CPU features: 0x0002,2100600c
+> [    2.035401] Memory Limit: none
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-On Fri, Nov 15, 2019 at 11:03:08AM +0100, Fabien Dessenne wrote:
-> If the rproc driver is probed before the mailbox driver and if the rproc
-> Device Tree node has some mailbox properties, the rproc driver probe
-> shall be deferred instead of being probed without mailbox support.
-> 
-> Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
+Applied, thank you.
+
 > ---
-> Changes since v3: on error, free mailboxes from stm32_rproc_request_mbox()
-> Changes since v2: free other requested mailboxes after one request fails
-> Changes since v1: test IS_ERR() before checking PTR_ERR()
-> ---
->  drivers/remoteproc/stm32_rproc.c | 17 +++++++++++++++--
->  1 file changed, 15 insertions(+), 2 deletions(-)
+>  drivers/input/keyboard/imx_sc_key.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
-> index 2cf4b29..bcebb78 100644
-> --- a/drivers/remoteproc/stm32_rproc.c
-> +++ b/drivers/remoteproc/stm32_rproc.c
-> @@ -310,11 +310,12 @@ static const struct stm32_mbox stm32_rproc_mbox[MBOX_NB_MBX] = {
->  	}
+> diff --git a/drivers/input/keyboard/imx_sc_key.c b/drivers/input/keyboard/imx_sc_key.c
+> index dd57daa..5379952 100644
+> --- a/drivers/input/keyboard/imx_sc_key.c
+> +++ b/drivers/input/keyboard/imx_sc_key.c
+> @@ -35,7 +35,7 @@ struct imx_key_drv_data {
+>  
+>  struct imx_sc_msg_key {
+>  	struct imx_sc_rpc_msg hdr;
+> -	u8 state;
+> +	u32 state;
 >  };
 >  
-> -static void stm32_rproc_request_mbox(struct rproc *rproc)
-> +static int stm32_rproc_request_mbox(struct rproc *rproc)
->  {
->  	struct stm32_rproc *ddata = rproc->priv;
->  	struct device *dev = &rproc->dev;
->  	unsigned int i;
-> +	int j;
->  	const unsigned char *name;
->  	struct mbox_client *cl;
->  
-> @@ -329,10 +330,20 @@ static void stm32_rproc_request_mbox(struct rproc *rproc)
->  
->  		ddata->mb[i].chan = mbox_request_channel_byname(cl, name);
->  		if (IS_ERR(ddata->mb[i].chan)) {
-> +			if (PTR_ERR(ddata->mb[i].chan) == -EPROBE_DEFER)
-> +				goto err_probe;
->  			dev_warn(dev, "cannot get %s mbox\n", name);
->  			ddata->mb[i].chan = NULL;
->  		}
->  	}
-> +
-> +	return 0;
-> +
-> +err_probe:
-> +	for (j = i - 1; j >= 0; j--)
-> +		if (ddata->mb[j].chan)
-> +			mbox_free_channel(ddata->mb[j].chan);
-
-Do you need to set ddata->mb[i].chan to NULL as it is done in
-stm32_rproc_free_mbox?
-
-Also I'm wondering about the error path for this function.  If something goes
-wrong in mbox_request_channel_byname() none of the previously allocated channels
-are freed and no further actions is taken.  Should we simply abort the probing
-of the rproc if any of channels can't be probed?
-
-Regardless of the above and without surprise:
-
-Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org> 
-
-> +	return -EPROBE_DEFER;
->  }
->  
->  static int stm32_rproc_set_hold_boot(struct rproc *rproc, bool hold)
-> @@ -596,7 +607,9 @@ static int stm32_rproc_probe(struct platform_device *pdev)
->  	if (ret)
->  		goto free_rproc;
->  
-> -	stm32_rproc_request_mbox(rproc);
-> +	ret = stm32_rproc_request_mbox(rproc);
-> +	if (ret)
-> +		goto free_rproc;
->  
->  	ret = rproc_add(rproc);
->  	if (ret)
+>  static int imx_sc_key_notify(struct notifier_block *nb,
 > -- 
 > 2.7.4
 > 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
+-- 
+Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
