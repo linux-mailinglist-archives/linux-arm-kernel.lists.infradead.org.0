@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E8FFFE535
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 19:47:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B652FE550
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 19:56:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=CgdaAYxpr8IqVK469TXABSUE2ym/adKpwGnrbVX19+Y=; b=k91I64P8MA0ZV34SB15DDBSjId
-	701nojF4WrO607Lkz8qMNKJAL7Lrv+Lf4hzYK+E+U6ei4Jr3edsFNWadlky6p+NpgJJyk8ft9fgCW
-	p7jbMh8ZCSAswHZO6EhT7V/IGSQkcIvdx5jN/a8eifiPcs6mUkgHvIzsFRGUA57Ht7BeKpiNLgcPE
-	rxaRnVQMIHvp1dA2ec75aQ8tTCX3cyXtgfj/8TfgAm5e2kn0kRfyFYzIzJ1Dkippl5iOWR3uQwILJ
-	ePeZJJI9fvNQUFiKQ0NQKDnyYIABv7KmdpvDGJR3aqcSoq/XzalpNs+DgRrenQMkvHu1N1y8IyyBA
-	uOEhpLPw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ze2U6Q2mcLFI86bdeOPNC3V98KxA8/ncHNZb/JrKeqo=; b=pwB1Esngyr+oF+
+	UOzY9/7EuUr6EWwlFPrvB4wgTsGtvus5CQpPkbb+Juj/vZ0w+fj4Kjr8Chvafb8GDdO+3/gaerzJO
+	gwuRrylPVkllMqPOH1ylEEMnuhDz3ISWf7A5fDr8zmUCfOSgS4qpJMwsBMYjFi2KdCOQGxZWcZYzp
+	FeJKSf/8Ep2FLJBr0zE2a8b3urEZzJGpCvhYgK6ghGZipkr4o607SqVrYPxAkVPyNVtLma8tM2LGe
+	rm9U2bdlzjNMiojBr4Oy5fuzm3xdfkJR6arn1y/Kr2OW0GAbZ4QHf6kzRCL0JJg7TUPrmBmY++5L+
+	MYOCW3G4HAT/LUY2GX6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVgcn-0008Q7-Il; Fri, 15 Nov 2019 18:47:17 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iVglG-0003iQ-19; Fri, 15 Nov 2019 18:56:02 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVgZb-0003pv-Lx
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 18:44:02 +0000
-Received: by mail-wr1-x441.google.com with SMTP id w9so12088690wrr.0
+ id 1iVgl8-0003hh-CJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 18:55:55 +0000
+Received: by mail-pg1-x541.google.com with SMTP id k1so5100735pgg.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 10:43:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=jnU8lpfvsI3p3uFx40QLgxidbuLZorgCLXQH1JXWdS8=;
- b=gHY5niVYpeIW9a1rFX7pd4UOx9Nhba5Su7FqLRhuR6Uv12zmoaqT3rmAwyDRJT4akr
- PgiwmP606LtANttI2lRfjQPgK3ROuvaonLJzBuTS+EZtdy98O+3K5KHgKTb9oyxlqD9l
- aPRWWNkqdiKPPVwymI8ISuEa4px6OanQa104HWEOvwSySiKMed9HIX9Y+UJNyLXA393S
- furEAvBqnBPzibQJKY+qvJTglzwshQ4KpDnFFvOIJeIs5yQFqbYVcZ/YoZCh3BV+wWDs
- 4fNLpxf4hrC6fAdG0KpTXc4Z/PR4nbOfUdZ1FFQpmA+CxOmg3UcAKodKHrKUnD3tCeTL
- dWSQ==
+ Fri, 15 Nov 2019 10:55:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=5/DV9l5vjoy566bD7j+28Px5X64vcSjdjpGgZ+iBNys=;
+ b=H/KXp98I7VNkHc8aGry+k4qMOXigEvqS5f48d8OiOYilQ4J2JwVhl6GgokzI6hyV62
+ XWkMKULwF03dKbwXHrV25fcvG4pFGGEMexDLJ+Yh3PK+hdPhnERKyqc4g3AzSJ3SGCJZ
+ OyCkTZIxlmqlvqF1t+Fnyrlxhd1HP2fIBp/M5NcGjSuffzdMZKMyUk70LicNWBtTC9KY
+ I3uBGnreTlwa5iuUJWIJvLlCr5Mbzk9WqyHIHjlGMetRB/9asxXqYDEDtQTGCPZIDZNb
+ QWoUp0LtC4qbXAZ+ZD7roicUqYHW05JcJu8W8RRz9Xo7s6emVbzQ9YdMKkWyU+qHPNTs
+ Oc1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=jnU8lpfvsI3p3uFx40QLgxidbuLZorgCLXQH1JXWdS8=;
- b=c6YjJh7y14HvLoy2hObx8yWIPLRezWadrjaQv2i6HMdsJ7EvEo/SYbCLC4O/x7DuQA
- y2WputH3aIgSXEbs9Pe3nXv+yRgu1I0wscX08yqso5/aluOIrHanefrm/VF+yTG4URAv
- FCZKX5N05ioxhIhooLjd/laJ1ISyJfKD1xDVIQA61kJaT9WfP0eYCOsuoUN9I4aOrXii
- /jkcsW405l8I2fBFLPH534Bv3GXSZ0e6yoKA4ZOQnwdziaYpJfhSAkswIDE2oztvCNqi
- AIvmJprrVG+GJv0avvkYkZEwT5ythnD7+pgZt6ItzUVGXPDUoWWatVQvcQRRzJryFme4
- vNRA==
-X-Gm-Message-State: APjAAAX1ZcKJwLjqlRgndEiI/3Ny6fuieonOWg7L9hQMDbmoxUqhr/eW
- FRkXMuM2nmg14SwnB6dmLE1vNWIz1Ro=
-X-Google-Smtp-Source: APXvYqxWOKhdlwoRyC6uWlKb5qF8E2/R7lpoHFSwL9WOPvBnKrCjsR8NCWVDjZNH6pV8ziCrcysY8w==
-X-Received: by 2002:adf:ec4b:: with SMTP id w11mr16404455wrn.243.1573843438174; 
- Fri, 15 Nov 2019 10:43:58 -0800 (PST)
-Received: from stbsrv-and-01.and.broadcom.net ([192.19.231.250])
- by smtp.gmail.com with ESMTPSA id g138sm2620989wmg.11.2019.11.15.10.43.56
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 Nov 2019 10:43:57 -0800 (PST)
-From: Al Cooper <alcooperx@gmail.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 13/13] phy: usb: Add support for wake and USB low power
- mode for 7211 S2/S5
-Date: Fri, 15 Nov 2019 13:42:23 -0500
-Message-Id: <20191115184223.41504-14-alcooperx@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191115184223.41504-1-alcooperx@gmail.com>
-References: <20191115184223.41504-1-alcooperx@gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=5/DV9l5vjoy566bD7j+28Px5X64vcSjdjpGgZ+iBNys=;
+ b=s4ULK6WqO6lTf80BP8a4jPmKxcvWlGVOKnZJkw9QxIg+8dymKjFiWUqgiUFAWsL3wk
+ XoNWH1GZrsFwuV6AGIIKLBMscjB7e0Y0J6/Uij7a8v0Ha58Is3lJPO/zzw2NM4uMJhZ2
+ m/0RtjFbzsxw7nfqo1NVA1Ek6sPqa/SnLx0+JJ1xIRNUQufc6fXpCxUfLPWfw6AemExh
+ WGV10BwvNFdTjW+T5G5G6RS7QHiZjtcZ0Ys1gNmFVu2AJ89Wy8USq5Syv6DUih2KNSv8
+ SWyGsZSTfwJcA6IS+a+GZ+ke/TSdWq1HZhJ1kVxLB7+U16vefgzTv7AFFY0DwqZWHqSi
+ wIdw==
+X-Gm-Message-State: APjAAAV+k6c4tvIElC6tW5koOH++CDGHnLBUFJk4/Ek0Tf0qqkqV5xa9
+ QC7zejUj/2nzxPfoIEn8EtL+yg==
+X-Google-Smtp-Source: APXvYqxiuLVF6hREoHjpiqNAQJjrFwPI2aFPUGj4Kmc+5j35f5RvAklf22Il0U3b+Ud+37gdYfUmww==
+X-Received: by 2002:a63:d70e:: with SMTP id d14mr17742459pgg.10.1573844152375; 
+ Fri, 15 Nov 2019 10:55:52 -0800 (PST)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id l62sm10835645pgl.24.2019.11.15.10.55.50
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 15 Nov 2019 10:55:51 -0800 (PST)
+Date: Fri, 15 Nov 2019 11:55:49 -0700
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Fabien Dessenne <fabien.dessenne@st.com>
+Subject: Re: [PATCH v4] remoteproc: stm32: fix probe error case
+Message-ID: <20191115185549.GA17332@xps15>
+References: <1573812188-19842-1-git-send-email-fabien.dessenne@st.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1573812188-19842-1-git-send-email-fabien.dessenne@st.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_104359_855077_7530103C 
-X-CRM114-Status: GOOD (  21.06  )
+X-CRM114-CacheID: sfid-20191115_105554_429690_B2FD883D 
+X-CRM114-Status: GOOD (  22.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (alcooperx[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -98,348 +97,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>, Al Cooper <alcooperx@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com,
- Srinath Mannam <srinath.mannam@broadcom.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Ohad Ben-Cohen <ohad@wizery.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Loic Pallardy <loic.pallardy@st.com>,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for 7211 USB wake. Disable all possible 7211 USB logic
-for S2/S5 if USB wake is not enabled.
+Hi Fabien,
 
-On the 7211, the XHCI wake signal was not connected properly and
-only goes to the USB1_USB1_CTRL_TP_DIAG1 diagonstic register.
-The workaround is to have VPU code running that polls for the
-proper bit in the DIAG register and to wake the system when
-the bit is asserted.
+On Fri, Nov 15, 2019 at 11:03:08AM +0100, Fabien Dessenne wrote:
+> If the rproc driver is probed before the mailbox driver and if the rproc
+> Device Tree node has some mailbox properties, the rproc driver probe
+> shall be deferred instead of being probed without mailbox support.
+> 
+> Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
+> ---
+> Changes since v3: on error, free mailboxes from stm32_rproc_request_mbox()
+> Changes since v2: free other requested mailboxes after one request fails
+> Changes since v1: test IS_ERR() before checking PTR_ERR()
+> ---
+>  drivers/remoteproc/stm32_rproc.c | 17 +++++++++++++++--
+>  1 file changed, 15 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+> index 2cf4b29..bcebb78 100644
+> --- a/drivers/remoteproc/stm32_rproc.c
+> +++ b/drivers/remoteproc/stm32_rproc.c
+> @@ -310,11 +310,12 @@ static const struct stm32_mbox stm32_rproc_mbox[MBOX_NB_MBX] = {
+>  	}
+>  };
+>  
+> -static void stm32_rproc_request_mbox(struct rproc *rproc)
+> +static int stm32_rproc_request_mbox(struct rproc *rproc)
+>  {
+>  	struct stm32_rproc *ddata = rproc->priv;
+>  	struct device *dev = &rproc->dev;
+>  	unsigned int i;
+> +	int j;
+>  	const unsigned char *name;
+>  	struct mbox_client *cl;
+>  
+> @@ -329,10 +330,20 @@ static void stm32_rproc_request_mbox(struct rproc *rproc)
+>  
+>  		ddata->mb[i].chan = mbox_request_channel_byname(cl, name);
+>  		if (IS_ERR(ddata->mb[i].chan)) {
+> +			if (PTR_ERR(ddata->mb[i].chan) == -EPROBE_DEFER)
+> +				goto err_probe;
+>  			dev_warn(dev, "cannot get %s mbox\n", name);
+>  			ddata->mb[i].chan = NULL;
+>  		}
+>  	}
+> +
+> +	return 0;
+> +
+> +err_probe:
+> +	for (j = i - 1; j >= 0; j--)
+> +		if (ddata->mb[j].chan)
+> +			mbox_free_channel(ddata->mb[j].chan);
 
-Signed-off-by: Al Cooper <alcooperx@gmail.com>
----
- .../phy/broadcom/phy-brcm-usb-init-synopsis.c | 77 +++++++++++++++++--
- drivers/phy/broadcom/phy-brcm-usb-init.c      | 26 ++++---
- drivers/phy/broadcom/phy-brcm-usb-init.h      | 11 +--
- drivers/phy/broadcom/phy-brcm-usb.c           | 25 ++++--
- 4 files changed, 105 insertions(+), 34 deletions(-)
+Do you need to set ddata->mb[i].chan to NULL as it is done in
+stm32_rproc_free_mbox?
 
-diff --git a/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c b/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c
-index c6504649d307..a2f96fce8c2f 100644
---- a/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c
-+++ b/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c
-@@ -26,7 +26,6 @@
- #define   PIARBCTL_MISC_CAM1_MEM_PAGE_MASK		0x00000f00
- #define   PIARBCTL_MISC_CAM0_MEM_PAGE_MASK		0x000000f0
- #define   PIARBCTL_MISC_SATA_PRIORITY_MASK		0x0000000f
--#define PIARBCTL_USB_M_ASB_CTRL		0x10
- 
- #define PIARBCTL_MISC_USB_ONLY_MASK		\
- 	(PIARBCTL_MISC_USB_SELECT_MASK |	\
-@@ -51,14 +50,27 @@
- #define USB_CTRL_USB_PM_STATUS		0x08
- #define USB_CTRL_USB_DEVICE_CTL1	0x10
- #define   USB_CTRL_USB_DEVICE_CTL1_PORT_MODE_MASK	0x00000003
-+#define USB_CTRL_TEST_PORT_CTL		0x30
-+#define   USB_CTRL_TEST_PORT_CTL_TPOUT_SEL_MASK	0x000000ff
-+#define   USB_CTRL_TEST_PORT_CTL_TPOUT_SEL_PME_GEN_MASK	0x0000002e
-+#define USB_CTRL_TP_DIAG1		0x34
-+#define   USB_CTLR_TP_DIAG1_wake_MASK	0x00000002
-+#define USB_CTRL_CTLR_CSHCR		0x50
-+#define   USB_CTRL_CTLR_CSHCR_ctl_pme_en_MASK	0x00040000
- 
- /* Register definitions for the USB_PHY block in 7211b0 */
-+#define USB_PHY_PLL_CTL			0x00
-+#define   USB_PHY_PLL_CTL_PLL_RESETB_MASK		0x40000000
- #define USB_PHY_PLL_LDO_CTL		0x08
- #define   USB_PHY_PLL_LDO_CTL_AFE_CORERDY_MASK		0x00000004
-+#define   USB_PHY_PLL_LDO_CTL_AFE_LDO_PWRDWNB_MASK	0x00000002
-+#define   USB_PHY_PLL_LDO_CTL_AFE_BG_PWRDWNB_MASK	0x00000001
- #define USB_PHY_UTMI_CTL_1		0x04
- #define   USB_PHY_UTMI_CTL_1_POWER_UP_FSM_EN_MASK	0x00000800
- #define   USB_PHY_UTMI_CTL_1_PHY_MODE_MASK		0x0000000c
- #define   USB_PHY_UTMI_CTL_1_PHY_MODE_SHIFT		2
-+#define USB_PHY_IDDQ			0x1c
-+#define   USB_PHY_IDDQ_phy_iddq_MASK			0x00000001
- #define USB_PHY_STATUS			0x20
- #define   USB_PHY_STATUS_pll_lock_MASK			0x00000001
- 
-@@ -199,6 +211,17 @@ static void usb_init_common(struct brcm_usb_init_params *params)
- 	}
- }
- 
-+static void usb_wake_enable_7211b0(struct brcm_usb_init_params *params,
-+				   bool enable)
-+{
-+	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
-+
-+	if (enable)
-+		USB_CTRL_SET(ctrl, CTLR_CSHCR, ctl_pme_en);
-+	else
-+		USB_CTRL_UNSET(ctrl, CTLR_CSHCR, ctl_pme_en);
-+}
-+
- static void usb_init_common_7211b0(struct brcm_usb_init_params *params)
- {
- 	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
-@@ -210,9 +233,27 @@ static void usb_init_common_7211b0(struct brcm_usb_init_params *params)
- 	if (params->syscon_piarbctl)
- 		syscon_piarbctl_init(params->syscon_piarbctl);
- 
-+	USB_CTRL_UNSET(ctrl, USB_PM, USB_PWRDN);
-+
-+	usb_wake_enable_7211b0(params, false);
-+	if (!params->wake_enabled) {
-+
-+		/* undo possible suspend settings */
-+		brcm_usb_writel(0, usb_phy + USB_PHY_IDDQ);
-+		reg = brcm_usb_readl(usb_phy + USB_PHY_PLL_CTL);
-+		reg |= USB_PHY_PLL_CTL_PLL_RESETB_MASK;
-+		brcm_usb_writel(reg, usb_phy + USB_PHY_PLL_CTL);
-+
-+		/* temporarily enable FSM so PHY comes up properly */
-+		reg = brcm_usb_readl(usb_phy + USB_PHY_UTMI_CTL_1);
-+		reg |= USB_PHY_UTMI_CTL_1_POWER_UP_FSM_EN_MASK;
-+		brcm_usb_writel(reg, usb_phy + USB_PHY_UTMI_CTL_1);
-+	}
-+
- 	/* Init the PHY */
--	reg = brcm_usb_readl(usb_phy + USB_PHY_PLL_LDO_CTL);
--	reg |= USB_PHY_PLL_LDO_CTL_AFE_CORERDY_MASK;
-+	reg = USB_PHY_PLL_LDO_CTL_AFE_CORERDY_MASK |
-+		USB_PHY_PLL_LDO_CTL_AFE_LDO_PWRDWNB_MASK |
-+		USB_PHY_PLL_LDO_CTL_AFE_BG_PWRDWNB_MASK;
- 	brcm_usb_writel(reg, usb_phy + USB_PHY_PLL_LDO_CTL);
- 
- 	/* wait for lock */
-@@ -276,12 +317,36 @@ static void usb_uninit_common(struct brcm_usb_init_params *params)
- 
- }
- 
-+static void usb_uninit_common_7211b0(struct brcm_usb_init_params *params)
-+{
-+	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
-+	void __iomem *usb_phy = params->regs[BRCM_REGS_USB_PHY];
-+	u32 reg;
-+
-+	pr_debug("%s\n", __func__);
-+
-+	if (params->wake_enabled) {
-+		USB_CTRL_SET(ctrl, TEST_PORT_CTL, TPOUT_SEL_PME_GEN);
-+		usb_wake_enable_7211b0(params, true);
-+	} else {
-+		USB_CTRL_SET(ctrl, USB_PM, USB_PWRDN);
-+		brcm_usb_writel(0, usb_phy + USB_PHY_PLL_LDO_CTL);
-+		reg = brcm_usb_readl(usb_phy + USB_PHY_PLL_CTL);
-+		reg &= ~USB_PHY_PLL_CTL_PLL_RESETB_MASK;
-+		brcm_usb_writel(reg, usb_phy + USB_PHY_PLL_CTL);
-+		brcm_usb_writel(USB_PHY_IDDQ_phy_iddq_MASK,
-+				usb_phy + USB_PHY_IDDQ);
-+	}
-+
-+}
-+
- static void usb_uninit_xhci(struct brcm_usb_init_params *params)
- {
- 
- 	pr_debug("%s\n", __func__);
- 
--	xhci_soft_reset(params, 1);
-+	if (!params->wake_enabled)
-+		xhci_soft_reset(params, 1);
- }
- 
- static int usb_get_dual_select(struct brcm_usb_init_params *params)
-@@ -309,7 +374,6 @@ static void usb_set_dual_select(struct brcm_usb_init_params *params, int mode)
- 	brcm_usb_writel(reg, USB_CTRL_REG(ctrl, USB_DEVICE_CTL1));
- }
- 
--
- static const struct brcm_usb_init_ops bcm7216_ops = {
- 	.init_ipp = usb_init_ipp,
- 	.init_common = usb_init_common,
-@@ -324,7 +388,7 @@ static const struct brcm_usb_init_ops bcm7211b0_ops = {
- 	.init_ipp = usb_init_ipp,
- 	.init_common = usb_init_common_7211b0,
- 	.init_xhci = usb_init_xhci,
--	.uninit_common = usb_uninit_common,
-+	.uninit_common = usb_uninit_common_7211b0,
- 	.uninit_xhci = usb_uninit_xhci,
- 	.get_dual_select = usb_get_dual_select,
- 	.set_dual_select = usb_set_dual_select,
-@@ -346,4 +410,5 @@ void brcm_usb_dvr_init_7211b0(struct brcm_usb_init_params *params)
- 
- 	params->family_name = "7211";
- 	params->ops = &bcm7211b0_ops;
-+	params->suspend_with_clocks = true;
- }
-diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.c b/drivers/phy/broadcom/phy-brcm-usb-init.c
-index e28e4b1a3f21..b477c1684825 100644
---- a/drivers/phy/broadcom/phy-brcm-usb-init.c
-+++ b/drivers/phy/broadcom/phy-brcm-usb-init.c
-@@ -783,12 +783,24 @@ static void usb_init_ipp(struct brcm_usb_init_params *params)
- 		msleep(50);
- }
- 
-+static void usb_wake_enable(struct brcm_usb_init_params *params,
-+			  bool enable)
-+{
-+	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
-+
-+	if (enable)
-+		USB_CTRL_SET(ctrl, USB_PM, RMTWKUP_EN);
-+	else
-+		USB_CTRL_UNSET(ctrl, USB_PM, RMTWKUP_EN);
-+}
-+
- static void usb_init_common(struct brcm_usb_init_params *params)
- {
- 	u32 reg;
- 	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
- 
- 	/* Clear any pending wake conditions */
-+	usb_wake_enable(params, false);
- 	reg = brcm_usb_readl(USB_CTRL_REG(ctrl, USB_PM_STATUS));
- 	brcm_usb_writel(reg, USB_CTRL_REG(ctrl, USB_PM_STATUS));
- 
-@@ -935,6 +947,8 @@ static void usb_uninit_common(struct brcm_usb_init_params *params)
- 
- 	if (USB_CTRL_MASK_FAMILY(params, PLL_CTL, PLL_IDDQ_PWRDN))
- 		USB_CTRL_SET_FAMILY(params, PLL_CTL, PLL_IDDQ_PWRDN);
-+	if (params->wake_enabled)
-+		usb_wake_enable(params, true);
- }
- 
- static void usb_uninit_eohci(struct brcm_usb_init_params *params)
-@@ -978,17 +992,6 @@ static void usb_set_dual_select(struct brcm_usb_init_params *params, int mode)
- 	}
- }
- 
--static void usb_wake_enable(struct brcm_usb_init_params *params,
--			  int enable)
--{
--	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
--
--	if (enable)
--		USB_CTRL_SET(ctrl, USB_PM, RMTWKUP_EN);
--	else
--		USB_CTRL_UNSET(ctrl, USB_PM, RMTWKUP_EN);
--}
--
- static const struct brcm_usb_init_ops bcm7445_ops = {
- 	.init_ipp = usb_init_ipp,
- 	.init_common = usb_init_common,
-@@ -999,7 +1002,6 @@ static const struct brcm_usb_init_ops bcm7445_ops = {
- 	.uninit_xhci = usb_uninit_xhci,
- 	.get_dual_select = usb_get_dual_select,
- 	.set_dual_select = usb_set_dual_select,
--	.wake_enable = usb_wake_enable,
- };
- 
- void brcm_usb_dvr_init_7445(struct brcm_usb_init_params *params)
-diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.h b/drivers/phy/broadcom/phy-brcm-usb-init.h
-index 570bd9d8c9ec..2955fdc8479b 100644
---- a/drivers/phy/broadcom/phy-brcm-usb-init.h
-+++ b/drivers/phy/broadcom/phy-brcm-usb-init.h
-@@ -46,8 +46,6 @@ struct brcm_usb_init_ops {
- 	void (*uninit_xhci)(struct brcm_usb_init_params *params);
- 	int  (*get_dual_select)(struct brcm_usb_init_params *params);
- 	void (*set_dual_select)(struct brcm_usb_init_params *params, int mode);
--	void (*wake_enable)(struct brcm_usb_init_params *params,
--			    int enable);
- };
- 
- struct  brcm_usb_init_params {
-@@ -62,6 +60,8 @@ struct  brcm_usb_init_params {
- 	const u32 *usb_reg_bits_map;
- 	const struct brcm_usb_init_ops *ops;
- 	struct regmap *syscon_piarbctl;
-+	bool wake_enabled;
-+	bool suspend_with_clocks;
- };
- 
- void brcm_usb_dvr_init_7445(struct brcm_usb_init_params *params);
-@@ -145,13 +145,6 @@ static inline void brcm_usb_uninit_xhci(struct brcm_usb_init_params *ini)
- 		ini->ops->uninit_xhci(ini);
- }
- 
--static inline void brcm_usb_wake_enable(struct brcm_usb_init_params *ini,
--	int enable)
--{
--	if (ini->ops->wake_enable)
--		ini->ops->wake_enable(ini, enable);
--}
--
- static inline int brcm_usb_get_dual_select(struct brcm_usb_init_params *ini)
- {
- 	if (ini->ops->get_dual_select)
-diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
-index 1ab44f54244b..491bbd46c5b3 100644
---- a/drivers/phy/broadcom/phy-brcm-usb.c
-+++ b/drivers/phy/broadcom/phy-brcm-usb.c
-@@ -535,16 +535,26 @@ static int brcm_usb_phy_suspend(struct device *dev)
- 	struct brcm_usb_phy_data *priv = dev_get_drvdata(dev);
- 
- 	if (priv->init_count) {
-+		priv->ini.wake_enabled = device_may_wakeup(dev);
- 		if (priv->phys[BRCM_USB_PHY_3_0].inited)
- 			brcm_usb_uninit_xhci(&priv->ini);
- 		if (priv->phys[BRCM_USB_PHY_2_0].inited)
- 			brcm_usb_uninit_eohci(&priv->ini);
- 		brcm_usb_uninit_common(&priv->ini);
--		brcm_usb_wake_enable(&priv->ini, true);
--		if (priv->phys[BRCM_USB_PHY_3_0].inited)
--			clk_disable_unprepare(priv->usb_30_clk);
--		if (priv->phys[BRCM_USB_PHY_2_0].inited || !priv->has_eohci)
--			clk_disable_unprepare(priv->usb_20_clk);
-+
-+		/*
-+		 * Handle the clocks unless needed for wake. This has
-+		 * to work for both older XHCI->3.0-clks, EOHCI->2.0-clks
-+		 * and newer XHCI->2.0-clks/3.0-clks.
-+		 */
-+
-+		if (!priv->ini.suspend_with_clocks) {
-+			if (priv->phys[BRCM_USB_PHY_3_0].inited)
-+				clk_disable_unprepare(priv->usb_30_clk);
-+			if (priv->phys[BRCM_USB_PHY_2_0].inited ||
-+			    !priv->has_eohci)
-+				clk_disable_unprepare(priv->usb_20_clk);
-+		}
- 		if (priv->wake_irq >= 0)
- 			enable_irq_wake(priv->wake_irq);
- 	}
-@@ -557,7 +567,6 @@ static int brcm_usb_phy_resume(struct device *dev)
- 
- 	clk_prepare_enable(priv->usb_20_clk);
- 	clk_prepare_enable(priv->usb_30_clk);
--	brcm_usb_wake_enable(&priv->ini, false);
- 	brcm_usb_init_ipp(&priv->ini);
- 
- 	/*
-@@ -579,6 +588,8 @@ static int brcm_usb_phy_resume(struct device *dev)
- 		} else if (priv->has_xhci) {
- 			brcm_usb_uninit_xhci(&priv->ini);
- 			clk_disable_unprepare(priv->usb_30_clk);
-+			if (!priv->has_eohci)
-+				clk_disable_unprepare(priv->usb_20_clk);
- 		}
- 	} else {
- 		if (priv->has_xhci)
-@@ -589,7 +600,7 @@ static int brcm_usb_phy_resume(struct device *dev)
- 		clk_disable_unprepare(priv->usb_20_clk);
- 		clk_disable_unprepare(priv->usb_30_clk);
- 	}
--
-+	priv->ini.wake_enabled = false;
- 	return 0;
- }
- #endif /* CONFIG_PM_SLEEP */
--- 
-2.17.1
+Also I'm wondering about the error path for this function.  If something goes
+wrong in mbox_request_channel_byname() none of the previously allocated channels
+are freed and no further actions is taken.  Should we simply abort the probing
+of the rproc if any of channels can't be probed?
+
+Regardless of the above and without surprise:
+
+Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org> 
+
+> +	return -EPROBE_DEFER;
+>  }
+>  
+>  static int stm32_rproc_set_hold_boot(struct rproc *rproc, bool hold)
+> @@ -596,7 +607,9 @@ static int stm32_rproc_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		goto free_rproc;
+>  
+> -	stm32_rproc_request_mbox(rproc);
+> +	ret = stm32_rproc_request_mbox(rproc);
+> +	if (ret)
+> +		goto free_rproc;
+>  
+>  	ret = rproc_add(rproc);
+>  	if (ret)
+> -- 
+> 2.7.4
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 
 _______________________________________________
