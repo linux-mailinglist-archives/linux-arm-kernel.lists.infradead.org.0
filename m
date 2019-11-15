@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41717FD8C3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 10:22:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F070FD8C2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 10:22:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FQmZHHVzmFt/dRty5INKGANCVneOM5IO2zirjmfSeDs=; b=T9jvZyFakYawXo
-	RmQCU8c+CIyPYTpl5E/o3k8j1MJ2cvu0bfcaf0fnxA4E6cCeMJnRcz92B7qydYNymfTljrndfmgEI
-	yc7KhOEwlXKLt9aEz4B6I30j4DmjORp0dlFxoGYTT1rWFuKiPX1WYMmIA620p09guDJI3j9baCvzj
-	vIoBhpseCCHPEAn678rVkYa/Vg1N+xLGrevvvWcNPRhbkLOZntmd4QeHUFf6YM5L2nUh7Gse5LiR5
-	3+KT/4ngHpq/fjJiJFbYAK0rI+w5iQmaq+6HKPFKW5yhwGQaCpMRFudj7qhxvHDmLszwOgbOjkAKw
-	6+LcaKLdeulWwH1qsr7g==;
+	List-Owner; bh=Dx70+TgDyvL4+yRPpn+LcPdi8ADs0fc3E1B24ge7jtg=; b=GoA79wo3THKuUf
+	ujXSSrtw69/pOXJ6vLyzubN8gADa2NI29xvOT/VStVzcp8f6YTpTQqxAhmerb1CL32mcysIMqDu+b
+	Ag1bDozUELYUGNv6kbfnLAIdskOmmvMTH3snQFaB3kcqmzzY9Cadxod3W4EsREC3GQCMN8IAs6oda
+	6eF+yMh7QsxLbodD32oWQ78bRG4LeHsvZk5F2HXB2JleQKsefjDC5Q2M7QIyjTlOsoyf5D86Lsbfg
+	ufuGCWHyl3Ho3S5MrKp4VCMOnfnRbfKM1a54OIEtBooxMlj3/1LQuIxeO4iR06k3tFZuFDhRNkcKe
+	MBH7KyFJTAWS0IOoGleQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVXnt-0007pN-MV; Fri, 15 Nov 2019 09:22:09 +0000
+	id 1iVXni-0007cv-Vy; Fri, 15 Nov 2019 09:21:59 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVXnH-0007Mr-HL
+ id 1iVXnI-0007NO-AD
  for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 09:21:34 +0000
-Received: by mail-wr1-x442.google.com with SMTP id f2so10133240wrs.11
+Received: by mail-wr1-x442.google.com with SMTP id b18so8673945wrj.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 01:21:31 -0800 (PST)
+ Fri, 15 Nov 2019 01:21:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=tGjIM2+uUqMORVIasokc3/CvFp+wprfDfEiecNEi+4o=;
- b=WfM8FyTO7ypE+YMQNKDxQoBKIEgYOliOhA8IHmPKabbGB3iVqRcp9+2Yiz95KojpyN
- 5RRyo1OFsYseOMJj0ngbATa4TKXxD9cw6JBnsUbQKpNyC8sS9fwiLVyMISJSJt3Y2mwY
- EujkOzvZYc9UjWmsXzRIqw8m1ryOAtGIjx3UQ=
+ bh=ofNJ8QQd5sGKrd+MvK2ikuebIJLqvpUQ1kyGZQwtx/I=;
+ b=Om/NhQzSdKpM6y/70DSZwXeDQIzy3oww63dVXF+OkGU5AZ0pB+zj8FG7NKM/EXiRWC
+ tsVz9AeWnDSaawt4fCt6LuYisC6aoim0bUIYwOgMWHoKxnN/px9yPhnVw6hqWCdYnapQ
+ 5K/8mdZ77+F6o0wD71fQz9k/MvOSGh1krio6I=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=tGjIM2+uUqMORVIasokc3/CvFp+wprfDfEiecNEi+4o=;
- b=b3NIqevtz0gqkj39HSS3wT3UoJvZN9ExRivBQiIxA/JtWrwWmXujkwfo2uAS4ZpNy0
- yiIePOW0BBsgSk/pLyRjOxCmmwiEJf3rm6g43clIwyts+KqRuiKXy3KubFN1+z/5ToD6
- B9LId5iWpWvfC/w5HXrLnutnyvFEpJTY2gorRCqJMgNSgt38/0+eJ4vsiT1w9pfMbbZY
- s0Pnub1dRRf2eCNx/m/BZ6zuRCUwVLLggDYbFGNH4K/s89+O/k3rfjegmkGuQsgOxaP/
- PBlfBtSPE2+Qgle90OjhqdEL87R5fm5qyFoLzb4/ZrvqYge/JSNx1cmeyibarzkdEMVA
- LqhA==
-X-Gm-Message-State: APjAAAUAWX4HFENAnIP7v5woBHpxK/OOfhSD/q6wy6vf/MnEyaFksRte
- 2zy5OikcIOiGHoiecapysOFDCw==
-X-Google-Smtp-Source: APXvYqwnf2/MQXZ679hFBEv5ABxJG5pWkcrTe0XZXAxsR67X5YWu3QoXY4fHOvAlU81ah5/AgJgOLA==
-X-Received: by 2002:adf:e883:: with SMTP id d3mr13501518wrm.197.1573809690172; 
- Fri, 15 Nov 2019 01:21:30 -0800 (PST)
+ bh=ofNJ8QQd5sGKrd+MvK2ikuebIJLqvpUQ1kyGZQwtx/I=;
+ b=fi63a9Ru7bb12EV6ERy56qErQ6hw7cJUDI3B8R9fOTS7V90JDHQUDWfvrM57Kkzx1T
+ uDQIEp17QxL3FK0VW97+mQax9cUDntSsYEI7SoPIYwQncI5O6znW+DI88Rg8bHoS2xgj
+ Yd+bvfefjzoiU4cP5/4c6kHqDr2SqtfxQvreqC5B82pqOanmuwQVt1zwKhKMUFssUc+8
+ q+qHv7e7bToBa5EBAJKdiI9vx0AmUVgtoAhVEpkc4yb7W7JhxwQWWRWrle3AZkU6lnv+
+ uqF4XjvJza1h31zINv6OOEfwAwewcr1g0EKM0yrq2a4XbutgB/H6rkw2zba1EBOHMWxY
+ c2Hg==
+X-Gm-Message-State: APjAAAVz/zHBZQ/QwlKrL8R05naxRGSVpHBJRptDuoz/sC+ZD81LF5A4
+ CQf3FsVjB403mBKpashL7F7jdQ==
+X-Google-Smtp-Source: APXvYqyQKoodCSy68a/nZvolemA/RUEMw97i8haQjEdjkNAIk+Di+W/dIlbZO269UWOLN4VoIfMQEA==
+X-Received: by 2002:adf:f44a:: with SMTP id f10mr13999917wrp.63.1573809691156; 
+ Fri, 15 Nov 2019 01:21:31 -0800 (PST)
 Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
  [212.51.149.96])
- by smtp.gmail.com with ESMTPSA id 11sm8987506wmi.8.2019.11.15.01.21.29
+ by smtp.gmail.com with ESMTPSA id 11sm8987506wmi.8.2019.11.15.01.21.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 Nov 2019 01:21:29 -0800 (PST)
+ Fri, 15 Nov 2019 01:21:30 -0800 (PST)
 From: Daniel Vetter <daniel.vetter@ffwll.ch>
 To: DRI Development <dri-devel@lists.freedesktop.org>
-Subject: [PATCH 3/8] drm/mediatek: don't open-code drm_gem_fb_create
-Date: Fri, 15 Nov 2019 10:21:15 +0100
-Message-Id: <20191115092120.4445-4-daniel.vetter@ffwll.ch>
+Subject: [PATCH 4/8] drm/rockchip: Use drm_gem_fb_create_with_dirty
+Date: Fri, 15 Nov 2019 10:21:16 +0100
+Message-Id: <20191115092120.4445-5-daniel.vetter@ffwll.ch>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191115092120.4445-1-daniel.vetter@ffwll.ch>
 References: <20191115092120.4445-1-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_012131_597092_2E782531 
-X-CRM114-Status: GOOD (  17.70  )
+X-CRM114-CacheID: sfid-20191115_012132_356739_E7E4D785 
+X-CRM114-Status: GOOD (  13.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -94,220 +94,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Vetter <daniel.vetter@ffwll.ch>,
+Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>,
  Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>, CK Hu <ck.hu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Sandy Huang <hjc@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ Daniel Vetter <daniel.vetter@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Aside: There's a few other fb_create implementations which
-simply check for valid buffer format (or an approximation thereof),
-and then call drm_gem_fb_create. For atomic drivers at least we could
-walk all planes and make sure the format/modifier combo is valid,
-and remove even more code.
-
-For non-atomic drivers that's not possible, since the format list for
-the primary buffer might be garbage (and most likely it is).
-
-Also delete mtk_drm_fb.[hc] since it would now only contain one
-function.
-
-Signed-off-by: Daniel Vetter <daniel.vetter@ffwll.ch>
-Cc: CK Hu <ck.hu@mediatek.com>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>
-Cc: Matthias Brugger <matthias.bgg@gmail.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-mediatek@lists.infradead.org
----
- drivers/gpu/drm/mediatek/mtk_drm_drv.c   | 16 ++++-
- drivers/gpu/drm/mediatek/mtk_drm_fb.c    | 92 ------------------------
- drivers/gpu/drm/mediatek/mtk_drm_fb.h    | 13 ----
- drivers/gpu/drm/mediatek/mtk_drm_plane.c |  1 -
- 4 files changed, 15 insertions(+), 107 deletions(-)
- delete mode 100644 drivers/gpu/drm/mediatek/mtk_drm_fb.c
- delete mode 100644 drivers/gpu/drm/mediatek/mtk_drm_fb.h
-
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-index 84d14213d992..2b1c122066ea 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-@@ -16,8 +16,10 @@
- #include <drm/drm_atomic_helper.h>
- #include <drm/drm_drv.h>
- #include <drm/drm_fb_helper.h>
-+#include <drm/drm_fourcc.h>
- #include <drm/drm_gem.h>
- #include <drm/drm_gem_cma_helper.h>
-+#include <drm/drm_gem_framebuffer_helper.h>
- #include <drm/drm_of.h>
- #include <drm/drm_probe_helper.h>
- #include <drm/drm_vblank.h>
-@@ -27,7 +29,6 @@
- #include "mtk_drm_ddp.h"
- #include "mtk_drm_ddp_comp.h"
- #include "mtk_drm_drv.h"
--#include "mtk_drm_fb.h"
- #include "mtk_drm_gem.h"
- 
- #define DRIVER_NAME "mediatek"
-@@ -115,6 +116,19 @@ static int mtk_atomic_commit(struct drm_device *drm,
- 	return 0;
- }
- 
-+static struct drm_framebuffer *
-+mtk_drm_mode_fb_create(struct drm_device *dev,
-+		       struct drm_file *file,
-+		       const struct drm_mode_fb_cmd2 *cmd)
-+{
-+	const struct drm_format_info *info = drm_get_format_info(dev, cmd);
-+
-+	if (info->num_planes != 1)
-+		return ERR_PTR(-EINVAL);
-+
-+	return drm_gem_fb_create(dev, file, cmd);
-+}
-+
- static const struct drm_mode_config_funcs mtk_drm_mode_config_funcs = {
- 	.fb_create = mtk_drm_mode_fb_create,
- 	.atomic_check = drm_atomic_helper_check,
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_fb.c b/drivers/gpu/drm/mediatek/mtk_drm_fb.c
-deleted file mode 100644
-index 3f230a28a2dc..000000000000
---- a/drivers/gpu/drm/mediatek/mtk_drm_fb.c
-+++ /dev/null
-@@ -1,92 +0,0 @@
--// SPDX-License-Identifier: GPL-2.0-only
--/*
-- * Copyright (c) 2015 MediaTek Inc.
-- */
--
--#include <linux/dma-buf.h>
--#include <linux/dma-resv.h>
--
--#include <drm/drm_modeset_helper.h>
--#include <drm/drm_fb_helper.h>
--#include <drm/drm_fourcc.h>
--#include <drm/drm_gem.h>
--#include <drm/drm_gem_framebuffer_helper.h>
--
--#include "mtk_drm_drv.h"
--#include "mtk_drm_fb.h"
--#include "mtk_drm_gem.h"
--
--static const struct drm_framebuffer_funcs mtk_drm_fb_funcs = {
--	.create_handle = drm_gem_fb_create_handle,
--	.destroy = drm_gem_fb_destroy,
--};
--
--static struct drm_framebuffer *mtk_drm_framebuffer_init(struct drm_device *dev,
--					const struct drm_mode_fb_cmd2 *mode,
--					struct drm_gem_object *obj)
--{
--	const struct drm_format_info *info = drm_get_format_info(dev, mode);
--	struct drm_framebuffer *fb;
--	int ret;
--
--	if (info->num_planes != 1)
--		return ERR_PTR(-EINVAL);
--
--	fb = kzalloc(sizeof(*fb), GFP_KERNEL);
--	if (!fb)
--		return ERR_PTR(-ENOMEM);
--
--	drm_helper_mode_fill_fb_struct(dev, fb, mode);
--
--	fb->obj[0] = obj;
--
--	ret = drm_framebuffer_init(dev, fb, &mtk_drm_fb_funcs);
--	if (ret) {
--		DRM_ERROR("failed to initialize framebuffer\n");
--		kfree(fb);
--		return ERR_PTR(ret);
--	}
--
--	return fb;
--}
--
--struct drm_framebuffer *mtk_drm_mode_fb_create(struct drm_device *dev,
--					       struct drm_file *file,
--					       const struct drm_mode_fb_cmd2 *cmd)
--{
--	const struct drm_format_info *info = drm_get_format_info(dev, cmd);
--	struct drm_framebuffer *fb;
--	struct drm_gem_object *gem;
--	unsigned int width = cmd->width;
--	unsigned int height = cmd->height;
--	unsigned int size, bpp;
--	int ret;
--
--	if (info->num_planes != 1)
--		return ERR_PTR(-EINVAL);
--
--	gem = drm_gem_object_lookup(file, cmd->handles[0]);
--	if (!gem)
--		return ERR_PTR(-ENOENT);
--
--	bpp = info->cpp[0];
--	size = (height - 1) * cmd->pitches[0] + width * bpp;
--	size += cmd->offsets[0];
--
--	if (gem->size < size) {
--		ret = -EINVAL;
--		goto unreference;
--	}
--
--	fb = mtk_drm_framebuffer_init(dev, cmd, gem);
--	if (IS_ERR(fb)) {
--		ret = PTR_ERR(fb);
--		goto unreference;
--	}
--
--	return fb;
--
--unreference:
--	drm_gem_object_put_unlocked(gem);
--	return ERR_PTR(ret);
--}
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_fb.h b/drivers/gpu/drm/mediatek/mtk_drm_fb.h
-deleted file mode 100644
-index eb64d26001c6..000000000000
---- a/drivers/gpu/drm/mediatek/mtk_drm_fb.h
-+++ /dev/null
-@@ -1,13 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0-only */
--/*
-- * Copyright (c) 2015 MediaTek Inc.
-- */
--
--#ifndef MTK_DRM_FB_H
--#define MTK_DRM_FB_H
--
--struct drm_framebuffer *mtk_drm_mode_fb_create(struct drm_device *dev,
--					       struct drm_file *file,
--					       const struct drm_mode_fb_cmd2 *cmd);
--
--#endif /* MTK_DRM_FB_H */
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-index 3b0cc91c7023..540ef2faa40a 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-@@ -13,7 +13,6 @@
- #include "mtk_drm_crtc.h"
- #include "mtk_drm_ddp_comp.h"
- #include "mtk_drm_drv.h"
--#include "mtk_drm_fb.h"
- #include "mtk_drm_gem.h"
- #include "mtk_drm_plane.h"
- 
--- 
-2.24.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SWYgcm9ja2NoaXAgd291bGQgc3dpdGNoIG92ZXIgdG8gdGhlIGdlbmVyaWMgZmJkZXYgc2V0dXAg
+d2UgY291bGQKZ3JhYmFnZSBjb2xsZWN0IGV2ZW4gbW9yZSBvZiBhbGwgdGhpcyBjb2RlIChhbGwg
+b2YgdGhlIHJlbWFpbmluZyBmYgpoYW5kbGluZyBjb2RlIHJlYWxseSkuCgpTaWduZWQtb2ZmLWJ5
+OiBEYW5pZWwgVmV0dGVyIDxkYW5pZWwudmV0dGVyQGludGVsLmNvbT4KQ2M6IFNhbmR5IEh1YW5n
+IDxoamNAcm9jay1jaGlwcy5jb20+CkNjOiAiSGVpa28gU3TDvGJuZXIiIDxoZWlrb0BzbnRlY2gu
+ZGU+CkNjOiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKQ2M6IGxpbnV4LXJv
+Y2tjaGlwQGxpc3RzLmluZnJhZGVhZC5vcmcKLS0tCiBkcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAv
+cm9ja2NoaXBfZHJtX2ZiLmMgfCA1NCArLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAxIGZpbGUgY2hh
+bmdlZCwgMSBpbnNlcnRpb24oKyksIDUzIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZl
+cnMvZ3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9kcm1fZmIuYyBiL2RyaXZlcnMvZ3B1L2RybS9y
+b2NrY2hpcC9yb2NrY2hpcF9kcm1fZmIuYwppbmRleCBjYTAxMjM0YzAzN2MuLjA4MWRiZGFhMGIw
+NyAxMDA2NDQKLS0tIGEvZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL3JvY2tjaGlwX2RybV9mYi5j
+CisrKyBiL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9kcm1fZmIuYwpAQCAtNTMs
+NjQgKzUzLDEyIEBAIHJvY2tjaGlwX2ZiX2FsbG9jKHN0cnVjdCBkcm1fZGV2aWNlICpkZXYsIGNv
+bnN0IHN0cnVjdCBkcm1fbW9kZV9mYl9jbWQyICptb2RlX2NtCiAJcmV0dXJuIGZiOwogfQogCi1z
+dGF0aWMgc3RydWN0IGRybV9mcmFtZWJ1ZmZlciAqCi1yb2NrY2hpcF91c2VyX2ZiX2NyZWF0ZShz
+dHJ1Y3QgZHJtX2RldmljZSAqZGV2LCBzdHJ1Y3QgZHJtX2ZpbGUgKmZpbGVfcHJpdiwKLQkJCWNv
+bnN0IHN0cnVjdCBkcm1fbW9kZV9mYl9jbWQyICptb2RlX2NtZCkKLXsKLQljb25zdCBzdHJ1Y3Qg
+ZHJtX2Zvcm1hdF9pbmZvICppbmZvID0gZHJtX2dldF9mb3JtYXRfaW5mbyhkZXYsCi0JCQkJCQkJ
+CSBtb2RlX2NtZCk7Ci0Jc3RydWN0IGRybV9mcmFtZWJ1ZmZlciAqZmI7Ci0Jc3RydWN0IGRybV9n
+ZW1fb2JqZWN0ICpvYmpzW1JPQ0tDSElQX01BWF9GQl9CVUZGRVJdOwotCXN0cnVjdCBkcm1fZ2Vt
+X29iamVjdCAqb2JqOwotCWludCBudW1fcGxhbmVzID0gbWluX3QoaW50LCBpbmZvLT5udW1fcGxh
+bmVzLCBST0NLQ0hJUF9NQVhfRkJfQlVGRkVSKTsKLQlpbnQgcmV0OwotCWludCBpOwotCi0JZm9y
+IChpID0gMDsgaSA8IG51bV9wbGFuZXM7IGkrKykgewotCQl1bnNpZ25lZCBpbnQgd2lkdGggPSBt
+b2RlX2NtZC0+d2lkdGggLyAoaSA/IGluZm8tPmhzdWIgOiAxKTsKLQkJdW5zaWduZWQgaW50IGhl
+aWdodCA9IG1vZGVfY21kLT5oZWlnaHQgLyAoaSA/IGluZm8tPnZzdWIgOiAxKTsKLQkJdW5zaWdu
+ZWQgaW50IG1pbl9zaXplOwotCi0JCW9iaiA9IGRybV9nZW1fb2JqZWN0X2xvb2t1cChmaWxlX3By
+aXYsIG1vZGVfY21kLT5oYW5kbGVzW2ldKTsKLQkJaWYgKCFvYmopIHsKLQkJCURSTV9ERVZfRVJS
+T1IoZGV2LT5kZXYsCi0JCQkJICAgICAgIkZhaWxlZCB0byBsb29rdXAgR0VNIG9iamVjdFxuIik7
+Ci0JCQlyZXQgPSAtRU5YSU87Ci0JCQlnb3RvIGVycl9nZW1fb2JqZWN0X3VucmVmZXJlbmNlOwot
+CQl9Ci0KLQkJbWluX3NpemUgPSAoaGVpZ2h0IC0gMSkgKiBtb2RlX2NtZC0+cGl0Y2hlc1tpXSAr
+Ci0JCQltb2RlX2NtZC0+b2Zmc2V0c1tpXSArCi0JCQl3aWR0aCAqIGluZm8tPmNwcFtpXTsKLQot
+CQlpZiAob2JqLT5zaXplIDwgbWluX3NpemUpIHsKLQkJCWRybV9nZW1fb2JqZWN0X3B1dF91bmxv
+Y2tlZChvYmopOwotCQkJcmV0ID0gLUVJTlZBTDsKLQkJCWdvdG8gZXJyX2dlbV9vYmplY3RfdW5y
+ZWZlcmVuY2U7Ci0JCX0KLQkJb2Jqc1tpXSA9IG9iajsKLQl9Ci0KLQlmYiA9IHJvY2tjaGlwX2Zi
+X2FsbG9jKGRldiwgbW9kZV9jbWQsIG9ianMsIGkpOwotCWlmIChJU19FUlIoZmIpKSB7Ci0JCXJl
+dCA9IFBUUl9FUlIoZmIpOwotCQlnb3RvIGVycl9nZW1fb2JqZWN0X3VucmVmZXJlbmNlOwotCX0K
+LQotCXJldHVybiBmYjsKLQotZXJyX2dlbV9vYmplY3RfdW5yZWZlcmVuY2U6Ci0JZm9yIChpLS07
+IGkgPj0gMDsgaS0tKQotCQlkcm1fZ2VtX29iamVjdF9wdXRfdW5sb2NrZWQob2Jqc1tpXSk7Ci0J
+cmV0dXJuIEVSUl9QVFIocmV0KTsKLX0KLQogc3RhdGljIGNvbnN0IHN0cnVjdCBkcm1fbW9kZV9j
+b25maWdfaGVscGVyX2Z1bmNzIHJvY2tjaGlwX21vZGVfY29uZmlnX2hlbHBlcnMgPSB7CiAJLmF0
+b21pY19jb21taXRfdGFpbCA9IGRybV9hdG9taWNfaGVscGVyX2NvbW1pdF90YWlsX3JwbSwKIH07
+CiAKIHN0YXRpYyBjb25zdCBzdHJ1Y3QgZHJtX21vZGVfY29uZmlnX2Z1bmNzIHJvY2tjaGlwX2Ry
+bV9tb2RlX2NvbmZpZ19mdW5jcyA9IHsKLQkuZmJfY3JlYXRlID0gcm9ja2NoaXBfdXNlcl9mYl9j
+cmVhdGUsCisJLmZiX2NyZWF0ZSA9IGRybV9nZW1fZmJfY3JlYXRlLAogCS5vdXRwdXRfcG9sbF9j
+aGFuZ2VkID0gZHJtX2ZiX2hlbHBlcl9vdXRwdXRfcG9sbF9jaGFuZ2VkLAogCS5hdG9taWNfY2hl
+Y2sgPSBkcm1fYXRvbWljX2hlbHBlcl9jaGVjaywKIAkuYXRvbWljX2NvbW1pdCA9IGRybV9hdG9t
+aWNfaGVscGVyX2NvbW1pdCwKLS0gCjIuMjQuMAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
+LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
