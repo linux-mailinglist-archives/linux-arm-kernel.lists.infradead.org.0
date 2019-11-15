@@ -2,81 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DDDFFDC6B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 12:40:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0FFDFDC78
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 12:45:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=r37DzPZ6seEdD3qSzaL6Iw+wpRgDIzW3WK3obeylZUU=; b=gYpWnnSOTs6rcx
-	Rdid+1P113HShrRAjchnFxDC2MNpLRHtU5duXZ8Q6zqivSSyAyCdKT2IrwSW7g04AVWOaKLUxmOCY
-	jxPx/7b8zamvEx4Tn2NY/kstUwkMEAmQHgjScJGyN4vbiHnfE8PXMtHGhfE1k9EQyx1wZ5k8KhJ8D
-	65Ev9zDkhi9oMMJnK0lRoxXW092ue8wMOzNAbmWGyyg7E1nbHjqnIDv+ZUkR6awFXuPJ1jqHsq3eP
-	afciGSiv6mzt2SiLgJhG+FeNXxpLR2ZCkItYswDlpek7uqEJGUkg3E/JkSDCqlV9VE8X978BNVGMj
-	9D6zZOtKtQ3c6q9mmlwA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CHdoTIpVx1itKbhhhHudzHcNeRT9iK1N+k9CGWzcyxk=; b=cYZGryYngSSi8d
+	JtcfmHxoLLuAy/zoMt4m8kMsCinX2K0Lg1AemDW5ZSUyvSfwy5b3CsrBTBOj6NpnonJB8cJ+uASJt
+	V649cgpwnQ413mGmt6NKP2MRXLk/ap31J4hqCTholghiovwXJ99mxC0Cq7aE7SZXuaEbXicKKVfzz
+	V+9j3VaejW7BWRbh9sOTStRrGDRRQTWpOkAyFTDFAIiJ3M37fX1IjrK22A03dOMx1Wv6unl2Pz/BH
+	LuzY3z5+K7EikmQFrDrM1AW1UF2JT/DERpXNhOz+GiJKC7yXQV9KEFEADGfqwvIArqrcXBu/8OLgZ
+	6f5CIGyfqaC9LA3P7sww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVZxo-0000AO-A2; Fri, 15 Nov 2019 11:40:32 +0000
-Received: from mickerik.phytec.de ([195.145.39.210])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVZxg-00009r-KD
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 11:40:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; d=phytec.de; s=a1; c=relaxed/simple;
- q=dns/txt; i=@phytec.de; t=1573818018; x=1576410018;
- h=From:Sender:Reply-To:Subject:Date:Message-Id:To:Cc:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=KakJHbAo+JUOyaQrEeQg+Mxh5KhO275Wzk2RBgpf2KU=;
- b=WlHou91HM5wi7qShUqALkhhRwNaTq5XvwZxRxLW8C//T+1kGMsRVG82dHUsdk7ql
- LYWt09qeTOifniAzKBOacBMZ4w8LqO9GSO4vrsas/K5Mn0oAifQlxEtm8MBh0ZxU
- fIu3r+vRyO8UQhrZ0G/wSe5HL1FvfgWFqkTqComFESM=;
-X-AuditID: c39127d2-df9ff7000000408f-2a-5dce8ea29cd4
-Received: from idefix.phytec.de (Unknown_Domain [172.16.0.10])
- by mickerik.phytec.de (PHYTEC Mail Gateway) with SMTP id A3.66.16527.2AE8ECD5;
- Fri, 15 Nov 2019 12:40:18 +0100 (CET)
-Received: from lws-weitzel2.phytec.de ([172.16.20.165])
- by idefix.phytec.de (IBM Domino Release 9.0.1FP7)
- with ESMTP id 2019111512401824-73483 ;
- Fri, 15 Nov 2019 12:40:18 +0100 
-From: Jan Remmet <j.remmet@phytec.de>
-To: s.hauer@pengutronix.de, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] clk: imx6q: disable non functional divider
-Date: Fri, 15 Nov 2019 12:40:17 +0100
-Message-Id: <1573818017-31949-1-git-send-email-j.remmet@phytec.de>
-X-Mailer: git-send-email 2.7.4
-X-MIMETrack: Itemize by SMTP Server on Idefix/Phytec(Release 9.0.1FP7|August
- 17, 2016) at 15.11.2019 12:40:18,
- Serialize by Router on Idefix/Phytec(Release 9.0.1FP7|August  17, 2016) at
- 15.11.2019 12:40:18, Serialize complete at 15.11.2019 12:40:18
-X-TNEFEvaluated: 1
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrNJMWRmVeSWpSXmKPExsWyRoCBS3dR37lYg5NXuSw2Pb7GavF3+yYW
- ixdbxB2YPTat6mTz2Lyk3qP/r0EAcxSXTUpqTmZZapG+XQJXxqlp5xgLjvFVTDn4hqmB8QpP
- FyMnh4SAicTEg+/Zuxi5OIQEtjJKfLlyghnCucQoMfn4EVaQKjYBVYmDv+8xgtgiAqESe098
- ZwKxhQWsJaa/WwxWwwJUc2TVWiCbg4NXwEli9XJWiAVyEjfPdYLNlBBoZJL4uHURC0RCSOL0
- 4rPMExi5FzAyrGIUys1Mzk4tyszWK8ioLElN1ktJ3cQI9PDhieqXdjD2zfE4xMjEwXiIUYKD
- WUmEd8rbM7FCvCmJlVWpRfnxRaU5qcWHGKU5WJTEeTfwloQJCaQnlqRmp6YWpBbBZJk4OKUa
- GPniP6hve58VY/XxRY7m5yl8y+fJa0+zcd50vOtnAsvayKshtR/3bI8zK4truxv7+7pdk2d7
- 1Zs3Sv7f9Tc9VV+152h8ySr2rRsS+xeKBZZ1X4iIWlvx34VpE/eCJJ6LLoKbLK5V8nxa/JxX
- 5nfhXC5BF+/OQ3ZRjzac/7WDs9eK0f7ln9JiCyWW4oxEQy3mouJEACS0niveAQAA
+	id 1iVa2N-0001mN-KR; Fri, 15 Nov 2019 11:45:15 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iVa2D-00012m-Pl
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 11:45:07 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iVa1Z-0007QU-T6; Fri, 15 Nov 2019 12:44:25 +0100
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iVa1Q-0008K2-Ab; Fri, 15 Nov 2019 12:44:16 +0100
+Date: Fri, 15 Nov 2019 12:44:16 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH v6 0/6] KASan for arm
+Message-ID: <20191115114416.ba6lmwb7q4gmepzc@pengutronix.de>
+References: <20190617221134.9930-1-f.fainelli@gmail.com>
+ <20191114181243.q37rxoo3seds6oxy@pengutronix.de>
+ <7322163f-e08e-a6b7-b143-e9d59917ee5b@gmail.com>
+ <20191115070842.2x7psp243nfo76co@pengutronix.de>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191115070842.2x7psp243nfo76co@pengutronix.de>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 12:28:52 up  2:47, 19 users,  load average: 0.00, 0.04, 0.03
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_034024_980257_8B9851E6 
-X-CRM114-Status: GOOD (  11.24  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191115_034505_841141_D39B0B87 
+X-CRM114-Status: GOOD (  25.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [195.145.39.210 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,45 +76,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, alexandre.belloni@bootlin.com, mhocko@suse.com,
+ julien.thierry@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ dhowells@redhat.com, yamada.masahiro@socionext.com, ryabinin.a.a@gmail.com,
+ glider@google.com, kvmarm@lists.cs.columbia.edu, rob@landley.net,
+ corbet@lwn.net, liuwenliang@huawei.com, daniel.lezcano@linaro.org,
+ linux@armlinux.org.uk, kasan-dev@googlegroups.com,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
+ geert@linux-m68k.org, drjones@redhat.com, vladimir.murzin@arm.com,
+ keescook@chromium.org, arnd@arndb.de, marc.zyngier@arm.com,
+ andre.przywara@arm.com, philip@cog.systems, jinb.park7@gmail.com,
+ tglx@linutronix.de, dvyukov@google.com, nico@fluxnic.net,
+ gregkh@linuxfoundation.org, ard.biesheuvel@linaro.org,
+ linux-doc@vger.kernel.org, christoffer.dall@arm.com, kernel@pengutronix.de,
+ pombredanne@nexb.com, akpm@linux-foundation.org, thgarnie@google.com,
+ kirill.shutemov@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The /2 divider between pll4_audio_div and pll4_post_div is not working
-on imx6q. The frequency is not halved as reported by the clock tree
-and measured on clko.
-In the technical reference manual the divider was removed in revision 4.
-It's also not listed in the imx6qp manual.
+Hi Florian,
 
-imx6dl manual mentions a divider for PLL4 and the according register
-description. So keep the divider here.
+On 19-11-15 08:08, Marco Felsch wrote:
+> Hi Florian,
+> 
+> On 19-11-14 15:01, Florian Fainelli wrote:
+> > Hello Marco,
+> > 
+> > On 11/14/19 10:12 AM, Marco Felsch wrote:
+> > > Hi Florian,
+> > > 
+> > > first of all, many thanks for your work on this series =) I picked your
+> > > and Arnd patches to make it compilable. Now it's compiling but my imx6q
+> > > board didn't boot anymore. I debugged the code and found that the branch
+> > > to 'start_kernel' won't be reached
+> > > 
+> > > 8<------- arch/arm/kernel/head-common.S -------
+> > > ....
+> > > 
+> > > #ifdef CONFIG_KASAN
+> > >         bl      kasan_early_init
+> > > #endif
+> > > 	mov     lr, #0
+> > > 	b       start_kernel
+> > > ENDPROC(__mmap_switched)
+> > > 
+> > > ....
+> > > 8<----------------------------------------------
+> > > 
+> > > Now, I found also that 'KASAN_SHADOW_OFFSET' isn't set due to missing
+> > > 'CONFIG_KASAN_SHADOW_OFFSET' and so no '-fasan-shadow-offset=xxxxx' is
+> > > added. Can that be the reason why my board isn't booted anymore?
+> > 
+> > The latest that I have is here, though not yet submitted since I needed
+> > to solve one issue on a specific platform with a lot of memory:
+> > 
+> > https://github.com/ffainelli/linux/pull/new/kasan-v7
+> 
+> Thanks for that hint, I will try this series too :) I read that you
+> wanna prepare a v7 but didn't found it ^^
+> 
+> > Can you share your branch as well? I did not pick all of Arnd's patches
+> > since some appeared to be seemingly independent from KASan on ARM. This
+> > is the KASAN related options that are set in my configuration:
+> 
+> Of course I will push it to github and inform you shortly.
 
-Signed-off-by: Jan Remmet <j.remmet@phytec.de>
----
- drivers/clk/imx/clk-imx6q.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+Here comes the link:
+https://github.com/medude/linux/tree/v5.4/topic/kasan-arm.v7
 
-diff --git a/drivers/clk/imx/clk-imx6q.c b/drivers/clk/imx/clk-imx6q.c
-index 60f2de851f39..ba33c79158de 100644
---- a/drivers/clk/imx/clk-imx6q.c
-+++ b/drivers/clk/imx/clk-imx6q.c
-@@ -598,7 +598,10 @@ static void __init imx6q_clocks_init(struct device_node *ccm_node)
- 	}
- 
- 	hws[IMX6QDL_CLK_PLL4_POST_DIV] = clk_hw_register_divider_table(NULL, "pll4_post_div", "pll4_audio", CLK_SET_RATE_PARENT, base + 0x70, 19, 2, 0, post_div_table, &imx_ccm_lock);
--	hws[IMX6QDL_CLK_PLL4_AUDIO_DIV] = clk_hw_register_divider(NULL, "pll4_audio_div", "pll4_post_div", CLK_SET_RATE_PARENT, base + 0x170, 15, 1, 0, &imx_ccm_lock);
-+	if (clk_on_imx6q() || clk_on_imx6qp())
-+		hws[IMX6QDL_CLK_PLL4_AUDIO_DIV] = imx_clk_hw_fixed_factor("pll4_audio_div", "pll4_post_div", 1, 1);
-+	else
-+		hws[IMX6QDL_CLK_PLL4_AUDIO_DIV] = clk_hw_register_divider(NULL, "pll4_audio_div", "pll4_post_div", CLK_SET_RATE_PARENT, base + 0x170, 15, 1, 0, &imx_ccm_lock);
- 	hws[IMX6QDL_CLK_PLL5_POST_DIV] = clk_hw_register_divider_table(NULL, "pll5_post_div", "pll5_video", CLK_SET_RATE_PARENT, base + 0xa0, 19, 2, 0, post_div_table, &imx_ccm_lock);
- 	hws[IMX6QDL_CLK_PLL5_VIDEO_DIV] = clk_hw_register_divider_table(NULL, "pll5_video_div", "pll5_post_div", CLK_SET_RATE_PARENT, base + 0x170, 30, 2, 0, video_div_table, &imx_ccm_lock);
- 
--- 
-2.7.4
+I just applied Arnds Patche which you didn't added into your v7.
 
+> > grep KASAN build/linux-custom/.config
+> > CONFIG_HAVE_ARCH_KASAN=y
+> > CONFIG_CC_HAS_KASAN_GENERIC=y
+> > CONFIG_KASAN=y
+> > CONFIG_KASAN_GENERIC=y
+> > CONFIG_KASAN_OUTLINE=y
+> > # CONFIG_KASAN_INLINE is not set
+> > CONFIG_KASAN_STACK=1
+> > CONFIG_TEST_KASAN=m
+> 
+> My config is:
+> 
+> CONFIG_HAVE_ARCH_KASAN=y
+> CONFIG_CC_HAS_KASAN_GENERIC=y
+> CONFIG_KASAN=y
+> CONFIG_KASAN_GENERIC=y
+> CONFIG_KASAN_OUTLINE=y
+> # CONFIG_KASAN_INLINE is not set
+> CONFIG_KASAN_STACK=1
+> # CONFIG_TEST_KASAN is not set
+> 
+> > are you using something different by any chance?
+> 
+> Unfortunately not.
+
+With your v7 it is working on my imx6 but unfortunately I can't run my
+gstreamer testcase. My CPU load goes to 100% after starting gstreamer
+and nothing happens.. But the test_kasan module works =) So I decided to
+check a imx6quadplus but this target did not boot.. I used another
+toolchain for the imx6quadplus gcc-9 instead of gcc-8. So it seems that
+something went wrong during compilation. Because you didn't changed
+something within the logic.
+
+I wonder why we must not define the CONFIG_KASAN_SHADOW_OFFSET for arm.
+
+Regards,
+  Marco
+
+> Regards,
+>   Marco
+> 
+> > -- 
+> > Florian
+> > 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
