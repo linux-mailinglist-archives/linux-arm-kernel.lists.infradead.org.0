@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D2BFFDC4B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 12:32:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9770DFDC4E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 12:32:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MfjXRiTcE644rE/JWOcPVQTAxmXdDoD/0Ok+SCEm2Eg=; b=i2neg+bjGLR6ZT
-	Wl5Ii/HNA/vpnSzme0BxBDrt57sRt9nNkwwo02unmQ+ZkgOqPzDnFx/iU4J48Wqi6Ih9tSwkwO4tw
-	Sci7luSY94Z0hj5w7zRoFIMXa9zyhgsRpqUIcAIyMqftT862hYd8F7l2Yzh4ps/iXBJzTfPR3SMvS
-	IKNIHpAiNPMElT6CTdQesiN9x02xuZgeMSCqtsFY9pPOFhRTVMHlcAvesVWUxgaheKkTgUdlxviUr
-	xs8odO8PilEQHYXLldMr6ClxO142f2yxk2H1JjFJRFPo5v6FfBwYr1aZ5k5hfPjkCzvdB1eIHneo5
-	cfoA+ZvI7QqXL0/mYxQQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x5PNHXVO/vORbM9JxHp/6GYKMNvOY5H9sTnY81Wfduc=; b=c7LzaeVFJ/mdpn
+	8euXi6GcKotpqAGYMEND1x1/lyHtIcjbPXG5pFmpuC6OC5PKSFgvul6ZTfvgDmwPFrcUfbFwyk5xX
+	huNXYezE0wXtwUex0FGW7OAU0VW9ASHbB+fJJKC/RN4NTqAKUSVkWaDb96qG70FX8tXnesPQKSnTx
+	kx7leGXGzWOuQp1PyzY9pBIA4m4o2ZcQWmhH3aEPLPiUsO9TBbvFltH54qbG/JPNcg/N67ZCekaUE
+	iPI1Mr5vpr0xw0SSCek8Rg5q3V7Dnu360LUCY8TIAGcoP/oAlMEt4VpWgEtAjV4xZo3Yb5usJ+FWi
+	g+75Mr1dQwgiPWd3iBKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVZps-0004tF-9r; Fri, 15 Nov 2019 11:32:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVZpj-0004se-6M
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 11:32:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 77B1831B;
- Fri, 15 Nov 2019 03:32:09 -0800 (PST)
-Received: from [10.1.196.63] (e123195-lin.cambridge.arm.com [10.1.196.63])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 816033F6C4;
- Fri, 15 Nov 2019 03:32:08 -0800 (PST)
-Subject: Re: [kvm-unit-tests PATCH 07/17] arm: gic: Extend check_acked() to
- allow silent call
-To: Andrew Jones <drjones@redhat.com>
-References: <20191108144240.204202-1-andre.przywara@arm.com>
- <20191108144240.204202-8-andre.przywara@arm.com>
- <25598849-b195-3411-8092-b0656bcfb762@arm.com>
- <20191114123224.2b5jr73qqtgtc7na@kamzik.brq.redhat.com>
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-Message-ID: <7aca029b-c2f7-aef9-9fac-b79f5ff5658b@arm.com>
-Date: Fri, 15 Nov 2019 11:32:07 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iVZqI-00057E-Rv; Fri, 15 Nov 2019 11:32:47 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iVZq5-000564-LD
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 11:32:35 +0000
+Received: by mail-wm1-x342.google.com with SMTP id b17so10012177wmj.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 Nov 2019 03:32:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=EbyPL8sD3PdrXer26nTPqwpkCln8AicPZfVsETHDNoo=;
+ b=EreKvAPhl3BdSzt1q1jtAvfCXgteeYNhfoDR3nGvsBCKDiihmQy3Ov77KZjIOJZbBw
+ /BD1IkOax+QUinqoKskaMdMfR1CXWlXUqiV/gA5fjRVAIZzJp9lHe9tzHop84SxuH5Ti
+ g4TllEY9mK/H1YQTAoSsBVKCL0pR/iYjZR0z8tRPd8kn9f/tVsgpliL2RhnKtfe71Qo0
+ 2PGUAooXus9NKW9BXOipEYJ1dHaJJdr6jknxt0YGWuNcMX6Yd2Bv35sVMdu5jqS1z779
+ BTxGTDlDSaeeG/aJ1qveztAT8btnh6WE0CDJmkAfE1+eFnqJjfqbgfXcwOQ2sqQhZR+v
+ Zt6w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=EbyPL8sD3PdrXer26nTPqwpkCln8AicPZfVsETHDNoo=;
+ b=ETS/mAZPn7vz53J2iiWUGDCYxDWpnnFcpVQPHaR4fbBJ0Jd11p8d57rcweZ0Jb5sFC
+ EpT+Ht8n7w2FZLH+fnoWxQalIAGZD2rf4TACF0BaR0lLGvKxp+ifQkrhS+f7aH0K4+P+
+ t9WSQJDExipcVe1ePn7xtanLmFF9tgq9UkCYp1c1oLh2FE8/rznyJVuajipCGWpXnXZk
+ cdDz+JubZ8/ZtmGXBB+0HKnoK4VkdkoDp5G1T7GBpun8P72Sa9VGvrQ0aA6GuZ/9XNoF
+ xGVuwc4KoX2V2EiRUvX2aZ+pEQikYsJiMAxscoWDpjjWIWHA+EhRfOSBBir42mikRT3x
+ 4GNg==
+X-Gm-Message-State: APjAAAW0vANbHlDcBX+q5/vC9S6jTsWYv0Ek/a+aPgu5i+lcQGhxXnQo
+ 5ihLcftWiWeodUlM6y78I0D30qVTLWnw07Ol8BIt8B+rH6sg0Q==
+X-Google-Smtp-Source: APXvYqz+zx5uW0o3xOZmZwmpqV554auqXSNIGVl4LwW5UXuqw3kzGxLKiGLuREvDKKDPlO+Afa6Sad8RF2MppEj2UK4=
+X-Received: by 2002:a1c:64d6:: with SMTP id
+ y205mr12941215wmb.136.1573817551365; 
+ Fri, 15 Nov 2019 03:32:31 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191114123224.2b5jr73qqtgtc7na@kamzik.brq.redhat.com>
-Content-Language: en-US
+References: <20191112223046.176097-1-samitolvanen@google.com>
+ <20191114225113.155143-1-samitolvanen@google.com>
+In-Reply-To: <20191114225113.155143-1-samitolvanen@google.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Fri, 15 Nov 2019 11:32:23 +0000
+Message-ID: <CAKv+Gu98uOZz7ZrG66gQerBq+hmwHmL4ebz5oDL16hxg=Y_YvA@mail.gmail.com>
+Subject: Re: [PATCH v2] crypto: arm64/sha: fix function types
+To: Sami Tolvanen <samitolvanen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_033211_323272_7C0D05E6 
-X-CRM114-Status: GOOD (  20.99  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191115_033233_837988_0B522DCB 
+X-CRM114-Status: GOOD (  15.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,199 +92,374 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
- Marc Zyngier <maz@kernel.org>, Paolo Bonzini <pbonzini@redhat.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="windows-1252"
-Content-Transfer-Encoding: quoted-printable
+Cc: Herbert Xu <herbert@gondor.apana.org.au>,
+ Eric Biggers <ebiggers@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
+ <linux-crypto@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Kees Cook <keescook@chromium.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 11/14/19 12:32 PM, Andrew Jones wrote:
-> On Tue, Nov 12, 2019 at 03:23:04PM +0000, Alexandru Elisei wrote:
->> check_acked is starting to become hard to read.
-> Agreed. check_acked() could probably have some of its subtests factored
-> out to improve its readability.
+On Thu, 14 Nov 2019 at 22:51, Sami Tolvanen <samitolvanen@google.com> wrote:
 >
->> The function itself is rather inconsistent, as it mixes regular
->> printf's with report_info's.
-> Sounds good
+> Instead of casting pointers to callback functions, add C wrappers
+> to avoid type mismatch failures with Control-Flow Integrity (CFI)
+> checking.
 >
->> The return value is also never used:
->>
->> $ awk '/check_acked\(/ && !/const/' arm/gic.c
->> =A0=A0=A0 check_acked("IPI: self", &mask);
->> =A0=A0=A0 check_acked("IPI: directed", &mask);
->> =A0=A0=A0 check_acked("IPI: broadcast", &mask);
-> That's good, since it's a void function :-)
-
-Sorry, got confused, this patch changes it to return a value, and that valu=
-e is
-ignored in the existing functions (the ones I listed above), which would ma=
-ke the
-usage of check_acked very inconsistent.
-
->> What I'm thinking is that we can rewrite check_acked to return true/fals=
-e (or
->> 0/1), meaning success or failure, remove the testname parameter, replace=
- the
->> printfs to report_info, and have the caller do a report based on the val=
-ue
->> returned by check_acked.
->>
->> Rough version, compile tested only, I'm sure it can be improved:
->>
->> diff --git a/arm/gic.c b/arm/gic.c
->> index adb6aa464513..5453f2fd3d5f 100644
->> --- a/arm/gic.c
->> +++ b/arm/gic.c
->> @@ -60,11 +60,11 @@ static void stats_reset(void)
->> =A0=A0=A0=A0=A0=A0=A0 smp_wmb();
->> =A0}
->> =A0
->> -static void check_acked(const char *testname, cpumask_t *mask)
->> +static bool check_acked(cpumask_t *mask)
-> We have several check_* functions in arm/gic.c, and they're all void
-> functions. Changing this one to a bool would be inconsistent, but
-> maybe that consistency isn't that important, or maybe they should all
-> be bool?
-
-I think they should stay void, because they compute statistics, or print a =
-warning
-if we got a spurious interrupt (check_spurious). I'm not really sure what t=
-o do
-about check_acked at the moment, I'll think about it some more.
-
->> =A0{
->> =A0=A0=A0=A0=A0=A0=A0 int missing =3D 0, extra =3D 0, unexpected =3D 0;
->> =A0=A0=A0=A0=A0=A0=A0 int nr_pass, cpu, i;
->> -=A0=A0=A0=A0=A0=A0 bool bad =3D false;
->> +=A0=A0=A0=A0=A0=A0 bool success =3D true;
->> =A0
->> =A0=A0=A0=A0=A0=A0=A0 /* Wait up to 5s for all interrupts to be delivere=
-d */
->> =A0=A0=A0=A0=A0=A0=A0 for (i =3D 0; i < 50; ++i) {
->> @@ -76,22 +76,21 @@ static void check_acked(const char *testname, cpumas=
-k_t *mask)
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 acked[cpu] =3D=3D 1 : acked[cpu] =3D=3D 0;
->> =A0
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if=
- (bad_sender[cpu] !=3D -1) {
->> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 printf("cpu%d received IPI from wrong sender %d\n",
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 report_info("cpu%d received IPI from wrong sender
->> %d\n",
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 cpu, bad_sender[cpu]);
->> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 bad =3D true;
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 success =3D false;
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
->> =A0
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if=
- (bad_irq[cpu] !=3D -1) {
->> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 printf("cpu%d received wrong irq %d\n",
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 report_info("cpu%d received wrong irq %d\n",
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 cpu, bad_irq[cpu]);
->> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 bad =3D true;
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 success =3D false;
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (nr_pass =3D=3D nr_cpus=
-) {
->> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 repo=
-rt("%s", !bad, testname);
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if=
- (i)
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0 report_info("took more than %d ms", i * 100);
->> -=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 retu=
-rn;
->> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 retu=
-rn success;
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
->> =A0=A0=A0=A0=A0=A0=A0 }
->> =A0
->> @@ -107,9 +106,9 @@ static void check_acked(const char *testname, cpumas=
-k_t *mask)
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
->> =A0=A0=A0=A0=A0=A0=A0 }
->> =A0
->> -=A0=A0=A0=A0=A0=A0 report("%s", false, testname);
->> =A0=A0=A0=A0=A0=A0=A0 report_info("Timed-out (5s). ACKS: missing=3D%d ex=
-tra=3D%d unexpected=3D%d",
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 missing, extra=
-, unexpected);
->> +=A0=A0=A0=A0=A0=A0 return false;
->> =A0}
->> =A0
->> =A0static void check_spurious(void)
->> @@ -183,13 +182,11 @@ static void ipi_test_self(void)
->> =A0{
->> =A0=A0=A0=A0=A0=A0=A0 cpumask_t mask;
->> =A0
->> -=A0=A0=A0=A0=A0=A0 report_prefix_push("self");
->> =A0=A0=A0=A0=A0=A0=A0 stats_reset();
->> =A0=A0=A0=A0=A0=A0=A0 cpumask_clear(&mask);
->> =A0=A0=A0=A0=A0=A0=A0 cpumask_set_cpu(smp_processor_id(), &mask);
->> =A0=A0=A0=A0=A0=A0=A0 gic->ipi.send_self();
->> -=A0=A0=A0=A0=A0=A0 check_acked("IPI: self", &mask);
->> -=A0=A0=A0=A0=A0=A0 report_prefix_pop();
->> +=A0=A0=A0=A0=A0=A0 report("self", check_acked(&mask));
->> =A0}
->> =A0
->> =A0static void ipi_test_smp(void)
->> @@ -203,7 +200,7 @@ static void ipi_test_smp(void)
->> =A0=A0=A0=A0=A0=A0=A0 for (i =3D smp_processor_id() & 1; i < nr_cpus; i =
-+=3D 2)
->> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 cpumask_clear_cpu(i, &mask=
-);
->> =A0=A0=A0=A0=A0=A0=A0 gic_ipi_send_mask(IPI_IRQ, &mask);
->> -=A0=A0=A0=A0=A0=A0 check_acked("IPI: directed", &mask);
->> +=A0=A0=A0=A0=A0=A0 report("directed", check_acked(&mask));
->> =A0=A0=A0=A0=A0=A0=A0 report_prefix_pop();
-> Shouldn't we also drop the "target-list" prefix push/pop?
+> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> ---
+>  arch/arm64/crypto/sha1-ce-glue.c   | 17 +++++++++------
+>  arch/arm64/crypto/sha2-ce-glue.c   | 34 ++++++++++++++++++------------
+>  arch/arm64/crypto/sha256-glue.c    | 32 +++++++++++++++++-----------
+>  arch/arm64/crypto/sha512-ce-glue.c | 26 ++++++++++++-----------
+>  arch/arm64/crypto/sha512-glue.c    | 15 ++++++++-----
+>  5 files changed, 76 insertions(+), 48 deletions(-)
 >
->> =A0
->> =A0=A0=A0=A0=A0=A0=A0 report_prefix_push("broadcast");
->> @@ -211,7 +208,7 @@ static void ipi_test_smp(void)
->> =A0=A0=A0=A0=A0=A0=A0 cpumask_copy(&mask, &cpu_present_mask);
->> =A0=A0=A0=A0=A0=A0=A0 cpumask_clear_cpu(smp_processor_id(), &mask);
->> =A0=A0=A0=A0=A0=A0=A0 gic->ipi.send_broadcast();
->> -=A0=A0=A0=A0=A0=A0 check_acked("IPI: broadcast", &mask);
->> +=A0=A0=A0=A0=A0=A0 report("broadcast", check_acked(&mask));
->> =A0=A0=A0=A0=A0=A0=A0 report_prefix_pop();
->> =A0}
-> Shouldn't we also drop the "broadcast" prefix push/pop?
-
-My suggestion was a quick hack to give an idea of how it might look, it can
-definitely be improved :)
-
-Thanks,
-Alex
->> =A0
->> I've removed "IPI" from the report string because the prefixed was alrea=
-dy pushed
->> in main.
->>
->> Andrew, what do you think? Are we missing something obvious? Do you have=
- a better
->> idea?
-> I'm happy to see cleanups and haven't had a chance to look too closely at
-> the gic tests in a while so I have no better ideas :-)
+> diff --git a/arch/arm64/crypto/sha1-ce-glue.c b/arch/arm64/crypto/sha1-ce-glue.c
+> index bdc1b6d7aff7..76a951ce2a7b 100644
+> --- a/arch/arm64/crypto/sha1-ce-glue.c
+> +++ b/arch/arm64/crypto/sha1-ce-glue.c
+> @@ -28,6 +28,13 @@ struct sha1_ce_state {
+>  asmlinkage void sha1_ce_transform(struct sha1_ce_state *sst, u8 const *src,
+>                                   int blocks);
 >
-> Thanks,
-> drew
+> +static inline void __sha1_ce_transform(struct sha1_state *sst, u8 const *src,
+> +                                      int blocks)
+
+Nit: making a function inline when all we ever do is take its address
+is rather pointless, so please drop that (below as well)
+
+With that fixed (and assuming that the crypto selftests still pass -
+please confirm that you've tried that)
+
+Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+
+
+> +{
+> +       return sha1_ce_transform(container_of(sst, struct sha1_ce_state, sst),
+> +                                src, blocks);
+> +}
+> +
+>  const u32 sha1_ce_offsetof_count = offsetof(struct sha1_ce_state, sst.count);
+>  const u32 sha1_ce_offsetof_finalize = offsetof(struct sha1_ce_state, finalize);
+>
+> @@ -41,8 +48,7 @@ static int sha1_ce_update(struct shash_desc *desc, const u8 *data,
+>
+>         sctx->finalize = 0;
+>         kernel_neon_begin();
+> -       sha1_base_do_update(desc, data, len,
+> -                           (sha1_block_fn *)sha1_ce_transform);
+> +       sha1_base_do_update(desc, data, len, __sha1_ce_transform);
+>         kernel_neon_end();
+>
+>         return 0;
+> @@ -64,10 +70,9 @@ static int sha1_ce_finup(struct shash_desc *desc, const u8 *data,
+>         sctx->finalize = finalize;
+>
+>         kernel_neon_begin();
+> -       sha1_base_do_update(desc, data, len,
+> -                           (sha1_block_fn *)sha1_ce_transform);
+> +       sha1_base_do_update(desc, data, len, __sha1_ce_transform);
+>         if (!finalize)
+> -               sha1_base_do_finalize(desc, (sha1_block_fn *)sha1_ce_transform);
+> +               sha1_base_do_finalize(desc, __sha1_ce_transform);
+>         kernel_neon_end();
+>         return sha1_base_finish(desc, out);
+>  }
+> @@ -81,7 +86,7 @@ static int sha1_ce_final(struct shash_desc *desc, u8 *out)
+>
+>         sctx->finalize = 0;
+>         kernel_neon_begin();
+> -       sha1_base_do_finalize(desc, (sha1_block_fn *)sha1_ce_transform);
+> +       sha1_base_do_finalize(desc, __sha1_ce_transform);
+>         kernel_neon_end();
+>         return sha1_base_finish(desc, out);
+>  }
+> diff --git a/arch/arm64/crypto/sha2-ce-glue.c b/arch/arm64/crypto/sha2-ce-glue.c
+> index 604a01a4ede6..6042555517b0 100644
+> --- a/arch/arm64/crypto/sha2-ce-glue.c
+> +++ b/arch/arm64/crypto/sha2-ce-glue.c
+> @@ -28,6 +28,13 @@ struct sha256_ce_state {
+>  asmlinkage void sha2_ce_transform(struct sha256_ce_state *sst, u8 const *src,
+>                                   int blocks);
+>
+> +static inline void __sha2_ce_transform(struct sha256_state *sst, u8 const *src,
+> +                                      int blocks)
+> +{
+> +       return sha2_ce_transform(container_of(sst, struct sha256_ce_state, sst),
+> +                                src, blocks);
+> +}
+> +
+>  const u32 sha256_ce_offsetof_count = offsetof(struct sha256_ce_state,
+>                                               sst.count);
+>  const u32 sha256_ce_offsetof_finalize = offsetof(struct sha256_ce_state,
+> @@ -35,6 +42,12 @@ const u32 sha256_ce_offsetof_finalize = offsetof(struct sha256_ce_state,
+>
+>  asmlinkage void sha256_block_data_order(u32 *digest, u8 const *src, int blocks);
+>
+> +static inline void __sha256_block_data_order(struct sha256_state *sst,
+> +                                            u8 const *src, int blocks)
+> +{
+> +       return sha256_block_data_order(sst->state, src, blocks);
+> +}
+> +
+>  static int sha256_ce_update(struct shash_desc *desc, const u8 *data,
+>                             unsigned int len)
+>  {
+> @@ -42,12 +55,11 @@ static int sha256_ce_update(struct shash_desc *desc, const u8 *data,
+>
+>         if (!crypto_simd_usable())
+>                 return sha256_base_do_update(desc, data, len,
+> -                               (sha256_block_fn *)sha256_block_data_order);
+> +                               __sha256_block_data_order);
+>
+>         sctx->finalize = 0;
+>         kernel_neon_begin();
+> -       sha256_base_do_update(desc, data, len,
+> -                             (sha256_block_fn *)sha2_ce_transform);
+> +       sha256_base_do_update(desc, data, len, __sha2_ce_transform);
+>         kernel_neon_end();
+>
+>         return 0;
+> @@ -62,9 +74,8 @@ static int sha256_ce_finup(struct shash_desc *desc, const u8 *data,
+>         if (!crypto_simd_usable()) {
+>                 if (len)
+>                         sha256_base_do_update(desc, data, len,
+> -                               (sha256_block_fn *)sha256_block_data_order);
+> -               sha256_base_do_finalize(desc,
+> -                               (sha256_block_fn *)sha256_block_data_order);
+> +                               __sha256_block_data_order);
+> +               sha256_base_do_finalize(desc, __sha256_block_data_order);
+>                 return sha256_base_finish(desc, out);
+>         }
+>
+> @@ -75,11 +86,9 @@ static int sha256_ce_finup(struct shash_desc *desc, const u8 *data,
+>         sctx->finalize = finalize;
+>
+>         kernel_neon_begin();
+> -       sha256_base_do_update(desc, data, len,
+> -                             (sha256_block_fn *)sha2_ce_transform);
+> +       sha256_base_do_update(desc, data, len, __sha2_ce_transform);
+>         if (!finalize)
+> -               sha256_base_do_finalize(desc,
+> -                                       (sha256_block_fn *)sha2_ce_transform);
+> +               sha256_base_do_finalize(desc, __sha2_ce_transform);
+>         kernel_neon_end();
+>         return sha256_base_finish(desc, out);
+>  }
+> @@ -89,14 +98,13 @@ static int sha256_ce_final(struct shash_desc *desc, u8 *out)
+>         struct sha256_ce_state *sctx = shash_desc_ctx(desc);
+>
+>         if (!crypto_simd_usable()) {
+> -               sha256_base_do_finalize(desc,
+> -                               (sha256_block_fn *)sha256_block_data_order);
+> +               sha256_base_do_finalize(desc, __sha256_block_data_order);
+>                 return sha256_base_finish(desc, out);
+>         }
+>
+>         sctx->finalize = 0;
+>         kernel_neon_begin();
+> -       sha256_base_do_finalize(desc, (sha256_block_fn *)sha2_ce_transform);
+> +       sha256_base_do_finalize(desc, __sha2_ce_transform);
+>         kernel_neon_end();
+>         return sha256_base_finish(desc, out);
+>  }
+> diff --git a/arch/arm64/crypto/sha256-glue.c b/arch/arm64/crypto/sha256-glue.c
+> index e273faca924f..bb0f89382d70 100644
+> --- a/arch/arm64/crypto/sha256-glue.c
+> +++ b/arch/arm64/crypto/sha256-glue.c
+> @@ -27,14 +27,26 @@ asmlinkage void sha256_block_data_order(u32 *digest, const void *data,
+>                                         unsigned int num_blks);
+>  EXPORT_SYMBOL(sha256_block_data_order);
+>
+> +static inline void __sha256_block_data_order(struct sha256_state *sst,
+> +                                            u8 const *src, int blocks)
+> +{
+> +       return sha256_block_data_order(sst->state, src, blocks);
+> +}
+> +
+>  asmlinkage void sha256_block_neon(u32 *digest, const void *data,
+>                                   unsigned int num_blks);
+>
+> +static inline void __sha256_block_neon(struct sha256_state *sst,
+> +                                      u8 const *src, int blocks)
+> +{
+> +       return sha256_block_neon(sst->state, src, blocks);
+> +}
+> +
+>  static int crypto_sha256_arm64_update(struct shash_desc *desc, const u8 *data,
+>                                       unsigned int len)
+>  {
+>         return sha256_base_do_update(desc, data, len,
+> -                               (sha256_block_fn *)sha256_block_data_order);
+> +                                    __sha256_block_data_order);
+>  }
+>
+>  static int crypto_sha256_arm64_finup(struct shash_desc *desc, const u8 *data,
+> @@ -42,9 +54,8 @@ static int crypto_sha256_arm64_finup(struct shash_desc *desc, const u8 *data,
+>  {
+>         if (len)
+>                 sha256_base_do_update(desc, data, len,
+> -                               (sha256_block_fn *)sha256_block_data_order);
+> -       sha256_base_do_finalize(desc,
+> -                               (sha256_block_fn *)sha256_block_data_order);
+> +                                     __sha256_block_data_order);
+> +       sha256_base_do_finalize(desc, __sha256_block_data_order);
+>
+>         return sha256_base_finish(desc, out);
+>  }
+> @@ -87,7 +98,7 @@ static int sha256_update_neon(struct shash_desc *desc, const u8 *data,
+>
+>         if (!crypto_simd_usable())
+>                 return sha256_base_do_update(desc, data, len,
+> -                               (sha256_block_fn *)sha256_block_data_order);
+> +                               __sha256_block_data_order);
+>
+>         while (len > 0) {
+>                 unsigned int chunk = len;
+> @@ -103,8 +114,7 @@ static int sha256_update_neon(struct shash_desc *desc, const u8 *data,
+>                                 sctx->count % SHA256_BLOCK_SIZE;
+>
+>                 kernel_neon_begin();
+> -               sha256_base_do_update(desc, data, chunk,
+> -                                     (sha256_block_fn *)sha256_block_neon);
+> +               sha256_base_do_update(desc, data, chunk, __sha256_block_neon);
+>                 kernel_neon_end();
+>                 data += chunk;
+>                 len -= chunk;
+> @@ -118,15 +128,13 @@ static int sha256_finup_neon(struct shash_desc *desc, const u8 *data,
+>         if (!crypto_simd_usable()) {
+>                 if (len)
+>                         sha256_base_do_update(desc, data, len,
+> -                               (sha256_block_fn *)sha256_block_data_order);
+> -               sha256_base_do_finalize(desc,
+> -                               (sha256_block_fn *)sha256_block_data_order);
+> +                               __sha256_block_data_order);
+> +               sha256_base_do_finalize(desc, __sha256_block_data_order);
+>         } else {
+>                 if (len)
+>                         sha256_update_neon(desc, data, len);
+>                 kernel_neon_begin();
+> -               sha256_base_do_finalize(desc,
+> -                               (sha256_block_fn *)sha256_block_neon);
+> +               sha256_base_do_finalize(desc, __sha256_block_neon);
+>                 kernel_neon_end();
+>         }
+>         return sha256_base_finish(desc, out);
+> diff --git a/arch/arm64/crypto/sha512-ce-glue.c b/arch/arm64/crypto/sha512-ce-glue.c
+> index 2369540040aa..076fcae454e0 100644
+> --- a/arch/arm64/crypto/sha512-ce-glue.c
+> +++ b/arch/arm64/crypto/sha512-ce-glue.c
+> @@ -29,16 +29,21 @@ asmlinkage void sha512_ce_transform(struct sha512_state *sst, u8 const *src,
+>
+>  asmlinkage void sha512_block_data_order(u64 *digest, u8 const *src, int blocks);
+>
+> +static inline void __sha512_block_data_order(struct sha512_state *sst,
+> +                                            u8 const *src, int blocks)
+> +{
+> +       return sha512_block_data_order(sst->state, src, blocks);
+> +}
+> +
+>  static int sha512_ce_update(struct shash_desc *desc, const u8 *data,
+>                             unsigned int len)
+>  {
+>         if (!crypto_simd_usable())
+>                 return sha512_base_do_update(desc, data, len,
+> -                               (sha512_block_fn *)sha512_block_data_order);
+> +                                            __sha512_block_data_order);
+>
+>         kernel_neon_begin();
+> -       sha512_base_do_update(desc, data, len,
+> -                             (sha512_block_fn *)sha512_ce_transform);
+> +       sha512_base_do_update(desc, data, len, sha512_ce_transform);
+>         kernel_neon_end();
+>
+>         return 0;
+> @@ -50,16 +55,14 @@ static int sha512_ce_finup(struct shash_desc *desc, const u8 *data,
+>         if (!crypto_simd_usable()) {
+>                 if (len)
+>                         sha512_base_do_update(desc, data, len,
+> -                               (sha512_block_fn *)sha512_block_data_order);
+> -               sha512_base_do_finalize(desc,
+> -                               (sha512_block_fn *)sha512_block_data_order);
+> +                                             __sha512_block_data_order);
+> +               sha512_base_do_finalize(desc, __sha512_block_data_order);
+>                 return sha512_base_finish(desc, out);
+>         }
+>
+>         kernel_neon_begin();
+> -       sha512_base_do_update(desc, data, len,
+> -                             (sha512_block_fn *)sha512_ce_transform);
+> -       sha512_base_do_finalize(desc, (sha512_block_fn *)sha512_ce_transform);
+> +       sha512_base_do_update(desc, data, len, sha512_ce_transform);
+> +       sha512_base_do_finalize(desc, sha512_ce_transform);
+>         kernel_neon_end();
+>         return sha512_base_finish(desc, out);
+>  }
+> @@ -67,13 +70,12 @@ static int sha512_ce_finup(struct shash_desc *desc, const u8 *data,
+>  static int sha512_ce_final(struct shash_desc *desc, u8 *out)
+>  {
+>         if (!crypto_simd_usable()) {
+> -               sha512_base_do_finalize(desc,
+> -                               (sha512_block_fn *)sha512_block_data_order);
+> +               sha512_base_do_finalize(desc, __sha512_block_data_order);
+>                 return sha512_base_finish(desc, out);
+>         }
+>
+>         kernel_neon_begin();
+> -       sha512_base_do_finalize(desc, (sha512_block_fn *)sha512_ce_transform);
+> +       sha512_base_do_finalize(desc, sha512_ce_transform);
+>         kernel_neon_end();
+>         return sha512_base_finish(desc, out);
+>  }
+> diff --git a/arch/arm64/crypto/sha512-glue.c b/arch/arm64/crypto/sha512-glue.c
+> index d915c656e5fe..125aac89c3c4 100644
+> --- a/arch/arm64/crypto/sha512-glue.c
+> +++ b/arch/arm64/crypto/sha512-glue.c
+> @@ -20,15 +20,21 @@ MODULE_LICENSE("GPL v2");
+>  MODULE_ALIAS_CRYPTO("sha384");
+>  MODULE_ALIAS_CRYPTO("sha512");
+>
+> -asmlinkage void sha512_block_data_order(u32 *digest, const void *data,
+> +asmlinkage void sha512_block_data_order(u64 *digest, const void *data,
+>                                         unsigned int num_blks);
+>  EXPORT_SYMBOL(sha512_block_data_order);
+>
+> +static inline void __sha512_block_data_order(struct sha512_state *sst,
+> +                                            u8 const *src, int blocks)
+> +{
+> +       return sha512_block_data_order(sst->state, src, blocks);
+> +}
+> +
+>  static int sha512_update(struct shash_desc *desc, const u8 *data,
+>                          unsigned int len)
+>  {
+>         return sha512_base_do_update(desc, data, len,
+> -                       (sha512_block_fn *)sha512_block_data_order);
+> +                                    __sha512_block_data_order);
+>  }
+>
+>  static int sha512_finup(struct shash_desc *desc, const u8 *data,
+> @@ -36,9 +42,8 @@ static int sha512_finup(struct shash_desc *desc, const u8 *data,
+>  {
+>         if (len)
+>                 sha512_base_do_update(desc, data, len,
+> -                       (sha512_block_fn *)sha512_block_data_order);
+> -       sha512_base_do_finalize(desc,
+> -                       (sha512_block_fn *)sha512_block_data_order);
+> +                                     __sha512_block_data_order);
+> +       sha512_base_do_finalize(desc, __sha512_block_data_order);
+>
+>         return sha512_base_finish(desc, out);
+>  }
+>
+> base-commit: 96b95eff4a591dbac582c2590d067e356a18aacb
+> --
+> 2.24.0.432.g9d3f5f5b63-goog
 >
 
 _______________________________________________
