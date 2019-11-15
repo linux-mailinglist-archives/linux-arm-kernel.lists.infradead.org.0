@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D65A5FE80B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 23:36:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2CB0FE808
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 23:36:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=+OtB1XHIX0LrqBLUwHdY+FMJxgZ8Z84Sgq+ppBgA3+A=; b=MPUdvURB9U1AEZxp/aN7LhHinW
-	UCske5wii3ZbR4E5/XZpYqf3faNXK9SyTs62foum7OUdRBBNq72N+kpAlabD5ia3NwQBqflctZKrz
-	/UvwQVrOcghRBmffu8q1sgYjBm6xeQXuJGd2CByZxD8Cwm67arJTwE7OhACyC0sdeuj7Oi1q/p3qB
-	eRqvKujpqcjghKjMF8vwWINwBBmKWMSMuWz27m4WeWJsPKqmueHlRFBPYiEr08PfUqEYxegNfihky
-	PwmNFzhE73wvw4WkcQUM/UfurPipU4v8kQhIG1hFGCLP44XUq/OvAak4Yyw+82aqIhhtaOWDbcy85
-	hPIm0nDA==;
+	bh=4JsuhbnQc6LeP92E4P+0A1erB43bf4rVh7Pjz41h7M0=; b=BN7e0Wd/1x7V9u/ax+0T9BeTWv
+	t5NO59xHaMKRl1/ShnyAqK+mvSOrskSVh2H8b892WwDwrlGjTc+TRtuIi1JVltTiebUWe654wbAS5
+	QE0yRnbnpD83t0S7+84dP1uOA/JCpQ2RVzXxwwNNwndOrT6E6w++0VW7ohOZJewBE+b1P/xoy1D4B
+	aPiSzvcMEoBqpXBik4a7PMWzDB3hH59wUsK+wBwzLPTR4eXueT9b5vVsSDgxJWQi+lvDSlBfTspY2
+	V1pbF/8A30IjLqSvrBsSn58OAcR7VmenLrXSLvPLCReNW5FucsfRHUA8iHM8/SFHDY02l/6JyoEEu
+	xUB1ugOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVkCN-0001U5-7a; Fri, 15 Nov 2019 22:36:15 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iVkC9-0001EG-To; Fri, 15 Nov 2019 22:36:01 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVkAF-00077d-Cp
+ id 1iVkAG-00078X-7k
  for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 22:34:05 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 3so7322592pfb.10
+Received: by mail-pg1-x543.google.com with SMTP id l24so6604472pgh.10
  for <linux-arm-kernel@lists.infradead.org>;
  Fri, 15 Nov 2019 14:34:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=6V0ioyUbzQMXQMBXE7qcEPEwz5yqv4QBePomZ4UZPqc=;
- b=k7kBlMxXsG6gA/UcmlwTDggZ65v+ipn3YUceSw3Oegz9WKEnqSckQYHfAT76F7fPjN
- s7QKdRMaRPqZFZSI/xOc6FPxjFzbfDiSqxO16UNRWzwpNND4qj7rCnHyntrgf8gWE2+b
- z31khVZDNGGcS5gNaQpHfSp84XhywQ1G5jrK5dsnXgm8xzY2Bttagju6GbfsQCuUz1t1
- a1jGQru7049kf1xVk9PcTip/XRGMTQ3ZDi5E07+5EowNcQ7XYcGxNTDsz6/vv89SFEC4
- rOkGhyiZz4rpSal4odmYlyBahCIUN9rZMet/cta0i71K0Th0xdUbgnAkFRClk3lff4d1
- /chw==
+ bh=I8DYLlgbe7crhAhNbwNPqGy2McaZWO3AECdzJYJCCco=;
+ b=uq0Rvs0KPR5i9HtlAfbqJ09ftst7366sxovqlgQSCdSMlx7zsOEFlsXzxIZ/RFJepW
+ +xNmN50KWjZEmZ4ahwYGYncO2oNSlvlk9+bSZ0uJj5KwnzYGnYwwpJh3Z0U0CVVPUgeF
+ WBek2r2DnpcVe5urx/INF76BoO8wqFwuN86lGWJuCvpErfOgoUCoWWPI37s5pI2Uuw9X
+ OEj1WNleT7NOb7K1+oFm34vXUlCdixUaNsyhZrrKKyzZ34tRHBi5jpoqITPilNH4uc3A
+ cG9Aay+Ra1kWvl+WOeF5ifVv++jVQtvf2AnAcuQ92MtUnevyPsRG5Pf0brxRmVhP9TbT
+ u6bw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=6V0ioyUbzQMXQMBXE7qcEPEwz5yqv4QBePomZ4UZPqc=;
- b=I4QhlcyTiPLby3RlHe9+L311EY5oEnQ+iC4UNainISCi4JknY7QTxIrMv8aB+1x6kN
- jqqZJTTZn+ENGY43DZaRoeV/GVg1xNUzUG/uICEIfIW+Cvnl7ntoiv+XmoKrFS5ILG0A
- k4e6BdHj8ZeVWRPzCyNNDyONqyQ9VidbeYUKKzicZDLkPLOy87PLEblBeZKIqRguYzgY
- B5tVY+7Gy+sFVD6nReB5JyORLYiDaDP1vovo5xWIm+O0jJ9xWOkMZg277mZ8+F6q8j99
- 0Pk2DVoEnVipxnVGbrUInqIUcLV1uGBWbVyrVCXjeu9x/vBS0CaRlRxtUAmqm7xm68cw
- SR9A==
-X-Gm-Message-State: APjAAAVogLkPkzwwSX1hFfODgyyZ9oBsfFB6REhZVqp2dVGwaogU6rLQ
- GC/SpOAWGMaNAMCB5sb/UUac8Q==
-X-Google-Smtp-Source: APXvYqwPDrxT0ltVk6U0vCs9B/kupiJwArvMyWvfpOn2zdkBUlstoIR7TdNRADNMqnuUZbeIdUbysg==
-X-Received: by 2002:a62:1c8:: with SMTP id 191mr20454995pfb.152.1573857242567; 
- Fri, 15 Nov 2019 14:34:02 -0800 (PST)
+ bh=I8DYLlgbe7crhAhNbwNPqGy2McaZWO3AECdzJYJCCco=;
+ b=HDiPq44u/39K+NBZ6eWAwMPr7aEk0xMJgaR+hEHwJXLM6zRyQ3AoWNcA/Qjz8D0Hlz
+ 3tApJmjr7SbiuaPJNDzV5gUrfIEZ1e5Cxm6AZv+vTQP/HZrNS+xt4YL1xmTJVuwQFnjt
+ 5fLE3xXfNMBZFMn7Bv+mXc2ip+oK0MDgz9GfDCBivhsFH+VPMPgWKPu+9Uqrojnr4Y27
+ AQyF7C8fbT8k0GPyPe0pjWdLgezZcA2nzxpAfbMQHScKAXJ7mgVBbLyOXkRSuAkQj/WK
+ rnoOuofCYgYsAVrJKRa2RtGJXe6gFdSjy8peKOMOHaFkhJpNvGYnG2i4M85vZwGTD9lb
+ mhyQ==
+X-Gm-Message-State: APjAAAWipS2Va1f9Cdd+3VEIrS6spcAvrr9maSjAd8Yl6PfLebeSr4PO
+ hFPUC8QgPWvLS1clAjUDJGbzRhfe86c=
+X-Google-Smtp-Source: APXvYqytHqdgYw+McewKp6L1IK0RR+uPnytQnNFy3RGnQfrkQ+RNzORO54L3aq41JZ6v3SKIJheJ4A==
+X-Received: by 2002:a63:2e01:: with SMTP id u1mr19770443pgu.25.1573857243342; 
+ Fri, 15 Nov 2019 14:34:03 -0800 (PST)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id m15sm11699724pfh.19.2019.11.15.14.34.01
+ by smtp.gmail.com with ESMTPSA id m15sm11699724pfh.19.2019.11.15.14.34.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 Nov 2019 14:34:01 -0800 (PST)
+ Fri, 15 Nov 2019 14:34:02 -0800 (PST)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: stable@vger.kernel.org
-Subject: [stable 4.19+][PATCH 06/20] media: stm32-dcmi: fix check of
- pm_runtime_get_sync return value
-Date: Fri, 15 Nov 2019 15:33:42 -0700
-Message-Id: <20191115223356.27675-6-mathieu.poirier@linaro.org>
+Subject: [stable 4.19+][PATCH 07/20] hwrng: stm32 - fix unbalanced
+ pm_runtime_enable
+Date: Fri, 15 Nov 2019 15:33:43 -0700
+Message-Id: <20191115223356.27675-7-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191115223356.27675-1-mathieu.poirier@linaro.org>
 References: <20191115223356.27675-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_143403_439238_6189F25B 
-X-CRM114-Status: GOOD (  13.67  )
+X-CRM114-CacheID: sfid-20191115_143404_283102_A945F629 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,41 +104,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Hugues Fruchet <hugues.fruchet@st.com>
+From: Lionel Debieve <lionel.debieve@st.com>
 
-commit ab41b99e7e55c85f29ff7b54718ccbbe051905e7 upstream
+commit af0d4442dd6813de6e77309063beb064fa8e89ae upstream
 
-Start streaming was sometimes failing because of pm_runtime_get_sync()
-non-0 return value. In fact return value was not an error but a
-positive value (1), indicating that PM was already enabled.
-Fix this by going to error path only with negative return value.
+No remove function implemented yet in the driver.
+Without remove function, the pm_runtime implementation
+complains when removing and probing again the driver.
 
-Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
-Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
+Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
 Cc: stable <stable@vger.kernel.org> # 4.19+
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/media/platform/stm32/stm32-dcmi.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/char/hw_random/stm32-rng.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-index d86944109cbf..18d0b5641789 100644
---- a/drivers/media/platform/stm32/stm32-dcmi.c
-+++ b/drivers/media/platform/stm32/stm32-dcmi.c
-@@ -584,9 +584,9 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
- 	int ret;
+diff --git a/drivers/char/hw_random/stm32-rng.c b/drivers/char/hw_random/stm32-rng.c
+index 042860d97b15..37b338a76ba4 100644
+--- a/drivers/char/hw_random/stm32-rng.c
++++ b/drivers/char/hw_random/stm32-rng.c
+@@ -169,6 +169,13 @@ static int stm32_rng_probe(struct platform_device *ofdev)
+ 	return devm_hwrng_register(dev, &priv->rng);
+ }
  
- 	ret = pm_runtime_get_sync(dcmi->dev);
--	if (ret) {
--		dev_err(dcmi->dev, "%s: Failed to start streaming, cannot get sync\n",
--			__func__);
-+	if (ret < 0) {
-+		dev_err(dcmi->dev, "%s: Failed to start streaming, cannot get sync (%d)\n",
-+			__func__, ret);
- 		goto err_release_buffers;
- 	}
++static int stm32_rng_remove(struct platform_device *ofdev)
++{
++	pm_runtime_disable(&ofdev->dev);
++
++	return 0;
++}
++
+ #ifdef CONFIG_PM
+ static int stm32_rng_runtime_suspend(struct device *dev)
+ {
+@@ -210,6 +217,7 @@ static struct platform_driver stm32_rng_driver = {
+ 		.of_match_table = stm32_rng_match,
+ 	},
+ 	.probe = stm32_rng_probe,
++	.remove = stm32_rng_remove,
+ };
  
+ module_platform_driver(stm32_rng_driver);
 -- 
 2.17.1
 
