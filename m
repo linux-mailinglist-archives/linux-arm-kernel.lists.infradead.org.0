@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B57ABFDBC7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 11:54:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5605BFDBDF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 12:00:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zzTsTzU3kB17DUYQyT9YlJ40/Zse1BqeFYd+kA9B45E=; b=Vz3shL3A32BM2U
-	s1sucRbrDnyq7rphXq3PBCn1hUUs85Mf+gTtcEfE489o5hp9fYsaBOQ6Vf8TpXA93XxKD2CLbkQWv
-	ny6gN/gEjdIlP/WhHeWtuRCCXMF18wa2RRT6/aMIDgbIRS3CjBxDn5nt7RsVdhaGW5pZYZj9nKAZ7
-	vGhnx3mXV04cMi2WFJe+CZOkCZe9Gz/xxCQ2e3o0RqhcQM7Qq3/arLq3a0LLfOnb2KaBiSHRklGHa
-	yPqX8d+X3cWKV8v66jPdGHACrvRR2IHVV4dvMbpCUnrthYdViXBL0afdjVyXUZvhP+rc9G7noj898
-	P3asT/8gnSyNV7/HozoA==;
+	List-Owner; bh=UWkoSqO823Z9GVY+JOtG+8/zbtMiZ8PNEUOy+6K20XI=; b=BaD0PEK4vqwPj1
+	vQ7hwV1VnUK4PPmbn2VCego4UaAEa7be61epCwkX8L/FLiTH628qY27NuCFJttIWP2Ohy2Gx50QOz
+	l7bX5aah2J4TbLEj2bH7u94DWcJmXxZaUoTrPdihwVlRH28gwqFyFkecT4W8WU+pjAHYlyijVFikR
+	w1VyKgOwZz7Zd8W/MN0KzgOryDwB1QBJrp9pqxAZYYd1J2wNhTUT8j6MMM9apQFprOGLLrJyUMGHl
+	OkUru6ABQXircMT+mptnn2loTXkwn3WubtCm0nC+Fvrlcmh06qEorSTzFTem0ZR9EkOx0VX8ki2CV
+	fhgiDfhy2X9mYNiejPwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVZEt-000736-Oz; Fri, 15 Nov 2019 10:54:07 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iVZKQ-0000qK-60; Fri, 15 Nov 2019 10:59:50 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVZEl-00072D-Iz
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 10:54:00 +0000
-Received: by mail-lf1-x142.google.com with SMTP id d6so7706295lfc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 02:53:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=YrBKYAXW2pBZSbQ2SIp4S+nYebHNxgT7XYL6TriEP8k=;
- b=NQLd1g5fKoaez5J87XjZtjuNW4KXaDwXMaUwYF9ueSa8RJTFOY8QHy5z2i9uxqJ9Nz
- AzD6vtXsjMX2jQHd16HGN+jQQa17OAkoy5cAQYyTY5bwkY/6nGpfluYDjRXPzrZswyo6
- 6iwraTyyS13J8R2LiQ2M38BXIsrM4+CEuv6715gfHhH6md62glQy4RYXyUO54TrMAucM
- Aaan0HThwCAP4um+hFu2j6hubBXbyIC4AEQpR+MCHHbb0rbeENqYeJtsu+XkKITlugRJ
- e0yR+FmPn4HnNOLoQ/UP+YpsCny9+oiz+Knpez74A35fsTFRJoezeWNz+jgOBvxQsea3
- K76g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=YrBKYAXW2pBZSbQ2SIp4S+nYebHNxgT7XYL6TriEP8k=;
- b=GqW21vs7/DETv/2x11CHFWBBoLni/Dig0RVZ0dkuxpHyKT+oOF//a+kb+tgq6x8cWj
- rebYC6w4yf7JiD3kgJTgRGvWBImDBfSd9JQE0FCpwLWjcXeCaP+AzEKzBPntKf3Nb2KB
- DBgF/FAXlkgJWA1Row014Rr5Tr1OqF53ur12CWqghY/KJe6mkgaCmiElSdKKpYQkhqYK
- aKa+rCErdOSn2Jb2naeVUM3h9Toq8aNin4YDXktHB90c/bWkNScefZY64bImRtPPfJAm
- gYqSuImdUi4y2eN5Q1iiS/05bje0YhLBlu5eBlJaousf95OcsjafEdm2j8/MDL5IaD1Q
- euiQ==
-X-Gm-Message-State: APjAAAUopYoRFFtGmPKpHhmXNMkFX7s38/+7cZEcX05+sHBtvIv+6POV
- OdOiVjtYcj5+EqmD6jCoJDOCLJk4qhU=
-X-Google-Smtp-Source: APXvYqwJm9kjyX50miWZJi1AorPayww0DL6AYzoF4y4u+n5SXXKGJRe8XKtDsFsG7BO1UZzJN2egdw==
-X-Received: by 2002:a05:6512:511:: with SMTP id
- o17mr255769lfb.167.1573815236204; 
- Fri, 15 Nov 2019 02:53:56 -0800 (PST)
-Received: from jax (h-249-223.A175.priv.bahnhof.se. [98.128.249.223])
- by smtp.gmail.com with ESMTPSA id r19sm4025146lfm.61.2019.11.15.02.53.55
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 15 Nov 2019 02:53:55 -0800 (PST)
-Date: Fri, 15 Nov 2019 11:53:53 +0100
-From: Jens Wiklander <jens.wiklander@linaro.org>
-To: arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL] tee subsys fixes for v5.4 (take two)
-Message-ID: <20191115105353.GA26176@jax>
+ id 1iVZK8-0000pU-0F
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 10:59:33 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id ECF98602EF; Fri, 15 Nov 2019 10:59:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1573815569;
+ bh=0Nah58GSAL88/uY+EvDDspGeElq/PM1FdgvLNEhSmgM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=EICh4fBD/b47qTIbJtdh6NYjYw8tR5Z47oZUBPlzmzHjRu9yA7bAICp62mGMKCViR
+ b/3q4ZKiKPSWucVY2LpmrVpHA6TDNs0nEhbaOg0UNW6XWIPkzWVYy2NlEuAWzIPtFp
+ radf5HVJ/eG9M7UyWa0D7Rxs+8H1A/EwTGsoq+Mc=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from blr-ubuntu-253.qualcomm.com
+ (blr-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.18.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan@codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 78443602EF;
+ Fri, 15 Nov 2019 10:59:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1573815569;
+ bh=0Nah58GSAL88/uY+EvDDspGeElq/PM1FdgvLNEhSmgM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=EICh4fBD/b47qTIbJtdh6NYjYw8tR5Z47oZUBPlzmzHjRu9yA7bAICp62mGMKCViR
+ b/3q4ZKiKPSWucVY2LpmrVpHA6TDNs0nEhbaOg0UNW6XWIPkzWVYy2NlEuAWzIPtFp
+ radf5HVJ/eG9M7UyWa0D7Rxs+8H1A/EwTGsoq+Mc=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 78443602EF
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org; spf=none
+ smtp.mailfrom=saiprakash.ranjan@codeaurora.org
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Stephen Boyd <swboyd@chromium.org>, bjorn.andersson@linaro.org,
+ Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ devicetree@vger.kernel.org
+Subject: [PATCH 0/2] Rename LLCC cache-controller to system-cache-controller
+Date: Fri, 15 Nov 2019 16:29:10 +0530
+Message-Id: <cover.1573814758.git.saiprakash.ranjan@codeaurora.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_025359_660958_39B1047E 
-X-CRM114-Status: GOOD (  13.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191115_025932_068159_BC3A77B5 
+X-CRM114-Status: GOOD (  10.45  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -95,57 +96,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Rajendra Nayak <rnayak@codeaurora.org>, linux-arm-msm@vger.kernel.org,
+ Doug Anderson <dianders@chromium.org>, linux-kernel@vger.kernel.org,
+ Rishabh Bhatnagar <rishabhb@codeaurora.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello arm-soc maintainers,
+DT schema checks for the node name 'cache-controller' and enforces
+that there has to be a cache-level associated with it. But LLCC is
+a system cache and does not have a cache-level property and hence
+the dt binding check fails. So let us rename the LLCC cache-controller
+to system-cache-controller which is the proper description and also
+makes the schema happy.
 
-Please pull these OP-TEE driver fixes. There's one user-after-free issue if
-in the error handling path when the OP-TEE driver is initializing. There's
-also one fix to to register dynamically allocated shared memory needed by
-kernel clients communicating with secure world via memory references.
+Sai Prakash Ranjan (2):
+  dt-bindings: msm: Rename cache-controller to system-cache-controller
+  arm64: dts: sdm845: Update the device tree node for LLCC
 
-"tee: optee: Fix dynamic shm pool allocations" is now from version 2 which
-includes a fix up with a small but vital dependency.
+ Documentation/devicetree/bindings/arm/msm/qcom,llcc.yaml | 2 +-
+ arch/arm64/boot/dts/qcom/sdm845.dtsi                     | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-If you think it's too late for v5.4 please queue this for v5.5 instead.
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
-Thanks,
-Jens
-
-
-The following changes since commit 4f5cafb5cb8471e54afdc9054d973535614f7675:
-
-  Linux 5.4-rc3 (2019-10-13 16:37:36 -0700)
-
-are available in the Git repository at:
-
-  git://git.linaro.org/people/jens.wiklander/linux-tee.git/ tags/tee-fixes-for-v5.4
-
-for you to fetch changes up to 03212e347f9443e524d6383c6806ac08295c1fb0:
-
-  tee: optee: fix device enumeration error handling (2019-11-15 11:31:24 +0100)
-
-----------------------------------------------------------------
-Two OP-TE driver fixes:
-- Add proper cleanup on optee_enumerate_devices() failure
-- Make sure to register kernel allocations of dynamic shared memory
-
-----------------------------------------------------------------
-Jens Wiklander (1):
-      tee: optee: fix device enumeration error handling
-
-Sumit Garg (1):
-      tee: optee: Fix dynamic shm pool allocations
-
- drivers/tee/optee/call.c     |  7 +++++++
- drivers/tee/optee/core.c     | 20 ++++++++++++--------
- drivers/tee/optee/shm_pool.c | 12 +++++++++++-
- 3 files changed, 30 insertions(+), 9 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
