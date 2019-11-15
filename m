@@ -2,67 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B57AFDEC0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 14:18:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47F7AFDEDD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 14:22:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aM1eDBh9t/3K6fLkil3fS9sKzvLw/qlDh2zs4RvR2lk=; b=N95Kkf5dkK/OvY
-	Wh8kA2xDnkRtRZHR0CDUNd3mcNCnajmQn6plAtbKf1s07LWY5C+ugyf6LyFiDT6LfkJZSdjdDF2ZB
-	1GtI/DkOMaMs6DbnwcNUkUeMe4TDT29v7u3nqW0dy3Ic+sxJCauxnlaLDV2ErNvGYlsYO+tpoS9BE
-	WfYll6ygBpFVj8M3PZNuDhB8tejY/pkL3/mkNyMEXpLeEDJk1+O+HZV48uaWGo0mppexEytdDq+YR
-	yv4cP0MWUY2A5P4RiAML3YwCygoCNhysK0x6utPck19J+fIrmbLhF7VPqDnd9uge8UC52iWETbT+X
-	K2nGuRBBDg0ZBedyNvew==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=RbT3vYg2b60DH+WdEm/mHDlNgPaTyQ8tTVI+uUT013g=; b=CjV
+	HDgzHaB5u51tbC4nWALn1UQBeT1f3ejFyBNZeT+JSmIlKwcvnnbQBjLDp2+deiYD8pdSa/2CYmsla
+	bskAnDwosWUTQ1d0EVqM8uZJh4TuFp+PfLjDt+9iX+ydsVG/4h8qO/ylKuzG6L3F5yq/31SoHtMHq
+	akADXn+xACklOnzfqz6sO0fz+kiOQcmIOPgMq+iFwIZT5sLhvKmp1J3tMrI26MezSmLZu+sWjmioh
+	2WBEnKch/MkD75XyBoAPUwgvb7gkzmAQP1XQjd+HI4DyqmXRx6TJLD66Vfy77HzTRjQ4jBe54mgPx
+	V0u7czy4yNS/z/ORDSQuAQs6WXvvUEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVbUW-0007gJ-DC; Fri, 15 Nov 2019 13:18:24 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1iVbYI-0001bg-NE; Fri, 15 Nov 2019 13:22:18 +0000
+Received: from mail-vs1-xe29.google.com ([2607:f8b0:4864:20::e29])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVbUN-0007f3-TR
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 13:18:17 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
- by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 15 Nov 2019 05:18:14 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.68,308,1569308400"; d="scan'208";a="203584337"
-Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.197])
- ([10.237.72.197])
- by fmsmga007.fm.intel.com with ESMTP; 15 Nov 2019 05:18:11 -0800
-Subject: Re: [PATCH v2 2/2] mmc: sdhci-of-aspeed: add inversion signal presence
-To: Ivan Mikhaylov <i.mikhaylov@yadro.com>
-References: <20191114125435.27756-1-i.mikhaylov@yadro.com>
- <20191114125435.27756-3-i.mikhaylov@yadro.com>
- <fcb5f8b5-40b9-6497-b24d-0b73e2525949@intel.com>
- <b443738f5e2a3c7ba96b329a8347374f7f934483.camel@yadro.com>
- <d177ef37-643e-442d-d536-750e0bb5e86d@intel.com>
- <221381ebad0236625775bda5655fcd7c78455e6f.camel@yadro.com>
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
- Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-Message-ID: <5bd753c3-102b-d78c-c390-4f88ebb0e229@intel.com>
-Date: Fri, 15 Nov 2019 15:17:14 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iVbY9-0001az-U5
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 13:22:11 +0000
+Received: by mail-vs1-xe29.google.com with SMTP id b16so6292159vso.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 Nov 2019 05:22:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=bhSNDUgdDNeS6IYJ1O/uGJFkHTXqIhgA6nGbkJFy68k=;
+ b=PX/1wnwPnRP+zoD1Lj6h3IxjU2kQQkRIGEZ6C5CR+pfkabJBMXx3FybqHENt7CWPGA
+ hn9nerEMCYJQlVN8A9q3U0xNwof9WAYoKfNKgX/NX5Ua3+EfNZUiOHBLGlyjFAKbqFkp
+ udhuOXYiJbkybmKM6cnWGC4Fe2KCHCvuKpYEw6jO4TFGjobrGxpAo/DpAzddhECzVOVw
+ wBvAXn6WxXN9sqdb2HpKfqnUXWbbEkv1e5nJlOdgTsQGgHSKANA/gxod8keTtsv4oAtr
+ hdK4A5thI145D0Wx4dguXY2+8Ry2qCmiv8ULmYqVRPL0/W3VMQibH65N+SDvauRmovbH
+ 0IdA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=bhSNDUgdDNeS6IYJ1O/uGJFkHTXqIhgA6nGbkJFy68k=;
+ b=AbBoxonU6buChyaOuJ0PYlCtwRBOPR0PZZ/GgMYDnT4YRm2pJlwRy3Ifn9dGnef0op
+ GFcGuz/IbvizeEXMabrKrQ+nldSwtSvObh7c6Mv+X/8fmsGK9gTou+MvoStxS8pljc0a
+ I4O+dZ9LMVUsIHn3oqCodJCjFcrbaQt+2Yu0unrcqTUrs4AfAbbOfzmRp6FW2Frt9Qci
+ U3LNGgeFNX/jfJxnMgIUp1zEO+gqh6//RBOQ+gXe4QplasqybUBik7dpzgToRjCJ5PO3
+ ui+er+VrElt733Ji8dakXVWZWarQYjO/6HEGA0R/gSfvphmezpgLvZKwh5089KDtw3l/
+ TGGQ==
+X-Gm-Message-State: APjAAAUxZF8aDT+n7kVN2OP6i4CubPrE5NqS3rzh3VBzxeN8WjyZ0NL0
+ 307MpsOl8uXhbWK6qB2ZNbTus9KTIXzjdYnu/Go=
+X-Google-Smtp-Source: APXvYqymuU4cG22w01HY92AXmSZXuqL+qGeFnL8fqsAII8fzh3g2nwGVehQaAdsNxUVAVyWMfX+tCBpqzeq6ks2zWHk=
+X-Received: by 2002:a67:c788:: with SMTP id t8mr8662044vsk.196.1573824128224; 
+ Fri, 15 Nov 2019 05:22:08 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <221381ebad0236625775bda5655fcd7c78455e6f.camel@yadro.com>
-Content-Language: en-US
+From: Pintu Agarwal <pintu.ping@gmail.com>
+Date: Fri, 15 Nov 2019 18:51:55 +0530
+Message-ID: <CAOuPNLhw+p93ga7d2V+c+auCrBh8kKK6EZJVvpJB9uDmEX5wQQ@mail.gmail.com>
+Subject: [IMX6] - IPUv3 iomux setting after linux resume
+To: IPUFORUM@freescale.com, Pintu Kumar <pintu.ping@gmail.com>, 
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, 
+ NXP Technical Support <tech.support@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_051815_960702_84D4E20C 
-X-CRM114-Status: GOOD (  21.48  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191115_052209_966539_1435401A 
+X-CRM114-Status: UNSURE (   9.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e29 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pintu.ping[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,96 +93,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/11/19 2:56 PM, Ivan Mikhaylov wrote:
-> On Fri, 2019-11-15 at 09:20 +0200, Adrian Hunter wrote:
->> On 14/11/19 7:19 PM, Ivan Mikhaylov wrote:
->>> On Thu, 2019-11-14 at 15:10 +0200, Adrian Hunter wrote:
->>> On 14/11/19 2:54 PM, Ivan Mikhaylov wrote:
->>>>> Change the default .get_cd callback. Add inverted signal card detection
->>>>> check.
->>>>>
->>>>> Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
->>>>>
->>>>> diff --git a/drivers/mmc/host/sdhci-of-aspeed.c
->>>>> b/drivers/mmc/host/sdhci-of-
->>>>> aspeed.c
->>>>> index 8962f6664381..186559ee8fcc 100644
->>>>> --- a/drivers/mmc/host/sdhci-of-aspeed.c
->>>>> +++ b/drivers/mmc/host/sdhci-of-aspeed.c
->>>>> @@ -143,6 +143,19 @@ static inline int
->>>>> aspeed_sdhci_calculate_slot(struct
->>>>> aspeed_sdhci *dev,
->>>>>  	return (delta / 0x100) - 1;
->>>>>  }
->>>>>  
->>>>> +static int aspeed_get_cd(struct mmc_host *mmc)
->>>>> +{
->>>>> +	struct sdhci_host *host = mmc_priv(mmc);
->>>>> +
->>>>> +	int present = !!(sdhci_readl(host, SDHCI_PRESENT_STATE)
->>>>> +			 & SDHCI_CARD_PRESENT);
->>>>> +
->>>>> +	if (mmc->caps2 & MMC_CAP2_CD_ACTIVE_HIGH)
->>>>> +		present = !present;
->>>>
->>>> Perhaps safer to flip the bit using CONFIG_MMC_SDHCI_IO_ACCESSORS and
->>>> ->readl() callback
->>
->>
->>> Sorry, don't quite understand what you're saying. You want to instantiate
->>> '.read_l' callback instead of '.get_cd' in sdhci_ops and substitute the real
->>> value?
->>>
->>> res = readl(base, reg);
->>> if (reg == SDHCI_PRESENT_STATE)
->>> 	if (mmc->caps2 & MMC_CAP2_CD_ACTIVE_HIGH)
->>> 		return !res;
->>
->> Presumably just flip the SDHCI_CARD_PRESENT bit i.e.
->>
->> 		return res ^ SDHCI_CARD_PRESENT;
->>
->>> return res;
->>>
->>> Something like this?
->>
->> Yes
->>
-> 
-> Don't you think it will bring a little overhead on any sdhci_readl plus
+Dear NXP,
 
-Register accesses are usually slow (~1us) compared with logic.  Of course,
-I/O requests are even slower >100ms so it is unlikely that the overhead is
-significant.
+I have a customized imx6q-dl board with the custom Linux 4.8 running on it.
+It also have LCD and HDMI connected to it.
+Both the display working fine during normal boot using Weston/Wayland interface.
 
-> sdhci_readl will not get the real value in case of inverted signal which seems
-> is not right from communication fairness between hw and sw? I took that approach
+But I am trying to support hibernate (suspend to disk) kind of feature
+on this by converting IMX_DRM, ipuv3, etc. drivers as modules.
+Currently, I am able to bring up LVDS display, after system resume from image.
+But HDMI display is not working.
+For HDMI crtc I am getting "vbank timeout issue".
+{{{
+[  197.735034]: drm_atomic_helper_wait_for_vblanks: waiting for vblank....
+[  207.734306]: drm_atomic_helper_wait_for_vblanks: [crtc:24]: vblank
+timedout, waited (3000 ms)
+[  207.743538] ------------[ cut here ]------------
+[  207.748276] WARNING: at drivers/gpu/drm/drm_atomic_helper.c:1133
+drm_atomic_helper_wait_for_vblanks+0x26c/0x274 [drm_kms_helper]()
+[  207.760060] [CRTC:24] vblank wait timed out
+}}}
 
-One of the purposes of the accessors is to smooth over the difference
-between the SDHCI standard and actual hardware.  Given that
-SDHCI_PRESENT_STATE is also used in sdhci_set_card_detection() and
-sdhci_irq(), it is surprising that changing only ->get_cd() works correctly.
+When I compare and debug more, I found that "ipu_irq_handler" is not
+getting called after resume.
 
-> with .get_cd from variety of drivers in host/mmc but if you think it will be
-> better and safer with .read_l - I'll do that way. 
-> 
-> Sorry for the link in subject, didn't notice that I put it in previous message
-> somehow.
-> 
-> Thanks.
-> 
-> 
+* I tried to do disable/enable_irq using suspend/resume calls in
+ipuv3-crtc driver, but it did not help.
+* I also tried updating several patches from latest mainline kernel,
+but this also did not help.
 
+* Read this guide about IMX-IPU:
+http://cache.freescale.com/files/training/doc/ftf/2014/FTF-CON-F0119.pdf
+
+But, this also does not provide any clue.
+
+But, I feel that IOMUX setting for IPU/HDMI needs to be reconfigured
+after resume.
+So, I am looking for help from NXP about how to do this ?
+
+If you have any other points or suggestion to solve this vblank
+timeout issue, please support us.
+
+
+Regards,
+Pintu
 
 _______________________________________________
 linux-arm-kernel mailing list
