@@ -2,55 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7B1AFD31C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 04:03:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88AB0FD340
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 04:22:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jP0HmJj2s6nVNM2eRUBr+Uia+m8VQjDs/cDny8AdHcA=; b=TbVvor4/Qktgod
-	/88f9qh5Pn8/ixPyFryTV1IFKEThO6ZN5ZBiHgAM1oPfrWxEwZQf3cQIZSZltYPULxL5A0bQrEwOw
-	b4zz/OGl9B++AsAJfCem+kojPh1eI0dhQsaZluWk8ndGVkODiT7Jv01r7O0EXEhtBSuurglADQldx
-	IBz7NgVh5D7eBRTbUjmkLwK/VD+q3brOTLAn9rOaeqL+5N+wz6eAsIPj6sCJ2bKBYmUwOTf5iyiB0
-	7yUdSpq4KBykuR0KfrUoUkSfqS0yzAs2goKTzRsJ6r5zFz2qYQYrXf2jwJVSMxn9+jjIe8MNTUpFY
-	HGaRz/zTNW7B8xk+yoYQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ca5oMauyvvQTHRcXMHcDJtMLBPg9PLglUuZ6FJT4R1U=; b=d/ehiZRD49s38z
+	OxO8jdsWrMw647eL1bPt7IJsKTyQrz5MP3rqJxpBb0Iy88Isj67xZBwCi01Ce66mE0FmhUABmZ//w
+	Jy/ViZeAq0dOJTZw6Egct41wkqkvB2A9RYsah7d67I321j7zRMbwbMxHcG4jtc7hcpjNg2yHCDoep
+	ACrM4fEeRr17usDzZMo3rwvDQOjJ++Y742RufopmdkzSZHtm+gDHBeWr4kpBllrSDvkSTxY9RlS77
+	EilTzpGGyD9rVYHQol0F6Hu2+CbFhPZ752gnqWAZo1DZmnf8OSHQPLgxo4Z5kZY0lVD5cPFZEJ+Ez
+	hwpN60+JzvFF0TrxcQAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVRtU-00048g-Kp; Fri, 15 Nov 2019 03:03:32 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iVSBS-00026U-Hu; Fri, 15 Nov 2019 03:22:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVRtL-00047r-Qz; Fri, 15 Nov 2019 03:03:25 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 5F901AFCD;
- Fri, 15 Nov 2019 03:03:21 +0000 (UTC)
-Subject: Re: [PATCH v3 0/2] arm64: dts: Initial RTD1619 SoC and Realtek
- Mjolnir EVB support
-To: James Tai <james.tai@realtek.com>
-References: <540b62715e77486485365081e992af76@realtek.com>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Organization: SUSE Software Solutions Germany GmbH
-Message-ID: <44a543b9-988f-b56c-ca70-7d1faa40bffb@suse.de>
-Date: Fri, 15 Nov 2019 04:03:19 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1iVSBJ-00025o-3a; Fri, 15 Nov 2019 03:21:58 +0000
+Received: from localhost (unknown [104.132.150.99])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4D03720706;
+ Fri, 15 Nov 2019 03:21:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1573788116;
+ bh=8/cY/P7mOC5ZWRzkTqP24RnTXXHa15NbkFVIzTSK364=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=JR2qBG/tbs+2u/BVDVXsZprjTey36G9Dh+snSLlcAX1kxtk0l/rMWe3cwt4MlhdCq
+ 5+ZfbOGgxzp29+cn8YPcISIO/YK4QCO4q0+1cz43bS73NJanBJf/fA8r/Yp3jRS/Yf
+ 1RbyPZ7FUwo1BaJ36gTF8p0Kq3zbdl2nqTCaTAw0=
+Date: Fri, 15 Nov 2019 11:21:53 +0800
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Bin Liu <b-liu@ti.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Felipe Balbi <balbi@kernel.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Peter Chen <Peter.Chen@nxp.com>, Minas Harutyunyan <hminas@synopsys.com>,
+ Cristian Birsan <cristian.birsan@microchip.com>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Kevin Cernekee <cernekee@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, Daniel Mack <daniel@zonque.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Stephen Boyd <swboyd@chromium.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ Biju Das <biju.das@bp.renesas.com>,
+ Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, linux-media@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org
+Subject: Re: [PATCH v2 05/13] usb: musb: create debugfs directory under usb
+ root
+Message-ID: <20191115032153.GC793701@kroah.com>
+References: <1573541519-28488-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1573541519-28488-5-git-send-email-chunfeng.yun@mediatek.com>
+ <20191112152857.GA5853@uda0271908>
+ <20191114032018.GA122287@kroah.com>
+ <20191114140234.GB5853@uda0271908>
 MIME-Version: 1.0
-In-Reply-To: <540b62715e77486485365081e992af76@realtek.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191114140234.GB5853@uda0271908>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_190324_019774_BCEC1F3D 
-X-CRM114-Status: GOOD (  12.73  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191114_192157_190663_83851716 
+X-CRM114-Status: GOOD (  20.93  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,39 +102,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, 'DTML' <devicetree@vger.kernel.org>,
- "linux-realtek-soc@lists.infradead.org"
- <linux-realtek-soc@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSmFtZXMsCgpBbSAxMi4xMS4xOSB1bSAxNjo0NSBzY2hyaWViIEphbWVzIFRhaToKPiBUaGlz
-IHNlcmllcyBhZGRzIGluaXRpYWwgRGV2aWNlIFRyZWVzIGZvciBSZWFsdGVrIFJURDE2MTkgU29D
-IGFuZAo+IFJlYWx0ZWsgTWpvbG5pciBFVkIuCj4gCj4gdjIgLT4gdjM6Cj4gKiBBZGp1c3QgdGhl
-IGFkZHJlc3MtY2VsbHMgYW5kIGFkZHJlc3Mtc2l6ZSBwcm9wZXJ0eSBvZiByb290IG5vZGUKPiAq
-IEFkanVzdCByYW5nZXMgcHJvcGVydHkgb2Ygci1idXMgbm9kZQo+ICogQWRqdXN0IHVhcnQgbm9k
-ZSBhZGRyZXNzaW5nCj4gKiBBZGQgY29tbWVudHMgZm9yIHVhcnQgbm9kZQo+ICogUmV2ZXJ0IHNv
-YyBub2RlCj4gCj4gdjEgLT4gdjI6Cj4gKiBEZWZpbmUgY29tcGF0aWJsZSBzdHJpbmdzIGZvciBS
-ZWFsdGVrIFJURDE2MTkgU29DIGFuZCBSZWFsdGVrIE1qb2xuaXIKPiAqIEFkZCB1YXJ0MSBhbmQg
-dWFydDIgZGV2aWNlIG5vZGUgaW50byBydGQxNnh4LmR0c2kKPiAqIG1vdmUgY3B1cyBub2RlIGFu
-ZCB0aGUgaW50ZXJydXB0LWFmZmluaXR5IGludG8gcnRkMTZ4eC5kdHNpCj4gKiBTcGVjaWZ5IHRo
-ZSByLWJ1cyByYW5nZXMKClNvbWUgb2JzZXJ2YXRpb25zIG9mIHdoYXQgaXMgbm90IGluIHRoaXMg
-cGF0Y2hzZXQ6CgoqIFRoZXJlIGlzIG5laXRoZXIgL21lbXJlc2VydmUvIG5vciAvcmVzZXJ2ZWQt
-bWVtb3J5IGhlcmUuIFdoYXQgYWJvdXQKQm9vdCBST00sIFRFRSBhbmQgUlBDPwoqIFRoZSByZXNl
-dCBjb250cm9sbGVycyBmb3IgdGhlIFVBUlRzIGFyZSBtaXNzaW5nLiBDYW4gd2UgdGFrZSB0aGUg
-c2FtZQpzaG9ydGN1dCBhcyBpbiBteSBSVEQxMzk1IHBhdGNoIHRvIGFkZCB0aGVtIG5vdywgaS5l
-LiBhcmUgdGhleQpjb21wYXRpYmxlIHdpdGggUlREMTI5NT8KKiBJcyB0aGUgd2F0Y2hkb2cgaW5j
-b21wYXRpYmxlLCBvciBpcyBpdCBqdXN0IG5vdCBlbmFibGVkIGJ5IHRoZQpib290bG9hZGVyIGFu
-ZCBkZXBlbmRzIG9uIGZ1dHVyZSwgZS5nLiwgY2xrIHBhdGNoZXM/CiogSXMgdGhlIFJUQyBub3Qg
-ZW5hYmxlZCBvbiBib290LCBzaW1pbGFyIHRvIHRoZSBvdGhlciBTb0NzPwoKUmVnYXJkcywKQW5k
-cmVhcwoKLS0gClNVU0UgU29mdHdhcmUgU29sdXRpb25zIEdlcm1hbnkgR21iSApNYXhmZWxkc3Ry
-LiA1LCA5MDQwOSBOw7xybmJlcmcsIEdlcm1hbnkKR0Y6IEZlbGl4IEltZW5kw7ZyZmZlcgpIUkIg
-MzY4MDkgKEFHIE7DvHJuYmVyZykKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Thu, Nov 14, 2019 at 08:02:34AM -0600, Bin Liu wrote:
+> On Thu, Nov 14, 2019 at 11:20:18AM +0800, Greg Kroah-Hartman wrote:
+> > On Tue, Nov 12, 2019 at 09:28:57AM -0600, Bin Liu wrote:
+> > > Hi,
+> > > 
+> > > On Tue, Nov 12, 2019 at 02:51:51PM +0800, Chunfeng Yun wrote:
+> > > > Now the USB gadget subsystem can use the USB debugfs root directory,
+> > > > so move musb's directory from the root of the debugfs filesystem into
+> > > > the root of usb
+> > > 
+> > > My opinion is this move is unnecessary. I breaks existing debug tools or
+> > > documentation which is already published on Internet. 
+> > 
+> > Having a "root" directory for a single random driver seems like you are
+> > making your driver a "very important" thing in the overall scheme of the
+> > kernel, right?  What's wrong with using the usb subdirectory like all
+> 
+> Agree, it wasn't the right thing to do at the first place. But now
+> changing it adds support burden, because people very often refer to the
+> old information on the internet which no longer matches to the new
+> location. Basically, it is a cost of ABI change.
+
+What information says that /sys/kernel/debug/mdev/ is the location for
+this?  Is it in-kernel?
+
+> > other USB drivers use (after this patch series is merged)?  That feels
+> > like a much more "sane" way to handle the wide-open debugfs namespace.
+> 
+> Though I commented on this musb patch, my opinion is for this whole
+> series, either drop the whole series or apply the whole series.
+
+I've applied all but this one and 2 others that did not build properly.
+
+> > Yes, there are no rules when it comes to debugfs file names and
+> > locations, but let's try to be sane please.
+> 
+> Fine with me. I can still support questions such as "can't open
+> /sys/kernel/debug/musb-hdrc.0/testmode: No such file or directory".
+
+What tool looks for that?
+
+thanks,
+
+greg k-h
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
