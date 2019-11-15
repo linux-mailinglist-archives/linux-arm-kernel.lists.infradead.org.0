@@ -2,112 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F9E7FD46E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 06:33:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DD47FD482
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 06:44:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mh89cezs4/fBeij4UpVTViFTdXnKsPQiHxnHclIxuPk=; b=UuDkpV0J+5PYO5
-	4FITEbejrKurxWUn+ZnXOp0qKcVqmcZV48+DPOpxSvi71kbs9uhzOIDVV3JeFl4+kt47mopyZMXz8
-	tPCu9oXBj6mviMTUmi9COaOxQtVGdLUzXgx88MFE5HWfaXo2JHL1/ZXk4kP2d9u3RbT2jfT6wXffo
-	k4rgZGqsM1cLJpvc2LsfpA2PIM3wdZyOQpqwqHvrD18VV4eTMOLHgOu8wp0CNZ9sE5jk8icLarJ8G
-	RI+Rqs0jfE0x68HK1UiFMdoyb74TBnbSLv8cvNKNol9Xzqg19qs+mccw60fSGCh2PnFM9C1VY/pfx
-	wozPQdXQQNM4Y2QgXFJQ==;
+	List-Owner; bh=WTLZtyyz1fMQCaTLBoC2BPR4/AQ/nm35QB2fSROjkWw=; b=SMT5rkwdPG3j5U
+	ODAjZfzl0kLJ9RCwpX5ZcumHIXOUXBi8qHW8G7V1EakNyTyjzyorfm9gBmKHhup6B6X8AvakjmuYV
+	RcYv1HoFgdNbNMJEqSYAdsQDAGHhxwmTYu6pAgDcsILVFJcxyT9mrdJCsfe18DJGOEwIIwB7OxLCi
+	pbWRQHufrxPpkxg+ypAk9sNQceN8l1WGhV1gb4sBnl/I995kX/2nuIKguVSRzg6o4BVG8U6HJ6XjF
+	LigYvodQD/NUw+Y+zyR6Og8manKZ9Dyw8hLpL/5eaeodkvcbRmgrnx8T3fVIVBlnz867+Qk4YzlBq
+	5gfVSh7fLHRlQJwUHxXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVUEm-0002j6-Re; Fri, 15 Nov 2019 05:33:40 +0000
-Received: from mail-eopbgr1400091.outbound.protection.outlook.com
- ([40.107.140.91] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
+	id 1iVUPW-0006Cg-EQ; Fri, 15 Nov 2019 05:44:46 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVUEc-0002iJ-Ji; Fri, 15 Nov 2019 05:33:32 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=AHyMe8Qdb/jDcIyQQ3FFsQg18eP0uTejrY8N8QJSERGVVslmu0yigB4zEtK59d4CiXQKrEmx7OyWlznawXZDHtdqVIRRa3dwEsZACqcmRsmyrkF/Dhwsuup3l+kG7dKiWMnnOFvDBO2SRrPkwu6p7FGSYtQxDpEOVUkeXDI57EKZ3tn2VWV5vcr9nPOXn/DdxqMk2SKI7Ztx0kZkxkd8/NFnQe8leO9FPVLacVtVXQw8Vbw2Xk+jWdI1h9QqIum7P/YxtN9oNwQyBYPuJ7+xq2h4jFanp9QUtS+d9RUCyP0tpjJnQo7t/+NlX63PaMIJY2fML+PCplQ5NWygNKa7ww==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=j/QjK9zXBEM2paHzNigaYicDA3fBZrq+OXX76JnzceQ=;
- b=coqxvdPX48/jQerU63eQFgWsrZOBPIGwXA0l1VWGviHIQcCzX6BYp4JUqGj7a8fz2ilmNL1vbCNzvjFTg4zcYs+moCC30MEGZYCOrSbxuKkKFPY9CAwE8A0PnizdvHRPKMWKSIQheMN8x7iVStut58Iomil1Fzx9jeTlHHClbe2qhGqJqpDp/PTY1GsM/kmSRXjr2aFKgPTjgvES/FHyxdAnbg8mCBxf97SNLQK4m5xCa0PbcP7noh+5VTFozx0eMqH+6c7FLeCmDFwBNMDbawVk/iB6+G00zuNOr4zBl0Nzfka1v/NA14GCAAezJ+RUhSLuTi7bH401JaP/STWH2Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=j/QjK9zXBEM2paHzNigaYicDA3fBZrq+OXX76JnzceQ=;
- b=lla8BEypY6/YMvfvnpPhKpraAytko8sjZPnxdruYcNgmI6Kfbl/fDBQ2qPUIawDpiH6ZV4N9TOoPxO7sv6lZSYMjpCwBt98riOhQb6EXbocJ18XVdyA1EJMwQEOcsVGpinRW3rpm09y1c4nhcUxhtZWyWWuy3p2SrSr8smkAO2M=
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com (20.179.175.203) by
- TYAPR01MB3567.jpnprd01.prod.outlook.com (20.178.137.138) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2451.28; Fri, 15 Nov 2019 05:33:25 +0000
-Received: from TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::6998:f6cf:8cf1:2528]) by TYAPR01MB4544.jpnprd01.prod.outlook.com
- ([fe80::6998:f6cf:8cf1:2528%5]) with mapi id 15.20.2451.024; Fri, 15 Nov 2019
- 05:33:25 +0000
-From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Felipe Balbi <balbi@kernel.org>
-Subject: RE: [PATCH v3 10/13] usb: gadget: udc: renesas_usb3: create debugfs
- directory under usb root
-Thread-Topic: [PATCH v3 10/13] usb: gadget: udc: renesas_usb3: create debugfs
- directory under usb root
-Thread-Index: AQHVmtgjs6kjMfHecE2BmiNGnS0AxqeLtQfg
-Date: Fri, 15 Nov 2019 05:33:24 +0000
-Message-ID: <TYAPR01MB454479F91B948904C213B94CD8700@TYAPR01MB4544.jpnprd01.prod.outlook.com>
-References: <1573728085-29016-1-git-send-email-chunfeng.yun@mediatek.com>
- <1573728085-29016-10-git-send-email-chunfeng.yun@mediatek.com>
-In-Reply-To: <1573728085-29016-10-git-send-email-chunfeng.yun@mediatek.com>
-Accept-Language: ja-JP, en-US
-Content-Language: ja-JP
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yoshihiro.shimoda.uh@renesas.com; 
-x-originating-ip: [150.249.235.54]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 24511005-60ea-49ab-79b8-08d7698d5624
-x-ms-traffictypediagnostic: TYAPR01MB3567:|TYAPR01MB3567:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <TYAPR01MB35670C3A550C1E32635DEAE8D8700@TYAPR01MB3567.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 02229A4115
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(396003)(366004)(346002)(136003)(39860400002)(376002)(189003)(199004)(6246003)(9686003)(66066001)(66476007)(66446008)(6116002)(71190400001)(71200400001)(14444005)(5660300002)(256004)(64756008)(66556008)(229853002)(8676002)(54906003)(4326008)(81166006)(8936002)(99286004)(55016002)(76116006)(6436002)(316002)(52536014)(110136005)(446003)(2906002)(14454004)(476003)(33656002)(11346002)(86362001)(7416002)(81156014)(7696005)(7406005)(486006)(186003)(478600001)(66946007)(74316002)(76176011)(26005)(7736002)(3846002)(305945005)(6506007)(25786009)(102836004);
- DIR:OUT; SFP:1102; SCL:1; SRVR:TYAPR01MB3567;
- H:TYAPR01MB4544.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: renesas.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: lITUcqsRnYn1Eq8AkwXsMuJODq58lGPlQ7BzIVEzJv8fbhc77IpzvaqDsr5A6YyJJ4dO3wBpj0d5ieXYSuRxMAwIw8cIVwDJL/CNWs8JmfA7RLHEU+6fneDk78YwkQGYf3CtdxWble0JaJvFLZ0SWpn9H1Fp8MKMzE01M6jPqVcPlD9FhQbWY9D1MmFK3SdpCdjPAGUuTOUvR2f84ROyCjTuGKAcUjqTF/vL03JPur8KiOaVQmQSdqOTfVCi8OsT3WxdAPSt0azxlQrHXkewTneRG0GVdF/44jnfJn/VQHMckns11A3qJlJUuBQPa01aNOvrnL3g5Y6178tgh8WXnc17kmnmMfMeun0PGdkgCFwRkGb5qVQv7fcjWbDWwuL5Sxy3VuhY2zMeztp+x5LeG6u2zdsO3YWWDyy0Q7yS7x44gsIVOpGAwyBZL5kYzAB8
+ id 1iVUPL-0006Bw-AD
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 05:44:36 +0000
+Received: by mail-oi1-f193.google.com with SMTP id l202so7663630oig.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 Nov 2019 21:44:34 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/3uU+eY5BtMdRnLX2UOVt6iN0KOpw7AZZyEPeGfnQp4=;
+ b=DgW6lvFf8sYJqGuA4UarhGy7tJLrcw56gQYf1FR9zkx4fvLsA55wT6NrcQ8U9vcAPz
+ 1PLzuSY37TfR7CEf5x6opQei8MWx/O7Kh58NmAyXkHWzRzpmEXscCKoxKcW4Ipoiwt9k
+ 4xXck8jNi2zHm/+99/P76D8Q5m2ru6n2H8OEZKn3OLXI47mqPc2PYT82UhsHDyaBPy3I
+ BY0N6CElSM8GhKH+0Vh1kAdoaCDp7YuK31TdVb8vaCvqJ1tc2rbpCUOsxgwicjr0NCiR
+ zccZuasnbrCEFFPuJ58/bBQKQVVibTsHGxNTcNSQ7Dp7mljsG+lYwAaP3ryARXCbuFg9
+ t8lQ==
+X-Gm-Message-State: APjAAAXU7AaduP2JL+UJQBX1gi4FVQWnKUrQj6G9Ll+3Bxlgph4fA5pY
+ wxetMhqassPT+a8ThY/n+fk4Eb6t
+X-Google-Smtp-Source: APXvYqwS2n/f32MPZ0M8sMvFAmsfhYqv0I8T752zHZxQnGZJZzWta4L5uFywMgS0KI4gu07eP0GrfQ==
+X-Received: by 2002:aca:cdd6:: with SMTP id d205mr6681906oig.9.1573796673224; 
+ Thu, 14 Nov 2019 21:44:33 -0800 (PST)
+Received: from mail-oi1-f170.google.com (mail-oi1-f170.google.com.
+ [209.85.167.170])
+ by smtp.gmail.com with ESMTPSA id 47sm2611235otu.37.2019.11.14.21.44.32
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 14 Nov 2019 21:44:32 -0800 (PST)
+Received: by mail-oi1-f170.google.com with SMTP id e9so7620303oif.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 Nov 2019 21:44:32 -0800 (PST)
+X-Received: by 2002:a54:451a:: with SMTP id l26mr6675985oil.154.1573796672412; 
+ Thu, 14 Nov 2019 21:44:32 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 24511005-60ea-49ab-79b8-08d7698d5624
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Nov 2019 05:33:24.8893 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 9wlpzJ/d525cY5R6Qu6qCINh/DW+snSR94J4uPnLnNnC7ujaRZuDpr0shK1TFargAj9z31jtoOoH5kYtEiuVkeN5mTLzLLLymkryYsytu8mIjwj0+dsb0kcFzlhs/bFE
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB3567
+References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
+ <20191108130123.6839-47-linux@rasmusvillemoes.dk>
+ <CAOZdJXUX2cZfaQTkBdNrwD=jT2399rZzRFtDj6vNa==9Bmkh5A@mail.gmail.com>
+In-Reply-To: <CAOZdJXUX2cZfaQTkBdNrwD=jT2399rZzRFtDj6vNa==9Bmkh5A@mail.gmail.com>
+From: Li Yang <leoyang.li@nxp.com>
+Date: Thu, 14 Nov 2019 23:44:21 -0600
+X-Gmail-Original-Message-ID: <CADRPPNS00uU+f6ap9D-pYQUFo_T-o2bgtnYaE9qAXOwck86-OQ@mail.gmail.com>
+Message-ID: <CADRPPNS00uU+f6ap9D-pYQUFo_T-o2bgtnYaE9qAXOwck86-OQ@mail.gmail.com>
+Subject: Re: [PATCH v4 46/47] net: ethernet: freescale: make UCC_GETH
+ explicitly depend on PPC32
+To: Timur Tabi <timur@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_213330_804089_4E1B065F 
-X-CRM114-Status: GOOD (  18.69  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191114_214435_353682_16A2D604 
+X-CRM114-Status: GOOD (  11.13  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pku.leo[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.140.91 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [209.85.167.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,91 +96,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Chen <Peter.Chen@nxp.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
- Yangtao Li <tiny.windzz@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Minas Harutyunyan <hminas@synopsys.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Fabio Estevam <festevam@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>, Kevin Cernekee <cernekee@gmail.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>, NXP Linux Team <linux-imx@nxp.com>,
- Cristian Birsan <cristian.birsan@microchip.com>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>,
- Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Haojian Zhuang <haojian.zhuang@gmail.com>, Stephen Boyd <swboyd@chromium.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Bin Liu <b-liu@ti.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Biju Das <biju.das@bp.renesas.com>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Colin Ian King <colin.king@canonical.com>, Shawn Guo <shawnguo@kernel.org>,
- Daniel Mack <daniel@zonque.org>
+Cc: Christophe Leroy <christophe.leroy@c-s.fr>, netdev <netdev@vger.kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ lkml <linux-kernel@vger.kernel.org>, Scott Wood <oss@buserror.net>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Qiang Zhao <qiang.zhao@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Chunfeng-san,
+On Thu, Nov 14, 2019 at 10:37 PM Timur Tabi <timur@kernel.org> wrote:
+>
+> On Fri, Nov 8, 2019 at 7:04 AM Rasmus Villemoes
+> <linux@rasmusvillemoes.dk> wrote:
+> >
+> > Currently, QUICC_ENGINE depends on PPC32, so this in itself does not
+> > change anything. In order to allow removing the PPC32 dependency from
+> > QUICC_ENGINE and avoid allmodconfig build failures, add this explicit
+> > dependency.
+>
+> Can you add an explanation why we don't want ucc_geth on non-PowerPC platforms?
 
-> From: Chunfeng Yun, Sent: Thursday, November 14, 2019 7:41 PM
-> 
-> Now the USB gadget subsystem can use the USB debugfs root directory,
-> so move it's directory from the root of the debugfs filesystem into
-> the root of usb
-> 
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+I think it is because the QE Ethernet was never integrated in any
+non-PowerPC SoC and most likely will not be in the future.  We
+probably can make it compile for other architectures for general code
+quality but it is not a priority.
 
-Thank you for the patch! When I apply this patch on the Greg's usb.git /
-usb-next branch, the following warning happens:
-
-$ patch -p1 < ~/Downloads/v3-10-13-usb-gadget-udc-renesas_usb3-create-debugfs-directory-under-usb-root.patch
-patching file drivers/usb/gadget/udc/renesas_usb3.c
-Hunk #1 succeeded at 2536 (offset 1 line).
-
-I'm not sure we should fix it strictly though, this patch seems good to me. So,
-
-Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-
-And, I tested this patch on my environment and confirmed that
-the debug file moved from /sys/kernel/debug to /sys/kernel/debug/usb. So,
-
-Tested-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-
-Best regards,
-Yoshihiro Shimoda
-
-
-> ---
-> v3: no changes
-> 
-> v2:
->   1. abandon new API usb_debugfs_create_dir(), and use usb_debug_root
-> ---
->  drivers/usb/gadget/udc/renesas_usb3.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/usb/gadget/udc/renesas_usb3.c b/drivers/usb/gadget/udc/renesas_usb3.c
-> index e098f16c01cb..4dde69e7f6b1 100644
-> --- a/drivers/usb/gadget/udc/renesas_usb3.c
-> +++ b/drivers/usb/gadget/udc/renesas_usb3.c
-> @@ -2535,7 +2535,7 @@ static const struct file_operations renesas_usb3_b_device_fops = {
->  static void renesas_usb3_debugfs_init(struct renesas_usb3 *usb3,
->  				      struct device *dev)
->  {
-> -	usb3->dentry = debugfs_create_dir(dev_name(dev), NULL);
-> +	usb3->dentry = debugfs_create_dir(dev_name(dev), usb_debug_root);
-> 
->  	debugfs_create_file("b_device", 0644, usb3->dentry, usb3,
->  			    &renesas_usb3_b_device_fops);
-> --
-> 2.23.0
+Regards,
+Leo
 
 _______________________________________________
 linux-arm-kernel mailing list
