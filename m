@@ -2,67 +2,152 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50383FD7E9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 09:28:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26A01FD7F7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 09:31:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bZFjeEaL0mf1yRGF90YBU8JcYg4XuJLX25IOqDQnq6o=; b=gGt47udEgFPeFZC2Mr+CLN+KX
-	6M7KBn/+PGFhodMNRAiFN165+TeJfYL5Hm3wc3nFkSKwb2fCvS0qhKfEdrFNwC2jtOnHAGsFeTb9H
-	E7216IqxposNd8+eULR0DEnNY6z3gLkBGqhCyF9pVs7dJ2cREKAJ+tm3qtvUfmptQ0n7v8119WRp6
-	nRw5IqVVgOOePPxKcOCerYtKdUOIie8xpHtSbpRdWEB9vK6GvQ4zYmSpHP81EY/ulwo83/WKlKJnt
-	Sey3RhmGgHbjBqJJxyubW/h9g8TSuCWuDo7Vms+sd+4lhVdJOgbHkvwyBB+pwykGlusbNq+bKXLtV
-	H/nNEaHpA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=E7G9+2rQ5vXysF68V/OVhmbCJ18K+aXTNOGM+rq+1zs=; b=Rsz+Uvl/uMTxsL
+	2PxXuY7hi1qZu2tKEvLmZB+CBhICmov1NPyZLsx/QlV1X6Mv1G1aiaVjQ/4Z5wAkjBS6rahzTbfOg
+	upMNzlqVbh66T0fHCQAZuFKOGO0fJN2NF+c9kvukBRJ4EeXnzi8/7FzMGauQjaZ4vR6fi7XfQeqkR
+	uBDrO6ZfHrrpGvujOnUdHq9if+BwLegfU8gpRz/4GKyJhA+zA3wOs88veAnsi72ocF5NoV3bVDwIx
+	5YCtNcsnRE5QFFmVaVW+t96mDTGy99TtwBgkAb0PxAmVHPrDlmVb+0sYrE+0w4Sa4wFV2Pua0fZFc
+	oz0snHbVWKSebzQV1Pfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVWyE-000150-SN; Fri, 15 Nov 2019 08:28:46 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iVX0X-0003J2-8k; Fri, 15 Nov 2019 08:31:09 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVWy5-00014G-7L
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 08:28:38 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mgr@pengutronix.de>)
- id 1iVWxx-00035K-1e; Fri, 15 Nov 2019 09:28:29 +0100
-Received: from mgr by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mgr@pengutronix.de>)
- id 1iVWxw-0005Il-Io; Fri, 15 Nov 2019 09:28:28 +0100
-Date: Fri, 15 Nov 2019 09:28:28 +0100
-From: Michael Grzeschik <mgr@pengutronix.de>
-To: Uwe =?iso-8859-15?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH] ARM: dts: imx25: fix usbhost1 node
-Message-ID: <20191115082828.tc3dbjnv7bojgrg4@pengutronix.de>
-References: <20191111114655.9583-1-m.grzeschik@pengutronix.de>
- <20191114211708.77d6bttkyj426yqy@pengutronix.de>
+ id 1iVWzp-0002oh-Gz
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 08:30:27 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Eugen.Hristev@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="Eugen.Hristev@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: XgNQGMW/MYGuqt4vFx8ArInO9twOeyA062aH5l14Xm0ID6/1clbMJWx2aPmXgY0hNuWqeZIhHq
+ VXUSvm//8gK4ujIi426myr529hRUDT+6TIM+Po3LLxden9i3Tye7piPvVhpc7ir3u5HlvivRWx
+ AXJu4Nte/WIP/CuQck9tqa826vpiSPIWw83PS7UGh+Ryzv3I/UnXUdvI2TXLg+m1uBOkfIX0Hl
+ Hy/gpUJX50MZYZKqTSFuA1ry+P+kvsxRlRjAsp5ElOagiKszQ5zEdgaMq1NfYskiZFk4PqAcTT
+ Wg0=
+X-IronPort-AV: E=Sophos;i="5.68,307,1569308400"; d="scan'208";a="58548501"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 15 Nov 2019 01:30:20 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 15 Nov 2019 01:30:16 -0700
+Received: from NAM01-SN1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.71) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Fri, 15 Nov 2019 01:30:16 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Sve1R6+BathGZxuY2K0UWnBRxXmF+2HT+K+/FnNiV4+DVoh7CbmTIXezJnSMY4lwmojohoZpAlCvszwAN0yxNaqU4jIAzp5nH3qZKSvk+1YQ+SdImGnKflubDGwEHyRN7RVxlJ09w2QUC8fxu6kwt/WQkTjFCfFs0TTX7CTJ0L5MnppmWndNFcZzc/P0x5Dmi8HwdfUWxW+sIq3gWYWDTj7MfhalDBc/FlBPbQ4Xv7fuJq816cHFcPCMSWzeTsj2/pPPseRB2VSuQfgDKaNiJthpL2U1O81V8LPgeVVNZNZC7jA+KlRXtH+EPuOY43QTk4oUpNdYJ45NzDpjU3wsEg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=m4AwzKoBcKbCF4ttvH6xIXZgTb1ptM2Vio8Add60AOA=;
+ b=kC6rGfWayBAHpUy+j3PwWSRtIMGvDXsv2RM+fQUhNtZbCibzU8vzpVioarAzy51opY7Tne5DJ3vBbo9UDUF4Wp6HvG1l93sPTeJr5VMy7ITyq2B5IqfUQuutn0AoF6NlVHJ/qMj9MuHqGYZY+NCZOrB+OnrIAbsytpibvYf4X9Ztjs65mUh1mvqTqxm7CNS5glWBz9db29x/Rcd1N+TcJkCaaR1qf5NDen994xGAPdgtbzJFPXAPNQj5sy5qmkrQojbSHJPKdeNh6XfoIavELd5uWpm+T6EVZR89fHxVWn+giwSrggqdRqrHQru0AtefLzeltD/uGJa89SWJJI67rw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=m4AwzKoBcKbCF4ttvH6xIXZgTb1ptM2Vio8Add60AOA=;
+ b=t5en0VS9p3BXVeemvvN56Sn49Mac9B13V05/yAUD1ITEcsQuoYq74M+bxbLeV2fbnNT7IX8Mks2xTHBEeuxmft78QDd4l4XWo03P/VLA9yipiJCeYTAmFP1cwVYZURDrFmGFeotnnJhfGlS61ccfIqvrIHUbrRtRVpOLGdIwDV4=
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
+ DM5PR11MB0059.namprd11.prod.outlook.com (10.164.155.140) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2430.20; Fri, 15 Nov 2019 08:30:13 +0000
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::d594:bcd0:98a9:d2c8]) by DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::d594:bcd0:98a9:d2c8%4]) with mapi id 15.20.2451.029; Fri, 15 Nov 2019
+ 08:30:13 +0000
+From: <Eugen.Hristev@microchip.com>
+To: <wim@linux-watchdog.org>, <linux@roeck-us.net>, <robh+dt@kernel.org>,
+ <alexandre.belloni@bootlin.com>, <devicetree@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH v4 1/3] watchdog: sama5d4_wdt: cleanup the bit definitions
+Thread-Topic: [PATCH v4 1/3] watchdog: sama5d4_wdt: cleanup the bit definitions
+Thread-Index: AQHVm47mrdt0TEc0UU6bOrM4Tw2r3w==
+Date: Fri, 15 Nov 2019 08:30:13 +0000
+Message-ID: <1573806579-7981-1-git-send-email-eugen.hristev@microchip.com>
+Accept-Language: en-US, ro-RO
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: AM0PR06CA0076.eurprd06.prod.outlook.com
+ (2603:10a6:208:fa::17) To DM5PR11MB1242.namprd11.prod.outlook.com
+ (2603:10b6:3:14::8)
+x-mailer: git-send-email 2.7.4
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 528c7047-88ce-4c28-c1bd-08d769a608d3
+x-ms-traffictypediagnostic: DM5PR11MB0059:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM5PR11MB0059AC0BF222265C1E075FD3E8700@DM5PR11MB0059.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5516;
+x-forefront-prvs: 02229A4115
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(346002)(366004)(39860400002)(136003)(376002)(189003)(199004)(2906002)(64756008)(4326008)(2201001)(107886003)(36756003)(25786009)(6506007)(6436002)(186003)(386003)(99286004)(476003)(26005)(7736002)(102836004)(316002)(486006)(305945005)(86362001)(110136005)(14454004)(2616005)(54906003)(256004)(8936002)(66446008)(3846002)(52116002)(66476007)(478600001)(6512007)(6486002)(14444005)(5660300002)(6116002)(2501003)(66066001)(66556008)(50226002)(71200400001)(71190400001)(66946007)(81166006)(8676002)(81156014);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB0059;
+ H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: xH9ZvU4v5KgxAYgwYA5fXUJb/Eq1C2Tt5rKKAkaJXSdxdhY4/TAI9hfrGSHRzv336aCpSpxpwz8z+if6KypHapA0fACy4OY9bDvW6kX27HSWO0MXxaeBNGnqfCp7/KHRMLIiP+VP33ii4f+L/8zoW2IIvb7abALyjj7iY/HZ/GaDOtgi/0GLVzJtCobib4Sjn+7xBgOqbmJaaBuM8gyGym4tiHef1l5EFLP6RyiBsDuus/2kBH3PJwLebxD/Ky/LsNg1mq+A7TdMpl7mEm+n8HG18FxcfMlGQszgIlEWDSBouAEHzCEriG/jfHJzjA4WrMahZyVfDpLB8BLqxliwFWNLwUrTZ4yVrCofDV8vkhOz6enMmreVWui8JXM/KC0MY2FYTsUo7K/flTp/RRFY/EZa0rddkPe2yP+Od1HaESynjuI9/oamOwrtBHAlM/Mj
 MIME-Version: 1.0
-In-Reply-To: <20191114211708.77d6bttkyj426yqy@pengutronix.de>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 09:27:20 up 130 days, 14:37, 121 users,  load average: 0.17, 0.16,
- 0.15
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: mgr@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-MS-Exchange-CrossTenant-Network-Message-Id: 528c7047-88ce-4c28-c1bd-08d769a608d3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Nov 2019 08:30:13.3475 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: eB3oA9STSdWEPRUmB6ZCA/W97bQ4TNbht8xn2t+NMmufIcczWAJ8l3cDH1SDl5R9nmWczEu9reZR8FNpBnq9gJNQF5b2jZfY7Nupj/v2HSU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB0059
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_002837_263258_C591241C 
-X-CRM114-Status: GOOD (  12.76  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191115_003025_571069_DFD992DA 
+X-CRM114-Status: UNSURE (   7.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,83 +159,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, festevam@gmail.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8160318567202742768=="
+Cc: Eugen.Hristev@microchip.com, linux-watchdog@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Eugen Hristev <eugen.hristev@microchip.com>
 
---===============8160318567202742768==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="prnwotkb3gjhqohe"
-Content-Disposition: inline
+Cleanup the macro definitions to use BIT and align with two spaces.
 
+Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+---
+Changes in v4:
+- added UL suffix to value macros to avoid compile warnings
+- modified file header to include new copyright and datasheet
+- include linux/bits.h
 
---prnwotkb3gjhqohe
-Content-Type: text/plain; charset=iso-8859-15
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Changes in v3:
+- new patch as requested from review on ML
 
-On Thu, Nov 14, 2019 at 10:17:08PM +0100, Uwe Kleine-K=F6nig wrote:
-> On Mon, Nov 11, 2019 at 12:46:56PM +0100, Michael Grzeschik wrote:
-> > The usb port represented by &usbhost1 uses an USB phy internal to the
-> > SoC. We add the phy_type to the base dtsi so the board dts only have to
-> > overwrite it if they use a different configuration. While at it we also
-> > pin the usbhost port to host mode.
-> >=20
-> > Signed-off-by: Michael Grzeschik <m.grzeschik@pengutronix.de>
-> Acked-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+ drivers/watchdog/at91sam9_wdt.h | 34 +++++++++++++++++++---------------
+ 1 file changed, 19 insertions(+), 15 deletions(-)
 
-Thanks for the ACK.
+diff --git a/drivers/watchdog/at91sam9_wdt.h b/drivers/watchdog/at91sam9_wdt.h
+index 390941c..abfe34d 100644
+--- a/drivers/watchdog/at91sam9_wdt.h
++++ b/drivers/watchdog/at91sam9_wdt.h
+@@ -4,33 +4,37 @@
+  *
+  * Copyright (C) 2007 Andrew Victor
+  * Copyright (C) 2007 Atmel Corporation.
++ * Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries
+  *
+  * Watchdog Timer (WDT) - System peripherals regsters.
+  * Based on AT91SAM9261 datasheet revision D.
++ * Based on SAM9X60 datasheet.
+  *
+  */
+ 
+ #ifndef AT91_WDT_H
+ #define AT91_WDT_H
+ 
++#include <linux/bits.h>
++
+ #define AT91_WDT_CR		0x00			/* Watchdog Control Register */
+-#define		AT91_WDT_WDRSTT		(1    << 0)		/* Restart */
+-#define		AT91_WDT_KEY		(0xa5 << 24)		/* KEY Password */
++#define  AT91_WDT_WDRSTT	BIT(0)			/* Restart */
++#define  AT91_WDT_KEY		(0xa5UL << 24)		/* KEY Password */
+ 
+ #define AT91_WDT_MR		0x04			/* Watchdog Mode Register */
+-#define		AT91_WDT_WDV		(0xfff << 0)		/* Counter Value */
+-#define			AT91_WDT_SET_WDV(x)	((x) & AT91_WDT_WDV)
+-#define		AT91_WDT_WDFIEN		(1     << 12)		/* Fault Interrupt Enable */
+-#define		AT91_WDT_WDRSTEN	(1     << 13)		/* Reset Processor */
+-#define		AT91_WDT_WDRPROC	(1     << 14)		/* Timer Restart */
+-#define		AT91_WDT_WDDIS		(1     << 15)		/* Watchdog Disable */
+-#define		AT91_WDT_WDD		(0xfff << 16)		/* Delta Value */
+-#define			AT91_WDT_SET_WDD(x)	(((x) << 16) & AT91_WDT_WDD)
+-#define		AT91_WDT_WDDBGHLT	(1     << 28)		/* Debug Halt */
+-#define		AT91_WDT_WDIDLEHLT	(1     << 29)		/* Idle Halt */
++#define  AT91_WDT_WDV		(0xfffUL << 0)		/* Counter Value */
++#define  AT91_WDT_SET_WDV(x)	((x) & AT91_WDT_WDV)
++#define  AT91_WDT_WDFIEN	BIT(12)		/* Fault Interrupt Enable */
++#define  AT91_WDT_WDRSTEN	BIT(13)		/* Reset Processor */
++#define  AT91_WDT_WDRPROC	BIT(14)		/* Timer Restart */
++#define  AT91_WDT_WDDIS		BIT(15)		/* Watchdog Disable */
++#define  AT91_WDT_WDD		(0xfffUL << 16)		/* Delta Value */
++#define  AT91_WDT_SET_WDD(x)	(((x) << 16) & AT91_WDT_WDD)
++#define  AT91_WDT_WDDBGHLT	BIT(28)		/* Debug Halt */
++#define  AT91_WDT_WDIDLEHLT	BIT(29)		/* Idle Halt */
+ 
+-#define AT91_WDT_SR		0x08			/* Watchdog Status Register */
+-#define		AT91_WDT_WDUNF		(1 << 0)		/* Watchdog Underflow */
+-#define		AT91_WDT_WDERR		(1 << 1)		/* Watchdog Error */
++#define AT91_WDT_SR		0x08		/* Watchdog Status Register */
++#define  AT91_WDT_WDUNF		BIT(0)		/* Watchdog Underflow */
++#define  AT91_WDT_WDERR		BIT(1)		/* Watchdog Error */
+ 
+ #endif
+-- 
+2.7.4
 
-I just figured out that we also can add the limitation
-to maximum-speed =3D "full-speed" into to dts. Since the
-internal phy maximum speed is limited to that.
-
-I will send an v2.
-
---=20
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
-
---prnwotkb3gjhqohe
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEElXvEUs6VPX6mDPT8C+njFXoeLGQFAl3OYakACgkQC+njFXoe
-LGQPhRAAwwmh0pLFGDajFYvnBK59/qcOgTpCWpRj3DRglHJp8Eu7aI9tTLrfGed1
-MWpJPtrvFKFWdc4HjC7XEcSo/KwIzpI9d92oiXB7LwfiLoCrVmDvwTCxICqe3aLM
-XgU9otlF2k8cK9s7IRb0UEo2wj06B1FUVGlBpd6YbxhI/mLtgvQGRb/RXacbEJC1
-fvc7YtgjeA1piiVadonjrS2WuxMdz7aPxgHGDuC9pO5/O04xSBIZ1w96oxnbyxtp
-dFH+Cf5lNIbUcAn+V6HIyc54ZOWgdc7ZdlBbnXrBHM2eqsF/+VDJuEynCr/rVTcs
-l29Iwq/jcN6vP1mFeoBAPkLtBFQ3ReszjK7kaiDsK6NG7oNSMDWyMf6L4DDpO5kr
-MScLAqZHU9/7lXg+CmtBw2EJGQW5/cSLWQuIUqWrtDJkRD0yjvVS+mQyHrx+hkFI
-y6SxaHpj7y98uBActiB/8CBJZJ+g8w1hsB0ttlN7qOUr2zq9cf0qzRgvG+6k9zlp
-SN5AG5zWoUF6JFfyd9u5GZWfpwmHiiOfqmXpy3X/riXW5YsVEYUiXtmlLydCPt/x
-+SyehRxLa0DA79vFju5ykeNj4GmwR3DaYKuYTJDie2m7olt9TQY2Y6Erk+aHDVkD
-90ji6y4LTivFUPo364/rTliM7mO80sRb4/Nw1Fu7MfMnuHmQq+w=
-=oazr
------END PGP SIGNATURE-----
-
---prnwotkb3gjhqohe--
-
-
---===============8160318567202742768==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8160318567202742768==--
-
