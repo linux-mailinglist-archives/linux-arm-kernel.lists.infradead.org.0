@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D091FE805
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 23:35:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80904FE807
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 23:35:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=iOc9ZKtEpWTi9xhheLaHWeBpnnVMb2T6Eg4oagzGeq4=; b=GLc6bMuiRsRldqAeYL9DMsLo5Q
-	Kb/HovRoW8UBdrnyIWJeHgeunNJxF9kVdKRiMNsklKNj2bS8Jp7D4BCFdw5NWbiE6PRtLzmBSJLlt
-	HQogEr5OzLksiXOcTYOjvO+Uj99HQ9VcMGy1/sCq/Wi46j7xcnWV01XcZJgSAGeUcfmn8JZb9WLzK
-	Bz9Ao0JB6/QVOJK6n3jcLlCA+bjY9ajwyETth5UIgEZkvIJmyiFCj41J4frDIu53WFc9C8lgRlLxZ
-	UzbeCnsoc77nJkP/vp7ziznjTM/gZoHeMQpCa+rLhKGry69CDVO1AZlkgqnYTOJCobciYRx2yXAAk
-	6B2QFxSw==;
+	bh=3M3/VCrxR+Bs+4Pa2Iy1ufWdDzRNnJXYjUp0nCgp8lo=; b=ilGv7mr4J59ivEYvvjkD3qNW/n
+	Xis3InTYpAle2Q+9FhXxHciJ93j9tDuzYTG6r6IOcC8tFjOhqzXBarMNzDstrsn6hPTk76MwZ2VyE
+	ngq0pAy8zL3p1q3/5VlzdkK09npOu1xZAKHjvilRmI/5Ej+Jb3BxA0a4eOaJ76FPMRtK7s/kYrnz9
+	d4Nx5C6amwGYD0X6tnNyabx//2bqZjIDhGy7uXDSz/y7mVmhDk6xovidqzEs7hdJVA4mOWT7qLy1Z
+	fo+yUVoDGcD8Hk8ILGZY+++WcmTEYZnGW4r8SjGuGkVdIgdUU7ITEx4G16AHidM4nqNhGqwb6cTFi
+	b7kMRyiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVkBV-0007vb-2s; Fri, 15 Nov 2019 22:35:21 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iVkBn-0000vu-Pd; Fri, 15 Nov 2019 22:35:39 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVkAE-00076W-GO
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 22:34:03 +0000
-Received: by mail-pl1-x644.google.com with SMTP id ay6so5635197plb.0
+ id 1iVkAF-00077D-Ai
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 22:34:05 +0000
+Received: by mail-pl1-x642.google.com with SMTP id s10so5638389plp.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 14:34:01 -0800 (PST)
+ Fri, 15 Nov 2019 14:34:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=pnStBG/T13CIghpMMY37iVdEqu6Tf6ypUdEca+Im12A=;
- b=UcNOeX7QeFUdS+8BsU3HT6dUr5DPakiIHn/4UvPOHLFYqY/K6ujtP4IZer6qWH4PsL
- kSBTMAw/WQgyxTxeo4ivek0tX/PV86dgJw0UkYo6ERIwQlFRePO6NKrAtfa6NCJ20W2O
- TsLzkBAGM6YB4DuaLNvOwjU3GdT2dzYF5IIKeZ0U3QUbT9dSuHzqJDl+QXBysh5SV+Ov
- lw25nX/7WiyUcJ5Xp4DrwnC0HKLo02gWkWh9DR0hT+OxTsQXWX6d6dxK8t070uRMMt9V
- r9oATtIcUAuwarcVv9V2aewPHt7avcTKRzk1AKnwfy3HSFUqXiDShEdVFb9swtzK8Huo
- 4nkA==
+ bh=CfdEn/VOoyCYVCEhBtRjG/LrGez0kXMzdfAuimisWqo=;
+ b=BmJCSnphEJxB/SJaEZ55rWx8UacuDIrgu3GGuKP9hxL0m0pDhN7q9J+QXmeNHU3a9S
+ KcLpI35v0bQ7VN2vpFI89zIEmufoawp/UX+aj0AEhPZY1Ca6qiVHFhjEj/1Q6qpfeLYh
+ gjoYQxSbf630RaEl3OM/6BIGdyMcJhAgPgaITE7CHkkMSKWyVALpX3aHE/rIyZ+534CU
+ kKKAtB/FXySeSR4aPKIGgqnJPLZz5ZmoX7PLhvXCyZfRhjY/WwB2qknR22z51CDufEry
+ KwJioKJ8hKDwJTr64gk0X3402S8pXsOhEqAEl6DeZUZcNxfDi9jgwWcFrfWjMc4Hltu1
+ UKjQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=pnStBG/T13CIghpMMY37iVdEqu6Tf6ypUdEca+Im12A=;
- b=mH/ysBVpXZSr951LPYCEZtU6KBJPZ6QW/XRokfW2Ztp5MZ5TpBziO95Ae3RCrLT+B1
- 2CPR0bzXwhwx/xx9TSq7em+TEIRb3x6nx1qmY2YSUkJxMA8gajTYcMT9ImmTyNr19jVA
- Xm+NHFKsw1rNG04SeyKIUIDma/F3AZ8o5yPfV36PZnBEE0MzBdGCR0KMHGZKE3rUJRS8
- rM/QCwUwZUtlSUEuiEcwDhbefR1bfsV46MVDgBz8vP9abZOrS4GeN+Cm1Rcb2MYEcZgl
- H3JFKC1ZstmZhGGULjaHHrlzJwp1dzzJhFog41A3cxwgrqIBgiO/jZn+FV2MrBaVIlxi
- tBRg==
-X-Gm-Message-State: APjAAAXlmmQDige/1uSBnQhQ36hhnlkFKXXX947ZnMU3H+VEXeGmX75C
- 35dP/kPu3WITwnH45GYyzsMRog==
-X-Google-Smtp-Source: APXvYqyUkVVN6TQZYe84qUdIeuFg+UeaXSpsS5sSY6gzAeOIOOHIRLFnS9NzrP3wYAkm6hhStgbJiw==
-X-Received: by 2002:a17:902:fe8f:: with SMTP id
- x15mr17473187plm.343.1573857240779; 
- Fri, 15 Nov 2019 14:34:00 -0800 (PST)
+ bh=CfdEn/VOoyCYVCEhBtRjG/LrGez0kXMzdfAuimisWqo=;
+ b=dCCR3+P8oLkd0LXgMpEhYdIuS426B1JkjyRicy34hkg8fiLs4F4FbAhwHqTE6luWTb
+ rQ2bY3MEq/C09fQcHW62V5XYZmQ5MfMp9qO8U71ZPq7P1pSQKTL73ouy6/DFiEO7nk3a
+ 13QBlOltgCdb2RqNlkQHd/vaB1dzprEtAU1t/TvWyaINOgVYPC9FbLrvGL8CIlYswRSk
+ g+Wc2LsqYLegeqKCv0PRqU8wxAOIPThXfSjnuZcc+vDv8kCX3oik3unaK2/N9N2dQDZv
+ zZOgCWWgXEEQqhCswilwbrnSCEsGMWIn6xans3WA1oATAJzATOna8Q/j26ok/q53KTps
+ GGRg==
+X-Gm-Message-State: APjAAAUnIivaciqwfqcBrCdGsMpifrj0+o6crCZmHWPL9Fkp1M1fGx/Q
+ 6dkl0vwBAqC86voFNlDMRXv5Gg==
+X-Google-Smtp-Source: APXvYqxV4R6yv1yepbFn8bEoumDLXUwUoXHiD99iisQY+WW8LBhAQo0WSyIWj7l+f8Q8W16cGA2Gsg==
+X-Received: by 2002:a17:90a:ca04:: with SMTP id
+ x4mr23087371pjt.103.1573857241601; 
+ Fri, 15 Nov 2019 14:34:01 -0800 (PST)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id m15sm11699724pfh.19.2019.11.15.14.33.59
+ by smtp.gmail.com with ESMTPSA id m15sm11699724pfh.19.2019.11.15.14.34.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 Nov 2019 14:34:00 -0800 (PST)
+ Fri, 15 Nov 2019 14:34:01 -0800 (PST)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: stable@vger.kernel.org
-Subject: [stable 4.19+][PATCH 04/20] crypto: stm31/hash - Fix hmac issue more
- than 256 bytes
-Date: Fri, 15 Nov 2019 15:33:40 -0700
-Message-Id: <20191115223356.27675-4-mathieu.poirier@linaro.org>
+Subject: [stable 4.19+][PATCH 05/20] media: stm32-dcmi: fix DMA corruption
+ when stopping streaming
+Date: Fri, 15 Nov 2019 15:33:41 -0700
+Message-Id: <20191115223356.27675-5-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191115223356.27675-1-mathieu.poirier@linaro.org>
 References: <20191115223356.27675-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_143402_541059_23AFCDE3 
-X-CRM114-Status: GOOD (  11.77  )
+X-CRM114-CacheID: sfid-20191115_143403_388562_07CBC837 
+X-CRM114-Status: GOOD (  12.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,35 +105,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lionel Debieve <lionel.debieve@st.com>
+From: Hugues Fruchet <hugues.fruchet@st.com>
 
-commit 0acabecebc912b3ba06289e4ef40476acc499a37 upstream
+commit b3ce6f6ff3c260ee53b0f2236e5fd950d46957da upstream
 
-Correct condition for the second hmac loop. Key must be only
-set in the first loop. Initial condition was wrong,
-HMAC_KEY flag was not properly checked.
+Avoid call of dmaengine_terminate_all() between
+dmaengine_prep_slave_single() and dmaengine_submit() by locking
+the whole DMA submission sequence.
 
-Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
-Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+Signed-off-by: Hugues Fruchet <hugues.fruchet@st.com>
+Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 Cc: stable <stable@vger.kernel.org> # 4.19+
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/crypto/stm32/stm32-hash.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/media/platform/stm32/stm32-dcmi.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
-diff --git a/drivers/crypto/stm32/stm32-hash.c b/drivers/crypto/stm32/stm32-hash.c
-index 590d7352837e..641b11077f47 100644
---- a/drivers/crypto/stm32/stm32-hash.c
-+++ b/drivers/crypto/stm32/stm32-hash.c
-@@ -365,7 +365,7 @@ static int stm32_hash_xmit_cpu(struct stm32_hash_dev *hdev,
- 		return -ETIMEDOUT;
+diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
+index 1d9c028e52cb..d86944109cbf 100644
+--- a/drivers/media/platform/stm32/stm32-dcmi.c
++++ b/drivers/media/platform/stm32/stm32-dcmi.c
+@@ -164,6 +164,9 @@ struct stm32_dcmi {
+ 	int				errors_count;
+ 	int				overrun_count;
+ 	int				buffers_count;
++
++	/* Ensure DMA operations atomicity */
++	struct mutex			dma_lock;
+ };
  
- 	if ((hdev->flags & HASH_FLAGS_HMAC) &&
--	    (hdev->flags & ~HASH_FLAGS_HMAC_KEY)) {
-+	    (!(hdev->flags & HASH_FLAGS_HMAC_KEY))) {
- 		hdev->flags |= HASH_FLAGS_HMAC_KEY;
- 		stm32_hash_write_key(hdev);
- 		if (stm32_hash_wait_busy(hdev))
+ static inline struct stm32_dcmi *notifier_to_dcmi(struct v4l2_async_notifier *n)
+@@ -314,6 +317,13 @@ static int dcmi_start_dma(struct stm32_dcmi *dcmi,
+ 		return ret;
+ 	}
+ 
++	/*
++	 * Avoid call of dmaengine_terminate_all() between
++	 * dmaengine_prep_slave_single() and dmaengine_submit()
++	 * by locking the whole DMA submission sequence
++	 */
++	mutex_lock(&dcmi->dma_lock);
++
+ 	/* Prepare a DMA transaction */
+ 	desc = dmaengine_prep_slave_single(dcmi->dma_chan, buf->paddr,
+ 					   buf->size,
+@@ -322,6 +332,7 @@ static int dcmi_start_dma(struct stm32_dcmi *dcmi,
+ 	if (!desc) {
+ 		dev_err(dcmi->dev, "%s: DMA dmaengine_prep_slave_single failed for buffer phy=%pad size=%zu\n",
+ 			__func__, &buf->paddr, buf->size);
++		mutex_unlock(&dcmi->dma_lock);
+ 		return -EINVAL;
+ 	}
+ 
+@@ -333,9 +344,12 @@ static int dcmi_start_dma(struct stm32_dcmi *dcmi,
+ 	dcmi->dma_cookie = dmaengine_submit(desc);
+ 	if (dma_submit_error(dcmi->dma_cookie)) {
+ 		dev_err(dcmi->dev, "%s: DMA submission failed\n", __func__);
++		mutex_unlock(&dcmi->dma_lock);
+ 		return -ENXIO;
+ 	}
+ 
++	mutex_unlock(&dcmi->dma_lock);
++
+ 	dma_async_issue_pending(dcmi->dma_chan);
+ 
+ 	return 0;
+@@ -717,7 +731,9 @@ static void dcmi_stop_streaming(struct vb2_queue *vq)
+ 	spin_unlock_irq(&dcmi->irqlock);
+ 
+ 	/* Stop all pending DMA operations */
++	mutex_lock(&dcmi->dma_lock);
+ 	dmaengine_terminate_all(dcmi->dma_chan);
++	mutex_unlock(&dcmi->dma_lock);
+ 
+ 	pm_runtime_put(dcmi->dev);
+ 
+@@ -1719,6 +1735,7 @@ static int dcmi_probe(struct platform_device *pdev)
+ 
+ 	spin_lock_init(&dcmi->irqlock);
+ 	mutex_init(&dcmi->lock);
++	mutex_init(&dcmi->dma_lock);
+ 	init_completion(&dcmi->complete);
+ 	INIT_LIST_HEAD(&dcmi->buffers);
+ 
 -- 
 2.17.1
 
