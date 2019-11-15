@@ -2,91 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 753D3FE828
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 23:39:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA120FE846
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 23:49:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=P8agXz3k0KIGgYAhlmyYfH5JH39OgbqppSu5qqwnHVc=; b=A4RBMrgBPGWrm3S2+1HTYHO3QT
-	zKEHbYP/FEm4UcgKd+muDKEVzZt8RkiwK+yZqQ34rPp1jY2v2DKazldxpVT1JxP57TlSkOt17eD//
-	HCRqA5VBR1kDM1YkRFSSRbTHMMO1s1wY12YWXK1jwZE+t5z/sBCPq5JnoO3UgeqKTCjovq36NdoUQ
-	0+/lxWLp348PsHXeMeGkVEWCsATe+479KIna+d32cRAYzLV9p7KCW+TiL9pa69xBv2ULPDqQE5APN
-	4gukLtD1VPD7AjnpG5m0UjET6lRQjioUzrLLnL0lRBTgfDiFnhZ1F5iIs6AKKgTzYTqOrbGJgf++7
-	pFIPwS6Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Mime-Version:References:
+	In-Reply-To:Date:To:From:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1UIS3CETAh2eZaVa3bm3qWGKi0oCO+hYuWEu3WvgC8g=; b=U0l/Vbab7WX+DP
+	SAr+JERKZ8U+OtKUV3WoBwIoZKgnNBHFUXyF2ibUPUCPdfsXOj7JCZUU15BGURrnxK1piy/cDtgWz
+	BSBV1R2yF5RfkpzVnZWGcZUvXNDOxvkTFPm9SBhBGs0rWo6tMpQKqiGAi4098Qz2QQrVLwN/j9UEp
+	njLz++LxCV0sQbuTgoq30aEknyTvi8djeY8nl9/Ossvpr03hxmKeyjPKOxsmd3bkNXKGf2Ebeydv/
+	Kv1hvD77Ccgejx2/KwbAh0dQN6Zso5d4XgpzSTRvkAxGRqvmV1G3+EJxMbicfXb+KjZcocXBWzL3J
+	T3YKMxY9gywqcIyMa6Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVkFZ-0004FM-S3; Fri, 15 Nov 2019 22:39:33 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iVkOp-0008JI-7S; Fri, 15 Nov 2019 22:49:07 +0000
+Received: from baldur.buserror.net ([165.227.176.147])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVkAS-0007MA-T0
- for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 22:34:18 +0000
-Received: by mail-pl1-x642.google.com with SMTP id a18so5616894plm.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 Nov 2019 14:34:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=FlA/WYoLeRABK4x8leOELB1KpW2VXeE/7KRkjFeheIs=;
- b=EuCYF29XK/mB/F3BxjT3sWX6z88YjtNqs+w5TNJQP6w08JiRou935ewYfWNAW/g3Eg
- FYlTO4DtoNdOTwlSxUFfeQtM32HB8UD4XiO9OLyVfO071D1lvVGMwJJWMxV7DW959l9H
- 3cEwLuybSJy5RgNBVbsk3HFrKrWbg+s5SFLxWWx6v5gjbraobv8BFodgs84RA1TUiybx
- 8wvlY+DBrzz7i+IYZ/fG8vjyNWly48fh5ZQWjCLhzQuBoYMt+ckcnb/GiIKLPGqHmTMR
- H6s2ATHNqRlbPvsQBZJwh0jEIKkumM1yU/gS+DXe538ozDU9zHQll5wun9QYpe4w15+l
- ifVg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=FlA/WYoLeRABK4x8leOELB1KpW2VXeE/7KRkjFeheIs=;
- b=qtZfF2gjceBvZKzx0mWr7MLo34GatCoVkJzTbQ69ztnokUc24vJcgHMtK3BnYdZGEh
- nm4a0ursFk6hl+k1mLQXIvYwsXFHPaMUvPflxhlIX952Z6bgt/4b/Q+PEVUjQiKQJgSc
- WLujI9DczX9KszUly7FkAm4i1tVfw8xaT5uI3GbdVIlzbcNpsdBjpjvE8/H1y2yvpctG
- YuxpGvDqZCJCQN/Mhfg3QFGp01P3UncUniBRflG0bdZjYIG5jRc00QzWb4nhyVQcAjQw
- SHMSGcIAyLKLLTKmDtPlm/McvWee8JldUrtoOqoRr4HfHEmCX84pPn+LKHZyuw74rqfJ
- HJXA==
-X-Gm-Message-State: APjAAAUhPekPhS0rW1+eTnlyANaCseHzfldTaL3yBVUV0uE3ngsOyFDA
- Jb7YKJtjyv8fbZldFbYJNGlizw==
-X-Google-Smtp-Source: APXvYqwrPgGdAOCHvG+Dr9yqtqFxSjTdBheEMm1jF9StVEaJaadS7qR9/JmFNyQStGJT1dxmYiuHuQ==
-X-Received: by 2002:a17:90a:2385:: with SMTP id
- g5mr22958192pje.117.1573857255728; 
- Fri, 15 Nov 2019 14:34:15 -0800 (PST)
-Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
- [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id m15sm11699724pfh.19.2019.11.15.14.34.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 Nov 2019 14:34:15 -0800 (PST)
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: stable@vger.kernel.org
-Subject: [stable 4.19+][PATCH 20/20] dmaengine: stm32-dma: check whether
- length is aligned on FIFO threshold
-Date: Fri, 15 Nov 2019 15:33:56 -0700
-Message-Id: <20191115223356.27675-20-mathieu.poirier@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191115223356.27675-1-mathieu.poirier@linaro.org>
-References: <20191115223356.27675-1-mathieu.poirier@linaro.org>
+ id 1iVkOf-0008Ij-EM
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 22:48:58 +0000
+Received: from [2601:449:8480:af0:12bf:48ff:fe84:c9a0]
+ by baldur.buserror.net with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <oss@buserror.net>)
+ id 1iVkKM-0007zt-Nm; Fri, 15 Nov 2019 16:44:31 -0600
+Message-ID: <71e4f8797fa6e4a116a6d1cabcb63871d7a0c4e0.camel@buserror.net>
+From: Scott Wood <oss@buserror.net>
+To: Timur Tabi <timur@kernel.org>, Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Date: Fri, 15 Nov 2019 16:44:29 -0600
+In-Reply-To: <02dd5acd-b81e-fde3-028c-16e754e846b5@kernel.org>
+References: <20191108130123.6839-1-linux@rasmusvillemoes.dk>
+ <20191108130123.6839-33-linux@rasmusvillemoes.dk>
+ <CAOZdJXU1ELqQh7TitAJW7bsmnj89wq3opJGVizC2B19nL_3_rQ@mail.gmail.com>
+ <9f1a846b-c303-92fa-9620-f492ef940de7@rasmusvillemoes.dk>
+ <02dd5acd-b81e-fde3-028c-16e754e846b5@kernel.org>
+Organization: Red Hat
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2601:449:8480:af0:12bf:48ff:fe84:c9a0
+X-SA-Exim-Rcpt-To: timur@kernel.org, linux@rasmusvillemoes.dk,
+ qiang.zhao@nxp.com, leoyang.li@nxp.com, christophe.leroy@c-s.fr,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-serial@vger.kernel.org
+X-SA-Exim-Mail-From: oss@buserror.net
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on baldur.localdomain
+X-Spam-Level: 
+X-Spam-Status: No, score=-16.0 required=5.0 tests=ALL_TRUSTED,BAYES_00
+ autolearn=ham autolearn_force=no version=3.4.2
+X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+ *  -15 BAYES_00 BODY: Bayes spam probability is 0 to 1%
+ *      [score: 0.0000]
+Subject: Re: [PATCH v4 32/47] serial: ucc_uart: use of_property_read_u32()
+ in ucc_uart_probe()
+X-SA-Exim-Version: 4.2.1 (built Tue, 02 Aug 2016 21:08:31 +0000)
+X-SA-Exim-Scanned: Yes (on baldur.buserror.net)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_143416_976178_EEDA7E43 
-X-CRM114-Status: GOOD (  11.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191115_144857_547264_00566751 
+X-CRM114-Status: GOOD (  10.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,66 +78,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
+ lkml <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ linux-serial@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Qiang Zhao <qiang.zhao@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
+On Fri, 2019-11-15 at 08:35 -0600, Timur Tabi wrote:
+> On 11/15/19 2:01 AM, Rasmus Villemoes wrote:
+> > That would be a separate patch, this patch is only concerned with
+> > eliminating the implicit assumption of the host being big-endian. And
+> > there's already been some pushback to adding arch-specific ifdefs (which
+> > I agree with, but as I responded there see as the lesser evil), so
+> > unless there's a very good reason to add that complexity, I'd rather not.
+> 
+> We don't want to encourage people to introduce device trees that don't 
+> have the brg-frequency property in them.
 
-commit cc832dc8e32785a730ba07c3a357e17c201a5df8 upstream
+Yeah, workarounds like this should be as targeted as possible.  If we knew the
+specific chips/boards on which U-Boot has this problem, then limiting it to
+those would have been even better (e.g. fix up the device tree from the
+platform code), but at this point containing the damage to PPC seems like the
+most reasonable approach.  It's not relevant to this specific patch, but it is
+relevant to a patchset expanding the set of platforms on which this code
+builds.
 
-When a period length is not multiple of FIFO some data may be stuck
-within FIFO.
+-Scott
 
-Burst/FIFO Threshold/Period or buffer length check has to be hardened
-
-In any case DMA will grant any request from client but will degraded
-any parameters whether awkward.
-
-Signed-off-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
-Signed-off-by: Vinod Koul <vkoul@kernel.org>
-Cc: stable <stable@vger.kernel.org> # 4.19+
-Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
----
- drivers/dma/stm32-dma.c | 20 ++++++--------------
- 1 file changed, 6 insertions(+), 14 deletions(-)
-
-diff --git a/drivers/dma/stm32-dma.c b/drivers/dma/stm32-dma.c
-index 379e8d534e61..4903a408fc14 100644
---- a/drivers/dma/stm32-dma.c
-+++ b/drivers/dma/stm32-dma.c
-@@ -308,20 +308,12 @@ static bool stm32_dma_fifo_threshold_is_allowed(u32 burst, u32 threshold,
- 
- static bool stm32_dma_is_burst_possible(u32 buf_len, u32 threshold)
- {
--	switch (threshold) {
--	case STM32_DMA_FIFO_THRESHOLD_FULL:
--		if (buf_len >= STM32_DMA_MAX_BURST)
--			return true;
--		else
--			return false;
--	case STM32_DMA_FIFO_THRESHOLD_HALFFULL:
--		if (buf_len >= STM32_DMA_MAX_BURST / 2)
--			return true;
--		else
--			return false;
--	default:
--		return false;
--	}
-+	/*
-+	 * Buffer or period length has to be aligned on FIFO depth.
-+	 * Otherwise bytes may be stuck within FIFO at buffer or period
-+	 * length.
-+	 */
-+	return ((buf_len % ((threshold + 1) * 4)) == 0);
- }
- 
- static u32 stm32_dma_get_best_burst(u32 buf_len, u32 max_burst, u32 threshold,
--- 
-2.17.1
 
 
 _______________________________________________
