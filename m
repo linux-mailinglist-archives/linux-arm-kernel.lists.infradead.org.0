@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69C3FFDDCC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 13:27:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFF0AFDDC0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 Nov 2019 13:27:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=Ic5hmi4lDzfhhy0+vy5PgHWCP93gVjSwYn20A5md4EM=; b=fDC
-	baZL0/RKtMmGzK8Mp3OA8ktfCD3nik3f4tUyKvIASA3b39Fd13H9ZfDlk8mHs7F3YA16ZsLZsLx3V
-	Yl7JMOltge7OtJD+pDsGge4aoENvfP6n9yi+MmY2BI3njpLaIGTUWcNlIBcW7NEox7C5nZ6sx4c2b
-	xh7gXDdjqXoEIQ34Eck+R++Gk1ASgO8z2KMGlWls+dmVY9I8DanoTPH6o55HdKUhw8ar0srJiVykK
-	piWPhHZKGssDqqOpeL2ZDOygOOab+hOvn1N3JOXOT/qCFUyO13E9/7NIu5j7rBWfXrPrULsp1QVC7
-	PtRYwbWIrjmzI/zeJ95YUSyO6ZYS99w==;
+	References:List-Owner; bh=jQDf9GYumfVGYrJlIJJCPGzA+XjbNB+ejv8SpymaNG8=; b=ruy
+	tfBwGQD+yVlmgq1wl24Z/X5ti1Obc7JTlr05ilCsFBXuIBGrJUEP0qWa5ubtqFKc4p1Uh34ZerH6k
+	dBLSqdGi7LIwPXPP4CLmGH6mgwaIQi7mtWHde3SQlGVev/cQv0RdLH1AOjZXA70NGbLWFDS67vc1T
+	U1WSsVJ4SXNRWQhoQ5OrPgcF2DbasWDWjN4Ph/CcW1kFX74G8t5WbAP8WXBWebtlvmLZqKYmvLlyj
+	nOS1d3avQteyFDf2wNiD9dBM6tAu/QMJ54z6ykthhG5wGSI0aUGvpYs9HgSH9GvcJGNIo0FmavBHv
+	bz0XD/Sv2hQBGoCiO6wyTZetUqEw6tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVahb-0004jn-Oo; Fri, 15 Nov 2019 12:27:51 +0000
+	id 1iVags-0003z0-GM; Fri, 15 Nov 2019 12:27:06 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVafA-0002YG-6N
+ id 1iVafA-0002Yw-Mw
  for linux-arm-kernel@lists.infradead.org; Fri, 15 Nov 2019 12:25:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
@@ -29,30 +29,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=zQlcfRuhMf4DnEeKX3LiRwpF1ZNWngPsA1ocfsQAJzE=; b=bWUKS8m+8B1X
- DdqO6H42DLaoYP49wf9+0PyLicG8abC5BI6AIdeLf34DSogA1Zif9eDhsW7CBzvieHDqa75qL0NiS
- 3smsu664CVVZNzjrgO93U/z92JDUwhl4q4Gz1Z6X+3gduj1q4xams7XVgsrwVhGXOYvoUrhWHnKnU
- ZSVKQ=;
+ List-Archive; bh=kyNPL9BTT9yQcgUAvfrPqLzEhAgkeo4CS7uU8kJl5W0=; b=jpFGFZ0NG7To
+ KqRlr7C3kgh3xxpTdqnih45/Z09V4wtjawyZw9Y85at+Akx3qRFDN52eydsWrTjBG/H02cHAFpAPZ
+ nwkgRWIM8NrgR19ZUcXJqSA0rY+mWV2CbTQU9W6+W0mKB3pmKRm/i3VoefTfFYs2WEIExlEHLdINN
+ YJK/0=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1iVaf5-0000M0-Om; Fri, 15 Nov 2019 12:25:15 +0000
+ id 1iVaf6-0000MD-Gf; Fri, 15 Nov 2019 12:25:16 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 3521B27415A7; Fri, 15 Nov 2019 12:25:15 +0000 (GMT)
+ id 02B9127415A7; Fri, 15 Nov 2019 12:25:15 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Applied "spi: qup: Use dma_request_chan() directly for channel
+Subject: Applied "spi: imx: Use dma_request_chan() directly for channel
  request" to the spi tree
-In-Reply-To: <20191113094256.1108-7-peter.ujfalusi@ti.com>
+In-Reply-To: <20191113094256.1108-5-peter.ujfalusi@ti.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20191115122515.3521B27415A7@ypsilon.sirena.org.uk>
+Message-Id: <20191115122516.02B9127415A7@ypsilon.sirena.org.uk>
 Date: Fri, 15 Nov 2019 12:25:15 +0000 (GMT)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191115_042520_283071_1EA529D4 
-X-CRM114-Status: GOOD (  12.59  )
+X-CRM114-CacheID: sfid-20191115_042520_757174_0DE9355F 
+X-CRM114-Status: GOOD (  13.39  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -94,7 +94,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: qup: Use dma_request_chan() directly for channel request
+   spi: imx: Use dma_request_chan() directly for channel request
 
 has been applied to the spi tree at
 
@@ -119,40 +119,44 @@ to this mail.
 Thanks,
 Mark
 
-From 194e1d4bc262c2d23ba9a8a5c03855c372ea1b5c Mon Sep 17 00:00:00 2001
+From 5d3aa9ccf40cdc9b94d1a708d11de9062e2d9eed Mon Sep 17 00:00:00 2001
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Date: Wed, 13 Nov 2019 11:42:53 +0200
-Subject: [PATCH] spi: qup: Use dma_request_chan() directly for channel request
+Date: Wed, 13 Nov 2019 11:42:51 +0200
+Subject: [PATCH] spi: imx: Use dma_request_chan() directly for channel request
 
 dma_request_slave_channel_reason() is:
 #define dma_request_slave_channel_reason(dev, name) \
 	dma_request_chan(dev, name)
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Link: https://lore.kernel.org/r/20191113094256.1108-7-peter.ujfalusi@ti.com
+Link: https://lore.kernel.org/r/20191113094256.1108-5-peter.ujfalusi@ti.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-qup.c | 4 ++--
+ drivers/spi/spi-imx.c | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/spi/spi-qup.c b/drivers/spi/spi-qup.c
-index 2f559e531100..dd3434a407ea 100644
---- a/drivers/spi/spi-qup.c
-+++ b/drivers/spi/spi-qup.c
-@@ -932,11 +932,11 @@ static int spi_qup_init_dma(struct spi_master *master, resource_size_t base)
- 	int ret;
+diff --git a/drivers/spi/spi-imx.c b/drivers/spi/spi-imx.c
+index 09c9a1edb2c6..49f0099db0cb 100644
+--- a/drivers/spi/spi-imx.c
++++ b/drivers/spi/spi-imx.c
+@@ -1272,7 +1272,7 @@ static int spi_imx_sdma_init(struct device *dev, struct spi_imx_data *spi_imx,
+ 	spi_imx->wml = spi_imx->devtype_data->fifo_size / 2;
  
- 	/* allocate dma resources, if available */
--	master->dma_rx = dma_request_slave_channel_reason(dev, "rx");
-+	master->dma_rx = dma_request_chan(dev, "rx");
- 	if (IS_ERR(master->dma_rx))
- 		return PTR_ERR(master->dma_rx);
- 
+ 	/* Prepare for TX DMA: */
 -	master->dma_tx = dma_request_slave_channel_reason(dev, "tx");
 +	master->dma_tx = dma_request_chan(dev, "tx");
  	if (IS_ERR(master->dma_tx)) {
  		ret = PTR_ERR(master->dma_tx);
- 		goto err_tx;
+ 		dev_dbg(dev, "can't get the TX DMA channel, error %d!\n", ret);
+@@ -1281,7 +1281,7 @@ static int spi_imx_sdma_init(struct device *dev, struct spi_imx_data *spi_imx,
+ 	}
+ 
+ 	/* Prepare for RX : */
+-	master->dma_rx = dma_request_slave_channel_reason(dev, "rx");
++	master->dma_rx = dma_request_chan(dev, "rx");
+ 	if (IS_ERR(master->dma_rx)) {
+ 		ret = PTR_ERR(master->dma_rx);
+ 		dev_dbg(dev, "can't get the RX DMA channel, error %d\n", ret);
 -- 
 2.20.1
 
