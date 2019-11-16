@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E583CFEBBC
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 Nov 2019 12:07:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD477FEBBD
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 Nov 2019 12:07:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=27g3lmihuTU977HO2XoXkg7oCckLzYsEFFYfW5JkPTA=; b=IiBcjAFRSUHt/C
-	wduLaxMa0+et0Tcq2NqqyzMfI9OohUnIs2Uj85G3RfN9S0iRFcPA5cmR4H64Ravx3IVmTgWFKmSjc
-	1ArBUvx/bmnmD36uPerryShso8RPVNqBccCY+xGx2dEzzJVwkgndZ3O8rdTdTk4vYR19bgQ5VgmKh
-	McoZzMxbpv3kSKr7BanOAqiaGTY+r1VQBIm0kwe9vC/HhLMxu2NWkfxSLTHhe82BV/MIcYRDN1v9e
-	W0rZTiGfSID1bWNJmAuTWs4BxUN6i4ug8XQs/8aFtfaDqRbLu0eyJ3gT0cSB8uaeyxg88W+bddplr
-	HJ66FOXpgkCr9nER9Q5A==;
+	List-Owner; bh=+L/nxB+35DaA/bVHfPYyNIFsk5eULGdCZUwsjkDVIQ4=; b=NfZhLMYw1bhpJP
+	1Y6eVMadLliXbsIinQW7NQdgQB0wlDjUZ9VpBkFdH6uMzSPo2sVkfWuxhhXzaDAradoq1xSoVuWKW
+	gCDOeZYvW7NUmmf2heIGyyUPgMv/k/X0Obj+EceH60Gsv1r+kPjSEsh2xyIN5nigxki/uxVniFKRq
+	6x4wrXeIZ2yoHtMUKZK0SrbREE4ah46/X6+5msUUo33qpqMKDefuFlwMZoN50tx1STV/sJuEvG5LC
+	iUObnMzHEH4k44gSAtMUkHII0C6svLHuv4VipqJgp+QUSduPjMQt2em56di9y4PJjknYsmtyuqWd8
+	cjWHwipl7/PZIbB3bCIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVvvQ-0001Sl-3d; Sat, 16 Nov 2019 11:07:32 +0000
+	id 1iVvvf-0001cN-C9; Sat, 16 Nov 2019 11:07:47 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVvvI-0001Mt-4K
- for linux-arm-kernel@lists.infradead.org; Sat, 16 Nov 2019 11:07:25 +0000
+ id 1iVvvI-0001NA-Iq
+ for linux-arm-kernel@lists.infradead.org; Sat, 16 Nov 2019 11:07:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
  Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:Reply-To:Content-ID
  :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
  Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=1ABfceJ8v9HVoFdZuVH2Lb3YMt4FTQFcIcYcGq5Usew=; b=WgV3OSCtufHCSOCuUZoXpRA94e
- PpWaLUCsnRUAe1X5UA7Wu3axSopVk9EEnDw8r6SbKtfnma5IQKejdgRwSBs9y44BbRiXP7ka5R6Mt
- A8Jo+dzBS27B6KByXv8MPiZE92TLkhsFRRCKPi73p81RupTi1TMVMci04IIJZGG+jmX/sbNToIvJ+
- erhMnbprp9rVysI8XaFN5OJ46htP31tW2vo3SsWeAe5PCeEXknJ6J8KHg05KGS4OUC1tabEy7lAns
- VRz7f+nbvRCDJeQoRlOVhi3g54+122CGrb9wF+6gZ3c3hYV0dQep+KQzihYrxE9+IXeKOLymXDh4L
- fHTMM91w==;
+ bh=OctE5FvIy835G4DwtyE7u1YIdiiGzFepyWBHSoY2nX8=; b=T0BiAl+peEgFTgQQQ/QSvpy8bm
+ g23kK4g25wUsK2QYNGYQzqJtz+GOlqxCHpIlTrcNnEemc5leCErWA0noHylQfz+xFUveDkOVLp/+y
+ b1DzaWeOprGgpE6UXYwZRJXY8oHAuAPupsxa0lqyWervDdnFlbk5NFSQpQ58m763XlTSG4gd8xMcK
+ iY2pgHIi9xQ8rc/b/sLFvSHYxAokfK3JG8+G6+VJSFfoqNENnx1Co8Lu9Q74y7QYmRzuMU97uABTa
+ uNqmwlHNur12/xYi+qkIIPwM+mI6QQhNs+72gcuhzAua5Wl2Z3g8CjYHu6mUpMPwvX7G3Elgj5Bpw
+ 9zbrUX4w==;
 Received: from e0022681537dd.dyn.armlinux.org.uk
- ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:37616 helo=rmk-PC.armlinux.org.uk)
+ ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:37618 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <rmk@armlinux.org.uk>)
- id 1iVvur-000788-IY; Sat, 16 Nov 2019 11:06:57 +0000
+ id 1iVvux-00078I-Fc; Sat, 16 Nov 2019 11:07:03 +0000
 Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <rmk@armlinux.org.uk>)
- id 1iVvuq-0002sd-KR; Sat, 16 Nov 2019 11:06:56 +0000
+ id 1iVvuv-0002sk-Sw; Sat, 16 Nov 2019 11:07:02 +0000
 From: Russell King <rmk+kernel@armlinux.org.uk>
 To: Gregory Clement <gregory.clement@bootlin.com>,
  Vladimir Vid <vladimir.vid@sartura.hr>
-Subject: [PATCH 1/2] arm64: dts: uDPU: fix broken ethernet
+Subject: [PATCH 2/2] arm64: dts: uDPU: remove i2c-fast-mode
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1iVvuq-0002sd-KR@rmk-PC.armlinux.org.uk>
-Date: Sat, 16 Nov 2019 11:06:56 +0000
+Message-Id: <E1iVvuv-0002sk-Sw@rmk-PC.armlinux.org.uk>
+Date: Sat, 16 Nov 2019 11:07:01 +0000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191116_030724_300273_01930462 
-X-CRM114-Status: UNSURE (   7.22  )
+X-CRM114-CacheID: sfid-20191116_030724_705169_DCA77797 
+X-CRM114-Status: UNSURE (   7.85  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -94,46 +94,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The uDPU uses both ethernet controllers, which ties up COMPHY 0 for
-eth1 and COMPHY 1 for eth0, with no USB3 comphy.  The addition of
-COMPHY support made the kernel override the setup by the boot loader
-breaking this platform by assuming that COMPHY 0 was always used for
-USB3.  Delete the USB3 COMPHY definition at platform level, and add
-phy specifications for the ethernet channels.
+The I2C bus violates the timing specifications when run in fast mode
+on the uDPU, so switch to 100kHz mode.
 
-Fixes: bd3d25b07342 ("arm64: dts: marvell: armada-37xx: link USB hosts with their PHYs")
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 ---
- arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-index bd4aab6092e0..e31813a4f972 100644
+index e31813a4f972..2ac1d9ae1e25 100644
 --- a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
 +++ b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-@@ -143,6 +143,7 @@
- 	phy-mode = "sgmii";
+@@ -119,12 +119,14 @@
  	status = "okay";
- 	managed = "in-band-status";
-+	phys = <&comphy1 0>;
- 	sfp = <&sfp_eth0>;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&i2c1_pins>;
++	/delete-property/mrvl,i2c-fast-mode;
  };
  
-@@ -150,11 +151,14 @@
- 	phy-mode = "sgmii";
+ &i2c1 {
  	status = "okay";
- 	managed = "in-band-status";
-+	phys = <&comphy0 1>;
- 	sfp = <&sfp_eth1>;
- };
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&i2c2_pins>;
++	/delete-property/mrvl,i2c-fast-mode;
  
- &usb3 {
- 	status = "okay";
-+	phys = <&usb2_utmi_otg_phy>;
-+	phy-names = "usb2-utmi-otg-phy";
- };
- 
- &uart0 {
+ 	lm75@48 {
+ 		status = "okay";
 -- 
 2.20.1
 
