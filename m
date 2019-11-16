@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 880A7FECEE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 Nov 2019 16:35:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D345FECF0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 Nov 2019 16:36:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tghvEFpEmffFUjLHGROnnQS4/2ZOTbbVio4hwTR8org=; b=PXfitfboO1hmex
-	iJRR5m5GYSCEfqmmR8lZgoQHmMzliSNzu05qWuTRitxT87Py4uVW96PUER3ONAU4ge2d+RJ4KQobG
-	xPVDlDCG3gBNpiEiVnV+OiHyrVWChHWbaQLlS2CsNZ04ocxVZ9PW2CDqS3EFJxo3YZIz9zwU8AMQS
-	9jJehAmJRpeamN3mw1WvWVp0RrBGkimAplRRtqapXe7LKC3lcfB5Ix82iHejg/Pp31XQROUyA9Cxe
-	1stt+EMepofOphXRdZ1H0xwXpy8cx6AwxWbxYVfzI7q3drhzWn92gsWwdf9VGZKxR2Glf/fCm8I7j
-	Dv67P4RoT9NItxocrAiA==;
+	List-Owner; bh=dEsV/HCv0WBzC8E9JDYNIXvwmW0GRSSvSnqgZPBubiQ=; b=RRNixgjaU4tp0L
+	L+UXdkuNCd+pUaLOGAhYhku/8UABXqsNGzr4vqWz8v5x0TOYYI5Ys3h1PIpk3Dj0+VlPGWex2Qdya
+	yWPXHHccscWw9bx8PL81IKKL6IZh1ZcSV07umQQdvTvm9P/PaIDWB9VYx2NGsocsesEE/6FXW264s
+	iCcD/YUgc3XwhlRExZVOCsCXEGaF0AHeduwm3dbX2GURjNrIAkUzZCrN7QUepEm6/Hvc8+e6ZL0Pk
+	534L9pCP4aIcTXNOlim/NwJdjJ1KGDy2M+gwvfhq4ukW/CeT8dwmXr/742FR1eXjy4WbJCAYDBDGL
+	DEG2qFPa6julscGrm9ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iW072-0003c3-1y; Sat, 16 Nov 2019 15:35:48 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iW07T-0003rX-Lz; Sat, 16 Nov 2019 15:36:15 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iW06t-0003bS-1m
- for linux-arm-kernel@lists.infradead.org; Sat, 16 Nov 2019 15:35:41 +0000
-Received: by mail-wm1-x343.google.com with SMTP id b17so13627623wmj.2
+ id 1iW07L-0003qi-1E
+ for linux-arm-kernel@lists.infradead.org; Sat, 16 Nov 2019 15:36:08 +0000
+Received: by mail-wr1-x443.google.com with SMTP id z10so14180626wrs.12
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 16 Nov 2019 07:35:35 -0800 (PST)
+ Sat, 16 Nov 2019 07:36:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+4M4UvCgtPgoFyUVLRuHwdJhHWp0OA8X9iVXKzPAkVw=;
- b=H1e8cTfsATzwnwWPQbmTRjVNZS2yEoelFwA+SwidadZ+kA1OigsRQX0lDzsmCljGdX
- B+xoWhxkm95RxjXu1Uuvhoa5OGe0oeL26SE+7Ay3fq5i3rEBLYxdqLsXV+wHsyUal75X
- /B1ZS1biYF65BDRVzRQv3fnKRRgsKdT1DDKBr6HRHjYFhnUTwCqavvDHCTDc+Uvzn9zX
- 9F+2ZCqsSEobR104rTKEeVUAgxTPlWQxkuKPq2AdWl8zSwsm3aV/6m9PbAV+tvopuA9s
- oNxh7wytS7Uw8NoxtxFtI+YtqVhYgAO2HzGlLmWMz6jfS6T+EtlNxpkfVrnzKqvpkpaR
- 39SA==
+ :cc; bh=KbnEz2iLp0S1UHHj6E2CggW0R84FXQGiB2UBE1fi4DM=;
+ b=ozWXkWyG3A5cGq+w9YTKCVqzCTjQ8/pABQLRwTEnuJfl/Tp871sIjQmSrxnJGEh08Y
+ YrRkxaBl5mLQmDGsDD+Z4bLJNvXWRzz4y+T/NmM6Ys+XlyCgjCwoG5ZuK55SzHUaITA4
+ blWvky3lGUjj0bogjQfjkjd+Lwpm0nC75cIgsf3JUvR/CaWS0aIl9Icbi5uy+NrhJi3h
+ +xXQ1dQs/EEJYNRm0wBFJ/HcFq6OpaP2w+OKLOeXWdQpIlg9I+DzElRS5whsbHO4p1Se
+ AZdBF7jdJ7sbB/w/VA4PIZeIxwYy/jm37DHbEwlOLgdD1OB3262csK72wAYffMvZBY0a
+ mQVQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=+4M4UvCgtPgoFyUVLRuHwdJhHWp0OA8X9iVXKzPAkVw=;
- b=FrwX5lDNu1dy+ZH/SJMAUMC+HWkU/HsLZs1cKWrYZC+cYyfKqHPGizrYG8w6nMxQG5
- yfXEY7S8gBeXYKWuQzYmbFthefBTkjLnMDFkQGmNu5ig0eJ3pBI3zWqvkK/lRapgMvGs
- G4dpoQNmm/ue7dkdJCv2leNi936Plb0rYAEggMGD7v6p8jPpi92ktm2e7xQcHe+/zUqU
- K6hv5O1GxTO51bcuNZBIzpWw3kdXnfeXeVZCxT26nbGgj5u4XL68GiBqk+xs6V4tz7O/
- GupXgFcMpITiA5mOCJcWaXlePvm4BKm+kcsRBMDSZhAxBp7yihRYwYdMGOeXPCdSY9Pe
- tGfQ==
-X-Gm-Message-State: APjAAAV0ghDGJxKJj61tUCS+aXpCdKjmew83SJnKGoOpEogFfSN4lbSz
- WZ5RaN/MiEEROQrHOWpijumnpGahcg2gvMY/yNClCA==
-X-Google-Smtp-Source: APXvYqzIZShtHSPYsTQ9A6Izde7YjeC2euGb9hisHE54uKMqkNk5g9525UgRZuaDKHRv6GBTVsYG6B2A81jhZn1e2cU=
-X-Received: by 2002:a1c:3d08:: with SMTP id k8mr19453365wma.119.1573918534193; 
- Sat, 16 Nov 2019 07:35:34 -0800 (PST)
+ bh=KbnEz2iLp0S1UHHj6E2CggW0R84FXQGiB2UBE1fi4DM=;
+ b=TfFSVwRHxYrJCw5vTLLWvQW6WbZRS2syRzgWS+fBKNJ0DFumNndwhDh/RpJXrHctmr
+ TwE0O2LXP7lXNzbFvkTl57QLwfMQUj0CY4Hz16IhzSv0tmoaA3ZZypavhtfcqcUm35u7
+ amhhn7s1U6ReMM8MDGffVTn3PWA/KM5kX5ErAsC03br/VGLbOVItgb/l9r8SXpA+6oNx
+ FNW7iKQlQi4I3/OP6TW86OVgVHrJ1ajIWzCS58XxFmAOJwCctT1X8erN+NGR1R/Tw4XC
+ cwGDC0DfWdwk+cLtxWCvr07M+vpz3yOnekd+aj8cRQz+dwyi3fYHhBQPO8uAyi/Wcuek
+ p9Dg==
+X-Gm-Message-State: APjAAAWXBc/V8UeD9Zw7bJz+6AyIYEvFO5C2HT6gOYGMT/2eHMRDcG5j
+ ap3ZGSR355nqg2GUmv5CKiXOcQPu74ZgAuc/0VXBGA==
+X-Google-Smtp-Source: APXvYqxM2t9raNDMK+NqCtMfmH9YSp0S1xJvHcg9AcRqIffms5FAXbS0KfhTtU5aXbUuBpruq71GwhjlcLcahEQ2KiQ=
+X-Received: by 2002:adf:b1cb:: with SMTP id r11mr12115894wra.246.1573918565380; 
+ Sat, 16 Nov 2019 07:36:05 -0800 (PST)
 MIME-Version: 1.0
 References: <5dcf8f19.1c69fb81.c02f3.91f2@mx.google.com>
  <CAKv+Gu_r2Cb3d3OXaOdYy+4V9noL6exJoK6pHevUm2WfPzsr1g@mail.gmail.com>
- <20191116123244.7be79023@why>
-In-Reply-To: <20191116123244.7be79023@why>
+ <20191116104932.GT25745@shell.armlinux.org.uk>
+In-Reply-To: <20191116104932.GT25745@shell.armlinux.org.uk>
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Sat, 16 Nov 2019 16:35:21 +0100
-Message-ID: <CAKv+Gu_ucSgTTJLZ19QezhO4bJLYFZJBQc5a7s3KEUQkEGyaqA@mail.gmail.com>
+Date: Sat, 16 Nov 2019 16:35:53 +0100
+Message-ID: <CAKv+Gu-uTGi2YHdtWDcCi4n7KbVJ39X-s3OkQTxm6tDA_Q7Ahg@mail.gmail.com>
 Subject: Re: rmk/for-next bisection: boot on
  ox820-cloudengines-pogoplug-series-3
-To: Marc Zyngier <maz@kernel.org>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191116_073539_224678_5F3D0A13 
-X-CRM114-Status: GOOD (  29.08  )
+X-CRM114-CacheID: sfid-20191116_073607_083891_9E788F74 
+X-CRM114-Status: GOOD (  21.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -93,14 +93,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kernelci.org bot" <bot@kernelci.org>, Arnd Bergmann <arnd@arndb.de>,
- tomeu.vizoso@collabora.com, Nicolas Pitre <nico@fluxnic.net>,
+Cc: "kernelci.org bot" <bot@kernelci.org>, Marc Zyngier <maz@kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, tomeu.vizoso@collabora.com,
+ Nicolas Pitre <nico@fluxnic.net>,
  Guillaume Tucker <guillaume.tucker@collabora.com>,
  Linus Walleij <linus.walleij@linaro.org>,
  Nick Desaulniers <ndesaulniers@google.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stefan Agner <stefan@agner.ch>, Russell King <linux@armlinux.org.uk>,
- Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
+ Stefan Agner <stefan@agner.ch>, Mark Brown <broonie@kernel.org>,
  Matt Hart <matthew.hart@linaro.org>, mgalka@collabora.com,
  Enric Balletbo i Serra <enric.balletbo@collabora.com>,
  Thomas Gleixner <tglx@linutronix.de>, Ard Biesheuvel <ardb@kernel.org>,
@@ -111,11 +111,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 16 Nov 2019 at 13:32, Marc Zyngier <maz@kernel.org> wrote:
+On Sat, 16 Nov 2019 at 11:49, Russell King - ARM Linux admin
+<linux@armlinux.org.uk> wrote:
 >
-> On Sat, 16 Nov 2019 10:26:27 +0000
-> Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
->
+> On Sat, Nov 16, 2019 at 10:26:27AM +0000, Ard Biesheuvel wrote:
 > > (+ Arnd)
 > >
 > > On Sat, 16 Nov 2019 at 05:54, kernelci.org bot <bot@kernelci.org> wrote:
@@ -146,12 +145,7 @@ On Sat, 16 Nov 2019 at 13:32, Marc Zyngier <maz@kernel.org> wrote:
 > > maintenance routines in the decompressor are also used for ARMv6 cores
 > > if they implement the CPUID extension, which I failed to realise when
 > > I sent this patch.
->
-> Nobody expects the 11MPcore... :-(.
->
-
-Yeah :-)
-
+> >
 > > There are roughly three ways to deal with this:
 > > 1) add a mask/val match pair for ARM11MPcore and ARM1176 that hardwire
 > > them to the ARMv6 routines, even though they implement the CPUID
@@ -168,141 +162,11 @@ Yeah :-)
 > > even though it mixes v7 and cp15 barriers in the same function, but
 > > that was mostly a cosmetic concern anyway.
 >
-> A potential alternative is to check for the presence of architected
-> barriers in a macro (see the hack below). I've given it a go as a 32bit
-> guest on an A72 box, both as ARM and Thumb, and nothing caught fire. Of
-> course, it remains to be seen whether it works on a v6 machine (I don't
-> think I have any left in my zoo -- please don't send me any), and more
-> importantly whether we want to carry this kind of horror...
+> I'm going to drop the patches - if -rc8 is released tomorrow maybe we
+> can have a go at solving it next week.
 >
 
-Thanks.
-
-But as I said, it might be better just to enable the CP15 barriers.
-They haven't been removed from the architecture yet, so they are
-always supported - we just have to enable them.
-
-
-
->
-> diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-> index ec14687aea3c..144de4b08547 100644
-> --- a/arch/arm/boot/compressed/head.S
-> +++ b/arch/arm/boot/compressed/head.S
-> @@ -656,19 +656,40 @@ params:           ldr     r0, =0x10000100         @ params_phys for RPC
->                 .align
->  #endif
->
-> -               .macro  v7dsb
-> +               @ Check for architected barrier instructions
-> +               @ Branch to the tgt label if v7 barriers are
-> +               @ not available. Corrupts the tmp register
-> +               @ as well as the flags.
-> +               .macro  no_v7_barrier, tmp, tgt
-> +               mrc     p15, 0, \tmp, c0, c2, 4 @ ID_ISAR4
-> +               tst     \tmp, #0xf << 16
-> +               beq     \tgt
-> +               .endm
-> +
-> +               @ The following macros will use zreg as a temp
-> +               @ register, and will zero it after use.
-> +               .macro  __dsb, zreg
-> +               no_v7_barrier   \zreg, .L__dsb\@
->   ARM(          .inst   0xf57ff04f              @ v7+ dsb       )
->   THUMB(                dsb                                             )
-> +               mov     \zreg, #0
-> +.L__dsb\@:     mcreq   p15, 0, \zreg, c7, c10, 4 @ dsb
->                 .endm
->
-> -               .macro  v7dmb
-> +               .macro  __dmb, zreg
-> +               no_v7_barrier   \zreg, .L__dmb\@
->   ARM(          .inst   0xf57ff05f              @ v7+ dmb       )
->   THUMB(                dmb                                             )
-> +               mov     \zreg, #0
-> +.L__dmb\@:     mcreq   p15, 0, \zreg, c7, c10, 5 @ dmb
->                 .endm
->
-> -               .macro  v7isb
-> +               .macro  __isb, zreg
-> +               no_v7_barrier   \zreg, .L__isb\@
->   ARM(          .inst   0xf57ff06f              @ v7+ isb       )
->   THUMB(                isb                                             )
-> +               mov     \zreg, #0
-> +.L__isb\@:     mcreq   p15, 0, \zreg, c7, c5, 4 @ isb
->                 .endm
->
->  /*
-> @@ -841,8 +862,7 @@ __armv7_mmu_cache_on:
->                 tst     r11, #0xf               @ VMSA
->                 movne   r6, #CB_BITS | 0x02     @ !XN
->                 blne    __setup_mmu
-> -               mov     r0, #0
-> -               v7dsb                           @ drain write buffer
-> +               __dsb   r0                      @ drain write buffer
->                 tst     r11, #0xf               @ VMSA
->                 mcrne   p15, 0, r0, c8, c7, 0   @ flush I,D TLBs
->  #endif
-> @@ -864,11 +884,10 @@ __armv7_mmu_cache_on:
->                 mcrne   p15, 0, r1, c3, c0, 0   @ load domain access control
->                 mcrne   p15, 0, r6, c2, c0, 2   @ load ttb control
->  #endif
-> -               v7isb
-> +               __isb   lr
->                 mcr     p15, 0, r0, c1, c0, 0   @ load control register
->                 mrc     p15, 0, r0, c1, c0, 0   @ and read it back
-> -               mov     r0, #0
-> -               v7isb
-> +               __isb   r0
->                 mov     pc, r12
->
->  __fa526_cache_on:
-> @@ -1169,8 +1188,8 @@ __armv7_mmu_cache_off:
->                 mcr     p15, 0, r0, c8, c7, 0   @ invalidate whole TLB
->  #endif
->                 mcr     p15, 0, r0, c7, c5, 6   @ invalidate BTC
-> -               v7dsb
-> -               v7isb
-> +               __dsb   r0
-> +               __isb   r0
->                 mov     pc, r12
->
->  /*
-> @@ -1233,7 +1252,7 @@ __armv7_mmu_cache_flush:
->                 mcr     p15, 0, r10, c7, c14, 0 @ clean+invalidate D
->                 b       iflush
->  hierarchical:
-> -               v7dmb
-> +               __dmb   r10
->                 stmfd   sp!, {r0-r7, r9-r11}
->                 mrc     p15, 1, r0, c0, c0, 1   @ read clidr
->                 ands    r3, r0, #0x7000000      @ extract loc from clidr
-> @@ -1247,7 +1266,7 @@ loop1:
->                 cmp     r1, #2                  @ see what cache we have at this level
->                 blt     skip                    @ skip if no cache, or just i-cache
->                 mcr     p15, 2, r10, c0, c0, 0  @ select current cache level in cssr
-> -               v7isb                           @ isb to sych the new cssr&csidr
-> +               __isb   r1                      @ isb to sych the new cssr&csidr
->                 mrc     p15, 1, r1, c0, c0, 0   @ read the new csidr
->                 and     r2, r1, #7              @ extract the length of the cache lines
->                 add     r2, r2, #4              @ add 4 (line length offset)
-> @@ -1279,10 +1298,10 @@ finished:
->                 mov     r10, #0                 @ switch back to cache level 0
->                 mcr     p15, 2, r10, c0, c0, 0  @ select current cache level in cssr
->  iflush:
-> -               v7dsb
-> +               __dsb   r10
->                 mcr     p15, 0, r10, c7, c5, 0  @ invalidate I+BTB
-> -               v7dsb
-> -               v7isb
-> +               __dsb   r10
-> +               __isb   r10
->                 mov     pc, lr
->
->  __armv5tej_mmu_cache_flush:
->
-> --
-> Jazz is not dead. It just smells funny...
+Fair enough.
 
 _______________________________________________
 linux-arm-kernel mailing list
