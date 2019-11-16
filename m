@@ -2,78 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD477FEBBD
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 Nov 2019 12:07:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A631FEC4C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 Nov 2019 13:33:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+L/nxB+35DaA/bVHfPYyNIFsk5eULGdCZUwsjkDVIQ4=; b=NfZhLMYw1bhpJP
-	1Y6eVMadLliXbsIinQW7NQdgQB0wlDjUZ9VpBkFdH6uMzSPo2sVkfWuxhhXzaDAradoq1xSoVuWKW
-	gCDOeZYvW7NUmmf2heIGyyUPgMv/k/X0Obj+EceH60Gsv1r+kPjSEsh2xyIN5nigxki/uxVniFKRq
-	6x4wrXeIZ2yoHtMUKZK0SrbREE4ah46/X6+5msUUo33qpqMKDefuFlwMZoN50tx1STV/sJuEvG5LC
-	iUObnMzHEH4k44gSAtMUkHII0C6svLHuv4VipqJgp+QUSduPjMQt2em56di9y4PJjknYsmtyuqWd8
-	cjWHwipl7/PZIbB3bCIg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mw0QOGxCxpl2K4izs8LAUjAMTOFM+xNST4qJa3AqnKk=; b=rk8aUz/GWI2Hep
+	DWc73QRdVU7VVvV0D0FALrqA3SVlD7vR6+aVn6Hvckpvny9nYf3kX/zJbWFFaG2QEIP05X+ya+muU
+	NPZChtWff+16xqR8HoknHxPlwMJtEDdvGl/GJFl1h9Vin635qWnirD4+JuYf31mXh1GQL2il+6XJQ
+	ywYY7kSBPBFxUjpC+g4W4EMjkwGNZ+opwWUo7IxVwjfIj22n7eLhc/qPRPNgP67B+Tj+jyjqop63v
+	T0JlObvJuzX3l/FzDbArosAVPH4cJ0iaixEfDgDDScOE5sDEfnMekzDORBbIra9Yr0ANzKITBgH92
+	2ytchc20mmHU5uyss/oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVvvf-0001cN-C9; Sat, 16 Nov 2019 11:07:47 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iVxGM-0001jM-C7; Sat, 16 Nov 2019 12:33:14 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVvvI-0001NA-Iq
- for linux-arm-kernel@lists.infradead.org; Sat, 16 Nov 2019 11:07:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
- Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:Reply-To:Content-ID
- :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
- Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=OctE5FvIy835G4DwtyE7u1YIdiiGzFepyWBHSoY2nX8=; b=T0BiAl+peEgFTgQQQ/QSvpy8bm
- g23kK4g25wUsK2QYNGYQzqJtz+GOlqxCHpIlTrcNnEemc5leCErWA0noHylQfz+xFUveDkOVLp/+y
- b1DzaWeOprGgpE6UXYwZRJXY8oHAuAPupsxa0lqyWervDdnFlbk5NFSQpQ58m763XlTSG4gd8xMcK
- iY2pgHIi9xQ8rc/b/sLFvSHYxAokfK3JG8+G6+VJSFfoqNENnx1Co8Lu9Q74y7QYmRzuMU97uABTa
- uNqmwlHNur12/xYi+qkIIPwM+mI6QQhNs+72gcuhzAua5Wl2Z3g8CjYHu6mUpMPwvX7G3Elgj5Bpw
- 9zbrUX4w==;
-Received: from e0022681537dd.dyn.armlinux.org.uk
- ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:37618 helo=rmk-PC.armlinux.org.uk)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1iVvux-00078I-Fc; Sat, 16 Nov 2019 11:07:03 +0000
-Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1iVvuv-0002sk-Sw; Sat, 16 Nov 2019 11:07:02 +0000
-From: Russell King <rmk+kernel@armlinux.org.uk>
-To: Gregory Clement <gregory.clement@bootlin.com>,
- Vladimir Vid <vladimir.vid@sartura.hr>
-Subject: [PATCH 2/2] arm64: dts: uDPU: remove i2c-fast-mode
+ id 1iVxGE-0001hv-O2
+ for linux-arm-kernel@lists.infradead.org; Sat, 16 Nov 2019 12:33:08 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1iVxFz-0002Zo-Ma; Sat, 16 Nov 2019 13:32:51 +0100
+Date: Sat, 16 Nov 2019 12:32:44 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: rmk/for-next bisection: boot on
+ ox820-cloudengines-pogoplug-series-3
+Message-ID: <20191116123244.7be79023@why>
+In-Reply-To: <CAKv+Gu_r2Cb3d3OXaOdYy+4V9noL6exJoK6pHevUm2WfPzsr1g@mail.gmail.com>
+References: <5dcf8f19.1c69fb81.c02f3.91f2@mx.google.com>
+ <CAKv+Gu_r2Cb3d3OXaOdYy+4V9noL6exJoK6pHevUm2WfPzsr1g@mail.gmail.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-Message-Id: <E1iVvuv-0002sk-Sw@rmk-PC.armlinux.org.uk>
-Date: Sat, 16 Nov 2019 11:07:01 +0000
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: ard.biesheuvel@linaro.org, bot@kernelci.org, arnd@arndb.de,
+ ardb@kernel.org, tomeu.vizoso@collabora.com, guillaume.tucker@collabora.com,
+ mgalka@collabora.com, rmk+kernel@armlinux.org.uk, broonie@kernel.org,
+ matthew.hart@linaro.org, khilman@baylibre.com, enric.balletbo@collabora.com,
+ linus.walleij@linaro.org, linux-kernel@vger.kernel.org, tglx@linutronix.de,
+ stefan@agner.ch, nico@fluxnic.net, ndesaulniers@google.com,
+ linux@armlinux.org.uk, linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191116_030724_705169_DCA77797 
-X-CRM114-Status: UNSURE (   7.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191116_043306_931130_2401CD00 
+X-CRM114-Status: GOOD (  23.08  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,45 +72,203 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Jason Cooper <jason@lakedaemon.net>, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: "kernelci.org bot" <bot@kernelci.org>, Arnd Bergmann <arnd@arndb.de>,
+ tomeu.vizoso@collabora.com, Nicolas Pitre <nico@fluxnic.net>,
+ Guillaume Tucker <guillaume.tucker@collabora.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Stefan Agner <stefan@agner.ch>, Russell King <linux@armlinux.org.uk>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
+ Matt Hart <matthew.hart@linaro.org>, mgalka@collabora.com,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Kevin Hilman <khilman@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The I2C bus violates the timing specifications when run in fast mode
-on the uDPU, so switch to 100kHz mode.
+On Sat, 16 Nov 2019 10:26:27 +0000
+Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
 
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
----
- arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts | 2 ++
- 1 file changed, 2 insertions(+)
+> (+ Arnd)
+> 
+> On Sat, 16 Nov 2019 at 05:54, kernelci.org bot <bot@kernelci.org> wrote:
+> >
+> > * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+> > * This automated bisection report was sent to you on the basis  *
+> > * that you may be involved with the breaking commit it has      *
+> > * found.  No manual investigation has been done to verify it,   *
+> > * and the root cause of the problem may be somewhere else.      *
+> > *                                                               *
+> > * If you do send a fix, please include this trailer:            *
+> > *   Reported-by: "kernelci.org bot" <bot@kernelci.org>          *
+> > *                                                               *
+> > * Hope this helps!                                              *
+> > * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+> >
+> > rmk/for-next bisection: boot on ox820-cloudengines-pogoplug-series-3
+> >
+> > Summary:
+> >   Start:      b6c3c42cfda0 ARM: 8938/1: kernel: initialize broadcast hrtimer based clock event device
+> >   Details:    https://kernelci.org/boot/id/5dcf3f0359b514dc84cf54c8
+> >   Plain log:  https://storage.kernelci.org//rmk/for-next/v5.4-rc5-26-gb6c3c42cfda0/arm/oxnas_v6_defconfig/gcc-8/lab-baylibre/boot-ox820-cloudengines-pogoplug-series-3.txt
+> >   HTML log:   https://storage.kernelci.org//rmk/for-next/v5.4-rc5-26-gb6c3c42cfda0/arm/oxnas_v6_defconfig/gcc-8/lab-baylibre/boot-ox820-cloudengines-pogoplug-series-3.html
+> >   Result:     ea70bf6e92c5 ARM: 8935/1: decompressor: avoid CP15 barrier instructions in v7 cache setup code
+> >  
+> 
+> OK, so this regression is caused by the fact that the 'armv7' cache
+> maintenance routines in the decompressor are also used for ARMv6 cores
+> if they implement the CPUID extension, which I failed to realise when
+> I sent this patch.
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-index e31813a4f972..2ac1d9ae1e25 100644
---- a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-@@ -119,12 +119,14 @@
- 	status = "okay";
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&i2c1_pins>;
-+	/delete-property/mrvl,i2c-fast-mode;
- };
+Nobody expects the 11MPcore... :-(.
+
+> There are roughly three ways to deal with this:
+> 1) add a mask/val match pair for ARM11MPcore and ARM1176 that hardwire
+> them to the ARMv6 routines, even though they implement the CPUID
+> extension. This would be very easy, but assumes that those two cores
+> are the only ones that are affected by this.
+> 2) modify the v7 routines to check for the L1Hvd MMFR1 attribute (in
+> the flush routine) and for the CP15BEN SCTLR bit (in the on/off
+> routines), and jump to the respective v6 variants if the CPU turns out
+> not to support the v7 one.
+> 3) revert the patch, and just enable the CP15 barriers (and issue a v7
+> barrier) in the v7 on() and flush() routines.
+> 
+> I am leaning towards the latter, since it is the most straightforward,
+> even though it mixes v7 and cp15 barriers in the same function, but
+> that was mostly a cosmetic concern anyway.
+
+A potential alternative is to check for the presence of architected
+barriers in a macro (see the hack below). I've given it a go as a 32bit
+guest on an A72 box, both as ARM and Thumb, and nothing caught fire. Of
+course, it remains to be seen whether it works on a v6 machine (I don't
+think I have any left in my zoo -- please don't send me any), and more
+importantly whether we want to carry this kind of horror...
+
+	M.
+
+diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+index ec14687aea3c..144de4b08547 100644
+--- a/arch/arm/boot/compressed/head.S
++++ b/arch/arm/boot/compressed/head.S
+@@ -656,19 +656,40 @@ params:		ldr	r0, =0x10000100		@ params_phys for RPC
+ 		.align
+ #endif
  
- &i2c1 {
- 	status = "okay";
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&i2c2_pins>;
-+	/delete-property/mrvl,i2c-fast-mode;
+-		.macro	v7dsb
++		@ Check for architected barrier instructions
++		@ Branch to the tgt label if v7 barriers are
++		@ not available. Corrupts the tmp register
++		@ as well as the flags.
++		.macro	no_v7_barrier, tmp, tgt
++		mrc	p15, 0, \tmp, c0, c2, 4 @ ID_ISAR4
++		tst	\tmp, #0xf << 16
++		beq	\tgt
++		.endm
++
++		@ The following macros will use zreg as a temp
++		@ register, and will zero it after use.
++		.macro	__dsb, zreg
++		no_v7_barrier	\zreg, .L__dsb\@
+  ARM(		.inst	0xf57ff04f		@ v7+ dsb	)
+  THUMB(		dsb						)
++		mov	\zreg, #0
++.L__dsb\@:	mcreq	p15, 0, \zreg, c7, c10, 4 @ dsb
+ 		.endm
  
- 	lm75@48 {
- 		status = "okay";
+-		.macro	v7dmb
++		.macro	__dmb, zreg
++		no_v7_barrier	\zreg, .L__dmb\@
+  ARM(		.inst	0xf57ff05f		@ v7+ dmb	)
+  THUMB(		dmb						)
++		mov	\zreg, #0
++.L__dmb\@:	mcreq	p15, 0, \zreg, c7, c10, 5 @ dmb
+ 		.endm
+ 
+-		.macro	v7isb
++		.macro	__isb, zreg
++		no_v7_barrier	\zreg, .L__isb\@
+  ARM(		.inst	0xf57ff06f		@ v7+ isb	)
+  THUMB(		isb						)
++		mov	\zreg, #0
++.L__isb\@:	mcreq	p15, 0, \zreg, c7, c5, 4 @ isb
+ 		.endm
+ 
+ /*
+@@ -841,8 +862,7 @@ __armv7_mmu_cache_on:
+ 		tst	r11, #0xf		@ VMSA
+ 		movne	r6, #CB_BITS | 0x02	@ !XN
+ 		blne	__setup_mmu
+-		mov	r0, #0
+-		v7dsb				@ drain write buffer
++		__dsb	r0			@ drain write buffer
+ 		tst	r11, #0xf		@ VMSA
+ 		mcrne	p15, 0, r0, c8, c7, 0	@ flush I,D TLBs
+ #endif
+@@ -864,11 +884,10 @@ __armv7_mmu_cache_on:
+ 		mcrne	p15, 0, r1, c3, c0, 0	@ load domain access control
+ 		mcrne   p15, 0, r6, c2, c0, 2   @ load ttb control
+ #endif
+-		v7isb
++		__isb	lr
+ 		mcr	p15, 0, r0, c1, c0, 0	@ load control register
+ 		mrc	p15, 0, r0, c1, c0, 0	@ and read it back
+-		mov	r0, #0
+-		v7isb
++		__isb	r0
+ 		mov	pc, r12
+ 
+ __fa526_cache_on:
+@@ -1169,8 +1188,8 @@ __armv7_mmu_cache_off:
+ 		mcr	p15, 0, r0, c8, c7, 0	@ invalidate whole TLB
+ #endif
+ 		mcr	p15, 0, r0, c7, c5, 6	@ invalidate BTC
+-		v7dsb
+-		v7isb
++		__dsb	r0
++		__isb	r0
+ 		mov	pc, r12
+ 
+ /*
+@@ -1233,7 +1252,7 @@ __armv7_mmu_cache_flush:
+ 		mcr	p15, 0, r10, c7, c14, 0	@ clean+invalidate D
+ 		b	iflush
+ hierarchical:
+-		v7dmb
++		__dmb	r10
+ 		stmfd	sp!, {r0-r7, r9-r11}
+ 		mrc	p15, 1, r0, c0, c0, 1	@ read clidr
+ 		ands	r3, r0, #0x7000000	@ extract loc from clidr
+@@ -1247,7 +1266,7 @@ loop1:
+ 		cmp	r1, #2			@ see what cache we have at this level
+ 		blt	skip			@ skip if no cache, or just i-cache
+ 		mcr	p15, 2, r10, c0, c0, 0	@ select current cache level in cssr
+-		v7isb				@ isb to sych the new cssr&csidr
++		__isb	r1			@ isb to sych the new cssr&csidr
+ 		mrc	p15, 1, r1, c0, c0, 0	@ read the new csidr
+ 		and	r2, r1, #7		@ extract the length of the cache lines
+ 		add	r2, r2, #4		@ add 4 (line length offset)
+@@ -1279,10 +1298,10 @@ finished:
+ 		mov	r10, #0			@ switch back to cache level 0
+ 		mcr	p15, 2, r10, c0, c0, 0	@ select current cache level in cssr
+ iflush:
+-		v7dsb
++		__dsb	r10
+ 		mcr	p15, 0, r10, c7, c5, 0	@ invalidate I+BTB
+-		v7dsb
+-		v7isb
++		__dsb	r10
++		__isb	r10
+ 		mov	pc, lr
+ 
+ __armv5tej_mmu_cache_flush:
+
 -- 
-2.20.1
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
