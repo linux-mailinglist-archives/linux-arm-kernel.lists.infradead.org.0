@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBE7DFF16B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 Nov 2019 17:12:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AEABFF2A0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 Nov 2019 17:21:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AzpVb9j/+96wVOyveczkUtnQ8Sh0UgK5yJICqDKwCT0=; b=STezp4PANIbWfd
-	V3MVw0TITyJQV4wNb6WpqVogadxMxrZgHjtQBwVhvSubJf6f7zmQNk6UamNRydhsQD4XFg3SjyEli
-	wS4Edd9YlKs36+VNYx7/LQgeDZdWgR4DxKpnBXdnkMDrwYjwjkSkynHNNre7kb0/R57SpirZcnRtf
-	LaXVUExPlqX1IVV3Vk5Yfu6coQ3iCshGOIC6Qq8ngIEDC6diDkWegOwh6EwhCSLdx3G8VKzCV33Cb
-	/1jsSWhgpmbSI+9tKK1ZiTZ8hWB1Wos4WfGomP+WaMJFbRtL8AaVAZV2uWttgA2edTZmiERNT0zKP
-	gSDouN4qOnkDR15Tv5zw==;
+	List-Owner; bh=v20Oin+SUtg2ehDEZ7SciqVwHSTBbN4ieNK5Gfun5zo=; b=aEO23NcyClX4yf
+	dHJ+bvdQpFqbJ3KapXQIGe/eAjGjtq3df7/sIq+shLQVIsraFcP/ffv12M5LJPxlLrISjYNClYtxl
+	bScimI1wV/oAkiJevoiy0apl3/kyyxCjERh8//pwycqxe3EO1RZ5HkhYHJ9kSO+VL+Ychh/vVzlmb
+	qCb9lXaXThqMQ9iHUCQvjm6+fy/Gz/WqROvDtKZmRVRvqm+o/+hNVwL1WYne/Z1lQ66+PpbbOlz4Y
+	LXTGY6eZbvy63SJjCYqiBU7DKhlpbYEMP/hjoJV3vFXpz4oVenhPJAhpvfbteJhekuhKfprJjyGnu
+	kK29noxFq3jh+vrQivtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iW0gI-0006N6-9J; Sat, 16 Nov 2019 16:12:14 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iW0on-0002Gl-UI; Sat, 16 Nov 2019 16:21:01 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iW0gB-0006MK-1L
- for linux-arm-kernel@lists.infradead.org; Sat, 16 Nov 2019 16:12:08 +0000
-Received: by mail-pf1-x441.google.com with SMTP id b19so8147657pfd.3
+ id 1iW0of-0002Fm-S9
+ for linux-arm-kernel@lists.infradead.org; Sat, 16 Nov 2019 16:20:55 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q13so8143770pff.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 16 Nov 2019 08:12:06 -0800 (PST)
+ Sat, 16 Nov 2019 08:20:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=DLBwNS04s3vTncd8h6wYjqP9/zqj5Hw6C3ovDZPMJNw=;
- b=aWDwUslpmIQVa4GYtfBvd2CMsrtdrtzAXSurvFxn9mgpdxN5BKh64sYvKAAbYDKfSj
- 4YMXLI9Fua6OvuYxk9aWHHjKqdWTtquxgyU2Ekugjx0AhH0B2lhuJMJVRi+yk65QDRdh
- CoQCd0F3l4D53DhJkRKl2tlal42XOJ5NtiyXPDIMbxtijjHPxUlqeCwzdUwgjDihryL/
- CJ5cwucFeg0xSf4TYkBeyf3doCOFGOg+Q1odrSMKSHCCaWOwWiJ4brhdjJUtyYBT8cDS
- 0TMlKeK9t/aA+6JqhkkAPhqn1+7XTFmvaVvt4Y/wY6Y5CY47hgLvCakN7MxAv9gtLu9L
- ul6A==
+ bh=3ThCOn+QwgspJ3kxAATKe5mgdC4dFBHT7/R2+FrM5uE=;
+ b=Ydq+ryFHXyCcCndRf0G9/AN0hFrn0rS9hynpb848hB82abgjXFz2z4BqEgRkNB9xXP
+ Ob7eqFO/Xq8K6kEL6fRe6Hc1dPEmOsQRmAby1ZRPGsNckUFgRusxiNKgizyKLm02Yxjq
+ iQwbo5HmHuT/iIlj/nGvHRgATRwG8PzwQpp0yT0WfqBlMhOiEclEC/gpEKQr52HlAJZ3
+ +Hq9I4na89H0lpGnirkHvAUIEole4l1UnFUE12jNCVFWEulvMT1wPRyjvOOacmaPnuwd
+ DXyYCwz/a9FToDYFTJJODt3VvIsxakpbROqhhyc3I4RJph+XpkV7wfGv1JhfTbzdFX/j
+ GidA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
  :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=DLBwNS04s3vTncd8h6wYjqP9/zqj5Hw6C3ovDZPMJNw=;
- b=K6hFw03TA3+T2Ghp0FHn4hxPVwlvVmXgdLQBdJIQO7T3pXM6q+d2HSYNrqTl+FRtLe
- rpqJJjtEldVnj9k5yD1fJkI2cKlqPNiDr4vwuFHnRIkmigrw7gqp5d4iWohwMPRQYELl
- H3ftUmIAVmD+7RdscaSLSDczw4lQNB8LuZgl496fn8U69JP8rR7KvQW7PFaAJUdUYPDh
- ucChSr1webBsnWR8SiOmNCHZdkr0taC03IL/65JL9Sr2gx8lM4vJtZSAjGBUmUHTXvux
- h/VPLGOWAbNNt32lOAP85/0IVgiD7C/++/CtNLlbzyPJp5BmJ/yUlx2mShqzAr+4LU1H
- mWeg==
-X-Gm-Message-State: APjAAAUtRWOMJgTqTsc/TBO6F6OwArmdPFGbN0YCxAvKPHeYizYy4pyk
- DkxYOHoHwTicfOq2/Rzp9YU=
-X-Google-Smtp-Source: APXvYqyUjaIuhyaRHuw7HuQ7JdypEFfmmQ6CWLzYfMZsoL54sdj1Me9cxMFnQnrWwYl56ebRbcqIPA==
-X-Received: by 2002:a63:e156:: with SMTP id h22mr7865038pgk.266.1573920726128; 
- Sat, 16 Nov 2019 08:12:06 -0800 (PST)
+ bh=3ThCOn+QwgspJ3kxAATKe5mgdC4dFBHT7/R2+FrM5uE=;
+ b=e4Svp7gNBxPQc1Z2S2jdJe3yXr1ig1mYF4l5JS2nA8bkNHYNDtVZRnMLk6FmbeEkr6
+ GYFUF7hiCFUKnuSBjY1BYEd6xIjnPIz3PH7ZJbN7d+udV+ODlbRMFCaZGiWARxMGpvRF
+ P4X8SU60SO24UFZn3i2XzGa0dlTxO+5itdY8Aa/cZTSNJOqWoI93fbIDfAAg2x7/ZR49
+ UDppl8I93HZmfg4uqMcuGJFRPbdhfUnS7n707y01GTi1uT9Wt25JBeTrpAXOjuiOQ5e+
+ JtCXRCv3rCD0/o0gIVqwQz3q4vNIg2VWzoxey164B9lcazXTSvji+vexaUtympEvBDFy
+ aXzA==
+X-Gm-Message-State: APjAAAWxpmplLg4JIND2obKB0gHUf2PKDqm15rgZflAb4Iijx2ecMr6u
+ JH6tT7PHJJwDShMlOY5OYqA=
+X-Google-Smtp-Source: APXvYqw8+YtA13X+2DcbFCm2WNiq/03l8qtmNPUJkbuUIVpNhKs1oVxFoW7yPNZWmSTRPhkaZHB4YA==
+X-Received: by 2002:a63:e70f:: with SMTP id b15mr22797805pgi.116.1573921252799; 
+ Sat, 16 Nov 2019 08:20:52 -0800 (PST)
 Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id 83sm14198063pgh.86.2019.11.16.08.12.04
+ by smtp.gmail.com with ESMTPSA id em16sm12577766pjb.21.2019.11.16.08.20.51
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 16 Nov 2019 08:12:05 -0800 (PST)
-Date: Sat, 16 Nov 2019 08:12:04 -0800
+ Sat, 16 Nov 2019 08:20:52 -0800 (PST)
+Date: Sat, 16 Nov 2019 08:20:51 -0800
 From: Guenter Roeck <linux@roeck-us.net>
 To: Eugen.Hristev@microchip.com
-Subject: Re: [PATCH v4 1/3] watchdog: sama5d4_wdt: cleanup the bit definitions
-Message-ID: <20191116161204.GA22568@roeck-us.net>
+Subject: Re: [PATCH v4 3/3] watchdog: sama5d4_wdt: addition of sam9x60
+ compatible watchdog
+Message-ID: <20191116162051.GA23056@roeck-us.net>
 References: <1573806579-7981-1-git-send-email-eugen.hristev@microchip.com>
+ <1573806579-7981-3-git-send-email-eugen.hristev@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1573806579-7981-1-git-send-email-eugen.hristev@microchip.com>
+In-Reply-To: <1573806579-7981-3-git-send-email-eugen.hristev@microchip.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191116_081207_081489_55C857D3 
-X-CRM114-Status: GOOD (  16.13  )
+X-CRM114-CacheID: sfid-20191116_082053_911386_860F20AA 
+X-CRM114-Status: GOOD (  20.03  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -112,84 +114,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 15, 2019 at 08:30:13AM +0000, Eugen.Hristev@microchip.com wrote:
+On Fri, Nov 15, 2019 at 08:30:18AM +0000, Eugen.Hristev@microchip.com wrote:
 > From: Eugen Hristev <eugen.hristev@microchip.com>
 > 
-> Cleanup the macro definitions to use BIT and align with two spaces.
+> Add support for SAM9X60 WDT into sama5d4_wdt.
+> This means that this driver gets a flag inside the data struct
+> that represents the sam9x60 support.
+> This flag differentiates between the two hardware blocks, and is set
+> according to the compatible of the driver instantiation.
 > 
 > Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
-
-Reviewed-by: Guenter Roeck <linux@roeck-us.net>
-
 > ---
 > Changes in v4:
-> - added UL suffix to value macros to avoid compile warnings
-> - modified file header to include new copyright and datasheet
-> - include linux/bits.h
+> - check compatible with different of_ function
+> - call irq parse and map only if need_irq
+> - changed tabbing in struct defintion
 > 
 > Changes in v3:
-> - new patch as requested from review on ML
+> - changed need_irq to bool, instead of a single bit variable.
+> - the platform data config struct is gone now, changed to a pointer to a bool
+> to have the sam9x60_support as 'true', pointing to a static bool with true value.
+> Can have a better solution than this ?
+> - the specific sam9x60_support flag is assigned at probe time, corresponding
+> to the flag value in .data
 > 
->  drivers/watchdog/at91sam9_wdt.h | 34 +++++++++++++++++++---------------
->  1 file changed, 19 insertions(+), 15 deletions(-)
+>  drivers/watchdog/at91sam9_wdt.h |  14 ++++++
+>  drivers/watchdog/sama5d4_wdt.c  | 109 +++++++++++++++++++++++++++++++---------
+>  2 files changed, 98 insertions(+), 25 deletions(-)
 > 
 > diff --git a/drivers/watchdog/at91sam9_wdt.h b/drivers/watchdog/at91sam9_wdt.h
-> index 390941c..abfe34d 100644
+> index abfe34d..4b3bd1d 100644
 > --- a/drivers/watchdog/at91sam9_wdt.h
 > +++ b/drivers/watchdog/at91sam9_wdt.h
-> @@ -4,33 +4,37 @@
->   *
->   * Copyright (C) 2007 Andrew Victor
->   * Copyright (C) 2007 Atmel Corporation.
-> + * Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries
->   *
->   * Watchdog Timer (WDT) - System peripherals regsters.
->   * Based on AT91SAM9261 datasheet revision D.
-> + * Based on SAM9X60 datasheet.
->   *
->   */
->  
->  #ifndef AT91_WDT_H
->  #define AT91_WDT_H
->  
-> +#include <linux/bits.h>
-> +
->  #define AT91_WDT_CR		0x00			/* Watchdog Control Register */
-> -#define		AT91_WDT_WDRSTT		(1    << 0)		/* Restart */
-> -#define		AT91_WDT_KEY		(0xa5 << 24)		/* KEY Password */
-> +#define  AT91_WDT_WDRSTT	BIT(0)			/* Restart */
-> +#define  AT91_WDT_KEY		(0xa5UL << 24)		/* KEY Password */
->  
+> @@ -24,7 +24,10 @@
 >  #define AT91_WDT_MR		0x04			/* Watchdog Mode Register */
-> -#define		AT91_WDT_WDV		(0xfff << 0)		/* Counter Value */
-> -#define			AT91_WDT_SET_WDV(x)	((x) & AT91_WDT_WDV)
-> -#define		AT91_WDT_WDFIEN		(1     << 12)		/* Fault Interrupt Enable */
-> -#define		AT91_WDT_WDRSTEN	(1     << 13)		/* Reset Processor */
-> -#define		AT91_WDT_WDRPROC	(1     << 14)		/* Timer Restart */
-> -#define		AT91_WDT_WDDIS		(1     << 15)		/* Watchdog Disable */
-> -#define		AT91_WDT_WDD		(0xfff << 16)		/* Delta Value */
-> -#define			AT91_WDT_SET_WDD(x)	(((x) << 16) & AT91_WDT_WDD)
-> -#define		AT91_WDT_WDDBGHLT	(1     << 28)		/* Debug Halt */
-> -#define		AT91_WDT_WDIDLEHLT	(1     << 29)		/* Idle Halt */
-> +#define  AT91_WDT_WDV		(0xfffUL << 0)		/* Counter Value */
-> +#define  AT91_WDT_SET_WDV(x)	((x) & AT91_WDT_WDV)
-> +#define  AT91_WDT_WDFIEN	BIT(12)		/* Fault Interrupt Enable */
-> +#define  AT91_WDT_WDRSTEN	BIT(13)		/* Reset Processor */
-> +#define  AT91_WDT_WDRPROC	BIT(14)		/* Timer Restart */
-> +#define  AT91_WDT_WDDIS		BIT(15)		/* Watchdog Disable */
-> +#define  AT91_WDT_WDD		(0xfffUL << 16)		/* Delta Value */
-> +#define  AT91_WDT_SET_WDD(x)	(((x) << 16) & AT91_WDT_WDD)
-> +#define  AT91_WDT_WDDBGHLT	BIT(28)		/* Debug Halt */
-> +#define  AT91_WDT_WDIDLEHLT	BIT(29)		/* Idle Halt */
+>  #define  AT91_WDT_WDV		(0xfffUL << 0)		/* Counter Value */
+>  #define  AT91_WDT_SET_WDV(x)	((x) & AT91_WDT_WDV)
+> +#define  AT91_SAM9X60_PERIODRST	BIT(4)		/* Period Reset */
+> +#define  AT91_SAM9X60_RPTHRST	BIT(5)		/* Minimum Restart Period */
+>  #define  AT91_WDT_WDFIEN	BIT(12)		/* Fault Interrupt Enable */
+> +#define  AT91_SAM9X60_WDDIS	BIT(12)		/* Watchdog Disable */
+>  #define  AT91_WDT_WDRSTEN	BIT(13)		/* Reset Processor */
+>  #define  AT91_WDT_WDRPROC	BIT(14)		/* Timer Restart */
+>  #define  AT91_WDT_WDDIS		BIT(15)		/* Watchdog Disable */
+> @@ -37,4 +40,15 @@
+>  #define  AT91_WDT_WDUNF		BIT(0)		/* Watchdog Underflow */
+>  #define  AT91_WDT_WDERR		BIT(1)		/* Watchdog Error */
 >  
-> -#define AT91_WDT_SR		0x08			/* Watchdog Status Register */
-> -#define		AT91_WDT_WDUNF		(1 << 0)		/* Watchdog Underflow */
-> -#define		AT91_WDT_WDERR		(1 << 1)		/* Watchdog Error */
-> +#define AT91_WDT_SR		0x08		/* Watchdog Status Register */
-> +#define  AT91_WDT_WDUNF		BIT(0)		/* Watchdog Underflow */
-> +#define  AT91_WDT_WDERR		BIT(1)		/* Watchdog Error */
->  
->  #endif
+> +#define AT91_SAM9X60_VR		0x08			/* Watchdog Timer Value Register */
+> +
+> +#define AT91_SAM9X60_WLR		0x0c
+> +#define  AT91_SAM9X60_COUNTER	(0xfffUL << 0)		/* Watchdog Period Value */
+> +#define  AT91_SAM9X60_SET_COUNTER(x)	((x) & AT91_SAM9X60_COUNTER)
+> +
+> +#define AT91_SAM9X60_IER		0x14		/* Interrupt Enable Register */
+> +#define  AT91_SAM9X60_PERINT		BIT(0)		/* Period Interrupt Enable */
+> +#define AT91_SAM9X60_IDR		0x18		/* Interrupt Disable Register */
+> +#define AT91_SAM9X60_ISR		0x1c		/* Interrupt Status Register */
+> +
+
+Lots of line-too-long checkpatch warnings. Please avoid.
+
+Thanks,
+Guenter
 
 _______________________________________________
 linux-arm-kernel mailing list
