@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D618FF9AF
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:49:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 242ABFF9B3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:50:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Iyn1ieM5v/9cVhbkgQRd6oZxCupUQ3IKgedTTWN/uV0=; b=WpfK1A5AoA43Vb48B2nnOO8Y5p
-	T343wklAK/DxRmb3DvcCe+0djNgoxmBTs6J8UPWctcnh+5LYus0z1fGjuHlUIBSZZpXf9P42ytLfp
-	AqV87gS3c5Epsc2tVr6tAn7FYXGocXnIKVVhmQDCFGzQPWY3y0wbSSi4H1XuCdTUTCJaUcbPkgBBQ
-	+OPA/0uDy7xYheRSaN+STwCcSpDY38lE881ij2xkx3L7RJLoe3Kwp0+JolcXZ9VzM+D3h7XrAAyVW
-	9ok2hUkazzLVKutQgeW+YeKCdHL7ZItYaeA0R4dxWFxbkqBUqPenvaON8GFt+uHD1TZCYcfe/pz2f
-	mNUSxHPg==;
+	bh=7mUcY0ItQVLimZ+EhG+er9Wobs00O2J+YXQQUOKwzxc=; b=qT+cSLUob2l5uRFlkpQILTXbS/
+	7HpFja/PWoEB1L1QfrS5uJi2taDREZ13dOBvj6kRVKu2asRLnMijQTpXd9Dgsbapf6zguID0SWoic
+	VzBH4ZdvnxgwXXb38Rkn9FG1PaB6ZUTud6kodvbIuEt7hhjtYyarB+DxR8uwbtMXVgIGRhDBoTDf4
+	dk039/UkLCDbaXGz9ps6unwuaTS1yWhmhl34seQJgUNadJorYisoYoqomhi0yOOMTydtwtwyroNPb
+	ynDU8t2sIOBOEvRRJAOKLdAXAZJhtlfZMyXQjD30mgyaYLW3X73MiDRzwdZwYCAm4GWMErNcZb0lp
+	4cxOMtlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWJzS-0001DZ-VH; Sun, 17 Nov 2019 12:49:18 +0000
+	id 1iWK0X-0003Em-UC; Sun, 17 Nov 2019 12:50:26 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWJwY-0007Nt-91
- for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:46:20 +0000
+ id 1iWJwZ-0007PF-ER
+ for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:46:22 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D4C9120097C;
- Sun, 17 Nov 2019 13:46:16 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2A51F200712;
+ Sun, 17 Nov 2019 13:46:18 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6298920000A;
- Sun, 17 Nov 2019 13:46:11 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7B7A92001FF;
+ Sun, 17 Nov 2019 13:46:12 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 162FF402AA;
- Sun, 17 Nov 2019 20:46:04 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4D42A402A9;
+ Sun, 17 Nov 2019 20:46:05 +0800 (SGT)
 From: Dong Aisheng <aisheng.dong@nxp.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH RESEND v3 12/15] arm64: dts: imx8qm: add dma ss support
-Date: Sun, 17 Nov 2019 20:43:52 +0800
-Message-Id: <1573994635-14479-13-git-send-email-aisheng.dong@nxp.com>
+Subject: [PATCH RESEND v3 13/15] arm64: dts: imx: add imx8qm common dts file
+Date: Sun, 17 Nov 2019 20:43:53 +0800
+Message-Id: <1573994635-14479-14-git-send-email-aisheng.dong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1573994635-14479-1-git-send-email-aisheng.dong@nxp.com>
 References: <1573994635-14479-1-git-send-email-aisheng.dong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_044618_493170_435D7299 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20191117_044619_846383_BCCEFD2D 
+X-CRM114-Status: GOOD (  12.41  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -77,13 +77,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The DMA SS of MX8QM is mostly the same as the DMA part in MX8QXP ADMA SS
-while it has one more instance for each of LPUART, ADC and LPI2C. And unlike
-MX8QXP that flexcan clocks are shared between multiple CAN instances,
-MX8QM has separate flexcan clock slice.
-
-So we reuse the most part of common imx8-ss-dma.dtsi and add new things
-based on it.
+The i.MX8QuadMax is a Dual (2x) Cortex-A72 and Quad (4x) Cortex-A53
+proccessor with powerful graphic and multimedia features. It uses
+the same architecture as MX8QXP, so many SS can be reused.
+This patch adds i.MX8QuadMax SoC dtsi file.
 
 Cc: Rob Herring <robh+dt@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
@@ -95,72 +92,201 @@ Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
 ---
 ChangeLog:
 v2->v3:
- * use new clock-indices IDs
- * update lpuart fallback compatible string to fsl,imx8qxp-lpuart
+ * remove a typo change on imx8qxp.dtsi which is unrelated to this patch
+ * include new imx8-lpcg.h
 v1->v2:
  * change to the new two cell scu clk binding
 ---
- .../boot/dts/freescale/imx8qm-ss-dma.dtsi     | 51 +++++++++++++++++++
- 1 file changed, 51 insertions(+)
- create mode 100644 arch/arm64/boot/dts/freescale/imx8qm-ss-dma.dtsi
+ arch/arm64/boot/dts/freescale/imx8qm.dtsi | 180 ++++++++++++++++++++++
+ 1 file changed, 180 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qm.dtsi
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8qm-ss-dma.dtsi b/arch/arm64/boot/dts/freescale/imx8qm-ss-dma.dtsi
+diff --git a/arch/arm64/boot/dts/freescale/imx8qm.dtsi b/arch/arm64/boot/dts/freescale/imx8qm.dtsi
 new file mode 100644
-index 000000000000..bbe5f5ecfb92
+index 000000000000..87a4c3ec8861
 --- /dev/null
-+++ b/arch/arm64/boot/dts/freescale/imx8qm-ss-dma.dtsi
-@@ -0,0 +1,51 @@
++++ b/arch/arm64/boot/dts/freescale/imx8qm.dtsi
+@@ -0,0 +1,180 @@
 +// SPDX-License-Identifier: GPL-2.0+
 +/*
 + * Copyright 2018-2019 NXP
 + *	Dong Aisheng <aisheng.dong@nxp.com>
 + */
 +
-+&dma_subsys {
-+	uart4_lpcg: clock-controller@5a4a0000 {
-+		compatible = "fsl,imx8qxp-lpcg";
-+		reg = <0x5a4a0000 0x10000>;
-+		#clock-cells = <1>;
-+		clocks = <&clk IMX_SC_R_UART_4 IMX_SC_PM_CLK_PER>,
-+			 <&dma_ipg_clk>;
-+		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_4>;
-+		clock-output-names = "uart4_lpcg_baud_clk",
-+				     "uart4_lpcg_ipg_clk";
-+		power-domains = <&pd IMX_SC_R_UART_4>;
++#include <dt-bindings/clock/imx8-lpcg.h>
++#include <dt-bindings/firmware/imx/rsrc.h>
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/interrupt-controller/arm-gic.h>
++#include <dt-bindings/pinctrl/pads-imx8qm.h>
++
++/ {
++	interrupt-parent = <&gic>;
++	#address-cells = <2>;
++	#size-cells = <2>;
++
++	aliases {
++		mmc0 = &usdhc1;
++		mmc1 = &usdhc2;
++		mmc2 = &usdhc3;
++		serial0 = &lpuart0;
 +	};
++
++	cpus {
++		#address-cells = <2>;
++		#size-cells = <0>;
++
++		cpu-map {
++			cluster0 {
++				core0 {
++					cpu = <&A53_0>;
++				};
++				core1 {
++					cpu = <&A53_1>;
++				};
++				core2 {
++					cpu = <&A53_2>;
++				};
++				core3 {
++					cpu = <&A53_3>;
++				};
++			};
++
++			cluster1 {
++				core0 {
++					cpu = <&A72_0>;
++				};
++				core1 {
++					cpu = <&A72_1>;
++				};
++			};
++		};
++
++		A53_0: cpu@0 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53", "arm,armv8";
++			reg = <0x0 0x0>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A53_1: cpu@1 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53", "arm,armv8";
++			reg = <0x0 0x1>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A53_2: cpu@2 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53", "arm,armv8";
++			reg = <0x0 0x2>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A53_3: cpu@3 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53", "arm,armv8";
++			reg = <0x0 0x3>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A72_0: cpu@100 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a72", "arm,armv8";
++			reg = <0x0 0x100>;
++			enable-method = "psci";
++			next-level-cache = <&A72_L2>;
++		};
++
++		A72_1: cpu@101 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a72", "arm,armv8";
++			reg = <0x0 0x101>;
++			enable-method = "psci";
++			next-level-cache = <&A72_L2>;
++		};
++
++		A53_L2: l2-cache0 {
++			compatible = "cache";
++		};
++
++		A72_L2: l2-cache1 {
++			compatible = "cache";
++		};
++	};
++
++	gic: interrupt-controller@51a00000 {
++		compatible = "arm,gic-v3";
++		reg = <0x0 0x51a00000 0 0x10000>, /* GIC Dist */
++		      <0x0 0x51b00000 0 0xC0000>, /* GICR */
++		      <0x0 0x52000000 0 0x2000>,  /* GICC */
++		      <0x0 0x52010000 0 0x1000>,  /* GICH */
++		      <0x0 0x52020000 0 0x20000>; /* GICV */
++		#interrupt-cells = <3>;
++		interrupt-controller;
++		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
++		interrupt-parent = <&gic>;
++	};
++
++	pmu {
++		compatible = "arm,armv8-pmuv3";
++		interrupts = <GIC_PPI 7 IRQ_TYPE_LEVEL_HIGH>;
++	};
++
++	psci {
++		compatible = "arm,psci-1.0";
++		method = "smc";
++	};
++
++	timer {
++		compatible = "arm,armv8-timer";
++		interrupts = <GIC_PPI 13 IRQ_TYPE_LEVEL_LOW>, /* Physical Secure */
++			     <GIC_PPI 14 IRQ_TYPE_LEVEL_LOW>, /* Physical Non-Secure */
++			     <GIC_PPI 11 IRQ_TYPE_LEVEL_LOW>, /* Virtual */
++			     <GIC_PPI 10 IRQ_TYPE_LEVEL_LOW>; /* Hypervisor */
++	};
++
++	scu {
++		compatible = "fsl,imx-scu";
++		mbox-names = "tx0", "tx1", "tx2", "tx3",
++			     "rx0", "rx1", "rx2", "rx3";
++		mboxes = <&lsio_mu1 0 0
++			  &lsio_mu1 0 1
++			  &lsio_mu1 0 2
++			  &lsio_mu1 0 3
++			  &lsio_mu1 1 0
++			  &lsio_mu1 1 1
++			  &lsio_mu1 1 2
++			  &lsio_mu1 1 3>;
++
++		pd: imx8qx-pd {
++			compatible = "fsl,imx8qm-scu-pd", "fsl,scu-pd";
++			#power-domain-cells = <1>;
++		};
++
++		clk: clock-controller {
++			compatible = "fsl,imx8qxp-clk", "fsl,scu-clk";
++			#clock-cells = <2>;
++		};
++
++		iomuxc: pinctrl {
++			compatible = "fsl,imx8qm-iomuxc";
++		};
++
++	};
++
++	/* sorted in register address */
++	#include "imx8-ss-dma.dtsi"
++	#include "imx8-ss-conn.dtsi"
++	#include "imx8-ss-lsio.dtsi"
 +};
 +
-+&lpuart0 {
-+	compatible = "fsl,imx8qm-lpuart", "fsl,imx8qxp-lpuart";
-+};
-+
-+&lpuart1 {
-+	compatible = "fsl,imx8qm-lpuart", "fsl,imx8qxp-lpuart";
-+};
-+
-+&lpuart2 {
-+	compatible = "fsl,imx8qm-lpuart", "fsl,imx8qxp-lpuart";
-+};
-+
-+&lpuart3 {
-+	compatible = "fsl,imx8qm-lpuart", "fsl,imx8qxp-lpuart";
-+};
-+
-+&i2c0 {
-+	compatible = "fsl,imx8qm-lpi2c", "fsl,imx7ulp-lpi2c";
-+};
-+
-+&i2c1 {
-+	compatible = "fsl,imx8qm-lpi2c", "fsl,imx7ulp-lpi2c";
-+};
-+
-+&i2c2 {
-+	compatible = "fsl,imx8qm-lpi2c", "fsl,imx7ulp-lpi2c";
-+};
-+
-+&i2c3 {
-+	compatible = "fsl,imx8qm-lpi2c", "fsl,imx7ulp-lpi2c";
-+};
++#include "imx8qm-ss-dma.dtsi"
++#include "imx8qm-ss-conn.dtsi"
++#include "imx8qm-ss-lsio.dtsi"
 -- 
 2.23.0
 
