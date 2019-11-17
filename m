@@ -2,89 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDB87FF988
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:42:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03173FF9A5
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:46:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H5ryx5u4UWQLjF5/bOhLfxggddbhUFKqteuaDEg2DBk=; b=fusZyVyNj3E6YP
-	Sl92GytX7K3GSf0wF6phSsqhQzP4IoEkrcSDttw1nSyCI9sm/mnf37/jafvtFkedw0XD35B6ncw6p
-	SdO8ozdxM5rD5KU7v6DCQIjr8wgrYJ+fhefqXn6uyiI1TsDQVEjmS8LoxepWbdVn+p4eoaZ7gyzQ0
-	4J3bxztF+xi46zfDXZsKqRQqMXptRuyXWvPT9/zOH09W0xnSnP74YreIkWJVKzS7qHdl0Q1hsgBg+
-	LVzQe8/7RnZmd/qeZ07A738Lyx+Yr61TPV/R1yw5JuPLHAuSuuHWqvCivNXIbc2WJbvQUbVEt225N
-	UuLIvGwObBCfHIMfupEQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=89T8z3t6FUHaxppRVQRqxf34bO2K1hnmAneF6Jl6b4A=; b=aPz
+	PC0cf/WiU742gMbL0PIwQOrPKK7CSFpwOA4EU2WuFdAHxBn9DeSGtAvz4uU8T6fuHH5cOc9DbBRXA
+	RFI6iI3EbWhOGBdoht+z+k8Us/lSvMqO3mvJ8ZJL4548SOey/kPsp7MpAeebzeEtKbflwxhC0REij
+	fKiKWWBNGBXlyEo6ziR4LbS9KKTuD0l8BtZrX8FBqUtEJUof9Pb+ou7eQEVNtYtjXCLtCSyNnMqhI
+	7gvrEKSU7Mt/48AAmvLCgwG/+Yq6gz/JTyQ+r1y2FUH54dr9tOIltJj9AVveZN5jF3J068oMuE0AY
+	84EGWTEAmimbiA39i8AtYo3S/QieLYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWJtG-0005iQ-Bs; Sun, 17 Nov 2019 12:42:54 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1iWJwa-0007Cl-81; Sun, 17 Nov 2019 12:46:20 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWJt6-0005i7-P0
- for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:42:46 +0000
-Received: by mail-il1-x141.google.com with SMTP id s75so13433884ilc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 17 Nov 2019 04:42:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ApUhfkWLXsiE5ipNrOg9nvjZff7lfGHQm/7BE1gXgAk=;
- b=GH1RrbLdXySK8/BmtcofgBiF1DmolDgC+MZGi6uL+u+jYV3vONIZyRUvdaN8lPFpvR
- dXTR43GhjRFIG12L4UnWGmcNch7FkXt2aqcE3LjZ8ifYgzQq7MI8RSMgsaUk0GGIFKtg
- 34Qik24fcfbCqXa9DCFl+nEyxrdZvH2T7DV6UiguKk4vm15NAUUluUnDjNmgJhRbKUt9
- jaEV+3ej9EGcsaSm08CSUbFDa6oY8NOv4pa/W8C13qGOgYoAdrLF9yaj0XiBWo/s2DO9
- S7kRZI8qLy9lqhSj04ysdB+Lquv2mv1rORiBIu6R5kZP1SVLdCwjQxpjDnkc+pLz+gB7
- J16A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ApUhfkWLXsiE5ipNrOg9nvjZff7lfGHQm/7BE1gXgAk=;
- b=FD75GfyetugCcfbTSNvOZRti9OGq3Ff6GhGMwZMufpUrBAV9wYgV8TqO/ILu7eRHR1
- uYi56COVTa5TbOq240DRyhppj2svV3Ldj93XVvy/OPwxI9fasQGMXN0VYhEu4BqPXA0z
- DLv8nYHYD6SgPQQrklLTxgtLCl/8YDzAmODFrZlm+FDMdCaljWHm2Sin7307O6SoECe5
- rzx+xBIQLT3FHvKiR91yYJPybjvuZJMQJogKM50HIYrklWxsDyDR/e67blHJEILt0kQ6
- zuc+5G2Wdd3wqJoQrAmT0ySeux1DQXGL8tWKfdYQq/iVlZaNJ64RyeivA72zYEryr/pg
- aAHQ==
-X-Gm-Message-State: APjAAAViNslxN75XzIX1oPi/5lqbcwjCnaUMKBPzHUoqDPIH1hPDqR9I
- wR/OCQ1IxQNmzbrKwF6XiMwwoGkIlpX9KW/2QPw=
-X-Google-Smtp-Source: APXvYqy3cQ3NGfwe6oEv94KxlSM9RkBL/JPl7Gv9l9OdJ8t8qboi3Dqzr7mEXKrTxXHVcP7jPihKpNT4KzdOe4hpTIE=
-X-Received: by 2002:a92:8b4e:: with SMTP id i75mr10100379ild.5.1573994563780; 
- Sun, 17 Nov 2019 04:42:43 -0800 (PST)
-MIME-Version: 1.0
-References: <1568081408-26800-1-git-send-email-aisheng.dong@nxp.com>
- <20190918060835.B93D420856@mail.kernel.org>
-In-Reply-To: <20190918060835.B93D420856@mail.kernel.org>
-From: Dong Aisheng <dongas86@gmail.com>
-Date: Sun, 17 Nov 2019 20:31:43 +0800
-Message-ID: <CAA+hA=Q+vcN1DQTc_E=ohcEz4b3oxcoYgGFsZYGuGH7h8hfCvQ@mail.gmail.com>
-Subject: Re: [PATCH V5 00/11] clk: imx8: add new clock binding for better pm
- support
-To: Stephen Boyd <sboyd@kernel.org>
+ id 1iWJwH-0007C9-EO
+ for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:46:03 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1A0F41A0991;
+ Sun, 17 Nov 2019 13:46:00 +0100 (CET)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9D2FA1A07F0;
+ Sun, 17 Nov 2019 13:45:55 +0100 (CET)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 164D14029F;
+ Sun, 17 Nov 2019 20:45:50 +0800 (SGT)
+From: Dong Aisheng <aisheng.dong@nxp.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH RESEND v3 00/15] arm64: dts: imx8: architecture improvement
+ and adding imx8qm support
+Date: Sun, 17 Nov 2019 20:43:40 +0800
+Message-Id: <1573994635-14479-1-git-send-email-aisheng.dong@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_044244_836882_80D425B9 
-X-CRM114-Status: GOOD (  16.76  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191117_044601_759419_2A04031D 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (dongas86[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dongas86[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,55 +66,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>,
- Michael Turquette <mturquette@baylibre.com>, dl-linux-imx <linux-imx@nxp.com>,
- Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-clk <linux-clk@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, sboyd@kernel.org,
+ mturquette@baylibre.com, linux-imx@nxp.com, kernel@pengutronix.de,
+ fabio.estevam@nxp.com, shawnguo@kernel.org, linux-clk@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stephen,
+IMX SCU based platforms (e.g. MX8QM/MX8QXP) are comprised of a number of SS
+(Subsystems), those SS may be shared between different SoCs while most of them
+can be reused like Devices Resources, Clocks, Power domains and etc.
 
-On Wed, Sep 18, 2019 at 2:21 PM Stephen Boyd <sboyd@kernel.org> wrote:
->
-> Quoting Dong Aisheng (2019-09-09 19:09:57)
-> > This is a follow up of this patch series.
-> > https://patchwork.kernel.org/cover/10924029/
-> > [V2,0/2] clk: imx: scu: add parsing clocks from device tree support
-> >
-> > This patch series is a preparation for the MX8 Architecture improvement.
-> > As for IMX SCU based platforms like MX8QM and MX8QXP, they are comprised
-> > of a couple of SS(Subsystems) while most of them within the same SS
-> > can be shared. e.g. Clocks, Devices and etc.
-> >
-> > However, current clock binding is using SW IDs for device tree to use
-> > which can cause troubles in writing the common <soc>-ss-xx.dtsi file for
-> > different SoCs.
-> >
-> > This patch series aims to introduce a new binding which is more close to
-> > hardware and platform independent and can makes us write a more general
-> > drivers for different SCU based SoCs.
-> >
-> > Another important thing is that on MX8, each Clock resource is associated
-> > with a power domain. So we have to attach that clock device to the power
-> > domain in order to make it work properly. Further more, the clock state
-> > will be lost when its power domain is completely off during suspend/resume,
-> > so we also introduce the clock state save&restore mechanism.
->
-> I had some more comments on v4. I'm going to wait for those to be
-> addressed before reviewing this series.
->
+This patch series aims to improve the MX8 architecture to comply with the HW
+design to save a lot of duplicated codes and benefits us a better
+maintainability and scalability in the future.
 
-Yes, i have addressed all your comments and resend v5.
-Could you help have a look at it?
-https://patchwork.kernel.org/cover/11248249/
+This patch series depends on another clk new binding series:
+https://patchwork.kernel.org/cover/11046287/
 
-Regards
-Aisheng
+NOTE: for the missing undocumented compatible strings for the new SoC IMX8QM
+in this patch series. It will be sent in another patch series later.
+
+ChangeLog:
+v2->v3:
+ * use clock-indices property instead of bit-offset property suggested by Shawn Guo
+ * rebase to latest shawn/for-next
+v1->v2:
+ * change to the new two cells scu clock binding, so original adding scu clocks
+   patches were removed.
+ * Move scu pd node above clk node
+
+Dong Aisheng (15):
+  arm64: dts: imx8qxp: add fallback compatible string for scu pd
+  arm64: dts: imx8qxp: move scu pd node before scu clock node
+  arm64: dts: imx8qxp: orginize dts in subsystems
+  arm64: dts: imx8: add lsio lpcg clocks
+  arm64: dts: imx8: add conn lpcg clocks
+  arm64: dts: imx8: add adma lpcg clocks
+  arm64: dts: imx8: switch to two cell scu clock binding
+  arm64: dts: imx8: switch to new lpcg clock binding
+  arm64: dts: imx8qm: add lsio ss support
+  arm64: dts: imx8qm: add conn ss support
+  arm64: dts: imx8: split adma ss into dma and audio ss
+  arm64: dts: imx8qm: add dma ss support
+  arm64: dts: imx: add imx8qm common dts file
+  arm64: dts: imx: add imx8qm mek support
+  arm64: defconfig: add imx8qm mek support
+
+ arch/arm64/boot/dts/freescale/Makefile        |   1 +
+ .../boot/dts/freescale/imx8-ss-adma.dtsi      |   8 +
+ .../boot/dts/freescale/imx8-ss-audio.dtsi     |  68 +++
+ .../boot/dts/freescale/imx8-ss-conn.dtsi      | 187 ++++++++
+ .../arm64/boot/dts/freescale/imx8-ss-ddr.dtsi |  19 +
+ .../arm64/boot/dts/freescale/imx8-ss-dma.dtsi | 210 +++++++++
+ .../boot/dts/freescale/imx8-ss-lsio.dtsi      | 311 +++++++++++++
+ arch/arm64/boot/dts/freescale/imx8qm-mek.dts  | 144 ++++++
+ .../boot/dts/freescale/imx8qm-ss-conn.dtsi    |  21 +
+ .../boot/dts/freescale/imx8qm-ss-dma.dtsi     |  51 +++
+ .../boot/dts/freescale/imx8qm-ss-lsio.dtsi    |  61 +++
+ arch/arm64/boot/dts/freescale/imx8qm.dtsi     | 180 ++++++++
+ .../boot/dts/freescale/imx8qxp-ai_ml.dts      |  20 +-
+ .../freescale/imx8qxp-colibri-eval-v3.dtsi    |   8 +-
+ .../boot/dts/freescale/imx8qxp-colibri.dtsi   |  12 +-
+ arch/arm64/boot/dts/freescale/imx8qxp-mek.dts |  12 +-
+ .../boot/dts/freescale/imx8qxp-ss-adma.dtsi   |  37 ++
+ .../boot/dts/freescale/imx8qxp-ss-conn.dtsi   |  21 +
+ .../boot/dts/freescale/imx8qxp-ss-lsio.dtsi   |  61 +++
+ arch/arm64/boot/dts/freescale/imx8qxp.dtsi    | 425 ++----------------
+ arch/arm64/configs/defconfig                  |   1 +
+ 21 files changed, 1432 insertions(+), 426 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8-ss-adma.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8-ss-audio.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8-ss-conn.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8-ss-ddr.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8-ss-dma.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8-ss-lsio.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qm-mek.dts
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qm-ss-conn.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qm-ss-dma.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qm-ss-lsio.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qm.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qxp-ss-adma.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qxp-ss-conn.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qxp-ss-lsio.dtsi
+
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
