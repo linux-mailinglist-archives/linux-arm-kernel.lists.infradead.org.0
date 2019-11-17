@@ -2,51 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E992FF865
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 08:23:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A993CFF8BA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 11:16:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Uu9fqgUDfd88kYBQy0jWEb7o2QUQ98Rq4r6ThYi3iAs=; b=IAkYuN534gx0wG
-	6q3HTVYnIVR2dTOwR5gAIkMcXy/ky1fcSerFTJeDgUlG3W5ZK6/U7PKe9yQAWZbr5Ki+x6dVbnAoG
-	zJduLtCz2KxhjVuBuMFIrg3vX9oT7/em6mReKrl5HoXn2F+VugNbSSTGw/01yjAo97cp7rN+Scuun
-	R8Ia+nsg7xjBQsbw4NFkYEJXMsJhwgob5yARa35RILl6qW3DsWlPvBSt6HKnpNMmSqsXjPHAx7XTL
-	7TGfnp7/RjI3TMRNsilOiLff87vlppX4ifvZUKz8whH23aVB5Hu/tfwOyFh1UHdHx+UAQm6CjiXFq
-	6lt7mcD64V12/RLqqDSw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BzXe2eyTiznmgy6TeoW8tdaXEqtS+3w7FUU+qTDo8rQ=; b=Snq
+	il93ePgzS9w7+wRayM5RvC1kD/R6sGBIrsZyDCkGXjwPUWB6Hco9T63ingmITo0FKyxECKKTP8Fs1
+	AWQP7OSwqKUNh+j24tEPU4Ti/yBHA4yRN9VI9wyqKCe5HqiGrhJBQEXs2juR1QnZI900HTxZ6YPR4
+	zTlsO3poOA283U7Xl7gn3bi+ZHGhnEjcm0a6bNiY0QgwR81cJu0VqEhna7J2fGRIZfBq9ujRwRki8
+	uBrM9/83sRSpdeJQVrjNKOUIqMdUJXSM75iRAIKAuE1/5VAllCkUdF4Kdeq41rLbbj9mfvSoX+O/V
+	s3hOhhSRTYujgCmRN6VqmoIekkvKDHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWEtk-0001B1-NE; Sun, 17 Nov 2019 07:23:04 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWEsA-000851-6I; Sun, 17 Nov 2019 07:21:28 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 9E238B317;
- Sun, 17 Nov 2019 07:21:22 +0000 (UTC)
-From: =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>
-To: linux-realtek-soc@lists.infradead.org
-Subject: [PATCH v3 8/8] ARM: realtek: Enable RTD1195 arch timer
-Date: Sun, 17 Nov 2019 08:21:09 +0100
-Message-Id: <20191117072109.20402-9-afaerber@suse.de>
+	id 1iWHbs-0001yQ-MY; Sun, 17 Nov 2019 10:16:48 +0000
+Received: from lnfm1.sai.msu.ru ([93.180.26.255])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iWHbb-0001xV-Il; Sun, 17 Nov 2019 10:16:33 +0000
+Received: from dragon.sai.msu.ru (dragon.sai.msu.ru [93.180.26.172])
+ by lnfm1.sai.msu.ru (8.14.1/8.12.8) with ESMTP id xAHAFqoA011611;
+ Sun, 17 Nov 2019 13:15:57 +0300
+Received: from oak.local (unknown [92.243.181.209])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (Client did not present a certificate)
+ by dragon.sai.msu.ru (Postfix) with ESMTPSA id 335C137923;
+ Sun, 17 Nov 2019 13:15:53 +0300 (MSK)
+From: "Matwey V. Kornilov" <matwey@sai.msu.ru>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Ezequiel Garcia <ezequiel@collabora.com>,
+ Akash Gajjar <akash@openedev.com>,
+ "Matwey V. Kornilov" <matwey@sai.msu.ru>,
+ devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
+ BINDINGS), 
+ linux-arm-kernel@lists.infradead.org (moderated list:ARM/Rockchip SoC support),
+ linux-rockchip@lists.infradead.org (open list:ARM/Rockchip SoC support),
+ linux-kernel@vger.kernel.org (open list)
+Subject: [PATCH v2] arm64: dts: rockchip: Enable PCIe for Radxa Rock Pi 4 board
+Date: Sun, 17 Nov 2019 13:15:37 +0300
+Message-Id: <20191117101545.6406-1-matwey@sai.msu.ru>
 X-Mailer: git-send-email 2.16.4
-In-Reply-To: <20191117072109.20402-1-afaerber@suse.de>
-References: <20191117072109.20402-1-afaerber@suse.de>
-MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191116_232126_430705_76C8BA6B 
-X-CRM114-Status: GOOD (  10.15  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191117_021631_982599_2FB11683 
+X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [93.180.26.255 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,41 +68,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, matwey.kornilov@gmail.com,
+ open list <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/Rockchip SoC support"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-V2l0aG91dCB0aGlzIG1hZ2ljIHdyaXRlIHRoZSB0aW1lciBkb2Vzbid0IHdvcmsgYW5kIGJvb3Qg
-Z2V0cyBzdHVjay4KClNpZ25lZC1vZmYtYnk6IEFuZHJlYXMgRsOkcmJlciA8YWZhZXJiZXJAc3Vz
-ZS5kZT4KLS0tCiBXaGF0IGlzIHRoZSBuYW1lIG9mIHRoZSByZWdpc3RlciAweGZmMDE4MDAwPwog
-SXMgMHgxIGEgQklUKDApIHdyaXRlLCBvciBob3cgYXJlIHRoZSByZWdpc3RlciBiaXRzIGRlZmlu
-ZWQ/CiBJcyB0aGlzIGEgcmVzZXQgb3IgYSBjbG9jayBnYXRlPyBIb3cgc2hvdWxkIHdlIG1vZGVs
-IGl0IGluIERUPwogCiB2MiAtPiB2MzogVW5jaGFuZ2VkCiAKIHYyOiBOZXcKIAogYXJjaC9hcm0v
-bWFjaC1yZWFsdGVrL3J0ZDExOTUuYyB8IDE2ICsrKysrKysrKysrKysrKysKIDEgZmlsZSBjaGFu
-Z2VkLCAxNiBpbnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vbWFjaC1yZWFsdGVr
-L3J0ZDExOTUuYyBiL2FyY2gvYXJtL21hY2gtcmVhbHRlay9ydGQxMTk1LmMKaW5kZXggYjMxYTQw
-NjZiZTg3Li4wNTMyMzc5Yzc0ZjUgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL21hY2gtcmVhbHRlay9y
-dGQxMTk1LmMKKysrIGIvYXJjaC9hcm0vbWFjaC1yZWFsdGVrL3J0ZDExOTUuYwpAQCAtNSw2ICs1
-LDkgQEAKICAqIENvcHlyaWdodCAoYykgMjAxNy0yMDE5IEFuZHJlYXMgRsOkcmJlcgogICovCiAK
-KyNpbmNsdWRlIDxsaW51eC9jbGstcHJvdmlkZXIuaD4KKyNpbmNsdWRlIDxsaW51eC9jbG9ja3Nv
-dXJjZS5oPgorI2luY2x1ZGUgPGxpbnV4L2lvLmg+CiAjaW5jbHVkZSA8bGludXgvbWVtYmxvY2su
-aD4KICNpbmNsdWRlIDxhc20vbWFjaC9hcmNoLmg+CiAKQEAgLTI0LDYgKzI3LDE4IEBAIHN0YXRp
-YyB2b2lkIF9faW5pdCBydGQxMTk1X3Jlc2VydmUodm9pZCkKIAlydGQxMTk1X21lbWJsb2NrX3Jl
-bW92ZSgweDE4MTAwMDAwLCAweDAxMDAwMDAwKTsKIH0KIAorc3RhdGljIHZvaWQgX19pbml0IHJ0
-ZDExOTVfaW5pdF90aW1lKHZvaWQpCit7CisJdm9pZCBfX2lvbWVtICpiYXNlOworCisJYmFzZSA9
-IGlvcmVtYXAoMHhmZjAxODAwMCwgNCk7CisJd3JpdGVsKDB4MSwgYmFzZSk7CisJaW91bm1hcChi
-YXNlKTsKKworCW9mX2Nsa19pbml0KE5VTEwpOworCXRpbWVyX3Byb2JlKCk7Cit9CisKIHN0YXRp
-YyBjb25zdCBjaGFyICpjb25zdCBydGQxMTk1X2R0X2NvbXBhdFtdIF9faW5pdGNvbnN0ID0gewog
-CSJyZWFsdGVrLHJ0ZDExOTUiLAogCU5VTEwKQEAgLTMxLDYgKzQ2LDcgQEAgc3RhdGljIGNvbnN0
-IGNoYXIgKmNvbnN0IHJ0ZDExOTVfZHRfY29tcGF0W10gX19pbml0Y29uc3QgPSB7CiAKIERUX01B
-Q0hJTkVfU1RBUlQocnRkMTE5NSwgIlJlYWx0ZWsgUlREMTE5NSIpCiAJLmR0X2NvbXBhdCA9IHJ0
-ZDExOTVfZHRfY29tcGF0LAorCS5pbml0X3RpbWUgPSBydGQxMTk1X2luaXRfdGltZSwKIAkucmVz
-ZXJ2ZSA9IHJ0ZDExOTVfcmVzZXJ2ZSwKIAkubDJjX2F1eF92YWwgPSAweDAsCiAJLmwyY19hdXhf
-bWFzayA9IH4weDAsCi0tIAoyLjE2LjQKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Radxa Rock Pi 4 is equipped with M.2 PCIe slot,
+so enable PCIe for the board.
+
+The changes has been tested with Intel SSD 660p series device.
+
+    01:00.0 Class 0108: Device 8086:f1a8 (rev 03)
+
+Signed-off-by: Matwey V. Kornilov <matwey@sai.msu.ru>
+---
+
+Changes since v1:
+ - add vpcie3v3-supply
+
+ arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts b/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
+index 1ae1ebd4efdd..01f8effd8206 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts
+@@ -463,6 +463,21 @@
+ 	pmu1830-supply = <&vcc_3v0>;
+ };
+ 
++&pcie_phy {
++	status = "okay";
++};
++
++&pcie0 {
++	status = "okay";
++
++	ep-gpios = <&gpio4 RK_PD3 GPIO_ACTIVE_HIGH>;
++	max-link-speed = <2>;
++	num-lanes = <4>;
++	pinctrl-0 = <&pcie_clkreqnb_cpm>;
++	pinctrl-names = "default";
++	vpcie3v3-supply = <&vcc3v3_pcie>;
++};
++
+ &pinctrl {
+ 	bt {
+ 		bt_enable_h: bt-enable-h {
+-- 
+2.16.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
