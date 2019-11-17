@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD20BFF9A6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:46:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0B92FF9A7
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:47:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=krC9dtozIlFznhMhp801Er0IspNJs3iBBkyshmuXaA4=; b=gjlJpc6J1EUzh7Uig+1rCrDbE8
-	vQhg/u/uwu3yI+Qmi4cwtB/0QsvwBHPSktyKIjS16M3Yf9wJKBJzCTqXmzh9P1eWn5hisnHpUJNul
-	BdldZkTxJa8VtGeSCMEYiGuFVfcm0HQrTp89ScDkbB+QZgeVUINVEmVjqYAOfUrjgOIeHQYp/GyKV
-	jyf9yIjPF2+kDvV9em8RasUvbs0W4JFzMtiTGEV7GLv60AaB937WOr/N1A+mEgk92BajAFyLe529/
-	Ud9xyFmOlpvY0h6gCkAwFZbgrZbd3E8noZqclpHH9XYZnR0IvaEsH1Vc9wUMudYSA9A2ZIdmWencW
-	X1YqEgMg==;
+	bh=4SrvY3TAiYDlI2GbaeXiAEvzHdSJ7TZxgy2cTFlMLhs=; b=LJVfNVFtSmdCVOJ5bt76cuv/QN
+	2yb5yb1zJQ0lrFECNQ/YL5H6W2dlXGzXOb7QPBEjCkFFaXAw+ciR96YiKyHjgDlMTuorYak7y6Pgi
+	+Feco48wUY2XYr/mLwvWtK0O/1JRovd9eo3WhPYYbcjPg6l5z04N9C77/xY2vJzpVF4Z5/peIQXCv
+	rvXAm0g228ecXfSvwQJWKF9GaHKZ0aay/HEXTMn8R5Y2V9CxcxDZDrwd6EeDh36JCmFlGOXzVy8ie
+	h3y6E2qH/mFAnZIshS3/m+ujPUwTrCMxnmz0B6OgB56Ka6RMeUGvIrirhKZt9BNLlD5rtrXc1NxTC
+	qer/cFAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWJwr-0007Sy-Vz; Sun, 17 Nov 2019 12:46:38 +0000
+	id 1iWJxH-0007f0-LK; Sun, 17 Nov 2019 12:47:03 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWJwK-0007CZ-Ss
- for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:46:06 +0000
+ id 1iWJwM-0007Ck-0o
+ for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:46:07 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 91F042001FF;
- Sun, 17 Nov 2019 13:46:03 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C80BD2007B9;
+ Sun, 17 Nov 2019 13:46:04 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1E7F82000D2;
- Sun, 17 Nov 2019 13:45:58 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5504B20000A;
+ Sun, 17 Nov 2019 13:45:59 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1700F402AA;
- Sun, 17 Nov 2019 20:45:51 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 588BF402A9;
+ Sun, 17 Nov 2019 20:45:52 +0800 (SGT)
 From: Dong Aisheng <aisheng.dong@nxp.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH RESEND v3 01/15] arm64: dts: imx8qxp: add fallback compatible
- string for scu pd
-Date: Sun, 17 Nov 2019 20:43:41 +0800
-Message-Id: <1573994635-14479-2-git-send-email-aisheng.dong@nxp.com>
+Subject: [PATCH RESEND v3 02/15] arm64: dts: imx8qxp: move scu pd node before
+ scu clock node
+Date: Sun, 17 Nov 2019 20:43:42 +0800
+Message-Id: <1573994635-14479-3-git-send-email-aisheng.dong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1573994635-14479-1-git-send-email-aisheng.dong@nxp.com>
 References: <1573994635-14479-1-git-send-email-aisheng.dong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_044605_070373_D8CBE347 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20191117_044606_209051_664CEC46 
+X-CRM114-Status: GOOD (  10.14  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -78,8 +78,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According to binding doc, add the fallback compatible string for
-scu pd.
+SCU clock depends on SCU Power domain. So let's move scu pd node
+before scu clock to make it probe earlier.
 
 Cc: Rob Herring <robh+dt@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
@@ -92,22 +92,37 @@ Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
 ChangeLog:
  v2: new patch
 ---
- arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-index 9646a41e0532..dc3d408d091a 100644
+index dc3d408d091a..c716b7b81b36 100644
 --- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
 +++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-@@ -171,7 +171,7 @@
- 		};
+@@ -153,6 +153,11 @@
+ 			  &lsio_mu1 1 3
+ 			  &lsio_mu1 3 3>;
  
- 		pd: imx8qx-pd {
--			compatible = "fsl,imx8qxp-scu-pd";
++		pd: imx8qx-pd {
 +			compatible = "fsl,imx8qxp-scu-pd", "fsl,scu-pd";
- 			#power-domain-cells = <1>;
++			#power-domain-cells = <1>;
++		};
++
+ 		clk: clock-controller {
+ 			compatible = "fsl,imx8qxp-clk";
+ 			#clock-cells = <1>;
+@@ -170,11 +175,6 @@
+ 			#size-cells = <1>;
  		};
  
+-		pd: imx8qx-pd {
+-			compatible = "fsl,imx8qxp-scu-pd", "fsl,scu-pd";
+-			#power-domain-cells = <1>;
+-		};
+-
+ 		scu_key: scu-key {
+ 			compatible = "fsl,imx8qxp-sc-key", "fsl,imx-sc-key";
+ 			linux,keycodes = <KEY_POWER>;
 -- 
 2.23.0
 
