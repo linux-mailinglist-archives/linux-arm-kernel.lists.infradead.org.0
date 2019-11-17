@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D309FF97D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:28:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24609FF97E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:28:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,50 +11,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=bPInji2u59DLptYiN3kViVw33/jFgsIhq4apJEniKCE=; b=dFVVpOo6IXAkxn3ltVVfClXi01
-	19TxG0Op8JoCGJlGMuIJZwxUmxBlHqApibTt6kSu38P/WtTpVV/CnJvdI2KEMgWFPH5Sv5zI0wK8u
-	mGbONHWsnGiz6L672iACKa073Mo/Z2cDVgsvRyvmYsqA1Hz7Qz6q8VHWGnSn//Z34AI4YIFzVQFnW
-	tpzPiFCHpuW//y8EofWl/qYoV3Pil4D24SosZ5zVs1pR+apgmvN7s++SJXNSSgO7OEAQAVp3aL+2e
-	Wk4qm7PJ39LFx5OqCf2zhrpayNDa53ngT2S+/EbgaAm2qw5Jj9ZZFuDnS/tgbEydJ2+Qk52iITG23
-	3bRAG47A==;
+	bh=Gy5zZJET5M6w8wMuI939+5Er33bqyT5prZh3TV1GZIc=; b=ilS08WbOyXM8jUD/6G5Js1ba9j
+	AErRqcPW9APrQBmGOgYwxfZc/twDH+VVS65wjUf5NQ7jl9LisQ2H0NukQlwBjUEibUlidWRFxuwUE
+	BvfRlej20b/zesuQu281Lb8FFt95m8ojzfKkqsiGTKixsy9IFr8FKuyS3YZzJJT790I1GBJXS/Ncb
+	l3TXqg+N/oW+PJ3RwFVwZ/mofWqshW1R5M9zF5mb6YbMUh8yVDTbcrZsSeEBFzHiwUyszawSQg9W7
+	WTYNe+JW6Ue3JAt9yvba1T7iHiUeeGqHAq9aGZzVqtPuMId1wsonRmD1GxvyOb7GsHvoJOJNNVr2n
+	GzTCbYMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWJfN-0007l5-0x; Sun, 17 Nov 2019 12:28:33 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iWJfe-0007w2-5t; Sun, 17 Nov 2019 12:28:50 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWJeN-00075t-Ud
- for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:27:35 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E325E1A06F2;
- Sun, 17 Nov 2019 13:27:28 +0100 (CET)
+ id 1iWJeO-00075u-2y
+ for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:27:36 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2C6D320000A;
+ Sun, 17 Nov 2019 13:27:29 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 052071A06D4;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A98D72000E4;
  Sun, 17 Nov 2019 13:27:24 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id F1E3A402A9;
- Sun, 17 Nov 2019 20:27:17 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 0FA78402AA;
+ Sun, 17 Nov 2019 20:27:18 +0800 (SGT)
 From: Dong Aisheng <aisheng.dong@nxp.com>
 To: linux-clk@vger.kernel.org
-Subject: [PATCH RESEND v5 02/11] dt-bindings: clock: imx-lpcg: add support to
- parse clocks from device tree
-Date: Sun, 17 Nov 2019 20:25:10 +0800
-Message-Id: <1573993519-14308-3-git-send-email-aisheng.dong@nxp.com>
+Subject: [PATCH RESEND v5 03/11] clk: imx: scu: add two cells binding support
+Date: Sun, 17 Nov 2019 20:25:11 +0800
+Message-Id: <1573993519-14308-4-git-send-email-aisheng.dong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1573993519-14308-1-git-send-email-aisheng.dong@nxp.com>
 References: <1573993519-14308-1-git-send-email-aisheng.dong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_042732_263760_58176061 
-X-CRM114-Status: GOOD (  14.52  )
+X-CRM114-CacheID: sfid-20191117_042732_548323_5BE5AD58 
+X-CRM114-Status: GOOD (  13.13  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,9 +67,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, devicetree@vger.kernel.org,
- sboyd@kernel.org, mturquette@baylibre.com, linux-imx@nxp.com,
- kernel@pengutronix.de, fabio.estevam@nxp.com, shawnguo@kernel.org,
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, sboyd@kernel.org,
+ mturquette@baylibre.com, linux-imx@nxp.com, kernel@pengutronix.de,
+ fabio.estevam@nxp.com, shawnguo@kernel.org,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -78,123 +77,436 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MX8QM and MX8QXP LPCG Clocks are mostly the same except they may reside
-in different subsystems across CPUs and also vary a bit on the availability.
+This patch implements the new two cells binding for SCU clocks.
+The usage is as follows:
+clocks = <&uart0_clk IMX_SC_R_UART_0 IMX_SC_PM_CLK_PER>
 
-Same as SCU clock, we want to move the clock definition into device tree
-which can fully decouple the dependency of Clock ID definition from device
-tree and make us be able to write a fully generic lpcg clock driver.
+Due to each SCU clock is associated with a power domain, without power
+on the domain, the SCU clock can't work. So we create platform devices
+for each domain clock respectively and manually attach the required domain
+before register the clock devices, then we can register clocks in the
+clock platform driver accordingly.
 
-And we can also use the existence of clock nodes in device tree to address
-the device and clock availability differences across different SoCs.
+Note because we do not have power domain info in device tree and the SCU
+resource ID is the same for power domain and clock, so we use resource ID
+to find power domains.
 
+Later, we will also use this clock platform driver to support suspend/resume
+and runtime pm.
+
+Cc: Stephen Boyd <sboyd@kernel.org>
+Cc: Shawn Guo <shawnguo@kernel.org>
 Cc: Sascha Hauer <kernel@pengutronix.de>
 Cc: Michael Turquette <mturquette@baylibre.com>
-Cc: devicetree@vger.kernel.org
-Acked-by: Shawn Guo <shawnguo@kernel.org>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
 ---
 ChangeLog:
 v4->v5:
- * no changes
-v3->v4:
- * change bit-offset property to clock-indices
- * use constant macro to define clock indinces
- * drop hw-autogate property which is still not used by drivers
-v2->v3:
- * no changes
-v1->v2:
- * Update example
- * Add power domain property
+ * remove global clock_cells
+ * put node after using of_find_compatible_node()
+ * using ERR_PTR(ret) instead of ERR_PTR(-ENOMEM)
+v4: no changes
+v3: new patch
 ---
- .../bindings/clock/imx8qxp-lpcg.txt           | 36 +++++++++++++++----
- include/dt-bindings/clock/imx8-lpcg.h         | 14 ++++++++
- 2 files changed, 44 insertions(+), 6 deletions(-)
- create mode 100644 include/dt-bindings/clock/imx8-lpcg.h
+ drivers/clk/imx/clk-imx8qxp.c | 129 ++++++++++++++++---------------
+ drivers/clk/imx/clk-scu.c     | 140 +++++++++++++++++++++++++++++++++-
+ drivers/clk/imx/clk-scu.h     |  25 ++++--
+ 3 files changed, 227 insertions(+), 67 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt b/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
-index 965cfa42e025..cad8fc4284aa 100644
---- a/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
-+++ b/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
-@@ -11,6 +11,21 @@ enabled by these control bits, it might still not be running based
- on the base resource.
+diff --git a/drivers/clk/imx/clk-imx8qxp.c b/drivers/clk/imx/clk-imx8qxp.c
+index 5e2903efc488..2ec3e0c4749d 100644
+--- a/drivers/clk/imx/clk-imx8qxp.c
++++ b/drivers/clk/imx/clk-imx8qxp.c
+@@ -22,9 +22,10 @@ static int imx8qxp_clk_probe(struct platform_device *pdev)
+ 	struct device_node *ccm_node = pdev->dev.of_node;
+ 	struct clk_hw_onecell_data *clk_data;
+ 	struct clk_hw **clks;
++	u32 clk_cells;
+ 	int ret, i;
  
- Required properties:
-+- compatible:		Should be one of:
-+			  "fsl,imx8qxp-lpcg"
-+			  "fsl,imx8qm-lpcg" followed by "fsl,imx8qxp-lpcg".
-+- reg:			Address and length of the register set.
-+- #clock-cells:		Should be 1. One LPCG supports multiple clocks.
-+- clocks:		Input parent clocks phandle array for each clock.
-+- clock-indices:	An integer array indicating the bit offset for each clock.
-+			Refer to <include/dt-bindings/clock/imx8-lpcg.h> for the
-+			supported LPCG clock indices.
-+- clock-output-names:	Shall be the corresponding names of the outputs.
-+			NOTE this property must be specified in the same order
-+			as the clock-indices property.
-+- power-domains:	Should contain the power domain used by this clock.
+-	ret = imx_clk_scu_init();
++	ret = imx_clk_scu_init(ccm_node);
+ 	if (ret)
+ 		return ret;
+ 
+@@ -33,6 +34,9 @@ static int imx8qxp_clk_probe(struct platform_device *pdev)
+ 	if (!clk_data)
+ 		return -ENOMEM;
+ 
++	if (of_property_read_u32(ccm_node, "#clock-cells", &clk_cells))
++		return -EINVAL;
 +
-+Legacy binding (DEPRECATED):
- - compatible:	Should be one of:
- 		  "fsl,imx8qxp-lpcg-adma",
- 		  "fsl,imx8qxp-lpcg-conn",
-@@ -33,10 +48,19 @@ Examples:
+ 	clk_data->num = IMX_SCU_CLK_END;
+ 	clks = clk_data->hws;
  
- #include <dt-bindings/clock/imx8qxp-clock.h>
+@@ -55,78 +59,78 @@ static int imx8qxp_clk_probe(struct platform_device *pdev)
+ 	clks[IMX_LSIO_BUS_CLK]		= clk_hw_register_fixed_rate(NULL, "lsio_bus_clk_root", NULL, 0, 100000000);
  
--conn_lpcg: clock-controller@5b200000 {
--	compatible = "fsl,imx8qxp-lpcg-conn";
--	reg = <0x5b200000 0xb0000>;
-+sdhc0_lpcg: clock-controller@5b200000 {
-+	compatible = "fsl,imx8qxp-lpcg";
-+	reg = <0x5b200000 0x10000>;
- 	#clock-cells = <1>;
-+	clocks = <&sdhc0_clk IMX_SC_PM_CLK_PER>,
-+		 <&conn_ipg_clk>, <&conn_axi_clk>;
-+	clock-indices = <IMX_LPCG_CLK_0>,
-+			<IMX_LPCG_CLK_4>,
-+			<IMX_LPCG_CLK_5>;
-+	clock-output-names = "sdhc0_lpcg_per_clk",
-+			     "sdhc0_lpcg_ipg_clk",
-+			     "sdhc0_lpcg_ahb_clk";
-+	power-domains = <&pd IMX_SC_R_SDHC_0>;
- };
+ 	/* ARM core */
+-	clks[IMX_A35_CLK]		= imx_clk_scu("a35_clk", IMX_SC_R_A35, IMX_SC_PM_CLK_CPU);
++	clks[IMX_A35_CLK]		= imx_clk_scu("a35_clk", IMX_SC_R_A35, IMX_SC_PM_CLK_CPU, clk_cells);
  
- usdhc1: mmc@5b010000 {
-@@ -44,8 +68,8 @@ usdhc1: mmc@5b010000 {
- 	interrupt-parent = <&gic>;
- 	interrupts = <GIC_SPI 232 IRQ_TYPE_LEVEL_HIGH>;
- 	reg = <0x5b010000 0x10000>;
--	clocks = <&conn_lpcg IMX8QXP_CONN_LPCG_SDHC0_IPG_CLK>,
--		 <&conn_lpcg IMX8QXP_CONN_LPCG_SDHC0_PER_CLK>,
--		 <&conn_lpcg IMX8QXP_CONN_LPCG_SDHC0_HCLK>;
-+	clocks = <&sdhc0_lpcg IMX_LPCG_CLK_4>,
-+		 <&sdhc0_lpcg IMX_LPCG_CLK_0>,
-+		 <&sdhc0_lpcg IMX_LPCG_CLK_5>;
- 	clock-names = "ipg", "per", "ahb";
- };
-diff --git a/include/dt-bindings/clock/imx8-lpcg.h b/include/dt-bindings/clock/imx8-lpcg.h
-new file mode 100644
-index 000000000000..df90aad26265
---- /dev/null
-+++ b/include/dt-bindings/clock/imx8-lpcg.h
-@@ -0,0 +1,14 @@
-+/* SPDX-License-Identifier: GPL-2.0+ */
-+/*
-+ * Copyright 2019 NXP
-+ *   Dong Aisheng <aisheng.dong@nxp.com>
-+ */
+ 	/* LSIO SS */
+-	clks[IMX_LSIO_PWM0_CLK]		= imx_clk_scu("pwm0_clk", IMX_SC_R_PWM_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_PWM1_CLK]		= imx_clk_scu("pwm1_clk", IMX_SC_R_PWM_1, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_PWM2_CLK]		= imx_clk_scu("pwm2_clk", IMX_SC_R_PWM_2, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_PWM3_CLK]		= imx_clk_scu("pwm3_clk", IMX_SC_R_PWM_3, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_PWM4_CLK]		= imx_clk_scu("pwm4_clk", IMX_SC_R_PWM_4, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_PWM5_CLK]		= imx_clk_scu("pwm5_clk", IMX_SC_R_PWM_5, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_PWM6_CLK]		= imx_clk_scu("pwm6_clk", IMX_SC_R_PWM_6, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_PWM7_CLK]		= imx_clk_scu("pwm7_clk", IMX_SC_R_PWM_7, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_GPT0_CLK]		= imx_clk_scu("gpt0_clk", IMX_SC_R_GPT_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_GPT1_CLK]		= imx_clk_scu("gpt1_clk", IMX_SC_R_GPT_1, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_GPT2_CLK]		= imx_clk_scu("gpt2_clk", IMX_SC_R_GPT_2, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_GPT3_CLK]		= imx_clk_scu("gpt3_clk", IMX_SC_R_GPT_3, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_GPT4_CLK]		= imx_clk_scu("gpt4_clk", IMX_SC_R_GPT_4, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_FSPI0_CLK]	= imx_clk_scu("fspi0_clk", IMX_SC_R_FSPI_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_LSIO_FSPI1_CLK]	= imx_clk_scu("fspi1_clk", IMX_SC_R_FSPI_1, IMX_SC_PM_CLK_PER);
++	clks[IMX_LSIO_PWM0_CLK]		= imx_clk_scu("pwm0_clk", IMX_SC_R_PWM_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_PWM1_CLK]		= imx_clk_scu("pwm1_clk", IMX_SC_R_PWM_1, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_PWM2_CLK]		= imx_clk_scu("pwm2_clk", IMX_SC_R_PWM_2, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_PWM3_CLK]		= imx_clk_scu("pwm3_clk", IMX_SC_R_PWM_3, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_PWM4_CLK]		= imx_clk_scu("pwm4_clk", IMX_SC_R_PWM_4, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_PWM5_CLK]		= imx_clk_scu("pwm5_clk", IMX_SC_R_PWM_5, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_PWM6_CLK]		= imx_clk_scu("pwm6_clk", IMX_SC_R_PWM_6, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_PWM7_CLK]		= imx_clk_scu("pwm7_clk", IMX_SC_R_PWM_7, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_GPT0_CLK]		= imx_clk_scu("gpt0_clk", IMX_SC_R_GPT_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_GPT1_CLK]		= imx_clk_scu("gpt1_clk", IMX_SC_R_GPT_1, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_GPT2_CLK]		= imx_clk_scu("gpt2_clk", IMX_SC_R_GPT_2, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_GPT3_CLK]		= imx_clk_scu("gpt3_clk", IMX_SC_R_GPT_3, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_GPT4_CLK]		= imx_clk_scu("gpt4_clk", IMX_SC_R_GPT_4, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_FSPI0_CLK]	= imx_clk_scu("fspi0_clk", IMX_SC_R_FSPI_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_LSIO_FSPI1_CLK]	= imx_clk_scu("fspi1_clk", IMX_SC_R_FSPI_1, IMX_SC_PM_CLK_PER, clk_cells);
+ 
+ 	/* ADMA SS */
+-	clks[IMX_ADMA_UART0_CLK]	= imx_clk_scu("uart0_clk", IMX_SC_R_UART_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_UART1_CLK]	= imx_clk_scu("uart1_clk", IMX_SC_R_UART_1, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_UART2_CLK]	= imx_clk_scu("uart2_clk", IMX_SC_R_UART_2, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_UART3_CLK]	= imx_clk_scu("uart3_clk", IMX_SC_R_UART_3, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_SPI0_CLK]		= imx_clk_scu("spi0_clk",  IMX_SC_R_SPI_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_SPI1_CLK]		= imx_clk_scu("spi1_clk",  IMX_SC_R_SPI_1, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_SPI2_CLK]		= imx_clk_scu("spi2_clk",  IMX_SC_R_SPI_2, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_SPI3_CLK]		= imx_clk_scu("spi3_clk",  IMX_SC_R_SPI_3, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_CAN0_CLK]		= imx_clk_scu("can0_clk",  IMX_SC_R_CAN_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_I2C0_CLK]		= imx_clk_scu("i2c0_clk",  IMX_SC_R_I2C_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_I2C1_CLK]		= imx_clk_scu("i2c1_clk",  IMX_SC_R_I2C_1, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_I2C2_CLK]		= imx_clk_scu("i2c2_clk",  IMX_SC_R_I2C_2, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_I2C3_CLK]		= imx_clk_scu("i2c3_clk",  IMX_SC_R_I2C_3, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_FTM0_CLK]		= imx_clk_scu("ftm0_clk",  IMX_SC_R_FTM_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_FTM1_CLK]		= imx_clk_scu("ftm1_clk",  IMX_SC_R_FTM_1, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_ADC0_CLK]		= imx_clk_scu("adc0_clk",  IMX_SC_R_ADC_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_PWM_CLK]		= imx_clk_scu("pwm_clk",   IMX_SC_R_LCD_0_PWM_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_ADMA_LCD_CLK]		= imx_clk_scu("lcd_clk",   IMX_SC_R_LCD_0, IMX_SC_PM_CLK_PER);
++	clks[IMX_ADMA_UART0_CLK]	= imx_clk_scu("uart0_clk", IMX_SC_R_UART_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_UART1_CLK]	= imx_clk_scu("uart1_clk", IMX_SC_R_UART_1, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_UART2_CLK]	= imx_clk_scu("uart2_clk", IMX_SC_R_UART_2, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_UART3_CLK]	= imx_clk_scu("uart3_clk", IMX_SC_R_UART_3, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_SPI0_CLK]		= imx_clk_scu("spi0_clk",  IMX_SC_R_SPI_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_SPI1_CLK]		= imx_clk_scu("spi1_clk",  IMX_SC_R_SPI_1, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_SPI2_CLK]		= imx_clk_scu("spi2_clk",  IMX_SC_R_SPI_2, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_SPI3_CLK]		= imx_clk_scu("spi3_clk",  IMX_SC_R_SPI_3, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_CAN0_CLK]		= imx_clk_scu("can0_clk",  IMX_SC_R_CAN_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_I2C0_CLK]		= imx_clk_scu("i2c0_clk",  IMX_SC_R_I2C_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_I2C1_CLK]		= imx_clk_scu("i2c1_clk",  IMX_SC_R_I2C_1, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_I2C2_CLK]		= imx_clk_scu("i2c2_clk",  IMX_SC_R_I2C_2, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_I2C3_CLK]		= imx_clk_scu("i2c3_clk",  IMX_SC_R_I2C_3, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_FTM0_CLK]		= imx_clk_scu("ftm0_clk",  IMX_SC_R_FTM_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_FTM1_CLK]		= imx_clk_scu("ftm1_clk",  IMX_SC_R_FTM_1, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_ADC0_CLK]		= imx_clk_scu("adc0_clk",  IMX_SC_R_ADC_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_PWM_CLK]		= imx_clk_scu("pwm_clk",   IMX_SC_R_LCD_0_PWM_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_ADMA_LCD_CLK]		= imx_clk_scu("lcd_clk",   IMX_SC_R_LCD_0, IMX_SC_PM_CLK_PER, clk_cells);
+ 
+ 	/* Connectivity */
+-	clks[IMX_CONN_SDHC0_CLK]	= imx_clk_scu("sdhc0_clk", IMX_SC_R_SDHC_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_CONN_SDHC1_CLK]	= imx_clk_scu("sdhc1_clk", IMX_SC_R_SDHC_1, IMX_SC_PM_CLK_PER);
+-	clks[IMX_CONN_SDHC2_CLK]	= imx_clk_scu("sdhc2_clk", IMX_SC_R_SDHC_2, IMX_SC_PM_CLK_PER);
+-	clks[IMX_CONN_ENET0_ROOT_CLK]	= imx_clk_scu("enet0_clk", IMX_SC_R_ENET_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_CONN_ENET0_BYPASS_CLK]	= imx_clk_scu("enet0_bypass_clk", IMX_SC_R_ENET_0, IMX_SC_PM_CLK_BYPASS);
+-	clks[IMX_CONN_ENET0_RGMII_CLK]	= imx_clk_scu("enet0_rgmii_clk", IMX_SC_R_ENET_0, IMX_SC_PM_CLK_MISC0);
+-	clks[IMX_CONN_ENET1_ROOT_CLK]	= imx_clk_scu("enet1_clk", IMX_SC_R_ENET_1, IMX_SC_PM_CLK_PER);
+-	clks[IMX_CONN_ENET1_BYPASS_CLK]	= imx_clk_scu("enet1_bypass_clk", IMX_SC_R_ENET_1, IMX_SC_PM_CLK_BYPASS);
+-	clks[IMX_CONN_ENET1_RGMII_CLK]	= imx_clk_scu("enet1_rgmii_clk", IMX_SC_R_ENET_1, IMX_SC_PM_CLK_MISC0);
+-	clks[IMX_CONN_GPMI_BCH_IO_CLK]	= imx_clk_scu("gpmi_io_clk", IMX_SC_R_NAND, IMX_SC_PM_CLK_MST_BUS);
+-	clks[IMX_CONN_GPMI_BCH_CLK]	= imx_clk_scu("gpmi_bch_clk", IMX_SC_R_NAND, IMX_SC_PM_CLK_PER);
+-	clks[IMX_CONN_USB2_ACLK]	= imx_clk_scu("usb3_aclk_div", IMX_SC_R_USB_2, IMX_SC_PM_CLK_PER);
+-	clks[IMX_CONN_USB2_BUS_CLK]	= imx_clk_scu("usb3_bus_div", IMX_SC_R_USB_2, IMX_SC_PM_CLK_MST_BUS);
+-	clks[IMX_CONN_USB2_LPM_CLK]	= imx_clk_scu("usb3_lpm_div", IMX_SC_R_USB_2, IMX_SC_PM_CLK_MISC);
++	clks[IMX_CONN_SDHC0_CLK]	= imx_clk_scu("sdhc0_clk", IMX_SC_R_SDHC_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_CONN_SDHC1_CLK]	= imx_clk_scu("sdhc1_clk", IMX_SC_R_SDHC_1, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_CONN_SDHC2_CLK]	= imx_clk_scu("sdhc2_clk", IMX_SC_R_SDHC_2, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_CONN_ENET0_ROOT_CLK]	= imx_clk_scu("enet0_clk", IMX_SC_R_ENET_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_CONN_ENET0_BYPASS_CLK]	= imx_clk_scu("enet0_bypass_clk", IMX_SC_R_ENET_0, IMX_SC_PM_CLK_BYPASS, clk_cells);
++	clks[IMX_CONN_ENET0_RGMII_CLK]	= imx_clk_scu("enet0_rgmii_clk", IMX_SC_R_ENET_0, IMX_SC_PM_CLK_MISC0, clk_cells);
++	clks[IMX_CONN_ENET1_ROOT_CLK]	= imx_clk_scu("enet1_clk", IMX_SC_R_ENET_1, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_CONN_ENET1_BYPASS_CLK]	= imx_clk_scu("enet1_bypass_clk", IMX_SC_R_ENET_1, IMX_SC_PM_CLK_BYPASS, clk_cells);
++	clks[IMX_CONN_ENET1_RGMII_CLK]	= imx_clk_scu("enet1_rgmii_clk", IMX_SC_R_ENET_1, IMX_SC_PM_CLK_MISC0, clk_cells);
++	clks[IMX_CONN_GPMI_BCH_IO_CLK]	= imx_clk_scu("gpmi_io_clk", IMX_SC_R_NAND, IMX_SC_PM_CLK_MST_BUS, clk_cells);
++	clks[IMX_CONN_GPMI_BCH_CLK]	= imx_clk_scu("gpmi_bch_clk", IMX_SC_R_NAND, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_CONN_USB2_ACLK]	= imx_clk_scu("usb3_aclk_div", IMX_SC_R_USB_2, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_CONN_USB2_BUS_CLK]	= imx_clk_scu("usb3_bus_div", IMX_SC_R_USB_2, IMX_SC_PM_CLK_MST_BUS, clk_cells);
++	clks[IMX_CONN_USB2_LPM_CLK]	= imx_clk_scu("usb3_lpm_div", IMX_SC_R_USB_2, IMX_SC_PM_CLK_MISC, clk_cells);
+ 
+ 	/* Display controller SS */
+-	clks[IMX_DC0_DISP0_CLK]		= imx_clk_scu("dc0_disp0_clk", IMX_SC_R_DC_0, IMX_SC_PM_CLK_MISC0);
+-	clks[IMX_DC0_DISP1_CLK]		= imx_clk_scu("dc0_disp1_clk", IMX_SC_R_DC_0, IMX_SC_PM_CLK_MISC1);
++	clks[IMX_DC0_DISP0_CLK]		= imx_clk_scu("dc0_disp0_clk", IMX_SC_R_DC_0, IMX_SC_PM_CLK_MISC0, clk_cells);
++	clks[IMX_DC0_DISP1_CLK]		= imx_clk_scu("dc0_disp1_clk", IMX_SC_R_DC_0, IMX_SC_PM_CLK_MISC1, clk_cells);
+ 
+ 	/* MIPI-LVDS SS */
+-	clks[IMX_MIPI0_I2C0_CLK]	= imx_clk_scu("mipi0_i2c0_clk", IMX_SC_R_MIPI_0_I2C_0, IMX_SC_PM_CLK_MISC2);
+-	clks[IMX_MIPI0_I2C1_CLK]	= imx_clk_scu("mipi0_i2c1_clk", IMX_SC_R_MIPI_0_I2C_1, IMX_SC_PM_CLK_MISC2);
++	clks[IMX_MIPI0_I2C0_CLK]	= imx_clk_scu("mipi0_i2c0_clk", IMX_SC_R_MIPI_0_I2C_0, IMX_SC_PM_CLK_MISC2, clk_cells);
++	clks[IMX_MIPI0_I2C1_CLK]	= imx_clk_scu("mipi0_i2c1_clk", IMX_SC_R_MIPI_0_I2C_1, IMX_SC_PM_CLK_MISC2, clk_cells);
+ 
+ 	/* MIPI CSI SS */
+-	clks[IMX_CSI0_CORE_CLK]		= imx_clk_scu("mipi_csi0_core_clk", IMX_SC_R_CSI_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_CSI0_ESC_CLK]		= imx_clk_scu("mipi_csi0_esc_clk",  IMX_SC_R_CSI_0, IMX_SC_PM_CLK_MISC);
+-	clks[IMX_CSI0_I2C0_CLK]		= imx_clk_scu("mipi_csi0_i2c0_clk", IMX_SC_R_CSI_0_I2C_0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_CSI0_PWM0_CLK]		= imx_clk_scu("mipi_csi0_pwm0_clk", IMX_SC_R_CSI_0_PWM_0, IMX_SC_PM_CLK_PER);
++	clks[IMX_CSI0_CORE_CLK]		= imx_clk_scu("mipi_csi0_core_clk", IMX_SC_R_CSI_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_CSI0_ESC_CLK]		= imx_clk_scu("mipi_csi0_esc_clk",  IMX_SC_R_CSI_0, IMX_SC_PM_CLK_MISC, clk_cells);
++	clks[IMX_CSI0_I2C0_CLK]		= imx_clk_scu("mipi_csi0_i2c0_clk", IMX_SC_R_CSI_0_I2C_0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_CSI0_PWM0_CLK]		= imx_clk_scu("mipi_csi0_pwm0_clk", IMX_SC_R_CSI_0_PWM_0, IMX_SC_PM_CLK_PER, clk_cells);
+ 
+ 	/* GPU SS */
+-	clks[IMX_GPU0_CORE_CLK]		= imx_clk_scu("gpu_core0_clk",	 IMX_SC_R_GPU_0_PID0, IMX_SC_PM_CLK_PER);
+-	clks[IMX_GPU0_SHADER_CLK]	= imx_clk_scu("gpu_shader0_clk", IMX_SC_R_GPU_0_PID0, IMX_SC_PM_CLK_MISC);
++	clks[IMX_GPU0_CORE_CLK]		= imx_clk_scu("gpu_core0_clk",	 IMX_SC_R_GPU_0_PID0, IMX_SC_PM_CLK_PER, clk_cells);
++	clks[IMX_GPU0_SHADER_CLK]	= imx_clk_scu("gpu_shader0_clk", IMX_SC_R_GPU_0_PID0, IMX_SC_PM_CLK_MISC, clk_cells);
+ 
+ 	for (i = 0; i < clk_data->num; i++) {
+ 		if (IS_ERR(clks[i]))
+@@ -134,7 +138,12 @@ static int imx8qxp_clk_probe(struct platform_device *pdev)
+ 				i, PTR_ERR(clks[i]));
+ 	}
+ 
+-	return of_clk_add_hw_provider(ccm_node, of_clk_hw_onecell_get, clk_data);
++	if (clk_cells == 2)
++		ret = of_clk_add_hw_provider(ccm_node, imx_scu_of_clk_src_get, imx_scu_clks);
++	else
++		ret = of_clk_add_hw_provider(ccm_node, of_clk_hw_onecell_get, clk_data);
 +
-+#define IMX_LPCG_CLK_0	0
-+#define IMX_LPCG_CLK_1	4
-+#define IMX_LPCG_CLK_2	8
-+#define IMX_LPCG_CLK_3	12
-+#define IMX_LPCG_CLK_4	16
-+#define IMX_LPCG_CLK_5	20
-+#define IMX_LPCG_CLK_6	24
-+#define IMX_LPCG_CLK_7	28
++	return ret;
+ }
+ 
+ static const struct of_device_id imx8qxp_match[] = {
+diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
+index fbef740704d0..5b1bec4a8576 100644
+--- a/drivers/clk/imx/clk-scu.c
++++ b/drivers/clk/imx/clk-scu.c
+@@ -8,6 +8,9 @@
+ #include <linux/arm-smccc.h>
+ #include <linux/clk-provider.h>
+ #include <linux/err.h>
++#include <linux/of_platform.h>
++#include <linux/platform_device.h>
++#include <linux/pm_domain.h>
+ #include <linux/slab.h>
+ 
+ #include "clk-scu.h"
+@@ -16,6 +19,20 @@
+ #define IMX_SIP_SET_CPUFREQ		0x00
+ 
+ static struct imx_sc_ipc *ccm_ipc_handle;
++struct device_node *pd_np;
++
++struct imx_scu_clk_node {
++	const char *name;
++	u32 rsrc;
++	u8 clk_type;
++	const char * const *parents;
++	int num_parents;
++
++	struct clk_hw *hw;
++	struct list_head node;
++};
++
++struct list_head imx_scu_clks[IMX_SC_R_LAST];
+ 
+ /*
+  * struct clk_scu - Description of one SCU clock
+@@ -128,9 +145,32 @@ static inline struct clk_scu *to_clk_scu(struct clk_hw *hw)
+ 	return container_of(hw, struct clk_scu, hw);
+ }
+ 
+-int imx_clk_scu_init(void)
++int imx_clk_scu_init(struct device_node *np)
+ {
+-	return imx_scu_get_handle(&ccm_ipc_handle);
++	struct platform_device *pd_dev;
++	u32 clk_cells;
++	int ret, i;
++
++	ret = imx_scu_get_handle(&ccm_ipc_handle);
++	if (ret)
++		return ret;
++
++	if (of_property_read_u32(np, "#clock-cells", &clk_cells))
++		return -EINVAL;
++
++	if (clk_cells == 2) {
++		for (i = 0; i < IMX_SC_R_LAST; i++)
++			INIT_LIST_HEAD(&imx_scu_clks[i]);
++
++		pd_np = of_find_compatible_node(NULL, NULL, "fsl,scu-pd");
++		pd_dev = of_find_device_by_node(pd_np);
++		if (!pd_dev || !device_is_bound(&pd_dev->dev)) {
++			of_node_put(pd_np);
++			return -EPROBE_DEFER;
++		}
++	}
++
++	return 0;
+ }
+ 
+ /*
+@@ -387,3 +427,99 @@ struct clk_hw *__imx_clk_scu(const char *name, const char * const *parents,
+ 
+ 	return hw;
+ }
++
++struct clk_hw *imx_scu_of_clk_src_get(struct of_phandle_args *clkspec,
++				      void *data)
++{
++	unsigned int rsrc = clkspec->args[0];
++	unsigned int idx = clkspec->args[1];
++	struct list_head *scu_clks = data;
++	struct imx_scu_clk_node *clk;
++
++	list_for_each_entry(clk, &scu_clks[rsrc], node) {
++		if (clk->clk_type == idx)
++			return clk->hw;
++	}
++
++	return ERR_PTR(-ENODEV);
++}
++
++static int imx_clk_scu_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct imx_scu_clk_node *clk = dev_get_platdata(dev);
++	struct clk_hw *hw;
++
++	hw = __imx_clk_scu(clk->name, clk->parents, clk->num_parents,
++			   clk->rsrc, clk->clk_type);
++	if (IS_ERR(hw))
++		return PTR_ERR(hw);
++
++	clk->hw = hw;
++	list_add_tail(&clk->node, &imx_scu_clks[clk->rsrc]);
++
++	dev_dbg(dev, "register SCU clock rsrc:%d type:%d\n", clk->rsrc,
++		clk->clk_type);
++
++	return 0;
++}
++
++static struct platform_driver imx_clk_scu_driver = {
++	.driver = {
++		.name = "imx-scu-clk",
++		.suppress_bind_attrs = true,
++	},
++	.probe = imx_clk_scu_probe,
++};
++builtin_platform_driver(imx_clk_scu_driver);
++
++static int imx_clk_scu_attach_pd(struct device *dev, u32 rsrc_id)
++{
++	struct of_phandle_args genpdspec = {
++		.np = pd_np,
++		.args_count = 1,
++		.args[0] = rsrc_id,
++	};
++
++	return of_genpd_add_device(&genpdspec, dev);
++}
++
++struct clk_hw *imx_clk_scu_alloc_dev(const char *name,
++				     const char * const *parents,
++				     int num_parents, u32 rsrc_id, u8 clk_type)
++{
++	struct imx_scu_clk_node clk = {
++		.name = name,
++		.rsrc = rsrc_id,
++		.clk_type = clk_type,
++		.parents = parents,
++		.num_parents = num_parents,
++	};
++	struct platform_device *pdev;
++	int ret;
++
++	pdev = platform_device_alloc(name, PLATFORM_DEVID_NONE);
++	if (!pdev) {
++		pr_err("%s: failed to allocate scu clk dev rsrc %d type %d\n",
++		       name, rsrc_id, clk_type);
++		return ERR_PTR(-ENOMEM);
++	}
++
++	ret = platform_device_add_data(pdev, &clk, sizeof(clk));
++	if (ret) {
++		platform_device_put(pdev);
++		return ERR_PTR(ret);
++	}
++
++	pdev->driver_override = "imx-scu-clk";
++
++	ret = imx_clk_scu_attach_pd(&pdev->dev, rsrc_id);
++	if (ret)
++		pr_warn("%s: failed to attached the power domain %d\n",
++			name, ret);
++
++	platform_device_add(pdev);
++
++	/* For API backwards compatiblilty, simply return NULL for success */
++	return NULL;
++}
+diff --git a/drivers/clk/imx/clk-scu.h b/drivers/clk/imx/clk-scu.h
+index 2bcfaf06a458..a512f81ed801 100644
+--- a/drivers/clk/imx/clk-scu.h
++++ b/drivers/clk/imx/clk-scu.h
+@@ -8,22 +8,37 @@
+ #define __IMX_CLK_SCU_H
+ 
+ #include <linux/firmware/imx/sci.h>
++#include <linux/of.h>
+ 
+-int imx_clk_scu_init(void);
++extern struct list_head imx_scu_clks[];
++
++int imx_clk_scu_init(struct device_node *np);
++struct clk_hw *imx_scu_of_clk_src_get(struct of_phandle_args *clkspec,
++				      void *data);
++struct clk_hw *imx_clk_scu_alloc_dev(const char *name,
++				     const char * const *parents,
++				     int num_parents, u32 rsrc_id, u8 clk_type);
+ 
+ struct clk_hw *__imx_clk_scu(const char *name, const char * const *parents,
+ 			     int num_parents, u32 rsrc_id, u8 clk_type);
+ 
+ static inline struct clk_hw *imx_clk_scu(const char *name, u32 rsrc_id,
+-					 u8 clk_type)
++					 u8 clk_type, u8 clk_cells)
+ {
+-	return __imx_clk_scu(name, NULL, 0, rsrc_id, clk_type);
++	if (clk_cells == 2)
++		return imx_clk_scu_alloc_dev(name, NULL, 0, rsrc_id, clk_type);
++	else
++		return __imx_clk_scu(name, NULL, 0, rsrc_id, clk_type);
+ }
+ 
+ static inline struct clk_hw *imx_clk_scu2(const char *name, const char * const *parents,
+-					  int num_parents, u32 rsrc_id, u8 clk_type)
++					  int num_parents, u32 rsrc_id, u8 clk_type,
++					  u8 clk_cells)
+ {
+-	return __imx_clk_scu(name, parents, num_parents, rsrc_id, clk_type);
++	if (clk_cells == 2)
++		return imx_clk_scu_alloc_dev(name, parents, num_parents, rsrc_id, clk_type);
++	else
++		return __imx_clk_scu(name, parents, num_parents, rsrc_id, clk_type);
+ }
+ 
+ struct clk_hw *imx_clk_lpcg_scu(const char *name, const char *parent_name,
 -- 
 2.23.0
 
