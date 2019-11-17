@@ -2,91 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2137FFAA0
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 17:08:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF387FFABD
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 17:22:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BqKVkFTtWXn38lX7eWKvn4zYeR6oVw05SbLxLgremGo=; b=VaP3H64s1Q4F+S
-	p0xklB2CeAnCf1+cynPyXakljhEM9GV7gkDtXT+CaPv3WYUeMCETvQjPQmRCLQpT8WTaZ3StLbe05
-	ab9/7qpQ+a5IHxdhqxjXfLgq+ro3enT/Q6Ml3uAupW2wNMgx/30KnPaIf3Llq5cG+poorktwaHHyP
-	LhKgcYp4WRbrLss6X9wqOHucx45R5ddM4iQfEc87KnL6wDu1L0TeIuM6xMFW1oTUoRV0NkcRbqyJS
-	+p7iGX0TF3Ry0W0PfKj4HWkVwlT8Vh/7xxHxKXrKEk+WmzlDuSTDgROSfqDVpq9jLxezOVzkkA30b
-	aGKNZI2fRYc0r4aXrikQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Egmlt5Q9ej91q/aBdbbwGpzGmpbOwVN2SEGR6u1NHvw=; b=QZ0A5gGmvoOI0Q
+	T/zubfhaUy8uhrec7AVRSO+U9wb0A9j2w1XjFYCxgpm7QtmgQUALjVnjM0QcBQ7azR+aKQ1JdCpl3
+	OqXXWwdTIriTCu+cVb2H4vGo6q2OkhysAByafaZ7NrLm1USUAcyoG+OtTG+yn9365CMZvZfxWYNuv
+	MfuCSoav4vgpRbAKy+m7aynb4y+YPJSHBAZmGlvAmlAH0IOSotSXOvHR8fxkkhkORo3SDJuChofo5
+	ZCL/rWqYSN0z5bDYtIcCDY3XoO9//9KsGzwH70UYdFZ9OFxNXA6RZZVYYUBujqmhAjytpiZ5Oq1rz
+	UsFxvG2MRLluIaIhfuCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWN5n-0002EO-Uc; Sun, 17 Nov 2019 16:08:03 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iWNJp-0007Hf-J2; Sun, 17 Nov 2019 16:22:33 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWN5e-0002Dg-Ga
- for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 16:07:56 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z10so16553212wrs.12
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 17 Nov 2019 08:07:51 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=3ZfuFAz9i7eipM0Ww7pnmorkcOiDa7xzRC8FduXZgjg=;
- b=DNSDbdPHmy5xZPJPbG6wCk5AKQstG/YcSuLATZewIeg/wyV3o2TvqAHibr3blWGTAg
- yeFr+03gdbeArSnM2RFZrEbTZT7Qq1GYx6k0jme4TQzu75tY2tnxtRj7gwxXc26dPA7w
- FIG2QpsiJZGmtZ72FGzK/ZWkPuZvs3yq6vIgrN08z3SdZGfsrBwxC1NljL54euWxikt/
- G6KRGuGEZ4A7Ng4wa+Y2NVjv3ZLha3GIEU+hBlFjJ54S48jfzBC4mkZ46SP7sYXT62N3
- smT9ztlH1U+Bit8r0WjSXaai10kVroMj7CWx8xNRPp/GBbUmcywM/rAIqlith64d5ezr
- atew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=3ZfuFAz9i7eipM0Ww7pnmorkcOiDa7xzRC8FduXZgjg=;
- b=d9GPBemypBUtRwOi8hgovV4wvOxWZK/xMdnJd0JdSD15MoFZsOH0bxatRsiKX/C0lc
- Y8Q1uvLrBgXKrKFsFxQ8pF++8kUQbcJi3HATP29fHPZ77qfg+qNVyXfuwDy32bv5lhzS
- ukPZoE2zH0AJtL5aVban9Rt3vtxW+JFvjUu9F7koQ73eDHvXH5YOKG8+tlF7W7muyNH/
- GNdFixP7GcWnMds/fsMIdewwrylkP+rKWwMFdK4Q9gM7GwQ7McmiA3i/kjJ8now3XpFl
- IuQ9FHm/oM5XqsRZxKNhABAqWSi5zAT2SQ26f6zePamERV13hWLt99Gsd40E42pFov03
- zR0g==
-X-Gm-Message-State: APjAAAUsZ7SXiFSBM/t0dTTZQe3sSlibsE03tRS7FhZimyvh87kd3gbD
- QXFtpJNqbl7fl3W/1k5+UJw=
-X-Google-Smtp-Source: APXvYqxRoa5u/ttV4Rk72n7ofhq/PCWlE8ojnC2DDYLZCRCyx7oQ4nfIBiXuztaoLUJCHuNxPUt0ow==
-X-Received: by 2002:a05:6000:354:: with SMTP id
- e20mr28087903wre.17.1574006869853; 
- Sun, 17 Nov 2019 08:07:49 -0800 (PST)
-Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id a5sm19017916wrv.56.2019.11.17.08.07.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 17 Nov 2019 08:07:49 -0800 (PST)
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: davem@davemloft.net, herbert@gondor.apana.org.au, mripard@kernel.org,
- wens@csie.org
-Subject: [PATCH] crypto: allwinner: sun8i-ce: enable working on big endian
-Date: Sun, 17 Nov 2019 17:07:45 +0100
-Message-Id: <20191117160745.32197-1-clabbe.montjoie@gmail.com>
-X-Mailer: git-send-email 2.23.0
-MIME-Version: 1.0
+ id 1iWNJh-0007GU-Cd; Sun, 17 Nov 2019 16:22:27 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=big-swifty.misterjones.org)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1iWNJa-0007rk-Jx; Sun, 17 Nov 2019 17:22:18 +0100
+Date: Sun, 17 Nov 2019 16:22:10 +0000
+Message-ID: <86a78ujwwd.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Andreas =?UTF-8?B?RsOkcmJlcg==?= <afaerber@suse.de>
+Subject: Re: [PATCH v3 3/8] ARM: dts: Prepare Realtek RTD1195 and MeLE X1000
+In-Reply-To: <61bf74ad-b4a1-f443-bf99-be354b4d942b@suse.de>
+References: <20191117072109.20402-1-afaerber@suse.de>
+ <20191117072109.20402-4-afaerber@suse.de>
+ <20191117104726.2b1fccb8@why>
+ <61bf74ad-b4a1-f443-bf99-be354b4d942b@suse.de>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Organization: Approximate
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: afaerber@suse.de, linux-realtek-soc@lists.infradead.org,
+ mark.rutland@arm.com, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org,
+ james.tai@realtek.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_080754_576471_111905CE 
-X-CRM114-Status: GOOD (  15.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191117_082225_574638_60D154A0 
+X-CRM114-Status: GOOD (  23.93  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,200 +71,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ James Tai <james.tai@realtek.com>, linux-realtek-soc@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On big endian kernel, the sun8i-ce crypto driver does not works.
-This patch do the necessary modification to permit it to work on BE
-kernel (setting descriptor entries as __le32 and adding some cpu_to_le32)
-
-Fixes: 06f751b61329 ("crypto: allwinner - Add sun8i-ce Crypto Engine")
-Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
----
- .../allwinner/sun8i-ce/sun8i-ce-cipher.c      | 50 +++++++++++--------
- drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h  | 24 ++++-----
- 2 files changed, 40 insertions(+), 34 deletions(-)
-
-diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
-index b6e7c346c3ae..37d0b6c386a0 100644
---- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
-+++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce-cipher.c
-@@ -90,7 +90,9 @@ static int sun8i_ce_cipher(struct skcipher_request *areq)
- 	struct ce_task *cet;
- 	struct scatterlist *sg;
- 	unsigned int todo, len, offset, ivsize;
-+	dma_addr_t addr_iv = 0, addr_key = 0;
- 	void *backup_iv = NULL;
-+	u32 common, sym;
- 	int flow, i;
- 	int nr_sgs = 0;
- 	int nr_sgd = 0;
-@@ -115,28 +117,31 @@ static int sun8i_ce_cipher(struct skcipher_request *areq)
- 	cet = chan->tl;
- 	memset(cet, 0, sizeof(struct ce_task));
- 
--	cet->t_id = flow;
--	cet->t_common_ctl = ce->variant->alg_cipher[algt->ce_algo_id];
--	cet->t_common_ctl |= rctx->op_dir | CE_COMM_INT;
--	cet->t_dlen = areq->cryptlen / 4;
-+	cet->t_id = cpu_to_le32(flow);
-+	common = ce->variant->alg_cipher[algt->ce_algo_id];
-+	common |= rctx->op_dir | CE_COMM_INT;
-+	cet->t_common_ctl = cpu_to_le32(common);
- 	/* CTS and recent CE (H6) need length in bytes, in word otherwise */
- 	if (ce->variant->has_t_dlen_in_bytes)
--		cet->t_dlen = areq->cryptlen;
-+		cet->t_dlen = cpu_to_le32(areq->cryptlen);
-+	else
-+		cet->t_dlen = cpu_to_le32(areq->cryptlen / 4);
- 
--	cet->t_sym_ctl = ce->variant->op_mode[algt->ce_blockmode];
-+	sym = ce->variant->op_mode[algt->ce_blockmode];
- 	len = op->keylen;
- 	switch (len) {
- 	case 128 / 8:
--		cet->t_sym_ctl |= CE_AES_128BITS;
-+		sym |= CE_AES_128BITS;
- 		break;
- 	case 192 / 8:
--		cet->t_sym_ctl |= CE_AES_192BITS;
-+		sym |= CE_AES_192BITS;
- 		break;
- 	case 256 / 8:
--		cet->t_sym_ctl |= CE_AES_256BITS;
-+		sym |= CE_AES_256BITS;
- 		break;
- 	}
- 
-+	cet->t_sym_ctl = cpu_to_le32(sym);
- 	cet->t_asym_ctl = 0;
- 
- 	chan->op_mode = ce->variant->op_mode[algt->ce_blockmode];
-@@ -144,9 +149,9 @@ static int sun8i_ce_cipher(struct skcipher_request *areq)
- 	chan->method = ce->variant->alg_cipher[algt->ce_algo_id];
- 	chan->keylen = op->keylen;
- 
--	cet->t_key = dma_map_single(ce->dev, op->key, op->keylen,
--				    DMA_TO_DEVICE);
--	if (dma_mapping_error(ce->dev, cet->t_key)) {
-+	addr_key = dma_map_single(ce->dev, op->key, op->keylen, DMA_TO_DEVICE);
-+	cet->t_key = cpu_to_le32(addr_key);
-+	if (dma_mapping_error(ce->dev, addr_key)) {
- 		dev_err(ce->dev, "Cannot DMA MAP KEY\n");
- 		err = -EFAULT;
- 		goto theend;
-@@ -171,9 +176,10 @@ static int sun8i_ce_cipher(struct skcipher_request *areq)
- 						 ivsize, 0);
- 		}
- 		memcpy(chan->bounce_iv, areq->iv, ivsize);
--		cet->t_iv = dma_map_single(ce->dev, chan->bounce_iv,
--					   chan->ivlen, DMA_TO_DEVICE);
--		if (dma_mapping_error(ce->dev, cet->t_iv)) {
-+		addr_iv = dma_map_single(ce->dev, chan->bounce_iv, chan->ivlen,
-+					 DMA_TO_DEVICE);
-+		cet->t_iv = cpu_to_le32(addr_iv);
-+		if (dma_mapping_error(ce->dev, addr_iv)) {
- 			dev_err(ce->dev, "Cannot DMA MAP IV\n");
- 			err = -ENOMEM;
- 			goto theend_iv;
-@@ -208,9 +214,9 @@ static int sun8i_ce_cipher(struct skcipher_request *areq)
- 
- 	len = areq->cryptlen;
- 	for_each_sg(areq->src, sg, nr_sgs, i) {
--		cet->t_src[i].addr = sg_dma_address(sg);
-+		cet->t_src[i].addr = cpu_to_le32(sg_dma_address(sg));
- 		todo = min(len, sg_dma_len(sg));
--		cet->t_src[i].len = todo / 4;
-+		cet->t_src[i].len = cpu_to_le32(todo / 4);
- 		dev_dbg(ce->dev, "%s total=%u SG(%d %u off=%d) todo=%u\n", __func__,
- 			areq->cryptlen, i, cet->t_src[i].len, sg->offset, todo);
- 		len -= todo;
-@@ -223,9 +229,9 @@ static int sun8i_ce_cipher(struct skcipher_request *areq)
- 
- 	len = areq->cryptlen;
- 	for_each_sg(areq->dst, sg, nr_sgd, i) {
--		cet->t_dst[i].addr = sg_dma_address(sg);
-+		cet->t_dst[i].addr = cpu_to_le32(sg_dma_address(sg));
- 		todo = min(len, sg_dma_len(sg));
--		cet->t_dst[i].len = todo / 4;
-+		cet->t_dst[i].len = cpu_to_le32(todo / 4);
- 		dev_dbg(ce->dev, "%s total=%u SG(%d %u off=%d) todo=%u\n", __func__,
- 			areq->cryptlen, i, cet->t_dst[i].len, sg->offset, todo);
- 		len -= todo;
-@@ -250,8 +256,8 @@ static int sun8i_ce_cipher(struct skcipher_request *areq)
- 
- theend_iv:
- 	if (areq->iv && ivsize > 0) {
--		if (cet->t_iv)
--			dma_unmap_single(ce->dev, cet->t_iv, chan->ivlen,
-+		if (addr_iv)
-+			dma_unmap_single(ce->dev, addr_iv, chan->ivlen,
- 					 DMA_TO_DEVICE);
- 		offset = areq->cryptlen - ivsize;
- 		if (rctx->op_dir & CE_DECRYPTION) {
-@@ -265,7 +271,7 @@ static int sun8i_ce_cipher(struct skcipher_request *areq)
- 	}
- 
- theend_key:
--	dma_unmap_single(ce->dev, cet->t_key, op->keylen, DMA_TO_DEVICE);
-+	dma_unmap_single(ce->dev, addr_key, op->keylen, DMA_TO_DEVICE);
- 
- theend:
- 	return err;
-diff --git a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
-index c6ddad3393ed..43db49ceafe4 100644
---- a/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
-+++ b/drivers/crypto/allwinner/sun8i-ce/sun8i-ce.h
-@@ -103,8 +103,8 @@ struct ce_variant {
- };
- 
- struct sginfo {
--	u32 addr;
--	u32 len;
-+	__le32 addr;
-+	__le32 len;
- } __packed;
- 
- /*
-@@ -112,18 +112,18 @@ struct sginfo {
-  * The structure of this descriptor could be found in the datasheet
-  */
- struct ce_task {
--	u32 t_id;
--	u32 t_common_ctl;
--	u32 t_sym_ctl;
--	u32 t_asym_ctl;
--	u32 t_key;
--	u32 t_iv;
--	u32 t_ctr;
--	u32 t_dlen;
-+	__le32 t_id;
-+	__le32 t_common_ctl;
-+	__le32 t_sym_ctl;
-+	__le32 t_asym_ctl;
-+	__le32 t_key;
-+	__le32 t_iv;
-+	__le32 t_ctr;
-+	__le32 t_dlen;
- 	struct sginfo t_src[MAX_SG];
- 	struct sginfo t_dst[MAX_SG];
--	u32 next;
--	u32 reserved[3];
-+	__le32 next;
-+	__le32 reserved[3];
- } __packed __aligned(8);
- 
- /*
--- 
-2.23.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU3VuLCAxNyBOb3YgMjAxOSAxNTo0MDo1OSArMDAwMCwKQW5kcmVhcyBGw6RyYmVyIDxhZmFl
+cmJlckBzdXNlLmRlPiB3cm90ZToKPiAKPiBIaSBNYXJjLAo+IAo+IEFtIDE3LjExLjE5IHVtIDEx
+OjQ3IHNjaHJpZWIgTWFyYyBaeW5naWVyOgo+ID4gT24gU3VuLCAxNyBOb3YgMjAxOSAwODoyMTow
+NCArMDEwMAo+ID4gQW5kcmVhcyBGw6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPiB3cm90ZToKPiA+
+PiBBZGQgRGV2aWNlIFRyZWVzIGZvciBSZWFsdGVrIFJURDExOTUgU29DIGFuZCBNZUxFIFgxMDAw
+IFRWIGJveC4KPiA+Pgo+ID4+IFJldXNlIHRoZSBleGlzdGluZyBSVEQxMjk1IHdhdGNoZG9nIGNv
+bXBhdGlibGUgZm9yIG5vdy4KPiA+Pgo+ID4+IFJldmlld2VkLWJ5OiBSb2IgSGVycmluZyA8cm9i
+aEBrZXJuZWwub3JnPgo+ID4+IFtBRjogRml4ZWQgci1idXMgc2l6ZSwgZml4ZWQgR0lDIENQVSBt
+YXNrLCB1cGRhdGVkIG1lbXJlc2VydmVdCj4gPj4gU2lnbmVkLW9mZi1ieTogQW5kcmVhcyBGw6Ry
+YmVyIDxhZmFlcmJlckBzdXNlLmRlPgo+ID4+IC0tLQo+ID4+ICB2MiAtPiB2MzoKPiA+PiAgKiBG
+aXhlZCByLWJ1cyBzaXplIGluIC9zb2MgcmFuZ2VzIGZyb20gMHgxMDAwMDAwIHRvIDB4NzAwMDAg
+KEphbWVzKQo+ID4+ICAqIEFkanVzdGVkIC9tZW1yZXNlcnZlLyB0byBjbG9zZSBnYXAgZnJvbSAw
+eGE4MDAgdG8gMHhjMDAwIGZvciBmdWxsIDB4MTAwMDAwCj4gPj4gICogQ2hhbmdlZCBhcmNoIHRp
+bWVyIGZyb20gR0lDX0NQVV9NQVNLX1JBVygweGYpIHRvIEdJQ19DUFVfTUFTS19TSU1QTEUoMikK
+PiA+PiAgICBzcXVhc2hlZCBmcm9tIFJURDEzOTUgdjEgc2VyaWVzCj4gPj4gIAo+ID4+ICB2MSAt
+PiB2MjoKPiA+PiAgKiBEcm9wcGVkIC9tZW1yZXNlcnZlLyBhbmQgcmVzZXJ2ZWQtbWVtb3J5IG5v
+ZGVzIGZvciBwZXJpcGhlcmFscyBhbmQgTk9SIChSb2IpCj4gPj4gICogQ2FydmVkIHRoZW0gb3V0
+IGZyb20gbWVtb3J5IHJlZyBpbnN0ZWFkIChSb2IpCj4gPj4gICogQ29udmVydGVkIHNvbWUgL21l
+bXJlc2VydmUvcyB0byByZXNlcnZlZC1tZW1vcnkgbm9kZXMKPiA+PiAgCj4gPj4gIGFyY2gvYXJt
+L2Jvb3QvZHRzL01ha2VmaWxlICAgICAgICAgICAgICAgfCAgIDIgKwo+ID4+ICBhcmNoL2FybS9i
+b290L2R0cy9ydGQxMTk1LW1lbGUteDEwMDAuZHRzIHwgIDMxICsrKysrKysrCj4gPj4gIGFyY2gv
+YXJtL2Jvb3QvZHRzL3J0ZDExOTUuZHRzaSAgICAgICAgICAgfCAxMjcgKysrKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKwo+ID4+ICAzIGZpbGVzIGNoYW5nZWQsIDE2MCBpbnNlcnRpb25zKCsp
+Cj4gPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNoL2FybS9ib290L2R0cy9ydGQxMTk1LW1lbGUt
+eDEwMDAuZHRzCj4gPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNoL2FybS9ib290L2R0cy9ydGQx
+MTk1LmR0c2kKClsuLi5dCgo+ID4+ICsJdGltZXIgewo+ID4+ICsJCWNvbXBhdGlibGUgPSAiYXJt
+LGFybXY3LXRpbWVyIjsKPiA+PiArCQlpbnRlcnJ1cHRzID0gPEdJQ19QUEkgMTMKPiA+PiArCQkJ
+KEdJQ19DUFVfTUFTS19TSU1QTEUoMikgfCBJUlFfVFlQRV9MRVZFTF9MT1cpPiwKPiA+PiArCQkJ
+ICAgICA8R0lDX1BQSSAxNAo+ID4+ICsJCQkoR0lDX0NQVV9NQVNLX1NJTVBMRSgyKSB8IElSUV9U
+WVBFX0xFVkVMX0xPVyk+LAo+ID4+ICsJCQkgICAgIDxHSUNfUFBJIDExCj4gPj4gKwkJCShHSUNf
+Q1BVX01BU0tfU0lNUExFKDIpIHwgSVJRX1RZUEVfTEVWRUxfTE9XKT4sCj4gPj4gKwkJCSAgICAg
+PEdJQ19QUEkgMTAKPiA+PiArCQkJKEdJQ19DUFVfTUFTS19TSU1QTEUoMikgfCBJUlFfVFlQRV9M
+RVZFTF9MT1cpPjsKPiA+PiArCQljbG9jay1mcmVxdWVuY3kgPSA8MjcwMDAwMDA+Owo+ID4gCj4g
+PiBUaGlzIGlzIDIwMTksIGFuZCB5ZXQgaXQgZmVlbHMgbGlrZSAyMDExLiBUaGlzIHNob3VsZCBi
+ZSBzZXR1cCBpbiB0aGUKPiA+IGJvb3Rsb2FkZXIsIG5vdCBpbiBEVC4uLgo+IAo+IFdoYXQgZXhh
+Y3RseSAtIHRoZSB3aG9sZSBub2RlLCB0aGUgR0lDIENQVSBtYXNrLCB0aGUKPiBjbG9jay1mcmVx
+dWVuY3k/CgpUaGUgY2xvY2sgZnJlcXVlbmN5LiBIYXZpbmcgdG8gcmVseSBvbiBzdWNoIGhhY2tz
+IDggeWVhcnMgZG93biB0aGUKbGluZSBtYWtlcyBtZSBmZWVsIGxpa2Ugd2UndmUgYWNoaWV2ZWQg
+bm90aGluZy4uLgo8L2RlcHJlc3NlZD4KCj4gUGxlYXNlIGNvbXBhcmUgcHJldmlvdXMgc3VibWlz
+c2lvbnM6IEl0J3MgYSB2MjAxMi4wNyBiYXNlZCBkb3duc3RyZWFtCj4gVS1Cb290IHRoYXQgSSBk
+b24ndCBoYXZlIEdQTCBzb3VyY2VzIG9mLiBJdCBkb2Vzbid0IGV2ZW4gZmlsbCBpbiB0aGUKPiAv
+bWVtb3J5QDAgbm9kZS4KClF1YWxlZXRlZS4uLgoKPiA+PiArCQlnaWM6IGludGVycnVwdC1jb250
+cm9sbGVyQGZmMDExMDAwIHsKPiA+PiArCQkJY29tcGF0aWJsZSA9ICJhcm0sY29ydGV4LWE3LWdp
+YyI7Cj4gPj4gKwkJCXJlZyA9IDwweGZmMDExMDAwIDB4MTAwMD4sCj4gPj4gKwkJCSAgICAgIDww
+eGZmMDEyMDAwIDB4MjAwMD47Cj4gPj4gKwkJCWludGVycnVwdC1jb250cm9sbGVyOwo+ID4+ICsJ
+CQkjaW50ZXJydXB0LWNlbGxzID0gPDM+Owo+ID4gCj4gPiBZb3Uga25vdyB3aGF0IEknbSBnb2lu
+ZyB0byBzYXk6IEdJQ0ggYW5kIEdJW0NdViBhcmUgbWlzc2luZywgYXMgd2VsbCBhcwo+ID4gdGhl
+IG1haW50ZW5hbmNlIGludGVycnVwdC4gVGhpcyBpcyBhbGwgYm9nLXN0YW5kYXJkIEhXIChtb3N0
+IHByb2JhYmx5IGEKPiA+IEdJQzQwMCksIHNvIHRoZXJlIGlzIG5vIHJlYXNvbiBmb3IgdGhpcyBp
+bmZvcm1hdGlvbiBub3QgdG8gYmUgcHJlc2VudC4KPiAKPiBZZXMsIGFuZCBpZiB5b3UgbG9vayBh
+dCBteSBydGQxMjk1LW5leHQgYnJhbmNoIHJlZmVyZW5jZWQgaW4gdGhlIGNvdmVyCj4gbGV0dGVy
+LCB5b3Ugd2lsbCBmaW5kIHRoYXQgSSBkbyBoYXZlIGZvbGxvdy11cCBwYXRjaGVzIGFkZGluZyBH
+SUNIIGFuZAo+IEdJQ1YsIGFsc28gYSBndWVzcyBmb3IgdGhlIEdJQ1YgaW50ZXJydXB0LCBhbmQg
+aW4gYSBkaWZmZXJlbnQgcGF0Y2ggWzFdCj4gSSBoYXZlIHNwZWNpZmljYWxseSByZW1pbmRlZCBS
+ZWFsdGVrIHRvIHJldmlldyB0aGUgdjIgb2YgdGhpcyBwYXRjaAo+IHBsZWFzZSwgd2hpY2ggc3Rp
+bGwgaGFzbid0IGhhcHBlbmVkIHlldC4uLgo+IAo+IEkgaW5xdWlyZWQgZm9yIHRoZSBSVEQxNjE5
+IHBhdGNoLCBhbmQgSmFtZXMgcmVwbGllZCB0aGF0IGZvciBpdHMgR0lDdjMKPiB0aGV5IHN1cHBv
+c2VkbHkgZG8gX25vdF8gaGF2ZSB0aGUgb3B0aW9uYWwgR0lDSCBhbmQgR0lDViBbMV0uCgpXaGlj
+aCBpcyBleHBlY3RlZC4gQ29ydGV4LUE1NSBkb2Vzbid0IGhhdmUgYSBHSUN2MiBDUFUgaW50ZXJm
+YWNlCmJ1aWx0LWluLCBhbmQgdGh1cyBkb2Vzbid0IG5vdCBoYXZlIHRoZSBjb21wYXRpYmlsaXR5
+IGludGVyZmFjZSB3aGVuCmNvdXBsZWQgd2l0aCBhIEdJQ3YzIGltcGxlbWVudGF0aW9uLgoKSW4g
+eW91ciBjYXNlLCBDb3J0ZXggQTcgaGFzIGFsbCB0aGUgcmVxdWlyZWQgSFcsIGFuZCB0aGUgcmVx
+dWlyZWQKdmFsdWVzIGNhbiBiZSBkZXJpdmVkIGZyb20gdGhlIHB1YmxpYyBUUk0uCgo+IFRodXMg
+SSBhbSB3YWl0aW5nIG9uIHRoZWlyIGlucHV0IGZvciB3aGV0aGVyIHRoZXkgaGF2ZSBpdCBvbiBS
+VEQxMTk1Lgo+IFRoZSBVLUJvb3QgdGhhdCBJIGhhdmUgb24gdGhpcyBkZXZpY2UgZG9lcyBub3Qg
+Ym9vdCB0aGUga2VybmVsIGluIEhZUAo+IG1vZGUsIHNvIEkgY2Fubm90IHRlc3QgS1ZNIG15c2Vs
+Zi4gU2FtZSBpc3N1ZSBvbiB0aGUgSG9yc2VyYWRpc2gKPiBFVkIuCgpHaXZlbiB0aGUgdmludGFn
+ZSBvZiB0aGUgYm9vdGxvYWRlciwgSSdtIHByZXR0eSBzdXJlIGhlIHN5c3RlbSBib290cwppbiBz
+ZWN1cmUgbW9kZSwgc28gaXQnZCBqdXN0IGJlIGEgbWF0dGVyIG9mIHN3aXRjaGluZyB0byBub24t
+c2VjdXJlLgpKdXN0IHVzZSB0aGUgZXhpc3RpbmcgYm9vdGxvYWRlciBhcyBzb21ldGhpbmcgdGhh
+dCBpbml0aWFsaXNlcyBtZW1vcnkKZm9yIHlvdSBhbmQgYm9vdCBhIG1vZGVybiB1LWJvb3QgZnJv
+bSB0aGVyZS4KCglNLgoKLS0gCkphenogaXMgbm90IGRlYWQsIGl0IGp1c3Qgc21lbGxzIGZ1bm55
+LgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
