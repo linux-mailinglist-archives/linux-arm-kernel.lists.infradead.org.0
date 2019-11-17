@@ -2,89 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0F83FF966
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:25:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9676CFF97B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:28:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2cF3OCBiJoJyFb/s2WHQl8qoo69pXe311RZKpvRR4e0=; b=jMdJj8dH7OoA6H
-	ZKkNjaWZtLGEV8f5nJ/vUiN6eiogmXLIzgcQceMWHfGdddQ6N3Ngm2K4tsSg6zRN7Ape1EMl0aaSM
-	KJqucbysBdDlSQFKp9H2DEDVWjJRGsWhrcZegfliO29HHH1kbYxFL+qYBr/5H3CvALWfo+BaSZzBa
-	AiCKgQr8lofW1CYAU+HBesGgGYURCWV9l0iLev/Q8hxNd0SNLpUbUSP6GRSqUrb8tsRDB4/UgtRTX
-	lmWtMZ1pDrClRVntb847XolahrCEp7AO/V3m2AxFZ52HLvVI+KM8Y3smHZV47M4kxznMfR1k0qDEB
-	mjrre6joO5TU7QRk25Aw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=nEjRGq3ywMXb6FG/2nUdvhHz7Ewk++cJljU9gc2RFNA=; b=mvS
+	4mnzs/9Jmzz5uP0WOa/hv8pJu4otiOj0Q6KRSK/CMCP+QPAudoacTQ3MOQpgdOgE8bNYe9zWKyocs
+	r1LXv+gs5P1hM3ultOFPkib3Z5yEBn0TLVCrfYbcVYNpTba1u7YetTk4eQRBGNiEtJAbIjK+QW8Ko
+	wQuH5uBldQ9/yhsjV6RCQDexDJrF/Bs8tgPMkwSAQOUEleZnI9+GuPWaol/M8H028fKF6fo96RTGd
+	xnJW8hzpm1T4bFIkjkQNPTK+EGAbpGvVndRSrFH0XY/3EdEOqkt61tMWT+IuRmphfHC8ncEAIyt27
+	gHLEhRTiV1wJmy5gkI5UcoY2aXiqW6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWJca-0006od-Rk; Sun, 17 Nov 2019 12:25:40 +0000
-Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
+	id 1iWJes-0007GN-7s; Sun, 17 Nov 2019 12:28:02 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWJcS-0006o8-5m
- for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:25:33 +0000
-Received: by mail-il1-x144.google.com with SMTP id m5so13434994ilq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 17 Nov 2019 04:25:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=otVcrBVD6kjervULINmD8GBHaxPZhxqsRUnWTrQKkSY=;
- b=pTPNBukBWYo4Q2L4Zp7zlZrqL66vQNhxLavP6cZ5mBxYiJffto17JjlItsSKXd5XeM
- 4wyzThgCgdvUCLHxVluqUOM0fWUkjY4BrrpG1xcPo9xJ54KCwZP4PnYHJgjOwgzMSBZc
- BuzUyXtzCfmWvHGFt8tbMxqGs+QSiWgwnPNhy1VO3dWMMYtboz3Uw5x8FTBFhUJnqsKd
- lYND8CXWbooXe48diEjmnStgwvlBN2crwtlc+kJEmzAF4LlLNhG+d+prtRwl4TKmG/sc
- IqucQnG0btgeNo8jePb+/SxGrp1wJL70zfDAyTU2cTLgjSYTTELGeCMPY9n2dRicvCnp
- IcuQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=otVcrBVD6kjervULINmD8GBHaxPZhxqsRUnWTrQKkSY=;
- b=cQ9aSVPHYfBDbvM2Ss0hZQX8zLt/2CgE0Mvkr1Flfkk4ZSDc/Cyld/BxgCZ5QoOFxG
- CHX6UeFeNhPyUB87k/YtM0RmlaRqBgkJDtCvrK80Y2ycOYlbhv1NHGY//vwqJ1RBXrjZ
- 4rFTlCf4IIKGCtfZJZoWWxvFz9U15Yvq/1aV8JAtEhEliiNAWsPKVRUMCatN2YyX9Y6e
- /QKRxnmDF1IQlSLJR8/EGcIKrMeRJ2gfhd2SGji/1Q+bYU7HT5WDDiOdHJgcKOsBhDzD
- 3mpmMSVkre/aqbfnuF34bDhxCJ8RVBF4M7a6ovNEewiuKosSD+X+3Vfh9sFKxXOxn+xF
- ukUQ==
-X-Gm-Message-State: APjAAAXu+c3eaqT5EgulocucowtTZUAOvlLZUPKwVFMjvMbIOCv445Fv
- BEkDbQP3Qp8MQkq1p/sSYt2focMeJpyd8q1R5S6CKA==
-X-Google-Smtp-Source: APXvYqyM8OwMh+6orHmLf30C/l96ukGK50y0qYYCtd/JnP/de2oemLWGF5bzXkzsmOxp/jVwbDgy0xDzUGeSY3twpkk=
-X-Received: by 2002:a92:35dd:: with SMTP id c90mr9988284ilf.191.1573993529990; 
- Sun, 17 Nov 2019 04:25:29 -0800 (PST)
-MIME-Version: 1.0
-References: <1568081408-26800-1-git-send-email-aisheng.dong@nxp.com>
- <20191114122228.GI4147@optiplex>
-In-Reply-To: <20191114122228.GI4147@optiplex>
-From: Dong Aisheng <dongas86@gmail.com>
-Date: Sun, 17 Nov 2019 20:14:29 +0800
-Message-ID: <CAA+hA=R3yhO+oupTfc=cy3oNTcv28VhzTs7fg9kGYuE0j4s1vQ@mail.gmail.com>
-Subject: Re: [PATCH V5 00/11] clk: imx8: add new clock binding for better pm
- support
-To: Oliver Graute <oliver.graute@gmail.com>
+ id 1iWJeN-00075r-Bo
+ for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:27:33 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B4F881A07F0;
+ Sun, 17 Nov 2019 13:27:25 +0100 (CET)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 72C1B1A0123;
+ Sun, 17 Nov 2019 13:27:21 +0100 (CET)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id DEAAF4029F;
+ Sun, 17 Nov 2019 20:27:15 +0800 (SGT)
+From: Dong Aisheng <aisheng.dong@nxp.com>
+To: linux-clk@vger.kernel.org
+Subject: [PATCH RESEND V5 00/11] clk: imx8: add new clock binding for better
+ pm support
+Date: Sun, 17 Nov 2019 20:25:08 +0800
+Message-Id: <1573993519-14308-1-git-send-email-aisheng.dong@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_042532_240827_3DDE053E 
-X-CRM114-Status: GOOD (  10.12  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191117_042731_684281_B2AC7C17 
+X-CRM114-Status: GOOD (  10.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (dongas86[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dongas86[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,38 +65,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, dl-linux-imx <linux-imx@nxp.com>,
- Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-clk <linux-clk@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, sboyd@kernel.org,
+ mturquette@baylibre.com, linux-imx@nxp.com, kernel@pengutronix.de,
+ fabio.estevam@nxp.com, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 14, 2019 at 8:22 PM Oliver Graute <oliver.graute@gmail.com> wrote:
->
-> On 09/09/19, Dong Aisheng wrote:
-> > This is a follow up of this patch series.
-> > https://patchwork.kernel.org/cover/10924029/
-> > [V2,0/2] clk: imx: scu: add parsing clocks from device tree support
-> Hello Aisheng,
->
-> will there be an updated version of this two patch series for recent
-> linux-next? Then I can test it on my two imx8qm boards.
->
+This is a follow up of this patch series.
+https://patchwork.kernel.org/cover/10924029/
+[V2,0/2] clk: imx: scu: add parsing clocks from device tree support
 
-Yes, i prepared them already.
-Will send you in private email cause i don't have a public git.
+This patch series is a preparation for the MX8 Architecture improvement.
+As for IMX SCU based platforms like MX8QM and MX8QXP, they are comprised
+of a couple of SS(Subsystems) while most of them within the same SS
+can be shared. e.g. Clocks, Devices and etc.
 
-Regards
-Aisheng
+However, current clock binding is using SW IDs for device tree to use
+which can cause troubles in writing the common <soc>-ss-xx.dtsi file for
+different SoCs.
 
-> Best regards,
->
-> Oliver
+This patch series aims to introduce a new binding which is more close to
+hardware and platform independent and can makes us write a more general
+drivers for different SCU based SoCs.
+
+Another important thing is that on MX8, each Clock resource is associated
+with a power domain. So we have to attach that clock device to the power
+domain in order to make it work properly. Further more, the clock state
+will be lost when its power domain is completely off during suspend/resume,
+so we also introduce the clock state save&restore mechanism.
+
+ChangeLog:
+v4->v5:
+ * Address all comments from Stephen
+v3->v4:
+ * use clk-indices for LPCG to fetch each clks offset from dt
+v2->v3:
+ * change scu clk into two cells binding
+ * add clk pm patches to ease the understand of the changes
+v1->v2:
+ * SCU clock changed to one cell clock binding inspired by arm,scpi.txt
+   Documentation/devicetree/bindings/arm/arm,scpi.txt
+ * Add required power domain property
+ * Dropped PATCH 3&4 first, will send the updated version accordingly
+   after the binding is finally determined,
+
+Dong Aisheng (11):
+  dt-bindings: firmware: imx-scu: new binding to parse clocks from
+    device tree
+  dt-bindings: clock: imx-lpcg: add support to parse clocks from device
+    tree
+  clk: imx: scu: add two cells binding support
+  clk: imx: scu: bypass cpu power domains
+  clk: imx: scu: allow scu clk to take device pointer
+  clk: imx: scu: add runtime pm support
+  clk: imx: scu: add suspend/resume support
+  clk: imx: imx8qxp-lpcg: add parsing clocks from device tree
+  clk: imx: lpcg: allow lpcg clk to take device pointer
+  clk: imx: clk-imx8qxp-lpcg: add runtime pm support
+  clk: imx: lpcg: add suspend/resume support
+
+ .../bindings/arm/freescale/fsl,scu.txt        |  12 +-
+ .../bindings/clock/imx8qxp-lpcg.txt           |  36 ++-
+ drivers/clk/imx/clk-imx8qxp-lpcg.c            | 139 +++++++++++
+ drivers/clk/imx/clk-imx8qxp.c                 | 129 ++++++-----
+ drivers/clk/imx/clk-lpcg-scu.c                |  52 ++++-
+ drivers/clk/imx/clk-scu.c                     | 218 +++++++++++++++++-
+ drivers/clk/imx/clk-scu.h                     |  54 ++++-
+ include/dt-bindings/clock/imx8-lpcg.h         |  14 ++
+ include/dt-bindings/firmware/imx/rsrc.h       |  23 ++
+ 9 files changed, 587 insertions(+), 90 deletions(-)
+ create mode 100644 include/dt-bindings/clock/imx8-lpcg.h
+
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
