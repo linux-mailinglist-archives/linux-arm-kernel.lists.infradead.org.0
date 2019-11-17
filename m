@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AB8BFF9CA
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 14:01:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF10DFF9CC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 14:02:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=fsbLnUuR7zdbtrfRXmIqTc7OwqHxeCT1NHc2jPMHJc0=; b=tt9
-	nhfdWW9bpsM+cw2Jsv9XLr6TLH6NdI+oQmikgiJwSh+u5ixArewN6X2Sy92b6V1O758EBNLVBGc20
-	NON81K/S3MOqCBrfSov7C/mZnBIfB0mJGAolgomLhIkINGmxkBljgjPlY0FyPGnwBMkP6/9zmo7eW
-	mH408lw9GztNLgs36d0QxZpAlH4lJ4m3sz191Hnbhay4IGZwHKlaxN3cR6bLIr7w6CBLpt53xpoCT
-	a1Bm3OpMkamMQgNCuxSWGzqguMERr71MxMAj5RX1MoVDc7YQJdmaC/3YVVzSv7w4IQYDexMkPuQ/0
-	dSUtLaKFe4UPKPVrzDX5NFGpQviUmag==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=0HaDUC/NLBDManBBm5n51rGQ2ZM1rwzDjJ4sQkUwbRM=; b=QfGw5bL655qYDBJzsoEg5mBfeI
+	WEwffdsFEPkgSjoIVKgOIdIQGgUyPoI9j1PNT9e5ub5aQlKF/19yI/hJcmJJ/IFXEhGo3nJfNcfv+
+	ZpYN/gCRaTIpoh8LmPsMHZmk+k/1J5sNygmRN6BnhldO4hTDbsvi/BkOIh3EZBiLYs5XX/qkFOUZE
+	AV9Ip/S4pUtxxb2XIL4f0XVbxYN0Cb5zAvacPBYgBczb8NQPVIITc45kaAURsvVugVAN1ylfF7hob
+	GgH7ObLJO952amFYL55z0xgRXyBuZzO/BdvTCUigv+EpN47LwK56eup8wP1n2rYYoci3q3oypl+Zz
+	J/kXkCAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWKBe-00081X-Pa; Sun, 17 Nov 2019 13:01:54 +0000
+	id 1iWKC2-0008Rk-Sx; Sun, 17 Nov 2019 13:02:18 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWKAw-0007aA-II
+ id 1iWKAw-0007aB-II
  for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 13:01:12 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2516F1A0113;
- Sun, 17 Nov 2019 14:01:08 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1B0D31A070E;
+ Sun, 17 Nov 2019 14:01:09 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 463EB1A0123;
- Sun, 17 Nov 2019 14:01:04 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3C1CA1A0222;
+ Sun, 17 Nov 2019 14:01:05 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 296254029F;
- Sun, 17 Nov 2019 21:00:59 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1F36F402A9;
+ Sun, 17 Nov 2019 21:01:00 +0800 (SGT)
 From: Dong Aisheng <aisheng.dong@nxp.com>
 To: devicetree@vger.kernel.org
-Subject: [PATCH 1/3] dt-bindings: mmc: fsl-imx-esdhc: add imx8qm compatible
- string
-Date: Sun, 17 Nov 2019 20:58:48 +0800
-Message-Id: <1573995530-14573-1-git-send-email-aisheng.dong@nxp.com>
+Subject: [PATCH 2/3] dt-bindings: serial: lpuart: add imx8qm compatible string
+Date: Sun, 17 Nov 2019 20:58:49 +0800
+Message-Id: <1573995530-14573-2-git-send-email-aisheng.dong@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1573995530-14573-1-git-send-email-aisheng.dong@nxp.com>
+References: <1573995530-14573-1-git-send-email-aisheng.dong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_050110_743280_7A822F9B 
-X-CRM114-Status: UNSURE (   5.97  )
+X-CRM114-CacheID: sfid-20191117_050110_749047_45FFAD45 
+X-CRM114-Status: UNSURE (   7.04  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,21 +81,22 @@ Add imx8qm compatible string.
 
 Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
 ---
- Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt | 1 +
- 1 file changed, 1 insertion(+)
+ Documentation/devicetree/bindings/serial/fsl-lpuart.txt | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt b/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt
-index f707b8bee304..b8a4622d0718 100644
---- a/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt
-+++ b/Documentation/devicetree/bindings/mmc/fsl-imx-esdhc.txt
-@@ -18,6 +18,7 @@ Required properties:
- 	       "fsl,imx6ull-usdhc"
- 	       "fsl,imx7d-usdhc"
- 	       "fsl,imx7ulp-usdhc"
-+	       "fsl,imx8qm-usdhc"
- 	       "fsl,imx8qxp-usdhc"
- 
- Optional properties:
+diff --git a/Documentation/devicetree/bindings/serial/fsl-lpuart.txt b/Documentation/devicetree/bindings/serial/fsl-lpuart.txt
+index 3495eee81d53..24ab789b22f7 100644
+--- a/Documentation/devicetree/bindings/serial/fsl-lpuart.txt
++++ b/Documentation/devicetree/bindings/serial/fsl-lpuart.txt
+@@ -10,6 +10,8 @@ Required properties:
+     on i.MX7ULP SoC with 32-bit little-endian register organization
+   - "fsl,imx8qxp-lpuart" for lpuart compatible with the one integrated
+     on i.MX8QXP SoC with 32-bit little-endian register organization
++  - "fsl,imx8qm-lpuart" for lpuart compatible with the one integrated
++    on i.MX8QM SoC with 32-bit little-endian register organization
+ - reg : Address and length of the register set for the device
+ - interrupts : Should contain uart interrupt
+ - clocks : phandle + clock specifier pairs, one for each entry in clock-names
 -- 
 2.23.0
 
