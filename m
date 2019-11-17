@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90C89FF97F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:29:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82D61FF981
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 13:29:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,49 +11,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ZJbXzObFSnIxoZYvHCJi/vLRcKyYZ4ncDmB0++6zBA0=; b=B28kXru04a2FKKhmBcfTEG4x9/
-	riZ4MoHeOTSzTTejCpGajgngtXw+MP0kJ1vwRYqBh8SRYClT5qsHbsKoK42cKUwhUBNmZjyWuF6Vl
-	dFUBEoa9GF6uL1+eGEXt3ITfC/95Kr+7TTSIszaajJpvFIZvJOnSHOWWwF+SVxOgkVxpepILX+Xeq
-	cceda5nozXhf/EY/mx2UWtes0QVFl6mYxXDzdxKuU+/p4mEfXkzF/Wvl9gkeCoYxzVezraDxJUOP6
-	Uz7V7AqO7Ic6y/Zdv7HONZEcZWglTWvbo/OUboKGnseTD/3A5QRjr9yAzTG8iorM8cxYLWDx0WRSb
-	n/t+qTlg==;
+	bh=IdxpGgoYCRQEzxX4ysCpHDckd64UHjgWFas0JTiJxzg=; b=thIRl0QZjRfRNX9tB7Aw1napCc
+	uRGn3L3cu/jnWnq4Kb8spSpHMBQBSFnZR3WhFW6CAyrycsRTqCxnz4gEy1K0lmjbBd73gDkcXrwnG
+	VCfukQ3z571JRwCi+yY9AKopRCmj7+DOvFPgHuCnzfK7++5rKNcjDo05HmhA3lRnlegqSRieU6TvY
+	jec3rblVQwN7N6yhWgLCq5O+6/7x63ZrH1yzBKS79+7FZxyAjaae2wFCOySvSkQLzCXHBk+wvC2DZ
+	5p5zvC6/NOEMuvxA1d2+l9HbOnKdmZkNx7grpdXI6SaPXExtIkYdcXqHI5Ih2IO7jwBKUeQRey6BX
+	gNZKHXkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWJfu-0008BE-5W; Sun, 17 Nov 2019 12:29:06 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iWJgL-0000Ba-Gf; Sun, 17 Nov 2019 12:29:33 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWJeR-00077T-W2
- for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:27:37 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id BEF7A1A0705;
- Sun, 17 Nov 2019 13:27:34 +0100 (CET)
+ id 1iWJeU-0007A2-4J
+ for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 12:27:39 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D6A6D200731;
+ Sun, 17 Nov 2019 13:27:36 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7DCA21A0123;
- Sun, 17 Nov 2019 13:27:30 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 93EC9200157;
+ Sun, 17 Nov 2019 13:27:32 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 298B0402B0;
- Sun, 17 Nov 2019 20:27:22 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2928D402B5;
+ Sun, 17 Nov 2019 20:27:23 +0800 (SGT)
 From: Dong Aisheng <aisheng.dong@nxp.com>
 To: linux-clk@vger.kernel.org
-Subject: [PATCH RESEND v5 06/11] clk: imx: scu: add runtime pm support
-Date: Sun, 17 Nov 2019 20:25:14 +0800
-Message-Id: <1573993519-14308-7-git-send-email-aisheng.dong@nxp.com>
+Subject: [PATCH RESEND v5 07/11] clk: imx: scu: add suspend/resume support
+Date: Sun, 17 Nov 2019 20:25:15 +0800
+Message-Id: <1573993519-14308-8-git-send-email-aisheng.dong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1573993519-14308-1-git-send-email-aisheng.dong@nxp.com>
 References: <1573993519-14308-1-git-send-email-aisheng.dong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_042736_176679_C1ED56F5 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20191117_042738_321810_B9F18576 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,7 +77,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add runtime pm support
+Clock state will be lost when its power domain is completely off
+during system suspend/resume. So we save and restore the state
+accordingly in suspend/resume callback.
 
 Cc: Stephen Boyd <sboyd@kernel.org>
 Cc: Shawn Guo <shawnguo@kernel.org>
@@ -86,59 +88,92 @@ Cc: Michael Turquette <mturquette@baylibre.com>
 Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
 ---
 ChangeLog:
-v4->v5: no changes
+v5:
+ * make suspend/resume function static
+v4: no changes
 v3: new patch
 ---
- drivers/clk/imx/clk-scu.c | 22 ++++++++++++++++++++--
- 1 file changed, 20 insertions(+), 2 deletions(-)
+ drivers/clk/imx/clk-scu.c | 49 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
 
 diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
-index 3be97309c01c..916985e57dea 100644
+index 916985e57dea..a2653b68a449 100644
 --- a/drivers/clk/imx/clk-scu.c
 +++ b/drivers/clk/imx/clk-scu.c
-@@ -11,6 +11,7 @@
- #include <linux/of_platform.h>
- #include <linux/platform_device.h>
- #include <linux/pm_domain.h>
-+#include <linux/pm_runtime.h>
- #include <linux/slab.h>
+@@ -45,6 +45,10 @@ struct clk_scu {
+ 	struct clk_hw hw;
+ 	u16 rsrc_id;
+ 	u8 clk_type;
++
++	/* for state save&restore */
++	bool is_enabled;
++	u32 rate;
+ };
  
- #include "clk-scu.h"
-@@ -450,15 +451,32 @@ static int imx_clk_scu_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct imx_scu_clk_node *clk = dev_get_platdata(dev);
- 	struct clk_hw *hw;
-+	int ret;
+ /*
+@@ -427,6 +431,9 @@ struct clk_hw *__imx_clk_scu(struct device *dev, const char *name,
+ 		hw = ERR_PTR(ret);
+ 	}
+ 
++	if (dev)
++		dev_set_drvdata(dev, clk);
 +
-+	pm_runtime_set_suspended(dev);
-+	pm_runtime_set_autosuspend_delay(dev, 50);
-+	pm_runtime_use_autosuspend(&pdev->dev);
-+	pm_runtime_enable(dev);
+ 	return hw;
+ }
+ 
+@@ -483,10 +490,52 @@ static int imx_clk_scu_probe(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++static int __maybe_unused imx_clk_scu_suspend(struct device *dev)
++{
++	struct clk_scu *clk = dev_get_drvdata(dev);
 +
-+	ret = pm_runtime_get_sync(dev);
-+	if (ret) {
-+		pm_runtime_disable(dev);
-+		return ret;
++	clk->rate = clk_hw_get_rate(&clk->hw);
++	clk->is_enabled = clk_hw_is_enabled(&clk->hw);
++
++	if (clk->rate)
++		dev_dbg(dev, "save rate %d\n", clk->rate);
++
++	if (clk->is_enabled)
++		dev_dbg(dev, "save enabled state\n");
++
++	return 0;
++}
++
++static int __maybe_unused imx_clk_scu_resume(struct device *dev)
++{
++	struct clk_scu *clk = dev_get_drvdata(dev);
++	int ret = 0;
++
++	if (clk->rate) {
++		ret = clk_scu_set_rate(&clk->hw, clk->rate, 0);
++		dev_dbg(dev, "restore rate %d %s\n", clk->rate,
++			!ret ? "success" : "failed");
 +	}
- 
--	hw = __imx_clk_scu(NULL, clk->name, clk->parents, clk->num_parents,
-+	hw = __imx_clk_scu(dev, clk->name, clk->parents, clk->num_parents,
- 			   clk->rsrc, clk->clk_type);
--	if (IS_ERR(hw))
-+	if (IS_ERR(hw)) {
-+		pm_runtime_disable(dev);
- 		return PTR_ERR(hw);
-+	}
- 
- 	clk->hw = hw;
- 	list_add_tail(&clk->node, &imx_scu_clks[clk->rsrc]);
- 
-+	pm_runtime_mark_last_busy(&pdev->dev);
-+	pm_runtime_put_autosuspend(&pdev->dev);
 +
- 	dev_dbg(dev, "register SCU clock rsrc:%d type:%d\n", clk->rsrc,
- 		clk->clk_type);
- 
++	if (clk->is_enabled) {
++		ret = clk_scu_prepare(&clk->hw);
++		dev_dbg(dev, "restore enabled state %s\n",
++			!ret ? "success" : "failed");
++	}
++
++	return ret;
++}
++
++static const struct dev_pm_ops imx_clk_scu_pm_ops = {
++	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(imx_clk_scu_suspend,
++				      imx_clk_scu_resume)
++};
++
+ static struct platform_driver imx_clk_scu_driver = {
+ 	.driver = {
+ 		.name = "imx-scu-clk",
+ 		.suppress_bind_attrs = true,
++		.pm = &imx_clk_scu_pm_ops,
+ 	},
+ 	.probe = imx_clk_scu_probe,
+ };
 -- 
 2.23.0
 
