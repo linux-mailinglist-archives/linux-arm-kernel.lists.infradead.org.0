@@ -2,77 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85391FFA35
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 15:22:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4B7CFFA41
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 15:27:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j2yTAcAOQkA7AQmGBHi30U5MVzl1i/3KP30efXDXMp8=; b=TvrW6/OIYjTL/V
-	1tWilUV6rToauGOneFzD6m/AMNNpdAiY2W9lUdoYDlo6AW2GO2Jv5GQ3E8KtC2QZT4OhoSno21u2b
-	m7uqGUREEjQMZUvrHPzDipaDvbHm0SuUU/KegHP1h9vcNkRKOFcXOyxLxkkq0kjV8nTGFNXDWeOCB
-	MQyFlZlXW95238cEC060Q7GUZ48akx+PnEaFTD5dZiOhjp2F3NYf1gvX4kVuEvpcCbBbYp7iigWb8
-	n7Kb5+OaiktKq10tekJIBGK5rkiVGgjXVZk7XnJJXe1YcXyVFKJ5isB5KbuJ0g/dGUMIKPZ3UI6Qy
-	7VkWL/rwtE6k3CjaQP6w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QLW4rIY1tI1l0LD9gsee5xr63qgB/pqCc8mIALb+rlo=; b=Ld7NBR/EvPG09F
+	npE47NyumQIw5Nqkyivf77iVfIqi2lToZmuvRedr2Dvf2c14ErSnpP2iPTqP0Z2ABlM6/rNeFgV3X
+	PkQZHiURhEqv6m45LhJL5CQyzn1eJi/qn36qWxQAZ+Va1E1d7RA9o9O5sCSfx91phKkoGJogkY9Hu
+	f06iiGwHwmg0y+Eykk7Pdwi3RFQdKuRexyb9pa6qne9v9A5OqQ8Oeqa+x3tTl+V2AR1qs3J6voQ6y
+	ONHPNgapnlgHTACSxgsFCO3TTbHW/Rw4Lh0H4fY8OOuxmJu7q4blPaRiqYwc2F4bbtRzi2WJvVcub
+	++RcPErUDzeJ0NMrU3sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWLRk-0002M7-8j; Sun, 17 Nov 2019 14:22:36 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1iWLWi-00041e-AS; Sun, 17 Nov 2019 14:27:44 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWLRc-0002LM-HG
- for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 14:22:30 +0000
-Received: by mail-ot1-x342.google.com with SMTP id b16so12195843otk.9
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 17 Nov 2019 06:22:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qBBWYG/+c5ldPryHsf5eFGeS1K4sMEdoNycmM/BbPSs=;
- b=eVXLRxQuz/44ibheIO1zBi5Zd82/vwRtZvSJD8oQhmt2N/MJKJxuk3mbOogtVtPOdC
- sNPpD/RqzFELI0IHUxQjqsOEEBj7jWOPI0pyy+9bUClF0EiyXOEFew0fKsItQ5HKg+YF
- YrZr2GVvndUbsjQsk6+ug1ZFaNyqt+6C3YZtXfQfvLWHNFSavV1xLMli6fDg7CnNhMZz
- 6eqCxy56Hvs4889Y+ya4/BxzxsfuyysdK2mTS/bo7gKchr0efYbVAEsX4tW4B0M8fm7/
- u3Pu4A9o3PqoT73GNjO43SrYuCw0EqGBY9uha6GxjU1wavNGrxxt9lzT9RSa5KY/3BpE
- Upcg==
+ id 1iWLWU-00040M-56; Sun, 17 Nov 2019 14:27:31 +0000
+Received: by mail-wr1-x441.google.com with SMTP id w9so16445287wrr.0;
+ Sun, 17 Nov 2019 06:27:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lO0ksvtY9zH08AEg8nMyPZuqK7PCO3+wK/C9fssW7po=;
+ b=OvfyMqRL7cZ3gebd6XwHEtVV9YVnBnpmUQ+SGXLKpFtR+NrDinyEXHs1csdkoydp8q
+ Pz76g1Xstz23VWOmKek8l1li8ywKoeE91ym2jWw5r0salZd2DyYTtQDTJZD3EZqLK+Wr
+ rZfRQfXX4Pd02T1ESdgH3cO+K1M+ipl06n/5SGW7RSR6nCFkVMX+eIk3fHU3q4bKITzN
+ qcOEy1X6k8BlmtyeRq4P9eNBUMNO8ilWvlM6OY3sCi/uKnNkDLw81zLflSH/5Ar9DrZp
+ 1nC6TsOAY5vZzPe1eTTfPvKLr2qxbOphRb4PmqLerXtD+tHrXowmqJB58gpfshhQh2PU
+ tKKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=qBBWYG/+c5ldPryHsf5eFGeS1K4sMEdoNycmM/BbPSs=;
- b=VsU+C26q+1Q9zMCFcSh2e9ftvxL7NmJ0u/oJ+tUNXqaW7gNpI/lIntcRj/LQQxryBC
- RBo+vTSshtpW6TCrMKpwpM6B3dxtPt/kAasrlDK2qGY1QZV0S/8oWLup9YtgYKGET0pT
- BYLzQW4k8sSYAYL4Pe0hHFO8wf98kfoE6gCbrVxCI5SxrDFVbiRBG1FxKlUBwZR8SI2Y
- hhqq0Pk4hdvwTmhtzO5bkagiX1+oqX04H1V+6nWePIQFCrzRGr8N29iG9itZXhdvmtwO
- ctFYfhlFzgULpq4zPyXu1ksl/0mSQG6R8yJjzgpsHaK/g4B+TW1TJuAL1UcGeLu9X9pg
- w+FA==
-X-Gm-Message-State: APjAAAXEKUOZO9GwT43SyH8g2QBrtRMpp1HZatk2/A25EII1VIJFMnoi
- TcshqyzD/5tNkWjebyKoaEvz8bc1SItneGvgpPa6Zw==
-X-Google-Smtp-Source: APXvYqzse67pl4kqu/siCg0wumffzj5GbqEiS5VUx5pi2k8HHFVyi+mrwc9OoyE2LcCldd3coboHUuNiy3JdCrimPUI=
-X-Received: by 2002:a05:6830:2371:: with SMTP id
- r17mr19318806oth.324.1574000546502; 
- Sun, 17 Nov 2019 06:22:26 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lO0ksvtY9zH08AEg8nMyPZuqK7PCO3+wK/C9fssW7po=;
+ b=Wbm8OGmBSpqFXBSzG2+6ihnt7X0W1sc0J8TZtJ4vbiOJJ5SiMaOey2kZPWKr/pPPmk
+ fKthQ3JO1mRT+S3ZG/oX/f3LvF/vb2XDYYGKsJiI1KBBYTs/xbJy9aNSouSkhf8YUaM1
+ TaRmYxIgledjs1QbEvJYjQHsanh2C2JybAn/JxyrHwUy7FnvTRXLSIA3KVCaY6HcOrOD
+ DtP66FT+Y3QB7qiz7uEMpKOVAAChmPohMAdj/jgcd8LQ/E5cIXROElohbLbtM+qtqxNU
+ iTEA2NFHHM1qPFeOBsSitlZze/5Bn1MufDCFQOmK7v8j5+FNAHumV3P+5XPpAVXPP7V+
+ CTIw==
+X-Gm-Message-State: APjAAAUhzX+xTxZ1nZS0lVZ4ucfXQINvyXzBhm2vhVABBqJ5ehyshN/j
+ yTcqw5erXbIITMs14i6LOz89wpTv
+X-Google-Smtp-Source: APXvYqzEOXSm+kKjgZdpqwrHaA8h04j+OEbYC2GEcLTVyczWFWgQ3/gy003iaQEgrZvvJmrJxZk5ag==
+X-Received: by 2002:adf:ed48:: with SMTP id u8mr24028265wro.28.1574000848452; 
+ Sun, 17 Nov 2019 06:27:28 -0800 (PST)
+Received: from localhost.localdomain
+ (p200300F1371CB100428D5CFFFEB99DB8.dip0.t-ipconnect.de.
+ [2003:f1:371c:b100:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id y6sm19298404wrw.6.2019.11.17.06.27.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 17 Nov 2019 06:27:27 -0800 (PST)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: linux-amlogic@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-mmc@vger.kernel.org, robh+dt@kernel.org, ulf.hansson@linaro.org
+Subject: Amlogic 32-bit Meson SoC SDHC MMC controller driver
+Date: Sun, 17 Nov 2019 15:27:14 +0100
+Message-Id: <20191117142716.154764-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-References: <20191115105353.GA26176@jax>
- <20191116234048.oas2rlfwxlz65jvp@localhost>
-In-Reply-To: <20191116234048.oas2rlfwxlz65jvp@localhost>
-From: Jens Wiklander <jens.wiklander@linaro.org>
-Date: Sun, 17 Nov 2019 15:22:12 +0100
-Message-ID: <CAHUa44EQ-1SUd0dDBp43_EGPMPArq_g8=1hSKZ3EC0uELUKH_A@mail.gmail.com>
-Subject: Re: [GIT PULL] tee subsys fixes for v5.4 (take two)
-To: Olof Johansson <olof@lixom.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_062228_699992_2C5E2EBD 
-X-CRM114-Status: GOOD (  15.95  )
+X-CRM114-CacheID: sfid-20191117_062730_195292_A26853FC 
+X-CRM114-Status: GOOD (  14.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -92,49 +98,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: soc@kernel.org, arm-soc <arm@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, jianxin.pan@amlogic.com,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel@vger.kernel.org, yinxin_1989@aliyun.com,
+ linux-arm-kernel@lists.infradead.org, lnykww@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Nov 17, 2019 at 12:45 AM Olof Johansson <olof@lixom.net> wrote:
->
-> On Fri, Nov 15, 2019 at 11:53:53AM +0100, Jens Wiklander wrote:
-> > Hello arm-soc maintainers,
-> >
-> > Please pull these OP-TEE driver fixes. There's one user-after-free issue if
-> > in the error handling path when the OP-TEE driver is initializing. There's
-> > also one fix to to register dynamically allocated shared memory needed by
-> > kernel clients communicating with secure world via memory references.
-> >
-> > "tee: optee: Fix dynamic shm pool allocations" is now from version 2 which
-> > includes a fix up with a small but vital dependency.
-> >
-> > If you think it's too late for v5.4 please queue this for v5.5 instead.
->
-> Hi,
->
-> I noticed you based this on -rc3 -- all our other branches are on -rc2 or
-> older.
+Hello,
 
-I'm sorry, I thought -rc3 was old enough. I'll stick to -rc2 or older
-in next time.
+this is the first non-RFC version of the driver for the Amlogic "SDHC"
+MMC controller found on Meson6, Meson8, Meson8b and Meson8m2 SoCs.
 
->
-> Anyway, I brought this in to the fixes branch, it's the only thing we have
-> queued up at this time so I'll give it a few days in -next before I send it in.
+The public S805 (Meson8b) datasheet has some documentation starting on
+page 74: [0]
 
-Great.
+It's performance is still not as good as the driver from Amlogic's 3.10
+kernel, but it does not corrupt data anymore (as RFC v1 did).
 
-Thanks,
-Jens
+Special thanks to the people who supported me off-list - you are
+amazing and deserve to be mentioned here:
+- Xin Yin who helped me fix two more write corruption problems. I am
+  hoping that he will reply with Reviewed-by, Tested-by and Bug-fixed-by
+- Jianxin Pan for sharing some of the internal workings of this MMC
+  controller with me
+- Wei Wang for spotting the initial write corruption problem and helping
+  test this driver on his board. I have his permission to add his
+  Tested-by (off-list, he's Cc'ed so if there's any problem he can speak
+  up)
 
->
->
-> -Olof
+
+Changes since RFC v1 at [1]:
+- don't set MESON_SDHC_MISC_MANUAL_STOP to fix one of three write
+  corruption problems. the out-of-tree 3.10 "reference" driver doesn't
+  set it either
+- check against data->flags instead of cmd->flags when testing for
+  MMC_DATA_WRITE as spotted by Xin Yin (many thanks!). This fixes
+  another write corruption problem
+- clear the FIFOs after successfully transferring data as suggested by
+  Xin Yin (many thanks!). This is what the 3.10 driver did and fixes yet
+  another write corruption problem
+- integrate the clock suggestions from Jianxin Pan so the driver is now
+  able to set up the clocks correctly for all known cases. documentation
+  is also added to the patch description. Thank you Jianxin for the
+  help!
+- set the correct max_busy_timeout as suggested by Jianxin Pan (thanks!)
+- convert the dt-bindings to .yaml (which is why I didn't add Rob's
+  Reviewed-by)
+- switch to struct clk_parent_data as part of newer common clock
+  framework APIs to simplify the clock setup
+- dropped CMD23 support because it seems to hurt read and write
+  performance by 10-20% in my tests. it's not clear why, but for now we
+  can live without this.
+- use devm_platform_ioremap_resource instead of open-coding it
+
+
+[0] https://dn.odroid.com/S805/Datasheet/S805_Datasheet%20V0.8%2020150126.pdf
+[1] https://patchwork.kernel.org/cover/11035505/
+
+
+Martin Blumenstingl (2):
+  dt-bindings: mmc: Document the Amlogic Meson SDHC MMC host controller
+  mmc: host: meson-mx-sdhc: new driver for the Amlogic Meson SDHC host
+
+ .../bindings/mmc/amlogic,meson-mx-sdhc.yaml   |   64 +
+ drivers/mmc/host/Kconfig                      |   14 +
+ drivers/mmc/host/Makefile                     |    1 +
+ drivers/mmc/host/meson-mx-sdhc.c              | 1174 +++++++++++++++++
+ 4 files changed, 1253 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/mmc/amlogic,meson-mx-sdhc.yaml
+ create mode 100644 drivers/mmc/host/meson-mx-sdhc.c
+
+-- 
+2.24.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
