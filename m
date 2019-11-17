@@ -2,80 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E866FFA10
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 15:07:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 585ADFFA12
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 15:08:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wWRZ6TNPLVri87+9GUOgzuqSp99xsf0g+k/zvaoCmsY=; b=UYafJAnFt+gi9o
-	Tf85BWuVvvvLmWggdqyreVhAWDHBMvzBJGv5SXHRC2+U334ylUTdZrbdagZS8qKshJaL0cEItyXT3
-	SLyxeIJCjAYYS3G0ujVjhDBErGCoHws0ZpG2tjZ/3ykltTaHuQCgofzpgBikxPTWTHHGg22idelJL
-	0+lCtkq7+jCRsk7bpYDThxtjAW+e7nGeRYRH09yUakkEWWzelpUgKiK2LEYletjlTv+HjcsV5/rVq
-	e/RsNfvNrReKD3gVLwHNK8XZgOBnKLEbbeD4Oj5Hw24c5nVyTIR/i1ITDd9X8s5X6b7ZkGO5qKey4
-	TEhupOryngGn84nramaA==;
+	List-Owner; bh=nKFmX32cP/a0cC4DULapUH6eoo8u+PHZHfaYCzzG1ts=; b=Jx08fBvqu2feKE
+	6wRkBqyI9OrytfBY7dhLaGnwdg/Uit+/UZ28agI8xFsqRv8x5y8yKSTECgCG6VWST5En5Q2ke/pwM
+	IRHYs/ZPgYLa3xn0k5re5sKdGariqG2QYlvOwqBX6DUd60jv4O0VKytDLGuyN6mTtRumV9d3iazjx
+	csQmyqpnlS0FgyHTK4JoR52uWKCfHBqhy0dVeAE0MkK0/WzVs/EeU2p7PSJkEHvwHA1GMuzPtX0gJ
+	qzQxIILZeoxQO24mGMQj89ETKLOuexSqipGz2BqonxcChB+yIHfAGj8u9jIF9Zsom/IhcoGYff5QL
+	OOpd7sNszwqw9BP4GtXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWLDP-0005Dl-J7; Sun, 17 Nov 2019 14:07:47 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1iWLDl-0005au-TI; Sun, 17 Nov 2019 14:08:09 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWLDF-0005C0-RP; Sun, 17 Nov 2019 14:07:40 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id y21so729621pjn.9;
- Sun, 17 Nov 2019 06:07:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ id 1iWLDJ-0005Dk-Sf; Sun, 17 Nov 2019 14:07:43 +0000
+Received: by mail-wm1-x342.google.com with SMTP id 8so15882910wmo.0;
+ Sun, 17 Nov 2019 06:07:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=Ogk/eEmzUsDEdl7w08E984I9cFzzy44g9Efvz8aG1qM=;
- b=eka7RtLZ3C0mryfGOdnbrQqku4FdYrS7Vm6nD0pAM0Sj+UMjIj+3/CujSB4F4/KhsP
- VihO8HhcTglrOu6EQH0p/TXHD/ahFd15q4S5iruKQCe+sH7ywazKmQc2UqXnSnVDkZ7T
- EsqzAoIHwQFcaskIfLqbQRH1RreWUXvfh6EulG3Z1G4qfi0pUjhoyTIHS+KyKLSO0BXE
- PBh+UdJdxwiu3mGlWta2oQXcfRxlt9b1PQs38Ry04PyYJOfw5p3G+H65TjaCQ3VekzZ/
- Sn26NijXk12QhcSb4ZrZLGcMBMZ8YgEUa7sc1h/G0j+sq+NWeT5kdI0ubKTwQ5AjPNFv
- ZQEQ==
+ bh=sfzf92CL96vr/sJWUdQn1rqPMmFFI9Y4IH1A/bb5Cto=;
+ b=mBKRzVbA3Tv3a6pbW64Ow5gGE3LSx9JeXieKON1RqjRi5XeYL3JzMm84p89fUR+Se8
+ m7C2+rmyLe6BY1KQvdWo+3EQWTgK5mQxO/bKZw7UeQA4u8xpXfDJBL6s48aaprOjTeFF
+ Jhym38GFkOeNU3AiqC3aC6jDA2EQ2t73XTnzfphrM8hSUD5rJfVKKXAwIlhmZUWd78iO
+ IdTieocxOxxi6dz6Vp5wJGZmrZOtBVjFyvdDfAn/c1vsGleLwHYFayRUDpnufEX1lQaL
+ SamknSR/Nw7KdgUSV0EZZYrAldz2L1Em/Uh+HMKaffnR0RwWTppmT+ly+pnKy5IOKsUR
+ 5ojA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=Ogk/eEmzUsDEdl7w08E984I9cFzzy44g9Efvz8aG1qM=;
- b=BJXaaTW2jCFjjapADCFSzGE6Urh4Bi9bn5h6j2vKi8HIzEeCsletMgRRKC54IEFvQf
- 18Bnx5f8vrZ+e1SxMVBefHwcgyIUJ8gakc4SIVodALysq/L7yCx77K1qtGZvG3wJJ0D3
- ZW7wQgR1gIWHtDVQkwC3NPEPLbQI6qwFgUe/U1iRd7o/VJ9aPMY7OUy5Z5aLgouZAba+
- Nm2bLFy9j0XK2dXZodH8FaYFD9ODDNY85m1NtKcyx4FbOeurKxFO5gWCFLCbRdF3Oyo5
- ZEolN0tI2Z6b8TG6MH2eOgxnQYKWwf9mmp3t8atJ5SiP6RfHVhdCgnEhvuSh9DWkEUMp
- qAkQ==
-X-Gm-Message-State: APjAAAU5J+pkbpGmD/6rKIPiz+788F2H+1jsB/1Mh/duCisEO9lv04Ab
- kjDDYK4R6eUZa+FeFDyUz0VXLWa2
-X-Google-Smtp-Source: APXvYqyJN1xtglkHOj6ND7doXENJ2CNNHqYqpj3JsmiEA+gpCe9JSyNJo7gybj7eLRamQUOLJFYM4w==
-X-Received: by 2002:a17:90a:1a56:: with SMTP id
- 22mr33929410pjl.100.1573999656893; 
- Sun, 17 Nov 2019 06:07:36 -0800 (PST)
-Received: from localhost.localdomain ([103.51.74.169])
- by smtp.gmail.com with ESMTPSA id i102sm16486708pje.17.2019.11.17.06.07.33
+ bh=sfzf92CL96vr/sJWUdQn1rqPMmFFI9Y4IH1A/bb5Cto=;
+ b=l8pQCGBeEF5J5R3WPJEaEny1qGSuhpVP/GC6tph+9DftpO4u8TXgN96JzDASxU6ZLL
+ bpUUSY2ydmEiDvQPBLBr3UBN8BHCfhNV8G9+fbwCLOjzHXHULgH83DzNyVmjkuiPZrDH
+ pMR1PnU/EXYsgYhHTqxZNJcPelP1f/fglJDGFeqRxPnyJSVzdeoQG4EAn/2oEiz4zB/R
+ F6XnCedwzEG9HFvTcghspHcjGdt7682faW47N6BWM6RokA2NdfeLSgiExIOLRSfmlFFz
+ NbqL9p+if8T4H2+vc6FRSZgCYWaO/xWgBMfyXBUo0VuzGVZmJ0ahJqgqjwbXXaXHXRtN
+ 21VA==
+X-Gm-Message-State: APjAAAXbyX/hdnPwP0yQIX0g5gpaJzS+YFkViyfBCJKQm7gN4jZN11ID
+ amv9xePAhGptGVQwPscdfmE=
+X-Google-Smtp-Source: APXvYqwAK3MUz6opV/wXXyZ7DKoixlQvwdlMtfwitUFt5Oh7JGsEVPfq9X/zMatAONAuA3HEjgmlUA==
+X-Received: by 2002:a1c:7708:: with SMTP id t8mr24189852wmi.29.1573999660252; 
+ Sun, 17 Nov 2019 06:07:40 -0800 (PST)
+Received: from localhost.localdomain
+ (p200300F1371CB100428D5CFFFEB99DB8.dip0.t-ipconnect.de.
+ [2003:f1:371c:b100:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id n23sm16632977wmc.18.2019.11.17.06.07.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 17 Nov 2019 06:07:36 -0800 (PST)
-From: Anand Moon <linux.amoon@gmail.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH] arm64: dts: rockchip: Add regulators for pcie on
- rk3399-rock960
-Date: Sun, 17 Nov 2019 14:07:28 +0000
-Message-Id: <20191117140728.917-1-linux.amoon@gmail.com>
+ Sun, 17 Nov 2019 06:07:39 -0800 (PST)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: narmstrong@baylibre.com, jbrunet@baylibre.com,
+ linux-amlogic@lists.infradead.org
+Subject: [PATCH v3 0/2] add the DDR clock controller on Meson8 and Meson8b
+Date: Sun, 17 Nov 2019 15:07:29 +0100
+Message-Id: <20191117140731.137378-1-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_060737_913230_4E903288 
-X-CRM114-Status: GOOD (  11.63  )
+X-CRM114-CacheID: sfid-20191117_060741_955245_68239402 
+X-CRM114-Status: GOOD (  13.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (linux.amoon[at]gmail.com)
+ provider (martin.blumenstingl[at]googlemail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -95,52 +98,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
+Cc: devicetree@vger.kernel.org, sboyd@kernel.org, linux-kernel@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As per Rock960 schematics add 0V9 and 1V8 voltage supplies to the
-RK3399 PCIe block.
+Meson8 and Meson8b SoCs embed a DDR clock controller in their MMCBUS
+registers. This series:
+- adds support for this DDR clock controller (patches 0 and 1)
+- wires up the DDR PLL as input for two audio clocks (patches 2 and 3)
+- adds the DDR clock controller to meson8.dtsi and meson8b.dtsi
 
-Signed-off-by: Anand Moon <linux.amoon@gmail.com>
----
-Schematics [0] https://dl.vamrs.com/products/rock960/docs/hw/rock960_sch_v12_20180314.pdf
----
- arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+Special thanks go out to Alexandre Mergnat for switching the Amlogic
+clock drivers over to parent_hws and parent_data. That made this series
+a lot easier for me!
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-index c7d48d41e184..2f76cccebbee 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-@@ -53,6 +53,15 @@
- 		vin-supply = <&vcc5v0_sys>;
- 	};
- 
-+	vcc_0v9: vcc-0v9 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc_0v9";
-+		regulator-always-on;
-+		regulator-min-microvolt = <900000>;
-+		regulator-max-microvolt = <900000>;
-+		vin-supply = <&vcc3v3_sys>;
-+	};
-+
- 	vcc3v3_pcie: vcc3v3-pcie-regulator {
- 		compatible = "regulator-fixed";
- 		enable-active-high;
-@@ -385,6 +394,8 @@
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pcie_clkreqn_cpm>;
- 	vpcie3v3-supply = <&vcc3v3_pcie>;
-+	vpcie1v8-supply = <&vcca_1v8>;
-+	vpcie0v9-supply = <&vcc_0v9>;
- 	status = "okay";
- };
- 
+This series depends on v3 my other series from [0]:
+"provide the XTAL clock via OF on Meson8/8b/8m2"
+
+
+Changes since v2 at [2]:
+- add #include <linux/clk-provider.h> as suggested by Stephen Boyd
+- drop unused includes
+- use devm_platform_ioremap_resource instead of open-coding it as
+  suggested by Stephen Boyd
+- drop trailing comma after sentinel element as suggested by Stephen
+  Boyd
+- dropped patch #3 "clk: meson: meson8b: use of_clk_hw_register to
+  register the clocks" because it's now moved to my other series at
+  [0]
+- dropped dts changes so this series exclusively targets clk-meson
+
+Changes since v1 at [1]:
+- fixed the license of the .yaml binding and added Rob's Reviewed-by
+- drop unused syscon.h include (spotted by Jerome - thanks)
+- drop fast_io from regmap_config and add max_register as suggested
+  by Jerome
+- dropped original patch #4 "clk: meson: meson8b: add the ddr_pll
+  input for the audio clocks" because I could not test that yet (that
+  patch was a forward-port from Amlogic's 3.10 BSP kernel)
+
+
+[0] https://patchwork.kernel.org/cover/11248377/
+[1] https://patchwork.kernel.org/cover/11155553/
+[2] https://patchwork.kernel.org/cover/11214227/
+
+
+Martin Blumenstingl (2):
+  dt-bindings: clock: add the Amlogic Meson8 DDR clock controller
+    binding
+  clk: meson: add a driver for the Meson8/8b/8m2 DDR clock controller
+
+ .../clock/amlogic,meson8-ddr-clkc.yaml        |  50 ++++++
+ drivers/clk/meson/Makefile                    |   2 +-
+ drivers/clk/meson/meson8-ddr.c                | 149 ++++++++++++++++++
+ include/dt-bindings/clock/meson8-ddr-clkc.h   |   4 +
+ 4 files changed, 204 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/clock/amlogic,meson8-ddr-clkc.yaml
+ create mode 100644 drivers/clk/meson/meson8-ddr.c
+ create mode 100644 include/dt-bindings/clock/meson8-ddr-clkc.h
+
 -- 
 2.24.0
 
