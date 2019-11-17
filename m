@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A3D5FF9C4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 14:01:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58252FF9C9
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 Nov 2019 14:01:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6un5aIASuQOZzCkapODq8jgay8zQ+3kGgS7AQ/346R4=; b=g03t/sE7dAlbiu
-	Kv8tiw+Juho4Fm5JSN9VXod9raxP+1AA0LFCI7A8DEI1i+hnFelTpJnT3gtAK8AfWhVgjAz08pKiR
-	GhEo/kRPXGACsHxP7YCY9DBzw76yDhBkBvg0BtzAz84eMFPFmaWRV73kkUuYi1luy7letcisSYUe5
-	xhrejIjD+qChPeN8bIbFPgEpCGkxrv7eUyexJIwxuzd8qMn8znQrVSXrLNSC69Qv7NJ8KIAJmgEov
-	jse4BCL+nfrLgTzO/LGvN0kuDY2h7ZBLHNNe8u3XLdOadBOJY/fhfbzhjE6yMksfOcTJQ+anzs7Fx
-	ZhOV6zPe3fcvcUzAoSrg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s6//3FVT1/vyR8x8PvjekL9nMnbMD0EIF5NvuOq81/c=; b=sTDfuGI+xB2jYK
+	nMO+iGqQ+pS9jYky1HBdOp2NkbMJKfoBOfEOsmQT8jebvs6cZLBS0UaAUeZgO2/vxmr7RXb7YLIJw
+	zEMJTCbdi5L9gqreTLWk/w/tpY9bRpCvWDP+/w1Czr6avwYZnApabwK6JL3GvzAsZxn3EWzp6F/nB
+	J7Loz6K3BqT9DvSDRkflafLFU9g92hCXKi79B7HZjNJvemUSJGKwv1GPPwmvxX0LoFx7SQhck1+3L
+	T60yi87hDVni/aWsRbRj86ZQBqEvw1Tb/aezjWYDccSNv5/m0wpx2HS4eCqUTuGqlXFFJvO+UxNr8
+	zQsDsSTBHI5nJIIG/c3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWKB9-0007b8-Jw; Sun, 17 Nov 2019 13:01:23 +0000
-Received: from mailoutvs31.siol.net ([185.57.226.222] helo=mail.siol.net)
+	id 1iWKBR-0007pV-Vv; Sun, 17 Nov 2019 13:01:42 +0000
+Received: from mailoutvs50.siol.net ([185.57.226.241] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWKAu-0007Zx-1e
+ id 1iWKAv-0007Zy-KW
  for linux-arm-kernel@lists.infradead.org; Sun, 17 Nov 2019 13:01:10 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 0B4B9523780;
- Sun, 17 Nov 2019 14:01:05 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTP id 72D09523C3E;
+ Sun, 17 Nov 2019 14:01:07 +0100 (CET)
 X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id baLIesOeibEY; Sun, 17 Nov 2019 14:01:04 +0100 (CET)
+ with ESMTP id PoHoZK4RZXTG; Sun, 17 Nov 2019 14:01:07 +0100 (CET)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id BD1B7522BA0;
- Sun, 17 Nov 2019 14:01:04 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPS id 2F7F4522BA0;
+ Sun, 17 Nov 2019 14:01:07 +0100 (CET)
 Received: from localhost.localdomain (cpe-86-58-102-7.static.triera.net
  [86.58.102.7]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 663B4523A9E;
+ by mail.siol.net (Postfix) with ESMTPSA id C06D2523C3E;
  Sun, 17 Nov 2019 14:01:04 +0100 (CET)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mripard@kernel.org,
 	wens@csie.org
-Subject: [PATCH v2 0/2] sunxi: dts: tanix-tx6: Add rc map
-Date: Sun, 17 Nov 2019 14:00:56 +0100
-Message-Id: <20191117130058.1341989-1-jernej.skrabec@siol.net>
+Subject: [PATCH v2 1/2] media: dt-bindings: media: add new rc map name
+Date: Sun, 17 Nov 2019 14:00:57 +0100
+Message-Id: <20191117130058.1341989-2-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191117130058.1341989-1-jernej.skrabec@siol.net>
+References: <20191117130058.1341989-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_050108_251398_E8A41934 
-X-CRM114-Status: UNSURE (   7.93  )
+X-CRM114-CacheID: sfid-20191117_050109_832737_DEB20DD3 
+X-CRM114-Status: UNSURE (   9.53  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -56,9 +58,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.222 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [185.57.226.222 listed in wl.mailspike.net]
+ low trust [185.57.226.241 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -80,24 +80,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds "rc-tanix-tx5max" to rc bindings and to Tanix TX6 dts.
+Add new entry for rc-tanix-tx5max in linux,rc-map-name
 
-Superseeds https://lore.kernel.org/patchwork/patch/1143781/
+Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+---
+ Documentation/devicetree/bindings/media/rc.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-Best regards,
-Jernej
-
-Changes from v1:
-- add entry to rc.yaml
-
-Jernej Skrabec (2):
-  media: dt-bindings: media: add new rc map name
-  arm64: dts: allwinner: h6: tanix-tx6: Add IR remote mapping
-
- Documentation/devicetree/bindings/media/rc.yaml       | 1 +
- arch/arm64/boot/dts/allwinner/sun50i-h6-tanix-tx6.dts | 1 +
- 2 files changed, 2 insertions(+)
-
+diff --git a/Documentation/devicetree/bindings/media/rc.yaml b/Documentation/devicetree/bindings/media/rc.yaml
+index d11380794ff4..a64ee038d235 100644
+--- a/Documentation/devicetree/bindings/media/rc.yaml
++++ b/Documentation/devicetree/bindings/media/rc.yaml
+@@ -123,6 +123,7 @@ properties:
+           - rc-su3000
+           - rc-tango
+           - rc-tanix-tx3mini
++          - rc-tanix-tx5max
+           - rc-tbs-nec
+           - rc-technisat-ts35
+           - rc-technisat-usb2
 -- 
 2.24.0
 
