@@ -2,77 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A9451002B4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 11:43:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 740C91002DE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 11:47:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TYr6uobIc/BWADhiv04eFUlpg3HLY5yQzSLyaQE41cw=; b=u7z/puQlMQzh+N
-	rHN2QqQ1FiiI9yVfL2ckK1/Hr3XEvwCTEL+5BT7Ec3ojD43Oq0zBMWXdNYEQ4AN39XiNOpgdYxOxR
-	OVs0TuCz79SFhLvSQsE3GZv2CSJTyf5ivBV2/UwIYrYcUdQTN+qeQbRrvboWRiXxHhoWKsFaRzlNQ
-	38x7itYMA7P7q8PzucYvZ3QrAhywckhj03EjeXAQFhj2dKTx9d/+yGXW2pehNrb0sfLRJSP+/5uRf
-	bbAyNMFt9i0alvKRnCEyIoisqHhTDrBzfM4JTELph17wnEfcsA2jAVSIfWCP1qusAuuzs5TkRKMj6
-	mmknyWXRYhWkVwaG8o6w==;
+	List-Owner; bh=hmZ5YlkAapLW8iMM7jIttWSuXUAIuMX2ZDRy+KyKNi0=; b=PxxCEy3azQMANZ
+	a3HOpMhfJTVvgRPJX+dX1jg53N+9K/xa3RiLtDqisiEosBWh7riuVJwuQ649hyt8rrdHD1U8iyvCu
+	pstTIxFcOxou4h8j3BCeZrPqL3jw7gNgwNanbd+qA9I4YL8VUraaxP7milPxCssvv7jO9hfziTM3E
+	eppFZdmQ+cIAvMw3G1zEDpg81q5E+ZKK0pTretGiazMAG8hSkZKfBTReZUI/lRiY8/eWuG7oXzRdB
+	DyKC231jFRW/22yhjmnKDy7sFHXlBBr+Ufz03HaZHYH4RbtNqiMESzHCUe2nWpuN+jAaldaVcPBSf
+	pCFGl37bAoBxUGKGSzSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWeVH-00066n-0c; Mon, 18 Nov 2019 10:43:31 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iWeZN-0008In-HH; Mon, 18 Nov 2019 10:47:45 +0000
+Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWeV7-00065J-HY
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 10:43:23 +0000
-Received: by mail-pg1-x544.google.com with SMTP id k13so9462213pgh.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 02:43:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=oal8H4KU9ceKzMRCHfIeWqGJ097aAOuBrL6LAkt5Sts=;
- b=GrSgfku+mO66VD5S3fXJy0QqA/u2NkhlTQf4eWsc4mfIDEEYtUYATDd73lu47Uxx8K
- sGgCLMjUfyiasrcvlYBpYXko/hxwYDbDHx5LahBHGesdM+c39jmIh08y23zYqWKD+0+p
- Kqygrm1arCtVRyG/XE/mPiFlhEVQXMWzBSENA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=oal8H4KU9ceKzMRCHfIeWqGJ097aAOuBrL6LAkt5Sts=;
- b=LKW0hKL0PVSuiV8klTcINQt1px2W+mAJPpK5PJ0BYWfLTOPa6rV8pS8b3LVG59473x
- n+u7LlcelnlBN5wjhiz1mJ1kMtMS2RUxp5U+lCZKkUYnqNF6yLTRCDNqBdw2Adlih4Fl
- 78kRxOadXg0I0zlS51Gr9upUFgD6a9SCkSqo/fVvocp0hqfr1FKsY1Qoi0XvVLXovTD7
- IJmBqhSuqMypHb7awpTMYwSxaDN5gJkrttlSeyE257f4XbQ93gLuoNt4YoR0Nq86ZJNL
- i/+q8A519HzHwZhGcyNgmCpOGXhMNOK7zt5lNdn3EiGZv2bRtIurXhpsNgImLINJZ7KM
- QRAg==
-X-Gm-Message-State: APjAAAXr1HjAZs6F6EausM8hBraT9XJevpAD2fQ/v1cc0ujxW/lgMoEu
- BiYEzQ+Q4pHD2Jmwhwd+X39/bw==
-X-Google-Smtp-Source: APXvYqz73PCW+T58lexcwbtEkYi/LQt0IUyjR4at8WkiLlPclgUmtqSyac2X2Xajrwp/TEsevh0T3Q==
-X-Received: by 2002:a63:db15:: with SMTP id e21mr16299127pgg.21.1574073800047; 
- Mon, 18 Nov 2019 02:43:20 -0800 (PST)
-Received: from hsinyi-z840.tpe.corp.google.com
- ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id p18sm20485310pff.9.2019.11.18.02.43.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Nov 2019 02:43:19 -0800 (PST)
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Subject: [PATCH] arm64: dts: mt8173: Add gce setting in mmsys and display node
-Date: Mon, 18 Nov 2019 18:42:53 +0800
-Message-Id: <20191118104252.228406-1-hsinyi@chromium.org>
-X-Mailer: git-send-email 2.24.0.432.g9d3f5f5b63-goog
+ id 1iWeYl-0007rC-PZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 10:47:10 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mta-01.yadro.com (Postfix) with ESMTP id 3D39F43597;
+ Mon, 18 Nov 2019 10:47:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
+ content-type:content-type:content-transfer-encoding:mime-version
+ :x-mailer:message-id:date:date:subject:subject:from:from
+ :received:received:received; s=mta-01; t=1574074021; x=
+ 1575888422; bh=WSfhOJmQyfFAWkKlccMB2tHDhi2Hlxmn98sJpTThN/k=; b=b
+ gu+9u0iI67pDCnf5ECJzVpYatLNW7cJPntbEfkA5SbBfLx+OYm0NRQ+dcaK9e5yC
+ QxsTm9W85+k8cLH75HhQ+jyvK5ysRNGHCxSTN831UUQcPyC0Fag/DGgC/Q3dLVBI
+ 5oRIWl0j6Dj3zVTYp5uAcFnKuOhONrWERlOrHKO4X0=
+X-Virus-Scanned: amavisd-new at yadro.com
+Received: from mta-01.yadro.com ([127.0.0.1])
+ by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id Tc8DqeEH5YAN; Mon, 18 Nov 2019 13:47:01 +0300 (MSK)
+Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
+ [172.17.10.102])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mta-01.yadro.com (Postfix) with ESMTPS id 1BEB042009;
+ Mon, 18 Nov 2019 13:47:00 +0300 (MSK)
+Received: from localhost.dev.yadro.com (172.17.15.69) by
+ T-EXCH-02.corp.yadro.com (172.17.10.102) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id
+ 15.1.669.32; Mon, 18 Nov 2019 13:46:59 +0300
+From: Ivan Mikhaylov <i.mikhaylov@yadro.com>
+To: 
+Subject: [PATCH v3 0/3] add inversion signal presence support
+Date: Mon, 18 Nov 2019 13:46:43 +0300
+Message-ID: <20191118104646.3838-1-i.mikhaylov@yadro.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
+X-Originating-IP: [172.17.15.69]
+X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
+ T-EXCH-02.corp.yadro.com (172.17.10.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_024321_607240_C4C0DC1E 
-X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-CacheID: sfid-20191118_024708_004939_7C93C88C 
+X-CRM114-Status: UNSURE (   9.32  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -82,7 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,133 +88,34 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
+ linux-mmc@vger.kernel.org, Adrian Hunter <adrian.hunter@intel.com>,
  linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Joel Stanley <joel@jms.id.au>, Ivan Mikhaylov <i.mikhaylov@yadro.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to use GCE function, we need add some informations
-into display node (mboxes, mediatek,gce-client-reg, mediatek,gce-events).
+Vesnin BMC uses microSD with card presence signal inversion in the
+schematics. Add the .read_l callback to detect 'cd-inverted' option
+in dts. There is no WP switch, due to this 'disable-wp' also was added
+into vesnin dts for sdhci.
 
-Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
----
-- This is based on series "support gce on mt8183 platform"
-  https://patchwork.kernel.org/cover/11208309/
-- gce setting in 8183:
-  https://patchwork.kernel.org/patch/11127105/
----
- arch/arm64/boot/dts/mediatek/mt8173.dtsi | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+Ivan Mikhaylov (3):
+  aspeed: dts: add sd card for vesnin
+  mmc: sdhci-of-aspeed: enable CONFIG_MMC_SDHCI_IO_ACCESSORS
+  mmc: sdhci-of-aspeed: add inversion signal presence
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-index 15f1842f6df3..e84ec3f95d81 100644
---- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-@@ -911,6 +911,11 @@ mmsys: clock-controller@14000000 {
- 			assigned-clocks = <&topckgen CLK_TOP_MM_SEL>;
- 			assigned-clock-rates = <400000000>;
- 			#clock-cells = <1>;
-+			mboxes = <&gce 0 CMDQ_THR_PRIO_HIGHEST 1>,
-+				 <&gce 1 CMDQ_THR_PRIO_HIGHEST 1>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0 0x1000>;
-+			mediatek,gce-events = <CMDQ_EVENT_MUTEX0_STREAM_EOF>,
-+					      <CMDQ_EVENT_MUTEX1_STREAM_EOF>;
- 		};
- 
- 		mdp_rdma0: rdma@14001000 {
-@@ -991,6 +996,7 @@ ovl0: ovl@1400c000 {
- 			clocks = <&mmsys CLK_MM_DISP_OVL0>;
- 			iommus = <&iommu M4U_PORT_DISP_OVL0>;
- 			mediatek,larb = <&larb0>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xc000 0x1000>;
- 		};
- 
- 		ovl1: ovl@1400d000 {
-@@ -1001,6 +1007,7 @@ ovl1: ovl@1400d000 {
- 			clocks = <&mmsys CLK_MM_DISP_OVL1>;
- 			iommus = <&iommu M4U_PORT_DISP_OVL1>;
- 			mediatek,larb = <&larb4>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xd000 0x1000>;
- 		};
- 
- 		rdma0: rdma@1400e000 {
-@@ -1011,6 +1018,7 @@ rdma0: rdma@1400e000 {
- 			clocks = <&mmsys CLK_MM_DISP_RDMA0>;
- 			iommus = <&iommu M4U_PORT_DISP_RDMA0>;
- 			mediatek,larb = <&larb0>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xe000 0x1000>;
- 		};
- 
- 		rdma1: rdma@1400f000 {
-@@ -1021,6 +1029,7 @@ rdma1: rdma@1400f000 {
- 			clocks = <&mmsys CLK_MM_DISP_RDMA1>;
- 			iommus = <&iommu M4U_PORT_DISP_RDMA1>;
- 			mediatek,larb = <&larb4>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xf000 0x1000>;
- 		};
- 
- 		rdma2: rdma@14010000 {
-@@ -1031,6 +1040,7 @@ rdma2: rdma@14010000 {
- 			clocks = <&mmsys CLK_MM_DISP_RDMA2>;
- 			iommus = <&iommu M4U_PORT_DISP_RDMA2>;
- 			mediatek,larb = <&larb4>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0 0x1000>;
- 		};
- 
- 		wdma0: wdma@14011000 {
-@@ -1041,6 +1051,7 @@ wdma0: wdma@14011000 {
- 			clocks = <&mmsys CLK_MM_DISP_WDMA0>;
- 			iommus = <&iommu M4U_PORT_DISP_WDMA0>;
- 			mediatek,larb = <&larb0>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x1000 0x1000>;
- 		};
- 
- 		wdma1: wdma@14012000 {
-@@ -1051,6 +1062,7 @@ wdma1: wdma@14012000 {
- 			clocks = <&mmsys CLK_MM_DISP_WDMA1>;
- 			iommus = <&iommu M4U_PORT_DISP_WDMA1>;
- 			mediatek,larb = <&larb4>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x2000 0x1000>;
- 		};
- 
- 		color0: color@14013000 {
-@@ -1059,6 +1071,7 @@ color0: color@14013000 {
- 			interrupts = <GIC_SPI 187 IRQ_TYPE_LEVEL_LOW>;
- 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
- 			clocks = <&mmsys CLK_MM_DISP_COLOR0>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x3000 0x1000>;
- 		};
- 
- 		color1: color@14014000 {
-@@ -1067,6 +1080,7 @@ color1: color@14014000 {
- 			interrupts = <GIC_SPI 188 IRQ_TYPE_LEVEL_LOW>;
- 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
- 			clocks = <&mmsys CLK_MM_DISP_COLOR1>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x4000 0x1000>;
- 		};
- 
- 		aal@14015000 {
-@@ -1075,6 +1089,7 @@ aal@14015000 {
- 			interrupts = <GIC_SPI 189 IRQ_TYPE_LEVEL_LOW>;
- 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
- 			clocks = <&mmsys CLK_MM_DISP_AAL>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x5000 0x1000>;
- 		};
- 
- 		gamma@14016000 {
-@@ -1083,6 +1098,7 @@ gamma@14016000 {
- 			interrupts = <GIC_SPI 190 IRQ_TYPE_LEVEL_LOW>;
- 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
- 			clocks = <&mmsys CLK_MM_DISP_GAMMA>;
-+			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x6000 0x1000>;
- 		};
- 
- 		merge@14017000 {
+ arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts | 13 +++++++++++++
+ drivers/mmc/host/Kconfig                    |  1 +
+ drivers/mmc/host/sdhci-of-aspeed.c          | 12 ++++++++++++
+ 3 files changed, 26 insertions(+)
+
 -- 
-2.24.0.432.g9d3f5f5b63-goog
+2.20.1
 
 
 _______________________________________________
