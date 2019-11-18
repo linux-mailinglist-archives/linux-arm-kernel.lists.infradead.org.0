@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5732100449
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:35:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34F3B10044A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:35:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v2gD0/4SdXv7JGv0l8+fpY8o82M2y/O7frE7glO4Z4A=; b=oxIhyqHeHf+J/K
-	/iQNHyCs1d3UJ4VaoRzPaADkOMxLPMJT588zSZ82eM0ZbgopoCg2Af1RbZMGbVq10WBnQTVMyWf1T
-	uxf63z2+QfwChb36gNxcxKnYKVdk09RkxEfU0n8RIX4ID4RhK2y1B1kPcz06nkUkk2/JUWBz0hEkr
-	C3jE0wIoMEMQMgMy5umE0wH3jqPe++9eLuDOBeLCOeVQ/pXmxpsALwHNZUjRDghQIo5hL/mr19zrd
-	li0ozE8Z+lzVH0I+LLdbGGyQOqr/BD+OD5p1+Z72brYhGklunx8i+3yGZhhsJ1+D98UiHBALkWu5z
-	HG8kFR2qozzf7ioAAWBA==;
+	List-Owner; bh=NsPigixsH9Ky5T1xLzxlKE9PNRjkasgHOH5GvvfrfHU=; b=sLqWNe/7H5eqc3
+	HtQ17q4FXqsKkgHhr9ps/qDnLESWzC3avZ3kZoRgwf2xbwCQYuOy6G+4kR9ER6UtIhORcGbko89gR
+	qwvY2AZ87Z2Ozrma3gLbDGpUxjNbFbBTnHuj7u+18unThKFZMM5wjzEQTM20wtFV+vssuSt7iHpnm
+	au4hvyMeiOHXcckBUXfDqNsmZWJvCZG+v3h4ueLfT9Wx+zYjeo4WitLyGc+30L/YqPCTzH7AFT7a8
+	ZrNJVovauRVPIt3tLzNlnt4U3cM6OEwsiMahjlPv8xnYW5+vdRv9jvowBGS9Om/B3br/9oarc4Zcm
+	PxFPnfw+1tsaoxxKAQVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWfJS-0003sV-6I; Mon, 18 Nov 2019 11:35:22 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iWfJi-0005Zh-Eq; Mon, 18 Nov 2019 11:35:38 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWf8j-0001Vk-Up
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:24:19 +0000
-Received: by mail-wm1-x341.google.com with SMTP id b17so18334763wmj.2
+ id 1iWf8l-0001Wn-2q
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:24:21 +0000
+Received: by mail-wr1-x441.google.com with SMTP id l7so18974941wrp.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 03:24:17 -0800 (PST)
+ Mon, 18 Nov 2019 03:24:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=IVPif8k5ZIR6D+wGrwJyE64cs7Iq/Iy6NadbSzu369Y=;
- b=WBqyJalM20Pe2+yF9hF7XnXsYtxzLRnMRKlU7/1VgblKEWzSrmyIVbJGD8OkiIg0Vr
- UlmpxFxPN87KDhJ6En8fXOli2Zo44+zz6/W09vpd+Xsqljhn0yhFAzrYHuJflVOyQaS+
- z/1qNFcET4IUJ3z1szwXb0kXhrjHW7ZaUhJrE=
+ bh=XFGZmHkb+1b0kA/dgNv2SqlCMzz2YyoMovWg0BJ2kb4=;
+ b=bwA5hR1s7BCv92y+47Z4EAIxhhe/4O5Rk9wvzDjl7moxcYrzXM19z+x5pp4IkgCC6c
+ NvIxf/mnhpICh+Y7JjN5Gj7yI1nTVcQ/+EUaMMfK4a0+CIsyl1eQGeD5dA6cbfP4O1IS
+ miE4btfybwW6sRR723lSDwp/GAcPDZWqIkCa4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=IVPif8k5ZIR6D+wGrwJyE64cs7Iq/Iy6NadbSzu369Y=;
- b=CkAoT65OtZN+BJeyhlHlMQf6ZrY4YeTKGovk6Tv0ZvsxmKRaDBM0aT4WdMUdCLNiOX
- whFhVc2YxlcZvouv01en/bB+YNa6FN76rNr/gRiPv/OWQNe3od/0nOYXFIh3fRWlFCZY
- 20NASM3KREdFw93K4aefHiyMHLTdKs2n4KT7D+xhuseDIkWrr52r6pksx0f8qxqHOoze
- KPDifDLCsXJBEShjmNzuVxnI+9ApmthH1co6pRXL1i3QyiRzan0k6fevaSgJD6JtGYZz
- Y6LneqWRNrrnhrp4SQlLGHnTsL6/uIwHA9hGjyjgl8D+GacZqstyWmnaw/BlelKA5E9X
- iMsw==
-X-Gm-Message-State: APjAAAVso1zk0RA10VDXVaG7ICSCOugJM9hMnPDiTJwp1Q4XuiafSacV
- 9Lu03yHFl/Q/1RCH9a6LZ0aTPQ==
-X-Google-Smtp-Source: APXvYqwSHGVqPcUA7VYXWlj6j53pgDT3YUvH8UuqMAU+wb80v+JDgc+bHai2XLBSBsbTbd8M19jYXw==
-X-Received: by 2002:a7b:c3d6:: with SMTP id t22mr29358315wmj.13.1574076256553; 
- Mon, 18 Nov 2019 03:24:16 -0800 (PST)
+ bh=XFGZmHkb+1b0kA/dgNv2SqlCMzz2YyoMovWg0BJ2kb4=;
+ b=r9F0TzD/M2A+JU1D6mmr6BwA7sinD7F7IKdvRI6GtKuJg0XAcRG1KQIPgR+dzOvAkk
+ 4zCioVVa2Ac6Wnt7q9BpID9G46ggvYnRY7yluinymxy1fVLW2iXzCXXAQUM8ow4/37Vi
+ rhNf6EILx0Hwbmoil2BF7WIQiDN+rogppBcz4GpmWpM5iSw7ThEBLDOw6liSVpAFsnIh
+ kp2VuK9sLBW4hOcguG1mcNSUJgH62AXJy67k/IO0FUUqHa6qDll/Zw/c0F7ndS3PTvuN
+ 340jde7ewSq/35XwILtSf0IpulHADDfQzshrsfShIj0DyamimqPFi40lQ6Wai+1xAnFW
+ hLUw==
+X-Gm-Message-State: APjAAAU+kVoo4oo7cLsJsZ9qbZhsldyHlOx1WrvRslvjS0voENtmALwR
+ V4qaHpOEqEpq5QYRVI1F9xb8bMXY7Woj9w==
+X-Google-Smtp-Source: APXvYqxjzfNIKsWTLmb3bVSisVqW3D/qfZZVrWkw1pImlK4mnBQkxnLwGPi9GjXGoifFxHKGiYdJxA==
+X-Received: by 2002:a5d:490c:: with SMTP id x12mr16430603wrq.301.1574076257628; 
+ Mon, 18 Nov 2019 03:24:17 -0800 (PST)
 Received: from prevas-ravi.prevas.se (ip-5-186-115-54.cgn.fibianet.dk.
  [5.186.115.54])
- by smtp.gmail.com with ESMTPSA id y2sm21140815wmy.2.2019.11.18.03.24.15
+ by smtp.gmail.com with ESMTPSA id y2sm21140815wmy.2.2019.11.18.03.24.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Nov 2019 03:24:16 -0800 (PST)
+ Mon, 18 Nov 2019 03:24:17 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v5 34/48] serial: ucc_uart: access __be32 field using
- be32_to_cpu
-Date: Mon, 18 Nov 2019 12:23:10 +0100
-Message-Id: <20191118112324.22725-35-linux@rasmusvillemoes.dk>
+Subject: [PATCH v5 35/48] soc: fsl: qe: change return type of
+ cpm_muram_alloc() to s32
+Date: Mon, 18 Nov 2019 12:23:11 +0100
+Message-Id: <20191118112324.22725-36-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
 References: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_032418_052999_E218C4A4 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20191118_032419_171581_2BF4BC45 
+X-CRM114-Status: GOOD (  17.02  )
 X-Spam-Score: 3.4 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (3.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
  [5.186.115.54 listed in zen.spamhaus.org]
@@ -101,52 +101,185 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Timur Tabi <timur@kernel.org>, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
  linux-kernel@vger.kernel.org, Scott Wood <oss@buserror.net>,
- linux-serial@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The buf member of struct qe_bd is a __be32, so to make this work on
-little-endian hosts, use be32_to_cpu when reading it.
+There are a number of problems with cpm_muram_alloc() and its
+callers. Most callers assign the return value to some variable and
+then use IS_ERR_VALUE to check for allocation failure. However, when
+that variable is not sizeof(long), this leads to warnings - and it is
+indeed broken to do e.g.
+
+  u32 foo = cpm_muram_alloc();
+  if (IS_ERR_VALUE(foo))
+
+on a 64-bit platform, since the condition
+
+  foo >= (unsigned long)-ENOMEM
+
+is tautologically false. There are also callers that ignore the
+possibility of error, and then there are those that check for error by
+comparing the return value to 0...
+
+One could fix that by changing all callers to store the return value
+temporarily in an "unsigned long" and test that. However, use of
+IS_ERR_VALUE() is error-prone and should be restricted to things which
+are inherently long-sized (stuff in pt_regs etc.). Instead, let's aim
+for changing to the standard kernel style
+
+  int foo = cpm_muram_alloc();
+  if (foo < 0)
+    deal_with_it()
+  some->where = foo;
+
+Changing the return type from unsigned long to s32 (aka signed int)
+doesn't change the value that gets stored into any of the callers'
+variables except if the caller was storing the result in a u64 _and_
+the allocation failed, so in itself this patch should be a no-op.
+
+Another problem with cpm_muram_alloc() is that it can certainly
+validly return 0 - and except if some cpm_muram_alloc_fixed() call
+interferes, the very first cpm_muram_alloc() call will return just
+that. But that shows that both ucc_slow_free() and ucc_fast_free() are
+buggy, since they assume that a value of 0 means "that field was never
+allocated". We'll later change cpm_muram_free() to accept (and ignore)
+a negative offset, so callers can use a sentinel of -1 instead of 0
+and just unconditionally call cpm_muram_free().
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/tty/serial/ucc_uart.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/soc/fsl/qe/qe_common.c | 29 ++++++++++++++++-------------
+ include/soc/fsl/qe/qe.h        | 16 ++++++++--------
+ 2 files changed, 24 insertions(+), 21 deletions(-)
 
-diff --git a/drivers/tty/serial/ucc_uart.c b/drivers/tty/serial/ucc_uart.c
-index 9436b93d5cfa..afc2a5d69202 100644
---- a/drivers/tty/serial/ucc_uart.c
-+++ b/drivers/tty/serial/ucc_uart.c
-@@ -343,7 +343,7 @@ static int qe_uart_tx_pump(struct uart_qe_port *qe_port)
- 		/* Pick next descriptor and fill from buffer */
- 		bdp = qe_port->tx_cur;
+diff --git a/drivers/soc/fsl/qe/qe_common.c b/drivers/soc/fsl/qe/qe_common.c
+index 83e85e61669f..84c90105e588 100644
+--- a/drivers/soc/fsl/qe/qe_common.c
++++ b/drivers/soc/fsl/qe/qe_common.c
+@@ -32,7 +32,7 @@ static phys_addr_t muram_pbase;
  
--		p = qe2cpu_addr(bdp->buf, qe_port);
-+		p = qe2cpu_addr(be32_to_cpu(bdp->buf), qe_port);
+ struct muram_block {
+ 	struct list_head head;
+-	unsigned long start;
++	s32 start;
+ 	int size;
+ };
  
- 		*p++ = port->x_char;
- 		qe_iowrite16be(1, &bdp->length);
-@@ -371,7 +371,7 @@ static int qe_uart_tx_pump(struct uart_qe_port *qe_port)
- 	while (!(qe_ioread16be(&bdp->status) & BD_SC_READY) &&
- 	       (xmit->tail != xmit->head)) {
- 		count = 0;
--		p = qe2cpu_addr(bdp->buf, qe_port);
-+		p = qe2cpu_addr(be32_to_cpu(bdp->buf), qe_port);
- 		while (count < qe_port->tx_fifosize) {
- 			*p++ = xmit->buf[xmit->tail];
- 			xmit->tail = (xmit->tail + 1) & (UART_XMIT_SIZE - 1);
-@@ -491,7 +491,7 @@ static void qe_uart_int_rx(struct uart_qe_port *qe_port)
- 		}
+@@ -110,13 +110,14 @@ int cpm_muram_init(void)
+  * @algo: algorithm for alloc.
+  * @data: data for genalloc's algorithm.
+  *
+- * This function returns an offset into the muram area.
++ * This function returns a non-negative offset into the muram area, or
++ * a negative errno on failure.
+  */
+-static unsigned long cpm_muram_alloc_common(unsigned long size,
+-		genpool_algo_t algo, void *data)
++static s32 cpm_muram_alloc_common(unsigned long size,
++				  genpool_algo_t algo, void *data)
+ {
+ 	struct muram_block *entry;
+-	unsigned long start;
++	s32 start;
  
- 		/* get pointer */
--		cp = qe2cpu_addr(bdp->buf, qe_port);
-+		cp = qe2cpu_addr(be32_to_cpu(bdp->buf), qe_port);
+ 	if (!muram_pool && cpm_muram_init())
+ 		goto out2;
+@@ -137,7 +138,7 @@ static unsigned long cpm_muram_alloc_common(unsigned long size,
+ out1:
+ 	gen_pool_free(muram_pool, start, size);
+ out2:
+-	return (unsigned long)-ENOMEM;
++	return -ENOMEM;
+ }
  
- 		/* loop through the buffer */
- 		while (i-- > 0) {
+ /*
+@@ -145,13 +146,14 @@ static unsigned long cpm_muram_alloc_common(unsigned long size,
+  * @size: number of bytes to allocate
+  * @align: requested alignment, in bytes
+  *
+- * This function returns an offset into the muram area.
++ * This function returns a non-negative offset into the muram area, or
++ * a negative errno on failure.
+  * Use cpm_dpram_addr() to get the virtual address of the area.
+  * Use cpm_muram_free() to free the allocation.
+  */
+-unsigned long cpm_muram_alloc(unsigned long size, unsigned long align)
++s32 cpm_muram_alloc(unsigned long size, unsigned long align)
+ {
+-	unsigned long start;
++	s32 start;
+ 	unsigned long flags;
+ 	struct genpool_data_align muram_pool_data;
+ 
+@@ -168,7 +170,7 @@ EXPORT_SYMBOL(cpm_muram_alloc);
+  * cpm_muram_free - free a chunk of multi-user ram
+  * @offset: The beginning of the chunk as returned by cpm_muram_alloc().
+  */
+-int cpm_muram_free(unsigned long offset)
++int cpm_muram_free(s32 offset)
+ {
+ 	unsigned long flags;
+ 	int size;
+@@ -194,13 +196,14 @@ EXPORT_SYMBOL(cpm_muram_free);
+  * cpm_muram_alloc_fixed - reserve a specific region of multi-user ram
+  * @offset: offset of allocation start address
+  * @size: number of bytes to allocate
+- * This function returns an offset into the muram area
++ * This function returns @offset if the area was available, a negative
++ * errno otherwise.
+  * Use cpm_dpram_addr() to get the virtual address of the area.
+  * Use cpm_muram_free() to free the allocation.
+  */
+-unsigned long cpm_muram_alloc_fixed(unsigned long offset, unsigned long size)
++s32 cpm_muram_alloc_fixed(unsigned long offset, unsigned long size)
+ {
+-	unsigned long start;
++	s32 start;
+ 	unsigned long flags;
+ 	struct genpool_data_fixed muram_pool_data_fixed;
+ 
+diff --git a/include/soc/fsl/qe/qe.h b/include/soc/fsl/qe/qe.h
+index 521fa3a177e0..f589ae3f1216 100644
+--- a/include/soc/fsl/qe/qe.h
++++ b/include/soc/fsl/qe/qe.h
+@@ -98,26 +98,26 @@ static inline void qe_reset(void) {}
+ int cpm_muram_init(void);
+ 
+ #if defined(CONFIG_CPM) || defined(CONFIG_QUICC_ENGINE)
+-unsigned long cpm_muram_alloc(unsigned long size, unsigned long align);
+-int cpm_muram_free(unsigned long offset);
+-unsigned long cpm_muram_alloc_fixed(unsigned long offset, unsigned long size);
++s32 cpm_muram_alloc(unsigned long size, unsigned long align);
++int cpm_muram_free(s32 offset);
++s32 cpm_muram_alloc_fixed(unsigned long offset, unsigned long size);
+ void __iomem *cpm_muram_addr(unsigned long offset);
+ unsigned long cpm_muram_offset(void __iomem *addr);
+ dma_addr_t cpm_muram_dma(void __iomem *addr);
+ #else
+-static inline unsigned long cpm_muram_alloc(unsigned long size,
+-					    unsigned long align)
++static inline s32 cpm_muram_alloc(unsigned long size,
++				  unsigned long align)
+ {
+ 	return -ENOSYS;
+ }
+ 
+-static inline int cpm_muram_free(unsigned long offset)
++static inline int cpm_muram_free(s32 offset)
+ {
+ 	return -ENOSYS;
+ }
+ 
+-static inline unsigned long cpm_muram_alloc_fixed(unsigned long offset,
+-						  unsigned long size)
++static inline s32 cpm_muram_alloc_fixed(unsigned long offset,
++					unsigned long size)
+ {
+ 	return -ENOSYS;
+ }
 -- 
 2.23.0
 
