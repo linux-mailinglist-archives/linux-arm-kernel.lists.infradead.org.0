@@ -2,88 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 391991005C7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 13:43:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C03261005CF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 13:45:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uHsHQYpsCAJyQqd3KWXwKbCuxru5T/UheRM104/wmwI=; b=kamtfm6GKkK++O
-	NyBRlbkLgFNQ2o+0o4n9lYFC1Hpi3hHXIP15xDX6PXDO2/dcfnFgrAdxXqhfVJbVCNdro/rhfCkow
-	jJlRFFITjCYqTV1E0zuYy3fVhEBusrA694bJ0k/B8o+921uJpkjBS5eyRsN04ZipbiUMnlAsTtYbt
-	LG6RUaM1ADO4j+Ql8zfo/2BTXWuBgzWR2DMgyHNd4HpMBrEXh1PobzXYldSG0ytmLiUZYmKuphTI+
-	XvrPb+RIcXFcmtZOTxrzh8PH9lo9Xr6EErsoMIPYsYUGYWP/PZq9t4s7mu6qg6XNEPvNueWZhErFw
-	UyDSQ8syHgTHy4ZPuewg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fMQscx5yiaqMS52dDxhM6W+3eDVnMpVhwk9qWTKfYy8=; b=L7qI44ZD1cgZqJ
+	nNSHOp57sj02U1l2GHf8zT3FIrVega0RgCUB8JTR+AVjTasi6XKUTJ0G60K+TTMaE0mh3nCvAQBkQ
+	RWhl8+eAhHnSuL1PbIP3qwhxap8JTl/R7DM1HuOfbC6KHxDLAfwCpmSWKo6W8YhFt3fG8h9noGkR9
+	IBjLw4Uz2P2kHE6RThhNSaU+PnMPQvWrfMUyLsYXnx7vsd4Cf+lpznDW7X/M9iFwvdRT5XgFtDgjJ
+	FKCsQu2Wh45SlK4KphKK63TrNCz4i3BPsv8MIJ7p1v4vutX73FqaQNf7viEaG2fdBabnuwSlOfnJb
+	+cfg+ymoPYi7ziF/XffQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWgN3-0006uK-Iv; Mon, 18 Nov 2019 12:43:09 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iWgP4-0007GB-Pb; Mon, 18 Nov 2019 12:45:14 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWgMv-0006tm-Ek
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 12:43:02 +0000
-Received: by mail-wm1-x341.google.com with SMTP id j18so15862412wmk.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 04:43:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=pcFlFVkkMbFljmj2ZrTgP1JMEa4NOdAyJ98aVnMQW90=;
- b=Ius+cbqdRUrpMslhWt5VXcDQyV8qVk+4Q8qQxv7hMKczJGpyf5AodDdZRU1khdJnZe
- Q4+6tbCPCebPkg+5A0jb/EoLTs1WmxuQidwUlRbSSb/ffaZ7C+nEtTVg6FXABkwxbras
- x4A4ihtg4YiqSM61NxV/75lb3wrmL6k+9j9m+cfg0b6huKP3jNwQU3WsukP3z+B9pTDU
- dUyq78+U7spZw6ZTkeehtnN/BbHHbc8uT6zvlhJUWJyf6/GVjKxJeObS6ExLDyuqAkms
- enBH+zA7zk/kcDqaR9SAYY7RwmyZ9cHJ8zMeuaZceL+Eya/l1Hba/Jaesd78fPxf/duP
- pRzQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=pcFlFVkkMbFljmj2ZrTgP1JMEa4NOdAyJ98aVnMQW90=;
- b=T2j0s0Dbs0YWzLT7bqZ7lXIJ0etHn4IheKKTeht9GBGwfY8TIknOvRhMMa6z3h3roP
- JWCC+57wvMINRx6HvtpmTfXLmQQzIQVuJNK5eS5q3Offassa+ObyAqMpA+LM9QcyX102
- N+q4+1TUp3KzMAUNjmyXhajXb/Lv1REYOaKzMZztgCezuYj75p6tDNRo+2FJagtr5Gl6
- v3pE+b+3p/L78SR7Oq4AUIuxQZLCq/B6CAJmQMHbX1w/FHZkBAgpyGEQGnXkpexCdwL6
- nFaC2E4IB/QYPZTyrDhUNPImjT/3ptopKGULBUKIKglhg+UHQQzyLw8B3SQDy5hY5+4+
- jS6g==
-X-Gm-Message-State: APjAAAXOUYE9goM7EC44zKrOotWsxii9TQxC1EJ5a88BrXbKBZWiuhhF
- ZIsLbsLRNMhyO2janUMPjVZ25OYg0WaEHRD5RK4=
-X-Google-Smtp-Source: APXvYqxxJYds+5SWA8ug7X01HWT+V/7ibyn0gASw4Jf8VDRK4pON3wae0WJKMIz2zs2OISG78EzX3OjYwfu9ndtgm88=
-X-Received: by 2002:a1c:a512:: with SMTP id o18mr27252635wme.4.1574080979808; 
- Mon, 18 Nov 2019 04:42:59 -0800 (PST)
+ id 1iWgOp-0007Dn-9y; Mon, 18 Nov 2019 12:45:00 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1iWgOl-0002Ek-Sp; Mon, 18 Nov 2019 13:44:55 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
+ [80.152.217.152]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ xAICiss7027499
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Mon, 18 Nov 2019 13:44:55 +0100
+From: Markus Reichl <m.reichl@fivetechno.de>
+Subject: [PATCH] arm64: dts: rockchip: Enable MTD Flash on rk3399-roc-pc
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
+ Markus Reichl <m.reichl@fivetechno.de>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Autocrypt: addr=m.reichl@fivetechno.de; prefer-encrypt=mutual; keydata=
+ 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
+ eD/Xv4SsK2JTO4nkQYw8
+Organization: five technologies GmbH
+Message-ID: <94f44e1d-86c6-1e32-aa63-56edbd7d75f5@fivetechno.de>
+Date: Mon, 18 Nov 2019 13:44:54 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-References: <20191118110034.19444-1-peron.clem@gmail.com>
- <20191118110034.19444-2-peron.clem@gmail.com>
- <20191118110640.GE4345@gilmour.lan>
-In-Reply-To: <20191118110640.GE4345@gilmour.lan>
-From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Date: Mon, 18 Nov 2019 13:42:48 +0100
-Message-ID: <CAJiuCceVyjSTGymOiXTZvyQXyXScGZuGS6gW+2=0gdxDFzg3dA@mail.gmail.com>
-Subject: Re: [PATCH v6 1/8] dt-bindings: pwm: allwinner: Add H6 PWM description
-To: Maxime Ripard <mripard@kernel.org>
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1574081099;
+ a246812e; 
+X-HE-SMSGID: 1iWgOl-0002Ek-Sp
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_044301_499999_1D4795CA 
-X-CRM114-Status: GOOD (  19.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191118_044459_490817_02C3D7AC 
+X-CRM114-Status: GOOD (  12.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peron.clem[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,63 +106,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
- Jernej Skrabec <jernej.skrabec@siol.net>,
- devicetree <devicetree@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Philipp Zabel <pza@pengutronix.de>, Rob Herring <robh@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWF4aW1lCgpPbiBNb24sIDE4IE5vdiAyMDE5IGF0IDEyOjA2LCBNYXhpbWUgUmlwYXJkIDxt
-cmlwYXJkQGtlcm5lbC5vcmc+IHdyb3RlOgo+Cj4gSGksCj4KPiBPbiBNb24sIE5vdiAxOCwgMjAx
-OSBhdCAxMjowMDoyN1BNICswMTAwLCBDbMOpbWVudCBQw6lyb24gd3JvdGU6Cj4gPiBGcm9tOiBK
-ZXJuZWogU2tyYWJlYyA8amVybmVqLnNrcmFiZWNAc2lvbC5uZXQ+Cj4gPgo+ID4gSDYgUFdNIGJs
-b2NrIGlzIGJhc2ljYWxseSB0aGUgc2FtZSBhcyBBMjAgUFdNLCBleGNlcHQgdGhhdCBpdCBhbHNv
-IGhhcwo+ID4gYnVzIGNsb2NrIGFuZCByZXNldCBsaW5lIHdoaWNoIG5lZWRzIHRvIGJlIGhhbmRs
-ZWQgYWNjb3JkaW5nbHkuCj4gPgo+ID4gRXhwYW5kIEFsbHdpbm5lciBQV00gYmluZGluZyB3aXRo
-IEg2IFBXTSBzcGVjaWZpY3MuCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogSmVybmVqIFNrcmFiZWMg
-PGplcm5lai5za3JhYmVjQHNpb2wubmV0Pgo+ID4gUmV2aWV3ZWQtYnk6IFJvYiBIZXJyaW5nIDxy
-b2JoQGtlcm5lbC5vcmc+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBDbMOpbWVudCBQw6lyb24gPHBlcm9u
-LmNsZW1AZ21haWwuY29tPgo+ID4gLS0tCj4gPiAgLi4uL2JpbmRpbmdzL3B3bS9hbGx3aW5uZXIs
-c3VuNGktYTEwLXB3bS55YW1sIHwgNDggKysrKysrKysrKysrKysrKysrKwo+ID4gIDEgZmlsZSBj
-aGFuZ2VkLCA0OCBpbnNlcnRpb25zKCspCj4gPgo+ID4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy9wd20vYWxsd2lubmVyLHN1bjRpLWExMC1wd20ueWFtbCBi
-L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9wd20vYWxsd2lubmVyLHN1bjRpLWEx
-MC1wd20ueWFtbAo+ID4gaW5kZXggMGFjNTJmODNhNThjLi4xYmFlNDQ2ZmViYmIgMTAwNjQ0Cj4g
-PiAtLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcHdtL2FsbHdpbm5lcixz
-dW40aS1hMTAtcHdtLnlhbWwKPiA+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
-aW5ncy9wd20vYWxsd2lubmVyLHN1bjRpLWExMC1wd20ueWFtbAo+ID4gQEAgLTMwLDEzICszMCw1
-MSBAQCBwcm9wZXJ0aWVzOgo+ID4gICAgICAgIC0gaXRlbXM6Cj4gPiAgICAgICAgICAgIC0gY29u
-c3Q6IGFsbHdpbm5lcixzdW41MGktaDUtcHdtCj4gPiAgICAgICAgICAgIC0gY29uc3Q6IGFsbHdp
-bm5lcixzdW41aS1hMTMtcHdtCj4gPiArICAgICAgLSBjb25zdDogYWxsd2lubmVyLHN1bjUwaS1o
-Ni1wd20KPiA+Cj4gPiAgICByZWc6Cj4gPiAgICAgIG1heEl0ZW1zOiAxCj4gPgo+ID4gICAgY2xv
-Y2tzOgo+ID4gKyAgICBtaW5JdGVtczogMQo+ID4gKyAgICBtYXhJdGVtczogMgo+ID4gKyAgICBp
-dGVtczoKPiA+ICsgICAgICAtIGRlc2NyaXB0aW9uOiBNb2R1bGUgQ2xvY2sKPiA+ICsgICAgICAt
-IGRlc2NyaXB0aW9uOiBCdXMgQ2xvY2sKPiA+ICsKPiA+ICsgICMgRXZlbiB0aG91Z2ggaXQgb25s
-eSBhcHBsaWVzIHRvIHN1YnNjaGVtYXMgdW5kZXIgdGhlIGNvbmRpdGlvbmFscywKPiA+ICsgICMg
-bm90IGxpc3RpbmcgdGhlbSBoZXJlIHdpbGwgdHJpZ2dlciBhIHdhcm5pbmcgYmVjYXVzZSBvZiB0
-aGUKPiA+ICsgICMgYWRkaXRpb25hbHNQcm9wZXJ0aWVzIHNldCB0byBmYWxzZS4KPiA+ICsgIGNs
-b2NrLW5hbWVzOiB0cnVlCj4gPiArCj4gPiArICByZXNldHM6Cj4gPiAgICAgIG1heEl0ZW1zOiAx
-Cj4gPgo+ID4gKyAgaWY6Cj4gPiArICAgIHByb3BlcnRpZXM6Cj4gPiArICAgICAgY29tcGF0aWJs
-ZToKPiA+ICsgICAgICAgIGNvbnRhaW5zOgo+ID4gKyAgICAgICAgICBjb25zdDogYWxsd2lubmVy
-LHN1bjUwaS1oNi1wd20KPiA+ICsKPiA+ICsgIHRoZW46Cj4gPiArICAgIHByb3BlcnRpZXM6Cj4g
-PiArICAgICAgY2xvY2tzOgo+ID4gKyAgICAgICAgbWF4SXRlbXM6IDIKPiA+ICsKPiA+ICsgICAg
-ICBjbG9jay1uYW1lczoKPiA+ICsgICAgICAgIGl0ZW1zOgo+ID4gKyAgICAgICAgICAtIGNvbnN0
-OiBtb2QKPiA+ICsgICAgICAgICAgLSBjb25zdDogYnVzCj4gPiArCj4gPiArICAgIHJlcXVpcmVk
-Ogo+ID4gKyAgICAgIC0gY2xvY2stbmFtZXMKPiA+ICsgICAgICAtIHJlc2V0cwo+ID4gKwo+ID4g
-KyAgZWxzZToKPiA+ICsgICAgcHJvcGVydGllczoKPiA+ICsgICAgICBjbG9ja3M6Cj4gPiArICAg
-ICAgICBtYXhJdGVtczogMQo+ID4gKwo+Cj4gU29ycnkgZm9yIG5vdCBub3RpY2luZyB0aGlzIGVh
-cmxpZXIsIGJ1dCB0aGlzIHNob3VsZCBiZSBhdCB0aGUgdG9wbW9zdAo+IGxldmVsCgpObyBwcm9i
-bGVtLCBidXQgSSBkb24ndCBnZXQgd2hhdCB5b3Ugd2FudCwgKHlhbWwgZm9ybWF0IGlzIG5ldyBm
-b3IgbWUpLgpEbyB5b3UgbWVhbiBJIHNob3VsZCBwdXQgdGhlIGlmIGNvbmRpdGlvbiBiZWZvcmUg
-dGhlICJyZXNldHMiID8KClJlZ2FyZHMsCkNsw6ltZW50Cgo+Cj4gTWF4aW1lCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+rk3399-roc-pc has 16 MB SPI NOR Flash, enable it.
+
+Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
+---
+ arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+index a50e5ea52a4c..137e3ce106b3 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+@@ -696,6 +696,16 @@
+ 	status = "okay";
+ };
+ 
++&spi1 {
++	status = "okay";
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <10000000>;
++	};
++};
++
+ &tcphy0 {
+ 	status = "okay";
+ };
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
