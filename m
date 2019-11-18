@@ -2,78 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6347C10047D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:41:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D818100481
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:42:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PKodFV0P/Ir71x3biL5j8A/6MvHEM6ykJsLvxc8J9O0=; b=Pw0CFllRRkvg4g
-	ySTtp7cuu82aZpMZfzwHdGLf598dROvyKJQm9uy2VFWVz+iuGwsbt03E7b5ZjutWVoCuo+rmqoTL3
-	E9pd+sMo3zJw4lz0cfM12+5nXU9Ze+Yx5cFmGR+t+wDGqmCFG/QfvUVE3rO6TsKnNG+FTW2WWi4JE
-	xi2wqphDwUmWR4WQOAHStuhgr7hAWcNkFvjk2MLk5TjTMzb9bT8XyWa3F+FVoyDX0cAlyHPDXMj/C
-	gtkh3lTgPU55vIRlwFEuEx8sLvLnBRoV/GdIeQQs+wHOdTdtQbGt3KlrhVkFgr+NwKzy8jRojlFlX
-	Eyx1rK6+lTwda6gjEJpg==;
+	List-Owner; bh=CogYj3JAPs7p91FxPBj0xvxsc/iaN/+ncMjRcaHvG8E=; b=R/thPthUBeib7o
+	mJIoCfpW/i8b1qQKah6TOzFnV4dvs32HxMGnV719WS+VcMSCISEginQo7oLwpI7uANQdIKYrCQ65S
+	crU8uUxb0JWLpHWtGU9JiUcq3021CpLayzjp3Xv4fNYBUJQQcn1RnWD+sruF9+/cd0IfgCG7RHVl3
+	Zghwp9augSVFXkNvF2AZ5BTNsZ+kYmUnGEg0V9VLBSbJYZHw3pnyoJCmhxpxWyaHa4WvjbjzQbY+l
+	1TG8QkA4V/zpa4vvl/t1HsEoz44OCIFQdtaVoSQRGj52EVH06YtfwR/vu6vEmBUnsCyj6fAWzeIpO
+	ECZU7kGT4IzU8An9t+og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWfPX-0003N8-7G; Mon, 18 Nov 2019 11:41:39 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iWfPn-0003dI-R0; Mon, 18 Nov 2019 11:41:55 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWfPL-0003Ml-Ck
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:41:28 +0000
-Received: by mail-pl1-x643.google.com with SMTP id o9so9658700plk.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 03:41:27 -0800 (PST)
+ id 1iWfPd-0003bP-RA; Mon, 18 Nov 2019 11:41:48 +0000
+Received: by mail-pf1-x443.google.com with SMTP id r4so10267368pfl.7;
+ Mon, 18 Nov 2019 03:41:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=y3dNvZGOTXHcwszhaSWaecoVEi7Q+cvDM3heVVZqOJg=;
- b=Gm6zRK0PEAuSnXmueVoIk7R0Vg6pkNCYcWQpO5nxbzU/hruF6Ou2tHv5IocAFc1HlB
- Vugo8BvFrz8kBMfgtONaJlHsIAeN+DAYWoArivrHDbrXDa0Ly+eGhmHfGtB2df7m1JJY
- Gwk7uppd0rRlPfJCYGzbLrE8D/Vu/lfnxmeJKnXJX/IlkuY0nOSqNbEYXN8gho2zJtkp
- MK60tua+o/kgRutSu5lgTnXfNIX9zmBNHI8xY9WThF48wr0OpjE/9zkKwSNfQMqb87xF
- iRXdv2MunyU3ssfscV7E84s9yJ8tIqt/lmXjvfhjlEvhIsUU/0c3qJflgrOZFovy21vS
- S4Cg==
+ bh=ea8AtOwQ/gMHrbAh9hOSuI0GnsfUP2/RqRm+KGMP9/0=;
+ b=pylT9lIw0bTFkxmKB5JcHLpUUBy7rUAvdmqogLQeU0GQR9WSMJLNIadVaFfawWiNW2
+ YGfcI+owG6oEM8AkrjFbhMhTWs4d5o2Eyw6dyEHKNJC6Hr8VaCKuS5P/yOq2zWsp2vGN
+ PXQusdHZX7lOrdBNgB0AIVrC6aNoYohd0+d06uL+dhEEOAVCyazWXXjnDjZ60kn8DcF4
+ osHCp7HsWKWl0tVp5JnkEqjkpScZBdnXolFGMsqYuAY0bwp93sJ/DI5iW3w2x8QRA8Yz
+ CjS9bgFfJ/yt7gqnF45KWQPeI2nBEv66t6qn9bTLjAps01WHB4uu6Zr7IY71Y9VWk1Nz
+ hYlg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=y3dNvZGOTXHcwszhaSWaecoVEi7Q+cvDM3heVVZqOJg=;
- b=cdP+sUdS5fe3F2N5aDKFfpc8PzzKP+ImRoGx9U4Apz/Zvzw0SRUEKb7d30Haq6Fip6
- BJFvVdbrs4mkQ8UtuFh9i1xve8TIpKFsrkgre7Rz/g6t2q4zxSWDweYLCNCTrAPfMOw4
- e2gcbfsI0jQCUrPNGCic0pXxuQWllyG2k/XrXxXUDnLPwfB4qSt6y2slTzymPa8MZJaF
- /gsTBofCuSYWKzekXRdHPT593ahuXGG8IFHmokA8XreFsBsSEcTOYd2WCKHUpkESL1LO
- ztV+l/Hkc0sJLTj3J7PwwqhXNcoKz03E/MjWm8FO0G8dD68VBlV0i6TdXRMEntTiToCj
- l41A==
-X-Gm-Message-State: APjAAAV26DOp32YZxJ03PUolY2Dxfol+84WYXtIJNrCPbVo3MMW6zC73
- s//dU7lOHu8pjx/ECFLly3o=
-X-Google-Smtp-Source: APXvYqxkb+Di6ZGVFvNAuyKzeK5xAMC329UbduP0YsF1FEoBa/nqARtsD7TnIOAOrl6I/wMrI+DF3g==
-X-Received: by 2002:a17:90a:bd95:: with SMTP id
- z21mr39237600pjr.10.1574077287005; 
- Mon, 18 Nov 2019 03:41:27 -0800 (PST)
+ bh=ea8AtOwQ/gMHrbAh9hOSuI0GnsfUP2/RqRm+KGMP9/0=;
+ b=GTQz/PW1crBuAu1GMrymxOF3IfevZb+vgUEQhF66JxSbN7+/yFp8b9ToLFKXh1wEN1
+ FkLZOPSq3ohhSD4AiYZOZlwPNcSoWBbk/bUhus7I4i9RlRq01B5HAD5qnuANpT/+A0i4
+ ysFfizMGvqcbBZ2D0mDqT3JD3l7sRnpgaM49HdNV/bfEcihETKTCgwIs6AzorB2XlPJT
+ 3mKvw5W/qqeHvevCqpZE3VCLdxRuY3B6N7AuCeKYnohJSFuyk9N0WCdZAJijgYdJ1VKo
+ CiDYZhq+O3fgcD0zeg7P5/z9MiNOwrfWFOt/JKwYENFm8ZeVjM+UTNAzca77fq8k249U
+ bhUQ==
+X-Gm-Message-State: APjAAAU8IgrDRHG0iu/vkQA1hdIWM9r5RaXgTB0RfnCD6h5hzMVWW0MK
+ tL6HvjA9dr0tEg1drDsJaJM=
+X-Google-Smtp-Source: APXvYqxPXdfD1riKGP6ycbMcTm7jgmPDhZ6Z9zNCVB7POjIw7Y/66PW6oHD/HEsn3QEHkJNGiDpIUA==
+X-Received: by 2002:a62:2ccf:: with SMTP id s198mr23517241pfs.42.1574077305359; 
+ Mon, 18 Nov 2019 03:41:45 -0800 (PST)
 Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([202.120.40.82])
- by smtp.gmail.com with ESMTPSA id x192sm23480122pfd.96.2019.11.18.03.41.20
+ by smtp.gmail.com with ESMTPSA id w62sm22656779pfb.15.2019.11.18.03.41.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Nov 2019 03:41:26 -0800 (PST)
+ Mon, 18 Nov 2019 03:41:44 -0800 (PST)
 From: Chuhong Yuan <hslester96@gmail.com>
 To: 
-Subject: [PATCH] phy: mdio-sun4i: add missed regulator_disable in remove
-Date: Mon, 18 Nov 2019 19:41:15 +0800
-Message-Id: <20191118114115.25608-1-hslester96@gmail.com>
+Subject: [PATCH] usb: dwc3: meson-g12a: add missed regulator_disable
+Date: Mon, 18 Nov 2019 19:41:35 +0800
+Message-Id: <20191118114135.25666-1-hslester96@gmail.com>
 X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_034127_432147_8A6E0250 
-X-CRM114-Status: GOOD (  10.73  )
+X-CRM114-CacheID: sfid-20191118_034145_881702_9581F387 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.6 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [202.120.40.82 listed in dnsbl.sorbs.net]
@@ -101,41 +99,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- netdev@vger.kernel.org, Chuhong Yuan <hslester96@gmail.com>,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, "David S . Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org, Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Felipe Balbi <balbi@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
+ linux-usb@vger.kernel.org, Chuhong Yuan <hslester96@gmail.com>,
+ linux-kernel@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The driver forgets to disable the regulator in remove like what is done
-in probe failure.
-Add the missed call to fix it.
+The driver forgets to disable the regulator in probe failure and remove.
+Add the missed calls to fix it.
 
 Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
 ---
- drivers/net/phy/mdio-sun4i.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/usb/dwc3/dwc3-meson-g12a.c | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/phy/mdio-sun4i.c b/drivers/net/phy/mdio-sun4i.c
-index 58d6504495e0..f798de3276dc 100644
---- a/drivers/net/phy/mdio-sun4i.c
-+++ b/drivers/net/phy/mdio-sun4i.c
-@@ -145,8 +145,11 @@ static int sun4i_mdio_probe(struct platform_device *pdev)
- static int sun4i_mdio_remove(struct platform_device *pdev)
- {
- 	struct mii_bus *bus = platform_get_drvdata(pdev);
-+	struct sun4i_mdio_data *data = bus->priv;
+diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
+index 8a3ec1a951fe..d9723d1ad8eb 100644
+--- a/drivers/usb/dwc3/dwc3-meson-g12a.c
++++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
+@@ -458,7 +458,7 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+ 						dwc3_meson_g12a_irq_thread,
+ 						IRQF_ONESHOT, pdev->name, priv);
+ 		if (ret)
+-			return ret;
++			goto err_regulator_disable;
+ 	}
  
- 	mdiobus_unregister(bus);
-+	if (data->regulator)
-+		regulator_disable(data->regulator);
- 	mdiobus_free(bus);
+ 	dwc3_meson_g12a_usb_init(priv);
+@@ -467,7 +467,7 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+ 	for (i = 0 ; i < PHY_COUNT ; ++i) {
+ 		ret = phy_init(priv->phys[i]);
+ 		if (ret)
+-			return ret;
++			goto err_regulator_disable;
+ 	}
  
- 	return 0;
+ 	/* Set PHY Power */
+@@ -517,7 +517,9 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+ err_phys_exit:
+ 	for (i = 0 ; i < PHY_COUNT ; ++i)
+ 		phy_exit(priv->phys[i]);
+-
++err_regulator_disable:
++	if (priv->vbus)
++		regulator_disable(priv->vbus);
+ 	return ret;
+ }
+ 
+@@ -536,6 +538,9 @@ static int dwc3_meson_g12a_remove(struct platform_device *pdev)
+ 		phy_exit(priv->phys[i]);
+ 	}
+ 
++	if (priv->vbus)
++		regulator_disable(priv->vbus);
++
+ 	pm_runtime_disable(dev);
+ 	pm_runtime_put_noidle(dev);
+ 	pm_runtime_set_suspended(dev);
 -- 
 2.24.0
 
