@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE1F6FFFEE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 08:59:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B70F9FFFF5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 09:00:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:Subject:Message-ID:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3ZywUCnbek3DulnbqVcfKE8FjTm9VKK3ClqY88TPPvg=; b=uvGhYRvZyWY8E/
-	BuDHsXvwbLlBR25yTrPuktojrIu4vh3t5jY8dAZb2GJQ5oBdVB+iNuqCiNNFJffbgGvr15OMFVIDz
-	TOrTeQBeBEBToW4dixQrJRRzofeT46PQn30LURxBKIM0kIyH843kJ7GEsr7L6gTYHU+yTJmprzEIX
-	PNeRqe3EwxlMnIp1pQchyc0TEvM98jJHELTKSNN0ZhBLac1sKN49EEs6/qqngyr/3Zj28cKXBeqVu
-	6YZDTMp5ySXJ1G24339xh5jNKdJGip7z/as8eTbsQAIsnTR4BqjztwZW6sxndQyn4IvrvRb1HsQFD
-	++k5D4goA1C3lYAAh1xQ==;
+	List-Owner; bh=7/l2evXq1d781pVLfAFgTh8j3+y//NZbK1NXUV7vxlw=; b=I4jTRAvbg7zhPC
+	e9Wn9+P9l1mvLGEmSR0AuJ1+MtUjFvsRNB7Pau5MqMk39Wk6riP3Lek9PFW+8L6LxQLkJlZqUVISo
+	fah2LgHJXF9HJNVpFFXEG9gCqVuhH6Dfj3wbl+FBO9mvqIL/LPYb8TWNd0Mrn3kvQ8RQGQqj9CQzs
+	03ciO5hjzx4N95K0HaTeD7wG+TKg9M+q3g//mMTOVeezAbc2MoINo3UD2z54dYzm+L2mp+QRr843e
+	XKyEldbvIOWmY4161Of86YHuLsvGLMtBoSQDIRiu8q5CiMH3lH/c3zmwbuK41Hj1V7bUXVpFTaSRp
+	lFBTjvffZEC67IUA0h2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWbwY-0000cm-Ax; Mon, 18 Nov 2019 07:59:30 +0000
+	id 1iWbwx-0000um-8p; Mon, 18 Nov 2019 07:59:55 +0000
 Received: from sender4-of-o54.zoho.com ([136.143.188.54])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWbwB-0000RS-Uj; Mon, 18 Nov 2019 07:59:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1574063909; cv=none; 
+ id 1iWbwZ-0000oB-01; Mon, 18 Nov 2019 07:59:32 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1574063913; cv=none; 
  d=zohomail.com; s=zohoarc; 
- b=Rc/20lkRyjUTL1pXtxaJuUuGL6Qy5iJf9domOrYQzp0dV7kTzUIId9MgtxymtHz8eW9RxfivYILm4WAx5Jvckm1YzecjcOeIHzE6SdnH6/okt9b/VJImBA0kry/OiihPLM1rSa6P8/slgkqAQkAO9rQmx2/fjQEeMmkoysH9gQ4=
+ b=Xk3i65B4Fu5x4VFH4ySsKzvsxbJO8zq+L05B611f30tGjhtITbjeA83awA2Q672Biu6cpGKIsn8umUiousOZLwOEsQxmSX/Wa7929nUDz75yPVUKGBC2cOQtsXcak6injbiGnpTpkh1N6wbfjIn4mNKkbKHrNpIqs/0AxRdHuns=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com;
- s=zohoarc; t=1574063909;
+ s=zohoarc; t=1574063913;
  h=Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:To;
- bh=cfu4tgSh/ZEFa8HY5V7AvfFEMPP8yuNAhIRi2KmoYKY=; 
- b=BATyhYXAZYAvgFtIi7Dds4pzApisEa2g0tbZSqJYoVJ9brOEazPmFpws7HMzPPzMZbDN2I/HSjycg1Uhv3rTVIoE64o9Cnr/qb946pR80D8WUsSEjaXNu3ir98oDNqNoruFkZfetGNHNMO0o0qOQUF05shLaPF9sFv5EOkuQb5o=
+ bh=rnDOXSZ5PSkKW71tjFE4P0SpeDfoougigqcTZkEQtXI=; 
+ b=RnIQVKi4hXA2dQ8ac8gNEsOOTJowF+cpfvkILkMsbyZTXdaVtYolqbrMbp8UwF+mYQiJf7lRhLalRBpzau1Spb0J0ACztNqyiEhuwb1vYKqLgDVPIq93u8ITwBDigz0iKyrmfazFQbPPzPPWPciHxpUzHvBHBFRoiX6cHj+jxDg=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
  dkim=pass  header.i=brennan.io;
  spf=pass  smtp.mailfrom=stephen@brennan.io;
  dmarc=pass header.from=<stephen@brennan.io> header.from=<stephen@brennan.io>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1574063909; 
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1574063913; 
  s=selector01; d=brennan.io; i=stephen@brennan.io;
  h=From:To:Cc:Message-ID:Subject:Date:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Content-Type;
- l=881; bh=cfu4tgSh/ZEFa8HY5V7AvfFEMPP8yuNAhIRi2KmoYKY=;
- b=a33RF1a+B9CYq7VVkL5/b8DhfRPEp5pkdGOtbev4kuka5D2uuM2xocwxcS961KUD
- SO3U4qTgJ3+23IuCXVYkAgSx2xpVaMwiF0QYGMXPGNRVC5wqg1rg9xzDJGod4d7T8E8
- B+AoMbzrEPmEHnJk17ZEa3ioxzfoLDe74N8WQfHo=
+ l=1520; bh=rnDOXSZ5PSkKW71tjFE4P0SpeDfoougigqcTZkEQtXI=;
+ b=cpe26RcfhGlm7P/YpwYbB0VyjPEXbGW/F2PpjV214dtdUTxLjbWG/Ui6hXz/9dLk
+ wosu0VD+cIhsMExFhUtJoQZDvbWr2Tjjfp8PoE7MuyJnWnoVgfVgL29lTentLPPnXP3
+ SSGn7jYKIV+yoj0o1D1/IjaGGV0sgtedLIQF9XOI=
 Received: from localhost (195.173.24.136.in-addr.arpa [136.24.173.195]) by
- mx.zohomail.com with SMTPS id 1574063908686965.880928958745;
- Sun, 17 Nov 2019 23:58:28 -0800 (PST)
+ mx.zohomail.com with SMTPS id 1574063912030754.6313842017521;
+ Sun, 17 Nov 2019 23:58:32 -0800 (PST)
 From: Stephen Brennan <stephen@brennan.io>
 To: stephen@brennan.io
-Message-ID: <20191118075807.165126-2-stephen@brennan.io>
-Subject: [PATCH 1/3] dt-bindings: rng: add BCM2711 RNG compatible
-Date: Sun, 17 Nov 2019 23:58:05 -0800
+Message-ID: <20191118075807.165126-3-stephen@brennan.io>
+Subject: [PATCH 2/3] hwrng: iproc-rng200: Add support for BCM2711
+Date: Sun, 17 Nov 2019 23:58:06 -0800
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191118075807.165126-1-stephen@brennan.io>
 References: <20191118075807.165126-1-stephen@brennan.io>
 MIME-Version: 1.0
 X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_235908_035094_E077E99C 
-X-CRM114-Status: GOOD (  10.61  )
+X-CRM114-CacheID: sfid-20191117_235931_091701_625AF2D2 
+X-CRM114-Status: GOOD (  13.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,26 +99,41 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Stefan Wahren <wahrenst@gmx.net>
 
-The BCM2711 has a RNG200 block, so document its compatible string.
+BCM2711 features a RNG200 hardware random number generator block.
+So make the driver available.
 
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 Signed-off-by: Stephen Brennan <stephen@brennan.io>
 ---
- Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/char/hw_random/Kconfig        | 2 +-
+ drivers/char/hw_random/iproc-rng200.c | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt b/Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt
-index c223e54452da..802523196ee5 100644
---- a/Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt
-+++ b/Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt
-@@ -2,6 +2,7 @@ HWRNG support for the iproc-rng200 driver
+diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
+index 7c7fecfa2fb2..77e848fca531 100644
+--- a/drivers/char/hw_random/Kconfig
++++ b/drivers/char/hw_random/Kconfig
+@@ -90,7 +90,7 @@ config HW_RANDOM_BCM2835
  
- Required properties:
- - compatible : Must be one of:
-+	       "brcm,bcm2711-rng200"
- 	       "brcm,bcm7211-rng200"
- 	       "brcm,bcm7278-rng200"
- 	       "brcm,iproc-rng200"
+ config HW_RANDOM_IPROC_RNG200
+ 	tristate "Broadcom iProc/STB RNG200 support"
+-	depends on ARCH_BCM_IPROC || ARCH_BRCMSTB
++	depends on ARCH_BCM_IPROC || ARCH_BCM2835 || ARCH_BRCMSTB
+ 	default HW_RANDOM
+ 	---help---
+ 	  This driver provides kernel-side support for the RNG200
+diff --git a/drivers/char/hw_random/iproc-rng200.c b/drivers/char/hw_random/iproc-rng200.c
+index 899ff25f4f28..32d9fe61a225 100644
+--- a/drivers/char/hw_random/iproc-rng200.c
++++ b/drivers/char/hw_random/iproc-rng200.c
+@@ -213,6 +213,7 @@ static int iproc_rng200_probe(struct platform_device *pdev)
+ }
+ 
+ static const struct of_device_id iproc_rng200_of_match[] = {
++	{ .compatible = "brcm,bcm2711-rng200", },
+ 	{ .compatible = "brcm,bcm7211-rng200", },
+ 	{ .compatible = "brcm,bcm7278-rng200", },
+ 	{ .compatible = "brcm,iproc-rng200", },
 -- 
 2.24.0
 
