@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB98210043A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:33:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F14C210043C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:33:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sWBJBk8AqhWqqP9TD/ouHbFlXhjaE+kOrFHU1r7qVRE=; b=e4drwhMhdzBPgS
-	EXmScIQ2Zh1EETn5smyeZk4jDk5kqDDNrNXHMlj6qN9LHVpnoCTdJMVwIa6hodvezTQB+keIuyb/I
-	ScNCD9mPEwj41zy5hczrtKURRHlgcbgobCd3NeeDso5+J20DOq+G+TE4ZlyfPEKfq0CxFA+4/ersR
-	8rWX3mfwHLQ7f0UO9LuCjXPBgKzhlRhaFd8CHJ8+YtcyPoax4pukNQO8vgSphz3fB918P7dTZNHSV
-	hKX1seTDpif6ng7uDmQPWADEHGu+ATxmMcglXDcTl0parg6SwLwaKRmPWvvXM5lLGMSsAm6JkbBiE
-	ksI+t1E6HdXV1wV0UNtg==;
+	List-Owner; bh=phdG8dETw93i4+B4t+Nwup/3+7WSY4kHLgrDAv4zO2w=; b=m97Fp0MJPpkQ/W
+	JdLHXcPKPlxvlID84/SxJ91M6f1udE1u1Jh18E0syfLw86IMsswAfiRxaJDiS0IeOrtLdnVm+z73m
+	/1xqPCJyNoZMwQLCSxrGER9yRrt1mkQjRyFPDq/GXgRQUUZLP4vsqm7z/qsdaIt6f30BP6LNT+XJV
+	tuKNHq0n+FyKoYEVBtQMhoD2IOkHT3XSTgdXHuB4co0TwBOO9cgR3teFgOLg+ARWYubtJwC4szdq8
+	YcClJk1O/8SjtLD1fNVH588a5i4sn4DpKujdBGmFbW4/KQrc6AnLJiPhR8jGL7agJDtBN+8F9roNu
+	9X+/KietCz++n8LxmsHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWfH5-00023c-Fi; Mon, 18 Nov 2019 11:32:55 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iWfHX-0002UQ-Be; Mon, 18 Nov 2019 11:33:23 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWf8Z-0001M8-J4
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:24:09 +0000
-Received: by mail-wr1-x441.google.com with SMTP id t1so18985105wrv.4
+ id 1iWf8a-0001Mp-MG
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:24:10 +0000
+Received: by mail-wm1-x342.google.com with SMTP id b11so16952316wmb.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 03:24:07 -0800 (PST)
+ Mon, 18 Nov 2019 03:24:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=N4h2w9DiO+4P3jPc0w1TT3xARdv8ATB93lgz8xw4vxA=;
- b=BtVtcRzODZ8MQHGzYCVSDPVdMWLdRIEn5FSDxW2pv1/RNrvGTyDeG/pgWB86cSvaIv
- TNZNSFsrEdvVIiE/woLEJuWE8Lw+0gQ9MXrSekMCN9clwVZSZaJ+i5oBqoP2hIOTM4Dr
- AtwK+Z0xVzRVdRSAV1aHZtBvtqhp4cgkNfOQE=
+ bh=skc4BB3FfJVhrMQufim0pPb5lTLStBal+/ZiI3PgHrk=;
+ b=bIXhboGAOfHEuhy5XNvLSkt/v8AbF7er8M7+DnbVSRGu/nfzVD9BIZMY9lvVjK01yq
+ x4OwM95DdJqvHHmAn2AEIZpahfvZGZTl5VI+0W8Nii1hH0oJGGfoxnKmw/9+dD48TPoO
+ 1EZMF/DjpiyKhwbirwHabUH+m5MatGIRUQD+Q=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=N4h2w9DiO+4P3jPc0w1TT3xARdv8ATB93lgz8xw4vxA=;
- b=BHBuwqC/QiX65ueHVEBWCgT92sfqYN/uZa8Ru1ctx+LjBNS3DrLkkWLNEmeztLXOon
- Clzi2jWMXwD81wT4CTv/nt6VKBPID0lTuvVcLsEDjbezv5b6QNrkaQQVDr5eddWujeZs
- TPvRBMIFm0MqXXJiCCLdzRz2yBGCu62Iz+mCaOuIcDO/gZ9FbB+ctCM8sCWyC2stDPsS
- geSB9+eshk/5O/sz6gmEmkprm8DSWM51LYxS7+OICY+PuXQMqq/E5VXqDWOD9uBX6rK3
- 1/rUy3Ud9azZnQOWHrQCrNm2HnYUoERBcNt97OA4oOnczgVhM04jVDG4UG1ZA2iZfJWo
- Xe5w==
-X-Gm-Message-State: APjAAAX2VH8Y6tq4LX1cvsy8xG2wMOqqBccECtbQu3/uHJmlz2ItgABE
- N5erLKD3BFZhgJ7iLp/8Eq2NOg==
-X-Google-Smtp-Source: APXvYqySwYyYLwaAMIcShPAMqzsR8c5V+8U/1LZVhB9UFBPpSlbgcxnFk8Ug1vEVntOXvm4iiz96Mg==
-X-Received: by 2002:a5d:62cd:: with SMTP id o13mr20477009wrv.367.1574076246235; 
- Mon, 18 Nov 2019 03:24:06 -0800 (PST)
+ bh=skc4BB3FfJVhrMQufim0pPb5lTLStBal+/ZiI3PgHrk=;
+ b=MCHT4rZXd4hxLpYgilgbZuCU2dnrPz9/jPbLu0Pmw+OMekZjHpXvHDrbCMUwtfvR0a
+ AiECqrYn/uesQ/egJPJJ4e9ye5XDRTJ0hLglvjvXYNWMddtrTWoX2TYS15KI25VnBuYB
+ CgSNun/rHPH4qac5PulAe5gOWJ+Nz0mH57MvG8AjMQHk7CKHIuMqPAeRCzggs4iNbBuv
+ aSS2uzhulJ1RWBV3IxiWWZeY2mOY3yzTX7vCJb0wZZJGMiTQnS3HVyR337RvbdyWV6yQ
+ dHu+7KcxBbjfRSjbQKN/h8SGC6LHH9Qsb1m0VJW7B4hNFyrFUQgtOLyHpOYoO24YY0C2
+ N0jw==
+X-Gm-Message-State: APjAAAUxmlOz+M4P4QaZGWot5DH30XjsHsDb9U4kEymdZsIYudEo3uUg
+ RDpGQ/ds4hYIhMBS2zillg7Riw==
+X-Google-Smtp-Source: APXvYqzv/wXIsjaRbMxH9N3IlxmKxJic89M7wV8bzm0V/mj0kc0XrptcV3zjVvdAWMEcHYldq3xfjg==
+X-Received: by 2002:a7b:c768:: with SMTP id x8mr29728216wmk.26.1574076247328; 
+ Mon, 18 Nov 2019 03:24:07 -0800 (PST)
 Received: from prevas-ravi.prevas.se (ip-5-186-115-54.cgn.fibianet.dk.
  [5.186.115.54])
- by smtp.gmail.com with ESMTPSA id y2sm21140815wmy.2.2019.11.18.03.24.04
+ by smtp.gmail.com with ESMTPSA id y2sm21140815wmy.2.2019.11.18.03.24.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Nov 2019 03:24:05 -0800 (PST)
+ Mon, 18 Nov 2019 03:24:07 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v5 27/48] soc/fsl/qe/qe.h: update include path for cpm.h
-Date: Mon, 18 Nov 2019 12:23:03 +0100
-Message-Id: <20191118112324.22725-28-linux@rasmusvillemoes.dk>
+Subject: [PATCH v5 28/48] serial: ucc_uart: explicitly include soc/fsl/cpm.h
+Date: Mon, 18 Nov 2019 12:23:04 +0100
+Message-Id: <20191118112324.22725-29-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
 References: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_032407_712156_B812486F 
-X-CRM114-Status: GOOD (  11.57  )
+X-CRM114-CacheID: sfid-20191118_032408_744147_84FD520B 
+X-CRM114-Status: GOOD (  10.13  )
 X-Spam-Score: 3.4 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (3.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
  [5.186.115.54 listed in zen.spamhaus.org]
@@ -100,34 +100,34 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Timur Tabi <timur@kernel.org>, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
  linux-kernel@vger.kernel.org, Scott Wood <oss@buserror.net>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+ linux-serial@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-asm/cpm.h under arch/powerpc is now just a wrapper for including
-soc/fsl/cpm.h. In order to make the qe.h header usable on other
-architectures, use the latter path directly.
+This driver uses #defines from soc/fsl/cpm.h, so instead of relying on
+some other header pulling that in, do that explicitly. This is
+preparation for allowing this driver to build on ARM.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- include/soc/fsl/qe/qe.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/tty/serial/ucc_uart.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/include/soc/fsl/qe/qe.h b/include/soc/fsl/qe/qe.h
-index 9cac04c692fd..521fa3a177e0 100644
---- a/include/soc/fsl/qe/qe.h
-+++ b/include/soc/fsl/qe/qe.h
-@@ -17,7 +17,7 @@
- #include <linux/spinlock.h>
- #include <linux/errno.h>
- #include <linux/err.h>
--#include <asm/cpm.h>
+diff --git a/drivers/tty/serial/ucc_uart.c b/drivers/tty/serial/ucc_uart.c
+index a0555ae2b1ef..7e802616cba8 100644
+--- a/drivers/tty/serial/ucc_uart.c
++++ b/drivers/tty/serial/ucc_uart.c
+@@ -32,6 +32,7 @@
+ #include <soc/fsl/qe/ucc_slow.h>
+ 
+ #include <linux/firmware.h>
 +#include <soc/fsl/cpm.h>
- #include <soc/fsl/qe/immap_qe.h>
- #include <linux/of.h>
- #include <linux/of_address.h>
+ #include <asm/reg.h>
+ 
+ /*
 -- 
 2.23.0
 
