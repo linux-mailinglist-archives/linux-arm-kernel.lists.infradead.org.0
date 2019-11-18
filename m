@@ -2,86 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B0DB1006E7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 14:58:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6049100722
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 15:13:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MZGYfvNAKvnl3iRYykaeZv4CWkqFo0B3OF5ouhiQaYQ=; b=bhGeUBwgZhpwCe
-	8ywWACxOGfO4FVkAPFkJQ/20O/6klRq2GqItKcqk5cCXdB8ylQEbsLvpY4SB6kJmgcmKnLIhNB3+z
-	esM1m5fMQQZANR27Fn1NfijeTQA0hAwHvpKMfYj8kQbO4k85CXBncEu9ftgKQFt/cqCc1XkzJhGEy
-	3Z907JlXYIO9EqeXoCW1sne2vV+hCWWbFWqYfxBZBs3RE/c6PvwvSb+ybU0TfXm3GczuIzpgGgl3s
-	LR09kk8MSmKAsr0eWM1UHofM9dmqMysga8+4chkq2AzBGOpVVNBMdp1IUOuTtMPbfkEah4EDcveWN
-	v9GLeuOIUe2Iff2llFuA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Qe8imaUQ2ExENwzD16eaO3u6fVLy864f6IUUYkbUKhw=; b=rAqC6/uO7GWeTi
+	AEGqV/m/kjweJm/S31y7kxNeebvwI7vKbRli99yuEvaQo2qoYNlpsysQP/JD7U3r5TmPZyt6eAlyI
+	/xG1wQnJQMxycAGzkZv1Lx9gPEpuUuCYYr0nkkp6JCcuMSpeKRLbKC2lF2eHose64RszJM3XH7s+t
+	q8X54SWd+6QyYVDM+7EmaoXWoIV+/A27tZ9hAurt/C2vz8Nv4l5EebdvCzU8OlGOf5TVOAN41hLYG
+	QU8MMiV6ObjISGTDwKUkZUB+P2/NWsPHXnetAOlPFC3c66+4pGe4fSu2RwblQGaSxcta4rG0QiWVC
+	tItwnZRN5B4YqaxynHxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWhYA-0001tM-5I; Mon, 18 Nov 2019 13:58:42 +0000
-Received: from hqemgate15.nvidia.com ([216.228.121.64])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWhY1-0001sT-3E
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 13:58:34 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5dd2a3850000>; Mon, 18 Nov 2019 05:58:29 -0800
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Mon, 18 Nov 2019 05:58:32 -0800
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Mon, 18 Nov 2019 05:58:32 -0800
-Received: from [10.26.11.241] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 18 Nov
- 2019 13:58:30 +0000
-Subject: Re: [PATCH v2 3/3] soc/tegra: pmc: Add reset sources and levels on
- Tegra194
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20191118063348.1816857-3-thierry.reding@gmail.com>
- <20191118131058.2336829-1-thierry.reding@gmail.com>
-From: Jon Hunter <jonathanh@nvidia.com>
-Message-ID: <e456de2e-4ca4-b855-fd38-92518cca1021@nvidia.com>
-Date: Mon, 18 Nov 2019 13:58:27 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iWhmd-00076l-FW; Mon, 18 Nov 2019 14:13:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iWhmV-00075j-5T
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 14:13:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D04DCDA7;
+ Mon, 18 Nov 2019 06:13:24 -0800 (PST)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1677B3F6C4;
+ Mon, 18 Nov 2019 06:13:23 -0800 (PST)
+Date: Mon, 18 Nov 2019 14:12:16 +0000
+From: Andre Przywara <andre.przywara@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH 2/3] kvm: arm: VGIC: Scan all IRQs when interrupt group
+ gets enabled
+Message-ID: <20191118141216.352a3a0a@donnerap.cambridge.arm.com>
+In-Reply-To: <9ddab86ca3959acbb8b7aad24be5f1ad@www.loen.fr>
+References: <20191108174952.740-1-andre.przywara@arm.com>
+ <20191108174952.740-3-andre.przywara@arm.com>
+ <20191110142914.6ffdfdfa@why>
+ <20191112093658.08f248c5@donnerap.cambridge.arm.com>
+ <9ddab86ca3959acbb8b7aad24be5f1ad@www.loen.fr>
+Organization: ARM
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20191118131058.2336829-1-thierry.reding@gmail.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1574085509; bh=7FGVlELFgI+OyKoPtDlQO8cr0PfIJRKTF7a/9wnGXWY=;
- h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
- User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
- X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=rylTlsNkSV7UEZKJcjjkdEWl44YY8/YZ2gas90OEya808PrCgxGLGGzALE4lowUNV
- bKfIJ2BT4Fsh11rr7QbIcmtTa2bY9ETAcOYerxapYdflSwQr5pzvQxKFpGj0OqOhi4
- EX7ES7zyFpMAsVmUuBZgfhHtModZcrBFCkPGiaBxbYfSk9w3RpD6G7O9RFfgGq2rCX
- fCTOEonQDUkHpWxdlNNI9FoSN32K8jum+2z2sEMYDLJJyJm8y7Uag6i6zs4q1goVhR
- eJJ+wFSECjqxOKL1vWWkPSShXmrRF9gZgIyBtT6BUSVF7NlsYVRuAdmsTmfq8emkgM
- uXFqlJOc0zKsw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_055833_153232_95726A27 
-X-CRM114-Status: GOOD (  15.06  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191118_061331_294533_072E4D1E 
+X-CRM114-Status: GOOD (  47.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,104 +66,257 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, Sowjanya Komatineni <skomatineni@nvidia.com>,
- linux-arm-kernel@lists.infradead.org, Vidya Sagar <vidyas@nvidia.com>
+Cc: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ kvm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, 14 Nov 2019 11:16:55 +0000
+Marc Zyngier <maz@kernel.org> wrote:
 
-On 18/11/2019 13:10, Thierry Reding wrote:
-> From: Thierry Reding <treding@nvidia.com>
-> 
-> Tegra194 supports the same reset levels as Tegra186 but extends the set
-> of reset sources. Provide custom PMC register definitions to account for
-> the larger field for the reset sources as well as the updated list of
-> reset sources.
-> 
-> Signed-off-by: Thierry Reding <treding@nvidia.com>
-> ---
-> Changes in v2:
-> - use the new Tegra194 register definitions
-> 
->  drivers/soc/tegra/pmc.c | 43 ++++++++++++++++++++++++++++++++++++++++-
->  1 file changed, 42 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/soc/tegra/pmc.c b/drivers/soc/tegra/pmc.c
-> index 1916899d09a3..ea0e11a09c12 100644
-> --- a/drivers/soc/tegra/pmc.c
-> +++ b/drivers/soc/tegra/pmc.c
-> @@ -2926,6 +2926,43 @@ static const struct tegra_io_pad_soc tegra194_io_pads[] = {
->  	{ .id = TEGRA_IO_PAD_AUDIO_HV, .dpd = 61, .voltage = UINT_MAX },
->  };
->  
-> +static const struct tegra_pmc_regs tegra194_pmc_regs = {
-> +	.scratch0 = 0x2000,
-> +	.dpd_req = 0x74,
-> +	.dpd_status = 0x78,
-> +	.dpd2_req = 0x7c,
-> +	.dpd2_status = 0x80,
-> +	.rst_status = 0x70,
-> +	.rst_source_shift = 0x2,
-> +	.rst_source_mask = 0x7c,
-> +	.rst_level_shift = 0x0,
-> +	.rst_level_mask = 0x3,
-> +};
-> +
-> +static const char * const tegra194_reset_sources[] = {
-> +	"SYS_RESET_N",
-> +	"AOWDT",
-> +	"BCCPLEXWDT",
-> +	"BPMPWDT",
-> +	"SCEWDT",
-> +	"SPEWDT",
-> +	"APEWDT",
-> +	"LCCPLEXWDT",
-> +	"SENSOR",
-> +	"AOTAG",
-> +	"VFSENSOR",
-> +	"MAINSWRST",
-> +	"SC7",
-> +	"HSM",
-> +	"CSITE",
-> +	"RCEWDT",
-> +	"PVA0WDT",
-> +	"PVA1WDT",
-> +	"L1A_ASYNC",
-> +	"BPMPBOOT",
-> +	"FUSECRC",
-> +};
-> +
->  static const struct tegra_wake_event tegra194_wake_events[] = {
->  	TEGRA_WAKE_GPIO("power", 29, 1, TEGRA194_AON_GPIO(EE, 4)),
->  	TEGRA_WAKE_IRQ("rtc", 73, 10),
-> @@ -2943,11 +2980,15 @@ static const struct tegra_pmc_soc tegra194_pmc_soc = {
->  	.maybe_tz_only = false,
->  	.num_io_pads = ARRAY_SIZE(tegra194_io_pads),
->  	.io_pads = tegra194_io_pads,
-> -	.regs = &tegra186_pmc_regs,
-> +	.regs = &tegra194_pmc_regs,
->  	.init = NULL,
->  	.setup_irq_polarity = tegra186_pmc_setup_irq_polarity,
->  	.irq_set_wake = tegra186_pmc_irq_set_wake,
->  	.irq_set_type = tegra186_pmc_irq_set_type,
-> +	.reset_sources = tegra194_reset_sources,
-> +	.num_reset_sources = ARRAY_SIZE(tegra194_reset_sources),
-> +	.reset_levels = tegra186_reset_levels,
-> +	.num_reset_levels = ARRAY_SIZE(tegra186_reset_levels),
->  	.num_wake_events = ARRAY_SIZE(tegra194_wake_events),
->  	.wake_events = tegra194_wake_events,
->  };
-> 
+Hi Marc,
 
-Acked-by: Jon Hunter <jonthanh@nvidia.com>
+> On 2019-11-12 09:36, Andre Przywara wrote:
+> > On Sun, 10 Nov 2019 14:29:14 +0000
+> > Marc Zyngier <maz@kernel.org> wrote:
+> >
+> > Hi Marc,
+> >  
+> >> On Fri,  8 Nov 2019 17:49:51 +0000
+> >> Andre Przywara <andre.przywara@arm.com> wrote:
+> >>  
+> >> > Our current VGIC emulation code treats the "EnableGrpX" bits in   
+> >> GICD_CTLR  
+> >> > as a single global interrupt delivery switch, where in fact the   
+> >> GIC  
+> >> > architecture asks for this being separate for the two interrupt   
+> >> groups.  
+> >> >
+> >> > To implement this properly, we have to slightly adjust our design,   
+> >> to  
+> >> > *not* let IRQs from a disabled interrupt group be added to the   
+> >> ap_list.  
+> >> >
+> >> > As a consequence, enabling one group requires us to re-evaluate   
+> >> every  
+> >> > pending IRQ and potentially add it to its respective ap_list.   
+> >> Similarly  
+> >> > disabling an interrupt group requires pending IRQs to be removed   
+> >> from  
+> >> > the ap_list (as long as they have not been activated yet).
+> >> >
+> >> > Implement a rather simple, yet not terribly efficient algorithm to
+> >> > achieve this: For each VCPU we iterate over all IRQs, checking for
+> >> > pending ones and adding them to the list. We hold the ap_list_lock
+> >> > for this, to make this atomic from a VCPU's point of view.
+> >> >
+> >> > When an interrupt group gets disabled, we can't directly remove   
+> >> affected  
+> >> > IRQs from the ap_list, as a running VCPU might have already   
+> >> activated  
+> >> > them, which wouldn't be immediately visible to the host.
+> >> > Instead simply kick all VCPUs, so that they clean their ap_list's
+> >> > automatically when running vgic_prune_ap_list().
+> >> >
+> >> > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> >> > ---
+> >> >  virt/kvm/arm/vgic/vgic.c | 88   
+> >> ++++++++++++++++++++++++++++++++++++----  
+> >> >  1 file changed, 80 insertions(+), 8 deletions(-)
+> >> >
+> >> > diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
+> >> > index 3b88e14d239f..28d9ff282017 100644
+> >> > --- a/virt/kvm/arm/vgic/vgic.c
+> >> > +++ b/virt/kvm/arm/vgic/vgic.c
+> >> > @@ -339,6 +339,38 @@ int vgic_dist_enable_group(struct kvm *kvm,   
+> >> int group, bool status)  
+> >> >  	return 0;
+> >> >  }
+> >> >
+> >> > +/*
+> >> > + * Check whether a given IRQs need to be queued to this ap_list,   
+> >> and do  
+> >> > + * so if that's the case.
+> >> > + * Requires the ap_list_lock to be held (but not the irq lock).
+> >> > + *
+> >> > + * Returns 1 if that IRQ has been added to the ap_list, and 0 if   
+> >> not.  
+> >> > + */
+> >> > +static int queue_enabled_irq(struct kvm *kvm, struct kvm_vcpu   
+> >> *vcpu,  
+> >> > +			     int intid)  
+> >>
+> >> true/false seems better than 1/0.  
+> >
+> > Mmh, indeed. I think I had more in there in an earlier version.
+> >  
+> >> > +{
+> >> > +	struct vgic_irq *irq = vgic_get_irq(kvm, vcpu, intid);
+> >> > +	int ret = 0;
+> >> > +
+> >> > +	raw_spin_lock(&irq->irq_lock);
+> >> > +	if (!irq->vcpu && vcpu == vgic_target_oracle(irq)) {
+> >> > +		/*
+> >> > +		 * Grab a reference to the irq to reflect the
+> >> > +		 * fact that it is now in the ap_list.
+> >> > +		 */
+> >> > +		vgic_get_irq_kref(irq);
+> >> > +		list_add_tail(&irq->ap_list,
+> >> > +			      &vcpu->arch.vgic_cpu.ap_list_head);  
+> >>
+> >> Two things:
+> >> - This should be the job of vgic_queue_irq_unlock. Why are you
+> >>   open-coding it?  
+> >
+> > I was *really* keen on reusing that, but couldn't  for two reasons:
+> > a) the locking code inside vgic_queue_irq_unlock spoils that: It
+> > requires the irq_lock to be held, but not the ap_list_lock. Then it
+> > takes both locks, but returns with both of them dropped. We need to
+> > hold the ap_list_lock all of the time, to prevent any VCPU returning
+> > to the HV to interfere with this routine.
+> > b) vgic_queue_irq_unlock() kicks the VCPU already, where I want to
+> > just add all of them first, then kick the VCPU at the end.  
+> 
+> Indeed, and that is why you need to change the way you queue these
+> pending, enabled, group-disabled interrupts (see the LPI issue below).
+> 
+> >
+> > So I decided to go with the stripped-down version of it, because I
+> > didn't dare to touch the original function. I could refactor this
+> > "actually add to the list" part of vgic_queue_irq_unlock() into this
+> > new function, then call it from both vgic_queue_irq_unlock() and from
+> > the new users.
+> >  
+> >> - What if the interrupt isn't pending? Non-pending, non-active
+> >>   interrupts should not be on the AP list!  
+> >
+> > That should be covered by vgic_target_oracle() already, shouldn't it?  
+> 
+> Ah, yes, you're right.
+> 
+> >  
+> >> > +		irq->vcpu = vcpu;
+> >> > +
+> >> > +		ret = 1;
+> >> > +	}
+> >> > +	raw_spin_unlock(&irq->irq_lock);
+> >> > +	vgic_put_irq(kvm, irq);
+> >> > +
+> >> > +	return ret;
+> >> > +}
+> >> > +
+> >> >  /*
+> >> >   * The group enable status of at least one of the groups has   
+> >> changed.  
+> >> >   * If enabled is true, at least one of the groups got enabled.
+> >> > @@ -346,17 +378,57 @@ int vgic_dist_enable_group(struct kvm *kvm,   
+> >> int group, bool status)  
+> >> >   */
+> >> >  void vgic_rescan_pending_irqs(struct kvm *kvm, bool enabled)
+> >> >  {
+> >> > +	int cpuid;
+> >> > +	struct kvm_vcpu *vcpu;
+> >> > +
+> >> >  	/*
+> >> > -	 * TODO: actually scan *all* IRQs of the VM for pending IRQs.
+> >> > -	 * If a pending IRQ's group is now enabled, add it to its   
+> >> ap_list.  
+> >> > -	 * If a pending IRQ's group is now disabled, kick the VCPU to
+> >> > -	 * let it remove this IRQ from its ap_list. We have to let the
+> >> > -	 * VCPU do it itself, because we can't know the exact state of   
+> >> an  
+> >> > -	 * IRQ pending on a running VCPU.
+> >> > +	 * If no group got enabled, we only have to potentially remove
+> >> > +	 * interrupts from ap_lists. We can't do this here, because a   
+> >> running  
+> >> > +	 * VCPU might have ACKed an IRQ already, which wouldn't   
+> >> immediately  
+> >> > +	 * be reflected in the ap_list.
+> >> > +	 * So kick all VCPUs, which will let them re-evaluate their   
+> >> ap_lists  
+> >> > +	 * by running vgic_prune_ap_list(), removing no longer enabled
+> >> > +	 * IRQs.
+> >> > +	 */
+> >> > +	if (!enabled) {
+> >> > +		vgic_kick_vcpus(kvm);
+> >> > +
+> >> > +		return;
+> >> > +	}
+> >> > +
+> >> > +	/*
+> >> > +	 * At least one group went from disabled to enabled. Now we need
+> >> > +	 * to scan *all* IRQs of the VM for newly group-enabled IRQs.
+> >> > +	 * If a pending IRQ's group is now enabled, add it to the   
+> >> ap_list.  
+> >> > +	 *
+> >> > +	 * For each VCPU this needs to be atomic, as we need *all* newly
+> >> > +	 * enabled IRQs in be in the ap_list to determine the highest
+> >> > +	 * priority one.
+> >> > +	 * So grab the ap_list_lock, then iterate over all private IRQs   
+> >> and  
+> >> > +	 * all SPIs. Once the ap_list is updated, kick that VCPU to
+> >> > +	 * forward any new IRQs to the guest.
+> >> >  	 */
+> >> > +	kvm_for_each_vcpu(cpuid, vcpu, kvm) {
+> >> > +		unsigned long flags;
+> >> > +		int i;
+> >> >
+> >> > -	 /* For now just kick all VCPUs, as the old code did. */
+> >> > -	vgic_kick_vcpus(kvm);
+> >> > +		raw_spin_lock_irqsave(&vcpu->arch.vgic_cpu.ap_list_lock,   
+> >> flags);  
+> >> > +
+> >> > +		for (i = 0; i < VGIC_NR_PRIVATE_IRQS; i++)
+> >> > +			queue_enabled_irq(kvm, vcpu, i);
+> >> > +
+> >> > +		for (i = VGIC_NR_PRIVATE_IRQS;
+> >> > +		     i < kvm->arch.vgic.nr_spis + VGIC_NR_PRIVATE_IRQS; i++)
+> >> > +			queue_enabled_irq(kvm, vcpu, i);  
+> >>
+> >> On top of my questions above, what happens to LPIs?  
+> >
+> > Oh dear. Looks like wishful thinking on my side ;-) Iterating over
+> > all interrupts is probably not a good idea anymore.
+> > Do you think this idea of having a list with group-disabled IRQs is a
+> > better approach: In vgic_queue_irq_unlock, if a pending IRQ's group 
+> > is
+> > enabled, it goes into the ap_list, if not, it goes into another list
+> > instead. Then we would only need to consult this other list when a
+> > group gets enabled. Both lists protected by the same ap_list_lock.
+> > Does that make sense?  
+> 
+> I think that could work. One queue for each group, holding pending,
+> enabled, group-disabled interrupts. Pending, disabled interrupts are
+> not queued anywhere, just like today.
+> 
+> The only snag is per-cpu interrupts. On which queue do they live?
+> Do you have per-CPU queues? or a global one?
 
-Cheers
-Jon
+Yes, the idea was to have a per-VCPU "grp_dis_list" in addition to the ap_list, reusing the ap_list list_head in struct vgic_irq. vgic_queue_irq_unlock() would put them into *one* of those two lists, depending on their group-enabled status. When a group gets enabled, we just have to transfer the IRQs from grp_dis_list to ap_list.
 
--- 
-nvpublic
+But fleshing this out I was wondering if it couldn't be much simpler:
+We ignore the group-enabled status most of the time, except in vgic_flush_lr_state(). So group-disabled IRQs *would go* to the ap_list (when they are otherwise pending|active and enabled), but would be skipped when eventually populating the LRs. vgic_prune_ap_list would also not touch them, so they would stay in the ap_list (unless removed for other reasons).
+
+That might raise some eyebrows (because we keep IRQs in the ap_list which are not ready), but would require only minimal changes and avoid all kind of nasty/racy code to be added. The only downside I see is that the ap_list could potentially be much longer, but we could change the sorting algorithm if needed to keep group-disabled IRQs at the end, at which point it wouldn't really matter.
+
+Do you see any problem with that approach? Alex seemed to remember that you had an objection against a very similar (if not identical) idea before.
+
+> >> And if a group has
+> >> been disabled, how do you retire these interrupts from the AP list?  
+> >
+> > This is done above: we kick the respective VCPU and rely on
+> > vgic_prune_ap_list() to remove them (that uses vgic_target_oracle(),
+> > which in turn checks vgic_irq_is_grp_enabled()).  
+> 
+> But what if the CPU isn't running? Kicking it isn't going to do much,
+> is it?
+
+Not directly, but in either approach that would be handled similar to disabled interrupts: once the VCPU runs, they would *not* end up in LRs (because we check the oracle before), and would be cleaned up in prune() once the guest exits (at least for the original approach).
+
+Cheers,
+Andre.
 
 _______________________________________________
 linux-arm-kernel mailing list
