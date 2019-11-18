@@ -2,57 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93E45100EF3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 23:48:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1DFD100F57
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 00:14:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BnZz8TIovLG5O55Rc1am3xBuBUWNnOsJy48PXGhskHI=; b=jjDrsqZwR9sbI/
-	JBX/XU3C6QlBv6mF6ZVwfwzD4kMf1N68o9QvxLOtBBtSpShMmhbydj2rU+pbMM9ldk2vI21+o88V/
-	ngsn56xbByImqhWQGL84+8lsmuI1xMCUefnKxop7nZu5FyRRiBQA4gI3vCyirIoq3mpP9otC6IXVW
-	CjOWdV4pVAYxgPWQw7qhg3bKrSs8FRWhwrgye4Y6Lx/KV7AAXnDti6QKh4KY/8HZwmAcB2LSv9qPE
-	BEpL62siZRtpdVmbO0f0g+zByDwY6YAYwE3jI7A6NvcT7qRY4vM3b4fG+GmXcrtKozvkuBtmn+INb
-	KOVJjlrdPaBuAeh8P2og==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n9XaSxBaNQM0R2N06lh7lfqCWItx5adP/983/zDcm3M=; b=hj5sa31DzHd9CB
+	tyna7BZegLzdERjkgSBkrCzY8jOhgynSgOqmfR5L3nnTvnJA9ftk438OXRPsLEUS4zllNekmA74fe
+	Tfx/83wS54sjscr73r/I2mC/dM7IQfJAf8q38X3jBaudsG+sjO4B9wdXzQiqgWxkfUEt1U4JVsgID
+	3TVYOLnqoklwsjLyPpoVbyQkEk/mBPPAi/B61ukGywFDzKadAhT2VGNR8Mi8SisW+pld17qSl1ohX
+	ea1MuUcejY/6DiG+9rMva5/Y2eTD4XaEoTEDZK8Rxq2QweJwgSdvBIj/KGrpg3G2TpBx7zDEQ5wp6
+	dgUV3h77aTan/ZTCLLzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWppA-00049N-VO; Mon, 18 Nov 2019 22:48:48 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iWqDc-0004Gm-Jd; Mon, 18 Nov 2019 23:14:04 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWpoz-00048V-R2; Mon, 18 Nov 2019 22:48:42 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 2028EAE55;
- Mon, 18 Nov 2019 22:48:33 +0000 (UTC)
-Subject: Re: [PATCH v3 8/8] ARM: realtek: Enable RTD1195 arch timer
-To: Marc Zyngier <maz@kernel.org>
-References: <20191117072109.20402-1-afaerber@suse.de>
- <20191117072109.20402-9-afaerber@suse.de> <20191117110214.6b160b2e@why>
- <7015e4c4-f999-d2e8-fd1f-e15e74a0d092@suse.de>
- <e99e40d8c95147861ab600c5d5287f8f@www.loen.fr>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Organization: SUSE Software Solutions Germany GmbH
-Message-ID: <4dc05879-f6d9-f754-908e-ad2431d8ff5a@suse.de>
-Date: Mon, 18 Nov 2019 23:48:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1iWqDS-0004Fr-Ss
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 23:13:58 +0000
+Received: by mail-pg1-x541.google.com with SMTP id h27so10376164pgn.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 18 Nov 2019 15:13:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=qUJh1Kxa/O0dbHY+8/bDJj9IILwdUvsp2P0za4TSTpc=;
+ b=LQSUtQxMg2dkBxnifgBx+acnXe4M0kG6IjxmvrL72vK1j4b6WbQO1pQmzc43ue3xcx
+ mqoop43yC9eMPolAHaMXumodOBnN6dU4M2bl1OixPCs/Lr0WrT+rIQ9Xs0ReR6eup1Yb
+ vsXrNI09oEUvJZM6X1unWYGIfqYqYxVzEvsXtWkWr9VqhaQmjpRtIFlmhuqcyBIQdR9L
+ EicpfsQ7tZ1RTD/X2JgsHShA21dwkF/ngX6Cud7viXIB0l8eoM4LbxtviF3zkB/Fmm67
+ hKqo4QnpxOgu0fbMUcy4QrackDoplphN+WVpWdHexkWUc9HETUcrP9QV4m5Odxi66hRF
+ 3FJw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=qUJh1Kxa/O0dbHY+8/bDJj9IILwdUvsp2P0za4TSTpc=;
+ b=kKMUMGyiTolQNFCw1pDv1OcjH8EgKm/5Nuizw5s7sRnnhPZhiM7OYIs+Si4M+rQmeh
+ ozPnTlvZDyTwa7kpyZY6qlcI8obLaizokXZrUsal5yxozkirIZRqOgJjZw0zUYUg6Sa8
+ HY4Kkmpg3oMjR2oDRD1F8w8AOM1ttM8jOKHZMwk4oOnhrlfV8TIT2D8HiN5L/torVUh1
+ QWZSoB0eocImPlSlZVeAdAY6mSkzAEOEpH0F06sI+ciWFsDZxOz3qCXzMCQmwpBvK4pi
+ SjW67dbuBIdLKufBIbEXIWKEbdOegJt9CaPnUumEX4bDSGsFRIknxzzsuwxVzM0nO6SJ
+ zULQ==
+X-Gm-Message-State: APjAAAX/Dk0HDoLuyFE+3QQb3p9wX3vRzXaEZPvte3WmhcPbQ8TmlNBS
+ H9QOQTbIwn1qlJeHqtf0R9YMrw==
+X-Google-Smtp-Source: APXvYqzAUXRC6SbTRv4jb/B5oz18PJBvPfFvJ1B1FzwsBf1n0/ZufwfY/f2j2TS4Qyi62GQ4PZOUAQ==
+X-Received: by 2002:a65:418d:: with SMTP id a13mr2039184pgq.208.1574118830980; 
+ Mon, 18 Nov 2019 15:13:50 -0800 (PST)
+Received: from google.com ([2620:15c:201:2:ce90:ab18:83b0:619])
+ by smtp.gmail.com with ESMTPSA id fh11sm551294pjb.2.2019.11.18.15.13.47
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 18 Nov 2019 15:13:48 -0800 (PST)
+Date: Mon, 18 Nov 2019 15:13:43 -0800
+From: Sami Tolvanen <samitolvanen@google.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v5 14/14] arm64: implement Shadow Call Stack
+Message-ID: <20191118231343.GA231930@google.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20191105235608.107702-1-samitolvanen@google.com>
+ <20191105235608.107702-15-samitolvanen@google.com>
+ <20191115152047.GI41572@lakrids.cambridge.arm.com>
+ <CABCJKudm28QaKRxPHWgKuEfRvm=EvuUEmcAVOnNkbxBCJcYX5A@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <e99e40d8c95147861ab600c5d5287f8f@www.loen.fr>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <CABCJKudm28QaKRxPHWgKuEfRvm=EvuUEmcAVOnNkbxBCJcYX5A@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_144838_173375_CE6877DF 
-X-CRM114-Status: GOOD (  40.42  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191118_151354_934920_8D4A2FEC 
+X-CRM114-Status: GOOD (  22.75  )
+X-Spam-Score: -13.9 (-------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-13.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ 1.8 FSL_HELO_FAKE          No description available.
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,187 +108,279 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: James Tai <james.tai@realtek.com>, Arnd Bergmann <arnd@arndb.de>,
- linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, Olof Johansson <olof@lixom.net>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWFyYywKCkFtIDE4LjExLjE5IHVtIDEwOjI3IHNjaHJpZWIgTWFyYyBaeW5naWVyOgo+IE9u
-IDIwMTktMTEtMTcgMTc6MDgsIEFuZHJlYXMgRsOkcmJlciB3cm90ZToKPj4gQW0gMTcuMTEuMTkg
-dW0gMTI6MDIgc2NocmllYiBNYXJjIFp5bmdpZXI6Cj4+PiBPbiBTdW4sIDE3IE5vdiAyMDE5IDA4
-OjIxOjA5ICswMTAwCj4+PiBBbmRyZWFzIEbDpHJiZXIgPGFmYWVyYmVyQHN1c2UuZGU+IHdyb3Rl
-Ogo+Pj4KPj4+PiBXaXRob3V0IHRoaXMgbWFnaWMgd3JpdGUgdGhlIHRpbWVyIGRvZXNuJ3Qgd29y
-ayBhbmQgYm9vdCBnZXRzIHN0dWNrLgo+Pj4+Cj4+Pj4gU2lnbmVkLW9mZi1ieTogQW5kcmVhcyBG
-w6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPgo+Pj4+IC0tLQo+Pj4+IMKgV2hhdCBpcyB0aGUgbmFt
-ZSBvZiB0aGUgcmVnaXN0ZXIgMHhmZjAxODAwMD8KPj4+PiDCoElzIDB4MSBhIEJJVCgwKSB3cml0
-ZSwgb3IgaG93IGFyZSB0aGUgcmVnaXN0ZXIgYml0cyBkZWZpbmVkPwo+Pj4+IMKgSXMgdGhpcyBh
-IHJlc2V0IG9yIGEgY2xvY2sgZ2F0ZT8gSG93IHNob3VsZCB3ZSBtb2RlbCBpdCBpbiBEVD8KPj4K
-Pj4gwqDCoMKgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5e
-Xl5eXl5eXl5eXl5eXl5eCj4gCj4gU29ycnk/IERvIHlvdSBleHBlY3QgbWUgdG8gY29tZSB1cCB3
-aXRoIGFuc3dlciB0byB0aGVzZSBxdWVzdGlvbnM/CgpObywgSSB3YXMgcG9pbnRpbmcgb3V0IHRo
-YXQgSSBteXNlbGYgaGFkIGFscmVhZHkgYXNrZWQgcHJldHR5IG11Y2ggdGhlCnNhbWUgcXVlc3Rp
-b25zIHlvdSBqdXN0IGFza2VkIG1lLiBIb3cgZGlkIHlvdSBleHBlY3QgbWUgdG8gaGF2ZSBhbnN3
-ZXJzCnRvIHlvdXIgIlNob3VsZG4ndCB0aGlzIGJlIGEgcmVhZC9tb2RpZnkvd3JpdGUgc2VxdWVu
-Y2U/IiB0aGVuPyBJdApzZWVtZWQgbGlrZSB5b3UgbWlzc2VkIG15IHF1ZXN0aW9ucyB1cCB0aGVy
-ZToKCldpdGhvdXQga25vd2luZyBob3cgdGhlIHJlZ2lzdGVyIGlzIHN0cnVjdHVyZWQsIEkgY2Fu
-J3QgaW1wbGVtZW50IGEKcmVhZC9tb2RpZnkvd3JpdGUgc2VxdWVuY2UgLSBmb3IgdGhhdCB3ZSdk
-IG5lZWQgdG8ga25vdyB3aGV0aGVyIGl0J3MgYQpzaW5nbGUgYml0IHdlIGNhbiBqdXN0IHNldCBv
-ciBhIGZpZWxkIHRoYXQgd2Ugd291bGQgbmVlZCB0byBtYXNrIGZpcnN0CmJlZm9yZSB3cml0aW5n
-IGludG8gaXQuCgpBbmQgaWRlYWxseSB3ZSB3b3VsZCBiZSBnZXR0aW5nIGl0cyBhZGRyZXNzIGZy
-b20gRFQsIHNvIHdlIHdvdWxkIG5lZWQgdG8Ka25vdyB3aGV0aGVyIGl0J3MganVzdCB0aGlzIG9u
-ZSByZWdpc3RlciBvciBzb21lIGNvbnRpZ3VvdXMgSVAgYmxvY2sKc3VjaCBhcyAiYXJtLGFybXY3
-LXRpbWVyLW1lbSIuIFNhbWUgaXNzdWUgd2hldGhlciB3ZSBpbXBsZW1lbnQgaXQgaW4gdGhlCmtl
-cm5lbCBvciBpbiBVLUJvb3QgYnR3LiBJZiBpdCdzIG5vIHN0YW5kYXJkIEFybSByZWdpc3Rlciwg
-d2UnbGwgbmVlZCB0bwpoYXZlIGEgYmluZGluZyB3aXRoIGEgc2Vuc2libGUgY29tcGF0aWJsZSBz
-dHJpbmcsIHNvbWUgUkVHXyBjb25zdGFudCB0bwpyZXBsYWNlIHRoZSBtYWdpYyBvZmZzZXQgbnVt
-YmVyIGFuZCBzb21lIG1lYW5pbmdmdWwgY29uc3RhbnQgZm9yIDB4MS4KCj4+Pj4gZGlmZiAtLWdp
-dCBhL2FyY2gvYXJtL21hY2gtcmVhbHRlay9ydGQxMTk1LmMKPj4+PiBiL2FyY2gvYXJtL21hY2gt
-cmVhbHRlay9ydGQxMTk1LmMKPj4+PiBpbmRleCBiMzFhNDA2NmJlODcuLjA1MzIzNzljNzRmNSAx
-MDA2NDQKPj4+PiAtLS0gYS9hcmNoL2FybS9tYWNoLXJlYWx0ZWsvcnRkMTE5NS5jCj4+Pj4gKysr
-IGIvYXJjaC9hcm0vbWFjaC1yZWFsdGVrL3J0ZDExOTUuYwpbLi4uXQo+Pj4+IEBAIC0yNCw2ICsy
-NywxOCBAQCBzdGF0aWMgdm9pZCBfX2luaXQgcnRkMTE5NV9yZXNlcnZlKHZvaWQpCj4+Pj4gwqDC
-oMKgwqAgcnRkMTE5NV9tZW1ibG9ja19yZW1vdmUoMHgxODEwMDAwMCwgMHgwMTAwMDAwMCk7Cj4+
-Pj4gwqB9Cj4+Pj4KPj4+PiArc3RhdGljIHZvaWQgX19pbml0IHJ0ZDExOTVfaW5pdF90aW1lKHZv
-aWQpCj4+Pj4gK3sKPj4+PiArwqDCoMKgIHZvaWQgX19pb21lbSAqYmFzZTsKPj4+PiArCj4+Pj4g
-K8KgwqDCoCBiYXNlID0gaW9yZW1hcCgweGZmMDE4MDAwLCA0KTsKPj4+PiArwqDCoMKgIHdyaXRl
-bCgweDEsIGJhc2UpOwo+Pj4+ICvCoMKgwqAgaW91bm1hcChiYXNlKTsKPj4+PiArCj4+Pj4gK8Kg
-wqDCoCBvZl9jbGtfaW5pdChOVUxMKTsKPj4+PiArwqDCoMKgIHRpbWVyX3Byb2JlKCk7Cj4+Pj4g
-K30KPj4+Cj4+PiBHYXdkLi4uIFdoeSBpc24ndCB0aGlzIHNldCBmcm9tIHRoZSBib290bG9hZGVy
-PyBCeSB0aGUgdGltZSB0aGUga2VybmVsCj4+PiBzdGFydHMsIGV2ZXJ5dGhpbmcgc2hvdWxkIGJl
-IHVwIGFuZCBydW5uaW5nLiBXaGF0IGlzIGl0IGdvaW5nIHRvIGRvCj4+PiB3aGVuIHlvdSBrZXhl
-Yz8gU2hvdWxkbid0IHRoaXMgYmUgYSByZWFkL21vZGlmeS93cml0ZSBzZXF1ZW5jZT8KPj4KPj4g
-QWdhaW4sIEkgY2FuJ3QgY29tbWVudCBvbiB3aHkgdGhlaXIgQlNQIGJvb3Rsb2FkZXJzIGRvbid0
-IGRvIHRoaW5ncyB0aGUKPj4gZXhwZWN0ZWQgd2F5LiBUaGUgbGlzdCBvZiBpc3N1ZXMgaXMgbG9u
-ZywgYW5kIHRoZSBuZXdlc3QgVS1Cb290IEkndmUKPj4gc2VlbiBmb3IgUlREMTM5NSB3YXMgdjIw
-MTUuMDcgYmFzZWQsIHN0aWxsIGRvd25zdHJlYW0gYW5kIHByZS1FQkJSLgo+PiBBbmQgYmVmb3Jl
-IHdlIGdldCBhIC5kdHMgbWVyZ2VkIGludG8gdGhlIGtlcm5lbCB3aXRoIGFsbCBuZWVkZWQgbm9k
-ZXMKPj4gKG5ldHdvcmssIGVNTUMsIGV0Yy4pLCB0aGVyZSBpcyB6ZXJvIGNoYW5jZSBvZiBhIG1h
-aW5saW5lIFUtQm9vdCBhbnl3YXkuCj4gCj4gWy4uLl0KPiAKPiBJIGNlcnRhaW5seSBkaXNwdXRl
-IHRoYXQuIAoKRGlzcHV0ZSB0aGF0IHdpdGggVS1Cb290IG1haW50YWluZXJzIHRoZW4sIHBsZWFz
-ZSwgYW5kIGxldCBtZSBrbm93IHRoZQpvdXRjb21lLiBJIGp1c3QgaGFkIGFuIGFyZ3VtZW50IHdp
-dGggTmVpbCB0aGF0IGl0J3Mgbm90IG9rYXkgdG8gaW1wb3J0CmZyb20gbGludXgtbmV4dC5naXQg
-YW5kIHRoYXQgaXQgbXVzdCBiZSBhbiAtcmMxIG9yIG90aGVyIHN0YWJsZSB0YWcuIChNeQpWSU0z
-IHBhdGNoIHN1Ym1pc3Npb24gYmVmb3JlIFBsdW1iZXJzIHdhcyBub3QgYWNjZXB0ZWQgZm9yIHRo
-YXQgcmVhc29uLAphbmQgSSBoYXZlbid0IGZvdW5kIHRpbWUgZm9yIFUtQm9vdCBzaW5jZS4pCgo+
-IElmIHlvdSdyZSBhYmxlIHRvIHN1cHBvcnQgYWxsIG9mIHRoaXMgaW4gdGhlCj4ga2VybmVsLAoK
-Tm8sIEknbSBub3QsIHRoYXQgd2FzIG15IHBvaW50ISA6KCBXZSBkbyBfbm90XyBoYXZlIGFsbCB0
-aG9zZSBkcml2ZXJzCm5lZWRlZCBmb3IgYSB1c2VmdWwgVS1Cb290IGltcGxlbWVudGVkIGZvciB0
-aGUgbWFpbmxpbmUga2VybmVsIHlldC4gTGlrZQpJIHNhaWQsIEknbSB1c2luZyBhIEJ1c3lib3gg
-aW5pdHJkIGZvciB0ZXN0aW5nIFJURDExOTUgKGFsc28gUlREMTI5MywKUlREMTI5NiBhbmQgUlRE
-MTM5NSkuIEFuZCBJJ3ZlIGFscmVhZHkgYW1hc3NlZCAxNDArIHBhdGNoZXMgb24gdG9wIG9mCi1u
-ZXh0IHdpdGhvdXQgdGhvc2UgY29yZSBkcml2ZXJzIC0gSSByZWFsbHkgbmVlZCB0byBnZXQgdGhh
-dCBxdWV1ZSBkb3duCmZvciBzZW5zaWJsZSBjb2xsYWJvcmF0aW9uIHdpdGggUmVhbHRlayBhbmQg
-b3RoZXJzLgoKSSBuZWVkIHBlb3BsZSB0byBiZSBhYmxlIHRvIGhlbHAgY29udHJpYnV0ZSB0aG9z
-ZSBkcml2ZXJzIHRvIHRoZSBrZXJuZWwsCnRoZXJlZm9yZSBJIG5lZWQgdG8gZ2V0IHRoZSBiYXNp
-Y3MgbWVyZ2VkLCBzbyB0aGF0IFJlYWx0ZWsgYW5kIGNvbW11bml0eQptZW1iZXJzIGNhbiBiYXNl
-IHBhdGNoZXMgb24gdG9wLCBzbyB0aGF0IHdlIGdldCB0aGVyZSBvdmVyIHRpbWUuCklmIHlvdSdy
-ZSBhc2tpbmcgdGhhdCBzb21lb25lIGRvIGEgbmV3IFUtQm9vdCBiZWZvcmUgd2UgY2FuIGV2ZW4g
-Z2V0IGEKdGltZXIgb3IgR0lDIERUIG5vZGUgbWVyZ2VkLCB0aGVuIHdlJ3JlIGRvb21lZCBhbmQg
-SSdtIHdhc3RpbmcgbXkgdGltZQpoZXJlLiBSb2IgZGlkIGdpdmUgYSBSZXZpZXdlZC1ieSBmb3Ig
-dGhlIERULCBzbyBJIHdvdWxkJ3ZlIHRob3VnaHQgaXQKY2FuJ3QgYmUgdGhhdCB0ZXJyaWJsZSEK
-CkFzIEkgcG9pbnRlZCBvdXQgYWJvdmUsIHdlIG5lZWQgdG8gZ2V0IHRoZSAuZHRzW2ldIGludG8g
-c29tZSAtcmMxIGtlcm5lbApyZWxlYXNlIGZvciBVLUJvb3QgdG8gcHVsbCB0aGVtLiBJZiB5b3Un
-cmUgYmxvY2tpbmcgdG8gbWVyZ2UgUlREMTE5NQppbnRvIHY1LjYtcmMxIGhlcmUsIHdlJ3JlIG5v
-dCBnb25uYSBnZXQgZXZlbiBhIGRyaXZlci1sZXNzIG1haW5saW5lClUtQm9vdCBmb3IgaXQgaW4g
-YWJvdXQgOCB3ZWVrcy4gQ2hpY2tlbi1hbmQtZWdnIHByb2JsZW0uCgpBbmQgbXkgZXhwZXJpZW5j
-ZSB3aXRoIFUtQm9vdCBoYXMgYmVlbiB0aGF0IGlmIFUtQm9vdCBwYXRjaGVzIGRvbid0IGdldApt
-ZXJnZWQgaW1tZWRpYXRlbHksIG90aGVyIHBlb3BsZSB3aWxsIGR1cGxpY2F0ZSB0aGF0IHdvcmsg
-bGF0ZXIgd2l0aG91dApjcmVkaXRpbmcgbWUsIHNvIHRoYXQgbXkgdGltZSBzcGVudCBvbiBVLUJv
-b3Qgd291bGQgYmUgd2FzdGVkLiBBbmQgdGhlCnNhbWUgaXMgaGFwcGVuaW5nIHdpdGggdGhlIGtl
-cm5lbCBpZiB3ZSBkb24ndCBnZXQgbXkgcGF0Y2hlcyBtZXJnZWQgaW4Kc29tZSBmb3JtIC0geW91
-IGFscmVhZHkgd2l0bmVzc2VkIEFsZWl4IGRvaW5nIGhpcyBvd24gaXJxY2hpcCBkcml2ZXIKaW5z
-dGVhZCBvZiBjb2xsYWJvcmF0aW5nIG9uIHRoZSBvbmUgdGhhdCB3ZW50IHRocm91Z2ggdGhyZWUg
-cm91bmRzIG9mCnJldmlldyBhbHJlYWR5IChhbmQgbm93IGhlJ3MgZGlzYXBwZWFyZWQgYWdhaW4g
-d2l0aG91dCBpbnB1dCBmb3IgbWUsIHNvCkknbSBwcmVwYXJpbmcgdG8gc2VuZCB5b3UgYSB2NCB0
-b25pZ2h0IG9yIHRvbW9ycm93KS4gU1RNMzIgd2FzIGFub3RoZXIKYmFkIGV4cGVyaWVuY2UgKGFu
-ZCBJIHN0aWxsIGhhdmUgdHdvIGZ1cnRoZXIgdjctTSBwb3J0cyB0byBjbGVhbiB1cCkuCgpXaXRo
-IHRoZSBHZWVrQm94LCB0aGF0IEknbSB0aGUgb2ZmaWNpYWwgVS1Cb290IG1haW50YWluZXIgb2Ys
-IEkgbWFuYWdlZAp0byBzaG9vdCBteXNlbGYgaW4gdGhlIGZvb3QsIHVuYWJsZSB0byByZWNvdmVy
-IGZyb20gYSBVLUJvb3QgSSBmbGFzaGVkLgpTbyBJIGFtIHZlcnkgaGVzaXRhbnQgdG8gcmVwZWF0
-IHRoYXQsIGVzcGVjaWFsbHkgd2l0aCBSVEQxMTk1IGhhcmR3YXJlCnRoYXQncyBubyBsb25nZXIg
-c29sZCAoWDEwMDApLgoKPiB5b3UncmUgbW9zdCBwcm9iYWJseSBhYmxlIHRvIGRvIGl0IGluIHUt
-Ym9vdCwgYW5kIHRoYXQncyB0aGUgcmlnaHQKPiBwbGFjZSB0byBkbyBpdCAoYW5kIHRoYXQgY2Fu
-IGJlIGEgcHJldHR5IHNpbXBsZSB1LWJvb3QgaWYgeW91IHVzZSB0aGUKPiBvcmlnaW5hbCBvbmUg
-YXMgYSBmaXJzdC1zdGFnZSBsb2FkZXIpLgo+IAo+IEknbSBub3QgdHJ5aW5nIHRvIHVuZGVybWlu
-ZSB5b3VyIGVmZm9ydCBpbiBzdXBwb3J0aW5nIHRoZXNlIHBsYXRmb3Jtcwo+IGluIG1haW5saW5l
-LiBUaGlzIGlzIGNlcnRhaW5seSBjb21tZW5kYWJsZS4gQnV0IHlvdSdyZSB1bmZvcnR1bmF0ZWx5
-Cj4gcHVzaGluZyBpbiBhIGRpcmVjdGlvbiB0aGF0IHdlJ3ZlIHRyaWVkIGhhcmQgdG8gbW92ZSBh
-d2F5IGZyb20gZm9yCj4gYSBnb29kIDggeWVhcnMuCj4gCj4gTG9vayBhdCB3aGF0IHdlIGRpZCBv
-biB0aGUgQWxsd2lubmVyIGZyb250OiB3ZSBnb3QgYSB0ZXJyaWJsZSBwaWVjZSBvZgo+IGNyYXAs
-IGFuZCB0dXJuZWQgaXQgaW50byBvbmUgb2YgdGhlIGJlc3Qgc3VwcG9ydGVkIHBsYXRmb3JtLCBi
-ZWNhdXNlCj4gd2UndmUgcHV0IHRoZSBlZmZvcnQgd2hlcmUgaXQgbWF0dGVyZWQuIEkgcGVyc29u
-YWxseSB3cm90ZSBQU0NJIHN1cHBvcnQKPiBhbmQgSFlQIGVuYWJsZW1lbnQgaW4gdS1ib290LCBh
-ZGRyZXNzaW5nIGluIG9uZSBnbyBtb3N0IG9mIHRoZSBpc3N1ZXMgeW91Cj4gbWVudGlvbiBoZXJl
-LiBJdCBkaWRuJ3QgdGFrZSB0aGF0IG11Y2ggdGltZSwgYW5kIGl0IGlzIG5vdyB0aGVyZSBmb3Ig
-eW91Cj4gdG8gbWFrZSB1c2Ugb2YuCgpBbmQgdGhlIHdvcmsgb2YgdGhlIHN1blhpIGNvbW11bml0
-eSAtIGluY2x1ZGluZyBCb290bGluIGFuZCBBcm0gcGVvcGxlIC0KaXMgY29tbWVuZGFibGUgYW5k
-IGluc3BpcmluZyAoZS5nLiwgbWVzb24tdG9vbHMpLgoKTXkgdGltZSBhcyBzaW5nbGUgcGVyc29u
-IGlzIGxpbWl0ZWQgZm9yIHRoaXMgbmlnaHQtdGltZSBwcm9qZWN0IHRob3VnaCwKc28gaXQncyB1
-bnJlYWxpc3RpYyB0byBhc2sgbWUgdG8gcmV2ZXJzZS1lbmdpbmVlciBhIG5ldyBCTDMxIHdpdGhv
-dXQKc291cmNlcywgd3JpdGUgYSBVLUJvb3QgaW1wbGVtZW50YXRpb24gYW5kIHBvcnQgdGhlIGtl
-cm5lbCwgYWxsIGF0IG9uY2UuCkVzcGVjaWFsbHkgd2hlbiBJIGRvbid0IGtub3cgaG93IHRvIGV2
-ZW4gdGVzdCB0aG9zZSBvdGhlciBjb21wb25lbnRzLgpNYXliZSB0aGF0J3MgY2xlYXIgdG8geW91
-IC0gZm9yIG1lIGl0IGlzbid0LiBUaGUgUlREMTM5NSwgd2hlcmUgSSBkbwpoYXZlIFUtQm9vdCBz
-b3VyY2VzIGZvciBCUGktTTQgWzJdIGFuZCBnZXQgaXQgbG9hZGVkIGFzIGZpbGUgZnJvbSBTRCBi
-eQphIHByZXZpb3VzIGJvb3Rsb2FkZXIsIGlzIG5vdCBhZmZlY3RlZCBieSB0aGlzIFJURDExOTUg
-dGltZXIgcHJvYmxlbTsKeWV0IEkgZG9uJ3Qgc2VlIGhvdyBmcm9tIGFueSBnaXZlbiBVLUJvb3Qg
-KG9yIExLKSBJIHdvdWxkIGJlIGFibGUgdG8KbG9hZCBhIG5ldyBCTDMxIG9uIFJURDEyOTUvUlRE
-MTM5NSwgbm9yIGhvdyB0byBsb2FkIGEgSFlQIGNhcGFibGUgVS1Cb290Cm9uIFJURDExOTUuIEkg
-dGhvdWdodCBpdCdzIGltcG9zc2libGUgdG8gZXNjYXBlIHRvIGhpZ2hlciBFTHM/IEFuZCBmb3IK
-QVJNdjcgSSB0aG91Z2h0IFUtQm9vdCB3YXMgbmVpdGhlciByZWxvY2F0YWJsZSBub3QgcmVlbnRy
-YW50PwoKTm93LCBJIGNhbiBjb250aW51ZSBjYXJyeWluZyB0aGlzIGNvbW1pdCBpbiBteSBHaXRI
-dWIgdHJlZSBmb3IgbXlzZWxmLApsaWtlIEkgZG8gZm9yIHNwaW4tdGFibGUsIGlmIE9sb2YgYW5k
-IEFybmQgYWdyZWUgd2l0aCB5b3UgdGhhdCB0aGlzIDgvOApzaG91bGQgbm90IGJlIG1lcmdlZCwg
-ZXZlbiBpZiB3ZSBjbGFyaWZ5IHRoaXMgcmVnaXN0ZXIuIEJ1dCBJIGp1c3QgZG9uJ3QKc2VlIHRo
-ZSB0aW1lIHJpZ2h0IG5vdyBmb3IgZG9pbmcgYWxvbmUgd2hhdCB0aGUgc3VueGkgY29tbXVuaXR5
-IGhhdmUKYWNoaWV2ZWQgdG9nZXRoZXIgb3ZlciB0aGUgY291cnNlIG9mIG1hbnkgeWVhcnMsIHdp
-dGggUmVhbHRlayBpbiBteSBuZWNrCmZvciBuZXcga2VybmVsIHBhdGNoZXMuCgpUaGUgY29udGV4
-dCBoZXJlIGlzIHRoYXQgbW9zdCBvZiB0aGUgZHJpdmVycyBzZWVuIG9uIFJURDEyOTUgYW5kIGxh
-dGVyCm9yaWdpbmF0ZWQgaW4gUlREMTE5NSwgc28gZm9yIHNhbmUgY29tcGF0aWJsZSBzdHJpbmdz
-IChjZi4gd2F0Y2hkb2cgWzNdLApydGMgWzRdIGRpc2N1c3Npb25zISkgd2UgbmVlZCB0byBiZSBh
-YmxlIHRvIHRlc3QgUlREMTE5NSBhbmQgdG8gYmFzZQpwYXRjaGVzLCBzdWNoIGFzIHVwY29taW5n
-IGlycWNoaXAgbXV4IHY0LCBvbiBhbGwgZm91cisgU29DIGZhbWlsaWVzLgpSZWFsdGVrIGFwcGVh
-cnMgdG8gYmUgZm9jdXNlZCBvbiB0aGUgbmV3IFJURDE2MTkvUlREMTMxOSwgYW5kIEkgd291bGQK
-cmVhbGx5IGxpa2UgdG8gYXZvaWQgbWVyZ2luZyBkcml2ZXJzIGZvciB0aG9zZSBuZXcgY2hpcHMg
-b25seSBhbmQgY2FyaW5nCmFib3V0IGJpbmRpbmdzIGFuZCBjb21wYXRpYmlsaXR5IHdpdGggdGhl
-IHRocmVlIGVhcmxpZXIgU29DIGZhbWlsaWVzIGFzCmFmdGVydGhvdWdodCwgcmVwZWF0aW5nIHRo
-ZSBtaXN0YWtlcyBJIG1hZGUgd2l0aCBSVEQxMjk1IHZzLiBSVEQxMTk1IGZvcgpsYWNrIG9mIGhh
-cmR3YXJlIGF0IHRoZSB0aW1lLgoKSSBkb24ndCB0aGluayB0aGF0IEknbSBwdXNoaW5nIGludG8g
-YSB3cm9uZyBkaXJlY3Rpb247IHdlIGp1c3QgZGlzYWdyZWUKYWJvdXQgdGhlIHN0ZXBzIHRvIGdl
-dCB0aGVyZS4gSSB3b3VsZCBsaWtlIHBlb3BsZSB0byBiZSBhYmxlIHRvIHRha2UgYQptYWlubGlu
-ZSBrZXJuZWwgYW5kIGJvb3Qgb24gUlREMTE5NSB3aXRob3V0IGdldHRpbmcgc3R1Y2s7IGlmIHRo
-ZXkgaGF2ZQp0byB1c2UgYSBHaXRIdWIgdHJlZSB0byBzdWNjZXNzZnVsbHkgYm9vdCwgdGhlbiBp
-dCdzIG5vdCByZWFsbHkgbWFpbmxpbmUKeWV0LiBCb290aW5nIHdpdGggb25seSBvbmUgQ1BVIHVw
-IGlzIG11Y2ggbGVzcyBzZXZlcmUgYnkgY29tcGFyaXNvbiwgYXMKaXQgYWxsb3dzIHRvIHByb2Jl
-IGFsbCBkcml2ZXJzIGFuZCB0byBleHBsb3JlIHN5c2ZzIGFuZCBkZWJ1Z2ZzLgoKS2VlcCBpbiBt
-aW5kIHRoYXQgSSBzdGFydGVkIFJURDEyOTUgbWFpbmxpbmluZyB3aXRob3V0IGhhdmluZyBhbnkg
-QlNQCnNvdXJjZXMgYXQgYWxsLCB3aGljaCBpcyBsZXNzIHRoYW4gdGhlIHN1bnhpIGZvbGtzIGhh
-ZCB0byBnbyBvbi4KClRoZSBrZXkgb24gc3VueGksIEkgdGhvdWdodCwgd2FzIHRoYXQgeW91IGhh
-ZCB0aGUgRkVMIHRvb2xzIHRvIGp1c3QgbG9hZApib290bG9hZGVyIGJpbmFyaWVzIGR5bmFtaWNh
-bGx5IG92ZXIgVVNCLiBGb3IgQW1sb2dpYyB3ZSBhdCBsZWFzdCBoYWQKYmluYXJ5IGJsb2JzIGFu
-ZCBiaW5hcnkgdG9vbHMgaW50ZWdyYXRlZCBpbnRvIFUtQm9vdCBidWlsZCBwcm9jZXNzIGFuZAph
-biBpZGVhIHdoZXJlIHRvIHBsYWNlIHRoZW0gb24gU0QgdG8gYm9vdCB0aGVtIC0gaGVyZSBJIGhh
-dmUgb25seSB3aGF0CmlzIG9uIGVNTUMvU1BJLCBubyBkb2NzLiBBbHNvLCBJIGRvIHJlY2FsbCBh
-IGxvbmcgdGltZSB3aGVyZSBzdW54aSBoYWQKR2l0SHViIHJlcG9zIHdpdGggZG93bnN0cmVhbSBC
-U1AgZm9ya3MgLSBJJ2QgcmF0aGVyIG5vdCBnZXQgaW50byB0aGF0CmJ1c2luZXNzIGFuZCBpbW1l
-ZGlhdGVseSBza2lwIHRvIG1ha2luZyBtYWlubGluZSBtb3JlIGFuZCBtb3JlIHVzYWJsZS4KCklm
-IG9mIGNvdXJzZSBSZWFsdGVrIG9yIG9uZSBvZiB0aGVpciBPRU1zIG9yIHNvbWUgb3RoZXIgY29t
-bXVuaXR5IG1lbWJlcgp3YW50ZWQgdG8gd29yayBvbiBwcm92aWRpbmcgYSByZWJhc2VkIFUtQm9v
-dCBpbiBhIEdpdCByZXBvLCB0aGF0IHdvdWxkCmJlIGdyZWF0LiBPbmNlIHdlIGhhdmUgaXQgd29y
-a2luZywgd2UgY291bGQgZHJvcCB3b3JrYXJvdW5kcyBsaWtlIHRoZXNlLgoKQSBxdWljayBnaXQt
-Z3JlcCBmaW5kcyAyNzcgb2NjdXJyZW5jZXMgb2YgLmluaXRfdGltZSBpbiBhcmNoL2FybS9tYWNo
-LSosCnNvIGhhcmRseSBhIGNhbGxiYWNrIGFib3V0IHRvIGdldCBkcm9wcGVkLgoKUmVnYXJkcywK
-QW5kcmVhcwoKWzFdIGh0dHBzOi8vZ2l0aHViLmNvbS9CUEktU0lOT1ZPSVAvQlBJLVcyLWJzcC90
-cmVlL21hc3Rlci91LWJvb3QtcnRrClsyXSBodHRwczovL2dpdGh1Yi5jb20vQlBJLVNJTk9WT0lQ
-L0JQSS1NNC1ic3AvdHJlZS9tYXN0ZXIvdS1ib290LXJ0awpbM10gaHR0cHM6Ly9wYXRjaHdvcmsu
-a2VybmVsLm9yZy9wYXRjaC8xMTIwMDU2My8KWzRdIGh0dHBzOi8vcGF0Y2h3b3JrLmtlcm5lbC5v
-cmcvcGF0Y2gvMTEyMDA1NjEvCgotLSAKU1VTRSBTb2Z0d2FyZSBTb2x1dGlvbnMgR2VybWFueSBH
-bWJICk1heGZlbGRzdHIuIDUsIDkwNDA5IE7DvHJuYmVyZywgR2VybWFueQpHRjogRmVsaXggSW1l
-bmTDtnJmZmVyCkhSQiAzNjgwOSAoQUcgTsO8cm5iZXJnKQoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
-bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Fri, Nov 15, 2019 at 12:19:20PM -0800, Sami Tolvanen wrote:
+> On Fri, Nov 15, 2019 at 7:20 AM Mark Rutland <mark.rutland@arm.com> wrote:
+> >
+> > On Tue, Nov 05, 2019 at 03:56:08PM -0800, Sami Tolvanen wrote:
+> > > This change implements shadow stack switching, initial SCS set-up,
+> > > and interrupt shadow stacks for arm64.
+> >
+> > Each CPU also has an overflow stack, and two SDEI stacks, which should
+> > presumably be given their own SCS. SDEI is effectively a software-NMI,
+> > so it should almost certainly have the same treatement as IRQ.
+> 
+> Makes sense. I'll take a look at adding shadow stacks for the SDEI handler.
+
+Mark, I wrote a preliminary patch for adding SDEI shadow stacks, but
+turns out I don't really have a way to test the SDEI code. Does the approach
+below look sane to you?
+
+Sami
+
+
+---
+ arch/arm64/include/asm/scs.h        |   2 +
+ arch/arm64/include/asm/stacktrace.h |   4 --
+ arch/arm64/kernel/entry.S           |  14 +++-
+ arch/arm64/kernel/scs.c             | 106 +++++++++++++++++++++++-----
+ arch/arm64/kernel/sdei.c            |   7 ++
+ 5 files changed, 112 insertions(+), 21 deletions(-)
+
+diff --git a/arch/arm64/include/asm/scs.h b/arch/arm64/include/asm/scs.h
+index c50d2b0c6c5f..8e327e14bc15 100644
+--- a/arch/arm64/include/asm/scs.h
++++ b/arch/arm64/include/asm/scs.h
+@@ -9,6 +9,7 @@
+ #ifdef CONFIG_SHADOW_CALL_STACK
+ 
+ extern void scs_init_irq(void);
++extern int scs_init_sdei(void);
+ 
+ static __always_inline void scs_save(struct task_struct *tsk)
+ {
+@@ -27,6 +28,7 @@ static inline void scs_overflow_check(struct task_struct *tsk)
+ #else /* CONFIG_SHADOW_CALL_STACK */
+ 
+ static inline void scs_init_irq(void) {}
++static inline int scs_init_sdei(void) { return 0; }
+ static inline void scs_save(struct task_struct *tsk) {}
+ static inline void scs_overflow_check(struct task_struct *tsk) {}
+ 
+diff --git a/arch/arm64/include/asm/stacktrace.h b/arch/arm64/include/asm/stacktrace.h
+index b6cf32fb4efe..4d9b1f48dc39 100644
+--- a/arch/arm64/include/asm/stacktrace.h
++++ b/arch/arm64/include/asm/stacktrace.h
+@@ -68,10 +68,6 @@ extern void dump_backtrace(struct pt_regs *regs, struct task_struct *tsk);
+ 
+ DECLARE_PER_CPU(unsigned long *, irq_stack_ptr);
+ 
+-#ifdef CONFIG_SHADOW_CALL_STACK
+-DECLARE_PER_CPU(unsigned long *, irq_shadow_call_stack_ptr);
+-#endif
+-
+ static inline bool on_irq_stack(unsigned long sp,
+ 				struct stack_info *info)
+ {
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 5a02b61fc3e6..ac9dfb3da440 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -1309,13 +1309,16 @@ ENTRY(__sdei_asm_handler)
+ 
+ 	mov	x19, x1
+ 
++#if defined(CONFIG_VMAP_STACK) || defined(CONFIG_SHADOW_CALL_STACK)
++	ldrb	w4, [x19, #SDEI_EVENT_PRIORITY]
++#endif
++
+ #ifdef CONFIG_VMAP_STACK
+ 	/*
+ 	 * entry.S may have been using sp as a scratch register, find whether
+ 	 * this is a normal or critical event and switch to the appropriate
+ 	 * stack for this CPU.
+ 	 */
+-	ldrb	w4, [x19, #SDEI_EVENT_PRIORITY]
+ 	cbnz	w4, 1f
+ 	ldr_this_cpu dst=x5, sym=sdei_stack_normal_ptr, tmp=x6
+ 	b	2f
+@@ -1325,6 +1328,15 @@ ENTRY(__sdei_asm_handler)
+ 	mov	sp, x5
+ #endif
+ 
++#ifdef CONFIG_SHADOW_CALL_STACK
++	/* Use a separate shadow call stack for normal and critical events */
++	cbnz	w4, 3f
++	ldr_this_cpu dst=x18, sym=sdei_shadow_call_stack_normal_ptr, tmp=x6
++	b	4f
++3:	ldr_this_cpu dst=x18, sym=sdei_shadow_call_stack_critical_ptr, tmp=x6
++4:
++#endif
++
+ 	/*
+ 	 * We may have interrupted userspace, or a guest, or exit-from or
+ 	 * return-to either of these. We can't trust sp_el0, restore it.
+diff --git a/arch/arm64/kernel/scs.c b/arch/arm64/kernel/scs.c
+index 9a1305a6eb5b..dddb7c56518b 100644
+--- a/arch/arm64/kernel/scs.c
++++ b/arch/arm64/kernel/scs.c
+@@ -10,31 +10,105 @@
+ #include <asm/pgtable.h>
+ #include <asm/scs.h>
+ 
+-DEFINE_PER_CPU(unsigned long *, irq_shadow_call_stack_ptr);
++#define DECLARE_SCS(name)						\
++	DECLARE_PER_CPU(unsigned long *, name ## _ptr);			\
++	DECLARE_PER_CPU(unsigned long [SCS_SIZE/sizeof(long)], name)
+ 
+-#ifndef CONFIG_SHADOW_CALL_STACK_VMAP
+-DEFINE_PER_CPU(unsigned long [SCS_SIZE/sizeof(long)], irq_shadow_call_stack)
+-	__aligned(SCS_SIZE);
++#ifdef CONFIG_SHADOW_CALL_STACK_VMAP
++#define DEFINE_SCS(name)						\
++	DEFINE_PER_CPU(unsigned long *, name ## _ptr)
++#else
++/* Allocate a static per-CPU shadow stack */
++#define DEFINE_SCS(name)						\
++	DEFINE_PER_CPU(unsigned long *, name ## _ptr);			\
++	DEFINE_PER_CPU(unsigned long [SCS_SIZE/sizeof(long)], name)	\
++		__aligned(SCS_SIZE)
++#endif /* CONFIG_SHADOW_CALL_STACK_VMAP */
++
++DECLARE_SCS(irq_shadow_call_stack);
++DECLARE_SCS(sdei_shadow_call_stack_normal);
++DECLARE_SCS(sdei_shadow_call_stack_critical);
++
++DEFINE_SCS(irq_shadow_call_stack);
++#ifdef CONFIG_ARM_SDE_INTERFACE
++DEFINE_SCS(sdei_shadow_call_stack_normal);
++DEFINE_SCS(sdei_shadow_call_stack_critical);
+ #endif
+ 
++static int scs_alloc_percpu(unsigned long * __percpu *ptr, int cpu)
++{
++	unsigned long *p;
++
++	p = __vmalloc_node_range(PAGE_SIZE, SCS_SIZE,
++				 VMALLOC_START, VMALLOC_END,
++				 GFP_SCS, PAGE_KERNEL,
++				 0, cpu_to_node(cpu),
++				 __builtin_return_address(0));
++
++	if (!p)
++		return -ENOMEM;
++	per_cpu(*ptr, cpu) = p;
++
++	return 0;
++}
++
++static void scs_free_percpu(unsigned long * __percpu *ptr, int cpu)
++{
++	unsigned long *p = per_cpu(*ptr, cpu);
++
++	if (p) {
++		per_cpu(*ptr, cpu) = NULL;
++		vfree(p);
++	}
++}
++
++static void scs_free_sdei(void)
++{
++	int cpu;
++
++	for_each_possible_cpu(cpu) {
++		scs_free_percpu(&sdei_shadow_call_stack_normal_ptr, cpu);
++		scs_free_percpu(&sdei_shadow_call_stack_critical_ptr, cpu);
++	}
++}
++
+ void scs_init_irq(void)
+ {
+ 	int cpu;
+ 
+ 	for_each_possible_cpu(cpu) {
+-#ifdef CONFIG_SHADOW_CALL_STACK_VMAP
+-		unsigned long *p;
++		if (IS_ENABLED(CONFIG_SHADOW_CALL_STACK_VMAP))
++			WARN_ON(scs_alloc_percpu(&irq_shadow_call_stack_ptr,
++						 cpu));
++		else
++			per_cpu(irq_shadow_call_stack_ptr, cpu) =
++				per_cpu(irq_shadow_call_stack, cpu);
++	}
++}
+ 
+-		p = __vmalloc_node_range(SCS_SIZE, SCS_SIZE,
+-					 VMALLOC_START, VMALLOC_END,
+-					 GFP_SCS, PAGE_KERNEL,
+-					 0, cpu_to_node(cpu),
+-					 __builtin_return_address(0));
++int scs_init_sdei(void)
++{
++	int cpu;
+ 
+-		per_cpu(irq_shadow_call_stack_ptr, cpu) = p;
+-#else
+-		per_cpu(irq_shadow_call_stack_ptr, cpu) =
+-			per_cpu(irq_shadow_call_stack, cpu);
+-#endif /* CONFIG_SHADOW_CALL_STACK_VMAP */
++	if (!IS_ENABLED(CONFIG_ARM_SDE_INTERFACE))
++		return 0;
++
++	for_each_possible_cpu(cpu) {
++		if (IS_ENABLED(CONFIG_SHADOW_CALL_STACK_VMAP)) {
++			if (scs_alloc_percpu(
++				&sdei_shadow_call_stack_normal_ptr, cpu) ||
++			    scs_alloc_percpu(
++				&sdei_shadow_call_stack_critical_ptr, cpu)) {
++				scs_free_sdei();
++				return -ENOMEM;
++			}
++		} else {
++			per_cpu(sdei_shadow_call_stack_normal_ptr, cpu) =
++				per_cpu(sdei_shadow_call_stack_normal, cpu);
++			per_cpu(sdei_shadow_call_stack_critical_ptr, cpu) =
++				per_cpu(sdei_shadow_call_stack_critical, cpu);
++		}
+ 	}
++
++	return 0;
+ }
+diff --git a/arch/arm64/kernel/sdei.c b/arch/arm64/kernel/sdei.c
+index ea94cf8f9dc6..3e85017a9c8b 100644
+--- a/arch/arm64/kernel/sdei.c
++++ b/arch/arm64/kernel/sdei.c
+@@ -12,6 +12,7 @@
+ #include <asm/kprobes.h>
+ #include <asm/mmu.h>
+ #include <asm/ptrace.h>
++#include <asm/scs.h>
+ #include <asm/sections.h>
+ #include <asm/stacktrace.h>
+ #include <asm/sysreg.h>
+@@ -161,6 +162,12 @@ unsigned long sdei_arch_get_entry_point(int conduit)
+ 			return 0;
+ 	}
+ 
++	if (scs_init_sdei()) {
++		if (IS_ENABLED(CONFIG_VMAP_STACK))
++			free_sdei_stacks();
++		return 0;
++	}
++
+ 	sdei_exit_mode = (conduit == CONDUIT_HVC) ? SDEI_EXIT_HVC : SDEI_EXIT_SMC;
+ 
+ #ifdef CONFIG_UNMAP_KERNEL_AT_EL0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
