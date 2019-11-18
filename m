@@ -2,70 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 114D6100609
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 14:00:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C742F10060C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 14:01:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5moEe+/cSdzkIniRsOoUpgt3zTfoKmNnc6J0lrfzbkc=; b=BcHoa5Ow0ijK7JP1pqRwKDRwz
-	dFxPH3FGxpWU7l/n3k0VNSqnfGDD2+u7VnRx5b4YkNmENdfGPzzptd5W2PIcgVV/UfOLXZhw4yi4J
-	/QXU1Licn3gfRlfAhgdNiu6qonq3QvxUu4bo6pKgr6Pv5Ek2s9SefPvVdp/obnpdpzhQsenLBB1Iy
-	l6bGkgwRuPZuw6c9CRo8b/bbK8x3/8fzDS34/HU5P+3QG6pCuLgok4xDRfrrUqLpuOQkce104f96C
-	VqsxeRHLvp53bUJAOhB8KkXm9+BfZfvHbODQtinhBZVS2HLweVzLSIAQTat21kv5Tx2GMeGt6ZZJb
-	90+Acw+Fw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Message-ID:Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Subject
+	:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
+	 bh=uVQPCLb7OPRmJp0CazYsThMRs2E457Si29mhwdW4Bjo=; b=WbZ7mqMpUow/f0fGIOWnbCmT+
+	85cXkYRnw2G0njnMfVmF+ipEhQ3iA5alIgZViFr9yRt9IFiBuFQSpw4pHowOUa6tJ0Bk7TjDQoIU6
+	91ziSdCiyZW/Vs2hhwX5qaIeHE/wZR2LYWc64F8LWCg1zZTqphoD5LLVoOs57GOgPLaFYjhzcyjxb
+	Cgo10JJThiZZ8Tr1RefLxPPsz5Ogv1EEBOhLuM6uD92sIGk9848t7YfUgmpx8FsaSnJP4lvuOiBYa
+	Ob0LFWgGbg6NND8IxG4w0EoU17D/qnxjbNi52aHrrPNWpPYaLc8jaUXf7bdEqBeek58Cn7qeNmpFw
+	h0Ebm2Q7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWgdt-0005pi-Tw; Mon, 18 Nov 2019 13:00:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWgdl-0005pJ-H9
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 13:00:26 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B143920692;
- Mon, 18 Nov 2019 13:00:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574082025;
- bh=yMlle1zES9xaN+aEPbZNhheFoOd8gQ4VPQ5SX1kP0LI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1IrXyyznrSS2Cj/U63mpwxxFgQBlCUFFBQ78ES+fvwXSjNxRr9VWoLDmsN98ZQ/2X
- 44wycoJV+EFush/w5grKyqyzssh+dAOcKprDjBOwhvxco/Ar0k1eWZ2sUMWZ5DyHKf
- EZdZAvz+BYehg9cfcLpXyGQ3BxKdtN1abDH6h2bw=
-Date: Mon, 18 Nov 2019 14:00:22 +0100
-From: Maxime Ripard <mripard@kernel.org>
+	id 1iWgeT-00064a-FM; Mon, 18 Nov 2019 13:01:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iWgeJ-00063w-G8
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 13:01:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BBD8411D4;
+ Mon, 18 Nov 2019 05:00:56 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1AA053F6C4;
+ Mon, 18 Nov 2019 05:00:55 -0800 (PST)
+Date: Mon, 18 Nov 2019 13:00:54 +0000
+From: Mark Brown <broonie@kernel.org>
 To: zhengbin <zhengbin13@huawei.com>
-Subject: Re: [PATCH 1/5] drm/sun4i: Use PTR_ERR_OR_ZERO() to simplify code in
- sun4i_hdmi_init_regmap_fields
-Message-ID: <20191118130022.GM4345@gilmour.lan>
-References: <1574080484-48744-1-git-send-email-zhengbin13@huawei.com>
- <1574080484-48744-2-git-send-email-zhengbin13@huawei.com>
-MIME-Version: 1.0
-In-Reply-To: <1574080484-48744-2-git-send-email-zhengbin13@huawei.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+Subject: Applied "regulator: vexpress: Use PTR_ERR_OR_ZERO() to simplify code"
+ to the regulator tree
+In-Reply-To: <1574074762-34629-1-git-send-email-zhengbin13@huawei.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_050025_590131_505FFC05 
-X-CRM114-Status: GOOD (  15.12  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191118_050059_580006_595F0AD3 
+X-CRM114-Status: GOOD (  14.59  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.1 MISSING_MID            Missing Message-Id: header
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,78 +61,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, wens@csie.org, dri-devel@lists.freedesktop.org,
- daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5180214013218099764=="
+Cc: liviu.dudau@arm.com, lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
+ zhengbin13@huawei.com, Hulk Robot <hulkci@huawei.com>,
+ Mark Brown <broonie@kernel.org>, sudeep.holla@arm.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
+Message-ID: <E1iWgeT-00064a-FM@bombadil.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The patch
 
---===============5180214013218099764==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="86iauDJ7Z6qm7j1O"
-Content-Disposition: inline
+   regulator: vexpress: Use PTR_ERR_OR_ZERO() to simplify code
 
+has been applied to the regulator tree at
 
---86iauDJ7Z6qm7j1O
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-5.5
 
-On Mon, Nov 18, 2019 at 08:34:40PM +0800, zhengbin wrote:
-> Fixes coccicheck warning:
->
-> drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c:281:1-3: WARNING: PTR_ERR_OR_ZERO can be used
->
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Signed-off-by: zhengbin <zhengbin13@huawei.com>
-> ---
->  drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c | 5 +----
->  1 file changed, 1 insertion(+), 4 deletions(-)
->
-> diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c b/drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c
-> index b66fa27..ac435e5 100644
-> --- a/drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c
-> +++ b/drivers/gpu/drm/sun4i/sun4i_hdmi_i2c.c
-> @@ -278,10 +278,7 @@ static int sun4i_hdmi_init_regmap_fields(struct sun4i_hdmi *hdmi)
->  	hdmi->field_ddc_sck_en =
->  		devm_regmap_field_alloc(hdmi->dev, hdmi->regmap,
->  					hdmi->variant->field_ddc_sck_en);
-> -	if (IS_ERR(hdmi->field_ddc_sck_en))
-> -		return PTR_ERR(hdmi->field_ddc_sck_en);
-> -
-> -	return 0;
-> +	return PTR_ERR_OR_ZERO(hdmi->field_ddc_sck_en);
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-These 5 patches are not clearer and just make it more difficult to
-maintain. I guess we should just get rid of the coccinelle rule here,
-there's a lot of false positive with it.
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-Maxime
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
---86iauDJ7Z6qm7j1O
-Content-Type: application/pgp-signature; name="signature.asc"
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
------BEGIN PGP SIGNATURE-----
+Thanks,
+Mark
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXdKV5gAKCRDj7w1vZxhR
-xXumAQDqUOAgT9LM/zBv6uxGBHnhpWiVVdY4Rc3r2oBo+ATR3AD/UNJfy5GHgLEu
-A48L6TZrjizd5jTry+jnYeEVlCiiWww=
-=KTyX
------END PGP SIGNATURE-----
+From 1d7c4c115f7a835fec387d7f61767781381db5db Mon Sep 17 00:00:00 2001
+From: zhengbin <zhengbin13@huawei.com>
+Date: Mon, 18 Nov 2019 18:59:22 +0800
+Subject: [PATCH] regulator: vexpress: Use PTR_ERR_OR_ZERO() to simplify code
 
---86iauDJ7Z6qm7j1O--
+Fixes coccicheck warning:
 
+drivers/regulator/vexpress-regulator.c:78:1-3: WARNING: PTR_ERR_OR_ZERO can be used
 
---===============5180214013218099764==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: zhengbin <zhengbin13@huawei.com>
+Link: https://lore.kernel.org/r/1574074762-34629-1-git-send-email-zhengbin13@huawei.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/regulator/vexpress-regulator.c | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/drivers/regulator/vexpress-regulator.c b/drivers/regulator/vexpress-regulator.c
+index 1235f46e633e..5d39663efcaa 100644
+--- a/drivers/regulator/vexpress-regulator.c
++++ b/drivers/regulator/vexpress-regulator.c
+@@ -75,10 +75,7 @@ static int vexpress_regulator_probe(struct platform_device *pdev)
+ 	config.of_node = pdev->dev.of_node;
+ 
+ 	rdev = devm_regulator_register(&pdev->dev, desc, &config);
+-	if (IS_ERR(rdev))
+-		return PTR_ERR(rdev);
+-
+-	return 0;
++	return PTR_ERR_OR_ZERO(rdev);
+ }
+ 
+ static const struct of_device_id vexpress_regulator_of_match[] = {
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5180214013218099764==--
-
