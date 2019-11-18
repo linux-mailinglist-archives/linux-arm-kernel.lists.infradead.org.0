@@ -2,73 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 999E01005F6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 13:56:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9622B1005FD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 13:57:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/bXp3IbupXe9OXbyl4YnoyC2ANuKvq6I3zsQ0WiGlMM=; b=iETXcqp/uoAsfh
-	9Etl5HSZO4Z6J9SR9NuSTX6sY1+EwBuVBSz8hyRPgYJpFraAAKBpCzg4nwNwFFPR5Ppv4rut8vuRx
-	dUJ+ovMRvJDrC2s8K98UkI5lu37pkaSRboQtNFplTs7EKezlbZJG4Cic4W+bDmQnvcDN0wL1Xg52B
-	I0w+utuTX8YDbhU8/Lj/zG8Sh0vdaHFRVYCDtWdxu5HDXdjCW9Kj9E8sp6Hxx5+X+9gWccwV2QXJ9
-	AcCVoxkpPoy6toME49yxmcrGxdHAIpozqRPIQeh5NdL4rxOrDvDUjRfok/mttlnOdznZMAouhAicK
-	FfCQ2K8gsPYexE7RHizg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EccQK7cxHRw1b0/Fvk/XBhl13bzlHp8RFQiA8lVdbEQ=; b=Qwuom09XoS2KuqEWUnsVEXKaZ
+	ob1K/X81mQ9nhNWcdtiLgPa+gyzTwAX8HBaWdufi2naGdADbZRUZ2eN2aCUQ6Jjg973PQPZ8PEjh4
+	ayhRfMK95Kh+4POteLorG+TFwdPTfRjW0eqq4J6w+TxGvzQqOv5xmbXr2UF2O6oRx0TpuvjB1VgSf
+	ajx5NyN8d6MbsGe2JDprZkZXNlmejM/649lbv0r+2DlvO74/64M3ou9C/jpJAklE3hfhRw1cK2MBT
+	0RrkZOKXgwGMWozuIE8bJvUd+ehpCJhn9G82phIU2dsIKATPde+Zain3/xF7qZpvKBaguX3K3lxXV
+	F3sCF8LPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWgZd-0003sM-S1; Mon, 18 Nov 2019 12:56:09 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iWgai-00049U-Gq; Mon, 18 Nov 2019 12:57:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWgZT-0003r8-Q5
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 12:56:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=960wzGvE+KcG1OqGD4Pmky51z5BTfCbb59hEtVos6UY=; b=kTqeBHTFI5VbTcrHrCYatitkc
- XFreysQNzWmafsaSmK4O84GWThZEpLvCZh7I6o0NcFGAwpWldEtZphBY1r9VZRwPQ7co2i+2j3DCk
- 00JU5In5vbigEbEjNinbCx+LhgvuFjC8NhvpwWo+7tkVFOEaenej57vcN66EFaqSNAIY0jSs6XzAl
- rkaAESx2o9DXOTla9Ee75yHFUIz9S4iMC6BYM2J1mXBeYtBS304+r+6oUAZubou/A4jYdAK7j7FSN
- ImCJLzHmh2bCudQAe55CPAcNxgar2eG0dctNGYM2KssgMmjyMec5qL95FI3JMbaDZncfiKvVS/RUg
- xvqjY2sIg==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:37134)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iWgZD-0003Mi-39; Mon, 18 Nov 2019 12:55:43 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iWgZA-0008DI-Ny; Mon, 18 Nov 2019 12:55:40 +0000
-Date: Mon, 18 Nov 2019 12:55:40 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v2] ARM: dt: check MPIDR on MP devices built without SMP
-Message-ID: <20191118125540.GW25745@shell.armlinux.org.uk>
-References: <20191004155232.17209-1-nsaenzjulienne@suse.de>
- <5abdcb0e0e1043a101f579ea65d07a1f6b91f896.camel@suse.de>
+ id 1iWgaY-00048y-4Z
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 12:57:07 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 16E8420692;
+ Mon, 18 Nov 2019 12:57:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574081825;
+ bh=D42/XnP8BTkRdLMB0sfjNYCvjVmtv3XV0wVH/ObQtWU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=REU+MnKH/jfxkLo0UnQ+ACUSgGSvJsHkc36Fgkosi60t+lPgSNnJ3EylqBANKsD18
+ JOtPOTsrOh7xq4pZGrh+7YHfUTFV5SsvF9JIXJ+neHGWm0yVbFzVKLeCMWPH7cKdKz
+ lqDfQPsr2yCymECD4z9NA08J7X595BC7WklnY5oU=
+Date: Mon, 18 Nov 2019 13:57:02 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v6 1/8] dt-bindings: pwm: allwinner: Add H6 PWM description
+Message-ID: <20191118125702.GK4345@gilmour.lan>
+References: <20191118110034.19444-1-peron.clem@gmail.com>
+ <20191118110034.19444-2-peron.clem@gmail.com>
+ <20191118110640.GE4345@gilmour.lan>
+ <CAJiuCceVyjSTGymOiXTZvyQXyXScGZuGS6gW+2=0gdxDFzg3dA@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5abdcb0e0e1043a101f579ea65d07a1f6b91f896.camel@suse.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAJiuCceVyjSTGymOiXTZvyQXyXScGZuGS6gW+2=0gdxDFzg3dA@mail.gmail.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_045559_848405_B5479712 
-X-CRM114-Status: GOOD (  13.61  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191118_045706_220053_F947B5C1 
+X-CRM114-Status: GOOD (  22.47  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -76,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,45 +78,194 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
- linux-kernel@vger.kernel.org, "kernelci.org bot" <bot@kernelci.org>,
- wahrenst@gmx.net
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ Philipp Zabel <pza@pengutronix.de>, Rob Herring <robh@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============6184067595748654436=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 18, 2019 at 12:49:04PM +0100, Nicolas Saenz Julienne wrote:
-> On Fri, 2019-10-04 at 17:52 +0200, Nicolas Saenz Julienne wrote:
-> > On SMP builds, in order to properly link CPU devices with their
-> > respective DT nodes we start by matching the boot CPU. This is achieved
-> > by comparing the 'reg' property on each of the CPU DT nodes with the
-> > MPIDR. The association is necessary as to validate the whole CPU logical
-> > map, which ultimately links CPU devices and their DT nodes.
 
-No, that is not the primary purpose of the CPU logical map.  The CPU 
-logical map is there to map the CPU logical number to a hardware number,
-necessary for programming hardware.
+--===============6184067595748654436==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="luUS5rQ1j20Qzq8E"
+Content-Disposition: inline
 
-> > On setups built without SMP, no MPIDR read is performed. The only thing
-> > expected is for the 'reg' property in the CPU DT node to contain the
-> > value 0x0.
-> > 
-> > This causes problems on MP setups built without SMP. As their boot CPU
-> > DT node contains the relevant MPIDR as opposed to 0x0. No match is then
-> > possible. This causes troubles further down the line as drivers are
-> > unable to get the CPU's DT node.
 
-So the DT is incorrect for the platform - it is not describing the
-hardware.  Why can't the DT be fixed?  Clearly, it would have never
-worked with the mainline kernel today.
+--luUS5rQ1j20Qzq8E
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+On Mon, Nov 18, 2019 at 01:42:48PM +0100, Cl=E9ment P=E9ron wrote:
+> Hi Maxime
+>
+> On Mon, 18 Nov 2019 at 12:06, Maxime Ripard <mripard@kernel.org> wrote:
+> >
+> > Hi,
+> >
+> > On Mon, Nov 18, 2019 at 12:00:27PM +0100, Cl=E9ment P=E9ron wrote:
+> > > From: Jernej Skrabec <jernej.skrabec@siol.net>
+> > >
+> > > H6 PWM block is basically the same as A20 PWM, except that it also has
+> > > bus clock and reset line which needs to be handled accordingly.
+> > >
+> > > Expand Allwinner PWM binding with H6 PWM specifics.
+> > >
+> > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > > Reviewed-by: Rob Herring <robh@kernel.org>
+> > > Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+> > > ---
+> > >  .../bindings/pwm/allwinner,sun4i-a10-pwm.yaml | 48 +++++++++++++++++=
+++
+> > >  1 file changed, 48 insertions(+)
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a1=
+0-pwm.yaml b/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.=
+yaml
+> > > index 0ac52f83a58c..1bae446febbb 100644
+> > > --- a/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.y=
+aml
+> > > +++ b/Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.y=
+aml
+> > > @@ -30,13 +30,51 @@ properties:
+> > >        - items:
+> > >            - const: allwinner,sun50i-h5-pwm
+> > >            - const: allwinner,sun5i-a13-pwm
+> > > +      - const: allwinner,sun50i-h6-pwm
+> > >
+> > >    reg:
+> > >      maxItems: 1
+> > >
+> > >    clocks:
+> > > +    minItems: 1
+> > > +    maxItems: 2
+> > > +    items:
+> > > +      - description: Module Clock
+> > > +      - description: Bus Clock
+> > > +
+> > > +  # Even though it only applies to subschemas under the conditionals,
+> > > +  # not listing them here will trigger a warning because of the
+> > > +  # additionalsProperties set to false.
+> > > +  clock-names: true
+> > > +
+> > > +  resets:
+> > >      maxItems: 1
+> > >
+> > > +  if:
+> > > +    properties:
+> > > +      compatible:
+> > > +        contains:
+> > > +          const: allwinner,sun50i-h6-pwm
+> > > +
+> > > +  then:
+> > > +    properties:
+> > > +      clocks:
+> > > +        maxItems: 2
+> > > +
+> > > +      clock-names:
+> > > +        items:
+> > > +          - const: mod
+> > > +          - const: bus
+> > > +
+> > > +    required:
+> > > +      - clock-names
+> > > +      - resets
+> > > +
+> > > +  else:
+> > > +    properties:
+> > > +      clocks:
+> > > +        maxItems: 1
+> > > +
+> >
+> > Sorry for not noticing this earlier, but this should be at the topmost
+> > level
+>
+> No problem, but I don't get what you want, (yaml format is new for me).
+> Do you mean I should put the if condition before the "resets" ?
+
+No, here if we condense a bit the file, we have something like:
+
+title: PWM
+
+properties:
+  compatible:
+    ...
+
+  ...
+
+  resets:
+    ...
+
+  if:
+    properties:
+      ...
+
+  then:
+    properties:
+      ...
+
+which means that you expect that the node may contain a compatible
+property, a resets one, and then two properties "if" and "then", which
+in turn contain properties (ie, two nodes).
+
+This is obviously not what you want, what you want instead is:
+
+properties:
+  compatible:
+    ...
+
+  ...
+
+  resets:
+    ...
+
+if:
+  properties:
+    ...
+
+then:
+  properties:
+    ...
+
+Which then describes that there's two properties, compatible and
+resets, and if the schema under 'if' is valid against the node we try
+to validate, the schema under 'then' is used to validate the node as
+well.
+
+I hope it's clearer,
+Maxime
+
+--luUS5rQ1j20Qzq8E
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXdKVHgAKCRDj7w1vZxhR
+xRf+AQDIKDWmitZKrfNWWYoRdbyxBBWj5ixRoYR6aGpqSbCu9wEA5XGA6Ew4woTI
+rOvVvGt0j8oafbBT1xQ/xkok13nHqAo=
+=Y2SH
+-----END PGP SIGNATURE-----
+
+--luUS5rQ1j20Qzq8E--
+
+
+--===============6184067595748654436==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6184067595748654436==--
+
