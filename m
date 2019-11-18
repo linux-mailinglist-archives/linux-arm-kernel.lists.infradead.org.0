@@ -2,110 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D840F10094D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 17:35:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B68C91009B2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 17:50:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f1DoiyRUvQuALqtJ3y3SK6j3ojEFQ35aUXPT27lVMec=; b=RxspUf0HfdN8wb
-	YckMoiUhaKp6a2+0dOcT7YbznNLImS7m0ntrXv3guzWGVmzQKb4krOB7VCOKAKFNg9YSAaowK3eM5
-	KRX0FoTAEYPQD4gjoDGiW9Nq8RisPcg3NyBKe8Z2bKcViM5fQ8ze5GFPyxtcNre8WlZWXegjsBmSe
-	RSSuH/8ZlPemesDdvPACJwfkCZs1cZ9SDo652JgbnRUFnq/wyUbLDFDQ7SAfRvNdmWQIbrX4lq5NV
-	tpZkqJGjzf+pAtDuumHIznUqGBb/nRBfhJfH1Kmy42xSzdKeu2i5MnKYedrM75iKBMpHpdhjJ78AD
-	utjdVQ9GovjtLnBOlgDQ==;
+	List-Owner; bh=VrYEbIGPnj2NhV518uuZtL5eweLx7REihtcLeTjVbSM=; b=HFJzT3HRDD5KUC
+	bO2AM+yzTm8mnamh9eCesccvEgLv9uc/gJLFMRYtNEfeM/q+2GVTnzOp7vuKMZwTIkLvTylTbTPZ3
+	LMOp2jwaNfVOwUqkfNvBoLpnB7E2a5OdOUZ8iKdVk37NwiNivlc5K3mXIJMX9ITk5KH1eatwK1HQl
+	CG5bzya+UJo6BEVbmWY9BVOo2+sNT12k5naqLf8rI2fMsX2aKuKtmcZNjz/SFgB/SZpHgy40kQ5Hb
+	iRA1kKIruXCDP6ce24q64Ycu+pVCM9P35jXvv/QlL6xJp55WDcGyQBQkh2n13wMMYx/pjB73J/qjD
+	1G2++GFf9PfmZjoSdReQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWjzl-0007GU-IG; Mon, 18 Nov 2019 16:35:21 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iWkEO-000428-BA; Mon, 18 Nov 2019 16:50:28 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWjzd-0007Fo-Id
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 16:35:14 +0000
-Received: by mail-pl1-x641.google.com with SMTP id j12so10073154plt.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 08:35:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:thread-topic:thread-index:date:message-id
- :references:in-reply-to:accept-language:content-language
- :content-transfer-encoding:mime-version;
- bh=0i62/Z6slWcYNvLCi/1NRq8OSXeaQ9afoBQGBDAQpB4=;
- b=QK+SXU6LH+2o7j9hjFyDYG1WuCYSj7pZbm9qyrJmWAcMMvRtJnV05lu0Cb1sTLlNqf
- 1TkeLb22j8nSIopHwhuavGeZExy073Q0cIbnvPtOCqAcrG/Am0hlZcePuCWuEo5/K/Fl
- fC/jvrJXqPTL+M+w0oYh396piWj6R8vcoMfsFCiJUZD7txJjsi7dluwpbeptj/qHT3GN
- KayshveBJARbqU+RZEIqHegHHAm5vmcikUpa2sbwdOjOOLJ2RI30LC+IL0id/d1hqHzm
- cutu1N+eUHTTPSQ/AUIlrejPXs47yx4Unim2DuqoWNBHtamMs6YJ8fg5UFItpr4lVhbj
- 15fA==
+ id 1iWkEE-000410-Gh; Mon, 18 Nov 2019 16:50:19 +0000
+Received: by mail-ot1-f67.google.com with SMTP id w24so14620898otk.6;
+ Mon, 18 Nov 2019 08:50:16 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:thread-topic:thread-index
- :date:message-id:references:in-reply-to:accept-language
- :content-language:content-transfer-encoding:mime-version;
- bh=0i62/Z6slWcYNvLCi/1NRq8OSXeaQ9afoBQGBDAQpB4=;
- b=DBHisGGZeu6CDaVtteNPYcFVkfyX8r0E1TRBP9my+xwL5akTGtECWVsqxQ1j4XFl9x
- BTpdepJwl0svRgMw6qAlA3FjThM4NmBilJiueTee+FPmQrXfc33Lv8VpxKRtpJ6OsQiC
- OaVYP/N5D2605uxqBJfrrGcMuhL6mN0cc5FK2+69jEQ6JcosykuCXG5Kabc4IC8i2uNj
- YUZjcI81dmbZL71xRHMXtMMyFUIES2lv1KqwacN91JdDdVuQdXS6ZqT/ApZMkymGcq0A
- J/UHAKQhgFZU7kj/NmjiYnGaAcMA1gch6sIvQNmqqdRGY6rRqLvICgDOFMq4iEP/KegC
- ynoA==
-X-Gm-Message-State: APjAAAUL1/49eWbmu4QrGpxiR3ohq56sYx5gkFQLUsH+yTXX69bRmVUt
- I/yBCpm4BGmJW7p4LMNjbiA=
-X-Google-Smtp-Source: APXvYqzaSQ6u9pSlhPl8xKsCKW041CGIcNafMua+2M/xSn8qR1xflXgPPrLdUqsRXzl9r503iU1m1g==
-X-Received: by 2002:a17:902:a417:: with SMTP id
- p23mr3927099plq.97.1574094912122; 
- Mon, 18 Nov 2019 08:35:12 -0800 (PST)
-Received: from SL2P216MB0105.KORP216.PROD.OUTLOOK.COM ([2603:1046:100:22::5])
- by smtp.gmail.com with ESMTPSA id
- g20sm20217417pgk.46.2019.11.18.08.35.08
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 18 Nov 2019 08:35:10 -0800 (PST)
-From: Jingoo Han <jingoohan1@gmail.com>
-To: zhengbin <zhengbin13@huawei.com>, "lorenzo.pieralisi@arm.com"
- <lorenzo.pieralisi@arm.com>, "andrew.murray@arm.com" <andrew.murray@arm.com>, 
- "bhelgaas@google.com" <bhelgaas@google.com>, "kgene@kernel.org"
- <kgene@kernel.org>, "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: Re: [PATCH] PCI: exynos: Use PTR_ERR_OR_ZERO() to simplify code
-Thread-Topic: [PATCH] PCI: exynos: Use PTR_ERR_OR_ZERO() to simplify code
-Thread-Index: ATNoLWc1DEO/Zkzog7LMmcep5qWiqMRsAXR8
-X-MS-Exchange-MessageSentRepresentingType: 1
-Date: Mon, 18 Nov 2019 16:35:06 +0000
-Message-ID: <SL2P216MB01057BE74411EC7BE168E193AA4D0@SL2P216MB0105.KORP216.PROD.OUTLOOK.COM>
-References: <1574076480-50196-1-git-send-email-zhengbin13@huawei.com>
-In-Reply-To: <1574076480-50196-1-git-send-email-zhengbin13@huawei.com>
-Accept-Language: ko-KR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-Exchange-Organization-SCL: -1
-X-MS-TNEF-Correlator: 
-X-MS-Exchange-Organization-RecordReviewCfmType: 0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=5NYQIVzszlovCzGCoyf9SHkjEAYAPxgYWsdxQCoKIq4=;
+ b=WImTOJZP3yNjIeXxE5FR9RkAmajgGNsl2T/+MSS0yYKGeWtGaP/P7ri9LE30aggkwn
+ l8/NV4z+dMqR0ryUECn7sCmnKcF/4AKvZQps+/x1ywFTgDxmDCxph8nHVWSKKpwqsVf3
+ XV6ddiqoHVEQWhY6FlAtxNPLn5Ml8ncWqyAJuok09VK/ZjCwkHKZ4PXM57hX7Epx2EZx
+ HpLQW0MJ+iQgweMybP0h243YvcuOEg5FFq7uQWiBEeFK8PhfNpp90KpHHZc02FZrcNqp
+ mz//8jCX7EUmpwwQdmuWfYfBlaMnQRbTu7E65TYfSKNv4FdTsoSUcUcUttyUYq8PqkrC
+ vMHg==
+X-Gm-Message-State: APjAAAUAf5X7Yw5Sg8lwb6g3ia3J/CwUh5vp2L8V1+IC/wBUuGzkj/JJ
+ 1b2Ob0twAsqOrF6OUtkPcQ==
+X-Google-Smtp-Source: APXvYqy5fyTYkoXXqqwQ0H9dOLJstLheW2bjF5U1SrvtNLNVH/MBfBQlyKUyfzD0Wr2bOMi5c0zc1g==
+X-Received: by 2002:a05:6830:1e4c:: with SMTP id
+ e12mr162673otj.358.1574095815692; 
+ Mon, 18 Nov 2019 08:50:15 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id s133sm6229914oia.58.2019.11.18.08.50.14
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 18 Nov 2019 08:50:15 -0800 (PST)
+Date: Mon, 18 Nov 2019 10:50:14 -0600
+From: Rob Herring <robh@kernel.org>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Subject: Re: [PATCH v4 01/11] dt-bindings: phy-mtk-tphy: add two optional
+ properties for u2phy
+Message-ID: <20191118165014.GA3621@bogus>
+References: <1573547796-29566-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1573547796-29566-1-git-send-email-chunfeng.yun@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_083513_618384_97991DE9 
-X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-CacheID: sfid-20191118_085018_588703_85551597 
+X-CRM114-Status: UNSURE (   9.91  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jingoohan1[at]gmail.com)
+ in digit (robherring2[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jingoohan1[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ provider (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,32 +92,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Han Jingoo <jingoohan1@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/18/19, 6:20 AM, zhengbin wrote:
->
-> Fixes coccicheck warning:
->
-> drivers/pci/controller/dwc/pci-exynos.c:95:1-3: WARNING: PTR_ERR_OR_ZERO can be used
->
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Signed-off-by: zhengbin <zhengbin13@huawei.com>
-
-Please write your full name correctly (First name + Second name). 
-If 'zhengbin' is just your first name, you have to add your second name.
-Or, if  'zhengbin' is already your full name, please separate it with capitalized characters and spaces,
-for example, 'Zheng Bin'.
-
+On Tue, 12 Nov 2019 16:36:26 +0800, Chunfeng Yun wrote:
+> Add two optional properties, one for tuning J-K voltage by INTR,
+> another for disconnect threshold, both of them are related with
+> connect detection
+> 
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 > ---
->  drivers/pci/controller/dwc/pci-exynos.c | 5 +----
->  1 file changed, 1 insertion(+), 4 deletions(-)
->
+> v4: no changes
+> 
+> v3: change commit log
+> 
+> v2: change description
+> ---
+>  Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
 
-[.....]
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
