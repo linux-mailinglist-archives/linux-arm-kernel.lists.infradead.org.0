@@ -2,86 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 002801004CC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:56:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8436B1004D2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:57:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5BHX+8Cs1CoolAqjYDZQQ9BH8isVMQdB+qwPDzdr0hY=; b=uxKy+ngwigtUVD
-	7HPC7a2WRM8Lt5lT8PLdK8rmUc/9ITjB9D8d6rs82Hqw+n8hKiHN47MH6G7XJBdjXRo/rhs6hsz3v
-	1uxROlvZUf9Z2pnRqMyz2XWbmM9+PNLvzQe4x7x5p0X36ZiAae3Iee6EAaIZjF8tjgRxy2o5b8a9e
-	6URaui6tJZY7FefEFcZ9Uwj5IT1SEp1p0tQYmY4aWV44s6bw2huyV5UbV8qVo3urs+kxHjmAl7eVX
-	GfsK6LrFStA2G/Db/DN41iW5f+Qt191UQu1PwBkE7GygFVUHY/Srske/A/hz2oCrveyFSaqEWaUP7
-	l5jOYNVJGXh7y5BAUfDw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IdnP/Q7Ee4+kFRGJCO1/BVHLxRT4iXXwQwXmKRZ9qXo=; b=VYXNQGxTQ4IhoxRobHtgtQGI3
+	RtcCLKND/Fji5Et13vZArmO72WdrnJlnVXfkAhT3JpFl2y/GaNMdYi+bsJ9YnVRQCvGHRGEJxtRJE
+	DmnSoU9d2Xz6gHpVE0HRM9wAiRMCm28LWAKuIrNBN7FpCytfBHGD1ZpEB/qxw7ydEZQjMfhDH5nt+
+	M6Q+VStni/MBsgzkiJgXxQ9YmvylFnXKa7mELo0mZL3nsOVAUKewalpZM1mol7r43B850uKhGRts8
+	Ukh9v2Tk70C7vokjexI4HxozBQOSwXCeeTCEPrtjxUaqKXaIQDZAgiIht5VLTNFGHWJMmYjVhA6Px
+	ZweDljAGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWfdl-0001m6-4w; Mon, 18 Nov 2019 11:56:21 +0000
-Received: from hqemgate16.nvidia.com ([216.228.121.65])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWfda-0001ll-9a
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:56:11 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5dd286da0000>; Mon, 18 Nov 2019 03:56:10 -0800
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Mon, 18 Nov 2019 03:56:10 -0800
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Mon, 18 Nov 2019 03:56:10 -0800
-Received: from [10.26.11.241] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 18 Nov
- 2019 11:56:08 +0000
-Subject: Re: [PATCH 3/3] soc/tegra: pmc: Add reset sources and levels on
- Tegra194
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20191118063348.1816857-1-thierry.reding@gmail.com>
- <20191118063348.1816857-3-thierry.reding@gmail.com>
-From: Jon Hunter <jonathanh@nvidia.com>
-Message-ID: <9da23ccc-0e37-44a8-b722-690c047b9641@nvidia.com>
-Date: Mon, 18 Nov 2019 11:56:06 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iWfei-00022C-ME; Mon, 18 Nov 2019 11:57:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iWfeZ-00021b-29; Mon, 18 Nov 2019 11:57:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8D6E41FB;
+ Mon, 18 Nov 2019 03:57:07 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F006A3F6C4;
+ Mon, 18 Nov 2019 03:57:06 -0800 (PST)
+Date: Mon, 18 Nov 2019 11:57:05 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 1/2] PCI: rockchip: Make some regulators non-optional
+Message-ID: <20191118115705.GB9761@sirena.org.uk>
+References: <1eebc002101931012d337cda23d18f85b0326361.1573908530.git.robin.murphy@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20191118063348.1816857-3-thierry.reding@gmail.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1574078170; bh=q7awpy+Rp+fdN4MSztFN6PEm+Y7sz6Lko4O9XbKHH4s=;
- h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
- User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
- X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=UFKVaxIiXWEcyplpVlIzppo+PRq1gVcJkvHz4UPDvd4Po6p0GAEPbsEFS2z4Rb0cg
- bE07mXovZBK36x/Cy2rgjnSKqKd51kXAR/bCaPeGGvfgYpMb5Aabi4spJfCmBYR1i8
- d6XzL5UWRTsyoa/ordkcnm+Bdhu6To6q8nVPuneoqAcJP9QdtqHbjVMq4UQmWjqaiP
- y9p6pmPZH+Fu2/PnguDCpWmplhyE9xFclJdwPaAiFHhq5qiKLVaBAz+cy3QDwO9CP8
- 1NsGuTeD2RoitmiORqHz2BBo9czB1+y8/yI1NWva70nv2QvkbczHg8EyUIcfYNmpPC
- ANXSkhhfk/9Bw==
+In-Reply-To: <1eebc002101931012d337cda23d18f85b0326361.1573908530.git.robin.murphy@arm.com>
+X-Cookie: no maintenance:
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_035610_345876_F18C36A8 
-X-CRM114-Status: GOOD (  15.61  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191118_035711_147926_D9B75C2C 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.65 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,99 +62,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, Sowjanya Komatineni <skomatineni@nvidia.com>,
- linux-arm-kernel@lists.infradead.org, Vidya Sagar <vidyas@nvidia.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: lorenzo.pieralisi@arm.com, heiko@sntech.de, linux-pci@vger.kernel.org,
+ shawn.lin@rock-chips.com, lgirdwood@gmail.com,
+ linux-rockchip@lists.infradead.org, bhelgaas@google.com, andrew.murray@arm.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2259580119196998288=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-On 18/11/2019 06:33, Thierry Reding wrote:
-> From: Thierry Reding <treding@nvidia.com>
-> 
-> Tegra194 supports the same reset levels as Tegra186 but extends the set
-> of reset sources. Provide custom PMC register definitions to account for
-> the larger field for the reset sources as well as the updated list of
-> reset sources.
-> 
-> Signed-off-by: Thierry Reding <treding@nvidia.com>
-> ---
->  drivers/soc/tegra/pmc.c | 41 +++++++++++++++++++++++++++++++++++++++++
->  1 file changed, 41 insertions(+)
-> 
-> diff --git a/drivers/soc/tegra/pmc.c b/drivers/soc/tegra/pmc.c
-> index 32b3e8d9155f..63195281718d 100644
-> --- a/drivers/soc/tegra/pmc.c
-> +++ b/drivers/soc/tegra/pmc.c
-> @@ -2927,6 +2927,43 @@ static const struct tegra_io_pad_soc tegra194_io_pads[] = {
->  	{ .id = TEGRA_IO_PAD_AUDIO_HV, .dpd = 61, .voltage = UINT_MAX },
->  };
->  
-> +static const struct tegra_pmc_regs tegra194_pmc_regs = {
-> +	.scratch0 = 0x2000,
-> +	.dpd_req = 0x74,
-> +	.dpd_status = 0x78,
-> +	.dpd2_req = 0x7c,
-> +	.dpd2_status = 0x80,
-> +	.rst_status = 0x70,
-> +	.rst_source_shift = 0x2,
-> +	.rst_source_mask = 0x7c,
-> +	.rst_level_shift = 0x0,
-> +	.rst_level_mask = 0x3,
-> +};
-> +
+--===============2259580119196998288==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="rS8CxjVDS/+yyDmU"
+Content-Disposition: inline
 
-You added the regs here, but ...
 
-> +static const char * const tegra194_reset_sources[] = {
-> +	"SYS_RESET_N",
-> +	"AOWDT",
-> +	"BCCPLEXWDT",
-> +	"BPMPWDT",
-> +	"SCEWDT",
-> +	"SPEWDT",
-> +	"APEWDT",
-> +	"LCCPLEXWDT",
-> +	"SENSOR",
-> +	"AOTAG",
-> +	"VFSENSOR",
-> +	"MAINSWRST",
-> +	"SC7",
-> +	"HSM",
-> +	"CSITE",
-> +	"RCEWDT",
-> +	"PVA0WDT",
-> +	"PVA1WDT",
-> +	"L1A_ASYNC",
-> +	"BPMPBOOT",
-> +	"FUSECRC",
-> +};
-> +
->  static const struct tegra_wake_event tegra194_wake_events[] = {
->  	TEGRA_WAKE_GPIO("power", 29, 1, TEGRA194_AON_GPIO(EE, 4)),
->  	TEGRA_WAKE_IRQ("rtc", 73, 10),
-> @@ -2949,6 +2986,10 @@ static const struct tegra_pmc_soc tegra194_pmc_soc = {
->  	.setup_irq_polarity = tegra186_pmc_setup_irq_polarity,
->  	.irq_set_wake = tegra186_pmc_irq_set_wake,
->  	.irq_set_type = tegra186_pmc_irq_set_type,
-> +	.reset_sources = tegra194_reset_sources,
-> +	.num_reset_sources = ARRAY_SIZE(tegra194_reset_sources),
-> +	.reset_levels = tegra186_reset_levels,
-> +	.num_reset_levels = ARRAY_SIZE(tegra186_reset_levels),
->  	.num_wake_events = ARRAY_SIZE(tegra194_wake_events),
->  	.wake_events = tegra194_wake_events,
->  };
+--rS8CxjVDS/+yyDmU
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-.. but does not look like you updated the above to use the new register
-struct. Looks like it still uses the Tegra186 regs.
+On Sat, Nov 16, 2019 at 12:54:19PM +0000, Robin Murphy wrote:
+> The 0V9 and 1V8 supplies power the PCIe block in the SoC itself, and
+> are thus fundamental to PCIe being usable at all. As such, it makes
+> sense to treat them as non-optional and rely on dummy regulators if
+> not explicitly described.
 
-Jon
+Reviewed-by: Mark Brown <broonie@kernel.org>
 
--- 
-nvpublic
+This not only makes sense it's a fix.  regulator_get_optional() should
+only be used if the supply may be physically absent (eg, when the
+feature can be left unpowered or where there's an option to switch in an
+internal regualtor). =20
+
+--rS8CxjVDS/+yyDmU
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3ShxAACgkQJNaLcl1U
+h9DCtgf/RQHTCds9GoZ1Sj3Tl0J5+R70EQ9c6ISqtLqjuDF/emFg+BU55Dke2NTj
+0eNey3v6n5wVJjD9wSyJ8+WVnMtlSAY7LT7tyMmZGt9PNzzJbFZwiF+7ep/Na16w
+5+mt+ntFxabbeb1pGl8G/A8nF8j5AjrMmTYwRBXiF/kPKyZn2HjDknuIX+pbDmvB
+vwb00AIe6ffnIBIyjuAz9GKdZWhXmrFJ0zhTjXJX3FDVWEZF6opRvssMoyT+f3Dp
+MwheEYpDTqA+EpAqj7MgKTYM4aXQGLpeGq58FnYc0VJYc/ste4D2jT0hwLdPVhju
+VKbmII5/jnkdEF1IJ73y1lbEXMF8Hg==
+=lbFC
+-----END PGP SIGNATURE-----
+
+--rS8CxjVDS/+yyDmU--
+
+
+--===============2259580119196998288==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2259580119196998288==--
+
