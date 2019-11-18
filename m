@@ -2,52 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3030100AB4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 18:46:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADC8B100AC9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 18:49:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=L6nYdlfBEkmrzUE7aPHVmGFvjJImqqVP9l+rK04A+F8=; b=h3TlacPIO1NceCKJEEhuJmyOG
-	2KQtzE/PZhdgiobg0bqYYGdyAkMQpuHscKBS2n6APyc/h+2mZSn+ohcmKlC6vgGk5kcuUi3WLgUww
-	W8xGYIC8zsHePQnmHPJ3GFG1+DGnXmOB+iKitt0eQxWuLtFEUHRVP/vE+1wh5At599CATu4f3+O0Q
-	yMSKBDViqchg+PaxgGTh2Uo5AsbytO2G7vkjm0CrUZFiWWUYMjn2KX5Mmp89qSXT3tFVveMXo2fNB
-	RBpEZ8SQuW5qto6uU1lQrGeTgc4vf1Xkt1Q7HUM/hcdWi/AuKl4yRanc5rrb+XtDbS7ua9c6SLKBo
-	zgjJGKC1A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=hUoX5dhfzk+HwurXZlpbWJzdWqTZk5ux1IjAMhSeAqg=; b=LRa
+	tDfPdVbS++fC+UtDHsx014NnYroPrtzsr0ewo9UqrGShBdPmTbnw+ZouOpcoHyoaD0g+waD3n7I6E
+	XPc5vB8uadUVkNyfyHkZt5xcMrzi6qp9zMSAeZVR3EmGDReSELqKh7v8FEFVfcD/rZAQdoX3aFfEj
+	c3MsIIDkOVnJS0tukSVkinmC1AUJwBPATKsl4kHZZblNS6kEZ2KLZZ3LDaDgY1E2e/bAH3XYEJtps
+	R5VPfU6iW/5vkAMXkEoyxzOXc2R2gL0g0im8m83h2YljAf80ONWLLl776Ftq9+lrL/tkmGj/DlbTv
+	yAi7rtlw5fmBJrlUfx7fFMxt2++KaPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWl6F-0001xg-Pa; Mon, 18 Nov 2019 17:46:07 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWl68-0001wS-5X
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 17:46:01 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id B9B64AF22;
- Mon, 18 Nov 2019 17:45:56 +0000 (UTC)
-Message-ID: <061822b6ad80094a52d27f27f3e37594adb313c2.camel@suse.de>
-Subject: Re: [PATCH v2] ARM: dt: check MPIDR on MP devices built without SMP
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Date: Mon, 18 Nov 2019 18:45:55 +0100
-In-Reply-To: <20191118125540.GW25745@shell.armlinux.org.uk>
-References: <20191004155232.17209-1-nsaenzjulienne@suse.de>
- <5abdcb0e0e1043a101f579ea65d07a1f6b91f896.camel@suse.de>
- <20191118125540.GW25745@shell.armlinux.org.uk>
-User-Agent: Evolution 3.34.1 
-MIME-Version: 1.0
+	id 1iWl9G-0002lV-SZ; Mon, 18 Nov 2019 17:49:14 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iWl97-0002kY-7r; Mon, 18 Nov 2019 17:49:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0EE9EDA7;
+ Mon, 18 Nov 2019 09:49:03 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 72FE23F703;
+ Mon, 18 Nov 2019 09:49:02 -0800 (PST)
+Date: Mon, 18 Nov 2019 17:49:00 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Luhua Xu <luhua.xu@mediatek.com>
+Subject: Applied "spi: mediatek: add SPI_CS_HIGH support" to the spi tree
+In-Reply-To: <1574053037-26721-2-git-send-email-luhua.xu@mediatek.com>
+Message-Id: <applied-1574053037-26721-2-git-send-email-luhua.xu@mediatek.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_094600_355551_F631AED3 
-X-CRM114-Status: GOOD (  16.79  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191118_094905_370761_80B70C7D 
+X-CRM114-Status: GOOD (  18.19  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,100 +59,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
- linux-kernel@vger.kernel.org, "kernelci.org bot" <bot@kernelci.org>,
- wahrenst@gmx.net
-Content-Type: multipart/mixed; boundary="===============0618266338620696635=="
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Leilk Liu <leilk.liu@mediatek.com>, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ linux-mediatek@lists.infradead.org, Allison Randal <allison@lohutok.net>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The patch
 
---===============0618266338620696635==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-+YvWotUDyLir6gMkee5u"
+   spi: mediatek: add SPI_CS_HIGH support
 
+has been applied to the spi tree at
 
---=-+YvWotUDyLir6gMkee5u
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.5
 
-Hi Russell, thanks for the review.
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-On Mon, 2019-11-18 at 12:55 +0000, Russell King - ARM Linux admin wrote:
-> On Mon, Nov 18, 2019 at 12:49:04PM +0100, Nicolas Saenz Julienne wrote:
-> > On Fri, 2019-10-04 at 17:52 +0200, Nicolas Saenz Julienne wrote:
-> > > On SMP builds, in order to properly link CPU devices with their
-> > > respective DT nodes we start by matching the boot CPU. This is achiev=
-ed
-> > > by comparing the 'reg' property on each of the CPU DT nodes with the
-> > > MPIDR. The association is necessary as to validate the whole CPU logi=
-cal
-> > > map, which ultimately links CPU devices and their DT nodes.
->=20
-> No, that is not the primary purpose of the CPU logical map.  The CPU=20
-> logical map is there to map the CPU logical number to a hardware number,
-> necessary for programming hardware.
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-Noted.
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-> > > On setups built without SMP, no MPIDR read is performed. The only thi=
-ng
-> > > expected is for the 'reg' property in the CPU DT node to contain the
-> > > value 0x0.
-> > >=20
-> > > This causes problems on MP setups built without SMP. As their boot CP=
-U
-> > > DT node contains the relevant MPIDR as opposed to 0x0. No match is th=
-en
-> > > possible. This causes troubles further down the line as drivers are
-> > > unable to get the CPU's DT node.
->=20
-> So the DT is incorrect for the platform - it is not describing the
-> hardware.  Why can't the DT be fixed?  Clearly, it would have never
-> worked with the mainline kernel today.
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
-Sorry but I don't see any incorrect DT here. From the ARM CPU bindings I ga=
-ther
-that (at least since ARMv7) every CPU node should contain its corresponding
-MPIDR. It transpires that ARM's DT cpu map init code should take that into
-account regardles of whether the kernel supports SMP, isn't it?
+Thanks,
+Mark
 
-Regards,
-Nicolas
+From ae7c2d342a10dbef1e054482f46498b6282a1df0 Mon Sep 17 00:00:00 2001
+From: Luhua Xu <luhua.xu@mediatek.com>
+Date: Mon, 18 Nov 2019 12:57:16 +0800
+Subject: [PATCH] spi: mediatek: add SPI_CS_HIGH support
 
+Change to use SPI_CS_HIGH to support spi CS polarity setting
+for chips support enhance_timing.
 
---=-+YvWotUDyLir6gMkee5u
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
+Signed-off-by: Luhua Xu <luhua.xu@mediatek.com>
+Link: https://lore.kernel.org/r/1574053037-26721-2-git-send-email-luhua.xu@mediatek.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/spi/spi-mt65xx.c                 | 12 ++++++++++--
+ include/linux/platform_data/spi-mt65xx.h |  1 -
+ 2 files changed, 10 insertions(+), 3 deletions(-)
 
------BEGIN PGP SIGNATURE-----
+diff --git a/drivers/spi/spi-mt65xx.c b/drivers/spi/spi-mt65xx.c
+index 25fe149a8d9a..6783e12c40c2 100644
+--- a/drivers/spi/spi-mt65xx.c
++++ b/drivers/spi/spi-mt65xx.c
+@@ -139,7 +139,6 @@ static const struct mtk_spi_compatible mt8183_compat = {
+  * supplies it.
+  */
+ static const struct mtk_chip_config mtk_default_chip_info = {
+-	.cs_pol = 0,
+ 	.sample_sel = 0,
+ };
+ 
+@@ -230,10 +229,12 @@ static int mtk_spi_prepare_message(struct spi_master *master,
+ #endif
+ 
+ 	if (mdata->dev_comp->enhance_timing) {
+-		if (chip_config->cs_pol)
++		/* set CS polarity */
++		if (spi->mode & SPI_CS_HIGH)
+ 			reg_val |= SPI_CMD_CS_POL;
+ 		else
+ 			reg_val &= ~SPI_CMD_CS_POL;
++
+ 		if (chip_config->sample_sel)
+ 			reg_val |= SPI_CMD_SAMPLE_SEL;
+ 		else
+@@ -264,6 +265,9 @@ static void mtk_spi_set_cs(struct spi_device *spi, bool enable)
+ 	u32 reg_val;
+ 	struct mtk_spi *mdata = spi_master_get_devdata(spi->master);
+ 
++	if (spi->mode & SPI_CS_HIGH)
++		enable = !enable;
++
+ 	reg_val = readl(mdata->base + SPI_CMD_REG);
+ 	if (!enable) {
+ 		reg_val |= SPI_CMD_PAUSE_EN;
+@@ -646,6 +650,10 @@ static int mtk_spi_probe(struct platform_device *pdev)
+ 
+ 	mdata = spi_master_get_devdata(master);
+ 	mdata->dev_comp = of_id->data;
++
++	if (mdata->dev_comp->enhance_timing)
++		master->mode_bits |= SPI_CS_HIGH;
++
+ 	if (mdata->dev_comp->must_tx)
+ 		master->flags = SPI_MASTER_MUST_TX;
+ 
+diff --git a/include/linux/platform_data/spi-mt65xx.h b/include/linux/platform_data/spi-mt65xx.h
+index f0e6d6483e62..65fd5ffd257c 100644
+--- a/include/linux/platform_data/spi-mt65xx.h
++++ b/include/linux/platform_data/spi-mt65xx.h
+@@ -11,7 +11,6 @@
+ 
+ /* Board specific platform_data */
+ struct mtk_chip_config {
+-	u32 cs_pol;
+ 	u32 sample_sel;
+ };
+ #endif
+-- 
+2.20.1
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3S2NMACgkQlfZmHno8
-x/4D7gf/XdwPq75qRoHvHJjo1VIzJp33WcYC4bhmll+p0iM/2O4t/b7f8jOyNWVG
-YlxA+fal6q1N6nyrjbXydq76hDgZK8bxHy0nQWZhJKuQaTfB0YcoMniZV+sDjF/N
-NC/MvPupcRLkTbRbnW8Af0f345b62bu3r6zL7DL/AbAyVptOD3+yCGnbI4d8hVcU
-dolO9kU7i4aKrZ9aF/u/mQQbqt/rZpPL5cFNOA5F920ryW6sWLlEfqrigBxq8Oy3
-JB5+ZZXHTqJ593gIecn4dy+iRpU8ttTN0gdHEdy0TnFbmlh5xF4GbXzjwhKHpm7x
-7D+Qbqp96Qpf6ZsVySaavz/svIiLJg==
-=fulJ
------END PGP SIGNATURE-----
-
---=-+YvWotUDyLir6gMkee5u--
-
-
-
---===============0618266338620696635==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0618266338620696635==--
-
-
