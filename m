@@ -2,85 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40593100C30
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 20:25:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 296AA100C60
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 20:45:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JSYquUtwPKf2vvUi7uHMjHTr3K7e6K417heybUcErCk=; b=fnL/Hw22hco3oL
-	b4YQFjkwFcdzGnNc+tBHQDZo0JfKqNkUEsgoG2+ELmKsPaATI+JdKVducgTreWC31BNCqqKE+clZA
-	meSexW36UlnF/8s3Wl1FWgsP+t+krEPysC0RLLyDwm3VGGjc7Uwbod/ym0/GR2a/lUnh1Ej4vSfPQ
-	rO+hj1Nfd2/IU0xHN6rzENjzma2DnV/nsJ/mjRS5MKZ/hGrREoqEO7120xesl6SULEJfMWzZ0d4Z2
-	wHXDxpYjbTn/RD4OgRwPEqjRgPfduTQbSLK/HdpBl49GZeYPMD3+MALUP7c+yiZhgvCgV/IA+rTXI
-	gbYN4YK7jlba215yZrmg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lKz5dFRRbi/osNySYPjqc3kH2Z1vWo7o4W3bWZ8Dltw=; b=OURne2eMywlLHH
+	5sXsEpmj/HdHLnlorHzEU/buDjYAcZ6ltz80HQUDk6FV4IfRENS0BFRz1IqEWIltCgw222HL6JL4T
+	k7w0MIMwFxVSVhjbVuxWqF/mN9rkWuDtj9TjQIoTRE83W4ap2XrT4RqnnLtRVRRm6JgQkQorQLPcU
+	7kd7mOx75fnBoyaj5exPZO27KOfBysPwF7VW/yP1w0d/aJj0GGsp0hFgJE/1SuedVDyiDZMkWnLSg
+	g4FksSHEncC/2glMQvm/Eus9OPVd3Y7Rx0jmzYx3H+iafvB/nABqDrIH1tm0KfUIQev3xUUAqRpkw
+	kDeT5Rh+nV2vnnp6BaOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWme1-0004aI-CU; Mon, 18 Nov 2019 19:25:05 +0000
-Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
+	id 1iWmxj-0004Gr-3d; Mon, 18 Nov 2019 19:45:27 +0000
+Received: from mout.gmx.net ([212.227.17.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWmdq-0004Yk-3i
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 19:24:55 +0000
-Received: by mail-yw1-xc44.google.com with SMTP id n82so6306230ywc.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 11:24:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=RR1Ga3A1uU2EwTdicRD/oRGttbdcdStZ/iHxBYKT5CE=;
- b=X3j1TWib3+Ts1yw/h9JSFot/7FOdRZxuSgzhQUhk9RX0px8sG0WBQZhDj4BBYPdlrY
- J4/WP8c5m+JUrfOTQmqzd3YoA61wc3CQh6jEEYyr1o9EJaG1j579HoLiQGB8tkRxyBaW
- XE9aGipx0u+/HUcxEay7fxGgq957hsoo3kGpuXpblgNkQqBm5Z5JhLDCY4uVqqWVtYD4
- WRmNouNlgix/ap6zSk2QUGxa3URJLevajDNFE3t6/jn8ofZ9vf5/RreGwxYmU8os0hcu
- 9NGvn1khICOPssu0id2qHZC7cHZboqYSAGyoUNetFiJJAOh8jsKrlhFfeIKuO/tsUCGW
- jOIw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=RR1Ga3A1uU2EwTdicRD/oRGttbdcdStZ/iHxBYKT5CE=;
- b=ILCqi6SKpT1xpLcLMyjLm+IkLY9GlzNDT7FrEdcv0Y3p03dwVNz/rg4OeZHs0SQd13
- HAfha2Mm6sWWjbunV0y5C1YA2L61hG27bgfpiKnzkkicqpl134N2difpi/4/TAXfFy1Y
- UGXb7d+3rgQlMZ39E7zS+Nh42dVvU/sf/FG2kYG+UOkFtXGUSeNLqEmK926srmlIjnkP
- 0Mmg2Sm1bZUIAUyegXv/WO3cs2hGZscqF3e2g7qzz3e6kBvpi0jyg4Bj73eVQCnxJgfY
- C6JoyvyYkEbhVD95Z6aKQPeoRSdSE1Ig3jcsXy6QKdDPnJpztzAoV/B/zsKl4FaN8bX6
- /n1w==
-X-Gm-Message-State: APjAAAWJn3R7+ZSU7LXazkzHvrwnQcdQn5wv1fi3+kIqDAsnubBJkjic
- dkelII4KZtR1p31noQ47922v8w==
-X-Google-Smtp-Source: APXvYqzl9A6vN6o+ULDkUlZz1ITko3Pi29zzVl0fCErvVOD1nwPrfbxJyGG33yD6KHdyQOeaz77hbQ==
-X-Received: by 2002:a81:49d1:: with SMTP id
- w200mr19894554ywa.169.1574105091585; 
- Mon, 18 Nov 2019 11:24:51 -0800 (PST)
-Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
- by smtp.gmail.com with ESMTPSA id r196sm8953955ywg.102.2019.11.18.11.24.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Nov 2019 11:24:50 -0800 (PST)
-Date: Mon, 18 Nov 2019 14:24:50 -0500
-From: Sean Paul <sean@poorly.run>
-To: Jani Nikula <jani.nikula@linux.intel.com>
-Subject: Re: [PATCH 0/2] add new DRM_DEV_WARN macro
-Message-ID: <20191118192450.GA135013@art_vandelay>
-References: <20191114132436.7232-1-wambui.karugax@gmail.com>
- <8736ep1hm2.fsf@intel.com>
+ id 1iWmxb-0004G6-5H; Mon, 18 Nov 2019 19:45:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1574106298;
+ bh=XSpYzjhcgiHHrYhcZHLykdCAj0e3wpqTkNXlUfzkU4o=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=Kob6o5l5jdcqPStOSOAJau0p9oouSqofToVYgzuAbv8dHGLXf3UOzpelxCJoeeZdQ
+ PlvPIgb+WEHwGwDKPU4e6rANIbrfeiWZFB+aLYApWxlwId/7mos3Jj5Vx6WztjEYP6
+ o4HL5jyK4tEnrL5LVdUpJu2W+3V8hai9kcJorfyc=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.176] ([37.4.249.101]) by mail.gmx.com (mrgmx105
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1MKbkC-1iIQQo2sto-00Kxvf; Mon, 18
+ Nov 2019 20:44:58 +0100
+Subject: Re: [PATCH 3/3] ARM: dts: bcm2711: Enable HWRNG support
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Stephen Brennan <stephen@brennan.io>
+References: <20191118075807.165126-1-stephen@brennan.io>
+ <20191118075807.165126-4-stephen@brennan.io>
+ <3209f601ad0537a7ef01e2a752f022ccf8816210.camel@suse.de>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <5cc711fd-4d47-5369-c424-363677334b9f@gmx.net>
+Date: Mon, 18 Nov 2019 20:44:54 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8736ep1hm2.fsf@intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <3209f601ad0537a7ef01e2a752f022ccf8816210.camel@suse.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:hOwNU8cCHONZ9O486Jwq2iYZo79fAwXMhOiTJGOJ2PlKe+8gm6Q
+ UGZOE/CTkcMnh13XIW02vvGVxZLDBTfhtyX/V+eFjeKG0rSDSrVsYC2qS+YNqdTpolkbIr1
+ 67O8WyoHcMO0Pt+KOgbWoq45imjgCX1ZRtzKZ6z8dTO+YJtfGNVKw91mLvvOE+StvshZzFX
+ 9hmwXJS0vB8xxwCdtGr6A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:IR+/bxyYH8U=:KGTLKGtCmOSFtC86RHUyRn
+ 6tBB+OxxEMNzyMCEHd3PLrD51+ULa0dMFC6VFO6GSgSf8Qbc9YmGewKKfnFZSPJj1CQ63o0Eu
+ YIvVXMzkYxK1Ym4dJQXgJ6xYwO9xn2Vz5AV5eeo9A/Xudzp3vtsx0Uh7cGUm8xtHOzAVZiKFM
+ gP18EqKGWZLG9h5wuEm9R5TFO19ROMpvSP9kA8tQBedg8pwejpEjtPVgOpZaGHF2Vq4mo3f33
+ ixgrEi9tK7b/L1P0OyDXmWFnQSh4zxDPrsrEwdnzedQfzUAaImRjZjUOwxVv3e+KLgBYcA1Dn
+ lCHD2oeAh/MRII5QCGIm00VxQcG5dIquSyWB62p1R+GPvbsI5rlCNV7zvICgNdsUwQlWGmIjs
+ 5MVqLbWloeovB1G6M0NX8Uf5XwGLbe6aeDUPy7bX5WCwbTOHxhc11IpozjrONNJQji7PbGUFe
+ bGjK49FUrzNQFkeYReJVw0ioZS0HhDh3OzzcjBlF4YJ8UT8hoLqRFFcxFWDZM1cPKLu6nwJj/
+ 5ZUUasjCFowFJ0d8Pa5CS3PRtiRWkddic2hR/t3dok7S93xnqbpqx04uNbhjnKek9lQME8rWV
+ GzQn/Gx1tgACdbcIyaMWvTaf/n1Ugkk1UldXuWDICh6qBAquh1nWGU5lBNlKty9nqcf7eiuUL
+ 5OXXIKImipmMor65OEVHn38eGHqCCprKlwywlR1oqU4gzbw7yxZGh15okVFVZLdbyUgE+Oz5W
+ J7nFv6u2bRj4CCBAn/skhbeWQGoJA9PQFrhEpKEi3oL/nyRnelSyp0TXVOVyfNDXzix8EskVJ
+ V3EjiGpPqMs12Q4yiV3kKPbbLAnffb/OdtqMKXsMFuLs1SS/Ek+u+17CNr7NfqpYnMaLCFF8r
+ LnTzE5w4FDLEQ890vHGFah/jCdH0hEJCDUNvIyYes+whaFKen2q9wa69F+F8h06TBE7Pr/qjL
+ 3dX1Frn9NBqOb7E36gRbhFYQK1Kxg/I/8g+qkNDwR0MWP0l9nSFSiO8WjHZ2K8Y5xTMP05kat
+ DhlYiF7sJ79RkVOHApJaRlaPUfJwVjQww/0HuiOr1edGc6StO69beT+0R2WNTk83Buu1zcG2v
+ EzQuqvmvvXH8ufwxcYV8YsMAbpnZQrbsfS3rCH0tnYHyfHZ3a9vUPHLBI58Py0+aAPRwTozp0
+ eQ1npU3/B3X/xQTedc7ruIIhRdCvBZnj+VtLFiBzRoLIFO40y9i9q3EI2udLHptGcRmb6cHV1
+ u3VU1rHYZgDFYg229qicqHv6Bn+KBoUXrpPN5NKwgRWjL02CtdXcA6ihZWfU=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_112454_151630_4FB87DF4 
-X-CRM114-Status: GOOD (  13.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191118_114519_539337_20C61ECD 
+X-CRM114-Status: GOOD (  18.20  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,55 +103,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, maarten.lankhorst@linux.intel.com, hjc@rock-chips.com,
- mripard@kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org,
- daniel@ffwll.ch, sean@poorly.run, linux-arm-kernel@lists.infradead.org,
- Wambui Karuga <wambui.karugax@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Scott Branden <sbranden@broadcom.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Ray Jui <rjui@broadcom.com>, Eric Anholt <eric@anholt.net>,
+ Rob Herring <robh+dt@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ linux-crypto@vger.kernel.org, Matt Mackall <mpm@selenic.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 15, 2019 at 01:52:53PM +0200, Jani Nikula wrote:
-> On Thu, 14 Nov 2019, Wambui Karuga <wambui.karugax@gmail.com> wrote:
-> > This adds a new DRM_DEV_WARN helper macro for warnings log output that include
-> > device pointers. It also includes the use of the DRM_DEV_WARN macro in
-> > drm/rockchip to replace dev_warn.
-> 
-> I'm trying to solicit new struct drm_device based logging macros, and
-> starting to convert to those. [1]
-> 
+Hi,
 
-This sounds good to me, I'd much prefer the non-caps versions of these
-functions. So let's wait for those to bubble up and then convert rockchip to
-drm_dev_*
+Am 18.11.19 um 12:44 schrieb Nicolas Saenz Julienne:
+> Hi Stephen,
+>
+> On Sun, 2019-11-17 at 23:58 -0800, Stephen Brennan wrote:
+>> From: Stefan Wahren <wahrenst@gmx.net>
+>>
+>> This enables hardware random number generator support for the BCM2711
+>> on the Raspberry Pi 4 board.
+>>
+>> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+>> Signed-off-by: Stephen Brennan <stephen@brennan.io>
+>> ---
+>>  arch/arm/boot/dts/bcm2711.dtsi | 5 ++---
+>>  1 file changed, 2 insertions(+), 3 deletions(-)
+>>
+>> diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
+>> index ac83dac2e6ba..2c19e5de284a 100644
+>> --- a/arch/arm/boot/dts/bcm2711.dtsi
+>> +++ b/arch/arm/boot/dts/bcm2711.dtsi
+>> @@ -92,10 +92,9 @@ pm: watchdog@7e100000 {
+>>  		};
+>>
+>>  		rng@7e104000 {
+>> +			compatible = "brcm,bcm2711-rng200";
+>>  			interrupts = <GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>;
+>> -
+>> -			/* RNG is incompatible with brcm,bcm2835-rng */
+>> -			status = "disabled";
+>> +			status = "okay";
+>>  		};
+>>
+>>  		uart2: serial@7e201400 {
+> We inherit the reg property from bcm283x.dtsi, on which we only define a size
+> of 0x10 bytes. I gather from the driver that iproc-rng200's register space is
+> at least 0x28 bytes big. We should also update the 'reg' property to:
+>
+> 	reg = <0x7e104000 0x28>;
 
-Sean
+Thanks for sending and noticing. A proper solution would be to move the
+whole rng node from bcm283x.dtsi to bcm283x-common.dtsi and define a
+completely new rng node in bcm2711.dtsi.
 
-> BR,
-> Jani.
-> 
-> 
-> [1] http://patchwork.freedesktop.org/patch/msgid/63d1e72b99e9c13ee5b1b362a653ff9c21e19124.1572258936.git.jani.nikula@intel.com
-> 
-> 
-> 
-> 
-> >
-> > Wambui Karuga (2):
-> >   drm/print: add DRM_DEV_WARN macro
-> >   drm/rockchip: use DRM_DEV_WARN macro in debug output
-> >
-> >  drivers/gpu/drm/rockchip/inno_hdmi.c | 3 ++-
-> >  include/drm/drm_print.h              | 9 +++++++++
-> >  2 files changed, 11 insertions(+), 1 deletion(-)
-> 
-> -- 
-> Jani Nikula, Intel Open Source Graphics Center
+Regards
+Stefan
 
--- 
-Sean Paul, Software Engineer, Google / Chromium OS
+>
+> Regards,
+> Nicolas
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
