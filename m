@@ -2,85 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87250100461
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:39:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA41D10046F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:40:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jv3qZq3unXn4Qh9YcToSmR2MYzSq2Vj1iUpyPZ9yuRg=; b=at/nbmymIjxYLK
-	LJ33zuDvLpjahv2EmcMNkMEyJ/tMa2K4ADEtP9FHVVSNFq31TH81SJZ/7fIVeFfqElUZs0QXgoEfD
-	gRoIXvKXrxq1vMVxeAM8MM6ftUHnlKTLS4xHLD0LIlqbSMaaSqaXaDeFBwr4e+OYvbY3Cpa6TSoN/
-	Pn8nO9g3vmtwt9rtzQYMj/nsIqBYa0BpEIZ2ObE6S4VT6Is7knXRL7e+pZc1GOwIm6fmbBen6jSEY
-	Mwnk9Z6DnZQCkS1gi55CRa9AR+zIiWkaBBvZm44OBOIthKF081IoW0IBm+7VUe+kWrAueRFpA/3OI
-	DECYdvapUy//1lZEzMXg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FiztS/VM8u41EfqrgHTZx6fcoWK3RaQaQ1OsFvQEKsI=; b=tJrnjLzJnqfUcg
+	G8lj4QQmgp2kmkUXm7o2waxEbKfXP5pYp/lJPD86uohNok7WDAgY2BxQmchLyUULu1tlvFPoy6a6o
+	P+F9taPf0y2hfoKW1tcvKchkkX2stz0sKL+InIjmJaworF65x+gx4qYOklspp4KwKPhQ4kxMkiVHt
+	2/Ikmb8yRMHTjsQOnsN37YQZ9jIolAPKFJcjG84zd7G6SKd4hOUsZNxgtK4n7kPDV8HnzJOMtNnwR
+	5tSq8sNVwG/mgqGv6TWZ4OSXylitsPOS7fjbCvLi026DgIWgfIwmxPSwd0gU/Q6DW8DErp+Jsvvzy
+	YLBrg6QrwMrMWASQXDOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWfMu-0000KF-EX; Mon, 18 Nov 2019 11:38:56 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iWfOP-0002gC-Of; Mon, 18 Nov 2019 11:40:29 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWf91-0001jG-Nl
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:24:37 +0000
-Received: by mail-wr1-x443.google.com with SMTP id b18so17548143wrj.8
+ id 1iWfO8-0002fU-9J
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:40:13 +0000
+Received: by mail-pl1-x643.google.com with SMTP id w7so9646193plz.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 03:24:35 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=rasmusvillemoes.dk; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=ZltWz01c8oCLmnoDvGrjVYpDxnidbYU1IX5rZmzZKUE=;
- b=bV6Z9fOx1VItspILAPRI5W8VOzo91dJcPE/eE8sUJW2P4w2Ur80bjp3SPzzP/d4z/E
- MNBEe1oPE/Q4EqZMdrWa8+KFp0Tesxe54lIFXB7D363t3pkjemC+wSS4s6kTqXeCXtQW
- aUbLE4f3qMlzjD6rC/R3oG1YYH6Zub7/X+FKI=
+ Mon, 18 Nov 2019 03:40:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=UKlXFmsyCCcDDwPIPUpIzSPGgE4nu5epjuY/dy6jNM4=;
+ b=ROuGzm4jkxrXQOcqLXKOOHwYgxDKwtdPl3VFO5rmmHsV1yBi4P8YFqizjyeHwzceSm
+ NTwkx2EPcWAlt2MSDtu17OAdb9h1kHTZ2fFPvUFN3W+rvpe1WKWpC/YvImORx4Lx3UfP
+ +zvyMSMsSqHOJhHMxRmHZT+A5r9rvh+R36tPkhcC86rtI9t7T00B2X5ftPl0q/uk9dTG
+ 9tGWjvKyI0dNVhq8TBFPW3wSqvoU9FiyDXk81jWxks+VNiz8/bvtINGEwtZMFGUliW6E
+ MmRoh/81FIXROovu5KFBZF1PaD7Y0i4NZTpMOQ6AfJo8pAwK5xYlYPfXylyBF3coPa5q
+ JEiw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=ZltWz01c8oCLmnoDvGrjVYpDxnidbYU1IX5rZmzZKUE=;
- b=TeWBfHHzWC+E4t1FUTF4X62qnJKgWRt6+sRTHUdI3snQa35Z2zVHs7yXdCqSOyJAG/
- TZNg416oX0CiFQIpTupGMCuQyUVE7Uy3Re2vvsh7diQGhLKJJYI/LMtj/Pw4SOPBNzXm
- /q7obDHlgX2IC8SLJqqpO0UslNqQJqH0xqdP7JZooVbxfHy2DYZLuInKpFKtNJjdUnr0
- C8Q2vyDYDguFcZEhHYdWq1ln8bsQ8onREoz/3QzvSDQpKY4PaweXHxM2YvKz3IF4K7Su
- h0oN6dRg8hp6w7eymYRsI7I5iq4A/2ZOKPygMemtHCcXyvgjBmklynGFu62kSieHd+E1
- rguQ==
-X-Gm-Message-State: APjAAAXB3s5ght5nLKAAu3xMKfXT9IZBGTYoUTlvbU8DAyuPOJ2lT2Nn
- Yz9BZn+YuAFqrAYP+aQBX7d0Xw==
-X-Google-Smtp-Source: APXvYqwv5rLwOET/SNGVGrdd9i02wz6KfyE1CgBtoScH76g/+bIKbBO7+P1A77J80UsjXI2JMZ20tQ==
-X-Received: by 2002:adf:ef51:: with SMTP id c17mr16069888wrp.266.1574076274319; 
- Mon, 18 Nov 2019 03:24:34 -0800 (PST)
-Received: from prevas-ravi.prevas.se (ip-5-186-115-54.cgn.fibianet.dk.
- [5.186.115.54])
- by smtp.gmail.com with ESMTPSA id y2sm21140815wmy.2.2019.11.18.03.24.33
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=UKlXFmsyCCcDDwPIPUpIzSPGgE4nu5epjuY/dy6jNM4=;
+ b=VW17ibH9dTJmShhpXztIztqCmldVGDnhvyOpV5QurSfUaijJBxWIDTTYnwyQNkMZW1
+ t67VL1GzSrn7BYiilcVrqb1ZcPJx/7phKJpe2DB24BG09f0da2aRhYpPw/4bsiksria6
+ 2olzZV1YHJmj+4rvVaIoBL6idbR4T2TInC3IQLpvIaLO7QVbKwfPFP2dRqv5LoutgPYQ
+ 1r1HgQyq2sLop1NfZnBCDrlt31H9diGppiXrQjED3/UhlJ+rbGIYXUdLnGZIY5nmMSVM
+ 7lCiIuPUGpMMG23jIvZKQ4+Oo2tBmi5m4uiI+VhxdPO4vkIsfdG9QA/tOtoVOZO4nO+R
+ gtMw==
+X-Gm-Message-State: APjAAAWOf80QzqJx66sCESdPhZrYff/qXrPKpDXP610Vu6iKZZe+cypD
+ JRE9xPqNNkiYS2LbOq3k4s8=
+X-Google-Smtp-Source: APXvYqyn0Lsr2kVbd6T3MWbNxpcGTpsIQ/Ohr+Rq2gUm+qBRKnowv1C9yHHyvWVJjkkaPpH71dqLLw==
+X-Received: by 2002:a17:90a:9741:: with SMTP id
+ i1mr39483570pjw.41.1574077211147; 
+ Mon, 18 Nov 2019 03:40:11 -0800 (PST)
+Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([202.120.40.82])
+ by smtp.gmail.com with ESMTPSA id l21sm17515128pjt.28.2019.11.18.03.40.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Nov 2019 03:24:33 -0800 (PST)
-From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
- Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v5 48/48] soc: fsl: qe: remove PPC32 dependency from
- CONFIG_QUICC_ENGINE
-Date: Mon, 18 Nov 2019 12:23:24 +0100
-Message-Id: <20191118112324.22725-49-linux@rasmusvillemoes.dk>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
-References: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
+ Mon, 18 Nov 2019 03:40:10 -0800 (PST)
+From: Chuhong Yuan <hslester96@gmail.com>
+To: 
+Subject: [PATCH] drm/exynos: gsc: add missed component_del
+Date: Mon, 18 Nov 2019 19:39:55 +0800
+Message-Id: <20191118113955.25373-1-hslester96@gmail.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_032435_791761_7F8A1E7F 
-X-CRM114-Status: GOOD (  13.02  )
-X-Spam-Score: 3.4 (+++)
+X-CRM114-CacheID: sfid-20191118_034012_363454_A7F86D00 
+X-CRM114-Status: GOOD (  10.61  )
+X-Spam-Score: 1.6 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.4 points)
+ Content analysis details:   (1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [5.186.115.54 listed in zen.spamhaus.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (hslester96[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hslester96[at]gmail.com)
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [202.120.40.82 listed in dnsbl.sorbs.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,47 +101,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Timur Tabi <timur@kernel.org>, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- linux-kernel@vger.kernel.org, Scott Wood <oss@buserror.net>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
+ David Airlie <airlied@linux.ie>, Chuhong Yuan <hslester96@gmail.com>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Inki Dae <inki.dae@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are also PPC64, ARM and ARM64 based SOCs with a QUICC Engine,
-and the core QE code as well as net/wan/fsl_ucc_hdlc and
-tty/serial/ucc_uart has now been modified to not rely on ppcisms.
+The driver forgets to call component_del in remove to match component_add
+in probe.
+Add the missed call to fix it.
 
-So extend the architectures that can select QUICC_ENGINE, and add the
-rather modest requirements of OF && HAS_IOMEM.
-
-The core code as well as the ucc_uart driver has been tested on an
-LS1021A (arm), and it has also been tested that the QE code still
-works on an mpc8309 (ppc). Qiang Zhao has tested that the QE-HDLC code
-that gets enabled with this works on ARM64.
-
-Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
 ---
- drivers/soc/fsl/qe/Kconfig | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/exynos/exynos_drm_gsc.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/soc/fsl/qe/Kconfig b/drivers/soc/fsl/qe/Kconfig
-index cfa4b2939992..357c5800b112 100644
---- a/drivers/soc/fsl/qe/Kconfig
-+++ b/drivers/soc/fsl/qe/Kconfig
-@@ -5,7 +5,8 @@
+diff --git a/drivers/gpu/drm/exynos/exynos_drm_gsc.c b/drivers/gpu/drm/exynos/exynos_drm_gsc.c
+index 7ae087b0504d..88b6fcaa20be 100644
+--- a/drivers/gpu/drm/exynos/exynos_drm_gsc.c
++++ b/drivers/gpu/drm/exynos/exynos_drm_gsc.c
+@@ -1313,6 +1313,7 @@ static int gsc_remove(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
  
- config QUICC_ENGINE
- 	bool "QUICC Engine (QE) framework support"
--	depends on FSL_SOC && PPC32
-+	depends on OF && HAS_IOMEM
-+	depends on PPC || ARM || ARM64 || COMPILE_TEST
- 	select GENERIC_ALLOCATOR
- 	select CRC32
- 	help
++	component_del(dev, &gsc_component_ops);
+ 	pm_runtime_dont_use_autosuspend(dev);
+ 	pm_runtime_disable(dev);
+ 
 -- 
-2.23.0
+2.24.0
 
 
 _______________________________________________
