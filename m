@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 465371003C4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:24:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBE9710041E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:29:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dZnVh8B1kfo1l04W/kq0jryeRbousIjjClg9tANMK1o=; b=G35rG95I/1zHm0
-	gzCHsJyRkQMDfrxyRFXL/q08+g7snY5rPyemnjR0jUhzl2M4F+APD6JA9pauen0zE/KdO+8eSEOAh
-	21n/xhLqORP1rnwck4foKDROhIWwgWd4zRCVcZaHtMEOWtZHuaJGzNludzom2Xxc8rhlMQZXedJyq
-	w+VJg+h2Zhnn2ng1pOgo7hFBKD3AMd74wNOZqOVTX3M9J197sNIBTg6Fbln+YzZ44+mfcywTSnqFw
-	6AQwiZKWKNC/fXHDpugxRPfIalD7vsUXGs5cCtSOiSCTaeSH/NOU8irKiS1xGt+Kt8AyDZFqXv3Pd
-	orBdZse12X/KVcMQrnaw==;
+	List-Owner; bh=+DdlRKqFqFcFdjSIzawDV2jz7DcIIVdZFculql0cbhk=; b=dq96jv5KY5PbUS
+	VkuvLMTb1AH251nZc8jP+d2+XInoyVYGZMJ6ueHTzWWS+uH9rDam9TOATv5PaoqHsyPiqGOCgHJku
+	xHB0TAG7ztF4sudI2E0M2aUF3jc1hXFKfNoXi47IIonPgeDfVfmf3Bv7co2WB/WlaD5kal6JpOoWV
+	YcFOj41ddSGrRWEYwrqgIaoD9Zf+2+bZn3P1RinYfCKlmnq+XtK6gqvsG7XjUf4wjlR/+grg3T6GW
+	XZINwKShwTnO7KX1XFCD2hUIkz/Z6qNYNv/rc41laj/ypJdXnPDA650wBlst8M8CjKAW/bXpusxyH
+	/lI/DI4UeDQbsX044k5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWf9C-0001a7-1J; Mon, 18 Nov 2019 11:24:46 +0000
+	id 1iWfDp-0006O1-1a; Mon, 18 Nov 2019 11:29:33 +0000
 Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWf81-0000ra-Tm; Mon, 18 Nov 2019 11:23:35 +0000
+ id 1iWf8J-00018a-Tu; Mon, 18 Nov 2019 11:23:54 +0000
 Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
  (helo=hermes.fivetechno.de); authenticated
  by wp126.webpack.hosteurope.de running ExIM with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- id 1iWf7r-0008Ep-NC; Mon, 18 Nov 2019 12:23:23 +0100
+ id 1iWf8G-0008Oa-8i; Mon, 18 Nov 2019 12:23:48 +0100
 X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
  linuxbbg.five-lan.de
 Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
  [80.152.217.152]) (authenticated bits=0)
  by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
- xAIBNIbh023875
+ xAIBNleY023886
  (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
- Mon, 18 Nov 2019 12:23:19 +0100
-Subject: [PATCH v3 1/2] arm64: dts: rockchip: Use correct pin for lcd-reset
- pinctrl on rk3399-roc-pc
+ Mon, 18 Nov 2019 12:23:47 +0100
+Subject: [PATCH v3 2/2] arm64: dts: rockchip: Add SDR104 mode to SD-card I/F
+ on rk3399-roc-pc
 To: Heiko Stuebner <heiko@sntech.de>
 References: <25466090-3b24-2695-10fb-88c59be3f149@fivetechno.de>
  <1918981.kTmXGv9Lqf@phil>
@@ -75,19 +75,19 @@ Autocrypt: addr=m.reichl@fivetechno.de; prefer-encrypt=mutual; keydata=
  Dm43HZwTBXPwasFHnGkF10N7aXf3r8WYpctbZYlcT5EV9m9i4jfWoGzHS5V4DXmv6OBmdLYk
  eD/Xv4SsK2JTO4nkQYw8
 Organization: five technologies GmbH
-Message-ID: <cd5fd3a8-b0eb-9dc1-c473-9355762cdaa5@fivetechno.de>
-Date: Mon, 18 Nov 2019 12:23:18 +0100
+Message-ID: <1b9b8314-8778-2d48-6f7a-3502c2146c42@fivetechno.de>
+Date: Mon, 18 Nov 2019 12:23:47 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
 In-Reply-To: <1918981.kTmXGv9Lqf@phil>
 Content-Language: de-DE
-X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1574076213;
- 68533e46; 
-X-HE-SMSGID: 1iWf7r-0008Ep-NC
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1574076231;
+ 0067dc18; 
+X-HE-SMSGID: 1iWf8G-0008Oa-8i
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_032334_100849_9D10B94B 
-X-CRM114-Status: GOOD (  13.07  )
+X-CRM114-CacheID: sfid-20191118_032352_659909_C697685C 
+X-CRM114-Status: GOOD (  13.14  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -117,28 +117,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix typo according to schematics.
-The original pin is needed to enable vcc3v0_sd in second patch of this series.
+Add SDR104 capability and regulators to SD card node.
 
 Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
 ---
-v3: Split patch in two, generate this part 1/2
+v3: Split patch in two, remove non related changes
+v2: Remove always-on from vcc3v0_sd
 ---
- arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ .../boot/dts/rockchip/rk3399-roc-pc.dtsi      | 23 ++++++++++++++++++-
+ 1 file changed, 22 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-index 44617c8e0773..6d485712f47c 100644
+index 6d485712f47c..014a9869d61a 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
 +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-@@ -576,7 +576,7 @@
+@@ -135,6 +135,19 @@
+ 		vin-supply = <&vcc_1v8>;
+ 	};
  
- 	lcd-panel {
- 		lcd_panel_reset: lcd-panel-reset {
--			rockchip,pins = <4 RK_PD6 RK_FUNC_GPIO &pcfg_pull_up>;
-+			rockchip,pins = <4 RK_PD5 RK_FUNC_GPIO &pcfg_pull_up>;
++	vcc3v0_sd: vcc3v0-sd {
++		compatible = "regulator-fixed";
++		enable-active-high;
++		gpio = <&gpio4 RK_PD6 GPIO_ACTIVE_HIGH>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&vcc3v0_sd_en>;
++		regulator-name = "vcc3v0_sd";
++		regulator-boot-on;
++		regulator-min-microvolt = <3000000>;
++		regulator-max-microvolt = <3000000>;
++		vin-supply = <&vcc3v3_sys>;
++	};
++
+ 	vcc3v3_sys: vcc3v3-sys {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "vcc3v3_sys";
+@@ -610,6 +623,12 @@
  		};
  	};
+ 
++	sdmmc {
++		vcc3v0_sd_en: vcc3v0-sd-en {
++			rockchip,pins = <4 RK_PD6 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
+ 	pmic {
+ 		pmic_int_l: pmic-int-l {
+ 			rockchip,pins = <1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
+@@ -662,13 +681,15 @@
+ 
+ &sdmmc {
+ 	bus-width = <4>;
+-	cap-mmc-highspeed;
+ 	cap-sd-highspeed;
+ 	cd-gpios = <&gpio0 RK_PA7 GPIO_ACTIVE_LOW>;
+ 	disable-wp;
+ 	max-frequency = <150000000>;
++	sd-uhs-sdr104;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_bus4>;
++	vmmc-supply = <&vcc3v0_sd>;
++	vqmmc-supply = <&vcc_sdio>;
+ 	status = "okay";
+ };
  
 -- 
 2.20.1
