@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8A7C100452
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:37:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B886100454
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:37:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ksARTpNh9fB/0Oml8tmfxVuPawOLRnfRSmCQ+QIflZI=; b=RbQST0cdx4siHQ
-	J3kIumx+adn5RTqzHBElp8FU6IX/JTEPhe/tdplNM/lNRREwDuVJYQiayDl06yXF6YJQzqNnwgWe9
-	MWt5BjYYX9w+28fJUUgTx92d/hKi1qiFf082J8P7PkagOJ2EUCTf3H65HHDFbMLE09F0Pa/3xJUyz
-	HDEzUFhEDsRJQiUusPisna3v6N1w7JMFnqarZIUsX+vQSleBjH5DnvIf3cnmzScsrVxsAmh2i4Q2l
-	I8VFjR47UWEJ4Y3MZNol/EqKzagxKJZU2VWpTB2+QF1+O9JoUufEdXYWGE2TPQhnJcxWZpoT2Wn6P
-	YlTzEw13juh5xQ2IuJjg==;
+	List-Owner; bh=QhYrvMLj04NqAQnGmL2tMKu5FXTooTC8w3mVVR9YRX8=; b=CdLZ3tRTx+qSVZ
+	/oA0+s/GXsh5DnYXqQH3+4l76BzDl2dRq4S0CsIjhtPTPbwQ5EbymkOBI9NxGklufGHQvtR/AcJwJ
+	q9WOEdz4T/SPDJFM363EGu89Wp/vCwL/xujtbUaw81nRhhTCNmIYUjQwRR6mL488gxtGaxyMo7CV+
+	MRIaBxSR3wUvcV0IkJGfIDc+BKcvlWsydxd75LxLkLFJj2UgNWBtasHYJ93DzPUWHtN1qUSo0cBYU
+	A25VMytP6S5x2WIXDdb/Yxzgy9R4vA52F+hOjllMsvGQ9wWZSllYZcTevutHP6BVkDOB0WJIZbSxv
+	0+iTvbVVFKWdrZcBnBSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWfKz-0006p0-Fd; Mon, 18 Nov 2019 11:36:57 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iWfLT-0007F7-JJ; Mon, 18 Nov 2019 11:37:27 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWf8t-0001bs-G9
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:24:30 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z19so18382186wmk.3
+ id 1iWf8u-0001cs-KZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:24:31 +0000
+Received: by mail-wr1-x442.google.com with SMTP id r10so18999639wrx.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 03:24:27 -0800 (PST)
+ Mon, 18 Nov 2019 03:24:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=zHMD7aDRcAnceTlZ0tE45j1n7viMV+uwJbkB9Il7bT8=;
- b=Db6euGnEfzB5H/iTyUNURmUloFyq903uV0BYdRSFgVz4amYzVi2dv+0jshKv7P41xb
- sruMTYeeiVwmh+JE265ApF9BX20HrI+c2BUx1ZXojrl449QK2WGXQKWVagHUYulZg9sa
- l2hwnnX+fMO9v0MEfaKICTs+9LISR/3kZZSdE=
+ bh=FL4wefDICHo32h9247H9jmqyY6zv5MUtAqMoiveQx9g=;
+ b=E4AHDjvC6aXMNQjRveC5f6E2vzA0LBGQPU4cVhU95XHEvW4ndN2XtxJT8GKavd70F2
+ jC9tRDlotOojTjdz6tbnx1hk+e6LRNypVnQPbIF4Bep2+cKjOdMAyk5VimxdRAI1phcT
+ lwP/3vwBXv7QrZtV8x00tERfMHg5v1yR1r5Os=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=zHMD7aDRcAnceTlZ0tE45j1n7viMV+uwJbkB9Il7bT8=;
- b=jKdP08w2T0Tc0Ds1RT1NrTEaIvYFEQcHke3aj5ZbByhcqh7SDXC81REAFfSsAHOmUR
- MKY1Yett/oi6WI7NgxrvkTHgvMO6uuYP0+jk3RiJVtmKW7UVHVnaYNw9Za9PKnw5dLpw
- R0p7PGPvOmQupREa77uLnFEcWBf/CkSx/GRZDX6vZ0L1GzWZDqT/2UNAO+0uwUZPkTsT
- zYyuw6Jl44c3X9UJfk3evRTShkFS7yLP/4+LhfMzZphmPOqMzwhZrKvsO2+/AsLKgNQn
- z7ePadGlOXPyv7dCq8BNXucbAjU7nmCJRAKBYt1BbtTNoHe6akM/8Vw/4N5jfuFD3yLC
- vN9A==
-X-Gm-Message-State: APjAAAVMCIiXIdL1x2Z6Szqfdb1hx1Hbm6ZfmSbSr82eaCegN/sEGn9S
- hALmgq4BQyLIeI1NsLRMdJbZAg==
-X-Google-Smtp-Source: APXvYqwMMHzUUPCd/OFuPAlEujB+DVFL+n+r5M7zPZa0exErgxvPNfo7S9ywHMDhP1IpheD/ml6g+Q==
-X-Received: by 2002:a7b:c768:: with SMTP id x8mr29729945wmk.26.1574076266012; 
- Mon, 18 Nov 2019 03:24:26 -0800 (PST)
+ bh=FL4wefDICHo32h9247H9jmqyY6zv5MUtAqMoiveQx9g=;
+ b=gxHh3J0uFbpn1MoLC59rtOT+X/6FjP2v6hCNxIKXAgtKX4PATN5kiZSoTPLvlKXkNJ
+ yRPaKd0+FtAiHzJx/mrG9NClbTyoxFLybaExzCO6nqeQCwsfVXcU9O3KcBUJdNT7j3nV
+ kEiIhFgVa0RQkDOxE1NPEW+MXoiL9/+NPOk0JgrTyYAtURIIXNcGUylnWTudflU0b8EC
+ VBOfFM3DF/Um73q7mGu8RSvVzLw21GhFOkW1+cUn2+v2dmK+JWmDL4z98KKlmQIewunq
+ 6EB22F5H8GGVGhT6D1o7ONShCdqhqxY1aodCgHiyXbSgy8BFDksWEnAnQQp27HXcHe2y
+ /6xg==
+X-Gm-Message-State: APjAAAVb8Pekgf90PgmZP+ipcPIDWFuGwP2L+ZlPRiJYkX8/4yZwAzXu
+ fM/pR4zyKTez3fL2Xnlp6zuItA==
+X-Google-Smtp-Source: APXvYqwHH2szYVNaS4MG6r2NeMu4AnUDfPLgQecmFMGcPhOZDZXQ80z3njZwNa52cVw6dP6X8ZlqQA==
+X-Received: by 2002:a5d:448a:: with SMTP id j10mr21126896wrq.79.1574076267155; 
+ Mon, 18 Nov 2019 03:24:27 -0800 (PST)
 Received: from prevas-ravi.prevas.se (ip-5-186-115-54.cgn.fibianet.dk.
  [5.186.115.54])
- by smtp.gmail.com with ESMTPSA id y2sm21140815wmy.2.2019.11.18.03.24.25
+ by smtp.gmail.com with ESMTPSA id y2sm21140815wmy.2.2019.11.18.03.24.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Nov 2019 03:24:25 -0800 (PST)
+ Mon, 18 Nov 2019 03:24:26 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v5 41/48] soc: fsl: qe: drop use of IS_ERR_VALUE in
- qe_sdma_init()
-Date: Mon, 18 Nov 2019 12:23:17 +0100
-Message-Id: <20191118112324.22725-42-linux@rasmusvillemoes.dk>
+Subject: [PATCH v5 42/48] soc: fsl: qe: drop pointless check in qe_sdma_init()
+Date: Mon, 18 Nov 2019 12:23:18 +0100
+Message-Id: <20191118112324.22725-43-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
 References: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_032427_573347_1E85B56B 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20191118_032428_828475_C8E2F7FC 
+X-CRM114-Status: GOOD (  10.01  )
 X-Spam-Score: 3.4 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (3.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
  [5.186.115.54 listed in zen.spamhaus.org]
@@ -107,38 +106,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that qe_muram_alloc() returns s32, adapt qe_sdma_init() and avoid
-another few IS_ERR_VALUE() uses.
+The sdma member of struct qe_immap is not at offset zero, so even if
+qe_immr wasn't initialized yet (i.e. NULL), &qe_immr->sdma would not
+be NULL.
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/soc/fsl/qe/qe.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/soc/fsl/qe/qe.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
 diff --git a/drivers/soc/fsl/qe/qe.c b/drivers/soc/fsl/qe/qe.c
-index ec511840db3c..5bf279c679ef 100644
+index 5bf279c679ef..96c2057d8d8e 100644
 --- a/drivers/soc/fsl/qe/qe.c
 +++ b/drivers/soc/fsl/qe/qe.c
-@@ -365,16 +365,16 @@ EXPORT_SYMBOL(qe_put_snum);
- static int qe_sdma_init(void)
- {
+@@ -367,9 +367,6 @@ static int qe_sdma_init(void)
  	struct sdma __iomem *sdma = &qe_immr->sdma;
--	static unsigned long sdma_buf_offset = (unsigned long)-ENOMEM;
-+	static s32 sdma_buf_offset = -ENOMEM;
+ 	static s32 sdma_buf_offset = -ENOMEM;
  
- 	if (!sdma)
- 		return -ENODEV;
- 
+-	if (!sdma)
+-		return -ENODEV;
+-
  	/* allocate 2 internal temporary buffers (512 bytes size each) for
  	 * the SDMA */
--	if (IS_ERR_VALUE(sdma_buf_offset)) {
-+	if (sdma_buf_offset < 0) {
- 		sdma_buf_offset = qe_muram_alloc(512 * 2, 4096);
--		if (IS_ERR_VALUE(sdma_buf_offset))
-+		if (sdma_buf_offset < 0)
- 			return -ENOMEM;
- 	}
- 
+ 	if (sdma_buf_offset < 0) {
 -- 
 2.23.0
 
