@@ -2,104 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EFC4100A1C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 18:19:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A47C1100A42
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 18:30:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jX1e96KZhWk4Xta7TY+6erVa+kLvGuUXH1lJOw/vsAE=; b=INOolUqTajjiWS
-	4aUYQAFheJ86qm+0HAJ3ORaQY1ZDLRfJDp6bV2Z6b/JQO+rIhfPNnQc9GsDn0iE5EcKRJZG0TZORA
-	uDPVXb8z+Vdg2Bm1a/v6aIGE7CMX9D7lbLSYFVPH7FlIXu4TQxuzaEJsmSqGfe9+2mhqwEUU7DvdL
-	XAfvA1Ac3TbDO7kiGHs3sGR3qq5eknUuVde1dZYczsS9a8P8XAsNu5gWsGh3/nmKWjDPutIAIjqh4
-	eVzQgbEiiX5g46aM5SbqsfUV/SBtBE/WSsOIekIigzOZlm7l3vfuXMwarKG/ufqnHZ4SF9tVX5esJ
-	mhoXdh4t62BpL55Vuf6A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XWZP3F0A7aQ2hr1CbiKXalgEavXQna+dQ8hoHnIfEBk=; b=IunDldeDZ7gweb
+	BalQ58qMU5dv2G2mmWd0nf84Q+cZ06QVLd8i1yLsAM9DhZ1dt7F9Zu61OXe1PDxaZyJVL+XEXUI1p
+	6j8a2NybzWMAsV5JY4iP1eqzmQP9AXbu9MJlqXvLoqM8kfus8mJE9Tqa3y8Q/e59oeRxUO12STotJ
+	S4zEw2Bf209ayFmco21mSuk9Kq6JkgUM0kcW/zodXYv5k7X+/KCj48gUGkNHr0JmPumFaRMoQ5ZgX
+	NhmMgRYKwS3HCy711uC8E94VgL5Oz4pbmADU6g7KQ/jqWPIN+IeBlcyBs8YnW78aldpJ6iwZB+fjk
+	mQqGDFREMwcd4EVOg9Yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWkgi-0007pE-GQ; Mon, 18 Nov 2019 17:19:44 +0000
-Received: from mail3-relais-sop.national.inria.fr ([192.134.164.104])
+	id 1iWkr1-00040l-BO; Mon, 18 Nov 2019 17:30:23 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWkgV-0007o7-H1
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 17:19:33 +0000
-X-IronPort-AV: E=Sophos;i="5.68,320,1569276000"; d="scan'208";a="327147313"
-Received: from unknown (HELO [172.20.24.15]) ([204.98.150.10])
- by mail3-relais-sop.national.inria.fr with ESMTP/TLS/AES128-SHA;
- 18 Nov 2019 18:18:38 +0100
-Subject: Re: [PATCH V5 1/4] ACPI: Support Generic Initiator only domains
-To: Dan Williams <dan.j.williams@intel.com>,
- Jonathan Cameron <jonathan.cameron@huawei.com>
-References: <20191004114330.104746-1-Jonathan.Cameron@huawei.com>
- <20191004114330.104746-2-Jonathan.Cameron@huawei.com>
- <CAPcyv4jZG-5s6NsS-_-oNG45y0Qb1mVD_s8cCGqLYtzvHqEo+Q@mail.gmail.com>
- <20191113094742.00000dc4@huawei.com>
- <77b6a6e8-9d44-1e1c-3bf0-a8d04833598d@intel.com>
- <20191113174845.000009d3@huawei.com>
- <CAPcyv4g5xUBp871+T26+se8WH9154g7V81qsToYAbXAALMuhKQ@mail.gmail.com>
- <20191114112504.00005b61@huawei.com>
- <CAPcyv4jrXvPOvoBCW8H42_og1wJ_t9_=5N4C7-OugYyNzdqBLA@mail.gmail.com>
-From: Brice Goglin <brice.goglin@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=brice.goglin@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <d0106281-f65c-369f-ef0f-11afc5f60048@gmail.com>
-Date: Mon, 18 Nov 2019 18:18:23 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iWkqs-0003qM-7l
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 17:30:15 +0000
+Received: by mail-ot1-f66.google.com with SMTP id r24so15210649otk.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 18 Nov 2019 09:30:11 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Sc1XalYtAcW8vcap9ciRIDbP58GTDwM0RBx4a9ILBAk=;
+ b=uJiA3hpk57HzrR++GjNfSPIzE3FMyTpuz+Rm+4gCbd4ZoXyjbxOL2WMjmBp4jhWb3r
+ G/bPEsrZE/vLXB4Q0yw4wl7kFoNWu0Ko4c6MBY7ekcGgU35alv+ZoZMsngcpRg1n/Wti
+ XNG70aZmlvcYRdu4TYlOGdsdFk8ktBc9Y1duGcjUDcBjPv1ZdbGx29Kgz0GzviLkgzJf
+ Qo18SoHOSU3lPbNxB76nkZirZnWFRymXBvZItWyB9T7G+PgMNN1Atjg1ezsxfiwTppZ7
+ 9IXLYAZ7ZjN96+rUspGlqXFxsq/m1jyGcb/ZWOui64p9mCUAs+a96rDqf7SnPpnYcskQ
+ dLJw==
+X-Gm-Message-State: APjAAAWKeMyBiDPY/burhPGdjQ2zyzU6SXVgfM7yEOrxNb+LMseu7+HT
+ mtAzRXZJOtO6poCnmDYEpIW4Jzc=
+X-Google-Smtp-Source: APXvYqw1OlPnWi/HP4m9zDdcj7/ZWCmt8YCrZHzLncVfpzpiqABUT2k1SS9sfJz3gBNd0ZixL3aXsw==
+X-Received: by 2002:a05:6830:1649:: with SMTP id
+ h9mr288452otr.281.1574098210777; 
+ Mon, 18 Nov 2019 09:30:10 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id y23sm6139512oih.17.2019.11.18.09.30.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 18 Nov 2019 09:30:10 -0800 (PST)
+Date: Mon, 18 Nov 2019 11:30:09 -0600
+From: Rob Herring <robh@kernel.org>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH 1/7] dt-bindings: clock: Add bindings for versal clock
+ driver
+Message-ID: <20191118173009.GA1865@bogus>
+References: <1573564580-9006-1-git-send-email-rajan.vaja@xilinx.com>
+ <1573564580-9006-2-git-send-email-rajan.vaja@xilinx.com>
+ <20191112225147.7E59D21783@mail.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <CAPcyv4jrXvPOvoBCW8H42_og1wJ_t9_=5N4C7-OugYyNzdqBLA@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191112225147.7E59D21783@mail.kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_091931_867184_B867BCE8 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.8 (-)
+X-CRM114-CacheID: sfid-20191118_093014_292864_36FF7637 
+X-CRM114-Status: GOOD (  21.50  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.8 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.134.164.104 listed in list.dnswl.org]
- 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
- CUSTOM_MED
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (brice.goglin[at]gmail.com)
- 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
- headers
- 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
- list
+ provider (robherring2[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,35 +95,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ACPI <linux-acpi@vger.kernel.org>, Tao Xu <tao3.xu@intel.com>,
- X86 ML <x86@kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linuxarm <linuxarm@huawei.com>, Keith Busch <keith.busch@intel.com>,
- Linux MM <linux-mm@kvack.org>,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, ravi.patel@xilinx.com, linux-kernel@vger.kernel.org,
+ Rajan Vaja <rajan.vaja@xilinx.com>, gustavo@embeddedor.com,
+ nava.manne@xilinx.com, mturquette@baylibre.com, tejas.patel@xilinx.com,
+ m.tretter@pengutronix.de, michal.simek@xilinx.com, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, jolly.shah@xilinx.com,
+ linux-clk@vger.kernel.org, dan.carpenter@oracle.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TGUgMTYvMTEvMjAxOSDDoCAyMTo0NSwgRGFuIFdpbGxpYW1zIGEgw6ljcml0wqA6Cj4KPj4gTXkg
-ZmVlbGluZyBpcyB0aGF0IGFueSBleGlzdGluZyB1c2VycyBvZiBhY2Nlc3MwIGFyZSBkZWZpbml0
-ZWx5IG5vdCBnb2luZwo+PiB0byBiZSBleHBlY3RpbmcgZ2VuZXJpYyBpbml0aWF0b3JzLCBzbyB3
-ZSBtaWdodCB3YW50IHRvIGRvIHRoaXMgdGhlIG90aGVyCj4+IHdheSBhcm91bmQuIGFjY2VzczAg
-aXMgb25seSBDUFVzIGFuZCBtZW1vcnksIGFjY2VzczEgaXMgaW5jbHVkaW5nCj4+IGdlbmVyaWMg
-aW5pdGlhdG9ycy4gIElmIHRoZXJlIGFyZSBubyBHSXMgZG9uJ3QgZXhwb3NlIGFjY2VzczEgYXQg
-YWxsPwo+IFRoZXJlIGFyZSBubyBjb25zdW1lcnMgb2YgdGhlIGluZm9ybWF0aW9uIHRoYXQgSSBr
-bm93IG9mLCBzbyBJIGRvIG5vdAo+IHNlZSB0aGUgcmlzayBvZiByZWdyZXNzaW9uLgoKCmh3bG9j
-IGFscmVhZHkgcmVhZHMgYWNjZXNzMC9pbml0aWF0b3JzLyBub2RlIHN5bWxpbmtzIChtb3N0bHkg
-dXNlZnVsIGZvcgpmaW5kaW5nIHdoaWNoIENQVXMgYXJlIGxvY2FsIHRvIGttZW0gZGF4IGRldmlj
-ZXMpLiBJZiBJIHVuZGVyc3RhbmQKY29ycmVjdGx5IHRoZSBjaGFuZ2VzIHlvdSBwcm9wb3NlLCB3
-ZSB3b3VsZCBnZXQgYW4gZW1wdHkgbGlzdCBvZiBDUFVzIGluCnRoZSBhY2Nlc3MwL2luaXRpYXRv
-cnMvIG5vZGVzPyBJZiBpdCBvbmx5IG9jY3VycyBvbiBwbGF0Zm9ybXMgd2l0aCBHSQood2hlbiBh
-cmUgdGhvc2UgY29taW5nIHRvIG1hcmtldD8pLCBJJ2Qgc2F5IGl0J3Mgbm90IGEgYmlnIGRlYWwg
-Zm9yIHVzLAp3ZSdsbCBtYW5hZ2UgdG8gaGF2ZSB1c2VycyB1cGdyYWRlIHRoZWlyIGh3bG9jLgoK
-QnJpY2UKCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+On Tue, Nov 12, 2019 at 02:51:46PM -0800, Stephen Boyd wrote:
+> Quoting Rajan Vaja (2019-11-12 05:16:14)
+> > diff --git a/Documentation/devicetree/bindings/clock/xlnx,versal-clk.yaml b/Documentation/devicetree/bindings/clock/xlnx,versal-clk.yaml
+> > new file mode 100644
+> > index 0000000..da82f6a
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/clock/xlnx,versal-clk.yaml
+> > @@ -0,0 +1,67 @@
+> > +# SPDX-License-Identifier: GPL-2.0
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/bindings/clock/xlnx,versal-clk.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Xilinx Versal clock controller
+> > +
+> > +maintainers:
+> > +  - Michal Simek <michal.simek@xilinx.com>
+> > +  - Jolly Shah <jolly.shah@xilinx.com>
+> > +  - Rajan Vaja <rajan.vaja@xilinx.com>
+> > +
+> > +description: |
+> > +  The clock controller is a h/w block of Xilinx versal clock tree. It reads
+> 
+> hardware instead of h/w
+> 
+> > +  required input clock frequencies from the devicetree and acts as clock
+> > +  provider for all clock consumers of PS clocks. See clock_bindings.txt
+> > +  for more information on the generic clock bindings.
+> 
+> Please drop this last sentence about clock_bindings.txt
+> 
+> > +
+> > +properties:
+> > +  compatible:
+> > +    const: xlnx,versal-clk
+> > +
+> > +  "#clock-cells":
+> > +    const: 1
+> > +
+> > +  clocks:
+> > +    description: List of clock specifiers which are external input
+> > +      clocks to the given clock controller.
+> > +    minItems: 3
+> > +    maxItems: 3
+
+Can drop these. Implied by by 'items' list.
+
+> > +    items:
+> > +      - description: ref clk
+> > +      - description: alternate ref clk
+> > +      - description: pl alternate ref clk
+> 
+> What is "pl"? Can you clarify?
+> 
+> > +
+> > +  clock-names:
+> > +    minItems: 3
+> > +    maxItems: 3
+
+Same here.
+
+> > +    items:
+> > +      - const: ref_clk
+> > +      - const: alt_ref_clk
+> > +      - const: pl_alt_ref_clk
+
+'_clk' is redundant.
+
+> > +
+> > +required:
+> > +  - compatible
+> > +  - "#clock-cells"
+> > +  - clocks
+> > +  - clock-names
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +    firmware {
+> > +      zynqmp_firmware: zynqmp-firmware {
+> > +        compatible = "xlnx,zynqmp-firmware";
+> > +        method = "smc";
+> 
+> Is there a way to say in the binding that this must be a child of a
+> xlnx,zynqmp-firmware node? That would be ideal so we can constrain this
+> to that location somehow.
+
+Yes. Add the node name as a property to the f/w schema and reference 
+($ref) this file and add 'select: false' to this one. The problem is the 
+firmware binding is probably not yet a schema. Once it is a schema, this 
+example will start failing because it's incomplete. For that reason, I 
+prefer the examples in these cases (inc MFDs) in the base schema and not 
+in the child node schemas.
+
+> > +        versal_clk: clock-controller {
+> > +          #clock-cells = <1>;
+> > +          compatible = "xlnx,versal-clk";
+> > +          clocks = <&ref_clk>, <&alt_ref_clk>, <&pl_alt_ref_clk>;
+> > +          clock-names = "ref_clk", "alt_ref_clk", "pl_alt_ref_clk";
+> > +        };
+> > +      };
+> > +    };
+> > +...
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
