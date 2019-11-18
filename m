@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC334100412
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:27:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 686E6100413
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 12:28:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a9NkNeziYrluWehZMx84K9oIhlTEPw3Ovg/2s49ALpE=; b=tasOJjp4PPYYp6
-	y8KKo1jf6JKr/OiqxH8S9UiU66LfdNIYxw9wG+uJiULf7MVt2cHRnhEm8+6hBkx6iK5iYBeUfNppI
-	AoUX1Ry5s1UY9EH7qL31TtTWFCde6R7dpUIDMfgmiKBOOW2A3iKDvRgyIMSj2Q7frR5y5Puc2nBzT
-	0o88paVw7fqScwg5AIf5kkluPa5joDcLPZWRCYTci1Sin4aJhb13OjWDlyqHPVx9tunf1tUPMNMkq
-	tAhjH3z2qz2ntWYyGawKz00syTpfxLti2MqCoDBB2jUpecqCdPt0zGvpOQwilp/G+9L9oKncvmo2C
-	xE3sD1acUU0kjJqZFqiw==;
+	List-Owner; bh=diBAa16x9XPdDUp0A1KYxeZFBMXsO4TuOMF+ipKjFZw=; b=IgB2grbHzzBeIp
+	oEVcw6RRzP3HLTZVr0/3ba8uWQswR5gsOxcdF6QjcyF1y71QgK9KMv3kyY86zNP5P9mWGVjbk9+4x
+	S7cJqYo2/UEBUxLONBjj6BUN461o9u64wGw+57aiENSWSa5xoxOTVNkNexFuZS0twkrnf7OC0Hg7n
+	7S/s869oRre91fa2ZrcumZpZ9cOK76IGG0AetwvQCSXAzbIlo89m7oSE52XsQylZkt80JgxObYqox
+	t1OBxqMmqYdmMHykf4wqvnU3or8Iq86QIV63MgddPwfj+/crxfaFBlwlnnCBpccQ5orbVtoD0ztCj
+	/W9h9FnaAfXVkR48TaJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWfC7-0004sw-RW; Mon, 18 Nov 2019 11:27:47 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iWfCV-0005Cn-Tt; Mon, 18 Nov 2019 11:28:11 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWf8B-00010Z-4S
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:23:44 +0000
-Received: by mail-wr1-x444.google.com with SMTP id r10so18996661wrx.3
+ id 1iWf8C-00011P-Ls
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 11:23:46 +0000
+Received: by mail-wr1-x443.google.com with SMTP id r10so18996842wrx.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 03:23:43 -0800 (PST)
+ Mon, 18 Nov 2019 03:23:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=td9IeMtAnKP3TNZfmfJvazvskLsY9wm2/Illqt7TzBU=;
- b=G64zeN1sRuWJalczBb4PcQsQpdk8AHwaM9zcHSLXuqOvP5z4JH7E9AP76uvffGy3zY
- yjRjr2asra7B1qPqQ/fI0qbAgipxM8OEVMFbLZ0C/GpWiqxCk1f8PPb1AHMEFvY4WNYP
- gENB4iPaF1vsQQWQhDFs6zCOfSvffYUQVX+vQ=
+ bh=c6cX64DMSTf/KsycxtOgXNPxmcIGKLx/O+3SoX0LMUM=;
+ b=cUCcyumyZWoue8UKqpho89r5qAqWtZm3cCD3s6yvL1ZAIjEdjV/iA1g+uot/suUr76
+ mgN3wnD109p+/BxYSQtR3MRIfynOlo8CHLqvYM/2VL//6doQaKXUzW0bBOXQIlKfDkVt
+ bE2Zy1hsnKS6iQJLp7YN42rV8yqYAwM8H+ou4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=td9IeMtAnKP3TNZfmfJvazvskLsY9wm2/Illqt7TzBU=;
- b=SObdKzw+ns4Fcqp/4gC+CHmZZQKhLxd680L8wwrsw3oGPDUyjedS/d9ctZ7K8tCWbp
- NC7RIR0B4Kv2afZgZHsQHY90n/whqt5jzlHjbfrPkFg9sbMCnS+EzmuQDX3ZkMEr6LK8
- xQN+fgPiEM97FSYL470BMT0RgMU2UQWO2PJpdJwHq273R1EmmMJEuVOORN6VGMTpy123
- 3WlCsizB8yG3H3p/w+MpqHvRX5zycboVD+64p+choQ3zoR1A1LnLpPCXvQIhgbETAeSW
- mBQrvPe/DDj1lFf+lE1kH6lKMI4suqgEqyAjtikIhREW5L2+xvC7NdbjMJnwYW5DpHZb
- u60w==
-X-Gm-Message-State: APjAAAVNLSJTUl2mhcm5QiFozcagaQV5rHUoTv8S09fLc/dz1HAhIJhn
- 7G7+ssdgoiepS2uzAd2zsU23kQ==
-X-Google-Smtp-Source: APXvYqzirelmZJRfngi/39rVlWqXESUNTo+aHeVFXR3g/cUeCUfTGitgRt+Ga84uxToqgzwRUh8Unw==
-X-Received: by 2002:adf:db4b:: with SMTP id f11mr2022844wrj.239.1574076221874; 
- Mon, 18 Nov 2019 03:23:41 -0800 (PST)
+ bh=c6cX64DMSTf/KsycxtOgXNPxmcIGKLx/O+3SoX0LMUM=;
+ b=MBDwNeirpcH+WNjqvLypVWa819/Ewitpvra04Pp/MZF6wSagZmtBcbjCzzKT0K0Gfw
+ biULcYXODvAP1BLPz5Z1JyERfiUkyNUyPPvWGNfGITJs9ScMAIV0usi1H1KJws4k+gql
+ RcsyxhIZgZRzEmQIfnSg35BZkbBKPqTPhCMo0lNI6GXucZMnUt4c1SQ2MV59nrfaCAOF
+ B5BsC1dB9cB58ynC8PRFmb5t0PZn25ensxzwzSJPG9OK9WbaD3tSNxBxmM4iGbXqY03i
+ 8iWZXnWkpg5hFkKvGs3aEBVB35Ezes0F3Y/RmlfzbUn20fLNoJw+GKvizLDjZctRLq5S
+ SUnw==
+X-Gm-Message-State: APjAAAUrfj7rvNYDn8mV+Pl4xub68CM70T75IE4Yor6LYnXIasgnJAlJ
+ YwHBVjwsGORCI7mi2eKStG061Q==
+X-Google-Smtp-Source: APXvYqxKtQ/L0jtybhpqM+fbDm+9z0zHRS37cs3RGG+HQSXfkyGVUGkwSkFQQXJyDBhH+RoV9eP+Og==
+X-Received: by 2002:a5d:55c7:: with SMTP id i7mr30697760wrw.64.1574076222980; 
+ Mon, 18 Nov 2019 03:23:42 -0800 (PST)
 Received: from prevas-ravi.prevas.se (ip-5-186-115-54.cgn.fibianet.dk.
  [5.186.115.54])
- by smtp.gmail.com with ESMTPSA id y2sm21140815wmy.2.2019.11.18.03.23.40
+ by smtp.gmail.com with ESMTPSA id y2sm21140815wmy.2.2019.11.18.03.23.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Nov 2019 03:23:41 -0800 (PST)
+ Mon, 18 Nov 2019 03:23:42 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v5 09/48] soc: fsl: qe: drop assign-only high_active in
- qe_ic_init
-Date: Mon, 18 Nov 2019 12:22:45 +0100
-Message-Id: <20191118112324.22725-10-linux@rasmusvillemoes.dk>
+Subject: [PATCH v5 10/48] soc: fsl: qe: remove pointless sysfs registration in
+ qe_ic.c
+Date: Mon, 18 Nov 2019 12:22:46 +0100
+Message-Id: <20191118112324.22725-11-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
 References: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_032343_207329_9FC6A818 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20191118_032344_742383_7CFC8F0E 
+X-CRM114-Status: GOOD (  10.63  )
 X-Spam-Score: 3.4 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (3.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
  [5.186.115.54 listed in zen.spamhaus.org]
@@ -107,38 +107,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-high_active is only assigned to but never used. Remove it.
+There's no point in registering with sysfs when that doesn't actually
+allow any interaction with the device or driver (no uevents, no sysfs
+files that provide information or allow configuration, no nothing).
 
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/soc/fsl/qe/qe_ic.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+ drivers/soc/fsl/qe/qe_ic.c | 31 -------------------------------
+ 1 file changed, 31 deletions(-)
 
 diff --git a/drivers/soc/fsl/qe/qe_ic.c b/drivers/soc/fsl/qe/qe_ic.c
-index 8c874372416b..4b03060d8079 100644
+index 4b03060d8079..f170926ce4d1 100644
 --- a/drivers/soc/fsl/qe/qe_ic.c
 +++ b/drivers/soc/fsl/qe/qe_ic.c
-@@ -320,7 +320,7 @@ void __init qe_ic_init(struct device_node *node, unsigned int flags,
- {
- 	struct qe_ic *qe_ic;
- 	struct resource res;
--	u32 temp = 0, ret, high_active = 0;
-+	u32 temp = 0, ret;
+@@ -474,34 +474,3 @@ int qe_ic_set_high_priority(unsigned int virq, unsigned int priority, int high)
  
- 	ret = of_address_to_resource(node, 0, &res);
- 	if (ret)
-@@ -366,10 +366,8 @@ void __init qe_ic_init(struct device_node *node, unsigned int flags,
- 		temp |= CICR_GRTB;
- 
- 	/* choose destination signal for highest priority interrupt */
--	if (flags & QE_IC_HIGH_SIGNAL) {
-+	if (flags & QE_IC_HIGH_SIGNAL)
- 		temp |= (SIGNAL_HIGH << CICR_HPIT_SHIFT);
--		high_active = 1;
+ 	return 0;
+ }
+-
+-static struct bus_type qe_ic_subsys = {
+-	.name = "qe_ic",
+-	.dev_name = "qe_ic",
+-};
+-
+-static struct device device_qe_ic = {
+-	.id = 0,
+-	.bus = &qe_ic_subsys,
+-};
+-
+-static int __init init_qe_ic_sysfs(void)
+-{
+-	int rc;
+-
+-	printk(KERN_DEBUG "Registering qe_ic with sysfs...\n");
+-
+-	rc = subsys_system_register(&qe_ic_subsys, NULL);
+-	if (rc) {
+-		printk(KERN_ERR "Failed registering qe_ic sys class\n");
+-		return -ENODEV;
 -	}
- 
- 	qe_ic_write(qe_ic->regs, QEIC_CICR, temp);
- 
+-	rc = device_register(&device_qe_ic);
+-	if (rc) {
+-		printk(KERN_ERR "Failed registering qe_ic sys device\n");
+-		return -ENODEV;
+-	}
+-	return 0;
+-}
+-
+-subsys_initcall(init_qe_ic_sysfs);
 -- 
 2.23.0
 
