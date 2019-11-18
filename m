@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93671FFC9E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 01:58:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C378CFFCA7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 02:01:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x7fLR7nzfTHM3kt5b8nabQ1UNCx6tyEXTSY2kO99qEk=; b=KZgKwVD07ZiT7t
-	ODM/wvfZn03opBU1ELvSsE8GvA1Kuef8m6tJxzRHDx14LPj5IqBmJm1Xz33871bwmxn3/+WZpq7d9
-	V9MZzmzNT7rKpUEZAHwZybCd5ajBMaIvBwcrVJ9C1N/Bpdf+oTWoVXNca0EvnhnjlelRiaaMlFMZY
-	6IjGdqaTLFkecQha84wPolIWRNT87Ntz1hOqmNY75Fb/hXd9368kuZPr5InD8uFTYF2GQPsFTDMsC
-	Iqrdox9DKpreqaHk/JQO4R9+sWbYutrUXKXdRqdBWdN5eRV73LsWFI2yH0/H2fdtfg6Ae7Iq58PnS
-	728u1ocvMkvLZN6Y2HgA==;
+	List-Owner; bh=g/RPCHpg2crJYylrHZhjwTTJ5WcPLSqJ3R928UHY6CE=; b=KTy0LzcPGoKPyB
+	2P07uw/mqCUtE7kgd+T/B4Nh2u6WImanXMSfmKmegCGSB+t/RYZ6Mok3bdlcRzFXUUvG7KG9Y3+JX
+	2szzw7niFjFPZKHgniZhHR1QRjDowqOBs5tgwlUg8KD26OgiKnSacWtg4/LpAp9tsQaUPaKh2xFu1
+	Dy4bZNXiQa5TKyo88+0LUYVb2WS9/KgJgaH8sY8hfdY+wKGiX/OygluEMBhytZeK9jfZ+1tl11eIP
+	irn3un6oxYWRoC/vnLI6C8s8E+KPbLxD5Gy0Frrdq93c3FJbnzzplJl69Bmffg32GtCD6D/WAtT6M
+	bkTIETy0/AHM+jqHnJ9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWVNV-0006f7-0D; Mon, 18 Nov 2019 00:58:53 +0000
+	id 1iWVQF-0008HL-7O; Mon, 18 Nov 2019 01:01:43 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWVNJ-0006dV-F1; Mon, 18 Nov 2019 00:58:42 +0000
+ id 1iWVQ4-0008GG-35; Mon, 18 Nov 2019 01:01:34 +0000
 Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iWVNF-0003hD-Gj; Mon, 18 Nov 2019 01:58:37 +0100
+ id 1iWVPq-0003i0-4Y; Mon, 18 Nov 2019 02:01:18 +0100
 From: Heiko Stuebner <heiko@sntech.de>
-To: linux-rockchip@lists.infradead.org
-Subject: Re: [PATCH] arm64: dts: rockchip: remove 408MHz operating point from
- px30
-Date: Mon, 18 Nov 2019 01:58:36 +0100
-Message-ID: <4318673.vLX1ueDYfg@phil>
-In-Reply-To: <20191116095220.31122-1-heiko@sntech.de>
-References: <20191116095220.31122-1-heiko@sntech.de>
+To: Markus Reichl <m.reichl@fivetechno.de>
+Subject: Re: arm64: dts: rockchip: Disable HS400 for mmc on rk3399-roc-pc
+Date: Mon, 18 Nov 2019 02:01:16 +0100
+Message-ID: <14740383.9LiiEhnQET@phil>
+In-Reply-To: <367bf78a-f079-f0b4-68fe-52c86823c174@fivetechno.de>
+References: <20190301153348.29870-1-christoph.muellner@theobroma-systems.com>
+ <20190301153348.29870-2-christoph.muellner@theobroma-systems.com>
+ <367bf78a-f079-f0b4-68fe-52c86823c174@fivetechno.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_165841_650067_9B6BF131 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20191117_170132_281855_0BFE8BEB 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -57,26 +58,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kever.yang@rock-chips.com, cl@rock-chips.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Brian Norris <briannorris@chromium.org>, Tony Xie <tony.xie@rock-chips.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, shawn.lin@rock-chips.com,
+ Jeffy Chen <jeffy.chen@rock-chips.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
+ Douglas Anderson <dianders@chromium.org>, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, Klaus Goger <klaus.goger@theobroma-systems.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
+ Randy Li <ayaka@soulik.info>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org,
+ Christoph Muellner <christoph.muellner@theobroma-systems.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Samstag, 16. November 2019, 10:52:20 CET schrieb Heiko Stuebner:
-> From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+Am Montag, 11. November 2019, 10:51:04 CET schrieb Markus Reichl:
+> Working with rootfs on two 128GB mmcs on rk3399-roc-pc.
 > 
-> It looks like the px30 is running unstable at this 408MHz operating point.
-> This shows in stalled threads and other big numbers of kernel exception.
+> One (mmc name 128G72, one screw hole) works fine in HS400 mode.
+> Other (mmc name DJNB4R, firefly on pcb, two screw holes) gets lots of
+> mmc1: "running CQE recovery", even hangs with damaged fs,
+> when running under heavy load, e.g. compiling kernel.
+> Both run fine with HS200.
 > 
-> At 600MHz and above it instead works stable and as expected. As the 408MHz
-> point doesn't even decrease the voltage compared to 600MHz, just drop this
-> 408MHz operating point for now.
+> Disabling CQ with patch mmc: core: Add MMC Command Queue Support kernel parameter [0] did not help.
+> [0] https://gitlab.com/ayufan-repos/rock64/linux-mainline-kernel/commit/54e264154b87dfe32a8359b2726e2d5611adbaf3
 > 
-> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+> Therefore I propose to disable HS400 mode on roc-pc for now.
+> 
+> Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
 
-applied
+applied for 5.6 (or maybe still 5.5)
+
+Thanks
+Heiko
 
 
 
