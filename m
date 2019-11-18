@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88BDA100BDD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 19:52:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B47F0100BDE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 19:52:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=PJLTKY2teD6/uhlkrS8vHCd8xHls0eQJseh3vYDw+Z0=; b=ZWdgy5kzrEq7scxOTWKBj4V8Zr
-	rClLNAVkF/L8mXbafWxdQ1TvWrLG582GL/ZvkaWyrx53hhYrjcTGWDUx6bnqictTaeDRjtBNZ9rn7
-	zC0/yES6r6rQm8bo7vcS5oZUQoFXbhkVLMFPYPHLwq3PwKuISJD5lvLudyDe/eE0Rjk9+uXqadFLU
-	ERiMe6SY2c/f7nAIGZAPi6qDAZ5t69N06LzKUNFY7kQm4Z87Y86DNX6aXOAW0EpVPYyYr1nLkGUrT
-	zhZ296r5bWKwE7/cBEu9T1OIZWr5IV7zCaZdjl7jsg6Il4DXWS/XJnv18emKc7dxH9LngkRLB/Y1w
-	lDlbwsJw==;
+	bh=Dv/F4FZvsOMRjrlAYJTUiPaTmkkggzlFY2SYklH6h0A=; b=bV8jHYrZ89PqEDlOFovAVMpnAN
+	BXLCbgCvjiJ+oyDLrUf6Lq3F33AJsp8nbIqytvsLWQ9XsdK0jr/3h0wO5HdOj/VUtKM9NHUcCLDYQ
+	oTg1gVc8dsU9qM/KxR51/FMDD7TvBE3JBC2xp8xMiOPHvEBfMXPSxHUCmO6aFhhIXrXjpu7OXYqOx
+	SRSmfxvAJNEwOA5dMtLwG1hBC9ShPuJaOEYT+Drxa/8RCXHM/fN/V+POjL9srHdfp536dLceD4QVy
+	kiGX4ra0muc/llNXNSUjzCgk7rPRXaBfOu19fvvJ2dLPjdhyc/rCIl540W5ZJj5avGyCtftU4SglG
+	e1PGTnUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWm8d-0001f6-L5; Mon, 18 Nov 2019 18:52:39 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iWm8q-0001wo-Og; Mon, 18 Nov 2019 18:52:52 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWm8A-0001UX-VQ
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 18:52:12 +0000
-Received: by mail-pf1-x442.google.com with SMTP id b19so10819567pfd.3
+ id 1iWm8C-0001Ur-Ew
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 18:52:13 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id f3so1747707pjg.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 10:52:10 -0800 (PST)
+ Mon, 18 Nov 2019 10:52:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=GvV8oaMdUFkbGSdHfV8pM7qcL93fKWfHHP3kuX4k8Dc=;
- b=Xy3llRtkMWbJAqF37pj7ZbvTW5JPx0TK6JCyO/kUFREaNtf9yL7z+DnF1CFd87jF+A
- Ix8V5NDls+qIdu5roV8yAcJSQKjAaYD2orEGxYLdJ5XkLG+/f1Qe/4qkPSksksyUc+jv
- FiDl5EmYCJpfFyUBYj1zYpfSGgtVruXJdlPc07cULx88xll8/infS8udX7sIQQyWZwon
- cOXhi6jbP58g//iBmc75C1zYKKTFlDop1xk5ieCBcU4tIq5hGdoCsEZAiyU9w7LY0BDY
- rvRVgOUOtH9buQ55eygh+a107ECd+Zkg6twvPeXdahlRIV88/KAzF9h9kvJ2HI0ZibkJ
- i2fw==
+ bh=uSTPqpXCkdIz0Ys9ZLE2MJ6RpXCWxgbm8ltsUhdFuaA=;
+ b=X2Qv3IxFUWevF27cjY8aXXrQI2siYVe73dYgkiMeUtD/JEU7etfRh0B7TwpGyJ4dG6
+ jy0fqJ/P9lbHqOib0wPfWSFcfjZVDpP7MWNTjayCixoBsM55AtghsA8jB2GsDcvQOZi0
+ Us6IssUiDvQAGIkruSf/mIDKvpH+JaKyL13YjPV2CI6+Sb+IFf22B9AbrdOhh+f2VfQU
+ x5Ky+GqrN4UPOKZu7xBcsGsGNtsH0j1aHNS9G6wpjVzMc9usP1PIdfmNuFn8nYUz6pDL
+ m19ojjf5y5iB2iDEXA61IiX8bUDRh0lvu1letC5Lej5L0ZaDvofGQDca93txuvzzp+1K
+ zp6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=GvV8oaMdUFkbGSdHfV8pM7qcL93fKWfHHP3kuX4k8Dc=;
- b=iaTo+bep/0ijMxOw5nFax6xG3FgL9R2bCuY1EKX+gyLv6Ao+b1kk5Uj11400QTuW3a
- buLvlKh6wnc+B5q3dMbk3lcecDBWcQhReAo8c0rDSd1ek7epXJOKe+Llcm3K06NUpjP9
- RZfCcdeOgdAqSUMid9OoevopiL4iyiIaU+3FU6nlRFjH1yUHHfiGZ8xGKLsov6s9StYw
- c7VBcEorJfw6vqZzim0DNxfwgOIwGFmHDiITne+qtO5cOfFamU56DQChG4vhwgj8UrYx
- EUrfbUxDhbrtUrTXJSNimTQ6/sphXgTwSZUurFE2y4U7nTDhKUxnZYR1BXahoZSjRVFP
- a01A==
-X-Gm-Message-State: APjAAAUOK35DPvCe4w42VuWsWT6sXo1L5qT59Kt6Q9jHdXBrNonIqcF+
- jiowZoHbE4PPhNpw325mhk13iEGCpEg=
-X-Google-Smtp-Source: APXvYqzjvR2ItnL7bBxTT1tfG6CN4pgDLv1y0/MiV10l9FWIy7QUTqs14NvQiKFrOv5HqoX8kK0bqg==
-X-Received: by 2002:a63:201b:: with SMTP id g27mr866907pgg.56.1574103130166;
- Mon, 18 Nov 2019 10:52:10 -0800 (PST)
+ bh=uSTPqpXCkdIz0Ys9ZLE2MJ6RpXCWxgbm8ltsUhdFuaA=;
+ b=s2dppYE4FhoRwUCHpap9CvaZsZkHsXUIQ8xWiLkkKwGQCGvxn5Gb3p4107hs3k9def
+ rAw+O5pijY+CmZ2V4MeSNa42iSLnt+q9BySFiirY9aL5CUC6aeyNWxtd9k1Txuk82Y12
+ g00d5f9JbgwALcDutUwdrMmQjvCgw+qEkms6uzC2fBTPRywyhjYK2PaxEgemg/eSJ7bB
+ nGm3ntiq/0+SZK4jkABzZZIZ11uHU9niIut04qvqT/hImWRxNqJ/wshgIaw5beKiWKQU
+ 7nI9bCcWyjoH7HhB1o/ahsRYNmGOmhvXdQIVuZzXe6FKqpnmJex67OSbjbO2G1urHDF7
+ cMTg==
+X-Gm-Message-State: APjAAAXEu/f+RkIe7Wmc/PwLKn/bdcusKrpIeBm9ql8nnfbWhVI8L181
+ 9yBNvbhHK8PKPR/KnkzTx0zuyA==
+X-Google-Smtp-Source: APXvYqzzItYreBeWBbFqrWCtFJCzpea9kEtD7ao2jmO1F22pYdxUyW2dEdPzqkra62qpmsk0ZQLzEg==
+X-Received: by 2002:a17:902:9a04:: with SMTP id
+ v4mr4924119plp.192.1574103131601; 
+ Mon, 18 Nov 2019 10:52:11 -0800 (PST)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id r10sm19878910pgn.68.2019.11.18.10.52.09
+ by smtp.gmail.com with ESMTPSA id r10sm19878910pgn.68.2019.11.18.10.52.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Nov 2019 10:52:09 -0800 (PST)
+ Mon, 18 Nov 2019 10:52:10 -0800 (PST)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 1/2] coresight: funnel: Fix missing spin_lock_init()
-Date: Mon, 18 Nov 2019 11:52:06 -0700
-Message-Id: <20191118185207.30441-2-mathieu.poirier@linaro.org>
+Subject: [PATCH 2/2] coresight: replicator: Fix missing spin_lock_init()
+Date: Mon, 18 Nov 2019 11:52:07 -0700
+Message-Id: <20191118185207.30441-3-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191118185207.30441-1-mathieu.poirier@linaro.org>
 References: <20191118185207.30441-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_105211_013076_9ECDB533 
+X-CRM114-CacheID: sfid-20191118_105212_498820_41C94EF0 
 X-CRM114-Status: GOOD (  11.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -114,21 +112,21 @@ Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
 Tested-by: Yabin Cui <yabinc@google.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-funnel.c | 1 +
+ drivers/hwtracing/coresight/coresight-replicator.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/hwtracing/coresight/coresight-funnel.c b/drivers/hwtracing/coresight/coresight-funnel.c
-index b605889b507a..900690a9f7f0 100644
---- a/drivers/hwtracing/coresight/coresight-funnel.c
-+++ b/drivers/hwtracing/coresight/coresight-funnel.c
-@@ -253,6 +253,7 @@ static int funnel_probe(struct device *dev, struct resource *res)
+diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
+index 43304196a1a6..e7dc1c31d20d 100644
+--- a/drivers/hwtracing/coresight/coresight-replicator.c
++++ b/drivers/hwtracing/coresight/coresight-replicator.c
+@@ -248,6 +248,7 @@ static int replicator_probe(struct device *dev, struct resource *res)
  	}
  	dev->platform_data = pdata;
  
 +	spin_lock_init(&drvdata->spinlock);
  	desc.type = CORESIGHT_DEV_TYPE_LINK;
- 	desc.subtype.link_subtype = CORESIGHT_DEV_SUBTYPE_LINK_MERG;
- 	desc.ops = &funnel_cs_ops;
+ 	desc.subtype.link_subtype = CORESIGHT_DEV_SUBTYPE_LINK_SPLIT;
+ 	desc.ops = &replicator_cs_ops;
 -- 
 2.17.1
 
