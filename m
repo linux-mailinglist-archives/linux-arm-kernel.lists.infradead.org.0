@@ -2,76 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C84371008F7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 17:13:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D840F10094D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 17:35:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6HZFLEXpsTYkY7vUCuqeVZdnlHzgjz2hwYi9eUzfN4o=; b=pmU7uEuD1dO9dE
-	1OxL2KhgKfblj3JTgNmqA+BdFW4EJG3AlkfBMVyJkIhcYWcds5vSwMGmPiFb9LT43W28P38wTs3ev
-	jYjF9DdcEvNKqcjGEMib3QwpdXyTP+MHUNcVt9xuTNTd2izT7dvu11dNXUmqCZ/m8XgHYSGAEMRPi
-	rFuMHn3SZnqDfRmEYt1z95Z42V3GCQcZPbD/bUE5llL1wbqHmqmkRj8CygQGjH3m8KKveSJm69/TB
-	SpTeL5iOth7wa1Y7pGsELT2tCfRVNU1R+WLXCUBAi1KM16ZRWXerzMDpMMvwQwpTYBm+pBhFhm2zz
-	EwGdlBaoxvtgi/Sn7qVA==;
+	List-Owner; bh=f1DoiyRUvQuALqtJ3y3SK6j3ojEFQ35aUXPT27lVMec=; b=RxspUf0HfdN8wb
+	YckMoiUhaKp6a2+0dOcT7YbznNLImS7m0ntrXv3guzWGVmzQKb4krOB7VCOKAKFNg9YSAaowK3eM5
+	KRX0FoTAEYPQD4gjoDGiW9Nq8RisPcg3NyBKe8Z2bKcViM5fQ8ze5GFPyxtcNre8WlZWXegjsBmSe
+	RSSuH/8ZlPemesDdvPACJwfkCZs1cZ9SDo652JgbnRUFnq/wyUbLDFDQ7SAfRvNdmWQIbrX4lq5NV
+	tpZkqJGjzf+pAtDuumHIznUqGBb/nRBfhJfH1Kmy42xSzdKeu2i5MnKYedrM75iKBMpHpdhjJ78AD
+	utjdVQ9GovjtLnBOlgDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWjes-0006XE-Ad; Mon, 18 Nov 2019 16:13:46 +0000
-Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
+	id 1iWjzl-0007GU-IG; Mon, 18 Nov 2019 16:35:21 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWjek-0006Wu-2h
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 16:13:39 +0000
-Received: by mail-ua1-x942.google.com with SMTP id z9so5436564uan.3
+ id 1iWjzd-0007Fo-Id
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 16:35:14 +0000
+Received: by mail-pl1-x641.google.com with SMTP id j12so10073154plt.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 08:13:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NOBGWjB9W9cl6b9pfrkUqhdUPzJMZSOyNn3PCn+PlXY=;
- b=ps7FFNxzjiPoJQ9IWxSNspdjSavrBxSIb1/8hgO4fWvVZk3MuL/IzGWMJZlojzw3N0
- fsMp2esNGEi5i7cLybVfBTMe5AUg6rCbtcqdMnTMp8wbzCoKZzhKiLdlhUP9yKiDuUfp
- KKdlty3s6yP+fwKvzjCYP4pIFsukDMiwP7YssOF7Nq68TNAEU5S/N84rdbG85zHFNVV+
- F4a6yxpANHANYfDOXhHn640c6Ov6vGJPOv105ib3SAmGOuAh4PR2naRaNSQQBas0D6Zv
- JpTRJbFuLDa6N7ItMBFdIDDjXI4Jss54WFJME0xUKUeJ/1icuNZ5mvUxAG/qOqlWJktQ
- qFIg==
+ Mon, 18 Nov 2019 08:35:12 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:thread-topic:thread-index:date:message-id
+ :references:in-reply-to:accept-language:content-language
+ :content-transfer-encoding:mime-version;
+ bh=0i62/Z6slWcYNvLCi/1NRq8OSXeaQ9afoBQGBDAQpB4=;
+ b=QK+SXU6LH+2o7j9hjFyDYG1WuCYSj7pZbm9qyrJmWAcMMvRtJnV05lu0Cb1sTLlNqf
+ 1TkeLb22j8nSIopHwhuavGeZExy073Q0cIbnvPtOCqAcrG/Am0hlZcePuCWuEo5/K/Fl
+ fC/jvrJXqPTL+M+w0oYh396piWj6R8vcoMfsFCiJUZD7txJjsi7dluwpbeptj/qHT3GN
+ KayshveBJARbqU+RZEIqHegHHAm5vmcikUpa2sbwdOjOOLJ2RI30LC+IL0id/d1hqHzm
+ cutu1N+eUHTTPSQ/AUIlrejPXs47yx4Unim2DuqoWNBHtamMs6YJ8fg5UFItpr4lVhbj
+ 15fA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=NOBGWjB9W9cl6b9pfrkUqhdUPzJMZSOyNn3PCn+PlXY=;
- b=mIY/J5wdo9UIqOPu8COf0bbmr7pQ9oabcXOBDYNGO/E6kAPjJp9dTZxSnEUkIr8dzI
- Uj0aT0KgRr6L/MV6k+rgwFLPAxv5MGCv/AwgE8mW166VFT1m2tT5QJ8EWot7SX8pbyZg
- hBvoPQisWKEM9GfvpbD1z6n026DBGjNYWXF3SnfFSxbUBj2nFaoZm6ylmyuLqg5dJ7R+
- L20kc8UKRSdu8nXH5nd1P8zD441gntR7gaMWZ3P2LyY2vqvCU7IhoZ+57JSPIJU4G+ii
- 3mpArWVkcAKdkEjszhr/yeomxBhzQlVUXPhlEQLAjNWsr3UBx/DIYz0qqBNsjqzmU3HV
- jtqQ==
-X-Gm-Message-State: APjAAAVereYDIFZs9ZlyGXPNnBxih9CukTGS8GyA2pMdlBK0zCUIMfLH
- NLpdtn2tcpPrlh0fywP2/qQ+xMAs8UIBE4vCyLv5xw0K
-X-Google-Smtp-Source: APXvYqyTTuF9zUwn83r+XQtchUtpg488WrjBXUa0RFM7kN+FgCR66+bwwvVp4jVfObasrgnWGDp1Mqi76P5PIhrTWYs=
-X-Received: by 2002:ab0:74cd:: with SMTP id f13mr17698085uaq.104.1574093616414; 
- Mon, 18 Nov 2019 08:13:36 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:thread-topic:thread-index
+ :date:message-id:references:in-reply-to:accept-language
+ :content-language:content-transfer-encoding:mime-version;
+ bh=0i62/Z6slWcYNvLCi/1NRq8OSXeaQ9afoBQGBDAQpB4=;
+ b=DBHisGGZeu6CDaVtteNPYcFVkfyX8r0E1TRBP9my+xwL5akTGtECWVsqxQ1j4XFl9x
+ BTpdepJwl0svRgMw6qAlA3FjThM4NmBilJiueTee+FPmQrXfc33Lv8VpxKRtpJ6OsQiC
+ OaVYP/N5D2605uxqBJfrrGcMuhL6mN0cc5FK2+69jEQ6JcosykuCXG5Kabc4IC8i2uNj
+ YUZjcI81dmbZL71xRHMXtMMyFUIES2lv1KqwacN91JdDdVuQdXS6ZqT/ApZMkymGcq0A
+ J/UHAKQhgFZU7kj/NmjiYnGaAcMA1gch6sIvQNmqqdRGY6rRqLvICgDOFMq4iEP/KegC
+ ynoA==
+X-Gm-Message-State: APjAAAUL1/49eWbmu4QrGpxiR3ohq56sYx5gkFQLUsH+yTXX69bRmVUt
+ I/yBCpm4BGmJW7p4LMNjbiA=
+X-Google-Smtp-Source: APXvYqzaSQ6u9pSlhPl8xKsCKW041CGIcNafMua+2M/xSn8qR1xflXgPPrLdUqsRXzl9r503iU1m1g==
+X-Received: by 2002:a17:902:a417:: with SMTP id
+ p23mr3927099plq.97.1574094912122; 
+ Mon, 18 Nov 2019 08:35:12 -0800 (PST)
+Received: from SL2P216MB0105.KORP216.PROD.OUTLOOK.COM ([2603:1046:100:22::5])
+ by smtp.gmail.com with ESMTPSA id
+ g20sm20217417pgk.46.2019.11.18.08.35.08
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 18 Nov 2019 08:35:10 -0800 (PST)
+From: Jingoo Han <jingoohan1@gmail.com>
+To: zhengbin <zhengbin13@huawei.com>, "lorenzo.pieralisi@arm.com"
+ <lorenzo.pieralisi@arm.com>, "andrew.murray@arm.com" <andrew.murray@arm.com>, 
+ "bhelgaas@google.com" <bhelgaas@google.com>, "kgene@kernel.org"
+ <kgene@kernel.org>, "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Subject: Re: [PATCH] PCI: exynos: Use PTR_ERR_OR_ZERO() to simplify code
+Thread-Topic: [PATCH] PCI: exynos: Use PTR_ERR_OR_ZERO() to simplify code
+Thread-Index: ATNoLWc1DEO/Zkzog7LMmcep5qWiqMRsAXR8
+X-MS-Exchange-MessageSentRepresentingType: 1
+Date: Mon, 18 Nov 2019 16:35:06 +0000
+Message-ID: <SL2P216MB01057BE74411EC7BE168E193AA4D0@SL2P216MB0105.KORP216.PROD.OUTLOOK.COM>
+References: <1574076480-50196-1-git-send-email-zhengbin13@huawei.com>
+In-Reply-To: <1574076480-50196-1-git-send-email-zhengbin13@huawei.com>
+Accept-Language: ko-KR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-Exchange-Organization-SCL: -1
+X-MS-TNEF-Correlator: 
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
 MIME-Version: 1.0
-References: <1573995924-14752-1-git-send-email-aisheng.dong@nxp.com>
-In-Reply-To: <1573995924-14752-1-git-send-email-aisheng.dong@nxp.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 18 Nov 2019 17:13:00 +0100
-Message-ID: <CAPDyKFrkRPuJ5+1sdLevY9tqO6CoKQu6eGDKGpbYoqOUaghnPA@mail.gmail.com>
-Subject: Re: [PATCH 1/1] firmware: imx: scu-pd: do not power off console domain
-To: Dong Aisheng <aisheng.dong@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_081338_150277_F0B476C6 
-X-CRM114-Status: GOOD (  17.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191118_083513_618384_97991DE9 
+X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jingoohan1[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jingoohan1[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,112 +117,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <dongas86@gmail.com>, Linux PM <linux-pm@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Han Jingoo <jingoohan1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 17 Nov 2019 at 14:07, Dong Aisheng <aisheng.dong@nxp.com> wrote:
+On 11/18/19, 6:20 AM, zhengbin wrote:
 >
-> Do not power off console domain in runtime pm.
-
-Would it be possible to configure a remote wakeup for the console
-while the device becomes runtime suspended, rather than preventing the
-power off altogether?
-
-Kind regards
-Uffe
-
+> Fixes coccicheck warning:
 >
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-> Cc: Ulf Hansson <ulf.hansson@linaro.org>
-> Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
+> drivers/pci/controller/dwc/pci-exynos.c:95:1-3: WARNING: PTR_ERR_OR_ZERO can be used
+>
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: zhengbin <zhengbin13@huawei.com>
+
+Please write your full name correctly (First name + Second name). 
+If 'zhengbin' is just your first name, you have to add your second name.
+Or, if  'zhengbin' is already your full name, please separate it with capitalized characters and spaces,
+for example, 'Zheng Bin'.
+
 > ---
->  drivers/firmware/imx/scu-pd.c | 28 +++++++++++++++++++++++++++-
->  1 file changed, 27 insertions(+), 1 deletion(-)
+>  drivers/pci/controller/dwc/pci-exynos.c | 5 +----
+>  1 file changed, 1 insertion(+), 4 deletions(-)
 >
-> diff --git a/drivers/firmware/imx/scu-pd.c b/drivers/firmware/imx/scu-pd.c
-> index b556612207e5..770e3681bbbf 100644
-> --- a/drivers/firmware/imx/scu-pd.c
-> +++ b/drivers/firmware/imx/scu-pd.c
-> @@ -85,6 +85,8 @@ struct imx_sc_pd_soc {
->         u8 num_ranges;
->  };
->
-> +int imx_con_rsrc;
-> +
->  static const struct imx_sc_pd_range imx8qxp_scu_pd_ranges[] = {
->         /* LSIO SS */
->         { "pwm", IMX_SC_R_PWM_0, 8, true, 0 },
-> @@ -173,6 +175,23 @@ to_imx_sc_pd(struct generic_pm_domain *genpd)
->         return container_of(genpd, struct imx_sc_pm_domain, pd);
->  }
->
-> +static void imx_sc_pd_get_console_rsrc(void)
-> +{
-> +       struct of_phandle_args specs;
-> +       int ret;
-> +
-> +       if (!of_stdout)
-> +               return;
-> +
-> +       ret = of_parse_phandle_with_args(of_stdout, "power-domains",
-> +                                        "#power-domain-cells",
-> +                                        0, &specs);
-> +       if (ret)
-> +               return;
-> +
-> +       imx_con_rsrc = specs.args[0];
-> +}
-> +
->  static int imx_sc_pd_power(struct generic_pm_domain *domain, bool power_on)
->  {
->         struct imx_sc_msg_req_set_resource_power_mode msg;
-> @@ -233,6 +252,7 @@ imx_scu_add_pm_domain(struct device *dev, int idx,
->                       const struct imx_sc_pd_range *pd_ranges)
->  {
->         struct imx_sc_pm_domain *sc_pd;
-> +       bool is_off = true;
->         int ret;
->
->         sc_pd = devm_kzalloc(dev, sizeof(*sc_pd), GFP_KERNEL);
-> @@ -251,6 +271,10 @@ imx_scu_add_pm_domain(struct device *dev, int idx,
->                          "%s", pd_ranges->name);
->
->         sc_pd->pd.name = sc_pd->name;
-> +       if (imx_con_rsrc == sc_pd->rsrc) {
-> +               sc_pd->pd.flags = GENPD_FLAG_RPM_ALWAYS_ON;
-> +               is_off = false;
-> +       }
->
->         if (sc_pd->rsrc >= IMX_SC_R_LAST) {
->                 dev_warn(dev, "invalid pd %s rsrc id %d found",
-> @@ -260,7 +284,7 @@ imx_scu_add_pm_domain(struct device *dev, int idx,
->                 return NULL;
->         }
->
-> -       ret = pm_genpd_init(&sc_pd->pd, NULL, true);
-> +       ret = pm_genpd_init(&sc_pd->pd, NULL, is_off);
->         if (ret) {
->                 dev_warn(dev, "failed to init pd %s rsrc id %d",
->                          sc_pd->name, sc_pd->rsrc);
-> @@ -326,6 +350,8 @@ static int imx_sc_pd_probe(struct platform_device *pdev)
->         if (!pd_soc)
->                 return -ENODEV;
->
-> +       imx_sc_pd_get_console_rsrc();
-> +
->         return imx_scu_init_pm_domains(&pdev->dev, pd_soc);
->  }
->
-> --
-> 2.23.0
->
+
+[.....]
 
 _______________________________________________
 linux-arm-kernel mailing list
