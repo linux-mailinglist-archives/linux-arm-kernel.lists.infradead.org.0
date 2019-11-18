@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EA27100B43
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 19:16:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBF3A100B44
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 Nov 2019 19:16:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2xFiMsoZqOdoKO49bkPr9rgxGzXDhHdaQWFAUnwS22Y=; b=NGEYuIuuz0JHlr
-	kEQmlpPJTsvxqkhogx75hmmqpSvhSDgRsYdA0lUxR9y0yeFS9UVWdbkVIxYhv1E0qJbA8wyFvExlj
-	Y1xGfBmTXA28yvXjcKZU11EyO7IufC9CUU0MYXs0Ob71qthu9v/jmOcVZOjAFN+h0f+U3cqOD5m3T
-	tfBazz0ChD8YEZH4+IlrAQ5+gTNORTdBbtPH+8IcdtiYSDflFR4kAr/OLKRr60Fyv1etAl5GiFHsN
-	HOhxaZrbT5rhJ5PlmHihj/fLIJOyaIoT9Z1VbR+HikOzc73X+e6uHuskHXcONd8poGhF5fjNb+wCW
-	o+mivOv3ueLH9G6m9XJQ==;
+	List-Owner; bh=luUzxlGeQe4ONVu6MMh4ngWTiBBUfGe42s3+XY8LFD4=; b=O/WmcT3cQlM2cZ
+	zA1b59PhtMwAxmp/FjpT7OZsp6hUf0BNpkhDUfOH0r/Ngx//TqNulwky+mz1Jwr6LczUG3T/Y1/c0
+	Brq1ThG+c1ryDgcPoz88jECxO+3TyKknpugpJ/IoHZadm+FLDtoP7R4rO2o2FO5fzbNk+GJhiLOqI
+	oSp87njs7mv4OQBo7zskF/OZdgy0h22X0DFs6Fzv4JpxWn46jAsR/JGdPcA38ooaBmyA2cBGSWCIM
+	7m8nQtT4XIJ+EqXIc9JTuzKrp5WJa1cZ2g61gCGR15qPH71ilvCBUITFUvWfAAVX1Mry5uqZc2gT7
+	D0Rv5XjPhFB0So6SZnSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWlZc-0005ng-6f; Mon, 18 Nov 2019 18:16:28 +0000
+	id 1iWlZq-00062f-V9; Mon, 18 Nov 2019 18:16:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWlZ3-0005P1-Dy
- for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 18:15:55 +0000
+ id 1iWlZ4-0005Rd-RD
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 Nov 2019 18:15:56 +0000
 Received: from localhost.localdomain
  (lfbn-mar-1-550-151.w90-118.abo.wanadoo.fr [90.118.131.151])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8DF15222AC;
- Mon, 18 Nov 2019 18:15:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 430AD222B0;
+ Mon, 18 Nov 2019 18:15:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574100952;
- bh=WtNgGN9qhUWk74r49sLlFygLpoUq6WZkCqkcNUJIFTc=;
+ s=default; t=1574100954;
+ bh=NSaNF4uqjFi1bzHP0cFCLq9XDPMCksPnvpmAZtv4ndg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=vOQuxJl+k0/CmB6Pxv9qBikkE3ax6QquuhxPx5ozGqD69B3YgJaY+uRQNLdaRHOJg
- M0MuKDruHBy+aEgLoBHZLbCySARMWgh7ved4B23xWuwCJD+xIFUr0epeCM+C1SITHR
- Rr2F6+rmeIPrmWF1kEvjE4p3F7g2v2z1aVBboaG0=
+ b=myVpSgpPQAvo4aFWtQBoobXDEXYQBN1ZLpUOnhkqY4/KTJhUo1WLTcFOgNVJ2rRvR
+ c/PhmHX/ZEMHvlJNUxvrJsalicQCKkHV7UK1cL2As9xAGtbs5jSMrJtCpK1U36djL6
+ LImw27X/qbychzCVwwm9PfD/v5UA8DXQ9Ky5Lh8Q=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 1/2] ARM/decompressor: enable CP15 barrier instructions in
- v7 cache setup code
-Date: Mon, 18 Nov 2019 19:15:42 +0100
-Message-Id: <20191118181543.122968-2-ardb@kernel.org>
+Subject: [PATCH v2 2/2] Revert "ARM: 8857/1: efi: enable CP15 DMB instructions
+ before cleaning the cache"
+Date: Mon, 18 Nov 2019 19:15:43 +0100
+Message-Id: <20191118181543.122968-3-ardb@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191118181543.122968-1-ardb@kernel.org>
 References: <20191118181543.122968-1-ardb@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_101553_799687_AF52FB13 
-X-CRM114-Status: GOOD (  12.19  )
+X-CRM114-CacheID: sfid-20191118_101555_016427_5DB6AAC4 
+X-CRM114-Status: GOOD (  12.20  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,74 +84,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit e17b1af96b2afc38e684aa2f1033387e2ed10029
+This reverts commit e17b1af96b2afc38e684aa2f1033387e2ed10029, which is
+no longer necessary now that the v7 specific routines take care not to
+issue CP15 barrier instructions before they are enabled in SCTLR.
 
-  "ARM: 8857/1: efi: enable CP15 DMB instructions before cleaning the cache"
-
-added some explicit handling of the CP15BEN bit in the SCTLR system
-register, to ensure that CP15 barrier instructions are enabled, even
-if we enter the decompressor via the EFI stub.
-
-However, as it turns out, there are other ways in which we may end up
-using CP15 barrier instructions without them being enabled. I.e., when
-the decompressor startup code skips the cache_on() initially, we end
-up calling cache_clean_flush() with the caches and MMU off, in which
-case the CP15BEN bit in SCTLR may not be programmed either. And in
-fact, cache_on() itself issues CP15 barrier instructions before actually
-enabling them by programming the new SCTLR value (and issuing an ISB)
-
-Since these routines are shared between v7 CPUs and older ones that
-implement the CPUID extension as well, using the ordinary v7 barrier
-instructions in this code is not possible, and so we should enable the
-CP15 ones explicitly before issuing them. Note that a v7 ISB is still
-required between programming the SCTLR register and using the CP15 barrier
-instructions, and we should take care to branch over it if the CP15BEN
-bit is already set, given that in that case, the CPU may not support it.
-
-Cc: <stable@vger.kernel.org> # v4.4+
+Acked-by: Marc Zyngier <maz@kernel.org>
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/boot/compressed/head.S | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ arch/arm/boot/compressed/head.S | 16 +---------------
+ 1 file changed, 1 insertion(+), 15 deletions(-)
 
 diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index 93dffed0ac6e..1af62baf7cd5 100644
+index 1af62baf7cd5..9fe90c71f373 100644
 --- a/arch/arm/boot/compressed/head.S
 +++ b/arch/arm/boot/compressed/head.S
-@@ -140,6 +140,17 @@
- #endif
- 		.endm
+@@ -1460,21 +1460,7 @@ ENTRY(efi_stub_entry)
  
-+		.macro	enable_cp15_barriers, reg
-+		mrc	p15, 0, \reg, c1, c0, 0	@ read SCTLR
-+		tst	\reg, #(1 << 5)		@ CP15BEN bit set?
-+		bne	.L_\@
-+		orr	\reg, \reg, #(1 << 5)	@ CP15 barrier instructions
-+		mcr	p15, 0, \reg, c1, c0, 0	@ write SCTLR
-+ ARM(		.inst   0xf57ff06f		@ v7+ isb	)
-+ THUMB(		isb						)
-+.L_\@:
-+		.endm
-+
- 		.section ".start", #alloc, #execinstr
- /*
-  * sort out different calling conventions
-@@ -820,6 +831,7 @@ __armv4_mmu_cache_on:
- 		mov	pc, r12
+ 		@ Preserve return value of efi_entry() in r4
+ 		mov	r4, r0
+-
+-		@ our cache maintenance code relies on CP15 barrier instructions
+-		@ but since we arrived here with the MMU and caches configured
+-		@ by UEFI, we must check that the CP15BEN bit is set in SCTLR.
+-		@ Note that this bit is RAO/WI on v6 and earlier, so the ISB in
+-		@ the enable path will be executed on v7+ only.
+-		mrc	p15, 0, r1, c1, c0, 0	@ read SCTLR
+-		tst	r1, #(1 << 5)		@ CP15BEN bit set?
+-		bne	0f
+-		orr	r1, r1, #(1 << 5)	@ CP15 barrier instructions
+-		mcr	p15, 0, r1, c1, c0, 0	@ write SCTLR
+- ARM(		.inst	0xf57ff06f		@ v7+ isb	)
+- THUMB(		isb						)
+-
+-0:		bl	cache_clean_flush
++		bl	cache_clean_flush
+ 		bl	cache_off
  
- __armv7_mmu_cache_on:
-+		enable_cp15_barriers	r11
- 		mov	r12, lr
- #ifdef CONFIG_MMU
- 		mrc	p15, 0, r11, c0, c1, 4	@ read ID_MMFR0
-@@ -1209,6 +1221,7 @@ __armv6_mmu_cache_flush:
- 		mov	pc, lr
- 
- __armv7_mmu_cache_flush:
-+		enable_cp15_barriers	r10
- 		tst	r4, #1
- 		bne	iflush
- 		mrc	p15, 0, r10, c0, c1, 5	@ read ID_MMFR1
+ 		@ Set parameters for booting zImage according to boot protocol
 -- 
 2.20.1
 
