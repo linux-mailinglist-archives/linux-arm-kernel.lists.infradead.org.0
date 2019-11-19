@@ -2,57 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FE4C1029AF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 17:47:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D00681029DD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 17:55:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
-	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FoApsnEdzC9dRT4We24RLQGt3LCMnFTangK5O5iKt6E=; b=CeKgtUNHHD4gHjz5UqfyD+38o
-	pRmpoa6+PDxK5ZW4S861r/Znu2GL+UWWhpgD23dEftuVPcrO75IkT82sDxf3csjyeNXeC4oCw7UHM
-	PHIpdrRYg7OcvkWXGlG8W/qrXnItfWJQZkmGE1d7hDn1S4vaGw4nepNT/k0aA/mKN7d9NIzyjZXXA
-	CAdEz0LAILnlX5tgPIPshNIcP7uMQNn3/wA/wamaULlfRRkN86tPLo1JcrCBmsksIYvX2vdMuIlsZ
-	k3bF2EUT8py/mnfw5fGTBg/Rr1vf6cnwDVF5Wr43nxIQA1wxUPSQU6ggpwF3CAW1ZDavftCHghFn1
-	cBHM3IK2w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+BwdL5d3XDEFhXCI25Zh3RZ6EGcr+BEVcJ6QkAFMyzE=; b=BlmQpg+iXCTLVC
+	Zt4AvjxzKhRSYXudBXOJ7e+kpdWR+9pLFyf1Ajq5B+2LYP1TRK9iGBdNEw5pUDwBHwRLc0YJieP1p
+	HMMg9Ck0DSw68Qt8zK1VphutBf8VHmYjK19AC9mgQ61jcxVeXHCg1f9h7rPT3NgoVTFT8cJasWlY6
+	35y1nhWThxqCC5ZUl+wOkrFcWSX0zByQ3Gw3oLS1nnuBXkk29WeU6k9ApeR7hTmLxW/kiFwusPIHr
+	v8/80uTjxMmOShl0yP14YL93CYs2iodjaMBwvMNQNTmzl2KOdsH+uthkErAL/FUjYZKdXzky+11Do
+	+DcA704H1Z82nr61nyiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX6ek-0005zn-6Y; Tue, 19 Nov 2019 16:47:10 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1iX6md-0000b2-AH; Tue, 19 Nov 2019 16:55:19 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX6eZ-0005yz-J9
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 16:47:01 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 0469068BFE; Tue, 19 Nov 2019 17:46:53 +0100 (CET)
-Date: Tue, 19 Nov 2019 17:46:52 +0100
-From: Christoph Hellwig <hch@lst.de>
-To: Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: Re: [PATCH 1/3] dma-direct: unify the dma_capable definitions
-Message-ID: <20191119164652.GA18983@lst.de>
-References: <20191113073539.9660-1-hch@lst.de>
- <CGME20191113073648epcas3p214f97ad5937559bebbc937e507fa54d9@epcas3p2.samsung.com>
- <20191113073539.9660-2-hch@lst.de>
- <1c227c91-512c-e871-0e03-a27b2c0435d7@samsung.com>
- <CAJKOXPdM1+x_4PQ1AfoPY6GuV0e9bk3hv_1EfEdHcLjMwwYxgw@mail.gmail.com>
- <a3e2d65b-7270-9555-a251-d7ed0c4fb85c@samsung.com>
+ id 1iX6mP-0008Ge-Bh
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 16:55:07 +0000
+Received: by mail-qt1-x841.google.com with SMTP id j5so23930753qtn.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 19 Nov 2019 08:55:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=WS7CgNbVTLnXI+F//St0LEaj4tnKGZAzwSTTN2+gQVc=;
+ b=iVAYjQHLPSEvwSFNlSCeOYv+886dqBtEdSB9f197Q+2nfx9MYsTdaFER/T+YT3sU4F
+ 2sV2cUTWCgHWA/Sy8/JS1sLjB3RmPldgWEzHpDH3Zshmlx9sUeJd3WCjr0zJdBai7b+T
+ zy0kDiCzrL33Em9pVCTZenB2tDXqNlQKDuCoq8qOeSxuw5syY2PYyALR4CmEkS3xxRkF
+ KqdBDYqlUyjmKLg0jfLiPHNdfpwXCKAj7llRkxZqK0EAlnUnUfe1TveheX+AtLUcLsQM
+ 5aonmzsTTQd9WPPpdNsJ0+Co3d3w0ppLUo0gKmx956jS+2Y6gtYKaBK+c/0EDbMVCE7m
+ wyCA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=WS7CgNbVTLnXI+F//St0LEaj4tnKGZAzwSTTN2+gQVc=;
+ b=fAVF4kNBJSJFutpJJzNuDC20WLxXbu9LzmJGWECSePTjpJuF82lQniW/3bR8rFcUyM
+ k2WyvLLajsC77tQuXbNRXt0PdlwbaUsLP0IlfeQPT+y/Tca3SPQyjm47zBSvQc+dBOpl
+ xHL0AT9cxXFoCQ9htr+xwwoB4aaqxINwYextRr3SNilOfViDQMzxxC0zYP4N2Z1V2AB2
+ 4KFeN7WRBnsMdj+QPaA2QWYUTChPyl0v9YKmUGPnPVIYg++f5ovyRQUeH4UxjJDrTigI
+ Axi1yvjR7Jb4L6XvyIemHb7EFYjVTX2ICejhxU4Mv6hq2uhwL6rH8jihO2X7DHHbIKr8
+ 7U4Q==
+X-Gm-Message-State: APjAAAWK/Ux/rWZg2o2rKSFCXORe0LUontqQl0Pc/2P07Oj0wMegVoVK
+ 7bJhPv3OkYv7S+1mdDDiVq1Iug==
+X-Google-Smtp-Source: APXvYqzkFUvos9MykZsh27TV/+hmzGyyLBxh0y1ceE3cL9LAkahX/1j2YfuXdRVTSUCh1q0oLUrsfw==
+X-Received: by 2002:ac8:6757:: with SMTP id n23mr875894qtp.345.1574182503733; 
+ Tue, 19 Nov 2019 08:55:03 -0800 (PST)
+Received: from ziepe.ca
+ (hlfxns017vw-142-162-113-180.dhcp-dynamic.fibreop.ns.bellaliant.net.
+ [142.162.113.180])
+ by smtp.gmail.com with ESMTPSA id v186sm10479291qkb.42.2019.11.19.08.55.02
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 19 Nov 2019 08:55:02 -0800 (PST)
+Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
+ (envelope-from <jgg@ziepe.ca>)
+ id 1iX6mM-0001Yp-4X; Tue, 19 Nov 2019 12:55:02 -0400
+Date: Tue, 19 Nov 2019 12:55:02 -0400
+From: Jason Gunthorpe <jgg@ziepe.ca>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v2 1/6] linux/log2.h: Add roundup/rounddown_pow_two64()
+ family of functions
+Message-ID: <20191119165502.GB4991@ziepe.ca>
+References: <20191112155926.16476-1-nsaenzjulienne@suse.de>
+ <20191112155926.16476-2-nsaenzjulienne@suse.de>
+ <20191119111320.GP43905@e119886-lin.cambridge.arm.com>
+ <052d07fb4eb79b29dd58cab577d59bab6684329a.camel@suse.de>
+ <56cbba61d92f9bc7d0a33c1de379bcd5cf411cb8.camel@suse.de>
+ <20191119162849.GT43905@e119886-lin.cambridge.arm.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="YiEDa0DAkWCtVeE4"
 Content-Disposition: inline
-In-Reply-To: <a3e2d65b-7270-9555-a251-d7ed0c4fb85c@samsung.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+In-Reply-To: <20191119162849.GT43905@e119886-lin.cambridge.arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_084659_930461_8B2ABA56 
-X-CRM114-Status: GOOD (  23.89  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191119_085505_417117_5694F866 
+X-CRM114-Status: GOOD (  19.88  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,204 +108,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vinod Koul <vkoul@kernel.org>,
- Linux Samsung SOC <linux-samsung-soc@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
- linux-mips@vger.kernel.org, iommu@lists.linux-foundation.org,
- linux-arm-kernel@lists.infradead.org, Robin Gong <yibin.gong@nxp.com>,
- linuxppc-dev@lists.ozlabs.org, Christoph Hellwig <hch@lst.de>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
+ Shawn Lin <shawn.lin@rock-chips.com>, Christoph Hellwig <hch@lst.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-rdma@vger.kernel.org,
+ maz@kernel.org, phil@raspberrypi.org, iommu@lists.linux-foundation.org,
+ linux-rockchip@lists.infradead.org, f.fainelli@gmail.com,
+ Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
+ mbrugger@suse.com, netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ jeremy.linton@arm.com, Tom Joseph <tjoseph@cadence.com>, wahrenst@gmx.net,
+ james.quinlan@broadcom.com, Robin Murphy <robin.murphy@arm.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Tariq Toukan <tariqt@mellanox.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Nov 19, 2019 at 04:28:50PM +0000, Andrew Murray wrote:
+> On Tue, Nov 19, 2019 at 01:43:39PM +0100, Nicolas Saenz Julienne wrote:
+> > On Tue, 2019-11-19 at 12:30 +0100, Nicolas Saenz Julienne wrote:
+> > > Hi Andrew, thanks for the review.
+> > > > > +/**
+> > > > > + * __roundup_pow_of_two64() - round 64bit value up to nearest power of
+> > > > > two
+> > > > > + * @n: value to round up
+> > > > > + */
+> > > > > +static inline __attribute__((const)) __u64 __roundup_pow_of_two64(__u64
+> > > > > n)
+> > > > 
+> > > > To be consistent with other functions in the same file (__ilog_u64) you may
+> > > > want to rename this to __roundup_pow_of_two_u64.
+> > > 
+> > > Sounds good to me.
+> > > 
+> > > > Also do you know why u64 is used in some places and __u64 in others?
+> > > 
+> > > That's unwarranted, it should be __u64 everywhere.
+> > 
+> > Sorry, now that I look deeper into it, it should be u64.
+> 
+> Do you know the reason why? I'd be interested to know.
 
---YiEDa0DAkWCtVeE4
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+__u64 must be used in header files that are under uapi - ie it is the
+name of the symbol in userspace, and u64 does not exist.
 
-On Tue, Nov 19, 2019 at 11:26:39AM +0100, Marek Szyprowski wrote:
-> Christoph: Let me know if this is a proper fix for you, then I will send 
-> it as a full patch.
+u64 should be used in all code that is only inside the kernel, ie .c
+files, internal headers, etc
 
-Besides the point from Robin, which is really older than you patch
-I'm not a fan of duplicating dma_capable here.  Let me know what you
-think of the two attached patches.
+I routinely discourage use of __uXX in kernel native code.
 
---YiEDa0DAkWCtVeE4
-Content-Type: text/x-patch; charset=us-ascii
-Content-Disposition: attachment; filename="0001-dma-direct-don-t-check-swiotlb-force-in-dma_direct_m.patch"
-
-From db897c2ec63e7af78137c533c9f821c594896167 Mon Sep 17 00:00:00 2001
-From: Christoph Hellwig <hch@lst.de>
-Date: Tue, 19 Nov 2019 17:35:36 +0100
-Subject: dma-direct: don't check swiotlb=force in dma_direct_map_resource
-
-When mapping resources we can't just use swiotlb ram for bounce
-buffering.  Switch to a direct dma_capable check instead.
-
-Fixes: cfced786969c ("dma-mapping: remove the default map_resource implementation")
-Reported-by: Robin Murphy <robin.murphy@arm.com>
-Signed-off-by: Christoph Hellwig <hch@lst.de>
----
- kernel/dma/direct.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-index 077876ae5c74..a479bd2d1e8b 100644
---- a/kernel/dma/direct.c
-+++ b/kernel/dma/direct.c
-@@ -412,7 +412,7 @@ dma_addr_t dma_direct_map_resource(struct device *dev, phys_addr_t paddr,
- {
- 	dma_addr_t dma_addr = paddr;
- 
--	if (unlikely(!dma_direct_possible(dev, dma_addr, size))) {
-+	if (unlikely(!dma_capable(dev, dma_addr, size))) {
- 		report_addr(dev, dma_addr, size);
- 		return DMA_MAPPING_ERROR;
- 	}
--- 
-2.20.1
-
-
---YiEDa0DAkWCtVeE4
-Content-Type: text/x-patch; charset=us-ascii
-Content-Disposition: attachment; filename="0002-dma-direct-exclude-dma_direct_map_resource-from-the-.patch"
-
-From fd82d238a42e3a5f12dd0621db2c724b89509b02 Mon Sep 17 00:00:00 2001
-From: Christoph Hellwig <hch@lst.de>
-Date: Tue, 19 Nov 2019 17:38:58 +0100
-Subject: dma-direct: exclude dma_direct_map_resource from the min_low_pfn
- check
-
-The valid memory address check in dma_capable only makes sense when mapping
-normal memory, not when using dma_map_resource to map a device resource.
-Add a new boolean argument to dma_capable to exclude that check for the
-dma_map_resource case.
-
-Fixes: b12d66278dd6 ("dma-direct: check for overflows on 32 bit DMA addresses")
-Reported-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Signed-off-by: Christoph Hellwig <hch@lst.de>
----
- arch/x86/kernel/amd_gart_64.c | 4 ++--
- drivers/xen/swiotlb-xen.c     | 4 ++--
- include/linux/dma-direct.h    | 5 +++--
- kernel/dma/direct.c           | 4 ++--
- kernel/dma/swiotlb.c          | 2 +-
- 5 files changed, 10 insertions(+), 9 deletions(-)
-
-diff --git a/arch/x86/kernel/amd_gart_64.c b/arch/x86/kernel/amd_gart_64.c
-index a6ac3712db8b..5cfab41e8509 100644
---- a/arch/x86/kernel/amd_gart_64.c
-+++ b/arch/x86/kernel/amd_gart_64.c
-@@ -185,13 +185,13 @@ static void iommu_full(struct device *dev, size_t size, int dir)
- static inline int
- need_iommu(struct device *dev, unsigned long addr, size_t size)
- {
--	return force_iommu || !dma_capable(dev, addr, size);
-+	return force_iommu || !dma_capable(dev, addr, size, true);
- }
- 
- static inline int
- nonforced_iommu(struct device *dev, unsigned long addr, size_t size)
- {
--	return !dma_capable(dev, addr, size);
-+	return !dma_capable(dev, addr, size, true);
- }
- 
- /* Map a single continuous physical area into the IOMMU.
-diff --git a/drivers/xen/swiotlb-xen.c b/drivers/xen/swiotlb-xen.c
-index 3f8b2cdb4acb..b6d27762c6f8 100644
---- a/drivers/xen/swiotlb-xen.c
-+++ b/drivers/xen/swiotlb-xen.c
-@@ -375,7 +375,7 @@ static dma_addr_t xen_swiotlb_map_page(struct device *dev, struct page *page,
- 	 * we can safely return the device addr and not worry about bounce
- 	 * buffering it.
- 	 */
--	if (dma_capable(dev, dev_addr, size) &&
-+	if (dma_capable(dev, dev_addr, size, true) &&
- 	    !range_straddles_page_boundary(phys, size) &&
- 		!xen_arch_need_swiotlb(dev, phys, dev_addr) &&
- 		swiotlb_force != SWIOTLB_FORCE)
-@@ -397,7 +397,7 @@ static dma_addr_t xen_swiotlb_map_page(struct device *dev, struct page *page,
- 	/*
- 	 * Ensure that the address returned is DMA'ble
- 	 */
--	if (unlikely(!dma_capable(dev, dev_addr, size))) {
-+	if (unlikely(!dma_capable(dev, dev_addr, size, true))) {
- 		swiotlb_tbl_unmap_single(dev, map, size, size, dir,
- 				attrs | DMA_ATTR_SKIP_CPU_SYNC);
- 		return DMA_MAPPING_ERROR;
-diff --git a/include/linux/dma-direct.h b/include/linux/dma-direct.h
-index f8959f75e496..99b77dd5f79b 100644
---- a/include/linux/dma-direct.h
-+++ b/include/linux/dma-direct.h
-@@ -49,14 +49,15 @@ static inline phys_addr_t dma_to_phys(struct device *dev, dma_addr_t daddr)
- 	return __sme_clr(__dma_to_phys(dev, daddr));
- }
- 
--static inline bool dma_capable(struct device *dev, dma_addr_t addr, size_t size)
-+static inline bool dma_capable(struct device *dev, dma_addr_t addr, size_t size,
-+		bool is_ram)
- {
- 	dma_addr_t end = addr + size - 1;
- 
- 	if (!dev->dma_mask)
- 		return false;
- 
--	if (!IS_ENABLED(CONFIG_ARCH_DMA_ADDR_T_64BIT) &&
-+	if (is_ram && !IS_ENABLED(CONFIG_ARCH_DMA_ADDR_T_64BIT) &&
- 	    min(addr, end) < phys_to_dma(dev, PFN_PHYS(min_low_pfn)))
- 		return false;
- 
-diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-index a479bd2d1e8b..40f1f0aac4b1 100644
---- a/kernel/dma/direct.c
-+++ b/kernel/dma/direct.c
-@@ -363,7 +363,7 @@ static inline bool dma_direct_possible(struct device *dev, dma_addr_t dma_addr,
- 		size_t size)
- {
- 	return swiotlb_force != SWIOTLB_FORCE &&
--		dma_capable(dev, dma_addr, size);
-+		dma_capable(dev, dma_addr, size, true);
- }
- 
- dma_addr_t dma_direct_map_page(struct device *dev, struct page *page,
-@@ -412,7 +412,7 @@ dma_addr_t dma_direct_map_resource(struct device *dev, phys_addr_t paddr,
- {
- 	dma_addr_t dma_addr = paddr;
- 
--	if (unlikely(!dma_capable(dev, dma_addr, size))) {
-+	if (unlikely(!dma_capable(dev, dma_addr, size, false))) {
- 		report_addr(dev, dma_addr, size);
- 		return DMA_MAPPING_ERROR;
- 	}
-diff --git a/kernel/dma/swiotlb.c b/kernel/dma/swiotlb.c
-index 673a2cdb2656..9280d6f8271e 100644
---- a/kernel/dma/swiotlb.c
-+++ b/kernel/dma/swiotlb.c
-@@ -678,7 +678,7 @@ bool swiotlb_map(struct device *dev, phys_addr_t *phys, dma_addr_t *dma_addr,
- 
- 	/* Ensure that the address returned is DMA'ble */
- 	*dma_addr = __phys_to_dma(dev, *phys);
--	if (unlikely(!dma_capable(dev, *dma_addr, size))) {
-+	if (unlikely(!dma_capable(dev, *dma_addr, size, true))) {
- 		swiotlb_tbl_unmap_single(dev, *phys, size, size, dir,
- 			attrs | DMA_ATTR_SKIP_CPU_SYNC);
- 		return false;
--- 
-2.20.1
-
-
---YiEDa0DAkWCtVeE4
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Jason
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---YiEDa0DAkWCtVeE4--
-
