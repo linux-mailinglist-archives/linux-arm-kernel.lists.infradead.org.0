@@ -2,78 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E467102168
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 10:58:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3DB0102188
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 11:04:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ykxo4nmGDJDcRqtcq8uhCiPB8nHlDVIf1bortLchtgE=; b=owJMwAndmPgJ8+
-	nOuD7eCW65Aq37GWwOe6JgoYloh4r5xmycpZySQCskUpbusMu0DwZsoC6zrBVpTTMX8PvVAR4++n8
-	tCC9d+W3kVsxkVpOK062mBU8hBClOzhfVm693JMzKLkzyvUsraIDk/+dEUNnUXqbcOoKKoFY8QDzz
-	qJRXn1tvHtyEDOpwAnYz8GNfaJCUt10lOvGDqCuAIJzVR6cXNXJ2dC/P0WF55EoKoL9LrVNYMp7Wc
-	obREBLOElAivN9iQQm4vdzxW01CV4PnTgnCnY6trLglIfJb/gC4H/Mm1wR7j6fFy6unuOO2q4e6un
-	95BwhqhdyGNu1LwlJJuQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MD/E2tP928lRBS5Fqx48q9axa3Jn+Dz03ys01G7WanQ=; b=QlcmUqBJ+JrpyDP+GVcSJkNrt
+	3sbCQf9iSxR1tWd6cU8S4VmMp8y74PC8UABZ2Rjbf1P9DdXm6OM9Bsxkch1779lTxQC7UPgnG3P0h
+	l6krJmhdR5iYIdnN9lPYwCgiIq17lNCget9YhXON7sRlLT9IkIqr7ujSSwBMXqdauATV5NvWMykSs
+	Kw3I1K+pnTVj7z6syD/lNz/uupvVSjNGNAJdgHkFi87GMN82Pd5SsjHBYr1bsMNmCstUKeezfLflS
+	5HR+hiNWISbd/L6GLZ1ZRIMeoAxNgu+Kyj1UwlPfYzWjry7qYBGCk7ytuCX9sBE2dxE0QU17+7+7l
+	E3LFWSkew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX0HT-0003tw-39; Tue, 19 Nov 2019 09:58:43 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1iX0MN-0005et-Qv; Tue, 19 Nov 2019 10:03:47 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX0HA-0003rt-3R
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 09:58:27 +0000
-Received: by mail-ot1-f67.google.com with SMTP id w24so16857378otk.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 Nov 2019 01:58:23 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=R2QfOLQ66mKJM4oqvv+8/7SnafH2D5zzrRD8WOBy5DA=;
- b=Iq3qyKQ7Ru7SPMe2Dp6io732DDNN0SX+IctZjw+K44ClbqNBYRLCl6vf+hwFp4UUlF
- NRa5f4sO3xnRugpwLbMU3MSQaoHBQgRwsqvrz7PUbsgjG6WdtjYOG3DadIyr3t4xB0Rr
- KAY2E0hHSlZnyNPCWYb+u00guPIaovvX8nEcI24doiskWE4eXgf8dBJnD2EA7gWhZzno
- o7OOOzrhJpLQsJP9zfKNNxSz9mcmVDy0lC5YxgGh3xvzimWB6ncAmU+7Z/nFUYwh4/tf
- +RIDHDKTKbPhl++P7IWsMgEMFcOqHfS6NU+cnnZLSapdaE4jb6wT333ZzOSozSi6o1PM
- 4cxQ==
-X-Gm-Message-State: APjAAAXKpXTBOnRVAd4CFuGsyCeJ9SCuOWplB0nUsk+TnuXK0E9p7jAG
- t7Ptf1Rvm4wgfIUt+l7HoPQEUjVyKIlM2MPWjGuz61WD
-X-Google-Smtp-Source: APXvYqzXEAB1RN2ztsSPnJrNlveKBRzWXzUVBsrYqaVf7OxCOQc193FoRkJyyExGk2AxheB0N+YhwRziF7J9QuWRKJQ=
-X-Received: by 2002:a9d:5511:: with SMTP id l17mr3048301oth.145.1574157502733; 
- Tue, 19 Nov 2019 01:58:22 -0800 (PST)
+ id 1iX0ME-0005e4-6Q
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 10:03:39 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iX0MA-0001a9-8z; Tue, 19 Nov 2019 11:03:34 +0100
+To: Hanjun Guo <guohanjun@huawei.com>
+Subject: Re: [RFC PATCH v2] arm64: cpufeatures: add support for tlbi range
+ instructions
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-References: <20191030173216.5993-1-krzk@kernel.org>
- <20191105194257.GA16066@bogus> <20191114125923.GA3084@kozik-lap>
- <CAL_JsqJCps_s1OGt2SvPa4uBj9EQp0ZqyeHVw8fMR+rSSVh9ow@mail.gmail.com>
-In-Reply-To: <CAL_JsqJCps_s1OGt2SvPa4uBj9EQp0ZqyeHVw8fMR+rSSVh9ow@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 19 Nov 2019 10:58:11 +0100
-Message-ID: <CAMuHMdXYg4u1SF+j=doJqaDFw+O61g2th8ppt+CBrez8QAgJRA@mail.gmail.com>
-Subject: Re: [PATCH v3 1/2] dt-bindings: power: Convert Generic Power Domain
- bindings to json-schema
-To: Rob Herring <robh@kernel.org>
+Date: Tue, 19 Nov 2019 10:03:34 +0000
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <c9dfb341-9d14-1a62-0c34-6ec8bd9b4c55@huawei.com>
+References: <5DC960EB.9050503@huawei.com>
+ <20191111132716.GA9394@willie-the-truck> <5DC96660.8040505@huawei.com>
+ <d4542758f83b3df3ab391341499fecfb@www.loen.fr>
+ <c9dfb341-9d14-1a62-0c34-6ec8bd9b4c55@huawei.com>
+Message-ID: <e6d2ad1c5392c2c3503ed8bb7560e04f@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: guohanjun@huawei.com, yezhenyu2@huawei.com, will@kernel.org,
+ catalin.marinas@arm.com, suzuki.poulose@arm.com, mark.rutland@arm.com,
+ tangnianyao@huawei.com, xiexiangyou@huawei.com, linux-kernel@vger.kernel.org,
+ arm@kernel.org, linux-arm-kernel@lists.infradead.org, linuxarm@huawei.com,
+ zhangshaokun@hisilicon.com, wanghuiqiang@huawei.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_015824_143046_DBBEAFB3 
-X-CRM114-Status: GOOD (  17.78  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191119_020338_383482_52AE758F 
+X-CRM114-Status: GOOD (  16.40  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,94 +71,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Kevin Hilman <khilman@baylibre.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-clk <linux-clk@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, wanghuiqiang <wanghuiqiang@huawei.com>,
+ suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ Zhenyu Ye <yezhenyu2@huawei.com>, linux-kernel@vger.kernel.org,
+ xiexiangyou@huawei.com, Linuxarm <linuxarm@huawei.com>,
+ Shaokun Zhang <zhangshaokun@hisilicon.com>, arm@kernel.org,
+ tangnianyao@huawei.com, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob, Krzysztof,
+Hi Hanjun,
 
-On Thu, Nov 14, 2019 at 5:42 PM Rob Herring <robh@kernel.org> wrote:
-> On Thu, Nov 14, 2019 at 6:59 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> > On Tue, Nov 05, 2019 at 01:42:58PM -0600, Rob Herring wrote:
-> > > On Wed, 30 Oct 2019 18:32:15 +0100, Krzysztof Kozlowski wrote:
-> > > > Convert Generic Power Domain bindings to DT schema format using
-> > > > json-schema.
-> > > >
-> > > > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > > > Reviewed-by: Ulf Hansson <ulf.hansson@linaro.org>
-> > > > Acked-by: Stephen Boyd <sboyd@kernel.org>
-> > > >
-> > > > ---
-> > > >
-> > > > Changes since v2:
-> > > > 1. Keep description of consumers in power-domain.txt,
-> > > > 2. Rename power_domain.txt to power-domain.txt,
-> > > > 3. Indent example with four spaces (more readable).
-> > > >
-> > > > Changes since v1:
-> > > > 1. Select all nodes for consumers,
-> > > > 2. Remove from consumers duplicated properties with dt-schema,
-> > > > 3. Fix power domain pattern,
-> > > > 4. Remove unneeded types.
-> > > > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > > > ---
-> > > >  .../devicetree/bindings/arm/arm,scmi.txt      |   2 +-
-> > > >  .../devicetree/bindings/arm/arm,scpi.txt      |   2 +-
-> > > >  .../bindings/arm/freescale/fsl,scu.txt        |   2 +-
-> > > >  .../bindings/clock/renesas,cpg-mssr.txt       |   2 +-
-> > > >  .../bindings/clock/ti/davinci/psc.txt         |   2 +-
-> > > >  .../firmware/nvidia,tegra186-bpmp.txt         |   2 +-
-> > > >  .../bindings/power/amlogic,meson-gx-pwrc.txt  |   2 +-
-> > > >  .../devicetree/bindings/power/fsl,imx-gpc.txt |   2 +-
-> > > >  .../bindings/power/fsl,imx-gpcv2.txt          |   2 +-
-> > > >  .../{power_domain.txt => power-domain.txt}    |  95 +------------
-> > > >  .../bindings/power/power-domain.yaml          | 133 ++++++++++++++++++
-> > > >  .../bindings/power/renesas,sysc-rmobile.txt   |   2 +-
-> > > >  .../bindings/power/xlnx,zynqmp-genpd.txt      |   2 +-
-> > > >  .../bindings/soc/bcm/brcm,bcm2835-pm.txt      |   2 +-
-> > > >  .../bindings/soc/mediatek/scpsys.txt          |   2 +-
-> > > >  .../bindings/soc/ti/sci-pm-domain.txt         |   2 +-
-> > > >  MAINTAINERS                                   |   2 +-
-> > > >  17 files changed, 149 insertions(+), 109 deletions(-)
-> > > >  rename Documentation/devicetree/bindings/power/{power_domain.txt => power-domain.txt} (51%)
-> > > >  create mode 100644 Documentation/devicetree/bindings/power/power-domain.yaml
-> > > >
-> > >
-> > > Reviewed-by: Rob Herring <robh@kernel.org>
-> >
-> > The patches should apply cleanly in top of your tree so maybe you can
-> > pick them up?
+On 2019-11-19 01:13, Hanjun Guo wrote:
+> +Cc linux-arm-kernel mailing list and Shaokun.
 >
-> I didn't on this one because it touches a lot of files. Though on
-> second thought, they are all across the tree, so I might as well apply
-> them.
+> Hi Marc,
+>
+> On 2019/11/11 22:04, Marc Zyngier wrote:
+>> On 2019-11-11 14:56, Zhenyu Ye wrote:
+>>> On 2019/11/11 21:27, Will Deacon wrote:
+>>>> On Mon, Nov 11, 2019 at 09:23:55PM +0800, Zhenyu Ye wrote:
+> [...]
+>>>>
+>>>> How does this address my concerns here:
+>>>>
+>>>>
+>>>> 
+>>>> https://lore.kernel.org/linux-arm-kernel/20191031131649.GB27196@willie-the-truck/
+>>>>
+>>>> ?
+>>>>
+>>>> Will
+>>>
+>>> I think your concern is more about the hardware level, and we can 
+>>> do
+>>> nothing about
+>>> this at all. The interconnect/DVM implementation is not exposed to
+>>> software layer
+>>> (and no need), and may should be constrained at hardware level.
+>>
+>> You're missing the point here: the instruction may be implemented
+>> and perfectly working at the CPU level, and yet not carried over
+>> the interconnect. In this situation, other CPUs may not observe
+>> the DVM messages instructing them of such invalidation, and you'll 
+>> end
+>> up with memory corruption.
+>>
+>> So, in the absence of an architectural guarantee that range 
+>> invalidation
+>> is supported and observed by all the DVM agents in the system, there 
+>> must
+>> be a firmware description for it on which the kernel can rely.
+>
+> I'm thinking of how to add a firmware description for it, how about 
+> this:
+>
+> Adding a system level flag to indicate the supporting of TIBi by 
+> range,
+> which means adding a binding name for example "tlbi-by-range" at 
+> system
+> level in the dts file, or a tlbi by range flag in ACPI FADT table, 
+> then
+> we use the ID register per-cpu and the system level flag as
+>
+> if (cpus_have_const_cap(ARM64_HAS_TLBI_BY_RANGE) &&
+> system_level_tlbi_by_range)
+> 	flush_tlb_by_range()
+> else
+> 	flush_tlb_range()
+>
+> And this seems work for heterogeneous system (olny parts of the CPU 
+> support
+> TLBi by range) as well, correct me if anything wrong.
 
-There are still several leftover references to power_domain.txt.
-Krzysztof: Do you plan to convert these, too, or do you expect the
-individual maintainers to handle that?
+It could work, but it needs to come with the strongest guarantees that
+all the DVM agents in the system understand this type of invalidation,
+specially as we move into the SVM territory. It may also need to cope
+with non-compliant agents being hot-plugged, or at least discovered 
+late.
 
-Thanks!
+I also wonder if the ARMv8.4-TTL extension (which I have patches for in
+the nested virt series) requires the same kind of treatment (after all,
+it has an implicit range based on the base granule size and level).
 
-Gr{oetje,eeting}s,
+In any way, this requires careful specification, and I don't think
+we can improvise this on the ML... ;-)
 
-                        Geert
+Thanks,
 
+         M.
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
