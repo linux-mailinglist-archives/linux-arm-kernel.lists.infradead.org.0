@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFCBA10248E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 13:36:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73CC5102491
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 13:37:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=1KvC2fe+l1jPj8I//rLEnv17935E3+bUh1Ork9MHeVE=; b=h6hTSK99F0rKJQH4yZYQwhHl8r
-	KUiXftCASYYE4t0/nBSfIfWKGVrA3bdQdAM+sR5Ex/buWSvs/oeLKEiqFrbFlAHpEihnGpkJtWm6c
-	PmbyrMlm29YJtJ6+u9DowaUXjhq/sr5jwNrqwjQxgpsjMHynOJa9czdnX7ZhkHAlcLeVfGQWkAn6j
-	//Qk4f+jqxB0FUkCAFgkyT0/Go7mp0ov1B4zcOn27Ve6nV5xqQucE5p/NDEtc6n3D5UAhG/QvvaXc
-	DQWSlFSThkjudWwKjhBC5wTmwnAOJfTFe6rrWz2dY342ESljL0PIKwZBXeZ/DGwlk2LxlQS7eCXAv
-	hb424xpQ==;
+	bh=Atklk19y1LDC5bXbrPqnO+FayoAEGtXJNXaRAzZdPSI=; b=j1Flxxi1H61kS6e+kPmc+OL+2h
+	Rp1XG4CVbInlWBzHTuFvHEfrtT1AZG7LDKFlXCd+TfcU8TIrlr4KkhXIa+PARqDN1hE/WAMdfKWbu
+	6njSUk8T/yC07XoupK7rl15mVx5Nt8IIofDIABepTQwS32q9zSfK0EZwTTajw4NVA2UX3Rpyao219
+	Kv3DxHeeSa4Hu8Dpff5lJHoFAokgzfn7U2uo0M8PGIHYH3JQfGxfgrmbzNukmdGSBDgHt0vAf/Kq/
+	Zml4VSvAexo63Hl/59CnzZL8jZkvoH89kR+FYzarEEK6JGnsNw4YQkwE8XV4n5AoE4ldUFo7RJAVO
+	Dv7KlvDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX2kP-0002cm-8B; Tue, 19 Nov 2019 12:36:45 +0000
+	id 1iX2ks-0003BD-01; Tue, 19 Nov 2019 12:37:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX2hW-0007Pz-RL
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 12:33:48 +0000
+ id 1iX2ha-0007YP-LN
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 12:33:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A44630E;
- Tue, 19 Nov 2019 04:33:46 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 065371FB;
+ Tue, 19 Nov 2019 04:33:50 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A0F103F703;
- Tue, 19 Nov 2019 04:33:42 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 89E433F703;
+ Tue, 19 Nov 2019 04:33:46 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 12/14] arm64: kprobe: disable probe of ptrauth instruction
-Date: Tue, 19 Nov 2019 18:02:24 +0530
-Message-Id: <1574166746-27197-13-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v2 13/14] arm64: compile the kernel with ptrauth return
+ address signing
+Date: Tue, 19 Nov 2019 18:02:25 +0530
+Message-Id: <1574166746-27197-14-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
 References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_043346_981857_CA16401F 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20191119_043350_806637_C6604683 
+X-CRM114-Status: GOOD (  17.35  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,76 +76,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch disables the probing of authenticate ptrauth
-instruction which falls under the hint instructions region.
-This is done to disallow probe of instruction which may lead
-to ptrauth faults.
+From: Kristina Martsenko <kristina.martsenko@arm.com>
 
-The corresponding append pac ptrauth instruction is not
-disabled as they are typically the first instruction in the
-function so disabling them will be disabling the function
-probe itself. Also, appending pac do not cause any exception
-in itself.
+Compile all functions with two ptrauth instructions: PACIASP in the
+prologue to sign the return address, and AUTIASP in the epilogue to
+authenticate the return address (from the stack). If authentication
+fails, the return will cause an instruction abort to be taken, followed
+by an oops and killing the task.
 
+This should help protect the kernel against attacks using
+return-oriented programming. As ptrauth protects the return address, it
+can also serve as a replacement for CONFIG_STACKPROTECTOR, although note
+that it does not protect other parts of the stack.
+
+The new instructions are in the HINT encoding space, so on a system
+without ptrauth they execute as NOPs.
+
+CONFIG_ARM64_PTR_AUTH now not only enables ptrauth for userspace and KVM
+guests, but also automatically builds the kernel with ptrauth
+instructions if the compiler supports it. If there is no compiler
+support, we do not warn that the kernel was built without ptrauth
+instructions.
+
+GCC 7 and 8 support the -msign-return-address option, while GCC 9
+deprecates that option and replaces it with -mbranch-protection. Support
+both options.
+
+Reviewed-by: Kees Cook <keescook@chromium.org>
+Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
+[Amit: Cover leaf function, comments]
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
 Change since last version:
- * New patch
+ * Comments for different behaviour while booting secondary cores.
 
- arch/arm64/include/asm/insn.h          | 13 +++++++------
- arch/arm64/kernel/insn.c               |  1 +
- arch/arm64/kernel/probes/decode-insn.c |  2 +-
- 3 files changed, 9 insertions(+), 7 deletions(-)
+ arch/arm64/Kconfig  | 16 +++++++++++++++-
+ arch/arm64/Makefile |  6 ++++++
+ 2 files changed, 21 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/insn.h b/arch/arm64/include/asm/insn.h
-index 39e7780..d055694 100644
---- a/arch/arm64/include/asm/insn.h
-+++ b/arch/arm64/include/asm/insn.h
-@@ -40,12 +40,13 @@ enum aarch64_insn_encoding_class {
- };
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index c1844de..44d13fe 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1427,11 +1427,17 @@ config ARM64_PTR_AUTH
+ 	  and other attacks.
  
- enum aarch64_insn_hint_op {
--	AARCH64_INSN_HINT_NOP	= 0x0 << 5,
--	AARCH64_INSN_HINT_YIELD	= 0x1 << 5,
--	AARCH64_INSN_HINT_WFE	= 0x2 << 5,
--	AARCH64_INSN_HINT_WFI	= 0x3 << 5,
--	AARCH64_INSN_HINT_SEV	= 0x4 << 5,
--	AARCH64_INSN_HINT_SEVL	= 0x5 << 5,
-+	AARCH64_INSN_HINT_NOP		= 0x0 << 5,
-+	AARCH64_INSN_HINT_YIELD		= 0x1 << 5,
-+	AARCH64_INSN_HINT_WFE		= 0x2 << 5,
-+	AARCH64_INSN_HINT_WFI		= 0x3 << 5,
-+	AARCH64_INSN_HINT_SEV		= 0x4 << 5,
-+	AARCH64_INSN_HINT_SEVL		= 0x5 << 5,
-+	AARCH64_INSN_HINT_AUTIASP	= (0x3 << 8) | (0x5 << 5),
- };
+ 	  This option enables these instructions at EL0 (i.e. for userspace).
+-
+ 	  Choosing this option will cause the kernel to initialise secret keys
+ 	  for each process at exec() time, with these keys being
+ 	  context-switched along with the process.
  
- enum aarch64_insn_imm_type {
-diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
-index d801a70..d172386 100644
---- a/arch/arm64/kernel/insn.c
-+++ b/arch/arm64/kernel/insn.c
-@@ -62,6 +62,7 @@ bool __kprobes aarch64_insn_is_nop(u32 insn)
- 	case AARCH64_INSN_HINT_WFI:
- 	case AARCH64_INSN_HINT_SEV:
- 	case AARCH64_INSN_HINT_SEVL:
-+	case AARCH64_INSN_HINT_AUTIASP:
- 		return false;
- 	default:
- 		return true;
-diff --git a/arch/arm64/kernel/probes/decode-insn.c b/arch/arm64/kernel/probes/decode-insn.c
-index b78fac9..a7caf84 100644
---- a/arch/arm64/kernel/probes/decode-insn.c
-+++ b/arch/arm64/kernel/probes/decode-insn.c
-@@ -42,7 +42,7 @@ static bool __kprobes aarch64_insn_is_steppable(u32 insn)
- 			     != AARCH64_INSN_SPCLREG_DAIF;
++	  If the compiler supports the -mbranch-protection or
++	  -msign-return-address flag (e.g. GCC 7 or later), then this option
++	  will also cause the kernel itself to be compiled with return address
++	  protection. In this case, and if the target hardware is known to
++	  support pointer authentication, then CONFIG_STACKPROTECTOR can be
++	  disabled with minimal loss of protection.
++
+ 	  The feature is detected at runtime. If the feature is not present in
+ 	  hardware it will not be advertised to userspace/KVM guest nor will it
+ 	  be enabled. However, KVM guest also require VHE mode and hence
+@@ -1442,6 +1448,14 @@ config ARM64_PTR_AUTH
+ 	  have address auth and the late CPU has then system panic will occur.
+ 	  On such a system, this option should not be selected.
  
- 		/*
--		 * The HINT instruction is is problematic when single-stepping,
-+		 * The HINT instruction is problematic when single-stepping,
- 		 * except for the NOP case.
- 		 */
- 		if (aarch64_insn_is_hint(insn))
++config CC_HAS_BRANCH_PROT_PAC_RET
++	# GCC 9 or later
++	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf)
++
++config CC_HAS_SIGN_RETURN_ADDRESS
++	# GCC 7, 8
++	def_bool $(cc-option,-msign-return-address=all)
++
+ endmenu
+ 
+ config ARM64_SVE
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 2c0238c..031462b 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -72,6 +72,12 @@ stack_protector_prepare: prepare0
+ 					include/generated/asm-offsets.h))
+ endif
+ 
++ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
++pac-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
++pac-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
++KBUILD_CFLAGS += $(pac-flags-y)
++endif
++
+ ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
+ KBUILD_CPPFLAGS	+= -mbig-endian
+ CHECKFLAGS	+= -D__AARCH64EB__
 -- 
 2.7.4
 
