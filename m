@@ -2,62 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38C8110205A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 10:28:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56CBB1020C1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 10:36:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qzGiw9ViirPTrmYT60u5bq7e+AkjoAM4342pEEXKGNg=; b=f6ZbQ0Q+n4PWQe
-	nB4xtnijzsnldN5jlfqmkuJLsGzO05GJm6GlOLGFeKGfzF26+v+2gdjW+8WPmBuCSbKWp0ZM3Yun+
-	WkQOjvdPQC0BHqsR3LMgTijn+kCxaMs2H7FNEuvECewSaabKGJlcKJZzZAnwunMwQNsDeqacsjCmN
-	B6TN5lHAw6Kn02H8Ie33PJ+bu7TaHzvFSV2sL6XEZcw6HvWAGo2/tOv36mW8CeuN3mEbUQgQATGjb
-	4+Z5F2SQcEXf9x/AfM5NBVJoWL8cFjRMSO3IY8jAmEwkwf3aMjQxqE2lZUOOcAhStY0jhVb3HbZjJ
-	wajULlb7A9BDcT5JUw6A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=UKBuIP1wVztlK2zWP3+4grjBEenyKVLnS/JpTqrbRx4=; b=Z3sK3569oaCnMINaNsHOCJHjn
+	b4wGPyHZMIKYnhcHEmi8OvnpxrKVX7lQZEUE33y89fEadUg5EV2XUnzgsBsrugWjnvrgDpCtspXSW
+	BRLpvEbxcJzUh+TqXJvutK0HHshI+RHwo+gVSr7rq0nqxz5v7YeSczppYPNnutrxoa0qgjsNtyn5E
+	EPlnZEKt8n0HzCEbsZtSEJGUCJ66sbxSjE62nQ/zDkoxU9/gZGg18T3+5DHJ5fJ8rWlVr42mtv+fs
+	1b1wOyxknU5QZVdEY1FoclOb58VEHB3mnJJKbF0TKpUUs23P9JZ3JnoJ1ak7j80wkY7vQQz2wh9y+
+	Zsqau3i8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWzoF-0001aq-P6; Tue, 19 Nov 2019 09:28:31 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iWzvM-0004ZJ-Bp; Tue, 19 Nov 2019 09:35:52 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWzo4-0001aL-ON
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 09:28:24 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 33CF620193;
- Tue, 19 Nov 2019 10:28:15 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 1F5FB20415;
- Tue, 19 Nov 2019 10:28:15 +0100 (CET)
-To: GPIO <linux-gpio@vger.kernel.org>, MSM <linux-arm-msm@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Subject: Using a GPIO as an interrupt line
-Message-ID: <f0d383f3-8efa-ae68-62af-68f69cd4143f@free.fr>
-Date: Tue, 19 Nov 2019 10:28:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iWzvA-0004Xv-Sl; Tue, 19 Nov 2019 09:35:45 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id ACA38AED6;
+ Tue, 19 Nov 2019 09:35:38 +0000 (UTC)
+Message-ID: <6c34f6a1ced09da8e9c1df6347299820947adc0c.camel@suse.de>
+Subject: Re: [PATCH v2 2/6] dt-bindings: PCI: Add bindings for brcmstb's
+ PCIe device
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Rob Herring <robh@kernel.org>
+Date: Tue, 19 Nov 2019 10:35:36 +0100
+In-Reply-To: <20191118212312.GA24969@bogus>
+References: <20191112155926.16476-1-nsaenzjulienne@suse.de>
+ <20191112155926.16476-3-nsaenzjulienne@suse.de>
+ <20191118212312.GA24969@bogus>
+User-Agent: Evolution 3.34.1 
 MIME-Version: 1.0
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Tue Nov 19 10:28:15 2019 +0100 (CET)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_012820_935506_16489DAA 
-X-CRM114-Status: UNSURE (   8.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.2 (++)
+X-CRM114-CacheID: sfid-20191119_013541_219465_5E02AD51 
+X-CRM114-Status: GOOD (  24.18  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 2.0 SPOOFED_FREEMAIL       No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,75 +61,260 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, maz@kernel.org, phil@raspberrypi.org,
+ linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ Eric Anholt <eric@anholt.net>, mbrugger@suse.com,
+ bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
+ james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>, andrew.murray@arm.com,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5815021792904872468=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
 
-The board I'm working on provides a TCA9539 I/O expander.
-Or, as the datasheet(*) calls it, a "Low Voltage 16-Bit I2C and
-SMBus Low-Power I/O Expander with Interrupt Output, Reset Pin,
-and Configuration Registers"
-
-(*) http://www.ti.com/lit/ds/symlink/tca9539.pdf
-
-The binding is documented in Documentation/devicetree/bindings/gpio/gpio-pca953x.txt
-
-I have some doubts about the interrupt output, described as:
-
-Optional properties:
- - interrupts: interrupt specifier for the device's interrupt output.
-
-In my board's DT, the I/O expander is described as:
-
-	exp1: gpio@74 {
-		compatible = "ti,tca9539";
-		reg = <0x74>;
-		gpio-controller;
-		#gpio-cells = <2>;
-		reset-gpios = <&tlmm 96 GPIO_ACTIVE_LOW>;
-		pinctrl-names = "default";
-		pinctrl-0 = <&top_exp_rst>;
-		interrupt-parent = <&tlmm>;
-		interrupts = <42 IRQ_TYPE_LEVEL_HIGH>;
-	};
+--===============5815021792904872468==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-HfkeJ3NjhLZryLi7OGNK"
 
 
-("tlmm" is a pinctrl for qualcomm SoCs.)
+--=-HfkeJ3NjhLZryLi7OGNK
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-The problem with this DT node is that nowhere have I specified that
-the interrupt output is itself a GPIO line... I see other drivers
-calling gpiod_to_irq() to handle this kind of setup. I assume this
-function marks the GPIO as "used for interrupt, no longer available
-as software-controlled GPIO"?
+Hi Rob, thanks for the review.
 
-The tlmm node has the following properties:
+On Mon, 2019-11-18 at 15:23 -0600, Rob Herring wrote:
+> On Tue, Nov 12, 2019 at 04:59:21PM +0100, Nicolas Saenz Julienne wrote:
+> > From: Jim Quinlan <james.quinlan@broadcom.com>
+> >=20
+> > The DT bindings description of the brcmstb PCIe device is described.
+> > This node can only be used for now on the Raspberry Pi 4.
+> >=20
+> > Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
+> > Co-developed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> >=20
+> > ---
+> >=20
+> > Changes since v1:
+> >   - Fix commit Subject
+> >   - Remove linux,pci-domain
+> >=20
+> > This was based on Jim's original submission[1], converted to yaml and
+> > adapted to the RPi4 case.
+> >=20
+> > [1] https://patchwork.kernel.org/patch/10605937/
+> >=20
+> >  .../bindings/pci/brcm,stb-pcie.yaml           | 110 ++++++++++++++++++
+> >  1 file changed, 110 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/pci/brcm,stb-pcie=
+.yaml
+> >=20
+> > diff --git a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+> > b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+> > new file mode 100644
+> > index 000000000000..4cbb18821300
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+> > @@ -0,0 +1,110 @@
+> > +# SPDX-License-Identifier: GPL-2.0
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/pci/brcm,stb-pcie.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Brcmstb PCIe Host Controller Device Tree Bindings
+> > +
+> > +maintainers:
+> > +  - Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> > +
+>=20
+> I added a common PCI schema to dt-schema. You can reference it here:
+>=20
+> allOf:
+>   - $ref: /schemas/pci/pci-bus.yaml#
 
-	tlmm: pinctrl@03400000 {
-		compatible = "qcom,msm8998-pinctrl";
-		reg = <0x03400000 0xc00000>;
-		interrupts = <0 208 0>;
-		gpio-controller;
-		#gpio-cells = <2>;
-		interrupt-controller;
-		#interrupt-cells = <2>;
+Thanks!
 
-Does gpio-controller and/or interrupt-controller mean something
-is automagically happening when exp1's interrupts = <42 IRQ_TYPE_LEVEL_HIGH>
-prop is being processed?
+> > +properties:
+> > +  compatible:
+> > +    const: brcm,bcm2711-pcie # The Raspberry Pi 4
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  interrupts:
+> > +    minItems: 1
+> > +    maxItems: 2
+> > +    items:
+> > +      - description: PCIe host controller
+> > +      - description: builtin MSI controller
+> > +
+> > +  interrupt-names:
+> > +    minItems: 1
+> > +    maxItems: 2
+> > +    items:
+> > +      - const: pcie
+> > +      - const: msi
+> > +
+> > +  "#address-cells":
+> > +    const: 3
+> > +
+> > +  "#size-cells":
+> > +    const: 2
+> > +
+> > +  "#interrupt-cells":
+> > +    const: 1
+> > +
+> > +  interrupt-map-mask: true
+> > +
+> > +  interrupt-map: true
+>=20
+> Drop all these as the pci-bus.yaml will cover them.
 
-Or maybe I just have no idea what gpiod_to_irq() is used for?
+OK
 
-I'd appreciate any help clearing my confusion.
+> > +
+> > +  ranges: true
+>=20
+> Do you know many entries, if not, you can drop it too?
 
-Regards.
+As this is only aimed at the RPi4's controller we know. Only one for now, s=
+ame
+for dma-ranges.
 
+> > +
+> > +  dma-ranges: true
+>=20
+> Do you know many entries, if not, you can drop it too?
+>=20
+> > +
+> > +  clocks:
+> > +    maxItems: 1
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: sw_pcie
+> > +
+> > +  msi-controller:
+> > +    description: Identifies the node as an MSI controller.
+> > +    type: boolean
+> > +
+> > +  msi-parent:
+> > +    description: MSI controller the device is capable of using.
+> > +    $ref: /schemas/types.yaml#/definitions/phandle
+>=20
+> Assume these 2 have a type defined.
+
+Ok
+
+> > +
+> > +  brcm,enable-ssc:
+> > +    description: Indicates usage of spread-spectrum clocking.
+> > +    type: boolean
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - "#address-cells"
+> > +  - "#size-cells"
+> > +  - "#interrupt-cells"
+> > +  - interrupt-map-mask
+> > +  - interrupt-map
+> > +  - ranges
+> > +  - dma-ranges
+>=20
+> You can drop ranges, #address-cells and #size-cells as they are required=
+=20
+> in pci-bus.yaml.
+>=20
+> Shouldn't interrupts, interrupt-names, and msi-controller all be=20
+> required?
+
+Agree, I've have doubts with msi-controller, but I guess the HW is still a
+msi-controller regardless of whether you use it so it reasonable to require=
+ it.
+
+> > +
+> > +additionalProperties: false
+>=20
+> This won't work having the commmon binding, but=20
+> 'unevaluatedProperties: false' will (eventually when json-schema draft8=
+=20
+> is supported).=20
+
+I'll change it.
+
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/interrupt-controller/irq.h>
+> > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > +
+> > +    scb {
+> > +            #address-cells =3D <2>;
+> > +            #size-cells =3D <1>;
+> > +            pcie0: pcie@7d500000 {
+> > +                    compatible =3D "brcm,bcm2711-pcie";
+> > +                    reg =3D <0x0 0x7d500000 0x9310>;
+> > +                    #address-cells =3D <3>;
+> > +                    #size-cells =3D <2>;
+> > +                    #interrupt-cells =3D <1>;
+> > +                    interrupts =3D <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>,
+> > +                                 <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
+> > +                    interrupt-names =3D "pcie", "msi";
+> > +                    interrupt-map-mask =3D <0x0 0x0 0x0 0x7>;
+> > +                    interrupt-map =3D <0 0 0 1 &gicv2 GIC_SPI 143
+> > IRQ_TYPE_LEVEL_HIGH
+> > +                                     0 0 0 2 &gicv2 GIC_SPI 144
+> > IRQ_TYPE_LEVEL_HIGH
+> > +                                     0 0 0 3 &gicv2 GIC_SPI 145
+> > IRQ_TYPE_LEVEL_HIGH
+> > +                                     0 0 0 4 &gicv2 GIC_SPI 146
+> > IRQ_TYPE_LEVEL_HIGH>;
+>=20
+> Bracket each entry. The schema is making this stricter.
+
+Noted.
+
+Regards,
+Nicolas
+
+
+--=-HfkeJ3NjhLZryLi7OGNK
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3Tt2gACgkQlfZmHno8
+x/50EQgAmflpS28ePnEFFCis1DjTQmqx6Z2FULtBjfe+6Xvf7jlf1mGpi3PICER8
+6BliLBP0OHeUYiwTGbYKRyaiFP4YsiCnLtzCcI5Dq994a/1oE2/MiLWUzlCX8uFk
+DYgnneZq/kY1qNBOSLFWr9hofr2gUjG5FYsJK93hbzWNCV7xiMccDNtVRPT4TG3h
+17rpSNC8tGbwVf2F+7XNWJXu8cAQM0toRozYMaiQ8kaTWxJQisdDdQm4YQaaG8jP
+0qmyi0DIVIt8rzNPwvntvXcA90VmHg4ZOJxuao8q5sehD7FeHjy+nBFpt4i13dy0
+bGb/tpgkotPmfLtoAgMlE0wivTAmmQ==
+=AyEr
+-----END PGP SIGNATURE-----
+
+--=-HfkeJ3NjhLZryLi7OGNK--
+
+
+
+--===============5815021792904872468==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5815021792904872468==--
+
+
