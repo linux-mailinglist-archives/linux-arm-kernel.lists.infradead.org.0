@@ -2,54 +2,169 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 369FF1022AF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 12:13:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DA541022B3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 12:15:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4qO4Es7oe/TIBoFeU2+CNUFYISLMqqQAHlXo0eJzy3o=; b=TVxXHpUl9vquT+
-	32CkhJDjs85BUEkwhLvGkQ7glMEyPFe3/lnlFIXN6vR/Zq8JAa9zG1Bemau6TSFbubVJyHZSzkqdw
-	zovpA1mYA9WfbtK95AmOzP4hJLZIWVobpKVHCV2UYGlrPokKYFDKQVMmfEOMuPxgbiAGCVP3hAfI6
-	5jXXIBguzgSQVtqCQ+QFJrRudF3AwJPOuqJJWWn+QZ2M92akIu5uT0/KBQQoiVu+dXJiGUDBeKPSV
-	VKucCycl/Zfg5KqjVxShr4ni09tlFTvzDjTAUuQ6Jke9r23YUmYvdxABHfxrg0pSEzm9BfixHGzzY
-	s7iX/aqOLVwyOcXogjJg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=awhIkh7D1PZuEMAoOrVvjpGzybuoxlodOQvdeba7q9w=; b=Uf0zwgVM2QOAeu
+	Bt5ESzp9L7tXabWj+ImZy0g6fZAa5njWko0eVOf3Fn2FYgTxGSVSVV7whWdGmrscLQZHpCI0jnmau
+	ZXFKn/5cPj9G86vfcO715yDm9joIqOee5y42QOOx/rW+Yrn1DJye31JzgntvTDu+piMKqQyxi1xtA
+	Jwe9KpWlY3ajDjd5J2oTCaBsNvvVkH7wCR89B9/LHSC2GYVBuPe2eMpki7tCzzg5XRMpSXnKPel/U
+	SvWIVeKGO+v3z6QLQL+GBhaLpaxrBYp7djQgXbgHmxDrSaTsbUm2AGiN4AftyIG8wvBInitIxcaU2
+	xxfi1YKJx1fGgfT1U9kA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX1Rw-0007bN-GS; Tue, 19 Nov 2019 11:13:36 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX1Rl-0007aM-OW; Tue, 19 Nov 2019 11:13:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D85D51FB;
- Tue, 19 Nov 2019 03:13:23 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4197A3F703;
- Tue, 19 Nov 2019 03:13:23 -0800 (PST)
-Date: Tue, 19 Nov 2019 11:13:21 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v2 1/6] linux/log2.h: Add roundup/rounddown_pow_two64()
- family of functions
-Message-ID: <20191119111320.GP43905@e119886-lin.cambridge.arm.com>
-References: <20191112155926.16476-1-nsaenzjulienne@suse.de>
- <20191112155926.16476-2-nsaenzjulienne@suse.de>
+	id 1iX1Tb-0000j2-6R; Tue, 19 Nov 2019 11:15:19 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iX1TN-0008Bn-CX; Tue, 19 Nov 2019 11:15:06 +0000
+Received: by mail-wm1-x344.google.com with SMTP id q70so2733099wme.1;
+ Tue, 19 Nov 2019 03:15:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=W+Ceih9zdG62UJqcaWlnYe1SFIFfD3EBEBYUF7H1joU=;
+ b=oz5Mo2oQW59ihVfsRmEEoSO34ClHkaVHdbkmCP8IU/P8T+d1Y6tdjm8UHHrGs2pPD6
+ qfK94gdZvHD/RU2Zuodr3iqx1tVHGlqe6OJUG4BFcjCGCE7qyH7rk0sf/cpy5MfU13pA
+ lJ7uOX5xBRYlRatqKIt2MUN1yNjZ82/16oe3N+G8o383jnEaFRPLm9hQx1ZAbg4/z2NJ
+ qctAf6RT0djb0mLOKd0dqqNIGm0Y9Uy0TkZn1MvfhZzl5nKQ6WD3g/sP0zkeUEDmRhWl
+ /6eFugpL4A6WT/y+Bd+kAtEd8WvkTtA1LkaA9H8x+lKpAPcsRQ10sBQ+ivYQsm4oobIC
+ 23/A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=W+Ceih9zdG62UJqcaWlnYe1SFIFfD3EBEBYUF7H1joU=;
+ b=DprVja0oDX5LV+YJyuhImm+DQlf0XqjTiTyB4c06D9B04RwWVYcZjEaelvsX3QALBL
+ CttvlcEDmV2rUqCi7ttNOoicE1c23iLEaAvhP2olA17MnlT5bcSOCIQyXh3+PhQGfMrm
+ uKBk2pZoQafBfTG35Z2KcDlDy6ju+O5cTRb+PL+yNf/t5yDcIKwpzl+PYZ9hNrYO2LFR
+ 1Yux1ha/AI4ldoUOuzpaKJdqiPzbsRDG6cIfaByovRw7dEolIu8ZvKYP9ma9iH7bmGDE
+ p/VkvyB7nUew/hRqBL7pQHqaUV9fQ+9oioild6U+0CDXiiePsfYUVBHxYDPEjeIGC5bu
+ Lkxg==
+X-Gm-Message-State: APjAAAXvrR/0W2ZPyngTdgvRPu+7hACar0niHzBzJnYwpQrL6TP/0P1O
+ aZrBC2Gs5A9XwAuT6sI6xEQ=
+X-Google-Smtp-Source: APXvYqz4caGH442wAsbLN8kKx6Mll8oxdjFVSjPob4+QH1hW7D/tYvGLVjYNkh8N7gwaNxIMp3rMBg==
+X-Received: by 2002:a05:600c:23ce:: with SMTP id
+ p14mr4854229wmb.176.1574162102073; 
+ Tue, 19 Nov 2019 03:15:02 -0800 (PST)
+Received: from ziggy.stardust ([37.223.144.104])
+ by smtp.gmail.com with ESMTPSA id x8sm26484280wrm.7.2019.11.19.03.14.59
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 19 Nov 2019 03:15:00 -0800 (PST)
+Subject: Re: [PATCH v2 3/3] ARM: dts: bcm2711: Enable HWRNG support
+To: Stephen Brennan <stephen@brennan.io>
+References: <20191119061407.69911-1-stephen@brennan.io>
+ <20191119061407.69911-4-stephen@brennan.io>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ r2JwH1CJjrHWeQEI2ucSKsNa8FllDmG/fQ==
+Message-ID: <ab52b007-b6d7-4e97-9436-eb78365e6e99@gmail.com>
+Date: Tue, 19 Nov 2019 12:14:58 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191112155926.16476-2-nsaenzjulienne@suse.de>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <20191119061407.69911-4-stephen@brennan.io>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_031325_886992_F1A61158 
-X-CRM114-Status: GOOD (  24.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191119_031505_434924_9ADB1B78 
+X-CRM114-Status: GOOD (  21.13  )
+X-Spam-Score: 3.4 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (3.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [37.223.144.104 listed in zen.spamhaus.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (matthias.bgg[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,258 +176,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>, Christoph Hellwig <hch@lst.de>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-rdma@vger.kernel.org,
- maz@kernel.org, phil@raspberrypi.org, iommu@lists.linux-foundation.org,
- linux-rockchip@lists.infradead.org, f.fainelli@gmail.com,
- Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
- mbrugger@suse.com, netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- jeremy.linton@arm.com, Tom Joseph <tjoseph@cadence.com>, wahrenst@gmx.net,
- james.quinlan@broadcom.com, Robin Murphy <robin.murphy@arm.com>,
- "David S. Miller" <davem@davemloft.net>, Tariq Toukan <tariqt@mellanox.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Scott Branden <sbranden@broadcom.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matt Mackall <mpm@selenic.com>, linux-kernel@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-crypto@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Ray Jui <rjui@broadcom.com>, linux-arm-kernel@lists.infradead.org,
+ Stefan Wahren <wahrenst@gmx.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 12, 2019 at 04:59:20PM +0100, Nicolas Saenz Julienne wrote:
-> Some users need to make sure their rounding function accepts and returns
-> 64bit long variables regardless of the architecture. Sadly
-> roundup/rounddown_pow_two() takes and returns unsigned longs. Create a
-> new generic 64bit variant of the function and cleanup rougue custom
-> implementations.
+
+
+On 19/11/2019 07:14, Stephen Brennan wrote:
+> BCM2711 features a RNG200 hardware random number generator block, which is
+> different from the BCM283x from which it inherits. Move the rng block from
+> BCM283x into a separate common file, and update the rng declaration of
+> BCM2711.
 > 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+
+I'd prefer to split this in two patches. One moving the node and another one
+adding the new node for bcm2711.
+
+Regards,
+Matthias
+
+> Signed-off-by: Stephen Brennan <stephen@brennan.io>
 > ---
->  drivers/net/ethernet/mellanox/mlx4/en_clock.c |  3 +-
->  drivers/pci/controller/pcie-cadence-ep.c      |  7 +--
->  drivers/pci/controller/pcie-cadence.c         |  7 +--
->  drivers/pci/controller/pcie-rockchip-ep.c     |  9 ++--
-
-Thanks for making this change. See comments inline...
-
->  include/linux/log2.h                          | 52 +++++++++++++++++++
->  kernel/dma/direct.c                           |  3 +-
->  6 files changed, 63 insertions(+), 18 deletions(-)
+>  arch/arm/boot/dts/bcm2711.dtsi        |  6 +++---
+>  arch/arm/boot/dts/bcm2835.dtsi        |  1 +
+>  arch/arm/boot/dts/bcm2836.dtsi        |  1 +
+>  arch/arm/boot/dts/bcm2837.dtsi        |  1 +
+>  arch/arm/boot/dts/bcm283x-common.dtsi | 11 +++++++++++
+>  arch/arm/boot/dts/bcm283x.dtsi        |  6 ------
+>  6 files changed, 17 insertions(+), 9 deletions(-)
+>  create mode 100644 arch/arm/boot/dts/bcm283x-common.dtsi
 > 
-> diff --git a/drivers/net/ethernet/mellanox/mlx4/en_clock.c b/drivers/net/ethernet/mellanox/mlx4/en_clock.c
-> index 024788549c25..027bd72505e2 100644
-> --- a/drivers/net/ethernet/mellanox/mlx4/en_clock.c
-> +++ b/drivers/net/ethernet/mellanox/mlx4/en_clock.c
-> @@ -33,6 +33,7 @@
+> diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
+> index ac83dac2e6ba..4975567e948e 100644
+> --- a/arch/arm/boot/dts/bcm2711.dtsi
+> +++ b/arch/arm/boot/dts/bcm2711.dtsi
+> @@ -92,10 +92,10 @@ pm: watchdog@7e100000 {
+>  		};
 >  
->  #include <linux/mlx4/device.h>
->  #include <linux/clocksource.h>
-> +#include <linux/log2.h>
+>  		rng@7e104000 {
+> +			compatible = "brcm,bcm2711-rng200";
+> +			reg = <0x7e104000 0x28>;
+>  			interrupts = <GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>;
+> -
+> -			/* RNG is incompatible with brcm,bcm2835-rng */
+> -			status = "disabled";
+> +			status = "okay";
+>  		};
 >  
->  #include "mlx4_en.h"
+>  		uart2: serial@7e201400 {
+> diff --git a/arch/arm/boot/dts/bcm2835.dtsi b/arch/arm/boot/dts/bcm2835.dtsi
+> index 53bf4579cc22..f7b2f46e307d 100644
+> --- a/arch/arm/boot/dts/bcm2835.dtsi
+> +++ b/arch/arm/boot/dts/bcm2835.dtsi
+> @@ -1,5 +1,6 @@
+>  // SPDX-License-Identifier: GPL-2.0
+>  #include "bcm283x.dtsi"
+> +#include "bcm283x-common.dtsi"
+>  #include "bcm2835-common.dtsi"
 >  
-> @@ -252,7 +253,7 @@ static u32 freq_to_shift(u16 freq)
->  {
->  	u32 freq_khz = freq * 1000;
->  	u64 max_val_cycles = freq_khz * 1000 * MLX4_EN_WRAP_AROUND_SEC;
-> -	u64 max_val_cycles_rounded = 1ULL << fls64(max_val_cycles - 1);
-> +	u64 max_val_cycles_rounded = roundup_pow_of_two64(max_val_cycles);
->  	/* calculate max possible multiplier in order to fit in 64bit */
->  	u64 max_mul = div64_u64(ULLONG_MAX, max_val_cycles_rounded);
+>  / {
+> diff --git a/arch/arm/boot/dts/bcm2836.dtsi b/arch/arm/boot/dts/bcm2836.dtsi
+> index 82d6c4662ae4..a85374195796 100644
+> --- a/arch/arm/boot/dts/bcm2836.dtsi
+> +++ b/arch/arm/boot/dts/bcm2836.dtsi
+> @@ -1,5 +1,6 @@
+>  // SPDX-License-Identifier: GPL-2.0
+>  #include "bcm283x.dtsi"
+> +#include "bcm283x-common.dtsi"
+>  #include "bcm2835-common.dtsi"
 >  
-> diff --git a/drivers/pci/controller/pcie-cadence-ep.c b/drivers/pci/controller/pcie-cadence-ep.c
-> index def7820cb824..26ff424b16f5 100644
-> --- a/drivers/pci/controller/pcie-cadence-ep.c
-> +++ b/drivers/pci/controller/pcie-cadence-ep.c
-> @@ -10,6 +10,7 @@
->  #include <linux/platform_device.h>
->  #include <linux/pm_runtime.h>
->  #include <linux/sizes.h>
-> +#include <linux/log2.h>
+>  / {
+> diff --git a/arch/arm/boot/dts/bcm2837.dtsi b/arch/arm/boot/dts/bcm2837.dtsi
+> index 9e95fee78e19..045d78ffea08 100644
+> --- a/arch/arm/boot/dts/bcm2837.dtsi
+> +++ b/arch/arm/boot/dts/bcm2837.dtsi
+> @@ -1,4 +1,5 @@
+>  #include "bcm283x.dtsi"
+> +#include "bcm283x-common.dtsi"
+>  #include "bcm2835-common.dtsi"
 >  
->  #include "pcie-cadence.h"
->  
-> @@ -90,11 +91,7 @@ static int cdns_pcie_ep_set_bar(struct pci_epc *epc, u8 fn,
->  
->  	/* BAR size is 2^(aperture + 7) */
->  	sz = max_t(size_t, epf_bar->size, CDNS_PCIE_EP_MIN_APERTURE);
-> -	/*
-> -	 * roundup_pow_of_two() returns an unsigned long, which is not suited
-> -	 * for 64bit values.
-> -	 */
-> -	sz = 1ULL << fls64(sz - 1);
-> +	sz = roundup_pow_of_two64(sz);
->  	aperture = ilog2(sz) - 7; /* 128B -> 0, 256B -> 1, 512B -> 2, ... */
->  
->  	if ((flags & PCI_BASE_ADDRESS_SPACE) == PCI_BASE_ADDRESS_SPACE_IO) {
-> diff --git a/drivers/pci/controller/pcie-cadence.c b/drivers/pci/controller/pcie-cadence.c
-> index cd795f6fc1e2..b2278e6b955c 100644
-> --- a/drivers/pci/controller/pcie-cadence.c
-> +++ b/drivers/pci/controller/pcie-cadence.c
-> @@ -4,6 +4,7 @@
->  // Author: Cyrille Pitchen <cyrille.pitchen@free-electrons.com>
->  
->  #include <linux/kernel.h>
-> +#include <linux/log2.h>
->  
->  #include "pcie-cadence.h"
->  
-> @@ -11,11 +12,7 @@ void cdns_pcie_set_outbound_region(struct cdns_pcie *pcie, u8 fn,
->  				   u32 r, bool is_io,
->  				   u64 cpu_addr, u64 pci_addr, size_t size)
->  {
-> -	/*
-> -	 * roundup_pow_of_two() returns an unsigned long, which is not suited
-> -	 * for 64bit values.
-> -	 */
-> -	u64 sz = 1ULL << fls64(size - 1);
-> +	u64 sz = roundup_pow_of_two64(size);
->  	int nbits = ilog2(sz);
->  	u32 addr0, addr1, desc0, desc1;
->  
-> diff --git a/drivers/pci/controller/pcie-rockchip-ep.c b/drivers/pci/controller/pcie-rockchip-ep.c
-> index d743b0a48988..ed50aaf27784 100644
-> --- a/drivers/pci/controller/pcie-rockchip-ep.c
-> +++ b/drivers/pci/controller/pcie-rockchip-ep.c
-> @@ -16,6 +16,7 @@
->  #include <linux/platform_device.h>
->  #include <linux/pci-epf.h>
->  #include <linux/sizes.h>
-> +#include <linux/log2.h>
->  
->  #include "pcie-rockchip.h"
->  
-> @@ -70,7 +71,7 @@ static void rockchip_pcie_prog_ep_ob_atu(struct rockchip_pcie *rockchip, u8 fn,
->  					 u32 r, u32 type, u64 cpu_addr,
->  					 u64 pci_addr, size_t size)
->  {
-> -	u64 sz = 1ULL << fls64(size - 1);
-> +	u64 sz = roundup_pow_of_two64(size);
->  	int num_pass_bits = ilog2(sz);
->  	u32 addr0, addr1, desc0, desc1;
->  	bool is_nor_msg = (type == AXI_WRAPPER_NOR_MSG);
-> @@ -172,11 +173,7 @@ static int rockchip_pcie_ep_set_bar(struct pci_epc *epc, u8 fn,
->  	/* BAR size is 2^(aperture + 7) */
->  	sz = max_t(size_t, epf_bar->size, MIN_EP_APERTURE);
->  
-> -	/*
-> -	 * roundup_pow_of_two() returns an unsigned long, which is not suited
-> -	 * for 64bit values.
-> -	 */
-> -	sz = 1ULL << fls64(sz - 1);
-> +	sz = roundup_pow_of_two64(sz);
->  	aperture = ilog2(sz) - 7; /* 128B -> 0, 256B -> 1, 512B -> 2, ... */
->  
->  	if ((flags & PCI_BASE_ADDRESS_SPACE) == PCI_BASE_ADDRESS_SPACE_IO) {
-> diff --git a/include/linux/log2.h b/include/linux/log2.h
-> index 83a4a3ca3e8a..db12d92ab6eb 100644
-> --- a/include/linux/log2.h
-> +++ b/include/linux/log2.h
-> @@ -67,6 +67,24 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
->  	return 1UL << (fls_long(n) - 1);
->  }
->  
-> +/**
-> + * __roundup_pow_of_two64() - round 64bit value up to nearest power of two
-> + * @n: value to round up
-> + */
-> +static inline __attribute__((const)) __u64 __roundup_pow_of_two64(__u64 n)
-
-To be consistent with other functions in the same file (__ilog_u64) you may
-want to rename this to __roundup_pow_of_two_u64.
-
-Also do you know why u64 is used in some places and __u64 in others?
-
-> +{
-> +	return 1UL << fls64(n - 1);
-
-Does this need to be (and for the others):
-
-return 1ULL << fls64(n - 1);
-
-Notice that the PCI drivers you convert, all use 1ULL.
-
-Thanks,
-
-Andrew Murray 
-
-
-> +}
+>  / {
+> diff --git a/arch/arm/boot/dts/bcm283x-common.dtsi b/arch/arm/boot/dts/bcm283x-common.dtsi
+> new file mode 100644
+> index 000000000000..3c8834bee390
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/bcm283x-common.dtsi
+> @@ -0,0 +1,11 @@
+> +// SPDX-License-Identifier: GPL-2.0
 > +
-> +/**
-> + * __rounddown_pow_of_two64() - round 64bit value down to nearest power of two
-> + * @n: value to round down
-> + */
-> +static inline __attribute__((const)) __u64 __rounddown_pow_of_two64(__u64 n)
-> +{
-> +	return 1UL << (fls64(n) - 1);
-> +}
-> +
->  /**
->   * const_ilog2 - log base 2 of 32-bit or a 64-bit constant unsigned value
->   * @n: parameter
-> @@ -194,6 +212,40 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
->  	__rounddown_pow_of_two(n)		\
->   )
+> +/ {
+> +	soc {
+> +		rng@7e104000 {
+> +			compatible = "brcm,bcm2835-rng";
+> +			reg = <0x7e104000 0x10>;
+> +			interrupts = <2 29>;
+> +		};
+> +	};
+> +};
+> diff --git a/arch/arm/boot/dts/bcm283x.dtsi b/arch/arm/boot/dts/bcm283x.dtsi
+> index 3caaa57eb6c8..5219339fc27c 100644
+> --- a/arch/arm/boot/dts/bcm283x.dtsi
+> +++ b/arch/arm/boot/dts/bcm283x.dtsi
+> @@ -84,12 +84,6 @@ clocks: cprman@7e101000 {
+>  				<&dsi1 0>, <&dsi1 1>, <&dsi1 2>;
+>  		};
 >  
-> +/**
-> + * roundup_pow_of_two64 - round the given 64bit value up to nearest power of
-> + * two
-> + * @n: parameter
-> + *
-> + * round the given value up to the nearest power of two
-> + * - the result is undefined when n == 0
-> + * - this can be used to initialise global variables from constant data
-> + */
-> +#define roundup_pow_of_two64(n)			\
-> +(						\
-> +	__builtin_constant_p(n) ? (		\
-> +		(n == 1) ? 1 :			\
-> +		(1UL << (ilog2((n) - 1) + 1))	\
-> +				   ) :		\
-> +	__roundup_pow_of_two64(n)		\
-> +)
-> +
-> +/**
-> + * rounddown_pow_of_two64 - round the given 64bit value down to nearest power
-> + * of two
-> + * @n: parameter
-> + *
-> + * round the given value down to the nearest power of two
-> + * - the result is undefined when n == 0
-> + * - this can be used to initialise global variables from constant data
-> + */
-> +#define rounddown_pow_of_two64(n)		\
-> +(						\
-> +	__builtin_constant_p(n) ? (		\
-> +		(1UL << ilog2(n))) :		\
-> +	__rounddown_pow_of_two64(n)		\
-> +)
-> +
->  static inline __attribute_const__
->  int __order_base_2(unsigned long n)
->  {
-> diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-> index b9e1744999d9..a419530abd3e 100644
-> --- a/kernel/dma/direct.c
-> +++ b/kernel/dma/direct.c
-> @@ -15,6 +15,7 @@
->  #include <linux/vmalloc.h>
->  #include <linux/set_memory.h>
->  #include <linux/swiotlb.h>
-> +#include <linux/log2.h>
->  
->  /*
->   * Most architectures use ZONE_DMA for the first 16 Megabytes, but some use it
-> @@ -53,7 +54,7 @@ u64 dma_direct_get_required_mask(struct device *dev)
->  {
->  	u64 max_dma = phys_to_dma_direct(dev, (max_pfn - 1) << PAGE_SHIFT);
->  
-> -	return (1ULL << (fls64(max_dma) - 1)) * 2 - 1;
-> +	return rounddown_pow_of_two64(max_dma) * 2 - 1;
->  }
->  
->  static gfp_t __dma_direct_optimal_gfp_mask(struct device *dev, u64 dma_mask,
-> -- 
-> 2.24.0
+> -		rng@7e104000 {
+> -			compatible = "brcm,bcm2835-rng";
+> -			reg = <0x7e104000 0x10>;
+> -			interrupts = <2 29>;
+> -		};
+> -
+>  		mailbox: mailbox@7e00b880 {
+>  			compatible = "brcm,bcm2835-mbox";
+>  			reg = <0x7e00b880 0x40>;
 > 
 
 _______________________________________________
