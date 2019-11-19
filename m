@@ -2,145 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2841102D7E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 21:24:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6289102DB6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 21:44:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qh8rkR4dyxn9CCOjvn5n/rccRNKX1icc7PvRjmHfHVw=; b=DD/ia9nUNHAszZ
-	w9eLqIHhljduQfjCopG5ae8iXE2XVpDxuwkBljzCDdyvrdTK5yN3ClJCOAUIB4aEy7XQsPo3nKGEo
-	PrDRunadC6m830U8DjwR++1OPk+i73p60ACJdW+3Lf4drITLSmfZbR/AezkdB4wqeSjWd/i7LI5rD
-	biqaslY66f3uQso20FyEKARRDLcKfZg8mUQErQRCDuQA48imvW61+B58gS6uI9L4/eHtpLbFFvRXV
-	ff7Pdb0IgtqJm6Omj8S3ly2CtnW5rF4Nez60gbiEpNMmgf811r2twB4h++UFaJByOUJqiSr/SKRBa
-	4SmrrtY6WQzNhceEHxcQ==;
+	List-Owner; bh=qtjwQgRoZ4Gg/PVHtcvkaHyVjbWfK6JEe0F/p4gkDCA=; b=Xi+T/1d06U9PBJ
+	cInFVTurq/j8MIh8MD2JdXAY1/6PFr/rbz5lR8NBTomiSfqjUI5YvkqG0480veAstSNMkW03+ifQP
+	KKJlg06qIUKi/9wdg96vjg+xHLKr34pEwdY2THDVH+/DXUL8OCppLOSBRVmBS3ajbEQlRpUKKqKvk
+	YPmRvm0opY6QwbYbC/z0dU8CJFGBHI5xx03YuyHHv460l3oAO1moTyqvUyNS3Rg0CjHBaav9p4yQl
+	XxPXo458rfvFDF4j8ln/rkX+/Qd2a3ymIVuQpbjVrZwdWtyR3G+M0cLM7suY0Mc8PTZqZ1rmeSjdq
+	pu4HFciuA16on/a+DMqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXA2W-0004VQ-Hq; Tue, 19 Nov 2019 20:23:56 +0000
-Received: from mx0a-0016f401.pphosted.com ([67.231.148.174]
- helo=mx0b-0016f401.pphosted.com)
+	id 1iXAMC-00045e-0w; Tue, 19 Nov 2019 20:44:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXA2O-0004Uz-Df
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 20:23:49 +0000
-Received: from pps.filterd (m0045849.ppops.net [127.0.0.1])
- by mx0a-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xAJKJmdY002225; Tue, 19 Nov 2019 12:23:39 -0800
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
- h=from : to : cc :
- subject : date : message-id : references : in-reply-to : content-type :
- content-id : content-transfer-encoding : mime-version; s=pfpt0818;
- bh=NMmYMjuVeWbYfyKQWy8blFlkVL6iuw2H/NU/67IIKP4=;
- b=oZtF8Fzt127gcTFlgNx6sPc2YC8XLSpTppV7sQMA7/8edo/BcmCBZbMqta70aOFb2Z0G
- rFn91kF215ofnAGnRZGw4z8nB1bu6hH8o0jS3Gq79FlFGE/4w6jYu/vx1YYetnpzqg9V
- hw4rOC59BnY7JlOIF3ktRGazEkUAzAzpZ/DRxJkhC4vKPpSNeSIV19AIIwGMkkFrJexr
- 7blLbdmh17yd3PrMeN+aiOBWmDmvcOAeHokStowmZERj9mG1sTATCcEFPg/1hbXBm3KO
- vX8xidrqccxMVaypWFWlDxJ6PXK25g5nNyLJs6f6pcxVPtySbxWgfdX+F/Slafx0HfsC ag== 
-Received: from sc-exch01.marvell.com ([199.233.58.181])
- by mx0a-0016f401.pphosted.com with ESMTP id 2wc8423ygp-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Tue, 19 Nov 2019 12:23:39 -0800
-Received: from SC-EXCH04.marvell.com (10.93.176.84) by SC-EXCH01.marvell.com
- (10.93.176.81) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Tue, 19 Nov
- 2019 12:23:38 -0800
-Received: from NAM05-DM3-obe.outbound.protection.outlook.com (104.47.49.54) by
- SC-EXCH04.marvell.com (10.93.176.84) with Microsoft SMTP Server
- (TLS) id
- 15.0.1367.3 via Frontend Transport; Tue, 19 Nov 2019 12:23:38 -0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=h2wm+gB5RwAGBUAtdEUBZ+Tsj20vqDfekvN/xvUNXZvcTO79m4PWlY0YX1OuCeFQpRnoImMZivqo80QP49JknVOSTHm4cjvZYTviLQae1TZrRPDx14iHyv2cEHa1Z8QQKoBPR5uIeQNomG4UbW5+X9H97f21LE20isQdd9bp85Y73KdRWnnUpXlJw0Y6kXwBU6ODOtjGPTxRcKYoHoqhgYxI4ppNGbjRXPjxoLU+9w8U+NEtgCCZVp/ZYsx+2kTafnFDKDXYKuKcTsUcDeaEvY3rsuzH5Y40hDj0P1ddzjtjOjXwTRVw0ZlUJpSjLqjKZSg7OevNJqUErXBYJQNPVA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=NMmYMjuVeWbYfyKQWy8blFlkVL6iuw2H/NU/67IIKP4=;
- b=J2xlRaMDVjyURa+Bm2GogTJn3ZlOzb/LjSIek9ZM8dLpKi0sDrfho00bywHJNnk5/th8OxUJtpx1NJd4jgQhpdj5aMlW1uFZ1VGm1SoLZ2pUq8PKFHcfMhVuEe320eqmVgMHcz292CyMhJf1ZCp5BxfNM0GERJIe3RZZbRZGD1o0lXkTXEYD+nrlxaqcsxvFL1diUHvUVa3tG6OzK9X+eMwyc5pS2HG1Io79CBSS4IPXxnTlzcGnpiS+eyu5qZ37IdP73xBY48i17sONj3fqtouV1Nra/2GqqKJA+5bo4YNQyriV6YAK0Ns4Qo/Pl0NMwEOwpC/7kBtEqgr45Lcpzw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
- dkim=pass header.d=marvell.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=marvell.onmicrosoft.com; s=selector1-marvell-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=NMmYMjuVeWbYfyKQWy8blFlkVL6iuw2H/NU/67IIKP4=;
- b=ByatIm8FmX7ck9/iRBk2wjRBsleWT/nXebL9/f9xgSznb5u9C8KEtim/7aGT0Wc8KiHpIuO5cD+69+qE5/3f3Ew7NKhrM2jHcnOco5EGDdPXW6UtEpK//9nR73nxHJGbbmD654XqpE+LpRigAPsPUpxdH9SAVTbIoWt54U1Tkro=
-Received: from MN2PR18MB3408.namprd18.prod.outlook.com (10.255.237.10) by
- MN2PR18MB3375.namprd18.prod.outlook.com (10.255.236.220) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2451.30; Tue, 19 Nov 2019 20:23:37 +0000
-Received: from MN2PR18MB3408.namprd18.prod.outlook.com
- ([fe80::657c:6c81:859d:106]) by MN2PR18MB3408.namprd18.prod.outlook.com
- ([fe80::657c:6c81:859d:106%7]) with mapi id 15.20.2451.029; Tue, 19 Nov 2019
- 20:23:37 +0000
-From: Robert Richter <rrichter@marvell.com>
-To: Joe Perches <joe@perches.com>
-Subject: Re: [PATCH 2/2] MAINTAINERS: Switch to Marvell addresses
-Thread-Topic: [PATCH 2/2] MAINTAINERS: Switch to Marvell addresses
-Thread-Index: AQHVnxc526FsAUcWSEycL6HUHOvp6g==
-Date: Tue, 19 Nov 2019 20:23:36 +0000
-Message-ID: <20191119202328.cqfzf5a4svn23h5a@rric.localdomain>
-References: <20191119165549.14570-1-rrichter@marvell.com>
- <20191119165549.14570-4-rrichter@marvell.com>
- <64ace55545c028bc39b08370074aafd32e8fc5f5.camel@perches.com>
- <20191119185012.2fekd6f5gbpflpqe@rric.localdomain>
- <cb41a8956be6cf11e9d25c1790eeb8c935b9ab29.camel@perches.com>
-In-Reply-To: <cb41a8956be6cf11e9d25c1790eeb8c935b9ab29.camel@perches.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: HE1PR02CA0092.eurprd02.prod.outlook.com
- (2603:10a6:7:29::21) To MN2PR18MB3408.namprd18.prod.outlook.com
- (2603:10b6:208:165::10)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [31.208.96.227]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: b4eb2d43-421c-4a41-386b-08d76d2e5b86
-x-ms-traffictypediagnostic: MN2PR18MB3375:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MN2PR18MB337546CB5AD6095407FF76FED94C0@MN2PR18MB3375.namprd18.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 022649CC2C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(366004)(136003)(396003)(39860400002)(199004)(189003)(66446008)(71200400001)(8936002)(6436002)(25786009)(229853002)(86362001)(81156014)(71190400001)(8676002)(2906002)(4326008)(6512007)(66066001)(316002)(3846002)(6116002)(54906003)(6246003)(256004)(11346002)(81166006)(476003)(1076003)(446003)(9686003)(64756008)(66556008)(6486002)(486006)(99286004)(66946007)(52116002)(186003)(26005)(6916009)(305945005)(478600001)(7736002)(76176011)(4744005)(5660300002)(102836004)(14454004)(66476007)(53546011)(386003)(6506007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR18MB3375;
- H:MN2PR18MB3408.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: marvell.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: jjtK0xeK0YZx1XcsxKa5xlY0NkEpXGbmQG1yEOOMbR43z3wk9FTU5n2KUno9tEQoFejWE/xdVLzdRPH5S888iohGoxBGYR4NO/pDMIZM5u9kiZxBjDxDXQpWtJvSyRjlvErlwsF7oewGOB8qeBZjUFDkFo0RJRAoI3d+UZrTPu1/SmWtFfbNzZsD1OxThjk6QAP2o4aScvGZEwGcGloP+626lLt7Gu5vo28RUjwIVnME4QaqFQq6EXEmMR8eazuMSpK60C75wacLOf29bOS9W+O6i1OG5CkUu+hWOgJnWIbFHFnOf9EFtV/EJu+ydgPYX6yIUlZYvS8f2ptoVchbS54OdOnLMDZUCMxKA0YPc59ikhISEVf+oswxGIDZ7NZ/krKbVlvqJs332Jlk5OK9KuSxe914qySxnonBpy4DhHwygZryPF+J1v7Y+wiDKC+Q
-Content-ID: <0B9FD714210A1F4D9149F6A6F49D01D9@namprd18.prod.outlook.com>
-MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: b4eb2d43-421c-4a41-386b-08d76d2e5b86
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Nov 2019 20:23:37.0119 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: vhTCoS7QUqAzWvk/m/4L4d6DHIpQOa2oyciewioHyNCwaWKSZevF9QkWoM/WHaXr/reAZiW8Gy70NScMPn7jVw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR18MB3375
-X-OriginatorOrg: marvell.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-11-19_07:2019-11-15,2019-11-19 signatures=0
+ id 1iXAM3-000450-U0
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 20:44:09 +0000
+Received: from akpm3.svl.corp.google.com (unknown [104.133.8.65])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5D13B2068F;
+ Tue, 19 Nov 2019 20:44:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574196246;
+ bh=tYk3NzkyGFMwfIfw621e64JBWLZbc2P157zpqSHKBfU=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=F7dezTirkHNZxF7r6iTVPjtQ2Gbnu/LKU0RXnzga76cLNAMs/2QcxVsC33X8jJNzH
+ oI7UYI/oLaywEAbINKt2ngiHBiK1DoXioL9Ijnjil8D+Sp/npeg+W2IAQV+IJ+AhP6
+ ci4IOmZuWXhLBr5x71GSi1Uw1czpCbFrPEBd3sr8=
+Date: Tue, 19 Nov 2019 12:44:05 -0800
+From: Andrew Morton <akpm@linux-foundation.org>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH v6 04/10] mm/memory_hotplug: Don't access uninitialized
+ memmaps in shrink_zone_span()
+Message-Id: <20191119124405.60a1f92f8e1cffed1afa0442@linux-foundation.org>
+In-Reply-To: <8bbbd4f1-e2c9-b654-ab73-aa4314135f21@redhat.com>
+References: <20191006085646.5768-1-david@redhat.com>
+ <20191006085646.5768-5-david@redhat.com>
+ <5a4573de-bd8a-6cd3-55d0-86d503a236fd@redhat.com>
+ <20191014121719.cb9b9efe51a7e9e985b38075@linux-foundation.org>
+ <8bbbd4f1-e2c9-b654-ab73-aa4314135f21@redhat.com>
+X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_122348_617074_368FC56D 
-X-CRM114-Status: GOOD (  13.40  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191119_124408_008283_AAC922E3 
+X-CRM114-Status: GOOD (  16.52  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.148.174 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -152,45 +76,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Jan Glauber <jglauber@marvell.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "soc@kernel.org" <soc@kernel.org>, arm soc <arm@kernel.org>, George
- Cherian <gcherian@marvell.com>, Will Deacon <will@kernel.org>,
- Sunil Kovvuri Goutham <sgoutham@marvell.com>
+Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
+ linux-sh@vger.kernel.org, "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>,
+ x86@kernel.org, linux-kernel@vger.kernel.org,
+ Alexander Duyck <alexander.duyck@gmail.com>, linux-mm@kvack.org,
+ Dan Williams <dan.j.williams@intel.com>, linuxppc-dev@lists.ozlabs.org,
+ Toshiki Fukasawa <t-fukasawa@vx.jp.nec.com>,
+ linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Joe,
+On Tue, 19 Nov 2019 15:16:22 +0100 David Hildenbrand <david@redhat.com> wrote:
 
-thanks for your review.
-
-On 19.11.19 11:56:53, Joe Perches wrote:
-> Maybe make that change globally in all the files other
-> than MAINTAINERS as well eventually.
+> On 14.10.19 21:17, Andrew Morton wrote:
+> > On Mon, 14 Oct 2019 11:32:13 +0200 David Hildenbrand <david@redhat.com> wrote:
+> > 
+> >>> Fixes: d0dc12e86b31 ("mm/memory_hotplug: optimize memory hotplug")
+> >>
+> >> @Andrew, can you convert that to
+> >>
+> >> Fixes: f1dd2cd13c4b ("mm, memory_hotplug: do not associate hotadded
+> >> memory to zones until online") # visible after d0dc12e86b319
+> >>
+> >> and add
+> >>
+> >> Cc: stable@vger.kernel.org # v4.13+
+> > 
+> > Done, thanks.
+> > 
 > 
-> arch/arm64/mm/numa.c:6: * Author: Ganapatrao Kulkarni <gkulkarni@cavium.com>
-> arch/mips/cavium-octeon/octeon-usb.c:551:MODULE_AUTHOR("David Daney <david.daney@cavium.com>");
-> arch/mips/include/asm/octeon/cvmx-coremask.h:6: * Copyright (c) 2016  Cavium Inc. (support@cavium.com).
+> Just a note that Toshiki reported a BUG (race between delayed
+> initialization of ZONE_DEVICE memmaps without holding the memory
+> hotplug lock and concurrent zone shrinking).
+> 
+> https://lkml.org/lkml/2019/11/14/1040
+> 
+> "Iteration of create and destroy namespace causes the panic as below:
+> 
+> [   41.207694] kernel BUG at mm/page_alloc.c:535!
+> [   41.208109] invalid opcode: 0000 [#1] SMP PTI
+> [   41.208508] CPU: 7 PID: 2766 Comm: ndctl Not tainted 5.4.0-rc4 #6
+> [   41.209064] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.11.0-0-g63451fca13-prebuilt.qemu-project.org 04/01/2014
+> [   41.210175] RIP: 0010:set_pfnblock_flags_mask+0x95/0xf0
+> [   41.210643] Code: 04 41 83 e2 3c 48 8d 04 a8 48 c1 e0 07 48 03 04 dd e0 59 55 bb 48 8b 58 68 48 39 da 73 0e 48 c7 c6 70 ac 11 bb e8 1b b2 fd ff <0f> 0b 48 03 58 78 48 39 da 73 e9 49 01 ca b9 3f 00 00 00 4f 8d 0c
+> [   41.212354] RSP: 0018:ffffac0d41557c80 EFLAGS: 00010246
+> [   41.212821] RAX: 000000000000004a RBX: 0000000000244a00 RCX: 0000000000000000
+> [   41.213459] RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffffbb1197dc
+> [   41.214100] RBP: 000000000000000c R08: 0000000000000439 R09: 0000000000000059
+> [   41.214736] R10: 0000000000000000 R11: ffffac0d41557b08 R12: ffff8be475ea72b0
+> [   41.215376] R13: 000000000000fa00 R14: 0000000000250000 R15: 00000000fffc0bb5
+> [   41.216008] FS:  00007f30862ab600(0000) GS:ffff8be57bc40000(0000) knlGS:0000000000000000
+> [   41.216771] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+> [   41.217299] CR2: 000055e824d0d508 CR3: 0000000231dac000 CR4: 00000000000006e0
+> [   41.217934] Call Trace:
+> [   41.218225]  memmap_init_zone_device+0x165/0x17c
+> [   41.218642]  memremap_pages+0x4c1/0x540
+> [   41.218989]  devm_memremap_pages+0x1d/0x60
+> [   41.219367]  pmem_attach_disk+0x16b/0x600 [nd_pmem]
+> [   41.219804]  ? devm_nsio_enable+0xb8/0xe0
+> [   41.220172]  nvdimm_bus_probe+0x69/0x1c0
+> [   41.220526]  really_probe+0x1c2/0x3e0
+> [   41.220856]  driver_probe_device+0xb4/0x100
+> [   41.221238]  device_driver_attach+0x4f/0x60
+> [   41.221611]  bind_store+0xc9/0x110
+> [   41.221919]  kernfs_fop_write+0x116/0x190
+> [   41.222326]  vfs_write+0xa5/0x1a0
+> [   41.222626]  ksys_write+0x59/0xd0
+> [   41.222927]  do_syscall_64+0x5b/0x180
+> [   41.223264]  entry_SYSCALL_64_after_hwframe+0x44/0xa9
+> [   41.223714] RIP: 0033:0x7f30865d0ed8
+> [   41.224037] Code: 89 02 48 c7 c0 ff ff ff ff eb b3 0f 1f 80 00 00 00 00 f3 0f 1e fa 48 8d 05 45 78 0d 00 8b 00 85 c0 75 17 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 58 c3 0f 1f 80 00 00 00 00 41 54 49 89 d4 55
+> [   41.225920] RSP: 002b:00007fffe5d30a78 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
+> [   41.226608] RAX: ffffffffffffffda RBX: 000055e824d07f40 RCX: 00007f30865d0ed8
+> [   41.227242] RDX: 0000000000000007 RSI: 000055e824d07f40 RDI: 0000000000000004
+> [   41.227870] RBP: 0000000000000007 R08: 0000000000000007 R09: 0000000000000006
+> [   41.228753] R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000004
+> [   41.229419] R13: 00007f30862ab528 R14: 0000000000000001 R15: 000055e824d07f40
+> 
+> While creating a namespace and initializing memmap, if you destroy the namespace
+> and shrink the zone, it will initialize the memmap outside the zone and
+> trigger VM_BUG_ON_PAGE(!zone_spans_pfn(page_zone(page), pfn), page) in
+> set_pfnblock_flags_mask()."
+> 
+> 
+> This BUG is also mitigated by this commit, where we for now stop to
+> shrink the ZONE_DEVICE zone until we can do it in a safe and clean
+> way.
+> 
 
-[...]
+OK, thanks.  I updated the changelog, added Reported-by:Toshiki and
+shall squeeze this fix into 5.4.
 
-This is a bit past the scope of this patch. I will leave that change
-to the driver's maintainers. I also think that authorship does not
-change even if the author's email address changed or vanished later. I
-am not sure on the general handling of MODULE_AUTHOR(), should that
-always contain a valid email address? Seems not the case. I don't
-think somebody actually sends an email to the author, it is more to
-better identify the author.
-
-Thank you,
-
--Robert
 
 _______________________________________________
 linux-arm-kernel mailing list
