@@ -2,97 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41EB9101D72
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 09:30:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B8F9101D7E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 09:31:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vopLzBFCk4stDAuuk6iXIoOch2N21dwjj1SFXxN0JBg=; b=CrGurr1L5xsYEp
-	1V1unFX1apx//odfzNeOwLq8zA5MT6yq8b4qEwGb5BDnsj2yfQY54uGBQgob0xjijPqFLQa9ftMDV
-	m05/PWzFZ5N8V8/qy6eub1BC2YOjz7oB9btq5B64YdEbprlxIIo81SYoJxJTU/p/zD0o4lPgEHaKY
-	XfsoGqa12m/4/RQUpP+uDADfhHT6MSpxQh4z9cMpUamrQ6kD658XwtqIky2jicNrrqnt+iSaDoU2D
-	Mb2FDGMHq0G+5QULCjayliKOVsZXJouTLcILAh4oaiIR1NNaPfjsRr5nGi99vfcvA+qaUjWJit7qT
-	dixXg+lUUCMDrpqFxizA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wJ+MUnuINmd4zQipF0yN69I8NfJFfyVp+0K9xusnHe4=; b=A5JsQXDgA3CgIO
+	Kht1TlRaj8WGrCCA0HEAMhUdUowKp1SjXHCsiKiojJiaofJykYD7106JSZAFbVn2n2/X/gHBCXwvI
+	u7KLDQ2TmkrQieaBhwwJRe8Ll3RzeUwczEmjDZn6Y+E/519sZFQ/Sk2wQmFVXjdEX5pd7d51WnsxC
+	XNxj4iLdOawfD4ORTqteeNaOeydy5AIleqs0rKpgCsJD6d0qeZR53CfhfVlEC3mAFdV3QZP4pxRCs
+	dxbB1dSTcvxt5Bp4YZupwV8pTGtSV25k1ZpVRMLz7UOSwp0OTcRisce2eVFcb3GKX33XaqK+dTZJX
+	LIlmb4aFqqriTF+6ex7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWytl-0002Je-5A; Tue, 19 Nov 2019 08:30:09 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iWyux-0003r7-C6; Tue, 19 Nov 2019 08:31:23 +0000
+Received: from lb2-smtp-cloud7.xs4all.net ([194.109.24.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWytV-0002Hk-Kq
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 08:29:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1574152190;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=H20VJbl/HlqoZLKxB2eEkiVm9bjunStGFexdv/rH5Wg=;
- b=cB1JRMaiNpqzRyApYLbLOEOXljhUlvoNxMFaPyRX/qm8jyBVqK+Vu5olaSEoCDmPd3ThvO
- UcmDrOuDj/G9FUkXb0aTc8tCaDEGRc6/CFSiWz/MhjfXSaA+uH9vQybTPZKB5t7D32yfWC
- Nu6czfI9C+/YYlzUJcQ+PWmUd5oJnG4=
-Received: from mail-lf1-f70.google.com (mail-lf1-f70.google.com
- [209.85.167.70]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-219-_mpqDTcuPXC5OvIsgzqZqA-1; Tue, 19 Nov 2019 03:29:49 -0500
-Received: by mail-lf1-f70.google.com with SMTP id x14so5901109lfq.15
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 Nov 2019 00:29:48 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=LdTt3n+0i729FTDReSuLECgSQ4aS+lT8YABUAIgw7M4=;
- b=M2/TPXLzzne9SudqIoCOxovLNyBDmWe1Ym+hC35eu09UJbIgbF7sMqNdlPhGGxIPbV
- VvrKxJciqLTMQhq3p9ua43tPFGW3J0jy9LOjXUotjoQjCCdy3pO0JxuCfWamUQVma8Je
- sslpoUg+H5/lqBngyjhOjIpwHPOTdCfBJQ+BXJJSjUpS0f6YMlih7ufGITYoaZefb55N
- Y0R1ToBw32rJzYV+WJE5LfqcKpWyuUWW9UjUUfZ8QFLhmriTBmfPDTfsu6PXT6VmMROY
- CesRT4sla3bDuvl2rR9eFUL17oxHDJQ5mjHD76bX5nBjMKn40OxWtT4Dpogxuy4UvtTm
- nbng==
-X-Gm-Message-State: APjAAAXHrYINUDM6YwkgSvfc3XFxesSfl2hXrHM4Gk7feZ0QPYTSQGYL
- KS1R8G/1VXcUYdZih+3+c770iAzXN0vBfyQWxeVMjXO30UFKqsSo/XoLKSpq8nKWIrxgJDwxpEm
- s/syDcI2oBdTz+ZDFzqY3axqaS1niCtkrghEX69h6J97pY4hDOIg=
-X-Received: by 2002:a2e:98c6:: with SMTP id s6mr2467930ljj.235.1574152187819; 
- Tue, 19 Nov 2019 00:29:47 -0800 (PST)
-X-Google-Smtp-Source: APXvYqw2IC2bHi8fy/d2SRNiTEi36NRc3i9RixIH7XOkwEMkhAxGronTJF+riz7NT7kg7+QIn9WK1oeS0ClHOZKD/g0=
-X-Received: by 2002:a2e:98c6:: with SMTP id s6mr2467897ljj.235.1574152187559; 
- Tue, 19 Nov 2019 00:29:47 -0800 (PST)
+ id 1iWyum-0003pQ-Ti; Tue, 19 Nov 2019 08:31:17 +0000
+Received: from [IPv6:2001:983:e9a7:1:9879:d2e2:f0e2:9c7]
+ ([IPv6:2001:983:e9a7:1:9879:d2e2:f0e2:9c7])
+ by smtp-cloud7.xs4all.net with ESMTPA
+ id WyuXiBiMtcs92WyuYixyxi; Tue, 19 Nov 2019 09:31:03 +0100
+Subject: Re: [PATCH v11 00/11] Rockchip ISP Driver
+To: Ezequiel Garcia <ezequiel@collabora.com>,
+ Helen Koike <helen.koike@collabora.com>, linux-rockchip@lists.infradead.org
+References: <20191114051242.14651-1-helen.koike@collabora.com>
+ <996a9b6a-0e45-d627-9263-539c22e5f1c0@xs4all.nl>
+ <7fd4bf99fd6316da8acaf0a27b6845bedbf4b25f.camel@collabora.com>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <eafffc6f-061e-65ab-079b-b2bd613d61cb@xs4all.nl>
+Date: Tue, 19 Nov 2019 09:30:57 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <1573459282-26989-1-git-send-email-bhsharma@redhat.com>
- <20191113063858.GE22427@linaro.org>
- <CACi5LpP54d9DKW63G5W6X4euBjAm2NwkHOiM01dB7g8d60s=4w@mail.gmail.com>
- <20191115015959.GI22427@linaro.org>
- <CAJ2QiJJOSspLKRh+jRB_o0o9nmeAsiFKzxGJ8R0pYPRM4iptmw@mail.gmail.com>
-In-Reply-To: <CAJ2QiJJOSspLKRh+jRB_o0o9nmeAsiFKzxGJ8R0pYPRM4iptmw@mail.gmail.com>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Tue, 19 Nov 2019 13:59:33 +0530
-Message-ID: <CACi5LpO_fvzDiXP9+QLga_B7kozRRnE9ix4Xa=xvNx1Kvci=3Q@mail.gmail.com>
-Subject: Re: [PATCH v4 0/3] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
- for arm64 and MAX_PHYSMEM_BITS for all archs)
-To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-X-MC-Unique: _mpqDTcuPXC5OvIsgzqZqA-1
-X-Mimecast-Spam-Score: 0
+In-Reply-To: <7fd4bf99fd6316da8acaf0a27b6845bedbf4b25f.camel@collabora.com>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfMGsN9TkGwtzRSuVMeonrxJLrUw1XmSkg4IsuhBSRsDFrLC11ivzCFX8aJcfdWeCV5jNkPvVEVJSSeMksMMXQZnuPOLV3vA0z47kH28NIXezbzRMwJVm
+ i0kEQCLAGczqiaGYtSeRJesLq8/NrrPpGhMsD5vDBBc/iagU+JIHt8BmMKjF2tn59ibNsHaMuAnmFWra4a3gUMCdRT/gdrQnHJnrgik0lQofZ0esyk/Nu/DX
+ D65EhczIhRRFxGvaB1eAhJi/v0F6Ozd1KE9URen/4s2vGTWfsgIEnqi5DQRRBJ3pKz0y7XeprGFaVM8esUrwKqcOaItP9rvtsxQLOCB1suLvdupJrx6pZYcd
+ iWWSqkh2ooYO5vpz+kAD70HUg1T9njp9gUjPEB1af8RTf1yux/jSVXu9QBMou3ErrndZ/+b7CCQUyjSvRcI54ZJ1qKKEogk7KHzRN5GuJiW4izKHthrhtquJ
+ lJRTd5LRqspOvFC13to5LvBSzTB/A6dc8kERZs3++ygx9drc3Pfswnzxjv4UFLAzJgD55HoGwrTnTGGiqk/0l76+4P1eGQqy+V5z6BSX/MQz/uqOVmkwIQvh
+ WgyLG9k1iJZt7GaX1QAUCU60ghZsWb2U2SbFm4CfNmutP3mOH2/S5S80JOkq+4SDt7GapP1ysMdumPOfxMrNrOWP3GIS/LD3j0ezNW201zm+k+NTVxtsn0Ya
+ HkMF0ziheb1qenYexxUxz7vlP/y+71YSjuoQNMyW3snuPKVVdh+soPSbqcn6vYv63+ZXtP1L1lQMPl2DcMxoJ49vEp/WW69/QbpDfkwNJBrK6Kl2rOoTW8dY
+ NPEIK9sFKpczRAj9HHUjgeBUW0rX4OPH1vKozIZYCDVG7Zps434Nnr/angm3ZTcstyAS+glPSm0Fhg5fLeXjIzwqwsxsE9veXu/iHB5znhQFN0JBAly+qNUa
+ gx9OZhTsTsatruBMqPo8WnJkJQ+8GIKhvtmPx37mkaMGy+AWBhswC+PNn0A7UhKlvALCrAZCqGTq1XPM00wI+N0yrzK9CsIKHTUokmZ2MZc3b8Kf
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_002953_763132_E37A6C46 
-X-CRM114-Status: GOOD (  20.17  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191119_003113_114154_8C2A1449 
+X-CRM114-Status: GOOD (  16.28  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.81 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,88 +72,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Paul Mackerras <paulus@samba.org>, Will Deacon <will@kernel.org>,
- Ingo Molnar <mingo@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- AKASHI Takahiro <takahiro.akashi@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Boris Petkov <bp@alien8.de>,
- Thomas Gleixner <tglx@linutronix.de>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Steve Capper <steve.capper@arm.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- James Morse <james.morse@arm.com>, Dave Anderson <anderson@redhat.com>,
- linuxppc-dev@lists.ozlabs.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
+ kernel@collabora.com, heiko@sntech.de, jacob-chen@iotwrt.com,
+ gregkh@linuxfoundation.org, jeffy.chen@rock-chips.com, zyc@rock-chips.com,
+ linux-kernel@vger.kernel.org, tfiga@chromium.org, robh+dt@kernel.org,
+ hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
+ sakari.ailus@linux.intel.com, mchehab@kernel.org, zhengsq@rock-chips.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 19, 2019 at 12:03 PM Prabhakar Kushwaha
-<prabhakar.pkin@gmail.com> wrote:
->
-> Hi Akashi,
->
-> On Fri, Nov 15, 2019 at 7:29 AM AKASHI Takahiro
-> <takahiro.akashi@linaro.org> wrote:
-> >
-> > Bhupesh,
-> >
-> > On Fri, Nov 15, 2019 at 01:24:17AM +0530, Bhupesh Sharma wrote:
-> > > Hi Akashi,
-> > >
-> > > On Wed, Nov 13, 2019 at 12:11 PM AKASHI Takahiro
-> > > <takahiro.akashi@linaro.org> wrote:
-> > > >
-> > > > Hi Bhupesh,
-> > > >
-> > > > Do you have a corresponding patch for userspace tools,
-> > > > including crash util and/or makedumpfile?
-> > > > Otherwise, we can't verify that a generated core file is
-> > > > correctly handled.
-> > >
-> > > Sure. I am still working on the crash-utility related changes, but you
-> > > can find the makedumpfile changes I posted a couple of days ago here
-> > > (see [0]) and the github link for the makedumpfile changes can be seen
-> > > via [1].
-> > >
-> > > I will post the crash-util changes shortly as well.
-> > > Thanks for having a look at the same.
-> >
-> > Thank you.
-> > I have tested my kdump patch with a hacked version of crash
-> > where VA_BITS_ACTUAL is calculated from tcr_el1_t1sz in vmcoreinfo.
-> >
->
-> I also did hack to calculate VA_BITS_ACTUAL is calculated from
-> tcr_el1_t1sz in vmcoreinfo. Now i am getting error same as mentioned
-> by you in other thread last month.
-> https://www.mail-archive.com/crash-utility@redhat.com/msg07385.html
->
-> how this error was overcome?
->
-> I am using
->  - crashkernel: https://github.com/crash-utility/crash.git  commit:
-> babd7ae62d4e8fd6f93fd30b88040d9376522aa3
-> and
->  - Linux: git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
-> commit: af42d3466bdc8f39806b26f593604fdc54140bcb
+On 11/18/19 7:52 PM, Ezequiel Garcia wrote:
+> Hi Hans,
+> 
+> Thanks for taking care of this.
+> 
+> On Thu, 2019-11-14 at 09:42 +0100, Hans Verkuil wrote:
+>> On 11/14/19 6:12 AM, Helen Koike wrote:
+>>> Hello,
+>>>
+>>> This series adds the Rockchip Image Signal Processing Unit v1 driver to
+>>> staging.
+>>>
+>>> The main reason to be in staging is that people are already using it from the
+>>> mailing list (including libcamera), and having it in mainline makes the workflow
+>>> easier. Also, it is easier for other people to contribute back (with code
+>>> or testing the driver).
+>>>
+>>> We plan to actively work on this driver to get it our of staging.
+>>>
+>>> This patchset is also available at:
+>>> https://gitlab.collabora.com/koike/linux/tree/rockchip/isp/v11
+>>>
+>>> Libcamera patched to work with this version:
+>>> https://gitlab.collabora.com/koike/libcamera
+>>> (also sent to the mailing list)
+>>>
+>>> The major difference in v11 are:
+>>> - Fixed compiling warnings found with W=1
+>>> - Fixed checkpatch errors
+>>> - Add clock-names values in dt-bindings
+>>
+>> Looking at checkpatch I see a few remaining issues that I believe should be
+>> fixed before merging this:
+>>
+>> CHECK: spinlock_t definition without comment
+>> #575: FILE: drivers/staging/media/rkisp1/isp_stats.h:43:
+>> +       spinlock_t irq_lock;
+>>
+>> CHECK: struct mutex definition without comment
+>> #581: FILE: drivers/staging/media/rkisp1/isp_stats.h:49:
+>> +       struct mutex wq_lock;
+>>
+>> CHECK: spinlock_t definition without comment
+>> #1648: FILE: drivers/staging/media/rkisp1/isp_params.h:25:
+>> +       spinlock_t config_lock;
+>>
+>> CHECK: spinlock_t definition without comment
+>> #2058: FILE: drivers/staging/media/rkisp1/capture.h:145:
+>> +       spinlock_t vbq_lock;
+>>
+> 
+> I'd rather merge this as-is, adding a TODO entry stating
+> we need to revisit locking specifically, because I'd like
+> to take a close look at these spinlocks/mutex,
+> instead of just addding comments for then.
 
-I will post a formal change for crash-utility shortly that fixes the
-same. Right now we are having issues with emails bouncing off
-'crash-utility@redhat.com', so my patches sent to the same are in
-undelivered state at-the-moment.
+Fair enough! Just as long as it is mentioned somewhere.
 
-For easy testing I will share the link to my github tree (off-line)
-[which contains the changes] as well.
+> 
+>> Once this is done together with the Jacob Chen email clarification
+>> it is ready to be merged for v5.6.
+>>
+> 
+> I'll find out more about this.
+
+Thanks!
+
+Remember that we are in the code freeze until v5.5-rc1 is released,
+so you have time to make more adjustments if you want to.
 
 Regards,
-Bhupesh
+
+	Hans
+
+> 
+>> It passes all the sparse/smatch tests, so that's very good.
+>>
+> 
+> Great!
+> 
+> Thanks,
+> Ezequiel
+> 
 
 
 _______________________________________________
