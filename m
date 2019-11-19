@@ -2,78 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52E0C102F94
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 23:53:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3B6D102FA6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 00:01:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=axWXjt+i2ydP4uSH/al0jaqKYZ/TKG/jfD1vknoNUDc=; b=U9MvBGIVVKIM+M
-	Ua8X8IbMOo3A3Qm66ShJGPp9nShWZRv37cSd9V3QwDbywfqsqve+eB53EEsQmmnHFXi3YEuo/uW2A
-	b7e9bzLED562Zs0Oc8lyDghVgAXz2WhV+Q3FVuF41CGUJ2GYlhCUwJi/iEa1i1w6hYOHJWJklqUb7
-	9re35VeeKXWcd6Xwm5HjFZzEptxoUCqpY8gzPcE9I0Rxkf2nR2E7ZgjciG9HgEmmml0S++5jm5wHQ
-	dceu5yK44rS3LainSCqWRF6tjnRoE9U9RCBSWMT+BdritixtwGr67kFYo2J73w3q8a3kCdb6Pzian
-	cQiIraZYZUjQX1DLtuCw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ExfyqttUiEPIt5a5BGIHoJ2Nrd65nIFM5S9pjrMLcUo=; b=mGm42U5+qyVlXS
+	CbcT5ciePsur2HMxXbB25PoSJIYyOqLlh/mWHE9CVoOOBB7/91iNwB8UkjhG09QCdujXuwgHTkMIM
+	NOc3TxY12+d8/ffLNHgQtQpk0sXs6LJyq4zYCQhm7IKa41AsWY6F82wStkbFMqslgkbbQ6CVl+lrf
+	o5cPN8Fb2PxGFmhcNeg7A45+r/Ga04i2PvY4DTJ2WPjWFEMc4QDVeyRGlRCWnCXCiOquaXBEB3uR1
+	hswZP0r+p+20BCfTb0rTLM3igiPGl1HmJNby6fu/HJIZSY1YQOUT4OFWmtshzIS7KtUBvMqYhhg0q
+	S4MIb+nV8RdjwJMWs9JA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXCNJ-0006jD-So; Tue, 19 Nov 2019 22:53:33 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iXCV7-0001f6-A1; Tue, 19 Nov 2019 23:01:37 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXCN7-0006iT-7v
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 22:53:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
- Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:Reply-To:Content-ID
- :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
- Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=0HyaIqYya6CA1uTTflYMH3tQcKHaSfwjbif8Y6O6VL0=; b=jE0yLV83/8kuXt8h0Grf1wN8AX
- qz2MkdtLgK0ABNRC38s45VUMVC1zz1qnbaeGQGTS/wCJahNp9cUaGz0toZxllfZMnFN1Q3k3V/XyI
- ilA/cZqqwS8s8Bs1lmf/+ya97GZsR8faMmNefGSqQJRdXZzq8WIPpXS2rc6YoxbuzukTtZSjgnJhC
- I3M9hSF74EGKUFo5zPFzYorL7DxKff/5CiSx4McqMXzXQrGTbaljum08wh9PduCF1lyIydX99EFuF
- VFkUieYyfITpWrjAZA41E/Pf2hDTGJkf1QyoJUcWR8Bi0IVQHhb54BUthhVvQg3EDWDBT5P/FW2cK
- CUiZsk8A==;
-Received: from e0022681537dd.dyn.armlinux.org.uk
- ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:39670 helo=rmk-PC.armlinux.org.uk)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1iXCMr-0004Ir-CI; Tue, 19 Nov 2019 22:53:05 +0000
-Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1iXCMq-00040q-Bm; Tue, 19 Nov 2019 22:53:04 +0000
-From: Russell King <rmk+kernel@armlinux.org.uk>
-To: Gregory Clement <gregory.clement@bootlin.com>,
- Vladimir Vid <vladimir.vid@sartura.hr>
-Subject: [PATCH] arm64: dts: uDPU: SFP cages support 3W modules
+ id 1iXCUz-0001ei-1Q
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 23:01:30 +0000
+Received: from p5b06da22.dip0.t-ipconnect.de ([91.6.218.34] helo=nanos)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1iXCUo-0005ZH-PJ; Wed, 20 Nov 2019 00:01:18 +0100
+Date: Wed, 20 Nov 2019 00:01:17 +0100 (CET)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Qais Yousef <qais.yousef@arm.com>
+Subject: Re: [PATCH 01/12] arm64: hibernate.c: create a new function to handle
+ cpu_up(sleep_cpu)
+In-Reply-To: <20191119225100.gqiiiwoyt3yntdoj@e107158-lin.cambridge.arm.com>
+Message-ID: <alpine.DEB.2.21.1911192359530.6731@nanos.tec.linutronix.de>
+References: <20191030153837.18107-1-qais.yousef@arm.com>
+ <20191030153837.18107-2-qais.yousef@arm.com>
+ <alpine.DEB.2.21.1911192326120.6731@nanos.tec.linutronix.de>
+ <20191119225100.gqiiiwoyt3yntdoj@e107158-lin.cambridge.arm.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-Content-Disposition: inline
-Message-Id: <E1iXCMq-00040q-Bm@rmk-PC.armlinux.org.uk>
-Date: Tue, 19 Nov 2019 22:53:04 +0000
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_145321_441020_1A5A721D 
-X-CRM114-Status: UNSURE (   7.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191119_150129_222183_E058125E 
+X-CRM114-Status: GOOD (  16.10  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,48 +68,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Jason Cooper <jason@lakedaemon.net>, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Steve Capper <steve.capper@arm.com>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Josh Poimboeuf <jpoimboe@redhat.com>,
+ Pavankumar Kondeti <pkondeti@codeaurora.org>,
+ Zhenzhong Duan <zhenzhong.duan@oracle.com>,
+ Nicholas Piggin <npiggin@gmail.com>, linux-kernel@vger.kernel.org,
+ Richard Fontana <rfontana@redhat.com>, James Morse <james.morse@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jiri Kosina <jkosina@suse.cz>,
+ Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SFP cages are designed to support up to 3W modules, such as G.hn,
-G.fast and MoCA modules. Although there is no way for such modules to
-declare to software that they consume 3W, we document in DT that this
-is the designed power level for these cages.
+On Tue, 19 Nov 2019, Qais Yousef wrote:
+> On 11/19/19 23:31, Thomas Gleixner wrote:
+> > On Wed, 30 Oct 2019, Qais Yousef wrote:
+> > >  
+> > > +int hibernation_bringup_sleep_cpu(unsigned int sleep_cpu)
+> > 
+> > That function name is horrible. Aside of that I really have to ask how you
+> > end up hibernating on an offline CPU?
+> 
+> James Morse can probably explain better.
+> 
+> But AFAIU we could sleep on any CPU, but on the next cold boot that CPU could
+> become offline as a side effect of using maxcpus= for example.
+> 
+> How about bringup_hibernate_cpu() as a name? I could add the above as an
+> explanation of why we need this call too.
+> 
+> It does seem to me that this is a generic problem that we might be able to
+> handle generically, but I'm not sure how.
 
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
----
- arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts | 2 ++
- 1 file changed, 2 insertions(+)
+Don't know about other architectures, but x86 does not have that issue as
+we force hibernation on CPU0 for historical reasons (Broken BIOSes etc.).
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-index 2ac1d9ae1e25..7eb6c1796cef 100644
---- a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-@@ -69,6 +69,7 @@
- 		mod-def0-gpio = <&gpiosb 3 GPIO_ACTIVE_LOW>;
- 		tx-disable-gpio = <&gpiosb 4 GPIO_ACTIVE_HIGH>;
- 		tx-fault-gpio = <&gpiosb 5 GPIO_ACTIVE_HIGH>;
-+		maximum-power-milliwatt = <3000>;
- 	};
- 
- 	sfp_eth1: sfp-eth1 {
-@@ -78,6 +79,7 @@
- 		mod-def0-gpio = <&gpiosb 8 GPIO_ACTIVE_LOW>;
- 		tx-disable-gpio = <&gpiosb 9 GPIO_ACTIVE_HIGH>;
- 		tx-fault-gpio = <&gpiosb 10 GPIO_ACTIVE_HIGH>;
-+		maximum-power-milliwatt = <3000>;
- 	};
- };
- 
--- 
-2.20.1
+Thanks,
 
+	tglx
 
 _______________________________________________
 linux-arm-kernel mailing list
