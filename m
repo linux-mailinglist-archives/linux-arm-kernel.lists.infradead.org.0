@@ -2,94 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 813B6102EDD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 23:10:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F374E102F4C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 23:30:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=l9EIoFF907uF4dBlx5g5ODJ8/H7hJetxZ27RJh3i/Qs=; b=TxfrR6n7Tx+yms
-	G8VmsG2HRvMdH/adF3q5ZcuwyzdKmv2c/VfGG0KGb0QAKB9CcEJ026SDPC7dFHNUycL3Sng93YMd0
-	Wu1i5SVOvm2x+VbXzb6KWaBzDSfJLd2CuBkR5CxqEKBi/9VQOSBixhhZPx+/z6I4+AC9w+rSmKedP
-	Ndy5fAgpIh0KhbnYn1EbyGazuBsOP4X8zZqglDElY1kxqHvK4xYGigfwiHW7YD+Ozy9W5MPDbdNkC
-	ukm2EzV7oCbgTSEaPsA+vW3Yu3g5Gg5A09QXAp+xuhy5VLZ2E2yNgAVgK7QBclNXHrETAwkqkCuaV
-	sE8lsmhmVD38YxT5y40g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jsHVC0ZJWkiaBvt9NxtM9H7VwuD+1NJI7A0zOXf7t6A=; b=aKsSuzKjR/lR0z
+	zTGH5sqmjof2ZUQy4UZ6HbSQklf6qzbhh3OMYpX32JxuWI4N3r5kG/O4U5qN+QE7zRsJSosk2kB4r
+	V2OxsE71YxXsnxIBHOkX8uVRpLAgDrGB9X081ndBNYFpW1aphofXb9IzTHu2rLfSn/laFf6H6hRjM
+	lSmNsFPaVG0mggP9CReURunLOTm0AKKkikm7/0gKY71mwXUHb2bA7f1n9O1GUgvA3d9KcRniGp/aa
+	s4h44KEWXhA0Z+qd1BZDZSF7yFCinh/zVg27UGt29eHq5BWoSao6ZHJcwdVveQnipQs0Tbd4KOdwj
+	NOEGGuTrqNwLQjNF7gzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXBhT-0001hS-Nd; Tue, 19 Nov 2019 22:10:19 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iXC0l-00071N-FU; Tue, 19 Nov 2019 22:30:15 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXBhM-0001gp-85
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 22:10:13 +0000
-Received: by mail-pl1-x641.google.com with SMTP id h13so12703151plr.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 Nov 2019 14:10:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=UdU3qNEOLTbKbi9NxQzz9fevQsI9LjR5PnwQlEv7eyI=;
- b=JC0rFtKe1fs+H4jK9vpJa8T4wkcPAoNeFQje6LwEljmB0Ip91xucB4LCJD73qMBQpY
- aRg/hmIOhHhB/cSbLUark8KKc4JM4qu8V1VD4hPSRMYIkSNodswm+sjCEMdvDHPXB/x8
- /QlKXdOiJb0VX+jTovyIFkbmJh5VVgE0PFrMPy50AnaFMJpkqokCi3Ul6Ml5bNSI1Teh
- 6eWfmI9+BJ+YclDHqskvMQt+HbqsAgi9G7JfT41ERl+OeqkQFlWDqpc5IthrFak/pomV
- aUXM8fq6ns6boTLDKjYkkzvolTGiKRtmjvx/iXAn0V5dPPIj1sC6/LnNcXOu2ZQEBcMn
- yxow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=UdU3qNEOLTbKbi9NxQzz9fevQsI9LjR5PnwQlEv7eyI=;
- b=P3oLpaUxOd4nQT5Bo0jqpdWHQTqCU91X92a11hsa9s1pYz2m7DF0WF0iaAjaUauk8Z
- uOqer6kmp7VW/DWDEM10grhzEzv7Nyj9x6+X2mbTaOC6iYj0LW166SPO3ycIWxRum1Zs
- HINy61Bwxlw/fWCtx2D9opT/kMLPkyK93EOi0MIarPXeU0b47E6ePht5Trox5snUijrU
- C+D95GLjD/O+emOEc7vYAGZ0UR2ji1shJfyCE6SINwEP6XOvsfda8o1d0MloNw9AVMQv
- M0jGeqYfAVe7HQY3uZN/50+QwG95b5Z4KHPlZME8Xul2XZUX9MkkAw1IhanSmeVQ4jYm
- naMA==
-X-Gm-Message-State: APjAAAVx+KgPvyv7NfHW16zvxFGotHevLHrTIqKTO4xGFVsccP4QFKtv
- /ljGM+R6W24+fo+tmuw9dMMAWA==
-X-Google-Smtp-Source: APXvYqzDYm4LzzWHaecTPAkUjtYvVUyNLSKCG2kbysLH0N+N3sIaEjPrCi6Qcaj4sSH/Jcopk6KLVQ==
-X-Received: by 2002:a17:902:4a:: with SMTP id
- 68mr21435548pla.158.1574201410571; 
- Tue, 19 Nov 2019 14:10:10 -0800 (PST)
-Received: from xakep.corp.microsoft.com (c-73-69-118-222.hsd1.nh.comcast.net.
- [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id 193sm29270908pfv.18.2019.11.19.14.10.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 19 Nov 2019 14:10:09 -0800 (PST)
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
- linux-kernel@vger.kernel.org, catalin.marinas@arm.com, will@kernel.org,
- steve.capper@arm.com, linux-arm-kernel@lists.infradead.org,
- marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
- mark.rutland@arm.com, tglx@linutronix.de, gregkh@linuxfoundation.org,
- allison@lohutok.net, info@metux.net, alexios.zavras@intel.com
-Subject: [PATCH] arm64: kernel: memory corruptions due non-disabled PAN
-Date: Tue, 19 Nov 2019 17:10:06 -0500
-Message-Id: <20191119221006.1021520-1-pasha.tatashin@soleen.com>
-X-Mailer: git-send-email 2.24.0
+ id 1iXC0W-0006qI-9O; Tue, 19 Nov 2019 22:30:01 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1iXC0T-0002Ng-JU; Tue, 19 Nov 2019 23:29:57 +0100
+Date: Tue, 19 Nov 2019 22:29:56 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Andreas =?UTF-8?Q?F=C3=A4rber?= <afaerber@suse.de>
+Subject: Re: [PATCH v4 2/8] irqchip: Add Realtek RTD1295 mux driver
+Message-ID: <20191119222956.23665e5d@why>
+In-Reply-To: <e98364c5-a859-7981-8ccf-f8e5b5069379@suse.de>
+References: <20191119021917.15917-1-afaerber@suse.de>
+ <20191119021917.15917-3-afaerber@suse.de>
+ <a34e00cac16899b53d0b6445f0e81f4c@www.loen.fr>
+ <e98364c5-a859-7981-8ccf-f8e5b5069379@suse.de>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: afaerber@suse.de, linux-realtek-soc@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kernelrocks@gmail.com, james.tai@realtek.com, tglx@linutronix.de,
+ jason@lakedaemon.net
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_141012_359807_DEEBD726 
-X-CRM114-Status: GOOD (  10.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191119_143000_471224_694E6ECC 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,101 +69,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: James Tai <james.tai@realtek.com>,
+ Aleix Roca Nonell <kernelrocks@gmail.com>,
+ linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Jason Cooper <jason@lakedaemon.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Userland access functions (__arch_clear_user, __arch_copy_from_user,
-__arch_copy_in_user, __arch_copy_to_user), enable and disable PAN
-for the duration of copy. However, when copy fails for some reason,
-i.e. access violation the code is transferred to fixedup section,
-where we do not disable PAN.
-
-The bug is a security violation as the access to userland is still
-open when it should be disabled, but it also causes memory corruptions
-when software emulated PAN is used: CONFIG_ARM64_SW_TTBR0_PAN=y.
-
-I was able to reproduce memory corruption problem on Broadcom's SoC
-ARMv8-A like this:
-
-Enable software perf-events with PERF_SAMPLE_CALLCHAIN so userland's
-stack is accessed and copied.
-
-The test program performed the following on every CPU and forking many
-processes:
-
-	unsigned long *map = mmap(NULL, PAGE_SIZE, PROT_READ|PROT_WRITE,
-				  MAP_SHARED | MAP_ANONYMOUS, -1, 0);
-	map[0] = getpid();
-	sched_yield();
-	if (map[0] != getpid()) {
-		fprintf(stderr, "Corruption detected!");
-	}
-	munmap(map, PAGE_SIZE);
-
-From time to time I was getting map[0] to contain pid for a different
-process.
-
-Fixes: 338d4f49d6f7114 ("arm64: kernel: Add support for Privileged...")
-
-Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
----
- arch/arm64/lib/clear_user.S     | 1 +
- arch/arm64/lib/copy_from_user.S | 1 +
- arch/arm64/lib/copy_in_user.S   | 1 +
- arch/arm64/lib/copy_to_user.S   | 1 +
- 4 files changed, 4 insertions(+)
-
-diff --git a/arch/arm64/lib/clear_user.S b/arch/arm64/lib/clear_user.S
-index 10415572e82f..322b55664cca 100644
---- a/arch/arm64/lib/clear_user.S
-+++ b/arch/arm64/lib/clear_user.S
-@@ -48,5 +48,6 @@ EXPORT_SYMBOL(__arch_clear_user)
- 	.section .fixup,"ax"
- 	.align	2
- 9:	mov	x0, x2			// return the original size
-+	uaccess_disable_not_uao x2, x3
- 	ret
- 	.previous
-diff --git a/arch/arm64/lib/copy_from_user.S b/arch/arm64/lib/copy_from_user.S
-index 680e74409ff9..8472dc7798b3 100644
---- a/arch/arm64/lib/copy_from_user.S
-+++ b/arch/arm64/lib/copy_from_user.S
-@@ -66,5 +66,6 @@ EXPORT_SYMBOL(__arch_copy_from_user)
- 	.section .fixup,"ax"
- 	.align	2
- 9998:	sub	x0, end, dst			// bytes not copied
-+	uaccess_disable_not_uao x3, x4
- 	ret
- 	.previous
-diff --git a/arch/arm64/lib/copy_in_user.S b/arch/arm64/lib/copy_in_user.S
-index 0bedae3f3792..8e0355c1e318 100644
---- a/arch/arm64/lib/copy_in_user.S
-+++ b/arch/arm64/lib/copy_in_user.S
-@@ -68,5 +68,6 @@ EXPORT_SYMBOL(__arch_copy_in_user)
- 	.section .fixup,"ax"
- 	.align	2
- 9998:	sub	x0, end, dst			// bytes not copied
-+	uaccess_disable_not_uao x3, x4
- 	ret
- 	.previous
-diff --git a/arch/arm64/lib/copy_to_user.S b/arch/arm64/lib/copy_to_user.S
-index 2d88c736e8f2..6085214654dc 100644
---- a/arch/arm64/lib/copy_to_user.S
-+++ b/arch/arm64/lib/copy_to_user.S
-@@ -65,5 +65,6 @@ EXPORT_SYMBOL(__arch_copy_to_user)
- 	.section .fixup,"ax"
- 	.align	2
- 9998:	sub	x0, end, dst			// bytes not copied
-+	uaccess_disable_not_uao x3, x4
- 	ret
- 	.previous
--- 
-2.24.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCAxOSBOb3YgMjAxOSAyMTo1Njo0OCArMDEwMApBbmRyZWFzIEbDpHJiZXIgPGFmYWVy
+YmVyQHN1c2UuZGU+IHdyb3RlOgoKPiBBbSAxOS4xMS4xOSB1bSAxMzowMSBzY2hyaWViIE1hcmMg
+WnluZ2llcjoKPiA+IE9uIDIwMTktMTEtMTkgMDI6MTksIEFuZHJlYXMgRsOkcmJlciB3cm90ZTog
+IAo+ID4+ICtzdGF0aWMgdm9pZCBydGQxMTk1X211eF9lbmFibGVfaXJxKHN0cnVjdCBpcnFfZGF0
+YSAqZGF0YSkKPiA+PiArewo+ID4+ICvCoMKgwqAgc3RydWN0IHJ0ZDExOTVfaXJxX211eF9kYXRh
+ICptdXhfZGF0YSA9Cj4gPj4gaXJxX2RhdGFfZ2V0X2lycV9jaGlwX2RhdGEoZGF0YSk7Cj4gPj4g
+K8KgwqDCoCB1bnNpZ25lZCBsb25nIGZsYWdzOwo+ID4+ICvCoMKgwqAgdTMyIG1hc2s7Cj4gPj4g
+Kwo+ID4+ICvCoMKgwqAgbWFzayA9IG11eF9kYXRhLT5pbmZvLT5pc3JfdG9faW50X2VuX21hc2tb
+ZGF0YS0+aHdpcnFdOwo+ID4+ICvCoMKgwqAgaWYgKCFtYXNrKQo+ID4+ICvCoMKgwqDCoMKgwqDC
+oCByZXR1cm47ICAKPiA+IAo+ID4gSG93IGNhbiB0aGlzIGhhcHBlbj8gWW91J3ZlIG1hcHBlZCB0
+aGUgaW50ZXJydXB0LCBzbyBpdCBleGlzdHMuCj4gPiBJIGNhbid0IHNlZSBob3cgeW91IGNhbiBk
+ZWNpZGUgdG8gZmFpbCBzdWNoIGVuYWJsZS4gIAo+IAo+IFRoZSBbVU1TS19dSVNSIGJpdHMgYW5k
+IHRoZSBTQ1BVX0lOVF9FTiBiaXRzIGFyZSBub3QgKGFsbCkgdGhlIHNhbWUuCj4gCj4gTXkgLi4u
+X2lzcl90b19zY3B1X2ludF9lbltdIGFycmF5cyBoYXZlIDMyIGVudHJpZXMgZm9yIE8oMSkgbG9v
+a3VwLCBidXQKPiBhcmUgc3BhcnNlbHkgcG9wdWxhdGVkLiBTbyB0aGVyZSBhcmUgY2lyY3Vtc3Rh
+bmNlcyBzdWNoIGFzIFdET0dfTk1JIGFzCj4gd2VsbCBhcyByZXNlcnZlZCBiaXRzIHRoYXQgd2Ug
+Y2Fubm90IGVuYWJsZS4KCkJ1dCB0aGUgeW91IHNob3VsZCBoYXZlIGZhaWxlZCB0aGUgbWFwLiBU
+aGUgbW9tZW50IHlvdSBhbGxvdyB0aGUKbWFwcGluZyB0byBvY2N1ciwgeW91IGhhdmUgYWNjZXB0
+ZWQgdGhlIGNvbnRyYWN0IHRoYXQgdGhpcyBpbnRlcnJ1cHQgaXMKdXNhYmxlLgoKPiBUaGlzIGNo
+ZWNrIHNob3VsZCBiZQo+IGlkZW50aWNhbCB0byB2MzsgdGhlIGVxdWl2YWxlbnQgbWFzayBjaGVj
+ayBpbnNpZGUgdGhlIGludGVycnVwdCBoYW5kbGVyCj4gd2FzIGV4dGVuZGVkIHdpdGggIm1hc2sg
+JiYiIHRvIGRvIHRoZSBzYW1lIGluIHRoaXMgdjQuCgpTcHVyaW91cyBpbnRlcnJ1cHRzIGFyZSBh
+IGRpZmZlcmVudCBtYXR0ZXIuIFdoYXQgSSdtIG9iamVjdGluZyB0byBoZXJlCmlzIGEgc2ltcGxl
+IHF1ZXN0aW9uIG9mIGxvZ2ljLCB3aGV0aGVyIG9yIG5vdCB5b3UgYXJlIGFsbG93ZWQgdG8gZmFp
+bAplbmFibGluZyBhbiBpbnRlcnJ1cHQgdGhhdCB5b3UndmUgb3RoZXJ3aXNlIGFsbG93ZWQgdG8g
+YmUgcG9wdWxhdGVkLgogCglNLgotLSAKSmF6eiBpcyBub3QgZGVhZC4gSXQganVzdCBzbWVsbHMg
+ZnVubnkuLi4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
+cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
+bnV4LWFybS1rZXJuZWwK
