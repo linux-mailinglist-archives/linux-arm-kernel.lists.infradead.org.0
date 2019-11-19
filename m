@@ -2,53 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DC5610291E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 17:16:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15860102952
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 17:25:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ldVvmw57Dx4cSLHPenyO+to5xjpO5Appp97TadLverU=; b=YKQEKxk6iGNlTb1VVr4yZ9JWh
-	hzEnMZ08K0DJ0j9LekPfCsP80makqPvB/pdKnrw6UcuOGG0IdiyUIzP4lAqLASS6j8SAQU/3TsKS5
-	d0IkQv2p1PPXE03J94xQ9j3U++6vNkCS4oOcx87JVERt89Q2oeWcmt1WwACSAgfViC2rOHvcUUTQs
-	MELBHf4rdX57PAmcy1d54/jCB3QMjqZ+DLG67tzIf5hn8ZEsAcsdbowsnBCk3u6nmSar8Vd9Q/gJj
-	6ypkijivr0KJ7unDXaATcmeGCR9AhmDmPxk/+EcoKjW0lXphOkoC7Vidc/l5yhsRFMv0f3RzwPuok
-	sI+ocoqbg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7BPTZ5z69OGR2Jf0Lp6W95Y9vFSYi+Vkaw9LQek8pUE=; b=ePj8o50VdgzVIC
+	l+ep2g8gRu0XxvaPxujtuNQk9VpQd4V09mdAxEwAeyoP8GJ0ua0A30UNMk2zqA6Se3p+lhLPPcGfN
+	UYWqqjzOjYrejXxpKRmGT1t5GjMl7qPuGelFZZvKJwhZUE51Qma6iRS9EmaR6T28h1EhIFFjkFzPQ
+	sYIaUWYCIedbn4/HCIH6qH1XB/oz7pOtQtCNefUVB87qxLie3oakJHCj9/NVuOEORnOpbdSRG39Y/
+	yLqKPzSGXaFzTWQB75uG1pH3cxtnZ+zXsgAKxCIpQcn9H4B58NffuQJ428zRvL8JQ4VuIufq7brHV
+	OMqNFj0eCrr2yigrx6nA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX6Az-0002FN-NS; Tue, 19 Nov 2019 16:16:25 +0000
+	id 1iX6Jb-0005h1-VY; Tue, 19 Nov 2019 16:25:20 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX6An-0002Er-1t
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 16:16:14 +0000
+ id 1iX6JR-0005Fv-Jo; Tue, 19 Nov 2019 16:25:13 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 674B131B;
- Tue, 19 Nov 2019 08:16:10 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A28AD3F6C4;
- Tue, 19 Nov 2019 08:16:08 -0800 (PST)
-Subject: Re: [PATCH 1/3] dma-direct: unify the dma_capable definitions
-To: Marek Szyprowski <m.szyprowski@samsung.com>,
- Krzysztof Kozlowski <krzk@kernel.org>
-References: <20191113073539.9660-1-hch@lst.de>
- <CGME20191113073648epcas3p214f97ad5937559bebbc937e507fa54d9@epcas3p2.samsung.com>
- <20191113073539.9660-2-hch@lst.de>
- <1c227c91-512c-e871-0e03-a27b2c0435d7@samsung.com>
- <CAJKOXPdM1+x_4PQ1AfoPY6GuV0e9bk3hv_1EfEdHcLjMwwYxgw@mail.gmail.com>
- <a3e2d65b-7270-9555-a251-d7ed0c4fb85c@samsung.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <dd7f90e8-76cb-259f-cb48-2aac7bffb404@arm.com>
-Date: Tue, 19 Nov 2019 16:16:03 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D8C9831B;
+ Tue, 19 Nov 2019 08:25:06 -0800 (PST)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 12FD33F6C4;
+ Tue, 19 Nov 2019 08:25:05 -0800 (PST)
+Date: Tue, 19 Nov 2019 16:25:04 +0000
+From: Andrew Murray <andrew.murray@arm.com>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [PATCH v2 4/6] PCI: brcmstb: add Broadcom STB PCIe host
+ controller driver
+Message-ID: <20191119162502.GS43905@e119886-lin.cambridge.arm.com>
+References: <20191112155926.16476-1-nsaenzjulienne@suse.de>
+ <20191112155926.16476-5-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
-In-Reply-To: <a3e2d65b-7270-9555-a251-d7ed0c4fb85c@samsung.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20191112155926.16476-5-nsaenzjulienne@suse.de>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_081613_183106_47A7B41D 
-X-CRM114-Status: GOOD (  25.94  )
+X-CRM114-CacheID: sfid-20191119_082509_754154_3C674F8C 
+X-CRM114-Status: GOOD (  32.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,140 +61,1035 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Samsung SOC <linux-samsung-soc@vger.kernel.org>,
- linux-mips@vger.kernel.org, iommu@lists.linux-foundation.org,
- Russell King <linux@armlinux.org.uk>, Vinod Koul <vkoul@kernel.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Robin Gong <yibin.gong@nxp.com>, linuxppc-dev@lists.ozlabs.org,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Florian Fainelli <f.fainelli@gmail.com>, mbrugger@suse.com, maz@kernel.org,
+ phil@raspberrypi.org, linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ Eric Anholt <eric@anholt.net>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
+ james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTkvMTEvMjAxOSAxMDoyNiBhbSwgTWFyZWsgU3p5cHJvd3NraSB3cm90ZToKPiBIaSBLcnp5
-c3p0b2YsCj4gCj4gT24gMTkuMTEuMjAxOSAxMDo0NCwgS3J6eXN6dG9mIEtvemxvd3NraSB3cm90
-ZToKPj4gT24gVHVlLCAxOSBOb3YgMjAxOSBhdCAxNzoyNywgTWFyZWsgU3p5cHJvd3NraSA8bS5z
-enlwcm93c2tpQHNhbXN1bmcuY29tPiB3cm90ZToKPj4+IEhpIENocmlzdG9waCwKPj4+Cj4+PiBP
-biAxMy4xMS4yMDE5IDA4OjM1LCBDaHJpc3RvcGggSGVsbHdpZyB3cm90ZToKPj4+PiBDdXJyZW50
-bHkgZWFjaCBhcmNoaXRlY3R1cmVzIHRoYXQgd2FudHMgdG8gb3ZlcnJpZGUgZG1hX3RvX3BoeXMg
-YW5kCj4+Pj4gcGh5c190b19kbWEgYWxzbyBoYXMgdG8gcHJvdmlkZSBkbWFfY2FwYWJsZS4gIEJ1
-dCB0aGVyZSBpc24ndCByZWFsbHkKPj4+PiBhbnkgZ29vZCByZWFzb24gZm9yIHRoYXQuICBwb3dl
-cnBjIGFuZCBtaXBzIGp1c3QgaGF2ZSBjb3BpZXMgb2YgdGhlCj4+Pj4gZ2VuZXJpYyBvbmUgbWlu
-dXMgdGhlIGxhdGVzdHMgZml4LCBhbmQgdGhlIGFybSBvbmUgd2FzIHRoZSBpbnNwaXJhdGlvbgo+
-Pj4+IGZvciBzYWlkIGZpeCwgYnV0IG1pc3NlcyB0aGUgYnVzX2RtYV9tYXNrIGhhbmRsaW5nLgo+
-Pj4+IE1ha2UgYWxsIGFyY2hpdGVjdHVyZXMgdXNlIHRoZSBnZW5lcmljIHZlcnNpb24gaW5zdGVh
-ZC4KPj4+Pgo+Pj4+IFNpZ25lZC1vZmYtYnk6IENocmlzdG9waCBIZWxsd2lnIDxoY2hAbHN0LmRl
-Pgo+Pj4gVGhpcyBwYXRjaCBicmVha3MgRE1BZW5naW5lIFBMMzMwIGRyaXZlciBvbiBTYW1zdW5n
-IEV4eW5vcyBTb0NzOgo+Pgo+PiBUaGFua3MgTWFyZWsgZm9yIGJpc2VjdGluZyBpdC4gSSB3b25k
-ZXIgd2hldGhlciBpdCBpcyBhbHNvIHRoZSBjYXVzZQo+PiBmb3IgYm9vdCBmYWlsdXJlcyBJIHNl
-ZSBvbiBOWFAgVnlicmlkIFZGNTAgU29DIChOWFAvRnJlZXNjYWxlCj4+IGZzbC1lZG1hKSBzaW5j
-ZSBmZXcgZGF5czoKPj4KPj4gWyAyLjg1MzQyOF0gZnNsLWVkbWEgNDAwMTgwMDAuZG1hLWNvbnRy
-b2xsZXI6IG92ZXJmbG93IDB4NDAwMjcwMDcrMSBvZgo+PiBETUEgbWFzayBmZmZmZmZmZiBidXMg
-bWFzayAwCj4+IFsgMi44NjI1NjZdIC0tLS0tLS0tLS0tLVsgY3V0IGhlcmUgXS0tLS0tLS0tLS0t
-LQo+PiBbIDIuODY3MjczXSBXQVJOSU5HOiBDUFU6IDAgUElEOiAxIGF0Cj4+IC9ob21lL2J1aWxk
-Ym90L3dvcmtlci9idWlsZGRpcl95b2N0by9idWlsZC9idWlsZC90bXAvd29yay1zaGFyZWQvY29s
-LXZmNTAtcHJvY2VxLW1haW5saW5lLW5leHQva2VybmVsLXNvdXJjZS9rZXJuZWwvZG1hL2RpcmVj
-dC5jOjM1Cj4+IHJlcG9ydF9hZGRyKzB4YzAvMHhmYwo+PiBbIDIuODg0MzgwXSBNb2R1bGVzIGxp
-bmtlZCBpbjoKPj4gWyAyLjg4NzQ4Nl0gQ1BVOiAwIFBJRDogMSBDb21tOiBzd2FwcGVyIFRhaW50
-ZWQ6IEcgVwo+PiA1LjQuMC1yYzctbmV4dC0yMDE5MTExOC1nNTE5ZWFkOGY2YTMyICMxCj4+IFsg
-Mi44OTczNjRdIEhhcmR3YXJlIG5hbWU6IEZyZWVzY2FsZSBWeWJyaWQgVkY1eHgvVkY2eHggKERl
-dmljZSBUcmVlKQo+PiBbIDIuOTAzODkyXSBbPDgwMTBkZGZjPl0gKHVud2luZF9iYWNrdHJhY2Up
-IGZyb20gWzw4MDEwYjRiOD5dCj4+IChzaG93X3N0YWNrKzB4MTAvMHgxNCkKPj4gWyAyLjkxMTcx
-Ml0gWzw4MDEwYjRiOD5dIChzaG93X3N0YWNrKSBmcm9tIFs8ODAxMWIwOGM+XSAoX193YXJuKzB4
-ZDQvMHhlYykKPj4gWyAyLjkxODY1M10gWzw4MDExYjA4Yz5dIChfX3dhcm4pIGZyb20gWzw4MDEx
-YjE1ND5dCj4+ICh3YXJuX3Nsb3dwYXRoX2ZtdCsweGIwLzB4YjgpCj4+IFsgMi45MjYyMThdIFs8
-ODAxMWIxNTQ+XSAod2Fybl9zbG93cGF0aF9mbXQpIGZyb20gWzw4MDE1NWY3Yz5dCj4+IChyZXBv
-cnRfYWRkcisweGMwLzB4ZmMpCj4+IFsgMi45MzQyMjFdIFs8ODAxNTVmN2M+XSAocmVwb3J0X2Fk
-ZHIpIGZyb20gWzw4MDE1NjFmMD5dCj4+IChkbWFfZGlyZWN0X21hcF9yZXNvdXJjZSsweDk4LzB4
-YTQpCj4+IFsgMi45NDI3NDRdIFs8ODAxNTYxZjA+XSAoZG1hX2RpcmVjdF9tYXBfcmVzb3VyY2Up
-IGZyb20gWzw4MDQxZDVkND5dCj4+IChmc2xfZWRtYV9wcmVwX3NsYXZlX2RtYSsweDEyYy8weDE1
-MCkKPj4gWyAyLjk1MjQ3NV0gWzw4MDQxZDVkND5dIChmc2xfZWRtYV9wcmVwX3NsYXZlX2RtYSkg
-ZnJvbSBbPDgwNDFkOGNjPl0KPj4gKGZzbF9lZG1hX3ByZXBfZG1hX2N5Y2xpYysweDMwLzB4MjFj
-KQo+PiBbIDIuOTYyMjEzXSBbPDgwNDFkOGNjPl0gKGZzbF9lZG1hX3ByZXBfZG1hX2N5Y2xpYykg
-ZnJvbSBbPDgwNDUyZTEwPl0KPj4gKGxwdWFydF9yeF9kbWFfc3RhcnR1cCsweDE4OC8weDM2YykK
-Pj4gWyAyLjk3MTg3MV0gWzw4MDQ1MmUxMD5dIChscHVhcnRfcnhfZG1hX3N0YXJ0dXApIGZyb20g
-Wzw4MDQ1MzA1OD5dCj4+IChscHVhcnRfc3RhcnR1cCsweDY0LzB4NzgpCj4+IFsgMi45ODA0Nzdd
-IFs8ODA0NTMwNTg+XSAobHB1YXJ0X3N0YXJ0dXApIGZyb20gWzw4MDQ0ZTkyND5dCj4+ICh1YXJ0
-X3N0YXJ0dXAucGFydC43KzB4MTEwLzB4MjNjKQo+PiBbIDIuOTg5MDgwXSBbPDgwNDRlOTI0Pl0g
-KHVhcnRfc3RhcnR1cC5wYXJ0LjcpIGZyb20gWzw4MDQ0ZWFhMD5dCj4+ICh1YXJ0X3BvcnRfYWN0
-aXZhdGUrMHg1MC8weDdjKQo+PiBbIDIuOTk3ODU3XSBbPDgwNDRlYWEwPl0gKHVhcnRfcG9ydF9h
-Y3RpdmF0ZSkgZnJvbSBbPDgwNDM4ZGMwPl0KPj4gKHR0eV9wb3J0X29wZW4rMHg3NC8weGMwKQo+
-PiBbIDMuMDA2MTExXSBbPDgwNDM4ZGMwPl0gKHR0eV9wb3J0X29wZW4pIGZyb20gWzw4MDQ0YmUz
-MD5dICh1YXJ0X29wZW4rMHgxOC8weDIwKQo+PiBbIDMuMDEzNTg4XSBbPDgwNDRiZTMwPl0gKHVh
-cnRfb3BlbikgZnJvbSBbPDgwNDMxYjRjPl0gKHR0eV9vcGVuKzB4MTA4LzB4NDI4KQo+PiBbIDMu
-MDIwNzk0XSBbPDgwNDMxYjRjPl0gKHR0eV9vcGVuKSBmcm9tIFs8ODAxZWRiNDg+XSAoY2hyZGV2
-X29wZW4rMHhhYy8weDE2NCkKPj4gWyAzLjAyODA5OF0gWzw4MDFlZGI0OD5dIChjaHJkZXZfb3Bl
-bikgZnJvbSBbPDgwMWU1NWM4Pl0KPj4gKGRvX2RlbnRyeV9vcGVuKzB4MjJjLzB4M2U0KQo+PiBb
-IDMuMDM2MDEwXSBbPDgwMWU1NWM4Pl0gKGRvX2RlbnRyeV9vcGVuKSBmcm9tIFs8ODAxZjcyYTg+
-XQo+PiAocGF0aF9vcGVuYXQrMHg0YTQvMHhmNzgpCj4+IFsgMy4wNDM5MTJdIFs8ODAxZjcyYTg+
-XSAocGF0aF9vcGVuYXQpIGZyb20gWzw4MDFmOGQzND5dCj4+IChkb19maWxwX29wZW4rMHg3MC8w
-eGRjKQo+PiBbIDMuMDUxNDcyXSBbPDgwMWY4ZDM0Pl0gKGRvX2ZpbHBfb3BlbikgZnJvbSBbPDgw
-MWU2OTk4Pl0KPj4gKGRvX3N5c19vcGVuKzB4MTI4LzB4MWY0KQo+PiBbIDMuMDU5MjE3XSBbPDgw
-MWU2OTk4Pl0gKGRvX3N5c19vcGVuKSBmcm9tIFs8ODBhMDBlZTA+XQo+PiAoa2VybmVsX2luaXRf
-ZnJlZWFibGUrMHgxNTAvMHgxYzQpCj4+IFsgMy4wNjc2NThdIFs8ODBhMDBlZTA+XSAoa2VybmVs
-X2luaXRfZnJlZWFibGUpIGZyb20gWzw4MDY4ZTIwOD5dCj4+IChrZXJuZWxfaW5pdCsweDgvMHgx
-MTApCj4+IFsgMy4wNzU5MTddIFs8ODA2OGUyMDg+XSAoa2VybmVsX2luaXQpIGZyb20gWzw4MDEw
-MTBlOD5dCj4+IChyZXRfZnJvbV9mb3JrKzB4MTQvMHgyYykKPj4gWyAzLjA4MzUzOV0gRXhjZXB0
-aW9uIHN0YWNrKDB4ODY4NDNmYjAgdG8gMHg4Njg0M2ZmOCkKPj4gWyAzLjA4ODYzMV0gM2ZhMDog
-MDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAKPj4gWyAzLjA5Njg2Nl0gM2ZjMDog
-MDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAKPj4gMDAwMDAwMDAg
-MDAwMDAwMDAgMDAwMDAwMDAKPj4gWyAzLjEwNTEwM10gM2ZlMDogMDAwMDAwMDAgMDAwMDAwMDAg
-MDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMTMgMDAwMDAwMDAKPj4gWyAzLjExMTc1Ml0gLS0tWyBl
-bmQgdHJhY2UgNmZiNjk5ODAyMjU2YTMwOSBdLS0tCj4+IFsgICAgMy4xMTY0MjNdIGZzbC1scHVh
-cnQgNDAwMjcwMDAuc2VyaWFsOiBDYW5ub3QgcHJlcGFyZSBjeWNsaWMgRE1BCj4+IFsgICAgMy4x
-OTI5NjhdIFZGUzogTW91bnRlZCByb290IChuZnM0IGZpbGVzeXN0ZW0pIG9uIGRldmljZSAwOjEz
-Lgo+PiBbICAgIDMuMjAxNDMyXSBkZXZ0bXBmczogbW91bnRlZAo+PiBbICAgIDMuMjEwOTg1XSBG
-cmVlaW5nIHVudXNlZCBrZXJuZWwgbWVtb3J5OiAxMDI0Swo+PiBbICAgIDMuMjE3ODU0XSBSdW4g
-L3NiaW4vaW5pdCBhcyBpbml0IHByb2Nlc3MKPj4gWyAgICA0LjY0MzM1NV0gc3lzdGVtZFsxXTog
-U3lzdGVtIHRpbWUgYmVmb3JlIGJ1aWxkIHRpbWUsIGFkdmFuY2luZyBjbG9jay4KPj4gWyAgICA0
-Ljc3NDEwNl0gcmFuZG9tOiBzeXN0ZW1kOiB1bmluaXRpYWxpemVkIHVyYW5kb20gcmVhZCAoMTYg
-Ynl0ZXMgcmVhZCkKPj4gWyAgICA0LjgzODM2MV0gc3lzdGVtZFsxXTogc3lzdGVtZCAyMzIgcnVu
-bmluZyBpbiBzeXN0ZW0gbW9kZS4gKC1QQU0KPj4gLUFVRElUIC1TRUxJTlVYIC1JTUEgLUFQUEFS
-TU9SIC1TTUFDSyArU1lTVklOSVQgK1VUTVAgLUxJQkNSWVBUU0VUVVAKPj4gLUdDUllQVCAtR05V
-VExTICtBQ0wgK1haIC1MWjQgLVNFQ0NPTVAgK0JMS0lEIC1FTEZVVElMUyArS01PRCAtSUROKQo+
-PiBbICAgIDQuODU4OTk3XSBzeXN0ZW1kWzFdOiBEZXRlY3RlZCBhcmNoaXRlY3R1cmUgYXJtLgo+
-PiBbICAgIDQuODczNDM4XSBmc2wtbHB1YXJ0IDQwMDI3MDAwLnNlcmlhbDogQ2Fubm90IHByZXBh
-cmUgVFggc2xhdmUgRE1BIQo+PiBbICAgIDQuODgwMTM4XSBmc2wtbHB1YXJ0IDQwMDI3MDAwLnNl
-cmlhbDogQ2Fubm90IHByZXBhcmUgVFggc2xhdmUgRE1BIQo+PiBbICAgIDQuODg2NTg1XSBmc2wt
-bHB1YXJ0IDQwMDI3MDAwLnNlcmlhbDogQ2Fubm90IHByZXBhcmUgVFggc2xhdmUgRE1BIQo+PiBb
-ICAgIDQuODkzMTI0XSBmc2wtbHB1YXJ0IDQwMDI3MDAwLnNlcmlhbDogQ2Fubm90IHByZXBhcmUg
-VFggc2xhdmUgRE1BIQo+PiBbICAgIDQuODk5Njc5XSBmc2wtbHB1YXJ0IDQwMDI3MDAwLnNlcmlh
-bDogQ2Fubm90IHByZXBhcmUgVFggc2xhdmUgRE1BIQo+PiBbICAgIDQuOTA2MTEwXSBmc2wtbHB1
-YXJ0IDQwMDI3MDAwLnNlcmlhbDogQ2Fubm90IHByZXBhcmUgVFggc2xhdmUgRE1BIQo+PiBbICAg
-IDQuOTEyNjE2XSBmc2wtbHB1YXJ0IDQwMDI3MDAwLnNlcmlhbDogQ2Fubm90IHByZXBhcmUgVFgg
-c2xhdmUgRE1BIQo+Pgo+PiBBbHRob3VnaCBtYXliZSB0aGF0J3MganVzdCB0aGUgZnNsLWVkbWEg
-cHJvYmxlbT8KPiAKPiBUaGlzIGlzIHRoZSBzYW1lIGlzc3VlLgo+IAo+IEEgcXVpY2sgbG9va3Mg
-YXQgdGhlIGRtYS1kaXJlY3QgY29kZSByZXZlYWxlZCB0aGF0IHRoZQo+IGRtYV9kaXJlY3RfbWFw
-X3Jlc291cmNlKCkgaXMgYnJva2VuIGFmdGVyIHRoaXMgdW5pZmljYXRpb24sIGJlY2F1c2UgaXQK
-PiBjYWxscyBkbWFfZGlyZWN0X3Bvc3NpYmxlKCksIHdoaWNoIHRoZW4gY2FsbHMgZG1hX2NhcGFi
-bGUoKS4gVGhlIGdlbmVyaWMKPiBkbWFfY2FwYWJsZSgpIGZyb20gaW5jbHVkZS9saW51eC9kbWEt
-ZGlyZWN0LmggY2hlY2tzIGlmIHRoZSBwcm92aWRlZAo+IGFkZHJlc3MgaXMgaW4gUkFNIG1lbW9y
-eSByYW5nZSwgd2hhdCBpbiB0aGUgY2FzZSBvZgo+IGRtYV9kaXJlY3RfbWFwX3Jlc291cmNlKCkg
-aXMgbm90IHRydWUuCj4gCj4gQSBxdWljayBmaXggZm9yIHRoaXMgaXNzdWUgaXMgdG8gaW5saW5l
-IGRtYV9kaXJlY3RfcG9zc2libGUoKSB3aXRoIGEKPiBtb2RpZmllZCBkbWFfY2FwYWJsZSgpIGRp
-cmVjdGx5IHRvIHRoZSBkbWFfZGlyZWN0X21hcF9yZXNvdXJjZSgpCj4gZnVuY3Rpb24gKHdpdGhv
-dXQgdGhlIG1pbl9sb3dfcGZuIGNoZWNrKToKPiAKPiBkaWZmIC0tZ2l0IGEva2VybmVsL2RtYS9k
-aXJlY3QuYyBiL2tlcm5lbC9kbWEvZGlyZWN0LmMKPiBpbmRleCAwNzc4NzZhZTVjNzQuLmI2ZGQ2
-YTBiMzM4YiAxMDA2NDQKPiAtLS0gYS9rZXJuZWwvZG1hL2RpcmVjdC5jCj4gKysrIGIva2VybmVs
-L2RtYS9kaXJlY3QuYwo+IEBAIC00MTEsOCArNDExLDEwIEBAIGRtYV9hZGRyX3QgZG1hX2RpcmVj
-dF9tYXBfcmVzb3VyY2Uoc3RydWN0IGRldmljZQo+ICpkZXYsIHBoeXNfYWRkcl90IHBhZGRyLAo+
-ICAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHNpemVfdCBzaXplLCBlbnVtIGRtYV9k
-YXRhX2RpcmVjdGlvbiBkaXIsIHVuc2lnbmVkIGxvbmcKPiBhdHRycykKPiAgIMKgewo+ICAgwqDC
-oMKgwqDCoMKgwqAgZG1hX2FkZHJfdCBkbWFfYWRkciA9IHBhZGRyOwo+ICvCoMKgwqDCoMKgwqAg
-ZG1hX2FkZHJfdCBlbmQgPSBkbWFfYWRkciArIHNpemUgLSAxOwo+IAo+IC3CoMKgwqDCoMKgwqAg
-aWYgKHVubGlrZWx5KCFkbWFfZGlyZWN0X3Bvc3NpYmxlKGRldiwgZG1hX2FkZHIsIHNpemUpKSkg
-ewo+ICvCoMKgwqDCoMKgwqAgaWYgKHVubGlrZWx5KHN3aW90bGJfZm9yY2UgPT0gU1dJT1RMQl9G
-T1JDRSB8fCAhZGV2LT5kbWFfbWFzayB8fAoKWW91IGRvbid0IHdhbnQgdGhlIHN3aW90bGJfZm9y
-Y2UgY2hlY2sgaW4gdGhlcmUgLSB3ZSBjYW4ndCBib3VuY2UtYnVmZmVyIApkZXZpY2UtdG8tZGV2
-aWNlIGFjY2Vzc2VzLCByZWdhcmRsZXNzIG9mIHRoZSBTV0lPVExCIHBvbGljeS4KClJvYmluLgoK
-PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZW5kID4gbWluX25vdF96
-ZXJvKCpkZXYtPmRtYV9tYXNrLAo+IGRldi0+YnVzX2RtYV9tYXNrKSkpIHsKPiAgIMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZXBvcnRfYWRkcihkZXYsIGRtYV9hZGRyLCBzaXplKTsK
-PiAgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gRE1BX01BUFBJTkdfRVJS
-T1I7Cj4gICDCoMKgwqDCoMKgwqDCoCB9Cj4gCj4gQ2hyaXN0b3BoOiBMZXQgbWUga25vdyBpZiB0
-aGlzIGlzIGEgcHJvcGVyIGZpeCBmb3IgeW91LCB0aGVuIEkgd2lsbCBzZW5kCj4gaXQgYXMgYSBm
-dWxsIHBhdGNoLgo+IAo+IEJlc3QgcmVnYXJkcwo+IAoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Tue, Nov 12, 2019 at 04:59:23PM +0100, Nicolas Saenz Julienne wrote:
+> From: Jim Quinlan <james.quinlan@broadcom.com>
+> 
+> This commit adds the basic Broadcom STB PCIe controller.  Missing is the
+> ability to process MSI. This functionality is added in a subsequent
+> commit.
+> 
+> The PCIe block contains an MDIO interface.  This is a local interface
+> only accessible by the PCIe controller.  It cannot be used or shared
+> by any other HW.  As such, the small amount of code for this
+> controller is included in this driver as there is little upside to put
+> it elsewhere.
+
+This commit message hasn't changed, despite earlier feedback.
+
+> 
+> Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
+> Co-developed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> 
+> ---
+> 
+> Changes since v1:
+>   - Fix Kconfig
+>   - Remove pci domain check
+>   - Remove all MSI related code
+>   - Remove supend/resume code
+>   - Simplify link state wait routine
+>   - Prefix all functions
+>   - Use of_device_get_match_data()
+>   - Use devm_clk_get_optional()
+>   - Get rid of irq variable
+>   - Use STB all over the driver
+>   - Fix license mismatch
+>   - Remove unused register definitions
+>   - Small cleanups, spell errors
+> 
+> NOTE: I decided to remove the suspend/resume routines for now. The
+>       RPi4 doesn't need it, and we where having issues with the
+>       specifics of the resume function on devices we yet don't support.
+>       We'll deal with this in the future.
+> 
+> This is based on Jim's original submission[1] but adapted and tailored
+> specifically to bcm2711's needs (that's the Raspberry Pi 4). Support for
+> the rest of the brcmstb family will soon follow once we get support for
+> multiple dma-ranges in dma/direct.
+> 
+> [1] https://patchwork.kernel.org/patch/10605959/
+> 
+>  drivers/pci/controller/Kconfig        |   8 +
+>  drivers/pci/controller/Makefile       |   1 +
+>  drivers/pci/controller/pcie-brcmstb.c | 855 ++++++++++++++++++++++++++
+>  3 files changed, 864 insertions(+)
+>  create mode 100644 drivers/pci/controller/pcie-brcmstb.c
+> 
+> diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+> index f5de9119e8d3..486d4d570233 100644
+> --- a/drivers/pci/controller/Kconfig
+> +++ b/drivers/pci/controller/Kconfig
+> @@ -281,6 +281,14 @@ config VMD
+>  	  To compile this driver as a module, choose M here: the
+>  	  module will be called vmd.
+>  
+> +config PCIE_BRCMSTB
+> +	bool "Broadcom Brcmstb PCIe host controller"
+> +	depends on ARCH_BCM2835 || COMPILE_TEST
+> +	depends on OF
+> +	help
+> +	  Say Y here to enable PCIe host controller support for
+> +	  Broadcom STB based SoCs, like the Raspberry Pi 4.
+> +
+>  config PCI_HYPERV_INTERFACE
+>  	tristate "Hyper-V PCI Interface"
+>  	depends on X86 && HYPERV && PCI_MSI && PCI_MSI_IRQ_DOMAIN && X86_64
+> diff --git a/drivers/pci/controller/Makefile b/drivers/pci/controller/Makefile
+> index a2a22c9d91af..3fc0b0cf5b5b 100644
+> --- a/drivers/pci/controller/Makefile
+> +++ b/drivers/pci/controller/Makefile
+> @@ -30,6 +30,7 @@ obj-$(CONFIG_PCIE_MEDIATEK) += pcie-mediatek.o
+>  obj-$(CONFIG_PCIE_MOBIVEIL) += pcie-mobiveil.o
+>  obj-$(CONFIG_PCIE_TANGO_SMP8759) += pcie-tango.o
+>  obj-$(CONFIG_VMD) += vmd.o
+> +obj-$(CONFIG_PCIE_BRCMSTB) += pcie-brcmstb.o
+>  # pcie-hisi.o quirks are needed even without CONFIG_PCIE_DW
+>  obj-y				+= dwc/
+>  
+> diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
+> new file mode 100644
+> index 000000000000..8d81c5ab5979
+> --- /dev/null
+> +++ b/drivers/pci/controller/pcie-brcmstb.c
+> @@ -0,0 +1,855 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/* Copyright (C) 2009 - 2019 Broadcom */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/compiler.h>
+> +#include <linux/delay.h>
+> +#include <linux/init.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/io.h>
+> +#include <linux/ioport.h>
+> +#include <linux/irqdomain.h>
+> +#include <linux/kernel.h>
+> +#include <linux/list.h>
+> +#include <linux/log2.h>
+> +#include <linux/module.h>
+> +#include <linux/of_address.h>
+> +#include <linux/of_irq.h>
+> +#include <linux/of_pci.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/pci.h>
+> +#include <linux/printk.h>
+> +#include <linux/sizes.h>
+> +#include <linux/slab.h>
+> +#include <linux/string.h>
+> +#include <linux/types.h>
+> +
+> +#include "../pci.h"
+> +
+> +/* BRCM_PCIE_CAP_REGS - Offset for the mandatory capability config regs */
+> +#define BRCM_PCIE_CAP_REGS				0x00ac
+> +
+> +/*
+> + * Broadcom STB PCIe Register Offsets. The names are from the chip's RDB and we
+> + * use them here so that a script can correlate this code and the RDB to
+> + * prevent discrepancies.
+> + */
+> +#define PCIE_RC_CFG_VENDOR_VENDOR_SPECIFIC_REG1		0x0188
+> +#define PCIE_RC_CFG_PRIV1_ID_VAL3			0x043c
+> +#define PCIE_RC_DL_MDIO_ADDR				0x1100
+> +#define PCIE_RC_DL_MDIO_WR_DATA				0x1104
+> +#define PCIE_RC_DL_MDIO_RD_DATA				0x1108
+> +#define PCIE_MISC_MISC_CTRL				0x4008
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO		0x400c
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_HI		0x4010
+> +#define PCIE_MISC_RC_BAR1_CONFIG_LO			0x402c
+> +#define PCIE_MISC_RC_BAR2_CONFIG_LO			0x4034
+> +#define PCIE_MISC_RC_BAR2_CONFIG_HI			0x4038
+> +#define PCIE_MISC_RC_BAR3_CONFIG_LO			0x403c
+> +#define PCIE_MISC_PCIE_CTRL				0x4064
+> +#define PCIE_MISC_PCIE_STATUS				0x4068
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT	0x4070
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_HI		0x4080
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LIMIT_HI		0x4084
+> +#define PCIE_MISC_HARD_PCIE_HARD_DEBUG			0x4204
+> +#define PCIE_INTR2_CPU_BASE				0x4300
+> +
+> +/*
+> + * Broadcom STB PCIe Register Field shift and mask info. The names are from the
+> + * chip's RDB and we use them here so that a script can correlate this code and
+> + * the RDB to prevent discrepancies.
+> + */
+> +#define PCIE_RC_CFG_VENDOR_VENDOR_SPECIFIC_REG1_ENDIAN_MODE_BAR2_MASK	0xc
+> +#define PCIE_RC_CFG_VENDOR_VENDOR_SPECIFIC_REG1_ENDIAN_MODE_BAR2_SHIFT	0x2
+> +#define PCIE_RC_CFG_PRIV1_ID_VAL3_CLASS_CODE_MASK		0xffffff
+> +#define PCIE_RC_CFG_PRIV1_ID_VAL3_CLASS_CODE_SHIFT		0x0
+> +#define PCIE_MISC_MISC_CTRL_SCB_ACCESS_EN_MASK			0x1000
+> +#define PCIE_MISC_MISC_CTRL_SCB_ACCESS_EN_SHIFT			0xc
+> +#define PCIE_MISC_MISC_CTRL_CFG_READ_UR_MODE_MASK		0x2000
+> +#define PCIE_MISC_MISC_CTRL_CFG_READ_UR_MODE_SHIFT		0xd
+> +#define PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_MASK			0x300000
+> +#define PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_SHIFT		0x14
+> +#define PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK			0xf8000000
+> +#define PCIE_MISC_MISC_CTRL_SCB0_SIZE_SHIFT			0x1b
+> +#define PCIE_MISC_RC_BAR1_CONFIG_LO_SIZE_MASK			0x1f
+> +#define PCIE_MISC_RC_BAR1_CONFIG_LO_SIZE_SHIFT			0x0
+> +#define PCIE_MISC_RC_BAR2_CONFIG_LO_SIZE_MASK			0x1f
+> +#define PCIE_MISC_RC_BAR2_CONFIG_LO_SIZE_SHIFT			0x0
+> +#define PCIE_MISC_RC_BAR3_CONFIG_LO_SIZE_MASK			0x1f
+> +#define PCIE_MISC_RC_BAR3_CONFIG_LO_SIZE_SHIFT			0x0
+> +#define PCIE_MISC_PCIE_CTRL_PCIE_L23_REQUEST_MASK		0x1
+> +#define PCIE_MISC_PCIE_CTRL_PCIE_L23_REQUEST_SHIFT		0x0
+> +#define PCIE_MISC_PCIE_STATUS_PCIE_PORT_MASK			0x80
+> +#define PCIE_MISC_PCIE_STATUS_PCIE_PORT_SHIFT			0x7
+> +#define PCIE_MISC_PCIE_STATUS_PCIE_DL_ACTIVE_MASK		0x20
+> +#define PCIE_MISC_PCIE_STATUS_PCIE_DL_ACTIVE_SHIFT		0x5
+> +#define PCIE_MISC_PCIE_STATUS_PCIE_PHYLINKUP_MASK		0x10
+> +#define PCIE_MISC_PCIE_STATUS_PCIE_PHYLINKUP_SHIFT		0x4
+> +#define PCIE_MISC_PCIE_STATUS_PCIE_LINK_IN_L23_MASK		0x40
+> +#define PCIE_MISC_PCIE_STATUS_PCIE_LINK_IN_L23_SHIFT		0x6
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_LIMIT_MASK	0xfff00000
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_LIMIT_SHIFT	0x14
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_BASE_MASK	0xfff0
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_BASE_SHIFT	0x4
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_NUM_MASK_BITS	0xc
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_HI_BASE_MASK		0xff
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_HI_BASE_SHIFT	0x0
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LIMIT_HI_LIMIT_MASK	0xff
+> +#define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LIMIT_HI_LIMIT_SHIFT	0x0
+> +#define PCIE_MISC_HARD_PCIE_HARD_DEBUG_CLKREQ_DEBUG_ENABLE_MASK	0x2
+> +#define PCIE_MISC_HARD_PCIE_HARD_DEBUG_CLKREQ_DEBUG_ENABLE_SHIFT 0x1
+> +#define PCIE_MISC_HARD_PCIE_HARD_DEBUG_SERDES_IDDQ_MASK		0x08000000
+> +#define PCIE_MISC_HARD_PCIE_HARD_DEBUG_SERDES_IDDQ_SHIFT	0x1b
+> +#define PCIE_RGR1_SW_INIT_1_PERST_MASK				0x1
+> +#define PCIE_RGR1_SW_INIT_1_PERST_SHIFT				0x0
+> +
+> +#define BRCM_NUM_PCIE_OUT_WINS		0x4
+> +
+> +#define BURST_SIZE_128			0
+> +
+> +/* Offsets from PCIE_INTR2_CPU_BASE */
+> +#define STATUS                          0x0
+> +#define CLR				0x8
+> +#define MASK_SET			0x10
+> +#define MASK_CLR			0x14
+> +
+> +#define PCIE_BUSNUM_SHIFT		20
+> +#define PCIE_SLOT_SHIFT			15
+> +#define PCIE_FUNC_SHIFT			12
+> +
+> +#if defined(__BIG_ENDIAN)
+> +#define	DATA_ENDIAN			2	/* PCIe->DDR inbound traffic */
+> +#define MMIO_ENDIAN			2	/* CPU->PCIe outbound traffic */
+> +#else
+> +#define	DATA_ENDIAN			0
+> +#define MMIO_ENDIAN			0
+> +#endif
+> +
+> +#define MDIO_PORT0			0x0
+> +#define MDIO_DATA_MASK			0x7fffffff
+> +#define MDIO_DATA_SHIFT			0x0
+> +#define MDIO_PORT_MASK			0xf0000
+> +#define MDIO_PORT_SHIFT			0x16
+> +#define MDIO_REGAD_MASK			0xffff
+> +#define MDIO_REGAD_SHIFT		0x0
+> +#define MDIO_CMD_MASK			0xfff00000
+> +#define MDIO_CMD_SHIFT			0x14
+> +#define MDIO_CMD_READ			0x1
+> +#define MDIO_CMD_WRITE			0x0
+> +#define MDIO_DATA_DONE_MASK		0x80000000
+> +#define MDIO_RD_DONE(x)			(((x) & MDIO_DATA_DONE_MASK) ? 1 : 0)
+> +#define MDIO_WT_DONE(x)			(((x) & MDIO_DATA_DONE_MASK) ? 0 : 1)
+> +#define SSC_REGS_ADDR			0x1100
+> +#define SET_ADDR_OFFSET			0x1f
+> +#define SSC_CNTL_OFFSET			0x2
+> +#define SSC_CNTL_OVRD_EN_MASK		0x8000
+> +#define SSC_CNTL_OVRD_EN_SHIFT		0xf
+> +#define SSC_CNTL_OVRD_VAL_MASK		0x4000
+> +#define SSC_CNTL_OVRD_VAL_SHIFT		0xe
+> +#define SSC_STATUS_OFFSET		0x1
+> +#define SSC_STATUS_SSC_MASK		0x400
+> +#define SSC_STATUS_SSC_SHIFT		0xa
+> +#define SSC_STATUS_PLL_LOCK_MASK	0x800
+> +#define SSC_STATUS_PLL_LOCK_SHIFT	0xb
+> +
+> +#define BRCM_PCIE_IDX_ADDR(pcie)	\
+> +	((pcie)->reg_offsets[EXT_CFG_INDEX])
+> +#define BRCM_PCIE_DATA_ADDR(pcie)	\
+> +	((pcie)->reg_offsets[EXT_CFG_DATA])
+> +#define BRCM_PCIE_RGR1_SW_INIT_1(pcie) \
+> +	((pcie)->reg_offsets[RGR1_SW_INIT_1])
+> +
+> +enum {
+> +	RGR1_SW_INIT_1,
+> +	EXT_CFG_INDEX,
+> +	EXT_CFG_DATA,
+> +};
+> +
+> +enum {
+> +	RGR1_SW_INIT_1_INIT_MASK,
+> +	RGR1_SW_INIT_1_INIT_SHIFT,
+> +	RGR1_SW_INIT_1_PERST_MASK,
+> +	RGR1_SW_INIT_1_PERST_SHIFT,
+> +};
+> +
+> +enum pcie_type {
+> +	BCM2711,
+> +};
+> +
+> +struct brcm_window {
+> +	dma_addr_t pcie_addr;
+> +	phys_addr_t cpu_addr;
+> +	dma_addr_t size;
+> +};
+> +
+> +/* Internal PCIe Host Controller Information.*/
+> +struct brcm_pcie {
+> +	struct device		*dev;
+> +	void __iomem		*base;
+> +	struct clk		*clk;
+> +	struct pci_bus		*root_bus;
+> +	struct device_node	*np;
+> +	bool			ssc;
+> +	int			gen;
+> +	struct brcm_window	out_wins[BRCM_NUM_PCIE_OUT_WINS];
+> +	const int		*reg_offsets;
+> +	const int		*reg_field_info;
+> +	enum pcie_type		type;
+> +};
+> +
+> +struct pcie_cfg_data {
+> +	const int		*reg_field_info;
+> +	const int		*offsets;
+> +	const enum pcie_type	type;
+> +};
+> +
+> +static const int pcie_reg_field_info[] = {
+> +	[RGR1_SW_INIT_1_INIT_MASK] = 0x2,
+> +	[RGR1_SW_INIT_1_INIT_SHIFT] = 0x1,
+> +};
+> +
+> +static const int pcie_offset_bcm2711[] = {
+> +	[RGR1_SW_INIT_1] = 0x9210,
+> +	[EXT_CFG_INDEX]  = 0x9000,
+> +	[EXT_CFG_DATA]   = 0x8000,
+> +};
+> +
+> +static const struct pcie_cfg_data bcm2711_cfg = {
+> +	.reg_field_info	= pcie_reg_field_info,
+> +	.offsets	= pcie_offset_bcm2711,
+> +	.type		= BCM2711,
+> +};
+> +
+> +static void __iomem *brcm_pcie_map_conf(struct pci_bus *bus, unsigned int devfn,
+> +					int where);
+> +
+> +static struct pci_ops brcm_pcie_ops = {
+> +	.map_bus = brcm_pcie_map_conf,
+> +	.read = pci_generic_config_read,
+> +	.write = pci_generic_config_write,
+> +};
+> +
+> +#define bcm_readl(a)		readl(a)
+> +#define bcm_writel(d, a)	writel(d, a)
+> +#define bcm_readw(a)		readw(a)
+> +#define bcm_writew(d, a)	writew(d, a)
+> +
+> +/* These macros extract/insert fields to host controller's register set. */
+> +#define RD_FLD(base, reg, field) \
+> +	brcm_pcie_rd_fld((base) + reg, reg##_##field##_MASK, \
+> +			 reg##_##field##_SHIFT)
+> +#define WR_FLD(base, reg, field, val) \
+> +	brcm_pcie_wr_fld((base) + reg, reg##_##field##_MASK, \
+> +		    reg##_##field##_SHIFT, val)
+> +#define WR_FLD_RB(base, reg, field, val) \
+> +	brcm_pcie_wr_fld_rb((base) + reg, reg##_##field##_MASK, \
+> +		reg##_##field##_SHIFT, val)
+> +#define WR_FLD_WITH_OFFSET(base, off, reg, field, val) \
+> +	brcm_pcie_wr_fld((base) + reg + (off), reg##_##field##_MASK, \
+> +	       reg##_##field##_SHIFT, val)
+> +#define EXTRACT_FIELD(val, reg, field) \
+> +	(((val) & reg##_##field##_MASK) >> reg##_##field##_SHIFT)
+> +#define INSERT_FIELD(val, reg, field, field_val) \
+> +	(((val) & ~reg##_##field##_MASK) | \
+> +	 (reg##_##field##_MASK & (field_val << reg##_##field##_SHIFT)))
+
+Can you use any of the existing macros in linux/bitfield.h
+(e.g. ...replace_bits...) ?
+
+> +
+> +static u32 brcm_pcie_rd_fld(void __iomem *p, u32 mask, int shift)
+> +{
+> +	return (bcm_readl(p) & mask) >> shift;
+> +}
+> +
+> +static void brcm_pcie_wr_fld(void __iomem *p, u32 mask, int shift, u32 val)
+> +{
+> +	u32 reg = bcm_readl(p);
+> +
+> +	reg = (reg & ~mask) | ((val << shift) & mask);
+> +	bcm_writel(reg, p);
+> +}
+> +
+> +static void brcm_pcie_wr_fld_rb(void __iomem *p, u32 mask, int shift, u32 val)
+> +{
+> +	brcm_pcie_wr_fld(p, mask, shift, val);
+> +	(void)bcm_readl(p);
+> +}
+> +
+> +/*
+> + * This is to convert the size of the inbound "BAR" region to the
+> + * non-linear values of PCIE_X_MISC_RC_BAR[123]_CONFIG_LO.SIZE
+> + */
+> +int brcm_pcie_encode_ibar_size(u64 size)
+> +{
+> +	int log2_in = ilog2(size);
+> +
+> +	if (log2_in >= 12 && log2_in <= 15)
+> +		/* Covers 4KB to 32KB (inclusive) */
+> +		return (log2_in - 12) + 0x1c;
+> +	else if (log2_in >= 16 && log2_in <= 35)
+> +		/* Covers 64KB to 32GB, (inclusive) */
+> +		return log2_in - 15;
+> +	/* Something is awry so disable */
+> +	return 0;
+> +}
+> +
+> +static u32 brcm_pcie_mdio_form_pkt(int port, int regad, int cmd)
+> +{
+> +	u32 pkt = 0;
+> +
+> +	pkt |= (port << MDIO_PORT_SHIFT) & MDIO_PORT_MASK;
+> +	pkt |= (regad << MDIO_REGAD_SHIFT) & MDIO_REGAD_MASK;
+> +	pkt |= (cmd << MDIO_CMD_SHIFT) & MDIO_CMD_MASK;
+> +
+> +	return pkt;
+> +}
+> +
+> +/* negative return value indicates error */
+> +static int brcm_pcie_mdio_read(void __iomem *base, u8 port, u8 regad)
+> +{
+> +	int tries;
+> +	u32 data;
+> +
+> +	bcm_writel(brcm_pcie_mdio_form_pkt(port, regad, MDIO_CMD_READ),
+> +		   base + PCIE_RC_DL_MDIO_ADDR);
+> +	bcm_readl(base + PCIE_RC_DL_MDIO_ADDR);
+> +
+> +	data = bcm_readl(base + PCIE_RC_DL_MDIO_RD_DATA);
+> +	for (tries = 0; !MDIO_RD_DONE(data) && tries < 10; tries++) {
+> +		udelay(10);
+> +		data = bcm_readl(base + PCIE_RC_DL_MDIO_RD_DATA);
+> +	}
+> +
+> +	return MDIO_RD_DONE(data)
+> +		? (data & MDIO_DATA_MASK) >> MDIO_DATA_SHIFT
+> +		: -EIO;
+> +}
+> +
+> +/* negative return value indicates error */
+> +static int brcm_pcie_mdio_write(void __iomem *base, u8 port,
+> +				u8 regad, u16 wrdata)
+> +{
+> +	int tries;
+> +	u32 data;
+> +
+> +	bcm_writel(brcm_pcie_mdio_form_pkt(port, regad, MDIO_CMD_WRITE),
+> +		   base + PCIE_RC_DL_MDIO_ADDR);
+> +	bcm_readl(base + PCIE_RC_DL_MDIO_ADDR);
+> +	bcm_writel(MDIO_DATA_DONE_MASK | wrdata,
+> +		   base + PCIE_RC_DL_MDIO_WR_DATA);
+> +
+> +	data = bcm_readl(base + PCIE_RC_DL_MDIO_WR_DATA);
+> +	for (tries = 0; !MDIO_WT_DONE(data) && tries < 10; tries++) {
+> +		udelay(10);
+> +		data = bcm_readl(base + PCIE_RC_DL_MDIO_WR_DATA);
+> +	}
+> +
+> +	return MDIO_WT_DONE(data) ? 0 : -EIO;
+> +}
+> +
+> +/*
+> + * Configures device for Spread Spectrum Clocking (SSC) mode; a negative
+> + * return value indicates error.
+> + */
+> +static int brcm_pcie_set_ssc(void __iomem *base)
+> +{
+> +	int pll, ssc;
+> +	u16 wrdata;
+> +	int tmp;
+> +
+> +	tmp = brcm_pcie_mdio_write(base, MDIO_PORT0, SET_ADDR_OFFSET,
+> +				   SSC_REGS_ADDR);
+> +	if (tmp < 0)
+> +		return tmp;
+> +
+> +	tmp = brcm_pcie_mdio_read(base, MDIO_PORT0, SSC_CNTL_OFFSET);
+> +	if (tmp < 0)
+> +		return tmp;
+> +
+> +	wrdata = INSERT_FIELD(tmp, SSC_CNTL_OVRD, EN, 1);
+> +	wrdata = INSERT_FIELD(wrdata, SSC_CNTL_OVRD, VAL, 1);
+> +	tmp = brcm_pcie_mdio_write(base, MDIO_PORT0, SSC_CNTL_OFFSET, wrdata);
+> +	if (tmp < 0)
+> +		return tmp;
+> +
+> +	usleep_range(1000, 2000);
+> +	tmp = brcm_pcie_mdio_read(base, MDIO_PORT0, SSC_STATUS_OFFSET);
+> +	if (tmp < 0)
+> +		return tmp;
+> +
+> +	ssc = EXTRACT_FIELD(tmp, SSC_STATUS, SSC);
+> +	pll = EXTRACT_FIELD(tmp, SSC_STATUS, PLL_LOCK);
+> +
+> +	return (ssc && pll) ? 0 : -EIO;
+> +}
+> +
+> +/* Limits operation to a specific generation (1, 2, or 3) */
+> +static void brcm_pcie_set_gen(void __iomem *base, int gen)
+> +{
+> +	u32 lnkcap = bcm_readl(base + BRCM_PCIE_CAP_REGS + PCI_EXP_LNKCAP);
+> +	u16 lnkctl2 = bcm_readw(base + BRCM_PCIE_CAP_REGS + PCI_EXP_LNKCTL2);
+> +
+> +	lnkcap = (lnkcap & ~PCI_EXP_LNKCAP_SLS) | gen;
+> +	bcm_writel(lnkcap, base + BRCM_PCIE_CAP_REGS + PCI_EXP_LNKCAP);
+> +
+> +	lnkctl2 = (lnkctl2 & ~0xf) | gen;
+> +	bcm_writew(lnkctl2, base + BRCM_PCIE_CAP_REGS + PCI_EXP_LNKCTL2);
+> +}
+> +
+> +static void brcm_pcie_set_outbound_win(struct brcm_pcie *pcie,
+> +				       unsigned int win, phys_addr_t cpu_addr,
+> +				       dma_addr_t  pcie_addr, dma_addr_t size)
+> +{
+> +	phys_addr_t cpu_addr_mb, limit_addr_mb;
+> +	void __iomem *base = pcie->base;
+> +	u32 tmp;
+> +
+> +	/* Set the base of the pcie_addr window */
+> +	bcm_writel(lower_32_bits(pcie_addr) + MMIO_ENDIAN,
+> +		   base + PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO + (win * 8));
+> +	bcm_writel(upper_32_bits(pcie_addr),
+> +		   base + PCIE_MISC_CPU_2_PCIE_MEM_WIN0_HI + (win * 8));
+> +
+> +	cpu_addr_mb = cpu_addr >> 20;
+> +	limit_addr_mb = (cpu_addr + size - 1) >> 20;
+> +
+> +	/* Write the addr base low register */
+> +	WR_FLD_WITH_OFFSET(base, (win * 4),
+> +			   PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT,
+> +			   BASE, cpu_addr_mb);
+> +	/* Write the addr limit low register */
+> +	WR_FLD_WITH_OFFSET(base, (win * 4),
+> +			   PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT,
+> +			   LIMIT, limit_addr_mb);
+> +
+> +	/* Write the cpu addr high register */
+> +	tmp = (u32)(cpu_addr_mb >>
+> +		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_NUM_MASK_BITS);
+
+Despite the name _MASK_BITS, this isn't being used as a mask. Is this making
+some assumption about the value of cpu_addr from the DT?
+
+Ideally we'd just use the value from the DT as we do for the low register.
+
+> +	WR_FLD_WITH_OFFSET(base, (win * 8),
+> +			   PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_HI,
+> +			   BASE, tmp);
+> +	/* Write the cpu limit high register */
+> +	tmp = (u32)(limit_addr_mb >>
+> +		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_NUM_MASK_BITS);
+> +	WR_FLD_WITH_OFFSET(base, (win * 8),
+> +			   PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LIMIT_HI,
+> +			   LIMIT, tmp);
+> +}
+> +
+> +/* Configuration space read/write support */
+> +static int brcm_pcie_cfg_index(int busnr, int devfn, int reg)
+> +{
+> +	return ((PCI_SLOT(devfn) & 0x1f) << PCIE_SLOT_SHIFT)
+> +		| ((PCI_FUNC(devfn) & 0x07) << PCIE_FUNC_SHIFT)
+> +		| (busnr << PCIE_BUSNUM_SHIFT)
+> +		| (reg & ~3);
+> +}
+> +
+> +/* The controller is capable of serving in both RC and EP roles */
+> +static bool brcm_pcie_rc_mode(struct brcm_pcie *pcie)
+> +{
+> +	void __iomem *base = pcie->base;
+> +	u32 val = bcm_readl(base + PCIE_MISC_PCIE_STATUS);
+> +
+> +	return !!EXTRACT_FIELD(val, PCIE_MISC_PCIE_STATUS, PCIE_PORT);
+> +}
+> +
+> +static bool brcm_pcie_link_up(struct brcm_pcie *pcie)
+> +{
+> +	void __iomem *base = pcie->base;
+> +	u32 val = bcm_readl(base + PCIE_MISC_PCIE_STATUS);
+> +	u32 dla = EXTRACT_FIELD(val, PCIE_MISC_PCIE_STATUS, PCIE_DL_ACTIVE);
+> +	u32 plu = EXTRACT_FIELD(val, PCIE_MISC_PCIE_STATUS, PCIE_PHYLINKUP);
+> +
+> +	return  (dla && plu) ? true : false;
+> +}
+> +
+> +static void __iomem *brcm_pcie_map_conf(struct pci_bus *bus, unsigned int devfn,
+> +					int where)
+> +{
+> +	struct brcm_pcie *pcie = bus->sysdata;
+> +	void __iomem *base = pcie->base;
+> +	int idx;
+> +
+> +	/* Accesses to the RC go right to the RC registers if slot==0 */
+> +	if (pci_is_root_bus(bus))
+> +		return PCI_SLOT(devfn) ? NULL : base + where;
+> +
+> +	/* For devices, write to the config space index register */
+> +	idx = brcm_pcie_cfg_index(bus->number, devfn, 0);
+> +	bcm_writel(idx, pcie->base + BRCM_PCIE_IDX_ADDR(pcie));
+> +	return base + BRCM_PCIE_DATA_ADDR(pcie) + where;
+> +}
+> +
+> +static inline void brcm_pcie_bridge_sw_init_set(struct brcm_pcie *pcie,
+> +						unsigned int val)
+> +{
+> +	unsigned int shift = pcie->reg_field_info[RGR1_SW_INIT_1_INIT_SHIFT];
+> +	u32 mask =  pcie->reg_field_info[RGR1_SW_INIT_1_INIT_MASK];
+> +
+> +	brcm_pcie_wr_fld_rb(pcie->base + BRCM_PCIE_RGR1_SW_INIT_1(pcie),
+> +		       mask, shift, val);
+> +}
+> +
+> +static inline void brcm_pcie_perst_set(struct brcm_pcie *pcie,
+> +				       unsigned int val)
+> +{
+> +	brcm_pcie_wr_fld_rb(pcie->base + BRCM_PCIE_RGR1_SW_INIT_1(pcie),
+> +		  PCIE_RGR1_SW_INIT_1_PERST_MASK,
+> +		  PCIE_RGR1_SW_INIT_1_PERST_SHIFT, val);
+> +}
+> +
+> +static inline int brcm_pcie_get_rc_bar2_size_and_offset(struct brcm_pcie *pcie,
+> +							u64 *rc_bar2_size,
+> +							u64 *rc_bar2_offset)
+> +{
+> +	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(pcie);
+> +	struct device *dev = pcie->dev;
+> +	struct resource_entry *entry;
+> +	u64 total_mem_size = 0;
+> +
+> +	*rc_bar2_offset = -1;
+> +
+> +	resource_list_for_each_entry(entry, &bridge->dma_ranges) {
+> +		/*
+> +		 * We're promised the RC will provide a contiguous view of
+> +		 * memory to downstream devices. We can then infer the
+> +		 * rc_bar2_offset from the lower available dma-range offset.
+> +		 */
+> +		if (entry->offset < *rc_bar2_offset)
+> +			*rc_bar2_offset = entry->offset;
+> +
+> +		total_mem_size += entry->res->end - entry->res->start + 1;
+
+This requires that if there are multiple dma-ranges, then there are no gaps
+between them right?
+
+> +	}
+> +
+> +	*rc_bar2_size = roundup_pow_of_two64(total_mem_size);
+> +
+> +	/*
+> +	 * Validate the results:
+> +	 *
+> +	 * The PCIe host controller by design must set the inbound viewport to
+> +	 * be a contiguous arrangement of all of the system's memory.  In
+> +	 * addition, its size mut be a power of two.  To further complicate
+> +	 * matters, the viewport must start on a pcie-address that is aligned
+> +	 * on a multiple of its size.  If a portion of the viewport does not
+> +	 * represent system memory -- e.g. 3GB of memory requires a 4GB
+> +	 * viewport -- we can map the outbound memory in or after 3GB and even
+> +	 * though the viewport will overlap the outbound memory the controller
+> +	 * will know to send outbound memory downstream and everything else
+> +	 * upstream.
+> +	 *
+> +	 * For example:
+> +	 *
+> +	 * - The best-case scenario, memory up to 3GB, is to place the inbound
+> +	 *   region in the first 4GB of pcie-space, as some legacy devices can
+> +	 *   only address 32bits. We would also like to put the MSI under 4GB
+> +	 *   as well, since some devices require a 32bit MSI target address.
+> +	 *
+> +	 * - If the system memory is 4GB or larger we cannot start the inbound
+> +	 *   region at location 0 (since we have to allow some space for
+> +	 *   outbound memory @ 3GB). So instead it will  start at the 1x
+> +	 *   multiple of its size
+> +	 */
+> +	if (!*rc_bar2_size || *rc_bar2_offset % *rc_bar2_size ||
+> +	    (*rc_bar2_offset < SZ_4G && *rc_bar2_offset > SZ_2G)) {
+> +		dev_err(dev, "Invalid rc_bar2_offset/size: size 0x%llx, off 0x%llx\n",
+> +			*rc_bar2_size, *rc_bar2_offset);
+> +		return -EINVAL;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int brcm_pcie_setup(struct brcm_pcie *pcie)
+> +{
+> +	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(pcie);
+> +	u64 rc_bar2_offset, rc_bar2_size;
+> +	void __iomem *base = pcie->base;
+> +	struct device *dev = pcie->dev;
+> +	struct resource_entry *entry;
+> +	unsigned int scb_size_val;
+> +	bool ssc_good = false;
+> +	struct resource *res;
+> +	int num_out_wins = 0;
+> +	u16 nlw, cls, lnksta;
+> +	int i, ret;
+> +	u32 tmp;
+> +
+> +	/* Reset the bridge */
+> +	brcm_pcie_bridge_sw_init_set(pcie, 1);
+> +
+> +	usleep_range(100, 200);
+> +
+> +	/* Take the bridge out of reset */
+> +	brcm_pcie_bridge_sw_init_set(pcie, 0);
+> +
+> +	WR_FLD_RB(base, PCIE_MISC_HARD_PCIE_HARD_DEBUG, SERDES_IDDQ, 0);
+> +	/* Wait for SerDes to be stable */
+> +	usleep_range(100, 200);
+> +
+> +	/* Set SCB_MAX_BURST_SIZE, CFG_READ_UR_MODE, SCB_ACCESS_EN */
+> +	tmp = INSERT_FIELD(0, PCIE_MISC_MISC_CTRL, SCB_ACCESS_EN, 1);
+> +	tmp = INSERT_FIELD(tmp, PCIE_MISC_MISC_CTRL, CFG_READ_UR_MODE, 1);
+> +	tmp = INSERT_FIELD(tmp, PCIE_MISC_MISC_CTRL, MAX_BURST_SIZE,
+> +			   BURST_SIZE_128);
+> +	bcm_writel(tmp, base + PCIE_MISC_MISC_CTRL);
+> +
+> +	ret = brcm_pcie_get_rc_bar2_size_and_offset(pcie, &rc_bar2_size,
+> +						    &rc_bar2_offset);
+> +	if (ret)
+> +		return ret;
+> +
+> +	tmp = lower_32_bits(rc_bar2_offset);
+> +	tmp = INSERT_FIELD(tmp, PCIE_MISC_RC_BAR2_CONFIG_LO, SIZE,
+> +			   brcm_pcie_encode_ibar_size(rc_bar2_size));
+> +	bcm_writel(tmp, base + PCIE_MISC_RC_BAR2_CONFIG_LO);
+> +	bcm_writel(upper_32_bits(rc_bar2_offset),
+> +		   base + PCIE_MISC_RC_BAR2_CONFIG_HI);
+> +
+> +	scb_size_val = rc_bar2_size ?
+> +		       ilog2(rc_bar2_size) - 15 : 0xf; /* 0xf is 1GB */
+> +	WR_FLD(base, PCIE_MISC_MISC_CTRL, SCB0_SIZE, scb_size_val);
+> +
+> +	/* disable the PCIe->GISB memory window (RC_BAR1) */
+> +	WR_FLD(base, PCIE_MISC_RC_BAR1_CONFIG_LO, SIZE, 0);
+> +
+> +	/* disable the PCIe->SCB memory window (RC_BAR3) */
+> +	WR_FLD(base, PCIE_MISC_RC_BAR3_CONFIG_LO, SIZE, 0);
+> +
+> +	/* clear any interrupts we find on boot */
+> +	bcm_writel(0xffffffff, base + PCIE_INTR2_CPU_BASE + CLR);
+> +	(void)bcm_readl(base + PCIE_INTR2_CPU_BASE + CLR);
+> +
+> +	/* Mask all interrupts since we are not handling any yet */
+> +	bcm_writel(0xffffffff, base + PCIE_INTR2_CPU_BASE + MASK_SET);
+> +	(void)bcm_readl(base + PCIE_INTR2_CPU_BASE + MASK_SET);
+
+Should you change the order and mask before clearing the interrupts?
+
+> +
+> +	if (pcie->gen)
+> +		brcm_pcie_set_gen(base, pcie->gen);
+> +
+> +	/* Unassert the fundamental reset */
+> +	brcm_pcie_perst_set(pcie, 0);
+> +
+> +	/*
+> +	 * Give the RC/EP time to wake up, before trying to configure RC.
+> +	 * Intermittently check status for link-up, up to a total of 100ms.
+> +	 */
+> +	for (i = 0; i < 100 && !brcm_pcie_link_up(pcie); i += 5)
+> +		msleep(5);
+> +
+> +	if (!brcm_pcie_link_up(pcie)) {
+> +		dev_info(dev, "link down\n");
+> +		return -ENODEV;
+> +	}
+> +
+> +	if (!brcm_pcie_rc_mode(pcie)) {
+> +		dev_err(dev, "PCIe misconfigured; is in EP mode\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	resource_list_for_each_entry(entry, &bridge->windows) {
+> +		res = entry->res;
+> +
+> +		if (resource_type(res) != IORESOURCE_MEM)
+> +			continue;
+> +
+> +		if (num_out_wins >= BRCM_NUM_PCIE_OUT_WINS) {
+> +			dev_err(pcie->dev, "too many outbound wins\n");
+> +			return -EINVAL;
+> +		}
+> +
+> +		brcm_pcie_set_outbound_win(pcie, num_out_wins, res->start,
+> +					   res->start - entry->offset,
+> +					   res->end - res->start + 1);
+> +		num_out_wins++;
+> +	}
+> +
+> +	/*
+> +	 * For config space accesses on the RC, show the right class for
+> +	 * a PCIe-PCIe bridge (the default setting is to be EP mode).
+> +	 */
+> +	WR_FLD_RB(base, PCIE_RC_CFG_PRIV1_ID_VAL3, CLASS_CODE, 0x060400);
+
+Why does this need to be _RB ? I haven't looked at all of the uses of _RB
+though I think there are others that may not be necessary.
+
+> +
+> +	if (pcie->ssc) {
+> +		ret = brcm_pcie_set_ssc(base);
+> +		if (ret == 0)
+> +			ssc_good = true;
+> +		else
+> +			dev_err(dev, "failed attempt to enter ssc mode\n");
+> +	}
+> +
+> +	lnksta = bcm_readw(base + BRCM_PCIE_CAP_REGS + PCI_EXP_LNKSTA);
+> +	cls = lnksta & PCI_EXP_LNKSTA_CLS;
+> +	nlw = (lnksta & PCI_EXP_LNKSTA_NLW) >> PCI_EXP_LNKSTA_NLW_SHIFT;
+> +	dev_info(dev, "link up, %s x%u %s\n",
+> +		 PCIE_SPEED2STR(cls + PCI_SPEED_133MHz_PCIX_533),
+> +		 nlw, ssc_good ? "(SSC)" : "(!SSC)");
+> +
+> +	/* PCIe->SCB endian mode for BAR */
+> +	/* field ENDIAN_MODE_BAR2 = DATA_ENDIAN */
+> +	WR_FLD_RB(base, PCIE_RC_CFG_VENDOR_VENDOR_SPECIFIC_REG1,
+> +		  ENDIAN_MODE_BAR2, DATA_ENDIAN);
+> +
+> +	/*
+> +	 * Refclk from RC should be gated with CLKREQ# input when ASPM L0s,L1
+> +	 * is enabled =>  setting the CLKREQ_DEBUG_ENABLE field to 1.
+> +	 */
+> +	WR_FLD_RB(base, PCIE_MISC_HARD_PCIE_HARD_DEBUG, CLKREQ_DEBUG_ENABLE, 1);
+> +
+> +	return 0;
+> +}
+> +
+> +/* L23 is a low-power PCIe link state */
+> +static void brcm_pcie_enter_l23(struct brcm_pcie *pcie)
+> +{
+> +	void __iomem *base = pcie->base;
+> +	int l23, i;
+> +
+> +	/* assert request for L23 */
+> +	WR_FLD_RB(base, PCIE_MISC_PCIE_CTRL, PCIE_L23_REQUEST, 1);
+
+Also not sure about the _RB here, given you have a read straight after.
+
+> +
+> +	/* Wait up to 36 msec for L23 */
+> +	l23 = RD_FLD(base, PCIE_MISC_PCIE_STATUS, PCIE_LINK_IN_L23);
+> +	for (i = 0; i < 15 && !l23; i++) {
+> +		usleep_range(2000, 2400);
+> +		l23 = RD_FLD(base, PCIE_MISC_PCIE_STATUS, PCIE_LINK_IN_L23);
+> +	}
+> +
+> +	if (!l23)
+> +		dev_err(pcie->dev, "failed to enter low-power link state\n");
+> +}
+> +
+> +static void brcm_pcie_turn_off(struct brcm_pcie *pcie)
+> +{
+> +	void __iomem *base = pcie->base;
+> +
+> +	if (brcm_pcie_link_up(pcie))
+> +		brcm_pcie_enter_l23(pcie);
+> +	/* Assert fundamental reset */
+> +	brcm_pcie_perst_set(pcie, 1);
+> +	/* Deassert request for L23 in case it was asserted */
+> +	WR_FLD_RB(base, PCIE_MISC_PCIE_CTRL, PCIE_L23_REQUEST, 0);
+> +	/* Turn off SerDes */
+> +	WR_FLD_RB(base, PCIE_MISC_HARD_PCIE_HARD_DEBUG, SERDES_IDDQ, 1);
+> +	/* Shutdown PCIe bridge */
+
+What is the purpose of the _RB's here?
+
+> +	brcm_pcie_bridge_sw_init_set(pcie, 1);
+> +}
+> +
+> +static void __brcm_pcie_remove(struct brcm_pcie *pcie)
+> +{
+> +	brcm_pcie_turn_off(pcie);
+> +	clk_disable_unprepare(pcie->clk);
+> +	clk_put(pcie->clk);
+> +}
+> +
+> +static int brcm_pcie_remove(struct platform_device *pdev)
+> +{
+> +	struct brcm_pcie *pcie = platform_get_drvdata(pdev);
+> +
+> +	pci_stop_root_bus(pcie->root_bus);
+> +	pci_remove_root_bus(pcie->root_bus);
+> +	__brcm_pcie_remove(pcie);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id brcm_pcie_match[] = {
+> +	{ .compatible = "brcm,bcm2711-pcie", .data = &bcm2711_cfg },
+
+I'd rather see use of the pcie_cfg_data structure removed from this series.
+
+I've seen the comments in the previous thread [1], and I understand that
+the intention is that this driver will eventually be used for other SOCs.
+
+However this indirection isn't needed *now* and it makes reviewing this
+patch more difficult. If and when a later series is made to cover other
+SOCs - then I'd expect that series to find a way to apply this indirection.
+
+And if that later series is more difficult to review because of the newly
+added indirection, then I'd expect an early patch of that series to apply
+the indirection in a single patch - which would be easy to review.
+
+The other risk of such premature changes like this is that when you come
+to adding other SOCs, you may then discover that there were shortcomings
+in the way you've approached it here.
+
+> +	{},
+> +};
+> +MODULE_DEVICE_TABLE(of, brcm_pcie_match);
+> +
+> +static int brcm_pcie_probe(struct platform_device *pdev)
+> +{
+> +	struct device_node *np = pdev->dev.of_node;
+> +	const struct pcie_cfg_data *data;
+> +	struct pci_host_bridge *bridge;
+> +	struct brcm_pcie *pcie;
+> +	struct pci_bus *child;
+> +	struct resource *res;
+> +	int ret;
+> +
+> +	bridge = devm_pci_alloc_host_bridge(&pdev->dev, sizeof(*pcie));
+> +	if (!bridge)
+> +		return -ENOMEM;
+> +
+> +	pcie = pci_host_bridge_priv(bridge);
+
+Nit: I'd suggest moving the above line so it sits just above the
+"pcie->reg_offsets = data->offsets;" line. It looks nicer.
+
+> +
+> +	data = of_device_get_match_data(&pdev->dev);
+> +	if (!data) {
+> +		dev_err(&pdev->dev, "failed to look up compatible string\n");
+
+Nit: If there is a failure here, it's probably because there is no data
+defined in the brcm_pcie_match structure - seeing as we wouldn't get here
+if we didn't have a compatible string. I'd suggest rewording the err slightly
+or even removing it.
+
+> +		return -EINVAL;
+> +	}
+> +
+> +	pcie->reg_offsets = data->offsets;
+> +	pcie->reg_field_info = data->reg_field_info;
+> +	pcie->type = data->type;
+> +	pcie->np = np;
+> +	pcie->dev = &pdev->dev;
+> +
+> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	pcie->base = devm_ioremap_resource(&pdev->dev, res);
+> +	if (IS_ERR(pcie->base))
+> +		return PTR_ERR(pcie->base);
+> +
+> +	pcie->clk = devm_clk_get_optional(&pdev->dev, "sw_pcie");
+> +	if (IS_ERR(pcie->clk))
+> +		return PTR_ERR(pcie->clk);
+> +
+> +	ret = of_pci_get_max_link_speed(np);
+> +	pcie->gen = (ret < 0) ? 0 : ret;
+> +
+> +	pcie->ssc = of_property_read_bool(np, "brcm,enable-ssc");
+> +
+> +	ret = pci_parse_request_of_pci_ranges(pcie->dev, &bridge->windows,
+> +					      &bridge->dma_ranges, NULL);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = clk_prepare_enable(pcie->clk);
+> +	if (ret) {
+> +		dev_err(&pdev->dev, "could not enable clock\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = brcm_pcie_setup(pcie);
+> +	if (ret)
+> +		goto fail;
+> +
+> +	bridge->dev.parent = &pdev->dev;
+> +	bridge->busnr = 0;
+> +	bridge->ops = &brcm_pcie_ops;
+> +	bridge->sysdata = pcie;
+> +	bridge->map_irq = of_irq_parse_and_map_pci;
+> +	bridge->swizzle_irq = pci_common_swizzle;
+> +
+> +	ret = pci_scan_root_bus_bridge(bridge);
+> +	if (ret < 0) {
+> +		dev_err(pcie->dev, "Scanning root bridge failed\n");
+> +		goto fail;
+> +	}
+> +
+> +	pci_assign_unassigned_bus_resources(bridge->bus);
+> +	list_for_each_entry(child, &bridge->bus->children, node)
+> +		pcie_bus_configure_settings(child);
+> +	pci_bus_add_devices(bridge->bus);
+> +	platform_set_drvdata(pdev, pcie);
+> +	pcie->root_bus = bridge->bus;
+> +
+> +	return 0;
+> +fail:
+> +	__brcm_pcie_remove(pcie);
+> +	return ret;
+> +}
+> +
+> +static struct platform_driver brcm_pcie_driver = {
+> +	.probe = brcm_pcie_probe,
+> +	.remove = brcm_pcie_remove,
+> +	.driver = {
+> +		.name = "brcm-pcie",
+> +		.of_match_table = brcm_pcie_match,
+> +	},
+> +};
+> +
+> +module_platform_driver(brcm_pcie_driver);
+> +
+> +MODULE_LICENSE("GPL v2");
+
+This is different to the SPDX at the start of the file (please see
+earlier review comments).
+
+Thanks,
+
+Andrew Murray
+
+[1] https://patchwork.ozlabs.org/patch/1190710/#2301173
+
+> +MODULE_DESCRIPTION("Broadcom STB PCIe RC driver");
+> +MODULE_AUTHOR("Broadcom");
+> -- 
+> 2.24.0
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
