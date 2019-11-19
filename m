@@ -2,89 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 918BA101A6C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 08:39:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18C08101A96
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 08:57:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4rF/fPMRmvup/DSbRnx8uOm+HEgQGHmWA+nDqZ3ovIE=; b=D5K5xADOfw7Vx/
-	REPubZqPKbWVEcTulHwF3+M097Q7PhgZWNYrIQztFnipHe5vMdhSaD5x8+BEo2vhly4nU62JbndJq
-	hQ+LQqTKXVGXxDX6VBVo6vpmUSflV9u9l7t1e1MypN2F8qfTEbZIYmoiW1ylG6q+7IB8eSj/mkaVS
-	jfrmHBC/TeYIAGLDOMkB6F2cPbN5tIpIhY1INuYuptcqql2PXkXRV57D/7LbR6E/xQqp4h01j8IUQ
-	Z0g5DSGha9TvGVmOiJUvGcqQilwHUXHC9UAFwe0AbKIbwNzJNrFA+wXwuOfium7KtdC88hTXV6EHQ
-	Obam+uQqT3p2Zq0JHjkA==;
+	List-Owner; bh=DnWQH+gAqLPxb0uX9W2+IeqISWwGDfUo1Q+6/ShZn4U=; b=XXUGLYm2UsAjIp
+	BiwvK3OQ7MvhZOR5Hakb5P5a86JnAkq/AjNMh90IgRZwNE+LRvz5eUwFn0K/0g4UaXPtEa/x0lbc8
+	I7DVHhfjF7baQIP8eICB0BC02CpnzNmRNZUK7cxDKnhfipil0GNxkUogSOkGD0ZO/m0Zy80CBp2mW
+	kO0/EK8lhAT9XziUb4cX3f28U6LYarLmyayAXW5QOKnEmJzqR6ODTs2M+DcfCFS0YcPdIIBCZVqft
+	ow697m6RvIJZ8fPSJUpytULlxmdAB0kFtGHrhPe9lgCgUad2kIO9ybATRFmVb4MQEsxhwAr0zCCOo
+	uKQqUCW0emTQSnF1kvqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWy6s-0001Ce-NQ; Tue, 19 Nov 2019 07:39:38 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iWyOL-0007kX-EW; Tue, 19 Nov 2019 07:57:41 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWy6i-0001CA-HK
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 07:39:29 +0000
-Received: by mail-wm1-x344.google.com with SMTP id f3so2224664wmc.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 23:39:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=hh4VbnNsZd0cQjCcxR1lcKBnthPXIf0SZTjvhg2Wu+o=;
- b=bEgICEq769u8g2rEZbD8dQT+znw/d/3WiyLyxRoRw2phf9OfSNgEj8y7rBFWslHOfR
- CiDX77/A2ElzxR1iC6wn+xj3FwhUSO1TYld/LPBHJisQ26P/zTwkIc2faQKEab7S9K5B
- HsH8dMCSHs/jsDlCzwdlZl8P42r0ysTzoTlKPEhcOd/U6WJ8NYaSCsSwPONBhtWibdVU
- SaHbl7L/aToxU7ObEv/bZMg9vy9ctB82/goQrJvUIEM+ALSx/ebIDGYx97nXEBsoQ5WG
- b3wj/0dg22lPqwiTsNcqSgc9D20S/yZXLdypRwgJ4EhsEqTuwdOdADXw1Nm8sCNBDoAQ
- ySOw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=hh4VbnNsZd0cQjCcxR1lcKBnthPXIf0SZTjvhg2Wu+o=;
- b=KG1UmwSAt3W9y4aEG4qEHmwwYGdoa1ElNHR6G62bg81J2TW43Oe35SpUlCFe3VPVYt
- QETPUMyRB21Zc0bpN9EEVBDAJa2oXac107X2B3izOPYgo9fWo0yqkGE41LwLY5HGw5hg
- WfMPPM9Ecos/VhQEJLWDQo/9nPiRr3jyjAVyFqCqhBsZgh6EoE65t8yqFhK7l+Adm/Bw
- VK05zUe7RxffIsv7d6iqYouNd1IjHq6MOPAXSS7fZRhrpB22gfYL5Ty4xwO7jRkszC9y
- ZZ6QF1ARSCXLH2iqr0ZiysbnP+7ED15qsW826tZD5ewWX5J5lovbaazidUZ0oTUwEuky
- d4aA==
-X-Gm-Message-State: APjAAAXMvJBfxguydsN3BY4LHGjCa87IO3COp4E+puHB1+ne30LwEvrE
- aS663CpApD9OCNTw7//gz+g=
-X-Google-Smtp-Source: APXvYqz0gH537B8rU2w00QiT/qNEHBVmoinFUpSwuRNgUqOSFjcLDQplIaEzENzq42pnIhByD4QFUw==
-X-Received: by 2002:a05:600c:22c1:: with SMTP id
- 1mr3946744wmg.142.1574149166955; 
- Mon, 18 Nov 2019 23:39:26 -0800 (PST)
-Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id k125sm2206895wmf.2.2019.11.18.23.39.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 Nov 2019 23:39:26 -0800 (PST)
-Date: Tue, 19 Nov 2019 08:39:24 +0100
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH 2/3] ARM: dts: sun8i: a33: add the new SecuritySystem
- compatible
-Message-ID: <20191119073924.GA32060@Red>
-References: <20191114144812.22747-1-clabbe.montjoie@gmail.com>
- <20191114144812.22747-3-clabbe.montjoie@gmail.com>
- <20191118111143.GF4345@gilmour.lan>
+ id 1iWyO8-0007j0-8b; Tue, 19 Nov 2019 07:57:32 +0000
+X-UUID: c053ea45551e44dc9614489e57079924-20191118
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=yBnu1NtPajEa00aUiIIxVlbDQ8eChoLCV7rmSdXtLH4=; 
+ b=PDT3vL3EhKmVaDjFzp+2dEvjD54PpDO7kDG3B9MDJev5ur3npY9ZwcSTCtnxiKFKMA5UthNLEWgWtbILacQXvBHVftLSuitUIsefXCobp5KDTiYwhm57SkTqZC7od2q/tcEes1DyMM+U+lvbds7ABaRHhV9cSd7xRYzWqk+YlSs=;
+X-UUID: c053ea45551e44dc9614489e57079924-20191118
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <sam.shih@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1796284694; Mon, 18 Nov 2019 23:57:23 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 18 Nov 2019 23:57:37 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by mtkcas07.mediatek.inc
+ (172.21.101.84) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 19 Nov 2019 15:57:08 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 19 Nov 2019 15:57:08 +0800
+Message-ID: <1574150240.19262.7.camel@mtksdccf07>
+Subject: Re: [RESEND, PATCH 1/1] arm: dts: mediatek: add mt7629 pwm support
+From: Sam Shih <sam.shih@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Date: Tue, 19 Nov 2019 15:57:20 +0800
+In-Reply-To: <31fddc2b-65c7-02e8-dca2-b5d6dc050f87@gmail.com>
+References: <1571751001-28588-1-git-send-email-sam.shih@mediatek.com>
+ <1571751001-28588-2-git-send-email-sam.shih@mediatek.com>
+ <31fddc2b-65c7-02e8-dca2-b5d6dc050f87@gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191118111143.GF4345@gilmour.lan>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_233928_597811_8FF75908 
-X-CRM114-Status: GOOD (  16.42  )
+X-CRM114-CacheID: sfid-20191118_235728_311100_FD4F90D0 
+X-CRM114-Status: GOOD (  14.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,6 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,47 +84,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
- linux-crypto@vger.kernel.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 18, 2019 at 12:11:43PM +0100, Maxime Ripard wrote:
-> Hi,
+On Sun, 2019-11-10 at 21:51 +0100, Matthias Brugger wrote:
 > 
-> On Thu, Nov 14, 2019 at 03:48:11PM +0100, Corentin Labbe wrote:
-> > Add the new A33 SecuritySystem compatible to the crypto node.
-> >
-> > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> On 22/10/2019 15:30, Sam Shih wrote:
+> > This adds pwm support for MT7629.
+> > Used:
+> > https://patchwork.kernel.org/patch/11160851/
+> > 
+> > Signed-off-by: Sam Shih <sam.shih@mediatek.com>
 > > ---
-> >  arch/arm/boot/dts/sun8i-a33.dtsi | 3 ++-
-> >  1 file changed, 2 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/arch/arm/boot/dts/sun8i-a33.dtsi b/arch/arm/boot/dts/sun8i-a33.dtsi
-> > index 1532a0e59af4..5680fa1de102 100644
-> > --- a/arch/arm/boot/dts/sun8i-a33.dtsi
-> > +++ b/arch/arm/boot/dts/sun8i-a33.dtsi
-> > @@ -215,7 +215,8 @@
+> >  arch/arm/boot/dts/mt7629.dtsi | 15 +++++++++++++++
+> >  1 file changed, 15 insertions(+)
+> > 
+> > diff --git a/arch/arm/boot/dts/mt7629.dtsi b/arch/arm/boot/dts/mt7629.dtsi
+> > index 9608bc2ccb3f..24375fc5f936 100644
+> > --- a/arch/arm/boot/dts/mt7629.dtsi
+> > +++ b/arch/arm/boot/dts/mt7629.dtsi
+> > @@ -241,6 +241,21 @@
+> >  			status = "disabled";
 > >  		};
-> >
-> >  		crypto: crypto-engine@1c15000 {
-> > -			compatible = "allwinner,sun4i-a10-crypto";
-> > +			compatible = "allwinner,sun8i-a33-crypto",
-> > +				     "allwinner,sun4i-a10-crypto";
+> >  
+> > +		pwm: pwm@11006000 {
+> > +			compatible = "mediatek,mt7629-pwm";
+> > +			reg = <0x11006000 0x1000>;
+> > +			interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_LOW>;
+> > +			clocks = <&topckgen CLK_TOP_PWM_SEL>,
+> > +				 <&pericfg CLK_PERI_PWM_PD>,
+> > +				 <&pericfg CLK_PERI_PWM1_PD>;
+> > +			clock-names = "top", "main", "pwm1";
+> > +			assigned-clocks = <&topckgen CLK_TOP_PWM_SEL>;
+> > +			assigned-clock-parents =
+> > +					<&topckgen CLK_TOP_UNIVPLL2_D4>;
+> > +			num-pwms = <1>;
 > 
-> If some algorithms aren't working properly, we can't really fall back
-> to it, we should just use the a33 compatible.
+> num-pwms is not defined. Did you mean pwm-cells?
 > 
+> Regards,
+> Matthias
+> 
+> > +			status = "disabled";
+> > +		};
+> > +
+> >  		i2c: i2c@11007000 {
+> >  			compatible = "mediatek,mt7629-i2c",
+> >  				     "mediatek,mt2712-i2c";
+> > 
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
-Since crypto selftest detect the problem, the fallback could be used and SS will just be in degraded mode (no sha1).
-But since nobody reported this problem since 4 years (when SS was added in a33 dts), the absence of sha1 is clearly not an issue.
 
-Regards
+Sorry for the Late Reply,
+The num-pwms field is redundant after we derive it from the compatible
+string. I forgot to remove it from the device tree.
+I will send a new version.
+
+Thanks,
+Best Regards,
+Sam Shih
 
 _______________________________________________
 linux-arm-kernel mailing list
