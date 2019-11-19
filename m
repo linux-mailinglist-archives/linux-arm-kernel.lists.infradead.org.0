@@ -2,117 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BFD71025A4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 14:42:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEE861025B9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 14:46:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P0oMEdfwxU7RAoSxGPwG2AhkQTxCPFEXDH5FAe1YTqc=; b=s7E0txn9kxjD31
-	JCJgczfj4IxO+/jTYxmLs29uv65fbvpP+9SeRBLoxHHm1Ts3TKteHRmqkvUF7XawBhLIu4Ox8+BHT
-	fGJNHHb2itqKw537GFRQIQV1pnHv/NXn3OiSjdGhflM8eDKnZz/PuerQuk8JxwXjmX1x/yFrAHiTv
-	i1jLfebHYDp+5qTM6qjlD1LicmqPVUMagjfx6bg4m/bJRyZ/4yu17xWrUPZbAnz9oPzCE2IAtaMCv
-	udoc+FCJDthYazE5QREA/6AXU3pzxex2mUSvLw8A6xRcuwYq4i1ITgGR4bcquw6uD2ttwo6vG0WIB
-	vIYbGY6kA9r4iF2J/erw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hjR01FcY+CLKdkI4KSe3L1y84EjQWgGvfUeF7F/WC4I=; b=dgW+xrjjB3jjtx
+	0e4IDQ1A/T39YTm8zm/4NKim/RuWE2QtFx2is4BccmM57v3Mhuwc9vW6ckYTdtsBD/wr0PEFkToX4
+	NZBqR+kwkIIhgoSYgF6VHa2xtzu/xImdM67FP9HV9iE7OfhDVj4YzfnGUrhvwBS4SnnYRXwuPZLel
+	00JPdWc+p6hmhB47m80t8NspF54bl+GdY9cfJANlzUjoNPWHXYKy92C49X6boJRv6grnYjfW/Bchz
+	uZW4OuHhg73aqmTdlh89ce9wdkfLEQ8iYu+ON3VQ1prnzThTa/fbU19faQYSb0vABn/+XOXpcsLQd
+	6lyqc8CifPLwGJV8z0Pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX3lx-0001FF-Cd; Tue, 19 Nov 2019 13:42:25 +0000
-Received: from mail-eopbgr10055.outbound.protection.outlook.com ([40.107.1.55]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1iX3pa-0002sP-Sb; Tue, 19 Nov 2019 13:46:10 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX3lo-0001EC-FU
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 13:42:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=lZWBUXRRYqDleBMrt1Mc48yU8jD4XY7Kix463Co2WrCAw/bAJBrrF5CtCAeZdPNcU/0wHDjxyKEBHCLyHCsrvw8+vZUjcGYYuWIJA5gXZWucRdxxy78n0oiPqUZTH2J1ULIyZQDUJ/5cFHRgptvZzg606fm6jOnsjfW0OOVIWtO/HLWW/gnT2hfYUcmz3APRqLjdDoxe9uakYvOA8x4i7yEsvjIYvA6naU9OrM9qEHcltKB1JSyBkD6VPeGRYPPV7tm8tFB+fHleVtU6As8WNVly7iwdud3y6C9uNeqqwx7utm31vQCXlH4g7sa80xhy3BQnT6Eg1fRBfiB5Qyro3g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZrcA4FocLholhOcDCTRyJy7X5KnYvEgUiUvLfJrq0gQ=;
- b=CZBRWY3hO13iv/CAO5CHc1ZH3xcqlM9RijPmW/dM0C/08T40eJ5C2b/lV5o29/7Kkz76tPjCoF5AaLqNn2mHkSZSpdvBQ/H2F433ykWCSFtc9P41ab1LOE0tqabEHNNQlTNvOzmJNtLZLIcZPfDy3EZNmQ/OYeeiIPBWxphp9JFfZFYABNimGM/oEmQ8pc71Zqu71e6B+4ZMfNapQzGQD1BIMZLvWLe6am+5jUsIMV/0W0B/jaQbsAObu5YkBaLN/K5evtrwXATsL1r6dcK8y45y5IIU9W/WGDUDcuGkEL4RTXSZUxb27CXXK4/GkJXORBHwaDT3GQyMkAzNbriiOA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZrcA4FocLholhOcDCTRyJy7X5KnYvEgUiUvLfJrq0gQ=;
- b=mdXTCrtqa8RY6YugOQtIqa2WrJWAUTCjqLd1hbmSDGdxXkg0EwkA7tfhT+qiR1Pf7gNOiiH+5NTq9Rynq28dYLcGDh4lyzc11ay2xCiM4XONwczxMm9QBli+iNXB6rGZ9dWqqrGNV/WWnbJfGKstvEcaocfK355EJGyG2EF13Vg=
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
- AM0PR04MB5587.eurprd04.prod.outlook.com (20.178.117.140) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2451.28; Tue, 19 Nov 2019 13:42:07 +0000
-Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::fd44:1b14:587c:9fde]) by AM0PR04MB5779.eurprd04.prod.outlook.com
- ([fe80::fd44:1b14:587c:9fde%7]) with mapi id 15.20.2451.029; Tue, 19 Nov 2019
- 13:42:07 +0000
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH V3 0/4] clk: imx: imx8m[x]: switch to clk_hw API
-Thread-Topic: [PATCH V3 0/4] clk: imx: imx8m[x]: switch to clk_hw API
-Thread-Index: AQHVnrhjSBoXgoVf/UaxtVvL2YWuSKeSgNGA
-Date: Tue, 19 Nov 2019 13:42:06 +0000
-Message-ID: <20191119134205.yxylwjfv27dxtt4o@fsr-ub1664-175>
-References: <1574154146-8818-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1574154146-8818-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM3PR03CA0071.eurprd03.prod.outlook.com
- (2603:10a6:207:5::29) To AM0PR04MB5779.eurprd04.prod.outlook.com
- (2603:10a6:208:131::23)
-x-originating-ip: [89.37.124.34]
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=abel.vesa@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 8c75200f-4139-4471-6807-08d76cf644c3
-x-ms-traffictypediagnostic: AM0PR04MB5587:|AM0PR04MB5587:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB55879998836CF7C65E308BF1F64C0@AM0PR04MB5587.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4502;
-x-forefront-prvs: 022649CC2C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(7916004)(366004)(199004)(189003)(99286004)(446003)(11346002)(44832011)(486006)(6506007)(76176011)(476003)(66446008)(5660300002)(71200400001)(8936002)(186003)(81166006)(81156014)(9686003)(966005)(14454004)(8676002)(66066001)(33716001)(3846002)(6116002)(2906002)(6512007)(498600001)(25786009)(6306002)(4326008)(64756008)(66556008)(86362001)(102836004)(66946007)(66476007)(53546011)(229853002)(52116002)(386003)(54906003)(7736002)(305945005)(6436002)(6862004)(1076003)(256004)(6486002)(6636002)(6246003)(71190400001)(26005)(14444005)(32563001)(15585785002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5587;
- H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: RGbPUwkGIonwVa8V4qG9cv9W1i2t+g8fQcBtMdsSw8SxkhOq7D98kQuxgTL6zDxR3+zoxePuuNF+1zLcz1C/ZXKfh98uUI5OoXASxWD9rJWjCK4euhTrIHpxuh4qc2iFC1+b+++UDMDsFf1C5+D4uMkK9tfySH4+mwSfgc4ay5gyUG/ttpgZtSauSB9+ME0r0D3QpkzYvCUV5o7Yj3pb2AlTE91C0CZNu4bNUKPChgU1OMKpS1JiwRVQwpmmo2GOMQsxCCGRq20+wgri3jsoM+vj7LIG4SrrF7PW/Yd1ElTG1dUorRsWbk0PmRc56nthBibZSFzZf1Oc8gyLInaZdN0M2LUn3Puotm3B+/Sp9ZNzYyKgDj3wDG+z5jXmB1qrlampmB31As6fo2sLhh5s2Gd5UW+UzNJu71VsCZOMR4up75AtkxA1wnkbItYmUUYQ
-Content-ID: <8473AC6E9198EC45AB658BB8F970F4A4@eurprd04.prod.outlook.com>
+ id 1iX3pP-0002rM-KR; Tue, 19 Nov 2019 13:46:02 +0000
+Received: from wf0530.dip.tu-dresden.de ([141.76.182.18] helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1iX3pN-0005yT-5D; Tue, 19 Nov 2019 14:45:57 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: arm@kernel.org
+Subject: [GIT PULL] Rockchip dts64 changes for 5.5 - round 3
+Date: Tue, 19 Nov 2019 14:45:56 +0100
+Message-ID: <3235791.ImxGk5JOut@phil>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8c75200f-4139-4471-6807-08d76cf644c3
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Nov 2019 13:42:06.9854 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: SebeVTzmxsVnW9bCk+mbuJCo8fS1UO6AklNx2nbeXt/aC6ia1wh/2tDqdxducXDqkgOVnBcX+lHJOZNSk9zj1A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5587
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_054216_566346_D6131519 
-X-CRM114-Status: GOOD (  12.62  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191119_054601_340716_91A9F683 
+X-CRM114-Status: GOOD (  14.15  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.55 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,63 +53,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Alice Guo <alice.guo@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-rockchip@lists.infradead.org, soc@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-11-19 09:04:46, Peng Fan wrote:
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> V3:
->  Rebased to linux-next to avoid conflict, not based on shawn's clk/imx
->  correct a few pll of imx8mn to imx_pll1443x_pll per Leonard's comments
->  add Abel's R-b tag
-> 
+Hi (arm-)soc people,
 
-Adding the R-b tag again here:
+for whatever reason I've gotten a big avalanche of patches for various
+arm64 parts since the last pull request and with -rc8 being real I thought
+I'll try to get these into 5.5 still to not make the wait too long ;-)
 
-Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+And I don't think it's anything earth shattering in there.
 
-> V2:
->  Add a new patch patch 1/4 to avoid build warning for arm64
->  clk: imx: Remove __init for imx_obtain_fixed_clk_hw() API
->  https://patchwork.kernel.org/cover/11224933/
-> 
-> This patchset is to Switch i.MX8MN/M/Q clk driver to clk_hw
-> based API.
-> 
-> Based on linux-next branch, with [1] applied.
-> 
-> [1]  clk: imx: switch to clk_hw based API
->      https://patchwork.kernel.org/cover/11217881/
-> 
-> Peng Fan (4):
->   clk: imx: Remove __init for imx_obtain_fixed_clk_hw() API
->   clk: imx: imx8mn: Switch to clk_hw based API
->   clk: imx: imx8mm: Switch to clk_hw based API
->   clk: imx: imx8mq: Switch to clk_hw based API
-> 
->  drivers/clk/imx/clk-imx8mm.c | 550 +++++++++++++++++++++--------------------
->  drivers/clk/imx/clk-imx8mn.c | 475 ++++++++++++++++++------------------
->  drivers/clk/imx/clk-imx8mq.c | 569 ++++++++++++++++++++++---------------------
->  drivers/clk/imx/clk.c        |   4 +-
->  4 files changed, 819 insertions(+), 779 deletions(-)
-> 
-> -- 
-> 2.16.4
-> 
+
+If it's not overly late, please pull, otherwise I'll move these over to 5.6
+which also wouldn't be problematic.
+
+Thanks
+Heiko
+
+The following changes since commit 75aa567803b15e679432655badf95cd30b66b930:
+
+  arm64: dts: rockchip: fix sdmmc detection on boot on rk3328-roc-cc (2019-11-09 02:15:22 +0100)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.5-rockchip-dts64-3
+
+for you to fetch changes up to c36308abe4110e4db362d5e2ae3797834a7b1192:
+
+  arm64: dts: rockchip: Enable MTD Flash on rk3399-roc-pc (2019-11-19 00:17:46 +0100)
+
+----------------------------------------------------------------
+PCIe regulator improvements for RockPi4 and Rock960, NanoPi improvements
+for PCIe and cooling maps, a big number of improvements for the
+rk3399-roc-pc (spi-flash, sdmmc, regulators, hdmi-sound, gpu node) and
+some more things for the px30-evb (thermal handling and dropping an
+operating point).
+
+----------------------------------------------------------------
+Anand Moon (1):
+      arm64: dts: rockchip: Add regulators for pcie on rk3399-rock960
+
+Heiko Stuebner (3):
+      arm64: dts: rockchip: remove 408MHz operating point from px30
+      arm64: dts: rockchip: add thermal infrastructure to px30
+      arm64: dts: rockchip: enable tsadc on px30-evb
+
+Kever Yang (1):
+      arm64: dts: rockchip: Fix min voltage for rk3399-firefly vdd_log
+
+Markus Reichl (8):
+      arm64: dts: rockchip: Add node for gpu on rk3399-roc-pc
+      arm64: dts: rockchip: Add regulators for pcie on rk3399-roc-pc
+      arm64: dts: rockchip: Enable HDMI Sound on rk3399-roc-pc
+      arm64: dts: rockchip: Disable HS400 for mmc on rk3399-roc-pc
+      arm64: dts: rockchip: Fix vdd_log on rk3399-roc-pc
+      arm64: dts: rockchip: Use correct pin for lcd-reset pinctrl on rk3399-roc-pc
+      arm64: dts: rockchip: Add SDR104 mode to SD-card I/F on rk3399-roc-pc
+      arm64: dts: rockchip: Enable MTD Flash on rk3399-roc-pc
+
+Matwey V. Kornilov (1):
+      arm64: dts: rockchip: Enable PCIe for Radxa Rock Pi 4 board
+
+Robin Murphy (2):
+      arm64: dts: rockchip: Fix NanoPC-T4 cooling maps
+      arm64: dts: rockchip: Improve nanopi4 PCIe
+
+ arch/arm64/boot/dts/rockchip/px30-evb.dts          |  6 ++
+ arch/arm64/boot/dts/rockchip/px30.dtsi             | 71 ++++++++++++++++++++--
+ arch/arm64/boot/dts/rockchip/rk3399-firefly.dts    |  2 +-
+ arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts  | 28 +--------
+ arch/arm64/boot/dts/rockchip/rk3399-nanopi4.dtsi   | 27 +++++++-
+ .../boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts  |  2 +
+ arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi    | 62 ++++++++++++++++---
+ arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dts  | 14 +++++
+ arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi   | 11 ++++
+ 9 files changed, 181 insertions(+), 42 deletions(-)
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
