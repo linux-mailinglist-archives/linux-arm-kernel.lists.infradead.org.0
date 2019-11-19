@@ -2,55 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D53B102AA2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 18:17:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B188102ABF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 18:25:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=p3vmcPnCX2JQbtKfl6iuaAaDNN9LUKJ0PpJQ1xtBxC0=; b=fx8h8hr3VHZbO9FP695GTAGyv
-	GQs2rv6L7X1CxiGnhBl/Cp7WSnoJYiG517Ynkdhx9hqtDCPBqANls1G2CMk+K4p33vWZf3wNLStoH
-	n7gyL4YqxcYUQ2cDyru59TNKnKEfNuc8x2omVRL4LX9/ysB8O5/QRP2/A4yzC0pOgU8G5ghICmbq7
-	pHhlEIyqX36urHPJcfdmFCueu9Kfy+/ph2OHCw68clWfp68h2XQkyHZC0nBRezMLjR/WY9WvJ8hva
-	3qYt7vdzhbgRMbCNPlxKLXdfERjbAvTFzfF7JIeKQOiyEk+jmlmEptoo69OBFIAFr8FU6N5x2PnCi
-	5NKfpRN6A==;
+	 bh=stLf3omLUZIhQ+hrg/NUcuxv1+8LJFn2FH9epUV5Hqw=; b=m7YGLVJQpMRLStFnDCd3cfI+j
+	iEzdlSihqnlgueLNo3sha7QYdz9SPCgNHDZc52B1lybrwYGmUgA35r4L9oRqk1XNytb+SCazGVSS8
+	VJtMLfU/Gq+dtKHXa05ohyJQJ2x2X3ylBT6c2tUefaOZ3rt5Nxm4wgUH/YFUWnbeZsfjX/45E5QZ/
+	BBWlsWaSwipPX60xJRlf6DOyhe8AnsEgDFD6+wWkITirH6KfbwkE3RvdRsJIQR2GDb5kiFrvhdd6M
+	x3eF9v1J9TP8E/aWg52Wlllph2Ki46RpLANUsqE/BV5TRkSqJXUGCO6ul72UhYA3W6GKMPla28kH9
+	5mV0Wkyig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX77v-00027i-Ho; Tue, 19 Nov 2019 17:17:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX77n-00026j-CD
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 17:17:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 841311FB;
- Tue, 19 Nov 2019 09:17:09 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B5FBF3F703;
- Tue, 19 Nov 2019 09:17:04 -0800 (PST)
-Subject: Re: [PATCH] dma-mapping: treat dev->bus_dma_mask as a DMA limit
-To: Christoph Hellwig <hch@lst.de>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-References: <20191113161340.27228-1-nsaenzjulienne@suse.de>
- <dd074ef5c23ba56598e92be19e8e25ae31b75f93.camel@suse.de>
- <20191119170006.GA19569@lst.de>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <7609007d-52f5-bb10-e8d5-96fadbfab46d@arm.com>
-Date: Tue, 19 Nov 2019 17:17:03 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iX7Fp-0005Z2-Cq; Tue, 19 Nov 2019 17:25:29 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iX7Fh-0005YB-DQ; Tue, 19 Nov 2019 17:25:22 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id B4EA7B20B;
+ Tue, 19 Nov 2019 17:25:19 +0000 (UTC)
+Message-ID: <e3e192e178fadddcd862c2c1f4644b5a1fe3a3d0.camel@suse.de>
+Subject: Re: [PATCH v2 3/3] ARM: dts: bcm2711: Enable HWRNG support
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Stephen Brennan <stephen@brennan.io>
+Date: Tue, 19 Nov 2019 18:25:16 +0100
+In-Reply-To: <BYK1FVFPTH7J.159A75JOGITR1@pride>
+References: <BYK1FVFPTH7J.159A75JOGITR1@pride>
+User-Agent: Evolution 3.34.1 
 MIME-Version: 1.0
-In-Reply-To: <20191119170006.GA19569@lst.de>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_091711_459016_D2BB5B9B 
-X-CRM114-Status: GOOD (  18.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191119_092521_599179_11FEC7B6 
+X-CRM114-Status: GOOD (  17.09  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,60 +58,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-mips@vger.kernel.org,
- linux-ide@vger.kernel.org, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, Frank Rowand <frowand.list@gmail.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Paul Burton <paulburton@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
- Joerg Roedel <joro@8bytes.org>, x86@kernel.org, phil@raspberrypi.org,
- linux-acpi@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
- linux-pci@vger.kernel.org, James Hogan <jhogan@kernel.org>,
- Len Brown <lenb@kernel.org>, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Jens Axboe <axboe@kernel.dk>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Hanjun Guo <guohanjun@huawei.com>, linux-kernel@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, iommu@lists.linux-foundation.org,
- Sudeep Holla <sudeep.holla@arm.com>, linuxppc-dev@lists.ozlabs.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Scott Branden <sbranden@broadcom.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matt Mackall <mpm@selenic.com>, linux-kernel@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-crypto@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Ray Jui <rjui@broadcom.com>, linux-arm-kernel@lists.infradead.org,
+ Stefan Wahren <wahrenst@gmx.net>
+Content-Type: multipart/mixed; boundary="===============6764348859832838238=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19/11/2019 5:00 pm, Christoph Hellwig wrote:
-> On Tue, Nov 19, 2019 at 01:57:43PM +0100, Nicolas Saenz Julienne wrote:
->> Hi Rob & Christoph,
->> do you mind if I append v2 of this into my upcoming v3 RPi4 PCIe support
->> series, I didn't do it initially as I thought this was going to be a
->> contentious patch.  But as it turned out better than expected, I think it
->> should go into the PCIe series. In the end it's the first explicit user of the
->> bus DMA limit.
->>
->> Here's v2 in case you don't know what I'm talking about:
->> https://www.spinics.net/lists/arm-kernel/msg768459.html
-> 
-> In principle I wouldn't mind, but I think this is going to conflict
-> quite badly with other changes in the dma-mapping tree (including
-> yours).  So I think we'll need a shared tree or I'll need to pull
-> in the whole series through the dma-mapping tree if there are not
-> other conflicts and the other maintainers are fine with it.
 
-TBH I can't see it being a massive problem even if the DMA patch, driver 
-and DTS patch went entirely separately via the respective DMA, PCI, and 
-arm-soc trees in the same cycle. Bisecting over a merge window is a big 
-enough pain in the bum as it is, and if the worst case is that someone 
-trying to do that on a Pi4 has a wonky PCI controller appear for a 
-couple of commits, they may as well just disable that driver for their 
-bisection, because it wasn't there at the start so can't possibly be the 
-thing they're looking for regressions in ;)
+--===============6764348859832838238==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-Q1OudO4sDtl+ITj8Di/3"
 
-Robin.
+
+--=-Q1OudO4sDtl+ITj8Di/3
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, 2019-11-19 at 09:09 -0800, Stephen Brennan wrote:
+> Hi Nicolas,
+>=20
+> On Tue Nov 19, 2019 at 11:07 AM, Nicolas Saenz Julienne wrote:
+> > Hi Stephen, thanks for the follow-up.
+> >=20
+> >=20
+> > On Mon, 2019-11-18 at 22:14 -0800, Stephen Brennan wrote:
+> > > BCM2711 features a RNG200 hardware random number generator block, whi=
+ch i=3D
+> > s
+> > > different from the BCM283x from which it inherits. Move the rng block=
+ fro=3D
+> > m
+> > > BCM283x into a separate common file, and update the rng declaration o=
+f
+> > > BCM2711.
+> > > =3D20
+> > > Signed-off-by: Stephen Brennan <stephen@brennan.io>
+> > > ---
+> >=20
+> > It's petty in this case but you should add a list of changes here too.
+>=20
+> To make sure I understand, you mean listing out the changes in each=20
+> revision of the patch series?
+
+What's generally expected is for the cover letter to contain an overview of=
+ the
+series changes. No need to go into specific detail. Then, every patch shoul=
+d
+list its local modifications.
+
+Also remember to add the list of changes after the '---' line in your patch=
+,
+this way they won't show up in the final commit log.
+
+If in doubt have a look at the kernel mailing lists, there are plenty of
+examples.
+
+Regards,
+Nicolas
+
+
+--=-Q1OudO4sDtl+ITj8Di/3
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3UJXwACgkQlfZmHno8
+x/5J8gf/Wg/IrKzrAi1fKuJaY4CfPJSLpKvLtmOfDqcchsMm6aq0nBODopwXGT0y
+bcPiG7OOnwcDqlD8pxyBL8iBG48gsidg51JSizuSnJ6lgxPpSN6JHoD4HUi2hnS5
+y0wXzThHmoZB00Vep0o6EmBsY2hHU/URLfH1uWnSwut9CRQfC/dVJ8UhxPVuCaqJ
+HLYdPveYV3S6P1YUk0RgO95RqhjEegya1zsvT3W0pGwda042QbvweKzaUtzRERT2
+GwN2eIcP2SJ+8S/P8edIPwd3T6uL7gMLLsw7WWCp9DOQPI/ORFPm7c2dUEkdXW1l
+mAscggOyCMH1qNaOc7lVVZ7o92N1mA==
+=d9p8
+-----END PGP SIGNATURE-----
+
+--=-Q1OudO4sDtl+ITj8Di/3--
+
+
+
+--===============6764348859832838238==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6764348859832838238==--
+
+
