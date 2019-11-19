@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0F3F102E31
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 22:22:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32D35102E5E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 22:42:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uJHlON7GhLUV4Q/qqFwA1louAmQR3F4Vk74vKV0Oi38=; b=Q6WlUMv+ws9qf2
-	YI+fNhCw//vOkmzVnIXGG8vx5eFyazzTot1SLQfxyGFZkqRzJXAV4cxjEXxydkzOmJRncrIjMGvxM
-	lQZhiBlZeAtXsN0mwwzk3Nb4bDnnY9reoZHONo8MBLKlWjXhvJaNlGuuK1rP8hak7/Y4EAZ+ceIDp
-	wsnLHiN3qibjI4fQ7eAW21k7gG+17XPcNJo7yo+jBh/tJBNknvDbO1JtFmNubx9E40Q3eSQZ7iy0P
-	Y+hxqskFX0RCemjuB5n6vwVnWd2yd7FbOuwLr+jrJbzIPLU1kfy4YIKuN5gzZRbs89D0xGzqxdxHK
-	JlvDyEI1o7Axa2+jrXaQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NW6/1tJbWpll8y6fiqytNYQHEhIVysic2XL84jsYvfI=; b=RWlzY8kgc9I25k
+	nEps2IaVskS/LT1PfY16xuG+2y6LDv8DXnKa0DJHEWNu7NoDmNQ//F1cIu/Cc6ljwygfQZDvmORfv
+	RUI0Ci/umaf7B+EY1o/boHdC2TQqmqdq/idY6aCzObZjn6eLJdqfFBVlQdp8fhxD01iBHxts6h+rQ
+	XdCFv6Vl/L/bvA2ykJ+yTjfBJdWrctAwWS0sUM9LkMEpUnYdjybsD9twok0jHV0JsPvNqC8gaNaoN
+	kcBAX7IHLlGgLOLTDBZXN6p0Y3Okh/nE0cwV5+akM11koXImJiCJx1AlYCsVoGDqNZ5tt3Fk2A7Mx
+	qzO2JLtdMjE1Mel4mj+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXAxR-0002Kb-1T; Tue, 19 Nov 2019 21:22:45 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iXBGx-0000Hn-Cu; Tue, 19 Nov 2019 21:42:55 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXAxI-0002Ji-PB
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 21:22:38 +0000
-Received: by mail-wr1-x444.google.com with SMTP id n1so25618537wra.10
+ id 1iXBGp-0000HB-Gm
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 21:42:48 +0000
+Received: by mail-lj1-x243.google.com with SMTP id r7so25097603ljg.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 Nov 2019 13:22:35 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=DlXKb9BgYz6v1KMFvMMPAiIkp2F3kVOgCpxH+j84Lwc=;
- b=TGShtLEHdu3HRj6tfTSQUMGYhrOov7aFOBwaj1LQTzzN1p2LNThZ3aJN2awfMO2+uz
- bVL9pmYvcj6kLNdmGTP00mf/WiaXxIGAK2gMrSLN53soNxtUi1DhxSWQEgZaX3QGb3VF
- B54T3Jlqd7rF8dDGfwSLOVODjwjAsD/lKx7Aw=
+ Tue, 19 Nov 2019 13:42:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=XQwbcad//Pe4uYDzL68QH8A/dhMUUQ9ecZejem5rxiM=;
+ b=cGYm68rHZuLOe1+MxZNpcDmEEX13/yAjIzEFaSwcLvgbinvb59QiB2trvkZdyePMly
+ KUB2rdO9t8xA4j2pMhLlZtuM9poWU70pdeb78rQGxjjNbHKI6Da9oGVRi7nPFpEAgnyK
+ HC6coOrYA72lun1398rVBEdelKiIvxm2Lfz/il23K4nv9vEutoTgJPHGnRj+Qs9YhMEJ
+ CrQH3RA7CHc4FnTdXFRQ9cKkcHc3jVnPQPOXr6Mah9++DjFMCxzAP8oN1S8cKP6K4XTm
+ TJxhIP3dCYTrYwSp/iaSkOfTawDnwKyVaxfd1FQyegH+Q6GztRnuCh2yQIbAln1RjpRs
+ oXKg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=DlXKb9BgYz6v1KMFvMMPAiIkp2F3kVOgCpxH+j84Lwc=;
- b=MLX2NuBix1GbxQdvM67wbzlD8HNNFOdqSE2cdGFDxvy5hXYu7b3Jth8vdgFFtHe5/9
- snq8OMZbJyH9y7lywZrGAjbO6ITBEjLi+Bp1j8R0rc+V7h1cUj9YkQRn+RwhOYNPW5od
- AuKgfsUMk+YTpfo8W1qx36xmWWWRlFS25d6quoloqgzX7eXgLKbLjF4UI7MxwF7Lsfv2
- JyqLJdm8mOilHcHwYcd7VT36ZgdWLBUO+uASwr6yQjqA+qQISFVKxclFtlY45EfvUxD7
- KOvZUhbnZ2HFxH5+YX7bkVEJVE0deZKKXnnVYXnMI9OoIqi90w1zs1j1az1RiryfGZUK
- a5uQ==
-X-Gm-Message-State: APjAAAVDtzIXyvhM/nKWoUqBbyTKGgUob7Lj4NaH2lnLPEbf5cF8+8ny
- wag2A/149UTi6TpaiXcViMvfMg==
-X-Google-Smtp-Source: APXvYqw1WQXBpMoG44fK0X22TCogCXWRV/ybRJc8btr4U8n/otAyw4dscEzByPiiWpPs5oLTQWkcmw==
-X-Received: by 2002:adf:de0a:: with SMTP id b10mr40657112wrm.268.1574198554470; 
- Tue, 19 Nov 2019 13:22:34 -0800 (PST)
-Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
- [212.51.149.96])
- by smtp.gmail.com with ESMTPSA id b2sm3035487wrr.76.2019.11.19.13.22.33
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=XQwbcad//Pe4uYDzL68QH8A/dhMUUQ9ecZejem5rxiM=;
+ b=TgvsgMTmpBcoGNcj+RLXdytZMeR07nea10HzLpWzLt5VMfrlcS5Hw5oIO6aRUtaXai
+ lWmYulI+mq+EFhDD4K4a/w5ItrfQ8IJqqn4wV1KcI7Pj/laEacMmmRWYBTe1hyxj0HfG
+ TNSU5hSiPWDj2WExgXd3L78AmeOAFn/UHZNG4P3M5lCPOg/rAA24iFG2kVz77c7j31u8
+ CJi5HAbmulAeBUvJssG5TLmWDig3Iyoi9wfHEEnqwNggqqeIJrEvpqGVwQe2sun4DiHp
+ ySmfQrECpS4kWmMr/igx3FDUzOcB9gJlwM6ivejkkm/2C54D6FsC9MIQGA/No7h1fhfX
+ q+kg==
+X-Gm-Message-State: APjAAAW4vY9kHHYPZvCkDBwrswYo3wo4/XZ/DPdZgD029rmqhH0AjMeg
+ 23kK4YQ7qNAU0ixMhjiQzOzeVg==
+X-Google-Smtp-Source: APXvYqwN/eyaWDtN0T2DivmihiRjPrfTNLBpp4c8KNaDgHf+GGH+luUgDARapbxJL6lM1g3J5KLPpg==
+X-Received: by 2002:a05:651c:95:: with SMTP id 21mr5805470ljq.40.1574199764396; 
+ Tue, 19 Nov 2019 13:42:44 -0800 (PST)
+Received: from localhost.bredbandsbolaget
+ (c-79c8225c.014-348-6c756e10.bbcust.telenor.se. [92.34.200.121])
+ by smtp.gmail.com with ESMTPSA id u5sm10829885ljg.68.2019.11.19.13.42.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 19 Nov 2019 13:22:33 -0800 (PST)
-Date: Tue, 19 Nov 2019 22:22:31 +0100
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Boris Brezillon <boris.brezillon@collabora.com>
-Subject: Re: [PATCH 2/8] drm/atmel: ditch fb_create wrapper
-Message-ID: <20191119212231.GE30416@phenom.ffwll.local>
-References: <20191115092120.4445-1-daniel.vetter@ffwll.ch>
- <20191115092120.4445-3-daniel.vetter@ffwll.ch>
- <20191115103324.1fbeca63@collabora.com>
+ Tue, 19 Nov 2019 13:42:43 -0800 (PST)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: dri-devel@lists.freedesktop.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
+Subject: [PATCH] drm/mcde: Support using DSI in LP mode
+Date: Tue, 19 Nov 2019 22:42:34 +0100
+Message-Id: <20191119214234.27932-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191115103324.1fbeca63@collabora.com>
-X-Operating-System: Linux phenom 5.2.0-3-amd64 
-User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_132236_817099_74D672A0 
-X-CRM114-Status: GOOD (  15.89  )
+X-CRM114-CacheID: sfid-20191119_134247_684552_28771869 
+X-CRM114-Status: GOOD (  11.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -98,75 +97,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Boris Brezillon <bbrezillon@kernel.org>,
- Daniel Vetter <daniel.vetter@ffwll.ch>,
- Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Daniel Vetter <daniel.vetter@intel.com>, Sam Ravnborg <sam@ravnborg.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Stephan Gerhold <stephan@gerhold.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 15, 2019 at 10:33:24AM +0100, Boris Brezillon wrote:
-> On Fri, 15 Nov 2019 10:21:14 +0100
-> Daniel Vetter <daniel.vetter@ffwll.ch> wrote:
-> 
-> > Spotted while looking through them all.
-> > 
-> > Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
-> > Cc: Sam Ravnborg <sam@ravnborg.org>
-> > Cc: Boris Brezillon <bbrezillon@kernel.org>
-> 
-> Acked-by: Boris Brezillon <boris.brezillon@collabora.com>
+It is possible to set a flag in the struct mipi_dsi_device
+so the panel is handled in low power (LP) mode. Some displays
+only support this mode and it is also good for testing.
 
-Merged, thanks for taking a look.
--Daniel
+Cc: Stephan Gerhold <stephan@gerhold.net>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ drivers/gpu/drm/mcde/mcde_dsi.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
 
-> 
-> > Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
-> > Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> > Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > ---
-> >  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c | 8 +-------
-> >  1 file changed, 1 insertion(+), 7 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
-> > index 92640298ad41..8dc917a1270b 100644
-> > --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
-> > +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
-> > @@ -557,12 +557,6 @@ static irqreturn_t atmel_hlcdc_dc_irq_handler(int irq, void *data)
-> >  	return IRQ_HANDLED;
-> >  }
-> >  
-> > -static struct drm_framebuffer *atmel_hlcdc_fb_create(struct drm_device *dev,
-> > -		struct drm_file *file_priv, const struct drm_mode_fb_cmd2 *mode_cmd)
-> > -{
-> > -	return drm_gem_fb_create(dev, file_priv, mode_cmd);
-> > -}
-> > -
-> >  struct atmel_hlcdc_dc_commit {
-> >  	struct work_struct work;
-> >  	struct drm_device *dev;
-> > @@ -657,7 +651,7 @@ static int atmel_hlcdc_dc_atomic_commit(struct drm_device *dev,
-> >  }
-> >  
-> >  static const struct drm_mode_config_funcs mode_config_funcs = {
-> > -	.fb_create = atmel_hlcdc_fb_create,
-> > +	.fb_create = drm_gem_fb_create,
-> >  	.atomic_check = drm_atomic_helper_check,
-> >  	.atomic_commit = atmel_hlcdc_dc_atomic_commit,
-> >  };
-> 
-
+diff --git a/drivers/gpu/drm/mcde/mcde_dsi.c b/drivers/gpu/drm/mcde/mcde_dsi.c
+index 889c39efa80c..d4a12fe7ff01 100644
+--- a/drivers/gpu/drm/mcde/mcde_dsi.c
++++ b/drivers/gpu/drm/mcde/mcde_dsi.c
+@@ -648,10 +648,11 @@ static void mcde_dsi_start(struct mcde_dsi *d)
+ 	/* Command mode, clear IF1 ID */
+ 	val = readl(d->regs + DSI_CMD_MODE_CTL);
+ 	/*
+-	 * If we enable low-power mode here, with
+-	 * val |= DSI_CMD_MODE_CTL_IF1_LP_EN
++	 * If we enable low-power mode here,
+ 	 * then display updates become really slow.
+ 	 */
++	if (d->mdsi->mode_flags & MIPI_DSI_MODE_LPM)
++		val |= DSI_CMD_MODE_CTL_IF1_LP_EN;
+ 	val &= ~DSI_CMD_MODE_CTL_IF1_ID_MASK;
+ 	writel(val, d->regs + DSI_CMD_MODE_CTL);
+ 
+@@ -740,10 +741,11 @@ static void mcde_dsi_bridge_pre_enable(struct drm_bridge *bridge)
+ 		/* Command mode, clear IF1 ID */
+ 		val = readl(d->regs + DSI_CMD_MODE_CTL);
+ 		/*
+-		 * If we enable low-power mode here with
+-		 * val |= DSI_CMD_MODE_CTL_IF1_LP_EN
++		 * If we enable low-power mode here
+ 		 * the display updates become really slow.
+ 		 */
++		if (d->mdsi->mode_flags & MIPI_DSI_MODE_LPM)
++			val |= DSI_CMD_MODE_CTL_IF1_LP_EN;
+ 		val &= ~DSI_CMD_MODE_CTL_IF1_ID_MASK;
+ 		writel(val, d->regs + DSI_CMD_MODE_CTL);
+ 	}
 -- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
