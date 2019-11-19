@@ -2,89 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B98CD1026D0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 15:32:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61ED31026D6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 15:33:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qjkiDuzK6B2KscGRiraveDyZLl0wP62szsTZvheRv8s=; b=LqU11QhKgfBhyS
-	2FrKmuy8E7s7DYoGB9pcOCYOXiBboLqJkOCVyTRRMDqkFGTxdoiNKcYIQkwsM2QECLtWh9d0stn3i
-	IQw9J5b/NLN8YXdSQVIkO5s8Ueu0Gh5/IKalkMfD9DN5NpTrCKxW16mEZvCPK3MtZ8udAxUQ6cDtC
-	3bhzp6SQyEEFgBEKAizA1xiFXQN1Ux24nYCRd0025S+yxqL2XHBD89q16ITZ1L//HWKIJOuVYAFO2
-	KWQ0HWxXnWvBo/g846K/6bYR4b35E55NL+pvTt5EBZ8oT/1LqquS2rbPjxAJkOWTd+EJU9MuyK+db
-	Shh7bT6zPpODHo9UxcPQ==;
+	List-Owner; bh=9euBQ1ybeKngrFlwSnBSjb+yWAn9Fccq8Bs4AUXbjLk=; b=MAG5V1zN+b72Wx
+	Zclq9FbKSY7/8NH2q3BOv6nGbvnJA/I5mOHPTqIliDdFSMy/M50/i7+0js6e/bd2rNnOsaYlsYsP4
+	6VEU52PfGKpVuJZF6f2rTyoS4cPgOTPQkSeTRAgUMZvjmaNVap3KYtV65Ih4kRV0J6jcFjI1jF7yU
+	I/H3oZaXtW06QjCoc8834lv1y9zArrWB0NAYdO7GCgTPM2IlPrpVe2F3HibtLMzfR8NC5NJOkBnL2
+	qhVMJU/RMViGCVbv3NQGKy4z0XhF9+zUfx29U+rsMeUQ+aOYNIEuJLACyR97Nc81zEiWCuTVZVbM7
+	UUldsHeMOyrZWcogkyyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX4YO-0004N6-NX; Tue, 19 Nov 2019 14:32:28 +0000
-Received: from mail-pl1-f194.google.com ([209.85.214.194])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX4YG-0004MF-3v
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 14:32:21 +0000
-Received: by mail-pl1-f194.google.com with SMTP id az9so11847948plb.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 Nov 2019 06:32:19 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=eBb56gUBpWkIX0FYW+z97CZQ4gz538W2egeN9/8KSE8=;
- b=C7qCTmS7MDe0L1DX3N41I9BLXiuDLNHmG+Nm1yXdLa2av6Xk40l8Exrq/ah3pwsjF6
- HAtGW2TkStAs2e+CFZo8Gmow93edEeY1anr8B4+kqEryUupwegGTiSOLVWN7+JerO4TF
- IDD51dMS0dZtWR83LJ5CQpi9sSwc6ojc/TtJjW7J1WQ6FJTm6MbNdLmWOS449IysTUXf
- FrAC/05k4BSf3QWZZFDzuYPbT2zB1OzENCz+KXNf87thGWBAapcgEjAN8QGETAHirE6j
- gjatWqn0i7SWFNx+eP13izxRxIuv/fh7HhEDdGk+d4u+ZdNxquXg/7eYWeWlYHUyrc6l
- THpA==
-X-Gm-Message-State: APjAAAX+pTFWRTu0krgEBSNXPPqWVYLS66jkw+CWhpIQzPa3JTbN1ClQ
- 7Z64K1hL5GjVmryXddgeRxM=
-X-Google-Smtp-Source: APXvYqwwGsoq53FUp+0XzND+b9LLSYSKvrjBZwNTHzre77bCa3jKZ67sI4NXD0mR6B+oWVnerf80Lg==
-X-Received: by 2002:a17:90a:5d17:: with SMTP id
- s23mr6591558pji.55.1574173937748; 
- Tue, 19 Nov 2019 06:32:17 -0800 (PST)
-Received: from kozik-lap ([118.189.143.39])
- by smtp.googlemail.com with ESMTPSA id
- z62sm28857634pfz.135.2019.11.19.06.32.13
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 19 Nov 2019 06:32:16 -0800 (PST)
-Date: Tue, 19 Nov 2019 22:32:11 +0800
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH v3 1/2] dt-bindings: power: Convert Generic Power Domain
- bindings to json-schema
-Message-ID: <20191119143211.GA7804@kozik-lap>
-References: <20191030173216.5993-1-krzk@kernel.org>
- <20191105194257.GA16066@bogus> <20191114125923.GA3084@kozik-lap>
- <CAL_JsqJCps_s1OGt2SvPa4uBj9EQp0ZqyeHVw8fMR+rSSVh9ow@mail.gmail.com>
- <CAMuHMdXYg4u1SF+j=doJqaDFw+O61g2th8ppt+CBrez8QAgJRA@mail.gmail.com>
+	id 1iX4Yw-0004c7-6m; Tue, 19 Nov 2019 14:33:02 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iX4Yl-0004bE-C5
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 14:32:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6E00930E;
+ Tue, 19 Nov 2019 06:32:48 -0800 (PST)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A036D3F6C4;
+ Tue, 19 Nov 2019 06:32:47 -0800 (PST)
+Date: Tue, 19 Nov 2019 14:32:43 +0000
+From: Andre Przywara <andre.przywara@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH 2/3] kvm: arm: VGIC: Scan all IRQs when interrupt group
+ gets enabled
+Message-ID: <20191119143243.28378f8d@donnerap.cambridge.arm.com>
+In-Reply-To: <4245ee82a03c9403f8e4ff815f032709@www.loen.fr>
+References: <20191108174952.740-1-andre.przywara@arm.com>
+ <20191108174952.740-3-andre.przywara@arm.com>
+ <20191110142914.6ffdfdfa@why>
+ <20191112093658.08f248c5@donnerap.cambridge.arm.com>
+ <9ddab86ca3959acbb8b7aad24be5f1ad@www.loen.fr>
+ <20191118141216.352a3a0a@donnerap.cambridge.arm.com>
+ <4245ee82a03c9403f8e4ff815f032709@www.loen.fr>
+Organization: ARM
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdXYg4u1SF+j=doJqaDFw+O61g2th8ppt+CBrez8QAgJRA@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_063220_159373_328DF73F 
-X-CRM114-Status: GOOD (  20.02  )
-X-Spam-Score: 4.1 (++++)
+X-CRM114-CacheID: sfid-20191119_063251_495258_EB4AE03D 
+X-CRM114-Status: GOOD (  29.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (4.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.214.194 listed in list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [118.189.143.39 listed in zen.spamhaus.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.214.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,89 +68,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Kevin Hilman <khilman@baylibre.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ kvm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 19, 2019 at 10:58:11AM +0100, Geert Uytterhoeven wrote:
-> Hi Rob, Krzysztof,
-> 
-> On Thu, Nov 14, 2019 at 5:42 PM Rob Herring <robh@kernel.org> wrote:
-> > On Thu, Nov 14, 2019 at 6:59 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> > > On Tue, Nov 05, 2019 at 01:42:58PM -0600, Rob Herring wrote:
-> > > > On Wed, 30 Oct 2019 18:32:15 +0100, Krzysztof Kozlowski wrote:
-> > > > > Convert Generic Power Domain bindings to DT schema format using
-> > > > > json-schema.
-> > > > >
-> > > > > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > > > > Reviewed-by: Ulf Hansson <ulf.hansson@linaro.org>
-> > > > > Acked-by: Stephen Boyd <sboyd@kernel.org>
-> > > > >
-> > > > > ---
-> > > > >
-> > > > > Changes since v2:
-> > > > > 1. Keep description of consumers in power-domain.txt,
-> > > > > 2. Rename power_domain.txt to power-domain.txt,
-> > > > > 3. Indent example with four spaces (more readable).
-> > > > >
-> > > > > Changes since v1:
-> > > > > 1. Select all nodes for consumers,
-> > > > > 2. Remove from consumers duplicated properties with dt-schema,
-> > > > > 3. Fix power domain pattern,
-> > > > > 4. Remove unneeded types.
-> > > > > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > > > > ---
-> > > > >  .../devicetree/bindings/arm/arm,scmi.txt      |   2 +-
-> > > > >  .../devicetree/bindings/arm/arm,scpi.txt      |   2 +-
-> > > > >  .../bindings/arm/freescale/fsl,scu.txt        |   2 +-
-> > > > >  .../bindings/clock/renesas,cpg-mssr.txt       |   2 +-
-> > > > >  .../bindings/clock/ti/davinci/psc.txt         |   2 +-
-> > > > >  .../firmware/nvidia,tegra186-bpmp.txt         |   2 +-
-> > > > >  .../bindings/power/amlogic,meson-gx-pwrc.txt  |   2 +-
-> > > > >  .../devicetree/bindings/power/fsl,imx-gpc.txt |   2 +-
-> > > > >  .../bindings/power/fsl,imx-gpcv2.txt          |   2 +-
-> > > > >  .../{power_domain.txt => power-domain.txt}    |  95 +------------
-> > > > >  .../bindings/power/power-domain.yaml          | 133 ++++++++++++++++++
-> > > > >  .../bindings/power/renesas,sysc-rmobile.txt   |   2 +-
-> > > > >  .../bindings/power/xlnx,zynqmp-genpd.txt      |   2 +-
-> > > > >  .../bindings/soc/bcm/brcm,bcm2835-pm.txt      |   2 +-
-> > > > >  .../bindings/soc/mediatek/scpsys.txt          |   2 +-
-> > > > >  .../bindings/soc/ti/sci-pm-domain.txt         |   2 +-
-> > > > >  MAINTAINERS                                   |   2 +-
-> > > > >  17 files changed, 149 insertions(+), 109 deletions(-)
-> > > > >  rename Documentation/devicetree/bindings/power/{power_domain.txt => power-domain.txt} (51%)
-> > > > >  create mode 100644 Documentation/devicetree/bindings/power/power-domain.yaml
-> > > > >
-> > > >
-> > > > Reviewed-by: Rob Herring <robh@kernel.org>
-> > >
-> > > The patches should apply cleanly in top of your tree so maybe you can
-> > > pick them up?
+On Tue, 19 Nov 2019 09:40:40 +0000
+Marc Zyngier <maz@kernel.org> wrote:
+
+Hi Marc,
+
+[ ... ]
+
+> >>
+> >> I think that could work. One queue for each group, holding pending,
+> >> enabled, group-disabled interrupts. Pending, disabled interrupts are
+> >> not queued anywhere, just like today.
+> >>
+> >> The only snag is per-cpu interrupts. On which queue do they live?
+> >> Do you have per-CPU queues? or a global one?  
 > >
-> > I didn't on this one because it touches a lot of files. Though on
-> > second thought, they are all across the tree, so I might as well apply
-> > them.
+> > Yes, the idea was to have a per-VCPU "grp_dis_list" in addition to
+> > the ap_list, reusing the ap_list list_head in struct vgic_irq.
+> > vgic_queue_irq_unlock() would put them into *one* of those two lists,
+> > depending on their group-enabled status. When a group gets enabled, 
+> > we
+> > just have to transfer the IRQs from grp_dis_list to ap_list.
+> >
+> > But fleshing this out I was wondering if it couldn't be much simpler:
+> > We ignore the group-enabled status most of the time, except in
+> > vgic_flush_lr_state(). So group-disabled IRQs *would go* to the
+> > ap_list (when they are otherwise pending|active and enabled), but
+> > would be skipped when eventually populating the LRs.
+> > vgic_prune_ap_list would also not touch them, so they would stay in
+> > the ap_list (unless removed for other reasons).
+> >
+> > That might raise some eyebrows (because we keep IRQs in the ap_list
+> > which are not ready), but would require only minimal changes and 
+> > avoid
+> > all kind of nasty/racy code to be added. The only downside I see is
+> > that the ap_list could potentially be much longer, but we could 
+> > change
+> > the sorting algorithm if needed to keep group-disabled IRQs at the
+> > end, at which point it wouldn't really matter.
+> >
+> > Do you see any problem with that approach? Alex seemed to remember
+> > that you had an objection against a very similar (if not identical)
+> > idea before.  
 > 
-> There are still several leftover references to power_domain.txt.
-> Krzysztof: Do you plan to convert these, too, or do you expect the
-> individual maintainers to handle that?
+> My main worry with this is that it causes overhead on the fast path.
+> Disabled interrupts (for whichever reason they are disabled) shouldn't
+> have to be evaluated on the fast path.
+> 
+> Take for example kvm_vgic_vcpu_pending_irq(), which we evaluate pretty
+> often (each time a vcpu wakes up). Do we want to scan a bunch of
+> group-disabled interrupts there? No.
+> 
+> At the end of the day, what we're looking at is a list of disabled,
+> pending interrupts. They can be disabled for multiple reasons
+> (group is disabled, or interrupt itself is disabled). But they should
+> *not* end-up on the AP list, because that list has a precise semantic.
+> 
+> Your suggestion to add the group-disabled interrupts to the AP list
+> may be a cool hack, but it is mostly a hack that opens the whole thing
+> to a bunch of corner cases. Let's not do that.
 
-Ahh, I think that's my fault after one of iterations of the patchset. I
-can fix it up fast and maybe let's queue it through the same tree (Rob's).
+I understand what you are saying, and I had similar gripes. It was just too tempting to not give it a try ;-)
+ 
+> >> >> And if a group has
+> >> >> been disabled, how do you retire these interrupts from the AP   
+> >> list?  
+> >> >
+> >> > This is done above: we kick the respective VCPU and rely on
+> >> > vgic_prune_ap_list() to remove them (that uses   
+> >> vgic_target_oracle(),  
+> >> > which in turn checks vgic_irq_is_grp_enabled()).  
+> >>
+> >> But what if the CPU isn't running? Kicking it isn't going to do 
+> >> much,
+> >> is it?  
+> >
+> > Not directly, but in either approach that would be handled similar to
+> > disabled interrupts: once the VCPU runs, they would *not* end up in
+> > LRs (because we check the oracle before), and would be cleaned up in
+> > prune() once the guest exits (at least for the original approach).  
+> 
+> I lost track of the original approach already :-/
+> 
+> Try and build the above suggestion. It should follow the same flow as
+> the enabled, group-enabled interrupts, just with a different list.
 
-Best regards,
-Krzysztof
+OK, will do.
 
+Thanks!
+
+Andre.
 
 _______________________________________________
 linux-arm-kernel mailing list
