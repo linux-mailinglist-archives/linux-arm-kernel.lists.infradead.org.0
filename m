@@ -2,66 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18C08101A96
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 08:57:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41EB9101D72
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 09:30:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DnWQH+gAqLPxb0uX9W2+IeqISWwGDfUo1Q+6/ShZn4U=; b=XXUGLYm2UsAjIp
-	BiwvK3OQ7MvhZOR5Hakb5P5a86JnAkq/AjNMh90IgRZwNE+LRvz5eUwFn0K/0g4UaXPtEa/x0lbc8
-	I7DVHhfjF7baQIP8eICB0BC02CpnzNmRNZUK7cxDKnhfipil0GNxkUogSOkGD0ZO/m0Zy80CBp2mW
-	kO0/EK8lhAT9XziUb4cX3f28U6LYarLmyayAXW5QOKnEmJzqR6ODTs2M+DcfCFS0YcPdIIBCZVqft
-	ow697m6RvIJZ8fPSJUpytULlxmdAB0kFtGHrhPe9lgCgUad2kIO9ybATRFmVb4MQEsxhwAr0zCCOo
-	uKQqUCW0emTQSnF1kvqA==;
+	List-Owner; bh=vopLzBFCk4stDAuuk6iXIoOch2N21dwjj1SFXxN0JBg=; b=CrGurr1L5xsYEp
+	1V1unFX1apx//odfzNeOwLq8zA5MT6yq8b4qEwGb5BDnsj2yfQY54uGBQgob0xjijPqFLQa9ftMDV
+	m05/PWzFZ5N8V8/qy6eub1BC2YOjz7oB9btq5B64YdEbprlxIIo81SYoJxJTU/p/zD0o4lPgEHaKY
+	XfsoGqa12m/4/RQUpP+uDADfhHT6MSpxQh4z9cMpUamrQ6kD658XwtqIky2jicNrrqnt+iSaDoU2D
+	Mb2FDGMHq0G+5QULCjayliKOVsZXJouTLcILAh4oaiIR1NNaPfjsRr5nGi99vfcvA+qaUjWJit7qT
+	dixXg+lUUCMDrpqFxizA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWyOL-0007kX-EW; Tue, 19 Nov 2019 07:57:41 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iWytl-0002Je-5A; Tue, 19 Nov 2019 08:30:09 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWyO8-0007j0-8b; Tue, 19 Nov 2019 07:57:32 +0000
-X-UUID: c053ea45551e44dc9614489e57079924-20191118
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=yBnu1NtPajEa00aUiIIxVlbDQ8eChoLCV7rmSdXtLH4=; 
- b=PDT3vL3EhKmVaDjFzp+2dEvjD54PpDO7kDG3B9MDJev5ur3npY9ZwcSTCtnxiKFKMA5UthNLEWgWtbILacQXvBHVftLSuitUIsefXCobp5KDTiYwhm57SkTqZC7od2q/tcEes1DyMM+U+lvbds7ABaRHhV9cSd7xRYzWqk+YlSs=;
-X-UUID: c053ea45551e44dc9614489e57079924-20191118
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <sam.shih@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1796284694; Mon, 18 Nov 2019 23:57:23 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 18 Nov 2019 23:57:37 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by mtkcas07.mediatek.inc
- (172.21.101.84) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 19 Nov 2019 15:57:08 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 19 Nov 2019 15:57:08 +0800
-Message-ID: <1574150240.19262.7.camel@mtksdccf07>
-Subject: Re: [RESEND, PATCH 1/1] arm: dts: mediatek: add mt7629 pwm support
-From: Sam Shih <sam.shih@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Date: Tue, 19 Nov 2019 15:57:20 +0800
-In-Reply-To: <31fddc2b-65c7-02e8-dca2-b5d6dc050f87@gmail.com>
-References: <1571751001-28588-1-git-send-email-sam.shih@mediatek.com>
- <1571751001-28588-2-git-send-email-sam.shih@mediatek.com>
- <31fddc2b-65c7-02e8-dca2-b5d6dc050f87@gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1iWytV-0002Hk-Kq
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 08:29:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1574152190;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=H20VJbl/HlqoZLKxB2eEkiVm9bjunStGFexdv/rH5Wg=;
+ b=cB1JRMaiNpqzRyApYLbLOEOXljhUlvoNxMFaPyRX/qm8jyBVqK+Vu5olaSEoCDmPd3ThvO
+ UcmDrOuDj/G9FUkXb0aTc8tCaDEGRc6/CFSiWz/MhjfXSaA+uH9vQybTPZKB5t7D32yfWC
+ Nu6czfI9C+/YYlzUJcQ+PWmUd5oJnG4=
+Received: from mail-lf1-f70.google.com (mail-lf1-f70.google.com
+ [209.85.167.70]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-219-_mpqDTcuPXC5OvIsgzqZqA-1; Tue, 19 Nov 2019 03:29:49 -0500
+Received: by mail-lf1-f70.google.com with SMTP id x14so5901109lfq.15
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 19 Nov 2019 00:29:48 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=LdTt3n+0i729FTDReSuLECgSQ4aS+lT8YABUAIgw7M4=;
+ b=M2/TPXLzzne9SudqIoCOxovLNyBDmWe1Ym+hC35eu09UJbIgbF7sMqNdlPhGGxIPbV
+ VvrKxJciqLTMQhq3p9ua43tPFGW3J0jy9LOjXUotjoQjCCdy3pO0JxuCfWamUQVma8Je
+ sslpoUg+H5/lqBngyjhOjIpwHPOTdCfBJQ+BXJJSjUpS0f6YMlih7ufGITYoaZefb55N
+ Y0R1ToBw32rJzYV+WJE5LfqcKpWyuUWW9UjUUfZ8QFLhmriTBmfPDTfsu6PXT6VmMROY
+ CesRT4sla3bDuvl2rR9eFUL17oxHDJQ5mjHD76bX5nBjMKn40OxWtT4Dpogxuy4UvtTm
+ nbng==
+X-Gm-Message-State: APjAAAXHrYINUDM6YwkgSvfc3XFxesSfl2hXrHM4Gk7feZ0QPYTSQGYL
+ KS1R8G/1VXcUYdZih+3+c770iAzXN0vBfyQWxeVMjXO30UFKqsSo/XoLKSpq8nKWIrxgJDwxpEm
+ s/syDcI2oBdTz+ZDFzqY3axqaS1niCtkrghEX69h6J97pY4hDOIg=
+X-Received: by 2002:a2e:98c6:: with SMTP id s6mr2467930ljj.235.1574152187819; 
+ Tue, 19 Nov 2019 00:29:47 -0800 (PST)
+X-Google-Smtp-Source: APXvYqw2IC2bHi8fy/d2SRNiTEi36NRc3i9RixIH7XOkwEMkhAxGronTJF+riz7NT7kg7+QIn9WK1oeS0ClHOZKD/g0=
+X-Received: by 2002:a2e:98c6:: with SMTP id s6mr2467897ljj.235.1574152187559; 
+ Tue, 19 Nov 2019 00:29:47 -0800 (PST)
 MIME-Version: 1.0
-X-MTK: N
+References: <1573459282-26989-1-git-send-email-bhsharma@redhat.com>
+ <20191113063858.GE22427@linaro.org>
+ <CACi5LpP54d9DKW63G5W6X4euBjAm2NwkHOiM01dB7g8d60s=4w@mail.gmail.com>
+ <20191115015959.GI22427@linaro.org>
+ <CAJ2QiJJOSspLKRh+jRB_o0o9nmeAsiFKzxGJ8R0pYPRM4iptmw@mail.gmail.com>
+In-Reply-To: <CAJ2QiJJOSspLKRh+jRB_o0o9nmeAsiFKzxGJ8R0pYPRM4iptmw@mail.gmail.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Tue, 19 Nov 2019 13:59:33 +0530
+Message-ID: <CACi5LpO_fvzDiXP9+QLga_B7kozRRnE9ix4Xa=xvNx1Kvci=3Q@mail.gmail.com>
+Subject: Re: [PATCH v4 0/3] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
+ for arm64 and MAX_PHYSMEM_BITS for all archs)
+To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+X-MC-Unique: _mpqDTcuPXC5OvIsgzqZqA-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_235728_311100_FD4F90D0 
-X-CRM114-Status: GOOD (  14.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191119_002953_763132_E37A6C46 
+X-CRM114-Status: GOOD (  20.17  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -71,8 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,74 +104,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Paul Mackerras <paulus@samba.org>, Will Deacon <will@kernel.org>,
+ Ingo Molnar <mingo@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ AKASHI Takahiro <takahiro.akashi@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Boris Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Steve Capper <steve.capper@arm.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ James Morse <james.morse@arm.com>, Dave Anderson <anderson@redhat.com>,
+ linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 2019-11-10 at 21:51 +0100, Matthias Brugger wrote:
-> 
-> On 22/10/2019 15:30, Sam Shih wrote:
-> > This adds pwm support for MT7629.
-> > Used:
-> > https://patchwork.kernel.org/patch/11160851/
-> > 
-> > Signed-off-by: Sam Shih <sam.shih@mediatek.com>
-> > ---
-> >  arch/arm/boot/dts/mt7629.dtsi | 15 +++++++++++++++
-> >  1 file changed, 15 insertions(+)
-> > 
-> > diff --git a/arch/arm/boot/dts/mt7629.dtsi b/arch/arm/boot/dts/mt7629.dtsi
-> > index 9608bc2ccb3f..24375fc5f936 100644
-> > --- a/arch/arm/boot/dts/mt7629.dtsi
-> > +++ b/arch/arm/boot/dts/mt7629.dtsi
-> > @@ -241,6 +241,21 @@
-> >  			status = "disabled";
-> >  		};
-> >  
-> > +		pwm: pwm@11006000 {
-> > +			compatible = "mediatek,mt7629-pwm";
-> > +			reg = <0x11006000 0x1000>;
-> > +			interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_LOW>;
-> > +			clocks = <&topckgen CLK_TOP_PWM_SEL>,
-> > +				 <&pericfg CLK_PERI_PWM_PD>,
-> > +				 <&pericfg CLK_PERI_PWM1_PD>;
-> > +			clock-names = "top", "main", "pwm1";
-> > +			assigned-clocks = <&topckgen CLK_TOP_PWM_SEL>;
-> > +			assigned-clock-parents =
-> > +					<&topckgen CLK_TOP_UNIVPLL2_D4>;
-> > +			num-pwms = <1>;
-> 
-> num-pwms is not defined. Did you mean pwm-cells?
-> 
-> Regards,
-> Matthias
-> 
-> > +			status = "disabled";
-> > +		};
-> > +
-> >  		i2c: i2c@11007000 {
-> >  			compatible = "mediatek,mt7629-i2c",
-> >  				     "mediatek,mt2712-i2c";
-> > 
-> 
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+On Tue, Nov 19, 2019 at 12:03 PM Prabhakar Kushwaha
+<prabhakar.pkin@gmail.com> wrote:
+>
+> Hi Akashi,
+>
+> On Fri, Nov 15, 2019 at 7:29 AM AKASHI Takahiro
+> <takahiro.akashi@linaro.org> wrote:
+> >
+> > Bhupesh,
+> >
+> > On Fri, Nov 15, 2019 at 01:24:17AM +0530, Bhupesh Sharma wrote:
+> > > Hi Akashi,
+> > >
+> > > On Wed, Nov 13, 2019 at 12:11 PM AKASHI Takahiro
+> > > <takahiro.akashi@linaro.org> wrote:
+> > > >
+> > > > Hi Bhupesh,
+> > > >
+> > > > Do you have a corresponding patch for userspace tools,
+> > > > including crash util and/or makedumpfile?
+> > > > Otherwise, we can't verify that a generated core file is
+> > > > correctly handled.
+> > >
+> > > Sure. I am still working on the crash-utility related changes, but you
+> > > can find the makedumpfile changes I posted a couple of days ago here
+> > > (see [0]) and the github link for the makedumpfile changes can be seen
+> > > via [1].
+> > >
+> > > I will post the crash-util changes shortly as well.
+> > > Thanks for having a look at the same.
+> >
+> > Thank you.
+> > I have tested my kdump patch with a hacked version of crash
+> > where VA_BITS_ACTUAL is calculated from tcr_el1_t1sz in vmcoreinfo.
+> >
+>
+> I also did hack to calculate VA_BITS_ACTUAL is calculated from
+> tcr_el1_t1sz in vmcoreinfo. Now i am getting error same as mentioned
+> by you in other thread last month.
+> https://www.mail-archive.com/crash-utility@redhat.com/msg07385.html
+>
+> how this error was overcome?
+>
+> I am using
+>  - crashkernel: https://github.com/crash-utility/crash.git  commit:
+> babd7ae62d4e8fd6f93fd30b88040d9376522aa3
+> and
+>  - Linux: git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+> commit: af42d3466bdc8f39806b26f593604fdc54140bcb
 
+I will post a formal change for crash-utility shortly that fixes the
+same. Right now we are having issues with emails bouncing off
+'crash-utility@redhat.com', so my patches sent to the same are in
+undelivered state at-the-moment.
 
-Sorry for the Late Reply,
-The num-pwms field is redundant after we derive it from the compatible
-string. I forgot to remove it from the device tree.
-I will send a new version.
+For easy testing I will share the link to my github tree (off-line)
+[which contains the changes] as well.
 
-Thanks,
-Best Regards,
-Sam Shih
+Regards,
+Bhupesh
+
 
 _______________________________________________
 linux-arm-kernel mailing list
