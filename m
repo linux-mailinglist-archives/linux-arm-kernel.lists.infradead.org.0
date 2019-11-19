@@ -2,63 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16D3A102910
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 17:13:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A112810291B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 17:15:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=rK+p4ojTOXMa6WbL+lLMKFgwS/ENsPfNjeKXmA1kvi8=; b=is5paW34HzyxtS7lfo+b1Qeocm
-	UCxKJRt+vz7USPOQm7uc6sj2nIMynaMzfiMkrsWQ5KGCrDWC96nihQStt25kqP29Zj1AKpSuIYKAa
-	2Qb6N9suEjfMsZ8Pi40Wjh/AyMkur68jerVVG1qYV1Pq35AAdhhDzEQmpGTnIl7YA2wFXSN7DKGDq
-	FBrXIjdxtfmDQcpTxeKf5/bTK9y/L9HxXYlZg4yURi5HIYtElxIn8HkpKW8Uz8aQeTLh3sFBEVbQA
-	kon0o4yIfHJ6pU4SjIRa2lVa2esA2D0eih3Xy/VwG8ac1htT2nrHiDpQT0xnm8hP//u40wjixn5En
-	7QwhLrMA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7GsTyGsn6+J1DtIXcJRho8vYNEN23M1j9stXop04pTc=; b=tpvCxKEmbpQkQw
+	CjQDqJCmYLw63MPX9q95gcMS2Y5fFKoXBYA0Xt4F5yBWOYAowLkrkLaKvOGddy9s2RhNv+D7FfQ+g
+	qX4Sx4OE7JQJgMCsBCQ+0zyp9QBefSzHS1KdMqmphb82u2RdgfIgGl6wA8pzsvb2mwo5WEZLON7iy
+	Y/DBgQwX3Yi8VRIh3kLcFaIDaKrA7a4qwNiopPQ/jZWbgxKjWGnMMq69NBMWiKk6oh5iwTQjK0GEx
+	VJ7znRLhRTjzzLD4I8b7LL0xTi90nBd++JHCU9ZHVQZ2Y7NFBJk4WLE1/jUIcx/tW9CCLbGAPJrcY
+	Nizjyc8USIgZMVqpQfGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX68R-0000HU-PT; Tue, 19 Nov 2019 16:13:47 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iX6AO-00020D-04; Tue, 19 Nov 2019 16:15:48 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX67n-0008LH-6E
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 16:13:10 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 34D361A0456;
- Tue, 19 Nov 2019 17:13:03 +0100 (CET)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 268341A0406;
- Tue, 19 Nov 2019 17:13:03 +0100 (CET)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 349AC203BF;
- Tue, 19 Nov 2019 17:13:02 +0100 (CET)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Chanwoo Choi <cw00.choi@samsung.com>, Matthias Kaehlcke <mka@chromium.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>
-Subject: [PATCH RFC 2/2] PM / devfreq: Use PM QoS for sysfs min/max_freq
-Date: Tue, 19 Nov 2019 18:12:14 +0200
-Message-Id: <1f567d6478b1782f7f4afc27cb6d3f896d77ac9f.1574179738.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1574179738.git.leonard.crestez@nxp.com>
-References: <cover.1574179738.git.leonard.crestez@nxp.com>
-In-Reply-To: <cover.1574179738.git.leonard.crestez@nxp.com>
-References: <cover.1574179738.git.leonard.crestez@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iX6AF-0001zf-7X
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 16:15:40 +0000
+Received: by mail-io1-xd42.google.com with SMTP id j13so635607ioe.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 19 Nov 2019 08:15:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=2QzBsf1/Q8hKzbeSju/cjkym48KF1RXo6Ozgcc+ilbY=;
+ b=B557JxbRmG6bGxoMH25hjkkFa/8uMFElraHUqwVWyBdVL88O6yOK24tlKofwQfELla
+ kmgnZl6NqlnvT6F9knFUlLByW1Zg0wY/TW/qEZThA5fDnn23pf/AEWg1Jf/VK1UrnZ2U
+ oPdawl1BJ8P9/x7dPwEqvvP/zs4Mh4g6P1ZwKfLK36mmAp/5JlJoZpR+zEKSNM7SgdGF
+ Z4XqXq5jvbIdTomXYzj0YUVs4ONUOs97XMsDZpsbtnwj5Rntr0Q4oekV0hBAQRlnvZ+G
+ etTsVpGZ/+y5WR9tDtcuJWDITRco+L9s1OAZeDEXCMKe/TOtqEdmS8L98pBTwJ2S0t9s
+ XjmA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2QzBsf1/Q8hKzbeSju/cjkym48KF1RXo6Ozgcc+ilbY=;
+ b=hz59tLxxMKC+9RXHvismjmjoLZ4jB962tZQFhcHTGoyKtioXCfaAFXQw0HZVpbZN/P
+ OsOU8DJOxHLa8fYeRd9Xlr6FVdcF7po/jPui0l+OCmSdPyn9hJjcGg3V6nDvcajiwd6I
+ AUNpMVGbKLhZLCDAZGU4d2TE0jOELuSwsNhK7eprMLC9WfZ8zccZ6GgZhVV+FcC+FQOy
+ FQPA+ER7BT6FW1znCwVt4AzFgqJGpsjaMcZN1Pu6oGerkUh3sR8XDBiW67OuVOdK+aJQ
+ Y0pE+4qEG2Mu64B5jmAQFNATVYdwMxPheR8Pule3XYNMMRAb/BYdZbANd4ROxhoE57/k
+ d0Cw==
+X-Gm-Message-State: APjAAAVc2dWRhtLqzpFN4rHAuwqt3cb7s9gksZGCobmB21G/V6nor2DK
+ mRcMwyko14TpauDEOyv6GvfBQNcR9uwfrPy7C7t2cw==
+X-Google-Smtp-Source: APXvYqw503RqDWWROFTPpdWnnJSfJY3YAq7SFnY1QjLQaYOndzuBk+hWJoZO8CCxZ/+343iUr17+gMnAVu7eO4Quu/g=
+X-Received: by 2002:a6b:2c95:: with SMTP id s143mr5938031ios.57.1574180138026; 
+ Tue, 19 Nov 2019 08:15:38 -0800 (PST)
+MIME-Version: 1.0
+References: <20191118185207.30441-1-mathieu.poirier@linaro.org>
+ <20191118185207.30441-2-mathieu.poirier@linaro.org>
+ <20191119043044.GB1446085@kroah.com>
+In-Reply-To: <20191119043044.GB1446085@kroah.com>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Tue, 19 Nov 2019 09:15:27 -0700
+Message-ID: <CANLsYkwaYZbQPoqr1D2jB+OKirR-2F1m1cqdAcHHwqvu27HxQg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] coresight: funnel: Fix missing spin_lock_init()
+To: Greg KH <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_081307_509829_D4A30941 
-X-CRM114-Status: GOOD (  15.93  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191119_081539_281039_68B62D67 
+X-CRM114-Status: GOOD (  14.37  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,249 +92,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Saravana Kannan <saravanak@google.com>,
- linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>,
- Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
- NXP Linux Team <linux-imx@nxp.com>
-MIME-Version: 1.0
+Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Switch the handling of min_freq and max_freq from sysfs to use the
-dev_pm_qos_request interface.
+On Mon, 18 Nov 2019 at 21:30, Greg KH <gregkh@linuxfoundation.org> wrote:
+>
+> On Mon, Nov 18, 2019 at 11:52:06AM -0700, Mathieu Poirier wrote:
+> > From: Wei Yongjun <weiyongjun1@huawei.com>
+> >
+> > The driver allocates the spinlock but not initialize it.
+> > Use spin_lock_init() on it to initialize it correctly.
+> >
+> > This is detected by Coccinelle semantic patch.
+> >
+> > Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+> > Tested-by: Yabin Cui <yabinc@google.com>
+> > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> > ---
+> >  drivers/hwtracing/coresight/coresight-funnel.c | 1 +
+> >  1 file changed, 1 insertion(+)
+>
+> Is this, and the 2/2 patch here, needed for stable releases?
 
-Since PM QoS handles frequencies as kHz this change reduces the
-precision of min_freq and max_freq. This shouldn't introduce problems
-because frequencies which are not an integer number of kHz are likely
-not an integer number of Hz either.
+No as the code they fix is new to this cycle[1].
 
-Try to ensure compatibility by rounding min values down and rounding
-max values up.
+Thanks for being inquisitive,
+Mathieu
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
----
- drivers/devfreq/devfreq.c | 76 ++++++++++++++++++++++++++++++---------
- include/linux/devfreq.h   |  9 ++---
- 2 files changed, 64 insertions(+), 21 deletions(-)
+[1]. https://lkml.org/lkml/2019/11/4/726
 
-diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-index 34bbaac6ea7e..518dd2745d06 100644
---- a/drivers/devfreq/devfreq.c
-+++ b/drivers/devfreq/devfreq.c
-@@ -139,14 +139,10 @@ static void get_freq_range(struct devfreq *devfreq,
- 	*min_freq = max(*min_freq, (unsigned long)HZ_PER_KHZ * qos_min_freq);
- 	if (qos_max_freq != PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE)
- 		*max_freq = min(*max_freq,
- 				(unsigned long)HZ_PER_KHZ * qos_max_freq);
- 
--	/* Apply constraints from sysfs */
--	*min_freq = max(*min_freq, devfreq->min_freq);
--	*max_freq = min(*max_freq, devfreq->max_freq);
--
- 	/* Apply constraints from OPP interface */
- 	*min_freq = max(*min_freq, devfreq->scaling_min_freq);
- 	*max_freq = min(*max_freq, devfreq->scaling_max_freq);
- 
- 	if (*min_freq > *max_freq)
-@@ -708,10 +704,23 @@ static void devfreq_dev_release(struct device *dev)
- 					 DEV_PM_QOS_MIN_FREQUENCY);
- 	if (err && err != -ENOENT)
- 		dev_warn(dev->parent,
- 			"Failed to remove min_freq notifier: %d\n", err);
- 
-+	if (dev_pm_qos_request_active(&devfreq->user_max_freq_req)) {
-+		err = dev_pm_qos_remove_request(&devfreq->user_max_freq_req);
-+		if (err)
-+			dev_warn(dev->parent,
-+				"Failed to remove max_freq request: %d\n", err);
-+	}
-+	if (dev_pm_qos_request_active(&devfreq->user_min_freq_req)) {
-+		err = dev_pm_qos_remove_request(&devfreq->user_min_freq_req);
-+		if (err)
-+			dev_warn(dev->parent,
-+				"Failed to remove min_freq request: %d\n", err);
-+	}
-+
- 	if (devfreq->profile->exit)
- 		devfreq->profile->exit(devfreq->dev.parent);
- 
- 	mutex_destroy(&devfreq->lock);
- 	kfree(devfreq);
-@@ -780,19 +789,17 @@ struct devfreq *devfreq_add_device(struct device *dev,
- 	if (!devfreq->scaling_min_freq) {
- 		mutex_unlock(&devfreq->lock);
- 		err = -EINVAL;
- 		goto err_dev;
- 	}
--	devfreq->min_freq = devfreq->scaling_min_freq;
- 
- 	devfreq->scaling_max_freq = find_available_max_freq(devfreq);
- 	if (!devfreq->scaling_max_freq) {
- 		mutex_unlock(&devfreq->lock);
- 		err = -EINVAL;
- 		goto err_dev;
- 	}
--	devfreq->max_freq = devfreq->scaling_max_freq;
- 
- 	devfreq->suspend_freq = dev_pm_opp_get_suspend_opp_freq(dev);
- 	atomic_set(&devfreq->suspend_count, 0);
- 
- 	dev_set_name(&devfreq->dev, "devfreq%d",
-@@ -829,10 +836,20 @@ struct devfreq *devfreq_add_device(struct device *dev,
- 
- 	srcu_init_notifier_head(&devfreq->transition_notifier_list);
- 
- 	mutex_unlock(&devfreq->lock);
- 
-+	err = dev_pm_qos_add_request(dev, &devfreq->user_min_freq_req,
-+				     DEV_PM_QOS_MIN_FREQUENCY, 0);
-+	if (err < 0)
-+		goto err_devfreq;
-+	err = dev_pm_qos_add_request(dev, &devfreq->user_max_freq_req,
-+				     DEV_PM_QOS_MAX_FREQUENCY,
-+				     PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE);
-+	if (err < 0)
-+		goto err_devfreq;
-+
- 	devfreq->nb_min.notifier_call = qos_min_notifier_call;
- 	err = dev_pm_qos_add_notifier(devfreq->dev.parent, &devfreq->nb_min,
- 				      DEV_PM_QOS_MIN_FREQUENCY);
- 	if (err)
- 		goto err_devfreq;
-@@ -1414,18 +1431,26 @@ static ssize_t min_freq_store(struct device *dev, struct device_attribute *attr,
- {
- 	struct devfreq *df = to_devfreq(dev);
- 	unsigned long value;
- 	int ret;
- 
-+	/*
-+	 * Protect against theoretical sysfs writes between
-+	 * device_add and dev_pm_qos_add_request
-+	 */
-+	if (!dev_pm_qos_request_active(&df->user_min_freq_req))
-+		return -EINVAL;
-+
- 	ret = sscanf(buf, "%lu", &value);
- 	if (ret != 1)
- 		return -EINVAL;
- 
--	mutex_lock(&df->lock);
--	df->min_freq = value;
--	update_devfreq(df);
--	mutex_unlock(&df->lock);
-+	/* Round down to kHz for PM QoS */
-+	ret = dev_pm_qos_update_request(&df->user_min_freq_req,
-+					value / HZ_PER_KHZ);
-+	if (ret < 0)
-+		return ret;
- 
- 	return count;
- }
- 
- static ssize_t min_freq_show(struct device *dev, struct device_attribute *attr,
-@@ -1446,22 +1471,39 @@ static ssize_t max_freq_store(struct device *dev, struct device_attribute *attr,
- {
- 	struct devfreq *df = to_devfreq(dev);
- 	unsigned long value;
- 	int ret;
- 
-+	/*
-+	 * Protect against theoretical sysfs writes between
-+	 * device_add and dev_pm_qos_add_request
-+	 */
-+	if (!dev_pm_qos_request_active(&df->user_max_freq_req))
-+		return -EINVAL;
-+
- 	ret = sscanf(buf, "%lu", &value);
- 	if (ret != 1)
- 		return -EINVAL;
- 
--	mutex_lock(&df->lock);
--
--	if (!value)
--		value = ULONG_MAX;
-+	/*
-+	 * PM QoS frequencies are in kHz so we need to convert. Convert by
-+	 * rounding upwards so that the acceptable interval never shrinks.
-+	 *
-+	 * For example if the user writes "666666666" to sysfs this value will
-+	 * be converted to 666667 kHz and back to 666667000 Hz before an OPP
-+	 * lookup, this ensures that an OPP of 666666666Hz is still accepted.
-+	 *
-+	 * A value of zero means "no limit".
-+	 */
-+	if (value)
-+		value = DIV_ROUND_UP(value, HZ_PER_KHZ);
-+	else
-+		value = PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE;
- 
--	df->max_freq = value;
--	update_devfreq(df);
--	mutex_unlock(&df->lock);
-+	ret = dev_pm_qos_update_request(&df->user_max_freq_req, value);
-+	if (ret < 0)
-+		return ret;
- 
- 	return count;
- }
- static DEVICE_ATTR_RW(min_freq);
- 
-diff --git a/include/linux/devfreq.h b/include/linux/devfreq.h
-index 8b92ccbd1962..fb376b5b7281 100644
---- a/include/linux/devfreq.h
-+++ b/include/linux/devfreq.h
-@@ -11,10 +11,11 @@
- #define __LINUX_DEVFREQ_H__
- 
- #include <linux/device.h>
- #include <linux/notifier.h>
- #include <linux/pm_opp.h>
-+#include <linux/pm_qos.h>
- 
- #define DEVFREQ_NAME_LEN 16
- 
- /* DEVFREQ governor name */
- #define DEVFREQ_GOV_SIMPLE_ONDEMAND	"simple_ondemand"
-@@ -121,12 +122,12 @@ struct devfreq_dev_profile {
-  *		devfreq.nb to the corresponding register notifier call chain.
-  * @work:	delayed work for load monitoring.
-  * @previous_freq:	previously configured frequency value.
-  * @data:	Private data of the governor. The devfreq framework does not
-  *		touch this.
-- * @min_freq:	Limit minimum frequency requested by user (0: none)
-- * @max_freq:	Limit maximum frequency requested by user (0: none)
-+ * @user_min_freq_req:	PM QoS minimum frequency request from user (via sysfs)
-+ * @user_max_freq_req:	PM QoS maximum frequency request from user (via sysfs)
-  * @scaling_min_freq:	Limit minimum frequency requested by OPP interface
-  * @scaling_max_freq:	Limit maximum frequency requested by OPP interface
-  * @stop_polling:	 devfreq polling status of a device.
-  * @suspend_freq:	 frequency of a device set during suspend phase.
-  * @resume_freq:	 frequency of a device set in resume phase.
-@@ -161,12 +162,12 @@ struct devfreq {
- 	unsigned long previous_freq;
- 	struct devfreq_dev_status last_status;
- 
- 	void *data; /* private data for governors */
- 
--	unsigned long min_freq;
--	unsigned long max_freq;
-+	struct dev_pm_qos_request user_min_freq_req;
-+	struct dev_pm_qos_request user_max_freq_req;
- 	unsigned long scaling_min_freq;
- 	unsigned long scaling_max_freq;
- 	bool stop_polling;
- 
- 	unsigned long suspend_freq;
--- 
-2.17.1
-
+>
+> thanks,
+>
+> greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
