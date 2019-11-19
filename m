@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 216E210248C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 13:36:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFCBA10248E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 13:36:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=lQa6GzCdG47xczExgh0aNwcP9deAFccYCTTGMPG0ARQ=; b=spR1wnv0ZyxecoBiuQj4vstRjY
-	m4bDvX6FzaLc26e/oWMN2YCb+oBOXHOmz/LAMCHYPjjXJHfwSwvI+di6bcZNdTeI6cRd1/B3FKJRj
-	2qu2eQSbIFdmru3Ar0edN7FAYBdDceIvn2NW4sNsyVqr3mMl5LQ+0RtXJgr8ilLkONb5m5112Vav6
-	h28v1JaeKSMwP+1DYPp1r+GbOqAEhTuFa5+8xjNvBSAIh3p86G6lAYUtW0VKW5yxZxHmCKjiKDNMO
-	fGPB76XeSYL0cJdSgTVec3iFoHrALFdWzexpn+vkrkmt/NxG3SMYiH5lSaGgTLYbuH1T+0kGvnYOT
-	MM9B4Zlw==;
+	bh=1KvC2fe+l1jPj8I//rLEnv17935E3+bUh1Ork9MHeVE=; b=h6hTSK99F0rKJQH4yZYQwhHl8r
+	KUiXftCASYYE4t0/nBSfIfWKGVrA3bdQdAM+sR5Ex/buWSvs/oeLKEiqFrbFlAHpEihnGpkJtWm6c
+	PmbyrMlm29YJtJ6+u9DowaUXjhq/sr5jwNrqwjQxgpsjMHynOJa9czdnX7ZhkHAlcLeVfGQWkAn6j
+	//Qk4f+jqxB0FUkCAFgkyT0/Go7mp0ov1B4zcOn27Ve6nV5xqQucE5p/NDEtc6n3D5UAhG/QvvaXc
+	DQWSlFSThkjudWwKjhBC5wTmwnAOJfTFe6rrWz2dY342ESljL0PIKwZBXeZ/DGwlk2LxlQS7eCXAv
+	hb424xpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX2k6-0002PQ-EH; Tue, 19 Nov 2019 12:36:26 +0000
+	id 1iX2kP-0002cm-8B; Tue, 19 Nov 2019 12:36:45 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX2hT-0007JH-8Q
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 12:33:47 +0000
+ id 1iX2hW-0007Pz-RL
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 12:33:48 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 316791FB;
- Tue, 19 Nov 2019 04:33:42 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A44630E;
+ Tue, 19 Nov 2019 04:33:46 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id AEB433F703;
- Tue, 19 Nov 2019 04:33:38 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A0F103F703;
+ Tue, 19 Nov 2019 04:33:42 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 11/14] arm64: suspend: restore the kernel ptrauth keys
-Date: Tue, 19 Nov 2019 18:02:23 +0530
-Message-Id: <1574166746-27197-12-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v2 12/14] arm64: kprobe: disable probe of ptrauth instruction
+Date: Tue, 19 Nov 2019 18:02:24 +0530
+Message-Id: <1574166746-27197-13-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
 References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_043343_570557_D1CCE401 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191119_043346_981857_CA16401F 
+X-CRM114-Status: GOOD (  12.07  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,41 +75,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch restores the kernel keys from current task during
-cpu resume after the mmu is turned on and ptrauth is enabled.
+This patch disables the probing of authenticate ptrauth
+instruction which falls under the hint instructions region.
+This is done to disallow probe of instruction which may lead
+to ptrauth faults.
+
+The corresponding append pac ptrauth instruction is not
+disabled as they are typically the first instruction in the
+function so disabling them will be disabling the function
+probe itself. Also, appending pac do not cause any exception
+in itself.
 
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
 Change since last version:
- * None
+ * New patch
 
- arch/arm64/kernel/sleep.S | 6 ++++++
- 1 file changed, 6 insertions(+)
+ arch/arm64/include/asm/insn.h          | 13 +++++++------
+ arch/arm64/kernel/insn.c               |  1 +
+ arch/arm64/kernel/probes/decode-insn.c |  2 +-
+ 3 files changed, 9 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm64/kernel/sleep.S b/arch/arm64/kernel/sleep.S
-index 7b2f2e6..a6e9460 100644
---- a/arch/arm64/kernel/sleep.S
-+++ b/arch/arm64/kernel/sleep.S
-@@ -2,6 +2,7 @@
- #include <linux/errno.h>
- #include <linux/linkage.h>
- #include <asm/asm-offsets.h>
-+#include <asm/asm_pointer_auth.h>
- #include <asm/assembler.h>
- #include <asm/smp.h>
+diff --git a/arch/arm64/include/asm/insn.h b/arch/arm64/include/asm/insn.h
+index 39e7780..d055694 100644
+--- a/arch/arm64/include/asm/insn.h
++++ b/arch/arm64/include/asm/insn.h
+@@ -40,12 +40,13 @@ enum aarch64_insn_encoding_class {
+ };
  
-@@ -139,6 +140,11 @@ ENTRY(_cpu_resume)
- 	bl	kasan_unpoison_task_stack_below
- #endif
+ enum aarch64_insn_hint_op {
+-	AARCH64_INSN_HINT_NOP	= 0x0 << 5,
+-	AARCH64_INSN_HINT_YIELD	= 0x1 << 5,
+-	AARCH64_INSN_HINT_WFE	= 0x2 << 5,
+-	AARCH64_INSN_HINT_WFI	= 0x3 << 5,
+-	AARCH64_INSN_HINT_SEV	= 0x4 << 5,
+-	AARCH64_INSN_HINT_SEVL	= 0x5 << 5,
++	AARCH64_INSN_HINT_NOP		= 0x0 << 5,
++	AARCH64_INSN_HINT_YIELD		= 0x1 << 5,
++	AARCH64_INSN_HINT_WFE		= 0x2 << 5,
++	AARCH64_INSN_HINT_WFI		= 0x3 << 5,
++	AARCH64_INSN_HINT_SEV		= 0x4 << 5,
++	AARCH64_INSN_HINT_SEVL		= 0x5 << 5,
++	AARCH64_INSN_HINT_AUTIASP	= (0x3 << 8) | (0x5 << 5),
+ };
  
-+#ifdef CONFIG_ARM64_PTR_AUTH
-+	get_current_task x1
-+	ptrauth_keys_install_kernel x1, x2, x3, x4
-+#endif
-+
- 	ldp	x19, x20, [x29, #16]
- 	ldp	x21, x22, [x29, #32]
- 	ldp	x23, x24, [x29, #48]
+ enum aarch64_insn_imm_type {
+diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
+index d801a70..d172386 100644
+--- a/arch/arm64/kernel/insn.c
++++ b/arch/arm64/kernel/insn.c
+@@ -62,6 +62,7 @@ bool __kprobes aarch64_insn_is_nop(u32 insn)
+ 	case AARCH64_INSN_HINT_WFI:
+ 	case AARCH64_INSN_HINT_SEV:
+ 	case AARCH64_INSN_HINT_SEVL:
++	case AARCH64_INSN_HINT_AUTIASP:
+ 		return false;
+ 	default:
+ 		return true;
+diff --git a/arch/arm64/kernel/probes/decode-insn.c b/arch/arm64/kernel/probes/decode-insn.c
+index b78fac9..a7caf84 100644
+--- a/arch/arm64/kernel/probes/decode-insn.c
++++ b/arch/arm64/kernel/probes/decode-insn.c
+@@ -42,7 +42,7 @@ static bool __kprobes aarch64_insn_is_steppable(u32 insn)
+ 			     != AARCH64_INSN_SPCLREG_DAIF;
+ 
+ 		/*
+-		 * The HINT instruction is is problematic when single-stepping,
++		 * The HINT instruction is problematic when single-stepping,
+ 		 * except for the NOP case.
+ 		 */
+ 		if (aarch64_insn_is_hint(insn))
 -- 
 2.7.4
 
