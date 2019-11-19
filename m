@@ -2,64 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3863810109D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 02:20:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51D4F1010A4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 02:23:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=QST4FmmOotDLn0h2qiocPKmXxGXc7qeumnsDh3JXI/4=; b=XXOFKHDRp/raPsYa+Pm/Kmxwe6
-	idg2cyrhNDfmCK+OjnVF3xLzMq9QWqi6tA5Gvhf54DlNCm56fIQxgnKdU/z1+O2TJyafGTmg3gbbN
-	ceVBH5HZeqlwU0/jrFXsdQMtbnqvrKtm9SvPzRI7R6/xgtdC2xZxIR3s9GM0iOs87MMtJVeVB0Vn3
-	GOwXfxS4XPBkOt9S0FbNuSwg+vTxsEv0o0kOmBo2aMXsc5ni3wdLiclwh1zwVvCn+7x3J6iWisq4K
-	XtqWF/C0rHX6ZmcRk5fJZqmvxPWO8yLHabqOe8aCuUEQY0sD7ijYxEbUnjMdAAs9Z+/rZX783VUVi
-	sAIxZuyQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KS2f8G0+RP+BDFLPjAic7ZeVKKJGTtBfjTuxeNj4wHs=; b=IzbYxZzRiwpk4t
+	c4DcUGLS/kpNHCmo+x1Fq6Xz4mrsEZGCXp2jhLaiz9cR/F/jSRp4HqJG6nmYpYVgGbT1IHLTV4Eq6
+	kytyVb8TJh4+we9RB4pCxhzECWfw6qGxqHxPEVfVgQuEGIiHIdF75CLv0Z4rGna+ynREoIy89ay+p
+	oUZ6n15w8JXltppF0IN4GVUbn3Z9eTFNZd5TFpe61frvGdEXiMWKpNh2wUKx724RLIBl7nELXXCXw
+	gLhINZeA8XwbAclaNF7lxpAuie7H1UCIOy5TopjKOKiFiHrrq6X9fdxf8luyjplNcNXfh/U1HiZCw
+	lWc90vrjpQO+To0IeCrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWsBp-0003Um-Ud; Tue, 19 Nov 2019 01:20:22 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iWsEf-00057Y-6q; Tue, 19 Nov 2019 01:23:17 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWsBc-0003Te-0Y
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 01:20:12 +0000
-Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id CD066DF6A20C892A6598;
- Tue, 19 Nov 2019 09:20:01 +0800 (CST)
-Received: from [127.0.0.1] (10.184.213.217) by DGGEMS404-HUB.china.huawei.com
- (10.3.19.204) with Microsoft SMTP Server id 14.3.439.0;
- Tue, 19 Nov 2019 09:19:54 +0800
-Subject: Re: [PATCH] PCI: exynos: Use PTR_ERR_OR_ZERO() to simplify code
-To: Jingoo Han <jingoohan1@gmail.com>, "lorenzo.pieralisi@arm.com"
- <lorenzo.pieralisi@arm.com>, "andrew.murray@arm.com" <andrew.murray@arm.com>, 
- "bhelgaas@google.com" <bhelgaas@google.com>, "kgene@kernel.org"
- <kgene@kernel.org>, "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-References: <1574076480-50196-1-git-send-email-zhengbin13@huawei.com>
- <SL2P216MB01057BE74411EC7BE168E193AA4D0@SL2P216MB0105.KORP216.PROD.OUTLOOK.COM>
-From: "zhengbin (A)" <zhengbin13@huawei.com>
-Message-ID: <34079004-e87c-1799-137f-5a03deedc205@huawei.com>
-Date: Tue, 19 Nov 2019 09:19:53 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.3.0
-MIME-Version: 1.0
-In-Reply-To: <SL2P216MB01057BE74411EC7BE168E193AA4D0@SL2P216MB0105.KORP216.PROD.OUTLOOK.COM>
-Content-Language: en-US
-X-Originating-IP: [10.184.213.217]
-X-CFilter-Loop: Reflected
+ id 1iWsEX-00056f-DY
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 01:23:10 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:1e2::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 71099150FAE71;
+ Mon, 18 Nov 2019 17:23:02 -0800 (PST)
+Date: Mon, 18 Nov 2019 17:23:01 -0800 (PST)
+Message-Id: <20191118.172301.1298479853205739098.davem@davemloft.net>
+To: hslester96@gmail.com
+Subject: Re: [PATCH] phy: mdio-sun4i: add missed regulator_disable in remove
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20191118114115.25608-1-hslester96@gmail.com>
+References: <20191118114115.25608-1-hslester96@gmail.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Mon, 18 Nov 2019 17:23:02 -0800 (PST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_172008_225047_ED84FD66 
-X-CRM114-Status: GOOD (  10.99  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191118_172309_458842_B900D6CC 
+X-CRM114-Status: UNSURE (   6.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,41 +63,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: andrew@lunn.ch, f.fainelli@gmail.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mripard@kernel.org, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Chuhong Yuan <hslester96@gmail.com>
+Date: Mon, 18 Nov 2019 19:41:15 +0800
 
-On 2019/11/19 0:35, Jingoo Han wrote:
-> On 11/18/19, 6:20 AM, zhengbin wrote:
->> Fixes coccicheck warning:
->>
->> drivers/pci/controller/dwc/pci-exynos.c:95:1-3: WARNING: PTR_ERR_OR_ZERO can be used
->>
->> Reported-by: Hulk Robot <hulkci@huawei.com>
->> Signed-off-by: zhengbin <zhengbin13@huawei.com>
-> Please write your full name correctly (First name + Second name). 
-> If 'zhengbin' is just your first name, you have to add your second name.
-> Or, if  'zhengbin' is already your full name, please separate it with capitalized characters and spaces,
-> for example, 'Zheng Bin'.
+> The driver forgets to disable the regulator in remove like what is done
+> in probe failure.
+> Add the missed call to fix it.
+> 
+> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
 
-thanks for your remind. In the previous patch, this is rejected, see details on
-
-https://lkml.org/lkml/2019/5/31/535
-
-So please ignore it
-
->
->> ---
->>  drivers/pci/controller/dwc/pci-exynos.c | 5 +----
->>  1 file changed, 1 insertion(+), 4 deletions(-)
->>
-> [.....]
->
-> .
->
-
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
