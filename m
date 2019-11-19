@@ -2,58 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C40C1023C9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 13:01:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 702DF1023D1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 13:03:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=J0PoO9rHOEN+pPjSFOEGyCN5x9I/XqUmHakYSkIHlVc=; b=dy+YlU4VHUcQPxYYLzQkMrsfD
-	q0GwA9OzGfAuiT1QbhTzE1KPZgOx/VJwLO9a8HS38bVCEKMbfHfpHvBmJVWvXpQFMgrNfoZD84MPF
-	w7/wmvgeUU5VLWvfAnQX3FsnwR7pdIOvdaKo+uvKT3zAHooFvr5C72RlAaDtezoGbXSw6Q0OKd6Q3
-	vI9zWcEX2Edkno+W9MqV+H+uAYIaoFhLC6dLrHle2TxI42thCJ4cwdrwO6N1NnZsA2FJZybIEaA5c
-	RJg59bYfrqdLFx63qBngpdbQ1dWRjecsVH5SuyR3zCz9n9oJwasFpUorMyUZAjvtXrRRps6zqvooB
-	UyBr7HlEQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=pGMRjqp5d9Yeea8CoPv8vpu5IOaxPuDfa+hKprf4AkY=; b=Wrv
+	TS6q/aQG/MF9LI+8EmgiLoLfgN1lOVRVC5RMUY1k8Sn5CGA84uTI7cJWLghDN3i24sPbqFByyfWV3
+	CpoVX+oeXLfxKxMS6FiSlJn22Ya/QfAzqvBBrQiU14Ez/oA6HhMZfuq8zoaP1ZsJ20O+5P8mtR5HP
+	BGEZpUYikdT5m1H1o2qSiOBizccXfifOh5pOWK4T+sd4GiJp0+yKxMudyhaRfGOSRRBL3DAJJd814
+	6+o5eAc2JKQ21AA5BAdzMFVlLV7abSOEjPiK/zRAtf6GDJRBnMU7GJyu3vQGny0XJKOnP9ohxfaRf
+	EFGX7I/cDEEAQ9NVNxMJ4RFI4EbR/qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX2CY-0004Xd-S2; Tue, 19 Nov 2019 12:01:46 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX2CP-0004WV-O0; Tue, 19 Nov 2019 12:01:39 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iX2CM-00036B-9b; Tue, 19 Nov 2019 13:01:34 +0100
-To: =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>
-Subject: Re: [PATCH v4 2/8] irqchip: Add Realtek RTD1295 mux driver
-X-PHP-Originating-Script: 0:main.inc
-MIME-Version: 1.0
-Date: Tue, 19 Nov 2019 12:01:33 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <20191119021917.15917-3-afaerber@suse.de>
-References: <20191119021917.15917-1-afaerber@suse.de>
- <20191119021917.15917-3-afaerber@suse.de>
-Message-ID: <a34e00cac16899b53d0b6445f0e81f4c@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: afaerber@suse.de, linux-realtek-soc@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernelrocks@gmail.com, james.tai@realtek.com, tglx@linutronix.de,
- jason@lakedaemon.net
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+	id 1iX2Eb-0005HV-KN; Tue, 19 Nov 2019 12:03:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iX2EQ-0005Gw-Vs
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 12:03:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 24E61C86;
+ Tue, 19 Nov 2019 04:03:42 -0800 (PST)
+Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.44])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BDE143F703;
+ Tue, 19 Nov 2019 04:03:40 -0800 (PST)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: [PATCH] arm64: dts: arm: juno: Fix UART frequency
+Date: Tue, 19 Nov 2019 12:03:31 +0000
+Message-Id: <20191119120331.28243-1-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_040137_926060_01B92C44 
-X-CRM114-Status: GOOD (  20.94  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191119_040343_069594_8A5FA705 
+X-CRM114-Status: GOOD (  12.68  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,135 +57,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: James Tai <james.tai@realtek.com>,
- Aleix Roca Nonell <kernelrocks@gmail.com>,
- linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Jason Cooper <jason@lakedaemon.net>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAxOS0xMS0xOSAwMjoxOSwgQW5kcmVhcyBGw6RyYmVyIHdyb3RlOgo+IFRoaXMgaXJxIG11
-eCBkcml2ZXIgaW1wbGVtZW50cyB0aGUgUlREMTI5NSBTb0MncyBub24tbGluZWFyIG1hcHBpbmcK
-PiBiZXR3ZWVuIHN0YXR1cyBhbmQgZW5hYmxlIGJpdHMuCj4KPiBCYXNlZCBpbiBwYXJ0IG9uIFFO
-QVAncyBhcmNoL2FybS9tYWNoLXJ0azExOXgvcnRrX2lycV9tdXguYyBhbmQKPiBTeW5vbG9neSdz
-IGRyaXZlcnMvaXJxY2hpcC9pcnEtcnRrLmMgY29kZS4KPgo+IFNpZ25lZC1vZmYtYnk6IEFuZHJl
-YXMgRsOkcmJlciA8YWZhZXJiZXJAc3VzZS5kZT4KPiBDYzogQWxlaXggUm9jYSBOb25lbGwgPGtl
-cm5lbHJvY2tzQGdtYWlsLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBKYW1lcyBUYWkgPGphbWVzLnRh
-aUByZWFsdGVrLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBBbmRyZWFzIEbDpHJiZXIgPGFmYWVyYmVy
-QHN1c2UuZGU+Cj4gLS0tCj4gIHYzIC0+IHY0Ogo+ICAqIERyb3Agbm8tb3AgLmlycV9zZXRfYWZm
-aW5pdHkgY2FsbGJhY2sgKFRob21hcykKPiAgKiBDbGVhciBhbGwgaW50ZXJydXB0cyAoSmFtZXMp
-Cj4gICogVXBkYXRlZCBTUERYLUxpY2Vuc2UtaWRlbnRpZmllcgo+ICAqIFVzZSB0YWJ1bGFyIGZv
-cm1hdHRpbmcgKFRob21hcykKPiAgKiBBZG9wdCBkaWZmZXJlbnQgYnJhY2VzIHN0eWxlIChUaG9t
-YXMpCj4gICogVXNlIHJhd19zcGlubG9ja190IChUaG9tYXMpCj4gICogU2hvcnRlbmVkIGNhbGxi
-YWNrIGZyb20gaXNyX3RvX3NjcHVfaW50X2VuX21hc2sgdG8KPiBpc3JfdG9faW50X2VuX21hc2sg
-KFRob21hcykKPiAgKiBGaXhlZCBvZl9pb21hcCgpIGVycm9yIGhhbmRsaW5nIHRvIG5vdCB1c2Ug
-SVNfRVJSKCkKPiAgKiBEb24ndCBtYXNrIHVubWFwcGVkIE5NSXMgYnkgY2hlY2tpbmcgZm9yIGEg
-bm9uLXplcm8gbWFzawo+ICAqIENhY2hlIFNDUFVfSU5UX0VOIHRvIGF2b2lkIHN1cGVyZmx1b3Vz
-IHJlYWRzIChUaG9tYXMpCj4gICogUmVuYW1lZCBmdW5jdGlvbnMgYW5kIHZhcmlhYmxlcyBmcm9t
-IHJ0ZDExOXggdG8gcnRkMTE5NQo+Cj4gIHYyIC0+IHYzOgo+ICAqIEFkb3B0ZWQgc3Bpbl9sb2Nr
-X2lycXtzYXZlLHJlc3RvcmV9KCkgKE1hcmMpCj4gICogQWRvcHRlZCBzaW5nbGUtd3JpdGUgbWFz
-a2luZyAoTWFyYykKPiAgKiBBZG9wdGVkIG1pc2MgY29tcGF0aWJsZSBzdHJpbmcKPiAgKiBJbnRy
-b2R1Y2VkIGV4cGxpY2l0IGJpdCBtYXBwaW5nCj4gICogQWRvcHRlZCBsb29wZWQgcHJvY2Vzc2lu
-ZyBvZiBwZW5kaW5nIGludGVycnVwdHMgKE1hcmMpCj4gICogUmVwbGFjZWQgdW5tYXNrIGltcGxl
-bWVudGF0aW9uIHdpdGggVU1TS19JU1Igd3JpdGUKPiAgKiBJbnRyb2R1Y2VkIGVuYWJsZS9kaXNh
-YmxlIG9wcyBhbmQgZHJvcHBlZCBubyBsb25nZXIgbmVlZGVkIFVBUlQwIAo+IHF1aXJrCj4KPiAg
-djEgLT4gdjI6Cj4gICogUmVuYW1lZCBzdHJ1Y3QgZmllbGRzIHRvIGF2b2lkIGFtYmlndWl0eSAo
-TWFyYykKPiAgKiBSZWZhY3RvcmVkIG9mZnNldCBsb29rdXAgdG8gYXZvaWQgcGVyLWNvbXBhdGli
-bGUgaW5pdCBmdW5jdGlvbnMKPiAgKiBJbnNlcnRlZCB3aGl0ZSBsaW5lcyB0byBjbGFyaWZ5IGJh
-bGFuY2VkIGxvY2tpbmcgKE1hcmMpCj4gICogRHJvcHBlZCBmb3J3YXJkaW5nIG9mIHNldF9hZmZp
-bml0eSB0byBHSUMgKE1hcmMpCj4gICogQWRkZWQgc3BpbmxvY2tzIGZvciBjb25zaXN0ZW5jeSAo
-TWFyYykKPiAgKiBMaW1pdGVkIGluaXRpYWxpemF0aW9uIHF1aXJrIHRvIGlzbyBtdXgKPiAgKiBG
-aXhlZCBzcGlubG9jayBpbml0aWFsaXphdGlvbiAoQW5kcmV3KQo+Cj4gIGRyaXZlcnMvaXJxY2hp
-cC9NYWtlZmlsZSAgICAgICAgICB8ICAgMSArCj4gIGRyaXZlcnMvaXJxY2hpcC9pcnEtcnRkMTE5
-NS1tdXguYyB8IDI4Mwo+ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4g
-IDIgZmlsZXMgY2hhbmdlZCwgMjg0IGluc2VydGlvbnMoKykKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0
-IGRyaXZlcnMvaXJxY2hpcC9pcnEtcnRkMTE5NS1tdXguYwo+Cj4gZGlmZiAtLWdpdCBhL2RyaXZl
-cnMvaXJxY2hpcC9NYWtlZmlsZSBiL2RyaXZlcnMvaXJxY2hpcC9NYWtlZmlsZQo+IGluZGV4IGU4
-MDZkZGE2OTBlYS4uZDY3ODg4MWVlYmM4IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvaXJxY2hpcC9N
-YWtlZmlsZQo+ICsrKyBiL2RyaXZlcnMvaXJxY2hpcC9NYWtlZmlsZQo+IEBAIC0xMDQsMyArMTA0
-LDQgQEAgb2JqLSQoQ09ORklHX01BREVSQV9JUlEpCQkrPSBpcnEtbWFkZXJhLm8KPiAgb2JqLSQo
-Q09ORklHX0xTMVhfSVJRKQkJCSs9IGlycS1sczF4Lm8KPiAgb2JqLSQoQ09ORklHX1RJX1NDSV9J
-TlRSX0lSUUNISVApCSs9IGlycS10aS1zY2ktaW50ci5vCj4gIG9iai0kKENPTkZJR19USV9TQ0lf
-SU5UQV9JUlFDSElQKQkrPSBpcnEtdGktc2NpLWludGEubwo+ICtvYmotJChDT05GSUdfQVJDSF9S
-RUFMVEVLKQkJKz0gaXJxLXJ0ZDExOTUtbXV4Lm8KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pcnFj
-aGlwL2lycS1ydGQxMTk1LW11eC5jCj4gYi9kcml2ZXJzL2lycWNoaXAvaXJxLXJ0ZDExOTUtbXV4
-LmMKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMC4uZTZiMDg0Mzhi
-MjNjCj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMvaXJxY2hpcC9pcnEtcnRkMTE5NS1t
-dXguYwo+IEBAIC0wLDAgKzEsMjgzIEBACj4gKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBH
-UEwtMi4wLW9yLWxhdGVyCj4gKy8qCj4gKyAqIFJlYWx0ZWsgUlREMTI5NSBJUlEgbXV4Cj4gKyAq
-Cj4gKyAqIENvcHlyaWdodCAoYykgMjAxNy0yMDE5IEFuZHJlYXMgRsOkcmJlcgo+ICsgKi8KPiAr
-Cj4gKyNpbmNsdWRlIDxsaW51eC9pby5oPgo+ICsjaW5jbHVkZSA8bGludXgvaXJxY2hpcC5oPgo+
-ICsjaW5jbHVkZSA8bGludXgvaXJxY2hpcC9jaGFpbmVkX2lycS5oPgo+ICsjaW5jbHVkZSA8bGlu
-dXgvaXJxZG9tYWluLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9vZl9hZGRyZXNzLmg+Cj4gKyNpbmNs
-dWRlIDxsaW51eC9vZl9pcnEuaD4KPiArI2luY2x1ZGUgPGxpbnV4L3NsYWIuaD4KPiArCj4gK3N0
-cnVjdCBydGQxMTk1X2lycV9tdXhfaW5mbyB7Cj4gKwl1bnNpZ25lZCBpbnQJaXNyX29mZnNldDsK
-PiArCXVuc2lnbmVkIGludAl1bXNrX2lzcl9vZmZzZXQ7Cj4gKwl1bnNpZ25lZCBpbnQJc2NwdV9p
-bnRfZW5fb2Zmc2V0Owo+ICsJY29uc3QgdTMyCSppc3JfdG9faW50X2VuX21hc2s7Cj4gK307Cj4g
-Kwo+ICtzdHJ1Y3QgcnRkMTE5NV9pcnFfbXV4X2RhdGEgewo+ICsJdm9pZCBfX2lvbWVtCQkJCSpy
-ZWdfaXNyOwo+ICsJdm9pZCBfX2lvbWVtCQkJCSpyZWdfdW1za19pc3I7Cj4gKwl2b2lkIF9faW9t
-ZW0JCQkJKnJlZ19zY3B1X2ludF9lbjsKPiArCWNvbnN0IHN0cnVjdCBydGQxMTk1X2lycV9tdXhf
-aW5mbwkqaW5mbzsKPiArCWludAkJCQkJaXJxOwo+ICsJdTMyCQkJCQlzY3B1X2ludF9lbjsKPiAr
-CXN0cnVjdCBpcnFfZG9tYWluCQkJKmRvbWFpbjsKPiArCXJhd19zcGlubG9ja190CQkJCWxvY2s7
-Cj4gK307Cj4gKwo+ICtzdGF0aWMgdm9pZCBydGQxMTk1X211eF9pcnFfaGFuZGxlKHN0cnVjdCBp
-cnFfZGVzYyAqZGVzYykKPiArewo+ICsJc3RydWN0IHJ0ZDExOTVfaXJxX211eF9kYXRhICpkYXRh
-ID0gCj4gaXJxX2Rlc2NfZ2V0X2hhbmRsZXJfZGF0YShkZXNjKTsKPiArCXN0cnVjdCBpcnFfY2hp
-cCAqY2hpcCA9IGlycV9kZXNjX2dldF9jaGlwKGRlc2MpOwo+ICsJdTMyIGlzciwgbWFzazsKPiAr
-CWludCBpOwo+ICsKPiArCWNoYWluZWRfaXJxX2VudGVyKGNoaXAsIGRlc2MpOwo+ICsKPiArCWlz
-ciA9IHJlYWRsX3JlbGF4ZWQoZGF0YS0+cmVnX2lzcik7Cj4gKwo+ICsJd2hpbGUgKGlzcikgewo+
-ICsJCWkgPSBfX2Zmcyhpc3IpOwo+ICsJCWlzciAmPSB+QklUKGkpOwo+ICsKPiArCQltYXNrID0g
-ZGF0YS0+aW5mby0+aXNyX3RvX2ludF9lbl9tYXNrW2ldOwo+ICsJCWlmIChtYXNrICYmICEoZGF0
-YS0+c2NwdV9pbnRfZW4gJiBtYXNrKSkKPiArCQkJY29udGludWU7Cj4gKwo+ICsJCWlmICghZ2Vu
-ZXJpY19oYW5kbGVfaXJxKGlycV9maW5kX21hcHBpbmcoZGF0YS0+ZG9tYWluLCBpKSkpCj4gKwkJ
-CXdyaXRlbF9yZWxheGVkKEJJVChpKSwgZGF0YS0+cmVnX2lzcik7CgpXaGF0IGRvZXMgdGhpcyB3
-cml0ZSBkbyBleGFjdGx5PyBJdCBpcyB0aGUgc2FtZSB0aGluZyBhcyBhICdtYXNrJywKd2hpY2gg
-aXMgcHJldHR5IG9kZC4gU28gZWl0aGVyOgoKLSB0aGlzIGlzIG5vdCBkb2luZyBhbnl0aGluZyBh
-bmQgeW91ciAnbWFzaycgY2FsbGJhY2sgaXMgYm9ndXMKICAgKG90aGVyd2lzZSB5b3UnZCBuZXZl
-ciBoYXZlIG1vcmUgdGhhbiBhIHNpbmdsZSBpbnRlcnJ1cHQpCgotIG9yIHRoaXMgaXMgYW4gQUNL
-IG9wZXJhdGlvbiwgYW5kIHRoaXMgc2hvdWxkIGJlIGRlc2NyaWJlZCBhcwogICBzdWNoIChhbmQg
-dGhlbiBmaXggdGhlIG1hc2svdW5tYXNrL2VuYWJsZS9kaXNhYmxlIG1lc3MgdGhhdAogICByZXN1
-bHRzIGZyb20gaXQpLgoKYXMgSSBjYW4ndCBzZWUgaG93IHRoZSBzYW1lIHJlZ2lzdGVyIGNhbiBi
-ZSB1c2VkIGZvciBib3RoIHB1cnBvc2VzLgpZb3Ugc2hvdWxkIGJlIGFibGUgdG8gdmVyaWZ5IHRo
-aXMgZXhwZXJpbWVudGFsbHksIGV2ZW4gd2l0aG91dApkb2N1bWVudGF0aW9uLgoKPiArCX0KPiAr
-Cj4gKwljaGFpbmVkX2lycV9leGl0KGNoaXAsIGRlc2MpOwo+ICt9Cj4gKwo+ICtzdGF0aWMgdm9p
-ZCBydGQxMTk1X211eF9tYXNrX2lycShzdHJ1Y3QgaXJxX2RhdGEgKmRhdGEpCj4gK3sKPiArCXN0
-cnVjdCBydGQxMTk1X2lycV9tdXhfZGF0YSAqbXV4X2RhdGEgPSAKPiBpcnFfZGF0YV9nZXRfaXJx
-X2NoaXBfZGF0YShkYXRhKTsKPiArCj4gKwl3cml0ZWxfcmVsYXhlZChCSVQoZGF0YS0+aHdpcnEp
-LCBtdXhfZGF0YS0+cmVnX2lzcik7Cj4gK30KPiArCj4gK3N0YXRpYyB2b2lkIHJ0ZDExOTVfbXV4
-X3VubWFza19pcnEoc3RydWN0IGlycV9kYXRhICpkYXRhKQo+ICt7Cj4gKwlzdHJ1Y3QgcnRkMTE5
-NV9pcnFfbXV4X2RhdGEgKm11eF9kYXRhID0gCj4gaXJxX2RhdGFfZ2V0X2lycV9jaGlwX2RhdGEo
-ZGF0YSk7Cj4gKwo+ICsJd3JpdGVsX3JlbGF4ZWQoQklUKGRhdGEtPmh3aXJxKSwgbXV4X2RhdGEt
-PnJlZ191bXNrX2lzcik7Cj4gK30KPiArCj4gK3N0YXRpYyB2b2lkIHJ0ZDExOTVfbXV4X2VuYWJs
-ZV9pcnEoc3RydWN0IGlycV9kYXRhICpkYXRhKQo+ICt7Cj4gKwlzdHJ1Y3QgcnRkMTE5NV9pcnFf
-bXV4X2RhdGEgKm11eF9kYXRhID0gCj4gaXJxX2RhdGFfZ2V0X2lycV9jaGlwX2RhdGEoZGF0YSk7
-Cj4gKwl1bnNpZ25lZCBsb25nIGZsYWdzOwo+ICsJdTMyIG1hc2s7Cj4gKwo+ICsJbWFzayA9IG11
-eF9kYXRhLT5pbmZvLT5pc3JfdG9faW50X2VuX21hc2tbZGF0YS0+aHdpcnFdOwo+ICsJaWYgKCFt
-YXNrKQo+ICsJCXJldHVybjsKCkhvdyBjYW4gdGhpcyBoYXBwZW4/IFlvdSd2ZSBtYXBwZWQgdGhl
-IGludGVycnVwdCwgc28gaXQgZXhpc3RzLgpJIGNhbid0IHNlZSBob3cgeW91IGNhbiBkZWNpZGUg
-dG8gZmFpbCBzdWNoIGVuYWJsZS4KCj4gKwo+ICsJcmF3X3NwaW5fbG9ja19pcnFzYXZlKCZtdXhf
-ZGF0YS0+bG9jaywgZmxhZ3MpOwo+ICsKPiArCW11eF9kYXRhLT5zY3B1X2ludF9lbiB8PSBtYXNr
-Owo+ICsJd3JpdGVsX3JlbGF4ZWQobXV4X2RhdGEtPnNjcHVfaW50X2VuLCBtdXhfZGF0YS0+cmVn
-X3NjcHVfaW50X2VuKTsKPiArCj4gKwlyYXdfc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmbXV4X2Rh
-dGEtPmxvY2ssIGZsYWdzKTsKPiArfQo+ICsKPiArc3RhdGljIHZvaWQgcnRkMTE5NV9tdXhfZGlz
-YWJsZV9pcnEoc3RydWN0IGlycV9kYXRhICpkYXRhKQo+ICt7Cj4gKwlzdHJ1Y3QgcnRkMTE5NV9p
-cnFfbXV4X2RhdGEgKm11eF9kYXRhID0gCj4gaXJxX2RhdGFfZ2V0X2lycV9jaGlwX2RhdGEoZGF0
-YSk7Cj4gKwl1bnNpZ25lZCBsb25nIGZsYWdzOwo+ICsJdTMyIG1hc2s7Cj4gKwo+ICsJbWFzayA9
-IG11eF9kYXRhLT5pbmZvLT5pc3JfdG9faW50X2VuX21hc2tbZGF0YS0+aHdpcnFdOwo+ICsJaWYg
-KCFtYXNrKQo+ICsJCXJldHVybjsKPiArCj4gKwlyYXdfc3Bpbl9sb2NrX2lycXNhdmUoJm11eF9k
-YXRhLT5sb2NrLCBmbGFncyk7Cj4gKwo+ICsJbXV4X2RhdGEtPnNjcHVfaW50X2VuICY9IH5tYXNr
-Owo+ICsJd3JpdGVsX3JlbGF4ZWQobXV4X2RhdGEtPnNjcHVfaW50X2VuLCBtdXhfZGF0YS0+cmVn
-X3NjcHVfaW50X2VuKTsKPiArCj4gKwlyYXdfc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmbXV4X2Rh
-dGEtPmxvY2ssIGZsYWdzKTsKPiArfQo+ICsKPiArc3RhdGljIHN0cnVjdCBpcnFfY2hpcCBydGQx
-MTk1X211eF9pcnFfY2hpcCA9IHsKPiArCS5uYW1lCQk9ICJydGQxMTk1LW11eCIsCj4gKwkuaXJx
-X21hc2sJPSBydGQxMTk1X211eF9tYXNrX2lycSwKPiArCS5pcnFfdW5tYXNrCT0gcnRkMTE5NV9t
-dXhfdW5tYXNrX2lycSwKPiArCS5pcnFfZW5hYmxlCT0gcnRkMTE5NV9tdXhfZW5hYmxlX2lycSwK
-PiArCS5pcnFfZGlzYWJsZQk9IHJ0ZDExOTVfbXV4X2Rpc2FibGVfaXJxLAo+ICt9OwoKWy4uLl0K
-CkFsdGhvdWdoIHRoZSBjb2RlIGlzIHByZXR0eSBjbGVhbiwgdGhlIHdheSB5b3UgZHJpdmUgdGhl
-IEhXIGxvb2tzCnN1c3BpY2lvdXMsIGFuZCByZXF1aXJlcyBjbGFyaWZpY2F0aW9uLgoKVGhhbmtz
-LAoKICAgICAgICAgTS4KLS0gCkphenogaXMgbm90IGRlYWQuIEl0IGp1c3Qgc21lbGxzIGZ1bm55
-Li4uCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+Older versions of the Juno *SoC* TRM [1] recommended that the UART clock
+source should be 7.2738 MHz, whereas the *system* TRM [2] stated a more
+correct value of 7.3728 MHz. Somehow the wrong value managed to end up in
+our DT.
+Doing a prime factorisation, a modulo divide by 115200 and trying
+to buy a 7.2738 MHz crystal at your favourite electronics dealer suggest
+that the old value was actually a typo. The actual UART clock is driven
+by a PLL, configured via a parameter in some board.txt file in the
+firmware, which reads 7.37 MHz (sic!).
+
+Fix this to correct the baud rate divisor calculation on the Juno board.
+
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+
+[1] http://infocenter.arm.com/help/topic/com.arm.doc.ddi0515b.b/DDI0515B_b_juno_arm_development_platform_soc_trm.pdf
+[2] http://infocenter.arm.com/help/topic/com.arm.doc.100113_0000_07_en/arm_versatile_express_juno_development_platform_(v2m_juno)_technical_reference_manual_100113_0000_07_en.pdf
+---
+ arch/arm64/boot/dts/arm/juno-clocks.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/arm/juno-clocks.dtsi b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
+index e5e265dfa902..2870b5eeb198 100644
+--- a/arch/arm64/boot/dts/arm/juno-clocks.dtsi
++++ b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
+@@ -8,10 +8,10 @@
+  */
+ / {
+ 	/* SoC fixed clocks */
+-	soc_uartclk: refclk7273800hz {
++	soc_uartclk: refclk7372800hz {
+ 		compatible = "fixed-clock";
+ 		#clock-cells = <0>;
+-		clock-frequency = <7273800>;
++		clock-frequency = <7372800>;
+ 		clock-output-names = "juno:uartclk";
+ 	};
+ 
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
