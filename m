@@ -2,113 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 422C4101FA4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 10:11:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4E0B101FAD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 10:12:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RX6WYwH7yQQK6mt+vQBaHkN12AtK2Ah7U+Dsb6XDuTU=; b=LgTKoY+2OA2bb0
-	cq/rXV1TG43PmcveTi3vGtcebL9dAlROym4w9RipVypWANG51IR7mIKJ6uALboKW+jzi+2V2UYrr/
-	Moz7mHv6vT5Dp8O887kYBrhFQO5m8wZ0bBAT4ll2sWer/dTmpxkqX5iFtRu+7KCwDdB5wtkJJWqx4
-	x4OCxR3Jp6s1QsZjZrIl8E88wqzFJwzs882FJnVJwxwr0UvXqlpTRGGiV++97uIENGOfqhhvsRtXH
-	2PZKiWNcHRLCpdfHEophbkdeNQuvmjffT3dMHPiE13e7vIet9XGUhzmR+s/7MGVhd6g/xkDhDFY4R
-	F56CR8x3sqhgrNC6CDKg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HXfyqlUvlfYd14Qwd85yGZV/i+8Gk0aq9QqStNHl9g0=; b=o24RATed0jUZLM
+	iNH0iKlhi3KcRTxoMn+KCuYHb6iXzUHZGBsBQIWfZQf7qM9HcQ+6kJrozKcgQPElQlebO8z7Z86PG
+	XNIqaspDNfsKk6MpH2jLsOE4O8iFjQ3e5AdENYteaVUvNy+uRUDC5i/OgWTMrzFCZnTzk7/QRQFKN
+	abddDgWoS+ijAH+JakagkR4Yclf+eYUtt6NKxdidbIaw5bVA/hw0cTlEG5UnQEQlP/1qTkdb0zRPs
+	mfjvhAksybliFFeW5UVQjpc3d8axUhKrjKv89pYvZ06x6fhgj5H5IQ+6FqxR4+83O5qMZY2Zhk1po
+	j009oBZQiWO+eoze1mpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWzXc-0003rc-DR; Tue, 19 Nov 2019 09:11:20 +0000
-Received: from mail-eopbgr10085.outbound.protection.outlook.com ([40.107.1.85]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1iWzY7-00048r-OA; Tue, 19 Nov 2019 09:11:51 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWzXO-0003jX-5Q
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 09:11:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=QlQQLcDKh48e/DdebqAi/Q7dqNG5LBoBIdJOIHHR5rEKWp2cGANINAzBqdO9LnWRSe3It/RITjT2hRNvqSypi/WjF+SO0Gl45EWUbDzLxN6RrRG+IvXHh481dXBHPdRv4wYm0f8qX3/nXl9iclDOOsczA1mRtbmYIVYZ034hRlMSAVI9HS0Z5VtAVOT6Sg70bNgOVrdA2oLTsIaoHZqduNkTo2oVX+/iJxj4FDx6C/iGOBK+AFo2ecRemeXw4EvrGGPsy7AQUI+VMAVVGXjeNUwZX4dUVBeeRIoFrL8GOLzpAQvBZeEezcbwHT0yKKQ9ctJWy5AvCwqQWjptSM1uEA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PpaFl9w4m/Php7AJCDZQxBPHFFi2zzhn8NZfW715PnI=;
- b=Kxt/Dz9DZ/+sb1xMu+qNQarO16zoYYagqiF7SXplL97jqHNg5U2uSG9+b726huzTHl5SgUyCjmwa4epkkbe+k0HqjOs5U/5awf9V/0hAGliyXC+xuF9cOsCIiXwHj/0V1ciYk8u/8F+rGmcBamGaseAGT/5qSnuvYFkR3d7uxCj8mx5h0nL2Ps+rhwjS8P9W87zcbeKYZBTwhtLn5/jEpVCPOl8A7vAcNVJ+i45zbCFdEhdehNSyfzrwZcqwNW9JM2kf8NjLpcT5ueuYgZGOZiV9fdQPoK8CUCwhS+r1VX6wfYPaxFkvalT2Ild67ENF8JJTawqo7x/K6/sBo0mZbA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PpaFl9w4m/Php7AJCDZQxBPHFFi2zzhn8NZfW715PnI=;
- b=R6mqcjdZMgF/oMB0LSR7Skp9UjwS1wYm4it6ctSq9z8r7MW5TrhsjpWUFStN11FGIGi9dv7K/+jE4+9NoROHQJjJ46jLp+O897KSp2QNWLUUKiViG/63vR6Q1v47Mo8g9uxjqgjC+p4lee3CvHVyO2Rwftu64PJMQjC4LHCVCoc=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4259.eurprd04.prod.outlook.com (52.134.126.138) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2451.27; Tue, 19 Nov 2019 09:11:02 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::f16d:a26a:840:f97c]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::f16d:a26a:840:f97c%4]) with mapi id 15.20.2451.031; Tue, 19 Nov 2019
- 09:11:02 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>, Stephen Boyd
- <sboyd@kernel.org>, Shawn Guo <shawnguo@kernel.org>
-Subject: RE: [PATCH] clk: imx8m: Suppress bind attrs
-Thread-Topic: [PATCH] clk: imx8m: Suppress bind attrs
-Thread-Index: AQHVnl98iiuO4KwxREKP88Qyifoa5aeSNa4g
-Date: Tue, 19 Nov 2019 09:11:01 +0000
-Message-ID: <AM0PR04MB448144625FD1BE6177E35B55884C0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <9f2ac65bab203a943de947465d6534980585e144.1574116045.git.leonard.crestez@nxp.com>
-In-Reply-To: <9f2ac65bab203a943de947465d6534980585e144.1574116045.git.leonard.crestez@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: e5844e3b-bf88-4a81-1c01-08d76cd0663a
-x-ms-traffictypediagnostic: AM0PR04MB4259:|AM0PR04MB4259:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB4259A9405983FEB8788D0C7F884C0@AM0PR04MB4259.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 022649CC2C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(979002)(4636009)(136003)(376002)(39860400002)(396003)(366004)(346002)(199004)(189003)(256004)(186003)(446003)(99286004)(14454004)(305945005)(76116006)(11346002)(71190400001)(71200400001)(102836004)(81156014)(66946007)(26005)(86362001)(7736002)(5660300002)(81166006)(8676002)(478600001)(229853002)(66446008)(476003)(66476007)(66556008)(64756008)(6506007)(7696005)(25786009)(486006)(55016002)(33656002)(9686003)(52536014)(54906003)(76176011)(2906002)(6116002)(6246003)(316002)(74316002)(4326008)(110136005)(3846002)(66066001)(6436002)(8936002)(44832011)(32563001)(969003)(989001)(999001)(1009001)(1019001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4259;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 7dUBu/c7poyio9T+fPYl4oN+0dsur6V23xwXfZdjAVpleCEAExntEG4d1Jd6lEKYht2bVarceEKSFiyeQw82RnFFAcDW8fdmuYGSojn1wyZIAcaHTXcPUD15MjeeF5WxaWyUDYlRFONgTI+0Y4/Kvb0/HpKUw5eKGAF+lsMmf6NUl5xFQsycxzO7XVOJWaSjUfPEltGFsM89sErrYbN6quPbxiJFfKHvSwj+4e+Gn65HJ5hsnS2aVh/HN10GZyh1gTA7eSXU174XswnUtgov1nGeStnNiqQds0M3T/lZm+8f8caxpJC+AKAIbOzKxJiZ7jwr78hvI6r02Uzz0/xpotM4lsGqbT+Odox/TOQjmEl1b9BwI53oGLuyKf618yV5a6xkZS6yONTpo0CGh0GVeE//X2nTt91p2sJ7UGte0EDeu300VGzPkg6AsBfED7sL
+ id 1iWzXx-00047j-ND; Tue, 19 Nov 2019 09:11:43 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 4B85DB235;
+ Tue, 19 Nov 2019 09:11:40 +0000 (UTC)
+Subject: Re: [PATCH] arm64: dts: realtek: Add Realtek rtd1619 and mjolnir
+To: James Tai <james.tai@realtek.com>
+References: <43B123F21A8CFE44A9641C099E4196FFCF91BEFA@RTITMBSVM04.realtek.com.tw>
+ <25fdd8eb-f1a0-82ae-9c4b-22325b163b0e@suse.de>
+ <43B123F21A8CFE44A9641C099E4196FFCF920024@RTITMBSVM04.realtek.com.tw>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <6182b89f-cd7e-ce7c-56f7-e2f500321cde@suse.de>
+Date: Tue, 19 Nov 2019 10:11:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e5844e3b-bf88-4a81-1c01-08d76cd0663a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Nov 2019 09:11:01.8887 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: nxjIFwagMig+JJHGblg829R1BTVr0tkyTPN2KSPCuPAkLeqhY2IuTWcZukIEGQm2SL9aswO0YeQ5UW7eBR299w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4259
+In-Reply-To: <43B123F21A8CFE44A9641C099E4196FFCF920024@RTITMBSVM04.realtek.com.tw>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_011106_270589_B672614F 
-X-CRM114-Status: GOOD (  14.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191119_011141_901380_C63AEF0A 
+X-CRM114-Status: GOOD (  13.19  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.85 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -120,96 +63,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Anson Huang <anson.huang@nxp.com>, Michael Turquette <mturquette@baylibre.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ "'linux-kernel@vger.kernel.org'" <linux-kernel@vger.kernel.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Abel Vesa <abel.vesa@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ "linux-realtek-soc@lists.infradead.org"
+ <linux-realtek-soc@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: [PATCH] clk: imx8m: Suppress bind attrs
-> 
-> The clock drivers on imx8m series are registered as platform devices and this
-> opens the possibility of reloading the driver at runtime:
-> 
-> This doesn't actually work: clocks are never removed and attempting to bind
-> again results in registration errors and a crash.
-> 
-> Fix this by explicitly suppressing bind attrs like several other drivers.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-
-Reviewed-by: Peng Fan <peng.fan@nxp.com>
-
-> 
-> ---
-> No cc: stable because because there are likely many other opportunities to
-> crash the system by echoing random stuff in sysfs as root.
-> 
->  drivers/clk/imx/clk-imx8mm.c | 1 +
->  drivers/clk/imx/clk-imx8mn.c | 1 +
->  drivers/clk/imx/clk-imx8mq.c | 1 +
->  3 files changed, 3 insertions(+)
-> 
-> diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
-> index 9246e89bb5fd..3cb75ad4270d 100644
-> --- a/drivers/clk/imx/clk-imx8mm.c
-> +++ b/drivers/clk/imx/clk-imx8mm.c
-> @@ -619,9 +619,10 @@ MODULE_DEVICE_TABLE(of,
-> imx8mm_clk_of_match);
-> 
->  static struct platform_driver imx8mm_clk_driver = {
->  	.probe = imx8mm_clocks_probe,
->  	.driver = {
->  		.name = "imx8mm-ccm",
-> +		.suppress_bind_attrs = true,
->  		.of_match_table = of_match_ptr(imx8mm_clk_of_match),
->  	},
->  };
->  module_platform_driver(imx8mm_clk_driver);
-> diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
-> index 4749beab9fc8..d16530430ac2 100644
-> --- a/drivers/clk/imx/clk-imx8mn.c
-> +++ b/drivers/clk/imx/clk-imx8mn.c
-> @@ -576,9 +576,10 @@ MODULE_DEVICE_TABLE(of,
-> imx8mn_clk_of_match);
-> 
->  static struct platform_driver imx8mn_clk_driver = {
->  	.probe = imx8mn_clocks_probe,
->  	.driver = {
->  		.name = "imx8mn-ccm",
-> +		.suppress_bind_attrs = true,
->  		.of_match_table = of_match_ptr(imx8mn_clk_of_match),
->  	},
->  };
->  module_platform_driver(imx8mn_clk_driver);
-> diff --git a/drivers/clk/imx/clk-imx8mq.c b/drivers/clk/imx/clk-imx8mq.c
-> index c8ab86fcba7c..0e0f69e881bd 100644
-> --- a/drivers/clk/imx/clk-imx8mq.c
-> +++ b/drivers/clk/imx/clk-imx8mq.c
-> @@ -611,9 +611,10 @@ MODULE_DEVICE_TABLE(of,
-> imx8mq_clk_of_match);
-> 
->  static struct platform_driver imx8mq_clk_driver = {
->  	.probe = imx8mq_clocks_probe,
->  	.driver = {
->  		.name = "imx8mq-ccm",
-> +		.suppress_bind_attrs = true,
->  		.of_match_table = of_match_ptr(imx8mq_clk_of_match),
->  	},
->  };
->  module_platform_driver(imx8mq_clk_driver);
-> --
-> 2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgSmFtZXMsCgpBbSAwOC4xMS4xOSB1bSAxNjozNiBzY2hyaWViIEphbWVzIFRhaToKPj4gSXMg
+dGhlIFVBUlQgbm8gbG9uZ2VyIGJlaGluZCBhbiBJUlEgbXV4IG9uIFJURDE2MTksIG9yIGlzIHRo
+ZSBhYm92ZSB0aGUgSVJRCj4+IG11eCBpbnRlcnJ1cHQgYXMgYSB3b3JrYXJvdW5kIGZvciBsYWNr
+IG9mIGluLXRyZWUgaXJxY2hpcCBkcml2ZXI/Cj4+Cj4gWWVzLCB0aGUgVUFSVCBubyBsb25nZXIg
+YmVoaW5kIGFuIElSUSBtdXggb24gUlREMTYxOS4KClRoaXMgY29uZmxpY3RzIHdpdGggd2hhdCBJ
+IHNlZSBpbiBCU1AgaXJxIG11eCBjb2RlIGhlcmU6Cmh0dHBzOi8vZ2l0aHViLmNvbS9CUEktU0lO
+T1ZPSVAvQlBJLU00LWJzcC9ibG9iL21hc3Rlci9saW51eC1ydGsvZHJpdmVycy9pcnFjaGlwL2ly
+cS1ydGQxNnh4LmgKClRoYXQgZG9lcyBzaG93IFVSMCBhcyBiaXQgMiBmb3IgdGhlIGlzbyBpcnEg
+bXV4LCBhcyBmb3IgcHJldmlvdXMgU29Dcy4KSXMgdGhhdCBjb2RlIHdyb25nLCBvciBkb2VzIHRo
+ZSBzYW1lIFVBUlQwIElQIGJsb2NrIGhhdmUgdHdvIGFsdGVybmF0aXZlCmludGVycnVwdHMgZm9y
+IGJhY2t3YXJkcyBjb21wYXRpYmlsaXR5PyBJIHRoZXJlZm9yZSBoZWxkIGJhY2sgUlREMTYxOQpp
+cnEgbXV4IHBhdGNoZXMgZnJvbSBteSBpcnFjaGlwIHY0IHNlcmllcyBbMV0uCgpUaGUgQlNQIERU
+IGRvZXMgYXNzaWduIG5vbi1tdXggaW50ZXJydXB0cyB0byB0aGUgVUFSVCBub2RlIGxpa2UgeW91
+IGRpZDoKaHR0cHM6Ly9naXRodWIuY29tL0JQSS1TSU5PVk9JUC9CUEktTTQtYnNwL2Jsb2IvbWFz
+dGVyL2xpbnV4LXJ0ay9hcmNoL2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTZ4eC9ydGQtMTZ4
+eC5kdHNpCkFuZCBJIG9idmlvdXNseSB0cnVzdCB0aGF0IHlvdSB0ZXN0ZWQgeW91ciBEVCB0byBw
+cm9kdWNlIHNlcmlhbCBvdXRwdXQuCgoKQWxzbyBub3RlIGhvdyB0aGVyZSBhcmUgVVIxX1RPIGFu
+ZCBVUjJfVE8gKFRPID0gdGltZW91dD8pIGluIGFkZGl0aW9uIHRvCnJlZ3VsYXIgVVIxIGFuZCBV
+UjIgaW50ZXJydXB0cyBpbiB0aGUgbXV4IGFib3ZlLCBqdXN0IGFzIGZvciBSVEQxMjk1IGFuZApS
+VEQxMTk1IChVUjEvVVIxX1RPIG9ubHkpLiBGcm9tIG15IGlycW11eCB2NCBzZXJpZXMgcG9zdGVk
+IGxhc3QgbmlnaHQgSQpoYWQgdG8gZHJvcCB0aG9zZSBhZGRpdGlvbmFsIGludGVycnVwdHMgcHJv
+cGVydHkgdmFsdWVzIGZyb20gdGhlIERUIFsyXSwKYXMgdGhleSB2aW9sYXRlIG1haW5saW5lJ3Mg
+RGVzaWduV2FyZSBEVCBzY2hlbWEncyBtYXhJdGVtcyAxIGFuZCB3b3VsZApyZXF1aXJlIGEgbmV3
+IGNvbXBhdGlibGUgc3RyaW5nIChhbmQgYSBkcml2ZXIgcGF0Y2ggdG8gbWFrZSB1c2Ugb2YgaXQp
+LgoKaHR0cHM6Ly9naXRodWIuY29tL0JQSS1TSU5PVk9JUC9CUEktTTQtYnNwL2Jsb2IvbWFzdGVy
+L2xpbnV4LXJ0ay9kcml2ZXJzL2lycWNoaXAvaXJxLXJ0ZDExOXguaApodHRwczovL2dpdGh1Yi5j
+b20vQlBJLVNJTk9WT0lQL0JQSS1NNC1ic3AvYmxvYi9tYXN0ZXIvbGludXgtcnRrL2RyaXZlcnMv
+aXJxY2hpcC9pcnEtcnRkMTI5eC5oCmh0dHBzOi8vZ2l0aHViLmNvbS9CUEktU0lOT1ZPSVAvQlBJ
+LU00LWJzcC9ibG9iL21hc3Rlci9saW51eC1ydGsvZHJpdmVycy9pcnFjaGlwL2lycS1ydGQxMzl4
+LmgKClJlZ2FyZHMsCkFuZHJlYXMKClsxXSBodHRwczovL3BhdGNod29yay5rZXJuZWwub3JnL2Nv
+dmVyLzExMjUwNjQzLwpbMl0gaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9yZy9wYXRjaC8xMTI1
+MDY0NS8KCi0tIApTVVNFIFNvZnR3YXJlIFNvbHV0aW9ucyBHZXJtYW55IEdtYkgKTWF4ZmVsZHN0
+ci4gNSwgOTA0MDkgTsO8cm5iZXJnLCBHZXJtYW55CkdGOiBGZWxpeCBJbWVuZMO2cmZmZXIKSFJC
+IDM2ODA5IChBRyBOw7xybmJlcmcpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
