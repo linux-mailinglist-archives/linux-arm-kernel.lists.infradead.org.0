@@ -2,110 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFA92101A16
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 08:13:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 918BA101A6C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 Nov 2019 08:39:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ypemfkPvxfsqZSs514/FsZR9aFA4HXnUwuvyq0gfZ3E=; b=BdHb7QCtjzyXVK
-	29wptVAa1nEqBYdUcc31HcbklCffKqKD+jS2cTT72BFwUEV/E2l3A21CvXZ3StZmNlS0WH9CuOtYP
-	YkfQVHIkyPYWA+XGv/eLR2tS70CKkYzIxs62fMoZB+uX/x6MjsF7H4y+zIAvvupj5elhdsdk9adx2
-	HCSTvq5WPy+l3qZY8cwCpiffXO0gbQEnCdHrBqcE1/wVrp7GrYYq0IvWPSmSLBL0KmbUqICvhK1BJ
-	r6kybERczkYjOz85oDWDSFs0iQtX2hyITB3o1zzJ8EnsA0shCHqp3C7We+OoikIu8aX8ngdRQf64f
-	NCSS2pxXroSdFl6nwhbg==;
+	List-Owner; bh=4rF/fPMRmvup/DSbRnx8uOm+HEgQGHmWA+nDqZ3ovIE=; b=D5K5xADOfw7Vx/
+	REPubZqPKbWVEcTulHwF3+M097Q7PhgZWNYrIQztFnipHe5vMdhSaD5x8+BEo2vhly4nU62JbndJq
+	hQ+LQqTKXVGXxDX6VBVo6vpmUSflV9u9l7t1e1MypN2F8qfTEbZIYmoiW1ylG6q+7IB8eSj/mkaVS
+	jfrmHBC/TeYIAGLDOMkB6F2cPbN5tIpIhY1INuYuptcqql2PXkXRV57D/7LbR6E/xQqp4h01j8IUQ
+	Z0g5DSGha9TvGVmOiJUvGcqQilwHUXHC9UAFwe0AbKIbwNzJNrFA+wXwuOfium7KtdC88hTXV6EHQ
+	Obam+uQqT3p2Zq0JHjkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWxh2-0000qL-5U; Tue, 19 Nov 2019 07:12:56 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iWy6s-0001Ce-NQ; Tue, 19 Nov 2019 07:39:38 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWxgm-0000p8-VX
- for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 07:12:45 +0000
-Received: by mail-pg1-x543.google.com with SMTP id z188so10924762pgb.1
+ id 1iWy6i-0001CA-HK
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 Nov 2019 07:39:29 +0000
+Received: by mail-wm1-x344.google.com with SMTP id f3so2224664wmc.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 Nov 2019 23:12:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mail-followup-to:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=SOkEaxvoeuRDKKO9iEeAXK3d8jDrm2+Y0YFp9RHvoAo=;
- b=nuNOMTdV6cqA5xhs04CNCftYPLjSdTjJ0ePCPMCc3uiZcs4YCBMy9ZamdEurSipKqb
- B7qbTtqSkuv+cFtd5XGfPFzEAOygMAUU6PfcUq9+XWmSNfghnDQd5F7MZO2RpEtgPBO4
- pY9GDSzO29EdOQ3rQOPPXttJfNyhL/qzEK/UbIBzD0EktqXFkIZukEz6uYOhqO/XpJSv
- CZVM33HewLSdQwXu5Sk//1CSz1ZkVkWtwDNAv2TM14cIkWzrIAXJHvymtQVGDfQtyKZ4
- Gy6ZtONETM6pOH2ZXJaQ3hbDHkgWZ1LaHoK8pE6aiIh13lYEHwfU8H2bnK85SCTR2yLA
- qJ4g==
+ Mon, 18 Nov 2019 23:39:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=hh4VbnNsZd0cQjCcxR1lcKBnthPXIf0SZTjvhg2Wu+o=;
+ b=bEgICEq769u8g2rEZbD8dQT+znw/d/3WiyLyxRoRw2phf9OfSNgEj8y7rBFWslHOfR
+ CiDX77/A2ElzxR1iC6wn+xj3FwhUSO1TYld/LPBHJisQ26P/zTwkIc2faQKEab7S9K5B
+ HsH8dMCSHs/jsDlCzwdlZl8P42r0ysTzoTlKPEhcOd/U6WJ8NYaSCsSwPONBhtWibdVU
+ SaHbl7L/aToxU7ObEv/bZMg9vy9ctB82/goQrJvUIEM+ALSx/ebIDGYx97nXEBsoQ5WG
+ b3wj/0dg22lPqwiTsNcqSgc9D20S/yZXLdypRwgJ4EhsEqTuwdOdADXw1Nm8sCNBDoAQ
+ ySOw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=SOkEaxvoeuRDKKO9iEeAXK3d8jDrm2+Y0YFp9RHvoAo=;
- b=lEYyBQj38JI+ulobzkiFEQFKE5YD5E401zuedCCrd7/6cNgu2PugYQ05sUbs+7kt3I
- xLKXSceZUD+dXYnqlsNc+wDiwYgu5jhPCcdVK9MUnUVRJ9qhuRosYz6Q0rgezTb/SFBy
- 2Xb5+wcuuRyHmz2cMaNGM5UqPTI1Wq1xZJNHVefObxSeyaw6l8AQ04rJ6sHeYwnZO4Lh
- X0cjIwnYbszlKL4H4BlLLtA4KpbOmO+pLEOllmSN3kJff/pAIKSe7u5GUkoXszOJdyKC
- BBE2en5OpKhux6dy9iy/T1qzd+yXWFk2mpQwgIVadV58q6/kxRsMRfQakLxg6Hsz2cOn
- ZquQ==
-X-Gm-Message-State: APjAAAXKHcrlUdKew2B2VXSfWGp30435tvXbEBsHTv3H9hpetrC80CpJ
- 4e811QlYP7L6gaNBlAurKdnPSg==
-X-Google-Smtp-Source: APXvYqwFnemtfhSeFTtXNTKp5S2y3O1/8DNvV3VlNu9ve+aPwic4dTdlBLzDttqWkR7TRM8xvN2dTQ==
-X-Received: by 2002:a63:68c3:: with SMTP id d186mr3516436pgc.301.1574147559580; 
- Mon, 18 Nov 2019 23:12:39 -0800 (PST)
-Received: from linaro.org ([121.95.100.191])
- by smtp.googlemail.com with ESMTPSA id j7sm1931994pjz.12.2019.11.18.23.12.34
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 18 Nov 2019 23:12:38 -0800 (PST)
-Date: Tue, 19 Nov 2019 16:13:42 +0900
-From: AKASHI Takahiro <takahiro.akashi@linaro.org>
-To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Subject: Re: [PATCH v4 0/3] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
- for arm64 and MAX_PHYSMEM_BITS for all archs)
-Message-ID: <20191119071341.GW22427@linaro.org>
-Mail-Followup-To: AKASHI Takahiro <takahiro.akashi@linaro.org>,
- Prabhakar Kushwaha <prabhakar.pkin@gmail.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- Boris Petkov <bp@alien8.de>, Ingo Molnar <mingo@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Jonathan Corbet <corbet@lwn.net>, James Morse <james.morse@arm.com>,
- Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>,
- Steve Capper <steve.capper@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Paul Mackerras <paulus@samba.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Anderson <anderson@redhat.com>,
- Kazuhito Hagio <k-hagio@ab.jp.nec.com>, x86@kernel.org,
- linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>
-References: <1573459282-26989-1-git-send-email-bhsharma@redhat.com>
- <20191113063858.GE22427@linaro.org>
- <CACi5LpP54d9DKW63G5W6X4euBjAm2NwkHOiM01dB7g8d60s=4w@mail.gmail.com>
- <20191115015959.GI22427@linaro.org>
- <CAJ2QiJJOSspLKRh+jRB_o0o9nmeAsiFKzxGJ8R0pYPRM4iptmw@mail.gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=hh4VbnNsZd0cQjCcxR1lcKBnthPXIf0SZTjvhg2Wu+o=;
+ b=KG1UmwSAt3W9y4aEG4qEHmwwYGdoa1ElNHR6G62bg81J2TW43Oe35SpUlCFe3VPVYt
+ QETPUMyRB21Zc0bpN9EEVBDAJa2oXac107X2B3izOPYgo9fWo0yqkGE41LwLY5HGw5hg
+ WfMPPM9Ecos/VhQEJLWDQo/9nPiRr3jyjAVyFqCqhBsZgh6EoE65t8yqFhK7l+Adm/Bw
+ VK05zUe7RxffIsv7d6iqYouNd1IjHq6MOPAXSS7fZRhrpB22gfYL5Ty4xwO7jRkszC9y
+ ZZ6QF1ARSCXLH2iqr0ZiysbnP+7ED15qsW826tZD5ewWX5J5lovbaazidUZ0oTUwEuky
+ d4aA==
+X-Gm-Message-State: APjAAAXMvJBfxguydsN3BY4LHGjCa87IO3COp4E+puHB1+ne30LwEvrE
+ aS663CpApD9OCNTw7//gz+g=
+X-Google-Smtp-Source: APXvYqz0gH537B8rU2w00QiT/qNEHBVmoinFUpSwuRNgUqOSFjcLDQplIaEzENzq42pnIhByD4QFUw==
+X-Received: by 2002:a05:600c:22c1:: with SMTP id
+ 1mr3946744wmg.142.1574149166955; 
+ Mon, 18 Nov 2019 23:39:26 -0800 (PST)
+Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id k125sm2206895wmf.2.2019.11.18.23.39.25
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 18 Nov 2019 23:39:26 -0800 (PST)
+Date: Tue, 19 Nov 2019 08:39:24 +0100
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH 2/3] ARM: dts: sun8i: a33: add the new SecuritySystem
+ compatible
+Message-ID: <20191119073924.GA32060@Red>
+References: <20191114144812.22747-1-clabbe.montjoie@gmail.com>
+ <20191114144812.22747-3-clabbe.montjoie@gmail.com>
+ <20191118111143.GF4345@gilmour.lan>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAJ2QiJJOSspLKRh+jRB_o0o9nmeAsiFKzxGJ8R0pYPRM4iptmw@mail.gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20191118111143.GF4345@gilmour.lan>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_231241_043604_FEEDC831 
-X-CRM114-Status: GOOD (  24.97  )
+X-CRM114-CacheID: sfid-20191118_233928_597811_8FF75908 
+X-CRM114-Status: GOOD (  16.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (clabbe.montjoie[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -124,103 +103,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Bhupesh Sharma <bhsharma@redhat.com>, Paul Mackerras <paulus@samba.org>,
- Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
- Jonathan Corbet <corbet@lwn.net>, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Boris Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
- Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Steve Capper <steve.capper@arm.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- James Morse <james.morse@arm.com>, Dave Anderson <anderson@redhat.com>,
- linuxppc-dev@lists.ozlabs.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, wens@csie.org, robh+dt@kernel.org,
+ linux-crypto@vger.kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
-
-On Tue, Nov 19, 2019 at 12:02:46PM +0530, Prabhakar Kushwaha wrote:
-> Hi Akashi,
+On Mon, Nov 18, 2019 at 12:11:43PM +0100, Maxime Ripard wrote:
+> Hi,
 > 
-> On Fri, Nov 15, 2019 at 7:29 AM AKASHI Takahiro
-> <takahiro.akashi@linaro.org> wrote:
+> On Thu, Nov 14, 2019 at 03:48:11PM +0100, Corentin Labbe wrote:
+> > Add the new A33 SecuritySystem compatible to the crypto node.
 > >
-> > Bhupesh,
+> > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> > ---
+> >  arch/arm/boot/dts/sun8i-a33.dtsi | 3 ++-
+> >  1 file changed, 2 insertions(+), 1 deletion(-)
 > >
-> > On Fri, Nov 15, 2019 at 01:24:17AM +0530, Bhupesh Sharma wrote:
-> > > Hi Akashi,
-> > >
-> > > On Wed, Nov 13, 2019 at 12:11 PM AKASHI Takahiro
-> > > <takahiro.akashi@linaro.org> wrote:
-> > > >
-> > > > Hi Bhupesh,
-> > > >
-> > > > Do you have a corresponding patch for userspace tools,
-> > > > including crash util and/or makedumpfile?
-> > > > Otherwise, we can't verify that a generated core file is
-> > > > correctly handled.
-> > >
-> > > Sure. I am still working on the crash-utility related changes, but you
-> > > can find the makedumpfile changes I posted a couple of days ago here
-> > > (see [0]) and the github link for the makedumpfile changes can be seen
-> > > via [1].
-> > >
-> > > I will post the crash-util changes shortly as well.
-> > > Thanks for having a look at the same.
+> > diff --git a/arch/arm/boot/dts/sun8i-a33.dtsi b/arch/arm/boot/dts/sun8i-a33.dtsi
+> > index 1532a0e59af4..5680fa1de102 100644
+> > --- a/arch/arm/boot/dts/sun8i-a33.dtsi
+> > +++ b/arch/arm/boot/dts/sun8i-a33.dtsi
+> > @@ -215,7 +215,8 @@
+> >  		};
 > >
-> > Thank you.
-> > I have tested my kdump patch with a hacked version of crash
-> > where VA_BITS_ACTUAL is calculated from tcr_el1_t1sz in vmcoreinfo.
-> >
+> >  		crypto: crypto-engine@1c15000 {
+> > -			compatible = "allwinner,sun4i-a10-crypto";
+> > +			compatible = "allwinner,sun8i-a33-crypto",
+> > +				     "allwinner,sun4i-a10-crypto";
 > 
-> I also did hack to calculate VA_BITS_ACTUAL is calculated from
-> tcr_el1_t1sz in vmcoreinfo. Now i am getting error same as mentioned
-> by you in other thread last month.
-> https://www.mail-archive.com/crash-utility@redhat.com/msg07385.html
+> If some algorithms aren't working properly, we can't really fall back
+> to it, we should just use the a33 compatible.
 > 
-> how this error was overcome?
-> 
-> I am using
->  - crashkernel: https://github.com/crash-utility/crash.git  commit:
-> babd7ae62d4e8fd6f93fd30b88040d9376522aa3
-> and
->  - Linux: git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
-> commit: af42d3466bdc8f39806b26f593604fdc54140bcb
 
-# I am rather reluctant to cross-post non-kernel patch to lkml/lakml,
+Since crypto selftest detect the problem, the fallback could be used and SS will just be in degraded mode (no sha1).
+But since nobody reported this problem since 4 years (when SS was added in a33 dts), the absence of sha1 is clearly not an issue.
 
-The only change I made to crash utility was:
-===8<===
-diff --git a/arm64.c b/arm64.c
-index 5ee5f1a29a41..84e40aeb561b 100644
---- a/arm64.c
-+++ b/arm64.c
-@@ -3857,8 +3857,8 @@ arm64_calc_VA_BITS(void)
- 		} else if (ACTIVE())
- 			error(FATAL, "cannot determine VA_BITS_ACTUAL: please use /proc/kcore\n");
- 		else {
--			if ((string = pc->read_vmcoreinfo("NUMBER(VA_BITS_ACTUAL)"))) {
--				value = atol(string);
-+			if ((string = pc->read_vmcoreinfo("NUMBER(tcr_el1_t1sz)"))) {
-+				value = 64 - strtoll(string, NULL, 0);
- 				free(string);
- 				machdep->machspec->VA_BITS_ACTUAL = value;
- 				machdep->machspec->VA_BITS = value;
-===>8===
-
-Thanks,
--Takahiro Akashi
-
-> --pk
+Regards
 
 _______________________________________________
 linux-arm-kernel mailing list
