@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 308271044D1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 21:16:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A01A71044D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 21:18:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n1g9Nf20E236lgFnsX9AfrDb2OtOrtc9ZyneF6VQI5A=; b=NHDl7P8kxzP2BX
-	k0tv1ncyDwA7B0Qon8UBJl/IH9kQNupGkxcEI+AAeHr55Md+/u8PrtSFZbrhjHZfYf0Bg+6AzaJ7/
-	iVH5nheDdpADEcf4fF7AjpeRVs0q0dGzNlYCa1Wq5j+qlev7ApXpsLB1AqJyqEY8OGMlM/4rfY/cd
-	2SBSTld4KFA0+X7joBDryWh4YdeX0O868u/RXzZchwKFCWZPbd6iaNa4bnm+pNgmOcQ9aLGJlSQUD
-	/P8s9sLlCCgp1Z8kmAkvELlcywwpuBMvN+oO4iQOeB6xSR9w0iBQsRh1aKhrcHSGrG4iEaQXyDNlw
-	4IaCqbcQ+iT2MTISSjZw==;
+	List-Owner; bh=zsIpNherj8VoNXp1wKUVr6Agwcv3ZMh1BkfvQ8Gwg20=; b=cKlwl0Zi13QU7N
+	7fzyQELTD2cX2bk2CFqe2t+phqrn2VKSd2lE1uQLJJfr6gQlyfbL3yd1Kb3bYHEesDEX385Pi61lZ
+	q55u9AHvTYowAsU/YQyhj74Kfdktv2lLM9affS3T+/Qv16UyurhpR6/4A0lzwtnRlDxT6z5FNBxqY
+	JUN7acCbg+kVuZ9rcdYn9F8uGTGcgLlA5jX1aSZVdaqkuAt4ws2wPkR/tKA78aHL9bkfIcNEUO45t
+	Kkc1XbOCbCRQlry48mn3lA4nHJoZnApXfz5fb75HGwOgerb3FtgyDDvB+H5h+0ODV5OS3Zf6UgPB+
+	r0t4Hdm1MWKRNi7jaMXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXWPC-0006qp-NH; Wed, 20 Nov 2019 20:16:50 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1iXWQB-00077e-Rc; Wed, 20 Nov 2019 20:17:51 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXWP3-0006pN-Pg
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 20:16:43 +0000
-Received: by mail-lj1-x242.google.com with SMTP id y23so536415ljh.10
+ id 1iXWQ0-000770-5S
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 20:17:41 +0000
+Received: by mail-lf1-x141.google.com with SMTP id b20so609355lfp.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 12:16:35 -0800 (PST)
+ Wed, 20 Nov 2019 12:17:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=As7pKQ0itiBPr+JVzJNRbGflXyWEUqoGImZXztf0jEU=;
- b=XEy7WaGq7tnXJWeHZWtz0DwTyLPI5ZIDiFBhpBU/p+enAkw3f0UID6GJcKUKKhDXwB
- 3zAy7hyjoieIeZcKpDx5M3kdNUoMZqzFs5gZNm984sQbeIYqSq7ZFmRck6P7s4qJdPIS
- nydKNUoBsu2hVpIyERlo9YIrafC2SWqeJ9p0rTQXTSwsYU1flWI/42RRYkdlpdArN0Ab
- 4lwJX/mndLLYBbj3ixlqdttpycoL7TjF1Ybm1R4TIC41cf0FFFHeBY84qDEZDHRTGW6k
- FglI8GhQAHWQFfVHDlFVgZyzB0zeTIwYjGzscfkYOoeEOlupu3J52a6Ah6QWfY/vJ25e
- A8ug==
+ :cc; bh=OYT8CC6GpWfJu0xkWtk6XTUYUrlBXFqIdiEKAusrjn4=;
+ b=yy4lTCWdl9Av+zr3CTm0ggDnEp7nwBfl83TXX6d0SX5Mj95Fc5lBVhk+KFeKFsUu/+
+ 5HlcRcFaOyZNNs+D019UtncETQl+U5hGAo5W+asM/MvV52pQ9zwVQAwM7UpkhsXfl42X
+ Z4xpH8sbZ8wNnBGRwFoWnGypZbuFlABl2gOnFig1o03cfVpzoGo4sb5gF8xBXO+v2SeL
+ BTAf82oSqJpUftzdcioR/5bq6otu3XFP5cyQfEwLKaoz/7H2cvWMUWAxt6V2/CGsWANv
+ NfZi59lvb1H5fGUBFlauWB64HxtCRZMVFB1Dh4i6mVXfdUCkf/jErbfmAkhGfs47g+dk
+ eUqQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=As7pKQ0itiBPr+JVzJNRbGflXyWEUqoGImZXztf0jEU=;
- b=ZwWBHJNG8gw2K3AdaB5O3i2/Ua47XlJyyRmop3KYzjcF6CEr6JDNabTn09dqUPoaMi
- sa0aTYhhsA9nAZq6HHW12bsMNDFlD3qAa+1azDrj16OfiPTwddO+bwAHuAfHDtviPliD
- 498AHjN2OmW6HwXafQP3DsNuZzrkLVA5UEm1oQ3D2U/WWqD40WxkoH+38sJTd4AdodZK
- skgGV4oYeCc9XwCfO4vsVpoUURq8Mr5vAuiROHxclwcIRPYszFWhAZ8sRxJty83g8UKN
- ERGDT+QwWciCWKvAH2cqZ0K0HK+GllgFLRLwN/OxZUDDDJ+iCnbEbkV1R9tdYZ1lHj5m
- 0y6w==
-X-Gm-Message-State: APjAAAUO1nLx/S4y3OzQYwxGjls6SyYgWYeNJV19pFkmk9Hu2eP8q6Tk
- dEt4va0Ws1HrGcZAMUNXqOx2JhbMiwgfUTToMqqPww==
-X-Google-Smtp-Source: APXvYqx+bECbdnOoxTCki5xJSDVYs7EMIZ2Q1kvVZaDKVhZI1elr6NsjrHwr5uD2qsoUC1YJ0MgiOfh8fbu78lxOV2k=
-X-Received: by 2002:a2e:8597:: with SMTP id b23mr4421824lji.218.1574280992576; 
- Wed, 20 Nov 2019 12:16:32 -0800 (PST)
+ bh=OYT8CC6GpWfJu0xkWtk6XTUYUrlBXFqIdiEKAusrjn4=;
+ b=MMMhOsP0JPxygwQOtaHyLdR5ycLaPernd6v9+UGOJoMt88LMDSPQCClKjMzJZt+kAu
+ QxpzYdPpxpfFmbwLiMy/onF74doKXgaxPqzJsC3nhAZLsROl9FuEAyBkalFgDqLaxbsH
+ Y0pvmoCOHuaQqssX+vhO1EshT41Hq+W9q0MNdc4bjKOjBmM5MY7LbWKm97UzgFvmvHUN
+ IlI39a+rMLsEDJoer16p1NHIXU8E/ycA1sAHLZ/Jb02K2HaF5FWrA88jwDaQAqFPyzL7
+ Hmvkn1uVdFtqYYPLE0dhB6ZRupJF2MDhD8oL5RfQci/z1wNCKfvV7BHljcqhjN+9h4Hk
+ h5ag==
+X-Gm-Message-State: APjAAAVfsoCSbqDoBNKR+YWhXm7UnkcOn8pqmn0qC4e6SeGD1wlvbQT2
+ pQk+lksJ1khUviVNPzXp0uO0R4hZtvxka11uj9x1wxHcJlA=
+X-Google-Smtp-Source: APXvYqyGWF4ZIZmyLQMuDX14kcvxeeCM5hkV3U0eHSk6sdJXWFiGdgPgXZZqM7Qcb2XEL4SvXgko2JXcJMShZLT4asg=
+X-Received: by 2002:a19:651b:: with SMTP id z27mr4439294lfb.117.1574281058113; 
+ Wed, 20 Nov 2019 12:17:38 -0800 (PST)
 MIME-Version: 1.0
 References: <20191117221053.278415-1-stephan@gerhold.net>
-In-Reply-To: <20191117221053.278415-1-stephan@gerhold.net>
+ <20191117221053.278415-2-stephan@gerhold.net>
+In-Reply-To: <20191117221053.278415-2-stephan@gerhold.net>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 20 Nov 2019 21:16:20 +0100
-Message-ID: <CACRpkdYoq0E3HEmo4QBOWaAkQN8Ti=cm2OL+gjBORynsJ7D8jw@mail.gmail.com>
-Subject: Re: [PATCH 1/2] dt-bindings: mfd: ab8500: Document AB8505 bindings
+Date: Wed, 20 Nov 2019 21:17:26 +0100
+Message-ID: <CACRpkdYx1SP4r48L+5vJMttuGPoRH+HMhBw-CnZN0MdqtwZdVg@mail.gmail.com>
+Subject: Re: [PATCH 2/2] mfd: ab8500-core: Add device tree support for AB8505
 To: Stephan Gerhold <stephan@gerhold.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_121641_843879_B2D0435F 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191120_121740_218074_A74B8E50 
+X-CRM114-Status: GOOD (  11.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,9 +104,17 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Sun, Nov 17, 2019 at 11:14 PM Stephan Gerhold <stephan@gerhold.net> wrote:
 
-> AB8505 can now be configured from the device tree.
-> The configuration is almost identical to AB8500, so just add a note
-> for the nodes/compatibles that differ between the two revisions.
+> AB8505 support was never fully converted to the device tree.
+> Most of the MFD cells for AB8505 lack an "of_compatible",
+> which prevents them from being configured through the device tree.
+>
+> Align the definition of the AB8505 MFD cells with the ones for AB8500,
+> and add device tree compatibles. Except for GPIO and regulators the
+> compatibles are equal to those used for AB8500 because the hardware
+> does not differ much.
+>
+> Finally, change db8500_prcmu_register_ab8500() to check for the AB8505
+> device tree node additionally, and probe it if it is found.
 >
 > Cc: Linus Walleij <linus.walleij@linaro.org>
 > Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
