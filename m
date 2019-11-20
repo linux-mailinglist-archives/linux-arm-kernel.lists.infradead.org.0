@@ -2,54 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E4FA103925
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 12:52:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0109103968
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 13:01:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7GPKs3y3vzWZMASWSAxgmajv1HKd1gRT+IajYVChVg0=; b=HMwG3GffGMy4BT
-	EY0Jh1/Wecu0ioczRatYZLhwV5PJ7hjvISa96OE2wZb+iQY1YCtULLWA8ITUNCtBvJn2NRd3erDKk
-	80pFwhu/WQhrcch9vpKcZ0wR4cW5wlKvrw+G8fFMNDFteWiZGG0+6fEcPI4FtkRQ3aaumEwGslYlS
-	ypHlnGV2wlYnwyCsdAXALBJf9aByMBuw2bnsU3fEYBZFYVVwJQrd4vAlEuQydvtd4awAMk3ojusMn
-	xRnPzF2C7FADdSCSxKPf3K4icJXI0RhyzkSX86CY9c/6ztBoeBfhRN3s7el6I+2FcTy/Ea55pbTaI
-	MN9XAfwLVfbdWIQykg/w==;
+	List-Owner; bh=6vyD8R7YdUfv76W58W7ZsT33gJIx/45HL91kVOB0s4g=; b=jGKHFQRCDmePQg
+	fSN2PpEmOpu1AeUdamJpQThcAx0oxxzD1NlC9+ReavPsSkKY+1XxbW1mkaVl3fpzeoJoElFp3zJG5
+	NJseYXJcMm3FI0RpvArH+Y3dQPmLDxxaw+j06lyLz6eLptzkotQXn9Y0jq90+f48aFqvYgGritxOQ
+	W/dlQ3fBFdTszYmpTOX+Dx9V4OM9oYiTsuIXnzmjogfsZyQjbAqJcjevC68KEbMw8j/O2px2ecl6D
+	nnZ+G0uYXQ2Xu/uypL545pp2ymFJrDLBFkmo93O3fUFGcxsvMftxmkSdPbWoZmbAI1v9vMx1QaNvH
+	Zkgw3Umbt6jUG4dbRT4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXOX8-0007lK-SU; Wed, 20 Nov 2019 11:52:30 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXOWz-0007ke-Kv
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 11:52:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5D83C328;
- Wed, 20 Nov 2019 03:52:18 -0800 (PST)
-Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E4E603F703;
- Wed, 20 Nov 2019 03:52:17 -0800 (PST)
-Date: Wed, 20 Nov 2019 12:52:16 +0100
-From: Christoffer Dall <christoffer.dall@arm.com>
-To: Sean Christopherson <sean.j.christopherson@intel.com>
-Subject: Re: Memory regions and VMAs across architectures
-Message-ID: <20191120115216.GL8317@e113682-lin.lund.arm.com>
-References: <20191108111920.GD17608@e113682-lin.lund.arm.com>
- <20191120034448.GC25890@linux.intel.com>
+	id 1iXOg6-0005JL-Nr; Wed, 20 Nov 2019 12:01:46 +0000
+Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iXOf5-000460-AP
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 12:00:45 +0000
+Received: by mail-ua1-x942.google.com with SMTP id u99so7688152uau.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 04:00:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=B0tsxj8KZGAT/o1qcGiW6HKsR+OIwQVXMM2ODuLvIpk=;
+ b=EqVhZA3XS/izMBNsikllPUdPo/A4jO0CJ2WlCc6sonVPI2GnfaVvbdDuNlHdyVmBWs
+ 04nfUBbI06D35YPWUGTFpPWM+eHRl7KJqzvMQZ83STlGgvja0fblAtHeSfAFZaJtrKA1
+ zmFiNtK3ttF7B1Fj4bDCbrnfA1x2DjrISFT4bYrf4bnivgaf2hWaN/7r/wMso4uvtHqe
+ shcCcvg8GlTnd3B7NHCeEdi4N+JTWa5XVlWqJoGC8NG0l9O8cxzUQYX3uLaU9pld4Ptn
+ uKq5VO98MpAoB+6hx23bKtwlM4Kx3cxqoTlHoH7OXOjuf6SVEg0kUKz7XdpkTWoKVgaL
+ HNqA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=B0tsxj8KZGAT/o1qcGiW6HKsR+OIwQVXMM2ODuLvIpk=;
+ b=VMu3kKsCof2fuMH2lm9CVxBUtjkwfZs6TjjDOyTcujReP7TSuCQvde0iRcFO93jujA
+ 0CaZmzmZGQoV7Vkd1WEBBCHwxRNmimFY3fhaZrh1JvuKWgxyV5jwbC4cS9l9U7Gv/Qtx
+ tNiorq6pjMsmg4XvRgcDVPR4gk0pbDLJmELnYbNL8PnoNrM1oq2QSshfmBLrLI433Rkm
+ UBeadnObNePHnBACeQ2sVaMCt22HOlZ/9xv5zZkWvW4eRTRUXydHy91SEbyadBWN5871
+ Cp5NN3yrPdRdemWs5ti7P8os4evDm2dUYq23NagHkISW4CYrFCbNDJhFOj5kUjv4TJUg
+ d9iw==
+X-Gm-Message-State: APjAAAU8dXRE/Vh4SXh9L9/sVmV2+kuXLtzFd9AdRvfY5lheafGA/wBC
+ M1FBBETCymkzX6mxG/6g3eD9OQ674C3jLp00JayRhg==
+X-Google-Smtp-Source: APXvYqyiLCF3MBQoSmzlqqxli2MvGV261pRD3zdGvysKb7s9Nit3G2b6p/dRiZmGs4K0UtVDM+P1vhy5Y89wBip3NWE=
+X-Received: by 2002:ab0:74cd:: with SMTP id f13mr1351834uaq.104.1574251241748; 
+ Wed, 20 Nov 2019 04:00:41 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191120034448.GC25890@linux.intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191119154621.55341-1-niklas.cassel@linaro.org>
+In-Reply-To: <20191119154621.55341-1-niklas.cassel@linaro.org>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Wed, 20 Nov 2019 13:00:05 +0100
+Message-ID: <CAPDyKFqjsJSRW7XvfUe2Ssewqxo5Xjk_3p_EywP_rTsvrdNDYQ@mail.gmail.com>
+Subject: Re: [PATCH v6 0/5] Add support for QCOM Core Power Reduction
+To: Niklas Cassel <niklas.cassel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_035221_776097_38BBCCB0 
-X-CRM114-Status: GOOD (  29.45  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191120_040043_389711_A7DEA3D8 
+X-CRM114-Status: GOOD (  18.57  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,101 +90,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Marc Zyngier <maz@kernel.org>, borntraeger@de.ibm.com,
- Ard Biesheuvel <ard.biesheuvel@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: DTML <devicetree@vger.kernel.org>, Linux PM <linux-pm@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Amit Kucheria <amit.kucheria@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Viresh Kumar <vireshk@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 19, 2019 at 07:44:48PM -0800, Sean Christopherson wrote:
-> On Fri, Nov 08, 2019 at 12:19:20PM +0100, Christoffer Dall wrote:
-> > Hi,
-> > 
-> > I had a look at our relatively complicated logic in
-> > kvm_arch_prepare_memory_region(), and was wondering if there was room to
-> > unify some of this handling between architectures.
-> > 
-> > (If you haven't seen our implementation, you can find it in
-> > virt/kvm/arm/mmu.c, and it has lovely ASCII art!)
-> > 
-> > I then had a look at the x86 code, but that doesn't actually do anything
-> > when creating memory regions, which makes me wonder why the arhitectures
-> > differ in this aspect.
-> > 
-> > The reason we added the logic that we have for arm/arm64 is that we
-> > don't really want to take faults for I/O accesses.  I'm not actually
-> > sure if this is a corretness thing, or an optimization effort, and the
-> > original commit message doesn't really explain.  Ard, you wrote that
-> > code, do you recall the details?
-> > 
-> > In any case, what we do is to check for each VMA backing a memslot, we
-> > check if the memslot flags and vma flags are a reasonable match, and we
-> > try to detect I/O mappings by looking for the VM_PFNMAP flag on the VMA
-> > and pre-populate stage 2 page tables (our equivalent of EPT/NPT/...).
-> > However, there are some things which are not clear to me:
-> > 
-> > First, what prevents user space from messing around with the VMAs after
-> > kvm_arch_prepare_memory_region() completes?  If nothing, then what is
-> > the value of the cheks we perform wrt. to VMAs?
-> 
-> Arm's prepare_memory_region() holds mmap_sem and mmu_lock while processing
-> the VMAs and populating the stage 2 page tables.  Holding mmap_sem prevents
-> the VMAs from being invalidated while the stage 2 tables are populated,
-> e.g. prevents racing with the mmu notifier.  The VMAs could be modified
-> after prepare_memory_region(), but the mmu notifier will ensure they are
-> unmapped from stage2 prior the the host change taking effect.  So I think
-> you're safe (famous last words).
-> 
+On Tue, 19 Nov 2019 at 16:46, Niklas Cassel <niklas.cassel@linaro.org> wrote:
+>
+> This series adds support for Core Power Reduction (CPR), a form of
+> Adaptive Voltage Scaling (AVS), found on certain Qualcomm SoCs.
+>
+> This series is based on top of the qcs404 cpufreq patch series that
+> hasn't landed yet:
+> https://patchwork.kernel.org/project/linux-arm-msm/list/?series=173423
+> as well as that series' matching device tree changes:
+> https://patchwork.kernel.org/project/linux-arm-msm/list/?series=165457
+>
+> For testing purposes, this patch series, including the dependencies
+> listed above, is available on the following git tag:
+> https://git.linaro.org/people/niklas.cassel/kernel.git/log/?h=cpr-v6
+>
+> CPR is a technology that reduces core power on a CPU or on other device.
+> It reads voltage settings from efuses (that have been written in
+> production), it uses these voltage settings as initial values, for each
+> OPP.
+>
+> After moving to a certain OPP, CPR monitors dynamic factors such as
+> temperature, etc. and adjusts the voltage for that frequency accordingly
+> to save power and meet silicon characteristic requirements.
+>
+> This driver has been developed together with Jorge Ramirez-Ortiz, and
+> is based on an RFC by Stephen Boyd[1], which in turn is based on work
+> by others on codeaurora.org[2].
+>
+> [1] https://lkml.org/lkml/2015/9/18/833
+> [2] https://source.codeaurora.org/quic/la/kernel/msm-4.14/tree/drivers/regulator/cpr-regulator.c?h=msm-4.14
+>
+> Changes since v5:
+> -Removed pm_ops from platform_driver struct.
+>  (This was embarrassingly not properly removed in previous patch revision.)
+>
+> Niklas Cassel (5):
+>   dt-bindings: power: avs: Add support for CPR (Core Power Reduction)
+>   power: avs: Add support for CPR (Core Power Reduction)
+>   arm64: dts: qcom: qcs404: Add CPR and populate OPP table
+>   arm64: defconfig: enable CONFIG_QCOM_CPR
+>   arm64: defconfig: enable CONFIG_ARM_QCOM_CPUFREQ_NVMEM
+>
+>  .../bindings/power/avs/qcom,cpr.txt           |  130 ++
+>  MAINTAINERS                                   |    8 +
+>  arch/arm64/boot/dts/qcom/qcs404.dtsi          |  132 +-
+>  arch/arm64/configs/defconfig                  |    2 +
+>  drivers/power/avs/Kconfig                     |   15 +
+>  drivers/power/avs/Makefile                    |    1 +
+>  drivers/power/avs/qcom-cpr.c                  | 1754 +++++++++++++++++
+>  7 files changed, 2034 insertions(+), 8 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/power/avs/qcom,cpr.txt
+>  create mode 100644 drivers/power/avs/qcom-cpr.c
+>
+> --
+> 2.23.0
+>
 
-So we for example check:
+For the series (except patch 2 that I provided some comment for), feel
+free to add:
 
-	writeable = !(memslot->falgs & KVM_MEM_READONLY);
-	if (writeable && !(vma->vm_flags & VM_WRITE))
-		return -EPERM;
+Reviewed-by: Ulf Hansson <ulf.hansson@linaro.org>
 
-And yes, user space can then unmap the VMAs and MMU notifiers will
-unmap the stage 2 entries, but user space can then create a new
-read-only VMA covering the area of the memslot and the fault-handling
-path will have to deal with this same check later.  Only, the fault
-handling path, via gfn_to_pfn_prot(), returns an address based on an
-entirely different set of mechanics, than our prepare_memory_region,
-which I think indicates we are doing something wrong somewhere, and we
-should have a common path for faulting things in, for I/O, both if we do
-this up-front or if we do this at fault time.
-
-
-> > Second, why would arm/arm64 need special handling for I/O mappings
-> > compared to other architectures, and how is this dealt with for
-> > x86/s390/power/... ?
-> 
-> As Ard mentioned, it looks like an optimization.  The "passthrough"
-> part from the changelog implies that VM_PFNMAP memory regions are exclusive
-> to the guest.  Mapping the entire thing would be a nice boot optimization
-> as it would save taking page faults on every page of the MMIO region.
-> 
-> As for how this is different from other archs... at least on x86, VM_PFNMAP
-> isn't guaranteed to be passthrough or even MMIO, e.g. prefaulting the
-> pages may actually trigger allocation, and remapping the addresses could be
-> flat out wrong.
-
-What does VM_PFNMAP mean on x86?  I didn't think we were relying on
-anything architecture specific in their meaning in the arm code, and I
-thought the VM_PFNMAP was a generic mm flag with generic mm meaning,
-but I could be wrong here?
-
-Is there any valid semantics for creating a memslot backed by a
-VM_PFNMAP on x86, and if so, what are those?
-
-Similarly, if you do map a device region straight to the guest on x86,
-how is that handled?  (A pointer to the right place in the myriad of EPT
-and shadow code in x86 would be much appreciated.)
-
-
-Thanks!
-
-    Christoffer
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
