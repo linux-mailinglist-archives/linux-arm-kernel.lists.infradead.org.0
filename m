@@ -2,86 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 096201046AD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 23:40:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60B3B104721
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 00:56:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ERr2OIuGcz67KjcbERB4gHqtEkzpKTihjsL1318ID78=; b=NnoCEnhAFHrJQx
-	6anL/aW9zwCmGjx+m3kfs5lFzOZ2oIzLSmkzV4fU2rCfTrdd2ooyC8oDsjmultCJN9TuE2q9fp24l
-	7ADcDoLr7Ui/k3s1bufWKBwZ+LlsNxFSU+yLwfigmPZHCq1GwdL0+vUjNx38wVZSVA9ai4D6tWOcY
-	aQ/sqUzAMN5QDWfKSE/M6amb6xWjrQ229n3CwUwZ78pzCwretIiEnCqNFMFc8oDcvFtrbdkQMxFes
-	uBX6Er0arlbwSruOFi8ORzbPkehlAE/Kv+JJQ3ixPoS9cjY51dNCY8j/srUVVDN7jQ5s4hQ0qu/5p
-	bWApYLVAY8MGV2NPLarg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=T1fZUW2kcar6VXpyqQ/q4PKGyx7RHyNSNTfsztK1XwY=; b=DVn03hmRD77W3d
+	ovXM6L2R97zh2FYnHRALm2f2QA/sFP5Nwo7eDjaZ4EH1TrzCodWu/BomBqUhVK9zxrrZwL1eIHwL1
+	xJ5J/WlIHExYegZTzyU5ZHKkIsoi8VAKlKDAr+qql2yr/S5u0DwPdKDzgOlPdZZw7j+05u6+uJf78
+	BpzwHXJb6hg6Jre8lctLi2QXRJV0j+38XxOmWEGYFZ5EW65+XUfE9UfGMnsMc+bHUmEl2Ne/3fByC
+	v90DLBkPhmY/MdYxo7zeuUu7OaYtgt3ypGYQXvMJvBAHU+gKF2CRI/NiNhEqEZnMgfSKBCFX5OVSM
+	xWLu+zK1KQuwiLNlUtxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXYdX-0000TO-P6; Wed, 20 Nov 2019 22:39:47 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1iXZpH-0001u0-A7; Wed, 20 Nov 2019 23:55:59 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXYdO-0000SK-9H
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 22:39:40 +0000
-Received: by mail-qt1-x842.google.com with SMTP id o49so1398557qta.7
+ id 1iXZp4-0001sr-SD
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 23:55:50 +0000
+Received: by mail-oi1-f196.google.com with SMTP id d22so1510943oic.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 14:39:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NFgSbCPrFi8T1e2VirUq06TjZPpBWKiWuXdt2lSVc4U=;
- b=jRM6QcxrOfaUipntiznUGAD/wRVd3zwNIfxLENQpJHTQEaDCnKp3GOchwa8ciZvzIi
- TAq7z5QVmMjyA9avtmWNqGw99xpMxe5ydLYEM3MWv3MVBX+oA3JcDw7//dCf8z0vl3wo
- fqlUzZrswm700YSN9vke015iBv8VbtO0qpE+Pu6Z6KRPWEzFDnPSkk0bOcPLPvtgXnSa
- t7u7i/+kazk8OLOM863r2vvb0e1FoNF9+uh3S5hAA9j8mwCROmbimxiEnmnRQESF00JM
- N9V8dcvmqOIgfvrNzdPhrMuqpKH19z/SBA1tine59HfQs/iGZRjf77MRZcII/5/LJBPF
- RgWg==
+ Wed, 20 Nov 2019 15:55:44 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=NFgSbCPrFi8T1e2VirUq06TjZPpBWKiWuXdt2lSVc4U=;
- b=hZqtbq7cO2n4CdHH9I8U2spTvmv/OYT+hRZ3vhmz4dBciqed8jjEH2oj90iijWCet0
- vCY/G2n75StsDf6YRN69UBl0ayChOigvPNIeltBIT5aNbTTZRj5KHcO1QMPkUZcDAmWB
- a8hfobp57JiosYhNKtOLI/HkBl9J3Iljxg9rHsnUVnwRq0DC3d1+EwW6RWFks7L8gJYr
- 1ASii6CH0vaxx7thiLFb4sSSSy+zwvyctQ65YvH61FTcDk82FF6eJDnmQ4WJbsjT006K
- XcaU0NZU1g298DgNVMFbZjdxe9Pyqq4IHuXaZAwsOE7xKbVqjWJx9uURYp3gWuYFx9Fh
- grlA==
-X-Gm-Message-State: APjAAAXnVCgnDbnkGLWLOoHawkNpa2dYzWwuxZxsAJDCvDWG+steALTR
- FIS0+Ce4HYPW4VfH7XqMjYLRBFmGSmLp/Fua5tPFmw==
-X-Google-Smtp-Source: APXvYqz5KAZ+lKj1P+x2VcEtxHmr75Pstcw9CBJGyhaFjeUWmJkqNyrSLxRyu0Qir86wAERBFeyJR1tTSGmuedvnyss=
-X-Received: by 2002:ac8:458d:: with SMTP id l13mr5317290qtn.266.1574289571278; 
- Wed, 20 Nov 2019 14:39:31 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VfqHsWQX4OEEBHP/DcNqaFwQ3gs5KJNvwNt46zFhdLE=;
+ b=VYt3WeggAgSeIBibqDlUyVMvNZp98fFYgyc5OjmuN/c4/A0+FUdYsgP9Q2nd6BFGmZ
+ Q7cBpaZUkntGeqqPRrUg0xbKpRM8ole+KzQ6jTxxqmqZPJlPG6Btvf4u10tT5AFhGnef
+ Mx3HnEz/7RuyFEnhCexylmruAh10CDuAa7CCaZXjQWzFyLGR7xnCQuaZA4V3JLYLbq8u
+ GnchVii+M7sB+qTdyar/gc0E7zD2fZ4aX3QdtXJQ5elzNxz6FT/4jB79IqegIaQC5NKc
+ OkWAWG5DqS3/PcBZk1gE9RCpryft1WrCaEsggoWMjTm+djGDw4cjN+fIM+af3Ppsd0kk
+ pN0Q==
+X-Gm-Message-State: APjAAAWrwuW5yWYyFUK0Ynu6m5beeMk9DY+O1dxg19rk/2FAteHKsWd9
+ oHuWHkrdXLfORs2X1V9EVQ==
+X-Google-Smtp-Source: APXvYqzRdxo0uT569iItjN+GBcHjo7as5A6yHyrSlMdfv4e+Igelas1ysYbbf6tzswDieA+2Mzdhog==
+X-Received: by 2002:aca:6044:: with SMTP id u65mr4883235oib.37.1574294142461; 
+ Wed, 20 Nov 2019 15:55:42 -0800 (PST)
+Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.googlemail.com with ESMTPSA id f62sm343951otf.23.2019.11.20.15.55.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 20 Nov 2019 15:55:41 -0800 (PST)
+From: Rob Herring <robh@kernel.org>
+To: devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] dt-bindings: arm: Convert arm, idle-state binding to DT schema
+Date: Wed, 20 Nov 2019 17:55:40 -0600
+Message-Id: <20191120235540.11170-1-robh@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20191119231912.12768-1-mike.leach@linaro.org>
- <20191119231912.12768-6-mike.leach@linaro.org>
- <20191120190604.GA5641@xps15>
-In-Reply-To: <20191120190604.GA5641@xps15>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Wed, 20 Nov 2019 22:39:21 +0000
-Message-ID: <CAJ9a7Vi=TyMf3FjU8u=ui0_wV5TQC+CMmUXH4C22KkKKo=wPRg@mail.gmail.com>
-Subject: Re: [PATCH v5 05/14] dt-bindings: arm: Adds CoreSight CTI hardware
- definitions.
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_143938_328178_954407D8 
-X-CRM114-Status: GOOD (  35.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191120_155546_921169_E4BE65C2 
+X-CRM114-Status: GOOD (  28.47  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,459 +88,1405 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Coresight ML <coresight@lists.linaro.org>,
- "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu,
+Convert the Arm idle-state binding to a DT schema.
 
-... is an optional end of document marker in YAML. Seemed to appear in
-most of the files I looked at in the devicetree.org  dt-schema project
-I looked at so I took it as customary for DT YAML docs.
-But as you say - it's up to Rob etc. to approve or otherwise.
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
+ .../devicetree/bindings/arm/idle-states.txt   | 706 ------------------
+ .../devicetree/bindings/arm/idle-states.yaml  | 661 ++++++++++++++++
+ 2 files changed, 661 insertions(+), 706 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/idle-states.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/idle-states.yaml
 
-Regards
-
-Mike
-
-On Wed, 20 Nov 2019 at 19:06, Mathieu Poirier
-<mathieu.poirier@linaro.org> wrote:
->
-> On Tue, Nov 19, 2019 at 11:19:03PM +0000, Mike Leach wrote:
-> > Adds new coresight-cti.yaml file describing the bindings required to define
-> > CTI in the device trees.
-> >
-> > Adds an include file to dt-bindings/arm to define constants describing
-> > common signal functionality used in CoreSight and generic usage.
-> >
-> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> > ---
-> >  .../bindings/arm/coresight-cti.yaml           | 303 ++++++++++++++++++
-> >  .../devicetree/bindings/arm/coresight.txt     |   7 +
-> >  MAINTAINERS                                   |   2 +
-> >  include/dt-bindings/arm/coresight-cti-dt.h    |  37 +++
-> >  4 files changed, 349 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/arm/coresight-cti.yaml
-> >  create mode 100644 include/dt-bindings/arm/coresight-cti-dt.h
-> >
-> > diff --git a/Documentation/devicetree/bindings/arm/coresight-cti.yaml b/Documentation/devicetree/bindings/arm/coresight-cti.yaml
-> > new file mode 100644
-> > index 000000000000..882c72f1c798
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/arm/coresight-cti.yaml
-> > @@ -0,0 +1,303 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +# Copyright 2019 Linaro Ltd.
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/arm/coresight-cti.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: ARM Coresight Cross Trigger Interface (CTI) device.
-> > +
-> > +description: |
-> > +  The CoreSight Embedded Cross Trigger (ECT) consists of CTI devices connected
-> > +  to one or more CoreSight components and/or a CPU, with CTIs interconnected in
-> > +  a star topology via the CTM (which is not programmable). The ECT components
-> > +  are not part of the trace generation data path and are thus not part of the
-> > +  CoreSight graph described in the general CoreSight bindings file
-> > +  coresight.txt.
-> > +
-> > +  The CTI component properties define the connections between the individual
-> > +  CTI and the components it is directly connected to, consisting of input and
-> > +  output hardware trigger signals. CTIs can have a maximum number of input and
-> > +  output hardware trigger signals (8 each for v1 CTI, 32 each for v2 CTI). The
-> > +  number is defined at design time, the maximum of each defined in the DEVID
-> > +  register.
-> > +
-> > +  CTIs are interconnected in a star topology via the CTM, using a number of
-> > +  programmable channels usually 4, but again implementation defined and
-> > +  described in the DEVID register. The star topology is not required to be
-> > +  described in the bindings as the actual connections are software
-> > +  programmable.
-> > +
-> > +  In general the connections between CTI and components via the trigger signals
-> > +  are implementation defined, other than when v8 core and ETM is present.
-> > +  The v8 architecture defines the required signal connections between CPU core
-> > +  and CTI, and ETM and CTI, if the ETM if present.
-> > +
-> > +  When only minimal information is available for the CTI trigger connections,
-> > +  then a minimal driver binding can be declare with no explicit trigger
-> > +  signals. This will result in the using the DEVID register to set the
-> > +  input and output triggers and channels in use. Any user / client
-> > +  application will require additional information on the connections
-> > +  between the CTI and other components for correct operation. This minimal
-> > +  binding may be used when using the Integration Control registers to
-> > +  discover connections between CTI and other CoreSight components,
-> > +
-> > +  Certain triggers between CoreSight devices and the CTI have specific types
-> > +  and usages. These can be defined along with the signal indexes with the
-> > +  constants defined in <dt-bindings/arm/coresight-cti-dt.h>
-> > +
-> > +  For example a CTI connected to a core will usually have a DBGREQ signal. This
-> > +  is defined in the binding as type PE_EDBGREQ. These types will appear in an
-> > +  optional array alongside the signal indexes. Omitting types will default all
-> > +  signals to GEN_IO.
-> > +
-> > +  Note that some hardware trigger signals can be connected to non-CoreSight
-> > +  components (e.g. UART etc) depending on hardware implementation.
-> > +
-> > +maintainers:
-> > +  - Mike Leach <mike.leach@linaro.org>
-> > +
-> > +allOf:
-> > +  - $ref: /schemas/arm/primecell.yaml#
-> > +
-> > +# Need a custom select here or 'arm,primecell' will match on lots of nodes
-> > +select:
-> > +  properties:
-> > +    compatible:
-> > +      contains:
-> > +        enum:
-> > +          - arm,coresight-cti
-> > +  required:
-> > +    - compatible
-> > +
-> > +properties:
-> > +  $nodename:
-> > +    pattern: "^cti(@[0-9a-f,]+)*$"
-> > +  compatible:
-> > +    items:
-> > +      - const: arm,coresight-cti
-> > +      - const: arm,primecell
-> > +
-> > +  reg:
-> > +    items:
-> > +      - description: device programming registers
-> > +
-> > +  arm,cti-v8-arch:
-> > +    type: boolean
-> > +    description:
-> > +      This CTI follows the v8 architecturally mandated layout for a CTI.
-> > +      Bindings declaring this must declare a cpu, and optionally a single
-> > +      arm,cs-dev-assoc may be present to define an attached ETM. No additional
-> > +      trig-conns nodes are permitted. The driver will build a connection model
-> > +      according to architectural requirements. This will include a filter on
-> > +      the CPU dbgreq signal as described above.
-> > +
-> > +  cpu:
-> > +    allOf:
-> > +      - $ref: /schemas/types.yaml#/definitions/phandle
-> > +    description: Handle to cpu this device is associated with.
-> > +
-> > +  arm,cti-ctm-id:
-> > +    allOf:
-> > +      - $ref: /schemas/types.yaml#/definitions/uint32
-> > +    description:
-> > +      Defines the CTM this CTI is connected to, in large systems with multiple
-> > +      separate CTI/CTM nets. Typically multi-socket systems where the CTM is
-> > +      propagated between sockets.
-> > +
-> > +  arm,cs-dev-assoc:
-> > +    allOf:
-> > +      - $ref: /schemas/types.yaml#/definitions/phandle
-> > +    description:
-> > +      defines a phandle reference to an associated CoreSight trace device.
-> > +      When the associated trace device is enabled, then the respective CTI
-> > +      will be enabled. Use in a trig-conns node, or in CTI base node when
-> > +      arm,cti-v8-arch present. If the associated device has not been registered
-> > +      then the node name will be stored as the connection name for later
-> > +      resolution. If the associated device is not a CoreSight device or not
-> > +      registered then the node name will remain the connection name and
-> > +      automatic enabling will not occur.
-> > +
-> > +patternProperties:
-> > +  '^trig_conns@[0-9]+$':
-> > +    type: object
-> > +    description:
-> > +      A trigger connections child node which describes the trigger signals
-> > +      between this CTI and another hardware device. This device may be a CPU,
-> > +      CoreSight device, any other hardware device or simple external IO lines.
-> > +      The connection may have both input and output triggers, or only one or the
-> > +      other.
-> > +
-> > +    properties:
-> > +
-> > +      arm,trig-in-sigs:
-> > +        allOf:
-> > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > +        minItems: 1
-> > +        maxItems: 32
-> > +        description:
-> > +          List of CTI trigger in signal numbers in use by a trig-conns node.
-> > +
-> > +      arm,trig-in-types:
-> > +        allOf:
-> > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > +        minItems: 1
-> > +        maxItems: 32
-> > +        description:
-> > +          List of constants representing the types for the CTI trigger in
-> > +          signals. Types in this array match to the corresponding signal in the
-> > +          arm,trig-in-sigs array. If the -types array is smaller, or omitted
-> > +          completely, then the types will default to GEN_IO.
-> > +
-> > +      arm,trig-out-sigs:
-> > +        allOf:
-> > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > +        minItems: 1
-> > +        maxItems: 32
-> > +        description:
-> > +          List of CTI trigger out signal numbers in use by a trig-conns node.
-> > +
-> > +      arm,trig-out-types:
-> > +        allOf:
-> > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > +        minItems: 1
-> > +        maxItems: 32
-> > +        description:
-> > +          List of constants representing the types for the CTI trigger out
-> > +          signals. Types in this array match to the corresponding signal
-> > +          in the arm,trig-out-sigs array. If the "-types" array is smaller,
-> > +          or omitted completely, then the types will default to GEN_IO.
-> > +
-> > +      arm,trig-filters:
-> > +        allOf:
-> > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > +        minItems: 1
-> > +        maxItems: 32
-> > +        description:
-> > +          List of CTI trigger out signals that will be blocked from becoming
-> > +          active, unless filtering is disabled on the driver.
-> > +
-> > +      arm,trig-conn-name:
-> > +        allOf:
-> > +          - $ref: /schemas/types.yaml#/definitions/string
-> > +        description:
-> > +          Defines a connection name that will be displayed, if the cpu or
-> > +          arm,cs-dev-assoc properties are not being used in this connection.
-> > +          Principle use for CTI that are connected to non-CoreSight devices, or
-> > +          external IO.
-> > +
-> > +    anyOf:
-> > +      - required:
-> > +        - arm,trig-in-sigs
-> > +      - required:
-> > +        - arm,trig-out-sigs
-> > +    oneOf:
-> > +      - required:
-> > +        - arm,trig-conn-name
-> > +      - required:
-> > +        - cpu
-> > +      - required:
-> > +        - arm,cs-dev-assoc
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - clocks
-> > +  - clock-names
-> > +
-> > +examples:
-> > +  # minimum CTI definition. DEVID register used to set number of triggers.
-> > +  - |
-> > +    cti@20020000 {
-> > +      compatible = "arm,coresight-cti", "arm,primecell";
-> > +      reg = <0x20020000 0x1000>;
-> > +
-> > +      clocks = <&soc_smc50mhz>;
-> > +      clock-names = "apb_pclk";
-> > +    };
-> > +  #  v8 architecturally defined CTI - CPU + ETM connections generated by the
-> > +  #  driver according to the v8 architecture specification.
-> > +  - |
-> > +    cti@859000 {
-> > +      compatible = "arm,coresight-cti", "arm,primecell";
-> > +      reg = <0x859000 0x1000>;
-> > +
-> > +      clocks = <&soc_smc50mhz>;
-> > +      clock-names = "apb_pclk";
-> > +
-> > +      arm,cti-v8-arch;
-> > +      cpu = <&CPU1>;
-> > +      arm,cs-dev-assoc = <&etm1>;
-> > +    };
-> > +  # Implementation defined CTI - CPU + ETM connections explicitly defined..
-> > +  # Shows use of type constants from dt-bindings/arm/coresight-cti-dt.h
-> > +  - |
-> > +    #include <dt-bindings/arm/coresight-cti-dt.h>
-> > +
-> > +    cti@858000 {
-> > +      compatible = "arm,coresight-cti", "arm,primecell";
-> > +      reg = <0x858000 0x1000>;
-> > +
-> > +      clocks = <&soc_smc50mhz>;
-> > +      clock-names = "apb_pclk";
-> > +
-> > +      arm,cti-ctm-id = <1>;
-> > +
-> > +      trig-conns@0 {
-> > +            arm,trig-in-sigs = <4 5 6 7>;
-> > +            arm,trig-in-types = <ETM_EXTOUT
-> > +                                 ETM_EXTOUT
-> > +                                 ETM_EXTOUT
-> > +                                 ETM_EXTOUT>;
-> > +            arm,trig-out-sigs = <4 5 6 7>;
-> > +            arm,trig-out-types = <ETM_EXTIN
-> > +                                  ETM_EXTIN
-> > +                                  ETM_EXTIN
-> > +                                  ETM_EXTIN>;
-> > +            arm,cs-dev-assoc = <&etm0>;
-> > +      };
-> > +
-> > +      trig-conns@1 {
-> > +            cpu = <&CPU0>;
-> > +            arm,trig-in-sigs = <0 1>;
-> > +            arm,trig-in-types = <PE_DBGTRIGGER
-> > +                                 PE_PMUIRQ>;
-> > +            arm,trig-out-sigs=<0 1 2 >;
-> > +            arm,trig-out-types = <PE_EDBGREQ
-> > +                                  PE_DBGRESTART
-> > +                                  PE_CTIIRQ>;
-> > +
-> > +            arm,trig-filters = <0>;
-> > +      };
-> > +    };
-> > +  # Implementation defined CTI - none CoreSight component connections.
-> > +  - |
-> > +    cti@20110000 {
-> > +      compatible = "arm,coresight-cti", "arm,primecell";
-> > +      reg = <0 0x20110000 0 0x1000>;
-> > +
-> > +      clocks = <&soc_smc50mhz>;
-> > +      clock-names = "apb_pclk";
-> > +
-> > +      trig-conns@0 {
-> > +        arm,trig-in-sigs=<0>;
-> > +        arm,trig-in-types=<GEN_INTREQ>;
-> > +        arm,trig-out-sigs=<0>;
-> > +        arm,trig-out-types=<GEN_HALTREQ>;
-> > +        arm,trig-conn-name = "sys_profiler";
-> > +      };
-> > +
-> > +      trig-conns@1 {
-> > +        arm,trig-out-sigs=<2 3>;
-> > +        arm,trig-out-types=<GEN_HALTREQ GEN_RESTARTREQ>;
-> > +        arm,trig-conn-name = "watchdog";
-> > +      };
-> > +
-> > +      trig-conns@2 {
-> > +        arm,trig-in-sigs=<1 6>;
-> > +        arm,trig-in-types=<GEN_HALTREQ GEN_RESTARTREQ>;
-> > +        arm,trig-conn-name = "g_counter";
-> > +      };
-> > +    };
-> > +
-> > +...
->
-> I'm not sure what the "..." is there for.  It is not present in the example
-> schema[1] but I can find the patter in other .yaml files.  As such I will let
-> Rob decide on that part.
->
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
->
-> [1]. Documentation/devicetree/bindings/example-schema.yaml
->
-> > \ No newline at end of file
-> > diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
-> > index d02c42d21f2f..846f6daae71b 100644
-> > --- a/Documentation/devicetree/bindings/arm/coresight.txt
-> > +++ b/Documentation/devicetree/bindings/arm/coresight.txt
-> > @@ -45,6 +45,10 @@ its hardware characteristcs.
-> >               - Coresight Address Translation Unit (CATU)
-> >                       "arm,coresight-catu", "arm,primecell";
-> >
-> > +             - Coresight Cross Trigger Interface (CTI):
-> > +                     "arm,coresight-cti", "arm,primecell";
-> > +                     See coresight-cti.yaml for full CTI definitions.
-> > +
-> >       * reg: physical base address and length of the register
-> >         set(s) of the component.
-> >
-> > @@ -72,6 +76,9 @@ its hardware characteristcs.
-> >       * reg-names: the only acceptable values are "stm-base" and
-> >         "stm-stimulus-base", each corresponding to the areas defined in "reg".
-> >
-> > +* Required properties for Coresight Cross Trigger Interface (CTI)
-> > +     See coresight-cti.yaml for full CTI definitions.
-> > +
-> >  * Required properties for devices that don't show up on the AMBA bus, such as
-> >    non-configurable replicators and non-configurable funnels:
-> >
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> > index 9de89d75dbcc..8d01a74068f7 100644
-> > --- a/MAINTAINERS
-> > +++ b/MAINTAINERS
-> > @@ -1608,9 +1608,11 @@ R:     Suzuki K Poulose <suzuki.poulose@arm.com>
-> >  L:   linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
-> >  S:   Maintained
-> >  F:   drivers/hwtracing/coresight/*
-> > +F:   include/dt-bindings/arm/coresight-cti-dt.h
-> >  F:   Documentation/trace/coresight/*
-> >  F:   Documentation/devicetree/bindings/arm/coresight.txt
-> >  F:   Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
-> > +F:   Documentation/devicetree/bindings/arm/coresight-cti.yaml
-> >  F:   Documentation/ABI/testing/sysfs-bus-coresight-devices-*
-> >  F:   tools/perf/arch/arm/util/pmu.c
-> >  F:   tools/perf/arch/arm/util/auxtrace.c
-> > diff --git a/include/dt-bindings/arm/coresight-cti-dt.h b/include/dt-bindings/arm/coresight-cti-dt.h
-> > new file mode 100644
-> > index 000000000000..61e7bdf8ea6e
-> > --- /dev/null
-> > +++ b/include/dt-bindings/arm/coresight-cti-dt.h
-> > @@ -0,0 +1,37 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +/*
-> > + * This header provides constants for the defined trigger signal
-> > + * types on CoreSight CTI.
-> > + */
-> > +
-> > +#ifndef _DT_BINDINGS_ARM_CORESIGHT_CTI_DT_H
-> > +#define _DT_BINDINGS_ARM_CORESIGHT_CTI_DT_H
-> > +
-> > +#define GEN_IO               0
-> > +#define GEN_INTREQ   1
-> > +#define GEN_INTACK   2
-> > +#define GEN_HALTREQ  3
-> > +#define GEN_RESTARTREQ       4
-> > +#define PE_EDBGREQ   5
-> > +#define PE_DBGRESTART        6
-> > +#define PE_CTIIRQ    7
-> > +#define PE_PMUIRQ    8
-> > +#define PE_DBGTRIGGER        9
-> > +#define ETM_EXTOUT   10
-> > +#define ETM_EXTIN    11
-> > +#define SNK_FULL     12
-> > +#define SNK_ACQCOMP  13
-> > +#define SNK_FLUSHCOMP        14
-> > +#define SNK_FLUSHIN  15
-> > +#define SNK_TRIGIN   16
-> > +#define STM_ASYNCOUT 17
-> > +#define STM_TOUT_SPTE        18
-> > +#define STM_TOUT_SW  19
-> > +#define STM_TOUT_HETE        20
-> > +#define STM_HWEVENT  21
-> > +#define ELA_TSTART   22
-> > +#define ELA_TSTOP    23
-> > +#define ELA_DBGREQ   24
-> > +#define CTI_TRIG_MAX 25
-> > +
-> > +#endif /*_DT_BINDINGS_ARM_CORESIGHT_CTI_DT_H */
-> > --
-> > 2.17.1
-> >
-
-
-
+diff --git a/Documentation/devicetree/bindings/arm/idle-states.txt b/Documentation/devicetree/bindings/arm/idle-states.txt
+deleted file mode 100644
+index 771f5d20ae18..000000000000
+--- a/Documentation/devicetree/bindings/arm/idle-states.txt
++++ /dev/null
+@@ -1,706 +0,0 @@
+-==========================================
+-ARM idle states binding description
+-==========================================
+-
+-==========================================
+-1 - Introduction
+-==========================================
+-
+-ARM systems contain HW capable of managing power consumption dynamically,
+-where cores can be put in different low-power states (ranging from simple
+-wfi to power gating) according to OS PM policies. The CPU states representing
+-the range of dynamic idle states that a processor can enter at run-time, can be
+-specified through device tree bindings representing the parameters required
+-to enter/exit specific idle states on a given processor.
+-
+-According to the Server Base System Architecture document (SBSA, [3]), the
+-power states an ARM CPU can be put into are identified by the following list:
+-
+-- Running
+-- Idle_standby
+-- Idle_retention
+-- Sleep
+-- Off
+-
+-The power states described in the SBSA document define the basic CPU states on
+-top of which ARM platforms implement power management schemes that allow an OS
+-PM implementation to put the processor in different idle states (which include
+-states listed above; "off" state is not an idle state since it does not have
+-wake-up capabilities, hence it is not considered in this document).
+-
+-Idle state parameters (e.g. entry latency) are platform specific and need to be
+-characterized with bindings that provide the required information to OS PM
+-code so that it can build the required tables and use them at runtime.
+-
+-The device tree binding definition for ARM idle states is the subject of this
+-document.
+-
+-===========================================
+-2 - idle-states definitions
+-===========================================
+-
+-Idle states are characterized for a specific system through a set of
+-timing and energy related properties, that underline the HW behaviour
+-triggered upon idle states entry and exit.
+-
+-The following diagram depicts the CPU execution phases and related timing
+-properties required to enter and exit an idle state:
+-
+-..__[EXEC]__|__[PREP]__|__[ENTRY]__|__[IDLE]__|__[EXIT]__|__[EXEC]__..
+-	    |          |           |          |          |
+-
+-	    |<------ entry ------->|
+-	    |       latency        |
+-					      |<- exit ->|
+-					      |  latency |
+-	    |<-------- min-residency -------->|
+-		       |<-------  wakeup-latency ------->|
+-
+-		Diagram 1: CPU idle state execution phases
+-
+-EXEC:	Normal CPU execution.
+-
+-PREP:	Preparation phase before committing the hardware to idle mode
+-	like cache flushing. This is abortable on pending wake-up
+-	event conditions. The abort latency is assumed to be negligible
+-	(i.e. less than the ENTRY + EXIT duration). If aborted, CPU
+-	goes back to EXEC. This phase is optional. If not abortable,
+-	this should be included in the ENTRY phase instead.
+-
+-ENTRY:	The hardware is committed to idle mode. This period must run
+-	to completion up to IDLE before anything else can happen.
+-
+-IDLE:	This is the actual energy-saving idle period. This may last
+-	between 0 and infinite time, until a wake-up event occurs.
+-
+-EXIT:	Period during which the CPU is brought back to operational
+-	mode (EXEC).
+-
+-entry-latency: Worst case latency required to enter the idle state. The
+-exit-latency may be guaranteed only after entry-latency has passed.
+-
+-min-residency: Minimum period, including preparation and entry, for a given
+-idle state to be worthwhile energywise.
+-
+-wakeup-latency: Maximum delay between the signaling of a wake-up event and the
+-CPU being able to execute normal code again. If not specified, this is assumed
+-to be entry-latency + exit-latency.
+-
+-These timing parameters can be used by an OS in different circumstances.
+-
+-An idle CPU requires the expected min-residency time to select the most
+-appropriate idle state based on the expected expiry time of the next IRQ
+-(i.e. wake-up) that causes the CPU to return to the EXEC phase.
+-
+-An operating system scheduler may need to compute the shortest wake-up delay
+-for CPUs in the system by detecting how long will it take to get a CPU out
+-of an idle state, e.g.:
+-
+-wakeup-delay = exit-latency + max(entry-latency - (now - entry-timestamp), 0)
+-
+-In other words, the scheduler can make its scheduling decision by selecting
+-(e.g. waking-up) the CPU with the shortest wake-up delay.
+-The wake-up delay must take into account the entry latency if that period
+-has not expired. The abortable nature of the PREP period can be ignored
+-if it cannot be relied upon (e.g. the PREP deadline may occur much sooner than
+-the worst case since it depends on the CPU operating conditions, i.e. caches
+-state).
+-
+-An OS has to reliably probe the wakeup-latency since some devices can enforce
+-latency constraint guarantees to work properly, so the OS has to detect the
+-worst case wake-up latency it can incur if a CPU is allowed to enter an
+-idle state, and possibly to prevent that to guarantee reliable device
+-functioning.
+-
+-The min-residency time parameter deserves further explanation since it is
+-expressed in time units but must factor in energy consumption coefficients.
+-
+-The energy consumption of a cpu when it enters a power state can be roughly
+-characterised by the following graph:
+-
+-               |
+-               |
+-               |
+-           e   |
+-           n   |                                      /---
+-           e   |                               /------
+-           r   |                        /------
+-           g   |                  /-----
+-           y   |           /------
+-               |       ----
+-               |      /|
+-               |     / |
+-               |    /  |
+-               |   /   |
+-               |  /    |
+-               | /     |
+-               |/      |
+-          -----|-------+----------------------------------
+-              0|       1                              time(ms)
+-
+-		Graph 1: Energy vs time example
+-
+-The graph is split in two parts delimited by time 1ms on the X-axis.
+-The graph curve with X-axis values = { x | 0 < x < 1ms } has a steep slope
+-and denotes the energy costs incurred while entering and leaving the idle
+-state.
+-The graph curve in the area delimited by X-axis values = {x | x > 1ms } has
+-shallower slope and essentially represents the energy consumption of the idle
+-state.
+-
+-min-residency is defined for a given idle state as the minimum expected
+-residency time for a state (inclusive of preparation and entry) after
+-which choosing that state become the most energy efficient option. A good
+-way to visualise this, is by taking the same graph above and comparing some
+-states energy consumptions plots.
+-
+-For sake of simplicity, let's consider a system with two idle states IDLE1,
+-and IDLE2:
+-
+-          |
+-          |
+-          |
+-          |                                                  /-- IDLE1
+-       e  |                                              /---
+-       n  |                                         /----
+-       e  |                                     /---
+-       r  |                                /-----/--------- IDLE2
+-       g  |                    /-------/---------
+-       y  |        ------------    /---|
+-          |       /           /----    |
+-          |      /        /---         |
+-          |     /    /----             |
+-          |    / /---                  |
+-          |   ---                      |
+-          |  /                         |
+-          | /                          |
+-          |/                           |                  time
+-       ---/----------------------------+------------------------
+-          |IDLE1-energy < IDLE2-energy | IDLE2-energy < IDLE1-energy
+-                                       |
+-                                IDLE2-min-residency
+-
+-		Graph 2: idle states min-residency example
+-
+-In graph 2 above, that takes into account idle states entry/exit energy
+-costs, it is clear that if the idle state residency time (i.e. time till next
+-wake-up IRQ) is less than IDLE2-min-residency, IDLE1 is the better idle state
+-choice energywise.
+-
+-This is mainly down to the fact that IDLE1 entry/exit energy costs are lower
+-than IDLE2.
+-
+-However, the lower power consumption (i.e. shallower energy curve slope) of
+-idle state IDLE2 implies that after a suitable time, IDLE2 becomes more energy
+-efficient.
+-
+-The time at which IDLE2 becomes more energy efficient than IDLE1 (and other
+-shallower states in a system with multiple idle states) is defined
+-IDLE2-min-residency and corresponds to the time when energy consumption of
+-IDLE1 and IDLE2 states breaks even.
+-
+-The definitions provided in this section underpin the idle states
+-properties specification that is the subject of the following sections.
+-
+-===========================================
+-3 - idle-states node
+-===========================================
+-
+-ARM processor idle states are defined within the idle-states node, which is
+-a direct child of the cpus node [1] and provides a container where the
+-processor idle states, defined as device tree nodes, are listed.
+-
+-- idle-states node
+-
+-	Usage: Optional - On ARM systems, it is a container of processor idle
+-			  states nodes. If the system does not provide CPU
+-			  power management capabilities, or the processor just
+-			  supports idle_standby, an idle-states node is not
+-			  required.
+-
+-	Description: idle-states node is a container node, where its
+-		     subnodes describe the CPU idle states.
+-
+-	Node name must be "idle-states".
+-
+-	The idle-states node's parent node must be the cpus node.
+-
+-	The idle-states node's child nodes can be:
+-
+-	- one or more state nodes
+-
+-	Any other configuration is considered invalid.
+-
+-	An idle-states node defines the following properties:
+-
+-	- entry-method
+-		Value type: <stringlist>
+-		Usage and definition depend on ARM architecture version.
+-			# On ARM v8 64-bit this property is required and must
+-			  be:
+-			   - "psci"
+-			# On ARM 32-bit systems this property is optional
+-
+-This assumes that the "enable-method" property is set to "psci" in the cpu
+-node[6] that is responsible for setting up CPU idle management in the OS
+-implementation.
+-
+-The nodes describing the idle states (state) can only be defined
+-within the idle-states node, any other configuration is considered invalid
+-and therefore must be ignored.
+-
+-===========================================
+-4 - state node
+-===========================================
+-
+-A state node represents an idle state description and must be defined as
+-follows:
+-
+-- state node
+-
+-	Description: must be child of the idle-states node
+-
+-	The state node name shall follow standard device tree naming
+-	rules ([5], 2.2.1 "Node names"), in particular state nodes which
+-	are siblings within a single common parent must be given a unique name.
+-
+-	The idle state entered by executing the wfi instruction (idle_standby
+-	SBSA,[3][4]) is considered standard on all ARM platforms and therefore
+-	must not be listed.
+-
+-	With the definitions provided above, the following list represents
+-	the valid properties for a state node:
+-
+-	- compatible
+-		Usage: Required
+-		Value type: <stringlist>
+-		Definition: Must be "arm,idle-state".
+-
+-	- local-timer-stop
+-		Usage: See definition
+-		Value type: <none>
+-		Definition: if present the CPU local timer control logic is
+-			    lost on state entry, otherwise it is retained.
+-
+-	- entry-latency-us
+-		Usage: Required
+-		Value type: <prop-encoded-array>
+-		Definition: u32 value representing worst case latency in
+-			    microseconds required to enter the idle state.
+-
+-	- exit-latency-us
+-		Usage: Required
+-		Value type: <prop-encoded-array>
+-		Definition: u32 value representing worst case latency
+-			    in microseconds required to exit the idle state.
+-			    The exit-latency-us duration may be guaranteed
+-			    only after entry-latency-us has passed.
+-
+-	- min-residency-us
+-		Usage: Required
+-		Value type: <prop-encoded-array>
+-		Definition: u32 value representing minimum residency duration
+-			    in microseconds, inclusive of preparation and
+-			    entry, for this idle state to be considered
+-			    worthwhile energy wise (refer to section 2 of
+-			    this document for a complete description).
+-
+-	- wakeup-latency-us:
+-		Usage: Optional
+-		Value type: <prop-encoded-array>
+-		Definition: u32 value representing maximum delay between the
+-			    signaling of a wake-up event and the CPU being
+-			    able to execute normal code again. If omitted,
+-			    this is assumed to be equal to:
+-
+-				entry-latency-us + exit-latency-us
+-
+-			    It is important to supply this value on systems
+-			    where the duration of PREP phase (see diagram 1,
+-			    section 2) is non-neglibigle.
+-			    In such systems entry-latency-us + exit-latency-us
+-			    will exceed wakeup-latency-us by this duration.
+-
+-	- status:
+-		Usage: Optional
+-		Value type: <string>
+-		Definition: A standard device tree property [5] that indicates
+-			    the operational status of an idle-state.
+-			    If present, it shall be:
+-			    "okay": to indicate that the idle state is
+-				    operational.
+-			    "disabled": to indicate that the idle state has
+-					been disabled in firmware so it is not
+-					operational.
+-			    If the property is not present the idle-state must
+-			    be considered operational.
+-
+-	- idle-state-name:
+-		Usage: Optional
+-		Value type: <string>
+-		Definition: A string used as a descriptive name for the idle
+-			    state.
+-
+-	In addition to the properties listed above, a state node may require
+-	additional properties specific to the entry-method defined in the
+-	idle-states node. Please refer to the entry-method bindings
+-	documentation for properties definitions.
+-
+-===========================================
+-4 - Examples
+-===========================================
+-
+-Example 1 (ARM 64-bit, 16-cpu system, PSCI enable-method):
+-
+-cpus {
+-	#size-cells = <0>;
+-	#address-cells = <2>;
+-
+-	CPU0: cpu@0 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a57";
+-		reg = <0x0 0x0>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
+-				   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU1: cpu@1 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a57";
+-		reg = <0x0 0x1>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
+-				   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU2: cpu@100 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a57";
+-		reg = <0x0 0x100>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
+-				   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU3: cpu@101 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a57";
+-		reg = <0x0 0x101>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
+-				   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU4: cpu@10000 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a57";
+-		reg = <0x0 0x10000>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
+-				   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU5: cpu@10001 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a57";
+-		reg = <0x0 0x10001>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
+-				   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU6: cpu@10100 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a57";
+-		reg = <0x0 0x10100>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
+-				   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU7: cpu@10101 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a57";
+-		reg = <0x0 0x10101>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
+-				   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU8: cpu@100000000 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a53";
+-		reg = <0x1 0x0>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
+-				   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	CPU9: cpu@100000001 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a53";
+-		reg = <0x1 0x1>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
+-				   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	CPU10: cpu@100000100 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a53";
+-		reg = <0x1 0x100>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
+-				   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	CPU11: cpu@100000101 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a53";
+-		reg = <0x1 0x101>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
+-				   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	CPU12: cpu@100010000 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a53";
+-		reg = <0x1 0x10000>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
+-				   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	CPU13: cpu@100010001 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a53";
+-		reg = <0x1 0x10001>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
+-				   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	CPU14: cpu@100010100 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a53";
+-		reg = <0x1 0x10100>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
+-				   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	CPU15: cpu@100010101 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a53";
+-		reg = <0x1 0x10101>;
+-		enable-method = "psci";
+-		cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
+-				   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	idle-states {
+-		entry-method = "psci";
+-
+-		CPU_RETENTION_0_0: cpu-retention-0-0 {
+-			compatible = "arm,idle-state";
+-			arm,psci-suspend-param = <0x0010000>;
+-			entry-latency-us = <20>;
+-			exit-latency-us = <40>;
+-			min-residency-us = <80>;
+-		};
+-
+-		CLUSTER_RETENTION_0: cluster-retention-0 {
+-			compatible = "arm,idle-state";
+-			local-timer-stop;
+-			arm,psci-suspend-param = <0x1010000>;
+-			entry-latency-us = <50>;
+-			exit-latency-us = <100>;
+-			min-residency-us = <250>;
+-			wakeup-latency-us = <130>;
+-		};
+-
+-		CPU_SLEEP_0_0: cpu-sleep-0-0 {
+-			compatible = "arm,idle-state";
+-			local-timer-stop;
+-			arm,psci-suspend-param = <0x0010000>;
+-			entry-latency-us = <250>;
+-			exit-latency-us = <500>;
+-			min-residency-us = <950>;
+-		};
+-
+-		CLUSTER_SLEEP_0: cluster-sleep-0 {
+-			compatible = "arm,idle-state";
+-			local-timer-stop;
+-			arm,psci-suspend-param = <0x1010000>;
+-			entry-latency-us = <600>;
+-			exit-latency-us = <1100>;
+-			min-residency-us = <2700>;
+-			wakeup-latency-us = <1500>;
+-		};
+-
+-		CPU_RETENTION_1_0: cpu-retention-1-0 {
+-			compatible = "arm,idle-state";
+-			arm,psci-suspend-param = <0x0010000>;
+-			entry-latency-us = <20>;
+-			exit-latency-us = <40>;
+-			min-residency-us = <90>;
+-		};
+-
+-		CLUSTER_RETENTION_1: cluster-retention-1 {
+-			compatible = "arm,idle-state";
+-			local-timer-stop;
+-			arm,psci-suspend-param = <0x1010000>;
+-			entry-latency-us = <50>;
+-			exit-latency-us = <100>;
+-			min-residency-us = <270>;
+-			wakeup-latency-us = <100>;
+-		};
+-
+-		CPU_SLEEP_1_0: cpu-sleep-1-0 {
+-			compatible = "arm,idle-state";
+-			local-timer-stop;
+-			arm,psci-suspend-param = <0x0010000>;
+-			entry-latency-us = <70>;
+-			exit-latency-us = <100>;
+-			min-residency-us = <300>;
+-			wakeup-latency-us = <150>;
+-		};
+-
+-		CLUSTER_SLEEP_1: cluster-sleep-1 {
+-			compatible = "arm,idle-state";
+-			local-timer-stop;
+-			arm,psci-suspend-param = <0x1010000>;
+-			entry-latency-us = <500>;
+-			exit-latency-us = <1200>;
+-			min-residency-us = <3500>;
+-			wakeup-latency-us = <1300>;
+-		};
+-	};
+-
+-};
+-
+-Example 2 (ARM 32-bit, 8-cpu system, two clusters):
+-
+-cpus {
+-	#size-cells = <0>;
+-	#address-cells = <1>;
+-
+-	CPU0: cpu@0 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a15";
+-		reg = <0x0>;
+-		cpu-idle-states = <&CPU_SLEEP_0_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU1: cpu@1 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a15";
+-		reg = <0x1>;
+-		cpu-idle-states = <&CPU_SLEEP_0_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU2: cpu@2 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a15";
+-		reg = <0x2>;
+-		cpu-idle-states = <&CPU_SLEEP_0_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU3: cpu@3 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a15";
+-		reg = <0x3>;
+-		cpu-idle-states = <&CPU_SLEEP_0_0 &CLUSTER_SLEEP_0>;
+-	};
+-
+-	CPU4: cpu@100 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a7";
+-		reg = <0x100>;
+-		cpu-idle-states = <&CPU_SLEEP_1_0 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	CPU5: cpu@101 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a7";
+-		reg = <0x101>;
+-		cpu-idle-states = <&CPU_SLEEP_1_0 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	CPU6: cpu@102 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a7";
+-		reg = <0x102>;
+-		cpu-idle-states = <&CPU_SLEEP_1_0 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	CPU7: cpu@103 {
+-		device_type = "cpu";
+-		compatible = "arm,cortex-a7";
+-		reg = <0x103>;
+-		cpu-idle-states = <&CPU_SLEEP_1_0 &CLUSTER_SLEEP_1>;
+-	};
+-
+-	idle-states {
+-		CPU_SLEEP_0_0: cpu-sleep-0-0 {
+-			compatible = "arm,idle-state";
+-			local-timer-stop;
+-			entry-latency-us = <200>;
+-			exit-latency-us = <100>;
+-			min-residency-us = <400>;
+-			wakeup-latency-us = <250>;
+-		};
+-
+-		CLUSTER_SLEEP_0: cluster-sleep-0 {
+-			compatible = "arm,idle-state";
+-			local-timer-stop;
+-			entry-latency-us = <500>;
+-			exit-latency-us = <1500>;
+-			min-residency-us = <2500>;
+-			wakeup-latency-us = <1700>;
+-		};
+-
+-		CPU_SLEEP_1_0: cpu-sleep-1-0 {
+-			compatible = "arm,idle-state";
+-			local-timer-stop;
+-			entry-latency-us = <300>;
+-			exit-latency-us = <500>;
+-			min-residency-us = <900>;
+-			wakeup-latency-us = <600>;
+-		};
+-
+-		CLUSTER_SLEEP_1: cluster-sleep-1 {
+-			compatible = "arm,idle-state";
+-			local-timer-stop;
+-			entry-latency-us = <800>;
+-			exit-latency-us = <2000>;
+-			min-residency-us = <6500>;
+-			wakeup-latency-us = <2300>;
+-		};
+-	};
+-
+-};
+-
+-===========================================
+-5 - References
+-===========================================
+-
+-[1] ARM Linux Kernel documentation - CPUs bindings
+-    Documentation/devicetree/bindings/arm/cpus.yaml
+-
+-[2] ARM Linux Kernel documentation - PSCI bindings
+-    Documentation/devicetree/bindings/arm/psci.yaml
+-
+-[3] ARM Server Base System Architecture (SBSA)
+-    http://infocenter.arm.com/help/index.jsp
+-
+-[4] ARM Architecture Reference Manuals
+-    http://infocenter.arm.com/help/index.jsp
+-
+-[5] Devicetree Specification
+-    https://www.devicetree.org/specifications/
+-
+-[6] ARM Linux Kernel documentation - Booting AArch64 Linux
+-    Documentation/arm64/booting.rst
+diff --git a/Documentation/devicetree/bindings/arm/idle-states.yaml b/Documentation/devicetree/bindings/arm/idle-states.yaml
+new file mode 100644
+index 000000000000..ea805c1e6b20
+--- /dev/null
++++ b/Documentation/devicetree/bindings/arm/idle-states.yaml
+@@ -0,0 +1,661 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/arm/idle-states.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: ARM idle states binding description
++
++maintainers:
++  - Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
++
++description: |+
++  ==========================================
++  1 - Introduction
++  ==========================================
++
++  ARM systems contain HW capable of managing power consumption dynamically,
++  where cores can be put in different low-power states (ranging from simple wfi
++  to power gating) according to OS PM policies. The CPU states representing the
++  range of dynamic idle states that a processor can enter at run-time, can be
++  specified through device tree bindings representing the parameters required to
++  enter/exit specific idle states on a given processor.
++
++  According to the Server Base System Architecture document (SBSA, [3]), the
++  power states an ARM CPU can be put into are identified by the following list:
++
++  - Running
++  - Idle_standby
++  - Idle_retention
++  - Sleep
++  - Off
++
++  The power states described in the SBSA document define the basic CPU states on
++  top of which ARM platforms implement power management schemes that allow an OS
++  PM implementation to put the processor in different idle states (which include
++  states listed above; "off" state is not an idle state since it does not have
++  wake-up capabilities, hence it is not considered in this document).
++
++  Idle state parameters (e.g. entry latency) are platform specific and need to
++  be characterized with bindings that provide the required information to OS PM
++  code so that it can build the required tables and use them at runtime.
++
++  The device tree binding definition for ARM idle states is the subject of this
++  document.
++
++  ===========================================
++  2 - idle-states definitions
++  ===========================================
++
++  Idle states are characterized for a specific system through a set of
++  timing and energy related properties, that underline the HW behaviour
++  triggered upon idle states entry and exit.
++
++  The following diagram depicts the CPU execution phases and related timing
++  properties required to enter and exit an idle state:
++
++  ..__[EXEC]__|__[PREP]__|__[ENTRY]__|__[IDLE]__|__[EXIT]__|__[EXEC]__..
++              |          |           |          |          |
++
++              |<------ entry ------->|
++              |       latency        |
++                                                |<- exit ->|
++                                                |  latency |
++              |<-------- min-residency -------->|
++                         |<-------  wakeup-latency ------->|
++
++      Diagram 1: CPU idle state execution phases
++
++  EXEC:  Normal CPU execution.
++
++  PREP:  Preparation phase before committing the hardware to idle mode
++    like cache flushing. This is abortable on pending wake-up
++    event conditions. The abort latency is assumed to be negligible
++    (i.e. less than the ENTRY + EXIT duration). If aborted, CPU
++    goes back to EXEC. This phase is optional. If not abortable,
++    this should be included in the ENTRY phase instead.
++
++  ENTRY:  The hardware is committed to idle mode. This period must run
++    to completion up to IDLE before anything else can happen.
++
++  IDLE:  This is the actual energy-saving idle period. This may last
++    between 0 and infinite time, until a wake-up event occurs.
++
++  EXIT:  Period during which the CPU is brought back to operational
++    mode (EXEC).
++
++  entry-latency: Worst case latency required to enter the idle state. The
++  exit-latency may be guaranteed only after entry-latency has passed.
++
++  min-residency: Minimum period, including preparation and entry, for a given
++  idle state to be worthwhile energywise.
++
++  wakeup-latency: Maximum delay between the signaling of a wake-up event and the
++  CPU being able to execute normal code again. If not specified, this is assumed
++  to be entry-latency + exit-latency.
++
++  These timing parameters can be used by an OS in different circumstances.
++
++  An idle CPU requires the expected min-residency time to select the most
++  appropriate idle state based on the expected expiry time of the next IRQ
++  (i.e. wake-up) that causes the CPU to return to the EXEC phase.
++
++  An operating system scheduler may need to compute the shortest wake-up delay
++  for CPUs in the system by detecting how long will it take to get a CPU out
++  of an idle state, e.g.:
++
++  wakeup-delay = exit-latency + max(entry-latency - (now - entry-timestamp), 0)
++
++  In other words, the scheduler can make its scheduling decision by selecting
++  (e.g. waking-up) the CPU with the shortest wake-up delay.
++  The wake-up delay must take into account the entry latency if that period
++  has not expired. The abortable nature of the PREP period can be ignored
++  if it cannot be relied upon (e.g. the PREP deadline may occur much sooner than
++  the worst case since it depends on the CPU operating conditions, i.e. caches
++  state).
++
++  An OS has to reliably probe the wakeup-latency since some devices can enforce
++  latency constraint guarantees to work properly, so the OS has to detect the
++  worst case wake-up latency it can incur if a CPU is allowed to enter an
++  idle state, and possibly to prevent that to guarantee reliable device
++  functioning.
++
++  The min-residency time parameter deserves further explanation since it is
++  expressed in time units but must factor in energy consumption coefficients.
++
++  The energy consumption of a cpu when it enters a power state can be roughly
++  characterised by the following graph:
++
++                 |
++                 |
++                 |
++             e   |
++             n   |                                      /---
++             e   |                               /------
++             r   |                        /------
++             g   |                  /-----
++             y   |           /------
++                 |       ----
++                 |      /|
++                 |     / |
++                 |    /  |
++                 |   /   |
++                 |  /    |
++                 | /     |
++                 |/      |
++            -----|-------+----------------------------------
++                0|       1                              time(ms)
++
++      Graph 1: Energy vs time example
++
++  The graph is split in two parts delimited by time 1ms on the X-axis.
++  The graph curve with X-axis values = { x | 0 < x < 1ms } has a steep slope
++  and denotes the energy costs incurred while entering and leaving the idle
++  state.
++  The graph curve in the area delimited by X-axis values = {x | x > 1ms } has
++  shallower slope and essentially represents the energy consumption of the idle
++  state.
++
++  min-residency is defined for a given idle state as the minimum expected
++  residency time for a state (inclusive of preparation and entry) after
++  which choosing that state become the most energy efficient option. A good
++  way to visualise this, is by taking the same graph above and comparing some
++  states energy consumptions plots.
++
++  For sake of simplicity, let's consider a system with two idle states IDLE1,
++  and IDLE2:
++
++            |
++            |
++            |
++            |                                                  /-- IDLE1
++         e  |                                              /---
++         n  |                                         /----
++         e  |                                     /---
++         r  |                                /-----/--------- IDLE2
++         g  |                    /-------/---------
++         y  |        ------------    /---|
++            |       /           /----    |
++            |      /        /---         |
++            |     /    /----             |
++            |    / /---                  |
++            |   ---                      |
++            |  /                         |
++            | /                          |
++            |/                           |                  time
++         ---/----------------------------+------------------------
++            |IDLE1-energy < IDLE2-energy | IDLE2-energy < IDLE1-energy
++                                         |
++                                  IDLE2-min-residency
++
++      Graph 2: idle states min-residency example
++
++  In graph 2 above, that takes into account idle states entry/exit energy
++  costs, it is clear that if the idle state residency time (i.e. time till next
++  wake-up IRQ) is less than IDLE2-min-residency, IDLE1 is the better idle state
++  choice energywise.
++
++  This is mainly down to the fact that IDLE1 entry/exit energy costs are lower
++  than IDLE2.
++
++  However, the lower power consumption (i.e. shallower energy curve slope) of
++  idle state IDLE2 implies that after a suitable time, IDLE2 becomes more energy
++  efficient.
++
++  The time at which IDLE2 becomes more energy efficient than IDLE1 (and other
++  shallower states in a system with multiple idle states) is defined
++  IDLE2-min-residency and corresponds to the time when energy consumption of
++  IDLE1 and IDLE2 states breaks even.
++
++  The definitions provided in this section underpin the idle states
++  properties specification that is the subject of the following sections.
++
++  ===========================================
++  3 - idle-states node
++  ===========================================
++
++  ARM processor idle states are defined within the idle-states node, which is
++  a direct child of the cpus node [1] and provides a container where the
++  processor idle states, defined as device tree nodes, are listed.
++
++  On ARM systems, it is a container of processor idle states nodes. If the
++  system does not provide CPU power management capabilities, or the processor
++  just supports idle_standby, an idle-states node is not required.
++
++  ===========================================
++  4 - References
++  ===========================================
++
++  [1] ARM Linux Kernel documentation - CPUs bindings
++      Documentation/devicetree/bindings/arm/cpus.yaml
++
++  [2] ARM Linux Kernel documentation - PSCI bindings
++      Documentation/devicetree/bindings/arm/psci.yaml
++
++  [3] ARM Server Base System Architecture (SBSA)
++      http://infocenter.arm.com/help/index.jsp
++
++  [4] ARM Architecture Reference Manuals
++      http://infocenter.arm.com/help/index.jsp
++
++  [6] ARM Linux Kernel documentation - Booting AArch64 Linux
++      Documentation/arm64/booting.rst
++
++properties:
++  $nodename:
++    const: idle-states
++
++  entry-method:
++    description: |
++      Usage and definition depend on ARM architecture version.
++
++      On ARM v8 64-bit this property is required.
++      On ARM 32-bit systems this property is optional
++
++      This assumes that the "enable-method" property is set to "psci" in the cpu
++      node[6] that is responsible for setting up CPU idle management in the OS
++      implementation.
++    const: psci
++
++patternProperties:
++  "^(cpu|cluster)-":
++    type: object
++    description: |
++      Each state node represents an idle state description and must be defined
++      as follows.
++
++      The idle state entered by executing the wfi instruction (idle_standby
++      SBSA,[3][4]) is considered standard on all ARM platforms and therefore
++      must not be listed.
++
++      In addition to the properties listed above, a state node may require
++      additional properties specific to the entry-method defined in the
++      idle-states node. Please refer to the entry-method bindings
++      documentation for properties definitions.
++
++    properties:
++      compatible:
++        const: arm,idle-state
++
++      local-timer-stop:
++        description:
++          If present the CPU local timer control logic is
++             lost on state entry, otherwise it is retained.
++        type: boolean
++
++      entry-latency-us:
++        description:
++          Worst case latency in microseconds required to enter the idle state.
++
++      exit-latency-us:
++        description:
++          Worst case latency in microseconds required to exit the idle state.
++          The exit-latency-us duration may be guaranteed only after
++          entry-latency-us has passed.
++
++      min-residency-us:
++        description:
++          Minimum residency duration in microseconds, inclusive of preparation
++          and entry, for this idle state to be considered worthwhile energy wise
++          (refer to section 2 of this document for a complete description).
++
++      wakeup-latency-us:
++        description: |
++          Maximum delay between the signaling of a wake-up event and the CPU
++          being able to execute normal code again. If omitted, this is assumed
++          to be equal to:
++
++            entry-latency-us + exit-latency-us
++
++          It is important to supply this value on systems where the duration of
++          PREP phase (see diagram 1, section 2) is non-neglibigle. In such
++          systems entry-latency-us + exit-latency-us will exceed
++          wakeup-latency-us by this duration.
++
++      idle-state-name:
++        $ref: /schemas/types.yaml#definitions/string
++        description:
++          A string used as a descriptive name for the idle state.
++
++    required:
++      - compatible
++      - entry-latency-us
++      - exit-latency-us
++      - min-residency-us
++
++additionalProperties: false
++
++examples:
++  - |
++
++    cpus {
++        #size-cells = <0>;
++        #address-cells = <2>;
++
++        cpu@0 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a57";
++            reg = <0x0 0x0>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
++                   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
++        };
++
++        cpu@1 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a57";
++            reg = <0x0 0x1>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
++                   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
++        };
++
++        cpu@100 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a57";
++            reg = <0x0 0x100>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
++                   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
++        };
++
++        cpu@101 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a57";
++            reg = <0x0 0x101>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
++                   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
++        };
++
++        cpu@10000 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a57";
++            reg = <0x0 0x10000>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
++                   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
++        };
++
++        cpu@10001 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a57";
++            reg = <0x0 0x10001>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
++                   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
++        };
++
++        cpu@10100 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a57";
++            reg = <0x0 0x10100>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
++                   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
++        };
++
++        cpu@10101 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a57";
++            reg = <0x0 0x10101>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_0_0 &CPU_SLEEP_0_0
++                   &CLUSTER_RETENTION_0 &CLUSTER_SLEEP_0>;
++        };
++
++        cpu@100000000 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a53";
++            reg = <0x1 0x0>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
++                   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
++        };
++
++        cpu@100000001 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a53";
++            reg = <0x1 0x1>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
++                   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
++        };
++
++        cpu@100000100 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a53";
++            reg = <0x1 0x100>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
++                   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
++        };
++
++        cpu@100000101 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a53";
++            reg = <0x1 0x101>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
++                   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
++        };
++
++        cpu@100010000 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a53";
++            reg = <0x1 0x10000>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
++                   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
++        };
++
++        cpu@100010001 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a53";
++            reg = <0x1 0x10001>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
++                   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
++        };
++
++        cpu@100010100 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a53";
++            reg = <0x1 0x10100>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
++                   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
++        };
++
++        cpu@100010101 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a53";
++            reg = <0x1 0x10101>;
++            enable-method = "psci";
++            cpu-idle-states = <&CPU_RETENTION_1_0 &CPU_SLEEP_1_0
++                   &CLUSTER_RETENTION_1 &CLUSTER_SLEEP_1>;
++        };
++
++        idle-states {
++            entry-method = "psci";
++
++            CPU_RETENTION_0_0: cpu-retention-0-0 {
++                compatible = "arm,idle-state";
++                arm,psci-suspend-param = <0x0010000>;
++                entry-latency-us = <20>;
++                exit-latency-us = <40>;
++                min-residency-us = <80>;
++            };
++
++            CLUSTER_RETENTION_0: cluster-retention-0 {
++                compatible = "arm,idle-state";
++                local-timer-stop;
++                arm,psci-suspend-param = <0x1010000>;
++                entry-latency-us = <50>;
++                exit-latency-us = <100>;
++                min-residency-us = <250>;
++                wakeup-latency-us = <130>;
++            };
++
++            CPU_SLEEP_0_0: cpu-sleep-0-0 {
++                compatible = "arm,idle-state";
++                local-timer-stop;
++                arm,psci-suspend-param = <0x0010000>;
++                entry-latency-us = <250>;
++                exit-latency-us = <500>;
++                min-residency-us = <950>;
++            };
++
++            CLUSTER_SLEEP_0: cluster-sleep-0 {
++                compatible = "arm,idle-state";
++                local-timer-stop;
++                arm,psci-suspend-param = <0x1010000>;
++                entry-latency-us = <600>;
++                exit-latency-us = <1100>;
++                min-residency-us = <2700>;
++                wakeup-latency-us = <1500>;
++            };
++
++            CPU_RETENTION_1_0: cpu-retention-1-0 {
++                compatible = "arm,idle-state";
++                arm,psci-suspend-param = <0x0010000>;
++                entry-latency-us = <20>;
++                exit-latency-us = <40>;
++                min-residency-us = <90>;
++            };
++
++            CLUSTER_RETENTION_1: cluster-retention-1 {
++                compatible = "arm,idle-state";
++                local-timer-stop;
++                arm,psci-suspend-param = <0x1010000>;
++                entry-latency-us = <50>;
++                exit-latency-us = <100>;
++                min-residency-us = <270>;
++                wakeup-latency-us = <100>;
++            };
++
++            CPU_SLEEP_1_0: cpu-sleep-1-0 {
++                compatible = "arm,idle-state";
++                local-timer-stop;
++                arm,psci-suspend-param = <0x0010000>;
++                entry-latency-us = <70>;
++                exit-latency-us = <100>;
++                min-residency-us = <300>;
++                wakeup-latency-us = <150>;
++            };
++
++            CLUSTER_SLEEP_1: cluster-sleep-1 {
++                compatible = "arm,idle-state";
++                local-timer-stop;
++                arm,psci-suspend-param = <0x1010000>;
++                entry-latency-us = <500>;
++                exit-latency-us = <1200>;
++                min-residency-us = <3500>;
++                wakeup-latency-us = <1300>;
++            };
++        };
++    };
++
++  - |
++    // Example 2 (ARM 32-bit, 8-cpu system, two clusters):
++
++    cpus {
++        #size-cells = <0>;
++        #address-cells = <1>;
++
++        cpu@0 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a15";
++            reg = <0x0>;
++            cpu-idle-states = <&cpu_sleep_0_0 &cluster_sleep_0>;
++        };
++
++        cpu@1 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a15";
++            reg = <0x1>;
++            cpu-idle-states = <&cpu_sleep_0_0 &cluster_sleep_0>;
++        };
++
++        cpu@2 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a15";
++            reg = <0x2>;
++            cpu-idle-states = <&cpu_sleep_0_0 &cluster_sleep_0>;
++        };
++
++        cpu@3 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a15";
++            reg = <0x3>;
++            cpu-idle-states = <&cpu_sleep_0_0 &cluster_sleep_0>;
++        };
++
++        cpu@100 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a7";
++            reg = <0x100>;
++            cpu-idle-states = <&cpu_sleep_1_0 &cluster_sleep_1>;
++        };
++
++        cpu@101 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a7";
++            reg = <0x101>;
++            cpu-idle-states = <&cpu_sleep_1_0 &cluster_sleep_1>;
++        };
++
++        cpu@102 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a7";
++            reg = <0x102>;
++            cpu-idle-states = <&cpu_sleep_1_0 &cluster_sleep_1>;
++        };
++
++        cpu@103 {
++            device_type = "cpu";
++            compatible = "arm,cortex-a7";
++            reg = <0x103>;
++            cpu-idle-states = <&cpu_sleep_1_0 &cluster_sleep_1>;
++        };
++
++        idle-states {
++            cpu_sleep_0_0: cpu-sleep-0-0 {
++                compatible = "arm,idle-state";
++                local-timer-stop;
++                entry-latency-us = <200>;
++                exit-latency-us = <100>;
++                min-residency-us = <400>;
++                wakeup-latency-us = <250>;
++            };
++
++            cluster_sleep_0: cluster-sleep-0 {
++                compatible = "arm,idle-state";
++                local-timer-stop;
++                entry-latency-us = <500>;
++                exit-latency-us = <1500>;
++                min-residency-us = <2500>;
++                wakeup-latency-us = <1700>;
++            };
++
++            cpu_sleep_1_0: cpu-sleep-1-0 {
++                compatible = "arm,idle-state";
++                local-timer-stop;
++                entry-latency-us = <300>;
++                exit-latency-us = <500>;
++                min-residency-us = <900>;
++                wakeup-latency-us = <600>;
++            };
++
++            cluster_sleep_1: cluster-sleep-1 {
++                compatible = "arm,idle-state";
++                local-timer-stop;
++                entry-latency-us = <800>;
++                exit-latency-us = <2000>;
++                min-residency-us = <6500>;
++                wakeup-latency-us = <2300>;
++            };
++        };
++    };
++
++...
 -- 
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
