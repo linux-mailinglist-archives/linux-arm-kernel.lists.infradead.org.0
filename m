@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6789610339B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 06:16:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D910810339F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 06:17:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vyv9ec2i5hmXlo25QOTMJuAz+Kx7BKZ0UOk05S7J+xI=; b=JZdl50o2vA8Mel
-	SMiSUiDgh5bMrIeOU9o/B1vWiWXQ/2Wp0tjUsnYlHoTNaCGxojrhv1gL9OPejSTk3LspIqxRe1zZM
-	lev/NGS2YfF9b6XZYbqclWRrs1dZ1mYcRnD++XfR8ukilKdy2KVib7f02iU84VkWjriswVSUnELBU
-	QAXXRPJBE8WcB3j7M0LQNAXtGtrqg+fPlFlYqAvlo3/JyMocvuf2ySA1XZ72gpGPKxMc9fR+8RZdk
-	19cHpf/8goNyNl4EKX7XJ8bjx8XyAFVzSMiW6AnsZNIAdbbqZsevC8ZuS8XmRYMZxR/mu/8PIa0UF
-	sBljWjHtxhdiincDJ9og==;
+	List-Owner; bh=ZClaPY7d9N7bn4kASk1KXM8dIIE3nJNfjBzfwoK+7LQ=; b=digJIqOCk1Oq+y
+	bp02h5gjp+ig/AXMc/rRv2uKy2vuPQbRKgp26NUgYEqaNxrDT3SDq8gG2sB3h4f+Csyxj27/f+LRu
+	lWQ56u75DX9cmvUlO/B3Ag06mt+98CbZLQGY/D3t7n7hi0jb1N5tS7s5ca/euvZZFdk0hMYz7OOsf
+	TEKwYCCK9kzVAEhfQzVTJjWizzZC/zh3a6UG9cecQLztGKUrdv5524Eszf5n3ZZDhDj5QwcyTQ57w
+	RPnUf2bOha5hb+VEKYlQ0ZWirztUq/IqG1BMWoX/8H4cUbfs7pistwGvriiJBqx2Kdlg2TxYJn/pO
+	9n796ciY3hHZUOZg5ywQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXILm-0006P4-9q; Wed, 20 Nov 2019 05:16:22 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iXIMW-0006ji-Eu; Wed, 20 Nov 2019 05:17:08 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXILd-0006OK-PI
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 05:16:15 +0000
-Received: by mail-pf1-x443.google.com with SMTP id c184so13626625pfb.0
+ id 1iXIMO-0006jM-JW
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 05:17:01 +0000
+Received: by mail-pf1-x442.google.com with SMTP id q13so13616566pff.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 Nov 2019 21:16:12 -0800 (PST)
+ Tue, 19 Nov 2019 21:17:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=1Yv25wQDQFczcnj/PFyL1UNH1JjWrPFTBbhbehaHIng=;
- b=Cv767rqnulM+BQqNRMs/64y/R7fbJKvDrNUq61kS1jLsdBTFOIriQ5SE6JtRP3K+PI
- R4QA8MfYXkeRgPR5jTAAlTc32XFG7VENXNKQkOOtvbYZ8DbApxDUIMCu6tCR2j/wZttV
- FKPPnam3ATxr4BZpfpZcOV16x8H0CpK2Kk4XHGewT0CS/cjcnmvs70fwV7PJR2WyDWxP
- CUJM17GTPQ/G/mc2Rad2UMIpy+ZkpmTaYiGUHHz5irFykwHjiY5bz0vXbdy1GWRSVO08
- h95M0PAJtd0xP18pJmSkaC+vJAZHbm/qbZ4O6tsEt1+7DLuDWNFYjMjcRMH2ReI4yOqz
- 2WAg==
+ bh=7uNFuGTkHht4kVlmGTndg0AtCQQACOHGMMX+d3QoKic=;
+ b=et/J9lmplBBlik2YCaRAp6TG8tH6vVIbWesmrAQ3Aohv3+V3X3VNz6wbtquVLnw2Ly
+ c4bIvqpXikhgKLXp/0sVXvheUmBT1PeO3JCszhUOQpv50PFwZ90tDOY6wDnA1KKQNyPb
+ IdjfrXc4b0PtcFQdUpAVDaT9DKmNM89f/uJsGvcLxK57Yc2+f/JBlTpwce3F1cdFRPLX
+ nfGqmJ/QP3NiwovChHCNcx+TOdfHgCC9qoN/z994JUX932xkcO8HjcKOUEm92tYoU43m
+ 0kSRxk93EqAZQ3T5zBVxNNL8euORnzsg9hFWfQOVSYpe0jMVaHikzyg+ev3abv/RPk+8
+ 3ZPg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=1Yv25wQDQFczcnj/PFyL1UNH1JjWrPFTBbhbehaHIng=;
- b=hr87CRXn8CGwOtl+S4ZZ/WyJQxRHBPUdc4MxaQ/DtQM+F81bfsSCLRT3udD6xHwuvr
- +KVKCq8pNiGXwN7AhAUlyyuLSnrki/JHq0YBRKiYzVHyFV9CeS0i3y5BG5447FEVOzda
- WXai2r5BVBrGY5fa+B3TG9WN5LlRSZxcwKlfxp9qKxg7QEvBEeknuNQjjRRssQaW64H/
- oBhqrkJaMQg55rzdFV3XXJLtFCRZpCdRGdMEz6UiSWFNuP0jNHJ6iF1QXbS7WfW4gaFK
- WUb5YPRGbhQ2y+5Pj6quLpsddr9hD/6P4I2yEF3N3FENu8UhXqa9rvwEk93ow2gUqisv
- 5ZJg==
-X-Gm-Message-State: APjAAAUlkyJ/5pVMHwstWSNC431h+TDNCuDd4Q1IK4ueXA+97HieOFzu
- xvvi6lf2aTlehyRdyM66KtATFw==
-X-Google-Smtp-Source: APXvYqxYCLvD4vNiwsF3rw+Ca/QrYYPh39SinCgxiYzgZZOUCffAdOBAR+9g1TpfstwMdS9OIwJDow==
-X-Received: by 2002:a63:5c42:: with SMTP id n2mr1007802pgm.229.1574226972064; 
- Tue, 19 Nov 2019 21:16:12 -0800 (PST)
+ bh=7uNFuGTkHht4kVlmGTndg0AtCQQACOHGMMX+d3QoKic=;
+ b=HGdQgsb/4D4k0yYhaKWJeYj/zZ8ITa7q2+HyXzUBjlsEZl+T8YNDULBtbqueSVg7gP
+ tB9ai8tZRryahcSYVNKukI2XLtXnwSAszpQUhKj2Zfe8Weo4v6XvwjCvPvYrFFdxaUWj
+ dxfL5BitzfqHbO6u5ifJ0yjqb3/gugsBoLRhDr3oFXZUVPfSH7gO8QyKaNVnJZm+eLQ7
+ /LRLNje+GbBg7oItDbJjEPbcN9/T26dE4tXazp1QLz9qRfVpTUfoMJkzoK7y27LlUz0d
+ tiDfQcPjE4dwHKg1dLktp4TRGkG94e2Dizs1ELRUKylUB1qAVbwYd8xHTba3zh41VlVd
+ ULSQ==
+X-Gm-Message-State: APjAAAXL9kRl2XKjMBkKAF3datlND8Rkhav51GOUuLD5Z7MOh7IBX2yY
+ tNTLEKhub7ps7lV5K49DlyFJRQ==
+X-Google-Smtp-Source: APXvYqyzRYmVnEKGm1r5WusT49tJmRjBJ7jzvN2oRZS+WXGVi9Kc9Yyv6xriF+KNAjdw9bjEEjGvlw==
+X-Received: by 2002:a63:d642:: with SMTP id d2mr1014621pgj.205.1574227019574; 
+ Tue, 19 Nov 2019 21:16:59 -0800 (PST)
 Received: from yoga (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
  [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id z6sm5508736pjd.9.2019.11.19.21.16.10
+ by smtp.gmail.com with ESMTPSA id f31sm5451979pjg.31.2019.11.19.21.16.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 19 Nov 2019 21:16:11 -0800 (PST)
-Date: Tue, 19 Nov 2019 21:16:08 -0800
+ Tue, 19 Nov 2019 21:16:58 -0800 (PST)
+Date: Tue, 19 Nov 2019 21:16:56 -0800
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: Niklas Cassel <niklas.cassel@linaro.org>
-Subject: Re: [PATCH v6 4/5] arm64: defconfig: enable CONFIG_QCOM_CPR
-Message-ID: <20191120051608.GT18024@yoga>
+Subject: Re: [PATCH v6 5/5] arm64: defconfig: enable
+ CONFIG_ARM_QCOM_CPUFREQ_NVMEM
+Message-ID: <20191120051656.GU18024@yoga>
 References: <20191119154621.55341-1-niklas.cassel@linaro.org>
- <20191119154621.55341-5-niklas.cassel@linaro.org>
+ <20191119154621.55341-6-niklas.cassel@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191119154621.55341-5-niklas.cassel@linaro.org>
+In-Reply-To: <20191119154621.55341-6-niklas.cassel@linaro.org>
 User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_211613_849392_A4EE4E7E 
+X-CRM114-CacheID: sfid-20191119_211700_645125_EEDAF3BF 
 X-CRM114-Status: GOOD (  12.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,7 +111,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Tue 19 Nov 07:46 PST 2019, Niklas Cassel wrote:
 
-> Enable CONFIG_QCOM_CPR.
+> Enable CONFIG_ARM_QCOM_CPUFREQ_NVMEM.
 > 
 > Signed-off-by: Niklas Cassel <niklas.cassel@linaro.org>
 
@@ -121,17 +122,17 @@ Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 >  1 file changed, 1 insertion(+)
 > 
 > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index e76b42b25dd6..4385033c0a34 100644
+> index 4385033c0a34..09aaffd473a0 100644
 > --- a/arch/arm64/configs/defconfig
 > +++ b/arch/arm64/configs/defconfig
-> @@ -438,6 +438,7 @@ CONFIG_GPIO_PCA953X=y
->  CONFIG_GPIO_PCA953X_IRQ=y
->  CONFIG_GPIO_MAX77620=y
->  CONFIG_POWER_AVS=y
-> +CONFIG_QCOM_CPR=y
->  CONFIG_ROCKCHIP_IODOMAIN=y
->  CONFIG_POWER_RESET_MSM=y
->  CONFIG_POWER_RESET_XGENE=y
+> @@ -88,6 +88,7 @@ CONFIG_ACPI_CPPC_CPUFREQ=m
+>  CONFIG_ARM_ARMADA_37XX_CPUFREQ=y
+>  CONFIG_ARM_SCPI_CPUFREQ=y
+>  CONFIG_ARM_IMX_CPUFREQ_DT=m
+> +CONFIG_ARM_QCOM_CPUFREQ_NVMEM=y
+>  CONFIG_ARM_QCOM_CPUFREQ_HW=y
+>  CONFIG_ARM_RASPBERRYPI_CPUFREQ=m
+>  CONFIG_ARM_TEGRA186_CPUFREQ=y
 > -- 
 > 2.23.0
 > 
