@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4112E103EA1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 16:30:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9A8F103E8B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 16:29:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lTqGK8YZbnTAMJ6APmqFfJcfq450DNS0+BuFXQdcZZs=; b=ff622zxs0Stk6f
-	pKs74IFu2JczN1ZCbe4OEqY1/q2evd36U+2vEFmPEMwWUwWmEfZYOZ3rXgCbJJ0knB0Xg6K4r7YU7
-	ajVUDkUvYNud5k0g+JL0miwcPBykIx9ax68950xxTgYcuoyWiGgdqCs4JDQrpIcVWNFV+uY8nHOFN
-	vgfBmuQ8bJQLC5BETxSHCmREnTBsmGv1j11+pSlWKvex8Ne0bbJDFW/6OzhNtL7GMlCnJeb+flVR2
-	cT/MUlXtZhndx4QaC2yim3WX+bWvOak2bJWvFwZ0zu3ews+qqT+s/kgXrkpFcdgkTWAqynGxNKFFb
-	rlZQAMVe/DYbE7GFlkew==;
+	List-Owner; bh=hRJcaewrLypna35H+AifUzGQdUgyCQuv+oKjMpgOJI4=; b=Weta20IgTa8mfM
+	cMCKPaX14d16MgEF5hiyLxIN7XEUTBBljR+WxvTOwKePAVM0wECbE1yOY8O9ZNRnaONtzi59a3ir/
+	7iX0VsKQ9uMhnZrw/OJCc9RcnsZ/9Sctpr6X0swWuAvtZJt3qRpPeonJ59VO1Tq4Hs5GWzJOW3g1j
+	40AFF7JMBKhpYDl5dSXxzsg6vNsqj+jRp1Ba4icFWmAirYhz7JV9yHjVArD3FP2uZDLtCmrkkpNqz
+	iaboH8E1/F0ipm+LWkac88YyIp/bbeqGYG7Mw8ryoNZvR9OvjhXrwV3ZyPfdQvbjd6pTqxcqVnE1O
+	HYxNnbqpQWgu6/XIYZVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXRvR-0001iW-As; Wed, 20 Nov 2019 15:29:49 +0000
+	id 1iXRv9-0001Tu-0O; Wed, 20 Nov 2019 15:29:31 +0000
 Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXRuL-0000IB-DF
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 15:28:42 +0000
-Received: by mail-wr1-x444.google.com with SMTP id i12so232160wrn.11
+ id 1iXRuM-0000Ic-9v
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 15:28:44 +0000
+Received: by mail-wr1-x444.google.com with SMTP id t2so318775wrr.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 07:28:40 -0800 (PST)
+ Wed, 20 Nov 2019 07:28:42 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=tB1mv0iagpasqt+ubXAygnT8VXICt+ouOxxy8t0xYvs=;
- b=uPAKdeb/DWgZDZtC6f1PbTauQGenxGV5fSTMcND1isct3YzemSRgAdB0N7jA5+V38h
- FhBHk3Tnhh1VFhkdWaArFcpR/RZrp2LZLBOhqIc1g/lXD+Tk7Coz5alp6WrhjPinO6eW
- pzCkQBNl8uLpO9zS9oy6XSZPEPhPIlLZPOp4Sy7/kglTXhqpjsDLnyAiny1bQR/2T5LA
- +/IzB2HPY4qOPar2lXMazEgUOads0pzUss8YpdjjM5sr43uAhV1olQeOBd5GG4md35KA
- cu6Q0iEhewBs7u+M7oNmof+HM42XkgLLmaZ510VC79sVkXbnoBxi+ALe6DxCqKGlgEtK
- yjyQ==
+ bh=VocVwERuj9CPUxI4LlG88AIMpkiR3wTIlIVCNMEfFWI=;
+ b=XGKqvA+ftxeRIcTzRVR4iuKmoi0AoZftMzZznXbgI5lelIgfWtxFTXOkD40mmkJ0Yf
+ 3F22LKumE86iAiZTdZP9sXgCKJowSPQEsszkhBRjtK2jKvfNZs3OcEhztgLYz9fCFYp7
+ FnRHXFhQTryMUWMHjF0jTxnuAMZ2bstdrHVNWQ3W5lOFj9A9vvJaoqPze3uXdJv0ZmY2
+ mVwxXHdA1kLLCy3FUnm+bNMrbOJ1Y8j0zdYzuYaQfcsoEF6V9j30lKqT3qf7x386q9pE
+ uxwFmMwjNZKgba0UBhp6ZUEYCnk6EbEO2y9/cY8a//79YUOfCNXm2QqjQ3wj+jqWzPZt
+ Q58g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=tB1mv0iagpasqt+ubXAygnT8VXICt+ouOxxy8t0xYvs=;
- b=QIRgdEez8HTLL5ZAOFmNTmAPdw95zOxrXFrNjkHb+um8l7G2AEaoXFCWqeKbRiOdrF
- lUV5hRdoQN6Coy7K/4Jw0+n01ME+OhgEcy23QAaFyok2okBgvreLhNnLtM1CQ4VaGmgg
- 44JBib1lF9XQ+ExVtzXSWmEQqwBz0UZOta01Ugnoi7GKqM3upldxozlwBPS+SxbDDb7/
- iiJVZBsjXl9ZXwsDXZl2CatJv1m8mh6omydB+ruXKcqHAgs1YjIi6kk/y49MSoqbrdck
- mxWuCDQvuzK3ZVsooEDw0kRw+Ed/II9ANf4eGRO8pJnBoeF8GNDsc0dtBZ+MuU6XOCeP
- 15+A==
-X-Gm-Message-State: APjAAAXL3rl3Aak4zwTT7Vqwx8IHq5lgNPn9VSEgTXFnB0CSHQUJC7mo
- +0trmjiBXnHtPg3DyhuifqQ=
-X-Google-Smtp-Source: APXvYqzRCrNiWv3WJ4S0PHDL3ahCsxIQu72pLjaCVPEGuCu8yR5dYNXuP35CTbFHByY0P1rBekgHEg==
-X-Received: by 2002:a5d:6cb0:: with SMTP id a16mr4316101wra.194.1574263719888; 
- Wed, 20 Nov 2019 07:28:39 -0800 (PST)
+ bh=VocVwERuj9CPUxI4LlG88AIMpkiR3wTIlIVCNMEfFWI=;
+ b=ckQ7bI/toyPgOzm5DG78QStI+OuEY6qK/alwbby+mpDrAXED20VYlpXbsp2ZcqRwIQ
+ AJk6UhcTdkOn+FkYFsgaLzViFVeXjIL03bDJUnQRzvqclsQ3i97nJR7/UcNydW7BhHH8
+ sbCyJNgOU6vQak+SU38R4nbJn5gN770kAxHrUcuHiFtWvY7Af6CnRTgjK2Dtw6KCw48J
+ xC9T7C4OBe5H5zuyEBkWG7wKVQkmqsOjoWfzAsmewnUrCjvgvXU3YIb7yTEoGbgU0oZ7
+ n5wff+CZVysi9emS4jAQkNWbLU2sQs1C/0S/d0hGZu3KYIKOHlWDq+XsG7iQte7jGcoV
+ Dfyw==
+X-Gm-Message-State: APjAAAV5XTfUpsBK4ACeEoET4s1lCi53TDZqhqqob6C/MPhTov2YghWf
+ d3kNRx11ny08ln3y2bAolLY=
+X-Google-Smtp-Source: APXvYqyySvjdRhchHXN5/IN4KTYqciseN5uBnZ6+Gn1VQiy/uYXcvn0MKoLOS06DLlVVycRu9E0ZYw==
+X-Received: by 2002:a5d:4b82:: with SMTP id b2mr4032387wrt.335.1574263721112; 
+ Wed, 20 Nov 2019 07:28:41 -0800 (PST)
 Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id w4sm31797881wrs.1.2019.11.20.07.28.38
+ by smtp.googlemail.com with ESMTPSA id w4sm31797881wrs.1.2019.11.20.07.28.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 Nov 2019 07:28:39 -0800 (PST)
+ Wed, 20 Nov 2019 07:28:40 -0800 (PST)
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
 To: davem@davemloft.net, herbert@gondor.apana.org.au, mark.rutland@arm.com,
  mripard@kernel.org, robh+dt@kernel.org, wens@csie.org
-Subject: [PATCH v2 2/3] ARM: dts: sun8i: a33: add the new SS compatible
-Date: Wed, 20 Nov 2019 16:28:32 +0100
-Message-Id: <20191120152833.20443-3-clabbe.montjoie@gmail.com>
+Subject: [PATCH v2 3/3] crypto: sun4i-ss: add the A33 variant of SS
+Date: Wed, 20 Nov 2019 16:28:33 +0100
+Message-Id: <20191120152833.20443-4-clabbe.montjoie@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191120152833.20443-1-clabbe.montjoie@gmail.com>
 References: <20191120152833.20443-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_072841_477847_6548E4D7 
-X-CRM114-Status: GOOD (  12.67  )
+X-CRM114-CacheID: sfid-20191120_072842_407394_2F8AB5F6 
+X-CRM114-Status: GOOD (  18.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -107,26 +107,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the new A33 SS compatible to the crypto node.
+The A33 SS has a difference with all other SS, it give SHA1 digest
+directly in BE.
+So this patch adds variant support in sun4i-ss.
 
+Fixes: 6298e948215f ("crypto: sunxi-ss - Add Allwinner Security System crypto accelerator")
 Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 ---
- arch/arm/boot/dts/sun8i-a33.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ .../crypto/allwinner/sun4i-ss/sun4i-ss-core.c | 22 ++++++++++++++++++-
+ .../crypto/allwinner/sun4i-ss/sun4i-ss-hash.c |  5 ++++-
+ drivers/crypto/allwinner/sun4i-ss/sun4i-ss.h  |  9 ++++++++
+ 3 files changed, 34 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/sun8i-a33.dtsi b/arch/arm/boot/dts/sun8i-a33.dtsi
-index 1532a0e59af4..a2c37adacf77 100644
---- a/arch/arm/boot/dts/sun8i-a33.dtsi
-+++ b/arch/arm/boot/dts/sun8i-a33.dtsi
-@@ -215,7 +215,7 @@
- 		};
+diff --git a/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-core.c b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-core.c
+index 814cd12149a9..d35a05843c22 100644
+--- a/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-core.c
++++ b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-core.c
+@@ -13,6 +13,7 @@
+ #include <linux/io.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
++#include <linux/of_device.h>
+ #include <linux/platform_device.h>
+ #include <crypto/scatterwalk.h>
+ #include <linux/scatterlist.h>
+@@ -22,6 +23,14 @@
  
- 		crypto: crypto-engine@1c15000 {
--			compatible = "allwinner,sun4i-a10-crypto";
-+			compatible = "allwinner,sun8i-a33-crypto";
- 			reg = <0x01c15000 0x1000>;
- 			interrupts = <GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
- 			clocks = <&ccu CLK_BUS_SS>, <&ccu CLK_SS>;
+ #include "sun4i-ss.h"
+ 
++static const struct ss_variant ss_a10_variant = {
++	.sha1_in_be = false,
++};
++
++static const struct ss_variant ss_a33_variant = {
++	.sha1_in_be = true,
++};
++
+ static struct sun4i_ss_alg_template ss_algs[] = {
+ {       .type = CRYPTO_ALG_TYPE_AHASH,
+ 	.mode = SS_OP_MD5,
+@@ -323,6 +332,12 @@ static int sun4i_ss_probe(struct platform_device *pdev)
+ 		return PTR_ERR(ss->base);
+ 	}
+ 
++	ss->variant = of_device_get_match_data(&pdev->dev);
++	if (!ss->variant) {
++		dev_err(&pdev->dev, "Missing Security System variant\n");
++		return -EINVAL;
++	}
++
+ 	ss->ssclk = devm_clk_get(&pdev->dev, "mod");
+ 	if (IS_ERR(ss->ssclk)) {
+ 		err = PTR_ERR(ss->ssclk);
+@@ -484,7 +499,12 @@ static int sun4i_ss_remove(struct platform_device *pdev)
+ }
+ 
+ static const struct of_device_id a20ss_crypto_of_match_table[] = {
+-	{ .compatible = "allwinner,sun4i-a10-crypto" },
++	{ .compatible = "allwinner,sun4i-a10-crypto",
++	  .data = &ss_a10_variant
++	},
++	{ .compatible = "allwinner,sun8i-a33-crypto",
++	  .data = &ss_a33_variant
++	},
+ 	{}
+ };
+ MODULE_DEVICE_TABLE(of, a20ss_crypto_of_match_table);
+diff --git a/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c
+index 91cf58db3845..c791d6935c65 100644
+--- a/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c
++++ b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss-hash.c
+@@ -478,7 +478,10 @@ static int sun4i_hash(struct ahash_request *areq)
+ 	/* Get the hash from the device */
+ 	if (op->mode == SS_OP_SHA1) {
+ 		for (i = 0; i < 5; i++) {
+-			v = cpu_to_be32(readl(ss->base + SS_MD0 + i * 4));
++			if (ss->variant->sha1_in_be)
++				v = cpu_to_le32(readl(ss->base + SS_MD0 + i * 4));
++			else
++				v = cpu_to_be32(readl(ss->base + SS_MD0 + i * 4));
+ 			memcpy(areq->result + i * 4, &v, 4);
+ 		}
+ 	} else {
+diff --git a/drivers/crypto/allwinner/sun4i-ss/sun4i-ss.h b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss.h
+index 60425ac75d90..2b4c6333eb67 100644
+--- a/drivers/crypto/allwinner/sun4i-ss/sun4i-ss.h
++++ b/drivers/crypto/allwinner/sun4i-ss/sun4i-ss.h
+@@ -131,7 +131,16 @@
+ #define SS_SEED_LEN 192
+ #define SS_DATA_LEN 160
+ 
++/*
++ * struct ss_variant - Describe SS hardware variant
++ * @sha1_in_be:		The SHA1 digest is given by SS in BE, and so need to be inverted.
++ */
++struct ss_variant {
++	bool sha1_in_be;
++};
++
+ struct sun4i_ss_ctx {
++	const struct ss_variant *variant;
+ 	void __iomem *base;
+ 	int irq;
+ 	struct clk *busclk;
 -- 
 2.23.0
 
