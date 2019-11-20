@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDD4510341F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 07:07:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2954E103425
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 07:08:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
 	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2si2TufQr/LMHfsU857urgXygAo3pALA16ppJELU5+c=; b=L6pb7vmvchG+Dw
-	ZWHQLRSQ2DqsfwKMV2+HF/lJBNtaeVB1MUODzl6CtSkMVWecjigoJP+/5+CxaeuVks8Q3CrSgEMzb
-	JE2j0GCJaXs5Ggjc81Pt7Bkk91o+XXBBDDTfSQfVRMPU4y8akfX+KASi0OQbDjHXV85V//fsM2YEj
-	3O41wmo2PKQqktaFemy25K5DfHrbnoO3p+QHW8ng9Wxq3+bsGKEu2gngucaCcvxwsu2sgOZ7+aTDM
-	c6kOm+JfI/5e4cmqjoPSn+zPhxdvJtiyM0V/MJSzZv4ZgIaZX9H8RbCuQCsC0iWBoW2x7UWH0MgLz
-	qaT/ra1eoAnrx/CPdFSQ==;
+	List-Owner; bh=mn3bjmZsaPx8K/ZwCwE8RPnrU80wOoSFzdwSvKCRbTk=; b=eKut6ruMUeYjrY
+	63V9AwrkU2ii3LBq1gPowvYZnst9NZZYMTTkBVGnSVOzwVFNRSE4/gnF9jkY6iPMLUQ4JKGza3zW+
+	4jIU5eD/mlrzmbHnClQjVfBcs15VEsWStwC7ZVvfHxVJgjwhlyy+/jTho7N8usiFYVGLCw2Q4NdDh
+	zKJwoeNqjSkj2l0yif0ubmh/P1aqiwmtRdIqG1XFCusjm4lkKvPc7hT3zNgbaMNVLr9+Vskg4yol8
+	oo2Bunk9sWj6nMeS6C1wcH7dsrkptq339ASIXrQvOUUaUC7n4fUV3iefIR67NVrqZ+kKYhRy8D2GI
+	f9yH2fwyT3X0nbtIMhfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXJ96-00071h-4Y; Wed, 20 Nov 2019 06:07:20 +0000
+	id 1iXJ9w-0007OK-Ti; Wed, 20 Nov 2019 06:08:12 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXJ8x-00070t-KT
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 06:07:12 +0000
+ id 1iXJ9l-0007O0-Ay
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 06:08:02 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 867435870;
- Wed, 20 Nov 2019 01:07:08 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 8120168AD;
+ Wed, 20 Nov 2019 01:08:00 -0500 (EST)
 Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 20 Nov 2019 01:07:08 -0500
+ by compute4.internal (MEProxy); Wed, 20 Nov 2019 01:08:00 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
  mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm1; bh=TGFoOR8k4c4tdXLrnHIT+DIILptA4jZ
- EVoNDESk6+yw=; b=edouY/yf5Ltb2h4tveU+VBLDqigm6a+1o88WqNYbDlnHSuY
- NBdl3gWfrhkds2iRT7jM3shb6CLSHf0fy6Oob5Vv/fm8cHXsf+Lauk1vF2SFesqI
- DNinzU6/eCcVHcmCORlwu2A3KBQF61/VdvU3QlrI8kcCUlr1TokQgz55E8JkiZs2
- WKyQyLY2kdh7CPFL6RhyuXX87PhdPh+uKfsFioJBxWLmUkWI0SrkS4FL2TMPncRZ
- Qv7kaNH0kB9ELX31uGZDL/mXVhS66ynXtF0nl7mDo3MQCM5AYuMmDTBGUMYskln8
- NeYoZgIHkcNwqrZS3f68eOaVDkGtBTc8eiFBkOg==
+ :subject:content-type; s=fm1; bh=DsuQsdMCwuKKG1c6E9zMMunZDORO9yG
+ MRO643pGAkco=; b=Fd0L4n9gK6ybYYBcSg1jQ+1Anq3REZ7jgGzCovtPqAE/Qf7
+ nibUPdKv3eDWgqvMYN2XxG0LYtAm7iqdLElZ2SU2EcuQDU97upof3y5/rKu7J0qj
+ 4wd+UsSZoz5ns+jTk6oFghvBCuGKVESjgCqmLYDqvvMIi8+7PGqQ97iXDXslWWB/
+ hNys4hZmVfu9EB1q9yAK+U3HRuFeXrqidnlTdgVLOoMhdzR+kWFII8B2uTCkRJ/i
+ H3DuC4ThZzInqSom3lkAxl6YHjictrV9Ubn3izRoEoA3rng2VGb8fEoG5XienYtR
+ FIIk6KuzAAevM6ygdCWFFcjQDifODP/tQjoe5Bg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=TGFoOR
- 8k4c4tdXLrnHIT+DIILptA4jZEVoNDESk6+yw=; b=ariIa8DSRjxdXYdh8Z5Lro
- DB+BCB4mf3iRxK7QxOA0RgQ8uVPrJ/4XOrFwysxaZYZvtVC0XGqBi0a9KM08R1VZ
- xm+vvuxDR2X5LFe4PohbZ1Dew5/jXxQWhuX3CtmzEGJFsUzf112wv4wiZ4tuXXu8
- 187pdMVL/LB9txSCIbpJ+9HuE0sOYvv2RZgmP959W5su918V2mLCmVsBY+0qb9md
- 5war8QCBhkRlbCB4tetpXLAXn44wDQzJerFHdk6HrZt1pV2h5a4i/tf+h+ZDvyy1
- PnJxolhBvXl1nnDjet9V/d2kL+B4BgtS/HbgGW+m7niln0yYiTZ423UPretPb5Uw
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=DsuQsd
+ MCwuKKG1c6E9zMMunZDORO9yGMRO643pGAkco=; b=wSfHHMIqeIxz7uUn2d14w+
+ RVJjFGK++vJnIvk+WVWo+2LhVPANmImCx1DFfogwrz0w4+XWbNfJ5f6BIeoQeW+q
+ yV+f3UxVN3dKbrGFNSp5QtlhwEgHbMsXh5PgNmZ1pfC7bxvF9YAWORWMzKNGpCtK
+ uYBODeLR5kopolY3BPcOKPzqLljOVF5GUaZ0PAW/nvvKFjlYXqihy0iUl14pKLlS
+ 99bgQBQ82BSvwtROesF3tUuZu085Htvrm59DQiGUOyMOGmIDZWK5MpS4x3GHFP3g
+ IfM6Frwfacx1N8JxtCfmqswSgX0v2QgQUqvzplK5741QIJTyzljQcbEJKTc3SXvQ
  ==
-X-ME-Sender: <xms:DNjUXRYMKacsLTHV0VrBYTs7OAVFK5z3O6F0DRECwlISpOLCvx-QPQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudegledgleduucetufdoteggodetrfdotf
+X-ME-Sender: <xms:QNjUXWJ2ujlBAKIfuc9xx6W73U9KNM57P4vef5G9WMlmfLGd-1iX0g>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudegledgledvucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreerjeenucfhrhhomhepfdetnhgu
+ cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
  rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
  grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
- rhfuihiivgepud
-X-ME-Proxy: <xmx:DNjUXUOJZPIWiblwnQxzM3JsDfovVhv1VV0EMZfwN2Fyi_21oNEegw>
- <xmx:DNjUXabHS0fhLPD9p1WVOx8WakeGSKcVzb2e5OpjGdro-hw6ChiH8A>
- <xmx:DNjUXcUq1gW5LvqJNwgeoskUiwgzvWqExEzZleeaRe4cAwEqRQ8MQg>
- <xmx:DNjUXaKBqLPDutNNhrlKe1gwGe_K4mBpHPBswL1Ow9qg9zF-IKU7Tg>
+ rhfuihiivgeptd
+X-ME-Proxy: <xmx:QNjUXV626hPjxjiHuOLWBVDS-F3NZe_zGbxRynf3AD9D_lPoK1etCw>
+ <xmx:QNjUXbuJg1QQvHvrn9xtjvmCsDQSdZkBc2ntB7i2C9AJEZqIqAGP8w>
+ <xmx:QNjUXTZh-E3-mu7lCLDC6Av9Czb4yjJMXjLnR-9fqX_lO6ChGEgxVw>
+ <xmx:QNjUXTZvhspj1tktg1bwvQlCwqHwSasFZ_W2ijcrQRSSGu_GuGIyrQ>
 Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 14E75E00A3; Wed, 20 Nov 2019 01:07:08 -0500 (EST)
+ id 49FE6E00A3; Wed, 20 Nov 2019 01:08:00 -0500 (EST)
 X-Mailer: MessagingEngine.com Webmail Interface
 User-Agent: Cyrus-JMAP/3.1.7-578-g826f590-fmstable-20191119v1
 Mime-Version: 1.0
-Message-Id: <794a7661-b4c1-46eb-bc78-79e7358ff999@www.fastmail.com>
-In-Reply-To: <20191118104646.3838-3-i.mikhaylov@yadro.com>
+Message-Id: <ebe4c175-a1a0-47d3-9c01-1dfeeffc97e5@www.fastmail.com>
+In-Reply-To: <20191118104646.3838-2-i.mikhaylov@yadro.com>
 References: <20191118104646.3838-1-i.mikhaylov@yadro.com>
- <20191118104646.3838-3-i.mikhaylov@yadro.com>
-Date: Wed, 20 Nov 2019 16:38:32 +1030
+ <20191118104646.3838-2-i.mikhaylov@yadro.com>
+Date: Wed, 20 Nov 2019 16:39:25 +1030
 From: "Andrew Jeffery" <andrew@aj.id.au>
 To: "Ivan Mikhaylov" <i.mikhaylov@yadro.com>
-Subject: =?UTF-8?Q?Re:_[PATCH_v3_2/3]_mmc:_sdhci-of-aspeed:_enable_CONFIG=5FMMC=5F?=
- =?UTF-8?Q?SDHCI=5FIO=5FACCESSORS?=
+Subject: Re: [PATCH v3 1/3] aspeed: dts: add sd card for vesnin
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_220711_744342_C9EE95FE 
-X-CRM114-Status: UNSURE (   4.97  )
+X-CRM114-CacheID: sfid-20191119_220801_450087_5200FF0B 
+X-CRM114-Status: UNSURE (   6.40  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -119,13 +118,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On Mon, 18 Nov 2019, at 21:16, Ivan Mikhaylov wrote:
-> Enable CONFIG_MMC_SDHCI_IO_ACCESSORS on the aspeed board. 
+> Presence signal is inverted for vesnin boards, 'cd-inverted' added
+> for invertion signal enablement. Vesnin BMC uses microSD, there is
+> no WP switch, 'disable-wp' is used for this purpose.
+> 
+> Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
 
-s/on the aspeed board/for the ASPEED MMC driver/
-
-but otherwise:
-
-Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+Acked-by: Andrew Jeffery <andrew@aj.id.au>
 
 _______________________________________________
 linux-arm-kernel mailing list
