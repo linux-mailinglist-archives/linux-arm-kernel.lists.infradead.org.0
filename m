@@ -2,58 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D02D1103109
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 02:15:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CFBF103120
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 02:27:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8DNIPbgYr4PRizcA7TGSAcb9/QSfpLqf0A8AF7tYU84=; b=LEUJj24oRjour7+RK+SZ5XMyX
-	bGUKoMM9fjZMPYsQpuAdjMc3S2986ADYx3zAQH0UL/z6ToLfwlQt4Q+HKiXTvaD6VD0PuLTSP1Lnt
-	QJAmRHB9myBvpGVdC5X8YBs0xVYJOSFsUeN141OckaXh94CqxVxJnBKZ3tXet6P50p4wP6kgUhhlp
-	0R47nevxQ91xtIlQQ/9jmaNNJ5TXh/FBgz32navnXpo/rmcVNiWn2vcQhMZUMmAmEyTyESgrZhlt5
-	Cx/djLaPYSGRWYLafJnWVrgi4tOUtzoKJTf58BVQXcmGXxZJDdW30Z41jSCB0NOO6SqXEzl0w4MHb
-	gbeKiJktQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Sh8K9xLVuHmnjbM5uJ6smsfLTDtB87cmds/czMcNsJI=; b=uEOahbnvfMvyZ8
+	TmVaWoxS3viZkAGCbF8XssMZG6K1ui9AbFuIsdanqltvR/293nAHg51jhwfSSC/ST2y+IwWm3kBdU
+	DO/TPYwsITgDWfiHCgvHobZumStS9ZfB72tM7k2gyoFU8Fs0Mqaba+VHGEgsg4CsdDjNIJHAXDMok
+	OQJu7w0ye3j7WE9l32jRYHSZm/8MiV63IiA8lp+OwVqdx9nY++slY1bqcTXvmOChpkS9k3BVs1WJg
+	Vv+ck9LMqormwDJrByKsquN7hvHEDzleBgdfe2csHMzdXHZJO/Tyc8d9MaTlt9WAqiw6dDOLKXAWv
+	7lSs2vtPj2zU+M6QOdJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXEb0-00075L-6G; Wed, 20 Nov 2019 01:15:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXEas-00074d-7D
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 01:15:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1134E1FB;
- Tue, 19 Nov 2019 17:15:33 -0800 (PST)
-Received: from [192.168.1.124] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 359C43F703;
- Tue, 19 Nov 2019 17:15:32 -0800 (PST)
-Subject: Re: [PATCH] irq-gic: select all CPU's selected in interrupt affinity
- settings
-To: Leonid Movshovich <event.riga@gmail.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <CAPaFbat4MM0=iVB-VazTK9=2qRebAgEN4euYCTESRo3yfx75Kw@mail.gmail.com>
- <20191119233633.GG25745@shell.armlinux.org.uk>
- <CAPaFbatG+ePwjCnBva1tfmzmvpHZv9xW3nM4gj2DTpFn=D+9Vg@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <2cd3e872-57d5-5cbb-78d7-98da6447dc59@arm.com>
-Date: Wed, 20 Nov 2019 01:15:16 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+	id 1iXEm5-000286-7S; Wed, 20 Nov 2019 01:27:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iXElv-00027C-46
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 01:27:08 +0000
+Received: from mail-lf1-f45.google.com (mail-lf1-f45.google.com
+ [209.85.167.45])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 47E202245F
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 01:27:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574213225;
+ bh=D7abHCeD4TPvV2CC5GlYUE+dpzX7mKsMT4oa0/yvIRw=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=eOnkCcpi3XzYZrccf26EVRVyjaGrzkJM2FuzIDz2a6nLVVzbAKGJvodiPcmIUpL3n
+ gvLbf/JklQkvF0ImVVa7jx4efmK2auYAzjeEnnvBU1Q65nizUJ4S0UKbhUJEeKDjdz
+ rdCWWF+ApEM0lz17r/TTjMw7fMaTerpB/fD8csH0=
+Received: by mail-lf1-f45.google.com with SMTP id z12so18724239lfj.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 19 Nov 2019 17:27:05 -0800 (PST)
+X-Gm-Message-State: APjAAAXuvCCcdJQcQfBZUjVtIZ7zMPUqwRqi8VxjWECQlYUZMdbGmNOB
+ KQ4hkhV6/GjwK5ChiVN2zM9+aW2pwIKvuqS1RFI=
+X-Google-Smtp-Source: APXvYqwRCZuOLwwW4yV+7MFk/VIFl8MVP82eHlcf4qaQKdX30EKfsryD1YdVJwUyn/6jRxu7hGaF3j94H2BVMIxjCZE=
+X-Received: by 2002:a19:da1a:: with SMTP id r26mr450883lfg.60.1574213223486;
+ Tue, 19 Nov 2019 17:27:03 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <CAPaFbatG+ePwjCnBva1tfmzmvpHZv9xW3nM4gj2DTpFn=D+9Vg@mail.gmail.com>
-Content-Language: en-GB
+References: <20191119144315.11261-1-krzk@kernel.org>
+ <CAL_Jsq+1hHneSW5DzLNxU00AqQJ49chTyULJ0S3JR-CqfOfTgA@mail.gmail.com>
+In-Reply-To: <CAL_Jsq+1hHneSW5DzLNxU00AqQJ49chTyULJ0S3JR-CqfOfTgA@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Wed, 20 Nov 2019 09:26:51 +0800
+X-Gmail-Original-Message-ID: <CAJKOXPep1ftnw0gGEtzmSZaZBaAiyDhCsVygRfNAQ4egiJK1tA@mail.gmail.com>
+Message-ID: <CAJKOXPep1ftnw0gGEtzmSZaZBaAiyDhCsVygRfNAQ4egiJK1tA@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: power: Fix path to power-domain.txt bindings
+To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_171542_381432_C3AEE451 
-X-CRM114-Status: GOOD (  19.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191119_172707_208271_0043F846 
+X-CRM114-Status: GOOD (  14.74  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,180 +86,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Kevin Hilman <khilman@kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, etnaviv@lists.freedesktop.org,
+ Linux USB List <linux-usb@vger.kernel.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, PCI <linux-pci@vger.kernel.org>,
+ linux-tegra@vger.kernel.org, freedreno <freedreno@lists.freedesktop.org>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-11-20 12:24 am, Leonid Movshovich wrote:
-> On Tue, 19 Nov 2019 at 23:36, Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
->>
->> On Tue, Nov 19, 2019 at 11:12:26PM +0000, event wrote:
->>> So far only a CPU selected with top affinity bit was selected. This
->>> resulted in all interrupts
->>> being processed by CPU0 by default despite "FF" default affinity
->>> setting for all interrupts
->>
->> Have you checked whether this causes _ALL_ CPUs in the mask to be
->> delivered a single interrupt, thereby causing _ALL_ CPUs to be
->> slowed down and hit the same locks at the same time.
->>
-> 
-> Yes, I've checked this. No, interrupt is delivered to only one CPU.
-> Also ARM GIC architecture specification specifically states in chapter
-> 3.1.1 that hardware interrupts are delivered to a single CPU in
-> multiprocessor system ("1-N model").
+On Wed, 20 Nov 2019 at 01:02, Rob Herring <robh@kernel.org> wrote:
+>
+> On Tue, Nov 19, 2019 at 8:43 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> >
+> > With split of power domain controller bindings to power-domain.yaml, the
+> > consumer part was renamed to power-domain.txt.  Update the references in
+> > other bindings.
+> >
+> > Reported-by: Geert Uytterhoeven <geert@linux-m68k.org>
+> > Fixes: abb4805e343a ("dt-bindings: power: Convert Samsung Exynos Power Domain bindings to json-schema")
+> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> > ---
+> >  Documentation/devicetree/bindings/clock/clk-exynos-audss.txt  | 2 +-
+> >  Documentation/devicetree/bindings/clock/exynos5433-clock.txt  | 2 +-
+> >  .../devicetree/bindings/clock/renesas,r8a7778-cpg-clocks.txt  | 2 +-
+> >  .../devicetree/bindings/clock/renesas,r8a7779-cpg-clocks.txt  | 2 +-
+> >  .../bindings/clock/renesas,rcar-gen2-cpg-clocks.txt           | 2 +-
+> >  .../devicetree/bindings/clock/renesas,rz-cpg-clocks.txt       | 2 +-
+> >  .../devicetree/bindings/display/etnaviv/etnaviv-drm.txt       | 2 +-
+> >  Documentation/devicetree/bindings/display/msm/dpu.txt         | 2 +-
+> >  Documentation/devicetree/bindings/display/msm/mdp5.txt        | 2 +-
+> >  Documentation/devicetree/bindings/dsp/fsl,dsp.yaml            | 2 +-
+> >  Documentation/devicetree/bindings/media/imx7-mipi-csi2.txt    | 2 +-
+> >  .../devicetree/bindings/media/mediatek-jpeg-decoder.txt       | 2 +-
+> >  Documentation/devicetree/bindings/media/mediatek-mdp.txt      | 2 +-
+> >  Documentation/devicetree/bindings/opp/qcom-nvmem-cpufreq.txt  | 2 +-
+> >  Documentation/devicetree/bindings/pci/pci-keystone.txt        | 2 +-
+> >  Documentation/devicetree/bindings/phy/ti,phy-am654-serdes.txt | 2 +-
+> >  Documentation/devicetree/bindings/power/qcom,rpmpd.txt        | 2 +-
+> >  Documentation/devicetree/bindings/power/renesas,rcar-sysc.txt | 2 +-
+> >  .../devicetree/bindings/usb/nvidia,tegra124-xusb.txt          | 4 ++--
+> >  19 files changed, 20 insertions(+), 20 deletions(-)
+>
+> Please no. Can you just undo the renaming back to power_domain.txt
 
-But see also section 3.2.3 - just because only one CPU actually runs the 
-given ISR doesn't necessarily guarantee that the others *weren't* 
-interrupted. I'd also hesitate to make any assumptions that all GIC 
-implementations behave exactly the same way.
+The renaming was done to make it consistent with yaml and other
+bindings but indeed it creates some churn... I'll send rename-undo
+then.
 
-Robin.
-
-> Here is output of
-> /proc/interrupts from my rk3328 with patch applied:
-> root@host:~ # cat /proc/interrupts
->             CPU0       CPU1       CPU2       CPU3
->    1:          0          0          0          0     GICv2  29 Edge
->    arch_timer
->    2:      16615      17538      17932      18593     GICv2  30 Edge
->    arch_timer
->   12:          0          0          0          0     GICv2  90 Level
->    rockchip_thermal
->   15:          0          0          0          0     GICv2  68 Level
->    ff150000.i2c
->   16:        557        526        181        479     GICv2  69 Level
->    ff160000.i2c
->   19:          0        325          0          0     GICv2  82 Level
->    rk_pwm_irq
->   20:        401        315        328        294     GICv2  32 Level
->    ff1f0000.dmac
->   21:          0          0          0          0     GICv2  33 Level
->    ff1f0000.dmac
->   22:        537        430        557        378     GICv2 122 Level     Mali_GP
->   23:          0          0          0          0     GICv2 119 Level
->    Mali_GP_MMU
->   24:        257        236        257        201     GICv2 125 Level
->    Mali_PP_Broadcast
->   25:          0          0          0          0     GICv2 120 Level
->    Mali_PP0
->   26:          0          0          0          0     GICv2 121 Level
->    Mali_PP0_MMU
->   27:          0          0          0          0     GICv2 123 Level
->    Mali_PP1
->   28:          0          0          0          0     GICv2 124 Level
->    Mali_PP1_MMU
->   29:          0          0          0          0     GICv2  41 Level
->    ff350000.vpu_service, ff351000.avsd
->   31:          0          0          0          0     GICv2  39 Level
->    ff360000.rkvdec
->   33:          0          0          0          0     GICv2 127 Level
->    ff330000.h265e
->   35:          0          0          0          0     GICv2 129 Level
->    ff340000.vepu
->   37:       1140        832        902        789     GICv2  64 Level
->    ff370000.vop, ff370000.vop
->   38:          0          0          0          0     GICv2  63 Level
->    ff3a0000.iep
->   39:        983        759        959        741     GICv2  67 Level
->    ff3c0000.hdmi, dw-hdmi-cec
->   41:          0          0          0          0     GICv2 115 Level
->    ff430000.hdmiphy
->   42:          0          0          0          0     GICv2 109 Level
->    rockchip_u3phy
->   43:          7          0          5          3     GICv2  46 Level     dw-mci
->   44:      52394       1141      50331      21990     GICv2  44 Level     dw-mci
->   45:         71         44         68         63     GICv2  56 Level     eth0
->   46:          0          0          0          0     GICv2  55 Level
->    ff580000.usb, dwc2_hsotg:usb1
->   47:          0          0          0          0     GICv2  48 Level
->    ehci_hcd:usb2
->   48:          0          0          0          0     GICv2  49 Level
->    ohci_hcd:usb3
-> 124:          0          0          0          0     gpio2   6 Level     rk805
-> 182:          0          0          0          0     GICv2  94 Level
->    rockchip_usb2phy
-> 183:          0          0          0          0     GICv2  93 Level
->    rockchip_usb2phy
-> 184:          0          0          0          0     GICv2  99 Level
->    xhci-hcd:usb4
-> 
-> Interrupt counts would be the same for all CPUs if all interrupts
-> would be delivered to all CPU
-> 
->>> ---
->>>   drivers/irqchip/irq-gic.c | 27 ++++++++++++++++-----------
->>>   1 file changed, 16 insertions(+), 11 deletions(-)
->>>
->>> diff --git a/drivers/irqchip/irq-gic.c b/drivers/irqchip/irq-gic.c
->>> index 30ab62334..e6c6451ea 100644
->>> --- a/drivers/irqchip/irq-gic.c
->>> +++ b/drivers/irqchip/irq-gic.c
->>> @@ -331,25 +331,30 @@ static int gic_set_affinity(struct irq_data *d,
->>> const struct cpumask *mask_val,
->>>   {
->>>    void __iomem *reg = gic_dist_base(d) + GIC_DIST_TARGET + (gic_irq(d) & ~3);
->>>    unsigned int cpu, shift = (gic_irq(d) % 4) * 8;
->>> - u32 val, mask, bit;
->>> + u32 val, reg_mask, bits = 0;
->>>    unsigned long flags;
->>> + const struct cpumask* cpu_mask;
->>>
->>> - if (!force)
->>> - cpu = cpumask_any_and(mask_val, cpu_online_mask);
->>> + if (force)
->>> + cpu_mask = mask_val;
->>>    else
->>> - cpu = cpumask_first(mask_val);
->>> + cpu_mask = cpu_online_mask;
->>>
->>> - if (cpu >= NR_GIC_CPU_IF || cpu >= nr_cpu_ids)
->>> - return -EINVAL;
->>> + for_each_cpu_and(cpu, mask_val, cpu_mask) {
->>> + if (cpu >= NR_GIC_CPU_IF || cpu >= nr_cpu_ids) {
->>> + return -EINVAL;
->>> + }
->>> + bits |= gic_cpu_map[cpu];
->>> + }
->>>
->>>    gic_lock_irqsave(flags);
->>> - mask = 0xff << shift;
->>> - bit = gic_cpu_map[cpu] << shift;
->>> - val = readl_relaxed(reg) & ~mask;
->>> - writel_relaxed(val | bit, reg);
->>> + reg_mask = 0xff << shift;
->>> + bits <<= shift;
->>> + val = readl_relaxed(reg) & ~reg_mask;
->>> + writel_relaxed(val | bits, reg);
->>>    gic_unlock_irqrestore(flags);
->>>
->>> - irq_data_update_effective_affinity(d, cpumask_of(cpu));
->>> + irq_data_update_effective_affinity(d, cpu_mask);
->>>
->>>    return IRQ_SET_MASK_OK_DONE;
->>>   }
->>> --
->>> 2.17.1
->>>
->>> _______________________________________________
->>> linux-arm-kernel mailing list
->>> linux-arm-kernel@lists.infradead.org
->>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
->>>
->>
->> --
->> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
->> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
->> According to speedtest.net: 11.9Mbps down 500kbps up
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
