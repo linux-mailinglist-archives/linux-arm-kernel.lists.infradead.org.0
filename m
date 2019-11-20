@@ -2,76 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 496F71045C0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 22:28:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE07F1045C4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 22:28:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K3LFOi04SkEjy209B7APUS/z95ZCVc0oeRsknPTUQIQ=; b=Ic1EJMmvAn+eFB
-	9rJV3Spi9nCI2vXzEXdkx5BV/7lL2yRPUSuaMeE72OKm02QJiEbyFJ2RfvLQwXVXLeXNX+iMqUGOP
-	Dk3SJ4bNGASF8Zq7DJc79Cb8/guP+snWI7k3r6K9EnFH1g9zvJDV7OZlH/M0qqIBJG3DlcoRSIcHw
-	VwPYzcuovJ6bvMUwGA8u9W4Dfo3u3MC4CkKj9V0YIuwHGCvZsew10AJSoJewQB7xvhJ8F8irQgXTt
-	CC+DzrkknSPqGS1TeecDPcQGpGzZiux5skqCks4uNrc6+Yt1/IKrePJtwzDDdTYyjBsomjoRsEh5v
-	Mdc5N5InLw3rEbv12Jpg==;
+	List-Owner; bh=MMOGbwJ5C6CsT/PcJFKjMbRnQxqmmJ6LEbpfJQui9FI=; b=PJPDoiAP1HSLAS
+	2JUqnBojtBE//ChlTPZig06tAM+51sgOb2BNQoQCjoJ5K0/iIJCPtCSkSpYMNKqpGNqt/mo+Yrvk4
+	bFroU7MN+S6fUmgp611BMJwWuYvc17io0YSJpEDwsCtJJkn+WLUZlXT9pkfx0f5eFaCEAGYDKVR2Q
+	/MPfNckXuG4CSUa9TNq4EhwcXiZMuUhLuh3Z9o3+6PAVOF9x30YrLFY4BFvv8bJI5ZF/O6W4upLnb
+	iNZ61luht/RjgrpeaZSlrfJuP/ukWsHjgZQsn5nAJMX5U6wLeVBs4VMHwyahTH6c2AwGWsWTNlnQo
+	AgAjLRRFCN9EO+uCMUMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXXW1-0008QL-7q; Wed, 20 Nov 2019 21:27:57 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iXXWb-0000Ev-SP; Wed, 20 Nov 2019 21:28:33 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXXVr-0008PH-U9
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 21:27:49 +0000
-Received: by mail-lf1-x144.google.com with SMTP id f18so746273lfj.6
+ id 1iXXWO-0000EN-0f
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 21:28:21 +0000
+Received: by mail-lj1-x244.google.com with SMTP id v8so777385ljh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 13:27:46 -0800 (PST)
+ Wed, 20 Nov 2019 13:28:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4qp3wqZnERgahc4/j3UaMttRmXNfWZ10Hcph0ci1u6c=;
- b=rRXRNY80I7ALa2kx4T0RfT2uUiBApG1viLOC7JlZkW+L2kbTqOZlkMLS/hXurbMo6v
- 4Iq8ZjTZ3hdLRjgscqK51Kc2sfiXwxMCaFHYscC0W9hOTmMgFx/Hvly1Xfu1HzQ+KELz
- ahnkfzzy/wIF3SdKBefmsseYzwJSyqDtQQHd5mBVKXxdHu/ZMh/E1QAlP9LzBOo9DWYg
- LUd0mOTZoC2xyoypO/dOhPaMeDjGGy8jrYTETUbJA+LRu2RB/1k9g4GuF1LT2LOL0YbK
- eE5n4Jf9/0dw1/3QTwZ0JYmQf4dTdbF7MxzcQpCycB0hGfMVzpyNl5eLU5ORa0DpNs7i
- ZXuQ==
+ :cc; bh=4AlBzJzPNV6WmO7BOKxphXcqJibhWddufaH3SnTFx3o=;
+ b=Yi5K9wX2Ss3ZUwsOQnemA58PHSHXcA8FTp5TzY2SoDwVhmwn1yF7jx+ImGxOcfVvIs
+ adaqnP6TqkySNuaEDsU0bMxMn0in274ozQZMQsAxFVzAVDTzSQglNhI8698GQhVCuOsF
+ 6bmrOttv+LfPdQj0E8CpQ0yypIssgv5Cg5GYYTCL7nl+/niFakDxkkBhbWZQIIvVCbyU
+ hVdG7nWGbDIpeWThv1t9EJGIWifcZCaQvfE2Rc09K1hutStWpHsas/B8HMNK/oGi1F+O
+ sDPVERP7HwBBkyCnXdJrlt6bYuHOifEofF9Qxh/2BzL6V31Gjdr1M6tFwBNFyrc9C+PV
+ WctQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=4qp3wqZnERgahc4/j3UaMttRmXNfWZ10Hcph0ci1u6c=;
- b=eSNLjyNQRW7Fzq2auFh8pl6A5iiwBpufiFQJwndvgj6NnRCjWrs2QI14PumFzuNUz2
- 7xbzNFQ6FE/2Oz8JCavedoTGovrZ5MoIeM7axNQXLJ/jPSgkCwLIyY2oZ3csrBk/6OnD
- 3PIcQikznAvoR0O7xgLgL+VE8ay+5aJjKJDxY4KdyJTNXum1aOUBCsKbxS2oIrhTr7c7
- TZ64myWSBu1RtClSpkM2OLClZ6npKgKtyqQLYwj0HlPi5LBCfZeqrYe8ClePfFomKVbN
- 91mtZzzYIicc0z6I2fnyBdBtHSXoUN8go0Cn/qvxUxDfOG3Af5UwM0gLAz+/GcZMswBZ
- 1D5Q==
-X-Gm-Message-State: APjAAAWcpBhifvc97bN8ANfub3QdpZsw5qz3QiCOSa3kzogLqnDwJF3b
- mU2qDIIJbStjlCrmqA8bN2PRi0cQaejeyb41W+Oveg==
-X-Google-Smtp-Source: APXvYqw1Mw2ql/sLIwwEbm33HOuERPGZBkNXPALJtaLRCm7RMoBF0wq9ZUM/gNNZJvvK54NtyY9exRM/sabQ9R8NhaU=
-X-Received: by 2002:a19:c143:: with SMTP id r64mr4656279lff.90.1574285265239; 
- Wed, 20 Nov 2019 13:27:45 -0800 (PST)
+ bh=4AlBzJzPNV6WmO7BOKxphXcqJibhWddufaH3SnTFx3o=;
+ b=LZUkJDzxa2XhUuowk3yCFvG9IYqoJk9RV/rMFt40QF6plmOUMp6RY/ai/8+FtKZl+V
+ OeWLnSUcjIqwOzfcERU7JftUxub9pko2MByVqWIO2Dq3BVdoWtdX6d/t3NhlZA0tj0QY
+ Py5eUuA7KEMcbP//Y867l+MyotYU0yOpqyJGGn5BFaabxke3/IzrjzPZ4U97b0EqnXlB
+ TH3mqCFoKPQd2tZJcukQTv/kDG650cRX9h2NjKwqxCIJHHdF+LFwdNQXXql4IMmEuYgq
+ 3au207vv3VCCyF3A1EHiVFTL4dt/SnCW4zLKU0i3U8a8ZpXf50nB8Y/j8867pd4vcHh+
+ meBA==
+X-Gm-Message-State: APjAAAXZ1tbcN5EKZXEyarheckZs+rvb/aaf2JyeeVzh9BVZeRuO05jD
+ rUV6DdDLaV2hSRojWaZXQOjHnLvWt96Dlopu1K4=
+X-Google-Smtp-Source: APXvYqyivxCTlR69eJbUiJ3qNnphZIvKFLKcgP8DZeFvc7wwGrBx1ylG75AuaC6m+OdUbfw9EKwNXOBUS3uZNcyUz+A=
+X-Received: by 2002:a2e:8e97:: with SMTP id z23mr4444619ljk.149.1574285298161; 
+ Wed, 20 Nov 2019 13:28:18 -0800 (PST)
 MIME-Version: 1.0
 References: <20191120082955.3ovsoziurntmv7by@pengutronix.de>
  <20191120211334.5580-1-m.grzeschik@pengutronix.de>
- <20191120211334.5580-2-m.grzeschik@pengutronix.de>
-In-Reply-To: <20191120211334.5580-2-m.grzeschik@pengutronix.de>
+ <20191120211334.5580-3-m.grzeschik@pengutronix.de>
+In-Reply-To: <20191120211334.5580-3-m.grzeschik@pengutronix.de>
 From: Fabio Estevam <festevam@gmail.com>
-Date: Wed, 20 Nov 2019 18:27:45 -0300
-Message-ID: <CAOMZO5A9dhEBF-uC39nbg6E2hcd5LukNXK2V7TmPrfAbWJOCCw@mail.gmail.com>
-Subject: Re: [PATCH v3 1/2] ARM: dts: imx25: consolidate properties of
- usbhost1 in dtsi file
+Date: Wed, 20 Nov 2019 18:28:18 -0300
+Message-ID: <CAOMZO5Bs20c3_4rWS1n3h6sRyM2PBx1=B1sJhbkPWs_1xLUaVw@mail.gmail.com>
+Subject: Re: [PATCH v3 2/2] ARM: dts: imx25: describe maximum speed of
+ internal usbhost port1 phy
 To: Michael Grzeschik <m.grzeschik@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_132747_972359_BD6F99CF 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20191120_132820_055649_6F73DAAD 
+X-CRM114-Status: UNSURE (   7.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -110,10 +111,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Wed, Nov 20, 2019 at 6:14 PM Michael Grzeschik
 <m.grzeschik@pengutronix.de> wrote:
 >
-> The usb port represented by &usbhost1 uses an USB phy internal to the
-> SoC. We add the phy_type to the base dtsi so the board dts only have to
-> overwrite it if they use a different configuration. While at it we also
-> pin the usbhost port to host mode.
+> The internal usbphy of usbhost port1 is only full-speed capable.
+> We set this limitation in the dtsi.
 >
 > Signed-off-by: Michael Grzeschik <m.grzeschik@pengutronix.de>
 
