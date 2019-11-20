@@ -2,64 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C32D103D4E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 15:33:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38F00103D77
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 15:41:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Sz1zIYdu2hcLgLBgVCpVdW07BtG23gUSAfVpYmKzTGU=; b=a1RN6dxtvgB9qrgFXlC4kAuuF
-	D22wYpFg+KG+6nGUFU/IfEv81vFTKHxasXBKIqZ3LnRS+mHM2V1dnu8lDUSL+MiL7gZVHkA5physH
-	mP4zDFksrrXFOFWfYKdTNG4mPM0ewOhLJ1V3J4xHyi9jlw9862UlP/+T/kgbLvAgO2JgkEXz72xXL
-	B3u23TeGjNl4F7GMwBSZFCiSA75jEHRIbrg4nUeAhqzD4PgiiHsgV4TmLR9IjNNSIp65blj3Gh9LI
-	/rHKju+KKR0g38DQN5dHQNcXJWhI7FK9IAZvlNh9hH398qpwJa46u6NWAAKZOEA1ykU5gV+rtcTH4
-	O60YduSww==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=S5qIXorHDrzkoyNBXtDejWKoLRT4mlEIkY1vXNb1ciY=; b=oY0QAEWzzOzopd
+	R9Z4Vq6vxLZ/JHhS21eMdN4DlGCSpwengIm+wXbZCAlt8sj1bLH2PI2YnwEn2DI5/0YLR3qXdFTa8
+	+UpzqCXWQNLbec4H3/BRD8J5fRV1H7C+w2BdGu7SsEpQYlZp/rQADm2eXXssMi5Ds9rDO+Te7HVNv
+	0/cU58EWHcgeBOjtsEhxnQOOaXocgLtm8kf1B7ibrhDE7GrzLs4aU1agymu/tlqrhimVZlRbQfpYK
+	YbyWxW9Ly5m+b1e0lUUIO4vY6E/Nw/hezwd/BRxRjehLsvbW7ifNlsGhAMU7Bv3W3wpzL2St/aA4h
+	tnXrH744Nxaj44c0ygBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXR2Q-00024b-HT; Wed, 20 Nov 2019 14:32:58 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iXRAi-0005hD-Sg; Wed, 20 Nov 2019 14:41:32 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXR2H-00023C-8y; Wed, 20 Nov 2019 14:32:51 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iXR2B-0005H9-UN; Wed, 20 Nov 2019 15:32:43 +0100
-To: =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>
-Subject: Re: [PATCH v4 2/8] irqchip: Add Realtek RTD1295 mux driver
-X-PHP-Originating-Script: 0:main.inc
+ id 1iXRAW-0005f6-RU
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 14:41:22 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xAKEbSIp013729; Wed, 20 Nov 2019 15:41:12 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=3MWRZoNQW6NvMtgqGH/E+ItGRfzo79zhMRPs9a8JyAI=;
+ b=eVUeeJjoxT5BdFlIGtFkk+WoCeJt2zWo+It4cnAUWYWu2yI6F9iP9KyK9opca4tVtC1S
+ 83aWypYGaKkXItKp5BfZyBZ/jor1vDsvqkKh75LUCGIMtolIQ1bCWoD2JRg2eVtG0hl9
+ P84oreGkkTaX+pNx7tfuFkzAmWtx0MkC/+WWxmarBOMekfwSQMxJPuouw6duH9NoubAj
+ Dkco5m7pCe6DbgagMO+wZJkVZOHIyvSP3PzoUA26RKHqfChRTn1mLifCT5U//E6zeb09
+ fkMFHt7/3kr27oDAQIOqP9o0qrPTRmvtqauJR9pp2yDorf18NpXshq4xDomAXack0/D/ QQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2wa9up6hy2-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 20 Nov 2019 15:41:12 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 63F6C10002A;
+ Wed, 20 Nov 2019 15:41:11 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 327B82BE22E;
+ Wed, 20 Nov 2019 15:41:11 +0100 (CET)
+Received: from localhost (10.75.127.45) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 20 Nov 2019 15:41:10
+ +0100
+From: Alexandre Torgue <alexandre.torgue@st.com>
+To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, <arnd@arndb.de>,
+ <robh+dt@kernel.org>, <mark.rutland@arm.com>
+Subject: [PATCH 0/6] STM32 DT: Updates for SOC diversity
+Date: Wed, 20 Nov 2019 15:41:03 +0100
+Message-ID: <20191120144109.25321-1-alexandre.torgue@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Date: Wed, 20 Nov 2019 14:32:43 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <18c09fc4-fe7b-7ba0-7cd3-ae0c650ca4a8@suse.de>
-References: <20191119021917.15917-1-afaerber@suse.de>
- <20191119021917.15917-3-afaerber@suse.de>
- <a34e00cac16899b53d0b6445f0e81f4c@www.loen.fr>
- <e98364c5-a859-7981-8ccf-f8e5b5069379@suse.de> <20191119222956.23665e5d@why>
- <d7416bdb-e20a-42e1-daff-c61369f359fa@suse.de>
- <e4d30ff2485c3f9ffd2b934f1f757d19@www.loen.fr>
- <18c09fc4-fe7b-7ba0-7cd3-ae0c650ca4a8@suse.de>
-Message-ID: <5d834a7c4b6195bb09675ffb96f509de@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: afaerber@suse.de, linux-realtek-soc@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernelrocks@gmail.com, james.tai@realtek.com, tglx@linutronix.de,
- jason@lakedaemon.net
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-20_04:2019-11-15,2019-11-20 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_063249_460151_17CE4B0A 
-X-CRM114-Status: GOOD (  20.12  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191120_064121_354822_F60B38ED 
+X-CRM114-Status: GOOD (  13.50  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,94 +92,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: James Tai <james.tai@realtek.com>,
- Aleix Roca Nonell <kernelrocks@gmail.com>,
- linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Jason Cooper <jason@lakedaemon.net>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-kernel@vger.kernel.org,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAxOS0xMS0yMCAxMzozNCwgQW5kcmVhcyBGw6RyYmVyIHdyb3RlOgo+IEFtIDIwLjExLjE5
-IHVtIDExOjIwIHNjaHJpZWIgTWFyYyBaeW5naWVyOgo+PiBPbiAyMDE5LTExLTE5IDIzOjMzLCBB
-bmRyZWFzIEbDpHJiZXIgd3JvdGU6Cj4+PiBBbSAxOS4xMS4xOSB1bSAyMzoyOSBzY2hyaWViIE1h
-cmMgWnluZ2llcjoKPj4+PiBPbiBUdWUsIDE5IE5vdiAyMDE5IDIxOjU2OjQ4ICswMTAwCj4+Pj4g
-QW5kcmVhcyBGw6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPiB3cm90ZToKPj4+Pj4gQW0gMTkuMTEu
-MTkgdW0gMTM6MDEgc2NocmllYiBNYXJjIFp5bmdpZXI6Cj4+Pj4+PiBPbiAyMDE5LTExLTE5IDAy
-OjE5LCBBbmRyZWFzIEbDpHJiZXIgd3JvdGU6Cj4+Pj4+Pj4gK3N0YXRpYyB2b2lkIHJ0ZDExOTVf
-bXV4X2VuYWJsZV9pcnEoc3RydWN0IGlycV9kYXRhICpkYXRhKQo+Pj4+Pj4+ICt7Cj4+Pj4+Pj4g
-K8KgwqDCoCBzdHJ1Y3QgcnRkMTE5NV9pcnFfbXV4X2RhdGEgKm11eF9kYXRhID0KPj4+Pj4+PiBp
-cnFfZGF0YV9nZXRfaXJxX2NoaXBfZGF0YShkYXRhKTsKPj4+Pj4+PiArwqDCoMKgIHVuc2lnbmVk
-IGxvbmcgZmxhZ3M7Cj4+Pj4+Pj4gK8KgwqDCoCB1MzIgbWFzazsKPj4+Pj4+PiArCj4+Pj4+Pj4g
-K8KgwqDCoCBtYXNrID0gbXV4X2RhdGEtPmluZm8tPmlzcl90b19pbnRfZW5fbWFza1tkYXRhLT5o
-d2lycV07Cj4+Pj4+Pj4gK8KgwqDCoCBpZiAoIW1hc2spCj4+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKg
-IHJldHVybjsKPj4+Pj4+Cj4+Pj4+PiBIb3cgY2FuIHRoaXMgaGFwcGVuPyBZb3UndmUgbWFwcGVk
-IHRoZSBpbnRlcnJ1cHQsIHNvIGl0IGV4aXN0cy4KPj4+Pj4+IEkgY2FuJ3Qgc2VlIGhvdyB5b3Ug
-Y2FuIGRlY2lkZSB0byBmYWlsIHN1Y2ggZW5hYmxlLgo+Pj4+Pgo+Pj4+PiBUaGUgW1VNU0tfXUlT
-UiBiaXRzIGFuZCB0aGUgU0NQVV9JTlRfRU4gYml0cyBhcmUgbm90IChhbGwpIHRoZSAKPj4+Pj4g
-c2FtZS4KPj4+Pj4KPj4+Pj4gTXkgLi4uX2lzcl90b19zY3B1X2ludF9lbltdIGFycmF5cyBoYXZl
-IDMyIGVudHJpZXMgZm9yIE8oMSkgCj4+Pj4+IGxvb2t1cCwgYnV0Cj4+Pj4+IGFyZSBzcGFyc2Vs
-eSBwb3B1bGF0ZWQuIFNvIHRoZXJlIGFyZSBjaXJjdW1zdGFuY2VzIHN1Y2ggYXMgCj4+Pj4+IFdE
-T0dfTk1JIGFzCj4+Pj4+IHdlbGwgYXMgcmVzZXJ2ZWQgYml0cyB0aGF0IHdlIGNhbm5vdCBlbmFi
-bGUuCj4+Pj4KPj4+PiBCdXQgdGhlIHlvdSBzaG91bGQgaGF2ZSBmYWlsZWQgdGhlIG1hcC4gVGhl
-IG1vbWVudCB5b3UgYWxsb3cgdGhlCj4+Pj4gbWFwcGluZyB0byBvY2N1ciwgeW91IGhhdmUgYWNj
-ZXB0ZWQgdGhlIGNvbnRyYWN0IHRoYXQgdGhpcyAKPj4+PiBpbnRlcnJ1cHQgaXMKPj4+PiB1c2Fi
-bGUuCj4+Pj4KPj4+Pj4gVGhpcyBjaGVjayBzaG91bGQgYmUKPj4+Pj4gaWRlbnRpY2FsIHRvIHYz
-OyB0aGUgZXF1aXZhbGVudCBtYXNrIGNoZWNrIGluc2lkZSB0aGUgaW50ZXJydXB0IAo+Pj4+PiBo
-YW5kbGVyCj4+Pj4+IHdhcyBleHRlbmRlZCB3aXRoICJtYXNrICYmIiB0byBkbyB0aGUgc2FtZSBp
-biB0aGlzIHY0Lgo+Pj4+Cj4+Pj4gU3B1cmlvdXMgaW50ZXJydXB0cyBhcmUgYSBkaWZmZXJlbnQg
-bWF0dGVyLiBXaGF0IEknbSBvYmplY3RpbmcgdG8gCj4+Pj4gaGVyZQo+Pj4+IGlzIGEgc2ltcGxl
-IHF1ZXN0aW9uIG9mIGxvZ2ljLCB3aGV0aGVyIG9yIG5vdCB5b3UgYXJlIGFsbG93ZWQgdG8gCj4+
-Pj4gZmFpbAo+Pj4+IGVuYWJsaW5nIGFuIGludGVycnVwdCB0aGF0IHlvdSd2ZSBvdGhlcndpc2Ug
-YWxsb3dlZCB0byBiZSAKPj4+PiBwb3B1bGF0ZWQuCj4+Pgo+Pj4gVGhlbiB3aGF0IGFyZSB5b3Ug
-c3VnZ2VzdGluZyBpbnN0ZWFkPyBJIGRvbid0IHNlZSBob3cgbXkgYXJyYXkgbWFwCj4+PiBsb29r
-dXAgY291bGQgZmFpbCBvdGhlciB0aGFuIHJldHVybmluZyBhIHplcm8gdmFsdWUsIGdpdmVuIGl0
-cyAKPj4+IHN0YXRpYwo+Pj4gaW5pdGlhbGl6YXRpb24uIENoZWNrIGZvciBhIHplcm8gbWFzayBp
-biAKPj4+IHJ0ZDExOTVfbXV4X2lycV9kb21haW5fbWFwKCk/Cj4+PiBUaGVuIHdlIHdvdWxkbid0
-IGJlIGFibGUgdG8gdXNlIHRoZSBtZW50aW9uZWQgV0RPR19OTUkuIEFkZCBhbm90aGVyCj4+PiBw
-ZXItbXV4IGluZm8gZmllbGQgZm9yIHdoaWNoIGludGVycnVwdHMgYXJlIHZhbGlkIHRvIG1hcD8K
-Pj4KPj4gSSdtIHN1Z2dlc3RpbmcgdGhhdCB5b3UgZmFpbCB0aGUgbWFwIGlmIHlvdSdyZSB1bmFi
-bGUgdG8gYWxsb3cgdGhlCj4+IGludGVycnVwdCB0byBiZSBlbmFibGVkLgo+Cj4gVGhlIE5NSSB3
-aWxsIGFsd2F5cyBiZSBlbmFibGVkLCBpdCBqdXN0IGNhbid0IGJlIGRpc2FibGVkLgoKSWYgSSBy
-ZWFsbHkgY2FyZWQsIEknZCBjcnkuIFRoaXMgSFcgaXMgdXNlbGVzcy4KCj4gSSBoYXZlIGFkZGVk
-IGEgY2hlY2sgdG8gc3VwcHJlc3MgYSB6ZXJvIGh3aXJxLiBTdXBwcmVzc2luZyByZXNlcnZlZCAK
-PiBJUlEKPiBiaXRzIHdpbGwgdGFrZSBzb21lIG1vcmUgZWZmb3J0IHRvIGRpc3Rpbmd1aXNoIGZy
-b20gTk1Jcy4gSW4gCj4gcGFydGljdWxhcgo+IGlmIHdlIGZsYWcgdGhpcyBpbiB0aGUgLi4uX2lz
-cl90b19zY3B1X2ludF9lbiBhcnJheSBieSBzb21lIG1hZ2ljIAo+IG1hc2sKPiB2YWx1ZSBsaWtl
-IDB4ZmZmZmZmZmYgdGhlbiBhbGwgdXNlcnMgbmVlZCB0byBjaGVjayBmb3IgdHdvIHJhdGhlciAK
-PiB0aGFuCj4gb25lIHZhbHVlIC0gYnV0IGlmIHdlIHJlZHVjZSB0aGUgdXNlcnMsIGl0IHNob3Vs
-ZG4ndCBtYXR0ZXIgdG9vIG11Y2guCgoxKSB5b3UgY2FuJ3Qgc3VwcHJlc3MgYSBsZXZlbCBpbnRl
-cnJ1cHQgdGhhdCBjYW5ub3QgYmUgZGlzYWJsZWQuIEl0IAp3aWxsCmZpcmUgYmFjayBhdCB5b3Uu
-CjIpIGdpdmVuIHRoYXQgeW91IGhhdmUgdG8gZGVtdXggdGhpbmdzIHVzaW5nIE1NSU8gYWNjZXNz
-ZXMsIHBlcmZvcm1hbmNlCmlzIHRoZSBsZWFzdCBvZiBhbnlib2R5J3Mgd29ycnkuCgo+Cj4gV2l0
-aCBjb250cmFjdCBJIGFzc3VtZSB5b3UncmUgcmVmZXJyaW5nIHRvIHRoZXNlIGNhbGxiYWNrcyBo
-YXZpbmcgYSAKPiB2b2lkCj4gcmV0dXJuIHR5cGUsIHVuYWJsZSB0byByZXR1cm4gYW4gZXJyb3Ig
-dG8gdGhlIGNhbGxlciwgYW5kIHRoZXJlIGJlaW5nIAo+IG5vCj4gaXNfZW5hYmxlZC9pc19tYXNr
-ZWQgY2FsbGJhY2tzIGZvciBhbnlvbmUgdG8gZGlzY292ZXIgdGhpcy4KPgo+IFVuZm9ydHVuYXRl
-bHkgTk1JIGhhbmRsaW5nIGFwcGVhcnMgdG8gYmUgb25seSB1c2VkIGluIEdJQ3YzIGFuZCBpcyAK
-PiBub3QKPiB2ZXJ5IGludHVpdGl2ZSBmb3IgbWU6IEFwcGFyZW50bHkgSSBjYW4gb25seSBmbGFn
-IHRoZSB3aG9sZSBpcnFfY2hpcCAKPiBhcwo+IGJlaW5nIE5NSSBidXQgbm90IGluZGl2aWR1YWwg
-SVJRcz8gV291bGQgdGhhdCBtZWFuIHRoYXQgdGhpcyBkcml2ZXIKPiB3b3VsZCBuZWVkIHRvIGlu
-c3RhbnRpYXRlIGEgc2Vjb25kIGlycV9jaGlwIGZvciB0aGF0IG9uZSBJUlE/IEhvdyAKPiB3b3Vs
-ZAo+IHRoYXQgd29yayBmb3IgbWFwcGluZyBmcm9tIERUPyBHaXZlbiB0aGF0IHRoaXMgbXV4IHJl
-bGllcyBvbiBhIAo+IG1hc2thYmxlCj4gR0lDdjIgSVJRLCBpdCdzIG5vdCBhICJ0cnVlIiBOTUkg
-aW4gdGhlIExpbnV4IHNlbnNlIGFueXdheSwgb3RoZXIgCj4gdGhhbgo+IHRoZSAuaXJxX21hc2sg
-Y2FsbGJhY2sgbm90IGJlaW5nIGFwcGxpY2FibGUuIFdoaWxlIEkgZG9uJ3QgbmVlZCB0aGF0IAo+
-IE5NSQo+IGltbWVkaWF0ZWx5LCBJIHdvdWxkIHByZWZlciBub3QgdG8gbWVyZ2UgYSBkcml2ZXIg
-dGhhdCBieSBkZXNpZ24gCj4gY2FuJ3QKPiBjb3BlIHdpdGggaXQgbGF0ZXIuCgpZb3UgYXJlIG1p
-c3NpbmcgdGhlIHBvaW50IG9mIHRoZSBwc2V1ZG8tTk1JIGluZnJhc3RydWN0dXJlLiBUbyBiZSAK
-dXNlZnVsLAppdCAqbXVzdCogYmUgdGhlIHJvb3QgaW50ZXJydXB0IGNvbnRyb2xsZXIuIE90aGVy
-d2lzZSwgeW91IGNhbm5vdCAKZGlzdGluZ3Vpc2gKaXQgZnJvbSB0aGUgb3RoZXIgaW50ZXJydXB0
-cyBpdCBpcyBtdXhlZCB3aXRoLiBZb3VyICdOTUknIGlzIGFic29sdXRlbHkKdW51c2FibGUsIGFu
-ZCB3aG9ldmVyIGRlc2lnbmVkIHRoaXMgSFcgc2hvdWxkIGJlIGFjdGl2ZWx5IHByZXZlbnRlZApm
-cm9tIGV2ZXIgZGVzaWduaW5nIGFub3RoZXIgaW50ZXJydXB0IGNvbnRyb2xsZXIgYWdhaW4uCgo+
-IEknbGwgdHJ5IHRvIHBvc3QgYSB2NSB3aXRoIHJzdiBhbmQgbm1pIGJsb2NrZWQgaW4gbWFwIGZv
-ciBmdXJ0aGVyCj4gZGlzY3Vzc2lvbiB0b25pZ2h0LgoKSSBkb24ndCBwbGFuIHRvIHJldmlldyBh
-bnkgb2YgdGhpcyB1bnRpbCBhZnRlciB0aGUgbWVyZ2Ugd2luZG93LCBzbyAKcGxlYXNlCnRha2Ug
-YXMgbG9uZyBhcyB5b3Ugd2FudC4KCiAgICAgICAgIE0uCi0tIApKYXp6IGlzIG5vdCBkZWFkLiBJ
-dCBqdXN0IHNtZWxscyBmdW5ueS4uLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
-cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+This series updates stm32mp device tree files in order to handle the STM32MP15
+part numbers diversity. STM32MP15 part numbers are built in this way:
+
+-STM32MP15X: X = [1, 3, 7] for IPs diversity:
+ -STM32MP151 = basic part
+ -STM32MP153 = STM32MP153  + a second CPU A7 + MCAN(x2)
+ -STM32MP157 = STM32MP153 + DSI + GPU
+
+-STMM32MP15xY: Y = [a, c] for security diversity:
+ -STM32MP15xA: basic part.
+ -STM32MP15xC: adds crypto IP.
+
+-STM32MP15xxZZ: ZZ = [aa, ab, ac, ad] for packages (IO) diversity:
+ -STM32MP15xxAA: TFBGA448 18x18
+ -STM32MP15xxAB: LFBGA354 16x16
+ -STM32MP15xxAC: TFBGA361 12x12
+ -STM32MP15xxAD: TFBGA257 10x10
+
+New device tree files are created and some existing are renamed to match with
+this split.
+
+In this way it is easy to assemble (by inclusion) those files to match with the
+SOC partnumber used on board, and then it's simpler for users to create their
+own device tree board file using the correct SOC.
+
+For more details:
+
+See STM32MP151 [1], STM32MP153 [2], STM32MP157 [3] reference manuals:
+ [1] https://www.st.com/resource/en/reference_manual/dm00366349.pdf
+ [2] https://www.st.com/resource/en/reference_manual/dm00366355.pdf
+ [3] https://www.st.com/resource/en/reference_manual/dm00327659.pdf
+
+Product family:
+ https://www.st.com/en/microcontrollers-microprocessors/stm32-arm-cortex-mpus.html#products
+
+regards
+Alex
+
+Alexandre Torgue (6):
+  ARM: dts: stm32: Adapt stm32mp157 pinctrl to manage STM32MP15xx SOCs
+    family
+  ARM: dts: stm32: Update stm32mp157 pinctrl files
+  ARM: dts: stm32: Introduce new STM32MP15 SOCs: STM32MP151 and
+    STM32MP153
+  ARM: dts: stm32: Manage security diversity for STM32M15x SOCs
+  ARM: dts: stm32: Adapt STM32MP157 DK boards to stm32 DT diversity
+  ARM: dts: stm32: Adapt STM32MP157C ED1 board to STM32 DT diversity
+
+ arch/arm/boot/dts/stm32mp15-pinctrl.dtsi      | 1087 +++++++++++++++
+ .../dts/{stm32mp157c.dtsi => stm32mp151.dtsi} |  218 ++-
+ arch/arm/boot/dts/stm32mp153.dtsi             |   45 +
+ arch/arm/boot/dts/stm32mp157-pinctrl.dtsi     | 1240 -----------------
+ arch/arm/boot/dts/stm32mp157.dtsi             |   31 +
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts   |    5 +-
+ arch/arm/boot/dts/stm32mp157a-dk1.dts         |  604 +-------
+ arch/arm/boot/dts/stm32mp157c-dk2.dts         |    6 +-
+ arch/arm/boot/dts/stm32mp157c-ed1.dts         |    6 +-
+ arch/arm/boot/dts/stm32mp157xaa-pinctrl.dtsi  |   90 --
+ arch/arm/boot/dts/stm32mp157xab-pinctrl.dtsi  |   62 -
+ arch/arm/boot/dts/stm32mp157xac-pinctrl.dtsi  |   78 --
+ arch/arm/boot/dts/stm32mp157xad-pinctrl.dtsi  |   62 -
+ arch/arm/boot/dts/stm32mp15xc.dtsi            |   18 +
+ arch/arm/boot/dts/stm32mp15xx-dkx.dtsi        |  606 ++++++++
+ arch/arm/boot/dts/stm32mp15xxaa-pinctrl.dtsi  |   85 ++
+ arch/arm/boot/dts/stm32mp15xxab-pinctrl.dtsi  |   57 +
+ arch/arm/boot/dts/stm32mp15xxac-pinctrl.dtsi  |   73 +
+ arch/arm/boot/dts/stm32mp15xxad-pinctrl.dtsi  |   57 +
+ 19 files changed, 2232 insertions(+), 2198 deletions(-)
+ create mode 100644 arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+ rename arch/arm/boot/dts/{stm32mp157c.dtsi => stm32mp151.dtsi} (91%)
+ create mode 100644 arch/arm/boot/dts/stm32mp153.dtsi
+ delete mode 100644 arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+ create mode 100644 arch/arm/boot/dts/stm32mp157.dtsi
+ delete mode 100644 arch/arm/boot/dts/stm32mp157xaa-pinctrl.dtsi
+ delete mode 100644 arch/arm/boot/dts/stm32mp157xab-pinctrl.dtsi
+ delete mode 100644 arch/arm/boot/dts/stm32mp157xac-pinctrl.dtsi
+ delete mode 100644 arch/arm/boot/dts/stm32mp157xad-pinctrl.dtsi
+ create mode 100644 arch/arm/boot/dts/stm32mp15xc.dtsi
+ create mode 100644 arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
+ create mode 100644 arch/arm/boot/dts/stm32mp15xxaa-pinctrl.dtsi
+ create mode 100644 arch/arm/boot/dts/stm32mp15xxab-pinctrl.dtsi
+ create mode 100644 arch/arm/boot/dts/stm32mp15xxac-pinctrl.dtsi
+ create mode 100644 arch/arm/boot/dts/stm32mp15xxad-pinctrl.dtsi
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
