@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E043104177
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 17:52:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 830D710416B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 17:51:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uuVQNCC7gpW4OCSMnEcI8t/fcS8HgqYHEurSbad57DY=; b=GqYUahVVFpQt/+
-	A6Un8WmNGPzdCDa0sljj11ercxRy1jlZ2QerH75hoLUd/Jdd6PZXgtqcF4Zuo415gVF+esm8pUZXB
-	boNPjISVhjiaBVrmZI9f9uxb2Tc1VrGx3qGvHTlDDcV3tGT2FbZFglPw+NSfnvUBgP1MfFuJLMP25
-	yMjZT/jUUNUordknCUj/fKo9ypLEiEtKuN3aZHeetNRvT47QGtWyfkqcDIwJWtj6ktpIpI8Bblknb
-	lh4/slPTGIrSxtjBkv2DAi0L+LfBtjGfwWf3AGK4+uzPRthay0e1KGOgt1TwEzZM71T71KGaDiI9Z
-	EM7DL63TZtXDt2A93cHQ==;
+	List-Owner; bh=v5xTMbc9WdIU0bBNX1L885cSQzIYFWfB91IHcKHJlY0=; b=FFZtlr7Cmh5bz3
+	HO1FvI8O1Umdm7oLJffAwXForTwqyyqhkbQgbzdS3jCtojL/LWM2x3n0fQOXQVCTwgCEELeZ8FhK5
+	HkjDf1aPE3H/dQ4oYyxLN5H3kjbpm1DFFt6lIyjuE4cdB1uBhmIYunFgv0UvN/DOHIyTJK0zf4QhU
+	j8anfwKPkUiTIOnVIY+H3+B+0SWXTX6pi/AT3UJiMiZi843OTGYOmrF516ISJ6K21oLzqUetPXydH
+	hJEUWXFatM36Vjls9kGflsA/kCmt2giIOBZ6FL3ltdhLAMBvXhNhIPze4DgoQv0/uXPXYfXgabb4D
+	4vSt1BPSCClzKGeVAiqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXTDb-0001j8-85; Wed, 20 Nov 2019 16:52:39 +0000
+	id 1iXTCW-0000fW-Hi; Wed, 20 Nov 2019 16:51:32 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXTCO-0000lB-94
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 16:51:26 +0000
+ id 1iXTBX-0008Sh-Mf
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 16:50:34 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by cheepnis.misterjones.org with esmtpsa
  (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1iXT4P-0007RI-Tj; Wed, 20 Nov 2019 17:43:10 +0100
+ id 1iXT4Q-0007RI-Pi; Wed, 20 Nov 2019 17:43:10 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 19/22] KVM: arm/arm64: vgic: Don't rely on the wrong pending
- table
-Date: Wed, 20 Nov 2019 16:42:33 +0000
-Message-Id: <20191120164236.29359-20-maz@kernel.org>
+Subject: [PATCH 20/22] KVM: arm/arm64: Let the timer expire in hardirq context
+ on RT
+Date: Wed, 20 Nov 2019 16:42:34 +0000
+Message-Id: <20191120164236.29359-21-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191120164236.29359-1-maz@kernel.org>
 References: <20191120164236.29359-1-maz@kernel.org>
@@ -47,13 +47,13 @@ X-SA-Exim-Rcpt-To: pbonzini@redhat.com, rkrcmar@redhat.com, graf@amazon.com,
  tglx@linutronix.de, will@kernel.org, yuzenghui@huawei.com, james.morse@arm.com,
  julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
  linux-arm-kernel@lists.infradead.org, kvm@vger.kernel.org,
- kvmarm@lists.cs.columbia.edu, stable@vger.kernel.org
+ kvmarm@lists.cs.columbia.edu
 X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_085124_466072_B31E71B9 
-X-CRM114-Status: GOOD (  11.11  )
+X-CRM114-CacheID: sfid-20191120_085031_908854_BDAE7970 
+X-CRM114-Status: GOOD (  10.64  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -77,7 +77,7 @@ Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Jones <drjones@redhat.com>,
  Heinrich Schuchardt <xypron.glpk@gmx.de>,
  Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, stable@vger.kernel.org,
+ Christoffer Dall <christoffer.dall@arm.com>,
  Steven Price <steven.price@arm.com>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Julien Grall <julien.grall@arm.com>, Alexander Graf <graf@amazon.com>,
@@ -90,53 +90,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Zenghui Yu <yuzenghui@huawei.com>
+From: Thomas Gleixner <tglx@linutronix.de>
 
-It's possible that two LPIs locate in the same "byte_offset" but target
-two different vcpus, where their pending status are indicated by two
-different pending tables.  In such a scenario, using last_byte_offset
-optimization will lead KVM relying on the wrong pending table entry.
-Let us use last_ptr instead, which can be treated as a byte index into
-a pending table and also, can be vcpu specific.
+The timers are canceled from an preempt-notifier which is invoked with
+disabled preemption which is not allowed on PREEMPT_RT.
+The timer callback is short so in could be invoked in hard-IRQ context
+on -RT.
 
-Fixes: 280771252c1b ("KVM: arm64: vgic-v3: KVM_DEV_ARM_VGIC_SAVE_PENDING_TABLES")
-Cc: stable@vger.kernel.org
-Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
+Let the timer expire on hard-IRQ context even on -RT.
+
+Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
+Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
-Acked-by: Eric Auger <eric.auger@redhat.com>
-Link: https://lore.kernel.org/r/20191029071919.177-4-yuzenghui@huawei.com
+Tested-by: Julien Grall <julien.grall@arm.com>
+Acked-by: Marc Zyngier <maz@kernel.org>
+Link: https://lore.kernel.org/r/20191107095424.16647-1-bigeasy@linutronix.de
 ---
- virt/kvm/arm/vgic/vgic-v3.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ virt/kvm/arm/arch_timer.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
-index e69c538a24ca..f45635a6f0ec 100644
---- a/virt/kvm/arm/vgic/vgic-v3.c
-+++ b/virt/kvm/arm/vgic/vgic-v3.c
-@@ -363,8 +363,8 @@ int vgic_v3_lpi_sync_pending_status(struct kvm *kvm, struct vgic_irq *irq)
- int vgic_v3_save_pending_tables(struct kvm *kvm)
+diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
+index e2bb5bd60227..f182b2380345 100644
+--- a/virt/kvm/arm/arch_timer.c
++++ b/virt/kvm/arm/arch_timer.c
+@@ -80,7 +80,7 @@ static inline bool userspace_irqchip(struct kvm *kvm)
+ static void soft_timer_start(struct hrtimer *hrt, u64 ns)
  {
- 	struct vgic_dist *dist = &kvm->arch.vgic;
--	int last_byte_offset = -1;
- 	struct vgic_irq *irq;
-+	gpa_t last_ptr = ~(gpa_t)0;
- 	int ret;
- 	u8 val;
+ 	hrtimer_start(hrt, ktime_add_ns(ktime_get(), ns),
+-		      HRTIMER_MODE_ABS);
++		      HRTIMER_MODE_ABS_HARD);
+ }
  
-@@ -384,11 +384,11 @@ int vgic_v3_save_pending_tables(struct kvm *kvm)
- 		bit_nr = irq->intid % BITS_PER_BYTE;
- 		ptr = pendbase + byte_offset;
+ static void soft_timer_cancel(struct hrtimer *hrt)
+@@ -697,11 +697,11 @@ void kvm_timer_vcpu_init(struct kvm_vcpu *vcpu)
+ 	update_vtimer_cntvoff(vcpu, kvm_phys_timer_read());
+ 	ptimer->cntvoff = 0;
  
--		if (byte_offset != last_byte_offset) {
-+		if (ptr != last_ptr) {
- 			ret = kvm_read_guest_lock(kvm, ptr, &val, 1);
- 			if (ret)
- 				return ret;
--			last_byte_offset = byte_offset;
-+			last_ptr = ptr;
- 		}
+-	hrtimer_init(&timer->bg_timer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS);
++	hrtimer_init(&timer->bg_timer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS_HARD);
+ 	timer->bg_timer.function = kvm_bg_timer_expire;
  
- 		stored = val & (1U << bit_nr);
+-	hrtimer_init(&vtimer->hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS);
+-	hrtimer_init(&ptimer->hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS);
++	hrtimer_init(&vtimer->hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS_HARD);
++	hrtimer_init(&ptimer->hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS_HARD);
+ 	vtimer->hrtimer.function = kvm_hrtimer_expire;
+ 	ptimer->hrtimer.function = kvm_hrtimer_expire;
+ 
 -- 
 2.20.1
 
