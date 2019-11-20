@@ -2,72 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A85721041D4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 18:14:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72FB81041D5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 18:14:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4mGuRyrYYFbJ5PvfX0Ehbkcr5ySwz3RWRD9suqK61r0=; b=P2B4ZEsdgaYywr
-	qhBWuev+8CedgNHLeohEQaLObOazRxPCnQeV6FCWv5t6OBE1ga2ad4WlWK1R//1F/sMasPi5Cjcng
-	uRv7IIpIC/KVEci+PLWDsVHfexdv3opzHeY2E9aSdXJfEGKgwRp/i6DX/6l1TFoOlRIOFhDiQSeEc
-	HfDzjjGshHv0zWfnnc3PfRf1LKljo/IrivsmU1jTPjRLp4OaO79r/9Maca/MOGOP3abTKv7XXJTTC
-	z2SvP2+LiVssbGecQg3CjvE7q8fI95ce+KimPIHUrgz88eKK+Mni3uTzuLug7SFblMJ7Pv6jkX3ZX
-	/9nEbfKXVBw/cRMLaYQw==;
+	List-Owner; bh=wWXamiVVTMMOP44vsyh5jKIN8vlnSbwMzB6gkDUQ61Q=; b=P03zYU+gftRGbe
+	wv9yDOrtJBTiZ/CNusjA+dxGneaJxBJ4fbn/zturEzxJroxLTi6Ya1bJAPi8nBGgJe5lYtvt3XDbI
+	AmVu2ovBrybUNhQjRfVA7mJt+ji+b7i67EetZpkhJKKZIGeymdIfndP5TgUc7D06cTRp3KysLVsCu
+	Xtk+A4tyPDr9TRnaK3uJuaZ8dlt00iGA2EoX8a508MLUhZlIDc59jr4SwOYxzWuIz4jvcqoGcVRnD
+	6+rC7anoLGl7O1eAECXWnICtD+I+7WjpDXbCOTrvQFkrcOhFlYVKlVUlN/5edlzKq+F2o32UCYEtG
+	1k/dZU3IjeynSuhwuTZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXTYP-0004D2-PG; Wed, 20 Nov 2019 17:14:09 +0000
+	id 1iXTYx-0004XT-Rq; Wed, 20 Nov 2019 17:14:43 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXTYG-0004CX-U3
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 17:14:03 +0000
+ id 1iXTYo-0004Wj-RJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 17:14:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=VvNUuT/NBcNUt6yxjrLKbrpsw+EvPrtrGKhH2JwP5Wg=; b=cPXtWJz1KQ69I5HLQPLdHHXNR
- J/lwybWgy9/ptx/+NmCnvXNIeFKxPk0L68v4kF+SIudqR7Ru7gaEDT2NSX2/wV1nwm+TO1Y8TeKrv
- nU/WxXHakWWwL7ELmie9v/QdeOe7mG87vHQBz077MXasnoTJFtqnkndzUEePU8qE9RkzS/YExwKn2
- eHsB9TeRBDh5FpZl4+hcqlJCubIkVC0yN/kSubOZAAggoT5jCjrLXq+zV+NmCokAQat7ZweLHkkEu
- qIxw2Qau+4t1w/QbmDjJgmoPvlpQHh/oMWr7+kGg3VDReQCbcj/7zGcKpomXyTCdiVrAS35qjN1v6
- A0qBXJZbA==;
+ bh=wq5svF58PLLnfZoQieXnpK0OuWdo2X+Cdre7OJ7yg60=; b=zQhMI5DSF0yfMGbI0b/dBN7eW
+ FuV/sXjbXPTRCpeU82NWhpJCsla+6Tmbxr6IgfWp9q6rDDfsceQNJX7jLAZT+K7Loh3tThWjbOKyD
+ 2oeB9a1Vj1zHtuLI3fqSvbuzHUPbxEjMUR8wDbm4O/DZ3iioXblFjao1d44wy8Zt7ObQYbnTl7Wdj
+ YTOpDgaNye/oyREr/mM2U6dnOFkaJPMoaV0tR6zrKgDL3AZU9k2jizPOuX13gDwte5irdgmqepWMW
+ JYgj2CTZCy5QvAwlYb98gw6luLYVklEH8vdtxa2C0D+u0bDhYhZQ/Kq624j5e1tS/vPKN45jc70qb
+ 1eVNcAYPg==;
 Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:42266)
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:38128)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <linux@armlinux.org.uk>)
- id 1iXTY8-0001CD-M3; Wed, 20 Nov 2019 17:13:52 +0000
+ id 1iXTYi-0001Ck-Oq; Wed, 20 Nov 2019 17:14:28 +0000
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iXTY6-0001uU-AT; Wed, 20 Nov 2019 17:13:50 +0000
-Date: Wed, 20 Nov 2019 17:13:50 +0000
+ id 1iXTYi-0001uc-0D; Wed, 20 Nov 2019 17:14:28 +0000
+Date: Wed, 20 Nov 2019 17:14:27 +0000
 From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 To: Leonid Movshovich <event.riga@gmail.com>
 Subject: Re: [PATCH] irq-gic: select all CPU's selected in interrupt affinity
  settings
-Message-ID: <20191120171350.GS25745@shell.armlinux.org.uk>
+Message-ID: <20191120171427.GT25745@shell.armlinux.org.uk>
 References: <CAPaFbat4MM0=iVB-VazTK9=2qRebAgEN4euYCTESRo3yfx75Kw@mail.gmail.com>
  <20191119233633.GG25745@shell.armlinux.org.uk>
  <CAPaFbatG+ePwjCnBva1tfmzmvpHZv9xW3nM4gj2DTpFn=D+9Vg@mail.gmail.com>
  <2cd3e872-57d5-5cbb-78d7-98da6447dc59@arm.com>
- <CAPaFbasJGxV=mEGHAOWdt31vapCfV_RyD1Ptz6aa_WTp6htPKg@mail.gmail.com>
- <20191120105017.GN25745@shell.armlinux.org.uk>
- <CAPaFbasKH_BRARMtQYqxWR6koQB=cF_Ln5n=-7uCqdbjqmu9Rg@mail.gmail.com>
- <11daeee6-8dca-96fa-b6ee-a25ad3e815a9@arm.com>
- <20191120135852.GR25745@shell.armlinux.org.uk>
- <CAPaFbat=TXqGYx5KrQaO0x_r7wYQ9sno1j07Je437n8+P1Gi6g@mail.gmail.com>
+ <392e74d78b48e04040cedfc26ed8ce81@www.loen.fr>
+ <CAPaFbavWjCJKjUN6nA8Gc4urAMzLt-YVB4ED5DVarenrvMgnvQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAPaFbat=TXqGYx5KrQaO0x_r7wYQ9sno1j07Je437n8+P1Gi6g@mail.gmail.com>
+In-Reply-To: <CAPaFbavWjCJKjUN6nA8Gc4urAMzLt-YVB4ED5DVarenrvMgnvQ@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_091401_394768_343103FD 
-X-CRM114-Status: GOOD (  33.19  )
+X-CRM114-CacheID: sfid-20191120_091434_939348_A438911D 
+X-CRM114-Status: GOOD (  17.72  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -96,155 +92,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Marc Zyngier <maz@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 20, 2019 at 03:07:16PM +0000, Leonid Movshovich wrote:
-> On Wed, 20 Nov 2019 at 13:58, Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
+On Wed, Nov 20, 2019 at 03:28:31PM +0000, Leonid Movshovich wrote:
+> On Wed, 20 Nov 2019 at 15:04, Marc Zyngier <maz@kernel.org> wrote:
 > >
-> > On Wed, Nov 20, 2019 at 01:33:11PM +0000, Robin Murphy wrote:
-> > > On 20/11/2019 11:25 am, Leonid Movshovich wrote:
-> > > > On Wed, 20 Nov 2019 at 10:50, Russell King - ARM Linux admin
-> > > > <linux@armlinux.org.uk> wrote:
-> > > > >
-> > > > > On Wed, Nov 20, 2019 at 10:44:39AM +0000, Leonid Movshovich wrote:
-> > > > > > On Wed, 20 Nov 2019 at 01:15, Robin Murphy <robin.murphy@arm.com> wrote:
-> > > > > > >
-> > > > > > > On 2019-11-20 12:24 am, Leonid Movshovich wrote:
-> > > > > > > > On Tue, 19 Nov 2019 at 23:36, Russell King - ARM Linux admin
-> > > > > > > > <linux@armlinux.org.uk> wrote:
-> > > > > > > > >
-> > > > > > > > > On Tue, Nov 19, 2019 at 11:12:26PM +0000, event wrote:
-> > > > > > > > > > So far only a CPU selected with top affinity bit was selected. This
-> > > > > > > > > > resulted in all interrupts
-> > > > > > > > > > being processed by CPU0 by default despite "FF" default affinity
-> > > > > > > > > > setting for all interrupts
-> > > > > > > > >
-> > > > > > > > > Have you checked whether this causes _ALL_ CPUs in the mask to be
-> > > > > > > > > delivered a single interrupt, thereby causing _ALL_ CPUs to be
-> > > > > > > > > slowed down and hit the same locks at the same time.
-> > > > > > > > >
-> > > > > > > >
-> > > > > > > > Yes, I've checked this. No, interrupt is delivered to only one CPU.
-> > > > > > > > Also ARM GIC architecture specification specifically states in chapter
-> > > > > > > > 3.1.1 that hardware interrupts are delivered to a single CPU in
-> > > > > > > > multiprocessor system ("1-N model").
-> > > > > > >
-> > > > > > > But see also section 3.2.3 - just because only one CPU actually runs the
-> > > > > > > given ISR doesn't necessarily guarantee that the others *weren't*
-> > > > > > > interrupted. I'd also hesitate to make any assumptions that all GIC
-> > > > > > > implementations behave exactly the same way.
-> > > > > > >
-> > > > > > > Robin.
-> > > > > >
-> > > > > > Yes, that's right, however:
-> > > > > > 1. They are only interrupted for a split-second, since interrupt is
-> > > > > > immediately ACKed in gic_handle_irq
-> > > > >
-> > > > > Even that is detrimental - consider cpuidle where a CPU is placed in
-> > > > > a low power state waiting for an interrupt, and it keeps getting woken
-> > > > > for interrupts that it isn't able to handle.  The effect will be to
-> > > > > stop the CPU hitting the lower power states, which would be a regression
-> > > > > over how the kernel behaves today.
-> > > > >
-> > > > > > 2. More important that smp_affinity in procfs is defined to allow user
-> > > > > > to configure multiple CPU's to handle interrupts (see
-> > > > > > Documentation/IRQ-affinity.txt) which is effectively prohibited in
-> > > > > > current implementation. I mean, when user sets it to FF, she expects
-> > > > > > all CPUs to process interrupts, not CPU0 only
+> > On 2019-11-20 01:15, Robin Murphy wrote:
+> > > On 2019-11-20 12:24 am, Leonid Movshovich wrote:
+> > >> On Tue, 19 Nov 2019 at 23:36, Russell King - ARM Linux admin
+> > >> <linux@armlinux.org.uk> wrote:
+> > >>>
+> > >>> On Tue, Nov 19, 2019 at 11:12:26PM +0000, event wrote:
+> > >>>> So far only a CPU selected with top affinity bit was selected.
+> > >>>> This
+> > >>>> resulted in all interrupts
+> > >>>> being processed by CPU0 by default despite "FF" default affinity
+> > >>>> setting for all interrupts
+> > >>>
+> > >>> Have you checked whether this causes _ALL_ CPUs in the mask to be
+> > >>> delivered a single interrupt, thereby causing _ALL_ CPUs to be
+> > >>> slowed down and hit the same locks at the same time.
+> > >>>
+> > >> Yes, I've checked this. No, interrupt is delivered to only one CPU.
+> > >> Also ARM GIC architecture specification specifically states in
+> > >> chapter
+> > >> 3.1.1 that hardware interrupts are delivered to a single CPU in
+> > >> multiprocessor system ("1-N model").
 > > >
-> > > I have to say, my interaction with the IRQ layer is far more as a "user"
-> > > than as a "developer", yet I've always assumed that the affinity mask
-> > > represents the set of CPUs that *may* handle an interrupt and have never
-> > > felt particularly surprised by the naive implementation of "just pick the
-> > > first one".
-> 
-> Kernel documentation in Documentation/IRQ-affinity.txt sets an
-> expectation that IRQs would be spread between CPUs evenly in case
-> multiple CPUs are selected in smp_affinity. It also seems to be quite
-> a common practice (in consumer devices at least) to have interrupts
-> spread between CPUs. At least that's what happens on my PC and phone
-> according to /proc/interrupts
-> 
-> > >
-> > > Do these users also expect the scheduler to constantly context-switch a
-> > > single active task all over the place just because the default thread
-> > > affinity mask says it can?
+> > > But see also section 3.2.3 - just because only one CPU actually runs
+> > > the given ISR doesn't necessarily guarantee that the others *weren't*
+> > > interrupted. I'd also hesitate to make any assumptions that all GIC
+> > > implementations behave exactly the same way.
 > >
-> > It is my understanding that the scheduler will try to keep tasks on
-> > the CPU they are already running on, unless there's a benefit to
-> > migrating it to a different CPU - because if you're constantly
-> > migrating code between different CPUs, you're having to bounce
-> > cache lines around the system.
-> >
-> > > > > The reason we've ended up with that on ARM is precisely because it
-> > > > > wasted CPU resources, and my attempts at writing code to distribute
-> > > > > the interrupt between CPU cores did not have a successful outcome.
-> > > > > So, the best thing that could be done was to route interrupts to the
-> > > > > first core, and run irqbalance to distribute the interrupts in a
-> > > > > sensible, cache friendly way between CPU cores.
-> > > > >
-> > > > > And no, the current implementation is *NOT* prohibited.  You can't
-> > > > > prohibit something that hardware hasn't been able to provide.
-> > > > >
-> > > >
-> > > > Hardware allows delivering interrupt to random CPU from selected
-> > > > bitmask and current implementation doesn't allow to configure this.
-> > > > While this may be an issue for power-concerned systems, there are also
-> > > > systems with plenty of electricity where using all CPUs for e.g.
-> > > > network packet handling is more important.
-> > >
-> > > It's not just about batteries - more and more SoCs these days have
-> > > internally constrained power/thermal budgets too. Think of Intel's turbo
-> > > boost, or those Amlogic TV box chips that can only hit their advertised top
-> > > frequencies with one or two cores active - on systems like that, yanking all
-> > > the cores out of standby every time could be actively detrimental to
-> > > single-thread performance and actually end up *increasing*
-> > > interrupt-handling latency.
-> > >
-> > > If you want to optimise a particular system for a particular use-case,
-> > > you're almost certainly better off manually tuning affinities anyway
-> > > (certain distros already do this). If you mostly just want /proc/interrupts
-> > > to look pretty, there's irqbalance.
-> >
-> > The conclusion I came to when I did the initial 32-bit ARM SMP support
-> > was:
-> >
-> > 1) it is policy, and userspace deals with policy
-> > 2) routing the IRQ in to distribute it between CPUs is difficult
+> > What happens is that *all* CPUs are being sent the interrupt, and there
+> > is some logic in the GIC that ensures that only one sees it (the first
+> > one to read the IAR register). All the other see a spurious (1023)
+> > interrupt, and have wasted some precious cycles in doing so.
 > 
-> Yes, but current implementation of smp_affinity does not allow to set
-> multiple CPUs to handle same interrupt. Neither hardware nor software
-> seem to have any issues with distribution. In any case, I suggest to
-> keep default behaviour as is, so only those who know what are they
-> doing would be playing around with this.
-> 
-> > 3) the problem is already solved by userspace (irqbalance)
-> 
-> irqbalance sets smp_affinity. If one wants to dedicate a subset of
-> CPUs to a certain interrupt with current implementation of
-> set_affinity, irqbalance have to sit there and switch affinities all
-> the time. Constantly read /proc/interrupts and change smp_affinity.
-> That doesn't sound like a great solution at all.
-> Not even mentioning that irqbalance pulls glib which won't make many
-> embedded developers happy.
+> Cycles are only precious when system is under high load. Under high
+> load, to achieve fair spread of interrupts between CPUs one would need
+> a userspace app (irqbalance) to sit there and constantly rebalance
+> smp_affinity based on /proc/interrupts. Hard to believe such an
+> approach wastes less cycles.
 
-This discussion is going nowhere.
-
-I've stated my position based on experience as 32-bit ARM maintainer
-trying to make it work.  It may not conform to the documentation, but
-it's what has been used for decades on 32-bit ARM, and what most
-people have been perfectly happy with.
-
-If you think you have a solution to the stated problem that solves
-it for hardware that doesn't automatically distribute interrupts,
-then go off and code it and provide a patch.  Otherwise, no amount
-of emails stating "but the documentation says X" is going to change
-anything.
+So you have no idea how irqbalance works...
 
 -- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
