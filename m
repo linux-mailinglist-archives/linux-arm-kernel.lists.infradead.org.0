@@ -2,86 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 552D5104484
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 20:47:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7235E104493
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 20:50:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Inz7Vn+oSK+hsaPYgRDC5ZXVjhyfUJzqUncPoGig3zU=; b=RvK+5b1WjC/ErF
-	AQ/DxBOGjyUGRwjAGAwbDLvCUoh/82d7Y1uCq8wZZO9XzA/vQkYLl+Ky1lAEbnzaCBk7MhrpEyKoz
-	TxmEYACuDvhoPo0230/csew+9P1SCTKEArMRhcLEmDav8Yj6ec3r4aM4j/Fh8Nk4jyhMaAssS/VOt
-	ERFlzPyeqLmUWz0qsljo7QQxhgXeZn7rBDN1HN2LmvbBgYS339y7UkGiNVbv7wPieyBMwQA/7AoZH
-	kPPDgOJri/QCH+JwXWnjgHXkfU8Hu7VOxofbRosFJo24OGu2NJAMmUdSiNuRabCxJab8Ii/rJA/Rq
-	QIHT9cRMt+R7c6y8CnhA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qW7jtE/+DdmunkrlxuzIyi97+9F2YaqUCq2OS7qB6Aw=; b=YCoixVoQHeIc+evBhF3OepeHe
+	aAwDGzxYIMYxHEZJw1FcjS4KPevOI2Oln3r4OHaNLKoLAoJmlAnGZPGRTn8N7NNylISUTUgSpB1R/
+	4UdUa1omHCDGNzUyD4qhA6P3/57iytE/oOq3aYs+ZYw1H0k3pXIrQ+MuIzDSfQu1N0ji7oF61nNt3
+	G2bMovdc/6FQayamsX+Lgdju2iskEaEStXx5irqZ0qbXXAMhKTr1rqvp+yE74vWswnJhEvNsQSIZu
+	JL00YoNB+uBfDP727SzbgDljYeVYiTuYwr9UcM5xOXf3OrAM0Lk9cOfVXJKwbURF8r2Bm6/WETrTC
+	U1rWdCCZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXVwJ-0003Cd-E2; Wed, 20 Nov 2019 19:46:59 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1iXVze-0004py-LY; Wed, 20 Nov 2019 19:50:26 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXVw8-0003C1-09
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 19:46:49 +0000
-Received: by mail-ed1-x542.google.com with SMTP id b72so584622edf.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 11:46:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=oxEM2vdt7/U/FNIfeuvzJ9elmjyMDsJD1vxaJ2fUtOI=;
- b=WrddtF4R/lFC853GKj7Dd7RzfOT6YpZ1GUF5a9E7wjXuFFN8MKM7RhIB+8Hs5fzeIg
- PcFZZAIgCLKYAM0nHNUvYyYGxu256OS+sFPtigA6OGKsKMr5JnUQ0TGVU9+fR0XKLGyR
- mHnkTW7EPOZ4+svqiLOsGNAL4YD33ESdZfLG7Zoi0uVp+z4FZwX8TMrPKP5sIDk3JFd3
- 2SGIgae3CdqOVhDWxCOow+8hwjWUl5Iv6kOjWqWzDPnW3WIWfBE7d3n/ttyKSGN9Yjhs
- 9bbUuW/6/OJp98x5NHd3iNS8ja+u68ErBXiEUwEp7zyjQzP1ODAlP+UwTaiXxZo9lMGe
- QDiw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=oxEM2vdt7/U/FNIfeuvzJ9elmjyMDsJD1vxaJ2fUtOI=;
- b=T3FFo5VvSBZy1Nl7krdBY7yjUyK3zP7PJupC8611b1WnLMvu8vI5OYYORk8I8SQsty
- 9uS2OnsayrHr7j55W+dkjSlnPaceBhgh69znmd1Qc5GLmkr8FpON25V3RyLy2/Z+taRI
- KEz+15cWm1SsoNn1yV4BoPnAjyRVKKRGLkRbqDFn7e3lbFkIMpHqM3Qnmkdwm1LzssCI
- RuPolClGLDaFqAW6wpw/w5lfvOUFn5PddoFUqpWr5Xm3kV6uFKV44dUiOhmDCCRPECMr
- c3ybqREab6XamRzFDxp9UQKjlpoXrSayt7ZkddZti0f+ah9ysAFOU11OE7Bt26VtDTEe
- Ri2A==
-X-Gm-Message-State: APjAAAWbkPv4txJeX1ijzfByj5xzRyfuZ9UHVISaLkcTbf43krTcnzQh
- Rpixx/E2YK7Nx3hk1t1bwqBVeDD42mdotirufNybFw==
-X-Google-Smtp-Source: APXvYqypnvAPJ++PLYZ2U6aQOk5u/YILYozemKYHGTd1uN8FTstQuqto4KVAyP+G64ayeIzD3lKig4KV9XKFgV4HkNM=
-X-Received: by 2002:a17:906:b30c:: with SMTP id
- n12mr7405055ejz.96.1574279206840; 
- Wed, 20 Nov 2019 11:46:46 -0800 (PST)
+ id 1iXVzV-0004p8-K1; Wed, 20 Nov 2019 19:50:19 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 29ACDB14A;
+ Wed, 20 Nov 2019 19:50:16 +0000 (UTC)
+Message-ID: <6aaa37d2cbe91c177b7be2d7f8aa3846efe3dc34.camel@suse.de>
+Subject: Re: [PATCH v3 0/4] Raspberry Pi 4 HWRNG Support
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Stefan Wahren <wahrenst@gmx.net>, Stephen Brennan <stephen@brennan.io>
+Date: Wed, 20 Nov 2019 20:50:14 +0100
+In-Reply-To: <99554159-6abb-6ea5-aebb-57a148a59b78@gmx.net>
+References: <20191120031622.88949-1-stephen@brennan.io>
+ <99554159-6abb-6ea5-aebb-57a148a59b78@gmx.net>
+User-Agent: Evolution 3.34.1 
 MIME-Version: 1.0
-References: <20191119221006.1021520-1-pasha.tatashin@soleen.com>
- <20191120191648.GB4799@willie-the-truck>
-In-Reply-To: <20191120191648.GB4799@willie-the-truck>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Wed, 20 Nov 2019 14:46:35 -0500
-Message-ID: <CA+CK2bDeXP8iUYF2GC=9PttTug1E66=z0h4PSGBn3Gr5t3NHzw@mail.gmail.com>
-Subject: Re: [PATCH] arm64: kernel: memory corruptions due non-disabled PAN
-To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_114648_042915_5078C4C9 
-X-CRM114-Status: UNSURE (   8.19  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191120_115017_808167_164BFEC4 
+X-CRM114-Status: GOOD (  14.24  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,32 +59,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Vladimir Murzin <vladimir.murzin@arm.com>, steve.capper@arm.com,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- James Morris <jmorris@namei.org>, LKML <linux-kernel@vger.kernel.org>,
- alexios.zavras@intel.com, James Morse <james.morse@arm.com>,
- allison@lohutok.net, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thomas Gleixner <tglx@linutronix.de>, info@metux.net,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Scott Branden <sbranden@broadcom.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Ray Jui <rjui@broadcom.com>, Eric Anholt <eric@anholt.net>,
+ Rob Herring <robh+dt@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ linux-crypto@vger.kernel.org, Matt Mackall <mpm@selenic.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============9091469692085728190=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
->
-> Thanks. I've pushed this and your other patch out [1], with some changes
-> to the commit message. I'm annoyed that I didn't spot this during review
-> of the initial PAN patches.
->
-> Will
 
-Great.
+--===============9091469692085728190==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-iQqSDeLkAUWuKqj/9yXJ"
 
-Thank you,
-Pasha
+
+--=-iQqSDeLkAUWuKqj/9yXJ
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, 2019-11-20 at 17:16 +0100, Stefan Wahren wrote:
+> Hi Stephen,
+>=20
+> Am 20.11.19 um 04:16 schrieb Stephen Brennan:
+> > This patch series enables support for the HWRNG included on the Raspber=
+ry
+> > Pi 4.  It is simply a rebase of Stefan's branch [1]. I went ahead and
+> > tested this out on a Pi 4.  Prior to this patch series, attempting to u=
+se
+> > the hwrng gives:
+> >=20
+> >     $ head -c 2 /dev/hwrng
+> >     head: /dev/hwrng: Input/output error
+> >=20
+> > After this series, the same command gives two random bytes.
+>=20
+> just a note: a more expressive test would be running rngtest (package
+> rng-tools) on this device.
+
+Just had a go at it,
+
+root@rpi4:~# rngtest -c 1000 < /dev/hwrng
+rngtest 2-unofficial-mt.14
+Copyright (c) 2004 by Henrique de Moraes Holschuh
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+rngtest: starting FIPS tests...
+rngtest: bits received from input: 20000032
+rngtest: FIPS 140-2 successes: 998
+rngtest: FIPS 140-2 failures: 2
+rngtest: FIPS 140-2(2001-10-10) Monobit: 0
+rngtest: FIPS 140-2(2001-10-10) Poker: 1
+rngtest: FIPS 140-2(2001-10-10) Runs: 0
+rngtest: FIPS 140-2(2001-10-10) Long run: 1
+rngtest: FIPS 140-2(2001-10-10) Continuous run: 0
+rngtest: input channel speed: (min=3D1.284; avg=3D113.786; max=3D126.213)Ki=
+bits/s
+rngtest: FIPS tests speed: (min=3D17.122; avg=3D28.268; max=3D28.812)Mibits=
+/s
+rngtest: Program run time: 172323761 microseconds
+
+AFAIR (Arch wiki) some small failures are acceptable.
+
+Regards,
+Nicolas
+
+
+--=-iQqSDeLkAUWuKqj/9yXJ
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3VmPYACgkQlfZmHno8
+x/747ggAscLDM0fF7tOoTWdcO+lp+zKBM4o38uVkOwes/laW6msQMiAvB0qW7j4V
+8FRmDLDFt34e1Ta9NKZW3GloAUkVkrS/iPX9msSCy7qlodRjRYdkgF5rbSH4YSIK
+K/9p8MXknOsXsJ9kQCiexooNiiKspt2XLl1lwtLuhHVdtNEVVw1phdlPhfU37BAW
+tV1n45JjdagGkNS8JrjvXNPbCRkSk8SStb/IjldltTO1Rvp//I5Whj0CWXnNzM0t
+HDhXrZiO7+5NB30WU9gP+o3NU8b0KiyAdoe5RgRzTCqlnZsK2rdhJ4eDQKzVpvWR
+/Ra8OIJmgCp4aezFVms92D0KO2dB6w==
+=VuSq
+-----END PGP SIGNATURE-----
+
+--=-iQqSDeLkAUWuKqj/9yXJ--
+
+
+
+--===============9091469692085728190==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============9091469692085728190==--
+
+
