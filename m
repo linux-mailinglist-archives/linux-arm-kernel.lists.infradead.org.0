@@ -2,63 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70AE8104591
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 22:15:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 496F71045C0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 22:28:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hGPcTJlZqTxozkYVo2gGSTaW0aaa/xVrZ5yT6CLVl9A=; b=Ia4DpSL8eOZCqg
-	gtxGk4NdM+Qa9lTzx8ui0grZt/IuexRSS10Kb4bBldSx8b49bYJcZh49TigD6BVLSGqdzZSPcfGn9
-	iK6RY8qTLHC7UdnJlSVHBO1bHplSraKWqxYsoOt7YAp575VJ+i5bNiILnkBUFrh0O3uWAJUJf8XO7
-	Sdtu0t6ZhTk3fn78rjOSvIVpNSzoEgviN8ycm15opttVomyi2mVXEmDlNGAoDflUjnK6XsCpqd1g+
-	kbRFwW12R3xmTDYmyirdRudtBQL6cIF/HYkSApOI9Dcki3XzaSF2vWk0cqhPcqNvltgQjflG3Gw0R
-	YgdlmoDLR5ZwyyiJx5LA==;
+	List-Owner; bh=K3LFOi04SkEjy209B7APUS/z95ZCVc0oeRsknPTUQIQ=; b=Ic1EJMmvAn+eFB
+	9rJV3Spi9nCI2vXzEXdkx5BV/7lL2yRPUSuaMeE72OKm02QJiEbyFJ2RfvLQwXVXLeXNX+iMqUGOP
+	Dk3SJ4bNGASF8Zq7DJc79Cb8/guP+snWI7k3r6K9EnFH1g9zvJDV7OZlH/M0qqIBJG3DlcoRSIcHw
+	VwPYzcuovJ6bvMUwGA8u9W4Dfo3u3MC4CkKj9V0YIuwHGCvZsew10AJSoJewQB7xvhJ8F8irQgXTt
+	CC+DzrkknSPqGS1TeecDPcQGpGzZiux5skqCks4uNrc6+Yt1/IKrePJtwzDDdTYyjBsomjoRsEh5v
+	Mdc5N5InLw3rEbv12Jpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXXJR-0003Os-HJ; Wed, 20 Nov 2019 21:14:57 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iXXW1-0008QL-7q; Wed, 20 Nov 2019 21:27:57 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXXIh-0002xe-PW
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 21:14:14 +0000
-Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mgr@pengutronix.de>)
- id 1iXXIU-0001J4-Nr; Wed, 20 Nov 2019 22:13:58 +0100
-Received: from mgr by dude.hi.pengutronix.de with local (Exim 4.92)
- (envelope-from <mgr@pengutronix.de>)
- id 1iXXIQ-0001Xb-BH; Wed, 20 Nov 2019 22:13:54 +0100
-From: Michael Grzeschik <m.grzeschik@pengutronix.de>
-To: shawnguo@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
- kernel@pengutronix.de, festevam@gmail.com
-Subject: [PATCH v3 2/2] ARM: dts: imx25: describe maximum speed of internal
- usbhost port1 phy
-Date: Wed, 20 Nov 2019 22:13:34 +0100
-Message-Id: <20191120211334.5580-3-m.grzeschik@pengutronix.de>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191120211334.5580-1-m.grzeschik@pengutronix.de>
+ id 1iXXVr-0008PH-U9
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 21:27:49 +0000
+Received: by mail-lf1-x144.google.com with SMTP id f18so746273lfj.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 13:27:46 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=4qp3wqZnERgahc4/j3UaMttRmXNfWZ10Hcph0ci1u6c=;
+ b=rRXRNY80I7ALa2kx4T0RfT2uUiBApG1viLOC7JlZkW+L2kbTqOZlkMLS/hXurbMo6v
+ 4Iq8ZjTZ3hdLRjgscqK51Kc2sfiXwxMCaFHYscC0W9hOTmMgFx/Hvly1Xfu1HzQ+KELz
+ ahnkfzzy/wIF3SdKBefmsseYzwJSyqDtQQHd5mBVKXxdHu/ZMh/E1QAlP9LzBOo9DWYg
+ LUd0mOTZoC2xyoypO/dOhPaMeDjGGy8jrYTETUbJA+LRu2RB/1k9g4GuF1LT2LOL0YbK
+ eE5n4Jf9/0dw1/3QTwZ0JYmQf4dTdbF7MxzcQpCycB0hGfMVzpyNl5eLU5ORa0DpNs7i
+ ZXuQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=4qp3wqZnERgahc4/j3UaMttRmXNfWZ10Hcph0ci1u6c=;
+ b=eSNLjyNQRW7Fzq2auFh8pl6A5iiwBpufiFQJwndvgj6NnRCjWrs2QI14PumFzuNUz2
+ 7xbzNFQ6FE/2Oz8JCavedoTGovrZ5MoIeM7axNQXLJ/jPSgkCwLIyY2oZ3csrBk/6OnD
+ 3PIcQikznAvoR0O7xgLgL+VE8ay+5aJjKJDxY4KdyJTNXum1aOUBCsKbxS2oIrhTr7c7
+ TZ64myWSBu1RtClSpkM2OLClZ6npKgKtyqQLYwj0HlPi5LBCfZeqrYe8ClePfFomKVbN
+ 91mtZzzYIicc0z6I2fnyBdBtHSXoUN8go0Cn/qvxUxDfOG3Af5UwM0gLAz+/GcZMswBZ
+ 1D5Q==
+X-Gm-Message-State: APjAAAWcpBhifvc97bN8ANfub3QdpZsw5qz3QiCOSa3kzogLqnDwJF3b
+ mU2qDIIJbStjlCrmqA8bN2PRi0cQaejeyb41W+Oveg==
+X-Google-Smtp-Source: APXvYqw1Mw2ql/sLIwwEbm33HOuERPGZBkNXPALJtaLRCm7RMoBF0wq9ZUM/gNNZJvvK54NtyY9exRM/sabQ9R8NhaU=
+X-Received: by 2002:a19:c143:: with SMTP id r64mr4656279lff.90.1574285265239; 
+ Wed, 20 Nov 2019 13:27:45 -0800 (PST)
+MIME-Version: 1.0
 References: <20191120082955.3ovsoziurntmv7by@pengutronix.de>
  <20191120211334.5580-1-m.grzeschik@pengutronix.de>
-MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
-X-SA-Exim-Mail-From: mgr@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ <20191120211334.5580-2-m.grzeschik@pengutronix.de>
+In-Reply-To: <20191120211334.5580-2-m.grzeschik@pengutronix.de>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Wed, 20 Nov 2019 18:27:45 -0300
+Message-ID: <CAOMZO5A9dhEBF-uC39nbg6E2hcd5LukNXK2V7TmPrfAbWJOCCw@mail.gmail.com>
+Subject: Re: [PATCH v3 1/2] ARM: dts: imx25: consolidate properties of
+ usbhost1 in dtsi file
+To: Michael Grzeschik <m.grzeschik@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_131411_832987_CBD77AF3 
-X-CRM114-Status: UNSURE (   9.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191120_132747_972359_BD6F99CF 
+X-CRM114-Status: GOOD (  10.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,36 +95,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-imx@nxp.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Sascha Hauer <kernel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The internal usbphy of usbhost port1 is only full-speed capable.
-We set this limitation in the dtsi.
+On Wed, Nov 20, 2019 at 6:14 PM Michael Grzeschik
+<m.grzeschik@pengutronix.de> wrote:
+>
+> The usb port represented by &usbhost1 uses an USB phy internal to the
+> SoC. We add the phy_type to the base dtsi so the board dts only have to
+> overwrite it if they use a different configuration. While at it we also
+> pin the usbhost port to host mode.
+>
+> Signed-off-by: Michael Grzeschik <m.grzeschik@pengutronix.de>
 
-Signed-off-by: Michael Grzeschik <m.grzeschik@pengutronix.de>
----
- arch/arm/boot/dts/imx25.dtsi | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm/boot/dts/imx25.dtsi b/arch/arm/boot/dts/imx25.dtsi
-index 7c7795b40ee0c..40b95a290bd6b 100644
---- a/arch/arm/boot/dts/imx25.dtsi
-+++ b/arch/arm/boot/dts/imx25.dtsi
-@@ -570,6 +570,7 @@
- 				clock-names = "ipg", "ahb", "per";
- 				fsl,usbmisc = <&usbmisc 1>;
- 				fsl,usbphy = <&usbphy1>;
-+				maximum-speed = "full-speed";
- 				phy_type = "serial";
- 				dr_mode = "host";
- 				status = "disabled";
--- 
-2.24.0
-
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
