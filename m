@@ -2,74 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7AA0104046
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 17:06:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E6D010404D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 17:07:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H/m1TL3sqIfvHc7v1ZSRMDY4oHY18nI4yehY5k4VF4A=; b=BUYRxidFpjgJsW
-	JV3IRAapiTwyNGxW0z3WGT3TL4bjfdCxJRrfdmqPIhRxDBm4nksIBkcUYjfCocwEGOmtkx6yjJNjo
-	DbxsWbpC1+k69ttuh41jNVB6bUbUW2vm0g9+iqtCmV8asqCLjuV+VuGQHM07k2XzUSAN1/Opb02SD
-	9Lni91u76FKpuBSAQgchddxjqaCOEt+1LkWJP8Vh5XqV4SNxpIWC0pNVoFpKkaloOcrsaV2GlGsK5
-	mSFXizn1FEC3UZ2YgcmK/W3W/fEaxDwxUIKwzyjuXHAk5qs6Cf3Kta7fMClAL7ewE/ekb8osMmgn2
-	uEmzTWU9BQj/GtOdKu6Q==;
+	List-Owner; bh=HH7Id1ig/vG7zgfjw2gO3/BrRz4M0bsOzRxhQKRsqhk=; b=h9ehlWOwLuL90R
+	d9AEmOcBRUiwJJVtkTMRsUfq3ZVsQOYU9bKk18ZzlbAhaIBxk7W9a8dydLKHGk78obRvuZ/Wr79o3
+	7YpAcHV8zTwnpqUx3keb/uli5BpAPPTI0Bfg9q4Xxm8VCU/VgLj3lNlVbOjk6buix07ttIS7bt/O3
+	n/6uoMrlwqLqIXb5HtOL7XVraLHRUfUcJq6P04pavMB0nnlynkl94XyHN/JMnfE2GtM5j/PvxU2ba
+	LMo7ParPxBznjJrAhXyLr5vARzqNomlL5aHnd4u9peKC8PR4TVFQhXcjaP1aSuJgF3k0bknPgDQp2
+	uhwqbmpXvMANRBTCKqVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXSUI-0003lR-Ct; Wed, 20 Nov 2019 16:05:50 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iXSVr-0004J9-2q; Wed, 20 Nov 2019 16:07:27 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXSUA-0003kw-5O
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 16:05:43 +0000
-Received: by mail-wr1-x443.google.com with SMTP id s5so473613wrw.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 08:05:39 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=8HkFmKUlELYRKY5nvgrfOS99YjUv3ULICRZwk6a5wrM=;
- b=DELBtj6kup7zWU0Y1RuRWL5s3snHLoAfsKrBp1kYP6ZOien2dubcdCE9PmspZXieDm
- ab6/35sR0CeBaSewHofTA8/CUa3Z5VKIHnHNOloGvR6Gfmfsn6iVe1reQ9Yp3TNydDHm
- cuX0YlOlRbpDRHx42+a9OSQ7CLLySHWgYDuUHv8v8qpRrSjOVgUiyluuZf17H4a50tzL
- 8ege6KQYJKOWVjWVyCjeWWxDU4Vm0f0ILpAgHVMcOvmDzbspUABa7dYbjxE+VP/Vg2yy
- 4hTa2FW9WZPg12n5oJBCP5EPY68Irq5W2xLvVzIT60PPJQJFz+BMBrqJBz5PjiBUD2xR
- 6w0w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=8HkFmKUlELYRKY5nvgrfOS99YjUv3ULICRZwk6a5wrM=;
- b=TY8awplcbxEx9VUifK+W2fedaO23bE1kdfYk+4Ols/m6ytUclQwECJA47kptJVgZGF
- CRa+R1EtcshcDib7lHnlUrD2Cyu2oO0c0TOgpjTAMdgpsm0CkP5Qwu7ggdcrJ/2nlX6n
- 2Ui14guZqvelXoMCj9b/ssdw60PwaSmEsARE9D8xo5rySvMdw91vqtvvJeMDam3L0iPV
- UR+Sri4cE9RL/1P1roRkj0U0ql5y1gzhe+Atx4cTJW8g5NbfYsFZa3w8y32oNx0DqFRA
- Dq1vGiHFo9mhULmsFCFXR3Xkz8WN57QWLcXPtKD+VxgHqJFdDA3mygLiCPy2a6G8GTOY
- n4Gw==
-X-Gm-Message-State: APjAAAUnmiFTw1ZiPLJgDpXRllHzh3TGYrjYNHU8Bc1xxSf9tcg0zBIt
- fh8E3a6NB++trG+ndSPi51rkY8y6DKGK5BqgGRmoCw==
-X-Google-Smtp-Source: APXvYqwT/7hFW67UkE8DY8p73hmaGLH1RqwtzOJw7gfG9L5yLafb9uLjZuYMHaqogxpdwzfB92d8Ilr1yXZup2AALF0=
-X-Received: by 2002:adf:f743:: with SMTP id z3mr4239569wrp.200.1574265937885; 
- Wed, 20 Nov 2019 08:05:37 -0800 (PST)
+ id 1iXSVh-0004In-Cx
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 16:07:18 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8019B20674;
+ Wed, 20 Nov 2019 16:07:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574266037;
+ bh=JqtM3uieK4F0AT1KOQl+ms5JG2OW35LEmqi8mfgeS28=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=IdN+TGHv8cjFuVQV2V+NWGv5035/01gZw8/X/NiN/YfSKsHhl/sH+J896AiOfEmRv
+ CwcngduCPLQ7Mr5M966I+uIwfPJPOIZKoZU/BcQHt+VVUeAMLIhuwIS+0L3sjbzid+
+ WhOiVNmkpTRFefgOsN5CMmtmURo3D/cH/QDQXyFU=
+Date: Wed, 20 Nov 2019 16:07:12 +0000
+From: Will Deacon <will@kernel.org>
+To: Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
+Subject: Re: [PATCH] iommu/arm-smmu-v3: Populate VMID field for
+ CMDQ_OP_TLBI_NH_VA
+Message-ID: <20191120160711.GA31165@willie-the-truck>
+References: <20191113161138.22336-1-shameerali.kolothum.thodi@huawei.com>
 MIME-Version: 1.0
-References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
-In-Reply-To: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 20 Nov 2019 17:05:26 +0100
-Message-ID: <CAKv+Gu85AMezxHpNhBOtnK3X6P32qhZ5LtvFOSpzo7ju4=wBAA@mail.gmail.com>
-Subject: Re: [PATCH v2 00/14] arm64: return address signing
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20191113161138.22336-1-shameerali.kolothum.thodi@huawei.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_080542_233089_CDC0D73F 
-X-CRM114-Status: GOOD (  17.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191120_080717_460310_B0C7F2A9 
+X-CRM114-Status: GOOD (  14.15  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -79,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,81 +77,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: joro@8bytes.org, linux-kernel@vger.kernel.org, xuwei5@hisilicon.com,
+ linuxarm@huawei.com, iommu@lists.linux-foundation.org, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 19 Nov 2019 at 13:33, Amit Daniel Kachhap <amit.kachhap@arm.com> wrote:
->
-> Hi,
->
-> This series improves function return address protection for the arm64 kernel, by
-> compiling the kernel with ARMv8.3 Pointer Authentication instructions (referred
-> ptrauth hereafter). This should help protect the kernel against attacks using
-> return-oriented programming.
->
-> This series is based on v5.4-rc8.
->
-> High-level changes since v1 [1] (detailed changes are listed in patches):
->  - Dropped patch "arm64: cpufeature: handle conflicts based on capability"
->    as pointed by Suzuki.
->  - Patch 4, 10, 12 and 14 are added newly added.
->  - Patch 12 adds support to block probe of authenticate ptrauth instructions.
->  - Patch 14 adds support for lkdtm to test ptrauth.
->  - In the last version if secondary cpus do have ptrauth and primary cpu do not
->    then the secondary will silently disable ptrauth and keep running. This version
->    creates panic in this case as suggested by Suzuki.
->  - Many suggestion from James implemented.
->
-> This series do not implement few things or have known limitations:
->  - kdump tool may need some rework to work with ptrauth.
->  - Generate/Get some randomness for ptrauth keys during kernel early booting.
->
+On Wed, Nov 13, 2019 at 04:11:38PM +0000, Shameer Kolothum wrote:
+> CMDQ_OP_TLBI_NH_VA requires VMID and this was missing since
+> commit 1c27df1c0a82 ("iommu/arm-smmu: Use correct address mask
+> for CMD_TLBI_S2_IPA"). Add it back.
+> 
+> Fixes: 1c27df1c0a82 ("iommu/arm-smmu: Use correct address mask for CMD_TLBI_S2_IPA")
+> Signed-off-by: Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
+> ---
+> This came to light while verifying the "SMMUv3 Nested Stage Setup"
+> series by Eric. Please find the discusiion here,
+> https://lore.kernel.org/patchwork/cover/1099617/
+> ---
+>  drivers/iommu/arm-smmu-v3.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 8da93e730d6f..9b5274346df0 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -856,6 +856,7 @@ static int arm_smmu_cmdq_build_cmd(u64 *cmd, struct arm_smmu_cmdq_ent *ent)
+>  		cmd[1] |= FIELD_PREP(CMDQ_CFGI_1_RANGE, 31);
+>  		break;
+>  	case CMDQ_OP_TLBI_NH_VA:
+> +		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_VMID, ent->tlbi.vmid);
+>  		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_ASID, ent->tlbi.asid);
+>  		cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_LEAF, ent->tlbi.leaf);
+>  		cmd[1] |= ent->tlbi.addr & CMDQ_TLBI_1_VA_MASK;
 
-Hello Amit,
+Thanks. I don't think this matters with the way things currently work (we
+only have VMID 0 for stage-1 domains), so I'll queue it for 5.6.
 
-As we discussed off line, we still need some place to initialize the
-PAC keys for the boot CPU.
-
-We should follow the same approach as boot_init_stack_canary() is
-currently taking: it is called from start_kernel(), never returns, and
-it is marked as __always_inline, which means it does not set up a
-stack frame and so its return address will not get signed with the
-wrong key.
-
-Something like the below should be acceptable for a generic header
-file, and we can wire up kernel PAC in the arm64 version of the
-stackprotector.h header whichever way we like.
-
--- 
-Ard.
-
-
-
-
-diff --git a/include/linux/stackprotector.h b/include/linux/stackprotector.h
-index 6b792d080eee..4c678c4fec58 100644
---- a/include/linux/stackprotector.h
-+++ b/include/linux/stackprotector.h
-@@ -6,7 +6,7 @@
- #include <linux/sched.h>
- #include <linux/random.h>
-
--#ifdef CONFIG_STACKPROTECTOR
-+#if defined(CONFIG_STACKPROTECTOR) || defined(CONFIG_ARM64_PTR_AUTH)
- # include <asm/stackprotector.h>
- #else
- static inline void boot_init_stack_canary(void)
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
