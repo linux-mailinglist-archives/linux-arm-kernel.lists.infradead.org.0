@@ -2,56 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EEED1044FA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 21:25:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA692104504
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 21:26:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kkzulb/ldgjSqZEFnL//czumX5Zx9JxgeGXArzh08to=; b=ud9jPcNlm+dZFp/gViwdPapr2
-	1AGkD2qLmQK9pRTr6I/IgfpwYMfd0BhI4fXkhPJ2wMVuEJXKGB2300rt/t/D+l6jedtv7+hdf/GSq
-	tO0MlEpiwzt9P5jE7KJstS5Hk3dbxUC3wJ35PhtDBdQP+Nzbf4ARHeloxevX8ZTrBUki7m1CMVshW
-	3Zcu4Z+BB5rbCbXFW2dPvsJTTVcbT99/aHwHEIhw2EOz4yWFLZk0Qb8ADU1uqhL/cKu6KklEOv9sw
-	emE0x9DD1Ocg4ByKU8W8kAFVBazNxlyfZX/gtKSvazZ0dM6wivu2yYgy/TJrUr2jo4vxoNJKiHx2x
-	z/SyD81gQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nu/tS+R7cSbjkG+wnE/XW6EQfcHANposoIkWIlKy/i0=; b=ntNPosm9MeO/tb
+	Mq/WFpaHWeBJcc0JjxZkaGPDQs5RjaCMwCdsJIEvV7ZKIDd3tj8mOJ/x5dceSizplkMeaAPDCEz/V
+	/csV2RhrqAVSjm/WCumGHL9eEtNnN9DDZHSBeJwLm9rR1EFkCa7ZAY3vZjsJ91vqpa7yFIiH5jeCW
+	FpgDA4QQ3XlLlM6LeHK+dDknlnSHeVwJ5oOQw961xrZ5Exe8XWQ/9tH8wt1gN/Q+z26nenoebxo1W
+	Dh2Kj3U/H4dtCVF1g/HD7OgIDYn1AHQBrWgPsEGeiKH4eIFNhFH/dkQm6nwkgrRPQ8Qbela625uFq
+	+vDiHiDeKe27lj9aMBKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXWXF-0001x3-0R; Wed, 20 Nov 2019 20:25:09 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iXWYo-0003d5-Ne; Wed, 20 Nov 2019 20:26:47 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXWWw-0001wc-Cp; Wed, 20 Nov 2019 20:24:51 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id F0DC4B206;
- Wed, 20 Nov 2019 20:24:48 +0000 (UTC)
-Message-ID: <681665dee34a47f26f7832d2c3e0e68a85b69e3f.camel@suse.de>
-Subject: Re: [PATCH v2 4/6] PCI: brcmstb: add Broadcom STB PCIe host
- controller driver
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Jeremy Linton <jeremy.linton@arm.com>, Andrew Murray
- <andrew.murray@arm.com>
-Date: Wed, 20 Nov 2019 21:24:47 +0100
-In-Reply-To: <f2202c4d-c2b4-c06a-8864-432380d0181f@arm.com>
-References: <20191112155926.16476-1-nsaenzjulienne@suse.de>
- <20191112155926.16476-5-nsaenzjulienne@suse.de>
- <20191119162502.GS43905@e119886-lin.cambridge.arm.com>
- <f2202c4d-c2b4-c06a-8864-432380d0181f@arm.com>
-User-Agent: Evolution 3.34.1 
+ id 1iXWYe-0003cW-Rt
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 20:26:38 +0000
+Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
+ [209.85.160.176])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B99DB20898
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 20:26:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574281595;
+ bh=AEVIorR6/VAlI4BJXRw6tPbken7vkQ0aTtyblIbcMdo=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=YsO2Djb3qDyV5DUI+gOfSBEoyXrLr4bGjbyQsw4ZyMIjgrbsGPYPzv+oYJneg+R/Q
+ lBr2gXtZLDWn8l/hjcPNRxT8TShMH2IIMvdXNP3uImH3y+gg4xiIQvklZTexnD3O2v
+ ZO3RzynVtL7N12dcNqyMglcvuVYYyjb/NP0T1OEA=
+Received: by mail-qt1-f176.google.com with SMTP id g50so1004754qtb.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 12:26:35 -0800 (PST)
+X-Gm-Message-State: APjAAAXYT4V/bwNIO5FEnS+3qMc4RhVqHz0YQ3LMgkRS+8Vsy5R+cTAc
+ UIRmISw2oFO0BdDXFRn0tPsbgHnT1Jy4zttX9A==
+X-Google-Smtp-Source: APXvYqx7fnGdtnkeuRvwWhsOVISMRdUYUIw3lX6FCbHTqaZSFv6tvBQHF5T6swA1/jBii4Jde8nmZdXen76KVGu+rkc=
+X-Received: by 2002:ac8:73ce:: with SMTP id v14mr4714242qtp.136.1574281594774; 
+ Wed, 20 Nov 2019 12:26:34 -0800 (PST)
 MIME-Version: 1.0
+References: <20191118101420.23610-1-arnaud.pouliquen@st.com>
+In-Reply-To: <20191118101420.23610-1-arnaud.pouliquen@st.com>
+From: Rob Herring <robh@kernel.org>
+Date: Wed, 20 Nov 2019 14:26:23 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+42wx1AJO=jXXBhmaKMkBq-RtoF+kxVjS2z9fSwhcaEQ@mail.gmail.com>
+Message-ID: <CAL_Jsq+42wx1AJO=jXXBhmaKMkBq-RtoF+kxVjS2z9fSwhcaEQ@mail.gmail.com>
+Subject: Re: [PATCH v2] dt-bindings: mailbox: convert stm32-ipcc to json-schema
+To: Arnaud Pouliquen <arnaud.pouliquen@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_122450_580563_A7686A0F 
-X-CRM114-Status: GOOD (  16.25  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191120_122636_946510_11E46AF2 
+X-CRM114-Status: GOOD (  18.40  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,91 +85,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, mbrugger@suse.com, maz@kernel.org,
- phil@raspberrypi.org, linux-kernel@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
- james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
- Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4455797270821202912=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Jassi Brar <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Fabien Dessenne <fabien.dessenne@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Nov 18, 2019 at 4:15 AM Arnaud Pouliquen
+<arnaud.pouliquen@st.com> wrote:
+>
+> Convert the STM32 IPCC bindings to DT schema format using
+> json-schema
+>
+> Signed-off-by: Arnaud Pouliquen <arnaud.pouliquen@st.com>
+> ---
+>  .../bindings/mailbox/st,stm32-ipcc.yaml       | 91 +++++++++++++++++++
+>  .../bindings/mailbox/stm32-ipcc.txt           | 47 ----------
+>  2 files changed, 91 insertions(+), 47 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/mailbox/st,stm32-ipcc.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/mailbox/stm32-ipcc.txt
 
---===============4455797270821202912==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-OoRtF6MuxmmZ/WkBbsKp"
+Thanks for helping me find 2 meta-schema errors. :) Please update
+dt-schema and re-run 'make dt_binding_check'.
 
+> diff --git a/Documentation/devicetree/bindings/mailbox/st,stm32-ipcc.yaml b/Documentation/devicetree/bindings/mailbox/st,stm32-ipcc.yaml
+> new file mode 100644
+> index 000000000000..90157d4deac1
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mailbox/st,stm32-ipcc.yaml
+> @@ -0,0 +1,91 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/mailbox/st,stm32-ipcc.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: STMicroelectronics STM32 IPC controller bindings
+> +
+> +description:
+> +  The IPCC block provides a non blocking signaling mechanism to post and
+> +  retrieve messages in an atomic way between two processors.
+> +  It provides the signaling for N bidirectionnal channels. The number of
+> +  channels (N) can be read from a dedicated register.
+> +
+> +maintainers:
+> +  - Fabien Dessenne <fabien.dessenne@st.com>
+> +  - Arnaud Pouliquen <arnaud.pouliquen@st.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: st,stm32mp1-ipcc
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +     maxItems: 1
+> +
+> +  interrupts:
+> +    items:
+> +      - description: rx channel occupied
+> +      - description: tx channel free
+> +      - description: wakeup source
+> +    minItems: 2
+> +    maxItems: 3
+> +
+> +  interrupt-names:
+> +    items:
+> +      enums: [ rx, tx, wakeup ]
 
---=-OoRtF6MuxmmZ/WkBbsKp
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+'enums' is not a valid keyword. 'enum' is valid, but his should be in
+a defined order (so a list of items).
 
-Hi Jeremy,
+> +    minItems: 2
+> +    maxItems: 3
+> +
+> +  wakeup-source:
+> +    $ref: /schemas/types.yaml#/definitions/flag
+> +    description:
+> +      Enables wake up of host system on wakeup IRQ assertion.
 
-On Tue, 2019-11-19 at 12:20 -0600, Jeremy Linton wrote:
-> Hi,
->=20
-> On 11/19/19 10:25 AM, Andrew Murray wrote:
-> > On Tue, Nov 12, 2019 at 04:59:23PM +0100, Nicolas Saenz Julienne wrote:
-> > > From: Jim Quinlan <james.quinlan@broadcom.com>
-> > >=20
-> > > This commit adds the basic Broadcom STB PCIe controller.  Missing is =
-the
-> > > ability to process MSI. This functionality is added in a subsequent
-> > > commit.
-> > >=20
-> > > The PCIe block contains an MDIO interface.  This is a local interface
-> > > only accessible by the PCIe controller.  It cannot be used or shared
-> > > by any other HW.  As such, the small amount of code for this
-> > > controller is included in this driver as there is little upside to pu=
-t
-> > > it elsewhere.
-> >=20
-> > This commit message hasn't changed, despite earlier feedback.
-> >=20
->=20
-> Also, unless i'm mistaken this controller isn't I/O coherent on the rpi.
+Just 'true' is enough here. Assume we have a common definition.
 
-I'm not sure I get what you mean by I/O coherent.
+> +
+> +  "#mbox-cells":
+> +    const: 1
+> +
+> +  st,proc-id:
+> +    description: Processor id using the mailbox (0 or 1)
+> +    allOf:
+> +      - minimum: 0
+> +      - maximum: 1
 
-Regards,
-Nicolas
+'enum: [ 0, 1 ]' is more concise.
 
+Also, needs a $ref to the type.
 
---=-OoRtF6MuxmmZ/WkBbsKp
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
+> +      - default: 0
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - st,proc-id
+> +  - clocks
+> +  - interrupt-names
+> +  - "#mbox-cells"
+> +
+> +oneOf:
+> +  - required:
+> +      - interrupts
+> +  - required:
+> +      - interrupts-extended
 
------BEGIN PGP SIGNATURE-----
+The tooling takes care of this for you. Just list 'interrupts' as required.
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3VoQ8ACgkQlfZmHno8
-x/7CIQf+N1s97C0orm13r3hHzluqTXyvjXEFM7l6iozSh3owLfyySyUqoQMk4GuU
-c9lMxac+7u+lhG6r4TuAQnolTAgLA1Ufzjk1ZpZZ5lBI+meoPyouMUxMh85wxALx
-JObhQOg/NLBFb/pLdfZeWrUgSxicDkJlkU9Wm63FItku5yaQjW0jfCNmAm6WpTXK
-91SvkHzg10I5r4jHMyQw7Rqcet+KuMn8vyCgxLX9VkputmAPdl1yzLoXjvdZBPpO
-8PHcZNiomyFwTEz1AFjKxDbuNzlWkAC/zSMGZl/skIC4FJPpNx3SqVC1UDAonI7+
-0i4lMZKzCutFxwH1yIXE93bHPpQnAw==
-=Z4RA
------END PGP SIGNATURE-----
-
---=-OoRtF6MuxmmZ/WkBbsKp--
-
-
-
---===============4455797270821202912==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/stm32mp1-clks.h>
+> +    ipcc: mailbox@4c001000 {
+> +      compatible = "st,stm32mp1-ipcc";
+> +      #mbox-cells = <1>;
+> +      reg = <0x4c001000 0x400>;
+> +      st,proc-id = <0>;
+> +      interrupts-extended = <&intc GIC_SPI 100 IRQ_TYPE_NONE>,
+> +                     <&intc GIC_SPI 101 IRQ_TYPE_NONE>,
+> +                     <&aiec 62 1>;
+> +      interrupt-names = "rx", "tx", "wakeup";
+> +      clocks = <&rcc_clk IPCC>;
+> +      wakeup-source;
+> +    };
+> +
+> +...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4455797270821202912==--
-
-
