@@ -2,68 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46282104331
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 19:21:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69C33104343
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 19:24:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=buQkKQr2kzp1R349gVXmFJWA8lppwdB6aMR8gsUdIUc=; b=D/yMmtC+4A26Qi
-	g2siA9+YTVchbhI/4VL67jQEttPV5JllddSndPfK0Y838R8mxTfAtYLzY3xZRhoQ+vdHn6jgUM4ge
-	Vk0XjZ+0DEHsfJc3l46IGo1dFsrZgTywzwZS0Kgv4WvKD7dTkuBQiQLxXwGnjVJkbAu3JHD/scDTN
-	880F+qJnhzA4tKRRG/17AltadgJiu0rC48vHvlRb33YMW1brm1Qon3ieWCIV9rFHPmLzt8zgyMm2w
-	SYlZGDWmhinu6TIc7gae49KavbtgrVKyRU3NXNhxGQn6bNmctQYv6+eqtuPlBqrtaBR0HaP4hJEa8
-	3hAzFNBCJxYySqxLIjwQ==;
+	List-Owner; bh=H0n2lEGKx7QPCmaJoRogffivvR5w1OBa9vkSJtxfa9A=; b=jYsSNsPSwy0b0l
+	DVZmbu6P7WZOw6AXSTHmgHqxELpi0VV4my7yh09If/3QaqBZ3ewBnVS9XidVtVJGDrLOBWvpbZvJ9
+	bUrEFfoH0u4qa2Lnit3jZufnQ/KCbQ/0o9uVSnby0bCM/h/g3hFaqPILWB7GCt24/aWyRGcVpb43b
+	uel5kQ3W3+HfZg0IK1m3+DtkekWBr/RiEoDn7zYj4L1gabWVcFLgmO5OG/nVr0LOszaAG4uR6LyzM
+	TmMP5j4yeVpRoWzBHcEO/cYyqplceaOVOgVPQifHM5Sry9vwL3JSS/cfJNLX7y7y96IP2deW/wggw
+	3xAQOLjWBABnYCSz1XLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXUb5-0007X2-CT; Wed, 20 Nov 2019 18:20:59 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::6])
+	id 1iXUeG-0000sq-5F; Wed, 20 Nov 2019 18:24:16 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXUa5-0005dy-PL
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 18:20:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1574273991;
- s=strato-dkim-0002; d=gerhold.net;
- h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=ZFJOLQgrYuXEnDzJokI9lmcvSfRFsuCL6OMci60fMdM=;
- b=tOIxgJa9g+5ZW2zDqL9w1BfP9wEhOafbmfRaN+GlWy5ck2KjtlmYu6Je/TiiOK3C3o
- KshVfVWuw3fQPyAh62bzSFjHA7WW8cxLf9r0Mm1DuxUYGdA10e7rNxRQsZNT9t8NUO+v
- EMvndn75ndw9BfHGZPHsGfO0/Vj0GlXhKFjCTrtLT8WJjG7IElAnnIG0k+veHeMW0Mjq
- auZjyfTNzfyjd9b8+yEXysW9rY2n+RozegREttX162C91SUKPQSJxC27aZIa0kEpXsHG
- qer2xT5aEacA4OEXcemxCtATdholDczPiTE2uyaEmd6gaCeTj0h/s/myWzqqe5YWDdTO
- 32Xg==
-X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVORvLd4SsytBXQrEOHTIXs8Lvtn4="
-X-RZG-CLASS-ID: mo00
-Received: from localhost.localdomain by smtp.strato.de (RZmta 44.29.0 AUTH)
- with ESMTPSA id e07688vAKIJmvAb
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
- 521 ECDH bits, eq. 15360 bits RSA))
- (Client did not present a certificate);
- Wed, 20 Nov 2019 19:19:48 +0100 (CET)
-From: Stephan Gerhold <stephan@gerhold.net>
-To: Linus Walleij <linus.walleij@linaro.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v2 4/4] dt-bindings: arm: Document compatibles for Ux500 boards
-Date: Wed, 20 Nov 2019 19:18:57 +0100
-Message-Id: <20191120181857.97174-4-stephan@gerhold.net>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191120181857.97174-1-stephan@gerhold.net>
-References: <20191120181857.97174-1-stephan@gerhold.net>
-MIME-Version: 1.0
+ id 1iXUe4-0000rW-9B
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 18:24:05 +0000
+Received: by mail-wm1-x342.google.com with SMTP id b17so735715wmj.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 10:24:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=ctnDyGHzcexXd+oP584wBl9d7IxFFJWy5ZdVe62LHoE=;
+ b=VL1V16VFQxZ8XMocZhWLNpaqWaciq49VEDgTT20hTZ2yyx5FJ/yiZs0L9Sk1ZjgBEK
+ ZQFwsDZMY4sQSyrSluU//F0W/SafTb60GaqzxPcYnMCkdKMrxsYxLv64vtUBgUSaN+vY
+ rUZY5N3I4wP8T67v1xbS7tpahYg9M2b2njujgRU8RfCo8J3Gs5m7wX6mbOLkOnJtXhYm
+ vFjCIbWxIQaLARPh3facBK7DFjrAUs4xeHXTq3ABYGeq5h8eJL1wagohiNRUwtReZ66b
+ acMMAu4ox1rvuHa12fYh4vee2/XbX6/7G80yZi5E8zAG5bw9D6eqf2OrPEgCs1eE4PzL
+ pNNg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=ctnDyGHzcexXd+oP584wBl9d7IxFFJWy5ZdVe62LHoE=;
+ b=uhmuTwpTXjmEr1JWrYTHCrAg7kYk3+BhUqci3llXhNgzBahUlUxg5lTTBYagJXfnqv
+ 6Sv4+1/S7HCOcxCojUOAdVlUHDlnIxAcYWDM5J3vhkQIRJLtDThWQmvmE0+zxjofrEyp
+ ZQ9EGqjbpK/uOjmun6HyTpeziN7fP0Zsu24udWewnDi/16UGpF4+R0JBauu/jkKXaeoB
+ M/lXMlncTxN+Wnottt1/N5/juk/dh4gTFUv6+JB9h8cYaiD9CpqsYl8CMzUPCNh+7vFw
+ Chc9cQihv+K8w8a1A9A7kqIQbTnjATkhaJrHaY/9s+i7wCLYQKvS4DUUda64xN+dc3oB
+ efJQ==
+X-Gm-Message-State: APjAAAWuQPeqAWArJWWrm5Bo1dtgwJIcTvWcUck7qd8CRK1nG+EP9O79
+ mssBxDcHlo40J17hS9ZO4uY=
+X-Google-Smtp-Source: APXvYqwt5vSje349iw69oqaDAMKixDjb6/bUVwR02G1KgTftbQDyi/rylGLW1hUSGLsUrQbk95hTpQ==
+X-Received: by 2002:a1c:4907:: with SMTP id w7mr4848109wma.62.1574274241330;
+ Wed, 20 Nov 2019 10:24:01 -0800 (PST)
+Received: from giga-mm ([62.68.23.15])
+ by smtp.gmail.com with ESMTPSA id g184sm154611wma.8.2019.11.20.10.23.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 20 Nov 2019 10:24:00 -0800 (PST)
+Date: Wed, 20 Nov 2019 19:23:58 +0100
+From: Alexander Sverdlin <alexander.sverdlin@gmail.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH] ARM: Fix Kconfig indentation
+Message-Id: <20191120192358.389c43da67a4d07c0d19b90d@gmail.com>
+In-Reply-To: <20191120133734.12345-1-krzk@kernel.org>
+References: <20191120133734.12345-1-krzk@kernel.org>
+X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; x86_64-unknown-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_101957_973120_B756430E 
-X-CRM114-Status: GOOD (  11.90  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191120_102404_333441_A2ECFE94 
+X-CRM114-Status: GOOD (  15.01  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5302:0:0:6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alexander.sverdlin[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -82,79 +98,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stephan Gerhold <stephan@gerhold.net>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Barry Song <baohua@kernel.org>, linux-omap@vger.kernel.org,
+ Lubomir Rintel <lkundrak@v3.sk>, Tony Lindgren <tony@atomide.com>,
+ Linus Walleij <linusw@kernel.org>, Aaro Koskinen <aaro.koskinen@iki.fi>,
+ linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ Hartley Sweeten <hsweeten@visionengravers.com>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Halasa <khalasa@piap.pl>, linux-samsung-soc@vger.kernel.org,
+ Imre Kaloz <kaloz@openwrt.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The device-specific compatible values used by the Ux500 boards
-were not documented so far. Add a new simple schema to document them.
+Hi Krzysztof,
 
-Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
----
-Changes in v2: none
-v1: https://lore.kernel.org/linux-devicetree/20191120121720.72845-3-stephan@gerhold.net/
----
- .../devicetree/bindings/arm/ux500.yaml        | 31 +++++++++++++++++++
- MAINTAINERS                                   |  1 +
- 2 files changed, 32 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/arm/ux500.yaml
+for the EP93xx part,
 
-diff --git a/Documentation/devicetree/bindings/arm/ux500.yaml b/Documentation/devicetree/bindings/arm/ux500.yaml
-new file mode 100644
-index 000000000000..006cb4a5f331
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/ux500.yaml
-@@ -0,0 +1,31 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/ux500.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Ux500 platforms device tree bindings
-+
-+maintainers:
-+  - Linus Walleij <linus.walleij@linaro.org>
-+
-+properties:
-+  $nodename:
-+    const: '/'
-+  compatible:
-+    oneOf:
-+
-+      - description: ST-Ericsson HREF (pre-v60)
-+        items:
-+          - const: st-ericsson,mop500
-+          - const: st-ericsson,u8500
-+
-+      - description: ST-Ericsson HREF (v60+)
-+        items:
-+          - const: st-ericsson,hrefv60+
-+          - const: st-ericsson,u8500
-+
-+      - description: Calao Systems Snowball
-+        items:
-+          - const: calaosystems,snowball-a9500
-+          - const: st-ericsson,u9500
-diff --git a/MAINTAINERS b/MAINTAINERS
-index e4f170d8bc29..a2fcbfca90de 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -2020,6 +2020,7 @@ F:	drivers/rtc/rtc-pl031.c
- F:	drivers/watchdog/coh901327_wdt.c
- F:	Documentation/devicetree/bindings/arm/ste-*
- F:	Documentation/devicetree/bindings/arm/ux500/
-+F:	Documentation/devicetree/bindings/arm/ux500.yaml
- T:	git git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-nomadik.git
+On Wed, 20 Nov 2019 21:37:34 +0800
+Krzysztof Kozlowski <krzk@kernel.org> wrote:
+
+> Adjust indentation from spaces to tab (+optional two spaces) as in
+> coding style with command like:
+> 	$ sed -e 's/^        /\t/' -i */Kconfig
+>
+
+Acked-by: Alexander Sverdlin <alexander.sverdlin@gmail.com>
  
- ARM/NUVOTON NPCM ARCHITECTURE
--- 
-2.24.0
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> ---
+>  arch/arm/Kconfig-nommu        | 10 +++++-----
+>  arch/arm/Kconfig.debug        |  4 ++--
+>  arch/arm/mach-ep93xx/Kconfig  |  8 ++++----
+>  arch/arm/mach-ixp4xx/Kconfig  | 16 ++++++++--------
+>  arch/arm/mach-mmp/Kconfig     |  2 +-
+>  arch/arm/mach-omap1/Kconfig   | 14 +++++++-------
+>  arch/arm/mach-prima2/Kconfig  |  6 +++---
+>  arch/arm/mach-s3c24xx/Kconfig |  4 ++--
+>  arch/arm/mach-s3c64xx/Kconfig |  6 +++---
+>  arch/arm/plat-samsung/Kconfig |  2 +-
+>  10 files changed, 36 insertions(+), 36 deletions(-)
+> 
 
+[...]
+
+> diff --git a/arch/arm/mach-ep93xx/Kconfig b/arch/arm/mach-ep93xx/Kconfig
+> index f2db5fd38145..bf81dfab7f1b 100644
+> --- a/arch/arm/mach-ep93xx/Kconfig
+> +++ b/arch/arm/mach-ep93xx/Kconfig
+> @@ -126,10 +126,10 @@ config MACH_MICRO9S
+>  	  Contec Micro9-Slim board.
+>  
+>  config MACH_SIM_ONE
+> -        bool "Support Simplemachines Sim.One board"
+> -        help
+> -          Say 'Y' here if you want your kernel to support the
+> -          Simplemachines Sim.One board.
+> +	bool "Support Simplemachines Sim.One board"
+> +	help
+> +	  Say 'Y' here if you want your kernel to support the
+> +	  Simplemachines Sim.One board.
+>  
+>  config MACH_SNAPPER_CL15
+>  	bool "Support Bluewater Systems Snapper CL15 Module"
+
+
+-- 
+Alexander Sverdlin.
 
 _______________________________________________
 linux-arm-kernel mailing list
