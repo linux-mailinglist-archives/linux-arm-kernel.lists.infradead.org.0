@@ -2,85 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D8041041BE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 18:07:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A85721041D4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 18:14:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5E7UlmT/4EfGhrZn6jctZVkvUIMRPqgChSxIkkgFGTA=; b=sk9fmmpMQz8FoV
-	/oedhSBfLcFrI0UPYmbgKRa2oqwM3fnJrNODosBL92wqApgu9TXcPfe/+M3zo0yAEnvOEkf2Yksp+
-	GYjkpYM+Hkv4b0hjkz7dtxC3jUFIWf0kYne2zhipCvmKsL7N0OtzLEGWA5uIfYZD0iVXDIo9jEIOf
-	7vJMyfM7IC+KOcrXOsPINuIemQIVSF0/Mc/GV3/BxGGsBjCZJh3OYHZBXbajvU8q1aBL3flzYHZyf
-	7cqP9+j3kDX0e9nnpuSfIU/daTHhMzDzRGiJR6gAM5OUQ2a8AUwhT7Fn8X2vTL10KZJ9xVyU8lwZp
-	6oyEybTJXCcs2Z6L669A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4mGuRyrYYFbJ5PvfX0Ehbkcr5ySwz3RWRD9suqK61r0=; b=P2B4ZEsdgaYywr
+	qhBWuev+8CedgNHLeohEQaLObOazRxPCnQeV6FCWv5t6OBE1ga2ad4WlWK1R//1F/sMasPi5Cjcng
+	uRv7IIpIC/KVEci+PLWDsVHfexdv3opzHeY2E9aSdXJfEGKgwRp/i6DX/6l1TFoOlRIOFhDiQSeEc
+	HfDzjjGshHv0zWfnnc3PfRf1LKljo/IrivsmU1jTPjRLp4OaO79r/9Maca/MOGOP3abTKv7XXJTTC
+	z2SvP2+LiVssbGecQg3CjvE7q8fI95ce+KimPIHUrgz88eKK+Mni3uTzuLug7SFblMJ7Pv6jkX3ZX
+	/9nEbfKXVBw/cRMLaYQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXTSN-0001hm-EK; Wed, 20 Nov 2019 17:07:55 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iXTYP-0004D2-PG; Wed, 20 Nov 2019 17:14:09 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXTSE-0001gw-3l
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 17:07:47 +0000
-Received: by mail-pg1-x543.google.com with SMTP id k13so34795pgh.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 09:07:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=7CMguEqa5ooTINEAp0OYYFprU33z3N9YF14yQe2fceo=;
- b=mWZOm0wDbw1+aYo5N0PRrQqifoB+3mn72HxlNF5S+2igM6cRZXVOqhIo65OOtpvwav
- EqOEUNxxZ3Qv9cK2qOa30IBF8mYW6FMgF4tVBYDP/e9FWVFXzi1WYNsuk+bmwoRcj0tZ
- BIBKwz2u1+x5Fk8sds/3nvzrvV/B+ZoKw0Nf3zcxlJ07yb3hShQGz6sn/3IH9NNmoFxR
- OhjEs1LbYi9UpgDAuzOXpGJKZa1j9Bz8eTF9tiVBftJMNZbXUyIStBvUvskaUe6qVshW
- 4fYjKvxqfPZSfwkOJG2Lij6LfOxct5Lgpsk+rbAI1hOHQ34zugz2M1LOX0zbTTWgGMGd
- QxEg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=7CMguEqa5ooTINEAp0OYYFprU33z3N9YF14yQe2fceo=;
- b=fc0pM7zpqd5WXuJX5BcwnKyVxJ95vAc1IUBA3dNMjx6E5535NR1CEYf64+ytUzFFgd
- v+UD+JSGN3ozloEsuvz+wIZqkHEOS1IZ6bepEVAjOm2dnNNJ0CF/75QLGhAYgvlNd6Dd
- OXzyIQu9yIwt8JsvO/PMCpDd5gfrzZzvZOAKy3SSiRAMuK+yj4NZtQ583lPOsjTD6bn6
- 9NyudEDFDXAE5qI4vj4PsnPMS5Q7HUUKBHdcu8S/YBwx/azgVAZmySYldO8DL5THK9E1
- eRhK2OCdG+Bvph4yuxSLmWSVBqqsfG0vcz8UMpxMNBwXTTJRAC7CjDjC9qqIHcgdXFOw
- Uo2w==
-X-Gm-Message-State: APjAAAWbaKdfa/1j2gMANor7RMyZ+pRS2vu/zh3qQqhN7JXTkw59fv4B
- LRpxdiUuxotiCTUSpXjTZzZgnA==
-X-Google-Smtp-Source: APXvYqw8uiIiopBjLjYpJ209OUDsXBbQMwr7vVihJIvBpIvNVsV6tPtlg2O2JmZzeyGtUowxv2oPHQ==
-X-Received: by 2002:aa7:9a86:: with SMTP id w6mr5182468pfi.169.1574269665089; 
- Wed, 20 Nov 2019 09:07:45 -0800 (PST)
-Received: from xakep.corp.microsoft.com (c-73-69-118-222.hsd1.nh.comcast.net.
- [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id r203sm28326401pfr.184.2019.11.20.09.07.42
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 Nov 2019 09:07:44 -0800 (PST)
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
- linux-kernel@vger.kernel.org, catalin.marinas@arm.com, will@kernel.org,
- steve.capper@arm.com, linux-arm-kernel@lists.infradead.org,
- marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
- mark.rutland@arm.com, tglx@linutronix.de, gregkh@linuxfoundation.org,
- allison@lohutok.net, info@metux.net, alexios.zavras@intel.com
-Subject: [PATCH] arm64: kernel: remove uaccess_*_not_uao asm macros
-Date: Wed, 20 Nov 2019 12:07:40 -0500
-Message-Id: <20191120170740.260224-1-pasha.tatashin@soleen.com>
-X-Mailer: git-send-email 2.24.0
+ id 1iXTYG-0004CX-U3
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 17:14:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=VvNUuT/NBcNUt6yxjrLKbrpsw+EvPrtrGKhH2JwP5Wg=; b=cPXtWJz1KQ69I5HLQPLdHHXNR
+ J/lwybWgy9/ptx/+NmCnvXNIeFKxPk0L68v4kF+SIudqR7Ru7gaEDT2NSX2/wV1nwm+TO1Y8TeKrv
+ nU/WxXHakWWwL7ELmie9v/QdeOe7mG87vHQBz077MXasnoTJFtqnkndzUEePU8qE9RkzS/YExwKn2
+ eHsB9TeRBDh5FpZl4+hcqlJCubIkVC0yN/kSubOZAAggoT5jCjrLXq+zV+NmCokAQat7ZweLHkkEu
+ qIxw2Qau+4t1w/QbmDjJgmoPvlpQHh/oMWr7+kGg3VDReQCbcj/7zGcKpomXyTCdiVrAS35qjN1v6
+ A0qBXJZbA==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:42266)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iXTY8-0001CD-M3; Wed, 20 Nov 2019 17:13:52 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iXTY6-0001uU-AT; Wed, 20 Nov 2019 17:13:50 +0000
+Date: Wed, 20 Nov 2019 17:13:50 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Leonid Movshovich <event.riga@gmail.com>
+Subject: Re: [PATCH] irq-gic: select all CPU's selected in interrupt affinity
+ settings
+Message-ID: <20191120171350.GS25745@shell.armlinux.org.uk>
+References: <CAPaFbat4MM0=iVB-VazTK9=2qRebAgEN4euYCTESRo3yfx75Kw@mail.gmail.com>
+ <20191119233633.GG25745@shell.armlinux.org.uk>
+ <CAPaFbatG+ePwjCnBva1tfmzmvpHZv9xW3nM4gj2DTpFn=D+9Vg@mail.gmail.com>
+ <2cd3e872-57d5-5cbb-78d7-98da6447dc59@arm.com>
+ <CAPaFbasJGxV=mEGHAOWdt31vapCfV_RyD1Ptz6aa_WTp6htPKg@mail.gmail.com>
+ <20191120105017.GN25745@shell.armlinux.org.uk>
+ <CAPaFbasKH_BRARMtQYqxWR6koQB=cF_Ln5n=-7uCqdbjqmu9Rg@mail.gmail.com>
+ <11daeee6-8dca-96fa-b6ee-a25ad3e815a9@arm.com>
+ <20191120135852.GR25745@shell.armlinux.org.uk>
+ <CAPaFbat=TXqGYx5KrQaO0x_r7wYQ9sno1j07Je437n8+P1Gi6g@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAPaFbat=TXqGYx5KrQaO0x_r7wYQ9sno1j07Je437n8+P1Gi6g@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_090746_155548_D009510C 
-X-CRM114-Status: GOOD (  10.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191120_091401_394768_343103FD 
+X-CRM114-Status: GOOD (  33.19  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -100,225 +96,160 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It is safer, and less code to maintain to keep uaccess_*
-as inline C functions instead of ASM macros.
+On Wed, Nov 20, 2019 at 03:07:16PM +0000, Leonid Movshovich wrote:
+> On Wed, 20 Nov 2019 at 13:58, Russell King - ARM Linux admin
+> <linux@armlinux.org.uk> wrote:
+> >
+> > On Wed, Nov 20, 2019 at 01:33:11PM +0000, Robin Murphy wrote:
+> > > On 20/11/2019 11:25 am, Leonid Movshovich wrote:
+> > > > On Wed, 20 Nov 2019 at 10:50, Russell King - ARM Linux admin
+> > > > <linux@armlinux.org.uk> wrote:
+> > > > >
+> > > > > On Wed, Nov 20, 2019 at 10:44:39AM +0000, Leonid Movshovich wrote:
+> > > > > > On Wed, 20 Nov 2019 at 01:15, Robin Murphy <robin.murphy@arm.com> wrote:
+> > > > > > >
+> > > > > > > On 2019-11-20 12:24 am, Leonid Movshovich wrote:
+> > > > > > > > On Tue, 19 Nov 2019 at 23:36, Russell King - ARM Linux admin
+> > > > > > > > <linux@armlinux.org.uk> wrote:
+> > > > > > > > >
+> > > > > > > > > On Tue, Nov 19, 2019 at 11:12:26PM +0000, event wrote:
+> > > > > > > > > > So far only a CPU selected with top affinity bit was selected. This
+> > > > > > > > > > resulted in all interrupts
+> > > > > > > > > > being processed by CPU0 by default despite "FF" default affinity
+> > > > > > > > > > setting for all interrupts
+> > > > > > > > >
+> > > > > > > > > Have you checked whether this causes _ALL_ CPUs in the mask to be
+> > > > > > > > > delivered a single interrupt, thereby causing _ALL_ CPUs to be
+> > > > > > > > > slowed down and hit the same locks at the same time.
+> > > > > > > > >
+> > > > > > > >
+> > > > > > > > Yes, I've checked this. No, interrupt is delivered to only one CPU.
+> > > > > > > > Also ARM GIC architecture specification specifically states in chapter
+> > > > > > > > 3.1.1 that hardware interrupts are delivered to a single CPU in
+> > > > > > > > multiprocessor system ("1-N model").
+> > > > > > >
+> > > > > > > But see also section 3.2.3 - just because only one CPU actually runs the
+> > > > > > > given ISR doesn't necessarily guarantee that the others *weren't*
+> > > > > > > interrupted. I'd also hesitate to make any assumptions that all GIC
+> > > > > > > implementations behave exactly the same way.
+> > > > > > >
+> > > > > > > Robin.
+> > > > > >
+> > > > > > Yes, that's right, however:
+> > > > > > 1. They are only interrupted for a split-second, since interrupt is
+> > > > > > immediately ACKed in gic_handle_irq
+> > > > >
+> > > > > Even that is detrimental - consider cpuidle where a CPU is placed in
+> > > > > a low power state waiting for an interrupt, and it keeps getting woken
+> > > > > for interrupts that it isn't able to handle.  The effect will be to
+> > > > > stop the CPU hitting the lower power states, which would be a regression
+> > > > > over how the kernel behaves today.
+> > > > >
+> > > > > > 2. More important that smp_affinity in procfs is defined to allow user
+> > > > > > to configure multiple CPU's to handle interrupts (see
+> > > > > > Documentation/IRQ-affinity.txt) which is effectively prohibited in
+> > > > > > current implementation. I mean, when user sets it to FF, she expects
+> > > > > > all CPUs to process interrupts, not CPU0 only
+> > >
+> > > I have to say, my interaction with the IRQ layer is far more as a "user"
+> > > than as a "developer", yet I've always assumed that the affinity mask
+> > > represents the set of CPUs that *may* handle an interrupt and have never
+> > > felt particularly surprised by the naive implementation of "just pick the
+> > > first one".
+> 
+> Kernel documentation in Documentation/IRQ-affinity.txt sets an
+> expectation that IRQs would be spread between CPUs evenly in case
+> multiple CPUs are selected in smp_affinity. It also seems to be quite
+> a common practice (in consumer devices at least) to have interrupts
+> spread between CPUs. At least that's what happens on my PC and phone
+> according to /proc/interrupts
+> 
+> > >
+> > > Do these users also expect the scheduler to constantly context-switch a
+> > > single active task all over the place just because the default thread
+> > > affinity mask says it can?
+> >
+> > It is my understanding that the scheduler will try to keep tasks on
+> > the CPU they are already running on, unless there's a benefit to
+> > migrating it to a different CPU - because if you're constantly
+> > migrating code between different CPUs, you're having to bounce
+> > cache lines around the system.
+> >
+> > > > > The reason we've ended up with that on ARM is precisely because it
+> > > > > wasted CPU resources, and my attempts at writing code to distribute
+> > > > > the interrupt between CPU cores did not have a successful outcome.
+> > > > > So, the best thing that could be done was to route interrupts to the
+> > > > > first core, and run irqbalance to distribute the interrupts in a
+> > > > > sensible, cache friendly way between CPU cores.
+> > > > >
+> > > > > And no, the current implementation is *NOT* prohibited.  You can't
+> > > > > prohibit something that hardware hasn't been able to provide.
+> > > > >
+> > > >
+> > > > Hardware allows delivering interrupt to random CPU from selected
+> > > > bitmask and current implementation doesn't allow to configure this.
+> > > > While this may be an issue for power-concerned systems, there are also
+> > > > systems with plenty of electricity where using all CPUs for e.g.
+> > > > network packet handling is more important.
+> > >
+> > > It's not just about batteries - more and more SoCs these days have
+> > > internally constrained power/thermal budgets too. Think of Intel's turbo
+> > > boost, or those Amlogic TV box chips that can only hit their advertised top
+> > > frequencies with one or two cores active - on systems like that, yanking all
+> > > the cores out of standby every time could be actively detrimental to
+> > > single-thread performance and actually end up *increasing*
+> > > interrupt-handling latency.
+> > >
+> > > If you want to optimise a particular system for a particular use-case,
+> > > you're almost certainly better off manually tuning affinities anyway
+> > > (certain distros already do this). If you mostly just want /proc/interrupts
+> > > to look pretty, there's irqbalance.
+> >
+> > The conclusion I came to when I did the initial 32-bit ARM SMP support
+> > was:
+> >
+> > 1) it is policy, and userspace deals with policy
+> > 2) routing the IRQ in to distribute it between CPUs is difficult
+> 
+> Yes, but current implementation of smp_affinity does not allow to set
+> multiple CPUs to handle same interrupt. Neither hardware nor software
+> seem to have any issues with distribution. In any case, I suggest to
+> keep default behaviour as is, so only those who know what are they
+> doing would be playing around with this.
+> 
+> > 3) the problem is already solved by userspace (irqbalance)
+> 
+> irqbalance sets smp_affinity. If one wants to dedicate a subset of
+> CPUs to a certain interrupt with current implementation of
+> set_affinity, irqbalance have to sit there and switch affinities all
+> the time. Constantly read /proc/interrupts and change smp_affinity.
+> That doesn't sound like a great solution at all.
+> Not even mentioning that irqbalance pulls glib which won't make many
+> embedded developers happy.
 
-There is no performance overhead from this change because
-the generated code is almost identical.
+This discussion is going nowhere.
 
-Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
----
- arch/arm64/include/asm/asm-uaccess.h | 17 -----------------
- arch/arm64/include/asm/uaccess.h     | 27 ++++++++++++++++++++++-----
- arch/arm64/lib/clear_user.S          |  3 ---
- arch/arm64/lib/copy_from_user.S      |  3 ---
- arch/arm64/lib/copy_in_user.S        |  3 ---
- arch/arm64/lib/copy_to_user.S        |  3 ---
- arch/arm64/lib/uaccess_flushcache.c  |  6 +++++-
- 7 files changed, 27 insertions(+), 35 deletions(-)
+I've stated my position based on experience as 32-bit ARM maintainer
+trying to make it work.  It may not conform to the documentation, but
+it's what has been used for decades on 32-bit ARM, and what most
+people have been perfectly happy with.
 
-diff --git a/arch/arm64/include/asm/asm-uaccess.h b/arch/arm64/include/asm/asm-uaccess.h
-index 5bf963830b17..c764cc8fb3b6 100644
---- a/arch/arm64/include/asm/asm-uaccess.h
-+++ b/arch/arm64/include/asm/asm-uaccess.h
-@@ -58,23 +58,6 @@ alternative_else_nop_endif
- 	.endm
- #endif
- 
--/*
-- * These macros are no-ops when UAO is present.
-- */
--	.macro	uaccess_disable_not_uao, tmp1, tmp2
--	uaccess_ttbr0_disable \tmp1, \tmp2
--alternative_if ARM64_ALT_PAN_NOT_UAO
--	SET_PSTATE_PAN(1)
--alternative_else_nop_endif
--	.endm
--
--	.macro	uaccess_enable_not_uao, tmp1, tmp2, tmp3
--	uaccess_ttbr0_enable \tmp1, \tmp2, \tmp3
--alternative_if ARM64_ALT_PAN_NOT_UAO
--	SET_PSTATE_PAN(0)
--alternative_else_nop_endif
--	.endm
--
- /*
-  * Remove the address tag from a virtual address, if present.
-  */
-diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-index 097d6bfac0b7..f9c75d623d0f 100644
---- a/arch/arm64/include/asm/uaccess.h
-+++ b/arch/arm64/include/asm/uaccess.h
-@@ -378,20 +378,34 @@ do {									\
- extern unsigned long __must_check __arch_copy_from_user(void *to, const void __user *from, unsigned long n);
- #define raw_copy_from_user(to, from, n)					\
- ({									\
--	__arch_copy_from_user((to), __uaccess_mask_ptr(from), (n));	\
-+	unsigned long __cpy;						\
-+	uaccess_enable_not_uao();					\
-+	__cpy = __arch_copy_from_user((to),				\
-+				      __uaccess_mask_ptr(from), (n));	\
-+	uaccess_disable_not_uao();					\
-+	__cpy;								\
- })
- 
- extern unsigned long __must_check __arch_copy_to_user(void __user *to, const void *from, unsigned long n);
- #define raw_copy_to_user(to, from, n)					\
- ({									\
--	__arch_copy_to_user(__uaccess_mask_ptr(to), (from), (n));	\
-+	unsigned long __cpy;						\
-+	uaccess_enable_not_uao();					\
-+	__cpy = __arch_copy_to_user(__uaccess_mask_ptr(to),		\
-+				    (from), (n));			\
-+	uaccess_disable_not_uao();					\
-+	__cpy;								\
- })
- 
- extern unsigned long __must_check __arch_copy_in_user(void __user *to, const void __user *from, unsigned long n);
- #define raw_copy_in_user(to, from, n)					\
- ({									\
--	__arch_copy_in_user(__uaccess_mask_ptr(to),			\
--			    __uaccess_mask_ptr(from), (n));		\
-+	unsigned long __cpy;						\
-+	uaccess_enable_not_uao();					\
-+	__cpy = __arch_copy_in_user(__uaccess_mask_ptr(to),		\
-+				    __uaccess_mask_ptr(from), (n));	\
-+	uaccess_disable_not_uao();					\
-+	__cpy;								\
- })
- 
- #define INLINE_COPY_TO_USER
-@@ -400,8 +414,11 @@ extern unsigned long __must_check __arch_copy_in_user(void __user *to, const voi
- extern unsigned long __must_check __arch_clear_user(void __user *to, unsigned long n);
- static inline unsigned long __must_check __clear_user(void __user *to, unsigned long n)
- {
--	if (access_ok(to, n))
-+	if (access_ok(to, n)) {
-+		uaccess_enable_not_uao();
- 		n = __arch_clear_user(__uaccess_mask_ptr(to), n);
-+		uaccess_disable_not_uao();
-+	}
- 	return n;
- }
- #define clear_user	__clear_user
-diff --git a/arch/arm64/lib/clear_user.S b/arch/arm64/lib/clear_user.S
-index 322b55664cca..aeafc03e961a 100644
---- a/arch/arm64/lib/clear_user.S
-+++ b/arch/arm64/lib/clear_user.S
-@@ -20,7 +20,6 @@
-  * Alignment fixed up by hardware.
-  */
- ENTRY(__arch_clear_user)
--	uaccess_enable_not_uao x2, x3, x4
- 	mov	x2, x1			// save the size for fixup return
- 	subs	x1, x1, #8
- 	b.mi	2f
-@@ -40,7 +39,6 @@ uao_user_alternative 9f, strh, sttrh, wzr, x0, 2
- 	b.mi	5f
- uao_user_alternative 9f, strb, sttrb, wzr, x0, 0
- 5:	mov	x0, #0
--	uaccess_disable_not_uao x2, x3
- 	ret
- ENDPROC(__arch_clear_user)
- EXPORT_SYMBOL(__arch_clear_user)
-@@ -48,6 +46,5 @@ EXPORT_SYMBOL(__arch_clear_user)
- 	.section .fixup,"ax"
- 	.align	2
- 9:	mov	x0, x2			// return the original size
--	uaccess_disable_not_uao x2, x3
- 	ret
- 	.previous
-diff --git a/arch/arm64/lib/copy_from_user.S b/arch/arm64/lib/copy_from_user.S
-index 8472dc7798b3..ebb3c06cbb5d 100644
---- a/arch/arm64/lib/copy_from_user.S
-+++ b/arch/arm64/lib/copy_from_user.S
-@@ -54,10 +54,8 @@
- 
- end	.req	x5
- ENTRY(__arch_copy_from_user)
--	uaccess_enable_not_uao x3, x4, x5
- 	add	end, x0, x2
- #include "copy_template.S"
--	uaccess_disable_not_uao x3, x4
- 	mov	x0, #0				// Nothing to copy
- 	ret
- ENDPROC(__arch_copy_from_user)
-@@ -66,6 +64,5 @@ EXPORT_SYMBOL(__arch_copy_from_user)
- 	.section .fixup,"ax"
- 	.align	2
- 9998:	sub	x0, end, dst			// bytes not copied
--	uaccess_disable_not_uao x3, x4
- 	ret
- 	.previous
-diff --git a/arch/arm64/lib/copy_in_user.S b/arch/arm64/lib/copy_in_user.S
-index 8e0355c1e318..3d8153a1ebce 100644
---- a/arch/arm64/lib/copy_in_user.S
-+++ b/arch/arm64/lib/copy_in_user.S
-@@ -56,10 +56,8 @@
- end	.req	x5
- 
- ENTRY(__arch_copy_in_user)
--	uaccess_enable_not_uao x3, x4, x5
- 	add	end, x0, x2
- #include "copy_template.S"
--	uaccess_disable_not_uao x3, x4
- 	mov	x0, #0
- 	ret
- ENDPROC(__arch_copy_in_user)
-@@ -68,6 +66,5 @@ EXPORT_SYMBOL(__arch_copy_in_user)
- 	.section .fixup,"ax"
- 	.align	2
- 9998:	sub	x0, end, dst			// bytes not copied
--	uaccess_disable_not_uao x3, x4
- 	ret
- 	.previous
-diff --git a/arch/arm64/lib/copy_to_user.S b/arch/arm64/lib/copy_to_user.S
-index 6085214654dc..357eae2c18eb 100644
---- a/arch/arm64/lib/copy_to_user.S
-+++ b/arch/arm64/lib/copy_to_user.S
-@@ -53,10 +53,8 @@
- 
- end	.req	x5
- ENTRY(__arch_copy_to_user)
--	uaccess_enable_not_uao x3, x4, x5
- 	add	end, x0, x2
- #include "copy_template.S"
--	uaccess_disable_not_uao x3, x4
- 	mov	x0, #0
- 	ret
- ENDPROC(__arch_copy_to_user)
-@@ -65,6 +63,5 @@ EXPORT_SYMBOL(__arch_copy_to_user)
- 	.section .fixup,"ax"
- 	.align	2
- 9998:	sub	x0, end, dst			// bytes not copied
--	uaccess_disable_not_uao x3, x4
- 	ret
- 	.previous
-diff --git a/arch/arm64/lib/uaccess_flushcache.c b/arch/arm64/lib/uaccess_flushcache.c
-index cbfcbe6470a5..bfa30b75b2b8 100644
---- a/arch/arm64/lib/uaccess_flushcache.c
-+++ b/arch/arm64/lib/uaccess_flushcache.c
-@@ -28,7 +28,11 @@ void memcpy_page_flushcache(char *to, struct page *page, size_t offset,
- unsigned long __copy_user_flushcache(void *to, const void __user *from,
- 				     unsigned long n)
- {
--	unsigned long rc = __arch_copy_from_user(to, from, n);
-+	unsigned long rc;
-+
-+	uaccess_enable_not_uao();
-+	rc = __arch_copy_from_user(to, from, n);
-+	uaccess_disable_not_uao();
- 
- 	/* See above */
- 	__clean_dcache_area_pop(to, n - rc);
+If you think you have a solution to the stated problem that solves
+it for hardware that doesn't automatically distribute interrupts,
+then go off and code it and provide a patch.  Otherwise, no amount
+of emails stating "but the documentation says X" is going to change
+anything.
+
 -- 
-2.24.0
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
