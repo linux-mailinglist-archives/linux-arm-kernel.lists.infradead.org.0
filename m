@@ -2,130 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE9AC1039BA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 13:12:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B61191039BD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 13:12:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JyAboutT+ZEX7EJWtwYnbsWiZQekwCtzF42YUFYfjqY=; b=fjksaQu4+3cHgk
-	0n4ZqHZ52QKBpeeMLKHZkH5G7h4RlLmbdkKILNnFytIn6DcrevbUmDItldubFwMGFfMsAwXm/LojJ
-	0Qnz/f96eWDUgrqPlNfvpwFJaLsvTBhcF80CgRWCkJofkcExlfe6QYJe0tpgWzkF6PPHxuzIwxtPQ
-	fFO7lVowCwpFpMXDJanYrPvPCLNq+BXkxSAl/rGVczilQFkB/L78qhKzpPc9QRHKODC2gvwLp+t4X
-	JhZw8sOIQ7uOrDSLXK06evjWKaCvpHU9HaZ/Sh2FcNZmsGEje5nDHg/2Plot0yAwM1ZbcqynNxHSC
-	L2+R2cVAozK8bfUeLDYg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Hf4HyZ+PchIaUHIppEt9ZeAX/PeaOwLA75yh1NY1EeA=; b=QL+NRxBwoR3DNb
+	+YFDgmS/YNkhyO9ydg1LtEEKpzLNbi82e/cDBxSSJB8dGjgKqFgz2JwJEW4pLy2WoAVav1PoChSF2
+	1vQU2zSK0LsdKuqoHcNAHK0DXyegZIT2AUXfqgw3xIzU61Dfg5UD26fncAbij6N0vkV0cNtcCbJCx
+	MEj1+3s6OrBPXhDMJH3okmAlVCTwOVPmbKh14HQ/tvDcBSTl4Uh3xqVo67AnYHNQcnFfanV1o+ceQ
+	G8no2FfqwpOmJb+iCoNmPskRcyUsJ3CwhTopWEVSX6Uzaqh+osj71KmlhdWljh0qZsC/8e367f5Pv
+	yz9JeBbSC2WrTUH0DTYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXOqY-00019T-F8; Wed, 20 Nov 2019 12:12:34 +0000
-Received: from mail-eopbgr790050.outbound.protection.outlook.com
- ([40.107.79.50] helo=NAM03-CO1-obe.outbound.protection.outlook.com)
+	id 1iXOqp-0001TE-I7; Wed, 20 Nov 2019 12:12:51 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXOpz-0000lQ-SW
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 12:12:01 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mPY3LAofNWs7+BVxP8qfvQQriTXfVBls5u0Y7iBwWrc6fcYYztwkyCFeauzy9zwxM8uPJf3Z0btuqJmrd+B6lnT+GSbjkTA0fF5bGndqoRhLlKko9opY+PznYtDgqS7zm9g6C7nM03aj+3v/M3HXymPDMm3+Im8P3y+h87qTSGWxJ+JYjhcXrYsSi/roIhNxsFskFmWDM1TH64vON0m4cyEfKNjfL51OUH1j3ryw7Cm+MVbXcDhn+55w95i2RgXh361YbKGC6xBH+zaPmFKQQFOLT2bYG9hs6sEoeMDGwQr90CZDvLj2eFMCTwXdaOj1bvit9GehzazHcQYQleDcmQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=NV0+L/clYw+7icfp7edhnVTXuRkGNbhl90CiS8Eqxao=;
- b=IoO2AHO9EUqHKJBgqxSFuj94XvzvyUvbwidtFSFHcrWULQRVwegMOoTZHH3+v5h+9GCdAFz5YlX/7UwW0UGZ6wV/pgj/otVmcoes5CXf6clcAg4DWzeuP3oWhwkRrCWmqY6BpP061JF1NrxVgBrzaB7O8gLjLqYPRwnw23wCQdPZQ9CYvXq5OECvZ1WCC7Oj85WU0S1EKMWSake21S+oTx+hNIEO5i15NjCv1TGTuSichF1y0ru76fcKeYPUr5iH6rHHONBc01TQuyoAt6yUJbHABBCx3wY3Tn/QjH6bzyppQ6o0HNBm/63w4ZapMQ0M/1JnYO94d2Y5NxfdW4Zbkw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=grandegger.com smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=NV0+L/clYw+7icfp7edhnVTXuRkGNbhl90CiS8Eqxao=;
- b=Si6hVoPEY6qq0HtsdmRN4zBVv48LEzB9fgskEkdUTjlJ602+qwfy17TCh/TSi/govZtvXgdKrAOcnC7bmtfus9Y7S25cboYKVVgF+jfiBHwkuAqME0Dx+3LbzkHF3oqgfrNtbvC36ffCKc8MTKkasnQL4bQET6Xa5/t8OVOvqLE=
-Received: from MWHPR0201CA0103.namprd02.prod.outlook.com
- (2603:10b6:301:75::44) by BYAPR02MB5944.namprd02.prod.outlook.com
- (2603:10b6:a03:124::24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2451.30; Wed, 20 Nov
- 2019 12:11:56 +0000
-Received: from BL2NAM02FT021.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e46::200) by MWHPR0201CA0103.outlook.office365.com
- (2603:10b6:301:75::44) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2474.17 via Frontend
- Transport; Wed, 20 Nov 2019 12:11:55 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; grandegger.com; dkim=none (message not signed)
- header.d=none;grandegger.com; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- BL2NAM02FT021.mail.protection.outlook.com (10.152.77.158) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2474.17
- via Frontend Transport; Wed, 20 Nov 2019 12:11:55 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <srinivas.neeli@xilinx.com>)
- id 1iXOpu-0000gy-IO; Wed, 20 Nov 2019 04:11:54 -0800
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <srinivas.neeli@xilinx.com>)
- id 1iXOpp-0002hM-Ev; Wed, 20 Nov 2019 04:11:49 -0800
-Received: from [10.140.6.6] (helo=xhdappanad40.xilinx.com)
- by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <srinivas.neeli@xilinx.com>)
- id 1iXOpe-0002fi-Nh; Wed, 20 Nov 2019 04:11:39 -0800
-From: Srinivas Neeli <srinivas.neeli@xilinx.com>
-To: wg@grandegger.com, mkl@pengutronix.de, davem@davemloft.net,
- michal.simek@xilinx.com, appanad@xilinx.com
-Subject: [PATCH 2/2] can: xilinx_can: Fix usage of skb memory
-Date: Wed, 20 Nov 2019 17:41:05 +0530
-Message-Id: <1574251865-19592-3-git-send-email-srinivas.neeli@xilinx.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1574251865-19592-1-git-send-email-srinivas.neeli@xilinx.com>
-References: <1574251865-19592-1-git-send-email-srinivas.neeli@xilinx.com>
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(346002)(136003)(376002)(39860400002)(189003)(199004)(70586007)(81166006)(106002)(6666004)(4326008)(81156014)(36386004)(36756003)(50226002)(6636002)(16586007)(8676002)(70206006)(48376002)(966005)(305945005)(5660300002)(2616005)(478600001)(6306002)(8936002)(316002)(107886003)(50466002)(9786002)(7696005)(51416003)(76176011)(486006)(44832011)(336012)(11346002)(446003)(426003)(186003)(26005)(476003)(356004)(126002)(2906002)(47776003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB5944; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
+ id 1iXOqZ-0001M3-VT; Wed, 20 Nov 2019 12:12:38 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id A4F0E69C2B;
+ Wed, 20 Nov 2019 12:12:32 +0000 (UTC)
+Subject: Re: [PATCH v4 2/8] irqchip: Add Realtek RTD1295 mux driver
+To: Marc Zyngier <maz@kernel.org>
+References: <20191119021917.15917-1-afaerber@suse.de>
+ <20191119021917.15917-3-afaerber@suse.de>
+ <a34e00cac16899b53d0b6445f0e81f4c@www.loen.fr>
+ <0bff78c1-a1d0-9631-fbf4-e0d1ef1264ea@suse.de>
+ <8137861d0a89dd246b3334ac596da8be@www.loen.fr>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <37b3b5d3-b3c8-b513-f8b5-9054f32a4b53@suse.de>
+Date: Wed, 20 Nov 2019 13:12:31 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: f67bdc69-b2ca-4351-2c71-08d76db2d5c6
-X-MS-TrafficTypeDiagnostic: BYAPR02MB5944:
-X-MS-Exchange-PUrlCount: 1
-X-Microsoft-Antispam-PRVS: <BYAPR02MB59446C54A61F5B276AF4257CAF4F0@BYAPR02MB5944.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:3044;
-X-Forefront-PRVS: 02272225C5
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: dclRN9gZ0qYUmtOZcQYzkes7QVJEAHDgw8DOFnbDTZCIE/SiJhI4St5OsGJhYqEuItJn4TQBoNNSgcV9HFdNG5vQhu9zrvDe7pdE4c1R8H3VhUJB46O+dDtc/dYev2FwRhF9kaX+uXkWvsFKhJznabCFazkL1wVPte7LVd+4OUkZ6c4lch8lUWevynBnPmO4ZFXtCYLbVo3eC+adlYidnE/CDkQi3VVDOve+YJK7dvWDm6k8HvdnXSmymsqncVGVH4BVxbx6xeoFrKz7mZ1R8QD8qGWCx7ASmOarULkCr3z3g17GjSyey5T0idNppClqCQRTvCmpwAyum878l4bGWhxK3qRlQDbQANf8d4YR7zjeoDF/MCa/XqUPT0ZZMlyWeLy2abv7++DOIE6fBQ0dSPbPAMaj0cDeUUylmlP+d19yow1bUs7WKWSALEGeasjsQKLi5/qgJ2fAQzpI/NYx21GKCc973n8L7QWd9jAZZsY=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Nov 2019 12:11:55.1963 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: f67bdc69-b2ca-4351-2c71-08d76db2d5c6
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB5944
+In-Reply-To: <8137861d0a89dd246b3334ac596da8be@www.loen.fr>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_041159_970732_B11E59B9 
-X-CRM114-Status: GOOD (  13.16  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191120_041236_348627_6F80EDAB 
+X-CRM114-Status: GOOD (  18.04  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.79.50 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -137,116 +65,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Srinivas Neeli <srinivas.neeli@xilinx.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-can@vger.kernel.org, nagasure@xilinx.com,
- git@xilinx.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: James Tai <james.tai@realtek.com>,
+ Aleix Roca Nonell <kernelrocks@gmail.com>,
+ linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Jason Cooper <jason@lakedaemon.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As per linux can framework, driver not allowed to touch the skb memory
-after can_put_echo_skb() call.
-This patch fixes the same.
-https://www.spinics.net/lists/linux-can/msg02199.html
-
-Signed-off-by: Srinivas Neeli <srinivas.neeli@xilinx.com>
-Signed-off-by: Michal Simek <michal.simek@xilinx.com>
----
- drivers/net/can/xilinx_can.c | 21 +++++++++++++++------
- 1 file changed, 15 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/net/can/xilinx_can.c b/drivers/net/can/xilinx_can.c
-index c5f05b994435..536b0f8272f6 100644
---- a/drivers/net/can/xilinx_can.c
-+++ b/drivers/net/can/xilinx_can.c
-@@ -191,6 +191,8 @@ struct xcan_devtype_data {
-  * @bus_clk:			Pointer to struct clk
-  * @can_clk:			Pointer to struct clk
-  * @devtype:			Device type specific constants
-+ * @cfd:			Variable to struct canfd_frame
-+ * @is_canfd:			For checking canfd or not
-  */
- struct xcan_priv {
- 	struct can_priv can;
-@@ -208,6 +210,8 @@ struct xcan_priv {
- 	struct clk *bus_clk;
- 	struct clk *can_clk;
- 	struct xcan_devtype_data devtype;
-+	struct canfd_frame cfd;
-+	bool is_canfd;
- };
- 
- /* CAN Bittiming constants as per Xilinx CAN specs */
-@@ -543,14 +547,13 @@ static int xcan_do_set_mode(struct net_device *ndev, enum can_mode mode)
- /**
-  * xcan_write_frame - Write a frame to HW
-  * @priv:		Driver private data structure
-- * @skb:		sk_buff pointer that contains data to be Txed
-+ * @cf:			canfd_frame pointer that contains data to be Txed
-  * @frame_offset:	Register offset to write the frame to
-  */
--static void xcan_write_frame(struct xcan_priv *priv, struct sk_buff *skb,
-+static void xcan_write_frame(struct xcan_priv *priv, struct canfd_frame *cf,
- 			     int frame_offset)
- {
- 	u32 id, dlc, data[2] = {0, 0};
--	struct canfd_frame *cf = (struct canfd_frame *)skb->data;
- 	u32 ramoff, dwindex = 0, i;
- 
- 	/* Watch carefully on the bit sequence */
-@@ -581,7 +584,7 @@ static void xcan_write_frame(struct xcan_priv *priv, struct sk_buff *skb,
- 	}
- 
- 	dlc = can_len2dlc(cf->len) << XCAN_DLCR_DLC_SHIFT;
--	if (can_is_canfd_skb(skb)) {
-+	if (priv->is_canfd) {
- 		if (cf->flags & CANFD_BRS)
- 			dlc |= XCAN_DLCR_BRS_MASK;
- 		dlc |= XCAN_DLCR_EDL_MASK;
-@@ -633,6 +636,9 @@ static int xcan_start_xmit_fifo(struct sk_buff *skb, struct net_device *ndev)
- 	struct xcan_priv *priv = netdev_priv(ndev);
- 	unsigned long flags;
- 
-+	priv->cfd = *((struct canfd_frame *)skb->data);
-+	priv->is_canfd = can_is_canfd_skb(skb);
-+
- 	/* Check if the TX buffer is full */
- 	if (unlikely(priv->read_reg(priv, XCAN_SR_OFFSET) &
- 			XCAN_SR_TXFLL_MASK))
-@@ -644,7 +650,7 @@ static int xcan_start_xmit_fifo(struct sk_buff *skb, struct net_device *ndev)
- 
- 	priv->tx_head++;
- 
--	xcan_write_frame(priv, skb, XCAN_TXFIFO_OFFSET);
-+	xcan_write_frame(priv, &priv->cfd, XCAN_TXFIFO_OFFSET);
- 
- 	/* Clear TX-FIFO-empty interrupt for xcan_tx_interrupt() */
- 	if (priv->tx_max > 1)
-@@ -671,6 +677,9 @@ static int xcan_start_xmit_mailbox(struct sk_buff *skb, struct net_device *ndev)
- 	struct xcan_priv *priv = netdev_priv(ndev);
- 	unsigned long flags;
- 
-+	priv->cfd = *((struct canfd_frame *)skb->data);
-+	priv->is_canfd = can_is_canfd_skb(skb);
-+
- 	if (unlikely(priv->read_reg(priv, XCAN_TRR_OFFSET) &
- 		     BIT(XCAN_TX_MAILBOX_IDX)))
- 		return -ENOSPC;
-@@ -681,7 +690,7 @@ static int xcan_start_xmit_mailbox(struct sk_buff *skb, struct net_device *ndev)
- 
- 	priv->tx_head++;
- 
--	xcan_write_frame(priv, skb,
-+	xcan_write_frame(priv, &priv->cfd,
- 			 XCAN_TXMSG_FRAME_OFFSET(XCAN_TX_MAILBOX_IDX));
- 
- 	/* Mark buffer as ready for transmit */
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QW0gMjAuMTEuMTkgdW0gMTE6MTggc2NocmllYiBNYXJjIFp5bmdpZXI6Cj4gT24gMjAxOS0xMS0x
+OSAyMzoyNSwgQW5kcmVhcyBGw6RyYmVyIHdyb3RlOgo+PiBBbSAxOS4xMS4xOSB1bSAxMzowMSBz
+Y2hyaWViIE1hcmMgWnluZ2llcjoKPj4+IE9uIDIwMTktMTEtMTkgMDI6MTksIEFuZHJlYXMgRsOk
+cmJlciB3cm90ZToKPj4+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pcnFjaGlwL2lycS1ydGQxMTk1
+LW11eC5jCj4+Pj4gYi9kcml2ZXJzL2lycWNoaXAvaXJxLXJ0ZDExOTUtbXV4LmMKPj4+PiBuZXcg
+ZmlsZSBtb2RlIDEwMDY0NAo+Pj4+IGluZGV4IDAwMDAwMDAwMDAwMC4uZTZiMDg0MzhiMjNjCj4+
+Pj4gLS0tIC9kZXYvbnVsbAo+Pj4+ICsrKyBiL2RyaXZlcnMvaXJxY2hpcC9pcnEtcnRkMTE5NS1t
+dXguYwo+PiBbLi4uXQo+Pj4+ICtzdGF0aWMgdm9pZCBydGQxMTk1X211eF9pcnFfaGFuZGxlKHN0
+cnVjdCBpcnFfZGVzYyAqZGVzYykKPj4+PiArewo+Pj4+ICvCoMKgwqAgc3RydWN0IHJ0ZDExOTVf
+aXJxX211eF9kYXRhICpkYXRhID0KPj4+PiBpcnFfZGVzY19nZXRfaGFuZGxlcl9kYXRhKGRlc2Mp
+Owo+Pj4+ICvCoMKgwqAgc3RydWN0IGlycV9jaGlwICpjaGlwID0gaXJxX2Rlc2NfZ2V0X2NoaXAo
+ZGVzYyk7Cj4+Pj4gK8KgwqDCoCB1MzIgaXNyLCBtYXNrOwo+Pj4+ICvCoMKgwqAgaW50IGk7Cj4+
+Pj4gKwo+Pj4+ICvCoMKgwqAgY2hhaW5lZF9pcnFfZW50ZXIoY2hpcCwgZGVzYyk7Cj4+Pj4gKwo+
+Pj4+ICvCoMKgwqAgaXNyID0gcmVhZGxfcmVsYXhlZChkYXRhLT5yZWdfaXNyKTsKPj4+PiArCj4+
+Pj4gK8KgwqDCoCB3aGlsZSAoaXNyKSB7Cj4+Pj4gK8KgwqDCoMKgwqDCoMKgIGkgPSBfX2Zmcyhp
+c3IpOwo+Pj4+ICvCoMKgwqDCoMKgwqDCoCBpc3IgJj0gfkJJVChpKTsKPj4+PiArCj4+Pj4gK8Kg
+wqDCoMKgwqDCoMKgIG1hc2sgPSBkYXRhLT5pbmZvLT5pc3JfdG9faW50X2VuX21hc2tbaV07Cj4+
+Pj4gK8KgwqDCoMKgwqDCoMKgIGlmIChtYXNrICYmICEoZGF0YS0+c2NwdV9pbnRfZW4gJiBtYXNr
+KSkKPj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjb250aW51ZTsKPj4+PiArCj4+Pj4gK8Kg
+wqDCoMKgwqDCoMKgIGlmICghZ2VuZXJpY19oYW5kbGVfaXJxKGlycV9maW5kX21hcHBpbmcoZGF0
+YS0+ZG9tYWluLCBpKSkpCj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgd3JpdGVsX3JlbGF4
+ZWQoQklUKGkpLCBkYXRhLT5yZWdfaXNyKTsKPj4+Cj4+PiBXaGF0IGRvZXMgdGhpcyB3cml0ZSBk
+byBleGFjdGx5PyBJdCBpcyB0aGUgc2FtZSB0aGluZyBhcyBhICdtYXNrJywKPj4+IHdoaWNoIGlz
+IHByZXR0eSBvZGQuIFNvIGVpdGhlcjoKPj4+Cj4+PiAtIHRoaXMgaXMgbm90IGRvaW5nIGFueXRo
+aW5nIGFuZCB5b3VyICdtYXNrJyBjYWxsYmFjayBpcyBib2d1cwo+Pj4gwqAgKG90aGVyd2lzZSB5
+b3UnZCBuZXZlciBoYXZlIG1vcmUgdGhhbiBhIHNpbmdsZSBpbnRlcnJ1cHQpCj4+Pgo+Pj4gLSBv
+ciB0aGlzIGlzIGFuIEFDSyBvcGVyYXRpb24sIGFuZCB0aGlzIHNob3VsZCBiZSBkZXNjcmliZWQg
+YXMKPj4+IMKgIHN1Y2ggKGFuZCB0aGVuIGZpeCB0aGUgbWFzay91bm1hc2svZW5hYmxlL2Rpc2Fi
+bGUgbWVzcyB0aGF0Cj4+PiDCoCByZXN1bHRzIGZyb20gaXQpLgo+Pgo+PiBUaGlzIGlzIHN1cHBv
+c2VkIHRvIGJlIGFuIEFDSywgaS5lLiBjbGVhci0xLWJpdHMgb3BlcmF0aW9uLgo+IAo+IElmIGl0
+IGlzIGFuIEFDSywgbW9kZWwgaXQgYXMgc3VjaCwgYW5kIGRvIG5vdCBvcGVuLWNvZGUgaXQuCgpJ
+IGhhdmUgZm91bmQgYW4gLmlycV9hY2sgY2FsbGJhY2sgLSBtb3ZpbmcgdGhpcyB0aGVyZSBhcHBl
+YXJzIHRvIHdvcmsuCgpBbHRlcm5hdGl2ZWx5IHRoZXJlIGlzIGFuIGlycV9lb2kgY2FsbGJhY2sg
+YW5kIGFuIElSUUNISVBfRU9JX0lGX0hBTkRMRUQKZmxhZy4KCkl0IHdvdWxkIHJlYWxseSBoZWxw
+IG1lIGlmIHlvdSBzcGVsbGVkIG91dCBleHBsaWNpdGx5IHdoZXJlIHlvdSB0aGluayBJCnNob3Vs
+ZCBiZSBtb3ZpbmcgY29kZSwgYXMgdGhlIGRvY3VtZW50YXRpb24gaW4gaXJxLmggaXMgbm90IGFs
+bCB0aGF0CmhlbHBmdWwgaW4gdGVybXMgb2Ygd2hlbiBhcmUgdGhleSBjYWxsZWQgYW5kIHdoYXQg
+c2hvdWxkIGJlIGRvbmUgdGhlcmUuCkluIGNhc2Ugbm90IG9idmlvdXMsIHRoaXMgaXMgbXkgZmly
+c3QgaXJxY2hpcCBkcml2ZXIuCgo+Pgo+PiBUaGUgQlNQIGhhZCBleHRlbmRlZCB2YXJpb3VzIGRy
+aXZlcnMsIHN1Y2ggYXMgODI1MCBVQVJULCB0byBkbyB0aGlzIGFjawo+PiBpbiB0aGVpciBpbnRl
+cnJ1cHQgaGFuZGxlciB0aHJvdWdoIGFuIGFkZGl0aW9uYWwgRFQgcmVnIHJlZ2lvbi4gSSB0cmll
+ZAo+PiB0byBjbGVhbiB0aGF0IHVwIGJ5IGhhbmRsaW5nIGl0IGNlbnRyYWxseSBoZXJlIGluIHRo
+ZSBpcnFjaGlwIGRyaXZlci4KPj4KPj4+Cj4+PiBhcyBJIGNhbid0IHNlZSBob3cgdGhlIHNhbWUg
+cmVnaXN0ZXIgY2FuIGJlIHVzZWQgZm9yIGJvdGggcHVycG9zZXMuCj4+PiBZb3Ugc2hvdWxkIGJl
+IGFibGUgdG8gdmVyaWZ5IHRoaXMgZXhwZXJpbWVudGFsbHksIGV2ZW4gd2l0aG91dAo+Pj4gZG9j
+dW1lbnRhdGlvbi4KPj4KPj4gVGhlcmUgYXJlIHRocmVlIHJlZ2lzdGVycyBoZXJlOgo+Pgo+PiBN
+SVNfVU1TS19JU1LCoMKgwqAgLSBNSVNDIHVubWFza2VkIGludGVycnVwdCBzdGF0dXMgcmVnaXN0
+ZXIKPj4gTUlTX0lTUsKgwqDCoMKgwqDCoMKgwqAgLSBNSVNDwqDCoCBtYXNrZWQgaW50ZXJydXB0
+IHN0YXR1cyByZWdpc3Rlcgo+PiBNSVNfU0NQVV9JTlRfRU4gLSBNSVNDIFNDUFUgaW50ZXJydXB0
+IGVuYWJsZSByZWdpc3Rlcgo+Pgo+PiBUaGUgbGF0dGVyIGlzIGEgcmVndWxhciBSL1cgcmVnaXN0
+ZXI7IHRoZSBmb3JtZXIgdHdvIGhhdmUgYSB3cml0ZV9kYXRhCj4+IGZpZWxkIGFzIEJJVCgwKSwg
+d2l0aCAxIGluZGljYXRpbmcgYSB3cml0ZSB2cy4gMCBpbmRpY2F0aW5nIGNsZWFyLCBSQVouCj4+
+Cj4+IEJ5IGVuYWJsaW5nL2Rpc2FibGluZyBpbiBfU0NQVV9JTlRfRU4gd2UgbWFzay91bm1hc2sg
+dGhlbSBpbiBfSVNSIGJ1dAo+PiBub3QgaW4gX1VNU0tfSVNSLgo+Pgo+PiBEb2VzIHRoYXQgc2hl
+ZCBhbnkgbW9yZSBsaWdodD8KPiAKPiBOb25lIHdoYXRzb2V2ZXIuIFlvdXIgbWFzayBjYWxsYmFj
+ayBkb2Vzbid0IG1ha2UgYW55IHNlbnNlLCBzaW5jZSBpdAo+IGFjdHVhbGx5IGFja3MgdGhlIGlu
+dGVycnVwdC4gTXkgZ3V0IGZlZWxpbmcgaXMgdGhhdCB5b3VyIGVuYWJsZS9kaXNhYmxlCj4gc2hv
+dWxkIHJlYWxseSBiZSBtYXNrL3VubWFzay4KClJlbmFtaW5nIGVuYWJsZSAtPiB1bm1hc2sgYW5k
+IGRpc2FibGUgLT4gbWFzayB3b3JrcyBva2F5LgoKVGhhbmtzLApBbmRyZWFzCgotLSAKU1VTRSBT
+b2Z0d2FyZSBTb2x1dGlvbnMgR2VybWFueSBHbWJICk1heGZlbGRzdHIuIDUsIDkwNDA5IE7DvHJu
+YmVyZywgR2VybWFueQpHRjogRmVsaXggSW1lbmTDtnJmZmVyCkhSQiAzNjgwOSAoQUcgTsO8cm5i
+ZXJnKQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
+dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
+YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+YXJtLWtlcm5lbAo=
