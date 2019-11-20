@@ -2,47 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEA03103BED
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 14:39:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 889D0103C05
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 14:39:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=snKFZiBU955VdQy/PkVhxojAorbck/ncYwsu6cZegLM=; b=kzR
-	PFASRSPdnVPXC41eENyVqeO13i+2wYIt7nM77Y4ykcswR1lrFrXupNm1NtkHugXWQuwz//6LUwMCr
-	hY5sZyERZX/OpHk0nbk8KIx6S5dU4UEKJbB+X6n3qupjVnHx2nP/JketLGO5V0kEN3xTWN7QOTLqC
-	w2J8WlusJ2AZxqrg7MGSM1ZoUNolKY69CNgKfXrR2ud+FQUKfxnG7P43CnPgWemgvqlaNuC/FcRoX
-	7s8TQ3YMQXU+wGWAuHaqhJPEwwTcV6W+FHQTRBfyz8tiiWwl8jzPU3OwE3BjLwm9sBoQwd3UelCa1
-	NFEUR4Hz52xpdT8L+wO73He5l49GK3Q==;
+	References:List-Owner; bh=GPyZvtGJQmbKT+1I57yTOnPN7k4geKvDn2gjvjXnR6A=; b=Dz9
+	+555STjjZbZKYmv43u+Msn/S4AiVBPJQf/x/y4sTSh8Vejfe8n8HGFwe0Vz7t/i8cWRhVcg2NAIfd
+	axgFqmOuUtRvhQcNvqWLduF1cii5G9VcacM6YwDhN4lUfbvcl9gEBDDedBWTo2bZW0WQDVncRD6ia
+	XGWsONeblYGYbbx5488wckDdmdeyW7v55MjptO0QMbpSILlYUsx4P16Svm1Pssnz9ggW/U7pr0Tug
+	KysAOYSCNhfxTlMKRuxNgdvKbOe0D1zfa8AI3WGrziIuy8HsitGnj7vEaYuBNMTse586fsE6jPQtd
+	P7GZWgb/H3tXknuKBWni1wqlxGsdtAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXQCl-0003jE-3s; Wed, 20 Nov 2019 13:39:35 +0000
+	id 1iXQCz-0003xQ-5G; Wed, 20 Nov 2019 13:39:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXQCb-0003iG-66; Wed, 20 Nov 2019 13:39:27 +0000
+ id 1iXQCk-0003qx-HP
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 13:39:35 +0000
 Received: from localhost.localdomain (unknown [118.189.143.39])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1A342224FA;
- Wed, 20 Nov 2019 13:39:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5FFC82251E;
+ Wed, 20 Nov 2019 13:39:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574257164;
- bh=WxqSkloPNvIniE0B1PNU8Et/vKN6RNMG2IiFN6/e2mA=;
+ s=default; t=1574257174;
+ bh=KXX/JKwRu4ohqPW7ejgTiWHaFI0B/xv28AFyZomXDzM=;
  h=From:To:Cc:Subject:Date:From;
- b=Y7TZ4KjgFZ6iZsKf3fXADVSsXbBnSEvM1WHpXoXZlFnTvrMf9gpXFBft+G+AzBRvj
- dlKzVqlpbYFZoKDZbcO3SB3UTnEIP2uaLHCvILtjduJXmAMKJJeQIOKe1bAGDMWUSx
- PFc3TnB2NuCvbQalMLbptes5BnOo1mo7JCevaRYk=
+ b=0BU5guxnx+oiScud7GD6GK19b2XNEHWNSjAoRyJl+e0DMqiv+EH9QLC5Cy76/MNPb
+ 22ARFRfyjMRARJR5bTuvYbzyqfUiTC36kTncmo/Cs+i/2kj3rEsh/LxxRbcm5Q5YkD
+ NiBe7PdhIytPqpAwMqANHrMYCbNqQK8dE0rB/bZs=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH] soc: rockchip: Fix Kconfig indentation
-Date: Wed, 20 Nov 2019 21:39:20 +0800
-Message-Id: <20191120133920.13657-1-krzk@kernel.org>
+Subject: [PATCH] soc: fsl: Fix Kconfig indentation
+Date: Wed, 20 Nov 2019 21:39:29 +0800
+Message-Id: <20191120133930.13767-1-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_053926_166533_CBCE91C8 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20191120_053934_614225_7A160217 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-1.6 points)
@@ -73,8 +75,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- Heiko Stuebner <heiko@sntech.de>, Krzysztof Kozlowski <krzk@kernel.org>
+Cc: linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Li Yang <leoyang.li@nxp.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -87,38 +89,28 @@ coding style with command like:
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- drivers/soc/rockchip/Kconfig | 18 +++++++++---------
- 1 file changed, 9 insertions(+), 9 deletions(-)
+ drivers/soc/fsl/Kconfig | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/soc/rockchip/Kconfig b/drivers/soc/rockchip/Kconfig
-index b71b73bf5fc5..3e2057f22bbc 100644
---- a/drivers/soc/rockchip/Kconfig
-+++ b/drivers/soc/rockchip/Kconfig
-@@ -15,15 +15,15 @@ config ROCKCHIP_GRF
- 	  to make some of them conform to expectations of the kernel.
+diff --git a/drivers/soc/fsl/Kconfig b/drivers/soc/fsl/Kconfig
+index 4df32bc4c7a6..8e6f8e57ecd7 100644
+--- a/drivers/soc/fsl/Kconfig
++++ b/drivers/soc/fsl/Kconfig
+@@ -21,10 +21,10 @@ config FSL_GUTS
+ 	  into this driver as well.
  
- config ROCKCHIP_PM_DOMAINS
--        bool "Rockchip generic power domain"
--        depends on PM
--        select PM_GENERIC_DOMAINS
+ config FSL_MC_DPIO
+-        tristate "QorIQ DPAA2 DPIO driver"
+-        depends on FSL_MC_BUS
+-        select SOC_BUS
 -        help
--          Say y here to enable power domain support.
--          In order to meet high performance and low power requirements, a power
--          management unit is designed or saving power when RK3288 in low power
--          mode. The RK3288 PMU is dedicated for managing the power of the whole chip.
-+	bool "Rockchip generic power domain"
-+	depends on PM
-+	select PM_GENERIC_DOMAINS
++	tristate "QorIQ DPAA2 DPIO driver"
++	depends on FSL_MC_BUS
++	select SOC_BUS
 +	help
-+	  Say y here to enable power domain support.
-+	  In order to meet high performance and low power requirements, a power
-+	  management unit is designed or saving power when RK3288 in low power
-+	  mode. The RK3288 PMU is dedicated for managing the power of the whole chip.
- 
--          If unsure, say N.
-+	  If unsure, say N.
- 
- endif
+ 	  Driver for the DPAA2 DPIO object.  A DPIO provides queue and
+ 	  buffer management facilities for software to interact with
+ 	  other DPAA2 objects. This driver does not expose the DPIO
 -- 
 2.17.1
 
