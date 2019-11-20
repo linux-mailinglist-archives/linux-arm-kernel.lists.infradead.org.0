@@ -2,130 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF6E9103A3B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 13:42:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5445E103A8C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 13:59:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:Subject:From:References:To:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=stMNfLPzTZYk3NL2eoF0vOAfzTZLiTnHG7cuej10Tbc=; b=Fouvjexqv/UEX2kTy6YlwsPFO
-	wXzt8IFnbR+z3aotmjNkB6a9ioxk2luyGL+cpEdTjJtdJUpLNHjtVLuryjV0bCr7mnNQGCp1DDl0K
-	9djzn5+axw7clMxQ2JByNAWGXqWcOab2Lkofki1adgs5dJ3S+OMsfJhi1gKDYl6sv9wwc+H2F8RCb
-	zzIRVlYh0rONNraAhnbIUN21q/B9y9dtvfXUw91XzLjzjg/eN0TbFQ6LLZD+kSGCLTfieJXTc3PI7
-	LZIDyxdM5cdsrCvEW+TNgww4m9OJA00yczg9wUgZJQAYRrD/DY1ZG7JJggIocU5qKHRdaazIZtb9i
-	gOTS3L3tw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LITS/1TksNs+WyBLB/56hGhiLAqfh3EVFMOipA7XU3M=; b=s5IeCygWww48SP
+	Ht4HdHCH3HRWwOGsqccLtsukrRewpafE/Ef1DCcLqehlZe9Sy652ZVpUk3KfZAwQ7HGFkirZ39OsU
+	h9vOL4w5rbnh2TreEw60jbSAiGoWywxCbBsglj+9TbEoZEt9KLBMdJeE4Q0+E4yxlwvDiZfDxA4yr
+	PjIIdeEs9u0QKQgNRkcpDJL6+Fa5JoaGRrMygQrNJauQ3swERvzdeksZqa2+0qbvL/JTx/fod6f6D
+	8gqIkSvwSRyUewXLzPV5pFkuY0q/FT9UL4Kg7eQX84cPhsLmWOyDAeuSVoEbWTRzToVP4erMG2IAw
+	44wZmsw4PWWey7s9sirA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXPJV-00059P-Fs; Wed, 20 Nov 2019 12:42:29 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iXPa9-0002CO-KT; Wed, 20 Nov 2019 12:59:41 +0000
+Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXPJK-00058s-Jm
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 12:42:20 +0000
-Received: from gallifrey.ext.pengutronix.de
- ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mkl@pengutronix.de>)
- id 1iXPJJ-0005tf-E8; Wed, 20 Nov 2019 13:42:17 +0100
-Received: from [IPv6:2a03:f580:87bc:d400:7957:e6e8:9a3f:15ac] (unknown
- [IPv6:2a03:f580:87bc:d400:7957:e6e8:9a3f:15ac])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest
- SHA256 client-signature RSA-PSS (4096 bits) client-digest SHA256)
- (Client CN "mkl@blackshift.org",
- Issuer "StartCom Class 1 Client CA" (not verified))
- (Authenticated sender: mkl@blackshift.org)
- by smtp.blackshift.org (Postfix) with ESMTPSA id CFFE748019E;
- Wed, 20 Nov 2019 12:42:14 +0000 (UTC)
-To: Srinivas Neeli <srinivas.neeli@xilinx.com>, michal.simek@xilinx.com,
- appanad@xilinx.com
-References: <1574251865-19592-1-git-send-email-srinivas.neeli@xilinx.com>
-From: Marc Kleine-Budde <mkl@pengutronix.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
- 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
-Subject: Re: [PATCH 0/2] can: xilinx_can: Bug fixes on can driver
-Message-ID: <e985fd5a-9b0c-f273-d28c-14515dc25e5c@pengutronix.de>
-Date: Wed, 20 Nov 2019 13:42:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iXPa1-0002BU-KQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 12:59:34 +0000
+Received: by mail-ua1-x943.google.com with SMTP id o9so7718178uat.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 04:59:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=nuqJ0vbClL23gGoYcppi0FrFy7e9Hz/yNcjMSMNBxqE=;
+ b=dYP/0q1UJs+hkupL0Ks33xZa/oPu9OOQ/1POhchabco+MYLW/OVqUGMujUfpI5uX/Z
+ guc95gIHgm0ENwks6ezoHMtNBDv5NpD4kZOt3rckVtc2TNrFfHdbtpCHIzg2WdJrYaXH
+ /xSfomvFi7E/T0tCpoUNe3K5d8eLKhwMpXTlLq8hD5ihVf1MmjEnX8Zrc+Q4dl9OF8vp
+ voHqwV0OwDc47bzLAoCx81iHGZpBIJjGrkq9aPtBI615OOd+WVm9zHE2PC2D1k+vGxR4
+ 4PUF1/lLiew7UxLBcxzFkhUWuY57TX2Ka8I2YZ+NgeOlXACnlaJC6D7tFhA87pTU3x45
+ HmRw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=nuqJ0vbClL23gGoYcppi0FrFy7e9Hz/yNcjMSMNBxqE=;
+ b=X+/kKvaqK8kISB4StpCAMzNzZX+4pC/DNbsktCJmBhpJEoFfGrpcUiU39FZoHxO4D6
+ gwwbm//TxUFXtIDLXRTQtZKtIZ7NFJesLA1AmxDPaICkKSA8Sczh1RDMVBu7VbtfFqrW
+ t4BMPP+xYSMw8ZDgxjUBkpnrPUACJyyHnu5uTnh4SXNP/rAoCcmrvxlF1VIAfqJE5yPK
+ ik9BEGmG34Gi1JlBjBwFcCIRxt80q6/vlyzyCxLUN9LjkU7NPhmuSGNLv+0L4h98NKNd
+ wQruXDIswndw1YXnzKYX+WucealuN3FOiJpMInYKwfDJtXQ0DghNcxuiIlonk7j4oY1g
+ 8azA==
+X-Gm-Message-State: APjAAAWqPhXcXS0CF4lT00QVvC4vm5lpOKn9v+UtgGvqyQr7M0wZxEEQ
+ 1BRPT5BBGVtnNnBdh5rT8pCzcC4qeoI4Yg5tfjklq0is
+X-Google-Smtp-Source: APXvYqzczwcqmzJh3GjUqnWFQGP/+Gp7RUJwV58YrFcSe+bfPCganPSc0GYA3NZbmUkPuarP338JjoXHT98NVoW0E1U=
+X-Received: by 2002:ab0:2042:: with SMTP id g2mr1511287ual.19.1574254771069;
+ Wed, 20 Nov 2019 04:59:31 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <1574251865-19592-1-git-send-email-srinivas.neeli@xilinx.com>
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: mkl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <20191118104646.3838-1-i.mikhaylov@yadro.com>
+ <20191118104646.3838-3-i.mikhaylov@yadro.com>
+In-Reply-To: <20191118104646.3838-3-i.mikhaylov@yadro.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Wed, 20 Nov 2019 13:58:55 +0100
+Message-ID: <CAPDyKFoz3ipYBGR-6ubfqhtQVG9h16axoHNdSoo+OyNgKRs2Tw@mail.gmail.com>
+Subject: Re: [PATCH v3 2/3] mmc: sdhci-of-aspeed: enable
+ CONFIG_MMC_SDHCI_IO_ACCESSORS
+To: Ivan Mikhaylov <i.mikhaylov@yadro.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_044218_806926_0D309F24 
-X-CRM114-Status: GOOD (  12.48  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191120_045933_673139_C50D5292 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -137,93 +92,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-can@vger.kernel.org, nagasure@xilinx.com, git@xilinx.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8480275703147933384=="
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============8480275703147933384==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="IBnRveo9aJdFcdiGi9iJTFwSZYfwd7ZBU"
+On Mon, 18 Nov 2019 at 11:47, Ivan Mikhaylov <i.mikhaylov@yadro.com> wrote:
+>
+> Enable CONFIG_MMC_SDHCI_IO_ACCESSORS on the aspeed board. The read_l
+> callback is used for inverted card detection.
+>
+> Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---IBnRveo9aJdFcdiGi9iJTFwSZYfwd7ZBU
-Content-Type: multipart/mixed; boundary="9iSn6PNXonoJmkh2SCDhudzuzakmXwd6G";
- protected-headers="v1"
-From: Marc Kleine-Budde <mkl@pengutronix.de>
-To: Srinivas Neeli <srinivas.neeli@xilinx.com>, michal.simek@xilinx.com,
- appanad@xilinx.com
-Cc: linux-can@vger.kernel.org, netdev@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- git@xilinx.com, nagasure@xilinx.com
-Message-ID: <e985fd5a-9b0c-f273-d28c-14515dc25e5c@pengutronix.de>
-Subject: Re: [PATCH 0/2] can: xilinx_can: Bug fixes on can driver
-References: <1574251865-19592-1-git-send-email-srinivas.neeli@xilinx.com>
-In-Reply-To: <1574251865-19592-1-git-send-email-srinivas.neeli@xilinx.com>
+Applied for next, updating the changelog according to Andrew's comments, thanks!
 
---9iSn6PNXonoJmkh2SCDhudzuzakmXwd6G
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-GB
-Content-Transfer-Encoding: quoted-printable
-
-On 11/20/19 1:11 PM, Srinivas Neeli wrote:
-> This patch series does the following:
-> -skip printing error message on deferred probe
-> -Fix usage of skb memory
-
-BTW: I'm looking for an official Maintainer for the xlinx_can driver.
-
-The Maintainer will get an entry in the MAINTAINERS file, should test
-new patches and give Reviewed-bys.
-
-Is there a volunteer?
-
-regards,
-Marc
-
---=20
-Pengutronix e.K.                 | Marc Kleine-Budde           |
-Embedded Linux                   | https://www.pengutronix.de  |
-Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
-Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
+Kind regards
+Uffe
 
 
---9iSn6PNXonoJmkh2SCDhudzuzakmXwd6G--
-
---IBnRveo9aJdFcdiGi9iJTFwSZYfwd7ZBU
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEmvEkXzgOfc881GuFWsYho5HknSAFAl3VNJ8ACgkQWsYho5Hk
-nSDL+Af7B2T1tVuUZnMSZKeTT8ucHRcMrQqbCZvAcWsjx2xeQsysLeTm/J9pqN3Q
-bFc5VPErjtuswNbeLREKyf1xtbv2aLynThPBG4X3DGYHiM5ML6COI3pX+Mt6k033
-01gS9OCWJZ4+o6NxmSCyi02/snYT/uZi8byQeQr5PG2fmdwsDe2KuHXKqeePgQqk
-2j1+emJ65pQd7k5Yh2e/gLy1VB1e+t6GSnpQmpWp0Lt0ostRPD1gXodXZu1hRr0d
-q4uSn8f+/OuwgnJP2hAVtGAcFnQKhPRjwuKvc7bzj9t9kJMrF+y6ZQaLJkKdicZb
-KmCrkMN09/PYMO145MhRa9cZVkSTyw==
-=Tknr
------END PGP SIGNATURE-----
-
---IBnRveo9aJdFcdiGi9iJTFwSZYfwd7ZBU--
-
-
---===============8480275703147933384==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>
+> diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
+> index 49ea02c467bf..c9c1bb722368 100644
+> --- a/drivers/mmc/host/Kconfig
+> +++ b/drivers/mmc/host/Kconfig
+> @@ -159,6 +159,7 @@ config MMC_SDHCI_OF_ASPEED
+>         tristate "SDHCI OF support for the ASPEED SDHCI controller"
+>         depends on MMC_SDHCI_PLTFM
+>         depends on OF && OF_ADDRESS
+> +       select MMC_SDHCI_IO_ACCESSORS
+>         help
+>           This selects the ASPEED Secure Digital Host Controller Interface.
+>
+> --
+> 2.20.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8480275703147933384==--
-
