@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81D4B103A94
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 14:00:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 752A8103A95
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 14:00:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EiwEQ7yh7carQjvsSTqnX2sijtfS03Qd+eUPG49KOT4=; b=DT+ZXXz/iIn7b1
-	XOtnreK3RUmnu7t+ClefdUKUw2IbY0Yk2nffdVLl2ek6NXLxtxcVkrB54f5N8Yz1AfpDYMjqlmCgq
-	l3GOshCEwdQfDakaS9vhoEoVdM7KZOPnTgxvviu9Cw3CxftBvv5W9/Yc38GJkSntvh2bX0SjThGJr
-	5We4cHvraiC83AcfMh4KHyhGb0hBDgup/6GZqeD5h75cFs6KwAaWjmZOzqEOLoJpI1gtgYmsha8dq
-	YDoxMrwWXVvZ/wMNdBdkKzhf27rIWP/pm4hoBn7Pul00ph4L6wgSk1VCSkKIy3X2yFE1n9jiBuBLa
-	SXLE/GzF6XJkM7vB9G4g==;
+	List-Owner; bh=1Pm2BFINJgMeSTsDf9ydZk4JiLxTzroHtZq6jq/qeuo=; b=qwDdkOe6U5kCXm
+	e3gp0bq+D+IchCLSdV6EB/8YdH6yf9UdVvbMhh5fRlKQeq5sHLh5jpBlYEz7kwkbGixIy2Shhc8Km
+	y4CsdMF3k6IVdZ6UKAdAK3qzdd95uBe3TTotpvShy8fU4NZntEVRuDSan7QPbZl2oPzUF6Bq/RBed
+	k8e4cVbHXteuPLDg9exgopemDNtYURgHWY0J+78+ZQtanyvTpMyh7ue6u2EOmzk30y3ihGS9HwB7i
+	6KWABLtcXA3RMaPk4LoljQpOl8KfAgWKrBVRB3NeKXhkGxnUwpKj2YlUCbbV/8As0hZhIb3a66WBH
+	ouXjlk5ZBuhgL9VN0kCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXPaT-0002Lv-FP; Wed, 20 Nov 2019 13:00:01 +0000
-Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
+	id 1iXPar-0002cU-QI; Wed, 20 Nov 2019 13:00:25 +0000
+Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXPa9-0002HE-Br
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 12:59:42 +0000
-Received: by mail-vk1-xa41.google.com with SMTP id b64so5530459vkg.0
+ id 1iXPaH-0002QC-OH
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 12:59:51 +0000
+Received: by mail-ua1-x943.google.com with SMTP id o9so7718445uat.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 04:59:40 -0800 (PST)
+ Wed, 20 Nov 2019 04:59:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mv3ivjIPtynZHdywCSMliDx/clqr1q5FAXmvUn8sv20=;
- b=DZZd0nosT6fMGQa1LrZVBdRXKbdVyqsPindUQS1a1nqo5KvOOvDL6TYkJpiTiwvqJm
- kj/g0mCy/d36pCSmPRACtWRYhBo+puCWySIvVjJkhBdjQlOJX/vdsIwvOFJXKTqWEIkJ
- qilWi7YApsYcUIF/Ghp5HFDBliyzAw2KPYzEBMtEnuPBotdX72kg7XjjLYcdPlzZ6eTE
- mJzOOAhDrtjtwPvojZ3vCHKnUlRdvUb5r2UjPybqDbDV7PKTti/mA0zC4GArhWLwD1pu
- 09jXs0Rs4TfHjCztF/mr43pLNjcug2oAeU+TFTbYX8J1siDHLBfAw3ku2nwrQVzY2d3/
- 8HkA==
+ :cc; bh=6UQf89xygZl5APXVlJ8BVg5S3Zma4VRojTMP4pFeE48=;
+ b=jCoovsnalMMyh4DFH4VjJ0KELkHUZ6EsPjGPIJZwX2/Mh2nEdpGzEsfpRs0DbJqCE2
+ neHXNcrUGxBuxtxNh3RLIqmNJq1tkldyoQYd5CzYerEgn+y0Lod+X1d3oApyD3f/8R7B
+ DHpf9NsP1n2lq4kSJ8qOShRgOYCyINmlxMm6+ph7TWaBpVLstmBgAhMZYY1UonsbyrYM
+ bBInnY9KCd2xnEh520jKhAYKwVXBUfs11xGVQV6nIuTzTGk4CCvrYlL+573ftnEyesnw
+ 82JoOJHQW4MA2LLSnKMJkB432xfIM3IRqtnXFaQny31xs5LDzelR/OBd0IE4S56DGLJ9
+ 6UxQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=mv3ivjIPtynZHdywCSMliDx/clqr1q5FAXmvUn8sv20=;
- b=qnBVSDUVdTrho6ubGk7pzHgmWBveTeziWIymsKwr7z+FiFMmFARW0jEkD2NPBvXEQc
- xLosZ2vkdwAkfEu0/Q90xDNWFXNGtTWRh4MeTqLQ/NfMBYDrRahvgtavlWEUfekJ9FqD
- 2Kg1hJOhq04vCzvVVMdhU+TyuXyAGfVNwht2qFOrvDWAu224eYIQAC/Tpz3dVyVJmSHz
- DirPa4F0V6C71AuMcCqFs3ctNpJ3xhkezDiWNHxp+5u2UWy2imvZXewVzQJ7Skbfw5/f
- AqDGP7/76Ov09eSRXNZ7bWOqH+tIE5SEFc/QksHLgfpsnA19pMnmzs1J2s1GnrZg5EXX
- 40sA==
-X-Gm-Message-State: APjAAAUV9+Lo7DM19rBQBiVBdhV3i/s058pnqh/pdt5s8gCQaI7tT5nT
- ZGYjY6XQjSx/ufd+BgdgYpCx9o+x1rlU0cKVj1gNmcnc
-X-Google-Smtp-Source: APXvYqxQDALgcQNWwHLSVFVl8w6QJkMBvvg1vKNEOr6M8d/if/KbiPE09YO/XzOrupoT94zbpYTuK0JTffdMAGJDNgk=
-X-Received: by 2002:a05:6122:1181:: with SMTP id
- x1mr1311701vkn.25.1574254780111; 
- Wed, 20 Nov 2019 04:59:40 -0800 (PST)
+ bh=6UQf89xygZl5APXVlJ8BVg5S3Zma4VRojTMP4pFeE48=;
+ b=Q2TAEw35VZhcBuAUgS02agnmSmWmA99/+c6OKhvBiZBA7oZ7F6bcvR5K8qN/1wUcCL
+ Fh1z6+BrJc4kMXfw7FYAMf6ftfdF0aSq6K/gXthKza2X/dI+FZMIFOpEOoCB3qeMCpHE
+ 3tj40wb5xFctRxSbClY1831CSJER8AxMEn3qUmR+DcbnY+VyhWiV2CjJk17qyYZzYzmG
+ myMAHtOJzWTcHghjzpX0cfJrEuh8tKlBEa05DiiuqFV7s0JbL5zfXhb7ChmNty2wu10t
+ Os7Lm5ps8nWUqutmCcvT99ecbHpVVotdTrncnF5+lR4fIrwbq0qxiK6NmyL01YaFZwl/
+ k/dQ==
+X-Gm-Message-State: APjAAAV8y1QDcoFp1n4aksA3WEgsN9kIwzQh9doFA/CTsxkhqbRJ8FyK
+ gS0jd7fhh3/J+i/AJZnH60RPPGhzDzIV1Kjm5dXP5A==
+X-Google-Smtp-Source: APXvYqxEyipp0d6e/DBwHVmq3a7VxidQ0hGF9/sAXkVICJv6ReLgBcaUXbQEwIhCLBiNae9zSsMEfT5AcLWi0/Kwg6o=
+X-Received: by 2002:ab0:74cd:: with SMTP id f13mr1520153uaq.104.1574254787837; 
+ Wed, 20 Nov 2019 04:59:47 -0800 (PST)
 MIME-Version: 1.0
-References: <20191118104646.3838-1-i.mikhaylov@yadro.com>
- <20191118104646.3838-4-i.mikhaylov@yadro.com>
-In-Reply-To: <20191118104646.3838-4-i.mikhaylov@yadro.com>
+References: <1574232449-13570-1-git-send-email-manish.narani@xilinx.com>
+In-Reply-To: <1574232449-13570-1-git-send-email-manish.narani@xilinx.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Wed, 20 Nov 2019 13:59:04 +0100
-Message-ID: <CAPDyKFrshWd1P9dZGTSuU=5P0L6LSPz=v2nn+0SWi3ZZazKrRw@mail.gmail.com>
-Subject: Re: [PATCH v3 3/3] mmc: sdhci-of-aspeed: add inversion signal presence
-To: Ivan Mikhaylov <i.mikhaylov@yadro.com>
+Date: Wed, 20 Nov 2019 13:59:12 +0100
+Message-ID: <CAPDyKFprcjgrcbT3jpT7pyM+FFWL8RAm5AtFAjVLcPMDiDzUvA@mail.gmail.com>
+Subject: Re: [PATCH v6 0/8] Arasan SDHCI enhancements and ZynqMP Tap Delays
+ Handling
+To: Manish Narani <manish.narani@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_045941_416175_E8EF7B72 
-X-CRM114-Status: GOOD (  14.29  )
+X-CRM114-CacheID: sfid-20191120_045949_811545_C5345FFB 
+X-CRM114-Status: GOOD (  17.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -93,62 +92,75 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ rajan.vaja@xilinx.com, nava.manne@xilinx.com,
  "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
  Adrian Hunter <adrian.hunter@intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Michal Simek <michal.simek@xilinx.com>, Rob Herring <robh+dt@kernel.org>,
+ Moritz Fischer <mdf@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, jolly.shah@xilinx.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, git@xilinx.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 18 Nov 2019 at 11:47, Ivan Mikhaylov <i.mikhaylov@yadro.com> wrote:
+On Wed, 20 Nov 2019 at 07:47, Manish Narani <manish.narani@xilinx.com> wrote:
 >
-> Add read_l callback in sdhci_ops with flipping of SDHCI_CARD_PRESENT
-> bit in case of inverted card detection signal.
+> This patch series does the following:
+>  - Reorganize the Clock Handling in Arasan SD driver
+>  - Adds new sampling clock in Arasan SD driver
+>  - Adds support to set Clock Delays in SD Arasan Driver
+>  - Add SDIO Tap Delay handling in ZynqMP firmware driver
+>  - Add support for ZynqMP Tap Delays setting in Arasan SD driver
 >
-> Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
+> Changes in v2:
+>         - Replaced the deprecated calls to clock framework APIs
+>         - Added support for dev_clk_get() call to work for SD card clock
+>         - Separated the clock data struct
+>         - Fragmented the patch series in smaller patches to make it more
+>           readable
+>
+> Changes in v3:
+>         - Reverted "Replaced the deprecated calls to clock framework APIs"
+>         - Removed devm_clk_get() call which was added in v2
+>
+> Changes in v4:
+>         - Made the Phase Delay properties Arasan specific
+>
+> Changes in v5:
+>         - Made Clock Phase Delay properties common
+>         - Moved documentation of them to the common mmc documentation.
+>
+> Changes in v6:
+>         - Clubbed all Clk Phase Delay properties' into a pattern
+>           Property
+>
+> Manish Narani (8):
+>   mmc: sdhci-of-arasan: Separate out clk related data to another
+>     structure
+>   dt-bindings: mmc: arasan: Update Documentation for the input clock
+>   mmc: sdhci-of-arasan: Add sampling clock for a phy to use
+>   dt-bindings: mmc: Add optional generic properties for mmc
+>   mmc: sdhci-of-arasan: Add support to set clock phase delays for SD
+>   firmware: xilinx: Add SDIO Tap Delay nodes
+>   dt-bindings: mmc: arasan: Document 'xlnx,zynqmp-8.9a' controller
+>   mmc: sdhci-of-arasan: Add support for ZynqMP Platform Tap Delays Setup
+>
+>  .../devicetree/bindings/mmc/arasan,sdhci.txt  |  25 +-
+>  .../bindings/mmc/mmc-controller.yaml          |  13 +
+>  drivers/mmc/host/sdhci-of-arasan.c            | 478 +++++++++++++++++-
+>  include/linux/firmware/xlnx-zynqmp.h          |  13 +-
+>  4 files changed, 497 insertions(+), 32 deletions(-)
+>
+> --
+> 2.17.1
+>
 
-Applied for next, thanks!
-
-For clarity, I am leaving patch 1 for arm-soc.
+Applied for next, assuming Rob is okay with patch4, otherwise you need
+to send a fix on top, thanks!
 
 Kind regards
 Uffe
-
-
-
->
-> diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
-> index 8962f6664381..56912e30c47e 100644
-> --- a/drivers/mmc/host/sdhci-of-aspeed.c
-> +++ b/drivers/mmc/host/sdhci-of-aspeed.c
-> @@ -111,7 +111,19 @@ static void aspeed_sdhci_set_bus_width(struct sdhci_host *host, int width)
->         sdhci_writeb(host, ctrl, SDHCI_HOST_CONTROL);
->  }
->
-> +static u32 aspeed_sdhci_readl(struct sdhci_host *host, int reg)
-> +{
-> +       u32 val = readl(host->ioaddr + reg);
-> +
-> +       if (unlikely(reg == SDHCI_PRESENT_STATE) &&
-> +           (host->mmc->caps2 & MMC_CAP2_CD_ACTIVE_HIGH))
-> +               val ^= SDHCI_CARD_PRESENT;
-> +
-> +       return val;
-> +}
-> +
->  static const struct sdhci_ops aspeed_sdhci_ops = {
-> +       .read_l = aspeed_sdhci_readl,
->         .set_clock = aspeed_sdhci_set_clock,
->         .get_max_clock = aspeed_sdhci_get_max_clock,
->         .set_bus_width = aspeed_sdhci_set_bus_width,
-> --
-> 2.20.1
->
 
 _______________________________________________
 linux-arm-kernel mailing list
