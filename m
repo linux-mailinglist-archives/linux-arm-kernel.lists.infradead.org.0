@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB32F1031FE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 04:20:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EB47103202
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 04:20:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:Subject:Message-ID:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wtN7oV5+oWLBoj38sHwqC57oTb711lpT2nCYlAJBXxI=; b=lLaDxjF44G7hOg
-	QIPQvGPMWq2Wm4ANRnhKB8Q5dasduFLRQHTf9Bh8aIkui+GYdFY5l9mlXRLTYuOdRH3P7+3jtI3vx
-	pz4Z1grebSmvBDs8eOQwTwdLq+n4Q0O4MotxAoEn2fe8sflfF7sAuRCAqal73KwmsiZVzKXj+N+6n
-	ogsCdKXmtsMfHlXqD0Lc58ZA/9tOOE1LrvyZKrUkvtyLirih3gXrSld0tGHSEqUgDssen10acv0ni
-	kg+kGKew4QkwXZ3rtN/XuSZjN0Dp4zK1JwVOJAoE0wlgqy8vMeV01K6qXTT7L5saHokRo/MH9Zk4w
-	xuXKjIAuqWnuC9xw9atw==;
+	List-Owner; bh=/rhbtJPX6vXycxr7yqc+9B1sRV1WKCRyzTjzidExQFk=; b=At08crObzkmSty
+	vIiZ4sA8h+kSOu5bjRoYOh2lF76MlK70QZAlQ3I/DnOH3VOpxCMqyalUBRpPTC6fFhwzxv59a4pCi
+	myeYiDSta6sJg4kdIvwAeAdk7qJd8cFhRxEd+ho7FMAc6zNEVfSv6j7vPn+D37S3NPwFnJuOuwKG3
+	s2aHhxQ2vSTEf7zA4xNYrB94kiXrWFrsAT/mc0GUjfdYjAyZ5qjYT/aYqTeAVcHH1LDHboyPIz5cE
+	ZxWc/QlYG2LrtSFiGMYFSBv6QwJ58D7iSBNn2EWznxk81lGV5pBXSOOCty0J7azbJ0QOKKWXEfycj
+	O0FAUnRbHSBTcZNtPZ4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXGXN-00057Z-BL; Wed, 20 Nov 2019 03:20:13 +0000
+	id 1iXGXb-0006d5-3C; Wed, 20 Nov 2019 03:20:27 +0000
 Received: from sender4-of-o54.zoho.com ([136.143.188.54])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXGX8-00056q-Eo; Wed, 20 Nov 2019 03:19:59 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1574219795; cv=none; 
+ id 1iXGXU-0006c7-2D; Wed, 20 Nov 2019 03:20:21 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1574219797; cv=none; 
  d=zohomail.com; s=zohoarc; 
- b=BpjWrV94yGBTXFWbbdxFHjxmAm8D9PMwse96A0QAyOXhcxoCS3EFHC4RLDkzT5fjVgWGzQS+89EO/XqkqV3Zf7w4OLJUJXoCJr4EzdSsrAyvwobPdFkN/w0G9lDz9Gh4PyIQ2RS544KQt15d9Z9ZajPfhOmgrTfEt2mXxi527fg=
+ b=MJqYY4klgG6JsagsSo7sKKSS+LgL644mpWpkTc9t7F6khmj3fD0q95+ydAe51Uip2GaPu2ORppSLonc4rLIXFP4Wg8IDqO/0StvmGVh2Iyk+YZq9ubLosGm37xOZ6cnOUfQbA5ZHzK/UULmRB4aF0Bi22HApVifggoWFCLDCfWo=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com;
- s=zohoarc; t=1574219795;
+ s=zohoarc; t=1574219797;
  h=Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:To;
- bh=hUM9b+dswT9UPWGlwBwCNyrp4zRDfMTZRh5LuHt9eB0=; 
- b=RJpQYP6XmffOYPpCLiiielT1JXzEKudU4xMENecGYWvMEqZx64IlLXKZgvqPb4er8fpHQ2AZ64n0Pkd+mU2ObizN3THucxM0vqNekNOoa17BmmS6Ak4rO8XcAQPYG0AMQCex77fYTFjqeg92KOyrSAuT3DvQbnC0/FLm07QWYFs=
+ bh=o3ll4FP6xCHVlz+SirNioLQSMfodSwmxu31hCQHcgJo=; 
+ b=gjiSGHFfAgFyo/CvJXgRx9cA1J32I0Y/9RFSY+KhRqYl23tM5s3vAjfMLy5gQA39DfWgIDm1Hf0S0CQQc+m1yId61ZFMKgoWsKFpQQBHQ7fbC0HRCYQojRWhKVCIx0cRZAQfZhV1JCeeAjn3UOAguZYw0fw3+ILWLuGLE3bc4p4=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
  dkim=pass  header.i=brennan.io;
  spf=pass  smtp.mailfrom=stephen@brennan.io;
  dmarc=pass header.from=<stephen@brennan.io> header.from=<stephen@brennan.io>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1574219795; 
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1574219797; 
  s=selector01; d=brennan.io; i=stephen@brennan.io;
  h=From:To:Cc:Message-ID:Subject:Date:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Content-Type;
- l=1694; bh=hUM9b+dswT9UPWGlwBwCNyrp4zRDfMTZRh5LuHt9eB0=;
- b=NUsCEu3m2VD2aRVon4jt5dm6oAxDZHk9Yjr2uODkCgJ38hUoqLq7v9i1MR6rYBLe
- zGMHybZ9vSep+yuuiAi4yHQsgocHApFByNyDEEJHOBlcpIW/8A1w5xrzYJAuY6CA1o5
- S+fAHdgKU/WF2QpeN5CyjogDciPe8iMPJ5kIRwwo=
+ l=877; bh=o3ll4FP6xCHVlz+SirNioLQSMfodSwmxu31hCQHcgJo=;
+ b=JRrajEjDPjquW3CRi7H8oRGyskJ6kSrwYzLA8dXinGI+mnDEqxCWFkJrrwl0UhOO
+ Ge3XI5aPwW3SlrKc48Bb1stSjn2ld2RO/VohjcZHUwTkM2FOrosQ01WDub8nrSwQ3pb
+ I2b2n8q1o1SUa8Ldigx2owlPVaX1aGibDuEu6T6Y=
 Received: from localhost (c-98-207-184-40.hsd1.ca.comcast.net [98.207.184.40])
- by mx.zohomail.com with SMTPS id 1574219794570904.3468110611888;
- Tue, 19 Nov 2019 19:16:34 -0800 (PST)
+ by mx.zohomail.com with SMTPS id 1574219796587191.63371913747665;
+ Tue, 19 Nov 2019 19:16:36 -0800 (PST)
 From: Stephen Brennan <stephen@brennan.io>
 To: stephen@brennan.io
-Message-ID: <20191120031622.88949-4-stephen@brennan.io>
-Subject: [PATCH v3 3/4] ARM: dts: bcm2835: Move rng definition to common
- location
-Date: Tue, 19 Nov 2019 19:16:21 -0800
+Message-ID: <20191120031622.88949-5-stephen@brennan.io>
+Subject: [PATCH v3 4/4] ARM: dts: bcm2711: Enable HWRNG support
+Date: Tue, 19 Nov 2019 19:16:22 -0800
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191120031622.88949-1-stephen@brennan.io>
 References: <20191120031622.88949-1-stephen@brennan.io>
 MIME-Version: 1.0
 X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_191958_545853_6A32C7DC 
-X-CRM114-Status: GOOD (  11.12  )
+X-CRM114-CacheID: sfid-20191119_192020_177307_DE7B83E1 
+X-CRM114-Status: GOOD (  11.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,54 +97,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-BCM2711 inherits from BCM283X, but has an incompatible HWRNG. Move this
-node to bcm2835-common.dtsi, so that BCM2711 can define its own.
+This enables hardware random number generator support for the BCM2711
+on the Raspberry Pi 4 board.
 
 Signed-off-by: Stephen Brennan <stephen@brennan.io>
 ---
+ arch/arm/boot/dts/bcm2711.dtsi | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
-Changes in v3:
-- moved the bcm2835 rng into bcm2835-common.dtsi rather than a new file
-- split out enabling rng on bcm2711 into its own patch
-
- arch/arm/boot/dts/bcm2835-common.dtsi | 6 ++++++
- arch/arm/boot/dts/bcm283x.dtsi        | 6 ------
- 2 files changed, 6 insertions(+), 6 deletions(-)
-
-diff --git a/arch/arm/boot/dts/bcm2835-common.dtsi b/arch/arm/boot/dts/bcm2835-common.dtsi
-index fe1ab40c7f22..2b1d9d4c0cde 100644
---- a/arch/arm/boot/dts/bcm2835-common.dtsi
-+++ b/arch/arm/boot/dts/bcm2835-common.dtsi
-@@ -70,6 +70,12 @@ pm: watchdog@7e100000 {
- 			system-power-controller;
+diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
+index ac83dac2e6ba..ed0877d5a1e9 100644
+--- a/arch/arm/boot/dts/bcm2711.dtsi
++++ b/arch/arm/boot/dts/bcm2711.dtsi
+@@ -92,10 +92,9 @@ pm: watchdog@7e100000 {
  		};
  
-+		rng@7e104000 {
-+			compatible = "brcm,bcm2835-rng";
-+			reg = <0x7e104000 0x10>;
-+			interrupts = <2 29>;
-+		};
-+
- 		pixelvalve@7e206000 {
- 			compatible = "brcm,bcm2835-pixelvalve0";
- 			reg = <0x7e206000 0x100>;
-diff --git a/arch/arm/boot/dts/bcm283x.dtsi b/arch/arm/boot/dts/bcm283x.dtsi
-index 3caaa57eb6c8..5219339fc27c 100644
---- a/arch/arm/boot/dts/bcm283x.dtsi
-+++ b/arch/arm/boot/dts/bcm283x.dtsi
-@@ -84,12 +84,6 @@ clocks: cprman@7e101000 {
- 				<&dsi1 0>, <&dsi1 1>, <&dsi1 2>;
- 		};
- 
--		rng@7e104000 {
--			compatible = "brcm,bcm2835-rng";
--			reg = <0x7e104000 0x10>;
--			interrupts = <2 29>;
--		};
+ 		rng@7e104000 {
+-			interrupts = <GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>;
 -
- 		mailbox: mailbox@7e00b880 {
- 			compatible = "brcm,bcm2835-mbox";
- 			reg = <0x7e00b880 0x40>;
+-			/* RNG is incompatible with brcm,bcm2835-rng */
+-			status = "disabled";
++			compatible = "brcm,bcm2711-rng200";
++			reg = <0x7e104000 0x28>;
++			status = "okay";
+ 		};
+ 
+ 		uart2: serial@7e201400 {
 -- 
 2.24.0
 
