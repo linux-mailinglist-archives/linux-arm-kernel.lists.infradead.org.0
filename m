@@ -2,52 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E3BA10447A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 20:45:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72DC110447E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 20:46:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:
+	Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vI6404nRNHLcDlGR7//rdLt4l4CuwSPUXucY9W7IswI=; b=rsMIGbsRwvlwY4oQPhO83M2R/
-	80Sy22Fr0UEligM8foPXRyf+t70RPkMtMdTfx1Ujx7furhU7Hypg8l2DNEp2y1EEU7mGyUKanxRNE
-	ruOgLCdfKiQvhrUyPz4betXstbWRTy2ktRmTjCaIDmwDCgioftWeJDaMKXJpWkSMw9FRKiB1gHint
-	n1502YSlhbNGnl7c19M5Ny2JKUThEf0AOY0AzlYMUZb3V3kZHNEOhb48zu/Aiv4PNsmsTBkD4XcMC
-	9LSSmNnJNeDqjauogYevAaTGh7RBKQZNYyk3sg3uj5ZYbhhr8vyI/xEueBwXgpg3IWsFMUcS7D8Q+
-	uLF+AjgtA==;
+	 bh=OTL5js4PPovwIqUoi7jTUSU/cnpepgfeEmVQAm8Na9U=; b=FfCk1xDZ36627CN7vAk7WzK+6
+	WY/GxXU1r1WxQEjqCKt1VYEHm9EkCOKPImTPq7cEQolwYXYC9onMErRbZAAkdi412T5KswLD5C1Jh
+	v8Ce32bPT0zAGKkeitksA9LW9hBilPj/da3j4WqDzGRDMK0vuOxSieUiBleDjAjblk5akeAj7uw2O
+	gnCwfDGK56+W56b//K7TE5W1mv9GI4RaHmfUZWG+9O+Uw7oX83WkgUlHeY31fJ+qcJAkZqvQp3VYd
+	vd61/JHyU0FY3pLs3IbFo9nrfKC5xpleE4SyvbK94DSao1OiGI/2G+3QfOi8FG9Avi8cmcPDHbwbJ
+	sDzMZeuaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXVur-0002b0-Qj; Wed, 20 Nov 2019 19:45:29 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iXVvo-0002w5-3B; Wed, 20 Nov 2019 19:46:28 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXVuh-0002V6-E3; Wed, 20 Nov 2019 19:45:20 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 63673AFCB;
- Wed, 20 Nov 2019 19:45:15 +0000 (UTC)
-Message-ID: <073219d4e46bab9fb6ba972ebc2ee2f3b55abf55.camel@suse.de>
-Subject: Re: [PATCH v3 4/4] ARM: dts: bcm2711: Enable HWRNG support
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stephen Brennan <stephen@brennan.io>
-Date: Wed, 20 Nov 2019 20:45:12 +0100
-In-Reply-To: <20191120031622.88949-5-stephen@brennan.io>
-References: <20191120031622.88949-1-stephen@brennan.io>
- <20191120031622.88949-5-stephen@brennan.io>
-User-Agent: Evolution 3.34.1 
+ id 1iXVvc-0002vR-VE
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 19:46:18 +0000
+Received: by mail-ed1-x542.google.com with SMTP id m13so532522edv.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 11:46:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=719bsazi0dbFes8dSA1CK4DMOVZBwF8jI2z3H6EBZoU=;
+ b=enYhKFVD/qQ/yKh2BY2CWczU4JbompieZuFI33y2NFFVSbXnOSqVl+SEHTkdWN1saQ
+ 4mQznt4mf2OphiR/z4qQ35SZgO3lTWW3+l/kFU5g85HINRlUuVCgz5Ua0zPcEjsJO4Y3
+ DeWdV4VW6qrJ7mOVXfa1pSD1gJ3jq5oPFMFyLWWHu61mXxVCNxDkhoRawPsc2sQmkbey
+ MOsyxkmKzNWyjWa4q63IYKfZP3mPtO4C2AkyulH+Umi3o8k1B8TeEltDQDHrEm4jvdwk
+ a1/W+NOAwVZMhooXGi9iJYOICLNsW5IeoD7+UdJhtLXJ7KtGEmas1lYExqYwV8W9rE7w
+ d9bw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=719bsazi0dbFes8dSA1CK4DMOVZBwF8jI2z3H6EBZoU=;
+ b=oiCzzmOvJuf++ePSwciDAjt8tIbPPbMGQ3bs7aio6QITGurBiCrtWWFq8/AzVpJ1gM
+ CKwB8IYSZRzV4h6aYTdsYZHce3WikqpQJ+PCtDTUiA3WO+v2IELruTifuKQJeaweBsEX
+ T0f9+f970ZZzxQZlRWAL1HpNVdBTpx+Voi9lTz1m0f/fkhMQuFU/jRvDR57R+c2tK3RK
+ XY10OUYgbstvMlku1FO6SZaMbp9iM49PBowIm3SM2KWafhAfqWFje/hm+7yQTkC9oDJE
+ 1JUg1xBQuAx96CHdM2GGE/x+VqaEL6FTz9nJYhbYSdmEubp8KynWdItUTVFx07Tvzcl4
+ 1OrQ==
+X-Gm-Message-State: APjAAAWVIx/iNZR7v+AeQ1fGxbKGg7OzCOzNa9XNATMd1OCcf6bl2MfJ
+ +DmdDVRrOZLHI9DKZmt9pOXTO6HvmtUjuJRy92tVqw==
+X-Google-Smtp-Source: APXvYqyGGB5Ejm+dAfU7oHFOo9IaMoTis9GuQGsrePKYkgnhdxKU0iaPnczimnWR29TkDLsiEwVXYHoZHPzaOMk4388=
+X-Received: by 2002:a17:906:e88:: with SMTP id p8mr7383771ejf.15.1574279175132; 
+ Wed, 20 Nov 2019 11:46:15 -0800 (PST)
 MIME-Version: 1.0
+References: <20191119221006.1021520-1-pasha.tatashin@soleen.com>
+ <20191120164307.GA19681@lakrids.cambridge.arm.com>
+ <CA+CK2bAkb7zg6ne=PzA7UrQF49J2Sa7rmyWM3Bqugfe00-36ng@mail.gmail.com>
+In-Reply-To: <CA+CK2bAkb7zg6ne=PzA7UrQF49J2Sa7rmyWM3Bqugfe00-36ng@mail.gmail.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Wed, 20 Nov 2019 14:46:03 -0500
+Message-ID: <CA+CK2bCX+QGMPzhjj-UmVNb1jG8Z6WNW=L0GiVsTpGrhyqb9tA@mail.gmail.com>
+Subject: Re: [PATCH] arm64: kernel: memory corruptions due non-disabled PAN
+To: Mark Rutland <mark.rutland@arm.com>
+Content-Type: multipart/mixed; boundary="0000000000000326770597cc6f1e"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_114519_632432_96AF1DB2 
-X-CRM114-Status: GOOD (  15.18  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191120_114617_081518_68CE1B60 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,87 +93,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- Scott Branden <sbranden@broadcom.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matt Mackall <mpm@selenic.com>, linux-kernel@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, linux-crypto@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Ray Jui <rjui@broadcom.com>, linux-arm-kernel@lists.infradead.org,
- Stefan Wahren <wahrenst@gmx.net>
-Content-Type: multipart/mixed; boundary="===============6290375416073971149=="
+Cc: Sasha Levin <sashal@kernel.org>, info@metux.net,
+ Vladimir Murzin <vladimir.murzin@arm.com>, steve.capper@arm.com,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ James Morris <jmorris@namei.org>, LKML <linux-kernel@vger.kernel.org>,
+ alexios.zavras@intel.com, James Morse <james.morse@arm.com>,
+ allison@lohutok.net, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>, will@kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============6290375416073971149==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-EQFLnI4F4oDM522MqmL9"
-
-
---=-EQFLnI4F4oDM522MqmL9
+--0000000000000326770597cc6f1e
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
 
-On Tue, 2019-11-19 at 19:16 -0800, Stephen Brennan wrote:
-> This enables hardware random number generator support for the BCM2711
-> on the Raspberry Pi 4 board.
->=20
-> Signed-off-by: Stephen Brennan <stephen@brennan.io>
-> ---
->  arch/arm/boot/dts/bcm2711.dtsi | 7 +++----
->  1 file changed, 3 insertions(+), 4 deletions(-)
->=20
-> diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.d=
-tsi
-> index ac83dac2e6ba..ed0877d5a1e9 100644
-> --- a/arch/arm/boot/dts/bcm2711.dtsi
-> +++ b/arch/arm/boot/dts/bcm2711.dtsi
-> @@ -92,10 +92,9 @@ pm: watchdog@7e100000 {
->  		};
-> =20
->  		rng@7e104000 {
-> -			interrupts =3D <GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>;
-> -
-> -			/* RNG is incompatible with brcm,bcm2835-rng */
-> -			status =3D "disabled";
-> +			compatible =3D "brcm,bcm2711-rng200";
-> +			reg =3D <0x7e104000 0x28>;
-> +			status =3D "okay";
+> > I see that with CONFIG_ARM64_SW_TTBR0_PAN=y, this means that we may
+> > leave the stale TTBR0 value installed across a context-switch (and have
+> > reproduced that locally), but I'm having some difficulty reproducing the
+> > corruption that you see.
+>
+> I will send the full test shortly. Note, I was never able to reproduce
+> it in QEMU, only on real hardware. Also, for some unknown reason after
+> kexec I could not reproduce it only during first boot, so it is
+> somewhat fragile, but I am sure it can be reproduced in other cases as
+> well, it is just my reproducer is not tunes for that.
+>
 
-Small nitpick, the 'okay' status is set by default, so no need for this. Bu=
-t
-it's something we can edit out once we pick the patch.
+Attached is the test program that I used to reproduce memory corruption.
+Test on board with Broadcom's Stingray SoC.
 
-Regards,
-Nicolas
+Without fix:
+# time /tmp/repro
+Corruption: pid 1474 map[0] 1488 cpu 3
+Terminated
 
+real    0m0.088s
+user    0m0.004s
+sys     0m0.071s
 
---=-EQFLnI4F4oDM522MqmL9
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
+With the fix:
 
------BEGIN PGP SIGNATURE-----
+# time /tmp/repro
+Test passed, all good
+Terminated
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3Vl8gACgkQlfZmHno8
-x/49PQf/Tah+83leeq/AYVqsmeAlWU9tVFZ6DV4o9XFtXocYffZlQtscjV5mLpXU
-4CfcjTwUdIn/Cfk70ZXXqD7EsQ9XUGN6pfNiP/rPffSSTKAUd7wektykwl9YQaAN
-DcJBMRbPy+TPZDYaLu7DtGMpLe9HYj1p1onNEoKfW8XBqOPRirBQv1KfYTFMQyq4
-ZCXnvMz6F4PxpUf/Ybgv3KB3twfd8c1vF9arPEh06PKfTozUbnUu0gEqjgLvwi6a
-NP+K9oMo/5HMnOARh9znTaRJu/jKSjoiyCM0Jsisd6z6TDEe8PezgkxpdjIm6k79
-p6f8JA13izZl3k2g8I5ZBnG+xuWyBQ==
-=gzPL
------END PGP SIGNATURE-----
-
---=-EQFLnI4F4oDM522MqmL9--
+real    1m1.286s
+user    0m0.004s
+sys     0m0.970s
 
 
 
---===============6290375416073971149==
+Pasha
+
+--0000000000000326770597cc6f1e
+Content-Type: text/x-csrc; charset="US-ASCII"; name="repro.c"
+Content-Disposition: attachment; filename="repro.c"
+Content-Transfer-Encoding: base64
+Content-ID: <f_k37p5xni0>
+X-Attachment-Id: f_k37p5xni0
+
+I2RlZmluZSBfR05VX1NPVVJDRQojaW5jbHVkZSA8bGludXgvcGVyZl9ldmVudC5oPgojaW5jbHVk
+ZSA8c3lzL21tYW4uaD4KI2luY2x1ZGUgPHN5cy9zeXNpbmZvLmg+CiNpbmNsdWRlIDxzeXMvaW9j
+dGwuaD4KI2luY2x1ZGUgPHN5cy9zeXNjYWxsLmg+CiNpbmNsdWRlIDxzeXMvd2FpdC5oPgojaW5j
+bHVkZSA8c3RyaW5nLmg+CiNpbmNsdWRlIDxzdGRsaWIuaD4KI2luY2x1ZGUgPHNpZ25hbC5oPgoj
+aW5jbHVkZSA8c3RkaW8uaD4KI2luY2x1ZGUgPHNjaGVkLmg+CiNpbmNsdWRlIDx0aW1lLmg+CiNp
+bmNsdWRlIDx1bmlzdGQuaD4KCiNkZWZpbmUgUlVOX1RJTUUJNjAKI2RlZmluZSBTSVpFCQk0MDk2
+CiNkZWZpbmUgTlBST0NTCQk0MDk2CiNkZWZpbmUgTkNQVQkJZ2V0X25wcm9jc19jb25mKCkKI2Rl
+ZmluZSBQQUdFTUFQX0xFTkdUSCA4CnVuc2lnbmVkIGxvbmcgZ2V0X3BhKHZvaWQgKmFkZHIpIHsK
+ICAgRklMRSAqcGFnZW1hcCA9IGZvcGVuKCIvcHJvYy9zZWxmL3BhZ2VtYXAiLCAicmIiKTsKICAg
+dW5zaWduZWQgbG9uZyBvZmZzZXQgPSAodW5zaWduZWQgbG9uZylhZGRyIC8gZ2V0cGFnZXNpemUo
+KSAqIFBBR0VNQVBfTEVOR1RIOwogICB1bnNpZ25lZCBsb25nIHBmbiA9IDA7CgogICBpZihmc2Vl
+ayhwYWdlbWFwLCAodW5zaWduZWQgbG9uZylvZmZzZXQsIFNFRUtfU0VUKSAhPSAwKSB7CiAgICAg
+IGZwcmludGYoc3RkZXJyLCAiRmFpbGVkIHRvIHNlZWsgcGFnZW1hcCB0byBwcm9wZXIgbG9jYXRp
+b25cbiIpOwogICAgICBleGl0KDEpOwogICB9CgogICBmcmVhZCgmcGZuLCAxLCBQQUdFTUFQX0xF
+TkdUSC0xLCBwYWdlbWFwKTsKCiAgIHBmbiAmPSAweDdGRkZGRkZGRkZGRkZGOwoKICAgZmNsb3Nl
+KHBhZ2VtYXApOwoKICAgcmV0dXJuIHBmbiAqIGdldHBhZ2VzaXplKCk7Cn0KCmludApkb193b3Jr
+KCkKewoJaW50ICptYXAsIHBpZDsKCXVuc2lnbmVkIGxvbmcgcGE7CgoJaWYgKGZvcmsoKSkKCQll
+eGl0KDApOwoKCXBpZCA9IGdldHBpZCgpOwoJbWFwID0gbW1hcChOVUxMLCBTSVpFLCBQUk9UX1JF
+QUR8UFJPVF9XUklURSwgTUFQX1NIQVJFRCB8IE1BUF9BTk9OWU1PVVMsCgkJICAgLTEsIDApOwoJ
+bWFwWzBdID0gcGlkOwoJc2NoZWRfeWllbGQoKTsKCWlmIChtYXBbMF0gIT0gcGlkKSB7CgkJZnBy
+aW50ZihzdGRlcnIsICJDb3JydXB0aW9uOiBwaWQgJWQgbWFwWzBdICVkIGNwdSAlZFxuIiwKCQkJ
+cGlkLCBtYXBbMF0sIHNjaGVkX2dldGNwdSgpKTsKCQlraWxsKDAsIFNJR1RFUk0pOwoJCXJldHVy
+biAxOwoJfQoJbXVubWFwKG1hcCwgU0laRSk7CglyZXR1cm4gMDsKfQoKc3RhdGljIHZvaWQgZXZl
+bnRfb3BlbihzdHJ1Y3QgcGVyZl9ldmVudF9hdHRyICpjdHhfZXZlbnRfYXR0ciwgaW50IGNvbmZp
+ZykKewoJaW50IGksIGZkOwoJY3R4X2V2ZW50X2F0dHItPmNvbmZpZyA9IGNvbmZpZzsKCWZvciAo
+aSA9IDA7IGkgPCBOQ1BVOyBpKyspIHsKCQlmZCA9IHN5c2NhbGwoX19OUl9wZXJmX2V2ZW50X29w
+ZW4sIGN0eF9ldmVudF9hdHRyLAoJCQktMSwgaSwgLTEsIDApOwoJCWlvY3RsKGZkLCBQRVJGX0VW
+RU5UX0lPQ19FTkFCTEUsIDApOwoJfQp9CgpzdGF0aWMgdm9pZApwZXJmX2V2ZW50cygpCnsKCXN0
+cnVjdCBwZXJmX2V2ZW50X2F0dHIgY3R4X2V2ZW50X2F0dHI7CgoJbWVtc2V0KCZjdHhfZXZlbnRf
+YXR0ciwgMCwgc2l6ZW9mKHN0cnVjdCBwZXJmX2V2ZW50X2F0dHIpKTsKCWN0eF9ldmVudF9hdHRy
+LnR5cGUgPSBQRVJGX1RZUEVfU09GVFdBUkU7CgljdHhfZXZlbnRfYXR0ci5zaXplID0gc2l6ZW9m
+IChzdHJ1Y3QgcGVyZl9ldmVudF9hdHRyKTsKCWN0eF9ldmVudF9hdHRyLnNhbXBsZV9wZXJpb2Qg
+PSAxOwoJY3R4X2V2ZW50X2F0dHIuc2FtcGxlX3R5cGUgPSBQRVJGX1NBTVBMRV9DQUxMQ0hBSU47
+CgoJZXZlbnRfb3BlbigmY3R4X2V2ZW50X2F0dHIsIFBFUkZfQ09VTlRfU1dfQ1BVX0NMT0NLKTsK
+fQoKaW50Cm1haW4oaW50IGFyZ2MsIGNoYXIgKiphcmd2KQp7CglwaWRfdCBwW05QUk9DU107Cglp
+bnQgaSwgZmQ7CgljcHVfc2V0X3QgIG1hc2s7CgoJQ1BVX1pFUk8oJm1hc2spOwoJZm9yIChpID0g
+MDsgaSA8IE5DUFU7IGkrKykKCQlDUFVfU0VUKGksICZtYXNrKTsKCXNjaGVkX3NldGFmZmluaXR5
+KDAsIHNpemVvZihtYXNrKSwgJm1hc2spOwoKCXBlcmZfZXZlbnRzKCk7Cglmb3IgKGkgPSAwOyBp
+IDwgTlBST0NTOyBpKyspIHsKCQlwW2ldID0gZm9yaygpOwoJCWlmIChwW2ldID09IDApIHsKCQkJ
+Zm9yICg7OykgewoJCQkJaWYgKGRvX3dvcmsoKSkgewoJCQkJCWZwcmludGYoc3RkZXJyLCAiQnVn
+IGlzIGRldGVjdGVkXG4iKTsKCQkJCQlraWxsKDAsIFNJR1RFUk0pOwoJCQkJCWV4aXQoMSk7CgkJ
+CQl9CgkJCX0KCQl9Cgl9CgoJc2xlZXAoUlVOX1RJTUUpOwoJcHJpbnRmKCJUZXN0IHBhc3NlZCwg
+YWxsIGdvb2RcbiIpOwoJa2lsbCgwLCBTSUdURVJNKTsKCXJldHVybiAwOwp9Cg==
+--0000000000000326770597cc6f1e
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -150,6 +206,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6290375416073971149==--
-
+--0000000000000326770597cc6f1e--
 
