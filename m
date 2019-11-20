@@ -2,82 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF8E7103DF5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 16:05:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6A23103DFD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 16:07:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SVjS3BIPjdsmFILUgeNec83Yj6xVzAdIobpjZ+vTBR8=; b=D33Y2KfghMqGASkwxvS1WYt2m
-	mWnVUYk6mRkKQqZ06pXsfs4Gcn7IxnYb9YT8qCNUn0bQPM5tauOVlP53bYrT3ckRI639AdMf6mXit
-	xaKc3S/fbzZoDRpSd3xOHxtLaFml/DveJWOkbsRZuJpnUcMsWs5RIcVnMR5kzXO4vvnIdVwzg4rPt
-	I2GxNZW8ItO79sKbyZv+9Vpiy50NeYalYp6oxxCXNrS9a4t4x2aOT7FNiFxayYpWylVoy8W6hkUoH
-	UfaQsTQz9NB9fPB2Xds679fA+KRxYSMxGSzr9tqZFXerOIvL/QAZ518uyWCj5NKq7f1LBri2BQxIx
-	k8P8pUKAg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lc9vLrvO0csrQLJUUvuomCLcarPC2O2OMhdTpWlvtEU=; b=KlowW6L6C443Gq
+	+n7Vpz1X8b2VG1buGHUmD3Apnzj5Aj1pLTuil0eJeuprM0vuaPUUnFD4WzR9n9O2vKkQ3e0EqHllG
+	7b/GXKawb2Nkw6cSQlh+ZdcNt7gfkO9yEHdqrUYsV1P6zjFaRBhEPQQ3QpparzkUd3JXodfQyJlbA
+	pr3Jb72jCEYvFYOclrBDy96tAlXq68qTX3WkH6HKIu4l/PlQ3lVy/+oAoOpQMyMrBQ5WkR5MvNFGD
+	Kh3jlQyEU2wso1jQ5CqVIPkio6+MAIeALuq9wZSElcdImH17WxSZWJgjC8H1Y4hIl1/BJwH+7ISKU
+	gzEJU2+4vny2E8ueYZ3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXRXq-0000UI-Ua; Wed, 20 Nov 2019 15:05:26 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iXRZx-0000vO-Av; Wed, 20 Nov 2019 15:07:37 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXRXU-0007ZN-Ct
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 15:05:07 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xAKEv3XH012326; Wed, 20 Nov 2019 16:04:56 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=B4eTGdmy9M6RCxNN9IMGP9gViNyeowzelSDgABH62j0=;
- b=fXFolFfTBnHvkrJczHAFOGhstYXWmPF1ic+/nyQXCPpTF9LJA4cGSmNYX59jMj1anpz3
- CVZuhz8WsM0kkVwpl2WaTHGYHQpSMP2ESQjyEaj6DgsPNF6Cc7or/cBrXWO7Ffprpz9X
- DgGQqHbP6ZWd1hpwzXcVeJwRVKNRCpmqt+NMO6qYsRVZKrj6+n3nx9CagynpAJasjWjg
- FUPNF7Of05JQ5Hx4zoJNv0OB76YPVKGeNmIeApVkvU/0FNvb89UyR15w4b8g4n0h73vx
- yind01xOACT4Uugyzo34/OF00K0A6hmSZrfnWeCAr5r9rxh7kk/hy2Gq6uUvCiPpKy6j 4Q== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wa9up6nbv-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 20 Nov 2019 16:04:56 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2A83510002A;
- Wed, 20 Nov 2019 16:04:56 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E82D62B4F11;
- Wed, 20 Nov 2019 16:04:55 +0100 (CET)
-Received: from lmecxl0912.lme.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 20 Nov
- 2019 16:04:54 +0100
-Subject: Re: [PATCH 0/6] STM32 DT: Updates for SOC diversity
-To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, <arnd@arndb.de>,
- <robh+dt@kernel.org>, <mark.rutland@arm.com>
-References: <20191120144109.25321-1-alexandre.torgue@st.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <29723f43-11cb-1e95-80a0-407c99a14208@st.com>
-Date: Wed, 20 Nov 2019 16:04:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iXRZp-0000v2-9u
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 15:07:31 +0000
+Received: by mail-qk1-x744.google.com with SMTP id i19so71782qki.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 07:07:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=zl4j/2+Wpub6sUToRpM79buRr8SjPfCwuUiAjMK14jU=;
+ b=rT8mmIG6Pcowc98W/inkZtuyRSaQwDQWl7jtpGjey1FuBb7nmoKaMMXLNzmh7cjYnh
+ euq5KUtLxNWabzlvaOk5ryr34lbk1cJMxNJd6mKd9nCy/SY1M5BDVPd2Sd2nb/ECzbrP
+ wMe6EnaTuzWSE29KECWGgtYauSRW2fq5Y6oYpnJqAYFD/42GKujFt7S/jqoTNmSTRkCj
+ 5+B4+4tSEjAhBF8jzOAPACvPN+fT08nIBQmeYmOlX0a/u6ENYYIOg4EvDWdJNPA23n/b
+ hEcL3Ox2l4B27p9x3KVDe0uRjR43ET56WkMHS+ivH1mB1m39k2lQpq4yM5jJY+M9Zw6o
+ QdzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=zl4j/2+Wpub6sUToRpM79buRr8SjPfCwuUiAjMK14jU=;
+ b=aIwklBHGNcv/xQDJGrJeCQsjkzoC5BITZxyTmsByXIsVnUXxJlZKZyRoiGP1s0Y61x
+ Y2Ap0Zwy7opjfWGPnzGPYW1s1f/8+nftWvcJg+ZmC74MisZR+e9yzvMhEPJPLTVk/MVi
+ LErvCsTs+ljTr5SSp/Cp6tmta9aQejuR/JTPA+G1bvi4VZFdhGNTN0wxhuw9sAdUfwV0
+ Y6S0y6cNQo1m8Rxx+2f9UqVFMAJZGnEq0iniKniexOVaH2jJd0fbD6ROYuww8EVqBa53
+ QCwh0aWO2C4IRhpsRqEz+4VeAouqn+Rz0CwyxeclhzJFsBFhBFZEEBtu88gplijx4kZm
+ vjDA==
+X-Gm-Message-State: APjAAAUSsx1vEiGeDSRe4vKHKPFUttsDQjYsUf2aCqXHZHrZfwP77J9e
+ vc2xpHOjcIddtKh0sgDhVRCuVro317ydb430ZXMDtohL
+X-Google-Smtp-Source: APXvYqyrVEBXsUsVIRqV+UcJW7AQxFHsSttKJ2oAAKbvocSD4xfGpdGIjW9x9aqkafwIk1BtLbxIveaYvjzgzy70bc0=
+X-Received: by 2002:a37:9b54:: with SMTP id d81mr2669935qke.299.1574262447832; 
+ Wed, 20 Nov 2019 07:07:27 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191120144109.25321-1-alexandre.torgue@st.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG7NODE2.st.com (10.75.127.20) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-11-20_04:2019-11-15,2019-11-20 signatures=0
+References: <CAPaFbat4MM0=iVB-VazTK9=2qRebAgEN4euYCTESRo3yfx75Kw@mail.gmail.com>
+ <20191119233633.GG25745@shell.armlinux.org.uk>
+ <CAPaFbatG+ePwjCnBva1tfmzmvpHZv9xW3nM4gj2DTpFn=D+9Vg@mail.gmail.com>
+ <2cd3e872-57d5-5cbb-78d7-98da6447dc59@arm.com>
+ <CAPaFbasJGxV=mEGHAOWdt31vapCfV_RyD1Ptz6aa_WTp6htPKg@mail.gmail.com>
+ <20191120105017.GN25745@shell.armlinux.org.uk>
+ <CAPaFbasKH_BRARMtQYqxWR6koQB=cF_Ln5n=-7uCqdbjqmu9Rg@mail.gmail.com>
+ <11daeee6-8dca-96fa-b6ee-a25ad3e815a9@arm.com>
+ <20191120135852.GR25745@shell.armlinux.org.uk>
+In-Reply-To: <20191120135852.GR25745@shell.armlinux.org.uk>
+From: Leonid Movshovich <event.riga@gmail.com>
+Date: Wed, 20 Nov 2019 15:07:16 +0000
+Message-ID: <CAPaFbat=TXqGYx5KrQaO0x_r7wYQ9sno1j07Je437n8+P1Gi6g@mail.gmail.com>
+Subject: Re: [PATCH] irq-gic: select all CPU's selected in interrupt affinity
+ settings
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_070504_902183_63630F53 
-X-CRM114-Status: GOOD (  18.28  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191120_070729_372790_B2F43E76 
+X-CRM114-Status: GOOD (  33.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (event.riga[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -97,105 +101,173 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, 20 Nov 2019 at 13:58, Russell King - ARM Linux admin
+<linux@armlinux.org.uk> wrote:
+>
+> On Wed, Nov 20, 2019 at 01:33:11PM +0000, Robin Murphy wrote:
+> > On 20/11/2019 11:25 am, Leonid Movshovich wrote:
+> > > On Wed, 20 Nov 2019 at 10:50, Russell King - ARM Linux admin
+> > > <linux@armlinux.org.uk> wrote:
+> > > >
+> > > > On Wed, Nov 20, 2019 at 10:44:39AM +0000, Leonid Movshovich wrote:
+> > > > > On Wed, 20 Nov 2019 at 01:15, Robin Murphy <robin.murphy@arm.com> wrote:
+> > > > > >
+> > > > > > On 2019-11-20 12:24 am, Leonid Movshovich wrote:
+> > > > > > > On Tue, 19 Nov 2019 at 23:36, Russell King - ARM Linux admin
+> > > > > > > <linux@armlinux.org.uk> wrote:
+> > > > > > > >
+> > > > > > > > On Tue, Nov 19, 2019 at 11:12:26PM +0000, event wrote:
+> > > > > > > > > So far only a CPU selected with top affinity bit was selected. This
+> > > > > > > > > resulted in all interrupts
+> > > > > > > > > being processed by CPU0 by default despite "FF" default affinity
+> > > > > > > > > setting for all interrupts
+> > > > > > > >
+> > > > > > > > Have you checked whether this causes _ALL_ CPUs in the mask to be
+> > > > > > > > delivered a single interrupt, thereby causing _ALL_ CPUs to be
+> > > > > > > > slowed down and hit the same locks at the same time.
+> > > > > > > >
+> > > > > > >
+> > > > > > > Yes, I've checked this. No, interrupt is delivered to only one CPU.
+> > > > > > > Also ARM GIC architecture specification specifically states in chapter
+> > > > > > > 3.1.1 that hardware interrupts are delivered to a single CPU in
+> > > > > > > multiprocessor system ("1-N model").
+> > > > > >
+> > > > > > But see also section 3.2.3 - just because only one CPU actually runs the
+> > > > > > given ISR doesn't necessarily guarantee that the others *weren't*
+> > > > > > interrupted. I'd also hesitate to make any assumptions that all GIC
+> > > > > > implementations behave exactly the same way.
+> > > > > >
+> > > > > > Robin.
+> > > > >
+> > > > > Yes, that's right, however:
+> > > > > 1. They are only interrupted for a split-second, since interrupt is
+> > > > > immediately ACKed in gic_handle_irq
+> > > >
+> > > > Even that is detrimental - consider cpuidle where a CPU is placed in
+> > > > a low power state waiting for an interrupt, and it keeps getting woken
+> > > > for interrupts that it isn't able to handle.  The effect will be to
+> > > > stop the CPU hitting the lower power states, which would be a regression
+> > > > over how the kernel behaves today.
+> > > >
+> > > > > 2. More important that smp_affinity in procfs is defined to allow user
+> > > > > to configure multiple CPU's to handle interrupts (see
+> > > > > Documentation/IRQ-affinity.txt) which is effectively prohibited in
+> > > > > current implementation. I mean, when user sets it to FF, she expects
+> > > > > all CPUs to process interrupts, not CPU0 only
+> >
+> > I have to say, my interaction with the IRQ layer is far more as a "user"
+> > than as a "developer", yet I've always assumed that the affinity mask
+> > represents the set of CPUs that *may* handle an interrupt and have never
+> > felt particularly surprised by the naive implementation of "just pick the
+> > first one".
+
+Kernel documentation in Documentation/IRQ-affinity.txt sets an
+expectation that IRQs would be spread between CPUs evenly in case
+multiple CPUs are selected in smp_affinity. It also seems to be quite
+a common practice (in consumer devices at least) to have interrupts
+spread between CPUs. At least that's what happens on my PC and phone
+according to /proc/interrupts
+
+> >
+> > Do these users also expect the scheduler to constantly context-switch a
+> > single active task all over the place just because the default thread
+> > affinity mask says it can?
+>
+> It is my understanding that the scheduler will try to keep tasks on
+> the CPU they are already running on, unless there's a benefit to
+> migrating it to a different CPU - because if you're constantly
+> migrating code between different CPUs, you're having to bounce
+> cache lines around the system.
+>
+> > > > The reason we've ended up with that on ARM is precisely because it
+> > > > wasted CPU resources, and my attempts at writing code to distribute
+> > > > the interrupt between CPU cores did not have a successful outcome.
+> > > > So, the best thing that could be done was to route interrupts to the
+> > > > first core, and run irqbalance to distribute the interrupts in a
+> > > > sensible, cache friendly way between CPU cores.
+> > > >
+> > > > And no, the current implementation is *NOT* prohibited.  You can't
+> > > > prohibit something that hardware hasn't been able to provide.
+> > > >
+> > >
+> > > Hardware allows delivering interrupt to random CPU from selected
+> > > bitmask and current implementation doesn't allow to configure this.
+> > > While this may be an issue for power-concerned systems, there are also
+> > > systems with plenty of electricity where using all CPUs for e.g.
+> > > network packet handling is more important.
+> >
+> > It's not just about batteries - more and more SoCs these days have
+> > internally constrained power/thermal budgets too. Think of Intel's turbo
+> > boost, or those Amlogic TV box chips that can only hit their advertised top
+> > frequencies with one or two cores active - on systems like that, yanking all
+> > the cores out of standby every time could be actively detrimental to
+> > single-thread performance and actually end up *increasing*
+> > interrupt-handling latency.
+> >
+> > If you want to optimise a particular system for a particular use-case,
+> > you're almost certainly better off manually tuning affinities anyway
+> > (certain distros already do this). If you mostly just want /proc/interrupts
+> > to look pretty, there's irqbalance.
+>
+> The conclusion I came to when I did the initial 32-bit ARM SMP support
+> was:
+>
+> 1) it is policy, and userspace deals with policy
+> 2) routing the IRQ in to distribute it between CPUs is difficult
+
+Yes, but current implementation of smp_affinity does not allow to set
+multiple CPUs to handle same interrupt. Neither hardware nor software
+seem to have any issues with distribution. In any case, I suggest to
+keep default behaviour as is, so only those who know what are they
+doing would be playing around with this.
+
+> 3) the problem is already solved by userspace (irqbalance)
+
+irqbalance sets smp_affinity. If one wants to dedicate a subset of
+CPUs to a certain interrupt with current implementation of
+set_affinity, irqbalance have to sit there and switch affinities all
+the time. Constantly read /proc/interrupts and change smp_affinity.
+That doesn't sound like a great solution at all.
+Not even mentioning that irqbalance pulls glib which won't make many
+embedded developers happy.
+
+>
+> (2) is difficult because you don't want to do something naieve like
+> route the first interrupt to CPU0, second to CPU1, third to CPU2
+> etc, because that totally destroys cache locality and therefore
+> performance.  Your network card goes faster if its IRQ is always
+> processed by the same CPU (benefiting from hot cache) rather than
+> spreading it around the CPUs.
+
+Imagine my network card receives traffic at 100Mbps, but my single CPU
+can only handle 33 Mbps. I would like to dedicate 3 CPUs to
+networking, but it's not possible at the moment without patching
+kernel or adding a usespace application which would sit and switch
+interrupts' smp_affinity few times a second and keep another CPU busy.
 
 
-On 11/20/19 3:41 PM, Alexandre Torgue wrote:
-> This series updates stm32mp device tree files in order to handle the STM32MP15
-> part numbers diversity. STM32MP15 part numbers are built in this way:
-> 
-> -STM32MP15X: X = [1, 3, 7] for IPs diversity:
->   -STM32MP151 = basic part
->   -STM32MP153 = STM32MP153  + a second CPU A7 + MCAN(x2)
+So if new set_affinity implementation is done together with default
+affinity change in arm/arm64, it would be business-as-usual for users
+of default setup and those "lucky" owners of strange setups (like
+myself) would be able to configure the system.
 
-Sorry for typo: -STM32MP153 = STM32MP151  + a second CPU A7 + MCAN(x2)
-
->   -STM32MP157 = STM32MP153 + DSI + GPU
-> 
-> -STMM32MP15xY: Y = [a, c] for security diversity:
->   -STM32MP15xA: basic part.
->   -STM32MP15xC: adds crypto IP.
-> 
-> -STM32MP15xxZZ: ZZ = [aa, ab, ac, ad] for packages (IO) diversity:
->   -STM32MP15xxAA: TFBGA448 18x18
->   -STM32MP15xxAB: LFBGA354 16x16
->   -STM32MP15xxAC: TFBGA361 12x12
->   -STM32MP15xxAD: TFBGA257 10x10
-> 
-> New device tree files are created and some existing are renamed to match with
-> this split.
-> 
-> In this way it is easy to assemble (by inclusion) those files to match with the
-> SOC partnumber used on board, and then it's simpler for users to create their
-> own device tree board file using the correct SOC.
-> 
-> For more details:
-> 
-> See STM32MP151 [1], STM32MP153 [2], STM32MP157 [3] reference manuals:
->   [1] https://www.st.com/resource/en/reference_manual/dm00366349.pdf
->   [2] https://www.st.com/resource/en/reference_manual/dm00366355.pdf
->   [3] https://www.st.com/resource/en/reference_manual/dm00327659.pdf
-> 
-> Product family:
->   https://www.st.com/en/microcontrollers-microprocessors/stm32-arm-cortex-mpus.html#products
-> 
-> regards
-> Alex
-> 
-> Alexandre Torgue (6):
->    ARM: dts: stm32: Adapt stm32mp157 pinctrl to manage STM32MP15xx SOCs
->      family
->    ARM: dts: stm32: Update stm32mp157 pinctrl files
->    ARM: dts: stm32: Introduce new STM32MP15 SOCs: STM32MP151 and
->      STM32MP153
->    ARM: dts: stm32: Manage security diversity for STM32M15x SOCs
->    ARM: dts: stm32: Adapt STM32MP157 DK boards to stm32 DT diversity
->    ARM: dts: stm32: Adapt STM32MP157C ED1 board to STM32 DT diversity
-> 
->   arch/arm/boot/dts/stm32mp15-pinctrl.dtsi      | 1087 +++++++++++++++
->   .../dts/{stm32mp157c.dtsi => stm32mp151.dtsi} |  218 ++-
->   arch/arm/boot/dts/stm32mp153.dtsi             |   45 +
->   arch/arm/boot/dts/stm32mp157-pinctrl.dtsi     | 1240 -----------------
->   arch/arm/boot/dts/stm32mp157.dtsi             |   31 +
->   arch/arm/boot/dts/stm32mp157a-avenger96.dts   |    5 +-
->   arch/arm/boot/dts/stm32mp157a-dk1.dts         |  604 +-------
->   arch/arm/boot/dts/stm32mp157c-dk2.dts         |    6 +-
->   arch/arm/boot/dts/stm32mp157c-ed1.dts         |    6 +-
->   arch/arm/boot/dts/stm32mp157xaa-pinctrl.dtsi  |   90 --
->   arch/arm/boot/dts/stm32mp157xab-pinctrl.dtsi  |   62 -
->   arch/arm/boot/dts/stm32mp157xac-pinctrl.dtsi  |   78 --
->   arch/arm/boot/dts/stm32mp157xad-pinctrl.dtsi  |   62 -
->   arch/arm/boot/dts/stm32mp15xc.dtsi            |   18 +
->   arch/arm/boot/dts/stm32mp15xx-dkx.dtsi        |  606 ++++++++
->   arch/arm/boot/dts/stm32mp15xxaa-pinctrl.dtsi  |   85 ++
->   arch/arm/boot/dts/stm32mp15xxab-pinctrl.dtsi  |   57 +
->   arch/arm/boot/dts/stm32mp15xxac-pinctrl.dtsi  |   73 +
->   arch/arm/boot/dts/stm32mp15xxad-pinctrl.dtsi  |   57 +
->   19 files changed, 2232 insertions(+), 2198 deletions(-)
->   create mode 100644 arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
->   rename arch/arm/boot/dts/{stm32mp157c.dtsi => stm32mp151.dtsi} (91%)
->   create mode 100644 arch/arm/boot/dts/stm32mp153.dtsi
->   delete mode 100644 arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
->   create mode 100644 arch/arm/boot/dts/stm32mp157.dtsi
->   delete mode 100644 arch/arm/boot/dts/stm32mp157xaa-pinctrl.dtsi
->   delete mode 100644 arch/arm/boot/dts/stm32mp157xab-pinctrl.dtsi
->   delete mode 100644 arch/arm/boot/dts/stm32mp157xac-pinctrl.dtsi
->   delete mode 100644 arch/arm/boot/dts/stm32mp157xad-pinctrl.dtsi
->   create mode 100644 arch/arm/boot/dts/stm32mp15xc.dtsi
->   create mode 100644 arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
->   create mode 100644 arch/arm/boot/dts/stm32mp15xxaa-pinctrl.dtsi
->   create mode 100644 arch/arm/boot/dts/stm32mp15xxab-pinctrl.dtsi
->   create mode 100644 arch/arm/boot/dts/stm32mp15xxac-pinctrl.dtsi
->   create mode 100644 arch/arm/boot/dts/stm32mp15xxad-pinctrl.dtsi
-> 
+>
+> > And given the earlier argument, it's probably worth noting that there are
+> > precious few networking/infrastructure/server SoCs using GICv2 anyway.
+>
+> Networking is just one specific example where it's beneficial.
+> Other examples are available.
+>
+> --
+> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+> According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
