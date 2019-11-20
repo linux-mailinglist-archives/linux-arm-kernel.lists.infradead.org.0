@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 889D0103C05
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 14:39:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DD26103C17
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 14:40:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=GPyZvtGJQmbKT+1I57yTOnPN7k4geKvDn2gjvjXnR6A=; b=Dz9
-	+555STjjZbZKYmv43u+Msn/S4AiVBPJQf/x/y4sTSh8Vejfe8n8HGFwe0Vz7t/i8cWRhVcg2NAIfd
-	axgFqmOuUtRvhQcNvqWLduF1cii5G9VcacM6YwDhN4lUfbvcl9gEBDDedBWTo2bZW0WQDVncRD6ia
-	XGWsONeblYGYbbx5488wckDdmdeyW7v55MjptO0QMbpSILlYUsx4P16Svm1Pssnz9ggW/U7pr0Tug
-	KysAOYSCNhfxTlMKRuxNgdvKbOe0D1zfa8AI3WGrziIuy8HsitGnj7vEaYuBNMTse586fsE6jPQtd
-	P7GZWgb/H3tXknuKBWni1wqlxGsdtAQ==;
+	References:List-Owner; bh=Xlg++aZWd+ehg+wRwBNSI77dTzMecZMiVOcxldLm1mc=; b=jPV
+	YQU4iykgth4EBzO4L5xScLR4r41w21BhzlcwdDjZbPcXv+RdL27lpEVjX85PTYWUXSOdviRJAj5ay
+	WrseRvDldG74jaYp4tHG5O3Mq7y370ohRIDjylPQWR1u97GjF0nxZG0KPPx2xCMyLBpKeuIEHJLwM
+	d2hwB3DIzWR3B44bdiZO/rwu0OuXXC1GlDrt94NQTPiOC2BmzMlO+N+9tmuBHhpwMv5LvC78Qktxi
+	1pF6hfNI0BNnYdSVNChjP8gjfGldl180hg0X3b9As901YXSo5yHhDuPzdm0Smt3NJ2BmZsLbGvpfX
+	n3it6IJfrFXICTjBH6pMUuBEJE/bLIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXQCz-0003xQ-5G; Wed, 20 Nov 2019 13:39:49 +0000
+	id 1iXQDs-0005f7-Bv; Wed, 20 Nov 2019 13:40:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXQCk-0003qx-HP
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 13:39:35 +0000
+ id 1iXQDk-0005eR-1g
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 13:40:37 +0000
 Received: from localhost.localdomain (unknown [118.189.143.39])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5FFC82251E;
- Wed, 20 Nov 2019 13:39:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 01E452252C;
+ Wed, 20 Nov 2019 13:40:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574257174;
- bh=KXX/JKwRu4ohqPW7ejgTiWHaFI0B/xv28AFyZomXDzM=;
+ s=default; t=1574257235;
+ bh=ifOgNdh00ND7dXzC5K+1c6kBHslLHjw9L3ly0yLdQmg=;
  h=From:To:Cc:Subject:Date:From;
- b=0BU5guxnx+oiScud7GD6GK19b2XNEHWNSjAoRyJl+e0DMqiv+EH9QLC5Cy76/MNPb
- 22ARFRfyjMRARJR5bTuvYbzyqfUiTC36kTncmo/Cs+i/2kj3rEsh/LxxRbcm5Q5YkD
- NiBe7PdhIytPqpAwMqANHrMYCbNqQK8dE0rB/bZs=
+ b=TcGMUrX086pvI471jULBm4JS4y2Lhy3ULi/tFNxSQY0G0X3ASsS2Gqr/Yqhfnuwvz
+ xNW1kn1yHA3Q71uBgVgGxRfcaT2tFgt9IM7HbI39z/HUC4SpxPsoHGca/4H7wEhM2Q
+ K9Hd9h0uq6Pd2OR3glycTpOxwABDxJgPfccjgk9Y=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH] soc: fsl: Fix Kconfig indentation
-Date: Wed, 20 Nov 2019 21:39:29 +0800
-Message-Id: <20191120133930.13767-1-krzk@kernel.org>
+Subject: [PATCH] perf: Fix Kconfig indentation
+Date: Wed, 20 Nov 2019 21:40:30 +0800
+Message-Id: <20191120134031.14447-1-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_053934_614225_7A160217 
-X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-CacheID: sfid-20191120_054036_111160_9EBEC5BD 
+X-CRM114-Status: UNSURE (   9.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,8 +75,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Li Yang <leoyang.li@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -89,28 +89,41 @@ coding style with command like:
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 ---
- drivers/soc/fsl/Kconfig | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ drivers/perf/Kconfig | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/soc/fsl/Kconfig b/drivers/soc/fsl/Kconfig
-index 4df32bc4c7a6..8e6f8e57ecd7 100644
---- a/drivers/soc/fsl/Kconfig
-+++ b/drivers/soc/fsl/Kconfig
-@@ -21,10 +21,10 @@ config FSL_GUTS
- 	  into this driver as well.
+diff --git a/drivers/perf/Kconfig b/drivers/perf/Kconfig
+index 09ae8a970880..288c1b3589e7 100644
+--- a/drivers/perf/Kconfig
++++ b/drivers/perf/Kconfig
+@@ -83,8 +83,8 @@ config HISI_PMU
+        bool "HiSilicon SoC PMU"
+        depends on ARM64 && ACPI
+        help
+-         Support for HiSilicon SoC uncore performance monitoring
+-         unit (PMU), such as: L3C, HHA and DDRC.
++	 Support for HiSilicon SoC uncore performance monitoring
++	 unit (PMU), such as: L3C, HHA and DDRC.
  
- config FSL_MC_DPIO
--        tristate "QorIQ DPAA2 DPIO driver"
--        depends on FSL_MC_BUS
--        select SOC_BUS
+ config QCOM_L2_PMU
+ 	bool "Qualcomm Technologies L2-cache PMU"
+@@ -115,11 +115,11 @@ config THUNDERX2_PMU
+ 	   in the DDR4 Memory Controller (DMC).
+ 
+ config XGENE_PMU
+-        depends on ARCH_XGENE
+-        bool "APM X-Gene SoC PMU"
+-        default n
 -        help
-+	tristate "QorIQ DPAA2 DPIO driver"
-+	depends on FSL_MC_BUS
-+	select SOC_BUS
+-          Say y if you want to use APM X-Gene SoC performance monitors.
++	depends on ARCH_XGENE
++	bool "APM X-Gene SoC PMU"
++	default n
 +	help
- 	  Driver for the DPAA2 DPIO object.  A DPIO provides queue and
- 	  buffer management facilities for software to interact with
- 	  other DPAA2 objects. This driver does not expose the DPIO
++	  Say y if you want to use APM X-Gene SoC performance monitors.
+ 
+ config ARM_SPE_PMU
+ 	tristate "Enable support for the ARMv8.2 Statistical Profiling Extension"
 -- 
 2.17.1
 
