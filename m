@@ -2,89 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78E0C104295
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 18:53:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8493F10429C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 18:54:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9grHlfyevhfixX2D3LrDsbEaJfaiww1bRRGyA5yFSDE=; b=HExgePiEOG4Dkj
-	Hz+gCaw+cRTwX4v2HddkAkbLIoRs61NN7r6SIqJ06GKUQL4+nybMYs9CyzsrDupSl9ONdKP+j5TKQ
-	zw7gtVGT48nn7QcwiBaFRbh8z3hwZdW74gRyPLgCMPJwVf6Kcub71elHy3eoBCvpfujfxvsnumwCD
-	CwN3Etm0cIN5GkGhELpoNE+Q0fu3jjvY0rC8CtPTVkSQZ58p10tss91Kr3cM61VCB11sZUNupPXIF
-	IFO6TgF4VwP18uQDwBYZ1OPsZXEa9fIHbmEGLxhjjUpqfKL1thBEUG8be9nX2Czn7PXgvX8h/oYkC
-	NZKyKFp5NFzHKsmcgCbA==;
+	List-Owner; bh=PhMUGvmXhnMpUtqwxDEdLqLAxz+nltRHi9yccMIrbKM=; b=I8/9l9hPZeEUDx
+	nOZA0keLXgozJ4IT0PIBKqGNfrFd3JxF+CyqGV8YJx3fFlVCzVBZtvUFoVc77GPM/Fq7d81HRLgyt
+	XGw3FrlnAOdd0jIO2KDNdKyO0DBh2+JkrlV0qiP03bE3+TTAOXKWJ2EIZC7DnpX/kBWU9wTaT4Aeu
+	/9UIMSDhGgQAjcGWO6a76bjM3SzOAyQU5jKs5KptZCA0hVouhvSq1JeDwteSd33LZbQxet7mRnhG7
+	HA+Wmtw0mqgZOs8BLNnMb+kyi4zlgZFIHjqjtEtZ4QMJJUDH4Vk7+mOEipACMhUf+8qDgEFNcfMKK
+	CnddHMop2RuaTJhsrnrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXUAH-0002Ma-SM; Wed, 20 Nov 2019 17:53:17 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1iXUAz-0002cf-V5; Wed, 20 Nov 2019 17:54:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXUA7-0002MC-A8
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 17:53:08 +0000
-Received: by mail-ot1-f68.google.com with SMTP id 94so346714oty.8
+ id 1iXUAp-0002c7-2a
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 17:53:52 +0000
+Received: from mail-qt1-f181.google.com (mail-qt1-f181.google.com
+ [209.85.160.181])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 52909208CC
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 09:53:06 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Uwv8oDObgXlOHyppocybq9RAMpKlTk5h/NeR2cnrypw=;
- b=WYw3HgdR+4d7Anfb4GppG6en0NL/RJWY46TQVUkOfi8FJ0TkdS8MTjk8cAimSzeWuq
- rCX+sssiH41205mp58iufn9AyrrcKjJR5OymKb1fI/1n1hvWsE/P63qc9cQyK4RDSWYw
- b+Ds9JYNFwazBjU8ak+35fbWPYngKUdN1DCzFzK7BvK6JFfjcyE5aUjxFavaFfU9MZXP
- Qu5TSu5VAPhS6+KoAM/VkVqD0L5hgiTWFg/PFzBQmCMr6oYVM3NLz6ZfOV1fu+x0LnHR
- nNNYH8zU7rgLRkvS2FaVHJ8r5BH7xXr1ox4pWBRUHU5dYEJrBCEU09uJgyMwdEXfdJ++
- 9f4Q==
-X-Gm-Message-State: APjAAAV/lCWP3hzlpIKBjVFORrgdX5jycxkcfzpclMumhMS7Q99DmfZx
- KYeIy7H7GwBgZpI80Ds7qfGzKcfO
-X-Google-Smtp-Source: APXvYqwlN56mlHfHcWiqgn85NkWAqBWlGsHClX0w3Oeq8Obgm+5ZXSLRSWcasvURaMVqQNO0vgE6kA==
-X-Received: by 2002:a9d:f45:: with SMTP id 63mr2959750ott.214.1574272385769;
- Wed, 20 Nov 2019 09:53:05 -0800 (PST)
-Received: from mail-ot1-f49.google.com (mail-ot1-f49.google.com.
- [209.85.210.49])
- by smtp.gmail.com with ESMTPSA id 9sm246170oiq.33.2019.11.20.09.53.04
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 20 Nov 2019 09:53:05 -0800 (PST)
-Received: by mail-ot1-f49.google.com with SMTP id n23so313639otr.13
+ Wed, 20 Nov 2019 17:53:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574272430;
+ bh=vTFgFEUH3J5T3MWJsb0bX1nQeOIGDcdKEZjEQ1JTKJ4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=aKefBU3YwElaWPdEYRKoG5mj8XV6ocunvLSO86PiG0ppsJTjpPVa2tj+s509uoYGh
+ 3hy0NzFXvVkIPsVjqsUDyyo4QvRhrntrqMD0YGVP4e5kUfMZUjXiOhvxnNTvaDZGfH
+ My9HmOD4k9PZgowERQCoRH5wZzYKC8HtAA8DdAug=
+Received: by mail-qt1-f181.google.com with SMTP id o3so450576qtj.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 09:53:04 -0800 (PST)
-X-Received: by 2002:a9d:7f12:: with SMTP id j18mr2846999otq.221.1574272384642; 
- Wed, 20 Nov 2019 09:53:04 -0800 (PST)
+ Wed, 20 Nov 2019 09:53:50 -0800 (PST)
+X-Gm-Message-State: APjAAAWUm0a4VOTlFOpjOyuGaHwMUsB/EBus0nJ5zQgydmnpEC83g1xl
+ LsyjRM22mtNyemczWfwYJMMvIpUzbJqsp1nrtA==
+X-Google-Smtp-Source: APXvYqxcBnubXdWFTB34ourRkaQWwkriG9fDbuZArgVLqVg6y0PsE/RaWX7IZWekSGnSC2/onL/T+1dVE2YhzWXa2+Y=
+X-Received: by 2002:ac8:7612:: with SMTP id t18mr3903697qtq.143.1574272429281; 
+ Wed, 20 Nov 2019 09:53:49 -0800 (PST)
 MIME-Version: 1.0
-References: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
- <20191118112324.22725-46-linux@rasmusvillemoes.dk>
-In-Reply-To: <20191118112324.22725-46-linux@rasmusvillemoes.dk>
-From: Li Yang <leoyang.li@nxp.com>
-Date: Wed, 20 Nov 2019 11:52:53 -0600
-X-Gmail-Original-Message-ID: <CADRPPNTgNtFL9Wok_ZNJSoo=4vokdU7c7z9JM-_e-w=pcDfwDg@mail.gmail.com>
-Message-ID: <CADRPPNTgNtFL9Wok_ZNJSoo=4vokdU7c7z9JM-_e-w=pcDfwDg@mail.gmail.com>
-Subject: Re: [PATCH v5 45/48] net/wan/fsl_ucc_hdlc: fix reading of __be16
- registers
-To: David Miller <davem@davemloft.net>
+References: <1574257423-26754-1-git-send-email-alain.volmat@st.com>
+In-Reply-To: <1574257423-26754-1-git-send-email-alain.volmat@st.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 20 Nov 2019 11:53:37 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+3GzLW7_hi56VFHT-V_LMv5g_K=x9ExGx0Xf6Hn_HR3Q@mail.gmail.com>
+Message-ID: <CAL_Jsq+3GzLW7_hi56VFHT-V_LMv5g_K=x9ExGx0Xf6Hn_HR3Q@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: i2c: stm32: Migrate i2c-stm32 documentation
+ to yaml
+To: Alain Volmat <alain.volmat@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_095307_353856_0C560A76 
-X-CRM114-Status: GOOD (  19.00  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191120_095351_164531_57EA720D 
+X-CRM114-Status: GOOD (  25.24  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pku.leo[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,61 +86,299 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>, Timur Tabi <timur@kernel.org>,
- Netdev <netdev@vger.kernel.org>, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- lkml <linux-kernel@vger.kernel.org>, Scott Wood <oss@buserror.net>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>, Wolfram Sang <wsa@the-dreams.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Pierre-Yves MORDRET <pierre-yves.mordret@st.com>,
+ Linux I2C <linux-i2c@vger.kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Qiang Zhao <qiang.zhao@nxp.com>
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 18, 2019 at 5:26 AM Rasmus Villemoes
-<linux@rasmusvillemoes.dk> wrote:
+On Wed, Nov 20, 2019 at 7:43 AM Alain Volmat <alain.volmat@st.com> wrote:
 >
-
-Hi David,
-
-What do you think about the patch 45-47 from the series for net
-related changes?  If it is ok with you, I can merge them with the
-whole series through the soc tree with your ACK.
-
-Regards,
-Leo
-
-> When releasing the allocated muram resource, we rely on reading back
-> the offsets from the riptr/tiptr registers. But those registers are
-> __be16 (and we indeed write them using iowrite16be), so we can't just
-> read them back with a normal C dereference.
+> The document was migrated to Yaml format and renamed st,stm32-i2c.yaml
 >
-> This is not currently a real problem, since for now the driver is
-> PPC32-only. But it will soon be allowed to be used on arm and arm64 as
-> well.
->
-> Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> Signed-off-by: Alain Volmat <alain.volmat@st.com>
 > ---
->  drivers/net/wan/fsl_ucc_hdlc.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  .../devicetree/bindings/i2c/i2c-stm32.txt          |  65 ---------
+>  .../devicetree/bindings/i2c/st,stm32-i2c.yaml      | 157 +++++++++++++++++++++
+>  2 files changed, 157 insertions(+), 65 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-stm32.txt
+>  create mode 100644 Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml
 >
-> diff --git a/drivers/net/wan/fsl_ucc_hdlc.c b/drivers/net/wan/fsl_ucc_hdlc.c
-> index 405b24a5a60d..8d13586bb774 100644
-> --- a/drivers/net/wan/fsl_ucc_hdlc.c
-> +++ b/drivers/net/wan/fsl_ucc_hdlc.c
-> @@ -732,8 +732,8 @@ static int uhdlc_open(struct net_device *dev)
->
->  static void uhdlc_memclean(struct ucc_hdlc_private *priv)
->  {
-> -       qe_muram_free(priv->ucc_pram->riptr);
-> -       qe_muram_free(priv->ucc_pram->tiptr);
-> +       qe_muram_free(ioread16be(&priv->ucc_pram->riptr));
-> +       qe_muram_free(ioread16be(&priv->ucc_pram->tiptr));
->
->         if (priv->rx_bd_base) {
->                 dma_free_coherent(priv->dev,
+> diff --git a/Documentation/devicetree/bindings/i2c/i2c-stm32.txt b/Documentation/devicetree/bindings/i2c/i2c-stm32.txt
+> deleted file mode 100644
+> index ce3df2fff6c8..000000000000
+> --- a/Documentation/devicetree/bindings/i2c/i2c-stm32.txt
+> +++ /dev/null
+> @@ -1,65 +0,0 @@
+> -* I2C controller embedded in STMicroelectronics STM32 I2C platform
+> -
+> -Required properties:
+> -- compatible: Must be one of the following
+> -  - "st,stm32f4-i2c"
+> -  - "st,stm32f7-i2c"
+> -- reg: Offset and length of the register set for the device
+> -- interrupts: Must contain the interrupt id for I2C event and then the
+> -  interrupt id for I2C error.
+> -- resets: Must contain the phandle to the reset controller.
+> -- clocks: Must contain the input clock of the I2C instance.
+> -- A pinctrl state named "default" must be defined to set pins in mode of
+> -  operation for I2C transfer
+> -- #address-cells = <1>;
+> -- #size-cells = <0>;
+> -
+> -Optional properties:
+> -- clock-frequency: Desired I2C bus clock frequency in Hz. If not specified,
+> -  the default 100 kHz frequency will be used.
+> -  For STM32F4 SoC Standard-mode and Fast-mode are supported, possible values are
+> -  100000 and 400000.
+> -  For STM32F7, STM32H7 and STM32MP1 SoCs, Standard-mode, Fast-mode and Fast-mode
+> -  Plus are supported, possible values are 100000, 400000 and 1000000.
+> -- dmas: List of phandles to rx and tx DMA channels. Refer to stm32-dma.txt.
+> -- dma-names: List of dma names. Valid names are: "rx" and "tx".
+> -- i2c-scl-rising-time-ns: I2C SCL Rising time for the board (default: 25)
+> -  For STM32F7, STM32H7 and STM32MP1 only.
+> -- i2c-scl-falling-time-ns: I2C SCL Falling time for the board (default: 10)
+> -  For STM32F7, STM32H7 and STM32MP1 only.
+> -  I2C Timings are derived from these 2 values
+> -- st,syscfg-fmp: Use to set Fast Mode Plus bit within SYSCFG when Fast Mode
+> -  Plus speed is selected by slave.
+> -       1st cell: phandle to syscfg
+> -       2nd cell: register offset within SYSCFG
+> -       3rd cell: register bitmask for FMP bit
+> -  For STM32F7, STM32H7 and STM32MP1 only.
+> -
+> -Example:
+> -
+> -       i2c@40005400 {
+> -               compatible = "st,stm32f4-i2c";
+> -               #address-cells = <1>;
+> -               #size-cells = <0>;
+> -               reg = <0x40005400 0x400>;
+> -               interrupts = <31>,
+> -                            <32>;
+> -               resets = <&rcc 277>;
+> -               clocks = <&rcc 0 149>;
+> -               pinctrl-0 = <&i2c1_sda_pin>, <&i2c1_scl_pin>;
+> -               pinctrl-names = "default";
+> -       };
+> -
+> -       i2c@40005400 {
+> -               compatible = "st,stm32f7-i2c";
+> -               #address-cells = <1>;
+> -               #size-cells = <0>;
+> -               reg = <0x40005400 0x400>;
+> -               interrupts = <31>,
+> -                            <32>;
+> -               resets = <&rcc STM32F7_APB1_RESET(I2C1)>;
+> -               clocks = <&rcc 1 CLK_I2C1>;
+> -               pinctrl-0 = <&i2c1_sda_pin>, <&i2c1_scl_pin>;
+> -               pinctrl-names = "default";
+> -               st,syscfg-fmp = <&syscfg 0x4 0x1>;
+> -       };
+> diff --git a/Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml b/Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml
+> new file mode 100644
+> index 000000000000..0f51a6ed0e9b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml
+> @@ -0,0 +1,157 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/i2c/st,stm32-i2c.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: I2C controller embedded in STMicroelectronics STM32 I2C platform
+> +
+> +maintainers:
+> +  - Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
+> +
+> +allOf:
+> +  - $ref: /schemas/i2c/i2c-controller.yaml#
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - st,stm32f7-i2c
+> +    then:
+> +      properties:
+> +        i2c-scl-rising-time-ns:
+> +          description: I2C SCL Rising time for the board
+> +          $ref: /schemas/types.yaml#/definitions/uint32
+> +          default: 25
+> +
+> +        i2c-scl-falling-time-ns:
+> +          description: I2C SCL Falling time for the board
+> +          $ref: /schemas/types.yaml#/definitions/uint32
+
+These 2 should be added to i2c-controller.yaml and just the default
+defined here.
+
+> +          default: 10
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - st,stm32f4-i2c
+> +    then:
+> +      properties:
+> +        clock-frequency:
+> +          description: Desired I2C bus clock frequency in Hz. If not specified,
+> +                       the default 100 kHz frequency will be used.
+> +                       For STM32F4 SoC Standard-mode and Fast-mode are
+> +                       supported, possible values are 100000 and 400000.
+> +          default: 100000
+> +          enum: [100000, 400000]
+> +    else:
+> +      properties:
+> +        clock-frequency:
+> +          description: Desired I2C bus clock frequency in Hz. If not specified,
+> +                       the default 100 kHz frequency will be used.
+> +                       For STM32F7, STM32H7 and STM32MP1 SoCs, Standard-mode,
+> +                       Fast-mode and Fast-mode Plus are supported, possible
+> +                       values are 100000, 400000 and 1000000.
+> +          default: 100000
+> +          enum: [100000, 400000, 1000000]
+
+Move this to main 'properties'. Then the one in the 'then' clause just
+needs the enum.
+
+> +
+> +        st,syscfg-fmp:
+> +          $ref: "/schemas/types.yaml#/definitions/phandle-array"
+
+Won't work. You have to do:
+
+allOf:
+  - $ref: ...
+
+> +          description: Use to set Fast Mode Plus bit within SYSCFG when
+> +                       Fast Mode Plus speed is selected by slave. Should be
+> +                       phandle/offset/mask
+> +          items:
+> +            - description: phandle to syscfg
+> +            - description: register offset within syscfg
+> +            - description: register bitmask for FMP bit
+
+Wouldn't this make more sense in the first if rather than the 'else' clause?
+
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - st,stm32f4-i2c
+> +      - st,stm32f7-i2c
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 2
+
+Implied by items length.
+
+> +    items:
+> +      - description: interrupt ID for I2C event
+> +      - description: interrupt ID for I2C error
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  dmas:
+> +    items:
+> +      - description: RX DMA Channel phandle
+> +      - description: TX DMA Channel phandle
+> +    minItems: 2
+> +    maxItems: 2
+
+Implied by items length.
+
+> +
+> +  dma-names:
+> +    items:
+> +      - const: rx
+> +      - const: tx
+> +    minItems: 2
+> +    maxItems: 2
+
+Implied by items length.
+
+> +
+> +required:
+> +  - compatible
+
+> +  - '#address-cells'
+> +  - '#size-cells'
+
+Can drop. i2c-controller.yaml makes them required.
+
+> +  - reg
+> +  - interrupts
+> +  - resets
+> +  - clocks
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/mfd/stm32f7-rcc.h>
+> +    #include <dt-bindings/clock/stm32fx-clock.h>
+> +    //Example 1 (with st,stm32f4-i2c compatible)
+> +      i2c@40005400 {
+> +          compatible = "st,stm32f4-i2c";
+> +          #address-cells = <1>;
+> +          #size-cells = <0>;
+> +          reg = <0x40005400 0x400>;
+> +          interrupts = <31>,
+> +                       <32>;
+> +          resets = <&rcc 277>;
+> +          clocks = <&rcc 0 149>;
+> +      };
+> +
+> +    //Example 2 (with st,stm32f7-i2c compatible)
+> +      i2c@40005800 {
+> +          compatible = "st,stm32f7-i2c";
+> +          #address-cells = <1>;
+> +          #size-cells = <0>;
+> +          reg = <0x40005800 0x400>;
+> +          interrupts = <31>,
+> +                       <32>;
+> +          resets = <&rcc STM32F7_APB1_RESET(I2C1)>;
+> +          clocks = <&rcc 1 CLK_I2C1>;
+> +      };
+> +
+> +    //Example 3 (with st,stm32f7-i2c compatible on stm32mp)
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/stm32mp1-clks.h>
+> +    #include <dt-bindings/reset/stm32mp1-resets.h>
+> +      i2c@40013000 {
+> +          compatible = "st,stm32f7-i2c";
+> +          #address-cells = <1>;
+> +          #size-cells = <0>;
+> +          reg = <0x40013000 0x400>;
+> +          interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>,
+> +                       <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+> +          clocks = <&rcc I2C2_K>;
+> +          resets = <&rcc I2C2_R>;
+> +          i2c-scl-rising-time-ns = <185>;
+> +          i2c-scl-falling-time-ns = <20>;
+> +          st,syscfg-fmp = <&syscfg 0x4 0x2>;
+> +      };
+> +...
 > --
-> 2.23.0
+> 2.7.4
 >
 
 _______________________________________________
