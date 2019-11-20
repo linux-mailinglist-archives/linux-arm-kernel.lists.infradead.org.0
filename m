@@ -2,60 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29AD110321C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 04:45:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B7FA103261
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 04:59:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FLgI95YOd3C4u2iQf4x3fOyemmu+PmqaUNnE/LM7wDE=; b=QyiN8Rhg5jqLZE
-	YdppTv2JwLxRYXZfJaUJPfg2bUc36U3Ef1hfRsOCawFarQO7DqvSyvB24w7sULNQvZe29x0wQKbz+
-	8tCb3EeD6QOtCjKdvHmRBoFIRfKqLREoKeIw4htzRplT6RvKY3fkjPGlYtUzUW+6rTq4b1qg/SBH3
-	vgRGZgLcUTkAopZuv9O+Y3ks4vo6GSFIrQdJ4x5bJXQd80rkdRXPG6MDeyxbQ4XmHLs8fkPs4yEbH
-	KUi9Oj42eqNE0zA7abHxfilCliMr/tzoYRBdBxuIVtHXRVycHIDmIqjszf3tirT62YV1zKH85KlMq
-	aML1LPDKnknD/oE6KOSQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8BPg8+xhDIXwMRgcjPemVlyXcz+QGwe/nZ8FV2uZ+uM=; b=IcEjiVB2rM4A2C
+	JVsCMNii7JhKd3OhibDnTT2XjCc9HPzFSJDdf1rMmA/P1xSH+HTRTrKUbxlUibIOm2Lt2iHpdibsc
+	hSHUHCdrmlCITT2XwWDAjk9mPuIchlxWw6uUxqZQbyzn+6JTSfEU64sS2sgtD5jm+R+EP9KVXnJH4
+	CMZAxKqsjNy2yHM3Te6yFdN8T27FawFlzrvBBpDM6+nOactU4EzuzQtzvp8/0FOTQEHw5/zxoikdM
+	nKUe4LlbAQR1Fcdk7KEW9WQ/KtVm1/ai929KSKMZiA648KfkPEBD35NPh4nP4VvR0GeqtTx1B4V75
+	lev+vkoaCr+5Gh+prPhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXGvM-0005yb-JJ; Wed, 20 Nov 2019 03:45:00 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1iXH9d-0005Vd-9W; Wed, 20 Nov 2019 03:59:45 +0000
+Received: from mail-eopbgr30057.outbound.protection.outlook.com ([40.107.3.57]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXGvD-0005yF-6F
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 03:44:52 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 19 Nov 2019 19:44:49 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,220,1571727600"; d="scan'208";a="204597622"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.41])
- by fmsmga008.fm.intel.com with ESMTP; 19 Nov 2019 19:44:48 -0800
-Date: Tue, 19 Nov 2019 19:44:48 -0800
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Christoffer Dall <christoffer.dall@arm.com>
-Subject: Re: Memory regions and VMAs across architectures
-Message-ID: <20191120034448.GC25890@linux.intel.com>
-References: <20191108111920.GD17608@e113682-lin.lund.arm.com>
+ id 1iXH9S-0005Up-8h
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 03:59:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=bH5X8GBBaUKuYG4L8ADJhMaShgFj4KTqPH00hF2dvRqiBXDUs8QdQCBwWoOCHVYYydCj2FRQIrHNjZCWQmuyCmmCgDYV0oy7Mivh/7RoexaUb7tezhb7GVyMWeey/v8/Hcp6UmgtIziGXQVlAEnh73/078KERkqqzclwIpZgIRNTlKpdmFabZgcg5AJvrB0x1b3cha99mdAop0eDiTRv+H9MvQBzPuA7Zmak/PxSDa62kXdaUMjxN4DeRZaPbiSYTZ0zO1YJ/anJRgGsl6+CIQ4AAn/j/EE3sqre9PUMuf8Kva/GsY19iTxfNP8Y8BUhpDcfghP6mT6oq1lC0eaO+w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=LxfxjL+9tJO1nriAKhZqhuIOHwq50HOSdd+rFy1EngE=;
+ b=Eh83aJVXzewlZNZm5vDDds2IUGtKtW7QEhfQPcMqRUOLhqM6bDecTmX+OA4/f7tF1je5b7X4yXleVaRtNqByfvgA1tBZvN8zKuzYG2pLd9TQ/5JAVfmCusTmB2Y9rfgLx6IbVo0abuykBt6FDueiQwZSxeemcuouMfq1QmAM9fTfxEFHM/gjMvlVgowwApSsHlYwBHFdtxcsTJylUT0vYh63OAVA4AzVbfp604FgOI9A4nbnwQOKyXCakJE5QbgCAG9As1Ly0/FLm6KG4qma7jU6dPLscc0O4tvpBmu1xiHnHqPs58c+ge8UuYw+i4BzwI5w5e31K7Wa14UnA9JvwA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=LxfxjL+9tJO1nriAKhZqhuIOHwq50HOSdd+rFy1EngE=;
+ b=Fky1RXKT4OA2cHabj+3yMbYV5W4RifM/M7nCPwnLreMzDEUbJie19MtWVCg8C+zJZ9p8RVD5WEeWrzcQuoxebc+yu0DD+0xhcmVeIfASxP2gNvfK1k81KjC16X/CCyVbY0KM2iqpDYWzyeb/RnzSwKCqFSvlFc4bS5dzBjXFRpw=
+Received: from DB8PR04MB6747.eurprd04.prod.outlook.com (20.179.250.159) by
+ DB8PR04MB5657.eurprd04.prod.outlook.com (20.179.9.138) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2451.23; Wed, 20 Nov 2019 03:45:17 +0000
+Received: from DB8PR04MB6747.eurprd04.prod.outlook.com
+ ([fe80::898f:3cd6:c225:7219]) by DB8PR04MB6747.eurprd04.prod.outlook.com
+ ([fe80::898f:3cd6:c225:7219%7]) with mapi id 15.20.2451.029; Wed, 20 Nov 2019
+ 03:45:17 +0000
+From: "Z.q. Hou" <zhiqiang.hou@nxp.com>
+To: "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "bhelgaas@google.com" <bhelgaas@google.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, "arnd@arndb.de" <arnd@arndb.de>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>, "l.subrahmanya@mobiveil.co.in"
+ <l.subrahmanya@mobiveil.co.in>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>, Leo Li
+ <leoyang.li@nxp.com>, "lorenzo.pieralisi@arm.com"
+ <lorenzo.pieralisi@arm.com>, "catalin.marinas@arm.com"
+ <catalin.marinas@arm.com>, "will.deacon@arm.com" <will.deacon@arm.com>,
+ "andrew.murray@arm.com" <andrew.murray@arm.com>
+Subject: [PATCHv9 00/12] PCI: Recode Mobiveil driver and add PCIe Gen4 driver
+ for NXP Layerscape SoCs
+Thread-Topic: [PATCHv9 00/12] PCI: Recode Mobiveil driver and add PCIe Gen4
+ driver for NXP Layerscape SoCs
+Thread-Index: AQHVn1Tsfp+9ZVhNFU2th1+s/za9wQ==
+Date: Wed, 20 Nov 2019 03:45:17 +0000
+Message-ID: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: HK2PR02CA0199.apcprd02.prod.outlook.com
+ (2603:1096:201:20::11) To DB8PR04MB6747.eurprd04.prod.outlook.com
+ (2603:10a6:10:10b::31)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=zhiqiang.hou@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.17.1
+x-originating-ip: [119.31.174.73]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 4557d7ec-7fce-4afc-4fbd-08d76d6c0ed7
+x-ms-traffictypediagnostic: DB8PR04MB5657:|DB8PR04MB5657:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB8PR04MB5657F7029350437B37A9D024844F0@DB8PR04MB5657.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 02272225C5
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(6029001)(4636009)(366004)(346002)(396003)(39860400002)(136003)(376002)(199004)(189003)(2201001)(54906003)(86362001)(36756003)(256004)(7736002)(305945005)(6116002)(66066001)(3846002)(110136005)(316002)(71190400001)(7416002)(1076003)(71200400001)(52116002)(2501003)(4326008)(5660300002)(66476007)(476003)(64756008)(66556008)(2616005)(66946007)(6512007)(66446008)(8676002)(386003)(6506007)(2906002)(99286004)(102836004)(6486002)(81166006)(81156014)(8936002)(50226002)(186003)(26005)(478600001)(14454004)(486006)(6436002)(25786009)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR04MB5657;
+ H:DB8PR04MB6747.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 4mwWzxB45ziGvC1OAdR73Rv9zjOoSiqv9RRg3n/bLQYv8K6F9hvGA6rn9a01PiHaDQ1SKjrcfCW2/FJp5iwF58cpKRBbVJKaSuzabrvVMb2Cctn+0hViv5d1OdUtzr4yOD4aDdC55ybA6gyB2VVxpgFUsXSlR5hnrR2nQf7a08wy2Np7q6CcLJtuOI3CvdM3opYRQRck+Nvabw9QCMaYmZYS7VHQSLVa9A7cfU7QUVn+qB2w/ItDB09WRKErU0CPUyVWs6m7hEnlXE0w/Kdt1uywGWE2y43wHDL2xghl0QhHj9DHGMy971qWi82EWBkjwEW3PsvrSgsrWW+yWlxWAUTCpejPJEec0F+h2Kp0I7SOa/iFGlgW7H1b3vFylFyc+yL1VvmErUUjJ+4BPgTnDfJYWGOYlUBkQdycjCLJfuSRfOu/NrWPdk6BLVoo69iF
+Content-ID: <815B273423C1F5439F7E8D28EB382DDA@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191108111920.GD17608@e113682-lin.lund.arm.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4557d7ec-7fce-4afc-4fbd-08d76d6c0ed7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Nov 2019 03:45:17.1950 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 3cDOUGDVrRLXPlx0TE6wYtvXGyTtjQwUM5bNBh6MSTLXn5JZmid+LHIvLXmyIUOnLrsUF9AjAHzSQ+wBHk4JyA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB5657
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_194451_243006_FF834D82 
-X-CRM114-Status: GOOD (  20.42  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191119_195934_311849_AECD9071 
+X-CRM114-Status: GOOD (  11.78  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.3.57 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,80 +137,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Marc Zyngier <maz@kernel.org>, borntraeger@de.ibm.com,
- Ard Biesheuvel <ard.biesheuvel@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: "M.h. Lian" <minghuan.lian@nxp.com>, "Z.q. Hou" <zhiqiang.hou@nxp.com>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>, Mingkai Hu <mingkai.hu@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 08, 2019 at 12:19:20PM +0100, Christoffer Dall wrote:
-> Hi,
-> 
-> I had a look at our relatively complicated logic in
-> kvm_arch_prepare_memory_region(), and was wondering if there was room to
-> unify some of this handling between architectures.
-> 
-> (If you haven't seen our implementation, you can find it in
-> virt/kvm/arm/mmu.c, and it has lovely ASCII art!)
-> 
-> I then had a look at the x86 code, but that doesn't actually do anything
-> when creating memory regions, which makes me wonder why the arhitectures
-> differ in this aspect.
-> 
-> The reason we added the logic that we have for arm/arm64 is that we
-> don't really want to take faults for I/O accesses.  I'm not actually
-> sure if this is a corretness thing, or an optimization effort, and the
-> original commit message doesn't really explain.  Ard, you wrote that
-> code, do you recall the details?
-> 
-> In any case, what we do is to check for each VMA backing a memslot, we
-> check if the memslot flags and vma flags are a reasonable match, and we
-> try to detect I/O mappings by looking for the VM_PFNMAP flag on the VMA
-> and pre-populate stage 2 page tables (our equivalent of EPT/NPT/...).
-> However, there are some things which are not clear to me:
-> 
-> First, what prevents user space from messing around with the VMAs after
-> kvm_arch_prepare_memory_region() completes?  If nothing, then what is
-> the value of the cheks we perform wrt. to VMAs?
+From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
 
-Arm's prepare_memory_region() holds mmap_sem and mmu_lock while processing
-the VMAs and populating the stage 2 page tables.  Holding mmap_sem prevents
-the VMAs from being invalidated while the stage 2 tables are populated,
-e.g. prevents racing with the mmu notifier.  The VMAs could be modified
-after prepare_memory_region(), but the mmu notifier will ensure they are
-unmapped from stage2 prior the the host change taking effect.  So I think
-you're safe (famous last words).
+This patch set is to recode the Mobiveil driver and add
+PCIe support for NXP Layerscape series SoCs integrated
+Mobiveil's PCIe Gen4 controller.
 
-> Second, why would arm/arm64 need special handling for I/O mappings
-> compared to other architectures, and how is this dealt with for
-> x86/s390/power/... ?
+Hou Zhiqiang (12):
+  PCI: mobiveil: Re-abstract the private structure
+  PCI: mobiveil: Move the host initialization into a routine
+  PCI: mobiveil: Collect the interrupt related operations into a routine
+  PCI: mobiveil: Modularize the Mobiveil PCIe Host Bridge IP driver
+  PCI: mobiveil: Add callback function for interrupt initialization
+  PCI: mobiveil: Add callback function for link up check
+  PCI: mobiveil: Make mobiveil_host_init() can be used to re-init host
+  PCI: mobiveil: Add 8-bit and 16-bit CSR register accessors
+  dt-bindings: PCI: Add NXP Layerscape SoCs PCIe Gen4 controller
+  PCI: mobiveil: Add PCIe Gen4 RC driver for NXP Layerscape SoCs
+  arm64: dts: lx2160a: Add PCIe controller DT nodes
+  arm64: defconfig: Enable CONFIG_PCIE_LAYERSCAPE_GEN4
 
-As Ard mentioned, it looks like an optimization.  The "passthrough"
-part from the changelog implies that VM_PFNMAP memory regions are exclusive
-to the guest.  Mapping the entire thing would be a nice boot optimization
-as it would save taking page faults on every page of the MMIO region.
+ .../bindings/pci/layerscape-pcie-gen4.txt     |  52 ++
+ MAINTAINERS                                   |  10 +-
+ .../arm64/boot/dts/freescale/fsl-lx2160a.dtsi | 163 ++++++
+ arch/arm64/configs/defconfig                  |   1 +
+ drivers/pci/controller/Kconfig                |  11 +-
+ drivers/pci/controller/Makefile               |   2 +-
+ drivers/pci/controller/mobiveil/Kconfig       |  34 ++
+ drivers/pci/controller/mobiveil/Makefile      |   5 +
+ .../mobiveil/pcie-layerscape-gen4.c           | 274 +++++++++
+ .../pcie-mobiveil-host.c}                     | 544 ++++--------------
+ .../controller/mobiveil/pcie-mobiveil-plat.c  |  60 ++
+ .../pci/controller/mobiveil/pcie-mobiveil.c   | 230 ++++++++
+ .../pci/controller/mobiveil/pcie-mobiveil.h   | 226 ++++++++
+ 13 files changed, 1157 insertions(+), 455 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/layerscape-pcie-gen4.txt
+ create mode 100644 drivers/pci/controller/mobiveil/Kconfig
+ create mode 100644 drivers/pci/controller/mobiveil/Makefile
+ create mode 100644 drivers/pci/controller/mobiveil/pcie-layerscape-gen4.c
+ rename drivers/pci/controller/{pcie-mobiveil.c => mobiveil/pcie-mobiveil-host.c} (54%)
+ create mode 100644 drivers/pci/controller/mobiveil/pcie-mobiveil-plat.c
+ create mode 100644 drivers/pci/controller/mobiveil/pcie-mobiveil.c
+ create mode 100644 drivers/pci/controller/mobiveil/pcie-mobiveil.h
 
-As for how this is different from other archs... at least on x86, VM_PFNMAP
-isn't guaranteed to be passthrough or even MMIO, e.g. prefaulting the
-pages may actually trigger allocation, and remapping the addresses could be
-flat out wrong.
-
-
-  commit 8eef91239e57d2e932e7470879c9a504d5494ebb
-  Author: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-  Date:   Fri Oct 10 17:00:32 2014 +0200
-
-    arm/arm64: KVM: map MMIO regions at creation time
-
-    There is really no point in faulting in memory regions page by page
-    if they are not backed by demand paged system RAM but by a linear
-    passthrough mapping of a host MMIO region. So instead, detect such
-    regions at setup time and install the mappings for the backing all
-    at once.
-
-
+-- 
+2.17.1
 
 _______________________________________________
 linux-arm-kernel mailing list
