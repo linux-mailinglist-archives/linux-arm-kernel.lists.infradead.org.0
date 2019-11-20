@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D6E8103E67
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 16:28:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5601A103EA3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 16:30:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+wNu77vk+Y9qaryBoQyk7BgwvfPtmJP/9t82ZvCHWpg=; b=hKRf2yB97RTJUz
-	m1K1ZR2F5N423jxHD56o5URMl/NCDRT7Vaf2khBiJbpj93v4xaVahKGXbVJoX2d7mCX/AUa6sfktE
-	N6uUnhF09AjXuwyr00Usmr0Yh2dQyjZk38zPl8pKeyRjlmf4aJcaAYNzcx+SopDKTZ05BTMjAOfGc
-	vZAE7RUexqmxYL7EbFPrfbX8dwDs/ovHm/FEiNyqywd0qAOov7NFMY6wJRTqWQJwyqGuH3lt04eY6
-	YXGRC5bz26IRyXjZqC0DN9uLaKiLr+wYParuE0Yjk+jDNwWHpH/2HTzRB+FNmFf4xETT4G4GYT/pc
-	D9U7pHl5/AI1puKPuFZQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GKPlRjrowP7BiPk5ufevIeTUoX7rMQEvNVkqG0GuUrc=; b=u4IKv6TOoDfmLa
+	CgXc2e4rLfSq5nviTiqbtRaXB2R6e5oY4vo+Eo1G0u1M0W8AqHpnxuvZvvA3gHspVcOnqjx3Spe7B
+	I/ND+iYPxT2khKwry/7pxCjQbjYStr3iEKHrqeEgcSRWtzXJ4EGvgO1ffe/wkwCSb5pu4m2xc+I+Q
+	OTTb1Nz8b5T0KuWR5FFYFBTUMvmq4ISqtZDSpaCkFQknOHb1ADmaoGhgviEaakfmcmaPCcMBFmh9q
+	ELl+uUpjVd422qSdj5ZTWHKbmZizcehJ4pcZnyaB3n6lK2pgxAZQD7+Awi5KetemDxZ7uTqZ1e7Mt
+	+gy0F5R7VFUhpdAKUNkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXRuY-0000IN-9r; Wed, 20 Nov 2019 15:28:54 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iXRvi-00021w-J4; Wed, 20 Nov 2019 15:30:06 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXRuJ-0000HN-2o
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 15:28:40 +0000
-Received: by mail-wr1-x442.google.com with SMTP id a15so249676wrf.9
+ id 1iXRuO-0000KH-1e
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 15:28:45 +0000
+Received: by mail-qt1-x843.google.com with SMTP id t20so29310587qtn.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 07:28:38 -0800 (PST)
+ Wed, 20 Nov 2019 07:28:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=DtyaiQZ8irKf16rmVxB3fmQ2TpmbrTyyFiQO6JUw5+o=;
- b=J+PYXrifIbFmzJD2YaGWqKDy4QL5/H44uzIhHRoNCHjqbjqh8+KI7fQQcDn0/3ZWXe
- TQuEkk4zRoznzfRwwFfViPXBbetRmVRz/+29JbND54mJIsTdrngr5SJ5QNNlaodGMcbb
- JtGzynOWqr3F+mKJ2N3gF/8N4ycKu91eJFb7DKHiKBHn/qrdHoTnl9NUbzhG+S9vaMSC
- QzoH7so7+Ybb67t/54HeLgepoPTfEiXMHFz/dZNWIWsUMcxQHGOT46jk1fO1EcrCQnxx
- hCut8hHXAhqcdHlaodE63ousJtSYac17WkrdLxGPQxjDYe2m6BiaQ50FStIokPE2Ggym
- tYsg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=tjFuMYVP6LvkOhZ4QLGzJlV8x7kLev1Tm6Q0c0eOHpE=;
+ b=F3ln8NgpnWavlHcyL2Uiqh9IOTJwD2KQ4SHOpMizekKr8euEbvrYgCNvYwb96lIeOk
+ ABavxParOXENm1+W709S3ifaWN1J5A4Aj4N7oPO6Fu4QEkUVgb6RouIUzRdNV33VL5UU
+ tmB3bMG+9QEs3Ufc3Sv9mH9q1wMQPpDCapmrX/fN4g18cuDM1Mak+SOnLs4McN09QIFg
+ N5n4UDkCEtZLrxEK16As3+JdoEk4C8TsW4afHIKEBn+R9avehdz1/XSZ3VjRY2V+gKOx
+ 7UxrK/xwCFmNUADgNw3EERk3qcWHrklSMpPrEL7y+9XGYRLngA7XHtJFh8DEFQon9M16
+ 1wAw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=DtyaiQZ8irKf16rmVxB3fmQ2TpmbrTyyFiQO6JUw5+o=;
- b=M3mGyN/+H/X4A+jMSUS8h1hMCnBGmHVq/i1sHZuAuETYciF1i/ziyZV+SmH+dRXCQv
- OkhL/x36yVjS4l41ZNz0v5W6ScIf/l810Z1eX6DpAdNbq9FPs2Zk21kqrdAm8Sb8VL+5
- /bH83pdmkXzzK5BjjRq31sJLm4w9XYhi++pXxBcWZbsZCfL6vC9jtH15bm6PU5LNwy7X
- fi89IIrZbXhTubVY+sJWlX5GTpBTgUG/RSFoKnCVRsM804yVe5NI5dFaMMes0kQMxt4b
- V9g0ROV5bmpsR8i0A0LYOoLQkrbrKnycONQWXcDh9r70DSkMQZerQzWeMWHjeH00TCus
- cfUw==
-X-Gm-Message-State: APjAAAWZDriVOmcv/ugJ3Q8B79IioTNOftlmZwDs2vltptPylfB4S3GW
- o/0Y+PrJ5DStr8PtY4G3bm8=
-X-Google-Smtp-Source: APXvYqy8eB9w+wZZJo55+z14tlTOn1lf95zCLE3trwsy02lQ5kbg9t7377ZRZ81/CbuOutHBkGCqTA==
-X-Received: by 2002:adf:a119:: with SMTP id o25mr4361024wro.74.1574263717216; 
- Wed, 20 Nov 2019 07:28:37 -0800 (PST)
-Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id w4sm31797881wrs.1.2019.11.20.07.28.36
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 Nov 2019 07:28:36 -0800 (PST)
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: davem@davemloft.net, herbert@gondor.apana.org.au, mark.rutland@arm.com,
- mripard@kernel.org, robh+dt@kernel.org, wens@csie.org
-Subject: [PATCH v2 0/3] crypto: sun4i-ss: fix SHA1 on A33 SecuritySystem
-Date: Wed, 20 Nov 2019 16:28:30 +0100
-Message-Id: <20191120152833.20443-1-clabbe.montjoie@gmail.com>
-X-Mailer: git-send-email 2.23.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tjFuMYVP6LvkOhZ4QLGzJlV8x7kLev1Tm6Q0c0eOHpE=;
+ b=FL00aZ90RM7a+PtP3Tfuo7a5hQUBvyG+bTeb1g6pQ1T2hWmlYtTb9jCexnP6LcfRDa
+ dw/8UQaWVMmLO0LQs4Icu6qFC+wOSOOTTIMOD7Y3dvigkS8DEOyB4q0XENho1O5n96op
+ C+pYUvzB3SUJkL/gOQsOsDWxhlNrCrRmHCrinVdfkomKGAhHeiTtBH8GuLcR7XDYIauK
+ PRpX+PBuVeMHYh89e50urRlQ4J8O4QXatIA+RizPk552igaEhnUETDyZYiYU8CxokIX3
+ +roalQtOD/fxT3ftWBpG3vXl4xGIluvOobq8d+jpJY4Zm0iQKRdMsOZH11E09jbMsKnJ
+ etsQ==
+X-Gm-Message-State: APjAAAXs8vlCskMMS407/4jjU1GotK4Oy+HYLuPrSVniqtF0AHC0O1qO
+ 3jhLa6/1/IzwbWPiLf3W+D5PnOvyxOrL65YMrDdOTllp
+X-Google-Smtp-Source: APXvYqxa44e3M6mck8PnVwNuePxO2i2BaQrZFQlASVprmsFqMgYXerRXD/iVpw/h1K3bu9SbPwKrszZyPIxjCDFkn68=
+X-Received: by 2002:ac8:7b91:: with SMTP id p17mr3097552qtu.318.1574263722349; 
+ Wed, 20 Nov 2019 07:28:42 -0800 (PST)
 MIME-Version: 1.0
+References: <CAPaFbat4MM0=iVB-VazTK9=2qRebAgEN4euYCTESRo3yfx75Kw@mail.gmail.com>
+ <20191119233633.GG25745@shell.armlinux.org.uk>
+ <CAPaFbatG+ePwjCnBva1tfmzmvpHZv9xW3nM4gj2DTpFn=D+9Vg@mail.gmail.com>
+ <2cd3e872-57d5-5cbb-78d7-98da6447dc59@arm.com>
+ <392e74d78b48e04040cedfc26ed8ce81@www.loen.fr>
+In-Reply-To: <392e74d78b48e04040cedfc26ed8ce81@www.loen.fr>
+From: Leonid Movshovich <event.riga@gmail.com>
+Date: Wed, 20 Nov 2019 15:28:31 +0000
+Message-ID: <CAPaFbavWjCJKjUN6nA8Gc4urAMzLt-YVB4ED5DVarenrvMgnvQ@mail.gmail.com>
+Subject: Re: [PATCH] irq-gic: select all CPU's selected in interrupt affinity
+ settings
+To: Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_072839_146550_24B49057 
-X-CRM114-Status: UNSURE (   9.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191120_072844_130369_2F087FCF 
+X-CRM114-Status: GOOD (  19.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
+ provider (event.riga[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -98,39 +97,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Robin Murphy <robin.murphy@arm.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks to Igor Pecovnik, I have now in my kernelCI lab, a sun8i-a33-olinuxino.
-Strange behavour, crypto selftests was failling but only for SHA1 on
-this A33 SoC.
+On Wed, 20 Nov 2019 at 15:04, Marc Zyngier <maz@kernel.org> wrote:
+>
+> On 2019-11-20 01:15, Robin Murphy wrote:
+> > On 2019-11-20 12:24 am, Leonid Movshovich wrote:
+> >> On Tue, 19 Nov 2019 at 23:36, Russell King - ARM Linux admin
+> >> <linux@armlinux.org.uk> wrote:
+> >>>
+> >>> On Tue, Nov 19, 2019 at 11:12:26PM +0000, event wrote:
+> >>>> So far only a CPU selected with top affinity bit was selected.
+> >>>> This
+> >>>> resulted in all interrupts
+> >>>> being processed by CPU0 by default despite "FF" default affinity
+> >>>> setting for all interrupts
+> >>>
+> >>> Have you checked whether this causes _ALL_ CPUs in the mask to be
+> >>> delivered a single interrupt, thereby causing _ALL_ CPUs to be
+> >>> slowed down and hit the same locks at the same time.
+> >>>
+> >> Yes, I've checked this. No, interrupt is delivered to only one CPU.
+> >> Also ARM GIC architecture specification specifically states in
+> >> chapter
+> >> 3.1.1 that hardware interrupts are delivered to a single CPU in
+> >> multiprocessor system ("1-N model").
+> >
+> > But see also section 3.2.3 - just because only one CPU actually runs
+> > the given ISR doesn't necessarily guarantee that the others *weren't*
+> > interrupted. I'd also hesitate to make any assumptions that all GIC
+> > implementations behave exactly the same way.
+>
+> What happens is that *all* CPUs are being sent the interrupt, and there
+> is some logic in the GIC that ensures that only one sees it (the first
+> one to read the IAR register). All the other see a spurious (1023)
+> interrupt, and have wasted some precious cycles in doing so.
 
-This is due to the A33 SS having a difference with all other SS, it give SHA1 digest directly in BE.
-This serie handle this difference.
+Cycles are only precious when system is under high load. Under high
+load, to achieve fair spread of interrupts between CPUs one would need
+a userspace app (irqbalance) to sit there and constantly rebalance
+smp_affinity based on /proc/interrupts. Hard to believe such an
+approach wastes less cycles.
 
-Changes since v1:
-- removed compatible fallback
 
-Corentin Labbe (3):
-  dt-bindings: crypto: add new compatible for A33 SS
-  ARM: dts: sun8i: a33: add the new SS compatible
-  crypto: sun4i-ss: add the A33 variant of SS
+>
+> I get this patch, more or less well written, every other year.
+> My answer is that it may help a very small minority of use cases, and
+> suck for everyone else. So thank you, but no, thank you.
 
- .../crypto/allwinner,sun4i-a10-crypto.yaml    |  2 ++
- arch/arm/boot/dts/sun8i-a33.dtsi              |  2 +-
- .../crypto/allwinner/sun4i-ss/sun4i-ss-core.c | 22 ++++++++++++++++++-
- .../crypto/allwinner/sun4i-ss/sun4i-ss-hash.c |  5 ++++-
- drivers/crypto/allwinner/sun4i-ss/sun4i-ss.h  |  9 ++++++++
- 5 files changed, 37 insertions(+), 3 deletions(-)
+I was wondering, why such an obvious change was never made. Now I know
+whom to blame :).
 
--- 
-2.23.0
+Anyway, I don't suggest "happiness for everyone". I suggest to change
+the behaviour AND default affinity. So existing setups are not
+affected AND "small minority" gets the benefit.
 
+>
+> Note that GICv3's version of the thing is even more unusable:
+> - the configuration is secure only
+> - the distribution mode is IMPDEF
+> - LPIs can only be precisely routed
+>
+>          M.
+> --
+> Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
