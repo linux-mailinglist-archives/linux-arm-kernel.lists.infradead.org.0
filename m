@@ -2,88 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62911103400
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 06:43:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97E68103418
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 07:05:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
 	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j5oGTCBxquu26SjlRW1aKG/uIsyM1O7gXmRg3SjHy0Q=; b=ANAPqcMCbISmwW
-	JrPNi3RykPSMw6SHsW0U8YjBDXmoiAZBnLmSClNtiGM824BxIVFlQYMdXQWuziv/AQaVZCd08/pkw
-	mLTU8bOHLxMATJg3pGpFbwheFNGyT8QIz2M+RVEvkKQMS019WL2mYsZuuRj2/yd49Do5BEbv4Jv8i
-	W27mN2KDi4g76B7KPDVlAUpAhIfpudAz1By2o/WbJgUAiDsCgQT9R6CBnqJxo2TK+Yk7r1e0giESw
-	sn7YZgO7DcHd8ol5fDPj/Est2GzqgedSpxdGcbRguY83Y5SUPIuGClOAgf83Eq5FyF9S2BT4E+4SC
-	Kmf843dR4UwN2qfHyIPg==;
+	List-Owner; bh=6yq91l81qpD+zedGJhlZ+Jyd8op+2UB4KgMo58jZLY4=; b=F0/v0JEer9oUOU
+	HjXc07XpQ7Rfiwx9CxhFwzJtmxtjb/eNpo263SoAxr0V7w56ArV+QdVVuDVC/E9Bd4wllnbhLp2uC
+	EkmcI/LrfseLvVPOYfyGFBaKUSZpBa5nWdbx3WWM9OmaTke4xTsrUIIJOy0QWFJf+qM2IILsYTsNz
+	xIkH6IpSLC1EeBZWAOCoxqzD/ktj0e7ttHvksz4D0mTHiUk/KZIcDoSdt1q5UPFqs7M5m9g7J/Nkq
+	8zkAnd0HkFa2+C2upRlz9UOJJh/3OCfXTNqi0g5i5JWzpdC1PPutmbc3FjMP6h2OPeH4x7CAv8RrM
+	oOMdN/ijrs4vigoWbkQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXIlj-0006xa-3u; Wed, 20 Nov 2019 05:43:11 +0000
-Received: from wout1-smtp.messagingengine.com ([64.147.123.24])
+	id 1iXJ7Y-0006j0-7t; Wed, 20 Nov 2019 06:05:44 +0000
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXIlV-0006w8-SE
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 05:42:59 +0000
+ id 1iXJ7Q-0006hm-Nw
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 06:05:38 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id DCCF544D;
- Wed, 20 Nov 2019 00:42:49 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 33C6266D1;
+ Wed, 20 Nov 2019 01:05:34 -0500 (EST)
 Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 20 Nov 2019 00:42:50 -0500
+ by compute4.internal (MEProxy); Wed, 20 Nov 2019 01:05:34 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
  mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm1; bh=Lnorfs1rp+zeMCoeD57/2AmXPyjOL0H
- a6BaQrOFchsU=; b=o3qGQUUe6InpOAYfXy8pZ4Aqs4r7RB1G35quGiCXZDIklgV
- 45j60gck2g/zQszAqi8c5Za9uuFa5OToie9TG5wKf3NeoRnlvwagMRfc//Pk0rYF
- Kp0HVwjVqIUqToU3xq5+rXif9s6UpACLMZAkRRCmwD5Si7rJP0tbTT2QE/WFQrE7
- 7VuKvrMKtD2juGIk6FP0krdUfbgTJezKfvtUjqvYGxLAtovkGV5Fv0pyKDa660Cj
- Ydmasn6PPM9s6FrItrawAHkv4na+e4PssTrh1Gw5Rd4NjOJbUIlskIlSnVJTjx/H
- VKAqBkMlAYYu2/hW2uhZSv5Mfm4ySiVTzwVC4hg==
+ :subject:content-type; s=fm1; bh=MqACBpEH9i8p185f/jCjhS3Buz1frYL
+ b77NTyx979Vk=; b=i7XKy7y1PAPvEgYOMCazKDu7BXD8GlpoYO0b/DBDIBevIRN
+ oSsmkXzqiXQhG2Jq+Qd5XDA42EyYTg48eht/Xln+pFFphAE4Wr5BupTMdKWlM3Fw
+ jn2JmooRWq+DeV9QmpImEqvvRg/G9PATHSu8qX6Id4TeTDXir6MfOqFb5mm03mbX
+ XnyTSMzM4Wwzcb1sKe7CAgaRzKPRWUCpYZTRQTTvIt4EYuTxBHfXgO0RA+JrOkZZ
+ zO1+/ONdWl3BYsmF5yWiE3nJdQFQwlQKPBIxT2cz9AtL+FCRZZBKwCREIPzoP8V4
+ myUat4Xt/IJGWXwFQ0iYbWY6hKjn4TuIMPP8ILw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=Lnorfs
- 1rp+zeMCoeD57/2AmXPyjOL0Ha6BaQrOFchsU=; b=RnqnHsG5F6inIIh5Q4zjgm
- jhT8HWunrIhBUgPDBTzdY+IWPi5/RIUCil/IMKaxvwJStupYTq2x4Nfai/529Ew/
- CbSkQXByeHdM9Zn9jr6Aak2WeoWvz+zCIOzdEPis/Pj43NpTZUhzrAU2LCvEg5At
- Ob90D1o6vVMxq6i6iLhSYOClZhVI0j7bZhnyhTpVnypYpe18cS/iSanEk2EGNsZU
- AFX9JbHLDzBuSM31HA/uwhdD+4JNEcbxRUFMZCSRKl1zORz/LfrqUMtZ3Wzhm/Zk
- MBlSniBn3RO6TNRZe4c4wMYGd6vAKtX7P7U6oQ8s2CnSsm20lmILh0INSbO5RmPw
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=MqACBp
+ EH9i8p185f/jCjhS3Buz1frYLb77NTyx979Vk=; b=LJ4yst4Apz2MLuo0lKehfh
+ zMqxHdvAShQNWZwqQaXHzMmELTPswvADN1bS/OhbNjs6PJv3KkqqVHb85IVuIOqI
+ KerhvkyjTNmn688uJvc5szdzWrKmoG06NYfXFhTPE3yPvp/mJlA2aUCdro0fT1C8
+ LFnFIIIo9rvQPLtwVUHRxgvKhq/411RQz5zEQzYDgrxnaBTlliA227Vf1O4Z64MX
+ nunTveBc+fvoGSEbpprjVbKiMrLV6eAGKXJqT4Zh6iqYONYU+Byof6x0VjqjsSws
+ YIg9bUJeUjmDz3lC281U3WRxW+PDAEMTrFScfZ+NHCJdXLmJtsK0OyAnsgZ9rpyw
  ==
-X-ME-Sender: <xms:WNLUXd5dG-U05OpUaPC8cDUivrbL-UkP-j5oBZigZG7yxrksdLol1w>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudegledgkeejucetufdoteggodetrfdotf
+X-ME-Sender: <xms:q9fUXalOHeplB8yX1vzlWHBcSscnF4HNXZBSR9sI3r-PvqyKms2BJg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudegledgleduucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
+ cujfgurhepofgfggfkjghffffhvffutgesthdtredtreerjeenucfhrhhomhepfdetnhgu
  rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
  grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
  rhfuihiivgeptd
-X-ME-Proxy: <xmx:WNLUXYdH6Bp1flxoNbpZ8YDkEmHnwesdNblqUanSOJZ-bRbxk1gwqA>
- <xmx:WNLUXa4sTbaCEh-VU67y0PE8UnuxPOeusrNXs3iPMY6JbKmDg61jvQ>
- <xmx:WNLUXXsuHVHcWuFeLHbTN3Gi0uEOdZYdoqVQiWJ_vZauzx_GrbfTuA>
- <xmx:WdLUXagf4JLSbPkH13VJVF-BQk5VeeoCdyLYgpw_B1BF0InArSF1gQ>
+X-ME-Proxy: <xmx:q9fUXVQwd6XqjXTUXw50wQGrHC2F8Cs31GSA51fL3LNn58J3g-mz4w>
+ <xmx:q9fUXVYlNjqiogexue1MOxuvWRhS75Wbdx0YSdrb4eH9sDbiYxYrMg>
+ <xmx:q9fUXR8XH-IwBjQObAQ_n6vciRRjHt9VPTLSKP0mMGCrZkUTZRPGJg>
+ <xmx:rtfUXf--SERIAc9OW-KEysE8HrVyG9VEO-RmAfdYmXiXxkt6cTDpbQ>
 Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id C89EFE00A3; Wed, 20 Nov 2019 00:42:48 -0500 (EST)
+ id 9A0D9E00AA; Wed, 20 Nov 2019 01:05:31 -0500 (EST)
 X-Mailer: MessagingEngine.com Webmail Interface
 User-Agent: Cyrus-JMAP/3.1.7-578-g826f590-fmstable-20191119v1
 Mime-Version: 1.0
-Message-Id: <787e54c2-2fe3-4afc-a69b-94771726194b@www.fastmail.com>
-In-Reply-To: <20191120000647.30551-1-luc.vanoostenryck@gmail.com>
-References: <20191120000647.30551-1-luc.vanoostenryck@gmail.com>
-Date: Wed, 20 Nov 2019 16:14:12 +1030
+Message-Id: <b525ea84-aaa0-45b3-95fd-a1b3518511b3@www.fastmail.com>
+In-Reply-To: <20191118104646.3838-4-i.mikhaylov@yadro.com>
+References: <20191118104646.3838-1-i.mikhaylov@yadro.com>
+ <20191118104646.3838-4-i.mikhaylov@yadro.com>
+Date: Wed, 20 Nov 2019 16:36:55 +1030
 From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Luc Van Oostenryck" <luc.vanoostenryck@gmail.com>,
- linux-kernel@vger.kernel.org, "Robert Lippert" <rlippert@google.com>,
- "Patrick Venture" <venture@google.com>
-Subject: Re: [PATCH] aspeed: fix snoop_file_poll()'s return type
+To: "Ivan Mikhaylov" <i.mikhaylov@yadro.com>
+Subject: =?UTF-8?Q?Re:_[PATCH_v3_3/3]_mmc:_sdhci-of-aspeed:_add_inversion_signal_?=
+ =?UTF-8?Q?presence?=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_214258_205362_886FF58C 
-X-CRM114-Status: GOOD (  12.87  )
+X-CRM114-CacheID: sfid-20191119_220536_852744_58AECD49 
+X-CRM114-Status: UNSURE (   5.11  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.24 listed in list.dnswl.org]
+ low trust [66.111.4.230 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -104,55 +105,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Joel Stanley <joel@jms.id.au>,
- linux-aspeed@lists.ozlabs.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
+ openbmc@lists.ozlabs.org, linux-mmc <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 20 Nov 2019, at 10:36, Luc Van Oostenryck wrote:
-> snoop_file_poll() is defined as returning 'unsigned int' but the
-> .poll method is declared as returning '__poll_t', a bitwise type.
+On Mon, 18 Nov 2019, at 21:16, Ivan Mikhaylov wrote:
+> Add read_l callback in sdhci_ops with flipping of SDHCI_CARD_PRESENT
+> bit in case of inverted card detection signal.
 > 
-> Fix this by using the proper return type and using the EPOLL
-> constants instead of the POLL ones, as required for __poll_t.
-> 
-> CC: Joel Stanley <joel@jms.id.au>
-> CC: Andrew Jeffery <andrew@aj.id.au>
-> CC: linux-aspeed@lists.ozlabs.org
-> CC: linux-arm-kernel@lists.infradead.org
-> Signed-off-by: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-> ---
->  drivers/soc/aspeed/aspeed-lpc-snoop.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/soc/aspeed/aspeed-lpc-snoop.c 
-> b/drivers/soc/aspeed/aspeed-lpc-snoop.c
-> index 48f7ac238861..f3d8d53ab84d 100644
-> --- a/drivers/soc/aspeed/aspeed-lpc-snoop.c
-> +++ b/drivers/soc/aspeed/aspeed-lpc-snoop.c
-> @@ -97,13 +97,13 @@ static ssize_t snoop_file_read(struct file *file, 
-> char __user *buffer,
->  	return ret ? ret : copied;
->  }
->  
-> -static unsigned int snoop_file_poll(struct file *file,
-> +static __poll_t snoop_file_poll(struct file *file,
->  				    struct poll_table_struct *pt)
->  {
->  	struct aspeed_lpc_snoop_channel *chan = snoop_file_to_chan(file);
->  
->  	poll_wait(file, &chan->wq, pt);
-> -	return !kfifo_is_empty(&chan->fifo) ? POLLIN : 0;
-> +	return !kfifo_is_empty(&chan->fifo) ? EPOLLIN : 0;
+> Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
 
-Looks fine to me as POLLIN and EPOLLIN evaluate to the same value despite
-the type difference.
-
-Patrick, Rob: can you take a look / test?
-
-Andrew
+Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
 
 _______________________________________________
 linux-arm-kernel mailing list
