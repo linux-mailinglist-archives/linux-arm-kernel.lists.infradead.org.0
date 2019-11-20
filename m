@@ -2,70 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E672103EC2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 16:30:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEE3D103ECE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 16:34:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zr/32NtVFch3PkVRqtYC+x9uO6yYdDIAUe53pS4jnTQ=; b=jphHDu5Z/vTG3l
-	z/eYradXGhnroH4tZzXW/+LtCUVJkb9gLHzU1WXs4aHWD3CxRTv4GC6rMBMCOuuOcQa6TWMhuXm3f
-	o27CsgExL40D4n2OskoHOvmAXR7dyY3eGCnGeHEhYbyqayMS2I3ct3VxeFS1dI8Z+qL1nf8it6wbF
-	iLfMoIp3bDchzMH9IFldEfWNnUlxXTxVat3uaZ1svLnePvDYFnOlqZhfl1TDxFDHI4NrfLLk7ORUx
-	C1PLJrPWY6uU6w9XqBzXW1CTMXoH3MHIy6wY9RDvIOwsxzd+YJkX8OElMGevCr14qFuaux57Fi4tk
-	oMr3pe/Q+GBTZV3TZIFg==;
+	List-Owner; bh=pYUJ9K3j9Z+bDcjQZoPz2OkIILAAmSVHJT4kgpErkJw=; b=p7pwigLpYxQ0T7
+	2VgeH0BDSXPeIj0TWq8RZqc/SsENuKOBAOOODNCWYfBBcNrcvHXHKFMAPJWgdvaX/AjOaYHhlZkhp
+	VbEPDDLgKo6Ju8vqAL6iQgVa3ILGXiU6G8pe8lFt34AXW5y5Xtklvhj4PA+f4IzKzNu0MxcAME0Q5
+	k9DQwD5ezMa8JJbqh3GBetDr1jxXy8E6SE4hbwcAyaBAswESjC2zFm7cPQruLYsa1M2z706/KccEV
+	1ptKzFxgq0Bh8cukMrnhQjOqo/z0oa8bhkxjO6NYGLpr3yk6t3zfnl+nCNkiQoREqmv5gQH8pnbr9
+	3UOyD23uHCKS9Bm1dHNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXRwN-0003rO-DT; Wed, 20 Nov 2019 15:30:47 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iXRzS-0004gu-Sd; Wed, 20 Nov 2019 15:33:58 +0000
+Received: from mail-oi1-x22f.google.com ([2607:f8b0:4864:20::22f])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXRvG-0001ne-Jl
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 15:29:42 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1iXRv4-0008PX-2m; Wed, 20 Nov 2019 16:29:26 +0100
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1iXRv0-0002km-Ac; Wed, 20 Nov 2019 16:29:22 +0100
-Date: Wed, 20 Nov 2019 16:29:22 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH RFC v6 2/9] PM / devfreq: Add generic imx bus scaling
- driver
-Message-ID: <20191120152922.vaisxxyizqgjsnld@pengutronix.de>
-References: <cover.1573761527.git.leonard.crestez@nxp.com>
- <f329e715898a6b9fd0cee707a93fb1e144e31bd4.1573761527.git.leonard.crestez@nxp.com>
- <e311a376e6aec0c380686a7e307d2c07@akkea.ca>
- <VI1PR04MB70233920AC838AD88E1ECC26EE4F0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ id 1iXRzF-0004gD-To
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 15:33:50 +0000
+Received: by mail-oi1-x22f.google.com with SMTP id v138so114512oif.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 07:33:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=XIz71A93vT2GZir/cbd6mjWyCS4Rwn+5UeGeUtq83rI=;
+ b=XhcSuygsIBwuCOL9xXeVVWfKx6OA4pTVpYUr5oiWXKDaiMqAXeLa0e4xJYBglzpgLi
+ /r50b5WVPxR45+xRT0n1oir0gfEkbzcVd2at+obobIM1v+1voNKef59puPe7oDc0pqZw
+ I1kaR9TPOL61ysviDLLLtf8BsXgRYZaBPZF0I=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=XIz71A93vT2GZir/cbd6mjWyCS4Rwn+5UeGeUtq83rI=;
+ b=ezccjusFf4Iy1+wSs6Su/s4BzEcxA1D7gLZoIhfh/1qYUZP5BbNiskAPPqaBs7WocV
+ UeWEr9lDrs87giV4G+1fBA2/FBS+nR7bSQRGgVgtWVVbe1sAiD/yzQJyzmSfnpz14DxY
+ u76OHrbn41uex+zGoKaW4WXZZoHgS5AEsiOf3t/dtJXBt+6DGDmwHl8fkKiMvYRRMLJk
+ Q7Bc8cgmjp6IbeFMhq8msGmoMkeFVU6AkU9WMd9LADA5jylYb7ilwqfCj9nOnWX5vgK+
+ DBTY802jB3HHCQNCfH/lro5iOi7fUo8V7akJS3kvDpzoKCrm9n5O840obz5a/fO4J3U+
+ V8gg==
+X-Gm-Message-State: APjAAAX/NBp6kVCTZeiif1s1JjkdrQBKtiFtimJMmesFbMaMuWHbtjN6
+ sje0XkavkuSTnGq45WRFvKyuUj4gMqO/QHZozQoVyg==
+X-Google-Smtp-Source: APXvYqzFZ1Nv/DhX4G1ZPrfrmut25uY1BdnJKjyKvD6eMew7XmgYRuai2w90HTpHiKhhksOu8ivhmtv9cpmYUF09//4=
+X-Received: by 2002:aca:320a:: with SMTP id y10mr3250705oiy.152.1574264024897; 
+ Wed, 20 Nov 2019 07:33:44 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <VI1PR04MB70233920AC838AD88E1ECC26EE4F0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 16:27:46 up 5 days, 6:46, 21 users, load average: 0.02, 0.04, 0.00
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <20191120113923.11685-1-jagan@amarulasolutions.com>
+ <5644395.EDGZVd1YuU@diego>
+ <CAMty3ZA+p2pWokLrwnkv6_q0G8d76AntE5Kar4JN8MN48O9VSw@mail.gmail.com>
+ <12496011.EUIoF19S7S@diego>
+In-Reply-To: <12496011.EUIoF19S7S@diego>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Wed, 20 Nov 2019 21:03:33 +0530
+Message-ID: <CAMty3ZCLYQYvOuOzRXjxDmLsFbYBYOQjymsn+pCvctTaQG2Y0g@mail.gmail.com>
+Subject: Re: [PATCH 4/5] ARM: dts: rockchip: Add Radxa Carrier board
+To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_072938_674050_1E7CDE79 
-X-CRM114-Status: GOOD (  17.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191120_073349_374621_6413627B 
+X-CRM114-Status: GOOD (  24.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:22f listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,87 +93,71 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
- Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Martin Kepplinger <martink@posteo.de>,
- Silvano Di Ninno <silvano.dininno@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Stephen Boyd <sboyd@kernel.org>, Kyungmin Park <kyungmin.park@samsung.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ devicetree <devicetree@vger.kernel.org>, Tom Cubie <tom@radxa.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Leonard,
-
-On 19-11-20 15:04, Leonard Crestez wrote:
-> On 20.11.2019 16:08, Angus Ainslie wrote:
-> > Hi Leonard,
-> > 
-> > On 2019-11-14 12:09, Leonard Crestez wrote:
-> >> Add initial support for dynamic frequency switching on pieces of the
-> >> imx
-> >> interconnect fabric.
-> >>
-> >> All this driver does is set a clk rate based on an opp table, it does
-> >> not map register areas.
-> >>
-> > 
-> > Is this working with mainline ATF or does it still need to be used with
-> > your modified ATF code ?
-> 
-> This series doesn't perform SMC calls, that's done by the imx8m-ddrc 
-> driver: https://patchwork.kernel.org/cover/11244283/
-> 
-> This particular patch allows switching NOC frequency but that's just 
-> clk_set_rate.
-> 
-> DDRC frequency switching requires the imx branch of ATF (v2.0 + ~200 
-> patches) otherwise you will get probe failures. Source for imx atf is 
-> published here: https://source.codeaurora.org/external/imx/imx-atf/
-> 
-> For your particular 8mq B0 case slightly different setpoints are used 
-> and the fix is not in any public release yet so you need this:
-> 
-> https://github.com/cdleonard/arm-trusted-firmware/commits/imx_2.0.y_busfreq
-> 
-> Is "mainline ATF" an important criteria for Purism?
-
-Sorry for jumping in here. Just asking myself if the nxp-atf is required
-for a mainline kernel for the imx8mq devices?
-
-Thanks,
-Marco
-
-> --
-> Regards,
-> Leonard
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
-
--- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgSGVpa28sCgpPbiBXZWQsIE5vdiAyMCwgMjAxOSBhdCA3OjIzIFBNIEhlaWtvIFN0w7xibmVy
+IDxoZWlrb0BzbnRlY2guZGU+IHdyb3RlOgo+Cj4gSGkgSmFnYW4sCj4KPiBBbSBNaXR0d29jaCwg
+MjAuIE5vdmVtYmVyIDIwMTksIDE0OjQ1OjM1IENFVCBzY2hyaWViIEphZ2FuIFRla2k6Cj4gPiBP
+biBXZWQsIE5vdiAyMCwgMjAxOSBhdCA2OjU1IFBNIEhlaWtvIFN0w7xibmVyIDxoZWlrb0BzbnRl
+Y2guZGU+IHdyb3RlOgo+ID4gPiBBbSBNaXR0d29jaCwgMjAuIE5vdmVtYmVyIDIwMTksIDEyOjM5
+OjIyIENFVCBzY2hyaWViIEphZ2FuIFRla2k6Cj4gPiA+ID4gQ2FycmllciBib2FyZCBvZnRlbiBy
+ZWZlcnJlZCBhcyBiYXNlYm9hcmQuIEZvciBtYWtpbmcKPiA+ID4gPiBjb21wbGV0ZSBTQkMsIHRo
+ZSBhc3NvY2lhdGVkIFNPTSB3aWxsIG1vdW50IG9uIHRvcCBvZgo+ID4gPiA+IHRoaXMgY2Fycmll
+ciBib2FyZC4KPiA+ID4gPgo+ID4gPiA+IFJhZHhhIGhhcyBhIGNhcnJpZXIgYm9hcmQgd2hpY2gg
+c3VwcG9ydHMgb24gYm9hcmQKPiA+ID4gPiBwZXJpcGhlcmFscywgcG9ydHMgbGlrZSBVU0ItMi4w
+LCBVU0ItMy4wLCBIRE1JLCBNSVBJIERTSS9DU0ksCj4gPiA+ID4gZURQLCBFdGhlcm5ldCwgUENJ
+ZSwgVVNCLUMsIDQwLVBpbiBHUElPIGhlYWRlciBhbmQgZXRjLgo+ID4gPiA+Cj4gPiA+ID4gQ3Vy
+cmVudGx5IHRoaXMgY2FycmllciBib2FyZCBjYW4gYmUgdXNlZCB0b2dldGhlciB3aXRoCj4gPiA+
+ID4gVk1BUkMgUkszMzk5UG9yIFNPTSBmb3IgbWFraW5nIFJvY2sgUEkgTjEwIFNCQy4KPiA+ID4g
+Pgo+ID4gPiA+IFNvIGFkZCB0aGlzIGNhcnJpZXIgYm9hcmQgZHRzaSBhcyBhIHNlcGFyYXRlIGZp
+bGUgaW4KPiA+ID4gPiBBUk0gZGlyZWN0b3J5LCBzby10aGF0IHRoZSBzYW1lIGNhbiByZXVzZSBp
+dCBpbiBib3RoCj4gPiA+ID4gYXJtMzIgYW5kIGFybTY0IHZhcmlhbnRzIG9mIFJvY2tjaGlwIFNP
+TXMuCj4gPiA+Cj4gPiA+IERvIHlvdSByZWFsbHkgdGhpbmsgc29tZW9uZSB3aWxsIGNyZWF0ZSBh
+biBhcm0zMiBzb2MgdXNpbmcgdGhhdAo+ID4gPiBjYXJyaWVyIGJvYXJkPwo+ID4KPiA+IFllcywg
+d2UgaGF2ZSBSb2NrIFBpIE44IHdoaWNoIGlzIHVzaW5nIHNhbWUgY2FycmllciBib2FyZCBkZXNp
+Z24gd2l0aAo+ID4gKCsgZXh0ZXJuYWwgY29kZWMpIG9uIHRvcCBvZiBSSzMyODggU09NLiBJIGRp
+ZG4ndCBtZW50aW9uZWQgb24gdGhlCj4gPiBjb21taXQgbWVzc2FnZSBzaW5jZSByYWR4YSBkb2Vz
+bid0IG9mZmljaWFsbHkgYW5ub3VuY2VkIG9uIHRoZQo+ID4gd2Vic2l0ZS4KPiA+Cj4gPiA+Cj4g
+PiA+IFNpbWlsYXJseSBzbyBmYXIgSSBkb24ndCB0aGluayB3ZSBoYXZlbid0IGV2ZW4gc2VlbiBh
+IGxvdCBvZiByZXVzZQo+ID4gPiBvZiBleGlzdGluZyBjYXJyaWVyIGJvYXJkcyBhdCBhbGwsIG90
+aGVyIHRoYW4gdGhlaXIgaW5pdGlhbCBjb21iaW5hdGlvbi4KPiA+ID4KPiA+ID4gU28gbWF5YmUg
+anVzdCBoYXZpbmcgdGhlIGNvbnRlbnQgb2YgeW91cgo+ID4gPiAgICAgICAgIHJvY2tjaGlwLXJh
+ZHhhLWNhcnJpZXJib2FyZC5kdHNpCj4gPiA+IGluCj4gPiA+ICAgICAgICAgcm9ja2NoaXAvcmsz
+Mzk5cHJvLXJvY2stcGktbjEwLmR0cwo+ID4gPiBmcm9tIHBhdGNoIDUgbWlnaHQgYmUgYSBiZXR0
+ZXIgc3RhcnQgLSBhdCBsZWFzdCB1bnRpbCB0aGVyZSBpcyBhbnkKPiA+ID4gZnVydGhlciB1c2Fn
+ZSAtIGlmIGF0IGFsbD8KPiA+Cj4gPiBCdXQsIHRoaXMgcGFydGljdWxhciBkZXNpZ24gaGFzIHBy
+b3BlciB1c2UgY2FzZS4KPiA+IDEuIHJrMzM5OXBybyBTT00gKyBjYXJyaWVyIGJvYXJkIChSb2Nr
+IFBpIE4xMCkKPiA+IDIuIHJrMzI4OCBTT00gKyBjYXJyaWVyIGJvYXJkIChSb2NrIFBpIE44KQo+
+ID4KPiA+ID4KPiA+ID4gQWxzbyByb2NrY2hpcC1yYWR4YS1jYXJyaWVyYm9hcmQgbWlnaHQgZXZl
+biBiZSBvdmVybHkgZ2VuZXJpYwo+ID4gPiBhcyB0aGVyZSBtYXkgYmUgbXVsdGlwbGUgY2Fycmll
+cmJvYXJkcyBmcm9tIFJhZHhhIGxhdGVyIG9uLgo+ID4KPiA+IEknbSBzbGlnaHRseSBkaXNhZ3Jl
+ZSBvZiBoYXZpbmcgb3ZlcmxheSBoZXJlLCBzaW5jZSB0aGVzZSBhcmUgZml4ZWQKPiA+IGRlc2ln
+biBjb21iaW5hdGlvbnMuIHdoZXJlIFNPTSB3aXRoIHJlc3BlY3RpdmUgY2FycmllciBib2FyZCBp
+cwo+ID4gbWFuZGF0b3J5IHRvIG1ha2UgZmluYWwgYm9hcmQuIFVuZGVyc3RhbmQgdGhhdCB3ZSBj
+YW4gaGF2ZSBhCj4gPiBtYWludGVuYW5jZSBvdmVyLWFoZWFkIGlmIHdlIGhhdmUgbXVsdGlwbGUg
+Y2FycmllciBib2FyZHMsIGJ1dCByaWdodAo+ID4gbm93IHJhZHhhIGhhcyBvbmx5IG9uZSBjYXJy
+aWVyIGJvYXJkIHdpdGggMiBzZXRzIG9mIFNPTSdzIGNvbWJpbmF0aW9ucwo+ID4gdGhhdCBpbmRl
+ZWQgZml0IGxpa2UgYSBkZXYgYm9hcmQsIHNvIHRoZXJlIGlzIHVudXNlZCBjYXJyaWVyIGJvYXJk
+Lgo+Cj4gQWxsIGlzIGdvb2QgLi4uIHdpdGggdGhhdCBpbmZvcm1hdGlvbiBmcm9tIGFib3ZlIChy
+azMyODgpIHRoaXMgZGVmaW5pdGx5Cj4gbWFrZXMgbW9yZSBzZW5zZSA6LSkKPgo+IFRoZSBuYW1p
+bmcgb2YgdGhlIGZpbGUgaXMgc3RpbGwgYSB0aW55IHN0cnVnZ2xlIHRob3VnaC4gRG9lcyB0aGlz
+IGJvYXJkCj4gbWF5YmUgaGF2ZSBzb21lIGFjdHVhbCBwcm9kdWN0IG5hbWUgb3IgaXMgaXQgcmVh
+bGx5IGp1c3QgY2FsbGVkCj4gImNhcnJpZXJib2FyZCI/IDotKQoKVHJ1ZSwgSSBmZWx0IHRoZSBz
+YW1lLiBKdXN0IG5vdyBUb20gaGFzIG5hbWVkIHRoaXMgYXMgJ0RhbGFuZyBDYXJyaWVyCmJvYXJk
+JyBzbyB3ZSBjYW4gaGF2ZSByb2NrY2hpcC1yYWR4YS1kYWxhbmcuZHRzaSBvcgpyb2NrY2hpcC1y
+YWR4YS1kYWxhbmctY2Fycmllci5kdHNpIGFzIGZpbGUgbmFtZXMuIG9yIGxldCBtZSBrbm93IGlm
+CnlvdSBoYXZlIGFueSBzdWdnZXN0aW9ucyBvbiB0aGUgZmlsZSBuYW1lPwoKSmFnYW4uCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
+bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
+Cg==
