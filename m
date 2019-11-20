@@ -2,70 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3282E103700
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 10:51:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4597D10371A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 10:57:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WyZnqcIXFYZeAg8OdLtg2l8vb4LOao8F4p66ewuYRmE=; b=n7CqPNn/o8WpRg
-	iB6WdJf6oFXRTfa3e+Mf7rok3dwhMubR30rNVc76/h6etyna+0scxb1n07+Pvd1KBIiuPyPV9SZHB
-	SGtA3kaSCom9DFQeUMwoxwij21CkuHNmyEWScne0b1gZLC/AG0IodafBarMbqQWb7mQd/s8tnBQQ4
-	j9KlzlEgkLHl8NwuY7hgHUBVV5oPnUvRDoT5nNm2VCS7bdejgoRBz3YMWp9oy+VVBijojDUtr3+v1
-	kzZ/LFHYev03Nyfg1uj2Q9NHqsl1HMd/Beg0/sFVWULOPFIIZgZSflfdOvumPBzbR74hiwkXoTLzL
-	aUbFmtKraVRBTQZ7HocQ==;
+	List-Owner; bh=FD6v4wnwh+Uosd7lFObSzxxlDMv1mbTNC/+7kcZyp1I=; b=auNZrjTXjN5k2j
+	aHqHPI5qAxH6oEuggQm1miiD8MjNODebsyYWhaK/x7nFQBzwna+VpWyBXNTa8FJ3qTRTYpkGztn5o
+	hhIZh7gOlma/nI2CqsL0Ib6JK3TTyr9EjHHjFOnTrYkTHJb2eR6HNP8WGG5ja/ZyZ1YNYJgv5oF3J
+	AJD3s4IHDdhMQgY/NhdBQy4ObTA6w9Jb3C8Bx4nW/rdmRxcITzP8SPlsdeYAvqctP+7WRPQ/K5OV/
+	588UGcZRRpNeTDvv0caU9pxueDJXwoAqEOdEZcx3ZQfrLsDPqiZFiAUBGYXkIT1vO5dX+KC/NGh4y
+	vxcfBB3QUOkUSOH8CslA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXMeE-0002MG-73; Wed, 20 Nov 2019 09:51:42 +0000
+	id 1iXMkB-0004P3-LT; Wed, 20 Nov 2019 09:57:51 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXMe5-0002Lf-Ti
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 09:51:35 +0000
+ id 1iXMk1-0004Nf-FR
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 09:57:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=wGnYD9LDfkF5KeMo2TrhNRWwflDYysKV8UNx+eBfq88=; b=Jq532s45lJdDrogvc2MJF/d9O
- UdOThQ1w/Vi77zoM/XJ5hwCtM1MdadGQb45KdiRx7UXDRF4CEWj1z8BytR4DGIWnOgnpHC9C3e24X
- 2XBdxfN1JeYOFGaItZQrCehZM9Inhma090cu1V6XJBrkNfNORYHLjSdOpVsvgbnnfcXjSEPoh1JD6
- oE8exm9LjFcQAVtjH4DaarHPU8q4271LHdBgcikzcEj6+C+y4W6E4hRfH5Rxt5wCLyQrKZu36cDyN
- QJm9bA5Bru1hZxFdPK166VbPqmw0c06GQBjklP4sXbBIS/SQJu50PpNmsQBj8yRoKI+W57mhYpLBh
- iE/hrRKOw==;
+ bh=el6438nih4sfwVUUpa3K7cGTYMkZUt0pCE/MflmMSiA=; b=bcV3glNLOjIUujMfUEw4s7kT6
+ Z6OGWKZbmD0U635MtVAIlSU1ixudFfoksF22a7LTl1W20n/1fJdNsXuujM3+C1ZTKUoUumNB9aNOs
+ RYd13CFvhF4cDxk/34GB9IhDX+rdOqDeoiGBGD0nrEfxwip7rS0pNaRknuUJkcgFvqxExxT41yxpW
+ 8PEtujQ51/SZdZW8JriCE6ikn3f7nsbUxydGpzA2n35/RP5oFpUtcrXMbFBO6AibcBqU+4KuUgB3a
+ 35iKgzeq3jZ6/tOsoixKQz1oeB1QCsv6pvCEo3bwd+4bSE4EBX/WpAuLpJTlt+0kXqiV8Vxb8mAU5
+ yKENSjU9w==;
 Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:42120)
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:58700)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <linux@armlinux.org.uk>)
- id 1iXMdp-0007Wm-W4; Wed, 20 Nov 2019 09:51:18 +0000
+ id 1iXMju-0007YX-7j; Wed, 20 Nov 2019 09:57:34 +0000
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iXMdj-0001cj-TD; Wed, 20 Nov 2019 09:51:11 +0000
-Date: Wed, 20 Nov 2019 09:51:11 +0000
+ id 1iXMjp-0001cr-EL; Wed, 20 Nov 2019 09:57:29 +0000
+Date: Wed, 20 Nov 2019 09:57:29 +0000
 From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>
-Subject: Re: [PATCH] ARM: don't export unused return_address()
-Message-ID: <20191120095111.GI25745@shell.armlinux.org.uk>
-References: <20190906154706.2449696-1-arnd@arndb.de>
- <CAMuHMdUMgDBo1gkvQ_Bd8mjMiPjdWWY=9AU6K1S7NcJy5jhvGQ@mail.gmail.com>
- <CAK7LNASNp4jPYHmh3e4QYwenYbVrK69tvB_LLyK_ew1eqBNrEw@mail.gmail.com>
- <20191113114517.GO25745@shell.armlinux.org.uk>
- <CAMuHMdXk9sWBpYWC-X6V3rp2e0+f5ebdRFFXn8Heuy0qkLq0GQ@mail.gmail.com>
- <20191113170058.GP25745@shell.armlinux.org.uk>
- <CAK7LNARiQnc+A0j4ORC-M8ZcbtDYdRF7tU1Zv8Lbst-g8dqmVQ@mail.gmail.com>
- <20191120090744.GH25745@shell.armlinux.org.uk>
- <CAK7LNARMjaCe8spDPMAKdViUN+uUycYL9LSCXumcR8DNDNKaPA@mail.gmail.com>
+To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
+Subject: Re: [PATCHv9 00/12] PCI: Recode Mobiveil driver and add PCIe Gen4
+ driver for NXP Layerscape SoCs
+Message-ID: <20191120095729.GJ25745@shell.armlinux.org.uk>
+References: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAK7LNARMjaCe8spDPMAKdViUN+uUycYL9LSCXumcR8DNDNKaPA@mail.gmail.com>
+In-Reply-To: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_015133_960016_7F4F9E8E 
-X-CRM114-Status: GOOD (  25.65  )
+X-CRM114-CacheID: sfid-20191120_015741_518238_DDC02E2F 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -94,119 +88,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
+ "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "andrew.murray@arm.com" <andrew.murray@arm.com>,
+ Mingkai Hu <mingkai.hu@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 20, 2019 at 06:42:52PM +0900, Masahiro Yamada wrote:
-> Hi Russell,
+On Wed, Nov 20, 2019 at 03:45:17AM +0000, Z.q. Hou wrote:
+> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
 > 
-> 
-> On Wed, Nov 20, 2019 at 6:07 PM Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
-> >
-> > On Wed, Nov 20, 2019 at 06:02:13PM +0900, Masahiro Yamada wrote:
-> > > Hi Arnd,
-> > >
-> > >
-> > >
-> > > On Thu, Nov 14, 2019 at 2:01 AM Russell King - ARM Linux admin
-> > > <linux@armlinux.org.uk> wrote:
-> > > >
-> > > > On Wed, Nov 13, 2019 at 02:15:00PM +0100, Geert Uytterhoeven wrote:
-> > > > > Hi Russell,
-> > > > >
-> > > > > On Wed, Nov 13, 2019 at 12:45 PM Russell King - ARM Linux admin
-> > > > > <linux@armlinux.org.uk> wrote:
-> > > > > > On Wed, Nov 13, 2019 at 08:40:39PM +0900, Masahiro Yamada wrote:
-> > > > > > > On Tue, Oct 1, 2019 at 11:31 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > > > > > > > On Fri, Sep 6, 2019 at 5:47 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> > > > > > > > > Without the frame pointer enabled, return_address() is an inline
-> > > > > > > > > function and does not need to be exported, as shown by this warning:
-> > > > > > > > >
-> > > > > > > > > WARNING: "return_address" [vmlinux] is a static EXPORT_SYMBOL_GPL
-> > > > > > > > >
-> > > > > > > > > Move the EXPORT_SYMBOL_GPL() into the #ifdef as well.
-> > > > > > > > >
-> > > > > > > > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> > > > > > > >
-> > > > > > > > Thanks for your patch!
-> > > > > > > >
-> > > > > > > > Tested-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > > > > > > >
-> > > > > > > > > --- a/arch/arm/kernel/return_address.c
-> > > > > > > > > +++ b/arch/arm/kernel/return_address.c
-> > > > > > > > > @@ -53,6 +53,7 @@ void *return_address(unsigned int level)
-> > > > > > > > >                 return NULL;
-> > > > > > > > >  }
-> > > > > > > > >
-> > > > > > > >
-> > > > > > > > Checkpatch doesn't like the empty line above:
-> > > > > > > >
-> > > > > > > > WARNING: EXPORT_SYMBOL(foo); should immediately follow its function/variable
-> > > > > > > >
-> > > > > > > > > +EXPORT_SYMBOL_GPL(return_address);
-> > > > > > > > > +
-> > > > > > > > >  #endif /* if defined(CONFIG_FRAME_POINTER) && !defined(CONFIG_ARM_UNWIND) */
-> > > > > > > > >
-> > > > > > > > > -EXPORT_SYMBOL_GPL(return_address);
-> > > > >
-> > > > > > > What has happened to this patch?
-> > > > > > >
-> > > > > > > I still see this warning.
-> > > > > >
-> > > > > > Simple - it got merged, it caused build regressions, it got dropped.
-> > > > > > A new version is pending me doing another round of patch merging.
-> > > > >
-> > > > > I believe that was not Arnd's patch, but Ben Dooks' alternative solution[*]?
-> > > >
-> > > > I don't keep track of who did what, sorry.
-> > >
-> > >
-> > > Arnd,
-> > >
-> > > I believe this patch is the correct fix.
-> > > Could you please put it into Russell's patch tracker?
-> > > (patches@arm.linux.org.uk)
-> >
-> > Is there something wrong with:
-> >
-> > fb033c95c94c ARM: 8918/2: only build return_address() if needed
-> >
-> > I haven't seen any build issues with that.
-> 
-> 
-> Sorry, I had not checked Ben's patch because you said
-> "Simple - it got merged, it caused build regressions, it got dropped."
+> This patch set is to recode the Mobiveil driver and add
+> PCIe support for NXP Layerscape series SoCs integrated
+> Mobiveil's PCIe Gen4 controller.
 
-That was 8918/1.  Ben fixed his patch, and submitted an updated
-version.
+How many PCIe cards have been tested to work/don't work with this?
 
-> Yup, I've checked it right now,
-> and it looks good to me.
-> 
-> But, I do not see that commit in the latest linux-next
-> (next-20191120).
-> 
-> Could you really apply it if you have not.
+I need:
 
-It was applied last Friday and was pushed out there and then.
+PCI: mobiveil: ls_pcie_g4: fix SError when accessing config space
+PCI: mobiveil: ls_pcie_g4: add Workaround for A-011451
+PCI: mobiveil: ls_pcie_g4: add Workaround for A-011577
 
-$ git ls-remote zeniv | grep for-next
-022eb8ae8b5ee8c5c813923c69b5ebb1e9612c4c        refs/heads/for-next
-$ git lg for-next
-022eb8ae8b5e ARM: 8938/1: kernel: initialize broadcast hrtimer based
-clock event device
-...
-fb033c95c94c ARM: 8918/2: only build return_address() if needed
-
-I've no idea why linux-next doesn't have it.
+to successfully boot with a Mellanox card plugged in with a previous
+revision of these patches.
 
 -- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
