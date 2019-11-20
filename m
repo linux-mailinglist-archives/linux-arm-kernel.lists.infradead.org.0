@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECA531036E9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 10:44:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3282E103700
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 10:51:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tO4FvaBD+Jkwh0LT7hKRRR74IjrSNtUs8XMTSXsIRjY=; b=Zdqp6x8kPoR402
-	SOIaPJDV5zBTKhhoysZlwLhVu0l0SBtJRJQfoGIOP1bWsQaScbrpdRqRgr3n2BxkwVLPyK1N9FPlP
-	pD1G2Njb2mwfg6wgi94mBY4jj9ade6QENV5iKq8tnsuLYRjQOrCAPM7jYBr0Jdc3IL2MTpJDSfs2Z
-	ObQoyKYZ6aK4Uv3KIVQswG+vRDVHlj6LQFTwTUK8VqCj28Zgzj9vFDy178U5v1WD7E3lbqKDviIS4
-	YlCxNtEYxX6imylEKflW5N4lmxfSEv2YR3C3vfjm7DGeADwSCnx4qwAYEWGzvvvNcFWbrmq0WDT7V
-	1lfSM3SmZKuVFlAI25ZA==;
+	List-Owner; bh=WyZnqcIXFYZeAg8OdLtg2l8vb4LOao8F4p66ewuYRmE=; b=n7CqPNn/o8WpRg
+	iB6WdJf6oFXRTfa3e+Mf7rok3dwhMubR30rNVc76/h6etyna+0scxb1n07+Pvd1KBIiuPyPV9SZHB
+	SGtA3kaSCom9DFQeUMwoxwij21CkuHNmyEWScne0b1gZLC/AG0IodafBarMbqQWb7mQd/s8tnBQQ4
+	j9KlzlEgkLHl8NwuY7hgHUBVV5oPnUvRDoT5nNm2VCS7bdejgoRBz3YMWp9oy+VVBijojDUtr3+v1
+	kzZ/LFHYev03Nyfg1uj2Q9NHqsl1HMd/Beg0/sFVWULOPFIIZgZSflfdOvumPBzbR74hiwkXoTLzL
+	aUbFmtKraVRBTQZ7HocQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXMWn-0007GS-8F; Wed, 20 Nov 2019 09:44:01 +0000
-Received: from conssluserg-04.nifty.com ([210.131.2.83])
+	id 1iXMeE-0002MG-73; Wed, 20 Nov 2019 09:51:42 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXMWc-0007Aa-8z
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 09:43:53 +0000
-Received: from mail-vs1-f41.google.com (mail-vs1-f41.google.com
- [209.85.217.41]) (authenticated)
- by conssluserg-04.nifty.com with ESMTP id xAK9hTe4006963
- for <linux-arm-kernel@lists.infradead.org>; Wed, 20 Nov 2019 18:43:30 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-04.nifty.com xAK9hTe4006963
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1574243010;
- bh=gaeqdtznjjafg+M5Fz5ihzkuP1zCT1Ut14Jc/U3kO0k=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=XULbgrv5bAU/hwre0092fkHZT1E1/voN+/IkerXZNfbhu2pzTE7f60xDllS2iY0V4
- 8jBnWGI/vsZ9Df54OKBDQ9hMRutr54N1BdeHJwajUQD1cjEjBe4oDxgzIOTBqaTRY1
- NiZeQ/b19cWhjOtu/6k7Bn0ascxp8CgVZGQ+mNvXHDoWuEMATCNTr3ql2LSAp0kGOs
- 8OU0O8AmYZnotBjY5SMYRMPUTQ42wqrFqpuTZnjitieZspbAXDYlNIo1slmAjeZyou
- Z4vblX/K2lumxtQSMk5FeCPBSDdm3tQS5j4bZThBKW9kBYK1CD2GdBtyJHjXWT/wXv
- 5mOD6Lspz3Vlg==
-X-Nifty-SrcIP: [209.85.217.41]
-Received: by mail-vs1-f41.google.com with SMTP id c25so16417635vsp.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 01:43:29 -0800 (PST)
-X-Gm-Message-State: APjAAAUs2VuI+x8PYUxugoURPanXueWNoOt/uz3AY67gwFl+yz8kqQ+N
- c77lHibc86Pr/JJT8MYLxEEwOWqL3R4WZCTwG7Y=
-X-Google-Smtp-Source: APXvYqydF4O542U4LQETZ4wHBOQur8BMF1qbkuAzzOgrIMLs4fbi4o6BnIuLJQm4CI1YMqKWZQIgo1eUGiIKHyX2trE=
-X-Received: by 2002:a05:6102:726:: with SMTP id
- u6mr884537vsg.179.1574243008839; 
- Wed, 20 Nov 2019 01:43:28 -0800 (PST)
-MIME-Version: 1.0
+ id 1iXMe5-0002Lf-Ti
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 09:51:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=wGnYD9LDfkF5KeMo2TrhNRWwflDYysKV8UNx+eBfq88=; b=Jq532s45lJdDrogvc2MJF/d9O
+ UdOThQ1w/Vi77zoM/XJ5hwCtM1MdadGQb45KdiRx7UXDRF4CEWj1z8BytR4DGIWnOgnpHC9C3e24X
+ 2XBdxfN1JeYOFGaItZQrCehZM9Inhma090cu1V6XJBrkNfNORYHLjSdOpVsvgbnnfcXjSEPoh1JD6
+ oE8exm9LjFcQAVtjH4DaarHPU8q4271LHdBgcikzcEj6+C+y4W6E4hRfH5Rxt5wCLyQrKZu36cDyN
+ QJm9bA5Bru1hZxFdPK166VbPqmw0c06GQBjklP4sXbBIS/SQJu50PpNmsQBj8yRoKI+W57mhYpLBh
+ iE/hrRKOw==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:42120)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iXMdp-0007Wm-W4; Wed, 20 Nov 2019 09:51:18 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iXMdj-0001cj-TD; Wed, 20 Nov 2019 09:51:11 +0000
+Date: Wed, 20 Nov 2019 09:51:11 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [PATCH] ARM: don't export unused return_address()
+Message-ID: <20191120095111.GI25745@shell.armlinux.org.uk>
 References: <20190906154706.2449696-1-arnd@arndb.de>
  <CAMuHMdUMgDBo1gkvQ_Bd8mjMiPjdWWY=9AU6K1S7NcJy5jhvGQ@mail.gmail.com>
  <CAK7LNASNp4jPYHmh3e4QYwenYbVrK69tvB_LLyK_ew1eqBNrEw@mail.gmail.com>
@@ -57,27 +58,30 @@ References: <20190906154706.2449696-1-arnd@arndb.de>
  <20191113170058.GP25745@shell.armlinux.org.uk>
  <CAK7LNARiQnc+A0j4ORC-M8ZcbtDYdRF7tU1Zv8Lbst-g8dqmVQ@mail.gmail.com>
  <20191120090744.GH25745@shell.armlinux.org.uk>
-In-Reply-To: <20191120090744.GH25745@shell.armlinux.org.uk>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Wed, 20 Nov 2019 18:42:52 +0900
-X-Gmail-Original-Message-ID: <CAK7LNARMjaCe8spDPMAKdViUN+uUycYL9LSCXumcR8DNDNKaPA@mail.gmail.com>
-Message-ID: <CAK7LNARMjaCe8spDPMAKdViUN+uUycYL9LSCXumcR8DNDNKaPA@mail.gmail.com>
-Subject: Re: [PATCH] ARM: don't export unused return_address()
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ <CAK7LNARMjaCe8spDPMAKdViUN+uUycYL9LSCXumcR8DNDNKaPA@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAK7LNARMjaCe8spDPMAKdViUN+uUycYL9LSCXumcR8DNDNKaPA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_014350_547066_1CE917D9 
-X-CRM114-Status: GOOD (  23.83  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191120_015133_960016_7F4F9E8E 
+X-CRM114-Status: GOOD (  25.65  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.83 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -100,102 +104,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russell,
-
-
-On Wed, Nov 20, 2019 at 6:07 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> On Wed, Nov 20, 2019 at 06:02:13PM +0900, Masahiro Yamada wrote:
-> > Hi Arnd,
+On Wed, Nov 20, 2019 at 06:42:52PM +0900, Masahiro Yamada wrote:
+> Hi Russell,
+> 
+> 
+> On Wed, Nov 20, 2019 at 6:07 PM Russell King - ARM Linux admin
+> <linux@armlinux.org.uk> wrote:
 > >
-> >
-> >
-> > On Thu, Nov 14, 2019 at 2:01 AM Russell King - ARM Linux admin
-> > <linux@armlinux.org.uk> wrote:
+> > On Wed, Nov 20, 2019 at 06:02:13PM +0900, Masahiro Yamada wrote:
+> > > Hi Arnd,
 > > >
-> > > On Wed, Nov 13, 2019 at 02:15:00PM +0100, Geert Uytterhoeven wrote:
-> > > > Hi Russell,
+> > >
+> > >
+> > > On Thu, Nov 14, 2019 at 2:01 AM Russell King - ARM Linux admin
+> > > <linux@armlinux.org.uk> wrote:
 > > > >
-> > > > On Wed, Nov 13, 2019 at 12:45 PM Russell King - ARM Linux admin
-> > > > <linux@armlinux.org.uk> wrote:
-> > > > > On Wed, Nov 13, 2019 at 08:40:39PM +0900, Masahiro Yamada wrote:
-> > > > > > On Tue, Oct 1, 2019 at 11:31 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > > > > > > On Fri, Sep 6, 2019 at 5:47 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> > > > > > > > Without the frame pointer enabled, return_address() is an inline
-> > > > > > > > function and does not need to be exported, as shown by this warning:
-> > > > > > > >
-> > > > > > > > WARNING: "return_address" [vmlinux] is a static EXPORT_SYMBOL_GPL
-> > > > > > > >
-> > > > > > > > Move the EXPORT_SYMBOL_GPL() into the #ifdef as well.
-> > > > > > > >
-> > > > > > > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> > > > > > >
-> > > > > > > Thanks for your patch!
-> > > > > > >
-> > > > > > > Tested-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > > > > > >
-> > > > > > > > --- a/arch/arm/kernel/return_address.c
-> > > > > > > > +++ b/arch/arm/kernel/return_address.c
-> > > > > > > > @@ -53,6 +53,7 @@ void *return_address(unsigned int level)
-> > > > > > > >                 return NULL;
-> > > > > > > >  }
-> > > > > > > >
-> > > > > > >
-> > > > > > > Checkpatch doesn't like the empty line above:
-> > > > > > >
-> > > > > > > WARNING: EXPORT_SYMBOL(foo); should immediately follow its function/variable
-> > > > > > >
-> > > > > > > > +EXPORT_SYMBOL_GPL(return_address);
-> > > > > > > > +
-> > > > > > > >  #endif /* if defined(CONFIG_FRAME_POINTER) && !defined(CONFIG_ARM_UNWIND) */
-> > > > > > > >
-> > > > > > > > -EXPORT_SYMBOL_GPL(return_address);
-> > > >
-> > > > > > What has happened to this patch?
-> > > > > >
-> > > > > > I still see this warning.
+> > > > On Wed, Nov 13, 2019 at 02:15:00PM +0100, Geert Uytterhoeven wrote:
+> > > > > Hi Russell,
 > > > > >
-> > > > > Simple - it got merged, it caused build regressions, it got dropped.
-> > > > > A new version is pending me doing another round of patch merging.
+> > > > > On Wed, Nov 13, 2019 at 12:45 PM Russell King - ARM Linux admin
+> > > > > <linux@armlinux.org.uk> wrote:
+> > > > > > On Wed, Nov 13, 2019 at 08:40:39PM +0900, Masahiro Yamada wrote:
+> > > > > > > On Tue, Oct 1, 2019 at 11:31 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+> > > > > > > > On Fri, Sep 6, 2019 at 5:47 PM Arnd Bergmann <arnd@arndb.de> wrote:
+> > > > > > > > > Without the frame pointer enabled, return_address() is an inline
+> > > > > > > > > function and does not need to be exported, as shown by this warning:
+> > > > > > > > >
+> > > > > > > > > WARNING: "return_address" [vmlinux] is a static EXPORT_SYMBOL_GPL
+> > > > > > > > >
+> > > > > > > > > Move the EXPORT_SYMBOL_GPL() into the #ifdef as well.
+> > > > > > > > >
+> > > > > > > > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> > > > > > > >
+> > > > > > > > Thanks for your patch!
+> > > > > > > >
+> > > > > > > > Tested-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> > > > > > > >
+> > > > > > > > > --- a/arch/arm/kernel/return_address.c
+> > > > > > > > > +++ b/arch/arm/kernel/return_address.c
+> > > > > > > > > @@ -53,6 +53,7 @@ void *return_address(unsigned int level)
+> > > > > > > > >                 return NULL;
+> > > > > > > > >  }
+> > > > > > > > >
+> > > > > > > >
+> > > > > > > > Checkpatch doesn't like the empty line above:
+> > > > > > > >
+> > > > > > > > WARNING: EXPORT_SYMBOL(foo); should immediately follow its function/variable
+> > > > > > > >
+> > > > > > > > > +EXPORT_SYMBOL_GPL(return_address);
+> > > > > > > > > +
+> > > > > > > > >  #endif /* if defined(CONFIG_FRAME_POINTER) && !defined(CONFIG_ARM_UNWIND) */
+> > > > > > > > >
+> > > > > > > > > -EXPORT_SYMBOL_GPL(return_address);
+> > > > >
+> > > > > > > What has happened to this patch?
+> > > > > > >
+> > > > > > > I still see this warning.
+> > > > > >
+> > > > > > Simple - it got merged, it caused build regressions, it got dropped.
+> > > > > > A new version is pending me doing another round of patch merging.
+> > > > >
+> > > > > I believe that was not Arnd's patch, but Ben Dooks' alternative solution[*]?
 > > > >
-> > > > I believe that was not Arnd's patch, but Ben Dooks' alternative solution[*]?
+> > > > I don't keep track of who did what, sorry.
 > > >
-> > > I don't keep track of who did what, sorry.
+> > >
+> > > Arnd,
+> > >
+> > > I believe this patch is the correct fix.
+> > > Could you please put it into Russell's patch tracker?
+> > > (patches@arm.linux.org.uk)
 > >
+> > Is there something wrong with:
 > >
-> > Arnd,
+> > fb033c95c94c ARM: 8918/2: only build return_address() if needed
 > >
-> > I believe this patch is the correct fix.
-> > Could you please put it into Russell's patch tracker?
-> > (patches@arm.linux.org.uk)
->
-> Is there something wrong with:
->
-> fb033c95c94c ARM: 8918/2: only build return_address() if needed
->
-> I haven't seen any build issues with that.
+> > I haven't seen any build issues with that.
+> 
+> 
+> Sorry, I had not checked Ben's patch because you said
+> "Simple - it got merged, it caused build regressions, it got dropped."
 
+That was 8918/1.  Ben fixed his patch, and submitted an updated
+version.
 
-Sorry, I had not checked Ben's patch because you said
-"Simple - it got merged, it caused build regressions, it got dropped."
+> Yup, I've checked it right now,
+> and it looks good to me.
+> 
+> But, I do not see that commit in the latest linux-next
+> (next-20191120).
+> 
+> Could you really apply it if you have not.
 
+It was applied last Friday and was pushed out there and then.
 
-Yup, I've checked it right now,
-and it looks good to me.
+$ git ls-remote zeniv | grep for-next
+022eb8ae8b5ee8c5c813923c69b5ebb1e9612c4c        refs/heads/for-next
+$ git lg for-next
+022eb8ae8b5e ARM: 8938/1: kernel: initialize broadcast hrtimer based
+clock event device
+...
+fb033c95c94c ARM: 8918/2: only build return_address() if needed
 
-But, I do not see that commit in the latest linux-next
-(next-20191120).
+I've no idea why linux-next doesn't have it.
 
-Could you really apply it if you have not.
-
-Thanks!
-
-
-
---
-Best Regards
-Masahiro Yamada
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
