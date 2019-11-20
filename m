@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B34571044A9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 20:55:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4BF71044AB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 20:55:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=stps6yR8JukANSQzm3Dw/VqqcPdW8nhZ37nAVwm/YFk=; b=WOq7EdwI9vjamW
-	2kWRj/vGHilq1CAOAdM6p+CPrw9qiomvCAet74iDwS5CuGQFLgXko3++qtqTrREjrqOpcYBuzrkqX
-	iSWPAfE1mIhGIQygYkkS/qBgK3igrCR/i9Y79NVYdoE/kyTTBFYPDUzcQpsSrSuBELHvYZ7yG6UbJ
-	A05cQEUiCJyNTpT92iHtj5L6BL3uc2/Yd3DjFG2V+MQqgw0hD298dD3KKmLXIyDUFU8L2R2bc/04b
-	HpeUwsY34/3ABzBKHZ4oWb4wP2nrTXw333kcBNpeuxjxAFqYfxFBJ5dRwJwc0iZ+0Lt6BxowE6W08
-	/+ebwkfeqGQWmA9BmwiQ==;
+	List-Owner; bh=0wQZUIJMXMQM7uXlD6adBAvkS6KQWupAJupNYOtVcB8=; b=ZCUG5+rGcQ5MUh
+	e6PXXy3uXjv5LUba0Bxtupk0tbpKX1g30r/3GJAfe8MFHqF+qbVKtd0ajVzoYmVe+ehr8UQpJHa03
+	1JNKq68A0AhwGkrLroKF5Qdy+PkjC9nKJYz5jyMSutrdLqLCBtRvd/F3zB/3oGh6IjGC3Yn9t2yxs
+	5qsxpsg0AiYTLA4Sk17GvWRty/v4LS794kH57+NrKa055X3EZc2XaMA3/rxsXeN5fANR32pt272v0
+	iGrF7d5liSssu4V5aFPTSB71yWGifMmz0KRcr3ge42h0H26NnFqRZgtWHdN9VhAwDQ0N4CjRMB10B
+	A1jPf5g8k7K9T2MjpIfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXW4S-0006JH-CT; Wed, 20 Nov 2019 19:55:24 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iXW4o-0007bA-JC; Wed, 20 Nov 2019 19:55:46 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXW4C-00065m-8u; Wed, 20 Nov 2019 19:55:09 +0000
-Received: by mail-pf1-x443.google.com with SMTP id q13so280279pff.2;
- Wed, 20 Nov 2019 11:55:08 -0800 (PST)
+ id 1iXW4U-0007RQ-AD; Wed, 20 Nov 2019 19:55:28 +0000
+Received: by mail-pf1-x442.google.com with SMTP id r4so264782pfl.7;
+ Wed, 20 Nov 2019 11:55:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=XRAh0eVBvQPrUJMHT3f4p6gHZBhzuR8AG99LKVkyqEY=;
- b=cvvVjnVl/zIIWnVgzZDTe19BvJFCmR/TFMIm5/2g9CSkiSrP3gOTAV7yM7WTl82GsP
- RrbAC9aryXJShgaDbDP6YYJU4DlcIAiQBFuEaSFsEYGaYpVG0kTVlyJa2i3XNOS6Po9Y
- rOFTO69Pc5aj9HeTxxDFgOk9YrjMcmn7fblsWggeMdsWieZbvsFHZ9u/o+ET6XZUZljQ
- 7Pr3w89Md5fCqqMfIwZLily0r7LIQ12UWaPZL17o67nh1A8sNHPcDRWwCBA0k8bS292m
- /mzHtpinZighsrxP9RY2CK+/ZStpNBMIsjF/aRvHphIwVtx5/QbPwDuetO6sPk0+PjKU
- dIjQ==
+ bh=YQQoya+v/8diolbV2XZpiWrP4ZJQzk4Uym+pkCI0Efc=;
+ b=tXomjkHPTSq6u+7DfpTyx8PCl+eGxaFI15lEMHfZbSkSVpEcB6Rd+o/Tb24IdBkC9K
+ Q3zzriPMFcAvCqJkccqClJ75RXqhgHgTEfN21dNGDuGv72nMH6YFEQrkw3qKUfaQYNPj
+ 6VgrzVPC9scQebvIGzfWBEWrfKOKbIk0l90HVfUxD4H1scOdUxbI9sIXxXySFNXcWHv8
+ Dilq8VtzgPslmUsJiIJ/BmicLuOg34LbvTD2zGbSQyrKyCrzXI0SyfWxdm3SXxiHpbyT
+ AwI4LKVkkb2/G2jhRY6EIDhjZvKTw0vd4TA6+al9M2tOe24mTWVB/KUIuORPNhbzJbkc
+ BgeQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=XRAh0eVBvQPrUJMHT3f4p6gHZBhzuR8AG99LKVkyqEY=;
- b=ERcWVRPeyHYqu8aiyy8MMHIjQMDnhNIWuRl573fe/Sjvtmzfku0H+4i0sVawmq+qtZ
- uql9xB3Vumzvc3fuTk5MBWAIaMYNYVPC1jpvkss9KkGTq08FC1zCVDPYhdOypg9woOmP
- JPbI47g4vM1rdvBAqnL6GeVskiuJ3W5j5oVF6PReem0m1JdUEKD60I+Q/CxukmZqR5Mz
- toq+7jXbd6MEMHbmbMU3bNDnkvX9MMtV7cpvfO70LDBAW0lTtOFoNE0y5cBuu5T7a6bj
- e3zJbTWR55OBxqPKSrRgZ7jFb3wOqkQzHhFDtaSINZ3Kjqz1rfTvMWsb2CjCEgFQDWS3
- KarQ==
-X-Gm-Message-State: APjAAAWsx+3frFjgfLy9n+yujUt8Ln8T7j/BH73759y0Zwcyy5O/lXR+
- HMASpqz5DfHUTeNWW35zDD8EmU8z
-X-Google-Smtp-Source: APXvYqwmO2n6SEXGlwjFrG14g/Bm2pL2DisLjvoTgQqI9bb4mE1zoxG5dJKu9wHgZM5Q+ap6EJQDuQ==
-X-Received: by 2002:a63:d047:: with SMTP id s7mr5211535pgi.355.1574279707402; 
- Wed, 20 Nov 2019 11:55:07 -0800 (PST)
+ bh=YQQoya+v/8diolbV2XZpiWrP4ZJQzk4Uym+pkCI0Efc=;
+ b=kE3EFFJnJaPvgpKHIk86/D3wYdWPK7YrFCpodkervx4Rvqnm8X0Q5zn4Tk925O4dM7
+ ZCQk06yd5nc/0amNa/BqV2MvZaGBLDe6pdTEt8CTRqlDRo7rRMxp0slAFb+/n1h6eTRD
+ 0/A4WhCSwK7MsBSSjk8BrC+RjwRGWqgs6hFDG5WG0c46jTr//FclorEf5Tht+7zYh8y4
+ rb7LvwoXFF46D8TpL2wwE38b6ulRuH7QBZWngIntMuclesH8TdarMQrCjGywwgcX0npx
+ +7xEOll9aYKDM7MJypu43uDrx4rTjOamFFgiehYCXX/JZDGeoAquas9zo5nsCW/hpqNQ
+ tfDA==
+X-Gm-Message-State: APjAAAUDYRjpj+clRKYQDkkU9N3RakkB2TOo3fNNCef2b5gmxFKC1pwf
+ Bb+9HoPo+jESs/g/hzZoPQ4=
+X-Google-Smtp-Source: APXvYqxHrXlW3mJlCrAg01l4E+1CN3kpv1SDXjzuAE6KGPbVfDb7PxOr6ldsKjydlfyd0uEj/DWeSw==
+X-Received: by 2002:a62:1693:: with SMTP id 141mr6176107pfw.146.1574279724925; 
+ Wed, 20 Nov 2019 11:55:24 -0800 (PST)
 Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id o15sm81598pjs.24.2019.11.20.11.55.05
+ by smtp.googlemail.com with ESMTPSA id x203sm45545pgx.61.2019.11.20.11.55.23
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 20 Nov 2019 11:55:06 -0800 (PST)
-Subject: Re: [PATCH v3 1/4] dt-bindings: rng: add BCM2711 RNG compatible
+ Wed, 20 Nov 2019 11:55:24 -0800 (PST)
+Subject: Re: [PATCH v3 2/4] hwrng: iproc-rng200: Add support for BCM2711
 To: Stephen Brennan <stephen@brennan.io>
 References: <20191120031622.88949-1-stephen@brennan.io>
- <20191120031622.88949-2-stephen@brennan.io>
+ <20191120031622.88949-3-stephen@brennan.io>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
@@ -116,23 +116,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9Za0Dx0yyp44iD1OvHtkEI
  M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <8d1dc843-fb70-cf42-eaca-27766d478762@gmail.com>
-Date: Wed, 20 Nov 2019 11:55:03 -0800
+Message-ID: <6b4ba90a-9698-5ff5-22b8-b42937c3a8e8@gmail.com>
+Date: Wed, 20 Nov 2019 11:55:22 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191120031622.88949-2-stephen@brennan.io>
+In-Reply-To: <20191120031622.88949-3-stephen@brennan.io>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_115508_346754_DF558941 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20191120_115526_430977_CD1BDBE3 
+X-CRM114-Status: GOOD (  13.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -162,10 +162,11 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Scott Branden <sbranden@broadcom.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  linux-arm-kernel@lists.infradead.org, Ray Jui <rjui@broadcom.com>,
- linux-kernel@vger.kernel.org, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Stefan Wahren <wahrenst@gmx.net>, Matt Mackall <mpm@selenic.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-crypto@vger.kernel.org
+ linux-kernel@vger.kernel.org, Matthias Brugger <mbrugger@suse.com>,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
+ Matt Mackall <mpm@selenic.com>, Arnd Bergmann <arnd@arndb.de>,
+ linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -174,10 +175,12 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On 11/19/19 7:16 PM, Stephen Brennan wrote:
 > From: Stefan Wahren <wahrenst@gmx.net>
 > 
-> The BCM2711 has a RNG200 block, so document its compatible string.
+> BCM2711 features a RNG200 hardware random number generator block.
+> So make the driver available.
 > 
 > Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
 > Signed-off-by: Stephen Brennan <stephen@brennan.io>
+> Reviewed-by: Matthias Brugger <mbrugger@suse.com>
 
 Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
