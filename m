@@ -2,86 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EDD51038F8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 12:42:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E4FA103925
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 12:52:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RyrG7ugTqRsM8PFGDMHunT+ij99LJZJfRPIUGHqbBJ8=; b=sBOqNhfcl+uwQY
-	pH1tQ2fqHNCRrt42h2cfHtRDsvewLPMdQ8SMbLDBicHFZl7t2mJjRka7hkWXnTZEGtWdhRXs0BCAP
-	ZjMKf1dzwmX140sv0dOO1ZySJc4US0qwrhRZTwQDs4+1gLupC7bHhrtWxiU/Tf+cVB8Ao8fx73SI4
-	YkSPIh6FUkIaf+w2wvBU1MP9Kyf3UzOlr9xRcjozXRyG64Z+lSYNW2eTuGLEJ54HEBeXai5rIKolY
-	YcXdgPvZ4JlsLRFDdSHk9axUxAXcXb+lMVfk0uXQEZ7NrHEu6H9Nlfj7/UbrVYEJ/aMAfZ3AJ4taU
-	n8m1tIP83/3yWYVsjU0g==;
+	List-Owner; bh=7GPKs3y3vzWZMASWSAxgmajv1HKd1gRT+IajYVChVg0=; b=HMwG3GffGMy4BT
+	EY0Jh1/Wecu0ioczRatYZLhwV5PJ7hjvISa96OE2wZb+iQY1YCtULLWA8ITUNCtBvJn2NRd3erDKk
+	80pFwhu/WQhrcch9vpKcZ0wR4cW5wlKvrw+G8fFMNDFteWiZGG0+6fEcPI4FtkRQ3aaumEwGslYlS
+	ypHlnGV2wlYnwyCsdAXALBJf9aByMBuw2bnsU3fEYBZFYVVwJQrd4vAlEuQydvtd4awAMk3ojusMn
+	xRnPzF2C7FADdSCSxKPf3K4icJXI0RhyzkSX86CY9c/6ztBoeBfhRN3s7el6I+2FcTy/Ea55pbTaI
+	MN9XAfwLVfbdWIQykg/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXONc-00048f-Fs; Wed, 20 Nov 2019 11:42:40 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXOMJ-000349-Gn
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 11:41:21 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id a16so4001842pjs.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 03:41:19 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=XG3FqVuwcEK3cEEdmwlKOUvSjQLzYWodVEQZQZxdgGw=;
- b=IBafvk3nhhoTcsHRx+LcFptem/D7w/nySgOpIqNTdynBSbozJ6gJW3N4d5echRt1Y6
- rqZAnABzdwU3cKUigi+mvaFbMw3RMTDMZ1tZAiOkC3tChk9sECnN/o98UDtHYY4APYsH
- vQfV8IJL3KN8+dWtPnrjWI3WtARRXUaEe6Q8k=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=XG3FqVuwcEK3cEEdmwlKOUvSjQLzYWodVEQZQZxdgGw=;
- b=USM2CPIXk+ZPDiGgtgvO0ts8w7n68XFKcvvjA7zQsw0cibPhjdkIlwn53+h09B04xl
- I3P7CF1v7THhtxr/PBVQEe2wR36ppskk8ZlobcrKYtWLjeN7cIT9WiM74vt0ibjMb4Pq
- AEtNq5EYSlgYqbl26wpMlYM9MGvQQj4nyx6tMaSnbHipw8GvjkWCFwIzID3XAcLlhqrG
- d8qaxr7HjpEjEz8BGsqwYMOk6x1iQGukjII/j8VpfpZOilTgYSz1IZhTuWE9xJLSrRj7
- wq5KjGiNdSPo8njCrSVzuOZ/52y8Eys4WZrmKhAKRdW2sFuPejAwz4iLoaclNPDqm+Q/
- 2DVg==
-X-Gm-Message-State: APjAAAUJxW5VxNnyWaEhQIpPyeTh0sGzNHNGIzHHQcR8Pg/Jnzhd9eOJ
- FAMoQQ5+/c4XTnaohG0sakWtCQ==
-X-Google-Smtp-Source: APXvYqxKa0jSG5czR1wxW5TZYm5l7Yz1+Q3BK+S6kuzHUAq2+gY5d3tie4YLeCiftc91wuh1LEOH7Q==
-X-Received: by 2002:a17:902:4a:: with SMTP id 68mr2526359pla.8.1574250078726; 
- Wed, 20 Nov 2019 03:41:18 -0800 (PST)
-Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id h185sm13492850pgc.87.2019.11.20.03.41.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 Nov 2019 03:41:18 -0800 (PST)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 5/5] arm64: dts: rockchip: Add Radxa Rock Pi N10 initial
- support
-Date: Wed, 20 Nov 2019 17:09:23 +0530
-Message-Id: <20191120113923.11685-6-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20191120113923.11685-1-jagan@amarulasolutions.com>
-References: <20191120113923.11685-1-jagan@amarulasolutions.com>
+	id 1iXOX8-0007lK-SU; Wed, 20 Nov 2019 11:52:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iXOWz-0007ke-Kv
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 11:52:23 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5D83C328;
+ Wed, 20 Nov 2019 03:52:18 -0800 (PST)
+Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E4E603F703;
+ Wed, 20 Nov 2019 03:52:17 -0800 (PST)
+Date: Wed, 20 Nov 2019 12:52:16 +0100
+From: Christoffer Dall <christoffer.dall@arm.com>
+To: Sean Christopherson <sean.j.christopherson@intel.com>
+Subject: Re: Memory regions and VMAs across architectures
+Message-ID: <20191120115216.GL8317@e113682-lin.lund.arm.com>
+References: <20191108111920.GD17608@e113682-lin.lund.arm.com>
+ <20191120034448.GC25890@linux.intel.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191120034448.GC25890@linux.intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_034119_625663_CB952217 
-X-CRM114-Status: GOOD (  14.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191120_035221_776097_38BBCCB0 
+X-CRM114-Status: GOOD (  29.45  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,69 +61,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tom Cubie <tom@radxa.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Akash Gajjar <akash@openedev.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
- Jagan Teki <jagan@amarulasolutions.com>
+Cc: kvm@vger.kernel.org, Marc Zyngier <maz@kernel.org>, borntraeger@de.ibm.com,
+ Ard Biesheuvel <ard.biesheuvel@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rock Pi N10 is a Rockchip RK3399Pro based SBC, which has
-- VMARC RK3399Pro SOM (as per SMARC standard) from Vamrs.
-- Compatible carrier board from Radxa.
+On Tue, Nov 19, 2019 at 07:44:48PM -0800, Sean Christopherson wrote:
+> On Fri, Nov 08, 2019 at 12:19:20PM +0100, Christoffer Dall wrote:
+> > Hi,
+> > 
+> > I had a look at our relatively complicated logic in
+> > kvm_arch_prepare_memory_region(), and was wondering if there was room to
+> > unify some of this handling between architectures.
+> > 
+> > (If you haven't seen our implementation, you can find it in
+> > virt/kvm/arm/mmu.c, and it has lovely ASCII art!)
+> > 
+> > I then had a look at the x86 code, but that doesn't actually do anything
+> > when creating memory regions, which makes me wonder why the arhitectures
+> > differ in this aspect.
+> > 
+> > The reason we added the logic that we have for arm/arm64 is that we
+> > don't really want to take faults for I/O accesses.  I'm not actually
+> > sure if this is a corretness thing, or an optimization effort, and the
+> > original commit message doesn't really explain.  Ard, you wrote that
+> > code, do you recall the details?
+> > 
+> > In any case, what we do is to check for each VMA backing a memslot, we
+> > check if the memslot flags and vma flags are a reasonable match, and we
+> > try to detect I/O mappings by looking for the VM_PFNMAP flag on the VMA
+> > and pre-populate stage 2 page tables (our equivalent of EPT/NPT/...).
+> > However, there are some things which are not clear to me:
+> > 
+> > First, what prevents user space from messing around with the VMAs after
+> > kvm_arch_prepare_memory_region() completes?  If nothing, then what is
+> > the value of the cheks we perform wrt. to VMAs?
+> 
+> Arm's prepare_memory_region() holds mmap_sem and mmu_lock while processing
+> the VMAs and populating the stage 2 page tables.  Holding mmap_sem prevents
+> the VMAs from being invalidated while the stage 2 tables are populated,
+> e.g. prevents racing with the mmu notifier.  The VMAs could be modified
+> after prepare_memory_region(), but the mmu notifier will ensure they are
+> unmapped from stage2 prior the the host change taking effect.  So I think
+> you're safe (famous last words).
+> 
 
-VAMRC RK3399Pro SOM need to mount on top of Radxa carrier
-board for making Rock Pi N10 SBC.
+So we for example check:
 
-So, add initial support for Rock Pi N10 by including rk3399,
-rk3399pro vamrc-som and raxda carrier board dtsi files.
+	writeable = !(memslot->falgs & KVM_MEM_READONLY);
+	if (writeable && !(vma->vm_flags & VM_WRITE))
+		return -EPERM;
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- arch/arm64/boot/dts/rockchip/Makefile           |  1 +
- .../boot/dts/rockchip/rk3399pro-rock-pi-n10.dts | 17 +++++++++++++++++
- 2 files changed, 18 insertions(+)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
+And yes, user space can then unmap the VMAs and MMU notifiers will
+unmap the stage 2 entries, but user space can then create a new
+read-only VMA covering the area of the memslot and the fault-handling
+path will have to deal with this same check later.  Only, the fault
+handling path, via gfn_to_pfn_prot(), returns an address based on an
+entirely different set of mechanics, than our prepare_memory_region,
+which I think indicates we are doing something wrong somewhere, and we
+should have a common path for faulting things in, for I/O, both if we do
+this up-front or if we do this at fault time.
 
-diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
-index 48fb631d5451..433033b18170 100644
---- a/arch/arm64/boot/dts/rockchip/Makefile
-+++ b/arch/arm64/boot/dts/rockchip/Makefile
-@@ -36,3 +36,4 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock960.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire-excavator.dtb
-+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399pro-rock-pi-n10.dtb
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts b/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
-new file mode 100644
-index 000000000000..1f7fbaa92c38
---- /dev/null
-+++ b/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
-@@ -0,0 +1,17 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd
-+ * Copyright (c) 2019 Radxa Limited
-+ * Copyright (c) 2019 Amarula Solutions(India)
-+ */
-+
-+/dts-v1/;
-+#include "rk3399.dtsi"
-+#include "rk3399-opp.dtsi"
-+#include "rk3399pro-vmarc-som.dtsi"
-+#include <arm/rockchip-radxa-carrierboard.dtsi>
-+
-+/ {
-+	model = "Radxa ROCK Pi N10";
-+	compatible = "radxa,rockpi-n10", "rockchip,rk3399pro";
-+};
--- 
-2.18.0.321.gffc6fa0e3
 
+> > Second, why would arm/arm64 need special handling for I/O mappings
+> > compared to other architectures, and how is this dealt with for
+> > x86/s390/power/... ?
+> 
+> As Ard mentioned, it looks like an optimization.  The "passthrough"
+> part from the changelog implies that VM_PFNMAP memory regions are exclusive
+> to the guest.  Mapping the entire thing would be a nice boot optimization
+> as it would save taking page faults on every page of the MMIO region.
+> 
+> As for how this is different from other archs... at least on x86, VM_PFNMAP
+> isn't guaranteed to be passthrough or even MMIO, e.g. prefaulting the
+> pages may actually trigger allocation, and remapping the addresses could be
+> flat out wrong.
+
+What does VM_PFNMAP mean on x86?  I didn't think we were relying on
+anything architecture specific in their meaning in the arm code, and I
+thought the VM_PFNMAP was a generic mm flag with generic mm meaning,
+but I could be wrong here?
+
+Is there any valid semantics for creating a memslot backed by a
+VM_PFNMAP on x86, and if so, what are those?
+
+Similarly, if you do map a device region straight to the guest on x86,
+how is that handled?  (A pointer to the right place in the myriad of EPT
+and shadow code in x86 would be much appreciated.)
+
+
+Thanks!
+
+    Christoffer
 
 _______________________________________________
 linux-arm-kernel mailing list
