@@ -2,79 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3CA4103CC1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 14:59:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5B60103CF9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 15:08:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=leB39tq/rliTR3wJTne3ECCHZcxG/t29xCKN/wB+YQk=; b=OzVt4iBy1RDfEP
-	VlEuCnObtNtzCIknVvnhFHkimjeoTSpl6dulmBPLOkhzKYonMI0g+puo+Jv0HrJ0JSI0G/qP4r1NZ
-	I/mDRiESxqgNdEGTeFPMZtkEPZX/Rmt0dl2jQnj6qPafeNAyssnuKiMuylotOHUiWS8ocQglbLgCe
-	jlnC+wrzAjCOsmXD7ZrdVGp4J0UjnED9iBwwo2bK2NVNYHKWYZNo2NjwHRjDuaQTayRdVaWUw1/Kj
-	gtqTK+cf+onAWm/eDL1R/g8yOsA5IczAVmb4RCQpvZo2kwwxMiq88le4mqaMFvG4hQbnIHHrXf3y5
-	scXR9xGX6KGCvpQRMWag==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bEyCdtO8LDnbN5kP3aGXUE8no+SqOugIAqamTYXDa/A=; b=WGL5IGY4UlhzzHvKwkHA0gJEb
+	Hi/JesiAxVmm3BPUtdJF7H2nIJVeomQ4262le2ZPZAmqyrJJc442G8pxLB1dI5m76chaykt8zEjJX
+	cCClQQ1obWMUt2ZkCBqgZ5ZP81t3I2kEuOHidMrPy/OKyI4qFsEtosZLpOF+8CuZgMmRrzyRXivDA
+	MEK/zz5SMDJ8+aCVNt7YKeJhCKKGLrttcqMtlM4Mxi7kS6CVWuW2LYOBlDeqK3AuOGjAQdhMF++PO
+	oz5zUa9vOjma+F89DQ0aAnaEKHBby5aOEDSLkaHqQax5KMUttgD/DLb7R/udFuQupzASNDorjlD/8
+	QA7lw49Yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXQVh-0004ms-5v; Wed, 20 Nov 2019 13:59:09 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iXQf2-0008WB-9p; Wed, 20 Nov 2019 14:08:48 +0000
+Received: from node.akkea.ca ([192.155.83.177])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXQVY-0004m1-5v
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 13:59:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=fjCi/fTXT/RC/jFWVlh6upZeb0eZZu3Fno5+csRaUQU=; b=wf9Ui4UDXoEcYMQC4xlX+EDJW
- pLB4XieveisKCYkd6ZWd1S0kEZIx8U12ZHcPV90GVtmxQydZ7pj/dTgzcvmJEduihc2yV+shrdBXq
- 4e6TASch1atnffBJmDaYZ8nspTL0v6cAcUqOSENZWH8UP5zJLet5TRvcvuDDL4IqNgeDkb0qIz9TT
- zNCjWzxnyjIlESBD3zzc12MflgNQp1z/4XPx8ksJ9AFTl6l/wXIejUQsbwkM0G3KdoscX62e/M1hu
- e8wGDAZKZZhkl1fSnK3WQ6zOM+xeRulnNyC3Cf5lEJttPPv7Ff8MpufTfgafg1u1ZvpGEhBxMrWLB
- 8HJVF3M8w==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:38068)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iXQVS-0000GK-1M; Wed, 20 Nov 2019 13:58:54 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iXQVQ-0001nI-GF; Wed, 20 Nov 2019 13:58:52 +0000
-Date: Wed, 20 Nov 2019 13:58:52 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] irq-gic: select all CPU's selected in interrupt affinity
- settings
-Message-ID: <20191120135852.GR25745@shell.armlinux.org.uk>
-References: <CAPaFbat4MM0=iVB-VazTK9=2qRebAgEN4euYCTESRo3yfx75Kw@mail.gmail.com>
- <20191119233633.GG25745@shell.armlinux.org.uk>
- <CAPaFbatG+ePwjCnBva1tfmzmvpHZv9xW3nM4gj2DTpFn=D+9Vg@mail.gmail.com>
- <2cd3e872-57d5-5cbb-78d7-98da6447dc59@arm.com>
- <CAPaFbasJGxV=mEGHAOWdt31vapCfV_RyD1Ptz6aa_WTp6htPKg@mail.gmail.com>
- <20191120105017.GN25745@shell.armlinux.org.uk>
- <CAPaFbasKH_BRARMtQYqxWR6koQB=cF_Ln5n=-7uCqdbjqmu9Rg@mail.gmail.com>
- <11daeee6-8dca-96fa-b6ee-a25ad3e815a9@arm.com>
+ id 1iXQer-0008Vk-Cn
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 14:08:39 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by node.akkea.ca (Postfix) with ESMTP id 0D8D94E2006;
+ Wed, 20 Nov 2019 14:08:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1574258916; bh=sKXNf7+tf+BHu9LsQrewd8ubqQd3MAlMp6RKQ8vGqME=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References;
+ b=ln5bjmnpH6cgB8T90YllEB3R/25CJbdV/ppU9JD2niV7Iq+SvNdN3iKQ5JGNhGk8o
+ NROKXAnyg4CWgbdRtkeYteTryenPCxlN+q4K9wWMM4xIdg/eDXu2RF9b36vzMiaGsP
+ XMHOsgIaFvCxigs2U9xmnHV4JnFXVm5mNIaIlWTE=
+X-Virus-Scanned: Debian amavisd-new at mail.akkea.ca
+Received: from node.akkea.ca ([127.0.0.1])
+ by localhost (mail.akkea.ca [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id pS7Fsl0d8JuL; Wed, 20 Nov 2019 14:08:35 +0000 (UTC)
+Received: from www.akkea.ca (node.akkea.ca [192.155.83.177])
+ by node.akkea.ca (Postfix) with ESMTPSA id 778804E2003;
+ Wed, 20 Nov 2019 14:08:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1574258915; bh=sKXNf7+tf+BHu9LsQrewd8ubqQd3MAlMp6RKQ8vGqME=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References;
+ b=Q74PgIzw5xRN362xel6NtMZ0DbSUmhl31g3br/LrGgWAQgmaYAWMgPJXEuArshe0/
+ ZaAXrGSBNQvd/98sLp9TFLrBBoW51R+9Kbua9emoXxom+LdaBj57g2j3z9uN+DNE/v
+ uQbB84vuYz0txpZ/BLE5032hD7H3E8fvPNlM9VxQ=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <11daeee6-8dca-96fa-b6ee-a25ad3e815a9@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Wed, 20 Nov 2019 06:08:35 -0800
+From: Angus Ainslie <angus@akkea.ca>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH RFC v6 2/9] PM / devfreq: Add generic imx bus scaling
+ driver
+In-Reply-To: <f329e715898a6b9fd0cee707a93fb1e144e31bd4.1573761527.git.leonard.crestez@nxp.com>
+References: <cover.1573761527.git.leonard.crestez@nxp.com>
+ <f329e715898a6b9fd0cee707a93fb1e144e31bd4.1573761527.git.leonard.crestez@nxp.com>
+Message-ID: <e311a376e6aec0c380686a7e307d2c07@akkea.ca>
+X-Sender: angus@akkea.ca
+User-Agent: Roundcube Webmail/1.3.6
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_055900_481275_B6761442 
-X-CRM114-Status: GOOD (  27.63  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191120_060837_482787_5148E1A1 
+X-CRM114-Status: GOOD (  21.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -94,134 +85,253 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Leonid Movshovich <event.riga@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?UTF-8?Q?Artur_=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
+ Jacky Bai <ping.bai@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, linux-imx@nxp.com,
+ devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Martin Kepplinger <martink@posteo.de>,
+ Silvano di Ninno <silvano.dininno@nxp.com>,
+ linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
+ Saravana Kannan <saravanak@google.com>, Stephen Boyd <sboyd@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 20, 2019 at 01:33:11PM +0000, Robin Murphy wrote:
-> On 20/11/2019 11:25 am, Leonid Movshovich wrote:
-> > On Wed, 20 Nov 2019 at 10:50, Russell King - ARM Linux admin
-> > <linux@armlinux.org.uk> wrote:
-> > > 
-> > > On Wed, Nov 20, 2019 at 10:44:39AM +0000, Leonid Movshovich wrote:
-> > > > On Wed, 20 Nov 2019 at 01:15, Robin Murphy <robin.murphy@arm.com> wrote:
-> > > > > 
-> > > > > On 2019-11-20 12:24 am, Leonid Movshovich wrote:
-> > > > > > On Tue, 19 Nov 2019 at 23:36, Russell King - ARM Linux admin
-> > > > > > <linux@armlinux.org.uk> wrote:
-> > > > > > > 
-> > > > > > > On Tue, Nov 19, 2019 at 11:12:26PM +0000, event wrote:
-> > > > > > > > So far only a CPU selected with top affinity bit was selected. This
-> > > > > > > > resulted in all interrupts
-> > > > > > > > being processed by CPU0 by default despite "FF" default affinity
-> > > > > > > > setting for all interrupts
-> > > > > > > 
-> > > > > > > Have you checked whether this causes _ALL_ CPUs in the mask to be
-> > > > > > > delivered a single interrupt, thereby causing _ALL_ CPUs to be
-> > > > > > > slowed down and hit the same locks at the same time.
-> > > > > > > 
-> > > > > > 
-> > > > > > Yes, I've checked this. No, interrupt is delivered to only one CPU.
-> > > > > > Also ARM GIC architecture specification specifically states in chapter
-> > > > > > 3.1.1 that hardware interrupts are delivered to a single CPU in
-> > > > > > multiprocessor system ("1-N model").
-> > > > > 
-> > > > > But see also section 3.2.3 - just because only one CPU actually runs the
-> > > > > given ISR doesn't necessarily guarantee that the others *weren't*
-> > > > > interrupted. I'd also hesitate to make any assumptions that all GIC
-> > > > > implementations behave exactly the same way.
-> > > > > 
-> > > > > Robin.
-> > > > 
-> > > > Yes, that's right, however:
-> > > > 1. They are only interrupted for a split-second, since interrupt is
-> > > > immediately ACKed in gic_handle_irq
-> > > 
-> > > Even that is detrimental - consider cpuidle where a CPU is placed in
-> > > a low power state waiting for an interrupt, and it keeps getting woken
-> > > for interrupts that it isn't able to handle.  The effect will be to
-> > > stop the CPU hitting the lower power states, which would be a regression
-> > > over how the kernel behaves today.
-> > > 
-> > > > 2. More important that smp_affinity in procfs is defined to allow user
-> > > > to configure multiple CPU's to handle interrupts (see
-> > > > Documentation/IRQ-affinity.txt) which is effectively prohibited in
-> > > > current implementation. I mean, when user sets it to FF, she expects
-> > > > all CPUs to process interrupts, not CPU0 only
+Hi Leonard,
+
+On 2019-11-14 12:09, Leonard Crestez wrote:
+> Add initial support for dynamic frequency switching on pieces of the 
+> imx
+> interconnect fabric.
 > 
-> I have to say, my interaction with the IRQ layer is far more as a "user"
-> than as a "developer", yet I've always assumed that the affinity mask
-> represents the set of CPUs that *may* handle an interrupt and have never
-> felt particularly surprised by the naive implementation of "just pick the
-> first one".
+> All this driver does is set a clk rate based on an opp table, it does
+> not map register areas.
 > 
-> Do these users also expect the scheduler to constantly context-switch a
-> single active task all over the place just because the default thread
-> affinity mask says it can?
 
-It is my understanding that the scheduler will try to keep tasks on
-the CPU they are already running on, unless there's a benefit to
-migrating it to a different CPU - because if you're constantly
-migrating code between different CPUs, you're having to bounce
-cache lines around the system.
+Is this working with mainline ATF or does it still need to be used with 
+your modified ATF code ?
 
-> > > The reason we've ended up with that on ARM is precisely because it
-> > > wasted CPU resources, and my attempts at writing code to distribute
-> > > the interrupt between CPU cores did not have a successful outcome.
-> > > So, the best thing that could be done was to route interrupts to the
-> > > first core, and run irqbalance to distribute the interrupts in a
-> > > sensible, cache friendly way between CPU cores.
-> > > 
-> > > And no, the current implementation is *NOT* prohibited.  You can't
-> > > prohibit something that hardware hasn't been able to provide.
-> > > 
-> > 
-> > Hardware allows delivering interrupt to random CPU from selected
-> > bitmask and current implementation doesn't allow to configure this.
-> > While this may be an issue for power-concerned systems, there are also
-> > systems with plenty of electricity where using all CPUs for e.g.
-> > network packet handling is more important.
+Thanks
+Angus
+
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> ---
+>  drivers/devfreq/Kconfig       |   9 ++
+>  drivers/devfreq/Makefile      |   1 +
+>  drivers/devfreq/imx-devfreq.c | 150 ++++++++++++++++++++++++++++++++++
+>  3 files changed, 160 insertions(+)
+>  create mode 100644 drivers/devfreq/imx-devfreq.c
 > 
-> It's not just about batteries - more and more SoCs these days have
-> internally constrained power/thermal budgets too. Think of Intel's turbo
-> boost, or those Amlogic TV box chips that can only hit their advertised top
-> frequencies with one or two cores active - on systems like that, yanking all
-> the cores out of standby every time could be actively detrimental to
-> single-thread performance and actually end up *increasing*
-> interrupt-handling latency.
+> diff --git a/drivers/devfreq/Kconfig b/drivers/devfreq/Kconfig
+> index 923a6132e741..fef5ce831e90 100644
+> --- a/drivers/devfreq/Kconfig
+> +++ b/drivers/devfreq/Kconfig
+> @@ -98,10 +98,19 @@ config ARM_IMX8M_DDRC_DEVFREQ
+>  	select DEVFREQ_GOV_USERSPACE
+>  	help
+>  	  This adds the DEVFREQ driver for the i.MX8M DDR Controller. It 
+> allows
+>  	  adjusting DRAM frequency.
 > 
-> If you want to optimise a particular system for a particular use-case,
-> you're almost certainly better off manually tuning affinities anyway
-> (certain distros already do this). If you mostly just want /proc/interrupts
-> to look pretty, there's irqbalance.
-
-The conclusion I came to when I did the initial 32-bit ARM SMP support
-was:
-
-1) it is policy, and userspace deals with policy
-2) routing the IRQ in to distribute it between CPUs is difficult
-3) the problem is already solved by userspace (irqbalance)
-
-(2) is difficult because you don't want to do something naieve like
-route the first interrupt to CPU0, second to CPU1, third to CPU2
-etc, because that totally destroys cache locality and therefore
-performance.  Your network card goes faster if its IRQ is always
-processed by the same CPU (benefiting from hot cache) rather than
-spreading it around the CPUs.
-
-> And given the earlier argument, it's probably worth noting that there are
-> precious few networking/infrastructure/server SoCs using GICv2 anyway.
-
-Networking is just one specific example where it's beneficial.
-Other examples are available.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+> +config ARM_IMX_DEVFREQ
+> +	tristate "i.MX Generic DEVFREQ Driver"
+> +	depends on ARCH_MXC || COMPILE_TEST
+> +	select DEVFREQ_GOV_PASSIVE
+> +	select DEVFREQ_GOV_USERSPACE
+> +	help
+> +	  This adds the generic DEVFREQ driver for i.MX interconnects. It
+> +	  allows adjusting NIC/NOC frequency.
+> +
+>  config ARM_TEGRA_DEVFREQ
+>  	tristate "NVIDIA Tegra30/114/124/210 DEVFREQ Driver"
+>  	depends on ARCH_TEGRA_3x_SOC || ARCH_TEGRA_114_SOC || \
+>  		ARCH_TEGRA_132_SOC || ARCH_TEGRA_124_SOC || \
+>  		ARCH_TEGRA_210_SOC || \
+> diff --git a/drivers/devfreq/Makefile b/drivers/devfreq/Makefile
+> index 3eb4d5e6635c..61d0edee16f7 100644
+> --- a/drivers/devfreq/Makefile
+> +++ b/drivers/devfreq/Makefile
+> @@ -8,10 +8,11 @@ obj-$(CONFIG_DEVFREQ_GOV_USERSPACE)	+= 
+> governor_userspace.o
+>  obj-$(CONFIG_DEVFREQ_GOV_PASSIVE)	+= governor_passive.o
+> 
+>  # DEVFREQ Drivers
+>  obj-$(CONFIG_ARM_EXYNOS_BUS_DEVFREQ)	+= exynos-bus.o
+>  obj-$(CONFIG_ARM_IMX8M_DDRC_DEVFREQ)	+= imx8m-ddrc.o
+> +obj-$(CONFIG_ARM_IMX_DEVFREQ)		+= imx-devfreq.o
+>  obj-$(CONFIG_ARM_RK3399_DMC_DEVFREQ)	+= rk3399_dmc.o
+>  obj-$(CONFIG_ARM_TEGRA_DEVFREQ)		+= tegra30-devfreq.o
+>  obj-$(CONFIG_ARM_TEGRA20_DEVFREQ)	+= tegra20-devfreq.o
+> 
+>  # DEVFREQ Event Drivers
+> diff --git a/drivers/devfreq/imx-devfreq.c 
+> b/drivers/devfreq/imx-devfreq.c
+> new file mode 100644
+> index 000000000000..620b344e87aa
+> --- /dev/null
+> +++ b/drivers/devfreq/imx-devfreq.c
+> @@ -0,0 +1,150 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright 2019 NXP
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/devfreq.h>
+> +#include <linux/device.h>
+> +#include <linux/module.h>
+> +#include <linux/of_device.h>
+> +#include <linux/pm_opp.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/slab.h>
+> +
+> +struct imx_devfreq {
+> +	struct devfreq_dev_profile profile;
+> +	struct devfreq *devfreq;
+> +	struct clk *clk;
+> +	struct devfreq_passive_data passive_data;
+> +};
+> +
+> +static int imx_devfreq_target(struct device *dev,
+> +			      unsigned long *freq, u32 flags)
+> +{
+> +	struct imx_devfreq *priv = dev_get_drvdata(dev);
+> +	struct dev_pm_opp *new_opp;
+> +	unsigned long new_freq;
+> +	int ret;
+> +
+> +	new_opp = devfreq_recommended_opp(dev, freq, flags);
+> +	if (IS_ERR(new_opp)) {
+> +		ret = PTR_ERR(new_opp);
+> +		dev_err(dev, "failed to get recommended opp: %d\n", ret);
+> +		return ret;
+> +	}
+> +	new_freq = dev_pm_opp_get_freq(new_opp);
+> +	dev_pm_opp_put(new_opp);
+> +
+> +	return clk_set_rate(priv->clk, new_freq);
+> +}
+> +
+> +static int imx_devfreq_get_cur_freq(struct device *dev, unsigned long 
+> *freq)
+> +{
+> +	struct imx_devfreq *priv = dev_get_drvdata(dev);
+> +
+> +	*freq = clk_get_rate(priv->clk);
+> +
+> +	return 0;
+> +}
+> +
+> +static int imx_devfreq_get_dev_status(struct device *dev,
+> +				      struct devfreq_dev_status *stat)
+> +{
+> +	struct imx_devfreq *priv = dev_get_drvdata(dev);
+> +
+> +	stat->busy_time = 0;
+> +	stat->total_time = 0;
+> +	stat->current_frequency = clk_get_rate(priv->clk);
+> +
+> +	return 0;
+> +}
+> +
+> +static void imx_devfreq_exit(struct device *dev)
+> +{
+> +	dev_pm_opp_of_remove_table(dev);
+> +}
+> +
+> +static int imx_devfreq_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct imx_devfreq *priv;
+> +	const char *gov = DEVFREQ_GOV_USERSPACE;
+> +	void *govdata = NULL;
+> +	int ret;
+> +
+> +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv)
+> +		return -ENOMEM;
+> +
+> +	priv->clk = devm_clk_get(dev, NULL);
+> +	if (IS_ERR(priv->clk)) {
+> +		ret = PTR_ERR(priv->clk);
+> +		dev_err(dev, "failed to fetch clk: %d\n", ret);
+> +		return ret;
+> +	}
+> +	platform_set_drvdata(pdev, priv);
+> +
+> +	ret = dev_pm_opp_of_add_table(dev);
+> +	if (ret < 0) {
+> +		dev_err(dev, "failed to get OPP table\n");
+> +		return ret;
+> +	}
+> +
+> +	priv->profile.polling_ms = 1000;
+> +	priv->profile.target = imx_devfreq_target;
+> +	priv->profile.get_dev_status = imx_devfreq_get_dev_status;
+> +	priv->profile.exit = imx_devfreq_exit;
+> +	priv->profile.get_cur_freq = imx_devfreq_get_cur_freq;
+> +	priv->profile.initial_freq = clk_get_rate(priv->clk);
+> +
+> +	/* Handle passive devfreq parent link */
+> +	priv->passive_data.parent = devfreq_get_devfreq_by_phandle(dev, 0);
+> +	if (!IS_ERR(priv->passive_data.parent)) {
+> +		dev_info(dev, "setup passive link to %s\n",
+> +			 dev_name(priv->passive_data.parent->dev.parent));
+> +		gov = DEVFREQ_GOV_PASSIVE;
+> +		govdata = &priv->passive_data;
+> +	} else if (priv->passive_data.parent != ERR_PTR(-ENODEV)) {
+> +		// -ENODEV means no parent: not an error.
+> +		ret = PTR_ERR(priv->passive_data.parent);
+> +		if (ret != -EPROBE_DEFER)
+> +			dev_warn(dev, "failed to get initialize passive parent: %d\n",
+> +				 ret);
+> +		goto err;
+> +	}
+> +
+> +	priv->devfreq = devm_devfreq_add_device(dev, &priv->profile,
+> +						gov, govdata);
+> +	if (IS_ERR(priv->devfreq)) {
+> +		ret = PTR_ERR(priv->devfreq);
+> +		dev_err(dev, "failed to add devfreq device: %d\n", ret);
+> +		goto err;
+> +	}
+> +
+> +	return 0;
+> +
+> +err:
+> +	dev_pm_opp_of_remove_table(dev);
+> +	return ret;
+> +}
+> +
+> +static const struct of_device_id imx_devfreq_of_match[] = {
+> +	{ .compatible = "fsl,imx8m-noc", },
+> +	{ .compatible = "fsl,imx8m-nic", },
+> +	{ /* sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(of, imx_devfreq_of_match);
+> +
+> +static struct platform_driver imx_devfreq_platdrv = {
+> +	.probe		= imx_devfreq_probe,
+> +	.driver = {
+> +		.name	= "imx-devfreq",
+> +		.of_match_table = of_match_ptr(imx_devfreq_of_match),
+> +	},
+> +};
+> +module_platform_driver(imx_devfreq_platdrv);
+> +
+> +MODULE_DESCRIPTION("Generic i.MX bus frequency driver");
+> +MODULE_AUTHOR("Leonard Crestez <leonard.crestez@nxp.com>");
+> +MODULE_LICENSE("GPL v2");
 
 _______________________________________________
 linux-arm-kernel mailing list
