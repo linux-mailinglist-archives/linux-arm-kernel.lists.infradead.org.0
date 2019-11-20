@@ -2,63 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A42A4103EF1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 16:39:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D605C103F07
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 16:41:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Jb+e0M4xWZNjxX+tJ/48VD/zaXUMhzGdYiXvxLhBtxU=; b=Yo3Tbi/l8CNegFw2aMWNvzzpo
-	ABDuSuAnmxHmQFAtrgCP3xNvYGFlikC6g2zWGaMAc2PyJFgPC3kGuGjxwKdsQnPVxWkF903U98544
-	9dxoz/P7Hv5rsEv0AA3PuEoHwiXfBs/yrRYo1qROpa9XER2UXkLURHYtTAdy47nlxXIdHe5ns7Kkv
-	9+6RCgk4znpf/sgKSu76hWlTBtwwoS7y4RzF49TGNz9t/oBHok19BOScrI4CU4bMVU3tMPxsKVsWX
-	CQf1MNewh8B4iPY4uDINmYLyf+MVl8JaXPbm87aOQ1dUrddgkA99JaF8gDqvVV5CrmG1hzohLA9sw
-	7u8Lkm4iw==;
+	 bh=KKLmPNecZDNvbgwChCQ6nWj2MSLi/hrqXPBNIwKB1Go=; b=sbg1TuiPpAUjT3C3V4ERdV7oK
+	zlLPq++D/WYbaxCWNZEbUc79q71D4AWAVNKHxfkcYFXaqgjBPwnN0C1UUKET7+wFpGBmnee3AMwKe
+	3eUnOdFaPheBkv55fDfCcU5U0t5X9cY92EazCX1Zx7dOxbud+293XRbjdmhFZRhb1lyv0/gB0oYic
+	N2cQu8AwrVwW4tSI5uYr2lGqnCDttqzVYuEtG5M8TuJ8wLn5tkmL7NfjoxLv4EsLhk7fVItL0PlZV
+	6hFMg9KPHEK0oGjgFKhwwzuz9MTyxdFB+WyHw8XXysgZ3gRK6TqhvED2smYBGqbcmc6I0l5lrrk8U
+	aaDcj++pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXS4Z-0007Sm-TM; Wed, 20 Nov 2019 15:39:15 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iXS6Z-0000lg-SD; Wed, 20 Nov 2019 15:41:19 +0000
+Received: from node.akkea.ca ([192.155.83.177])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXS4Q-0007SH-Gx
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 15:39:08 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iXS4N-0006OH-9s; Wed, 20 Nov 2019 16:39:03 +0100
-To: Leonid Movshovich <event.riga@gmail.com>
-Subject: Re: [PATCH] irq-gic: select all CPU's selected in interrupt affinity
- settings
-X-PHP-Originating-Script: 0:main.inc
+ id 1iXS6Q-0000k7-FB
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 15:41:11 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by node.akkea.ca (Postfix) with ESMTP id A14614E200E;
+ Wed, 20 Nov 2019 15:41:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1574264467; bh=c1bwvGZ3DtvSeRPrVEI/eLrZgFbhGdVgFlrw3H+Ljmg=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References;
+ b=W8kQw5TiUDaohToYRNY47L6bmIwZ1V9gB2GsTL8ZcnBCvzYIuFzBsu+ZWC1RTl495
+ tg8GMEM99IGqVzCmA4BeIqefw7g9e3VbBVJXEmkeJ/3TNBQcU7FPDLD6pd6c8ywVaH
+ KwtpqvqJvQZgB3SVwvpxgvnc2Nl3VhGbNm6NOG3g=
+X-Virus-Scanned: Debian amavisd-new at mail.akkea.ca
+Received: from node.akkea.ca ([127.0.0.1])
+ by localhost (mail.akkea.ca [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id bzL7GrYHn4P7; Wed, 20 Nov 2019 15:41:06 +0000 (UTC)
+Received: from www.akkea.ca (node.akkea.ca [192.155.83.177])
+ by node.akkea.ca (Postfix) with ESMTPSA id 7E7C64E2003;
+ Wed, 20 Nov 2019 15:41:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1574264466; bh=c1bwvGZ3DtvSeRPrVEI/eLrZgFbhGdVgFlrw3H+Ljmg=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References;
+ b=mwzIUaLoFOmzPRRwdy6cZm1S1cVC3dxyuglKyfH2imk2OPl2aFZgClNXZ2MoQsSd5
+ 5zvMyZw2rWcC0Beme8vIYyQW/vw+JDYhY4bDgw/OMjbULDuW7HH1JjI/W6X0x/Rryn
+ S3ySlOmYGvbtcHZ+5OWyQotpdiB131AG7YWtTqDw=
 MIME-Version: 1.0
-Date: Wed, 20 Nov 2019 15:39:03 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <CAPaFbavWjCJKjUN6nA8Gc4urAMzLt-YVB4ED5DVarenrvMgnvQ@mail.gmail.com>
-References: <CAPaFbat4MM0=iVB-VazTK9=2qRebAgEN4euYCTESRo3yfx75Kw@mail.gmail.com>
- <20191119233633.GG25745@shell.armlinux.org.uk>
- <CAPaFbatG+ePwjCnBva1tfmzmvpHZv9xW3nM4gj2DTpFn=D+9Vg@mail.gmail.com>
- <2cd3e872-57d5-5cbb-78d7-98da6447dc59@arm.com>
- <392e74d78b48e04040cedfc26ed8ce81@www.loen.fr>
- <CAPaFbavWjCJKjUN6nA8Gc4urAMzLt-YVB4ED5DVarenrvMgnvQ@mail.gmail.com>
-Message-ID: <5b230ce5eb43fc014a9c7224d980e79a@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: event.riga@gmail.com, robin.murphy@arm.com,
- linux@armlinux.org.uk, linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+Date: Wed, 20 Nov 2019 07:41:06 -0800
+From: Angus Ainslie <angus@akkea.ca>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH RFC v6 2/9] PM / devfreq: Add generic imx bus scaling
+ driver
+In-Reply-To: <VI1PR04MB70233920AC838AD88E1ECC26EE4F0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <cover.1573761527.git.leonard.crestez@nxp.com>
+ <f329e715898a6b9fd0cee707a93fb1e144e31bd4.1573761527.git.leonard.crestez@nxp.com>
+ <e311a376e6aec0c380686a7e307d2c07@akkea.ca>
+ <VI1PR04MB70233920AC838AD88E1ECC26EE4F0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+Message-ID: <008f2fa973b23fc716d678c5bd35af54@akkea.ca>
+X-Sender: angus@akkea.ca
+User-Agent: Roundcube Webmail/1.3.6
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_073906_708072_5249603D 
-X-CRM114-Status: GOOD (  14.09  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191120_074110_551347_D90AA014 
+X-CRM114-Status: GOOD (  13.22  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,94 +87,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Robin Murphy <robin.murphy@arm.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?UTF-8?Q?Artur_=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
+ Jacky Bai <ping.bai@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-pm-owner@vger.kernel.org,
+ Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, dl-linux-imx <linux-imx@nxp.com>,
+ devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Martin Kepplinger <martink@posteo.de>,
+ Silvano Di Ninno <silvano.dininno@nxp.com>,
+ linux-arm-kernel@lists.infradead.org, Aisheng Dong <aisheng.dong@nxp.com>,
+ Saravana Kannan <saravanak@google.com>, Stephen Boyd <sboyd@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-11-20 15:28, Leonid Movshovich wrote:
-> On Wed, 20 Nov 2019 at 15:04, Marc Zyngier <maz@kernel.org> wrote:
->>
->> On 2019-11-20 01:15, Robin Murphy wrote:
->> > On 2019-11-20 12:24 am, Leonid Movshovich wrote:
->> >> On Tue, 19 Nov 2019 at 23:36, Russell King - ARM Linux admin
->> >> <linux@armlinux.org.uk> wrote:
->> >>>
->> >>> On Tue, Nov 19, 2019 at 11:12:26PM +0000, event wrote:
->> >>>> So far only a CPU selected with top affinity bit was selected.
->> >>>> This
->> >>>> resulted in all interrupts
->> >>>> being processed by CPU0 by default despite "FF" default 
->> affinity
->> >>>> setting for all interrupts
->> >>>
->> >>> Have you checked whether this causes _ALL_ CPUs in the mask to 
->> be
->> >>> delivered a single interrupt, thereby causing _ALL_ CPUs to be
->> >>> slowed down and hit the same locks at the same time.
->> >>>
->> >> Yes, I've checked this. No, interrupt is delivered to only one 
->> CPU.
->> >> Also ARM GIC architecture specification specifically states in
->> >> chapter
->> >> 3.1.1 that hardware interrupts are delivered to a single CPU in
->> >> multiprocessor system ("1-N model").
->> >
->> > But see also section 3.2.3 - just because only one CPU actually 
->> runs
->> > the given ISR doesn't necessarily guarantee that the others 
->> *weren't*
->> > interrupted. I'd also hesitate to make any assumptions that all 
->> GIC
->> > implementations behave exactly the same way.
->>
->> What happens is that *all* CPUs are being sent the interrupt, and 
->> there
->> is some logic in the GIC that ensures that only one sees it (the 
->> first
->> one to read the IAR register). All the other see a spurious (1023)
->> interrupt, and have wasted some precious cycles in doing so.
->
-> Cycles are only precious when system is under high load. Under high
-> load, to achieve fair spread of interrupts between CPUs one would 
-> need
-> a userspace app (irqbalance) to sit there and constantly rebalance
-> smp_affinity based on /proc/interrupts. Hard to believe such an
-> approach wastes less cycles.
+Hi Leonard,
 
-You'd be surprised. As always when looking at these things, do come up
-with actual figures with a wide range of workloads that show benefits
-for the approach you're suggesting.
+On 2019-11-20 07:04, Leonard Crestez wrote:
+> On 20.11.2019 16:08, Angus Ainslie wrote:
+>> Hi Leonard,
+>> 
+>> On 2019-11-14 12:09, Leonard Crestez wrote:
+>>> Add initial support for dynamic frequency switching on pieces of the
+>>> imx
+>>> interconnect fabric.
+>>> 
+>>> All this driver does is set a clk rate based on an opp table, it does
+>>> not map register areas.
+>>> 
+>> 
+>> Is this working with mainline ATF or does it still need to be used 
+>> with
+>> your modified ATF code ?
+> 
+> This series doesn't perform SMC calls, that's done by the imx8m-ddrc
+> driver: https://patchwork.kernel.org/cover/11244283/
+> 
+> This particular patch allows switching NOC frequency but that's just
+> clk_set_rate.
+> 
+> DDRC frequency switching requires the imx branch of ATF (v2.0 + ~200
+> patches) otherwise you will get probe failures. Source for imx atf is
+> published here: https://source.codeaurora.org/external/imx/imx-atf/
 
-Also, if your system isn't under high load, why would you even care
-about this kind of distribution?
+Ok I was under the impression that the imx_2.0.y_busfreq branch below 
+was based on this. Shouldn't those patches be added to the imx ATF ?
 
->> I get this patch, more or less well written, every other year.
->> My answer is that it may help a very small minority of use cases, 
->> and
->> suck for everyone else. So thank you, but no, thank you.
->
-> I was wondering, why such an obvious change was never made. Now I 
-> know
-> whom to blame :).
+> 
+> For your particular 8mq B0 case slightly different setpoints are used
+> and the fix is not in any public release yet so you need this:
+> 
+> https://github.com/cdleonard/arm-trusted-firmware/commits/imx_2.0.y_busfreq
+> 
 
-The MAINTAINERS file (and a basic git log) would have told you that.
-And yes, I'm proudly taking the blame of having resisted this all 
-along.
+We also have 2n14w ( is that B1 ? ) imx8mq's that we are working with.
 
-> Anyway, I don't suggest "happiness for everyone". I suggest to change
-> the behaviour AND default affinity. So existing setups are not
-> affected AND "small minority" gets the benefit.
+> Is "mainline ATF" an important criteria for Purism?
+> 
 
-As I said above, show me the numbers on a wide range of HW, with a wide
-range of workloads.
+Yes we intend to bring all of our patches to mainline and were hoping 
+that NXP would be doing the same. Shouldn't a mainline kernel run on a 
+mainline ATF ?
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Thanks
+Angus
+
+> --
+> Regards,
+> Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
