@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35A8B10441C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 20:17:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10902104424
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 Nov 2019 20:18:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4u0ytPqJHPF8vKiAtWUDyEZEMIRWyCC+YFvva5W74rg=; b=m2ULX3Af4Ug+Ip
-	/WPnsLPW0iVQFKC+BidTnhQTpMOB4aKtVs88KMFPDm2YZbGy3nfao+PDopnQgUw2ELNhqYt2tvpx0
-	QbDSoSxAv40IxyIZjr5nBJHblrpU7kXKpF4yX01f4dda8hcvTnsHdhs5/Y4Rzu48kkiXMzLqzOomn
-	QHMaNvOZKQ10BYS0KG9k5ZDzrmAbn8HIXGwuzf4PVyHWWu46tq+IEzpUgvrBg2c6tREVp3uH3UNbc
-	2mt6pbDBHVi7XPiFssHRyfZx4nUBPj26Q5NyerDVu/FAcWOZ9QPLlGpVU7q89loiLqvLeP8m9Kj5e
-	yMQ8ndyqRFT1uRqzmZ5A==;
+	List-Owner; bh=pQlwZKss+jP+TNHwSqLfUEZdGP1Z95KgwHSoJWJjpKU=; b=OD5eEJ7H962XB2
+	rs8Waq23bNBRoLwajuqn9uoZ3DsfR+9fXIjKOg0Mw0BTAsG5MZYDBvLoKBsUxBeziVFSOaTFPtUtL
+	g4nsRQukx36nnzoJIJP0qr1SxwLQTi9kFvdlv9yiZHf7x4nd2dqbgwp2PIZ0LplZTLCDhRrdj5P08
+	YIYM1VeUovFrZRC+N++p6gKC6dV2QvWf9aApai77WBT/27uFPbzMSsyqCgYOrnZF/KAdH0HDADZsV
+	KL01G8zWTf3DUf9yjFzO0Kv1B18mjzaPiQAv0aKBKMV4cGIKyCXYjmGeVpPQX6qJ6JTTLe5oHdSVO
+	U7fPuDwElOAjpqEkv2jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXVTN-00060B-EE; Wed, 20 Nov 2019 19:17:05 +0000
+	id 1iXVUk-0006P0-G6; Wed, 20 Nov 2019 19:18:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXVTE-0005zJ-7V
- for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 19:16:57 +0000
+ id 1iXVUY-0006OE-Tc
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 Nov 2019 19:18:20 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 27C4120855;
- Wed, 20 Nov 2019 19:16:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EA5C420855;
+ Wed, 20 Nov 2019 19:18:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574277414;
- bh=UQU++xEappoMl5G28i/JzcgG4wXZ2fTH42SKjc1j2u4=;
+ s=default; t=1574277498;
+ bh=7UC1p05lqHNeIwWrK44s+QdCnsy4ZgEBXbsj/3SOi4Q=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WziG8xtuqOgZFzbPFcjtcWVQNw9A3GkxdTmLRuZttL6PQH/5hhUSy5PgUF+xggJWh
- Ljq67o33oiP9+FLlDynMRmypUwOSq9pz+0XKfC8jwoLl4mR7wbfOTSkG/r4JeHu7EH
- Dzc6jXuL/zsVIfPXEYHCtIq1vIhRk9OYXypDE8vs=
-Date: Wed, 20 Nov 2019 19:16:49 +0000
+ b=a9kcqFrnoKUkALPWQpNkZnUzLHHed0WfD+0gr4OxoB3q1iaUI7GT/g/h7g0AbYoQJ
+ IUrK+68/Hpw1yEIyq7upZ1+LkOCX11du/YcD1GM2XksuoSYP0yWYOFbjo37YbyBXoI
+ s8xnNCm8dmr+NZqua13pcMtSbgOPzMpoYcpK9lUE=
+Date: Wed, 20 Nov 2019 19:18:13 +0000
 From: Will Deacon <will@kernel.org>
-To: Pavel Tatashin <pasha.tatashin@soleen.com>
-Subject: Re: [PATCH] arm64: kernel: memory corruptions due non-disabled PAN
-Message-ID: <20191120191648.GB4799@willie-the-truck>
-References: <20191119221006.1021520-1-pasha.tatashin@soleen.com>
+To: Douglas Anderson <dianders@chromium.org>
+Subject: Re: [PATCH] ARM: hw_breakpoint: Handle inexact watchpoint addresses
+Message-ID: <20191120191813.GD4799@willie-the-truck>
+References: <20191019111216.1.I82eae759ca6dc28a245b043f485ca490e3015321@changeid>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191119221006.1021520-1-pasha.tatashin@soleen.com>
+In-Reply-To: <20191019111216.1.I82eae759ca6dc28a245b043f485ca490e3015321@changeid>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_111656_289443_54B46A00 
-X-CRM114-Status: GOOD (  19.05  )
+X-CRM114-CacheID: sfid-20191120_111818_976393_D178B1E5 
+X-CRM114-Status: GOOD (  14.46  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,65 +76,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sashal@kernel.org, mark.rutland@arm.com, vladimir.murzin@arm.com,
- steve.capper@arm.com, marc.zyngier@arm.com, catalin.marinas@arm.com,
- jmorris@namei.org, linux-kernel@vger.kernel.org, alexios.zavras@intel.com,
- james.morse@arm.com, allison@lohutok.net, gregkh@linuxfoundation.org,
- tglx@linutronix.de, info@metux.net, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Pratyush Anand <panand@redhat.com>,
+ Pavel Labath <labath@google.com>, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, kinaba@google.com, mka@chromium.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 19, 2019 at 05:10:06PM -0500, Pavel Tatashin wrote:
-> Userland access functions (__arch_clear_user, __arch_copy_from_user,
-> __arch_copy_in_user, __arch_copy_to_user), enable and disable PAN
-> for the duration of copy. However, when copy fails for some reason,
-> i.e. access violation the code is transferred to fixedup section,
-> where we do not disable PAN.
+On Sat, Oct 19, 2019 at 11:12:26AM -0700, Douglas Anderson wrote:
+> This is commit fdfeff0f9e3d ("arm64: hw_breakpoint: Handle inexact
+> watchpoint addresses") but ported to arm32, which has the same
+> problem.
 > 
-> The bug is a security violation as the access to userland is still
-> open when it should be disabled, but it also causes memory corruptions
-> when software emulated PAN is used: CONFIG_ARM64_SW_TTBR0_PAN=y.
+> This problem was found by Android CTS tests, notably the
+> "watchpoint_imprecise" test [1].  I tested locally against a copycat
+> (simplified) version of the test though.
 > 
-> I was able to reproduce memory corruption problem on Broadcom's SoC
-> ARMv8-A like this:
+> [1] https://android.googlesource.com/platform/bionic/+/master/tests/sys_ptrace_test.cpp
 > 
-> Enable software perf-events with PERF_SAMPLE_CALLCHAIN so userland's
-> stack is accessed and copied.
-> 
-> The test program performed the following on every CPU and forking many
-> processes:
-> 
-> 	unsigned long *map = mmap(NULL, PAGE_SIZE, PROT_READ|PROT_WRITE,
-> 				  MAP_SHARED | MAP_ANONYMOUS, -1, 0);
-> 	map[0] = getpid();
-> 	sched_yield();
-> 	if (map[0] != getpid()) {
-> 		fprintf(stderr, "Corruption detected!");
-> 	}
-> 	munmap(map, PAGE_SIZE);
-> 
-> From time to time I was getting map[0] to contain pid for a different
-> process.
-> 
-> Fixes: 338d4f49d6f7114 ("arm64: kernel: Add support for Privileged...")
-> 
-> Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 > ---
->  arch/arm64/lib/clear_user.S     | 1 +
->  arch/arm64/lib/copy_from_user.S | 1 +
->  arch/arm64/lib/copy_in_user.S   | 1 +
->  arch/arm64/lib/copy_to_user.S   | 1 +
->  4 files changed, 4 insertions(+)
+> 
+>  arch/arm/kernel/hw_breakpoint.c | 96 ++++++++++++++++++++++++---------
+>  1 file changed, 70 insertions(+), 26 deletions(-)
 
-Thanks. I've pushed this and your other patch out [1], with some changes
-to the commit message. I'm annoyed that I didn't spot this during review
-of the initial PAN patches.
+Sorry for taking so long to look at this. After wrapping my head around the
+logic again, I think it looks fine, so please put it into the patch system
+with my Ack:
+
+Acked-by: Will Deacon <will@kernel.org>
+
+One interesting difference between the implementation here and the arm64
+code is that I think if you have multiple watchpoints, all of which fire
+with a distance != 0, then arm32 will actually report them all whereas
+you'd only get one on arm64.
 
 Will
-
-[1] https://fixes.arm64.dev
 
 _______________________________________________
 linux-arm-kernel mailing list
