@@ -2,76 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53448104C92
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 08:29:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6245D104C8F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 08:29:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MU2GLK9HSHv3UXgerpkFRx3eSjFBk3UQ/Y1K0WO1rvs=; b=Z1zrTI0heeLr3E
-	Z3LopnmC7xrdfUOdfI5CUT7tw+PvRzEG+IxbKeTAMnFq7UPlg0wcU33rwFQtliSo3ieHBGfFq4N51
-	haFJpv/ncSaee8BbixMeVAAym00RMD8WaG00kRWvv8BDwR16Pnl0Mlo61ukHBQV60/vlrGmOZcOwq
-	Jn1kbHn5fOh48ldkC1U8OAwysdqjP+EtgWL5Kviwq49jwYAdqe9Jwv+FWrlTjc7WF1O2WFmt5WohC
-	d+EHJqwKkTVomxvc2KW56Wx7LFvXqdKol2vaAxUsZYw2f1AlUHnM1J77DZI2VpOOkVe3cZz9ghPWy
-	4bXiPzrfI/wp2Bug9GUw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SUi3bhyZM3MpW+2Znk5+Wo8gFMe8kwEKVP+Flsq6kuY=; b=UFxp/b88EN69FUHEJvubpQJ5R
+	9ObdJ/gBjrbW6E79kXu9oPoApKEauK3hUMbQulZ8jZ2+5cu9p3bBtfIH+0sAudL7KHmEDbqGc+xu3
+	wrD6xbqT3V40/bZADFedm6Zp2jVOFkFW0MPhlfUNhRW4FEIgLn8bHldkfyy0700aiXKdiRPkDUDN1
+	0NkP0Z2dhyTBgFXZ6lq3wwh/f7mw37ylJHZwoCPBO81M8E/4eLDPA0F5PoTdTYPZ2dk8y65L6uT1j
+	9Tsvh1AHlBMNqbVSkst1djV6Trl8UyULc1dIbWC8QrWijOe8W+ucG9sA+9khKE4ji1fTwpYiVDsIW
+	16SyrbRRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXguR-0002Dd-Sk; Thu, 21 Nov 2019 07:29:47 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iXguC-00021T-Vk; Thu, 21 Nov 2019 07:29:32 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXgtz-00020d-Kd; Thu, 21 Nov 2019 07:29:21 +0000
-X-UUID: 1ea9954627d44ae4a772b4488c1dc56d-20191120
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=DdOBazdkEY8z3b9oLQBOBsUR+PwkBxvsgtd16bL2wP8=; 
- b=dF7WIzR/p2XrAtxWVR+Uau04hx1SguyHDCvtAL0bumQpo8ZGhIzB07H26eHEYfdMkn2/o/0CgR9ItlVNh8Tz6g35yZIUMZs4km/tPhXQSPOFehPH3nUmb72k9cxTI3ZY5Io2WtdLG+tBJ8+lHghSvJ+oEnk/4FWL1CZdQVzL55o=;
-X-UUID: 1ea9954627d44ae4a772b4488c1dc56d-20191120
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <bibby.hsieh@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 28618728; Wed, 20 Nov 2019 23:29:12 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 20 Nov 2019 23:29:32 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 21 Nov 2019 15:29:05 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 21 Nov 2019 15:29:07 +0800
-From: Bibby Hsieh <bibby.hsieh@mediatek.com>
-To: Jassi Brar <jassisinghbrar@gmail.com>, Matthias Brugger
- <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>, CK HU
- <ck.hu@mediatek.com>
-Subject: [PATCH] soc: mediatek: cmdq: avoid racing condition with mutex
-Date: Thu, 21 Nov 2019 15:29:10 +0800
-Message-ID: <20191121072910.31665-1-bibby.hsieh@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1iXgtw-00020L-Bh; Thu, 21 Nov 2019 07:29:18 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: aratiu) with ESMTPSA id DD3A028DB43
+From: Adrian Ratiu <adrian.ratiu@collabora.com>
+To: Neil Armstrong <narmstrong@baylibre.com>, Adrian Ratiu
+ <adrian.ratiu@collabora.com>, linux-arm-kernel@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH v3 4/4] dt-bindings: display: add IMX MIPI DSI host
+ controller doc
+In-Reply-To: <e19aca1f-842d-a5b4-6fc1-02f7f6dd136d@baylibre.com>
+References: <20191118152518.3374263-1-adrian.ratiu@collabora.com>
+ <20191118152518.3374263-5-adrian.ratiu@collabora.com>
+ <e19aca1f-842d-a5b4-6fc1-02f7f6dd136d@baylibre.com>
+Date: Thu, 21 Nov 2019 09:29:39 +0200
+Message-ID: <87a78p7km4.fsf@iwork.i-did-not-set--mail-host-address--so-tickle-me>
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_232919_685554_994E055A 
-X-CRM114-Status: UNSURE (   8.31  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191120_232916_663437_0EDA0480 
+X-CRM114-Status: GOOD (  12.40  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -85,87 +63,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Houlong Wei <houlong.wei@mediatek.com>,
- Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>,
- linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Martyn Welch <martyn.welch@collabora.com>,
+ Sjoerd Simons <sjoerd.simons@collabora.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-imx@nxp.com, kernel@collabora.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If cmdq client is multi thread user, racing will occur without mutex
-protection. It will make the C message queued in mailbox's queue
-always need D message's triggering.
+On Wed, 20 Nov 2019, Neil Armstrong <narmstrong@baylibre.com> 
+wrote:
+> Hi, 
+> 
+> On 18/11/2019 16:25, Adrian Ratiu wrote: 
+> 
+> A small commit log would be welcome here. 
+> 
+>> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com> 
+>> Signed-off-by: Martyn Welch <martyn.welch@collabora.com> 
+>> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com> --- 
+>>  .../bindings/display/imx/mipi-dsi.txt         | 56 
+>>  +++++++++++++++++++ 1 file changed, 56 insertions(+) create 
+>>  mode 100644 
+>>  Documentation/devicetree/bindings/display/imx/mipi-dsi.txt 
+>>  diff --git 
+>> a/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt 
+>> b/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt 
+>> new file mode 100644 index 000000000000..3f05c32ef963 --- 
+>> /dev/null +++ 
+>> b/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt 
+> 
+> New bindings should use the yaml dt-schema format, could you 
+> convert it ?
 
-Thread A		Thread B		  Thread C		Thread D...
------------------------------------------------------------------------------------
-mbox_send_message()
-	send_data()
-			mbox_send_message()
-				*exit
-						mbox_send_message()
-							*exit
-mbox_client_txdone()
-	tx_tick()
-			mbox_client_txdone()
-				tx_tick()
-						mbox_client_txdone()
-							tx_tick()
-msg_submit()
-	send_data()
-			msg_submit()
-				*exit
-						msg_submit()
-							*exit
------------------------------------------------------------------------------------
+Yes, I will convert to yaml and add a commit log in the next 
+version.
 
-Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
----
- drivers/soc/mediatek/mtk-cmdq-helper.c | 3 +++
- include/linux/soc/mediatek/mtk-cmdq.h  | 1 +
- 2 files changed, 4 insertions(+)
+Will leave the current patches a little more on review to give 
+others a chance to see them.
 
-diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-index 9add0fd5fa6c..9e35e0beffaa 100644
---- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-+++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-@@ -81,6 +81,7 @@ struct cmdq_client *cmdq_mbox_create(struct device *dev, int index, u32 timeout)
- 	client->client.dev = dev;
- 	client->client.tx_block = false;
- 	client->chan = mbox_request_channel(&client->client, index);
-+	mutex_init(&client->mutex);
- 
- 	if (IS_ERR(client->chan)) {
- 		long err;
-@@ -352,9 +353,11 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
- 		spin_unlock_irqrestore(&client->lock, flags);
- 	}
- 
-+	mutex_lock(&client->mutex);
- 	mbox_send_message(client->chan, pkt);
- 	/* We can send next packet immediately, so just call txdone. */
- 	mbox_client_txdone(client->chan, 0);
-+	mutex_unlock(&client->mutex);
- 
- 	return 0;
- }
-diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-index a74c1d5acdf3..0f9071cd1bc7 100644
---- a/include/linux/soc/mediatek/mtk-cmdq.h
-+++ b/include/linux/soc/mediatek/mtk-cmdq.h
-@@ -28,6 +28,7 @@ struct cmdq_client {
- 	struct mbox_chan *chan;
- 	struct timer_list timer;
- 	u32 timeout_ms; /* in unit of microsecond */
-+	struct mutex mutex;
- };
- 
- /**
--- 
-2.18.0
+Thank you!
+
+>
+> Neil
+>
+>> @@ -0,0 +1,56 @@
+>> +Freescale i.MX6 DW MIPI DSI Host Controller
+>> +===========================================
+>> +
+>> +The DSI host controller is a Synopsys DesignWare MIPI DSI v1.01 IP
+>> +with a companion PHY IP.
+>> +
+>> +These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
+>> +Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
+>> +the following device-specific properties.
+>> +
+>> +Required properties:
+>> +
+>> +- #address-cells: Should be <1>.
+>> +- #size-cells: Should be <0>.
+>> +- compatible: "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi".
+>> +- reg: See dw_mipi_dsi.txt.
+>> +- interrupts: The controller's CPU interrupt.
+>> +- clocks, clock-names: Phandles to the controller's pll reference
+>> +  clock(ref) and APB clock(pclk), as described in [1].
+>> +- ports: a port node with endpoint definitions as defined in [2].
+>> +- gpr: Should be <&gpr>.
+>> +       Phandle to the iomuxc-gpr region containing the multiplexer
+>> +       control register.
+>> +
+>> +[1] Documentation/devicetree/bindings/clock/clock-bindings.txt
+>> +[2] Documentation/devicetree/bindings/media/video-interfaces.txt
+>> +
+>> +Example:
+>> +
+>> +	mipi_dsi: mipi@21e0000 {
+>> +		#address-cells = <1>;
+>> +		#size-cells = <0>;
+>> +		compatible = "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi";
+>> +		reg = <0x021e0000 0x4000>;
+>> +		interrupts = <0 102 IRQ_TYPE_LEVEL_HIGH>;
+>> +		gpr = <&gpr>;
+>> +		clocks = <&clks IMX6QDL_CLK_MIPI_CORE_CFG>,
+>> +			 <&clks IMX6QDL_CLK_MIPI_IPG>;
+>> +		clock-names = "ref", "pclk";
+>> +		status = "okay";
+>> +
+>> +		ports {
+>> +			port@0 {
+>> +				reg = <0>;
+>> +				mipi_mux_0: endpoint {
+>> +					remote-endpoint = <&ipu1_di0_mipi>;
+>> +				};
+>> +			};
+>> +			port@1 {
+>> +				reg = <1>;
+>> +				mipi_mux_1: endpoint {
+>> +					remote-endpoint = <&ipu1_di1_mipi>;
+>> +				};
+>> +			};
+>> +		};
+>> +        };
+>> 
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
