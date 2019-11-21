@@ -2,55 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B66B105A5E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 20:27:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F372105A64
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 20:28:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0XqgEUV44PDeMSSLKxzG6lXBdqRV4ojWH3ezi8B5kyA=; b=VEAIGjSjFC31TY
-	EV+f39G4zxaq6rb3v27niy2jPhSAM0rxCQM2QsNbwtDy2+dFRkEqEnaNhjOd6FC6E1cCobOHr4F9m
-	gDlIvDuSV0ITtvKCOLnsm/eLqVemsz0jLwaHw/NgalAfiV48Kpt151tPNTvhbVDm3DvDaGMA/nY2I
-	9j7TN57ZiGkgTG45UT/9mN5r99yQ7I8Stkyn9U7w25VQPxkIqQFxgBN67sfPgLuU9Q2yiHWbyNqIa
-	sl+UoeUAHE6NN6YIcOYRWenel+LSTRw6wuFp9W0JPnIdnI3LPmvmbuG3PrHCd0GcET1OkYDFsd8qW
-	88xklMKveWqMPyyNTsZw==;
+	List-Owner; bh=vIeyh59uyuGH2xR77i+dgiDEA5Po6J8xQNUfWGrHe7Y=; b=Ae6iw+7J6/qSpa
+	BwrPLf0TJ7rQrypx4FlJQhiUAcFLDNy4kkkB7XyE2IrCZRUGqMtGH6kGjUHG4xnyLmKcIjoZSyIAU
+	rjrbAcNgfHgKU5SVtg4AOqelNPqGosXdsqNGfbFw+JDMae2aubw0tAX0+dYkQCvXGE4C7RGyqf6Ew
+	oqP0yIkh5vdgDV969nvDMFWgpQCP54J8bq5W0l42JY31LvuUxSuCsZd7MR2yli1052hHe/k81EoxM
+	5QVVtYW5pFC1z/y+jiLYs4HebxnNVKIBTeqDrpbQB0cRz3FQFUKfogvqPQ3mya7nKV9WbsiKeb7VQ
+	IZGW4ksVHmr2xL+S8z8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXs7I-0005ql-TO; Thu, 21 Nov 2019 19:27:48 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iXs7y-00067s-I8; Thu, 21 Nov 2019 19:28:30 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXs79-0005qA-Q1
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 19:27:41 +0000
-Received: from oasis.local.home (unknown [66.170.99.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C61B22068F;
- Thu, 21 Nov 2019 19:27:38 +0000 (UTC)
-Date: Thu, 21 Nov 2019 14:27:37 -0500
-From: Steven Rostedt <rostedt@goodmis.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: KASAN_INLINE && patchable-function-entry
-Message-ID: <20191121142737.69978ef9@oasis.local.home>
-In-Reply-To: <20191121183630.GA3668@lakrids.cambridge.arm.com>
-References: <20191121183630.GA3668@lakrids.cambridge.arm.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iXs7m-000660-Hv; Thu, 21 Nov 2019 19:28:19 +0000
+Received: by mail-ot1-f66.google.com with SMTP id l14so3977088oti.10;
+ Thu, 21 Nov 2019 11:28:18 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=CHTfKDAdZLhL1Zm6CO6s2kP8nxK/JV3N7UW7tF4nQP4=;
+ b=NtJJm3ZWy+UzDnIfTpRXd53uu8RFR/1vedLc7p85yCOXohuMYpOU99bbKU+XjUFgwn
+ 0BOEcl9WjkIeUY5lO2CYRkm955jVMOwL4pJnSA83JnPeud4f6qKPvrjM4vCQNAJG7iKl
+ 3sZdSuVF8O7Fq/pb8VoE+OuIDTaUkAhGdUtEpp3Y/YBd8cpyrze4l+FkjhoyzeQIqzLH
+ RvYlxHLkX7rkofjC6QTXBlkm9BZlqg/JF61ZdVVdEuRtrXdtHtuiEgbKfi8QvwELdfcz
+ bpEJAko7qXJKC0QP/w66jICSFKuCbbzVsQXXpSldIpZrQm4OUu7yuq8/VvjfpPameECX
+ C2cw==
+X-Gm-Message-State: APjAAAWd7k21CXHjS/lYYulUPiI91PbpCyYJSXy4n6nTKCfIeQzf+bv5
+ UulHiJuvgUu0XNwvrsUJvg==
+X-Google-Smtp-Source: APXvYqwSY+m1VVKP1lJWWFMDzjmXAD1VirqNMJL368kLdu7zD5Tqa73Qd9dLlvlXyGQDu+Uma4tvig==
+X-Received: by 2002:a9d:365:: with SMTP id 92mr8439326otv.9.1574364497464;
+ Thu, 21 Nov 2019 11:28:17 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id u204sm1219085oig.35.2019.11.21.11.28.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 21 Nov 2019 11:28:16 -0800 (PST)
+Date: Thu, 21 Nov 2019 13:28:16 -0600
+From: Rob Herring <robh@kernel.org>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: mmc: Document the Amlogic Meson SDHC
+ MMC host controller
+Message-ID: <20191121192816.GA7377@bogus>
+References: <20191117142716.154764-1-martin.blumenstingl@googlemail.com>
+ <20191117142716.154764-2-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191117142716.154764-2-martin.blumenstingl@googlemail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_112739_863463_E1C43D70 
-X-CRM114-Status: GOOD (  10.58  )
-X-Spam-Score: -4.8 (----)
+X-CRM114-CacheID: sfid-20191121_112818_587441_F096EB07 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.8 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,29 +92,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Torsten Duwe <duwe@suse.de>, Ingo Molnar <mingo@redhat.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ulf.hansson@linaro.org,
+ jianxin.pan@amlogic.com, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, yinxin_1989@aliyun.com,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ lnykww@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 21 Nov 2019 18:36:32 +0000
-Mark Rutland <mark.rutland@arm.com> wrote:
+On Sun, Nov 17, 2019 at 03:27:15PM +0100, Martin Blumenstingl wrote:
+> This documents the devicetree bindings for the SDHC MMC host controller
+> found in Meson6, Meson8, Meson8b and Meson8m2 SoCs. It can use a
+> bus-width of 1/4/8-bit and it supports eMMC spec 4.4x/4.5x including
+> HS200 mode (up to 100MHz clock).
+> 
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> ---
+>  .../bindings/mmc/amlogic,meson-mx-sdhc.yaml   | 64 +++++++++++++++++++
+>  1 file changed, 64 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mmc/amlogic,meson-mx-sdhc.yaml
 
-> As a heads-up to the ftrace folk, I think it's possible to work around
-> this specific issue in the kernel by allowing the arch code to filter
-> out call sites at init time (probably in ftrace_init_nop()), but I
-> haven't put that together yet.
-
-If you need to make some code invisible to ftrace at init time, it can
-be possible by setting the dyn_ftrace rec flag to DISABLED, but this
-can be cleared, which we would need a way to keep it from being
-cleared, which shouldn't be too hard.
-
-Is that what you would be looking for?
-
--- Steve
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
