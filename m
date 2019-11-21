@@ -2,66 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 673451053F4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 15:07:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B610710541E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 15:15:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bBWtlymi0JTzYha6kpB0EZZDcjnmwnPmD9IrHGIISew=; b=E1cb68PkSDQvcz
-	n1gRc6uh0H/zEpIHg6zQQwYbf1PeH41HebuUJlxJMNVJ+CaCFhomD9b03Km2P6t6oQj1JrU5qCApP
-	kPvg5JNzPcalNOfui7Dx//T8pdRlg5mtNc+lkP2T2nP2dGd6IKeGwX42Swil99QsZnXr+Vjv6EsKO
-	YcR9rtoExaptf4B1f4ObJCTfLNz7F+xsMy3smpV9w07wUwfs68PnpA2/sy6GuAEkaAa62Wk/v0YKN
-	yJwdIQraSYI2366rcmHk6qry4QsYIpYSuvJ3Mz4Z1s5q3tLKBirfmtOmVQ7Z7to8EG2c9y0yfyqqU
-	jH8BEEMiLhiORse0hoQw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mcNgwk6r4V9vr12/z/qyHlFi/n9yquXI8OybZxDsB1E=; b=rMNTdNpVoFBhTh
+	TJ0+emONAZyZ1K/rNOH0TGSqadeKQ/fgloJ1lcfvFFLCFNJd2OqAFLw5eFzZ/fLEM+qXh/ZGUHx26
+	vvh/mpcACn1mVUmE8FtqBgnwsdRq+7dhYzLtOzXl6E3KBpxaQ8piBERs54SoX7QTAGk00rIlkrMAM
+	lgW2WwIxEA3h3J5lTcKr62v0ReRTe9LeqqmHU0nqgd0aw4TLN0Vp4kdAC9n2GUFqukug8O5HGeKOC
+	TID/aO8hzUP7pDorMdAqOjmX8sLnbXtnCHDtF5F1LTZFEcem5+d+xlxxLSnHPaeMLTHSkfvjcXhIy
+	fGCGwXAr6RiC6jB/hxgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXn7A-0006qh-MV; Thu, 21 Nov 2019 14:07:20 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iXnEu-0001cM-F0; Thu, 21 Nov 2019 14:15:20 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXn73-0006qE-Gy
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 14:07:14 +0000
-Received: by mail-lf1-x143.google.com with SMTP id y19so2732139lfl.9
+ id 1iXnEg-0000as-4K
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 14:15:08 +0000
+Received: by mail-pg1-x542.google.com with SMTP id t3so1217229pgl.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 06:07:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yR25p077sY7XsyzIresfvdGtP0NxdR3Phye7bNz8IVg=;
- b=CZiWmy0lOMSUMBEQdMx/dvvcTVUjQGVBpXZnRc5cLrC8Lf17LWwPQF5Ue+KBC2ZTlc
- lvcS6VGR90NTZiSpEGqtGHSWTCLg3HmrBLdf9GnUJFMj0TqHaMmchIbXjE1Q5E433UoV
- 6rb2NkCG8Tlfy7Yt3mK9qzGuvUCeouGYHj+GNiA1pg2ex7KkaonvntMMb9fb9CRb9izC
- YrNQ3xr4hXKDmMmtH90fs84Vayv6fmfCJ+//aDIo/Pc+dqwm16pW7arYu5hPHASTWnGl
- vDChdWc9A5DqBuR067SuXgY0OIgK4mwwq3R80N4EBorhGyOguLd5G7Km3cuykdCNwlO3
- RG0A==
+ Thu, 21 Nov 2019 06:15:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0lg7xoqCU9griTX07bOPborDv4xC+ndaqpkFXe9TjLg=;
+ b=Dn06DFYADguxXrNrHFoCiFbFd1uG/ryAw8ky8mYHCn9oUzVz9hB2yMDAu5ULjtXAI0
+ hqC4JRrQZa8CXukoaP5Y2URVyXUjUpoKO7Lgzizd9Bp5vGOLa8HrAUeWBKmfT0wOmT1z
+ p43ut5Cy5wBhePmkmrvHQVgasIXEG9iPq+vVA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yR25p077sY7XsyzIresfvdGtP0NxdR3Phye7bNz8IVg=;
- b=lUVOssPGGxE50L6gBsJA/NX89oipje4w4vboB4RVSALyOOiYrT5fmtqBoktzJklLdU
- IMzH7lrIdgf10jg1Yajvi3smbDevvPMqJ7pEzSwE8JKeVy3FdJk1YUE8kh6Zt6KVF44c
- z4gCsfl42hu6SqbnNy3ItqwrhD0rsih4rU+hNxOIqxxdhburdtGEK34E/gqreJIlO/TL
- rK8K8CiQoxOpwiOFvZB2rrM96C7KygEquAYXm8k4qm+50OJANZ9RMKlzABLoTHLIp1h6
- 8ub1lb0flUHOcZ3mYG3Wpco7OOM0pKDDB5XOx5biMW2SiNjkGHb5YGRg8/eBSeFk4AeO
- BBAw==
-X-Gm-Message-State: APjAAAVBMYGynlkRz0Y+aclvUQPN789dFEQbmkShPJP7ipn9HsHL8dNb
- UkZbrIKD6TR3aifZmnJchh6Z2lRxgvOI/Kunmk/vdg==
-X-Google-Smtp-Source: APXvYqx7y+O12Uu5ojAu8QNAvcacX/eJU7YDlJdyJO7nQwQjAJB69Xsu//F9QRhLjLh47IajvAAakFeD7WqmHGemTs4=
-X-Received: by 2002:a19:7d02:: with SMTP id y2mr7406713lfc.86.1574345231034;
- Thu, 21 Nov 2019 06:07:11 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0lg7xoqCU9griTX07bOPborDv4xC+ndaqpkFXe9TjLg=;
+ b=Om6wK0RshoYgP3KJ6R290UUGfNSTpgQQiTKdkbtT+umCTZOW3UHhLck+zvvjoiHuNT
+ 4aj0yI9aoSBU82vJx0vC4iinIzXNNkVpvTRmXp1DV5RDdfUm97Kg5ol8X7VsoW0kgNbH
+ YtwU8PVrRCvy76u1MmmoXIK8GCP50YAlmPZ65R4a+jURHActZfsrGW1BaDUzOiQ80ghl
+ oSIzj2SYJgYj2v2T1mz8RsYpropVPd5cNst5QbeUoYTOPbmpL6EKaHNqs6aupEaGkwNN
+ tKL/6bt6GhiAADIX/JxA/35BYQ7sWrBDjYsAnz7Mo+8whH/8YnFhBS//w1bva8ydDnNb
+ VKnA==
+X-Gm-Message-State: APjAAAVbdGcMieb3UfqPETE3/i35QsAU/aKz2AhOQTzHy3egAu0dr/M7
+ 6XaM4DOuUTPpD1xSYQ73Omwpbg==
+X-Google-Smtp-Source: APXvYqwuTjhpD/waPmGZkM+fuBj2AUAa0JiWceYv23FKWcp+RSP3vrbjA1wVoDSX04kNhqg5Ck74hQ==
+X-Received: by 2002:a63:1303:: with SMTP id i3mr9710113pgl.430.1574345702647; 
+ Thu, 21 Nov 2019 06:15:02 -0800 (PST)
+Received: from localhost.localdomain ([115.97.180.31])
+ by smtp.gmail.com with ESMTPSA id w138sm4072304pfc.68.2019.11.21.06.14.57
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 21 Nov 2019 06:15:01 -0800 (PST)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH v2 0/5] arm64: dts: rockchip: Add Rock Pi N10 support
+Date: Thu, 21 Nov 2019 19:44:40 +0530
+Message-Id: <20191121141445.28712-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 MIME-Version: 1.0
-References: <1574306382-32516-1-git-send-email-krzk@kernel.org>
-In-Reply-To: <1574306382-32516-1-git-send-email-krzk@kernel.org>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 21 Nov 2019 15:06:58 +0100
-Message-ID: <CACRpkdaQCsSdZQrBkTQ_B-kz2jngkFoEgdYHW3uoPRwo=GcR7A@mail.gmail.com>
-Subject: Re: [PATCH v2] pinctrl: Fix Kconfig indentation
-To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_060713_580881_33039358 
-X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-CacheID: sfid-20191121_061506_340145_74AD7F2B 
+X-CRM114-Status: UNSURE (   9.98  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -69,7 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,43 +94,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Andrew Lunn <andrew@lunn.ch>,
- Jason Cooper <jason@lakedaemon.net>, Fabio Estevam <festevam@gmail.com>,
- Gregory Clement <gregory.clement@bootlin.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Stefan Agner <stefan@agner.ch>, Bjorn Andersson <bjorn.andersson@linaro.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Andy Gross <agross@kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- MSM <linux-arm-msm@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: devicetree@vger.kernel.org, Tom Cubie <tom@radxa.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Akash Gajjar <akash@openedev.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
+ Jagan Teki <jagan@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 21, 2019 at 4:19 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+Unlike, other Rock PI boards from radxa, Rock Pi N10 SBC is based
+on SOM + Carrier board combination.
 
-> Adjust indentation from spaces to tab (+optional two spaces) as in
-> coding style with command like:
->         $ sed -e 's/^        /\t/' -i */Kconfig
->
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
->
-> ---
->
-> Changes since v1:
-> 1. Fix also 7-space and tab+1 space indentation issues.
+Rock Pi N10 is a Rockchip RK3399Pro based SBC, which has
+- VMARC RK3399Pro SOM (as per SMARC standard) from Vamrs.
+- Dalang carrier board from Radxa.
 
-Patch applied, why not.
+This series add initial support for Rock Pi N10 and fixes comments 
+from Heiko from v1[1].
 
-If it causes severe merge conflicts with other trees (I don't
-know at this point) then I might have to take it out again,
-so keep fingers crossed.
+patch 0001: dt-bindings for VMARC RK3399Pro SOM
 
-Yours,
-Linus Walleij
+patch 0002: VMARC RK3399Pro SOM dtsi support
+
+patch 0003: dt-bindings for Rock Pi N10
+
+patch 0004: Radxa Dalang carrier board dtsi support
+
+patch 0005: Rock Pi N10 dts support
+
+Tested basic peripherals and will all more in future patches.
+
+[1] https://patchwork.kernel.org/cover/11253649/
+
+Any inputs?
+Jagan.
+
+Jagan Teki (5):
+  dt-bindings: arm: rockchip: Add VMARC RK3399Pro SOM binding
+  arm64: dts: rockchip: Add VMARC RK3399Pro SOM initial support
+  dt-bindings: arm: rockchip: Add Rock Pi N10 binding
+  ARM: dts: rockchip: Add Radxa Dalang Carrier board
+  arm64: dts: rockchip: Add Radxa Rock Pi N10 initial support
+
+ .../devicetree/bindings/arm/rockchip.yaml     |  10 +
+ .../dts/rockchip-radxa-dalang-carrier.dtsi    |  81 +++++
+ arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+ .../dts/rockchip/rk3399pro-rock-pi-n10.dts    |  17 +
+ .../dts/rockchip/rk3399pro-vmarc-som.dtsi     | 333 ++++++++++++++++++
+ 5 files changed, 442 insertions(+)
+ create mode 100644 arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi
+
+-- 
+2.18.0.321.gffc6fa0e3
+
 
 _______________________________________________
 linux-arm-kernel mailing list
