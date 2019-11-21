@@ -2,87 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 582F01051E2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 12:55:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1944F105207
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 13:03:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0yUcrD9gQM7+DtmE8De2iuzY1EAGRMS9xVDHHSU9+gI=; b=Rt1vt/fzQSUlOo
-	47scITBh4CftE5fQmMTK5EbQd0LUK4D5VLDUBU+3/GWk8t9EkJiN4P+uHvxal6qLRKK1+8D/360aj
-	8i9LkS//lyVej8LfwvJhPeTn4YNljPLC770b10DcVsvYjCHaJ2WFwjaZq+E/XFD2UsmGsXYr45Swy
-	nOrA2dbfXJtX2DHCJNl1SJFZ4LrNrxUbduEg0tYNkfyvhgvfAHmRmfMdFYdHMKweAjZusd89xmpcK
-	dhtOkgrMADTmb+jHs8HSW81jsc5N08zojTl3hcBmQAqVa/KtPn9MT2tdXlh1grhR+Uq4tvFrpY6BP
-	zmpo8FHT+shrvMkrK5xw==;
+	List-Owner; bh=+G5bL4q4wjL59ACCp2EpIgQPv1NaPmM8ycqjAP2my54=; b=ReCADNqZPVee2U
+	5xvdfVhYpNTmLdt3SINbaNMnn6iKPF4BMF3826TqvFGxtWo2KR6dPU+zBo6feHxCE73zZTS1qw/jv
+	pmUxgflXqfFNl+Ll68GmALiFlRsmDV0ymGcOezqGalMY6Fs6xyR366d1ZLJALgqfLlWGrS+dl2x4t
+	NL2KM7uc9CQ1bYCYPV/V+kp0spABBt5cLG/UmeVfjMY8l16ozgyT7h/fwIforV03lX0X+2TITYKU0
+	LD8DBMmqh3N1CnweBs6dPvr6XB1w7AgYcZXqXwwsxFgbmckTxxPjAYoamiTtdNMCLdw1FXo82Q9Zr
+	8yRsjHCLFLDjlTtv5Bmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXl3M-0006Vz-0o; Thu, 21 Nov 2019 11:55:16 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXl37-0005o4-Ci
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 11:55:03 +0000
-Received: by mail-il1-x143.google.com with SMTP id s75so2997329ilc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 03:55:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OASxd9sL3P/EAyFnEHWqDD5LpfqZZMnAsfvorrhUyyg=;
- b=pwE8Hqyyt9JggoFN9jl5bxSbMElKMXFsPnZeJyh3roSkWGRiPz6qnu1SvgDOJ3Hw6i
- UaAeZvMNr2kYe4IsFb6a2uhjOyO9sujSvCApwbh+oXGNBtkdjike5of1kVIQFsBK+8EE
- btJumOPBgYOevLDsXDFlEIrsPC76sE6BH4JhE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OASxd9sL3P/EAyFnEHWqDD5LpfqZZMnAsfvorrhUyyg=;
- b=I9YT95LdRdZLsAS3zaS0soxWMktHj7b/j8YMtxjnACuOln+/nlvemEXbfVhOXpYcDi
- iKA4B5zyDhl3TGl/8Am9Ezw+I4L/Tvbnob1tC8co2m2pVPif8BaGaUI8laGBt7TBrI95
- U/8XAkS4PcY206kTKZ8X+dIxd7Y5CJDu72Fzql30UpZxc7PEmmQl/eHMBoQptiM+4Kid
- +wUkztDpnc/nPIhtzma+GvM2vpD3MlwA1j2/hyX2in7NqjQOVPxAk20sty3zM8GfS410
- JVQtCrqcQ+pH6J8p9z8nrjL9HebDhs/Mq6HVaLtliF9l4p2oPm3d5p+yVeuh+7p1TWbz
- cC6g==
-X-Gm-Message-State: APjAAAUIu558Fv22kkgyrGYPDlWyYpMIJ9jlGRVOBHhJ2+cUQq2tSDKs
- ojQCMZFVn8DE92lzEnPMybhiAreuZYTYuLzcas6VWT9eWnEhgA==
-X-Google-Smtp-Source: APXvYqxfumqpEZg771COtbxon7u4bR0X9QYm3AdjlbTzg0aqVValkgGD39VvNZ52KOhtkplgn0JszB4c2khzBZn3bTg=
-X-Received: by 2002:a92:5d8f:: with SMTP id e15mr9728918ilg.173.1574337299234; 
- Thu, 21 Nov 2019 03:54:59 -0800 (PST)
+	id 1iXlBP-000141-EW; Thu, 21 Nov 2019 12:03:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iXlBF-00012l-JD; Thu, 21 Nov 2019 12:03:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 15D4E328;
+ Thu, 21 Nov 2019 04:03:22 -0800 (PST)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7EBC43F703;
+ Thu, 21 Nov 2019 04:03:21 -0800 (PST)
+Date: Thu, 21 Nov 2019 12:03:19 +0000
+From: Andrew Murray <andrew.murray@arm.com>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [PATCH v2 4/6] PCI: brcmstb: add Broadcom STB PCIe host
+ controller driver
+Message-ID: <20191121120319.GW43905@e119886-lin.cambridge.arm.com>
+References: <20191112155926.16476-1-nsaenzjulienne@suse.de>
+ <20191112155926.16476-5-nsaenzjulienne@suse.de>
+ <20191119162502.GS43905@e119886-lin.cambridge.arm.com>
+ <7e1be0bdcf303224a3fe225654a3c2391207f9eb.camel@suse.de>
 MIME-Version: 1.0
-References: <20191025175625.8011-1-jagan@amarulasolutions.com>
- <20191025175625.8011-5-jagan@amarulasolutions.com>
- <20191028153427.pc3tnoz2d23filhx@hendrix>
- <CAMty3ZCisTrFGjzHyqSofqFAsKSLV1n2xP5Li3Lonhdi0WUZVA@mail.gmail.com>
- <20191029085401.gvqpwmmpyml75vis@hendrix>
- <CAMty3ZAWPZSHtAZDf_0Dpx588YGGv3pJX1cXMfkZus3+WF94cA@mail.gmail.com>
- <20191103173227.GF7001@gilmour>
-In-Reply-To: <20191103173227.GF7001@gilmour>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Thu, 21 Nov 2019 17:24:47 +0530
-Message-ID: <CAMty3ZD5uxU=xb0z7PWaXzodYbWRJkP9HjGX-HZYFT4bwk0GOg@mail.gmail.com>
-Subject: Re: [PATCH v11 4/7] drm/sun4i: dsi: Handle bus clock explicitly
-To: Maxime Ripard <mripard@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <7e1be0bdcf303224a3fe225654a3c2391207f9eb.camel@suse.de>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_035502_084173_4B374B6D 
-X-CRM114-Status: GOOD (  29.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191121_040325_718591_D11B1CEE 
+X-CRM114-Status: GOOD (  46.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,180 +63,438 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- David Airlie <airlied@linux.ie>, linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: Florian Fainelli <f.fainelli@gmail.com>, maz@kernel.org,
+ phil@raspberrypi.org, linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ Eric Anholt <eric@anholt.net>, mbrugger@suse.com,
+ bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
+ james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime,
+On Wed, Nov 20, 2019 at 08:53:30PM +0100, Nicolas Saenz Julienne wrote:
+> Hi Andrew, thanks for the review.
+> 
+> On Tue, 2019-11-19 at 16:25 +0000, Andrew Murray wrote:
+> > On Tue, Nov 12, 2019 at 04:59:23PM +0100, Nicolas Saenz Julienne wrote:
+> > > From: Jim Quinlan <james.quinlan@broadcom.com>
+> > > 
+> > > This commit adds the basic Broadcom STB PCIe controller.  Missing is the
+> > > ability to process MSI. This functionality is added in a subsequent
+> > > commit.
+> > > 
+> > > The PCIe block contains an MDIO interface.  This is a local interface
+> > > only accessible by the PCIe controller.  It cannot be used or shared
+> > > by any other HW.  As such, the small amount of code for this
+> > > controller is included in this driver as there is little upside to put
+> > > it elsewhere.
+> > 
+> > This commit message hasn't changed, despite earlier feedback.
+> 
+> Sorry, I'll review your previous comment.
+> 
+> [...]
+> 
+> > > +#define bcm_readl(a)		readl(a)
+> > > +#define bcm_writel(d, a)	writel(d, a)
+> > > +#define bcm_readw(a)		readw(a)
+> > > +#define bcm_writew(d, a)	writew(d, a)
+> > > +
+> > > +/* These macros extract/insert fields to host controller's register set. */
+> > > +#define RD_FLD(base, reg, field) \
+> > > +	brcm_pcie_rd_fld((base) + reg, reg##_##field##_MASK, \
+> > > +			 reg##_##field##_SHIFT)
+> > > +#define WR_FLD(base, reg, field, val) \
+> > > +	brcm_pcie_wr_fld((base) + reg, reg##_##field##_MASK, \
+> > > +		    reg##_##field##_SHIFT, val)
+> > > +#define WR_FLD_RB(base, reg, field, val) \
+> > > +	brcm_pcie_wr_fld_rb((base) + reg, reg##_##field##_MASK, \
+> > > +		reg##_##field##_SHIFT, val)
+> > > +#define WR_FLD_WITH_OFFSET(base, off, reg, field, val) \
+> > > +	brcm_pcie_wr_fld((base) + reg + (off), reg##_##field##_MASK, \
+> > > +	       reg##_##field##_SHIFT, val)
+> > > +#define EXTRACT_FIELD(val, reg, field) \
+> > > +	(((val) & reg##_##field##_MASK) >> reg##_##field##_SHIFT)
+> > > +#define INSERT_FIELD(val, reg, field, field_val) \
+> > > +	(((val) & ~reg##_##field##_MASK) | \
+> > > +	 (reg##_##field##_MASK & (field_val << reg##_##field##_SHIFT)))
+> > 
+> > Can you use any of the existing macros in linux/bitfield.h
+> > (e.g. ...replace_bits...) ?
+> 
+> Yes, It looks like it fits perfectly, I think I can get rid of all the *_SHIFT
+> registers and simplify some of the functions below.
 
-On Sun, Nov 3, 2019 at 11:02 PM Maxime Ripard <mripard@kernel.org> wrote:
->
-> On Fri, Nov 01, 2019 at 07:42:55PM +0530, Jagan Teki wrote:
-> > Hi Maxime,
+I do love to see code being removed :).
+
+> 
+> > > +
+> > > +static u32 brcm_pcie_rd_fld(void __iomem *p, u32 mask, int shift)
+> > > +{
+> > > +	return (bcm_readl(p) & mask) >> shift;
+> > > +}
+> > > +
+> > > +static void brcm_pcie_wr_fld(void __iomem *p, u32 mask, int shift, u32 val)
+> > > +{
+> > > +	u32 reg = bcm_readl(p);
+> > > +
+> > > +	reg = (reg & ~mask) | ((val << shift) & mask);
+> > > +	bcm_writel(reg, p);
+> > > +}
+> > > +
+> > > +static void brcm_pcie_wr_fld_rb(void __iomem *p, u32 mask, int shift, u32
+> > > val)
+> > > +{
+> > > +	brcm_pcie_wr_fld(p, mask, shift, val);
+> > > +	(void)bcm_readl(p);
+> > > +}
+> > > +
+> 
+> [...]
+> 
+> > > +static void brcm_pcie_set_outbound_win(struct brcm_pcie *pcie,
+> > > +				       unsigned int win, phys_addr_t cpu_addr,
+> > > +				       dma_addr_t  pcie_addr, dma_addr_t size)
+> > > +{
+> > > +	phys_addr_t cpu_addr_mb, limit_addr_mb;
+> > > +	void __iomem *base = pcie->base;
+> > > +	u32 tmp;
+> > > +
+> > > +	/* Set the base of the pcie_addr window */
+> > > +	bcm_writel(lower_32_bits(pcie_addr) + MMIO_ENDIAN,
+> > > +		   base + PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO + (win * 8));
+> > > +	bcm_writel(upper_32_bits(pcie_addr),
+> > > +		   base + PCIE_MISC_CPU_2_PCIE_MEM_WIN0_HI + (win * 8));
+> > > +
+> > > +	cpu_addr_mb = cpu_addr >> 20;
+> > > +	limit_addr_mb = (cpu_addr + size - 1) >> 20;
+> > > +
+> > > +	/* Write the addr base low register */
+> > > +	WR_FLD_WITH_OFFSET(base, (win * 4),
+> > > +			   PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT,
+> > > +			   BASE, cpu_addr_mb);
+> > > +	/* Write the addr limit low register */
+> > > +	WR_FLD_WITH_OFFSET(base, (win * 4),
+> > > +			   PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT,
+> > > +			   LIMIT, limit_addr_mb);
+> > > +
+> > > +	/* Write the cpu addr high register */
+> > > +	tmp = (u32)(cpu_addr_mb >>
+> > > +		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_NUM_MASK_BITS);
+> > 
+> > Despite the name _MASK_BITS, this isn't being used as a mask. Is this making
+> > some assumption about the value of cpu_addr from the DT?
+> 
+> It should be read _NUM_MASK_BITS. It contains the number of set bits on that
+> specific mask. I agree it's not ideal. I think I'll be able to do away with it
+> using the bitfield.h macros.
+
+Also why do you have a define for
+PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_NUM_MASK_BITS but not the '20' shift
+used for the low registers?
+
+
+> 
+> FYI, What's happening here is that we have to save the CPU address range (which
+> is already shifted right 20 positions) in two parts, the lower 12 bits go into
+> PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT while the higher 8 bits go into
+> PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_HI or
+> PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LIMIT_HI.
+
+The hardware spec require bits 31:20 of the address, and the high registers
+require 39:32 right?
+
+(Apologies, the indirection by the WR_FLD_** macros easily confuses me. These
+type of macros are helpful, or rather would be if the whole kernel used them.
+I think they can add confusion when each driver has its own set of similar
+macros. This is why its *really* helpful to use any existing macros in the
+kernel - and only invent new ones if needed).
+
+
+> 
+> [...]
+> 
+> > > +static inline int brcm_pcie_get_rc_bar2_size_and_offset(struct brcm_pcie
+> > > *pcie,
+> > > +							u64 *rc_bar2_size,
+> > > +							u64 *rc_bar2_offset)
+> > > +{
+> > > +	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(pcie);
+> > > +	struct device *dev = pcie->dev;
+> > > +	struct resource_entry *entry;
+> > > +	u64 total_mem_size = 0;
+> > > +
+> > > +	*rc_bar2_offset = -1;
+> > > +
+> > > +	resource_list_for_each_entry(entry, &bridge->dma_ranges) {
+> > > +		/*
+> > > +		 * We're promised the RC will provide a contiguous view of
+> > > +		 * memory to downstream devices. We can then infer the
+> > > +		 * rc_bar2_offset from the lower available dma-range offset.
+> > > +		 */
+> > > +		if (entry->offset < *rc_bar2_offset)
+> > > +			*rc_bar2_offset = entry->offset;
+> > > +
+> > > +		total_mem_size += entry->res->end - entry->res->start + 1;
+> > 
+> > This requires that if there are multiple dma-ranges, then there are no gaps
+> > between them right?
+> 
+> Yes, the PCI view of inbound memory will always be gapless. See an example
+> here: https://patchwork.kernel.org/patch/10605957/
+
+Thanks for the reference. 
+
+
+> 
+> That said, iterating over the dma-ranges is not strictly necessary for now as
+> RPi4 is assured to only need one. If that's bothering you I can always remove
+> it for now.
+
+One purpose of this function is to validate that the information given in the
+device tree is valid - I've seen other feedback on these lists where the view
+is taken that 'it's not the job of the kernel to validate the DT'. Subscribing
+to this view would be a justification for removing this validation - especially
+given that the bindings you include have only one dma-range (in any case if
+there are constraints you ought to include them in the binding document).
+
+Though the problem with this point of view is that if the DT is wrong, it may
+be possible for the driver to work well enough to do some function but with
+some horrible side effects that are difficult to track down to a bad DT.
+
+If you assume the DT will only have one range (at least for the Pi) then this
+code will never be used and so can probably be removed.
+
+
+> 
+> [...]
+> 
+> > > +static int brcm_pcie_setup(struct brcm_pcie *pcie)
+> > > +{
+> > > +	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(pcie);
+> > > +	u64 rc_bar2_offset, rc_bar2_size;
+> > > +	void __iomem *base = pcie->base;
+> > > +	struct device *dev = pcie->dev;
+> > > +	struct resource_entry *entry;
+> > > +	unsigned int scb_size_val;
+> > > +	bool ssc_good = false;
+> > > +	struct resource *res;
+> > > +	int num_out_wins = 0;
+> > > +	u16 nlw, cls, lnksta;
+> > > +	int i, ret;
+> > > +	u32 tmp;
+> > > +
+> > > +	/* Reset the bridge */
+> > > +	brcm_pcie_bridge_sw_init_set(pcie, 1);
+> > > +
+> > > +	usleep_range(100, 200);
+> > > +
+> > > +	/* Take the bridge out of reset */
+> > > +	brcm_pcie_bridge_sw_init_set(pcie, 0);
+> > > +
+> > > +	WR_FLD_RB(base, PCIE_MISC_HARD_PCIE_HARD_DEBUG, SERDES_IDDQ, 0);
+> > > +	/* Wait for SerDes to be stable */
+> > > +	usleep_range(100, 200);
+> > > +
+> > > +	/* Set SCB_MAX_BURST_SIZE, CFG_READ_UR_MODE, SCB_ACCESS_EN */
+> > > +	tmp = INSERT_FIELD(0, PCIE_MISC_MISC_CTRL, SCB_ACCESS_EN, 1);
+> > > +	tmp = INSERT_FIELD(tmp, PCIE_MISC_MISC_CTRL, CFG_READ_UR_MODE, 1);
+> > > +	tmp = INSERT_FIELD(tmp, PCIE_MISC_MISC_CTRL, MAX_BURST_SIZE,
+> > > +			   BURST_SIZE_128);
+> > > +	bcm_writel(tmp, base + PCIE_MISC_MISC_CTRL);
+> > > +
+> > > +	ret = brcm_pcie_get_rc_bar2_size_and_offset(pcie, &rc_bar2_size,
+> > > +						    &rc_bar2_offset);
+> > > +	if (ret)
+> > > +		return ret;
+> > > +
+> > > +	tmp = lower_32_bits(rc_bar2_offset);
+> > > +	tmp = INSERT_FIELD(tmp, PCIE_MISC_RC_BAR2_CONFIG_LO, SIZE,
+> > > +			   brcm_pcie_encode_ibar_size(rc_bar2_size));
+> > > +	bcm_writel(tmp, base + PCIE_MISC_RC_BAR2_CONFIG_LO);
+> > > +	bcm_writel(upper_32_bits(rc_bar2_offset),
+> > > +		   base + PCIE_MISC_RC_BAR2_CONFIG_HI);
+> > > +
+> > > +	scb_size_val = rc_bar2_size ?
+> > > +		       ilog2(rc_bar2_size) - 15 : 0xf; /* 0xf is 1GB */
+> > > +	WR_FLD(base, PCIE_MISC_MISC_CTRL, SCB0_SIZE, scb_size_val);
+> > > +
+> > > +	/* disable the PCIe->GISB memory window (RC_BAR1) */
+> > > +	WR_FLD(base, PCIE_MISC_RC_BAR1_CONFIG_LO, SIZE, 0);
+> > > +
+> > > +	/* disable the PCIe->SCB memory window (RC_BAR3) */
+> > > +	WR_FLD(base, PCIE_MISC_RC_BAR3_CONFIG_LO, SIZE, 0);
+> > > +
+> > > +	/* clear any interrupts we find on boot */
+> > > +	bcm_writel(0xffffffff, base + PCIE_INTR2_CPU_BASE + CLR);
+> > > +	(void)bcm_readl(base + PCIE_INTR2_CPU_BASE + CLR);
+> > > +
+> > > +	/* Mask all interrupts since we are not handling any yet */
+> > > +	bcm_writel(0xffffffff, base + PCIE_INTR2_CPU_BASE + MASK_SET);
+> > > +	(void)bcm_readl(base + PCIE_INTR2_CPU_BASE + MASK_SET);
 > >
-> > On Tue, Oct 29, 2019 at 2:24 PM Maxime Ripard <mripard@kernel.org> wrote:
-> > >
-> > > On Tue, Oct 29, 2019 at 04:03:56AM +0530, Jagan Teki wrote:
-> > > > > > explicit handling of common clock would require since the A64
-> > > > > > doesn't need to mention the clock-names explicitly in dts since it
-> > > > > > support only one bus clock.
-> > > > > >
-> > > > > > Also pass clk_id NULL instead "bus" to regmap clock init function
-> > > > > > since the single clock variants no need to mention clock-names
-> > > > > > explicitly.
-> > > > >
-> > > > > You don't need explicit clock handling. Passing NULL as the argument
-> > > > > in regmap_init_mmio_clk will make it use the first clock, which is the
-> > > > > bus clock.
-> > > >
-> > > > Indeed I tried that, since NULL clk_id wouldn't enable the bus clock
-> > > > during regmap_mmio_gen_context code, passing NULL triggering vblank
-> > > > timeout.
-> > >
-> > > There's a bunch of users of NULL in tree, so finding out why NULL
-> > > doesn't work is the way forward.
-> >
-> > I'd have looked the some of the users before checking the code as
-> > well. As I said passing NULL clk_id to devm_regmap_init_mmio_clk =>
-> > __devm_regmap_init_mmio_clk would return before processing the clock.
-> >
-> > Here is the code snippet on the tree just to make sure I'm on the same
-> > page or not.
-> >
-> > static struct regmap_mmio_context *regmap_mmio_gen_context(struct device *dev,
-> >                                         const char *clk_id,
-> >                                         void __iomem *regs,
-> >                                         const struct regmap_config *config)
-> > {
-> >         -----------------------
-> >         --------------
-> >         if (clk_id == NULL)
-> >                 return ctx;
-> >
-> >         ctx->clk = clk_get(dev, clk_id);
-> >         if (IS_ERR(ctx->clk)) {
-> >                 ret = PTR_ERR(ctx->clk);
-> >                 goto err_free;
-> >         }
-> >
-> >         ret = clk_prepare(ctx->clk);
-> >         if (ret < 0) {
-> >                 clk_put(ctx->clk);
-> >                 goto err_free;
-> >         }
-> >         -------------
-> >         ---------------
-> > }
-> >
-> > Yes, I did check on the driver in the tree before committing explicit
-> > clock handle, which make similar requirements like us in [1]. this
-> > imx2 wdt driver is handling the explicit clock as well. I'm sure this
-> > driver is updated as I have seen few changes related to this driver in
-> > ML.
->
-> I guess we have two ways to go at this then.
->
-> Either we remove the return, but it might have a few side-effects, or
-> we call clk_get with NULL or bus depending on the case, and then call
-> regmap_mmio_attach_clk.
+> > Should you change the order and mask before clearing the interrupts?
+> 
+> Yes, agree.
+> 
+> > > +
+> > > +	if (pcie->gen)
+> > > +		brcm_pcie_set_gen(base, pcie->gen);
+> > > +
+> > > +	/* Unassert the fundamental reset */
+> > > +	brcm_pcie_perst_set(pcie, 0);
+> > > +
+> > > +	/*
+> > > +	 * Give the RC/EP time to wake up, before trying to configure RC.
+> > > +	 * Intermittently check status for link-up, up to a total of 100ms.
+> > > +	 */
+> > > +	for (i = 0; i < 100 && !brcm_pcie_link_up(pcie); i += 5)
+> > > +		msleep(5);
+> > > +
+> > > +	if (!brcm_pcie_link_up(pcie)) {
+> > > +		dev_info(dev, "link down\n");
+> > > +		return -ENODEV;
+> > > +	}
+> > > +
+> > > +	if (!brcm_pcie_rc_mode(pcie)) {
+> > > +		dev_err(dev, "PCIe misconfigured; is in EP mode\n");
+> > > +		return -EINVAL;
+> > > +	}
+> > > +
+> > > +	resource_list_for_each_entry(entry, &bridge->windows) {
+> > > +		res = entry->res;
+> > > +
+> > > +		if (resource_type(res) != IORESOURCE_MEM)
+> > > +			continue;
+> > > +
+> > > +		if (num_out_wins >= BRCM_NUM_PCIE_OUT_WINS) {
+> > > +			dev_err(pcie->dev, "too many outbound wins\n");
+> > > +			return -EINVAL;
+> > > +		}
+> > > +
+> > > +		brcm_pcie_set_outbound_win(pcie, num_out_wins, res->start,
+> > > +					   res->start - entry->offset,
+> > > +					   res->end - res->start + 1);
+> > > +		num_out_wins++;
+> > > +	}
+> > > +
+> > > +	/*
+> > > +	 * For config space accesses on the RC, show the right class for
+> > > +	 * a PCIe-PCIe bridge (the default setting is to be EP mode).
+> > > +	 */
+> > > +	WR_FLD_RB(base, PCIE_RC_CFG_PRIV1_ID_VAL3, CLASS_CODE, 0x060400);
+> > 
+> > Why does this need to be _RB ? I haven't looked at all of the uses of _RB
+> > though I think there are others that may not be necessary.
+> 
+> We're reviewing the _RB usage with Jim, I'll come back to you on that topic
+> later.
 
-Thanks for the inputs.
-
-Please have a look at this snippet, I have used your second
-suggestions. let me know if you have any comments?
-
-diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-index 8fa90cfc2ac8..91c95e56d870 100644
---- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-+++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-@@ -1109,24 +1109,36 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
-         return PTR_ERR(dsi->regulator);
-     }
-
--    dsi->regs = devm_regmap_init_mmio_clk(dev, "bus", base,
--                          &sun6i_dsi_regmap_config);
--    if (IS_ERR(dsi->regs)) {
--        dev_err(dev, "Couldn't create the DSI encoder regmap\n");
--        return PTR_ERR(dsi->regs);
--    }
--
-     dsi->reset = devm_reset_control_get_shared(dev, NULL);
-     if (IS_ERR(dsi->reset)) {
-         dev_err(dev, "Couldn't get our reset line\n");
-         return PTR_ERR(dsi->reset);
-     }
-
-+    dsi->regs = regmap_init_mmio(dev, base, &sun6i_dsi_regmap_config);
-+    if (IS_ERR(dsi->regs)) {
-+        dev_err(dev, "Couldn't init regmap\n");
-+        return PTR_ERR(dsi->regs);
-+    }
-+
-+    dsi->bus_clk = devm_clk_get(dev, NULL);
-+    if (IS_ERR(dsi->bus_clk)) {
-+        dev_err(dev, "Couldn't get the DSI bus clock\n");
-+        ret = PTR_ERR(dsi->bus_clk);
-+        goto err_regmap;
-+    } else {
-+        printk("Jagan.. Got the BUS clock\n");
-+        ret = regmap_mmio_attach_clk(dsi->regs, dsi->bus_clk);
-+        if (ret)
-+            goto err_bus_clk;
-+    }
-+
-     if (dsi->variant->has_mod_clk) {
-         dsi->mod_clk = devm_clk_get(dev, "mod");
-         if (IS_ERR(dsi->mod_clk)) {
-             dev_err(dev, "Couldn't get the DSI mod clock\n");
--            return PTR_ERR(dsi->mod_clk);
-+            ret = PTR_ERR(dsi->mod_clk);
-+            goto err_attach_clk;
-         }
-     }
-
-@@ -1167,6 +1179,14 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
- err_unprotect_clk:
-     if (dsi->variant->has_mod_clk)
-         clk_rate_exclusive_put(dsi->mod_clk);
-+err_attach_clk:
-+    if (!IS_ERR(dsi->bus_clk))
-+        regmap_mmio_detach_clk(dsi->regs);
-+err_bus_clk:
-+    if (!IS_ERR(dsi->bus_clk))
-+        clk_put(dsi->bus_clk);
-+err_regmap:
-+    regmap_exit(dsi->regs);
-     return ret;
- }
-
-@@ -1181,6 +1201,13 @@ static int sun6i_dsi_remove(struct platform_device *pdev)
-     if (dsi->variant->has_mod_clk)
-         clk_rate_exclusive_put(dsi->mod_clk);
-
-+    if (!IS_ERR(dsi->bus_clk)) {
-+        regmap_mmio_detach_clk(dsi->regs);
-+        clk_put(dsi->bus_clk);
-+    }
-+
-+    regmap_exit(dsi->regs);
-+
-     return 0;
- }
+Thanks.
 
 
-Jagan.
+> 
+> [...]
+> 
+> > > +	__brcm_pcie_remove(pcie);
+> > > +
+> > > +	return 0;
+> > > +}
+> > > +
+> > > +static const struct of_device_id brcm_pcie_match[] = {
+> > > +	{ .compatible = "brcm,bcm2711-pcie", .data = &bcm2711_cfg },
+> > 
+> > I'd rather see use of the pcie_cfg_data structure removed from this series.
+> > 
+> > I've seen the comments in the previous thread [1], and I understand that
+> > the intention is that this driver will eventually be used for other SOCs.
+> > 
+> > However this indirection isn't needed *now* and it makes reviewing this
+> > patch more difficult. If and when a later series is made to cover other
+> > SOCs - then I'd expect that series to find a way to apply this indirection.
+> > 
+> > And if that later series is more difficult to review because of the newly
+> > added indirection, then I'd expect an early patch of that series to apply
+> > the indirection in a single patch - which would be easy to review.
+> > 
+> > The other risk of such premature changes like this is that when you come
+> > to adding other SOCs, you may then discover that there were shortcomings
+> > in the way you've approached it here.
+> > 
+> 
+> I was about to make a point similar to Florian's. I'll wait for your reply and
+> change this accordingly.
+
+No problem.
+
+> 
+> > > +	{},
+> > > +};
+> > > +MODULE_DEVICE_TABLE(of, brcm_pcie_match);
+> > > +
+> > > +static int brcm_pcie_probe(struct platform_device *pdev)
+> > > +{
+> > > +	struct device_node *np = pdev->dev.of_node;
+> > > +	const struct pcie_cfg_data *data;
+> > > +	struct pci_host_bridge *bridge;
+> > > +	struct brcm_pcie *pcie;
+> > > +	struct pci_bus *child;
+> > > +	struct resource *res;
+> > > +	int ret;
+> > > +
+> > > +	bridge = devm_pci_alloc_host_bridge(&pdev->dev, sizeof(*pcie));
+> > > +	if (!bridge)
+> > > +		return -ENOMEM;
+> > > +
+> > > +	pcie = pci_host_bridge_priv(bridge);
+> > 
+> > Nit: I'd suggest moving the above line so it sits just above the
+> > "pcie->reg_offsets = data->offsets;" line. It looks nicer.
+> 
+> Ok
+> 
+> > > +
+> > > +	data = of_device_get_match_data(&pdev->dev);
+> > > +	if (!data) {
+> > > +		dev_err(&pdev->dev, "failed to look up compatible string\n");
+> > 
+> > Nit: If there is a failure here, it's probably because there is no data
+> > defined in the brcm_pcie_match structure - seeing as we wouldn't get here
+> > if we didn't have a compatible string. I'd suggest rewording the err slightly
+> > or even removing it.
+> 
+> Ok
+> 
+> [...]
+> 
+> > > +	},
+> > > +};
+> > > +
+> > > +module_platform_driver(brcm_pcie_driver);
+> > > +
+> > > +MODULE_LICENSE("GPL v2");
+> > 
+> > This is different to the SPDX at the start of the file (please see
+> > earlier review comments).
+> 
+> Ouch, yes, that fix got lost, It seems I even mentioned it on the changelog...
+
+:)
+
+Thanks,
+
+Andrew Murray
+
+> 
+> Thanks,
+> Nicolas
+> 
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
