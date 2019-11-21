@@ -2,62 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D88A104CB2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 08:37:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62987104CB7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 08:38:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vgc1jmnt6koXokwatb50ZYYDbm5HPitKYeVOY/ttpa0=; b=S69+7goIH05JKR
-	gFu9HKpp3medG44l4PT1MCgeqKT4LYIHfb2wYVGD6mNEINkaiTitvxwHushGbwpuZDx17I6WOublB
-	jU8tbdFgHkuvgSh8cl2smmsASjeIfAHd4oic5DGnQbRrQ4E+ZReITd4BOsZTGMHA6TudGynIVwORe
-	jKjlab4OccL32mnQI0cRxNyMl7NvYwruj2EXIZ1zciBAApeibZd07+fqe0LufSOg6+DFmXceZ8DpT
-	Gz2sX4fcGNg0k2LiPw/CcPoxuxfMwuq/IlAEK48N7smFDfQ4ysX/LJGH6/mYtK35SbFAgOypQELn7
-	h/aUGKVJEX8JcuwRueFA==;
+	List-Owner; bh=ItRcShNTynRnuDhFQlFud+cK460d9SSm66lYKFYLq50=; b=DXBsDZ8El75FGd
+	Rn+bbeaku3jRT3kLEzA7Ogdqixud8XUb9a6cr1K9TU2xrJn81NrSuh2uoVXd2NVN0Bf89u/gpK3BO
+	+XNQ6sFTvWl0pfx15i+bvUseZqkg9eR5Pr4k92LwdGeWis06pOiJcQmFxUd3sOG0kadGG5jnp94zQ
+	jzsqkCqq6M0j6jiZ+U+FzR7D11K3rIfVz4aEjPQ8i+6gzklZHvCyIimcjs0kD2LrdNK+HDYxtiLbs
+	pFkGy9JeW/8jXk6al7Rz67S3yhWdX+z7QDOR5FIEg2RcIAMrEwtFdmRv92qaydq1080VIi9gNxF8P
+	c9Ja2BqrGGRBQctwsAUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXh1W-0005yp-Op; Thu, 21 Nov 2019 07:37:06 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iXh2t-0006M8-Mn; Thu, 21 Nov 2019 07:38:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXh1L-0005xv-0e
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 07:36:57 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1iXh1E-0000NT-Go; Thu, 21 Nov 2019 08:36:48 +0100
-Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1iXh1D-0002Ow-69; Thu, 21 Nov 2019 08:36:47 +0100
-Date: Thu, 21 Nov 2019 08:36:47 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
-Subject: Re: [PATCH v7 5/8] pwm: sun4i: Add support to output source clock
- directly
-Message-ID: <20191121073647.phutknyb3tzp44ye@pengutronix.de>
-References: <20191119175319.16561-1-peron.clem@gmail.com>
- <20191119175319.16561-6-peron.clem@gmail.com>
+ id 1iXh2k-0006LZ-93
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 07:38:24 +0000
+Received: from mail-lj1-f171.google.com (mail-lj1-f171.google.com
+ [209.85.208.171])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 838A520898
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 Nov 2019 07:38:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574321901;
+ bh=iPaegC2Fc/YfqxXzQq+rKC4ut3oJhHjxsJHyhJOMr6o=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=Gxmr7hkqoqe4nozqTBM5oRmtM3cW053hJ1ImnHqQFqn1tLjOTuUcVPQFfefy/lrPK
+ yeX0TKfwGDSz3ZuemTTnDzyMNjNySRvpFCGcqHoF/ttJLxHAHrHwH889CiGd6tCK0Y
+ 3oa+LmP/JdwIg1SLH+4Bw3porGtIoT1wzexr5ExY=
+Received: by mail-lj1-f171.google.com with SMTP id y23so2025615ljh.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 23:38:21 -0800 (PST)
+X-Gm-Message-State: APjAAAWI1MVJ8lkNm/WVOvzFh5rRNnYpn/aEHZVPq/Ov+MB0TeKTSvmn
+ qIf7xvEN2MGEmS2T8qYlFxug6L269TVRYrX4nzs=
+X-Google-Smtp-Source: APXvYqzIZSww42wLMbKd99lnRiuy4DvVWuQlpvBLqdlbdGUmZM2j6BMEs6rEqORD0iP6Pis5OViGamvZ0Ari2qlGhoY=
+X-Received: by 2002:a2e:3009:: with SMTP id w9mr6359832ljw.74.1574321899606;
+ Wed, 20 Nov 2019 23:38:19 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191119175319.16561-6-peron.clem@gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <CGME20191121072643epcas2p452071a503725c7764acf5084d24425b1@epcas2p4.samsung.com>
+ <001001d5a03d$05de1f70$119a5e50$@samsung.com>
+In-Reply-To: <001001d5a03d$05de1f70$119a5e50$@samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Thu, 21 Nov 2019 15:38:08 +0800
+X-Gmail-Original-Message-ID: <CAJKOXPckbRowhCmnJfT8-DT3gYaTpDOf0wVxmxdf-tZpOyM5ew@mail.gmail.com>
+Message-ID: <CAJKOXPckbRowhCmnJfT8-DT3gYaTpDOf0wVxmxdf-tZpOyM5ew@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: samsung: modularize samsung pinctrl driver
+To: =?UTF-8?B?6rWs7ZiE6riw?= <hyunki00.koo@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_233655_058352_BD2E092F 
-X-CRM114-Status: GOOD (  27.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191120_233822_355923_29290E75 
+X-CRM114-Status: GOOD (  19.34  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,208 +86,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-pwm@vger.kernel.org,
- Jernej Skrabec <jernej.skrabec@siol.net>, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- kernel@pengutronix.de, Philipp Zabel <pza@pengutronix.de>,
+Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linus.walleij@linaro.org, Tomasz Figa <tomasz.figa@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-gpio@vger.kernel.org, s.nawrocki@samsung.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Cl=E9ment,
-
-On Tue, Nov 19, 2019 at 06:53:16PM +0100, Cl=E9ment P=E9ron wrote:
-> From: Jernej Skrabec <jernej.skrabec@siol.net>
-> =
-
-> PWM core has an option to bypass whole logic and output unchanged source
-> clock as PWM output. This is achieved by enabling bypass bit.
-> =
-
-> Note that when bypass is enabled, no other setting has any meaning, not
-> even enable bit.
-> =
-
-> This mode of operation is needed to achieve high enough frequency to
-> serve as clock source for AC200 chip which is integrated into same
-> package as H6 SoC.
-> =
-
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
-> ---
->  drivers/pwm/pwm-sun4i.c | 92 ++++++++++++++++++++++++++++-------------
->  1 file changed, 64 insertions(+), 28 deletions(-)
-> =
-
-> diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
-> index ce83d479ba0e..a1d8851b18f0 100644
-> --- a/drivers/pwm/pwm-sun4i.c
-> +++ b/drivers/pwm/pwm-sun4i.c
-> @@ -3,6 +3,10 @@
->   * Driver for Allwinner sun4i Pulse Width Modulation Controller
->   *
->   * Copyright (C) 2014 Alexandre Belloni <alexandre.belloni@free-electron=
-s.com>
-> + *
-> + * Limitations:
-> + * - When outputing the source clock directly, the PWM logic will be byp=
-assed
-> + *   and the currently running period is not guaranteed to be completed
->   */
->  =
-
->  #include <linux/bitops.h>
-> @@ -73,6 +77,7 @@ static const u32 prescaler_table[] =3D {
->  =
-
->  struct sun4i_pwm_data {
->  	bool has_prescaler_bypass;
-> +	bool has_direct_mod_clk_output;
->  	unsigned int npwm;
->  };
->  =
-
-> @@ -118,6 +123,20 @@ static void sun4i_pwm_get_state(struct pwm_chip *chi=
-p,
->  =
-
->  	val =3D sun4i_pwm_readl(sun4i_pwm, PWM_CTRL_REG);
->  =
-
-> +	/*
-> +	 * PWM chapter in H6 manual has a diagram which explains that if bypass
-> +	 * bit is set, no other setting has any meaning. Even more, experiment
-> +	 * proved that also enable bit is ignored in this case.
-> +	 */
-> +	if ((val & BIT_CH(PWM_BYPASS, pwm->hwpwm)) &&
-> +	    sun4i_pwm->data->has_direct_mod_clk_output) {
-> +		state->period =3D DIV_ROUND_UP_ULL(NSEC_PER_SEC, clk_rate);
-> +		state->duty_cycle =3D DIV_ROUND_UP_ULL(state->period, 2);
-> +		state->polarity =3D PWM_POLARITY_NORMAL;
-> +		state->enabled =3D true;
-> +		return;
-> +	}
-> +
->  	if ((PWM_REG_PRESCAL(val, pwm->hwpwm) =3D=3D PWM_PRESCAL_MASK) &&
->  	    sun4i_pwm->data->has_prescaler_bypass)
->  		prescaler =3D 1;
-> @@ -149,13 +168,23 @@ static void sun4i_pwm_get_state(struct pwm_chip *ch=
-ip,
->  =
-
->  static int sun4i_pwm_calculate(struct sun4i_pwm_chip *sun4i_pwm,
->  			       const struct pwm_state *state,
-> -			       u32 *dty, u32 *prd, unsigned int *prsclr)
-> +			       u32 *dty, u32 *prd, unsigned int *prsclr,
-> +			       bool *bypass)
->  {
->  	u64 clk_rate, div =3D 0;
->  	unsigned int pval, prescaler =3D 0;
->  =
-
->  	clk_rate =3D clk_get_rate(sun4i_pwm->clk);
->  =
-
-> +	*bypass =3D state->enabled &&
-> +		  (state->period * clk_rate >=3D NSEC_PER_SEC) &&
-> +		  (state->period * clk_rate < 2 * NSEC_PER_SEC) &&
-> +		  (state->duty_cycle * clk_rate * 2 >=3D NSEC_PER_SEC);
-> +
-> +	/* Skip calculation of other parameters if we bypass them */
-> +	if (*bypass && sun4i_pwm->data->has_direct_mod_clk_output)
-> +		return 0;
-> +
-
-Hmm, so if my PWM doesn't support the bypass bit *bypass might still be
-true on return of sun4i_pwm_calculate. It doesn't hurt because the value
-is only used after another check of has_direct_mod_clk_output, but still
-this is a bit confusing.
-
->  	if (sun4i_pwm->data->has_prescaler_bypass) {
->  		/* First, test without any prescaler when available */
->  		prescaler =3D PWM_PRESCAL_MASK;
-> @@ -202,10 +231,11 @@ static int sun4i_pwm_apply(struct pwm_chip *chip, s=
-truct pwm_device *pwm,
->  {
->  	struct sun4i_pwm_chip *sun4i_pwm =3D to_sun4i_pwm_chip(chip);
->  	struct pwm_state cstate;
-> -	u32 ctrl;
-> +	u32 ctrl, period, duty, val;
->  	int ret;
-> -	unsigned int delay_us;
-> +	unsigned int delay_us, prescaler;
->  	unsigned long now;
-> +	bool bypass;
->  =
-
->  	pwm_get_state(pwm, &cstate);
->  =
-
-> @@ -220,43 +250,48 @@ static int sun4i_pwm_apply(struct pwm_chip *chip, s=
-truct pwm_device *pwm,
->  	spin_lock(&sun4i_pwm->ctrl_lock);
->  	ctrl =3D sun4i_pwm_readl(sun4i_pwm, PWM_CTRL_REG);
->  =
-
-> -	if ((cstate.period !=3D state->period) ||
-> -	    (cstate.duty_cycle !=3D state->duty_cycle)) {
-> -		u32 period, duty, val;
-> -		unsigned int prescaler;
-> +	ret =3D sun4i_pwm_calculate(sun4i_pwm, state, &duty, &period, &prescale=
-r,
-> +				  &bypass);
-> +	if (ret) {
-> +		dev_err(chip->dev, "period exceeds the maximum value\n");
-> +		spin_unlock(&sun4i_pwm->ctrl_lock);
-> +		if (!cstate.enabled)
-> +			clk_disable_unprepare(sun4i_pwm->clk);
-> +		return ret;
-> +	}
->  =
-
-> -		ret =3D sun4i_pwm_calculate(sun4i_pwm, state,
-> -					  &duty, &period, &prescaler);
-> -		if (ret) {
-> -			dev_err(chip->dev, "period exceeds the maximum value\n");
-> -			spin_unlock(&sun4i_pwm->ctrl_lock);
-> -			if (!cstate.enabled)
-> -				clk_disable_unprepare(sun4i_pwm->clk);
-> -			return ret;
-
-This would be a bit easier to review if this commit was split into two
-patches. One that drops the check for cstate.period !=3D state->period etc
-(which otherwise is nearly empty when ignoring whitespace changes), and
-a second that then adds bypass support.
-
-
-> +	if (sun4i_pwm->data->has_direct_mod_clk_output) {
-> +		if (bypass) {
-> +			ctrl |=3D BIT_CH(PWM_BYPASS, pwm->hwpwm);
-> +			/* We can skip apply of other parameters */
-> +			goto bypass_mode;
-
-I would prefer to use goto only for error handling. Not sure if there is
-a nice way to do that.
-
-> +		} else {
-> +			ctrl &=3D ~BIT_CH(PWM_BYPASS, pwm->hwpwm);
->  		}
-> +	}
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpUaGFua3MgZm9yIHRoZSBwYXRjaC4gRmV3IGNvbW1lbnRzIGJlbG93OgoKT24gVGh1LCAy
+MSBOb3YgMjAxOSBhdCAxNToyNiwg6rWs7ZiE6riwIDxoeXVua2kwMC5rb29Ac2Ftc3VuZy5jb20+
+IHdyb3RlOgo+Cj4gRW5hYmxlIHNhbXN1bmcgcGluY3RybCBkcml2ZXIgdG8gYmUgY29tcGlsZWQg
+YXMgbW9kdWxlcy4KCldoeT8gV2hhdCdzIHRoZSBiZW5lZml0PyBBcmUgcGxhdGZvcm1zIGNhcGFi
+bGUgb2Ygc3VjaCBib290PyBQaW5jdHJsCmlzIG5lZWRlZCBlYXJseSAtIGV2ZW4gYmVmb3JlIG1v
+dW50aW5nIHJvb3Rmcy4uLgpXaGF0IGFib3V0IG1vZHVsZSB1bmxvYWRpbmc/IElzIGl0IHJlYXNv
+bmFibGU/ClBsZWFzZSBhbnN3ZXIgdG8gYWxsIHRoaXMgYWxzbyBpbiBjb21taXQgbWVzc2FnZS4K
+Cj4KPiBDaGFuZ2UtSWQ6IEk5MmE5OTUzYzkyODMxYTMxNmY3ZjUwMTQ2ODk4ZmYxOTgzMTU0OWVj
+CgpUaGlzIGRvZXMgbm90IGJlbG9uZyB0byBHaXQuCgo+IFNpZ25lZC1vZmYtYnk6IEh5dW5raSBL
+b28gPGh5dW5raTAwLmtvb0BzYW1zdW5nLmNvbT4KCllvdSAiRnJvbSIgbmFtZSBpcyBkaWZmZXJl
+bnQgdGhhbiB3cml0dGVuIGhlcmUgaW4gU2lnbmVkLW9mZi1ieS4gVGhleQpzaG91bGQgbWF0Y2gg
+YW5kIEkgZG8gbm90IGtub3cgS29yZWFuIHRvIGJlIGFibGUgdG8gdGVsbCB3aGV0aGVyIHRoZXkK
+cmVhbGx5IG1hdGNoIG9yIG5vdCA6KS4KSG93IGFib3V0IHVzaW5nIExhdGluIHRyYW5zbGl0ZXJh
+dGlvbiBhbHNvIGluICJGcm9tIiBmaWVsZD8KCj4gLS0tCj4gIGRyaXZlcnMvcGluY3RybC9zYW1z
+dW5nL0tjb25maWcgICAgICAgICAgICAgICAgfCAgNSArLS0tLQo+ICBkcml2ZXJzL3BpbmN0cmwv
+c2Ftc3VuZy9NYWtlZmlsZSAgICAgICAgICAgICAgIHwgMTMgKysrKysrKy0tLS0tLQo+ICBkcml2
+ZXJzL3BpbmN0cmwvc2Ftc3VuZy9waW5jdHJsLWV4eW5vcy1hcm0uYyAgIHwgIDIgKysKPiAgZHJp
+dmVycy9waW5jdHJsL3NhbXN1bmcvcGluY3RybC1leHlub3MtYXJtNjQuYyB8ICAyICsrCj4gIGRy
+aXZlcnMvcGluY3RybC9zYW1zdW5nL3BpbmN0cmwtZXh5bm9zLmMgICAgICAgfCAgMiArKwo+ICBk
+cml2ZXJzL3BpbmN0cmwvc2Ftc3VuZy9waW5jdHJsLXNhbXN1bmcuYyAgICAgIHwgMTMgKysrKysr
+KysrKysrKwo+ICA2IGZpbGVzIGNoYW5nZWQsIDI3IGluc2VydGlvbnMoKyksIDEwIGRlbGV0aW9u
+cygtKQo+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGluY3RybC9zYW1zdW5nL0tjb25maWcKPiBi
+L2RyaXZlcnMvcGluY3RybC9zYW1zdW5nL0tjb25maWcKPiBpbmRleCA0MjVmYWRkNmMzNDYuLjI1
+ZTE2OTg0ZWYyMyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BpbmN0cmwvc2Ftc3VuZy9LY29uZmln
+Cj4gKysrIGIvZHJpdmVycy9waW5jdHJsL3NhbXN1bmcvS2NvbmZpZwo+IEBAIC0zLDE0ICszLDEz
+IEBACj4gICMgU2Ftc3VuZyBQaW4gY29udHJvbCBkcml2ZXJzCj4gICMKPiAgY29uZmlnIFBJTkNU
+UkxfU0FNU1VORwo+IC0gICAgICAgYm9vbAo+ICsgICAgICAgdHJpc3RhdGUgIlBpbmN0cmwgZHJp
+dmVyIGRhdGEgZm9yIFNhbXN1bmcgU29DcyIKPiAgICAgICAgIHNlbGVjdCBQSU5NVVgKPiAgICAg
+ICAgIHNlbGVjdCBQSU5DT05GCj4KPiAgY29uZmlnIFBJTkNUUkxfRVhZTk9TCj4gICAgICAgICBi
+b29sICJQaW5jdHJsIGRyaXZlciBkYXRhIGZvciBTYW1zdW5nIEVYWU5PUyBTb0NzIgo+ICAgICAg
+ICAgZGVwZW5kcyBvbiBPRiAmJiBHUElPTElCICYmIChBUkNIX0VYWU5PUyB8fCBBUkNIX1M1UFYy
+MTApCj4gLSAgICAgICBzZWxlY3QgUElOQ1RSTF9TQU1TVU5HCj4gICAgICAgICBzZWxlY3QgUElO
+Q1RSTF9FWFlOT1NfQVJNIGlmIEFSTSAmJiAoQVJDSF9FWFlOT1MgfHwgQVJDSF9TNVBWMjEwKQo+
+ICAgICAgICAgc2VsZWN0IFBJTkNUUkxfRVhZTk9TX0FSTTY0IGlmIEFSTTY0ICYmIEFSQ0hfRVhZ
+Tk9TCj4KPiBAQCAtMjUsOSArMjQsNyBAQCBjb25maWcgUElOQ1RSTF9FWFlOT1NfQVJNNjQKPiAg
+Y29uZmlnIFBJTkNUUkxfUzNDMjRYWAo+ICAgICAgICAgYm9vbCAiU2Ftc3VuZyBTM0MyNFhYIFNv
+QyBwaW5jdHJsIGRyaXZlciIKPiAgICAgICAgIGRlcGVuZHMgb24gQVJDSF9TM0MyNFhYICYmIE9G
+Cj4gLSAgICAgICBzZWxlY3QgUElOQ1RSTF9TQU1TVU5HCj4KPiAgY29uZmlnIFBJTkNUUkxfUzND
+NjRYWAo+ICAgICAgICAgYm9vbCAiU2Ftc3VuZyBTM0M2NFhYIFNvQyBwaW5jdHJsIGRyaXZlciIK
+PiAgICAgICAgIGRlcGVuZHMgb24gQVJDSF9TM0M2NFhYCj4gLSAgICAgICBzZWxlY3QgUElOQ1RS
+TF9TQU1TVU5HCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGluY3RybC9zYW1zdW5nL01ha2VmaWxl
+Cj4gYi9kcml2ZXJzL3BpbmN0cmwvc2Ftc3VuZy9NYWtlZmlsZQo+IGluZGV4IGVkOTUxZGY2YTEx
+Mi4uYjNhYzAxODM4YjhhIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGluY3RybC9zYW1zdW5nL01h
+a2VmaWxlCj4gKysrIGIvZHJpdmVycy9waW5jdHJsL3NhbXN1bmcvTWFrZWZpbGUKPiBAQCAtMSw5
+ICsxLDEwIEBACj4gICMgU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAKPiAgIyBTYW1z
+dW5nIHBpbiBjb250cm9sIGRyaXZlcnMKPgo+IC1vYmotJChDT05GSUdfUElOQ1RSTF9TQU1TVU5H
+KSAgKz0gcGluY3RybC1zYW1zdW5nLm8KPiAtb2JqLSQoQ09ORklHX1BJTkNUUkxfRVhZTk9TKSAg
+ICs9IHBpbmN0cmwtZXh5bm9zLm8KPiAtb2JqLSQoQ09ORklHX1BJTkNUUkxfRVhZTk9TX0FSTSkg
+ICAgICAgKz0gcGluY3RybC1leHlub3MtYXJtLm8KPiAtb2JqLSQoQ09ORklHX1BJTkNUUkxfRVhZ
+Tk9TX0FSTTY0KSAgICAgKz0gcGluY3RybC1leHlub3MtYXJtNjQubwo+IC1vYmotJChDT05GSUdf
+UElOQ1RSTF9TM0MyNFhYKSAgKz0gcGluY3RybC1zM2MyNHh4Lm8KPiAtb2JqLSQoQ09ORklHX1BJ
+TkNUUkxfUzNDNjRYWCkgICs9IHBpbmN0cmwtczNjNjR4eC5vCj4gK29iai0kKENPTkZJR19QSU5D
+VFJMX1NBTVNVTkcpICArPSBwaW5jdHJsLXNhbXN1bmctc3VwZXIubwo+ICtwaW5jdHJsLXNhbXN1
+bmctc3VwZXItJChDT05GSUdfUElOQ1RSTF9TQU1TVU5HKSAgICAgICAgKz0gcGluY3RybC1zYW1z
+dW5nLm8KPiArcGluY3RybC1zYW1zdW5nLXN1cGVyLSQoQ09ORklHX1BJTkNUUkxfRVhZTk9TKSAr
+PSBwaW5jdHJsLWV4eW5vcy5vCj4gK3BpbmN0cmwtc2Ftc3VuZy1zdXBlci0kKENPTkZJR19QSU5D
+VFJMX0VYWU5PU19BUk0pICAgICArPSBwaW5jdHJsLWV4eW5vcy0KPiBhcm0ubwo+ICtwaW5jdHJs
+LXNhbXN1bmctc3VwZXItJChDT05GSUdfUElOQ1RSTF9FWFlOT1NfQVJNNjQpICAgKz0gcGluY3Ry
+bC1leHlub3MtCj4gYXJtNjQubwo+ICtwaW5jdHJsLXNhbXN1bmctc3VwZXItJChDT05GSUdfUElO
+Q1RSTF9TM0MyNFhYKSAgICAgICAgKz0gcGluY3RybC1zM2MyNHh4Lm8KPiArcGluY3RybC1zYW1z
+dW5nLXN1cGVyLSQoQ09ORklHX1BJTkNUUkxfUzNDNjRYWCkgICAgICAgICs9IHBpbmN0cmwtczNj
+NjR4eC5vCgpJIGRvbid0IGdldCB3aHkgeW91IG5lZWQgdG8gcmVuYW1lIG9iaiB0byBwaW5jdHJs
+LXNhbXN1bmctc3VwZXI/Cgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BpbmN0cmwvc2Ftc3VuZy9w
+aW5jdHJsLWV4eW5vcy1hcm0uYwo+IGIvZHJpdmVycy9waW5jdHJsL3NhbXN1bmcvcGluY3RybC1l
+eHlub3MtYXJtLmMKPiBpbmRleCA4NWRkZjQ5YTUxODguLjI4OTA2YmYyMTNjNCAxMDA2NDQKPiAt
+LS0gYS9kcml2ZXJzL3BpbmN0cmwvc2Ftc3VuZy9waW5jdHJsLWV4eW5vcy1hcm0uYwo+ICsrKyBi
+L2RyaXZlcnMvcGluY3RybC9zYW1zdW5nL3BpbmN0cmwtZXh5bm9zLWFybS5jCj4gQEAgLTE0LDYg
+KzE0LDcgQEAKPiAgLy8gZXh0ZXJuYWwgZ3BpbyBhbmQgd2FrZXVwIGludGVycnVwdCBzdXBwb3J0
+Lgo+Cj4gICNpbmNsdWRlIDxsaW51eC9kZXZpY2UuaD4KPiArI2luY2x1ZGUgPGxpbnV4L21vZHVs
+ZS5oPgo+ICAjaW5jbHVkZSA8bGludXgvb2ZfYWRkcmVzcy5oPgo+ICAjaW5jbHVkZSA8bGludXgv
+c2xhYi5oPgo+ICAjaW5jbHVkZSA8bGludXgvZXJyLmg+Cj4gQEAgLTg5MSwzICs4OTIsNCBAQCBj
+b25zdCBzdHJ1Y3Qgc2Ftc3VuZ19waW5jdHJsX29mX21hdGNoX2RhdGEKPiBleHlub3M1NDIwX29m
+X2RhdGEgX19pbml0Y29uc3QgPSB7Cj4gICAgICAgICAuY3RybCAgICAgICAgICAgPSBleHlub3M1
+NDIwX3Bpbl9jdHJsLAo+ICAgICAgICAgLm51bV9jdHJsICAgICAgID0gQVJSQVlfU0laRShleHlu
+b3M1NDIwX3Bpbl9jdHJsKSwKPiAgfTsKPiArTU9EVUxFX0xJQ0VOU0UoIkdQTCIpOwo+IGRpZmYg
+LS1naXQgYS9kcml2ZXJzL3BpbmN0cmwvc2Ftc3VuZy9waW5jdHJsLWV4eW5vcy1hcm02NC5jCj4g
+Yi9kcml2ZXJzL3BpbmN0cmwvc2Ftc3VuZy9waW5jdHJsLWV4eW5vcy1hcm02NC5jCj4gaW5kZXgg
+YjZlNTY0MjJhNzAwLi4yYjE5NDc2YWQ1ZmYgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waW5jdHJs
+L3NhbXN1bmcvcGluY3RybC1leHlub3MtYXJtNjQuYwo+ICsrKyBiL2RyaXZlcnMvcGluY3RybC9z
+YW1zdW5nL3BpbmN0cmwtZXh5bm9zLWFybTY0LmMKPiBAQCAtMTQsNiArMTQsNyBAQAo+ICAvLyBl
+eHRlcm5hbCBncGlvIGFuZCB3YWtldXAgaW50ZXJydXB0IHN1cHBvcnQuCj4KPiAgI2luY2x1ZGUg
+PGxpbnV4L3NsYWIuaD4KPiArI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgo+ICAjaW5jbHVkZSA8
+bGludXgvc29jL3NhbXN1bmcvZXh5bm9zLXJlZ3MtcG11Lmg+Cj4KPiAgI2luY2x1ZGUgInBpbmN0
+cmwtc2Ftc3VuZy5oIgo+IEBAIC00MjIsMyArNDIzLDQgQEAgY29uc3Qgc3RydWN0IHNhbXN1bmdf
+cGluY3RybF9vZl9tYXRjaF9kYXRhCj4gZXh5bm9zN19vZl9kYXRhIF9faW5pdGNvbnN0ID0gewo+
+ICAgICAgICAgLmN0cmwgICAgICAgICAgID0gZXh5bm9zN19waW5fY3RybCwKPiAgICAgICAgIC5u
+dW1fY3RybCAgICAgICA9IEFSUkFZX1NJWkUoZXh5bm9zN19waW5fY3RybCksCj4gIH07Cj4gK01P
+RFVMRV9MSUNFTlNFKCJHUEwiKTsKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waW5jdHJsL3NhbXN1
+bmcvcGluY3RybC1leHlub3MuYwo+IGIvZHJpdmVycy9waW5jdHJsL3NhbXN1bmcvcGluY3RybC1l
+eHlub3MuYwo+IGluZGV4IGViYzI3YjA2NzE4Yy4uNjMwZDYwNjMzMGYxIDEwMDY0NAo+IC0tLSBh
+L2RyaXZlcnMvcGluY3RybC9zYW1zdW5nL3BpbmN0cmwtZXh5bm9zLmMKPiArKysgYi9kcml2ZXJz
+L3BpbmN0cmwvc2Ftc3VuZy9waW5jdHJsLWV4eW5vcy5jCj4gQEAgLTE4LDYgKzE4LDcgQEAKPiAg
+I2luY2x1ZGUgPGxpbnV4L2lycWRvbWFpbi5oPgo+ICAjaW5jbHVkZSA8bGludXgvaXJxLmg+Cj4g
+ICNpbmNsdWRlIDxsaW51eC9pcnFjaGlwL2NoYWluZWRfaXJxLmg+Cj4gKyNpbmNsdWRlIDxsaW51
+eC9tb2R1bGUuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L29mLmg+Cj4gICNpbmNsdWRlIDxsaW51eC9v
+Zl9pcnEuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L3NsYWIuaD4KPiBAQCAtNzEzLDMgKzcxNCw0IEBA
+IGV4eW5vc19yZXRlbnRpb25faW5pdChzdHJ1Y3Qgc2Ftc3VuZ19waW5jdHJsX2Rydl9kYXRhCj4g
+KmRydmRhdGEsCj4KPiAgICAgICAgIHJldHVybiBjdHJsOwo+ICB9Cj4gK01PRFVMRV9MSUNFTlNF
+KCJHUEwiKTsKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waW5jdHJsL3NhbXN1bmcvcGluY3RybC1z
+YW1zdW5nLmMKPiBiL2RyaXZlcnMvcGluY3RybC9zYW1zdW5nL3BpbmN0cmwtc2Ftc3VuZy5jCj4g
+aW5kZXggZGUwNDc3YmI0NjlkLi40NDgzZWFlZDI3ZjggMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9w
+aW5jdHJsL3NhbXN1bmcvcGluY3RybC1zYW1zdW5nLmMKPiArKysgYi9kcml2ZXJzL3BpbmN0cmwv
+c2Ftc3VuZy9waW5jdHJsLXNhbXN1bmcuYwo+IEBAIC0xNSw2ICsxNSw3IEBACj4gIC8vIGJ1dCBw
+cm92aWRlcyBleHRlbnNpb25zIHRvIHdoaWNoIHBsYXRmb3JtIHNwZWNpZmljIGltcGxlbWVudGF0
+aW9uIG9mCj4gdGhlIGdwaW8KPiAgLy8gYW5kIHdha2V1cCBpbnRlcnJ1cHRzIGNhbiBiZSBob29r
+ZWQgdG8uCj4KPiArI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgo+ICAjaW5jbHVkZSA8bGludXgv
+aW5pdC5oPgo+ICAjaW5jbHVkZSA8bGludXgvcGxhdGZvcm1fZGV2aWNlLmg+Cj4gICNpbmNsdWRl
+IDxsaW51eC9pby5oPgo+IEBAIC0xMjc1LDYgKzEyNzYsNyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0
+IG9mX2RldmljZV9pZAo+IHNhbXN1bmdfcGluY3RybF9kdF9tYXRjaFtdID0gewo+ICAjZW5kaWYK
+PiAgICAgICAgIHt9LAo+ICB9Owo+ICtNT0RVTEVfREVWSUNFX1RBQkxFKG9mLCBzYW1zdW5nX3Bp
+bmN0cmxfZHRfbWF0Y2gpOwo+Cj4gIHN0YXRpYyBjb25zdCBzdHJ1Y3QgZGV2X3BtX29wcyBzYW1z
+dW5nX3BpbmN0cmxfcG1fb3BzID0gewo+ICAgICAgICAgU0VUX0xBVEVfU1lTVEVNX1NMRUVQX1BN
+X09QUyhzYW1zdW5nX3BpbmN0cmxfc3VzcGVuZCwKPiBAQCAtMTI5NiwzICsxMjk4LDE0IEBAIHN0
+YXRpYyBpbnQgX19pbml0IHNhbXN1bmdfcGluY3RybF9kcnZfcmVnaXN0ZXIodm9pZCkKPiAgICAg
+ICAgIHJldHVybiBwbGF0Zm9ybV9kcml2ZXJfcmVnaXN0ZXIoJnNhbXN1bmdfcGluY3RybF9kcml2
+ZXIpOwo+ICB9Cj4gIHBvc3Rjb3JlX2luaXRjYWxsKHNhbXN1bmdfcGluY3RybF9kcnZfcmVnaXN0
+ZXIpOwo+ICsKPiArc3RhdGljIHZvaWQgX19leGl0IHNhbXN1bmdfcGluY3RybF9kcnZfdW5yZWdp
+c3Rlcih2b2lkKQo+ICt7Cj4gKyAgICAgICBwbGF0Zm9ybV9kcml2ZXJfdW5yZWdpc3Rlcigmc2Ft
+c3VuZ19waW5jdHJsX2RyaXZlcik7Cj4gK30KPiArbW9kdWxlX2V4aXQoc2Ftc3VuZ19waW5jdHJs
+X2Rydl91bnJlZ2lzdGVyKTsKClNpbmNlIC5zdXBwcmVzc19iaW5kX2F0dHJzIGFyZSBkZWZpbmVk
+LCBJIGZpbmQgaXQgd2VpcmQgdG8gYmUgYWJsZSB0bwp1bmxvYWQgbW9kdWxlLi4uIEFub3RoZXIg
+d2FybmluZyBzaWduLi4uCgo+ICsKPiArCj4gK01PRFVMRV9MSUNFTlNFKCJHUEwiKTsKPiArTU9E
+VUxFX0FVVEhPUigiSHl1bmtpIEtvbyA8aHl1bmtpMDAua29vQHNhbXN1bmcuY29tPiIpOwoKSSBj
+YW5ub3QgZmluZCBhbnkgY29udHJpYnV0aW9ucyB0byB0aGlzIGZpbGUgZnJvbSB5b3UuIFRoZSBh
+dXRob3IKc2hvdWxkIGJlIHRoZSBtYWluIGNvbnRyaWJ1dG9yKHMpLiBZb3UgbmVlZCB0byBnbyB0
+aHJvdWdoIGhpc3RvcnkuLi4KCj4gK01PRFVMRV9ERVNDUklQVElPTigiU2Ftc3VuZyBFeHlub3Mg
+UElOQ1RSTCBkcml2ZXIiKTsKClRoYXQncyBub3QgRXh5bm9zIGJ1dCBTYW1zdW5nLWdlbmVyaWMg
+cGFydC4uLiBTYW1zdW5nIEV4eW5vcy9TM0MvUzVQCnBpbmN0cmwgZHJpdmVyLgoKQmVzdCByZWdh
+cmRzLApLcnp5c3p0b2YKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
