@@ -2,114 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CF0F1052C7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 14:18:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DC0D1052E0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 14:25:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MEKjOEyaDHPY/XDmmZ4knjjei3yYUsxIS9jmDKo87RY=; b=D/iB5S+TtLkiEx
-	WH/ivhQuARhUKxSim4bptqL0TvX+mb/fgNTOC1FPv9EE/dZynGN1QaxhbI2pSmcSENMavNhhvNUPi
-	EkCIaXLD0S9iSUybfJr5+2utpefhkA9rTyhOdLTFzlR5J4dsXA5HO6tUJNoumk0ZqOWSWS3OSZY1M
-	ZwI78j3dynMPbHcFC5MgdthMTnMR9W/w98wAlHHr/ptP8/tKVbw521UX6QCwqzk0NH64FOjmGQBBM
-	zraO14F7cyHmMz8PXpJGU0sSHdB3gRjLzWytohzTpo0exPVuju5F9M3Xuy7nv/jt3f06B73DaQ08O
-	RAzP2YLqJEX3cyYyInEA==;
+	List-Owner; bh=LNZXTI14RplLOn1VhPMNkNKSN4InY3F8tb0aQvHhQFo=; b=Ao8E84t/wYJDLC
+	6ro8GNGCvkpqZCLTfUvCcueD1q+AMxrPzpqxezASjfsO0ToE/ncWJadx03TWmvUoYtligtiyE0LiR
+	sB6nbtBwHLhRkMSUUASO87MkuZPcZrkjKYj7S+Kggaojsc5rM15zZEbKxbwc8O/mYgp2/HPRrEFVO
+	RschPkgjT+CKUvU/azizDn7Md361o6IizjTY8dvHxAFD7WekWH5aUum47aPD4XzohhI430oruKXm9
+	lFxuXt6VR2l3iPMirC8LozsryYVHqJasDSQUiyDEFzsx4w02JqDojw8hR8zmjNx39O63/wB76tE3i
+	gTrTgAIdMC9TdfVnkRkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXmLd-0003WU-CH; Thu, 21 Nov 2019 13:18:13 +0000
-Received: from mail-ve1eur03on0619.outbound.protection.outlook.com
- ([2a01:111:f400:fe09::619]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1iXmSo-00074n-Bq; Thu, 21 Nov 2019 13:25:38 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXmLS-0003VD-2C
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 13:18:03 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FCCUv1DIDmeKK33jsP+duzwaHUhstuic69YXRnA/pnAceSZrfd+VmmMyv0XChha3ctIzxEGcadVQCn6oefaeTWddTUKczXMWUQliefZlpeDd2U98abGCj9jyxy93cf2BtqiupdLoe5KsRhbrxY+0EoovgA1ngg09Se06eFeljXil8Ai1dlZYWcyhwZTZZ1+VqXu7aH5sqplS8D1XP7ny5eZ6FcDiDdPY3F/A9H7/8Ur9b+/+8k0/Vlu/oQ1kWogI3azxSSTIXaMPkEipO3S8yFILp4lSpNsuHfPL8CctWnDl1VYv1OImOlgOqGSOzUfJPweEFTK4ZFLl3dows3RyzA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Y8u5WdKeS+Yrj17twzYNd+76zhENkQ6yYY/9IW8Rzpc=;
- b=ONiPVFTq3yP4EzovA6P3QUZzpBzKcDBMzEkfojuO8SskijkXHRftGLRmSt4oxzuvYtG7leO4ZlEKUCHIFskDE+2pp536jUHavNxsPZO0Rpz7yG2xmELLOS/kpDyJPe4dbAVAL+elJ0ETA5RKfPHF137jFtVGbfOzw4IG8BYJC46Ez1KG1AlvBgI8d9C+zqEzDA2enQeV8GngR8dZUkYPymQTFxyGVoXwzeW+8RdAAkeQvhDUP5uuZElpD0bQai/3HxEOZHhrvGMe3gvg3BMxBRtQEYQA5HJclI1Ckwwnk6m9esEc4on1dcSZv+BGaUH2XEVL3CZ0Smf7EaGnIjImOA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Y8u5WdKeS+Yrj17twzYNd+76zhENkQ6yYY/9IW8Rzpc=;
- b=KUQ2ibsUanvO/zpyFCHGPRFpQwdr6oiC3VuwdfRCujyeBkgb5reIDhsrc3bsuIrmkdH6AsPSM9ZPA96pmR1ZpzkG8mgIOGnBuFe6q6gWSCOsviorSLotFSz8uflfHho+W8yhRTCGpicXxAeLiQhEjICZ7J1aKupxhu5zrX7jWvM=
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (20.179.232.15) by
- VE1PR04MB6656.eurprd04.prod.outlook.com (20.179.235.95) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2474.19; Thu, 21 Nov 2019 13:17:56 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::9d97:4f81:f35d:6254]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::9d97:4f81:f35d:6254%7]) with mapi id 15.20.2474.019; Thu, 21 Nov 2019
- 13:17:56 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: robin <robin@protonic.nl>, Marco Felsch <m.felsch@pengutronix.de>
-Subject: RE: [PATCH v3] input: keyboard: snvs_pwrkey: Send key events for
- i.MX6 S, DL and Q
-Thread-Topic: [PATCH v3] input: keyboard: snvs_pwrkey: Send key events for
- i.MX6 S, DL and Q
-Thread-Index: AQHVYulGitMh2z9280mHPSfJdecGJqcohyAAgAC9Y4CABLkHYIABC+qAgGU6RoCAAHaxAIABWKEg
-Date: Thu, 21 Nov 2019 13:17:56 +0000
-Message-ID: <VE1PR04MB6638D79F8C929100F6D96479894E0@VE1PR04MB6638.eurprd04.prod.outlook.com>
-References: <20190904062329.97520-1-robin@protonic.nl>
- <20190912201300.GA636@penguin> <803592d161b9ca75d6ac1c2c54e891a1@protonic.nl>
- <VE1PR04MB663896B94C68B5EF9AE0BE36898C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20190916233701.GH237523@dtor-ws>
- <20191120092749.7rru5fj7eybs4tl6@pengutronix.de>
- <fb98fa1fde9a367d7ab33d04a5804684@protonic.nl>
-In-Reply-To: <fb98fa1fde9a367d7ab33d04a5804684@protonic.nl>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yibin.gong@nxp.com; 
-x-originating-ip: [101.86.226.36]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 341cc5e6-6b9a-4309-bbfd-08d76e853926
-x-ms-traffictypediagnostic: VE1PR04MB6656:
-x-microsoft-antispam-prvs: <VE1PR04MB6656663C3DBC587D9250E099894E0@VE1PR04MB6656.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3968;
-x-forefront-prvs: 0228DDDDD7
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(39860400002)(346002)(376002)(366004)(396003)(189003)(199004)(26005)(66066001)(3846002)(76176011)(229853002)(102836004)(9686003)(53546011)(86362001)(6116002)(6506007)(6436002)(305945005)(11346002)(66946007)(76116006)(14444005)(66556008)(64756008)(2906002)(256004)(74316002)(66446008)(446003)(8676002)(8936002)(81156014)(81166006)(66476007)(7736002)(25786009)(52536014)(14454004)(7696005)(186003)(55016002)(54906003)(316002)(110136005)(99286004)(71190400001)(6246003)(5660300002)(4326008)(33656002)(478600001)(4001150100001)(71200400001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6656;
- H:VE1PR04MB6638.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: h9JylEDCiRkl+6xmU/WRTa1/VCfj1jmr7WY4H05FHNkrnZc/AB4eyESsKNGn73Ge9TKiXB9y43Gr8LhVkhbnp4NlsFcnkzVTv+Mk8Gx43p+o8QQ85PkJT/CMqcB+oQOn0/Hpvbjikx1nvEk98EpdyIqxgCcu17j5mJsZbFCxVRDKGsfzWBiYn9S1f33Wi1qxon4DiLaocf+qUcDumEkUgUEdhhOn9ZgEkRqDQ0ECbV50Etm9S7UBtDWRPR97C+EiLww2gPlHIySxInFn0zYoujVbyHkuoUjgKJUug6UDBe268CUKKcnjZZfKmgd9Negx/y98Ch5lBIsHqH3hpSeGp0nZ1OdV9jKvIWSnllpt5A8IAAjlS11I9kOoSVdZjvsddIc4fkRrfCNi29/Pgxg7JSYyIm2EwDqPs0xSs8GPym4D0jJJQjWZFjUuAZd4CesH
-x-ms-exchange-transport-forked: True
+ id 1iXmSf-00074A-6s
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 13:25:31 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xALDCOaQ028876; Thu, 21 Nov 2019 14:25:23 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=date : from : to : cc :
+ subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=STMicroelectronics;
+ bh=DoNIRUtg9Ai4n2wMU0B5Cw16DDKiy+ePYSe96gK6rPY=;
+ b=RVAjiu9Uxqm29T4dYh+nBH63LRGUtc330x+RVjIaXpO+btCeXY7e0lPWroiClduZOjcK
+ lULTbeK7GSHRY12YB3h4xDXC5wl2jqXe6UA7gMwnL8sypw9Ai/GLhfAL9qHU+XfYO8IF
+ pHCnJcXfuLkvq1xbgy2cQUzjX5JGPY3Jo6LZk/fph2yhjAuQPWWg1Gg2nR9Cil33ZiWG
+ G5D/zbmTL8Vy3LraAXlw67u37IYKLq9ERcQDL/vMNuSl04ZRuw+Zp9OIMKaJ3kfNSR/P
+ NtRkKMd5NtwXctIQ852aDc6S5Af+MBKf+TqdcR8pC4Zc4PjBl01BzH7HaE3JtOpAuDW8 Rw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2wa9uvkuyb-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 21 Nov 2019 14:25:23 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 5164A100039;
+ Thu, 21 Nov 2019 14:25:22 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3300C2BF9BF;
+ Thu, 21 Nov 2019 14:25:22 +0100 (CET)
+Received: from gnbcxd0016.gnb.st.com (10.75.127.44) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 21 Nov
+ 2019 14:25:21 +0100
+Date: Thu, 21 Nov 2019 14:25:16 +0100
+From: Alain Volmat <alain.volmat@st.com>
+To: Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH] dt-bindings: i2c: stm32: Migrate i2c-stm32 documentation
+ to yaml
+Message-ID: <20191121132516.GA28157@gnbcxd0016.gnb.st.com>
+Mail-Followup-To: Rob Herring <robh+dt@kernel.org>,
+ Wolfram Sang <wsa@the-dreams.de>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Pierre Yves MORDRET <pierre-yves.mordret@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ Linux I2C <linux-i2c@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, 
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Fabrice GASNIER <fabrice.gasnier@st.com>
+References: <1574257423-26754-1-git-send-email-alain.volmat@st.com>
+ <CAL_Jsq+3GzLW7_hi56VFHT-V_LMv5g_K=x9ExGx0Xf6Hn_HR3Q@mail.gmail.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 341cc5e6-6b9a-4309-bbfd-08d76e853926
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Nov 2019 13:17:56.2091 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 9t3qQvQIjKsTRurJeT1WoB4H7iok+vcv69EhB/dJL0ZMpAil9aapB4ckV2q6OQdyUGGv9nFfOtfSdIsvKd3vKg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6656
+Content-Disposition: inline
+In-Reply-To: <CAL_Jsq+3GzLW7_hi56VFHT-V_LMv5g_K=x9ExGx0Xf6Hn_HR3Q@mail.gmail.com>
+X-Disclaimer: ce message est personnel / this message is private
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-21_02:2019-11-21,2019-11-21 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_051802_113506_2B5BE921 
-X-CRM114-Status: GOOD (  20.35  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191121_052529_613131_D2C5F2AF 
+X-CRM114-Status: GOOD (  28.61  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe09:0:0:0:619 listed in]
- [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -117,7 +100,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,88 +111,308 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- "linux-kernel @ vger . kernel . org" <linux-kernel@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, "linux-input @ vger . kernel
- . org" <linux-input@vger.kernel.org>, Adam Ford <aford173@gmail.com>,
- "linux-arm-kernel @ lists . infradead . org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Alexandre TORGUE <alexandre.torgue@st.com>, Wolfram Sang <wsa@the-dreams.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Pierre Yves MORDRET <pierre-yves.mordret@st.com>,
+ Linux I2C <linux-i2c@vger.kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Fabrice GASNIER <fabrice.gasnier@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, "moderated list:ARM/FREESCALE IMX
+ / MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Nov 20, 2019 at 05:53:37PM +0000, Rob Herring wrote:
+> On Wed, Nov 20, 2019 at 7:43 AM Alain Volmat <alain.volmat@st.com> wrote:
+> >
+> > The document was migrated to Yaml format and renamed st,stm32-i2c.yaml
+> >
+> > Signed-off-by: Alain Volmat <alain.volmat@st.com>
+> > ---
+> >  .../devicetree/bindings/i2c/i2c-stm32.txt          |  65 ---------
+> >  .../devicetree/bindings/i2c/st,stm32-i2c.yaml      | 157 +++++++++++++++++++++
+> >  2 files changed, 157 insertions(+), 65 deletions(-)
+> >  delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-stm32.txt
+> >  create mode 100644 Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml
+> >
+> > diff --git a/Documentation/devicetree/bindings/i2c/i2c-stm32.txt b/Documentation/devicetree/bindings/i2c/i2c-stm32.txt
+> > deleted file mode 100644
+> > index ce3df2fff6c8..000000000000
+> > --- a/Documentation/devicetree/bindings/i2c/i2c-stm32.txt
+> > +++ /dev/null
+> > @@ -1,65 +0,0 @@
+> > -* I2C controller embedded in STMicroelectronics STM32 I2C platform
+> > -
+> > -Required properties:
+> > -- compatible: Must be one of the following
+> > -  - "st,stm32f4-i2c"
+> > -  - "st,stm32f7-i2c"
+> > -- reg: Offset and length of the register set for the device
+> > -- interrupts: Must contain the interrupt id for I2C event and then the
+> > -  interrupt id for I2C error.
+> > -- resets: Must contain the phandle to the reset controller.
+> > -- clocks: Must contain the input clock of the I2C instance.
+> > -- A pinctrl state named "default" must be defined to set pins in mode of
+> > -  operation for I2C transfer
+> > -- #address-cells = <1>;
+> > -- #size-cells = <0>;
+> > -
+> > -Optional properties:
+> > -- clock-frequency: Desired I2C bus clock frequency in Hz. If not specified,
+> > -  the default 100 kHz frequency will be used.
+> > -  For STM32F4 SoC Standard-mode and Fast-mode are supported, possible values are
+> > -  100000 and 400000.
+> > -  For STM32F7, STM32H7 and STM32MP1 SoCs, Standard-mode, Fast-mode and Fast-mode
+> > -  Plus are supported, possible values are 100000, 400000 and 1000000.
+> > -- dmas: List of phandles to rx and tx DMA channels. Refer to stm32-dma.txt.
+> > -- dma-names: List of dma names. Valid names are: "rx" and "tx".
+> > -- i2c-scl-rising-time-ns: I2C SCL Rising time for the board (default: 25)
+> > -  For STM32F7, STM32H7 and STM32MP1 only.
+> > -- i2c-scl-falling-time-ns: I2C SCL Falling time for the board (default: 10)
+> > -  For STM32F7, STM32H7 and STM32MP1 only.
+> > -  I2C Timings are derived from these 2 values
+> > -- st,syscfg-fmp: Use to set Fast Mode Plus bit within SYSCFG when Fast Mode
+> > -  Plus speed is selected by slave.
+> > -       1st cell: phandle to syscfg
+> > -       2nd cell: register offset within SYSCFG
+> > -       3rd cell: register bitmask for FMP bit
+> > -  For STM32F7, STM32H7 and STM32MP1 only.
+> > -
+> > -Example:
+> > -
+> > -       i2c@40005400 {
+> > -               compatible = "st,stm32f4-i2c";
+> > -               #address-cells = <1>;
+> > -               #size-cells = <0>;
+> > -               reg = <0x40005400 0x400>;
+> > -               interrupts = <31>,
+> > -                            <32>;
+> > -               resets = <&rcc 277>;
+> > -               clocks = <&rcc 0 149>;
+> > -               pinctrl-0 = <&i2c1_sda_pin>, <&i2c1_scl_pin>;
+> > -               pinctrl-names = "default";
+> > -       };
+> > -
+> > -       i2c@40005400 {
+> > -               compatible = "st,stm32f7-i2c";
+> > -               #address-cells = <1>;
+> > -               #size-cells = <0>;
+> > -               reg = <0x40005400 0x400>;
+> > -               interrupts = <31>,
+> > -                            <32>;
+> > -               resets = <&rcc STM32F7_APB1_RESET(I2C1)>;
+> > -               clocks = <&rcc 1 CLK_I2C1>;
+> > -               pinctrl-0 = <&i2c1_sda_pin>, <&i2c1_scl_pin>;
+> > -               pinctrl-names = "default";
+> > -               st,syscfg-fmp = <&syscfg 0x4 0x1>;
+> > -       };
+> > diff --git a/Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml b/Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml
+> > new file mode 100644
+> > index 000000000000..0f51a6ed0e9b
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml
+> > @@ -0,0 +1,157 @@
+> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/i2c/st,stm32-i2c.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: I2C controller embedded in STMicroelectronics STM32 I2C platform
+> > +
+> > +maintainers:
+> > +  - Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
+> > +
+> > +allOf:
+> > +  - $ref: /schemas/i2c/i2c-controller.yaml#
+> > +  - if:
+> > +      properties:
+> > +        compatible:
+> > +          contains:
+> > +            enum:
+> > +              - st,stm32f7-i2c
+> > +    then:
+> > +      properties:
+> > +        i2c-scl-rising-time-ns:
+> > +          description: I2C SCL Rising time for the board
+> > +          $ref: /schemas/types.yaml#/definitions/uint32
+> > +          default: 25
+> > +
+> > +        i2c-scl-falling-time-ns:
+> > +          description: I2C SCL Falling time for the board
+> > +          $ref: /schemas/types.yaml#/definitions/uint32
+> 
+> These 2 should be added to i2c-controller.yaml and just the default
+> defined here.
 
-On 2019-11-21 0:33, robin <robin@protonic.nl> wrote:
-> On 2019-11-20 10:27, Marco Felsch wrote:
-> > Hi Robin,
+Pull-request on the dt-schema git sent in order to add those two properties
+into the i2c-controller.yaml
+
+Patch v2 to come regarding other points.
+
+> 
+> > +          default: 10
+> > +
+> > +  - if:
+> > +      properties:
+> > +        compatible:
+> > +          contains:
+> > +            enum:
+> > +              - st,stm32f4-i2c
+> > +    then:
+> > +      properties:
+> > +        clock-frequency:
+> > +          description: Desired I2C bus clock frequency in Hz. If not specified,
+> > +                       the default 100 kHz frequency will be used.
+> > +                       For STM32F4 SoC Standard-mode and Fast-mode are
+> > +                       supported, possible values are 100000 and 400000.
+> > +          default: 100000
+> > +          enum: [100000, 400000]
+> > +    else:
+> > +      properties:
+> > +        clock-frequency:
+> > +          description: Desired I2C bus clock frequency in Hz. If not specified,
+> > +                       the default 100 kHz frequency will be used.
+> > +                       For STM32F7, STM32H7 and STM32MP1 SoCs, Standard-mode,
+> > +                       Fast-mode and Fast-mode Plus are supported, possible
+> > +                       values are 100000, 400000 and 1000000.
+> > +          default: 100000
+> > +          enum: [100000, 400000, 1000000]
+> 
+> Move this to main 'properties'. Then the one in the 'then' clause just
+> needs the enum.
+> 
+> > +
+> > +        st,syscfg-fmp:
+> > +          $ref: "/schemas/types.yaml#/definitions/phandle-array"
+> 
+> Won't work. You have to do:
+> 
+> allOf:
+>   - $ref: ...
+> 
+> > +          description: Use to set Fast Mode Plus bit within SYSCFG when
+> > +                       Fast Mode Plus speed is selected by slave. Should be
+> > +                       phandle/offset/mask
+> > +          items:
+> > +            - description: phandle to syscfg
+> > +            - description: register offset within syscfg
+> > +            - description: register bitmask for FMP bit
+> 
+> Wouldn't this make more sense in the first if rather than the 'else' clause?
+> 
+> > +
+> > +properties:
+> > +  compatible:
+> > +    enum:
+> > +      - st,stm32f4-i2c
+> > +      - st,stm32f7-i2c
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  interrupts:
+> > +    maxItems: 2
+> 
+> Implied by items length.
+> 
+> > +    items:
+> > +      - description: interrupt ID for I2C event
+> > +      - description: interrupt ID for I2C error
+> > +
+> > +  resets:
+> > +    maxItems: 1
+> > +
+> > +  clocks:
+> > +    maxItems: 1
+> > +
+> > +  dmas:
+> > +    items:
+> > +      - description: RX DMA Channel phandle
+> > +      - description: TX DMA Channel phandle
+> > +    minItems: 2
+> > +    maxItems: 2
+> 
+> Implied by items length.
+> 
+> > +
+> > +  dma-names:
+> > +    items:
+> > +      - const: rx
+> > +      - const: tx
+> > +    minItems: 2
+> > +    maxItems: 2
+> 
+> Implied by items length.
+> 
+> > +
+> > +required:
+> > +  - compatible
+> 
+> > +  - '#address-cells'
+> > +  - '#size-cells'
+> 
+> Can drop. i2c-controller.yaml makes them required.
+> 
+> > +  - reg
+> > +  - interrupts
+> > +  - resets
+> > +  - clocks
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/mfd/stm32f7-rcc.h>
+> > +    #include <dt-bindings/clock/stm32fx-clock.h>
+> > +    //Example 1 (with st,stm32f4-i2c compatible)
+> > +      i2c@40005400 {
+> > +          compatible = "st,stm32f4-i2c";
+> > +          #address-cells = <1>;
+> > +          #size-cells = <0>;
+> > +          reg = <0x40005400 0x400>;
+> > +          interrupts = <31>,
+> > +                       <32>;
+> > +          resets = <&rcc 277>;
+> > +          clocks = <&rcc 0 149>;
+> > +      };
+> > +
+> > +    //Example 2 (with st,stm32f7-i2c compatible)
+> > +      i2c@40005800 {
+> > +          compatible = "st,stm32f7-i2c";
+> > +          #address-cells = <1>;
+> > +          #size-cells = <0>;
+> > +          reg = <0x40005800 0x400>;
+> > +          interrupts = <31>,
+> > +                       <32>;
+> > +          resets = <&rcc STM32F7_APB1_RESET(I2C1)>;
+> > +          clocks = <&rcc 1 CLK_I2C1>;
+> > +      };
+> > +
+> > +    //Example 3 (with st,stm32f7-i2c compatible on stm32mp)
+> > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> > +    #include <dt-bindings/clock/stm32mp1-clks.h>
+> > +    #include <dt-bindings/reset/stm32mp1-resets.h>
+> > +      i2c@40013000 {
+> > +          compatible = "st,stm32f7-i2c";
+> > +          #address-cells = <1>;
+> > +          #size-cells = <0>;
+> > +          reg = <0x40013000 0x400>;
+> > +          interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>,
+> > +                       <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+> > +          clocks = <&rcc I2C2_K>;
+> > +          resets = <&rcc I2C2_R>;
+> > +          i2c-scl-rising-time-ns = <185>;
+> > +          i2c-scl-falling-time-ns = <20>;
+> > +          st,syscfg-fmp = <&syscfg 0x4 0x2>;
+> > +      };
+> > +...
+> > --
+> > 2.7.4
 > >
-> > On 19-09-16 16:37, Dmitry Torokhov wrote:
-> >> On Mon, Sep 16, 2019 at 07:45:37AM +0000, Robin Gong wrote:
-> >> > On 2019/9/13 15:31 robin <robin@protonic.nl> wrote:>
-> >> > > Hi Dmitry,
-> >> > >
-> >> > > On 2019-09-12 22:13, Dmitry Torokhov wrote:
-> >> > > > Hi Robin,
-> >> > > >
-> >> > > > On Wed, Sep 04, 2019 at 06:23:29AM +0000, Robin van der Gracht
-> wrote:
-> >> > > >> The first generation i.MX6 processors does not send an
-> >> > > >> interrupt when the power key is pressed. It sends a power down
-> >> > > >> request interrupt if the key is released before a hard
-> >> > > >> shutdown (5 second press). This should allow software to bring down
-> the SoC safely.
-> >> > > >>
-> >> > > >> For this driver to work as a regular power key with the older
-> >> > > >> SoCs, we need to send a keypress AND release when we get the
-> >> > > >> power down request irq.
-> >> > > >>
-> >> > > >> Signed-off-by: Robin van der Gracht <robin@protonic.nl>
-> >> > > >> ---
-> >> > > >> @@ -67,13 +83,17 @@ static irqreturn_t
-> >> > > >> imx_snvs_pwrkey_interrupt(int irq, void *dev_id)  {
-> >> > > >>  	struct platform_device *pdev = dev_id;
-> >> > > >>  	struct pwrkey_drv_data *pdata = platform_get_drvdata(pdev);
-> >> > > >> +	unsigned long expire = jiffies;
-> >> > > >>  	u32 lp_status;
-> >> > > >>
-> >> > > >>  	pm_wakeup_event(pdata->input->dev.parent, 0);
-> >> > > >>
-> >> > > >>  	regmap_read(pdata->snvs, SNVS_LPSR_REG, &lp_status);
-> >> > > >> -	if (lp_status & SNVS_LPSR_SPO)
-> >> > > >> -		mod_timer(&pdata->check_timer, jiffies +
-> >> > > >> msecs_to_jiffies(DEBOUNCE_TIME));
-> >> > > >> +	if (lp_status & SNVS_LPSR_SPO) {
-> >> > > >> +		if (pdata->minor_rev > 0)
-> >> > > >> +			expire = jiffies + msecs_to_jiffies(DEBOUNCE_TIME);
-> >> > > >> +		mod_timer(&pdata->check_timer, expire);
-> >> > > >
-> >> > > > Why do we even need to fire the timer in case of the first
-> >> > > > generation hardware? Just send press and release events directly from
-> the ISR.
-> >> > That timer looks like a software debounce to prevent unexpected and
-> >> > meaningless interrupt/event caused by quick press/release.
-> >>
-> >> Right, but in case of the first generation hardware we schedule the
-> >> timer immediately (expire == 0) and do not check state of the
-> >> hardware in the timer handler, but rather simply emit down/up events,
-> >> so we do not really get any benefit from the timer (again, I am
-> >> talking about first generation hardware only).
-> >
-> > Did you prepared a v4? Just ask to avoid a duplicated work :)
-> 
-> No I haven't. Not sure what the public wants. Use timer, don't use timer..
-> 
-> v3 has had long term testing though ;)
-Sorry for that I miss the mail.
-Understood a little bit confusion about immediate timer for
-the first press, just stand on the view of clean code shape.
-But I'm okay if you prefer to remove timer in the first interrupt
-generation.
-> 
-> Regards,
-> Robin van der Gracht
 
 _______________________________________________
 linux-arm-kernel mailing list
