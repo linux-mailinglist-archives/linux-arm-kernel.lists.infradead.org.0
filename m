@@ -2,67 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C913F1054C4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 15:44:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 748051054EF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 15:58:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2XG6Kbltqo47CBmDW0uZtexV1msvyY9vxwZIWCAq+Fs=; b=dz7fKVnlIw7Wla
-	B/saiJCUzXPuj0eKSkuVxaMek3axqmfwtq56WKxTvIoGtsvyJJ1rVw59phdrfHacj9OnNbVta3WZp
-	94ZizJ1+29bDFYol8nq1LKp2FpdCzRSRywveKSpKBeYwpmsAr9L/boUofhKZWAf28K7a0rxHuunBM
-	D35CMv2uFsZEDpCMU2G3IlojYYjtyIW209ArC4BTeHpzEESalv1T6mqh2N5/DqN3kJaddtIWMv6ce
-	VLHqr4JtRtfcwJwQyNbCgTdhDtlyGXZVEA7lf801cjsqOkqWvM8VB8DERRGBVwBoBw15vO3uGgJSM
-	rY0d4DAXLDTS/2koqiTQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zmspjV9PmjavBKhqzisvfUh/L0MA9wD2Jto6q+Ojoak=; b=qE2+U/ZGfTlLSg
+	QWpHXPbIC8Eg62HSWNuOkQdYIUoXOK2B+DTwCxai6DjbAKdr/AvqpLtxvOq5zGqjtvnEAcKwiQWyl
+	b6vwQX1Rh5H7PxChmD/2xyhiPKXrlZWp2kPsv7YR7ZQg4o4ay+Atw0FMPhcjotpbyJN1K+E9KkH2F
+	Wn2yC6n61lFN+jDCeg32np1YuCxV7o1eFNxgH5AIxnj8Vl665xpmtCwMXfpRvhmvuUgEmgtISAFia
+	cEyEWU0/H7rsU6ugxWkRmGvf0dOJyTR35E8Py0u+hBKff7zMEFZ0s7+ICzkAznsTFf1pPOyV8UQiz
+	wdKrWJnv4ClWBwfO3a8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXnh2-0006AU-9w; Thu, 21 Nov 2019 14:44:24 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iXnug-0002Xq-Oe; Thu, 21 Nov 2019 14:58:30 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXngs-00069i-1L
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 14:44:16 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0AA80206B6;
- Thu, 21 Nov 2019 14:44:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574347453;
- bh=1Qk5HeJMxRAqIMfETtKX9MkDQlQjopSGtDl5zCocUT8=;
- h=Date:From:To:Cc:Subject:From;
- b=PfWCmFp5fy5zWJFIF3HdDpyRz/FwjHFC2Bm6yqOOrhcVXjiZXGslTVG5IppnOemXD
- 2hWwaxLgFjuvf3FXd2tgl35gUoZF4cgqAyw3eS1JD8qEk7EczZ4hE0Cu1+Xsk8PwE2
- svwg3VP2o+HeZBc0dyWaRZy3m0pt7Hk7IaD1cVZI=
-Date: Thu, 21 Nov 2019 14:44:08 +0000
-From: Will Deacon <will@kernel.org>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] arm64: Another fix for 5.4
-Message-ID: <20191121144408.GA3751@willie-the-truck>
+ id 1iXnuX-0002Wy-3M
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 14:58:22 +0000
+Received: by mail-ot1-f66.google.com with SMTP id m15so3153454otq.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 Nov 2019 06:58:17 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=7EIsUYwJkB766iLScM9zDv7o8KxiAB6USuY8ETmVybU=;
+ b=h3IjWxSCXZuNZWotbGYfYvvoEEem0PJgiEXETpfseLRJtGKQjG7lpMNviwIW3avFZo
+ P2Ji7U0f2fRYjWwZw24yg5/dpYqBCS8u0B6uC5mswQcotIIQZ/dLGo6Yli+OkEpvntR3
+ 9SaN/rlwPItMyyh+FjP+qgsB6c61I0047MQVEfUTsMKytcu/6l/T563ogTgjHQDaNUvD
+ xdFXUxtXvlCeybB3GYsMJyZi4j7reHtSoG7LZTfAlvR4pPpA+62xPC5vIS7de2AGbd6h
+ xYjlrKAdNRgic5QDocRjOxkEvq4BONIuxn2rFpL4AvTrnNq9kqtJJGFHTZHjGSvS+L8P
+ Ineg==
+X-Gm-Message-State: APjAAAX75y78iC/yzD+SVZLPhFIWM7NeXWlfyaipTMcDg3UQLPpa2HaG
+ CFpQ+6mYjK2x3WEE9GLpzw==
+X-Google-Smtp-Source: APXvYqzCaXK7A81tARs+0Mx+z8Ukzrqn/rzZHEMewuSJwm726s/GHLxW8FN20eTgJW6E10YMzqCV4g==
+X-Received: by 2002:a9d:7399:: with SMTP id j25mr7203672otk.155.1574348296793; 
+ Thu, 21 Nov 2019 06:58:16 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id n5sm957812oie.16.2019.11.21.06.58.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 21 Nov 2019 06:58:15 -0800 (PST)
+Date: Thu, 21 Nov 2019 08:58:15 -0600
+From: Rob Herring <robh@kernel.org>
+To: Arnaud Pouliquen <arnaud.pouliquen@st.com>
+Subject: Re: [PATCH v2] dt-bindings: remoteproc: convert stm32-rproc to
+ json-schema
+Message-ID: <20191121145815.GA4284@bogus>
+References: <20191121095225.26775-1-arnaud.pouliquen@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <20191121095225.26775-1-arnaud.pouliquen@st.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_064414_695158_FBE49A37 
-X-CRM114-Status: GOOD (  12.30  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191121_065821_140752_1C67CCD9 
+X-CRM114-Status: GOOD (  10.42  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,80 +92,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM Kernel Mailing List <linux-arm-kernel@lists.infradead.org>,
- gregkh@linuxfoundation.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>, linux-kernel@vger.kernel.org,
+ Fabien Dessenne <fabien.dessenne@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+On Thu, 21 Nov 2019 10:52:25 +0100, Arnaud Pouliquen wrote:
+> Convert the STM32 remoteproc bindings to DT schema format using
+> json-schema
+> 
+> Signed-off-by: Arnaud Pouliquen <arnaud.pouliquen@st.com>
+> ---
+>  .../bindings/remoteproc/st,stm32-rproc.yaml   | 131 ++++++++++++++++++
+>  .../bindings/remoteproc/stm32-rproc.txt       |  63 ---------
+>  2 files changed, 131 insertions(+), 63 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/remoteproc/st,stm32-rproc.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/remoteproc/stm32-rproc.txt
+> 
 
-After I thought we were done for 5.4, we had a report this week of a nasty
-issue that has been shown to leak data between different user address spaces
-thanks to corruption of entries in the TLB. In hindsight, we should have
-spotted this in review when the PAN code was merged back in v4.3, but
-hindsight is 20/20 and I'm trying not to beat myself up too much about it
-despite being fairly miserable.
+Applied, thanks.
 
-Anyway, the fix is "obvious" but the actual failure is more more subtle,
-and is described in the commit message. I've included a fairly mechanical
-follow-up patch here as well, which moves this checking out into the C
-wrappers which is what we do for {get,put}_user() already and allows us
-to remove these bloody assembly macros entirely. The patches have passed
-kernelci [1] [2] [3] and CKI [4] tests over night, as well as some
-targetted testing [5] for this particular issue.
-
-The first patch is tagged for stable and should be applied to 4.14, 4.19
-and 5.3. I have separate backports for 4.4 and 4.9, which I'll send out
-once this has landed in your tree (although the original patch applies
-cleanly, it won't build for those two trees).
-
-Thanks to Pavel Tatashin for reporting this and Mark Rutland for helping
-to diagnose the issue and review/test the solution. Please pull.
-
-Will
-
-[1] https://lore.kernel.org/lkml/5dd5f064.1c69fb81.5e209.59cf@mx.google.com
-[2] https://lore.kernel.org/lkml/5dd5faae.1c69fb81.9bfcb.6f62@mx.google.com
-[3] https://lore.kernel.org/lkml/5dd5fab1.1c69fb81.22bb5.755e@mx.google.com
-[4] https://lore.kernel.org/lkml/cki.1CBC43ABCD.523Q7TUX64@redhat.com
-[5] https://lore.kernel.org/lkml/CA+CK2bCX+QGMPzhjj-UmVNb1jG8Z6WNW=L0GiVsTpGrhyqb9tA@mail.gmail.com
-
---->8
-
-The following changes since commit 65e1f38d9a2f07d4b81f369864c105880e47bd5a:
-
-  scripts/tools-support-relr.sh: un-quote variables (2019-11-13 10:52:05 +0000)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
-
-for you to fetch changes up to e50be648aaa3da196d4f4ed49d1c5d4ec105fa4a:
-
-  arm64: uaccess: Remove uaccess_*_not_uao asm macros (2019-11-20 18:51:54 +0000)
-
-----------------------------------------------------------------
-arm64 fix for 5.4
-
-- Ensure PAN is re-enabled following user fault in uaccess routines
-
-----------------------------------------------------------------
-Pavel Tatashin (2):
-      arm64: uaccess: Ensure PAN is re-enabled after unhandled uaccess fault
-      arm64: uaccess: Remove uaccess_*_not_uao asm macros
-
- arch/arm64/include/asm/asm-uaccess.h | 17 -----------------
- arch/arm64/include/asm/uaccess.h     | 27 ++++++++++++++++++++++-----
- arch/arm64/lib/clear_user.S          |  2 --
- arch/arm64/lib/copy_from_user.S      |  2 --
- arch/arm64/lib/copy_in_user.S        |  2 --
- arch/arm64/lib/copy_to_user.S        |  2 --
- arch/arm64/lib/uaccess_flushcache.c  |  6 +++++-
- 7 files changed, 27 insertions(+), 31 deletions(-)
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
