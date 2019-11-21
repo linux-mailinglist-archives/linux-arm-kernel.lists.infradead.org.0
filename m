@@ -2,89 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3C571048B8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 03:47:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D70C61048C0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 03:53:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=08wNbjCZB2B9j5/j2J/fPDHpDuZS9z3dKlE7qX0t81M=; b=Kn/wxAqDbZlDvK
-	YA/5ooMGRTA/RBOFCNoogtCl5k6o/8ukxyWEyzF+0cGZ1NxNXQdLsvP0KVc3AMLktnIGV3edSa5It
-	UxT5TobBdG4C4dAbmkxyfVIa+PWqtte8VkJYXxcQPMcc83/LEr9zOPHOebgsqVveuv5j4a1ZuFsET
-	CWYkHlnzyxByBvNTsqx4cEjV4atvi7BihLjFiHaUYQ5UpWcQp+OGQDg2yHD2DWY2+EmCZBylk0jOP
-	XDOPnWUmgGHcoH1VoEbZ9n82hWqBZP9wnwd87/UL6Fkyl08D5w/I/5DxkgR8xY5e+Mp9/Zh5vcUA+
-	Imikejz7ZJmHAKOzpovQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u8bA60PqS56ul+pXpq1U71TzkeTZGhHIwbsDju5WDjw=; b=fYEX/gA9qVTucw
+	DqySA3+RhI4aIqEToY4+5NKBSAF2nTBj+Uo6b94Wn3ue3ALMLCMBryaFXKzM5IV5JedKl+Z/xcEqW
+	t6t3Oy2dOiepoGrpiZ38qF+YTtK3zw0D5vq+r7/a5LYiNc9OIWiYb/KoX7JpKvmjX8WKkXF/RnN3d
+	yRTyaLPHEOvnXe1ZufxSSPcKoir0D6Nfy9pz4U/MdabaBax/Xu5xEoRukU3gnc85i21fx/UEwcRIw
+	CqnZs7+s3mwtCWiLlUsGXBJvsSFdu1vRLddddf76Ez3xHjtNxXB76aXsPm1ZrqXGnHkS68dFrDYsw
+	uW8QGM/l/qTfA0eYn1rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXcVN-00015X-VJ; Thu, 21 Nov 2019 02:47:37 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1iXcah-0003AE-Bz; Thu, 21 Nov 2019 02:53:07 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXcV1-0000yV-B8
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 02:47:16 +0000
-Received: by mail-wm1-x331.google.com with SMTP id b11so1950562wmb.5
+ id 1iXcaT-000395-WB
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 02:53:00 +0000
+Received: by mail-qk1-x744.google.com with SMTP id m16so1779436qki.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 18:47:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernelci-org.20150623.gappssmtp.com; s=20150623;
- h=message-id:date:mime-version:content-transfer-encoding:subject:to
- :from; bh=+6eDPzNOmUZnpKRhr82Z1Yi7FQEr5PDk4pLX2pBFhEw=;
- b=LPSjM1GB12sCMGOzEva9j9MPYic1wBTib5Xkay/LyRWbw4QKAkygMUtWsgQs9wN1zU
- gVIwMVq3NqiSkIEmbi3zWtqUgxwfBnTOXoieo7Qp0NOltvoE1EyEj2/VsNBd1vkvr5FK
- aO+RmY2Fo4aQ8SaMlAzZuPO0IAwaKsouC3mo98ysIm3rlS1cxbNdcfBW8BlMZyfKtZKn
- IgxbsXBDMS16VKvBcKscL8Sm7xe9GR8t5fratLM1O1SrsOvV+PqovC908GMnby8BDzq7
- iAPlX/m3H3WsxSeRhXg2Kz67mIiFcakrMdR4ZhOl+7LOlfy9/R91g96ASvcUzrwimvkE
- tC5A==
+ Wed, 20 Nov 2019 18:52:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=HRBpb1NofTDSzn/r03yAMNZB5b+BCFqizd3KS9TU4pA=;
+ b=eM8XKCwLiBTrYDBgxBsRw2BnAmazqG7Yh6EbctgrhhDT/VkJWtpyd4I0jgafYvddrh
+ D66QjPZTHqlc9/T9Pq6r+XndN0ChjvCNCAbtD1ti+CxMAcIA0x8gA/v8a9/8DxOw6uTh
+ MX6B2lo/1ZzdCXW7YoJyaVCv3hhhg1OJvwgSQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:mime-version
- :content-transfer-encoding:subject:to:from;
- bh=+6eDPzNOmUZnpKRhr82Z1Yi7FQEr5PDk4pLX2pBFhEw=;
- b=tuDy/M2QQg2j912hknw20mMIjgTC7jZIhOCpYpv45keCc7zQX6ER0C9uNYlfvjULzp
- v9CA/kiQpLkgJT7C2t1PHTa/0upXn/36rWkQwPf4SStmZY6YZU178/sdvtEYeRbQhoB4
- DMNXXaeXp8SC0zUAQkcOlxxynUwBAprtdzHK8/L4nakrXkQXcUyuRYLacDI0cC/7MFP9
- JHMcCgzVnUI8GCEw5i2wOeS3TWqNauE4a35/BaK6hG/xvqLrbVCi8Pl4TowPFZIB3Cps
- Mm0xbOC218H/DfKdbrb2yWqgVY2CbLI0Q47iN8o2MqebWnFdkWN4ngkjfgCx/garrvIR
- T6Ig==
-X-Gm-Message-State: APjAAAUM5HERHMkymcznTEnkjUrjlyb2BcSN2AmkfITK3cxzrcKlnKbj
- n5aC2o9z/7BBbIwPik4gaN6mSw==
-X-Google-Smtp-Source: APXvYqxy6rv3+CmOWKztXOHqKWyPjEXkSjUwm5BS4ldZ+yIKjj5MTA+wVT8U/gZZyas+U/zq/4Hw4Q==
-X-Received: by 2002:a7b:cd92:: with SMTP id y18mr1693861wmj.52.1574304433660; 
- Wed, 20 Nov 2019 18:47:13 -0800 (PST)
-Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
- by smtp.gmail.com with ESMTPSA id q15sm1477277wrs.91.2019.11.20.18.47.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 Nov 2019 18:47:13 -0800 (PST)
-Message-ID: <5dd5fab1.1c69fb81.22bb5.755e@mx.google.com>
-Date: Wed, 20 Nov 2019 18:47:13 -0800 (PST)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=HRBpb1NofTDSzn/r03yAMNZB5b+BCFqizd3KS9TU4pA=;
+ b=neYPEukwvXv9hkk2dKp28dyGy2R8dLc/+3ESVRudxdMlUQ46LJ/4VhRk4t5uSe8/CV
+ AM/b+bii1O3KRiFbTFzB/Ej7aSzHDkLGl93fxsFUCTk5AVb2vyJ1v79gEZ61DWo0xu7e
+ fZma+r94xGq7RlZ+VoKliH6YWPHgD/5RAs3J7bYf/hPyOb8W7L7IVJw3K7fYIuRXWyR+
+ rtfJwRx8dEZkCmX9xuXpoXHonJM+QJXfU+lkfGblNsw23+8kYY9nXOcDkjIler5KplWv
+ GzVBnRPvDOlYc+ajAPs4ldEfqw7/FfpidJgJG41/VLU35KfLKTp1TqI7efEO37SMNqZS
+ GEhQ==
+X-Gm-Message-State: APjAAAX4uRicGYsh+WcRZSH01aQe1aRz8yajScJJe4s5TFVv1EPDM8+9
+ KQPheHg/r0S/uLhlK/JMqsqe6H2LPnNgkHiFuTs=
+X-Google-Smtp-Source: APXvYqzEOaht5xTwJzZ1PyVm7pSpljnawSJw5pVkoy6TqeJnWlaviiQzQVT03RYWqcb2qhbWWljBiAkv81grK5w5zNg=
+X-Received: by 2002:a37:dcc7:: with SMTP id v190mr5861034qki.330.1574304771112; 
+ Wed, 20 Nov 2019 18:52:51 -0800 (PST)
 MIME-Version: 1.0
-X-Kernelci-Branch: for-kernelci
-X-Kernelci-Tree: arm64
-X-Kernelci-Report-Type: test
-X-Kernelci-Kernel: v5.4-rc8-104-gfbaa9209b833
-Subject: arm64/for-kernelci baseline: 26 runs,
- 0 regressions (v5.4-rc8-104-gfbaa9209b833)
-To: will@kernel.org, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
-From: "kernelci.org bot" <bot@kernelci.org>
+References: <20191120000647.30551-1-luc.vanoostenryck@gmail.com>
+ <787e54c2-2fe3-4afc-a69b-94771726194b@www.fastmail.com>
+In-Reply-To: <787e54c2-2fe3-4afc-a69b-94771726194b@www.fastmail.com>
+From: Joel Stanley <joel@jms.id.au>
+Date: Thu, 21 Nov 2019 02:52:39 +0000
+Message-ID: <CACPK8XfO=F-BtCuDqyQODJv=6joYmyFiQ5eOYC5YuDJhcLSJtw@mail.gmail.com>
+Subject: Re: [PATCH] aspeed: fix snoop_file_poll()'s return type
+To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_184715_380794_8C6893D3 
-X-CRM114-Status: UNSURE (   5.23  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191120_185254_971492_3DDABA36 
+X-CRM114-Status: GOOD (  15.52  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:331 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,77 +92,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Robert Lippert <rlippert@google.com>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ Patrick Venture <venture@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-arm64/for-kernelci baseline: 26 runs, 0 regressions (v5.4-rc8-104-gfbaa9209b833)
+On Wed, 20 Nov 2019 at 05:42, Andrew Jeffery <andrew@aj.id.au> wrote:
+>
+> On Wed, 20 Nov 2019, at 10:36, Luc Van Oostenryck wrote:
+> > snoop_file_poll() is defined as returning 'unsigned int' but the
+> > .poll method is declared as returning '__poll_t', a bitwise type.
+> >
+> > Fix this by using the proper return type and using the EPOLL
+> > constants instead of the POLL ones, as required for __poll_t.
+> >
+> > CC: Joel Stanley <joel@jms.id.au>
+> > CC: Andrew Jeffery <andrew@aj.id.au>
+> > CC: linux-aspeed@lists.ozlabs.org
+> > CC: linux-arm-kernel@lists.infradead.org
+> > Signed-off-by: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+> > ---
+> >  drivers/soc/aspeed/aspeed-lpc-snoop.c | 4 ++--
+> >  1 file changed, 2 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/drivers/soc/aspeed/aspeed-lpc-snoop.c
+> > b/drivers/soc/aspeed/aspeed-lpc-snoop.c
+> > index 48f7ac238861..f3d8d53ab84d 100644
+> > --- a/drivers/soc/aspeed/aspeed-lpc-snoop.c
+> > +++ b/drivers/soc/aspeed/aspeed-lpc-snoop.c
+> > @@ -97,13 +97,13 @@ static ssize_t snoop_file_read(struct file *file,
+> > char __user *buffer,
+> >       return ret ? ret : copied;
+> >  }
+> >
+> > -static unsigned int snoop_file_poll(struct file *file,
+> > +static __poll_t snoop_file_poll(struct file *file,
+> >                                   struct poll_table_struct *pt)
+> >  {
+> >       struct aspeed_lpc_snoop_channel *chan = snoop_file_to_chan(file);
+> >
+> >       poll_wait(file, &chan->wq, pt);
+> > -     return !kfifo_is_empty(&chan->fifo) ? POLLIN : 0;
+> > +     return !kfifo_is_empty(&chan->fifo) ? EPOLLIN : 0;
+>
+> Looks fine to me as POLLIN and EPOLLIN evaluate to the same value despite
+> the type difference.
 
-Test results summary
---------------------
+I assume Luc was using sparse to check:
 
-run | platform                     | arch  | lab           | compiler | defconfig | results
-----+------------------------------+-------+---------------+----------+-----------+--------
-1   | bcm2837-rpi-3-b              | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-2   | hip07-d05                    | arm64 | lab-collabora | gcc-8    | defconfig | 3/5    
-3   | imx8mn-ddr4-evk              | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-4   | meson-g12a-u200              | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-5   | meson-g12a-x96-max           | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-6   | meson-g12b-a311d-khadas-vim3 | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-7   | meson-g12b-odroid-n2         | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-8   | meson-gxbb-p200              | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-9   | meson-gxl-s805x-libretech-ac | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-10  | meson-gxl-s805x-p241         | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-11  | meson-gxl-s905d-p230         | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-12  | meson-gxl-s905x-khadas-vim   | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-13  | meson-gxl-s905x-libretech-cc | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-14  | meson-gxm-khadas-vim2        | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-15  | meson-gxm-q200               | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-16  | qemu_arm64-virt-gicv2        | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-17  | qemu_arm64-virt-gicv2        | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
-18  | qemu_arm64-virt-gicv3        | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-19  | qemu_arm64-virt-gicv3        | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
-20  | r8a7795-salvator-x           | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-21  | r8a7796-m3ulcb               | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-22  | r8a7796-m3ulcb               | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
-23  | rk3399-gru-kevin             | arm64 | lab-collabora | gcc-8    | defconfig | 82/82  
-24  | sun50i-h5-lib...ch-all-h3-cc | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-25  | sun50i-h6-pine-h64           | arm64 | lab-baylibre  | gcc-8    | defconfig | 5/5    
-26  | sun50i-h6-pine-h64           | arm64 | lab-collabora | gcc-8    | defconfig | 5/5    
+CHECK   ../drivers/soc/aspeed/aspeed-lpc-snoop.c
+../drivers/soc/aspeed/aspeed-lpc-snoop.c:112:19: warning: incorrect
+type in initializer (different base types)
+../drivers/soc/aspeed/aspeed-lpc-snoop.c:112:19:    expected
+restricted __poll_t ( *poll )( ... )
+../drivers/soc/aspeed/aspeed-lpc-snoop.c:112:19:    got unsigned int (
+* )( ... )
 
+If you fix the return type:
 
-  Test:     baseline
-  Tree:     arm64
-  Branch:   for-kernelci
-  Describe: v5.4-rc8-104-gfbaa9209b833
-  URL:      git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
-  SHA:      fbaa9209b833102c942d5fa8b5b08010220d2cf4 
+  CHECK   ../drivers/soc/aspeed/aspeed-lpc-snoop.c
+../drivers/soc/aspeed/aspeed-lpc-snoop.c:106:45: warning: incorrect
+type in return expression (different base types)
+../drivers/soc/aspeed/aspeed-lpc-snoop.c:106:45:    expected restricted __poll_t
+../drivers/soc/aspeed/aspeed-lpc-snoop.c:106:45:    got int
 
+Reviewed-by: Joel Stanley <joel@jms.id.au>
 
-Test Failures
--------------
-     
+I will send this to the ARM SOC maintainer. Thanks Luc!
 
-run | platform                     | arch  | lab           | compiler | defconfig | results
-----+------------------------------+-------+---------------+----------+-----------+--------
-2   | hip07-d05                    | arm64 | lab-collabora | gcc-8    | defconfig | 3/5    
+Cheers,
 
-  Results:     3 PASS, 2 FAIL, 0 SKIP
-  Full config: defconfig
-  Compiler:    gcc-8 (aarch64-linux-gnu-gcc (Debian 8.3.0-2) 8.3.0)
-  Plain log:   https://storage.kernelci.org//arm64/for-kernelci/v5.4-rc8-104-gfbaa9209b833/arm64/defconfig/gcc-8/lab-collabora/baseline-hip07-d05.txt
-  HTML log:    https://storage.kernelci.org//arm64/for-kernelci/v5.4-rc8-104-gfbaa9209b833/arm64/defconfig/gcc-8/lab-collabora/baseline-hip07-d05.html
-  Rootfs:      https://storage.kernelci.org/images/rootfs/buildroot/kci-2019.02-8-gd700ebb99e8f/arm64/baseline/rootfs.cpio.gz       
-
-  dmesg - 3 tests: 1  PASS, 2 FAIL, 0 SKIP
-    * alert:
-        never passed
-        11 lines
-    * emerg:
-        never passed
-        2 lines  
-                                                                              
+Joel
 
 _______________________________________________
 linux-arm-kernel mailing list
