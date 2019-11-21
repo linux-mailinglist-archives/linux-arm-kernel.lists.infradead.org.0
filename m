@@ -2,84 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D1B4105A82
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 20:39:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0563E105AB3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 20:58:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xn1x5QMoQ7CJHEtF0pd8IOeZuz5FyDXNAWz1I9g58N0=; b=KVRGUOSC5SNaEQ
-	Xcsw5d/aUe1XePYAOCgCMoR4g3vWj/zNNo/5EX4c6eTsVBjI0thYORAYZGdy4HE38QjkTFAG7A9b9
-	dwvTfyWqXIiC0iT90Koy8XHoJmew61ruhhU+WnTQHqMRD2fHzwpc9BWyNYhuB3j3brehwEw546oIU
-	XYBh0nS2lkg17z1jWEaRLujjvv5z9mX3bMuAKywXfYMr7PXLHxfgGdN6A3a8ZhVxA8Mjoz+7Y/zy2
-	g+xwo2SXPcoflKxNQB85h4qbBGas6SDvS/A8KVf1Z8jVk2BAzFhJIRAxKcZbdlgYcaWm3prkcD1g2
-	718hK8gfMPdBtmLXWDuA==;
+	List-Owner; bh=BumGT8A7MtTnpQXA/wC4Tu4JyMsy8+l/Z/oN0Nj17P0=; b=dhB6NDIfsnWKqJ
+	5eHYRW4AwnDvmaSgksk6QplApoG+AII3TAIAZQ6E/3SwTWaHayqGAdJoyIgLE9xT9KGZK6MiZTrFa
+	oPYooVlmGJ1NjhbFpkBThRhXm5Sk6lkCiPD5OTMdIn8o81OLWDJD/sUVQuXBEGo9pFy5UQF3xwMvC
+	81ll1X0TFzTnwra9SXNNC1nanPe3A0WZ3wdkFvooQIwWeVR9AKmuycPYc2nf1FrRd65GySv3AlY87
+	Rps3rrGWP7gRm3ccLcKQronU49pbqRLik+TFI8tWcqbHskcismSy1dHHaq4FFfdA5fdZzCcK/gPug
+	Fg11Pj8qz1V9BnyOmTNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXsIo-0002lh-9r; Thu, 21 Nov 2019 19:39:42 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1iXsbN-0000uY-J3; Thu, 21 Nov 2019 19:58:53 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXsIf-0002km-A3
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 19:39:34 +0000
-Received: by mail-oi1-f193.google.com with SMTP id a14so4315711oid.5
+ id 1iXsb9-0000sT-1p
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 19:58:40 +0000
+Received: by mail-qt1-x841.google.com with SMTP id w47so987859qtk.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 11:39:32 -0800 (PST)
+ Thu, 21 Nov 2019 11:58:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=NrzxHrY8HSPigVP1ddvjUfQFh9GexeJHE6yrEfyJGn8=;
+ b=Kd3uHXA1P6DuCOhB2GxNrroyfRPcjST5rj7knlJlrVz7Lrr4YsfVvSNtbCJMOzDkm9
+ v/Y0j8z3u2abnQEXY0H/eS8gg8o59m/He8HAtGj9aKsogiT9HudHc7VPDU2uoLVegRab
+ sua5+XIGxHCZJbnaUyGj+m0xq4sdO/dgPH5ql42Q3eTE9zhaycI8jmcThgYH39KDXrzD
+ 1s8L4VxDYCCJ8XxaPf86AG60AUSWCfVYt225dJygovcnw48m1vkJtxVDMaj17SMkzVOU
+ 6motdGawpCw2ZkIZ70iqZsTbQBr8FOa9spMlRL+BJl5lsiRXNBDSQxevq5bBE2xPOBET
+ 0W4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=c4KjpD+ns0ACXFE5v6l81aoQVHuHJsxlS4JefMC5EMY=;
- b=OZQEu6KhZRrnXYTfnYr7hOtT/vdVRPPFDlZMTImpYYGKYCLBKleqweRkSkfh2NQlAS
- A+7H0BjTcII8OAwN7YDuNtAD08z30ValNVRgsAfOj4aEyQGQ4j4f3QFhBSF5+Ekp/qvF
- XH7xiPtxfArrZCkIeNEmkjDZDW5a1TXnIPsq+/y27A7lM636Ijs2xYEbunylNF1FD3Mh
- ajZJECQUoc0FKgtlzZJ+hw+2+XCZ6lii/0IQuQF4G3y/WB6kn0wj19OqCx1EBtZADcGD
- d3cgBE5Ar+6xbaxXHyOIGSidD6LnGaKDjlqii7Ax2V3ea09itueV7vGSf/VwrkeEOiYX
- K3Wg==
-X-Gm-Message-State: APjAAAVma2XwHYcBZE/1dWnuFOeCH1miAO5FRo6lwsc0v8HZUdIAeAoW
- KhHQeW3TddK1KHP7SHc+jA==
-X-Google-Smtp-Source: APXvYqw+O/5gVYMGrcCumNOlMYDrrdD4XmwLhJA1mxJFW4xVlHhGW1dwTOU1ghWvK2UUGvx0UeKwSA==
-X-Received: by 2002:aca:1715:: with SMTP id j21mr8631035oii.6.1574365171174;
- Thu, 21 Nov 2019 11:39:31 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id u204sm1229289oig.35.2019.11.21.11.39.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 Nov 2019 11:39:30 -0800 (PST)
-Date: Thu, 21 Nov 2019 13:39:29 -0600
-From: Rob Herring <robh@kernel.org>
-To: Alain Volmat <alain.volmat@st.com>
-Subject: Re: [PATCH v2] dt-bindings: i2c: stm32: Migrate i2c-stm32
- documentation to yaml
-Message-ID: <20191121193929.GA6676@bogus>
-References: <1574342866-8348-1-git-send-email-alain.volmat@st.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=NrzxHrY8HSPigVP1ddvjUfQFh9GexeJHE6yrEfyJGn8=;
+ b=H9D1QwGeTEVzJlPI/YRoDxgxtbjBcJRoumVhY0JN/8I9LXGe80/e33xdp6i4lTAbYZ
+ 7gq3+rNHoo0mlltX4ybNoNlMMr6ArGQeTBp/Gp450H56YkojPl927rjYfvKogExKegX9
+ A8ZU5V9fhPA13OpgxsGH3+IuP945hbWibJLM2zRe3x90uRnQo/rhyFVfIMggA/Ijg56H
+ U6PlkL7zJRb2UMUHRec75SppxjhAfdEJEETwb5dGWBNoBrJmPabAtBrNPsBjLyNn2a2x
+ t3oilFcKqgtg/r2FWzsDtpiukCbMXTn8cw/tSp98zBEoDavISSZOXJjyIrWJXv3G8Kpc
+ 005A==
+X-Gm-Message-State: APjAAAUhR4Ams/XdWZxZXq8RfXC6APDUwkPzAQLrrJF3etV3r5wMXMCO
+ jSm3LQMHNsjeT/LkjzFKL18TeSbtxRdqXOnZ58TCKw==
+X-Google-Smtp-Source: APXvYqzPK/X2AE0eWdYsKj49rv1x+g3AQZDvujO3L268Ze2mJnamWmtGWcsUjKvRNU7iWCoHqffcHfRnbEOs1IRx7Os=
+X-Received: by 2002:aed:24af:: with SMTP id t44mr10377791qtc.57.1574366311591; 
+ Thu, 21 Nov 2019 11:58:31 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1574342866-8348-1-git-send-email-alain.volmat@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191112065302.7015-1-walter-zh.wu@mediatek.com>
+ <040479c3-6f96-91c6-1b1a-9f3e947dac06@virtuozzo.com>
+In-Reply-To: <040479c3-6f96-91c6-1b1a-9f3e947dac06@virtuozzo.com>
+From: Dmitry Vyukov <dvyukov@google.com>
+Date: Thu, 21 Nov 2019 20:58:19 +0100
+Message-ID: <CACT4Y+botuVF6KanfRrudDguw7HGkJ1mrwvxYZQQF0eWoo-Lxw@mail.gmail.com>
+Subject: Re: [PATCH v4 1/2] kasan: detect negative size in memory operation
+ function
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_113933_343785_83AE2F66 
-X-CRM114-Status: GOOD (  12.38  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191121_115839_097637_3EC5B5DB 
+X-CRM114-Status: GOOD (  13.11  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,38 +98,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- wsa@the-dreams.de, linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com,
- robh+dt@kernel.org, linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Walter Wu <walter-zh.wu@mediatek.com>,
+ wsd_upstream <wsd_upstream@mediatek.com>, LKML <linux-kernel@vger.kernel.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
+ Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 21 Nov 2019 14:27:46 +0100, Alain Volmat wrote:
-> The document was migrated to Yaml format and renamed st,stm32-i2c.yaml
-> 
-> Signed-off-by: Alain Volmat <alain.volmat@st.com>
-> ---
-> v2: remove i2c-scl.*time description, ref (moved into i2c-controller.yaml
->     push the st,syscfg-fmt into the if compatible st,stm32f7 part
->     fix the st,syscfg-fmt ref syntax and set minItems/maxItems to 3
->     make the clock-frequency part common and only keep enum in the st,stm32f4 case
->     remove unnecesary minItems/maxItems
->     remove address-cells/size-cells from required fields
-> ---
->  .../devicetree/bindings/i2c/i2c-stm32.txt          |  65 ----------
->  .../devicetree/bindings/i2c/st,stm32-i2c.yaml      | 141 +++++++++++++++++++++
->  2 files changed, 141 insertions(+), 65 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-stm32.txt
->  create mode 100644 Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml
-> 
+On Thu, Nov 21, 2019 at 1:27 PM Andrey Ryabinin <aryabinin@virtuozzo.com> wrote:
+> > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> > index 6814d6d6a023..4bfce0af881f 100644
+> > --- a/mm/kasan/common.c
+> > +++ b/mm/kasan/common.c
+> > @@ -102,7 +102,8 @@ EXPORT_SYMBOL(__kasan_check_write);
+> >  #undef memset
+> >  void *memset(void *addr, int c, size_t len)
+> >  {
+> > -     check_memory_region((unsigned long)addr, len, true, _RET_IP_);
+> > +     if (!check_memory_region((unsigned long)addr, len, true, _RET_IP_))
+> > +             return NULL;
+> >
+> >       return __memset(addr, c, len);
+> >  }
+> > @@ -110,8 +111,9 @@ void *memset(void *addr, int c, size_t len)
+> >  #undef memmove
+> >  void *memmove(void *dest, const void *src, size_t len)
+> >  {
+> > -     check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > -     check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > +     if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
+> > +         !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
+> > +             return NULL;
+> >
+> >       return __memmove(dest, src, len);
+> >  }
+> > @@ -119,8 +121,9 @@ void *memmove(void *dest, const void *src, size_t len)
+> >  #undef memcpy
+> >  void *memcpy(void *dest, const void *src, size_t len)
+> >  {
+> > -     check_memory_region((unsigned long)src, len, false, _RET_IP_);
+> > -     check_memory_region((unsigned long)dest, len, true, _RET_IP_);
+> > +     if (!check_memory_region((unsigned long)src, len, false, _RET_IP_) ||
+> > +         !check_memory_region((unsigned long)dest, len, true, _RET_IP_))
+> > +             return NULL;
+> >
+>
+> I realized that we are going a wrong direction here. Entirely skipping mem*() operation on any
+> poisoned shadow value might only make things worse. Some bugs just don't have any serious consequences,
+> but skipping the mem*() ops entirely might introduce such consequences, which wouldn't happen otherwise.
+>
+> So let's keep this code as this, no need to check the result of check_memory_region().
 
-Applied, thanks.
+I suggested it.
 
-Rob
+For our production runs it won't matter, we always panic on first report.
+If one does not panic, there is no right answer. You say: _some_ bugs
+don't have any serious consequences, but skipping the mem*() ops
+entirely might introduce such consequences. The opposite is true as
+well, right? :) And it's not hard to come up with a scenario where
+overwriting memory after free or out of bounds badly corrupts memory.
+I don't think we can somehow magically avoid bad consequences in all
+cases.
+
+What I was thinking about is tests. We need tests for this. And we
+tried to construct tests specifically so that they don't badly corrupt
+memory (e.g. OOB/UAF reads, or writes to unused redzones, etc), so
+that it's possible to run all of them to completion reliably. Skipping
+the actual memory options allows to write such tests for all possible
+scenarios. That's was my motivation.
 
 _______________________________________________
 linux-arm-kernel mailing list
