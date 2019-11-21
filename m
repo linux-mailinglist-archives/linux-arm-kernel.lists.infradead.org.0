@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26C141058C1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 18:40:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2310D1058C7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 18:42:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mh1mAaT2ybA8ledKQGy7nIiqpCF31WlG0M1yRvzMfd4=; b=hgwPdqwjO6gCED
-	fSI7sHrnEP1MtbTWD65jHbC8F21Q1fmha/SQwYJWWSHzQMaVaXigb+KCCLcwzwaIXvJsTGjIMFNZy
-	jAlLx93uWwCRh92nQ/e+5FtFy48VKo7osLa9ql0TO90avbO+ysiVOV2vl9wVEgi4gyLOOeEuV6RcK
-	upVMi8FoYi/1HuhUHmXqwifnNrFraI1HthjeK9Ad/ZMVgXD9NhPg6yEsX8L5kCj+NxwtUOLz2QyYE
-	KXVH7D0Ov7i+qGD1XhHjkxJ+BNuoO7gQ+dqbebQwXpr8ApfvHPidtmXzIUbb5BUWTwKkSxAcPa2NR
-	P8cqz0O+syAt7mh6DpOg==;
+	List-Owner; bh=VOQfmpnN0GxZ6tb0smWXPe31BG/vBgO5hOuSqs/rIds=; b=NA4pRQrRhDXsnN
+	fOXbuEfg4iyr+ajmoNXIdcoU1ALHMNjaj88hu4CzxEZEE906LZh1fVLfXDwKfaolz+tpCldC90ayB
+	6AalYEbnx+Hmns+ye1oM2ZExKRBgVAAgeWnpIJjjBfH+fgDbjp7E5JuHO252H/Y3tqVYQvALsQMPr
+	OkBpZIHLiN9TgEaBhl8yJpQYNtkGPbULlh3qsoMksz/P/C/qpgmLgBKiXPJA7KaQe+r/aXAysXzAO
+	iefrfZtt8+a4BkBRVA1MuU1p6FpTj1taBN9qdMjnRvtkQXxzqAd/sUCPzLq/0yV1EsPtKK4Kyi4Qg
+	YoFrkUmK5rJjxNdUlMvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXqRE-0001li-2w; Thu, 21 Nov 2019 17:40:16 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iXqTh-00035G-Og; Thu, 21 Nov 2019 17:42:49 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXqQz-0001Sx-AJ
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 17:40:02 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z10so5433923wrs.12
+ id 1iXqTY-00034d-Jd
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 17:42:42 +0000
+Received: by mail-wm1-x344.google.com with SMTP id y5so4699318wmi.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 09:40:00 -0800 (PST)
+ Thu, 21 Nov 2019 09:42:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6yHweLAm3X5tmzUvXr1Og43BVx4rWWT0Ca2y98OZCMw=;
- b=toto5QbrBSKspASSm1WBYS8wO5+3KkuL2tqCfyqC5MQTEbYi5X1q61Ieos6MYpBTZx
- rRDRguJQzYzuUIdkAZ0h7nLIL2D/C9fF07nF2kdxgAe/O0WaEudmMDaPQH4tNc9Xo5zM
- UOEXCtpl7WBn9N9BX6ZrWXn0w73N8VbmgOdWZ7i7ikmYD7TADgY7peWeuBbc3nTotLgs
- TdaS+TDsLm6JBSHpQB6s4A4Pef33rdXN2++DOuBSaTALmY+g2qWsnT4lAE4EXhCvpCdw
- JdJojNWBdGYm0Pq2hPFi6/5POvAH/ed8fhOxWot8rnrOUe+sa8WW2rJ+i8ySpCfrX1S8
- Y6rw==
+ :cc; bh=pIBYFzvNKC+WJDkNKoohHwOi2Vu9bIJaqAf1nCfm+Cc=;
+ b=u2l0/88yBcyPgK47gFqpPlMEsSlbQGl3ANnFXCaL1F4V85U209GXoJQiBv4dJ5A8dg
+ vn3i81qzLep+dZO5r9Wcj7eOwH4oj59NjSV4S41hWR25RbRILwih/UsjWtuzT13teCmn
+ jsVMXFk3ollCrp0UGC3jCh3zj/EvN6wghziq5XSrGdko31cFm9vwS1uoYYjEjb6wiVuF
+ kWEMl+2AC/bgjmqNBvH/4+zf8jeQ7jvm06lKcLhLDNQ7OJM9i6Kl5wTeBlGjAcxMttog
+ tHKPDv2f4hKk/EqgvwAzmOc8Vz7z9VDg6xe6r5yGQZXybco4gXIPb86OWKFRNVWiqR5L
+ UrMw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=6yHweLAm3X5tmzUvXr1Og43BVx4rWWT0Ca2y98OZCMw=;
- b=L5y3jaMesPIr5iR5e8FKBSA34xgDqN194WmjgN4Qk9+gIkeYcl5ElqRvrKL/ZEVcGb
- CnmgEMRhtQ7EKjVJ0QAs22f0MbIdW2mhQvQxz2QQXJVKPztd9av69Q0F+2V1xv8HK5eq
- TmRxdNP/x5EhU6waATiqY1zMAven4hyt9ItJuwz7cxoSnUN+QOisdep00D0rmqoiGChh
- 4v55ksz1Oj3nrel4NBvM2BDKNDcriQeMEoStodMQA8KBDVQ0x6Dxi+UiS2rYtZrkKDEK
- rcJkyLWRj+4/LeiO2FCw+M54MBuYFkEY4aZCgACKyexkhh0n4zmGkjC25GrhM7yh8a72
- LC7Q==
-X-Gm-Message-State: APjAAAW92S6i9gTIc4MkHorGRsYDUmt5dWqRG0ui8h/uCkGuWcZvQHvI
- MZK8nX84vF6ZqY3ucoX/teESctm1diSISJsLtPbr3Q==
-X-Google-Smtp-Source: APXvYqzBA6yG/ofsRLBEwqqGEdomsV7pZjLe9JFM7MbPV1pl4Aa5GkBlbTmNOv2rOUS0+mvJOe1vh8XsssT/RCzwttY=
-X-Received: by 2002:adf:ef45:: with SMTP id c5mr4335555wrp.200.1574357999317; 
- Thu, 21 Nov 2019 09:39:59 -0800 (PST)
+ bh=pIBYFzvNKC+WJDkNKoohHwOi2Vu9bIJaqAf1nCfm+Cc=;
+ b=NvaFbMv0TXNjdobsIjDnlhLkT6t8pVeBMhobeCvx+6PXQ8H6Qj4hjLdcThaZEjrUPf
+ jz5O5mj8wEtPNTunj/qr2x+nBSX5daJa1pJZxInO1zE/CkHNd1lRsrCGmH/vH+LEHGNB
+ vnDQ+vK9HBY8BIEbj/0UKc0fEl4RzvlKE8L/e1m8hajYR+3LrGNUqOedZ8l+cRCulVqi
+ RvJukeNYB9rVAcpIgA/w9hYfmxtQfLTo5cbRa5DPJOpi9IBRblQTkMiRSY4AsrxNEq8D
+ WDcGsTQN0auSjLjPXxylg7ptMW8ykfvCegOJVBYifC73KXChh7Iccq5B7NtASjUdF3Or
+ +40Q==
+X-Gm-Message-State: APjAAAW28wfx6Aio+AffY2R53O+LfSoNfChgjm3Tl9ywLK7tRh4esxQV
+ JBgVExiIp5xHlXggQcNQ77qvKOX2/XJRVMHkXXOD9w==
+X-Google-Smtp-Source: APXvYqxdwU167Fs1GrtNewGlg8ANeod3+AiosGp7InrZ8GuS/7AnksFKguWPtCiAZuSb6hpzLln086bDWrOKbqHgo9Q=
+X-Received: by 2002:a7b:c392:: with SMTP id s18mr10516319wmj.61.1574358158680; 
+ Thu, 21 Nov 2019 09:42:38 -0800 (PST)
 MIME-Version: 1.0
 References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
- <1574166746-27197-15-git-send-email-amit.kachhap@arm.com>
-In-Reply-To: <1574166746-27197-15-git-send-email-amit.kachhap@arm.com>
+ <1574166746-27197-9-git-send-email-amit.kachhap@arm.com>
+In-Reply-To: <1574166746-27197-9-git-send-email-amit.kachhap@arm.com>
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Thu, 21 Nov 2019 18:39:48 +0100
-Message-ID: <CAKv+Gu9wYhbtWDpXPBox-Yr-RD2P9dF8O+PRub0ECh=My_OfOg@mail.gmail.com>
-Subject: Re: [PATCH v2 14/14] lkdtm: arm64: test kernel pointer authentication
+Date: Thu, 21 Nov 2019 18:42:27 +0100
+Message-ID: <CAKv+Gu_U37kfCOT4ko-pK6b80aQ2uCe88WfHPwwzjrZ4frndmw@mail.gmail.com>
+Subject: Re: [PATCH v2 08/14] arm64: mask PAC bits of __builtin_return_address
 To: Amit Daniel Kachhap <amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_094001_385897_C002501D 
-X-CRM114-Status: GOOD (  20.24  )
+X-CRM114-CacheID: sfid-20191121_094240_658634_855A3D6D 
+X-CRM114-Status: GOOD (  17.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,93 +107,65 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Tue, 19 Nov 2019 at 13:33, Amit Daniel Kachhap <amit.kachhap@arm.com> wrote:
 >
-> This test is specific for arm64. When in-kernel Pointer Authentication
-> config is enabled, the return address stored in the stack is signed. This
-> feature helps in ROP kind of attack. If the matching signature is corrupted
-> then this will fail in authentication and lead to abort.
+> This patch redefines __builtin_return_address to mask pac bits
+> when Pointer Authentication is enabled. As __builtin_return_address
+> is used mostly used to refer to the caller function symbol address
+> so masking runtime generated pac bits will help to find the match.
 >
-> e.g.
-> echo CORRUPT_PAC > /sys/kernel/debug/provoke-crash/DIRECT
+> This change fixes the utilities like cat /proc/vmallocinfo to now
+> show the correct logs.
 >
-> [   13.118166] lkdtm: Performing direct entry CORRUPT_PAC
-> [   13.118298] lkdtm: Clearing PAC from the return address
-> [   13.118466] Unable to handle kernel paging request at virtual address bfff8000108648ec
-> [   13.118626] Mem abort info:
-> [   13.118666]   ESR = 0x86000004
-> [   13.118866]   EC = 0x21: IABT (current EL), IL = 32 bits
-> [   13.118966]   SET = 0, FnV = 0
-> [   13.119117]   EA = 0, S1PTW = 0
->
-> Cc: Kees Cook <keescook@chromium.org>
 > Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 > ---
 > Change since last version:
->  * New patch
+>  * Comment modified.
 >
->  drivers/misc/lkdtm/bugs.c  | 17 +++++++++++++++++
->  drivers/misc/lkdtm/core.c  |  1 +
->  drivers/misc/lkdtm/lkdtm.h |  1 +
->  3 files changed, 19 insertions(+)
+>  arch/arm64/Kconfig                |  1 +
+>  arch/arm64/include/asm/compiler.h | 17 +++++++++++++++++
+>  2 files changed, 18 insertions(+)
+>  create mode 100644 arch/arm64/include/asm/compiler.h
 >
-> diff --git a/drivers/misc/lkdtm/bugs.c b/drivers/misc/lkdtm/bugs.c
-> index 7284a22..c9bb493 100644
-> --- a/drivers/misc/lkdtm/bugs.c
-> +++ b/drivers/misc/lkdtm/bugs.c
-> @@ -337,3 +337,20 @@ void lkdtm_UNSET_SMEP(void)
->         pr_err("FAIL: this test is x86_64-only\n");
->  #endif
->  }
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 998248e..c1844de 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -117,6 +117,7 @@ config ARM64
+>         select HAVE_ALIGNED_STRUCT_PAGE if SLUB
+>         select HAVE_ARCH_AUDITSYSCALL
+>         select HAVE_ARCH_BITREVERSE
+> +       select HAVE_ARCH_COMPILER_H
+>         select HAVE_ARCH_HUGE_VMAP
+>         select HAVE_ARCH_JUMP_LABEL
+>         select HAVE_ARCH_JUMP_LABEL_RELATIVE
+> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+> new file mode 100644
+> index 0000000..5efe310
+> --- /dev/null
+> +++ b/arch/arm64/include/asm/compiler.h
+> @@ -0,0 +1,17 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef __ASM_ARM_COMPILER_H
+> +#define __ASM_ARM_COMPILER_H
 > +
-> +void lkdtm_CORRUPT_PAC(void)
-> +{
-> +#if IS_ENABLED(CONFIG_ARM64_PTR_AUTH)
-> +       u64 ret;
+> +#ifndef __ASSEMBLY__
 > +
-> +       pr_info("Clearing PAC from the return address\n");
-> +       /*
-> +        * __builtin_return_address masks the PAC bits of return
-> +        * address, so set the same again.
-> +        */
-> +       ret = (u64)__builtin_return_address(0);
-> +       asm volatile("str %0, [sp, 8]" : : "r" (ret) : "memory");
-
-This looks a bit fragile to me. You are making assumptions about the
-location of the return address in the stack frame which are not
-guaranteed to hold.
-
-Couldn't you do this test simply by changing the key?
-
-> +#else
-> +       pr_err("FAIL: For arm64 pointer authentication capable systems only\n");
+> +#if defined(CONFIG_ARM64_PTR_AUTH)
+> +
+> +/* As TBI1 is disabled currently, so bits 63:56 also has PAC */
+> +#define __builtin_return_address(val)                          \
+> +       (void *)((unsigned long)__builtin_return_address(val) | \
+> +       (GENMASK_ULL(63, 56) | GENMASK_ULL(54, VA_BITS)))
 > +#endif
-> +}
-> diff --git a/drivers/misc/lkdtm/core.c b/drivers/misc/lkdtm/core.c
-> index cbc4c90..b9c9927 100644
-> --- a/drivers/misc/lkdtm/core.c
-> +++ b/drivers/misc/lkdtm/core.c
-> @@ -116,6 +116,7 @@ static const struct crashtype crashtypes[] = {
->         CRASHTYPE(STACK_GUARD_PAGE_LEADING),
->         CRASHTYPE(STACK_GUARD_PAGE_TRAILING),
->         CRASHTYPE(UNSET_SMEP),
-> +       CRASHTYPE(CORRUPT_PAC),
->         CRASHTYPE(UNALIGNED_LOAD_STORE_WRITE),
->         CRASHTYPE(OVERWRITE_ALLOCATION),
->         CRASHTYPE(WRITE_AFTER_FREE),
-> diff --git a/drivers/misc/lkdtm/lkdtm.h b/drivers/misc/lkdtm/lkdtm.h
-> index ab446e0..bf12b68 100644
-> --- a/drivers/misc/lkdtm/lkdtm.h
-> +++ b/drivers/misc/lkdtm/lkdtm.h
-> @@ -28,6 +28,7 @@ void lkdtm_CORRUPT_USER_DS(void);
->  void lkdtm_STACK_GUARD_PAGE_LEADING(void);
->  void lkdtm_STACK_GUARD_PAGE_TRAILING(void);
->  void lkdtm_UNSET_SMEP(void);
-> +void lkdtm_CORRUPT_PAC(void);
->
->  /* lkdtm_heap.c */
->  void __init lkdtm_heap_init(void);
-> --
-> 2.7.4
->
+> +
+> +#endif
+> +
+> +#endif /* __ASM_ARM_COMPILER_H */
+
+It seems to me like we are accumulating a lot of cruft for khwasan as
+well as PAC to convert address into their untagged format.
+
+Are there are untagging helpers we can already reuse? If not, can we
+introduce something that can be shared between all these use cases?
 
 _______________________________________________
 linux-arm-kernel mailing list
