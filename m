@@ -2,82 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2624C104DE7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 09:29:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 624DE104DF0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 09:30:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NBJFvCDcxdWBjdEDJxhl0EPU/Gfb30PQgHHzXDldSZ4=; b=ixgrVedviomadT
-	e+5fhMxG67wZ8qqLqe9+7/6xe5b+eRlRQ2VISLF39jLBtHsi2GT6jXhtNsVeNkOfhk1wM5QVIr5bY
-	guCZHs2Ybp3jsRRNJJVJ42rmnNv+v7VHHnWCx1uJXBga+WEc7BInItxpBBlHIBZVbzjsdpFa0PXzZ
-	VuJgaKQntR5N3tp4PbKc4OHY4XSA+qsgqNfHiWfgAJ+2Ckj0lHpInFs5mCLzw18BtMNKDuGV5da5c
-	z5vEEGntj1jkGVVF9Qv7No178KBsU034eUOKJgGuEzwiUaGFPYfyZnmXGYPMIEOXePqQAPUgGICYf
-	FvN7oDBK1IzxiZuSpOkQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/M4KmTtTWG0pVDNrLCRaaZ1Q4ku2ybtN/ij1icUbYmQ=; b=qgAt581dlWJcbh
+	zq1cIe+mnLj9cGq6H3m0gToboCtZkDjEjPodayxTO/D7EfJaLKdcmn7OdaG+WR3SVbJNDCiMqBV21
+	wHKFNymwq5MJhUPRBdjFDdhngIQLNK8SWBXYlZcwptU0kswppvRRk78iiXBWVBJrGPwFNsObMXeFa
+	IdP8e6TED2jSrE8pLiEj5EqNsvS49Vgu9Gyr0PIQZ8Xi+sB268Oi95qsdj8H23Ychdh70wVNSdtlu
+	V6ASyZ6MmUzm/xqvQ62u+XscR1fVgHIvTd11Nkp6GO5BI09eSY5CDIPpt7cpfjDENfYU6BJb4TWxM
+	WKyWMtb/THJ0LrxeLttg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXhpe-0000YH-4j; Thu, 21 Nov 2019 08:28:54 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iXhrH-00029x-J6; Thu, 21 Nov 2019 08:30:35 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXhpF-0000Md-IX
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 08:28:31 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xAL8RHQa015864; Thu, 21 Nov 2019 09:28:25 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=twjnrkDQj2gpn7S/JQi3Gp1h6gkqTNkfZfkN2FjeW78=;
- b=kS72Yi03+KvFUReVKUamtKicfbFyH9gJlCoOercgzbymyMMqc0qclVMFhtfXzFCyKdm8
- E/4ZOepUX7kkwgR807/AyBK78OvSNIgq63Vbz0B8Tr0RotlTXNnB3uJ9ocTqeyz/yVu6
- +WpR+id2duSFNbx1c3P6H2pnGTaLgdZ1Rww7R2BcT4uDRrzTwKH/8hJA2/cppBKC3YdD
- oC7GEU62Z7o/HMwmTSkQmdSwTf9rs8G9lyBY495FHUwCumG6i+PHh1Vxwlo/WFeZgO1a
- UCKxjzM/ejDmC0PiK9gRUlFbqp0EH91KhhWcRZfXPOI84Yx5PA3T0buAPTBx8PJdqhhK Ng== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wa9upafmh-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 21 Nov 2019 09:28:25 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A879E100049;
- Thu, 21 Nov 2019 09:28:24 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 9B92E2AEF15;
- Thu, 21 Nov 2019 09:28:24 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG5NODE3.st.com (10.75.127.15)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Thu, 21 Nov 2019 09:28:24 +0100
-From: Christophe Roullier <christophe.roullier@st.com>
-To: <wim@linux-watchdog.org>, <linux@roeck-us.net>,
- <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-Subject: [PATCH 1/1] drivers: watchdog: stm32_iwdg: set WDOG_HW_RUNNING at
- probe
-Date: Thu, 21 Nov 2019 09:28:13 +0100
-Message-ID: <20191121082813.29267-2-christophe.roullier@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191121082813.29267-1-christophe.roullier@st.com>
-References: <20191121082813.29267-1-christophe.roullier@st.com>
+ id 1iXhr6-00028Q-OV; Thu, 21 Nov 2019 08:30:26 +0000
+X-UUID: bb0a1d9a487949e9a1c1342ae8acb302-20191121
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=0Ckld6EwBzz2+Vv2aLPvbwitkSnSY2s1D7AUbqn0zrg=; 
+ b=i1ke+CB4hO9trYn+KlvsKyGptMnYEreF+L2kHRi5BQEeT1Jup1ewWq5B7VLn4GDFN4M3mtDPEFCIhSSkUU52hnR3i/ryJZFxUbV1ek9WYv8Io771D6k9E0iBNZj5GQaSesQuNxn6cuN2/M9pFLbvE1z12ISXPdizbcqbbxjDjzg=;
+X-UUID: bb0a1d9a487949e9a1c1342ae8acb302-20191121
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <yt.chang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1153496331; Thu, 21 Nov 2019 00:30:12 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 21 Nov 2019 00:30:16 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 21 Nov 2019 16:30:04 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Thu, 21 Nov 2019 16:30:14 +0800
+From: YT Chang <yt.chang@mediatek.com>
+To: YT Chang <yt.chang@mediatek.com>, Peter Zijlstra <peterz@infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH 1/1] sched: cfs_rq h_load might not update due to irq disable
+Date: Thu, 21 Nov 2019 16:30:09 +0800
+Message-ID: <1574325009-10846-1-git-send-email-yt.chang@mediatek.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-11-20_08:2019-11-20,2019-11-20 signatures=0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_002829_963301_20F94323 
-X-CRM114-Status: GOOD (  18.13  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191121_003024_810147_15B1A112 
+X-CRM114-Status: GOOD (  10.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,6 +70,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,136 +83,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-watchdog@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- christophe.roullier@st.com
+Cc: linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, wsd_upstream@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If the watchdog hardware is already enabled during the boot process,
-when the Linux watchdog driver loads, it should reset the watchdog and
-tell the watchdog framework. As a result, ping can be generated from
-the watchdog framework (if CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED is set),
-until the userspace watchdog daemon takes over control
+Syndrome:
 
-Fixes:4332d113c66a ("watchdog: Add STM32 IWDG driver")
-Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
+Two CPUs might do idle balance in the same time.
+One CPU does idle balance and pulls some tasks.
+However before pick next task, ALL task are pulled back to other CPU.
+That results in infinite loop in both CPUs.
+
+=========================================
+code flow:
+
+in pick_next_task_fair()
+
+again:
+
+if nr_running == 0
+	goto idle
+pick next task
+	return
+
+idle:
+	idle_balance
+       /* pull some tasks from other CPU,
+        * However other CPU are also do idle balance,
+	* and pull back these task */
+
+	go to again
+
+=========================================
+The result to pull ALL tasks back when the task_h_load
+is incorrect and too low.
+
+static unsigned long task_h_load(struct task_struct *p)
+{
+        struct cfs_rq *cfs_rq = task_cfs_rq(p);
+
+	update_cfs_rq_h_load(cfs_rq);
+	return div64_ul(p->se.avg.load_avg_contrib * cfs_rq->h_load,
+			cfs_rq->runnable_load_avg + 1);
+}
+
+The cfs_rq->h_load is incorrect and might too small.
+The original idea of cfs_rq::last_h_load_update will not
+update cfs_rq::h_load more than once a jiffies.
+When the Two CPUs pull each other in the pick_next_task_fair,
+the irq disabled and result in jiffie not update.
+(Other CPUs wait for runqueue lock locked by the two CPUs.
+So, ALL CPUs are irq disabled.)
+
+Solution:
+cfs_rq h_load might not update due to irq disable
+use sched_clock instead jiffies
+
+Signed-off-by: YT Chang <yt.chang@mediatek.com>
 ---
- drivers/watchdog/stm32_iwdg.c | 57 ++++++++++++++++++++++++-----------
- 1 file changed, 40 insertions(+), 17 deletions(-)
+ kernel/sched/fair.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/watchdog/stm32_iwdg.c b/drivers/watchdog/stm32_iwdg.c
-index a3a329011a06..2b3be3b1c15b 100644
---- a/drivers/watchdog/stm32_iwdg.c
-+++ b/drivers/watchdog/stm32_iwdg.c
-@@ -87,8 +87,23 @@ static inline void reg_write(void __iomem *base, u32 reg, u32 val)
- static int stm32_iwdg_start(struct watchdog_device *wdd)
+diff --git a/kernel/sched/fair.c b/kernel/sched/fair.c
+index 83ab35e..231c53f 100644
+--- a/kernel/sched/fair.c
++++ b/kernel/sched/fair.c
+@@ -7578,9 +7578,11 @@ static void update_cfs_rq_h_load(struct cfs_rq *cfs_rq)
  {
- 	struct stm32_iwdg *wdt = watchdog_get_drvdata(wdd);
--	u32 tout, presc, iwdg_rlr, iwdg_pr, iwdg_sr;
--	int ret;
+ 	struct rq *rq = rq_of(cfs_rq);
+ 	struct sched_entity *se = cfs_rq->tg->se[cpu_of(rq)];
+-	unsigned long now = jiffies;
++	u64 now = sched_clock_cpu(cpu_of(rq));
+ 	unsigned long load;
+ 
++	now = now * HZ >> 30;
 +
-+	dev_dbg(wdd->parent, "%s\n", __func__);
-+
-+	/*  Start the watchdog */
-+	reg_write(wdt->regs, IWDG_KR, KR_KEY_ENABLE);
-+
-+	/* reload watchdog */
-+	reg_write(wdt->regs, IWDG_KR, KR_KEY_RELOAD);
-+
-+	set_bit(WDOG_HW_RUNNING, &wdd->status);
-+	return 0;
-+}
-+
-+static int stm32_iwdg_setprescaler(struct watchdog_device *wdd)
-+{
-+	struct stm32_iwdg *wdt = watchdog_get_drvdata(wdd);
-+	u32 tout, presc, iwdg_rlr, iwdg_pr;
- 
- 	dev_dbg(wdd->parent, "%s\n", __func__);
- 
-@@ -108,19 +123,6 @@ static int stm32_iwdg_start(struct watchdog_device *wdd)
- 	/* set prescaler & reload registers */
- 	reg_write(wdt->regs, IWDG_PR, iwdg_pr);
- 	reg_write(wdt->regs, IWDG_RLR, iwdg_rlr);
--	reg_write(wdt->regs, IWDG_KR, KR_KEY_ENABLE);
--
--	/* wait for the registers to be updated (max 100ms) */
--	ret = readl_relaxed_poll_timeout(wdt->regs + IWDG_SR, iwdg_sr,
--					 !(iwdg_sr & (SR_PVU | SR_RVU)),
--					 SLEEP_US, TIMEOUT_US);
--	if (ret) {
--		dev_err(wdd->parent, "Fail to set prescaler, reload regs\n");
--		return ret;
--	}
--
--	/* reload watchdog */
--	reg_write(wdt->regs, IWDG_KR, KR_KEY_RELOAD);
- 
- 	return 0;
- }
-@@ -131,6 +133,9 @@ static int stm32_iwdg_ping(struct watchdog_device *wdd)
- 
- 	dev_dbg(wdd->parent, "%s\n", __func__);
- 
-+	/*  Start the watchdog */
-+	reg_write(wdt->regs, IWDG_KR, KR_KEY_ENABLE);
-+
- 	/* reload watchdog */
- 	reg_write(wdt->regs, IWDG_KR, KR_KEY_RELOAD);
- 
-@@ -140,12 +145,21 @@ static int stm32_iwdg_ping(struct watchdog_device *wdd)
- static int stm32_iwdg_set_timeout(struct watchdog_device *wdd,
- 				  unsigned int timeout)
- {
-+	int ret;
-+
- 	dev_dbg(wdd->parent, "%s timeout: %d sec\n", __func__, timeout);
- 
- 	wdd->timeout = timeout;
- 
--	if (watchdog_active(wdd))
--		return stm32_iwdg_start(wdd);
-+	if (watchdog_active(wdd)) {
-+		ret = stm32_iwdg_setprescaler(wdd);
-+		if (ret) {
-+			dev_err(wdd->parent, "failed to set prescaler\n");
-+			return ret;
-+		} else {
-+			return stm32_iwdg_start(wdd);
-+		}
-+	}
- 
- 	return 0;
- }
-@@ -262,12 +276,21 @@ static int stm32_iwdg_probe(struct platform_device *pdev)
- 	watchdog_set_nowayout(wdd, WATCHDOG_NOWAYOUT);
- 	watchdog_init_timeout(wdd, 0, dev);
- 
-+	/* Make sure the watchdog is serviced */
-+	set_bit(WDOG_HW_RUNNING, &wdd->status);
-+
- 	ret = devm_watchdog_register_device(dev, wdd);
- 	if (ret)
- 		return ret;
- 
- 	platform_set_drvdata(pdev, wdt);
- 
-+	ret = stm32_iwdg_setprescaler(wdd);
-+	if (ret) {
-+		dev_err(dev, "failed to set prescaler\n");
-+		return ret;
-+	}
-+
- 	return 0;
- }
+ 	if (cfs_rq->last_h_load_update == now)
+ 		return;
  
 -- 
-2.17.1
-
-
+1.9.1
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
