@@ -2,75 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA4C610494B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 04:23:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC5C0104936
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 04:21:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tGO5BFAGi6YZhepByXkhST6DOv0Lm/31tjZbvpjKarc=; b=rUkjLOZ3/nnHY3
-	mH/EeNzS4/SUzih7gatjoaj0B6iehoC+UVGeMFa9WbdDsXd3JDTCHcQByoF1QivDWQbTeH2xw3ATc
-	Q43xZepap5ZYqLsJTyvjjAKLmK855l7Jns9fKgzW6CQuyqbKIAMB0WK5AMz451p2Yt/x8VTtYuyPs
-	wLj575qoq7aTKbDHtObNBP/Ud3MZRJDGe3/spNPSSZ+eICzZgolnr9Q3v9xpSt7qM8jcpcFieW6m+
-	tpROnnWZrq+aONTtEJhwBYhxLim1rt5xNFM0eUUK+efqnUxNcfDF8BpWjayX03Mlrno2QldpOM2AC
-	kv+lqDiJ6XfoaenQwfuw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YP+7Cwx4XxxERcYqJ/70Wkh+7j48nbf2xDawME1Ao9A=; b=JZ4M0vSedyiY09
+	+G6BOvjbDnOxBCPia4cKo6NbUAMEjfa7EaTMTGsqa7zXcNj9S9WF0N6LkVqNCUzfxjHH1tWRjz0Am
+	L7xSQ52go1qohcBhGHp4qB47gjq686lOr/fV0ruyvEUs0QQsW1twXkrQj5hXIpRXpnREpwcqpVm8V
+	kwnefk0qU0iJFbumh//Y5HbQQASjISX18mHoJoCxAoaX1LUbH+kO8cUcvCg1lVQtm9C9BNlxInvU1
+	hN1f5mogaON5g6vE7LVxZGFsSVHwWtbxscWL0oHNoT3n1Qy8Hp4BrNdbpSTfa2xdLHHW2mVpERKBg
+	hgPJOpq5aOUKy9epAAwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXd40-0006JQ-M4; Thu, 21 Nov 2019 03:23:24 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1iXd2C-0005U9-Hw; Thu, 21 Nov 2019 03:21:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXd3j-0006HY-R3
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 03:23:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1574306585;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=bWE830W7XPGCNo1jp1GJ01OlXQKp72T4TdINlVBXIEk=;
- b=JfCUpqtW0r3NIn3nXTneJqJoIBb18MxqUMg34B3PG7ci4V2vvUiBRkpGELpZ23XnW4c2MY
- po9/+9KrRNMO3oRfRGPAlPhAoTSffoYYImc3FanokvTYehYxXEQq2UaTiepN8KUaPI2yV7
- BSnLN0TU0fCXAyLyXm0Yo0hE+dfiDN0=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-398-B1bmXBaGNl65qKvByAPhSQ-1; Wed, 20 Nov 2019 22:21:04 -0500
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1iXd1Z-00053M-SY
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 03:20:56 +0000
+Received: from PC-kkoz.proceq.com (unknown [213.160.61.66])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8979E477;
- Thu, 21 Nov 2019 03:21:01 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-115.pek2.redhat.com
- [10.72.12.115])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 1C79066D46;
- Thu, 21 Nov 2019 03:20:51 +0000 (UTC)
-Date: Thu, 21 Nov 2019 11:20:47 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Bhupesh Sharma <bhsharma@redhat.com>
-Subject: Re: [PATCH v4 0/3] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
- for arm64 and MAX_PHYSMEM_BITS for all archs)
-Message-ID: <20191121032047.GB23368@dhcp-128-65.nay.redhat.com>
-References: <1573459282-26989-1-git-send-email-bhsharma@redhat.com>
+ by mail.kernel.org (Postfix) with ESMTPSA id B7E56208A3;
+ Thu, 21 Nov 2019 03:20:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574306453;
+ bh=zUywFnJCQodUArh350d7rTnxwf/fRS9fF+rpssAclRs=;
+ h=From:To:Cc:Subject:Date:From;
+ b=hffyNBXZEouEob19K6kTnV6YzQmnyEFBGSAOx3uxZ87bjhYFTt7MY69yOiamNZVCH
+ 2Cmbr5PezJJ+cqxxItpjJbQEIjeV+ccG2O331ApyrQ3g2/4UjnlWq8cp8+2RYR8+Ve
+ LIAN3EtsjUSp/muyGHo/spzGMo7nE/KNnb8rHTU4=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v2] crypto: Fix Kconfig indentation
+Date: Thu, 21 Nov 2019 04:20:48 +0100
+Message-Id: <1574306448-31868-1-git-send-email-krzk@kernel.org>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-In-Reply-To: <1573459282-26989-1-git-send-email-bhsharma@redhat.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-MC-Unique: B1bmXBaGNl65qKvByAPhSQ-1
-X-Mimecast-Spam-Score: 0
-Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_192307_966703_7480AB3B 
-X-CRM114-Status: GOOD (  19.04  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191120_192053_978779_140716FA 
+X-CRM114-Status: GOOD (  12.71  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -80,6 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,108 +73,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-doc@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, Paul Mackerras <paulus@samba.org>,
- Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
- Jonathan Corbet <corbet@lwn.net>, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Anderson <anderson@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
- bhupesh.linux@gmail.com, linux-arm-kernel@lists.infradead.org,
- Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Steve Capper <steve.capper@arm.com>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Boris Petkov <bp@alien8.de>, linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Aymen Sghaier <aymen.sghaier@nxp.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ =?UTF-8?q?Horia=20Geant=C4=83?= <horia.geanta@nxp.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Krzysztof Kozlowski <krzk@kernel.org>, "David S. Miller" <davem@davemloft.net>,
+ linux-crypto@vger.kernel.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Atul Gupta <atul.gupta@chelsio.com>, linux-arm-kernel@lists.infradead.org,
+ Alexandre Torgue <alexandre.torgue@st.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/11/19 at 01:31pm, Bhupesh Sharma wrote:
-> Changes since v3:
-> ----------------
-> - v3 can be seen here:
->   http://lists.infradead.org/pipermail/kexec/2019-March/022590.html
-> - Addressed comments from James and exported TCR_EL1.T1SZ in vmcoreinfo
->   instead of PTRS_PER_PGD.
-> - Added a new patch (via [PATCH 3/3]), which fixes a simple typo in
->   'Documentation/arm64/memory.rst'
-> 
-> Changes since v2:
-> ----------------
-> - v2 can be seen here:
->   http://lists.infradead.org/pipermail/kexec/2019-March/022531.html
-> - Protected 'MAX_PHYSMEM_BITS' vmcoreinfo variable under CONFIG_SPARSEMEM
->   ifdef sections, as suggested by Kazu.
-> - Updated vmcoreinfo documentation to add description about
->   'MAX_PHYSMEM_BITS' variable (via [PATCH 3/3]).
-> 
-> Changes since v1:
-> ----------------
-> - v1 was sent out as a single patch which can be seen here:
->   http://lists.infradead.org/pipermail/kexec/2019-February/022411.html
-> 
-> - v2 breaks the single patch into two independent patches:
->   [PATCH 1/2] appends 'PTRS_PER_PGD' to vmcoreinfo for arm64 arch, whereas
->   [PATCH 2/2] appends 'MAX_PHYSMEM_BITS' to vmcoreinfo in core kernel code (all archs)
-> 
-> This patchset primarily fixes the regression reported in user-space
-> utilities like 'makedumpfile' and 'crash-utility' on arm64 architecture
-> with the availability of 52-bit address space feature in underlying
-> kernel. These regressions have been reported both on CPUs which don't
-> support ARMv8.2 extensions (i.e. LVA, LPA) and are running newer kernels
-> and also on prototype platforms (like ARMv8 FVP simulator model) which
-> support ARMv8.2 extensions and are running newer kernels.
-> 
-> The reason for these regressions is that right now user-space tools
-> have no direct access to these values (since these are not exported
-> from the kernel) and hence need to rely on a best-guess method of
-> determining value of 'vabits_actual' and 'MAX_PHYSMEM_BITS' supported
-> by underlying kernel.
-> 
-> Exporting these values via vmcoreinfo will help user-land in such cases.
-> In addition, as per suggestion from makedumpfile maintainer (Kazu),
-> it makes more sense to append 'MAX_PHYSMEM_BITS' to
-> vmcoreinfo in the core code itself rather than in arm64 arch-specific
-> code, so that the user-space code for other archs can also benefit from
-> this addition to the vmcoreinfo and use it as a standard way of
-> determining 'SECTIONS_SHIFT' value in user-land.
-> 
-> Cc: Boris Petkov <bp@alien8.de>
-> Cc: Ingo Molnar <mingo@kernel.org>
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Cc: Jonathan Corbet <corbet@lwn.net>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Steve Capper <steve.capper@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Cc: Michael Ellerman <mpe@ellerman.id.au>
-> Cc: Paul Mackerras <paulus@samba.org>
-> Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> Cc: Dave Anderson <anderson@redhat.com>
-> Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-> Cc: x86@kernel.org
-> Cc: linuxppc-dev@lists.ozlabs.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> Cc: linux-doc@vger.kernel.org
-> Cc: kexec@lists.infradead.org
-> 
-> Bhupesh Sharma (3):
->   crash_core, vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
->   arm64/crash_core: Export TCR_EL1.T1SZ in vmcoreinfo
-
-Soft reminder:  the new introduced vmcoreinfo needs documentation
-
-Please check Documentation/admin-guide/kdump/vmcoreinfo.rst
-
-Thanks
-Dave
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRqdXN0IGluZGVudGF0aW9uIGZyb20gc3BhY2VzIHRvIHRhYiAoK29wdGlvbmFsIHR3byBzcGFj
+ZXMpIGFzIGluCmNvZGluZyBzdHlsZSB3aXRoIGNvbW1hbmQgbGlrZToKCSQgc2VkIC1lICdzL14g
+ICAgICAgIC9cdC8nIC1pICovS2NvbmZpZwoKU2lnbmVkLW9mZi1ieTogS3J6eXN6dG9mIEtvemxv
+d3NraSA8a3J6a0BrZXJuZWwub3JnPgpSZXZpZXdlZC1ieTogSG9yaWEgR2VhbnTEgyA8aG9yaWEu
+Z2VhbnRhQG54cC5jb20+CgotLS0KCkNoYW5nZXMgc2luY2UgdjE6CjEuIEZpeCBhbHNvIDctc3Bh
+Y2UgYW5kIHRhYisxIHNwYWNlIGluZGVudGF0aW9uIGlzc3Vlcy4KLS0tCiBkcml2ZXJzL2NyeXB0
+by9LY29uZmlnICAgICAgICAgfCAyMiArKysrKysrKysrKy0tLS0tLS0tLS0tCiBkcml2ZXJzL2Ny
+eXB0by9jYWFtL0tjb25maWcgICAgfCAxNCArKysrKysrLS0tLS0tLQogZHJpdmVycy9jcnlwdG8v
+Y2hlbHNpby9LY29uZmlnIHwgMzAgKysrKysrKysrKysrKysrLS0tLS0tLS0tLS0tLS0tCiBkcml2
+ZXJzL2NyeXB0by9zdG0zMi9LY29uZmlnICAgfCAgNiArKystLS0KIGRyaXZlcnMvY3J5cHRvL3V4
+NTAwL0tjb25maWcgICB8IDE2ICsrKysrKysrLS0tLS0tLS0KIDUgZmlsZXMgY2hhbmdlZCwgNDQg
+aW5zZXJ0aW9ucygrKSwgNDQgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9jcnlw
+dG8vS2NvbmZpZyBiL2RyaXZlcnMvY3J5cHRvL0tjb25maWcKaW5kZXggNTgxMDIxZmFiNDYyLi4x
+YTNmMDc3OTg2MmMgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvY3J5cHRvL0tjb25maWcKKysrIGIvZHJp
+dmVycy9jcnlwdG8vS2NvbmZpZwpAQCAtMjQ4LDE1ICsyNDgsMTUgQEAgY29uZmlnIENSWVBUT19E
+RVZfTUFSVkVMTF9DRVNBCiAJICBUaGlzIGRyaXZlciBzdXBwb3J0cyBDUFUgb2ZmbG9hZCB0aHJv
+dWdoIERNQSB0cmFuc2ZlcnMuCiAKIGNvbmZpZyBDUllQVE9fREVWX05JQUdBUkEyCi0gICAgICAg
+dHJpc3RhdGUgIk5pYWdhcmEyIFN0cmVhbSBQcm9jZXNzaW5nIFVuaXQgZHJpdmVyIgotICAgICAg
+IHNlbGVjdCBDUllQVE9fTElCX0RFUwotICAgICAgIHNlbGVjdCBDUllQVE9fU0tDSVBIRVIKLSAg
+ICAgICBzZWxlY3QgQ1JZUFRPX0hBU0gKLSAgICAgICBzZWxlY3QgQ1JZUFRPX01ENQotICAgICAg
+IHNlbGVjdCBDUllQVE9fU0hBMQotICAgICAgIHNlbGVjdCBDUllQVE9fU0hBMjU2Ci0gICAgICAg
+ZGVwZW5kcyBvbiBTUEFSQzY0Ci0gICAgICAgaGVscAorCXRyaXN0YXRlICJOaWFnYXJhMiBTdHJl
+YW0gUHJvY2Vzc2luZyBVbml0IGRyaXZlciIKKwlzZWxlY3QgQ1JZUFRPX0xJQl9ERVMKKwlzZWxl
+Y3QgQ1JZUFRPX1NLQ0lQSEVSCisJc2VsZWN0IENSWVBUT19IQVNICisJc2VsZWN0IENSWVBUT19N
+RDUKKwlzZWxlY3QgQ1JZUFRPX1NIQTEKKwlzZWxlY3QgQ1JZUFRPX1NIQTI1NgorCWRlcGVuZHMg
+b24gU1BBUkM2NAorCWhlbHAKIAkgIEVhY2ggY29yZSBvZiBhIE5pYWdhcmEyIHByb2Nlc3NvciBj
+b250YWlucyBhIFN0cmVhbQogCSAgUHJvY2Vzc2luZyBVbml0LCB3aGljaCBpdHNlbGYgY29udGFp
+bnMgc2V2ZXJhbCBjcnlwdG9ncmFwaGljCiAJICBzdWItdW5pdHMuICBPbmUgc2V0IHByb3ZpZGVz
+IHRoZSBNb2R1bGFyIEFyaXRobWV0aWMgVW5pdCwKQEAgLTM1Niw3ICszNTYsNyBAQCBjb25maWcg
+Q1JZUFRPX0RFVl9PTUFQCiAJZGVwZW5kcyBvbiBBUkNIX09NQVAyUExVUwogCWhlbHAKIAkgIE9N
+QVAgcHJvY2Vzc29ycyBoYXZlIHZhcmlvdXMgY3J5cHRvIEhXIGFjY2VsZXJhdG9ycy4gU2VsZWN0
+IHRoaXMgaWYKLSAgICAgICAgICB5b3Ugd2FudCB0byB1c2UgdGhlIE9NQVAgbW9kdWxlcyBmb3Ig
+YW55IG9mIHRoZSBjcnlwdG8gYWxnb3JpdGhtcy4KKwkgIHlvdSB3YW50IHRvIHVzZSB0aGUgT01B
+UCBtb2R1bGVzIGZvciBhbnkgb2YgdGhlIGNyeXB0byBhbGdvcml0aG1zLgogCiBpZiBDUllQVE9f
+REVWX09NQVAKIApAQCAtNjM4LDcgKzYzOCw3IEBAIGNvbmZpZyBDUllQVE9fREVWX1FDT01fUk5H
+CiAJICBHZW5lcmF0b3IgaGFyZHdhcmUgZm91bmQgb24gUXVhbGNvbW0gU29Dcy4KIAogCSAgVG8g
+Y29tcGlsZSB0aGlzIGRyaXZlciBhcyBhIG1vZHVsZSwgY2hvb3NlIE0gaGVyZS4gVGhlCi0gICAg
+ICAgICAgbW9kdWxlIHdpbGwgYmUgY2FsbGVkIHFjb20tcm5nLiBJZiB1bnN1cmUsIHNheSBOLgor
+CSAgbW9kdWxlIHdpbGwgYmUgY2FsbGVkIHFjb20tcm5nLiBJZiB1bnN1cmUsIHNheSBOLgogCiBj
+b25maWcgQ1JZUFRPX0RFVl9WTVgKIAlib29sICJTdXBwb3J0IGZvciBWTVggY3J5cHRvZ3JhcGhp
+YyBhY2NlbGVyYXRpb24gaW5zdHJ1Y3Rpb25zIgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9jcnlwdG8v
+Y2FhbS9LY29uZmlnIGIvZHJpdmVycy9jcnlwdG8vY2FhbS9LY29uZmlnCmluZGV4IDg3MDUzZTQ2
+Yzc4OC4uZmFjNWIyZTI2NjEwIDEwMDY0NAotLS0gYS9kcml2ZXJzL2NyeXB0by9jYWFtL0tjb25m
+aWcKKysrIGIvZHJpdmVycy9jcnlwdG8vY2FhbS9LY29uZmlnCkBAIC0xMzAsMTMgKzEzMCwxMyBA
+QCBjb25maWcgQ1JZUFRPX0RFVl9GU0xfQ0FBTV9BSEFTSF9BUEkKIAkgIHNjYXR0ZXJsaXN0IGNy
+eXB0byBBUEkgdG8gdGhlIFNFQzQgdmlhIGpvYiByaW5nLgogCiBjb25maWcgQ1JZUFRPX0RFVl9G
+U0xfQ0FBTV9QS0NfQVBJCi0gICAgICAgIGJvb2wgIlJlZ2lzdGVyIHB1YmxpYyBrZXkgY3J5cHRv
+Z3JhcGh5IGltcGxlbWVudGF0aW9ucyB3aXRoIENyeXB0byBBUEkiCi0gICAgICAgIGRlZmF1bHQg
+eQotICAgICAgICBzZWxlY3QgQ1JZUFRPX1JTQQotICAgICAgICBoZWxwCi0gICAgICAgICAgU2Vs
+ZWN0aW5nIHRoaXMgd2lsbCBhbGxvdyBTRUMgUHVibGljIGtleSBzdXBwb3J0IGZvciBSU0EuCi0g
+ICAgICAgICAgU3VwcG9ydGVkIGNyeXB0b2dyYXBoaWMgcHJpbWl0aXZlczogZW5jcnlwdGlvbiwg
+ZGVjcnlwdGlvbiwKLSAgICAgICAgICBzaWduYXR1cmUgYW5kIHZlcmlmaWNhdGlvbi4KKwlib29s
+ICJSZWdpc3RlciBwdWJsaWMga2V5IGNyeXB0b2dyYXBoeSBpbXBsZW1lbnRhdGlvbnMgd2l0aCBD
+cnlwdG8gQVBJIgorCWRlZmF1bHQgeQorCXNlbGVjdCBDUllQVE9fUlNBCisJaGVscAorCSAgU2Vs
+ZWN0aW5nIHRoaXMgd2lsbCBhbGxvdyBTRUMgUHVibGljIGtleSBzdXBwb3J0IGZvciBSU0EuCisJ
+ICBTdXBwb3J0ZWQgY3J5cHRvZ3JhcGhpYyBwcmltaXRpdmVzOiBlbmNyeXB0aW9uLCBkZWNyeXB0
+aW9uLAorCSAgc2lnbmF0dXJlIGFuZCB2ZXJpZmljYXRpb24uCiAKIGNvbmZpZyBDUllQVE9fREVW
+X0ZTTF9DQUFNX1JOR19BUEkKIAlib29sICJSZWdpc3RlciBjYWFtIGRldmljZSBmb3IgaHdybmcg
+QVBJIgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9jcnlwdG8vY2hlbHNpby9LY29uZmlnIGIvZHJpdmVy
+cy9jcnlwdG8vY2hlbHNpby9LY29uZmlnCmluZGV4IDkxZTQyNDM3ODIxNy4uZjA3OGIyNjg2NDE4
+IDEwMDY0NAotLS0gYS9kcml2ZXJzL2NyeXB0by9jaGVsc2lvL0tjb25maWcKKysrIGIvZHJpdmVy
+cy9jcnlwdG8vY2hlbHNpby9LY29uZmlnCkBAIC0yMywyMiArMjMsMjIgQEAgY29uZmlnIENSWVBU
+T19ERVZfQ0hFTFNJTwogCSAgd2lsbCBiZSBjYWxsZWQgY2hjci4KIAogY29uZmlnIENIRUxTSU9f
+SVBTRUNfSU5MSU5FCi0gICAgICAgIGJvb2wgIkNoZWxzaW8gSVBTZWMgWEZSTSBUeCBjcnlwdG8g
+b2ZmbG9hZCIKLSAgICAgICAgZGVwZW5kcyBvbiBDSEVMU0lPX1Q0CisJYm9vbCAiQ2hlbHNpbyBJ
+UFNlYyBYRlJNIFR4IGNyeXB0byBvZmZsb2FkIgorCWRlcGVuZHMgb24gQ0hFTFNJT19UNAogCWRl
+cGVuZHMgb24gQ1JZUFRPX0RFVl9DSEVMU0lPCi0gICAgICAgIGRlcGVuZHMgb24gWEZSTV9PRkZM
+T0FECi0gICAgICAgIGRlcGVuZHMgb24gSU5FVF9FU1BfT0ZGTE9BRCB8fCBJTkVUNl9FU1BfT0ZG
+TE9BRAotICAgICAgICBkZWZhdWx0IG4KLSAgICAgICAgLS0taGVscC0tLQotICAgICAgICAgIEVu
+YWJsZSBzdXBwb3J0IGZvciBJUFNlYyBUeCBJbmxpbmUuCisJZGVwZW5kcyBvbiBYRlJNX09GRkxP
+QUQKKwlkZXBlbmRzIG9uIElORVRfRVNQX09GRkxPQUQgfHwgSU5FVDZfRVNQX09GRkxPQUQKKwlk
+ZWZhdWx0IG4KKwktLS1oZWxwLS0tCisJICBFbmFibGUgc3VwcG9ydCBmb3IgSVBTZWMgVHggSW5s
+aW5lLgogCiBjb25maWcgQ1JZUFRPX0RFVl9DSEVMU0lPX1RMUwotICAgICAgICB0cmlzdGF0ZSAi
+Q2hlbHNpbyBDcnlwdG8gSW5saW5lIFRMUyBEcml2ZXIiCi0gICAgICAgIGRlcGVuZHMgb24gQ0hF
+TFNJT19UNAotICAgICAgICBkZXBlbmRzIG9uIFRMU19UT0UKLSAgICAgICAgc2VsZWN0IENSWVBU
+T19ERVZfQ0hFTFNJTwotICAgICAgICAtLS1oZWxwLS0tCi0gICAgICAgICAgU3VwcG9ydCBDaGVs
+c2lvIElubGluZSBUTFMgd2l0aCBDaGVsc2lvIGNyeXB0byBhY2NlbGVyYXRvci4KKwl0cmlzdGF0
+ZSAiQ2hlbHNpbyBDcnlwdG8gSW5saW5lIFRMUyBEcml2ZXIiCisJZGVwZW5kcyBvbiBDSEVMU0lP
+X1Q0CisJZGVwZW5kcyBvbiBUTFNfVE9FCisJc2VsZWN0IENSWVBUT19ERVZfQ0hFTFNJTworCS0t
+LWhlbHAtLS0KKwkgIFN1cHBvcnQgQ2hlbHNpbyBJbmxpbmUgVExTIHdpdGggQ2hlbHNpbyBjcnlw
+dG8gYWNjZWxlcmF0b3IuCiAKLSAgICAgICAgICBUbyBjb21waWxlIHRoaXMgZHJpdmVyIGFzIGEg
+bW9kdWxlLCBjaG9vc2UgTSBoZXJlOiB0aGUgbW9kdWxlCi0gICAgICAgICAgd2lsbCBiZSBjYWxs
+ZWQgY2h0bHMuCisJICBUbyBjb21waWxlIHRoaXMgZHJpdmVyIGFzIGEgbW9kdWxlLCBjaG9vc2Ug
+TSBoZXJlOiB0aGUgbW9kdWxlCisJICB3aWxsIGJlIGNhbGxlZCBjaHRscy4KZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvY3J5cHRvL3N0bTMyL0tjb25maWcgYi9kcml2ZXJzL2NyeXB0by9zdG0zMi9LY29u
+ZmlnCmluZGV4IDFhYmE5MzcyY2QyMy4uNGVmM2ViMTEzNjFjIDEwMDY0NAotLS0gYS9kcml2ZXJz
+L2NyeXB0by9zdG0zMi9LY29uZmlnCisrKyBiL2RyaXZlcnMvY3J5cHRvL3N0bTMyL0tjb25maWcK
+QEAgLTQsNyArNCw3IEBAIGNvbmZpZyBDUllQVE9fREVWX1NUTTMyX0NSQwogCWRlcGVuZHMgb24g
+QVJDSF9TVE0zMgogCXNlbGVjdCBDUllQVE9fSEFTSAogCWhlbHAKLSAgICAgICAgICBUaGlzIGVu
+YWJsZXMgc3VwcG9ydCBmb3IgdGhlIENSQzMyIGh3IGFjY2VsZXJhdG9yIHdoaWNoIGNhbiBiZSBm
+b3VuZAorCSAgVGhpcyBlbmFibGVzIHN1cHBvcnQgZm9yIHRoZSBDUkMzMiBodyBhY2NlbGVyYXRv
+ciB3aGljaCBjYW4gYmUgZm91bmQKIAkgIG9uIFNUTWljcm9lbGVjdHJvbmljcyBTVE0zMiBTT0Mu
+CiAKIGNvbmZpZyBDUllQVE9fREVWX1NUTTMyX0hBU0gKQEAgLTE3LDcgKzE3LDcgQEAgY29uZmln
+IENSWVBUT19ERVZfU1RNMzJfSEFTSAogCXNlbGVjdCBDUllQVE9fU0hBMjU2CiAJc2VsZWN0IENS
+WVBUT19FTkdJTkUKIAloZWxwCi0gICAgICAgICAgVGhpcyBlbmFibGVzIHN1cHBvcnQgZm9yIHRo
+ZSBIQVNIIGh3IGFjY2VsZXJhdG9yIHdoaWNoIGNhbiBiZSBmb3VuZAorCSAgVGhpcyBlbmFibGVz
+IHN1cHBvcnQgZm9yIHRoZSBIQVNIIGh3IGFjY2VsZXJhdG9yIHdoaWNoIGNhbiBiZSBmb3VuZAog
+CSAgb24gU1RNaWNyb2VsZWN0cm9uaWNzIFNUTTMyIFNPQy4KIAogY29uZmlnIENSWVBUT19ERVZf
+U1RNMzJfQ1JZUApAQCAtMjcsNSArMjcsNSBAQCBjb25maWcgQ1JZUFRPX0RFVl9TVE0zMl9DUllQ
+CiAJc2VsZWN0IENSWVBUT19FTkdJTkUKIAlzZWxlY3QgQ1JZUFRPX0xJQl9ERVMKIAloZWxwCi0g
+ICAgICAgICAgVGhpcyBlbmFibGVzIHN1cHBvcnQgZm9yIHRoZSBDUllQIChBRVMvREVTL1RERVMp
+IGh3IGFjY2VsZXJhdG9yIHdoaWNoCisJICBUaGlzIGVuYWJsZXMgc3VwcG9ydCBmb3IgdGhlIENS
+WVAgKEFFUy9ERVMvVERFUykgaHcgYWNjZWxlcmF0b3Igd2hpY2gKIAkgIGNhbiBiZSBmb3VuZCBv
+biBTVE1pY3JvZWxlY3Ryb25pY3MgU1RNMzIgU09DLgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9jcnlw
+dG8vdXg1MDAvS2NvbmZpZyBiL2RyaXZlcnMvY3J5cHRvL3V4NTAwL0tjb25maWcKaW5kZXggYjcz
+MTg5NWFhMjQxLi5mNTZkNjVjNTZjY2YgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvY3J5cHRvL3V4NTAw
+L0tjb25maWcKKysrIGIvZHJpdmVycy9jcnlwdG8vdXg1MDAvS2NvbmZpZwpAQCAtMTEsMTggKzEx
+LDE4IEBAIGNvbmZpZyBDUllQVE9fREVWX1VYNTAwX0NSWVAKIAlzZWxlY3QgQ1JZUFRPX1NLQ0lQ
+SEVSCiAJc2VsZWN0IENSWVBUT19MSUJfREVTCiAJaGVscAotICAgICAgICBUaGlzIHNlbGVjdHMg
+dGhlIGNyeXB0byBkcml2ZXIgZm9yIHRoZSBVWDUwMF9DUllQIGhhcmR3YXJlLiBJdCBzdXBwb3J0
+cwotICAgICAgICBBRVMtRUNCLCBDQkMgYW5kIENUUiB3aXRoIGtleXMgc2l6ZXMgb2YgMTI4LCAx
+OTIgYW5kIDI1NiBiaXQgc2l6ZXMuCisJVGhpcyBzZWxlY3RzIHRoZSBjcnlwdG8gZHJpdmVyIGZv
+ciB0aGUgVVg1MDBfQ1JZUCBoYXJkd2FyZS4gSXQgc3VwcG9ydHMKKwlBRVMtRUNCLCBDQkMgYW5k
+IENUUiB3aXRoIGtleXMgc2l6ZXMgb2YgMTI4LCAxOTIgYW5kIDI1NiBiaXQgc2l6ZXMuCiAKIGNv
+bmZpZyBDUllQVE9fREVWX1VYNTAwX0hBU0gKLSAgICAgICAgdHJpc3RhdGUgIlVYNTAwIGNyeXB0
+byBkcml2ZXIgZm9yIEhBU0ggYmxvY2siCi0gICAgICAgIGRlcGVuZHMgb24gQ1JZUFRPX0RFVl9V
+WDUwMAotICAgICAgICBzZWxlY3QgQ1JZUFRPX0hBU0gKKwl0cmlzdGF0ZSAiVVg1MDAgY3J5cHRv
+IGRyaXZlciBmb3IgSEFTSCBibG9jayIKKwlkZXBlbmRzIG9uIENSWVBUT19ERVZfVVg1MDAKKwlz
+ZWxlY3QgQ1JZUFRPX0hBU0gKIAlzZWxlY3QgQ1JZUFRPX1NIQTEKIAlzZWxlY3QgQ1JZUFRPX1NI
+QTI1NgotICAgICAgICBoZWxwCi0gICAgICAgICAgVGhpcyBzZWxlY3RzIHRoZSBoYXNoIGRyaXZl
+ciBmb3IgdGhlIFVYNTAwX0hBU0ggaGFyZHdhcmUuCi0gICAgICAgICAgRGVwZW5kcyBvbiBVWDUw
+MC9TVE0gRE1BIGlmIHJ1bm5pbmcgaW4gRE1BIG1vZGUuCisJaGVscAorCSAgVGhpcyBzZWxlY3Rz
+IHRoZSBoYXNoIGRyaXZlciBmb3IgdGhlIFVYNTAwX0hBU0ggaGFyZHdhcmUuCisJICBEZXBlbmRz
+IG9uIFVYNTAwL1NUTSBETUEgaWYgcnVubmluZyBpbiBETUEgbW9kZS4KIAogY29uZmlnIENSWVBU
+T19ERVZfVVg1MDBfREVCVUcKIAlib29sICJBY3RpdmF0ZSB1eDUwMCBwbGF0Zm9ybSBkZWJ1Zy1t
+b2RlIGZvciBjcnlwdG8gYW5kIGhhc2ggYmxvY2siCi0tIAoyLjcuNAoKCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
