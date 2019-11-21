@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B97011056B8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 17:13:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B6E51056B9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 17:14:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZWNfUlquI0lh9PI09M9VC4V/rt8jxJLQjesFlJmu/kA=; b=tNJYSI3fA1PyFv
-	bfonZEz8WymxnbBOjELqa3ajuD1SbdBmL69evFm/NLAP6Yo2Oaub5ywH+uKdRI1tSRt/6qO4keHO4
-	ID9aWXqtcv7U0BvIrqag1rlsRUxO6FIdQxFYCTj7rp9HZI+1Wtt23xvpU5ca1BSUND25y06e5bCQY
-	cOKnghqwyV1A42nMn3nrhzJCH+PyoXe0MID5LPKwPJgxlybkvVIWP6nJR1biUXmMHZavSLYaMhIpx
-	SfGCaT7p9TsBkiqiM/bHgTWuLn54Dq3wSi9bTu7UcVojuc8GkL4qEjoQkWcex5CoKvTntwzgye4nR
-	w21IPcCeuyWtr9KOhU9A==;
+	List-Owner; bh=iQzhEiC07lpLwVP/vIS5mFqU5bIK+dpeNj7WmxaSz9k=; b=HPrUegMBm2rCii
+	k15Nptap3jbMuuIC/Uk7l9Eab9MFpcqDnQ1p2aJGfEV6OG9iKL9Xk3bYyGORzyXhlytlU8f8Wa+2B
+	qp8z9QfFejkHJsP3kNtevBR27hXAQv3JU4uc9YOLrNT4rO2qaU/qaVFYf/wAyy09MDCAq5EiTUj2g
+	yXv+qRTN+WYqY5e8+y/3ag6IGXzdGdIxAUSn82szD9vRJ8vQT04UD6WU7tYkMOM+ABp8WbmoDJLEq
+	RqcwMkDjB1ntEgLxSXT10rg+sshOh2xAp3xqL5QaxS9gHWAlUFoptVfc6byw+Xte42kDp2SLDKNDA
+	Dnfm70HqHADYCGB6jx9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXp5N-0007ln-4r; Thu, 21 Nov 2019 16:13:37 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iXp5g-0007yK-Dv; Thu, 21 Nov 2019 16:13:56 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXp4n-0007Pq-VX
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 16:13:03 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xALFr4SJ014960; Thu, 21 Nov 2019 17:12:54 +0100
+ id 1iXp4y-0007YI-1N
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 16:13:13 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xALFqFUB020182; Thu, 21 Nov 2019 17:13:00 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=Iz8ZMLq4KL2OY//6RHzxDl3+L7rh2284X+J8u9hKnrk=;
- b=KW1fAbQwn9WXQFMCVluDnXacAvmMldImHp/4c52LT4JafPyhEy+zEl/FyRBDMgm0mrkC
- ixsQEBJQQ+x1BG0kjosEZJ89NBUpo6VmIegT5ZutCImH3t8+bpafLjxIYKWZg5Ae3P35
- d5CWuM9YCTD4T21sYDYOQjLUzU8ez858fuU2rMJ+e2D6FOQm+nApTYFtvnuPjfqhhY+M
- tXRVi4CfexO2nSMpfRyAYcFABUG0ImJTiaM/9n6/gs/7cApkFa7eqmYgcgLRfFC6F5i3
- Mzp5pkSAVgGEJViSjeAmUwndnPxkvxb488bVjWW+aR9qN9a0Y5G64t/9Ob+DbCdNJgKp eg== 
+ bh=VJuIiYemz1wIoow996zFwaavl044qeXbEvuqGKKF5Ds=;
+ b=PCGHYkrBzeoH80rs/cDrZ7d1oOJRYRIuSJkTD/ksDSdXcO8xe9drxCTdA6Uv/BtuDP/D
+ aDF9ZgW8GI+fB8vLij6qzW1x9wSkvgj4YEXLzLzuDIvSkaUIcrnhsZw9/bQCN58DN3ql
+ AQpURiiQOIOSTJC7FN+GKQbvKUNoPCWXVhGapq1oaZMTj6AW64C+OW/6n5e6CxlMAieZ
+ nXhgHbbjXZ3NIh8wLX+BlKH3M1dCcfI8lSqVDQSzq5OgJBaoLck6yfNL1uF2HL16d3CZ
+ OrFXNpJ7wD1uEdG//mtS7FcGzIlFI+G3UjggWfl4OiNxKsFDN57+PRlB1eoT1/yCUeY5 qw== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wa9uvmpd1-1
+ by mx07-00178001.pphosted.com with ESMTP id 2wa9usma9f-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 21 Nov 2019 17:12:54 +0100
+ Thu, 21 Nov 2019 17:13:00 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 05EA310002A;
- Thu, 21 Nov 2019 17:12:54 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 385EB10002A;
+ Thu, 21 Nov 2019 17:13:00 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EBBC52FF5E4;
- Thu, 21 Nov 2019 17:12:53 +0100 (CET)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 12E502FF5E4;
+ Thu, 21 Nov 2019 17:13:00 +0100 (CET)
 Received: from localhost (10.75.127.46) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 21 Nov 2019 17:12:53
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 21 Nov 2019 17:12:59
  +0100
 From: Amelie Delaunay <amelie.delaunay@st.com>
 To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
@@ -55,26 +54,27 @@ To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
  <mark.rutland@arm.com>,
  Russell King <linux@armlinux.org.uk>, Olof Johansson <olof@lixom.net>,
  Arnd Bergmann <arnd@arndb.de>
-Subject: [PATCH 4/5] ARM: dts: stm32: enable USB OTG HS on stm32mp157a-dk1
-Date: Thu, 21 Nov 2019 17:12:53 +0100
-Message-ID: <20191121161253.25751-1-amelie.delaunay@st.com>
+Subject: [PATCH 5/5] ARM: dts: stm32: add phy-names to usbotg_hs on
+ stm32mp157c-ev1
+Date: Thu, 21 Nov 2019 17:12:59 +0100
+Message-ID: <20191121161259.25799-1-amelie.delaunay@st.com>
 X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
 X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG3NODE3.st.com (10.75.127.9) To SFHDAG3NODE2.st.com
+X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
  definitions=2019-11-21_03:2019-11-21,2019-11-21 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_081302_336084_57CBF6D8 
-X-CRM114-Status: GOOD (  13.61  )
+X-CRM114-CacheID: sfid-20191121_081312_402997_5EBDC8DF 
+X-CRM114-Status: GOOD (  15.16  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -103,31 +103,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch enables USB OTG HS on stm32mp157a-dk1 in Peripheral mode.
+phy-names is required by usbotg_hs driver to get the phy, otherwise, it
+considers that there is no phys property.
 
 Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
 ---
- arch/arm/boot/dts/stm32mp157a-dk1.dts | 7 +++++++
- 1 file changed, 7 insertions(+)
+ arch/arm/boot/dts/stm32mp157c-ev1.dts | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/stm32mp157a-dk1.dts b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-index 7603f9456d56..caf00c8928dd 100644
---- a/arch/arm/boot/dts/stm32mp157a-dk1.dts
-+++ b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-@@ -610,6 +610,13 @@
+diff --git a/arch/arm/boot/dts/stm32mp157c-ev1.dts b/arch/arm/boot/dts/stm32mp157c-ev1.dts
+index 2010f6292a77..228e35e16884 100644
+--- a/arch/arm/boot/dts/stm32mp157c-ev1.dts
++++ b/arch/arm/boot/dts/stm32mp157c-ev1.dts
+@@ -355,6 +355,7 @@
+ &usbotg_hs {
+ 	dr_mode = "peripheral";
+ 	phys = <&usbphyc_port1 0>;
++	phy-names = "usb2-phy";
  	status = "okay";
  };
  
-+&usbotg_hs {
-+	dr_mode = "peripheral";
-+	phys = <&usbphyc_port1 0>;
-+	phy-names = "usb2-phy";
-+	status = "okay";
-+};
-+
- &usbphyc {
- 	status = "okay";
- };
 -- 
 2.17.1
 
