@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6003F10490F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 04:20:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADFCC10491E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 04:20:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=2QP4u825GJOxDizWNvH8wemM92QDnk0H6nHHmdhIGvk=; b=hhA
-	rWq6O7Z+L+gc27zfsk71lEuafjtIihkjPyW3o2tNE0B89ZSp6JWVDJlTh0hM7FCLPgOkai19hy+Tl
-	PQ3r21hkX0mEJNlcVRjDU8VUHU8PRl9emOHLHkb7N4jcr7CuReuNMkUT5XVxKmqFJPAfC6DHCRgqX
-	vcwSTshePjljBureZBd+M31kvoLDUSY0j8bK4lxCiXRWRzkQMRM+QPWwibEaN/WF2u9QfDf5x/ipJ
-	UHNPqLYmq13/wYQzE1QVnCAfGr09sqYBspXAaq4UDxllrbqT9Itlj9vfXd6u9qDythSNYS+RgmHpd
-	8BOQtD/wW8LZxU0ToQdcM9z7KjG6tAw==;
+	References:List-Owner; bh=WzmP+LhPaiSuIBFG9bokJ94OhJlx2agicIWsxGBJyZI=; b=Tfg
+	BEpa7jgUFmclDGngQixrO9oRJd3AwOtnKDiylwcmYXKey/jvHyREpRd8R3aLKEAm+IcIMbmmWxGkN
+	kI5mFa0lOuMkx8Xhrd3KI6Mf/8e8yZPxbLNxwD89P54VWliVnTy1XwpOs6TIkWFbDrPf0Uk6ppJzI
+	5AVbqEmVNl5d+P+MvAE+InhswjjBydi0Bv1Sq5i4WhPY3LU7rZNu+M0DpbYcyaZJt8HD8EQAN1slb
+	iDOrGgWL4rCATyTH3o1l7hKL8LH7awabvdt2EmeFnxMSwFoeLkKcKchZX2aoPhn0bK8e+NaPZUx1m
+	cvMnIm9igimGPB6/+FAPJNR55MPpPBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXd12-00031j-4x; Thu, 21 Nov 2019 03:20:20 +0000
+	id 1iXd1H-0004WL-Nr; Thu, 21 Nov 2019 03:20:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXd0V-0002q3-NV
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 03:19:49 +0000
+ id 1iXd0c-0002xd-UN
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 03:19:56 +0000
 Received: from PC-kkoz.proceq.com (unknown [213.160.61.66])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D8C1A208A3;
- Thu, 21 Nov 2019 03:19:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5609F20721;
+ Thu, 21 Nov 2019 03:19:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574306387;
- bh=LSzFWPpsVO+DHMVTB1mAdrxBaXS9PyPnO6OGbCDZ6n0=;
+ s=default; t=1574306394;
+ bh=wzYCZfJ/OBs2FZPR/b3ZOr0+bvljs7kYVUGM40zxFhw=;
  h=From:To:Cc:Subject:Date:From;
- b=jiF6umi+XcgpJlFZE8vEjUctCZj2HQWnz9Sy8ndxleVr2m/4yCtQEgB7M1+o/oNEN
- ccZP47LhIHcpySVlkZc6yl8aZgRYhf2bPtrtmqTWAAgtdbZtkVCEs0+fcffnMrNDfz
- DiqkNnfdHY81g9j3ZbdT+xnb2RVUdf8AZAVB5XMc=
+ b=J++5Z/ze24PaSYJhFXl6Z1QBcxgHpn5Tre8hvHLNjLzw/gz8mVvzqmWeSoHeh10ru
+ qOaSuGioG+qx3WB0V4WuLuupT/sbZZs8VOsJpt23etiDsvc0GZjHjzWcEB65Yjsb9q
+ ZammvUN4aG7DWmL3LyQ1pNykZ/0M1/cW5+8S1I8w=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2] pinctrl: Fix Kconfig indentation
-Date: Thu, 21 Nov 2019 04:19:41 +0100
-Message-Id: <1574306382-32516-1-git-send-email-krzk@kernel.org>
+Subject: [PATCH v2] perf: Fix Kconfig indentation
+Date: Thu, 21 Nov 2019 04:19:51 +0100
+Message-Id: <1574306391-10337-1-git-send-email-krzk@kernel.org>
 X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_191947_848086_B690DD1D 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20191120_191955_052508_DEC643DD 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -72,15 +73,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Andrew Lunn <andrew@lunn.ch>,
- Jason Cooper <jason@lakedaemon.net>, Fabio Estevam <festevam@gmail.com>,
- Linus Walleij <linus.walleij@linaro.org>, Stefan Agner <stefan@agner.ch>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, linux-gpio@vger.kernel.org,
- Andy Gross <agross@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
- Shawn Guo <shawnguo@kernel.org>, Gregory Clement <gregory.clement@bootlin.com>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -98,197 +92,68 @@ Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 Changes since v1:
 1. Fix also 7-space and tab+1 space indentation issues.
 ---
- drivers/pinctrl/Kconfig           | 18 ++++----
- drivers/pinctrl/freescale/Kconfig | 12 ++---
- drivers/pinctrl/mvebu/Kconfig     | 10 ++---
- drivers/pinctrl/qcom/Kconfig      | 92 +++++++++++++++++++--------------------
- 4 files changed, 66 insertions(+), 66 deletions(-)
+ drivers/perf/Kconfig | 34 +++++++++++++++++-----------------
+ 1 file changed, 17 insertions(+), 17 deletions(-)
 
-diff --git a/drivers/pinctrl/Kconfig b/drivers/pinctrl/Kconfig
-index b372419d61f2..25b6c830f2f1 100644
---- a/drivers/pinctrl/Kconfig
-+++ b/drivers/pinctrl/Kconfig
-@@ -32,15 +32,15 @@ config DEBUG_PINCTRL
- 	  Say Y here to add some extra checks and diagnostics to PINCTRL calls.
+diff --git a/drivers/perf/Kconfig b/drivers/perf/Kconfig
+index 09ae8a970880..b35314bec985 100644
+--- a/drivers/perf/Kconfig
++++ b/drivers/perf/Kconfig
+@@ -54,13 +54,13 @@ config ARM_PMU_ACPI
+ 	def_bool y
  
- config PINCTRL_ARTPEC6
--        bool "Axis ARTPEC-6 pin controller driver"
--        depends on MACH_ARTPEC6
--        select PINMUX
--        select GENERIC_PINCONF
+ config ARM_SMMU_V3_PMU
+-	 tristate "ARM SMMUv3 Performance Monitors Extension"
+-	 depends on ARM64 && ACPI && ARM_SMMU_V3
+-	   help
+-	   Provides support for the ARM SMMUv3 Performance Monitor Counter
+-	   Groups (PMCG), which provide monitoring of transactions passing
+-	   through the SMMU and allow the resulting information to be filtered
+-	   based on the Stream ID of the corresponding master.
++	tristate "ARM SMMUv3 Performance Monitors Extension"
++	depends on ARM64 && ACPI && ARM_SMMU_V3
++	  help
++	  Provides support for the ARM SMMUv3 Performance Monitor Counter
++	  Groups (PMCG), which provide monitoring of transactions passing
++	  through the SMMU and allow the resulting information to be filtered
++	  based on the Stream ID of the corresponding master.
+ 
+ config ARM_DSU_PMU
+ 	tristate "ARM DynamIQ Shared Unit (DSU) PMU"
+@@ -80,11 +80,11 @@ config FSL_IMX8_DDR_PMU
+ 	  events.
+ 
+ config HISI_PMU
+-       bool "HiSilicon SoC PMU"
+-       depends on ARM64 && ACPI
+-       help
+-         Support for HiSilicon SoC uncore performance monitoring
+-         unit (PMU), such as: L3C, HHA and DDRC.
++	bool "HiSilicon SoC PMU"
++	depends on ARM64 && ACPI
++	help
++	  Support for HiSilicon SoC uncore performance monitoring
++	  unit (PMU), such as: L3C, HHA and DDRC.
+ 
+ config QCOM_L2_PMU
+ 	bool "Qualcomm Technologies L2-cache PMU"
+@@ -115,11 +115,11 @@ config THUNDERX2_PMU
+ 	   in the DDR4 Memory Controller (DMC).
+ 
+ config XGENE_PMU
+-        depends on ARCH_XGENE
+-        bool "APM X-Gene SoC PMU"
+-        default n
 -        help
--          This is the driver for the Axis ARTPEC-6 pin controller. This driver
--          supports pin function multiplexing as well as pin bias and drive
--          strength configuration. Device tree integration instructions can be
--          found in Documentation/devicetree/bindings/pinctrl/axis,artpec6-pinctrl.txt
-+	bool "Axis ARTPEC-6 pin controller driver"
-+	depends on MACH_ARTPEC6
-+	select PINMUX
-+	select GENERIC_PINCONF
+-          Say y if you want to use APM X-Gene SoC performance monitors.
++	depends on ARCH_XGENE
++	bool "APM X-Gene SoC PMU"
++	default n
 +	help
-+	  This is the driver for the Axis ARTPEC-6 pin controller. This driver
-+	  supports pin function multiplexing as well as pin bias and drive
-+	  strength configuration. Device tree integration instructions can be
-+	  found in Documentation/devicetree/bindings/pinctrl/axis,artpec6-pinctrl.txt
++	  Say y if you want to use APM X-Gene SoC performance monitors.
  
- config PINCTRL_AS3722
- 	tristate "Pinctrl and GPIO driver for ams AS3722 PMIC"
-diff --git a/drivers/pinctrl/freescale/Kconfig b/drivers/pinctrl/freescale/Kconfig
-index 5f4058033ec6..3ea9ce3e0cd9 100644
---- a/drivers/pinctrl/freescale/Kconfig
-+++ b/drivers/pinctrl/freescale/Kconfig
-@@ -39,12 +39,12 @@ config PINCTRL_IMX27
- 
- 
- config PINCTRL_IMX25
--        bool "IMX25 pinctrl driver"
--        depends on OF
--        depends on SOC_IMX25
--        select PINCTRL_IMX
--        help
--          Say Y here to enable the imx25 pinctrl driver
-+	bool "IMX25 pinctrl driver"
-+	depends on OF
-+	depends on SOC_IMX25
-+	select PINCTRL_IMX
-+	help
-+	  Say Y here to enable the imx25 pinctrl driver
- 
- config PINCTRL_IMX35
- 	bool "IMX35 pinctrl driver"
-diff --git a/drivers/pinctrl/mvebu/Kconfig b/drivers/pinctrl/mvebu/Kconfig
-index d69c25798871..0d12894d3ee1 100644
---- a/drivers/pinctrl/mvebu/Kconfig
-+++ b/drivers/pinctrl/mvebu/Kconfig
-@@ -46,8 +46,8 @@ config PINCTRL_ORION
- 	select PINCTRL_MVEBU
- 
- config PINCTRL_ARMADA_37XX
--       bool
--       select GENERIC_PINCONF
--       select MFD_SYSCON
--       select PINCONF
--       select PINMUX
-+	bool
-+	select GENERIC_PINCONF
-+	select MFD_SYSCON
-+	select PINCONF
-+	select PINMUX
-diff --git a/drivers/pinctrl/qcom/Kconfig b/drivers/pinctrl/qcom/Kconfig
-index 4f5645245b06..811af2f81c39 100644
---- a/drivers/pinctrl/qcom/Kconfig
-+++ b/drivers/pinctrl/qcom/Kconfig
-@@ -142,33 +142,33 @@ config PINCTRL_QDF2XXX
- 	  Qualcomm Technologies QDF2xxx SOCs.
- 
- config PINCTRL_QCOM_SPMI_PMIC
--       tristate "Qualcomm SPMI PMIC pin controller driver"
--       depends on GPIOLIB && OF && SPMI
--       select REGMAP_SPMI
--       select PINMUX
--       select PINCONF
--       select GENERIC_PINCONF
--       select GPIOLIB_IRQCHIP
--       select IRQ_DOMAIN_HIERARCHY
--       help
--         This is the pinctrl, pinmux, pinconf and gpiolib driver for the
--         Qualcomm GPIO and MPP blocks found in the Qualcomm PMIC's chips,
--         which are using SPMI for communication with SoC. Example PMIC's
--         devices are pm8841, pm8941 and pma8084.
-+	tristate "Qualcomm SPMI PMIC pin controller driver"
-+	depends on GPIOLIB && OF && SPMI
-+	select REGMAP_SPMI
-+	select PINMUX
-+	select PINCONF
-+	select GENERIC_PINCONF
-+	select GPIOLIB_IRQCHIP
-+	select IRQ_DOMAIN_HIERARCHY
-+	help
-+	 This is the pinctrl, pinmux, pinconf and gpiolib driver for the
-+	 Qualcomm GPIO and MPP blocks found in the Qualcomm PMIC's chips,
-+	 which are using SPMI for communication with SoC. Example PMIC's
-+	 devices are pm8841, pm8941 and pma8084.
- 
- config PINCTRL_QCOM_SSBI_PMIC
--       tristate "Qualcomm SSBI PMIC pin controller driver"
--       depends on GPIOLIB && OF
--       select PINMUX
--       select PINCONF
--       select GENERIC_PINCONF
--       select GPIOLIB_IRQCHIP
--       select IRQ_DOMAIN_HIERARCHY
--       help
--         This is the pinctrl, pinmux, pinconf and gpiolib driver for the
--         Qualcomm GPIO and MPP blocks found in the Qualcomm PMIC's chips,
--         which are using SSBI for communication with SoC. Example PMIC's
--         devices are pm8058 and pm8921.
-+	tristate "Qualcomm SSBI PMIC pin controller driver"
-+	depends on GPIOLIB && OF
-+	select PINMUX
-+	select PINCONF
-+	select GENERIC_PINCONF
-+	select GPIOLIB_IRQCHIP
-+	select IRQ_DOMAIN_HIERARCHY
-+	help
-+	 This is the pinctrl, pinmux, pinconf and gpiolib driver for the
-+	 Qualcomm GPIO and MPP blocks found in the Qualcomm PMIC's chips,
-+	 which are using SSBI for communication with SoC. Example PMIC's
-+	 devices are pm8058 and pm8921.
- 
- config PINCTRL_SC7180
- 	tristate "Qualcomm Technologies Inc SC7180 pin controller driver"
-@@ -180,30 +180,30 @@ config PINCTRL_SC7180
- 	  Technologies Inc SC7180 platform.
- 
- config PINCTRL_SDM660
--       tristate "Qualcomm Technologies Inc SDM660 pin controller driver"
--       depends on GPIOLIB && OF
--       select PINCTRL_MSM
--       help
--         This is the pinctrl, pinmux, pinconf and gpiolib driver for the
--         Qualcomm Technologies Inc TLMM block found on the Qualcomm
--         Technologies Inc SDM660 platform.
-+	tristate "Qualcomm Technologies Inc SDM660 pin controller driver"
-+	depends on GPIOLIB && OF
-+	select PINCTRL_MSM
-+	help
-+	 This is the pinctrl, pinmux, pinconf and gpiolib driver for the
-+	 Qualcomm Technologies Inc TLMM block found on the Qualcomm
-+	 Technologies Inc SDM660 platform.
- 
- config PINCTRL_SDM845
--       tristate "Qualcomm Technologies Inc SDM845 pin controller driver"
--       depends on GPIOLIB && (OF || ACPI)
--       select PINCTRL_MSM
--       help
--         This is the pinctrl, pinmux, pinconf and gpiolib driver for the
--         Qualcomm Technologies Inc TLMM block found on the Qualcomm
--         Technologies Inc SDM845 platform.
-+	tristate "Qualcomm Technologies Inc SDM845 pin controller driver"
-+	depends on GPIOLIB && (OF || ACPI)
-+	select PINCTRL_MSM
-+	help
-+	 This is the pinctrl, pinmux, pinconf and gpiolib driver for the
-+	 Qualcomm Technologies Inc TLMM block found on the Qualcomm
-+	 Technologies Inc SDM845 platform.
- 
- config PINCTRL_SM8150
--       tristate "Qualcomm Technologies Inc SM8150 pin controller driver"
--       depends on GPIOLIB && OF
--       select PINCTRL_MSM
--       help
--         This is the pinctrl, pinmux, pinconf and gpiolib driver for the
--         Qualcomm Technologies Inc TLMM block found on the Qualcomm
--         Technologies Inc SM8150 platform.
-+	tristate "Qualcomm Technologies Inc SM8150 pin controller driver"
-+	depends on GPIOLIB && OF
-+	select PINCTRL_MSM
-+	help
-+	 This is the pinctrl, pinmux, pinconf and gpiolib driver for the
-+	 Qualcomm Technologies Inc TLMM block found on the Qualcomm
-+	 Technologies Inc SM8150 platform.
- 
- endif
+ config ARM_SPE_PMU
+ 	tristate "Enable support for the ARMv8.2 Statistical Profiling Extension"
 -- 
 2.7.4
 
