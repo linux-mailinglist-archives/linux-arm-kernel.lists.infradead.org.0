@@ -2,110 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B55FC105089
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 11:30:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B0051050EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 11:58:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eBF7gZhr27VxG3JrYosIzsmS0O+MnPZ3mghbsBXH0Gw=; b=g7Zr/N/EBTDA+K
-	9mid7rDAc3Nb6mgOXgYqUD1PtwRx1oSIc8hTTtBFwD7c77GaN88S5vgLbkMeXTjhPHV9CS8Ba+1zZ
-	kgnIFeHLHDMcqsTyMnys6EsTOrjG0HZci0Oc3IPLfqRKd9II/57v1/ZFS1xOTH3KRKfTwNrfZ/l5A
-	T/bUNXsY2pPj3Lje9FeriWpKOqdDrimZiTi7jr7GNeKovxvEwSEenXwHK9WqhloyOYUlfGwfL5v+c
-	/qqRYkPQjU39lN5wjao8zvvhK5YgWEV7Aowtzkjh50Czs1Vd/Vwg0yulyd+0roVKiI7c3HVwXGbKv
-	FnmST5YYT9rMzg9XvKCA==;
+	List-Owner; bh=pJE3d4B7hVnGpYgieO8Esn7NhGkG+age8/yiHxARCe0=; b=gFWfXMb+BYpdrC
+	/ObQWAlXXDO72BatUYIA8AZ7fhewg4W21urWjrQq84B5gaJ9J3tVb0V23z4A1O27u1pUPW1h9QawF
+	YLXL78eemI7bNTkmCK5PyjqvLCT7pFvPeWo0DrTyVKmdjw2v1ZDhxTmsA82WOwy/21iX51EPay/Jw
+	2TEv/6oOGSS0uJc9F1AqUJCmOtlD5NlQnoGFGB07by6w1OInSDy0skkuCj3Vu/PuPYQq5W6NPVU/l
+	sNmN2QQIOcQ8yntrtsMD5KWQmn27dRYHkHvxLv0LeiOufiVdFN6Co7TW+dZClLxGc5c0Mm9GMLzQA
+	Zf8oNJ/g/MNeCFpk+Ccg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXjjj-0003w1-W9; Thu, 21 Nov 2019 10:30:56 +0000
-Received: from mail-eopbgr150042.outbound.protection.outlook.com
- ([40.107.15.42] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1iXkAo-0003JF-FL; Thu, 21 Nov 2019 10:58:54 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXjjc-0003v9-0W
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 10:30:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Cr515NtOlfrcRSe6QLECcfdV6/SsZquV2mBciB1XqdCu/r9JeG1ncR2i+XW+68QcgzYQ7KaqCdTMVXg2olX/VUVtFuKn5Rj3f2ZA+ogrRAA6t5w9yUdpZscvDYg+WkPS22pKJXo1ZL1iRkQqGtlXZdseqtsy2higpJtIZKr/waChOQG1luooYcEZBSfK1rtFC4wZZlv400wO3loNZHBD0d2NgQvHmG1r3/m4g0q3Y4InrsXsgIXCko4bE4pEa22BJTs0Unc9Cura/EwWKRUlrPqCxOBs3MIkuewfuEmwzw0qzCxSZVUjtkqBdZfzuLgJ6U8oUfwj1QkAvi/1kLBGQQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=drhEai2cOWH9fRNUcjHvoKfxwqUxM2ucCjD2yABaBTw=;
- b=O35BiRDQG9zA6uuF2zZBe2OD6xVBeeTq+EedwjUe81ayVyTB9OhL0cYFhqXVdcHr9nlHa81/IUHrvksGcihPvduM1oHhG9yl1nluDZwo5CxApRTmjMSRhpYfsvBIKTdPgrkO4fYW+GNWQZZREeaPzP0dRiIW0Bfx9BfAQVFRhOJNf36ZtI/o8YGNQ2PrL3pd/7Hw3fEFq/RuHhVXfXxYbhk931igzr8ovsjrhRcHYp48QGYzcJFgfg9sYCHRelfYa9v2c4ETO4ywK5t0oSggHiYoDYQ2Rf050hbi0/ychsnwb/IyPhL6cNZLLs2+y/EsbO/nzB7xce3yVssprXmfeQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=drhEai2cOWH9fRNUcjHvoKfxwqUxM2ucCjD2yABaBTw=;
- b=Y76hToc3SBVjxF3vul81FYoeQbpUM80jyatF11lLxCHLZni60KcA6F2Yk4AvCdb4HD3E93s5TK1pCqYrSiQzp+yIV3uodFovPA8Wjpxfyg+SVQdhjP4P2Sdb2m+cmj7GA28qb2YDnJwB8UoVonrljWJkj/c37xKgaXA6qjaX0Gs=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB5554.eurprd04.prod.outlook.com (20.178.112.146) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2474.17; Thu, 21 Nov 2019 10:30:40 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::f16d:a26a:840:f97c]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::f16d:a26a:840:f97c%4]) with mapi id 15.20.2451.031; Thu, 21 Nov 2019
- 10:30:40 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "sboyd@kernel.org" <sboyd@kernel.org>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>
-Subject: [PATCH] clk: imx: clk-composite-7ulp: add lock
-Thread-Topic: [PATCH] clk: imx: clk-composite-7ulp: add lock
-Thread-Index: AQHVoFa4qHyFBgWUVEOTxio+xNlL5Q==
-Date: Thu, 21 Nov 2019 10:30:39 +0000
-Message-ID: <1574332142-7130-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK0PR03CA0110.apcprd03.prod.outlook.com
- (2603:1096:203:b0::26) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: e5898b92-f064-4113-3809-08d76e6ddac0
-x-ms-traffictypediagnostic: AM0PR04MB5554:|AM0PR04MB5554:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB55542E978F711FD250FB79A4884E0@AM0PR04MB5554.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1850;
-x-forefront-prvs: 0228DDDDD7
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(39860400002)(366004)(396003)(346002)(136003)(199004)(189003)(25786009)(36756003)(66066001)(5660300002)(14454004)(478600001)(86362001)(2906002)(14444005)(256004)(71200400001)(71190400001)(2201001)(8676002)(81156014)(81166006)(8936002)(50226002)(305945005)(7736002)(2501003)(6636002)(44832011)(6436002)(99286004)(6512007)(6486002)(4326008)(2616005)(386003)(110136005)(186003)(6506007)(3846002)(26005)(102836004)(6116002)(66476007)(66556008)(64756008)(66446008)(66946007)(52116002)(54906003)(316002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5554;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: mUS2HWutZVkg1GvCogYgG9mJKqW377rU34d0dj1/31kqiTHHUJ6cL29dnWB8MiHumUR/cyI2Fpp2cMhcPPJrEgWsoCGli2MsxIcil6uOLdpN3BBcU4X02Whu6+28OSWBz5JzHe0rArFeet58tXFO5w83o0Bzv6j5AGZekmnZzstgnOhKY3Yy9R5oO/5iC46IqZFgnYMcu+rWawq+pfEBJR95E29AB5OatgIcdrNYEO9SQFplCYRxfcbSVylp1MaGV0UNQFb9URHVzkdvE+HfwFLtLxhwFID7h6LrSlSnN7uU8ZluTNZYmbDdVSea0pcyeN4hA8aD0NAudbN5vbdhp7UK2wFee5RVVRUyIR+U8A+9f1oAeAsh1MCxIoS5G7MOwPERLXNYDL0jXdkXkvo3HbFvXS4pyO7ZKgXrCcKy75ImcEW7ywD0wDY6hekNwMLA
+ id 1iXkAg-0003Ip-7H
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 10:58:47 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xALAv0D0003536; Thu, 21 Nov 2019 11:58:42 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=+ryPb9ETJPdsYWVGk+7MMd7fF4WRlNWEqIU9BO/5o/E=;
+ b=c5n+Tu9CAwZRtKQzeN+Gk8BIJqhT8+m8ggCyptm0ywzgiRLJSE8JSbYgaf1Q74YvNe1S
+ iMiCAiNSbaz3lmcSc7eZg7p//tEkJuDgffXpQK99A7AzmXj1NpBdeF19kOI/v+42rGPl
+ bEavf9hTpDw/AAtrkegWrKwv+oProMFBNjv7Cc24wM/8DuOc2mv11/btkS5JYsrmFz9N
+ PVqwFnPezKkLlkIvUnhvAu29qnHPVEgK2R3xSroOwu7SGUS67BONKotm7AMjZxas/4xp
+ tp0CnzLLlB5iguJknqTti1mf3A7HAB2X9a5RYhaW9Q5TtcE0knB4TjmWARN19XfJQPa6 zA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2wa9usjv1h-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 21 Nov 2019 11:58:42 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 34550100034;
+ Thu, 21 Nov 2019 11:58:42 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 2690D2B90B8;
+ Thu, 21 Nov 2019 11:58:42 +0100 (CET)
+Received: from localhost (10.75.127.46) by SFHDAG5NODE3.st.com (10.75.127.15)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Thu, 21 Nov 2019 11:58:41 +0100
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+To: <thierry.reding@gmail.com>, <u.kleine-koenig@pengutronix.de>
+Subject: [PATCH] pwm: stm32: remove automatic output enable
+Date: Thu, 21 Nov 2019 11:58:00 +0100
+Message-ID: <1574333880-29339-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e5898b92-f064-4113-3809-08d76e6ddac0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Nov 2019 10:30:40.0393 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: cRvtYKQ3HTIn80iAPuyWmkGcaAcTMxC+pTxtkHrPzHAIaKnqqGA/7uCcuNxB4P5cw47jM+vaJQZqY4wuE+tCcA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5554
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-21_02:2019-11-21,2019-11-21 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_023048_058938_768AE4D8 
-X-CRM114-Status: GOOD (  10.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191121_025846_622240_6AFF720E 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.42 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -124,58 +90,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Alice Guo <alice.guo@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-pwm@vger.kernel.org, alexandre.torgue@st.com,
+ linux-kernel@vger.kernel.org, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ benjamin.gaignard@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+Don't use AOE (automatic output enable) by default.
+In case of break events, pwm is automatically re-enabled on next pwm
+cycle otherwise.
 
-Add lock to mux/gate/divider to protect the access to the register
-
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
 ---
- drivers/clk/imx/clk-composite-7ulp.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/pwm/pwm-stm32.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/clk/imx/clk-composite-7ulp.c b/drivers/clk/imx/clk-composite-7ulp.c
-index 060f8600ea0d..d8c6e48207c5 100644
---- a/drivers/clk/imx/clk-composite-7ulp.c
-+++ b/drivers/clk/imx/clk-composite-7ulp.c
-@@ -41,6 +41,7 @@ struct clk_hw *imx7ulp_clk_composite(const char *name,
- 		mux->reg = reg;
- 		mux->shift = PCG_PCS_SHIFT;
- 		mux->mask = PCG_PCS_MASK;
-+		mux->lock = &imx_ccm_lock;
- 	}
+diff --git a/drivers/pwm/pwm-stm32.c b/drivers/pwm/pwm-stm32.c
+index 359b085..3079818 100644
+--- a/drivers/pwm/pwm-stm32.c
++++ b/drivers/pwm/pwm-stm32.c
+@@ -374,9 +374,7 @@ static int stm32_pwm_config(struct stm32_pwm *priv, int ch,
+ 	else
+ 		regmap_update_bits(priv->regmap, TIM_CCMR2, mask, ccmr);
  
- 	if (rate_present) {
-@@ -58,6 +59,7 @@ struct clk_hw *imx7ulp_clk_composite(const char *name,
- 		fd->nwidth = PCG_PCD_WIDTH;
- 		fd->nmask = PCG_PCD_MASK;
- 		fd->flags = CLK_FRAC_DIVIDER_ZERO_BASED;
-+		fd->lock = &imx_ccm_lock;
- 	}
+-	regmap_update_bits(priv->regmap, TIM_BDTR,
+-			   TIM_BDTR_MOE | TIM_BDTR_AOE,
+-			   TIM_BDTR_MOE | TIM_BDTR_AOE);
++	regmap_update_bits(priv->regmap, TIM_BDTR, TIM_BDTR_MOE, TIM_BDTR_MOE);
  
- 	if (gate_present) {
-@@ -70,6 +72,7 @@ struct clk_hw *imx7ulp_clk_composite(const char *name,
- 		gate_hw = &gate->hw;
- 		gate->reg = reg;
- 		gate->bit_idx = PCG_CGC_SHIFT;
-+		gate->lock = &imx_ccm_lock;
- 	}
- 
- 	hw = clk_hw_register_composite(NULL, name, parent_names, num_parents,
+ 	return 0;
+ }
 -- 
-2.16.4
+2.7.4
 
 
 _______________________________________________
