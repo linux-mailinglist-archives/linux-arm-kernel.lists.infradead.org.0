@@ -2,81 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6030D104A4D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 06:32:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CF9C104AED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 08:01:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HG6//7/WnagFEs4iGUh9Phi3YqO+Jl0TZEyGlIy2j5Q=; b=JHduAJP8SPzQXN
-	6R4MiQX0IPSHdwnIMF4ISPgK7IKyl7lP+pMSRSI9AN2VKuRrTpA+e8hkkreYhKYHzD5+899pz+Jct
-	UhvMbEkTiFWbXcEvaI9lHvryaDut0lxU8ZraE/BU5QKxOBzJgDNipokol4n0Ghcz5Fo9ThRalSgQt
-	Vt0gREDIV1jra81hYfqdAoNnlkSk8dWXMWl5Hwh8x0XvgK4jCjKamgGsyY6eF7TlcNS4JDWsgbGmG
-	JBSDnxnUtER05i2evkx0A0bVjy8lH1PSzSlYpZwf5E8BPf10vrEHwkpzUYMz77Iw0nIizIQHhRFqz
-	tuCUPmQisKYmfbXlPE7w==;
+	List-Owner; bh=c+K74Nm2nWZY4HtwlQw/Tq6tCxUscOHPNXxmyNaQZ+s=; b=deFuhv4g8IpVJ6
+	FWdp53Jhh15S4UB9DIRefQ2t/fjF+D00BSeZnG3zs3MIVR9gBsTNhsNwyBxXgqsiaMKE3uUG4AXKH
+	r4xLU2vFTFY2isN6lZFNR7i0N/rp+8ej+ZYN6jAaL6KZe8brPCaFHyK74CTv8IhWS0O8TTr6Gwd/D
+	ok6jRcCj0TXvfq5ITXKMRs9S3R1pWVuIxtS+GHPiOz2zumaID023pXSnMUMYY/Eff/I8ZI2Ri8qw1
+	8w/meaEC0LMYWMtFef1lqte94qauuPHkOiyzIraI5PNeOERqWxGvU78CtUIv19EqBM0DXPy3Uze3H
+	dpMWTpufi7E+Gf2S6CxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXf4o-0007Ox-GY; Thu, 21 Nov 2019 05:32:22 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iXgSn-0005qD-PQ; Thu, 21 Nov 2019 07:01:13 +0000
+Received: from mail-il1-x132.google.com ([2607:f8b0:4864:20::132])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXf4g-0007Nz-7n
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 05:32:15 +0000
-Received: by mail-pg1-x541.google.com with SMTP id e17so996076pgd.7
+ id 1iXgSb-0005np-Q4
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 07:01:03 +0000
+Received: by mail-il1-x132.google.com with SMTP id p6so2283091ilp.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 21:32:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=yE3H52ST3bCRAdHmUDzhL/7UmgqQkrfup+4Ir818ZIQ=;
- b=M7BBqQwbeIa8JPve1L1VxPnrWig2i9WY0ZyJQqNtb4XAMmkDMSCMWoXgsK/BUgwDUG
- +d9RoKdI2qyNSdaD+nSIAoT7F4oQIUqrWJd/nlez1kwBmCmhxwHQwABfxrJ5IP+wo2Np
- tAso4ANpMBRdhCbXYBWd9wpXO9r11KzHWL9BoyF9oNUi9p7j3jazmA2qZctVscY3YyDJ
- GWW/g07xgm2+CEP4ffmAH+DyewVtNhP/yJaOVzOJK5pztvZNrR1n9PqUzwRYF8FWjpFf
- +nQ0SA77fRXYfHhgPIg2TTZCDsMmEdFh0XpHNs3hB8UFqQTbHJ0EM/l3gY7KwLMyAD30
- cNtg==
+ Wed, 20 Nov 2019 23:00:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=70XhVJoIf0CSjHrTRztFdyaZcM5N+1vNz44dhwcRPXw=;
+ b=SLYBtyriQY7seuHEQlL2JSt3ilAFTLCs46gN0dKVPB6PjkBZRqNh7NltQlrIcE52WM
+ NS1NEPu5eptOkKJvpE2HSpv/lFbdetda9B7b5w8JK7jknek+pKEqkv06FYxZ3lzN0R6J
+ Cwg+Cbs8vlomam8/SjUZutICyodcTjUUrT+50=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=yE3H52ST3bCRAdHmUDzhL/7UmgqQkrfup+4Ir818ZIQ=;
- b=b/HK5WP7gLNO4dslKx5c7If2yK5O0h9ogmV3ROF8pXJLOv8YkJCmYCRJTPcp2EUU1V
- JcPdLaX5AwQPrm5dswmPL+iXcDn0h2sFrvxSzeqcF+eNQkvFi9nvntOyVHJTVMn+rBmL
- d6BCv7oDlgZxXFprNx88lXgaVYCxKr3xFuYd06fV4fFoV193odUpGJlnXLCff3adh6p5
- 0OHt69UvS9kMOpCSYt0YpMG2lA54z60zb0X3JZHBX3ln1E8Hc02lZWXQImA6D0d6UJ8V
- TmzSexHnXexRNjamKAkn2dx8uMShl0VRFQ37w22gWXJahnI8uk/l7fwdfbRUR0b6jmAt
- PT0Q==
-X-Gm-Message-State: APjAAAXeE5UbwKFsXCa5f9ioxoxJ5pnyryWTNiTw368IsIV+UslLXrmE
- KGtN9grGcqRgNSBdkAw4kafiyg==
-X-Google-Smtp-Source: APXvYqwNM9dZdansKs8pKoOeaen5b9vqImpjSGgtw89kbCl3/6894oiyg46ElaulgywEwwJJ0Y0fIQ==
-X-Received: by 2002:aa7:8421:: with SMTP id q1mr8754271pfn.174.1574314333119; 
- Wed, 20 Nov 2019 21:32:13 -0800 (PST)
-Received: from localhost ([223.226.74.76])
- by smtp.gmail.com with ESMTPSA id p16sm1083971pjp.31.2019.11.20.21.32.12
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 20 Nov 2019 21:32:12 -0800 (PST)
-Date: Thu, 21 Nov 2019 11:02:07 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Amit Kucheria <amit.kucheria@linaro.org>
-Subject: Re: [PATCH v2 08/11] thermal: samsung: Appease the kernel-doc deity
-Message-ID: <20191121053207.gyulu3vb3caaituv@vireshk-i7>
-References: <cover.1574242756.git.amit.kucheria@linaro.org>
- <1ded1697c6e5eff11b034b3302b9c79e88fa9c42.1574242756.git.amit.kucheria@linaro.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=70XhVJoIf0CSjHrTRztFdyaZcM5N+1vNz44dhwcRPXw=;
+ b=WjhNfHlQwM+RRQySs5j8c3fLeLb/hracuoJ/hmsagj+hCcrL7OxAo65cjEzcNUE2rF
+ Zw3+j8uL8FvLLnH47nB/44/EKJ/m0mLMmvs0AfgHrb+PFcruHExPyQDu8w21NaFYbdNd
+ BKFh6YGWivpSpFEnXoPP/3HZMWwOsq7C+34lgZxBXgxPmUWP4R2SbJ0xGuL4F9NIT1a1
+ K+vxAp8KNZChv2NfhfyYWhj7RLInO8mYQm9ps5w7hfve+js+yNGZAxukKfMLQ+5KhrlC
+ cQydxVhEDzC4bOh7hf62L/BQEWHpEJ0p417KGLftzh5XFiyi1TxeXE9/vjStlZdoqsDc
+ iQkQ==
+X-Gm-Message-State: APjAAAXmRMJxADLuYSz/c/twPr8Bpkw7iPMUR376yiGGspCIK/ZAPjMB
+ qcRKR/eY5JugpPS0r6EamLaVA7pTWYzOPBXyQn9uAw==
+X-Google-Smtp-Source: APXvYqz3PHqe/dC8SrMLZ7oJb4SyckZc5EJzgX4VS4wAMnE4d3D2dWe3D5r10a6CIdA4f7qoQvzM2VsFlosI14iwemI=
+X-Received: by 2002:a92:5d08:: with SMTP id r8mr8154845ilb.283.1574319657713; 
+ Wed, 20 Nov 2019 23:00:57 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1ded1697c6e5eff11b034b3302b9c79e88fa9c42.1574242756.git.amit.kucheria@linaro.org>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <1557494826-6044-1-git-send-email-michael.kao@mediatek.com>
+ <1557494826-6044-8-git-send-email-michael.kao@mediatek.com>
+In-Reply-To: <1557494826-6044-8-git-send-email-michael.kao@mediatek.com>
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Thu, 21 Nov 2019 15:00:31 +0800
+Message-ID: <CAJMQK-ivho3T1hnD9axV2EMKT3Srs_5zAXLqwts8nojY15fBGg@mail.gmail.com>
+Subject: Re: [PATCH v2 7/8] thermal: mediatek: add another get_temp ops for
+ thermal sensors
+To: "michael.kao" <michael.kao@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_213214_305542_19BA1991 
-X-CRM114-Status: GOOD (  12.83  )
+X-CRM114-CacheID: sfid-20191120_230101_889746_47C89D82 
+X-CRM114-Status: GOOD (  13.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:132 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -87,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,46 +90,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Amit Kucheria <amit.kucheria@verdurent.com>,
- linux-samsung-soc@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Amit Daniel Kachhap <amit.kachhap@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- edubezval@gmail.com, Kukjin Kim <kgene@kernel.org>,
- Guillaume La Roque <glaroque@baylibre.com>, linux-pm@vger.kernel.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thierry Reding <thierry.reding@gmail.com>, Jun Nie <jun.nie@linaro.org>,
- Javi Merino <javi.merino@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Devicetree List <devicetree@vger.kernel.org>, linux-pm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ lkml <linux-kernel@vger.kernel.org>, Eduardo Valentin <edubezval@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20-11-19, 21:15, Amit Kucheria wrote:
-> Fix up the following warning when compiled with make W=1:
-> 
-> linux.git/drivers/thermal/samsung/exynos_tmu.c:141: warning: bad
-> line:         driver
-> linux.git/drivers/thermal/samsung/exynos_tmu.c:203: warning: Function
-> parameter or member 'tzd' not described in 'exynos_tmu_data'
-> linux.git/drivers/thermal/samsung/exynos_tmu.c:203: warning: Function
-> parameter or member 'tmu_set_trip_temp' not described in
-> 'exynos_tmu_data'
-> linux.git/drivers/thermal/samsung/exynos_tmu.c:203: warning: Function
-> parameter or member 'tmu_set_trip_hyst' not described in
-> 'exynos_tmu_data'
-> 
-> Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
-> ---
->  drivers/thermal/samsung/exynos_tmu.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
+On Fri, May 10, 2019 at 9:27 PM michael.kao <michael.kao@mediatek.com> wrote:
 
-Reviewed-by: Viresh Kumar <viresh.kumar@linaro.org>
+> -       tzdev = devm_thermal_zone_of_sensor_register(&pdev->dev, 0, mt,
+> -                                                    &mtk_thermal_ops);
+> -       if (IS_ERR(tzdev)) {
+> -               ret = PTR_ERR(tzdev);
+> -               goto err_disable_clk_peri_therm;
+> +       for (i = 0; i < mt->conf->num_sensors + 1; i++) {
+> +               tz = kmalloc(sizeof(*tz), GFP_KERNEL);
+> +               if (!tz)
+> +                       return -ENOMEM;
+> +
+> +               tz->mt = mt;
+> +               tz->id = i;
+> +
+> +               tzdev = devm_thermal_zone_of_sensor_register(&pdev->dev, i,
+> +                               tz, (i == 0) ?
+> +                               &mtk_thermal_ops : &mtk_thermal_sensor_ops);
+> +
+> +               if (IS_ERR(tzdev)) {
+> +                       if (IS_ERR(tzdev) != -EACCES) {
+                                PTR_ERR(tzdev)
 
--- 
-viresh
+> +                               ret = PTR_ERR(tzdev);
+> +                               goto err_disable_clk_peri_therm;
+> +                       }
+> +               }
+
+This for loop adding thermal zone sensors will not work for mt8173. It
+assumes that thermal-zones in dts have subnodes (eg. cpu_thermal,
+tzts..) amount equal to num_sensors+1. Otherwise tzdev would be
+-ENODEV and thermal failed to be probed.
+In mt8183 this is fine, since each thermal zone only has one sensor,
+but in mt8173, some sensor appears in multiple thermal zones.
+
+In order to let the change also works for 8173, I think if the error
+is -ENODEV, and the id is not 0 (0 is cpu_thermal), prompt a warning
+instead of failing. Eg.
+
+                if (IS_ERR(tzdev)) {
++                       if (i > 0 && PTR_ERR(tzdev) == -ENODEV) {
++                               dev_warn(&pdev->dev, "can't find
+thermal sensor %d\n", i);
++                               continue;
++                       }
+                        if (PTR_ERR(tzdev) != -EACCES) {
 
 _______________________________________________
 linux-arm-kernel mailing list
