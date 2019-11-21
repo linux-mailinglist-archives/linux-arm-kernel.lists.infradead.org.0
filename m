@@ -2,45 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD7C4105868
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 18:17:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BA67105871
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 18:17:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uzfKO5B1CheMqh4ycDXhASC6sV/jRSYo5ANGUU+Y6B0=; b=sYV9XIqHX4GkNA
-	ixnmxBrRXCNqCtI5Eozb6QTBqPYBPVKzVmyc0sg9ZMDAeSRGi3JkhITk+1JUBWqReFMWjbL6PHREW
-	9LnnM9Lk3F3mMiMxcbDTLYrtg/eIrehHQhHW9QgjOa8BJMJ8ckd/1GZI7OF/nC84anXhxNy4UcUHH
-	B+5KQNBE8ZSA7dyxoScqcqfh58m+/18pwygFF8oIZKwmU1lzm8I90ROOTgmHyCwgozKh1GDA/KnOR
-	6+otg1d2WO5/flIQfcqYYB6KSdZCm1F1PFAZu4au69n4lHH9IQANsd9UL+FPPmnxGtceYDwy+lRUU
-	3rhU9wMFnf5jDWzzDC6g==;
+	List-Owner; bh=GFhMSMxIZWs4LCfqAUnEwEtpm8QhLz8tnybbvDV2woE=; b=blkKGyKzCqATjD
+	bw12bkZkGhXtTBlVti4ojcuydvK5atExzAfkK/SroTjzrX3FmHS2dHMEy4pONnQOSJQRjAyAapXIS
+	aVh2cwEOySTKM7eXtiCXXUDnmz5r0f4wgeuUxQ15UEI06FQBIDoikUTo5XK2a6yqUBHuWazzRgWvE
+	3ycgWG4F4UKVYzK6FZwgQ1uERKbQuC9iYUKvBE4eOgyqRIUbvFYwTdc0Yl7BC29o2ISKGZ/NfIRVM
+	L3benFI+z0PFAGvE9gQAYalro9O9L4rZysiRgHUZZ4GmpMOA26fWJ4WnAJw7VqpDPBDJEsTRRf5RP
+	QDhKijQ6oFFr6jub4W4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXq4h-0001BF-LF; Thu, 21 Nov 2019 17:16:59 +0000
+	id 1iXq5A-0001Vv-Nz; Thu, 21 Nov 2019 17:17:28 +0000
 Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXq4Z-0001Ax-QQ
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 17:16:53 +0000
+ id 1iXq4x-0001UI-Qd
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 17:17:18 +0000
 Received: by verein.lst.de (Postfix, from userid 2407)
- id 7656368BFE; Thu, 21 Nov 2019 18:16:47 +0100 (CET)
-Date: Thu, 21 Nov 2019 18:16:47 +0100
+ id A77C768BFE; Thu, 21 Nov 2019 18:17:13 +0100 (CET)
+Date: Thu, 21 Nov 2019 18:17:13 +0100
 From: Christoph Hellwig <hch@lst.de>
-To: Will Deacon <will@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
 Subject: Re: [PATCH v2] dma-mapping: treat dev->bus_dma_mask as a DMA limit
-Message-ID: <20191121171647.GA2932@lst.de>
+Message-ID: <20191121171713.GB2932@lst.de>
 References: <20191121092646.8449-1-nsaenzjulienne@suse.de>
- <20191121152457.GA525@lst.de> <20191121152650.GA651@lst.de>
- <70359d2a-10c6-09c7-a857-805085affb0a@arm.com> <20191121160217.GA1583@lst.de>
- <20191121165348.GC4905@willie-the-truck>
+ <c407877d-a812-de85-5e8f-e0915f5a517f@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191121165348.GC4905@willie-the-truck>
+In-Reply-To: <c407877d-a812-de85-5e8f-e0915f5a517f@arm.com>
 User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_091652_006776_116271C2 
-X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-CacheID: sfid-20191121_091716_013546_125DF57A 
+X-CRM114-Status: UNSURE (   9.42  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -62,8 +60,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
+Cc: Peter Zijlstra <peterz@infradead.org>,
  Benjamin Herrenschmidt <benh@kernel.crashing.org>,
  Dave Hansen <dave.hansen@linux.intel.com>, linux-pci@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-ide@vger.kernel.org,
@@ -79,23 +76,25 @@ Cc: Catalin Marinas <catalin.marinas@arm.com>,
  Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
  Bjorn Helgaas <bhelgaas@google.com>, Thomas Gleixner <tglx@linutronix.de>,
  linux-arm-kernel@lists.infradead.org, Jens Axboe <axboe@kernel.dk>,
- linuxppc-dev@lists.ozlabs.org, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- iommu@lists.linux-foundation.org, Sudeep Holla <sudeep.holla@arm.com>,
- Robin Murphy <robin.murphy@arm.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, iommu@lists.linux-foundation.org,
+ Sudeep Holla <sudeep.holla@arm.com>, linuxppc-dev@lists.ozlabs.org,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 21, 2019 at 04:53:48PM +0000, Will Deacon wrote:
-> Please go ahead and pull in our for-next/zone-dma branch if you need it.
-> We're not going to rebase it, and I suspect we won't even be queueing
-> anything else there at this stage in the game.
+On Thu, Nov 21, 2019 at 05:07:54PM +0000, Robin Murphy wrote:
+> ^^ super-nit only because I can't not see my editor currently highlighting 
+> the typo: "accessible"
+>
+> Regardless of that though,
+>
+> Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 
-Ok.  I've pulled it in and will wait with sending the dma-mapping
-pull request until the arm64 one made it to Linus.
+Applied for real now with that typo fixed and on top of the pulled in
+arm64 branch.
 
 _______________________________________________
 linux-arm-kernel mailing list
