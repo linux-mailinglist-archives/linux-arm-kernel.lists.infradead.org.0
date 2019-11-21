@@ -2,84 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4278F105280
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 13:57:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5676310528B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 14:00:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Subject:To:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=QIMifbqnZAeXFtyJyuVrOBW6kpzMxRaltpS86Nqp3Ec=; b=FML
-	5jH1ob8JX3zucC/InJ6BoX3UpK86QMGL61q3Q3yKA14RGdq28xlX8kruCGgBI0rAK9JNtn8VSmwmf
-	LM9wJrGIZ+PK5ZRP3r42c5RhesgKjoq4+XJ6yW+ycrmBvS/WQHaZal4L173GzjUGqF3Ii40rufeau
-	jlixnCvymFeGjrHpc2lSwK9ef4w/h5IjfMWngB3kfhyu2+TqcESh2rPJqVbwEYZj3ejmfdcFyDkQk
-	Zv72Ohddqm2EPSwpSx+J6vEY/F+CwQhcaSeHlggMGUA09HWBIGXQTj6cwfFGsNZjqWfEivCr6WndB
-	O1QaJ08t0q0YvIQLt8ppwrgKm0OFGBA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CCCX3FaPpfvSN51jDphbpUsEJRAOWIY6jDqpMnswfB0=; b=oshXmRBnq1dhO0ZZpHUqwAlFp
+	MCcwjI4N6bPrWhWjwo0y87OG5QXl3OzrcMKoHZne5OmrUw2Dar+LGqsP/E/tQYr4Chnl8O7adqTIM
+	rbgKtwy+C6ZIceNaHJGYO60ElWmJy0hehv2CbAcyg6ezPOyUyr2S+UWO85DA24UIZ0Xlq5JeYAn/8
+	QJQVQqpWbgWHYGhCfZoGpl4nOx2gk+nNkUDRe/aUC2H9pQTlXLdDfJfrS+uorlHm3PiIb1AQDUxYZ
+	brq3TrMoSMZc8xRiF6VTsLzYgvIiqQTPJ1edbz+xJggg9YUCQTlsJvKast8bZ7sTHQVhvrmSjL9IV
+	iXZKSzaOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXm1Q-00044R-1G; Thu, 21 Nov 2019 12:57:20 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iXm3x-0004PB-Kk; Thu, 21 Nov 2019 12:59:57 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXm1G-00042n-QI
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 12:57:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1574341028;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=lEVLl5305oBzpaq82Nq9mzAAeUIzAHvoOToUoExR5F0=;
- b=gfBvK4Q+VaToxJBFPuqfx5PDpQk5mQ/Lz97Wh+S3F0nS2IDclsJsILcod4XfkSnMqWcgpt
- GA+RJs1KGKItYJfrAXn1N8rpy8G8OpcpIGuIDb8SMWFYNyhGJSPBkPo5+QIXR8KCueM8NE
- /2dcTupjNTSeutqOzw6Lb1pAqWNnzag=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-340-wWLGp9lHOrCOWVNbutIECg-1; Thu, 21 Nov 2019 07:55:10 -0500
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 33B55107B267;
- Thu, 21 Nov 2019 12:55:09 +0000 (UTC)
-Received: from [172.54.53.184] (cpt-1029.paas.prod.upshift.rdu2.redhat.com
- [10.0.19.48])
- by smtp.corp.redhat.com (Postfix) with ESMTP id EAE902A18A;
- Thu, 21 Nov 2019 12:55:05 +0000 (UTC)
+ id 1iXm3o-0004No-Kt; Thu, 21 Nov 2019 12:59:50 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 51097ABF4;
+ Thu, 21 Nov 2019 12:59:42 +0000 (UTC)
+Message-ID: <276d4160bbe6a4e8225bbd836f43d40da41d25f1.camel@suse.de>
+Subject: Re: [PATCH v2 4/6] PCI: brcmstb: add Broadcom STB PCIe host
+ controller driver
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Andrew Murray <andrew.murray@arm.com>
+Date: Thu, 21 Nov 2019 13:59:40 +0100
+In-Reply-To: <20191121120319.GW43905@e119886-lin.cambridge.arm.com>
+References: <20191112155926.16476-1-nsaenzjulienne@suse.de>
+ <20191112155926.16476-5-nsaenzjulienne@suse.de>
+ <20191119162502.GS43905@e119886-lin.cambridge.arm.com>
+ <7e1be0bdcf303224a3fe225654a3c2391207f9eb.camel@suse.de>
+ <20191121120319.GW43905@e119886-lin.cambridge.arm.com>
+User-Agent: Evolution 3.34.1 
 MIME-Version: 1.0
-From: CKI Project <cki-project@redhat.com>
-To: will@kernel.org, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org
-Subject: =?utf-8?b?4pyF?= PASS: Test report for kernel 5.4.0-rc8-fbaa920.cki
- (arm-next)
-Date: Thu, 21 Nov 2019 12:55:05 -0000
-Message-ID: <cki.1CBC43ABCD.523Q7TUX64@redhat.com>
-X-Gitlab-Pipeline-ID: 298088
-X-Gitlab-Url: https://xci32.lab.eng.rdu2.redhat.com
-X-Gitlab-Path: /cki-project/cki-pipeline/pipelines/298088
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
-X-MC-Unique: wWLGp9lHOrCOWVNbutIECg-1
-X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_045710_947182_77C72FAE 
-X-CRM114-Status: UNSURE (   6.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191121_045948_979478_F1B93524 
+X-CRM114-Status: GOOD (  36.90  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.61 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,75 +63,316 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Florian Fainelli <f.fainelli@gmail.com>, maz@kernel.org,
+ phil@raspberrypi.org, linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ Eric Anholt <eric@anholt.net>, mbrugger@suse.com,
+ bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
+ james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8848831319714904598=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CkhlbGxvLAoKV2UgcmFuIGF1dG9tYXRlZCB0ZXN0cyBvbiBhIHJlY2VudCBjb21taXQgZnJvbSB0
-aGlzIGtlcm5lbCB0cmVlOgoKICAgICAgIEtlcm5lbCByZXBvOiBnaXQ6Ly9naXQua2VybmVsLm9y
-Zy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvYXJtNjQvbGludXguZ2l0CiAgICAgICAgICAgIENv
-bW1pdDogZmJhYTkyMDliODMzIC0gTWVyZ2UgYnJhbmNoICdmb3ItbmV4dC9maXhlcycgaW50byBm
-b3Ita2VybmVsY2kKClRoZSByZXN1bHRzIG9mIHRoZXNlIGF1dG9tYXRlZCB0ZXN0cyBhcmUgcHJv
-dmlkZWQgYmVsb3cuCgogICAgT3ZlcmFsbCByZXN1bHQ6IFBBU1NFRAogICAgICAgICAgICAgTWVy
-Z2U6IE9LCiAgICAgICAgICAgQ29tcGlsZTogT0sKICAgICAgICAgICAgIFRlc3RzOiBPSwoKQWxs
-IGtlcm5lbCBiaW5hcmllcywgY29uZmlnIGZpbGVzLCBhbmQgbG9ncyBhcmUgYXZhaWxhYmxlIGZv
-ciBkb3dubG9hZCBoZXJlOgoKICBodHRwczovL2FydGlmYWN0cy5ja2ktcHJvamVjdC5vcmcvcGlw
-ZWxpbmVzLzI5ODA4OAoKUGxlYXNlIHJlcGx5IHRvIHRoaXMgZW1haWwgaWYgeW91IGhhdmUgYW55
-IHF1ZXN0aW9ucyBhYm91dCB0aGUgdGVzdHMgdGhhdCB3ZQpyYW4gb3IgaWYgeW91IGhhdmUgYW55
-IHN1Z2dlc3Rpb25zIG9uIGhvdyB0byBtYWtlIGZ1dHVyZSB0ZXN0cyBtb3JlIGVmZmVjdGl2ZS4K
-CiAgICAgICAgLC0uICAgLC0uCiAgICAgICAoIEMgKSAoIEsgKSAgQ29udGludW91cwogICAgICAg
-IGAtJywtLmAtJyAgIEtlcm5lbAogICAgICAgICAgKCBJICkgICAgIEludGVncmF0aW9uCiAgICAg
-ICAgICAgYC0nCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwoKQ29tcGlsZSB0ZXN0aW5nCi0tLS0tLS0t
-LS0tLS0tLQoKV2UgY29tcGlsZWQgdGhlIGtlcm5lbCBmb3IgMSBhcmNoaXRlY3R1cmU6CgogICAg
-YWFyY2g2NDoKICAgICAgbWFrZSBvcHRpb25zOiAtajMwIElOU1RBTExfTU9EX1NUUklQPTEgdGFy
-Z3otcGtnCgoKSGFyZHdhcmUgdGVzdGluZwotLS0tLS0tLS0tLS0tLS0tCldlIGJvb3RlZCBlYWNo
-IGtlcm5lbCBhbmQgcmFuIHRoZSBmb2xsb3dpbmcgdGVzdHM6CgogIGFhcmNoNjQ6CiAgICBIb3N0
-IDE6CiAgICAgICDinIUgQm9vdCB0ZXN0CiAgICAgICDinIUgUG9kbWFuIHN5c3RlbSBpbnRlZ3Jh
-dGlvbiB0ZXN0IChhcyByb290KQogICAgICAg4pyFIFBvZG1hbiBzeXN0ZW0gaW50ZWdyYXRpb24g
-dGVzdCAoYXMgdXNlcikKICAgICAgIOKchSBMVFAgbGl0ZQogICAgICAg4pyFIExvb3BkZXYgU2Fu
-aXR5CiAgICAgICDinIUganZtIHRlc3Qgc3VpdGUKICAgICAgIOKchSBNZW1vcnkgZnVuY3Rpb246
-IG1lbWZkX2NyZWF0ZQogICAgICAg4pyFIE1lbW9yeSBmdW5jdGlvbjoga2FzbHIKICAgICAgIOKc
-hSBBTVRVIChBYnN0cmFjdCBNYWNoaW5lIFRlc3QgVXRpbGl0eSkKICAgICAgIOKchSBMVFA6IG9w
-ZW5wb3NpeCB0ZXN0IHN1aXRlCiAgICAgICDinIUgTmV0d29ya2luZyBicmlkZ2U6IHNhbml0eQog
-ICAgICAg4pyFIEV0aGVybmV0IGRyaXZlcnMgc2FuaXR5CiAgICAgICDinIUgTmV0d29ya2luZyBN
-QUNzZWM6IHNhbml0eQogICAgICAg4pyFIE5ldHdvcmtpbmcgc29ja2V0OiBmdXp6CiAgICAgICDi
-nIUgTmV0d29ya2luZyBzY3RwLWF1dGg6IHNvY2tvcHRzIHRlc3QKICAgICAgIOKchSBOZXR3b3Jr
-aW5nOiBpZ21wIGNvbmZvcm1hbmNlIHRlc3QKICAgICAgIOKchSBOZXR3b3JraW5nIHJvdXRlOiBw
-bXR1CiAgICAgICDinIUgTmV0d29ya2luZyByb3V0ZV9mdW5jOiBsb2NhbAogICAgICAg4pyFIE5l
-dHdvcmtpbmcgcm91dGVfZnVuYzogZm9yd2FyZAogICAgICAg4pyFIE5ldHdvcmtpbmcgVENQOiBr
-ZWVwYWxpdmUgdGVzdAogICAgICAg4pyFIE5ldHdvcmtpbmcgVURQOiBzb2NrZXQKICAgICAgIOKc
-hSBOZXR3b3JraW5nIHR1bm5lbDogZ2VuZXZlIGJhc2ljIHRlc3QKICAgICAgIOKchSBOZXR3b3Jr
-aW5nIHR1bm5lbDogZ3JlIGJhc2ljCiAgICAgICDinIUgTDJUUCBiYXNpYyB0ZXN0CiAgICAgICDi
-nIUgTmV0d29ya2luZyB0dW5uZWw6IHZ4bGFuIGJhc2ljCiAgICAgICDinIUgTmV0d29ya2luZyBp
-cHNlYzogYmFzaWMgbmV0bnMgdHJhbnNwb3J0CiAgICAgICDinIUgTmV0d29ya2luZyBpcHNlYzog
-YmFzaWMgbmV0bnMgdHVubmVsCiAgICAgICDinIUgYXVkaXQ6IGF1ZGl0IHRlc3RzdWl0ZSB0ZXN0
-CiAgICAgICDinIUgaHR0cGQ6IG1vZF9zc2wgc21va2Ugc2FuaXR5CiAgICAgICDinIUgaW90b3A6
-IHNhbml0eQogICAgICAg4pyFIHR1bmVkOiB0dW5lLXByb2Nlc3Nlcy10aHJvdWdoLXBlcmYKICAg
-ICAgIOKchSBBTFNBIFBDTSBsb29wYmFjayB0ZXN0CiAgICAgICDinIUgQUxTQSBDb250cm9sICht
-aXhlcikgVXNlcnNwYWNlIEVsZW1lbnQgdGVzdAogICAgICAg4pyFIFVzZXggLSB2ZXJzaW9uIDEu
-OS0yOQogICAgICAg4pyFIHN0b3JhZ2U6IFNDU0kgVlBECiAgICAgICDinIUgc3RyZXNzOiBzdHJl
-c3MtbmcKICAgICAgIOKchSB0cmFjZTogZnRyYWNlL3RyYWNlcgogICAgICAg8J+apyDinIUgQ0lG
-UyBDb25uZWN0YXRob24KICAgICAgIPCfmqcg4pyFIFBPU0lYIHBqZC1mc3Rlc3Qgc3VpdGVzCiAg
-ICAgICDwn5qnIOKchSBOZXR3b3JraW5nIHZuaWM6IGlwdmxhbi9iYXNpYwogICAgICAg8J+apyDi
-nIUgc3RvcmFnZTogZG0vY29tbW9uCgogICAgSG9zdCAyOgogICAgICAg4pyFIEJvb3QgdGVzdAog
-ICAgICAg4pyFIHhmc3Rlc3RzOiBleHQ0CiAgICAgICDinIUgeGZzdGVzdHM6IHhmcwogICAgICAg
-4pyFIGx2bSB0aGlucCBzYW5pdHkKICAgICAgIOKchSBzdG9yYWdlOiBzb2Z0d2FyZSBSQUlEIHRl
-c3RpbmcKICAgICAgIPCfmqcg4pyFIHNlbGludXgtcG9saWN5OiBzZXJnZS10ZXN0c3VpdGUKICAg
-ICAgIPCfmqcg4pyFIFN0b3JhZ2UgYmxrdGVzdHMKCiAgVGVzdCBzb3VyY2VzOiBodHRwczovL2dp
-dGh1Yi5jb20vQ0tJLXByb2plY3QvdGVzdHMtYmVha2VyCiAgICDwn5KaIFB1bGwgcmVxdWVzdHMg
-YXJlIHdlbGNvbWUgZm9yIG5ldyB0ZXN0cyBvciBpbXByb3ZlbWVudHMgdG8gZXhpc3RpbmcgdGVz
-dHMhCgpXYWl2ZWQgdGVzdHMKLS0tLS0tLS0tLS0tCklmIHRoZSB0ZXN0IHJ1biBpbmNsdWRlZCB3
-YWl2ZWQgdGVzdHMsIHRoZXkgYXJlIG1hcmtlZCB3aXRoIPCfmqcuIFN1Y2ggdGVzdHMgYXJlCmV4
-ZWN1dGVkIGJ1dCB0aGVpciByZXN1bHRzIGFyZSBub3QgdGFrZW4gaW50byBhY2NvdW50LiBUZXN0
-cyBhcmUgd2FpdmVkIHdoZW4KdGhlaXIgcmVzdWx0cyBhcmUgbm90IHJlbGlhYmxlIGVub3VnaCwg
-ZS5nLiB3aGVuIHRoZXkncmUganVzdCBpbnRyb2R1Y2VkIG9yIGFyZQpiZWluZyBmaXhlZC4KClRl
-c3RpbmcgdGltZW91dAotLS0tLS0tLS0tLS0tLS0KV2UgYWltIHRvIHByb3ZpZGUgYSByZXBvcnQg
-d2l0aGluIHJlYXNvbmFibGUgdGltZWZyYW1lLiBUZXN0cyB0aGF0IGhhdmVuJ3QKZmluaXNoZWQg
-cnVubmluZyBhcmUgbWFya2VkIHdpdGgg4o+xLiBSZXBvcnRzIGZvciBub24tdXBzdHJlYW0ga2Vy
-bmVscyBoYXZlCmEgQmVha2VyIHJlY2lwZSBsaW5rZWQgdG8gbmV4dCB0byBlYWNoIGhvc3QuCgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+
+--===============8848831319714904598==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-wqkhjN+9qK4qjBEkgN/j"
+
+
+--=-wqkhjN+9qK4qjBEkgN/j
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Andrew,
+
+On Thu, 2019-11-21 at 12:03 +0000, Andrew Murray wrote:
+> > > > +static void brcm_pcie_set_outbound_win(struct brcm_pcie *pcie,
+> > > > +				       unsigned int win, phys_addr_t
+> > > > cpu_addr,
+> > > > +				       dma_addr_t  pcie_addr, dma_addr_t
+> > > > size)
+> > > > +{
+> > > > +	phys_addr_t cpu_addr_mb, limit_addr_mb;
+> > > > +	void __iomem *base =3D pcie->base;
+> > > > +	u32 tmp;
+> > > > +
+> > > > +	/* Set the base of the pcie_addr window */
+> > > > +	bcm_writel(lower_32_bits(pcie_addr) + MMIO_ENDIAN,
+> > > > +		   base + PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO + (win * 8));
+> > > > +	bcm_writel(upper_32_bits(pcie_addr),
+> > > > +		   base + PCIE_MISC_CPU_2_PCIE_MEM_WIN0_HI + (win * 8));
+> > > > +
+> > > > +	cpu_addr_mb =3D cpu_addr >> 20;
+> > > > +	limit_addr_mb =3D (cpu_addr + size - 1) >> 20;
+> > > > +
+> > > > +	/* Write the addr base low register */
+> > > > +	WR_FLD_WITH_OFFSET(base, (win * 4),
+> > > > +			   PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT,
+> > > > +			   BASE, cpu_addr_mb);
+> > > > +	/* Write the addr limit low register */
+> > > > +	WR_FLD_WITH_OFFSET(base, (win * 4),
+> > > > +			   PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT,
+> > > > +			   LIMIT, limit_addr_mb);
+> > > > +
+> > > > +	/* Write the cpu addr high register */
+> > > > +	tmp =3D (u32)(cpu_addr_mb >>
+> > > > +		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_NUM_MASK_BITS);
+> > >=20
+> > > Despite the name _MASK_BITS, this isn't being used as a mask. Is this
+> > > making
+> > > some assumption about the value of cpu_addr from the DT?
+> >=20
+> > It should be read _NUM_MASK_BITS. It contains the number of set bits on=
+ that
+> > specific mask. I agree it's not ideal. I think I'll be able to do away =
+with
+> > it
+> > using the bitfield.h macros.
+>=20
+> Also why do you have a define for
+> PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT_NUM_MASK_BITS but not the '20' s=
+hift
+> used for the low registers?
+
+Good point, I'm changing it to something more explicit:
+
+	cpu_addr_mb =3D cpu_addr / SZ_1M;
+
+As for [...]_NUM_MASK_BITS I'm looking for a smart/generic way to calculate=
+ it
+from the actual mask. No luck so far. If not, I think I'll simply leave it =
+as
+is for now.
+
+> > FYI, What's happening here is that we have to save the CPU address rang=
+e
+> > (which
+> > is already shifted right 20 positions) in two parts, the lower 12 bits =
+go
+> > into
+> > PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT while the higher 8 bits go int=
+o
+> > PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_HI or
+> > PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LIMIT_HI.
+>=20
+> The hardware spec require bits 31:20 of the address, and the high registe=
+rs
+> require 39:32 right?
+
+Yes, that's it.
+
+> (Apologies, the indirection by the WR_FLD_** macros easily confuses me. T=
+hese
+> type of macros are helpful, or rather would be if the whole kernel used t=
+hem.
+> I think they can add confusion when each driver has its own set of simila=
+r
+> macros. This is why its *really* helpful to use any existing macros in th=
+e
+> kernel - and only invent new ones if needed).
+
+I agree it's pretty confusing, I think v3, using bitfield.h as much as
+possible, looks substantially more welcoming.
+
+> > [...]
+> >=20
+> > > > +static inline int brcm_pcie_get_rc_bar2_size_and_offset(struct
+> > > > brcm_pcie
+> > > > *pcie,
+> > > > +							u64
+> > > > *rc_bar2_size,
+> > > > +							u64
+> > > > *rc_bar2_offset)
+> > > > +{
+> > > > +	struct pci_host_bridge *bridge =3D
+> > > > pci_host_bridge_from_priv(pcie);
+> > > > +	struct device *dev =3D pcie->dev;
+> > > > +	struct resource_entry *entry;
+> > > > +	u64 total_mem_size =3D 0;
+> > > > +
+> > > > +	*rc_bar2_offset =3D -1;
+> > > > +
+> > > > +	resource_list_for_each_entry(entry, &bridge->dma_ranges) {
+> > > > +		/*
+> > > > +		 * We're promised the RC will provide a contiguous view
+> > > > of
+> > > > +		 * memory to downstream devices. We can then infer the
+> > > > +		 * rc_bar2_offset from the lower available dma-range
+> > > > offset.
+> > > > +		 */
+> > > > +		if (entry->offset < *rc_bar2_offset)
+> > > > +			*rc_bar2_offset =3D entry->offset;
+> > > > +
+> > > > +		total_mem_size +=3D entry->res->end - entry->res->start +
+> > > > 1;
+> > >=20
+> > > This requires that if there are multiple dma-ranges, then there are n=
+o
+> > > gaps
+> > > between them right?
+> >=20
+> > Yes, the PCI view of inbound memory will always be gapless. See an exam=
+ple
+> > here: https://patchwork.kernel.org/patch/10605957/
+>=20
+> Thanks for the reference.=20
+>=20
+>=20
+> > That said, iterating over the dma-ranges is not strictly necessary for =
+now
+> > as
+> > RPi4 is assured to only need one. If that's bothering you I can always
+> > remove
+> > it for now.
+>=20
+> One purpose of this function is to validate that the information given in=
+ the
+> device tree is valid - I've seen other feedback on these lists where the =
+view
+> is taken that 'it's not the job of the kernel to validate the DT'. Subscr=
+ibing
+> to this view would be a justification for removing this validation -
+> especially
+> given that the bindings you include have only one dma-range (in any case =
+if
+> there are constraints you ought to include them in the binding document).
+>=20
+> Though the problem with this point of view is that if the DT is wrong, it=
+ may
+> be possible for the driver to work well enough to do some function but wi=
+th
+> some horrible side effects that are difficult to track down to a bad DT.
+>=20
+> If you assume the DT will only have one range (at least for the Pi) then =
+this
+> code will never be used and so can probably be removed.
+
+Ok, less is more, I'll simplify it.
+
+[...]
+
+> > > > +			continue;
+> > > > +
+> > > > +		if (num_out_wins >=3D BRCM_NUM_PCIE_OUT_WINS) {
+> > > > +			dev_err(pcie->dev, "too many outbound wins\n");
+> > > > +			return -EINVAL;
+> > > > +		}
+> > > > +
+> > > > +		brcm_pcie_set_outbound_win(pcie, num_out_wins, res-
+> > > > >start,
+> > > > +					   res->start - entry->offset,
+> > > > +					   res->end - res->start + 1);
+> > > > +		num_out_wins++;
+> > > > +	}
+> > > > +
+> > > > +	/*
+> > > > +	 * For config space accesses on the RC, show the right class for
+> > > > +	 * a PCIe-PCIe bridge (the default setting is to be EP mode).
+> > > > +	 */
+> > > > +	WR_FLD_RB(base, PCIE_RC_CFG_PRIV1_ID_VAL3, CLASS_CODE,
+> > > > 0x060400);
+> > >=20
+> > > Why does this need to be _RB ? I haven't looked at all of the uses of=
+ _RB
+> > > though I think there are others that may not be necessary.
+> >=20
+> > We're reviewing the _RB usage with Jim, I'll come back to you on that t=
+opic
+> > later.
+>=20
+> Thanks.
+
+Jim and Florian went over all the _RB usages and found out none of them app=
+lied
+to the Pi. Apparently they where introduced as a form of barrier needed on =
+some
+MIPS SoCs. Sorry for that, I'll remove them.
+
+> > [...]
+> >=20
+> > > > +	__brcm_pcie_remove(pcie);
+> > > > +
+> > > > +	return 0;
+> > > > +}
+> > > > +
+> > > > +static const struct of_device_id brcm_pcie_match[] =3D {
+> > > > +	{ .compatible =3D "brcm,bcm2711-pcie", .data =3D &bcm2711_cfg },
+> > >=20
+> > > I'd rather see use of the pcie_cfg_data structure removed from this
+> > > series.
+> > >=20
+> > > I've seen the comments in the previous thread [1], and I understand t=
+hat
+> > > the intention is that this driver will eventually be used for other S=
+OCs.
+> > >=20
+> > > However this indirection isn't needed *now* and it makes reviewing th=
+is
+> > > patch more difficult. If and when a later series is made to cover oth=
+er
+> > > SOCs - then I'd expect that series to find a way to apply this
+> > > indirection.
+> > >=20
+> > > And if that later series is more difficult to review because of the n=
+ewly
+> > > added indirection, then I'd expect an early patch of that series to a=
+pply
+> > > the indirection in a single patch - which would be easy to review.
+> > >=20
+> > > The other risk of such premature changes like this is that when you c=
+ome
+> > > to adding other SOCs, you may then discover that there were shortcomi=
+ngs
+> > > in the way you've approached it here.
+> > >=20
+> >=20
+> > I was about to make a point similar to Florian's. I'll wait for your re=
+ply
+> > and
+> > change this accordingly.
+>=20
+> No problem.
+
+Following your reply, I'll remove it.
+
+Regards,
+Nicolas
+
+
+--=-wqkhjN+9qK4qjBEkgN/j
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3WijwACgkQlfZmHno8
+x/6xAAf+LIkT3w/c8bEsultmWT5xTKh6ydt2GEkHuMOV+xYtKd3QM/z7XF1U6WDr
+eQKpU8mUEAcsYU/wwhP+KqZ6tHplPlRtnt/IUetU1oITLzITHi9q8GpOo3lPPZjX
+NxO68adiIHOYU3/cTazWvsIssw27hyEtAqWHkgnC9ZK+Gyy9i0Gxud8g9ONQNCjg
+AFYth260li9Bb+Gml2rOxsxGzPk4cT63jDB9FSBAP/sIMHVucAUebZMYzi7k4fJP
+IGGsof0LIzBNC9CcnN5A2vtVUViCApiTZ+Pvp1YzF+pvTdnpWiEhcT2QpJWBhoWD
+Gm3EqkdBEpCaUHSNHe7TaYKw7v4N1Q==
+=/W35
+-----END PGP SIGNATURE-----
+
+--=-wqkhjN+9qK4qjBEkgN/j--
+
+
+
+--===============8848831319714904598==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8848831319714904598==--
+
+
