@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BFC210521D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 13:16:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDB05105224
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 13:17:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ws9Vu3W5upUmhoGZZ8dY2dcCU01lBsbgfwuwcTY5ink=; b=BqXNGd3ood4qVwjjJ7/0sWvVW
-	8GXRKfbA6Cvaqcm9gg7sImEmIRTnM5XBZRT1ZfoRccynLhNodPalQT8/lM4IJsv2LKS5k70Pl4Gn0
-	t7UsyGbD0nWJo1KJ33FfB6Xydq2g9wbmr3bn8XhWvTAAmWcYRd0mDEpatuXrrDGOgM5Ocmh5yfge+
-	wpIOPJ1UW7YiNKhHgaqOI+i+zX0lCzTKMXcjrQ4e2cIVyVjAwMBrvXjtPBh7z5sb2TtpcxsTzn3Hn
-	dfr9Dxkl0YAPKQlvniUkjCgMZFCZ9sUDCM+1BPPjlLyM9++Vks3TJXfRWxFblku1LiDBFbGbFa160
-	cSEvsJ/UQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JYhTIqMkn6SUJwNyEsym3KK1EFHBgYz0qP62dFfSdI0=; b=XTqFeFu/C91tiQ
+	uwIxDvVc2POqqPsaDJ3cnpEBkUyFetfml0NvNmAvng4Rd2JupeoV1L4oY3zXFt04d5BlXvc17ut+r
+	qEb4pCQxwES0Wy0lbMDQfcjoOjz+6CEkgmHGr56u2oHn0eAPDKXrQeldNuLBlSzgTSc3HqdcAlyP6
+	rjo1X1LvlwtoGgKN0VAKEt4TLXOUQ0h5q5IOlbNFn9wqcAwfx9AZJxSi9txezE6CtZbEnfC0Y5wbw
+	omR2rUmyY6iTxItZyqmBv4W0dzrEs/oakirm/reJbQM8meO6wndw5XG1biY45IkN1osYbXsaGj0xm
+	NZbVnlOMeF4tehaewK5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXlNQ-0006QX-Nb; Thu, 21 Nov 2019 12:16:00 +0000
+	id 1iXlOM-0006gu-Jy; Thu, 21 Nov 2019 12:16:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXlNJ-0006Q6-89
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 12:15:54 +0000
+ id 1iXlOD-0006g7-Lg; Thu, 21 Nov 2019 12:16:51 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 14CC8328;
- Thu, 21 Nov 2019 04:15:50 -0800 (PST)
-Received: from [10.162.42.107] (a075563-lin.blr.arm.com [10.162.42.107])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2C6993F703;
- Thu, 21 Nov 2019 04:15:45 -0800 (PST)
-Subject: Re: [PATCH v2 00/14] arm64: return address signing
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
- <CAKv+Gu85AMezxHpNhBOtnK3X6P32qhZ5LtvFOSpzo7ju4=wBAA@mail.gmail.com>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <225e4746-bc53-ff63-b360-264066f338e4@arm.com>
-Date: Thu, 21 Nov 2019 17:45:43 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 92903328;
+ Thu, 21 Nov 2019 04:16:48 -0800 (PST)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0B8133F703;
+ Thu, 21 Nov 2019 04:16:47 -0800 (PST)
+Date: Thu, 21 Nov 2019 12:16:46 +0000
+From: Andrew Murray <andrew.murray@arm.com>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH v2 4/6] PCI: brcmstb: add Broadcom STB PCIe host
+ controller driver
+Message-ID: <20191121121646.GX43905@e119886-lin.cambridge.arm.com>
+References: <20191112155926.16476-1-nsaenzjulienne@suse.de>
+ <20191112155926.16476-5-nsaenzjulienne@suse.de>
+ <20191119162502.GS43905@e119886-lin.cambridge.arm.com>
+ <8b5ea071-d7a1-ea31-c7fe-3b4585d9cc36@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CAKv+Gu85AMezxHpNhBOtnK3X6P32qhZ5LtvFOSpzo7ju4=wBAA@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <8b5ea071-d7a1-ea31-c7fe-3b4585d9cc36@gmail.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_041553_331059_B8D81FFB 
-X-CRM114-Status: GOOD (  19.83  )
+X-CRM114-CacheID: sfid-20191121_041649_795163_7175CEBF 
+X-CRM114-Status: GOOD (  31.76  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,73 +63,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, maz@kernel.org,
+ phil@raspberrypi.org, linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ Eric Anholt <eric@anholt.net>, mbrugger@suse.com,
+ bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
+ james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ard,
+On Tue, Nov 19, 2019 at 10:34:59AM -0800, Florian Fainelli wrote:
+> On 11/19/19 8:25 AM, Andrew Murray wrote:
+> > On Tue, Nov 12, 2019 at 04:59:23PM +0100, Nicolas Saenz Julienne wrote:
+> >> From: Jim Quinlan <james.quinlan@broadcom.com>
+> >>
+> >> This commit adds the basic Broadcom STB PCIe controller.  Missing is the
+> >> ability to process MSI. This functionality is added in a subsequent
+> >> commit.
+> >>
+> >> The PCIe block contains an MDIO interface.  This is a local interface
+> >> only accessible by the PCIe controller.  It cannot be used or shared
+> >> by any other HW.  As such, the small amount of code for this
+> >> controller is included in this driver as there is little upside to put
+> >> it elsewhere.
+> > 
+> > This commit message hasn't changed, despite earlier feedback.
+> 
+> Please strip out large parts of the original patch that you are not
+> quoting for future responses.
+> 
+> [snip]
+> 
+> > 
+> > I'd rather see use of the pcie_cfg_data structure removed from this series.
+> > 
+> > I've seen the comments in the previous thread [1], and I understand that
+> > the intention is that this driver will eventually be used for other SOCs.
+> > 
+> > However this indirection isn't needed *now* and it makes reviewing this
+> > patch more difficult. If and when a later series is made to cover other
+> > SOCs - then I'd expect that series to find a way to apply this indirection.
+> 
+> I am not completely sold on the difficulty to review given that the
+> indirection is in place for only 3 registers which are used in only 3
+> functions:
+> 
+> brcm_pcie_bridge_sw_init_set()
+> brcm_pcie_perst_set()
+> brcm_pcie_map_conf()
+> 
+> but if you think that is a deal breaker, then, okay, let's get rid of it
+> and we will add it back for other STB SoCs in the future.
 
-On 11/20/19 9:35 PM, Ard Biesheuvel wrote:
-> On Tue, 19 Nov 2019 at 13:33, Amit Daniel Kachhap <amit.kachhap@arm.com> wrote:
->>
->> Hi,
->>
->> This series improves function return address protection for the arm64 kernel, by
->> compiling the kernel with ARMv8.3 Pointer Authentication instructions (referred
->> ptrauth hereafter). This should help protect the kernel against attacks using
->> return-oriented programming.
->>
->> This series is based on v5.4-rc8.
->>
->> High-level changes since v1 [1] (detailed changes are listed in patches):
->>   - Dropped patch "arm64: cpufeature: handle conflicts based on capability"
->>     as pointed by Suzuki.
->>   - Patch 4, 10, 12 and 14 are added newly added.
->>   - Patch 12 adds support to block probe of authenticate ptrauth instructions.
->>   - Patch 14 adds support for lkdtm to test ptrauth.
->>   - In the last version if secondary cpus do have ptrauth and primary cpu do not
->>     then the secondary will silently disable ptrauth and keep running. This version
->>     creates panic in this case as suggested by Suzuki.
->>   - Many suggestion from James implemented.
->>
->> This series do not implement few things or have known limitations:
->>   - kdump tool may need some rework to work with ptrauth.
->>   - Generate/Get some randomness for ptrauth keys during kernel early booting.
->>
-> 
-> Hello Amit,
-> 
-> As we discussed off line, we still need some place to initialize the
-> PAC keys for the boot CPU.
-> 
-> We should follow the same approach as boot_init_stack_canary() is
-> currently taking: it is called from start_kernel(), never returns, and
-> it is marked as __always_inline, which means it does not set up a
-> stack frame and so its return address will not get signed with the
-> wrong key.
-> 
-> Something like the below should be acceptable for a generic header
-> file, and we can wire up kernel PAC in the arm64 version of the
-> stackprotector.h header whichever way we like.
-> 
+It's also about the context - This driver already has lots of indirection, lots
+of macros, lots of defines, etc. And in that context this pcie_cfg_data adds
+even more. It all adds to the complexity of understanding what the driver is
+doing. Indirection often adds value - but I don't yet see that here.
 
-This seems to be a practical approach. I tested in my local system and
-it works fine. For few functions before boot_init_stack_canary, it can 
-afford to run without keys as randomization driver is not initialised. 
-Thanks for the pointer.
+I'd like to see it removed.
 
-Regards,
-Amit Daniel
+> 
+> > 
+> > And if that later series is more difficult to review because of the newly
+> > added indirection, then I'd expect an early patch of that series to apply
+> > the indirection in a single patch - which would be easy to review.
+> > 
+> > The other risk of such premature changes like this is that when you come
+> > to adding other SOCs, you may then discover that there were shortcomings
+> > in the way you've approached it here.
+> 
+> 2711 is the latest SoC that has actually been supported by this driver,
+
+I appreciate that this is frustrating - taking a complete driver that supports
+lots of platforms and then stripping it down for review one platform at a time.
+It also means removing all the indirection and abstraction that will likely
+later be required. Only to have to add it back in on the second platform.
+
+But those subsequent patches aren't available for review, we don't know if
+they will make it into the kernel or how long that will take. And we don't
+want to be left with maintaining a Pi only driver that has lots of unnecessary
+code that it is more difficult to understand than it needs to be.
+
+> every other ones that this driver will support in the future has been in
+> production for years and all the quirks/subtleties are known. This means
+> that 2711 was added while fitting in the existing abstraction and
+> Nicholas took out every other chip to leave 2711 only.
+
+I'm not referring to the quirks in the hardware - it may be that when you
+update this driver to add another SoC (on the list) - others reviewers
+may not agree with the method of abstraction, or find some issue with it.
+Yet until the abstraction can be reviewed in the context of support for the
+next SoC it's hard to tell.
+
+Thanks,
+
+Andrew Murray
+
+> -- 
+> Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
