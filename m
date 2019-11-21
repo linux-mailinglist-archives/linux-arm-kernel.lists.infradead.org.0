@@ -2,86 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08B5510575D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 17:46:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD143105762
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 17:47:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i8rVlSamgdFc9iL5ScVc/JpJBtOYLJ31KRtQyv7AGZM=; b=HTLwTbW35Z1q8r
-	v68nxGjtyTAbuJP/ZfGuuDbdQwycDzctdLsHUbk5QRollEdQG/ld2WAYA+Ecru/slhkjHR/F4vXTP
-	euZfwRtfJVfEOco8YdL/BHySE97TdQS+EvQ+/z6tKIljpgqFcI0tplAhtwATal2MfGooMmd1RPe4R
-	ieZiPqC8j7+T+vfazSbIZ+D9WoWyEIyUKsSRVBjwxnXuCQLMPEl+Q78iPtDKJlCWFySiM+klKwbRW
-	Vvju/B4CpL0RHmjn674LCTym52qOWzwRrduY16Vc9xoDHFSXxMv05wACRoGvubAG/9FxLHFzS5s9O
-	9VFSIuqrrn5A8beGwEiw==;
+	List-Owner; bh=BEqrxECjYCTy6B5Bsju3/N91HEgB8Af9g7lDH53t4PQ=; b=NlgHyILplzqWVp
+	F5bM22Szjuyr+chTtvwepfN7eOsxv44PQdgzLvpb2EXwAytgZJVQSXD0edH3Ns6WN9etBvxm24WRl
+	sANl01TJlitj6SYC8occz39O9od/jqCc6A6v/x787KB1bUFbk+vXSj7YHrtDsJtFI3C8QkbIz210c
+	PXGD51fnjJdgLdpo+hPxzqnIt2fzNvlRACHJNqbnevNrNN724e+3h6unLlzOvN40b17Z/jipvF2UD
+	q//HV76uKzA1MvcW4CNi8DRmNc4vyMhrzPPcvGtwF/hBWZlfdJsXHJpTPGieGS+4bZf+hvGkQEVRU
+	kNm2RFqsz5YTpxBWmw7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXpbL-0005fS-GK; Thu, 21 Nov 2019 16:46:39 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXpbE-0005f7-1k
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 16:46:33 +0000
-Received: by mail-lf1-x141.google.com with SMTP id v201so2136934lfa.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 08:46:31 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=EjangubdYbmIqePnQ2tFTagrb21HEQtT8HpyfP7ti1w=;
- b=iItYx5dQzTP531ILoUqhAXs7e+4wRs6j6pWyYQQxjrmpyioKzvJb36V20DpUtFeF0u
- PbRiDJUbyJpSR0WWRRJUwwMNbcuVvOrG7VUrV0l2bMogckdzTreDbhs2uHNWoQs2tnri
- rfyy4wsFfGe5IRqit3VjlaCz8F3hb/Op7pd7vkWM25vWC/qSvN5JvCL+7PL0kU+kQyUa
- WFr8ZuwovAYDixeXnydSWN3h6rAi38rxOc/Q1aLoYnRcqfgKim6IQwDYG7vwy/LRQab9
- E7O8FOb97tbHzP0nGPpIJlx1tvgWR9lAzFp6/8VfS0Voh7YqTYkZsU3yHw/4cIrTmHTW
- S/bw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=EjangubdYbmIqePnQ2tFTagrb21HEQtT8HpyfP7ti1w=;
- b=dgYPKeDP/E1MlDkdny/YkrwB/i+1ez6KycGW1Q8GhHtXLmDVvafG4HOEmMrgZHUMfn
- BOuiGWOA9LSBshR8mAWk5/ff1jnpP4Smzil765z2YMEjkQK2NFJ7EwEhQHCiWEk3+zPx
- MtlRruU+Nt+5ll7+z8kFKsXeTzVtXNOpfEftP1W2nt8xILJaNWObFgTFLNNitQTj1iwM
- 4fWflIMeABRJi2l5Qb6wb71dvyMD8amjS/F6Sn1bkkRfM74oB5FTrDSoTV2rYmTy8CLv
- GTlaKyCCLuUvTsXgzYSiUSCjS/rTZYTtVZInMD6qU6ZJSF3YlqEg0SoIYHSUNKAz9bl9
- wkeA==
-X-Gm-Message-State: APjAAAWfJahYRnQxLSoNiaZ2zlGbOX5Qv9hCmYk4buQZ6sCdSI0X+32b
- Q+zRt1+7FpUcSz6sTWTH+LRnqkRYnJsDP+I0+lytIQ==
-X-Google-Smtp-Source: APXvYqwt7Q3Tcz5l9BHsHKlZA/wVWUZ0x2W/W2EvB1/diUYJozdnSbuDZ5tPKX3zSB6GmSvliMB927yOQXDkS/YKPp0=
-X-Received: by 2002:ac2:5b86:: with SMTP id o6mr8591591lfn.44.1574354789928;
- Thu, 21 Nov 2019 08:46:29 -0800 (PST)
+	id 1iXpc1-0005v2-4q; Thu, 21 Nov 2019 16:47:21 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iXpbs-0005uU-Ql
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 16:47:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D7F8F328;
+ Thu, 21 Nov 2019 08:47:11 -0800 (PST)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A30043F52E;
+ Thu, 21 Nov 2019 08:47:10 -0800 (PST)
+Date: Thu, 21 Nov 2019 16:47:05 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Subject: Re: [PATCH 2/2] PCI: uniphier: Add checking whether PERST# is
+ deasserted
+Message-ID: <20191121164705.GA14229@e121166-lin.cambridge.arm.com>
+References: <20191107205239.65C1.4A936039@socionext.com>
+ <20191107124617.GA43905@e119886-lin.cambridge.arm.com>
+ <20191108163026.0DFB.4A936039@socionext.com>
 MIME-Version: 1.0
-References: <1574332142-7130-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1574332142-7130-1-git-send-email-peng.fan@nxp.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 21 Nov 2019 13:46:31 -0300
-Message-ID: <CAOMZO5AHd7Sucj4pjVnFt_iGexMk-2_ENp4D3xDQe8PPqaoqdw@mail.gmail.com>
-Subject: Re: [PATCH] clk: imx: clk-composite-7ulp: add lock
-To: Peng Fan <peng.fan@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20191108163026.0DFB.4A936039@socionext.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_084632_091905_750334BE 
-X-CRM114-Status: UNSURE (   8.48  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191121_084712_910146_E0C97D53 
+X-CRM114-Status: GOOD (  12.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,34 +64,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- Alice Guo <alice.guo@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Jassi Brar <jaswinder.singh@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peng,
+On Fri, Nov 08, 2019 at 04:30:27PM +0900, Kunihiko Hayashi wrote:
+> > However, If I understand correctly, doesn't your solution only work some
+> > of the time? What happens if you boot both machines at the same time,
+> > and PERST# isn't asserted prior to the kernel booting?
+> 
+> I think it contains an annoying problem.
+> 
+> If PERST# isn't toggled prior to the kernel booting, PERST# remains asserted
+> and the RC driver can't access PCI bus.
+> 
+> As a result, this patch works and deasserts PERST# (and EP configuration will
+> be lost). So boot sequence needs to include deasserting PERST#.
 
-On Thu, Nov 21, 2019 at 7:30 AM Peng Fan <peng.fan@nxp.com> wrote:
->
-> From: Peng Fan <peng.fan@nxp.com>
->
-> Add lock to mux/gate/divider to protect the access to the register
+I am sorry but I have lost you. Can you explain to us why checking
+that PERST# is deasserted guarantees you that:
 
-The "access to the register" is too vague.
+- The EP has bootstrapped
+- It is safe not to toggle it again (and also skip
+  uniphier_pcie_ltssm_enable())
 
-Could you please be more specific in the commit log and send a v2?
+Please provide details of the HW configuration so that we understand
+what's actually supposed to happen and why this patch fixes the
+issue you are facing.
 
-Thanks
+Thanks,
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
