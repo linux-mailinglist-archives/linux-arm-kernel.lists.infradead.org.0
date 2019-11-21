@@ -2,59 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7221D1054B9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 15:42:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C913F1054C4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 15:44:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fVTYZRdgvZIzTAiWDG9T/BLDcFNVcTHo0g8DibYLhEE=; b=Lr9yFTW+jIvyD8
-	8Nz02BLROu7kuiOy1EVyw4uMWxW9+iwIg0759JvoBC74277yMWEZQtFLA3bv4NBL5A1RDaspzyI33
-	Lr3Uea6224rJgcR3rXK+VyxjvVn1V1FlaInYaKqYMJY2achVTuOtviJTO5g4/sNt+IE+nIe5P2rK1
-	sPJCkpj4GOVw39e3jf4xpusjAz7wzIWtcReGYZD82TSm/RIBdwRDGcyrGi2IUaIfgyoWMPd1xe8Zl
-	ByhrMIq+tngz5SUPziwNblOQFCaEpBqYZCSFr38vpZ215GtcrpSLullAheMtc792ptNUbtPtIO/je
-	/cuvZQesX7x1s1XIP4Nw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2XG6Kbltqo47CBmDW0uZtexV1msvyY9vxwZIWCAq+Fs=; b=dz7fKVnlIw7Wla
+	B/saiJCUzXPuj0eKSkuVxaMek3axqmfwtq56WKxTvIoGtsvyJJ1rVw59phdrfHacj9OnNbVta3WZp
+	94ZizJ1+29bDFYol8nq1LKp2FpdCzRSRywveKSpKBeYwpmsAr9L/boUofhKZWAf28K7a0rxHuunBM
+	D35CMv2uFsZEDpCMU2G3IlojYYjtyIW209ArC4BTeHpzEESalv1T6mqh2N5/DqN3kJaddtIWMv6ce
+	VLHqr4JtRtfcwJwQyNbCgTdhDtlyGXZVEA7lf801cjsqOkqWvM8VB8DERRGBVwBoBw15vO3uGgJSM
+	rY0d4DAXLDTS/2koqiTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXnet-0005pB-Ms; Thu, 21 Nov 2019 14:42:11 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iXnh2-0006AU-9w; Thu, 21 Nov 2019 14:44:24 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXneg-0005oL-4b
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 14:41:59 +0000
-Received: from litschi.hi.pengutronix.de
- ([2001:67c:670:100:feaa:14ff:fe6a:8db5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <m.tretter@pengutronix.de>)
- id 1iXneJ-000425-JC; Thu, 21 Nov 2019 15:41:35 +0100
-Date: Thu, 21 Nov 2019 15:41:34 +0100
-From: Michael Tretter <m.tretter@pengutronix.de>
-To: Rajan Vaja <rajan.vaja@xilinx.com>
-Subject: Re: [PATCH 7/7] clk: zynqmp: Fix fractional clock check
-Message-ID: <20191121154134.404304c9@litschi.hi.pengutronix.de>
-In-Reply-To: <1573564580-9006-8-git-send-email-rajan.vaja@xilinx.com>
-References: <1573564580-9006-1-git-send-email-rajan.vaja@xilinx.com>
- <1573564580-9006-8-git-send-email-rajan.vaja@xilinx.com>
-Organization: Pengutronix
-X-Mailer: Claws Mail 3.14.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
+ id 1iXngs-00069i-1L
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 14:44:16 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0AA80206B6;
+ Thu, 21 Nov 2019 14:44:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574347453;
+ bh=1Qk5HeJMxRAqIMfETtKX9MkDQlQjopSGtDl5zCocUT8=;
+ h=Date:From:To:Cc:Subject:From;
+ b=PfWCmFp5fy5zWJFIF3HdDpyRz/FwjHFC2Bm6yqOOrhcVXjiZXGslTVG5IppnOemXD
+ 2hWwaxLgFjuvf3FXd2tgl35gUoZF4cgqAyw3eS1JD8qEk7EczZ4hE0Cu1+Xsk8PwE2
+ svwg3VP2o+HeZBc0dyWaRZy3m0pt7Hk7IaD1cVZI=
+Date: Thu, 21 Nov 2019 14:44:08 +0000
+From: Will Deacon <will@kernel.org>
+To: torvalds@linux-foundation.org
+Subject: [GIT PULL] arm64: Another fix for 5.4
+Message-ID: <20191121144408.GA3751@willie-the-truck>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:feaa:14ff:fe6a:8db5
-X-SA-Exim-Mail-From: m.tretter@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_064158_180378_EDF3796A 
-X-CRM114-Status: GOOD (  18.68  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191121_064414_695158_FBE49A37 
+X-CRM114-Status: GOOD (  12.30  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,105 +74,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, tejas.patel@xilinx.com, gustavo@embeddedor.com,
- sboyd@kernel.org, nava.manne@xilinx.com, mturquette@baylibre.com,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de,
- jolly.shah@xilinx.com, m.tretter@pengutronix.de, linux-clk@vger.kernel.org,
- dan.carpenter@oracle.com, ravi.patel@xilinx.com
+Cc: catalin.marinas@arm.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM Kernel Mailing List <linux-arm-kernel@lists.infradead.org>,
+ gregkh@linuxfoundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 12 Nov 2019 05:16:20 -0800, Rajan Vaja wrote:
-> Firmware driver sets BIT(4) to BIT(7) as custom type flags. To make
-> divider as fractional divider firmware sets BIT(4). So add support
-> for custom type flag and use BIT(4) of custom type flag as CLOCK_FRAC
-> bit.
-> 
-> Add a new field to the clock_topology to store custom type flags.
-> 
-> Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
-> ---
->  drivers/clk/zynqmp/clk-zynqmp.h | 1 +
->  drivers/clk/zynqmp/clkc.c       | 4 ++++
->  drivers/clk/zynqmp/divider.c    | 7 +++----
->  3 files changed, 8 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/clk/zynqmp/clk-zynqmp.h b/drivers/clk/zynqmp/clk-zynqmp.h
-> index fec9a15..5beeb41 100644
-> --- a/drivers/clk/zynqmp/clk-zynqmp.h
-> +++ b/drivers/clk/zynqmp/clk-zynqmp.h
-> @@ -30,6 +30,7 @@ struct clock_topology {
->  	u32 type;
->  	u32 flag;
->  	u32 type_flag;
-> +	u8 custom_type_flag;
->  };
->  
->  struct clk_hw *zynqmp_clk_register_pll(const char *name, u32 clk_id,
-> diff --git a/drivers/clk/zynqmp/clkc.c b/drivers/clk/zynqmp/clkc.c
-> index 10e89f2..4dd8413 100644
-> --- a/drivers/clk/zynqmp/clkc.c
-> +++ b/drivers/clk/zynqmp/clkc.c
-> @@ -84,6 +84,7 @@ struct name_resp {
->  
->  struct topology_resp {
->  #define CLK_TOPOLOGY_TYPE		GENMASK(3, 0)
-> +#define CLK_TOPOLOGY_CUSTOM_TYPE_FLAGS	GENMASK(7, 4)
->  #define CLK_TOPOLOGY_FLAGS		GENMASK(23, 8)
->  #define CLK_TOPOLOGY_TYPE_FLAGS		GENMASK(31, 24)
->  	u32 topology[CLK_GET_TOPOLOGY_RESP_WORDS];
-> @@ -396,6 +397,9 @@ static int __zynqmp_clock_get_topology(struct clock_topology *topology,
->  		topology[*nnodes].type_flag =
->  				FIELD_GET(CLK_TOPOLOGY_TYPE_FLAGS,
->  					  response->topology[i]);
-> +		topology[*nnodes].custom_type_flag =
-> +			FIELD_GET(CLK_TOPOLOGY_CUSTOM_TYPE_FLAGS,
-> +				  response->topology[i]);
->  		(*nnodes)++;
->  	}
->  
-> diff --git a/drivers/clk/zynqmp/divider.c b/drivers/clk/zynqmp/divider.c
-> index 67aa88c..e700504 100644
-> --- a/drivers/clk/zynqmp/divider.c
-> +++ b/drivers/clk/zynqmp/divider.c
-> @@ -25,7 +25,7 @@
->  #define to_zynqmp_clk_divider(_hw)		\
->  	container_of(_hw, struct zynqmp_clk_divider, hw)
->  
-> -#define CLK_FRAC	BIT(13) /* has a fractional parent */
-> +#define CLK_FRAC	BIT(4) /* has a fractional parent */
+Hi Linus,
 
-Still NACK. This breaks the compatibility with the mainline TF-A. The
-bit is now a different from the bit than in the previous version of
-that patch. Moving the flag to custom_type_flags is fine, but please
-make sure that you stay backwards compatible to existing versions of the
-TF-A.
+After I thought we were done for 5.4, we had a report this week of a nasty
+issue that has been shown to leak data between different user address spaces
+thanks to corruption of entries in the TLB. In hindsight, we should have
+spotted this in review when the PAN code was merged back in v4.3, but
+hindsight is 20/20 and I'm trying not to beat myself up too much about it
+despite being fairly miserable.
 
-Michael
+Anyway, the fix is "obvious" but the actual failure is more more subtle,
+and is described in the commit message. I've included a fairly mechanical
+follow-up patch here as well, which moves this checking out into the C
+wrappers which is what we do for {get,put}_user() already and allows us
+to remove these bloody assembly macros entirely. The patches have passed
+kernelci [1] [2] [3] and CKI [4] tests over night, as well as some
+targetted testing [5] for this particular issue.
 
->  
->  /**
->   * struct zynqmp_clk_divider - adjustable divider clock
-> @@ -279,13 +279,12 @@ struct clk_hw *zynqmp_clk_register_divider(const char *name,
->  
->  	init.name = name;
->  	init.ops = &zynqmp_clk_divider_ops;
-> -	/* CLK_FRAC is not defined in the common clk framework */
-> -	init.flags = nodes->flag & ~CLK_FRAC;
-> +	init.flags = nodes->flag;
->  	init.parent_names = parents;
->  	init.num_parents = 1;
->  
->  	/* struct clk_divider assignments */
-> -	div->is_frac = !!(nodes->flag & CLK_FRAC);
-> +	div->is_frac = !!(nodes->custom_type_flag & CLK_FRAC);
->  	div->flags = nodes->type_flag;
->  	div->hw.init = &init;
->  	div->clk_id = clk_id;
+The first patch is tagged for stable and should be applied to 4.14, 4.19
+and 5.3. I have separate backports for 4.4 and 4.9, which I'll send out
+once this has landed in your tree (although the original patch applies
+cleanly, it won't build for those two trees).
+
+Thanks to Pavel Tatashin for reporting this and Mark Rutland for helping
+to diagnose the issue and review/test the solution. Please pull.
+
+Will
+
+[1] https://lore.kernel.org/lkml/5dd5f064.1c69fb81.5e209.59cf@mx.google.com
+[2] https://lore.kernel.org/lkml/5dd5faae.1c69fb81.9bfcb.6f62@mx.google.com
+[3] https://lore.kernel.org/lkml/5dd5fab1.1c69fb81.22bb5.755e@mx.google.com
+[4] https://lore.kernel.org/lkml/cki.1CBC43ABCD.523Q7TUX64@redhat.com
+[5] https://lore.kernel.org/lkml/CA+CK2bCX+QGMPzhjj-UmVNb1jG8Z6WNW=L0GiVsTpGrhyqb9tA@mail.gmail.com
+
+--->8
+
+The following changes since commit 65e1f38d9a2f07d4b81f369864c105880e47bd5a:
+
+  scripts/tools-support-relr.sh: un-quote variables (2019-11-13 10:52:05 +0000)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
+
+for you to fetch changes up to e50be648aaa3da196d4f4ed49d1c5d4ec105fa4a:
+
+  arm64: uaccess: Remove uaccess_*_not_uao asm macros (2019-11-20 18:51:54 +0000)
+
+----------------------------------------------------------------
+arm64 fix for 5.4
+
+- Ensure PAN is re-enabled following user fault in uaccess routines
+
+----------------------------------------------------------------
+Pavel Tatashin (2):
+      arm64: uaccess: Ensure PAN is re-enabled after unhandled uaccess fault
+      arm64: uaccess: Remove uaccess_*_not_uao asm macros
+
+ arch/arm64/include/asm/asm-uaccess.h | 17 -----------------
+ arch/arm64/include/asm/uaccess.h     | 27 ++++++++++++++++++++++-----
+ arch/arm64/lib/clear_user.S          |  2 --
+ arch/arm64/lib/copy_from_user.S      |  2 --
+ arch/arm64/lib/copy_in_user.S        |  2 --
+ arch/arm64/lib/copy_to_user.S        |  2 --
+ arch/arm64/lib/uaccess_flushcache.c  |  6 +++++-
+ 7 files changed, 27 insertions(+), 31 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
