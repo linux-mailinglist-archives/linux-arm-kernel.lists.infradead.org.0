@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADFCC10491E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 04:20:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 194D5104923
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 04:21:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=WzmP+LhPaiSuIBFG9bokJ94OhJlx2agicIWsxGBJyZI=; b=Tfg
-	BEpa7jgUFmclDGngQixrO9oRJd3AwOtnKDiylwcmYXKey/jvHyREpRd8R3aLKEAm+IcIMbmmWxGkN
-	kI5mFa0lOuMkx8Xhrd3KI6Mf/8e8yZPxbLNxwD89P54VWliVnTy1XwpOs6TIkWFbDrPf0Uk6ppJzI
-	5AVbqEmVNl5d+P+MvAE+InhswjjBydi0Bv1Sq5i4WhPY3LU7rZNu+M0DpbYcyaZJt8HD8EQAN1slb
-	iDOrGgWL4rCATyTH3o1l7hKL8LH7awabvdt2EmeFnxMSwFoeLkKcKchZX2aoPhn0bK8e+NaPZUx1m
-	cvMnIm9igimGPB6/+FAPJNR55MPpPBQ==;
+	References:List-Owner; bh=2pb3OYV3oIGMYvWW7wnUYJZjpaK+0rFjmpJynPcsL5M=; b=HEr
+	5VNyddLS7rX+tp/WXJCh33AHEuP17TbhIlqtsvsi+EP0rmmRwkc1wopcuzld3FZWaEJqtf+Jt+ca0
+	G9/EPm8NoceZVwu3QKXpA8Pmph5Fai1Pn8x/a0rZmchJInUORoHwiuD6oRozV0Z+hSTMiE9w21cAL
+	qlDQqPluNv47Nt6RhJYOsSrYiuzTAxOzLBrGNpDWeObP9qDl10HBuWmgosCZ3fRM1k9JoKkQbqZ/8
+	kdOmjtpHNfbA8pte0thYXxKp7V3kfJADgqQgyAAO3dB+ry9Siy2OaXuQp53RfrTr3unemaFSbChRg
+	9XIWwvZbSquwq12IeUiVz+E+uCrwyBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXd1H-0004WL-Nr; Thu, 21 Nov 2019 03:20:35 +0000
+	id 1iXd1X-0004lw-Na; Thu, 21 Nov 2019 03:20:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXd0c-0002xd-UN
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 03:19:56 +0000
+ id 1iXd17-0004aw-1G
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 03:20:28 +0000
 Received: from PC-kkoz.proceq.com (unknown [213.160.61.66])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5609F20721;
- Thu, 21 Nov 2019 03:19:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 76B19208CC;
+ Thu, 21 Nov 2019 03:20:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574306394;
- bh=wzYCZfJ/OBs2FZPR/b3ZOr0+bvljs7kYVUGM40zxFhw=;
+ s=default; t=1574306424;
+ bh=ICtU3L2SGCxL5d13ilpqPvEB+MBDUd3UY3pWS7CJXr8=;
  h=From:To:Cc:Subject:Date:From;
- b=J++5Z/ze24PaSYJhFXl6Z1QBcxgHpn5Tre8hvHLNjLzw/gz8mVvzqmWeSoHeh10ru
- qOaSuGioG+qx3WB0V4WuLuupT/sbZZs8VOsJpt23etiDsvc0GZjHjzWcEB65Yjsb9q
- ZammvUN4aG7DWmL3LyQ1pNykZ/0M1/cW5+8S1I8w=
+ b=Qfh0BrqgN2Sy9wxcIiZHCkTPtNpWZNn7gC6G3huJi7Rk/QV/pi+qc4faZ1ocDVp8C
+ A8vqTqeBi8mhKLq8xB0nWzTcg6ULzkWJImhdDHyT9GrXu5vNPaaVfoOveJmnvrDgCS
+ WUKeWg1tY95otr4qGw7m2TNN+/9lZ6k5V73nAXT0=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2] perf: Fix Kconfig indentation
-Date: Thu, 21 Nov 2019 04:19:51 +0100
-Message-Id: <1574306391-10337-1-git-send-email-krzk@kernel.org>
+Subject: [PATCH v2] arm64: Fix Kconfig indentation
+Date: Thu, 21 Nov 2019 04:20:20 +0100
+Message-Id: <1574306420-23985-1-git-send-email-krzk@kernel.org>
 X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_191955_052508_DEC643DD 
-X-CRM114-Status: UNSURE (   9.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191120_192025_133717_E21FB607 
+X-CRM114-Status: GOOD (  11.54  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -73,8 +72,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Marc Zyngier <maz@kernel.org>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -92,68 +95,105 @@ Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 Changes since v1:
 1. Fix also 7-space and tab+1 space indentation issues.
 ---
- drivers/perf/Kconfig | 34 +++++++++++++++++-----------------
- 1 file changed, 17 insertions(+), 17 deletions(-)
+ arch/arm64/Kconfig     | 42 +++++++++++++++++++++---------------------
+ arch/arm64/kvm/Kconfig |  2 +-
+ 2 files changed, 22 insertions(+), 22 deletions(-)
 
-diff --git a/drivers/perf/Kconfig b/drivers/perf/Kconfig
-index 09ae8a970880..b35314bec985 100644
---- a/drivers/perf/Kconfig
-+++ b/drivers/perf/Kconfig
-@@ -54,13 +54,13 @@ config ARM_PMU_ACPI
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index c4d6d8d6b6c4..d31bf024830f 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -209,31 +209,31 @@ config ARM64_CONT_SHIFT
+ 	default 4
+ 
+ config ARCH_MMAP_RND_BITS_MIN
+-       default 14 if ARM64_64K_PAGES
+-       default 16 if ARM64_16K_PAGES
+-       default 18
++	default 14 if ARM64_64K_PAGES
++	default 16 if ARM64_16K_PAGES
++	default 18
+ 
+ # max bits determined by the following formula:
+ #  VA_BITS - PAGE_SHIFT - 3
+ config ARCH_MMAP_RND_BITS_MAX
+-       default 19 if ARM64_VA_BITS=36
+-       default 24 if ARM64_VA_BITS=39
+-       default 27 if ARM64_VA_BITS=42
+-       default 30 if ARM64_VA_BITS=47
+-       default 29 if ARM64_VA_BITS=48 && ARM64_64K_PAGES
+-       default 31 if ARM64_VA_BITS=48 && ARM64_16K_PAGES
+-       default 33 if ARM64_VA_BITS=48
+-       default 14 if ARM64_64K_PAGES
+-       default 16 if ARM64_16K_PAGES
+-       default 18
++	default 19 if ARM64_VA_BITS=36
++	default 24 if ARM64_VA_BITS=39
++	default 27 if ARM64_VA_BITS=42
++	default 30 if ARM64_VA_BITS=47
++	default 29 if ARM64_VA_BITS=48 && ARM64_64K_PAGES
++	default 31 if ARM64_VA_BITS=48 && ARM64_16K_PAGES
++	default 33 if ARM64_VA_BITS=48
++	default 14 if ARM64_64K_PAGES
++	default 16 if ARM64_16K_PAGES
++	default 18
+ 
+ config ARCH_MMAP_RND_COMPAT_BITS_MIN
+-       default 7 if ARM64_64K_PAGES
+-       default 9 if ARM64_16K_PAGES
+-       default 11
++	default 7 if ARM64_64K_PAGES
++	default 9 if ARM64_16K_PAGES
++	default 11
+ 
+ config ARCH_MMAP_RND_COMPAT_BITS_MAX
+-       default 16
++	default 16
+ 
+ config NO_IOPORT_MAP
+ 	def_bool y if !PCI
+@@ -263,7 +263,7 @@ config GENERIC_HWEIGHT
  	def_bool y
  
- config ARM_SMMU_V3_PMU
--	 tristate "ARM SMMUv3 Performance Monitors Extension"
--	 depends on ARM64 && ACPI && ARM_SMMU_V3
--	   help
--	   Provides support for the ARM SMMUv3 Performance Monitor Counter
--	   Groups (PMCG), which provide monitoring of transactions passing
--	   through the SMMU and allow the resulting information to be filtered
--	   based on the Stream ID of the corresponding master.
-+	tristate "ARM SMMUv3 Performance Monitors Extension"
-+	depends on ARM64 && ACPI && ARM_SMMU_V3
-+	  help
-+	  Provides support for the ARM SMMUv3 Performance Monitor Counter
-+	  Groups (PMCG), which provide monitoring of transactions passing
-+	  through the SMMU and allow the resulting information to be filtered
-+	  based on the Stream ID of the corresponding master.
+ config GENERIC_CSUM
+-        def_bool y
++	def_bool y
  
- config ARM_DSU_PMU
- 	tristate "ARM DynamIQ Shared Unit (DSU) PMU"
-@@ -80,11 +80,11 @@ config FSL_IMX8_DDR_PMU
- 	  events.
+ config GENERIC_CALIBRATE_DELAY
+ 	def_bool y
+@@ -886,8 +886,8 @@ choice
+ 	  that is selected here.
  
- config HISI_PMU
--       bool "HiSilicon SoC PMU"
--       depends on ARM64 && ACPI
+ config CPU_BIG_ENDIAN
+-       bool "Build big-endian kernel"
 -       help
--         Support for HiSilicon SoC uncore performance monitoring
--         unit (PMU), such as: L3C, HHA and DDRC.
-+	bool "HiSilicon SoC PMU"
-+	depends on ARM64 && ACPI
++	bool "Build big-endian kernel"
 +	help
-+	  Support for HiSilicon SoC uncore performance monitoring
-+	  unit (PMU), such as: L3C, HHA and DDRC.
+ 	  Say Y if you plan on running a kernel with a big-endian userspace.
  
- config QCOM_L2_PMU
- 	bool "Qualcomm Technologies L2-cache PMU"
-@@ -115,11 +115,11 @@ config THUNDERX2_PMU
- 	   in the DDR4 Memory Controller (DMC).
+ config CPU_LITTLE_ENDIAN
+@@ -1670,7 +1670,7 @@ config EFI
+ 	help
+ 	  This option provides support for runtime services provided
+ 	  by UEFI firmware (such as non-volatile variables, realtime
+-          clock, and platform reset). A UEFI stub is also provided to
++	  clock, and platform reset). A UEFI stub is also provided to
+ 	  allow the kernel to be booted as an EFI application. This
+ 	  is only useful on systems that have UEFI firmware.
  
- config XGENE_PMU
--        depends on ARCH_XGENE
--        bool "APM X-Gene SoC PMU"
--        default n
--        help
--          Say y if you want to use APM X-Gene SoC performance monitors.
-+	depends on ARCH_XGENE
-+	bool "APM X-Gene SoC PMU"
-+	default n
-+	help
-+	  Say y if you want to use APM X-Gene SoC performance monitors.
+diff --git a/arch/arm64/kvm/Kconfig b/arch/arm64/kvm/Kconfig
+index a475c68cbfec..1b10785bc75a 100644
+--- a/arch/arm64/kvm/Kconfig
++++ b/arch/arm64/kvm/Kconfig
+@@ -62,7 +62,7 @@ config KVM_ARM_PMU
+ 	  virtual machines.
  
- config ARM_SPE_PMU
- 	tristate "Enable support for the ARMv8.2 Statistical Profiling Extension"
+ config KVM_INDIRECT_VECTORS
+-       def_bool KVM && (HARDEN_BRANCH_PREDICTOR || HARDEN_EL2_VECTORS)
++	def_bool KVM && (HARDEN_BRANCH_PREDICTOR || HARDEN_EL2_VECTORS)
+ 
+ source "drivers/vhost/Kconfig"
+ 
 -- 
 2.7.4
 
