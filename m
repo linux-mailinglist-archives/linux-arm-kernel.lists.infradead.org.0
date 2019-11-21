@@ -2,50 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD143105762
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 17:47:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55178105775
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 17:50:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BEqrxECjYCTy6B5Bsju3/N91HEgB8Af9g7lDH53t4PQ=; b=NlgHyILplzqWVp
-	F5bM22Szjuyr+chTtvwepfN7eOsxv44PQdgzLvpb2EXwAytgZJVQSXD0edH3Ns6WN9etBvxm24WRl
-	sANl01TJlitj6SYC8occz39O9od/jqCc6A6v/x787KB1bUFbk+vXSj7YHrtDsJtFI3C8QkbIz210c
-	PXGD51fnjJdgLdpo+hPxzqnIt2fzNvlRACHJNqbnevNrNN724e+3h6unLlzOvN40b17Z/jipvF2UD
-	q//HV76uKzA1MvcW4CNi8DRmNc4vyMhrzPPcvGtwF/hBWZlfdJsXHJpTPGieGS+4bZf+hvGkQEVRU
-	kNm2RFqsz5YTpxBWmw7g==;
+	List-Owner; bh=bMTDifTTU3YPdnOwJ7W6MD7n2JrhzoY1R3e6VMBQgs4=; b=Dn+AmMZrBnpqyN
+	9NIBm9/PQQpyublQ8++Gfo09iCQOVrWw4R6v5Yker/Ceuz4MARr4PuZT+gsZmEdPZr2jyRognRK2k
+	lnUgFjOx9odfOhta7RNrNNj1Zx0H8bSuUWfUHYgmLwFPB5VwCGxnEpuopmP0NXQOw77f0X83HRn9D
+	N1K0bcfFqB27msta36mXc/vY2SA5v9p2K4N24S9ypyO5lD6eD6FAJB/YhE0hnqTGvHuuRYeuQ8Ajt
+	RP+/aZqpmoETvoIJtSV2wlr82u11n6fQs1owOgl4fWwN4VGILCHtNc/mnIKuKua6U/lybwn9D3Gf5
+	ddvubS0e4YQcXWIY5gog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXpc1-0005v2-4q; Thu, 21 Nov 2019 16:47:21 +0000
+	id 1iXpeX-0006HG-Cm; Thu, 21 Nov 2019 16:49:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXpbs-0005uU-Ql
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 16:47:14 +0000
+ id 1iXpeL-0006Gq-K1
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 16:49:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D7F8F328;
- Thu, 21 Nov 2019 08:47:11 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BA4C7328;
+ Thu, 21 Nov 2019 08:49:44 -0800 (PST)
 Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
  [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A30043F52E;
- Thu, 21 Nov 2019 08:47:10 -0800 (PST)
-Date: Thu, 21 Nov 2019 16:47:05 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A062D3F52E;
+ Thu, 21 Nov 2019 08:49:43 -0800 (PST)
+Date: Thu, 21 Nov 2019 16:49:41 +0000
 From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: Re: [PATCH 2/2] PCI: uniphier: Add checking whether PERST# is
- deasserted
-Message-ID: <20191121164705.GA14229@e121166-lin.cambridge.arm.com>
-References: <20191107205239.65C1.4A936039@socionext.com>
- <20191107124617.GA43905@e119886-lin.cambridge.arm.com>
- <20191108163026.0DFB.4A936039@socionext.com>
+Subject: Re: [PATCH 1/2] PCI: uniphier: Set mode register to host mode
+Message-ID: <20191121164941.GB14229@e121166-lin.cambridge.arm.com>
+References: <1573102695-7018-1-git-send-email-hayashi.kunihiko@socionext.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191108163026.0DFB.4A936039@socionext.com>
+In-Reply-To: <1573102695-7018-1-git-send-email-hayashi.kunihiko@socionext.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_084712_910146_E0C97D53 
-X-CRM114-Status: GOOD (  12.97  )
+X-CRM114-CacheID: sfid-20191121_084945_702727_3B2CAA93 
+X-CRM114-Status: GOOD (  15.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,40 +62,58 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Jassi Brar <jaswinder.singh@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
+ linux-kernel@vger.kernel.org, Jassi Brar <jaswinder.singh@linaro.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 08, 2019 at 04:30:27PM +0900, Kunihiko Hayashi wrote:
-> > However, If I understand correctly, doesn't your solution only work some
-> > of the time? What happens if you boot both machines at the same time,
-> > and PERST# isn't asserted prior to the kernel booting?
+On Thu, Nov 07, 2019 at 01:58:14PM +0900, Kunihiko Hayashi wrote:
+> In order to avoid effect of the initial mode depending on SoCs,
+> this patch sets the mode register to host(RC) mode.
 > 
-> I think it contains an annoying problem.
-> 
-> If PERST# isn't toggled prior to the kernel booting, PERST# remains asserted
-> and the RC driver can't access PCI bus.
-> 
-> As a result, this patch works and deasserts PERST# (and EP configuration will
-> be lost). So boot sequence needs to include deasserting PERST#.
+> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> ---
+>  drivers/pci/controller/dwc/pcie-uniphier.c | 10 ++++++++++
+>  1 file changed, 10 insertions(+)
 
-I am sorry but I have lost you. Can you explain to us why checking
-that PERST# is deasserted guarantees you that:
+Applied to pci/uniphier, thanks.
 
-- The EP has bootstrapped
-- It is safe not to toggle it again (and also skip
-  uniphier_pcie_ltssm_enable())
-
-Please provide details of the HW configuration so that we understand
-what's actually supposed to happen and why this patch fixes the
-issue you are facing.
-
-Thanks,
 Lorenzo
+
+> diff --git a/drivers/pci/controller/dwc/pcie-uniphier.c b/drivers/pci/controller/dwc/pcie-uniphier.c
+> index 3f30ee4..8fd7bad 100644
+> --- a/drivers/pci/controller/dwc/pcie-uniphier.c
+> +++ b/drivers/pci/controller/dwc/pcie-uniphier.c
+> @@ -33,6 +33,10 @@
+>  #define PCL_PIPEMON			0x0044
+>  #define PCL_PCLK_ALIVE			BIT(15)
+>  
+> +#define PCL_MODE			0x8000
+> +#define PCL_MODE_REGEN			BIT(8)
+> +#define PCL_MODE_REGVAL			BIT(0)
+> +
+>  #define PCL_APP_READY_CTRL		0x8008
+>  #define PCL_APP_LTSSM_ENABLE		BIT(0)
+>  
+> @@ -85,6 +89,12 @@ static void uniphier_pcie_init_rc(struct uniphier_pcie_priv *priv)
+>  {
+>  	u32 val;
+>  
+> +	/* set RC MODE */
+> +	val = readl(priv->base + PCL_MODE);
+> +	val |= PCL_MODE_REGEN;
+> +	val &= ~PCL_MODE_REGVAL;
+> +	writel(val, priv->base + PCL_MODE);
+> +
+>  	/* use auxiliary power detection */
+>  	val = readl(priv->base + PCL_APP_PM0);
+>  	val |= PCL_SYS_AUX_PWR_DET;
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
