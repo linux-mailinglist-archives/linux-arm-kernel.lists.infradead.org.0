@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2310D1058C7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 18:42:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9C9D105994
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 19:31:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VOQfmpnN0GxZ6tb0smWXPe31BG/vBgO5hOuSqs/rIds=; b=NA4pRQrRhDXsnN
-	fOXbuEfg4iyr+ajmoNXIdcoU1ALHMNjaj88hu4CzxEZEE906LZh1fVLfXDwKfaolz+tpCldC90ayB
-	6AalYEbnx+Hmns+ye1oM2ZExKRBgVAAgeWnpIJjjBfH+fgDbjp7E5JuHO252H/Y3tqVYQvALsQMPr
-	OkBpZIHLiN9TgEaBhl8yJpQYNtkGPbULlh3qsoMksz/P/C/qpgmLgBKiXPJA7KaQe+r/aXAysXzAO
-	iefrfZtt8+a4BkBRVA1MuU1p6FpTj1taBN9qdMjnRvtkQXxzqAd/sUCPzLq/0yV1EsPtKK4Kyi4Qg
-	YoFrkUmK5rJjxNdUlMvg==;
+	List-Owner; bh=dBzB7sxQ0rNS76Pt55w4QdvvdZekzIJTuTRWYJm6QcE=; b=J09mChvi6byntN
+	kbSxPySMerI+K0kf1hkPaxAFG1XYycxWZB9uVjTb3ndnELSYaMfwKSFn2i0U3LVn26QN8dmBsb+nX
+	OCszg9Yt5owae67FX9ch4nDq3U2YVDP+M7InyOHTsAX+YLjKeQFlYjUwq58pIo8oq/dOwj0FuB8Mg
+	0E9ctw3wAHCNnp3ZcwlKdgLl/tANk3defaTTXh7mzxnWHUTivy4345AL4MFkAvL+FtPjuVqfNoIBs
+	ISl3yJnZjOE6L50ZQ7jwBP+iCNr1w+90HUW1OVN98SHGCIqUwujqW9TH4bfrGOosDiX2KPjYIBE2/
+	YcdOZki5ENWYZ4rT2QbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXqTh-00035G-Og; Thu, 21 Nov 2019 17:42:49 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iXrEw-0003dv-D8; Thu, 21 Nov 2019 18:31:38 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXqTY-00034d-Jd
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 17:42:42 +0000
-Received: by mail-wm1-x344.google.com with SMTP id y5so4699318wmi.5
+ id 1iXrEn-0003cK-Kr
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 18:31:30 +0000
+Received: by mail-oi1-x242.google.com with SMTP id n14so4062522oie.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 09:42:39 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Thu, 21 Nov 2019 10:31:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pIBYFzvNKC+WJDkNKoohHwOi2Vu9bIJaqAf1nCfm+Cc=;
- b=u2l0/88yBcyPgK47gFqpPlMEsSlbQGl3ANnFXCaL1F4V85U209GXoJQiBv4dJ5A8dg
- vn3i81qzLep+dZO5r9Wcj7eOwH4oj59NjSV4S41hWR25RbRILwih/UsjWtuzT13teCmn
- jsVMXFk3ollCrp0UGC3jCh3zj/EvN6wghziq5XSrGdko31cFm9vwS1uoYYjEjb6wiVuF
- kWEMl+2AC/bgjmqNBvH/4+zf8jeQ7jvm06lKcLhLDNQ7OJM9i6Kl5wTeBlGjAcxMttog
- tHKPDv2f4hKk/EqgvwAzmOc8Vz7z9VDg6xe6r5yGQZXybco4gXIPb86OWKFRNVWiqR5L
- UrMw==
+ :cc; bh=zes9nx3wWOfwgkI+Dul1p5z28VLkMHp34WWYw/4B4xM=;
+ b=Wkp25PFcZ403A1Ab9dtH00UDW+ztY9yfO5ob/GgE/2yV3cRKXm7YMtYFtLdE+Dsva3
+ 9Rp7LdEU0QVZIsPXy980hXnC4LQ9KYwFcnhhwyD0vo4Ok6W3S6MZRT5jISG4FvLREXtz
+ AWAp8TsSWkWK8zlCxWzKcEZ/j6zwmvwRFNOG78fD68Z8CxTbK06XUuEF+1q0XUT1Ovhs
+ C0xgW4AGzSMcuLFkJ64mQbF2vtg/0a2TRJhlwNHdWkkfTCAr3cgi3cBxR9GKcC1Gkppu
+ YTEvvuuBpO9jyZpYHtYh0xn7CGIvTzBvTNIjpSvir4A692IKFEazzfbK47bCNvU0KlKx
+ qS1g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=pIBYFzvNKC+WJDkNKoohHwOi2Vu9bIJaqAf1nCfm+Cc=;
- b=NvaFbMv0TXNjdobsIjDnlhLkT6t8pVeBMhobeCvx+6PXQ8H6Qj4hjLdcThaZEjrUPf
- jz5O5mj8wEtPNTunj/qr2x+nBSX5daJa1pJZxInO1zE/CkHNd1lRsrCGmH/vH+LEHGNB
- vnDQ+vK9HBY8BIEbj/0UKc0fEl4RzvlKE8L/e1m8hajYR+3LrGNUqOedZ8l+cRCulVqi
- RvJukeNYB9rVAcpIgA/w9hYfmxtQfLTo5cbRa5DPJOpi9IBRblQTkMiRSY4AsrxNEq8D
- WDcGsTQN0auSjLjPXxylg7ptMW8ykfvCegOJVBYifC73KXChh7Iccq5B7NtASjUdF3Or
- +40Q==
-X-Gm-Message-State: APjAAAW28wfx6Aio+AffY2R53O+LfSoNfChgjm3Tl9ywLK7tRh4esxQV
- JBgVExiIp5xHlXggQcNQ77qvKOX2/XJRVMHkXXOD9w==
-X-Google-Smtp-Source: APXvYqxdwU167Fs1GrtNewGlg8ANeod3+AiosGp7InrZ8GuS/7AnksFKguWPtCiAZuSb6hpzLln086bDWrOKbqHgo9Q=
-X-Received: by 2002:a7b:c392:: with SMTP id s18mr10516319wmj.61.1574358158680; 
- Thu, 21 Nov 2019 09:42:38 -0800 (PST)
+ bh=zes9nx3wWOfwgkI+Dul1p5z28VLkMHp34WWYw/4B4xM=;
+ b=PqwabEEZQ0NMnUpu1k6pncuuR5URz4yY2HcM1Rp2VGfgJe8tvidSVJcWbHsN59YI4X
+ l3pIDUgeF4IwYB9rExuHd9ZRBVnW6jG/N0L4vqFTxwaBj6X3/Owhho61Zskl8H2V4BzE
+ Na4I1zTSoqaSW/dy5lvXHAd9ASYi9x2+ajF6Qxs+RbogoUZ8mh+VNYnxND2qRORhPXdi
+ 64qwV3YluqacQH1xqn1/sgm3fW1kfs4H9vLI2ZsQRNhNmuMvmOlNlDivYkrUdmIMs21Y
+ 2F9/aM+ErWdxVkMIX9/gzvAiV9gAK2fw6KlCr+3KjI3rdabhD90+HhTGwLVrBW5fn9mw
+ T26Q==
+X-Gm-Message-State: APjAAAWGWc0+TYsu1r59RYV4dD5ALWGbUJJ/pYDX5yhdYxkIvJ995cUA
+ s5npmmkG+J1evZwgCCinOp2X7Buz/mLWkg1YYnU=
+X-Google-Smtp-Source: APXvYqyen3cn+EY2RAzHvEa5NUjEhWs2OO/9/OSlmmI0VmHx00JqrZodxXdJRT5Kl/NB0JdTu71ixm3Ce1mmHgz5IXQ=
+X-Received: by 2002:aca:c50f:: with SMTP id v15mr9263185oif.5.1574361088233;
+ Thu, 21 Nov 2019 10:31:28 -0800 (PST)
 MIME-Version: 1.0
-References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
- <1574166746-27197-9-git-send-email-amit.kachhap@arm.com>
-In-Reply-To: <1574166746-27197-9-git-send-email-amit.kachhap@arm.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Thu, 21 Nov 2019 18:42:27 +0100
-Message-ID: <CAKv+Gu_U37kfCOT4ko-pK6b80aQ2uCe88WfHPwwzjrZ4frndmw@mail.gmail.com>
-Subject: Re: [PATCH v2 08/14] arm64: mask PAC bits of __builtin_return_address
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+References: <20191004190938.15353-1-navid.emamdoost@gmail.com>
+In-Reply-To: <20191004190938.15353-1-navid.emamdoost@gmail.com>
+From: Navid Emamdoost <navid.emamdoost@gmail.com>
+Date: Thu, 21 Nov 2019 12:31:17 -0600
+Message-ID: <CAEkB2EQGCcwBO4iZBiHthUAJUeprw2Q09932GATd6XVyXqukzw@mail.gmail.com>
+Subject: Re: [PATCH] drm/imx: fix memory leak in imx_pd_bind
+To: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>, 
+ Daniel Vetter <daniel@ffwll.ch>, Sascha Hauer <s.hauer@pengutronix.de>, 
+ Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_094240_658634_855A3D6D 
-X-CRM114-Status: GOOD (  17.43  )
+X-CRM114-CacheID: sfid-20191121_103129_711570_6EF0DE96 
+X-CRM114-Status: GOOD (  17.40  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (navid.emamdoost[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -80,6 +80,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,81 +94,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: LKML <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ Navid Emamdoost <emamd001@umn.edu>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 19 Nov 2019 at 13:33, Amit Daniel Kachhap <amit.kachhap@arm.com> wrote:
+On Fri, Oct 4, 2019 at 2:09 PM Navid Emamdoost
+<navid.emamdoost@gmail.com> wrote:
 >
-> This patch redefines __builtin_return_address to mask pac bits
-> when Pointer Authentication is enabled. As __builtin_return_address
-> is used mostly used to refer to the caller function symbol address
-> so masking runtime generated pac bits will help to find the match.
+> In imx_pd_bind, the duplicated memory for imxpd->edid via kmemdup should
+> be released in drm_of_find_panel_or_bridge or imx_pd_register fail.
 >
-> This change fixes the utilities like cat /proc/vmallocinfo to now
-> show the correct logs.
->
-> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> Fixes: ebc944613567 ("drm: convert drivers to use drm_of_find_panel_or_bridge")
+> Fixes: 19022aaae677 ("staging: drm/imx: Add parallel display support")
+> Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
 > ---
-> Change since last version:
->  * Comment modified.
->
->  arch/arm64/Kconfig                |  1 +
->  arch/arm64/include/asm/compiler.h | 17 +++++++++++++++++
->  2 files changed, 18 insertions(+)
->  create mode 100644 arch/arm64/include/asm/compiler.h
->
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 998248e..c1844de 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -117,6 +117,7 @@ config ARM64
->         select HAVE_ALIGNED_STRUCT_PAGE if SLUB
->         select HAVE_ARCH_AUDITSYSCALL
->         select HAVE_ARCH_BITREVERSE
-> +       select HAVE_ARCH_COMPILER_H
->         select HAVE_ARCH_HUGE_VMAP
->         select HAVE_ARCH_JUMP_LABEL
->         select HAVE_ARCH_JUMP_LABEL_RELATIVE
-> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
-> new file mode 100644
-> index 0000000..5efe310
-> --- /dev/null
-> +++ b/arch/arm64/include/asm/compiler.h
-> @@ -0,0 +1,17 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +#ifndef __ASM_ARM_COMPILER_H
-> +#define __ASM_ARM_COMPILER_H
-> +
-> +#ifndef __ASSEMBLY__
-> +
-> +#if defined(CONFIG_ARM64_PTR_AUTH)
-> +
-> +/* As TBI1 is disabled currently, so bits 63:56 also has PAC */
-> +#define __builtin_return_address(val)                          \
-> +       (void *)((unsigned long)__builtin_return_address(val) | \
-> +       (GENMASK_ULL(63, 56) | GENMASK_ULL(54, VA_BITS)))
-> +#endif
-> +
-> +#endif
-> +
-> +#endif /* __ASM_ARM_COMPILER_H */
 
-It seems to me like we are accumulating a lot of cruft for khwasan as
-well as PAC to convert address into their untagged format.
+Would you please review this patch?
 
-Are there are untagging helpers we can already reuse? If not, can we
-introduce something that can be shared between all these use cases?
+Thanks,
+
+>  drivers/gpu/drm/imx/parallel-display.c | 8 ++++++--
+>  1 file changed, 6 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/imx/parallel-display.c b/drivers/gpu/drm/imx/parallel-display.c
+> index e7ce17503ae1..9522d2cb0ad5 100644
+> --- a/drivers/gpu/drm/imx/parallel-display.c
+> +++ b/drivers/gpu/drm/imx/parallel-display.c
+> @@ -227,14 +227,18 @@ static int imx_pd_bind(struct device *dev, struct device *master, void *data)
+>
+>         /* port@1 is the output port */
+>         ret = drm_of_find_panel_or_bridge(np, 1, 0, &imxpd->panel, &imxpd->bridge);
+> -       if (ret && ret != -ENODEV)
+> +       if (ret && ret != -ENODEV) {
+> +               kfree(imxpd->edid);
+>                 return ret;
+> +       }
+>
+>         imxpd->dev = dev;
+>
+>         ret = imx_pd_register(drm, imxpd);
+> -       if (ret)
+> +       if (ret) {
+> +               kfree(imxpd->edid);
+>                 return ret;
+> +       }
+>
+>         dev_set_drvdata(dev, imxpd);
+>
+> --
+> 2.17.1
+>
+
+
+-- 
+Navid.
 
 _______________________________________________
 linux-arm-kernel mailing list
