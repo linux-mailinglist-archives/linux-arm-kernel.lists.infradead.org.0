@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA23C105432
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 15:16:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6211105434
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 15:16:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+AOYq2z7quNCmy4ebq5Rb3+CfwkrGkHpu4kIklIhy9U=; b=lLkuOiOut7yUr6
-	c8D6KbaPgiR7rfrKcfKNzyzBZ23uo7e2KVtscoxPRUPdi7t4SQ11b1WwS3oS/V+RDl8uSgjc2YDOJ
-	zFlIjbGXKrAe1wER3plEc9j2WCTVN3QH70CKj7GnZjdM+uXfjmnm9ZI2G1PA05M74slu5CfwkQeO6
-	nMD5pLZ7QXORC/Sk80BTUS5vZt8Xj5iNtM10LT9jSu+61WljP3lt0pLvs+5+zjCR9EnZ80PJddPY8
-	FCEbfViETUzg02BTwvOLvz3ANMkzpNf4S/0IpVZ2J7alpvNV/Ros7voROf77wwp4CalWVkHtVNCYI
-	Ur+hOUQ+VvOpY7wTw87g==;
+	List-Owner; bh=LgNmgzxfT8flpV3DcmzWbsn5t46Paf1wBiccPDMQj0w=; b=fSR7CMD+oDL+GT
+	WNvqxq6orrYRxDFB89SlHTEBMnOV1CpRE9xOwth7KGT+TPV1r4WbsHR9v2+LoRg/9d1DftlOZiif9
+	pW2IQK3H4BENPtYhRZhlhqD4xfMHgpoFVtrgt+GpsXQ7L6AO+53UOBtSIpeCVG/mV3B7MjSXprIqo
+	8dK/qLWK1Oc6VByHyrj1EAoxLvbEAkx0LP5k79UP/Yuy7QOSMMORi0c/7x59wd5eA4wlGsgwc1Cr2
+	i/R/L17Md8D8JCFCPbryyhC1Jq4+MHE+n+3zfXh8DIyi17qNTE3/cAd+SQpOJdga4K3eukbRIcCtG
+	xKPXwUcnUkkgixnA2TXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXnFy-0002eS-QY; Thu, 21 Nov 2019 14:16:26 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1iXnGE-00031F-RU; Thu, 21 Nov 2019 14:16:42 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXnEs-0001qh-EN
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 14:15:20 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id ep1so1523199pjb.7
+ id 1iXnEw-0001vJ-Ka
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 14:15:30 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id bo14so1535808pjb.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 06:15:17 -0800 (PST)
+ Thu, 21 Nov 2019 06:15:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=I6yA6TdrKO0G1JGypZEAKYVfmifyHMcNDjr9W3hUK+E=;
- b=OU+GiCP10q9PnP8bkEcFaAdutdza/iERr+D0OoLljK1MmkZMko724GceiauVEvI5Qy
- i+jRkFfhJKSvUbE8cP0wU8IXLB28x6Cy2XOR2ZsqnhydicNZpRBcPrXBRxG9vQS8ZI0F
- kUhIL72l450esX8mcjqodnluupinKQ49p/SiQ=
+ bh=28NKNs8dkxykNhTWIYrgk/H7+AdKWGipA1r9x9pF6H4=;
+ b=J/G0CEgF9pu6Q6u9K+4b5CMj2oIcyKeAgWEYWZ0KAnAY96q/ia7+hOU23ZCPcya8W9
+ 5DVbOFfuzqcPZ1wF1T6MFehBWp+QDmEsXPUlYJxliXC9SoZXX7qy+zl/V5GB8TjasSzR
+ UPWAiqGvq8dXtx67JR2gb0mQTI1gU+bJp5pgI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=I6yA6TdrKO0G1JGypZEAKYVfmifyHMcNDjr9W3hUK+E=;
- b=nMz3OdhEoPEVl1EBKfKNjerxyoonJWxJ505BStEdm7RwvUsRWOIU6CcNXKwrH0jSQl
- jGE8ThbPkgzqiIux6IrHz6IA1CkVojLW+f6Q2toWpLzpG7HzZKv+Zw+HmQdvwp13Tdg4
- w8e7Nnozw/OZHYBEPOJ4uzAzcLl7MzFECFHUhLpQiI1zfDKVCwfDTj48ylU7Ukve7M3+
- emGnnaWHBkpdtFoJJDb2Mx7SGkfDdhJDUrlqPkVvoJI3ZPgCGd7Ca6PA2Rsvwe7pbWKc
- Few4KkI3g/8Oj41BQwb4zJdXvI1ELE8cd5fspH/R/aVdUtP61B/LVlXWEHrmu9e1btKU
- 9/vw==
-X-Gm-Message-State: APjAAAVz6vX+Xox9dpcH6qIt3Hh2zF9KEutamBNJiJVXi1qngNGLV8s1
- t7CBOXpioPBaz7Aj8RMuWbtYsw==
-X-Google-Smtp-Source: APXvYqzs2J4YhqGXlT0xDxYXUbauaCJnilI7GqLrXPtDGy4WsDd4PG5Ypm+uC16rNirt3o8Uj6Hwjg==
-X-Received: by 2002:a17:90a:33ce:: with SMTP id
- n72mr11931278pjb.17.1574345716897; 
- Thu, 21 Nov 2019 06:15:16 -0800 (PST)
+ bh=28NKNs8dkxykNhTWIYrgk/H7+AdKWGipA1r9x9pF6H4=;
+ b=gJrlU9iiXl/eKZPXW5KHbq2H1bzAVYYH7QszbaA8/5VTS9DCL8vPpu/4UFDz5At2Zl
+ O9g1yYRG7ESNAbQrlmZzWGK2R8t7baeCAKji7FH43FxGwAeIGaFRxK9AL6NgO/VQ1oiA
+ toW8A+E19SJ5wa25Al1gQcoYFcDFW1WNXUadJ3ksS2DTvnJlyJ+tFPLBfYaqhbW7BXDS
+ JrCQXVAiA5GJsh+Jjj7IZyRIe/1hikzbqe00QvMUdeU4Hs1Im4VYukjbHY37vQr1NyKU
+ y3M6NzB2DlmhmioqsswZeW0N4HRZchcnyQ/ypZhUUZNtg7hcRqVK2xbxFK9m7HLWP/Ti
+ m7jg==
+X-Gm-Message-State: APjAAAVMC7jIzZymOZ+g201VlorIb1xZK5YaHbZ3CB4h8zXBn9d7UxZ8
+ FxaLSm3hcdaS/d0be9EBZsxAdA==
+X-Google-Smtp-Source: APXvYqwrzn/yAW5BCNIum3Ewx8sgniyuYqnWVlppsp/WOPJZ/C2fWYKta18r1cYdnI9p8rKvOjCuKA==
+X-Received: by 2002:a17:902:bb83:: with SMTP id
+ m3mr8695155pls.94.1574345721637; 
+ Thu, 21 Nov 2019 06:15:21 -0800 (PST)
 Received: from localhost.localdomain ([115.97.180.31])
- by smtp.gmail.com with ESMTPSA id w138sm4072304pfc.68.2019.11.21.06.15.12
+ by smtp.gmail.com with ESMTPSA id w138sm4072304pfc.68.2019.11.21.06.15.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 Nov 2019 06:15:16 -0800 (PST)
+ Thu, 21 Nov 2019 06:15:20 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 3/5] dt-bindings: arm: rockchip: Add Rock Pi N10 binding
-Date: Thu, 21 Nov 2019 19:44:43 +0530
-Message-Id: <20191121141445.28712-4-jagan@amarulasolutions.com>
+Subject: [PATCH v2 4/5] ARM: dts: rockchip: Add Radxa Dalang Carrier board
+Date: Thu, 21 Nov 2019 19:44:44 +0530
+Message-Id: <20191121141445.28712-5-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20191121141445.28712-1-jagan@amarulasolutions.com>
 References: <20191121141445.28712-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_061518_520486_525C842F 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20191121_061522_710675_464DD878 
+X-CRM114-Status: GOOD (  14.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -104,39 +104,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rock Pi N10 is a Rockchip RK3399Pro based SBC, which has
-- VMARC RK3399Pro SOM (as per SMARC standard) from Vamrs.
-- Compatible carrier board from Radxa.
+Carrier board often referred as baseboard. For making
+complete SBC or any other industrial boards, these
+carrier boards will used with associated SOMs.
 
-VMARC RK3399Pro SOM need to mount on top of dalang carrier
-board for making Rock PI N10 SBC.
+Radxa has Dalang carrier board which supports on board
+peripherals, ports like USB-2.0, USB-3.0, HDMI, MIPI DSI/CSI,
+eDP, Ethernet, WiFi, PCIe, USB-C, 40-Pin GPIO header and etc.
 
-Add dt-bindings for it.
+Right now Dalang carrier board is using with two variants
+SBC, like
+Rock Pi N10 => VMARC RK3399Por SOM + Dalang carrier board
+Rock Pi N8  => VMARC RK3288 SOM + Dalang carrier board(+codec)
+
+So add this carrier board dtsi as a separate file in
+ARM directory, so-that the same can reuse it in both
+rk3288, rk3399pro variants of Rockchip SOMs.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
 Changes for v2:
-- none
+- use dalang carrier board as product name
+- s/rockchip-radxa-carrierboard.dtsi/rockchip-radxa-dalang-carrier.dtsi
 
- Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
+ .../dts/rockchip-radxa-dalang-carrier.dtsi    | 81 +++++++++++++++++++
+ 1 file changed, 81 insertions(+)
+ create mode 100644 arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
 
-diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-index 51aa458833a9..afa6b2e5aeed 100644
---- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-+++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-@@ -423,6 +423,11 @@ properties:
-           - const: radxa,rockpi4
-           - const: rockchip,rk3399
- 
-+      - description: Radxa ROCK Pi N10
-+        items:
-+          - const: radxa,rockpi-n10
-+          - const: rockchip,rk3399pro
+diff --git a/arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi b/arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
+new file mode 100644
+index 000000000000..df3712aedf8a
+--- /dev/null
++++ b/arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
+@@ -0,0 +1,81 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd
++ * Copyright (c) 2019 Radxa Limited
++ * Copyright (c) 2019 Amarula Solutions(India)
++ */
 +
-       - description: Radxa Rock2 Square
-         items:
-           - const: radxa,rock2-square
++#include <dt-bindings/pwm/pwm.h>
++
++/ {
++	chosen {
++		stdout-path = "serial2:1500000n8";
++	};
++};
++
++&gmac {
++	status = "okay";
++};
++
++&i2c1 {
++	status = "okay";
++	i2c-scl-rising-time-ns = <140>;
++	i2c-scl-falling-time-ns = <30>;
++};
++
++&i2c2 {
++	status = "okay";
++	clock-frequency = <400000>;
++
++	hym8563: hym8563@51 {
++		compatible = "haoyu,hym8563";
++		reg = <0x51>;
++		#clock-cells = <0>;
++		clock-frequency = <32768>;
++		clock-output-names = "hym8563";
++		pinctrl-names = "default";
++		pinctrl-0 = <&hym8563_int>;
++		interrupt-parent = <&gpio4>;
++		interrupts = <30 IRQ_TYPE_LEVEL_LOW>;
++	};
++};
++
++&pwm0 {
++	status = "okay";
++};
++
++&pwm2 {
++	status = "okay";
++};
++
++&sdmmc {
++	bus-width = <4>;
++	cap-mmc-highspeed;
++	cap-sd-highspeed;
++	cd-gpios = <&gpio0 RK_PA7 GPIO_ACTIVE_LOW>;
++	disable-wp;
++	vqmmc-supply = <&vccio_sd>;
++	max-frequency = <150000000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
++	status = "okay";
++};
++
++&uart0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart0_xfer &uart0_cts>;
++	status = "okay";
++};
++
++&uart2 {
++	status = "okay";
++};
++
++&pinctrl {
++	hym8563 {
++		hym8563_int: hym8563-int {
++			rockchip,pins =
++				<4 RK_PD6 0 &pcfg_pull_up>;
++		};
++	};
++};
 -- 
 2.18.0.321.gffc6fa0e3
 
