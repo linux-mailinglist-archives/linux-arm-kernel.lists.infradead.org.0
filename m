@@ -2,65 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B30B104EB5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 10:06:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15AFB104ED2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 10:13:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mWorEPZvEhUabNDJb9d/4t3hRADcyTdlOoj625wLb9U=; b=oIwElSTlO+3gPdkFCDy+8eqN6
-	iTse3I95ujschXWFxRlE1LHTCpLyRgkdNYpQ+II/NTFU/eXLI2x9PIVeczb148J/hBgFnjQUiGEGh
-	p+I8LtFatOuMXUIM4kDuEcTxI8Yzzh2kTikKLyaxTrraeIwwDzXF3/oXC803YHcuM+oUOSbLOWX3/
-	XrigIaC7kQV2ss4wINWLOrZ0QvH26eCc4T+0bsLDCiwpfIWGDNB7E2mAlLFOv4Am7CGUhdRw7ZG+V
-	zIqeLzQTIeDLfORpJimNo3nYT3+Ee8yMelaEJNZChq/7g/wstXZ3TF3bLHXA9KDRcKVXY1I9hrkCH
-	YhmJIWpUQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=t2vTHhyf9TvZyBBFnULq6XdTlCnZJW3laKtVgASHCGM=; b=n3C5Cw3CN6lnv7
+	3yx4jb2s+vfTDJr6dCGl8FPNsA7lPFzP6DoXJFDoDmLA0A2XBJblokB+nwniBqQdNpCbujsdlMwdJ
+	AnR0UJWDSde3sKjtwCtadVLhs968BV3bqFKbLL5t1ToXX3KIRa/+53vlrNWFk51T/55yKAw8FX+F2
+	vEg5AsFU0o9E5mtzYSDP77hVUX1omX1Dy9Zyl+UEY78y2ddEgFVno9K9TPnUgFs59PkeATtYyFCYJ
+	s6jW+82m9ua6YNFMi+Dj8/TfNeHl0ttwmTizIC6p3hb7+5DR9FSFNFGDiQYLzb9OIzGZEavEb61jf
+	jW2HQ/umbcbXBJ0F+m6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXiQD-0007vn-B5; Thu, 21 Nov 2019 09:06:41 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1iXiX8-0001VQ-Sw; Thu, 21 Nov 2019 09:13:50 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXiPx-0007p2-P9
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 09:06:27 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iXiPo-0004FK-NV; Thu, 21 Nov 2019 10:06:16 +0100
-To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: Re: [GIT PULL] KVM/arm updates for 5.5
-X-PHP-Originating-Script: 0:main.inc
+ id 1iXiWo-0001RZ-6m; Thu, 21 Nov 2019 09:13:31 +0000
+X-UUID: 82c07964102d404989e33e0fc078c2b6-20191121
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=bFJxZH0AXm81N1vk9AvWXrEq/g3qKxp104WObxKx0SM=; 
+ b=Kz4ZqHVDnNxE0d6MXDwos+tlqrmmRLxqau6UmGS9DLXxbckvROlu1Rkq9jpbcHrKSxdvsGN83yU+wFp6IIMKg+YdbaZbIRMoA0VLcc/RtrP6TNOJCVKQ2qH/JpJUOb0fiqwkoMPzmipJi8jgSytHu10XTT0XElJHcLosbeYZU10=;
+X-UUID: 82c07964102d404989e33e0fc078c2b6-20191121
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <dennis-yc.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 332807170; Thu, 21 Nov 2019 01:13:27 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 21 Nov 2019 01:13:45 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 21 Nov 2019 17:13:21 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Thu, 21 Nov 2019 17:13:28 +0800
+From: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Jassi Brar <jassisinghbrar@gmail.com>
+Subject: support gce on mt6779 platform
+Date: Thu, 21 Nov 2019 17:12:20 +0800
+Message-ID: <1574327552-11806-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
-Date: Thu, 21 Nov 2019 09:06:16 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <3cde0da8-62a5-d1a5-b6b9-58baf890707a@redhat.com>
-References: <20191120164236.29359-1-maz@kernel.org>
- <3cde0da8-62a5-d1a5-b6b9-58baf890707a@redhat.com>
-Message-ID: <3d2382e6ed7ea25cb13303760a79091a@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: pbonzini@redhat.com, rkrcmar@redhat.com,
- mark.rutland@arm.com, drjones@redhat.com, kvm@vger.kernel.org,
- eric.auger@redhat.com, xypron.glpk@gmx.de, bigeasy@linutronix.de,
- suzuki.poulose@arm.com, christoffer.dall@arm.com, steven.price@arm.com,
- borntraeger@de.ibm.com, julien.grall@arm.com, graf@amazon.com,
- linux-arm-kernel@lists.infradead.org, yuzenghui@huawei.com,
- james.morse@arm.com, tglx@linutronix.de, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_010626_177386_0D5A5635 
-X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-CacheID: sfid-20191121_011330_255062_284E56A3 
+X-CRM114-Status: UNSURE (   6.44  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,58 +84,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvmarm@lists.cs.columbia.edu,
- Andrew Jones <drjones@redhat.com>, kvm@vger.kernel.org,
- =?UTF-8?Q?Radim_Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>,
- Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>,
- Steven Price <steven.price@arm.com>, Eric Auger <eric.auger@redhat.com>,
- Julien Grall <julien.grall@arm.com>, Alexander Graf <graf@amazon.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Zenghui Yu <yuzenghui@huawei.com>, James Morse <james.morse@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ CK Hu <ck.hu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-11-21 08:58, Paolo Bonzini wrote:
-> On 20/11/19 17:42, Marc Zyngier wrote:
->> Paolo, Radim,
->>
->> Here's the bulk of KVM/arm updates for 5.5. On the menu, two new 
->> features:
->> - Stolen time is finally exposed to guests. Yay!
->> - We can report (and potentially emulate) instructions that KVM 
->> cannot
->>   handle in kernel space to userspace. Yay again!
->>
->> Apart from that, a fairly mundane bag of perf optimization, cleanup 
->> and
->> bug fixes.
->>
->> Note that this series is based on a shared branch with the arm64 
->> tree,
->> avoiding a potential delicate merge.
->>
->> Please pull,
->
-> Pulled, thanks.  Note that the new capabilities had a conflict and 
-> were
-> bumped by one.
+Support gce function on mt6779 platform.
+	dt-binding: gce: add gce header file for mt6779
+	mailbox: cmdq: variablize address shift in platform
+	mailbox: cmdq: support mt6779 gce platform
+	arm64: dts: add gce node for mt6779
 
-Not a problem, nothing has been merged into any userspace so far.
+Refine driver to support stop hardware with safe callback.
+	mailbox: mediatek: cmdq: clear task in channel
 
-Thanks,
+Inorder to support mt6779 client requirement, add new helper functions to
+enable more hardware capability.
+	soc: mediatek: cmdq: add assign function
+	soc: mediatek: cmdq: add write_s function
+	soc: mediatek: cmdq: add read_s function
+	soc: mediatek: cmdq: add mem move function
+	soc: mediatek: cmdq: add loop function
+	soc: mediatek: cmdq: add wait no clear event
+	soc: mediatek: cmdq: add set event function
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
 
+
+Dennis YC Hsieh (12):
+  dt-binding: gce: add gce header file for mt6779
+  mailbox: cmdq: variablize address shift in platform
+  mailbox: cmdq: support mt6779 gce platform definition
+  mailbox: mediatek: cmdq: clear task in channel before shutdown
+  arm64: dts: add gce node for mt6779
+  soc: mediatek: cmdq: add assign function
+  soc: mediatek: cmdq: add write_s function
+  soc: mediatek: cmdq: add read_s function
+  soc: mediatek: cmdq: add mem move function
+  soc: mediatek: cmdq: add loop function
+  soc: mediatek: cmdq: add wait no clear event function
+  soc: mediatek: cmdq: add set event function
+
+ .../devicetree/bindings/mailbox/mtk-gce.txt   |   8 +-
+ arch/arm64/boot/dts/mediatek/mt6779.dtsi      |  10 +
+ drivers/mailbox/mtk-cmdq-mailbox.c            |  85 ++++++-
+ drivers/soc/mediatek/mtk-cmdq-helper.c        | 182 +++++++++++++-
+ include/dt-bindings/gce/mt6779-gce.h          | 222 ++++++++++++++++++
+ include/linux/mailbox/mtk-cmdq-mailbox.h      |   7 +
+ include/linux/soc/mediatek/mtk-cmdq.h         |  77 ++++++
+ 7 files changed, 573 insertions(+), 18 deletions(-)
+ create mode 100644 include/dt-bindings/gce/mt6779-gce.h
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
