@@ -2,56 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B068104F16
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 10:19:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 537D6104F25
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 10:25:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1mI7oEF9XZxh6mn7OP0kZ+mzh5Fo3p1o+A2KJF7eOxc=; b=OZRF3zOUdJP/ozX9RT4lkodjZ
-	6LY0Hz+SvDO8UPXOO7SGsLrJkwjEhqtz/1uB2bAR9VOAWX4gPI6US/ej5aJUqAy/ygHIKWjxeNIV0
-	IxqyxHsSBn41lulBYK397IpnjVGpYm46LgmnnJDpV2bqmj8m0OASobW8v9YHnZ61nxRLN7EhgSQ7c
-	aMnrFxECJAYAMuTANqN0qrFVJ8XPq6R9oY3nR1+rDzWKIkqZMFohmPdbKyRZBOpQ3E2WsAlWgcVxI
-	F/dX6+HWgmR1DsgW8pJjt/m0V38qS5w2eP0RUPBfm2wnp2qiETdgTJ4LL919X149ew178+GXTBXzp
-	8Ypz5kLOw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pH9Xzt+dd8JG7boIXy4W0zW/8SzXRZAF207/LTaAIZU=; b=laujp3/ax02so5
+	7vzalF3kD+oqBkaq3V7QaZY/kTSvo86zQ8u3YObZju7SBz1g+xik01mD00T72qZcc6voSkJ5atWVL
+	UmfyAeFCYboWpgcieaiHU+SWPCkzpBXnMoRFAQP+X6W5bBTJfv9FafuMQ0MtjDd3QkZ40YWOgIc1G
+	XQNJMHYL8Ljyqp9+OaDA+mhXPSGeTOkNU1U01xL4QyxIg88O2X3ehblYC4+lGpPfsekFTs4Ug7WnB
+	hUyU2WPmyBo1eNuO2bKaJuPYOqt5w1pc9hgr2kk2/9ZhFfsRKO7CQN0ISp3iDcbPHEqaEwwIdTlEX
+	GWMX8uVXLJLPvPQVocYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXicQ-00078q-3K; Thu, 21 Nov 2019 09:19:18 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iXiiQ-0001oV-S5; Thu, 21 Nov 2019 09:25:30 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXicB-00078U-IA
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 09:19:04 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 134B7B324;
- Thu, 21 Nov 2019 09:19:01 +0000 (UTC)
-Message-ID: <f7c09f06913fa1ed5e98c55ebe6d9db81bf232c0.camel@suse.de>
-Subject: Re: [PATCH] dma-mapping: treat dev->bus_dma_mask as a DMA limit
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Christoph Hellwig <hch@lst.de>, Robin Murphy <robin.murphy@arm.com>
-Date: Thu, 21 Nov 2019 10:18:54 +0100
-In-Reply-To: <20191121073152.GB24024@lst.de>
-References: <20191113161340.27228-1-nsaenzjulienne@suse.de>
- <dd074ef5c23ba56598e92be19e8e25ae31b75f93.camel@suse.de>
- <20191119170006.GA19569@lst.de>
- <7609007d-52f5-bb10-e8d5-96fadbfab46d@arm.com>
- <20191121073152.GB24024@lst.de>
-User-Agent: Evolution 3.34.1 
+ id 1iXiiI-0001nm-0d
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 09:25:24 +0000
+Received: by mail-lj1-x244.google.com with SMTP id q2so2392040ljg.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 Nov 2019 01:25:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=rasmusvillemoes.dk; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=A8TNMtKysU8OhPZLPcM8qBUTWWfHEoNwu7bf36UMtpE=;
+ b=BQF46w0R7bKeo8aGuiJhk8yd7hcIFPifuqrbWwLFEM+H9Yduy9FYqJqaQY+n7WUnr2
+ BeKreIFKdGXCm0+9ADQBjIUhS1LgQYWGpwuymfb2yM1fL/4CWR9gCinIVz1V3EWkf9UX
+ nrhSgrB6qcfu6Qvarw/bNpX/EFXjkkmpPjCNI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=A8TNMtKysU8OhPZLPcM8qBUTWWfHEoNwu7bf36UMtpE=;
+ b=q185bigCU/g1HYWRdYPE+rO2xURyioxfQxvVA3YEJ+q9+7eP9+q8dN33V27PqUUnDN
+ ZNAYepoBunHNE1cy6P/kV+7SzVTID1qXT4k4xoish+jhyRZh2gxuKTYMI0fTHXQGrj90
+ StPjYekws5VbG7EKg9tQa3Z3fDI7F9BSIsadBBRtxEhT9uDOlQvdxxbDMZ0buS0rCF6n
+ rM8DKPEhliPGTl5rW23zEgSj+bSdycJfhHFf/jWpo9CccLN83iUntrncalCNGMkD55BG
+ q7WUt7gnGAJ6tNY4AIaotBSDDIGQ2+0QH270yfOuvVwsAt9Fo3YQnA3AAyyzj929QM6W
+ I+pA==
+X-Gm-Message-State: APjAAAXXTzu30WlQgsZ+q6JRc8UxRn5SeFHI231QUihtmv52ieGB1Ka7
+ pbbWdPuKrczx20BiW0ny/PU6vg==
+X-Google-Smtp-Source: APXvYqxU4JX0Lg3kpsOZ/sjcMhY6/3D7Q/uMmzY0TOSCqFe5D3VN1zYpFj3qRhe87kzoQQajoEJgOQ==
+X-Received: by 2002:a2e:93d7:: with SMTP id p23mr6455581ljh.102.1574328319727; 
+ Thu, 21 Nov 2019 01:25:19 -0800 (PST)
+Received: from prevas-ravi.prevas.se ([81.216.59.226])
+ by smtp.gmail.com with ESMTPSA id y18sm924730lja.12.2019.11.21.01.25.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 21 Nov 2019 01:25:19 -0800 (PST)
+From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+To: Russell King <linux@armlinux.org.uk>
+Subject: [PATCH] arm: avoid cpumask_t typedef in arch_trigger_cpumask_backtrace
+Date: Thu, 21 Nov 2019 10:25:16 +0100
+Message-Id: <20191121092516.9041-1-linux@rasmusvillemoes.dk>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_011903_745222_9929ACA7 
-X-CRM114-Status: GOOD (  15.49  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191121_012522_054532_EED3F1CA 
+X-CRM114-Status: GOOD (  11.26  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,100 +92,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- linux-ide@vger.kernel.org, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, Frank Rowand <frowand.list@gmail.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>, Hanjun Guo <guohanjun@huawei.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Paul Burton <paulburton@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
- Joerg Roedel <joro@8bytes.org>, x86@kernel.org, phil@raspberrypi.org,
- linux-acpi@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
- linux-pci@vger.kernel.org, James Hogan <jhogan@kernel.org>,
- Len Brown <lenb@kernel.org>, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Jens Axboe <axboe@kernel.dk>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- iommu@lists.linux-foundation.org, Sudeep Holla <sudeep.holla@arm.com>,
- linuxppc-dev@lists.ozlabs.org
-Content-Type: multipart/mixed; boundary="===============0685773087168936093=="
+Cc: kbuild test robot <lkp@intel.com>, Marc Zyngier <maz@kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+I was trying to enable a previously PPC-only driver for ARM. That
+driver happens to include asm/irq.h without some previous header
+recursively pulling in linux/cpumask.h, resulting in kbuild kindly
+informing me [1]
 
---===============0685773087168936093==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-lq+O6sjXzX+AgzEMEd7n"
+   In file included from drivers/soc/fsl/qe/ucc.c:18:0:
+>> arch/arm/include/asm/irq.h:34:50: error: unknown type name 'cpumask_t'
+    extern void arch_trigger_cpumask_backtrace(const cpumask_t *mask,
 
+Instead of including linux/cpumask.h from asm/irq.h just for the
+cpumask_t typedef, use the spelling "struct cpumask" and add a
+forward declaration of that. For consistency, update the definition of
+the function accordingly.
 
---=-lq+O6sjXzX+AgzEMEd7n
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+No functional change.
 
-On Thu, 2019-11-21 at 08:31 +0100, Christoph Hellwig wrote:
-> On Tue, Nov 19, 2019 at 05:17:03PM +0000, Robin Murphy wrote:
-> > TBH I can't see it being a massive problem even if the DMA patch, drive=
-r=20
-> > and DTS patch went entirely separately via the respective DMA, PCI, and=
-=20
-> > arm-soc trees in the same cycle. Bisecting over a merge window is a big=
-=20
-> > enough pain in the bum as it is, and if the worst case is that someone=
-=20
-> > trying to do that on a Pi4 has a wonky PCI controller appear for a coup=
-le=20
-> > of commits, they may as well just disable that driver for their bisecti=
-on,=20
-> > because it wasn't there at the start so can't possibly be the thing the=
-y're=20
-> > looking for regressions in ;)
->=20
-> Agreed.
->=20
-> Nicolas, can you send a respin?  That way I can still queue it up
-> for 5.5.
+[1] https://lore.kernel.org/lkml/201911210258.dfd8HF9z%25lkp@intel.com/
 
-Oh, I thought it was too late for that already. I'll send it in a minute.
+Reported-by: kbuild test robot <lkp@intel.com>
+Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+---
+We're past -rc8, so I probably can't hope for this to make it into
+5.4. However, it currently blocks a rather large series of mine from
+being picked up and getting time in -next. Would it be ok with the ARM
+maintainers if I ask Li Yang to carry this as part of that large
+series?
 
-Regards,
-Nicolas
+ arch/arm/include/asm/irq.h | 3 ++-
+ arch/arm/kernel/smp.c      | 3 ++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
 
+diff --git a/arch/arm/include/asm/irq.h b/arch/arm/include/asm/irq.h
+index 46d41140df27..d8deb81bc8ce 100644
+--- a/arch/arm/include/asm/irq.h
++++ b/arch/arm/include/asm/irq.h
+@@ -31,7 +31,8 @@ void handle_IRQ(unsigned int, struct pt_regs *);
+ void init_IRQ(void);
+ 
+ #ifdef CONFIG_SMP
+-extern void arch_trigger_cpumask_backtrace(const cpumask_t *mask,
++struct cpumask;
++extern void arch_trigger_cpumask_backtrace(const struct cpumask *mask,
+ 					   bool exclude_self);
+ #define arch_trigger_cpumask_backtrace arch_trigger_cpumask_backtrace
+ #endif
+diff --git a/arch/arm/kernel/smp.c b/arch/arm/kernel/smp.c
+index 4b0bab2607e4..b096200c7436 100644
+--- a/arch/arm/kernel/smp.c
++++ b/arch/arm/kernel/smp.c
+@@ -806,7 +806,8 @@ static void raise_nmi(cpumask_t *mask)
+ 	__smp_cross_call(mask, IPI_CPU_BACKTRACE);
+ }
+ 
+-void arch_trigger_cpumask_backtrace(const cpumask_t *mask, bool exclude_self)
++void arch_trigger_cpumask_backtrace(const struct cpumask *mask,
++				    bool exclude_self)
+ {
+ 	nmi_trigger_cpumask_backtrace(mask, exclude_self, raise_nmi);
+ }
+-- 
+2.23.0
 
---=-lq+O6sjXzX+AgzEMEd7n
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3WVn4ACgkQlfZmHno8
-x/6kBwf/SKtubLT3BK6PDi2kFxS7U1Nuy9X/MqsOPMdQNIIzccK4WqpweJsn3fn7
-WUh4Tsn5H2fjaeqsOCLpG5PeYLO6nDWDmCzVszhsyBjqWczikEWQ8reuCbXbbW6G
-rUh1wlp8+VDFDs0reFtW9POlYcvxixcMmbkSjKPEtZCh/GjdgIcjdkCtvwGkdrE1
-8E8Z6K9lqyiB2WQ0z7tdOf3fglQwJ7HxRgsmlYm1u0UQCm3+Hdrvy2hO7X/OYhtB
-4JbPmzPk62RNUjdmnuJ8t2ar57gMQ4VwRi7hjfCir9Iq8t/B7vCzCAQnzREpL05w
-BEUfJlvCYEvS3eArOErmv3Mm+/ugdg==
-=NUIQ
------END PGP SIGNATURE-----
-
---=-lq+O6sjXzX+AgzEMEd7n--
-
-
-
---===============0685773087168936093==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0685773087168936093==--
-
-
