@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F4B5105787
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 17:53:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33688105792
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 17:54:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qqL3q3QPuf2IapNq6GbZlNrtEX81XEGH9iUINXAk1uA=; b=QL4FFjmZUzr9Ng
-	uS9Du/TFTy0qFerK5qcVeT/toYRTxYfSgqvmIT8xauZ8s7NUwT+EeRNjgIk04dVUgpji2VjjHWfzH
-	bg5dFF2KuaoTJwpwPGcy6ky00nlSzxw0VTYDZQI+uwiaEu1zTMz+HzCdfBX30/Qhdqs2OpY+G3PLo
-	YOYCm3U9TU3BxH6VjZsjR5CrUcFvbCaS+0Dy0aTdTSPvBFLFmQLTUJti0e5TtxQ3GNwLgOuK/1tbB
-	DftC4+lqpN7OKyrf5ekwr4vBkt5Ct56ktLWCgVOa5fFdcQQpt/Xz3x/8pmQTbjRkul69UhpcO5Xo8
-	fRZqB5uOAnNjxj5KfjHA==;
+	List-Owner; bh=ff5sZMuJXQNykwEfWqq5u9pEcpr5rKYoWVT1wZRfRPk=; b=psjkZDxGZ7R+e6
+	0aa6IHQThFKDAHiARCKRvhX2xzoZrRJJH/buc4V3qM6xV5/E1GylR2MwRwXGdyVq5lPxj4UiMmO+b
+	I7bPi7sat2QyiMzs1FPBQ0WBeht7Ygo9TDxj2SopU79BJosVgrGBiUuzvba1Mt4du0Q0jfsUwI4l3
+	7i98ub8Pb1u4P93FAY4O0wIsyhN8PX8RE6j73NEQFwKULf3s+94pYXx54u74m0eyHoOXXZFRIoNmc
+	B+EAdsX6oT6AZ2i9dPyU72PTbegXPvN5UOBxPQJuNG3nTztWYSbInjwGRjQN3i+X6733Tw/a1WVTL
+	mYoXwIXN9EdGwQFdEUxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXpiL-0007zh-6w; Thu, 21 Nov 2019 16:53:53 +0000
+	id 1iXpic-0008E5-2A; Thu, 21 Nov 2019 16:54:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXpi8-0007yf-Q7
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 16:53:42 +0000
+ id 1iXpiQ-0008CY-Dh
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 16:54:00 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 695D020658;
- Thu, 21 Nov 2019 16:53:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D73BF20658;
+ Thu, 21 Nov 2019 16:53:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574355220;
- bh=tiskj4Iiwo7XYj1HnnEFdsnbTEE7Qj1OSyBblDXYNfw=;
+ s=default; t=1574355237;
+ bh=U//DMVp98yPH8p7vkS8DG0VecnLBLi0eUqdzTWKCIus=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=uiahZSH1KQvGQb3DvX1nOft6/wv/LG9SKgsWRLCztddQDHBNFmUOSrhgWZ2MVmqJ4
- 4V9ZwLUQVCxRsNkL5zAVejSbzlgqPwl9huYwFteE6EhHaAZLRCPLFm7xY6U6YnfWuh
- H6VjqkPO2QiQI8Od5TRKFtGNx5DqeoQUDJB+jU34=
-Date: Thu, 21 Nov 2019 16:53:35 +0000
+ b=nOqy6YqNYkxCxubuh9LZRljCgNKNxAsSy1UZanVKcKNTQ0A+tl9OqDhWF1GMUi4VE
+ qCPF4LWenOgvvV3Mv9FVQsp/jUSvU93wKcKVK4AdA5iMcZwWJuJ7nmsVzYvhYO3Wiz
+ XIGuZedbQKcuRhdrbEVbqndrWgGFUa7vtiqpAiXE=
+Date: Thu, 21 Nov 2019 16:53:48 +0000
 From: Will Deacon <will@kernel.org>
-To: Herbert Xu <herbert@gondor.apana.org.au>
-Subject: Re: [PATCH v2] buffer: Fix I/O error due to ARM read-after-read hazard
-Message-ID: <20191121165334.GB4905@willie-the-truck>
-References: <20191113104945.GC25900@willie-the-truck>
- <20191114132848.55atqtjshjmi2udl@gondor.apana.org.au>
- <20191120191839.GF4799@willie-the-truck>
- <20191121012533.3h6akm4oczswj7zr@gondor.apana.org.au>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH v2] dma-mapping: treat dev->bus_dma_mask as a DMA limit
+Message-ID: <20191121165348.GC4905@willie-the-truck>
+References: <20191121092646.8449-1-nsaenzjulienne@suse.de>
+ <20191121152457.GA525@lst.de> <20191121152650.GA651@lst.de>
+ <70359d2a-10c6-09c7-a857-805085affb0a@arm.com>
+ <20191121160217.GA1583@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191121012533.3h6akm4oczswj7zr@gondor.apana.org.au>
+In-Reply-To: <20191121160217.GA1583@lst.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_085340_865294_B18497F4 
-X-CRM114-Status: GOOD (  12.06  )
+X-CRM114-CacheID: sfid-20191121_085358_502440_65655379 
+X-CRM114-Status: GOOD (  13.78  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,28 +79,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: axboe@kernel.dk, Richard.Earnshaw@arm.com, rabinv@axis.com,
- catalin.marinas@arm.com, vincent.whitchurch@axis.com, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, torvalds@linux-foundation.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-ide@vger.kernel.org,
+ Paul Mackerras <paulus@samba.org>, Hanjun Guo <guohanjun@huawei.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "H. Peter Anvin" <hpa@zytor.com>, Paul Burton <paulburton@kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, Joerg Roedel <joro@8bytes.org>,
+ x86@kernel.org, linux-acpi@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
+ James Hogan <jhogan@kernel.org>, Len Brown <lenb@kernel.org>,
+ devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Jens Axboe <axboe@kernel.dk>,
+ linuxppc-dev@lists.ozlabs.org, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ iommu@lists.linux-foundation.org, Sudeep Holla <sudeep.holla@arm.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 21, 2019 at 09:25:33AM +0800, Herbert Xu wrote:
-> On Wed, Nov 20, 2019 at 07:18:40PM +0000, Will Deacon wrote:
-> >
-> > > The Alpha barrier matters for pointers, how could it make a
-> > > difference for individual bits?
-> > 
-> > I guess you could use the result of test_bit to index into an array or
-> > something?
+On Thu, Nov 21, 2019 at 05:02:17PM +0100, Christoph Hellwig wrote:
+> On Thu, Nov 21, 2019 at 03:55:39PM +0000, Robin Murphy wrote:
+> > Hmm, there's no functional dependency though, is there? AFAICS it's 
+> > essentially just a context conflict. Is it worth simply dropping (or 
+> > postponing) the local renaming in __dma_direct_optimal_gfp_mask(), or 
+> > perhaps even cross-merging arm64/for-next/zone-dma into dma/for-next?
 > 
-> Can Alpha Assembly even do this without using a branch?
+> I would have no problem with pulling it in.  I'd kinda hate creating
+> the conflict, though.  So if the arm64 maintainers are fine with it
+> I'll pull it in, especially if I get an ACK from Robin.
 
-Don't see why not: you can add the base address to the scaled result
-of test_bit and use that as the address register into a load instruction.
+Please go ahead and pull in our for-next/zone-dma branch if you need it.
+We're not going to rebase it, and I suspect we won't even be queueing
+anything else there at this stage in the game.
+
+Cheers,
 
 Will
 
