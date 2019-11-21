@@ -2,79 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CA7210500A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 11:07:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1280010500F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 11:09:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6MQg0pyuOgkraoluSfuoccTE2jJauztq145QtjRWI6A=; b=QsK
-	I7lMOS511OT1fAnMooea3p0OdEpXOchvOFFommt7K34mabBnnJofLPdrSjmgrONt3l6+2HX0wJi+K
-	XLEY0kGTQY0DEspfx9HaubVSbzJrzJqXwyrm6ghs+pzG2rlzCF9fmqAfRE2JX3rJzH+RKQl4dXjVj
-	QRjJ4CUhxK96KZ8PRDfL5vPisjCzKKS5brbOR7JBYau+o179Prz9pp7o/p/RcJEDNFpO6DnR/4+KI
-	jIjQyDYWMsPhhgeWkgWBqSLmzPa9Nag27FzA3eBJsv7XzGx4ehSrTKxxB/QUBUC+cD/l8UgWuLU7/
-	4s/MD/JPFsdp+X0nF2TFRfMshM82bFA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rU/41x3K1ZGt06FAPPgizZQ1DEo6X4pU3VGYPedQ8Oo=; b=an1xN6veoER0yK
+	8amiWoS+8nbyip4tmpzkgwbPxzIxZiXCchV5GN2PU7PikhDPtupfyOhOTpAc/HXQkYjNhaP5uCb11
+	XvtIDIdqgqql2GB8Si6YaKg74nghVXe1FKj2ewkT9u0sj066TBO07jOFg4xdz76+sTsXuUTUdU7kv
+	PeEXRcoWbdlb/lZ6sNq6pFiluouSlNMtYMjiHwyGD4ujbK/I8OkkufHvpFqHMWPVmiJOAluq5cYtN
+	wjXCZm49Ntp7hYphuuwFVGPH68Dr58jUCV4U3FmfIEdor7F2G8fQPiXzY+FFaeRoNwVdER5k0jRl+
+	WSo3GkEUfe4PY8IeE5nA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXjNR-00015j-Gk; Thu, 21 Nov 2019 10:07:53 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iXjOU-0001N0-Fd; Thu, 21 Nov 2019 10:08:58 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXjNJ-00015C-Vb
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 10:07:47 +0000
-Received: by mail-lf1-x142.google.com with SMTP id m30so281358lfp.8
+ id 1iXjOL-0001Mc-RQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 10:08:51 +0000
+Received: by mail-wm1-x344.google.com with SMTP id x26so2735684wmk.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 02:07:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=cDsTRS6zAE7mRYoicKkPTdOWwjEcLdzSV0njcc4xwSA=;
- b=wnUrxl18bkklegb9/2wwReT5GAqSYiEQSglVeA8/lpyKtLjS7rC7ngj5TrNOB5q1W4
- aCx7w0MFygG2A5DNkWSByxubjG/1OCQ4RPZ2RENqU6MV8DdYJy9uRT1cuNd+pbL5MIwO
- v/1Dt5i0a8FakDUvioV32OmKeatNT8pcArcSf2HpPu+hln+L4V08e2EhmgX8bfUAcvT/
- BNOLtKUHE+W4JgXDsibdkGNDBd69SC5XnDmEZmb2d/eHRaKm1oKecYrB8hMpZFqpMO4x
- SXWRbWVokydjJ+lJmVSfBvWGCSyRo9Y/Lo0tjlRCaUyqZeDm68IkjR/bFutyp2xUfPKi
- t43w==
+ Thu, 21 Nov 2019 02:08:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=R4hjhKPyQPWEsWK0HmI2zX8e76pSPH6drX+KAe0V84E=;
+ b=prbs1dP81sRgtZ7wMCz80nqk+aX4U4XK85NdUe3WyuZaaGzWb6qcXqMherEtvNOdfQ
+ 0mFggBF0xyVTaVOrAJi9kBoL3Wz2rHwKRiBtK9dd0Cix8BWDWQTxqphMaHDloq0dR2uW
+ cfaEJuWSZRXBi3t8JQ1a9RiTet71dpIlmxSrix9fiPhjr6ViM4JByd+qlWkc1Lw9s6Dn
+ MNPXnRbI/U7zcw5K40Cx1EmUwjrSZKUjVf6KH4pEa+ucjPeoQioSZwwvYerH2K54/sZ/
+ SB33awdggXTa/GgebY19XswcrwnmF8mLAP9YsQ3US8r9L3ZqbmEsEPGe693crpzqwMIp
+ imEQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=cDsTRS6zAE7mRYoicKkPTdOWwjEcLdzSV0njcc4xwSA=;
- b=uldwQYexC/6z2q2l5jOEoTo0xkQLToeAVQ0Nv4zNVQSxpnwmDc0VSAgBLCSCda127k
- Ttsg5tAM+N7K3+PoxVymHKqPAaIqy4XibvNmXrl18Np6lo5rmT51lxoLTuN4IR4EV31N
- 0c11NKo+AEOf5fLVYmkS/0hgKLXRmOfm/cWW6GwmmSLiLgnFYjARqOutS9AOdofpIzJJ
- IiFnorCSozQ/acXA7RKEIRQU8KTDXIN7i8n8vhbv7oqhj9njnFcJOd4OWkdcDS7J92J+
- oX3y+5h/MAu1FQY6lOHguqLF75ALwUscxZumJfDh5sP5I+P5fkKmXExtaKyjWKFpOrv2
- 8nfg==
-X-Gm-Message-State: APjAAAXqYuuuK93tRUmfrES1LTeHAYjEJIcpI9bgNOmcWhoDr39UgWU7
- FM1dDWAFsBJ/UL9jfOOJzb+1cg==
-X-Google-Smtp-Source: APXvYqwGonSHXjt019NHquqzPPpPWCd8HKL9m23a4F74Gtz/dhyWAlovk7ir10u/uaufk0pwjhcrJg==
-X-Received: by 2002:ac2:46c9:: with SMTP id p9mr6287822lfo.166.1574330863403; 
- Thu, 21 Nov 2019 02:07:43 -0800 (PST)
-Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
- [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id y6sm959204ljn.40.2019.11.21.02.07.41
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=R4hjhKPyQPWEsWK0HmI2zX8e76pSPH6drX+KAe0V84E=;
+ b=TBAW/u0ArvcCylFONMII0W/sRRu1/4dhlCalbXVVhMsXaqjjxwfB68406lkzbXsnaO
+ qrl3lg57nQ3485QkW+kdAWF1jbCENe0Irz/LYwVlGVBqg7HvBhRR4C3vy3MjEOosuVxX
+ SltRlqkY5jgQ+Sfc0TGRS6ggNPU5egNaEnlVvlPTsKBtAUg7k12f0kP6+0wYxu1kDNrx
+ ef5Pgw2uNmPWReBWY01IFPlBNNhv/8FfW4O643knVG2u5PqT6vdhK47STo4gw9Qpf+rM
+ BoS2TVMUOvho0VOKYP5uA2+5onnzZRCDgTOzIfEs+qTPucPmiGJF0uV8BFAcgtNdIKC2
+ H4eg==
+X-Gm-Message-State: APjAAAV6HJoDKZdTE7SbGKRmNKnEb36FlFzPMwNgQ7ETd63Wi8duTaqU
+ NLC4y44o46jGMlPxLOGETUU=
+X-Google-Smtp-Source: APXvYqwK4BLAl1njfaoGUIR/wJpfPYIvklCz7Cwdpuk+lsOrpbr4tVRvmsBX1oWogL8be666keQqvw==
+X-Received: by 2002:a1c:e08a:: with SMTP id x132mr8950374wmg.146.1574330927887; 
+ Thu, 21 Nov 2019 02:08:47 -0800 (PST)
+Received: from ltop.local ([2a02:a03f:40e1:9900:4082:8c56:ea03:cdcd])
+ by smtp.gmail.com with ESMTPSA id y2sm2568116wmy.2.2019.11.21.02.08.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 Nov 2019 02:07:42 -0800 (PST)
-From: Ulf Hansson <ulf.hansson@linaro.org>
-To: Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, linux-clk@vger.kernel.org
-Subject: [PATCH] MAINTAINERS: Update section for Ux500 clock drivers
-Date: Thu, 21 Nov 2019 11:07:26 +0100
-Message-Id: <20191121100726.17725-1-ulf.hansson@linaro.org>
-X-Mailer: git-send-email 2.17.1
+ Thu, 21 Nov 2019 02:08:47 -0800 (PST)
+Date: Thu, 21 Nov 2019 11:08:23 +0100
+From: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+To: Joel Stanley <joel@jms.id.au>
+Subject: Re: [PATCH] aspeed: fix snoop_file_poll()'s return type
+Message-ID: <20191121100823.2twowr42nsyykvgg@ltop.local>
+References: <20191120000647.30551-1-luc.vanoostenryck@gmail.com>
+ <787e54c2-2fe3-4afc-a69b-94771726194b@www.fastmail.com>
+ <CACPK8XfO=F-BtCuDqyQODJv=6joYmyFiQ5eOYC5YuDJhcLSJtw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CACPK8XfO=F-BtCuDqyQODJv=6joYmyFiQ5eOYC5YuDJhcLSJtw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_020746_091168_B8AC8739 
-X-CRM114-Status: GOOD (  10.44  )
+X-CRM114-CacheID: sfid-20191121_020849_910476_B2AC4DC5 
+X-CRM114-Status: GOOD (  11.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (luc.vanoostenryck[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,47 +100,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>,
- Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Robert Lippert <rlippert@google.com>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
+ Patrick Venture <venture@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There's no longer any need host a tree solely to serve changes for the
-Ux500 clock driver, thus drop this from the corresponding section and use
-the common clk tree instead.
+On Thu, Nov 21, 2019 at 02:52:39AM +0000, Joel Stanley wrote:
+> On Wed, 20 Nov 2019 at 05:42, Andrew Jeffery <andrew@aj.id.au> wrote:
+> >
+> > Looks fine to me as POLLIN and EPOLLIN evaluate to the same value despite
+> > the type difference.
+> 
+> I assume Luc was using sparse to check:
+> 
+> CHECK   ../drivers/soc/aspeed/aspeed-lpc-snoop.c
+> ../drivers/soc/aspeed/aspeed-lpc-snoop.c:112:19: warning: incorrect
+> type in initializer (different base types)
+> ../drivers/soc/aspeed/aspeed-lpc-snoop.c:112:19:    expected
+> restricted __poll_t ( *poll )( ... )
+> ../drivers/soc/aspeed/aspeed-lpc-snoop.c:112:19:    got unsigned int (
+> * )( ... )
+> 
+> If you fix the return type:
+> 
+>   CHECK   ../drivers/soc/aspeed/aspeed-lpc-snoop.c
+> ../drivers/soc/aspeed/aspeed-lpc-snoop.c:106:45: warning: incorrect
+> type in return expression (different base types)
+> ../drivers/soc/aspeed/aspeed-lpc-snoop.c:106:45:    expected restricted __poll_t
+> ../drivers/soc/aspeed/aspeed-lpc-snoop.c:106:45:    got int
 
-Moreover, let's also add the generic linux-clk mailing list and rename the
-section header.
-
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
----
- MAINTAINERS | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 296de2b51c83..753a84cfd753 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -2490,10 +2490,10 @@ F:	drivers/reset/reset-uniphier.c
- F:	drivers/tty/serial/8250/8250_uniphier.c
- N:	uniphier
+Yes, but with the change s/POLLIN/EPOLLIN/ this last warning
+is not issued.
  
--ARM/Ux500 CLOCK FRAMEWORK SUPPORT
-+Ux500 CLOCK DRIVERS
- M:	Ulf Hansson <ulf.hansson@linaro.org>
-+L:	linux-clk@vger.kernel.org
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
--T:	git git://git.linaro.org/people/ulfh/clk.git
- S:	Maintained
- F:	drivers/clk/ux500/
- 
--- 
-2.17.1
-
+Cheers,
+-- Luc
 
 _______________________________________________
 linux-arm-kernel mailing list
