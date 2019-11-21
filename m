@@ -2,140 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9C0810496F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 04:52:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE95B104988
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 05:06:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/62Rf7NZLYAzNK5t+MYWzuwqdAWZgMT7D/6d2TEvHCc=; b=QAHhsYPpDUyDY0
-	W/I03s7RTuWVVzwF4gLm9eeA1h2imdWCe52ivz5Cgne2zsC6Drxs8mx82t09HuB89Ex2R5WgsEJfU
-	4WX4IjfeHsMBSG3FBHi50eWDt4wEcvZYc+oy1rZxDV2RCc0Y39OhnoKe/CHGKW9jmddKNy7BiCbtJ
-	ZPuYDjT76Of0fle3D7DBaMdikRjAsQItkz5rjMVFY1LxFux/Rz63TRJopSqoWhKZs+srJJ46ik6tp
-	yR/Ew6agJku6JreIRA+ru5yZsZz6EQea0AwwVldtkEFknSWfDkSFzIiwFRbiZkvkBINip0cpbZtvk
-	Ez6d73VIL6S8AQbADihQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f66laEBupUY/5H0pNX5Jf/sSDim5F1QGk2m9Xx782lA=; b=hwvvmkYk9dN1qy
+	1kZ6DhHB7fiyKHrV9PGlOF6AkGuN3SjnANS/dp8JMSJO1wp9D18tzDluMpVav1kuD1ncBasErCLD9
+	PgikP/DsItnLX4lZYL5ZqtSEtePLoNYKPQqtY8IQ8rKAyKGbumjdfOQL6sDjySVYp1OvekzMaUWFF
+	i0pH3qAoaJ6EyKoxYlmZll+gC4UdCRnufa1hOcMhlrRufNLSDGL5GdQZHNg37bP/AMjw6s6S0C52f
+	GrOBMgzlKGvEiCy/FzG4WeYt/nhF+YuRASFeSPjVMV4n0NlGr0FkM8n4JZjFbgFs/9Qlj1Qoil+jK
+	4Kbc8A3iuk5bv2jKtLrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXdWP-0006tL-Mn; Thu, 21 Nov 2019 03:52:45 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iXdjG-00035a-93; Thu, 21 Nov 2019 04:06:02 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXdWE-0006sR-Gm; Thu, 21 Nov 2019 03:52:35 +0000
-Received: by mail-wr1-x441.google.com with SMTP id s5so2611874wrw.2;
- Wed, 20 Nov 2019 19:52:33 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=CBJEC54lfW7nGNvoS8z3f1NL1oBbm+5yulPmVtSm9Fc=;
- b=T86OQc0dYHfGxCim2gA+9692kiFKz2t2M7AYUc7YK4dqesj0UHulrrMonDoF7LTS+6
- +Rr/rROGw8OB+mSwKuQw73GnGd7DDNJDiv0DhOQq5JeBvQs+uAq/EBQAeXhZBDxDr46j
- q2EUQ0KR03hHdd3yYAHZWXAD1D+x9qOQNdcj8KcnOgJOWKLJTmwhcGm5hMqrNQFrpV2d
- 2nd2HKbKtqOQmQQUDgBqXqldMI/TnqRwGC7eNzgzjFaTjUJWS62U25fXMTio81dYlA4k
- qANUg/dxwAnKzyKKJmarOBFbbVzH5Q90GF+aSwuqQv2ffaan5H4d2+RSu0EwqTf0vr11
- baIg==
+ id 1iXdj3-00034c-LF
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 04:05:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1574309147;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=ddcL9As6t6N2W7FClqz+MM4Vj5YcYH8nBzk/ipEcve0=;
+ b=YlEOov1KgX/dyD+QILmBCPs9izD2voLE9iPBpCobzFsbRqC4YBDrE4m3Ij1yABITjtZ7Gu
+ Ru9o2sD9pkCkT0GOkII7yR1I+opn4dPET0EW7QRkhysmmSeMs4YbxjHyTAYX/bqJMnPwyn
+ 5tSS7m3ij4pqZVq4faTlrNom2gLAaaA=
+Received: from mail-lf1-f72.google.com (mail-lf1-f72.google.com
+ [209.85.167.72]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-24-YKFXy-ljPdewg51yZYQ-SA-1; Wed, 20 Nov 2019 23:05:45 -0500
+Received: by mail-lf1-f72.google.com with SMTP id f20so508858lfh.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 Nov 2019 20:05:44 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=CBJEC54lfW7nGNvoS8z3f1NL1oBbm+5yulPmVtSm9Fc=;
- b=fP5XMxEVAmOnWJjJXOhsjeKEah6B2jIEUKCrLP2U5lUIRWRXF0HDYpOJyXQoBRAze0
- LjJrkz7FMqwk7acxNvSuwAd6UpGQ1CUZ6hqhPMGVZuaMFZZRlNhSKTx3gyN87qnw8N7R
- 9nZf+M5dODji42aSltcbocoXoxCDX7fZ19vqJ/lPmw5g2HKfdh7uuVNJRp2Efs76Sjx1
- /VLyzhX2klin+Em3cRe2wIxHHpbJeoa3kgMw+KX8rYWHySC/8vdRoSBlxZ/+t/XpMYfM
- dzeqkQt92S54+q9YV00e0sjFjkUVFovzo93wGnLDBGE+ztNyutJY5YVfF4w/3yP1prMD
- xUCg==
-X-Gm-Message-State: APjAAAXLqMfmHEPLLBDiQNpN+HDTnT61tgHgWLF/63vFmkP2HjXoJ1AS
- KI21/t4qxHLgGtXOQNdeEN0=
-X-Google-Smtp-Source: APXvYqyH0YTyEjd/BvsuLLZyEj1q87fGKgJ3TI+zD++haNDB6wQ74A3/KSEtM3bu+mbUuO8JjxLD/A==
-X-Received: by 2002:adf:f344:: with SMTP id e4mr7886781wrp.365.1574308352677; 
- Wed, 20 Nov 2019 19:52:32 -0800 (PST)
-Received: from [10.230.29.119] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id r2sm1720739wrp.64.2019.11.20.19.52.28
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 20 Nov 2019 19:52:31 -0800 (PST)
-Subject: Re: [RFC PATCH net-next] net: phylink: rename mac_link_state() op to
- mac_pcs_get_state()
-To: Andrew Lunn <andrew@lunn.ch>, Russell King <rmk+kernel@armlinux.org.uk>
-References: <E1iX2jg-0005Us-6U@rmk-PC.armlinux.org.uk>
- <20191121021740.GE18325@lunn.ch>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; keydata=
- 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
- a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <08304ec7-09f7-c116-e942-6d384ee67f47@gmail.com>
-Date: Wed, 20 Nov 2019 19:52:25 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XAdRIJ2WowQ38gyWjLPpmLE8JvGLeIMdMt69fOJjIH4=;
+ b=MkRf2NiRMjh1NLRnb5WLluYsNR/y55DctuLGP9kS5TAIHJPx6i8cv937q88TU5TBB7
+ hWt5qxzD6DeN3hbq/y64fS3HFWGPu0EXhQWJXFLrfeF9NMcigjG65Y5iLL5bPQqO0EaI
+ 9qUaafCkjoYn98qVxNnecVzqOmo5Sxz4Sd1Kht8p4XFqmzGfIg5y7ps0Bfo0XWSXl/7z
+ vBTF1IDVjeUI1KtxfBJV/wW5Og1I1aaqNGreDHA3zudCNESLMGs4NgafXwUP2nm/aSEA
+ dV8yBQ0+uwJygeOnAYcw0iG33zdOXsg6SCV/Rq8twXj5ghB603lUbrb6ljBKIqmNdp1Z
+ N0Iw==
+X-Gm-Message-State: APjAAAUrn2Q1KBORQbtDQkIGfRG6uVw5X+67JzeJaAGbq/Nr2/fsHwuF
+ HzBPs0LL0985/qlM3Li7/2x0i8PFXS31Q91C2eHAh0lVy1rH1WJDMf1o44HJqMX9vtzGb2i4VkZ
+ qr7HPuRYgfRuG8zmvzD5XBTWi1HN+iO4W/BIaGQs5CyLttmfN8fk=
+X-Received: by 2002:a19:bec5:: with SMTP id o188mr5652138lff.140.1574309143483; 
+ Wed, 20 Nov 2019 20:05:43 -0800 (PST)
+X-Google-Smtp-Source: APXvYqy5dgsLiGw/+gMUCqCKW9wbveCY62iBIDQZk8TIYLgEUZuvgMt3xbY56NyFoSWIFRlYSXo+FYcMeO7+9TakXnE=
+X-Received: by 2002:a19:bec5:: with SMTP id o188mr5652105lff.140.1574309143167; 
+ Wed, 20 Nov 2019 20:05:43 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191121021740.GE18325@lunn.ch>
-Content-Language: en-US
+References: <1573459282-26989-1-git-send-email-bhsharma@redhat.com>
+ <20191121032047.GB23368@dhcp-128-65.nay.redhat.com>
+In-Reply-To: <20191121032047.GB23368@dhcp-128-65.nay.redhat.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Thu, 21 Nov 2019 09:35:29 +0530
+Message-ID: <CACi5LpOXW+HTsAZfxbwnCnypSdpk4=t8bsS=SRx0crc=4261VA@mail.gmail.com>
+Subject: Re: [PATCH v4 0/3] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
+ for arm64 and MAX_PHYSMEM_BITS for all archs)
+To: Dave Young <dyoung@redhat.com>
+X-MC-Unique: YKFXy-ljPdewg51yZYQ-SA-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_195234_585596_5511C9C5 
-X-CRM114-Status: GOOD (  14.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191120_200549_771027_E6BAD584 
+X-CRM114-Status: GOOD (  23.90  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -155,49 +101,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Felix Fietkau <nbd@openwrt.org>,
- Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- Michal Simek <michal.simek@xilinx.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, netdev@vger.kernel.org,
- Sean Wang <sean.wang@mediatek.com>, linux-stm32@st-md-mailman.stormreply.com,
- Vivien Didelot <vivien.didelot@gmail.com>, Jose Abreu <joabreu@synopsys.com>,
- linux-mediatek@lists.infradead.org, Mark Lee <Mark-MC.Lee@mediatek.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paul Mackerras <paulus@samba.org>,
+ Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
+ Jonathan Corbet <corbet@lwn.net>, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Anderson <anderson@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Bhupesh SHARMA <bhupesh.linux@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Steve Capper <steve.capper@arm.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ James Morse <james.morse@arm.com>, Boris Petkov <bp@alien8.de>,
+ linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Dave,
 
+On Thu, Nov 21, 2019 at 8:51 AM Dave Young <dyoung@redhat.com> wrote:
+>
+> On 11/11/19 at 01:31pm, Bhupesh Sharma wrote:
+> > Changes since v3:
+> > ----------------
+> > - v3 can be seen here:
+> >   http://lists.infradead.org/pipermail/kexec/2019-March/022590.html
+> > - Addressed comments from James and exported TCR_EL1.T1SZ in vmcoreinfo
+> >   instead of PTRS_PER_PGD.
+> > - Added a new patch (via [PATCH 3/3]), which fixes a simple typo in
+> >   'Documentation/arm64/memory.rst'
+> >
+> > Changes since v2:
+> > ----------------
+> > - v2 can be seen here:
+> >   http://lists.infradead.org/pipermail/kexec/2019-March/022531.html
+> > - Protected 'MAX_PHYSMEM_BITS' vmcoreinfo variable under CONFIG_SPARSEMEM
+> >   ifdef sections, as suggested by Kazu.
+> > - Updated vmcoreinfo documentation to add description about
+> >   'MAX_PHYSMEM_BITS' variable (via [PATCH 3/3]).
+> >
+> > Changes since v1:
+> > ----------------
+> > - v1 was sent out as a single patch which can be seen here:
+> >   http://lists.infradead.org/pipermail/kexec/2019-February/022411.html
+> >
+> > - v2 breaks the single patch into two independent patches:
+> >   [PATCH 1/2] appends 'PTRS_PER_PGD' to vmcoreinfo for arm64 arch, whereas
+> >   [PATCH 2/2] appends 'MAX_PHYSMEM_BITS' to vmcoreinfo in core kernel code (all archs)
+> >
+> > This patchset primarily fixes the regression reported in user-space
+> > utilities like 'makedumpfile' and 'crash-utility' on arm64 architecture
+> > with the availability of 52-bit address space feature in underlying
+> > kernel. These regressions have been reported both on CPUs which don't
+> > support ARMv8.2 extensions (i.e. LVA, LPA) and are running newer kernels
+> > and also on prototype platforms (like ARMv8 FVP simulator model) which
+> > support ARMv8.2 extensions and are running newer kernels.
+> >
+> > The reason for these regressions is that right now user-space tools
+> > have no direct access to these values (since these are not exported
+> > from the kernel) and hence need to rely on a best-guess method of
+> > determining value of 'vabits_actual' and 'MAX_PHYSMEM_BITS' supported
+> > by underlying kernel.
+> >
+> > Exporting these values via vmcoreinfo will help user-land in such cases.
+> > In addition, as per suggestion from makedumpfile maintainer (Kazu),
+> > it makes more sense to append 'MAX_PHYSMEM_BITS' to
+> > vmcoreinfo in the core code itself rather than in arm64 arch-specific
+> > code, so that the user-space code for other archs can also benefit from
+> > this addition to the vmcoreinfo and use it as a standard way of
+> > determining 'SECTIONS_SHIFT' value in user-land.
+> >
+> > Cc: Boris Petkov <bp@alien8.de>
+> > Cc: Ingo Molnar <mingo@kernel.org>
+> > Cc: Thomas Gleixner <tglx@linutronix.de>
+> > Cc: Jonathan Corbet <corbet@lwn.net>
+> > Cc: James Morse <james.morse@arm.com>
+> > Cc: Mark Rutland <mark.rutland@arm.com>
+> > Cc: Will Deacon <will@kernel.org>
+> > Cc: Steve Capper <steve.capper@arm.com>
+> > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> > Cc: Michael Ellerman <mpe@ellerman.id.au>
+> > Cc: Paul Mackerras <paulus@samba.org>
+> > Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+> > Cc: Dave Anderson <anderson@redhat.com>
+> > Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+> > Cc: x86@kernel.org
+> > Cc: linuxppc-dev@lists.ozlabs.org
+> > Cc: linux-arm-kernel@lists.infradead.org
+> > Cc: linux-kernel@vger.kernel.org
+> > Cc: linux-doc@vger.kernel.org
+> > Cc: kexec@lists.infradead.org
+> >
+> > Bhupesh Sharma (3):
+> >   crash_core, vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
+> >   arm64/crash_core: Export TCR_EL1.T1SZ in vmcoreinfo
+>
+> Soft reminder:  the new introduced vmcoreinfo needs documentation
+>
+> Please check Documentation/admin-guide/kdump/vmcoreinfo.rst
 
-On 11/20/2019 6:17 PM, Andrew Lunn wrote:
->> This is something I'd like to do to make it clearer what phylink expects
->> of this function, and that it shouldn't just read-back how the MAC was
->> configured.  However, it will require some testing and review as it
->> changes quite a lot, and there's some things, particularly in DSA, that
->> don't seem quite right from a phylink point of view, such as messing
->> with state->interface in this function.
-> 
-> Hi Russell
-> 
-> Could you have more detail about DSA issues? Do you means the 6250
-> setting interface to PHY_INTERFACE_MODE_NA?
-> 
-> I think you and i have pretty similar marvell hardware. So i don't
-> think i can do much additional testing. Ideally we want Florian to do
-> some testing on b53.
+Sure, will send a v5 to address the same.
 
-I will try to test that across the hardware I have at hand, can take a
-few days to get all platforms working with net-next. At first glance,
-this is just a simple rename and change of return type, I would not
-expect problems to arise from that.
--- 
-Florian
+Thanks,
+Bhupesh
+
 
 _______________________________________________
 linux-arm-kernel mailing list
