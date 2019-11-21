@@ -2,86 +2,139 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE95B104988
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 05:06:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAA98104997
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 05:10:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f66laEBupUY/5H0pNX5Jf/sSDim5F1QGk2m9Xx782lA=; b=hwvvmkYk9dN1qy
-	1kZ6DhHB7fiyKHrV9PGlOF6AkGuN3SjnANS/dp8JMSJO1wp9D18tzDluMpVav1kuD1ncBasErCLD9
-	PgikP/DsItnLX4lZYL5ZqtSEtePLoNYKPQqtY8IQ8rKAyKGbumjdfOQL6sDjySVYp1OvekzMaUWFF
-	i0pH3qAoaJ6EyKoxYlmZll+gC4UdCRnufa1hOcMhlrRufNLSDGL5GdQZHNg37bP/AMjw6s6S0C52f
-	GrOBMgzlKGvEiCy/FzG4WeYt/nhF+YuRASFeSPjVMV4n0NlGr0FkM8n4JZjFbgFs/9Qlj1Qoil+jK
-	4Kbc8A3iuk5bv2jKtLrQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HUBbIj7gT00d1zpsIf3OLJeEIDUM4cHbi1vspMCW79g=; b=YxjRQmVVT4VDDh
+	N0yVa5yfYy/3hBdyKD9mPzn4Hg5QVTSD/PJwtd0XUMOb3IcRjA2JnjDCnQ2kzpOJvJAWNnYLceWzh
+	M/vcOeMBnYeM/EtCtPIvPyjeEvRX5MEl4sqT+hcgotmMc6ImIorBgMEv8PI7uKNirMwNxzQN8GA54
+	kObdF3SXmXQDxbfL1GuRN8mbC581mVz62qQ4b1RCXMF9SAYtnaF2EAphSYrkqFWVbPcrno4Blrk+T
+	zTmOkoZXsTH/qlAVv9iw1keC+zeuPPR3dAi3LS73PMh6tEByHH2ahr0Bn+InxypUWD+HQbP9ZNZEC
+	EWSQmrhF/9pXMgf+ASGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXdjG-00035a-93; Thu, 21 Nov 2019 04:06:02 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1iXdnN-0004ef-2J; Thu, 21 Nov 2019 04:10:17 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXdj3-00034c-LF
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 04:05:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1574309147;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=ddcL9As6t6N2W7FClqz+MM4Vj5YcYH8nBzk/ipEcve0=;
- b=YlEOov1KgX/dyD+QILmBCPs9izD2voLE9iPBpCobzFsbRqC4YBDrE4m3Ij1yABITjtZ7Gu
- Ru9o2sD9pkCkT0GOkII7yR1I+opn4dPET0EW7QRkhysmmSeMs4YbxjHyTAYX/bqJMnPwyn
- 5tSS7m3ij4pqZVq4faTlrNom2gLAaaA=
-Received: from mail-lf1-f72.google.com (mail-lf1-f72.google.com
- [209.85.167.72]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-24-YKFXy-ljPdewg51yZYQ-SA-1; Wed, 20 Nov 2019 23:05:45 -0500
-Received: by mail-lf1-f72.google.com with SMTP id f20so508858lfh.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 Nov 2019 20:05:44 -0800 (PST)
+ id 1iXdnB-00045T-4c; Thu, 21 Nov 2019 04:10:06 +0000
+Received: by mail-wm1-x344.google.com with SMTP id t26so2736384wmi.0;
+ Wed, 20 Nov 2019 20:10:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=KyVV9OtMYzuxUfKjDOoN9OjB6k595IRNlTVuhDMhC10=;
+ b=X1dFxFN0j+/WiJCSTbji/fhE29CoKE7C5ViqxKT72cn/BLDypzsr8dFyhngRM6K6FH
+ L+ucvR8AIEv6ZUn0Q6Pws2Tmng01E0mgpiPiZtiuEqRasL+mtVpMnkEc8Tm3lVZ2xD48
+ xoa7Ej1fqE8VEBTE7MtbHsZt3AqpEguD43PyZxdNPI41dLr/AQ3/COqOh0hEDBM9mfeL
+ 8cnM6Gyj98xChINmfmVj88Zz3Gs1vAF21A8y1Ond9H2ubmPAN3xUadY0fztz2BmcYGHW
+ qX88ltZFAPlHLeMNnx+FEAvUI00aPKGWRDduQDvRGLl3m5h014R7CUqFJCn2N4C5XgAy
+ RFjg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XAdRIJ2WowQ38gyWjLPpmLE8JvGLeIMdMt69fOJjIH4=;
- b=MkRf2NiRMjh1NLRnb5WLluYsNR/y55DctuLGP9kS5TAIHJPx6i8cv937q88TU5TBB7
- hWt5qxzD6DeN3hbq/y64fS3HFWGPu0EXhQWJXFLrfeF9NMcigjG65Y5iLL5bPQqO0EaI
- 9qUaafCkjoYn98qVxNnecVzqOmo5Sxz4Sd1Kht8p4XFqmzGfIg5y7ps0Bfo0XWSXl/7z
- vBTF1IDVjeUI1KtxfBJV/wW5Og1I1aaqNGreDHA3zudCNESLMGs4NgafXwUP2nm/aSEA
- dV8yBQ0+uwJygeOnAYcw0iG33zdOXsg6SCV/Rq8twXj5ghB603lUbrb6ljBKIqmNdp1Z
- N0Iw==
-X-Gm-Message-State: APjAAAUrn2Q1KBORQbtDQkIGfRG6uVw5X+67JzeJaAGbq/Nr2/fsHwuF
- HzBPs0LL0985/qlM3Li7/2x0i8PFXS31Q91C2eHAh0lVy1rH1WJDMf1o44HJqMX9vtzGb2i4VkZ
- qr7HPuRYgfRuG8zmvzD5XBTWi1HN+iO4W/BIaGQs5CyLttmfN8fk=
-X-Received: by 2002:a19:bec5:: with SMTP id o188mr5652138lff.140.1574309143483; 
- Wed, 20 Nov 2019 20:05:43 -0800 (PST)
-X-Google-Smtp-Source: APXvYqy5dgsLiGw/+gMUCqCKW9wbveCY62iBIDQZk8TIYLgEUZuvgMt3xbY56NyFoSWIFRlYSXo+FYcMeO7+9TakXnE=
-X-Received: by 2002:a19:bec5:: with SMTP id o188mr5652105lff.140.1574309143167; 
- Wed, 20 Nov 2019 20:05:43 -0800 (PST)
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=KyVV9OtMYzuxUfKjDOoN9OjB6k595IRNlTVuhDMhC10=;
+ b=he5OxGpgjp2CcInIvsYf2Fw0umaUDvh6rZq4mVtHAXymKoIrlu56xmuIY80npG5Roz
+ nN+q0j3c9+PEeqNTJOznNQbS1qGAIhhW6fBaa4uayj4lxgDngWxzUkMmub+8Q1WR2EEy
+ 1g8ktvUDPyVWzxkBmFmY2IKMPrcl2g3sFjXDa7WBk0t9QaSJcMtKCBw3w3mAFJ+9AYyv
+ xMeCw5dau1ZKoh/3GqvDQ8dM2IsL+0Os9UC/eDSEsATwj245+5ujNYbY1ez68By3C9lS
+ 39srdqvVmVQinFlBpQ6j0ipifwGvh0MJDZOWi4tAlThph9lfnZlX/9etNVtX2MvSxLsH
+ e9pg==
+X-Gm-Message-State: APjAAAURsiiJ1H6CnZfI0yKjLja7qKUa6vSogBtIgnegjxf73QWUg9+n
+ dI1ucH365TMPknG5ySqegewePi3l
+X-Google-Smtp-Source: APXvYqyxVfla0wEQcFAjsBVcwLaLBok/WxoGLngc9EgAWr+J6QCHtUciwq03DPeRHwz1Cj9mOyAeBQ==
+X-Received: by 2002:a1c:7fd8:: with SMTP id a207mr7399474wmd.10.1574309403248; 
+ Wed, 20 Nov 2019 20:10:03 -0800 (PST)
+Received: from [10.230.29.119] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id m16sm1460809wml.47.2019.11.20.20.09.59
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 20 Nov 2019 20:10:02 -0800 (PST)
+Subject: Re: [PATCH v3 0/4] Raspberry Pi 4 HWRNG Support
+To: Stephen Brennan <stephen@brennan.io>,
+ Herbert Xu <herbert@gondor.apana.org.au>
+References: <20191120031622.88949-1-stephen@brennan.io>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; keydata=
+ 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
+ a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
+Message-ID: <3e78d01f-f7a4-b3c4-4d23-7be7d6ad764d@gmail.com>
+Date: Wed, 20 Nov 2019 20:09:57 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-References: <1573459282-26989-1-git-send-email-bhsharma@redhat.com>
- <20191121032047.GB23368@dhcp-128-65.nay.redhat.com>
-In-Reply-To: <20191121032047.GB23368@dhcp-128-65.nay.redhat.com>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Thu, 21 Nov 2019 09:35:29 +0530
-Message-ID: <CACi5LpOXW+HTsAZfxbwnCnypSdpk4=t8bsS=SRx0crc=4261VA@mail.gmail.com>
-Subject: Re: [PATCH v4 0/3] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
- for arm64 and MAX_PHYSMEM_BITS for all archs)
-To: Dave Young <dyoung@redhat.com>
-X-MC-Unique: YKFXy-ljPdewg51yZYQ-SA-1
-X-Mimecast-Spam-Score: 0
+In-Reply-To: <20191120031622.88949-1-stephen@brennan.io>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_200549_771027_E6BAD584 
-X-CRM114-Status: GOOD (  23.90  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191120_201005_205400_01CCD9E6 
+X-CRM114-Status: GOOD (  20.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.120 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,116 +154,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Paul Mackerras <paulus@samba.org>,
- Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
- Jonathan Corbet <corbet@lwn.net>, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Anderson <anderson@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Steve Capper <steve.capper@arm.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- James Morse <james.morse@arm.com>, Boris Petkov <bp@alien8.de>,
- linuxppc-dev@lists.ozlabs.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, Arnd Bergmann <arnd@arndb.de>,
+ Scott Branden <sbranden@broadcom.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Ray Jui <rjui@broadcom.com>,
+ linux-kernel@vger.kernel.org, Eric Anholt <eric@anholt.net>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ Stefan Wahren <wahrenst@gmx.net>, Matt Mackall <mpm@selenic.com>,
+ linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dave,
+Hi Herbert,
 
-On Thu, Nov 21, 2019 at 8:51 AM Dave Young <dyoung@redhat.com> wrote:
->
-> On 11/11/19 at 01:31pm, Bhupesh Sharma wrote:
-> > Changes since v3:
-> > ----------------
-> > - v3 can be seen here:
-> >   http://lists.infradead.org/pipermail/kexec/2019-March/022590.html
-> > - Addressed comments from James and exported TCR_EL1.T1SZ in vmcoreinfo
-> >   instead of PTRS_PER_PGD.
-> > - Added a new patch (via [PATCH 3/3]), which fixes a simple typo in
-> >   'Documentation/arm64/memory.rst'
-> >
-> > Changes since v2:
-> > ----------------
-> > - v2 can be seen here:
-> >   http://lists.infradead.org/pipermail/kexec/2019-March/022531.html
-> > - Protected 'MAX_PHYSMEM_BITS' vmcoreinfo variable under CONFIG_SPARSEMEM
-> >   ifdef sections, as suggested by Kazu.
-> > - Updated vmcoreinfo documentation to add description about
-> >   'MAX_PHYSMEM_BITS' variable (via [PATCH 3/3]).
-> >
-> > Changes since v1:
-> > ----------------
-> > - v1 was sent out as a single patch which can be seen here:
-> >   http://lists.infradead.org/pipermail/kexec/2019-February/022411.html
-> >
-> > - v2 breaks the single patch into two independent patches:
-> >   [PATCH 1/2] appends 'PTRS_PER_PGD' to vmcoreinfo for arm64 arch, whereas
-> >   [PATCH 2/2] appends 'MAX_PHYSMEM_BITS' to vmcoreinfo in core kernel code (all archs)
-> >
-> > This patchset primarily fixes the regression reported in user-space
-> > utilities like 'makedumpfile' and 'crash-utility' on arm64 architecture
-> > with the availability of 52-bit address space feature in underlying
-> > kernel. These regressions have been reported both on CPUs which don't
-> > support ARMv8.2 extensions (i.e. LVA, LPA) and are running newer kernels
-> > and also on prototype platforms (like ARMv8 FVP simulator model) which
-> > support ARMv8.2 extensions and are running newer kernels.
-> >
-> > The reason for these regressions is that right now user-space tools
-> > have no direct access to these values (since these are not exported
-> > from the kernel) and hence need to rely on a best-guess method of
-> > determining value of 'vabits_actual' and 'MAX_PHYSMEM_BITS' supported
-> > by underlying kernel.
-> >
-> > Exporting these values via vmcoreinfo will help user-land in such cases.
-> > In addition, as per suggestion from makedumpfile maintainer (Kazu),
-> > it makes more sense to append 'MAX_PHYSMEM_BITS' to
-> > vmcoreinfo in the core code itself rather than in arm64 arch-specific
-> > code, so that the user-space code for other archs can also benefit from
-> > this addition to the vmcoreinfo and use it as a standard way of
-> > determining 'SECTIONS_SHIFT' value in user-land.
-> >
-> > Cc: Boris Petkov <bp@alien8.de>
-> > Cc: Ingo Molnar <mingo@kernel.org>
-> > Cc: Thomas Gleixner <tglx@linutronix.de>
-> > Cc: Jonathan Corbet <corbet@lwn.net>
-> > Cc: James Morse <james.morse@arm.com>
-> > Cc: Mark Rutland <mark.rutland@arm.com>
-> > Cc: Will Deacon <will@kernel.org>
-> > Cc: Steve Capper <steve.capper@arm.com>
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> > Cc: Michael Ellerman <mpe@ellerman.id.au>
-> > Cc: Paul Mackerras <paulus@samba.org>
-> > Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> > Cc: Dave Anderson <anderson@redhat.com>
-> > Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-> > Cc: x86@kernel.org
-> > Cc: linuxppc-dev@lists.ozlabs.org
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > Cc: linux-kernel@vger.kernel.org
-> > Cc: linux-doc@vger.kernel.org
-> > Cc: kexec@lists.infradead.org
-> >
-> > Bhupesh Sharma (3):
-> >   crash_core, vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
-> >   arm64/crash_core: Export TCR_EL1.T1SZ in vmcoreinfo
->
-> Soft reminder:  the new introduced vmcoreinfo needs documentation
->
-> Please check Documentation/admin-guide/kdump/vmcoreinfo.rst
+On 11/19/2019 7:16 PM, Stephen Brennan wrote:
+> This patch series enables support for the HWRNG included on the Raspberry
+> Pi 4.  It is simply a rebase of Stefan's branch [1]. I went ahead and
+> tested this out on a Pi 4.  Prior to this patch series, attempting to use
+> the hwrng gives:
+> 
+>     $ head -c 2 /dev/hwrng
+>     head: /dev/hwrng: Input/output error
+> 
+> After this series, the same command gives two random bytes.
 
-Sure, will send a v5 to address the same.
+When we get a review from Rob, you can take patches 1-2 through your
+tree and Stefan/Nicholas can queue patches 3-4 through the BCM2835 tree
+where the DTS files already exist. Does that work for you?
 
-Thanks,
-Bhupesh
+> 
+> Changes in v3:
+> - drop interrupts from bcm2711 rng node
+> - move bcm283x rng into bcm2835-common.dtsi
+> - add reviewed-by tag
+> - separated out patch 3 into two parts
+> 
+> Changes in v2:
+> - specify the correct size for the region in the dts, refactor bcm283x rng
+> 
+> ---
+> 
+> Stefan Wahren (2):
+>   dt-bindings: rng: add BCM2711 RNG compatible
+>   hwrng: iproc-rng200: Add support for BCM2711
+> 
+> Stephen Brennan (2):
+>   ARM: dts: bcm2835: Move rng definition to common location
+>   ARM: dts: bcm2711: Enable HWRNG support
+> 
+>  .../devicetree/bindings/rng/brcm,iproc-rng200.txt          | 1 +
+>  arch/arm/boot/dts/bcm2711.dtsi                             | 7 +++----
+>  arch/arm/boot/dts/bcm2835-common.dtsi                      | 6 ++++++
+>  arch/arm/boot/dts/bcm283x.dtsi                             | 6 ------
+>  drivers/char/hw_random/Kconfig                             | 2 +-
+>  drivers/char/hw_random/iproc-rng200.c                      | 1 +
+>  6 files changed, 12 insertions(+), 11 deletions(-)
+> 
 
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
