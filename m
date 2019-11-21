@@ -2,86 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 354EF105B80
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 22:00:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7883105B92
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 22:06:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OmWfz0zsHhZM3OyS+rLans8LugJLdL4HsHd14GEQWMw=; b=n2Jj3aKFSBez+N
-	hqUjhUMVms1htvzSD4KHJxq6iFS601b9BYpxHSsDAdbR+L9943dVukXx3CHjN6PIsvGwyVOh9rSwv
-	ZpHfPDetM5BSddv0fCT+XnQT7R4pxinLZfltTZypR/AEs/St2Ur0asY/FFjLs53A8ld0He3xjKjUU
-	7WhTQMHHwrG9DJ1FUUThiNN3BsuyFmHL3cbc+zl0TqyOA47tzM9Gx3F3/14rRebgo61tNIoh3eivO
-	fy9KLrvCrNTyo7jqUPnnrEz3eI8VaYMONLvUBo3qEyKXf0k0h6UcuVm0QCilCHkELJkve67ieEJPE
-	esDU00QOpMlkmyuFxKQw==;
+	List-Owner; bh=0iWrwc8K0rC61KdMCO69kJxRbkikAnXNyAAkPjdo+xw=; b=mAamCcUJGVRNtx
+	pfvTcp/EoRUzrx4tbL1NIB4Se5eMJv58t9LrY2ZdPzWg4RB3C8OAzZ0vFRlaMZJJC06+iZEfJ7nDE
+	jfqTQ1hna0Y6WtR/nkxOdGBSURps6b+7JstQ09wLuym9KffSmbn+TzSzg1z8hfIcpQ2JJ8lcsAJY6
+	wM3lsAjpEYUx2EwnHIuRlSr1lNieDUPq1+RunxHvcmKmErfjtSJG2nBt2aFLLVFLHCDAlvt/o0Pwo
+	g3HXN60Py8v0RlQV5+yAEEaKjJ45K/G2zDjise4GbbHUfgFZPXJM/eltWudYi5J7sDsyc24nVSscn
+	MPLFGVDBfzSrxJth2LRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXtYq-0001Py-0h; Thu, 21 Nov 2019 21:00:20 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1iXtea-000348-2q; Thu, 21 Nov 2019 21:06:16 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXtYj-0001PR-In
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 21:00:14 +0000
-Received: by mail-oi1-f194.google.com with SMTP id a14so4535086oid.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 13:00:12 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=SxSot6EgZMv6I/ipPn5GJ1W17H/FceWiJqLiGTJUw7A=;
- b=Ui9W8CgU4mhz1r3SEUbS86aeLjvbOzdF4VjX0S2YWvqj3mldOS7wW8EncH9vbZCM10
- YEracEJJkxf2Ug/p3s6U9yjuvphAGRCnlTs+YdIAIjAwpkYwb4ScPFf4RlUob9CpQ+Xd
- KPxD27lMzfK3+Y+IOzxbKcoLLsXjPJFm3TF/pmMK8tNnh+wN26WraceR1Bl6WsaYm7dZ
- FahqHnlhYgqWwz9uC0hCQD3GgBLMC/yP0lYdxzUKRSV1tlXj4Ocw9aSynZUj5rk5fopN
- Ygsayn8U+1MujtVmfZJUTDStxuYUiNQO2CPFL42C+VYCGiU/yqqR2vShqBNONcTzTnyb
- BuDg==
-X-Gm-Message-State: APjAAAXb0WNHM+QtY+F33nkhx85qhqq5WWyre5AkIEaIXG1R+y/y0yf6
- m/QPe8kUhFZi6gMUApPJOg==
-X-Google-Smtp-Source: APXvYqzZRrFiuYK7K/Obo8SgGAjOF7Ow3hwd08fXejCVDmPvcemJ1lgWEhImSfx8sFpl48Lx+9CNfA==
-X-Received: by 2002:a05:6808:117:: with SMTP id
- b23mr8902981oie.151.1574370011370; 
- Thu, 21 Nov 2019 13:00:11 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id p3sm1377017oti.22.2019.11.21.13.00.09
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 Nov 2019 13:00:09 -0800 (PST)
-Date: Thu, 21 Nov 2019 15:00:08 -0600
-From: Rob Herring <robh@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH v6 3/5] dt-bindings: memory: Add bindings for imx8m ddr
- controller
-Message-ID: <20191121210008.GA20656@bogus>
-References: <cover.1573756360.git.leonard.crestez@nxp.com>
- <58f3aea574bf3a38a42075e313fc2a5592c96ed2.1573756360.git.leonard.crestez@nxp.com>
+ id 1iXteS-00033d-LV
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 21:06:10 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iXteL-000788-O7; Thu, 21 Nov 2019 22:06:01 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iXteJ-0005WV-4h; Thu, 21 Nov 2019 22:05:59 +0100
+Date: Thu, 21 Nov 2019 22:05:59 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v8 3/6] pwm: sun4i: Add an optional probe for bus clock
+Message-ID: <20191121210559.pz3nsyomqfrjuoe4@pengutronix.de>
+References: <20191121195902.6906-1-peron.clem@gmail.com>
+ <20191121195902.6906-4-peron.clem@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <58f3aea574bf3a38a42075e313fc2a5592c96ed2.1573756360.git.leonard.crestez@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191121195902.6906-4-peron.clem@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_130013_621142_72C24FA3 
-X-CRM114-Status: GOOD (  12.09  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191121_130608_702084_6B3E920F 
+X-CRM114-Status: GOOD (  18.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,41 +68,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-clk@vger.kernel.org,
- Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- linux-imx@nxp.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Kepplinger <martink@posteo.de>,
- Silvano di Ninno <silvano.dininno@nxp.com>,
- linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Philipp Zabel <pza@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 14 Nov 2019 20:33:20 +0200, Leonard Crestez wrote:
-> Add devicetree bindings for the i.MX DDR Controller on imx8m series
-> chips. It supports dynamic frequency switching between multiple data
-> rates and this is exposed to Linux via the devfreq subsystem.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> ---
->  .../memory-controllers/fsl/imx8m-ddrc.yaml    | 72 +++++++++++++++++++
->  1 file changed, 72 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
-> 
+On Thu, Nov 21, 2019 at 08:58:59PM +0100, Cl=E9ment P=E9ron wrote:
+> From: Jernej Skrabec <jernej.skrabec@siol.net>
+> =
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+> H6 PWM core needs bus clock to be enabled in order to work.
+> =
+
+> Add an optional probe for it.
+> =
+
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+> ---
+>  drivers/pwm/pwm-sun4i.c | 23 +++++++++++++++++++++++
+>  1 file changed, 23 insertions(+)
+> =
+
+> diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
+> index 369990ae7d09..66befd8d6f9c 100644
+> --- a/drivers/pwm/pwm-sun4i.c
+> +++ b/drivers/pwm/pwm-sun4i.c
+> @@ -78,6 +78,7 @@ struct sun4i_pwm_data {
+>  =
+
+>  struct sun4i_pwm_chip {
+>  	struct pwm_chip chip;
+> +	struct clk *bus_clk;
+>  	struct clk *clk;
+>  	struct reset_control *rst;
+>  	void __iomem *base;
+> @@ -391,6 +392,14 @@ static int sun4i_pwm_probe(struct platform_device *p=
+dev)
+>  		}
+>  	}
+>  =
+
+> +	pwm->bus_clk =3D devm_clk_get_optional(&pdev->dev, "bus");
+> +	if (IS_ERR(pwm->bus_clk)) {
+> +		if (PTR_ERR(pwm->rst) !=3D -EPROBE_DEFER)
+> +			dev_err(&pdev->dev, "get bus clock failed %pe\n",
+> +				pwm->bus_clk);
+> +		return PTR_ERR(pwm->bus_clk);
+> +	}
+> +
+>  	pwm->rst =3D devm_reset_control_get_optional_shared(&pdev->dev, NULL);
+>  	if (IS_ERR(pwm->rst)) {
+>  		if (PTR_ERR(pwm->rst) !=3D -EPROBE_DEFER)
+> @@ -407,6 +416,17 @@ static int sun4i_pwm_probe(struct platform_device *p=
+dev)
+>  		return ret;
+>  	}
+>  =
+
+> +	/*
+> +	 * We're keeping the bus clock on for the sake of simplicity.
+> +	 * Actually it only needs to be on for hardware register accesses.
+> +	 */
+> +	ret =3D clk_prepare_enable(pwm->bus_clk);
+> +	if (ret) {
+> +		dev_err(&pdev->dev, "Cannot prepare and enable bus_clk %d\n",
+> +			ret);
+
+nitpick: other error messages in this driver start with a lower case
+letter.
+
+Until there is an equivalent for %pe that consumes an int, I suggest to
+use
+
+	dev_err(&pdev->dev, "Cannot prepare and enable bus_clk: %pe\n",
+	        ERR_PTR(ret));
+
+to benefit from a symbolic error name instead of an error constant.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
