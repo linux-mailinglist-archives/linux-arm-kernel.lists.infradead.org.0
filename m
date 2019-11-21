@@ -2,57 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFC081059AD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 19:37:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1ADF71059EB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 Nov 2019 19:48:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u4K8Z0GXgC+4MHVsYX6UkdpV7FNJBXf4YR0rtm7FetI=; b=AdL81ETMvMqh4v
-	Y7XXlCbeGRhYgPtPHK2KeiXcpeGRkERl2XIQDcmf6CUW+4v1iWXehT9GyeQDx5AeDNssN7pcrxIW4
-	NxWnyrgbqF9hId7dOOkcP2wESAkokWltURYtEFqdnE03b5VheC0L6gX9aXiY14ZOQvNs9P9AFnQYC
-	59lVdH6QGx9B7ax5AFsI9lSWaaB9vGNuvfeKypBCf1l6XEzR8ZpktOYq+/Hj0PKRmglq5qoyT6OT+
-	ApYXOWtm/TizbFHLho4lYFTcOfkJWULVF3YxluvJWHVC9uzG0W7/5oRvpXuxNgVDQEmYRNpsKESbX
-	UkJ6rq6ziMVZH6N6Ci+g==;
+	List-Owner; bh=FtTPSM2+XpXEQEkX7YfksaV34QGt6xqlT/pxOhOhJm0=; b=c/pvVjOPn13eEF
+	quc7X9soEU+h83aEMRBpMCreoUtcN12CjAuTOjRpOM6RbXer6L1kXHcKFTFMbQQ1pWqeU7iXwsGBn
+	lOSGwX4QzBIVL8mF/jWrRPKfgWQ0GWCQ41p5Z8lh72HfeyCcEpQTqmptJM7DuyrRchKoPujZnjAFG
+	Tb3wktyfra8keHPBqs3bVt8BvZKGOGyr4OguZt3XCmCZmwbNdwOwZU2tchoolD+sFU2VJ860JxM9P
+	Ig8ngrkZoOPdjkDxvHYKsJxuXC2EpJdFZAFZ0XobthGHuwXyvbghZ2Brt4Q4b0pzVe5kuHa2yKBy6
+	UO2HorWuya/vBP1Javqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXrKZ-0005cs-Ab; Thu, 21 Nov 2019 18:37:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iXrVG-0000VT-5R; Thu, 21 Nov 2019 18:48:30 +0000
+Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXrKK-0005bp-Jn; Thu, 21 Nov 2019 18:37:13 +0000
-Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net
- [71.197.186.152])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A5EBB20672;
- Thu, 21 Nov 2019 18:37:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574361431;
- bh=bvBt/Z3IcnbICHqI86zDLVlsM35yTFdoVqsRRTB0fyk=;
- h=From:To:Cc:Subject:Date:From;
- b=NZcJa5SNue4TX21Z/7clNxhT6htYrnii9lAAOTqbZ2/hYlXzd6Vy4Ae6SgUjeBpdL
- l8L61V+30siHIs77rllCs4s3daq01vSI4paG1cWuNu7tIkzyT2Z+NS5/R02yyB60sW
- 3XwBnNinCWQLg4pOtI6pLyaDVVtslx2oPzcHiXQQ=
-From: Kevin Hilman <khilman@kernel.org>
-To: linux-amlogic@lists.infradead.org
-Subject: [PATCH 1/1] arm64: dts: meson-sm1-sei610: gpio-keys: switch to IRQs
-Date: Thu, 21 Nov 2019 10:37:11 -0800
-Message-Id: <20191121183711.19785-1-khilman@kernel.org>
-X-Mailer: git-send-email 2.22.0
+ id 1iXrUv-0000Ul-B2
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 18:48:10 +0000
+Received: by mail-qv1-xf44.google.com with SMTP id d3so1828327qvs.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 Nov 2019 10:48:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=c8nVRzgB0YDtJ+y9FNkA3x/d530+qZE+NnYikZNbCrY=;
+ b=Qd5DOiTEUKkAbvWWBA600R4XlxLwFyDaJa4sle8qP7489uHD80RxMqUwg5kGz940pO
+ Uy/pT7lJTR4GjlFlbX7dHMDtR211secMJRkotfPvB3o5DKTw1xv6+vrmxKW2htfMcNZX
+ g98vk8RHBl+DeicsPE+4EaSyMYG2IvzwUx8keHJ3qp1ecHMWoDc07wiL++XC9dFUC0uh
+ 07RFJvQGvxdBHY09cPELbIbfaaty+SNFMSSt86Yd256lMjQTqyMjWc/5tY2oblfPJ/m+
+ EgTVEXpzneOCRxHOBITpWNP/bgT484K6eQDsihDtqabDvyYJu/4Vl0nQYvaEC/PFgMOd
+ GvgQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=c8nVRzgB0YDtJ+y9FNkA3x/d530+qZE+NnYikZNbCrY=;
+ b=bzzC57dQChKP4UTJVSkGLip363MLyB4UAcQg0rQhdJRMPJ4FQ2ko9yNPeMeoF36WOE
+ 4FA1TiRZPQKMOtuVsG6E825SaUhWoVkQH6iRshMIDtZruTPHlp8ffxnUzgB+P6TTBY/L
+ re5r7PdRE0hH54B2cEVeYZxR/W9EpZ+8tcPape3ERT1ahJ9n6tTvWyZON9E91a/vsEZM
+ X1G3SgSjqmFi1ImrPGbMIpBG6TpX9gx3P2LOAq+dDgIX3u/uUzDo5Cd9fQxV6kE3TCmI
+ Tur5r3/OQD3HASi/2mPMOccJc6zESgJUBtnyO5JVxkMWWxXn9HVGPZ7qXnzKTFWSPX0w
+ hyQg==
+X-Gm-Message-State: APjAAAVHMbl/hwMI1zmaeHiKkyqIEq9/CaId/29RBtk1UQ7Obgdc3IVk
+ B0beJV9rYbn5wLgxloblp/tkHA==
+X-Google-Smtp-Source: APXvYqwZjCYx8RRyhAGY177FzvhWk79OzV7zKnj87grfXziN6cxCQV8PczfcjMpEI7opQBzRuRrwkw==
+X-Received: by 2002:a0c:f787:: with SMTP id s7mr9663802qvn.12.1574362087643;
+ Thu, 21 Nov 2019 10:48:07 -0800 (PST)
+Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
+ [73.69.118.222])
+ by smtp.gmail.com with ESMTPSA id t2sm1811634qkt.95.2019.11.21.10.48.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 21 Nov 2019 10:48:06 -0800 (PST)
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
+ linux-kernel@vger.kernel.org, catalin.marinas@arm.com, will@kernel.org,
+ steve.capper@arm.com, linux-arm-kernel@lists.infradead.org,
+ marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
+ mark.rutland@arm.com, tglx@linutronix.de, gregkh@linuxfoundation.org,
+ allison@lohutok.net, info@metux.net, alexios.zavras@intel.com,
+ sstabellini@kernel.org, boris.ostrovsky@oracle.com, jgross@suse.com,
+ stefan@agner.ch, yamada.masahiro@socionext.com,
+ xen-devel@lists.xenproject.org, linux@armlinux.org.uk
+Subject: [PATCH 0/3] Use C inlines for uaccess
+Date: Thu, 21 Nov 2019 13:48:02 -0500
+Message-Id: <20191121184805.414758-1-pasha.tatashin@soleen.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_103712_668855_0F47C580 
-X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-CacheID: sfid-20191121_104809_560662_B35B6983 
+X-CRM114-Status: UNSURE (   7.67  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -62,7 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,79 +101,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- =?UTF-8?q?J=C3=A9r=C3=B4me=20Brunet?= <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Kevin Hilman <khilman@baylibre.com>
+Convert the remaining uaccess_* calls from ASM macros to C inlines.
 
-Switch the GPIO buttons/switches to use interrupts instead of polling.
-While at it, add the mic mute switch and the power button.
+These patches apply against linux-next. I boot tested ARM64, and
+compile tested ARM changes.
 
-Signed-off-by: Kevin Hilman <khilman@baylibre.com>
----
- .../boot/dts/amlogic/meson-sm1-sei610.dts     | 26 +++++++++++++++++--
- 1 file changed, 24 insertions(+), 2 deletions(-)
+Pavel Tatashin (3):
+  arm/arm64/xen: use C inlines for privcmd_call
+  arm64: remove uaccess_ttbr0 asm macros from cache functions
+  arm64: remove the rest of asm-uaccess.h
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-index 5bd07469766b..2c90f4713d0e 100644
---- a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-@@ -46,25 +46,47 @@
- 	};
- 
- 	gpio-keys {
--		compatible = "gpio-keys-polled";
--		poll-interval = <100>;
-+		compatible = "gpio-keys";
- 
- 		key1 {
- 			label = "A";
- 			linux,code = <BTN_0>;
- 			gpios = <&gpio GPIOH_6 GPIO_ACTIVE_LOW>;
-+			interrupt-parent = <&gpio_intc>;
-+			interrupts = <34 IRQ_TYPE_EDGE_BOTH>;
- 		};
- 
- 		key2 {
- 			label = "B";
- 			linux,code = <BTN_1>;
- 			gpios = <&gpio GPIOH_7 GPIO_ACTIVE_LOW>;
-+			interrupt-parent = <&gpio_intc>;
-+			interrupts = <35 IRQ_TYPE_EDGE_BOTH>;
- 		};
- 
- 		key3 {
- 			label = "C";
- 			linux,code = <BTN_2>;
- 			gpios = <&gpio_ao GPIOAO_2 GPIO_ACTIVE_LOW>;
-+			interrupt-parent = <&gpio_intc>;
-+			interrupts = <2 IRQ_TYPE_EDGE_BOTH>;
-+		};
-+
-+		mic_mute {
-+			label = "MicMute";
-+			linux,code = <SW_MUTE_DEVICE>;
-+			linux,input-type = <EV_SW>;
-+			gpios = <&gpio_ao GPIOE_2 GPIO_ACTIVE_LOW>;
-+			interrupt-parent = <&gpio_intc>;
-+			interrupts = <99 IRQ_TYPE_EDGE_BOTH>;
-+		};
-+
-+		power_key {
-+			label = "PowerKey";
-+			linux,code = <KEY_POWER>;
-+			gpios = <&gpio_ao GPIOAO_3 GPIO_ACTIVE_LOW>;
-+			interrupt-parent = <&gpio_intc>;
-+			interrupts = <3 IRQ_TYPE_EDGE_BOTH>;
- 		};
- 	};
- 
+ arch/arm/include/asm/assembler.h     |  2 +-
+ arch/arm/include/asm/uaccess.h       | 32 ++++++++++++---
+ arch/arm/xen/enlighten.c             |  2 +-
+ arch/arm/xen/hypercall.S             | 15 +------
+ arch/arm64/include/asm/asm-uaccess.h | 60 ----------------------------
+ arch/arm64/include/asm/cacheflush.h  | 38 ++++++++++++++++--
+ arch/arm64/kernel/entry.S            |  6 +--
+ arch/arm64/lib/clear_user.S          |  2 +-
+ arch/arm64/lib/copy_from_user.S      |  2 +-
+ arch/arm64/lib/copy_in_user.S        |  2 +-
+ arch/arm64/lib/copy_to_user.S        |  2 +-
+ arch/arm64/mm/cache.S                | 31 +++++---------
+ arch/arm64/mm/context.c              | 12 ++++++
+ arch/arm64/mm/flush.c                |  2 +-
+ arch/arm64/xen/hypercall.S           | 19 +--------
+ arch/xtensa/kernel/coprocessor.S     |  1 -
+ include/xen/arm/hypercall.h          | 23 +++++++++--
+ 17 files changed, 117 insertions(+), 134 deletions(-)
+ delete mode 100644 arch/arm64/include/asm/asm-uaccess.h
+
 -- 
-2.22.0
+2.24.0
 
 
 _______________________________________________
