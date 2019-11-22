@@ -2,97 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFA9E1077A3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 19:51:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0386A1077A6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 19:52:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zNIzPiA0oUzXVx55ja2+SflObHlRaQLZEisF28KUD0Q=; b=XiRUcsRq28yIrc
-	Cem5AmNUunRAdD7VCIzRs58tXFZ3YlghLN6t+h5f1eNV3kirZKuU+3eCrxH3sC2jC1rzhha+3N0A1
-	IdSIWEsRg49sJzRu68YLJ3CmJK/bp11cQbohNKXvCow4ENgyXtRO7olnT4EetPSxbRzRJyuCGcJBj
-	IW/8Z5ks4wgxKNgaZNw9qCC5dz5+MdCDR8kI6/ZZeLoytQ2XStujW0KJYGmC0Fk9CQJOvkY3ZJKk/
-	lcurlUUNHDp6Vf9IM3a1CoIklUu7k9lpBFuAg555iPIYpapiBTNi14CcMZ5dgUSA1Gie02k/2MfDW
-	u0U2WRCFndhEquVJeXuw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=YkjujhhX00f8/JNR4ehv2Fj3eI9SGWbqlvcMF99vNlM=; b=XzV
+	Mj9kGNa4GjviVjACHK5iuE5lNMGZLdoNhx4gi9UckCb5aJrYPxZV0CBRibmK/5dJ2hhFlnoKD0NJD
+	ZWewee0dZUaGerYd27sQFPBmeJTUTu50W3ZvYiWgfoJDjxCJTY4WK+UbwlwB/gNWZQhoHCQM+BoZo
+	owuz+I5zU3I9J2pdidT3QdI/qYchZuJW0Mr1NRTo2/XA0yj+xlJ6E3WkxybB0zlQerpNXsb0avkeG
+	Ipn4gyth9PhDuZJCkuFTuVLmfESHR/D75u2RbE4zznXVK3GqNUKYnIw+vNiJd4O454GZ6ZjYaX1zG
+	1G2xgLa25BLTc2ZJPfH3eW3D8FqMKXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYE1s-0001og-66; Fri, 22 Nov 2019 18:51:40 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYE1f-0001oL-Nq
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 18:51:29 +0000
-Received: by mail-wr1-x442.google.com with SMTP id n1so9823114wra.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 Nov 2019 10:51:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=8mSuVX4hASa55WDbals18vRIEbBf8ApxrHv/SP6wNaA=;
- b=cC79HvL8jGPspw70GaXfCgx5zGcHJv0Et7z5fanCNI3/14zu3BPlP3YMJ4bq3LG3Wj
- F2TZxaHbM6qhMP5k00/s+T5ILRDr+NOWKTvQ1oXV6fehJUY+xpWU1VE+6P+OYCWg/Cwj
- LtUmUhkTW7M5MkObNHiJiOO6A7RXL/zEXLIZAqInnB4NW5QqVOpdyjuAkZt2yRPqA2d6
- 4TzLbweH0CHSCqWXK3bRhyXylK9fTZwlmkPYyZcAE1tEjNpftNta6li4h7HHZUL4toOM
- wdlDRrKxSbM+hA4lBDRCbEhBOJVoeutTcjtQlmpv9YlRGonTWofJMx2+TqpzBdVejjNr
- 0JjA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=8mSuVX4hASa55WDbals18vRIEbBf8ApxrHv/SP6wNaA=;
- b=C5SLEALaewrqkE7LWbli/uIUd3payxyldd9SaQUpItYT7eH/eqmeNRvty396vRZ9fU
- 7pGqmXHlvzD0eI9KKuO/y1xDF3MSFWCXP8nH9SSWFYroHcacVJPlBMhewQ9TauH7NpZD
- ny6eAULi90WH4E126NlrC8ASi7YU5jTXWP9o69XS48WZBl8t+g7CVTi3caa8cmTPidT2
- rb4SEq3FNJ46GJ+265zdSqfKhLNXXwGHOFbmpj2uNRGFS0xfSg6nixhK7871PsO+8vBb
- dUoVf5pqQEnUdKUuhlKrdOvP5K6UGohBT4qOH6I8D9G1s58/NI4hrmd+dO+yoAFJxd0P
- luCA==
-X-Gm-Message-State: APjAAAWXCJW33qlC+Dt1chj6K02rGnGLQCT61kKXhskdKskfs3ntFAyN
- X6VvLzi+fMKjAx2qxD+ZAxGRbfkBin5Ffw==
-X-Google-Smtp-Source: APXvYqzgw1GIPrLX9J0X6hXpjn9D7nNyE4EvPF1Gw8LU3auQ7jlVi0bRK0n622UStKWY3BDL+rxt2w==
-X-Received: by 2002:a5d:5191:: with SMTP id k17mr18887684wrv.350.1574448685796; 
- Fri, 22 Nov 2019 10:51:25 -0800 (PST)
-Received: from [10.0.0.120] (host-87-242-235-70.ppp.onetel.net.uk.
- [87.242.235.70])
- by smtp.gmail.com with ESMTPSA id g184sm4829517wma.8.2019.11.22.10.51.24
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 22 Nov 2019 10:51:25 -0800 (PST)
-Subject: Re: [PATCH v2 14/14] lkdtm: arm64: test kernel pointer authentication
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>
-References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
- <1574166746-27197-15-git-send-email-amit.kachhap@arm.com>
- <CAKv+Gu9wYhbtWDpXPBox-Yr-RD2P9dF8O+PRub0ECh=My_OfOg@mail.gmail.com>
-From: Richard Henderson <richard.henderson@linaro.org>
-Openpgp: preference=signencrypt
-Message-ID: <6a30eb05-9100-b92a-62d3-43e5c950de19@linaro.org>
-Date: Fri, 22 Nov 2019 18:51:22 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <CAKv+Gu9wYhbtWDpXPBox-Yr-RD2P9dF8O+PRub0ECh=My_OfOg@mail.gmail.com>
-Content-Language: en-US
+	id 1iYE2K-0002Eo-71; Fri, 22 Nov 2019 18:52:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iYE28-0002Dx-V9
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 18:52:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7E7D0328;
+ Fri, 22 Nov 2019 10:51:54 -0800 (PST)
+Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.44])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 497DD3F6C4;
+ Fri, 22 Nov 2019 10:51:53 -0800 (PST)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Marc Zyngier <maz@kernel.org>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: [PATCH v2] kvm: arm: VGIC: Fix interrupt group enablement
+Date: Fri, 22 Nov 2019 18:51:42 +0000
+Message-Id: <20191122185142.65477-1-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_105127_989197_BEEDFA57 
-X-CRM114-Status: GOOD (  18.94  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191122_105157_092370_54BB6C4C 
+X-CRM114-Status: GOOD (  27.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,95 +58,519 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ kvm@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/21/19 5:39 PM, Ard Biesheuvel wrote:
-> On Tue, 19 Nov 2019 at 13:33, Amit Daniel Kachhap <amit.kachhap@arm.com> wrote:
->>
->> This test is specific for arm64. When in-kernel Pointer Authentication
->> config is enabled, the return address stored in the stack is signed. This
->> feature helps in ROP kind of attack. If the matching signature is corrupted
->> then this will fail in authentication and lead to abort.
->>
->> e.g.
->> echo CORRUPT_PAC > /sys/kernel/debug/provoke-crash/DIRECT
->>
->> [   13.118166] lkdtm: Performing direct entry CORRUPT_PAC
->> [   13.118298] lkdtm: Clearing PAC from the return address
->> [   13.118466] Unable to handle kernel paging request at virtual address bfff8000108648ec
->> [   13.118626] Mem abort info:
->> [   13.118666]   ESR = 0x86000004
->> [   13.118866]   EC = 0x21: IABT (current EL), IL = 32 bits
->> [   13.118966]   SET = 0, FnV = 0
->> [   13.119117]   EA = 0, S1PTW = 0
->>
->> Cc: Kees Cook <keescook@chromium.org>
->> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
->> ---
->> Change since last version:
->>  * New patch
->>
->>  drivers/misc/lkdtm/bugs.c  | 17 +++++++++++++++++
->>  drivers/misc/lkdtm/core.c  |  1 +
->>  drivers/misc/lkdtm/lkdtm.h |  1 +
->>  3 files changed, 19 insertions(+)
->>
->> diff --git a/drivers/misc/lkdtm/bugs.c b/drivers/misc/lkdtm/bugs.c
->> index 7284a22..c9bb493 100644
->> --- a/drivers/misc/lkdtm/bugs.c
->> +++ b/drivers/misc/lkdtm/bugs.c
->> @@ -337,3 +337,20 @@ void lkdtm_UNSET_SMEP(void)
->>         pr_err("FAIL: this test is x86_64-only\n");
->>  #endif
->>  }
->> +
->> +void lkdtm_CORRUPT_PAC(void)
->> +{
->> +#if IS_ENABLED(CONFIG_ARM64_PTR_AUTH)
->> +       u64 ret;
->> +
->> +       pr_info("Clearing PAC from the return address\n");
->> +       /*
->> +        * __builtin_return_address masks the PAC bits of return
->> +        * address, so set the same again.
->> +        */
->> +       ret = (u64)__builtin_return_address(0);
->> +       asm volatile("str %0, [sp, 8]" : : "r" (ret) : "memory");
-> 
-> This looks a bit fragile to me. You are making assumptions about the
-> location of the return address in the stack frame which are not
-> guaranteed to hold.
+Hi Marc,
 
-Indeed.
+this is still a bit rough, and only briefly tested, but I wanted to
+hear your opinion on the general approach (using a second list in
+addition to the ap_list). Some ugly bits come from the fact that the
+two lists are not that different, so we have to consider both of them
+at times. This is what I wanted to avoid with just one list that gets
+filtered on the fly.
+Or I am just stupid and don't see how it can be done properly ;-)
 
-> Couldn't you do this test simply by changing the key?
+Thanks, Andre
 
-That, at least, means you don't have to know the stack frame layout.  However,
-there's a chance (1/32767, I think, for the 48-bit vma case w/o TBI) that
-changing the key will result in the same hash.
+---------------
+The GIC specification describes support for two distinct interrupt
+groups, which can be enabled independently from each other. At the
+moment our VGIC emulation does not really honour this, so using
+Group0 interrupts with the GICv3 emulation does not work as expected
+at the moment.
 
-Even when the stack frame happens to be layed out as Amit guesses, the result
-is akin to changing the key, such that hash(key, salt, ptr) == 0.
+Fixing this unfortunately requires more than just to provide storage for
+a second bit: So far we were treating the "groupX enable bit" as a
+global distributor enable bit, preventing interrupts from being entered
+into the list registers at all if the whole thing was disabled.
+Now with two separate bits we might need to block one IRQ, while needing
+to forward another one, so this neat trick does not work anymore.
 
-While testing this in qemu, I iterate until I find a <key, salt, ptr> tuple
-that definitely produces a different hash.  Usually this loop iterates just
-once, but the occasional failures that I got without iterating were annoying
-(with TBI enabled in userspace, the chance drops to 1/127, so much more frequent).
+We solve this by "parking" interrupts that belong to a disabled group
+into a separate list, instead of adding them to our ap_list directly.
+This way they don't interfere with their group-enabled siblings, and
+we also can quickly inject them once their group gets enabled.
 
+For adding pending, but group-disabled interrupts, we slightly tweak our
+oracle to ignore the group-enable status completely. Then, in
+vgic_queue_irq_unlock(), we add it to one of the lists, depending on its
+group status.
 
-r~
+When a group status changes, we just scan the "disabled" list for each
+VCPU, and move the IRQs, if needed. Since moving interrupts between lists
+is a minefield in our locking-rich environment, we rely on our trusted
+vgic_prune_ap_list() buddy to do the heavy lifting: It does almost the
+right thing already, but just learns how to move an interrupt that is
+not on the right list to the other one.
+
+There is a corresponding kvm-unit-test series to test the FIQ
+functionality, since Linux itself won't use this.
+This has been tested with Linux (for regressions) and with
+kvm-unit-tests, on a GICv2/arm, GICv2/arm64 and GICv3/arm64 machine.
+
+The kvm-unit-tests patches can be found here:
+https://lists.cs.columbia.edu/pipermail/kvmarm/2019-November/037853.html
+or in the following repo:
+https://github.com/Andre-ARM/kvm-unit-tests/commits/gic-group0
+
+This series here can also be found at:
+git://linux-arm.org/linux-ap.git
+
+Based on kvmarm/next, commit cd7056ae34af.
+
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+
+diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
+index 9d53f545a3d5..8812b9eec13a 100644
+--- a/include/kvm/arm_vgic.h
++++ b/include/kvm/arm_vgic.h
+@@ -29,6 +29,10 @@
+ #define VGIC_MIN_LPI		8192
+ #define KVM_IRQCHIP_NUM_PINS	(1020 - 32)
+ 
++#define GICD_EnableGrp0		(1U << 0)
++#define GICD_EnableGrp1		(1U << 1)
++#define GICD_EnableGrpMask	(GICD_EnableGrp0 | GICD_EnableGrp1)
++
+ #define irq_is_ppi(irq) ((irq) >= VGIC_NR_SGIS && (irq) < VGIC_NR_PRIVATE_IRQS)
+ #define irq_is_spi(irq) ((irq) >= VGIC_NR_PRIVATE_IRQS && \
+ 			 (irq) <= VGIC_MAX_SPI)
+@@ -227,8 +231,8 @@ struct vgic_dist {
+ 		struct list_head rd_regions;
+ 	};
+ 
+-	/* distributor enabled */
+-	bool			enabled;
++	/* bitmask to hold the two group enable bits on the distributor level */
++	u8			groups_enable;
+ 
+ 	struct vgic_irq		*spis;
+ 
+@@ -308,6 +312,12 @@ struct vgic_cpu {
+ 	 * VCPU.
+ 	 */
+ 	struct list_head ap_list_head;
++	/*
++	 * List of IRQs that could be injected to this VCPU, but have their
++	 * group disabled. We park them here to easily inject all of them
++	 * at once when the group gets enabled.
++	 */
++	struct list_head disabled_grp_list_head;
+ 
+ 	/*
+ 	 * Members below are used with GICv3 emulation only and represent
+diff --git a/virt/kvm/arm/vgic/vgic-debug.c b/virt/kvm/arm/vgic/vgic-debug.c
+index cc12fe9b2df3..8845630fa3e4 100644
+--- a/virt/kvm/arm/vgic/vgic-debug.c
++++ b/virt/kvm/arm/vgic/vgic-debug.c
+@@ -150,7 +150,10 @@ static void print_dist_state(struct seq_file *s, struct vgic_dist *dist)
+ 	seq_printf(s, "nr_spis:\t%d\n", dist->nr_spis);
+ 	if (v3)
+ 		seq_printf(s, "nr_lpis:\t%d\n", dist->lpi_list_count);
+-	seq_printf(s, "enabled:\t%d\n", dist->enabled);
++	seq_printf(s, "group 0 enabled:\t%d\n",
++		   !!(dist->groups_enable & GICD_EnableGrp0));
++	seq_printf(s, "group 1 enabled:\t%d\n",
++		   !!(dist->groups_enable & GICD_EnableGrp1));
+ 	seq_printf(s, "\n");
+ 
+ 	seq_printf(s, "P=pending_latch, L=line_level, A=active\n");
+diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
+index b3c5de48064c..58d40c850e23 100644
+--- a/virt/kvm/arm/vgic/vgic-init.c
++++ b/virt/kvm/arm/vgic/vgic-init.c
+@@ -202,6 +202,7 @@ int kvm_vgic_vcpu_init(struct kvm_vcpu *vcpu)
+ 	vgic_cpu->rd_iodev.base_addr = VGIC_ADDR_UNDEF;
+ 
+ 	INIT_LIST_HEAD(&vgic_cpu->ap_list_head);
++	INIT_LIST_HEAD(&vgic_cpu->disabled_grp_list_head);
+ 	raw_spin_lock_init(&vgic_cpu->ap_list_lock);
+ 	atomic_set(&vgic_cpu->vgic_v3.its_vpe.vlpi_count, 0);
+ 
+@@ -359,6 +360,7 @@ void kvm_vgic_vcpu_destroy(struct kvm_vcpu *vcpu)
+ 	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
+ 
+ 	INIT_LIST_HEAD(&vgic_cpu->ap_list_head);
++	INIT_LIST_HEAD(&vgic_cpu->disabled_grp_list_head);
+ }
+ 
+ /* To be called with kvm->lock held */
+diff --git a/virt/kvm/arm/vgic/vgic-mmio-v2.c b/virt/kvm/arm/vgic/vgic-mmio-v2.c
+index 5945f062d749..8b6fece281f2 100644
+--- a/virt/kvm/arm/vgic/vgic-mmio-v2.c
++++ b/virt/kvm/arm/vgic/vgic-mmio-v2.c
+@@ -26,11 +26,14 @@ static unsigned long vgic_mmio_read_v2_misc(struct kvm_vcpu *vcpu,
+ 					    gpa_t addr, unsigned int len)
+ {
+ 	struct vgic_dist *vgic = &vcpu->kvm->arch.vgic;
+-	u32 value;
++	u32 value = 0;
+ 
+ 	switch (addr & 0x0c) {
+ 	case GIC_DIST_CTRL:
+-		value = vgic->enabled ? GICD_ENABLE : 0;
++		if (vgic->groups_enable & GICD_EnableGrp0)
++			value |= GICD_EnableGrp0;
++		if (vgic->groups_enable & GICD_EnableGrp1)
++			value |= GICD_EnableGrp1;
+ 		break;
+ 	case GIC_DIST_CTR:
+ 		value = vgic->nr_spis + VGIC_NR_PRIVATE_IRQS;
+@@ -42,8 +45,6 @@ static unsigned long vgic_mmio_read_v2_misc(struct kvm_vcpu *vcpu,
+ 			(vgic->implementation_rev << GICD_IIDR_REVISION_SHIFT) |
+ 			(IMPLEMENTER_ARM << GICD_IIDR_IMPLEMENTER_SHIFT);
+ 		break;
+-	default:
+-		return 0;
+ 	}
+ 
+ 	return value;
+@@ -53,14 +54,16 @@ static void vgic_mmio_write_v2_misc(struct kvm_vcpu *vcpu,
+ 				    gpa_t addr, unsigned int len,
+ 				    unsigned long val)
+ {
+-	struct vgic_dist *dist = &vcpu->kvm->arch.vgic;
+-	bool was_enabled = dist->enabled;
++	struct kvm *kvm = vcpu->kvm;
++	struct vgic_dist *vgic = &kvm->arch.vgic;
+ 
+ 	switch (addr & 0x0c) {
+ 	case GIC_DIST_CTRL:
+-		dist->enabled = val & GICD_ENABLE;
+-		if (!was_enabled && dist->enabled)
+-			vgic_kick_vcpus(vcpu->kvm);
++		vgic->groups_enable = val & GICD_EnableGrpMask;
++
++		/* Check which IRQs need to be forwarded or blocked. */
++		vgic_update_group_enable(kvm);
++
+ 		break;
+ 	case GIC_DIST_CTR:
+ 	case GIC_DIST_IIDR:
+diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+index 7dfd15dbb308..d7bb95e8b248 100644
+--- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
++++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+@@ -66,7 +66,9 @@ static unsigned long vgic_mmio_read_v3_misc(struct kvm_vcpu *vcpu,
+ 
+ 	switch (addr & 0x0c) {
+ 	case GICD_CTLR:
+-		if (vgic->enabled)
++		if (vgic->groups_enable & GICD_EnableGrp0)
++			value |= GICD_CTLR_ENABLE_SS_G0;
++                if (vgic->groups_enable & GICD_EnableGrp1)
+ 			value |= GICD_CTLR_ENABLE_SS_G1;
+ 		value |= GICD_CTLR_ARE_NS | GICD_CTLR_DS;
+ 		break;
+@@ -85,8 +87,6 @@ static unsigned long vgic_mmio_read_v3_misc(struct kvm_vcpu *vcpu,
+ 			(vgic->implementation_rev << GICD_IIDR_REVISION_SHIFT) |
+ 			(IMPLEMENTER_ARM << GICD_IIDR_IMPLEMENTER_SHIFT);
+ 		break;
+-	default:
+-		return 0;
+ 	}
+ 
+ 	return value;
+@@ -96,15 +96,16 @@ static void vgic_mmio_write_v3_misc(struct kvm_vcpu *vcpu,
+ 				    gpa_t addr, unsigned int len,
+ 				    unsigned long val)
+ {
+-	struct vgic_dist *dist = &vcpu->kvm->arch.vgic;
+-	bool was_enabled = dist->enabled;
++	struct kvm *kvm = vcpu->kvm;
++	struct vgic_dist *vgic = &kvm->arch.vgic;
+ 
+ 	switch (addr & 0x0c) {
+ 	case GICD_CTLR:
+-		dist->enabled = val & GICD_CTLR_ENABLE_SS_G1;
++		vgic->groups_enable = val & GICD_EnableGrpMask;
++
++		/* Check which IRQs need to be forwarded or blocked. */
++		vgic_update_group_enable(kvm);
+ 
+-		if (!was_enabled && dist->enabled)
+-			vgic_kick_vcpus(vcpu->kvm);
+ 		break;
+ 	case GICD_TYPER:
+ 	case GICD_IIDR:
+diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
+index 99b02ca730a8..91d765e46cae 100644
+--- a/virt/kvm/arm/vgic/vgic.c
++++ b/virt/kvm/arm/vgic/vgic.c
+@@ -148,6 +148,14 @@ void vgic_put_irq(struct kvm *kvm, struct vgic_irq *irq)
+ 	raw_spin_unlock_irqrestore(&dist->lpi_list_lock, flags);
+ }
+ 
++static void vgic_remove_irq_from_list(struct vgic_irq *irq)
++{
++	raw_spin_lock(&irq->irq_lock);
++	list_del(&irq->ap_list);
++	irq->vcpu = NULL;
++	raw_spin_unlock(&irq->irq_lock);
++}
++
+ void vgic_flush_pending_lpis(struct kvm_vcpu *vcpu)
+ {
+ 	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
+@@ -158,10 +166,15 @@ void vgic_flush_pending_lpis(struct kvm_vcpu *vcpu)
+ 
+ 	list_for_each_entry_safe(irq, tmp, &vgic_cpu->ap_list_head, ap_list) {
+ 		if (irq->intid >= VGIC_MIN_LPI) {
+-			raw_spin_lock(&irq->irq_lock);
+-			list_del(&irq->ap_list);
+-			irq->vcpu = NULL;
+-			raw_spin_unlock(&irq->irq_lock);
++			vgic_remove_irq_from_list(irq);
++			vgic_put_irq(vcpu->kvm, irq);
++		}
++	}
++
++	list_for_each_entry_safe(irq, tmp, &vgic_cpu->disabled_grp_list_head,
++				 ap_list) {
++		if (irq->intid >= VGIC_MIN_LPI) {
++			vgic_remove_irq_from_list(irq);
+ 			vgic_put_irq(vcpu->kvm, irq);
+ 		}
+ 	}
+@@ -201,6 +214,13 @@ void vgic_irq_set_phys_active(struct vgic_irq *irq, bool active)
+ 				      active));
+ }
+ 
++static bool vgic_irq_is_grp_enabled(struct kvm *kvm, struct vgic_irq *irq)
++{
++	struct vgic_dist *dist = &kvm->arch.vgic;
++
++	return dist->groups_enable & (1U << irq->group);
++}
++
+ /**
+  * kvm_vgic_target_oracle - compute the target vcpu for an irq
+  *
+@@ -223,16 +243,11 @@ static struct kvm_vcpu *vgic_target_oracle(struct vgic_irq *irq)
+ 	/*
+ 	 * If the IRQ is not active but enabled and pending, we should direct
+ 	 * it to its configured target VCPU.
+-	 * If the distributor is disabled, pending interrupts shouldn't be
+-	 * forwarded.
++	 * The respective interrupt group could be disabled at the distributor
++	 * level, but that needs to be checked by the caller.
+ 	 */
+-	if (irq->enabled && irq_is_pending(irq)) {
+-		if (unlikely(irq->target_vcpu &&
+-			     !irq->target_vcpu->kvm->arch.vgic.enabled))
+-			return NULL;
+-
++	if (irq->enabled && irq_is_pending(irq))
+ 		return irq->target_vcpu;
+-	}
+ 
+ 	/* If neither active nor pending and enabled, then this IRQ should not
+ 	 * be queued to any VCPU.
+@@ -323,6 +338,17 @@ static bool vgic_validate_injection(struct vgic_irq *irq, bool level, void *owne
+ 	return false;
+ }
+ 
++static void vgic_irq_add_to_vcpu(struct kvm_vcpu *vcpu, struct vgic_irq *irq)
++{
++	struct kvm *kvm = vcpu->kvm;
++	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
++
++	if (vgic_irq_is_grp_enabled(kvm, irq))
++		list_add_tail(&irq->ap_list, &vgic_cpu->ap_list_head);
++	else
++		list_add_tail(&irq->ap_list, &vgic_cpu->disabled_grp_list_head);
++}
++
+ /*
+  * Check whether an IRQ needs to (and can) be queued to a VCPU's ap list.
+  * Do the queuing if necessary, taking the right locks in the right order.
+@@ -405,7 +431,7 @@ bool vgic_queue_irq_unlock(struct kvm *kvm, struct vgic_irq *irq,
+ 	 * now in the ap_list.
+ 	 */
+ 	vgic_get_irq_kref(irq);
+-	list_add_tail(&irq->ap_list, &vcpu->arch.vgic_cpu.ap_list_head);
++	vgic_irq_add_to_vcpu(vcpu, irq);
+ 	irq->vcpu = vcpu;
+ 
+ 	raw_spin_unlock(&irq->irq_lock);
+@@ -608,14 +634,18 @@ int kvm_vgic_set_owner(struct kvm_vcpu *vcpu, unsigned int intid, void *owner)
+ }
+ 
+ /**
+- * vgic_prune_ap_list - Remove non-relevant interrupts from the list
++ * vgic_prune_ap_list - Remove non-relevant interrupts from a list
+  *
+  * @vcpu: The VCPU pointer
++ * @head: The list_head to iterate over.
+  *
+- * Go over the list of "interesting" interrupts, and prune those that we
+- * won't have to consider in the near future.
++ * Go over a list of interrupts (ap_list or grp_disabled_list), and prune
++ * those that we won't have to consider in the near future, because:
++ * - they are no longer pending or enabled
++ * - their group-enabled status does not match the list
++ * - their target VCPU has changed and they need to be moved to another VCPU
+  */
+-static void vgic_prune_ap_list(struct kvm_vcpu *vcpu)
++static void vgic_prune_ap_list(struct kvm_vcpu *vcpu, struct list_head *head)
+ {
+ 	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
+ 	struct vgic_irq *irq, *tmp;
+@@ -625,7 +655,7 @@ static void vgic_prune_ap_list(struct kvm_vcpu *vcpu)
+ retry:
+ 	raw_spin_lock(&vgic_cpu->ap_list_lock);
+ 
+-	list_for_each_entry_safe(irq, tmp, &vgic_cpu->ap_list_head, ap_list) {
++	list_for_each_entry_safe(irq, tmp, head, ap_list) {
+ 		struct kvm_vcpu *target_vcpu, *vcpuA, *vcpuB;
+ 		bool target_vcpu_needs_kick = false;
+ 
+@@ -656,7 +686,25 @@ static void vgic_prune_ap_list(struct kvm_vcpu *vcpu)
+ 		}
+ 
+ 		if (target_vcpu == vcpu) {
+-			/* We're on the right CPU */
++			bool grp_en = vgic_irq_is_grp_enabled(vcpu->kvm, irq);
++
++			/*
++			 * We're on the right CPU.
++			 * Check now that the group-enabled status matches
++			 * the list we are looking at, and move the IRQ
++			 * to the respective other list if it doesn't.
++			 */
++			if (head == &vgic_cpu->ap_list_head && !grp_en) {
++				list_del(&irq->ap_list);
++				list_add_tail(&irq->ap_list,
++					      &vgic_cpu->disabled_grp_list_head);
++			}
++			if (head == &vgic_cpu->disabled_grp_list_head &&
++			    grp_en) {
++				list_del(&irq->ap_list);
++				list_add_tail(&irq->ap_list,
++					      &vgic_cpu->ap_list_head);
++			}
+ 			raw_spin_unlock(&irq->irq_lock);
+ 			continue;
+ 		}
+@@ -693,11 +741,9 @@ static void vgic_prune_ap_list(struct kvm_vcpu *vcpu)
+ 		 * changed, so we restart from the beginning.
+ 		 */
+ 		if (target_vcpu == vgic_target_oracle(irq)) {
+-			struct vgic_cpu *new_cpu = &target_vcpu->arch.vgic_cpu;
+-
+ 			list_del(&irq->ap_list);
+ 			irq->vcpu = target_vcpu;
+-			list_add_tail(&irq->ap_list, &new_cpu->ap_list_head);
++			vgic_irq_add_to_vcpu(target_vcpu, irq);
+ 			target_vcpu_needs_kick = true;
+ 		}
+ 
+@@ -716,6 +762,41 @@ static void vgic_prune_ap_list(struct kvm_vcpu *vcpu)
+ 	raw_spin_unlock(&vgic_cpu->ap_list_lock);
+ }
+ 
++/*
++ * Called when the group enable status at the distributor level could
++ * have changed:
++ * For each VCPU, let vgic_prune_ap_list clean up our grp_disabled list,
++ * which also moves now group-enabled IRQs to the actual ap_list.
++ */
++void vgic_update_group_enable(struct kvm *kvm)
++{
++	struct kvm_vcpu *vcpu;
++	int cpuid;
++
++	kvm_for_each_vcpu(cpuid, vcpu, kvm) {
++		struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
++
++		/*
++		 * vgic_prune_ap_list does the heavy lifting for us:
++		 * - removing any no longer pending or enabled IRQs
++		 * - moving IRQs which got their target VCPU changed
++		 * - moving now group-enabled IRQs to the ap_list
++		 * Note: vgic_prune_ap_list() is called during guest exit,
++		 * where IRQs are disabled. Since it relies on this, we
++		 * have to do the same here.
++		 */
++		local_irq_disable();
++		vgic_prune_ap_list(vcpu, &vgic_cpu->disabled_grp_list_head);
++		local_irq_enable();
++
++		/* Now check if there are any new IRQs to consider. */
++		if (kvm_vgic_vcpu_pending_irq(vcpu)) {
++			kvm_make_request(KVM_REQ_IRQ_PENDING, vcpu);
++			kvm_vcpu_kick(vcpu);
++		}
++	}
++}
++
+ static inline void vgic_fold_lr_state(struct kvm_vcpu *vcpu)
+ {
+ 	if (kvm_vgic_global_state.type == VGIC_V2)
+@@ -810,7 +891,13 @@ static void vgic_flush_lr_state(struct kvm_vcpu *vcpu)
+ 			break;
+ 		}
+ 
+-		if (likely(vgic_target_oracle(irq) == vcpu)) {
++		/*
++		 * It the IRQ is still pending on this VCPU, and its
++		 * configured interrupt group is enabled,
++		 * populate a list register with its data.
++		 */
++		if (likely(vgic_target_oracle(irq) == vcpu) &&
++		    vgic_irq_is_grp_enabled(vcpu->kvm, irq)) {
+ 			vgic_populate_lr(vcpu, irq, count++);
+ 
+ 			if (irq->source)
+@@ -858,7 +945,7 @@ void kvm_vgic_sync_hwstate(struct kvm_vcpu *vcpu)
+ 	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
+ 
+ 	/* An empty ap_list_head implies used_lrs == 0 */
+-	if (list_empty(&vcpu->arch.vgic_cpu.ap_list_head))
++	if (list_empty(&vgic_cpu->ap_list_head))
+ 		return;
+ 
+ 	if (can_access_vgic_from_kernel())
+@@ -866,7 +953,7 @@ void kvm_vgic_sync_hwstate(struct kvm_vcpu *vcpu)
+ 
+ 	if (vgic_cpu->used_lrs)
+ 		vgic_fold_lr_state(vcpu);
+-	vgic_prune_ap_list(vcpu);
++	vgic_prune_ap_list(vcpu, &vgic_cpu->ap_list_head);
+ }
+ 
+ static inline void vgic_restore_state(struct kvm_vcpu *vcpu)
+@@ -949,7 +1036,7 @@ int kvm_vgic_vcpu_pending_irq(struct kvm_vcpu *vcpu)
+ 	unsigned long flags;
+ 	struct vgic_vmcr vmcr;
+ 
+-	if (!vcpu->kvm->arch.vgic.enabled)
++	if (!vcpu->kvm->arch.vgic.groups_enable)
+ 		return false;
+ 
+ 	if (vcpu->arch.vgic_cpu.vgic_v3.its_vpe.pending_last)
+diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
+index c7fefd6b1c80..6c3d594de665 100644
+--- a/virt/kvm/arm/vgic/vgic.h
++++ b/virt/kvm/arm/vgic/vgic.h
+@@ -169,6 +169,8 @@ void vgic_irq_set_phys_active(struct vgic_irq *irq, bool active);
+ bool vgic_queue_irq_unlock(struct kvm *kvm, struct vgic_irq *irq,
+ 			   unsigned long flags);
+ void vgic_kick_vcpus(struct kvm *kvm);
++void vgic_update_group_enable(struct kvm *kvm);
++
+ 
+ int vgic_check_ioaddr(struct kvm *kvm, phys_addr_t *ioaddr,
+ 		      phys_addr_t addr, phys_addr_t alignment);
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
