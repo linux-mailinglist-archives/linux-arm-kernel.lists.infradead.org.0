@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C92D2107A27
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 22:46:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50CA2107A28
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 22:46:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=PT/aDt2M5NIDKypy6cfOTzhcWEMFJiYeoFsV20Ea+fE=; b=W4my11omU6I0nS5V7H3+hZt4wL
-	KXltQ2erqo/54ikETuAG6JnRQZJjor9dS9tTuDZQvcil7iPsxhBwDOo3CPOpyqh+Sp+z5aPXVEPtj
-	2IGJHOU7TNzPNqw9Q70DAIGMrIhyXFfM7lbMIGlA/j6SKwr7DvgggkKE4Dvw7HXJRPYvx1mQTDBbD
-	8IzTxJCMeCyuy2/JwpYWfd8RLBNnwrieVyJk1Ao7ohAuu7S2DRrMG+rtrjdA3eOAWeIYkM6zRJUjW
-	aiUrpA1LkBDqvb10L6/eMksvwzAZlzXXZDJ5SFH2s6N7z0ZPN59Ie5mEC8LZn/V8BaboMDjgDyisC
-	NpURwwdA==;
+	bh=WpRxV212TdBwKMBCDvsxB0VMK3J9MmE5V/zsS8JHkek=; b=NRP6UGiq+1WZggBnW8sAKo1Y7X
+	PisisDZddFvJOmUykeRiXWfdWDeh/N4+uTdOHoMmQLuQlxu9LhOsVkOvQBlVYEg+eElWkW8cBuYzF
+	+sEZkyN1SIkAQDsPP2C3RmYs2E1DcI/SCz4L/4tW4XGUA/XsEasWNPNRdtzTc7U9rxBSSd+K2CapA
+	BxNJb1lzUSyQLoACHm20WU/cGO8CTx3mKn/HFBh349c/IaogeKLIw493Xy9AbilV3xK1tPmgwdjw9
+	K32V65HJPj9nmpWLOBE+rOx/MSwAIje65N+/vOjAF2Iriis/+ML1ClScR4DNpFNRM0iqtX6Ps3PfB
+	wUgtxenA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYGkl-0004bX-1X; Fri, 22 Nov 2019 21:46:11 +0000
+	id 1iYGkw-0004oZ-Qj; Fri, 22 Nov 2019 21:46:22 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYGk5-0004CF-4O
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 21:45:31 +0000
+ id 1iYGk6-0004Ch-A2
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 21:45:32 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E300D1A030F;
- Fri, 22 Nov 2019 22:45:27 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 16D1E1A0724;
+ Fri, 22 Nov 2019 22:45:29 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D52131A0724;
- Fri, 22 Nov 2019 22:45:27 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 09B571A02E5;
+ Fri, 22 Nov 2019 22:45:29 +0100 (CET)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id BE4D520465;
- Fri, 22 Nov 2019 22:45:26 +0100 (CET)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id E6B5820465;
+ Fri, 22 Nov 2019 22:45:27 +0100 (CET)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Stephen Boyd <sboyd@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v7 2/5] clk: imx: Mark dram pll on 8mm and 8mn with
- CLK_GET_RATE_NOCACHE
-Date: Fri, 22 Nov 2019 23:45:01 +0200
-Message-Id: <9d986ef7a3cb379cea59616ad18e96e3245cbaba.1574458460.git.leonard.crestez@nxp.com>
+Subject: [PATCH v7 3/5] dt-bindings: memory: Add bindings for imx8m ddr
+ controller
+Date: Fri, 22 Nov 2019 23:45:02 +0200
+Message-Id: <5b2f8980c471e1a8a9a3307903829fe015fd4b6c.1574458460.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1574458460.git.leonard.crestez@nxp.com>
 References: <cover.1574458460.git.leonard.crestez@nxp.com>
@@ -49,8 +49,8 @@ In-Reply-To: <cover.1574458460.git.leonard.crestez@nxp.com>
 References: <cover.1574458460.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_134529_448165_A887CCAA 
-X-CRM114-Status: GOOD (  11.66  )
+X-CRM114-CacheID: sfid-20191122_134530_650243_00F6F17F 
+X-CRM114-Status: GOOD (  10.86  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -93,97 +93,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DRAM frequency switches are executed in firmware and can change the
-configuration of the DRAM PLL outside linux. Mark these CLKs with
-CLK_GET_RATE_NOCACHE so we always read back the PLL config registers and
-recalculate rates.
-
-In current DRAM frequency tables on 8mm/8mn only the maximum frequency
-uses the PLL so it's always configured in the same way. However reading
-back the PLL configuration is the correct behavior and allows additional
-setpoints in the future.
+Add devicetree bindings for the i.MX DDR Controller on imx8m series
+chips. It supports dynamic frequency switching between multiple data
+rates and this is exposed to Linux via the devfreq subsystem.
 
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+Acked-by: Chanwoo Choi <cw00.choi@samsung.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- drivers/clk/imx/clk-imx8mm.c  | 2 +-
- drivers/clk/imx/clk-imx8mn.c  | 2 +-
- drivers/clk/imx/clk-pll14xx.c | 7 +++++++
- drivers/clk/imx/clk.h         | 1 +
- 4 files changed, 10 insertions(+), 2 deletions(-)
+ .../memory-controllers/fsl/imx8m-ddrc.yaml    | 72 +++++++++++++++++++
+ 1 file changed, 72 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
 
-diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
-index 1f43e8f6b362..d5e767e399db 100644
---- a/drivers/clk/imx/clk-imx8mm.c
-+++ b/drivers/clk/imx/clk-imx8mm.c
-@@ -326,11 +326,11 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
- 	clks[IMX8MM_SYS_PLL3_REF_SEL] = imx_clk_mux("sys_pll3_ref_sel", base + 0x114, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
- 
- 	clks[IMX8MM_AUDIO_PLL1] = imx_clk_pll14xx("audio_pll1", "audio_pll1_ref_sel", base, &imx_1443x_pll);
- 	clks[IMX8MM_AUDIO_PLL2] = imx_clk_pll14xx("audio_pll2", "audio_pll2_ref_sel", base + 0x14, &imx_1443x_pll);
- 	clks[IMX8MM_VIDEO_PLL1] = imx_clk_pll14xx("video_pll1", "video_pll1_ref_sel", base + 0x28, &imx_1443x_pll);
--	clks[IMX8MM_DRAM_PLL] = imx_clk_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_pll);
-+	clks[IMX8MM_DRAM_PLL] = imx_clk_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_dram_pll);
- 	clks[IMX8MM_GPU_PLL] = imx_clk_pll14xx("gpu_pll", "gpu_pll_ref_sel", base + 0x64, &imx_1416x_pll);
- 	clks[IMX8MM_VPU_PLL] = imx_clk_pll14xx("vpu_pll", "vpu_pll_ref_sel", base + 0x74, &imx_1416x_pll);
- 	clks[IMX8MM_ARM_PLL] = imx_clk_pll14xx("arm_pll", "arm_pll_ref_sel", base + 0x84, &imx_1416x_pll);
- 	clks[IMX8MM_SYS_PLL1] = imx_clk_fixed("sys_pll1", 800000000);
- 	clks[IMX8MM_SYS_PLL2] = imx_clk_fixed("sys_pll2", 1000000000);
-diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
-index 49a05c5576fe..b0e07784defb 100644
---- a/drivers/clk/imx/clk-imx8mn.c
-+++ b/drivers/clk/imx/clk-imx8mn.c
-@@ -323,11 +323,11 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
- 	clks[IMX8MN_SYS_PLL3_REF_SEL] = imx_clk_mux("sys_pll3_ref_sel", base + 0x114, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
- 
- 	clks[IMX8MN_AUDIO_PLL1] = imx_clk_pll14xx("audio_pll1", "audio_pll1_ref_sel", base, &imx_1443x_pll);
- 	clks[IMX8MN_AUDIO_PLL2] = imx_clk_pll14xx("audio_pll2", "audio_pll2_ref_sel", base + 0x14, &imx_1443x_pll);
- 	clks[IMX8MN_VIDEO_PLL1] = imx_clk_pll14xx("video_pll1", "video_pll1_ref_sel", base + 0x28, &imx_1443x_pll);
--	clks[IMX8MN_DRAM_PLL] = imx_clk_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_pll);
-+	clks[IMX8MN_DRAM_PLL] = imx_clk_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_dram_pll);
- 	clks[IMX8MN_GPU_PLL] = imx_clk_pll14xx("gpu_pll", "gpu_pll_ref_sel", base + 0x64, &imx_1416x_pll);
- 	clks[IMX8MN_VPU_PLL] = imx_clk_pll14xx("vpu_pll", "vpu_pll_ref_sel", base + 0x74, &imx_1416x_pll);
- 	clks[IMX8MN_ARM_PLL] = imx_clk_pll14xx("arm_pll", "arm_pll_ref_sel", base + 0x84, &imx_1416x_pll);
- 	clks[IMX8MN_SYS_PLL1] = imx_clk_fixed("sys_pll1", 800000000);
- 	clks[IMX8MN_SYS_PLL2] = imx_clk_fixed("sys_pll2", 1000000000);
-diff --git a/drivers/clk/imx/clk-pll14xx.c b/drivers/clk/imx/clk-pll14xx.c
-index 5c458199060a..a6d31a7262ef 100644
---- a/drivers/clk/imx/clk-pll14xx.c
-+++ b/drivers/clk/imx/clk-pll14xx.c
-@@ -65,10 +65,17 @@ struct imx_pll14xx_clk imx_1443x_pll = {
- 	.type = PLL_1443X,
- 	.rate_table = imx_pll1443x_tbl,
- 	.rate_count = ARRAY_SIZE(imx_pll1443x_tbl),
- };
- 
-+struct imx_pll14xx_clk imx_1443x_dram_pll = {
-+	.type = PLL_1443X,
-+	.rate_table = imx_pll1443x_tbl,
-+	.rate_count = ARRAY_SIZE(imx_pll1443x_tbl),
-+	.flags = CLK_GET_RATE_NOCACHE,
-+};
+diff --git a/Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml b/Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
+new file mode 100644
+index 000000000000..c9e6c22cb5be
+--- /dev/null
++++ b/Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
+@@ -0,0 +1,72 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/memory-controllers/fsl/imx8m-ddrc.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
- struct imx_pll14xx_clk imx_1416x_pll = {
- 	.type = PLL_1416X,
- 	.rate_table = imx_pll1416x_tbl,
- 	.rate_count = ARRAY_SIZE(imx_pll1416x_tbl),
- };
-diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
-index bc5bb6ac8636..81122c9ab842 100644
---- a/drivers/clk/imx/clk.h
-+++ b/drivers/clk/imx/clk.h
-@@ -50,10 +50,11 @@ struct imx_pll14xx_clk {
- 	int flags;
- };
- 
- extern struct imx_pll14xx_clk imx_1416x_pll;
- extern struct imx_pll14xx_clk imx_1443x_pll;
-+extern struct imx_pll14xx_clk imx_1443x_dram_pll;
- 
- #define imx_clk_cpu(name, parent_name, div, mux, pll, step) \
- 	imx_clk_hw_cpu(name, parent_name, div, mux, pll, step)->clk
- 
- #define clk_register_gate2(dev, name, parent_name, flags, reg, bit_idx, \
++title: i.MX8M DDR Controller
++
++maintainers:
++  - Leonard Crestez <leonard.crestez@nxp.com>
++
++description:
++  The DDRC block is integrated in i.MX8M for interfacing with DDR based
++  memories.
++
++  It supports switching between different frequencies at runtime but during
++  this process RAM itself becomes briefly inaccessible so actual frequency
++  switching is implemented by TF-A code which runs from a SRAM area.
++
++  The Linux driver for the DDRC doesn't even map registers (they're included
++  for the sake of "describing hardware"), it mostly just exposes firmware
++  capabilities through standard Linux mechanism like devfreq and OPP tables.
++
++properties:
++  compatible:
++    items:
++      - enum:
++        - fsl,imx8mn-ddrc
++        - fsl,imx8mm-ddrc
++        - fsl,imx8mq-ddrc
++      - const: fsl,imx8m-ddrc
++
++  reg:
++    maxItems: 1
++    description:
++      Base address and size of DDRC CTL area.
++      This is not currently mapped by the imx8m-ddrc driver.
++
++  clocks:
++    maxItems: 4
++
++  clock-names:
++    items:
++      - const: core
++      - const: pll
++      - const: alt
++      - const: apb
++
++  operating-points-v2: true
++  opp-table: true
++
++required:
++  - reg
++  - compatible
++  - clocks
++  - clock-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/imx8mm-clock.h>
++    ddrc: memory-controller@3d400000 {
++        compatible = "fsl,imx8mm-ddrc", "fsl,imx8m-ddrc";
++        reg = <0x3d400000 0x400000>;
++        clock-names = "core", "pll", "alt", "apb";
++        clocks = <&clk IMX8MM_CLK_DRAM_CORE>,
++                 <&clk IMX8MM_DRAM_PLL>,
++                 <&clk IMX8MM_CLK_DRAM_ALT>,
++                 <&clk IMX8MM_CLK_DRAM_APB>;
++        operating-points-v2 = <&ddrc_opp_table>;
++    };
 -- 
 2.17.1
 
