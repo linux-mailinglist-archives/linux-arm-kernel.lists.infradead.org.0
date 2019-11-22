@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACAE8106186
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:58:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87D0F1061A9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:58:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FbDMnl8UQAog6FTG6GrUSX5HXYCybjhFRkOhSygmFFg=; b=Vif8kUBUS3+zab
-	kYlw/7UFxhME/Y5xdp15e/u5GmOsjkgPG/gRgfx+lZhWw2OnYcnmz4CPYN4Y+BZwhcsNU0XcoDrY6
-	mkkAdVsEdrJ82ARJ/l/QgvZjpMe9e9AK0I1JySpeBCqFXpLLvrcjPX1LluLrqOG2ix9IC+Bd8YVNH
-	To3/1KLMFhc+7KyIS6NQUe6uD9kCwpduPETZ+r3yUwVX+SYCkoIb/QaCzHzH/kBdmXiC0NBRuxDfg
-	03+KrzoOsUGPOL1vH8Ct4uhD/Q9xN0nv/BFB27ehN961XFqd38HbSfNxbFe8OMpB6fwpr2prba7Lr
-	JbsNsbXxteSOi9ZuirVQ==;
+	List-Owner; bh=aFgjjmqPtWTbkyEsfus4PVYbjnik0CTh89UEtplxOmQ=; b=i5nZeI9O+ake3i
+	zgiuKxNhjzCuewpJB92zF0m6Sg7CNmCKqi0LjVP1H7Zk8IcKwJVPnh9ngby4ynjyCMxoxCW6pjJ3F
+	G82Mo+n9l2Lxp76KhP3lKHhXY5opefLPCz6m4MWPwyvS4DMXfgWZHRJYoeYBLQhrsdZ9yLVqnEwhS
+	FQG7byNhTL8YCwwk2enAJWf9gxQJfCo0NYBxn0oIJwI2Cf9VXi4nHCGsZIePJCZv2palk7RY7RIym
+	iFG7vgbQxUSmx0WqHZ2OfhfkSNUIIoTAOP3+NgT5tJiNND2hK6oLm5ESZLp6rmzQq94/VAmwbn3JP
+	7TG/qLpKp6q+WygVlM4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY1xU-0001wW-4U; Fri, 22 Nov 2019 05:58:20 +0000
+	id 1iY1xl-0002FB-2g; Fri, 22 Nov 2019 05:58:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY1r8-0003Et-MF
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:51:48 +0000
+ id 1iY1rJ-0003OL-L3
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:51:59 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7C3D22084B;
- Fri, 22 Nov 2019 05:51:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2FC3A2071B;
+ Fri, 22 Nov 2019 05:51:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574401906;
- bh=wLBO30qA8tZlK3OT5pGv0t3ty/ImslmbiEW2j4YjAG0=;
+ s=default; t=1574401916;
+ bh=zCX38j0ApMKwif385tSeV5oiDGYMeI09N9Vdg67Tctw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=whG7Unw2khm4vsQGruMSNnnN9ip2QKc2bDjZIDciYvnUH9I/GUhys5MmkEYbuNU7W
- Jj2u1AmMPEF2K86kDHj5104ENFtXWcEZBOW4I85qSMkM0QphBY4L10HRHwnUs/jgT/
- ZT6qjJihRQPq2VU/UnSvwjrXiA6maa66LqBCiDQE=
+ b=u4zEyz+VsgNl4odT3/l7+RPaQjyZSxTNS/FvtDwBzHgUJZHYIRFC9dcSA6MQoeu1O
+ 19kilF6wqRGxShRvaMaALq6ZjvB2sKkCfPD3PGE6PcACl05EdU3glDRfGha1EejBb2
+ sUz2x0Fwr5fcwbQljdU1BHYDSq5ZV8PqNz7SzEgE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 137/219] pwm: clps711x: Fix period calculation
-Date: Fri, 22 Nov 2019 00:47:49 -0500
-Message-Id: <20191122054911.1750-130-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 146/219] net: stmicro: fix a missing check of
+ clk_prepare
+Date: Fri, 22 Nov 2019 00:47:58 -0500
+Message-Id: <20191122054911.1750-139-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191122054911.1750-1-sashal@kernel.org>
 References: <20191122054911.1750-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_215146_764175_5F8D27AD 
-X-CRM114-Status: GOOD (  11.88  )
+X-CRM114-CacheID: sfid-20191121_215157_801835_43E3CD58 
+X-CRM114-Status: GOOD (  10.23  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,53 +80,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-pwm@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Alexander Shiyan <shc_work@mail.ru>
+Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
+ Kangjie Lu <kjlu@umn.edu>, linux-stm32@st-md-mailman.stormreply.com,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Alexander Shiyan <shc_work@mail.ru>
+From: Kangjie Lu <kjlu@umn.edu>
 
-[ Upstream commit b0f17570b8203c22f139459c86cfbaa0311313ed ]
+[ Upstream commit f86a3b83833e7cfe558ca4d70b64ebc48903efec ]
 
-Commit e39c0df1be5a ("pwm: Introduce the pwm_args concept") has
-changed the variable for the period for clps711x-pwm driver, so now
-pwm_get/set_period() works with pwm->state.period variable instead
-of pwm->args.period.
-This patch changes the period variable in other places where it is used.
+clk_prepare() could fail, so let's check its status, and if it fails,
+return its error code upstream.
 
-Signed-off-by: Alexander Shiyan <shc_work@mail.ru>
-Signed-off-by: Thierry Reding <thierry.reding@gmail.com>
+Signed-off-by: Kangjie Lu <kjlu@umn.edu>
+Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pwm/pwm-clps711x.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/dwmac-sunxi.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/pwm/pwm-clps711x.c b/drivers/pwm/pwm-clps711x.c
-index 26ec24e457b12..7e16b7def0dcb 100644
---- a/drivers/pwm/pwm-clps711x.c
-+++ b/drivers/pwm/pwm-clps711x.c
-@@ -48,7 +48,7 @@ static void clps711x_pwm_update_val(struct clps711x_chip *priv, u32 n, u32 v)
- static unsigned int clps711x_get_duty(struct pwm_device *pwm, unsigned int v)
- {
- 	/* Duty cycle 0..15 max */
--	return DIV_ROUND_CLOSEST(v * 0xf, pwm_get_period(pwm));
-+	return DIV_ROUND_CLOSEST(v * 0xf, pwm->args.period);
- }
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-sunxi.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-sunxi.c
+index d07520fb969e6..62ccbd47c1db2 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-sunxi.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-sunxi.c
+@@ -59,7 +59,9 @@ static int sun7i_gmac_init(struct platform_device *pdev, void *priv)
+ 		gmac->clk_enabled = 1;
+ 	} else {
+ 		clk_set_rate(gmac->tx_clk, SUN7I_GMAC_MII_RATE);
+-		clk_prepare(gmac->tx_clk);
++		ret = clk_prepare(gmac->tx_clk);
++		if (ret)
++			return ret;
+ 	}
  
- static int clps711x_pwm_request(struct pwm_chip *chip, struct pwm_device *pwm)
-@@ -71,7 +71,7 @@ static int clps711x_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
- 	struct clps711x_chip *priv = to_clps711x_chip(chip);
- 	unsigned int duty;
- 
--	if (period_ns != pwm_get_period(pwm))
-+	if (period_ns != pwm->args.period)
- 		return -EINVAL;
- 
- 	duty = clps711x_get_duty(pwm, duty_ns);
+ 	return 0;
 -- 
 2.20.1
 
