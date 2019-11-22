@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72F2A106DEE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 12:04:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE48B106DF6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 12:04:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YPVLMYavhirDje+79EqUWp1BXxmkoPV1fTbtrXj5wxg=; b=Kch+DoqnWs42x4
-	XIQFKc+qUgFtptxbX656BU3/a+p0Kk1g0k/SPAC1odpNezGxuRXBaBKt11PfTW6rZOEUhclF+M8VA
-	Ch0kT8gOoNFZ5977rAwI7FWfSMIShKQeOWNEelq7enxhLXeXf0ZyY02YobmxrDN/0latKHZ0gb+MJ
-	myV3ARBtODXN5ufeAXAjSV2KqKt84typKUUoUpap0R5iQ4sG7EKweY4aHxNIQf6cRZZy5nGj3OdP+
-	Q/rvxsS1bXVNi7FifbzY981gGbwNCFSFfxDblMQssjEPXzoVG7DOiSOSzcWzPWyzHBSw2oJSO7eGf
-	SmV+dRfRFwdIK5rvlrJg==;
+	List-Owner; bh=a1TyufOJ+2F5ZkEKJULUhnphAVL7i/59Ror1uoCzXUg=; b=mjI+sCsWMau9Zh
+	bxmJkfnkzbTOS644mmv7vCHrjzhb+xoKTGEUwArfcpW0RCfCw5cPzv6DkaIFLhiNUgAfNEqA2Gvif
+	enXxVsAvlppp2OpvFCF6f4vPIoW7/IN7YVUhtMqzHvxwKUzSwDDFCMn1nFSXIUsDmt0Bn01cOIVcd
+	GhY4/0YdpZsnEdlZhks9zffrJpbMbI8Pa1H8gG10Hm1XVsQumTNieiDaD90LZMo6CI4JMTNnCwc+n
+	7mHsoUfaH/YvRt/O8FvILnez0fxZ0qc4eYn1en8lSrDkbzE/mLIXj9lb/896+UdTCKAE0sz1fot7l
+	J4VRv6TC8wDdKDn5RQ8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY6jt-0007dF-OQ; Fri, 22 Nov 2019 11:04:37 +0000
+	id 1iY6kA-0007wq-Kk; Fri, 22 Nov 2019 11:04:54 +0000
 Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY6jM-0007Lg-QA
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 11:04:06 +0000
+ id 1iY6jS-0007R8-IR
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 11:04:12 +0000
 Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
  by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
- id 1iY6jJ-0004aK-Ii; Fri, 22 Nov 2019 19:04:01 +0800
+ id 1iY6jP-0004aX-Ej; Fri, 22 Nov 2019 19:04:07 +0800
 Received: from herbert by gondobar with local (Exim 4.89)
  (envelope-from <herbert@gondor.apana.org.au>)
- id 1iY6jJ-0002fQ-Ef; Fri, 22 Nov 2019 19:04:01 +0800
-Date: Fri, 22 Nov 2019 19:04:01 +0800
+ id 1iY6jP-0002fe-8k; Fri, 22 Nov 2019 19:04:07 +0800
+Date: Fri, 22 Nov 2019 19:04:07 +0800
 From: Herbert Xu <herbert@gondor.apana.org.au>
 To: Corentin Labbe <clabbe.montjoie@gmail.com>
-Subject: Re: [PATCH] crypto: sun4i-ss: hide the Invalid keylen message
-Message-ID: <20191122110401.2kgx7fenlny5gbgj@gondor.apana.org.au>
-References: <20191114105852.21672-1-clabbe.montjoie@gmail.com>
+Subject: Re: [PATCH] crypto: sun4i-ss: fix big endian issues
+Message-ID: <20191122110407.dwccsgxn72dcupa4@gondor.apana.org.au>
+References: <20191114125849.22829-1-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191114105852.21672-1-clabbe.montjoie@gmail.com>
+In-Reply-To: <20191114125849.22829-1-clabbe.montjoie@gmail.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_030405_090199_51ABF58A 
-X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-CacheID: sfid-20191122_030410_996734_86FB1954 
+X-CRM114-Status: UNSURE (   7.47  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -69,14 +69,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 14, 2019 at 11:58:52AM +0100, Corentin Labbe wrote:
-> Drop the "Invalid keylen" message to debug level, it adds no value, and
-> when CRYPTO_EXTRA_TEST is enabled, it floods the console.
+On Thu, Nov 14, 2019 at 01:58:49PM +0100, Corentin Labbe wrote:
+> When testing BigEndian kernel, the sun4i-ss was failling all crypto
+> tests.
+> This patch fix endian issues with it.
 > 
+> Fixes: 6298e948215f ("crypto: sunxi-ss - Add Allwinner Security System crypto accelerator")
 > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 > ---
->  drivers/crypto/allwinner/sun4i-ss/sun4i-ss-cipher.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  .../crypto/allwinner/sun4i-ss/sun4i-ss-hash.c | 21 ++++++++++---------
+>  1 file changed, 11 insertions(+), 10 deletions(-)
 
 Patch applied.  Thanks.
 -- 
