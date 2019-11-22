@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7380106182
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:58:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACAE8106186
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:58:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wkie2kEo8QHBdsPKOaMfIYo0p3OkPXnd/vmEcXuUVAg=; b=kBEzlQCmt9+fzt
-	bQZwKfus5d3iZd0gAsoNI+qbGLnLw4ZPuHIkxqjXyIrZbnOsgNS4ohUsmX13jcWiuXqLstb7cpjuE
-	xPWfdiJbMr65WpApLcPUT88bNWQSsZM/m6eKuMJPVBznCyx9KRCHKgtn3qkjWXhKDly5VWCJdw5WN
-	JCAoA1IUmA5M3MsyoWTreChVrOZ7IWMvJ/fBizHa0EDLch5JUCgwpdXheGDHaXSHwJ5BYB5GoSg9R
-	GOEc+cL/DuDsQNK+7c4angR2n09n2L0kZDQHTmqkS6lMPRbZ1hAVapH1oWcgL6ivW56FLzTLH/6wH
-	fOOVAP+JGCaxyFbRvqjw==;
+	List-Owner; bh=FbDMnl8UQAog6FTG6GrUSX5HXYCybjhFRkOhSygmFFg=; b=Vif8kUBUS3+zab
+	kYlw/7UFxhME/Y5xdp15e/u5GmOsjkgPG/gRgfx+lZhWw2OnYcnmz4CPYN4Y+BZwhcsNU0XcoDrY6
+	mkkAdVsEdrJ82ARJ/l/QgvZjpMe9e9AK0I1JySpeBCqFXpLLvrcjPX1LluLrqOG2ix9IC+Bd8YVNH
+	To3/1KLMFhc+7KyIS6NQUe6uD9kCwpduPETZ+r3yUwVX+SYCkoIb/QaCzHzH/kBdmXiC0NBRuxDfg
+	03+KrzoOsUGPOL1vH8Ct4uhD/Q9xN0nv/BFB27ehN961XFqd38HbSfNxbFe8OMpB6fwpr2prba7Lr
+	JbsNsbXxteSOi9ZuirVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY1xE-0001gK-B0; Fri, 22 Nov 2019 05:58:04 +0000
+	id 1iY1xU-0001wW-4U; Fri, 22 Nov 2019 05:58:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY1r7-0003D4-Ff
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:51:46 +0000
+ id 1iY1r8-0003Et-MF
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:51:48 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1925B20731;
- Fri, 22 Nov 2019 05:51:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7C3D22084B;
+ Fri, 22 Nov 2019 05:51:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574401905;
- bh=rsLBM3cma18JC08uAkyl2VGiLgFBkK5qXvuZx/pyph4=;
+ s=default; t=1574401906;
+ bh=wLBO30qA8tZlK3OT5pGv0t3ty/ImslmbiEW2j4YjAG0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=i/S4Mim0whJ8NNDBu6AtP8qJg86xOSY7Y8Tihzc82mzKv4qRw3oXP5y02yQT4kI7G
- vFMvBj35IxPiGFgSgHNrns8CaPB5KhQ2p1a9b7XEGcrHq2aYc1dBcvEDGX9ZuIBk9d
- AKe5Y9rTnCQb2uNESl4nu+vp6Tk2gN0JHdFnWlRI=
+ b=whG7Unw2khm4vsQGruMSNnnN9ip2QKc2bDjZIDciYvnUH9I/GUhys5MmkEYbuNU7W
+ Jj2u1AmMPEF2K86kDHj5104ENFtXWcEZBOW4I85qSMkM0QphBY4L10HRHwnUs/jgT/
+ ZT6qjJihRQPq2VU/UnSvwjrXiA6maa66LqBCiDQE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 136/219] MIPS: BCM63XX: fix switch core reset on
- BCM6368
-Date: Fri, 22 Nov 2019 00:47:48 -0500
-Message-Id: <20191122054911.1750-129-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 137/219] pwm: clps711x: Fix period calculation
+Date: Fri, 22 Nov 2019 00:47:49 -0500
+Message-Id: <20191122054911.1750-130-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191122054911.1750-1-sashal@kernel.org>
 References: <20191122054911.1750-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_215145_584789_BB135859 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20191121_215146_764175_5F8D27AD 
+X-CRM114-Status: GOOD (  11.88  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,48 +79,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- James Hogan <jhogan@kernel.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, Paul Burton <paul.burton@mips.com>,
- Jonas Gorski <jonas.gorski@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-pwm@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Alexander Shiyan <shc_work@mail.ru>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jonas Gorski <jonas.gorski@gmail.com>
+From: Alexander Shiyan <shc_work@mail.ru>
 
-[ Upstream commit 8a38dacf87180738d42b058334c951eba15d2d47 ]
+[ Upstream commit b0f17570b8203c22f139459c86cfbaa0311313ed ]
 
-The Ethernet Switch core mask was set to 0, causing the switch core to
-be not reset on BCM6368 on boot. Provide the proper mask so the switch
-core gets reset to a known good state.
+Commit e39c0df1be5a ("pwm: Introduce the pwm_args concept") has
+changed the variable for the period for clps711x-pwm driver, so now
+pwm_get/set_period() works with pwm->state.period variable instead
+of pwm->args.period.
+This patch changes the period variable in other places where it is used.
 
-Fixes: 799faa626c71 ("MIPS: BCM63XX: add core reset helper")
-Signed-off-by: Jonas Gorski <jonas.gorski@gmail.com>
-Signed-off-by: Paul Burton <paul.burton@mips.com>
-Cc: linux-mips@vger.kernel.org
-Cc: Ralf Baechle <ralf@linux-mips.org>
-Cc: James Hogan <jhogan@kernel.org>
-Cc: Florian Fainelli <f.fainelli@gmail.com>
+Signed-off-by: Alexander Shiyan <shc_work@mail.ru>
+Signed-off-by: Thierry Reding <thierry.reding@gmail.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/mips/bcm63xx/reset.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/pwm/pwm-clps711x.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/mips/bcm63xx/reset.c b/arch/mips/bcm63xx/reset.c
-index a2af38cf28a70..64574e74cb236 100644
---- a/arch/mips/bcm63xx/reset.c
-+++ b/arch/mips/bcm63xx/reset.c
-@@ -120,7 +120,7 @@
- #define BCM6368_RESET_DSL	0
- #define BCM6368_RESET_SAR	SOFTRESET_6368_SAR_MASK
- #define BCM6368_RESET_EPHY	SOFTRESET_6368_EPHY_MASK
--#define BCM6368_RESET_ENETSW	0
-+#define BCM6368_RESET_ENETSW	SOFTRESET_6368_ENETSW_MASK
- #define BCM6368_RESET_PCM	SOFTRESET_6368_PCM_MASK
- #define BCM6368_RESET_MPI	SOFTRESET_6368_MPI_MASK
- #define BCM6368_RESET_PCIE	0
+diff --git a/drivers/pwm/pwm-clps711x.c b/drivers/pwm/pwm-clps711x.c
+index 26ec24e457b12..7e16b7def0dcb 100644
+--- a/drivers/pwm/pwm-clps711x.c
++++ b/drivers/pwm/pwm-clps711x.c
+@@ -48,7 +48,7 @@ static void clps711x_pwm_update_val(struct clps711x_chip *priv, u32 n, u32 v)
+ static unsigned int clps711x_get_duty(struct pwm_device *pwm, unsigned int v)
+ {
+ 	/* Duty cycle 0..15 max */
+-	return DIV_ROUND_CLOSEST(v * 0xf, pwm_get_period(pwm));
++	return DIV_ROUND_CLOSEST(v * 0xf, pwm->args.period);
+ }
+ 
+ static int clps711x_pwm_request(struct pwm_chip *chip, struct pwm_device *pwm)
+@@ -71,7 +71,7 @@ static int clps711x_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
+ 	struct clps711x_chip *priv = to_clps711x_chip(chip);
+ 	unsigned int duty;
+ 
+-	if (period_ns != pwm_get_period(pwm))
++	if (period_ns != pwm->args.period)
+ 		return -EINVAL;
+ 
+ 	duty = clps711x_get_duty(pwm, duty_ns);
 -- 
 2.20.1
 
