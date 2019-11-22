@@ -2,68 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53E3B106AD9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:39:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0052E106AF0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:40:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JTwZr9J+RRCxLH12QfN3EsBqgWiTDxCBnz7Qg8xD9/0=; b=n3lijE9lI4+rmn
-	o+VGhUVCrBaq76pWgYxakpxdZih02dlMHYDn1M/FCSs4yZPxAWGSeVBM17Re7iPOpEKpvFtbkcwg9
-	c0gXvSg2G0L0CPtya/xAizahck1VnO/U8jurP7vnMhqmIO1C22KzNlmd5uXJqJ5sbDADz8MRdSeva
-	ufa1PKrp4c9liq2dCmV7/eEHVYSV+y8aoPrqgcjXjPerfRyV8DgwrHhklFTUX7QrevzxYzH1T4bAn
-	JxESPqUJ53FJw4k27u/c65w1QDFIfn0wzXm0jFUmzQCdu58b8jb0Y6ox6EBseV66sOpKkMkQDcXiF
-	ICKKUkFGIq3SIyHmVtdw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SFT6w7Vy/qQzuNUiIjjue0OmJmTVZSjqPgEE+yYYC1c=; b=i6RMPt+GBko+r/
+	ZTDl+Q1Onv0hqDVLd5D/oAZ9gVIOIK8Ev+qKT/Lka11kbEeiB2PD5KZk22Tn/lE+fvQMJ/+ghhwk3
+	C5YfSJRhQ5Q4oOKJ3PKjJVeANtIfedwm2o1kREZWHweOirrlPdtgpCxbuxei2iagJgBrV7z6LBV8M
+	oe8OYA0oQjwas3U0wew+JHHEpiki3ySkWqYpuBPOYwYMMiLHX240IO6Et94Gos9DsyC8WxWUCOdHL
+	1+nbydRAh3dydC2A9SXJ6aDFDCK33yFdAoj9L+/tQsYEScDWgj+3KSs8UwXWgnJukA638c4/6u0Rl
+	3pKtco58i0Ynt1L7jKSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY6LN-000303-B2; Fri, 22 Nov 2019 10:39:17 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iY6MI-0003Ns-BG; Fri, 22 Nov 2019 10:40:14 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY6LC-0002zE-Od; Fri, 22 Nov 2019 10:39:08 +0000
-X-UUID: a950aebb9abc40e3a62bf2ddb35795d8-20191122
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=ofn5YL5zLXO06e+0l5pAe6Qs84VAqzgdrrkyFWlZp5s=; 
- b=LQfNUKYHNBeXaej6wynzY9sIuVxeXH3y3sJY9xUw/w2ZjaIEJFSJ3m/Gf9mqm2AlRTjviM4RGsm3K7lSHV7ZfmRcFQzgzNtLglqXALTwBo3UnmagSW0IaEVhhV+IAUwfkgFGFTMMSFRALg8IBQUCfI+ASn6qFsjVXRdrmpKu+B0=;
-X-UUID: a950aebb9abc40e3a62bf2ddb35795d8-20191122
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <dennis-yc.hsieh@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1227959352; Fri, 22 Nov 2019 02:39:03 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 22 Nov 2019 02:29:23 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 22 Nov 2019 18:28:55 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 22 Nov 2019 18:29:23 +0800
-Message-ID: <1574418540.11977.19.camel@mtkswgap22>
-Subject: Re: [PATCH v1 10/12] soc: mediatek: cmdq: add loop function
-From: Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>
-Date: Fri, 22 Nov 2019 18:29:00 +0800
-In-Reply-To: <1574415960.19450.23.camel@mtksdaap41>
-References: <1574327552-11806-1-git-send-email-dennis-yc.hsieh@mediatek.com>
- <1574327552-11806-11-git-send-email-dennis-yc.hsieh@mediatek.com>
- <1574415960.19450.23.camel@mtksdaap41>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1iY6Ly-0003MY-8q
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:39:56 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xAMAddRd023808; Fri, 22 Nov 2019 11:39:44 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=Yb4uCeALV8Ui44IqHMV+f+MNdt/2wAzvgT9C57Q3BZw=;
+ b=gYNaqs3+QC6W3lndyyz8UqbqmpEyOIZp1U1iZ28HGNjAXmZW/dWrvDAesNWYWg3CXIuZ
+ W4rOFR9Qy/VZ3QQzNzN7VIfuYbDvN8rQmoHY92ynRaDGrF/WH5HmACEoGiloOgENoLR7
+ CtqIUfkKscVnBACUQbXZZYRrnj1tqX8W39Iv106aYETYA6bL10VcDxK+JhSNxEkeqC+q
+ Itashsf+Py7ul0X53zWXSXIXrmRkatC7mqLXOJhV4uVDmMdVXdIQNyRoJvrhxIcdOsge
+ tRoiUnfzUqyGihNiGj2xT/yMsxz+fpxiJm5x10a1RxqTxjWkv2U9Io82eNNKUyLbbtcP 9A== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2wa9uvrqa0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 22 Nov 2019 11:39:44 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 41F31100034;
+ Fri, 22 Nov 2019 11:39:43 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 133DA2B56A1;
+ Fri, 22 Nov 2019 11:39:43 +0100 (CET)
+Received: from localhost (10.75.127.51) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 22 Nov 2019 11:39:42
+ +0100
+From: Alexandre Torgue <alexandre.torgue@st.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] dt-bindings: arm: stm32: Convert stm32-syscon to json-schema
+Date: Fri, 22 Nov 2019 11:39:42 +0100
+Message-ID: <20191122103942.23572-1-alexandre.torgue@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-X-MTK: N
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG4NODE1.st.com (10.75.127.10) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-22_02:2019-11-21,2019-11-22 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_023906_807239_1C6FDC2E 
-X-CRM114-Status: GOOD (  19.36  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191122_023954_761412_CF58E617 
+X-CRM114-Status: GOOD (  11.65  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -73,8 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,140 +91,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Alexandre Torgue <alexandre.torgue@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi CK,
+Convert the STM32 syscon binding to DT schema format using json-schema.
 
-On Fri, 2019-11-22 at 17:46 +0800, CK Hu wrote:
-> Hi, Dennis:
-> 
-> On Thu, 2019-11-21 at 17:12 +0800, Dennis YC Hsieh wrote:
-> > Add finalize loop function in cmdq helper functions which loop whole pkt
-> > in gce hardware thread without cpu operation.
-> > 
-> > Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
-> > ---
-> >  drivers/soc/mediatek/mtk-cmdq-helper.c |   41 ++++++++++++++++++++++++++++++++
-> >  include/linux/soc/mediatek/mtk-cmdq.h  |    8 +++++++
-> >  2 files changed, 49 insertions(+)
-> > 
-> > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > index 4235cf8..3b10241 100644
-> > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > @@ -385,12 +385,27 @@ int cmdq_pkt_assign(struct cmdq_pkt *pkt, u16 reg_idx, u32 value)
-> >  }
-> >  EXPORT_SYMBOL(cmdq_pkt_assign);
-> >  
-> > +static bool cmdq_pkt_finalized(struct cmdq_pkt *pkt)
-> > +{
-> > +	struct cmdq_instruction *inst;
-> > +
-> > +	if (pkt->cmd_buf_size < 2 * CMDQ_INST_SIZE)
-> > +		return false;
-> > +
-> > +	inst = pkt->va_base + pkt->cmd_buf_size - 2 * CMDQ_INST_SIZE;
-> > +	return inst->op == CMDQ_CODE_EOC;
-> > +}
-> > +
-> >  static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
-> >  {
-> >  	struct cmdq_client *cl = pkt->cl;
-> >  	struct cmdq_instruction inst = { {0} };
-> >  	int err;
-> >  
-> > +	/* do not finalize twice */
-> > +	if (cmdq_pkt_finalized(pkt))
-> > +		return 0;
-> > +
-> >  	/* insert EOC and generate IRQ for each command iteration */
-> >  	inst.op = CMDQ_CODE_EOC;
-> >  	inst.value = CMDQ_EOC_IRQ_EN;
-> > @@ -406,6 +421,32 @@ static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
-> >  	return err;
-> >  }
-> >  
-> > +int cmdq_pkt_finalize_loop(struct cmdq_pkt *pkt)
-> > +{
-> > +	struct cmdq_client *cl = pkt->cl;
-> > +	struct cmdq_instruction inst = { {0} };
-> > +	int err;
-> > +
-> > +	/* do not finalize twice */
-> > +	if (cmdq_pkt_finalized(pkt))
-> > +		return 0;
-> 
-> Why not just export cmdq_pkt_finalize() for user and do not call
-> cmdq_pkt_finalize() in cmdq_pkt_flush_async(), so you don't need to
-> check this.
-> 
-> I would be more like to export API such as cmdq_pkt_eoc(),
-> cmdq_pkt_jump(), this would provide more flexibility for user to
-> assemble the command it want.
-> 
-> Regards,
-> CK
+Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
 
-Thanks for your comment.
+diff --git a/Documentation/devicetree/bindings/arm/stm32/st,stm32-syscon.yaml b/Documentation/devicetree/bindings/arm/stm32/st,stm32-syscon.yaml
+new file mode 100644
+index 000000000000..0dedf94c8578
+--- /dev/null
++++ b/Documentation/devicetree/bindings/arm/stm32/st,stm32-syscon.yaml
+@@ -0,0 +1,41 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: "http://devicetree.org/schemas/arm/stm32/st,stm32-syscon.yaml#"
++$schema: "http://devicetree.org/meta-schemas/core.yaml#"
++
++title: STMicroelectronics STM32 Platforms System Controller bindings
++
++maintainers:
++  - Alexandre Torgue <alexandre.torgue@st.com>
++  - Christophe Roullier <christophe.roullier@st.com>
++
++properties:
++  compatible:
++    oneOf:
++      - items:
++        - enum:
++          - st,stm32mp157-syscfg
++        - const: syscon
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - clocks
++
++examples:
++  - |
++    #include <dt-bindings/clock/stm32mp1-clks.h>
++    syscfg: syscon@50020000 {
++        compatible = "st,stm32mp157-syscfg", "syscon";
++        reg = <0x50020000 0x400>;
++        clocks = <&rcc SYSCFG>;
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/arm/stm32/stm32-syscon.txt b/Documentation/devicetree/bindings/arm/stm32/stm32-syscon.txt
+deleted file mode 100644
+index c92d411fd023..000000000000
+--- a/Documentation/devicetree/bindings/arm/stm32/stm32-syscon.txt
++++ /dev/null
+@@ -1,16 +0,0 @@
+-STMicroelectronics STM32 Platforms System Controller
+-
+-Properties:
+-   - compatible : should contain two values. First value must be :
+-                 - " st,stm32mp157-syscfg " - for stm32mp157 based SoCs,
+-                 second value must be always "syscon".
+-   - reg : offset and length of the register set.
+-   - clocks: phandle to the syscfg clock
+-
+- Example:
+-         syscfg: syscon@50020000 {
+-                 compatible = "st,stm32mp157-syscfg", "syscon";
+-                 reg = <0x50020000 0x400>;
+-                 clocks = <&rcc SYSCFG>;
+-         };
+-
+-- 
+2.17.1
 
-Should we backward compatible with existing clients? Remove finalize in
-flush will cause existing client flush without IRQ.
-
-
-Regards,
-Dennis
-
-> 
-> > +
-> > +	/* insert EOC and generate IRQ for each command iteration */
-> > +	inst.op = CMDQ_CODE_EOC;
-> > +	err = cmdq_pkt_append_command(pkt, inst);
-> > +	if (err < 0)
-> > +		return err;
-> > +
-> > +	/* JUMP abaolute to begin */
-> > +	inst.op = CMDQ_CODE_JUMP;
-> > +	inst.offset = 1;
-> > +	inst.value = pkt->pa_base >> cmdq_mbox_shift(cl->chan);
-> > +	err = cmdq_pkt_append_command(pkt, inst);
-> > +
-> > +	return err;
-> > +}
-> > +EXPORT_SYMBOL(cmdq_pkt_finalize_loop);
-> > +
-> >  static void cmdq_pkt_flush_async_cb(struct cmdq_cb_data data)
-> >  {
-> >  	struct cmdq_pkt *pkt = (struct cmdq_pkt *)data.data;
-> > diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> > index b3474f2..77e8944 100644
-> > --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> > +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> > @@ -203,6 +203,14 @@ int cmdq_pkt_poll_mask(struct cmdq_pkt *pkt, u8 subsys,
-> >  int cmdq_pkt_assign(struct cmdq_pkt *pkt, u16 reg_idx, u32 value);
-> >  
-> >  /**
-> > + * cmdq_pkt_finalize_loop() - Append EOC and jump command to loop pkt.
-> > + * @pkt:	the CMDQ packet
-> > + *
-> > + * Return: 0 for success; else the error code is returned
-> > + */
-> > +int cmdq_pkt_finalize_loop(struct cmdq_pkt *pkt);
-> > +
-> > +/**
-> >   * cmdq_pkt_flush_async() - trigger CMDQ to asynchronously execute the CMDQ
-> >   *                          packet and call back at the end of done packet
-> >   * @pkt:	the CMDQ packet
-> 
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
