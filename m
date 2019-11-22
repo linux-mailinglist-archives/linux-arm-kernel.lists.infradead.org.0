@@ -2,86 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 994A91075C5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 17:27:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEAEC1075E6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 17:37:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w/HTGcee4MusmWl5ec2kwaWKMWZ57zk7uYOnMIGE9no=; b=kHE3s4FLeQmrD/
-	DePsAuWNjHWxBb+iLXtpxylPFlfRGa+otuk54tlYMM0rdhI9TFyil+7kSmUMUOxWMP23ptXZ0EyQD
-	IQNxV4SwWfwaMrQwGoMVPObo2J1NFJL1jp4ZTI8qyi3i/ujeF8ZVcK6M1+d7sY7uoz81aq4BgtHbt
-	IgIh7XBAmN0NbbGQPquOMbkLqeLcALSTDmQruZ4LrVVCq5h/kABt+2BHlpdiouD9We/z3pbY0uCMg
-	f02QPU6eKIR19siWzUGoRofSscJ5Da1t/mKkwohVDyLGT1iPU8ryNkzhUavDoUYggG7rgANBWDsAS
-	5wNG14oc9dM8azVSwyOg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1sob1VGHz1J00Z++StER/f55e2RsjSw37HtJ0ONDtn4=; b=KT0Kf2GubX4lOz
+	kD8MEssclkrpJe5UEnZgahG0FQ4FxqyTUCC0VzCkfLJzhuE7rS6E6SfRa0TGUAMGWwxmqLr2PfLa7
+	DWCHwriIx2RGT9CbxFJ2VJsAQSsp2xeJaBFS3hJuSqme9fMInSS/Tq2ZH+9AQt3TXGgJ6Tdvy7ODY
+	QTcJi4/gLfzDhZV2HQobsPSkWKOrBBcwiWNHc7F2onQrJgFvel/fK+/2IxsaXv4h19mEJjBZuSUWZ
+	vK/BEaOC7jfABXqp+h1bkmUGZSa8QSqyrz6RDS1DzeUey4/+5Z8nifsaxUxn/+vw7e4kqsaDw8KcP
+	3DOjxCppOvkFswD4/ymw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYBme-0007jV-Nn; Fri, 22 Nov 2019 16:27:48 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iYBvN-0002bQ-NL; Fri, 22 Nov 2019 16:36:49 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYBmV-0007j3-9B
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 16:27:40 +0000
-Received: by mail-io1-xd43.google.com with SMTP id z193so8731230iof.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 Nov 2019 08:27:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XlWqqCQ+zgEV72jaObyUbNZTFY8rKw/Sl0dnc6Dl/5A=;
- b=Q3de4ll9e8KMpxI6muGFZLyE6AtK8cNP9PPf7FhGVILpdUDr2/fmfkA6lyoQW2n2TR
- n/d4o06GOFMQKFA/uxZwpohzLAewPAEWEl1D0i3RqNxIxxH3yCaK3+CaFFHK91qnMiPa
- JnHQ+AP3izQjZA8A7uZRODuPBE2ygcvsWnFI25OD4yGrQjWYMpxYHzNoBfGTKyRlkLvS
- lG3ibCe/VgG0y5KwtrkoVOJ5YlJfrK5JwIHTw3ruMuM/D9c50iLAd7Svfuxmw08j9X+n
- DuWPON1UvQXTEWc4VQAk+szrUVfQdjN8OJ0oQAhQyoo1I43xjI01M6nie/C6DSNvvJir
- GZtg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XlWqqCQ+zgEV72jaObyUbNZTFY8rKw/Sl0dnc6Dl/5A=;
- b=joC/HjfBhJ16id8xP1icLk0qSnUnl5Wv4btqHMOeBagrqsafd5SACfflDG3hw+9FLd
- gq4MLbRxo5Ogc/SnKAtqMSaVosMkcVmgOKTnJT93RawNnDpzBG3nqvCZrp3L8YakuOhK
- hhiss0gsO/a9Ds0DD7aLriAuvbaafDU8jRAPLN1WKWKq/SfM3uG1RMUdV9RVPVzwcAR7
- cTqnwhxmGYbPr+29JukM9NEHFbQFhdXW/eCtQ1/XccS3LZfusTeOBb5hUrZXsF7sbsE9
- nfUyIOndKjHF3KRSgO8secMd3yvJUrA12Qt4FjlYPdkkjE6Q02L35NZ+f/Ecx19aVnk8
- 4quA==
-X-Gm-Message-State: APjAAAVVEZ0slU8DTpKsCmsCEMaqn+iqI106P8WYfZ75okg5o+10bd7J
- UrK6wOmzIZiSKa/mpL953Q+P6dqbsgPP1lKbq6EZoQ==
-X-Google-Smtp-Source: APXvYqyif/FcVg31H4mCMrqc1tAv9+xfOMC4ku1jEbZz0D4MzKrvW2UuCa7rSztTlQQZp6E44d6wzwy8qjw4Fx0IG+w=
-X-Received: by 2002:a6b:c389:: with SMTP id t131mr13745566iof.50.1574440057783; 
- Fri, 22 Nov 2019 08:27:37 -0800 (PST)
+ id 1iYBvF-0002ak-Oy
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 16:36:43 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 2A23F20B9F;
+ Fri, 22 Nov 2019 17:36:36 +0100 (CET)
+Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 19DE81FF32;
+ Fri, 22 Nov 2019 17:36:36 +0100 (CET)
+Subject: Re: [PATCH] crypto: picoxcell: add missed tasklet_kill
+To: Herbert Xu <herbert@gondor.apana.org.au>,
+ Chuhong Yuan <hslester96@gmail.com>
+References: <20191115023116.7070-1-hslester96@gmail.com>
+ <20191122085512.m75tjfa3valqfgyv@gondor.apana.org.au>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <218e9053-42c7-098e-ecda-e0306361cc23@free.fr>
+Date: Fri, 22 Nov 2019 17:36:35 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191115223356.27675-1-mathieu.poirier@linaro.org>
- <20191121203555.GC813260@kroah.com>
-In-Reply-To: <20191121203555.GC813260@kroah.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Fri, 22 Nov 2019 09:27:26 -0700
-Message-ID: <CANLsYkyumUDrP6ic0towr68S6pxL1psZHVP0XTRC+Tf82O4wQQ@mail.gmail.com>
-Subject: Re: [stable 4.19+][PATCH 01/20] i2c: stm32f7: fix first byte to send
- in slave mode
-To: Greg KH <gregkh@linuxfoundation.org>
+In-Reply-To: <20191122085512.m75tjfa3valqfgyv@gondor.apana.org.au>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Fri Nov 22 17:36:36 2019 +0100 (CET)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_082739_327287_203AEFFC 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191122_083641_958183_B1275835 
+X-CRM114-Status: GOOD (  15.33  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,39 +69,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "# 4 . 7" <stable@vger.kernel.org>
+Cc: Jamie Iles <jamie@jamieiles.com>, linux-kernel@vger.kernel.org,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 21 Nov 2019 at 13:35, Greg KH <gregkh@linuxfoundation.org> wrote:
->
-> On Fri, Nov 15, 2019 at 03:33:37PM -0700, Mathieu Poirier wrote:
-> > From: Fabrice Gasnier <fabrice.gasnier@st.com>
-> >
-> > commit 915da2b794ce4fc98b1acf64d64354f22a5e4931 upstream
->
-> That commit is not in Linus's tree :(
+On 22/11/2019 09:55, Herbert Xu wrote:
 
-:o(  Apologies for that - probably a copy/paste problem.
+> On Fri, Nov 15, 2019 at 10:31:16AM +0800, Chuhong Yuan wrote:
+>> This driver forgets to kill tasklet when probe fails and remove.
+>> Add the calls to fix it.
+>>
+>> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+> 
+> Yes this driver does look buggy but I think your patch isn't
+> enough.
+> 
+>> diff --git a/drivers/crypto/picoxcell_crypto.c b/drivers/crypto/picoxcell_crypto.c
+>> index 3cbefb41b099..8d7c6bb2876e 100644
+>> --- a/drivers/crypto/picoxcell_crypto.c
+>> +++ b/drivers/crypto/picoxcell_crypto.c
+>> @@ -1755,6 +1755,7 @@ static int spacc_probe(struct platform_device *pdev)
+>>  	if (!ret)
+>>  		return 0;
+>>  
+>> +	tasklet_kill(&engine->complete);
+> 
+> The tasklet is schedule by the IRQ handler so you should not kill
+> it until the IRQ handler has been unregistered.
+> 
+> This driver is also buggy because it registers the IRQ handler
+> before initialising the tasklet.  You must always be prepared for
+> spurious IRQs.  IOW, as soon as you register the IRQ handler you
+> must be prepared for it to be called.
+> 
+>> @@ -1771,6 +1772,7 @@ static int spacc_remove(struct platform_device *pdev)
+>>  	struct spacc_alg *alg, *next;
+>>  	struct spacc_engine *engine = platform_get_drvdata(pdev);
+>>  
+>> +	tasklet_kill(&engine->complete);
+> 
+> Ditto.
+> 
+> However, the IRQ handler is registered through devm which makes it
+> hard to kill the tasklet after unregistering it.  We should probably
+> convert it to a normal request_irq so we can control how it's
+> unregistered.
 
->
-> I'll stop here.  Please check all of these and resend the whole thing.
->
-> Also, does this series also apply fully to 5.3.y?
+Or inversely, registering the tasklet_kill() through devm, so that it
+is called *after* the ISR unregistration.
 
-Normally it should have and that is what I assumed.  I just did a
-quick test and I'm wrong - as you probably noticed since you're
-pointing it out.  Forget the whole thing and I'll send another set (or
-two).
-
->
-> thanks,
->
-> greg k-h
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
