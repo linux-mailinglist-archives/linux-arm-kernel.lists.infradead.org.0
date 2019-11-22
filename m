@@ -2,58 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0D5D105EDE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 04:03:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAD2E105EF1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 04:14:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7/daRWqGuW02N/ebIl4pO12mGIskEJD8h6Yx1FJfuWk=; b=i6UYN2rzx+aDuS
-	XaY070Mn+XhfmWnlvCFL6cF/Bl2va49WD5VSHzR6EjrcMMs5WrDMnvQnmUUtIb/2I4bZZe5GwVbqy
-	up3MwhvMx9WXn01ulU8zCWVw4DanwA/mio4QSq+0xanYjpCrBmTwLse6eSIFOhngzwlF1kQvJVgwx
-	rOQ6TvJSpuiJR0MuzwxmpOEnCKwlTEJcobTY0Jif+jK2fiaN2tR3WHnfGTMkyS8qKffhSl1to1dSF
-	ayMYeJIe7OngjQCLo7uLnVMDiu9AeD4cXyStMSzPQQ4arW8siK51ycILXzCnuEGgI3Ufc1REO0khv
-	PBa9QNn36OL2ra4FsW+g==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zX7391+9vBGPprx8CZUjgzmmjfTU1XpYKobpcdex4Ec=; b=gwVLy6yuZNI4wL
+	9SkniHvB/F8T1UEe0GyPy4ZNm+zP6/Z4Fiphez1+L+8OP48swQs7bdIRuFh3j4LnOmVrMw8QsnYek
+	WONSSphBjIbt8H1fxnc3EB2DCigL/oOMyxDMk1HyfauTxqkd8z/qaB0g9YrSMd+GkwYNS3YVOnE9+
+	hCF50ZRHBdY55j0SXAW0VV3Vqi+souSZ0TdBeddQJ1E57Kz+ySbNHv+vnhmBFOWr8uFWK8XB1vHiB
+	QnVoK4uiBJicmdo0K98QPklfhRNNAOARaaY3Krl0MgQdPFCGlNuM/KMbdNYItmkbuk+NDN+pL+2/Z
+	xHcdnFtNmRsBPaoMw2Yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXzDz-0001eK-Bi; Fri, 22 Nov 2019 03:03:11 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iXzP3-00052T-1U; Fri, 22 Nov 2019 03:14:37 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXzDt-0001db-Fx; Fri, 22 Nov 2019 03:03:07 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 48413AE2C;
- Fri, 22 Nov 2019 03:03:02 +0000 (UTC)
-Subject: Re: [PATCH] arm64: dts: realtek: Add Realtek rtd1619 and mjolnir
-To: James Tai <james.tai@realtek.com>
-References: <43B123F21A8CFE44A9641C099E4196FFCF91BEFA@RTITMBSVM04.realtek.com.tw>
- <25fdd8eb-f1a0-82ae-9c4b-22325b163b0e@suse.de>
- <43B123F21A8CFE44A9641C099E4196FFCF920024@RTITMBSVM04.realtek.com.tw>
- <6182b89f-cd7e-ce7c-56f7-e2f500321cde@suse.de>
- <993d5da60a87443995347ee2a4c74959@realtek.com>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Organization: SUSE Software Solutions Germany GmbH
-Message-ID: <6d44e7f8-1ae5-ed3d-ac3c-0ee7903d660b@suse.de>
-Date: Fri, 22 Nov 2019 04:03:01 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
-MIME-Version: 1.0
-In-Reply-To: <993d5da60a87443995347ee2a4c74959@realtek.com>
-Content-Language: en-US
+ id 1iXzOs-000520-JD; Fri, 22 Nov 2019 03:14:27 +0000
+Received: from localhost (c-73-35-209-67.hsd1.wa.comcast.net [73.35.209.67])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 4376C15102FA7;
+ Thu, 21 Nov 2019 19:14:19 -0800 (PST)
+Date: Thu, 21 Nov 2019 19:14:17 -0800 (PST)
+Message-Id: <20191121.191417.1339124115325210078.davem@davemloft.net>
+To: rmk+kernel@armlinux.org.uk
+Subject: Re: [CFT PATCH net-next v2] net: phylink: rename mac_link_state()
+ op to mac_pcs_get_state()
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <E1iXaSM-0004t1-9L@rmk-PC.armlinux.org.uk>
+References: <E1iXaSM-0004t1-9L@rmk-PC.armlinux.org.uk>
+X-Mailer: Mew version 6.8 on Emacs 26.2
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Thu, 21 Nov 2019 19:14:20 -0800 (PST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_190305_677840_BD4CD921 
-X-CRM114-Status: GOOD (  12.10  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191121_191426_633050_F256829C 
+X-CRM114-Status: GOOD (  14.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,39 +62,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
- "'linux-kernel@vger.kernel.org'" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-realtek-soc@lists.infradead.org"
- <linux-realtek-soc@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: andrew@lunn.ch, nbd@openwrt.org, f.fainelli@gmail.com,
+ alexandre.torgue@st.com, netdev@vger.kernel.org, sean.wang@mediatek.com,
+ linux-stm32@st-md-mailman.stormreply.com, vivien.didelot@gmail.com,
+ michal.simek@xilinx.com, joabreu@synopsys.com,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ thomas.petazzoni@bootlin.com, john@phrozen.org, matthias.bgg@gmail.com,
+ peppe.cavallaro@st.com, radhey.shyam.pandey@xilinx.com,
+ Mark-MC.Lee@mediatek.com, mcoquelin.stm32@gmail.com, hkallweit1@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSmFtZXMsCgpBbSAyMC4xMS4xOSB1bSAwODo1OCBzY2hyaWViIEphbWVzIFRhaToKPj4gVGhp
-cyBjb25mbGljdHMgd2l0aCB3aGF0IEkgc2VlIGluIEJTUCBpcnEgbXV4IGNvZGUgaGVyZToKPj4g
-aHR0cHM6Ly9naXRodWIuY29tL0JQSS1TSU5PVk9JUC9CUEktTTQtYnNwL2Jsb2IvbWFzdGVyL2xp
-bnV4LXJ0ay9kcml2ZXJzL2lyCj4+IHFjaGlwL2lycS1ydGQxNnh4LmgKPj4KPj4gVGhhdCBkb2Vz
-IHNob3cgVVIwIGFzIGJpdCAyIGZvciB0aGUgaXNvIGlycSBtdXgsIGFzIGZvciBwcmV2aW91cyBT
-b0NzLgo+PiBJcyB0aGF0IGNvZGUgd3JvbmcsIG9yIGRvZXMgdGhlIHNhbWUgVUFSVDAgSVAgYmxv
-Y2sgaGF2ZSB0d28gYWx0ZXJuYXRpdmUKPj4gaW50ZXJydXB0cyBmb3IgYmFja3dhcmRzIGNvbXBh
-dGliaWxpdHk/IEkgdGhlcmVmb3JlIGhlbGQgYmFjayBSVEQxNjE5IGlycSBtdXgKPj4gcGF0Y2hl
-cyBmcm9tIG15IGlycWNoaXAgdjQgc2VyaWVzIFsxXS4KPj4KPiBJdCBpcyBjb2RlIHdyb25nLiBU
-aGUgVVIwIHNob3VsZCByZW1vdmUgZnJvbSAiaXJxLXJ0ZDE2eHguaCIuCgpBY3R1YWxseSwgSSBq
-dXN0IHRlc3RlZCB0aGF0IFVSMCB3b3JrcyEgKHJldiBBMDEpIFNvIHdlIHNob3VsZG4ndCByZW1v
-dmUKaXQgZnJvbSB0aGUgaXJxY2hpcCBkcml2ZXIsIGdpdmVuIHRoZSBtYXBwaW5nIGNoYW5nZXMg
-cmVxdWVzdGVkIGZvciB2NS4KClJURDE2MTkgZHJpdmVyIHN1cHBvcnQgYW5kIERUIG5vZGVzIHB1
-c2hlZCB0byBteSBydGQxMjk1LW5leHQgYnJhbmNoLgoKPj4gVGhlIEJTUCBEVCBkb2VzIGFzc2ln
-biBub24tbXV4IGludGVycnVwdHMgdG8gdGhlIFVBUlQgbm9kZSBsaWtlIHlvdSBkaWQ6Cj4+IGh0
-dHBzOi8vZ2l0aHViLmNvbS9CUEktU0lOT1ZPSVAvQlBJLU00LWJzcC9ibG9iL21hc3Rlci9saW51
-eC1ydGsvYXJjaC9hcm0KPj4gNjQvYm9vdC9kdHMvcmVhbHRlay9ydGQxNnh4L3J0ZC0xNnh4LmR0
-c2kKPj4gQW5kIEkgb2J2aW91c2x5IHRydXN0IHRoYXQgeW91IHRlc3RlZCB5b3VyIERUIHRvIHBy
-b2R1Y2Ugc2VyaWFsIG91dHB1dC4KCldlIHNob3VsZCBvYnZpb3VzbHkgbGVhdmUgdGhlIG5ldyBH
-SUMgaW50ZXJydXB0cyBpbiB0aGUgRFQuCgpSZWdhcmRzLApBbmRyZWFzCgotLSAKU1VTRSBTb2Z0
-d2FyZSBTb2x1dGlvbnMgR2VybWFueSBHbWJICk1heGZlbGRzdHIuIDUsIDkwNDA5IE7DvHJuYmVy
-ZywgR2VybWFueQpHRjogRmVsaXggSW1lbmTDtnJmZmVyCkhSQiAzNjgwOSAoQUcgTsO8cm5iZXJn
-KQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+From: Russell King <rmk+kernel@armlinux.org.uk>
+Date: Thu, 21 Nov 2019 00:36:22 +0000
+
+> Rename the mac_link_state() method to mac_pcs_get_state() to make it
+> clear that it should be returning the MACs PCS current state, which
+> is used for inband negotiation rather than just reading back what the
+> MAC has been configured for. Update the documentation to explicitly
+> mention that this is for inband.
+> 
+> We drop the return value as well; most of phylink doesn't check the
+> return value and it is not clear what it should do on error - instead
+> arrange for state->link to be false.
+> 
+> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> ---
+> This is something I'd like to do to make it clearer what phylink
+> expects of this function, and that it shouldn't just read-back how
+> the MAC was configured.
+> 
+> This version drops the deeper changes, concentrating just on the
+> phylink API rather than delving deeper into drivers, as I haven't
+> received any feedback on that patch.
+> 
+> It would be nice to see all these drivers tested with this change.
+
+I'm tempted to just apply this, any objections?
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
