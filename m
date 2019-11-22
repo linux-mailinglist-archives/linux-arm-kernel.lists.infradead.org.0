@@ -2,105 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5229710790A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 20:55:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B86DE107917
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 20:55:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hIdot8QtRhHDwrq9kf/fNFtmiUN7wKwcOsFfzJEHRNo=; b=SgEGBumPdq7oCi
-	74jVRwjFuUCYtlWjU4eUPolg/pLYhe5f6+uiahQCYXRKlYOve/pUxGNDVK0IoddfnJPeSfl+G/6/l
-	PKmzX3b6h08qn/Kpt3o3E+msebACu9cC5s7U4s4C19kNxOUHpQIy5+TaxLhtikzvP8j99hcuDEFwG
-	XyYbrYXZMd70ZHYA0S3LBFT3rp4Uqh5JSyq17PjiTel8NuCNFnJZQN9GKMDN1yHk7EXW+d6mypq7k
-	HGJ6fNphQsOPmLPwjEpej5AYH2zaoZprmFTd3+f9aXDujpIWybeWWSLJbg8MT6lrvyDi+bfD2Oh+N
-	X+wa7bgCYsJ/O/grR+8g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=YONKMMLX6zIcm9fuGzVz2OTeIo44/qoae3Fysk6GX2Y=; b=Z1v
+	FIi4aWwwX27TM39qZto3VMuCarAPj5e9MK2FBiroAZxpONlaVLByegGRmnYq1cuQ77Rf+6yEH3Bv8
+	2PiNne1ye35Y1O8AvDg2TjopECzo/sP9sJCoGNxcaCxlFhYjVAP9g6ORjgypLRLwx3UL/mtHj9SCI
+	j4KujJwn7q0aZEjtkgTFMAgJsTyRXXJAsBExrQqxN2qnXenZZcqWWxJYQrJsjZDkdmwtJGegWFp/S
+	PJ/32zDLGBCdoFLs8P3H39Gy9tmXceaOrhoxFFa5OOm0J1JCuUcZ5iPmo5a70x9xNNI4UGixVT51V
+	Wjos+dZHQg0jD8hRlqDNaboq4SezmPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYF1b-0002B2-Ae; Fri, 22 Nov 2019 19:55:27 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYF1R-0002AK-3W
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 19:55:18 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xAMJnj9o174827;
- Fri, 22 Nov 2019 19:54:03 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=content-type :
- mime-version : subject : from : in-reply-to : date : cc :
- content-transfer-encoding : message-id : references : to;
- s=corp-2019-08-05; bh=kB5fnXEkxm1dpQwuBz6yIEH0Q8mz9a5fLzlvbR2+y5E=;
- b=c8hxZExoG6zdyVyuOabznF5627mf91ecZ/0RI9C1UXNK5vpNFibVu1IJmJZrCBW1EV1p
- KfmoUR+JfotBW6Fkk4Vp9dQCxdNtS6Pqwiy5dvhF24qQjGMfSKT072zRyOy4eaAMQumB
- IlzuJgNQRB9lLJj3p7Q76DO5RbPHIkfdYa5QWxmNJdvyN4uH724mYZ4xf2SG/PWSzPau
- QC4/FTGRFpQq5qzg3lsWTMSs31Boj1sw3j1wGAHuRv2RwNyuddL22q9WJzRRlfO7MIYs
- T0zPWwnLwlxMKWcvlNvWy/8YI9lWWholigwChRNRqVWYmQvF6DaJYK5Jv1PutlKVDe02 dQ== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 2wa9rr4khu-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 22 Nov 2019 19:54:03 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xAMJrqJT018686;
- Fri, 22 Nov 2019 19:54:02 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by aserp3030.oracle.com with ESMTP id 2we8ygc37p-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 22 Nov 2019 19:54:02 +0000
-Received: from abhmp0018.oracle.com (abhmp0018.oracle.com [141.146.116.24])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id xAMJqTPF011464;
- Fri, 22 Nov 2019 19:52:29 GMT
-Received: from [10.39.199.17] (/10.39.199.17)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 22 Nov 2019 11:52:27 -0800
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
-Subject: Re: [PATCH v6 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-From: Alex Kogan <alex.kogan@oracle.com>
-In-Reply-To: <dc31b3ea-1b03-16d3-1a03-a0a7ad1729d2@redhat.com>
-Date: Fri, 22 Nov 2019 14:52:23 -0500
-Message-Id: <78BB046F-700B-4108-923B-0FC5D7550385@oracle.com>
-References: <20191107174622.61718-4-alex.kogan@oracle.com>
- <201911202212.CdyX1gua%lkp@intel.com>
- <B1A1B09F-C44E-45F7-80EB-09E30AEFD358@oracle.com>
- <dc31b3ea-1b03-16d3-1a03-a0a7ad1729d2@redhat.com>
-To: Waiman Long <longman@redhat.com>
-X-Mailer: Apple Mail (2.3445.104.11)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9449
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1911140001 definitions=main-1911220163
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9449
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
- definitions=main-1911220163
+	id 1iYF24-0002WF-CK; Fri, 22 Nov 2019 19:55:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iYF1u-0002VB-Lc
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 19:55:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CE56113E;
+ Fri, 22 Nov 2019 11:55:43 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1A5BF3F6C4;
+ Fri, 22 Nov 2019 11:55:42 -0800 (PST)
+Date: Fri, 22 Nov 2019 19:55:41 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
+Subject: Applied "dt-bindings: spi: Convert stm32 QSPI bindings to
+ json-schema" to the spi tree
+In-Reply-To: <20191120194444.10540-1-benjamin.gaignard@st.com>
+Message-Id: <applied-20191120194444.10540-1-benjamin.gaignard@st.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_115517_235394_B42AE223 
-X-CRM114-Status: GOOD (  22.10  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191122_115546_791355_8FBFB04A 
+X-CRM114-Status: GOOD (  18.30  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,107 +61,208 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, kbuild-all@lists.01.org,
- kbuild test robot <lkp@intel.com>, arnd@arndb.de, peterz@infradead.org,
- dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
- will.deacon@arm.com, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- rahul.x.yadav@oracle.com, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
- steven.sistare@oracle.com, tglx@linutronix.de, daniel.m.jordan@oracle.com,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgo+IE9uIE5vdiAyMiwgMjAxOSwgYXQgMjoyOSBQTSwgV2FpbWFuIExvbmcgPGxvbmdtYW5AcmVk
-aGF0LmNvbT4gd3JvdGU6Cj4gCj4gT24gMTEvMjIvMTkgMToyOCBQTSwgQWxleCBLb2dhbiB3cm90
-ZToKPj4gCj4+PiBPbiBOb3YgMjAsIDIwMTksIGF0IDEwOjE2IEFNLCBrYnVpbGQgdGVzdCByb2Jv
-dCA8bGtwQGludGVsLmNvbT4gd3JvdGU6Cj4+PiAKPj4+IEhpIEFsZXgsCj4+PiAKPj4+IFRoYW5r
-IHlvdSBmb3IgdGhlIHBhdGNoISBZZXQgc29tZXRoaW5nIHRvIGltcHJvdmU6Cj4+PiAKPj4+IFth
-dXRvIGJ1aWxkIHRlc3QgRVJST1Igb24gbGludXMvbWFzdGVyXQo+Pj4gW2Fsc28gYnVpbGQgdGVz
-dCBFUlJPUiBvbiB2NS40LXJjOCBuZXh0LTIwMTkxMTIwXQo+Pj4gW2lmIHlvdXIgcGF0Y2ggaXMg
-YXBwbGllZCB0byB0aGUgd3JvbmcgZ2l0IHRyZWUsIHBsZWFzZSBkcm9wIHVzIGEgbm90ZSB0byBo
-ZWxwCj4+PiBpbXByb3ZlIHRoZSBzeXN0ZW0uIEJUVywgd2UgYWxzbyBzdWdnZXN0IHRvIHVzZSAn
-LS1iYXNlJyBvcHRpb24gdG8gc3BlY2lmeSB0aGUKPj4+IGJhc2UgdHJlZSBpbiBnaXQgZm9ybWF0
-LXBhdGNoLCBwbGVhc2Ugc2VlIGh0dHBzOi8vdXJsZGVmZW5zZS5wcm9vZnBvaW50LmNvbS92Mi91
-cmw/dT1odHRwcy0zQV9fc3RhY2tvdmVyZmxvdy5jb21fYV8zNzQwNjk4MiZkPUR3SUJBZyZjPVJv
-UDFZdW1DWENnYVdIdmxaWVI4UFpoOEJ2N3FJck1VQjY1ZWFwSV9KbkUmcj1IdmhrM0Y0b21kQ2st
-R0UxUFRPbTNLbjBBN0FwV09aMmFaTFR1VnhGSzRrJm09QnhFdDEyMzJjY0dsTUdEaW5BQjBRQVVh
-VEZ5bC1tNXNwNEMtY3JIanBvVSZzPU96elFxZzRmVERWNTVYLXk0dmJuR2VYb0phUEhTdk9fRWZy
-VVFuTVZSSGMmZT0gXQo+Pj4gCj4+PiB1cmw6ICAgIGh0dHBzOi8vdXJsZGVmZW5zZS5wcm9vZnBv
-aW50LmNvbS92Mi91cmw/dT1odHRwcy0zQV9fZ2l0aHViLmNvbV8wZGF5LTJEY2lfbGludXhfY29t
-bWl0c19BbGV4LTJES29nYW5fbG9ja2luZy0yRHFzcGlubG9jay0yRFJlbmFtZS0yRG1jcy0yRGxv
-Y2stMkR1bmxvY2stMkRtYWNyb3MtMkRhbmQtMkRtYWtlLTJEdGhlbS0yRG1vcmUtMkRnZW5lcmlj
-XzIwMTkxMTA5LTJEMTgwNTM1JmQ9RHdJQkFnJmM9Um9QMVl1bUNYQ2dhV0h2bFpZUjhQWmg4QnY3
-cUlyTVVCNjVlYXBJX0puRSZyPUh2aGszRjRvbWRDay1HRTFQVE9tM0tuMEE3QXBXT1oyYVpMVHVW
-eEZLNGsmbT1CeEV0MTIzMmNjR2xNR0RpbkFCMFFBVWFURnlsLW01c3A0Qy1jckhqcG9VJnM9dUU3
-WmVZWE9GaXUwOVBVVmpuQ250RWUyclI1eF9ReFM2ZEVXOXR3cGZvayZlPSAKPj4+IGJhc2U6ICAg
-aHR0cHM6Ly91cmxkZWZlbnNlLnByb29mcG9pbnQuY29tL3YyL3VybD91PWh0dHBzLTNBX19naXQu
-a2VybmVsLm9yZ19wdWJfc2NtX2xpbnV4X2tlcm5lbF9naXRfdG9ydmFsZHNfbGludXguZ2l0JmQ9
-RHdJQkFnJmM9Um9QMVl1bUNYQ2dhV0h2bFpZUjhQWmg4QnY3cUlyTVVCNjVlYXBJX0puRSZyPUh2
-aGszRjRvbWRDay1HRTFQVE9tM0tuMEE3QXBXT1oyYVpMVHVWeEZLNGsmbT1CeEV0MTIzMmNjR2xN
-R0RpbkFCMFFBVWFURnlsLW01c3A0Qy1jckhqcG9VJnM9YUFLeHVYY19jN09GMGZmaW9RZlZzSUI2
-SC00U2Q5UFl4U003a3VybTJpZyZlPSAgMDA1OGIwYTUwNmU0MGQ5YTJjNjIwMTVmZTkyZWI2NGE0
-NGQ3OGNkOQo+Pj4gY29uZmlnOiBpMzg2LXJhbmRjb25maWctZjAwMy0yMDE5MTEyMCAoYXR0YWNo
-ZWQgYXMgLmNvbmZpZykKPj4+IGNvbXBpbGVyOiBnY2MtNyAoRGViaWFuIDcuNC4wLTE0KSA3LjQu
-MAo+Pj4gcmVwcm9kdWNlOgo+Pj4gICAgICAgIyBzYXZlIHRoZSBhdHRhY2hlZCAuY29uZmlnIHRv
-IGxpbnV4IGJ1aWxkIHRyZWUKPj4+ICAgICAgIG1ha2UgQVJDSD1pMzg2IAo+Pj4gCj4+PiBJZiB5
-b3UgZml4IHRoZSBpc3N1ZSwga2luZGx5IGFkZCBmb2xsb3dpbmcgdGFnCj4+PiBSZXBvcnRlZC1i
-eToga2J1aWxkIHRlc3Qgcm9ib3QgPGxrcEBpbnRlbC5jb20+Cj4+PiAKPj4+IEFsbCBlcnJvci93
-YXJuaW5ncyAobmV3IG9uZXMgcHJlZml4ZWQgYnkgPj4pOgo+Pj4gCj4+PiAgSW4gZmlsZSBpbmNs
-dWRlZCBmcm9tIGluY2x1ZGUvbGludXgvZXhwb3J0Lmg6NDI6MCwKPj4+ICAgICAgICAgICAgICAg
-ICAgIGZyb20gaW5jbHVkZS9saW51eC9saW5rYWdlLmg6NywKPj4+ICAgICAgICAgICAgICAgICAg
-IGZyb20gaW5jbHVkZS9saW51eC9rZXJuZWwuaDo4LAo+Pj4gICAgICAgICAgICAgICAgICAgZnJv
-bSBpbmNsdWRlL2xpbnV4L2xpc3QuaDo5LAo+Pj4gICAgICAgICAgICAgICAgICAgZnJvbSBpbmNs
-dWRlL2xpbnV4L3NtcC5oOjEyLAo+Pj4gICAgICAgICAgICAgICAgICAgZnJvbSBrZXJuZWwvbG9j
-a2luZy9xc3BpbmxvY2suYzoxNjoKPj4+ICBrZXJuZWwvbG9ja2luZy9xc3BpbmxvY2tfY25hLmg6
-IEluIGZ1bmN0aW9uICdjbmFfaW5pdF9ub2Rlcyc6Cj4+Pj4+IGluY2x1ZGUvbGludXgvY29tcGls
-ZXIuaDozNTA6Mzg6IGVycm9yOiBjYWxsIHRvICdfX2NvbXBpbGV0aW1lX2Fzc2VydF84MCcgZGVj
-bGFyZWQgd2l0aCBhdHRyaWJ1dGUgZXJyb3I6IEJVSUxEX0JVR19PTiBmYWlsZWQ6IHNpemVvZihz
-dHJ1Y3QgY25hX25vZGUpID4gc2l6ZW9mKHN0cnVjdCBxbm9kZSkKPj4+ICAgIF9jb21waWxldGlt
-ZV9hc3NlcnQoY29uZGl0aW9uLCBtc2csIF9fY29tcGlsZXRpbWVfYXNzZXJ0XywgX19MSU5FX18p
-Cj4+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBeCj4+PiAgaW5jbHVk
-ZS9saW51eC9jb21waWxlci5oOjMzMTo0OiBub3RlOiBpbiBkZWZpbml0aW9uIG9mIG1hY3JvICdf
-X2NvbXBpbGV0aW1lX2Fzc2VydCcKPj4+ICAgICAgcHJlZml4ICMjIHN1ZmZpeCgpOyAgICBcCj4+
-PiAgICAgIF5+fn5+fgo+Pj4gIGluY2x1ZGUvbGludXgvY29tcGlsZXIuaDozNTA6Mjogbm90ZTog
-aW4gZXhwYW5zaW9uIG9mIG1hY3JvICdfY29tcGlsZXRpbWVfYXNzZXJ0Jwo+Pj4gICAgX2NvbXBp
-bGV0aW1lX2Fzc2VydChjb25kaXRpb24sIG1zZywgX19jb21waWxldGltZV9hc3NlcnRfLCBfX0xJ
-TkVfXykKPj4+ICAgIF5+fn5+fn5+fn5+fn5+fn5+fn4KPj4+ICBpbmNsdWRlL2xpbnV4L2J1aWxk
-X2J1Zy5oOjM5OjM3OiBub3RlOiBpbiBleHBhbnNpb24gb2YgbWFjcm8gJ2NvbXBpbGV0aW1lX2Fz
-c2VydCcKPj4+ICAgI2RlZmluZSBCVUlMRF9CVUdfT05fTVNHKGNvbmQsIG1zZykgY29tcGlsZXRp
-bWVfYXNzZXJ0KCEoY29uZCksIG1zZykKPj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgXn5+fn5+fn5+fn5+fn5+fn5+Cj4+PiAgaW5jbHVkZS9saW51eC9idWlsZF9idWcu
-aDo1MDoyOiBub3RlOiBpbiBleHBhbnNpb24gb2YgbWFjcm8gJ0JVSUxEX0JVR19PTl9NU0cnCj4+
-PiAgICBCVUlMRF9CVUdfT05fTVNHKGNvbmRpdGlvbiwgIkJVSUxEX0JVR19PTiBmYWlsZWQ6ICIg
-I2NvbmRpdGlvbikKPj4+ICAgIF5+fn5+fn5+fn5+fn5+fn4KPj4+Pj4ga2VybmVsL2xvY2tpbmcv
-cXNwaW5sb2NrX2NuYS5oOjgwOjI6IG5vdGU6IGluIGV4cGFuc2lvbiBvZiBtYWNybyAnQlVJTERf
-QlVHX09OJwo+Pj4gICAgQlVJTERfQlVHX09OKHNpemVvZihzdHJ1Y3QgY25hX25vZGUpID4gc2l6
-ZW9mKHN0cnVjdCBxbm9kZSkpOwo+Pj4gICAgXn5+fn5+fn5+fn5+Cj4+IENvbnNpZGVyIHRoZSBm
-b2xsb3dpbmcgZGVmaW5pdGlvbiBvZiBxbm9kZToKPj4gCj4+IHN0cnVjdCBxbm9kZSB7Cj4+IAlz
-dHJ1Y3QgbWNzX3NwaW5sb2NrIG1jczsKPj4gI2lmIGRlZmluZWQoQ09ORklHX1BBUkFWSVJUX1NQ
-SU5MT0NLUykgfHwgZGVmaW5lZChDT05GSUdfTlVNQV9BV0FSRV9TUElOTE9DS1MpCj4+IAlsb25n
-IHJlc2VydmVkWzJdOwo+PiAjZW5kaWYKPj4gfTsKPj4gCj4+IGFuZCB0aGlzIGlzIGhvdyBjbmFf
-bm9kZSBpcyBkZWZpbmVkOgo+PiAKPj4gc3RydWN0IGNuYV9ub2RlIHsKPj4gCXN0cnVjdCBtY3Nf
-c3BpbmxvY2sJbWNzOwo+PiAJaW50CQkJbnVtYV9ub2RlOwo+PiAJdTMyCQkJZW5jb2RlZF90YWls
-Owo+PiAJdTMyCQkJcHJlX3NjYW5fcmVzdWx0OyAvKiAwLCAxLCAyIG9yIGVuY29kZWQgdGFpbCAq
-Lwo+PiAJdTMyCQkJaW50cmFfY291bnQ7Cj4+IH07Cj4+IAo+PiBTaW5jZSBsb25nIGlzIDMyIGJp
-dCBvbiBpMzg2LCB3ZSBnZXQgdGhlIGNvbXBpbGF0aW9uIGVycm9yIGFib3ZlLgo+PiAKPj4gV2Ug
-Y2FuIHRyeSBhbmQgc3F1ZWV6ZSBDTkEtc3BlY2lmaWMgZmllbGRzIGludG8gNjQgYml0IG9uIGkz
-ODYgKG9yIGFueSAzMmJpdCAKPj4gYXJjaGl0ZWN0dXJlIGZvciB0aGF0IG1hdHRlcikuIE5vdGUg
-dGhhdCBhbiBlbmNvZGVkIHRhaWwgcG9pbnRlciByZXF1aXJlcyB1cCAKPj4gdG8gMjQgYml0cywg
-YW5kIHdlIGhhdmUgdHdvIG9mIHRob3NlLiBXZSB3b3VsZCB3YW50IGRpZmZlcmVudCBmaWVsZCBl
-bmNvZGluZ3MgCj4+IGZvciAzMiB2cyA2NGJpdCBhcmNoaXRlY3R1cmVzLCBhbmQgdGhpcyBhbGwg
-d2lsbCBiZSBxdWl0ZSB1Z2x5Lgo+PiAKPj4gU28gaW5zdGVhZCB3ZSBzaG91bGQgcHJvYmFibHkg
-ZWl0aGVyIGNoYW5nZSB0aGUgZGVmaW5pdGlvbiBvZiBAcmVzZXJ2ZWQgaW4gcW5vZGUgCj4+IHRv
-IGxvbmcgbG9uZywgb3IgcGVyaGFwcyBkaXNhYmxlIENOQSBvbiAzMmJpdCBhcmNoaXRlY3R1cmVz
-IGFsdG9nZXRoZXI/Cj4+IEkgd291bGQgY2VydGFpbmx5IHByZWZlciB0aGUgZm9ybWVyLCBlc3Bl
-Y2lhbGx5IGFzIGl0IHJlcXVpcmVzIHRoZSBsZWFzdCBhbW91bnQgCj4+IG9mIGNvZGUvY29uZmln
-IGNoYW5nZXMuCj4+IAo+PiBBbnkgb2JqZWN0aW9ucyAvIHRob3VnaHRzPwo+PiAKPj4gVGhhbmtz
-LAo+PiDigJQgQWxleAo+PiAKPiBUaGUgZWFzeSB3YXkgb3V0IGlzIHRvIHJlc3RyaWN0IE5VTUEg
-cXNwaW5sb2NrIHRvIDY0LWJpdCBvbmx5LiBUaGVyZQo+IGFyZW4ndCB0aGF0IG1hbnkgMzItYml0
-IE5VTUEgc3lzdGVtcyBvdXQgdGhlcmUgdGhhdCB3ZSBoYXZlIHRvIHdvcnJ5IGFib3V0Lgo+IAo+
-IEp1c3QgYWRkICJkZXBlbmRzIG9uIDY0QklUIiB0byB0aGUgY29uZmlnIGVudHJ5LgpPaywgd2ls
-bCBkby4KClRoYW5rcywK4oCUIEFsZXgKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
-cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+The patch
+
+   dt-bindings: spi: Convert stm32 QSPI bindings to json-schema
+
+has been applied to the spi tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.5
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From ffa119f7c42d29be2dd759bb18cc4d1f45804c6b Mon Sep 17 00:00:00 2001
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+Date: Wed, 20 Nov 2019 20:44:44 +0100
+Subject: [PATCH] dt-bindings: spi: Convert stm32 QSPI bindings to json-schema
+
+Convert the STM32 QSPI binding to DT schema format using json-schema
+
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Link: https://lore.kernel.org/r/20191120194444.10540-1-benjamin.gaignard@st.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ .../bindings/spi/spi-stm32-qspi.txt           | 47 -----------
+ .../bindings/spi/st,stm32-qspi.yaml           | 83 +++++++++++++++++++
+ 2 files changed, 83 insertions(+), 47 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/spi/spi-stm32-qspi.txt
+ create mode 100644 Documentation/devicetree/bindings/spi/st,stm32-qspi.yaml
+
+diff --git a/Documentation/devicetree/bindings/spi/spi-stm32-qspi.txt b/Documentation/devicetree/bindings/spi/spi-stm32-qspi.txt
+deleted file mode 100644
+index bfc038b9478d..000000000000
+--- a/Documentation/devicetree/bindings/spi/spi-stm32-qspi.txt
++++ /dev/null
+@@ -1,47 +0,0 @@
+-* STMicroelectronics Quad Serial Peripheral Interface(QSPI)
+-
+-Required properties:
+-- compatible: should be "st,stm32f469-qspi"
+-- reg: the first contains the register location and length.
+-       the second contains the memory mapping address and length
+-- reg-names: should contain the reg names "qspi" "qspi_mm"
+-- interrupts: should contain the interrupt for the device
+-- clocks: the phandle of the clock needed by the QSPI controller
+-- A pinctrl must be defined to set pins in mode of operation for QSPI transfer
+-
+-Optional properties:
+-- resets: must contain the phandle to the reset controller.
+-
+-A spi flash (NOR/NAND) must be a child of spi node and could have some
+-properties. Also see jedec,spi-nor.txt.
+-
+-Required properties:
+-- reg: chip-Select number (QSPI controller may connect 2 flashes)
+-- spi-max-frequency: max frequency of spi bus
+-
+-Optional properties:
+-- spi-rx-bus-width: see ./spi-bus.txt for the description
+-- dmas: DMA specifiers for tx and rx dma. See the DMA client binding,
+-Documentation/devicetree/bindings/dma/dma.txt.
+-- dma-names: DMA request names should include "tx" and "rx" if present.
+-
+-Example:
+-
+-qspi: spi@a0001000 {
+-	compatible = "st,stm32f469-qspi";
+-	reg = <0xa0001000 0x1000>, <0x90000000 0x10000000>;
+-	reg-names = "qspi", "qspi_mm";
+-	interrupts = <91>;
+-	resets = <&rcc STM32F4_AHB3_RESET(QSPI)>;
+-	clocks = <&rcc 0 STM32F4_AHB3_CLOCK(QSPI)>;
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&pinctrl_qspi0>;
+-
+-	flash@0 {
+-		compatible = "jedec,spi-nor";
+-		reg = <0>;
+-		spi-rx-bus-width = <4>;
+-		spi-max-frequency = <108000000>;
+-		...
+-	};
+-};
+diff --git a/Documentation/devicetree/bindings/spi/st,stm32-qspi.yaml b/Documentation/devicetree/bindings/spi/st,stm32-qspi.yaml
+new file mode 100644
+index 000000000000..3665a5fe6b7f
+--- /dev/null
++++ b/Documentation/devicetree/bindings/spi/st,stm32-qspi.yaml
+@@ -0,0 +1,83 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/spi/st,stm32-qspi.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: STMicroelectronics STM32 Quad Serial Peripheral Interface (QSPI) bindings
++
++maintainers:
++  - Christophe Kerello <christophe.kerello@st.com>
++  - Patrice Chotard <patrice.chotard@st.com>
++
++allOf:
++  - $ref: "spi-controller.yaml#"
++
++properties:
++  compatible:
++    const: st,stm32f469-qspi
++
++  reg:
++    items:
++      - description: registers
++      - description: memory mapping
++
++  reg-names:
++    items:
++     - const: qspi
++     - const: qspi_mm
++
++  clocks:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++  dmas:
++    items:
++      - description: tx DMA channel
++      - description: rx DMA channel
++
++  dma-names:
++    items:
++      - const: tx
++      - const: rx
++
++required:
++  - compatible
++  - reg
++  - reg-names
++  - clocks
++  - interrupts
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/stm32mp1-clks.h>
++    #include <dt-bindings/reset/stm32mp1-resets.h>
++    spi@58003000 {
++      compatible = "st,stm32f469-qspi";
++      reg = <0x58003000 0x1000>, <0x70000000 0x10000000>;
++      reg-names = "qspi", "qspi_mm";
++      interrupts = <GIC_SPI 92 IRQ_TYPE_LEVEL_HIGH>;
++      dmas = <&mdma1 22 0x10 0x100002 0x0 0x0>,
++             <&mdma1 22 0x10 0x100008 0x0 0x0>;
++      dma-names = "tx", "rx";
++      clocks = <&rcc QSPI_K>;
++      resets = <&rcc QSPI_R>;
++
++      #address-cells = <1>;
++      #size-cells = <0>;
++
++      flash@0 {
++        compatible = "jedec,spi-nor";
++        reg = <0>;
++        spi-rx-bus-width = <4>;
++        spi-max-frequency = <108000000>;
++      };
++    };
++
++...
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
