@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4061106707
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 08:25:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19E22106708
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 08:25:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zPFr9I8fkyCii9KrcWCbXQSY7wUTG9VHRFJ5ZSMdIo8=; b=h1JkvsP9/IWN3N
-	s0+GyZMiE9q3MJAgDA5lk7VTzJAeVe11epsUqSmInYdgMfEGBGbanvhtlqusYWeoYoENGu+NO9cZV
-	J6AtCazP1IKpCqaGUAMMTOaWUc0LVL8GX03pX68nQB4DzbLnL0vI0P/dEVvZ75eDSK/gc+YRHucts
-	jJQFKrxVQKuAcaZzfzgQaoCSLgkuK3iO7X7i3y9mVP1cLVhBQ2gKMAQ9Lpfplwefex620KZtG+UOm
-	oXJ39p9u+GfL9WSD5yKuet9z/YQKqBNkcZTgvmE8vNBd0hq6YsaOxZbHDcSkAkDW/l10hl89B1MUS
-	dbIkcdL1hmzVQ6NY/OMw==;
+	List-Owner; bh=rWlDmBS6M8HDsc2DQiBq9SxP0oKj7aHZwY/xcx5lCsM=; b=gquB2+4M78f3Eh
+	6sCENYXXFDp3ZrLUt7FnsW6zXvB0fJknm5yGVlwzFzjCIpmikaB6MX4U35n6+nWmAJgjfZvFpM1jK
+	jxP9s/O6+QrROQ9FXa2/KIRQ9JA8IAeBWSOK5TWNhyg7ZO73jthVK9Q+WmKnk5hGG21DvsrodEXvV
+	TekIBZnCRGF4lrY9Q4eyNpcfTbLF+wY/lY6f4c3UwATrSyoux4f4Fgk2gdSsvep+eyWLusPVXST6e
+	2jCVhiUKkVDszcWI2rHNkoD2++5Q5Hu+9iL1kwU+c9zUsuUL24V6yHz22rckRP3sSkdxlXA5ahVlY
+	uvw1v6osnO3lzgPV/jww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY3Jc-0004tW-Iz; Fri, 22 Nov 2019 07:25:16 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iY3Jr-0005WI-7C; Fri, 22 Nov 2019 07:25:31 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY3JQ-0004Ey-MB
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 07:25:06 +0000
-Received: by mail-lj1-x244.google.com with SMTP id p18so6162297ljc.6
+ id 1iY3JZ-0005Qo-HG
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 07:25:15 +0000
+Received: by mail-lf1-x142.google.com with SMTP id m30so2857096lfp.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 23:25:03 -0800 (PST)
+ Thu, 21 Nov 2019 23:25:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=P6uG/Y/koPc50FC4dd0Y4/POJMoX0WFT55LgqB+SC9c=;
- b=KAI6LIcufFWUWEpwoIE142/h1b0G1G5c5DH5TlOyJKshY6UcVTeKH34Bc66qJb3ksV
- tvAIsjEbB0iKqT1iGW7+IBzZ/HVv5H0cg7hUMtfQeXzHh/ORTKkKNdHg7gCBrUJw3EVN
- ctqdEKg7zOXKftJy4oNVCcRWUcY/iAlpFR8HbbU73+GgU0D7lvdxQzWdLcH7Iad1lT2M
- vhcaavvAANhdo1wd55pfnlRyDQNBBKFffNnc56jcQj7HObkNzKFPInCqeGoRNWCErLxk
- dbz4Joc2kjKPNIu07VzJxDa+gVQjonPLJUMgHT2zNHdH5SKTVAkmNT7//BCesFwMFJUv
- f5zg==
+ bh=XWYrspY3sqn5IhheES0xFmh++L5u8QGvgjG4njd5/Go=;
+ b=w6oWmXgC7g4lyOX/a2UvHPOQbdHjewIuLYi+MGrVTij75HtwmCU7FSbdL90m7TNcAj
+ EEYW7ekQsCdSpCLowDnFAWips+9Mj75k1D7Gv6RP7fi/s1IOTj0jmNrkJuCBPTJFD+1C
+ fy0HBf7oEipoAIdsfeyeqsDcH/JnOg8+E2fdvffRe34ZgUwQMqctqoQ8mqEtw41kf1GS
+ TCuWW0UlYY9GgvCx3GeNQjAM+c+dzOLLRhf9LVRmAy9OyRsM3AgniRPSwb/+0W95KJ6S
+ JJrVaDlXoDs0ICQ1woZRL5V+v2nfo8/btS3UKwlIOqCKKBv4eSnJUb19CmTbpwSgrvc1
+ HxvQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=P6uG/Y/koPc50FC4dd0Y4/POJMoX0WFT55LgqB+SC9c=;
- b=I1aODECsSWVN8teUP7r0VGtT9fGUTQODBK2NNkZVOhQRXmJBJvKygrOT/C1o9JFbz1
- PhHMBRpiwUYpppHw7Nvwgj+UqSwrlv27fqyQwZiYZR0odVhmHe2IeFHYsbITbFwzx94J
- 6/gPPXRUO05hMDhlvg1TJAQdu6Pdfz7/BFTlVHi1U4wU7sB9JDB/AsTwRcL6X0vE/lke
- WUu4NxrN4kKIK7XVfpXp6BjZxw0aI/aha22FfwCNxrQF+V2J4acJcvr+2G5KbGARG4xB
- TYC2skHpg5vUbp9tx5D3LsfWTYKUJNXTKje0MXjsOaFzFbztdQB6YP5es52Z61qrpdlj
- 1uog==
-X-Gm-Message-State: APjAAAXMojWWyeJ5Dbw+mcp0C+EROh4uz69ffLIJtLklcNYSUNeCNDeB
- e7gB6YRqRRKDfljPndqHHNyCiQ==
-X-Google-Smtp-Source: APXvYqym1eTLyknpwVqzImXoV+s463bJ3UZIORURNvIaHZVBUBjZQO2B4ChJLH82OXas3sJ1/lpaqw==
-X-Received: by 2002:a2e:9649:: with SMTP id z9mr10981112ljh.47.1574407502500; 
- Thu, 21 Nov 2019 23:25:02 -0800 (PST)
+ bh=XWYrspY3sqn5IhheES0xFmh++L5u8QGvgjG4njd5/Go=;
+ b=eIPmKJX0m16qa+lISOOYCp3Rqn+rF6Ew8hqtHvUYYvPfZj30NQ2FZd8YjEPCKe9gJA
+ 9WZckVTVdLrUEEotGIgqyEP8iqpeiFNHvsQVIwPo4Tfd7ljZkEKwga/2kRrNo+jcuSV8
+ KvLXcUJVgi+ZEJo+VPP2dsjIwejbTkg5jc3NawmjU27RHmE6dBg7ty2xl+ZxZVYpLPKT
+ pidVsERZ8KTTDXa5zE2WWuwu4sRECCKSkNuqSvOk/V0tf/PlbOfNnyKciQpp/963W+bq
+ xFa2XHaGHQXVsukuP1oxwXje4hXXMVUCpSuwpOPsTY8JKe2SY+u5dsq+xpiHbor/K1dR
+ DPbQ==
+X-Gm-Message-State: APjAAAV83CcfPZQGZ0CBGat3ZqG1E1t5+BIZBdjN6u7Bi0u7b3X+QkjI
+ YZzWXe1G4B9zrys2OUb/wJ+eOQ==
+X-Google-Smtp-Source: APXvYqzIWcSmkySkCPav+tdRJKcqwNHvCv8x+Fg1Tt9wqk1g4zaEkLfqyRjeQ/xuCpiF4Ip4gOFU2A==
+X-Received: by 2002:ac2:44af:: with SMTP id c15mr11040869lfm.39.1574407511506; 
+ Thu, 21 Nov 2019 23:25:11 -0800 (PST)
 Received: from localhost.bredbandsbolaget
  (c-21cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.33])
- by smtp.gmail.com with ESMTPSA id b28sm2752633ljp.9.2019.11.21.23.25.00
+ by smtp.gmail.com with ESMTPSA id f14sm2651394lfa.67.2019.11.21.23.25.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 Nov 2019 23:25:01 -0800 (PST)
+ Thu, 21 Nov 2019 23:25:10 -0800 (PST)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: dri-devel@lists.freedesktop.org,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
-Subject: [PATCH 1/2] drm/mcde: Reuse global DSI command defs
-Date: Fri, 22 Nov 2019 08:24:57 +0100
-Message-Id: <20191122072457.25619-1-linus.walleij@linaro.org>
+Subject: [PATCH 2/2] drm/mcde: Do not needlessly logically and with 3
+Date: Fri, 22 Nov 2019 08:25:08 +0100
+Message-Id: <20191122072508.25677-1-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_232504_862768_453CDD84 
-X-CRM114-Status: UNSURE (   8.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20191121_232513_596132_1E4A8C5E 
+X-CRM114-Status: GOOD (  10.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -87,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,51 +104,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The MCDE DSI include file redefines some commands that
-already exist in the common <video/mipi_display.h> header.
+The i index i always 0..3 in these statements so there
+is no need to tag "& 3" to clamp it to 3 here. Make
+the operator precedence explicit even if it's correct
+as it is, the paranthesis creates less cognitive stress
+for humans.
 
 Cc: Stephan Gerhold <stephan@gerhold.net>
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- drivers/gpu/drm/mcde/mcde_dsi.c      |  2 +-
- drivers/gpu/drm/mcde/mcde_dsi_regs.h | 11 -----------
- 2 files changed, 1 insertion(+), 12 deletions(-)
+ drivers/gpu/drm/mcde/mcde_dsi.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/gpu/drm/mcde/mcde_dsi.c b/drivers/gpu/drm/mcde/mcde_dsi.c
-index d4a12fe7ff01..dc07b534f01f 100644
+index dc07b534f01f..21cee4d9d2fd 100644
 --- a/drivers/gpu/drm/mcde/mcde_dsi.c
 +++ b/drivers/gpu/drm/mcde/mcde_dsi.c
-@@ -350,7 +350,7 @@ void mcde_dsi_te_request(struct mipi_dsi_device *mdsi)
- 	val |= 0 << DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_ID_SHIFT;
- 	val |= 2 << DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_SIZE_SHIFT;
- 	val |= DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_LP_EN;
--	val |= DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_SHORT_WRITE_1 <<
-+	val |= MIPI_DSI_GENERIC_SHORT_WRITE_1_PARAM <<
- 		DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SHIFT;
- 	writel(val, d->regs + DSI_DIRECT_CMD_MAIN_SETTINGS);
+@@ -237,25 +237,25 @@ static ssize_t mcde_dsi_host_transfer(struct mipi_dsi_host *host,
+ 	if (txlen > 0) {
+ 		val = 0;
+ 		for (i = 0; i < 4 && i < txlen; i++)
+-			val |= tx[i] << (i & 3) * 8;
++			val |= tx[i] << (i * 8);
+ 	}
+ 	writel(val, d->regs + DSI_DIRECT_CMD_WRDAT0);
+ 	if (txlen > 4) {
+ 		val = 0;
+ 		for (i = 0; i < 4 && (i + 4) < txlen; i++)
+-			val |= tx[i + 4] << (i & 3) * 8;
++			val |= tx[i + 4] << (i * 8);
+ 		writel(val, d->regs + DSI_DIRECT_CMD_WRDAT1);
+ 	}
+ 	if (txlen > 8) {
+ 		val = 0;
+ 		for (i = 0; i < 4 && (i + 8) < txlen; i++)
+-			val |= tx[i + 8] << (i & 3) * 8;
++			val |= tx[i + 8] << (i * 8);
+ 		writel(val, d->regs + DSI_DIRECT_CMD_WRDAT2);
+ 	}
+ 	if (txlen > 12) {
+ 		val = 0;
+ 		for (i = 0; i < 4 && (i + 12) < txlen; i++)
+-			val |= tx[i + 12] << (i & 3) * 8;
++			val |= tx[i + 12] << (i * 8);
+ 		writel(val, d->regs + DSI_DIRECT_CMD_WRDAT3);
+ 	}
  
-diff --git a/drivers/gpu/drm/mcde/mcde_dsi_regs.h b/drivers/gpu/drm/mcde/mcde_dsi_regs.h
-index b03a336c235f..8089db805c57 100644
---- a/drivers/gpu/drm/mcde/mcde_dsi_regs.h
-+++ b/drivers/gpu/drm/mcde/mcde_dsi_regs.h
-@@ -123,17 +123,6 @@
- #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_LONGNOTSHORT BIT(3)
- #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SHIFT 8
- #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_MASK 0x00003F00
--#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_TURN_ON_PERIPHERAL 50
--#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SHUT_DOWN_PERIPHERAL 34
--#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_SHORT_WRITE_0 3
--#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_SHORT_WRITE_1 19
--#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_SHORT_WRITE_2 35
--#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_LONG_WRITE 41
--#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_SHORT_WRITE_0 5
--#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_SHORT_WRITE_1 21
--#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_LONG_WRITE 57
--#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_READ 6
--#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SET_MAX_PKT_SIZE 55
- #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_ID_SHIFT 14
- #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_SIZE_SHIFT 16
- #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_LP_EN BIT(21)
 -- 
 2.21.0
 
