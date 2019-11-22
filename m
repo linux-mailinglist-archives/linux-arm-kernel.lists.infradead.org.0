@@ -2,69 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86EA1105E92
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 03:21:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BC65105E9E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 03:24:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b388NtqQiNsvetZJ++qD43VWNfV7DeY6ehVfqnOortc=; b=hy0sKeJJGAU4TD
-	hGcGt0cTVWwSni0ne3UbTBoTwvxz7pjqMOqSuRBnwyH2aaiS/BunhbhD7fAwMLCskg6xAPbdWygT9
-	Eux6pUCPqv3KwQo3/jKTm7tjCKhOSkSjrv/w5bkOXxSLbg4cPFs85BpxargbCmk7kPII8UReL9JO/
-	EB6s9llGBdc4guDnFSFKKV23PlaORnOpto1Po8FtSQAVwr8XTQqdZRkZfdb5qU7MnVA1au6OXoWwZ
-	Vv1tLghwpkzI+HdMz40ROh7w+o+59Gw4BDaH687fP/So/kp79EOHQqbVQ2tYE5h3+XNBkeFt1EoYF
-	HKvb2N381tspnxzdzckw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oSBZs7enwWu+y97hf0hTO33UGItwAWUlWUUk5UeCQ5Y=; b=o96IKFYmUwgc76
+	q9/snH/BHb52Rs4ZLXR7i+wI7NghsUYFKZUCFaNRK1Zlq6d9sgrEsIVF55IwX/1gxu1VoxF1hpTX2
+	jrAIvJy444+sQW3TpPK/Z/WdsMFCrTCjCMeZQ4djTuSy11SK9tQ1EvtiPaUuAnAiBzxcOqUebj8vF
+	Q7eas8+cOzHfWPLhbVZU5TV5jG5paoDLe677UozT8hykF2tvl3fTSMP3VsSC6aXM/nmhmjcRLiOvc
+	oTuws5/sQg7YAkS3fpvsXZh8vu6vBN3o7ftyufCQZU7SsUaGJ+Lh8j/FT50zR/1UnxyAWlnj4ZMOt
+	psuWGyNd+5eaOC+Zu9IA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXyZ8-00058J-Co; Fri, 22 Nov 2019 02:20:58 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1iXycU-0005XW-N4; Fri, 22 Nov 2019 02:24:26 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXyYz-00057V-Rx
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 02:20:51 +0000
-Received: by mail-ed1-x542.google.com with SMTP id r16so4629477edq.2
+ id 1iXycH-0005W4-W8
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 02:24:15 +0000
+Received: by mail-qt1-x841.google.com with SMTP id n4so6151785qte.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 18:20:49 -0800 (PST)
+ Thu, 21 Nov 2019 18:24:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZZKiFJfK+QnaDabq2KuDAv3MPPigTMKz2YqtvbwcsBE=;
- b=e6NPk8y0Od9eSqId12ooausAsOJe6fSLW4i2fperQF/VoSj/UBOW77u8q1bk2zdVaO
- DJjhD73XFlXItuuIQnFx/PrjmxuCLTxyGlx8MIR4Yb19Q81k4CFHK46heedRrUDGJUta
- MUYGHnmbbQ+fZA5UryP11na5aTitYSj4B+UkVvqO+v16FUUsgnjCoHCDalIVdoqSsTNT
- NXkpV2aCP/qSIc6bL9zaw3NvKvn9glnZMwfSgD9HHMfNwJncDpWSvTdReALlyRyFlToJ
- Lknl9s2+nb52Rv9LqHJD2ssgN2xV9ZZIvMw0O0r/KpKAVGBIug/y/rxT318m+tgtKKrt
- XB2Q==
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hiLKK1+r4xrwDMfPVXvgdsqsmhpmz4wcDPltvr+YiPM=;
+ b=juXdHl2/OTY1JDCI2WvisMRYkfyhCB9wL5baTK6u4p7eMyINED07coapH0Tt+jhDTZ
+ pz0mU0Dl+9ZUlwgPMIllUSSMrvSNJvxM84FAxwu2TdgV95+/uj7U9npfrofHN2Vg2xBP
+ AL/4MLKTSwV+OsUlPJVCLv+WEepm6sWacJ59AsPA0mIGJA2xvMttUK5wpHc2hbzSQDGA
+ Hj46YAtBseFmPmD9OBoVcmsLYh7euLUgyIjHTJMMYCHNUy/Sp8SMj+4SiYqsNdkrb6yL
+ lVFlX/JTHsJV+gxQz41tqhZFB+XZlGdmcR2A6yIShk049QI7rcWL1R1ea6zARZaR/6qg
+ IrBw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZZKiFJfK+QnaDabq2KuDAv3MPPigTMKz2YqtvbwcsBE=;
- b=T07tVZNs89ih2wGcp823QpwR5WdVk4OWfrSJdXi4oAGiGf/V1YUs3t2NNuy6SJVoD0
- m1Db++BhM4FSu+llhU8gBjOFI10VfCBXqpiokLd2hcbEitAjQdmb0VeldEU+sYlahg1l
- GiZn2uxarOiGZLPFo8c7sRs55GJzRs7PzSHooAnNZkhFIpn+fc3CidbWfZUU+Y8XZJkl
- 6tB84QbIXUApbwCLv6f09XRn9GOP+nImIqjKPplT9M02iuBwwBQ1DjgrHvyzNpCxKVVZ
- ZBgiP9UV/38DI0Ia5rsGt7oOwUxtw8UwV3Dl5x/Log32U7W3nUpkdeC529TRcTCrVem4
- oXcg==
-X-Gm-Message-State: APjAAAVC+/OLw0lmQu1Gq5iFJymufk2mHMytXpKSzrsZMyJXTePiQ/Bu
- oJYp0ppSeML/Xe/DRekYwEARYCW30fbFEtXcfHFkCw==
-X-Google-Smtp-Source: APXvYqw9amlPQfGbqL89y89/NKWzDB1NXkpkS7Lf2eLq8xcEu/NYPT00O/pqP8qpKSe6hmyYrC521a/FC0f4bs3UFx8=
-X-Received: by 2002:a17:906:5246:: with SMTP id
- y6mr18836740ejm.330.1574389247998; 
- Thu, 21 Nov 2019 18:20:47 -0800 (PST)
-MIME-Version: 1.0
-References: <20191121184805.414758-1-pasha.tatashin@soleen.com>
- <20191121184805.414758-4-pasha.tatashin@soleen.com>
- <CAMo8BfJYEh_HYGuKwKgfwVdVwg-w-AxN=+6zDuYdwB+E_dTSzA@mail.gmail.com>
-In-Reply-To: <CAMo8BfJYEh_HYGuKwKgfwVdVwg-w-AxN=+6zDuYdwB+E_dTSzA@mail.gmail.com>
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hiLKK1+r4xrwDMfPVXvgdsqsmhpmz4wcDPltvr+YiPM=;
+ b=HfmoSlQb1CCsv4Da1J9iBBC3aIiReFJbjzyRk8Y3HIP9DnTM1VjmqCX0pHdvDaq0Pe
+ bOUCTdddsNqjysCQpYkRfqF3gzFCOssEmjlPzJDSB//UX4C+rgwmO5ls5crX6rbLRD0E
+ o9YgHLKcBnzKU73Yj1WuoK7E+IXItjEr0uUomyvi2iBDN06Lv5gok3OdFG4+euMN8mN4
+ ouWdDnQ2/hd6eL2Hp0j0XaEUj8BCwpiokcKhznS7eVaI38H/1/ABrfqBi6T4YITDXPz8
+ UV2pwJFuIfWlnmIPbLQ99+g0Ig7UB01kLviQKVa4MHHAhfOZosmv4vzM7KvLf3Vjf8TF
+ TVwA==
+X-Gm-Message-State: APjAAAVCN0IEY+WLCnct50Gtwv2sKeFLqRBZobMnCFJSXTzMbagsEUDi
+ fyH/UzE8W2N6jYq08IKdgSbtHw==
+X-Google-Smtp-Source: APXvYqzgQzCnz8RAyDKTprcdXtRBKBNV8pw9G0OGoEv3raFUYmGZAJZFgHjMZtF26RBtdnjCSFPUmw==
+X-Received: by 2002:ac8:51c3:: with SMTP id d3mr1690299qtn.14.1574389448532;
+ Thu, 21 Nov 2019 18:24:08 -0800 (PST)
+Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
+ [73.69.118.222])
+ by smtp.gmail.com with ESMTPSA id z5sm2609801qtm.9.2019.11.21.18.24.06
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 21 Nov 2019 18:24:07 -0800 (PST)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Thu, 21 Nov 2019 21:20:37 -0500
-Message-ID: <CA+CK2bCvbZCseGgZV9wjmko3z6h2yNyLy=k3onhL=-7CERSbMw@mail.gmail.com>
-Subject: Re: [PATCH 3/3] arm64: remove the rest of asm-uaccess.h
-To: Max Filippov <jcmvbkbc@gmail.com>
+To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
+ linux-kernel@vger.kernel.org, catalin.marinas@arm.com, will@kernel.org,
+ steve.capper@arm.com, linux-arm-kernel@lists.infradead.org,
+ marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
+ mark.rutland@arm.com, tglx@linutronix.de, gregkh@linuxfoundation.org,
+ allison@lohutok.net, info@metux.net, alexios.zavras@intel.com,
+ sstabellini@kernel.org, boris.ostrovsky@oracle.com, jgross@suse.com,
+ stefan@agner.ch, yamada.masahiro@socionext.com,
+ xen-devel@lists.xenproject.org, linux@armlinux.org.uk
+Subject: [PATCH v2 0/3] Use C inlines for uaccess
+Date: Thu, 21 Nov 2019 21:24:03 -0500
+Message-Id: <20191122022406.590141-1-pasha.tatashin@soleen.com>
+X-Mailer: git-send-email 2.24.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_182050_316416_6D30C896 
-X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-CacheID: sfid-20191121_182414_043158_291521E4 
+X-CRM114-Status: UNSURE (   7.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,7 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -94,34 +104,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Stefan Agner <stefan@agner.ch>,
- Russell King <linux@armlinux.org.uk>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, Will Deacon <will@kernel.org>,
- boris.ostrovsky@oracle.com, Sasha Levin <sashal@kernel.org>,
- Stefano Stabellini <sstabellini@kernel.org>, James Morris <jmorris@namei.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- xen-devel@lists.xenproject.org, Vladimir Murzin <vladimir.murzin@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, alexios.zavras@intel.com,
- Thomas Gleixner <tglx@linutronix.de>, allison@lohutok.net, jgross@suse.com,
- steve.capper@arm.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
- info@metux.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> This is not related to arm64 or to the changes in the description,
-> but the change itself is OK. Whether you keep it in this patch,
-> or choose to split it out feel free to add
->
-> Acked-by: Max Filippov <jcmvbkbc@gmail.com> # for xtensa bits
+Changelog
+v2:
+	- Addressed Russell King's concern by not adding
+	  uaccess_* to ARM.
+	- Removed the accidental change to xtensa
 
-Sorry, this was accidental change. I will remove it from the next
-version of this series.
+Convert the remaining uaccess_* calls from ASM macros to C inlines.
 
-Pasha
+These patches apply against linux-next. I boot tested ARM64, and
+compile tested ARM changes.
+
+Pavel Tatashin (3):
+  arm/arm64/xen: use C inlines for privcmd_call
+  arm64: remove uaccess_ttbr0 asm macros from cache functions
+  arm64: remove the rest of asm-uaccess.h
+
+ arch/arm/include/asm/assembler.h       |  2 +-
+ arch/arm/include/asm/xen/hypercall.h   | 10 +++++
+ arch/arm/xen/enlighten.c               |  2 +-
+ arch/arm/xen/hypercall.S               |  4 +-
+ arch/arm64/include/asm/asm-uaccess.h   | 60 --------------------------
+ arch/arm64/include/asm/cacheflush.h    | 38 ++++++++++++++--
+ arch/arm64/include/asm/xen/hypercall.h | 28 ++++++++++++
+ arch/arm64/kernel/entry.S              |  6 +--
+ arch/arm64/lib/clear_user.S            |  2 +-
+ arch/arm64/lib/copy_from_user.S        |  2 +-
+ arch/arm64/lib/copy_in_user.S          |  2 +-
+ arch/arm64/lib/copy_to_user.S          |  2 +-
+ arch/arm64/mm/cache.S                  | 31 +++++--------
+ arch/arm64/mm/context.c                | 12 ++++++
+ arch/arm64/mm/flush.c                  |  2 +-
+ arch/arm64/xen/hypercall.S             | 19 +-------
+ include/xen/arm/hypercall.h            | 12 +++---
+ 17 files changed, 115 insertions(+), 119 deletions(-)
+ delete mode 100644 arch/arm64/include/asm/asm-uaccess.h
+
+-- 
+2.24.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
