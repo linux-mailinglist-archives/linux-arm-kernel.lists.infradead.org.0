@@ -2,102 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E88DC106BD7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:47:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DDCA106BF1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:48:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=eYlNb5j7MkB87TJKHGY85fhPGBGaxVVyPRoPRmX3JS8=; b=eLLqkVPiJHKJvZa6/wSj2fsr4
-	sQ7lPPbHD7fPCqRwr0zxehnGUNMFKSGGNKHMAOoilccxRsp6pZSBYiDcKCSOKmolXCILlvxNQCrOZ
-	2pY7I9E9gOrzipRcPpIxGyeoUqoMqfcPpTR0nbidohEYfJ1Ph2K8/dj8o2HUypUT+WR4UYiRc63MU
-	eDmJDzxX9KI307SQJnapio4njVmZ5Ed4xtGlHbT8hk4Rx2N9C44eKdhDKhw97gNvg7egR7cmQfa2w
-	qBOunl6J4D8SbwUCApcMXWJk2uKuuBsPjRzwSf1DEY0hzFAyoK06VTHojriwT0wPddJdHZvydGDvy
-	Gll6fcfsg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gh6KnBElifrlvNyK4F92yQRkC/ttoZ82rsvZEHLZ8Mg=; b=L4Pvae80B7pHwM
+	6twFe50dswJHm8W9SBtIl2Gxj8ZQhWsxgqGVGVS4CMSW+nkZ3dwTwZ1heNqAUTIGjMsUZUWy56soH
+	JWT4JNFaUUxGIlV3MxHvtp5B7PdLLMXapbqjqbYWugBO4rgY4YLEssv55vG5KpyltbRYXC9f5uQ1K
+	wh9yy8h7IYguUngJyEmB8BBKfm0U0RdMxHPx+LJ/ObzLw+Q9i6X9Pw+3uLiDGKE6Z5WzpzV0KFzzh
+	QgMar1iLH+cNXrKJriHXt1w1Kh385o9qV9p+Ckeaq8szpgC8YpKaHOcH0vOuUgl8vHXzJRekOd+pF
+	zLZavCx34N9gR+yJrkwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY6TT-0000kc-6M; Fri, 22 Nov 2019 10:47:39 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iY6UT-0001gm-5n; Fri, 22 Nov 2019 10:48:41 +0000
+Received: from mail-eopbgr60049.outbound.protection.outlook.com ([40.107.6.49]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY6Rl-0007oH-SK
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:45:56 +0000
-Received: by mail-pl1-x643.google.com with SMTP id j12so2955596plt.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 Nov 2019 02:45:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=2io4k/iq1gwW+3Ml4L4lOh1AzuywwhhqM/bGXIM0Dfg=;
- b=iMZkNX+PGvb23ecBpYgNQRQUaO8mtr3kGqYmRlTO9CWrFfM75lItHURi2rzgm9oq06
- r28HwxF0sYxRLtuBx3lJzz/TC+/bz8eCPuZ/ic524dTjXYTJNjf/L+nTapgjLmDUPrOC
- DZ+zu/haiL/BnkGR6wysoLGx+ryVj+yvLXp9c9D2g0G9Nwb04yo8tz1miD1VSBJumtBT
- vrDTl+2KIi2z3IMnGVfGcRjyYWPSjzLXOZqJ0+oVcxXjQ3wU7PnczHv5xratdBBiKuEN
- 1hjBUbZXIBl+zHucz+0MXvvyK4a5w5vEJ1zQE48XNOTY84kQb5L8NgiAuCM47y35qCse
- h/tA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=2io4k/iq1gwW+3Ml4L4lOh1AzuywwhhqM/bGXIM0Dfg=;
- b=l6DWR1GQZLTTzmeFdFUzDmwuM95h6ihuZ6fZNxQErkMrm7EQiDZ3SJytkcx4sPAsHW
- A/hVWfGDW/mS3I2WLnB8I9gwU/jf3xtHMRGvGprocZpuTKhs7ijO74ZfgG4AjNa71ISn
- v/+bF1+lc7DUKAG+W8FvIKq4n5t3V93FB76Ha0jFlVDJS8MLKWB7q3bCcyo3xffomCM9
- cALdtQS0kGjPVC1G7z1YZIQaBs/dWpFfgAtt2SY5p8fyoy6gJQmfxdPAnecgXV+WhqWA
- vQwuk/WpklQ95zMI9vqXJRtGmCC6CHOh6c73dG9vA/iuT4Y8U0L0zKZg9egHOpjdv2P+
- T8aw==
-X-Gm-Message-State: APjAAAXf+1pOMUhl1cm8AbmfWaWo6CWSGT1Kq2T+kyfGI66fiAzD7M2+
- tJqke7lc0XyXQ5ujoEzPUb3W8AMF
-X-Google-Smtp-Source: APXvYqxNbupSKQWXBXy0M3HLAZgGsZHVaATRyTWbQLfH0dXjq7jJ7Ve2vFUF3xJ5pA3CN94az8rCuw==
-X-Received: by 2002:a17:902:d211:: with SMTP id
- t17mr7562415ply.141.1574419551426; 
- Fri, 22 Nov 2019 02:45:51 -0800 (PST)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- v16sm2714213pje.1.2019.11.22.02.45.49
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 22 Nov 2019 02:45:50 -0800 (PST)
-Subject: Re: [PATCH v2 1/1] drivers: watchdog: stm32_iwdg: set WDOG_HW_RUNNING
- at probe
-To: Christophe Roullier <christophe.roullier@st.com>, wim@linux-watchdog.org, 
- mcoquelin.stm32@gmail.com, alexandre.torgue@st.com
-References: <20191122082442.21695-1-christophe.roullier@st.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <ffa20f2f-1ca2-9d8f-6594-33b906cbb74a@roeck-us.net>
-Date: Fri, 22 Nov 2019 02:45:49 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191122082442.21695-1-christophe.roullier@st.com>
+ id 1iY6U3-0001cT-L6
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:48:17 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=STO0tRsDuDOJPhTR6LvDfpqyFGZ2S/9OpVyd0s4xYTkoUsRypkE+MOxxI/baPT6Worw7iub4855JVBuwiD6w9Pw4oyC9ROoTZ9pgvFcYxT0Mciwm98Ou34djUA+1VLN/Jf+ie5Uq3WN0DhzAmEBX0UT0N8R8mpX0Wq9nTU6gQO6N+rqZzqL2I6gktdMHVCqaxy3Soiz6b+2uER60Y4ibzBLtCNlykr1doHD2z3+rs2vaBmWiibTFLuD5nH5M5h40Fh+1G1HDt8AvGzuqmZHRF/GnYnSCPOlgsLAtUz6bHQUug/SV6Rr+6Pt6GRHhaWdrYg+WRmbFjZ0SKe94woWhgw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=983v1Zvm0xIoi5pWYq0lCXT5tWHWKWUDSkM4VBAy0x0=;
+ b=QmCobsPe1du6KkfDAzP9y3Qre7CXXOtLkkRnvWICn14ju+pmxS7jF/mkYjayLdWGPNiFObWRIP3HdjM/1boZM2qeVa7ms81WNJpZ2nSo6702QmPyJInwR+/w5tTdFPOgE5FBdvBClBedWSqBk8JsdtkOiwoIlzxPfMVV8Ieu01oCTaA9GCkxKDZBTVG/lC1LVEr+CvM6uqVZRt26EYCGloqFV7MfYvunF9zM454NbDBxmrbQVKHQ3tol84nixLcaY0meiFszdKR8/FKOHUs0D17EPnxGZp+8c2rk9WhkDpdtzH0oQ//AD2NZcIafGlgVenUayqEyycD/SlG/58yoFg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=983v1Zvm0xIoi5pWYq0lCXT5tWHWKWUDSkM4VBAy0x0=;
+ b=i4PvG4gS/nMqTL1KnWVOESSa4WIUxuO/4UC+MBJd9teA/DUy09CB/O4pNI4unXzQljeEtbjNqGqV60hKsCD/nVADtA31zmG7naHFWkNv5DmjsWDBbIy/NNXK9lz8iA8XIKTeY9R/d2KhDp95knezkXVbE2lQMKzr/Qrbx/++KvQ=
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
+ AM0PR04MB6961.eurprd04.prod.outlook.com (52.132.212.203) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2474.19; Fri, 22 Nov 2019 10:48:10 +0000
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::fd44:1b14:587c:9fde]) by AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::fd44:1b14:587c:9fde%7]) with mapi id 15.20.2474.019; Fri, 22 Nov 2019
+ 10:48:10 +0000
+From: Abel Vesa <abel.vesa@nxp.com>
+To: Aisheng Dong <aisheng.dong@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
+ Sascha Hauer <kernel@pengutronix.de>, Jacky Bai <ping.bai@nxp.com>
+Subject: [PATCH v2 00/11] clk: imx: Trivial cleanups for clk_hw based API
+Thread-Topic: [PATCH v2 00/11] clk: imx: Trivial cleanups for clk_hw based API
+Thread-Index: AQHVoSJU0t6T90cIEU++/WtFksK10Q==
+Date: Fri, 22 Nov 2019 10:48:09 +0000
+Message-ID: <1574419679-3813-1-git-send-email-abel.vesa@nxp.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: AM0PR0402CA0020.eurprd04.prod.outlook.com
+ (2603:10a6:208:15::33) To AM0PR04MB5779.eurprd04.prod.outlook.com
+ (2603:10a6:208:131::23)
+x-originating-ip: [89.37.124.34]
+x-mailer: git-send-email 2.7.4
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=abel.vesa@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: b43db444-bb4a-400c-7669-08d76f397703
+x-ms-traffictypediagnostic: AM0PR04MB6961:|AM0PR04MB6961:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB6961F0C7943283B3D39E7A34F6490@AM0PR04MB6961.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1284;
+x-forefront-prvs: 02296943FF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(136003)(376002)(39860400002)(396003)(346002)(189003)(199004)(186003)(44832011)(2616005)(52116002)(66446008)(64756008)(66556008)(66476007)(7736002)(478600001)(6636002)(36756003)(14444005)(5660300002)(6506007)(26005)(2906002)(86362001)(14454004)(102836004)(386003)(305945005)(25786009)(66946007)(256004)(110136005)(8936002)(50226002)(6116002)(316002)(99286004)(54906003)(81166006)(81156014)(8676002)(6436002)(6512007)(4326008)(71190400001)(3846002)(71200400001)(66066001)(6486002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6961;
+ H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: BETWZ7KmSdCP6blPgffWB9ULmR/RDFYLSW3KYQy6ZpXLprsF4aOBTHNF5VpDJ27bQC5VL2Vod1//z7+t6+LQQMRPxT5SMIgvI2+7NGL7EjbY2fixgDfX07d6JDSLIa4AZw0ozZY30+PDfQyDXr90fM6CvPs8VHPtBskg2x+HmoChzpnSsTSANjW6tJ7aZ7tkphpC0MgL4fD8UjRD7zt0wbyzQLvF/fn2xO6ps5daPVJJ4niFS8V0uO7Ocx4f6l1fFv/gMJESg59qWv6Wuzg91lRNjazfUMZruCqscoSa13oRSu8rOIXgBQy6aowQ/QW+cA33cnsIJRaW9vtasXzWr5mHhrB0p4z1ICLORvkdUkguLYewi91rxJaqYWUp+kIVsr3sIevfs3TLFVnqUPBqRVoFQs/5j1AUmxdfC4MOJIH9zeaWgt1dGT18riu3MDXd
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b43db444-bb4a-400c-7669-08d76f397703
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Nov 2019 10:48:09.9327 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 3Sr1eouUP4uSqhf0WViNnDP/ZRje6FeD6ewf8iR8FYV6kF/1r+0q9qXoujdGIm4OHL7WU9AqT0gdu8o7H2Fn5Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6961
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_024553_938227_46468720 
-X-CRM114-Status: GOOD (  24.46  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191122_024815_886446_C607261A 
+X-CRM114-Status: GOOD (  11.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.6.49 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,91 +124,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-stm32@st-md-mailman.stormreply.com, linux-watchdog@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Peng Fan <peng.fan@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/22/19 12:24 AM, Christophe Roullier wrote:
-> If the watchdog hardware is already enabled during the boot process,
-> when the Linux watchdog driver loads, it should start/reset the watchdog
-> and tell the watchdog framework. As a result, ping can be generated from
-> the watchdog framework (if CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED is set),
-> until the userspace watchdog daemon takes over control
-> 
-> Fixes:4332d113c66a ("watchdog: Add STM32 IWDG driver")
-> 
-> Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
-> ---
-> Changes since v1:
-> According to Guenter
-> I follow the guidance from intel-mid_wdt.c
-> and I added test to check if CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED is set
-> because we need to be flexible (depends on customer config, but watchdog
-> not always start by bootloader (Uboot, ..))
-> I've tested some config and it is working as expected:
-> Watchdog enable in Uboot + HANDLE_BOOT_ENABLE is not set + daemon watchdog in userland ON ==> No reset IWDG2
-> Watchdog enable in Uboot + HANDLE_BOOT_ENABLE is not set ==> Reset IWDG2
-> Watchdog enable in Uboot + HANDLE_BOOT_ENABLE=y ==> No reset IWDG2
-> Watchdog enable in Uboot + HANDLE_BOOT_ENABLE=y + daemon watchdog in userland ON puis OFF ==> Reset IWDG2
-> Watchdog disable in Uboot + HANDLE_BOOT_ENABLE is not set ==> No reset IWDG2
-> Watchdog disable in Uboot + HANDLE_BOOT_ENABLE=y ==> No reset IWDG2
-> Watchdog disable in Uboot + HANDLE_BOOT_ENABLE=y + daemon watchdog in userland ON ==> No reset IWDG2
-> Watchdog disable in Uboot + HANDLE_BOOT_ENABLE=y + daemon watchdog in userland ON puis OFF ==> Reset IWDG2
-> 
-> Thanks,
-> Christophe
-> 
->   drivers/watchdog/stm32_iwdg.c | 21 +++++++++++++++++++++
->   1 file changed, 21 insertions(+)
-> 
-> diff --git a/drivers/watchdog/stm32_iwdg.c b/drivers/watchdog/stm32_iwdg.c
-> index a3a329011a06..7f454a6e17ba 100644
-> --- a/drivers/watchdog/stm32_iwdg.c
-> +++ b/drivers/watchdog/stm32_iwdg.c
-> @@ -50,6 +50,9 @@
->   #define TIMEOUT_US	100000
->   #define SLEEP_US	1000
->   
-> +static bool handle_boot_enabled =
-> +	IS_ENABLED(CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED);
-> +
->   struct stm32_iwdg_data {
->   	bool has_pclk;
->   	u32 max_prescaler;
-> @@ -262,6 +265,24 @@ static int stm32_iwdg_probe(struct platform_device *pdev)
->   	watchdog_set_nowayout(wdd, WATCHDOG_NOWAYOUT);
->   	watchdog_init_timeout(wdd, 0, dev);
->   
-> +	/*
-> +	 * In case of CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED is set
-> +	 * (Means U-Boot/bootloaders leaves the watchdog running)
-> +	 * When we get here we should make a decision to prevent
-> +	 * any side effects before user space daemon will take care of it.
-> +	 * The best option, taking into consideration that there is no
-> +	 * way to read values back from hardware, is to enforce watchdog
-> +	 * being run with deterministic values.
-> +	 */
-> +	if (handle_boot_enabled) {
+These changes are cleanups for the clk_hw based API i.MX clock drivers switch
+longterm effort. As mentioned in the commit messages, the end goal here is to
+have all the i.MX drivers use clk_hw based API only.
 
-You don't need that variable. Just use
-	if (IS_ENABLED(CONFIG_WATCHDOG_HANDLE_BOOT_ENABLED)) {
-directly.
+I've put these all in a single patchset since they do not impact in any way
+the expected behavior of the drivers and they are quite obvious trivial ones.
+More patches to follow for the older i.MX platforms but those might not be as
+harmless (and trivial) as these ones.
 
-> +		ret = stm32_iwdg_start(wdd);
-> +		if (ret)
-> +			return ret;
-> +
-> +		/* Make sure the watchdog is serviced */
-> +		set_bit(WDOG_HW_RUNNING, &wdd->status);
-> +	}
-> +
->   	ret = devm_watchdog_register_device(dev, wdd);
->   	if (ret)
->   		return ret;
-> 
+Changes since v1:
+ - added a patch that takes care of the register function handling when the
+   clk based API helpers are used, as suggested by Leonard Crestez.
+ - Renamed the SCCG to SSCG, as suggested by Leonard Crestez.
+
+Abel Vesa (11):
+  clk: imx: Add correct failure handling for clk based helpers
+  clk: imx: Rename the SCCG to SSCG
+  clk: imx: Replace all the clk based helpers with macros
+  clk: imx: pllv1: Switch to clk_hw based API
+  clk: imx: pllv2: Switch to clk_hw based API
+  clk: imx: imx7ulp composite: Rename to show is clk_hw based
+  clk: imx: Rename sccg and frac pll register to suggest clk_hw
+  clk: imx: Rename the imx_clk_pllv4 to imply it's clk_hw based
+  clk: imx: Rename the imx_clk_pfdv2 to imply it's clk_hw based
+  clk: imx: Rename the imx_clk_divider_gate to imply it's clk_hw based
+  clk: imx7up: Rename the clks to hws
+
+ drivers/clk/imx/Makefile             |   2 +-
+ drivers/clk/imx/clk-composite-7ulp.c |   2 +-
+ drivers/clk/imx/clk-divider-gate.c   |   2 +-
+ drivers/clk/imx/clk-frac-pll.c       |   7 +-
+ drivers/clk/imx/clk-imx7ulp.c        | 182 ++++++------
+ drivers/clk/imx/clk-imx8mq.c         |   6 +-
+ drivers/clk/imx/clk-pfdv2.c          |   2 +-
+ drivers/clk/imx/clk-pllv1.c          |  14 +-
+ drivers/clk/imx/clk-pllv2.c          |  14 +-
+ drivers/clk/imx/clk-pllv4.c          |   2 +-
+ drivers/clk/imx/clk-sccg-pll.c       | 549 -----------------------------------
+ drivers/clk/imx/clk-sscg-pll.c       | 549 +++++++++++++++++++++++++++++++++++
+ drivers/clk/imx/clk.h                | 102 ++++---
+ 13 files changed, 724 insertions(+), 709 deletions(-)
+ delete mode 100644 drivers/clk/imx/clk-sccg-pll.c
+ create mode 100644 drivers/clk/imx/clk-sscg-pll.c
+
+-- 
+2.7.4
 
 
 _______________________________________________
