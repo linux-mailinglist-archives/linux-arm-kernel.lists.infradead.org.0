@@ -2,61 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD746107475
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 15:59:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0A61107495
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 16:09:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ApylFvwF4wMvIB+gDbv/77K2+T2XfxsSoKuSk4EnNzQ=; b=lso1YbL0Sc2VcrIFbFR5eVPUX
-	9o6jqUoFMDJa8FkXxaQz5bu31/puJAIHy1jQrWPDShb7zrgqxL5hCrJVDcRE8yny4bmAdxS6QqKVa
-	27o1TbX1lFo2Xl0omak2a5JMPQL8+oJOjYkkJu3Rhs8VDiPa6e1T7VvNb/u9dF0ptXfB15c0cvk1P
-	YmzCRatjtKP9y62qbzAZoAbE2vFRjE710+qBYEtOXlj/4VJ2EGdOG8cqWhHXGjvtcwtzCzPEjcGoe
-	MPHHlz8swODlPIgYPXC3xYTtoyk82nIECrTlQ4THXb8gDXhP0xUTh+F+E7Dvqd6pAEKcmmT726OPj
-	h8P+sXSZQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TSgwfT8vo5akW5olTMnOZXH6KfIsU4lHq236iwlfi3c=; b=bjTny2pNBD4ENx
+	OMMmtDSSBOUHfqheT0lrkq+Gdzc6m3TmOmcQa1Z+lEW2Ssko3UuxrrwqvS58qVLWaAVQkbDO3LU7I
+	n7leYY2+t4l0DI0Rxxzs/XA98AMbRLXqTGQi7Jr6Rgv/lpasS2dlrgh9OOz63a/tYqPulKULdw+Wu
+	gMUnOzch4J/J9A841GTGEh98y10NPvXK4WnWzpZLdDbbfJ+sbvFamuHlprHsF9R/fsHbqjgENNH71
+	R4jjpdqpJeBCidPVP/QLW65YdI7WldT+/qZlLzgLbYquEXgfjd3+G8RjdjRolJlh/sUoUyMa61BQO
+	7kQ/z8Cl219xbIh5iXhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYAP2-0008N2-MZ; Fri, 22 Nov 2019 14:59:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYAOu-0008Lx-Ff; Fri, 22 Nov 2019 14:59:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 07C22DA7;
- Fri, 22 Nov 2019 06:59:10 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C59D03F703;
- Fri, 22 Nov 2019 06:59:07 -0800 (PST)
-Subject: Re: [PATCH v2 4/6] PCI: brcmstb: add Broadcom STB PCIe host
- controller driver
-To: Jim Quinlan <jim2101024@gmail.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-References: <20191112155926.16476-1-nsaenzjulienne@suse.de>
- <20191112155926.16476-5-nsaenzjulienne@suse.de>
- <20191119162502.GS43905@e119886-lin.cambridge.arm.com>
- <7e1be0bdcf303224a3fe225654a3c2391207f9eb.camel@suse.de>
- <20191121120319.GW43905@e119886-lin.cambridge.arm.com>
- <276d4160bbe6a4e8225bbd836f43d40da41d25f1.camel@suse.de>
- <CANCKTBuoSkmAiY4yUuNpT-GwhS7LJv79L910UvcrPgPpMz=YGg@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <24e5302a-51c6-df39-5381-a790752f261d@arm.com>
-Date: Fri, 22 Nov 2019 14:59:06 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iYAZ6-00037R-0u; Fri, 22 Nov 2019 15:09:44 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iYAYw-00035P-Ub
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 15:09:36 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xAMF7wYc020482; Fri, 22 Nov 2019 16:09:25 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=MJxLlMpkLwVBG7NqhYGIo7Hw2zbfifhhyH7WA1YqF4g=;
+ b=llpDGCROJQ+hykPjdrR5b6ESI5LHfDcB5g288dqaJtCv1Sf2fsO8yenoXkYT3IM8zP4O
+ m60PtaRg/m9hw4s6BNYPPIV/tMt2xpCSxo5wsBWlX1ke+xZpSKfFjJxESeqkUF/b6X7S
+ DS+G6LxqCre2TcpkrDjBBAr+SJsLO/tGefQXZeIbxLMW/wnOIGtmeD89eeHwY4F7mEGo
+ UO0GKwIx4kjwbyXM7XI0o1ZKq50Br/Te5ALWpBcbqcA4KkM+598/O6osj+DBnMuBllOo
+ OH4yhGyxPp8EKetK8GOudVHWYWlyn4QxxgXgAK0LorQ5p0fpV50iSXpmGroc1FfZBPZ9 8g== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2wa9uphww3-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 22 Nov 2019 16:09:25 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3387710002A;
+ Fri, 22 Nov 2019 16:09:24 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EDB362C38C5;
+ Fri, 22 Nov 2019 16:09:23 +0100 (CET)
+Received: from localhost (10.75.127.46) by SFHDAG5NODE3.st.com (10.75.127.15)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Fri, 22 Nov 2019 16:09:23 +0100
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+To: <jic23@kernel.org>
+Subject: [PATCH] iio: adc: stm32-adc: Add check on overrun interrupt
+Date: Fri, 22 Nov 2019 16:08:14 +0100
+Message-ID: <1574435294-19510-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-In-Reply-To: <CANCKTBuoSkmAiY4yUuNpT-GwhS7LJv79L910UvcrPgPpMz=YGg@mail.gmail.com>
-Content-Language: en-GB
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-22_02:2019-11-21,2019-11-22 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_065912_609714_13EDBA91 
-X-CRM114-Status: GOOD (  16.29  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191122_070935_353431_92B0FE5B 
+X-CRM114-Status: GOOD (  18.98  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,85 +91,247 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, maz@kernel.org,
- Phil Elwell <phil@raspberrypi.org>, linux-kernel@vger.kernel.org,
- Jeremy Linton <jeremy.linton@arm.com>, Eric Anholt <eric@anholt.net>,
- mbrugger@suse.com,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- Stefan Wahren <wahrenst@gmx.net>, Jim Quinlan <james.quinlan@broadcom.com>,
- linux-pci <linux-pci@vger.kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, linux-rpi-kernel@lists.infradead.org
+Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21/11/2019 9:07 pm, Jim Quinlan wrote:
-[...]
->> As for [...]_NUM_MASK_BITS I'm looking for a smart/generic way to calculate it
->> from the actual mask. No luck so far. If not, I think I'll simply leave it as
->> is for now.
+Enable overrun interrupt on STM32 ADC. In case data register hasn't been
+read (by CPU or DMA), overrun condition is detected when there's new
+conversion data available. Stop grabbing data and log an error message.
+Use a threaded irq to avoid printing the error message from hard irq
+context.
 
-HWEIGHT()?
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+ drivers/iio/adc/stm32-adc-core.c | 14 +++++------
+ drivers/iio/adc/stm32-adc-core.h |  9 +++++++
+ drivers/iio/adc/stm32-adc.c      | 53 ++++++++++++++++++++++++++++++++++++++--
+ 3 files changed, 67 insertions(+), 9 deletions(-)
 
->>>> FYI, What's happening here is that we have to save the CPU address range
->>>> (which
->>>> is already shifted right 20 positions) in two parts, the lower 12 bits go
->>>> into
->>>> PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_LIMIT while the higher 8 bits go into
->>>> PCIE_MISC_CPU_2_PCIE_MEM_WIN0_BASE_HI or
->>>> PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LIMIT_HI.
->>>
->>> The hardware spec require bits 31:20 of the address, and the high registers
->>> require 39:32 right?
->>
->> Yes, that's it.
->>
->>> (Apologies, the indirection by the WR_FLD_** macros easily confuses me. These
->>> type of macros are helpful, or rather would be if the whole kernel used them.
->>> I think they can add confusion when each driver has its own set of similar
->>> macros. This is why its *really* helpful to use any existing macros in the
->>> kernel - and only invent new ones if needed).
->>
->> I agree it's pretty confusing, I think v3, using bitfield.h as much as
->> possible, looks substantially more welcoming.
-> 
-> The reason we use custom macros is because we'd like to keep the
-> register names the same as the HW declares and our internal tools
-> support.  As you may have noticed, our register names are unusually
-> long and it is hard to fit a simple read or write field assignment
-> within 80 columns w/o using custom macros tailored to our register
-> names' format.
-> 
-> Perhaps Nicolas can pull a rabbit out of a hat and use Linux macros
-> while keeping our long register names, but if he has to use his own
-> shorter register names it will become harder for Broadcom developers
-> to debug this driver.
+diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
+index 6537f4f..97655d7 100644
+--- a/drivers/iio/adc/stm32-adc-core.c
++++ b/drivers/iio/adc/stm32-adc-core.c
+@@ -280,21 +280,21 @@ static int stm32h7_adc_clk_sel(struct platform_device *pdev,
+ static const struct stm32_adc_common_regs stm32f4_adc_common_regs = {
+ 	.csr = STM32F4_ADC_CSR,
+ 	.ccr = STM32F4_ADC_CCR,
+-	.eoc1_msk = STM32F4_EOC1,
+-	.eoc2_msk = STM32F4_EOC2,
+-	.eoc3_msk = STM32F4_EOC3,
++	.eoc1_msk = STM32F4_EOC1 | STM32F4_OVR1,
++	.eoc2_msk = STM32F4_EOC2 | STM32F4_OVR2,
++	.eoc3_msk = STM32F4_EOC3 | STM32F4_OVR3,
+ 	.ier = STM32F4_ADC_CR1,
+-	.eocie_msk = STM32F4_EOCIE,
++	.eocie_msk = STM32F4_EOCIE | STM32F4_OVRIE,
+ };
+ 
+ /* STM32H7 common registers definitions */
+ static const struct stm32_adc_common_regs stm32h7_adc_common_regs = {
+ 	.csr = STM32H7_ADC_CSR,
+ 	.ccr = STM32H7_ADC_CCR,
+-	.eoc1_msk = STM32H7_EOC_MST,
+-	.eoc2_msk = STM32H7_EOC_SLV,
++	.eoc1_msk = STM32H7_EOC_MST | STM32H7_OVR_MST,
++	.eoc2_msk = STM32H7_EOC_SLV | STM32H7_OVR_SLV,
+ 	.ier = STM32H7_ADC_IER,
+-	.eocie_msk = STM32H7_EOCIE,
++	.eocie_msk = STM32H7_EOCIE | STM32H7_OVRIE,
+ };
+ 
+ static const unsigned int stm32_adc_offset[STM32_ADC_MAX_ADCS] = {
+diff --git a/drivers/iio/adc/stm32-adc-core.h b/drivers/iio/adc/stm32-adc-core.h
+index 2579d51..2322809 100644
+--- a/drivers/iio/adc/stm32-adc-core.h
++++ b/drivers/iio/adc/stm32-adc-core.h
+@@ -51,10 +51,12 @@
+ #define STM32F4_ADC_CCR			(STM32_ADCX_COMN_OFFSET + 0x04)
+ 
+ /* STM32F4_ADC_SR - bit fields */
++#define STM32F4_OVR			BIT(5)
+ #define STM32F4_STRT			BIT(4)
+ #define STM32F4_EOC			BIT(1)
+ 
+ /* STM32F4_ADC_CR1 - bit fields */
++#define STM32F4_OVRIE			BIT(26)
+ #define STM32F4_RES_SHIFT		24
+ #define STM32F4_RES_MASK		GENMASK(25, 24)
+ #define STM32F4_SCAN			BIT(8)
+@@ -72,8 +74,11 @@
+ #define STM32F4_ADON			BIT(0)
+ 
+ /* STM32F4_ADC_CSR - bit fields */
++#define STM32F4_OVR3			BIT(21)
+ #define STM32F4_EOC3			BIT(17)
++#define STM32F4_OVR2			BIT(13)
+ #define STM32F4_EOC2			BIT(9)
++#define STM32F4_OVR1			BIT(5)
+ #define STM32F4_EOC1			BIT(1)
+ 
+ /* STM32F4_ADC_CCR - bit fields */
+@@ -103,10 +108,12 @@
+ 
+ /* STM32H7_ADC_ISR - bit fields */
+ #define STM32MP1_VREGREADY		BIT(12)
++#define STM32H7_OVR			BIT(4)
+ #define STM32H7_EOC			BIT(2)
+ #define STM32H7_ADRDY			BIT(0)
+ 
+ /* STM32H7_ADC_IER - bit fields */
++#define STM32H7_OVRIE			STM32H7_OVR
+ #define STM32H7_EOCIE			STM32H7_EOC
+ 
+ /* STM32H7_ADC_CR - bit fields */
+@@ -155,7 +162,9 @@ enum stm32h7_adc_dmngt {
+ #define STM32H7_LINCALFACT_MASK		GENMASK(29, 0)
+ 
+ /* STM32H7_ADC_CSR - bit fields */
++#define STM32H7_OVR_SLV			BIT(20)
+ #define STM32H7_EOC_SLV			BIT(18)
++#define STM32H7_OVR_MST			BIT(4)
+ #define STM32H7_EOC_MST			BIT(2)
+ 
+ /* STM32H7_ADC_CCR - bit fields */
+diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
+index 3b291d7..9361f92 100644
+--- a/drivers/iio/adc/stm32-adc.c
++++ b/drivers/iio/adc/stm32-adc.c
+@@ -117,7 +117,9 @@ struct stm32_adc_regs {
+  * struct stm32_adc_regspec - stm32 registers definition
+  * @dr:			data register offset
+  * @ier_eoc:		interrupt enable register & eocie bitfield
++ * @ier_ovr:		interrupt enable register & overrun bitfield
+  * @isr_eoc:		interrupt status register & eoc bitfield
++ * @isr_ovr:		interrupt status register & overrun bitfield
+  * @sqr:		reference to sequence registers array
+  * @exten:		trigger control register & bitfield
+  * @extsel:		trigger selection register & bitfield
+@@ -128,7 +130,9 @@ struct stm32_adc_regs {
+ struct stm32_adc_regspec {
+ 	const u32 dr;
+ 	const struct stm32_adc_regs ier_eoc;
++	const struct stm32_adc_regs ier_ovr;
+ 	const struct stm32_adc_regs isr_eoc;
++	const struct stm32_adc_regs isr_ovr;
+ 	const struct stm32_adc_regs *sqr;
+ 	const struct stm32_adc_regs exten;
+ 	const struct stm32_adc_regs extsel;
+@@ -337,7 +341,9 @@ static const unsigned int stm32f4_adc_smp_cycles[STM32_ADC_MAX_SMP + 1] = {
+ static const struct stm32_adc_regspec stm32f4_adc_regspec = {
+ 	.dr = STM32F4_ADC_DR,
+ 	.ier_eoc = { STM32F4_ADC_CR1, STM32F4_EOCIE },
++	.ier_ovr = { STM32F4_ADC_CR1, STM32F4_OVRIE },
+ 	.isr_eoc = { STM32F4_ADC_SR, STM32F4_EOC },
++	.isr_ovr = { STM32F4_ADC_SR, STM32F4_OVR },
+ 	.sqr = stm32f4_sq,
+ 	.exten = { STM32F4_ADC_CR2, STM32F4_EXTEN_MASK, STM32F4_EXTEN_SHIFT },
+ 	.extsel = { STM32F4_ADC_CR2, STM32F4_EXTSEL_MASK,
+@@ -429,7 +435,9 @@ static const unsigned int stm32h7_adc_smp_cycles[STM32_ADC_MAX_SMP + 1] = {
+ static const struct stm32_adc_regspec stm32h7_adc_regspec = {
+ 	.dr = STM32H7_ADC_DR,
+ 	.ier_eoc = { STM32H7_ADC_IER, STM32H7_EOCIE },
++	.ier_ovr = { STM32H7_ADC_IER, STM32H7_OVRIE },
+ 	.isr_eoc = { STM32H7_ADC_ISR, STM32H7_EOC },
++	.isr_ovr = { STM32H7_ADC_ISR, STM32H7_OVR },
+ 	.sqr = stm32h7_sq,
+ 	.exten = { STM32H7_ADC_CFGR, STM32H7_EXTEN_MASK, STM32H7_EXTEN_SHIFT },
+ 	.extsel = { STM32H7_ADC_CFGR, STM32H7_EXTSEL_MASK,
+@@ -506,6 +514,18 @@ static void stm32_adc_conv_irq_disable(struct stm32_adc *adc)
+ 			   adc->cfg->regs->ier_eoc.mask);
+ }
+ 
++static void stm32_adc_ovr_irq_enable(struct stm32_adc *adc)
++{
++	stm32_adc_set_bits(adc, adc->cfg->regs->ier_ovr.reg,
++			   adc->cfg->regs->ier_ovr.mask);
++}
++
++static void stm32_adc_ovr_irq_disable(struct stm32_adc *adc)
++{
++	stm32_adc_clr_bits(adc, adc->cfg->regs->ier_ovr.reg,
++			   adc->cfg->regs->ier_ovr.mask);
++}
++
+ static void stm32_adc_set_res(struct stm32_adc *adc)
+ {
+ 	const struct stm32_adc_regs *res = &adc->cfg->regs->res;
+@@ -1205,6 +1225,19 @@ static int stm32_adc_read_raw(struct iio_dev *indio_dev,
+ 	}
+ }
+ 
++static irqreturn_t stm32_adc_threaded_isr(int irq, void *data)
++{
++	struct stm32_adc *adc = data;
++	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
++	const struct stm32_adc_regspec *regs = adc->cfg->regs;
++	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
++
++	if (status & regs->isr_ovr.mask)
++		dev_err(&indio_dev->dev, "Overrun interrupt, stopping.\n");
++
++	return IRQ_HANDLED;
++}
++
+ static irqreturn_t stm32_adc_isr(int irq, void *data)
+ {
+ 	struct stm32_adc *adc = data;
+@@ -1212,6 +1245,17 @@ static irqreturn_t stm32_adc_isr(int irq, void *data)
+ 	const struct stm32_adc_regspec *regs = adc->cfg->regs;
+ 	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
+ 
++	if (status & regs->isr_ovr.mask) {
++		/*
++		 * Overrun occurred on regular conversions: data for wrong
++		 * channel may be read. Unconditionally disable interrupts
++		 * to stop processing data and print error message.
++		 */
++		stm32_adc_ovr_irq_disable(adc);
++		stm32_adc_conv_irq_disable(adc);
++		return IRQ_WAKE_THREAD;
++	}
++
+ 	if (status & regs->isr_eoc.mask) {
+ 		/* Reading DR also clears EOC status flag */
+ 		adc->buffer[adc->bufi] = stm32_adc_readw(adc, regs->dr);
+@@ -1441,6 +1485,8 @@ static int __stm32_adc_buffer_postenable(struct iio_dev *indio_dev)
+ 	/* Reset adc buffer index */
+ 	adc->bufi = 0;
+ 
++	stm32_adc_ovr_irq_enable(adc);
++
+ 	if (!adc->dma_chan)
+ 		stm32_adc_conv_irq_enable(adc);
+ 
+@@ -1481,6 +1527,8 @@ static void __stm32_adc_buffer_predisable(struct iio_dev *indio_dev)
+ 	if (!adc->dma_chan)
+ 		stm32_adc_conv_irq_disable(adc);
+ 
++	stm32_adc_ovr_irq_disable(adc);
++
+ 	if (adc->dma_chan)
+ 		dmaengine_terminate_sync(adc->dma_chan);
+ 
+@@ -1818,8 +1866,9 @@ static int stm32_adc_probe(struct platform_device *pdev)
+ 	if (adc->irq < 0)
+ 		return adc->irq;
+ 
+-	ret = devm_request_irq(&pdev->dev, adc->irq, stm32_adc_isr,
+-			       0, pdev->name, adc);
++	ret = devm_request_threaded_irq(&pdev->dev, adc->irq, stm32_adc_isr,
++					stm32_adc_threaded_isr,
++					0, pdev->name, adc);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "failed to request IRQ\n");
+ 		return ret;
+-- 
+2.7.4
 
-Regardless of the length of the names, the standard bitfield helpers can 
-still make things easier to reason about - in this particular case I 
-think you could lose some boilerplate and indirection with essentially 
-no change to the readability you're concerned for - compare:
-
-#define REG_NAME ...
-#define REG_NAME_FIELD_NAME_MASK ...
-#define REG_NAME_FIELD_NAME_SHIFT ...
-
-	val = RD_FIELD(base, REG_NAME,
-		       FIELD_NAME);
-
-vs.
-
-#define REG_NAME ...
-#define   FIELD_NAME ...
-
-	reg = bcm_readl(base + REG_NAME);
-	val = FIELD_GET(FIELD_NAME, reg);
-
-Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
