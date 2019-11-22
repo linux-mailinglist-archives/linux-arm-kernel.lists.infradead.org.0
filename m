@@ -2,84 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 845BE106D11
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:57:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 519A0106D26
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:57:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ltimISfZtx5R+WVWMEFu+OxBvR5oNYcdAk3g4NajKzs=; b=dpZQiSitgXvDI9
-	qyjbXUncdHtjxKFiXgOtVNeLMa8VXWFOGnSzmMYlaRGyTG9Xd1kv0yhTpYsOO8Q5UyxKTKtpTiNLS
-	OodgK3aw9roBswMGvPC+IlgY//UmmZG6Bv4TJsqMatbWuak2qOgqDhaGgXShFDQmskAHI9BzMs+Fi
-	HOF88R51CKxstfizChidZbz+QOSiuw25ZOwvpilzgjE7y+LOwPEzRmobjJrBaKrgcboBsXdwfCcXn
-	R3Z24oQ5VUWUB8CR9ACR5EaV9N6CNbJ7BKUlWzdcUQyPMX9EMjIH05QLvnNrvCYkwekdyTaOAzwGq
-	EtzRx/7eiNo6uMVIuQkA==;
+	List-Owner; bh=aGtRSZjUZxAOJDRJUDbWeAc2b8qTddfihmpWC67TaIY=; b=nmEjqW/vSx5xPa
+	QMNGp+rMZPttvZ6dP2uIwBPtCiVYdr+xzKt6roTm7jFUpuyF9fc//FdhnoU8/ovP55pygpI/WjbcG
+	pA9+yloHhRwr7kcXgkBblokFGBSBxOtJEaUyIejUa42/c4zbYhY0mZZZxVTUWoAp3Rvm8lGMUeExJ
+	EWnnSED89NjpuVDLRmDMDYWIr3mZEpyi5xN9Z7LzmoQljXtLuzpcBQrpa7c+5sPV5G+LQC2lsGImV
+	2Kfgl7Ilg3L6PD0hJ5oKkJ/2FQ7UxutfzrczJQa0nzYF2MIyqu87MUlqQ7G4xOYhfd3U5icRnNgse
+	IB+8fCGmSvcPSanbCmFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY6co-0003iJ-Uw; Fri, 22 Nov 2019 10:57:18 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iY6dR-0004Ox-HG; Fri, 22 Nov 2019 10:57:57 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY6Ws-0005HA-4k
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:51:18 +0000
-Received: by mail-wm1-x342.google.com with SMTP id l1so6936521wme.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 Nov 2019 02:51:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=aC26ZRBFbmYV70jSo1HKJJ7IjzbboDUYJkvkZ3EdYLg=;
- b=vfaDiLT7EtBRsRXW4Zgm+1DrCHnQDwDqHpLwRYu5XOUtKTalNxQZgX9tAqVJjvg7r6
- LgZk39/YvtK71zxYp6NS58JLske+P7l3rl3zVLu4Cd4zeVP6dj9x/ISOAEo7oNTMd6qS
- XolSSPHxVb9lKQ1b0C9qxFbBAHSICl1Ml0n22n6MAt916pi+sExNtOoYjESps6GFd9bR
- 4X44ci9NZHVdxQyOXYl2JlVPNX6oEb5vJDoEXR/bRRs30Ozu2Kzy2zOfoPqcWclfwFXe
- eV6DVfH8u652cASKVFeqzXATGvPEHCWbFo1ZDIdOEre3ZuXRUN9ySrOmlpGZ1JnsU6j8
- hX8A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=aC26ZRBFbmYV70jSo1HKJJ7IjzbboDUYJkvkZ3EdYLg=;
- b=M6cerD5Tu5w1Qstue7Pb7VZsDYrikccTI0GOmyCEogiubMZVpuTxbvvofuTBtUiEvR
- gp+LHk4usQu55e/veKqw8NYGGVSjeGVW15VYE//6+6V+UgLZqAZjy1jLhfFl3VN5T6VP
- RUGrHOel80N/EBCKUtKJXBDj3QPE9boIQ0lHvipbCd5GeIjIu2xKvUXtEVDtSanb10as
- 3MwTRz5QIJIUkSAkMMocIaCivSjhLMbw2fSNofYCzvRacqSzPp8SO0mKie11Fa49GRRk
- XOfpqc+u4WHXgKFZ52z4dl4RgFYtxT5w93bZNv3vYlJ5WtzADEsOOAmn9Z0PNWG9erhh
- OqDA==
-X-Gm-Message-State: APjAAAVIPM3flVWhsc7Nj3MQ4b1vfAS6BsiPHOn8R0DaaUfr5ImrT3xQ
- dq+FZHPgtZ8JJr+zgdxhMhSpPA==
-X-Google-Smtp-Source: APXvYqwl/JTWkXjvxyNRIC06Ln+WPzSWKoYX/wHiOUMJz/VIl9vQ1AJB5MwhK+htUraqSB9dqnSVcA==
-X-Received: by 2002:a7b:c006:: with SMTP id c6mr4006022wmb.52.1574419868455;
- Fri, 22 Nov 2019 02:51:08 -0800 (PST)
-Received: from localhost.localdomain (xdsl-188-155-204-106.adslplus.ch.
- [188.155.204.106])
- by smtp.gmail.com with ESMTPSA id o133sm2088197wmb.4.2019.11.22.02.51.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 22 Nov 2019 02:51:07 -0800 (PST)
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: linux-acpi@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- iommu@lists.linux-foundation.org,
- virtualization@lists.linux-foundation.org, linux-pci@vger.kernel.org,
- virtio-dev@lists.oasis-open.org
-Subject: [RFC 13/13] iommu/virtio: Add topology description to
-Date: Fri, 22 Nov 2019 11:50:00 +0100
-Message-Id: <20191122105000.800410-14-jean-philippe@linaro.org>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191122105000.800410-1-jean-philippe@linaro.org>
-References: <20191122105000.800410-1-jean-philippe@linaro.org>
+ id 1iY6c6-000382-8h; Fri, 22 Nov 2019 10:56:37 +0000
+X-UUID: a2bc0c9a0ab1445fafc18118b058d470-20191122
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=69YJApwLF61UWoNAQ4TNL4OFVFdqcck/UgndPq2R7rk=; 
+ b=pgrxaHK2x53n1r0IHmPrcNiHVcbqPLyNT6+ZVrxA0BbltjTU6auzBwWA8r19IcubOChelqYTQNOL1vtQuVgec/7mAVJfzfxvdT2uUvoxrCimh8fv3xwaMYBvG9XbrsoNDl7+E6c5NKp9iX/IB4jfVFVselTgm6MeTlbCYL+yLko=;
+X-UUID: a2bc0c9a0ab1445fafc18118b058d470-20191122
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <yong.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 460912777; Fri, 22 Nov 2019 02:56:22 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 22 Nov 2019 02:56:27 -0800
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs08n1.mediatek.inc
+ (172.21.101.55) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Fri, 22 Nov 2019 18:55:51 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 22 Nov 2019 18:55:37 +0800
+Message-ID: <1574420151.19130.196.camel@mhfsdcap03>
+Subject: Re: [PATCH v1 2/2] memory: mtk-smi: Add bandwidth initial golden
+ setting for MT6779
+From: Yong Wu <yong.wu@mediatek.com>
+To: Ming-Fan Chen <ming-fan.chen@mediatek.com>
+Date: Fri, 22 Nov 2019 18:55:51 +0800
+In-Reply-To: <1573616362-2557-3-git-send-email-ming-fan.chen@mediatek.com>
+References: <1573616362-2557-1-git-send-email-ming-fan.chen@mediatek.com>
+ <1573616362-2557-3-git-send-email-ming-fan.chen@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_025110_301005_4BF78B5C 
-X-CRM114-Status: GOOD (  23.92  )
+X-CRM114-CacheID: sfid-20191122_025634_344619_D969D136 
+X-CRM114-Status: GOOD (  23.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -89,6 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,634 +84,363 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kevin.tian@intel.com, lorenzo.pieralisi@arm.com, mst@redhat.com,
- gregkh@linuxfoundation.org, joro@8bytes.org, sudeep.holla@arm.com,
- rjw@rjwysocki.net, eric.auger@redhat.com, sebastien.boeuf@intel.com,
- jacob.jun.pan@intel.com, guohanjun@huawei.com, bhelgaas@google.com,
- jasowang@redhat.com, lenb@kernel.org
+Cc: devicetree@vger.kernel.org, Joerg Roedel <jroedel@suse.de>,
+ wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
+ Evan Green <evgreen@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some hypervisors don't implement either device-tree or ACPI, but still
-need a method to describe the IOMMU topology. Read the virtio-iommu
-config early and parse the topology description. Hook into the
-dma_setup() callbacks to initialize the IOMMU before probing endpoints.
+On Wed, 2019-11-13 at 11:39 +0800, Ming-Fan Chen wrote:
+> SMI bandwidth initial golden setting for MT6779 make sure
+> better performance of memory control for multimedia modules.
 
-If the virtio-iommu uses the virtio-pci transport, this will only work
-if the PCI root complex is the first device probed. We don't currently
-support virtio-mmio.
+I think this patch should be splitted to two, one adds the basic mt6779
+support and config_port which should be a part of IOMMU. the other adds
+the bandwidth control support.
 
-Initially I tried to generate a fake IORT table and feed it to the IORT
-driver, in order to avoid rewriting the whole DMA code, but it wouldn't
-work with platform endpoints, which are references to items in the ACPI
-table on IORT.
+> 
+> Signed-off-by: Ming-Fan Chen <ming-fan.chen@mediatek.com>
+> ---
+>  drivers/memory/mtk-smi.c |  141 +++++++++++++++++++++++++++++++++++++++++++++-
+>  1 file changed, 139 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/memory/mtk-smi.c b/drivers/memory/mtk-smi.c
+> index 439d7d8..f3618d0 100644
+> --- a/drivers/memory/mtk-smi.c
+> +++ b/drivers/memory/mtk-smi.c
+> @@ -41,21 +41,50 @@
+>  #define SMI_LARB_NONSEC_CON(id)	(0x380 + ((id) * 4))
+>  #define F_MMU_EN		BIT(0)
+>  
+> +#define SMI_LARB_CMD_THRT_CON	 0x24
+> +#define SMI_LARB_SW_FLAG	 0x40
+> +#define SMI_LARB_WRR_PORT	 0x100
+> +#define SMI_LARB_WRR_PORTx(id)	 (SMI_LARB_WRR_PORT + (((id) & 0x1f) << 2))
 
-Signed-off-by: Eric Auger <eric.auger@redhat.com>
-Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+The two WRR are not used. Remove.
 
----
-Note that we only call virt_dma_configure() if the host didn't provide
-either DT or ACPI method. If you want to test this with QEMU, you'll
-need to manually disable the acpi_dma_configure() part in pci-driver.c
----
- drivers/base/platform.c               |   3 +
- drivers/iommu/Kconfig                 |   9 +
- drivers/iommu/Makefile                |   1 +
- drivers/iommu/virtio-iommu-topology.c | 410 ++++++++++++++++++++++++++
- drivers/iommu/virtio-iommu.c          |   3 +
- drivers/pci/pci-driver.c              |   3 +
- include/linux/virtio_iommu.h          |  18 ++
- include/uapi/linux/virtio_iommu.h     |  26 ++
- 8 files changed, 473 insertions(+)
- create mode 100644 drivers/iommu/virtio-iommu-topology.c
- create mode 100644 include/linux/virtio_iommu.h
+> +#define SMI_LARB_OSTDL_PORT	 0x200
+> +#define SMI_LARB_OSTDL_PORTx(id) (SMI_LARB_OSTDL_PORT + (((id) & 0x1f) << 2))
+> +
+>  /* SMI COMMON */
+> +#define SMI_L1LEN			0x100
+> +#define SMI_L1ARB0			0x104
+> +#define SMI_L1ARB(id)			(SMI_L1ARB0 + (((id) & 0x7) << 2))
+> +
+>  #define SMI_BUS_SEL			0x220
+>  #define SMI_BUS_LARB_SHIFT(larbid)	((larbid) << 1)
+>  /* All are MMU0 defaultly. Only specialize mmu1 here. */
+>  #define F_MMU1_LARB(larbid)		(0x1 << SMI_BUS_LARB_SHIFT(larbid))
+>  
+> +#define SMI_M4U_TH			0x234
+> +#define SMI_FIFO_TH1			0x238
+> +#define SMI_FIFO_TH2			0x23c
+> +#define SMI_DCM				0x300
+> +#define SMI_DUMMY			0x444
+> +
+> +#define SMI_LARB_PORT_NR_MAX		32
+> +#define SMI_COMMON_LARB_NR_MAX		8
+> +#define SMI_LARB_MISC_NR		2
+> +#define SMI_COMMON_MISC_NR		6
+> +
+>  enum mtk_smi_gen {
+>  	MTK_SMI_GEN1,
+>  	MTK_SMI_GEN2
+>  };
+>  
+> +struct mtk_smi_reg_pair {
+> +	u16	offset;
+> +	u32	value;
+> +};
+> +
+>  struct mtk_smi_common_plat {
+>  	enum mtk_smi_gen gen;
+>  	bool             has_gals;
+>  	u32              bus_sel; /* Balance some larbs to enter mmu0 or mmu1 */
+> +	u16                     *bwl;
+> +	struct mtk_smi_reg_pair *misc;
+>  };
+>  
+>  struct mtk_smi_larb_gen {
+> @@ -63,6 +92,8 @@ struct mtk_smi_larb_gen {
+>  	void (*config_port)(struct device *);
+>  	unsigned int			larb_direct_to_common_mask;
+>  	bool				has_gals;
+> +	u8				*bwl;
 
-diff --git a/drivers/base/platform.c b/drivers/base/platform.c
-index b230beb6ccb4..70b12c8ef2fb 100644
---- a/drivers/base/platform.c
-+++ b/drivers/base/platform.c
-@@ -27,6 +27,7 @@
- #include <linux/limits.h>
- #include <linux/property.h>
- #include <linux/kmemleak.h>
-+#include <linux/virtio_iommu.h>
- 
- #include "base.h"
- #include "power/power.h"
-@@ -1257,6 +1258,8 @@ int platform_dma_configure(struct device *dev)
- 	} else if (has_acpi_companion(dev)) {
- 		attr = acpi_get_dma_attr(to_acpi_device_node(dev->fwnode));
- 		ret = acpi_dma_configure(dev, attr);
-+	} else if (IS_ENABLED(CONFIG_VIRTIO_IOMMU_TOPOLOGY)) {
-+		ret = virt_dma_configure(dev);
- 	}
- 
- 	return ret;
-diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
-index e6eb4f238d1a..d02c0d36019d 100644
---- a/drivers/iommu/Kconfig
-+++ b/drivers/iommu/Kconfig
-@@ -486,4 +486,13 @@ config VIRTIO_IOMMU
- 
- 	  Say Y here if you intend to run this kernel as a guest.
- 
-+config VIRTIO_IOMMU_TOPOLOGY
-+	bool "Topology properties for the virtio-iommu"
-+	depends on VIRTIO_IOMMU
-+	help
-+	  Enable early probing of the virtio-iommu device, to detect the
-+	  topology description.
-+
-+	  Say Y here if you intend to run this kernel as a guest.
-+
- endif # IOMMU_SUPPORT
-diff --git a/drivers/iommu/Makefile b/drivers/iommu/Makefile
-index 4f405f926e73..6b51c4186ebc 100644
---- a/drivers/iommu/Makefile
-+++ b/drivers/iommu/Makefile
-@@ -35,3 +35,4 @@ obj-$(CONFIG_S390_IOMMU) += s390-iommu.o
- obj-$(CONFIG_QCOM_IOMMU) += qcom_iommu.o
- obj-$(CONFIG_HYPERV_IOMMU) += hyperv-iommu.o
- obj-$(CONFIG_VIRTIO_IOMMU) += virtio-iommu.o
-+obj-$(CONFIG_VIRTIO_IOMMU_TOPOLOGY) += virtio-iommu-topology.o
-diff --git a/drivers/iommu/virtio-iommu-topology.c b/drivers/iommu/virtio-iommu-topology.c
-new file mode 100644
-index 000000000000..ec22510ace3d
---- /dev/null
-+++ b/drivers/iommu/virtio-iommu-topology.c
-@@ -0,0 +1,410 @@
-+// SPDX-License-Identifier: GPL-2.0
-+#include <linux/acpi.h>
-+#include <linux/acpi_iort.h>
-+#include <linux/dma-iommu.h>
-+#include <linux/iommu.h>
-+#include <linux/list.h>
-+#include <linux/pci.h>
-+#include <linux/printk.h>
-+#include <linux/virtio_config.h>
-+#include <linux/virtio_iommu.h>
-+#include <linux/virtio_pci.h>
-+#include <uapi/linux/virtio_iommu.h>
-+
-+struct viommu_cap_config {
-+	u8 pos; /* PCI capability position */
-+	u8 bar;
-+	u32 length; /* structure size */
-+	u32 offset; /* structure offset within the bar */
-+};
-+
-+struct viommu_spec {
-+	struct device		*dev; /* transport device */
-+	struct fwnode_handle	*fwnode;
-+	struct iommu_ops	*ops;
-+	struct list_head	topology;
-+	struct list_head	list;
-+};
-+
-+struct viommu_topology {
-+	union {
-+		struct virtio_iommu_topo_head head;
-+		struct virtio_iommu_topo_pci_range pci;
-+		struct virtio_iommu_topo_endpoint ep;
-+	};
-+	/* Index into viommu_spec->topology */
-+	struct list_head list;
-+};
-+
-+static LIST_HEAD(viommus);
-+static DEFINE_MUTEX(viommus_lock);
-+
-+#define VPCI_FIELD(field) offsetof(struct virtio_pci_cap, field)
-+
-+static inline int viommu_find_capability(struct pci_dev *dev, u8 cfg_type,
-+					 struct viommu_cap_config *cap)
-+{
-+	int pos;
-+	u8 bar;
-+
-+	for (pos = pci_find_capability(dev, PCI_CAP_ID_VNDR);
-+	     pos > 0;
-+	     pos = pci_find_next_capability(dev, pos, PCI_CAP_ID_VNDR)) {
-+		u8 type;
-+
-+		pci_read_config_byte(dev, pos + VPCI_FIELD(cfg_type), &type);
-+		if (type != cfg_type)
-+			continue;
-+
-+		pci_read_config_byte(dev, pos + VPCI_FIELD(bar), &bar);
-+
-+		/* Ignore structures with reserved BAR values */
-+		if (type != VIRTIO_PCI_CAP_PCI_CFG && bar > 0x5)
-+			continue;
-+
-+		cap->bar = bar;
-+		cap->pos = pos;
-+		pci_read_config_dword(dev, pos + VPCI_FIELD(length),
-+				      &cap->length);
-+		pci_read_config_dword(dev, pos + VPCI_FIELD(offset),
-+				      &cap->offset);
-+
-+		return pos;
-+	}
-+	return 0;
-+}
-+
-+/*
-+ * Setup the special virtio PCI capability to read one of the config registers
-+ */
-+static int viommu_switch_pci_cfg(struct pci_dev *dev, int cfg,
-+				 struct viommu_cap_config *cap, u32 length,
-+				 u32 offset)
-+{
-+	offset += cap->offset;
-+
-+	if (offset + length > cap->offset + cap->length) {
-+		dev_warn(&dev->dev,
-+			 "read of %d bytes at offset 0x%x overflows cap of size %d\n",
-+			 length, offset, cap->length);
-+		return -EOVERFLOW;
-+	}
-+
-+	pci_write_config_byte(dev, cfg + VPCI_FIELD(bar), cap->bar);
-+	pci_write_config_dword(dev, cfg + VPCI_FIELD(length), length);
-+	pci_write_config_dword(dev, cfg + VPCI_FIELD(offset), offset);
-+	return 0;
-+}
-+
-+static u32 viommu_cread(struct pci_dev *dev, int cfg,
-+			struct viommu_cap_config *cap, u32 length, u32 offset)
-+{
-+	u8 val8;
-+	u16 val16;
-+	u32 val32;
-+	int out = cfg + sizeof(struct virtio_pci_cap);
-+
-+	if (viommu_switch_pci_cfg(dev, cfg, cap, length, offset))
-+		return 0;
-+
-+	switch (length) {
-+	case 1:
-+		pci_read_config_byte(dev, out, &val8);
-+		return val8;
-+	case 2:
-+		pci_read_config_word(dev, out, &val16);
-+		return val16;
-+	case 4:
-+		pci_read_config_dword(dev, out, &val32);
-+		return val32;
-+	default:
-+		WARN_ON(1);
-+		return 0;
-+	}
-+}
-+
-+static void viommu_cwrite(struct pci_dev *dev, int cfg,
-+			  struct viommu_cap_config *cap, u32 length, u32 offset,
-+			  u32 val)
-+{
-+	int out = cfg + sizeof(struct virtio_pci_cap);
-+
-+	if (viommu_switch_pci_cfg(dev, cfg, cap, length, offset))
-+		return;
-+
-+	switch (length) {
-+	case 1:
-+		pci_write_config_byte(dev, out, (u8)val);
-+		break;
-+	case 2:
-+		pci_write_config_word(dev, out, (u16)val);
-+		break;
-+	case 4:
-+		pci_write_config_dword(dev, out, val);
-+		break;
-+	default:
-+		WARN_ON(1);
-+	}
-+}
-+
-+static int viommu_add_topology(struct viommu_spec *viommu_spec,
-+			       struct viommu_topology *cap)
-+{
-+	struct viommu_topology *new = kmemdup(cap, sizeof(*cap), GFP_KERNEL);
-+
-+	if (!new)
-+		return -ENOMEM;
-+
-+	mutex_lock(&viommus_lock);
-+	list_add(&new->list, &viommu_spec->topology);
-+	mutex_unlock(&viommus_lock);
-+	return 0;
-+}
-+
-+static int viommu_parse_topology(struct pci_dev *dev, int pci_cfg,
-+				 struct viommu_cap_config *dev_cfg)
-+{
-+	u32 offset;
-+	struct viommu_topology cap;
-+	struct viommu_spec *viommu_spec;
-+	int iter = 0; /* Protects against config loop */
-+
-+	offset = viommu_cread(dev, pci_cfg, dev_cfg, 2,
-+			      offsetof(struct virtio_iommu_config,
-+				       topo_offset));
-+	if (!offset)
-+		return 0;
-+
-+	viommu_spec = kzalloc(sizeof(*viommu_spec), GFP_KERNEL);
-+	if (!viommu_spec)
-+		return -ENOMEM;
-+
-+	INIT_LIST_HEAD(&viommu_spec->topology);
-+	viommu_spec->dev = &dev->dev;
-+
-+	while (offset >= sizeof(struct virtio_iommu_config) && ++iter < 0x10000) {
-+		memset(&cap, 0, sizeof(cap));
-+
-+		cap.head.type = viommu_cread(dev, pci_cfg, dev_cfg, 2, offset);
-+		cap.head.next = viommu_cread(dev, pci_cfg, dev_cfg, 2, offset + 2);
-+
-+		switch (cap.head.type) {
-+		case VIRTIO_IOMMU_TOPO_PCI_RANGE:
-+			cap.pci.endpoint_start = viommu_cread(dev, pci_cfg,
-+							      dev_cfg, 2, offset
-+							      + 4);
-+			cap.pci.hierarchy = viommu_cread(dev, pci_cfg, dev_cfg,
-+							 2, offset + 8);
-+			cap.pci.requester_start = viommu_cread(dev, pci_cfg,
-+							       dev_cfg, 2,
-+							       offset + 10);
-+			cap.pci.requester_end = viommu_cread(dev, pci_cfg,
-+							     dev_cfg, 2, offset +
-+							     12);
-+			dev_info(&dev->dev,
-+				 "topology: adding PCI range 0x%x [0x%x:0x%x] -> 0x%x\n",
-+				 cap.pci.hierarchy, cap.pci.requester_start,
-+				 cap.pci.requester_end, cap.pci.endpoint_start);
-+			if (viommu_add_topology(viommu_spec, &cap))
-+				return -ENOMEM;
-+			break;
-+		case VIRTIO_IOMMU_TOPO_ENDPOINT:
-+			cap.ep.endpoint = viommu_cread(dev, pci_cfg, dev_cfg, 2,
-+						       offset + 4);
-+			cap.ep.address = viommu_cread(dev, pci_cfg, dev_cfg, 2,
-+						      offset + 8);
-+			dev_info(&dev->dev,
-+				 "topology: adding endpoint 0x%llx -> 0x%x\n",
-+				 cap.ep.address, cap.ep.endpoint);
-+			if (viommu_add_topology(viommu_spec, &cap))
-+				return -ENOMEM;
-+			break;
-+		default:
-+			dev_warn(&dev->dev, "Unknown topo structure 0x%x\n",
-+				 cap.head.type);
-+			break;
-+		}
-+
-+		offset = cap.head.next;
-+	}
-+
-+	/* TODO: handle device removal */
-+	mutex_lock(&viommus_lock);
-+	list_add(&viommu_spec->list, &viommus);
-+	mutex_unlock(&viommus_lock);
-+
-+	return 0;
-+}
-+
-+static void viommu_pci_parse_topology(struct pci_dev *dev)
-+{
-+	int pos;
-+	u32 features;
-+	struct viommu_cap_config common = {0};
-+	struct viommu_cap_config pci_cfg = {0};
-+	struct viommu_cap_config dev_cfg = {0};
-+
-+	pos = viommu_find_capability(dev, VIRTIO_PCI_CAP_COMMON_CFG, &common);
-+	if (!pos) {
-+		dev_warn(&dev->dev, "common capability not found\n");
-+		return;
-+	}
-+	pos = viommu_find_capability(dev, VIRTIO_PCI_CAP_DEVICE_CFG, &dev_cfg);
-+	if (!pos) {
-+		dev_warn(&dev->dev, "device config capability not found\n");
-+		return;
-+	}
-+	pos = viommu_find_capability(dev, VIRTIO_PCI_CAP_PCI_CFG, &pci_cfg);
-+	if (!pos) {
-+		dev_warn(&dev->dev, "PCI config capability not found\n");
-+		return;
-+	}
-+
-+	/* Find out if the device supports topology description */
-+	viommu_cwrite(dev, pos, &common, 4,
-+		      offsetof(struct virtio_pci_common_cfg,
-+			       device_feature_select),
-+		      0);
-+	features = viommu_cread(dev, pos, &common, 4,
-+				offsetof(struct virtio_pci_common_cfg,
-+					 device_feature));
-+	if (!(features & VIRTIO_IOMMU_F_TOPOLOGY)) {
-+		dev_dbg(&dev->dev, "device doesn't have topology description");
-+		return;
-+	}
-+
-+	viommu_parse_topology(dev, pos, &dev_cfg);
-+}
-+
-+DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_REDHAT_QUMRANET, 0x1014,
-+			viommu_pci_parse_topology);
-+
-+static const struct iommu_ops *virt_iommu_setup(struct device *dev)
-+{
-+	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
-+	const struct iommu_ops *viommu_ops = NULL;
-+	struct fwnode_handle *viommu_fwnode;
-+	struct viommu_spec *viommu_spec;
-+	struct viommu_topology *topo;
-+	struct pci_dev *pdev = NULL;
-+	struct device *viommu_dev;
-+	bool found = false;
-+	u16 devid;
-+	u32 eid;
-+	int ret;
-+
-+	/* Already translated? */
-+	if (fwspec && fwspec->ops)
-+		return fwspec->ops;
-+
-+	if (dev_is_pci(dev)) {
-+		pdev = to_pci_dev(dev);
-+		devid = pci_dev_id(pdev);
-+	} else {
-+		/* TODO: Do something with devres */
-+		return NULL;
-+	}
-+
-+	mutex_lock(&viommus_lock);
-+	list_for_each_entry(viommu_spec, &viommus, list) {
-+		list_for_each_entry(topo, &viommu_spec->topology, list) {
-+			if (pdev &&
-+			    topo->head.type == VIRTIO_IOMMU_TOPO_PCI_RANGE &&
-+			    pci_domain_nr(pdev->bus) == topo->pci.hierarchy &&
-+			    devid >= topo->pci.requester_start &&
-+			    devid <= topo->pci.requester_end) {
-+				found = true;
-+				eid = devid - topo->pci.requester_start +
-+					topo->pci.endpoint_start;
-+				break;
-+			} else if (!pdev) {
-+				/* TODO: compare address with devres */
-+			}
-+		}
-+		if (found) {
-+			viommu_ops = viommu_spec->ops;
-+			viommu_fwnode = viommu_spec->fwnode;
-+			viommu_dev = viommu_spec->dev;
-+			break;
-+		}
-+	}
-+	mutex_unlock(&viommus_lock);
-+	if (!found)
-+		return NULL;
-+
-+	/* We're not translating ourselves, that would be silly. */
-+	if (viommu_dev == dev)
-+		return NULL;
-+
-+	if (!viommu_ops)
-+		return ERR_PTR(-EPROBE_DEFER);
-+
-+	ret = iommu_fwspec_init(dev, viommu_fwnode, viommu_ops);
-+	if (ret)
-+		return ERR_PTR(ret);
-+
-+	iommu_fwspec_add_ids(dev, &eid, 1);
-+
-+	return viommu_ops;
-+}
-+
-+/**
-+ * virt_dma_configure - Configure DMA of virtualized devices
-+ * @dev: the endpoint
-+ *
-+ * An alternative to the ACPI and DT methods to setup DMA and the IOMMU ops of a
-+ * virtual device.
-+ *
-+ * Return: -EPROBE_DEFER if the IOMMU hasn't been loaded yet, 0 otherwise
-+ */
-+int virt_dma_configure(struct device *dev)
-+{
-+	const struct iommu_ops *iommu_ops;
-+
-+	/* TODO: do we need to mess about with the dma_mask as well? */
-+	WARN_ON(!dev->dma_mask);
-+
-+	iommu_ops = virt_iommu_setup(dev);
-+	if (IS_ERR(iommu_ops)) {
-+		if (PTR_ERR(iommu_ops) == -EPROBE_DEFER)
-+			return -EPROBE_DEFER;
-+		iommu_ops = NULL;
-+	}
-+
-+	/*
-+	 * If we have reason to believe the IOMMU driver missed the initial
-+	 * add_device callback for dev, replay it to get things in order.
-+	 */
-+	if (iommu_ops && dev->bus && !device_iommu_mapped(dev))
-+		iommu_probe_device(dev);
-+
-+#ifdef CONFIG_ARCH_HAS_SETUP_DMA_OPS
-+	/* Assume coherent, as well as full 64-bit addresses. */
-+	arch_setup_dma_ops(dev, 0, ~0UL, iommu_ops, true);
-+#else
-+	if (iommu_ops)
-+		iommu_setup_dma_ops(dev, 0, ~0UL);
-+#endif
-+	return 0;
-+}
-+
-+/**
-+ * virt_set_iommu_ops - Set the IOMMU ops of a virtual IOMMU device
-+ *
-+ * Setup the iommu_ops associated to a viommu_spec, once the driver is loaded
-+ * and the device probed.
-+ */
-+void virt_set_iommu_ops(struct device *dev, struct iommu_ops *ops)
-+{
-+	struct viommu_spec *viommu_spec;
-+
-+	mutex_lock(&viommus_lock);
-+	list_for_each_entry(viommu_spec, &viommus, list) {
-+		if (viommu_spec->dev == dev) {
-+			viommu_spec->ops = ops;
-+			viommu_spec->fwnode = ops ? dev->fwnode : NULL;
-+			break;
-+		}
-+	}
-+	mutex_unlock(&viommus_lock);
-+}
-diff --git a/drivers/iommu/virtio-iommu.c b/drivers/iommu/virtio-iommu.c
-index 9847552faecc..f68ee9615b38 100644
---- a/drivers/iommu/virtio-iommu.c
-+++ b/drivers/iommu/virtio-iommu.c
-@@ -22,6 +22,7 @@
- #include <linux/virtio.h>
- #include <linux/virtio_config.h>
- #include <linux/virtio_ids.h>
-+#include <linux/virtio_iommu.h>
- #include <linux/wait.h>
- 
- #include <uapi/linux/virtio_iommu.h>
-@@ -1134,6 +1135,7 @@ static int viommu_probe(struct virtio_device *vdev)
- 	if (ret)
- 		goto err_sysfs_remove;
- 
-+	virt_set_iommu_ops(dev->parent, &viommu_ops);
- 	iommu_device_set_ops(&viommu->iommu, &viommu_ops);
- 	iommu_device_register(&viommu->iommu);
- 
-@@ -1182,6 +1184,7 @@ static void viommu_remove(struct virtio_device *vdev)
- 	struct viommu_dev *viommu = vdev->priv;
- 
- 	iommu_device_unregister(&viommu->iommu);
-+	virt_set_iommu_ops(vdev->dev.parent, NULL);
- 	viommu_clear_fwnode(viommu);
- 	iommu_device_sysfs_remove(&viommu->iommu);
- 
-diff --git a/drivers/pci/pci-driver.c b/drivers/pci/pci-driver.c
-index a8124e47bf6e..d9b5e902ad18 100644
---- a/drivers/pci/pci-driver.c
-+++ b/drivers/pci/pci-driver.c
-@@ -17,6 +17,7 @@
- #include <linux/suspend.h>
- #include <linux/kexec.h>
- #include <linux/of_device.h>
-+#include <linux/virtio_iommu.h>
- #include <linux/acpi.h>
- #include "pci.h"
- #include "pcie/portdrv.h"
-@@ -1633,6 +1634,8 @@ static int pci_dma_configure(struct device *dev)
- 		struct acpi_device *adev = to_acpi_device_node(bridge->fwnode);
- 
- 		ret = acpi_dma_configure(dev, acpi_get_dma_attr(adev));
-+	} else if (IS_ENABLED(CONFIG_VIRTIO_IOMMU_TOPOLOGY)) {
-+		ret = virt_dma_configure(dev);
- 	}
- 
- 	pci_put_host_bridge_device(bridge);
-diff --git a/include/linux/virtio_iommu.h b/include/linux/virtio_iommu.h
-new file mode 100644
-index 000000000000..b700256f1063
---- /dev/null
-+++ b/include/linux/virtio_iommu.h
-@@ -0,0 +1,18 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef VIRTIO_IOMMU_H_
-+#define VIRTIO_IOMMU_H_
-+
-+#if IS_ENABLED(CONFIG_VIRTIO_IOMMU_TOPOLOGY)
-+int virt_dma_configure(struct device *dev);
-+void virt_set_iommu_ops(struct device *dev, struct iommu_ops *ops);
-+#else /* !CONFIG_VIRTIO_IOMMU_TOPOLOGY */
-+static inline int virt_dma_configure(struct device *dev)
-+{
-+	return -ENODEV;
-+}
-+
-+static inline void virt_set_iommu_ops(struct device *dev, struct iommu_ops *ops)
-+{ }
-+#endif /* !CONFIG_VIRTIO_IOMMU_TOPOLOGY */
-+
-+#endif /* VIRTIO_IOMMU_H_ */
-diff --git a/include/uapi/linux/virtio_iommu.h b/include/uapi/linux/virtio_iommu.h
-index 237e36a280cb..d3b7cd2a076f 100644
---- a/include/uapi/linux/virtio_iommu.h
-+++ b/include/uapi/linux/virtio_iommu.h
-@@ -16,6 +16,7 @@
- #define VIRTIO_IOMMU_F_BYPASS			3
- #define VIRTIO_IOMMU_F_PROBE			4
- #define VIRTIO_IOMMU_F_MMIO			5
-+#define VIRTIO_IOMMU_F_TOPOLOGY			6
- 
- struct virtio_iommu_range_64 {
- 	__le64					start;
-@@ -36,6 +37,31 @@ struct virtio_iommu_config {
- 	struct virtio_iommu_range_32		domain_range;
- 	/* Probe buffer size */
- 	__le32					probe_size;
-+	/* Offset to the beginning of the topology table */
-+	__le16					topo_offset;
-+};
-+
-+struct virtio_iommu_topo_head {
-+	__le16					type;
-+	__le16					next;
-+};
-+
-+#define VIRTIO_IOMMU_TOPO_PCI_RANGE		0x0
-+#define VIRTIO_IOMMU_TOPO_ENDPOINT		0x1
-+
-+struct virtio_iommu_topo_pci_range {
-+	struct virtio_iommu_topo_head		head;
-+	__le32					endpoint_start;
-+	__le16					hierarchy;
-+	__le16					requester_start;
-+	__le16					requester_end;
-+	__le16					reserved;
-+};
-+
-+struct virtio_iommu_topo_endpoint {
-+	struct virtio_iommu_topo_head		head;
-+	__le32					endpoint;
-+	__le64					address;
- };
- 
- /* Request types */
--- 
-2.24.0
+Below you assign mtk_smi_larb_mt6779_bwl to this, it is:
+static u8 mtk_smi_larb_mt6779_bwl[MTK_LARB_NR_MAX][SMI_LARB_PORT_NR_MAX]
 
+then, is "u8 **" better?
+
+> +	struct mtk_smi_reg_pair		*misc;
+
+ditto, use **?
+
+>  };
+>  
+>  struct mtk_smi {
+> @@ -160,7 +191,7 @@ static void mtk_smi_larb_config_port_gen2_general(struct device *dev)
+>  {
+>  	struct mtk_smi_larb *larb = dev_get_drvdata(dev);
+>  	u32 reg;
+> -	int i;
+> +	int i, id;
+>  
+>  	if (BIT(larb->larbid) & larb->larb_gen->larb_direct_to_common_mask)
+>  		return;
+> @@ -170,6 +201,20 @@ static void mtk_smi_larb_config_port_gen2_general(struct device *dev)
+>  		reg |= F_MMU_EN;
+>  		writel(reg, larb->base + SMI_LARB_NONSEC_CON(i));
+>  	}
+> +
+> +	if (larb->larb_gen->bwl)
+> +		for (i = 0; i < larb->larb_gen->port_in_larb[larb->larbid]; i++)
+> +			writel_relaxed(larb->larb_gen->bwl[larb->larbid *
+> +				       SMI_LARB_PORT_NR_MAX + i],
+> +				       larb->base + SMI_LARB_OSTDL_PORTx(i));
+
+From this register name, I guess the name "bwl"(bandwidth limiter?) is
+not so good. Maybe it should be called by "osdl". At least, you should
+add a comment for this. like : u8  *bwl; /* for OSDL */
+
+As below comment, If we don't have port_in_larb, always use 32 here, is
+it OK? (writing 0 for the non-exist port).
+
+> +
+> +	if (larb->larb_gen->misc)
+> +		for (i = 0, id = larb->larbid * SMI_LARB_MISC_NR;
+> +			i < SMI_LARB_MISC_NR; i++, id++)
+> +			writel_relaxed(larb->larb_gen->misc[id].value,
+> +				       larb->base +
+> +				       larb->larb_gen->misc[id].offset);
+
+There are 3 intention, It's not easy to read. A not-strong suggestion:
+we could add a new variable like has_bwc for mt6779 which have this
+bandwidth initial setting. And use "u8 **" for bwl. then the code will
+be like below:
+
+struct mtk_smi_reg_pair *misc;
+u8 *bwl;
+
+if (!larb->larb_gen->has_bwc)
+	return;
+
+for (i = 0, bwl = larb->larb_gen->bwl[larb->larbid];
+     i < larb->larb_gen->port_in_larb[larb->larbid]; i++)
+	writel_relaxed(bwl[i], larb->base + SMI_LARB_OSTDL_PORTx(i));
+
+for (i = 0,misc =larb->larb_gen->misc[larb->larbid];
+     i < SMI_LARB_MISC_NR; i++)
+	writel_relaxed(misc[i].value, larb->base + misc[i].offset);
+
+the writel_relaxed can be finished in one line.
+
+
+> +	wmb(); /* make sure settings are written */
+>  }
+>  
+>  static void mtk_smi_larb_config_port_mt8173(struct device *dev)
+> @@ -246,6 +291,55 @@ static void mtk_smi_larb_config_port_gen1(struct device *dev)
+>  				      /* IPU0 | IPU1 | CCU */
+>  };
+>  
+> +static u8 mtk_smi_larb_mt6779_bwl[MTK_LARB_NR_MAX][SMI_LARB_PORT_NR_MAX] = {
+
+Add const.
+
+Here the larb number in this SoC isn't MTK_LARB_NR_MAX(16). May be you
+could use:
+static const u8 mtk_smi_larb_mt6779_bwl[][SMI_LARB_PORT_NR_MAX]
+
+> +	{0x28, 0x28, 0x01, 0x28, 0x01, 0x01, 0x0a, 0x0a, 0x28,},
+> +	{0x28, 0x01, 0x28, 0x28, 0x0a, 0x01, 0x01, 0x0d, 0x0d, 0x07,
+> +	 0x01, 0x07, 0x01, 0x28,},
+> +	{0x18, 0x01, 0x08, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x02,
+> +	 0x01, 0x01},
+> +	{0x01, 0x03, 0x02, 0x01, 0x01, 0x01, 0x01, 0x04, 0x02, 0x01,
+> +	 0x04, 0x01, 0x01, 0x01, 0x01, 0x04, 0x0b, 0x13, 0x14,},
+> +	{},
+> +	{0x13, 0x0f, 0x0d, 0x07, 0x07, 0x04, 0x03, 0x01, 0x03, 0x01,
+> +	 0x05, 0x0c, 0x01, 0x01, 0x08, 0x06, 0x02, 0x01, 0x08, 0x08,
+> +	 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,},
+> +	{0x01, 0x01, 0x01,},
+> +	{0x01, 0x01, 0x01, 0x01,},
+> +	{0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,},
+> +	{0x1f, 0x1a, 0x02, 0x04, 0x1f, 0x02, 0x14, 0x01, 0x1f, 0x04,
+> +	 0x04, 0x01, 0x01, 0x01, 0x02, 0x02, 0x04, 0x02, 0x01, 0x02,
+> +	 0x04, 0x02, 0x02, 0x01,},
+> +	{0x1f, 0x1a, 0x02, 0x04, 0x1f, 0x02, 0x14, 0x01, 0x1f, 0x1a,
+> +	 0x02, 0x04, 0x1f, 0x02, 0x14, 0x01, 0x01, 0x02, 0x02, 0x04,
+> +	 0x02, 0x0a, 0x02, 0x02, 0x04, 0x02, 0x0a, 0x02, 0x04, 0x02, 0x04,},
+> +	{0x01, 0x01, 0x01, 0x01, 0x01,},
+> +};
+> +
+> +static struct mtk_smi_reg_pair
+
+const
+
+> +	mtk_smi_larb_mt6779_misc[MTK_LARB_NR_MAX][SMI_LARB_MISC_NR] = {
+> +	{{SMI_LARB_CMD_THRT_CON, 0x370256}, {SMI_LARB_SW_FLAG, 0x1},},
+> +	{{SMI_LARB_CMD_THRT_CON, 0x300256}, {SMI_LARB_SW_FLAG, 0x1},},
+> +	{{SMI_LARB_CMD_THRT_CON, 0x370256}, {SMI_LARB_SW_FLAG, 0x1},},
+> +	{},
+> +	{{SMI_LARB_CMD_THRT_CON, 0x300256}, {SMI_LARB_SW_FLAG, 0x1},},
+> +	{{SMI_LARB_CMD_THRT_CON, 0x300256}, {SMI_LARB_SW_FLAG, 0x1},},
+> +	{{SMI_LARB_CMD_THRT_CON, 0x300256}, {SMI_LARB_SW_FLAG, 0x1},},
+> +	{{SMI_LARB_CMD_THRT_CON, 0x300256}, {SMI_LARB_SW_FLAG, 0x1},},
+> +	{{SMI_LARB_CMD_THRT_CON, 0x370256}, {SMI_LARB_SW_FLAG, 0x1},},
+> +	{{SMI_LARB_CMD_THRT_CON, 0x370256}, {SMI_LARB_SW_FLAG, 0x1},},
+> +	{{SMI_LARB_CMD_THRT_CON, 0x370256}, {SMI_LARB_SW_FLAG, 0x1},},
+> +};
+> +
+> +static const struct mtk_smi_larb_gen mtk_smi_larb_mt6779 = {
+
+Move the mt6779 definition before mt8183.
+
+> +	.port_in_larb = {9, 14, 12, 19, 0, 26, 3, 4, 10, 24, 31, 5,},
+
+In mt2701, port_in_larb[n] is port_offset[n-1] + port_number[n-1].
+It is not same with yours.
+
+Maybe your definition is better, But If you change it, please also
+change the mt2701. Make sure the meaning of port_in_larb are the same.
+
+> +	.config_port  = mtk_smi_larb_config_port_gen2_general,
+> +	.larb_direct_to_common_mask =
+> +		BIT(4) | BIT(6) | BIT(11) | BIT(12) | BIT(13),
+> +		/* DUMMY | IPU0 | IPU1 | CCU | MDLA */
+> +	.bwl  = (u8 *)mtk_smi_larb_mt6779_bwl,
+
+As above, here should be (u8 **).
+
+> +	.misc = (struct mtk_smi_reg_pair *)mtk_smi_larb_mt6779_misc,
+> +};
+> +
+>  static const struct of_device_id mtk_smi_larb_of_ids[] = {
+>  	{
+>  		.compatible = "mediatek,mt8173-smi-larb",
+> @@ -260,6 +354,10 @@ static void mtk_smi_larb_config_port_gen1(struct device *dev)
+>  		.data = &mtk_smi_larb_mt2712
+>  	},
+>  	{
+> +		.compatible = "mediatek,mt6779-smi-larb",
+> +		.data = &mtk_smi_larb_mt6779
+> +	},
+> +	{
+>  		.compatible = "mediatek,mt8183-smi-larb",
+>  		.data = &mtk_smi_larb_mt8183
+>  	},
+> @@ -393,6 +491,29 @@ static int __maybe_unused mtk_smi_larb_suspend(struct device *dev)
+>  		    F_MMU1_LARB(7),
+>  };
+>  
+> +static u16 mtk_smi_common_mt6779_bwl[SMI_COMMON_LARB_NR_MAX] = {
+
+const.
+
+This bwl smi-common setting always have 8 register? Will it be changed?
+
+How about below?:
+
+static u16 mtk_smi_common_mt6779_bwl[] = {
+
+Add a new variable in struct mtk_smi_common_plat.
+
+larb_nr = ARRAY_SIZE(mtk_smi_common_mt6779_bwl)
+
+> +	0x1000, 0x1000, 0x1000, 0x1000, 0x1000, 0x1000, 0x1000, 0x1000,
+> +};
+> +
+> +static struct mtk_smi_reg_pair
+
+const
+> +	mtk_smi_common_mt6779_misc[SMI_COMMON_MISC_NR] = {
+
+The tab in this line is unnecessary.
+
+> +	{SMI_L1LEN, 0xb},
+> +	{SMI_M4U_TH, 0xe100e10},
+> +	{SMI_FIFO_TH1, 0x506090a},
+> +	{SMI_FIFO_TH2, 0x506090a},
+> +	{SMI_DCM, 0x4f1},
+> +	{SMI_DUMMY, 0x1},
+
+
+Do all the settings above(including smi-larb) may be changed dynamically
+in different scenario? or all the setting only be set once?
+
+> +};
+> +
+> +static const struct mtk_smi_common_plat mtk_smi_common_mt6779 = {
+
+ditto. Move the mt6779 definition before mt8183.
+
+> +	.gen      = MTK_SMI_GEN2,
+> +	.has_gals = true,
+
+If you also have has_gals, Please update the binding.
+
+> +	.bus_sel  = F_MMU1_LARB(1) | F_MMU1_LARB(2) | F_MMU1_LARB(4) |
+> +		    F_MMU1_LARB(5) | F_MMU1_LARB(6) | F_MMU1_LARB(7),
+> +	.bwl      = mtk_smi_common_mt6779_bwl,
+> +	.misc     = mtk_smi_common_mt6779_misc,
+> +};
+> +
+>  static const struct of_device_id mtk_smi_common_of_ids[] = {
+>  	{
+>  		.compatible = "mediatek,mt8173-smi-common",
+> @@ -407,6 +528,10 @@ static int __maybe_unused mtk_smi_larb_suspend(struct device *dev)
+>  		.data = &mtk_smi_common_gen2,
+>  	},
+>  	{
+> +		.compatible = "mediatek,mt6779-smi-common",
+> +		.data = &mtk_smi_common_mt6779,
+> +	},
+> +	{
+>  		.compatible = "mediatek,mt8183-smi-common",
+>  		.data = &mtk_smi_common_mt8183,
+>  	},
+> @@ -484,7 +609,7 @@ static int __maybe_unused mtk_smi_common_resume(struct device *dev)
+>  {
+>  	struct mtk_smi *common = dev_get_drvdata(dev);
+>  	u32 bus_sel = common->plat->bus_sel;
+> -	int ret;
+> +	int i, ret;
+>  
+>  	ret = mtk_smi_clk_enable(common);
+>  	if (ret) {
+> @@ -494,6 +619,18 @@ static int __maybe_unused mtk_smi_common_resume(struct device *dev)
+>  
+>  	if (common->plat->gen == MTK_SMI_GEN2 && bus_sel)
+>  		writel(bus_sel, common->base + SMI_BUS_SEL);
+
+SMI_BUS_SEL looks can be a register in your common->plat->misc.
+This should be done in another patch.
+
+> +
+> +	if (common->plat->bwl)
+> +		for (i = 0; i < SMI_COMMON_LARB_NR_MAX; i++)
+> +			writel_relaxed(common->plat->bwl[i],
+> +				       common->base + SMI_L1ARB(i));
+
+From the register name, the "bwl" also is not so good. add a comment or
+rename it like "l1arb"?
+
+> +
+> +	if (common->plat->misc)
+> +		for (i = 0; i < SMI_COMMON_MISC_NR; i++)
+> +			writel_relaxed(common->plat->misc[i].value,
+> +				       common->base +
+> +				       common->plat->misc[i].offset);
+> +	wmb(); /* make sure settings are written */
+>  	return 0;
+>  }
+>  
 
 _______________________________________________
 linux-arm-kernel mailing list
