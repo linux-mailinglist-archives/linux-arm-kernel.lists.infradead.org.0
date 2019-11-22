@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F8C6105D63
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 00:46:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F024105DA3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 01:23:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oKu90Wtaq3aZtuS/3TYE9VnpBkojgJ/9nCbrEudLPsI=; b=mxlHWa04r3lcvn
-	eXdFff6B+fengkSi+0T6CO9K2IaSgAw5+WRoSDDd9SBOUNhX7E3ECC7RgwxJsjT3rSgLaYkfETZ7T
-	c54ZefCfXko4QTrIerhXvj+BaBAwRZ0OagybS2vMh6CGzE5GuM/vl0l34dL6S91xCJVrfE9WWB4v5
-	R9JxHtkgAn7CIOF/KfvN+fpNP1HYYvWgxRmHGePvY3Fe4HDXTQuSr861rGwy6pMCdIv+GgVzui4J2
-	wEoEqERr7HrrW0rPDckWaWnr8H2rV46Lnszjz9LP865nffGzdE/z0p7cnwe9LfA4TNGpdf+bFHUim
-	3fLKT26duh0xZldR/kKQ==;
+	List-Owner; bh=/qrVlQ47XbiEwtdA5xznCEVbvjFK/MwrnEeJ3L172ww=; b=T7mkjYof/Rf/03
+	8BJy2EeVi5EiZ/SHrYU8bY+x4aVr/Q/cFMVK4jUdg6rgR/a+VXNVNYc6s943yIO/wWwov6u1V1oJV
+	WFnichow1L329Q8f6Yln9pImpUgMHu92a9ONXdnYks5a3b/XY5XgD+ZpDvKl4AKab7y1zh4mX5Icl
+	20lBsCpTqFXdiNxgenMElrvdA1wJEz2Pj0f7PeI4jxgqDo9BRvjMYbUAPWkJVCYI/cs23BAZvzgIm
+	5WlNFnNalufbOiyNA32RztEzaj1w2zePH7Bj6PdtS16Wo0g+9QGFkvIgPiCCNR7UBw9QruPudmusI
+	XIIFP01jwnX39ZtO1GGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXw9W-0006OK-59; Thu, 21 Nov 2019 23:46:22 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1iXwjj-0000eX-45; Fri, 22 Nov 2019 00:23:47 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXw9L-0006NE-Q4
- for linux-arm-kernel@lists.infradead.org; Thu, 21 Nov 2019 23:46:13 +0000
-Received: by mail-io1-xd41.google.com with SMTP id j20so5672101ioo.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 15:46:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=sRD24CZU3AA7e2Mtg/NoNBcTmeTnpOy0Fn8hZegqJhU=;
- b=dw/zbwX8lizHuxbYkQ37HvOTPMHVT1O74unioWCCsP5FWziIY32mR9aVshQjoffH0T
- 80d1AP0tQOVmnjweBlGc2hW70TiBfDcfyxPn+R/h1Ec1uToFhEK3rjblbH5zBDKXjcJJ
- EwqwsPUj/n6Zja6eLxu2N/HsgurnGu+Eav6SlPkUVbXbbQgxsgJWqzyZlBreG9tEeUPL
- zQgwz8+R42jKYAHNV+uVlpvntohxWvXoV7F/EXkhFsTnGAhVJP4Dh16H5FIbTVMr4XCW
- Tl5HJeNYtHd9ZaiEk60UiO857HQbqySBryM0yXC+BASU1t4b56s5PsnQQvgAKISojrKC
- DCZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=sRD24CZU3AA7e2Mtg/NoNBcTmeTnpOy0Fn8hZegqJhU=;
- b=SPH44JO3iBwhwOChjzBGzUIDvLGKQGdWQGrETZjZpz2rda7nwP1uaVQmfoTsot/+ml
- eSbM1ad1g3WAzx4ApPyf++S/+GJLMM2e/vG/k3Krt09uqCuv7SLtAV4/nPDY+jPBLSsF
- IwX6sc9SQNqaZUVnosQ3KOiECEVVa6f0a7w/8bSBCws2dgAi0yazEsOvlZDps27yy57M
- T1WIURpaCQ4P6eGNOUWlcpOuLAlSx1qQ959px1c9v/GalAHk43h/sBy5a1jxzwjnFkDl
- mJPteeMH40ULYOo/GebcD6Zk5+Q5V9cpDOhj1rHNy1hzCKnsDS7nilWKJBtj4stCnMg9
- 2/Hg==
-X-Gm-Message-State: APjAAAWdnmIpWxE5w7Nnn+fY6yY7HUMKDXWJ262DcaBms5eLtWZy1pmH
- GTysgGNfl2qS1SMQcBJUsJ9/Rg==
-X-Google-Smtp-Source: APXvYqylVPal8XuHdeMGWRQk4bl4C77IYa6VGNLsq0lu8kumK0eFdylj7srKX7AWphuL35T0EhGFQg==
-X-Received: by 2002:a5e:8b4a:: with SMTP id z10mr10230626iom.200.1574379970746; 
- Thu, 21 Nov 2019 15:46:10 -0800 (PST)
-Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
- [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id h22sm4217098pgn.78.2019.11.21.15.46.09
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 21 Nov 2019 15:46:10 -0800 (PST)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-amlogic@lists.infradead.org
-Subject: Re: [PATCH] ARM: dts: meson8: fix the size of the PMU registers
-In-Reply-To: <20191117154154.170960-1-martin.blumenstingl@googlemail.com>
-References: <20191117154154.170960-1-martin.blumenstingl@googlemail.com>
-Date: Thu, 21 Nov 2019 15:46:09 -0800
-Message-ID: <7hlfs8n67y.fsf@baylibre.com>
+ id 1iXwjb-0000cz-LN
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 00:23:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=o7hbwuPirwuuz0Y/+39p2Uj5Rp0ENQjemwmV/bfiS70=; b=lDIFDmcB6YuQuSGSZlFob0XEu
+ OhD474Hwuwm4BhvW39/sq97d2A4scUWTlIgruSePYHHLwXTuvZd9/Q20du1X8udEiazjEEIqAUIWF
+ Ir3W3OqWGvDVGQuJGVzMMS9QvGdJeCJBEURWMFWoIRXJr89V0FnZOv5Fa4HiHRPT1MZPxq470Pz9W
+ z5ULDYDLKDSWnIOfRhi5FYvorVItrtOwGT8cxcze5eJnY61upZfjtjtUWo4mHYCgXKtaL3NLOx1Sn
+ Ytk+lSYp6UglSzuJ8T0FIybi3aks+UMtn/vFO/bX4FlWtUHHxWicL/seNL8s7AagS6b9LXVAjpFlG
+ iRmWpUnlQ==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:42882)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iXwj5-0001as-MI; Fri, 22 Nov 2019 00:23:07 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iXwiw-0003Br-8q; Fri, 22 Nov 2019 00:22:58 +0000
+Date: Fri, 22 Nov 2019 00:22:58 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Pavel Tatashin <pasha.tatashin@soleen.com>
+Subject: Re: [PATCH 1/3] arm/arm64/xen: use C inlines for privcmd_call
+Message-ID: <20191122002258.GD25745@shell.armlinux.org.uk>
+References: <20191121184805.414758-1-pasha.tatashin@soleen.com>
+ <20191121184805.414758-2-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191121184805.414758-2-pasha.tatashin@soleen.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_154611_846936_E3C5ABE2 
-X-CRM114-Status: GOOD (  12.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191121_162339_703885_171FE907 
+X-CRM114-Status: GOOD (  13.52  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,46 +87,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, stefan@agner.ch,
+ yamada.masahiro@socionext.com, will@kernel.org, boris.ostrovsky@oracle.com,
+ sashal@kernel.org, sstabellini@kernel.org, jmorris@namei.org,
+ linux-arm-kernel@lists.infradead.org, xen-devel@lists.xenproject.org,
+ vladimir.murzin@arm.com, marc.zyngier@arm.com, alexios.zavras@intel.com,
+ tglx@linutronix.de, allison@lohutok.net, jgross@suse.com, steve.capper@arm.com,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, james.morse@arm.com,
+ info@metux.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
+On Thu, Nov 21, 2019 at 01:48:03PM -0500, Pavel Tatashin wrote:
+> privcmd_call requires to enable access to userspace for the
+> duration of the hypercall.
+> 
+> Currently, this is done via assembly macros. Change it to C
+> inlines instead.
+> 
+> Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+> ---
+>  arch/arm/include/asm/assembler.h |  2 +-
+>  arch/arm/include/asm/uaccess.h   | 32 ++++++++++++++++++++++++++------
+>  arch/arm/xen/enlighten.c         |  2 +-
+>  arch/arm/xen/hypercall.S         | 15 ++-------------
+>  arch/arm64/xen/hypercall.S       | 19 ++-----------------
+>  include/xen/arm/hypercall.h      | 23 ++++++++++++++++++++---
+>  6 files changed, 52 insertions(+), 41 deletions(-)
+> 
+> diff --git a/arch/arm/include/asm/assembler.h b/arch/arm/include/asm/assembler.h
+> index 99929122dad7..8e9262a0f016 100644
+> --- a/arch/arm/include/asm/assembler.h
+> +++ b/arch/arm/include/asm/assembler.h
+> @@ -480,7 +480,7 @@ THUMB(	orr	\reg , \reg , #PSR_T_BIT	)
+>  	.macro	uaccess_disable, tmp, isb=1
+>  #ifdef CONFIG_CPU_SW_DOMAIN_PAN
+>  	/*
+> -	 * Whenever we re-enter userspace, the domains should always be
+> +	 * Whenever we re-enter kernel, the domains should always be
+>  	 * set appropriately.
+>  	 */
+>  	mov	\tmp, #DACR_UACCESS_DISABLE
+> diff --git a/arch/arm/include/asm/uaccess.h b/arch/arm/include/asm/uaccess.h
+> index 98c6b91be4a8..79d4efa3eb62 100644
+> --- a/arch/arm/include/asm/uaccess.h
+> +++ b/arch/arm/include/asm/uaccess.h
+> @@ -16,6 +16,23 @@
+>  
+>  #include <asm/extable.h>
+>  
+> +#ifdef CONFIG_CPU_SW_DOMAIN_PAN
+> +static __always_inline void uaccess_enable(void)
+> +{
+> +	unsigned long val = DACR_UACCESS_ENABLE;
+> +
+> +	asm volatile("mcr p15, 0, %0, c3, c0, 0" : : "r" (val));
+> +	isb();
+> +}
+> +
+> +static __always_inline void uaccess_disable(void)
+> +{
+> +	unsigned long val = DACR_UACCESS_ENABLE;
+> +
+> +	asm volatile("mcr p15, 0, %0, c3, c0, 0" : : "r" (val));
+> +	isb();
+> +}
 
-> The PMU registers are at least 0x18 bytes wide. Meson8b already uses a
-> size of 0x18. The structure of the PMU registers on Meson8 and Meson8b
-> is similar but not identical.
->
-> Meson8 and Meson8b have the following registers in common (starting at
-> AOBUS + 0xe0):
->   #define AO_RTI_PWR_A9_CNTL0 0xe0 (0x38 << 2)
->   #define AO_RTI_PWR_A9_CNTL1 0xe4 (0x39 << 2)
->   #define AO_RTI_GEN_PWR_SLEEP0 0xe8 (0x3a << 2)
->   #define AO_RTI_GEN_PWR_ISO0 0x4c (0x3b << 2)
->
-> Meson8b additionally has these three registers:
->   #define AO_RTI_GEN_PWR_ACK0 0xf0 (0x3c << 2)
->   #define AO_RTI_PWR_A9_MEM_PD0 0xf4 (0x3d << 2)
->   #define AO_RTI_PWR_A9_MEM_PD1 0xf8 (0x3e << 2)
->
-> Thus we can assume that the register size of the PMU IP blocks is
-> identical on both SoCs (and Meson8 just contains some reserved registers
-> in that area) because the CEC registers start right after the PMU
-> (AO_RTI_*) registers at AOBUS + 0x100 (0x40 << 2).
->
-> The upcoming power domain driver will need to read and write the
-> AO_RTI_GEN_PWR_SLEEP0 and AO_RTI_GEN_PWR_ISO0 registers, so the updated
-> size is needed for that driver to work.
->
-> Fixes: 4a5a27116b447d ("ARM: dts: meson8: add support for booting the secondary CPU cores")
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Rather than inventing these, why not use uaccess_save_and_enable()..
+uaccess_restore() around the Xen call?
 
-Queued as a fix for v5.5-rc,
-
-Kevin
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
