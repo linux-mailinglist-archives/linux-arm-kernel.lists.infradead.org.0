@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20DF41072B1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 14:02:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A25851072C7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 14:08:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=715o2gaSaBLJpWmOlbVA4MXtHukh1SKVz3y9waVVhxA=; b=cSjCTxnLlmqhmw
-	HbXEus12XEH+ESPGgqDLlRJ71+ZLWonYzi4+TgKTqqHk0dmVXq6Fv2UsyQK43vDJQqjhHsohQ+ErB
-	pbdBXXTIT7oL6p6oUmk3Yi8GMdstPFv0qzGn3nDxH0/YzzSv5jh1PcNkxIysLkzttf0Id2RGpByg+
-	3IZSlSuYvaLaDzADSyxxTKdjdWsLubbpYvwajdIC3YTZ6CjRe8UpA+ujXXA44bJXDyVit0yOGpmfQ
-	7uZSmpzneeDlctpme0FzFDle1o/99/8uGgzYQfQR7apTH0RsVn2kDebWVbPRxqu+3XwRZLc6P0hBt
-	tKsPUjBOxBS5xJ1JFr+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:In-Reply-To:Subject:To:From:Date:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
+	 bh=kOU8hCVj3IACUZ6lhH/MwPceESgnPUAKBszLqtHyC+o=; b=t67fnNdPrdMZn1E/2FUS/9vmb
+	B2b0U1BvnkdyE11Ed8PglGijvQVwEZ2NGaspTFPiM5SNP8cUYQ/u/I3XF/NI/1n8eiryFlImB0FWD
+	9A0ORcga9kS8xvvZKK5Q22kV+LaqksKtIv1T7GTBHnvkF6LpSeLl5D87IFM3yBKwJswTTRTE8jzfo
+	k+IO7/jyyUkSOaKNMSUxX3V1q6sM1ylznABFv1384klSHSwfJZOeLN88WUdHx62JWi1uaZADeui6W
+	FDasdzvudP8TTostPLGFvTtD8EI9bhyMnL8eoKWEz6qJF65ZNaxLasYnMl5OlSfgVXpJxN5bl8HHK
+	n1hfabAWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY8ZX-0005bZ-E6; Fri, 22 Nov 2019 13:02:03 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iY8fk-0007oE-Mr; Fri, 22 Nov 2019 13:08:28 +0000
+Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY8ZK-0005Hn-3A
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 13:01:51 +0000
-Received: by mail-lf1-x143.google.com with SMTP id r15so2517592lff.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 Nov 2019 05:01:48 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Dn2Q+lxc2hD365R8dpx/qDcvh0SW6iReRcimhdnvJVs=;
- b=T3iDSlAsyuLG+UJUCmoncxR1Bu/bnkXL+KTq5dtWsOPEk5RpZ8edNc98Onwl6slav+
- /6e8hX+pTkWaSIXGqEuy9X9rZyNwmY4TERtxiAfEDekog4Gkz38xdZQ0RSgGTrgjfXWm
- Owq4J8pZTVADQ/t5uY4imCraJJ2dIrTT2uwE0EY2E3x+Uro8T1zF0BkVxkc8pF0FsqBl
- y6GKP5K6axb8BQ38YAG8H8sPZiX4W7XuFOsvWqrZ1MviJOCm684lRjpNZpMzH8na0jOx
- wqdeYsaHigtxhdjowwJZrUBM8VUa8C/SZB2DM3PbahSmncXpmbcvjBgy4Xy+mo3eR0h4
- 1WBg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Dn2Q+lxc2hD365R8dpx/qDcvh0SW6iReRcimhdnvJVs=;
- b=JbAY8heT868sohjoYuekW/Al1eQ1M8KohGLqx7xKfR4+btAdLjhAcEdYJsMZfnQVbP
- jmgZiCK5xfMriJGODAQ4lhktPjk7/hiYA25pzTvnoUgo7Yv53r32VNn2zpVz/x5hC5oI
- NEtL+vGKH6ATyJU6wFiYQCr0kv23GZBCPoF+rfDwv/hjItMrtukgBaMGLlogGhh97nvq
- KzFQA3yFBH53+00gBb+cI23empE7nwyRYfPES6cP/sUudjBBZeArDGLaTbiF+LQ4FUQQ
- 3tTjqJYn9hDs5vFgebCoxPsPFmvrY44PHEVpQuKOsIJmYQhp9/JI+yWeABPGl/jXAEkt
- dEDQ==
-X-Gm-Message-State: APjAAAWRLb0ryUXIywzSjmy6R5R2ttG7phVnyN+LWEyEu/DcpmYvoaLO
- IP8Ak8iCsH/tcWzTH/c5QK97iulFiyk6mKA+NofSTQ==
-X-Google-Smtp-Source: APXvYqzo/k0rIsJGGL399pE+GzotZ33QW/YQlNt/JpZVm7SU204RwrS3/eFE+xu+DFtDva5eWFhzGzqC/njjDmo3YqM=
-X-Received: by 2002:ac2:4945:: with SMTP id o5mr11596350lfi.93.1574427707515; 
- Fri, 22 Nov 2019 05:01:47 -0800 (PST)
+ id 1iY8fa-0007n8-PF
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 13:08:21 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id C8C842304F;
+ Fri, 22 Nov 2019 14:08:08 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1574428089;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:  in-reply-to:in-reply-to; 
+ bh=//5nPzIuRm2evQRb9acrI4hqDZiiDLIkRjl4f5sxneQ=;
+ b=Fyrp8yuJV16DLrKi+FF4jNZLBtL0W4BGrdemubN8pw2rZzEV79OsvUW4elJJos5Ec30Tgk
+ OPbn46jipXAN8EWBWg3ocL5WBCURrjYE8vf5JuM5SOnf9Mmny/VBEqBLbXI2qOT25Z7ICJ
+ zzAkke/VvecTIFaDsLAXvZTe1oP7MXA=
 MIME-Version: 1.0
-References: <20191122061839.24904-1-hui.song_1@nxp.com>
-In-Reply-To: <20191122061839.24904-1-hui.song_1@nxp.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 22 Nov 2019 14:01:35 +0100
-Message-ID: <CACRpkdYhLoGdGQt_jzj5aFa-EY_kMimoVShi7QFLG3sZbC436w@mail.gmail.com>
+Date: Fri, 22 Nov 2019 14:08:08 +0100
+From: Michael Walle <michael@walle.cc>
+To: linus.walleij@linaro.org
 Subject: Re: [PATCH v1] gpio : mpc8xxx : ls1088a/ls1028a edge detection mode
  bug fixs.
-To: Hui Song <hui.song_1@nxp.com>
+In-Reply-To: <CACRpkdYhLoGdGQt_jzj5aFa-EY_kMimoVShi7QFLG3sZbC436w@mail.gmail.com>
+Message-ID: <563f2fdf0c32103d95a53fc1e7fd84c0@walle.cc>
+X-Sender: michael@walle.cc
+User-Agent: Roundcube Webmail/1.3.8
+X-Spamd-Bar: +
+X-Spam-Level: *
+X-Rspamd-Server: web
+X-Spam-Status: No, score=1.40
+X-Spam-Score: 1.40
+X-Rspamd-Queue-Id: C8C842304F
+X-Spamd-Result: default: False [1.40 / 15.00]; ARC_NA(0.00)[];
+ FROM_HAS_DN(0.00)[]; TO_MATCH_ENVRCPT_ALL(0.00)[];
+ TAGGED_RCPT(0.00)[dt]; MIME_GOOD(-0.10)[text/plain];
+ TO_DN_NONE(0.00)[]; DKIM_SIGNED(0.00)[];
+ RCPT_COUNT_SEVEN(0.00)[11]; NEURAL_HAM(-0.00)[-0.923];
+ RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
+ MIME_TRACE(0.00)[0:+]; MID_RHS_MATCH_FROM(0.00)[];
+ SUSPICIOUS_RECIPS(1.50)[]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_050150_148557_0F9CC05F 
-X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-CacheID: sfid-20191122_050819_825605_604EA1D8 
+X-CRM114-Status: UNSURE (   6.02  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -92,32 +93,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, hui.song_1@nxp.com,
+ linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org, leoyang.li@nxp.com,
+ bgolaszewski@baylibre.com, robh+dt@kernel.org, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 22, 2019 at 7:18 AM Hui Song <hui.song_1@nxp.com> wrote:
+>> From: Song Hui <hui.song_1@nxp.com>
+>> 
+>> On these boards, the irq_set_type must point one valid function 
+>> pointer
+>> that can correctly set both edge and falling edge.
+>> 
+>> Signed-off-by: Song Hui <hui.song_1@nxp.com>
+> 
+> Patch applied!
+> 
+> Yours,
+> Linus Walleij
 
-> From: Song Hui <hui.song_1@nxp.com>
->
-> On these boards, the irq_set_type must point one valid function pointer
-> that can correctly set both edge and falling edge.
->
-> Signed-off-by: Song Hui <hui.song_1@nxp.com>
+mhh.. this bug should already be fixed in a better way with [1]:
+   gpio: mpc8xxx: Don't overwrite default irq_set_type callback
 
-Patch applied!
+-michael
 
-Yours,
-Linus Walleij
+[1] 
+https://lore.kernel.org/lkml/CACRpkdZ5eWHEV-oN77QxH9X4DZRUB3zM=gP=+rM=ZLAX6Wxw9w@mail.gmail.com/
 
 _______________________________________________
 linux-arm-kernel mailing list
