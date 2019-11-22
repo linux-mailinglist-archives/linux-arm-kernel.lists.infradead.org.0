@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87D0F1061A9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:58:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F52E1061AE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:58:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aFgjjmqPtWTbkyEsfus4PVYbjnik0CTh89UEtplxOmQ=; b=i5nZeI9O+ake3i
-	zgiuKxNhjzCuewpJB92zF0m6Sg7CNmCKqi0LjVP1H7Zk8IcKwJVPnh9ngby4ynjyCMxoxCW6pjJ3F
-	G82Mo+n9l2Lxp76KhP3lKHhXY5opefLPCz6m4MWPwyvS4DMXfgWZHRJYoeYBLQhrsdZ9yLVqnEwhS
-	FQG7byNhTL8YCwwk2enAJWf9gxQJfCo0NYBxn0oIJwI2Cf9VXi4nHCGsZIePJCZv2palk7RY7RIym
-	iFG7vgbQxUSmx0WqHZ2OfhfkSNUIIoTAOP3+NgT5tJiNND2hK6oLm5ESZLp6rmzQq94/VAmwbn3JP
-	7TG/qLpKp6q+WygVlM4A==;
+	List-Owner; bh=oCDgt0Wlgd55fzgr4fPmuFSjeAkRv/cmHHFoinssQC4=; b=PXJfY2Lpi5j8nH
+	XlvNbRv+MXpFOfSLXkaGV4vNS6W3I1QGVLLQySUtpDJjecAY2GnioUhqkaGwkxhxsfSpM1Dmzr3sc
+	Xxj3XfeJtC81zWnQYR7+pDgPmldYbEnPg9sOFH+2CyEJBoYkMLnp84A3aX6ybRyxoQyLGzBDJCjx9
+	hCVDnUVX49ev7FoCGzEqy2QSkDtk++S57Gu7kOh+cbWs8DYFs7tV/XhTXe+H0LgN2KuPZrPPHFTf7
+	f8NNAQFMN+GiQ0VKQQiiQdBd/gLdWxg/mAaImetlU21MvWiRppe1V8Xtp7NoF17BKAZdGwVvw1IXL
+	hNXpwwTzap6EfYYkucFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY1xl-0002FB-2g; Fri, 22 Nov 2019 05:58:37 +0000
+	id 1iY1y2-0002V2-EA; Fri, 22 Nov 2019 05:58:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY1rJ-0003OL-L3
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:51:59 +0000
+ id 1iY1re-0003g3-4P
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:52:21 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2FC3A2071B;
- Fri, 22 Nov 2019 05:51:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 422882072E;
+ Fri, 22 Nov 2019 05:52:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574401916;
- bh=zCX38j0ApMKwif385tSeV5oiDGYMeI09N9Vdg67Tctw=;
+ s=default; t=1574401937;
+ bh=AK+0iL2K88+4zjkWg6cRz/Q8lxIKszoqmc5G3IFXL+c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=u4zEyz+VsgNl4odT3/l7+RPaQjyZSxTNS/FvtDwBzHgUJZHYIRFC9dcSA6MQoeu1O
- 19kilF6wqRGxShRvaMaALq6ZjvB2sKkCfPD3PGE6PcACl05EdU3glDRfGha1EejBb2
- sUz2x0Fwr5fcwbQljdU1BHYDSq5ZV8PqNz7SzEgE=
+ b=c7GsaEFpaxheP8AfKIqTAi/xYmcbn6TtLCGu6uftCYY3ajE9A3UJOjLFuF3I5SzxQ
+ 2Ts3UeMclZ+0+Og4Iq83uEi9r/+ntjPQAn6uxOJZR0UzPaM3SPXX5GCg9GXVLSb/DY
+ kIbtr2x/91q47J+jlv9naoFVOLzDED/ia0hbt090=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 146/219] net: stmicro: fix a missing check of
- clk_prepare
-Date: Fri, 22 Nov 2019 00:47:58 -0500
-Message-Id: <20191122054911.1750-139-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 162/219] firmware: arm_sdei: fix wrong
+ of_node_put() in init function
+Date: Fri, 22 Nov 2019 00:48:14 -0500
+Message-Id: <20191122054911.1750-155-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191122054911.1750-1-sashal@kernel.org>
 References: <20191122054911.1750-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_215157_801835_43E3CD58 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20191121_215218_261151_2E9BF587 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,43 +81,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- Kangjie Lu <kjlu@umn.edu>, linux-stm32@st-md-mailman.stormreply.com,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Will Deacon <will.deacon@arm.com>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Kangjie Lu <kjlu@umn.edu>
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
-[ Upstream commit f86a3b83833e7cfe558ca4d70b64ebc48903efec ]
+[ Upstream commit c3790b3799f8d75d93d26f6fd7bb569fc8c8b0cb ]
 
-clk_prepare() could fail, so let's check its status, and if it fails,
-return its error code upstream.
+After finding a "firmware" dt node arm_sdei tries to match it's
+compatible string with it. To do so it's calling of_find_matching_node()
+which already takes care of decreasing the refcount on the "firmware"
+node. We are then incorrectly decreasing the refcount on that node
+again.
 
-Signed-off-by: Kangjie Lu <kjlu@umn.edu>
-Signed-off-by: David S. Miller <davem@davemloft.net>
+This patch removes the unwarranted call to of_node_put().
+
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Signed-off-by: James Morse <james.morse@arm.com>
+Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac-sunxi.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/firmware/arm_sdei.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-sunxi.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-sunxi.c
-index d07520fb969e6..62ccbd47c1db2 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-sunxi.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-sunxi.c
-@@ -59,7 +59,9 @@ static int sun7i_gmac_init(struct platform_device *pdev, void *priv)
- 		gmac->clk_enabled = 1;
- 	} else {
- 		clk_set_rate(gmac->tx_clk, SUN7I_GMAC_MII_RATE);
--		clk_prepare(gmac->tx_clk);
-+		ret = clk_prepare(gmac->tx_clk);
-+		if (ret)
-+			return ret;
- 	}
+diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
+index 1ea71640fdc21..dffb47c6b4801 100644
+--- a/drivers/firmware/arm_sdei.c
++++ b/drivers/firmware/arm_sdei.c
+@@ -1017,7 +1017,6 @@ static bool __init sdei_present_dt(void)
+ 		return false;
  
- 	return 0;
+ 	np = of_find_matching_node(fw_np, sdei_of_match);
+-	of_node_put(fw_np);
+ 	if (!np)
+ 		return false;
+ 
 -- 
 2.20.1
 
