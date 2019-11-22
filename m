@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15A5E107402
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 15:21:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 193C310740F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 15:28:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	In-Reply-To:MIME-Version:Date:Message-ID:Subject:From:References:To:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UhYmUVHFKGZIHY0a0GszvH9iti+YgD7z2iI3d59mZ4s=; b=lyYYZLmXKftetHLL9moObtbL+
-	y4w+sPl0lNWe5DriTfYcghVTmNtmraPclgU4jdxQr5R8g5sC00j01bHRdcTV2qeWC2f3JfNRQoXyh
-	WQ6dJzjzZKTIFrEbJ/AlNiZNHvr9qQu1f6JbdmD1iXdAcq64wWuk35totRVQzSQPMGk03X5wwZfSO
-	ZhHJq7rDTMAPc6pst5QvqoIfw8/J9ynfOkrlxvYxPcqHvqSRqE1NGz0Wut0dcabBb9Us3cCk0iE+G
-	tPmGKZ9BCaQ9tnHfxAvMJ8dpNynQbPi7lVsSj34FF74JFhT+oJY7Wmo4E3HofAujPZtD7nOtyMJsS
-	4BEk74V7w==;
+	 bh=urAu7TU3C3aCNN+ZQr6saqE/i4y0tIyKD46qyDgqTKw=; b=aS+dv+2yGBeatLc8VpXiFNj+1
+	DKMZrGo+eyQ6YnRDBMXvDh+IocCpBujwaOHpden4nmJzqkqc0cniUSc4KsP04rLSAXGVkxhM+pn+c
+	ztlkNylwkRHMcNdjIvOe8xvMe7JwDBo9Xg6+IdO/hs0+a520FTfo3S034SIOUhkEaAlo1LUjL2HWJ
+	Z+23VHqcSa09mYegFuTJ6DJQSaYBbIo2j2X16oV7/OS82m+jEI+PDA0tjyPr2TxnjeX3bkc4i+8PB
+	Jld6nBNBFQ89mjWZn5gj56yE+x7tL0iOiNrIAN5Tq4UMvZJAf2D95Bput100aH4n4KYGjD7n36zra
+	wpo+OEbsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY9nx-0002lf-IW; Fri, 22 Nov 2019 14:21:01 +0000
+	id 1iY9v5-0004uH-HF; Fri, 22 Nov 2019 14:28:23 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY9no-0002l1-Ti
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 14:20:54 +0000
+ id 1iY9uv-0004tp-Lh
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 14:28:15 +0000
 Received: from gallifrey.ext.pengutronix.de
  ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
  by metis.ext.pengutronix.de with esmtps
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <mkl@pengutronix.de>)
- id 1iY9nj-00040s-BA; Fri, 22 Nov 2019 15:20:47 +0100
+ id 1iY9ut-0004mL-H8; Fri, 22 Nov 2019 15:28:11 +0100
 Received: from [IPv6:2a03:f580:87bc:d400:941f:8f59:5279:2337] (unknown
  [IPv6:2a03:f580:87bc:d400:941f:8f59:5279:2337])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest
- SHA256 client-signature RSA-PSS (4096 bits) client-digest SHA256)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits)
+ client-signature RSA-PSS (4096 bits))
  (Client CN "mkl@blackshift.org",
  Issuer "StartCom Class 1 Client CA" (not verified))
  (Authenticated sender: mkl@blackshift.org)
- by smtp.blackshift.org (Postfix) with ESMTPSA id 6A48348196E;
- Fri, 22 Nov 2019 14:20:44 +0000 (UTC)
-Subject: Re: [PATCH] MAINTAINERS: Add fragment for xilinx CAN driver
-To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
- wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com
-References: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
+ by smtp.blackshift.org (Postfix) with ESMTPSA id 3E69F48197C;
+ Fri, 22 Nov 2019 14:28:09 +0000 (UTC)
+To: Srinivas Neeli <srinivas.neeli@xilinx.com>, wg@grandegger.com,
+ davem@davemloft.net, michal.simek@xilinx.com, appanad@xilinx.com
+References: <1574251865-19592-1-git-send-email-srinivas.neeli@xilinx.com>
+ <1574251865-19592-2-git-send-email-srinivas.neeli@xilinx.com>
 From: Marc Kleine-Budde <mkl@pengutronix.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
@@ -105,20 +105,21 @@ Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
  WATP4wFI8QktNBqF3VY47HFwF9PtNuOZIqeAquKezywUc5KqKdqEWCPx9pfLxBAh3GW2Zfjp
  lP6A5upKs2ktDZOC2HZXP4IJ1GTk8hnfS4ade8s9FNcwu9m3JlxcGKLPq5DnIbPVQI1UUR4F
  QyAqTtIdSpeFYbvH8D7pO4lxLSz2ZyBMk+aKKs6GL5MqEci8OcFW
-Message-ID: <1fb1f9bf-5bf2-dc4b-a277-d8686810658a@pengutronix.de>
-Date: Fri, 22 Nov 2019 15:20:33 +0100
+Subject: Re: [PATCH 1/2] can: xilinx_can: skip error message on deferred probe
+Message-ID: <9f0f491d-74fe-296a-9636-1c0e14a5f77a@pengutronix.de>
+Date: Fri, 22 Nov 2019 15:28:04 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
+In-Reply-To: <1574251865-19592-2-git-send-email-srinivas.neeli@xilinx.com>
 X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
 X-SA-Exim-Mail-From: mkl@pengutronix.de
 X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_062053_113140_7DC52DA9 
-X-CRM114-Status: GOOD (  11.20  )
+X-CRM114-CacheID: sfid-20191122_062813_866812_31C79794 
+X-CRM114-Status: GOOD (  19.33  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -137,49 +138,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-can@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============3018244813786668037=="
+Cc: netdev@vger.kernel.org,
+ Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>,
+ linux-kernel@vger.kernel.org, linux-can@vger.kernel.org, nagasure@xilinx.com,
+ git@xilinx.com, Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1144861878108670174=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============3018244813786668037==
+--===============1144861878108670174==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="THYRnl6ns8SFuPniAGLk8fDYUr8nrAygp"
+ boundary="g5A6gImkZGJGG7aaAnWYBt0t3a00bGEaR"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---THYRnl6ns8SFuPniAGLk8fDYUr8nrAygp
-Content-Type: multipart/mixed; boundary="5USbQxiRglyjWGCjfibSmEuN9eI1mIpDx";
+--g5A6gImkZGJGG7aaAnWYBt0t3a00bGEaR
+Content-Type: multipart/mixed; boundary="zKF5itJBYhuodM9eHR8mpx9mqwFKvS9Ue";
  protected-headers="v1"
 From: Marc Kleine-Budde <mkl@pengutronix.de>
-To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
- wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com
+To: Srinivas Neeli <srinivas.neeli@xilinx.com>, wg@grandegger.com,
+ davem@davemloft.net, michal.simek@xilinx.com, appanad@xilinx.com
 Cc: linux-can@vger.kernel.org, netdev@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Message-ID: <1fb1f9bf-5bf2-dc4b-a277-d8686810658a@pengutronix.de>
-Subject: Re: [PATCH] MAINTAINERS: Add fragment for xilinx CAN driver
-References: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
-In-Reply-To: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ git@xilinx.com, nagasure@xilinx.com,
+ Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>,
+ Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>
+Message-ID: <9f0f491d-74fe-296a-9636-1c0e14a5f77a@pengutronix.de>
+Subject: Re: [PATCH 1/2] can: xilinx_can: skip error message on deferred probe
+References: <1574251865-19592-1-git-send-email-srinivas.neeli@xilinx.com>
+ <1574251865-19592-2-git-send-email-srinivas.neeli@xilinx.com>
+In-Reply-To: <1574251865-19592-2-git-send-email-srinivas.neeli@xilinx.com>
 
---5USbQxiRglyjWGCjfibSmEuN9eI1mIpDx
+--zKF5itJBYhuodM9eHR8mpx9mqwFKvS9Ue
 Content-Type: text/plain; charset=utf-8
 Content-Language: de-DE
 Content-Transfer-Encoding: quoted-printable
 
-On 11/21/19 9:39 AM, Appana Durga Kedareswara rao wrote:
-> Added entry for xilinx CAN driver.
+On 11/20/19 1:11 PM, Srinivas Neeli wrote:
+> From: Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>
 >=20
-> Signed-off-by: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.co=
-m>
+> When can clock is provided from the clock wizard, clock wizard driver
+       ^^^
 
-Thanks a lot.
+The code looks like the "bus" clock is probed here, not the "can" clock.
 
-Please have a look at "[PATCH 1/2] can: xilinx_can: skip error message
-on deferred probe" and give me your Reviewed-by if the patch is ok :)
+> may not be available when can driver probes resulting to the error
+> message "bus clock not found error".
+>=20
+> As this error message is not very useful to the end user, skip printing=
 
-regards,
+> in the case of deferred probe.
+>=20
+> Signed-off-by: Venkatesh Yadav Abbarapu <venkatesh.abbarapu@xilinx.com>=
+
+> Signed-off-by: Srinivas Neeli <srinivas.neeli@xilinx.com>
+> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+> ---
+>  drivers/net/can/xilinx_can.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+>=20
+> diff --git a/drivers/net/can/xilinx_can.c b/drivers/net/can/xilinx_can.=
+c
+> index 4a96e2dd7d77..c5f05b994435 100644
+> --- a/drivers/net/can/xilinx_can.c
+> +++ b/drivers/net/can/xilinx_can.c
+> @@ -1772,7 +1772,8 @@ static int xcan_probe(struct platform_device *pde=
+v)
+> =20
+>  	priv->bus_clk =3D devm_clk_get(&pdev->dev, devtype->bus_clk_name);
+              ^^^^^^^
+>  	if (IS_ERR(priv->bus_clk)) {
+> -		dev_err(&pdev->dev, "bus clock not found\n");
+> +		if (PTR_ERR(priv->bus_clk) !=3D -EPROBE_DEFER)
+> +			dev_err(&pdev->dev, "bus clock not found\n");
+>  		ret =3D PTR_ERR(priv->bus_clk);
+>  		goto err_free;
+>  	}
+>=20
+
 Marc
 
 --=20
@@ -189,29 +227,29 @@ Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
 Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
 
 
---5USbQxiRglyjWGCjfibSmEuN9eI1mIpDx--
+--zKF5itJBYhuodM9eHR8mpx9mqwFKvS9Ue--
 
---THYRnl6ns8SFuPniAGLk8fDYUr8nrAygp
+--g5A6gImkZGJGG7aaAnWYBt0t3a00bGEaR
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEmvEkXzgOfc881GuFWsYho5HknSAFAl3X7rMACgkQWsYho5Hk
-nSACzwf/aIXeUlKdz5pmrq6nyQkXc5ah3E0kK4pIoXkVNd07N78tsG7fqCaIZlXn
-xxZ9jamvLcmWcxI5FXNLQPd2lNj/ujfYZ4YQB6MmzMoK69KKE4ip6E0DcaDLvx44
-/SZ8Emo6QfgqqKSKgXL+Sv9eehFIFJyJteSys4o/m/ylFgb8YDvl2hs83UQxkEsM
-jjRCy3rYl/q8CgZk4Z92F32xTlUVWLDLSFAP6Pn6yC84db3ugkeyZ/0+3olm+DzI
-xXY3G7m9u21fDZhDKIbskmUSWoNTR0qfTRtC6nUzXkteSs92C4TXkMdZGgKhbJeK
-21k/N493zj45Zvru6el0RfI4TvhVhQ==
-=reXf
+iQEzBAEBCgAdFiEEmvEkXzgOfc881GuFWsYho5HknSAFAl3X8HUACgkQWsYho5Hk
+nSD4HQgAgR9+bLGXtcs6cw/zcnm2GQ53RpJYiq5L/4IxwiQz5boWpbcceLPs9yfA
+S/0lbOaO9GPUFpPMkll/bUX0RcKqUbmwfjuN4R5URSnx71f2BaLLYrZnIRMF1r9E
+1dDEvGCwOoFW3Uepp2f6mXMSBhLdq6ceCkL2V1uT4Q/n9EckX2Fmzk/HzOX5RGrt
+2o9xvJokfgp1Jw4GVyuLCFjZGdAeRPZeGW2PphIh6ozT/Y5mBWor6aQ3H1Xc/FGf
+pb54OlJ6FhtNwB31VacOeq1B0G3GHtlEGgXx7JaZdkI3YMHAUQB6lMByT4Fw03w7
+2HoMDNNi+ri8NWx7zzXTEGhImyPRMw==
+=EXc+
 -----END PGP SIGNATURE-----
 
---THYRnl6ns8SFuPniAGLk8fDYUr8nrAygp--
+--g5A6gImkZGJGG7aaAnWYBt0t3a00bGEaR--
 
 
---===============3018244813786668037==
+--===============1144861878108670174==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -222,5 +260,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============3018244813786668037==--
+--===============1144861878108670174==--
 
