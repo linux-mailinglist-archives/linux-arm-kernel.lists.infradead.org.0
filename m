@@ -2,88 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAE4C10751D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 16:43:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF759107539
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 16:51:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YmNif7stEYvkA1wbEZxZ2N1UBE3yRt0mrEDZuH1C5fo=; b=otzQ96G9+UjKEe
-	2CGwrhgHoeWcYy5nT99tT5u4yriYrMjPrE1UmZcr3QJFNGcrahoIHbNeYhtl2k1SLbffvSLTWXBg8
-	u6HoEhbKcCaRikyDa6swSJ+cvr3aRF+RGnY8ZRBhtq68Nmjps0Z8P1qnLlHEOaPjPLJm+LeYEU0A3
-	/NMgcI5VdQeSAETPO7BpkxerWcVJdm2FGjr0uSbECJcLqu9Xgb8U1jrsgfJIlcaaQN2vvzB941/Eu
-	5t5fBw25LRuBCOgeSXzTkfjzJrwpMyFAHxnKAZcuLn/kS+Y+Qqpz1xI+lPzaiIzJG1wQtU413sVpM
-	smDw4lL72H7MSP+17g3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=y6cUsrBxvNeh0wG8MwL5rzoEcMRnUmvb9sBQGp7M1dc=; b=A/zzBjh60cmNk8Su5Xb6NP5rv
+	59g1TQM/9ivI3BxD/DUHv3wuVH8gA3xWZYjrapU6m1m50CdtuTP3NR18er862ZkMpMS8wKqHpyLBv
+	Z3GJaWDZsBuOdPnUb9bh0MStnfxXT8hSYooD25uCLCb+IxuJ7DoLqqwUHbRxSQ6+2loXq6L6zbr31
+	OVAfnwwtv23wt5wvwnbgbhRw4xeYU1EEPEE7PV982Tj/gzqD0/7WPiELzDE2jH/Nzr1F3tcOjNt8F
+	1PIcrZn0DpsMTUb6ADVtT4R1jD5abuF8G3C72+YN1vqHfGaBKCaW7D76Gc8Q+Qq/W4K73m86FMfuL
+	2q67Wsz2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYB5q-0007nX-Vb; Fri, 22 Nov 2019 15:43:34 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYB5i-0007mQ-6X
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 15:43:27 +0000
-Received: by mail-lj1-x241.google.com with SMTP id e9so7845448ljp.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 Nov 2019 07:43:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GQzy1iQq7/UigF4z8t1UMdfHuT9DigedXPRNYTx8QBY=;
- b=XAGbQgf1cU8rD/kywGu8E//J0deKp6oSzrY4nW/7iQnOC7Z85qIiCXWxldnCOmfQM0
- 5rD4pSqDLOxxYiQ22XtpA+ZQtIqNcfUSFvLURlIPtJQVgPu6ai8DLyrFL71pg9GiQ9pG
- J3lCWTccy2Ay+ptCBd2t+/YVxqaTPHmAVMWaO+1JJ8kbJonQBCsyOGxhUYGEl3GzmSzI
- ho5z7STf9Rfad2+G+J/cpfc9GQGp4z9GERHGxEaTUbyQm6+2MI6V46dhpZKOLPjpFlk3
- RbOEvF5G831FamUvktmD2bDhXniv+mEfiO+c9474NZJJF1jmAgNlIrUF58CkzGAeBa0J
- jdeA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GQzy1iQq7/UigF4z8t1UMdfHuT9DigedXPRNYTx8QBY=;
- b=nRjN4+t94/YO5KaFDQ/60EQyLMPsuCN+A/VjCbsbM5XZ5RoNfItb5nSmok4GeeiFxg
- olFB2fSdvj5H+0OY0RC/zJaZXZ3D9G4njQFb6ea76EcoP0LZ+jb7ooRTbk9gacd5GH6n
- qDmoz/5uhECNduzVPl/e59QvQspWBD79wjg53178hp1zDE+hDLBZFd3FC3EzBVvBRDuG
- PVSqSzaLtyfW0056imgqePca1ko+wHqgCf3iYRIpRGZ/2b5g+RcZVyz2aLrhsC+dIbX+
- c4G1tAUV5/mHxm0Z88eiFLOqo/b08zqvd8OUyQ3cjaL1YBUgZ1xU1lJwz4hP71uFlC0S
- XFVQ==
-X-Gm-Message-State: APjAAAV2mbhkgJsBw1YI0yyylZ6Rqqsq6z+LYpnXOnQhtivoTg+1tmmq
- XpCgMjr4qjuvngydZcD8PteqPwPJvx5eIauc63zX8A==
-X-Google-Smtp-Source: APXvYqwcugeW4edWhYbow6P3IthY8AWt+/SiEG9o6A9ekVZjqmWysrxtVlxvnwXZwUzSHLS/mgbF3SgO93jwQdxuQ3k=
-X-Received: by 2002:a05:651c:1049:: with SMTP id
- x9mr536136ljm.233.1574437400356; 
- Fri, 22 Nov 2019 07:43:20 -0800 (PST)
+	id 1iYBDj-0002Mx-Gh; Fri, 22 Nov 2019 15:51:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iYBDY-0002Me-HG
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 15:51:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 37BE6DA7;
+ Fri, 22 Nov 2019 07:51:31 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B60F53F6C4;
+ Fri, 22 Nov 2019 07:51:30 -0800 (PST)
+Subject: Re: [PATCH v2 09/10] iommu/io-pgtable-arm: Rationalise TCR handling
+To: Will Deacon <will@kernel.org>, iommu@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org
+References: <cover.1572024119.git.robin.murphy@arm.com>
+ <84e56eb993fff3660376ffad3e915b972d29b008.1572024120.git.robin.murphy@arm.com>
+ <20191104191444.GI24909@willie-the-truck>
+ <20191104232756.GB16446@jcrouse1-lnx.qualcomm.com>
+ <20191120151142.GA26714@willie-the-truck>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <6e14584c-6942-b3b5-5691-faec4fc345f1@arm.com>
+Date: Fri, 22 Nov 2019 15:51:26 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191120181857.97174-1-stephan@gerhold.net>
- <20191120181857.97174-4-stephan@gerhold.net>
- <CACRpkda-rm=1hz_p2YCqBVgxsM9cmKYJVUg+T91MyBrgmtDP-w@mail.gmail.com>
- <20191122140944.GA2872@gerhold.net>
-In-Reply-To: <20191122140944.GA2872@gerhold.net>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 22 Nov 2019 16:43:08 +0100
-Message-ID: <CACRpkdYfUikKaB-9HO_heLZrGC346XZVKxvifMPJizeYSPjShg@mail.gmail.com>
-Subject: Re: [PATCH v2 4/4] dt-bindings: arm: Document compatibles for Ux500
- boards
-To: Stephan Gerhold <stephan@gerhold.net>
+In-Reply-To: <20191120151142.GA26714@willie-the-truck>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_074326_236682_3EF01FE1 
-X-CRM114-Status: GOOD (  14.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191122_075132_616280_E1E95A64 
+X-CRM114-Status: GOOD (  13.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,46 +66,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 22, 2019 at 3:10 PM Stephan Gerhold <stephan@gerhold.net> wrote:
-> On Wed, Nov 20, 2019 at 09:22:19PM +0100, Linus Walleij wrote:
-> > On Wed, Nov 20, 2019 at 7:20 PM Stephan Gerhold <stephan@gerhold.net> wrote:
-> >
-> > > The device-specific compatible values used by the Ux500 boards
-> > > were not documented so far. Add a new simple schema to document them.
-> > >
-> > > Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
-> >
-> > Nice, thanks!
-> >
-> > Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-> >
-> > I expect Rob to merge these patches as they are bindings-only,
-> > alternatively I can take them in the Ux500 DTS pull request
-> > for the next kernel cycle.
-> >
->
-> For this patch it would be easier if you take it through the Ux500 tree,
-> as I have another patch series that adds a new board to it.
+On 20/11/2019 3:11 pm, Will Deacon wrote:
+> On Mon, Nov 04, 2019 at 04:27:56PM -0700, Jordan Crouse wrote:
+>> On Mon, Nov 04, 2019 at 07:14:45PM +0000, Will Deacon wrote:
+>>> On Fri, Oct 25, 2019 at 07:08:38PM +0100, Robin Murphy wrote:
+>>>> diff --git a/drivers/iommu/qcom_iommu.c b/drivers/iommu/qcom_iommu.c
+>>>> index 9a57eb6c253c..059be7e21030 100644
+>>>> --- a/drivers/iommu/qcom_iommu.c
+>>>> +++ b/drivers/iommu/qcom_iommu.c
+>>>> @@ -271,15 +271,13 @@ static int qcom_iommu_init_domain(struct iommu_domain *domain,
+>>>>   		iommu_writeq(ctx, ARM_SMMU_CB_TTBR0,
+>>>>   				pgtbl_cfg.arm_lpae_s1_cfg.ttbr |
+>>>>   				FIELD_PREP(TTBRn_ASID, ctx->asid));
+>>>> -		iommu_writeq(ctx, ARM_SMMU_CB_TTBR1,
+>>>> -				FIELD_PREP(TTBRn_ASID, ctx->asid));
+>>>> +		iommu_writeq(ctx, ARM_SMMU_CB_TTBR1, 0);
+>>>
+>>> Are you sure it's safe to drop the ASID here? Just want to make sure there
+>>> wasn't some "quirk" this was helping with.
+>>
+>> I was reminded of this recently. Some of our SMMU guys told me that a 0x0 in
+>> TTBR1 could cause a S2 fault if a faulty transaction caused a ttbr1 lookup so
+>> the "quirk" was writing the ASID so the register wasn't zero. I'm not sure if
+>> this is a vendor specific blip or not.
+> 
+> You should be able to set EPD1 to prevent walks via TTBR1 in that case,
+> though. Sticking the ASID in there is still dodgy if EPD1 is clear and
+> TTBR1 points at junk (or even physical address 0x0).
+> 
+> That's probably something which should be folded into this patch.
 
-OK I applied it for v5.6 on my ux500-dts branch.
+Note that EPD1 was being set by io-pgtable-arm before this patch, and 
+remains set by virtue of arm_smmu_lpae_tcr() afterwards, so presumably 
+the brokenness might run a bit deeper than that. Either way, though, I'm 
+somewhat dubious since the ASID could well be 0 anyway :/
 
-> The vendor-prefix patches are independent, so Rob can merge them if that
-> is easier?
-
-Let's see if Rob wants to take them, else I will merge them as well.
-
-Yours,
-Linus Walleij
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
