@@ -2,68 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 937F91069AE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:12:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E15901069C0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:16:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lQKAWECWbCfvsX2iJhyjm2T082qncTu+GNtx0/QIKUY=; b=FnVnrtI2p5zJPt
-	T0owUyLkidsmkV6B3vp7nwArs10+mWf9WVwxymxHjYKLWbYNtcBH4Z9VgJfjooomN/vWAeS8lCLnX
-	QZBtJzr26HYNvt/cUV+mSMa9U7GsY+fwyBAlU8y44GyjinD5M/l/9I6cq92zbu1ZWS3ypjXzj5Swt
-	GxY7HG+s72J+ka+azclctkv4eG63zafd0mjZVj/R7BmJjI9H1seyf8gVJTlFOpJQGNhtonlWPpc+B
-	sgGzxGizCaOKjdyOiTVrrDvQyNf0WS5LKVeTyLGSHqLTjxZBjDb6IUHrvaeWXikJnfUqjCwCZLvJS
-	OjUsICaa8usLFj2+4dMA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uf0kOVBEEAuGXE6hJtZXqCJXNarXbYoUbBWVx9sbcdY=; b=jgktQsKG3KME3U
+	EWhgn5oFLC5s6sOGVlDqv5xpYwQ73GipfgJrTkfJlitwBcOJD00ThEIahRkuAC/3mVXLUSHole0zM
+	JrmKBpQIYcy77Af/DL1+tprafH+3AtQbqvJ6B/awtDSxDmZ/cCzHsHiVH5MNZuwODK6cBIloLGRwl
+	vC4oXviEIu3iqpvG9wW0UWwScYjpRO8YU1VW6Qej3JhnX4fN9k+y6js8Toq/0Sx3l1rpHOXs6eLL/
+	YRvtMDQbmVHzefj2cp763vZxVxI/5ovkXpUs1HYC9Qhwh5ZlNKDi0CTU5yT0qciUiqAiP1LuPofna
+	lmjuMDgI5kn3y83+hFQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY5v2-0001Wp-Jw; Fri, 22 Nov 2019 10:12:04 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iY5zS-0003DK-Te; Fri, 22 Nov 2019 10:16:38 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY5ut-0001WC-WC; Fri, 22 Nov 2019 10:11:57 +0000
-X-UUID: d1abfda572d7428489b18846ce97b856-20191122
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=hK85BWO5PB72avyugc76FhRfS++eD6TPM5BELRKbSFs=; 
- b=Rz+aX8HgQ+jCzopEyCY6rKva3jwGjNbMKujh1ylJ0j2rJgQ0ZESkp+rX0aEk7To/z0aZ5M61iwQbz4yS3LA816jW2FIme7H8BaxEA66YIZi5AKaiFcjtDvOn+E3RtH3aK5C70XNEXNajrjPfdBzQcHRIE5kQJXK1eqWGD38hCRI=;
-X-UUID: d1abfda572d7428489b18846ce97b856-20191122
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <dennis-yc.hsieh@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 265119845; Fri, 22 Nov 2019 02:11:49 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 22 Nov 2019 02:11:54 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 22 Nov 2019 18:11:42 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 22 Nov 2019 18:12:10 +0800
-Message-ID: <1574417507.11977.14.camel@mtkswgap22>
-Subject: Re: [PATCH v1 07/12] soc: mediatek: cmdq: add write_s function
-From: Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>
-Date: Fri, 22 Nov 2019 18:11:47 +0800
-In-Reply-To: <1574412997.19450.16.camel@mtksdaap41>
-References: <1574327552-11806-1-git-send-email-dennis-yc.hsieh@mediatek.com>
- <1574327552-11806-8-git-send-email-dennis-yc.hsieh@mediatek.com>
- <1574412997.19450.16.camel@mtksdaap41>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1iY5zH-0003Cx-Al
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:16:29 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xAMA86rG020312; Fri, 22 Nov 2019 11:16:18 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=5DIkP7J4Od3cu9fEP+WtS76yeid/xn6aBWh+jjvduDs=;
+ b=pjf03vQ76bqyo0ksxNbSDQLUqJOWbylg4Aztt6DUMokuqoE3Xe3ENi+pB/1vBJ8SGms6
+ kdrR4Mwvpb6olA6ZGfqYBQijrsfnf4OVSx5CWEy91YmwzvGvFeUrib27R8n09cIVAv14
+ 2JyLh4NHBauvqrmg0aacrZMYgLJlzj6j+ubVYOdbJBNj2+kdCPMAGFElt6W7zF23y13l
+ nXhWutZ2kfxd5pRgSmof7aFyf42beZI/ATejhBprGMBJK3Xsgpzb4QD1M5b5Ouva8sAt
+ REUu4896iLuEVSz6beyZNQ4bGuoRJtegkYaNbXWUB1y7dnYLWqgrTgwL6P7u/vVbsQ5z 6g== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2wa9usr6rh-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 22 Nov 2019 11:16:18 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0B10210002A;
+ Fri, 22 Nov 2019 11:16:17 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id CF8032B41B8;
+ Fri, 22 Nov 2019 11:16:17 +0100 (CET)
+Received: from localhost (10.75.127.47) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 22 Nov 2019 11:16:17
+ +0100
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <wim@linux-watchdog.org>, <linux@roeck-us.net>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>, <alexandre.torgue@st.com>
+Subject: [PATCH v3] dt-bindings: watchdog: Convert stm32 watchdog bindings to
+ json-schema
+Date: Fri, 22 Nov 2019 11:16:16 +0100
+Message-ID: <20191122101616.14351-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-X-MTK: N
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG1NODE1.st.com (10.75.127.1) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-22_01:2019-11-21,2019-11-22 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_021156_045811_EC9821F1 
-X-CRM114-Status: GOOD (  21.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191122_021627_740592_3B008718 
+X-CRM114-Status: GOOD (  15.74  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -73,8 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,172 +92,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, linux-kernel@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi CK,
+Convert the STM32 watchdog binding to DT schema format using json-schema
 
-On Fri, 2019-11-22 at 16:56 +0800, CK Hu wrote:
-> Hi, Dennis:
-> 
-> On Thu, 2019-11-21 at 17:12 +0800, Dennis YC Hsieh wrote:
-> > add write_s function in cmdq helper functions which
-> > support large dma access.
-> > 
-> > Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
-> > ---
-> >  drivers/soc/mediatek/mtk-cmdq-helper.c   |   34 ++++++++++++++++++++++++++++++
-> >  include/linux/mailbox/mtk-cmdq-mailbox.h |    2 ++
-> >  include/linux/soc/mediatek/mtk-cmdq.h    |   13 ++++++++++++
-> >  3 files changed, 49 insertions(+)
-> > 
-> > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > index d419e99..1b074a9 100644
-> > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > @@ -15,6 +15,9 @@
-> >  #define CMDQ_EOC_CMD		((u64)((CMDQ_CODE_EOC << CMDQ_OP_CODE_SHIFT)) \
-> >  				<< 32 | CMDQ_EOC_IRQ_EN)
-> >  #define CMDQ_REG_TYPE		1
-> > +#define CMDQ_ADDR_HIGH(addr)	((u32)(((addr) >> 16) & GENMASK(31, 0)))
-> > +#define CMDQ_ADDR_LOW_BIT	BIT(1)
-> > +#define CMDQ_ADDR_LOW(addr)	((u16)(addr) | CMDQ_ADDR_LOW_BIT)
-> >  
-> >  struct cmdq_instruction {
-> >  	union {
-> > @@ -224,6 +227,37 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
-> >  }
-> >  EXPORT_SYMBOL(cmdq_pkt_write_mask);
-> >  
-> > +int cmdq_pkt_write_s(struct cmdq_pkt *pkt, dma_addr_t addr,
-> > +		     u32 value, u32 mask)
-> > +{
-> > +	struct cmdq_instruction inst = { {0} };
-> > +	int err;
-> > +	const u16 dst_reg_idx = CMDQ_SPR_TEMP;
-> > +
-> > +	err = cmdq_pkt_assign(pkt, dst_reg_idx, CMDQ_ADDR_HIGH(addr));
-> > +	if (err < 0)
-> > +		return err;
-> > +
-> > +	if (mask != U32_MAX) {
-> > +		inst.op = CMDQ_CODE_MASK;
-> > +		inst.mask = ~mask;
-> > +		err = cmdq_pkt_append_command(pkt, inst);
-> > +		if (err < 0)
-> > +			return err;
-> > +
-> > +		inst.op = CMDQ_CODE_WRITE_S_MASK;
-> > +	} else {
-> > +		inst.op = CMDQ_CODE_WRITE_S;
-> > +	}
-> > +
-> > +	inst.sop = dst_reg_idx;
-> > +	inst.offset = CMDQ_ADDR_LOW(addr);
-> > +	inst.value = value;
-> > +
-> > +	return cmdq_pkt_append_command(pkt, inst);
-> > +}
-> > +EXPORT_SYMBOL(cmdq_pkt_write_s);
-> > +
-> >  int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
-> >  {
-> >  	struct cmdq_instruction inst = { {0} };
-> > diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> > index 121c3bb..8ef87e1 100644
-> > --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
-> > +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> > @@ -59,6 +59,8 @@ enum cmdq_code {
-> >  	CMDQ_CODE_JUMP = 0x10,
-> >  	CMDQ_CODE_WFE = 0x20,
-> >  	CMDQ_CODE_EOC = 0x40,
-> > +	CMDQ_CODE_WRITE_S = 0x90,
-> > +	CMDQ_CODE_WRITE_S_MASK = 0x91,
-> >  	CMDQ_CODE_LOGIC = 0xa0,
-> >  };
-> >  
-> > diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> > index 8334021..8dbd046 100644
-> > --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> > +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> > @@ -12,6 +12,7 @@
-> >  #include <linux/timer.h>
-> >  
-> >  #define CMDQ_NO_TIMEOUT		0xffffffffu
-> > +#define CMDQ_SPR_TEMP		0
-> >  
-> >  struct cmdq_pkt;
-> >  
-> > @@ -103,6 +104,18 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
-> >  			u16 offset, u32 value, u32 mask);
-> >  
-> >  /**
-> > + * cmdq_pkt_write_s() - append write_s command with mask to the CMDQ packet
-> > + * @pkt:	the CMDQ packet
-> > + * @addr:	the physical address of register or dma
-> > + * @value:	the specified target value
-> > + * @mask:	the specified target mask
-> > + *
-> > + * Return: 0 for success; else the error code is returned
-> > + */
-> > +int cmdq_pkt_write_s(struct cmdq_pkt *pkt, dma_addr_t addr,
-> > +		     u32 value, u32 mask);
-> 
-> You have an API cmdq_pkt_read_s() which read data into gce internal
-> register, so I expect that cmdq_pkt_write_s() is an API which write data
-> from gce internal register, the expected prototype is
-> 
-> int cmdq_pkt_write_s(struct cmdq_pkt *pkt, phys_addr_t addr, u16
-> reg_idx);
-> 
-> Your version would confuse the user because you hide the internal
-> register parameter. If you want to provide this service, I would like
-> you to change the function name so that user would not be confused and
-> easily to understand what you want to do in this function.
-> 
-> Another choice is: cmdq_pkt_write_s() is implemented in my definition,
-> and user could call cmdq_pkt_assign() and cmdq_pkt_write_s() to achieve
-> this function.
-> 
-> Regards,
-> CK
-> 
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+---
+changes in version 3:
+- fix typo in clock-names enum
+  
+changes in version 2:
+- remove trailer space
+- add Christophe in the maintainers list
 
-Thanks for your comment.
+ .../devicetree/bindings/watchdog/st,stm32-iwdg.txt | 26 ----------
+ .../bindings/watchdog/st,stm32-iwdg.yaml           | 55 ++++++++++++++++++++++
+ 2 files changed, 55 insertions(+), 26 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/watchdog/st,stm32-iwdg.txt
+ create mode 100644 Documentation/devicetree/bindings/watchdog/st,stm32-iwdg.yaml
 
-Ok, we have to provide write constant value service to client, so I will
-change the function name to cmdq_pkt_write_s_value() in this patch.
+diff --git a/Documentation/devicetree/bindings/watchdog/st,stm32-iwdg.txt b/Documentation/devicetree/bindings/watchdog/st,stm32-iwdg.txt
+deleted file mode 100644
+index d8f4430b0a13..000000000000
+--- a/Documentation/devicetree/bindings/watchdog/st,stm32-iwdg.txt
++++ /dev/null
+@@ -1,26 +0,0 @@
+-STM32 Independent WatchDoG (IWDG)
+----------------------------------
+-
+-Required properties:
+-- compatible: Should be either:
+-  - "st,stm32-iwdg"
+-  - "st,stm32mp1-iwdg"
+-- reg: Physical base address and length of the registers set for the device
+-- clocks: Reference to the clock entry lsi. Additional pclk clock entry
+-  is required only for st,stm32mp1-iwdg.
+-- clock-names: Name of the clocks used.
+-  "lsi" for st,stm32-iwdg
+-  "lsi", "pclk" for st,stm32mp1-iwdg
+-
+-Optional Properties:
+-- timeout-sec: Watchdog timeout value in seconds.
+-
+-Example:
+-
+-iwdg: watchdog@40003000 {
+-	compatible = "st,stm32-iwdg";
+-	reg = <0x40003000 0x400>;
+-	clocks = <&clk_lsi>;
+-	clock-names = "lsi";
+-	timeout-sec = <32>;
+-};
+diff --git a/Documentation/devicetree/bindings/watchdog/st,stm32-iwdg.yaml b/Documentation/devicetree/bindings/watchdog/st,stm32-iwdg.yaml
+new file mode 100644
+index 000000000000..928588091710
+--- /dev/null
++++ b/Documentation/devicetree/bindings/watchdog/st,stm32-iwdg.yaml
+@@ -0,0 +1,55 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/watchdog/st,stm32-iwdg.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: STMicroelectronics STM32 Independent WatchDoG (IWDG) bindings
++
++maintainers:
++  - Yannick Fertre <yannick.fertre@st.com>
++  - Christophe Roullier <christophe.roullier@st.com>
++
++allOf:
++  - $ref: "watchdog.yaml#"
++
++properties:
++  compatible:
++    enum:
++      - st,stm32-iwdg
++      - st,stm32mp1-iwdg
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: Low speed clock
++      - description: Optional peripheral clock
++    minItems: 1
++    maxItems: 2
++
++  clock-names:
++    items:
++      enum: [ lsi, pclk ]
++    minItems: 1
++    maxItems: 2
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++
++examples:
++  - |
++    #include <dt-bindings/clock/stm32mp1-clks.h>
++    watchdog@5a002000 {
++      compatible = "st,stm32mp1-iwdg";
++      reg = <0x5a002000 0x400>;
++      clocks = <&rcc IWDG2>, <&rcc CK_LSI>;
++      clock-names = "pclk", "lsi";
++      timeout-sec = <32>;
++    };
++
++...
+-- 
+2.15.0
 
-And since it is better to provide consistent API so I will design
-another function with interface as your suggestion:
-int cmdq_pkt_write_s(struct cmdq_pkt *pkt, phys_addr_t addr, u16
-reg_idx);
-
-In another patch I provide cmdq_pkt_mem_move(). I will move part of
-implementation to cmdq_pkt_write_s(), so that cmdq_pkt_mem_move() can be
-combination of cmdq_pkt_read_s() and cmdq_pkt_write_s().
-
-How do you think?
-
-
-Regards,
-Dennis
-
-> > +
-> > +/**
-> >   * cmdq_pkt_wfe() - append wait for event command to the CMDQ packet
-> >   * @pkt:	the CMDQ packet
-> >   * @event:	the desired event type to "wait and CLEAR"
-> 
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
