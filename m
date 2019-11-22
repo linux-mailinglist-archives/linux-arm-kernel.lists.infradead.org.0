@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1C03106B47
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:43:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBE06106A4E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:33:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D6AHGLSgx9RQdV9t8No5WxDumeHX22F9yCEWeGV1zoA=; b=snpTlJ1DMsrUQ6
-	SHogGilw6bzjPVYPzTlWXcwKzDRlUBkDukyVFd1Q8HUQ5YmmXeOehueawdKaRlw7fUKPlaPgum84U
-	/9XM0wBn0QSeH1XnOVwp2hIf7R1sJJWqgx7y78NRPn4ZCek0yazloYTexkSleJA2O5xJ7BBFKbpon
-	sGmoFuf1/3O2Bj/6ESadZc4IpOnaTz18mKvzIErPd8yg1q/irvVIQZa6trDj8jv1EiGiKEbLxSyAd
-	geWpbFQa2xdEManORNN9hg92okRAX+gC9K8O94WcqLXlcKtpMrPJPK8lWzOFEpweOS5BRyd2kZ8GO
-	1E+BjWphHt5VEYJIXtog==;
+	List-Owner; bh=D6AHGLSgx9RQdV9t8No5WxDumeHX22F9yCEWeGV1zoA=; b=G3x0CHx7MGxJiH
+	QFoPm7vmgILRYr6u8ZM6maflnQB/V04p6E90KddW3ICVPUI8iUjLY22fXFfbDTCL6YiMoOQz1m9UM
+	C2iPGuRQGIBUqSmrAJhsnsnh1xsib6eSTsdZK90wwn453cfnVu958sOONKtqtWjZOIrZB7oDKfsPy
+	LHmsYmd7XfzA3F/44IeUDvmwN8XsYYEbicT3KnrGNjHcqOhg5oZjADkyNUTD9GDY4CMbfqEEsJ/QK
+	4P60MOw6/YneRAn2bTwDcqI7RlC4+lI5nrMF+8T/00RAU0cbSO0WN/7OESGco8dH81GAQZCHBd5Te
+	i40qWk89h1Hr3y7G6hgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY6Oq-0005SS-Fx; Fri, 22 Nov 2019 10:42:52 +0000
+	id 1iY6GA-0000X7-Bx; Fri, 22 Nov 2019 10:33:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY6Og-0005Rl-MR
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:42:44 +0000
+ id 1iY6Fy-0000WO-Hm
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:33:43 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D346620715;
- Fri, 22 Nov 2019 10:42:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6C02720708;
+ Fri, 22 Nov 2019 10:33:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574419362;
+ s=default; t=1574418821;
  bh=0K5Le4/yUVvQ+7LVnDH2eIxwNTpwnAm+e6EkDjNqOyY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=GmVoWriA4/3Or6+UrMP+p5w9iaxkChr+mtIdURb3Lrd/TO96zRtL4ORY1A3uzD3NU
- fOKbVpUXRMIMzV0dUq+eFoebi9+JRw+B+xbMio/l7DLlVVJ7/Futlu/Tnc4gwdDTrs
- IW51hTex6mb6WscKaazzZYMwgnYXhajAwuT/DvDU=
+ b=FwZjmDhqYV+rgw2kcZLQWnPHu+66eFQ35Z27AbL3SsoGImpjiy2EXlxe6h5tlp/JP
+ eIzSqJ+eKbNd6GhpWLOCtL4EBPE1u2Yb/a+fWbz8/J1WrRaEjj4bP81hh10cnBZ9Af
+ 4nK1P7o3QSq0uJcG78mjZfk8iSyN/8eEOuRfAdrE=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.9 087/222] libfdt: Ensure INT_MAX is defined in libfdt_env.h
-Date: Fri, 22 Nov 2019 11:27:07 +0100
-Message-Id: <20191122100909.853136152@linuxfoundation.org>
+Subject: [PATCH 4.4 062/159] libfdt: Ensure INT_MAX is defined in libfdt_env.h
+Date: Fri, 22 Nov 2019 11:27:33 +0100
+Message-Id: <20191122100752.929251532@linuxfoundation.org>
 X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191122100830.874290814@linuxfoundation.org>
-References: <20191122100830.874290814@linuxfoundation.org>
+In-Reply-To: <20191122100704.194776704@linuxfoundation.org>
+References: <20191122100704.194776704@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_024242_757454_70D362CB 
+X-CRM114-CacheID: sfid-20191122_023342_610028_290651C2 
 X-CRM114-Status: GOOD (  11.14  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
