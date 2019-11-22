@@ -2,77 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C984B1071A8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 12:44:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BAAE1071BF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 12:53:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/bWjPW3YR+3XhYLdugfrdp4zkgz1KSIZ/9SxDPdfNnI=; b=j8FsCrmLKD9qT+
-	9OdVemg1lIQ9JioCjEpIft//X+g2FvUtuEZxPsklCdtdz3rC9MkGUrHgEGMzqc7MVkAfmm1s9DilR
-	deRVp2FRLgXfcQ2Y8PghyqwqFUgzVFpmyRh+RUWFt+DKrj13b/7bJ8WXkk2LHkUPLOy6YUx7P0dSD
-	V1HuYx/x9WTxERWy7sekzoSowteWJ+6SQBJIKL0Gb/yX6VRFSyrws571csGxLL9784vVv7/6RSqqr
-	mfUEhDscSCCKcDocpbhyglKS02JFYKf2l4okuCvJkEoDNVJf6Ps7rcN3/Sg9KGRcHyT7rTbcp7BGH
-	Lw1WoKfftWKt1pMPGDEg==;
+	List-Owner; bh=MuO6gjQ2AC+bEj7Z8fcxocP9V50KmJcJ/Inzq7cjcg8=; b=VIHHdcaaXh4YWD
+	6AGUZUJNePwkYKIOTPIQjbJ/4fVhQIDpm5cpkcOii6yQzTQOuTyo+ZOlbN7nnw5ERcMbU9zVXWY8M
+	oCZqdS2nn8wJKhgDshhxujACTmfio6nRUXety7s1kpqVW+XeXn4sMHYtdg+qHmmzJ/ZCS/H8fG9hy
+	kfiwCGy5iO/CHN5FMAGHaA+Efa6roAvsluGrE5qfzqrAINacsRNkrJRBQeyYLt1hYwHlxy7R31CBd
+	HKYs12AE3vwbcW6gAhSfrOo2WZvIRgvw68Ky4kpW+T4xq1+tuSsGDjX6Y6ipiFr65wLgHZBjrlKjG
+	LoKHOLNhc5kBBYbSSnCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY7MX-0008Nv-1c; Fri, 22 Nov 2019 11:44:33 +0000
-Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY7ML-0008NP-Vw
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 11:44:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1574423057;
- s=strato-dkim-0002; d=gerhold.net;
- h=In-Reply-To:References:Message-ID:Subject:Cc:To:From:Date:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=KUzkDrxqXdw3nrhVEp7f4tzQQ+TrmNkZxVmR920PI6w=;
- b=XoNOW3mXmWsvLw1+GhDWeVxEhULppLy4v8YpdoonxuULHnVxz2ujWpdcX30koYgrYx
- lfU5eAcnjeGycQO5c5XGHBguCaLQkF/TzfVPxlKvnWaUxvwP0QYyWoaUk25ECFXcfwt/
- YOi1j1yXmlEC1aPJedB8WwFQOrNTo8HynUjxT+9RIyYr+5gyJEgnphia90rj8QON+pDl
- 2RIYF48oFlU50JPMSMe0UMryuwA3qIkSUxo51/L0hfDKm853aEvxeVWYcXZJXcqtHIj6
- qy30L2+wz/LsbnuJ4W9UX/KNjPzKaL8ueb/mdI+WeAvy7CIuE03j9BU78TyNrjopPavA
- x9rg==
-X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVOQ/OcYgojyw4j34+u26zEodhPgRDZ8fxIc6p"
-X-RZG-CLASS-ID: mo00
-Received: from gerhold.net by smtp.strato.de (RZmta 44.29.0 DYNA|AUTH)
- with ESMTPSA id e07688vAMBiF4D2
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
- 521 ECDH bits, eq. 15360 bits RSA))
- (Client did not present a certificate);
- Fri, 22 Nov 2019 12:44:15 +0100 (CET)
-Date: Fri, 22 Nov 2019 12:44:08 +0100
-From: Stephan Gerhold <stephan@gerhold.net>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH 1/2] drm/mcde: Reuse global DSI command defs
-Message-ID: <20191122114408.GA1195@gerhold.net>
-References: <20191122072457.25619-1-linus.walleij@linaro.org>
+	id 1iY7VD-00032z-BA; Fri, 22 Nov 2019 11:53:31 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iY7V1-00031u-Hj
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 11:53:21 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 22 Nov 2019 20:53:16 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id F1575603AB;
+ Fri, 22 Nov 2019 20:53:16 +0900 (JST)
+Received: from 172.31.9.53 (172.31.9.53) by m-FILTER with ESMTP;
+ Fri, 22 Nov 2019 20:53:34 +0900
+Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
+ by iyokan.css.socionext.com (Postfix) with ESMTP id B562B4031E;
+ Fri, 22 Nov 2019 20:53:16 +0900 (JST)
+Received: from [10.213.132.48] (unknown [10.213.132.48])
+ by yuzu.css.socionext.com (Postfix) with ESMTP id 88DF0120456;
+ Fri, 22 Nov 2019 20:53:16 +0900 (JST)
+Date: Fri, 22 Nov 2019 20:53:16 +0900
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: Re: [PATCH 2/2] PCI: uniphier: Add checking whether PERST# is
+ deasserted
+In-Reply-To: <20191121164705.GA14229@e121166-lin.cambridge.arm.com>
+References: <20191108163026.0DFB.4A936039@socionext.com>
+ <20191121164705.GA14229@e121166-lin.cambridge.arm.com>
+Message-Id: <20191122205316.297B.4A936039@socionext.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191122072457.25619-1-linus.walleij@linaro.org>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+X-Mailer: Becky! ver. 2.70 [ja]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_034422_621762_0BE03F48 
-X-CRM114-Status: GOOD (  11.07  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20191122_035319_695394_30F8E1C1 
+X-CRM114-Status: GOOD (  22.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5300:0:0:6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.248.49.38 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,66 +70,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org
+Cc: Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Jassi Brar <jaswinder.singh@linaro.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 22, 2019 at 08:24:57AM +0100, Linus Walleij wrote:
-> The MCDE DSI include file redefines some commands that
-> already exist in the common <video/mipi_display.h> header.
-> 
-> Cc: Stephan Gerhold <stephan@gerhold.net>
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Hello Lorenzo,
 
-Reviewed-by: Stephan Gerhold <stephan@gerhold.net>
+On Thu, 21 Nov 2019 16:47:05 +0000 <lorenzo.pieralisi@arm.com> wrote:
 
-> ---
->  drivers/gpu/drm/mcde/mcde_dsi.c      |  2 +-
->  drivers/gpu/drm/mcde/mcde_dsi_regs.h | 11 -----------
->  2 files changed, 1 insertion(+), 12 deletions(-)
+> On Fri, Nov 08, 2019 at 04:30:27PM +0900, Kunihiko Hayashi wrote:
+> > > However, If I understand correctly, doesn't your solution only work some
+> > > of the time? What happens if you boot both machines at the same time,
+> > > and PERST# isn't asserted prior to the kernel booting?
+> > 
+> > I think it contains an annoying problem.
+> > 
+> > If PERST# isn't toggled prior to the kernel booting, PERST# remains asserted
+> > and the RC driver can't access PCI bus.
+> > 
+> > As a result, this patch works and deasserts PERST# (and EP configuration will
+> > be lost). So boot sequence needs to include deasserting PERST#.
 > 
-> diff --git a/drivers/gpu/drm/mcde/mcde_dsi.c b/drivers/gpu/drm/mcde/mcde_dsi.c
-> index d4a12fe7ff01..dc07b534f01f 100644
-> --- a/drivers/gpu/drm/mcde/mcde_dsi.c
-> +++ b/drivers/gpu/drm/mcde/mcde_dsi.c
-> @@ -350,7 +350,7 @@ void mcde_dsi_te_request(struct mipi_dsi_device *mdsi)
->  	val |= 0 << DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_ID_SHIFT;
->  	val |= 2 << DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_SIZE_SHIFT;
->  	val |= DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_LP_EN;
-> -	val |= DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_SHORT_WRITE_1 <<
-> +	val |= MIPI_DSI_GENERIC_SHORT_WRITE_1_PARAM <<
->  		DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SHIFT;
->  	writel(val, d->regs + DSI_DIRECT_CMD_MAIN_SETTINGS);
->  
-> diff --git a/drivers/gpu/drm/mcde/mcde_dsi_regs.h b/drivers/gpu/drm/mcde/mcde_dsi_regs.h
-> index b03a336c235f..8089db805c57 100644
-> --- a/drivers/gpu/drm/mcde/mcde_dsi_regs.h
-> +++ b/drivers/gpu/drm/mcde/mcde_dsi_regs.h
-> @@ -123,17 +123,6 @@
->  #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_LONGNOTSHORT BIT(3)
->  #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SHIFT 8
->  #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_MASK 0x00003F00
-> -#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_TURN_ON_PERIPHERAL 50
-> -#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SHUT_DOWN_PERIPHERAL 34
-> -#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_SHORT_WRITE_0 3
-> -#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_SHORT_WRITE_1 19
-> -#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_SHORT_WRITE_2 35
-> -#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_LONG_WRITE 41
-> -#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_SHORT_WRITE_0 5
-> -#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_SHORT_WRITE_1 21
-> -#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_LONG_WRITE 57
-> -#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_READ 6
-> -#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SET_MAX_PKT_SIZE 55
->  #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_ID_SHIFT 14
->  #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_SIZE_SHIFT 16
->  #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_LP_EN BIT(21)
-> -- 
-> 2.21.0
+> I am sorry but I have lost you. Can you explain to us why checking
+> that PERST# is deasserted guarantees you that:
 > 
+> - The EP has bootstrapped
+> - It is safe not to toggle it again (and also skip
+>   uniphier_pcie_ltssm_enable())
+> 
+> Please provide details of the HW configuration so that we understand
+> what's actually supposed to happen and why this patch fixes the
+> issue you are facing.
+
+I tried to connect between the following boards, and do pci-epf-test:
+ - "RC board": UniPhier ld20 board that has DWC RC controller
+ - "EP board": UniPhier legacy board that has DWC EP controller
+
+This EP has power-on-state configuration, but it's necessary to set
+class ID, BAR sizes, etc. after starting up.
+
+In case of that starting up RC board before EP board, the RC driver
+can't establish link. So we need to boot EP board first.
+
+ - EP/RC: power on both boards
+
+ - EP: start up the kernel on EP board
+
+ - EP: according to the following guide, configurate pci-epf-test
+      https://www.kernel.org/doc/html/latest/PCI/endpoint/pci-test-howto.html
+
+ - RC: start up the kernel on RC board
+
+At that time, because RC driver toggled PERST#, the EP configuration
+values are initialized to the power on state. After that, RC can't
+access EP collectly.
+
+I think there is a following solution:
+
+ - EP/RC: power on both boards
+
+ - RC: [deassert PERST# by boot firmware]
+
+ - EP: start up the kernel on EP board
+
+ - EP: configurate pci-epf-test
+
+ - RC: start up the kernel on RC board [without toggling PERST# by this patch]
+
+Deasserting PERST# before EP configuration avoids the issue, however,
+this relies on boot firmware, so I think this isn't enough to solve
+the issue.
+
+Thank you,
+
+---
+Best Regards,
+Kunihiko Hayashi
+
 
 _______________________________________________
 linux-arm-kernel mailing list
