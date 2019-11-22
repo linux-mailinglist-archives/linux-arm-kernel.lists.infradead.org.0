@@ -2,134 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4615D10684B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 09:46:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79BE510684C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 09:49:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kJeH+1rKHiQ5UtOBauhl3TPnV6pb2w8KsmEPCV3FNk0=; b=ASEaGOSGERBOe6
-	hQyZYZTEZFBNeYCTCGquwXg29+wsKmnU6fKMJmG+wYxL3zvyw/WFuEUbgMcqIudt8qpTSJOs1CdM2
-	5v2Q++Q39r4cFhSewC7DL+K/qvkvBhsi5Rfz2qdXD1Q8r5n7m/C2yNqd2YAWj8YWwTfQFdfhp2cVf
-	BVaJPBFqT7dW6A3TSgw6G6pfjMMss4azI/io+41VzVTwTfu2hAJxUzDs9II4TyxZQxIPaAKsBFZpc
-	1ZuD4YCwy/GVdf17sr819UC1PPvooUPRhJcYHongZXOru1BezaZOJjA1+q/ssO4uHwczvoEaGMlMB
-	E8IOKFdXmgNE0jtNR6Pg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OtV//a796JSXVtCNKi9ceiW6UCNtTZPyi6V4L3fzNyM=; b=od6JbvPAug9bBQ
+	7DnRL6A4NHAHwSbr6h0HFVhWlMoY7f/1u86Lwcm5kAnLIL8g9HSYeQWtlHhRb3PLOSJVMSxxsvb+s
+	EKBQdmEQYzUhI+EQgR5UOGk4NWnVHyBosF/eD87p/Kcg3dFbTCA+5kos9tL9DBdK3vu5HCmG40znW
+	nUB8hnnk2kywKZuTdQpOk+mVd2n24n1AtJ2QHla9gpGRgWbLvlTJB/s4mNWJmU6zOgRgVENw7eTVx
+	y+Iuj1n6JUwoogJA73OJdWtfRUilCUosRcoFJiwXR0v68HDK4VLj92UJ1Vse3hEuRwCVUWOS4zAqg
+	8k+QLXumwMFaDeroyV6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY4a9-0003aG-AY; Fri, 22 Nov 2019 08:46:25 +0000
-Received: from mail-eopbgr800053.outbound.protection.outlook.com
- ([40.107.80.53] helo=NAM03-DM3-obe.outbound.protection.outlook.com)
+	id 1iY4ca-00040u-Og; Fri, 22 Nov 2019 08:48:56 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY4ZP-00037s-3U
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 08:45:42 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JH8FyaXr0cHccTUPg6JL9bc6plruk2TcAptILPFARiZhwPC2Y0iQtZcBzmGLm9Vi1+jBfY7CcsIAuJHYbWm3xyqqQeHPMpmxl7A6jToeM1fv3BhF0Gw9toEc/UNsPs0juJjV0KSf0UfRgOD1YGcTF/cK7IuMKvrVHy77nagJDHW7nYGfaBgC3mkBMWVaJkwET3ft65oJQ/zDeanmvJeGOUCEEgx/65qTi7GAS3bts2gYwwg5Yed4Nw+kFPqrJlyMzywro3MRdP/dJsMgo9jp6QVitG+tjeXowQzGn3cONXLeYvZC9k5gVAEls9IhQd98zVIX/CL0yO/VGM7HAywM/g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jgqxPs4s049Nu3VOR1et90OOfPB4rIKPyCovfxt1jI0=;
- b=CWHQr1S8rYChMIv04ijyCKJCopacICoZUH0ZIXzm4j7hMgkSURuPfJEgFeW8uqu8fTMwueQ+GWzMxhXEy49Q8PSq3UFIkk3e/lWBFpdL9aGBMMIRybBbvzEp/h2ZflXVX+0XwOLwWWOTeEaJgWxS7McCk9Io2/AKhLLOyraU2cju4xKW7Xdqn5YZMxPnJ6krxWRvZ1nMzjbkW86y2ZiqLcBT9iXzN8wyvIcHhSeeKzLM5G0K1JNn2c2yOue4UUR8eBTu+ivPtMNQw/iKS5UqmT+yzlpw0M12FrflDGoUs+o+rWC5jsp9O6Cu5G+ORT7bmxbl/Jsi40wdeB1U2v/xVg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jgqxPs4s049Nu3VOR1et90OOfPB4rIKPyCovfxt1jI0=;
- b=Xa/gfqgkqWh+ACR7Dq4m4bRq3OH/iMOPL55M9kIjgRLOWeVy5uPJ13GIbPQIXPR7eRTu8j5qhIK5AYA1UNORpLaurLw0APrAQdE8n8gzLA2kxjev2kFxoGrfl7CuOM5S/xOTH8Kxh5n3AQSZ3kPtXA52wj1ijG5IrBZlsvXXhGo=
-Received: from SN4PR0201CA0055.namprd02.prod.outlook.com
- (2603:10b6:803:20::17) by BL0PR02MB3636.namprd02.prod.outlook.com
- (2603:10b6:207:4c::14) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2474.19; Fri, 22 Nov
- 2019 08:45:34 +0000
-Received: from SN1NAM02FT016.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e44::202) by SN4PR0201CA0055.outlook.office365.com
- (2603:10b6:803:20::17) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2474.17 via Frontend
- Transport; Fri, 22 Nov 2019 08:45:34 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
- header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT016.mail.protection.outlook.com (10.152.72.113) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2474.17
- via Frontend Transport; Fri, 22 Nov 2019 08:45:33 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <rajan.vaja@xilinx.com>)
- id 1iY4ZI-0006UU-Rp; Fri, 22 Nov 2019 00:45:32 -0800
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <rajan.vaja@xilinx.com>)
- id 1iY4ZD-00053U-P7; Fri, 22 Nov 2019 00:45:27 -0800
-Received: from xsj-pvapsmtp01 (mail.xilinx.com [149.199.38.66] (may be forged))
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id xAM8jLUU023112; 
- Fri, 22 Nov 2019 00:45:22 -0800
-Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
- by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <rajan.vaja@xilinx.com>)
- id 1iY4Z7-00052Z-Qg; Fri, 22 Nov 2019 00:45:21 -0800
-From: Rajan Vaja <rajan.vaja@xilinx.com>
-To: sre@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
- michal.simek@xilinx.com, jollys@xilinx.com, tejas.patel@xilinx.com
-Subject: [PATCH v2 2/2] drivers: soc: xilinx: Use mailbox IPI callback
-Date: Fri, 22 Nov 2019 00:44:18 -0800
-Message-Id: <1574412258-17988-3-git-send-email-rajan.vaja@xilinx.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1574412258-17988-1-git-send-email-rajan.vaja@xilinx.com>
-References: <1573564851-9275-1-git-send-email-rajan.vaja@xilinx.com>
- <1574412258-17988-1-git-send-email-rajan.vaja@xilinx.com>
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(376002)(136003)(396003)(346002)(199004)(189003)(44832011)(6636002)(11346002)(426003)(36756003)(446003)(76176011)(15650500001)(107886003)(186003)(47776003)(478600001)(4326008)(2616005)(336012)(2906002)(50466002)(70206006)(106002)(70586007)(305945005)(14444005)(51416003)(7696005)(81156014)(5660300002)(356004)(8676002)(26005)(50226002)(81166006)(9786002)(36386004)(8936002)(316002)(16586007)(48376002)(6666004)(42866002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BL0PR02MB3636; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
+ id 1iY4cS-00040V-VF
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 08:48:50 +0000
+Received: by mail-wr1-x442.google.com with SMTP id y11so4492185wrt.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 22 Nov 2019 00:48:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=xavkt3yAPsSExh/K4/NF1IeCEHkaPmlbGuB+b+PPHq4=;
+ b=K1Z8nd5pgxBSEwwskDgUV10BEd87rGn82y4RyqLUpoFxBeb66hTp2c4J2jCRHozgTt
+ R9PPIfj6Eu8B58/VXbC0VpyFhcbQa1SKMe35HG8M8+dm72V/yNeqnnu5TIhm3fc2ilrf
+ /z8j2BIaYA7L5+1aG3cCB5vzPZm0+Hxzi3oxkJlW0adbmefXI5bsqmqjFw8a5ynoZYWJ
+ vHGzuSA4PxSdzy75KTVu6WNNI6VRRdHhDPjo7qxjYVaM7Z3pH/LpfxW+bT2xcxT9e4Mf
+ QpLnceJMVGZkPdhYBetqnpQ7Yogh2YpgVbxlSuwgk9nTwAaq0UqQNS+Og2+WAu4078CO
+ B9kw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=xavkt3yAPsSExh/K4/NF1IeCEHkaPmlbGuB+b+PPHq4=;
+ b=mCA2vANkrr2iXNszhHZoMk2eLqbprByfuM0fGvshCzS0QhBEJSj0byDF+ukQ2jwMbP
+ 0KZcKpZAvR4VHLFssQGG2VeTkafMBBaWtIg3qUbmqF/ZuNo2bUb7te8xy5aSdvec4ZpB
+ 8ppREFfc0KSCXAWnKfMjKBoxLg312AQGCbszMBBdqQXiB5/gFh8SihF9CXvxB+zLRblW
+ kYIM2qdQwJ0JTrN+uLx7Fw6hYMaSJGDuqnLrxfNxqkQ/yMHWyN/Irz9tZdBsgQPqZthM
+ gZrRuaCMwUKfi8kYbb43ehZ+eOpeRvIW3JLq3I7Ve3MwUZwwTVtFi2luhcC77GxibUB+
+ +/Ag==
+X-Gm-Message-State: APjAAAWlz7zetlCw484fn6/1seHFdCO7Swr4iI+fL75nnR+jMFNPJILc
+ hE7o8SjjpSzQ9sGuZkZSTEx7BcnaqXc1Rg==
+X-Google-Smtp-Source: APXvYqwBPrufQKZs7ez27D3aby40oDvtm8lerrL7e3p5VKF3oEmCNLhv6XaIPk6Jsp/mzL289BaLQg==
+X-Received: by 2002:adf:e545:: with SMTP id z5mr16076824wrm.321.1574412526881; 
+ Fri, 22 Nov 2019 00:48:46 -0800 (PST)
+Received: from ?IPv6:2a00:23c5:4e1b:3700:8d83:30a1:2751:30ec?
+ ([2a00:23c5:4e1b:3700:8d83:30a1:2751:30ec])
+ by smtp.gmail.com with ESMTPSA id y16sm6902906wro.25.2019.11.22.00.48.45
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 22 Nov 2019 00:48:46 -0800 (PST)
+Subject: Re: [PATCH v2 08/14] arm64: mask PAC bits of __builtin_return_address
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>
+References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
+ <1574166746-27197-9-git-send-email-amit.kachhap@arm.com>
+ <CAKv+Gu_U37kfCOT4ko-pK6b80aQ2uCe88WfHPwwzjrZ4frndmw@mail.gmail.com>
+From: Richard Henderson <richard.henderson@linaro.org>
+Openpgp: preference=signencrypt
+Message-ID: <cdc2fdcf-7a58-a551-253e-adb92180e749@linaro.org>
+Date: Fri, 22 Nov 2019 08:48:40 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 27ee9a99-7108-42e5-1a26-08d76f285682
-X-MS-TrafficTypeDiagnostic: BL0PR02MB3636:
-X-Microsoft-Antispam-PRVS: <BL0PR02MB36369AAF9E1F63AE1B9BEA6CB7490@BL0PR02MB3636.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:2399;
-X-Forefront-PRVS: 02296943FF
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: /sdblQGJjLs9ZTlpvfuux3Pkn29ZAjSYd7zG/ayBTnwwV8CS+Y3Q+SXriI0LTnGsqao3410LfkG0iLYYHCUzjDWioLJahH6r2MehZpNw2buyz6hpCi9Wm4jwx90ZpwwFL8dSTb7FONK+W59RZ87fB71d7SvBPiXUYxqQPTDOmh5fuy7+0FxzT1PaTZy39A+uE0PEOkYyac2f1+EBUqkhGhz/+i7oYKlZ69fkkIdY6LnpIZIL7889hy62CZP+F49KJ91HL1Z/5GZ7PanSRN8Yu47FmCVhY06pjCLJn+2BJAOuuj8g4QIY5K6wzd/zsJChiGf9J8JezVBCS3wAK26LXzO6wyT8lkRLV1UI9pQhKAtisycCimEmclrw2PwEYaKAxqeptp/mUvvPm6BdixRoc1VJ1bcZi6vsf29zzviSrZcok7bYSO3sYGYGKvmANBQl
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Nov 2019 08:45:33.5475 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 27ee9a99-7108-42e5-1a26-08d76f285682
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB3636
+In-Reply-To: <CAKv+Gu_U37kfCOT4ko-pK6b80aQ2uCe88WfHPwwzjrZ4frndmw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_004539_151781_ED84EB41 
-X-CRM114-Status: GOOD (  15.82  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191122_004849_030728_051D9D02 
+X-CRM114-Status: GOOD (  19.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.80.53 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,199 +104,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Rajan Vaja <rajan.vaja@xilinx.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tejas Patel <tejas.patel@xilinx.com>
+On 11/21/19 5:42 PM, Ard Biesheuvel wrote:
+> On Tue, 19 Nov 2019 at 13:33, Amit Daniel Kachhap <amit.kachhap@arm.com> wrote:
+>>
+>> This patch redefines __builtin_return_address to mask pac bits
+>> when Pointer Authentication is enabled. As __builtin_return_address
+>> is used mostly used to refer to the caller function symbol address
+>> so masking runtime generated pac bits will help to find the match.
+>>
+>> This change fixes the utilities like cat /proc/vmallocinfo to now
+>> show the correct logs.
+>>
+>> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+>> ---
+>> Change since last version:
+>>  * Comment modified.
+>>
+>>  arch/arm64/Kconfig                |  1 +
+>>  arch/arm64/include/asm/compiler.h | 17 +++++++++++++++++
+>>  2 files changed, 18 insertions(+)
+>>  create mode 100644 arch/arm64/include/asm/compiler.h
+>>
+>> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+>> index 998248e..c1844de 100644
+>> --- a/arch/arm64/Kconfig
+>> +++ b/arch/arm64/Kconfig
+>> @@ -117,6 +117,7 @@ config ARM64
+>>         select HAVE_ALIGNED_STRUCT_PAGE if SLUB
+>>         select HAVE_ARCH_AUDITSYSCALL
+>>         select HAVE_ARCH_BITREVERSE
+>> +       select HAVE_ARCH_COMPILER_H
+>>         select HAVE_ARCH_HUGE_VMAP
+>>         select HAVE_ARCH_JUMP_LABEL
+>>         select HAVE_ARCH_JUMP_LABEL_RELATIVE
+>> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+>> new file mode 100644
+>> index 0000000..5efe310
+>> --- /dev/null
+>> +++ b/arch/arm64/include/asm/compiler.h
+>> @@ -0,0 +1,17 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +#ifndef __ASM_ARM_COMPILER_H
+>> +#define __ASM_ARM_COMPILER_H
+>> +
+>> +#ifndef __ASSEMBLY__
+>> +
+>> +#if defined(CONFIG_ARM64_PTR_AUTH)
+>> +
+>> +/* As TBI1 is disabled currently, so bits 63:56 also has PAC */
+>> +#define __builtin_return_address(val)                          \
+>> +       (void *)((unsigned long)__builtin_return_address(val) | \
+>> +       (GENMASK_ULL(63, 56) | GENMASK_ULL(54, VA_BITS)))
+>> +#endif
+>> +
+>> +#endif
+>> +
+>> +#endif /* __ASM_ARM_COMPILER_H */
+> 
+> It seems to me like we are accumulating a lot of cruft for khwasan as
+> well as PAC to convert address into their untagged format.
+> 
+> Are there are untagging helpers we can already reuse? If not, can we
+> introduce something that can be shared between all these use cases?
 
-Add support for init suspend callback through mailbox IPI callback.
+xpaci will strip the pac from an instruction pointer, but requires the
+instruction set to be enabled, so you'd have to fiddle with alternatives.  You
+*could* force the use of lr as input/output and use xpaclri, which is a nop if
+the instruction set is not enabled.
 
-Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
-Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
----
- drivers/soc/xilinx/zynqmp_power.c | 119 +++++++++++++++++++++++++++++++++-----
- 1 file changed, 106 insertions(+), 13 deletions(-)
+Also, this definition of is not correct, because bit 55 needs to be propagated
+to all of the bits being masked out here, so that you get a large negative
+number for kernel space addresses.
 
-diff --git a/drivers/soc/xilinx/zynqmp_power.c b/drivers/soc/xilinx/zynqmp_power.c
-index 1b9d144..d572d2e 100644
---- a/drivers/soc/xilinx/zynqmp_power.c
-+++ b/drivers/soc/xilinx/zynqmp_power.c
-@@ -2,7 +2,7 @@
- /*
-  * Xilinx Zynq MPSoC Power Management
-  *
-- *  Copyright (C) 2014-2018 Xilinx, Inc.
-+ *  Copyright (C) 2014-2019 Xilinx, Inc.
-  *
-  *  Davorin Mista <davorin.mista@aggios.com>
-  *  Jolly Shah <jollys@xilinx.com>
-@@ -16,6 +16,20 @@
- #include <linux/suspend.h>
- 
- #include <linux/firmware/xlnx-zynqmp.h>
-+#include <linux/mailbox/zynqmp-ipi-message.h>
-+
-+/**
-+ * struct zynqmp_pm_work_struct - Wrapper for struct work_struct
-+ * @callback_work:	Work structure
-+ * @args:		Callback arguments
-+ */
-+struct zynqmp_pm_work_struct {
-+	struct work_struct callback_work;
-+	u32 args[CB_ARG_CNT];
-+};
-+static struct zynqmp_pm_work_struct *zynqmp_pm_init_suspend_work;
-+static struct mbox_chan *rx_chan;
-+static const struct zynqmp_eemi_ops *eemi_ops;
- 
- enum pm_suspend_mode {
- 	PM_SUSPEND_MODE_FIRST = 0,
-@@ -31,7 +45,6 @@ static const char *const suspend_modes[] = {
- };
- 
- static enum pm_suspend_mode suspend_mode = PM_SUSPEND_MODE_STD;
--static const struct zynqmp_eemi_ops *eemi_ops;
- 
- enum pm_api_cb_id {
- 	PM_INIT_SUSPEND_CB = 30,
-@@ -68,6 +81,53 @@ static irqreturn_t zynqmp_pm_isr(int irq, void *data)
- 	return IRQ_HANDLED;
- }
- 
-+static void ipi_receive_callback(struct mbox_client *cl, void *data)
-+{
-+	struct zynqmp_ipi_message *msg = (struct zynqmp_ipi_message *)data;
-+	u32 payload[CB_PAYLOAD_SIZE];
-+	int ret;
-+
-+	memcpy(payload, msg->data, sizeof(msg->len));
-+	/* First element is callback API ID, others are callback arguments */
-+	if (payload[0] == PM_INIT_SUSPEND_CB) {
-+		if (work_pending(&zynqmp_pm_init_suspend_work->callback_work))
-+			return;
-+
-+		/* Copy callback arguments into work's structure */
-+		memcpy(zynqmp_pm_init_suspend_work->args, &payload[1],
-+		       sizeof(zynqmp_pm_init_suspend_work->args));
-+
-+		queue_work(system_unbound_wq,
-+			   &zynqmp_pm_init_suspend_work->callback_work);
-+
-+		/* Send NULL message to mbox controller to ack the message */
-+		ret = mbox_send_message(rx_chan, NULL);
-+		if (ret)
-+			pr_err("IPI ack failed. Error %d\n", ret);
-+	}
-+}
-+
-+/**
-+ * zynqmp_pm_init_suspend_work_fn - Initialize suspend
-+ * @work:	Pointer to work_struct
-+ *
-+ * Bottom-half of PM callback IRQ handler.
-+ */
-+static void zynqmp_pm_init_suspend_work_fn(struct work_struct *work)
-+{
-+	struct zynqmp_pm_work_struct *pm_work =
-+		container_of(work, struct zynqmp_pm_work_struct, callback_work);
-+
-+	if (pm_work->args[0] == SUSPEND_SYSTEM_SHUTDOWN) {
-+		orderly_poweroff(true);
-+	} else if (pm_work->args[0] == SUSPEND_POWER_REQUEST) {
-+		pm_suspend(PM_SUSPEND_MEM);
-+	} else {
-+		pr_err("%s Unsupported InitSuspendCb reason code %d.\n",
-+		       __func__, pm_work->args[0]);
-+	}
-+}
-+
- static ssize_t suspend_mode_show(struct device *dev,
- 				 struct device_attribute *attr, char *buf)
- {
-@@ -119,6 +179,7 @@ static int zynqmp_pm_probe(struct platform_device *pdev)
- {
- 	int ret, irq;
- 	u32 pm_api_version;
-+	struct mbox_client *client;
- 
- 	eemi_ops = zynqmp_pm_get_eemi_ops();
- 	if (IS_ERR(eemi_ops))
-@@ -134,17 +195,46 @@ static int zynqmp_pm_probe(struct platform_device *pdev)
- 	if (pm_api_version < ZYNQMP_PM_VERSION)
- 		return -ENODEV;
- 
--	irq = platform_get_irq(pdev, 0);
--	if (irq <= 0)
--		return -ENXIO;
--
--	ret = devm_request_threaded_irq(&pdev->dev, irq, NULL, zynqmp_pm_isr,
--					IRQF_NO_SUSPEND | IRQF_ONESHOT,
--					dev_name(&pdev->dev), &pdev->dev);
--	if (ret) {
--		dev_err(&pdev->dev, "devm_request_threaded_irq '%d' failed "
--			"with %d\n", irq, ret);
--		return ret;
-+	if (of_find_property(pdev->dev.of_node, "mboxes", NULL)) {
-+		zynqmp_pm_init_suspend_work =
-+			devm_kzalloc(&pdev->dev,
-+				     sizeof(struct zynqmp_pm_work_struct),
-+				     GFP_KERNEL);
-+		if (!zynqmp_pm_init_suspend_work)
-+			return -ENOMEM;
-+
-+		INIT_WORK(&zynqmp_pm_init_suspend_work->callback_work,
-+			  zynqmp_pm_init_suspend_work_fn);
-+		client = devm_kzalloc(&pdev->dev, sizeof(*client), GFP_KERNEL);
-+		if (!client)
-+			return -ENOMEM;
-+
-+		client->dev = &pdev->dev;
-+		client->rx_callback = ipi_receive_callback;
-+
-+		rx_chan = mbox_request_channel_byname(client, "rx");
-+		if (IS_ERR(rx_chan)) {
-+			dev_err(&pdev->dev, "Failed to request rx channel\n");
-+			return IS_ERR(rx_chan);
-+		}
-+	} else if (of_find_property(pdev->dev.of_node, "interrupts", NULL)) {
-+		irq = platform_get_irq(pdev, 0);
-+		if (irq <= 0)
-+			return -ENXIO;
-+
-+		ret = devm_request_threaded_irq(&pdev->dev, irq, NULL,
-+						zynqmp_pm_isr,
-+						IRQF_NO_SUSPEND | IRQF_ONESHOT,
-+						dev_name(&pdev->dev),
-+						&pdev->dev);
-+		if (ret) {
-+			dev_err(&pdev->dev, "devm_request_threaded_irq '%d' "
-+					    "failed with %d\n", irq, ret);
-+			return ret;
-+		}
-+	} else {
-+		dev_err(&pdev->dev, "Required property not found in DT node\n");
-+		return -ENOENT;
- 	}
- 
- 	ret = sysfs_create_file(&pdev->dev.kobj, &dev_attr_suspend_mode.attr);
-@@ -160,6 +250,9 @@ static int zynqmp_pm_remove(struct platform_device *pdev)
- {
- 	sysfs_remove_file(&pdev->dev.kobj, &dev_attr_suspend_mode.attr);
- 
-+	if (!rx_chan)
-+		mbox_free_channel(rx_chan);
-+
- 	return 0;
- }
- 
--- 
-2.7.4
 
+r~
 
 _______________________________________________
 linux-arm-kernel mailing list
