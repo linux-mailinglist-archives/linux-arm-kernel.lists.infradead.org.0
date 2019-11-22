@@ -2,72 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 963181068B2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 10:15:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 398671068C1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 10:22:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wG8KG2hEUP7VxI0HaxCyN0ifnQXbty5TaJCTE5ooAiY=; b=kpdtIsw9+9moPj
-	wQQAgq9XYJpwry5c2jIJ5sRaIlgT1pIU/8dRejq/NsjObYXf8hm+DbkormgbddnIDXdU1F9yqtLyB
-	jfhrx0I6b89A/vNBLeUggKuXVcLn+IzWHCsRqPADWUFGZoxi+qvPflWN70AryNQZ7emDjBITA45rT
-	RkuRSMIH3s9l3S1RWxuCeJPETrpwTuWlg4JCwuMsi9x+IachNnJcWx/1RM8FVIUj2XA9enUoSnA/7
-	CDkKmImxOdfQdAiZzC7Gwwf5utt2mQ4nj50rnJKsKsLcMm7ji8YqQk/Ae3cjsyJAaHhgJQYuBKEh7
-	SzCKZvzq17PLBjq+ufGg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6vsJyvsRAK0QYdoixMWYRtkf7qSD/R3K8SeRbiWznQw=; b=MNlcyHJe3bFiG3
+	aqFOUCPFR67n95O3NjEAdLDJm3j/1vt5VdSiPxC8io8TsIzNGomQRgXqZVqKCa2auyR6G+JWL6HuZ
+	IvbPtdrGhqXsuATErPXRDeG7CRpAod248nGqREzD781uvF84BsLc8UsAcObfaNIAjoLh/V+DwdEY1
+	OW3bQJDhXx94SyfxcnESuWU3P1vM1dn7rjV9F8O1AFzdUahcYQBixaEbkVdUNsLjKd5gKzfmmFiry
+	8ptsgcCAT+ddFLKg9GzIdkyAGHFJreTRZ2TDo1NKuTraFK98+DBQx+Z3YwbH4kjn2S+1hXpMUvJk4
+	cncn0GmXisn088MXMCDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY52M-0006q9-OM; Fri, 22 Nov 2019 09:15:34 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iY594-00005H-UW; Fri, 22 Nov 2019 09:22:30 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY52D-0006ov-8m; Fri, 22 Nov 2019 09:15:26 +0000
-X-UUID: 85abd01eed64431f893b3747e4078b87-20191122
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=yGbRARirQbtMv7bgCjwd95aB7fMp5FrczRuPBiu/i+c=; 
- b=ny3D9LHypIdZeksxIuv+Pxb6cIKfbM8TVgNKI+5Keo65jQZbnop5Q0GDsKpLO5yb2mMYRJjpYDn8WTyFubYhvFlMcy47RLG+fWEQ68L+aY6fou409fPaj5vO5sEqf1s3teu/MkAX3J30kl/Bi0aDzhqellOmqkpH0Jt7gTuJ/SE=;
-X-UUID: 85abd01eed64431f893b3747e4078b87-20191122
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <michael.kao@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1759651081; Fri, 22 Nov 2019 01:15:20 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 22 Nov 2019 01:06:19 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 22 Nov 2019 17:05:49 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Fri, 22 Nov 2019 17:06:14 +0800
-From: <michael.kao@mediatek.com>
-To: Zhang Rui <rui.zhang@intel.com>, Eduardo Valentin <edubezval@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
- Mark Rutland <mark.rutland@arm.com>, Matthias Brugger
- <matthias.bgg@gmail.com>, <hsinyi@chromium.org>, <linux-pm@vger.kernel.org>
-Subject: [PATCH] [RESEND] arm64: dts: mt8173: Add dynamic power node.
-Date: Fri, 22 Nov 2019 17:06:10 +0800
-Message-ID: <20191122090610.17015-1-michael.kao@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1iY58s-0008Vm-2V; Fri, 22 Nov 2019 09:22:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=SWbmUilvZWyu9G5awdEU2KvPZeq3aeg+c1C4lJEnjoo=; b=an41Zr2/uNxSIUfMI75HmnIqV
+ Gdh4kdDw4HAonLEtaGjxH9/njeLzh1GpRZf0SdfF3fR2JOqSPElZfwlBFHwa/As7LqES2oxUVPEgq
+ lddNaJanCjc5wYIDGjIC6vp/7cs3bWV0EO6UQnizW+CueuuyXnvdNQV/pi8CzUwU8DlC0rh6gDmZ1
+ 3czSPX/k0lEm6+tq7d/3jiRJ4d4qIWMKj98kTVi55jDe/fx0aIEp9e0NpBdiBblRVh8AqwC9lFmii
+ C0NYYCbzgJdJnfp2kZxdu3CcqNMvAR7V2i6h4Fcg2aJSzTu3H2Np+acyCy0rAWe9S3KvME8OebaDh
+ lt4WPkmBg==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:43048)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iY58L-000490-9z; Fri, 22 Nov 2019 09:21:45 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iY58D-0003Yo-1A; Fri, 22 Nov 2019 09:21:37 +0000
+Date: Fri, 22 Nov 2019 09:21:37 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [CFT PATCH net-next v2] net: phylink: rename mac_link_state() op
+ to mac_pcs_get_state()
+Message-ID: <20191122092136.GJ25745@shell.armlinux.org.uk>
+References: <E1iXaSM-0004t1-9L@rmk-PC.armlinux.org.uk>
+ <20191121.191417.1339124115325210078.davem@davemloft.net>
+ <0a9e016b-4ee3-1f1c-0222-74180f130e6c@gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <0a9e016b-4ee3-1f1c-0222-74180f130e6c@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_011525_318399_1A7FB3C8 
-X-CRM114-Status: UNSURE (   6.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191122_012218_181709_C32EF19D 
+X-CRM114-Status: GOOD (  20.63  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -75,8 +77,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,65 +88,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Dawei Chien <dawei.chien@mediatek.com>,
- linux-kernel@vger.kernel.org, "michael.kao" <michael.kao@mediatek.com>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: andrew@lunn.ch, nbd@openwrt.org, sean.wang@mediatek.com,
+ alexandre.torgue@st.com, netdev@vger.kernel.org, peppe.cavallaro@st.com,
+ radhey.shyam.pandey@xilinx.com, michal.simek@xilinx.com,
+ mcoquelin.stm32@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
+ joabreu@synopsys.com, linux-mediatek@lists.infradead.org,
+ thomas.petazzoni@bootlin.com, john@phrozen.org, matthias.bgg@gmail.com,
+ vivien.didelot@gmail.com, hkallweit1@gmail.com,
+ David Miller <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Mark-MC.Lee@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "michael.kao" <michael.kao@mediatek.com>
+On Thu, Nov 21, 2019 at 07:36:44PM -0800, Florian Fainelli wrote:
+> 
+> 
+> On 11/21/2019 7:14 PM, David Miller wrote:
+> > From: Russell King <rmk+kernel@armlinux.org.uk>
+> > Date: Thu, 21 Nov 2019 00:36:22 +0000
+> > 
+> >> Rename the mac_link_state() method to mac_pcs_get_state() to make it
+> >> clear that it should be returning the MACs PCS current state, which
+> >> is used for inband negotiation rather than just reading back what the
+> >> MAC has been configured for. Update the documentation to explicitly
+> >> mention that this is for inband.
+> >>
+> >> We drop the return value as well; most of phylink doesn't check the
+> >> return value and it is not clear what it should do on error - instead
+> >> arrange for state->link to be false.
+> >>
+> >> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> >> ---
+> >> This is something I'd like to do to make it clearer what phylink
+> >> expects of this function, and that it shouldn't just read-back how
+> >> the MAC was configured.
+> >>
+> >> This version drops the deeper changes, concentrating just on the
+> >> phylink API rather than delving deeper into drivers, as I haven't
+> >> received any feedback on that patch.
+> >>
+> >> It would be nice to see all these drivers tested with this change.
+> > 
+> > I'm tempted to just apply this, any objections?
+> > 
+> 
+> Russell, which of this patch or: http://patchwork.ozlabs.org/patch/1197425/
+> 
+> would you consider worthy of merging?
 
-This device node is for calculating dynamic power in mW.
-Since mt8173 has two clusters, there are two dynamic power
-coefficient as well.
+Let's go with v2 for now - it gets the rename done with less risk that
+there'll be a problem.  I can always do the remainder in a separate
+patch after the merge window as a separate patch.
 
-Signed-off-by: Dawei Chien <dawei.chien@mediatek.com>
-Signed-off-by: Michael.Kao <michael.kao@mediatek.com>
-
----
- arch/arm64/boot/dts/mediatek/mt8173.dtsi | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-index 15f1842f6df3..b03ca5a71338 100644
---- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-@@ -157,6 +157,7 @@
- 			enable-method = "psci";
- 			cpu-idle-states = <&CPU_SLEEP_0>;
- 			#cooling-cells = <2>;
-+			dynamic-power-coefficient = <263>;
- 			clocks = <&infracfg CLK_INFRA_CA53SEL>,
- 				 <&apmixedsys CLK_APMIXED_MAINPLL>;
- 			clock-names = "cpu", "intermediate";
-@@ -170,6 +171,7 @@
- 			enable-method = "psci";
- 			cpu-idle-states = <&CPU_SLEEP_0>;
- 			#cooling-cells = <2>;
-+			dynamic-power-coefficient = <263>;
- 			clocks = <&infracfg CLK_INFRA_CA53SEL>,
- 				 <&apmixedsys CLK_APMIXED_MAINPLL>;
- 			clock-names = "cpu", "intermediate";
-@@ -183,6 +185,7 @@
- 			enable-method = "psci";
- 			cpu-idle-states = <&CPU_SLEEP_0>;
- 			#cooling-cells = <2>;
-+			dynamic-power-coefficient = <530>;
- 			clocks = <&infracfg CLK_INFRA_CA72SEL>,
- 				 <&apmixedsys CLK_APMIXED_MAINPLL>;
- 			clock-names = "cpu", "intermediate";
-@@ -196,6 +199,7 @@
- 			enable-method = "psci";
- 			cpu-idle-states = <&CPU_SLEEP_0>;
- 			#cooling-cells = <2>;
-+			dynamic-power-coefficient = <530>;
- 			clocks = <&infracfg CLK_INFRA_CA72SEL>,
- 				 <&apmixedsys CLK_APMIXED_MAINPLL>;
- 			clock-names = "cpu", "intermediate";
 -- 
-2.18.0
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
