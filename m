@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 798B010611D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:54:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3315410612D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:54:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FdSCpikIH5I0AD0O4ktvdc27zlzfM9/Xtq0+BWqKpew=; b=LRebJ1WBMIoYrv
-	l5SovmrXCZwJ+PlrckchzGl+HsLjZHS4wk0sI51Cu12CQ15GjlWk81dzMc5uCOXPmBCVQ846BrTsw
-	y95APrYvpK4uWWJluX3PDP3yNDyNyLViR+zH/6/m6Wcqf/VjoguiPgyN+fqCCNW2LwnrlQSJnFHjx
-	a9v2PdSHdmjyqgANh9xBXnVJkSn/yZEISOaZQ27/KGhW8mmPYy0PM/KcckIzN4YvXh0yLzfAQX69s
-	nzr1/XhaoHLE1C/KbRozW9OVlXKZZ5FeM4mQNvRLpRD6pollJcuP1+qpN70tlWKsUaRMV9IyH7nRQ
-	yRQMhQZc4f2tJcvCHszg==;
+	List-Owner; bh=tL1tL3GZR4czS2pzDsCo/DHQYfRWaZParmmTEFNUjJQ=; b=HvXyJOswHvUMWL
+	7F+8dZY4WMpaSavNogKz3u3czj5D9SxAi0JTVCr1gEGAAWlpyiWDm1mmmAK56Vnl12t4kvAIX1DfB
+	fjRgHKd9AMCER5FREHwPUR416EMzt5x6YDrE/PECE0nP8gQcExXHaLJUHwgqDwkU+yF4E5FJbPL5j
+	dolIha7JPHIJdo7pbL+bYjdIxOOYCRFy2z462n0F3aZB6TjrtTl3EA8amAPa8BhVH6xNkOkEZF6m8
+	fDzTLhxgtb5T5aJSsemWgbKw0YaYDHh5xJiXgYqXPy/3uilvcz3H5TVN15i6sxiQ0vF2uJTBtXeNx
+	ispCgnZNoSMxLoqZ9i6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY1tq-0005j4-7G; Fri, 22 Nov 2019 05:54:34 +0000
+	id 1iY1u2-00060y-OR; Fri, 22 Nov 2019 05:54:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY1p6-0000On-Te
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:49:45 +0000
+ id 1iY1p9-0000Qt-TC
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:49:46 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 748E920718;
- Fri, 22 Nov 2019 05:49:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A8AD02070B;
+ Fri, 22 Nov 2019 05:49:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574401780;
- bh=SX2sF24SxxN0DTRfvAZ+p3qN/yPB1GS57zgjqYDAA+o=;
+ s=default; t=1574401782;
+ bh=MqOdMBcFN7cKpxoPq7s5s29VjuTXuCthvZFz0pCPqiI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Y5YPfQbrgF4CuNiuoCfOAH7TH3cehkxgDJwSShK1FC5R2vmO7UbJv4yDWbpj9joHb
- 8LLmvu4oLgBucIPULJs8ZctV86eSgJCFp3g/0IXRdseRdq1hAgFaPeOsN4U+1DHWEg
- rf4R8xyeZpaFiTM+JMX3+L7u80grqRZmPWg177t0=
+ b=Yb7yVyexYs61jZHaLuaoNUyj6cksjR08vb6qJgFkhWeJUzz4k/Ic4B39I7DdwiKPP
+ Nu642lajGlQM8/v544cPsPwRbLa+Z4HHUAdnDGJd6/1za0m6VubkvasRrGxOxPr8x0
+ lhmsbdQ84Cj78LgIsBB67SFQjELqQSQdrTPy4yk8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 029/219] ARM: OMAP1: fix USB configuration for
- device-only setups
-Date: Fri, 22 Nov 2019 00:46:01 -0500
-Message-Id: <20191122054911.1750-22-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 031/219] arm64: preempt: Fix big-endian when
+ checking preempt count in assembly
+Date: Fri, 22 Nov 2019 00:46:03 -0500
+Message-Id: <20191122054911.1750-24-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191122054911.1750-1-sashal@kernel.org>
 References: <20191122054911.1750-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_214941_053454_02432EBA 
-X-CRM114-Status: GOOD (  11.41  )
+X-CRM114-CacheID: sfid-20191121_214944_097783_4BE92D94 
+X-CRM114-Status: GOOD (  10.70  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,57 +80,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>, Sasha Levin <sashal@kernel.org>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Aaro Koskinen <aaro.koskinen@iki.fi>
+Cc: Sasha Levin <sashal@kernel.org>, "kernelci.org bot" <bot@kernelci.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Will Deacon <will.deacon@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Aaro Koskinen <aaro.koskinen@iki.fi>
+From: Will Deacon <will.deacon@arm.com>
 
-[ Upstream commit c7b7b5cbd0c859b1546a5a3455d457708bdadf4c ]
+[ Upstream commit 7faa313f05cad184e8b17750f0cbe5216ac6debb ]
 
-Currently we do USB configuration only if the host mode (CONFIG_USB)
-is enabled. But it should be done also in the case of device-only setups,
-so change the condition to CONFIG_USB_SUPPORT. This allows to use
-omap_udc on Palm Tungsten E.
+Commit 396244692232 ("arm64: preempt: Provide our own implementation of
+asm/preempt.h") extended the preempt count field in struct thread_info
+to 64 bits, so that it consists of a 32-bit count plus a 32-bit flag
+indicating whether or not the current task needs rescheduling.
 
-Signed-off-by: Aaro Koskinen <aaro.koskinen@iki.fi>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
+Whilst the asm-offsets definition of TSK_TI_PREEMPT was updated to point
+to this new field, the assembly usage was left untouched meaning that a
+32-bit load from TSK_TI_PREEMPT on a big-endian machine actually returns
+the reschedule flag instead of the count.
+
+Whilst we could fix this by pointing TSK_TI_PREEMPT at the count field,
+we're actually better off reworking the two assembly users so that they
+operate on the whole 64-bit value in favour of inspecting the thread
+flags separately in order to determine whether a reschedule is needed.
+
+Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Reported-by: "kernelci.org bot" <bot@kernelci.org>
+Tested-by: Kevin Hilman <khilman@baylibre.com>
+Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/mach-omap1/Makefile           | 2 +-
- arch/arm/mach-omap1/include/mach/usb.h | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/include/asm/assembler.h | 8 +++-----
+ arch/arm64/kernel/entry.S          | 6 ++----
+ 2 files changed, 5 insertions(+), 9 deletions(-)
 
-diff --git a/arch/arm/mach-omap1/Makefile b/arch/arm/mach-omap1/Makefile
-index e8ccf51c6f292..ec0235899de20 100644
---- a/arch/arm/mach-omap1/Makefile
-+++ b/arch/arm/mach-omap1/Makefile
-@@ -25,7 +25,7 @@ obj-y					+= $(i2c-omap-m) $(i2c-omap-y)
+diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+index 5a97ac8531682..0c100506a29aa 100644
+--- a/arch/arm64/include/asm/assembler.h
++++ b/arch/arm64/include/asm/assembler.h
+@@ -683,11 +683,9 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
+ 	.macro		if_will_cond_yield_neon
+ #ifdef CONFIG_PREEMPT
+ 	get_thread_info	x0
+-	ldr		w1, [x0, #TSK_TI_PREEMPT]
+-	ldr		x0, [x0, #TSK_TI_FLAGS]
+-	cmp		w1, #PREEMPT_DISABLE_OFFSET
+-	csel		x0, x0, xzr, eq
+-	tbnz		x0, #TIF_NEED_RESCHED, .Lyield_\@	// needs rescheduling?
++	ldr		x0, [x0, #TSK_TI_PREEMPT]
++	sub		x0, x0, #PREEMPT_DISABLE_OFFSET
++	cbz		x0, .Lyield_\@
+ 	/* fall through to endif_yield_neon */
+ 	.subsection	1
+ .Lyield_\@ :
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 5f800384cb9a8..bb68323530458 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -622,10 +622,8 @@ el1_irq:
+ 	irq_handler
  
- led-y := leds.o
- 
--usb-fs-$(CONFIG_USB)			:= usb.o
-+usb-fs-$(CONFIG_USB_SUPPORT)		:= usb.o
- obj-y					+= $(usb-fs-m) $(usb-fs-y)
- 
- # Specific board support
-diff --git a/arch/arm/mach-omap1/include/mach/usb.h b/arch/arm/mach-omap1/include/mach/usb.h
-index 77867778d4ec7..5429d86c7190d 100644
---- a/arch/arm/mach-omap1/include/mach/usb.h
-+++ b/arch/arm/mach-omap1/include/mach/usb.h
-@@ -11,7 +11,7 @@
- 
- #include <linux/platform_data/usb-omap1.h>
- 
--#if IS_ENABLED(CONFIG_USB)
-+#if IS_ENABLED(CONFIG_USB_SUPPORT)
- void omap1_usb_init(struct omap_usb_config *pdata);
- #else
- static inline void omap1_usb_init(struct omap_usb_config *pdata)
+ #ifdef CONFIG_PREEMPT
+-	ldr	w24, [tsk, #TSK_TI_PREEMPT]	// get preempt count
+-	cbnz	w24, 1f				// preempt count != 0
+-	ldr	x0, [tsk, #TSK_TI_FLAGS]	// get flags
+-	tbz	x0, #TIF_NEED_RESCHED, 1f	// needs rescheduling?
++	ldr	x24, [tsk, #TSK_TI_PREEMPT]	// get preempt count
++	cbnz	x24, 1f				// preempt count != 0
+ 	bl	el1_preempt
+ 1:
+ #endif
 -- 
 2.20.1
 
