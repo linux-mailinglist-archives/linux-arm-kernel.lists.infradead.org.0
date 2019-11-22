@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E655C107837
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 20:49:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D09B10783B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 20:49:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I1raUXaijwNQp82q/RAtAib5GSbP14Oas1bpE/NkH/k=; b=laalN4UUUIKKhV
-	punrlRQu33Lc3wkZw73NqeVgKVTGGLLd/oNQuDLZ7kOkGWX3Jo9zHHY8AK8jPEgBW9dFOq+I/iwTB
-	Xyu7KiAjVj4YE0PfE+8h9EMzwDJE0HtEA8pfJMAuEVpcu3ajR+5eruFF6wVev2/RQzQO8b2w5bDE8
-	18IG5y7tTBgq3mMLSX+TZ1pkj66hAONv7Fy9EJjcp7zTH3IMucUgfihL0uvHsvltQ0Pmz3LmKXyiZ
-	qH5QKUWlty9hM2BRDDvsDZiK+S28R3Lcnui974GHs6HWUl4ltfsrwYjwBAY2D73JXlkiYXwVQS4QL
-	ZoKfOhxtv5+B0RZMD0rA==;
+	List-Owner; bh=bceWixTg/nwTHQdBJEkhY7mRQTPgbTEhGNb++nOuXYI=; b=DQhha3aR9G+SBW
+	sSYYvcCazpLfkqYj8ndLOS1ZOQh02bciEsod8EvKY39FHo4EwdL/nfQ98ZJJyS0rHk0lxjXchILmA
+	KWyPnKq9213WJSoTV/upO6yJQZVPebBmzOYKqIOSgg0HrsylmbzV55GTjxuZO1//RGCsGFlXHu7n4
+	1rr26fIAVLlsFcuHDe4jiYpU9F8AZx1WGfngLggzY/lBSlocAf3Wnq5cmYI+78+VdbRgdIQiKr18K
+	+GzjjNfBHwdDgdRObkt1xcWEWmGLeIcS2JRpK1n9oS8o589qlUasMEnAqUR6dqQnuk3aF+eaoZCmi
+	0hoBgUTejqB4HBZ9KSGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYEvl-0006SA-1x; Fri, 22 Nov 2019 19:49:25 +0000
+	id 1iYEw5-0006gW-Qb; Fri, 22 Nov 2019 19:49:45 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYEvd-0006Qq-0e
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 19:49:18 +0000
+ id 1iYEvq-0006eS-7T
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 19:49:32 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 218CC2071F;
- Fri, 22 Nov 2019 19:49:15 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 14BED2075E;
+ Fri, 22 Nov 2019 19:49:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574452155;
- bh=Mpu/ReJMOFNKMRYs/AEeNTxpA1xP5T5VDaCkFifPux0=;
+ s=default; t=1574452169;
+ bh=HpP0fwt7DW+xzRn4gSMIq4k6WXh/kAPKCD3S6/TGhvU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=d7SYN9Es6UgV4b4imWHsVlUHVg0gLAZXtyX3FCAV9pVQRrtkkXLMlIymcERFG3qTa
- SidkQ78wmYDsEc4OdRYJxEOKg250wv/rqT2UgWrMvnqkZWx91lNqhUnvw9p7LyAdqg
- 93zFFzqRhBIGE3B8UanobHWAcLTfIqAJbUnr/fbw=
+ b=Ku7pegmJHEtVmmky4D9Vf8ib4kabp7c67HiFJwoeQK9s7E6EQguq2chnDoPQjaUWe
+ 29Lot1B239Jgk7Oe7qLgysDzcQMC6xts/NrF2CUpP+hblgi9H0oVaJtD/dkAuUm4al
+ aJWHdlmI83Y7eQ5TQsJI6CNDo/+D20l6+z6u+rPE=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 13/25] drm/sun4i: tcon: Set min division of
- TCON0_DCLK to 1.
-Date: Fri, 22 Nov 2019 14:48:46 -0500
-Message-Id: <20191122194859.24508-13-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 25/25] net: gemini: add missed free_netdev
+Date: Fri, 22 Nov 2019 14:48:58 -0500
+Message-Id: <20191122194859.24508-25-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191122194859.24508-1-sashal@kernel.org>
 References: <20191122194859.24508-1-sashal@kernel.org>
@@ -50,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_114917_076392_449E7E3D 
-X-CRM114-Status: GOOD (  11.67  )
+X-CRM114-CacheID: sfid-20191122_114930_288212_584F607D 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,49 +80,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Yunhao Tian <t123yh@outlook.com>,
- Maxime Ripard <maxime@cerno.tech>, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, Chuhong Yuan <hslester96@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yunhao Tian <t123yh@outlook.com>
+From: Chuhong Yuan <hslester96@gmail.com>
 
-[ Upstream commit 0b8e7bbde5e7e2c419567e1ee29587dae3b78ee3 ]
+[ Upstream commit 18d647ae74116bfee38953978501cea2960a0c25 ]
 
-The datasheet of V3s (and various other chips) wrote
-that TCON0_DCLK_DIV can be >= 1 if only dclk is used,
-and must >= 6 if dclk1 or dclk2 is used. As currently
-neither dclk1 nor dclk2 is used (no writes to these
-bits), let's set minimal division to 1.
+This driver forgets to free allocated netdev in remove like
+what is done in probe failure.
+Add the free to fix it.
 
-If this minimal division is 6, some common dot clock
-frequencies can't be produced (e.g. 30MHz will not be
-possible and will fallback to 25MHz), which is
-obviously not an expected behaviour.
-
-Signed-off-by: Yunhao Tian <t123yh@outlook.com>
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-Link: https://lore.kernel.org/linux-arm-kernel/MN2PR08MB57905AD8A00C08DA219377C989760@MN2PR08MB5790.namprd08.prod.outlook.com/
+Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/sun4i/sun4i_tcon.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/ethernet/cortina/gemini.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-index 8c31c9ab06f8b..fda1ae12069a7 100644
---- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-+++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-@@ -423,7 +423,7 @@ static void sun4i_tcon0_mode_set_rgb(struct sun4i_tcon *tcon,
+diff --git a/drivers/net/ethernet/cortina/gemini.c b/drivers/net/ethernet/cortina/gemini.c
+index dfd1ad0b1cb94..4af78de0e077a 100644
+--- a/drivers/net/ethernet/cortina/gemini.c
++++ b/drivers/net/ethernet/cortina/gemini.c
+@@ -2530,6 +2530,7 @@ static int gemini_ethernet_port_remove(struct platform_device *pdev)
+ 	struct gemini_ethernet_port *port = platform_get_drvdata(pdev);
  
- 	WARN_ON(!tcon->quirks->has_channel_0);
- 
--	tcon->dclk_min_div = 6;
-+	tcon->dclk_min_div = 1;
- 	tcon->dclk_max_div = 127;
- 	sun4i_tcon0_mode_set_common(tcon, mode);
+ 	gemini_port_remove(port);
++	free_netdev(port->netdev);
+ 	return 0;
+ }
  
 -- 
 2.20.1
