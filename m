@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C1BD106E07
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 12:05:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 851BF106E0F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 12:05:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t9oa7Tf5GWSRtsz39aaTFBas75xzkob3zeOli4dBy/I=; b=E2BgCXAlhKTCH8
-	KyUdIrtGJoyldb9ESAfxBCRQc0gu40y1NGqEwzyi6Knu+M8PZwQYW9U2HtepYCwM1lZXi8wP53WVc
-	sYGbSz3Vrx+MXuxolJ0w3sEQuwS8fVM9w0ID5VlExpXjMTYSSz9KXc5h9SXaVL8Bg8POeNPjRf075
-	aRMXyQMiYdDU6js0UnwTGMY9MwT9emTXAOQLjdJ1af0Lr8Juxl2bY5eQg2tLbTvVby2yGmZeTguwY
-	u0ReGb0IKu7MfCrl0xrkI2ME+0XNhSs6uMnRTgyXnpOiNhFW8WM8DiofsTiyb3vhKC7KARk+OoqON
-	iNinYPxeZpG9PNEHDWJA==;
+	List-Owner; bh=8WJONtz/jbU6MrSPdEyikJUVuf3z6mvTYPRfkBpn8KM=; b=DZusbyKHanHRvL
+	oEWCeXKznNhuHOQ/g2EPR3EAD2sqN1yzbnEJNeDYlAnHeQ4UTr0riApB6gtOqa1doouChwpG8f4DW
+	S9uMlZR6qx/HfeT3fDmniU7qc2l4gml8BnmGf6P69OwJvysE7IIxD+F5TaZ2lGCIwPZ6fZPglfqkp
+	uIIv2Fkk2rcSwtZEWoSTct6GI0pMaME2+Wz3mGJMe4P96GW99i9s9Rf8vjI1bSjExvIFaFDL9/9aR
+	RSfklcX2Z9y8W4izq1m5VT6wcY/zGbdvOEGv8tyVzpsStzGroNkUc62arsUF6fqCWcZlJGxZSID5b
+	ZTDMFZ2qZwa5A7nicVvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY6kh-0000Eh-V8; Fri, 22 Nov 2019 11:05:27 +0000
+	id 1iY6l2-0001WS-Mc; Fri, 22 Nov 2019 11:05:48 +0000
 Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY6k9-0008B4-IR
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 11:05:00 +0000
+ id 1iY6kp-0001U8-BE
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 11:05:36 +0000
 Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
  by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
- id 1iY6k3-0004dS-9n; Fri, 22 Nov 2019 19:04:47 +0800
+ id 1iY6kj-0004hU-NU; Fri, 22 Nov 2019 19:05:29 +0800
 Received: from herbert by gondobar with local (Exim 4.89)
  (envelope-from <herbert@gondor.apana.org.au>)
- id 1iY6k2-0002gT-BV; Fri, 22 Nov 2019 19:04:46 +0800
-Date: Fri, 22 Nov 2019 19:04:46 +0800
+ id 1iY6kj-0002h0-Iw; Fri, 22 Nov 2019 19:05:29 +0800
+Date: Fri, 22 Nov 2019 19:05:29 +0800
 From: Herbert Xu <herbert@gondor.apana.org.au>
 To: Sami Tolvanen <samitolvanen@google.com>
 Subject: Re: [PATCH v3] crypto: arm64/sha: fix function types
-Message-ID: <20191122110446.wjuyo5b5i3ebqbsd@gondor.apana.org.au>
+Message-ID: <20191122110529.um7wyexxlmp5l6ac@gondor.apana.org.au>
 References: <20191112223046.176097-1-samitolvanen@google.com>
  <20191119201353.2589-1-samitolvanen@google.com>
+ <20191122110446.wjuyo5b5i3ebqbsd@gondor.apana.org.au>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191119201353.2589-1-samitolvanen@google.com>
+In-Reply-To: <20191122110446.wjuyo5b5i3ebqbsd@gondor.apana.org.au>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_030453_968821_080B7598 
-X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-CacheID: sfid-20191122_030535_533884_509E63AB 
+X-CRM114-Status: UNSURE (   9.73  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,30 +72,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 19, 2019 at 12:13:53PM -0800, Sami Tolvanen wrote:
-> Instead of casting pointers to callback functions, add C wrappers
-> to avoid type mismatch failures with Control-Flow Integrity (CFI)
-> checking.
+On Fri, Nov 22, 2019 at 07:04:46PM +0800, Herbert Xu wrote:
+> On Tue, Nov 19, 2019 at 12:13:53PM -0800, Sami Tolvanen wrote:
+> > Instead of casting pointers to callback functions, add C wrappers
+> > to avoid type mismatch failures with Control-Flow Integrity (CFI)
+> > checking.
+> > 
+> > Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> > Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+> > ---
+> > Changes in v3:
+> >   - Removed unnecessary inline attributes.
+> > 
+> > Changes in v2:
+> >   - Added wrapper functions instead of changing parameter types
+> >     for the assembly functions.
+> > 
+> > ---
+> >  arch/arm64/crypto/sha1-ce-glue.c   | 17 +++++++++------
+> >  arch/arm64/crypto/sha2-ce-glue.c   | 34 ++++++++++++++++++------------
+> >  arch/arm64/crypto/sha256-glue.c    | 32 +++++++++++++++++-----------
+> >  arch/arm64/crypto/sha512-ce-glue.c | 26 ++++++++++++-----------
+> >  arch/arm64/crypto/sha512-glue.c    | 15 ++++++++-----
+> >  5 files changed, 76 insertions(+), 48 deletions(-)
 > 
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
-> ---
-> Changes in v3:
->   - Removed unnecessary inline attributes.
-> 
-> Changes in v2:
->   - Added wrapper functions instead of changing parameter types
->     for the assembly functions.
-> 
-> ---
->  arch/arm64/crypto/sha1-ce-glue.c   | 17 +++++++++------
->  arch/arm64/crypto/sha2-ce-glue.c   | 34 ++++++++++++++++++------------
->  arch/arm64/crypto/sha256-glue.c    | 32 +++++++++++++++++-----------
->  arch/arm64/crypto/sha512-ce-glue.c | 26 ++++++++++++-----------
->  arch/arm64/crypto/sha512-glue.c    | 15 ++++++++-----
->  5 files changed, 76 insertions(+), 48 deletions(-)
+> Patch applied.  Thanks.
 
-Patch applied.  Thanks.
+Scratch that.  This patch is still in the queue.
 -- 
 Email: Herbert Xu <herbert@gondor.apana.org.au>
 Home Page: http://gondor.apana.org.au/~herbert/
