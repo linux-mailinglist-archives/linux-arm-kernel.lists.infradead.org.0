@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2027E1060C4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:52:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43A8D1060F0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:53:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jKwEG3ghcNnRHhYpW9ZypwhxbjTMI4/vCoYBSvwmD20=; b=Q3TCWiIO43CaNq
-	hcYL3G9hOZjb5uomWMdEc9Lz+tczUoSPj8gdx8WYarLihG8Xcc2Nza3hTfOYQlp1+bGZnbCdz/AW8
-	KtUfTvYbhcKGLomt7rg+oT8njT9nIejC3PD27dtsLE2nYLr1Er0iNtOTnDGi2PtjlYZl6tK3SM3Qy
-	bpKPvddVVKoCM98sd/RzmcrvGdzYyfpJPPATP2MJitmcn8Jc0pT95HnI8Hr2P+SDEf6LEieuNiwwU
-	QFE+VDWwxD3ifP8E40O5JgdgCxU0M2RCJGXbVNlQ9VTzCJOkZDBYz4jNhjY91/TmFHll1FftEYFA0
-	rflw/tYuAXHyOPa4rxAA==;
+	List-Owner; bh=bI3emsS8qF1wXjV8+rBW+OSoHeftIURfHhG2uO32aq4=; b=a77qyou06Y1Qos
+	1XMrUne3Qx9R9K+ccPlSaLJjJRWIhhDZE1NugWLoZ4gHLv0srJP9bMcFCl6kJWT86SiU5p2twDT3e
+	QEarQkGbxPYX9ZGHAOHranTop5Z8mLpjx3G7h+liganepKAIdm9Vi4IcFOzD4LIQLJPpd1ResQOFs
+	5wTy29btArMkhQv9JAXs5t4BtXC3YTPvK3lw7hTtWcZn4dmiHJBjghWTXs9RZ6Yoh36p2IfyF7RTr
+	xuikZjfkV0WnpNIWkRIM03CJbVMZeSCQJdRrSbdFXSBIzhcK0RtVVnIlYTSqKaHzwv03ZGrrQmDSq
+	xg/sXrwB3bQTcdAk1LGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY1ry-0003rB-6r; Fri, 22 Nov 2019 05:52:38 +0000
+	id 1iY1si-0004Zd-NP; Fri, 22 Nov 2019 05:53:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY1ov-0000FJ-KP
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:49:31 +0000
+ id 1iY1ox-0000Gf-3r
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:49:32 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 11FB12071F;
- Fri, 22 Nov 2019 05:49:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 687A520708;
+ Fri, 22 Nov 2019 05:49:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574401768;
- bh=//48Y0e+TnSjcWbypK13uBxiX7dydB+93cLmWpdG+a8=;
+ s=default; t=1574401770;
+ bh=qQ7ADBan6Cki+gjs7P4HZzdhbGN9+BaZSrq2OioHsOM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=M+O4cnIUMktUkwbl7VL3x0Jhp6A2C4sVuZZkRBh4OcHdvS1R7uJMVyLzpvdv1PoTs
- 77TceYoqwJhz6zNyNbxjshO5vktczrAhXiHyOTbZZupL/AbUbtVvNl2U83wIIe3cN8
- 42ae8WZ2KLIQUyfRjnxrts2yVeVzvVh6dy6Dwe6Y=
+ b=AAC2D9KwWCUTGj1dyd9bAjUSGwj5FPq7o5XeZxMCdogUJBsVfKXnpuHyO850RMexI
+ 9e10g1sCRTiMzwZmeMxvm8t5wsYaBG9/TBtCycVmM+lut1z78Xq0569ptBST9sc6Gk
+ uyFJ+kFWJLylDm2ztTlO6CY5lImsk0amJMWt+JnA=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 019/219] ARM: dts: imx27: Fix memory node
+Subject: [PATCH AUTOSEL 4.19 020/219] ARM: dts: imx25: Fix memory node
  duplication
-Date: Fri, 22 Nov 2019 00:45:51 -0500
-Message-Id: <20191122054911.1750-12-sashal@kernel.org>
+Date: Fri, 22 Nov 2019 00:45:52 -0500
+Message-Id: <20191122054911.1750-13-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191122054911.1750-1-sashal@kernel.org>
 References: <20191122054911.1750-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_214929_845891_8AC3429B 
-X-CRM114-Status: GOOD (  11.67  )
+X-CRM114-CacheID: sfid-20191121_214931_222456_74CFD1D4 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,13 +90,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Fabio Estevam <festevam@gmail.com>
 
-[ Upstream commit 38715dcd49b4430ac5b6bc1293278d91a4d32bd5 ]
+[ Upstream commit 59d8bb363f563e4a147a291037bf979cb8ff9a59 ]
 
-Boards based on imx27 have duplicate memory nodes:
+Boards based on imx25 have duplicate memory nodes:
 
 - One coming from the board dts file: memory@
 
-- One coming from the imx27.dtsi file.
+- One coming from the imx25.dtsi file.
 
 Fix the duplication by removing the memory node from the dtsi file
 and by adding 'device_type = "memory";' in the board dts.
@@ -106,79 +106,53 @@ Signed-off-by: Fabio Estevam <festevam@gmail.com>
 Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/imx27-apf27.dts                 | 1 +
- arch/arm/boot/dts/imx27-eukrea-cpuimx27.dtsi      | 1 +
- arch/arm/boot/dts/imx27-pdk.dts                   | 1 +
- arch/arm/boot/dts/imx27-phytec-phycard-s-som.dtsi | 1 +
- arch/arm/boot/dts/imx27-phytec-phycore-som.dtsi   | 1 +
- arch/arm/boot/dts/imx27.dtsi                      | 2 --
- 6 files changed, 5 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/imx25-eukrea-cpuimx25.dtsi | 1 +
+ arch/arm/boot/dts/imx25-karo-tx25.dts        | 1 +
+ arch/arm/boot/dts/imx25-pdk.dts              | 1 +
+ arch/arm/boot/dts/imx25.dtsi                 | 2 --
+ 4 files changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx27-apf27.dts b/arch/arm/boot/dts/imx27-apf27.dts
-index 3eddd805a793a..f635d5c5029c4 100644
---- a/arch/arm/boot/dts/imx27-apf27.dts
-+++ b/arch/arm/boot/dts/imx27-apf27.dts
-@@ -20,6 +20,7 @@
- 	compatible = "armadeus,imx27-apf27", "fsl,imx27";
- 
- 	memory@a0000000 {
-+		device_type = "memory";
- 		reg = <0xa0000000 0x04000000>;
- 	};
- };
-diff --git a/arch/arm/boot/dts/imx27-eukrea-cpuimx27.dtsi b/arch/arm/boot/dts/imx27-eukrea-cpuimx27.dtsi
-index 9c455dcbe6ebf..c85f9d01768a1 100644
---- a/arch/arm/boot/dts/imx27-eukrea-cpuimx27.dtsi
-+++ b/arch/arm/boot/dts/imx27-eukrea-cpuimx27.dtsi
-@@ -17,6 +17,7 @@
- 	compatible = "eukrea,cpuimx27", "fsl,imx27";
- 
- 	memory@a0000000 {
-+		device_type = "memory";
- 		reg = <0xa0000000 0x04000000>;
- 	};
- 
-diff --git a/arch/arm/boot/dts/imx27-pdk.dts b/arch/arm/boot/dts/imx27-pdk.dts
-index f9a882d991329..35123b7cb6b3e 100644
---- a/arch/arm/boot/dts/imx27-pdk.dts
-+++ b/arch/arm/boot/dts/imx27-pdk.dts
-@@ -10,6 +10,7 @@
- 	compatible = "fsl,imx27-pdk", "fsl,imx27";
- 
- 	memory@a0000000 {
-+		device_type = "memory";
- 		reg = <0xa0000000 0x08000000>;
- 	};
- 
-diff --git a/arch/arm/boot/dts/imx27-phytec-phycard-s-som.dtsi b/arch/arm/boot/dts/imx27-phytec-phycard-s-som.dtsi
-index cbad7c88c58cc..b0b4f7c00246d 100644
---- a/arch/arm/boot/dts/imx27-phytec-phycard-s-som.dtsi
-+++ b/arch/arm/boot/dts/imx27-phytec-phycard-s-som.dtsi
+diff --git a/arch/arm/boot/dts/imx25-eukrea-cpuimx25.dtsi b/arch/arm/boot/dts/imx25-eukrea-cpuimx25.dtsi
+index e316fe08837a3..e4d7da267532d 100644
+--- a/arch/arm/boot/dts/imx25-eukrea-cpuimx25.dtsi
++++ b/arch/arm/boot/dts/imx25-eukrea-cpuimx25.dtsi
 @@ -18,6 +18,7 @@
- 	compatible = "phytec,imx27-pca100", "fsl,imx27";
+ 	compatible = "eukrea,cpuimx25", "fsl,imx25";
  
- 	memory@a0000000 {
+ 	memory@80000000 {
 +		device_type = "memory";
- 		reg = <0xa0000000 0x08000000>; /* 128MB */
+ 		reg = <0x80000000 0x4000000>; /* 64M */
  	};
  };
-diff --git a/arch/arm/boot/dts/imx27-phytec-phycore-som.dtsi b/arch/arm/boot/dts/imx27-phytec-phycore-som.dtsi
-index ec466b4bfd410..0935e1400e5d2 100644
---- a/arch/arm/boot/dts/imx27-phytec-phycore-som.dtsi
-+++ b/arch/arm/boot/dts/imx27-phytec-phycore-som.dtsi
-@@ -17,6 +17,7 @@
- 	compatible = "phytec,imx27-pcm038", "fsl,imx27";
- 
- 	memory@a0000000 {
-+		device_type = "memory";
- 		reg = <0xa0000000 0x08000000>;
+diff --git a/arch/arm/boot/dts/imx25-karo-tx25.dts b/arch/arm/boot/dts/imx25-karo-tx25.dts
+index 5cb6967866c0a..f37e9a75a3ca7 100644
+--- a/arch/arm/boot/dts/imx25-karo-tx25.dts
++++ b/arch/arm/boot/dts/imx25-karo-tx25.dts
+@@ -37,6 +37,7 @@
  	};
  
-diff --git a/arch/arm/boot/dts/imx27.dtsi b/arch/arm/boot/dts/imx27.dtsi
-index 753d88df16274..39e75b997bdc8 100644
---- a/arch/arm/boot/dts/imx27.dtsi
-+++ b/arch/arm/boot/dts/imx27.dtsi
-@@ -16,10 +16,8 @@
+ 	memory@80000000 {
++		device_type = "memory";
+ 		reg = <0x80000000 0x02000000 0x90000000 0x02000000>;
+ 	};
+ };
+diff --git a/arch/arm/boot/dts/imx25-pdk.dts b/arch/arm/boot/dts/imx25-pdk.dts
+index a5626b46ac4e1..f8544a9e46330 100644
+--- a/arch/arm/boot/dts/imx25-pdk.dts
++++ b/arch/arm/boot/dts/imx25-pdk.dts
+@@ -12,6 +12,7 @@
+ 	compatible = "fsl,imx25-pdk", "fsl,imx25";
+ 
+ 	memory@80000000 {
++		device_type = "memory";
+ 		reg = <0x80000000 0x4000000>;
+ 	};
+ 
+diff --git a/arch/arm/boot/dts/imx25.dtsi b/arch/arm/boot/dts/imx25.dtsi
+index 85c15ee632727..8c8ad80de4614 100644
+--- a/arch/arm/boot/dts/imx25.dtsi
++++ b/arch/arm/boot/dts/imx25.dtsi
+@@ -12,10 +12,8 @@
  	 * The decompressor and also some bootloaders rely on a
  	 * pre-existing /chosen node to be available to insert the
  	 * command line and merge other ATAGS info.
