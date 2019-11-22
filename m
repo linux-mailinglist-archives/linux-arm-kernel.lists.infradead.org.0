@@ -2,54 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B86DE107917
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 20:55:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D96CF107922
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 20:59:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=YONKMMLX6zIcm9fuGzVz2OTeIo44/qoae3Fysk6GX2Y=; b=Z1v
-	FIi4aWwwX27TM39qZto3VMuCarAPj5e9MK2FBiroAZxpONlaVLByegGRmnYq1cuQ77Rf+6yEH3Bv8
-	2PiNne1ye35Y1O8AvDg2TjopECzo/sP9sJCoGNxcaCxlFhYjVAP9g6ORjgypLRLwx3UL/mtHj9SCI
-	j4KujJwn7q0aZEjtkgTFMAgJsTyRXXJAsBExrQqxN2qnXenZZcqWWxJYQrJsjZDkdmwtJGegWFp/S
-	PJ/32zDLGBCdoFLs8P3H39Gy9tmXceaOrhoxFFa5OOm0J1JCuUcZ5iPmo5a70x9xNNI4UGixVT51V
-	Wjos+dZHQg0jD8hRlqDNaboq4SezmPw==;
+	List-Owner; bh=EtYKaRhkXX+qJsonwxsB0UCb1D5jRqTbGXXn8PKQsfk=; b=RhTObMUfGlzMDE
+	XyqgUnkrrjq42SYv0QEbUdYqEwUMZgr9wA7ieELYLqt57CdHhbo+a9zGWuA5nxYXuaCV5jiZ763FR
+	MIj+FrwmJBcduvIZnWmLRIZ/xixTigplIyUAy2mevX/E8ix0srGUZ3z3C5NoO6S1TOAQIpGbHaDe/
+	GmhNDN7GYDZksHqxmjTFC5lP6ILvYsmAchD1Gd+dVbfj4Y8DXvKaVRDNe2y5sOSAGwvex/N/zyxuG
+	kR/KMQycjp1WIPTx408Z7K9L1wtOUO+kwGuw53Lps52CljlkwGlmVN9iMLCkbPko4oLYWlpBtNMOV
+	imI1378YFW6BDSrljMjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYF24-0002WF-CK; Fri, 22 Nov 2019 19:55:56 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYF1u-0002VB-Lc
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 19:55:48 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CE56113E;
- Fri, 22 Nov 2019 11:55:43 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1A5BF3F6C4;
- Fri, 22 Nov 2019 11:55:42 -0800 (PST)
-Date: Fri, 22 Nov 2019 19:55:41 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: Applied "dt-bindings: spi: Convert stm32 QSPI bindings to
- json-schema" to the spi tree
-In-Reply-To: <20191120194444.10540-1-benjamin.gaignard@st.com>
-Message-Id: <applied-20191120194444.10540-1-benjamin.gaignard@st.com>
-X-Patchwork-Hint: ignore
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+	id 1iYF5h-0003C4-7g; Fri, 22 Nov 2019 19:59:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iYF5X-0003Bk-V3
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 19:59:33 +0000
+Received: from localhost (c-67-164-102-47.hsd1.ca.comcast.net [67.164.102.47])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 257CD20704;
+ Fri, 22 Nov 2019 19:59:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574452771;
+ bh=CuVuqLAFq+91+XI1syQAK8SoTKh5EKVG19Bm0nXqz6E=;
+ h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+ b=g5MAeRzpM1Xl64PGuBdI0c+qk+7bFJiLqssQ7I8du3IF73Y42nBDy/LdXSuIGue2D
+ Ng06Q1UnkbqaSEPSjRzpe9zHCgwTMQ+tbphRu2R24S0JPm3zNVoIlw6cZjZbwXMTP9
+ C67z5KO+jMWiXW6eA80zDm60iXci0SqFVhxiaii0=
+Date: Fri, 22 Nov 2019 11:59:29 -0800 (PST)
+From: Stefano Stabellini <sstabellini@kernel.org>
+X-X-Sender: sstabellini@sstabellini-ThinkPad-T480s
+To: Pavel Tatashin <pasha.tatashin@soleen.com>
+Subject: Re: [PATCH v2 1/3] arm/arm64/xen: use C inlines for privcmd_call
+In-Reply-To: <20191122022406.590141-2-pasha.tatashin@soleen.com>
+Message-ID: <alpine.DEB.2.21.1911221159160.11302@sstabellini-ThinkPad-T480s>
+References: <20191122022406.590141-1-pasha.tatashin@soleen.com>
+ <20191122022406.590141-2-pasha.tatashin@soleen.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_115546_791355_8FBFB04A 
-X-CRM114-Status: GOOD (  18.30  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191122_115932_042198_2BA1C9D8 
+X-CRM114-Status: GOOD (  17.88  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,206 +77,214 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-spi@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, stefan@agner.ch,
+ linux@armlinux.org.uk, yamada.masahiro@socionext.com, will@kernel.org,
+ boris.ostrovsky@oracle.com, sashal@kernel.org, sstabellini@kernel.org,
+ jmorris@namei.org, linux-arm-kernel@lists.infradead.org,
+ xen-devel@lists.xenproject.org, vladimir.murzin@arm.com, marc.zyngier@arm.com,
+ alexios.zavras@intel.com, tglx@linutronix.de, allison@lohutok.net,
+ jgross@suse.com, steve.capper@arm.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, james.morse@arm.com, info@metux.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+On Thu, 21 Nov 2019, Pavel Tatashin wrote:
+> privcmd_call requires to enable access to userspace for the
+> duration of the hypercall.
+> 
+> Currently, this is done via assembly macros. Change it to C
+> inlines instead.
+> 
+> Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 
-   dt-bindings: spi: Convert stm32 QSPI bindings to json-schema
+I am OK with this.
 
-has been applied to the spi tree at
+Acked-by: Stefano Stabellini <sstabellini@kernel.org>
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.5
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From ffa119f7c42d29be2dd759bb18cc4d1f45804c6b Mon Sep 17 00:00:00 2001
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
-Date: Wed, 20 Nov 2019 20:44:44 +0100
-Subject: [PATCH] dt-bindings: spi: Convert stm32 QSPI bindings to json-schema
-
-Convert the STM32 QSPI binding to DT schema format using json-schema
-
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Link: https://lore.kernel.org/r/20191120194444.10540-1-benjamin.gaignard@st.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- .../bindings/spi/spi-stm32-qspi.txt           | 47 -----------
- .../bindings/spi/st,stm32-qspi.yaml           | 83 +++++++++++++++++++
- 2 files changed, 83 insertions(+), 47 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/spi/spi-stm32-qspi.txt
- create mode 100644 Documentation/devicetree/bindings/spi/st,stm32-qspi.yaml
-
-diff --git a/Documentation/devicetree/bindings/spi/spi-stm32-qspi.txt b/Documentation/devicetree/bindings/spi/spi-stm32-qspi.txt
-deleted file mode 100644
-index bfc038b9478d..000000000000
---- a/Documentation/devicetree/bindings/spi/spi-stm32-qspi.txt
-+++ /dev/null
-@@ -1,47 +0,0 @@
--* STMicroelectronics Quad Serial Peripheral Interface(QSPI)
--
--Required properties:
--- compatible: should be "st,stm32f469-qspi"
--- reg: the first contains the register location and length.
--       the second contains the memory mapping address and length
--- reg-names: should contain the reg names "qspi" "qspi_mm"
--- interrupts: should contain the interrupt for the device
--- clocks: the phandle of the clock needed by the QSPI controller
--- A pinctrl must be defined to set pins in mode of operation for QSPI transfer
--
--Optional properties:
--- resets: must contain the phandle to the reset controller.
--
--A spi flash (NOR/NAND) must be a child of spi node and could have some
--properties. Also see jedec,spi-nor.txt.
--
--Required properties:
--- reg: chip-Select number (QSPI controller may connect 2 flashes)
--- spi-max-frequency: max frequency of spi bus
--
--Optional properties:
--- spi-rx-bus-width: see ./spi-bus.txt for the description
--- dmas: DMA specifiers for tx and rx dma. See the DMA client binding,
--Documentation/devicetree/bindings/dma/dma.txt.
--- dma-names: DMA request names should include "tx" and "rx" if present.
--
--Example:
--
--qspi: spi@a0001000 {
--	compatible = "st,stm32f469-qspi";
--	reg = <0xa0001000 0x1000>, <0x90000000 0x10000000>;
--	reg-names = "qspi", "qspi_mm";
--	interrupts = <91>;
--	resets = <&rcc STM32F4_AHB3_RESET(QSPI)>;
--	clocks = <&rcc 0 STM32F4_AHB3_CLOCK(QSPI)>;
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_qspi0>;
--
--	flash@0 {
--		compatible = "jedec,spi-nor";
--		reg = <0>;
--		spi-rx-bus-width = <4>;
--		spi-max-frequency = <108000000>;
--		...
--	};
--};
-diff --git a/Documentation/devicetree/bindings/spi/st,stm32-qspi.yaml b/Documentation/devicetree/bindings/spi/st,stm32-qspi.yaml
-new file mode 100644
-index 000000000000..3665a5fe6b7f
---- /dev/null
-+++ b/Documentation/devicetree/bindings/spi/st,stm32-qspi.yaml
-@@ -0,0 +1,83 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/spi/st,stm32-qspi.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: STMicroelectronics STM32 Quad Serial Peripheral Interface (QSPI) bindings
-+
-+maintainers:
-+  - Christophe Kerello <christophe.kerello@st.com>
-+  - Patrice Chotard <patrice.chotard@st.com>
-+
-+allOf:
-+  - $ref: "spi-controller.yaml#"
-+
-+properties:
-+  compatible:
-+    const: st,stm32f469-qspi
-+
-+  reg:
-+    items:
-+      - description: registers
-+      - description: memory mapping
-+
-+  reg-names:
-+    items:
-+     - const: qspi
-+     - const: qspi_mm
-+
-+  clocks:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  resets:
-+    maxItems: 1
-+
-+  dmas:
-+    items:
-+      - description: tx DMA channel
-+      - description: rx DMA channel
-+
-+  dma-names:
-+    items:
-+      - const: tx
-+      - const: rx
-+
-+required:
-+  - compatible
-+  - reg
-+  - reg-names
-+  - clocks
-+  - interrupts
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/stm32mp1-clks.h>
-+    #include <dt-bindings/reset/stm32mp1-resets.h>
-+    spi@58003000 {
-+      compatible = "st,stm32f469-qspi";
-+      reg = <0x58003000 0x1000>, <0x70000000 0x10000000>;
-+      reg-names = "qspi", "qspi_mm";
-+      interrupts = <GIC_SPI 92 IRQ_TYPE_LEVEL_HIGH>;
-+      dmas = <&mdma1 22 0x10 0x100002 0x0 0x0>,
-+             <&mdma1 22 0x10 0x100008 0x0 0x0>;
-+      dma-names = "tx", "rx";
-+      clocks = <&rcc QSPI_K>;
-+      resets = <&rcc QSPI_R>;
-+
-+      #address-cells = <1>;
-+      #size-cells = <0>;
-+
-+      flash@0 {
-+        compatible = "jedec,spi-nor";
-+        reg = <0>;
-+        spi-rx-bus-width = <4>;
-+        spi-max-frequency = <108000000>;
-+      };
-+    };
-+
-+...
--- 
-2.20.1
-
+> ---
+>  arch/arm/include/asm/assembler.h       |  2 +-
+>  arch/arm/include/asm/xen/hypercall.h   | 10 +++++++++
+>  arch/arm/xen/enlighten.c               |  2 +-
+>  arch/arm/xen/hypercall.S               |  4 ++--
+>  arch/arm64/include/asm/xen/hypercall.h | 28 ++++++++++++++++++++++++++
+>  arch/arm64/xen/hypercall.S             | 19 ++---------------
+>  include/xen/arm/hypercall.h            | 12 +++++------
+>  7 files changed, 50 insertions(+), 27 deletions(-)
+> 
+> diff --git a/arch/arm/include/asm/assembler.h b/arch/arm/include/asm/assembler.h
+> index 99929122dad7..8e9262a0f016 100644
+> --- a/arch/arm/include/asm/assembler.h
+> +++ b/arch/arm/include/asm/assembler.h
+> @@ -480,7 +480,7 @@ THUMB(	orr	\reg , \reg , #PSR_T_BIT	)
+>  	.macro	uaccess_disable, tmp, isb=1
+>  #ifdef CONFIG_CPU_SW_DOMAIN_PAN
+>  	/*
+> -	 * Whenever we re-enter userspace, the domains should always be
+> +	 * Whenever we re-enter kernel, the domains should always be
+>  	 * set appropriately.
+>  	 */
+>  	mov	\tmp, #DACR_UACCESS_DISABLE
+> diff --git a/arch/arm/include/asm/xen/hypercall.h b/arch/arm/include/asm/xen/hypercall.h
+> index 3522cbaed316..cac5bd9ef519 100644
+> --- a/arch/arm/include/asm/xen/hypercall.h
+> +++ b/arch/arm/include/asm/xen/hypercall.h
+> @@ -1 +1,11 @@
+> +#ifndef _ASM_ARM_XEN_HYPERCALL_H
+> +#define _ASM_ARM_XEN_HYPERCALL_H
+>  #include <xen/arm/hypercall.h>
+> +
+> +static inline long privcmd_call(unsigned int call, unsigned long a1,
+> +				unsigned long a2, unsigned long a3,
+> +				unsigned long a4, unsigned long a5)
+> +{
+> +	return arch_privcmd_call(call, a1, a2, a3, a4, a5);
+> +}
+> +#endif /* _ASM_ARM_XEN_HYPERCALL_H */
+> diff --git a/arch/arm/xen/enlighten.c b/arch/arm/xen/enlighten.c
+> index dd6804a64f1a..e87280c6d25d 100644
+> --- a/arch/arm/xen/enlighten.c
+> +++ b/arch/arm/xen/enlighten.c
+> @@ -440,4 +440,4 @@ EXPORT_SYMBOL_GPL(HYPERVISOR_platform_op_raw);
+>  EXPORT_SYMBOL_GPL(HYPERVISOR_multicall);
+>  EXPORT_SYMBOL_GPL(HYPERVISOR_vm_assist);
+>  EXPORT_SYMBOL_GPL(HYPERVISOR_dm_op);
+> -EXPORT_SYMBOL_GPL(privcmd_call);
+> +EXPORT_SYMBOL_GPL(arch_privcmd_call);
+> diff --git a/arch/arm/xen/hypercall.S b/arch/arm/xen/hypercall.S
+> index b11bba542fac..277078c7da49 100644
+> --- a/arch/arm/xen/hypercall.S
+> +++ b/arch/arm/xen/hypercall.S
+> @@ -94,7 +94,7 @@ HYPERCALL2(multicall);
+>  HYPERCALL2(vm_assist);
+>  HYPERCALL3(dm_op);
+>  
+> -ENTRY(privcmd_call)
+> +ENTRY(arch_privcmd_call)
+>  	stmdb sp!, {r4}
+>  	mov r12, r0
+>  	mov r0, r1
+> @@ -119,4 +119,4 @@ ENTRY(privcmd_call)
+>  
+>  	ldm sp!, {r4}
+>  	ret lr
+> -ENDPROC(privcmd_call);
+> +ENDPROC(arch_privcmd_call);
+> diff --git a/arch/arm64/include/asm/xen/hypercall.h b/arch/arm64/include/asm/xen/hypercall.h
+> index 3522cbaed316..1a74fb28607f 100644
+> --- a/arch/arm64/include/asm/xen/hypercall.h
+> +++ b/arch/arm64/include/asm/xen/hypercall.h
+> @@ -1 +1,29 @@
+> +#ifndef _ASM_ARM64_XEN_HYPERCALL_H
+> +#define _ASM_ARM64_XEN_HYPERCALL_H
+>  #include <xen/arm/hypercall.h>
+> +#include <linux/uaccess.h>
+> +
+> +static inline long privcmd_call(unsigned int call, unsigned long a1,
+> +				unsigned long a2, unsigned long a3,
+> +				unsigned long a4, unsigned long a5)
+> +{
+> +	long rv;
+> +
+> +	/*
+> +	 * Privcmd calls are issued by the userspace. The kernel needs to
+> +	 * enable access to TTBR0_EL1 as the hypervisor would issue stage 1
+> +	 * translations to user memory via AT instructions. Since AT
+> +	 * instructions are not affected by the PAN bit (ARMv8.1), we only
+> +	 * need the explicit uaccess_enable/disable if the TTBR0 PAN emulation
+> +	 * is enabled (it implies that hardware UAO and PAN disabled).
+> +	 */
+> +	uaccess_ttbr0_enable();
+> +	rv = arch_privcmd_call(call, a1, a2, a3, a4, a5);
+> +	/*
+> +	 * Disable userspace access from kernel once the hyp call completed.
+> +	 */
+> +	uaccess_ttbr0_disable();
+> +
+> +	return rv;
+> +}
+> +#endif /* _ASM_ARM64_XEN_HYPERCALL_H */
+> diff --git a/arch/arm64/xen/hypercall.S b/arch/arm64/xen/hypercall.S
+> index c5f05c4a4d00..921611778d2a 100644
+> --- a/arch/arm64/xen/hypercall.S
+> +++ b/arch/arm64/xen/hypercall.S
+> @@ -49,7 +49,6 @@
+>  
+>  #include <linux/linkage.h>
+>  #include <asm/assembler.h>
+> -#include <asm/asm-uaccess.h>
+>  #include <xen/interface/xen.h>
+>  
+>  
+> @@ -86,27 +85,13 @@ HYPERCALL2(multicall);
+>  HYPERCALL2(vm_assist);
+>  HYPERCALL3(dm_op);
+>  
+> -ENTRY(privcmd_call)
+> +ENTRY(arch_privcmd_call)
+>  	mov x16, x0
+>  	mov x0, x1
+>  	mov x1, x2
+>  	mov x2, x3
+>  	mov x3, x4
+>  	mov x4, x5
+> -	/*
+> -	 * Privcmd calls are issued by the userspace. The kernel needs to
+> -	 * enable access to TTBR0_EL1 as the hypervisor would issue stage 1
+> -	 * translations to user memory via AT instructions. Since AT
+> -	 * instructions are not affected by the PAN bit (ARMv8.1), we only
+> -	 * need the explicit uaccess_enable/disable if the TTBR0 PAN emulation
+> -	 * is enabled (it implies that hardware UAO and PAN disabled).
+> -	 */
+> -	uaccess_ttbr0_enable x6, x7, x8
+>  	hvc XEN_IMM
+> -
+> -	/*
+> -	 * Disable userspace access from kernel once the hyp call completed.
+> -	 */
+> -	uaccess_ttbr0_disable x6, x7
+>  	ret
+> -ENDPROC(privcmd_call);
+> +ENDPROC(arch_privcmd_call);
+> diff --git a/include/xen/arm/hypercall.h b/include/xen/arm/hypercall.h
+> index b40485e54d80..624c8ad7e42a 100644
+> --- a/include/xen/arm/hypercall.h
+> +++ b/include/xen/arm/hypercall.h
+> @@ -30,8 +30,8 @@
+>   * IN THE SOFTWARE.
+>   */
+>  
+> -#ifndef _ASM_ARM_XEN_HYPERCALL_H
+> -#define _ASM_ARM_XEN_HYPERCALL_H
+> +#ifndef _ARM_XEN_HYPERCALL_H
+> +#define _ARM_XEN_HYPERCALL_H
+>  
+>  #include <linux/bug.h>
+>  
+> @@ -41,9 +41,9 @@
+>  
+>  struct xen_dm_op_buf;
+>  
+> -long privcmd_call(unsigned call, unsigned long a1,
+> -		unsigned long a2, unsigned long a3,
+> -		unsigned long a4, unsigned long a5);
+> +long arch_privcmd_call(unsigned int call, unsigned long a1,
+> +		       unsigned long a2, unsigned long a3,
+> +		       unsigned long a4, unsigned long a5);
+>  int HYPERVISOR_xen_version(int cmd, void *arg);
+>  int HYPERVISOR_console_io(int cmd, int count, char *str);
+>  int HYPERVISOR_grant_table_op(unsigned int cmd, void *uop, unsigned int count);
+> @@ -88,4 +88,4 @@ MULTI_mmu_update(struct multicall_entry *mcl, struct mmu_update *req,
+>  	BUG();
+>  }
+>  
+> -#endif /* _ASM_ARM_XEN_HYPERCALL_H */
+> +#endif /* _ARM_XEN_HYPERCALL_H */
+> -- 
+> 2.24.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
