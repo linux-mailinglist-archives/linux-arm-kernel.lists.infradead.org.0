@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C68441066AC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 07:56:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52CC21066B1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 07:56:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rVSwrBjafAGsQ5Ohv45mdiUNQ03aYTi2n9AQhKHE9qc=; b=q+YovEBhAGp9sD
-	+xvkteH5Zbw7McVuTYYxu84U/IeIPGYz41lwVNzcDhuaIw6psdK7LJdBFgStgtSZrD8oLElL2U1Jm
-	3fsxPKtxe2uJZJ5VjCbPRQv5epy4h3F8bEimWvWfqQ7BQfJPmjjpROTsw6D7dzv9IE5bsud16NJCL
-	cxK7rY+6tkj2NUUId6YeP8Kol4nbTwvyBUW0b3XVPyi+h0vU1l4aN+dLO8Bd4UQ9aNFDqsireLZP+
-	yXhRjSMrAwH7hrBCvUjLWJyHRoGVic6/CGuXlMmcsszhrgUSf7sQ3ofMVXmS5RJ+HwwpAdXzLYpJG
-	jDTairMErz+RMIYCVeVA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dPeK/8tdg0M2c+lq/2D59dytC9MBfAF4G6i26T1a5zE=; b=mdlzK2Umyow+f+
+	PU6AHa5bJruwncwvSKAaOGcg5+KF8Jhna2we7DJBdifOwmeLcp4KGGKSQFsolP1iqK1IQJb57YKrL
+	y/T+q5XaKKPiugm6WOWYbhT16+cj+MsmONiq+RgtzzT8AFGDG7Jp8cTdSzy3xddDBF4RDG5Brqo0O
+	6AWAVwNyc5VXJYlEqiBy0Kso4OZWoS0rgN+DuPORTOExKs0zWTHj9mAn8DRbRZvAfFwclYKkeQd9m
+	SZpTtrAkk3SF8e+DyO0OlaWO+s75CeXeRiSSTnPdhoJirfgz/l3DCe2WO0En94rFnvsrZorp+kvVN
+	4OVMXhkZ7gBn34o6h9GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY2rh-0001YC-JD; Fri, 22 Nov 2019 06:56:25 +0000
+	id 1iY2s5-0001mj-Jd; Fri, 22 Nov 2019 06:56:49 +0000
 Received: from mail-sh.amlogic.com ([58.32.228.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY2rS-0001XO-P2; Fri, 22 Nov 2019 06:56:12 +0000
+ id 1iY2rU-0001XO-M1; Fri, 22 Nov 2019 06:56:14 +0000
 Received: from droid10.amlogic.com (10.18.11.213) by mail-sh.amlogic.com
  (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Fri, 22 Nov 2019
  14:56:24 +0800
@@ -30,15 +30,17 @@ To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
  <narmstrong@baylibre.com>, Rob Herring <robh@kernel.org>, Greg Kroah-Hartman
  <gregkh@linuxfoundation.org>, Felipe Balbi <felipe.balbi@linux.intel.com>,
  Kevin Hilman <khilman@baylibre.com>
-Subject: [PATCH 0/6] arm64: meson: Add support for USB on Amlogic A1
-Date: Fri, 22 Nov 2019 14:55:51 +0800
-Message-ID: <1574405757-76184-1-git-send-email-hanjie.lin@amlogic.com>
+Subject: [PATCH 1/6] dt-bindings: phy: Add Amlogic G12A USB2 PHY Bindings
+Date: Fri, 22 Nov 2019 14:55:52 +0800
+Message-ID: <1574405757-76184-2-git-send-email-hanjie.lin@amlogic.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1574405757-76184-1-git-send-email-hanjie.lin@amlogic.com>
+References: <1574405757-76184-1-git-send-email-hanjie.lin@amlogic.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.18.11.213]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_225610_813800_1636D177 
-X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-CacheID: sfid-20191121_225612_716921_8944C5EB 
+X-CRM114-Status: UNSURE (   8.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,56 +74,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset adds support for USB on Amlogic A1 SoCs.
+Add the Amlogic A1 Family USB2 PHY Bindings
 
-This patchset is composed with :
-- bindings of the PHY
-- bindings of the USB Control Glue
-- PHY Driver
-- USB Control Glue driver
-- dts of the PHY
-- dts of the USB Controller
+It supports Host mode only.
 
-The Amlogic A1 USB Complex is composed of :
-- 1 DWC3 USB controller for USB2 Host functionality
-- 1 USB2 PHY for USB2 Host functionality
-
-The USB Control Glue setups the clocks and the reset about DWC3 USB
-controller, and binds to the USB2 PHY. It also configures the 8bit
-UTMI interfaces for the USB2 PHY, including setting USB2 phy mode.
-
-The USB2 PHY driver initializes the phy analog settings, phy PLL 
-setup and phy tuning.
-
-This patchset is based on A1 clock/power domain/reset series at [0].
-
-[0]
-https://patchwork.kernel.org/project/linux-amlogic/list/?series=185477
-https://patchwork.kernel.org/project/linux-amlogic/list/?series=180055
-https://patchwork.kernel.org/project/linux-amlogic/list/?series=189643
-
-Hanjie Lin (6):
-  dt-bindings: phy: Add Amlogic G12A USB2 PHY Bindings
-  dt-bindings: usb: dwc3: Add the Amlogic A1 Family DWC3 Glue Bindings
-  phy: amlogic: Add Amlogic A1 USB2 PHY Driver
-  usb: dwc3: Add Amlogic A1 DWC3 glue
-  arm64: dts: meson: a1: Enable USB2 PHY
-  arm64: dts: meson: a1: Enable DWC3 controller
-
- .../bindings/phy/amlogic,meson-a1-usb2-phy.yaml    |  55 +++
- .../devicetree/bindings/usb/amlogic,dwc3.txt       |  53 +++
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi          |  41 +++
- drivers/phy/amlogic/Kconfig                        |  13 +
- drivers/phy/amlogic/Makefile                       |   1 +
- drivers/phy/amlogic/phy-meson-a1-usb2.c            | 327 +++++++++++++++++
- drivers/usb/dwc3/Kconfig                           |  11 +
- drivers/usb/dwc3/Makefile                          |   1 +
- drivers/usb/dwc3/dwc3-meson-a1.c                   | 397 +++++++++++++++++++++
- 9 files changed, 899 insertions(+)
+Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
+Signed-off-by: Yue Wang <yue.wang@amlogic.com>
+---
+ .../bindings/phy/amlogic,meson-a1-usb2-phy.yaml    | 55 ++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/amlogic,meson-a1-usb2-phy.yaml
- create mode 100644 drivers/phy/amlogic/phy-meson-a1-usb2.c
- create mode 100644 drivers/usb/dwc3/dwc3-meson-a1.c
 
+diff --git a/Documentation/devicetree/bindings/phy/amlogic,meson-a1-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/amlogic,meson-a1-usb2-phy.yaml
+new file mode 100644
+index 00000000..7a66e8a
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/amlogic,meson-a1-usb2-phy.yaml
+@@ -0,0 +1,55 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++# Copyright 2019 Amlogic, Inc
++%YAML 1.2
++---
++$id: "http://devicetree.org/schemas/phy/amlogic,meson-a1-usb2-phy.yaml#"
++$schema: "http://devicetree.org/meta-schemas/core.yaml#"
++
++title: Amlogic A1 USB2 PHY
++
++maintainers:
++  - Yue Wang <yue.wang@amlogic.com>
++
++properties:
++  compatible:
++    enum:
++      - amlogic,meson-a1-usb2-phy
++
++  reg:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++  reset-names:
++    items:
++      - const: phy
++
++  "#phy-cells":
++    const: 0
++
++  power-domains:
++     maxItems: 1
++     description:
++       a phandle to respective power domain node as described by generic
++       PM domain bindings (see power/power_domain.txt for more information).
++
++required:
++  - compatible
++  - reg
++  - resets
++  - reset-names
++  - "#phy-cells"
++  - power-domains
++
++examples:
++  - |
++    usb2_phy0: phy@40000 {
++      status = "okay";
++      compatible = "amlogic,a1-usb2-phy";
++      reg = <0x0 0x40000 0x0 0x2000>;
++      resets = <&reset RESET_USBPHY>;
++      reset-names = "phy";
++      #phy-cells = <0>;
++      power-domains = <&pwrc PWRC_USB_ID>;
++    };
 -- 
 2.7.4
 
