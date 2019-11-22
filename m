@@ -2,61 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E936D1067A2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 09:16:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8667210679D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 09:15:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o3CjnV5xtkUBxoAYxPmTXe+2E2mJpKD5EqT+GZXAP4c=; b=YVLlF+U2wrJjqM
-	EdtLwWpJILJPO84uZAPNeyhh7LhUYvU+5WU0yDhFCZ/NJ3a9LuduYe8Px/DZuDzBjecnhOTrG+bih
-	WCXaCiXREdHChg6UKS6HqKwWg1kqCUNDju1aFEY0XtS+Sqxi69nvCbqb4JSLQYqRiZ21IPMzNFiPI
-	HdJ7J9AHitecaO/joNb+aAMJBc5auSswVxM/CW62aEbj+Fy2Tc1ftTxxqL32Oyxlpu5sqMwjktBe1
-	HLjEQ65QwBRv3oqDhLywbxck3s+kQ8/NwiWmmkyPKpElgBgzGxOWs96z5ZWvlO/42zP7CwpdUKNYu
-	5anHfBw+1r5GKJKfXV0Q==;
+	List-Owner; bh=2U3rce4lF0YTcxk8oY/wM2fkKLxCvNs3oQDayuf1OXo=; b=ii+U/0wLnlmD7Y
+	2a4BizYX5DyvKKNZ8hIpld8em0kmSjPpjljmTI2Or535Jsi26/7lrhzdBMkFnMCC0ej/DMNc4KHxo
+	UVwko9Sx2aycoBTrYJMLZOpt/Sp0AtRvtfBKQP1crh/KaYr/J7HRd67p0IEFprcjBQWr3LF3oYF7Y
+	ETSFKNdriKyMp4N8QgCkFXROw5Sn96rp9O0A/shwIr1H4taLJroIqC/HmMADCvTS6+Cb5An8ndjKZ
+	iukO5va0Z6YgzRFYKpDqnXh5Va8G2ggdaGDU0JRX3BIEneBLvScKw9uFvzT2H+2ER0p0ZPuQdBwC4
+	2dmv779o6vLim3ZOv4tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY46w-0000BQ-Cp; Fri, 22 Nov 2019 08:16:14 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iY45x-00076I-8v; Fri, 22 Nov 2019 08:15:13 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY46l-0000Av-Vn; Fri, 22 Nov 2019 08:16:05 +0000
-X-UUID: 9b2bc4a688d046fca68a704e1b7cce0f-20191122
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=K2QceGAFr4kSuhEVcqRkxVbwPBJiY5InoLtmLU20XiU=; 
- b=lpZUXKuDJAQewYko3iuJb+KSPvHi3BagShZhozXm62IM7qCD1TC0FVAyl6PJ0pdAw41ivgQky4F0iZIMByWd7SLXwXby6vm/FzDR5iQerHG/a4+4/Y8bjT70KX3cW8wamaUvCvVt2tONm1krCvbI/41Ozv4PlvwropZTuqsAf70=;
-X-UUID: 9b2bc4a688d046fca68a704e1b7cce0f-20191122
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 725854769; Fri, 22 Nov 2019 00:15:58 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 22 Nov 2019 00:06:21 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 22 Nov 2019 16:05:51 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 22 Nov 2019 16:06:21 +0800
-Message-ID: <1574409958.19450.1.camel@mtksdaap41>
-Subject: Re: [PATCH v17 1/6] soc: mediatek: cmdq: fixup wrong input order of
- write api
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Fri, 22 Nov 2019 16:05:58 +0800
-In-Reply-To: <20191121015410.18852-2-bibby.hsieh@mediatek.com>
-References: <20191121015410.18852-1-bibby.hsieh@mediatek.com>
- <20191121015410.18852-2-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iY45c-00075Y-11
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 08:14:55 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id y23so4273392vso.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 22 Nov 2019 00:14:51 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kFTfLz77NfOOoLRcjoRQoDvWTF66Atpx3UZ3GFfFuKk=;
+ b=ZwDWMqx+Nhi1GjLIEgBzGDzcliHIzbVRqH6FsQsZS3QO+ytfBXNLs2DUa758bQdkdh
+ 66Rb4/Vdi7d875DaOKhoxbpjLYWaf87TSMA8tpEP7kinrYYMXfmu+TqSxno3zNOPFxnb
+ taF3ZXVXk9b9/EabAcdMnv3VsekR7jctf7FAlzMwS3G2WjpJFtw444OcwMV0vlF4eJZK
+ PE78xHeCfX5fr2GCXh2wglMMw/bCdh2Zpw4mvFUsJJsTeKvLuN0e4SwQ60kthIwiFLqj
+ Y9E17GJcAzWqbhXPs1AJ1ei9+JDNjX1DKVx8fdlOE1AJcV0vv+3tHgyiAWxazI+fIF3X
+ jEkg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kFTfLz77NfOOoLRcjoRQoDvWTF66Atpx3UZ3GFfFuKk=;
+ b=OWXS6TIhPjtlHzcqHrCf/uM4i2dAVpMmrOaz7ufYtqWu/aagDIBPN8VsFmN894cGSO
+ l5Ox3r8+XAZR2DMAd4nlItWDVuHAPXhkiHkwADtms51LLd0eUCBrlVxznKdGYY5aiUj2
+ vptRdaSQ7jpAVFK+eLzgNX0eP3r7jJm4rvZ2t6k1cobPCeyCBL+8eNbAWVC+OMkn1A02
+ 2B14yKPmPmlpTYSKzQsGF/UN8PUb8PC0lEiHrBfF5CzzWfLTVyBX71Vj8HKSaU02XY8G
+ 4fSYlnmsq2vVWG8sLI4vNF/o9r9bCpr52girc9Rvx6d70zO0ataFvrx6dXYdE+Q5jNq5
+ Hj5A==
+X-Gm-Message-State: APjAAAUfSzi7PtGqoAlVXAykGyuztIb/G4SYsAVPF75Rky+pUPrX42YC
+ +tBMnwGSfG01iwwDvfu7L8S+zC8z9wp3C2Xi0oQI5DQS
+X-Google-Smtp-Source: APXvYqzK+cyn8m/2M4gYVtla7YFWEf/01wZBxA5Qm1kV1UpsOuvqk37Xn1jmB1PigbuN81mwvRR8Jtk1ZnfSecXaf4I=
+X-Received: by 2002:a67:5ec1:: with SMTP id s184mr9129478vsb.200.1574410490515; 
+ Fri, 22 Nov 2019 00:14:50 -0800 (PST)
 MIME-Version: 1.0
-X-MTK: N
+References: <20191029164438.17012-1-ulf.hansson@linaro.org>
+ <CAPDyKFpiMK_P+4+n9wHc+68X6j44XOoTm=J8OXz5HkqoMxOsOg@mail.gmail.com>
+In-Reply-To: <CAPDyKFpiMK_P+4+n9wHc+68X6j44XOoTm=J8OXz5HkqoMxOsOg@mail.gmail.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Fri, 22 Nov 2019 09:14:14 +0100
+Message-ID: <CAPDyKFprrtTJ8b5B1AgOWEGNeMGdjS4NbVFU1h4E2SA_oZ2dAw@mail.gmail.com>
+Subject: Re: [PATCH v2 00/13] cpuidle: psci: Support hierarchical CPU
+ arrangement
+To: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_001604_030324_C8DF1BB3 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20191122_001452_276943_3AEC5FAC 
+X-CRM114-Status: GOOD (  12.35  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -71,8 +78,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,45 +92,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Nicolas
- Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
- linux-kernel@vger.kernel.org, Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kevin Hilman <khilman@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Linux PM <linux-pm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Andy Gross <agross@kernel.org>,
+ Lina Iyer <ilina@codeaurora.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Bibby:
+On Mon, 11 Nov 2019 at 12:00, Ulf Hansson <ulf.hansson@linaro.org> wrote:
+>
+> On Tue, 29 Oct 2019 at 17:44, Ulf Hansson <ulf.hansson@linaro.org> wrote:
+> >
+> > Changes in v2:
+> >         - Avoid to affect the non-OSI path with specific changes for OSI. This
+> >         forced me to re-order the series and a caused more or less minor changes
+> >         to most of the patches.
+> >         - Updated the DT bindings for PSCI to clarify and to include the "psci"
+> >         name of the PM domain to attach to.
+> >         - Replaced patch1 with another patch from Sudeep, solving the same
+> >         problem, but in a different way.
+>
+> Hi Sudeep and Lorenzo,
+>
+> Apologize for nagging you about reviews, again. Can you please have a
+> look at the new version!?
 
-On Thu, 2019-11-21 at 09:54 +0800, Bibby Hsieh wrote:
-> Fixup a issue was caused by the previous fixup patch.
-> 
+Lorenzo, apologize for nagging you about reviewing this series.
 
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
+It seems like both me and Sudeep are now waiting to hear from you, can
+you please have look.
 
-> Fixes: 1a92f989126e ("soc: mediatek: cmdq: reorder the parameter")
-> 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> ---
->  drivers/soc/mediatek/mtk-cmdq-helper.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index 7aa0517ff2f3..3c82de5f9417 100644
-> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> @@ -155,7 +155,7 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
->  		err = cmdq_pkt_append_command(pkt, CMDQ_CODE_MASK, 0, ~mask);
->  		offset_mask |= CMDQ_WRITE_ENABLE_MASK;
->  	}
-> -	err |= cmdq_pkt_write(pkt, value, subsys, offset_mask);
-> +	err |= cmdq_pkt_write(pkt, subsys, offset_mask, value);
->  
->  	return err;
->  }
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
