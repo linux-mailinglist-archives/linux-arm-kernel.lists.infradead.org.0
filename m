@@ -2,81 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19E22106708
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 08:25:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BA93106755
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 08:53:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rWlDmBS6M8HDsc2DQiBq9SxP0oKj7aHZwY/xcx5lCsM=; b=gquB2+4M78f3Eh
-	6sCENYXXFDp3ZrLUt7FnsW6zXvB0fJknm5yGVlwzFzjCIpmikaB6MX4U35n6+nWmAJgjfZvFpM1jK
-	jxP9s/O6+QrROQ9FXa2/KIRQ9JA8IAeBWSOK5TWNhyg7ZO73jthVK9Q+WmKnk5hGG21DvsrodEXvV
-	TekIBZnCRGF4lrY9Q4eyNpcfTbLF+wY/lY6f4c3UwATrSyoux4f4Fgk2gdSsvep+eyWLusPVXST6e
-	2jCVhiUKkVDszcWI2rHNkoD2++5Q5Hu+9iL1kwU+c9zUsuUL24V6yHz22rckRP3sSkdxlXA5ahVlY
-	uvw1v6osnO3lzgPV/jww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=22e1vhc3BA1w+8XAT3HKATxR54pab09Ru286HE4g0zk=; b=H/IXNcB0YunsB0
+	PAuZvaeTdb/wotL/GQQqlPB0GOEBKBTYoNortG68V5/F5ENZY4rUICXnCGJgBZV5po1ioMK43ckPQ
+	Nv2Oit4plslB/wJAXc4sMoJXUeFAkVAFiPM+uLYGVYAPAxda3INRpldxVD9P1oHPgTbS8nH+XkBU8
+	TkVf0YRVODDDCyI2VpACBOgKsiuQdgY5s3uIfFDNvdn+69bKij0ZcajbgUVN3veE/yYZoVYXpo4GB
+	+qZ4hz7uSveb893/5McdJt2jVb96NcOiAwHlKWO4NqSzYJQsgc1ZMr/nxOnLAeHRKEKgh+xR9jQgN
+	q7I6wh4U51KlZYyZxBHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY3Jr-0005WI-7C; Fri, 22 Nov 2019 07:25:31 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iY3kS-0008Nf-E0; Fri, 22 Nov 2019 07:53:00 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY3JZ-0005Qo-HG
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 07:25:15 +0000
-Received: by mail-lf1-x142.google.com with SMTP id m30so2857096lfp.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 23:25:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=XWYrspY3sqn5IhheES0xFmh++L5u8QGvgjG4njd5/Go=;
- b=w6oWmXgC7g4lyOX/a2UvHPOQbdHjewIuLYi+MGrVTij75HtwmCU7FSbdL90m7TNcAj
- EEYW7ekQsCdSpCLowDnFAWips+9Mj75k1D7Gv6RP7fi/s1IOTj0jmNrkJuCBPTJFD+1C
- fy0HBf7oEipoAIdsfeyeqsDcH/JnOg8+E2fdvffRe34ZgUwQMqctqoQ8mqEtw41kf1GS
- TCuWW0UlYY9GgvCx3GeNQjAM+c+dzOLLRhf9LVRmAy9OyRsM3AgniRPSwb/+0W95KJ6S
- JJrVaDlXoDs0ICQ1woZRL5V+v2nfo8/btS3UKwlIOqCKKBv4eSnJUb19CmTbpwSgrvc1
- HxvQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=XWYrspY3sqn5IhheES0xFmh++L5u8QGvgjG4njd5/Go=;
- b=eIPmKJX0m16qa+lISOOYCp3Rqn+rF6Ew8hqtHvUYYvPfZj30NQ2FZd8YjEPCKe9gJA
- 9WZckVTVdLrUEEotGIgqyEP8iqpeiFNHvsQVIwPo4Tfd7ljZkEKwga/2kRrNo+jcuSV8
- KvLXcUJVgi+ZEJo+VPP2dsjIwejbTkg5jc3NawmjU27RHmE6dBg7ty2xl+ZxZVYpLPKT
- pidVsERZ8KTTDXa5zE2WWuwu4sRECCKSkNuqSvOk/V0tf/PlbOfNnyKciQpp/963W+bq
- xFa2XHaGHQXVsukuP1oxwXje4hXXMVUCpSuwpOPsTY8JKe2SY+u5dsq+xpiHbor/K1dR
- DPbQ==
-X-Gm-Message-State: APjAAAV83CcfPZQGZ0CBGat3ZqG1E1t5+BIZBdjN6u7Bi0u7b3X+QkjI
- YZzWXe1G4B9zrys2OUb/wJ+eOQ==
-X-Google-Smtp-Source: APXvYqzIWcSmkySkCPav+tdRJKcqwNHvCv8x+Fg1Tt9wqk1g4zaEkLfqyRjeQ/xuCpiF4Ip4gOFU2A==
-X-Received: by 2002:ac2:44af:: with SMTP id c15mr11040869lfm.39.1574407511506; 
- Thu, 21 Nov 2019 23:25:11 -0800 (PST)
-Received: from localhost.bredbandsbolaget
- (c-21cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.33])
- by smtp.gmail.com with ESMTPSA id f14sm2651394lfa.67.2019.11.21.23.25.10
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 Nov 2019 23:25:10 -0800 (PST)
-From: Linus Walleij <linus.walleij@linaro.org>
-To: dri-devel@lists.freedesktop.org,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
-Subject: [PATCH 2/2] drm/mcde: Do not needlessly logically and with 3
-Date: Fri, 22 Nov 2019 08:25:08 +0100
-Message-Id: <20191122072508.25677-1-linus.walleij@linaro.org>
-X-Mailer: git-send-email 2.21.0
+ id 1iY3kG-0008MI-Aa; Fri, 22 Nov 2019 07:52:50 +0000
+X-UUID: 5944717b177f4bb4989fa8b0e514854b-20191121
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=fO3a2sHaDCK8cWgJ43PTivPYbDuLooH3WDQSaJqbvHY=; 
+ b=iK81P2fmuTSk5PNsJZmzcUZrwGPnToV8gLgLwKDbs0d4j8vb9hDOK06ERkS54YgJXkHAJq24Dl61wS9QyhtHRVVHzz4V9ZgOgtdy1kt/paqF0KzCZVL6l/A25qqU8koLcXszNQSQ/wwkmHLROuawFVFYsHhRvgANCXylRS6R45I=;
+X-UUID: 5944717b177f4bb4989fa8b0e514854b-20191121
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1949494477; Thu, 21 Nov 2019 23:52:43 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 21 Nov 2019 23:42:47 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 22 Nov 2019 15:42:35 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 22 Nov 2019 15:42:41 +0800
+Message-ID: <1574408559.21408.2.camel@mtksdaap41>
+Subject: Re: [PATCH 3/8] drm/mediatek: don't open-code drm_gem_fb_create
+From: CK Hu <ck.hu@mediatek.com>
+To: Daniel Vetter <daniel.vetter@ffwll.ch>
+Date: Fri, 22 Nov 2019 15:42:39 +0800
+In-Reply-To: <20191115092120.4445-4-daniel.vetter@ffwll.ch>
+References: <20191115092120.4445-1-daniel.vetter@ffwll.ch>
+ <20191115092120.4445-4-daniel.vetter@ffwll.ch>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: C567D168B7777EC4FDDD0886CBDB15D4E42E703B2427E1E245C023CAFA23D1982000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_232513_596132_1E4A8C5E 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20191121_235248_375757_8B77F147 
+X-CRM114-Status: GOOD (  18.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -86,6 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,62 +84,221 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- Stephan Gerhold <stephan@gerhold.net>, linux-arm-kernel@lists.infradead.org
+Cc: Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ linux-mediatek@lists.infradead.org, Philipp
+ Zabel <p.zabel@pengutronix.de>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The i index i always 0..3 in these statements so there
-is no need to tag "& 3" to clamp it to 3 here. Make
-the operator precedence explicit even if it's correct
-as it is, the paranthesis creates less cognitive stress
-for humans.
+Hi, Daniel:
 
-Cc: Stephan Gerhold <stephan@gerhold.net>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
- drivers/gpu/drm/mcde/mcde_dsi.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+On Fri, 2019-11-15 at 10:21 +0100, Daniel Vetter wrote:
+> Aside: There's a few other fb_create implementations which
+> simply check for valid buffer format (or an approximation thereof),
+> and then call drm_gem_fb_create. For atomic drivers at least we could
+> walk all planes and make sure the format/modifier combo is valid,
+> and remove even more code.
+> 
+> For non-atomic drivers that's not possible, since the format list for
+> the primary buffer might be garbage (and most likely it is).
+> 
+> Also delete mtk_drm_fb.[hc] since it would now only contain one
+> function.
 
-diff --git a/drivers/gpu/drm/mcde/mcde_dsi.c b/drivers/gpu/drm/mcde/mcde_dsi.c
-index dc07b534f01f..21cee4d9d2fd 100644
---- a/drivers/gpu/drm/mcde/mcde_dsi.c
-+++ b/drivers/gpu/drm/mcde/mcde_dsi.c
-@@ -237,25 +237,25 @@ static ssize_t mcde_dsi_host_transfer(struct mipi_dsi_host *host,
- 	if (txlen > 0) {
- 		val = 0;
- 		for (i = 0; i < 4 && i < txlen; i++)
--			val |= tx[i] << (i & 3) * 8;
-+			val |= tx[i] << (i * 8);
- 	}
- 	writel(val, d->regs + DSI_DIRECT_CMD_WRDAT0);
- 	if (txlen > 4) {
- 		val = 0;
- 		for (i = 0; i < 4 && (i + 4) < txlen; i++)
--			val |= tx[i + 4] << (i & 3) * 8;
-+			val |= tx[i + 4] << (i * 8);
- 		writel(val, d->regs + DSI_DIRECT_CMD_WRDAT1);
- 	}
- 	if (txlen > 8) {
- 		val = 0;
- 		for (i = 0; i < 4 && (i + 8) < txlen; i++)
--			val |= tx[i + 8] << (i & 3) * 8;
-+			val |= tx[i + 8] << (i * 8);
- 		writel(val, d->regs + DSI_DIRECT_CMD_WRDAT2);
- 	}
- 	if (txlen > 12) {
- 		val = 0;
- 		for (i = 0; i < 4 && (i + 12) < txlen; i++)
--			val |= tx[i + 12] << (i & 3) * 8;
-+			val |= tx[i + 12] << (i * 8);
- 		writel(val, d->regs + DSI_DIRECT_CMD_WRDAT3);
- 	}
- 
--- 
-2.21.0
+Acked-by: CK Hu <ck.hu@mediatek.com>
 
+> 
+> Signed-off-by: Daniel Vetter <daniel.vetter@ffwll.ch>
+> Cc: CK Hu <ck.hu@mediatek.com>
+> Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-mediatek@lists.infradead.org
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c   | 16 ++++-
+>  drivers/gpu/drm/mediatek/mtk_drm_fb.c    | 92 ------------------------
+>  drivers/gpu/drm/mediatek/mtk_drm_fb.h    | 13 ----
+>  drivers/gpu/drm/mediatek/mtk_drm_plane.c |  1 -
+>  4 files changed, 15 insertions(+), 107 deletions(-)
+>  delete mode 100644 drivers/gpu/drm/mediatek/mtk_drm_fb.c
+>  delete mode 100644 drivers/gpu/drm/mediatek/mtk_drm_fb.h
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index 84d14213d992..2b1c122066ea 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -16,8 +16,10 @@
+>  #include <drm/drm_atomic_helper.h>
+>  #include <drm/drm_drv.h>
+>  #include <drm/drm_fb_helper.h>
+> +#include <drm/drm_fourcc.h>
+>  #include <drm/drm_gem.h>
+>  #include <drm/drm_gem_cma_helper.h>
+> +#include <drm/drm_gem_framebuffer_helper.h>
+>  #include <drm/drm_of.h>
+>  #include <drm/drm_probe_helper.h>
+>  #include <drm/drm_vblank.h>
+> @@ -27,7 +29,6 @@
+>  #include "mtk_drm_ddp.h"
+>  #include "mtk_drm_ddp_comp.h"
+>  #include "mtk_drm_drv.h"
+> -#include "mtk_drm_fb.h"
+>  #include "mtk_drm_gem.h"
+>  
+>  #define DRIVER_NAME "mediatek"
+> @@ -115,6 +116,19 @@ static int mtk_atomic_commit(struct drm_device *drm,
+>  	return 0;
+>  }
+>  
+> +static struct drm_framebuffer *
+> +mtk_drm_mode_fb_create(struct drm_device *dev,
+> +		       struct drm_file *file,
+> +		       const struct drm_mode_fb_cmd2 *cmd)
+> +{
+> +	const struct drm_format_info *info = drm_get_format_info(dev, cmd);
+> +
+> +	if (info->num_planes != 1)
+> +		return ERR_PTR(-EINVAL);
+> +
+> +	return drm_gem_fb_create(dev, file, cmd);
+> +}
+> +
+>  static const struct drm_mode_config_funcs mtk_drm_mode_config_funcs = {
+>  	.fb_create = mtk_drm_mode_fb_create,
+>  	.atomic_check = drm_atomic_helper_check,
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_fb.c b/drivers/gpu/drm/mediatek/mtk_drm_fb.c
+> deleted file mode 100644
+> index 3f230a28a2dc..000000000000
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_fb.c
+> +++ /dev/null
+> @@ -1,92 +0,0 @@
+> -// SPDX-License-Identifier: GPL-2.0-only
+> -/*
+> - * Copyright (c) 2015 MediaTek Inc.
+> - */
+> -
+> -#include <linux/dma-buf.h>
+> -#include <linux/dma-resv.h>
+> -
+> -#include <drm/drm_modeset_helper.h>
+> -#include <drm/drm_fb_helper.h>
+> -#include <drm/drm_fourcc.h>
+> -#include <drm/drm_gem.h>
+> -#include <drm/drm_gem_framebuffer_helper.h>
+> -
+> -#include "mtk_drm_drv.h"
+> -#include "mtk_drm_fb.h"
+> -#include "mtk_drm_gem.h"
+> -
+> -static const struct drm_framebuffer_funcs mtk_drm_fb_funcs = {
+> -	.create_handle = drm_gem_fb_create_handle,
+> -	.destroy = drm_gem_fb_destroy,
+> -};
+> -
+> -static struct drm_framebuffer *mtk_drm_framebuffer_init(struct drm_device *dev,
+> -					const struct drm_mode_fb_cmd2 *mode,
+> -					struct drm_gem_object *obj)
+> -{
+> -	const struct drm_format_info *info = drm_get_format_info(dev, mode);
+> -	struct drm_framebuffer *fb;
+> -	int ret;
+> -
+> -	if (info->num_planes != 1)
+> -		return ERR_PTR(-EINVAL);
+> -
+> -	fb = kzalloc(sizeof(*fb), GFP_KERNEL);
+> -	if (!fb)
+> -		return ERR_PTR(-ENOMEM);
+> -
+> -	drm_helper_mode_fill_fb_struct(dev, fb, mode);
+> -
+> -	fb->obj[0] = obj;
+> -
+> -	ret = drm_framebuffer_init(dev, fb, &mtk_drm_fb_funcs);
+> -	if (ret) {
+> -		DRM_ERROR("failed to initialize framebuffer\n");
+> -		kfree(fb);
+> -		return ERR_PTR(ret);
+> -	}
+> -
+> -	return fb;
+> -}
+> -
+> -struct drm_framebuffer *mtk_drm_mode_fb_create(struct drm_device *dev,
+> -					       struct drm_file *file,
+> -					       const struct drm_mode_fb_cmd2 *cmd)
+> -{
+> -	const struct drm_format_info *info = drm_get_format_info(dev, cmd);
+> -	struct drm_framebuffer *fb;
+> -	struct drm_gem_object *gem;
+> -	unsigned int width = cmd->width;
+> -	unsigned int height = cmd->height;
+> -	unsigned int size, bpp;
+> -	int ret;
+> -
+> -	if (info->num_planes != 1)
+> -		return ERR_PTR(-EINVAL);
+> -
+> -	gem = drm_gem_object_lookup(file, cmd->handles[0]);
+> -	if (!gem)
+> -		return ERR_PTR(-ENOENT);
+> -
+> -	bpp = info->cpp[0];
+> -	size = (height - 1) * cmd->pitches[0] + width * bpp;
+> -	size += cmd->offsets[0];
+> -
+> -	if (gem->size < size) {
+> -		ret = -EINVAL;
+> -		goto unreference;
+> -	}
+> -
+> -	fb = mtk_drm_framebuffer_init(dev, cmd, gem);
+> -	if (IS_ERR(fb)) {
+> -		ret = PTR_ERR(fb);
+> -		goto unreference;
+> -	}
+> -
+> -	return fb;
+> -
+> -unreference:
+> -	drm_gem_object_put_unlocked(gem);
+> -	return ERR_PTR(ret);
+> -}
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_fb.h b/drivers/gpu/drm/mediatek/mtk_drm_fb.h
+> deleted file mode 100644
+> index eb64d26001c6..000000000000
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_fb.h
+> +++ /dev/null
+> @@ -1,13 +0,0 @@
+> -/* SPDX-License-Identifier: GPL-2.0-only */
+> -/*
+> - * Copyright (c) 2015 MediaTek Inc.
+> - */
+> -
+> -#ifndef MTK_DRM_FB_H
+> -#define MTK_DRM_FB_H
+> -
+> -struct drm_framebuffer *mtk_drm_mode_fb_create(struct drm_device *dev,
+> -					       struct drm_file *file,
+> -					       const struct drm_mode_fb_cmd2 *cmd);
+> -
+> -#endif /* MTK_DRM_FB_H */
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> index 3b0cc91c7023..540ef2faa40a 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> @@ -13,7 +13,6 @@
+>  #include "mtk_drm_crtc.h"
+>  #include "mtk_drm_ddp_comp.h"
+>  #include "mtk_drm_drv.h"
+> -#include "mtk_drm_fb.h"
+>  #include "mtk_drm_gem.h"
+>  #include "mtk_drm_plane.h"
+>  
 
 _______________________________________________
 linux-arm-kernel mailing list
