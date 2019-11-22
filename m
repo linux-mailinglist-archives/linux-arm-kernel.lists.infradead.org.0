@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F52E1061AE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:58:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9931A1061AF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:59:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oCDgt0Wlgd55fzgr4fPmuFSjeAkRv/cmHHFoinssQC4=; b=PXJfY2Lpi5j8nH
-	XlvNbRv+MXpFOfSLXkaGV4vNS6W3I1QGVLLQySUtpDJjecAY2GnioUhqkaGwkxhxsfSpM1Dmzr3sc
-	Xxj3XfeJtC81zWnQYR7+pDgPmldYbEnPg9sOFH+2CyEJBoYkMLnp84A3aX6ybRyxoQyLGzBDJCjx9
-	hCVDnUVX49ev7FoCGzEqy2QSkDtk++S57Gu7kOh+cbWs8DYFs7tV/XhTXe+H0LgN2KuPZrPPHFTf7
-	f8NNAQFMN+GiQ0VKQQiiQdBd/gLdWxg/mAaImetlU21MvWiRppe1V8Xtp7NoF17BKAZdGwVvw1IXL
-	hNXpwwTzap6EfYYkucFg==;
+	List-Owner; bh=xVnsDvqqQhFzZ4nayp4q1fbOL+F4c9lrkSpDzPlNpI0=; b=cYgVgWSzPiFnFV
+	vYKw62mJH6KJHB3aH3I9vDK8yCK6ONu5I7HreTUmrjuS3j6UXacOvCjv0jVYdB75FBA2mvPy+qyj/
+	BwY5g7dC39VnB1LehdQ7s3hsSKp6J+bDRjT/MOD2tng061ds2czGR0XdZqkJDkyRgpIzwKEi+P5GK
+	fJHV2gdjfcBn1BqbgiXWrw/LjQkIVicW78xmC5wOnbO1GJrMqcUQJPetzwQZ9MR9+4qo417kM+XWW
+	NKgg41hw8Dryi74WaNqOD+gRw1ZmYWRWFeoWguwyXxa5rabWvBpHTb/iwtzmPp+08rfvTFvvDA9p7
+	Yr41r/Zyy26udbqb1KtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY1y2-0002V2-EA; Fri, 22 Nov 2019 05:58:54 +0000
+	id 1iY1yI-0002mF-Lj; Fri, 22 Nov 2019 05:59:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY1re-0003g3-4P
+ id 1iY1rf-0003h8-An
  for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:52:21 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 422882072E;
- Fri, 22 Nov 2019 05:52:16 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 636A520717;
+ Fri, 22 Nov 2019 05:52:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574401937;
- bh=AK+0iL2K88+4zjkWg6cRz/Q8lxIKszoqmc5G3IFXL+c=;
+ s=default; t=1574401938;
+ bh=SuHJO9KBBvsWwPusjwAJI4z2nSO4KEDYibgE4E+Y0e4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=c7GsaEFpaxheP8AfKIqTAi/xYmcbn6TtLCGu6uftCYY3ajE9A3UJOjLFuF3I5SzxQ
- 2Ts3UeMclZ+0+Og4Iq83uEi9r/+ntjPQAn6uxOJZR0UzPaM3SPXX5GCg9GXVLSb/DY
- kIbtr2x/91q47J+jlv9naoFVOLzDED/ia0hbt090=
+ b=NDtzdJbY4BrMkC5TLNllgu+iAe1XBMCFDLfrlcwQmaoL+xEf3KcAtU/FhW2PrQDds
+ T4l7CEvxy7ytSDiWMwqVp8OYbp45tg8lorVW16l5lm4oyhyAbL8U7Ayqzan9IclFd7
+ NuqSJJ/HdrSVnrhUhFwv45xepaaFV5NU3shgwDAM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 162/219] firmware: arm_sdei: fix wrong
- of_node_put() in init function
-Date: Fri, 22 Nov 2019 00:48:14 -0500
-Message-Id: <20191122054911.1750-155-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 163/219] firmware: arm_sdei: Fix DT platform
+ device creation
+Date: Fri, 22 Nov 2019 00:48:15 -0500
+Message-Id: <20191122054911.1750-156-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191122054911.1750-1-sashal@kernel.org>
 References: <20191122054911.1750-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_215218_261151_2E9BF587 
-X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-CacheID: sfid-20191121_215219_635834_D23B0BE2 
+X-CRM114-Status: UNSURE (   9.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -89,38 +89,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+From: James Morse <james.morse@arm.com>
 
-[ Upstream commit c3790b3799f8d75d93d26f6fd7bb569fc8c8b0cb ]
+[ Upstream commit acafce48b07bf5f9994a38e7fe237193d43d092e ]
 
-After finding a "firmware" dt node arm_sdei tries to match it's
-compatible string with it. To do so it's calling of_find_matching_node()
-which already takes care of decreasing the refcount on the "firmware"
-node. We are then incorrectly decreasing the refcount on that node
-again.
+It turns out the dt-probing part of this wasn't tested properly after it
+was merged. commit 3aa0582fdb82 ("of: platform: populate /firmware/ node
+from of_platform_default_populate_init()") changed the core-code to
+generate the platform devices, meaning the driver's attempt fails, and it
+bails out.
 
-This patch removes the unwarranted call to of_node_put().
+Fix this by removing the manual platform-device creation for DT systems,
+core code has always done this for us.
 
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+CC: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Signed-off-by: James Morse <james.morse@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/firmware/arm_sdei.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/firmware/arm_sdei.c | 5 -----
+ 1 file changed, 5 deletions(-)
 
 diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
-index 1ea71640fdc21..dffb47c6b4801 100644
+index dffb47c6b4801..c64c7da738297 100644
 --- a/drivers/firmware/arm_sdei.c
 +++ b/drivers/firmware/arm_sdei.c
-@@ -1017,7 +1017,6 @@ static bool __init sdei_present_dt(void)
- 		return false;
+@@ -1009,7 +1009,6 @@ static struct platform_driver sdei_driver = {
  
+ static bool __init sdei_present_dt(void)
+ {
+-	struct platform_device *pdev;
+ 	struct device_node *np, *fw_np;
+ 
+ 	fw_np = of_find_node_by_name(NULL, "firmware");
+@@ -1019,11 +1018,7 @@ static bool __init sdei_present_dt(void)
  	np = of_find_matching_node(fw_np, sdei_of_match);
--	of_node_put(fw_np);
  	if (!np)
  		return false;
+-
+-	pdev = of_platform_device_create(np, sdei_driver.driver.name, NULL);
+ 	of_node_put(np);
+-	if (!pdev)
+-		return false;
  
+ 	return true;
+ }
 -- 
 2.20.1
 
