@@ -2,81 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F1E210758A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 17:15:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 994A91075C5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 17:27:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZdS/IQ03RdKu+8S/fw79uEjLHJPGOwGf6DzqjEtUa34=; b=TDY6TCX4CZg9p5
-	5UT2kCobrqMcjh5KGRYK7bHK/Ydyh88eIrvDAJyM0fELb/BdmApkw8ySWdUs/AcpzbDPPrNKYfvPd
-	zCoCYsLY4AafNC/gDC6xsUw9YXoN7ZCUWMO+/gclPB5KLLg4BA0xN6k29Xtk1zKc8SNjtqaicYjL6
-	K3OJ3XIGcd/Sn4v2Ya7MnEpGdmfSTp3CY/vohSgTEzP/TYQ6/Fs2Jc+uN49goSw86nM9/AD48qK6j
-	upcPt7RRIoUCxxcnc8GddPWf/4y0RAcR3A7DsgnwS36gXBUREMuT7+QsQr3+VD+sjOYizf8sLdFw8
-	elsvmmQeU/y3CqBanKZw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w/HTGcee4MusmWl5ec2kwaWKMWZ57zk7uYOnMIGE9no=; b=kHE3s4FLeQmrD/
+	DePsAuWNjHWxBb+iLXtpxylPFlfRGa+otuk54tlYMM0rdhI9TFyil+7kSmUMUOxWMP23ptXZ0EyQD
+	IQNxV4SwWfwaMrQwGoMVPObo2J1NFJL1jp4ZTI8qyi3i/ujeF8ZVcK6M1+d7sY7uoz81aq4BgtHbt
+	IgIh7XBAmN0NbbGQPquOMbkLqeLcALSTDmQruZ4LrVVCq5h/kABt+2BHlpdiouD9We/z3pbY0uCMg
+	f02QPU6eKIR19siWzUGoRofSscJ5Da1t/mKkwohVDyLGT1iPU8ryNkzhUavDoUYggG7rgANBWDsAS
+	5wNG14oc9dM8azVSwyOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYBaF-00029g-OX; Fri, 22 Nov 2019 16:14:59 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iYBme-0007jV-Nn; Fri, 22 Nov 2019 16:27:48 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYBa6-00028v-4y
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 16:14:51 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xAMGD83m015416; Fri, 22 Nov 2019 17:14:39 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=q+AN9vpLp99KTf4oMHYu++uvf+aTBZJ7fWpmVfAwsSA=;
- b=IxKyGc9ou7D+Y0yLJolE3vkTsh6lhR8z5J9UPgqEeKf64aStCPXkdTCnuU8AteSIMwa0
- ys6FNaDyfM33C7PUQvv4QpfXhEg/YWtOb39Dhdg4ieDZ+YBzU+dGC/5pYri3CfptKsAw
- gj9xHv5Q5OVbK0EVg1O45F5JEXtb596YVGyLvTmmb9eXLIzIw98Jd6BjMk17LQObBRVr
- xL7CiX4AGyYQn2+jE+I1aP5RJ6eVBUsrScoWqxnbof2O2ZsC8ZkLIGklPJYkuLN0nUs9
- GnBQFoQW7IoXvSqF87hVh8RIq3z5H+qxPZ2TLD7XovJhGri/eD0W34UTJz1f8YJOYjy1 7A== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wa9uvt3qk-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 22 Nov 2019 17:14:39 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8903B100034;
- Fri, 22 Nov 2019 17:14:38 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1B9F92D378D;
- Fri, 22 Nov 2019 17:14:38 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG6NODE2.st.com (10.75.127.17)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Fri, 22 Nov 2019 17:14:37 +0100
-From: Olivier Moysan <olivier.moysan@st.com>
-To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
- <tiwai@suse.com>, <mcoquelin.stm32@gmail.com>,
- <alexandre.torgue@st.com>, <alsa-devel@alsa-project.org>,
- <linux-arm-kernel@lists.infradead.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-kernel@vger.kernel.org>, <olivier.moysan@st.com>,
- <arnaud.pouliquen@st.com>
-Subject: [PATCH][RFC] ASoC: stm32: sai: manage rebind issue
-Date: Fri, 22 Nov 2019 17:14:23 +0100
-Message-ID: <20191122161423.8641-1-olivier.moysan@st.com>
-X-Mailer: git-send-email 2.17.1
+ id 1iYBmV-0007j3-9B
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 16:27:40 +0000
+Received: by mail-io1-xd43.google.com with SMTP id z193so8731230iof.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 22 Nov 2019 08:27:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=XlWqqCQ+zgEV72jaObyUbNZTFY8rKw/Sl0dnc6Dl/5A=;
+ b=Q3de4ll9e8KMpxI6muGFZLyE6AtK8cNP9PPf7FhGVILpdUDr2/fmfkA6lyoQW2n2TR
+ n/d4o06GOFMQKFA/uxZwpohzLAewPAEWEl1D0i3RqNxIxxH3yCaK3+CaFFHK91qnMiPa
+ JnHQ+AP3izQjZA8A7uZRODuPBE2ygcvsWnFI25OD4yGrQjWYMpxYHzNoBfGTKyRlkLvS
+ lG3ibCe/VgG0y5KwtrkoVOJ5YlJfrK5JwIHTw3ruMuM/D9c50iLAd7Svfuxmw08j9X+n
+ DuWPON1UvQXTEWc4VQAk+szrUVfQdjN8OJ0oQAhQyoo1I43xjI01M6nie/C6DSNvvJir
+ GZtg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XlWqqCQ+zgEV72jaObyUbNZTFY8rKw/Sl0dnc6Dl/5A=;
+ b=joC/HjfBhJ16id8xP1icLk0qSnUnl5Wv4btqHMOeBagrqsafd5SACfflDG3hw+9FLd
+ gq4MLbRxo5Ogc/SnKAtqMSaVosMkcVmgOKTnJT93RawNnDpzBG3nqvCZrp3L8YakuOhK
+ hhiss0gsO/a9Ds0DD7aLriAuvbaafDU8jRAPLN1WKWKq/SfM3uG1RMUdV9RVPVzwcAR7
+ cTqnwhxmGYbPr+29JukM9NEHFbQFhdXW/eCtQ1/XccS3LZfusTeOBb5hUrZXsF7sbsE9
+ nfUyIOndKjHF3KRSgO8secMd3yvJUrA12Qt4FjlYPdkkjE6Q02L35NZ+f/Ecx19aVnk8
+ 4quA==
+X-Gm-Message-State: APjAAAVVEZ0slU8DTpKsCmsCEMaqn+iqI106P8WYfZ75okg5o+10bd7J
+ UrK6wOmzIZiSKa/mpL953Q+P6dqbsgPP1lKbq6EZoQ==
+X-Google-Smtp-Source: APXvYqyif/FcVg31H4mCMrqc1tAv9+xfOMC4ku1jEbZz0D4MzKrvW2UuCa7rSztTlQQZp6E44d6wzwy8qjw4Fx0IG+w=
+X-Received: by 2002:a6b:c389:: with SMTP id t131mr13745566iof.50.1574440057783; 
+ Fri, 22 Nov 2019 08:27:37 -0800 (PST)
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG6NODE2.st.com
- (10.75.127.17)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-11-22_03:2019-11-21,2019-11-22 signatures=0
+References: <20191115223356.27675-1-mathieu.poirier@linaro.org>
+ <20191121203555.GC813260@kroah.com>
+In-Reply-To: <20191121203555.GC813260@kroah.com>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Fri, 22 Nov 2019 09:27:26 -0700
+Message-ID: <CANLsYkyumUDrP6ic0towr68S6pxL1psZHVP0XTRC+Tf82O4wQQ@mail.gmail.com>
+Subject: Re: [stable 4.19+][PATCH 01/20] i2c: stm32f7: fix first byte to send
+ in slave mode
+To: Greg KH <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_081450_642612_6337BE3A 
-X-CRM114-Status: GOOD (  14.90  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191122_082739_327287_203AEFFC 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,78 +93,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: srinivas.kandagatla@linaro.org, benjamin.gaignard@st.com
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "# 4 . 7" <stable@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The commit e894efef9ac7 ("ASoC: core: add support to card rebind")
-allows to rebind the sound card after a rebind of one of its component.
-With this commit, the sound card is actually rebound,
-but is no more functional.
+On Thu, 21 Nov 2019 at 13:35, Greg KH <gregkh@linuxfoundation.org> wrote:
+>
+> On Fri, Nov 15, 2019 at 03:33:37PM -0700, Mathieu Poirier wrote:
+> > From: Fabrice Gasnier <fabrice.gasnier@st.com>
+> >
+> > commit 915da2b794ce4fc98b1acf64d64354f22a5e4931 upstream
+>
+> That commit is not in Linus's tree :(
 
-With the sound card rebind the simplified call sequence is:
-stm32_sai_sub_probe
-	snd_soc_register_component
-		snd_soc_try_rebind_card
-			snd_soc_instantiate_card
-	devm_snd_dmaengine_pcm_register
+:o(  Apologies for that - probably a copy/paste problem.
 
-The problem occurs because the pcm must be registered,
-before snd_soc_instantiate_card() is called.
+>
+> I'll stop here.  Please check all of these and resend the whole thing.
+>
+> Also, does this series also apply fully to 5.3.y?
 
-Modify SAI driver, to change the call sequence as follows:
-stm32_sai_sub_probe
-	devm_snd_dmaengine_pcm_register
-	snd_soc_register_component
-		snd_soc_try_rebind_card
+Normally it should have and that is what I assumed.  I just did a
+quick test and I'm wrong - as you probably noticed since you're
+pointing it out.  Forget the whole thing and I'll send another set (or
+two).
 
----
-The current patch allows to fix the issue for STM SAI driver.
-However, most of the drivers register the component first.
-So, this solution is perhaps not the right way to manage the problem.
-This may probably be handled in ASoC framework instead.
----
-
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
----
- sound/soc/stm/stm32_sai_sub.c | 12 +++++++-----
- 1 file changed, 7 insertions(+), 5 deletions(-)
-
-diff --git a/sound/soc/stm/stm32_sai_sub.c b/sound/soc/stm/stm32_sai_sub.c
-index 48e629ac2d88..eb35306a1232 100644
---- a/sound/soc/stm/stm32_sai_sub.c
-+++ b/sound/soc/stm/stm32_sai_sub.c
-@@ -1484,6 +1484,13 @@ static int stm32_sai_sub_probe(struct platform_device *pdev)
- 		return ret;
- 	}
- 
-+	ret = devm_snd_dmaengine_pcm_register(&pdev->dev, conf, 0);
-+	if (ret) {
-+		dev_err(&pdev->dev, "Could not register pcm dma\n");
-+		return ret;
-+	}
-+
-+
- 	ret = devm_snd_soc_register_component(&pdev->dev, &stm32_component,
- 					      &sai->cpu_dai_drv, 1);
- 	if (ret)
-@@ -1492,11 +1499,6 @@ static int stm32_sai_sub_probe(struct platform_device *pdev)
- 	if (STM_SAI_PROTOCOL_IS_SPDIF(sai))
- 		conf = &stm32_sai_pcm_config_spdif;
- 
--	ret = devm_snd_dmaengine_pcm_register(&pdev->dev, conf, 0);
--	if (ret) {
--		dev_err(&pdev->dev, "Could not register pcm dma\n");
--		return ret;
--	}
- 
- 	return 0;
- }
--- 
-2.17.1
-
+>
+> thanks,
+>
+> greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
