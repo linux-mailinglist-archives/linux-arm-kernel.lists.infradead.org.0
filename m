@@ -2,77 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 616871066FE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 08:21:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAE51106702
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 08:23:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1IBR1kvWmQV4lkBaIBRNKy3ZffL9As/CPyG4dQZqYLo=; b=BfYRZs2RHTUCRU
-	tFMyGEsGREYhWGCeCchPcTFaPF7BtOxRayt/zB5JR0zS/IrUd1aEB9ygh34CDQxTr3lrmDlHWSVIy
-	o8eOzhU+WFuY/cwJUtnEu8e4/u1HZkfHI2/joxkKx9pg2QtBbgpFF4LL/G6z1X4peWvsP3JtIsbKv
-	z4R40qOsw8cO3RpnOJQQQ/sNJY7pNcC92A8YPkJEuA2J88T6h12Ep2NTnLnp8gKS4dtqdO/l6Wq5G
-	t3we+YCWWC0Rz1K0RwVhdtKTcDlBLnKOiEliF3LFFQ2VNue0q5UjBhQXx2hmD63ogjLjgycwx1kZJ
-	lmXwtkAwXYL/nt1AgMag==;
+	List-Owner; bh=KzJYg5nfMRBuCCE7G6apjvF3eHVpeMU8dy3T3I4D/E0=; b=PfFlvA7Hdm7jE2
+	bxIzv+oxXtiH8ptUeZCD+Jj9M1IHtyNWCPD44THFOI5QG97dvTLWgQtBIFf8rU2TIurI/ntrKgOHW
+	b9KwcyF1CJyslf99Z/UGfDs8UvNjiYXVOgqFe7hM6AqkyHtaMEkadG2CYZzA5g+fRkSicGFZkS5dU
+	+/ejz5UXmUTYo/Vj2k0LB5LJj40gFezXTKxXdU8p4fWpwUM3+REYvOyejH6+v/r7LAh/ep3qumVJQ
+	pjM5rW+CuwDELeo1/jkVTKpUixgnBvztALvHdhEA3trtn4/Fo4Q+u9vphT1C+EfpINaFWwq0uCIH7
+	/o+U7+zmaC9TyemQAUOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY3Ft-0002a5-Kv; Fri, 22 Nov 2019 07:21:25 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iY3HU-0003E5-IJ; Fri, 22 Nov 2019 07:23:04 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY3Fe-0002Vh-8v; Fri, 22 Nov 2019 07:21:12 +0000
-X-UUID: f1b2569af61642f19840780ea1dde4d0-20191121
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=Rn/XoDq5loIZaVO1pS6BYoAXB6sUp5RYn3/dfFUf7zc=; 
- b=gHxeAf5sG9N4OAiGULAd/71WH48OQvo7+wOUdGKXM2iC2ywkuZliaijlJNPHaxe4vfanFehwD/cR/NrEdfz/w7LXThLmOjYgKO/D56KKcmAazYezqNX2IUYqe6ITylL2dbXPxpsJ3lvfVT+YOIg1oRMY6ejkzBXvBS/U+j+RC5M=;
-X-UUID: f1b2569af61642f19840780ea1dde4d0-20191121
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 866936884; Thu, 21 Nov 2019 23:21:06 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 21 Nov 2019 23:19:00 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 22 Nov 2019 15:18:30 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 22 Nov 2019 15:18:28 +0800
-Message-ID: <1574407116.8338.10.camel@mtksdccf07>
-Subject: Re: [PATCH v4 1/2] kasan: detect negative size in memory operation
- function
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Date: Fri, 22 Nov 2019 15:18:36 +0800
-In-Reply-To: <b2ba5228-dec0-9acf-49e9-d57f156814ef@virtuozzo.com>
-References: <20191112065302.7015-1-walter-zh.wu@mediatek.com>
- <b2ba5228-dec0-9acf-49e9-d57f156814ef@virtuozzo.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1iY3HL-0003DL-Kx
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 07:22:57 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iY3H9-0000om-N2; Fri, 22 Nov 2019 08:22:43 +0100
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iY3H5-0001Uh-II; Fri, 22 Nov 2019 08:22:39 +0100
+Date: Fri, 22 Nov 2019 08:22:39 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Navid Emamdoost <navid.emamdoost@gmail.com>
+Subject: Re: [PATCH] drm/imx: fix memory leak in imx_pd_bind
+Message-ID: <20191122072239.dhbhi2uawoqsclwy@pengutronix.de>
+References: <20191004190938.15353-1-navid.emamdoost@gmail.com>
+ <CAEkB2EQGCcwBO4iZBiHthUAJUeprw2Q09932GATd6XVyXqukzw@mail.gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <CAEkB2EQGCcwBO4iZBiHthUAJUeprw2Q09932GATd6XVyXqukzw@mail.gmail.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 08:19:40 up 6 days, 22:38, 23 users, load average: 0.00, 0.00, 0.00
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_232110_319833_6B8AADD3 
-X-CRM114-Status: GOOD (  10.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191121_232255_685800_FC245C47 
+X-CRM114-Status: GOOD (  19.73  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,65 +74,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
- kasan-dev@googlegroups.com, linux-mm@kvack.org,
- Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ LKML <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ Navid Emamdoost <emamd001@umn.edu>, NXP Linux Team <linux-imx@nxp.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Fabio Estevam <festevam@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-11-22 at 01:20 +0300, Andrey Ryabinin wrote:
-> 
-> On 11/12/19 9:53 AM, Walter Wu wrote:
-> > KASAN missed detecting size is a negative number in memset(), memcpy(),
-> > and memmove(), it will cause out-of-bounds bug. So needs to be detected
-> > by KASAN.
-> > 
-> > If size is a negative number, then it has a reason to be defined as
-> > out-of-bounds bug type.
-> > Casting negative numbers to size_t would indeed turn up as
-> > a large size_t and its value will be larger than ULONG_MAX/2,
-> > so that this can qualify as out-of-bounds.
-> > 
-> > KASAN report is shown below:
-> > 
-> >  BUG: KASAN: out-of-bounds in kmalloc_memmove_invalid_size+0x70/0xa0
-> >  Read of size 18446744073709551608 at addr ffffff8069660904 by task cat/72
-> > 
-> >  CPU: 2 PID: 72 Comm: cat Not tainted 5.4.0-rc1-next-20191004ajb-00001-gdb8af2f372b2-dirty #1
-> >  Hardware name: linux,dummy-virt (DT)
-> >  Call trace:
-> >   dump_backtrace+0x0/0x288
-> >   show_stack+0x14/0x20
-> >   dump_stack+0x10c/0x164
-> >   print_address_description.isra.9+0x68/0x378
-> >   __kasan_report+0x164/0x1a0
-> >   kasan_report+0xc/0x18
-> >   check_memory_region+0x174/0x1d0
-> >   memmove+0x34/0x88
-> >   kmalloc_memmove_invalid_size+0x70/0xa0
-> > 
-> > [1] https://bugzilla.kernel.org/show_bug.cgi?id=199341
-> > 
-> > Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
-> > Reported-by: Dmitry Vyukov <dvyukov@google.com>
-> > Suggested-by: Dmitry Vyukov <dvyukov@google.com>
-> > Reviewed-by: Dmitry Vyukov <dvyukov@google.com>
-> > Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
-> > Cc: Alexander Potapenko <glider@google.com>
-> > Reported-by: kernel test robot <lkp@intel.com>
+Hi Navid,
+
+On 19-11-21 12:31, Navid Emamdoost wrote:
+> On Fri, Oct 4, 2019 at 2:09 PM Navid Emamdoost
+> <navid.emamdoost@gmail.com> wrote:
+> >
+> > In imx_pd_bind, the duplicated memory for imxpd->edid via kmemdup should
+> > be released in drm_of_find_panel_or_bridge or imx_pd_register fail.
+> >
+> > Fixes: ebc944613567 ("drm: convert drivers to use drm_of_find_panel_or_bridge")
+> > Fixes: 19022aaae677 ("staging: drm/imx: Add parallel display support")
+> > Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
 > > ---
 > 
-> Reviewed-by: Andrey Ryabinin <aryabinin@virtuozzo.com>
+> Would you please review this patch?
+> 
+> Thanks,
 
-Hi Andrey, Dmitry,
+I currently work on the drm/imx driver(s) to avoid errors like [1].
+Hopefully I have a working version till next week. There I fixed this
+issue by using the devm_kmemdup() and dropped the explicit kfree()
+within unbind().
 
-Thanks for your review and suggestion.
+[1] https://www.spinics.net/lists/dri-devel/msg189388.html
 
-Walter
+Regards,
+  Marco
+
+> 
+> >  drivers/gpu/drm/imx/parallel-display.c | 8 ++++++--
+> >  1 file changed, 6 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/drivers/gpu/drm/imx/parallel-display.c b/drivers/gpu/drm/imx/parallel-display.c
+> > index e7ce17503ae1..9522d2cb0ad5 100644
+> > --- a/drivers/gpu/drm/imx/parallel-display.c
+> > +++ b/drivers/gpu/drm/imx/parallel-display.c
+> > @@ -227,14 +227,18 @@ static int imx_pd_bind(struct device *dev, struct device *master, void *data)
+> >
+> >         /* port@1 is the output port */
+> >         ret = drm_of_find_panel_or_bridge(np, 1, 0, &imxpd->panel, &imxpd->bridge);
+> > -       if (ret && ret != -ENODEV)
+> > +       if (ret && ret != -ENODEV) {
+> > +               kfree(imxpd->edid);
+> >                 return ret;
+> > +       }
+> >
+> >         imxpd->dev = dev;
+> >
+> >         ret = imx_pd_register(drm, imxpd);
+> > -       if (ret)
+> > +       if (ret) {
+> > +               kfree(imxpd->edid);
+> >                 return ret;
+> > +       }
+> >
+> >         dev_set_drvdata(dev, imxpd);
+> >
+> > --
+> > 2.17.1
+> >
+> 
+> 
+> -- 
+> Navid.
+> 
+> 
+
+-- 
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
