@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0416D106095
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:50:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58C48106097
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 06:50:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l21JTxcT2stnxdfMlsTJjOGUoBACHHU0A1sNXOuqHMI=; b=nvKi3VlRx3jRBB
-	n4mpvkn2DXbyI3ZcMXbqTE65ucJ0Eps7a500sJ5kdJ8mp1bgW1BaNWOT4VQ0weJIXgUM8TsoULDjc
-	FNPPY6KU94g+uwye8FHHH3FA7QOrwb0GBOT3SvHB7+t6qdOJmK0Lhg1w+qEtf7yeQ/dLZERfiV2cb
-	2colxgVeo2SJA23aI5mktauaj8ZMUz0MKQGqyPurOIChfCtjCUGQgDFq23UTYWNYIspAgc/QiPVR2
-	Qo0wZFuHBDeRLUSSY13vhNSDVFDFjBor2DF2ZDs1ortmHKIyhcDd7gFjSIRTj2AquwXC7qdKIsbjJ
-	J1ZrLXeybCgpti/xUslg==;
+	List-Owner; bh=mCw6Kn3pol8MmvbZFKUoBNZb4EYPP6NAeUnqOvdmP2U=; b=mQwYeg2LicV8iH
+	nDgn6J45Nqx4HLHNHSDNty31NOb9SJWl/O1xwE6eZ/Ez75cgQzYXgCbQRFHOUd3pGFw0UC2baccj5
+	XpJw5aE8ZlUsasvw/mtuGEN/QGRFrYs6+qEUtr5vcpOPBlirhzN7qOGrYSf+N9jL+IyGtYE2h/xUy
+	NF762AL6Grf395dcPFQlKrKxWuSE3lF28NyDiuB3RePnS8jYHBV35j7J33WyWR9jima3NL/HQMBQ3
+	EV3eVVywSSyfdH05nsYii/21AlhQ95aWFcNuNwmAKQWMysSFE56rNsiR8YhIX2AQhK6pU/jQEviY+
+	BkBxWRjCJQln+F8ENbnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY1po-0000lI-1P; Fri, 22 Nov 2019 05:50:24 +0000
+	id 1iY1qC-000271-HF; Fri, 22 Nov 2019 05:50:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY1oi-0008V7-H9
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:49:17 +0000
+ id 1iY1oj-0008W8-Rz
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 05:49:19 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 479D72070B;
- Fri, 22 Nov 2019 05:49:15 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A96552068F;
+ Fri, 22 Nov 2019 05:49:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574401756;
- bh=rBaaCepDaC+PYJzZ8NE3MPbHgZYe5c/CjDWf7Ogf0ww=;
+ s=default; t=1574401757;
+ bh=J41T5dDACX6mMdDwcHJ66tJM39TIQDMBCyI3Q1j6VLM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=d0aicebpDbgpv6oZaWNZfGa4x2gT7Z4+Jc3Cdkcx3aAWGjUHa7+fkYl/haSIQQPvk
- gYMTZWKXZs8ft6zee4p8C7nNJH2VtDi+mVVxhKnG4n9n5nF4F3SMgSyjwrStzZttCd
- IbSAxX2HOlEjA/E7tCVV6R/aibokil8IuNKTN65E=
+ b=S6VKzuh92DaiKDQtcRkJu2X2FbGEkX6pjGyjfcmTCB6QtkG1W60JkRhbvEclNGPF+
+ B1uvZmtRML+Lu6V2Xirv2POMkhx6Wt45s69DTh116+13AFvdU8IfcWLpbzvEs5C5yL
+ S+TSoHAWVHpv9x5iqHsMKmrdGUB5ChPlbq3uCM1Y=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 010/219] ARM: dts: imx31: Fix memory node
+Subject: [PATCH AUTOSEL 4.19 011/219] ARM: dts: imx35: Fix memory node
  duplication
-Date: Fri, 22 Nov 2019 00:45:42 -0500
-Message-Id: <20191122054911.1750-3-sashal@kernel.org>
+Date: Fri, 22 Nov 2019 00:45:43 -0500
+Message-Id: <20191122054911.1750-4-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191122054911.1750-1-sashal@kernel.org>
 References: <20191122054911.1750-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_214916_613163_9501FAEC 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20191121_214917_950752_7AB2A1C4 
+X-CRM114-Status: GOOD (  12.26  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,8 +82,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>, Rob Herring <robh@kernel.org>,
  devicetree@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
- Vladimir Zapolskiy <vz@mleia.com>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -91,58 +90,56 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Fabio Estevam <festevam@gmail.com>
 
-[ Upstream commit 013d37e4707e24c7b9bc3fc55aeda55ce9c2b262 ]
+[ Upstream commit 8721610a6c2b8c42fc57819d8c3bfbb9166f95a3 ]
 
-Boards based on imx31 have duplicate memory nodes:
+Boards based on imx35 have duplicate memory nodes:
 
 - One coming from the board dts file: memory@
 
-- One coming from the imx31.dtsi file.
+- One coming from the imx35.dtsi file.
 
 Fix the duplication by removing the memory node from the dtsi file
 and by adding 'device_type = "memory";' in the board dts.
 
 Reported-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Fabio Estevam <festevam@gmail.com>
-Reviewed-by: Vladimir Zapolskiy <vz@mleia.com>
-Tested-by: Vladimir Zapolskiy <vz@mleia.com>
 Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/imx31-bug.dts  | 1 +
- arch/arm/boot/dts/imx31-lite.dts | 1 +
- arch/arm/boot/dts/imx31.dtsi     | 2 --
+ arch/arm/boot/dts/imx35-eukrea-cpuimx35.dtsi | 1 +
+ arch/arm/boot/dts/imx35-pdk.dts              | 1 +
+ arch/arm/boot/dts/imx35.dtsi                 | 2 --
  3 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx31-bug.dts b/arch/arm/boot/dts/imx31-bug.dts
-index 6ee4ff8e4e8f0..9eb960cc02cc5 100644
---- a/arch/arm/boot/dts/imx31-bug.dts
-+++ b/arch/arm/boot/dts/imx31-bug.dts
-@@ -17,6 +17,7 @@
- 	compatible = "buglabs,imx31-bug", "fsl,imx31";
+diff --git a/arch/arm/boot/dts/imx35-eukrea-cpuimx35.dtsi b/arch/arm/boot/dts/imx35-eukrea-cpuimx35.dtsi
+index ba39d938f2891..5f8a47a9fcd40 100644
+--- a/arch/arm/boot/dts/imx35-eukrea-cpuimx35.dtsi
++++ b/arch/arm/boot/dts/imx35-eukrea-cpuimx35.dtsi
+@@ -18,6 +18,7 @@
+ 	compatible = "eukrea,cpuimx35", "fsl,imx35";
  
  	memory@80000000 {
 +		device_type = "memory";
  		reg = <0x80000000 0x8000000>; /* 128M */
  	};
  };
-diff --git a/arch/arm/boot/dts/imx31-lite.dts b/arch/arm/boot/dts/imx31-lite.dts
-index db52ddccabc33..d17abdfb6330c 100644
---- a/arch/arm/boot/dts/imx31-lite.dts
-+++ b/arch/arm/boot/dts/imx31-lite.dts
-@@ -18,6 +18,7 @@
- 	};
+diff --git a/arch/arm/boot/dts/imx35-pdk.dts b/arch/arm/boot/dts/imx35-pdk.dts
+index df613e88fd2c1..ddce0a844758b 100644
+--- a/arch/arm/boot/dts/imx35-pdk.dts
++++ b/arch/arm/boot/dts/imx35-pdk.dts
+@@ -11,6 +11,7 @@
+ 	compatible = "fsl,imx35-pdk", "fsl,imx35";
  
  	memory@80000000 {
 +		device_type = "memory";
- 		reg = <0x80000000 0x8000000>;
+ 		reg = <0x80000000 0x8000000>,
+ 		      <0x90000000 0x8000000>;
  	};
- 
-diff --git a/arch/arm/boot/dts/imx31.dtsi b/arch/arm/boot/dts/imx31.dtsi
-index ca1419ca303c3..2fc64d2c7c88e 100644
---- a/arch/arm/boot/dts/imx31.dtsi
-+++ b/arch/arm/boot/dts/imx31.dtsi
-@@ -10,10 +10,8 @@
+diff --git a/arch/arm/boot/dts/imx35.dtsi b/arch/arm/boot/dts/imx35.dtsi
+index 1c50b785cad47..b36b97b655dda 100644
+--- a/arch/arm/boot/dts/imx35.dtsi
++++ b/arch/arm/boot/dts/imx35.dtsi
+@@ -13,10 +13,8 @@
  	 * The decompressor and also some bootloaders rely on a
  	 * pre-existing /chosen node to be available to insert the
  	 * command line and merge other ATAGS info.
@@ -152,7 +149,7 @@ index ca1419ca303c3..2fc64d2c7c88e 100644
 -	memory { device_type = "memory"; };
  
  	aliases {
- 		gpio0 = &gpio1;
+ 		ethernet0 = &fec;
 -- 
 2.20.1
 
