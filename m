@@ -2,87 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 535491066A7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 07:54:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C68441066AC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 07:56:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lbYMI1F48H2Z5h6gd8mDYxoTUzmgQjaWQOBsP3+oH4k=; b=XVLC7zUyfgLv8/
-	AFoCPNLEtcpePHBSwoEA4kjigifjaV9izvllv2I2hunhgZfdQAizw58G/SERLsOmKnh5sZFOU+S88
-	ROT5vf7NBe8/RpdQbzJzkfmdYqQWOWMrYvAn2FN3bsM/eE0AERE2pryyLzDPZJzpsNTToHQI0SbMk
-	gewgtjRGIDk+TDCWOyeqnxoEQC9GuFa03h7Qck2A9OVlRP1iiAlNUm6AjcSBupsb4OheSDCKhAHkm
-	3icMXz748R2gdwCk6rYA1bDQ8uxK00Hv4gBMVzmdWXadx9k0D/yx69l9n8lHn6NXojxp3EcXCDR1M
-	0QrRn10tjdSjP4RuVQ0Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rVSwrBjafAGsQ5Ohv45mdiUNQ03aYTi2n9AQhKHE9qc=; b=q+YovEBhAGp9sD
+	+xvkteH5Zbw7McVuTYYxu84U/IeIPGYz41lwVNzcDhuaIw6psdK7LJdBFgStgtSZrD8oLElL2U1Jm
+	3fsxPKtxe2uJZJ5VjCbPRQv5epy4h3F8bEimWvWfqQ7BQfJPmjjpROTsw6D7dzv9IE5bsud16NJCL
+	cxK7rY+6tkj2NUUId6YeP8Kol4nbTwvyBUW0b3XVPyi+h0vU1l4aN+dLO8Bd4UQ9aNFDqsireLZP+
+	yXhRjSMrAwH7hrBCvUjLWJyHRoGVic6/CGuXlMmcsszhrgUSf7sQ3ofMVXmS5RJ+HwwpAdXzLYpJG
+	jDTairMErz+RMIYCVeVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY2pG-0008Hk-EW; Fri, 22 Nov 2019 06:53:54 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1iY2rh-0001YC-JD; Fri, 22 Nov 2019 06:56:25 +0000
+Received: from mail-sh.amlogic.com ([58.32.228.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY2p6-0008Gf-W0
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 06:53:46 +0000
-Received: by mail-ua1-x943.google.com with SMTP id o9so1829808uat.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 Nov 2019 22:53:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1YU9k9XpRr942/Ij03AkmdwfF1xW9f8cWmfS5A3XY0k=;
- b=QG3cF8pdSIL28X1eGzKqnGvTG84F3Ufrrvrc8SL1ku6vQwPYz/ZYUsZpu040Y27DJW
- L4VBXn057/NW7NJlATWTc6kcsgzfQILeq8kGDkpAJ/wNdnWF6S++4ZeRLrGnJxl9HBgq
- xkb413yOgTl5mrGqih/vn7f5AZJMoe1RGLo5v1LYiNyqM9A8Q1S0HQd62Pcn7VAK7AYS
- 2+TIuyreiwtCByxwQBdy4QWiKXcJiQ2G/mFAyqgUILQ/P8wYxbmZoYE72OJFYQLkXXxB
- VMiMV9XRGwzFdh3shltnRsQq9EFe7sRrf2Nlp0z1T0cC+teVA/YJPjg3fZO9/MKgjYjj
- w2qw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1YU9k9XpRr942/Ij03AkmdwfF1xW9f8cWmfS5A3XY0k=;
- b=l0CZr+XaUlsMmWPCmKkB0G7HadfBSHAoAxOMwfIqLH6ABju8hYjRmpnqunLZ/La279
- VBc9uGRuvCerqK5FLN04ZSubAcDmabQOUPt9HNLg+ikJAZmjTTetaZYYoKIZwVQQAlZM
- ZbFGmwJlhCt9XKqKDHj+xybrO00Se4wcBzLm0C29gk1wBsP4j+8ZZEGsMJ7kRc9tsmtt
- 6tgd2t+zLfEms2aa9SmnzecFauUGA39Kd2wI8vXLlyUO1gJvwYuYFz3+jG93WbAKVEi2
- SDrFDLpi0Ckbz2YHMHcDXLMxnAfXWSEt1EmD8wJayb9OZgI6h6cHKAv5U6c0Sh54laa5
- RDwg==
-X-Gm-Message-State: APjAAAWpEnEtVCerW/XYwiOeRd+1Ipdf6W+71z6BvDxnkxjXixirXYIA
- fACVMPl/iOvHDBrWvAOYHBFoveGpbWzcPSudVvaPPQ==
-X-Google-Smtp-Source: APXvYqxA4KymHfYVZJp+513DppW1RweHZkY7FevlDR8l2jLOXOk+nmSeISVuvQpjenrUnIKpX/cDOUf9dilFT9SRZZ0=
-X-Received: by 2002:ab0:24ce:: with SMTP id k14mr8961736uan.15.1574405623268; 
- Thu, 21 Nov 2019 22:53:43 -0800 (PST)
+ id 1iY2rS-0001XO-P2; Fri, 22 Nov 2019 06:56:12 +0000
+Received: from droid10.amlogic.com (10.18.11.213) by mail-sh.amlogic.com
+ (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Fri, 22 Nov 2019
+ 14:56:24 +0800
+From: Hanjie Lin <hanjie.lin@amlogic.com>
+To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
+ <narmstrong@baylibre.com>, Rob Herring <robh@kernel.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Felipe Balbi <felipe.balbi@linux.intel.com>,
+ Kevin Hilman <khilman@baylibre.com>
+Subject: [PATCH 0/6] arm64: meson: Add support for USB on Amlogic A1
+Date: Fri, 22 Nov 2019 14:55:51 +0800
+Message-ID: <1574405757-76184-1-git-send-email-hanjie.lin@amlogic.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-References: <1574232449-13570-1-git-send-email-manish.narani@xilinx.com>
- <1574232449-13570-5-git-send-email-manish.narani@xilinx.com>
- <CAC=3edbHWA7gv-mTFVXXcMzN6hyzO4LPqkbcRZ-zDp5BAm8_Vw@mail.gmail.com>
-In-Reply-To: <CAC=3edbHWA7gv-mTFVXXcMzN6hyzO4LPqkbcRZ-zDp5BAm8_Vw@mail.gmail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 22 Nov 2019 07:53:06 +0100
-Message-ID: <CAPDyKFrgC1nxe7NqmNHHibYmDfrdx6ubTpOE41bW2Ge796+N8w@mail.gmail.com>
-Subject: Re: [PATCH v6 4/8] dt-bindings: mmc: Add optional generic properties
- for mmc
-To: Rob Herring <rob.e.herring@gmail.com>,
- Manish Narani <manish.narani@xilinx.com>
+X-Originating-IP: [10.18.11.213]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_225345_060491_EB4D1799 
-X-CRM114-Status: GOOD (  14.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191121_225610_813800_1636D177 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,64 +58,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, rajan.vaja@xilinx.com,
- nava.manne@xilinx.com, "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Michal Simek <michal.simek@xilinx.com>, Rob Herring <robh+dt@kernel.org>,
- Moritz Fischer <mdf@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, jolly.shah@xilinx.com,
- linux-kernel <linux-kernel@vger.kernel.org>, git@xilinx.com
+Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Victor Wan <victor.wan@amlogic.com>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ linux-usb@vger.kernel.org, Yue Wang <yue.wang@amlogic.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Liang Yang <liang.yang@amlogic.com>, Qiufang Dai <qiufang.dai@amlogic.com>,
+ Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Jian Hu <jian.hu@amlogic.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 21 Nov 2019 at 20:01, Rob Herring <rob.e.herring@gmail.com> wrote:
->
-> On Wed, Nov 20, 2019 at 12:49 AM Manish Narani <manish.narani@xilinx.com> wrote:
-> >
-> > Add optional properties for mmc hosts which are used to set clk delays
-> > for different speed modes in the controller.
-> >
-> > Signed-off-by: Manish Narani <manish.narani@xilinx.com>
-> > ---
-> >  .../devicetree/bindings/mmc/mmc-controller.yaml     | 13 +++++++++++++
-> >  1 file changed, 13 insertions(+)
-> >
-> > diff --git a/Documentation/devicetree/bindings/mmc/mmc-controller.yaml b/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
-> > index 080754e0ef35..305b2016bc17 100644
-> > --- a/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
-> > +++ b/Documentation/devicetree/bindings/mmc/mmc-controller.yaml
-> > @@ -333,6 +333,18 @@ patternProperties:
-> >      required:
-> >        - reg
-> >
-> > +  "^clk-phase-(legacy|sd-hs|mmc-(hs|hs[24]00|ddr52)|uhs-(sdr(12|25|50|104)|ddr50))$":
-> > +    minItems: 2
-> > +    maxItems: 2
-> > +    allOf:
-> > +      - $ref: /schemas/types.yaml#/definitions/uint32
-> > +      - minimum: 0
-> > +        maximum: 359
->
-> This is wrong. It can't be both minItems of 2 and a single uint32.
-> What's needed is:
->
-> allOf:
->   - $ref: /schemas/types.yaml#/definitions/uint32-array
-> minItems: 2
-> maxItems: 2
-> items:
->   minimum: 0
->   maximum: 359
+This patchset adds support for USB on Amlogic A1 SoCs.
 
-Thanks Rob for clarifying!
+This patchset is composed with :
+- bindings of the PHY
+- bindings of the USB Control Glue
+- PHY Driver
+- USB Control Glue driver
+- dts of the PHY
+- dts of the USB Controller
 
-Manish, can you please send a fixup on top?
+The Amlogic A1 USB Complex is composed of :
+- 1 DWC3 USB controller for USB2 Host functionality
+- 1 USB2 PHY for USB2 Host functionality
 
-Kind regards
-Uffe
+The USB Control Glue setups the clocks and the reset about DWC3 USB
+controller, and binds to the USB2 PHY. It also configures the 8bit
+UTMI interfaces for the USB2 PHY, including setting USB2 phy mode.
+
+The USB2 PHY driver initializes the phy analog settings, phy PLL 
+setup and phy tuning.
+
+This patchset is based on A1 clock/power domain/reset series at [0].
+
+[0]
+https://patchwork.kernel.org/project/linux-amlogic/list/?series=185477
+https://patchwork.kernel.org/project/linux-amlogic/list/?series=180055
+https://patchwork.kernel.org/project/linux-amlogic/list/?series=189643
+
+Hanjie Lin (6):
+  dt-bindings: phy: Add Amlogic G12A USB2 PHY Bindings
+  dt-bindings: usb: dwc3: Add the Amlogic A1 Family DWC3 Glue Bindings
+  phy: amlogic: Add Amlogic A1 USB2 PHY Driver
+  usb: dwc3: Add Amlogic A1 DWC3 glue
+  arm64: dts: meson: a1: Enable USB2 PHY
+  arm64: dts: meson: a1: Enable DWC3 controller
+
+ .../bindings/phy/amlogic,meson-a1-usb2-phy.yaml    |  55 +++
+ .../devicetree/bindings/usb/amlogic,dwc3.txt       |  53 +++
+ arch/arm64/boot/dts/amlogic/meson-a1.dtsi          |  41 +++
+ drivers/phy/amlogic/Kconfig                        |  13 +
+ drivers/phy/amlogic/Makefile                       |   1 +
+ drivers/phy/amlogic/phy-meson-a1-usb2.c            | 327 +++++++++++++++++
+ drivers/usb/dwc3/Kconfig                           |  11 +
+ drivers/usb/dwc3/Makefile                          |   1 +
+ drivers/usb/dwc3/dwc3-meson-a1.c                   | 397 +++++++++++++++++++++
+ 9 files changed, 899 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/amlogic,meson-a1-usb2-phy.yaml
+ create mode 100644 drivers/phy/amlogic/phy-meson-a1-usb2.c
+ create mode 100644 drivers/usb/dwc3/dwc3-meson-a1.c
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
