@@ -2,95 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97E9C10775E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 19:30:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79868107780
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 19:41:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=khdsyZjD2cjIfeivSeGXcL7p1d9YcVB2Rmua9bLk6bA=; b=iwE3s4+jK+GQMb
-	o8TReV1IPn8C6jIMJGHsydmHWI839a/OAL1ZqM7zjs02c/Zq//cjILVPI2D4967hWywouAl965ZNw
-	9R8jrfoCzzH90aUGCCwEFmQIjScBM8+Vw/W+zRsfhmM4r7eLpi8JWvP6vlzB0qstg/QEJEYP+AI+k
-	sR32e7z2lFRx2WxqooEbEAwVslgpblDG3zkKpDlQ2y38uY1yWbEim+pZnLcJM9lyzXpoc00esh1Pl
-	cnu3S8vXcnGVyafllPclSkLoFR/8DnOpX0sqjwFPFIAG132FwqmOZzEQEi8O167s9aF5c0ux/03Hb
-	6PsfZ6fPZizFZKOZQLoQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gcGQahU5Y4eUf5JB6UVje6P0Ly19bkhCFc5lUVC6DZg=; b=ARq38FPnMntdht
+	hhQyKcgYaEMpTKq6sSofKLwIgvcUqRWq8RkPo3QtHnPc6a95gB4ew6N9d4B/3N/U7z4gNXMt6hMKc
+	Hq+AQ5DmZq7xyNd0Ey/hnucuH0vpvWG6eAAeMb++F+aEVDEhZzlWnFivx+XXpv+pYZQn0VjHRG3gM
+	TuhyPRDWd57Vbh3u3OhBTDDoK01OS2D+d/Ou67uh4y/g2Y6wzJ/fM+cBBW9eA4tREmz0x8yrb6L/d
+	c8zg2BTDBjk6Fy4z8ERUBVV/sE39xAOMHyD1YoMuAz/mW5Bywp7yYzHSGKuYLW3IO/21I8W/Ejq7p
+	GwX6kRmupQIuaYmuISWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYDhU-0002TU-0Y; Fri, 22 Nov 2019 18:30:36 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1iYDri-0006bj-Op; Fri, 22 Nov 2019 18:41:10 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYDhF-0002Ss-LZ
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 18:30:23 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xAMIONjJ118773;
- Fri, 22 Nov 2019 18:29:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=content-type :
- mime-version : subject : from : in-reply-to : date : cc :
- content-transfer-encoding : message-id : references : to;
- s=corp-2019-08-05; bh=NQkUG/QqIaYEKdkqScvUyHBIBLEDQ0mhob5S2Y4ohUs=;
- b=E52+dKeqaDVgHp94Xqj3jHLM1YYCYmkprL5gAi578Gtmpf3gxI2rIwdhX15tENum/b7y
- QyUWHpbp7GZKc6EGvcRfjyWE28WHIehtMcCFtjf1LeptGUjkvIuyaFAYRUh50C/FESMA
- l3r7A107MhuGCihEsCCeMpXGeMBK3z01PSmiaw0qyVBqMK+B4pkFiq40g1pObipkF3am
- vBJLxqjfrDssLbo28BvNTRnU9xYq2vqgPk/4YGQ8kz8KJE/HQB3mwSc8BJkLZKOC8mXa
- Vb7FcATdRhp6eJLhhjpsPxkIHK1JaAr/4+Lsp8uWpH/Bllo8K0adXV0C46H9CiMV/Mgq Ag== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by aserp2120.oracle.com with ESMTP id 2wa92qc8cc-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 22 Nov 2019 18:29:29 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xAMITCF4189474;
- Fri, 22 Nov 2019 18:29:29 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3020.oracle.com with ESMTP id 2wegqs4gna-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 22 Nov 2019 18:29:29 +0000
-Received: from abhmp0006.oracle.com (abhmp0006.oracle.com [141.146.116.12])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id xAMIS5d5000570;
- Fri, 22 Nov 2019 18:28:05 GMT
-Received: from [10.39.199.17] (/10.39.199.17)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 22 Nov 2019 10:28:05 -0800
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
-Subject: Re: [PATCH v6 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-From: Alex Kogan <alex.kogan@oracle.com>
-In-Reply-To: <201911202212.CdyX1gua%lkp@intel.com>
-Date: Fri, 22 Nov 2019 13:28:02 -0500
-Message-Id: <B1A1B09F-C44E-45F7-80EB-09E30AEFD358@oracle.com>
-References: <20191107174622.61718-4-alex.kogan@oracle.com>
- <201911202212.CdyX1gua%lkp@intel.com>
-To: kbuild test robot <lkp@intel.com>
-X-Mailer: Apple Mail (2.3445.104.11)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9449
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1911140001 definitions=main-1911220153
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9449
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
- definitions=main-1911220153
+ id 1iYDrX-0006bA-RX
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 18:41:02 +0000
+Received: by mail-pf1-x444.google.com with SMTP id r4so3862848pfl.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 22 Nov 2019 10:40:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Wo5ibYR/jmzeVb+M6LZK7ExxWr9YCNmlRHQmrYzh6zE=;
+ b=IGk0VyYbJ8KpsLBvRkzGBYaeS7Tw0H9ZJyQTOxePasJTwvRDqEsrk/Gvd/8XefDUib
+ O7nOZJgVJj8ZrkNxC25BQWumNOaV71O9SHVApvk+sYYQFyHkMr5HQuWzK8u9tGMzw9z8
+ RJj9WSP/LevCEdlZMKjmM1wk/XvcfQccmB+6BJM1utPpY3ds+hMiF1YjKiEaUhLIyUm/
+ x98JDmoYcsGj/Wqlg3OFOJv2vld851mVHMs3N6lMsMYsqNBuAf0RId2ZrghwDHK4z53A
+ XhLpajMgxUZLGNAHVSDdkiL/3xlY+kWXxiMfJM85N85oD+Sg/DOO9u/1toaxLqDzulAJ
+ gp/A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Wo5ibYR/jmzeVb+M6LZK7ExxWr9YCNmlRHQmrYzh6zE=;
+ b=l6B0gB03oFtlpbUJgMw2KQyYaD3CNf8KF28mUFk9D0e20MQQChsp3O9t7MOTpXxgW9
+ kHrXjzYstuYzHOF54m06tD+I7ewHfcT9SkbkYIwqIX41dudGtZIWBNLlikhQ2MOESgOy
+ ZdDwcar5aAmZ978QFSYtJ6+86p+lz66EIoi5enE4ALYSiTZQJStsTzggmr/Bfv+MumYy
+ PG6BBNoDU4/K4i+d+N2U0zGhK2ZdBQz3Io1/x0TOqV/w9+AfDoLoVARIPTZt4opt/AGy
+ 1xjWRktGSGjOZoXg+56OS1ERYxYMCceLuhZuaBFG7NztpyNl6J+7CeOX4JKkwrztfSkn
+ 7eBA==
+X-Gm-Message-State: APjAAAXnUFVIkL5jR7QrSN91pDjunI5kAgNxLmOz0u4tgvn4yUrGbrz3
+ 3kic8eJ+qEkszkqXTXH/vmaGUehjEus=
+X-Google-Smtp-Source: APXvYqzyNaRls404Elve1Ifv+CDEigw5WzICjbmCM8GI9edRfJ/JAqimbTaO+ilGuGdN0+xUY927OQ==
+X-Received: by 2002:a63:5163:: with SMTP id r35mr17270073pgl.201.1574448058804; 
+ Fri, 22 Nov 2019 10:40:58 -0800 (PST)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id u7sm8275698pfh.84.2019.11.22.10.40.57
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 22 Nov 2019 10:40:58 -0800 (PST)
+Date: Fri, 22 Nov 2019 11:40:56 -0700
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH v5 04/14] coresight: cti: Add sysfs trigger / channel
+ programming API
+Message-ID: <20191122184056.GB23396@xps15>
+References: <20191119231912.12768-1-mike.leach@linaro.org>
+ <20191119231912.12768-5-mike.leach@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191119231912.12768-5-mike.leach@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_103021_797310_1400B8FD 
-X-CRM114-Status: GOOD (  20.34  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191122_104059_909113_B2922933 
+X-CRM114-Status: GOOD (  22.93  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -98,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,98 +99,614 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, kbuild-all@lists.01.org,
- arnd@arndb.de, peterz@infradead.org, dave.dice@oracle.com,
- jglauber@marvell.com, x86@kernel.org, will.deacon@arm.com,
- linux@armlinux.org.uk, steven.sistare@oracle.com, linux-kernel@vger.kernel.org,
- rahul.x.yadav@oracle.com, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
- longman@redhat.com, tglx@linutronix.de, daniel.m.jordan@oracle.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, coresight@lists.linaro.org,
+ suzuki.poulose@arm.com, linux-arm-kernel@lists.infradead.org,
+ linux-doc@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgo+IE9uIE5vdiAyMCwgMjAxOSwgYXQgMTA6MTYgQU0sIGtidWlsZCB0ZXN0IHJvYm90IDxsa3BA
-aW50ZWwuY29tPiB3cm90ZToKPiAKPiBIaSBBbGV4LAo+IAo+IFRoYW5rIHlvdSBmb3IgdGhlIHBh
-dGNoISBZZXQgc29tZXRoaW5nIHRvIGltcHJvdmU6Cj4gCj4gW2F1dG8gYnVpbGQgdGVzdCBFUlJP
-UiBvbiBsaW51cy9tYXN0ZXJdCj4gW2Fsc28gYnVpbGQgdGVzdCBFUlJPUiBvbiB2NS40LXJjOCBu
-ZXh0LTIwMTkxMTIwXQo+IFtpZiB5b3VyIHBhdGNoIGlzIGFwcGxpZWQgdG8gdGhlIHdyb25nIGdp
-dCB0cmVlLCBwbGVhc2UgZHJvcCB1cyBhIG5vdGUgdG8gaGVscAo+IGltcHJvdmUgdGhlIHN5c3Rl
-bS4gQlRXLCB3ZSBhbHNvIHN1Z2dlc3QgdG8gdXNlICctLWJhc2UnIG9wdGlvbiB0byBzcGVjaWZ5
-IHRoZQo+IGJhc2UgdHJlZSBpbiBnaXQgZm9ybWF0LXBhdGNoLCBwbGVhc2Ugc2VlIGh0dHBzOi8v
-dXJsZGVmZW5zZS5wcm9vZnBvaW50LmNvbS92Mi91cmw/dT1odHRwcy0zQV9fc3RhY2tvdmVyZmxv
-dy5jb21fYV8zNzQwNjk4MiZkPUR3SUJBZyZjPVJvUDFZdW1DWENnYVdIdmxaWVI4UFpoOEJ2N3FJ
-ck1VQjY1ZWFwSV9KbkUmcj1IdmhrM0Y0b21kQ2stR0UxUFRPbTNLbjBBN0FwV09aMmFaTFR1VnhG
-SzRrJm09QnhFdDEyMzJjY0dsTUdEaW5BQjBRQVVhVEZ5bC1tNXNwNEMtY3JIanBvVSZzPU96elFx
-ZzRmVERWNTVYLXk0dmJuR2VYb0phUEhTdk9fRWZyVVFuTVZSSGMmZT0gXQo+IAo+IHVybDogICAg
-aHR0cHM6Ly91cmxkZWZlbnNlLnByb29mcG9pbnQuY29tL3YyL3VybD91PWh0dHBzLTNBX19naXRo
-dWIuY29tXzBkYXktMkRjaV9saW51eF9jb21taXRzX0FsZXgtMkRLb2dhbl9sb2NraW5nLTJEcXNw
-aW5sb2NrLTJEUmVuYW1lLTJEbWNzLTJEbG9jay0yRHVubG9jay0yRG1hY3Jvcy0yRGFuZC0yRG1h
-a2UtMkR0aGVtLTJEbW9yZS0yRGdlbmVyaWNfMjAxOTExMDktMkQxODA1MzUmZD1Ed0lCQWcmYz1S
-b1AxWXVtQ1hDZ2FXSHZsWllSOFBaaDhCdjdxSXJNVUI2NWVhcElfSm5FJnI9SHZoazNGNG9tZENr
-LUdFMVBUT20zS24wQTdBcFdPWjJhWkxUdVZ4Rks0ayZtPUJ4RXQxMjMyY2NHbE1HRGluQUIwUUFV
-YVRGeWwtbTVzcDRDLWNySGpwb1Umcz11RTdaZVlYT0ZpdTA5UFVWam5DbnRFZTJyUjV4X1F4UzZk
-RVc5dHdwZm9rJmU9IAo+IGJhc2U6ICAgaHR0cHM6Ly91cmxkZWZlbnNlLnByb29mcG9pbnQuY29t
-L3YyL3VybD91PWh0dHBzLTNBX19naXQua2VybmVsLm9yZ19wdWJfc2NtX2xpbnV4X2tlcm5lbF9n
-aXRfdG9ydmFsZHNfbGludXguZ2l0JmQ9RHdJQkFnJmM9Um9QMVl1bUNYQ2dhV0h2bFpZUjhQWmg4
-QnY3cUlyTVVCNjVlYXBJX0puRSZyPUh2aGszRjRvbWRDay1HRTFQVE9tM0tuMEE3QXBXT1oyYVpM
-VHVWeEZLNGsmbT1CeEV0MTIzMmNjR2xNR0RpbkFCMFFBVWFURnlsLW01c3A0Qy1jckhqcG9VJnM9
-YUFLeHVYY19jN09GMGZmaW9RZlZzSUI2SC00U2Q5UFl4U003a3VybTJpZyZlPSAgMDA1OGIwYTUw
-NmU0MGQ5YTJjNjIwMTVmZTkyZWI2NGE0NGQ3OGNkOQo+IGNvbmZpZzogaTM4Ni1yYW5kY29uZmln
-LWYwMDMtMjAxOTExMjAgKGF0dGFjaGVkIGFzIC5jb25maWcpCj4gY29tcGlsZXI6IGdjYy03IChE
-ZWJpYW4gNy40LjAtMTQpIDcuNC4wCj4gcmVwcm9kdWNlOgo+ICAgICAgICAjIHNhdmUgdGhlIGF0
-dGFjaGVkIC5jb25maWcgdG8gbGludXggYnVpbGQgdHJlZQo+ICAgICAgICBtYWtlIEFSQ0g9aTM4
-NiAKPiAKPiBJZiB5b3UgZml4IHRoZSBpc3N1ZSwga2luZGx5IGFkZCBmb2xsb3dpbmcgdGFnCj4g
-UmVwb3J0ZWQtYnk6IGtidWlsZCB0ZXN0IHJvYm90IDxsa3BAaW50ZWwuY29tPgo+IAo+IEFsbCBl
-cnJvci93YXJuaW5ncyAobmV3IG9uZXMgcHJlZml4ZWQgYnkgPj4pOgo+IAo+ICAgSW4gZmlsZSBp
-bmNsdWRlZCBmcm9tIGluY2x1ZGUvbGludXgvZXhwb3J0Lmg6NDI6MCwKPiAgICAgICAgICAgICAg
-ICAgICAgZnJvbSBpbmNsdWRlL2xpbnV4L2xpbmthZ2UuaDo3LAo+ICAgICAgICAgICAgICAgICAg
-ICBmcm9tIGluY2x1ZGUvbGludXgva2VybmVsLmg6OCwKPiAgICAgICAgICAgICAgICAgICAgZnJv
-bSBpbmNsdWRlL2xpbnV4L2xpc3QuaDo5LAo+ICAgICAgICAgICAgICAgICAgICBmcm9tIGluY2x1
-ZGUvbGludXgvc21wLmg6MTIsCj4gICAgICAgICAgICAgICAgICAgIGZyb20ga2VybmVsL2xvY2tp
-bmcvcXNwaW5sb2NrLmM6MTY6Cj4gICBrZXJuZWwvbG9ja2luZy9xc3BpbmxvY2tfY25hLmg6IElu
-IGZ1bmN0aW9uICdjbmFfaW5pdF9ub2Rlcyc6Cj4+PiBpbmNsdWRlL2xpbnV4L2NvbXBpbGVyLmg6
-MzUwOjM4OiBlcnJvcjogY2FsbCB0byAnX19jb21waWxldGltZV9hc3NlcnRfODAnIGRlY2xhcmVk
-IHdpdGggYXR0cmlidXRlIGVycm9yOiBCVUlMRF9CVUdfT04gZmFpbGVkOiBzaXplb2Yoc3RydWN0
-IGNuYV9ub2RlKSA+IHNpemVvZihzdHJ1Y3QgcW5vZGUpCj4gICAgIF9jb21waWxldGltZV9hc3Nl
-cnQoY29uZGl0aW9uLCBtc2csIF9fY29tcGlsZXRpbWVfYXNzZXJ0XywgX19MSU5FX18pCj4gICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4KPiAgIGluY2x1ZGUvbGludXgv
-Y29tcGlsZXIuaDozMzE6NDogbm90ZTogaW4gZGVmaW5pdGlvbiBvZiBtYWNybyAnX19jb21waWxl
-dGltZV9hc3NlcnQnCj4gICAgICAgcHJlZml4ICMjIHN1ZmZpeCgpOyAgICBcCj4gICAgICAgXn5+
-fn5+Cj4gICBpbmNsdWRlL2xpbnV4L2NvbXBpbGVyLmg6MzUwOjI6IG5vdGU6IGluIGV4cGFuc2lv
-biBvZiBtYWNybyAnX2NvbXBpbGV0aW1lX2Fzc2VydCcKPiAgICAgX2NvbXBpbGV0aW1lX2Fzc2Vy
-dChjb25kaXRpb24sIG1zZywgX19jb21waWxldGltZV9hc3NlcnRfLCBfX0xJTkVfXykKPiAgICAg
-Xn5+fn5+fn5+fn5+fn5+fn5+fgo+ICAgaW5jbHVkZS9saW51eC9idWlsZF9idWcuaDozOTozNzog
-bm90ZTogaW4gZXhwYW5zaW9uIG9mIG1hY3JvICdjb21waWxldGltZV9hc3NlcnQnCj4gICAgI2Rl
-ZmluZSBCVUlMRF9CVUdfT05fTVNHKGNvbmQsIG1zZykgY29tcGlsZXRpbWVfYXNzZXJ0KCEoY29u
-ZCksIG1zZykKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBefn5+fn5+
-fn5+fn5+fn5+fn4KPiAgIGluY2x1ZGUvbGludXgvYnVpbGRfYnVnLmg6NTA6Mjogbm90ZTogaW4g
-ZXhwYW5zaW9uIG9mIG1hY3JvICdCVUlMRF9CVUdfT05fTVNHJwo+ICAgICBCVUlMRF9CVUdfT05f
-TVNHKGNvbmRpdGlvbiwgIkJVSUxEX0JVR19PTiBmYWlsZWQ6ICIgI2NvbmRpdGlvbikKPiAgICAg
-Xn5+fn5+fn5+fn5+fn5+fgo+Pj4ga2VybmVsL2xvY2tpbmcvcXNwaW5sb2NrX2NuYS5oOjgwOjI6
-IG5vdGU6IGluIGV4cGFuc2lvbiBvZiBtYWNybyAnQlVJTERfQlVHX09OJwo+ICAgICBCVUlMRF9C
-VUdfT04oc2l6ZW9mKHN0cnVjdCBjbmFfbm9kZSkgPiBzaXplb2Yoc3RydWN0IHFub2RlKSk7Cj4g
-ICAgIF5+fn5+fn5+fn5+fgoKQ29uc2lkZXIgdGhlIGZvbGxvd2luZyBkZWZpbml0aW9uIG9mIHFu
-b2RlOgoKc3RydWN0IHFub2RlIHsKCXN0cnVjdCBtY3Nfc3BpbmxvY2sgbWNzOwojaWYgZGVmaW5l
-ZChDT05GSUdfUEFSQVZJUlRfU1BJTkxPQ0tTKSB8fCBkZWZpbmVkKENPTkZJR19OVU1BX0FXQVJF
-X1NQSU5MT0NLUykKCWxvbmcgcmVzZXJ2ZWRbMl07CiNlbmRpZgp9OwoKYW5kIHRoaXMgaXMgaG93
-IGNuYV9ub2RlIGlzIGRlZmluZWQ6CgpzdHJ1Y3QgY25hX25vZGUgewoJc3RydWN0IG1jc19zcGlu
-bG9jawltY3M7CglpbnQJCQludW1hX25vZGU7Cgl1MzIJCQllbmNvZGVkX3RhaWw7Cgl1MzIJCQlw
-cmVfc2Nhbl9yZXN1bHQ7IC8qIDAsIDEsIDIgb3IgZW5jb2RlZCB0YWlsICovCgl1MzIJCQlpbnRy
-YV9jb3VudDsKfTsKClNpbmNlIGxvbmcgaXMgMzIgYml0IG9uIGkzODYsIHdlIGdldCB0aGUgY29t
-cGlsYXRpb24gZXJyb3IgYWJvdmUuCgpXZSBjYW4gdHJ5IGFuZCBzcXVlZXplIENOQS1zcGVjaWZp
-YyBmaWVsZHMgaW50byA2NCBiaXQgb24gaTM4NiAob3IgYW55IDMyYml0IAphcmNoaXRlY3R1cmUg
-Zm9yIHRoYXQgbWF0dGVyKS4gTm90ZSB0aGF0IGFuIGVuY29kZWQgdGFpbCBwb2ludGVyIHJlcXVp
-cmVzIHVwIAp0byAyNCBiaXRzLCBhbmQgd2UgaGF2ZSB0d28gb2YgdGhvc2UuIFdlIHdvdWxkIHdh
-bnQgZGlmZmVyZW50IGZpZWxkIGVuY29kaW5ncyAKZm9yIDMyIHZzIDY0Yml0IGFyY2hpdGVjdHVy
-ZXMsIGFuZCB0aGlzIGFsbCB3aWxsIGJlIHF1aXRlIHVnbHkuCgpTbyBpbnN0ZWFkIHdlIHNob3Vs
-ZCBwcm9iYWJseSBlaXRoZXIgY2hhbmdlIHRoZSBkZWZpbml0aW9uIG9mIEByZXNlcnZlZCBpbiBx
-bm9kZSAKdG8gbG9uZyBsb25nLCBvciBwZXJoYXBzIGRpc2FibGUgQ05BIG9uIDMyYml0IGFyY2hp
-dGVjdHVyZXMgYWx0b2dldGhlcj8KSSB3b3VsZCBjZXJ0YWlubHkgcHJlZmVyIHRoZSBmb3JtZXIs
-IGVzcGVjaWFsbHkgYXMgaXQgcmVxdWlyZXMgdGhlIGxlYXN0IGFtb3VudCAKb2YgY29kZS9jb25m
-aWcgY2hhbmdlcy4KCkFueSBvYmplY3Rpb25zIC8gdGhvdWdodHM/CgpUaGFua3MsCuKAlCBBbGV4
-CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+On Tue, Nov 19, 2019 at 11:19:02PM +0000, Mike Leach wrote:
+> Adds a user API to allow programming of CTI by trigger ID and
+> channel number. This will take the channel and trigger ID supplied
+> by the user and program the appropriate register values.
+> 
+> Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> ---
+>  .../hwtracing/coresight/coresight-cti-sysfs.c | 349 ++++++++++++++++++
+>  drivers/hwtracing/coresight/coresight-cti.c   | 147 ++++++++
+>  drivers/hwtracing/coresight/coresight-cti.h   |  32 ++
+>  3 files changed, 528 insertions(+)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> index 02d3ee0c1278..98de8a4768fc 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> @@ -464,6 +464,349 @@ static struct attribute *coresight_cti_regs_attrs[] = {
+>  	NULL,
+>  };
+>  
+> +/* CTI channel x-trigger programming */
+> +static int
+> +cti_trig_op_parse(struct device *dev, enum cti_chan_op op,
+> +		  enum cti_trig_dir dir, const char *buf, size_t size)
+> +{
+> +	u32 chan_idx;
+> +	u32 trig_idx;
+> +	int items, err = -EINVAL;
+> +
+> +	/* extract chan idx and trigger idx */
+> +	items = sscanf(buf, "%d %d", &chan_idx, &trig_idx);
+> +	if (items == 2) {
+> +		err = cti_channel_trig_op(dev, op, dir, chan_idx, trig_idx);
+> +		if (!err)
+> +			err = size;
+> +	}
+> +	return err;
+> +}
+> +
+> +static ssize_t trigin_attach_store(struct device *dev,
+> +				   struct device_attribute *attr,
+> +				   const char *buf, size_t size)
+> +{
+> +	return cti_trig_op_parse(dev, CTI_CHAN_ATTACH, CTI_TRIG_IN,
+> +				 buf, size);
+> +}
+> +static DEVICE_ATTR_WO(trigin_attach);
+> +
+> +static ssize_t trigin_detach_store(struct device *dev,
+> +				   struct device_attribute *attr,
+> +				   const char *buf, size_t size)
+> +{
+> +	return cti_trig_op_parse(dev, CTI_CHAN_DETACH, CTI_TRIG_IN,
+> +				 buf, size);
+> +}
+> +static DEVICE_ATTR_WO(trigin_detach);
+> +
+> +static ssize_t trigout_attach_store(struct device *dev,
+> +				    struct device_attribute *attr,
+> +				    const char *buf, size_t size)
+> +{
+> +	return cti_trig_op_parse(dev, CTI_CHAN_ATTACH, CTI_TRIG_OUT,
+> +				 buf, size);
+> +}
+> +static DEVICE_ATTR_WO(trigout_attach);
+> +
+> +static ssize_t trigout_detach_store(struct device *dev,
+> +				    struct device_attribute *attr,
+> +				    const char *buf, size_t size)
+> +{
+> +	return cti_trig_op_parse(dev, CTI_CHAN_DETACH, CTI_TRIG_OUT,
+> +				 buf, size);
+> +}
+> +static DEVICE_ATTR_WO(trigout_detach);
+> +
+> +
+> +static ssize_t chan_gate_enable_store(struct device *dev,
+> +				      struct device_attribute *attr,
+> +				      const char *buf, size_t size)
+> +{
+> +	int err = 0, channel = 0;
+> +
+> +	if (kstrtoint(buf, 0, &channel))
+> +		return -EINVAL;
+> +
+> +	err = cti_channel_gate_op(dev, CTI_GATE_CHAN_ENABLE, channel);
+> +	return err ? err : size;
+> +}
+> +
+> +static ssize_t chan_gate_enable_show(struct device *dev,
+> +				     struct device_attribute *attr,
+> +				     char *buf)
+> +{
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct cti_config *cfg = &drvdata->config;
+> +	unsigned long ctigate_bitmask = cfg->ctigate;
+> +	int size = 0;
+> +
+> +	if (cfg->ctigate == 0)
+> +		size = scnprintf(buf, PAGE_SIZE, "\n");
+> +	else
+> +		size = bitmap_print_to_pagebuf(true, buf, &ctigate_bitmask,
+> +					       cfg->nr_ctm_channels);
+> +	return size;
+> +}
+> +static DEVICE_ATTR_RW(chan_gate_enable);
+> +
+> +static ssize_t chan_gate_disable_store(struct device *dev,
+> +				       struct device_attribute *attr,
+> +				       const char *buf, size_t size)
+> +{
+> +	int err = 0, channel = 0;
+> +
+> +	if (kstrtoint(buf, 0, &channel))
+> +		return -EINVAL;
+> +
+> +	err = cti_channel_gate_op(dev, CTI_GATE_CHAN_DISABLE, channel);
+> +	return err ? err : size;
+> +}
+> +static DEVICE_ATTR_WO(chan_gate_disable);
+> +
+> +static int
+> +chan_op_parse(struct device *dev, enum cti_chan_set_op op, const char *buf)
+> +{
+> +	int err = 0, channel = 0;
+> +
+> +	if (kstrtoint(buf, 0, &channel))
+> +		return -EINVAL;
+> +
+> +	err = cti_channel_setop(dev, op, channel);
+> +	return err;
+> +
+> +}
+> +
+> +static ssize_t chan_set_store(struct device *dev,
+> +			      struct device_attribute *attr,
+> +			      const char *buf, size_t size)
+> +{
+> +	int err = chan_op_parse(dev, CTI_CHAN_SET, buf);
+> +
+> +	return err ? err : size;
+> +}
+> +static DEVICE_ATTR_WO(chan_set);
+> +
+> +static ssize_t chan_clear_store(struct device *dev,
+> +				struct device_attribute *attr,
+> +				const char *buf, size_t size)
+> +{
+> +	int err = chan_op_parse(dev, CTI_CHAN_CLR, buf);
+> +
+> +	return err ? err : size;
+> +}
+> +static DEVICE_ATTR_WO(chan_clear);
+> +
+> +static ssize_t chan_pulse_store(struct device *dev,
+> +				struct device_attribute *attr,
+> +				const char *buf, size_t size)
+> +{
+> +	int err = chan_op_parse(dev, CTI_CHAN_PULSE, buf);
+> +
+> +	return err ? err : size;
+> +}
+> +static DEVICE_ATTR_WO(chan_pulse);
+> +
+> +static ssize_t trig_filter_enable_show(struct device *dev,
+> +				       struct device_attribute *attr,
+> +				       char *buf)
+> +{
+> +	u32 val;
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +
+> +	spin_lock(&drvdata->spinlock);
+> +	val = drvdata->config.trig_filter_enable;
+> +	spin_unlock(&drvdata->spinlock);
+> +	return scnprintf(buf, PAGE_SIZE, "%d\n", val);
+> +}
+> +
+> +static ssize_t trig_filter_enable_store(struct device *dev,
+> +					struct device_attribute *attr,
+> +					const char *buf, size_t size)
+> +{
+> +	unsigned long val;
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +
+> +	if (kstrtoul(buf, 0, &val))
+> +		return -EINVAL;
+> +
+> +	spin_lock(&drvdata->spinlock);
+> +	drvdata->config.trig_filter_enable = !!val;
+> +	spin_unlock(&drvdata->spinlock);
+> +	return size;
+> +}
+> +static DEVICE_ATTR_RW(trig_filter_enable);
+> +
+> +static ssize_t trigout_filtered_show(struct device *dev,
+> +				     struct device_attribute *attr,
+> +				     char *buf)
+> +{
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct cti_config *cfg = &drvdata->config;
+> +	int size = 0, nr_trig_max = cfg->nr_trig_max;
+> +	unsigned long mask = cfg->trig_out_filter;
+> +
+> +	if (mask)
+> +		size = bitmap_print_to_pagebuf(true, buf, &mask, nr_trig_max);
+> +	return size;
+> +}
+> +static DEVICE_ATTR_RO(trigout_filtered);
+> +
+> +/* clear all xtrigger / channel programming */
+> +static ssize_t chan_xtrigs_reset_store(struct device *dev,
+> +				       struct device_attribute *attr,
+> +				       const char *buf, size_t size)
+> +{
+> +	int i;
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct cti_config *config = &drvdata->config;
+> +
+> +	spin_lock(&drvdata->spinlock);
+> +
+> +	/* clear the CTI trigger / channel programming registers */
+> +	for (i = 0; i < config->nr_trig_max; i++) {
+> +		config->ctiinen[i] = 0;
+> +		config->ctiouten[i] = 0;
+> +	}
+> +
+> +	/* clear the other regs */
+> +	config->ctigate = GENMASK(config->nr_ctm_channels - 1, 0);
+> +	config->asicctl = 0;
+> +	config->ctiappset = 0;
+> +	config->ctiinout_sel = 0;
+> +	config->xtrig_rchan_sel = 0;
+> +
+> +	/* if enabled then write through */
+> +	if (CTI_PWR_ENA(config))
+> +		cti_write_all_hw_regs(drvdata);
+> +
+> +	spin_unlock(&drvdata->spinlock);
+> +	return size;
+> +}
+> +static DEVICE_ATTR_WO(chan_xtrigs_reset);
+> +
+> +/*
+> + * Write to select a channel to view, read to display the
+> + * cross triggers for the selected channel.
+> + */
+> +static ssize_t chan_xtrigs_view_store(struct device *dev,
+> +				      struct device_attribute *attr,
+> +				      const char *buf, size_t size)
+> +{
+> +	unsigned long val;
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +
+> +	if (kstrtoul(buf, 0, &val))
+> +		return -EINVAL;
+> +	if (val > (drvdata->config.nr_ctm_channels - 1))
+> +		return -EINVAL;
+> +
+> +	spin_lock(&drvdata->spinlock);
+> +	drvdata->config.xtrig_rchan_sel = val;
+> +	spin_unlock(&drvdata->spinlock);
+> +	return size;
+> +}
+> +
+> +static ssize_t chan_xtrigs_view_show(struct device *dev,
+> +				     struct device_attribute *attr,
+> +				     char *buf)
+> +{
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct cti_config *cfg = &drvdata->config;
+> +	int used = 0, reg_idx;
+> +	int buf_sz = PAGE_SIZE;
+> +	u32 chan_mask = BIT(cfg->xtrig_rchan_sel);
+> +
+> +	used += scnprintf(buf, buf_sz, "[%d] IN: ", cfg->xtrig_rchan_sel);
+> +	for (reg_idx = 0;
+> +	     reg_idx < drvdata->config.nr_trig_max;
+> +	     reg_idx++) {
+> +		if (chan_mask & cfg->ctiinen[reg_idx]) {
+> +			used += scnprintf(buf + used, buf_sz - used, "%d ",
+> +					  reg_idx);
+> +		}
+> +	}
+> +
+> +	used += scnprintf(buf + used, buf_sz - used, "OUT: ");
+> +	for (reg_idx = 0;
+> +	     reg_idx < drvdata->config.nr_trig_max;
+> +	     reg_idx++) {
+> +		if (chan_mask & cfg->ctiouten[reg_idx]) {
+> +			used += scnprintf(buf + used, buf_sz - used, "%d ",
+> +					  reg_idx);
+> +		}
+> +	}
+> +	used += scnprintf(buf + used, buf_sz - used, "\n");
+> +	return used;
+> +}
+> +static DEVICE_ATTR_RW(chan_xtrigs_view);
+> +
+> +static ssize_t print_chan_list(struct device *dev,
+> +			       char *buf, bool inuse)
+> +{
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct cti_config *config = &drvdata->config;
+> +	int size, i;
+> +	unsigned long inuse_bits = 0, chan_mask;
+> +
+> +	/* scan regs to get bitmap of channels in use. */
+> +	spin_lock(&drvdata->spinlock);
+> +	for (i = 0; i < config->nr_trig_max; i++) {
+> +		inuse_bits |= config->ctiinen[i];
+> +		inuse_bits |= config->ctiouten[i];
+> +	}
+> +	spin_unlock(&drvdata->spinlock);
+> +
+> +	/* inverse bits if printing free channels */
+> +	if (!inuse)
+> +		inuse_bits = ~inuse_bits;
+> +
+> +	/* list of channels, or 'none' */
+> +	chan_mask = GENMASK(config->nr_ctm_channels - 1, 0);
+> +	if (inuse_bits & chan_mask)
+> +		size = bitmap_print_to_pagebuf(true, buf, &inuse_bits,
+> +					       config->nr_ctm_channels);
+> +	else
+> +		size = scnprintf(buf, PAGE_SIZE, "\n");
+> +	return size;
+> +}
+> +
+> +static ssize_t chan_inuse_show(struct device *dev,
+> +			       struct device_attribute *attr,
+> +			       char *buf)
+> +{
+> +	return print_chan_list(dev, buf, true);
+> +}
+> +static DEVICE_ATTR_RO(chan_inuse);
+> +
+> +static ssize_t chan_free_show(struct device *dev,
+> +			      struct device_attribute *attr,
+> +			      char *buf)
+> +{
+> +	return print_chan_list(dev, buf, false);
+> +}
+> +static DEVICE_ATTR_RO(chan_free);
+> +
+> +static struct attribute *coresight_cti_channel_attrs[] = {
+> +	&dev_attr_trigin_attach.attr,
+> +	&dev_attr_trigin_detach.attr,
+> +	&dev_attr_trigout_attach.attr,
+> +	&dev_attr_trigout_detach.attr,
+> +	&dev_attr_trig_filter_enable.attr,
+> +	&dev_attr_trigout_filtered.attr,
+> +	&dev_attr_chan_gate_enable.attr,
+> +	&dev_attr_chan_gate_disable.attr,
+> +	&dev_attr_chan_set.attr,
+> +	&dev_attr_chan_clear.attr,
+> +	&dev_attr_chan_pulse.attr,
+> +	&dev_attr_chan_inuse.attr,
+> +	&dev_attr_chan_free.attr,
+> +	&dev_attr_chan_xtrigs_view.attr,
+> +	&dev_attr_chan_xtrigs_reset.attr,
+> +	NULL,
+> +};
+> +
+>  /* sysfs groups */
+>  static const struct attribute_group coresight_cti_group = {
+>  	.attrs = coresight_cti_attrs,
+> @@ -479,9 +822,15 @@ static const struct attribute_group coresight_cti_regs_group = {
+>  	.name = "regs",
+>  };
+>  
+> +static const struct attribute_group coresight_cti_channels_group = {
+> +	.attrs = coresight_cti_channel_attrs,
+> +	.name = "channels",
+> +};
+> +
+>  const struct attribute_group *coresight_cti_groups[] = {
+>  	&coresight_cti_group,
+>  	&coresight_cti_mgmt_group,
+>  	&coresight_cti_regs_group,
+> +	&coresight_cti_channels_group,
+>  	NULL,
+>  };
+> diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
+> index b016b1e67fb1..369488dd7b8e 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti.c
+> @@ -293,6 +293,153 @@ int cti_add_default_connection(struct device *dev, struct cti_drvdata *drvdata)
+>  	return ret;
+>  }
+>  
+> +/** cti channel api **/
+> +/* attach/detach channel from trigger - write through if enabled. */
+> +int cti_channel_trig_op(struct device *dev, enum cti_chan_op op,
+> +			enum cti_trig_dir direction, u32 channel_idx,
+> +			u32 trigger_idx)
+> +{
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct cti_config *config = &drvdata->config;
+> +	u32 trig_bitmask;
+> +	u32 chan_bitmask;
+> +	u32 reg_value;
+> +	int reg_offset;
+> +
+> +	/* ensure indexes in range */
+> +	if ((channel_idx >= config->nr_ctm_channels) ||
+> +	   (trigger_idx >= config->nr_trig_max))
+> +		return -EINVAL;
+> +
+> +	trig_bitmask = BIT(trigger_idx);
+> +
+> +	/* ensure registered triggers and not out filtered */
+> +	if (direction == CTI_TRIG_IN)	{
+> +		if (!(trig_bitmask & config->trig_in_use))
+> +			return -EINVAL;
+> +	} else {
+> +		if (!(trig_bitmask & config->trig_out_use))
+> +			return -EINVAL;
+> +
+> +		if ((config->trig_filter_enable) &&
+> +		    (config->trig_out_filter & trig_bitmask))
+> +			return -EINVAL;
+> +	}
+> +
+> +	/* update the local register values */
+> +	chan_bitmask = BIT(channel_idx);
+> +	reg_offset = (direction == CTI_TRIG_IN ? CTIINEN(trigger_idx) :
+> +		      CTIOUTEN(trigger_idx));
+> +
+> +	spin_lock(&drvdata->spinlock);
+> +
+> +	/* read - modify write - the trigger / channel enable value */
+> +	reg_value = direction == CTI_TRIG_IN ? config->ctiinen[trigger_idx] :
+> +		     config->ctiouten[trigger_idx];
+> +	if (op == CTI_CHAN_ATTACH)
+> +		reg_value |= chan_bitmask;
+> +	else
+> +		reg_value &= ~chan_bitmask;
+> +
+> +	/* write local copy */
+> +	if (direction == CTI_TRIG_IN)
+> +		config->ctiinen[trigger_idx] = reg_value;
+> +	else
+> +		config->ctiouten[trigger_idx] = reg_value;
+> +
+> +	/* write through if enabled */
+> +	if (CTI_PWR_ENA(config))
+> +		cti_write_single_reg(drvdata, reg_offset, reg_value);
+> +	spin_unlock(&drvdata->spinlock);
+> +	return 0;
+> +}
+> +
+> +int cti_channel_gate_op(struct device *dev, enum cti_chan_gate_op op,
+> +			u32 channel_idx)
+> +{
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct cti_config *config = &drvdata->config;
+> +	u32 chan_bitmask;
+> +	u32 reg_value;
+> +	int err = 0;
+> +
+> +	if (channel_idx >= config->nr_ctm_channels)
+> +		return -EINVAL;
+> +
+> +	chan_bitmask = BIT(channel_idx);
+> +
+> +	spin_lock(&drvdata->spinlock);
+> +	reg_value = config->ctigate;
+> +	switch (op) {
+> +	case CTI_GATE_CHAN_ENABLE:
+> +		reg_value |= chan_bitmask;
+> +		break;
+> +
+> +	case CTI_GATE_CHAN_DISABLE:
+> +		reg_value &= ~chan_bitmask;
+> +		break;
+> +
+> +	default:
+> +		err = -EINVAL;
+> +		break;
+> +	}
+> +	if (err == 0) {
+> +		config->ctigate = reg_value;
+> +		if (CTI_PWR_ENA(config))
+> +			cti_write_single_reg(drvdata, CTIGATE, reg_value);
+> +	}
+> +	spin_unlock(&drvdata->spinlock);
+> +	return err;
+> +}
+> +
+> +int cti_channel_setop(struct device *dev, enum cti_chan_set_op op,
+> +		      u32 channel_idx)
+> +{
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct cti_config *config = &drvdata->config;
+> +	u32 chan_bitmask;
+> +	u32 reg_value;
+> +	u32 reg_offset;
+> +	int err = 0;
+> +
+> +	if (channel_idx >= config->nr_ctm_channels)
+> +		return -EINVAL;
+> +
+> +	chan_bitmask = BIT(channel_idx);
+> +
+> +	spin_lock(&drvdata->spinlock);
+> +	reg_value = config->ctiappset;
+> +	switch (op) {
+> +	case CTI_CHAN_SET:
+> +		config->ctiappset |= chan_bitmask;
+> +		reg_value  = config->ctiappset;
+> +		reg_offset = CTIAPPSET;
+> +		break;
+> +
+> +	case CTI_CHAN_CLR:
+> +		config->ctiappset &= ~chan_bitmask;
+> +		reg_value = chan_bitmask;
+> +		reg_offset = CTIAPPCLEAR;
+> +		break;
+> +
+> +	case CTI_CHAN_PULSE:
+> +		config->ctiappset &= ~chan_bitmask;
+> +		reg_value = chan_bitmask;
+> +		reg_offset = CTIAPPPULSE;
+> +		break;
+> +
+> +	default:
+> +		err = -EINVAL;
+> +		break;
+> +	}
+> +
+> +	if ((err == 0) && CTI_PWR_ENA(config))
+> +		cti_write_single_reg(drvdata, reg_offset, reg_value);
+> +	spin_unlock(&drvdata->spinlock);
+> +
+> +	return err;
+> +}
+> +
+>  /** cti ect operations **/
+>  int cti_enable(struct coresight_device *csdev)
+>  {
+> diff --git a/drivers/hwtracing/coresight/coresight-cti.h b/drivers/hwtracing/coresight/coresight-cti.h
+> index 73869fa8b313..9a22f6fcad65 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti.h
+> +++ b/drivers/hwtracing/coresight/coresight-cti.h
+> @@ -168,6 +168,30 @@ struct cti_drvdata {
+>  	void (*csdev_release)(struct device *dev);
+>  };
+>  
+> +/*
+> + * Channel operation types.
+> + */
+> +enum cti_chan_op {
+> +	CTI_CHAN_ATTACH,
+> +	CTI_CHAN_DETACH,
+> +};
+> +
+> +enum cti_trig_dir {
+> +	CTI_TRIG_IN,
+> +	CTI_TRIG_OUT,
+> +};
+> +
+> +enum cti_chan_gate_op {
+> +	CTI_GATE_CHAN_ENABLE,
+> +	CTI_GATE_CHAN_DISABLE,
+> +};
+> +
+> +enum cti_chan_set_op {
+> +	CTI_CHAN_SET,
+> +	CTI_CHAN_CLR,
+> +	CTI_CHAN_PULSE,
+> +};
+> +
+>  /* private cti driver fns & vars */
+>  extern const struct attribute_group *coresight_cti_groups[];
+>  int cti_add_default_connection(struct device *dev,
+> @@ -180,8 +204,16 @@ struct cti_trig_con *cti_allocate_trig_con(struct device *dev, int in_sigs,
+>  					   int out_sigs);
+>  int cti_enable(struct coresight_device *csdev);
+>  int cti_disable(struct coresight_device *csdev);
+> +void cti_write_all_hw_regs(struct cti_drvdata *drvdata);
+>  void cti_write_intack(struct device *dev, u32 ackval);
+>  void cti_write_single_reg(struct cti_drvdata *drvdata, int offset, u32 value);
+> +int cti_channel_trig_op(struct device *dev, enum cti_chan_op op,
+> +			enum cti_trig_dir direction, u32 channel_idx,
+> +			u32 trigger_idx);
+> +int cti_channel_gate_op(struct device *dev, enum cti_chan_gate_op op,
+> +			u32 channel_idx);
+> +int cti_channel_setop(struct device *dev, enum cti_chan_set_op op,
+> +		      u32 channel_idx);
+>  struct coresight_platform_data *
+>  coresight_cti_get_platform_data(struct device *dev);
+
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+
+>  
+> -- 
+> 2.17.1
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
