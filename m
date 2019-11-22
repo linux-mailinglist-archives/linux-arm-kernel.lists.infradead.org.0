@@ -2,78 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A5E7105DDA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 01:53:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE1C9105E35
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 02:27:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2HYwyz/NuThhF6bprI/zlmg5Up1IoM7B7oJZmdd/ZGo=; b=uddAoO5iMev9CN
-	7SIv/iAuI9My4V/G/wzWk94bIDBO20PFTKhMzqMrmKgmqajy6I0r9/Ey7OEIHs/LZTiW3p4zRtOTm
-	KsvZx+YE/cKYnytxYxWJXcj7bpWoDXS07swVoMulZDAFLswjfEu9ckxOIShe5zJxAjRN+/CdImjmp
-	OT4u3brtuA3H5n+ClGuXui8/SzbjBVz/a9lA/2QJc8QtJK6kyhqeW5y89JZf+AMICjhknfelKObhl
-	DijNeUL4viXxZyaLM7wWwHRtKzYoC5rbM20eD1xN3oKjDuWc30ogVTcuTA0gNgrjdo3VF3FmTMwnH
-	8fH+YLgeEtazXd6W0mxA==;
+	List-Owner; bh=tLG79QN7ZIXN/cClyKn1QDYcvGUMdDydXEBgO/hCYRE=; b=hQhYZfQkUbW3wF
+	g8FmCFg6eS9yabX1JsN5Fv7HWmZXhgmCql2tOMyqG/6rEGNMoJDSj0/lRvPYL++sH9jx65g0Q8r/l
+	M7OlmxFHKXJ/mY4dCMjYM79tTj0llCreyhojraMtt3I43H0afvX3YGnT//UaP4Vl5tEb6XO33UT/q
+	7k6NoXME1lH7SQ8xLRjtAXVv9gnvigybpwtmmUnv5ND/f/lp8rKIQSmLPqT5qlOHFwZ17AlVYDKz8
+	EtyGkvgcx2vHwmTUbBWrsBQeBflz1YBs6xXigiOWYFhXcmNmYJmTgIeYxfxnmnEFKQ3wihsmctF5U
+	L+1w52+8Xf0/RqQVSYEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXxCk-0002nJ-Sx; Fri, 22 Nov 2019 00:53:46 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iXxj3-0005UN-Sk; Fri, 22 Nov 2019 01:27:09 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXxCc-0002mh-Dm
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 00:53:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=m8abUx8pSYpn1hn5D1w1GLb8aL+UUj0d2TyW9NfUG1g=; b=QDvDXbAXyOJq5lNNXeptcbMNI
- k0VOOqaMtYLgAsH3CMe5FWVVhuAK2Q6LNZOjK4odsCCM1Nt3Phq7R9wp5OcXjYdvnMflj6mnI7PBH
- dreG7wO50Wn1ZumhGlCeC8+ee4x0AIVreVJfffqnZrOUdAp8rmWQn7FKqJ0zTt6qON6JBxm6hrCt1
- baCBq+6gHLQ5/6oHlov+evlBhdaxnQmYoDOR7ren/sR9HvX04+IDgURZAcqSXWAvj7spzEslGG+1J
- jWNum5v1ebB+VbwhXd7tlF/z5W43Q2emlgEDWrOQsUTIHov/zb7VRYJSryVEAPmFGjGs0rB2hZ65Y
- SdDtKL8Sg==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:38760)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iXxCJ-0001kC-NV; Fri, 22 Nov 2019 00:53:19 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iXxCC-0003Dm-2F; Fri, 22 Nov 2019 00:53:12 +0000
-Date: Fri, 22 Nov 2019 00:53:12 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Pavel Tatashin <pasha.tatashin@soleen.com>
-Subject: Re: [PATCH 1/3] arm/arm64/xen: use C inlines for privcmd_call
-Message-ID: <20191122005311.GI25745@shell.armlinux.org.uk>
-References: <20191121184805.414758-1-pasha.tatashin@soleen.com>
- <20191121184805.414758-2-pasha.tatashin@soleen.com>
- <20191122002258.GD25745@shell.armlinux.org.uk>
- <CA+CK2bDtADA2eVwJAUEPhpic8vXWegh8yLjo6Q6WmXZDxAfJpA@mail.gmail.com>
- <20191122003403.GG25745@shell.armlinux.org.uk>
- <20191122003524.GH25745@shell.armlinux.org.uk>
- <CA+CK2bAm0r8zLMz_gdq30zF8io5RzVnbXFSV9NkyT_uUxKJwLA@mail.gmail.com>
+ id 1iXxit-0005TI-MJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 01:27:00 +0000
+Received: by mail-pl1-x642.google.com with SMTP id o9so2395619plk.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 Nov 2019 17:26:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=TU/4Ef2jiJlWVCQ4cQLrxn75XZh8TZ+zwtkucEXiu6Y=;
+ b=m2BETWVpqlllD08mHYTdBJVrgblUy6CNB+DVYcBf9k1lTWIC7q1zlf4DUt7C76yvFH
+ G6g+FzKXJOEn6Vlo815oRlNBTnuOYeh6pCdoJ1hx+Svn5rOtOL1wNOb+UEMgHBUphhlH
+ P8cv6J335QcanJ1JahmxBQ5wp52tqT2vEclNYvdd1JfgV6k5eQEDGUUqW3uoh8dfQHoS
+ 9xXdeB8VoyFb6OzA2Q8Ztk9qWRPfX+qdV3hUp7yzrKXrqPW/4+evxgguDIUq/jyml/xl
+ uRx2Z/AjTUK5d/DHjDDKOSV8NRou6QR+IdZLRPjDl5zRTY1jkB6dh0gQ9Z1oePhabV1F
+ e0EQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=TU/4Ef2jiJlWVCQ4cQLrxn75XZh8TZ+zwtkucEXiu6Y=;
+ b=p23TSfTc2vzXaE/2iOEqrSt8v35PF/bEaw0Mfe9JD/pnE7rU/xKrlbupVu+FRBbNRh
+ PVjWQUzPpTerDx3xqYePPxmaIASWxA4db/QHKiucsAXVOIgKGZPzA8yLQCYBXdk8XBWs
+ 4SNNU9ZsUQ3OZLgVyEKYQI4QXBnO5mdI//3VorOU//99hDfgTRFJalLFbQkgVfPNxjH+
+ L9lvbcayfDTuPtyu++dKXPhycy9OMQBrzKvFpaYyHIpwkjFqggBNA38fcJTz4akMcENq
+ 2iFxUUNXvHgcLgRgaEnyiwMiPoda3Zk/bEnPm/+9irWJeowNz0moGWecAFB3lc6g6W4a
+ 71Ew==
+X-Gm-Message-State: APjAAAWinJLD/gDSnGLo+f/f/VxknAjN+xhhB0FsAJ4x+DSQzgsVCCid
+ WPzxGXkb4rYBW4EItSnMiExxeuKl+I3vi89p3EI=
+X-Google-Smtp-Source: APXvYqyEm29BCL9dYSdTsXPxmgv2TKuC1svdFqNukvJ2stRS4zyFKH8B0gohRL0YLXx0L/gX9Xmw6kRwgk7gtVPhA6k=
+X-Received: by 2002:a17:90a:d818:: with SMTP id
+ a24mr14948297pjv.40.1574386018942; 
+ Thu, 21 Nov 2019 17:26:58 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CA+CK2bAm0r8zLMz_gdq30zF8io5RzVnbXFSV9NkyT_uUxKJwLA@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191121184805.414758-1-pasha.tatashin@soleen.com>
+ <20191121184805.414758-4-pasha.tatashin@soleen.com>
+In-Reply-To: <20191121184805.414758-4-pasha.tatashin@soleen.com>
+From: Max Filippov <jcmvbkbc@gmail.com>
+Date: Thu, 21 Nov 2019 17:26:47 -0800
+Message-ID: <CAMo8BfJYEh_HYGuKwKgfwVdVwg-w-AxN=+6zDuYdwB+E_dTSzA@mail.gmail.com>
+Subject: Re: [PATCH 3/3] arm64: remove the rest of asm-uaccess.h
+To: Pavel Tatashin <pasha.tatashin@soleen.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_165338_466562_1DC8036C 
-X-CRM114-Status: GOOD (  15.35  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191121_172659_729351_9293CBC4 
+X-CRM114-Status: GOOD (  16.27  )
+X-Spam-Score: 1.9 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (1.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
+ 0.5 FROM_LOCAL_NOVOWEL     From: localpart has series of non-vowel
+ letters 1.0 HK_RANDOM_FROM         From username looks random
+ 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jcmvbkbc[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,14 +98,14 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, stefan@agner.ch,
+ Catalin Marinas <catalin.marinas@arm.com>, Stefan Agner <stefan@agner.ch>,
+ Russell King <linux@armlinux.org.uk>,
  Masahiro Yamada <yamada.masahiro@socionext.com>, Will Deacon <will@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Sasha Levin <sashal@kernel.org>,
- sstabellini@kernel.org, James Morris <jmorris@namei.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- xen-devel@lists.xenproject.org, Vladimir Murzin <vladimir.murzin@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, alexios.zavras@intel.com,
- boris.ostrovsky@oracle.com, allison@lohutok.net, jgross@suse.com,
+ boris.ostrovsky@oracle.com, Sasha Levin <sashal@kernel.org>,
+ Stefano Stabellini <sstabellini@kernel.org>, jmorris@namei.org,
+ linux-arm-kernel@lists.infradead.org, xen-devel@lists.xenproject.org,
+ vladimir.murzin@arm.com, marc.zyngier@arm.com, alexios.zavras@intel.com,
+ Thomas Gleixner <tglx@linutronix.de>, allison@lohutok.net, jgross@suse.com,
  steve.capper@arm.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
  info@metux.net
@@ -109,40 +114,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 21, 2019 at 07:39:22PM -0500, Pavel Tatashin wrote:
-> > > That may be, but be very careful that you only use them in ARMv7-only
-> > > code.  Using them elsewhere is unsafe as the domain register is used
-> > > for other purposes, and merely blatting over it (as your
-> > > uaccess_enable and uaccess_disable functions do) is unsafe.
-> >
-> > In fact, I'll turn that into a bit more than a suggestion.  I'll make
-> > it a NAK on adding them to 32-bit ARM.
-> >
-> 
-> That's fine, and I also did not want to change ARM 32-bit. But, do you
-> have a suggestion how differentiate between arm64 and arm in
-> include/xen/arm/hypercall.h without ugly ifdefs?
+On Thu, Nov 21, 2019 at 10:50 AM Pavel Tatashin
+<pasha.tatashin@soleen.com> wrote:
+>
+> The __uaccess_ttbr0_disable and __uaccess_ttbr0_enable,
+> are the last two macros defined in asm-uaccess.h.
+>
+> Replace them with C wrappers and call C functions from
+> kernel_entry and kernel_exit.
+>
+> Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+> ---
+>  arch/arm64/include/asm/asm-uaccess.h | 38 ----------------------------
+>  arch/arm64/kernel/entry.S            |  6 ++---
+>  arch/arm64/lib/clear_user.S          |  2 +-
+>  arch/arm64/lib/copy_from_user.S      |  2 +-
+>  arch/arm64/lib/copy_in_user.S        |  2 +-
+>  arch/arm64/lib/copy_to_user.S        |  2 +-
+>  arch/arm64/mm/cache.S                |  1 -
+>  arch/arm64/mm/context.c              | 12 +++++++++
+>  arch/xtensa/kernel/coprocessor.S     |  1 -
+>  9 files changed, 19 insertions(+), 47 deletions(-)
+>  delete mode 100644 arch/arm64/include/asm/asm-uaccess.h
 
-Sorry, I don't.
+[...]
 
-I'm surprised ARM64 doesn't have anything like that, but I suspect
-that's because they don't need to do a save/restore type operation.
-Whereas, 32-bit ARM does very much need the save/restore behaviour
-(although not in this path.)
+> diff --git a/arch/xtensa/kernel/coprocessor.S b/arch/xtensa/kernel/coprocessor.S
+> index 80828b95a51f..6329d17e2aa0 100644
+> --- a/arch/xtensa/kernel/coprocessor.S
+> +++ b/arch/xtensa/kernel/coprocessor.S
+> @@ -18,7 +18,6 @@
+>  #include <asm/processor.h>
+>  #include <asm/coprocessor.h>
+>  #include <asm/thread_info.h>
+> -#include <asm/asm-uaccess.h>
+>  #include <asm/unistd.h>
+>  #include <asm/ptrace.h>
+>  #include <asm/current.h>
 
-The problem is, turning uaccess_enable/disable into C code means
-that it's open to being used elsewhere in the kernel (ooh, a couple
-of useful looking functions that work on both architectures!  I can
-use that too!) and then we end up with stuff breaking subtly.  It's
-the potential for subtle breakage that is making me NAK the idea of
-adding the inline C functions.
+This is not related to arm64 or to the changes in the description,
+but the change itself is OK. Whether you keep it in this patch,
+or choose to split it out feel free to add
 
-Given the two have diverged, the only answer is ifdefs, sorry.
+Acked-by: Max Filippov <jcmvbkbc@gmail.com> # for xtensa bits
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Thanks.
+-- Max
 
 _______________________________________________
 linux-arm-kernel mailing list
