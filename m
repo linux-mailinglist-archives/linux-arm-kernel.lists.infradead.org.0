@@ -2,113 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E46310698E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:05:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 937F91069AE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:12:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9mGXPyO1GpPjTn7D/uz1UkD5KMqSzcO6KVwilUq0lGQ=; b=alWyCodyNAuYd9
-	PX0G/Vsj3kfFAQR/be7r1Oe23ncXh4sJwNF2jPwLHffmnnZ8k0DR/Q8sACxItx9rC+YdzFyEUKJp0
-	tGNDJmOD4UWmkdBhl+vSJA0dxC9eF3+K8aq27ilaMqZZKGtSPO7AiDizQPZcYeKdQ3DtTpUPajY0q
-	+tVrMwadUl4GhizU9IlLtSO20AlyaOarj3QVhhqLBxJ1Lxn7h+vuRu+4iAENLY4t2Z7oDk2fGasy8
-	8VtSMpJxGhQ1M2LO3TqW67C173xg0sErA68JU5G0rRjrvoa9xNzPYQTEUZ9hifa20n4XSwfUg5v9u
-	LODHHLQ+zWDdqDeLfpnQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lQKAWECWbCfvsX2iJhyjm2T082qncTu+GNtx0/QIKUY=; b=FnVnrtI2p5zJPt
+	T0owUyLkidsmkV6B3vp7nwArs10+mWf9WVwxymxHjYKLWbYNtcBH4Z9VgJfjooomN/vWAeS8lCLnX
+	QZBtJzr26HYNvt/cUV+mSMa9U7GsY+fwyBAlU8y44GyjinD5M/l/9I6cq92zbu1ZWS3ypjXzj5Swt
+	GxY7HG+s72J+ka+azclctkv4eG63zafd0mjZVj/R7BmJjI9H1seyf8gVJTlFOpJQGNhtonlWPpc+B
+	sgGzxGizCaOKjdyOiTVrrDvQyNf0WS5LKVeTyLGSHqLTjxZBjDb6IUHrvaeWXikJnfUqjCwCZLvJS
+	OjUsICaa8usLFj2+4dMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY5oa-0006Ha-M3; Fri, 22 Nov 2019 10:05:24 +0000
-Received: from mail-eopbgr130051.outbound.protection.outlook.com
- ([40.107.13.51] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1iY5v2-0001Wp-Jw; Fri, 22 Nov 2019 10:12:04 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY5o9-0006Gx-Sv
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:04:59 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ZQDht7dRWtYC/Rq6o6cEZZrUBioR+Rb5fgEzyw+lEELNJ5AUKxUsM9B0Jn3pE2Zi2plKFQb+u0E7j9Gv3H4tB42XwWX31rnko/pE/m1CBGPsiKm1K50weSCSi0ra1mXN7UuuvqGgu0rXg3GTYFVmIHG26XMLVYrCwmdBMZypFmudwhWVd4EFGSvHHXfCtbD4BwhOZ+BJosTes4AUh0TwalunDXdkZQvbwPsRFdEh31KP4qY5p/8jnrp3AeOS8vN+NxHGZ0PjCUng2SqbAWcBL8X5IiWJln08TRPuojVk3IL4HCrKeTYDKlYGpqsonQ7rhIO1/+t494yfgkFd6hpHWA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nasq4Kzwbp+1Bz7M3ImYiiVEpr7ppoY09uVt22CM3HI=;
- b=inO15Zbqf1gwR9mR0fG1r3T/fy+lqvnn/tUFtHDxWu80bzUFj1vHfdvVkgBtk9YsS2KNh2ScFzPkacW5u2VHYCPUk0CGj1Qf3UqwybNth2UJ1gRioLI6AwSNlnPToFJg5Vpqcs2c3zJ5ykXLODcfgMoW+O1qdQGlEeTsA1G9lAcXnTaNIkwHYoyHPgBRjwbhy8AoK1wMOdNZY7XKgyKOH6UPI+NJvgsFGeVGKFYQ2P8bYL44M4Jlol8q47k84TdR8vsoCXmECMyQknnkFrW1VpXrLQrDbnZPUMZuQX3D932CszvIIPSrBMJDFQzTtJrZ1kwOWMiPLEDJAo4edjRTSw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nasq4Kzwbp+1Bz7M3ImYiiVEpr7ppoY09uVt22CM3HI=;
- b=PiBwbXUNH929Hs6RqkvhdDQBN/Eve2Quzmr4W/J7yZ8Gi5eMxBwP5AsuNjJWu10baGDptd8llNYIf5jjWBqP5iDVRjAbhtS5K4RVVtXPk8ub8vYL+OqxLD9TuWp6EvuP1us3jfcwqd8SMqGWqlUPdfUUMijXYv9Zdye7djuyMNA=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4594.eurprd04.prod.outlook.com (52.135.149.20) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2451.30; Fri, 22 Nov 2019 10:04:53 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::f16d:a26a:840:f97c]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::f16d:a26a:840:f97c%4]) with mapi id 15.20.2474.021; Fri, 22 Nov 2019
- 10:04:53 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "sboyd@kernel.org" <sboyd@kernel.org>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>,
- Aisheng Dong <aisheng.dong@nxp.com>
-Subject: [PATCH V2] clk: imx: clk-imx7ulp: Add missing sentinel of
- ulp_div_table
-Thread-Topic: [PATCH V2] clk: imx: clk-imx7ulp: Add missing sentinel of
- ulp_div_table
-Thread-Index: AQHVoRxJ5RRsuDSV80CDoqBvpvLXvA==
-Date: Fri, 22 Nov 2019 10:04:53 +0000
-Message-ID: <1574416982-3467-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK2PR02CA0201.apcprd02.prod.outlook.com
- (2603:1096:201:20::13) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 8573dbcd-70a8-40c0-e920-08d76f336b76
-x-ms-traffictypediagnostic: AM0PR04MB4594:|AM0PR04MB4594:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB459471BE5692C620F63D374F88490@AM0PR04MB4594.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:873;
-x-forefront-prvs: 02296943FF
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(396003)(136003)(346002)(366004)(39860400002)(199004)(189003)(81166006)(6636002)(256004)(14444005)(2501003)(52116002)(4326008)(305945005)(5660300002)(110136005)(2906002)(71200400001)(81156014)(86362001)(66946007)(44832011)(478600001)(102836004)(3846002)(66446008)(71190400001)(6116002)(2616005)(14454004)(26005)(8676002)(386003)(6506007)(8936002)(50226002)(186003)(54906003)(2201001)(316002)(66066001)(25786009)(64756008)(66476007)(6436002)(66556008)(7736002)(4744005)(6512007)(36756003)(6486002)(99286004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4594;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 0WemzPL8aN9nSrZ/N6O7KabnSk75+w8tfys0FmDF7xq05VqsqU1tiK3zqsOsBMji03xNi/7psbqERd3f6C4YdLFHZ0UqSPRHQtCY1Nhou3BUrjc386atgzB5IcsaMn17WDsAqoBXq9/cOxzLH9PGRiwlFFSWjLuDobMJ5UNSb20qC4YcpX9pUKaOAe4sf0Lvu/lLVrByjy2cRIlic/Aa2HyEvGg97Z2w4r1lKwYybNpTXwmJk8ZZK5qgoZN6IcQ0d7TPOlJpMAzE+5vGlPzqa20I0RPM7LxRjnnsUg6NGw7VziHvTOyxKHdSRSWauI0xlegSCn5WQsXi65QLadsVr9WfVEG9pt7AUW83d5/BP7Qz+F2MHv7lUTxGuVk+RE1LQFT1g1fd4ovH2kbwBnJUFgwQHQ7kYxss7JgUJohamOMJI/gdToga4dt5OkSiIXii
+ id 1iY5ut-0001WC-WC; Fri, 22 Nov 2019 10:11:57 +0000
+X-UUID: d1abfda572d7428489b18846ce97b856-20191122
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=hK85BWO5PB72avyugc76FhRfS++eD6TPM5BELRKbSFs=; 
+ b=Rz+aX8HgQ+jCzopEyCY6rKva3jwGjNbMKujh1ylJ0j2rJgQ0ZESkp+rX0aEk7To/z0aZ5M61iwQbz4yS3LA816jW2FIme7H8BaxEA66YIZi5AKaiFcjtDvOn+E3RtH3aK5C70XNEXNajrjPfdBzQcHRIE5kQJXK1eqWGD38hCRI=;
+X-UUID: d1abfda572d7428489b18846ce97b856-20191122
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <dennis-yc.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 265119845; Fri, 22 Nov 2019 02:11:49 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 22 Nov 2019 02:11:54 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 22 Nov 2019 18:11:42 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 22 Nov 2019 18:12:10 +0800
+Message-ID: <1574417507.11977.14.camel@mtkswgap22>
+Subject: Re: [PATCH v1 07/12] soc: mediatek: cmdq: add write_s function
+From: Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>
+Date: Fri, 22 Nov 2019 18:11:47 +0800
+In-Reply-To: <1574412997.19450.16.camel@mtksdaap41>
+References: <1574327552-11806-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1574327552-11806-8-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1574412997.19450.16.camel@mtksdaap41>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8573dbcd-70a8-40c0-e920-08d76f336b76
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Nov 2019 10:04:53.6702 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: mwALuZk3u1VELHZEj/rJLcBeY1KCL6mEoEhroi534XX6mZBegc5aYe9MLQ4J0yaXklIfOG6rX3BY6JnWmBbN2g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4594
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_020457_938643_AD0F805E 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20191122_021156_045811_EC9821F1 
+X-CRM114-Status: GOOD (  21.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.51 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -116,6 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,50 +86,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Alice Guo <alice.guo@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "stable@vger.kernel.org" <stable@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
+ Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+Hi CK,
 
-There should be a sentinel of ulp_div_table, otherwise _get_table_div
-may access data out of the array.
+On Fri, 2019-11-22 at 16:56 +0800, CK Hu wrote:
+> Hi, Dennis:
+> 
+> On Thu, 2019-11-21 at 17:12 +0800, Dennis YC Hsieh wrote:
+> > add write_s function in cmdq helper functions which
+> > support large dma access.
+> > 
+> > Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+> > ---
+> >  drivers/soc/mediatek/mtk-cmdq-helper.c   |   34 ++++++++++++++++++++++++++++++
+> >  include/linux/mailbox/mtk-cmdq-mailbox.h |    2 ++
+> >  include/linux/soc/mediatek/mtk-cmdq.h    |   13 ++++++++++++
+> >  3 files changed, 49 insertions(+)
+> > 
+> > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > index d419e99..1b074a9 100644
+> > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > @@ -15,6 +15,9 @@
+> >  #define CMDQ_EOC_CMD		((u64)((CMDQ_CODE_EOC << CMDQ_OP_CODE_SHIFT)) \
+> >  				<< 32 | CMDQ_EOC_IRQ_EN)
+> >  #define CMDQ_REG_TYPE		1
+> > +#define CMDQ_ADDR_HIGH(addr)	((u32)(((addr) >> 16) & GENMASK(31, 0)))
+> > +#define CMDQ_ADDR_LOW_BIT	BIT(1)
+> > +#define CMDQ_ADDR_LOW(addr)	((u16)(addr) | CMDQ_ADDR_LOW_BIT)
+> >  
+> >  struct cmdq_instruction {
+> >  	union {
+> > @@ -224,6 +227,37 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
+> >  }
+> >  EXPORT_SYMBOL(cmdq_pkt_write_mask);
+> >  
+> > +int cmdq_pkt_write_s(struct cmdq_pkt *pkt, dma_addr_t addr,
+> > +		     u32 value, u32 mask)
+> > +{
+> > +	struct cmdq_instruction inst = { {0} };
+> > +	int err;
+> > +	const u16 dst_reg_idx = CMDQ_SPR_TEMP;
+> > +
+> > +	err = cmdq_pkt_assign(pkt, dst_reg_idx, CMDQ_ADDR_HIGH(addr));
+> > +	if (err < 0)
+> > +		return err;
+> > +
+> > +	if (mask != U32_MAX) {
+> > +		inst.op = CMDQ_CODE_MASK;
+> > +		inst.mask = ~mask;
+> > +		err = cmdq_pkt_append_command(pkt, inst);
+> > +		if (err < 0)
+> > +			return err;
+> > +
+> > +		inst.op = CMDQ_CODE_WRITE_S_MASK;
+> > +	} else {
+> > +		inst.op = CMDQ_CODE_WRITE_S;
+> > +	}
+> > +
+> > +	inst.sop = dst_reg_idx;
+> > +	inst.offset = CMDQ_ADDR_LOW(addr);
+> > +	inst.value = value;
+> > +
+> > +	return cmdq_pkt_append_command(pkt, inst);
+> > +}
+> > +EXPORT_SYMBOL(cmdq_pkt_write_s);
+> > +
+> >  int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
+> >  {
+> >  	struct cmdq_instruction inst = { {0} };
+> > diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
+> > index 121c3bb..8ef87e1 100644
+> > --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
+> > +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
+> > @@ -59,6 +59,8 @@ enum cmdq_code {
+> >  	CMDQ_CODE_JUMP = 0x10,
+> >  	CMDQ_CODE_WFE = 0x20,
+> >  	CMDQ_CODE_EOC = 0x40,
+> > +	CMDQ_CODE_WRITE_S = 0x90,
+> > +	CMDQ_CODE_WRITE_S_MASK = 0x91,
+> >  	CMDQ_CODE_LOGIC = 0xa0,
+> >  };
+> >  
+> > diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> > index 8334021..8dbd046 100644
+> > --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> > +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> > @@ -12,6 +12,7 @@
+> >  #include <linux/timer.h>
+> >  
+> >  #define CMDQ_NO_TIMEOUT		0xffffffffu
+> > +#define CMDQ_SPR_TEMP		0
+> >  
+> >  struct cmdq_pkt;
+> >  
+> > @@ -103,6 +104,18 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
+> >  			u16 offset, u32 value, u32 mask);
+> >  
+> >  /**
+> > + * cmdq_pkt_write_s() - append write_s command with mask to the CMDQ packet
+> > + * @pkt:	the CMDQ packet
+> > + * @addr:	the physical address of register or dma
+> > + * @value:	the specified target value
+> > + * @mask:	the specified target mask
+> > + *
+> > + * Return: 0 for success; else the error code is returned
+> > + */
+> > +int cmdq_pkt_write_s(struct cmdq_pkt *pkt, dma_addr_t addr,
+> > +		     u32 value, u32 mask);
+> 
+> You have an API cmdq_pkt_read_s() which read data into gce internal
+> register, so I expect that cmdq_pkt_write_s() is an API which write data
+> from gce internal register, the expected prototype is
+> 
+> int cmdq_pkt_write_s(struct cmdq_pkt *pkt, phys_addr_t addr, u16
+> reg_idx);
+> 
+> Your version would confuse the user because you hide the internal
+> register parameter. If you want to provide this service, I would like
+> you to change the function name so that user would not be confused and
+> easily to understand what you want to do in this function.
+> 
+> Another choice is: cmdq_pkt_write_s() is implemented in my definition,
+> and user could call cmdq_pkt_assign() and cmdq_pkt_write_s() to achieve
+> this function.
+> 
+> Regards,
+> CK
+> 
 
-Fixes: b1260067ac3d ("clk: imx: add imx7ulp clk driver")
-Cc: stable@vger.kernel.org
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
+Thanks for your comment.
 
-V2:
- cc stable mail list
+Ok, we have to provide write constant value service to client, so I will
+change the function name to cmdq_pkt_write_s_value() in this patch.
 
- drivers/clk/imx/clk-imx7ulp.c | 1 +
- 1 file changed, 1 insertion(+)
+And since it is better to provide consistent API so I will design
+another function with interface as your suggestion:
+int cmdq_pkt_write_s(struct cmdq_pkt *pkt, phys_addr_t addr, u16
+reg_idx);
 
-diff --git a/drivers/clk/imx/clk-imx7ulp.c b/drivers/clk/imx/clk-imx7ulp.c
-index 3fdf3d494f0a..281191b55b3a 100644
---- a/drivers/clk/imx/clk-imx7ulp.c
-+++ b/drivers/clk/imx/clk-imx7ulp.c
-@@ -40,6 +40,7 @@ static const struct clk_div_table ulp_div_table[] = {
- 	{ .val = 5, .div = 16, },
- 	{ .val = 6, .div = 32, },
- 	{ .val = 7, .div = 64, },
-+	{ /* sentinel */ },
- };
- 
- static const int pcc2_uart_clk_ids[] __initconst = {
--- 
-2.16.4
+In another patch I provide cmdq_pkt_mem_move(). I will move part of
+implementation to cmdq_pkt_write_s(), so that cmdq_pkt_mem_move() can be
+combination of cmdq_pkt_read_s() and cmdq_pkt_write_s().
 
+How do you think?
+
+
+Regards,
+Dennis
+
+> > +
+> > +/**
+> >   * cmdq_pkt_wfe() - append wait for event command to the CMDQ packet
+> >   * @pkt:	the CMDQ packet
+> >   * @event:	the desired event type to "wait and CLEAR"
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
