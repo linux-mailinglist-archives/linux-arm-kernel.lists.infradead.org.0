@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0052E106AF0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:40:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9756106B8D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:45:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SFT6w7Vy/qQzuNUiIjjue0OmJmTVZSjqPgEE+yYYC1c=; b=i6RMPt+GBko+r/
-	ZTDl+Q1Onv0hqDVLd5D/oAZ9gVIOIK8Ev+qKT/Lka11kbEeiB2PD5KZk22Tn/lE+fvQMJ/+ghhwk3
-	C5YfSJRhQ5Q4oOKJ3PKjJVeANtIfedwm2o1kREZWHweOirrlPdtgpCxbuxei2iagJgBrV7z6LBV8M
-	oe8OYA0oQjwas3U0wew+JHHEpiki3ySkWqYpuBPOYwYMMiLHX240IO6Et94Gos9DsyC8WxWUCOdHL
-	1+nbydRAh3dydC2A9SXJ6aDFDCK33yFdAoj9L+/tQsYEScDWgj+3KSs8UwXWgnJukA638c4/6u0Rl
-	3pKtco58i0Ynt1L7jKSg==;
+	List-Owner; bh=uEX5iMT+ardzNb4ZnHo/iPb+hnPUi3vZHW0W8vKdsJ8=; b=u6adzfZxrJhqy3
+	9JWmW2RTiMkes3i/ArZpzzjqpES36xRoA/uM7p9oFTyefzZRDYJdzF/bgTjxQBLDAgikKUp05mb0a
+	5DC6CbCN9KEJlVWjT+vMk4MC5LRuYU9Tbi0sx/o3FdzxS1hTo1RR2XnpxDfA4AO0m1uYq8UEObz+Y
+	ZAY56eHuDjRDuxhRim4ID7Q/PKFUWA4VroRIvAeIdqSw5/xLm6ceDHs4d3qE8K+16Swx7Fm2e0bxd
+	Oq03s62kxnj2AsawoRvfcw0ItYjW9uBr+NFBVU2RW7dpsz6wdTUWKPcxrUCTczf0Ua/Rio3gow/rd
+	t9jileQS+wx5CapEgtfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY6MI-0003Ns-BG; Fri, 22 Nov 2019 10:40:14 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iY6RP-0007M9-IQ; Fri, 22 Nov 2019 10:45:31 +0000
+Received: from hqemgate15.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY6Ly-0003MY-8q
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:39:56 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xAMAddRd023808; Fri, 22 Nov 2019 11:39:44 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=Yb4uCeALV8Ui44IqHMV+f+MNdt/2wAzvgT9C57Q3BZw=;
- b=gYNaqs3+QC6W3lndyyz8UqbqmpEyOIZp1U1iZ28HGNjAXmZW/dWrvDAesNWYWg3CXIuZ
- W4rOFR9Qy/VZ3QQzNzN7VIfuYbDvN8rQmoHY92ynRaDGrF/WH5HmACEoGiloOgENoLR7
- CtqIUfkKscVnBACUQbXZZYRrnj1tqX8W39Iv106aYETYA6bL10VcDxK+JhSNxEkeqC+q
- Itashsf+Py7ul0X53zWXSXIXrmRkatC7mqLXOJhV4uVDmMdVXdIQNyRoJvrhxIcdOsge
- tRoiUnfzUqyGihNiGj2xT/yMsxz+fpxiJm5x10a1RxqTxjWkv2U9Io82eNNKUyLbbtcP 9A== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wa9uvrqa0-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 22 Nov 2019 11:39:44 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 41F31100034;
- Fri, 22 Nov 2019 11:39:43 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 133DA2B56A1;
- Fri, 22 Nov 2019 11:39:43 +0100 (CET)
-Received: from localhost (10.75.127.51) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 22 Nov 2019 11:39:42
- +0100
-From: Alexandre Torgue <alexandre.torgue@st.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH] dt-bindings: arm: stm32: Convert stm32-syscon to json-schema
-Date: Fri, 22 Nov 2019 11:39:42 +0100
-Message-ID: <20191122103942.23572-1-alexandre.torgue@st.com>
+ id 1iY6RB-0007LF-KX
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:45:19 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5dd7bc350000>; Fri, 22 Nov 2019 02:45:09 -0800
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Fri, 22 Nov 2019 02:45:13 -0800
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Fri, 22 Nov 2019 02:45:13 -0800
+Received: from HQMAIL109.nvidia.com (172.20.187.15) by HQMAIL111.nvidia.com
+ (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 22 Nov
+ 2019 10:45:13 +0000
+Received: from HQMAIL101.nvidia.com (172.20.187.10) by HQMAIL109.nvidia.com
+ (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 22 Nov
+ 2019 10:45:12 +0000
+Received: from rnnvemgw01.nvidia.com (10.128.109.123) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via
+ Frontend Transport; Fri, 22 Nov 2019 10:45:12 +0000
+Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.48]) by
+ rnnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5dd7bc340001>; Fri, 22 Nov 2019 02:45:12 -0800
+From: Vidya Sagar <vidyas@nvidia.com>
+To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
+ <thierry.reding@gmail.com>, <jonathanh@nvidia.com>, <andrew.murray@arm.com>
+Subject: [PATCH 0/6] Add support for PCIe endpoint mode in Tegra194
+Date: Fri, 22 Nov 2019 16:14:59 +0530
+Message-ID: <20191122104505.8986-1-vidyas@nvidia.com>
 X-Mailer: git-send-email 2.17.1
+X-NVConfidentiality: public
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.51]
-X-ClientProxiedBy: SFHDAG4NODE1.st.com (10.75.127.10) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-11-22_02:2019-11-21,2019-11-22 signatures=0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1574419509; bh=vATyB0+qpRWIt2ybVc4KqLiFa7LEkPRGlbViOEQbviw=;
+ h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+ X-NVConfidentiality:MIME-Version:Content-Type;
+ b=KqQDAnmlYAl+sJswyU11Z4ld8H/PkEOizunUfmeq2krHgNHVIFw2ZffRQkM1Qq3gE
+ rd6ibZCzjQLDwpiYVY8tNdiPvw4Ml5StGxLGXw0oGVScbC7N0IoVbbiEMLdBAiNRH2
+ OZgUnAmh8imkitAomhGQkh7YqQeQlujCHxm6OdYAb7OUppy+k1brkmLJB1NphPBke1
+ g06oQdCEdy/aOrxQTn39Yi/dwBP4uqkOZTmXmGptNI3RTyFqyxLTimSXpLjpq7RPZY
+ 7+8dAJ4s5cCun7COd99n0mEphqVZhOqJt45JAsbonDBQKOjCH75aNwC9i0z45Qc/kE
+ OxaGzsow64WBQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_023954_761412_CF58E617 
-X-CRM114-Status: GOOD (  11.65  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191122_024517_735141_2355CC73 
+X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -80,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,87 +94,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
+ gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org, kishon@ti.com,
+ linux-pci@vger.kernel.org, linux-tegra@vger.kernel.org, vidyas@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the STM32 syscon binding to DT schema format using json-schema.
+Tegra194 has three (C0, C4 & C5) dual mode PCIe controllers that can operate
+either in root port mode or in end point mode but only in one mode at a time.
+Platform P2972-0000 supports enabling endpoint mode for C5 controller. This
+patch series adds support for PCIe endpoint mode in both the driver as well as
+in DT.
+This patch series depends on the changes made for Synopsys DesignWare endpoint
+mode subsystem that are currently under review
+@ https://patchwork.kernel.org/project/linux-pci/list/?series=202211
+which in turn depends on the patch made by Kishon
+@ https://patchwork.kernel.org/patch/10975123/
+which is also under review.
 
-Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+Vidya Sagar (6):
+  soc/tegra: bpmp: Update ABI header
+  dt-bindings: PCI: tegra: Add DT support for PCIe EP nodes in Tegra194
+  PCI: tegra: Add support for PCIe endpoint mode in Tegra194
+  arm64: tegra: Add PCIe endpoint controllers nodes for Tegra194
+  arm64: tegra: Enable GPIO controllers nodes for P2972-0000 platform
+  arm64: tegra: Add support for PCIe endpoint mode in P2972-0000
+    platform
 
-diff --git a/Documentation/devicetree/bindings/arm/stm32/st,stm32-syscon.yaml b/Documentation/devicetree/bindings/arm/stm32/st,stm32-syscon.yaml
-new file mode 100644
-index 000000000000..0dedf94c8578
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/stm32/st,stm32-syscon.yaml
-@@ -0,0 +1,41 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: "http://devicetree.org/schemas/arm/stm32/st,stm32-syscon.yaml#"
-+$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-+
-+title: STMicroelectronics STM32 Platforms System Controller bindings
-+
-+maintainers:
-+  - Alexandre Torgue <alexandre.torgue@st.com>
-+  - Christophe Roullier <christophe.roullier@st.com>
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - items:
-+        - enum:
-+          - st,stm32mp157-syscfg
-+        - const: syscon
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/stm32mp1-clks.h>
-+    syscfg: syscon@50020000 {
-+        compatible = "st,stm32mp157-syscfg", "syscon";
-+        reg = <0x50020000 0x400>;
-+        clocks = <&rcc SYSCFG>;
-+    };
-+
-+...
-diff --git a/Documentation/devicetree/bindings/arm/stm32/stm32-syscon.txt b/Documentation/devicetree/bindings/arm/stm32/stm32-syscon.txt
-deleted file mode 100644
-index c92d411fd023..000000000000
---- a/Documentation/devicetree/bindings/arm/stm32/stm32-syscon.txt
-+++ /dev/null
-@@ -1,16 +0,0 @@
--STMicroelectronics STM32 Platforms System Controller
--
--Properties:
--   - compatible : should contain two values. First value must be :
--                 - " st,stm32mp157-syscfg " - for stm32mp157 based SoCs,
--                 second value must be always "syscon".
--   - reg : offset and length of the register set.
--   - clocks: phandle to the syscfg clock
--
-- Example:
--         syscfg: syscon@50020000 {
--                 compatible = "st,stm32mp157-syscfg", "syscon";
--                 reg = <0x50020000 0x400>;
--                 clocks = <&rcc SYSCFG>;
--         };
--
+ .../bindings/pci/nvidia,tegra194-pcie-ep.txt  | 138 ++++
+ .../boot/dts/nvidia/tegra194-p2972-0000.dts   |  37 +
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi      |  99 +++
+ drivers/pci/controller/dwc/Kconfig            |  30 +-
+ drivers/pci/controller/dwc/pcie-tegra194.c    | 751 +++++++++++++++++-
+ include/soc/tegra/bpmp-abi.h                  |  10 +-
+ 6 files changed, 1048 insertions(+), 17 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie-ep.txt
+
 -- 
 2.17.1
 
