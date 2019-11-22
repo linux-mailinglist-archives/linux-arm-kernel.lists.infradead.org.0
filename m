@@ -2,70 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1568610670D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 08:28:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4061106707
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 08:25:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Mime-Version:References:
-	In-Reply-To:Date:To:From:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YhS6MHrTagY+U43zpmd+qKIEEA6fY/IPiij31KbHdgQ=; b=fqoNRkqpNAMd5e
-	NIRPg5f9suIzWJU2Pjr90AEsZi9fTJ5ZKzz9re+j6QdFIeFr4Z0r2prqACspPByc8oYSdE+p9nrJv
-	VZggo5aUSBzqQJiGXW1QKs++t3bS2Vt2u/dTy7fZWyKZK4x8dhVi17y1MSXNq2hky5XE8jCloiCBS
-	7L4APV+g/yTj7rxxc0gunxbQ/0Abl3rkgbDa9WrNhygwuWO7/pUxghuRojOz5DL1ADG59ZNgPZi0x
-	IlPfyXkdBWlB+kj5VXb8c66JZNMoVP4oTkQEYHDXz+VnOPV1Jxv8kUEHL5I0cig0FbLFoCws/gfrZ
-	RY5qdOc/8T8vdSiu8NdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zPFr9I8fkyCii9KrcWCbXQSY7wUTG9VHRFJ5ZSMdIo8=; b=h1JkvsP9/IWN3N
+	s0+GyZMiE9q3MJAgDA5lk7VTzJAeVe11epsUqSmInYdgMfEGBGbanvhtlqusYWeoYoENGu+NO9cZV
+	J6AtCazP1IKpCqaGUAMMTOaWUc0LVL8GX03pX68nQB4DzbLnL0vI0P/dEVvZ75eDSK/gc+YRHucts
+	jJQFKrxVQKuAcaZzfzgQaoCSLgkuK3iO7X7i3y9mVP1cLVhBQ2gKMAQ9Lpfplwefex620KZtG+UOm
+	oXJ39p9u+GfL9WSD5yKuet9z/YQKqBNkcZTgvmE8vNBd0hq6YsaOxZbHDcSkAkDW/l10hl89B1MUS
+	dbIkcdL1hmzVQ6NY/OMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY3MO-0006Hd-9v; Fri, 22 Nov 2019 07:28:08 +0000
-Received: from baldur.buserror.net ([165.227.176.147])
+	id 1iY3Jc-0004tW-Iz; Fri, 22 Nov 2019 07:25:16 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY3ME-0006H7-LV
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 07:28:00 +0000
-Received: from [2601:449:8480:af0:12bf:48ff:fe84:c9a0]
- by baldur.buserror.net with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <oss@buserror.net>)
- id 1iY3Hv-0008R8-MZ; Fri, 22 Nov 2019 01:23:32 -0600
-Message-ID: <ff6ac26dca3b1c3a74786c33b4d872535882d8ac.camel@buserror.net>
-From: Scott Wood <oss@buserror.net>
-To: Li Yang <leoyang.li@nxp.com>, Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Date: Fri, 22 Nov 2019 01:23:30 -0600
-In-Reply-To: <CADRPPNT4+zZd6fezcDcN=0EcezR4mHqnrOBBEexqBLyrV_THXQ@mail.gmail.com>
-References: <20191118112324.22725-1-linux@rasmusvillemoes.dk>
- <20191118112324.22725-14-linux@rasmusvillemoes.dk>
- <CADRPPNT4+zZd6fezcDcN=0EcezR4mHqnrOBBEexqBLyrV_THXQ@mail.gmail.com>
-Organization: Red Hat
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
-X-SA-Exim-Connect-IP: 2601:449:8480:af0:12bf:48ff:fe84:c9a0
-X-SA-Exim-Rcpt-To: leoyang.li@nxp.com, linux@rasmusvillemoes.dk,
- qiang.zhao@nxp.com, christophe.leroy@c-s.fr, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- timur@kernel.org
-X-SA-Exim-Mail-From: oss@buserror.net
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on baldur.localdomain
-X-Spam-Level: 
-X-Spam-Status: No, score=-17.5 required=5.0 tests=ALL_TRUSTED,BAYES_00,
- GREYLIST_ISWHITE autolearn=ham autolearn_force=no version=3.4.2
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- *  -15 BAYES_00 BODY: Bayes spam probability is 0 to 1%
- *      [score: 0.0000]
- * -1.5 GREYLIST_ISWHITE The incoming server has been whitelisted for
- *      this recipient and sender
-Subject: Re: [PATCH v5 13/48] powerpc/83xx: remove mpc83xx_ipic_and_qe_init_IRQ
-X-SA-Exim-Version: 4.2.1 (built Tue, 02 Aug 2016 21:08:31 +0000)
-X-SA-Exim-Scanned: Yes (on baldur.buserror.net)
+ id 1iY3JQ-0004Ey-MB
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 07:25:06 +0000
+Received: by mail-lj1-x244.google.com with SMTP id p18so6162297ljc.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 Nov 2019 23:25:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=P6uG/Y/koPc50FC4dd0Y4/POJMoX0WFT55LgqB+SC9c=;
+ b=KAI6LIcufFWUWEpwoIE142/h1b0G1G5c5DH5TlOyJKshY6UcVTeKH34Bc66qJb3ksV
+ tvAIsjEbB0iKqT1iGW7+IBzZ/HVv5H0cg7hUMtfQeXzHh/ORTKkKNdHg7gCBrUJw3EVN
+ ctqdEKg7zOXKftJy4oNVCcRWUcY/iAlpFR8HbbU73+GgU0D7lvdxQzWdLcH7Iad1lT2M
+ vhcaavvAANhdo1wd55pfnlRyDQNBBKFffNnc56jcQj7HObkNzKFPInCqeGoRNWCErLxk
+ dbz4Joc2kjKPNIu07VzJxDa+gVQjonPLJUMgHT2zNHdH5SKTVAkmNT7//BCesFwMFJUv
+ f5zg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=P6uG/Y/koPc50FC4dd0Y4/POJMoX0WFT55LgqB+SC9c=;
+ b=I1aODECsSWVN8teUP7r0VGtT9fGUTQODBK2NNkZVOhQRXmJBJvKygrOT/C1o9JFbz1
+ PhHMBRpiwUYpppHw7Nvwgj+UqSwrlv27fqyQwZiYZR0odVhmHe2IeFHYsbITbFwzx94J
+ 6/gPPXRUO05hMDhlvg1TJAQdu6Pdfz7/BFTlVHi1U4wU7sB9JDB/AsTwRcL6X0vE/lke
+ WUu4NxrN4kKIK7XVfpXp6BjZxw0aI/aha22FfwCNxrQF+V2J4acJcvr+2G5KbGARG4xB
+ TYC2skHpg5vUbp9tx5D3LsfWTYKUJNXTKje0MXjsOaFzFbztdQB6YP5es52Z61qrpdlj
+ 1uog==
+X-Gm-Message-State: APjAAAXMojWWyeJ5Dbw+mcp0C+EROh4uz69ffLIJtLklcNYSUNeCNDeB
+ e7gB6YRqRRKDfljPndqHHNyCiQ==
+X-Google-Smtp-Source: APXvYqym1eTLyknpwVqzImXoV+s463bJ3UZIORURNvIaHZVBUBjZQO2B4ChJLH82OXas3sJ1/lpaqw==
+X-Received: by 2002:a2e:9649:: with SMTP id z9mr10981112ljh.47.1574407502500; 
+ Thu, 21 Nov 2019 23:25:02 -0800 (PST)
+Received: from localhost.bredbandsbolaget
+ (c-21cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.33])
+ by smtp.gmail.com with ESMTPSA id b28sm2752633ljp.9.2019.11.21.23.25.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 21 Nov 2019 23:25:01 -0800 (PST)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: dri-devel@lists.freedesktop.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
+Subject: [PATCH 1/2] drm/mcde: Reuse global DSI command defs
+Date: Fri, 22 Nov 2019 08:24:57 +0100
+Message-Id: <20191122072457.25619-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_232758_771377_460E8F81 
-X-CRM114-Status: GOOD (  15.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191121_232504_862768_453CDD84 
+X-CRM114-Status: UNSURE (   8.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,158 +99,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>, Timur Tabi <timur@kernel.org>,
- lkml <linux-kernel@vger.kernel.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Qiang Zhao <qiang.zhao@nxp.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Stephan Gerhold <stephan@gerhold.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-11-20 at 11:59 -0600, Li Yang wrote:
-> On Mon, Nov 18, 2019 at 5:29 AM Rasmus Villemoes
-> <linux@rasmusvillemoes.dk> wrote:
-> 
-> Hi Scott,
-> 
-> What do you think of the PowerPC related changes(patch 13,14)?  Can we
-> have you ACK and merge the series from soc tree?
+The MCDE DSI include file redefines some commands that
+already exist in the common <video/mipi_display.h> header.
 
-Acked-by: Scott Wood <oss@buserror.net>
+Cc: Stephan Gerhold <stephan@gerhold.net>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ drivers/gpu/drm/mcde/mcde_dsi.c      |  2 +-
+ drivers/gpu/drm/mcde/mcde_dsi_regs.h | 11 -----------
+ 2 files changed, 1 insertion(+), 12 deletions(-)
 
--Scott
-
-> 
-> Regards,
-> Leo
-> > 
-> > This is now exactly the same as mpc83xx_ipic_init_IRQ, so just use
-> > that directly.
-> > 
-> > Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-> > ---
-> >  arch/powerpc/platforms/83xx/km83xx.c      | 2 +-
-> >  arch/powerpc/platforms/83xx/misc.c        | 7 -------
-> >  arch/powerpc/platforms/83xx/mpc832x_mds.c | 2 +-
-> >  arch/powerpc/platforms/83xx/mpc832x_rdb.c | 2 +-
-> >  arch/powerpc/platforms/83xx/mpc836x_mds.c | 2 +-
-> >  arch/powerpc/platforms/83xx/mpc836x_rdk.c | 2 +-
-> >  arch/powerpc/platforms/83xx/mpc83xx.h     | 5 -----
-> >  7 files changed, 5 insertions(+), 17 deletions(-)
-> > 
-> > diff --git a/arch/powerpc/platforms/83xx/km83xx.c
-> > b/arch/powerpc/platforms/83xx/km83xx.c
-> > index 5c6227f7bc37..3d89569e9e71 100644
-> > --- a/arch/powerpc/platforms/83xx/km83xx.c
-> > +++ b/arch/powerpc/platforms/83xx/km83xx.c
-> > @@ -177,7 +177,7 @@ define_machine(mpc83xx_km) {
-> >         .name           = "mpc83xx-km-platform",
-> >         .probe          = mpc83xx_km_probe,
-> >         .setup_arch     = mpc83xx_km_setup_arch,
-> > -       .init_IRQ       = mpc83xx_ipic_and_qe_init_IRQ,
-> > +       .init_IRQ       = mpc83xx_ipic_init_IRQ,
-> >         .get_irq        = ipic_get_irq,
-> >         .restart        = mpc83xx_restart,
-> >         .time_init      = mpc83xx_time_init,
-> > diff --git a/arch/powerpc/platforms/83xx/misc.c
-> > b/arch/powerpc/platforms/83xx/misc.c
-> > index 6935a5b9fbd1..1d8306eb2958 100644
-> > --- a/arch/powerpc/platforms/83xx/misc.c
-> > +++ b/arch/powerpc/platforms/83xx/misc.c
-> > @@ -88,13 +88,6 @@ void __init mpc83xx_ipic_init_IRQ(void)
-> >         ipic_set_default_priority();
-> >  }
-> > 
-> > -#ifdef CONFIG_QUICC_ENGINE
-> > -void __init mpc83xx_ipic_and_qe_init_IRQ(void)
-> > -{
-> > -       mpc83xx_ipic_init_IRQ();
-> > -}
-> > -#endif /* CONFIG_QUICC_ENGINE */
-> > -
-> >  static const struct of_device_id of_bus_ids[] __initconst = {
-> >         { .type = "soc", },
-> >         { .compatible = "soc", },
-> > diff --git a/arch/powerpc/platforms/83xx/mpc832x_mds.c
-> > b/arch/powerpc/platforms/83xx/mpc832x_mds.c
-> > index 1c73af104d19..6fa5402ebf20 100644
-> > --- a/arch/powerpc/platforms/83xx/mpc832x_mds.c
-> > +++ b/arch/powerpc/platforms/83xx/mpc832x_mds.c
-> > @@ -101,7 +101,7 @@ define_machine(mpc832x_mds) {
-> >         .name           = "MPC832x MDS",
-> >         .probe          = mpc832x_sys_probe,
-> >         .setup_arch     = mpc832x_sys_setup_arch,
-> > -       .init_IRQ       = mpc83xx_ipic_and_qe_init_IRQ,
-> > +       .init_IRQ       = mpc83xx_ipic_init_IRQ,
-> >         .get_irq        = ipic_get_irq,
-> >         .restart        = mpc83xx_restart,
-> >         .time_init      = mpc83xx_time_init,
-> > diff --git a/arch/powerpc/platforms/83xx/mpc832x_rdb.c
-> > b/arch/powerpc/platforms/83xx/mpc832x_rdb.c
-> > index 87f68ca06255..622c625d5ce4 100644
-> > --- a/arch/powerpc/platforms/83xx/mpc832x_rdb.c
-> > +++ b/arch/powerpc/platforms/83xx/mpc832x_rdb.c
-> > @@ -219,7 +219,7 @@ define_machine(mpc832x_rdb) {
-> >         .name           = "MPC832x RDB",
-> >         .probe          = mpc832x_rdb_probe,
-> >         .setup_arch     = mpc832x_rdb_setup_arch,
-> > -       .init_IRQ       = mpc83xx_ipic_and_qe_init_IRQ,
-> > +       .init_IRQ       = mpc83xx_ipic_init_IRQ,
-> >         .get_irq        = ipic_get_irq,
-> >         .restart        = mpc83xx_restart,
-> >         .time_init      = mpc83xx_time_init,
-> > diff --git a/arch/powerpc/platforms/83xx/mpc836x_mds.c
-> > b/arch/powerpc/platforms/83xx/mpc836x_mds.c
-> > index 5b484da9533e..219a83ab6c00 100644
-> > --- a/arch/powerpc/platforms/83xx/mpc836x_mds.c
-> > +++ b/arch/powerpc/platforms/83xx/mpc836x_mds.c
-> > @@ -208,7 +208,7 @@ define_machine(mpc836x_mds) {
-> >         .name           = "MPC836x MDS",
-> >         .probe          = mpc836x_mds_probe,
-> >         .setup_arch     = mpc836x_mds_setup_arch,
-> > -       .init_IRQ       = mpc83xx_ipic_and_qe_init_IRQ,
-> > +       .init_IRQ       = mpc83xx_ipic_init_IRQ,
-> >         .get_irq        = ipic_get_irq,
-> >         .restart        = mpc83xx_restart,
-> >         .time_init      = mpc83xx_time_init,
-> > diff --git a/arch/powerpc/platforms/83xx/mpc836x_rdk.c
-> > b/arch/powerpc/platforms/83xx/mpc836x_rdk.c
-> > index b7119e443920..b4aac2cde849 100644
-> > --- a/arch/powerpc/platforms/83xx/mpc836x_rdk.c
-> > +++ b/arch/powerpc/platforms/83xx/mpc836x_rdk.c
-> > @@ -41,7 +41,7 @@ define_machine(mpc836x_rdk) {
-> >         .name           = "MPC836x RDK",
-> >         .probe          = mpc836x_rdk_probe,
-> >         .setup_arch     = mpc836x_rdk_setup_arch,
-> > -       .init_IRQ       = mpc83xx_ipic_and_qe_init_IRQ,
-> > +       .init_IRQ       = mpc83xx_ipic_init_IRQ,
-> >         .get_irq        = ipic_get_irq,
-> >         .restart        = mpc83xx_restart,
-> >         .time_init      = mpc83xx_time_init,
-> > diff --git a/arch/powerpc/platforms/83xx/mpc83xx.h
-> > b/arch/powerpc/platforms/83xx/mpc83xx.h
-> > index d343f6ce2599..f37d04332fc7 100644
-> > --- a/arch/powerpc/platforms/83xx/mpc83xx.h
-> > +++ b/arch/powerpc/platforms/83xx/mpc83xx.h
-> > @@ -72,11 +72,6 @@ extern int mpc837x_usb_cfg(void);
-> >  extern int mpc834x_usb_cfg(void);
-> >  extern int mpc831x_usb_cfg(void);
-> >  extern void mpc83xx_ipic_init_IRQ(void);
-> > -#ifdef CONFIG_QUICC_ENGINE
-> > -extern void mpc83xx_ipic_and_qe_init_IRQ(void);
-> > -#else
-> > -#define mpc83xx_ipic_and_qe_init_IRQ mpc83xx_ipic_init_IRQ
-> > -#endif /* CONFIG_QUICC_ENGINE */
-> > 
-> >  #ifdef CONFIG_PCI
-> >  extern void mpc83xx_setup_pci(void);
-> > --
-> > 2.23.0
-> > 
-> 
-> 
+diff --git a/drivers/gpu/drm/mcde/mcde_dsi.c b/drivers/gpu/drm/mcde/mcde_dsi.c
+index d4a12fe7ff01..dc07b534f01f 100644
+--- a/drivers/gpu/drm/mcde/mcde_dsi.c
++++ b/drivers/gpu/drm/mcde/mcde_dsi.c
+@@ -350,7 +350,7 @@ void mcde_dsi_te_request(struct mipi_dsi_device *mdsi)
+ 	val |= 0 << DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_ID_SHIFT;
+ 	val |= 2 << DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_SIZE_SHIFT;
+ 	val |= DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_LP_EN;
+-	val |= DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_SHORT_WRITE_1 <<
++	val |= MIPI_DSI_GENERIC_SHORT_WRITE_1_PARAM <<
+ 		DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SHIFT;
+ 	writel(val, d->regs + DSI_DIRECT_CMD_MAIN_SETTINGS);
+ 
+diff --git a/drivers/gpu/drm/mcde/mcde_dsi_regs.h b/drivers/gpu/drm/mcde/mcde_dsi_regs.h
+index b03a336c235f..8089db805c57 100644
+--- a/drivers/gpu/drm/mcde/mcde_dsi_regs.h
++++ b/drivers/gpu/drm/mcde/mcde_dsi_regs.h
+@@ -123,17 +123,6 @@
+ #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_LONGNOTSHORT BIT(3)
+ #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SHIFT 8
+ #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_MASK 0x00003F00
+-#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_TURN_ON_PERIPHERAL 50
+-#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SHUT_DOWN_PERIPHERAL 34
+-#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_SHORT_WRITE_0 3
+-#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_SHORT_WRITE_1 19
+-#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_SHORT_WRITE_2 35
+-#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_GENERIC_LONG_WRITE 41
+-#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_SHORT_WRITE_0 5
+-#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_SHORT_WRITE_1 21
+-#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_LONG_WRITE 57
+-#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_DCS_READ 6
+-#define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SET_MAX_PKT_SIZE 55
+ #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_ID_SHIFT 14
+ #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_SIZE_SHIFT 16
+ #define DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_LP_EN BIT(21)
+-- 
+2.21.0
 
 
 _______________________________________________
