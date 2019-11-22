@@ -2,73 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 396EF106995
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:05:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E46310698E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 Nov 2019 11:05:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=D2tRPpQW9zEU7sENAIz08q/ag9qtiY5GAMNE1olw6qA=; b=D+5I26YJeqL11Z
-	zllYUc9BeRIuCdNBKr/qOofY7w5a0AZqe1N/ChtNPFrvZZV7Q0F/X3E106CheON/9tnF/Ytq6JeVX
-	jw+vrU+WMZEf+YrvajWn3qzjQ0ahZdSZULVU3LHsoMhHsu5+Hd/LN6jhsaxeh+RDI3ep5TVtBn6DD
-	loAHZYJXL+x5HdHCsFwMtxs9aek/OE5WTaKAZRyOGNcR+luyiKe0upjWI+3rcjYoxvBgd7ovPX8nt
-	Sc6tAQ3ylwVXCytH+nc5S19FcrU/DRyxqKB2yc2hcek9RXQBsXPnxnh+xPtXrcG0I/+pporgCeD3p
-	6QmJuUZUOcZZpBBk/4ag==;
+	List-Owner; bh=9mGXPyO1GpPjTn7D/uz1UkD5KMqSzcO6KVwilUq0lGQ=; b=alWyCodyNAuYd9
+	PX0G/Vsj3kfFAQR/be7r1Oe23ncXh4sJwNF2jPwLHffmnnZ8k0DR/Q8sACxItx9rC+YdzFyEUKJp0
+	tGNDJmOD4UWmkdBhl+vSJA0dxC9eF3+K8aq27ilaMqZZKGtSPO7AiDizQPZcYeKdQ3DtTpUPajY0q
+	+tVrMwadUl4GhizU9IlLtSO20AlyaOarj3QVhhqLBxJ1Lxn7h+vuRu+4iAENLY4t2Z7oDk2fGasy8
+	8VtSMpJxGhQ1M2LO3TqW67C173xg0sErA68JU5G0rRjrvoa9xNzPYQTEUZ9hifa20n4XSwfUg5v9u
+	LODHHLQ+zWDdqDeLfpnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY5on-0007hi-9o; Fri, 22 Nov 2019 10:05:37 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iY5oa-0006Ha-M3; Fri, 22 Nov 2019 10:05:24 +0000
+Received: from mail-eopbgr130051.outbound.protection.outlook.com
+ ([40.107.13.51] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY5oO-0006fJ-0R
- for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:05:18 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xAMA56SA012846;
- Fri, 22 Nov 2019 04:05:06 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1574417106;
- bh=nDUAWzO7tybnEfXGfyLP9nXIeBAXTJyo6jD+ojqOFZQ=;
- h=From:To:CC:Subject:Date;
- b=oCBpGHPCUzF6LjRJmPHGwkvCX7jaeG6NbqaGO2jARjIxasfX+nIjX2jTCMrbS+UZz
- usyEQAEp2eawvkXKTH0wpiBR4/bdUilT6V8WG+fmJzyXpHJa1b1d16Rjqk++928c4c
- VOhKS7URKi+w3iJEv90KOp/U9InQ4+MPkJqVzB0I=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAMA56eU047332;
- Fri, 22 Nov 2019 04:05:06 -0600
-Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 22
- Nov 2019 04:05:04 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 22 Nov 2019 04:05:04 -0600
-Received: from uda0131933.india.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xAMA51rN029986;
- Fri, 22 Nov 2019 04:05:02 -0600
-From: Lokesh Vutla <lokeshvutla@ti.com>
-To: Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>
-Subject: [PATCH] arm64: dts: ti: k3-j721e-main: Add missing power-domains for
- smmu
-Date: Fri, 22 Nov 2019 15:33:56 +0530
-Message-ID: <20191122100356.20622-1-lokeshvutla@ti.com>
-X-Mailer: git-send-email 2.23.0
+ id 1iY5o9-0006Gx-Sv
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 Nov 2019 10:04:59 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ZQDht7dRWtYC/Rq6o6cEZZrUBioR+Rb5fgEzyw+lEELNJ5AUKxUsM9B0Jn3pE2Zi2plKFQb+u0E7j9Gv3H4tB42XwWX31rnko/pE/m1CBGPsiKm1K50weSCSi0ra1mXN7UuuvqGgu0rXg3GTYFVmIHG26XMLVYrCwmdBMZypFmudwhWVd4EFGSvHHXfCtbD4BwhOZ+BJosTes4AUh0TwalunDXdkZQvbwPsRFdEh31KP4qY5p/8jnrp3AeOS8vN+NxHGZ0PjCUng2SqbAWcBL8X5IiWJln08TRPuojVk3IL4HCrKeTYDKlYGpqsonQ7rhIO1/+t494yfgkFd6hpHWA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=nasq4Kzwbp+1Bz7M3ImYiiVEpr7ppoY09uVt22CM3HI=;
+ b=inO15Zbqf1gwR9mR0fG1r3T/fy+lqvnn/tUFtHDxWu80bzUFj1vHfdvVkgBtk9YsS2KNh2ScFzPkacW5u2VHYCPUk0CGj1Qf3UqwybNth2UJ1gRioLI6AwSNlnPToFJg5Vpqcs2c3zJ5ykXLODcfgMoW+O1qdQGlEeTsA1G9lAcXnTaNIkwHYoyHPgBRjwbhy8AoK1wMOdNZY7XKgyKOH6UPI+NJvgsFGeVGKFYQ2P8bYL44M4Jlol8q47k84TdR8vsoCXmECMyQknnkFrW1VpXrLQrDbnZPUMZuQX3D932CszvIIPSrBMJDFQzTtJrZ1kwOWMiPLEDJAo4edjRTSw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=nasq4Kzwbp+1Bz7M3ImYiiVEpr7ppoY09uVt22CM3HI=;
+ b=PiBwbXUNH929Hs6RqkvhdDQBN/Eve2Quzmr4W/J7yZ8Gi5eMxBwP5AsuNjJWu10baGDptd8llNYIf5jjWBqP5iDVRjAbhtS5K4RVVtXPk8ub8vYL+OqxLD9TuWp6EvuP1us3jfcwqd8SMqGWqlUPdfUUMijXYv9Zdye7djuyMNA=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB4594.eurprd04.prod.outlook.com (52.135.149.20) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2451.30; Fri, 22 Nov 2019 10:04:53 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::f16d:a26a:840:f97c%4]) with mapi id 15.20.2474.021; Fri, 22 Nov 2019
+ 10:04:53 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "sboyd@kernel.org" <sboyd@kernel.org>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>
+Subject: [PATCH V2] clk: imx: clk-imx7ulp: Add missing sentinel of
+ ulp_div_table
+Thread-Topic: [PATCH V2] clk: imx: clk-imx7ulp: Add missing sentinel of
+ ulp_div_table
+Thread-Index: AQHVoRxJ5RRsuDSV80CDoqBvpvLXvA==
+Date: Fri, 22 Nov 2019 10:04:53 +0000
+Message-ID: <1574416982-3467-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK2PR02CA0201.apcprd02.prod.outlook.com
+ (2603:1096:201:20::13) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 8573dbcd-70a8-40c0-e920-08d76f336b76
+x-ms-traffictypediagnostic: AM0PR04MB4594:|AM0PR04MB4594:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB459471BE5692C620F63D374F88490@AM0PR04MB4594.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:873;
+x-forefront-prvs: 02296943FF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(396003)(136003)(346002)(366004)(39860400002)(199004)(189003)(81166006)(6636002)(256004)(14444005)(2501003)(52116002)(4326008)(305945005)(5660300002)(110136005)(2906002)(71200400001)(81156014)(86362001)(66946007)(44832011)(478600001)(102836004)(3846002)(66446008)(71190400001)(6116002)(2616005)(14454004)(26005)(8676002)(386003)(6506007)(8936002)(50226002)(186003)(54906003)(2201001)(316002)(66066001)(25786009)(64756008)(66476007)(6436002)(66556008)(7736002)(4744005)(6512007)(36756003)(6486002)(99286004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4594;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 0WemzPL8aN9nSrZ/N6O7KabnSk75+w8tfys0FmDF7xq05VqsqU1tiK3zqsOsBMji03xNi/7psbqERd3f6C4YdLFHZ0UqSPRHQtCY1Nhou3BUrjc386atgzB5IcsaMn17WDsAqoBXq9/cOxzLH9PGRiwlFFSWjLuDobMJ5UNSb20qC4YcpX9pUKaOAe4sf0Lvu/lLVrByjy2cRIlic/Aa2HyEvGg97Z2w4r1lKwYybNpTXwmJk8ZZK5qgoZN6IcQ0d7TPOlJpMAzE+5vGlPzqa20I0RPM7LxRjnnsUg6NGw7VziHvTOyxKHdSRSWauI0xlegSCn5WQsXi65QLadsVr9WfVEG9pt7AUW83d5/BP7Qz+F2MHv7lUTxGuVk+RE1LQFT1g1fd4ovH2kbwBnJUFgwQHQ7kYxss7JgUJohamOMJI/gdToga4dt5OkSiIXii
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8573dbcd-70a8-40c0-e920-08d76f336b76
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Nov 2019 10:04:53.6702 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: mwALuZk3u1VELHZEj/rJLcBeY1KCL6mEoEhroi534XX6mZBegc5aYe9MLQ4J0yaXklIfOG6rX3BY6JnWmBbN2g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4594
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_020512_184173_21B5A8D7 
-X-CRM114-Status: GOOD (  10.37  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191122_020457_938643_AD0F805E 
+X-CRM114-Status: GOOD (  10.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.13.51 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -76,7 +116,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,40 +127,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Device Tree Mailing List <devicetree@vger.kernel.org>,
- Lokesh Vutla <lokeshvutla@ti.com>, Sekhar Nori <nsekhar@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Suman Anna <s-anna@ti.com>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Peng Fan <peng.fan@nxp.com>, Alice Guo <alice.guo@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add power-domains entry for smmu, so that the it is accessible as long
-as the driver is active. Without this device shutdown is throwing the
-below warning:
-"[   44.736348] arm-smmu-v3 36600000.smmu: failed to clear cr0"
+From: Peng Fan <peng.fan@nxp.com>
 
-Reported-by: Suman Anna <s-anna@ti.com>
-Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
+There should be a sentinel of ulp_div_table, otherwise _get_table_div
+may access data out of the array.
+
+Fixes: b1260067ac3d ("clk: imx: add imx7ulp clk driver")
+Cc: stable@vger.kernel.org
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- arch/arm64/boot/dts/ti/k3-j721e-main.dtsi | 1 +
+
+V2:
+ cc stable mail list
+
+ drivers/clk/imx/clk-imx7ulp.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-index 698ef9a1d5b7..96445111e398 100644
---- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-@@ -43,6 +43,7 @@
- 	smmu0: smmu@36600000 {
- 		compatible = "arm,smmu-v3";
- 		reg = <0x0 0x36600000 0x0 0x100000>;
-+		power-domains = <&k3_pds 229 TI_SCI_PD_EXCLUSIVE>;
- 		interrupt-parent = <&gic500>;
- 		interrupts = <GIC_SPI 772 IRQ_TYPE_EDGE_RISING>,
- 			     <GIC_SPI 768 IRQ_TYPE_EDGE_RISING>;
+diff --git a/drivers/clk/imx/clk-imx7ulp.c b/drivers/clk/imx/clk-imx7ulp.c
+index 3fdf3d494f0a..281191b55b3a 100644
+--- a/drivers/clk/imx/clk-imx7ulp.c
++++ b/drivers/clk/imx/clk-imx7ulp.c
+@@ -40,6 +40,7 @@ static const struct clk_div_table ulp_div_table[] = {
+ 	{ .val = 5, .div = 16, },
+ 	{ .val = 6, .div = 32, },
+ 	{ .val = 7, .div = 64, },
++	{ /* sentinel */ },
+ };
+ 
+ static const int pcc2_uart_clk_ids[] __initconst = {
 -- 
-2.23.0
+2.16.4
 
 
 _______________________________________________
