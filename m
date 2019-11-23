@@ -2,92 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DECEE10800B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 Nov 2019 19:39:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A73F2108035
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 Nov 2019 21:01:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f9uRdxGF64Sy4hbwpnqXxQSsAEajouN/Uh3BOeHjuVM=; b=X/UC4q/8Deucyz
-	QAHlCR1utMk9aK/kJbN0C9DVYHnLlsqvzaeoI0vHVdG5kJy/c3FKaxiAM3viBkFX1mOA0ZsFyz9u8
-	rZ2tOHec4z56ZqK1xqR2NVkjHXECnQKpTrPado2cc1L4l5elfiBOJHvDNBl3cX6j3FErMXu+4BxEz
-	RIfxWBkcq8jU/3eP5d0raOtUqZZtrpOfzDVh9a27811uG04Yah/DT68t0Ni8BAr9RjbWmRPdgyVk3
-	urbnmu58MkbemZud9sqZRemuyOZJ9FMJQzrH8Eix72vjQwwDL8nZU/7xEUFASQh+MDDgAnDYtktBG
-	vYC5eQHmxGYDE+dwc11A==;
+	List-Owner; bh=ovoWbrxuawSVttIuzhQd/ADHfJZhVzOUKG3aMGvlU+w=; b=r5lWM9mzBZeIan
+	eIKtneJ7j0ZCAWBG+DoTKggTkVbOI/HGPTCcX+4Js9yUERDp/Qt8p1fysQ6Ei29tgfh/KWq01W32X
+	7UiuyDbli4qb2BUHS+6uHGADFTvfv6doHl4L+VscCThB7WCAbqVWgJaucwiUvb4+mWuUQhPqnmIAG
+	r8UCSExgv8sx6+SL9pRWKXhn/AY8Jctfyn6Zh9v43qpYceUDK+qNuhISMPzHTxtKAWFXmTiaKtYju
+	p9x6eeDpiJXeBgpoLkT72GY5gLlFoufSqhf+RhxxOT/ZHj71Lv1vuVkl6pf5D5HF+1yggAJ0rQBIV
+	7tm/FsJHbddyxYgD6vRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYaJ8-0000sO-Ty; Sat, 23 Nov 2019 18:38:58 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iYbax-0000pF-2R; Sat, 23 Nov 2019 20:01:27 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYaIx-0000r6-IN
- for linux-arm-kernel@lists.infradead.org; Sat, 23 Nov 2019 18:38:49 +0000
-Received: by mail-pg1-x543.google.com with SMTP id e17so5045200pgd.7
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 23 Nov 2019 10:38:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=netronome-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:in-reply-to:references
- :organization:mime-version:content-transfer-encoding;
- bh=nDRorgsBSVXUioZFMrZk0EkNmQVKU+AZrP50cmXnyC4=;
- b=uEsVTv/IY5hG62Wu9vwmfYFRVZtJMQEmvbpSxd8EASyANasSlZHDLbnv19sgBybHPZ
- sLaFJZ4ptRzpx2pp8bzaDde5oUsHabEPhJbnYrt8i/cBsmVfH40RjfsGk4MNOWiUF9e0
- p8b0FNKNG2LJhSAXzZGlcy2QGKRkFwep6PbcXeYJxDW2ICh5V5aFtBne8QHoXwSBmeTb
- VOWx7vsReEMXwyuVr4A7IBBksaZ2w0+u512zQ3uiZgWpiuk+uwyT4RU+vS1D9XA58mGM
- j527Jxpoegjg53FzKsvTEvOfUlUWr1ykfKHB1GNaYEGCPObTDePqloRawIEjCkgB6ibX
- NWcg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
- :references:organization:mime-version:content-transfer-encoding;
- bh=nDRorgsBSVXUioZFMrZk0EkNmQVKU+AZrP50cmXnyC4=;
- b=tnxDGpQwibgXmyp57ef8iOi4fTE9IiiLRfzKjuMjnKVIQXJxAZ9rDI8l7QLTvU1i5d
- 0sqJV63Uh+9MrIefXKsNMfl8nbyCjL6m3vu8F1i/ahw3HLLsVtHn55/rWRRNuVpQfixT
- pkqrznJFKiuq+bpcpLGEjHN2HyvHBmLm4lnIg1udQwfljPU/n5KfLmXwGGYvos8sg1Z0
- EUYsm1piRIelBDc6v8mEQ7GckJafnY2Z3yYcc/WAGAGrPmw5PabsOUGfXh+3EwK52Wln
- 65ehCdvCnqdNQhjFIXHvEVfVRPfE8jz/j0Q7faVHEE+HmZVqIUr8HctOaah6p4A9f0dJ
- aMXw==
-X-Gm-Message-State: APjAAAUhc2FwkVtB0RZUG0FHgCZpfy01f9J8HbDUhKv+5N1V0o5a/Ri3
- /h6qX+hp/eEIlSo44xr+QFMj2w==
-X-Google-Smtp-Source: APXvYqz1czMH9OjFLmttmObRqksQ19SQZuwNAxgR+QJ3jRnmZqw4PC8qOzxHsQAhx9c2AwtLrQZJyw==
-X-Received: by 2002:a62:6404:: with SMTP id y4mr24169935pfb.170.1574534326304; 
- Sat, 23 Nov 2019 10:38:46 -0800 (PST)
-Received: from cakuba.netronome.com (c-73-202-202-92.hsd1.ca.comcast.net.
- [73.202.202.92])
- by smtp.gmail.com with ESMTPSA id v3sm2350025pfn.129.2019.11.23.10.38.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 23 Nov 2019 10:38:45 -0800 (PST)
-Date: Sat, 23 Nov 2019 10:38:40 -0800
-From: Jakub Kicinski <jakub.kicinski@netronome.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>, Florian Fainelli
- <f.fainelli@gmail.com>
-Subject: Re: [CFT PATCH net-next v2] net: phylink: rename mac_link_state()
- op to mac_pcs_get_state()
-Message-ID: <20191123103840.76c5d63f@cakuba.netronome.com>
-In-Reply-To: <20191122092136.GJ25745@shell.armlinux.org.uk>
-References: <E1iXaSM-0004t1-9L@rmk-PC.armlinux.org.uk>
- <20191121.191417.1339124115325210078.davem@davemloft.net>
- <0a9e016b-4ee3-1f1c-0222-74180f130e6c@gmail.com>
- <20191122092136.GJ25745@shell.armlinux.org.uk>
-Organization: Netronome Systems, Ltd.
+ id 1iYbak-0000oV-Ux
+ for linux-arm-kernel@lists.infradead.org; Sat, 23 Nov 2019 20:01:17 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iYbad-0002X6-7w; Sat, 23 Nov 2019 21:01:07 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iYbaU-0004d5-BV; Sat, 23 Nov 2019 21:00:58 +0100
+Date: Sat, 23 Nov 2019 21:00:58 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v8 5/6] pwm: sun4i: Add support to output source clock
+ directly
+Message-ID: <20191123200058.kz2farbyvruybtjj@pengutronix.de>
+References: <20191121195902.6906-1-peron.clem@gmail.com>
+ <20191121195902.6906-6-peron.clem@gmail.com>
+ <20191121211630.slgayfbuykwvlvdt@pengutronix.de>
+ <CAJiuCcdhH9zbRMMYsZbBYL-H8YWn2kimvJEjZ8Z8kF7Uh9MCpg@mail.gmail.com>
+ <CAJiuCcd8VK2xHqRuWTVpNvw4e+rCR9-KjOSF5KsTcN9qQhaNVw@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAJiuCcd8VK2xHqRuWTVpNvw4e+rCR9-KjOSF5KsTcN9qQhaNVw@mail.gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191123_103847_610718_D4EC2D1F 
-X-CRM114-Status: GOOD (  10.62  )
+X-CRM114-CacheID: sfid-20191123_120115_150826_B1BDD2D8 
+X-CRM114-Status: GOOD (  29.31  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,34 +72,217 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, nbd@openwrt.org, sean.wang@mediatek.com,
- alexandre.torgue@st.com, netdev@vger.kernel.org, peppe.cavallaro@st.com,
- radhey.shyam.pandey@xilinx.com, michal.simek@xilinx.com,
- mcoquelin.stm32@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
- joabreu@synopsys.com, linux-mediatek@lists.infradead.org,
- thomas.petazzoni@bootlin.com, john@phrozen.org, matthias.bgg@gmail.com,
- vivien.didelot@gmail.com, hkallweit1@gmail.com,
- David Miller <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Mark-MC.Lee@mediatek.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Philipp Zabel <pza@pengutronix.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 22 Nov 2019 09:21:37 +0000, Russell King - ARM Linux admin
-wrote:
-> On Thu, Nov 21, 2019 at 07:36:44PM -0800, Florian Fainelli wrote:
-> > Russell, which of this patch or: http://patchwork.ozlabs.org/patch/1197425/
-> > 
-> > would you consider worthy of merging?  
-> 
-> Let's go with v2 for now - it gets the rename done with less risk that
-> there'll be a problem.  I can always do the remainder in a separate
-> patch after the merge window as a separate patch.
+On Sat, Nov 23, 2019 at 03:05:48PM +0100, Cl=E9ment P=E9ron wrote:
+> Hi Uwe,
+> =
 
-Florian, I assume you asked because you wanted to do some testing?
-Please let me know if you need more time, otherwise I'll apply this
-later today.
+> On Thu, 21 Nov 2019 at 22:21, Cl=E9ment P=E9ron <peron.clem@gmail.com> wr=
+ote:
+> >
+> > Hi Uwe,
+> >
+> > On Thu, 21 Nov 2019 at 22:16, Uwe Kleine-K=F6nig
+> > <u.kleine-koenig@pengutronix.de> wrote:
+> > >
+> > > On Thu, Nov 21, 2019 at 08:59:01PM +0100, Cl=E9ment P=E9ron wrote:
+> > > > From: Jernej Skrabec <jernej.skrabec@siol.net>
+> > > >
+> > > > PWM core has an option to bypass whole logic and output unchanged s=
+ource
+> > > > clock as PWM output. This is achieved by enabling bypass bit.
+> > > >
+> > > > Note that when bypass is enabled, no other setting has any meaning,=
+ not
+> > > > even enable bit.
+> > > >
+> > > > This mode of operation is needed to achieve high enough frequency to
+> > > > serve as clock source for AC200 chip which is integrated into same
+> > > > package as H6 SoC.
+> > > >
+> > > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > > > Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+> > > > ---
+> > > >  drivers/pwm/pwm-sun4i.c | 48 +++++++++++++++++++++++++++++++++++++=
+++--
+> > > >  1 file changed, 46 insertions(+), 2 deletions(-)
+> > > >
+> > > > diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
+> > > > index 1fa2057419fb..0fe9c680d6d0 100644
+> > > > --- a/drivers/pwm/pwm-sun4i.c
+> > > > +++ b/drivers/pwm/pwm-sun4i.c
+> > > > @@ -3,6 +3,10 @@
+> > > >   * Driver for Allwinner sun4i Pulse Width Modulation Controller
+> > > >   *
+> > > >   * Copyright (C) 2014 Alexandre Belloni <alexandre.belloni@free-el=
+ectrons.com>
+> > > > + *
+> > > > + * Limitations:
+> > > > + * - When outputing the source clock directly, the PWM logic will =
+be bypassed
+> > > > + *   and the currently running period is not guaranteed to be comp=
+leted
+> > > >   */
+> > > >
+> > > >  #include <linux/bitops.h>
+> > > > @@ -73,6 +77,7 @@ static const u32 prescaler_table[] =3D {
+> > > >
+> > > >  struct sun4i_pwm_data {
+> > > >       bool has_prescaler_bypass;
+> > > > +     bool has_direct_mod_clk_output;
+> > > >       unsigned int npwm;
+> > > >  };
+> > > >
+> > > > @@ -118,6 +123,20 @@ static void sun4i_pwm_get_state(struct pwm_chi=
+p *chip,
+> > > >
+> > > >       val =3D sun4i_pwm_readl(sun4i_pwm, PWM_CTRL_REG);
+> > > >
+> > > > +     /*
+> > > > +      * PWM chapter in H6 manual has a diagram which explains that=
+ if bypass
+> > > > +      * bit is set, no other setting has any meaning. Even more, e=
+xperiment
+> > > > +      * proved that also enable bit is ignored in this case.
+> > > > +      */
+> > > > +     if ((val & BIT_CH(PWM_BYPASS, pwm->hwpwm)) &&
+> > > > +         sun4i_pwm->data->has_direct_mod_clk_output) {
+> > > > +             state->period =3D DIV_ROUND_UP_ULL(NSEC_PER_SEC, clk_=
+rate);
+> > > > +             state->duty_cycle =3D DIV_ROUND_UP_ULL(state->period,=
+ 2);
+> > > > +             state->polarity =3D PWM_POLARITY_NORMAL;
+> > > > +             state->enabled =3D true;
+> > > > +             return;
+> > > > +     }
+> > > > +
+> > > >       if ((PWM_REG_PRESCAL(val, pwm->hwpwm) =3D=3D PWM_PRESCAL_MASK=
+) &&
+> > > >           sun4i_pwm->data->has_prescaler_bypass)
+> > > >               prescaler =3D 1;
+> > > > @@ -149,13 +168,24 @@ static void sun4i_pwm_get_state(struct pwm_ch=
+ip *chip,
+> > > >
+> > > >  static int sun4i_pwm_calculate(struct sun4i_pwm_chip *sun4i_pwm,
+> > > >                              const struct pwm_state *state,
+> > > > -                            u32 *dty, u32 *prd, unsigned int *prsc=
+lr)
+> > > > +                            u32 *dty, u32 *prd, unsigned int *prsc=
+lr,
+> > > > +                            bool *bypass)
+> > > >  {
+> > > >       u64 clk_rate, div =3D 0;
+> > > >       unsigned int pval, prescaler =3D 0;
+> > > >
+> > > >       clk_rate =3D clk_get_rate(sun4i_pwm->clk);
+> > > >
+> > > > +     *bypass =3D sun4i_pwm->data->has_direct_mod_clk_output &&
+> > > > +               state->enabled &&
+> > > > +               (state->period * clk_rate >=3D NSEC_PER_SEC) &&
+> > > > +               (state->period * clk_rate < 2 * NSEC_PER_SEC) &&
+> > > > +               (state->duty_cycle * clk_rate * 2 >=3D NSEC_PER_SEC=
+);
+> > > > +
+> > > > +     /* Skip calculation of other parameters if we bypass them */
+> > > > +     if (*bypass)
+> > > > +             return 0;
+> > > > +
+> > > >       if (sun4i_pwm->data->has_prescaler_bypass) {
+> > > >               /* First, test without any prescaler when available */
+> > > >               prescaler =3D PWM_PRESCAL_MASK;
+> > > > @@ -206,6 +236,7 @@ static int sun4i_pwm_apply(struct pwm_chip *chi=
+p, struct pwm_device *pwm,
+> > > >       int ret;
+> > > >       unsigned int delay_us, prescaler;
+> > > >       unsigned long now;
+> > > > +     bool bypass;
+> > > >
+> > > >       pwm_get_state(pwm, &cstate);
+> > > >
+> > > > @@ -220,7 +251,8 @@ static int sun4i_pwm_apply(struct pwm_chip *chi=
+p, struct pwm_device *pwm,
+> > > >       spin_lock(&sun4i_pwm->ctrl_lock);
+> > > >       ctrl =3D sun4i_pwm_readl(sun4i_pwm, PWM_CTRL_REG);
+> > > >
+> > > > -     ret =3D sun4i_pwm_calculate(sun4i_pwm, state, &duty, &period,=
+ &prescaler);
+> > > > +     ret =3D sun4i_pwm_calculate(sun4i_pwm, state, &duty, &period,=
+ &prescaler,
+> > > > +                               &bypass);
+> > > >       if (ret) {
+> > > >               dev_err(chip->dev, "period exceeds the maximum value\=
+n");
+> > > >               spin_unlock(&sun4i_pwm->ctrl_lock);
+> > > > @@ -229,6 +261,18 @@ static int sun4i_pwm_apply(struct pwm_chip *ch=
+ip, struct pwm_device *pwm,
+> > > >               return ret;
+> > > >       }
+> > > >
+> > > > +     if (sun4i_pwm->data->has_direct_mod_clk_output) {
+> > > > +             if (bypass) {
+> > > > +                     ctrl |=3D BIT_CH(PWM_BYPASS, pwm->hwpwm);
+> > > > +                     /* We can skip other parameter */
+> > > > +                     sun4i_pwm_writel(sun4i_pwm, ctrl, PWM_CTRL_RE=
+G);
+> > > > +                     spin_unlock(&sun4i_pwm->ctrl_lock);
+> > > > +                     return 0;
+> > > > +             } else {
+> > > > +                     ctrl &=3D ~BIT_CH(PWM_BYPASS, pwm->hwpwm);
+> > > > +             }
+> > > > +     }
+> > >
+> > > This could be simplified to:
+> > >
+> > >         if (bypass) {
+> > >                 ctrl |=3D BIT_CH(PWM_BYPASS, pwm->hwpwm);
+> > >                 /*
+> > >                  * Other parameters are not relevant in this mode and=
+ so
+> > >                  * writing them can be skipped
+> > >                  */
+> > >                 sun4i_pwm_writel(sun4i_pwm, ctrl, PWM_CTRL_REG);
+> > >                 spin_unlock(&sun4i_pwm->ctrl_lock);
+> > >                 return 0;
+> > >         } else {
+> > >                 ctrl &=3D ~BIT_CH(PWM_BYPASS, pwm->hwpwm);
+> > >         }
+> > >
+> > > which has the advantage(?) that the bypass bit is also (more obviousl=
+y)
+> > > cleared for SoCs that don't support it and it reduces the indention
+> > > level.
+> >
+> > This bit is not guaranteed to be reserved for all the SoC variants.
+> >
+> > I don't think it's a good idea to set to 0 a bit which is undefined.
+> =
+
+> Let me know if you agree or not with this and I send the v9 according
+> to your answer.
+
+If my suggestion is not safe according to the documentation, it is
+obviously wrong. So only take it into account if a zero can be safely
+written.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
