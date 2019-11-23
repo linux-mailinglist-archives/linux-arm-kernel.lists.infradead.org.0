@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87A24107C0E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 Nov 2019 01:34:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9EBB107C13
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 Nov 2019 01:40:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i9aXmfpxdyFUu1p1LwEK0JZGKTMjsK555Kyw3AemDNo=; b=DIJZY5TJWza9Ad
-	tL4bCugmy+8u2nfZeQqdKH4+QPbO//CtB9p2JuyE5+HkJimeQkmzOlr1tBsVaB3Quy/xxP8mw9dPl
-	gpZnuRKKKofBY/cps9CgXUKf6s/cgPT0nog0/7wYGmStXoyODSIYx/VbZK6uC6zMBZlYo0fVhdJC/
-	x6ZGBpKxE5lNiv4lwpIOycW43+Nk9Vm0m9RAvyOWeGW/JO4xgiD2ekUiMTvKJoz4u6KIfpK7x7xFB
-	5qLpAEdxD2EqdK1nIjl1nR0eOKRcIsONd1TpHYZhdB21Z60KbBTAAAlyZwJG0YnnGYLN5ErHILF4y
-	2TxaHYBjvLb+EpiQWeZg==;
+	List-Owner; bh=fbNVySat17mr8qCkE/CtUy7jW5SmrQceP8frOSWHRHk=; b=jF5wKP/HT+TTjy
+	XQrdqubwQwi0InbUYn+HtpVDqSMFqSNRhFnpjWD6a3xuHiAVGEA04wUKQckmHY+dCAl7s3+rGyZS7
+	Xx462URPsGMdKoV7KR647lDCQLtwjKnDIG5DX/OhZKmEBL+mN+FIp9Jvim50/NiGUr67vF28+iWOD
+	8137vCcivvccnTUV+LqvGrjhl6o/8Kl9DxcSCDDkdBU7qQI2a4qpxQt56phaQBgoaxchy73/lVBnM
+	IALcKaW6yJ7qghQ5qeN3lD1CQUIf85wbcyac+XGoHZlDPhIepvAZ3rG8W9ThkCeUeZZaE9BZ6iLts
+	sqLUBBsotDcl6eQ/xy9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYJNz-0001Vo-Ga; Sat, 23 Nov 2019 00:34:51 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1iYJT7-0003G9-Qe; Sat, 23 Nov 2019 00:40:09 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYJNk-0001Tk-9G; Sat, 23 Nov 2019 00:34:37 +0000
-Received: by mail-ot1-f68.google.com with SMTP id c19so7747451otr.11;
- Fri, 22 Nov 2019 16:34:35 -0800 (PST)
+ id 1iYJSp-0003Fd-Gl; Sat, 23 Nov 2019 00:39:52 +0000
+Received: by mail-ot1-f67.google.com with SMTP id m15so7776908otq.7;
+ Fri, 22 Nov 2019 16:39:50 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=phRtDY+6nhN89i9bxspsg5KDJ+w/2SxWdZGysdx9BMs=;
- b=aENNvZtXRrm8LETzg6IBvAUUYrOKR9FeShkYduna2To6Ly9sNUjRwfCbpHyNvmPi26
- qfPPGWWpPn1NxzWlO3chGWu7/DIf6IV7Wi7ZddoYkLYn2jkFO7vtaHlTlhsEy7TJBXiK
- bttRUbM4vWABm3K7MevVYvAB5rx2bRuEA5lhGJvk7SF/QxIMLMkjdbO3WhZOsEGGOqgZ
- Hrt8T6gOWp9vqCcYD7fPBVm79ZVbuwQadyoxBX7v23746euZGtnML21QCivB5qKP+Bc8
- mWP7VfMR7raFQ8J4Sl2YkIGXb9TUKk31Q1EQPw0+1JNdSbINZGWXbbIkyhku8leN8Ek1
- /SrQ==
-X-Gm-Message-State: APjAAAWcuwdteUfzymL3DF7avACi/vQmQrW1fnTD+dctKBU8HTjz2IEX
- nSPGIbgqX8pc07u3xheDAbFC850=
-X-Google-Smtp-Source: APXvYqwxsOHf0eCMmkU5FDfUzE8g5eAjnd7zYHNf1mNs7HEBS8YeT4sL4wp4ZPy2y5mZa+0w7UHfDA==
-X-Received: by 2002:a9d:6e12:: with SMTP id e18mr12968418otr.63.1574469274945; 
- Fri, 22 Nov 2019 16:34:34 -0800 (PST)
+ bh=tEgHxCiyiX1vvVmymHFYVTUbODIbpTwPwyJWeOdOzsw=;
+ b=IIaZN+iWKA8N2v1Zz6rPgn/Uvyy2Hp2gQLXbLLRHlwn1o+olcMAa2M7Np1D6aiDCrX
+ vjjBfSMIchSd3jI8L5fcdjCCStRpqnK6A36Y2SF6ppr2TXduWdrm9mhN0d4BRLpgsjPO
+ OYmDkPa3Iz6jOECshdjnu1IM/pQZYzm0sMdU1dFojWFYRpRZReA/GxZdgFlUvvghFADQ
+ byZigVc9WmTeHEkcyf9J6/rUqrJwSfMJnvDJwgAqOPiVPfFC0mLmokCQSe3CrE9Jfo94
+ BoGHUS83I5jbVxKqs7mKwGeP7sStu5h0zauK9QoMBqD4J69t/fLtCew2uhG2tcQxnN4G
+ pvTw==
+X-Gm-Message-State: APjAAAV8sKFPXe2/EZGeIGGl40rHz5JsLTYAGbr1PMp4c/KcORhQ1WTk
+ CDxOCIlbn7WnQvr3+mFa5w==
+X-Google-Smtp-Source: APXvYqxyABAixVX6UI5qvZ5b6JowXXc/TuRvG5WegziVxYCjLu6SH7n/ghlJ1SoD2w77Id8T2Mgupg==
+X-Received: by 2002:a05:6830:2006:: with SMTP id
+ e6mr13247748otp.260.1574469590171; 
+ Fri, 22 Nov 2019 16:39:50 -0800 (PST)
 Received: from localhost (ip-70-5-93-147.ftwttx.spcsdns.net. [70.5.93.147])
- by smtp.gmail.com with ESMTPSA id a23sm2575394oia.41.2019.11.22.16.34.33
+ by smtp.gmail.com with ESMTPSA id u143sm2632482oia.14.2019.11.22.16.39.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 22 Nov 2019 16:34:34 -0800 (PST)
-Date: Fri, 22 Nov 2019 18:34:32 -0600
+ Fri, 22 Nov 2019 16:39:49 -0800 (PST)
+Date: Fri, 22 Nov 2019 18:39:48 -0600
 From: Rob Herring <robh@kernel.org>
-To: Adrian Ratiu <adrian.ratiu@collabora.com>
-Subject: Re: [PATCH v3 4/4] dt-bindings: display: add IMX MIPI DSI host
- controller doc
-Message-ID: <20191123003432.GA334@bogus>
-References: <20191118152518.3374263-1-adrian.ratiu@collabora.com>
- <20191118152518.3374263-5-adrian.ratiu@collabora.com>
+To: Stephen Brennan <stephen@brennan.io>
+Subject: Re: [PATCH v3 1/4] dt-bindings: rng: add BCM2711 RNG compatible
+Message-ID: <20191123003948.GA13973@bogus>
+References: <20191120031622.88949-1-stephen@brennan.io>
+ <20191120031622.88949-2-stephen@brennan.io>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191118152518.3374263-5-adrian.ratiu@collabora.com>
+In-Reply-To: <20191120031622.88949-2-stephen@brennan.io>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_163436_321037_F5F5B5CC 
-X-CRM114-Status: GOOD (  15.41  )
+X-CRM114-CacheID: sfid-20191122_163951_556855_5EBBDDE4 
+X-CRM114-Status: GOOD (  10.74  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -75,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
+ [209.85.210.67 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -90,103 +90,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Martyn Welch <martyn.welch@collabora.com>,
- Sjoerd Simons <sjoerd.simons@collabora.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
- linux-imx@nxp.com, kernel@collabora.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Scott Branden <sbranden@broadcom.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matt Mackall <mpm@selenic.com>, Stefan Wahren <wahrenst@gmx.net>,
+ linux-kernel@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ linux-crypto@vger.kernel.org, Eric Anholt <eric@anholt.net>,
+ bcm-kernel-feedback-list@broadcom.com, stephen@brennan.io,
+ Ray Jui <rjui@broadcom.com>, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 18, 2019 at 05:25:18PM +0200, Adrian Ratiu wrote:
-> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.com>
-> Signed-off-by: Martyn Welch <martyn.welch@collabora.com>
-> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
+On Tue, 19 Nov 2019 19:16:19 -0800, Stephen Brennan wrote:
+> From: Stefan Wahren <wahrenst@gmx.net>
+> 
+> The BCM2711 has a RNG200 block, so document its compatible string.
+> 
+> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+> Signed-off-by: Stephen Brennan <stephen@brennan.io>
 > ---
->  .../bindings/display/imx/mipi-dsi.txt         | 56 +++++++++++++++++++
->  1 file changed, 56 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
+>  Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt b/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
-> new file mode 100644
-> index 000000000000..3f05c32ef963
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/imx/mipi-dsi.txt
-> @@ -0,0 +1,56 @@
-> +Freescale i.MX6 DW MIPI DSI Host Controller
-> +===========================================
-> +
-> +The DSI host controller is a Synopsys DesignWare MIPI DSI v1.01 IP
-> +with a companion PHY IP.
-> +
-> +These DT bindings follow the Synopsys DW MIPI DSI bindings defined in
-> +Documentation/devicetree/bindings/display/bridge/dw_mipi_dsi.txt with
-> +the following device-specific properties.
-> +
-> +Required properties:
-> +
-> +- #address-cells: Should be <1>.
-> +- #size-cells: Should be <0>.
-> +- compatible: "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi".
-> +- reg: See dw_mipi_dsi.txt.
-> +- interrupts: The controller's CPU interrupt.
-> +- clocks, clock-names: Phandles to the controller's pll reference
-> +  clock(ref) and APB clock(pclk), as described in [1].
-> +- ports: a port node with endpoint definitions as defined in [2].
-> +- gpr: Should be <&gpr>.
 
-fsl,gpr
-
-> +       Phandle to the iomuxc-gpr region containing the multiplexer
-> +       control register.
-> +
-> +[1] Documentation/devicetree/bindings/clock/clock-bindings.txt
-> +[2] Documentation/devicetree/bindings/media/video-interfaces.txt
-> +
-> +Example:
-> +
-> +	mipi_dsi: mipi@21e0000 {
-
-dsi@...
-
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +		compatible = "fsl,imx6q-mipi-dsi", "snps,dw-mipi-dsi";
-> +		reg = <0x021e0000 0x4000>;
-> +		interrupts = <0 102 IRQ_TYPE_LEVEL_HIGH>;
-> +		gpr = <&gpr>;
-> +		clocks = <&clks IMX6QDL_CLK_MIPI_CORE_CFG>,
-> +			 <&clks IMX6QDL_CLK_MIPI_IPG>;
-> +		clock-names = "ref", "pclk";
-> +		status = "okay";
-
-Don't show status in examples.
-
-> +
-> +		ports {
-> +			port@0 {
-> +				reg = <0>;
-> +				mipi_mux_0: endpoint {
-> +					remote-endpoint = <&ipu1_di0_mipi>;
-> +				};
-> +			};
-> +			port@1 {
-> +				reg = <1>;
-> +				mipi_mux_1: endpoint {
-> +					remote-endpoint = <&ipu1_di1_mipi>;
-> +				};
-> +			};
-> +		};
-> +        };
-> -- 
-> 2.24.0
-> 
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
