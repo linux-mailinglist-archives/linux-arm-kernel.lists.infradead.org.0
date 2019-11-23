@@ -2,57 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 973D1107C74
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 Nov 2019 03:31:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F81E107DC7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 Nov 2019 09:40:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dvq7++jKmL4oXDX2pIHyw8cuphHvtTYKE+987gFf/SA=; b=Bg4yLqP6BcEmjJ
-	tKl91syiEMOriYizSsMyFIyBW4mnZIjMpJ4qzM2jZMLk9mRsU88XfnZM9L+ykwCXFPLXsclGD5vW8
-	m2bxawSrAje9Jodq9zFZg2/YzvrTkackZG6184bO8hoUcTMnSgcHRa3ptkvOxkrL7rUh+WHLzHwxX
-	d9lIsFiGOuHFdZU04mpuJknzTWPnZS5+BcNbxMaG1Y7QcnpRSyfYLbSuf8dkvDtY/nULMcJp1Yosu
-	++B9dX+uyccXDDA99vxsV93HbLT77qCHyfAm2IJ5KveQZowYGZc3ZwHCN6vVeVY0FcBPLrPWiK2kc
-	T+iAYe/PiUCEdc2WMRmQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X3L4z7wKgBeVNMAMMC740D1vpRjRDGgy8WWAJHwGSvQ=; b=ZfZfRhwKKTSrgX
+	DY/siW/6sb2ComRW3KcNnZL4U0cLlkU5h1bptP9141HIOLe8mQ19ywu8s2cxt9iCkuT6F/JmLQzeB
+	/tb3CswHxnrMdDqy9CuujXkKjegKiA3c41KfcU3QLnETn68dBgrqtahVqa5sKaHyvoVJzOk7IelEW
+	vyHu6wqQRJ1QKhFYaaIjFB9wJNzMWn9nYoyh3PZMFmmaoD8gK5j9YTSTEY0HXf33OiZ9KEFdZNf3P
+	k87162d9PjbyenjNjU7Ru9SUfwwMGXfA2OOT5ZC0aeto4PwVQxBO570UykvS3PTzTcffaEuUqQnTo
+	Xx4kAxG80QOWgT/rpukQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYLCp-00047g-Rr; Sat, 23 Nov 2019 02:31:27 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYLCh-00046G-9A
- for linux-arm-kernel@lists.infradead.org; Sat, 23 Nov 2019 02:31:20 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 4BE8A966CB0AAB32D4C5;
- Sat, 23 Nov 2019 10:31:09 +0800 (CST)
-Received: from huawei.com (10.175.105.18) by DGGEMS411-HUB.china.huawei.com
- (10.3.19.211) with Microsoft SMTP Server id 14.3.439.0; Sat, 23 Nov 2019
- 10:31:03 +0800
-From: linmiaohe <linmiaohe@huawei.com>
-To: <maz@kernel.org>, <pbonzini@redhat.com>, <rkrcmar@redhat.com>,
- <james.morse@arm.com>, <julien.thierry.kdev@gmail.com>,
- <suzuki.poulose@arm.com>
-Subject: [PATCH] KVM: arm: fix missing free_percpu_irq in kvm_timer_hyp_init()
-Date: Sat, 23 Nov 2019 10:30:29 +0800
-Message-ID: <1574476229-15448-1-git-send-email-linmiaohe@huawei.com>
-X-Mailer: git-send-email 1.8.3.1
+	id 1iYQy5-0004Ot-JU; Sat, 23 Nov 2019 08:40:37 +0000
+Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1iYQxw-0004NM-V0; Sat, 23 Nov 2019 08:40:31 +0000
+Authenticated-By: 
+X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID xAN8e5Jq003004,
+ This message is accepted by code: ctloc85258
+Received: from mail.realtek.com (RTITCAS12.realtek.com.tw[172.21.6.16])
+ by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id xAN8e5Jq003004
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sat, 23 Nov 2019 16:40:05 +0800
+Received: from RTEXMB02.realtek.com.tw (172.21.6.95) by
+ RTITCAS12.realtek.com.tw (172.21.6.16) with Microsoft SMTP Server (TLS) id
+ 14.3.468.0; Sat, 23 Nov 2019 16:40:05 +0800
+Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
+ RTEXMB02.realtek.com.tw (172.21.6.95) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1779.2; Sat, 23 Nov 2019 16:40:05 +0800
+Received: from RTEXMB03.realtek.com.tw ([fe80::54f9:1e1e:4618:f740]) by
+ RTEXMB03.realtek.com.tw ([fe80::54f9:1e1e:4618:f740%8]) with mapi id
+ 15.01.1779.005; Sat, 23 Nov 2019 16:40:05 +0800
+From: James Tai <james.tai@realtek.com>
+To: =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>, Marc Zyngier
+ <maz@misterjones.org>
+Subject: RE: [PATCH] arm64: dts: realtek: Add Realtek rtd1619 and mjolnir
+Thread-Topic: [PATCH] arm64: dts: realtek: Add Realtek rtd1619 and mjolnir
+Thread-Index: AdWTrwRiu8TDC5guRneVMItRk6mPLwAihi8AAIJriSD//6UUgP/7v8ZQgA4x2AD//PfkIIAOmDuAgAAzz4D//i+x8A==
+Date: Sat, 23 Nov 2019 08:40:04 +0000
+Message-ID: <4235c5641f0f4946beeeea8adfd74970@realtek.com>
+References: <43B123F21A8CFE44A9641C099E4196FFCF91BEFA@RTITMBSVM04.realtek.com.tw>
+ <25fdd8eb-f1a0-82ae-9c4b-22325b163b0e@suse.de>
+ <43B123F21A8CFE44A9641C099E4196FFCF920024@RTITMBSVM04.realtek.com.tw>
+ <7a05ac2c-00bc-b2ac-0a33-be0242d33188@suse.de>
+ <309cd67da48e4702ae3dcc4ca8ab4309@realtek.com>
+ <279fd3a3-17dc-5796-f0b0-e39eb919081f@suse.de>
+ <7c94c59649c04442886a98c057c07654@realtek.com>
+ <23f44f6f4aec90b412d5d7ff6f4d95f1@www.loen.fr>
+ <80d0aed8-3b85-1312-1091-0ced3ab1f5d2@suse.de>
+In-Reply-To: <80d0aed8-3b85-1312-1091-0ced3ab1f5d2@suse.de>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [114.37.143.78]
 MIME-Version: 1.0
-X-Originating-IP: [10.175.105.18]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_183119_494605_B18614C9 
-X-CRM114-Status: UNSURE (   9.01  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191123_004029_160403_A47D1A0D 
+X-CRM114-Status: GOOD (  10.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,83 +84,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linmiaohe@huawei.com, kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ "'linux-kernel@vger.kernel.org'" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-realtek-soc@lists.infradead.org"
+ <linux-realtek-soc@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Miaohe Lin <linmiaohe@huawei.com>
+Hi Andreas,
 
-When host_ptimer_irq request irq resource failed, we forget
-to release the host_vtimer_irq resource already requested.
-Fix this missing irq release and other similar scenario.
+> 
+> MMIO, for GICD and GICR. It's about fixing the ranges of the /soc node:
+> 
+> My proposed
+> ranges = <0x98000000 0x98000000 0x68000000>; needs to be split, with a gap
+> between r-bus and GIC for continued RAM.
+> 
+> https://github.com/afaerber/linux/commit/1884ec6a533c9d5c2b6ca40ee138ff
+> 7e8312b6c8
+> 
+> This goes back to Rob's review of RTD1295 [1], where we then for lack of
+> memory space documentation assumed that everything beyond 2 GiB would
+> be potential register space. Here we're dealing with up to 4 GiB though.
+> 
+> 
+> James, are you planning to send a fix-up patch here? If not, you'll need to tell
+> me what values to use, e.g., is there a NOR flash region on RTD1619, and does
+> RAM continue also in between and after GIC, or is there some timer register
+> behind it, like on RTD1195?
+> 
+> ranges = <0x00000000 0x00000000 0x00030000>, // ??? boot ROM size
+>          <0x98000000 0x98000000 0x00200000>, // r-bus
+>          // anything here? e.g., NOR flash?
+>          <0xff100000 0xff100000 0x00010000>, // GICD
+>          <0xff140000 0xff140000 0x000c0000>; // GICR
+>          // anything here? e.g., timer enable?
+> 
+> ranges = <0x00000000 0x00000000 0x00030000>,
+>          <0x98000000 0x98000000 0x00200000>,
+>          <0xff100000 0xff100000 0x00100000>; // whole GIC?
+> 
 
-Fixes: 9e01dc76be6a ("KVM: arm/arm64: arch_timer: Assign the phys timer on VHE systems")
-Signed-off-by: Miaohe Lin <linmiaohe@huawei.com>
----
- virt/kvm/arm/arch_timer.c | 17 ++++++++++++-----
- 1 file changed, 12 insertions(+), 5 deletions(-)
+Yes, I'll send a fix-up patch.
 
-diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
-index f182b2380345..73867f97040c 100644
---- a/virt/kvm/arm/arch_timer.c
-+++ b/virt/kvm/arm/arch_timer.c
-@@ -935,7 +935,7 @@ int kvm_timer_hyp_init(bool has_gic)
- 					    kvm_get_running_vcpus());
- 		if (err) {
- 			kvm_err("kvm_arch_timer: error setting vcpu affinity\n");
--			goto out_free_irq;
-+			goto out_free_vtimer_irq;
- 		}
- 
- 		static_branch_enable(&has_gic_active_state);
-@@ -960,7 +960,7 @@ int kvm_timer_hyp_init(bool has_gic)
- 		if (err) {
- 			kvm_err("kvm_arch_timer: can't request ptimer interrupt %d (%d)\n",
- 				host_ptimer_irq, err);
--			return err;
-+			goto out_disable_gic_state;
- 		}
- 
- 		if (has_gic) {
-@@ -968,7 +968,7 @@ int kvm_timer_hyp_init(bool has_gic)
- 						    kvm_get_running_vcpus());
- 			if (err) {
- 				kvm_err("kvm_arch_timer: error setting vcpu affinity\n");
--				goto out_free_irq;
-+				goto out_free_ptimer_irq;
- 			}
- 		}
- 
-@@ -977,15 +977,22 @@ int kvm_timer_hyp_init(bool has_gic)
- 		kvm_err("kvm_arch_timer: invalid physical timer IRQ: %d\n",
- 			info->physical_irq);
- 		err = -ENODEV;
--		goto out_free_irq;
-+		goto out_disable_gic_state;
- 	}
- 
- 	cpuhp_setup_state(CPUHP_AP_KVM_ARM_TIMER_STARTING,
- 			  "kvm/arm/timer:starting", kvm_timer_starting_cpu,
- 			  kvm_timer_dying_cpu);
- 	return 0;
--out_free_irq:
-+
-+out_free_ptimer_irq:
-+	free_percpu_irq(host_ptimer_irq, kvm_get_running_vcpus());
-+out_disable_gic_state:
-+	if (has_gic)
-+		static_branch_disable(&has_gic_active_state);
-+out_free_vtimer_irq:
- 	free_percpu_irq(host_vtimer_irq, kvm_get_running_vcpus());
-+
- 	return err;
- }
- 
--- 
-2.19.1
+
+Regards,
+James
 
 
 _______________________________________________
