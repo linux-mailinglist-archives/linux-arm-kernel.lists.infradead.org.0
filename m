@@ -2,86 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E4C4107F95
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 Nov 2019 18:09:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DECEE10800B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 Nov 2019 19:39:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cRxYiw3xzT5KeL+VqRuUHT8ExnpL3zXkahldpRZOsn8=; b=bnpa4bNcPZmJpi
-	1Bx2yiw6j83KTsgHcEQcd7MzQo8q1b6X3sCEtd/rQ7JuacVSc+jk3YY/hEcDJR4Nf14HiTIQKnrqD
-	0fhhFZJRqTVtSqperbCym8e0kJIpf70nbtc/r+iLBYmo8NvjHyEZLo1mWeMOwBYnr76eD8gcXyvqp
-	COFF0Cago5ruvK0o2c7iU5mGhz7jlEbFmuIL1rykK2tfhpbZwpovx3wkbG5WsoLtqz12pQVtMekZu
-	zlgDyWfTs9ypFph5R8wWEAUW1MjIBEZbNKrWaXvHrx3Kkan27LuVkZES2ASWWKDgLVtC2qD75ZpMB
-	y/QF5vBDnzaOqCnC9lCw==;
+	List-Owner; bh=f9uRdxGF64Sy4hbwpnqXxQSsAEajouN/Uh3BOeHjuVM=; b=X/UC4q/8Deucyz
+	QAHlCR1utMk9aK/kJbN0C9DVYHnLlsqvzaeoI0vHVdG5kJy/c3FKaxiAM3viBkFX1mOA0ZsFyz9u8
+	rZ2tOHec4z56ZqK1xqR2NVkjHXECnQKpTrPado2cc1L4l5elfiBOJHvDNBl3cX6j3FErMXu+4BxEz
+	RIfxWBkcq8jU/3eP5d0raOtUqZZtrpOfzDVh9a27811uG04Yah/DT68t0Ni8BAr9RjbWmRPdgyVk3
+	urbnmu58MkbemZud9sqZRemuyOZJ9FMJQzrH8Eix72vjQwwDL8nZU/7xEUFASQh+MDDgAnDYtktBG
+	vYC5eQHmxGYDE+dwc11A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYYuh-0005u3-4U; Sat, 23 Nov 2019 17:09:39 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1iYaJ8-0000sO-Ty; Sat, 23 Nov 2019 18:38:58 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYYuX-0005tc-C0
- for linux-arm-kernel@lists.infradead.org; Sat, 23 Nov 2019 17:09:30 +0000
-Received: by mail-lj1-x241.google.com with SMTP id e10so1796580ljj.6
+ id 1iYaIx-0000r6-IN
+ for linux-arm-kernel@lists.infradead.org; Sat, 23 Nov 2019 18:38:49 +0000
+Received: by mail-pg1-x543.google.com with SMTP id e17so5045200pgd.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 23 Nov 2019 09:09:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=j83nFTVfMtqNZdG7bDqp5KO3Sy0JHsgiNUcUKGNznRw=;
- b=QD9WVRWY3GaW82EE2neF3DzIT1RKW2ZHKO+Ruxgkcm81kVJ5vP93G8wMwXnoWYto2l
- 1765iU4Fe0Iqqo7yi5IrZemz9T/7ur7sFPk83r31GxXBwpmxt0lkKKWsBP9IM6UB9sRE
- ZDCv+/k/PSg7i+XKEpJtjpBwyrrzpPn1uw3a4nY8wawKwN8Mss0m3y1moxz5dt/VaEby
- fr3RxjePoV8r/cu9nIAJ/nx9f65uHEBpilkLJV79/AvMvGTzyIQdDATsXpaj/R293ews
- 1H1tVCWn1hXo1DfZEfC32POgm0txPTRb4b+wLdLszIhRPHpL/tvv+8uwLVaAyfmMGDlg
- SgGA==
+ Sat, 23 Nov 2019 10:38:46 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=netronome-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:in-reply-to:references
+ :organization:mime-version:content-transfer-encoding;
+ bh=nDRorgsBSVXUioZFMrZk0EkNmQVKU+AZrP50cmXnyC4=;
+ b=uEsVTv/IY5hG62Wu9vwmfYFRVZtJMQEmvbpSxd8EASyANasSlZHDLbnv19sgBybHPZ
+ sLaFJZ4ptRzpx2pp8bzaDde5oUsHabEPhJbnYrt8i/cBsmVfH40RjfsGk4MNOWiUF9e0
+ p8b0FNKNG2LJhSAXzZGlcy2QGKRkFwep6PbcXeYJxDW2ICh5V5aFtBne8QHoXwSBmeTb
+ VOWx7vsReEMXwyuVr4A7IBBksaZ2w0+u512zQ3uiZgWpiuk+uwyT4RU+vS1D9XA58mGM
+ j527Jxpoegjg53FzKsvTEvOfUlUWr1ykfKHB1GNaYEGCPObTDePqloRawIEjCkgB6ibX
+ NWcg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=j83nFTVfMtqNZdG7bDqp5KO3Sy0JHsgiNUcUKGNznRw=;
- b=Hj5EFX2b7Kfk35npkNZdvAkv3ayNDfxi9FRPUEDaMiX1mKpmq+QY3NEYoTrrhTFqV2
- icd16CQhul2N2TjKlds2e0VoXy709CCsRq1yTOlFgSL2UHNhCLBEXR9oj4DXs3DlkJD/
- 9IjHCAP0DKQr7lMqcJwUQTOtANA5v8Wjg3u4EoFMnv1rTtDPLWkE+fkNb2qws+aFsjfq
- i1vYIoVWhQqEJAc6WrkgbgxH/bm+mIrIvxjKkkpN6UyeQEV3mkhR6cyK+fBc2RCmB/7k
- BCczVsNRZLRQmYEKTZRWK6w2rTp158htFfAfzRCsjS0IB/1HNnXuTFyYUMnFKau+Zq7l
- 9/eA==
-X-Gm-Message-State: APjAAAXbbKOMeF/MZ8p+ONGV1EtLegDBvQZ4aTAjbyrgh7RRs/IVo6Hy
- xmxuMZBATd+qCTH9FajQJuVs3DRhzfoIg35pbQw=
-X-Google-Smtp-Source: APXvYqxQ019+TumcDMsHiVKMajnZaruf8NAyKLasRWn/pDaLWWYVx54vzDNZbe0VjeeZE8NSjNIYrlBnFYrI4ts/7UU=
-X-Received: by 2002:a2e:2c1a:: with SMTP id s26mr16591026ljs.239.1574528965875; 
- Sat, 23 Nov 2019 09:09:25 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
+ :references:organization:mime-version:content-transfer-encoding;
+ bh=nDRorgsBSVXUioZFMrZk0EkNmQVKU+AZrP50cmXnyC4=;
+ b=tnxDGpQwibgXmyp57ef8iOi4fTE9IiiLRfzKjuMjnKVIQXJxAZ9rDI8l7QLTvU1i5d
+ 0sqJV63Uh+9MrIefXKsNMfl8nbyCjL6m3vu8F1i/ahw3HLLsVtHn55/rWRRNuVpQfixT
+ pkqrznJFKiuq+bpcpLGEjHN2HyvHBmLm4lnIg1udQwfljPU/n5KfLmXwGGYvos8sg1Z0
+ EUYsm1piRIelBDc6v8mEQ7GckJafnY2Z3yYcc/WAGAGrPmw5PabsOUGfXh+3EwK52Wln
+ 65ehCdvCnqdNQhjFIXHvEVfVRPfE8jz/j0Q7faVHEE+HmZVqIUr8HctOaah6p4A9f0dJ
+ aMXw==
+X-Gm-Message-State: APjAAAUhc2FwkVtB0RZUG0FHgCZpfy01f9J8HbDUhKv+5N1V0o5a/Ri3
+ /h6qX+hp/eEIlSo44xr+QFMj2w==
+X-Google-Smtp-Source: APXvYqz1czMH9OjFLmttmObRqksQ19SQZuwNAxgR+QJ3jRnmZqw4PC8qOzxHsQAhx9c2AwtLrQZJyw==
+X-Received: by 2002:a62:6404:: with SMTP id y4mr24169935pfb.170.1574534326304; 
+ Sat, 23 Nov 2019 10:38:46 -0800 (PST)
+Received: from cakuba.netronome.com (c-73-202-202-92.hsd1.ca.comcast.net.
+ [73.202.202.92])
+ by smtp.gmail.com with ESMTPSA id v3sm2350025pfn.129.2019.11.23.10.38.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 23 Nov 2019 10:38:45 -0800 (PST)
+Date: Sat, 23 Nov 2019 10:38:40 -0800
+From: Jakub Kicinski <jakub.kicinski@netronome.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>, Florian Fainelli
+ <f.fainelli@gmail.com>
+Subject: Re: [CFT PATCH net-next v2] net: phylink: rename mac_link_state()
+ op to mac_pcs_get_state()
+Message-ID: <20191123103840.76c5d63f@cakuba.netronome.com>
+In-Reply-To: <20191122092136.GJ25745@shell.armlinux.org.uk>
+References: <E1iXaSM-0004t1-9L@rmk-PC.armlinux.org.uk>
+ <20191121.191417.1339124115325210078.davem@davemloft.net>
+ <0a9e016b-4ee3-1f1c-0222-74180f130e6c@gmail.com>
+ <20191122092136.GJ25745@shell.armlinux.org.uk>
+Organization: Netronome Systems, Ltd.
 MIME-Version: 1.0
-References: <59793b1ae533636528942b2cec14ec68b9830fcf.1574510649.git.agx@sigxcpu.org>
-In-Reply-To: <59793b1ae533636528942b2cec14ec68b9830fcf.1574510649.git.agx@sigxcpu.org>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Sat, 23 Nov 2019 14:09:28 -0300
-Message-ID: <CAOMZO5DjXfSoWRV-6pvAD+nwXLRAxRASZOsOwLFbsxkNwTUxaw@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: imx8mq: Add eLCDIF controller
-To: =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191123_090929_434760_1CB1DF98 
-X-CRM114-Status: GOOD (  13.97  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191123_103847_610718_D4EC2D1F 
+X-CRM114-Status: GOOD (  10.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,41 +99,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Carlo Caione <ccaione@baylibre.com>,
- Andrey Smirnov <andrew.smirnov@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "Angus Ainslie \(Purism\)" <angus@akkea.ca>,
- linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: andrew@lunn.ch, nbd@openwrt.org, sean.wang@mediatek.com,
+ alexandre.torgue@st.com, netdev@vger.kernel.org, peppe.cavallaro@st.com,
+ radhey.shyam.pandey@xilinx.com, michal.simek@xilinx.com,
+ mcoquelin.stm32@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
+ joabreu@synopsys.com, linux-mediatek@lists.infradead.org,
+ thomas.petazzoni@bootlin.com, john@phrozen.org, matthias.bgg@gmail.com,
+ vivien.didelot@gmail.com, hkallweit1@gmail.com,
+ David Miller <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Mark-MC.Lee@mediatek.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU2F0LCBOb3YgMjMsIDIwMTkgYXQgOTowOSBBTSBHdWlkbyBHw7xudGhlciA8YWd4QHNpZ3hj
-cHUub3JnPiB3cm90ZToKPgo+IEFkZCBhIG5vZGUgZm9yIHRoZSBlTENESUYgY29udHJvbGxlciwg
-ImRpc2FibGVkIiBieSBkZWZhdWx0Lgo+Cj4gU2lnbmVkLW9mZi1ieTogR3VpZG8gR8O8bnRoZXIg
-PGFneEBzaWd4Y3B1Lm9yZz4KPiAtLS0KPiBXaXRoIHNvbWUgbWluaW1hbCBzdXBwb3J0IG9uIGlt
-eDhtcSB3ZSBtaWdodCBhcyB3ZWxsIGFkZCBpdCB0byB0aGUgRFQKPgo+ICBhcmNoL2FybTY0L2Jv
-b3QvZHRzL2ZyZWVzY2FsZS9pbXg4bXEuZHRzaSB8IDE3ICsrKysrKysrKysrKysrKysrCj4gIDEg
-ZmlsZSBjaGFuZ2VkLCAxNyBpbnNlcnRpb25zKCspCj4KPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02
-NC9ib290L2R0cy9mcmVlc2NhbGUvaW14OG1xLmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2Zy
-ZWVzY2FsZS9pbXg4bXEuZHRzaQo+IGluZGV4IDdmOTMxOTQ1MmI1OC4uMDBhYTYzYmZkODE2IDEw
-MDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2lteDhtcS5kdHNpCj4g
-KysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9mcmVlc2NhbGUvaW14OG1xLmR0c2kKPiBAQCAtNDQ4
-LDYgKzQ0OCwyMyBAQAo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZnNsLHNkbWEt
-cmFtLXNjcmlwdC1uYW1lID0gImlteC9zZG1hL3NkbWEtaW14N2QuYmluIjsKPiAgICAgICAgICAg
-ICAgICAgICAgICAgICB9Owo+Cj4gKyAgICAgICAgICAgICAgICAgICAgICAgbGNkaWY6IGxjZGlm
-QDMwMzIwMDAwIHsKCkZvcmdvdCB0byBzYXkgdGhhdCBnZW5lcmljIG5vZGUgbmFtZXMgYXJlIHBy
-ZWZlcnJlZCwgc28gbWF5YmU6CgpsY2RpZjogbGNkLWNvbnRyb2xsZXJAMzAzMjAwMDAgewoKaW5z
-dGVhZD8KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LWFybS1rZXJuZWwK
+On Fri, 22 Nov 2019 09:21:37 +0000, Russell King - ARM Linux admin
+wrote:
+> On Thu, Nov 21, 2019 at 07:36:44PM -0800, Florian Fainelli wrote:
+> > Russell, which of this patch or: http://patchwork.ozlabs.org/patch/1197425/
+> > 
+> > would you consider worthy of merging?  
+> 
+> Let's go with v2 for now - it gets the rename done with less risk that
+> there'll be a problem.  I can always do the remainder in a separate
+> patch after the merge window as a separate patch.
+
+Florian, I assume you asked because you wanted to do some testing?
+Please let me know if you need more time, otherwise I'll apply this
+later today.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
