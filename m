@@ -2,83 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9EBB107C13
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 Nov 2019 01:40:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 973D1107C74
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 Nov 2019 03:31:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fbNVySat17mr8qCkE/CtUy7jW5SmrQceP8frOSWHRHk=; b=jF5wKP/HT+TTjy
-	XQrdqubwQwi0InbUYn+HtpVDqSMFqSNRhFnpjWD6a3xuHiAVGEA04wUKQckmHY+dCAl7s3+rGyZS7
-	Xx462URPsGMdKoV7KR647lDCQLtwjKnDIG5DX/OhZKmEBL+mN+FIp9Jvim50/NiGUr67vF28+iWOD
-	8137vCcivvccnTUV+LqvGrjhl6o/8Kl9DxcSCDDkdBU7qQI2a4qpxQt56phaQBgoaxchy73/lVBnM
-	IALcKaW6yJ7qghQ5qeN3lD1CQUIf85wbcyac+XGoHZlDPhIepvAZ3rG8W9ThkCeUeZZaE9BZ6iLts
-	sqLUBBsotDcl6eQ/xy9A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dvq7++jKmL4oXDX2pIHyw8cuphHvtTYKE+987gFf/SA=; b=Bg4yLqP6BcEmjJ
+	tKl91syiEMOriYizSsMyFIyBW4mnZIjMpJ4qzM2jZMLk9mRsU88XfnZM9L+ykwCXFPLXsclGD5vW8
+	m2bxawSrAje9Jodq9zFZg2/YzvrTkackZG6184bO8hoUcTMnSgcHRa3ptkvOxkrL7rUh+WHLzHwxX
+	d9lIsFiGOuHFdZU04mpuJknzTWPnZS5+BcNbxMaG1Y7QcnpRSyfYLbSuf8dkvDtY/nULMcJp1Yosu
+	++B9dX+uyccXDDA99vxsV93HbLT77qCHyfAm2IJ5KveQZowYGZc3ZwHCN6vVeVY0FcBPLrPWiK2kc
+	T+iAYe/PiUCEdc2WMRmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYJT7-0003G9-Qe; Sat, 23 Nov 2019 00:40:09 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1iYLCp-00047g-Rr; Sat, 23 Nov 2019 02:31:27 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYJSp-0003Fd-Gl; Sat, 23 Nov 2019 00:39:52 +0000
-Received: by mail-ot1-f67.google.com with SMTP id m15so7776908otq.7;
- Fri, 22 Nov 2019 16:39:50 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=tEgHxCiyiX1vvVmymHFYVTUbODIbpTwPwyJWeOdOzsw=;
- b=IIaZN+iWKA8N2v1Zz6rPgn/Uvyy2Hp2gQLXbLLRHlwn1o+olcMAa2M7Np1D6aiDCrX
- vjjBfSMIchSd3jI8L5fcdjCCStRpqnK6A36Y2SF6ppr2TXduWdrm9mhN0d4BRLpgsjPO
- OYmDkPa3Iz6jOECshdjnu1IM/pQZYzm0sMdU1dFojWFYRpRZReA/GxZdgFlUvvghFADQ
- byZigVc9WmTeHEkcyf9J6/rUqrJwSfMJnvDJwgAqOPiVPfFC0mLmokCQSe3CrE9Jfo94
- BoGHUS83I5jbVxKqs7mKwGeP7sStu5h0zauK9QoMBqD4J69t/fLtCew2uhG2tcQxnN4G
- pvTw==
-X-Gm-Message-State: APjAAAV8sKFPXe2/EZGeIGGl40rHz5JsLTYAGbr1PMp4c/KcORhQ1WTk
- CDxOCIlbn7WnQvr3+mFa5w==
-X-Google-Smtp-Source: APXvYqxyABAixVX6UI5qvZ5b6JowXXc/TuRvG5WegziVxYCjLu6SH7n/ghlJ1SoD2w77Id8T2Mgupg==
-X-Received: by 2002:a05:6830:2006:: with SMTP id
- e6mr13247748otp.260.1574469590171; 
- Fri, 22 Nov 2019 16:39:50 -0800 (PST)
-Received: from localhost (ip-70-5-93-147.ftwttx.spcsdns.net. [70.5.93.147])
- by smtp.gmail.com with ESMTPSA id u143sm2632482oia.14.2019.11.22.16.39.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 22 Nov 2019 16:39:49 -0800 (PST)
-Date: Fri, 22 Nov 2019 18:39:48 -0600
-From: Rob Herring <robh@kernel.org>
-To: Stephen Brennan <stephen@brennan.io>
-Subject: Re: [PATCH v3 1/4] dt-bindings: rng: add BCM2711 RNG compatible
-Message-ID: <20191123003948.GA13973@bogus>
-References: <20191120031622.88949-1-stephen@brennan.io>
- <20191120031622.88949-2-stephen@brennan.io>
+ id 1iYLCh-00046G-9A
+ for linux-arm-kernel@lists.infradead.org; Sat, 23 Nov 2019 02:31:20 +0000
+Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 4BE8A966CB0AAB32D4C5;
+ Sat, 23 Nov 2019 10:31:09 +0800 (CST)
+Received: from huawei.com (10.175.105.18) by DGGEMS411-HUB.china.huawei.com
+ (10.3.19.211) with Microsoft SMTP Server id 14.3.439.0; Sat, 23 Nov 2019
+ 10:31:03 +0800
+From: linmiaohe <linmiaohe@huawei.com>
+To: <maz@kernel.org>, <pbonzini@redhat.com>, <rkrcmar@redhat.com>,
+ <james.morse@arm.com>, <julien.thierry.kdev@gmail.com>,
+ <suzuki.poulose@arm.com>
+Subject: [PATCH] KVM: arm: fix missing free_percpu_irq in kvm_timer_hyp_init()
+Date: Sat, 23 Nov 2019 10:30:29 +0800
+Message-ID: <1574476229-15448-1-git-send-email-linmiaohe@huawei.com>
+X-Mailer: git-send-email 1.8.3.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191120031622.88949-2-stephen@brennan.io>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [10.175.105.18]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_163951_556855_5EBBDDE4 
-X-CRM114-Status: GOOD (  10.74  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191122_183119_494605_B18614C9 
+X-CRM114-Status: UNSURE (   9.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,35 +64,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- Scott Branden <sbranden@broadcom.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matt Mackall <mpm@selenic.com>, Stefan Wahren <wahrenst@gmx.net>,
- linux-kernel@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- linux-crypto@vger.kernel.org, Eric Anholt <eric@anholt.net>,
- bcm-kernel-feedback-list@broadcom.com, stephen@brennan.io,
- Ray Jui <rjui@broadcom.com>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
+Cc: linmiaohe@huawei.com, kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 19 Nov 2019 19:16:19 -0800, Stephen Brennan wrote:
-> From: Stefan Wahren <wahrenst@gmx.net>
-> 
-> The BCM2711 has a RNG200 block, so document its compatible string.
-> 
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-> Signed-off-by: Stephen Brennan <stephen@brennan.io>
-> ---
->  Documentation/devicetree/bindings/rng/brcm,iproc-rng200.txt | 1 +
->  1 file changed, 1 insertion(+)
-> 
+From: Miaohe Lin <linmiaohe@huawei.com>
 
-Acked-by: Rob Herring <robh@kernel.org>
+When host_ptimer_irq request irq resource failed, we forget
+to release the host_vtimer_irq resource already requested.
+Fix this missing irq release and other similar scenario.
+
+Fixes: 9e01dc76be6a ("KVM: arm/arm64: arch_timer: Assign the phys timer on VHE systems")
+Signed-off-by: Miaohe Lin <linmiaohe@huawei.com>
+---
+ virt/kvm/arm/arch_timer.c | 17 ++++++++++++-----
+ 1 file changed, 12 insertions(+), 5 deletions(-)
+
+diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
+index f182b2380345..73867f97040c 100644
+--- a/virt/kvm/arm/arch_timer.c
++++ b/virt/kvm/arm/arch_timer.c
+@@ -935,7 +935,7 @@ int kvm_timer_hyp_init(bool has_gic)
+ 					    kvm_get_running_vcpus());
+ 		if (err) {
+ 			kvm_err("kvm_arch_timer: error setting vcpu affinity\n");
+-			goto out_free_irq;
++			goto out_free_vtimer_irq;
+ 		}
+ 
+ 		static_branch_enable(&has_gic_active_state);
+@@ -960,7 +960,7 @@ int kvm_timer_hyp_init(bool has_gic)
+ 		if (err) {
+ 			kvm_err("kvm_arch_timer: can't request ptimer interrupt %d (%d)\n",
+ 				host_ptimer_irq, err);
+-			return err;
++			goto out_disable_gic_state;
+ 		}
+ 
+ 		if (has_gic) {
+@@ -968,7 +968,7 @@ int kvm_timer_hyp_init(bool has_gic)
+ 						    kvm_get_running_vcpus());
+ 			if (err) {
+ 				kvm_err("kvm_arch_timer: error setting vcpu affinity\n");
+-				goto out_free_irq;
++				goto out_free_ptimer_irq;
+ 			}
+ 		}
+ 
+@@ -977,15 +977,22 @@ int kvm_timer_hyp_init(bool has_gic)
+ 		kvm_err("kvm_arch_timer: invalid physical timer IRQ: %d\n",
+ 			info->physical_irq);
+ 		err = -ENODEV;
+-		goto out_free_irq;
++		goto out_disable_gic_state;
+ 	}
+ 
+ 	cpuhp_setup_state(CPUHP_AP_KVM_ARM_TIMER_STARTING,
+ 			  "kvm/arm/timer:starting", kvm_timer_starting_cpu,
+ 			  kvm_timer_dying_cpu);
+ 	return 0;
+-out_free_irq:
++
++out_free_ptimer_irq:
++	free_percpu_irq(host_ptimer_irq, kvm_get_running_vcpus());
++out_disable_gic_state:
++	if (has_gic)
++		static_branch_disable(&has_gic_active_state);
++out_free_vtimer_irq:
+ 	free_percpu_irq(host_vtimer_irq, kvm_get_running_vcpus());
++
+ 	return err;
+ }
+ 
+-- 
+2.19.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
