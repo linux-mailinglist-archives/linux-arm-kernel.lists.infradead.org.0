@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03D7D108E4B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 13:55:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EDF8108E52
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 13:55:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a+fIC5QwddgB/T3GUBTjH2L+RuM8eC6/TELE/u4+M4w=; b=Ncb9Na/D3dF2UZ
-	aRR9Dsv4d5eI6mg5y7ftvg6NS5mKWxn+jmn85ZTN1T9PKsPUFNs9qHPvC2JtNd1mcBoeiSp2cpS8i
-	1e2IQ+/kRnvtSVDKX14ugJRaxZx38W6dhp+Aq8Kcr94afKZkCySAWTlf8FLXzLrSi5wp91OoxJFS1
-	PlFWCeZ80gY3ADLHGpUVY89dUUz3vMSUoHEblcO/7o1ZaUXVd8i735723WOdAWq8z+QXL6lavozrR
-	8YZloLlJkdOHDe7Px4z+oIpx3FWiyfjL4yetY9coXVpkHbkeY9lPkHqGyIodnjUrfX7wC2EYmxFxE
-	6i3LsYBcrHo3pUJ3UQuw==;
+	List-Owner; bh=df9OU9gB7Nwo7rLZ2/wrUll5rkrrVfHS5VRn2TfoIg8=; b=XppF+Rd/pJ9VGv
+	brvGiaQbMeZkNyLGxp1fOvCAplo+c4EmBxPVjbQlUe+XgXPq47RPp6Ls/ox/8FsCz306ctH3DWR1k
+	sPLDyoJwZ2ZnTCiB7Bjyoi1Calub4T32bzBlonT3W4t9sjk4zSK/GWbKK2Pn0NFyhhkT9IPwXSRvF
+	rSr7OHQXDQgawUdv8Oes4q4rWGQn+IvHgL7D1oLlktoMbJENR6h9cJH8TIcqdqJ0jephi5n9pNGSY
+	OiOohflplFNG8Kz39ADCeZlLomX7DvH6+iruvjZkY/L5n1dTPTZPTMEPL2KqHTRQlOaY//FHgtA8+
+	BFBYNQ6l/yrC7czRisiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZDta-0003Cx-9s; Mon, 25 Nov 2019 12:55:14 +0000
+	id 1iZDu8-0004ez-Gf; Mon, 25 Nov 2019 12:55:48 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZDtD-0002jw-Fi
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 12:54:56 +0000
+ id 1iZDtx-0004e4-Sj
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 12:55:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=lGiS2h5LkAFhAPuwBNqfpb6MGmFChlVpjwcOwc0zxAU=; b=yWGq8b994ljO+OiBl8buR4HBn
- 2Kod0h4Rh7hjAFR44DOIK3EFprUO2pO6TuZZ5Att8Q9ueVnh+imfh2H2+tsaga3Z5LUd5P64h2NXd
- ceQd4w0+muTw6hA1kYnnCXUtOlYki1OL4B1nm/+5d+ney0EYZkfBw1HumqMGb91l1fGh1lwalmIie
- F8c6VnQA9wal8jrJe9RVVQVPUGAnjcTllUnFRQzk9H41ekrOcGONXiM4xYpbDwbku1GB18eKQqjCQ
- 7+sTpb2/Yv3n1Il3fT5unU7RuC3GrHUbdMztePhyTSUyB5eVEkI2up5/7L27XTEmyEQdP4pYGS12R
- 7rSLUHhVQ==;
+ bh=YNG9MHfU+4M/7tHZfAwuQAAIZ/jdAGHITsMC8SlHI3Y=; b=wBbIMGcQJbcYna2ZsphcX+i1S
+ PgCnDMaRIpct7x1uzMA0U8sMvKwsoIbuYIt0Vp6dMX7KLCyw70C3vXSxC/mFztoKbwXlonSd+ZU5Y
+ AM7eNSnl6+gKq2ovIdeMhOVlLuXIW6q7AaufEY+oSC/ebXLH76b3so6nxlA3uOs7lZGJShT1jUFkV
+ O4ghOdBi2HBbuPuLx/VFh1ULpLl9533bCkCF5HiSwUdqvIDnOuJtUkbPiKcfpwQ+HoAqD7XmD0MKP
+ AEXVPwjVPpr5Vca8TvJY5VW03rYW3NEBrAFbIbnpcQiWA819rPFM30c0kj3DUzdnP7mHL4BpwYPS4
+ hz9eUYArg==;
 Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:44420)
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:44422)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <linux@armlinux.org.uk>)
- id 1iZDr0-0007lR-03; Mon, 25 Nov 2019 12:52:34 +0000
+ id 1iZDtr-0007nO-Jj; Mon, 25 Nov 2019 12:55:31 +0000
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iZDqx-0006g2-VL; Mon, 25 Nov 2019 12:52:31 +0000
-Date: Mon, 25 Nov 2019 12:52:31 +0000
+ id 1iZDtq-0006gE-RQ; Mon, 25 Nov 2019 12:55:30 +0000
+Date: Mon, 25 Nov 2019 12:55:30 +0000
 From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 To: Marc Gonzalez <marc.w.gonzalez@free.fr>
 Subject: Re: [PATCH v1] clk: Add devm_clk_{prepare,enable,prepare_enable}
-Message-ID: <20191125125231.GO25745@shell.armlinux.org.uk>
+Message-ID: <20191125125530.GP25745@shell.armlinux.org.uk>
 References: <1d7a1b3b-e9bf-1d80-609d-a9c0c932b15a@free.fr>
  <34e32662-c909-9eb3-e561-3274ad0bf3cc@free.fr>
 MIME-Version: 1.0
@@ -57,8 +57,8 @@ Content-Disposition: inline
 In-Reply-To: <34e32662-c909-9eb3-e561-3274ad0bf3cc@free.fr>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_045452_109542_9C650601 
-X-CRM114-Status: GOOD (  15.29  )
+X-CRM114-CacheID: sfid-20191125_045538_006209_AF54DDBE 
+X-CRM114-Status: GOOD (  15.55  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -188,8 +188,10 @@ On Mon, Nov 25, 2019 at 01:46:51PM +0100, Marc Gonzalez wrote:
 > 
 > Thoughts? Comments?
 
-These are part of the clk API rather than the CCF API, and belong in
-drivers/clk/clk-devres.c.
+It's also worth reading https://lore.kernel.org/patchwork/patch/755667/
+and considering whether you really are using the clk_prepare() and
+clk_enable() APIs correctly.  Wanting these devm functions suggests
+you aren't...
 
 -- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
