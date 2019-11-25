@@ -2,46 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64EF2108C10
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 11:45:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57273108C1E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 11:46:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=s5x6tfzLaEzdEkUyN6lmkILI0lnHvnGOlBAqtbo4CxY=; b=UYf
-	7s4WlXi0RhDfCEHuETPIW5M31bvwuaG+X76482+YRZuHS5PWsuiwgAexwm/8u9AMnC5s4oe3eY8ar
-	nQsfoXoFfUb1t7MSNIUIjrzwmLDA3qT8pSIsriCg8c/lrewr5/c0YXpZkq1cBAhVd3CNTUJOtVACB
-	M5lSSQiOmA/gjXkD6+g+t0g+/6QUu8XIkNxnuDtzm97lR3gvb7OTGJyPH2jQ4jOfvFEkgPtjzY+qp
-	t+xfHs7ea2DGOPkx4X8yoTUHeX+FX7SFloUKkayKM9NrjUwYi/Femc83pRPdsGmQui2HTiTUFpsqW
-	RecSUtuuAR9+DjBPS1CRpj8tMkP5UDQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=WFtL1pNimmMj7AVW5uqTazmf4R9cFduNIyzbyf2iCRE=; b=c9GGIblfTS5ykTba9OhqDjz23x
+	T6YIy7gyAe/cpQus9dFIao9NhlavmzTbDx0OIok0pwrapXmtVwsP0NFPI3OrFXo5kGWPLwDgVd3ws
+	ZXtteO7KIpn9hCHGsy2e/G47i/MMpnpeRQzP2z6aF4qGrt+NPqvVf0pWX1fXR3/GLCODr89wSs1NS
+	C6FGWlCeyy907F1y9hwlGZhoZbetusEkBij8ny6KKxNr0wM5tgcTRjd40udtxQccTOVBKgteJq7LL
+	BOUVyLGQYLf+Pjguoh+5FPDuCw2hXyNQNVMPOeVurEmmcq2fNBbcoLZlX/Xz8dVn6gABYLPKAwBZC
+	TUFCQj8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZBsR-0005Zm-Jv; Mon, 25 Nov 2019 10:45:55 +0000
+	id 1iZBsh-0005og-Hq; Mon, 25 Nov 2019 10:46:11 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZBs8-0005TT-SF
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 10:45:38 +0000
+ id 1iZBsB-0005YJ-Ax
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 10:45:40 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DF2FA328;
- Mon, 25 Nov 2019 02:45:31 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EC8A855D;
+ Mon, 25 Nov 2019 02:45:37 -0800 (PST)
 Received: from entos-d05.shanghai.arm.com (entos-d05.shanghai.arm.com
  [10.169.40.35])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CEC5D3F52E;
- Mon, 25 Nov 2019 02:45:26 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 56E063F52E;
+ Mon, 25 Nov 2019 02:45:32 -0800 (PST)
 From: Jianyong Wu <jianyong.wu@arm.com>
 To: netdev@vger.kernel.org, yangbo.lu@nxp.com, john.stultz@linaro.org,
  tglx@linutronix.de, pbonzini@redhat.com, sean.j.christopherson@intel.com,
  maz@kernel.org, richardcochran@gmail.com, Mark.Rutland@arm.com,
  will@kernel.org, suzuki.poulose@arm.com
-Subject: [RFC PATCH v8 0/7] Enable ptp_kvm for arm64
-Date: Mon, 25 Nov 2019 18:44:58 +0800
-Message-Id: <20191125104506.36850-1-jianyong.wu@arm.com>
+Subject: [RFC PATCH v8 1/8] arm/arm64: smccc/psci: add
+ arm_smccc_1_1_get_conduit()
+Date: Mon, 25 Nov 2019 18:44:59 +0800
+Message-Id: <20191125104506.36850-2-jianyong.wu@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191125104506.36850-1-jianyong.wu@arm.com>
+References: <20191125104506.36850-1-jianyong.wu@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_024537_019867_00BC0C42 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20191125_024539_437095_B18DD917 
+X-CRM114-Status: GOOD (  11.63  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -60,7 +64,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: justin.he@arm.com, kvm@vger.kernel.org, Steve.Capper@arm.com,
+Cc: Mark Rutland <mark.rutland@arm.com>, justin.he@arm.com, kvm@vger.kernel.org,
+ Steve.Capper@arm.com, Catalin Marinas <catalin.marinas@arm.com>,
  jianyong.wu@arm.com, linux-kernel@vger.kernel.org, Kaly.Xin@arm.com,
  nd@arm.com, kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
@@ -69,112 +74,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-kvm ptp targets to provide high precision time sync between guest
-and host in virtualization environment. Here, we enable kvm ptp
-for arm64.
-This patch set base on [1][2][3]
+From: Mark Rutland <mark.rutland@arm.com>
 
-change log:
+SMCCC callers are currently amassing a collection of enums for the SMCCC
+conduit, and are having to dig into the PSCI driver's internals in order
+to figure out what to do.
 
-from v7 to v8:
-        (1) separate adding clocksource id for arm_arch_counter as a
-single patch.
-        (2) update commit message for patch 4/8.
-        (3) refine patch 7/8 and patch 8/8 to make them more independent.
+Let's clean this up, with common SMCCC_CONDUIT_* definitions, and an
+arm_smccc_1_1_get_conduit() helper that abstracts the PSCI driver's
+internal state.
 
-from v6 to v7:
-        (1) include the omitted clocksource_id.h in last version.
-        (2) reorder the header file in patch.
-        (3) refine some words in commit message to make it more impersonal.
+We can kill off the PSCI_CONDUIT_* definitions once we've migrated users
+over to the new interface.
 
-from v5 to v6:
-        (1) apply Mark's patch[4] to get SMCCC conduit.
-        (2) add mechanism to recognize current clocksource by add
-clocksouce_id value into struct clocksource instead of method in patch-v5.
-        (3) rename kvm_arch_ptp_get_clock_fn into
-kvm_arch_ptp_get_crosststamp.
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Acked-by: Will Deacon <will.deacon@arm.com>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+---
+ drivers/firmware/psci/psci.c | 15 +++++++++++++++
+ include/linux/arm-smccc.h    | 16 ++++++++++++++++
+ 2 files changed, 31 insertions(+)
 
-from v4 to v5:
-        (1) remove hvc delay compensasion as it should leave to userspace.
-        (2) check current clocksource in hvc call service.
-        (3) expose current clocksource by adding it to
-system_time_snapshot.
-        (4) add helper to check if clocksource is arm_arch_counter.
-        (5) rename kvm_ptp.c to ptp_kvm_common.c
-
-from v3 to v4:
-        (1) fix clocksource of ptp_kvm to arch_sys_counter.
-        (2) move kvm_arch_ptp_get_clock_fn into arm_arch_timer.c
-        (3) subtract cntvoff before return cycles from host.
-        (4) use ktime_get_snapshot instead of getnstimeofday and
-get_current_counterval to return time and counter value.
-        (5) split ktime and counter into two 32-bit block respectively
-to avoid Y2038-safe issue.
-        (6) set time compensation to device time as half of the delay of
-hvc call.
-        (7) add ARM_ARCH_TIMER as dependency of ptp_kvm for
-arm64.
-
-from v2 to v3:
-        (1) fix some issues in commit log.
-        (2) add some receivers in send list.
-
-from v1 to v2:
-        (1) move arch-specific code from arch/ to driver/ptp/
-        (2) offer mechanism to inform userspace if ptp_kvm service is
-available.
-        (3) separate ptp_kvm code for arm64 into hypervisor part and
-guest part.
-        (4) add API to expose monotonic clock and counter value.
-        (5) refine code: remove no necessary part and reconsitution.
-
-[1]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
-commit/?h=kvm/hvc&id=125ea89e4a21e2fc5235410f966a996a1a7148bf
-[2]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
-commit/?h=kvm/hvc&id=464f5a1741e5959c3e4d2be1966ae0093b4dce06
-[3]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
-commit/?h=kvm/hvc&id=6597490e005d0eeca8ed8c1c1d7b4318ee014681
-[4]https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/
-commit/?h=for-next/smccc-conduit-cleanup&id=6b7fe77c334ae59fed9500140e08f4f896b36871
-
-Jianyong Wu (6):
-  psci: let arm_smccc_1_1_invoke available by modules
-  ptp: Reorganize ptp_kvm modules to make it arch-independent.
-  clocksource: Add clocksource id for arm arch counter
-  psci: Add hvc call service for ptp_kvm.
-  ptp: arm64: Enable ptp_kvm for arm64
-  kvm: arm64: Add capability check extension for ptp_kvm
-
-Mark Rutland (1):
-  arm/arm64: smccc/psci: add arm_smccc_1_1_get_conduit()
-
-Thomas Gleixner (1):
-  time: Add mechanism to recognize clocksource in time_get_snapshot
-
- drivers/clocksource/arm_arch_timer.c        | 24 ++++++
- drivers/firmware/psci/psci.c                | 16 ++++
- drivers/ptp/Kconfig                         |  2 +-
- drivers/ptp/Makefile                        |  1 +
- drivers/ptp/ptp_kvm_arm64.c                 | 53 +++++++++++++
- drivers/ptp/{ptp_kvm.c => ptp_kvm_common.c} | 77 +++++-------------
- drivers/ptp/ptp_kvm_x86.c                   | 87 +++++++++++++++++++++
- include/asm-generic/ptp_kvm.h               | 12 +++
- include/linux/arm-smccc.h                   | 30 ++++++-
- include/linux/clocksource.h                 |  6 ++
- include/linux/clocksource_ids.h             | 13 +++
- include/linux/timekeeping.h                 | 12 +--
- include/uapi/linux/kvm.h                    |  1 +
- kernel/time/clocksource.c                   |  3 +
- kernel/time/timekeeping.c                   |  1 +
- virt/kvm/arm/arm.c                          |  1 +
- virt/kvm/arm/psci.c                         | 22 ++++++
- 17 files changed, 295 insertions(+), 66 deletions(-)
- create mode 100644 drivers/ptp/ptp_kvm_arm64.c
- rename drivers/ptp/{ptp_kvm.c => ptp_kvm_common.c} (63%)
- create mode 100644 drivers/ptp/ptp_kvm_x86.c
- create mode 100644 include/asm-generic/ptp_kvm.h
- create mode 100644 include/linux/clocksource_ids.h
-
+diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+index f82ccd39a913..5f31f1bea1af 100644
+--- a/drivers/firmware/psci/psci.c
++++ b/drivers/firmware/psci/psci.c
+@@ -57,6 +57,21 @@ struct psci_operations psci_ops = {
+ 	.smccc_version = SMCCC_VERSION_1_0,
+ };
+ 
++enum arm_smccc_conduit arm_smccc_1_1_get_conduit(void)
++{
++	if (psci_ops.smccc_version < SMCCC_VERSION_1_1)
++		return SMCCC_CONDUIT_NONE;
++
++	switch (psci_ops.conduit) {
++	case PSCI_CONDUIT_SMC:
++		return SMCCC_CONDUIT_SMC;
++	case PSCI_CONDUIT_HVC:
++		return SMCCC_CONDUIT_HVC;
++	default:
++		return SMCCC_CONDUIT_NONE;
++	}
++}
++
+ typedef unsigned long (psci_fn)(unsigned long, unsigned long,
+ 				unsigned long, unsigned long);
+ static psci_fn *invoke_psci_fn;
+diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+index 552cbd49abe8..701fa1da6b4a 100644
+--- a/include/linux/arm-smccc.h
++++ b/include/linux/arm-smccc.h
+@@ -107,6 +107,22 @@
+ 
+ #include <linux/linkage.h>
+ #include <linux/types.h>
++
++enum arm_smccc_conduit {
++	SMCCC_CONDUIT_NONE,
++	SMCCC_CONDUIT_SMC,
++	SMCCC_CONDUIT_HVC,
++};
++
++/**
++ * arm_smccc_1_1_get_conduit()
++ *
++ * Returns the conduit to be used for SMCCCv1.1 or later.
++ *
++ * When SMCCCv1.1 is not present, returns SMCCC_CONDUIT_NONE.
++ */
++enum arm_smccc_conduit arm_smccc_1_1_get_conduit(void);
++
+ /**
+  * struct arm_smccc_res - Result from SMC/HVC call
+  * @a0-a3 result values from registers 0 to 3
 -- 
 2.17.1
 
