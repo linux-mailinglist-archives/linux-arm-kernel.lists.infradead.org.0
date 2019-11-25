@@ -2,74 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7D83108DA5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 13:13:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1AF5108DA6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 13:13:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WxYuB7craVzMtutQQV5605XNaPdgjdX+65CEjEyjm7Y=; b=K4mqsL5ZmP60zB
-	cD+NoJgUr4ql3XlPEGHUdiWbRhTFd/lLTSRRKPKSYU50T/6ahIcKTiUG0IFysh3FZtIPKBbqyo1Py
-	jHKduArc72GgdduUdBCAA+rsittX/kxvMKU9eiz57eiPTvST4PGbhkqHWVpvBMdUKMHRGfyzDEiIL
-	9uwrLAm//HZ43cNGCSETmLyzrfdHulyanAEkddCmVlFcHcyr110j4U5twP57UIrFvwWMSnI55Yw/6
-	BN0oTdwbFue7c5aL3ul9S2i5GeOyN6+mw3wq9uFs0Vdr8YD1idDzsVY0fkYpyhjpUo8SjCwJWZieJ
-	Qn2UPzGfsfieWHGzV6jA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eRYKOx3FpeDbplDiXORGWhzx6CcBa4HhAFaEttmssCE=; b=niyMDq9Mr3ActM
+	iqRArc9hP5M/SwsJinxRKGhH8Icr5LkPtC52r9I3KQG/AxXAn2YueHBfH6fQxGbXF5Tq//hCrXUyx
+	c97gOVgxXwVpM0hxwPwBsH+gnKnwz9LPd+pwewubXxI4oPG3xR4/5ZaT+7aWux3zbunI1aoMBGsmZ
+	02Zqri8M+TPVPOXTQGDWYoquC38d4BuNK2fqY9mPPU+Y2jpxRlBn902rKmKfHwmHhBWdU+fzGUepO
+	V/sitKkpIcUH7vLAeXHf4V9vltAf2O1gPmpwrUXJAQOtBp/hnndTj8+idT8soGzbh/V/yRnIwGXRg
+	OWjPJSHUrzHgzsyxdZEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZDEt-0003Vo-DO; Mon, 25 Nov 2019 12:13:11 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iZDF5-0003ev-As; Mon, 25 Nov 2019 12:13:23 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZDEf-0003Un-C9
+ id 1iZDEf-0003Uo-Fb
  for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 12:12:59 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xAPC7NV4010189; Mon, 25 Nov 2019 13:12:47 +0100
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xAPC70Pg009034; Mon, 25 Nov 2019 13:12:48 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=B96CApp49j4YYM/RFvkEEuoU4iXI/Y4YuviO4WS8EUY=;
- b=mt9ZR1H/+mFOsjxEYRHVNZ5tNAfE7e2lvYXjjdMo86Uym+fxIlIDV72W2ib0ylr3+c9+
- +RbbW8Ws/G5d1/JONKnJPD0urh0K/0/Z6Wzqm3ghA/CcnqcBfJqtg09wVrYL1E/9fZez
- Z5FyBpBeay21PvKV2qJuT6kU8hI7GimW/0xL8trLou2AlFWTd5JUhlHrIHT/UUIQCNyN
- a4aW3HBpe+nPDvMRWfbxm1+unf3eKuSJhYsXCylo9vw28+UHR/bWJwmVbmt2uO/q4AWs
- V/mJJHLxhZrr3Ln/0ApdpPXJnWqc4jNw/q494oHFn7Fi5oXwC7zxl8ATUzaRoYAsOBRv mw== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=sWG896Au3NOdFn4sqwKmFJD5XhVt5rs6AeaV5Mi4ANQ=;
+ b=uzqYsfKcxiIa/sNurkG81LI/OQUQra6RKJCN6+a/SkAVDkF7NfDDeCpWcR8AOmts3ER9
+ rZQ+dZPU5WQeOesidV/nzQQrMuZcSnmHsvZoBdzthX8sm2nKyyW5ymXtTyZHrXMZEaBm
+ CZ1Me0/6r+spIPx+fGzIDIsMnqbnxSDU724p6XMuMNQubftwUFyOjLQ4Nvovb3cWCchN
+ acgcPlQcQuulz0obIBqv6Wy8jChVW4UG9X6qY3AD8EeXrYQg4mCzNbDmqjUZCU56++Jk
+ vhUp5pgXQD+sbeF6JVNl4D4NiAE+61huD9c2ElW8ns+DhebiI8wRuuaH4M1boTFca6oc hA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2weudw107m-1
+ by mx08-00178001.pphosted.com with ESMTP id 2wets9h0r3-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 25 Nov 2019 13:12:47 +0100
+ Mon, 25 Nov 2019 13:12:48 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3941210002A;
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CC984100034;
  Mon, 25 Nov 2019 13:12:47 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 2AE512BE238;
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id BED6F2BE238;
  Mon, 25 Nov 2019 13:12:47 +0100 (CET)
-Received: from localhost (10.75.127.49) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 25 Nov 2019 13:12:46
+Received: from localhost (10.75.127.48) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 25 Nov 2019 13:12:47
  +0100
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
 To: <alexandre.torgue@st.com>, <robh+dt@kernel.org>, <mark.rutland@arm.com>
-Subject: [PATCH] ARM: dts: stm32: remove "@" from stm32f7 pinmux groups
-Date: Mon, 25 Nov 2019 13:12:43 +0100
-Message-ID: <20191125121244.19591-1-benjamin.gaignard@st.com>
+Subject: [PATCH] ARM: dts: stm32: remove "@" from stm32f4 pinmux groups
+Date: Mon, 25 Nov 2019 13:12:44 +0100
+Message-ID: <20191125121244.19591-2-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
+In-Reply-To: <20191125121244.19591-1-benjamin.gaignard@st.com>
+References: <20191125121244.19591-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG6NODE1.st.com (10.75.127.16) To SFHDAG3NODE3.st.com
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG3NODE2.st.com (10.75.127.8) To SFHDAG3NODE3.st.com
  (10.75.127.9)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
  definitions=2019-11-25_03:2019-11-21,2019-11-25 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_041257_889541_2CDCFCEE 
-X-CRM114-Status: GOOD (  12.35  )
+X-CRM114-CacheID: sfid-20191125_041257_889972_AF26860D 
+X-CRM114-Status: GOOD (  12.26  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -98,29 +102,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace all "@" by "_" in pinmux groups for stm32f7 family.
+Replace all "@" by "_" in pinmux groups for stm32f4 family.
 This avoid errors when using yaml to check the bindings.
 
 Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 ---
- arch/arm/boot/dts/stm32f7-pinctrl.dtsi | 22 +++++++++++-----------
- 1 file changed, 11 insertions(+), 11 deletions(-)
+ arch/arm/boot/dts/stm32f4-pinctrl.dtsi | 28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
 
-diff --git a/arch/arm/boot/dts/stm32f7-pinctrl.dtsi b/arch/arm/boot/dts/stm32f7-pinctrl.dtsi
-index 9314128df185..5271df1017cb 100644
---- a/arch/arm/boot/dts/stm32f7-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/stm32f7-pinctrl.dtsi
-@@ -127,7 +127,7 @@
+diff --git a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+index 35202896c093..722598cdf3b7 100644
+--- a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+@@ -163,7 +163,7 @@
  				st,bank-name = "GPIOK";
- 			};
- 
--			cec_pins_a: cec@0 {
-+			cec_pins_a: cec_0 {
- 				pins {
- 					pinmux = <STM32_PINMUX('A', 15, AF4)>; /* HDMI CEC */
- 					slew-rate = <0>;
-@@ -136,7 +136,7 @@
- 				};
  			};
  
 -			usart1_pins_a: usart1@0 {
@@ -128,87 +123,120 @@ index 9314128df185..5271df1017cb 100644
  				pins1 {
  					pinmux = <STM32_PINMUX('A', 9, AF7)>; /* USART1_TX */
  					bias-disable;
-@@ -149,7 +149,7 @@
+@@ -176,7 +176,7 @@
  				};
  			};
  
--			usart1_pins_b: usart1@1 {
-+			usart1_pins_b: usart1_1 {
+-			usart3_pins_a: usart3@0 {
++			usart3_pins_a: usart3_0 {
  				pins1 {
- 					pinmux = <STM32_PINMUX('A', 9, AF7)>; /* USART1_TX */
+ 					pinmux = <STM32_PINMUX('B', 10, AF7)>; /* USART3_TX */
  					bias-disable;
-@@ -162,7 +162,7 @@
+@@ -189,7 +189,7 @@
  				};
  			};
  
--			i2c1_pins_b: i2c1@0 {
-+			i2c1_pins_b: i2c1_0 {
- 				pins {
- 					pinmux = <STM32_PINMUX('B', 9, AF4)>, /* I2C1 SDA */
- 						 <STM32_PINMUX('B', 8, AF4)>; /* I2C1 SCL */
-@@ -172,7 +172,7 @@
- 				};
- 			};
- 
--			usbotg_hs_pins_a: usbotg-hs@0 {
-+			usbotg_hs_pins_a: usbotg-hs_0 {
- 				pins {
- 					pinmux = <STM32_PINMUX('H', 4, AF10)>, /* OTG_HS_ULPI_NXT */
- 						 <STM32_PINMUX('I', 11, AF10)>, /* OTG_HS_ULPI_DIR */
-@@ -192,7 +192,7 @@
- 				};
- 			};
- 
--			usbotg_hs_pins_b: usbotg-hs@1 {
-+			usbotg_hs_pins_b: usbotg-hs_1 {
- 				pins {
- 					pinmux = <STM32_PINMUX('H', 4, AF10)>, /* OTG_HS_ULPI_NXT */
- 						 <STM32_PINMUX('C', 2, AF10)>, /* OTG_HS_ULPI_DIR */
-@@ -212,7 +212,7 @@
- 				};
- 			};
- 
--			usbotg_fs_pins_a: usbotg-fs@0 {
-+			usbotg_fs_pins_a: usbotg-fs_0 {
+-			usbotg_fs_pins_a: usbotg_fs@0 {
++			usbotg_fs_pins_a: usbotg_fs_0 {
  				pins {
  					pinmux = <STM32_PINMUX('A', 10, AF10)>, /* OTG_FS_ID */
  						 <STM32_PINMUX('A', 11, AF10)>, /* OTG_FS_DM */
-@@ -223,7 +223,7 @@
+@@ -200,7 +200,7 @@
  				};
  			};
  
--			sdio_pins_a: sdio_pins_a@0 {
-+			sdio_pins_a: sdio_pins_a_0 {
+-			usbotg_fs_pins_b: usbotg_fs@1 {
++			usbotg_fs_pins_b: usbotg_fs_1 {
  				pins {
- 					pinmux = <STM32_PINMUX('C', 8, AF12)>, /* SDMMC1 D0 */
- 						 <STM32_PINMUX('C', 9, AF12)>, /* SDMMC1 D1 */
-@@ -236,7 +236,7 @@
+ 					pinmux = <STM32_PINMUX('B', 12, AF12)>, /* OTG_HS_ID */
+ 						 <STM32_PINMUX('B', 14, AF12)>, /* OTG_HS_DM */
+@@ -211,7 +211,7 @@
  				};
  			};
  
--			sdio_pins_od_a: sdio_pins_od_a@0 {
-+			sdio_pins_od_a: sdio_pins_od_a_0 {
- 				pins1 {
- 					pinmux = <STM32_PINMUX('C', 8, AF12)>, /* SDMMC1 D0 */
- 						 <STM32_PINMUX('C', 9, AF12)>, /* SDMMC1 D1 */
-@@ -254,7 +254,7 @@
- 				};
- 			};
- 
--			sdio_pins_b: sdio_pins_b@0 {
-+			sdio_pins_b: sdio_pins_b_0 {
+-			usbotg_hs_pins_a: usbotg_hs@0 {
++			usbotg_hs_pins_a: usbotg_hs_0 {
  				pins {
- 					pinmux = <STM32_PINMUX('G', 9, AF11)>, /* SDMMC2 D0 */
- 						 <STM32_PINMUX('G', 10, AF11)>, /* SDMMC2 D1 */
-@@ -267,7 +267,7 @@
+ 					pinmux = <STM32_PINMUX('H', 4, AF10)>, /* OTG_HS_ULPI_NXT*/
+ 						 <STM32_PINMUX('I', 11, AF10)>, /* OTG_HS_ULPI_DIR */
+@@ -231,7 +231,7 @@
  				};
  			};
  
--			sdio_pins_od_b: sdio_pins_od_b@0 {
-+			sdio_pins_od_b: sdio_pins_od_b_0 {
+-			ethernet_mii: mii@0 {
++			ethernet_mii: mii_0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('G', 13, AF11)>, /* ETH_MII_TXD0_ETH_RMII_TXD0 */
+ 						 <STM32_PINMUX('G', 14, AF11)>, /* ETH_MII_TXD1_ETH_RMII_TXD1 */
+@@ -251,13 +251,13 @@
+ 				};
+ 			};
+ 
+-			adc3_in8_pin: adc@200 {
++			adc3_in8_pin: adc_200 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('F', 10, ANALOG)>;
+ 				};
+ 			};
+ 
+-			pwm1_pins: pwm@1 {
++			pwm1_pins: pwm_1 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('A', 8, AF1)>, /* TIM1_CH1 */
+ 						 <STM32_PINMUX('B', 13, AF1)>, /* TIM1_CH1N */
+@@ -265,14 +265,14 @@
+ 				};
+ 			};
+ 
+-			pwm3_pins: pwm@3 {
++			pwm3_pins: pwm_3 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('B', 4, AF2)>, /* TIM3_CH1 */
+ 						 <STM32_PINMUX('B', 5, AF2)>; /* TIM3_CH2 */
+ 				};
+ 			};
+ 
+-			i2c1_pins: i2c1@0 {
++			i2c1_pins: i2c1_0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('B', 9, AF4)>, /* I2C1_SDA */
+ 						 <STM32_PINMUX('B', 6, AF4)>; /* I2C1_SCL */
+@@ -282,7 +282,7 @@
+ 				};
+ 			};
+ 
+-			ltdc_pins: ltdc@0 {
++			ltdc_pins: ltdc_0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('I', 12, AF14)>, /* LCD_HSYNC */
+ 						 <STM32_PINMUX('I', 13, AF14)>, /* LCD_VSYNC */
+@@ -316,7 +316,7 @@
+ 				};
+ 			};
+ 
+-			dcmi_pins: dcmi@0 {
++			dcmi_pins: dcmi_0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('A', 4, AF13)>, /* DCMI_HSYNC */
+ 						 <STM32_PINMUX('B', 7, AF13)>, /* DCMI_VSYNC */
+@@ -339,7 +339,7 @@
+ 				};
+ 			};
+ 
+-			sdio_pins: sdio_pins@0 {
++			sdio_pins: sdio_pins_0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('C', 8, AF12)>, /* SDIO_D0 */
+ 						 <STM32_PINMUX('C', 9, AF12)>, /* SDIO_D1 */
+@@ -352,7 +352,7 @@
+ 				};
+ 			};
+ 
+-			sdio_pins_od: sdio_pins_od@0 {
++			sdio_pins_od: sdio_pins_od_0 {
  				pins1 {
- 					pinmux = <STM32_PINMUX('G', 9, AF11)>, /* SDMMC2 D0 */
- 						 <STM32_PINMUX('G', 10, AF11)>, /* SDMMC2 D1 */
+ 					pinmux = <STM32_PINMUX('C', 8, AF12)>, /* SDIO_D0 */
+ 						 <STM32_PINMUX('C', 9, AF12)>, /* SDIO_D1 */
 -- 
 2.15.0
 
