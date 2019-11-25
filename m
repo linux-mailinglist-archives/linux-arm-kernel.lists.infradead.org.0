@@ -2,51 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB06C108C7A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 12:02:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3FCF108CE6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 12:28:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ibwpV31J82q2dGAqqBYoi2ePm27Mqd/X/0K/RzXni6c=; b=JT+Y0/wXOUzqHBvpWcjU6AOe3
-	xDFjWzGtRLN5HSC9jO+NGnCpIHmDE3F51IwjqaKJ3W24rjvgSo/J5qV6yVGPooXN1xvGC5GVVgwOz
-	FVwjhjb3kfXfP9mUA9ATjsV/v7F5qj7MnFsOybUrDouJeoOkL96iK4rN8blrbf9XCxvjPhfIpKSVB
-	C97gKkUWSLCsmaQJ+jMTMdTfukh9HL7wLEr+UHH/+kWsZ3Bh1NZ+EZBHCVKhXt1XQQxuvMI/rrewl
-	82SK96TJtp5Zjw05XD+7aOXcrZNjtVc06v9UThS0W4JO4yF9SUMsIly3xaKT0aolyQJbjpxWShUM2
-	17Vrpmq8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Oxc+fAP7ugJ1LKBVWKKmIbSZMNnL/523toD2GZ9qVmU=; b=Gjy4uWZHXXz32z8qU/RV8TVbUK
+	+MQfDK2B6UaOLEU7d5VQuuvGMD71fdLFzvH9pHlXm2XbFG6vRBO9t5rlxWFN5jk8Tu0Y8w+bBHTFw
+	0QGS8WUJhkpiReVzv9OhatjcyWjbMS+bAk3eE53ffTxBi8uT4UOChZGPfVcGOx3qa4m5K3WzwxqQn
+	9XWvtwwRog8Kl5vGp6Dzajmy3mo0hVUBbFxzNomkCKZhpCabjhJJzynSHds8gRd0Vzc9RRNBaJpRJ
+	eBLXZ9OIqOBtDJpXN4/frmsxgK3IblTM8y7MDkkrlAjyxgDcy/0lTOHezdE1pvjwx9myxKgu++u9B
+	t3NNAGZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZC84-0004Ti-8a; Mon, 25 Nov 2019 11:02:04 +0000
+	id 1iZCXQ-0003rh-SO; Mon, 25 Nov 2019 11:28:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZC7t-0004TN-HN
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 11:01:54 +0000
+ id 1iZCXH-0003r5-4y
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 11:28:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CE6731B;
- Mon, 25 Nov 2019 03:01:52 -0800 (PST)
-Received: from [10.163.1.198] (unknown [10.163.1.198])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0BB4E3F52E;
- Mon, 25 Nov 2019 03:01:42 -0800 (PST)
-Subject: Re: [PATCH v2 07/14] arm64: initialize and switch ptrauth kernel keys
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
- <1574166746-27197-8-git-send-email-amit.kachhap@arm.com>
- <432f8082-c34f-8036-8c5e-fd1fcec9aa17@linaro.org>
- <aa92b083-ddc6-9724-6655-3abc79e78ca9@arm.com>
- <CAKv+Gu_d7RTZZU44NGEqQOgHx7PbLB4dc2qsJvdEBBS0zje1gw@mail.gmail.com>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <d3324130-2959-d7ed-ccaa-0d2d22a8dc65@arm.com>
-Date: Mon, 25 Nov 2019 16:31:37 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <CAKv+Gu_d7RTZZU44NGEqQOgHx7PbLB4dc2qsJvdEBBS0zje1gw@mail.gmail.com>
-Content-Language: en-US
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A28971045;
+ Mon, 25 Nov 2019 03:28:06 -0800 (PST)
+Received: from e107158-lin.cambridge.arm.com (e107158-lin.cambridge.arm.com
+ [10.1.195.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1F7293F52E;
+ Mon, 25 Nov 2019 03:28:04 -0800 (PST)
+From: Qais Yousef <qais.yousef@arm.com>
+To: Thomas Gleixner <tglx@linutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: [PATCH v2 01/14] smp: Create a new function to shutdown nonboot cpus
+Date: Mon, 25 Nov 2019 11:27:41 +0000
+Message-Id: <20191125112754.25223-2-qais.yousef@arm.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191125112754.25223-1-qais.yousef@arm.com>
+References: <20191125112754.25223-1-qais.yousef@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_030153_621370_0EDEB9B9 
-X-CRM114-Status: GOOD (  15.24  )
+X-CRM114-CacheID: sfid-20191125_032807_274726_8543739B 
+X-CRM114-Status: GOOD (  12.12  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,70 +61,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- Will Deacon <will.deacon@arm.com>, James Morse <james.morse@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Fenghua Yu <fenghua.yu@intel.com>, linux-ia64@vger.kernel.org,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Tony Luck <tony.luck@intel.com>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ Jiri Kosina <jkosina@suse.cz>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-kernel@vger.kernel.org, Zhenzhong Duan <zhenzhong.duan@oracle.com>,
+ Nicholas Piggin <npiggin@gmail.com>, Ingo Molnar <mingo@kernel.org>,
+ Eiichi Tsukata <devel@etsukata.com>, Nadav Amit <namit@vmware.com>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, Russell King <linux@armlinux.org.uk>,
+ Will Deacon <will@kernel.org>, Qais Yousef <qais.yousef@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This function will be used later in machine_shutdown() for some archs.
 
+Signed-off-by: Qais Yousef <qais.yousef@arm.com>
+CC: Thomas Gleixner <tglx@linutronix.de>
+CC: Josh Poimboeuf <jpoimboe@redhat.com>
+CC: "Peter Zijlstra (Intel)" <peterz@infradead.org>
+CC: Jiri Kosina <jkosina@suse.cz>
+CC: Nicholas Piggin <npiggin@gmail.com>
+CC: Daniel Lezcano <daniel.lezcano@linaro.org>
+CC: Ingo Molnar <mingo@kernel.org>
+CC: Eiichi Tsukata <devel@etsukata.com>
+CC: Zhenzhong Duan <zhenzhong.duan@oracle.com>
+CC: Nadav Amit <namit@vmware.com>
+CC: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+CC: "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>
+CC: Tony Luck <tony.luck@intel.com>
+CC: Fenghua Yu <fenghua.yu@intel.com>
+CC: Russell King <linux@armlinux.org.uk>
+CC: Catalin Marinas <catalin.marinas@arm.com>
+CC: Will Deacon <will@kernel.org>
+CC: linux-arm-kernel@lists.infradead.org
+CC: linux-ia64@vger.kernel.org
+CC: linux-kernel@vger.kernel.org
+---
+ include/linux/cpu.h |  2 ++
+ kernel/cpu.c        | 17 +++++++++++++++++
+ 2 files changed, 19 insertions(+)
 
-On 11/25/19 3:09 PM, Ard Biesheuvel wrote:
-> On Mon, 25 Nov 2019 at 10:34, Amit Kachhap <amit.kachhap@arm.com> wrote:
->>
->>
->>
->> On 11/23/19 12:49 AM, Richard Henderson wrote:
->>> On 11/19/19 12:32 PM, Amit Daniel Kachhap wrote:
->>>> --- a/arch/arm64/include/asm/asm_pointer_auth.h
->>>> +++ b/arch/arm64/include/asm/asm_pointer_auth.h
->>>> @@ -35,11 +35,25 @@ alternative_if ARM64_HAS_GENERIC_AUTH
->>>>    alternative_else_nop_endif
->>>>       .endm
->>>>
->>>> +    .macro ptrauth_keys_install_kernel tsk, tmp1, tmp2, tmp3
->>>> +    mov     \tmp1, #THREAD_KEYS_KERNEL
->>>> +    add     \tmp1, \tsk, \tmp1
->>>> +alternative_if ARM64_HAS_ADDRESS_AUTH
->>>> +    ldp     \tmp2, \tmp3, [\tmp1, #PTRAUTH_KERNEL_KEY_APIA]
->>>> +    msr_s   SYS_APIAKEYLO_EL1, \tmp2
->>>> +    msr_s   SYS_APIAKEYHI_EL1, \tmp3
->>>> +    isb
->>>> +alternative_else_nop_endif
->>>> +    .endm
->>>
->>> Any reason you didn't put the first two insns in the alternative?
->>
->> Yes these 2 instructions can be moved below. Thanks for the catch.
->>
-> 
-> Do you even need them? Isn't it possible to do
-> 
-> ldp \tmp1, \tmp2, [\tsk, #(THREAD_KEYS_KERNEL + PTRAUTH_KERNEL_KEY_APIA)]
-> 
-> ? Or is the range for the offset insufficient?
+diff --git a/include/linux/cpu.h b/include/linux/cpu.h
+index bc6c879bd110..8229932fb053 100644
+--- a/include/linux/cpu.h
++++ b/include/linux/cpu.h
+@@ -118,6 +118,7 @@ extern void cpu_hotplug_disable(void);
+ extern void cpu_hotplug_enable(void);
+ void clear_tasks_mm_cpumask(int cpu);
+ int cpu_down(unsigned int cpu);
++extern void smp_shutdown_nonboot_cpus(unsigned int primary_cpu);
+ 
+ #else /* CONFIG_HOTPLUG_CPU */
+ 
+@@ -129,6 +130,7 @@ static inline int  cpus_read_trylock(void) { return true; }
+ static inline void lockdep_assert_cpus_held(void) { }
+ static inline void cpu_hotplug_disable(void) { }
+ static inline void cpu_hotplug_enable(void) { }
++static inline void smp_shutdown_nonboot_cpus(unsigned int primary_cpu) { }
+ #endif	/* !CONFIG_HOTPLUG_CPU */
+ 
+ /* Wrappers which go away once all code is converted */
+diff --git a/kernel/cpu.c b/kernel/cpu.c
+index e2cad3ee2ead..94055a0d989e 100644
+--- a/kernel/cpu.c
++++ b/kernel/cpu.c
+@@ -1058,6 +1058,23 @@ int cpu_down(unsigned int cpu)
+ }
+ EXPORT_SYMBOL(cpu_down);
+ 
++void smp_shutdown_nonboot_cpus(unsigned int primary_cpu)
++{
++	unsigned int cpu;
++
++	if (!cpu_online(primary_cpu)) {
++		pr_info("Attempting to shutdodwn nonboot cpus while boot cpu is offline!\n");
++		cpu_online(primary_cpu);
++	}
++
++	for_each_present_cpu(cpu) {
++		if (cpu == primary_cpu)
++			continue;
++		if (cpu_online(cpu))
++			cpu_down(cpu);
++	}
++}
++
+ #else
+ #define takedown_cpu		NULL
+ #endif /*CONFIG_HOTPLUG_CPU*/
+-- 
+2.17.1
 
-Yes the offset exceeds the maximum range so done this way.
-> 
-> 
->>>
->>> You could have re-used tmp1 instead of requiring tmp3, but at no point are we
->>> lacking tmp registers so it doesn't matter.
->>>
-> 
-> I think we should fix it nonetheless.
-
-yes.
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
