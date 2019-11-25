@@ -2,108 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0048010921D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 17:46:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBE0E10929D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 18:06:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=zdqcXNqxej/R5GcuJKMrqJofmSXTbpxICndoA3JO5e0=; b=ShIrJ7DUpYLFHc
-	pNSNDEC6SdWx16YwZc0u2GEQjJpEjGxitiO7O8eaLempIPC1RPZvwXgTBe5C8BF5K5Uzm9NWw5VGf
-	BqtStZGz6TWC+2D/C8AeWSwxTLY7zQqgpwd9o08oYYr0u0c6G4jeBLAKMBV5AFBYIbmZWMfgnk1dy
-	omJw+CpxJlURyqX0nHmZ+mXre4QObVnWQIySPZb+wqJov16smOks9EhLZc2y4xzwRaQCUPewM+LlJ
-	ZavspbaJ2doUeXjYJFZ+NEI89LNotlvc02GTVawq0QRHMLNaYvVeeL6uBA/JC+8tDfCqeMNiD2QvB
-	8BDJEf0mj8uywm8/F5Jg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JhiHOrAd5LR3pcr85u6jBPDvDFMVPV4wOUVdHqgW5/I=; b=aGCusEgIJFckVy
+	EVB2YfmTIpAi9k7wzppi0NLM/8OHoDteZH3TbVlbUaDk53ZiSrM0hgXBPjS0IQ7IIM57CSDd/TMVN
+	SsAI1au+EQHxpXvhIMQiZluaCiED5Pnjv51Lbt6WhpJoOe7eafXSmr0xRb5iBVjm4XZQeE6YTPodE
+	B269IpbfOoJnN+YBxjypv1saUVy8UAMqe9EVR7BMtLO3sBeS9VdhH5msevxhzDYZlsayRTebRCpKm
+	NbOr6oNusRKwM0h5/JAjYDgoFXFKSJ3vk3xKWnzgvKaqdz7eaZTQSlxzoBzOk4zCOLQiSu0S/wWzX
+	2JK9cou14OjDSJpZe5nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZHVS-0002Nl-2T; Mon, 25 Nov 2019 16:46:34 +0000
-Received: from mail-eopbgr30088.outbound.protection.outlook.com ([40.107.3.88]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1iZHor-00046P-8e; Mon, 25 Nov 2019 17:06:37 +0000
+Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::5])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZHVB-0002FM-MB
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 16:46:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Q4eH7JYo6DkCimOiemoyqj4SfbMUCvTjUiLjymRKO+Yy8QBYuQzkDKiHcngk7Zi+LESwn47kB85geqetPzc5p0GlDEXS/Z65jkGX8C6CZ1JegWxim+YfPZI8f2V2K2vN+6KH2Y9+YnxH2UTM1+KubJVx0pP6F+mFChdVZ5W/l2Fk0y++1GQQTMDBkEXILLlxlK1vbcTZC+BF+XNoRl9EZfe3Fo1ddJPOQ2MU8ocoNEqZGYDoWNECGY1yZKcfzrn3ShHtSLfqw0j0rbj5tilT0GWxAaV7rdGFyWNN5YatnIluxKncrKj7Mnf5dVNUFjssPDMnjOk8WLwapKyPZi8wGA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UjHwga8IPjFgENogdt+XEhtMbvhncergehFqTpYQJlQ=;
- b=iUBuUDjVvHmENIEDeKP7+p8PSIw9ZDJIKBrtErE7x0373ZBg2kZemzxuYuA8aR5kCLR8OWukcUFXCbUeYGsX/aERqFiZojFJR4BYOoc2KsO2/mmnNia1wZKa2iHctC8nc8257cfuKozlfrOpPE5uwR7WVAdTpimm0HfhZcO8X3h7QdlRChjpoBnQv9nXStAV55rv2A7HXsK+FGJpzzNzXSPlqBfPk3TJ8+j3iimoxC1mF6544eE/Qhx/r1LWt41HlTdgt8mvdCZ+E5OaVL3h3Wl8kuMRBDhLyqXbo6VK9n+joD+AP7wDNakuTUSE/iwQpLgUM3xsBRV7tMQTYmI3+Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UjHwga8IPjFgENogdt+XEhtMbvhncergehFqTpYQJlQ=;
- b=Nw0vQBbcJAa48HAH2H98krifqrod45TjjObQif4TWMXJQ8bKBZhDZhd6LR7bjA4SczNbZFAJHsbypHtuloxeGaI68Ebay74rsKnpHqT7Y0zB/Vce3vAcOvMeAqTe0LXrB93oAaIk8kGizA7UF+/n+BivoD2v4YqZaR/V2hckbYs=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB7183.eurprd04.prod.outlook.com (10.186.157.211) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2474.17; Mon, 25 Nov 2019 16:46:12 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::dd0c:72dc:e462:16b3]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::dd0c:72dc:e462:16b3%5]) with mapi id 15.20.2474.023; Mon, 25 Nov 2019
- 16:46:12 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Matthias Kaehlcke <mka@chromium.org>, "Rafael J. Wysocki"
- <rjw@rjwysocki.net>, Chanwoo Choi <cw00.choi@samsung.com>
-Subject: Re: [PATCH RFC 2/2] PM / devfreq: Use PM QoS for sysfs min/max_freq
-Thread-Topic: [PATCH RFC 2/2] PM / devfreq: Use PM QoS for sysfs min/max_freq
-Thread-Index: AQHVnvQ6x9t0jA6r+U2AKNPDc34osQ==
-Date: Mon, 25 Nov 2019 16:46:12 +0000
-Message-ID: <VI1PR04MB70237E859BBD7048B0DD0675EE4A0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <cover.1574179738.git.leonard.crestez@nxp.com>
- <1f567d6478b1782f7f4afc27cb6d3f896d77ac9f.1574179738.git.leonard.crestez@nxp.com>
- <20191121231622.GK27773@google.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [212.146.100.6]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: e8f362c1-c1b0-46f4-8c5b-08d771c6fad4
-x-ms-traffictypediagnostic: VI1PR04MB7183:|VI1PR04MB7183:
-x-ms-exchange-purlcount: 1
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB7183172DE410BACFA3D53665EE4A0@VI1PR04MB7183.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0232B30BBC
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(136003)(376002)(39860400002)(366004)(346002)(189003)(199004)(186003)(54906003)(26005)(99286004)(966005)(4326008)(5660300002)(91956017)(76116006)(66556008)(64756008)(66946007)(66476007)(8936002)(66446008)(9686003)(6306002)(7696005)(8676002)(76176011)(81166006)(81156014)(14454004)(55016002)(6436002)(33656002)(66066001)(316002)(6506007)(53546011)(14444005)(44832011)(256004)(229853002)(110136005)(478600001)(52536014)(3846002)(7736002)(6116002)(86362001)(25786009)(446003)(71190400001)(71200400001)(74316002)(102836004)(7416002)(305945005)(2906002)(6246003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB7183;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: uYH+VbPR686huVWIvq82IOgfduLUFfp90yhN8Z7HiJnt2Vp1sT6m+L41duECIJijPfjAaHVIqOKZFFIe2JvxzES4u9sUry0gc/fHHB+HFnb93ZkylaDMNn5IzJFGyFRFll6JOigSc5wvLUNGwKzBV15vgG3e0+PbMbquNr6wu95SdljgdYCU5eleZqS6IV0YTswJQh21udEQdYTFLqqLBDW+HEdQFBFUPm+cA9BMjXg4Z5zuSz8/RJAiqoyYrubwgPe+O/ViOURAPDpXl5DxpFcNLqEV/mnflFgtdhFHxE4JNiHekMiw9I5ISNAinM1OYObfyUam/8emzrAY3kXj8TmkmG0+gyDkBabbrCSZI93XgI2Q3L8JphoaEokgzbRa7x0uvcxRVjecvZ4quGdzIOi8OVzJxCIsYhvnkKJjCSwl1XdmZHW+ENOhhCeThANBtxm2F6dzg2RHEHh6WLl7G2BmcXjowGuF8UwjmJWxTMQ=
+ id 1iZHo1-0003W7-U4
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 17:05:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1574701543;
+ s=strato-dkim-0002; d=gerhold.net;
+ h=Message-Id:Date:Subject:Cc:To:From:X-RZG-CLASS-ID:X-RZG-AUTH:From:
+ Subject:Sender;
+ bh=53qG48IklGrDeQf7pc+hhg5H/dz6HcMn6cl+jKa+Pn8=;
+ b=RKUbQWAbg2JFurjk+QDKMoGu7iusTeUii4BqMD/cyT/CEpVIRgkJbE9Mtzp1XwWTqX
+ 8+LLQtqs+5kTtacVxMnq5tRW623Nj4fdyeGJ0f+PmOLUXI/Nl9rdNd54xeROmmrEMt4M
+ 1Z6bXQe5jwVDo/BORPfGWE1fJoYPqCNaEYDD8y2j2xfN/tG6x6Ejv2znOUiFHWZqrpBq
+ /1qF2Z9CgrVYrjjW2bhpINvGIFWLfgHQY1/HOUPzJ56Z4ZreDz6w7M+PjFF4kUS95X9u
+ jsrn/yDVKp3lukYoelj8mecvvwAqqAu/glCWnG1DdAi86Fxzues/MGsAJJrRO4tJ+VYz
+ 5TIg==
+X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVORvLd4SsytBXQr4OGUPX+1NmWArOmLo="
+X-RZG-CLASS-ID: mo00
+Received: from localhost.localdomain by smtp.strato.de (RZmta 45.0.2 DYNA|AUTH)
+ with ESMTPSA id 304194vAPH5b2r6
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
+ 521 ECDH bits, eq. 15360 bits RSA))
+ (Client did not present a certificate);
+ Mon, 25 Nov 2019 18:05:37 +0100 (CET)
+From: Stephan Gerhold <stephan@gerhold.net>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: [PATCH 1/4] ARM: dts: ux500: Disable I2C/SPI buses by default
+Date: Mon, 25 Nov 2019 18:04:25 +0100
+Message-Id: <20191125170428.76069-1-stephan@gerhold.net>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e8f362c1-c1b0-46f4-8c5b-08d771c6fad4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Nov 2019 16:46:12.0437 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: UmsOLI4PCvRT+aQaFWBgzgpPvBpK92km2+FSqFoCcH8XSxSOOJ9xexaFG0iuxFyVTWkiYzZtdiNEiI4b7HYvMw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB7183
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_084617_816748_7B0DF910 
-X-CRM114-Status: GOOD (  11.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191125_090546_115171_161D9CAE 
+X-CRM114-Status: GOOD (  12.67  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.88 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5300:0:0:5 listed in]
+ [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -122,88 +80,226 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Saravana Kannan <saravanak@google.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>,
- Georgi Djakov <georgi.djakov@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Stephan Gerhold <stephan@gerhold.net>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22.11.2019 01:16, Matthias Kaehlcke wrote:
-> Hi Leonard,
-> 
-> this seems to work ok as long as there are no other ('external') PM QoS
-> requests, however the aggregate max_freq can be incorrect when there are
-> multiple requests.
-> 
-> I intended to test with devfreq_cooling using PM QoS, but this didn't work
-> out due to limitations on my development platform. Instead I added another
-> set of requests and sysfs attributes to devfreq (see patch below).
+At the moment, all 5 I2C and 6 SPI buses are probed and exposed
+to user-space by default - even if they are not muxed to any pins
+on the board. This means that user-space sees an I2C/SPI bus that
+cannot be actually used properly.
 
-Thanks a lot for looking at this.
+In some cases this was used to put the corresponding pins into
+a low power sleep mode - but even then the pins first need to be
+configured by the board-specific device tree part.
 
-> With this we get:
-> 
-> cat available_frequencies
->    180000000 267000000 355000000 430000000 565000000 650000000 800000000
-> 
-> # ok
-> cat max_freq
->    800000000
-> 
-> # wtf???
-> echo 650000000 > max_freq
-> cat max_freq
->    800000000
-> 
-> # this looks better
-> echo 800000000 > test_max_freq
-> cat max_freq
->    650000000
-> 
-> 
-> The problem appears to be:
-> 
-> #define PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE      (-1)
-> 
-> in include/linux/pm_qos.h (added by "PM / QoS: Restore
-> DEV_PM_QOS_MIN/MAX_FREQUENCY")
-> 
-> The aggregate value returned by
-> dev_pm_qos_read_value(dev, DEV_PM_QOS_MAX_FREQUENCY) is the
-> smallest of all requests, which is PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE
-> unless all requests have set an actual constraint.
-> 
-> You probably want to change the constant to resolve to S32_MAX or some
-> other big value.
+Avoid exposing unconfigured devices to user-space by disabling
+the I2C/SPI buses by default. Enable them in the board device trees
+when needed.
 
-Since dev_pm_qos is now layered on top of freq_qos that should be:
+Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
+---
+ arch/arm/boot/dts/ste-dbx5x0.dtsi     | 22 ++++++++++++++++++++++
+ arch/arm/boot/dts/ste-href.dtsi       |  4 ++++
+ arch/arm/boot/dts/ste-hrefprev60.dtsi |  1 +
+ arch/arm/boot/dts/ste-snowball.dts    |  5 +++++
+ 4 files changed, 32 insertions(+)
 
-#define PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE FREQ_QOS_MAX_DEFAULT_VALUE
-
-I wrote a synthetic test and it seems your issue can be reproduced using 
-kunit on top of raw freq_qos. Looking a bit deeper into pm_qos 
-implementation it seems that there isn't much special treatment for 
-pm_qos_constraints. A reasonable solution would be:
-
-#define FREQ_QOS_MAX_DEFAULT_VALUE	S32_MAX
-
-Cpufreq is not affected because it always sets "real" values but I 
-believe that creating requests that should be ignored is a valid approach.
-
-Update on pm/qos here: https://patchwork.kernel.org/cover/11260627/
-
---
-Regards,
-Leonard
+diff --git a/arch/arm/boot/dts/ste-dbx5x0.dtsi b/arch/arm/boot/dts/ste-dbx5x0.dtsi
+index a53657b83288..899368aa6ff7 100644
+--- a/arch/arm/boot/dts/ste-dbx5x0.dtsi
++++ b/arch/arm/boot/dts/ste-dbx5x0.dtsi
+@@ -646,6 +646,8 @@
+ 			clocks = <&prcc_kclk 3 3>, <&prcc_pclk 3 3>;
+ 			clock-names = "i2cclk", "apb_pclk";
+ 			power-domains = <&pm_domains DOMAIN_VAPE>;
++
++			status = "disabled";
+ 		};
+ 
+ 		i2c@80122000 {
+@@ -662,6 +664,8 @@
+ 			clocks = <&prcc_kclk 1 2>, <&prcc_pclk 1 2>;
+ 			clock-names = "i2cclk", "apb_pclk";
+ 			power-domains = <&pm_domains DOMAIN_VAPE>;
++
++			status = "disabled";
+ 		};
+ 
+ 		i2c@80128000 {
+@@ -678,6 +682,8 @@
+ 			clocks = <&prcc_kclk 1 6>, <&prcc_pclk 1 6>;
+ 			clock-names = "i2cclk", "apb_pclk";
+ 			power-domains = <&pm_domains DOMAIN_VAPE>;
++
++			status = "disabled";
+ 		};
+ 
+ 		i2c@80110000 {
+@@ -694,6 +700,8 @@
+ 			clocks = <&prcc_kclk 2 0>, <&prcc_pclk 2 0>;
+ 			clock-names = "i2cclk", "apb_pclk";
+ 			power-domains = <&pm_domains DOMAIN_VAPE>;
++
++			status = "disabled";
+ 		};
+ 
+ 		i2c@8012a000 {
+@@ -710,6 +718,8 @@
+ 			clocks = <&prcc_kclk 1 9>, <&prcc_pclk 1 10>;
+ 			clock-names = "i2cclk", "apb_pclk";
+ 			power-domains = <&pm_domains DOMAIN_VAPE>;
++
++			status = "disabled";
+ 		};
+ 
+ 		spi@80002000 {
+@@ -724,6 +734,8 @@
+ 			       <&dma 8 0 0x0>; /* Logical - MemToDev */
+ 			dma-names = "rx", "tx";
+ 			power-domains = <&pm_domains DOMAIN_VAPE>;
++
++			status = "disabled";
+ 		};
+ 
+ 		spi@80003000 {
+@@ -738,6 +750,8 @@
+ 			       <&dma 9 0 0x0>; /* Logical - MemToDev */
+ 			dma-names = "rx", "tx";
+ 			power-domains = <&pm_domains DOMAIN_VAPE>;
++
++			status = "disabled";
+ 		};
+ 
+ 		spi@8011a000 {
+@@ -753,6 +767,8 @@
+ 			       <&dma 0 0 0x0>; /* Logical - MemToDev */
+ 			dma-names = "rx", "tx";
+ 			power-domains = <&pm_domains DOMAIN_VAPE>;
++
++			status = "disabled";
+ 		};
+ 
+ 		spi@80112000 {
+@@ -768,6 +784,8 @@
+ 			       <&dma 35 0 0x0>; /* Logical - MemToDev */
+ 			dma-names = "rx", "tx";
+ 			power-domains = <&pm_domains DOMAIN_VAPE>;
++
++			status = "disabled";
+ 		};
+ 
+ 		spi@80111000 {
+@@ -783,6 +801,8 @@
+ 			       <&dma 33 0 0x0>; /* Logical - MemToDev */
+ 			dma-names = "rx", "tx";
+ 			power-domains = <&pm_domains DOMAIN_VAPE>;
++
++			status = "disabled";
+ 		};
+ 
+ 		spi@80129000 {
+@@ -798,6 +818,8 @@
+ 			       <&dma 40 0 0x0>; /* Logical - MemToDev */
+ 			dma-names = "rx", "tx";
+ 			power-domains = <&pm_domains DOMAIN_VAPE>;
++
++			status = "disabled";
+ 		};
+ 
+ 		ux500_serial0: uart@80120000 {
+diff --git a/arch/arm/boot/dts/ste-href.dtsi b/arch/arm/boot/dts/ste-href.dtsi
+index 7613a40421d5..5eafd5d8a8cd 100644
+--- a/arch/arm/boot/dts/ste-href.dtsi
++++ b/arch/arm/boot/dts/ste-href.dtsi
+@@ -39,18 +39,21 @@
+ 			pinctrl-names = "default","sleep";
+ 			pinctrl-0 = <&i2c0_a_1_default>;
+ 			pinctrl-1 = <&i2c0_a_1_sleep>;
++			status = "okay";
+ 		};
+ 
+ 		i2c@80122000 {
+ 			pinctrl-names = "default","sleep";
+ 			pinctrl-0 = <&i2c1_b_2_default>;
+ 			pinctrl-1 = <&i2c1_b_2_sleep>;
++			status = "okay";
+ 		};
+ 
+ 		i2c@80128000 {
+ 			pinctrl-names = "default","sleep";
+ 			pinctrl-0 = <&i2c2_b_2_default>;
+ 			pinctrl-1 = <&i2c2_b_2_sleep>;
++			status = "okay";
+ 			lp5521@33 {
+ 				compatible = "national,lp5521";
+ 				reg = <0x33>;
+@@ -98,6 +101,7 @@
+ 			pinctrl-names = "default","sleep";
+ 			pinctrl-0 = <&i2c3_c_2_default>;
+ 			pinctrl-1 = <&i2c3_c_2_sleep>;
++			status = "okay";
+ 		};
+ 
+ 		/* ST6G3244ME level translator for 1.8/2.9 V */
+diff --git a/arch/arm/boot/dts/ste-hrefprev60.dtsi b/arch/arm/boot/dts/ste-hrefprev60.dtsi
+index a036defdf164..937f942f0961 100644
+--- a/arch/arm/boot/dts/ste-hrefprev60.dtsi
++++ b/arch/arm/boot/dts/ste-hrefprev60.dtsi
+@@ -58,6 +58,7 @@
+ 			 */
+ 			pinctrl-names = "default";
+ 			pinctrl-0 = <&ssp0_hrefprev60_mode>;
++			status = "okay";
+ 		};
+ 
+ 		// External Micro SD slot
+diff --git a/arch/arm/boot/dts/ste-snowball.dts b/arch/arm/boot/dts/ste-snowball.dts
+index 8b80dcdf6e5b..ce136412b6da 100644
+--- a/arch/arm/boot/dts/ste-snowball.dts
++++ b/arch/arm/boot/dts/ste-snowball.dts
+@@ -307,18 +307,21 @@
+ 			pinctrl-names = "default","sleep";
+ 			pinctrl-0 = <&i2c0_a_1_default>;
+ 			pinctrl-1 = <&i2c0_a_1_sleep>;
++			status = "okay";
+ 		};
+ 
+ 		i2c@80122000 {
+ 			pinctrl-names = "default","sleep";
+ 			pinctrl-0 = <&i2c1_b_2_default>;
+ 			pinctrl-1 = <&i2c1_b_2_sleep>;
++			status = "okay";
+ 		};
+ 
+ 		i2c@80128000 {
+ 			pinctrl-names = "default","sleep";
+ 			pinctrl-0 = <&i2c2_b_2_default>;
+ 			pinctrl-1 = <&i2c2_b_2_sleep>;
++			status = "okay";
+ 			lsm303dlh@18 {
+ 				/* Accelerometer */
+ 				compatible = "st,lsm303dlh-accel";
+@@ -369,11 +372,13 @@
+ 			pinctrl-names = "default","sleep";
+ 			pinctrl-0 = <&i2c3_c_2_default>;
+ 			pinctrl-1 = <&i2c3_c_2_sleep>;
++			status = "okay";
+ 		};
+ 
+ 		spi@80002000 {
+ 			pinctrl-names = "default";
+ 			pinctrl-0 = <&ssp0_snowball_mode>;
++			status = "okay";
+ 		};
+ 
+ 		prcmu@80157000 {
+-- 
+2.24.0
 
 
 _______________________________________________
