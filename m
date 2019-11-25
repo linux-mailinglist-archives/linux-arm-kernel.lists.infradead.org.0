@@ -2,86 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48511108B0E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 10:39:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E3F1108B36
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 10:52:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mBj7GDCTb3LvToMVUvRAQErKP6M2hufgO6vRD88aAgQ=; b=KQn4qm7zfjqBS2
-	OvZL0qEw6XnCG9QwhAjDABFam9jFuCo4XI6U8+xLmzsXbJQGcaVOvGIU9aDDXLxvJ81VAqCkDKXhv
-	J6Vpv0p+VPFdS8RNe1aRj7t1U2WaVfNXdr4SNgl2ozeEcmVtizFBtZI+3o3FCAGI7x1jfJFwc3Xs4
-	mIjUO7bdl3XkDsmU0pf/ZWaZHwg4nY9cK+D/Vp1jy41YVh++vN8GdFR7y6XoRxVYJkIPZqUfT8ujh
-	P/aDsfZaOgZofpZkFDmCXuM8oS5BCwveUhnnLSlITVBZSGIM+Av9ZPaZWWq6d00/zVNSpFDon39ze
-	4rlP55nponaK1anmlvyA==;
+	List-Owner; bh=vGKHcMvm+a3dkKRG/5rOLSkrhV4QFNiLfuI8A0f8oI8=; b=MSAP8gzGcbhPTa
+	bFm+0ggfv+7HSPqQhVBPc749APUFNOsA/7h5eRmPUL7wtgijnv5LlyEIw5fazfRunzPXG3K2aS6qK
+	YJS84La68OIw0gPnbbU/EN/sOe9Gd1lpZyusKxBWNfjGedFGaHXzDxmFY6DHL5djsTflYtHR23HE5
+	JKhgE6Yr/f/D7bX8+TE1j0oDA0i1ZRrzChFdQOunQeg7wYc9nP/4KrYwWXhq9BG+duYa5NHoVnQS4
+	BfYmzGUc9oEFQGW2G5dEMe3NgWdICU5ZyFmXONZn0bGXjHTVwrkQIJW+qlS0ZNEgvkXt8tBCJQUOA
+	N5HL04fKjHwCdy5foX7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZAqS-0006GL-W8; Mon, 25 Nov 2019 09:39:49 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iZB2S-0002UW-H6; Mon, 25 Nov 2019 09:52:12 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZAqH-0006Fs-2w
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 09:39:38 +0000
-Received: by mail-wr1-x443.google.com with SMTP id i12so17136216wro.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 Nov 2019 01:39:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jIFKbuyY6b2Zduyd0YX7SPZyNzHw3aXFXKMgIsyj8wA=;
- b=xFD7Xqm8Xmtd4JkAIkNl8asSrs2G3WNc71vz5gc6Zx0UWesrii6nGMEWRhgRpJth1q
- XYHSjAT4cVDmyZSJeNdhriqPC5ujieW+rsSuna/HytT3f7hS39nG15hjqML83c7A9CTm
- g05drqcZZeGJssTsqbaeefctLv14DnvUD8t/jZsTewXQu/xKMMtD2q1C5Z4mXoP2XyxL
- qkKhfrXOrtp8f75mLM+mq/h39m5t+N8o+QSNVjfBIXan5qfNIJOjsPuZszA+scBdx+tB
- S9qQCK3xbur1zvImiKhBA8FeFSEJvfFIhSGbatDFQGWF3ZF4vVBplP8at/ebeCdeCuIY
- vBmA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jIFKbuyY6b2Zduyd0YX7SPZyNzHw3aXFXKMgIsyj8wA=;
- b=FvH+/90U9zhM3eraDbCPWAwDi90tniXo9A4TdyYTy9RLA+nkeDpsICm7ScfgHWvcu/
- NlCmqJE0C6udIqfPjFCW+s2vqYmVoPjs9KTrk/BJ/noMKMARMoCTqsbttb8IYaD0zJsc
- KbQ2ybjMcnWrwgnIb1V2shJHPs70/05SClcTd/e3uU0qCmJTcqi+BXd6yxUlk8CfptjQ
- 0wr/ObhLmvjObyJw+5NR01FTrYGFe/xRgkfk/wbWYN3+emD/jzjCgTYYTTf6TSyvyEe7
- 80nXt0J+F1vKw3jlsuIKjsRJwEOizp8AFpPH3dzdJPDrZYVS52zBxZDB1o4DEwfLRkAV
- thvw==
-X-Gm-Message-State: APjAAAV3nU8YH6XAE+HJIZlwTvjmJi1gnn4LUwZNTzQ7Ai+cOaWDLQzG
- 4niPpgROs92GwaAa2DIDgwcovHb7m2Jxi8pnsRtDhQ==
-X-Google-Smtp-Source: APXvYqx/PqtOowQhWzhHeSp7l2t+nrH+g4sH9e3yGCBTwRvHtRWwqHrNhuElXys3H3FHWmxeTeR1+I6iyVbbs5O1vpc=
-X-Received: by 2002:adf:b1cb:: with SMTP id r11mr31430628wra.246.1574674773379; 
- Mon, 25 Nov 2019 01:39:33 -0800 (PST)
+ id 1iZB2J-0002Tu-V4
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 09:52:05 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1iZB1g-0002hs-6C; Mon, 25 Nov 2019 10:51:24 +0100
+Message-ID: <e138b69efad563822da1db8e160d43458c21eae1.camel@pengutronix.de>
+Subject: Re: [PATCH v5 2/2] watchdog: mtk_wdt: mt8183: Add reset controller
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Guenter Roeck <linux@roeck-us.net>, Jiaxin Yu <jiaxin.yu@mediatek.com>
+Date: Mon, 25 Nov 2019 10:51:20 +0100
+In-Reply-To: <20191125061627.GA7313@roeck-us.net>
+References: <20191125061627.GA7313@roeck-us.net>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
- <1574166746-27197-8-git-send-email-amit.kachhap@arm.com>
- <432f8082-c34f-8036-8c5e-fd1fcec9aa17@linaro.org>
- <aa92b083-ddc6-9724-6655-3abc79e78ca9@arm.com>
-In-Reply-To: <aa92b083-ddc6-9724-6655-3abc79e78ca9@arm.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Mon, 25 Nov 2019 10:39:35 +0100
-Message-ID: <CAKv+Gu_d7RTZZU44NGEqQOgHx7PbLB4dc2qsJvdEBBS0zje1gw@mail.gmail.com>
-Subject: Re: [PATCH v2 07/14] arm64: initialize and switch ptrauth kernel keys
-To: Amit Kachhap <amit.kachhap@arm.com>
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_013937_253732_C6FBDE17 
-X-CRM114-Status: GOOD (  13.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191125_015203_997995_5D692A69 
+X-CRM114-Status: GOOD (  22.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,62 +63,214 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- Will Deacon <will.deacon@arm.com>, James Morse <james.morse@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, alsa-devel@alsa-project.org, yong.liang@mediatek.com,
+ lgirdwood@gmail.com, robh+dt@kernel.org, perex@perex.cz, tzungbi@google.com,
+ broonie@kernel.org, linux-mediatek@lists.infradead.org, eason.yen@mediatek.com,
+ yingjoe.chen@mediatek.com, wim@linux-watchdog.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 25 Nov 2019 at 10:34, Amit Kachhap <amit.kachhap@arm.com> wrote:
->
->
->
-> On 11/23/19 12:49 AM, Richard Henderson wrote:
-> > On 11/19/19 12:32 PM, Amit Daniel Kachhap wrote:
-> >> --- a/arch/arm64/include/asm/asm_pointer_auth.h
-> >> +++ b/arch/arm64/include/asm/asm_pointer_auth.h
-> >> @@ -35,11 +35,25 @@ alternative_if ARM64_HAS_GENERIC_AUTH
-> >>   alternative_else_nop_endif
-> >>      .endm
-> >>
-> >> +    .macro ptrauth_keys_install_kernel tsk, tmp1, tmp2, tmp3
-> >> +    mov     \tmp1, #THREAD_KEYS_KERNEL
-> >> +    add     \tmp1, \tsk, \tmp1
-> >> +alternative_if ARM64_HAS_ADDRESS_AUTH
-> >> +    ldp     \tmp2, \tmp3, [\tmp1, #PTRAUTH_KERNEL_KEY_APIA]
-> >> +    msr_s   SYS_APIAKEYLO_EL1, \tmp2
-> >> +    msr_s   SYS_APIAKEYHI_EL1, \tmp3
-> >> +    isb
-> >> +alternative_else_nop_endif
-> >> +    .endm
-> >
-> > Any reason you didn't put the first two insns in the alternative?
->
-> Yes these 2 instructions can be moved below. Thanks for the catch.
->
+Hi,
 
-Do you even need them? Isn't it possible to do
+On Sun, 2019-11-24 at 22:16 -0800, Guenter Roeck wrote:
+> On Mon, Nov 25, 2019 at 11:03:50AM +0800, Jiaxin Yu wrote:
+> > From: "yong.liang" <yong.liang@mediatek.com>
+> > 
+> > Add reset controller API in watchdog driver.
+> > Besides watchdog, MTK toprgu module also provide sub-system (eg, audio,
+> > camera, codec and connectivity) software reset functionality.
+> > 
+> > Signed-off-by: yong.liang <yong.liang@mediatek.com>
+> > Signed-off-by: jiaxin.yu <jiaxin.yu@mediatek.com>
+> > Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
+> > ---
+> >  drivers/watchdog/Kconfig   |   1 +
+> >  drivers/watchdog/mtk_wdt.c | 111 ++++++++++++++++++++++++++++++++++++-
+> >  2 files changed, 111 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
+> > index 2e07caab9db2..629249fe5305 100644
+> > --- a/drivers/watchdog/Kconfig
+> > +++ b/drivers/watchdog/Kconfig
+> > @@ -717,6 +717,7 @@ config MEDIATEK_WATCHDOG
+> >  	tristate "Mediatek SoCs watchdog support"
+> >  	depends on ARCH_MEDIATEK || COMPILE_TEST
+> >  	select WATCHDOG_CORE
+> > +	select RESET_CONTROLLER
+> >  	help
+> >  	  Say Y here to include support for the watchdog timer
+> >  	  in Mediatek SoCs.
+> > diff --git a/drivers/watchdog/mtk_wdt.c b/drivers/watchdog/mtk_wdt.c
+> > index 9c3d0033260d..d29484c7940a 100644
+> > --- a/drivers/watchdog/mtk_wdt.c
+> > +++ b/drivers/watchdog/mtk_wdt.c
+> > @@ -9,6 +9,9 @@
+> >   * Based on sunxi_wdt.c
+> >   */
+> >  
+> > +#include <dt-bindings/reset-controller/mt2712-resets.h>
+> > +#include <dt-bindings/reset-controller/mt8183-resets.h>
+> > +#include <linux/delay.h>
+> >  #include <linux/err.h>
+> >  #include <linux/init.h>
+> >  #include <linux/io.h>
+> > @@ -16,10 +19,12 @@
+> >  #include <linux/module.h>
+> >  #include <linux/moduleparam.h>
+> >  #include <linux/of.h>
+> > +#include <linux/of_device.h>
+> >  #include <linux/platform_device.h>
+> > +#include <linux/reset-controller.h>
+> > +#include <linux/slab.h>
+> >  #include <linux/types.h>
+> >  #include <linux/watchdog.h>
+> > -#include <linux/delay.h>
+> >  
+> >  #define WDT_MAX_TIMEOUT		31
+> >  #define WDT_MIN_TIMEOUT		1
+> > @@ -44,6 +49,9 @@
+> >  #define WDT_SWRST		0x14
+> >  #define WDT_SWRST_KEY		0x1209
+> >  
+> > +#define WDT_SWSYSRST		0x18U
+> > +#define WDT_SWSYS_RST_KEY	0x88000000
+> > +
+> >  #define DRV_NAME		"mtk-wdt"
+> >  #define DRV_VERSION		"1.0"
+> >  
+> > @@ -53,8 +61,99 @@ static unsigned int timeout;
+> >  struct mtk_wdt_dev {
+> >  	struct watchdog_device wdt_dev;
+> >  	void __iomem *wdt_base;
+> > +	spinlock_t lock; /* protects WDT_SWSYSRST reg */
+> > +	struct reset_controller_dev rcdev;
+> > +};
+> > +
+> > +struct mtk_wdt_data {
+> > +	int sw_rst_num;
+> >  };
+> >  
+> > +static const struct mtk_wdt_data mt2712_data = {
+> > +	.sw_rst_num = MT2712_TOPRGU_SW_RST_NUM,
+> > +};
+> > +
+> > +static const struct mtk_wdt_data mt8183_data = {
+> > +	.sw_rst_num = MT8183_TOPRGU_SW_RST_NUM,
+> > +};
+> 
+> The number of resets can be set in .data directly; there is no need
+> for the structures.
+> 
+> > +
+> > +static int toprgu_reset_assert(struct reset_controller_dev *rcdev,
+> > +			       unsigned long id)
+> > +{
+> > +	unsigned int tmp;
+> > +	unsigned long flags;
+> > +	struct mtk_wdt_dev *data =
+> > +		 container_of(rcdev, struct mtk_wdt_dev, rcdev);
+> > +
+> > +	spin_lock_irqsave(&data->lock, flags);
+> > +
+> > +	tmp = __raw_readl(data->wdt_base + WDT_SWSYSRST);
 
-ldp \tmp1, \tmp2, [\tsk, #(THREAD_KEYS_KERNEL + PTRAUTH_KERNEL_KEY_APIA)]
+I think this should be readl_relaxed() instead. I don't expect this
+driver will ever be used on a big-endian architecture, but mixing
+__raw_readl() and writel() does look dangerous.
 
-? Or is the range for the offset insufficient?
+> > +	tmp |= BIT(id);
+> > +	tmp |= WDT_SWSYS_RST_KEY;
+> > +	writel(tmp, data->wdt_base + WDT_SWSYSRST);
+> > +
+> > +	spin_unlock_irqrestore(&data->lock, flags);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int toprgu_reset_deassert(struct reset_controller_dev *rcdev,
+> > +				 unsigned long id)
+> > +{
+> > +	unsigned int tmp;
+> > +	unsigned long flags;
+> > +	struct mtk_wdt_dev *data =
+> > +		 container_of(rcdev, struct mtk_wdt_dev, rcdev);
+> > +
+> > +	spin_lock_irqsave(&data->lock, flags);
+> > +
+> > +	tmp = __raw_readl(data->wdt_base + WDT_SWSYSRST);
+> > +	tmp &= ~BIT(id);
+> > +	tmp |= WDT_SWSYS_RST_KEY;
+> > +	writel(tmp, data->wdt_base + WDT_SWSYSRST);
+> > +
+> > +	spin_unlock_irqrestore(&data->lock, flags);
+> > +
+> > +	return 0;
+> > +}
+> 
+> There is a lot of duplication in those functions. Only one line
+> is different. I think this is a good example where a helper function
+> with an additional argument indicating set or reset would be helpful.
+> 
+> > +
+> > +static int toprgu_reset(struct reset_controller_dev *rcdev,
+> > +			unsigned long id)
+> > +{
+> > +	int ret;
+> > +
+> > +	ret = toprgu_reset_assert(rcdev, id);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	return toprgu_reset_deassert(rcdev, id);
+> > +}
+> > +
+> > +static const struct reset_control_ops toprgu_reset_ops = {
+> > +	.assert = toprgu_reset_assert,
+> > +	.deassert = toprgu_reset_deassert,
+> > +	.reset = toprgu_reset,
+> > +};
+> > +
+> > +static int toprgu_register_reset_controller(struct platform_device *pdev,
+> > +					    int rst_num)
+> > +{
+> > +	int ret;
+> > +	struct mtk_wdt_dev *mtk_wdt = platform_get_drvdata(pdev);
+> > +
+> > +	spin_lock_init(&mtk_wdt->lock);
+> > +
+> > +	mtk_wdt->rcdev.owner = THIS_MODULE;
+> > +	mtk_wdt->rcdev.nr_resets = rst_num;
+> > +	mtk_wdt->rcdev.ops = &toprgu_reset_ops;
+> > +	mtk_wdt->rcdev.of_node = pdev->dev.of_node;
+> > +	ret = reset_controller_register(&mtk_wdt->rcdev);
 
+I see this driver uses devm_kzalloc() below. Should this be
+devm_reset_controller_register()?
 
-> >
-> > You could have re-used tmp1 instead of requiring tmp3, but at no point are we
-> > lacking tmp registers so it doesn't matter.
-> >
+> > +	if (ret != 0)
+> > +		dev_err(&pdev->dev,
+> > +			"couldn't register wdt reset controller: %d\n", ret);
+> > +	return ret;
+> > +}
+> > +
+> >  static int mtk_wdt_restart(struct watchdog_device *wdt_dev,
+> >  			   unsigned long action, void *data)
+> >  {
+> > @@ -155,6 +254,7 @@ static int mtk_wdt_probe(struct platform_device *pdev)
+> >  {
+> >  	struct device *dev = &pdev->dev;
+> >  	struct mtk_wdt_dev *mtk_wdt;
+> > +	struct mtk_wdt_data *wdt_data;
+> >  	int err;
+> >  
+> >  	mtk_wdt = devm_kzalloc(dev, sizeof(*mtk_wdt), GFP_KERNEL);
 
-I think we should fix it nonetheless.
+regards
+Philipp
+
 
 _______________________________________________
 linux-arm-kernel mailing list
