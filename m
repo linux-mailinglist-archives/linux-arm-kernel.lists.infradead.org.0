@@ -2,67 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D36B6108D78
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 13:02:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7D83108DA5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 13:13:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SBS6SKdayDyMwUOA64zQ+yjcE4aeyi5ge3Q5ieL6Dnc=; b=roTn9szcC1BZ4Cn8/90p1zubi
-	K0SWFI+KtH3kj45AAxyIUTJHDdFZXvlwuMyCmkXJtO0C9AwEpJ8A3NiTFSq3S4BNsvunEulaj5xNP
-	n6biTkcpf/2dAh/GLLLmZBG57EEzwJ5HTPvmp+blqhQsLJc6j5zBDY3B2hPwnE+S1uRGo/bXeUKCj
-	/m7jE1ZlUfUmh908leUKVDVI44Yt04BHOJpwyMi6/LOUfar43SIPL92dekNEYvrWN4h7caORmkaxQ
-	s66fNLu6nljdN6qxQVLK3RxIdAyp9tCWDJg2tcvfgoI4Y2Zjl7MKsIGslL4JXW6d+905emNs2h9ue
-	MZDSnNbbg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WxYuB7craVzMtutQQV5605XNaPdgjdX+65CEjEyjm7Y=; b=K4mqsL5ZmP60zB
+	cD+NoJgUr4ql3XlPEGHUdiWbRhTFd/lLTSRRKPKSYU50T/6ahIcKTiUG0IFysh3FZtIPKBbqyo1Py
+	jHKduArc72GgdduUdBCAA+rsittX/kxvMKU9eiz57eiPTvST4PGbhkqHWVpvBMdUKMHRGfyzDEiIL
+	9uwrLAm//HZ43cNGCSETmLyzrfdHulyanAEkddCmVlFcHcyr110j4U5twP57UIrFvwWMSnI55Yw/6
+	BN0oTdwbFue7c5aL3ul9S2i5GeOyN6+mw3wq9uFs0Vdr8YD1idDzsVY0fkYpyhjpUo8SjCwJWZieJ
+	Qn2UPzGfsfieWHGzV6jA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZD4C-0008AA-CG; Mon, 25 Nov 2019 12:02:08 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1iZDEt-0003Vo-DO; Mon, 25 Nov 2019 12:13:11 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZD3r-0007zG-9k; Mon, 25 Nov 2019 12:01:49 +0000
-Received: from [10.28.39.99] (10.28.39.99) by mail-sz.amlogic.com (10.28.11.5)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Mon, 25 Nov
- 2019 20:01:56 +0800
-Subject: Re: [PATCH v2 3/3] clk: meson: a1: add support for Amlogic A1 clock
- driver
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-References: <1571382865-41978-1-git-send-email-jian.hu@amlogic.com>
- <1571382865-41978-4-git-send-email-jian.hu@amlogic.com>
- <1jsgnmba1a.fsf@starbuckisacylon.baylibre.com>
- <49b33e94-910b-3fd9-4da1-050742d07e93@amlogic.com>
- <1jblts3v7e.fsf@starbuckisacylon.baylibre.com>
- <f02b6fb2-5b98-0930-6d47-a3e65840fb82@amlogic.com>
- <1jh839f2ue.fsf@starbuckisacylon.baylibre.com>
- <20d04452-fc63-9e9e-220f-146b493a860f@amlogic.com>
- <1695e9b0-1730-eef6-491d-fe90ac897ee9@amlogic.com>
- <1jtv6yftmm.fsf@starbuckisacylon.baylibre.com>
- <9e652ed1-384e-f630-f2a4-0aa4486df577@amlogic.com>
- <1j7e3oqn36.fsf@starbuckisacylon.baylibre.com>
-From: Jian Hu <jian.hu@amlogic.com>
-Message-ID: <9ec317e8-136e-1ab4-4e9b-21210e7f3e05@amlogic.com>
-Date: Mon, 25 Nov 2019 20:01:56 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1iZDEf-0003Un-C9
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 12:12:59 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xAPC7NV4010189; Mon, 25 Nov 2019 13:12:47 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=B96CApp49j4YYM/RFvkEEuoU4iXI/Y4YuviO4WS8EUY=;
+ b=mt9ZR1H/+mFOsjxEYRHVNZ5tNAfE7e2lvYXjjdMo86Uym+fxIlIDV72W2ib0ylr3+c9+
+ +RbbW8Ws/G5d1/JONKnJPD0urh0K/0/Z6Wzqm3ghA/CcnqcBfJqtg09wVrYL1E/9fZez
+ Z5FyBpBeay21PvKV2qJuT6kU8hI7GimW/0xL8trLou2AlFWTd5JUhlHrIHT/UUIQCNyN
+ a4aW3HBpe+nPDvMRWfbxm1+unf3eKuSJhYsXCylo9vw28+UHR/bWJwmVbmt2uO/q4AWs
+ V/mJJHLxhZrr3Ln/0ApdpPXJnWqc4jNw/q494oHFn7Fi5oXwC7zxl8ATUzaRoYAsOBRv mw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2weudw107m-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 25 Nov 2019 13:12:47 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3941210002A;
+ Mon, 25 Nov 2019 13:12:47 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 2AE512BE238;
+ Mon, 25 Nov 2019 13:12:47 +0100 (CET)
+Received: from localhost (10.75.127.49) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 25 Nov 2019 13:12:46
+ +0100
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <alexandre.torgue@st.com>, <robh+dt@kernel.org>, <mark.rutland@arm.com>
+Subject: [PATCH] ARM: dts: stm32: remove "@" from stm32f7 pinmux groups
+Date: Mon, 25 Nov 2019 13:12:43 +0100
+Message-ID: <20191125121244.19591-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-In-Reply-To: <1j7e3oqn36.fsf@starbuckisacylon.baylibre.com>
-Content-Language: en-US
-X-Originating-IP: [10.28.39.99]
-X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
- (10.28.11.5)
+X-Originating-IP: [10.75.127.49]
+X-ClientProxiedBy: SFHDAG6NODE1.st.com (10.75.127.16) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-25_03:2019-11-21,2019-11-25 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_040147_677016_21DBB993 
-X-CRM114-Status: GOOD (  18.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191125_041257_889541_2CDCFCEE 
+X-CRM114-Status: GOOD (  12.35  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,89 +90,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, devicetree@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Replace all "@" by "_" in pinmux groups for stm32f7 family.
+This avoid errors when using yaml to check the bindings.
 
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+---
+ arch/arm/boot/dts/stm32f7-pinctrl.dtsi | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
-On 2019/11/25 18:14, Jerome Brunet wrote:
-> 
-> On Thu 21 Nov 2019 at 04:21, Jian Hu <jian.hu@amlogic.com> wrote:
-> 
->> Hi, Jerome
->>
->> On 2019/11/20 23:35, Jerome Brunet wrote:
->>>
->>> On Wed 20 Nov 2019 at 10:28, Jian Hu <jian.hu@amlogic.com> wrote:
->>>
->>>> Hi, jerome
->>>>
->>>> Is there any problem about fixed_pll_dco's parent_data?
->>>>
->>>> Now both name and fw_name are described in parent_data.
->>>
->>> Yes, there is a problem.  This approach is incorrect, as I've tried to
->>> explain a couple times already. Let me try to re-summarize why this
->>> approach is incorrect.
->>>
->>> Both fw_name and name should be provided when it is possible that
->>> the DT does not describe the input clock. IOW, it is only for controllers
->>> which relied on the global name so far and are now starting to describe
->>> the clock input in DT
->>>
->>> This is not your case.
->>> Your controller is new and DT will have the correct
->>> info
->>>
->>> You are trying work around an ordering issue by providing both fw_name
->>> and name. This is not correct and I'll continue to nack it.
->>>
->>> If the orphan clock is not reparented as you would expect, I suggest you
->>> try to look a bit further at how the reparenting of orphans is done in
->>> CCF and why it does not match your expectation.
->>>
->> I have debugged the handle for orphan clock in CCF, Maybe you are missing
->> the last email.
-> 
-> Nope, got it the first time
-> 
->> Even though the clock index exit, it will get failed for the orphan clock's
->> parent clock due to it has not beed added to the provider.
-> 
-> If the provider is not registered yet, of course any query to it won't
-> work. This why I have suggested to this debug *further* :
-> 
-> * Is the orphan reparenting done when a new provider is registered ?
-> * If not, should it be done ? is this your problem ?
-> 
-Yes, the orphan reparenting is done when the new provider is registered.
+diff --git a/arch/arm/boot/dts/stm32f7-pinctrl.dtsi b/arch/arm/boot/dts/stm32f7-pinctrl.dtsi
+index 9314128df185..5271df1017cb 100644
+--- a/arch/arm/boot/dts/stm32f7-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32f7-pinctrl.dtsi
+@@ -127,7 +127,7 @@
+ 				st,bank-name = "GPIOK";
+ 			};
+ 
+-			cec_pins_a: cec@0 {
++			cec_pins_a: cec_0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('A', 15, AF4)>; /* HDMI CEC */
+ 					slew-rate = <0>;
+@@ -136,7 +136,7 @@
+ 				};
+ 			};
+ 
+-			usart1_pins_a: usart1@0 {
++			usart1_pins_a: usart1_0 {
+ 				pins1 {
+ 					pinmux = <STM32_PINMUX('A', 9, AF7)>; /* USART1_TX */
+ 					bias-disable;
+@@ -149,7 +149,7 @@
+ 				};
+ 			};
+ 
+-			usart1_pins_b: usart1@1 {
++			usart1_pins_b: usart1_1 {
+ 				pins1 {
+ 					pinmux = <STM32_PINMUX('A', 9, AF7)>; /* USART1_TX */
+ 					bias-disable;
+@@ -162,7 +162,7 @@
+ 				};
+ 			};
+ 
+-			i2c1_pins_b: i2c1@0 {
++			i2c1_pins_b: i2c1_0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('B', 9, AF4)>, /* I2C1 SDA */
+ 						 <STM32_PINMUX('B', 8, AF4)>; /* I2C1 SCL */
+@@ -172,7 +172,7 @@
+ 				};
+ 			};
+ 
+-			usbotg_hs_pins_a: usbotg-hs@0 {
++			usbotg_hs_pins_a: usbotg-hs_0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('H', 4, AF10)>, /* OTG_HS_ULPI_NXT */
+ 						 <STM32_PINMUX('I', 11, AF10)>, /* OTG_HS_ULPI_DIR */
+@@ -192,7 +192,7 @@
+ 				};
+ 			};
+ 
+-			usbotg_hs_pins_b: usbotg-hs@1 {
++			usbotg_hs_pins_b: usbotg-hs_1 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('H', 4, AF10)>, /* OTG_HS_ULPI_NXT */
+ 						 <STM32_PINMUX('C', 2, AF10)>, /* OTG_HS_ULPI_DIR */
+@@ -212,7 +212,7 @@
+ 				};
+ 			};
+ 
+-			usbotg_fs_pins_a: usbotg-fs@0 {
++			usbotg_fs_pins_a: usbotg-fs_0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('A', 10, AF10)>, /* OTG_FS_ID */
+ 						 <STM32_PINMUX('A', 11, AF10)>, /* OTG_FS_DM */
+@@ -223,7 +223,7 @@
+ 				};
+ 			};
+ 
+-			sdio_pins_a: sdio_pins_a@0 {
++			sdio_pins_a: sdio_pins_a_0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('C', 8, AF12)>, /* SDMMC1 D0 */
+ 						 <STM32_PINMUX('C', 9, AF12)>, /* SDMMC1 D1 */
+@@ -236,7 +236,7 @@
+ 				};
+ 			};
+ 
+-			sdio_pins_od_a: sdio_pins_od_a@0 {
++			sdio_pins_od_a: sdio_pins_od_a_0 {
+ 				pins1 {
+ 					pinmux = <STM32_PINMUX('C', 8, AF12)>, /* SDMMC1 D0 */
+ 						 <STM32_PINMUX('C', 9, AF12)>, /* SDMMC1 D1 */
+@@ -254,7 +254,7 @@
+ 				};
+ 			};
+ 
+-			sdio_pins_b: sdio_pins_b@0 {
++			sdio_pins_b: sdio_pins_b_0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('G', 9, AF11)>, /* SDMMC2 D0 */
+ 						 <STM32_PINMUX('G', 10, AF11)>, /* SDMMC2 D1 */
+@@ -267,7 +267,7 @@
+ 				};
+ 			};
+ 
+-			sdio_pins_od_b: sdio_pins_od_b@0 {
++			sdio_pins_od_b: sdio_pins_od_b_0 {
+ 				pins1 {
+ 					pinmux = <STM32_PINMUX('G', 9, AF11)>, /* SDMMC2 D0 */
+ 						 <STM32_PINMUX('G', 10, AF11)>, /* SDMMC2 D1 */
+-- 
+2.15.0
 
-Reparenting the orphan will be done when each clock is registered by 
-devm_clk_hw_register. And at this time the provider has not been 
-registered. After all clocks are registered by devm_clk_hw_register, the
-provider will be registered by devm_of_clk_add_hw_provider.
-
-Reparenting the orphan will fail when fw_name is added alone, the couse 
-is that devm_clk_hw_register is always running ahead of 
-devm_of_clk_add_hw_provider.
-
-That is why it will failed to get parent for the orphan clock.
-
-
-
-> 
-> .
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
