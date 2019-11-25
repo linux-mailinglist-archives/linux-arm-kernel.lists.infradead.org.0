@@ -2,59 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 303D110864B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 02:26:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4D4710864C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 02:26:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ck0VdaeAWwpj+Ifa7MbvdWcTq4nl8NxMw5YrZBdoar0=; b=DrLwKqi5RfnTOT
-	cV+GZLwpIKNLTiQ5mY63WUYZWOB0C1RW40+RP5Bd53SK2vH/2QdhXaD2KZV7FtzOAWif+v4N5Osgz
-	7mt3Ad92aN3/NMZFNSN8pdgLeS9Kz0cYekXe2nKnpD+S+pYes6FMiPdGszD4K1nM3hbVynaXp7Wx9
-	kjoZyV53DWyimNQHSQRyNa+ZRERyMmbGS0qACuS+aBrxpj3UecXY56q6O/bRxNNshM0kTl8ERBvMI
-	nLm6ELFs83sUBA4A1iv0Pi3yZAgTaTISH+MGa2ScMWa84Ehyo7IAjbbrQJDdmwS0tfu+IFWZaxXwQ
-	9gqB2PIqd2LV989Gdb9A==;
+	List-Owner; bh=L8+rSjBpQYlHbPc446MQhwL4gA7vRDNtRvEFf3/6AM4=; b=QZpm1+uotEyGw+
+	0SVj0TMlnaXOCgvt3BdVOBCTZI+TJJ0KIiYJxYjk/KWWefFR2eUChHlFkgAwL+YBBmqdataMbrsPP
+	CfVeSm6gOm9vdSpJ2oq04hgQxWha8uJLWpOAloTnxIK34D9FoSuxFs41LGimBIvGJAQqaB6ygCvfW
+	C1gUFHriZaUZy5jfZXrf492SUSFLegmGwyw0dLBqiDRFlBRwtoY8P6MNvZxQMZ7lc7pKDCHGfc7wW
+	jDiB0otBLDcFSD5EQr9hiyLCSsbArvYS6buJFSSlLBWDJNt2Ab0OTQw5c53QMcvIJK1kNrTNqT6kC
+	jOi/xgKkDDylM7JDuf9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZ38f-0007VD-78; Mon, 25 Nov 2019 01:26:05 +0000
+	id 1iZ399-0007lF-KO; Mon, 25 Nov 2019 01:26:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZ38U-0007UR-UW
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 01:25:56 +0000
+ id 1iZ38y-0007kf-9D
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 01:26:25 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F205E2071A;
- Mon, 25 Nov 2019 01:25:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D9C482071A;
+ Mon, 25 Nov 2019 01:26:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574645152;
- bh=IhjN9rh8pV9VLB2CL1pVUO9g/fZd+WAsAxIuOs7fzjs=;
+ s=default; t=1574645184;
+ bh=QvJ2UCxZIyi9D2D4sgklmTYVy5/F6tCTlX3mUMdXStU=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=oTVUM/SjlWs/M/RK5sbtcRCN0o2dMWS2iIOwLg3rpEOvjReonJyCkNKlM1a/vNmfE
- YoVCu+tOqzm+0WPDopMfLKbJ5rtg6Ow/LSTuTWq1pfwuWR8OTohoU2ncby5DRQvLgA
- vRZxo8b37LN38FFhgQlcF7OTPXuCuws79TDM8bmM=
+ b=XBiZu3VM/lSjv2zWuaM73156on41HE0dlMdhUjf+43CnyV3RQ9Nq4hPGl0/hy7mdx
+ SlQLhcazbkyAalIehVzgwjbmzb+0LEb+EnTil46m0E+tHCpUHRx2Da9j6m2PQAMqDl
+ GU+nfGClh6bPkXKLmmXeSGmTsYB2SNZoX7u4Quqw=
 MIME-Version: 1.0
-In-Reply-To: <f25ec4f3793aaf60489226cb21633eb76f847210.1574458460.git.leonard.crestez@nxp.com>
+In-Reply-To: <9d986ef7a3cb379cea59616ad18e96e3245cbaba.1574458460.git.leonard.crestez@nxp.com>
 References: <cover.1574458460.git.leonard.crestez@nxp.com>
- <f25ec4f3793aaf60489226cb21633eb76f847210.1574458460.git.leonard.crestez@nxp.com>
-Subject: Re: [PATCH v7 1/5] clk: imx8m: Set CLK_GET_RATE_NOCACHE on dram clocks
+ <9d986ef7a3cb379cea59616ad18e96e3245cbaba.1574458460.git.leonard.crestez@nxp.com>
+Subject: Re: [PATCH v7 2/5] clk: imx: Mark dram pll on 8mm and 8mn with
+ CLK_GET_RATE_NOCACHE
 From: Stephen Boyd <sboyd@kernel.org>
 To: Chanwoo Choi <cw00.choi@samsung.com>,
  Leonard Crestez <leonard.crestez@nxp.com>, Rob Herring <robh+dt@kernel.org>
 User-Agent: alot/0.8.1
-Date: Sun, 24 Nov 2019 17:25:51 -0800
-Message-Id: <20191125012551.F205E2071A@mail.kernel.org>
+Date: Sun, 24 Nov 2019 17:26:23 -0800
+Message-Id: <20191125012623.D9C482071A@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191124_172555_008819_BD9016B1 
-X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-CacheID: sfid-20191124_172624_338943_7D801442 
+X-CRM114-Status: UNSURE (   9.60  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -64,8 +67,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -84,15 +85,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Leonard Crestez (2019-11-22 13:45:00)
-> These clocks are only modified as part of DRAM frequency switches during
-> which DRAM itself is briefly inaccessible. The switch is performed with
-> a SMC call to by TF-A which runs from a SRAM area; upon returning to
-> linux several clocks bits are modified and we need to update them.
+Quoting Leonard Crestez (2019-11-22 13:45:01)
+> DRAM frequency switches are executed in firmware and can change the
+> configuration of the DRAM PLL outside linux. Mark these CLKs with
+> CLK_GET_RATE_NOCACHE so we always read back the PLL config registers and
+> recalculate rates.
 > 
-> For rate bits an easy solution is to just mark with
-> CLK_GET_RATE_NOCACHE so that new rates are always read back from
-> registers.
+> In current DRAM frequency tables on 8mm/8mn only the maximum frequency
+> uses the PLL so it's always configured in the same way. However reading
+> back the PLL configuration is the correct behavior and allows additional
+> setpoints in the future.
 > 
 > Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 > Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
