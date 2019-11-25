@@ -2,65 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3935C10929B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 18:06:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDE72109291
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 18:05:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WMfYXd/vFTpA4NFBOkkj4L5oQ0RitGHE2OglKnIkZuo=; b=L47fqmbwT/OtYg
-	F8I6A7YhO+t7jNlQ7Bt9EG4pSknDI3+Cz6tb1cc/QZGzXO+9z0lFTxNG6sB47/Cp5gbT1FTFuotjo
-	NAXiy2MZUjeAa2nmx+/AidbrhF2O+Ol4aH4eyCIyS8tdjmzBPD3z1zhC4q1MCtUDMa/cnkESmgyAx
-	ER/GUv/X5/bpdj976tHp+g/HYqERQYTZlbibpSKRkubK6KVQQioFIqSCXcEDqjQk3onN3NYU7LtUY
-	YClyKU42u8lHy9Uz1gMYLpS5XUe8I/fXqeqzaRoLQubV9brRFz1FUuNBIZnWhK2ZA7PhvKQcorKEF
-	eAbQmGs7v5RHFigc9u0g==;
+	List-Owner; bh=w8GLd5avmvNSiNXhQFbySJnSI2I4CDveH1TgKmyB+nc=; b=uylIuodAhMkToV
+	MnbBpubK8lwjDMatGPGE94xuSGLcPg+s9KcAhgKD4Tblx80ofrHo7DbBMEjR46hFUUn7c2LFKTA0Z
+	e0yGJaWzzl2qD/s5U1zYSAFUkLH2cq1aqET22SHc3K2SMmqiznzNYnFkFVvM+pMcf1Wic4jqw6QNo
+	Bb95zOasyFzBDssHRnsroyRUH00SAe2ZZxudKG9o7o/T9T6QKo5KJjpnUh7DD4BSyhQdpNhf3YCi8
+	KxVtvEItpKG9SdA2zLKW3PQBmAUIGPNWqaqqj+Q5p57CGsXJgD12JiiwR3YTCk1PiRXiBLt0V4bAx
+	dV/5wjTB/WXOW93H8ryw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZHoT-0003eq-15; Mon, 25 Nov 2019 17:06:13 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::1])
+	id 1iZHo8-0003XS-9R; Mon, 25 Nov 2019 17:05:52 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZHnz-0003Vp-Iy
+ id 1iZHnz-0003Vt-NU
  for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 17:05:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1574701541;
  s=strato-dkim-0002; d=gerhold.net;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=yN/4dwxR2rLJrfgok1uBLXq52iC/4EfyQceUfthKmpg=;
- b=cOJJp6Baa9iTkW7BrRyu6ScOA+hlao3Y5MN8RNvPuVEK9sUhv8AaLHNCUbRksLyvWI
- ZbpsA1sePl90n4bOt4AZah9CZA6L1CIYvUhXpadGdcmEhQlLPLWu7SU2ZOAK+Bow0bNT
- UieSWCOyW91cECXyqZIxPMO+Ch+F4dlDsK3eBuCDyo6Csqe502NAMeSRkbGlLWbR5GmR
- n3sEvZRl7/BQLB6Y70akOl7ZBdBwRMPUuuSDcErZf8fP9e5G1CMZGmnkbmYqwK5RFPqr
- 2y6CMSpNiNC5Gp4Pa1T1bGQSPEMazMDdTMlTVTvPf9P3JozkFvRHh10TrWbFmh9M9dKN
- IXYg==
+ bh=UhMf0lnVjOcfCEB7ic10qPMrUlMrwwMjTmGRUymYol8=;
+ b=Ee1QqEoTu6JlOTgPuYtOPc4TSlR2k4/mfbvhbzBYgQPWnbASvO/x50zHappl6gqss1
+ sXEGZ0BeqS+JoUB9mffzUAsoC2A7YMAobq/zHRJOjkwWeRc0jSCvYif5x9Lb2K9OCh87
+ IpxUJcbuve8+cjANy53/+G9MvzNJKGae9aBabIi8V1gPzIrFibnZaUs/kusKhgsmZTTX
+ LhQBEuYo2oE9yu4Ra9q6eDw/UAQsUEIfiQ0J1ONpJleUbxgWNEYowYOOyFACyzqxVR+1
+ SXcvMjGS7AiZbWHQ9d1CATkLs+JG7q5P6EBjNQmUyzLHF9SxrazrXbDFAne0VJDaPtGq
+ XjoA==
 X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVORvLd4SsytBXQr4OGUPX+1NmWArOmLo="
 X-RZG-CLASS-ID: mo00
 Received: from localhost.localdomain by smtp.strato.de (RZmta 45.0.2 DYNA|AUTH)
- with ESMTPSA id 304194vAPH5c2r8
+ with ESMTPSA id 304194vAPH5d2r9
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
  521 ECDH bits, eq. 15360 bits RSA))
  (Client did not present a certificate);
- Mon, 25 Nov 2019 18:05:38 +0100 (CET)
+ Mon, 25 Nov 2019 18:05:39 +0100 (CET)
 From: Stephan Gerhold <stephan@gerhold.net>
 To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH 3/4] ARM: dts: ux500: Move serial aliases to ste-dbx5x0.dtsi
-Date: Mon, 25 Nov 2019 18:04:27 +0100
-Message-Id: <20191125170428.76069-3-stephan@gerhold.net>
+Subject: [PATCH 4/4] ARM: dts: ux500: Remove ux500_ prefix from ux500_serial*
+ labels
+Date: Mon, 25 Nov 2019 18:04:28 +0100
+Message-Id: <20191125170428.76069-4-stephan@gerhold.net>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191125170428.76069-1-stephan@gerhold.net>
 References: <20191125170428.76069-1-stephan@gerhold.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_090544_221968_DFC12867 
-X-CRM114-Status: GOOD (  13.95  )
+X-CRM114-CacheID: sfid-20191125_090544_221965_6CA9C439 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5301:0:0:1 listed in]
+ low trust [2a01:238:20a:202:5302:0:0:2 listed in]
  [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -90,126 +92,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we have aliases for I2C and SPI in ste-dbx5x0.dtsi,
-it does not make much sense to keep only the aliases for UART
-separately in each board device tree.
-
-Considering that all boards set the same aliases for the serial
-ports there is no reason to keep them separated either.
-
-Move them to ste-dbx5x0.dtsi and remove the aliases from the
-board-specific device tree parts.
+ux500_serial{0,1,2} are the only labels with ux500_ prefix in
+ste-dbx5x0.dtsi, the other labels (gpio0, msp, ...) do not use
+any prefix. Remove it for consistency.
 
 Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
 ---
- arch/arm/boot/dts/ste-dbx5x0.dtsi           | 3 +++
- arch/arm/boot/dts/ste-hrefprev60-stuib.dts  | 7 -------
- arch/arm/boot/dts/ste-hrefprev60-tvk.dts    | 7 -------
- arch/arm/boot/dts/ste-hrefv60plus-stuib.dts | 7 -------
- arch/arm/boot/dts/ste-hrefv60plus-tvk.dts   | 7 -------
- arch/arm/boot/dts/ste-snowball.dts          | 7 -------
- 6 files changed, 3 insertions(+), 35 deletions(-)
+ arch/arm/boot/dts/ste-dbx5x0.dtsi | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/arch/arm/boot/dts/ste-dbx5x0.dtsi b/arch/arm/boot/dts/ste-dbx5x0.dtsi
-index ed91232a118a..841934093c3b 100644
+index 841934093c3b..d4a55369452d 100644
 --- a/arch/arm/boot/dts/ste-dbx5x0.dtsi
 +++ b/arch/arm/boot/dts/ste-dbx5x0.dtsi
-@@ -24,6 +24,9 @@
+@@ -24,9 +24,9 @@
  		spi1 = &spi1;
  		spi2 = &spi2;
  		spi3 = &spi3;
-+		serial0 = &ux500_serial0;
-+		serial1 = &ux500_serial1;
-+		serial2 = &ux500_serial2;
+-		serial0 = &ux500_serial0;
+-		serial1 = &ux500_serial1;
+-		serial2 = &ux500_serial2;
++		serial0 = &serial0;
++		serial1 = &serial1;
++		serial2 = &serial2;
  	};
  
  	chosen {
-diff --git a/arch/arm/boot/dts/ste-hrefprev60-stuib.dts b/arch/arm/boot/dts/ste-hrefprev60-stuib.dts
-index b78be5f4c212..d2405133860a 100644
---- a/arch/arm/boot/dts/ste-hrefprev60-stuib.dts
-+++ b/arch/arm/boot/dts/ste-hrefprev60-stuib.dts
-@@ -13,13 +13,6 @@
- 	model = "ST-Ericsson HREF (pre-v60) and ST UIB";
- 	compatible = "st-ericsson,mop500", "st-ericsson,u8500";
+@@ -838,7 +838,7 @@
+ 			status = "disabled";
+ 		};
  
--	/* This stablilizes the serial port enumeration */
--	aliases {
--		serial0 = &ux500_serial0;
--		serial1 = &ux500_serial1;
--		serial2 = &ux500_serial2;
--	};
--
- 	soc {
- 		/* Reset line for the BU21013 touchscreen */
- 		i2c@80110000 {
-diff --git a/arch/arm/boot/dts/ste-hrefprev60-tvk.dts b/arch/arm/boot/dts/ste-hrefprev60-tvk.dts
-index 60eed262d920..54b0f8282b2c 100644
---- a/arch/arm/boot/dts/ste-hrefprev60-tvk.dts
-+++ b/arch/arm/boot/dts/ste-hrefprev60-tvk.dts
-@@ -10,11 +10,4 @@
- / {
- 	model = "ST-Ericsson HREF (pre-v60) and TVK1281618 UIB";
- 	compatible = "st-ericsson,mop500", "st-ericsson,u8500";
--
--	/* This stablilizes the serial port enumeration */
--	aliases {
--		serial0 = &ux500_serial0;
--		serial1 = &ux500_serial1;
--		serial2 = &ux500_serial2;
--	};
- };
-diff --git a/arch/arm/boot/dts/ste-hrefv60plus-stuib.dts b/arch/arm/boot/dts/ste-hrefv60plus-stuib.dts
-index 9be513aad549..36163c0b5267 100644
---- a/arch/arm/boot/dts/ste-hrefv60plus-stuib.dts
-+++ b/arch/arm/boot/dts/ste-hrefv60plus-stuib.dts
-@@ -15,13 +15,6 @@
- 	model = "ST-Ericsson HREF (v60+) and ST UIB";
- 	compatible = "st-ericsson,hrefv60+", "st-ericsson,u8500";
+-		ux500_serial0: uart@80120000 {
++		serial0: uart@80120000 {
+ 			compatible = "arm,pl011", "arm,primecell";
+ 			reg = <0x80120000 0x1000>;
+ 			interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
+@@ -853,7 +853,7 @@
+ 			status = "disabled";
+ 		};
  
--	/* This stablilizes the serial port enumeration */
--	aliases {
--		serial0 = &ux500_serial0;
--		serial1 = &ux500_serial1;
--		serial2 = &ux500_serial2;
--	};
--
- 	soc {
- 		/* Reset line for the BU21013 touchscreen */
- 		i2c@80110000 {
-diff --git a/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts b/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts
-index 73ea3100f186..cf59e9bb9a74 100644
---- a/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts
-+++ b/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts
-@@ -12,11 +12,4 @@
- / {
- 	model = "ST-Ericsson HREF (v60+) and TVK1281618 UIB";
- 	compatible = "st-ericsson,hrefv60+", "st-ericsson,u8500";
--
--	/* This stablilizes the serial port enumeration */
--	aliases {
--		serial0 = &ux500_serial0;
--		serial1 = &ux500_serial1;
--		serial2 = &ux500_serial2;
--	};
- };
-diff --git a/arch/arm/boot/dts/ste-snowball.dts b/arch/arm/boot/dts/ste-snowball.dts
-index ce136412b6da..f8dec3976c91 100644
---- a/arch/arm/boot/dts/ste-snowball.dts
-+++ b/arch/arm/boot/dts/ste-snowball.dts
-@@ -12,13 +12,6 @@
- 	model = "Calao Systems Snowball platform with device tree";
- 	compatible = "calaosystems,snowball-a9500", "st-ericsson,u9500";
+-		ux500_serial1: uart@80121000 {
++		serial1: uart@80121000 {
+ 			compatible = "arm,pl011", "arm,primecell";
+ 			reg = <0x80121000 0x1000>;
+ 			interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
+@@ -868,7 +868,7 @@
+ 			status = "disabled";
+ 		};
  
--	/* This stablilizes the serial port enumeration */
--	aliases {
--		serial0 = &ux500_serial0;
--		serial1 = &ux500_serial1;
--		serial2 = &ux500_serial2;
--	};
--
- 	memory {
- 		device_type = "memory";
- 		reg = <0x00000000 0x20000000>;
+-		ux500_serial2: uart@80007000 {
++		serial2: uart@80007000 {
+ 			compatible = "arm,pl011", "arm,primecell";
+ 			reg = <0x80007000 0x1000>;
+ 			interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
 -- 
 2.24.0
 
