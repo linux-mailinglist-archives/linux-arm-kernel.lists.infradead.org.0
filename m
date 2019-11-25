@@ -2,59 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E82F3108B5E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 11:08:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B4A5108B77
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 11:15:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uE1yq9wvjKvpQjAgLhGnHC/Aem1dHi/Djvc/ba9oDE0=; b=k4SRPs+17GtVxC
-	Gjco8Iw89oCcqOea1Ag+X3HedEiQwHSHfG3mBixVcHtkRXL1bcWzhTWX5TKH22f9HUhX/CEd3ljze
-	2ZElGCN91JAQV1WJyAa9jxEb0F0y3z6KMT6q5hS1/B/JUddqUBk6NC6/hDVM/D2jX8E7ECd7zd9as
-	EwmMBMk6y2WtD1StxDA+PSfySme2qJOMaw4smEQnYM0DRnvQhRqtLQJZxvq8ckI7w8iCsOhfymffh
-	aVNyOP6CQ1W95KFa2hM+DbsmkqTIDh36V1bCNOXXCU/L/WfW/noZ0wsbDaShcU9ygW3Kr3Fu1Ox1W
-	R2XiA6uMKl2jc8gfzSSw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=ADH8yy34f1Hw1yvCVDuIT0/QSiZwmfqFaaWbZgw8rJA=; b=LcQgkqIwVBUqVin8tuTc7mOlAG
+	a+yvLc+r/Y4Hjxd16aBwnQ3EOf7QfSj8+EABpdkCiYHkdI6rbTmUvi1CTgl7sUe7z8AlLWDyzYdN9
+	yJ0BjNl4BcA8npxPhD//aIwcFtrNPJmeZG+oXbMH5QtgKqrq7y7z9un7KejM3bULWUEJCcpsQjGNT
+	c0rxbJ52RdXz3SygTyDoQ37OpI66ITLdZR5HW1/PvoccJKIj9UTNUAK4+0WdHZzyP5BFHYgAHqsqn
+	Ps2G3Dvc1TJZ+OyXHsjzslVctzstdQ2dPMBr2tYnOOA7ZIPSN+fD3EsAz5vnhBOI+2v+qtGoC86YQ
+	peBuyw1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZBI6-0007aS-V6; Mon, 25 Nov 2019 10:08:22 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iZBOl-0001Sd-RE; Mon, 25 Nov 2019 10:15:15 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZBHw-0007ZI-E3
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 10:08:13 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1iZBHG-00050V-8t; Mon, 25 Nov 2019 11:07:30 +0100
-Message-ID: <49c94039ba327a1295fdfd5d74dca0b9805269b0.camel@pengutronix.de>
-Subject: Re: [PATCH v5 1/2] dt-bindings: mediatek: mt8183: Add #reset-cells
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Jiaxin Yu <jiaxin.yu@mediatek.com>, broonie@kernel.org, 
- mark.rutland@arm.com, yingjoe.chen@mediatek.com, robh+dt@kernel.org, 
- linux@roeck-us.net, wim@linux-watchdog.org
-Date: Mon, 25 Nov 2019 11:07:25 +0100
-In-Reply-To: <1574651030-29519-2-git-send-email-jiaxin.yu@mediatek.com>
-References: <1574651030-29519-1-git-send-email-jiaxin.yu@mediatek.com>
- <1574651030-29519-2-git-send-email-jiaxin.yu@mediatek.com>
-User-Agent: Evolution 3.30.5-1.1 
+ id 1iZBOT-0001Qq-Mh
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 10:14:59 +0000
+Received: by mail-wm1-x342.google.com with SMTP id t26so15234579wmi.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 25 Nov 2019 02:14:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=K61KDC/w3VRipSxtXvNga+5fh0z8paKLB1vFxmok1y4=;
+ b=sA4wb45ovcGlqxPBCSA49oBborhJUSfY00UQh7VAfyxGrbMtidhQVtYZFRyr3wqOJA
+ G/m4e9avLJSZHR1Z5k0yAZxZw48uBaTsChuzi6kJbExRffn8gEstelaJfoOhbUlKfUqh
+ u2MBHnSlbHS7ztMLwvFR9EAG81WCr2HReBT/ByfS60J/hJQyFuRop2IIpnhwp3xTuIuZ
+ 2Sqshnu6va75Q7n2VH2ZZ0G8nnp/BnQazRgPdcJmtUS6SGGjTEOSlJjcB1B+0KzcgPk0
+ w7eo3ivs+Vgev8jpsJVwduhhIVQC0Jj3RVvbQ7jTcLZG6i3vvqnzeH0x6iWNS6d4ZPU8
+ aRXA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=K61KDC/w3VRipSxtXvNga+5fh0z8paKLB1vFxmok1y4=;
+ b=l/wq2LC1tOb26cunA/cQLNRDM2LIVU3MUBJ+eq1821r6RPqwEhKCnd5Uq3QBM+/NzL
+ Qq0GKGLpKM7vOqScEYd44bMsgZt2068WVfdPHx3LdljhzTmeR6SCZyl50qCXouP+NOIa
+ 4wQA7cQoZK54ppjJYdsQTZ0P+a17uGmaEABZ6CI1ARZIkJ/2883CNpYw/QQznts9ihUh
+ u0eBO+UJLdWu27irVnJ0Qo4GGijsYa/FZsB3GLrvi7GEv0m3ymQXbcYsguMfvw5cMzdq
+ +4Tpdw0sO2YOnhCvdU4GVFSrQ14yEnrsE6w+Sa/6c+xmV+mulEmsuKrigBWhOzmNHXcH
+ N62A==
+X-Gm-Message-State: APjAAAVFw8chcnht6EUkVKuPNAiV7czCvipg2YqIQseDsxNs8JqcC9CP
+ mrGsEXt0+pOmDOt9hbN5rTwk6g==
+X-Google-Smtp-Source: APXvYqxlqGbRVb1q7Ats9JEHWlI6DXCc42Eir63k/2XjzqDQfir3rntlAPQcFe8O/L4oiGkYaRuCRQ==
+X-Received: by 2002:a7b:c76a:: with SMTP id x10mr26459343wmk.123.1574676895066; 
+ Mon, 25 Nov 2019 02:14:55 -0800 (PST)
+Received: from localhost ([2a01:e34:eeb6:4690:ecfa:1144:aa53:4a82])
+ by smtp.gmail.com with ESMTPSA id 60sm8778477wrn.86.2019.11.25.02.14.54
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 25 Nov 2019 02:14:54 -0800 (PST)
+References: <1571382865-41978-1-git-send-email-jian.hu@amlogic.com>
+ <1571382865-41978-4-git-send-email-jian.hu@amlogic.com>
+ <1jsgnmba1a.fsf@starbuckisacylon.baylibre.com>
+ <49b33e94-910b-3fd9-4da1-050742d07e93@amlogic.com>
+ <1jblts3v7e.fsf@starbuckisacylon.baylibre.com>
+ <f02b6fb2-5b98-0930-6d47-a3e65840fb82@amlogic.com>
+ <1jh839f2ue.fsf@starbuckisacylon.baylibre.com>
+ <20d04452-fc63-9e9e-220f-146b493a860f@amlogic.com>
+ <1695e9b0-1730-eef6-491d-fe90ac897ee9@amlogic.com>
+ <1jtv6yftmm.fsf@starbuckisacylon.baylibre.com>
+ <9e652ed1-384e-f630-f2a4-0aa4486df577@amlogic.com>
+User-agent: mu4e 1.3.3; emacs 26.2
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Jian Hu <jian.hu@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH v2 3/3] clk: meson: a1: add support for Amlogic A1 clock
+ driver
+In-reply-to: <9e652ed1-384e-f630-f2a4-0aa4486df577@amlogic.com>
+Date: Mon, 25 Nov 2019 11:14:53 +0100
+Message-ID: <1j7e3oqn36.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_020812_472344_4E958F92 
-X-CRM114-Status: GOOD (  16.81  )
+X-CRM114-CacheID: sfid-20191125_021457_739631_8A4577D5 
+X-CRM114-Status: GOOD (  16.82  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,119 +105,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, yong.liang@mediatek.com, lgirdwood@gmail.com,
- perex@perex.cz, tzungbi@google.com, linux-mediatek@lists.infradead.org,
- eason.yen@mediatek.com, linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>, Martin
+ Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
+ Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-11-25 at 11:03 +0800, Jiaxin Yu wrote:
-> From: "yong.liang" <yong.liang@mediatek.com>
-> 
-> Add #reset-cells property and update example
-> 
-> Signed-off-by: yong.liang <yong.liang@mediatek.com>
-> Signed-off-by: jiaxin.yu <jiaxin.yu@mediatek.com>
-> Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
-> ---
->  .../devicetree/bindings/watchdog/mtk-wdt.txt  | 10 ++++++---
->  .../reset-controller/mt2712-resets.h          | 22 +++++++++++++++++++
->  .../reset-controller/mt8183-resets.h          | 15 +++++++++++++
->  3 files changed, 44 insertions(+), 3 deletions(-)
->  create mode 100644 include/dt-bindings/reset-controller/mt2712-resets.h
-> 
-> diff --git a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> index 3ee625d0812f..4dd36bd3f1ad 100644
-> --- a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> +++ b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> @@ -4,6 +4,7 @@ Required properties:
->  
->  - compatible should contain:
->  	"mediatek,mt2701-wdt", "mediatek,mt6589-wdt": for MT2701
-> +	"mediatek,mt2712-wdt", "mediatek,mt6589-wdt": for MT2712
->  	"mediatek,mt6589-wdt": for MT6589
->  	"mediatek,mt6797-wdt", "mediatek,mt6589-wdt": for MT6797
->  	"mediatek,mt7622-wdt", "mediatek,mt6589-wdt": for MT7622
-> @@ -16,11 +17,14 @@ Required properties:
->  
->  Optional properties:
->  - timeout-sec: contains the watchdog timeout in seconds.
-> +- #reset-cells: Should be 1.
->  
->  Example:
->  
-> -wdt: watchdog@10000000 {
-> -	compatible = "mediatek,mt6589-wdt";
-> -	reg = <0x10000000 0x18>;
-> +watchdog: watchdog@10007000 {
-> +	compatible = "mediatek,mt8183-wdt",
-> +		     "mediatek,mt6589-wdt";
-> +	reg = <0 0x10007000 0 0x100>;
->  	timeout-sec = <10>;
-> +	#reset-cells = <1>;
->  };
-> diff --git a/include/dt-bindings/reset-controller/mt2712-resets.h b/include/dt-bindings/reset-controller/mt2712-resets.h
-> new file mode 100644
-> index 000000000000..e81c8bb311b7
-> --- /dev/null
-> +++ b/include/dt-bindings/reset-controller/mt2712-resets.h
-> @@ -0,0 +1,22 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * Copyright (c) 2019 MediaTek Inc.
-> + * Author: Yong Liang <yong.liang@mediatek.com>
-> + */
-> +
-> +#ifndef _DT_BINDINGS_RESET_CONTROLLER_MT2712
-> +#define _DT_BINDINGS_RESET_CONTROLLER_MT2712
-> +
-> +#define MT2712_TOPRGU_INFRA_SW_RST				0
-> +#define MT2712_TOPRGU_MM_SW_RST					1
-> +#define MT2712_TOPRGU_MFG_SW_RST				2
-> +#define MT2712_TOPRGU_VENC_SW_RST				3
-> +#define MT2712_TOPRGU_VDEC_SW_RST				4
-> +#define MT2712_TOPRGU_IMG_SW_RST				5
-> +#define MT2712_TOPRGU_INFRA_AO_SW_RST				8
-> +#define MT2712_TOPRGU_USB_SW_RST				9
-> +#define MT2712_TOPRGU_APMIXED_SW_RST				10
-> +
-> +#define MT2712_TOPRGU_SW_RST_NUM				10
 
-Setting rcdev->nr_resets to 10 will make the check in
-of_reset_simple_xlate() fail for MT2712_TOPRGU_APMIXED_SW_RST.
+On Thu 21 Nov 2019 at 04:21, Jian Hu <jian.hu@amlogic.com> wrote:
 
-> +
-> +#endif  /* _DT_BINDINGS_RESET_CONTROLLER_MT2712 */
-> diff --git a/include/dt-bindings/reset-controller/mt8183-resets.h b/include/dt-bindings/reset-controller/mt8183-resets.h
-> index 8804e34ebdd4..d582da6bedae 100644
-> --- a/include/dt-bindings/reset-controller/mt8183-resets.h
-> +++ b/include/dt-bindings/reset-controller/mt8183-resets.h
-> @@ -78,4 +78,19 @@
->  #define MT8183_INFRACFG_AO_I2C7_SW_RST				126
->  #define MT8183_INFRACFG_AO_I2C8_SW_RST				127
->  
-> +#define MT8183_TOPRGU_MM_SW_RST					1
-> +#define MT8183_TOPRGU_MFG_SW_RST				2
-> +#define MT8183_TOPRGU_VENC_SW_RST				3
-> +#define MT8183_TOPRGU_VDEC_SW_RST				4
-> +#define MT8183_TOPRGU_IMG_SW_RST				5
-> +#define MT8183_TOPRGU_MD_SW_RST					7
-> +#define MT8183_TOPRGU_CONN_SW_RST				9
-> +#define MT8183_TOPRGU_CONN_MCU_SW_RST				12
-> +#define MT8183_TOPRGU_IPU0_SW_RST				14
-> +#define MT8183_TOPRGU_IPU1_SW_RST				15
-> +#define MT8183_TOPRGU_AUDIO_SW_RST				17
-> +#define MT8183_TOPRGU_CAMSYS_SW_RST				18
-> +
-> +#define MT8183_TOPRGU_SW_RST_NUM				18
+> Hi, Jerome
+>
+> On 2019/11/20 23:35, Jerome Brunet wrote:
+>>
+>> On Wed 20 Nov 2019 at 10:28, Jian Hu <jian.hu@amlogic.com> wrote:
+>>
+>>> Hi, jerome
+>>>
+>>> Is there any problem about fixed_pll_dco's parent_data?
+>>>
+>>> Now both name and fw_name are described in parent_data.
+>>
+>> Yes, there is a problem.  This approach is incorrect, as I've tried to
+>> explain a couple times already. Let me try to re-summarize why this
+>> approach is incorrect.
+>>
+>> Both fw_name and name should be provided when it is possible that
+>> the DT does not describe the input clock. IOW, it is only for controllers
+>> which relied on the global name so far and are now starting to describe
+>> the clock input in DT
+>>
+>> This is not your case.
+>> Your controller is new and DT will have the correct
+>> info
+>>
+>> You are trying work around an ordering issue by providing both fw_name
+>> and name. This is not correct and I'll continue to nack it.
+>>
+>> If the orphan clock is not reparented as you would expect, I suggest you
+>> try to look a bit further at how the reparenting of orphans is done in
+>> CCF and why it does not match your expectation.
+>>
+> I have debugged the handle for orphan clock in CCF, Maybe you are missing
+> the last email.
 
-Same here. If the driver uses the default of_xlate function, this has to
-be larger than the index of the last reset.
+Nope, got it the first time
 
-regards
-Philipp
+> Even though the clock index exit, it will get failed for the orphan clock's
+> parent clock due to it has not beed added to the provider.
+
+If the provider is not registered yet, of course any query to it won't
+work. This why I have suggested to this debug *further* :
+
+* Is the orphan reparenting done when a new provider is registered ?
+* If not, should it be done ? is this your problem ?
+
 
 
 _______________________________________________
