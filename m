@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5CA910929C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 18:06:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3935C10929B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 18:06:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nyXUaEvWj4hquFQ/kPZgdhRopcIb49WZHmp8TLSzyfs=; b=AC9QJrOjTWa/eU
-	KgoBlcScc6HUr1e6EmSQ56REUuH1W/xPEDtqZ7q4tDkTJ6PFofFV8E2GYFylSf9dPuyBIGT1chI2T
-	jLSR5ZvfLPyzwhwKYT/sguVXt7kmWKidwZpqm85VNsoNCVyWvaH9in96i4ot+qjyo+coF99bRyL61
-	cghGxomfE3gmnmub0S+ZNELz6Ql8sgS5otvi+V/ATTl42cKrZcaiMXDDpw299veMQl558w/8SDQ+F
-	Acy3JCKPQeHujGvqRUketXMdUEKLivBIyutmk0n4hEdZV8KRbbesKouQqunu6SeL8qsH7tmmGWkgs
-	pKV30Znr05BG30S3ZSHw==;
+	List-Owner; bh=WMfYXd/vFTpA4NFBOkkj4L5oQ0RitGHE2OglKnIkZuo=; b=L47fqmbwT/OtYg
+	F8I6A7YhO+t7jNlQ7Bt9EG4pSknDI3+Cz6tb1cc/QZGzXO+9z0lFTxNG6sB47/Cp5gbT1FTFuotjo
+	NAXiy2MZUjeAa2nmx+/AidbrhF2O+Ol4aH4eyCIyS8tdjmzBPD3z1zhC4q1MCtUDMa/cnkESmgyAx
+	ER/GUv/X5/bpdj976tHp+g/HYqERQYTZlbibpSKRkubK6KVQQioFIqSCXcEDqjQk3onN3NYU7LtUY
+	YClyKU42u8lHy9Uz1gMYLpS5XUe8I/fXqeqzaRoLQubV9brRFz1FUuNBIZnWhK2ZA7PhvKQcorKEF
+	eAbQmGs7v5RHFigc9u0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZHoZ-0003wo-TQ; Mon, 25 Nov 2019 17:06:19 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::8])
+	id 1iZHoT-0003eq-15; Mon, 25 Nov 2019 17:06:13 +0000
+Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZHnz-0003Vu-Ix
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 17:05:46 +0000
+ id 1iZHnz-0003Vp-Iy
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 17:05:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1574701541;
  s=strato-dkim-0002; d=gerhold.net;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=4T58iZwAhzibbxA38Ty05T3UHM/dV8EZ97kepZ5ETG4=;
- b=T8yoEPl6eLIWv2ZHw6CnyJetVuIx1j3N2DHcyxsVrXhLb/AiT82GiITGcPym5DlObI
- 6oVSN6r9dHatRwZO/wa2d002ji7gmcuu+k6UOnsvjExLh3X+ldPXdVtjWF0cW03lKJ6j
- pz4XvP0+ixLqL5OAxMVHdurzpi4N25gEqbr/2lb0S6e7yVf6B2zu91MuNmpg0vFJeu2z
- kPjdqxTP2AXqaPi9HPwezD/ma3QFOzR26gRsRDJy/nLkGi5h3Bx0lZ0p4COHRMfc4kGt
- ZvHMuknUVLEXyqqhEoy3FitPyvwFEdgImPanX6+J1CDJE7wc3q12siCpJ8+AwWWJCq2g
- mAIQ==
+ bh=yN/4dwxR2rLJrfgok1uBLXq52iC/4EfyQceUfthKmpg=;
+ b=cOJJp6Baa9iTkW7BrRyu6ScOA+hlao3Y5MN8RNvPuVEK9sUhv8AaLHNCUbRksLyvWI
+ ZbpsA1sePl90n4bOt4AZah9CZA6L1CIYvUhXpadGdcmEhQlLPLWu7SU2ZOAK+Bow0bNT
+ UieSWCOyW91cECXyqZIxPMO+Ch+F4dlDsK3eBuCDyo6Csqe502NAMeSRkbGlLWbR5GmR
+ n3sEvZRl7/BQLB6Y70akOl7ZBdBwRMPUuuSDcErZf8fP9e5G1CMZGmnkbmYqwK5RFPqr
+ 2y6CMSpNiNC5Gp4Pa1T1bGQSPEMazMDdTMlTVTvPf9P3JozkFvRHh10TrWbFmh9M9dKN
+ IXYg==
 X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVORvLd4SsytBXQr4OGUPX+1NmWArOmLo="
 X-RZG-CLASS-ID: mo00
 Received: from localhost.localdomain by smtp.strato.de (RZmta 45.0.2 DYNA|AUTH)
- with ESMTPSA id 304194vAPH5c2r7
+ with ESMTPSA id 304194vAPH5c2r8
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
  521 ECDH bits, eq. 15360 bits RSA))
  (Client did not present a certificate);
  Mon, 25 Nov 2019 18:05:38 +0100 (CET)
 From: Stephan Gerhold <stephan@gerhold.net>
 To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH 2/4] ARM: dts: ux500: Add aliases for I2C and SPI buses
-Date: Mon, 25 Nov 2019 18:04:26 +0100
-Message-Id: <20191125170428.76069-2-stephan@gerhold.net>
+Subject: [PATCH 3/4] ARM: dts: ux500: Move serial aliases to ste-dbx5x0.dtsi
+Date: Mon, 25 Nov 2019 18:04:27 +0100
+Message-Id: <20191125170428.76069-3-stephan@gerhold.net>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191125170428.76069-1-stephan@gerhold.net>
 References: <20191125170428.76069-1-stephan@gerhold.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_090544_224107_1F62956B 
-X-CRM114-Status: GOOD (  11.98  )
+X-CRM114-CacheID: sfid-20191125_090544_221968_DFC12867 
+X-CRM114-Status: GOOD (  13.95  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5301:0:0:8 listed in]
+ low trust [2a01:238:20a:202:5301:0:0:1 listed in]
  [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -90,142 +90,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we disable the I2C/SPI buses by default, is is even more
-important to assign aliases to the I2C/SPI device nodes.
-Otherwise, enabling/disabling one of them will potentially change
-all device IDs, e.g. i2c2 will be named i2c-0 if it is the only
-enabled I2C bus.
+Now that we have aliases for I2C and SPI in ste-dbx5x0.dtsi,
+it does not make much sense to keep only the aliases for UART
+separately in each board device tree.
 
-Add aliases for the I2C and SPI buses to avoid this.
+Considering that all boards set the same aliases for the serial
+ports there is no reason to keep them separated either.
+
+Move them to ste-dbx5x0.dtsi and remove the aliases from the
+board-specific device tree parts.
 
 Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
 ---
- arch/arm/boot/dts/ste-dbx5x0.dtsi | 35 +++++++++++++++++++++----------
- 1 file changed, 24 insertions(+), 11 deletions(-)
+ arch/arm/boot/dts/ste-dbx5x0.dtsi           | 3 +++
+ arch/arm/boot/dts/ste-hrefprev60-stuib.dts  | 7 -------
+ arch/arm/boot/dts/ste-hrefprev60-tvk.dts    | 7 -------
+ arch/arm/boot/dts/ste-hrefv60plus-stuib.dts | 7 -------
+ arch/arm/boot/dts/ste-hrefv60plus-tvk.dts   | 7 -------
+ arch/arm/boot/dts/ste-snowball.dts          | 7 -------
+ 6 files changed, 3 insertions(+), 35 deletions(-)
 
 diff --git a/arch/arm/boot/dts/ste-dbx5x0.dtsi b/arch/arm/boot/dts/ste-dbx5x0.dtsi
-index 899368aa6ff7..ed91232a118a 100644
+index ed91232a118a..841934093c3b 100644
 --- a/arch/arm/boot/dts/ste-dbx5x0.dtsi
 +++ b/arch/arm/boot/dts/ste-dbx5x0.dtsi
-@@ -13,6 +13,19 @@
- 	#address-cells = <1>;
- 	#size-cells = <1>;
- 
-+	/* This stablilizes the device enumeration */
-+	aliases {
-+		i2c0 = &i2c0;
-+		i2c1 = &i2c1;
-+		i2c2 = &i2c2;
-+		i2c3 = &i2c3;
-+		i2c4 = &i2c4;
-+		spi0 = &spi0;
-+		spi1 = &spi1;
-+		spi2 = &spi2;
-+		spi3 = &spi3;
-+	};
-+
- 	chosen {
+@@ -24,6 +24,9 @@
+ 		spi1 = &spi1;
+ 		spi2 = &spi2;
+ 		spi3 = &spi3;
++		serial0 = &ux500_serial0;
++		serial1 = &ux500_serial1;
++		serial2 = &ux500_serial2;
  	};
  
-@@ -633,7 +646,7 @@
- 			};
- 		};
+ 	chosen {
+diff --git a/arch/arm/boot/dts/ste-hrefprev60-stuib.dts b/arch/arm/boot/dts/ste-hrefprev60-stuib.dts
+index b78be5f4c212..d2405133860a 100644
+--- a/arch/arm/boot/dts/ste-hrefprev60-stuib.dts
++++ b/arch/arm/boot/dts/ste-hrefprev60-stuib.dts
+@@ -13,13 +13,6 @@
+ 	model = "ST-Ericsson HREF (pre-v60) and ST UIB";
+ 	compatible = "st-ericsson,mop500", "st-ericsson,u8500";
  
--		i2c@80004000 {
-+		i2c0: i2c@80004000 {
- 			compatible = "stericsson,db8500-i2c", "st,nomadik-i2c", "arm,primecell";
- 			reg = <0x80004000 0x1000>;
- 			interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
-@@ -650,7 +663,7 @@
- 			status = "disabled";
- 		};
+-	/* This stablilizes the serial port enumeration */
+-	aliases {
+-		serial0 = &ux500_serial0;
+-		serial1 = &ux500_serial1;
+-		serial2 = &ux500_serial2;
+-	};
+-
+ 	soc {
+ 		/* Reset line for the BU21013 touchscreen */
+ 		i2c@80110000 {
+diff --git a/arch/arm/boot/dts/ste-hrefprev60-tvk.dts b/arch/arm/boot/dts/ste-hrefprev60-tvk.dts
+index 60eed262d920..54b0f8282b2c 100644
+--- a/arch/arm/boot/dts/ste-hrefprev60-tvk.dts
++++ b/arch/arm/boot/dts/ste-hrefprev60-tvk.dts
+@@ -10,11 +10,4 @@
+ / {
+ 	model = "ST-Ericsson HREF (pre-v60) and TVK1281618 UIB";
+ 	compatible = "st-ericsson,mop500", "st-ericsson,u8500";
+-
+-	/* This stablilizes the serial port enumeration */
+-	aliases {
+-		serial0 = &ux500_serial0;
+-		serial1 = &ux500_serial1;
+-		serial2 = &ux500_serial2;
+-	};
+ };
+diff --git a/arch/arm/boot/dts/ste-hrefv60plus-stuib.dts b/arch/arm/boot/dts/ste-hrefv60plus-stuib.dts
+index 9be513aad549..36163c0b5267 100644
+--- a/arch/arm/boot/dts/ste-hrefv60plus-stuib.dts
++++ b/arch/arm/boot/dts/ste-hrefv60plus-stuib.dts
+@@ -15,13 +15,6 @@
+ 	model = "ST-Ericsson HREF (v60+) and ST UIB";
+ 	compatible = "st-ericsson,hrefv60+", "st-ericsson,u8500";
  
--		i2c@80122000 {
-+		i2c1: i2c@80122000 {
- 			compatible = "stericsson,db8500-i2c", "st,nomadik-i2c", "arm,primecell";
- 			reg = <0x80122000 0x1000>;
- 			interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
-@@ -668,7 +681,7 @@
- 			status = "disabled";
- 		};
+-	/* This stablilizes the serial port enumeration */
+-	aliases {
+-		serial0 = &ux500_serial0;
+-		serial1 = &ux500_serial1;
+-		serial2 = &ux500_serial2;
+-	};
+-
+ 	soc {
+ 		/* Reset line for the BU21013 touchscreen */
+ 		i2c@80110000 {
+diff --git a/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts b/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts
+index 73ea3100f186..cf59e9bb9a74 100644
+--- a/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts
++++ b/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts
+@@ -12,11 +12,4 @@
+ / {
+ 	model = "ST-Ericsson HREF (v60+) and TVK1281618 UIB";
+ 	compatible = "st-ericsson,hrefv60+", "st-ericsson,u8500";
+-
+-	/* This stablilizes the serial port enumeration */
+-	aliases {
+-		serial0 = &ux500_serial0;
+-		serial1 = &ux500_serial1;
+-		serial2 = &ux500_serial2;
+-	};
+ };
+diff --git a/arch/arm/boot/dts/ste-snowball.dts b/arch/arm/boot/dts/ste-snowball.dts
+index ce136412b6da..f8dec3976c91 100644
+--- a/arch/arm/boot/dts/ste-snowball.dts
++++ b/arch/arm/boot/dts/ste-snowball.dts
+@@ -12,13 +12,6 @@
+ 	model = "Calao Systems Snowball platform with device tree";
+ 	compatible = "calaosystems,snowball-a9500", "st-ericsson,u9500";
  
--		i2c@80128000 {
-+		i2c2: i2c@80128000 {
- 			compatible = "stericsson,db8500-i2c", "st,nomadik-i2c", "arm,primecell";
- 			reg = <0x80128000 0x1000>;
- 			interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
-@@ -686,7 +699,7 @@
- 			status = "disabled";
- 		};
- 
--		i2c@80110000 {
-+		i2c3: i2c@80110000 {
- 			compatible = "stericsson,db8500-i2c", "st,nomadik-i2c", "arm,primecell";
- 			reg = <0x80110000 0x1000>;
- 			interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
-@@ -704,7 +717,7 @@
- 			status = "disabled";
- 		};
- 
--		i2c@8012a000 {
-+		i2c4: i2c@8012a000 {
- 			compatible = "stericsson,db8500-i2c", "st,nomadik-i2c", "arm,primecell";
- 			reg = <0x8012a000 0x1000>;
- 			interrupts = <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;
-@@ -722,7 +735,7 @@
- 			status = "disabled";
- 		};
- 
--		spi@80002000 {
-+		ssp0: spi@80002000 {
- 			compatible = "arm,pl022", "arm,primecell";
- 			reg = <0x80002000 0x1000>;
- 			interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
-@@ -738,7 +751,7 @@
- 			status = "disabled";
- 		};
- 
--		spi@80003000 {
-+		ssp1: spi@80003000 {
- 			compatible = "arm,pl022", "arm,primecell";
- 			reg = <0x80003000 0x1000>;
- 			interrupts = <GIC_SPI 52 IRQ_TYPE_LEVEL_HIGH>;
-@@ -754,7 +767,7 @@
- 			status = "disabled";
- 		};
- 
--		spi@8011a000 {
-+		spi0: spi@8011a000 {
- 			compatible = "arm,pl022", "arm,primecell";
- 			reg = <0x8011a000 0x1000>;
- 			interrupts = <GIC_SPI 8 IRQ_TYPE_LEVEL_HIGH>;
-@@ -771,7 +784,7 @@
- 			status = "disabled";
- 		};
- 
--		spi@80112000 {
-+		spi1: spi@80112000 {
- 			compatible = "arm,pl022", "arm,primecell";
- 			reg = <0x80112000 0x1000>;
- 			interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>;
-@@ -788,7 +801,7 @@
- 			status = "disabled";
- 		};
- 
--		spi@80111000 {
-+		spi2: spi@80111000 {
- 			compatible = "arm,pl022", "arm,primecell";
- 			reg = <0x80111000 0x1000>;
- 			interrupts = <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
-@@ -805,7 +818,7 @@
- 			status = "disabled";
- 		};
- 
--		spi@80129000 {
-+		spi3: spi@80129000 {
- 			compatible = "arm,pl022", "arm,primecell";
- 			reg = <0x80129000 0x1000>;
- 			interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
+-	/* This stablilizes the serial port enumeration */
+-	aliases {
+-		serial0 = &ux500_serial0;
+-		serial1 = &ux500_serial1;
+-		serial2 = &ux500_serial2;
+-	};
+-
+ 	memory {
+ 		device_type = "memory";
+ 		reg = <0x00000000 0x20000000>;
 -- 
 2.24.0
 
