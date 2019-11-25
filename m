@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 984D4109317
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 18:48:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50D72109323
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 18:53:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sgyq2XBnFAmO5buNx9MTjdGGnWlX61gHYkrdOskg9V8=; b=AfQFjd9du/T+7i
-	FiHvf0xfh0V6HZpyFKDTC9lLnr+EdDVpQmYtbyMoJ8L+nEZ83Co525HqKISS0SVVYJHNNe7hpFHLP
-	O1xJpdeEpVr/rRDAc2AXKPJ1rr1QKBUi/v9IhkWGM9Q2P0gONifxmPMd2sM70F5JzE86EJVUxEzFo
-	5uCmpuNsX9TAypPU6n62CRvBUr0VysrDX+biWDKtG5/mDbEqn1DURu56VE75Q+Br2rxjLBKp5Ca3N
-	OLY5UJm45EYWRcAYsHhPs081lrWnzJEYxBhZOAdCJ+gzav44xBvi1c7zNyvcJuI5t8Z9xXmin4ubf
-	ZyOQZ2O6CIoEsdt6RhDQ==;
+	List-Owner; bh=iGEpWmrxP1Xo9tYjnKCzQWdYaZDh5xuSs0no5HZH94s=; b=El/sur8EO9Yv9f
+	x5aQ0I7LwlPNcStN29gPVsUTwokQTYwDJyWcQHIUwrs+4GlkQd5Cj2p56m/JtKuCfQQLoR3NXhXu3
+	qMfymH0stCT3UVh7YKh5Ug+3FJoX+hW3dQ3Cs61P+jf/o+AlHkXE8RuND5Wcx8M6dGMHqAWOGyNCI
+	YpA8eTrxQeNNp4/wKi8wIaCoyQXaTc+kQ7nHjUKg7qL79bjff7CZs72WgAaHrz9i6f8rhFzHmO9QU
+	nWoc5D/1JA9t6Se1SH3IkS74zZm6Nu6v0qSmUW6WfEzQKVV3WTGZdAgD7+wY8jYH/pGOyFpbL6p69
+	TDAGsdQ0e6PpSkTjqaMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZITT-0003Z0-Dx; Mon, 25 Nov 2019 17:48:35 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iZIYD-0005bQ-NN; Mon, 25 Nov 2019 17:53:29 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZITI-0003Y7-HL
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 17:48:26 +0000
-Received: by mail-wr1-x442.google.com with SMTP id z3so19219982wru.3
+ id 1iZIY4-0005aN-TG
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 17:53:22 +0000
+Received: by mail-wm1-x342.google.com with SMTP id n5so273482wmc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 Nov 2019 09:48:22 -0800 (PST)
+ Mon, 25 Nov 2019 09:53:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=BgkOCn6dEkaCecb5ZyLmsM0vtVrRc/X2TTNPZzp0BGs=;
- b=avnCZcmnWQYRn2ejXtbreBr+2fzx+QirQ6jMfKAMwEDo3jyctcQvSS6SM6aBRJCAeP
- kfDeyJNKwf8Ww1fdC45IB/7jKdswYHhGPaF1CAK1k/eHulj1Z8NDM4NLugYgnTl5DEOo
- YefFZFkbA6n3NhXip9hDUOr85MJpTQj4qNSE9VQlJPLdQNIY7YvpyPpEkKFXnyOnZTKk
- zxPRxvEFW8WTSxxiqEYBqSc/EW+pCq8OXdDzqUhlOxxL17HZqZAjCdkw8lFuH7Nliyrm
- MDDF0iP1wW7sCg4O3wkJdWYO3+EHez48clfhcdiT/8bJ80T/RuVV1xpWQm7lYwPafspo
- 67oQ==
+ bh=w762PFi0VU3n3eQDHHvKOAEXrmJ/fz15F0VMqWwRKbE=;
+ b=ucHw3iITUddgxmI0WaTeJ03oRUG5uF8HifGtGA0su/1oL8KAd8AZXtYGuQKcpbum8e
+ d6QnTIGwff7BVf7S6toPsGifytN5SktOO+ePb6YqXPtb6gYo3YNY4PxId/vuZoubQL3B
+ HZEwCDCJkQy+orvI6z5xFNqQfTmQLH9SdLq2Q9e4wsRNaJ0SGNOa+RCVpbB12Hl8Og9f
+ CXY6WHbjQ2/65OtfFrYy/fCeDjmmeVA24mCcyFcYoKY1qa9FXUzoMG82gzImz8jhXo5w
+ bHyegwRNLGNDIEyqqMjAAXkzFtDrFlkTpk8MwFyhHzyAPZmSpbf+F2CL2BoPmWn8fWWF
+ u01g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=BgkOCn6dEkaCecb5ZyLmsM0vtVrRc/X2TTNPZzp0BGs=;
- b=men2W8C+fZNP9+mmjY/vmlMgfTuGxSC4h83PSqcfEaSy5eGDVxHmqrUnrmuH73o1JV
- clzYnloOca0DyVjNu8pULnwWjOrp2VPnomGCXxd/4AAy6DIcboHuPhg1Aryq4LnKG1ZM
- is5/t+0Pwe86yiZGzJG6iChGhCsdudOHhJ59nlD2oWHaEzVqqM+rZo7uwPqJo3N1/jPu
- tSV9VXIDgDGKr65Eu9Fz+Yxr4MijymtAlliyE7lZQPHeoXDbgACPOo9lIqtK9Yh/5aeO
- X2kPrcmXNzkF3SqexWace1CT2j8tFBIXg/c40tFZHv76ws/h6sYjmZEcEVhFe7Ws7cLq
- Dq9A==
-X-Gm-Message-State: APjAAAW0gIUVDqXocKegTicQ5MobGYoBHilt2l2iHGreOKFP9OukWmzT
- uFhepzGQ/CyyLS7T4+3j3Y8gcQ==
-X-Google-Smtp-Source: APXvYqzTUYJqRjRrvNHNtPJwWI/KyemjW5baiqCvdsWHNGy9hgofkwoCe9NS+y/KmUwV3VIZ5E9NFQ==
-X-Received: by 2002:a5d:4acb:: with SMTP id y11mr12150855wrs.106.1574704100857; 
- Mon, 25 Nov 2019 09:48:20 -0800 (PST)
+ bh=w762PFi0VU3n3eQDHHvKOAEXrmJ/fz15F0VMqWwRKbE=;
+ b=GGYFsSkWKQTmSQm1hvR+mhvQf3VrYuTyZ3jAo3V0lQZiA4JInMuXhVAIn76OHHoEvY
+ bYIkYyFRjqJsLcX3oCXDln632KmQBzz2y4bSv+RzymPxYrAGB3KEM5SOkCsDGFUYgxTy
+ f7r80PRYaHcH8HiYM1ZosTZzKb8cphHh5dGG+kkNtSPS4ymf/5xmKT/+Zzx8iGYg/7KA
+ RrP7h+P5b46QVk0QI6BSQJda3O1LiHi/GuTpN5FhAQF0ufVDDUwULBXQ3oxYWdqQ/SPR
+ fDqRE5J6YnGn4Mi0OGdRlMB3Zm2Lrfb6+30dHSl7KJ55kzy3BTyBo2FcmXXDJxjsp1sI
+ 5L/w==
+X-Gm-Message-State: APjAAAVWnom2eMCOPWowUQUqqrWVjmq0UKqLOaBsgHeeEZG7DdbadipF
+ ksvc7+0HCVIhTPcnnzKwpyOy/w==
+X-Google-Smtp-Source: APXvYqzAZYIvQKGmfaQYD5lQJqrthSCPdfwYB+f4khqntbOAs2pzi4zET6f0XPBxuKoaB6N7z3djFQ==
+X-Received: by 2002:a7b:c959:: with SMTP id i25mr98865wml.100.1574704399261;
+ Mon, 25 Nov 2019 09:53:19 -0800 (PST)
 Received: from lophozonia (xdsl-188-155-204-106.adslplus.ch. [188.155.204.106])
- by smtp.gmail.com with ESMTPSA id x7sm11127238wrq.41.2019.11.25.09.48.19
+ by smtp.gmail.com with ESMTPSA id p1sm26490wmc.38.2019.11.25.09.53.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 25 Nov 2019 09:48:20 -0800 (PST)
-Date: Mon, 25 Nov 2019 18:48:17 +0100
+ Mon, 25 Nov 2019 09:53:18 -0800 (PST)
+Date: Mon, 25 Nov 2019 18:53:16 +0100
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: "Michael S. Tsirkin" <mst@redhat.com>
-Subject: Re: [RFC 13/13] iommu/virtio: Add topology description to
-Message-ID: <20191125174817.GB945122@lophozonia>
+Subject: Re: [RFC 00/13] virtio-iommu on non-devicetree platforms
+Message-ID: <20191125175316.GC945122@lophozonia>
 References: <20191122105000.800410-1-jean-philippe@linaro.org>
- <20191122105000.800410-14-jean-philippe@linaro.org>
- <20191122072753-mutt-send-email-mst@kernel.org>
+ <20191122075438-mutt-send-email-mst@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191122072753-mutt-send-email-mst@kernel.org>
+In-Reply-To: <20191122075438-mutt-send-email-mst@kernel.org>
 User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_094824_706450_68F5ECF0 
-X-CRM114-Status: GOOD (  19.03  )
+X-CRM114-CacheID: sfid-20191125_095320_970923_84339A1B 
+X-CRM114-Status: GOOD (  18.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,71 +111,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 22, 2019 at 07:53:19AM -0500, Michael S. Tsirkin wrote:
-> Overall this looks good to me. The only point is that
-> I think the way the interface is designed makes writing
-> the driver a bit too difficult. Idea: if instead we just
-> have a length field and then an array of records
-> (preferably unions so we don't need to work hard),
-> we can shadow that into memory, then iterate over
-> the unions.
+On Fri, Nov 22, 2019 at 08:00:46AM -0500, Michael S. Tsirkin wrote:
+> > (2) In addition, there are some concerns about having virtio depend on
+> >     ACPI or DT. Some hypervisors (Firecracker, QEMU microvm, kvmtool x86
+> >     [1])
 > 
-> Maybe add a uniform record length + number of records field.
-> Then just skip types you do not know how to handle.
-> This will also help make sure it's within bounds.
+> power?
+
+In kvmtool it boot with device tree. It also doesn't need virtio-iommu I
+think, since it has its own paravirtualized interface.
+
+> > don't currently implement those methods.
+> > 
+> >     It was suggested to embed the topology description into the device.
+> >     It can work, as demonstrated at the end of this RFC, with the
+> >     following limitations:
+> > 
+> >     - The topology description must be read before any endpoint managed
+> >       by the IOMMU is probed, and even before the virtio module is
+> >       loaded. This RFC uses a PCI quirk to manually parse the virtio
+> >       configuration. It assumes that all endpoints managed by the IOMMU
+> >       are under this same PCI host.
+> > 
+> >     - I don't have a solution for the virtio-mmio transport at the
+> >       moment, because I haven't had time to modify a host to test it. I
+> >       think it could either use a notifier on the platform bus, or
+> >       better, a new 'iommu' command-line argument to the virtio-mmio
+> >       driver.
 > 
-> What do you think?
+> 	A notifier seems easier for users. What are the disadvantages of
+> 	that?
 
-Sounds good, that should simplify the implementation a bit.
-
-> You will need to do something to address the TODO I think.
-
-Yes, I'll try to figure out a way to test platform devices.
-
-> > +static void viommu_cwrite(struct pci_dev *dev, int cfg,
-> > +			  struct viommu_cap_config *cap, u32 length, u32 offset,
-> > +			  u32 val)
-> 
-> A single user with 4 byte parameter. Just open-code?
-
-Ok
-
-> > +		cap.head.type = viommu_cread(dev, pci_cfg, dev_cfg, 2, offset);
-> > +		cap.head.next = viommu_cread(dev, pci_cfg, dev_cfg, 2, offset + 2);
-> 
-> All of this doesn't seem to be endian-clean. Try running sparse I think
-> it will complain.
-
-It does, I'll fix this
-
-> > @@ -36,6 +37,31 @@ struct virtio_iommu_config {
-> >  	struct virtio_iommu_range_32		domain_range;
-> >  	/* Probe buffer size */
-> >  	__le32					probe_size;
-> > +	/* Offset to the beginning of the topology table */
-> > +	__le16					topo_offset;
-> 
-> why do we need an offset?
-
-I find it awkward to put a variable-size array in the middle of the
-config. The virtio_iommu_config struct would be easier to extend later if
-we keep the array at the end and only define small static fields here.
-
-> 
-> > +};
-> > +
-> > +struct virtio_iommu_topo_head {
-> > +	__le16					type;
-> > +	__le16					next;
-> > +};
-> 
-> So this linked list makes things harder than necessary imho.
-> It will be easier to just have a counter with # of records.
-> Then make all records the same size.
-> Then just read each record out into a buffer, and
-> handle it there.
-
-Yes, that should simplify things.
+For each device we have to check if it's virtio-mmio, then map the MMIO
+resource and check the device type. Having a dedicated command-line
+argument would be more efficient.
 
 Thanks,
 Jean
