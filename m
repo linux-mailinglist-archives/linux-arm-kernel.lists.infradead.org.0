@@ -2,60 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 200D7108F3B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 14:51:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEB30108F41
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 14:51:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LpVYFWgw0LVENY/ESiUcsvhjyv29dFz8uZuAY8gzNOY=; b=in0P/KVs8g1Yxq
-	iVwLeROS449YdiDXv/TtsmrIX36RrGfG7wP3XBsryBU63M0Xscm7O6arlhxLWPOQHJPB9JKX4HD/g
-	kxTpFRNBVugLMHzsHXiDuNWyNyuRFSoYJCOe6Gmh/Pb2FG7xHzuuNIhI4JoLrvErwcItcjuZliw58
-	Z+xogz0qxcUZlNHYFESlu8OB2sUsmCHO2fUTfem8P9O385clyIFeS/dhevGR2flaYE7UfZYaiAnPk
-	XVP16gNBpSrQTktQynpbXJS+UQm+0F1FlObcNBE8ZTrV+xaP0eX2mKZisZWXICGlWUDtf3bzEjhJn
-	WuMiLp+U5m4Iv/MHRtTw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ktoEFTlVG1YerQqTqJoEXSH2VaB6uniSphduT81814s=; b=QpCvI1ZTxmIMazDZQBcb16r2D
+	zcBDE4fKM4ynaCaU2bQ63hVvPfH0k3iH1hlgEAChRi12pa0w/5TtoJk2gO4k8C3pmGdEKKmNGMFQS
+	GJRpqTw7ibwnxkscqriEupnIo/j6oVUf1ifuJ9F4DnLLfHi5qjQhxqjeHjUVWgDN0WElmXL8FGkkJ
+	LBD8HE8lHqFNmODvzwn53Dg+dxacb0buQEJzddAcqTVsnGpmjPnSqcPYj/rqxyGfNaYNDbcVM4xlq
+	Qmf/SpuTX4azRBL+haXiW7OrTyWlFm8aHCCtfgRXeWmuKKkf9+EVTEZ+5lsCPq9ona+D0Iro6s+CA
+	P21pP21ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZElg-00077m-RT; Mon, 25 Nov 2019 13:51:08 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iZEm6-0007Mb-IR; Mon, 25 Nov 2019 13:51:34 +0000
+Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZElY-0006xR-0P
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 13:51:01 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 1E11720C37;
- Mon, 25 Nov 2019 14:50:57 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 0767C20609;
- Mon, 25 Nov 2019 14:50:57 +0100 (CET)
-Subject: Re: [PATCH v1] clk: Add devm_clk_{prepare,enable,prepare_enable}
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <1d7a1b3b-e9bf-1d80-609d-a9c0c932b15a@free.fr>
- <20190715214647.GY7234@tuxbook-pro>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <c4d6c458-3cdf-fbfa-5615-5ab4441d3f60@free.fr>
-Date: Mon, 25 Nov 2019 14:50:56 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iZElv-0007LW-6r; Mon, 25 Nov 2019 13:51:26 +0000
+Received: from [10.28.39.99] (10.28.39.99) by mail-sz.amlogic.com (10.28.11.5)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Mon, 25 Nov
+ 2019 21:51:39 +0800
+Subject: Re: [PATCH v2 3/3] clk: meson: a1: add support for Amlogic A1 clock
+ driver
+To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
+ <narmstrong@baylibre.com>
+References: <1571382865-41978-1-git-send-email-jian.hu@amlogic.com>
+ <1571382865-41978-4-git-send-email-jian.hu@amlogic.com>
+ <1jsgnmba1a.fsf@starbuckisacylon.baylibre.com>
+ <49b33e94-910b-3fd9-4da1-050742d07e93@amlogic.com>
+ <1jblts3v7e.fsf@starbuckisacylon.baylibre.com>
+ <f02b6fb2-5b98-0930-6d47-a3e65840fb82@amlogic.com>
+ <1jh839f2ue.fsf@starbuckisacylon.baylibre.com>
+ <20d04452-fc63-9e9e-220f-146b493a860f@amlogic.com>
+ <1695e9b0-1730-eef6-491d-fe90ac897ee9@amlogic.com>
+ <1jtv6yftmm.fsf@starbuckisacylon.baylibre.com>
+ <9e652ed1-384e-f630-f2a4-0aa4486df577@amlogic.com>
+ <1j7e3oqn36.fsf@starbuckisacylon.baylibre.com>
+ <9ec317e8-136e-1ab4-4e9b-21210e7f3e05@amlogic.com>
+ <1j5zj8qgsl.fsf@starbuckisacylon.baylibre.com>
+From: Jian Hu <jian.hu@amlogic.com>
+Message-ID: <7a3f1e14-e5a5-407a-335a-eb68d3082eb9@amlogic.com>
+Date: Mon, 25 Nov 2019 21:51:39 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-In-Reply-To: <20190715214647.GY7234@tuxbook-pro>
+In-Reply-To: <1j5zj8qgsl.fsf@starbuckisacylon.baylibre.com>
 Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Mon Nov 25 14:50:57 2019 +0100 (CET)
+X-Originating-IP: [10.28.39.99]
+X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
+ (10.28.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_055100_198725_49DCA72E 
-X-CRM114-Status: GOOD (  11.53  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191125_055124_707350_BCB8B618 
+X-CRM114-Status: GOOD (  23.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -68,72 +76,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
+ Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Doh! Your reply never made it to my inbox, and I never thought to check
-the mailing list...
 
-On 15/07/2019 23:46, Bjorn Andersson wrote:
 
-> On Mon 15 Jul 08:34 PDT 2019, Marc Gonzalez wrote:
+On 2019/11/25 20:30, Jerome Brunet wrote:
 > 
-> [..]
->> diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
->> index c0990703ce54..5e85548357c0 100644
->> --- a/drivers/clk/clk.c
->> +++ b/drivers/clk/clk.c
->> @@ -914,6 +914,18 @@ int clk_prepare(struct clk *clk)
->>  }
->>  EXPORT_SYMBOL_GPL(clk_prepare);
->>  
->> +static void unprepare(void *clk)
+> On Mon 25 Nov 2019 at 13:01, Jian Hu <jian.hu@amlogic.com> wrote:
 > 
-> This deserves a less generic name.
-
-Fair enough. Though it's only because of C's function pointer idiosyncrasies
-that a function wrapper is even needed.
-
-
-> clk_enable() is used in code that can't sleep, in what scenario do you
-> envision it being useful to enable a clock from such region until devres
-> cleans up the associated device?
-
-The use-case I had in mind was
-"Device drivers that call
-1) clk_prepare_enable from probe()
-2) clk_disable_unprepare() in remove()"
-
-(Russell King has pointed out the short-comings of such an approach
-in a different sub-thread.)
-
-
->> +int devm_clk_prepare(struct device *dev, struct clk *clk);
->> +int devm_clk_enable(struct device *dev, struct clk *clk);
->> +static inline int devm_clk_prepare_enable(struct device *dev, struct clk *clk)
+>> On 2019/11/25 18:14, Jerome Brunet wrote:
+>>>
+>>> On Thu 21 Nov 2019 at 04:21, Jian Hu <jian.hu@amlogic.com> wrote:
+>>>
+>>>> Hi, Jerome
+>>>>
+>>>> On 2019/11/20 23:35, Jerome Brunet wrote:
+>>>>>
+>>>>> On Wed 20 Nov 2019 at 10:28, Jian Hu <jian.hu@amlogic.com> wrote:
+>>>>>
+>>>>>> Hi, jerome
+>>>>>>
+>>>>>> Is there any problem about fixed_pll_dco's parent_data?
+>>>>>>
+>>>>>> Now both name and fw_name are described in parent_data.
+>>>>>
+>>>>> Yes, there is a problem.  This approach is incorrect, as I've tried to
+>>>>> explain a couple times already. Let me try to re-summarize why this
+>>>>> approach is incorrect.
+>>>>>
+>>>>> Both fw_name and name should be provided when it is possible that
+>>>>> the DT does not describe the input clock. IOW, it is only for controllers
+>>>>> which relied on the global name so far and are now starting to describe
+>>>>> the clock input in DT
+>>>>>
+>>>>> This is not your case.
+>>>>> Your controller is new and DT will have the correct
+>>>>> info
+>>>>>
+>>>>> You are trying work around an ordering issue by providing both fw_name
+>>>>> and name. This is not correct and I'll continue to nack it.
+>>>>>
+>>>>> If the orphan clock is not reparented as you would expect, I suggest you
+>>>>> try to look a bit further at how the reparenting of orphans is done in
+>>>>> CCF and why it does not match your expectation.
+>>>>>
+>>>> I have debugged the handle for orphan clock in CCF, Maybe you are missing
+>>>> the last email.
+>>>
+>>> Nope, got it the first time
+>>>
+>>>> Even though the clock index exit, it will get failed for the orphan clock's
+>>>> parent clock due to it has not beed added to the provider.
+>>>
+>>> If the provider is not registered yet, of course any query to it won't
+>>> work. This why I have suggested to this debug *further* :
+>>>
+>>> * Is the orphan reparenting done when a new provider is registered ?
+>>> * If not, should it be done ? is this your problem ?
+>>>
 > 
-> devm_clk_prepare_enable() sounds very useful, devm_clk_prepare() might
-> be useful, so keep those and drop devm_clk_enable().
+> Apparently, I was not clear enough so I'll rephrase
+> 
+>> Yes, the orphan reparenting is done when the new provider is
+>> registered.
+> 
+> No it is not done yet. Please check the code.
+> 
+> The reparenting of orphan is done only on clock registration, not on
+> provider registeration. Now that clocks can be specified by DT, this
+> probably needs to added.The action of reparenting the orphan is before the provider registration 
+with the current code.
+> 
+> That is your problem.
+Yes, if the provider is registered before the clock registration, it
+will reparent successfully.
+> 
+> Please fix the underlying issue, then you can post your series again.
+> 
+>>
+>> Reparenting the orphan will be done when each clock is registered by
+>> devm_clk_hw_register. And at this time the provider has not been
+>> registered. After all clocks are registered by devm_clk_hw_register, the
+>> provider will be registered by devm_of_clk_add_hw_provider.
+>>
+>> Reparenting the orphan will fail when fw_name is added alone, the couse is
+>> that devm_clk_hw_register is always running ahead of
+>> devm_of_clk_add_hw_provider.
+> 
+> Please stop bringing the topic of "fw_name" and "name" field together, I
+> told you 3 times why this is wrong. It is not going to change.
+> 
+>>
+>> That is why it will failed to get parent for the orphan clock.
+> 
+> It fails because the provider is not registered when you try to reparent
+> the orphan.
+> 
+> It shows that you should try again once the provider is registered.
+> 
+OK, I have exchanged the position for devm_clk_hw_register and 
+devm_of_clk_add_hw_provider in meson-eeclk.c.
 
-Oooh, I think I understand what you mean...
+It reparents successfully for orphan clock.
 
-I saw clk_prepare_enable() defined as clk_prepare() + clk_enable(),
-and figured I'd define devm_clk_prepare_enable() as
-devm_clk_prepare() + devm_clk_enable() without realizing that
-devm_clk_enable() made no sense.
+Is is ok that put devm_of_clk_add_hw_provider ahead?
 
-Solution: drop devm_clk_enable() from include/linux/clk.h
-Consequence devm_clk_prepare_enable() cannot be static inline,
-but that may not be a big deal...
-
-Regards.
+As far as I am concerned, there is no any effect.
+>>
+>>
+>>
+>>>
+>>> .
+>>>
+> 
+> .
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
