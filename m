@@ -2,64 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C4AB108FA5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 15:11:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9A3E108FBA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 15:18:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CqPfLtVyX+QFOAPW+/Sb2mM1aPTcFXTs1yhRIMen5/8=; b=JzQEZ061shNLJm
-	M7nkSqGuAY6Xn6PlNQLnHhnu8tLBvTUS45mMUnAYuvYWzg7zKvDz5OxluJsVg9Yjok2R1hKC3Ae1W
-	dfPZ5RXqywhCHnyDMTAyX252RQf85brj6R4yV69k9MYKRpJU0uJDa5SJzlBle/tF0JQSKZwr1bDqv
-	BdgUGlT8Dl5zdKlKRVxICrB7biaooe0EaFu4cAKpquitdwqW5e4yaUIGv9ilrMp2vt+R/Qre4+KGP
-	fgcBPCDzgJnBldWxdojiaLqxjGTx6uzsaCf7G4Mv8iHIjCshODFxttwfdJ0/cc8QfPuJGRso8pq2q
-	5YuiZzJtc+34XmLq0OAw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qI+i1SWjYyhxxLCPKU6Hq1XectQ2zIR9TFrBP/rfF7k=; b=nLWHQT8p99JRPB
+	aUAL0qD8+I1BiaXCDn2fbAFhpB+FxDKjhSM5Ps3aAAVPp7HtCqX+vIDvAuZ0glp7HiqxlXD7kHUGL
+	rfiAQMyqfINQg4h7juVwp+J/GBoLlfjlgfYcnCmxb05EvqZhf82C2qAPFZiLoQFws9ENRIxjLwpjm
+	uLtu3zQNqyEF4znMX/EdnoH4hYzaw0iIuoSwILyDTNRrbJRj/90UIKnU6BnXtp0z1i4AzB7r8pFZN
+	n8fB6SP1tE3WmnwbheTyriJHWGm+ZCBMWmXS4QaHy894wabCgPcPfPx3/mowWDN4HZY92jN99exwE
+	Sh7mmFM4xF68HU149G3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZF5R-00029W-0q; Mon, 25 Nov 2019 14:11:33 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iZFBm-0004TO-CT; Mon, 25 Nov 2019 14:18:06 +0000
+Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZF5I-00028P-6o
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 14:11:26 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id E46E320C1C;
- Mon, 25 Nov 2019 15:11:22 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id CDF0620BCE;
- Mon, 25 Nov 2019 15:11:22 +0100 (CET)
-Subject: Re: [PATCH v1] clk: Add devm_clk_{prepare,enable,prepare_enable}
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <1d7a1b3b-e9bf-1d80-609d-a9c0c932b15a@free.fr>
- <34e32662-c909-9eb3-e561-3274ad0bf3cc@free.fr>
- <20191125125530.GP25745@shell.armlinux.org.uk>
- <c7414301-da0d-cd4d-237d-34277f5ee1d2@free.fr>
- <20191125133752.GS25745@shell.armlinux.org.uk>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <21c242a9-3599-3288-79bf-a8889fad2a73@free.fr>
-Date: Mon, 25 Nov 2019 15:11:22 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iZFBb-0004Sd-Bq
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 14:17:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1574691472;
+ s=strato-dkim-0002; d=gerhold.net;
+ h=In-Reply-To:References:Message-ID:Subject:Cc:To:From:Date:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=r/C4z8eqmf4EqK6PYy8WsArzStWXQ+mb5cSxKvoTl4Q=;
+ b=suA2PJ3jDlQH99gUhnYShabSmPpsbHIoLjqHj9kenZK+NQD2U4awE0X74gyRpyHGnG
+ p1clLwJBuRoinsT6asagDL+Ukm5F7UIHg7UEBVRe8dbOJcnO+9aJhIpdaFpWPs7tBRO+
+ cuMJgHtW0P0UUXNQ+GgfHmuGmE1eS6NXjr9bUIh7CbmddeVJ2ew9/eRIysyzAFhnOc3X
+ GiFCClZ0hG6xl/YF2hPgrnlNunwy8Q1q/5xjzSgbVfWeVe0JyUnHzUpG4OooI84Jjgr4
+ cPZhxpJZz8a+l4pOXoOTCjRl6JstBZstULNA6zwelVxODUuoJoaXx0WwUKosU/BtYq/q
+ pAyg==
+X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVOQ/OcYgojyw4j34+u266HpF+ORJDYrryYBhveg=="
+X-RZG-CLASS-ID: mo00
+Received: from gerhold.net by smtp.strato.de (RZmta 45.0.2 DYNA|AUTH)
+ with ESMTPSA id 304194vAPEHn0tU
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
+ 521 ECDH bits, eq. 15360 bits RSA))
+ (Client did not present a certificate);
+ Mon, 25 Nov 2019 15:17:49 +0100 (CET)
+Date: Mon, 25 Nov 2019 15:17:40 +0100
+From: Stephan Gerhold <stephan@gerhold.net>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [PATCH 4/5] ARM: dts: ux500: Add pin configs for UART1 CTS/RTS
+ pins
+Message-ID: <20191125141740.GA55734@gerhold.net>
+References: <20191125122256.53482-1-stephan@gerhold.net>
+ <20191125122256.53482-4-stephan@gerhold.net>
 MIME-Version: 1.0
-In-Reply-To: <20191125133752.GS25745@shell.armlinux.org.uk>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Mon Nov 25 15:11:22 2019 +0100 (CET)
+Content-Disposition: inline
+In-Reply-To: <20191125122256.53482-4-stephan@gerhold.net>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_061124_541048_76B7CC2C 
-X-CRM114-Status: GOOD (  19.79  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191125_061755_729759_757C156A 
+X-CRM114-Status: GOOD (  15.50  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5300:0:0:10 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,83 +85,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 25/11/2019 14:37, Russell King - ARM Linux admin wrote:
+On Mon, Nov 25, 2019 at 01:22:55PM +0100, Stephan Gerhold wrote:
+> UART1 an be optionally used with additional CTS/RTS pins.
 
-> On Mon, Nov 25, 2019 at 02:10:21PM +0100, Marc Gonzalez wrote:
->
->> On 25/11/2019 13:55, Russell King - ARM Linux admin wrote:
->>
->>> It's also worth reading https://lore.kernel.org/patchwork/patch/755667/
->>> and considering whether you really are using the clk_prepare() and
->>> clk_enable() APIs correctly.  Wanting these devm functions suggests
->>> you aren't...
->>
->> In that older thread, you wrote:
->>
->>> If you take the view that trying to keep clocks disabled is a good way
->>> to save power, then you'd have the clk_prepare() or maybe
->>> clk_prepare_enable() in your run-time PM resume handler, or maybe even
->>> deeper in the driver... the original design goal of the clk API was to
->>> allow power saving and clock control.
->>>
->>> With that in mind, getting and enabling the clock together in the
->>> probe function didn't make sense.
->>>
->>> I feel that aspect has been somewhat lost, and people now regard much
->>> of the clk API as a bit of a probe-time nuisance.
->>
->> In the few drivers I've written, I call clk_prepare_enable() at probe.
+s/an/can, duh.
+I will fix this if a v2 is needed for some reason; otherwise,
+can you fix this when applying the patch?
+
+Thanks!
+
+> The pinctrl driver has an extra "u1ctsrts_a_1" pin group for them.
 > 
-> Right, so the clocks are enabled as soon as the device is probed,
-> in other words at boot time. It remains enabled for as long as the
-> device is bound to its driver, whether or not the device is actually
-> being used. Every switching edge causes heat to be generated. Every
-> switching edge causes energy to be wasted.
+> Add a new pin configuration to configure them correctly if needed.
 > 
-> That's fine if you have an infinite energy supply. That hasn't been
-> discovered yet.
+> Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
+> ---
+>  arch/arm/boot/dts/ste-dbx5x0-pinctrl.dtsi | 26 +++++++++++++++++++++++
+>  1 file changed, 26 insertions(+)
 > 
-> Given the prevalence of technology, don't you think we should be
-> doing as much as we possibly can to reduce the energy consumption
-> of the devices we use? It may be peanuts per device, but at scale
-> it all adds up.
-
-OK, I'm starting to see the bigger picture.
-
-(To provide some rationale for the patch, I think devm is a huge
-improvement for probe error-handling, and I did not understand
-why every driver must do manual error-handling when dealing with
-clocks in probe.)
-
-I did envision kernel modules being loaded on an as-needed basis,
-somewhat side-stepping the energy-waste issue you point out.
-But I realize that such a use-case may be uncommon. (Especially
-due to module auto-loading.)
-
-A few months ago, I was discussing a similar issue with GKH:
-Consider a device with a "START" register. Basically, if we write 0,
-the device turns itself off; if we write 1, it runs as configured.
-
-I was trying to start the device only when at least one user had
-it "open". So I used reference counting, and started the device
-on 0->1 open transitions, and stopped the device on 1->0 close
-transitions. GKH told me that was the wrong way to do it, and IIRC
-suggested to start the device in probe.
-
-I probably misunderstood Greg's suggestion. Where is the right place
-to start/stop a device (or gate its clocks)?
-
-Regards.
+> diff --git a/arch/arm/boot/dts/ste-dbx5x0-pinctrl.dtsi b/arch/arm/boot/dts/ste-dbx5x0-pinctrl.dtsi
+> index b6d0a60e9aed..e85a08ad2ea7 100644
+> --- a/arch/arm/boot/dts/ste-dbx5x0-pinctrl.dtsi
+> +++ b/arch/arm/boot/dts/ste-dbx5x0-pinctrl.dtsi
+> @@ -65,6 +65,32 @@
+>  				ste,config = <&slpm_out_wkup_pdis>;
+>  			};
+>  		};
+> +
+> +		u1ctsrts_a_1_default: u1ctsrts_a_1_default {
+> +			default_mux {
+> +				function = "u1";
+> +				groups = "u1ctsrts_a_1";
+> +			};
+> +			default_cfg1 {
+> +				pins = "GPIO6_AF6"; /* CTS */
+> +				ste,config = <&in_pu>;
+> +			};
+> +			default_cfg2 {
+> +				pins = "GPIO7_AG5"; /* RTS */
+> +				ste,config = <&out_hi>;
+> +			};
+> +		};
+> +
+> +		u1ctsrts_a_1_sleep: u1ctsrts_a_1_sleep {
+> +			sleep_cfg1 {
+> +				pins = "GPIO6_AF6"; /* CTS */
+> +				ste,config = <&slpm_in_wkup_pdis>;
+> +			};
+> +			sleep_cfg2 {
+> +				pins = "GPIO7_AG5"; /* RTS */
+> +				ste,config = <&slpm_out_hi_wkup_pdis>;
+> +			};
+> +		};
+>  	};
+>  
+>  	uart2 {
+> -- 
+> 2.24.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
