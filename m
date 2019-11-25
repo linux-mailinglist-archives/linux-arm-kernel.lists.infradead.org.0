@@ -2,56 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 438381092E8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 18:35:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0CA3109303
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 18:43:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sIhQ+nRTmR2X/KZtNzzewlUj2wsKahAyLDFeu/Vds2o=; b=dMigxQOjsq22sREeDG5sqyaA3
-	65WW3G+ahjk3MrBPwhI4auIpnbwatZNe86fuRNiHoUhWQah7hnR7gn75CpRdKYtJ9oTsxHsbJbV7b
-	CzVL/gYrtPgKd/tGI3DrhuCi5hB3Hp+EoPcCJl8PwuFRWrI/2I6pQoDHqX1q4eWrIKmO48F4ZZBW2
-	yWOKJQ+lCzZ4/NNxZXmyjFvsS+ANXCwOAcFf/4CUwtsziwpyinl7Xd+foPDVPiExi6E9jA1uMvQRj
-	OkXyGrgaCSVdA5Szn6nB+7xq3WgQPA6R/e8g5cx93T9z7CXqWaNRCNSojOerHjyKAnJ3YedjHd3sI
-	pP79PdDDg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2VFjvWGHvd/hPyVVCB0qLxtekdXH4rwhdRTA/aakMMc=; b=Q9SSr7an3cMgfq
+	zgEJM+q6v3IAOO+6irHT/NrWCI0o8QRcGROZcDwLSQ6r8pMEZ1ikElCZKLreBjBmAmew8G8W0k8Ju
+	Jr38lm1i26ekTWZVVI5an+vvxz17e0DijAP+s3It0CumzNeyd/+Bs/2oG6T9n+HioFVGTTQb/e4zL
+	KUTCO++tVRzEKtMEK3p9CutnPcAQQQkmvhulCfX6I0IKLGRME/8O6kuwZHVRhmU2aprMiHoRUHRwY
+	IQa1Sf4mgNoR+mr/RELuSpXWYsdi/ARRT/hSvDTsyiD+8Oz+v7xGNGKBtz0dP0PbRyZ+dBftE96fo
+	/yOJR3uKkqn+LiDWRiKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZIGx-0008HG-5m; Mon, 25 Nov 2019 17:35:39 +0000
+	id 1iZIOr-0001sL-Ag; Mon, 25 Nov 2019 17:43:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZIGn-0008GV-9I
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 17:35:30 +0000
+ id 1iZIOh-0001rz-3d
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 17:43:40 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D6BD331B;
- Mon, 25 Nov 2019 09:35:26 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5276C3F68E;
- Mon, 25 Nov 2019 09:35:26 -0800 (PST)
-Date: Mon, 25 Nov 2019 17:35:24 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCH v2 13/14] arm64: compile the kernel with ptrauth return
- address signing
-Message-ID: <20191125173524.GE4535@sirena.org.uk>
-References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
- <1574166746-27197-14-git-send-email-amit.kachhap@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 52EDC31B;
+ Mon, 25 Nov 2019 09:43:38 -0800 (PST)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1DED83F68E;
+ Mon, 25 Nov 2019 09:43:37 -0800 (PST)
+Date: Mon, 25 Nov 2019 17:43:30 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH] arm64: dts: arm: juno: Fix UART frequency
+Message-ID: <20191125174329.GA10102@bogus>
+References: <20191119120331.28243-1-andre.przywara@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <1574166746-27197-14-git-send-email-amit.kachhap@arm.com>
-X-Cookie: -- Owen Meredith
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20191119120331.28243-1-andre.przywara@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_093529_370474_D69BC8F4 
-X-CRM114-Status: GOOD (  10.32  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191125_094339_194184_365E2180 
+X-CRM114-Status: GOOD (  12.79  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,80 +60,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7337298945014180957=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Liviu Dudau <liviu.dudau@arm.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Nov 19, 2019 at 12:03:31PM +0000, Andre Przywara wrote:
+> Older versions of the Juno *SoC* TRM [1] recommended that the UART clock
+> source should be 7.2738 MHz, whereas the *system* TRM [2] stated a more
+> correct value of 7.3728 MHz. Somehow the wrong value managed to end up in
+> our DT.
+> Doing a prime factorisation, a modulo divide by 115200 and trying
+> to buy a 7.2738 MHz crystal at your favourite electronics dealer suggest
+> that the old value was actually a typo. The actual UART clock is driven
+> by a PLL, configured via a parameter in some board.txt file in the
+> firmware, which reads 7.37 MHz (sic!).
+> 
+> Fix this to correct the baud rate divisor calculation on the Juno board.
+> 
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> 
 
---===============7337298945014180957==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="zjcmjzIkjQU2rmur"
-Content-Disposition: inline
+Do we need fixes tag here ? Unless someone objects I will add and apply
+this patch:
 
+Fixes: 71f867ec130e ("arm64: Add Juno board device tree.")
 
---zjcmjzIkjQU2rmur
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Nov 19, 2019 at 06:02:25PM +0530, Amit Daniel Kachhap wrote:
-
-> +config CC_HAS_BRANCH_PROT_PAC_RET
-> +	# GCC 9 or later
-> +	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf)
-
-This breaks the build for me with CC=clang-9:
-
-  CC      arch/arm64/kernel/vdso/vgettimeofday.o
-/tmp/vgettimeofday-1a520b.s: Assembler messages:
-/tmp/vgettimeofday-1a520b.s:25: Error: selected processor does not support `paciasp'
-/tmp/vgettimeofday-1a520b.s:26: Error: unknown pseudo-op: `.cfi_negate_ra_state'
-/tmp/vgettimeofday-1a520b.s:120: Error: selected processor does not support `autiasp'
-
-(and various other errors with the assembler not understanding stuff).
-This happens because clang is using the system assembler (that from
-Debian stable in my case, 2.31.1) and it requires additional options to
-enable newer instructions.  We need to pass -mcpu=all or similar to the
-assembler (eg, with -Wa,-mcpu=all in CC).  This'd be fine if the
-cc-option check detected the assembler issues but sadly it doesn't get
-that far.
-
---zjcmjzIkjQU2rmur
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3cENwACgkQJNaLcl1U
-h9CNUgf/byjjBpq/JiphtnW2CoI54lvCKdWxJtsKWcLTM9OhoVVbwJakobeX0jWn
-HmeZYFqKoR8YdJo842YpBaiYIyUHFl6SlCYZa25tJa6kDTbesqhda0obT60Ya7ni
-24kL+x0N7BHYoiphglTURqMP8ya86r5YQ7oy3mr9iWX9Ae8cWGD2LwbWn6jbh6Pn
-5K/lf66gQmfUukbtJKOQni8vUAI/EpDkFe30xbyQCIz9gpEL6uisSv5yeZ9uwdaP
-29pt7UhwgsdZnfRqIt+hCAPoLsWyaERbGaNNKc7xa+LDTzeJ3JNvYcGs5qfgdMDI
-dTaQMWlEQuAK151IwblENgxyg5no1A==
-=Q0EV
------END PGP SIGNATURE-----
-
---zjcmjzIkjQU2rmur--
-
-
---===============7337298945014180957==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7337298945014180957==--
-
