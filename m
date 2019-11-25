@@ -2,81 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D6951094C1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 21:44:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41F3F10950D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 22:18:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lf9p+XQra9KHykjI6qPQJT7qxozVU/pYGVtXaq1Rrh8=; b=rxwnJ4dz8gGdNy
-	cLeTz8KeR5AQEEqE+1biw+B5+505SDld4YZeTICOEVYNl29nM/CppXMQgu2gwJSy9IHZ/1/inWJti
-	mO7dkpfKRMVfws/wpJmNgPYUIKiLk/wH/wj8nBUXKq8YjJ4CxuqS+hbzHyOhLPsDZ5lKzz0c+52xx
-	Whqae7KbrGo2zbHteqTHEFVdHWgmB6f6fJhg+UMc+FujBXOMz3FVby9qA5jD5A37MnH4Upi4evbP4
-	cXMvJ6aqmnnNkiOJ8a20vZ0XtuCevI6JtBHzTc+HgjXkxCeW7ZfYzUdTIc5/aOaBhw/089X6F936l
-	lA/nDutKH2/nEkuI4BHw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=z4tYwdCB2WXxFSiuQusIACGvVM9/fIPZpBRetbWxTvE=; b=pzvfIaCdTJlvnh
+	Kl1aeSWtJEjIUr9vpIlhmfzV5P0aGIBVINWclDo1Ec2HqGUyNIYIxhCYhmeftjK+wv0gM6Q22nAaQ
+	ILq2emVJOIc0Ebe8a/zNDEt5M2u6pvU3dpQyewl8pu3XgVQ3D+z5WLq0gtVLMnB9jYjfy/LvPrGDC
+	KpaGughds0V+xlYXkIsxsdCkAZjNVr5fl0+Otl5OH0n4NOuaq8odrB/cAB08+tSP8f2lnxV2vNi+u
+	gJaSRIO9+C/nGD5qx+uXMkruldufEzVL5bUtIuk9RjzysNixGmTwzcFiVuqvikXjauC1No7Q+agIC
+	OqH+hIzM6uT/aVuQjyEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZLDB-00079S-48; Mon, 25 Nov 2019 20:43:57 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iZLkf-0002Ll-KN; Mon, 25 Nov 2019 21:18:33 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZLD0-00078b-R9
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 20:43:48 +0000
-Received: by mail-ot1-f66.google.com with SMTP id n23so13826795otr.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 Nov 2019 12:43:45 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vkN17VKr1QonsL4KEkyHopuTh41vqxivJMdU6x1c6F8=;
- b=Q4uKgT2Bei9W94uK8IOdIPK05HrPA/Wm5UKrIJwh+JhD8R7/Avz5rNbN0xwffKwVFL
- K3Dg3+RNsn9H9JK+rRA42W1NUPFeFgaEwrn8agl+Z0+JMKbKN71GZNGDTyJe8TnLasAr
- 1nW8PyYENON43NiADvzrWEodGT/a+sWQLaLXPjF6pGi9+hoqiVrNpOz2Xg5Q8H2aEGjE
- 9T/Y0bmdoM6Ew/MlkZ0X2s3ynaZaK6RU63w/AUMKr1DQNiAn+XRGlYqnSCQaQfAVOB/U
- fkzO0g5GgP4vnAXkOG1WgZ+lAm3ovKa3IrhX/9SI8+MrmPkFrDh9D3FXZJq2TpnnXgPz
- vlHQ==
-X-Gm-Message-State: APjAAAVjrK0GNPZsPDwRw+PHPSKf8rfWsFJLelF1+JCEt8DUezWaLrg3
- K+/LaUj/k2biFY5FiHOQHhQfXkOuoVPt1rga7y8=
-X-Google-Smtp-Source: APXvYqx7zhO+FIeXSjEth0eVOFf+CJ3kUYyafgplkB8JwQg5X9n0L7sXm2e57q/4uZZvCl18+4TpKc3rWwdbo7y/G4k=
-X-Received: by 2002:a9d:2073:: with SMTP id
- n106mr11207489ota.145.1574714625036; 
- Mon, 25 Nov 2019 12:43:45 -0800 (PST)
+ id 1iZLk6-0001zR-DD
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 21:18:00 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xAPL9SgQ165259;
+ Mon, 25 Nov 2019 21:17:22 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding;
+ s=corp-2019-08-05; bh=K7hqDnK/TsK5jvG3JC6XMU0Tierrock1H72ajxKsRBk=;
+ b=OxsvRh5qJIREV0Nl58dZLErboXL1oTJYkpCY+bN+jUxOsaZnBggZOaWX42HmTWvi5Sdd
+ jU/vbr9jriaO9rf9vnnq/9NcUnL44XByndtFygp0jflr1w+2WgYFOylKbTvjSenpWQcA
+ Df94UVHciiRbCXw540IQwQfE4TBrib2TGIvfDDsXqpHHC9V2EZTSLY8eBcYJydFhZqtK
+ GLy/SVg92+5KEHok13Wp4sRddWEoRaJc8UrIVtl3DqdcY9HSvYoyaX8SbsHvujXaE6Jd
+ 0z0ucNwxpPE9soWGJXRUhljiIXmWJn7TqkxYKCg3/cCwCdulaqfxjDfbM79dhPIpDNlp Yg== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2120.oracle.com with ESMTP id 2wewdr2917-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 25 Nov 2019 21:17:22 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xAPL8VPe156913;
+ Mon, 25 Nov 2019 21:15:22 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by userp3030.oracle.com with ESMTP id 2wfe80nsw4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 25 Nov 2019 21:15:21 +0000
+Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id xAPLFBfc020511;
+ Mon, 25 Nov 2019 21:15:11 GMT
+Received: from neelam.us.oracle.com (/10.152.128.16)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 25 Nov 2019 13:15:11 -0800
+From: Alex Kogan <alex.kogan@oracle.com>
+To: linux@armlinux.org.uk, peterz@infradead.org, mingo@redhat.com,
+ will.deacon@arm.com, arnd@arndb.de, longman@redhat.com,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, tglx@linutronix.de, bp@alien8.de,
+ hpa@zytor.com, x86@kernel.org, guohanjun@huawei.com, jglauber@marvell.com
+Subject: [PATCH v7 0/5] Add NUMA-awareness to qspinlock
+Date: Mon, 25 Nov 2019 16:07:04 -0500
+Message-Id: <20191125210709.10293-1-alex.kogan@oracle.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
-References: <1d7a1b3b-e9bf-1d80-609d-a9c0c932b15a@free.fr>
- <34e32662-c909-9eb3-e561-3274ad0bf3cc@free.fr>
- <20191125125530.GP25745@shell.armlinux.org.uk>
- <c7414301-da0d-cd4d-237d-34277f5ee1d2@free.fr>
- <20191125133752.GS25745@shell.armlinux.org.uk>
- <21c242a9-3599-3288-79bf-a8889fad2a73@free.fr>
-In-Reply-To: <21c242a9-3599-3288-79bf-a8889fad2a73@free.fr>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 25 Nov 2019 21:43:33 +0100
-Message-ID: <CAMuHMdXtnm25RFuLjnko0mYijgH-8J6KnQ+f1xo1PjBCKUvznQ@mail.gmail.com>
-Subject: Re: [PATCH v1] clk: Add devm_clk_{prepare,enable,prepare_enable}
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9452
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=988
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-1911250171
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9452
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-1911250171
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_124346_879841_A960C3BB 
-X-CRM114-Status: GOOD (  25.54  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191125_131758_717789_7006F6CD 
+X-CRM114-Status: GOOD (  20.80  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,102 +111,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: alex.kogan@oracle.com, dave.dice@oracle.com, rahul.x.yadav@oracle.com,
+ steven.sistare@oracle.com, daniel.m.jordan@oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+Minor change from v6:
+---------------------
 
-On Mon, Nov 25, 2019 at 3:11 PM Marc Gonzalez <marc.w.gonzalez@free.fr> wrote:
-> On 25/11/2019 14:37, Russell King - ARM Linux admin wrote:
-> > On Mon, Nov 25, 2019 at 02:10:21PM +0100, Marc Gonzalez wrote:
-> >> On 25/11/2019 13:55, Russell King - ARM Linux admin wrote:
-> >>> It's also worth reading https://lore.kernel.org/patchwork/patch/755667/
-> >>> and considering whether you really are using the clk_prepare() and
-> >>> clk_enable() APIs correctly.  Wanting these devm functions suggests
-> >>> you aren't...
-> >>
-> >> In that older thread, you wrote:
-> >>
-> >>> If you take the view that trying to keep clocks disabled is a good way
-> >>> to save power, then you'd have the clk_prepare() or maybe
-> >>> clk_prepare_enable() in your run-time PM resume handler, or maybe even
-> >>> deeper in the driver... the original design goal of the clk API was to
-> >>> allow power saving and clock control.
-> >>>
-> >>> With that in mind, getting and enabling the clock together in the
-> >>> probe function didn't make sense.
-> >>>
-> >>> I feel that aspect has been somewhat lost, and people now regard much
-> >>> of the clk API as a bit of a probe-time nuisance.
-> >>
-> >> In the few drivers I've written, I call clk_prepare_enable() at probe.
-> >
-> > Right, so the clocks are enabled as soon as the device is probed,
-> > in other words at boot time. It remains enabled for as long as the
-> > device is bound to its driver, whether or not the device is actually
-> > being used. Every switching edge causes heat to be generated. Every
-> > switching edge causes energy to be wasted.
-> >
-> > That's fine if you have an infinite energy supply. That hasn't been
-> > discovered yet.
-> >
-> > Given the prevalence of technology, don't you think we should be
-> > doing as much as we possibly can to reduce the energy consumption
-> > of the devices we use? It may be peanuts per device, but at scale
-> > it all adds up.
->
-> OK, I'm starting to see the bigger picture.
->
-> (To provide some rationale for the patch, I think devm is a huge
-> improvement for probe error-handling, and I did not understand
-> why every driver must do manual error-handling when dealing with
-> clocks in probe.)
->
-> I did envision kernel modules being loaded on an as-needed basis,
-> somewhat side-stepping the energy-waste issue you point out.
-> But I realize that such a use-case may be uncommon. (Especially
-> due to module auto-loading.)
->
-> A few months ago, I was discussing a similar issue with GKH:
-> Consider a device with a "START" register. Basically, if we write 0,
-> the device turns itself off; if we write 1, it runs as configured.
->
-> I was trying to start the device only when at least one user had
-> it "open". So I used reference counting, and started the device
-> on 0->1 open transitions, and stopped the device on 1->0 close
-> transitions. GKH told me that was the wrong way to do it, and IIRC
-> suggested to start the device in probe.
->
-> I probably misunderstood Greg's suggestion. Where is the right place
-> to start/stop a device (or gate its clocks)?
+- fixed a 32-bit build failure by adding dependency on 64BIT in Kconfig.
+Reported-by: kbuild test robot <lkp@intel.com>
 
-In the device driver's Runtime PM callbacks?
-In the Power/Clock Domain Controller driver?
 
-See drivers/base/power/domain.c:genpd_{start,stop}_dev(), and how/when
-it's called.
+Summary
+-------
 
-Embedded device driver writers typically care.
-Server device driver writes typically don't.
+Lock throughput can be increased by handing a lock to a waiter on the
+same NUMA node as the lock holder, provided care is taken to avoid
+starvation of waiters on other NUMA nodes. This patch introduces CNA
+(compact NUMA-aware lock) as the slow path for qspinlock. It is
+enabled through a configuration option (NUMA_AWARE_SPINLOCKS).
 
-Gr{oetje,eeting}s,
+CNA is a NUMA-aware version of the MCS lock. Spinning threads are
+organized in two queues, a main queue for threads running on the same
+node as the current lock holder, and a secondary queue for threads
+running on other nodes. Threads store the ID of the node on which
+they are running in their queue nodes. After acquiring the MCS lock and
+before acquiring the spinlock, the lock holder scans the main queue
+looking for a thread running on the same node (pre-scan). If found (call
+it thread T), all threads in the main queue between the current lock
+holder and T are moved to the end of the secondary queue.  If such T
+is not found, we make another scan of the main queue after acquiring 
+the spinlock when unlocking the MCS lock (post-scan), starting at the
+node where pre-scan stopped. If both scans fail to find such T, the
+MCS lock is passed to the first thread in the secondary queue. If the
+secondary queue is empty, the MCS lock is passed to the next thread in the
+main queue. To avoid starvation of threads in the secondary queue, those
+threads are moved back to the head of the main queue after a certain
+number of intra-node lock hand-offs.
 
-                        Geert
+More details are available at https://arxiv.org/abs/1810.05600.
+
+The series applies on top of v5.4.0, commit eae56099de85.
+Performance numbers are available in previous revisions
+of the series.
+
+Further comments are welcome and appreciated.
+
+Alex Kogan (5):
+  locking/qspinlock: Rename mcs lock/unlock macros and make them more
+    generic
+  locking/qspinlock: Refactor the qspinlock slow path
+  locking/qspinlock: Introduce CNA into the slow path of qspinlock
+  locking/qspinlock: Introduce starvation avoidance into CNA
+  locking/qspinlock: Introduce the shuffle reduction optimization into
+    CNA
+
+ .../admin-guide/kernel-parameters.txt         |  18 +
+ arch/arm/include/asm/mcs_spinlock.h           |   6 +-
+ arch/x86/Kconfig                              |  20 ++
+ arch/x86/include/asm/qspinlock.h              |   4 +
+ arch/x86/kernel/alternative.c                 |  70 ++++
+ include/asm-generic/mcs_spinlock.h            |   4 +-
+ kernel/locking/mcs_spinlock.h                 |  20 +-
+ kernel/locking/qspinlock.c                    |  77 ++++-
+ kernel/locking/qspinlock_cna.h                | 319 ++++++++++++++++++
+ kernel/locking/qspinlock_paravirt.h           |   2 +-
+ 10 files changed, 517 insertions(+), 23 deletions(-)
+ create mode 100644 kernel/locking/qspinlock_cna.h
 
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.21.0 (Apple Git-122.2)
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
