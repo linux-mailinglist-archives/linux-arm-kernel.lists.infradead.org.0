@@ -2,95 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E433108A71
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 10:04:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC6E6108A95
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 10:13:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/4R000NUIIs5AZLRKYpnN+KtyMaSfqTdmKr7ffsd3/Q=; b=ovpgR+SDWrr8Z3
-	9izcfFd8ynY/EEtwixYMNfYVi1g19uE2KGWHKxRlv/9q4aRTR2vMCvsNsTW9N22p8wFC3R88I+Xrz
-	EWwUYsHxbV/XHTvQfRvM4wi3398W2FiJuLw6Q6UA/xlqYLIo2kVHSu8eVFE1J0oFukH5ChWA2L0Wt
-	aRrhwzYfS55O4MzKFq7hl6H9pD+HPJsFEf/f7sY2wKGP5TjOduhcQKv7mteTG+mZxOV+ZWM8XUR0c
-	FaBrVg3tdrbGjHbCExAzKFu0YT/FAkmyo8mez1d0s0BfBMQmX187Ity7/syLTEn0Qplm+tB31WICC
-	LN1t35AAwQwBJraym1FQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HZ7AXOI9kAsB31k79RSte/+B9B5AssMLDp6byM3ShuM=; b=PNZwFw1bGvCabeERNRrC5+ZnW
+	a2yBG289VVNnc0rreatel8SnmITdGGaCwzz9lKyLiwnNgnCcVBJMX99OorlYymHxwNGAThEZm1PWf
+	NwU8S7l1rPe96ZT+6Xz0jZ/ZusPhldQwDvm5LF5eHi0D30thGpHzpt+P2/q+Wr3kQt63P+P+i1qZ4
+	uu8F1ewumNH1awFhxjiKkW4Fz7SeXytHyrsgM+VzSOrhwupgd8eYkkSNTWc45vX4orGEuw+L2xzFB
+	ZvZ48lPT/XGYB/ZboITJLeyOPXp0lx1V8vkT+gz15FhO1qdoK8UMzajJWtTqfkII3v/gnlI0VYunv
+	5AFf8ib6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZAIU-0000Tq-42; Mon, 25 Nov 2019 09:04:42 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZAIK-0000St-SR
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 09:04:34 +0000
-Received: by mail-wr1-x442.google.com with SMTP id z7so13464803wrl.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 Nov 2019 01:04:31 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=date:from:to:cc:subject:message-id:mail-followup-to:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=FCcRXq9rJbMPMfoFuzPFIe7CFg7Q6ZOnAYxFNHJ2YvA=;
- b=Pckq8+ZBX0c5vXqXPdW0trgRD8vqBwKVOHlUk33mbPiLqxw35IH8UR0w3sDEVmDsTK
- 755Bektz7Ti/C1L26KE6nGgar7kYjqM5NIUhjtqtXK8VEdSoS9fpd7IMsj2sOvFLvUx2
- qW0Kqn530++EQSW3YQsiWIMTzwIdm6azBwOfg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=FCcRXq9rJbMPMfoFuzPFIe7CFg7Q6ZOnAYxFNHJ2YvA=;
- b=HspJMBfCsVQet6TCE4bHd959PLIKt/hWBNn/rP28t+f7wY0jz4J0clKy1sIbQtbgjV
- 3qGbJ7pgfjUQhz0kR4Z/F/DQXtBwCe/XDI2XUD0N6oftOTLybjiREBPxjH05x0fo8qbx
- glSdVmkT+SHUln+owWQeXemYTza4L0UE2Is0qC3iBo2dv50zKnCpoeRPLVYcZ/wbmYoI
- LwfTUhV2Q5XbYc4pRrrU5jLuNVDuLx4aiRkxiJve86VGBseS4n+C1u33nVjNG8qoDyMB
- xZGiIpkq9uhsqQc3FGEejA7zMc0pMot+xghya1OT4Lg1ecD6cbsklJB4udk4s2aLq50K
- QlGg==
-X-Gm-Message-State: APjAAAU7+UcUbsJ3aPzU6itvCqu2SFJQP2oV60dRD4T+3pp/g7YnPAkO
- nBq43/NWXfRForkTG40wTf8z0A==
-X-Google-Smtp-Source: APXvYqyQrihAxd9KIrI5g1bVfEDvkyJIYOfqMHWXRNrqbbA0K6a2Hi0OFP2QAYHm/PkP+X/BY9gfCw==
-X-Received: by 2002:a5d:5227:: with SMTP id i7mr30428764wra.277.1574672670756; 
- Mon, 25 Nov 2019 01:04:30 -0800 (PST)
-Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
- [212.51.149.96])
- by smtp.gmail.com with ESMTPSA id 91sm10059586wrm.42.2019.11.25.01.04.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 25 Nov 2019 01:04:30 -0800 (PST)
-Date: Mon, 25 Nov 2019 10:04:28 +0100
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH] drm/sun4i: Fix Kconfig indentation
-Message-ID: <20191125090428.GD29965@phenom.ffwll.local>
-Mail-Followup-To: Krzysztof Kozlowski <krzk@kernel.org>,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org
-References: <20191121132924.29485-1-krzk@kernel.org>
+	id 1iZAQb-0003ne-Nz; Mon, 25 Nov 2019 09:13:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iZAQP-0003n5-Or
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 09:12:55 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7CC16328;
+ Mon, 25 Nov 2019 01:12:52 -0800 (PST)
+Received: from [10.163.1.198] (unknown [10.163.1.198])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2C3D03F6C4;
+ Mon, 25 Nov 2019 01:12:43 -0800 (PST)
+Subject: Re: [PATCH v2 08/14] arm64: mask PAC bits of __builtin_return_address
+To: Richard Henderson <richard.henderson@linaro.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
+References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
+ <1574166746-27197-9-git-send-email-amit.kachhap@arm.com>
+ <CAKv+Gu_U37kfCOT4ko-pK6b80aQ2uCe88WfHPwwzjrZ4frndmw@mail.gmail.com>
+ <cdc2fdcf-7a58-a551-253e-adb92180e749@linaro.org>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <c989111a-2d07-71fc-b4a8-4ba0df1492b8@arm.com>
+Date: Mon, 25 Nov 2019 14:42:38 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191121132924.29485-1-krzk@kernel.org>
-X-Operating-System: Linux phenom 5.3.0-2-amd64 
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <cdc2fdcf-7a58-a551-253e-adb92180e749@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_010432_918730_40F97C15 
-X-CRM114-Status: GOOD (  16.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191125_011253_897321_B83D7BAC 
+X-CRM114-Status: GOOD (  21.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,67 +65,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Chen-Yu Tsai <wens@csie.org>,
- Maxime Ripard <mripard@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 21, 2019 at 09:29:24PM +0800, Krzysztof Kozlowski wrote:
-> Adjust indentation from spaces to tab (+optional two spaces) as in
-> coding style with command like:
-> 	$ sed -e 's/^        /\t/' -i */Kconfig
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-Queued in drm-misc-next for 5.6, thanks for your patch.
--Daniel
 
-> ---
->  drivers/gpu/drm/sun4i/Kconfig | 16 ++++++++--------
->  1 file changed, 8 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/sun4i/Kconfig b/drivers/gpu/drm/sun4i/Kconfig
-> index 37e90e42943f..5755f0432e77 100644
-> --- a/drivers/gpu/drm/sun4i/Kconfig
-> +++ b/drivers/gpu/drm/sun4i/Kconfig
-> @@ -17,18 +17,18 @@ config DRM_SUN4I
->  if DRM_SUN4I
->  
->  config DRM_SUN4I_HDMI
-> -       tristate "Allwinner A10 HDMI Controller Support"
-> -       default DRM_SUN4I
-> -       help
-> +	tristate "Allwinner A10 HDMI Controller Support"
-> +	default DRM_SUN4I
-> +	help
->  	  Choose this option if you have an Allwinner SoC with an HDMI
->  	  controller.
->  
->  config DRM_SUN4I_HDMI_CEC
-> -       bool "Allwinner A10 HDMI CEC Support"
-> -       depends on DRM_SUN4I_HDMI
-> -       select CEC_CORE
-> -       select CEC_PIN
-> -       help
-> +	bool "Allwinner A10 HDMI CEC Support"
-> +	depends on DRM_SUN4I_HDMI
-> +	select CEC_CORE
-> +	select CEC_PIN
-> +	help
->  	  Choose this option if you have an Allwinner SoC with an HDMI
->  	  controller and want to use CEC.
->  
-> -- 
-> 2.17.1
-> 
+Hi,
 
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+On 11/22/19 2:18 PM, Richard Henderson wrote:
+> On 11/21/19 5:42 PM, Ard Biesheuvel wrote:
+>> On Tue, 19 Nov 2019 at 13:33, Amit Daniel Kachhap <amit.kachhap@arm.com> wrote:
+>>>
+>>> This patch redefines __builtin_return_address to mask pac bits
+>>> when Pointer Authentication is enabled. As __builtin_return_address
+>>> is used mostly used to refer to the caller function symbol address
+>>> so masking runtime generated pac bits will help to find the match.
+>>>
+>>> This change fixes the utilities like cat /proc/vmallocinfo to now
+>>> show the correct logs.
+>>>
+>>> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+>>> ---
+>>> Change since last version:
+>>>   * Comment modified.
+>>>
+>>>   arch/arm64/Kconfig                |  1 +
+>>>   arch/arm64/include/asm/compiler.h | 17 +++++++++++++++++
+>>>   2 files changed, 18 insertions(+)
+>>>   create mode 100644 arch/arm64/include/asm/compiler.h
+>>>
+>>> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+>>> index 998248e..c1844de 100644
+>>> --- a/arch/arm64/Kconfig
+>>> +++ b/arch/arm64/Kconfig
+>>> @@ -117,6 +117,7 @@ config ARM64
+>>>          select HAVE_ALIGNED_STRUCT_PAGE if SLUB
+>>>          select HAVE_ARCH_AUDITSYSCALL
+>>>          select HAVE_ARCH_BITREVERSE
+>>> +       select HAVE_ARCH_COMPILER_H
+>>>          select HAVE_ARCH_HUGE_VMAP
+>>>          select HAVE_ARCH_JUMP_LABEL
+>>>          select HAVE_ARCH_JUMP_LABEL_RELATIVE
+>>> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+>>> new file mode 100644
+>>> index 0000000..5efe310
+>>> --- /dev/null
+>>> +++ b/arch/arm64/include/asm/compiler.h
+>>> @@ -0,0 +1,17 @@
+>>> +/* SPDX-License-Identifier: GPL-2.0 */
+>>> +#ifndef __ASM_ARM_COMPILER_H
+>>> +#define __ASM_ARM_COMPILER_H
+>>> +
+>>> +#ifndef __ASSEMBLY__
+>>> +
+>>> +#if defined(CONFIG_ARM64_PTR_AUTH)
+>>> +
+>>> +/* As TBI1 is disabled currently, so bits 63:56 also has PAC */
+>>> +#define __builtin_return_address(val)                          \
+>>> +       (void *)((unsigned long)__builtin_return_address(val) | \
+>>> +       (GENMASK_ULL(63, 56) | GENMASK_ULL(54, VA_BITS)))
+>>> +#endif
+>>> +
+>>> +#endif
+>>> +
+>>> +#endif /* __ASM_ARM_COMPILER_H */
+>>
+>> It seems to me like we are accumulating a lot of cruft for khwasan as
+>> well as PAC to convert address into their untagged format.
+>>
+>> Are there are untagging helpers we can already reuse? If not, can we
+>> introduce something that can be shared between all these use cases?
+> 
+> xpaci will strip the pac from an instruction pointer, but requires the
+> instruction set to be enabled, so you'd have to fiddle with alternatives.  You
+> *could* force the use of lr as input/output and use xpaclri, which is a nop if
+> the instruction set is not enabled.
+
+xpaclri instruction seems easy to implement as including any header here 
+"alternative.h" creates lot of header inclusion error. Thanks for the 
+suggestion.
+
+> 
+> Also, this definition of is not correct, because bit 55 needs to be propagated
+> to all of the bits being masked out here, so that you get a large negative
+> number for kernel space addresses.
+
+Yes agree.
+
+Regards,
+Amit D
+> 
+> 
+> r~
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
