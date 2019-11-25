@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F5661094F7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 22:13:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58EE4109513
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 22:23:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w1M8hcMdkCwBhstxYP4veJ7xijLoM+hmIWTAtr+3GQ4=; b=Lv8aepBvvJ/TPZ
-	xgUTDHtayKXDhkRB5pIowjOZH+LNZiQXIUy0KHSFGEoMT9C9/q8XzHvJZ08w3SGb3TCe7kW+ONSn1
-	I3Z184Xm+7iGahgpv8LxIBpFuQwx0gTo9KG9X9woVK2HJtidce9OnA/wW/rmL58A7QYji7+6YLIvk
-	bTKRoWzPhOaun2rWADxjnN0j0+TtwzJFNfUNRSKGVPQ2t6OCbmq142iFAhf/H8rLWJq68KS4xGvVC
-	ViYwXO4BFGbaOb6cFemxgUA5fIYCxbSdVq+rj3OvGJPYwhZsNFkHz5HjMlnwxGDNdP49deKaTfrvl
-	F8+7lKz7Uc/VuNjBf/jQ==;
+	List-Owner; bh=TsPgnXh68rNl4vzpAx/X+gzM/Hy/yW22n2gUsRCcd8Q=; b=riXZgk8GvBhgOW
+	roasmUBvWtC31ay2yJkN119gOH1IgiwYuO/wMDNwwDcIQVKbQvcJW8+XYOZqaj/VKcUu/EbBTmSNg
+	0K03J7IJKoAMzDwpyRqFr/PYYfD8aoAqU1DOvF9MGZ8HM1DmE80iwxGW8ZKP3Efn/z27jyuZuWJbh
+	aIiY1P5r7n28Iag1Yx/2pk0Xq51bMV3h+NlwZXwIttVmeiJi/Z8uxQboxLiIUbjnr8VlBzIBhDZER
+	fhZ0EnW1P5UXpsjpxdCOTKR17Yw6tSnO7ZVgwQ5oe6Er9eb/JeSMyie5Urh8jUo2aUoycl8SMKd8e
+	/Vz08Tly4EZ1H8sv0WWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZLfw-0007hB-A5; Mon, 25 Nov 2019 21:13:40 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iZLpA-00041o-IY; Mon, 25 Nov 2019 21:23:12 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZLfn-0007gq-2j
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 21:13:32 +0000
-Received: by mail-pg1-x541.google.com with SMTP id q17so7796051pgt.9
+ id 1iZLoz-00041G-Lj
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 21:23:03 +0000
+Received: by mail-pg1-x544.google.com with SMTP id e17so7815399pgd.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 Nov 2019 13:13:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Mon, 25 Nov 2019 13:23:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=/KuqJB5l3VS5YWmc0ZRh/KWLxhoYbWPz8odAlgDuw5E=;
- b=NKKJVh9N0BEXFJtAG/HZvrC45bHCRpqAZL7I9nZGpsPTNettqxVqNsm3WLBAubJnHm
- GhqcNR2nJhudApwm+ND9QK3ahkZEXJDrbYRxJnTKxQX4e6/SNjAyDzygP+ZKc01nTn6g
- xZdOMw9rZWHvRnNtiUj0KBYdWbottuDPH39VvbfbzvguoneDBBcNv3+ZVCqb6a+7+PXa
- +WVY9X20H6rXncAfrRCnItQ8L4miZrNU3OK1cXcOw6bHdzU8NHEVs5u28oauy0ngxLHe
- /8RyFl0MXjwstc1m6VUXQT58kJe1Bv9qK7vrdutHf3OK+QcU4JHWXxo9/koZGVaV2dLK
- 1sgg==
+ bh=MRWbzEgUDmf3m7DHTyD54EPb8B/zhp4opLc7il/4TZ0=;
+ b=L/8ePBkLez3+K02qqWuXHzwk2aoe/X/csJkxSiZ9yqGB073CgKBSnV0NCVAddtYhRA
+ Y50OFSl9bR9JRWyHZuQ1HQPQA5jaboTM+KdNzZs9oomThyM9ZFXL+OdGojGpwRRH3QX8
+ JaNM1Su0TjHE/31LckH9YGeeTpbN5P60ANE+3XINq9ZxfnEkVW9X8XIGxd0FgM+VgxLH
+ a3VDqpQMsloYUsXPX2Kj1nqH7EWHFPfJUE4a8sHJRQ8xGN0pV2DSaW/AfcODj7iLAlBm
+ lh7bXb6bZUXcsbi7IiO6LIYM3FHbf8pZNAzFDfW90SYsAvLrviPYQgU8A2fRdybWGgBT
+ Q2Dw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/KuqJB5l3VS5YWmc0ZRh/KWLxhoYbWPz8odAlgDuw5E=;
- b=IjVmnxsf/rAOJAseBiDxcn76u3qi4SCcHNXnZcM50U7j8aPMgFKv7C703EcRvvrp3e
- 9ThICLGs828pi7sQ2OefZwky0sOpGMXxAjC4lMgM1t3pkDG1+CZkkjsBRWtreizgafCa
- Yug8+4ekJZYMyVLuildIdstGDmSFf8kSkgmwFXoU5VCMeVpw/paxvOI4Lnpwj/G0Qxdm
- 4ykL7fkEz6dW2tfFm/linpYOCZUGjkZFp3ZQ94BK/I//NRx7iVMSIaQ23ELi7VvA0EDu
- ufXGJMCuJ5QU1xOm4nXvZ849/A/ebUD2vjlC8VhUUt0xFx5rhlGLZ7gTWM3RL211L+GP
- 6Fag==
-X-Gm-Message-State: APjAAAUjA3MXZKwPuUeMOyBCRhrm9HpOKCN/x/E3dDklx241wIxRNJnt
- PFUGJLsXqI54af616JDzXPYJh5vb
-X-Google-Smtp-Source: APXvYqxew5KZZ0qrR2YDEIwvTVxAgRRS29CLv9+5Uv8FOh6XgoMumNo2U1uue2OLUxkoZs5+qbdvVg==
-X-Received: by 2002:a63:3741:: with SMTP id g1mr15023503pgn.434.1574716409329; 
- Mon, 25 Nov 2019 13:13:29 -0800 (PST)
-Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
- by smtp.gmail.com with ESMTPSA id 186sm9611305pfe.141.2019.11.25.13.13.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 25 Nov 2019 13:13:28 -0800 (PST)
-Date: Mon, 25 Nov 2019 13:13:26 -0800
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Robin van der Gracht <robin@protonic.nl>
-Subject: Re: [PATCH v4] input: keyboard: snvs_pwrkey: Send key events for
- i.MX6 S, DL and Q
-Message-ID: <20191125211326.GK248138@dtor-ws>
-References: <20191125161210.8275-1-robin@protonic.nl>
+ bh=MRWbzEgUDmf3m7DHTyD54EPb8B/zhp4opLc7il/4TZ0=;
+ b=EKU8GIVGFSENTovC3sXTZtoymFo9Ndv2o8qlVF7IwcMbpQq8fut9+xExiUCXz3CdG/
+ K33APBlS2dHfSux6+ZWXGmMLQLTvSkXWXJZijQp2XJKTrr7tqPPM+L9h3FGpmpqfSIYq
+ Pt7gZaRtbw6yHJiLsM75qdCWfFGfBYPazUsDhF3egJidrjvbMoOjxj0deu3ZLuPCqDbU
+ 2CzxCjdOvLGDVTTK+KXvOJVVeeTO1JJIFSXvnPKsUNXLDWt/PCQaBfQTaj8nsAziEGJ/
+ eg/atDK1W04QJJWJJAaIN1+vavpBFx8njkXV9KsI9OFwRjepAcvSv+uToxzc5ckv15pm
+ HjDg==
+X-Gm-Message-State: APjAAAVLaHsDaIJaCZp2Y6ykwlbjS6Ovys2uZPFrAhBN822NhAFqZkK7
+ N+JJXX6YSwUyO9aZbTrbXBSfuw==
+X-Google-Smtp-Source: APXvYqzXRkrduILON+fC++84B2cdz7oCejyphDRUULYpI5GMxiVkhrcykpwAmPM/u71w01QGoLxnDQ==
+X-Received: by 2002:a63:354e:: with SMTP id c75mr35774576pga.325.1574716980757; 
+ Mon, 25 Nov 2019 13:23:00 -0800 (PST)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id d139sm10304228pfd.162.2019.11.25.13.22.59
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 25 Nov 2019 13:23:00 -0800 (PST)
+Date: Mon, 25 Nov 2019 14:22:58 -0700
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH v5 07/14] coresight: cti: Add device tree support for
+ custom CTI.
+Message-ID: <20191125212258.GB18542@xps15>
+References: <20191119231912.12768-1-mike.leach@linaro.org>
+ <20191119231912.12768-8-mike.leach@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191125161210.8275-1-robin@protonic.nl>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191119231912.12768-8-mike.leach@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_131331_146149_FB04BB85 
-X-CRM114-Status: GOOD (  25.27  )
+X-CRM114-CacheID: sfid-20191125_132301_922297_E5D8BACE 
+X-CRM114-Status: GOOD (  30.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dmitry.torokhov[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -100,131 +99,363 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Adam Ford <aford173@gmail.com>, Marco Felsch <m.felsch@pengutronix.de>,
- "linux-kernel @ vger . kernel . org" <linux-kernel@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- "linux-input @ vger . kernel . org" <linux-input@vger.kernel.org>,
- RobinGong <yibin.gong@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel @ lists . infradead . org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, coresight@lists.linaro.org,
+ suzuki.poulose@arm.com, linux-arm-kernel@lists.infradead.org,
+ linux-doc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 25, 2019 at 05:12:10PM +0100, Robin van der Gracht wrote:
-> The first generation i.MX6 processors does not send an interrupt when the
-> power key is pressed. It sends a power down request interrupt if the key is
-> released before a hard shutdown (5 second press). This should allow
-> software to bring down the SoC safely.
+On Tue, Nov 19, 2019 at 11:19:05PM +0000, Mike Leach wrote:
+> Adds support for CTIs whose connections are implementation defined at
+> hardware design time, and not constrained by v8 architecture.
 > 
-> For this driver to work as a regular power key with the older SoCs, we need
-> to send a keypress AND release when we get the power down request irq.
+> These CTIs have no standard connection setup, all the settings have to
+> be defined in the device tree files. The patch creates a set of connections
+> and trigger signals based on the information provided.
 > 
-> Signed-off-by: Robin van der Gracht <robin@protonic.nl>
-
-Applied, thank you.
-
+> Signed-off-by: Mike Leach <mike.leach@linaro.org>
 > ---
+>  .../coresight/coresight-cti-platform.c        | 250 +++++++++++++++++-
+>  .../hwtracing/coresight/coresight-cti-sysfs.c |  11 +
+>  2 files changed, 257 insertions(+), 4 deletions(-)
 > 
-> Changes v3 -> v4:
->  * The key release irq handler is now emitting the press and release
->    events directly, instead of the debounce timer handler.
-> 
->  drivers/input/keyboard/Kconfig       |  2 +-
->  drivers/input/keyboard/snvs_pwrkey.c | 28 +++++++++++++++++++++++++---
->  2 files changed, 26 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
-> index 7c4f19dab34f..937e58da5ce1 100644
-> --- a/drivers/input/keyboard/Kconfig
-> +++ b/drivers/input/keyboard/Kconfig
-> @@ -436,7 +436,7 @@ config KEYBOARD_SNVS_PWRKEY
->  	depends on OF
->  	help
->  	  This is the snvs powerkey driver for the Freescale i.MX application
-> -	  processors that are newer than i.MX6 SX.
-> +	  processors.
+> diff --git a/drivers/hwtracing/coresight/coresight-cti-platform.c b/drivers/hwtracing/coresight/coresight-cti-platform.c
+> index 790dd30b85f5..9c1ff432b487 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti-platform.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti-platform.c
+> @@ -13,9 +13,19 @@
+>  #define NR_V8PE_OUT_SIGS	3
+>  #define NR_V8ETM_INOUT_SIGS	4
 >  
->  	  To compile this driver as a module, choose M here; the
->  	  module will be called snvs_pwrkey.
-> diff --git a/drivers/input/keyboard/snvs_pwrkey.c b/drivers/input/keyboard/snvs_pwrkey.c
-> index 5342d8d45f81..4888e137cc5d 100644
-> --- a/drivers/input/keyboard/snvs_pwrkey.c
-> +++ b/drivers/input/keyboard/snvs_pwrkey.c
-> @@ -19,6 +19,7 @@
->  #include <linux/mfd/syscon.h>
->  #include <linux/regmap.h>
+> +/* CTI device tree trigger connection node keyword */
+> +#define CTI_DT_CONNS		"trig-conns"
+> +
+>  /* CTI device tree connection property keywords */
+>  #define CTI_DT_V8ARCH		"arm,cti-v8-arch"
+>  #define CTI_DT_CSDEV_ASSOC	"arm,cs-dev-assoc"
+> +#define CTI_DT_TRIGIN_SIGS	"arm,trig-in-sigs"
+> +#define CTI_DT_TRIGOUT_SIGS	"arm,trig-out-sigs"
+> +#define CTI_DT_TRIGIN_TYPES	"arm,trig-in-types"
+> +#define CTI_DT_TRIGOUT_TYPES	"arm,trig-out-types"
+> +#define CTI_DT_FILTER_OUT_SIGS	"arm,trig-filters"
+> +#define CTI_DT_CONN_NAME	"arm,trig-conn-name"
+> +#define CTI_DT_CTM_ID		"arm,cti-ctm-id"
 >  
-> +#define SNVS_HPVIDR1_REG 0xF8
->  #define SNVS_LPSR_REG	0x4C	/* LP Status Register */
->  #define SNVS_LPCR_REG	0x38	/* LP Control Register */
->  #define SNVS_HPSR_REG	0x14
-> @@ -37,6 +38,7 @@ struct pwrkey_drv_data {
->  	int wakeup;
->  	struct timer_list check_timer;
->  	struct input_dev *input;
-> +	u8 minor_rev;
->  };
->  
->  static void imx_imx_snvs_check_for_events(struct timer_list *t)
-> @@ -67,13 +69,29 @@ static irqreturn_t imx_snvs_pwrkey_interrupt(int irq, void *dev_id)
+>  /*
+>   * Find a registered coresight device from a device fwnode.
+> @@ -68,6 +78,12 @@ static const char *of_cti_get_node_name(const struct device_node *node)
+>  		return node->full_name;
+>  	return "unknown";
+>  }
+> +
+> +static bool of_cti_node_name_eq(const struct device_node *node,
+> +				const char *name)
+> +{
+> +	return of_node_name_eq(node, name);
+> +}
+>  #else
+>  static int of_cti_get_cpu_at_node(const struct device_node *node)
 >  {
->  	struct platform_device *pdev = dev_id;
->  	struct pwrkey_drv_data *pdata = platform_get_drvdata(pdev);
-> +	struct input_dev *input = pdata->input;
->  	u32 lp_status;
+> @@ -78,6 +94,12 @@ static const char *of_cti_get_node_name(const struct device_node *node)
+>  {
+>  	return "unknown";
+>  }
+> +
+> +static bool of_cti_node_name_eq(const struct device_node *node,
+> +				const char *name)
+> +{
+> +	return false;
+> +}
+>  #endif
 >  
-> -	pm_wakeup_event(pdata->input->dev.parent, 0);
-> +	pm_wakeup_event(input->dev.parent, 0);
+>  static int cti_plat_get_cpu_at_node(struct fwnode_handle *fwnode)
+> @@ -94,6 +116,14 @@ static const char *cti_plat_get_node_name(struct fwnode_handle *fwnode)
+>  	return "unknown";
+>  }
 >  
->  	regmap_read(pdata->snvs, SNVS_LPSR_REG, &lp_status);
-> -	if (lp_status & SNVS_LPSR_SPO)
-> -		mod_timer(&pdata->check_timer, jiffies + msecs_to_jiffies(DEBOUNCE_TIME));
-> +	if (lp_status & SNVS_LPSR_SPO) {
-> +		if (pdata->minor_rev == 0) {
-> +			/*
-> +			 * The first generation i.MX6 SoCs only sends an
-> +			 * interrupt on button release. To mimic power-key
-> +			 * usage, we'll prepend a press event.
-> +			 */
-> +			input_report_key(input, pdata->keycode, 1);
-> +			input_sync(input);
-> +			input_report_key(input, pdata->keycode, 0);
-> +			input_sync(input);
-> +			pm_relax(input->dev.parent);
+> +static bool cti_plat_node_name_eq(struct fwnode_handle *fwnode,
+> +				  const char *name)
+> +{
+> +	if (is_of_node(fwnode))
+> +		return of_cti_node_name_eq(to_of_node(fwnode), name);
+> +	return false;
+> +}
+> +
+>  static int cti_plat_create_v8_etm_connection(struct device *dev,
+>  					     struct cti_drvdata *drvdata)
+>  {
+> @@ -205,6 +235,214 @@ static int cti_plat_create_v8_connections(struct device *dev,
+>  	return ret;
+>  }
+>  
+> +static int cti_plat_count_sig_elements(const struct fwnode_handle *fwnode,
+> +				       const char *name)
+> +{
+> +	int nr_elem = fwnode_property_count_u32(fwnode, name);
+> +
+> +	return (nr_elem < 0 ? 0 : nr_elem);
+> +}
+> +
+> +static int cti_plat_read_trig_group(struct cti_trig_grp *tgrp,
+> +				    const struct fwnode_handle *fwnode,
+> +				    const char *grp_name)
+> +{
+> +	int idx, err = 0;
+> +	u32 *values;
+> +
+> +	if (!tgrp->nr_sigs)
+> +		return 0;
+> +
+> +	values = kcalloc(tgrp->nr_sigs, sizeof(u32), GFP_KERNEL);
+> +	if (!values)
+> +		return -ENOMEM;
+> +
+> +	err = fwnode_property_read_u32_array(fwnode, grp_name,
+> +					     values, tgrp->nr_sigs);
+> +
+> +	if (!err) {
+> +		/* set the signal usage mask */
+> +		for (idx = 0; idx < tgrp->nr_sigs; idx++)
+> +			tgrp->used_mask |= BIT(values[idx]);
+> +	}
+> +
+> +	kfree(values);
+> +	return err;
+> +}
+> +
+> +static int cti_plat_read_trig_types(struct cti_trig_grp *tgrp,
+> +				    const struct fwnode_handle *fwnode,
+> +				    const char *type_name)
+> +{
+> +	int items, used = 0, err = 0, nr_sigs;
+> +	u32 *values = NULL, i;
+> +
+> +	/* allocate an array according to number of signals in connection */
+> +	nr_sigs = tgrp->nr_sigs;
+> +	if (!nr_sigs)
+> +		return 0;
+> +
+> +	/* see if any types have been included in the device description */
+> +	items = cti_plat_count_sig_elements(fwnode, type_name);
+> +	if (items > nr_sigs)
+> +		return -EINVAL;
+> +
+> +	/* need an array to store the values iff there are any */
+> +	if (items) {
+> +		values = kcalloc(items, sizeof(u32), GFP_KERNEL);
+> +		if (!values)
+> +			return -ENOMEM;
+> +
+> +		err = fwnode_property_read_u32_array(fwnode, type_name,
+> +						     values, items);
+> +		if (err)
+> +			goto read_trig_types_out;
+> +	}
+> +
+> +	/*
+> +	 * Match type id to signal index, 1st type to 1st index etc.
+> +	 * If fewer types than signals default remainder to GEN_IO.
+> +	 */
+> +	for (i = 0; i < nr_sigs; i++) {
+> +		if (used < items) {
+> +			tgrp->sig_types[i] =
+> +				values[i] < CTI_TRIG_MAX ? values[i] : GEN_IO;
+> +			used++;
 > +		} else {
-> +			mod_timer(&pdata->check_timer,
-> +			          jiffies + msecs_to_jiffies(DEBOUNCE_TIME));
+> +			tgrp->sig_types[i] = GEN_IO;
 > +		}
 > +	}
->  
->  	/* clear SPO status */
->  	regmap_write(pdata->snvs, SNVS_LPSR_REG, SNVS_LPSR_SPO);
-> @@ -94,6 +112,7 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
->  	struct input_dev *input = NULL;
->  	struct device_node *np;
->  	int error;
-> +	u32 vid;
->  
->  	/* Get SNVS register Page */
->  	np = pdev->dev.of_node;
-> @@ -123,6 +142,9 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
->  		return -EINVAL;
->  	}
->  
-> +	regmap_read(pdata->snvs, SNVS_HPVIDR1_REG, &vid);
-> +	pdata->minor_rev = vid & 0xff;
 > +
->  	regmap_update_bits(pdata->snvs, SNVS_LPCR_REG, SNVS_LPCR_DEP_EN, SNVS_LPCR_DEP_EN);
->  
->  	/* clear the unexpected interrupt before driver ready */
-> -- 
-> 2.20.1
-> 
+> +read_trig_types_out:
+> +	kfree(values);
+> +	return err;
+> +}
+> +
+> +static int cti_plat_process_filter_sigs(struct cti_drvdata *drvdata,
+> +					const struct fwnode_handle *fwnode)
+> +{
+> +	struct cti_trig_grp *tg = NULL;
+> +	int err = 0, nr_filter_sigs;
+> +
+> +	nr_filter_sigs = cti_plat_count_sig_elements(fwnode,
+> +						     CTI_DT_FILTER_OUT_SIGS);
+> +	if (nr_filter_sigs == 0)
+> +		return 0;
+> +
+> +	if (nr_filter_sigs > drvdata->config.nr_trig_max)
+> +		return -EINVAL;
+> +
+> +	tg = kzalloc(sizeof(*tg), GFP_KERNEL);
+> +	if (!tg)
+> +		return -ENOMEM;
+> +
+> +	err = cti_plat_read_trig_group(tg, fwnode, CTI_DT_FILTER_OUT_SIGS);
+> +	if (!err)
+> +		drvdata->config.trig_out_filter |= tg->used_mask;
+> +
+> +	kfree(tg);
+> +	return err;
+> +}
+> +
+> +static int cti_plat_create_connection(struct device *dev,
+> +				      struct cti_drvdata *drvdata,
+> +				      struct fwnode_handle *fwnode)
+> +{
+> +	struct cti_trig_con *tc = NULL;
+> +	int cpuid = -1, err = 0;
+> +	struct fwnode_handle *cs_fwnode = NULL;
+> +	struct coresight_device *csdev = NULL;
+> +	const char *assoc_name = "unknown";
+> +	char cpu_name_str[16];
+> +	int nr_sigs_in, nr_sigs_out;
+> +
+> +	/* look to see how many in and out signals we have */
+> +	nr_sigs_in = cti_plat_count_sig_elements(fwnode, CTI_DT_TRIGIN_SIGS);
+> +	nr_sigs_out = cti_plat_count_sig_elements(fwnode, CTI_DT_TRIGOUT_SIGS);
+> +
+> +	if ((nr_sigs_in > drvdata->config.nr_trig_max) ||
+> +	    (nr_sigs_out > drvdata->config.nr_trig_max))
+> +		return -EINVAL;
+> +
+> +	tc = cti_allocate_trig_con(dev, nr_sigs_in, nr_sigs_out);
+> +	if (!tc)
+> +		return -ENOMEM;
+> +
+> +	/* look for the signals properties. */
+> +	err = cti_plat_read_trig_group(tc->con_in, fwnode,
+> +				       CTI_DT_TRIGIN_SIGS);
+> +	if (err)
+> +		goto create_con_err;
+> +
+> +	err = cti_plat_read_trig_types(tc->con_in, fwnode,
+> +				       CTI_DT_TRIGIN_TYPES);
+> +	if (err)
+> +		goto create_con_err;
+> +
+> +	err = cti_plat_read_trig_group(tc->con_out, fwnode,
+> +				       CTI_DT_TRIGOUT_SIGS);
+> +	if (err)
+> +		goto create_con_err;
+> +
+> +	err = cti_plat_read_trig_types(tc->con_out, fwnode,
+> +				       CTI_DT_TRIGOUT_TYPES);
+> +	if (err)
+> +		goto create_con_err;
+> +
+> +	err = cti_plat_process_filter_sigs(drvdata, fwnode);
+> +	if (err)
+> +		goto create_con_err;
+> +
+> +	/* read the connection name if set - may be overridden by later */
+> +	fwnode_property_read_string(fwnode, CTI_DT_CONN_NAME, &assoc_name);
+> +
+> +	/* associated cpu ? */
+> +	cpuid = cti_plat_get_cpu_at_node(fwnode);
+> +	if (cpuid >= 0) {
+> +		drvdata->ctidev.cpu = cpuid;
+> +		scnprintf(cpu_name_str, sizeof(cpu_name_str), "cpu%d", cpuid);
+> +		assoc_name = cpu_name_str;
+> +	} else {
+> +		/* associated device ? */
+> +		cs_fwnode = fwnode_find_reference(fwnode,
+> +						  CTI_DT_CSDEV_ASSOC, 0);
+> +		if (!IS_ERR_OR_NULL(cs_fwnode)) {
+> +			csdev = cti_get_assoc_csdev_by_fwnode(cs_fwnode);
+> +			if (csdev) /* use device name if csdev found */
+> +				assoc_name = dev_name(&csdev->dev);
+> +			else  /* otherwise node name for later association */
+> +				assoc_name = cti_plat_get_node_name(cs_fwnode);
+> +			fwnode_handle_put(cs_fwnode);
+> +		}
+> +	}
+> +	/* set up a connection */
+> +	err = cti_add_connection_entry(dev, drvdata, tc, csdev, assoc_name);
+> +
+> +create_con_err:
+> +	return err;
+> +}
+> +
+> +static int cti_plat_create_impdef_connections(struct device *dev,
+> +					      struct cti_drvdata *drvdata)
+> +{
+> +	int rc = 0;
+> +	struct fwnode_handle *fwnode = dev_fwnode(dev);
+> +	struct fwnode_handle *child = NULL;
+> +
+> +	if (IS_ERR_OR_NULL(fwnode))
+> +		return -EINVAL;
+> +
+> +	fwnode_for_each_child_node(fwnode, child) {
+> +		if (cti_plat_node_name_eq(child, CTI_DT_CONNS))
+> +			rc = cti_plat_create_connection(dev, drvdata, child);
+> +		if (rc != 0)
+> +			break;
+> +	}
+> +	fwnode_handle_put(child);
 
--- 
-Dmitry
+As far as I can tell we don't need to call fwnode_handle_put()?
+
+With the above:
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+
+> +
+> +	return rc;
+> +}
+> +
+>  /* get the hardware configuration & connection data. */
+>  int cti_plat_get_hw_data(struct device *dev,
+>  			 struct cti_drvdata *drvdata)
+> @@ -212,12 +450,16 @@ int cti_plat_get_hw_data(struct device *dev,
+>  	int rc = 0;
+>  	struct cti_device *cti_dev = &drvdata->ctidev;
+>  
+> +	/* get any CTM ID - defaults to 0 */
+> +	device_property_read_u32(dev, CTI_DT_CTM_ID, &cti_dev->ctm_id);
+> +
+>  	/* check for a v8 architectural CTI device */
+> -	if (device_property_read_bool(dev, CTI_DT_V8ARCH)) {
+> +	if (device_property_read_bool(dev, CTI_DT_V8ARCH))
+>  		rc = cti_plat_create_v8_connections(dev, drvdata);
+> -		if (rc)
+> -			return rc;
+> -	}
+> +	else
+> +		rc = cti_plat_create_impdef_connections(dev, drvdata);
+> +	if (rc)
+> +		return rc;
+>  
+>  	/* if no connections, just add a single default based on max IN-OUT */
+>  	if (cti_dev->nr_trig_con == 0)
+> diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> index 98de8a4768fc..f800402f73da 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> @@ -56,9 +56,20 @@ static ssize_t enable_store(struct device *dev,
+>  }
+>  static DEVICE_ATTR_RW(enable);
+>  
+> +static ssize_t ctmid_show(struct device *dev,
+> +			  struct device_attribute *attr,
+> +			  char *buf)
+> +{
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +
+> +	return scnprintf(buf, PAGE_SIZE, "%d\n", drvdata->ctidev.ctm_id);
+> +}
+> +static DEVICE_ATTR_RO(ctmid);
+> +
+>  /* attribute and group sysfs tables. */
+>  static struct attribute *coresight_cti_attrs[] = {
+>  	&dev_attr_enable.attr,
+> +	&dev_attr_ctmid.attr,
+>  	NULL,
+>  };
+>  
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
