@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75FC710910E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 16:36:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3355109113
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 16:37:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aJhMeANISICa9Z5f210Ahj5/9DiPJFVf1QaqngiPuVI=; b=I4fvYamhsjq69i
-	mWpHk8wqyQZ6U/1WTm0/YKLKsOI+zcQ5Q64kHAy9FJVhz8jYYxJE7vJHzJqbTiJj0L4PVOS0xyH1g
-	QabHx+1oA8xBpsYVGcWNIDzSILpwbiDdso9Wp6HcRSaY3ceq0vWhQ3Dqi29rmtJNtb03G02fcvC2g
-	lpQA8V3dERkSdIeoVl5C+oPyJMu2e/VircrnmN4o2wmdW7jOXoYYn7vW2z8xNsFEIKba5Ahq/tveg
-	9Cve1BTg6sIblRdIK7eizz/wfFyv4Kh6dHU3wht0RFeRickHH74yBzDxrch4+Kq9ueR1IzJ4gqC0g
-	LJVgAr6WsFfc+JAfdaKQ==;
+	List-Owner; bh=L0fdiAeo3KakH33u/paz25ZgAudN+Mu2cOsoUMbSVqM=; b=sV0oeB2YBDjq/c
+	tqZ30JEfcKBkXHCFDKP+Y2fXwxRiB5Nhc7iBVtQTh5QwGEgK6SqmQVEwRTC6oTC1i7XGpgVq1V/S9
+	0x1sUqmx0OswcyNx6TzHmMOq0v7i8AAMiUUgvaL6gtL82IzZkErlC4DGQSCbpT7zRCfE0hQurovnU
+	PNvSB8yFniqHHImB/0z3HGT+lcB0fFgtjsvu8h9iGB8ZlNw6VBzTVu8mjgR5K+5enlL55xZes7Dna
+	NJlUt3RPQIWFzP+Zy3oSTLtORU6PC6q+Vllx+HCd3SYlnRBGxxcE6rt/sc5+GpC6gPHIDFhhLdL9q
+	NpOY0gSObSi6AoFxCO5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZGPM-0008NA-DI; Mon, 25 Nov 2019 15:36:12 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iZGQu-0000Ey-8I; Mon, 25 Nov 2019 15:37:48 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZGPD-0008K4-Rh
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 15:36:05 +0000
-Received: by mail-lf1-x144.google.com with SMTP id m30so9527980lfp.8
+ id 1iZGQk-0000Ec-2y
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 15:37:39 +0000
+Received: by mail-lf1-x143.google.com with SMTP id m30so9532405lfp.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 Nov 2019 07:36:01 -0800 (PST)
+ Mon, 25 Nov 2019 07:37:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZQdIyme6ZG3X2m6iPrJ5ub+wJgNPBCPtZkNSwctyhnM=;
- b=p1ldyS/SwNR93tJ4O9yQxJMSm7WCkDS9QbAG/jwjPQnuKULErVXD1kbDq/3tp+MHH3
- S+76eqkPvdR61ujrBe997YgjYVtS7P7MfELVxk8KAyvQmTxD6P/+/VSOMnyXJ8+U1C3M
- 2DHxsvxvyRmTqZVwZjgWV9YeBpca3k6BOBr2c4mRnYBBQ8XB5GvljPH8d9Gc+N+lhuxr
- dIfXl3J3qqM9bnDIbKK5tOpNG/RyHC0V7dJJpnYdLFiDcE+QKEQbidXYceWipLncPk1u
- ximXm/UILNcw9OL55vwYzLL9wBG9pmi+yj/hNHieVdGp+S2xXVtdBKgUrY3YEVJNS+k7
- /ssA==
+ :cc; bh=tzbbtJJtTXoMbOzUSaKDgvfNOfFeZh50+ac8yg9V7n0=;
+ b=bCYcQ+KlvTr9IKnKYuT0eTVP2EIWM613mtRB9VkredrydGTnCjMkbh7IIb/PpLRV//
+ 0yJL66wan5LVJW79MRsjourVKZjLFE6g/Qkeyfc/Y1QwxnZ4I4Zf4r1lLfEMKNxVfTis
+ llQU2bwxnN6eegmqd21fJZIM2m09TblCv0QD5n7rAu73nOPMXbPQVeuyZDqCatiA2Iy2
+ hs3ZCDKxF7rIogpktIOBlV7Q0a2imdryR07AwIbOwiGOLBOxxW8ywV94H5k0WweIT8ij
+ zxKY2GYJ3g+Gw7RDigIlIaaWz7xdj0Vb9k0NGrv413OKarvvDMjwNPqIPLu9Yz9HuSrl
+ RjTg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=ZQdIyme6ZG3X2m6iPrJ5ub+wJgNPBCPtZkNSwctyhnM=;
- b=qAGqqGlMJvT2xioYaUSXX4WRh1IszSMMMhtgPMKnV4a69iOZ1LF2lOo1dCCMkoSzmG
- SdAtEG5lJo+Xkiy2y/JrBvVN1OpqpGV4lCCejcGzMp+TRoTwGjwanGx/LrrmfmoqJ2SR
- vliCMVviBTwURub8rWWol7/alcmbLhm1ND4dcAmqgu4PW231JCrMViTDScmsMp/36klu
- S412669IwnuMfuwA4ZYo00jJgwNG5iXK2RQ82vDXS5pPyOynSXU5JmVQ1pD6feXGz5Pr
- Z3KGCSA8YV8wFN4IUh9K24j91WpmH2W/0PLHuJ0b1PomFxpQ4kSbxxdjzfRTxpf+osIm
- 5wEA==
-X-Gm-Message-State: APjAAAUOQbUHBZej26ha55TzjIMoBo0oyyCZBROedCA+qptGbHiaX8uX
- 4uyjSCzel2OTMDJKfBLr9hgVy1AWJpb41nBwPPggXw==
-X-Google-Smtp-Source: APXvYqz3tpf6SKfxdFRnoZEjY5rLhCm2HbK+cWy5vbhvHm8tHkoIA/I6Jn5s/sjh7LHEsTW2tbVWuKm5WLWLOSC9WnI=
-X-Received: by 2002:a19:c84:: with SMTP id 126mr7464529lfm.5.1574696159586;
- Mon, 25 Nov 2019 07:35:59 -0800 (PST)
+ bh=tzbbtJJtTXoMbOzUSaKDgvfNOfFeZh50+ac8yg9V7n0=;
+ b=ToN6yodkGGA3qbPmcmoFYwInjbR6EZCShdCDRV2V46UTVTJi8v7dRQP3ijKa5RkXzX
+ kqWgHiaDV/zZGOKdHwdc8aGB3GdHxnMqF0Swr2jeLw/63JjAHyXp/FI1Z2ewUltVPfkB
+ 1Yro8RpSmSF+xjqBxfAn/UXvDFEb5wdY0HwxN3Rbh5XVkdYvaevUzEIt/SNafVQILYrd
+ p+uMZG1xmJjFH+2VPhxnVPsPaQfrRFSVknIN2a2DP3wksTNkgiQnNGVL1AdcsZL8DmBw
+ d5ZiKAdMtiDOUI+oz3OrVYeznSVJ+PX/ssgso9cdx8WPaFqTTmNZbZgDCpfab9j2TWC2
+ zTZw==
+X-Gm-Message-State: APjAAAWmJs0Stae5Rex9TnN4JvgRRdHYJBDl8ngBFjaO+Dz564Gb1VEQ
+ k0vb23wWiQnJrmXf0bz13mqrbwSfoD09ys1baVJNwg==
+X-Google-Smtp-Source: APXvYqxD+JrvdwNziaXkpfYwENyjYfhMX0TCYLhWRXzr0Nmk28hukOQJyU4sgKFYX0MfQDFy6G11DYI4jMJBVwre0x0=
+X-Received: by 2002:a19:645b:: with SMTP id b27mr10944903lfj.117.1574696256337; 
+ Mon, 25 Nov 2019 07:37:36 -0800 (PST)
 MIME-Version: 1.0
 References: <20191125122256.53482-1-stephan@gerhold.net>
-In-Reply-To: <20191125122256.53482-1-stephan@gerhold.net>
+ <20191125122256.53482-2-stephan@gerhold.net>
+In-Reply-To: <20191125122256.53482-2-stephan@gerhold.net>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 25 Nov 2019 16:35:48 +0100
-Message-ID: <CACRpkdZ6eg=uLmJJA9OhJBpCL5Q_0MwBvoKwv0RJL=5ZSzwx2g@mail.gmail.com>
-Subject: Re: [PATCH 1/5] ARM: dts: ux500: Move generic pin configs out of
- ste-href-family-pinctrl.dtsi
+Date: Mon, 25 Nov 2019 16:37:25 +0100
+Message-ID: <CACRpkdaM1O6xNE3yNsnnK=ZeOPCcaFTt-pUbMC9fUsSF38fOCw@mail.gmail.com>
+Subject: Re: [PATCH 2/5] ARM: dts: ux500: Rename generic pin configs according
+ to pin group
 To: Stephan Gerhold <stephan@gerhold.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_073604_102915_709811BF 
-X-CRM114-Status: GOOD (  10.41  )
+X-CRM114-CacheID: sfid-20191125_073738_162276_15728C27 
+X-CRM114-Status: GOOD (  10.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,16 +102,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 25, 2019 at 1:26 PM Stephan Gerhold <stephan@gerhold.net> wrote:
+On Mon, Nov 25, 2019 at 1:27 PM Stephan Gerhold <stephan@gerhold.net> wrote:
 
-> All existing Ux500 boards make use of ste-href-family-pinctrl.dtsi,
-> which contains shared pin configurations for UART, I2C and SDI.
-> Most of these can be also used for devices not based on HREF.
+> Some components (e.g. SDI, I2C) can be used with different pin assignments.
+> Before we can add the alternative configurations, we need to rename the
+> current configurations to more generic names.
 >
-> Move the generic pin configs into a new device tree include
-> "ste-dbx5x0-pinctrl.dtsi". There is no functional change (yet),
-> as a next step we will rename the pin configs to use more generic
-> names.
+> Each pin configuration usually configures one specific pin group.
+> Therefore we rename the configurations to use the pin group as name.
+> Make up for the slightly longer names by removing the "_mode" suffix.
+>
+> Rename all existing uses to use the new labels.
 >
 > Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
 
