@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04A851088CE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 07:55:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98F201088E9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 08:01:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QQk64PnPvMGuBmpVhlHKm1WD/xy7qUGST0MO37ADZQU=; b=F7qI8YiiOTpA8yPePLEg1td4h
-	t19JkIsYoa7q0zye1/WDBNVC0sLl03oa/nABbhb+SKglsHSr8Uc8Pp/Jb2f9g/w/W6LK9/wYT/Q9e
-	9GWkkwb9uaXHubC3yrdy7dCzzvVBjloz7qFC8WAqnZJEiD//yuTDgV+E4CAYznXpHYVJkkEnxPcp3
-	Bj5jQF7xmWRUaMtMm4SDhV8eHXN/jVZylSUIFG9/SlO3QWXQDxQEOAP6ZM97Nw4o8gbtuYG+B7BLC
-	4wfEpEeTnNR94G3E1MUYIocoQMtiC0V9gBFpwGfyTv1/GaZrJZDJzghtTJj8bUUeyyyfbDsOT8wxE
-	GfyyonHOg==;
+	 bh=Ugj1r1xa5OIShAB6FsJ5rYzZcwWlCL40xkSXv85ngaI=; b=mv0LWtPMoSnI5xWxE9+K1af0r
+	Ptp9m3l3/VuNIhrGcZpRs85LunpYDZJhe/OW7H4DnD4q/JKoHP2JDd73uTzAugtdg34b1XZCgDBkJ
+	9UcxfKPVIqS5rIQALWmahjdCoxcI2txgxwzZK8e+ypRKIZkhgxNloUbEUHi9rpR6FFmPQqDxI3X2q
+	SXw+OfbT191n+HIWQeRNtWICwIAMs8SMpEjAPlOuly8J9B6WfdvB/98UNTneffpRJTl/csbIuzwX5
+	GwEZlzfRILJCwm08hcAop7WmU9LLHxaAbDh7+NkMbcVeYYWAw/Vf6wAKk/s98siumaTuSpSDfeSnS
+	3e9JoIl3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZ8HR-0005r1-FX; Mon, 25 Nov 2019 06:55:29 +0000
-Received: from hqemgate14.nvidia.com ([216.228.121.143])
+	id 1iZ8N1-0007jQ-Cz; Mon, 25 Nov 2019 07:01:15 +0000
+Received: from hqemgate15.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZ8HK-0005q0-9J
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 06:55:23 +0000
+ id 1iZ8Mq-0007iX-Sn
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 07:01:07 +0000
 Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5ddb7ad90000>; Sun, 24 Nov 2019 22:55:22 -0800
+ hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5ddb7c270000>; Sun, 24 Nov 2019 23:00:55 -0800
 Received: from hqmail.nvidia.com ([172.20.161.6])
  by hqpgpgate101.nvidia.com (PGP Universal service);
- Sun, 24 Nov 2019 22:55:18 -0800
+ Sun, 24 Nov 2019 23:01:00 -0800
 X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Sun, 24 Nov 2019 22:55:18 -0800
+ by hqpgpgate101.nvidia.com on Sun, 24 Nov 2019 23:01:00 -0800
 Received: from [10.25.75.126] (10.124.1.5) by HQMAIL107.nvidia.com
  (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 25 Nov
- 2019 06:55:14 +0000
-Subject: Re: [PATCH 5/6] arm64: tegra: Enable GPIO controllers nodes for
+ 2019 07:00:56 +0000
+Subject: Re: [PATCH 6/6] arm64: tegra: Add support for PCIe endpoint mode in
  P2972-0000 platform
 To: Thierry Reding <thierry.reding@gmail.com>
 References: <20191122104505.8986-1-vidyas@nvidia.com>
- <20191122104505.8986-6-vidyas@nvidia.com> <20191122132007.GC1315704@ulmo>
+ <20191122104505.8986-7-vidyas@nvidia.com> <20191122132533.GD1315704@ulmo>
 X-Nvconfidentiality: public
 From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <4a09729b-9a77-65a1-645a-a31e6e62ad1e@nvidia.com>
-Date: Mon, 25 Nov 2019 12:25:11 +0530
+Message-ID: <e1e44c1c-c1ab-27dd-b3ac-a9ed878411a2@nvidia.com>
+Date: Mon, 25 Nov 2019 12:30:53 +0530
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191122132007.GC1315704@ulmo>
+In-Reply-To: <20191122132533.GD1315704@ulmo>
 X-Originating-IP: [10.124.1.5]
 X-ClientProxiedBy: HQMAIL111.nvidia.com (172.20.187.18) To
  HQMAIL107.nvidia.com (172.20.187.13)
 Content-Language: en-US
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1574664922; bh=dZm59GUkaOsNMNa4wcA2Fs2VFYZ5cQM3eTAH8Kq6GxM=;
+ t=1574665255; bh=PEZH+DI5aibjZBvzAc3XMH2bX4MsuckLJR1y410J5GE=;
  h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
  Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
  X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
  Content-Transfer-Encoding;
- b=p9Gy1z3oS4qCpf5Tt+L15YV34yFk8wEmfoXyb+rFiEH4jEhMeHhmJvGHEHbDBAsQw
- 3NA5vl4A/ygey/Upu97VRWgQ8ZiBIgf3OyivONITooLQNn9a4Rj/hQC+MP58jB7006
- 5nGE2GqsGojSNTHYaMKIEOLE9+unATmsTPiImhFy72dipKgv9MXbi05ZuIOJEfZeXL
- O8L0TnveJLRxVYO+idQs3lJCrQyJqvREKgVdI2CEwWvmWBQUNvZQrHec2LzXEGzMBh
- bBBbgykMn4OequUElLaktRwlQkI04NglDMbjjImyKkDf9S5dbGAYLBDl49ADKFL+Tq
- VZz/aCcO12GDQ==
+ b=JOQr2z31dBc4iSQlbBFoAnAGB3qfn+OzxbycCC3xeQdJc5XNRV6nSKxl5zeSobycP
+ MKSKjLulc1M72WIqUm8dNygV6+MRh3rprksNW8j8UtSgB5UX+HDWUQocQjblaRR2SJ
+ wTmHqLYno/z08BEt8Z/hY0UgkCd8AZLABz6jG1gn1Ho1glVBRE8D1Nd4GIiLIYeVrt
+ ns8vDZSwuX1nJzo5LUJZS3kgO5FDr+Ye3HZc63fTqY3rTtM0MF9wsBeuFybb1RxMAI
+ joAnBegjpjCpwVq6qvl+dLF6W3vQ1v+j8cx9Xa1eP5oA5aDU2OZ1doT7iKgcMDG21G
+ 0vswHjryguNVg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191124_225522_341076_4160C36F 
-X-CRM114-Status: GOOD (  13.30  )
+X-CRM114-CacheID: sfid-20191124_230104_944870_01E2B5F9 
+X-CRM114-Status: GOOD (  16.67  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
+ high trust [216.228.121.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -105,48 +105,81 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/22/2019 6:50 PM, Thierry Reding wrote:
-> On Fri, Nov 22, 2019 at 04:15:04PM +0530, Vidya Sagar wrote:
->> Enable GPIO controllers nodes for P2972-0000 platform which are required
->> by other controllers in the SoC for example when PCIe C5 controller
->> operates in endpoint mode.
+On 11/22/2019 6:55 PM, Thierry Reding wrote:
+> On Fri, Nov 22, 2019 at 04:15:05PM +0530, Vidya Sagar wrote:
+>> Add endpoint mode support for PCIe C5 controller in P2972-0000 platform
+>> with information about supplies, PHY, PERST GPIO and GPIO that controls
+>> PCIe reference clock coming from the host system.
 >>
 >> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 >> ---
->>   arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts | 8 ++++++++
->>   1 file changed, 8 insertions(+)
-> 
-> The GPIO controllers are enabled by default, so there's no need to
-> explicitly enable them.
-Yup. I'll remove this patch.
-Since I didn't see 'status' entry in GPIO nodes in tegra194.dtsi file, I thought
-it means 'disabled'. But, contrary to my understanding, absence of 'status' entry
-seems to mean 'okay'.
-
-- Vidya Sagar
-> 
-> Thierry
-> 
+>>   .../boot/dts/nvidia/tegra194-p2972-0000.dts   | 29 +++++++++++++++++++
+>>   1 file changed, 29 insertions(+)
 >>
 >> diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
->> index 353a6a22196d..7eb64b816e08 100644
+>> index 7eb64b816e08..58c3a9677bc8 100644
 >> --- a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
 >> +++ b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
->> @@ -37,6 +37,14 @@
+>> @@ -43,6 +43,19 @@
+>>   
+>>   		gpio@c2f0000 {
 >>   			status = "okay";
+>> +			/*
+>> +			 * Change the below node's status to 'okay' when
+>> +			 * PCIe C5 controller is enabled to operate in endpoint
+>> +			 * to allow REFCLK from the host system to flow into
+>> +			 * the controller.
+>> +			 */
+>> +			pex-refclk-sel-high {
+>> +				gpio-hog;
+>> +				output-high;
+>> +				gpios = <TEGRA194_AON_GPIO(AA, 5) 0>;
+>> +				label = "pex_refclk_sel_high";
+>> +				status = "disabled";
+>> +			};
+> 
+> Why don't we put this into the PCIe controller's node as a reference to
+> that GPIO? Seems like the controller would know exactly when this pin
+> needs to go high or low, so why does it have to be a hog?
+> 
+> Thierry
+Are you saying something like 'nvidia,enable-refclk-in'?
+I was thinking, since this is like a board level configuration specific to Jetson-Xavier,
+it would suffice to just hog it according to the mode of operation of PCIe controller.
+But, I see one advantage of referencing it in the PCIe node (so that the driver can configure
+it as and when needed) is that one has to be careful just to enable either PCIe RP or EP
+node and not worry about other thing (like this).
+Let me know if I got this right.
+
+- Vidya Sagar
+
+> 
 >>   		};
 >>   
->> +		gpio@2200000 {
->> +			status = "okay";
->> +		};
->> +
->> +		gpio@c2f0000 {
->> +			status = "okay";
->> +		};
->> +
 >>   		pwm@c340000 {
->>   			status = "okay";
->>   		};
+>> @@ -144,6 +157,22 @@
+>>   			    "p2u-5", "p2u-6", "p2u-7";
+>>   	};
+>>   
+>> +	pcie_ep@141a0000 {
+>> +		status = "disabled";
+>> +
+>> +		vddio-pex-ctl-supply = <&vdd_1v8ao>;
+>> +
+>> +		nvidia,pex-rst-gpio = <&gpio TEGRA194_MAIN_GPIO(GG, 1)
+>> +					GPIO_ACTIVE_LOW>;
+>> +
+>> +		phys = <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
+>> +		       <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
+>> +		       <&p2u_nvhs_6>, <&p2u_nvhs_7>;
+>> +
+>> +		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3", "p2u-4",
+>> +			    "p2u-5", "p2u-6", "p2u-7";
+>> +	};
+>> +
+>>   	fan: fan {
+>>   		compatible = "pwm-fan";
+>>   		pwms = <&pwm4 0 45334>;
 >> -- 
 >> 2.17.1
 >>
