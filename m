@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50D72109323
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 18:53:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D10B2109339
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 19:03:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iGEpWmrxP1Xo9tYjnKCzQWdYaZDh5xuSs0no5HZH94s=; b=El/sur8EO9Yv9f
-	x5aQ0I7LwlPNcStN29gPVsUTwokQTYwDJyWcQHIUwrs+4GlkQd5Cj2p56m/JtKuCfQQLoR3NXhXu3
-	qMfymH0stCT3UVh7YKh5Ug+3FJoX+hW3dQ3Cs61P+jf/o+AlHkXE8RuND5Wcx8M6dGMHqAWOGyNCI
-	YpA8eTrxQeNNp4/wKi8wIaCoyQXaTc+kQ7nHjUKg7qL79bjff7CZs72WgAaHrz9i6f8rhFzHmO9QU
-	nWoc5D/1JA9t6Se1SH3IkS74zZm6Nu6v0qSmUW6WfEzQKVV3WTGZdAgD7+wY8jYH/pGOyFpbL6p69
-	TDAGsdQ0e6PpSkTjqaMg==;
+	List-Owner; bh=1bpaz7DYGGWd6L0dCSsWP7eXCGRoiU7aGd1+o/Excfo=; b=dNmCpOA4IDX74R
+	0qv3wKjuvZZCFuLyTvUsrEybsNMoG2XDb4cZEhEfFV8wQJBVG7NcFq0kOWh7Iczcw9lnlvmvlZl6O
+	jvVOPqPn1kFe1RPHpQ/laPnimqwC43K9OAQp9HxEVlFsEhsTd5vEs7mwV2BF2LKOpiOelQVhXcgeN
+	uFFemQGxYqwcEPecZzShUWWdLS9WA07FlZR/+iYtV591/SjNhe7hX829Rn0XJPv3MT4cj/QyRSTIq
+	FLLOWgL5TugTZ+3R+hoDHf46AQlhHYxbDakPNFE2mShud3oJmyHZhSFCC1GaqJUBLpZ/xmxX9m+/b
+	N7HMxK5+5L57+lsHkxow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZIYD-0005bQ-NN; Mon, 25 Nov 2019 17:53:29 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iZIhR-0000Ew-AR; Mon, 25 Nov 2019 18:03:01 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZIY4-0005aN-TG
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 17:53:22 +0000
-Received: by mail-wm1-x342.google.com with SMTP id n5so273482wmc.0
+ id 1iZIhH-0000EI-Rb
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 18:02:53 +0000
+Received: by mail-wm1-x341.google.com with SMTP id u18so277323wmc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 Nov 2019 09:53:20 -0800 (PST)
+ Mon, 25 Nov 2019 10:02:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=w762PFi0VU3n3eQDHHvKOAEXrmJ/fz15F0VMqWwRKbE=;
- b=ucHw3iITUddgxmI0WaTeJ03oRUG5uF8HifGtGA0su/1oL8KAd8AZXtYGuQKcpbum8e
- d6QnTIGwff7BVf7S6toPsGifytN5SktOO+ePb6YqXPtb6gYo3YNY4PxId/vuZoubQL3B
- HZEwCDCJkQy+orvI6z5xFNqQfTmQLH9SdLq2Q9e4wsRNaJ0SGNOa+RCVpbB12Hl8Og9f
- CXY6WHbjQ2/65OtfFrYy/fCeDjmmeVA24mCcyFcYoKY1qa9FXUzoMG82gzImz8jhXo5w
- bHyegwRNLGNDIEyqqMjAAXkzFtDrFlkTpk8MwFyhHzyAPZmSpbf+F2CL2BoPmWn8fWWF
- u01g==
+ bh=DsVFgOaoUnvqgpXrrfO/kuxApZChsstp982wmsPwKow=;
+ b=BVZoTiVVWzkDa6J2Q2Qlyztkv9vYFsD8IQFSzj6F/veUx4CwkaYyPnMFRUYWaN8vy4
+ FN/26iKAp68el7tDKgZOR8bbr3gZQ+IIjxSCIbCU3xYwtaRnVItBvJtOT5eD0zVON6uG
+ /vdQ+r1fFJyFa5adDPjnZxlevY/yeOnNxUybX639YiR7WofyJKBI4nK48UtjD0iVidNm
+ 6GJ9ITcStA6id5xJFVLJHZv6Lax/OfEErhFa/2G/Ceczqd2xJ8z/NNb+5Zv+8SmMkZFv
+ HaZyLOMDnD+07/EQFr1qxCxir+RJwAnSaMeHJgSUMK3rZ0osaPrGXBCwdtx82UlEbUCw
+ EIRg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=w762PFi0VU3n3eQDHHvKOAEXrmJ/fz15F0VMqWwRKbE=;
- b=GGYFsSkWKQTmSQm1hvR+mhvQf3VrYuTyZ3jAo3V0lQZiA4JInMuXhVAIn76OHHoEvY
- bYIkYyFRjqJsLcX3oCXDln632KmQBzz2y4bSv+RzymPxYrAGB3KEM5SOkCsDGFUYgxTy
- f7r80PRYaHcH8HiYM1ZosTZzKb8cphHh5dGG+kkNtSPS4ymf/5xmKT/+Zzx8iGYg/7KA
- RrP7h+P5b46QVk0QI6BSQJda3O1LiHi/GuTpN5FhAQF0ufVDDUwULBXQ3oxYWdqQ/SPR
- fDqRE5J6YnGn4Mi0OGdRlMB3Zm2Lrfb6+30dHSl7KJ55kzy3BTyBo2FcmXXDJxjsp1sI
- 5L/w==
-X-Gm-Message-State: APjAAAVWnom2eMCOPWowUQUqqrWVjmq0UKqLOaBsgHeeEZG7DdbadipF
- ksvc7+0HCVIhTPcnnzKwpyOy/w==
-X-Google-Smtp-Source: APXvYqzAZYIvQKGmfaQYD5lQJqrthSCPdfwYB+f4khqntbOAs2pzi4zET6f0XPBxuKoaB6N7z3djFQ==
-X-Received: by 2002:a7b:c959:: with SMTP id i25mr98865wml.100.1574704399261;
- Mon, 25 Nov 2019 09:53:19 -0800 (PST)
+ bh=DsVFgOaoUnvqgpXrrfO/kuxApZChsstp982wmsPwKow=;
+ b=hK4v3gYxWf3m9zkWgUuFyyTytl4q0yxwzYyoO2MihFwFC+3XeR/lnlTjPbds61U392
+ S20AOQ48hPYLfpI21scu61qL2yPqZjAIRXxZs91elkTGQQKpMgbDixY3wKAokS5hRE8K
+ JGebbVRdO0lqCyYdrFkp7oUsCJZcOjel0INKkoBVRFMc0GtdlhcrwUJpLH1+wn+zFBVa
+ diGhw1G5l065eS5saMa+RemGJxUgtUzsmO8UbZfUvhChKfyxQ6BV0v1jeCXA8GeZK/iO
+ ZxnilyF2KS9oaE6Wg1k87LlGoMFAHH2/4nYGvlLtX0OQvpLFsPKHEGFahssyOqRMRb1V
+ FPsg==
+X-Gm-Message-State: APjAAAWltRNPFtjzvAKGMbO9wm5fJYTiE/qBtqZ3yNy6NvY7WqtAoAzC
+ 8Zv91nMtVS+EMvVEU8TObYcbfQ==
+X-Google-Smtp-Source: APXvYqw9M5aeYuFnK4VC6ZcTBEX4VkbAMP2hH5YfKViShTZm/FHN5Dr4VO7dByhvs7N0wxzK+UaojA==
+X-Received: by 2002:a7b:c1d3:: with SMTP id a19mr93685wmj.127.1574704970043;
+ Mon, 25 Nov 2019 10:02:50 -0800 (PST)
 Received: from lophozonia (xdsl-188-155-204-106.adslplus.ch. [188.155.204.106])
- by smtp.gmail.com with ESMTPSA id p1sm26490wmc.38.2019.11.25.09.53.17
+ by smtp.gmail.com with ESMTPSA id 72sm11785825wrl.73.2019.11.25.10.02.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 25 Nov 2019 09:53:18 -0800 (PST)
-Date: Mon, 25 Nov 2019 18:53:16 +0100
+ Mon, 25 Nov 2019 10:02:49 -0800 (PST)
+Date: Mon, 25 Nov 2019 19:02:47 +0100
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: "Michael S. Tsirkin" <mst@redhat.com>
+To: "Jacob Pan (Jun)" <jacob.jun.pan@intel.com>
 Subject: Re: [RFC 00/13] virtio-iommu on non-devicetree platforms
-Message-ID: <20191125175316.GC945122@lophozonia>
+Message-ID: <20191125180247.GD945122@lophozonia>
 References: <20191122105000.800410-1-jean-philippe@linaro.org>
- <20191122075438-mutt-send-email-mst@kernel.org>
+ <20191122160102.00004489@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191122075438-mutt-send-email-mst@kernel.org>
+In-Reply-To: <20191122160102.00004489@intel.com>
 User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_095320_970923_84339A1B 
-X-CRM114-Status: GOOD (  18.27  )
+X-CRM114-CacheID: sfid-20191125_100251_906219_42F0864E 
+X-CRM114-Status: GOOD (  16.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,7 +103,7 @@ Cc: virtio-dev@lists.oasis-open.org, kevin.tian@intel.com,
  linux-pci@vger.kernel.org, joro@8bytes.org, sudeep.holla@arm.com,
  rjw@rjwysocki.net, virtualization@lists.linux-foundation.org,
  linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
- sebastien.boeuf@intel.com, jacob.jun.pan@intel.com, eric.auger@redhat.com,
+ sebastien.boeuf@intel.com, mst@redhat.com, eric.auger@redhat.com,
  guohanjun@huawei.com, bhelgaas@google.com, jasowang@redhat.com,
  linux-arm-kernel@lists.infradead.org, lenb@kernel.org
 Content-Type: text/plain; charset="us-ascii"
@@ -111,40 +111,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 22, 2019 at 08:00:46AM -0500, Michael S. Tsirkin wrote:
-> > (2) In addition, there are some concerns about having virtio depend on
-> >     ACPI or DT. Some hypervisors (Firecracker, QEMU microvm, kvmtool x86
-> >     [1])
-> 
-> power?
-
-In kvmtool it boot with device tree. It also doesn't need virtio-iommu I
-think, since it has its own paravirtualized interface.
-
-> > don't currently implement those methods.
+On Fri, Nov 22, 2019 at 04:01:02PM -0800, Jacob Pan (Jun) wrote:
+> > (1) ACPI has one table per vendor (DMAR for Intel, IVRS for AMD and
+> > IORT for Arm). From my point of view IORT is easier to extend, since
+> > we just need to introduce a new node type. There are no dependencies
+> > to Arm in the Linux IORT driver, so it works well with CONFIG_X86.
 > > 
-> >     It was suggested to embed the topology description into the device.
-> >     It can work, as demonstrated at the end of this RFC, with the
-> >     following limitations:
-> > 
-> >     - The topology description must be read before any endpoint managed
-> >       by the IOMMU is probed, and even before the virtio module is
-> >       loaded. This RFC uses a PCI quirk to manually parse the virtio
-> >       configuration. It assumes that all endpoints managed by the IOMMU
-> >       are under this same PCI host.
-> > 
-> >     - I don't have a solution for the virtio-mmio transport at the
-> >       moment, because I haven't had time to modify a host to test it. I
-> >       think it could either use a notifier on the platform bus, or
-> >       better, a new 'iommu' command-line argument to the virtio-mmio
-> >       driver.
-> 
-> 	A notifier seems easier for users. What are the disadvantages of
-> 	that?
+> From my limited understanding, IORT and VIOT is to solve device topology
+> enumeration only? I am not sure how it can be expanded to cover
+> information beyond device topology. e.g. DMAR has NUMA information and
+> root port ATS, I guess they are not used today in the guest but might
+> be additions in the future.
 
-For each device we have to check if it's virtio-mmio, then map the MMIO
-resource and check the device type. Having a dedicated command-line
-argument would be more efficient.
+The PCI root-complex node of IORT has an ATS attribute, which we can
+already use. However its scope is the root complex, not individual root
+ports like with DMAR.
+
+I'm not very familiar with NUMA, but it looks like we just need to specify
+a proximity domain in relation to the SRAT table, for each viommu? The
+SMMUv3 node in IORT has a 4-bytes "proximity domain" field for this. We
+can add the same to the VIOT virtio-iommu nodes later, since the
+structures are extensible.
+
+But it might be better to keep the bare minimum information in the FW
+descriptor, and put the rest in the virtio-iommu. So yes topology
+enumeration is something the device cannot do itself (not fully that is,
+see (2)) but for the rest, virtio-iommu's PROBE request can provide
+details about each endpoint in relation to their physical IOMMU.
+
+We could for example add a bit in a PROBE property saying that the whole
+path between the IOMMU and the endpoint supports ATS. For NUMA it might
+also be more interesting to have a finer granularity, since one viommu
+could be managing endpoints that are behind different physical IOMMUs. If
+in the future we want to allocate page tables close to the physical IOMMU
+for example, we might need to describe multiple NUMA nodes per viommu,
+using the PROBE request.
 
 Thanks,
 Jean
