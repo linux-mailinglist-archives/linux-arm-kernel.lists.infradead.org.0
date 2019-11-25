@@ -2,77 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70DA8108B8F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 11:23:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F164108B95
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 11:24:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lZ8GU+Yb4wTgDSnTkiFsdUJ7gU0VMdJZkWsfldfRLnQ=; b=HZ8oUJQCBd0IPE
-	lfhWyj3lUfdPse6px075ytxKsx+XKuZoJ10f5n7+kfZ0y/weVoufk46jZsSbv/aBQRUHgz8WuPYkY
-	DIvp7CxeTOr6AICowvED4fckLSI1rquqsDObjT9uRMiSiIkFxZVtO5KjLYc8b9FJ1ZIwMhP8cntSs
-	XGvGnMrmq4/tXjIl8An+cB+jJrjkHJVRKMKmj5AGj1P3JG2oalv2YWFPIsfmy9QGsk5MwurrPsyZ/
-	G6JSwYYAkWZ6Qj/Jx655E4Fuh5OFpMv0+rzzn83qtMHOE7VKa9Hy1x3NDBgaB7gSy2MbCeJe1E9e6
-	SwMX0UdYK2ZLrrCgRfXA==;
+	List-Owner; bh=+1P7BiSP7rQ4jLACTSnzUk8JhuCpOOulHgIWus45hUg=; b=OTNNdog5sZb3Gr
+	aE4XmAtat30DLfs+KThy35XcQvZ5Xuc9Lt8r9n6FM6q0e6OTwTH0RbsGDJW4/A5UUGody8Un4AV2z
+	XytKRKDK7RmGW4gWnfc6dYpY958GX3onS1MwyxawxshOFOlxaahaVqh2INEd4VipMS2Ma3GOUDeSY
+	tURiGg9OI0B1lrpQB6wKoLFuwSpUebvrIp83BIl+net3tNX1dIMIZ/PNlPR9sTpiT+wJt3SoAo3Y4
+	a5BwxXRGX9zbWBRlDwAk77/uzONpQKhUx6PKCI9YcyHVQBL08TWgYcCypR/7XEgy8W+0MvrWUCODZ
+	G3lctdLjrMNNm0ccP4pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZBWn-0005Fn-SS; Mon, 25 Nov 2019 10:23:33 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iZBY6-0005e6-MQ; Mon, 25 Nov 2019 10:24:54 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZBWd-0005Ei-GX; Mon, 25 Nov 2019 10:23:25 +0000
-X-UUID: 1c3f9cac77b24597a5078766ff6c6e44-20191125
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=VsU0CXh23bs2YDQfaYrcYGuz248Hb5ooipfN5RXTFX0=; 
- b=Oh4vunqTkwhF/QKc0mZ8fqvsXwYhUB436pD27EBcfe/qpO/Vp/y4nojkvPh2Rib4v4/hNsGnM7BVM5BSvmcaxHaO4HoGbUK3v7xuDbHvUJtWzQV9nI7Ns1tc3AEBSbC6f0lbH3+taDI3SndzNxDbudx9Gjp2y2xLBVUBH/R9u8A=;
-X-UUID: 1c3f9cac77b24597a5078766ff6c6e44-20191125
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <anthony.huang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1926906542; Mon, 25 Nov 2019 02:23:14 -0800
-Received: from MTKMBS06N2.mediatek.inc (172.21.101.130) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 25 Nov 2019 02:23:20 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs06n2.mediatek.inc (172.21.101.130) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 25 Nov 2019 18:23:10 +0800
-Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 25 Nov 2019 18:23:09 +0800
-Message-ID: <1574677390.16334.4.camel@mtkswgap22>
-Subject: Re: [RFC PATCH 2/2] soc: mediatek: Add mtk-mmdvfs driver
-From: Anthony Huang <anthony.huang@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Date: Mon, 25 Nov 2019 18:23:10 +0800
-In-Reply-To: <1571716313-10215-3-git-send-email-anthony.huang@mediatek.com>
-References: <1571716313-10215-1-git-send-email-anthony.huang@mediatek.com>
- <1571716313-10215-3-git-send-email-anthony.huang@mediatek.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1iZBXu-0005cn-UZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 10:24:45 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Ludovic.Desroches@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="Ludovic.Desroches@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: 9WZjFYDuuuaK/eNGnTNB5mDz/ZTnKSiyPGKejqZNaswo3vvjMh4/kKc9PBVoXqCb1KF37wOtRj
+ ApXTRXVUDDJ0PQxJdU/oNYChL1u/VdJQhuVa/a2xYk8Y3Ax7NikTBpmbANMRPL2n/d0SaGCsrh
+ aeyM4wM9vARBA4o5yWHLh8FPA7e14i1WPP2W+gJINwge9agTYXpVFu2ux29MoHMZVFbeIwEweN
+ cGq4nVlfSqhENpJ3GuN2DFmr4G0FxGBD24KKf2it8C29qnyZN0jkPGLdzPnFbfZrYC+AGDfOuQ
+ Lrw=
+X-IronPort-AV: E=Sophos;i="5.69,241,1571727600"; d="scan'208";a="55524063"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 25 Nov 2019 03:24:35 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 25 Nov 2019 03:24:34 -0700
+Received: from M43218.microchip.com (10.10.85.251) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Mon, 25 Nov 2019 03:24:31 -0700
+From: Ludovic Desroches <ludovic.desroches@microchip.com>
+To: <linux-arm-kernel@lists.infradead.org>, <linux-mmc@vger.kernel.org>,
+ <devicetree@vger.kernel.org>
+Subject: [PATCH v4 2/3] mmc: sdhci-of-at91: rework clocks management to
+ support SAM9x60 device
+Date: Mon, 25 Nov 2019 11:24:15 +0100
+Message-ID: <20191125102415.11341-1-ludovic.desroches@microchip.com>
+X-Mailer: git-send-email 2.24.0
+In-Reply-To: <1351fc1a-3d07-4a56-2622-07ea92727c4f@intel.com>
+References: <1351fc1a-3d07-4a56-2622-07ea92727c4f@intel.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 7C31D8926149750416E937F8C9E1ECEE1F05730907878C96D662080DC12577122000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_022323_569016_C833190B 
-X-CRM114-Status: GOOD (  24.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191125_022443_018351_5608009E 
+X-CRM114-Status: GOOD (  18.71  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,388 +96,225 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- anthony.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, ulf.hansson@linaro.org, alexandre.belloni@bootlin.com,
+ linux-kernel@vger.kernel.org, Ludovic
+ Desroches <ludovic.desroches@microchip.com>, robh+dt@kernel.org,
+ Eugen.Hristev@microchip.com, adrian.hunter@intel.com,
+ claudiu.beznea@microchip.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob and Matthias,
+In the SAM9x60 SoC, there are only two clocks instead of three for the
+SDHCI device. The base clk is no longer provided, it is generated
+internally from the mult clk.
 
-Gentle ping for this patch set.
+The values of the base clk and mul in the capabilities registers may not
+reflect the reality as the mult clk is a programmable clock which can take
+several rates. As we can't trust those values, take them from the clock
+tree and update the capabilities according to.
 
-Thanks.
+As we can have the same pitfall, in some cases, with the SAMA5D2 Soc,
+stop relying on capabilities too.
 
-On Tue, 2019-10-22 at 11:51 +0800, Anthony Huang wrote:
-> Mediatek MMDVFS driver is used to set clk for Mediatek multimedia
-> hardwares. The MMDVFS registers a regulator callback and multimedia
-> hardwares set voltage by regulator API and then this callback will be
-> triggered. The MMDVFS will get current opp level from opp table according
-> to the voltage, and then the MMDVFS sets all the clock MUXs to the clock
-> sources according to the opp level.
-> 
-> On some platforms, both clock MUX and frequency hopping need to be used
-> together. The MMDVFS supports these two clock setting methods and the
-> execution sequence of them can be configured in DTS.
-> 
-> Signed-off-by: Anthony Huang <anthony.huang@mediatek.com>
-> ---
->  drivers/soc/mediatek/Kconfig      |    9 ++
->  drivers/soc/mediatek/Makefile     |    1 +
->  drivers/soc/mediatek/mtk-mmdvfs.c |  313 +++++++++++++++++++++++++++++++++++++
->  3 files changed, 323 insertions(+)
->  create mode 100644 drivers/soc/mediatek/mtk-mmdvfs.c
-> 
-> diff --git a/drivers/soc/mediatek/Kconfig b/drivers/soc/mediatek/Kconfig
-> index 2114b56..e92762b 100644
-> --- a/drivers/soc/mediatek/Kconfig
-> +++ b/drivers/soc/mediatek/Kconfig
-> @@ -44,4 +44,13 @@ config MTK_SCPSYS
->  	  Say yes here to add support for the MediaTek SCPSYS power domain
->  	  driver.
->  
-> +config MTK_MMDVFS
-> +	tristate "MediaTek MMDVFS Support"
-> +	depends on ARCH_MEDIATEK || COMPILE_TEST
-> +	help
-> +	  Say yes here to add support for the MediaTek Multimedia DVFS (MMDVFS)
-> +	  driver. The MMDVFS is used to set clk for Mediatek multimedia hardwares
-> +	  , such as display, camera, mdp and video codec. Say no if your device
-> +	  does not need to do DVFS for Multimedia hardwares.
-> +
->  endmenu
-> diff --git a/drivers/soc/mediatek/Makefile b/drivers/soc/mediatek/Makefile
-> index b017330..faf52944 100644
-> --- a/drivers/soc/mediatek/Makefile
-> +++ b/drivers/soc/mediatek/Makefile
-> @@ -1,5 +1,6 @@
->  # SPDX-License-Identifier: GPL-2.0-only
->  obj-$(CONFIG_MTK_CMDQ) += mtk-cmdq-helper.o
->  obj-$(CONFIG_MTK_INFRACFG) += mtk-infracfg.o
-> +obj-$(CONFIG_MTK_MMDVFS) += mtk-mmdvfs.o
->  obj-$(CONFIG_MTK_PMIC_WRAP) += mtk-pmic-wrap.o
->  obj-$(CONFIG_MTK_SCPSYS) += mtk-scpsys.o
-> diff --git a/drivers/soc/mediatek/mtk-mmdvfs.c b/drivers/soc/mediatek/mtk-mmdvfs.c
-> new file mode 100644
-> index 0000000..f6e45b0
-> --- /dev/null
-> +++ b/drivers/soc/mediatek/mtk-mmdvfs.c
-> @@ -0,0 +1,313 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (C) 2019 MediaTek Inc.
-> + */
-> +#include <linux/clk.h>
-> +#include <linux/device.h>
-> +#include <linux/err.h>
-> +#include <linux/module.h>
-> +#include <linux/of_device.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/pm_opp.h>
-> +#include <linux/regulator/consumer.h>
-> +
-> +#define MAX_OPP_NUM (6)
-> +#define MAX_MUX_NUM (10)
-> +#define MAX_HOPPING_CLK_NUM (2)
-> +
-> +enum {
-> +	ACTION_DEFAULT,
-> +	ACTION_IHDM, /* Voltage Increase: Hopping First, Decrease: MUX First*/
-> +};
-> +
-> +struct mmdvfs_mux_data {
-> +	const char *mux_name;
-> +	struct clk *mux;
-> +	struct clk *clk_src[MAX_OPP_NUM];
-> +};
-> +
-> +struct mmdvfs_hopping_data {
-> +	const char *hopping_name;
-> +	struct clk *hopping_clk;
-> +	u32 hopping_rate[MAX_OPP_NUM];
-> +};
-> +
-> +struct mmdvfs_drv_data {
-> +	bool need_change_voltage;
-> +	u32 request_voltage;
-> +	u32 num_muxes;
-> +	struct mmdvfs_mux_data muxes[MAX_MUX_NUM];
-> +	u32 num_hoppings;
-> +	struct mmdvfs_hopping_data hoppings[MAX_HOPPING_CLK_NUM];
-> +	u32 action;
-> +	struct notifier_block nb;
-> +	u32 voltages[MAX_OPP_NUM];
-> +};
-> +
-> +static void set_all_muxes(struct mmdvfs_drv_data *drv_data, u32 opp_level)
-> +{
-> +	u32 num_muxes = drv_data->num_muxes;
-> +	u32 i;
-> +	struct clk *mux, *clk_src;
-> +	s32 err;
-> +
-> +	for (i = 0; i < num_muxes; i++) {
-> +		mux = drv_data->muxes[i].mux;
-> +		clk_src = drv_data->muxes[i].clk_src[opp_level];
-> +		err = clk_prepare_enable(mux);
-> +
-> +		if (err) {
-> +			pr_notice("prepare mux(%s) fail:%d opp_level:%d\n",
-> +				  drv_data->muxes[i].mux_name, err, opp_level);
-> +			continue;
-> +		}
-> +		err = clk_set_parent(mux, clk_src);
-> +		if (err)
-> +			pr_notice("set parent(%s) fail:%d opp_level:%d\n",
-> +				  drv_data->muxes[i].mux_name, err, opp_level);
-> +		clk_disable_unprepare(mux);
-> +	}
-> +}
-> +
-> +static void set_all_hoppings(struct mmdvfs_drv_data *drv_data, u32 opp_level)
-> +{
-> +	u32 num_hoppings = drv_data->num_hoppings;
-> +	u32 i, hopping_rate;
-> +	struct clk *hopping;
-> +	s32 err;
-> +
-> +	for (i = 0; i < num_hoppings; i++) {
-> +		hopping = drv_data->hoppings[i].hopping_clk;
-> +		hopping_rate = drv_data->hoppings[i].hopping_rate[opp_level];
-> +		err = clk_prepare_enable(hopping);
-> +
-> +		if (err) {
-> +			pr_notice("prepare hopping(%s) fail:%d opp_level:%d\n",
-> +				  drv_data->hoppings[i].hopping_name,
-> +				  err, opp_level);
-> +			continue;
-> +		}
-> +		err = clk_set_rate(hopping, hopping_rate);
-> +		if (err)
-> +			pr_notice("set %s rate(%u) fail:%d opp_level:%d\n",
-> +				  drv_data->hoppings[i].hopping_name,
-> +				  hopping_rate, err, opp_level);
-> +		clk_disable_unprepare(hopping);
-> +	}
-> +}
-> +
-> +static void set_all_clk(struct mmdvfs_drv_data *drv_data,
-> +			u32 voltage, bool vol_inc)
-> +{
-> +	u32 i;
-> +	u32 opp_level;
-> +
-> +	for (i = 0; i < MAX_OPP_NUM; i++) {
-> +		if (drv_data->voltages[i] == voltage) {
-> +			opp_level = i;
-> +			break;
-> +		}
-> +	}
-> +	if (i == MAX_OPP_NUM) {
-> +		pr_notice("voltage(%d) is not found\n", voltage);
-> +		return;
-> +	}
-> +
-> +	switch (drv_data->action) {
-> +	/* Voltage Increase: Hopping First, Decrease: MUX First*/
-> +	case ACTION_IHDM:
-> +		if (vol_inc) {
-> +			set_all_hoppings(drv_data, opp_level);
-> +			set_all_muxes(drv_data, opp_level);
-> +		} else {
-> +			set_all_muxes(drv_data, opp_level);
-> +			set_all_hoppings(drv_data, opp_level);
-> +		}
-> +		break;
-> +	default:
-> +		set_all_muxes(drv_data, opp_level);
-> +		break;
-> +	}
-> +	pr_debug("set clk to opp level:%d\n", opp_level);
-> +}
-> +
-> +static int regulator_event_notify(struct notifier_block *nb,
-> +				  unsigned long event, void *data)
-> +{
-> +	unsigned long uV;
-> +	struct mmdvfs_drv_data *drv_data;
-> +	struct pre_voltage_change_data *pvc_data;
-> +
-> +	drv_data = container_of(nb, struct mmdvfs_drv_data, nb);
-> +
-> +	if (event == REGULATOR_EVENT_PRE_VOLTAGE_CHANGE) {
-> +		pvc_data = data;
-> +		uV = pvc_data->min_uV;
-> +
-> +		if (uV < pvc_data->old_uV) {
-> +			set_all_clk(drv_data, uV, false);
-> +			drv_data->request_voltage = uV;
-> +		} else if (uV > pvc_data->old_uV) {
-> +			drv_data->need_change_voltage = true;
-> +		}
-> +		pr_debug("regulator event=PRE_VOLTAGE_CHANGE old=%lu new=%lu\n",
-> +			 pvc_data->old_uV, pvc_data->min_uV);
-> +	} else if (event == REGULATOR_EVENT_VOLTAGE_CHANGE) {
-> +		uV = (unsigned long)data;
-> +		if (drv_data->need_change_voltage) {
-> +			set_all_clk(drv_data, uV, true);
-> +			drv_data->need_change_voltage = false;
-> +			drv_data->request_voltage = uV;
-> +		}
-> +		pr_debug("regulator event=VOLTAGE_CHANGE voltage=%lu\n", uV);
-> +	} else if (event == REGULATOR_EVENT_ABORT_VOLTAGE_CHANGE) {
-> +		uV = (unsigned long)data;
-> +		/* If clk was changed, restore to previous setting */
-> +		if (uV != drv_data->request_voltage) {
-> +			set_all_clk(drv_data, uV,
-> +				    uV > drv_data->request_voltage);
-> +			drv_data->need_change_voltage = false;
-> +			drv_data->request_voltage = uV;
-> +		}
-> +		pr_info("regulator event=ABORT_VOLTAGE_CHANGE voltage=%lu\n",
-> +			uV);
-> +	}
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id of_mmdvfs_match_tbl[] = {
-> +	{
-> +		.compatible = "mediatek,mmdvfs",
-> +	},
-> +	{}
-> +};
-> +
-> +static int mmdvfs_probe(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct mmdvfs_drv_data *drv_data;
-> +	struct regulator *reg;
-> +	u32 num_mux = 0, num_hopping = 0;
-> +	u32 num_clksrc, index, hopping_rate, num_hopping_rate;
-> +	struct property *mux_prop, *clksrc_prop;
-> +	struct property *hopping_prop, *hopping_rate_prop;
-> +	const char *mux_name, *clksrc_name, *hopping_name;
-> +	char prop_name[32];
-> +	const __be32 *p;
-> +	s32 ret;
-> +	unsigned long freq;
-> +	struct dev_pm_opp *opp;
-> +
-> +	drv_data = devm_kzalloc(dev, sizeof(*drv_data), GFP_KERNEL);
-> +	if (!drv_data)
-> +		return -ENOMEM;
-> +
-> +	of_property_for_each_string(dev->of_node, "mediatek,support_mux",
-> +				    mux_prop, mux_name) {
-> +		if (num_mux >= MAX_MUX_NUM) {
-> +			pr_notice("Too many items in support_mux\n");
-> +			return -EINVAL;
-> +		}
-> +		drv_data->muxes[num_mux].mux = devm_clk_get(dev, mux_name);
-> +		drv_data->muxes[num_mux].mux_name = mux_name;
-> +		snprintf(prop_name, sizeof(prop_name) - 1,
-> +			 "mediatek,mux_%s", mux_name);
-> +		num_clksrc = 0;
-> +		of_property_for_each_string(dev->of_node, prop_name,
-> +					    clksrc_prop, clksrc_name) {
-> +			if (num_clksrc >= MAX_OPP_NUM) {
-> +				pr_notice("Too many items in %s\n", prop_name);
-> +				return -EINVAL;
-> +			}
-> +			drv_data->muxes[num_mux].clk_src[num_clksrc] =
-> +				devm_clk_get(dev, clksrc_name);
-> +			num_clksrc++;
-> +		}
-> +		num_mux++;
-> +	}
-> +	drv_data->num_muxes = num_mux;
-> +
-> +	of_property_for_each_string(dev->of_node, "mediatek,support_hopping",
-> +				    hopping_prop, hopping_name) {
-> +		if (num_hopping >= MAX_HOPPING_CLK_NUM) {
-> +			pr_notice("Too many items in support_hopping\n");
-> +			return -EINVAL;
-> +		}
-> +		drv_data->hoppings[num_hopping].hopping_clk =
-> +					devm_clk_get(dev, hopping_name);
-> +		drv_data->hoppings[num_hopping].hopping_name = hopping_name;
-> +		snprintf(prop_name, sizeof(prop_name) - 1,
-> +			 "mediatek,hopping_%s", hopping_name);
-> +		num_hopping_rate = 0;
-> +		of_property_for_each_u32(dev->of_node, prop_name,
-> +					 hopping_rate_prop, p, hopping_rate) {
-> +			if (num_hopping_rate >= MAX_OPP_NUM) {
-> +				pr_notice("Too many items in %s\n", prop_name);
-> +				return -EINVAL;
-> +			}
-> +			drv_data->hoppings[num_hopping].hopping_rate
-> +					[num_hopping_rate] = hopping_rate;
-> +			num_hopping_rate++;
-> +		}
-> +		num_hopping++;
-> +	}
-> +	drv_data->num_hoppings = num_hopping;
-> +
-> +	of_property_read_u32(dev->of_node,
-> +			     "mediatek,action", &drv_data->action);
-> +
-> +	/* Get voltage info from opp table */
-> +	dev_pm_opp_of_add_table(dev);
-> +	freq = 0;
-> +	index = 0;
-> +	while (!IS_ERR(opp = dev_pm_opp_find_freq_ceil(dev, &freq))) {
-> +		drv_data->voltages[index] = dev_pm_opp_get_voltage(opp);
-> +		freq++;
-> +		index++;
-> +		dev_pm_opp_put(opp);
-> +	}
-> +
-> +	reg = devm_regulator_get(dev, "dvfsrc-vcore");
-> +	if (IS_ERR(reg))
-> +		return PTR_ERR(reg);
-> +
-> +	drv_data->nb.notifier_call = regulator_event_notify;
-> +	ret = devm_regulator_register_notifier(reg, &drv_data->nb);
-> +	if (ret)
-> +		pr_notice("Failed to register notifier: %d\n", ret);
-> +
-> +	return ret;
-> +}
-> +
-> +static struct platform_driver mmdvfs_drv = {
-> +	.probe = mmdvfs_probe,
-> +	.driver = {
-> +		.name = "mtk-mmdvfs",
-> +		.owner = THIS_MODULE,
-> +		.of_match_table = of_mmdvfs_match_tbl,
-> +	},
-> +};
-> +
-> +static int __init mtk_mmdvfs_init(void)
-> +{
-> +	s32 status;
-> +
-> +	status = platform_driver_register(&mmdvfs_drv);
-> +	if (status) {
-> +		pr_notice("Failed to register MMDVFS driver(%d)\n", status);
-> +		return -ENODEV;
-> +	}
-> +	return 0;
-> +}
-> +
-> +static void __exit mtk_mmdvfs_exit(void)
-> +{
-> +	platform_driver_unregister(&mmdvfs_drv);
-> +}
-> +
-> +module_init(mtk_mmdvfs_init);
-> +module_exit(mtk_mmdvfs_exit);
-> +
-> +MODULE_DESCRIPTION("MTK MMDVFS driver");
-> +MODULE_AUTHOR("Anthony Huang<anthony.huang@mediatek.com>");
-> +MODULE_LICENSE("GPL");
+Signed-off-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+---
+
+Thanks Adrian for pointing out the typo. It's fixed and re-tested.
+
+Let me know if you want to me to resend the full serie or if it's ok.
+
+Regards
+
+Ludovic
+
+ drivers/mmc/host/sdhci-of-at91.c | 105 +++++++++++++++++--------------
+ 1 file changed, 58 insertions(+), 47 deletions(-)
+
+diff --git a/drivers/mmc/host/sdhci-of-at91.c b/drivers/mmc/host/sdhci-of-at91.c
+index 5959e394b416..b95ac4b27f22 100644
+--- a/drivers/mmc/host/sdhci-of-at91.c
++++ b/drivers/mmc/host/sdhci-of-at91.c
+@@ -33,7 +33,14 @@
+ 
+ #define SDHCI_AT91_PRESET_COMMON_CONF	0x400 /* drv type B, programmable clock mode */
+ 
++struct sdhci_at91_soc_data {
++	const struct sdhci_pltfm_data *pdata;
++	bool baseclk_is_generated_internally;
++	unsigned int divider_for_baseclk;
++};
++
+ struct sdhci_at91_priv {
++	const struct sdhci_at91_soc_data *soc_data;
+ 	struct clk *hclock;
+ 	struct clk *gck;
+ 	struct clk *mainck;
+@@ -141,12 +148,24 @@ static const struct sdhci_ops sdhci_at91_sama5d2_ops = {
+ 	.set_power		= sdhci_at91_set_power,
+ };
+ 
+-static const struct sdhci_pltfm_data soc_data_sama5d2 = {
++static const struct sdhci_pltfm_data sdhci_sama5d2_pdata = {
+ 	.ops = &sdhci_at91_sama5d2_ops,
+ };
+ 
++static const struct sdhci_at91_soc_data soc_data_sama5d2 = {
++	.pdata = &sdhci_sama5d2_pdata,
++	.baseclk_is_generated_internally = false,
++};
++
++static const struct sdhci_at91_soc_data soc_data_sam9x60 = {
++	.pdata = &sdhci_sama5d2_pdata,
++	.baseclk_is_generated_internally = true,
++	.divider_for_baseclk = 2,
++};
++
+ static const struct of_device_id sdhci_at91_dt_match[] = {
+ 	{ .compatible = "atmel,sama5d2-sdhci", .data = &soc_data_sama5d2 },
++	{ .compatible = "microchip,sam9x60-sdhci", .data = &soc_data_sam9x60 },
+ 	{}
+ };
+ MODULE_DEVICE_TABLE(of, sdhci_at91_dt_match);
+@@ -156,50 +175,37 @@ static int sdhci_at91_set_clks_presets(struct device *dev)
+ 	struct sdhci_host *host = dev_get_drvdata(dev);
+ 	struct sdhci_pltfm_host *pltfm_host = sdhci_priv(host);
+ 	struct sdhci_at91_priv *priv = sdhci_pltfm_priv(pltfm_host);
+-	int ret;
+ 	unsigned int			caps0, caps1;
+ 	unsigned int			clk_base, clk_mul;
+-	unsigned int			gck_rate, real_gck_rate;
++	unsigned int			gck_rate, clk_base_rate;
+ 	unsigned int			preset_div;
+ 
+-	/*
+-	 * The mult clock is provided by as a generated clock by the PMC
+-	 * controller. In order to set the rate of gck, we have to get the
+-	 * base clock rate and the clock mult from capabilities.
+-	 */
+ 	clk_prepare_enable(priv->hclock);
+ 	caps0 = readl(host->ioaddr + SDHCI_CAPABILITIES);
+ 	caps1 = readl(host->ioaddr + SDHCI_CAPABILITIES_1);
+-	clk_base = (caps0 & SDHCI_CLOCK_V3_BASE_MASK) >> SDHCI_CLOCK_BASE_SHIFT;
+-	clk_mul = (caps1 & SDHCI_CLOCK_MUL_MASK) >> SDHCI_CLOCK_MUL_SHIFT;
+-	gck_rate = clk_base * 1000000 * (clk_mul + 1);
+-	ret = clk_set_rate(priv->gck, gck_rate);
+-	if (ret < 0) {
+-		dev_err(dev, "failed to set gck");
+-		clk_disable_unprepare(priv->hclock);
+-		return ret;
+-	}
+-	/*
+-	 * We need to check if we have the requested rate for gck because in
+-	 * some cases this rate could be not supported. If it happens, the rate
+-	 * is the closest one gck can provide. We have to update the value
+-	 * of clk mul.
+-	 */
+-	real_gck_rate = clk_get_rate(priv->gck);
+-	if (real_gck_rate != gck_rate) {
+-		clk_mul = real_gck_rate / (clk_base * 1000000) - 1;
+-		caps1 &= (~SDHCI_CLOCK_MUL_MASK);
+-		caps1 |= ((clk_mul << SDHCI_CLOCK_MUL_SHIFT) &
+-			  SDHCI_CLOCK_MUL_MASK);
+-		/* Set capabilities in r/w mode. */
+-		writel(SDMMC_CACR_KEY | SDMMC_CACR_CAPWREN,
+-		       host->ioaddr + SDMMC_CACR);
+-		writel(caps1, host->ioaddr + SDHCI_CAPABILITIES_1);
+-		/* Set capabilities in ro mode. */
+-		writel(0, host->ioaddr + SDMMC_CACR);
+-		dev_info(dev, "update clk mul to %u as gck rate is %u Hz\n",
+-			 clk_mul, real_gck_rate);
+-	}
++
++	gck_rate = clk_get_rate(priv->gck);
++	if (priv->soc_data->baseclk_is_generated_internally)
++		clk_base_rate = gck_rate / priv->soc_data->divider_for_baseclk;
++	else
++		clk_base_rate = clk_get_rate(priv->mainck);
++
++	clk_base = clk_base_rate / 1000000;
++	clk_mul = gck_rate / clk_base_rate - 1;
++
++	caps0 &= (~SDHCI_CLOCK_V3_BASE_MASK);
++	caps0 |= ((clk_base << SDHCI_CLOCK_BASE_SHIFT) & SDHCI_CLOCK_V3_BASE_MASK);
++	caps1 &= (~SDHCI_CLOCK_MUL_MASK);
++	caps1 |= ((clk_mul << SDHCI_CLOCK_MUL_SHIFT) & SDHCI_CLOCK_MUL_MASK);
++	/* Set capabilities in r/w mode. */
++	writel(SDMMC_CACR_KEY | SDMMC_CACR_CAPWREN, host->ioaddr + SDMMC_CACR);
++	writel(caps0, host->ioaddr + SDHCI_CAPABILITIES);
++	writel(caps1, host->ioaddr + SDHCI_CAPABILITIES_1);
++	/* Set capabilities in ro mode. */
++	writel(0, host->ioaddr + SDMMC_CACR);
++
++	dev_info(dev, "update clk mul to %u as gck rate is %u Hz and clk base is %u Hz\n",
++		 clk_mul, gck_rate, clk_base_rate);
+ 
+ 	/*
+ 	 * We have to set preset values because it depends on the clk_mul
+@@ -207,19 +213,19 @@ static int sdhci_at91_set_clks_presets(struct device *dev)
+ 	 * maximum sd clock value is 120 MHz instead of 208 MHz. For that
+ 	 * reason, we need to use presets to support SDR104.
+ 	 */
+-	preset_div = DIV_ROUND_UP(real_gck_rate, 24000000) - 1;
++	preset_div = DIV_ROUND_UP(gck_rate, 24000000) - 1;
+ 	writew(SDHCI_AT91_PRESET_COMMON_CONF | preset_div,
+ 	       host->ioaddr + SDHCI_PRESET_FOR_SDR12);
+-	preset_div = DIV_ROUND_UP(real_gck_rate, 50000000) - 1;
++	preset_div = DIV_ROUND_UP(gck_rate, 50000000) - 1;
+ 	writew(SDHCI_AT91_PRESET_COMMON_CONF | preset_div,
+ 	       host->ioaddr + SDHCI_PRESET_FOR_SDR25);
+-	preset_div = DIV_ROUND_UP(real_gck_rate, 100000000) - 1;
++	preset_div = DIV_ROUND_UP(gck_rate, 100000000) - 1;
+ 	writew(SDHCI_AT91_PRESET_COMMON_CONF | preset_div,
+ 	       host->ioaddr + SDHCI_PRESET_FOR_SDR50);
+-	preset_div = DIV_ROUND_UP(real_gck_rate, 120000000) - 1;
++	preset_div = DIV_ROUND_UP(gck_rate, 120000000) - 1;
+ 	writew(SDHCI_AT91_PRESET_COMMON_CONF | preset_div,
+ 	       host->ioaddr + SDHCI_PRESET_FOR_SDR104);
+-	preset_div = DIV_ROUND_UP(real_gck_rate, 50000000) - 1;
++	preset_div = DIV_ROUND_UP(gck_rate, 50000000) - 1;
+ 	writew(SDHCI_AT91_PRESET_COMMON_CONF | preset_div,
+ 	       host->ioaddr + SDHCI_PRESET_FOR_DDR50);
+ 
+@@ -314,7 +320,7 @@ static const struct dev_pm_ops sdhci_at91_dev_pm_ops = {
+ static int sdhci_at91_probe(struct platform_device *pdev)
+ {
+ 	const struct of_device_id	*match;
+-	const struct sdhci_pltfm_data	*soc_data;
++	const struct sdhci_at91_soc_data	*soc_data;
+ 	struct sdhci_host		*host;
+ 	struct sdhci_pltfm_host		*pltfm_host;
+ 	struct sdhci_at91_priv		*priv;
+@@ -325,17 +331,22 @@ static int sdhci_at91_probe(struct platform_device *pdev)
+ 		return -EINVAL;
+ 	soc_data = match->data;
+ 
+-	host = sdhci_pltfm_init(pdev, soc_data, sizeof(*priv));
++	host = sdhci_pltfm_init(pdev, soc_data->pdata, sizeof(*priv));
+ 	if (IS_ERR(host))
+ 		return PTR_ERR(host);
+ 
+ 	pltfm_host = sdhci_priv(host);
+ 	priv = sdhci_pltfm_priv(pltfm_host);
++	priv->soc_data = soc_data;
+ 
+ 	priv->mainck = devm_clk_get(&pdev->dev, "baseclk");
+ 	if (IS_ERR(priv->mainck)) {
+-		dev_err(&pdev->dev, "failed to get baseclk\n");
+-		return PTR_ERR(priv->mainck);
++		if (soc_data->baseclk_is_generated_internally) {
++			priv->mainck = NULL;
++		} else {
++			dev_err(&pdev->dev, "failed to get baseclk\n");
++			return PTR_ERR(priv->mainck);
++		}
+ 	}
+ 
+ 	priv->hclock = devm_clk_get(&pdev->dev, "hclock");
+-- 
+2.24.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
