@@ -2,83 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D10B2109339
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 19:03:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCBE21093B6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 Nov 2019 19:50:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1bpaz7DYGGWd6L0dCSsWP7eXCGRoiU7aGd1+o/Excfo=; b=dNmCpOA4IDX74R
-	0qv3wKjuvZZCFuLyTvUsrEybsNMoG2XDb4cZEhEfFV8wQJBVG7NcFq0kOWh7Iczcw9lnlvmvlZl6O
-	jvVOPqPn1kFe1RPHpQ/laPnimqwC43K9OAQp9HxEVlFsEhsTd5vEs7mwV2BF2LKOpiOelQVhXcgeN
-	uFFemQGxYqwcEPecZzShUWWdLS9WA07FlZR/+iYtV591/SjNhe7hX829Rn0XJPv3MT4cj/QyRSTIq
-	FLLOWgL5TugTZ+3R+hoDHf46AQlhHYxbDakPNFE2mShud3oJmyHZhSFCC1GaqJUBLpZ/xmxX9m+/b
-	N7HMxK5+5L57+lsHkxow==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Xr/h3owJStnd8fVUSpubGOR8b3WlthR+42TkRVgP8sI=; b=shu
+	LolpkwvVAVzk8fxCAWAoX0AMJCI1loFx3a+DoraWSfCCFuCpvb7wT3diJvmmaL/5Fla9Vzhbbq1EL
+	nzOBVrATvFI76d9x8mEptH18YvR6GZDudSKQmBs6dp3bmugNSRDsbj2IWFYsm0Y54AHfbP74lKkcx
+	0Vh5JdvchI9H26IszK0txDKb9Xq2ZjSk3+baJGEACxsEFLqIYqIz8HTm0jnFelrHbu11iydi8IpGq
+	Zu2tN0GvqaeoCq9njhmVT5xMZmpS+YV3823luRecP6AKdP0HKFFKnlqEpakgIF3ziAbEG/DkOaq1F
+	AEwMO1N4BT+LReFtdlaWWt+yCdBqUSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZIhR-0000Ew-AR; Mon, 25 Nov 2019 18:03:01 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iZJR9-0005ne-5B; Mon, 25 Nov 2019 18:50:15 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZIhH-0000EI-Rb
- for linux-arm-kernel@lists.infradead.org; Mon, 25 Nov 2019 18:02:53 +0000
-Received: by mail-wm1-x341.google.com with SMTP id u18so277323wmc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 Nov 2019 10:02:51 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=DsVFgOaoUnvqgpXrrfO/kuxApZChsstp982wmsPwKow=;
- b=BVZoTiVVWzkDa6J2Q2Qlyztkv9vYFsD8IQFSzj6F/veUx4CwkaYyPnMFRUYWaN8vy4
- FN/26iKAp68el7tDKgZOR8bbr3gZQ+IIjxSCIbCU3xYwtaRnVItBvJtOT5eD0zVON6uG
- /vdQ+r1fFJyFa5adDPjnZxlevY/yeOnNxUybX639YiR7WofyJKBI4nK48UtjD0iVidNm
- 6GJ9ITcStA6id5xJFVLJHZv6Lax/OfEErhFa/2G/Ceczqd2xJ8z/NNb+5Zv+8SmMkZFv
- HaZyLOMDnD+07/EQFr1qxCxir+RJwAnSaMeHJgSUMK3rZ0osaPrGXBCwdtx82UlEbUCw
- EIRg==
+ id 1iZJQv-0005Zy-9n; Mon, 25 Nov 2019 18:50:02 +0000
+Received: by mail-qt1-x844.google.com with SMTP id o49so18365793qta.7;
+ Mon, 25 Nov 2019 10:49:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=vOdEYfSLcSRQ2bXNji+76Jh95fAHCd8bgzGlm9iUFu0=;
+ b=l4S6IFBopNG2XYv2TWjpGqM1oX7mHASdcW4up6r/2cKf116uoE6EatDpr0XvEC9DFN
+ MYyMcB7D56QLLfQyZqx4295anORTx+i483ZJDuqQgtcmdKfCxFn9/Om9HLganmfWWd69
+ MMvpsxqYwaQGT6Z8d0tWYTu8MZpmgQfD+eDQOh8EuEJA1dxXinNRdlwJALo5tvxq9oLz
+ +azHJxug2hAjfYnwVKgyWUg625FLNM6wQOKPiky0b75GFMbtJfuZIWzkuQJhpIxQwgRc
+ HXbAnSLWi7t0fA2q7g9uLkADh73DKPINf8yY9pPdskCHeW19vnEKfy8LBrdjVNkwb4oy
+ 1ndQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=DsVFgOaoUnvqgpXrrfO/kuxApZChsstp982wmsPwKow=;
- b=hK4v3gYxWf3m9zkWgUuFyyTytl4q0yxwzYyoO2MihFwFC+3XeR/lnlTjPbds61U392
- S20AOQ48hPYLfpI21scu61qL2yPqZjAIRXxZs91elkTGQQKpMgbDixY3wKAokS5hRE8K
- JGebbVRdO0lqCyYdrFkp7oUsCJZcOjel0INKkoBVRFMc0GtdlhcrwUJpLH1+wn+zFBVa
- diGhw1G5l065eS5saMa+RemGJxUgtUzsmO8UbZfUvhChKfyxQ6BV0v1jeCXA8GeZK/iO
- ZxnilyF2KS9oaE6Wg1k87LlGoMFAHH2/4nYGvlLtX0OQvpLFsPKHEGFahssyOqRMRb1V
- FPsg==
-X-Gm-Message-State: APjAAAWltRNPFtjzvAKGMbO9wm5fJYTiE/qBtqZ3yNy6NvY7WqtAoAzC
- 8Zv91nMtVS+EMvVEU8TObYcbfQ==
-X-Google-Smtp-Source: APXvYqw9M5aeYuFnK4VC6ZcTBEX4VkbAMP2hH5YfKViShTZm/FHN5Dr4VO7dByhvs7N0wxzK+UaojA==
-X-Received: by 2002:a7b:c1d3:: with SMTP id a19mr93685wmj.127.1574704970043;
- Mon, 25 Nov 2019 10:02:50 -0800 (PST)
-Received: from lophozonia (xdsl-188-155-204-106.adslplus.ch. [188.155.204.106])
- by smtp.gmail.com with ESMTPSA id 72sm11785825wrl.73.2019.11.25.10.02.48
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=vOdEYfSLcSRQ2bXNji+76Jh95fAHCd8bgzGlm9iUFu0=;
+ b=ryL2qGT3XUoruR15DC4z9lmAFcMz47DU8NfxpGc4aE/QTZnDe/JH7rqyEYWBnK7JBD
+ KR0xnOEPVpUHgHeRXxrXGFVQATtH3GKAeclpiGNaJmw+zvCHPA3WYTWgAgQcuvMxOfcV
+ v3kn3z9vq8VeGHjHLWgcL+JU8bbaSF/84JtCqTnqhxAQzV3khkq80+IkNkaQ2VA78mdu
+ okwY6CJ2LNdbQFzgcqU7KA3pxGBeAySDlXJxU/7A5XYlIWjHmzKS06P+9+FNk61aIxAJ
+ 2jzd0wwoATER3YXM8ub0CiQGEW/0XmKqFYVBv2fMyV39ZSnDTcv9ER64zIoceeSC/LDH
+ 0o6Q==
+X-Gm-Message-State: APjAAAWh3Kw20TOlRbfIc4LgspR4sENIg58JEtvSWcUDhi+KcFdRYoh/
+ osju/e9zwFKd4kHkQx6f3A==
+X-Google-Smtp-Source: APXvYqyH+uQBIhmLXQh7YB6SztVR4zZD2fmZQuMaCu8+shPUERS1F7LZfSu4IjRmRE+8csgZg4mj2A==
+X-Received: by 2002:aed:3924:: with SMTP id l33mr13196213qte.6.1574707797093; 
+ Mon, 25 Nov 2019 10:49:57 -0800 (PST)
+Received: from gabell.redhat.com
+ (209-6-122-159.s2973.c3-0.arl-cbr1.sbo-arl.ma.cable.rcncustomer.com.
+ [209.6.122.159])
+ by smtp.gmail.com with ESMTPSA id f7sm3780315qkb.79.2019.11.25.10.49.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 25 Nov 2019 10:02:49 -0800 (PST)
-Date: Mon, 25 Nov 2019 19:02:47 +0100
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: "Jacob Pan (Jun)" <jacob.jun.pan@intel.com>
-Subject: Re: [RFC 00/13] virtio-iommu on non-devicetree platforms
-Message-ID: <20191125180247.GD945122@lophozonia>
-References: <20191122105000.800410-1-jean-philippe@linaro.org>
- <20191122160102.00004489@intel.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191122160102.00004489@intel.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+ Mon, 25 Nov 2019 10:49:56 -0800 (PST)
+From: Masayoshi Mizuma <msys.mizuma@gmail.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-efi@vger.kernel.org
+Subject: [PATCH] efi: arm64: Introduce /sys/firmware/efi/memreserve to tell
+ the persistent pages
+Date: Mon, 25 Nov 2019 13:49:44 -0500
+Message-Id: <20191125184944.15556-1-msys.mizuma@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_100251_906219_42F0864E 
-X-CRM114-Status: GOOD (  16.41  )
+X-CRM114-CacheID: sfid-20191125_105001_341302_54177621 
+X-CRM114-Status: GOOD (  12.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (msys.mizuma[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -98,57 +95,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: virtio-dev@lists.oasis-open.org, kevin.tian@intel.com,
- lorenzo.pieralisi@arm.com, gregkh@linuxfoundation.org,
- linux-pci@vger.kernel.org, joro@8bytes.org, sudeep.holla@arm.com,
- rjw@rjwysocki.net, virtualization@lists.linux-foundation.org,
- linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
- sebastien.boeuf@intel.com, mst@redhat.com, eric.auger@redhat.com,
- guohanjun@huawei.com, bhelgaas@google.com, jasowang@redhat.com,
- linux-arm-kernel@lists.infradead.org, lenb@kernel.org
+Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Eric Biederman <ebiederm@xmission.com>,
+ Masayoshi Mizuma <msys.mizuma@gmail.com>, d.hatayama@fujitsu.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 22, 2019 at 04:01:02PM -0800, Jacob Pan (Jun) wrote:
-> > (1) ACPI has one table per vendor (DMAR for Intel, IVRS for AMD and
-> > IORT for Arm). From my point of view IORT is easier to extend, since
-> > we just need to introduce a new node type. There are no dependencies
-> > to Arm in the Linux IORT driver, so it works well with CONFIG_X86.
-> > 
-> From my limited understanding, IORT and VIOT is to solve device topology
-> enumeration only? I am not sure how it can be expanded to cover
-> information beyond device topology. e.g. DMAR has NUMA information and
-> root port ATS, I guess they are not used today in the guest but might
-> be additions in the future.
+From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
 
-The PCI root-complex node of IORT has an ATS attribute, which we can
-already use. However its scope is the root complex, not individual root
-ports like with DMAR.
+kexec reboot stops in early boot sequence because efi_config_parse_tables()
+refers garbage data. We can see the log with memblock=debug kernel option:
 
-I'm not very familiar with NUMA, but it looks like we just need to specify
-a proximity domain in relation to the SRAT table, for each viommu? The
-SMMUv3 node in IORT has a 4-bytes "proximity domain" field for this. We
-can add the same to the VIOT virtio-iommu nodes later, since the
-structures are extensible.
+  efi:  ACPI 2.0=0x9821790014  PROP=0x8757f5c0  SMBIOS 3.0=0x9820740000  MEMRESERVE=0x9820bfdc58
+  memblock_reserve: [0x0000009820bfdc58-0x0000009820bfdc67] efi_config_parse_tables+0x228/0x278
+  memblock_reserve: [0x0000000082760000-0x00000000324d07ff] efi_config_parse_tables+0x228/0x278
+  memblock_reserve: [0xcc4f84ecc0511670-0x5f6e5214a7fd91f9] efi_config_parse_tables+0x244/0x278
+  memblock_reserve: [0xd2fd4144b9af693d-0xad0c1db1086f40a2] efi_config_parse_tables+0x244/0x278
+  memblock_reserve: [0x0c719bb159b1fadc-0x5aa6e62a1417ce12] efi_config_parse_tables+0x244/0x278
+  ...
 
-But it might be better to keep the bare minimum information in the FW
-descriptor, and put the rest in the virtio-iommu. So yes topology
-enumeration is something the device cannot do itself (not fully that is,
-see (2)) but for the rest, virtio-iommu's PROBE request can provide
-details about each endpoint in relation to their physical IOMMU.
+That happens because 0x82760000, struct linux_efi_memreserve, is destroyed.
+0x82760000 is pointed from efi.mem_reseve, and efi.mem_reserve points the
+head page of LPI pending table and LPI property table which are allocated by
+gic_reserve_range().
 
-We could for example add a bit in a PROBE property saying that the whole
-path between the IOMMU and the endpoint supports ATS. For NUMA it might
-also be more interesting to have a finer granularity, since one viommu
-could be managing endpoints that are behind different physical IOMMUs. If
-in the future we want to allocate page tables close to the physical IOMMU
-for example, we might need to describe multiple NUMA nodes per viommu,
-using the PROBE request.
+The destroyer is kexec. kexec locates the initrd to the area:
 
-Thanks,
-Jean
+  ]# kexec -d -l /boot/vmlinuz-5.4.0-rc7 /boot/initramfs-5.4.0-rc7.img --reuse-cmdline
+  ...
+  initrd: base 82290000, size 388dd8ah (59301258)
+  ...
+
+From dynamic debug log. initrd is located in segment[1]:
+  machine_kexec_prepare:70:
+    kexec kimage info:
+      type:        0
+      start:       85b30680
+      head:        0
+      nr_segments: 4
+        segment[0]: 0000000080480000 - 0000000082290000, 0x1e10000 bytes, 481 pages
+        segment[1]: 0000000082290000 - 0000000085b20000, 0x3890000 bytes, 905 pages
+        segment[2]: 0000000085b20000 - 0000000085b30000, 0x10000 bytes, 1 pages
+        segment[3]: 0000000085b30000 - 0000000085b40000, 0x10000 bytes, 1 pages
+
+kexec searches the memory region to locate initrd through
+"System RAM" in /proc/iomem. The pending tables are included in
+"System RAM" because they are allocated by alloc_pages(), so kexec
+destroys the LPI pending tables.
+
+Introduce /sys/firmware/efi/memreserve to tell the pages pointed by
+efi.mem_reserve so that kexec can avoid the area to locate initrd.
+
+Signed-off-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+---
+ drivers/firmware/efi/efi.c | 45 +++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 44 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
+index e98bbf8e5..0aa07cc09 100644
+--- a/drivers/firmware/efi/efi.c
++++ b/drivers/firmware/efi/efi.c
+@@ -141,6 +141,47 @@ static ssize_t systab_show(struct kobject *kobj,
+ 
+ static struct kobj_attribute efi_attr_systab = __ATTR_RO_MODE(systab, 0400);
+ 
++static struct linux_efi_memreserve *efi_memreserve_root __ro_after_init;
++#ifdef CONFIG_KEXEC
++static ssize_t memreserve_show(struct kobject *kobj,
++			   struct kobj_attribute *attr, char *buf)
++{
++	struct linux_efi_memreserve *rsv;
++	phys_addr_t start, end;
++	unsigned long prsv;
++	char *str = buf;
++	int count, i;
++
++	if (!kobj || !buf)
++		return -EINVAL;
++
++	if ((efi_memreserve_root == (void *)ULONG_MAX) ||
++			(!efi_memreserve_root))
++		return -ENODEV;
++
++	for (prsv = efi_memreserve_root->next; prsv; prsv = rsv->next) {
++		rsv = memremap(prsv, sizeof(*rsv), MEMREMAP_WB);
++		if (!rsv) {
++			pr_err("Could not map efi_memreserve\n");
++			return -ENOMEM;
++		}
++		count = atomic_read(&rsv->count);
++		for (i = 0; i < count; i++) {
++			start = rsv->entry[i].base;
++			end = start + rsv->entry[i].size - 1;
++
++			str += sprintf(str, "%pa-%pa\n", &start, &end);
++		}
++		memunmap(rsv);
++	}
++
++	return str - buf;
++}
++
++static struct kobj_attribute efi_attr_memreserve =
++			__ATTR_RO_MODE(memreserve, 0444);
++#endif /* CONFIG_KEXEC */
++
+ #define EFI_FIELD(var) efi.var
+ 
+ #define EFI_ATTR_SHOW(name) \
+@@ -172,6 +213,9 @@ static struct attribute *efi_subsys_attrs[] = {
+ 	&efi_attr_runtime.attr,
+ 	&efi_attr_config_table.attr,
+ 	&efi_attr_fw_platform_size.attr,
++#ifdef CONFIG_KEXEC
++	&efi_attr_memreserve.attr,
++#endif
+ 	NULL,
+ };
+ 
+@@ -955,7 +999,6 @@ int efi_status_to_err(efi_status_t status)
+ }
+ 
+ static DEFINE_SPINLOCK(efi_mem_reserve_persistent_lock);
+-static struct linux_efi_memreserve *efi_memreserve_root __ro_after_init;
+ 
+ static int __init efi_memreserve_map_root(void)
+ {
+-- 
+2.18.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
