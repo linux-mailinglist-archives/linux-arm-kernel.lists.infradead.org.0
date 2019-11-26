@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F80C1097CA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 03:23:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B81651097CC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 03:23:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qkGlm0fuFh8EW+RTxx7YtbdLL4PMkIwgIdYePj91rVc=; b=Jx9X2YkjYiW18G
-	oVq23zxFeAMBnp6o1BCxIBd4y4oaS8BNMshyAOMFMG8BjAHcU5rgbO8xFKHGs7Ox+Jkf1d6qScWrX
-	KZWAwu42OAXh1GKGJUwIFwxQhW1Ee+NtjzBZS+dfEbs56eH768ywEawBXI7B6PfwpBCluQurbxwjW
-	KkUrNvxXNePeyiV/hzGfstLDCZEFuxJhTP7hp2UsMiYTkekUU8bA469JvHucIYqjqAWhAxaFbTuQm
-	b9+MYp+AVVszTuPRluApsq3IWhL/h3rvvIzo5ppnYpB9EdrZqkdaMqMuU6Dw1fRWETLQTa5laFPzg
-	BuIXWsgXC5aGrS4Z+c4Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PesisQZRkYyDSImaF3gf+PhgD4oH7cjZux1TIisR6VE=; b=LFtEw0mR86e6Rx
+	943C0tXqOGYzjHj9o11K8YreiYhNdkegDE0vnPIiTs7g/e28giCrBQk0oIzIAEfzfxSLc5DHLkoWA
+	BCsfSC6o3D6+q0FPUxlPbX3c+Tte5Rg6PgQjdZIxVKwgxAUT3QLiYFnUhRzk/7ncUp5jvAsD3WR3i
+	v+o1MYBpPhKol092PsILm/JkyR6GgI2YMgkaPvzlokZ31R5gU8tThyYgvwUoaH6U6qZ4vKhMy1kXV
+	V6W6TAyg7Cy7pNGp6G7Sd2jRA6I7qGumHcpDhmluoZnVu6QH8zYyPAySuoa9CdLAakpGAuatVMPM+
+	FQ1maN/3UZSuRN/49Q+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZQVS-0005Na-02; Tue, 26 Nov 2019 02:23:10 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iZQVe-0005XJ-3g; Tue, 26 Nov 2019 02:23:22 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZQVJ-0005NC-J1
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 02:23:03 +0000
-Received: by mail-pg1-x544.google.com with SMTP id 207so8165499pge.8
+ id 1iZQVR-0005Sm-Ll
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 02:23:11 +0000
+Received: by mail-pl1-x641.google.com with SMTP id o8so3052125pls.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 Nov 2019 18:23:01 -0800 (PST)
+ Mon, 25 Nov 2019 18:23:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=unlpuGn7nivFmtiJp3WUnntkjXJ1id5sopgjYo1qU0U=;
- b=VSE0u60gyPELRZ7JTOR5++7SEE4+hwPzwj8nOy6OaBgAzsOLBGclKbilyUk3B5pC9k
- IEzwPawCG7UUP568XdzUhj8ybOQV9v3iej2HLaCJfDF8JNx3N8bcejQEZdS9q2c2gBNn
- uUrpNZMrooqkIfjyHZwgSMnv4hiAjjs7xgZCy5SuNAz7IxdflkCfEu2JzFJe1FI6TFfs
- ZDnAnaWQMH8DyWf+HaHhWJsgThUXbfpMy1lqCFJWaxK0hRWLzA45PK84/A702SAQUPlT
- rJy8+lZu7joBEVB9ksp6OQLpSTedhctHgTDMGFw4EK0j0PcF9MChPO9EQTX9cUNRvRDf
- Z96g==
+ h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=CD0CzYEX/o6Zd/uHP6vbWB6WMoC+4GyO2IXO0mq1OcE=;
+ b=FUsNAgPNgMBrg+0iybequZCMxQOlKxjlz+oXNDgAn8Jku3YSeWHZP9QDGhlkW6G0v4
+ 2VLkOEdhyhaeeWmCmNMnO30N8TqUHA35JVMlmoIu1jlrflWbYz+yuGG0py3W3HnFW6rb
+ x3rs8PUhKP67wje1fO22KB0s3VM6KCe0BZaeoi1i2x9+psysSjMnT7GRh03eKKE1Yace
+ wIMK9jr7YU0Vv+nKdySEZ0z2k8O1Dmm41DS4Zlt4OthY/prcwe3t7JfwsPdYky1ueZiu
+ LmfrI39msbRnsxGpHgs9+BDcE3VlL1dbPoQ88AJWhLVZhTckHlrboyjkSIdWPE/WePF1
+ 7wTw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=unlpuGn7nivFmtiJp3WUnntkjXJ1id5sopgjYo1qU0U=;
- b=rXcau+2Y58mUny9ugqmKxh7ejVeIkyPN+XuwWkl9fSdjbzZ/lEsAUhx8OPOvA7BANY
- 4yNcp9sQsxcBj62TPSghBr5bDQpsl1mb3kgFOe57TSiR66v++yh2C7fS9Cv6Hx+Ulk3y
- t9wljk+T06Z1sZgDMqKD+giBwC3PER0+Su71kcr400M8aGq6Yh/2fICC9BpAeAxjpEzv
- OGLP7XUN2YeZvBUfn8b4SqoizSZ4SJOsE6kZaot2uLEwZ0xakXOq6j8XKdPE3zz5CkAN
- Puzx+cZv73S0i/HlE2L3yqcgm3VYZeBsdKKC0ao3pMPhpEoW4Lo3Tc8WMWy1hyTZPzvj
- 7jhA==
-X-Gm-Message-State: APjAAAUe1Hy1hIPBvBWLrEpLRmIqmV0om5KAIry9uUhwIUpBzLxXHv0X
- 6OmDKOJkHYaT3P/H4+DJBYKtPh5vSXA=
-X-Google-Smtp-Source: APXvYqxhb551eaPvYW3aHcS2Y2jrA1e7OdTeqm5liDBTjQRChx9CJ8uw7qBXhW4MO/M8m/PZNLTKqA==
-X-Received: by 2002:aa7:9abb:: with SMTP id x27mr37012105pfi.150.1574734980360; 
- Mon, 25 Nov 2019 18:23:00 -0800 (PST)
+ :in-reply-to:references:mime-version:content-transfer-encoding;
+ bh=CD0CzYEX/o6Zd/uHP6vbWB6WMoC+4GyO2IXO0mq1OcE=;
+ b=NsDp2naRzvZlU22FN4l1TmLDGZxbksNN9LfMZfsszhcRD6bSDi9htUIbztMzbn4dqb
+ byTgdSAU2wYYIZVTA1HofM+CtADRnF+HcDU+HXbMea2NZyfWfp1WWNggT/YuwMS9/m6C
+ Pz0qrbS5X5Xau/zNjE53HfJUbNO3M2J5oLbldh1DSkWdPIURV9ks/AxsHQNW6yR+OJcB
+ ajERX2UBn8e67CsTynRp5woHmzdYvsuYBH106AF5sX+Al4WRBJeGQCs8s7X3bkO1MJLe
+ jxPgDgzayuZhsojizxjK/ZX/5okSOcEERvJF8IXtUALSbbG57sWUpYwwkN54Olo0lBx2
+ jQyQ==
+X-Gm-Message-State: APjAAAXu9zrCduR9klEg5eTBMPbjayuWm6UfLt1bdAzs+vQoqeMBYZRP
+ OVimiKTveTDxfzf8TlSwYa8=
+X-Google-Smtp-Source: APXvYqw6UNaft0xfeIv2zeZrxqCAJefQOKEyciNUpcWkgvrwqQ7cKd++GUsr7IxJw5bpatflGHbbcg==
+X-Received: by 2002:a17:902:6909:: with SMTP id
+ j9mr31706313plk.136.1574734988435; 
+ Mon, 25 Nov 2019 18:23:08 -0800 (PST)
 Received: from localhost.localdomain ([45.124.203.14])
- by smtp.gmail.com with ESMTPSA id q70sm666568pjq.26.2019.11.25.18.22.56
+ by smtp.gmail.com with ESMTPSA id q70sm666568pjq.26.2019.11.25.18.23.04
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 25 Nov 2019 18:22:59 -0800 (PST)
+ Mon, 25 Nov 2019 18:23:07 -0800 (PST)
 From: Joel Stanley <joel@jms.id.au>
 To: Lee Jones <lee.jones@linaro.org>, Rob Herring <robh+dt@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>
-Subject: [PATCH 0/2] reset: Add ast2600 support
-Date: Tue, 26 Nov 2019 12:52:41 +1030
-Message-Id: <20191126022243.215261-1-joel@jms.id.au>
+Subject: [PATCH 2/2] reset: simple: Add AST2600 compatibility string
+Date: Tue, 26 Nov 2019 12:52:43 +1030
+Message-Id: <20191126022243.215261-3-joel@jms.id.au>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191126022243.215261-1-joel@jms.id.au>
+References: <20191126022243.215261-1-joel@jms.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_182301_649465_5A545ADA 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191125_182309_734630_BCB6E9FA 
+X-CRM114-Status: GOOD (  10.94  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -101,25 +103,36 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Andrew Jeffery <andrew@aj.id.au>, devicetree@vger.kernel.org,
- linux-aspeed@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+ Brad Bishop <bradleyb@fuzziesquirrel.com>, linux-aspeed@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds ast2600 support to the reset-simple driver, and updates
-the device tree documentation for the LPC bindings.
+From: Brad Bishop <bradleyb@fuzziesquirrel.com>
 
-Brad Bishop (1):
-  reset: simple: Add AST2600 compatibility string
+The AST2600 SoC contains the same LPC register set as the AST2500.
 
-Joel Stanley (1):
-  dt-bindings: mfd: Add ast2600 to ASPEED LPC
+Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+Signed-off-by: Brad Bishop <bradleyb@fuzziesquirrel.com>
+Signed-off-by: Joel Stanley <joel@jms.id.au>
+---
+ drivers/reset/reset-simple.c | 1 +
+ 1 file changed, 1 insertion(+)
 
- Documentation/devicetree/bindings/mfd/aspeed-lpc.txt | 11 +++++++++--
- drivers/reset/reset-simple.c                         |  1 +
- 2 files changed, 10 insertions(+), 2 deletions(-)
-
+diff --git a/drivers/reset/reset-simple.c b/drivers/reset/reset-simple.c
+index 067e7e7b34f1..795c9063fe7b 100644
+--- a/drivers/reset/reset-simple.c
++++ b/drivers/reset/reset-simple.c
+@@ -125,6 +125,7 @@ static const struct of_device_id reset_simple_dt_ids[] = {
+ 		.data = &reset_simple_active_low },
+ 	{ .compatible = "aspeed,ast2400-lpc-reset" },
+ 	{ .compatible = "aspeed,ast2500-lpc-reset" },
++	{ .compatible = "aspeed,ast2600-lpc-reset" },
+ 	{ .compatible = "bitmain,bm1880-reset",
+ 		.data = &reset_simple_active_low },
+ 	{ .compatible = "snps,dw-high-reset" },
 -- 
 2.24.0
 
