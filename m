@@ -2,70 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9224F10A615
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 22:37:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4579B10A622
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 22:45:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=GHDWQiwHp9BkfIe8Ex6kln7YwQbfHa0IibVDHj7TSTs=; b=WB8yjJmmK+2cRO
-	Bh01EWwVNcj+kax9TPSxwWyCKdTceSVvLf79rOHX7K/376n3RU6oXs3DfibjL2bLFxN9topE0LfaZ
-	uo/c2tJdHZdhJhYQ+RpZRAjoUXDTD5Rv22J8K6ci9O9Dbori7RU8fSUz6ypyhjGdFscCJSooUhsC2
-	r7XHaG0IkzCtfmvre27uBf+ifUsDklDhIp7CGlhvD7b5VZbSC+2Rs1tbYvmcihTqJ0hf3CVkS/lVq
-	bm7o73IJYS9OgVDYVjGKFYg7LsF2jKUkNbN2AZqijentbcZADR7Tu7n9zPO9w1mN2v8++SM5QqJmy
-	4cxDID0fkh3r0RiNOsRg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=He5DRTX3tQgA+4lxYZYc3cjFhTinNUGsLvm/TBVaCMI=; b=TRroF/lOIDC5IkdrpjrVEubU8
+	Xc6Hy+qrq3/H+qMP08x4PU1wi4gEVwOCcJadselldOcDJYG1WWNIkoIB/vIr+ouse2VEbBqwFP8D/
+	oLT0EHNDu1O139YL4eDqGt2+CXC2ffUp4ZN+UvdbeboaCw7FKHwaTrU7kvse+zopSjXRu9pRhLb35
+	8rk5jiYBE9jh9f80X6POwru7543i4URVtfzLzT8ApBexsehcv82h8C0lyqOLacQ6B2zjtn/a8KNzD
+	WgYhaEGzhWriljwBuFntlSffk/xw3vrBSftr5gS2xHVosN8I5MK2uPsVodBOldsPbmwrwmU4SgTfM
+	AGOdpwgpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZiWc-0007My-E8; Tue, 26 Nov 2019 21:37:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZiWS-0007Ld-79
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 21:37:25 +0000
-Received: from localhost (unknown [69.71.4.100])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E0B0120835;
- Tue, 26 Nov 2019 21:37:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574804242;
- bh=NiCNn3FuYjr3n6WG4QyUZzhp+ax9LgPmgNljIGhEErI=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=drZqipwPeS+niJFsQ0qSF6WD0LHQSIqKXEeHnUMsVLnVc7MNuISEmOaQH+sDLt2g/
- zMyTvJUM46sxgLF7lkaIhja1ULdda7AL64iLWUwrXiH0nczywhEf6oFTFeuLNA5HY6
- hlclqFVo9MpY/gYtPhZbpczXork0in44N12KPgbI=
-Date: Tue, 26 Nov 2019 15:37:18 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH 3/6] PCI: tegra: Add support for PCIe endpoint mode in
- Tegra194
-Message-ID: <20191126213718.GA185422@google.com>
+	id 1iZieV-0002Ju-T4; Tue, 26 Nov 2019 21:45:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iZieM-0002Id-RR
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 21:45:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 59F5431B;
+ Tue, 26 Nov 2019 13:45:31 -0800 (PST)
+Received: from [192.168.1.124] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 37D3B3F52E;
+ Tue, 26 Nov 2019 13:45:26 -0800 (PST)
+Subject: Re: [PATCH v2] dma-mapping: treat dev->bus_dma_mask as a DMA limit
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Christoph Hellwig <hch@lst.de>, Nathan Chancellor <natechancellor@gmail.com>
+References: <20191121092646.8449-1-nsaenzjulienne@suse.de>
+ <20191123165108.GA15306@ubuntu-x2-xlarge-x86> <20191125074412.GA30595@lst.de>
+ <0b851d0e-37c7-062e-c287-05f8c8a54c16@arm.com>
+ <45feed391bbd95c46f64b31cf8817d4f773c8da1.camel@suse.de>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <935d65b4-a28e-d7b9-7392-42fec71b5150@arm.com>
+Date: Tue, 26 Nov 2019 21:45:19 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191122104505.8986-4-vidyas@nvidia.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <45feed391bbd95c46f64b31cf8817d4f773c8da1.camel@suse.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_133724_306824_BA3E7A05 
-X-CRM114-Status: GOOD (  12.38  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191126_134534_940045_31265782 
+X-CRM114-Status: GOOD (  15.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 FAKE_REPLY_C           No description available.
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,140 +65,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mmaddireddy@nvidia.com, kthota@nvidia.com, gustavo.pimentel@synopsys.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, kishon@ti.com,
- thierry.reding@gmail.com, linux-pci@vger.kernel.org,
- linux-tegra@vger.kernel.org, andrew.murray@arm.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-mips@vger.kernel.org,
+ linux-ide@vger.kernel.org, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, Frank Rowand <frowand.list@gmail.com>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Paul Burton <paulburton@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ Joerg Roedel <joro@8bytes.org>, x86@kernel.org, linux-acpi@vger.kernel.org,
+ Ingo Molnar <mingo@redhat.com>, linux-pci@vger.kernel.org,
+ James Hogan <jhogan@kernel.org>, Len Brown <lenb@kernel.org>,
+ devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Jens Axboe <axboe@kernel.dk>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, Hanjun Guo <guohanjun@huawei.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ iommu@lists.linux-foundation.org, Sudeep Holla <sudeep.holla@arm.com>,
+ linuxppc-dev@lists.ozlabs.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 22, 2019 at 04:15:02PM +0530, Vidya Sagar wrote:
-> Add support for the endpoint mode of Synopsys DesignWare core based
-> dual mode PCIe controllers present in Tegra194 SoC.
+On 2019-11-26 6:51 pm, Nicolas Saenz Julienne wrote:
+> On Mon, 2019-11-25 at 16:33 +0000, Robin Murphy wrote:
+>> On 25/11/2019 7:44 am, Christoph Hellwig wrote:
+>>> On Sat, Nov 23, 2019 at 09:51:08AM -0700, Nathan Chancellor wrote:
+>>>> Just as an FYI, this introduces a warning on arm32 allyesconfig for me:
+>>>
+>>> I think the dma_limit argument to iommu_dma_alloc_iova should be a u64
+>>> and/or we need to use min_t and open code the zero exception.
+>>>
+>>> Robin, Nicolas - any opinions?
+>>
+>> Yeah, given that it's always held a mask I'm not entirely sure why it
+>> was ever a dma_addr_t rather than a u64. Unless anyone else is desperate
+>> to do it I'll get a cleanup patch ready for rc1.
+> 
+> Sounds good to me too
+> 
+> Robin, since I started the mess, I'll be happy to do it if it helps offloading
+> some work from you.
 
-> +static irqreturn_t tegra_pcie_ep_irq_handler(struct tegra_pcie_dw *pcie)
-> +{
-> +	struct dw_pcie_ep *ep = &pcie->pci.ep;
-> +	u32 val, tmp;
-> +
-> +	val = appl_readl(pcie, APPL_INTR_STATUS_L0);
-> +	if (val & APPL_INTR_STATUS_L0_LINK_STATE_INT) {
-> +		val = appl_readl(pcie, APPL_INTR_STATUS_L1_0_0);
-> +		appl_writel(pcie, val, APPL_INTR_STATUS_L1_0_0);
-> +		if (val & APPL_INTR_STATUS_L1_0_0_HOT_RESET_DONE) {
-> +			/* clear any stale PEX_RST interrupt */
-> +			if (!kfifo_put(&pcie->event_fifo, EP_HOT_RST_DONE)) {
-> +				dev_err(pcie->dev, "EVENT FIFO is full\n");
-> +				return IRQ_HANDLED;
-> +			}
-> +			wake_up(&pcie->wq);
-> +		}
-> +		if (val & APPL_INTR_STATUS_L1_0_0_RDLH_LINK_UP_CHGED) {
-> +			tmp = appl_readl(pcie, APPL_LINK_STATUS);
-> +			if (tmp & APPL_LINK_STATUS_RDLH_LINK_UP) {
-> +				dev_info(pcie->dev, "Link is up with Host\n");
-> +				dw_pcie_ep_linkup(ep);
-> +			}
-> +		}
-> +	} else if (val & APPL_INTR_STATUS_L0_PCI_CMD_EN_INT) {
+No worries - your change only exposed my original weird decision ;)  On 
+second look the patch was literally a trivial one-liner, so I've written 
+it up already.
 
-Is it really the case that only one of
-APPL_INTR_STATUS_L0_LINK_STATE_INT and
-APPL_INTR_STATUS_L0_PCI_CMD_EN_INT can be set?
-
-If it's possible that both could be set, maybe this should be
-something like this?
-
-  int spurious = 1;
-
-  if (val & APPL_INTR_STATUS_L0_LINK_STATE_INT) {
-    ...
-    spurious = 0;
-  }
-  if (val & APPL_INTR_STATUS_L0_PCI_CMD_EN_INT) {
-    ...
-    spurious = 0;
-  }
-
-  if (spurious) {
-    dev_warn(...)
-  }
-
-> +		val = appl_readl(pcie, APPL_INTR_STATUS_L1_15);
-> +		appl_writel(pcie, val, APPL_INTR_STATUS_L1_15);
-> +		if (val & APPL_INTR_STATUS_L1_15_CFG_BME_CHGED) {
-> +			if (!kfifo_put(&pcie->event_fifo, EP_BME_CHANGE)) {
-> +				dev_err(pcie->dev, "EVENT FIFO is full\n");
-> +				return IRQ_HANDLED;
-> +			}
-> +			wake_up(&pcie->wq);
-> +		}
-> +	} else {
-> +		dev_warn(pcie->dev, "Random interrupt (STATUS = 0x%08X)\n",
-> +			 val);
-> +		appl_writel(pcie, val, APPL_INTR_STATUS_L0);
-> +	}
-> +
-> +	return IRQ_HANDLED;
-> +}
-
-> +static int tegra_pcie_ep_work_thread(void *p)
-> +{
-> +	struct tegra_pcie_dw *pcie = (struct tegra_pcie_dw *)p;
-> +	u32 event;
-> +
-> +	while (true) {
-> +		wait_event_interruptible(pcie->wq,
-> +					 !kfifo_is_empty(&pcie->event_fifo));
-> +
-> +		if (kthread_should_stop())
-> +			break;
-> +
-> +		if (!kfifo_get(&pcie->event_fifo, &event)) {
-> +			dev_warn(pcie->dev, "EVENT FIFO is empty\n");
-> +			continue;
-> +		}
-> +
-> +		switch (event) {
-> +		case EP_PEX_RST_DEASSERT:
-> +			dev_info(pcie->dev, "EVENT: EP_PEX_RST_DEASSERT\n");
-> +			pex_ep_event_pex_rst_deassert(pcie);
-> +			break;
-> +
-> +		case EP_PEX_RST_ASSERT:
-> +			dev_info(pcie->dev, "EVENT: EP_PEX_RST_ASSERT\n");
-> +			pex_ep_event_pex_rst_assert(pcie);
-> +			break;
-> +
-> +		case EP_HOT_RST_DONE:
-> +			dev_info(pcie->dev, "EVENT: EP_HOT_RST_DONE\n");
-> +			pex_ep_event_hot_rst_done(pcie);
-> +			break;
-> +
-> +		case EP_BME_CHANGE:
-> +			dev_info(pcie->dev, "EVENT: EP_BME_CHANGE\n");
-> +			pex_ep_event_bme_change(pcie);
-> +			break;
-> +
-> +		case EP_EVENT_EXIT:
-> +			dev_info(pcie->dev, "EVENT: EP_EVENT_EXIT\n");
-> +			return 0;
-> +
-> +		default:
-> +			dev_warn(pcie->dev, "Invalid PCIe EP event\n");
-
-Maybe include the invalid event value in the message?
-
-> +			break;
-> +		}
-> +	}
-> +
-> +	return 0;
-> +}
+Cheers,
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
