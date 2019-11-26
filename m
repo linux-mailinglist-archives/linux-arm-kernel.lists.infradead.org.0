@@ -2,50 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AFD910A283
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 17:54:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA8C610A2DB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 17:56:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=+cOGH1fOhH0kqTjw4QgfwWjoa5O0uJawH4Ca9IhGo3A=; b=B1l
-	vaALAQL1aZtjT5JcDdWPV381453s1ArlMkW8WvxspuebT2PJQ68h4rq4GGYjKz5TbQ4tCQV2EXRya
-	iz8tVkOAE4wv7I8v3mXZ4Q1sDnvPd6poXj7AknG1psNDUetUfMQdf0cuDD4oziar9BE59axH3AC7y
-	OAFRWAgqbK5785hD7ZxA7+eEXX2hmsXEC+9YOt7R8gUEPVidvhHiaI7wIwUHyARCwqyOCUI5yeK1U
-	jhDywY6h/+v0G/0GS/ut0cnMaYjOJOJD/ZBBMYHqQPmJlN6SkmGyuYjKWgPDvlMsmONdpyxZsnHrU
-	e67lnEkMwUENo73lywJShMFDL63Je4w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oEa/0NeV22zMV3RnXRvhqH8Q3BuSuCXP/L01benZ4IA=; b=lG82m5QKC9tRvN
+	d9DGmlULzP8jCI2THm2iUQKfZsDkI4sbLZSGugALhsgO/k3PE74XKe+n/B0haHpKC+PR3Q6tKsAA2
+	OhUaJeACGyp9fZzFpJoxALEqtpCJCP07c3LFjZdE4kLjtLe09MDlKBALsVyKsXkk0c7OVDALxk7yY
+	5QrpYGtELNKcDmvmUIWlVs9aigSB4UVlaV9hNjBq5J49xwfmV6r+pwNrqNDC1OKO50EDupfT/CYj1
+	AEpi9KuOfxjnR+QjUca5yeA/YrMpIT5JsQji8RVeby8/KNp9I4Bpc8+Q4KK7QLs6h7lWbSODmsB4l
+	KzGhpD1sDgJo6T1Lr3Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZe6S-0001eu-UT; Tue, 26 Nov 2019 16:54:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZe6K-0001eO-HR
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 16:54:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 461EE30E;
- Tue, 26 Nov 2019 08:54:04 -0800 (PST)
-Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 426ED3F68E;
- Tue, 26 Nov 2019 08:54:03 -0800 (PST)
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: dts: juno: Fix DMA address translations by adding SOC
- bus node
-Date: Tue, 26 Nov 2019 16:53:55 +0000
-Message-Id: <20191126165355.6696-1-sudeep.holla@arm.com>
-X-Mailer: git-send-email 2.17.1
+	id 1iZe89-0004jM-Nz; Tue, 26 Nov 2019 16:56:01 +0000
+Received: from www1102.sakura.ne.jp ([219.94.129.142])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iZe80-0004MW-Lv
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 16:55:54 +0000
+Received: from fsav402.sakura.ne.jp (fsav402.sakura.ne.jp [133.242.250.101])
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id xAQGtfEc076814;
+ Wed, 27 Nov 2019 01:55:41 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Received: from www1102.sakura.ne.jp (219.94.129.142)
+ by fsav402.sakura.ne.jp (F-Secure/fsigk_smtp/550/fsav402.sakura.ne.jp);
+ Wed, 27 Nov 2019 01:55:41 +0900 (JST)
+X-Virus-Status: clean(F-Secure/fsigk_smtp/550/fsav402.sakura.ne.jp)
+Received: from localhost.localdomain (121.252.232.153.ap.dti.ne.jp
+ [153.232.252.121]) (authenticated bits=0)
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id xAQGtahH076800
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO);
+ Wed, 27 Nov 2019 01:55:41 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+To: Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org
+Subject: [PATCH] arm64: dts: rockchip: split rk3399-rockpro64 for v2 and v2.1
+ boards
+Date: Wed, 27 Nov 2019 01:55:29 +0900
+Message-Id: <20191126165529.30703-1-katsuhiro@katsuster.net>
+X-Mailer: git-send-email 2.24.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_085408_665249_ECE5CEBA 
-X-CRM114-Status: GOOD (  13.77  )
+X-CRM114-CacheID: sfid-20191126_085553_043960_BE1AB47B 
+X-CRM114-Status: GOOD (  13.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -58,304 +66,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Liviu Dudau <liviu.dudau@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Sudeep Holla <sudeep.holla@arm.com>
-MIME-Version: 1.0
+Cc: Katsuhiro Suzuki <katsuhiro@katsuster.net>,
+ Hugh Cole-Baker <sigmaris@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit 951d48855d86 ("of: Make of_dma_get_range() work on bus nodes")
-reworked the logic such that of_dma_get_range() works correctly
-starting from a bus node containing "dma-ranges".
+This patch splits rk3399-rockpro64 dts file to 2 files for v2 and
+v2.1 boards.
 
-Since on Juno we don't have a SoC level bus node and "dma-ranges" is
-present only in the root node, we get the following error:
+Both v2 and v2.1 boards can use almost same settings but we find a
+difference in I2C address of audio CODEC ES8136.
 
-OF: translation of DMA address(0) to CPU address failed node(/sram@2e000000)
-OF: translation of DMA address(0) to CPU address failed node(/uart@7ff80000)
-...
-OF: translation of DMA address(0) to CPU address failed node(/mhu@2b1f0000)
-OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-
-Let's fix it by adding a SoC bus node and moving all the devices along
-with the "dma-ranges" inside it.
-
-Cc: Rob Herring <robh+dt@kernel.org>
-Cc: Liviu Dudau <liviu.dudau@arm.com>
-Cc: Robin Murphy <robin.murphy@arm.com>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+Reported-by: Vasily Khoruzhick <anarsoul@gmail.com>
+Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
 ---
- arch/arm64/boot/dts/arm/juno-base.dtsi        | 162 +++++++++---------
- arch/arm64/boot/dts/arm/juno-clocks.dtsi      |   2 +
- arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi     |   2 +
- arch/arm64/boot/dts/arm/juno-motherboard.dtsi |   2 +
- 4 files changed, 88 insertions(+), 80 deletions(-)
+ arch/arm64/boot/dts/rockchip/Makefile         |  3 +-
+ .../dts/rockchip/rk3399-rockpro64-v2.1.dts    | 30 +++++++++++++++++++
+ .../boot/dts/rockchip/rk3399-rockpro64-v2.dts | 30 +++++++++++++++++++
+ ...99-rockpro64.dts => rk3399-rockpro64.dtsi} | 18 -----------
+ 4 files changed, 62 insertions(+), 19 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-rockpro64-v2.1.dts
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3399-rockpro64-v2.dts
+ rename arch/arm64/boot/dts/rockchip/{rk3399-rockpro64.dts => rk3399-rockpro64.dtsi} (97%)
 
-Hi Rob, Robin,
-
-Let me know if this is correct fix for the issue I am seeing with linux-next
-on Juno. This patch is generated with -b for ease of review. With lots of
-indentation, actual delta is:
-
-4 files changed, 1274 insertions(+), 1266 deletions(-)
-
-Regards,
-Sudeep
-
-diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
-index 9e3e8ce6adfe..ef21d7245e3b 100644
---- a/arch/arm64/boot/dts/arm/juno-base.dtsi
-+++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
-@@ -3,6 +3,87 @@
- #include "juno-motherboard.dtsi"
- 
- / {
-+	gic: interrupt-controller@2c010000 {
-+		compatible = "arm,gic-400", "arm,cortex-a15-gic";
-+		reg = <0x0 0x2c010000 0 0x1000>,
-+		      <0x0 0x2c02f000 0 0x2000>,
-+		      <0x0 0x2c04f000 0 0x2000>,
-+		      <0x0 0x2c06f000 0 0x2000>;
-+		#address-cells = <2>;
-+		#interrupt-cells = <3>;
-+		#size-cells = <2>;
-+		interrupt-controller;
-+		interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_HIGH)>;
-+		ranges = <0 0 0 0x2c1c0000 0 0x40000>;
+diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+index 48fb631d5451..3debaeb517fd 100644
+--- a/arch/arm64/boot/dts/rockchip/Makefile
++++ b/arch/arm64/boot/dts/rockchip/Makefile
+@@ -33,6 +33,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-roc-pc.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-roc-pc-mezzanine.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock-pi-4.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock960.dtb
+-dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64.dtb
++dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64-v2.dtb
++dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64-v2.1.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire-excavator.dtb
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64-v2.1.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64-v2.1.dts
+new file mode 100644
+index 000000000000..9450207bedad
+--- /dev/null
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64-v2.1.dts
+@@ -0,0 +1,30 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2017 Fuzhou Rockchip Electronics Co., Ltd.
++ * Copyright (c) 2018 Akash Gajjar <Akash_Gajjar@mentor.com>
++ * Copyright (c) 2019 Katsuhiro Suzuki <katsuhiro@katsuster.net>
++ */
 +
-+		v2m_0: v2m@0 {
-+			compatible = "arm,gic-v2m-frame";
-+			msi-controller;
-+			reg = <0 0 0 0x10000>;
-+		};
++/dts-v1/;
++#include "rk3399-rockpro64.dtsi"
 +
-+		v2m@10000 {
-+			compatible = "arm,gic-v2m-frame";
-+			msi-controller;
-+			reg = <0 0x10000 0 0x10000>;
-+		};
++/ {
++	model = "Pine64 RockPro64 v2.1";
++	compatible = "pine64,rockpro64", "rockchip,rk3399";
++};
 +
-+		v2m@20000 {
-+			compatible = "arm,gic-v2m-frame";
-+			msi-controller;
-+			reg = <0 0x20000 0 0x10000>;
-+		};
++&i2c1 {
++	es8316: codec@11 {
++		compatible = "everest,es8316";
++		reg = <0x11>;
++		clocks = <&cru SCLK_I2S_8CH_OUT>;
++		clock-names = "mclk";
++		#sound-dai-cells = <0>;
 +
-+		v2m@30000 {
-+			compatible = "arm,gic-v2m-frame";
-+			msi-controller;
-+			reg = <0 0x30000 0 0x10000>;
-+		};
-+	};
-+
-+	timer {
-+		compatible = "arm,armv8-timer";
-+		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>;
-+	};
-+
-+	scpi {
-+		compatible = "arm,scpi";
-+		mboxes = <&mailbox 1>;
-+		shmem = <&cpu_scp_hpri>;
-+
-+		clocks {
-+			compatible = "arm,scpi-clocks";
-+
-+			scpi_dvfs: scpi-dvfs {
-+				compatible = "arm,scpi-dvfs-clocks";
-+				#clock-cells = <1>;
-+				clock-indices = <0>, <1>, <2>;
-+				clock-output-names = "atlclk", "aplclk","gpuclk";
-+			};
-+			scpi_clk: scpi-clk {
-+				compatible = "arm,scpi-variable-clocks";
-+				#clock-cells = <1>;
-+				clock-indices = <3>;
-+				clock-output-names = "pxlclk";
++		port {
++			es8316_p0_0: endpoint {
++				remote-endpoint = <&i2s1_p0_0>;
 +			};
 +		};
++	};
++};
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64-v2.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64-v2.dts
+new file mode 100644
+index 000000000000..7bd37eaa1d57
+--- /dev/null
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64-v2.dts
+@@ -0,0 +1,30 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2017 Fuzhou Rockchip Electronics Co., Ltd.
++ * Copyright (c) 2018 Akash Gajjar <Akash_Gajjar@mentor.com>
++ * Copyright (c) 2019 Katsuhiro Suzuki <katsuhiro@katsuster.net>
++ */
 +
-+		scpi_devpd: scpi-power-domains {
-+			compatible = "arm,scpi-power-domains";
-+			num-domains = <2>;
-+			#power-domain-cells = <1>;
++/dts-v1/;
++#include "rk3399-rockpro64.dtsi"
++
++/ {
++	model = "Pine64 RockPro64 v2";
++	compatible = "pine64,rockpro64", "rockchip,rk3399";
++};
++
++&i2c1 {
++	es8316: codec@10 {
++		compatible = "everest,es8316";
++		reg = <0x10>;
++		clocks = <&cru SCLK_I2S_8CH_OUT>;
++		clock-names = "mclk";
++		#sound-dai-cells = <0>;
++
++		port {
++			es8316_p0_0: endpoint {
++				remote-endpoint = <&i2s1_p0_0>;
++			};
 +		};
-+
-+		scpi_sensors0: sensors {
-+			compatible = "arm,scpi-sensors";
-+			#thermal-sensor-cells = <1>;
-+		};
 +	};
-+
-+	soc {
- 		/*
- 		 *  Devices shared by all Juno boards
- 		 */
-@@ -69,52 +150,6 @@
- 			power-domains = <&scpi_devpd 0>;
- 		};
- 
--	gic: interrupt-controller@2c010000 {
--		compatible = "arm,gic-400", "arm,cortex-a15-gic";
--		reg = <0x0 0x2c010000 0 0x1000>,
--		      <0x0 0x2c02f000 0 0x2000>,
--		      <0x0 0x2c04f000 0 0x2000>,
--		      <0x0 0x2c06f000 0 0x2000>;
--		#address-cells = <2>;
--		#interrupt-cells = <3>;
--		#size-cells = <2>;
--		interrupt-controller;
--		interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_HIGH)>;
--		ranges = <0 0 0 0x2c1c0000 0 0x40000>;
--
--		v2m_0: v2m@0 {
--			compatible = "arm,gic-v2m-frame";
--			msi-controller;
--			reg = <0 0 0 0x10000>;
--		};
--
--		v2m@10000 {
--			compatible = "arm,gic-v2m-frame";
--			msi-controller;
--			reg = <0 0x10000 0 0x10000>;
--		};
--
--		v2m@20000 {
--			compatible = "arm,gic-v2m-frame";
--			msi-controller;
--			reg = <0 0x20000 0 0x10000>;
--		};
--
--		v2m@30000 {
--			compatible = "arm,gic-v2m-frame";
--			msi-controller;
--			reg = <0 0x30000 0 0x10000>;
--		};
--	};
--
--	timer {
--		compatible = "arm,armv8-timer";
--		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
--			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
--			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
--			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>;
--	};
--
- 		/*
- 		 * Juno TRMs specify the size for these coresight components as 64K.
- 		 * The actual size is just 4K though 64K is reserved. Access to the
-@@ -557,40 +592,6 @@
- 			iommu-map = <0x0 &smmu_pcie 0x0 0x1>;
- 		};
- 
--	scpi {
--		compatible = "arm,scpi";
--		mboxes = <&mailbox 1>;
--		shmem = <&cpu_scp_hpri>;
--
--		clocks {
--			compatible = "arm,scpi-clocks";
--
--			scpi_dvfs: scpi-dvfs {
--				compatible = "arm,scpi-dvfs-clocks";
--				#clock-cells = <1>;
--				clock-indices = <0>, <1>, <2>;
--				clock-output-names = "atlclk", "aplclk","gpuclk";
--			};
--			scpi_clk: scpi-clk {
--				compatible = "arm,scpi-variable-clocks";
--				#clock-cells = <1>;
--				clock-indices = <3>;
--				clock-output-names = "pxlclk";
--			};
--		};
--
--		scpi_devpd: scpi-power-domains {
--			compatible = "arm,scpi-power-domains";
--			num-domains = <2>;
--			#power-domain-cells = <1>;
--		};
--
--		scpi_sensors0: sensors {
--			compatible = "arm,scpi-sensors";
--			#thermal-sensor-cells = <1>;
--		};
--	};
--
- 		thermal-zones {
- 			pmic {
- 				polling-delay = <1000>;
-@@ -838,4 +839,5 @@
- 			interrupt-map-mask = <0 0>;
- 			interrupt-map = <0 0 &gic 0 0 GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>;
- 		};
-+	};
- };
-diff --git a/arch/arm64/boot/dts/arm/juno-clocks.dtsi b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
-index e5e265dfa902..3ea934017b98 100644
---- a/arch/arm64/boot/dts/arm/juno-clocks.dtsi
-+++ b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
-@@ -7,6 +7,7 @@
-  *
-  */
- / {
-+	soc {
- 		/* SoC fixed clocks */
- 		soc_uartclk: refclk7273800hz {
- 			compatible = "fixed-clock";
-@@ -42,4 +43,5 @@
- 			clock-frequency = <400000000>;
- 			clock-output-names = "faxi_clk";
- 		};
-+	};
- };
-diff --git a/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi b/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi
-index eda3d9e18af6..3f6e607b450d 100644
---- a/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi
-+++ b/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi
-@@ -1,5 +1,6 @@
- // SPDX-License-Identifier: GPL-2.0
- / {
-+	soc {
- 		funnel@20130000 { /* cssys1 */
- 			compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
- 			reg = <0 0x20130000 0 0x1000>;
-@@ -82,4 +83,5 @@
- 
- 			};
- 		};
-+	};
- };
-diff --git a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-index 9f60dacb4f80..638c6b5b342a 100644
---- a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-+++ b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-@@ -8,6 +8,7 @@
++};
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
+similarity index 97%
+rename from arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+rename to arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
+index 7f4b2eba31d4..183eda4ffb9c 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dtsi
+@@ -4,16 +4,12 @@
+  * Copyright (c) 2018 Akash Gajjar <Akash_Gajjar@mentor.com>
   */
  
+-/dts-v1/;
+ #include <dt-bindings/input/linux-event-codes.h>
+ #include <dt-bindings/pwm/pwm.h>
+ #include "rk3399.dtsi"
+ #include "rk3399-opp.dtsi"
+ 
  / {
-+	soc {
- 		smb@8000000 {
- 			mb_clk24mhz: clk24mhz {
- 				compatible = "fixed-clock";
-@@ -292,4 +293,5 @@
- 				};
- 			};
- 		};
-+	};
+-	model = "Pine64 RockPro64";
+-	compatible = "pine64,rockpro64", "rockchip,rk3399";
+-
+ 	chosen {
+ 		stdout-path = "serial2:1500000n8";
+ 	};
+@@ -476,20 +472,6 @@ &i2c1 {
+ 	i2c-scl-rising-time-ns = <300>;
+ 	i2c-scl-falling-time-ns = <15>;
+ 	status = "okay";
+-
+-	es8316: codec@11 {
+-		compatible = "everest,es8316";
+-		reg = <0x11>;
+-		clocks = <&cru SCLK_I2S_8CH_OUT>;
+-		clock-names = "mclk";
+-		#sound-dai-cells = <0>;
+-
+-		port {
+-			es8316_p0_0: endpoint {
+-				remote-endpoint = <&i2s1_p0_0>;
+-			};
+-		};
+-	};
  };
+ 
+ &i2c3 {
 -- 
-2.17.1
+2.24.0
 
 
 _______________________________________________
