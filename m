@@ -2,80 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E1AA109E41
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 13:49:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE715109E53
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 13:52:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k2Nb0u7xqICuN/9aJnf6LWLX94DOs3a06QpQMpoErQM=; b=hEww0UKTVFBXFh
-	ZF3R9x8sCtimv8ggLnBUqwc8hm333FwFlyiM+M+dk2KGrfQC57m2B3r35WE30kLVm14gAlPbtwzql
-	LkvOn6P2Z1w2peDPKLS5qE78JYu64Rt7VLv2jkig7cLWCNqtCTSgtB1uP91uNQZU1lbKtzo9dZY9h
-	opoipOH80YJHAC4ULVwdA1IWtF2tDh5T1lYACXPwm2zGFWtQjutgLS/qdyq6PDbVmeWZ4sPQ1aqcD
-	ZUNtxnao+ZDhf4s+YuSJgyGAV4xp9R3K6ZeIsYhB+KkhPbZmqHnbFWueTsETovxR0++QP5NkAYhl+
-	3O5L9oCVX9aN0GLMuyng==;
+	List-Owner; bh=frNJdC7t4Sot5hEUVVkGmgrvBvPWRnxXQUtSh4hnprI=; b=kM1zZYOUJ26jRU
+	czi2hY38Z17p9EiMqajlqkkBVV9sxJ5bwEk6prNWeUtmuNHAnf6UthVlmUADuluxQfTehFg86KDWK
+	8FpwjAO6/nakGV6WwJpUxtCryOhewhSnXEV1vEh0niuSBpTxrm421d6xzPPsVcuyU8Eu2obNwIRKd
+	QjNN838wrdCXeQ9GB+zsw7NDKFFO+wOxuEBKZH3oxfMVy1UoArAzBorp75BF98dgAVMBalP1bYCb/
+	+C9DGbwnVcIJaT0/buQNOckWAnKdxGZT5gScllobKpGQBURtuXlyYgR8a9cCpKsFRzuTNsxv/ROMm
+	OxpKSGir4gCNsbjb6RTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZaHO-0005Lh-OP; Tue, 26 Nov 2019 12:49:18 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iZaK0-0004hH-CT; Tue, 26 Nov 2019 12:52:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZaG2-0002Hf-Lx
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 12:47:56 +0000
-Received: by mail-lf1-x144.google.com with SMTP id y5so1263723lfy.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 Nov 2019 04:47:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=MjkUMS44IlupoDCTn64uvPwtCzdUzIO1TZ6FO2BGbwM=;
- b=w3OTUCFSh20BhTrbSJ+3Pf8v0JitRZ9VDDzrkAdFWafoatbb52tEWU000bVcI/42VV
- l6rgNXK5JGS4/6/CV5toTl1UDuXJ57cA9Qot6RmA/65sRHWYRtt4kH+cCZCcpfNzqdbC
- RNsUuMxdAjtNiPezpj48AWP+8YPdkyGumhlNERPjOvGScYcDqEo6lRI1gWxRoEuswcvl
- pkmohHpfPJj5SJVWSbEq3QxgpE7F9/UA+mYm64yxQDFIPuEfTFkxx3+Ge1W+mdvZHbHl
- pWqfLSCqP2toyesIEmIJEHUZe4AZAAnU00EKH9ogwbSNUaP82Geb0K5568t2fb5Relts
- /fLw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=MjkUMS44IlupoDCTn64uvPwtCzdUzIO1TZ6FO2BGbwM=;
- b=k0x9HV67scYHhx2A3qltRAI1k52EaWYxqywF7u9nN8Xf9p5D0zyu/daa0j48WiOYSF
- 1HmDuL7ZDH58HtFS3bVvU3u4VRmC93zaRguwjwHvWge2xlUuuPw6BRa2+oFpZ+75xS/i
- 7I1U4gVwQE+Q1bUygpB/EjOVB8LJYd7epFncYDBisQ408nSl65KqocwF5cQyP//zxAwn
- gxj18uSIHB0F+w6MBGltEegE8fmaXRHTUll2yuTq0OXGynFgbVl48GhZNd2PrtrfUtkR
- NRd8waF6vCa5dLeu18o7W9Fdvvr/ymHvRRC6tisL4espPA7Wn1mzUuDmeBax0R4WUyIa
- SfhQ==
-X-Gm-Message-State: APjAAAU6FLcOMY1NdI00ZmJM87iVczkznvL33EfMW7w/3OukQjDsQgtq
- KKa0MUqIw9cHt7H+zWfRrk1yk1UejKc=
-X-Google-Smtp-Source: APXvYqwzEHcPa4LpXJ3FSRC/5hZtQ7iH+LmTCPyvJLyh0+nl9doV4x7qfJmWuaxdt70KGatSxR+wtA==
-X-Received: by 2002:ac2:53ba:: with SMTP id j26mr2559843lfh.92.1574772473016; 
- Tue, 26 Nov 2019 04:47:53 -0800 (PST)
-Received: from genomnajs.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id j10sm14874lfc.53.2019.11.26.04.47.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 Nov 2019 04:47:51 -0800 (PST)
-From: Linus Walleij <linus.walleij@linaro.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 4/4] ARM: dts: ux500: Fix up DSI controller nodes
-Date: Tue, 26 Nov 2019 13:47:38 +0100
-Message-Id: <20191126124738.77690-4-linus.walleij@linaro.org>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191126124738.77690-1-linus.walleij@linaro.org>
-References: <20191126124738.77690-1-linus.walleij@linaro.org>
+ id 1iZaJj-0004MH-7U; Tue, 26 Nov 2019 12:51:44 +0000
+Received: from localhost (unknown [193.47.165.251])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 69E61206BF;
+ Tue, 26 Nov 2019 12:51:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574772702;
+ bh=5nAvciWjljSlo0MRrEzGu4vA1rOXmiskCOHgf/ck+dw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=RvVzSwrzBkQ8faXu4UMgM41piS9lOzszU7IBHz2T7OmjxLWK42N9HPWM4t8WYcewV
+ PUlUbBehr242PJuxMMaPAyqmIpZMmTP8A2xzlNoVjXorIj5w1xm/6m7g83zpY3rYyX
+ 9x/57jz1HLZHD/qWHYTPD9Y14fFMXbPWmvXEBy20=
+Date: Tue, 26 Nov 2019 14:51:37 +0200
+From: Leon Romanovsky <leon@kernel.org>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [PATCH v3 1/7] linux/log2.h: Add roundup/rounddown_pow_two64()
+ family of functions
+Message-ID: <20191126125137.GA10331@unreal>
+References: <20191126091946.7970-1-nsaenzjulienne@suse.de>
+ <20191126091946.7970-2-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191126091946.7970-2-nsaenzjulienne@suse.de>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_044754_781690_FC08E2F3 
-X-CRM114-Status: GOOD (  12.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191126_045143_314000_9FD9D959 
+X-CRM114-Status: UNSURE (   9.31  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -85,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,83 +78,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- Stephan Gerhold <stephan@gerhold.net>
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
+ Shawn Lin <shawn.lin@rock-chips.com>, Hanjun Guo <guohanjun@huawei.com>,
+ Frank Rowand <frowand.list@gmail.com>, Christoph Hellwig <hch@lst.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, f.fainelli@gmail.com,
+ linux-rockchip@lists.infradead.org, linux-rdma@vger.kernel.org, maz@kernel.org,
+ phil@raspberrypi.org, linux-acpi@vger.kernel.org, Len Brown <lenb@kernel.org>,
+ devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-rpi-kernel@lists.infradead.org, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-arm-kernel@lists.infradead.org, mbrugger@suse.com,
+ netdev@vger.kernel.org, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
+ wahrenst@gmx.net, james.quinlan@broadcom.com,
+ Sudeep Holla <sudeep.holla@arm.com>, andrew.murray@arm.com,
+ Robin Murphy <robin.murphy@arm.com>, "David S. Miller" <davem@davemloft.net>,
+ Tariq Toukan <tariqt@mellanox.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These nodes should be named dsi-controller@* so fix it up.
+On Tue, Nov 26, 2019 at 10:19:39AM +0100, Nicolas Saenz Julienne wrote:
+> Some users need to make sure their rounding function accepts and returns
+> 64bit long variables regardless of the architecture. Sadly
+> roundup/rounddown_pow_two() takes and returns unsigned longs. Create a
+> new generic 64bit variant of the function and cleanup rougue custom
+> implementations.
 
-Cc: Stephan Gerhold <stephan@gerhold.net>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
- arch/arm/boot/dts/ste-dbx5x0.dtsi             | 6 +++---
- arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi | 2 +-
- arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi | 2 +-
- 3 files changed, 5 insertions(+), 5 deletions(-)
+Is it possible to create general roundup/rounddown_pow_two() which will
+work correctly for any type of variables, instead of creating special
+variant for every type?
 
-diff --git a/arch/arm/boot/dts/ste-dbx5x0.dtsi b/arch/arm/boot/dts/ste-dbx5x0.dtsi
-index 4e02b1b6c0bf..f4fb782d3afc 100644
---- a/arch/arm/boot/dts/ste-dbx5x0.dtsi
-+++ b/arch/arm/boot/dts/ste-dbx5x0.dtsi
-@@ -1092,7 +1092,7 @@
- 			ranges;
- 			status = "disabled";
- 
--			dsi0: dsi@a0351000 {
-+			dsi0: dsi-controller@a0351000 {
- 				compatible = "ste,mcde-dsi";
- 				reg = <0xa0351000 0x1000>;
- 				clocks = <&prcmu_clk PRCMU_DSI0CLK>, <&prcmu_clk PRCMU_DSI0ESCCLK>;
-@@ -1100,7 +1100,7 @@
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 			};
--			dsi1: dsi@a0352000 {
-+			dsi1: dsi-controller@a0352000 {
- 				compatible = "ste,mcde-dsi";
- 				reg = <0xa0352000 0x1000>;
- 				clocks = <&prcmu_clk PRCMU_DSI1CLK>, <&prcmu_clk PRCMU_DSI1ESCCLK>;
-@@ -1108,7 +1108,7 @@
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 			};
--			dsi2: dsi@a0353000 {
-+			dsi2: dsi-controller@a0353000 {
- 				compatible = "ste,mcde-dsi";
- 				reg = <0xa0353000 0x1000>;
- 				/* This DSI port only has the Low Power / Energy Save clock */
-diff --git a/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi b/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
-index e024520f4d47..de82b9db956f 100644
---- a/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
-+++ b/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
-@@ -66,7 +66,7 @@
- 		mcde@a0350000 {
- 			status = "okay";
- 
--			dsi@a0351000 {
-+			dsi-controller@a0351000 {
- 				panel {
- 					compatible = "samsung,s6d16d0";
- 					reg = <0>;
-diff --git a/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi b/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
-index cb3677f0a1cb..9f285c7cf914 100644
---- a/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
-+++ b/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
-@@ -45,7 +45,7 @@
- 		mcde@a0350000 {
- 			status = "okay";
- 
--			dsi@a0351000 {
-+			dsi-controller@a0351000 {
- 				panel {
- 					compatible = "sony,acx424akp";
- 					reg = <0>;
--- 
-2.23.0
-
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
