@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D84610A4B2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 20:44:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92BBD10A585
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 21:35:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hhblkkl1xI83eeadDQ8a98vaxqDWXMAvVgnjl69z51g=; b=kqMybgjbNUX69K
-	S59hzcR/v+CbLtiMdclznVwjdRt5YHj/GE8t3X3nYN1CswFLIBlCY51OBce45CnuG//Qy0mogTzMh
-	EwzHtLOMgYgkwjncAE2VCec3u8WkU9qwYou7a3URmSaqL47PecYgI3wEMviHtfQqICGR8nHEXwZN/
-	9yj9zYlVuVLt8szUe0yL6m2HJ41BCbWiPHCen1s86NZa9xCLIXYY6wQV+/OdCQcoCVlRS2k7hez78
-	ltQXsqTxMpptnCoRrdiU+q3FirDLT7+PJpSWO/7aQ1pdu/W3vwTHJQvnyR24OgdlE5BvkI6H4BcAM
-	qnTRBt4nqSEpB2ZU8h1w==;
+	List-Owner; bh=RdQ2yevV8J7fA7WGyY1Ln/ie52LGav2WRDdA2Ld18+M=; b=UYStcBNx5ldPZh
+	PImu4a67iBolNXddkpxruzq1GjZVRC9m6+aGxCdEz09UY8XsjFUPXbzyq+mLO/j6p972ehrJFq9TF
+	JuKOFFrz40JOt65islgnlygty03bC/HvaoymwWR8RKyOEaGB5EV6mBwTwGkL82t0X2MzfXP4UJrx7
+	GPXZwWBu8vjVdHeulMRE7cGbFr1K+ZCGHRTar5xErcuntE8hylLNH9rPJVKaxvqovzAQR5IU9uLcd
+	8GQW0XOACa4TbGEvEjn708a+qAQinHSl/Z098Yb95OTabHYRPFMxapPSGkW6dXeGrfHe6Jkcpt2Cc
+	d/QBpBlNPu1ESwsurc2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZglG-00027J-Sc; Tue, 26 Nov 2019 19:44:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iZhY1-0002Hl-JI; Tue, 26 Nov 2019 20:34:57 +0000
+Received: from mail-io1-f68.google.com ([209.85.166.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZgl7-00026x-Ry
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 19:44:27 +0000
-Received: from mail-qk1-f174.google.com (mail-qk1-f174.google.com
- [209.85.222.174])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 679F12084D
+ id 1iZhXs-0002Gy-2S
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 20:34:49 +0000
+Received: by mail-io1-f68.google.com with SMTP id p12so14820999iog.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 Nov 2019 19:44:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574797464;
- bh=um1j8Y/GaUsZ1q4T+Tiu5+4Kgs2yzoDg2ThT8cprhsY=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=s2DzKRlGMlFyXboS3+ux6a+0J9Jj4ZZ2Ta/XPxcn/LL1zm9tGpoJ2knRLRxeO9UKm
- 7aSAdRg7u09+FNjsPT5WPuvb++5joBKHq8TQWRJVlfwsW0unmURJhcf+tUm4vCnOhA
- 45eqetRrjwiY4T6IizY/TnfK/dpZyfJ+ZiETfYLc=
-Received: by mail-qk1-f174.google.com with SMTP id m16so17213802qki.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 Nov 2019 11:44:24 -0800 (PST)
-X-Gm-Message-State: APjAAAVRTdnWMpne5PE2x8etO+J8PCW3xN1cXu6bWi/nCU26xh6kWd8S
- fXB9HnYchi8ZpHp9JyxXubPLE95ren5rFLTvHQ==
-X-Google-Smtp-Source: APXvYqwtMCX2ktU7XP1vLiDif7HsVDYIGE5gPdIX/yIa4O+B0IDcNylxr73NToCcb42qbcuGNjawEioJubJ0X61Ew5M=
-X-Received: by 2002:a05:620a:1eb:: with SMTP id
- x11mr115675qkn.254.1574797463436; 
- Tue, 26 Nov 2019 11:44:23 -0800 (PST)
+ Tue, 26 Nov 2019 12:34:45 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=eCiyINJIqZQ9+c/j9O3wV96E5XzkXxVGgIEzTJ6ccpU=;
+ b=UkffxNSSPWqsNsa+MmjDiuScFu8+Cx+JlCH1oSIxOfCP8vtXGmHwPkDJsZtq/knsqu
+ MdynwWIHatk7Q+2cGc5Yw+vR5bjGvuerzv0wNqsVp83CY0BlAEg6+6uDprXWlPZ6X34B
+ TxpDCXeCmhXh9nNeSBF+aHrFFE+t9T+e1q3UmG3qjlnJvYy96glmL08Q3MOEsTnhYujM
+ +abmWzBeHmPLp0vLtiTPODEi00bJYQBZT9WcODP5q1zE3eUrcvkteAHkW3dxvkV+zc1s
+ M9O/S8T6cm9VALOQDvCQK+RR/vAo/bJWtLMNPb2U3Bzl2Bz7w2fiSzE2l+cYzq6Ovx2U
+ RoDA==
+X-Gm-Message-State: APjAAAWAu1eX3sY8KQ4eleRJmL0xm5fch0iowg4vLA+hqvxSmnf+LoZV
+ zqW9VHQhJCFG0xhPZ67AKA==
+X-Google-Smtp-Source: APXvYqyNLRbXmRMw2om5THIIvUDL/2IP2aEwIaLwJGNOkUm6TYCHlgggxCi3KYF+cIwCDLGz2FM3sA==
+X-Received: by 2002:a6b:f317:: with SMTP id m23mr17361728ioh.303.1574800484514; 
+ Tue, 26 Nov 2019 12:34:44 -0800 (PST)
+Received: from localhost ([64.188.179.253])
+ by smtp.gmail.com with ESMTPSA id k22sm2923474iot.34.2019.11.26.12.34.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 26 Nov 2019 12:34:43 -0800 (PST)
+Date: Tue, 26 Nov 2019 13:34:42 -0700
+From: Rob Herring <robh@kernel.org>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [PATCH v3] libfdt: define INT32_MAX and UINT32_MAX in libfdt_env.h
+Message-ID: <20191126203442.GA20537@bogus>
+References: <20191113071202.11287-1-yamada.masahiro@socionext.com>
 MIME-Version: 1.0
-References: <cover.1574458460.git.leonard.crestez@nxp.com>
- <CGME20191122214539epcas1p34d4ca24634642e8a79c33d7a7c9291ba@epcas1p3.samsung.com>
- <c0b332b85560e39d7dbb5e88b99bbed1d1b32373.1574458460.git.leonard.crestez@nxp.com>
- <f8838bc8-44db-551f-3199-eeea91e493f7@samsung.com>
-In-Reply-To: <f8838bc8-44db-551f-3199-eeea91e493f7@samsung.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 26 Nov 2019 12:44:12 -0700
-X-Gmail-Original-Message-ID: <CAL_JsqJmZUVmM9BqQuD1npJ7Nqsh07CSEA5nB9-pt0v_X6HQCA@mail.gmail.com>
-Message-ID: <CAL_JsqJmZUVmM9BqQuD1npJ7Nqsh07CSEA5nB9-pt0v_X6HQCA@mail.gmail.com>
-Subject: Re: [PATCH v7 4/5] PM / devfreq: Add dynamic scaling for imx8m ddr
- controller
-To: Chanwoo Choi <cw00.choi@samsung.com>
+Content-Disposition: inline
+In-Reply-To: <20191113071202.11287-1-yamada.masahiro@socionext.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_114425_954920_247E06E9 
-X-CRM114-Status: GOOD (  25.97  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191126_123448_115324_C03499A0 
+X-CRM114-Status: GOOD (  19.28  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.68 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,104 +89,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- Matthias Kaehlcke <mka@chromium.org>, Abel Vesa <abel.vesa@nxp.com>,
- Saravana Kannan <saravanak@google.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- NXP Linux Team <linux-imx@nxp.com>, devicetree@vger.kernel.org,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Martin Kepplinger <martink@posteo.de>,
- Silvano di Ninno <silvano.dininno@nxp.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Dong Aisheng <aisheng.dong@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Georgi Djakov <georgi.djakov@linaro.org>
+Cc: devicetree@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ linuxppc-dev@lists.ozlabs.org, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, Paul Mackerras <paulus@samba.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Nov 24, 2019 at 4:53 PM Chanwoo Choi <cw00.choi@samsung.com> wrote:
->
-> Hi Leonard,
->
-> On 11/23/19 6:45 AM, Leonard Crestez wrote:
-> > Add driver for dynamic scaling the DDR Controller on imx8m chips. Actual
-> > frequency switching is implemented inside TF-A, this driver wraps the
-> > SMC calls and synchronizes the clk tree.
-> >
-> > The DRAM clocks on imx8m have the following structure (abridged):
-> >
-> >  +----------+       |\            +------+
-> >  | dram_pll |-------|M| dram_core |      |
-> >  +----------+       |U|---------->| D    |
-> >                  /--|X|           |  D   |
-> >    dram_alt_root |  |/            |   R  |
-> >                  |                |    C |
-> >             +---------+           |      |
-> >             |FIX DIV/4|           |      |
-> >             +---------+           |      |
-> >   composite:     |                |      |
-> >  +----------+    |                |      |
-> >  | dram_alt |----/                |      |
-> >  +----------+                     |      |
-> >  | dram_apb |-------------------->|      |
-> >  +----------+                     +------+
-> >
-> > The dram_pll is used for higher rates and dram_alt is used for lower
-> > rates. The dram_alt and dram_apb clocks are "imx composite" and their
-> > parent can also be modified.
-> >
-> > This driver will prepare/enable the new parents ahead of switching (so
-> > that the expected roots are enabled) and afterwards it will call
-> > clk_set_parent to ensure the parents in clock framework are up-to-date.
-> >
-> > The driver relies on dram_pll dram_alt and dram_apb being marked with
-> > CLK_GET_RATE_NOCACHE for rate updates.
-> >
-> > Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> > Acked-by: Chanwoo Choi <cw00.choi@samsung.com>
-> > ---
-> >  drivers/devfreq/Kconfig      |   9 +
-> >  drivers/devfreq/Makefile     |   1 +
-> >  drivers/devfreq/imx8m-ddrc.c | 465 +++++++++++++++++++++++++++++++++++
-> >  3 files changed, 475 insertions(+)
-> >  create mode 100644 drivers/devfreq/imx8m-ddrc.c
-> >
-> > diff --git a/drivers/devfreq/Kconfig b/drivers/devfreq/Kconfig
-> > index 59027d7ddf2a..5eac479dd05f 100644
-> > --- a/drivers/devfreq/Kconfig
-> > +++ b/drivers/devfreq/Kconfig
-> > @@ -89,10 +89,19 @@ config ARM_EXYNOS_BUS_DEVFREQ
-> >         Each memory bus group could contain many memoby bus block. It reads
-> >         PPMU counters of memory controllers by using DEVFREQ-event device
-> >         and adjusts the operating frequencies and voltages with OPP support.
-> >         This does not yet operate with optimal voltages.
-> >
-> > +config ARM_IMX8M_DDRC_DEVFREQ
-> > +     tristate "i.MX8M DDRC DEVFREQ Driver"
-> > +     depends on ARCH_MXC && HAVE_ARM_SMCCC
->
-> I'll edit it as following and applied it.
+On Wed, Nov 13, 2019 at 04:12:02PM +0900, Masahiro Yamada wrote:
+> The DTC v1.5.1 added references to (U)INT32_MAX.
+> 
+> This is no problem for user-space programs since <stdint.h> defines
+> (U)INT32_MAX along with (u)int32_t.
+> 
+> For the kernel space, libfdt_env.h needs to be adjusted before we
+> pull in the changes.
+> 
+> In the kernel, we usually use s/u32 instead of (u)int32_t for the
+> fixed-width types.
+> 
+> Accordingly, we already have S/U32_MAX for their max values.
+> So, we should not add (U)INT32_MAX to <linux/limits.h> any more.
+> 
+> Instead, add them to the in-kernel libfdt_env.h to compile the
+> latest libfdt.
+> 
+> Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+> ---
+> 
+> My initial plan was to change this in a series of 3 patches
+> since it is clean, and reduces the code.
+> 
+> [1/3] https://lore.kernel.org/patchwork/patch/1147095/
+> [2/3] https://lore.kernel.org/patchwork/patch/1147096/
+> [3/3] https://lore.kernel.org/patchwork/patch/1147097/
+> 
+> 1/3 is stuck in the license bikeshed.
+> 
+> For 2/3, I have not been able to get Ack from Russell.
+> 
+> So, I chose a straight-forward fixup.
+> 
+> 
+> Changes in v3:
+>  - Resend as a single patch
+> 
+>  arch/arm/boot/compressed/libfdt_env.h | 4 +++-
+>  arch/powerpc/boot/libfdt_env.h        | 2 ++
+>  include/linux/libfdt_env.h            | 3 +++
+>  3 files changed, 8 insertions(+), 1 deletion(-)
 
-You corrupted the URLs in the binding patch when applying the series:
-
-Traceback (most recent call last):
- File "/usr/local/lib/python3.6/dist-packages/jsonschema/validators.py",
-line 774, in resolve_from_url
- document = self.store[url]
- File "/usr/local/lib/python3.6/dist-packages/jsonschema/_utils.py",
-line 22, in __getitem__
- return self.store[self.normalize(uri)]
-KeyError: 'https://protect2.fireeye.com/url?k=b51ff83f-e8cff0d7-b51e7370-000babff32e3-c25c03b8af1b12ee&u=http://devicetree.org/meta-schemas/core.yaml'
+Applied.
 
 Rob
 
