@@ -2,63 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A38C910A075
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 15:37:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A368210A0D1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 15:56:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=itNV1rTqPqkGgKjTR0cvPp7hDDaTnkbWXxb/GWn/K4s=; b=KukuL9GQCNcuNC
-	dIfulDQwGGdJzGWji6ts5gGecMXlee3vwKibwE5RjH/STjo2mzh1LfXJqPXZNUCGfhsIwn+hakIVH
-	4UTevPCtjFrXqtyidypGPVBoraDG71DGGmWK+99iPDyDl3DcbAHmGDO6EoEOxmtkr/GYY+QSLS9q9
-	tGH9auP9m8OuxNf+MfmYzoXoR2iCK6CIpzn2U7UXDfg70mlR5j8L8JUqmnmIVpcrsQyHE7CmxMhJT
-	BQcp23w5pHcnXxpcGBDC7QH59wAWlgx4PxDlKxBjtPazZz1azcZKsrbpqpI/f/HL+F3N2rSb962Ri
-	1iP+9Vpx1u7BpEecQ8HQ==;
+	List-Owner; bh=h07ApwaHJ+IlB2Ee/I2HiK1PcV2ZQRSrV3FG9z6gawA=; b=s6DG0hgO9RTf3V
+	6D8Dns3U6iVfxq3vKA48kzhjSTAHKbVKZknfYV7QsfMUgzi8rKcBmPjJkhFTs//91RyORumDXXGa9
+	k+8en96w0ieBVxrLBGc+yS8Hiqo2Cr+drfSLye7zGem/rCoSJ3WOMZU74TnbMOifc/DamIFNlT2Zo
+	x4H5YUdLEQPKRfRTr9tVvfetl3FrJmdaACvsUjUQuDQyY7loZ+eK80f9zYukt/9Ett3CSknRk3+0c
+	nBk77jxMTR8YwK1OfGcYHAmj63FvgMZ3Nl1WqyHm/PtTftx+8ynalSM2z+3HH7ah5aDJMVqP7dq6p
+	L8QBwfIfmkAagcYINHBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZby7-0005gu-Uo; Tue, 26 Nov 2019 14:37:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iZcG6-00064X-Si; Tue, 26 Nov 2019 14:56:06 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZbxh-0005Ho-NY
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 14:37:07 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1573020656;
- Tue, 26 Nov 2019 14:37:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574779024;
- bh=1GOQJQR55sXQeEjNnRz1avvc58d8sV4zCuT8LyQZ/Rs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=j0X3TsrBziLGJqhV/e3mEWvXCmApDyvMKfe4joOQs9BxecsQaTM8Tkmiqfdfr3ZnY
- u0byS9MAwd2qlsK5qXdW7mE9keBn7/dWIpog72IPhYiD1wH3oW/XzJYGJGHU8TuVvK
- RmnA0y9UHPicrhSSG2pETRoZBzXAH3dDrrJ2jnRs=
-Date: Tue, 26 Nov 2019 14:36:58 +0000
-From: Will Deacon <will@kernel.org>
-To: Matthias Brugger <mbrugger@suse.com>
-Subject: Re: [PATCH 0/2] arm64: Introduce boot parameter to disable TLB flush
- instruction within the same inner shareable domain
-Message-ID: <20191126143657.GA9395@willie-the-truck>
-References: <20190617143255.10462-1-indou.takao@jp.fujitsu.com>
- <93009dbd-b31c-7364-86d2-21f0fac36676@jp.fujitsu.com>
- <20191101172851.GC3983@willie-the-truck>
- <adac2265-2e40-bc2f-a6e2-8d6013b9416c@suse.com>
+ id 1iZcFj-0005hT-Tb
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 14:55:45 +0000
+Received: by mail-wr1-x444.google.com with SMTP id z10so22724535wrs.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 Nov 2019 06:55:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=gAgCpOkG0CJjj2IFAJR4DNaPYnOca7utLu7qbIQQs80=;
+ b=lnOG2CPrDsBR3s1As/va8KQnttWwJwEztlWw+DWSnGR9ylPtiIjHY0epAyKvohy03K
+ KIqoR3yv2USeXlUfdgdJFCd5vLk6I/M1xbgu0BvtdSDKSX6gQ3NlXLNlL2E9xwcHZz1s
+ +whYQQxseK5cSMRB8EHWnA1DVskgYuujPmelVtzmc85JO11hdyZzYjI/m5GKt2sXJLlW
+ nEcVqIOaJwEsj7eDwP9BOLzt2lu0jlM5XryENo2k4JR8siCZQA34tmCYOCCqmGWey/cw
+ U/xFJEInHoNYXOlBehkHaDgFfIweXNFnubeE5AOV0YlLRRUr1TEbJ4D/dYvR/PbhqXvl
+ duSA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=gAgCpOkG0CJjj2IFAJR4DNaPYnOca7utLu7qbIQQs80=;
+ b=THiSo/tLu6Lo0wx/S4lZmPoqk8pFAFgkrVKcd+fro/+qGuIokHnpFmIwjAEVmN9WIK
+ 4/KIw6rhCAdSOpmZa0ZS3q3/dOmZCcPd+wmqJ1Bl1WAzRevp8QXjB6P1zQkX+oNrRQ/C
+ yx/73Cib/W1uOf13upeBCor0r0HIDG0IhoQuHuNoPfHkS+ZuDe/kaQOO0nzhWVgqwfDZ
+ 1UB2tYf0Z3pc7u8WQ9IUIpA8mPRyo35HIyq1UGHDSbHq8O2YQl7pjm+t8tt1TQSe34eD
+ H4EJeLRWkJNZA0F1511wgM6zp5Mt00CtBISA+tF/npFE2l4w2S5sVVU42NATvuyGsYn0
+ h1Sw==
+X-Gm-Message-State: APjAAAX7xf1yds8VeRBPGqE9jJbhuHsCATNT3/9U72j3+KUwNuahZ1Hq
+ 8yOd3g20ssagQvSr//16H7M=
+X-Google-Smtp-Source: APXvYqyf0ou5DnVsUssYXL+snAKsOsfoIMefMqPoDOLg1WEgrM/FwYfatiAjbx4JWRqshoUbMq0fbQ==
+X-Received: by 2002:a5d:5267:: with SMTP id l7mr32515964wrc.84.1574780141417; 
+ Tue, 26 Nov 2019 06:55:41 -0800 (PST)
+Received: from localhost ([193.47.161.132])
+ by smtp.gmail.com with ESMTPSA id e16sm3294586wme.35.2019.11.26.06.55.37
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 26 Nov 2019 06:55:40 -0800 (PST)
+Date: Tue, 26 Nov 2019 15:54:50 +0100
+From: Oliver Graute <oliver.graute@gmail.com>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH] arm64: defconfig: Change CONFIG_AT803X_PHY from m to y
+Message-ID: <20191126145450.GB5108@optiplex>
+References: <1572848275-30941-1-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <adac2265-2e40-bc2f-a6e2-8d6013b9416c@suse.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1572848275-30941-1-git-send-email-peng.fan@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_063705_820686_78E1F07E 
-X-CRM114-Status: GOOD (  34.51  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191126_065543_971727_619D242D 
+X-CRM114-Status: GOOD (  16.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (oliver.graute[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -68,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,147 +99,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "tokamoto@jp.fujitsu.com" <tokamoto@jp.fujitsu.com>,
- "qi.fuli@fujitsu.com" <qi.fuli@fujitsu.com>, Jon Masters <jcm@jonmasters.org>,
- Jonathan Corbet <corbet@lwn.net>,
- "peterz@infradead.org" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- Will Deacon <will.deacon@arm.com>,
+Cc: Anson Huang <anson.huang@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "maeda.naoaki@fujitsu.com" <maeda.naoaki@fujitsu.com>,
- Robert Richter <rrichter@marvell.com>,
- "misono.tomohiro@fujitsu.com" <misono.tomohiro@fujitsu.com>,
- Itaru Kitayama <itaru.kitayama@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "indou.takao@fujitsu.com" <indou.takao@fujitsu.com>
+ "mripard@kernel.org" <mripard@kernel.org>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "dinguyen@kernel.org" <dinguyen@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "olof@lixom.net" <olof@lixom.net>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 26, 2019 at 03:26:48PM +0100, Matthias Brugger wrote:
-> On 01/11/2019 18:28, Will Deacon wrote:
-> > On Fri, Nov 01, 2019 at 09:56:05AM +0000, qi.fuli@fujitsu.com wrote:
-> >> First of all thanks for the comments for the patch.
-> >>
-> >> I'm still struggling with this problem to find out the solution.
-> >> As a result of an investigation on this problem, after all, I think it 
-> >> is necessary to improve TLB flush mechanism of the kernel to fix this 
-> >> problem completely.
-> >>
-> >> So, I'd like to restart a discussion. At first, I summarize this problem 
-> >> to recall what was the problem and then I want to discuss how to fix it.
-> >>
-> >> Summary of the problem:
-> >> A few months ago I proposed patches to solve a performance problem due 
-> >> to TLB flush.[1]
-> >>
-> >> A problem is that TLB flush on a core affects all other cores even if 
-> >> all other cores do not need actual flush, and it causes performance 
-> >> degradation.
-> >>
-> >> In this thread, I explained that:
-> >> * I found a performance problem which is caused by TLBI-is instruction.
-> >> * The problem occurs like this:
-> >>   1) On a core, OS tries to flush TLB using TLBI-is instruction
-> >>   2) TLBI-is instruction causes a broadcast to all other cores, and
-> >>   each core received hard-wired signal
-> >>   3) Each core check if there are TLB entries which have the specified 
-> >> ASID/VA
-> > 
-> > For those following along at home, my understanding is that this "check"
-> > effectively stalls the pipeline as though it is being performed in software.
-> > 
-> > Some questions:
-> > 
-> > Does this mean a malicious virtual machine can effectively DoS the system?
-> > What about a malicious application calling mprotect()?
-> > 
-> > Do all broadcast TLBI instructions cause this expensive check, or are
-> > some significantly slower than others?
-> > 
-> >>   4) This check causes performance degradation
-> >> * We ran FWQ[2] and detected OS jitter due to this problem, this noise
-> >>   is serious for HPC usage.
-> >>
-> >> The noise means here a difference between maximum time and minimum time 
-> >> which the same work takes.
-> >>
-> >> How to fix:
-> >> I think the cause is TLB flush by TLBI-is because the instruction 
-> >> affects cores that are not related to its flush.
-> > 
-> > Does broadcast I-cache maintenance cause the same problem?
-> > 
-> >> So the previous patch I posted is
-> >> * Use mm_cpumask in mm_struct to find appropriate CPUs for TLB flush
-> >> * Exec TLBI instead of TLBI-is only to CPUs specified by mm_cpumask
-> >>   (This is the same behavior as arm32 and x86)
-> >>
-> >> And after the discussion about this patch, I got the following comments.
-> >> 1) This patch switches the behavior (original flush by TLBI-is and new 
-> >> flush by TLBI) by boot parameter, this implementation is not acceptable 
-> >> due to bad maintainability.
-> >> 2) Even if this patch fixes this problem, it may cause another 
-> >> performance problem.
-> >>
-> >> I'd like to start over the implementation by considering these points.
-> >> For the second comment above, I will run a benchmark test to analyze the 
-> >> impact on performance.
-> >> Please let me know if there are other points I should take into 
-> >> consideration.
-> > 
-> > I think it's worth bearing in mind that I have little sympathy for the
-> > problem that you are seeing. As far as I can tell, you've done the
-> > following:
-> > 
-> >   1. You designed a CPU micro-architecture that stalls whenever it receives
-> >      a TLB invalidation request.
-> > 
-> >   2. You integrated said CPU design into a system where broadcast TLB
-> >      invalidation is not filtered and therefore stalls every CPU every
-> >      time that /any/ TLB invalidation is broadcast.
-> > 
-> >   3. You deployed a mixture of Linux and jitter-sensitive software on
-> >      this system, and now you're failing to meet your performance
-> >      requirements.
-> > 
-> > Have I got that right?
-> > 
-> > If so, given that your CPU design isn't widely available, nobody else
-> > appears to have made this mistake and jitter hasn't been reported as an
-> > issue for any other systems, it's very unlikely that we're going to make
-> > invasive upstream kernel changes to support you. I'm sorry, but all I can
-> > suggest is that you check that your micro-architecture and performance
-> > requirements are aligned with the design of Linux *before* building another
-> > machine like this in future.
-> > 
+On 04/11/19, Peng Fan wrote:
+> From: Peng Fan <peng.fan@nxp.com>
 > 
-> I just wanted to note that the cover letter states that they have also seen this
-> on Thunderx1 and Thunderx2.
+> With phy-reset-gpios are enabled for i.MX8MM-EVK board, phy
+> will be reset. Without CONFIG_AT803X_PHY as y, board will stop
+> booting in NFS DHCP, because phy is not ready. So mark
+> CONFIG_AT803X_PHY from m to y to make board boot when using nfs rootfs.
 > 
-> Not sure about other machines, like the Huawei TaiShan 200 series.
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> ---
+>  arch/arm64/configs/defconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> What I want to say, it seems not to be something that only affects Fujitsu but
-> also other vendors. So maybe we should consider adding an erratum like the one
-> for the repeated TLBI on Qualcomm SoCs.
+> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> index c9a867ac32d4..cd778c9ea8a4 100644
+> --- a/arch/arm64/configs/defconfig
+> +++ b/arch/arm64/configs/defconfig
+> @@ -285,7 +285,7 @@ CONFIG_SNI_AVE=y
+>  CONFIG_SNI_NETSEC=y
+>  CONFIG_STMMAC_ETH=m
+>  CONFIG_MDIO_BUS_MUX_MMIOREG=y
+> -CONFIG_AT803X_PHY=m
+> +CONFIG_AT803X_PHY=y
+>  CONFIG_MARVELL_PHY=m
+>  CONFIG_MARVELL_10G_PHY=m
+>  CONFIG_MESON_GXL_PHY=m
+> -- 
+> 2.16.4
 
-Careful here -- we're talking about a reported performance issue, not a
-correctness one. The "repeated TLBI" sequence is very much a workaround for
-the latter.
+Hello Peng,
 
-In the case of TX1/TX2, I can imagine the "let's sit in a loop of mprotect()
-calls" scaling poorly, which is what the cover letter is referring to, but
-that's not really a workload that we need to optimise for. However, the case
-that Fujitsu are reporting seems to go beyond that because of the design of
-their CPU micro-architecture, where even just a single TLB invalidation
-message stalls all of the other CPUs in the system. I don't have any reason
-to believe that particular problem affects other CPU designs.
+this patch broke my imx8qm nfs setup. With the generic phy driver my
+board is booting fine. But with the AT803X_PHY=y enabled  I'am running
+into the following phy issue. So on my side it looks inverse as on
+yours. What is the best proposal to fix this?
 
-Thanks,
+[    5.550442] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
+[    5.573206] Sending DHCP requests ...... timed out!
+[   95.339702] IP-Config: Retrying forever (NFS root)...
+[   95.348873] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
+[   99.438443] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
+[   99.461206] Sending DHCP requests ...... timed out!
+[  174.419639] IP-Config: Retrying forever (NFS root)...
+[  174.428834] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
+[  178.542418] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
+[  178.565206] Sending DHCP requests .....
+[  209.261271] random: crng init done
+[  230.565202] . timed out!
+[  260.577340] IP-Config: Retrying forever (NFS root)...
+[  260.586497] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
+[  264.686438] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
+[  264.709206] Sending DHCP requests ...... timed out!
+[  339.259701] IP-Config: Retrying forever (NFS root)...
+[  339.268835] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
+[  343.374422] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
+[  343.405206] Sending DHCP requests ...... timed out!
+[  433.171676] IP-Config: Retrying forever (NFS root)...
+[  433.180842] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
+[  437.294439] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
+[  437.317206] Sending DHCP requests ...... timed out!
+[  509.003660] IP-Config: Retrying forever (NFS root)...
+[  509.012836] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
+[  513.102416] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
 
-Will
+Best Regards,
+
+Oliver
 
 _______________________________________________
 linux-arm-kernel mailing list
