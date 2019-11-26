@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA92410A3DC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 19:07:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD0F610A3E2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 19:07:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PIMGVv/dlS2VXvEeVyuZrYLUUnBUHNuifTkDgE7hoh8=; b=qVrAnrHIjEnbtf
-	VvzTHAI133GB9+OphzdHFA25/GWp7w4W4fGiC3OjOQDETUwY68xEohzf/Tt15g7FKF0k/PvNjMJFL
-	4Pm3PV0g4SZdtSXdhlZRAPPwrYBEObTvBVD3eZI6s0TGtpEU3Gr6QOFXxYpO0e8/yMe6wT8QlSD/x
-	VoHCMoQQsk1DyD0zG6T1NyVhUkyd4ogVXSCjE7axoCgWRiYpdjoVjuEXX3g3zhNHN9ZeW2Dz/J5Jv
-	uSIOt4uuqcWCsPw+MCFr+/oXvdDS7qAqeTmeR9GvCYksqn2WrubJo3bMqoe2wjhkSmhQ1ZcgYeFVr
-	K7bYXJMer7/vJZOZuM2Q==;
+	List-Owner; bh=AWcl/aLcaRF7brDMXFqBoZ2ipI031muQKArxIgGZNuk=; b=FseBPpElTLxDzZ
+	/sD7W5CaqUcb1GYaiJ/lsQWk/cwhqd/9g1fC+ik1sVbfc/GHg7pHIIkAxbt2MjptwQeizXHFV4ghq
+	58MY3AGLhynJlKreu0vH70FXX/A2RrtEdtAUSb5xLPoM8YcIMlBSA+rCsr5A0AegEXtvDEOuW/Zfj
+	iwcB3iwdzBU+S7P98aKDugOLkdEUltHVOHClJn83F8Cu5hcWqvgOO2HczIDaw1IquCzC6oK14pvrv
+	GL0vrKi3FycjRxa5jqgNMECRu9IxN7GSNGWR61ChukmRO/Gi07dtoJ2tr9F7nFcryt/fW52HgHCjr
+	y761nU9EADfIg966bHrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZfEx-0001xG-Mf; Tue, 26 Nov 2019 18:07:07 +0000
+	id 1iZfFL-00027v-1r; Tue, 26 Nov 2019 18:07:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZfEm-0001wO-C9
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 18:06:57 +0000
+ id 1iZfEp-0001wk-I6
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 18:07:00 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CAA8020727;
- Tue, 26 Nov 2019 18:06:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 058E32080F;
+ Tue, 26 Nov 2019 18:06:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574791615;
- bh=BIHjdWNy2FSclmtpzSgtK2Gx2rJcf2TAWNwE4x0yk8w=;
+ s=default; t=1574791619;
+ bh=IAHo9iyd6JRdEh9K50krnPwE4tP8VZEaFFTzNm1N/Cg=;
  h=In-Reply-To:References:Subject:Cc:From:To:Date:From;
- b=HXThmMmiUsomN57YsdQGyLVL/eAWt6fSU/WCNRn3LQjZSdxbn4Ca7alQPd1CT4lSc
- jqKPEIRjzQK532yHw/7+Snp7bPu1SuBllhGZAkWpZA685aspwcfMW20qNNADtb4s6c
- 8UqhDfVP96BVLIEJehQCS8O5HLnkMoROHm8QfA4Y=
+ b=mlLVWbccFRjg2eF3HiygMX2C1xtVfgUgnoLb9dFj7SWsNx71yNZ5kZGdSIQd0PiT7
+ OBeedoP9SmWJmh2eCUv8cVKXA1b3ZoZvGXfmrEOB0SMGySH8DSdiZYYy0il0c0bZ47
+ pN2f4y+SrAfY5t4w+E0IR2My8MvftNghp7eM3eRU=
 MIME-Version: 1.0
-In-Reply-To: <20191115162901.17456-2-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20191115162901.17456-3-manivannan.sadhasivam@linaro.org>
 References: <20191115162901.17456-1-manivannan.sadhasivam@linaro.org>
- <20191115162901.17456-2-manivannan.sadhasivam@linaro.org>
-Subject: Re: [PATCH v7 1/7] clk: Zero init clk_init_data in helpers
+ <20191115162901.17456-3-manivannan.sadhasivam@linaro.org>
+Subject: Re: [PATCH v7 2/7] clk: Add clk_hw_unregister_composite helper
+ function definition
 From: Stephen Boyd <sboyd@kernel.org>
 To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
  mturquette@baylibre.com, robh+dt@kernel.org
 User-Agent: alot/0.8.1
-Date: Tue, 26 Nov 2019 10:06:54 -0800
-Message-Id: <20191126180655.CAA8020727@mail.kernel.org>
+Date: Tue, 26 Nov 2019 10:06:58 -0800
+Message-Id: <20191126180659.058E32080F@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_100656_443852_371EFA6F 
-X-CRM114-Status: UNSURE (   6.07  )
+X-CRM114-CacheID: sfid-20191126_100659_630006_87B78590 
+X-CRM114-Status: UNSURE (   6.29  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -88,11 +89,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Manivannan Sadhasivam (2019-11-15 08:28:55)
-> The clk_init_data struct needs to be initialized to zero for the new
-> parent_map implementation to work correctly. Otherwise, the member which
-> is available first will get processed.
+Quoting Manivannan Sadhasivam (2019-11-15 08:28:56)
+> This function has been delcared but not defined anywhere. Hence, this
+> commit adds definition for it.
 > 
+> Fixes: 49cb392d3639 ("clk: composite: Add hw based registration APIs")
 > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 > ---
 
