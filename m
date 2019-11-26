@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2C64109E40
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 13:49:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E1AA109E41
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 13:49:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RxXG879WXo9f0vOE/mgfRPYbCvVmu5hTH+ZZrSSMU2g=; b=Xic8SC4ImVkAaL
-	4FfmAqkU/2NBHzNX2ySVFSrGwQ5+p4qbWhdI2RhzZ6xF540WYFkmK0LWNLYpEoDF6CR7E9ZYINEqo
-	aBYQ7S81LQ2OCrUnNNIC4QhJuOrYs8cPQz4gV6SVCVSDgt2aTKeo3TMM5/0IO47t3049xrZ4WD/VH
-	kiiu9UoKxcZfgGRzlrHyomnXgSeu3ceU3hQ6ljfhuz+YeciWchB3fsuUH2D23dh79dOJI+3Y9tixi
-	/9beJ1sLVnbr9UPbe3fGIO0lyhnCkCcIUzg92kYjOu365DDvDHIGIKBBpaIPrWwSeDeoOyPQfN88E
-	Y3wNxfhl+X2vM3i9ewkw==;
+	List-Owner; bh=k2Nb0u7xqICuN/9aJnf6LWLX94DOs3a06QpQMpoErQM=; b=hEww0UKTVFBXFh
+	ZF3R9x8sCtimv8ggLnBUqwc8hm333FwFlyiM+M+dk2KGrfQC57m2B3r35WE30kLVm14gAlPbtwzql
+	LkvOn6P2Z1w2peDPKLS5qE78JYu64Rt7VLv2jkig7cLWCNqtCTSgtB1uP91uNQZU1lbKtzo9dZY9h
+	opoipOH80YJHAC4ULVwdA1IWtF2tDh5T1lYACXPwm2zGFWtQjutgLS/qdyq6PDbVmeWZ4sPQ1aqcD
+	ZUNtxnao+ZDhf4s+YuSJgyGAV4xp9R3K6ZeIsYhB+KkhPbZmqHnbFWueTsETovxR0++QP5NkAYhl+
+	3O5L9oCVX9aN0GLMuyng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZaH3-0004Ew-Pl; Tue, 26 Nov 2019 12:48:57 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1iZaHO-0005Lh-OP; Tue, 26 Nov 2019 12:49:18 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZaFz-00028P-O7
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 12:47:53 +0000
-Received: by mail-lj1-x241.google.com with SMTP id t5so20098120ljk.0
+ id 1iZaG2-0002Hf-Lx
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 12:47:56 +0000
+Received: by mail-lf1-x144.google.com with SMTP id y5so1263723lfy.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 Nov 2019 04:47:51 -0800 (PST)
+ Tue, 26 Nov 2019 04:47:54 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=jSJxYjoX98bZdF5uLL7uqfaEgtFrbHqVfIiky5EZ03Q=;
- b=VYEBEjL2KR1lJeKRhhV7qo6xY9HfKcwsAw9SjpWeulH2KsqnfWzp1OZb3Ey7TyofOA
- mjrbYfOPs9Rqp++sOrHzr3rFE5Ske7F4tS1w3AkF6xea0KHfbib+gC03N7nUl9uowy7L
- OFlbLRabTlOLIkASNk3tBDStUeT0dMTjcZtOMI8Q5uhbaeL2GB9U2bKVUU4RP66AqZbK
- 23rwzsIRc2S6rpNAlyRn+10UQbgKYTrcYELFJ1Dk5QxviFvs1GeSr+1PZgSi3Hv+efjh
- uFO33FxpHOv8tLDDpkXdetLmcJqm2nsZWkbTlyVLx8N+Oa/FEBmHSnbEdCnqq8DiyDLR
- 3hzg==
+ bh=MjkUMS44IlupoDCTn64uvPwtCzdUzIO1TZ6FO2BGbwM=;
+ b=w3OTUCFSh20BhTrbSJ+3Pf8v0JitRZ9VDDzrkAdFWafoatbb52tEWU000bVcI/42VV
+ l6rgNXK5JGS4/6/CV5toTl1UDuXJ57cA9Qot6RmA/65sRHWYRtt4kH+cCZCcpfNzqdbC
+ RNsUuMxdAjtNiPezpj48AWP+8YPdkyGumhlNERPjOvGScYcDqEo6lRI1gWxRoEuswcvl
+ pkmohHpfPJj5SJVWSbEq3QxgpE7F9/UA+mYm64yxQDFIPuEfTFkxx3+Ge1W+mdvZHbHl
+ pWqfLSCqP2toyesIEmIJEHUZe4AZAAnU00EKH9ogwbSNUaP82Geb0K5568t2fb5Relts
+ /fLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=jSJxYjoX98bZdF5uLL7uqfaEgtFrbHqVfIiky5EZ03Q=;
- b=Aiggp+MTXX1rqAzvOY26bO2pGjLBDDLQNp18VzSHnDATbpuvDQmqvxzp4/rHpadMDD
- hgzIy0VlGVABByvln5+99adtv9meQQfjZqJzHCQgzglknw7dNU3FJR+oeM0ZsKp1dYFy
- Gbs65qxFK3rGp1ZN9myEF2U9VeySFLMw54UVLEJYw7cH1mFgvHEnVhP4pdIejCQKNVjF
- 5hF7Y5PtS21pYvmdGwRSVeuJ8lx7gx2AuHBp7QTxmDwB1ygja819d0AklkTpkvQoxFUO
- +/UMnb8Z2ZyKDKkpmRI1WR7V6Wwec8lxluYsInfF42g2vr5b34bXx2j6ov3hncFwKfAD
- ewhQ==
-X-Gm-Message-State: APjAAAWvYSiO3N+8n5qgaB3198TQDh0gi8mRv9U+cTkChW5CmMoZwqX7
- nnZed2fJrxp8Jw5laOKRkhPi+nGRheE=
-X-Google-Smtp-Source: APXvYqyLZNGrA2/ndb893kbjC9sVWgadAqT7S1eY7m6svChMn857LBp5r5KJycTiLL1HYTiCMpCBeg==
-X-Received: by 2002:a05:651c:20f:: with SMTP id
- y15mr25999216ljn.31.1574772469521; 
- Tue, 26 Nov 2019 04:47:49 -0800 (PST)
+ bh=MjkUMS44IlupoDCTn64uvPwtCzdUzIO1TZ6FO2BGbwM=;
+ b=k0x9HV67scYHhx2A3qltRAI1k52EaWYxqywF7u9nN8Xf9p5D0zyu/daa0j48WiOYSF
+ 1HmDuL7ZDH58HtFS3bVvU3u4VRmC93zaRguwjwHvWge2xlUuuPw6BRa2+oFpZ+75xS/i
+ 7I1U4gVwQE+Q1bUygpB/EjOVB8LJYd7epFncYDBisQ408nSl65KqocwF5cQyP//zxAwn
+ gxj18uSIHB0F+w6MBGltEegE8fmaXRHTUll2yuTq0OXGynFgbVl48GhZNd2PrtrfUtkR
+ NRd8waF6vCa5dLeu18o7W9Fdvvr/ymHvRRC6tisL4espPA7Wn1mzUuDmeBax0R4WUyIa
+ SfhQ==
+X-Gm-Message-State: APjAAAU6FLcOMY1NdI00ZmJM87iVczkznvL33EfMW7w/3OukQjDsQgtq
+ KKa0MUqIw9cHt7H+zWfRrk1yk1UejKc=
+X-Google-Smtp-Source: APXvYqwzEHcPa4LpXJ3FSRC/5hZtQ7iH+LmTCPyvJLyh0+nl9doV4x7qfJmWuaxdt70KGatSxR+wtA==
+X-Received: by 2002:ac2:53ba:: with SMTP id j26mr2559843lfh.92.1574772473016; 
+ Tue, 26 Nov 2019 04:47:53 -0800 (PST)
 Received: from genomnajs.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id j10sm14874lfc.53.2019.11.26.04.47.47
+ by smtp.gmail.com with ESMTPSA id j10sm14874lfc.53.2019.11.26.04.47.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 Nov 2019 04:47:48 -0800 (PST)
+ Tue, 26 Nov 2019 04:47:51 -0800 (PST)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 3/4] ARM: dts: ux500: Add devicetree for HREF520
-Date: Tue, 26 Nov 2019 13:47:37 +0100
-Message-Id: <20191126124738.77690-3-linus.walleij@linaro.org>
+Subject: [PATCH 4/4] ARM: dts: ux500: Fix up DSI controller nodes
+Date: Tue, 26 Nov 2019 13:47:38 +0100
+Message-Id: <20191126124738.77690-4-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191126124738.77690-1-linus.walleij@linaro.org>
 References: <20191126124738.77690-1-linus.walleij@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_044751_837610_E91DCA24 
-X-CRM114-Status: GOOD (  15.33  )
+X-CRM114-CacheID: sfid-20191126_044754_781690_FC08E2F3 
+X-CRM114-Status: GOOD (  12.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,86 +103,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reference design is very similar to the others just that
-it has a different display mounted on the user interface
-board, and some GPIOs where shuffled around.
-
-As this is the first board that uses DB8520 we create the
-DB8520-specific DTSI file here.
+These nodes should be named dsi-controller@* so fix it up.
 
 Cc: Stephan Gerhold <stephan@gerhold.net>
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- arch/arm/boot/dts/Makefile            |  3 ++-
- arch/arm/boot/dts/ste-db8520.dtsi     | 15 +++++++++++++++
- arch/arm/boot/dts/ste-href520-tvk.dts | 22 ++++++++++++++++++++++
- 3 files changed, 39 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/ste-db8520.dtsi
- create mode 100644 arch/arm/boot/dts/ste-href520-tvk.dts
+ arch/arm/boot/dts/ste-dbx5x0.dtsi             | 6 +++---
+ arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi | 2 +-
+ arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index b21b3a64641a..3de5a3e5cd79 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -1171,7 +1171,8 @@ dtb-$(CONFIG_ARCH_U8500) += \
- 	ste-hrefprev60-stuib.dtb \
- 	ste-hrefprev60-tvk.dtb \
- 	ste-hrefv60plus-stuib.dtb \
--	ste-hrefv60plus-tvk.dtb
-+	ste-hrefv60plus-tvk.dtb \
-+	ste-href520-tvk.dtb
- dtb-$(CONFIG_ARCH_UNIPHIER) += \
- 	uniphier-ld4-ref.dtb \
- 	uniphier-ld6b-ref.dtb \
-diff --git a/arch/arm/boot/dts/ste-db8520.dtsi b/arch/arm/boot/dts/ste-db8520.dtsi
-new file mode 100644
-index 000000000000..48bd8728ae27
---- /dev/null
-+++ b/arch/arm/boot/dts/ste-db8520.dtsi
-@@ -0,0 +1,15 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+
-+#include "ste-dbx5x0.dtsi"
-+
-+/ {
-+	cpus {
-+		cpu@300 {
-+			/* cpufreq controls */
-+			operating-points = <1152000 0
-+					    800000 0
-+					    400000 0
-+					    200000 0>;
-+		};
-+	};
-+};
-diff --git a/arch/arm/boot/dts/ste-href520-tvk.dts b/arch/arm/boot/dts/ste-href520-tvk.dts
-new file mode 100644
-index 000000000000..f8c0c1e6aa04
---- /dev/null
-+++ b/arch/arm/boot/dts/ste-href520-tvk.dts
-@@ -0,0 +1,22 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Device Tree for the HREF520 version with the TVK1281618 UIB
-+ */
-+
-+/dts-v1/;
-+#include "ste-db8520.dtsi"
-+#include "ste-hrefv60plus.dtsi"
-+#include "ste-href-tvk1281618-r3.dtsi"
-+
-+/ {
-+	model = "ST-Ericsson HREF520 and TVK1281618 UIB";
-+	compatible = "st-ericsson,href520", "st-ericsson,u8500";
-+
-+	soc {
-+		vmmci: regulator-gpio {
-+			gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
-+			enable-gpio = <&gpio2 14 GPIO_ACTIVE_HIGH>;
-+			enable-active-high;
-+		};
-+	};
-+};
+diff --git a/arch/arm/boot/dts/ste-dbx5x0.dtsi b/arch/arm/boot/dts/ste-dbx5x0.dtsi
+index 4e02b1b6c0bf..f4fb782d3afc 100644
+--- a/arch/arm/boot/dts/ste-dbx5x0.dtsi
++++ b/arch/arm/boot/dts/ste-dbx5x0.dtsi
+@@ -1092,7 +1092,7 @@
+ 			ranges;
+ 			status = "disabled";
+ 
+-			dsi0: dsi@a0351000 {
++			dsi0: dsi-controller@a0351000 {
+ 				compatible = "ste,mcde-dsi";
+ 				reg = <0xa0351000 0x1000>;
+ 				clocks = <&prcmu_clk PRCMU_DSI0CLK>, <&prcmu_clk PRCMU_DSI0ESCCLK>;
+@@ -1100,7 +1100,7 @@
+ 				#address-cells = <1>;
+ 				#size-cells = <0>;
+ 			};
+-			dsi1: dsi@a0352000 {
++			dsi1: dsi-controller@a0352000 {
+ 				compatible = "ste,mcde-dsi";
+ 				reg = <0xa0352000 0x1000>;
+ 				clocks = <&prcmu_clk PRCMU_DSI1CLK>, <&prcmu_clk PRCMU_DSI1ESCCLK>;
+@@ -1108,7 +1108,7 @@
+ 				#address-cells = <1>;
+ 				#size-cells = <0>;
+ 			};
+-			dsi2: dsi@a0353000 {
++			dsi2: dsi-controller@a0353000 {
+ 				compatible = "ste,mcde-dsi";
+ 				reg = <0xa0353000 0x1000>;
+ 				/* This DSI port only has the Low Power / Energy Save clock */
+diff --git a/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi b/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
+index e024520f4d47..de82b9db956f 100644
+--- a/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
++++ b/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
+@@ -66,7 +66,7 @@
+ 		mcde@a0350000 {
+ 			status = "okay";
+ 
+-			dsi@a0351000 {
++			dsi-controller@a0351000 {
+ 				panel {
+ 					compatible = "samsung,s6d16d0";
+ 					reg = <0>;
+diff --git a/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi b/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
+index cb3677f0a1cb..9f285c7cf914 100644
+--- a/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
++++ b/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
+@@ -45,7 +45,7 @@
+ 		mcde@a0350000 {
+ 			status = "okay";
+ 
+-			dsi@a0351000 {
++			dsi-controller@a0351000 {
+ 				panel {
+ 					compatible = "sony,acx424akp";
+ 					reg = <0>;
 -- 
 2.23.0
 
