@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4AFA10A3E3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 19:07:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0F0710A3E4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 19:08:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hEJbyM+p1+dgAGUIiNQ3LAX3BwJf0sT+b4Xx+ZhazQQ=; b=bgCZD80HvE7Y1W
-	75QstIl7JHwV2d8fY8hpvPvmvG9hPkylp5bhecrmB6010296pW4tJbIyVAWgtuEygeI5GoPF0yB+2
-	NG/ChlZNbIW9PhoIgvKrY/WkmkIUS9Zy1PgZR0PMFig2/BFErYP95rttLTTsNTkX91xTvRrgj7Y3H
-	0dlGK5sNz1tLaKaUthqHkyTXUL9ufz8McrdYgMs5ic72EXb6qOUlKf6JA0uXbpODPKdfkhcAHWSVk
-	ONqS5uV1VmZxp/5FFUoCY9BO2OPRR5w67+bg6rCZRdlZTUXpz2P7JVYoEdiC7bR82yf4gYN0QJlGk
-	jr47f1C8WfCnnwcEUYnQ==;
+	List-Owner; bh=Dzgcl/uXy7lePyUxVG3TvimQoeSP5VGNbP6asVI9jrM=; b=HRFVNXWpth8F31
+	XaG3k9nR/WSxF+UrLhJPsf4GhyMqFX8T36SdxajwmFrr9z6V4+8kftisni65F+Jiu7VxGLH9lC8YF
+	MAPnVrJlqKgE4rmpP3D0GSVh3JUmlnpRfS7AJL0mhYjWIv8022bItuMwEGnKX+XoAe5TO7oVbm13T
+	ky573q5DGvtQRrT1SeOF7klBaQMTdB/tQ5a/2+C9QE7v0CzgUsUrmwVQyeUjvVpJS9are9Vakxev9
+	ZT+Wd/XoP+oinH0eGHhSZC7URNVApozq3gDnSYhBaAG7YI76hqpRTIHENk+cJqiXUhem4fX3fttAr
+	2j1uTgf5YRiNtailmaGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZfFe-0002R4-NT; Tue, 26 Nov 2019 18:07:50 +0000
+	id 1iZfFp-0002gZ-4a; Tue, 26 Nov 2019 18:08:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZfEt-00020u-FU
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 18:07:04 +0000
+ id 1iZfEy-00026u-Ou
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 18:07:10 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D8CBB20835;
- Tue, 26 Nov 2019 18:07:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4CB3D20835;
+ Tue, 26 Nov 2019 18:07:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574791623;
- bh=fUb787PA4PU2tCTtKmzIE+OJKmh/ygl+a3Ywi9ivz2g=;
+ s=default; t=1574791628;
+ bh=ukgWnmGQzCzE6sryHIB1yDKl2aQhLn1xmnuj22IBIbc=;
  h=In-Reply-To:References:Subject:Cc:From:To:Date:From;
- b=f1rAbsh/XSiuNfa5kcGPvM42m60hlvVGV1t9LjFcMKMhyEoQrbArljGWG7zH04Whk
- 7nVY/Twk2qkieexUGjOpPOOgPOBct9KSfFFqLK8k9E06FK/lqBQ1p9lKimDjGM67Np
- BPT0oSFK16T3PJTaE29DVDyWwOCsA8NHPCAdjf4o=
+ b=e+owu4vKbRrftjQI1Tv2btHxzhjiZStkM/W42QFM7hc/eO7TI4vORLvWihjezpckP
+ DECwd/7g89GID1nT3F7CxNNEZIdUPubLdynfOj6JR5j5DGGP+FFCvj57A7KJ472rlK
+ 3EcXSja+kBtUUIZl+rHVKGwvLyTPyn/4kwKlO31E=
 MIME-Version: 1.0
-In-Reply-To: <20191115162901.17456-4-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20191115162901.17456-7-manivannan.sadhasivam@linaro.org>
 References: <20191115162901.17456-1-manivannan.sadhasivam@linaro.org>
- <20191115162901.17456-4-manivannan.sadhasivam@linaro.org>
-Subject: Re: [PATCH v7 3/7] dt-bindings: clock: Add devicetree binding for
- BM1880 SoC
+ <20191115162901.17456-7-manivannan.sadhasivam@linaro.org>
+Subject: Re: [PATCH v7 6/7] clk: Add common clock driver for BM1880 SoC
 From: Stephen Boyd <sboyd@kernel.org>
 To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
  mturquette@baylibre.com, robh+dt@kernel.org
 User-Agent: alot/0.8.1
-Date: Tue, 26 Nov 2019 10:07:02 -0800
-Message-Id: <20191126180702.D8CBB20835@mail.kernel.org>
+Date: Tue, 26 Nov 2019 10:07:07 -0800
+Message-Id: <20191126180708.4CB3D20835@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_100703_556301_CB23947E 
-X-CRM114-Status: UNSURE (   5.79  )
+X-CRM114-CacheID: sfid-20191126_100708_826769_00602431 
+X-CRM114-Status: UNSURE (   5.69  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -89,11 +88,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Manivannan Sadhasivam (2019-11-15 08:28:57)
-> Add YAML devicetree binding for Bitmain BM1880 SoC.
+Quoting Manivannan Sadhasivam (2019-11-15 08:29:00)
+> Add common clock driver for Bitmain BM1880 SoC. The clock controller on
+> BM1880 has supplies clocks to all peripherals in the form of gate clocks
+> and composite clocks (fixed factor + gate).
 > 
 > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> Reviewed-by: Rob Herring <robh@kernel.org>
 > ---
 
 Applied to clk-next
