@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D30A5109E3D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 13:48:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2C64109E40
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 13:49:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QI/LALoXysTfwAXZSZBfflCVbRk/PK1K9woEFIn+oNs=; b=QpVrTGq7APah7Z
-	NNG2kab9PqhdxXj4XY14A7mAwfGNziowuOf8JkPPqvUdHPNVnSiC5YUcbUERwW/bx4T4V+a1Lpjjj
-	WuDcoRONNMkx9us6NeQQAHtnLqLtXZ23jsc656Wy0W2NhXnJzx2KvsoywyueysJJ2sB4fxdc57hOK
-	bkbBUB8YFubYwEsxTRyw3ezy9A9FiprCd4zuAFnz3BXfENkFeMx4+BVp1QncpTsSt+hXIxSO9o3l/
-	vEGJhREDg494NvPLEi1U2+MfbhQ1uPPFb93f2zTARY0mYxuotjbdQKLWKCQyVmTBao5zbDHhmZ8Ru
-	y3sDFHki+tzGY8gNn+aQ==;
+	List-Owner; bh=RxXG879WXo9f0vOE/mgfRPYbCvVmu5hTH+ZZrSSMU2g=; b=Xic8SC4ImVkAaL
+	4FfmAqkU/2NBHzNX2ySVFSrGwQ5+p4qbWhdI2RhzZ6xF540WYFkmK0LWNLYpEoDF6CR7E9ZYINEqo
+	aBYQ7S81LQ2OCrUnNNIC4QhJuOrYs8cPQz4gV6SVCVSDgt2aTKeo3TMM5/0IO47t3049xrZ4WD/VH
+	kiiu9UoKxcZfgGRzlrHyomnXgSeu3ceU3hQ6ljfhuz+YeciWchB3fsuUH2D23dh79dOJI+3Y9tixi
+	/9beJ1sLVnbr9UPbe3fGIO0lyhnCkCcIUzg92kYjOu365DDvDHIGIKBBpaIPrWwSeDeoOyPQfN88E
+	Y3wNxfhl+X2vM3i9ewkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZaGg-000315-Nr; Tue, 26 Nov 2019 12:48:34 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1iZaH3-0004Ew-Pl; Tue, 26 Nov 2019 12:48:57 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZaFw-0001qW-Pj
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 12:47:50 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id q28so13973223lfa.5
+ id 1iZaFz-00028P-O7
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 12:47:53 +0000
+Received: by mail-lj1-x241.google.com with SMTP id t5so20098120ljk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 Nov 2019 04:47:48 -0800 (PST)
+ Tue, 26 Nov 2019 04:47:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=g6uM1+pKTVRrvPoZDIiQiCYct3FytdLjpBqRoInTyxE=;
- b=Se70UsZ/wgEaoONls7OdlSWj0+NnGwQ72WH2RJJGpdNx6hXJpJ4fiwIURbKBfCWFlb
- YNbEkVznknmsD9YuXWFSAtUqigLp+iWOZD0SDIEKx/XXTdUt5UxQmnsXSV7vwzk6yMQH
- J3BJ80AXubFweXDWbxXEypq6z2NnlauO2hic9vsgXmEDxnHxwPMkXRt/reCYnAsftAO7
- pdG/RbJuhh5y6csQLvzA+gNqfuCY9bWPrMzc3QDLFXPjQZRDwl79L+h1lOAxZ/1iBLC5
- HPfa8hNNRHpYU8S6Ym3bSMM0Y8Ah8+9KYq/7eyxgmmE+krkp624JnReLxhwgef30yUts
- NS3Q==
+ bh=jSJxYjoX98bZdF5uLL7uqfaEgtFrbHqVfIiky5EZ03Q=;
+ b=VYEBEjL2KR1lJeKRhhV7qo6xY9HfKcwsAw9SjpWeulH2KsqnfWzp1OZb3Ey7TyofOA
+ mjrbYfOPs9Rqp++sOrHzr3rFE5Ske7F4tS1w3AkF6xea0KHfbib+gC03N7nUl9uowy7L
+ OFlbLRabTlOLIkASNk3tBDStUeT0dMTjcZtOMI8Q5uhbaeL2GB9U2bKVUU4RP66AqZbK
+ 23rwzsIRc2S6rpNAlyRn+10UQbgKYTrcYELFJ1Dk5QxviFvs1GeSr+1PZgSi3Hv+efjh
+ uFO33FxpHOv8tLDDpkXdetLmcJqm2nsZWkbTlyVLx8N+Oa/FEBmHSnbEdCnqq8DiyDLR
+ 3hzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=g6uM1+pKTVRrvPoZDIiQiCYct3FytdLjpBqRoInTyxE=;
- b=ZoD3CX4jsSMmdbyhlip7z6WtaX0374H8cCSX74n3NPN8OufLEWBfHzXcahD0fxK9X5
- Yx4knYcGcFqGaAydAKcUKQ6u21fKULJXbF+e3wiUq+L426X5eXfcIBeaDiMWx1PlBaCe
- rk+O6U6PuZ4OQJmi5DqqWXrz5Lb5gcPJs1hJLssHgf8zeyq3Tuoeue9B5OAlkQSRBUH1
- 0uyU8yyxeeSAY1PB0INDQuKOqZ411jlzf0h9b+0/ekXSVw7WGUDqod3W9UB8QFYhBUqk
- tSwc4xjS8NI1hr/BVfu5Fi2SVwNmY6SDf/W6VBUP+3z5ug+gsJgwR9CtG1d+HloydPLN
- OgJQ==
-X-Gm-Message-State: APjAAAW/ayJvShJokoT9mRjOO4XbMhw1MxIK9vKmNUZWmPOSqn+kz3/5
- XdxXqA83uJjskwpekUZod0zuzAW31yI=
-X-Google-Smtp-Source: APXvYqwCB3CWTXWlV3AJli45oxAIdZygsLijEEF30cyU1qQP8TEWju15z1WpLn6H9LUSZG/LQSKcpw==
-X-Received: by 2002:ac2:484a:: with SMTP id 10mr23687291lfy.80.1574772466300; 
- Tue, 26 Nov 2019 04:47:46 -0800 (PST)
+ bh=jSJxYjoX98bZdF5uLL7uqfaEgtFrbHqVfIiky5EZ03Q=;
+ b=Aiggp+MTXX1rqAzvOY26bO2pGjLBDDLQNp18VzSHnDATbpuvDQmqvxzp4/rHpadMDD
+ hgzIy0VlGVABByvln5+99adtv9meQQfjZqJzHCQgzglknw7dNU3FJR+oeM0ZsKp1dYFy
+ Gbs65qxFK3rGp1ZN9myEF2U9VeySFLMw54UVLEJYw7cH1mFgvHEnVhP4pdIejCQKNVjF
+ 5hF7Y5PtS21pYvmdGwRSVeuJ8lx7gx2AuHBp7QTxmDwB1ygja819d0AklkTpkvQoxFUO
+ +/UMnb8Z2ZyKDKkpmRI1WR7V6Wwec8lxluYsInfF42g2vr5b34bXx2j6ov3hncFwKfAD
+ ewhQ==
+X-Gm-Message-State: APjAAAWvYSiO3N+8n5qgaB3198TQDh0gi8mRv9U+cTkChW5CmMoZwqX7
+ nnZed2fJrxp8Jw5laOKRkhPi+nGRheE=
+X-Google-Smtp-Source: APXvYqyLZNGrA2/ndb893kbjC9sVWgadAqT7S1eY7m6svChMn857LBp5r5KJycTiLL1HYTiCMpCBeg==
+X-Received: by 2002:a05:651c:20f:: with SMTP id
+ y15mr25999216ljn.31.1574772469521; 
+ Tue, 26 Nov 2019 04:47:49 -0800 (PST)
 Received: from genomnajs.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id j10sm14874lfc.53.2019.11.26.04.47.44
+ by smtp.gmail.com with ESMTPSA id j10sm14874lfc.53.2019.11.26.04.47.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 Nov 2019 04:47:45 -0800 (PST)
+ Tue, 26 Nov 2019 04:47:48 -0800 (PST)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/4] ARM: dts: ux500: Split TVK DTSI files in two
-Date: Tue, 26 Nov 2019 13:47:36 +0100
-Message-Id: <20191126124738.77690-2-linus.walleij@linaro.org>
+Subject: [PATCH 3/4] ARM: dts: ux500: Add devicetree for HREF520
+Date: Tue, 26 Nov 2019 13:47:37 +0100
+Message-Id: <20191126124738.77690-3-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191126124738.77690-1-linus.walleij@linaro.org>
 References: <20191126124738.77690-1-linus.walleij@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_044748_843853_8D1A2B54 
-X-CRM114-Status: GOOD (  20.46  )
+X-CRM114-CacheID: sfid-20191126_044751_837610_E91DCA24 
+X-CRM114-Status: GOOD (  15.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:12c listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,296 +104,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The TVK1281618 was made in R1, R2 and R3 variants. The most
-commonly used variants are R2 and R3 so split out these to
-their own files.
+This reference design is very similar to the others just that
+it has a different display mounted on the user interface
+board, and some GPIOs where shuffled around.
 
-The R3 version has a totally different display than R1 and
-R2 and a different set of sensors.
+As this is the first board that uses DB8520 we create the
+DB8520-specific DTSI file here.
 
 Cc: Stephan Gerhold <stephan@gerhold.net>
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi | 79 +++++++++++++++++++
- arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi | 58 ++++++++++++++
- arch/arm/boot/dts/ste-href-tvk1281618.dtsi    | 71 +----------------
- arch/arm/boot/dts/ste-hrefprev60-tvk.dts      |  2 +-
- arch/arm/boot/dts/ste-hrefv60plus-tvk.dts     |  2 +-
- 5 files changed, 141 insertions(+), 71 deletions(-)
- create mode 100644 arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
- create mode 100644 arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
+ arch/arm/boot/dts/Makefile            |  3 ++-
+ arch/arm/boot/dts/ste-db8520.dtsi     | 15 +++++++++++++++
+ arch/arm/boot/dts/ste-href520-tvk.dts | 22 ++++++++++++++++++++++
+ 3 files changed, 39 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm/boot/dts/ste-db8520.dtsi
+ create mode 100644 arch/arm/boot/dts/ste-href520-tvk.dts
 
-diff --git a/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi b/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index b21b3a64641a..3de5a3e5cd79 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -1171,7 +1171,8 @@ dtb-$(CONFIG_ARCH_U8500) += \
+ 	ste-hrefprev60-stuib.dtb \
+ 	ste-hrefprev60-tvk.dtb \
+ 	ste-hrefv60plus-stuib.dtb \
+-	ste-hrefv60plus-tvk.dtb
++	ste-hrefv60plus-tvk.dtb \
++	ste-href520-tvk.dtb
+ dtb-$(CONFIG_ARCH_UNIPHIER) += \
+ 	uniphier-ld4-ref.dtb \
+ 	uniphier-ld6b-ref.dtb \
+diff --git a/arch/arm/boot/dts/ste-db8520.dtsi b/arch/arm/boot/dts/ste-db8520.dtsi
 new file mode 100644
-index 000000000000..e024520f4d47
+index 000000000000..48bd8728ae27
 --- /dev/null
-+++ b/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
-@@ -0,0 +1,79 @@
++++ b/arch/arm/boot/dts/ste-db8520.dtsi
+@@ -0,0 +1,15 @@
 +// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Device Tree for the TVK1281618 R2 UIB
-+ */
 +
-+#include "ste-href-tvk1281618.dtsi"
++#include "ste-dbx5x0.dtsi"
 +
 +/ {
-+	soc {
-+		i2c@80128000 {
-+			lsm303dlh@18 {
-+				/* Accelerometer */
-+				compatible = "st,lsm303dlh-accel";
-+				st,drdy-int-pin = <1>;
-+				drive-open-drain;
-+				reg = <0x18>;
-+				vdd-supply = <&ab8500_ldo_aux1_reg>;
-+				vddio-supply = <&db8500_vsmps2_reg>;
-+				pinctrl-names = "default";
-+				pinctrl-0 = <&accel_tvk_mode>;
-+				/*
-+				 * These interrupts cannot be used: the other component
-+				 * ST-Micro L3D4200D gyro that is connected to the same lines
-+				 * cannot set its DRDY line to open drain, so it cannot be
-+				 * shared with other peripherals. The should be defined for
-+				 * the falling edge if they could be wired together.
-+				 *
-+				 * interrupts-extended =
-+				 * <&gpio1 0 IRQ_TYPE_EDGE_FALLING>,
-+				 * <&gpio2 19 IRQ_TYPE_EDGE_FALLING>;
-+				 */
-+			};
-+			lsm303dlh@1e {
-+				/* Magnetometer */
-+				compatible = "st,lsm303dlh-magn";
-+				reg = <0x1e>;
-+				vdd-supply = <&ab8500_ldo_aux1_reg>;
-+				vddio-supply = <&db8500_vsmps2_reg>;
-+				/*
-+				 * These interrupts cannot be used: the other component
-+				 * ST-Micro L3D4200D gyro that is connected to the same lines
-+				 * cannot set its DRDY line to open drain, so it cannot be
-+				 * shared with other peripherals. The should be defined for
-+				 * the falling edge if they could be wired together.
-+				 *
-+				 * interrupts-extended =
-+				 * <&gpio1 0 IRQ_TYPE_EDGE_FALLING>,
-+				 * <&gpio2 19 IRQ_TYPE_EDGE_FALLING>;
-+				 */
-+			};
-+			lis331dl@1c {
-+				/* Accelerometer */
-+				compatible = "st,lis331dl-accel";
-+				st,drdy-int-pin = <1>;
-+				reg = <0x1c>;
-+				vdd-supply = <&ab8500_ldo_aux1_reg>;
-+				vddio-supply = <&db8500_vsmps2_reg>;
-+				pinctrl-names = "default";
-+				pinctrl-0 = <&accel_tvk_mode>;
-+				interrupt-parent = <&gpio2>;
-+				/* INT2 would need to be open drain */
-+				interrupts = <18 IRQ_TYPE_EDGE_RISING>,
-+					     <19 IRQ_TYPE_EDGE_RISING>;
-+			};
-+		};
-+		mcde@a0350000 {
-+			status = "okay";
-+
-+			dsi@a0351000 {
-+				panel {
-+					compatible = "samsung,s6d16d0";
-+					reg = <0>;
-+					vdd1-supply = <&ab8500_ldo_aux1_reg>;
-+					reset-gpios = <&gpio2 1 GPIO_ACTIVE_LOW>;
-+				};
-+			};
++	cpus {
++		cpu@300 {
++			/* cpufreq controls */
++			operating-points = <1152000 0
++					    800000 0
++					    400000 0
++					    200000 0>;
 +		};
 +	};
 +};
-diff --git a/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi b/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
+diff --git a/arch/arm/boot/dts/ste-href520-tvk.dts b/arch/arm/boot/dts/ste-href520-tvk.dts
 new file mode 100644
-index 000000000000..cb3677f0a1cb
+index 000000000000..f8c0c1e6aa04
 --- /dev/null
-+++ b/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
-@@ -0,0 +1,58 @@
++++ b/arch/arm/boot/dts/ste-href520-tvk.dts
+@@ -0,0 +1,22 @@
 +// SPDX-License-Identifier: GPL-2.0-or-later
 +/*
-+ * Device Tree for the TVK1281618 R2 UIB
++ * Device Tree for the HREF520 version with the TVK1281618 UIB
 + */
 +
-+#include "ste-href-tvk1281618.dtsi"
++/dts-v1/;
++#include "ste-db8520.dtsi"
++#include "ste-hrefv60plus.dtsi"
++#include "ste-href-tvk1281618-r3.dtsi"
 +
 +/ {
++	model = "ST-Ericsson HREF520 and TVK1281618 UIB";
++	compatible = "st-ericsson,href520", "st-ericsson,u8500";
++
 +	soc {
-+		i2c@80128000 {
-+			/* Marked:
-+			 * 129
-+			 * M35
-+			 * L3GD20
-+			 */
-+			l3gd20@6a {
-+				/* Gyroscope */
-+				compatible = "st,l3gd20";
-+				status = "disabled";
-+				st,drdy-int-pin = <1>;
-+				drive-open-drain;
-+				reg = <0x6a>; // 0x6a or 0x6b
-+				vdd-supply = <&ab8500_ldo_aux1_reg>;
-+				vddio-supply = <&db8500_vsmps2_reg>;
-+			};
-+			/*
-+			 * Marked:
-+			 * 2122
-+			 * C3H
-+			 * DQEEE
-+			 * LIS3DH?
-+			 */
-+			lis3dh@18 {
-+				/* Accelerometer */
-+				compatible = "st,lis3dh-accel";
-+				st,drdy-int-pin = <1>;
-+				reg = <0x18>;
-+				vdd-supply = <&ab8500_ldo_aux1_reg>;
-+				vddio-supply = <&db8500_vsmps2_reg>;
-+				pinctrl-names = "default";
-+				pinctrl-0 = <&accel_tvk_mode>;
-+			};
-+		};
-+
-+		mcde@a0350000 {
-+			status = "okay";
-+
-+			dsi@a0351000 {
-+				panel {
-+					compatible = "sony,acx424akp";
-+					reg = <0>;
-+					vddi-supply = <&ab8500_ldo_aux1_reg>;
-+					reset-gpios = <&gpio2 1 GPIO_ACTIVE_LOW>;
-+				};
-+			};
++		vmmci: regulator-gpio {
++			gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
++			enable-gpio = <&gpio2 14 GPIO_ACTIVE_HIGH>;
++			enable-active-high;
 +		};
 +	};
 +};
-diff --git a/arch/arm/boot/dts/ste-href-tvk1281618.dtsi b/arch/arm/boot/dts/ste-href-tvk1281618.dtsi
-index 3bafd26b4824..e1dbfae22595 100644
---- a/arch/arm/boot/dts/ste-href-tvk1281618.dtsi
-+++ b/arch/arm/boot/dts/ste-href-tvk1281618.dtsi
-@@ -2,7 +2,7 @@
- /*
-  * Copyright 2012 ST-Ericsson AB
-  *
-- * Device Tree for the TVK1281618 UIB
-+ * Device Tree for the TVK1281618 family of UIBs
-  */
- 
- #include <dt-bindings/interrupt-controller/irq.h>
-@@ -81,62 +81,8 @@
- 				};
- 			};
- 		};
--		/* Sensors mounted on this board variant */
-+		/* Sensors mounted on all board variants */
- 		i2c@80128000 {
--			lsm303dlh@18 {
--				/* Accelerometer */
--				compatible = "st,lsm303dlh-accel";
--				st,drdy-int-pin = <1>;
--				drive-open-drain;
--				reg = <0x18>;
--				vdd-supply = <&ab8500_ldo_aux1_reg>;
--				vddio-supply = <&db8500_vsmps2_reg>;
--				pinctrl-names = "default";
--				pinctrl-0 = <&accel_tvk_mode>;
--				/*
--				 * These interrupts cannot be used: the other component
--				 * ST-Micro L3D4200D gyro that is connected to the same lines
--				 * cannot set its DRDY line to open drain, so it cannot be
--				 * shared with other peripherals. The should be defined for
--				 * the falling edge if they could be wired together.
--				 *
--				 * interrupts-extended =
--				 * <&gpio1 0 IRQ_TYPE_EDGE_FALLING>,
--				 * <&gpio2 19 IRQ_TYPE_EDGE_FALLING>;
--				 */
--			};
--			lsm303dlh@1e {
--				/* Magnetometer */
--				compatible = "st,lsm303dlh-magn";
--				reg = <0x1e>;
--				vdd-supply = <&ab8500_ldo_aux1_reg>;
--				vddio-supply = <&db8500_vsmps2_reg>;
--				/*
--				 * These interrupts cannot be used: the other component
--				 * ST-Micro L3D4200D gyro that is connected to the same lines
--				 * cannot set its DRDY line to open drain, so it cannot be
--				 * shared with other peripherals. The should be defined for
--				 * the falling edge if they could be wired together.
--				 *
--				 * interrupts-extended =
--				 * <&gpio1 0 IRQ_TYPE_EDGE_FALLING>,
--				 * <&gpio2 19 IRQ_TYPE_EDGE_FALLING>;
--				 */
--			};
--			lis331dl@1c {
--				/* Accelerometer */
--				compatible = "st,lis331dl-accel";
--				st,drdy-int-pin = <1>;
--				reg = <0x1c>;
--				vdd-supply = <&ab8500_ldo_aux1_reg>;
--				vddio-supply = <&db8500_vsmps2_reg>;
--				pinctrl-names = "default";
--				pinctrl-0 = <&accel_tvk_mode>;
--				interrupt-parent = <&gpio2>;
--				/* INT2 would need to be open drain */
--				interrupts = <18 IRQ_TYPE_EDGE_RISING>,
--					     <19 IRQ_TYPE_EDGE_RISING>;
--			};
- 			ak8974@f {
- 				/* Magnetometer */
- 				compatible = "asahi-kasei,ak8974";
-@@ -268,18 +214,5 @@
- 				};
- 			};
- 		};
--
--		mcde@a0350000 {
--			status = "okay";
--
--			dsi@a0351000 {
--				panel {
--					compatible = "samsung,s6d16d0";
--					reg = <0>;
--					vdd1-supply = <&ab8500_ldo_aux1_reg>;
--					reset-gpios = <&gpio2 1 GPIO_ACTIVE_LOW>;
--				};
--			};
--		};
- 	};
- };
-diff --git a/arch/arm/boot/dts/ste-hrefprev60-tvk.dts b/arch/arm/boot/dts/ste-hrefprev60-tvk.dts
-index 8b88c91dca6c..142f5475521f 100644
---- a/arch/arm/boot/dts/ste-hrefprev60-tvk.dts
-+++ b/arch/arm/boot/dts/ste-hrefprev60-tvk.dts
-@@ -6,7 +6,7 @@
- /dts-v1/;
- #include "ste-db8500.dtsi"
- #include "ste-hrefprev60.dtsi"
--#include "ste-href-tvk1281618.dtsi"
-+#include "ste-href-tvk1281618-r2.dtsi"
- 
- / {
- 	model = "ST-Ericsson HREF (pre-v60) and TVK1281618 UIB";
-diff --git a/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts b/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts
-index b31e43d5ff89..5d4b8245f02c 100644
---- a/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts
-+++ b/arch/arm/boot/dts/ste-hrefv60plus-tvk.dts
-@@ -8,7 +8,7 @@
- /dts-v1/;
- #include "ste-db8500.dtsi"
- #include "ste-hrefv60plus.dtsi"
--#include "ste-href-tvk1281618.dtsi"
-+#include "ste-href-tvk1281618-r2.dtsi"
- 
- / {
- 	model = "ST-Ericsson HREF (v60+) and TVK1281618 UIB";
 -- 
 2.23.0
 
