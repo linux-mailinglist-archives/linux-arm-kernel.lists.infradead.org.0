@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56EF1109948
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 07:34:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1451010993F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 07:31:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QjilEmgWcp0Iva5Zter+qA85UqvCPNrrPMjb4ctQmXg=; b=TXxxRekIcswibZ
-	EvR666Pwpg+o3rb5MCTgWC1dzQIqAXqyLrcX7LMxNw4X62VYpmA1NHhluu7HDSr2rc0IUlWyruwtk
-	1cAugpN8b1tgrSyuJAJBdblj4qMdv8lK9Mw0KrencANdjFjkKm7KolZHsyvvZFwF3cAnwWbuvSeAV
-	SBOgAvUachzO5pCI1FNwRRBazQs645CFhbOPcoL+TpgzymA+aqz0yCM9Q+ec2Ij4AuztBTEim2FwI
-	lccZGUR8r7+91tg7/IAmjuiOi1FfQBSx5ULvMZCWRb7J+oDoRGv4ROCyWoCUGMYdyaO7jQpDt3EcU
-	SLZ0V5INZpce7HBs2Zyw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ca1I95u/AiQj+YpZhfFjG0mjaC5920kTZJVbJe4r3d0=; b=amzpV1wQ83CC/L
+	pV8fmXIx9z7S/u+IWvWBpmaOCM2/fUs35yIWlPAotSq0qmukQ4hUhDApIus/cDM889Upi/mZa8Tx1
+	6z2Tit/YFj1k+g89sJUAi4oZ6Ccc23sdOdPqQm61FS8guey2JeJlMa4euE5ZxgNJJ+2GuDQ/9l2MU
+	bqWPF1K6XoxgLzKjWy8oFYnL24chDy67NL8v6Z5Ut0zcV5cBNEbvTfP5JN2+/IDKV0IXW9+W36Wp7
+	yz5QJs2Da/sEw778cDcsXML37ufNMFCiTy0U8JWFK2fZ2qgmCPPn5j8mHXy/e+APmDohmC5AfCoGM
+	TIygavAvrIcbc6r6OwFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZUR4-0008TT-Tl; Tue, 26 Nov 2019 06:34:54 +0000
+	id 1iZUNs-00076o-IY; Tue, 26 Nov 2019 06:31:36 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZUQb-0008Bv-Va; Tue, 26 Nov 2019 06:34:27 +0000
-X-UUID: f825189d751e4673bb11e0f11d87f062-20191125
+ id 1iZUNQ-0006wh-7U; Tue, 26 Nov 2019 06:31:10 +0000
+X-UUID: e4855a803ba04810bb6c2771a6a0ad2e-20191125
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=oJcXUCLZIxcF59qSTm2vQw2qkPkCytdOwN19qtc61zQ=; 
- b=LLe3uvSis0vKvlWOxtqBDOJUV+XnCbwW/fe2QqakZzH6RrAmyJqfq9cgeU96V9Gat+exbqJK3opEXz2Y5j4yqbKa7dRbY9SVkbXMhA96WZycRP2MhgVli0j/8TX62sFM0uMnSEojPi4tKQHpT8SncqJ8EEwf+wuVF2V3p7L8TYA=;
-X-UUID: f825189d751e4673bb11e0f11d87f062-20191125
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=WLsOap9fWJYafOkS1p7359AjO4uwjv05Y5EjbgsSZb0=; 
+ b=asxpaMpdTNLpqGcr7ad0oBaQwDY7UcceyLDI3uR2N4wqZFCrzbyp8JRlFZzBHuuuholIseLCWbNveMpXrCa439BnKqrT7qA3XyAeOtLX3nshcIB+RseWxNDatGAYmHB6tYfFvmNXuHLE/YbwOc3jiBo5+G/2badymVIwUEBUikM=;
+X-UUID: e4855a803ba04810bb6c2771a6a0ad2e-20191125
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <bibby.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1022281579; Mon, 25 Nov 2019 22:34:19 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 25 Nov 2019 22:30:05 -0800
+ with ESMTP id 1827809456; Mon, 25 Nov 2019 22:30:56 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 25 Nov 2019 22:29:43 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 26 Nov 2019 14:29:10 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 26 Nov 2019 14:29:22 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Tue, 26 Nov 2019 14:29:14 +0800
@@ -46,17 +46,17 @@ From: Bibby Hsieh <bibby.hsieh@mediatek.com>
 To: David Airlie <airlied@linux.ie>, Matthias Brugger
  <matthias.bgg@gmail.com>, Daniel Vetter <daniel.vetter@ffwll.ch>,
  <dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>
-Subject: [PATCH 0/7] drm/mediatek: fix cursor issue and apply CMDQ in
-Date: Tue, 26 Nov 2019 14:29:25 +0800
-Message-ID: <20191126062932.19773-1-bibby.hsieh@mediatek.com>
+Subject: [PATCH 1/7] drm/mediatek: fix atomic_state reference counting
+Date: Tue, 26 Nov 2019 14:29:26 +0800
+Message-ID: <20191126062932.19773-2-bibby.hsieh@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20191126062932.19773-1-bibby.hsieh@mediatek.com>
+References: <20191126062932.19773-1-bibby.hsieh@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 3886BE9112410BD4E984397ECA66E6660D117511F429C6329CE2E162650C9F092000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_223426_016495_22BF3DF9 
-X-CRM114-Status: UNSURE (   7.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191125_223108_276343_4B5DDDB0 
+X-CRM114-Status: GOOD (  17.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,46 +96,209 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The CMDQ (Command Queue) in MT8183 is used to help update all
-relevant display controller registers with critical time limation.
-This patch add cmdq interface in ddp_comp interface, let all
-ddp_comp interface can support cpu/cmdq function at the same time.
+The DRM core takes care of all atomic state refcounting.
+However, mediatek drm defers some work that accesses planes
+and plane_states in drm_atomic_state, and must therefore
+keep its own atomic state references until this work complete.
 
-These patches also can fixup cursor moving is not smooth
-when heavy load in webgl.
+We take the atomic_state reference in atomic_fulsh() and ensure all the
+information in atomic_state already was updated in hardware for
+showing on screen and then schedules unreference_work to drop references
+on atomic_state.
 
-This patch depends on ptach:
-add drm support for MT8183
-(https://patchwork.kernel.org/cover/11121519/)
-support gce on mt8183 platform
-(https://patchwork.kernel.org/cover/11255147)
-drm/mediatek: Refactor plane init/check and support rotation
-(https://pw-emeril.freedesktop.org/series/69015/)
-drm/mediatek: Check return value of mtk_drm_ddp_comp_for_plane
-(https://lore.kernel.org/patchwork/patch/1154517/)
+Fixes: 119f5173628a ("drm/mediatek: Add DRM Driver for Mediatek SoC MT8173.")
 
-Bibby Hsieh (7):
-  drm/mediatek: fix atomic_state reference counting
-  drm/mediatek: put "event" in critical section
-  drm/mediatek: use DRM core's atomic commit helper
-  drm/mediatek: handle events when enabling/disabling crtc
-  drm/mediatek: update cursors by using async atomic update
-  drm/mediatek: support CMDQ interface in ddp component
-  drm/mediatek: apply CMDQ control flow
+Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+---
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 11 +++-
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 79 +++++++++++++++++++++++++
+ drivers/gpu/drm/mediatek/mtk_drm_drv.h  |  9 +++
+ 3 files changed, 97 insertions(+), 2 deletions(-)
 
- drivers/gpu/drm/mediatek/mtk_disp_color.c   |   7 +-
- drivers/gpu/drm/mediatek/mtk_disp_ovl.c     |  65 +++---
- drivers/gpu/drm/mediatek/mtk_disp_rdma.c    |  43 ++--
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 223 ++++++++++++++++++--
- drivers/gpu/drm/mediatek/mtk_drm_crtc.h     |   4 +
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 151 +++++++++----
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  55 +++--
- drivers/gpu/drm/mediatek/mtk_drm_drv.c      | 143 +++++++------
- drivers/gpu/drm/mediatek/mtk_drm_drv.h      |  17 +-
- drivers/gpu/drm/mediatek/mtk_drm_plane.c    |  54 +++++
- drivers/gpu/drm/mediatek/mtk_drm_plane.h    |   2 +
- 11 files changed, 575 insertions(+), 189 deletions(-)
-
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index 29d0582e90e9..68b92adc96bb 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -7,7 +7,7 @@
+ #include <linux/pm_runtime.h>
+ 
+ #include <asm/barrier.h>
+-
++#include <drm/drm_atomic.h>
+ #include <drm/drm_atomic_helper.h>
+ #include <drm/drm_plane_helper.h>
+ #include <drm/drm_probe_helper.h>
+@@ -47,6 +47,7 @@ struct mtk_drm_crtc {
+ 	struct mtk_disp_mutex		*mutex;
+ 	unsigned int			ddp_comp_nr;
+ 	struct mtk_ddp_comp		**ddp_comp;
++	struct drm_crtc_state		*old_crtc_state;
+ };
+ 
+ struct mtk_crtc_state {
+@@ -362,6 +363,7 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+ {
+ 	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
++	struct drm_atomic_state *atomic_state = mtk_crtc->old_crtc_state->state;
+ 	struct mtk_crtc_state *state = to_mtk_crtc_state(mtk_crtc->base.state);
+ 	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
+ 	unsigned int i;
+@@ -399,6 +401,7 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+ 			plane_state->pending.config = false;
+ 		}
+ 		mtk_crtc->pending_planes = false;
++		mtk_atomic_state_put_queue(atomic_state);
+ 	}
+ }
+ 
+@@ -494,6 +497,7 @@ static void mtk_drm_crtc_atomic_begin(struct drm_crtc *crtc,
+ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
+ 				      struct drm_crtc_state *old_crtc_state)
+ {
++	struct drm_atomic_state *old_atomic_state = old_crtc_state->state;
+ 	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+ 	struct mtk_drm_private *priv = crtc->dev->dev_private;
+ 	unsigned int pending_planes = 0;
+@@ -512,8 +516,11 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
+ 			pending_planes |= BIT(i);
+ 		}
+ 	}
+-	if (pending_planes)
++	if (pending_planes) {
+ 		mtk_crtc->pending_planes = true;
++		drm_atomic_state_get(old_atomic_state);
++		mtk_crtc->old_crtc_state = old_crtc_state;
++	}
+ 	if (crtc->state->color_mgmt_changed)
+ 		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
+ 			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i], crtc->state);
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+index 6588dc6dd5e3..6c68283b6124 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+@@ -115,10 +115,85 @@ static int mtk_atomic_commit(struct drm_device *drm,
+ 	return 0;
+ }
+ 
++struct mtk_atomic_state {
++	struct drm_atomic_state base;
++	struct list_head list;
++};
++
++static inline struct mtk_atomic_state *to_mtk_state(struct drm_atomic_state *s)
++{
++	return container_of(s, struct mtk_atomic_state, base);
++}
++
++void mtk_atomic_state_put_queue(struct drm_atomic_state *state)
++{
++	struct drm_device *drm = state->dev;
++	struct mtk_drm_private *mtk_drm = drm->dev_private;
++	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
++	unsigned long flags;
++
++	spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
++	list_add_tail(&mtk_state->list, &mtk_drm->unreference.list);
++	spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
++
++	schedule_work(&mtk_drm->unreference.work);
++}
++
++static void mtk_unreference_work(struct work_struct *work)
++{
++	struct mtk_drm_private *mtk_drm = container_of(work,
++			struct mtk_drm_private, unreference.work);
++	unsigned long flags;
++	struct mtk_atomic_state *state, *tmp;
++
++	/*
++	 * framebuffers cannot be unreferenced in atomic context.
++	 * Therefore, only hold the spinlock when iterating unreference_list,
++	 * and drop it when doing the unreference.
++	 */
++	spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
++	list_for_each_entry_safe(state, tmp, &mtk_drm->unreference.list, list) {
++		list_del(&state->list);
++		spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
++		drm_atomic_state_put(&state->base);
++		spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
++	}
++	spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
++}
++
++static struct drm_atomic_state *
++		mtk_drm_atomic_state_alloc(struct drm_device *dev)
++{
++	struct mtk_atomic_state *mtk_state;
++
++	mtk_state = kzalloc(sizeof(*mtk_state), GFP_KERNEL);
++	if (!mtk_state)
++		return NULL;
++
++	if (drm_atomic_state_init(dev, &mtk_state->base) < 0) {
++		kfree(mtk_state);
++		return NULL;
++	}
++
++	INIT_LIST_HEAD(&mtk_state->list);
++
++	return &mtk_state->base;
++}
++
++static void mtk_drm_atomic_state_free(struct drm_atomic_state *state)
++{
++	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
++
++	drm_atomic_state_default_release(state);
++	kfree(mtk_state);
++}
++
+ static const struct drm_mode_config_funcs mtk_drm_mode_config_funcs = {
+ 	.fb_create = mtk_drm_mode_fb_create,
+ 	.atomic_check = drm_atomic_helper_check,
+ 	.atomic_commit = mtk_atomic_commit,
++	.atomic_state_alloc = mtk_drm_atomic_state_alloc,
++	.atomic_state_free = mtk_drm_atomic_state_free
+ };
+ 
+ static const enum mtk_ddp_comp_id mt2701_mtk_ddp_main[] = {
+@@ -337,6 +412,10 @@ static int mtk_drm_kms_init(struct drm_device *drm)
+ 	drm_kms_helper_poll_init(drm);
+ 	drm_mode_config_reset(drm);
+ 
++	INIT_WORK(&private->unreference.work, mtk_unreference_work);
++	INIT_LIST_HEAD(&private->unreference.list);
++	spin_lock_init(&private->unreference.lock);
++
+ 	return 0;
+ 
+ err_unset_dma_parms:
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+index b6a82728d563..c37d835cf949 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
++++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+@@ -55,6 +55,13 @@ struct mtk_drm_private {
+ 
+ 	struct drm_atomic_state *suspend_state;
+ 
++	struct {
++		struct work_struct	work;
++		struct list_head	list;
++		/* lock for unreference list */
++		spinlock_t		lock;
++	} unreference;
++
+ 	bool dma_parms_allocated;
+ };
+ 
+@@ -66,4 +73,6 @@ extern struct platform_driver mtk_dpi_driver;
+ extern struct platform_driver mtk_dsi_driver;
+ extern struct platform_driver mtk_mipi_tx_driver;
+ 
++void mtk_atomic_state_put_queue(struct drm_atomic_state *state);
++
+ #endif /* MTK_DRM_DRV_H */
 -- 
 2.18.0
 _______________________________________________
