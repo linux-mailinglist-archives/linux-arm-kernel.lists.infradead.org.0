@@ -2,70 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 683131097DD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 03:35:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E3E51097EE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 04:01:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yJnYFzRC0Xl3OquU032xfyUeufJziv0Vh8XV+ddkMsc=; b=mavDPz2DrJT7YC8wtnVZQJAi1
-	DpWB39ms4pPMJ1KaQV86V7gNh0xwKbm27jFSTH/OdaHuXRsVCYLj6e+W4zSY1pYsorh5fDuZhOJx5
-	aX4jsr95mgHN38rKYEdEMnvwB6Ql3PFwPnhgjfnWtD2QIBgfFB43GWeMvYB/FCsvdlhthHxJBO/t7
-	2eD+50zGVLTQbKV3blCwDm+U5PmA9n5etcw1OqK4XezbXxx+TtF49zOb600dUcFQ8txxr1YS+es99
-	ZWT6uBP8ArDTwHw6sYoWKuz9UwAD0Ct5xBrXiHvpWuG08n/WT/UdVRLu4SRu/yC1US3lEe3R7JnMq
-	yogvD/FNA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Kp/0PUKGJEvZ6076NuVu2ZbeSRZrZTsR5mhDmZ+EmKo=; b=qtkCBF1YhK2vFO
+	nbySH63TgTt+oV8ksGgqU+3PCWfcpQACHvccK+52gI/bji2Xs6+BK1tnIpAy6A54HsNkQ1Dg//D8N
+	fR4tIUJDg9u+GNcMdjiZKhbgNlNdyoJUpZTnlo6QK1Vd7s1Mo1fa3JYAXBnE1t+wDo2GhML/DdTVu
+	bvOf9zIEO3uQQcSpi6K/GOwtay5b1L5GMveCbZ3hoNl0j8b3z9NH8x3h6ynDPyKs0bKDeAqGNq0ZA
+	fQ4puYCtgi7uoNTplYOuijmbUHKg3QBhYvDTSTOnvewy78tishnOTgz5jx+fQisUj6czbia1JzANB
+	KcSmpszDyP/E+ma7x8hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZQh9-0000k4-1t; Tue, 26 Nov 2019 02:35:15 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1iZR6G-0001uc-Ua; Tue, 26 Nov 2019 03:01:12 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZQgq-0000jJ-E0; Tue, 26 Nov 2019 02:34:57 +0000
-Received: from [10.28.39.99] (10.28.39.99) by mail-sz.amlogic.com (10.28.11.5)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Tue, 26 Nov
- 2019 10:35:17 +0800
-Subject: Re: [PATCH v2 3/3] clk: meson: a1: add support for Amlogic A1 clock
- driver
-From: Jian Hu <jian.hu@amlogic.com>
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-References: <1571382865-41978-1-git-send-email-jian.hu@amlogic.com>
- <1571382865-41978-4-git-send-email-jian.hu@amlogic.com>
- <1jsgnmba1a.fsf@starbuckisacylon.baylibre.com>
- <49b33e94-910b-3fd9-4da1-050742d07e93@amlogic.com>
- <1jblts3v7e.fsf@starbuckisacylon.baylibre.com>
- <f02b6fb2-5b98-0930-6d47-a3e65840fb82@amlogic.com>
- <1jh839f2ue.fsf@starbuckisacylon.baylibre.com>
- <20d04452-fc63-9e9e-220f-146b493a860f@amlogic.com>
- <1695e9b0-1730-eef6-491d-fe90ac897ee9@amlogic.com>
- <1jtv6yftmm.fsf@starbuckisacylon.baylibre.com>
- <9e652ed1-384e-f630-f2a4-0aa4486df577@amlogic.com>
- <1j7e3oqn36.fsf@starbuckisacylon.baylibre.com>
- <9ec317e8-136e-1ab4-4e9b-21210e7f3e05@amlogic.com>
- <1j5zj8qgsl.fsf@starbuckisacylon.baylibre.com>
- <7a3f1e14-e5a5-407a-335a-eb68d3082eb9@amlogic.com>
-Message-ID: <1ca0c5e1-8417-c5dc-7ad1-80ea707554b2@amlogic.com>
-Date: Tue, 26 Nov 2019 10:35:17 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1iZR66-0001tO-BR; Tue, 26 Nov 2019 03:01:04 +0000
+X-UUID: d3d077e5ea944e5489368d65f7fb03fd-20191125
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=U4VK8y3TGwrQrTTLGoGY/Sz/+8bSigII6WIe7UI7Fsg=; 
+ b=SUFHjTwtnhBzGLG9YOyIDp1I1RtMyUDYWZE/RbN2B03qM432PH1Xdb7GDVgvXDDXd7PviVe4A1oEA3P6E8CMnzjwZgwsE0I1itVnLLLMkyHQrdj0YfXJRvupQWWgVi28Rh0DWlZXlrdvOHG6FWMVJKkbrxkjHGS5B9uPbuiot90=;
+X-UUID: d3d077e5ea944e5489368d65f7fb03fd-20191125
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <yt.chang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1816778796; Mon, 25 Nov 2019 19:00:51 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 25 Nov 2019 19:01:21 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 26 Nov 2019 11:00:43 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 26 Nov 2019 11:00:33 +0800
+Message-ID: <1574737251.12247.11.camel@mtksdccf07>
+Subject: Re: [PATCH 1/1] sched: cfs_rq h_load might not update due to irq
+ disable
+From: Kathleen Chang <yt.chang@mediatek.com>
+To: Peter Zijlstra <peterz@infradead.org>
+Date: Tue, 26 Nov 2019 11:00:51 +0800
+In-Reply-To: <20191121123804.GR4097@hirez.programming.kicks-ass.net>
+References: <1574325009-10846-1-git-send-email-yt.chang@mediatek.com>
+ <20191121123804.GR4097@hirez.programming.kicks-ass.net>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <7a3f1e14-e5a5-407a-335a-eb68d3082eb9@amlogic.com>
-Content-Language: en-US
-X-Originating-IP: [10.28.39.99]
-X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
- (10.28.11.5)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_183456_472382_8375DEFA 
-X-CRM114-Status: GOOD (  21.96  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191125_190102_403688_E09B00EA 
+X-CRM114-Status: GOOD (  23.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,179 +86,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="windows-1252"; Format="flowed"
+Cc: wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, 2019-11-21 at 13:38 +0100, Peter Zijlstra wrote:
+> On Thu, Nov 21, 2019 at 04:30:09PM +0800, YT Chang wrote:
+> > Syndrome:
+> > 
+> > Two CPUs might do idle balance in the same time.
+> > One CPU does idle balance and pulls some tasks.
+> > However before pick next task, ALL task are pulled back to other CPU.
+> > That results in infinite loop in both CPUs.
+> 
+> Can you easily reproduce this?
 
+No, I can't easily reproduce this. 
+> 
+> > =========================================
+> > code flow:
+> > 
+> > in pick_next_task_fair()
+> > 
+> > again:
+> > 
+> > if nr_running == 0
+> > 	goto idle
+> > pick next task
+> > 	return
+> > 
+> > idle:
+> > 	idle_balance
+> >        /* pull some tasks from other CPU,
+> >         * However other CPU are also do idle balance,
+> > 	* and pull back these task */
+> > 
+> > 	go to again
+> > 
+> > =========================================
+> > The result to pull ALL tasks back when the task_h_load
+> > is incorrect and too low.
+> 
+> Clearly you're not running a PREEMPT kernel, otherwise the break in
+> detach_tasks() would've saved you, right?
+> 
+> > static unsigned long task_h_load(struct task_struct *p)
+> > {
+> >         struct cfs_rq *cfs_rq = task_cfs_rq(p);
+> > 
+> > 	update_cfs_rq_h_load(cfs_rq);
+> > 	return div64_ul(p->se.avg.load_avg_contrib * cfs_rq->h_load,
+> > 			cfs_rq->runnable_load_avg + 1);
+> > }
+> > 
+> > The cfs_rq->h_load is incorrect and might too small.
+> > The original idea of cfs_rq::last_h_load_update will not
+> > update cfs_rq::h_load more than once a jiffies.
+> > When the Two CPUs pull each other in the pick_next_task_fair,
+> > the irq disabled and result in jiffie not update.
+> > (Other CPUs wait for runqueue lock locked by the two CPUs.
+> > So, ALL CPUs are irq disabled.)
+> 
+> This cannot be true; because the loop drops rq->lock, so other CPUs
+> should have an opportunity to acquire the lock and make progress.
 
-On 2019/11/25 21:51, Jian Hu wrote:
-> =
+I recheck other CPUs situation. 
+Other CPUs are irq disabled due to wait for lock (Not runqueue lock).
 
-> =
+The root cause should be why other CPUs are waiting for the lock 
+rather than replacing jiffies with sched_clock().
 
-> On 2019/11/25 20:30, Jerome Brunet wrote:
->>
->> On Mon 25 Nov 2019 at 13:01, Jian Hu <jian.hu@amlogic.com> wrote:
->>
->>> On 2019/11/25 18:14, Jerome Brunet wrote:
->>>>
->>>> On Thu 21 Nov 2019 at 04:21, Jian Hu <jian.hu@amlogic.com> wrote:
->>>>
->>>>> Hi, Jerome
->>>>>
->>>>> On 2019/11/20 23:35, Jerome Brunet wrote:
->>>>>>
->>>>>> On Wed 20 Nov 2019 at 10:28, Jian Hu <jian.hu@amlogic.com> wrote:
->>>>>>
->>>>>>> Hi, jerome
->>>>>>>
->>>>>>> Is there any problem about fixed_pll_dco's parent_data?
->>>>>>>
->>>>>>> Now both name and fw_name are described in parent_data.
->>>>>>
->>>>>> Yes, there is a problem.=A0 This approach is incorrect, as I've =
-
->>>>>> tried to
->>>>>> explain a couple times already. Let me try to re-summarize why this
->>>>>> approach is incorrect.
->>>>>>
->>>>>> Both fw_name and name should be provided when it is possible that
->>>>>> the DT does not describe the input clock. IOW, it is only for =
-
->>>>>> controllers
->>>>>> which relied on the global name so far and are now starting to =
-
->>>>>> describe
->>>>>> the clock input in DT
->>>>>>
->>>>>> This is not your case.
->>>>>> Your controller is new and DT will have the correct
->>>>>> info
->>>>>>
->>>>>> You are trying work around an ordering issue by providing both =
-
->>>>>> fw_name
->>>>>> and name. This is not correct and I'll continue to nack it.
->>>>>>
->>>>>> If the orphan clock is not reparented as you would expect, I =
-
->>>>>> suggest you
->>>>>> try to look a bit further at how the reparenting of orphans is =
-
->>>>>> done in
->>>>>> CCF and why it does not match your expectation.
->>>>>>
->>>>> I have debugged the handle for orphan clock in CCF, Maybe you are =
-
->>>>> missing
->>>>> the last email.
->>>>
->>>> Nope, got it the first time
->>>>
->>>>> Even though the clock index exit, it will get failed for the orphan =
-
->>>>> clock's
->>>>> parent clock due to it has not beed added to the provider.
->>>>
->>>> If the provider is not registered yet, of course any query to it won't
->>>> work. This why I have suggested to this debug *further* :
->>>>
->>>> * Is the orphan reparenting done when a new provider is registered ?
->>>> * If not, should it be done ? is this your problem ?
->>>>
->>
->> Apparently, I was not clear enough so I'll rephrase
->>
->>> Yes, the orphan reparenting is done when the new provider is
->>> registered.
->>
->> No it is not done yet. Please check the code.
->>
->> The reparenting of orphan is done only on clock registration, not on
->> provider registeration. Now that clocks can be specified by DT, this
->> probably needs to added.The action of reparenting the orphan is before =
-
->> the provider registration =
-
-> with the current code.
->>
->> That is your problem.
-> Yes, if the provider is registered before the clock registration, it
-> will reparent successfully.
->>
->> Please fix the underlying issue, then you can post your series again.
->>
->>>
->>> Reparenting the orphan will be done when each clock is registered by
->>> devm_clk_hw_register. And at this time the provider has not been
->>> registered. After all clocks are registered by devm_clk_hw_register, the
->>> provider will be registered by devm_of_clk_add_hw_provider.
->>>
->>> Reparenting the orphan will fail when fw_name is added alone, the =
-
->>> couse is
->>> that devm_clk_hw_register is always running ahead of
->>> devm_of_clk_add_hw_provider.
->>
->> Please stop bringing the topic of "fw_name" and "name" field together, I
->> told you 3 times why this is wrong. It is not going to change.
->>
->>>
->>> That is why it will failed to get parent for the orphan clock.
->>
->> It fails because the provider is not registered when you try to reparent
->> the orphan.
->>
->> It shows that you should try again once the provider is registered.
->>
-> OK, I have exchanged the position for devm_clk_hw_register and =
-
-> devm_of_clk_add_hw_provider in meson-eeclk.c.
-> =
-
-> It reparents successfully for orphan clock.
-> =
-
-> Is is ok that put devm_of_clk_add_hw_provider ahead?
-> =
-
-> As far as I am concerned, there is no any effect.Sorry, If the provider i=
-s registered first, I find it will affect the =
-
-assigned-clock-parents and assigned-clock-rates configurations in DT =
-
-when the provider is registered.
-
-It will fail to set the assigned parent and assigned rate for one clock =
-
-because of the related clocks are not registered yet.
-
-Moreover, registering provider is always after clock registration in =
-
-other vendor clock drivers.
-
-Maybe registering provider is better after the clock registration.
-
-
->>>
->>>
->>>
->>>>
->>>> .
->>>>
->>
->> .
->>
+> 
+> > Solution:
+> > cfs_rq h_load might not update due to irq disable
+> > use sched_clock instead jiffies
+> > 
+> > Signed-off-by: YT Chang <yt.chang@mediatek.com>
+> > ---
+> >  kernel/sched/fair.c | 4 +++-
+> >  1 file changed, 3 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/kernel/sched/fair.c b/kernel/sched/fair.c
+> > index 83ab35e..231c53f 100644
+> > --- a/kernel/sched/fair.c
+> > +++ b/kernel/sched/fair.c
+> > @@ -7578,9 +7578,11 @@ static void update_cfs_rq_h_load(struct cfs_rq *cfs_rq)
+> >  {
+> >  	struct rq *rq = rq_of(cfs_rq);
+> >  	struct sched_entity *se = cfs_rq->tg->se[cpu_of(rq)];
+> > -	unsigned long now = jiffies;
+> > +	u64 now = sched_clock_cpu(cpu_of(rq));
+> >  	unsigned long load;
+> >  
+> > +	now = now * HZ >> 30;
+> > +
+> >  	if (cfs_rq->last_h_load_update == now)
+> >  		return;
+> >  
+> 
+> This is disguisting and wrong. That is not the correct relation between
+> sched_clock() and jiffies.
 
 _______________________________________________
 linux-arm-kernel mailing list
