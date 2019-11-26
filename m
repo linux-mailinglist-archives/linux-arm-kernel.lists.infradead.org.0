@@ -2,77 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A842710995C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 07:48:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8C8110996C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 08:00:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SUrc9TJg2OQmp27n4B+2AC4OB0Dpw7Kmv6R9ehpNPCI=; b=Cs6z/v70KM/S+2
-	nqu3l04GnY2cIPyesllsmRD8eVX1fkfyJ3hBS3gw5j4yEzMJupGKEUohV0nzpsz91PbNZYAEgfD29
-	wtOa5oszlL1eUhCio9R5wM6CoUegC6/jQUYLLCE+isXAStFPILwU2KKC2Af5MZIJFiuDGcDcrHZU9
-	HVBbVA3G5s82/PGMOH6iS0N6q8Y/8uUljJf37UQpWI01t37Lp2r96FEv08qNuPM5gz5tpjZ8etC2L
-	fGlBWsbjn7yYmN/CkDKAXKSSPdLt0jy/M9Bj1W8fm/noUADMZIL/1K/htymKM2zEyV0R5Sdxb8ypz
-	Bt+ahFOWrJgoQSHt/wRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=p8YY/qAK9dqf0CeO7e6fKtkcJcX/utS86aDSPvzeP28=; b=mfkz319SpUTi1eRYwR23N//iE
+	iI2ahZHe7NFFQcKqlkfXnC1IrvWOiFDlsvXmcXFkK6ZH3N5E6A+yvaaKSBXCawgaW2g+IFtisSAMV
+	q0UgUKHjbjYvQc8gKJivZiG9P6iqVq+3yrGAJjRUGUa4BESjP/LHR3TjjeWrCgZMitBXCEJ3ZS0gc
+	vCqy49P3gXI3xvuSgXwSdfk8WpMY1UL8foJpwIS3kf/W7gQ/OHbbI1LjCjfYs7ocXPyt5NS8M4iHY
+	QdDDSRGr/H8u2qXx+WJXVhOflGyuyYw2c95Y3kTE47/xpZQDEAZmzuAsdtTXuGd1PGSCtgx7L4ZIq
+	2HM/X3kzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZUe0-00063b-8l; Tue, 26 Nov 2019 06:48:16 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZUdq-00062B-I2; Tue, 26 Nov 2019 06:48:07 +0000
-X-UUID: de3c19a8a312425c9adb8b5428a340b6-20191125
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=nJCMS+Zb2KV7c0nSvZbugfFbLOeQLmtQW9fHLXvNcd8=; 
- b=W8UWRg7mFLtpjbxQnhhuA5pfecu16HhXqgmjNdKdrlzarHHfX3l66LPo/L8/Om31OeSym/o9o7Xptl7+IxWESnC6lYPvgSZert8J00GQRZ96a8Cm8v6Yi8o17u8Dxd8JlbMflkGPk1Vsj59mtaTSEZN+mcpVBGXCj4fLsoeQ80E=;
-X-UUID: de3c19a8a312425c9adb8b5428a340b6-20191125
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <yongqiang.niu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1927755642; Mon, 25 Nov 2019 22:47:58 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 25 Nov 2019 22:48:30 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 26 Nov 2019 14:47:51 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 26 Nov 2019 14:48:23 +0800
-From: <yongqiang.niu@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
- Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v1] drm/mediatek: fix up 1440x900 dp display black screen issue
-Date: Tue, 26 Nov 2019 14:47:49 +0800
-Message-ID: <1574750869-12611-1-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
+	id 1iZUpw-0002Lj-14; Tue, 26 Nov 2019 07:00:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iZUpn-0002LC-Tu
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 07:00:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 32FB530E;
+ Mon, 25 Nov 2019 23:00:25 -0800 (PST)
+Received: from [10.163.1.198] (unknown [10.163.1.198])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 92C173F6C4;
+ Mon, 25 Nov 2019 23:03:23 -0800 (PST)
+Subject: Re: [PATCH v2 13/14] arm64: compile the kernel with ptrauth return
+ address signing
+To: Mark Brown <broonie@kernel.org>
+References: <1574166746-27197-1-git-send-email-amit.kachhap@arm.com>
+ <1574166746-27197-14-git-send-email-amit.kachhap@arm.com>
+ <20191121150605.GC4071@sirena.org.uk>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <7cdad21e-d50e-86d4-5ea8-4b85e52f4673@arm.com>
+Date: Tue, 26 Nov 2019 12:30:13 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20191121150605.GC4071@sirena.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_224806_604532_BA8F9E4C 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191125_230028_007017_A3B65A32 
+X-CRM114-Status: GOOD (  19.95  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,44 +64,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Hi Mark,
 
-This patch fix up 1440x900 dp display black screen issue
-the computed result will overflow rdma1 fifo max size
-when external display pixel clock bigger than 74MHZ
+On 11/21/19 8:36 PM, Mark Brown wrote:
+> On Tue, Nov 19, 2019 at 06:02:25PM +0530, Amit Daniel Kachhap wrote:
+> 
+>> +config CC_HAS_BRANCH_PROT_PAC_RET
+>> +	# GCC 9 or later
+>> +	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf)
+> 
+> clang also supports this option, as of clang-8 I think.
 
-Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
----
- drivers/gpu/drm/mediatek/mtk_disp_rdma.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ok. I will test and update the comment here.
+> 
+>> +ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+>> +pac-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
+>> +pac-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
+>> +KBUILD_CFLAGS += $(pac-flags-y)
+>> +endif
+> 
+> This is going to be a bit annoying with BTI as we need to set
+> -mbranch-protection=bti too.  This means we end up with type
+> bti+pac-ret+leaf which is annoying to arrange.  There is the convenient
+> branch protection type standard which does enable both in one option but
+> that only enables non-leaf pac-ret so you need to explicitly spell out
+> pac-ret so you can turn on leaf as well.  I'm not sure I can think of
+> anything much better than adding another case for BTI at the top so we
+> end up with something along the lines of:
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-index c1abde3..41143f5 100644
---- a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-+++ b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-@@ -152,6 +152,10 @@ static void mtk_rdma_config(struct mtk_ddp_comp *comp, unsigned int width,
- 	 * account for blanking, and with a pixel depth of 4 bytes:
- 	 */
- 	threshold = width * height * vrefresh * 4 * 7 / 1000000;
-+
-+	if (threshold > rdma_fifo_size)
-+		threshold = rdma_fifo_size;
-+
- 	reg = RDMA_FIFO_UNDERFLOW_EN |
- 	      RDMA_FIFO_PSEUDO_SIZE(rdma_fifo_size) |
- 	      RDMA_OUTPUT_VALID_FIFO_THRESHOLD(threshold);
--- 
-1.8.1.1.dirty
+Yes. The reason for keeping pac-ret+leaf is to cover all functions in 
+the earlier offline discussions. As you pointed out I can add 
+CC_HAS_BRANCH_PROT_PAC_RET_LEAF config name to make it more meaningful
+> 
+> ifeq ($(CONFIG_ARM64_BTI_KERNEL),y)
+> branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_BTI) := -mbranch-protection=bti+pac-ret+leaf
+> else ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+> branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
+> endif
+> KBUILD_CFLAGS += $(branch-prot-flags-y)
+> 
+> with a separate section for the signed return address bit.  It would be
+> helpful to avoid the immediate refactoring when adding BTI by splitting
+> things up with a more generic name.
+
+I agree with your concern for separate section when BTI support is 
+added. I will do it in my next iteration.
+
+//Amit
+
+> 
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
