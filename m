@@ -2,63 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BA6810A3E5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 19:08:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F249210A3FE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 19:14:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BPTBSk8cd5F9ShucOTxjhfQi2EofvX5IYUfJHnn5QRY=; b=CwwC2P+YI5tTIN
-	YYG7MuV3fuzA1xxYN4RJseNH8Ht5RuiIzTXpNwRRCrcBvB5uyle9NUCiWJmThxkkEmGmOm7MzCgRd
-	hepnrc3S1tkifk7ficbid2N0z7w8vWdlV1CAIGPWuhGGFpp1OdHTKJIBo7gvHMCySQs0FEaZwlkCI
-	Cv2j2Ja7/xy050UJIzZiGqFi0j2BXL3smMkOqwHAuKarNiIEZNYBxQUcPRoX4SetLp0gkAtUz8frF
-	sYMyuBYWQajaFrNuiAB6P0xh5EIliEnudsLclz1xp4UGRIOmGtBN3LnWAT/rzfRty3JyILWqkov0s
-	Wn50RiSxjnkkAaVnpb0w==;
+	List-Owner; bh=FRyOYDF0ovw3zYLuopXHOzSE7YOqtvAKXLaKQerfw3A=; b=MrjNK+hHsOR9mf
+	KUT53plyjacLE/oIdd9cav0IsirRossNDpXJagA++q54jtbN/kd16QOS5/mCBTss4+OqjAtEisABA
+	5rOTO6r+PO1WsNFJ1eR1p9JkWizpZ2hq3Xwt1fDT5hIjwF0VHDQGRr2H8CMIEaF6jVN46fCJP0DNS
+	UA9OuKXzJdmcrbKQpA/mtkTe0JI+slf04f6+AN0znlACGVcycwTq+ZaMjx4jP0vZIwwWr0r3ZQyRu
+	Mt9plj4tBsnpSgUQHAE1ovP2fA0q06RAPDXrmaJkA+c/pFCdpLpMO8QeLpHYmA4pjnSMbFnFMk7os
+	JA1VAPmJddhd7zGYJlvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZfG6-0002sf-W5; Tue, 26 Nov 2019 18:08:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iZfM9-0004oM-4t; Tue, 26 Nov 2019 18:14:33 +0000
+Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::8])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZfF2-00029j-4g
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 18:07:13 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6D93C20835;
- Tue, 26 Nov 2019 18:07:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574791631;
- bh=xgHIkOlT0nceTODXgzK6pno0GYLHq/OcCO+fwm9Gnjw=;
- h=In-Reply-To:References:Subject:Cc:From:To:Date:From;
- b=hmya4l35DUAuZ2/Dyd51BBTKqMcyFZaXKsC9UrV8nczOpspBY9KKNd08XPKMQkCyB
- J0Wi7fwNNrZ1BVahVLq3fOeYEDJr/+LB8D9K+AyZJpQXwyKHGeHcxTl96DSQFinWPE
- LLZpCHyWIdUmh0FbzY7Ps9U9qyXI3Jv0RJvDLKOg=
+ id 1iZfLy-0004np-TU
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 18:14:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1574792059;
+ s=strato-dkim-0002; d=gerhold.net;
+ h=In-Reply-To:References:Message-ID:Subject:Cc:To:From:Date:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=OSfcjOWqKjEeZ9MOEvXJt8HpYhwi0+5UGsPsIQXlIeo=;
+ b=UwhLE2MYkfk/Oh2ku+kXVMpraGWphs18Hp7M8xax91DTEw49DUj3tc1VJ0MIuDQjiD
+ lGbNfWT16XKzLvt8hqZe+jGU1qY2FcI50pTI66LsB3Q0b30xLaM7OeQIlW1BIIA4urTq
+ vB+T+lfWTeT7MrRbWQqSW0gjUwCH7Zj1wNbBggn/jiWUyALZJUNvTglZ/xCoWBHdfKYo
+ kpX9kmYd43p2925rCXsUe++DY7PGIDR0BVxfEL9yocKb/oWjdahzKV4/lwWySAjDH1sB
+ 2r82nbs/6MfZxn9PoT9xWoB2aRXYF7Jo1+Tqj1Tx+E7FLVWWodiIR7t7Ba0bCLQXFesi
+ +7Fw==
+X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVOQ/OcYgojyw4j34+u266EZF6ORJDdfvYtr7wKg=="
+X-RZG-CLASS-ID: mo00
+Received: from gerhold.net by smtp.strato.de (RZmta 45.0.2 AUTH)
+ with ESMTPSA id 304194vAQIEJAQ2
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
+ (Client did not present a certificate);
+ Tue, 26 Nov 2019 19:14:19 +0100 (CET)
+Date: Tue, 26 Nov 2019 19:14:18 +0100
+From: Stephan Gerhold <stephan@gerhold.net>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [PATCH 4/4] ARM: dts: ux500: Fix up DSI controller nodes
+Message-ID: <20191126181418.GC12811@gerhold.net>
+References: <20191126124738.77690-1-linus.walleij@linaro.org>
+ <20191126124738.77690-4-linus.walleij@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20191115162901.17456-8-manivannan.sadhasivam@linaro.org>
-References: <20191115162901.17456-1-manivannan.sadhasivam@linaro.org>
- <20191115162901.17456-8-manivannan.sadhasivam@linaro.org>
-Subject: Re: [PATCH v7 7/7] MAINTAINERS: Add entry for BM1880 SoC clock driver
-From: Stephen Boyd <sboyd@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- mturquette@baylibre.com, robh+dt@kernel.org
-User-Agent: alot/0.8.1
-Date: Tue, 26 Nov 2019 10:07:10 -0800
-Message-Id: <20191126180711.6D93C20835@mail.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20191126124738.77690-4-linus.walleij@linaro.org>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_100712_255139_E6953FD3 
-X-CRM114-Status: UNSURE (   6.20  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191126_101423_537994_FDE7C96F 
+X-CRM114-Status: GOOD (  14.19  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5300:0:0:8 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -66,7 +72,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,24 +83,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- darren.tsao@bitmain.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, fisher.cheng@bitmain.com,
- alec.lin@bitmain.com, linux-clk@vger.kernel.org, haitao.suo@bitmain.com
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Manivannan Sadhasivam (2019-11-15 08:29:01)
-> Add MAINTAINERS entry for Bitmain BM1880 SoC clock driver.
+On Tue, Nov 26, 2019 at 01:47:38PM +0100, Linus Walleij wrote:
+> These nodes should be named dsi-controller@* so fix it up.
+
+The device tree specification suggests "dsi@*" as far as I can tell:
+https://github.com/devicetree-org/devicetree-specification/commit/424946c228baca7b49df2be8fdd8ccda18a8b8f6
+
 > 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Cc: Stephan Gerhold <stephan@gerhold.net>
+> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 > ---
-
-Applied to clk-next
-
+>  arch/arm/boot/dts/ste-dbx5x0.dtsi             | 6 +++---
+>  arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi | 2 +-
+>  arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi | 2 +-
+>  3 files changed, 5 insertions(+), 5 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/ste-dbx5x0.dtsi b/arch/arm/boot/dts/ste-dbx5x0.dtsi
+> index 4e02b1b6c0bf..f4fb782d3afc 100644
+> --- a/arch/arm/boot/dts/ste-dbx5x0.dtsi
+> +++ b/arch/arm/boot/dts/ste-dbx5x0.dtsi
+> @@ -1092,7 +1092,7 @@
+>  			ranges;
+>  			status = "disabled";
+>  
+> -			dsi0: dsi@a0351000 {
+> +			dsi0: dsi-controller@a0351000 {
+>  				compatible = "ste,mcde-dsi";
+>  				reg = <0xa0351000 0x1000>;
+>  				clocks = <&prcmu_clk PRCMU_DSI0CLK>, <&prcmu_clk PRCMU_DSI0ESCCLK>;
+> @@ -1100,7 +1100,7 @@
+>  				#address-cells = <1>;
+>  				#size-cells = <0>;
+>  			};
+> -			dsi1: dsi@a0352000 {
+> +			dsi1: dsi-controller@a0352000 {
+>  				compatible = "ste,mcde-dsi";
+>  				reg = <0xa0352000 0x1000>;
+>  				clocks = <&prcmu_clk PRCMU_DSI1CLK>, <&prcmu_clk PRCMU_DSI1ESCCLK>;
+> @@ -1108,7 +1108,7 @@
+>  				#address-cells = <1>;
+>  				#size-cells = <0>;
+>  			};
+> -			dsi2: dsi@a0353000 {
+> +			dsi2: dsi-controller@a0353000 {
+>  				compatible = "ste,mcde-dsi";
+>  				reg = <0xa0353000 0x1000>;
+>  				/* This DSI port only has the Low Power / Energy Save clock */
+> diff --git a/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi b/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
+> index e024520f4d47..de82b9db956f 100644
+> --- a/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
+> +++ b/arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
+> @@ -66,7 +66,7 @@
+>  		mcde@a0350000 {
+>  			status = "okay";
+>  
+> -			dsi@a0351000 {
+> +			dsi-controller@a0351000 {
+>  				panel {
+>  					compatible = "samsung,s6d16d0";
+>  					reg = <0>;
+> diff --git a/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi b/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
+> index cb3677f0a1cb..9f285c7cf914 100644
+> --- a/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
+> +++ b/arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
+> @@ -45,7 +45,7 @@
+>  		mcde@a0350000 {
+>  			status = "okay";
+>  
+> -			dsi@a0351000 {
+> +			dsi-controller@a0351000 {
+>  				panel {
+>  					compatible = "sony,acx424akp";
+>  					reg = <0>;
+> -- 
+> 2.23.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
