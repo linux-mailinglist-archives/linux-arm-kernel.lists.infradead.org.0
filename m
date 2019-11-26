@@ -2,171 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2194B109A31
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 09:31:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 940A7109A84
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 09:50:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vsqVm16ufISPCRAW3sBw9oWkYVPqbTa4bshitBQP8rg=; b=nHs+q5+94IbZ4g
-	N89Wcw0dFXxowhCnxY2/w7DZXUYCPM7Yi6OOf3aPNTAazsw4ljX2/27DzV7QJDV1vt9IvO38OAZj6
-	/Ejr1KkDw7HFLhDIebezV9oBnGmtxKkZqvSyZOtv64WQXjZa7+aPKYzgYzN1sxT90LxwbVmJG0EDL
-	7tjH5U3SQKikMHTYKm45SMDOf6pe8Q4iy0wVdMxpB4DzwWrNTzjuVQjOYg+n2UfBqMYS01G7Bo4I/
-	WKeiG3Yum1RVHR7jrHoR9RfuskYxNIa9Ro2p9J+r2LmuCb60kIf2Y31ZLPR78zi2k+moaRoytmyyX
-	ef/9pqZpxB9DIiNQ5ilA==;
+	List-Owner; bh=nVqoslDd0owW+VdUhWyeBlfozZIKD4caXJPve4m2RIY=; b=m/Grhcxq/wdAYF
+	OagnURS0WEF5P3sOSGkc+scdGmsyZr9EOC1dHilAc/xycmQzprLpqrOj3XwJyAYqcCG1i+XAT3yC9
+	lQkKGEY5DHd4bGU5GKR94F7+iAQb3jR68ExWREnOr5FmY67ab4yHPBfDfFUU3NuyfiYfQGu5hBn90
+	iaKKQgWGQGNxGXeIIDXGRCvACQnhf9QMAnFx+XsBZYoWfVKp+BRxp5f8ODWEXXPFJJez2MeHLnmi9
+	RJ63SFb1Vr+OKFSbYrETwjv4Xv6L5o6Zkk/Q2AhKm0hzesIWtE6zfSmpdE1aVohR5m54wDoS/DQW2
+	e9/0GzhqbVpgNpE4nxcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZWFo-0006D1-Kc; Tue, 26 Nov 2019 08:31:24 +0000
-Received: from mail-eopbgr150075.outbound.protection.outlook.com
- ([40.107.15.75] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1iZWY2-0003AC-ML; Tue, 26 Nov 2019 08:50:14 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZWFf-0006CK-1W
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 08:31:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2gh7o1PaB51MDokxlVtsTJm7/H2ENFR/NWoNxMTPOxs=;
- b=DCVKv5M/wH6YlXPtrsh8Dt2sanLV2PkpVMYdW3soc2FK/ZaXznYGWBL2SSRoYvKtyeCdp+NxzaEEAOwMgj2mlS00O/51aDdLcqW9tcScQErb40x9+SBgw52WoWXX1m3CWwRIjW1r839+QLdaozLaXTw0xfyRH6quwDWTRLRvDg4=
-Received: from VI1PR08CA0121.eurprd08.prod.outlook.com (2603:10a6:800:d4::23)
- by VE1PR08MB4991.eurprd08.prod.outlook.com (2603:10a6:803:110::16)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2474.17; Tue, 26 Nov
- 2019 08:31:08 +0000
-Received: from DB5EUR03FT006.eop-EUR03.prod.protection.outlook.com
- (2a01:111:f400:7e0a::205) by VI1PR08CA0121.outlook.office365.com
- (2603:10a6:800:d4::23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2474.17 via Frontend
- Transport; Tue, 26 Nov 2019 08:31:08 +0000
-Authentication-Results: spf=pass (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org;
- dmarc=bestguesspass action=none header.from=arm.com;
-Received-SPF: Pass (protection.outlook.com: domain of arm.com designates
- 63.35.35.123 as permitted sender) receiver=protection.outlook.com;
- client-ip=63.35.35.123; helo=64aa7808-outbound-1.mta.getcheckrecipient.com;
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- DB5EUR03FT006.mail.protection.outlook.com (10.152.20.106) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2474.17 via Frontend Transport; Tue, 26 Nov 2019 08:31:07 +0000
-Received: ("Tessian outbound f7868d7ede10:v33");
- Tue, 26 Nov 2019 08:31:04 +0000
-X-CR-MTA-TID: 64aa7808
-Received: from 473ca04911d7.2 (ip-172-16-0-2.eu-west-1.compute.internal
- [104.47.2.50]) by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- B4020F65-33DE-4F9F-B1FD-73763AF0D7A7.1; 
- Tue, 26 Nov 2019 08:30:59 +0000
-Received: from EUR01-DB5-obe.outbound.protection.outlook.com
- (mail-db5eur01lp2050.outbound.protection.outlook.com [104.47.2.50])
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 473ca04911d7.2
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
- Tue, 26 Nov 2019 08:30:59 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MRyOHXukHH1RgaX9E1kcvZBTzlU7yhZypQYK+Sv6LDmM4qY0IKAGOFQLTastCRE9FjEUkDmjv2sFvFRXX5bRVzRMYIRabjz7wxAlQ24kdcgePubvZDgktoXTsVB97cFz98+zBy386xVAkuNeRmqNl4ejAwdzRN//QEdo/ay+DzfYBcMOJO7HWYVUGzj1DELWsrnTn4dpFGa/mDBF9EpBRPpElGnoYCDuM/flej3glhWk2aylNb3gQhguoFUTsIqrRas/Z/BmoYWXfIcA/PmN4GEf90Y4q9Z1L+34hfUVpPu1an8fUkHNOeO8W8vXuXb0ujfXgFE3isRUs1ulb+e0Pg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2gh7o1PaB51MDokxlVtsTJm7/H2ENFR/NWoNxMTPOxs=;
- b=TjAXW8tHInpEMrP8lpeX3qtZ5ALjgqzIdmOvxH6gQRIp4Zt19vIMK6xj9CUi7uYT2ArFDngG2oVnUhq5YWdkT+lrQvARLKNdC9WDSv+hI4EMl+JEYttZuUzRcXER/c7yfBgW41EIvOwlzJE7+WND3LlW9Gf69oooGHthhvjwNvZi3Y5Kphl/PoJ8Rb9RISW1xruaEALErLkqUGFSVOJQmiQaVd+0v2Hkm6Egq3GgyBTlB7Yg2tOQUyTJQu/nCrY9vg4pdzQf+7FMuwZmXOVaGbk7yeNa+oZscVCCdt/taX8Doou8MrRabQhnOr/daAl249qkVoHBVbPhIhTJ20eleA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
- header.d=arm.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2gh7o1PaB51MDokxlVtsTJm7/H2ENFR/NWoNxMTPOxs=;
- b=DCVKv5M/wH6YlXPtrsh8Dt2sanLV2PkpVMYdW3soc2FK/ZaXznYGWBL2SSRoYvKtyeCdp+NxzaEEAOwMgj2mlS00O/51aDdLcqW9tcScQErb40x9+SBgw52WoWXX1m3CWwRIjW1r839+QLdaozLaXTw0xfyRH6quwDWTRLRvDg4=
-Received: from HE1PR0801MB1676.eurprd08.prod.outlook.com (10.168.146.150) by
- HE1PR0801MB2090.eurprd08.prod.outlook.com (10.168.93.22) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2474.19; Tue, 26 Nov 2019 08:30:57 +0000
-Received: from HE1PR0801MB1676.eurprd08.prod.outlook.com
- ([fe80::453c:d9b6:5398:2294]) by HE1PR0801MB1676.eurprd08.prod.outlook.com
- ([fe80::453c:d9b6:5398:2294%8]) with mapi id 15.20.2474.023; Tue, 26 Nov 2019
- 08:30:56 +0000
-From: "Jianyong Wu (Arm Technology China)" <Jianyong.Wu@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: RE: [RFC PATCH v8 3/8] ptp: Reorganize ptp_kvm modules to make it
- arch-independent.
-Thread-Topic: [RFC PATCH v8 3/8] ptp: Reorganize ptp_kvm modules to make it
- arch-independent.
-Thread-Index: AQHVo32GHa+cuSKk4Ea1AvmwxiCr5KecCFoAgAEQ+AA=
-Date: Tue, 26 Nov 2019 08:30:56 +0000
-Message-ID: <HE1PR0801MB1676DCFA2490D1DB58C14A4AF4450@HE1PR0801MB1676.eurprd08.prod.outlook.com>
-References: <20191125104506.36850-1-jianyong.wu@arm.com>
- <20191125104506.36850-4-jianyong.wu@arm.com>
- <a13a4f9554f36a46781308358fc63519@www.loen.fr>
-In-Reply-To: <a13a4f9554f36a46781308358fc63519@www.loen.fr>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ts-tracking-id: eab09f93-49f9-45f2-95e1-7cc5d9b54db5.1
-x-checkrecipientchecked: true
-Authentication-Results-Original: spf=none (sender IP is )
- smtp.mailfrom=Jianyong.Wu@arm.com; 
-x-originating-ip: [113.29.88.7]
-x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: e1998071-0b37-48d9-84f9-08d7724afc34
-X-MS-TrafficTypeDiagnostic: HE1PR0801MB2090:|HE1PR0801MB2090:|VE1PR08MB4991:
-x-ms-exchange-transport-forked: True
-X-Microsoft-Antispam-PRVS: <VE1PR08MB4991B638DF8DAA1D7AC1B240F4450@VE1PR08MB4991.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-x-ms-oob-tlc-oobclassifiers: OLM:1169;OLM:1169;
-x-forefront-prvs: 0233768B38
-X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(39860400002)(346002)(136003)(396003)(366004)(13464003)(189003)(199004)(7696005)(4326008)(5660300002)(76116006)(186003)(76176011)(66476007)(99286004)(66446008)(64756008)(66556008)(66946007)(55016002)(52536014)(9686003)(25786009)(316002)(6436002)(256004)(446003)(11346002)(81156014)(71200400001)(7416002)(8936002)(478600001)(6916009)(54906003)(66066001)(74316002)(3846002)(33656002)(7736002)(6116002)(55236004)(102836004)(6506007)(4001150100001)(53546011)(6246003)(81166006)(8676002)(26005)(14454004)(86362001)(229853002)(305945005)(2906002)(71190400001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:HE1PR0801MB2090;
- H:HE1PR0801MB1676.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original: KfWg/d16QuwQByxjM04tH7Spmgy7WBbpSnXmDQaCEVoDPEVb5MKKK1e+Sm6477D0CTkFbgQxI8ZP/UoAcYl+SQImeDlvjf/tErzKpouv32vArq4erj3MQtbP03kuhiDHO51zFogk02JrBmyhDQ83OBYMZbU1ot8J1qEHYaC17WPPkaCw42FuojYx3H3La31DDLp/YgXYYWDnt28nr/nhPqIvD28ttBbRez1TMXTOh+UJQ66v7wlCFyO10KqmbrakBH49nPAvyFidsQwpIvN4UjbKqUBzPXve1O9TOM4B76cPkkXZah3QEAUd8k6pZjbGAmh3CWxFm/7PmpxhwzF2I/e5p17SpswBZAtmha4SbpOtn5n+mCz8KeJ5Kk2l74pUepKHmTjaox2t66bMi2pV9YPB0oLc8wLdqd5xgfxkBboikmScyn4EzPcHy8wWnqLX
+ id 1iZWXk-00038e-Jw
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 08:49:58 +0000
+Received: by mail-wm1-x341.google.com with SMTP id b11so2201625wmb.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 Nov 2019 00:49:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=date:from:to:cc:subject:message-id:mail-followup-to:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=DUtjpPtkEsRpnKDWBnpzqjjyBxag8OPmqd6JOmJKLE0=;
+ b=RG4wRfHxRj9Qb9AR2jkewfbyRygSxuNhmBMPzHw0SgwgvyIf95RyWowW4Ogq5xeClo
+ XqrZI9LEeq0dkgOLxKpwtT7E5/7drxB+RAZJrsscD6RAHmXB4qkhq8csKlPJPsopYjQI
+ F+oHw6bcRAxFD/vfLcdteppRAx93loxCWp/1I=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id
+ :mail-followup-to:references:mime-version:content-disposition
+ :in-reply-to:user-agent;
+ bh=DUtjpPtkEsRpnKDWBnpzqjjyBxag8OPmqd6JOmJKLE0=;
+ b=JYs6uHNpu8w8cSebH+TZdq7wrM1JVrysO6B7IvuDXyn4/GndQYT8xJ1ro9/0+/6e0V
+ hkESdXnpvZhhF2gJRiXCAa1Bv4Oh4J1wgvh0px8A+9InqwAZijo+n/yfdm2X/TDJGkw8
+ hkRvRwPRmA2WqPBAWP8THjOzGUFKCU43hKCwnIlzWqoIImGi3xZn2Y3EdgxosBHI9f2g
+ v1N5jZo/24qXwAqG6ldqofxCXN2YkPKoKbiShdTrGXBVXhARIykvThaNxg59vzWU41lP
+ fqZwueCx9f9TJf9AxWv1eKNFR2hc9t1cf0KfEZgnn7EK5whaz9M0JhvLIofCIO2ecu+N
+ eiHw==
+X-Gm-Message-State: APjAAAVXZMvWDu9y1EuNZoFNGqrQm37s6YBlrY10U/7akPzr2Vp/QSyo
+ 3lmYLhIKgb8E4KTCTyqaPksZIA==
+X-Google-Smtp-Source: APXvYqy5WG5c7JXt9dC40vUTZVQYm+2vxwyYFnAd8BsPjddOuYm1VMvO4MuyIRX+JTtJdP4VDC644A==
+X-Received: by 2002:a7b:c01a:: with SMTP id c26mr2919463wmb.160.1574758194415; 
+ Tue, 26 Nov 2019 00:49:54 -0800 (PST)
+Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
+ [212.51.149.96])
+ by smtp.gmail.com with ESMTPSA id u203sm2288683wme.34.2019.11.26.00.49.53
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 26 Nov 2019 00:49:53 -0800 (PST)
+Date: Tue, 26 Nov 2019 09:49:51 +0100
+From: Daniel Vetter <daniel@ffwll.ch>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Subject: Re: [PATCH 1/7] drm/mediatek: fix atomic_state reference counting
+Message-ID: <20191126084951.GQ29965@phenom.ffwll.local>
+Mail-Followup-To: Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ David Airlie <airlied@linux.ie>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ YT Shen <yt.shen@mediatek.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ CK Hu <ck.hu@mediatek.com>, linux-arm-kernel@lists.infradead.org,
+ tfiga@chromium.org, drinkcat@chromium.org,
+ linux-kernel@vger.kernel.org, srv_heupstream@mediatek.com
+References: <20191126062932.19773-1-bibby.hsieh@mediatek.com>
+ <20191126062932.19773-2-bibby.hsieh@mediatek.com>
 MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0801MB2090
-Original-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=Jianyong.Wu@arm.com; 
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: DB5EUR03FT006.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
- EFV:NLI; SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(136003)(396003)(39860400002)(199004)(189003)(13464003)(26005)(22756006)(52536014)(8676002)(6246003)(81166006)(81156014)(47776003)(50466002)(33656002)(70206006)(4326008)(70586007)(6862004)(76130400001)(8936002)(316002)(106002)(54906003)(74316002)(356004)(7736002)(305945005)(5660300002)(25786009)(99286004)(26826003)(478600001)(102836004)(76176011)(6506007)(9686003)(14454004)(66066001)(436003)(229853002)(3846002)(2906002)(6116002)(53546011)(7696005)(23676004)(446003)(55016002)(186003)(336012)(2486003)(11346002)(4001150100001)(86362001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR08MB4991;
- H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:Pass; LANG:en;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; A:1; MX:1; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 019346ed-ce47-4a0e-81ff-08d7724af583
-NoDisclaimer: True
-X-Forefront-PRVS: 0233768B38
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: NJc8xDP7UZUo17t6ttoJiNOKaXcphiYbpcTX4I5CXZ1HXYLrdUiNDZ99RuI4PU2mhpq7gZq0W+nZW8ZkjcObvVtIt//1h+VCRFGyQ5TOawwtJ1pzuVbPyrF9sNML/inxbGxHFS7xQTxk9nTQHQ+Xe8kjGetNwfdnb/HUUZFCt0zG0SgMW0kETB1xkcdkqY8V0jFpKi7QVe7uE5+r+/ZouDkAc3dwBEMzWLHTN+fMIdUg/vUCdpWB92yltyaxXwrQ5Xcx/lloKuApQc+5KfK/x3zt1KyLxGBmhp60l9F2SLDM8Yll2QGGaCzHxF5dHNLobtyqP/Jxh9r5TPUhjOwRsB0Heos3O0gnW+eoXowSy/lx/tvUPoKzsKG/BJKFSETQUHgO5ha5gQE5K9kQ3SVoQH6zu49uGUwPNZGjqyMjRGY/fjIRZvRphC5haKpoc/+N
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Nov 2019 08:31:07.9540 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: e1998071-0b37-48d9-84f9-08d7724afc34
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR08MB4991
+Content-Disposition: inline
+In-Reply-To: <20191126062932.19773-2-bibby.hsieh@mediatek.com>
+X-Operating-System: Linux phenom 5.3.0-2-amd64 
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_003115_169165_9D5C9726 
-X-CRM114-Status: GOOD (  19.79  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191126_004956_658780_FF702C72 
+X-CRM114-Status: GOOD (  27.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.75 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -178,107 +108,244 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- "Justin He \(Arm Technology China\)" <Justin.He@arm.com>,
- "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "richardcochran@gmail.com" <richardcochran@gmail.com>,
- Steve Capper <Steve.Capper@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
- "Kaly Xin \(Arm Technology China\)" <Kaly.Xin@arm.com>,
- "john.stultz@linaro.org" <john.stultz@linaro.org>,
- "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
- "pbonzini@redhat.com" <pbonzini@redhat.com>,
- "tglx@linutronix.de" <tglx@linutronix.de>, nd <nd@arm.com>,
- "will@kernel.org" <will@kernel.org>,
- "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: drinkcat@chromium.org, srv_heupstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ tfiga@chromium.org, YT Shen <yt.shen@mediatek.com>, CK Hu <ck.hu@mediatek.com>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+On Tue, Nov 26, 2019 at 02:29:26PM +0800, Bibby Hsieh wrote:
+> The DRM core takes care of all atomic state refcounting.
+> However, mediatek drm defers some work that accesses planes
+> and plane_states in drm_atomic_state, and must therefore
+> keep its own atomic state references until this work complete.
+> 
+> We take the atomic_state reference in atomic_fulsh() and ensure all the
+> information in atomic_state already was updated in hardware for
+> showing on screen and then schedules unreference_work to drop references
+> on atomic_state.
+> 
+> Fixes: 119f5173628a ("drm/mediatek: Add DRM Driver for Mediatek SoC MT8173.")
+> 
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
 
-> -----Original Message-----
-> From: Marc Zyngier <maz@kernel.org>
-> Sent: Monday, November 25, 2019 11:48 PM
-> To: Jianyong Wu (Arm Technology China) <Jianyong.Wu@arm.com>
-> Cc: netdev@vger.kernel.org; yangbo.lu@nxp.com; john.stultz@linaro.org;
-> tglx@linutronix.de; pbonzini@redhat.com; sean.j.christopherson@intel.com;
-> richardcochran@gmail.com; Mark Rutland <Mark.Rutland@arm.com>;
-> will@kernel.org; Suzuki Poulose <Suzuki.Poulose@arm.com>; linux-
-> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
-> kvmarm@lists.cs.columbia.edu; kvm@vger.kernel.org; Steve Capper
-> <Steve.Capper@arm.com>; Kaly Xin (Arm Technology China)
-> <Kaly.Xin@arm.com>; Justin He (Arm Technology China)
-> <Justin.He@arm.com>; nd <nd@arm.com>
-> Subject: Re: [RFC PATCH v8 3/8] ptp: Reorganize ptp_kvm modules to make it
-> arch-independent.
-> 
-> On 2019-11-25 10:45, Jianyong Wu wrote:
-> > Currently, ptp_kvm modules implementation is only for x86 which
-> > includs large part of arch-specific code.  This patch move all of
-> > those code into new arch related file in the same directory.
-> >
-> > Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
-> > ---
-> >  drivers/ptp/Makefile                        |  1 +
-> >  drivers/ptp/{ptp_kvm.c => ptp_kvm_common.c} | 77 +++++-------------
-> >  drivers/ptp/ptp_kvm_x86.c                   | 87
-> > +++++++++++++++++++++
-> >  include/asm-generic/ptp_kvm.h               | 12 +++
-> >  4 files changed, 118 insertions(+), 59 deletions(-)  rename
-> > drivers/ptp/{ptp_kvm.c => ptp_kvm_common.c} (63%)  create mode
-> 100644
-> > drivers/ptp/ptp_kvm_x86.c  create mode 100644
-> > include/asm-generic/ptp_kvm.h
-> 
-> [...]
-> 
-> > diff --git a/include/asm-generic/ptp_kvm.h
-> > b/include/asm-generic/ptp_kvm.h new file mode 100644 index
-> > 000000000000..e5dd386f6664
-> > --- /dev/null
-> > +++ b/include/asm-generic/ptp_kvm.h
-> > @@ -0,0 +1,12 @@
-> > +/* SPDX-License-Identifier: GPL-2.0-only */
-> > +/*
-> > + *  Virtual PTP 1588 clock for use with KVM guests
-> > + *
-> > + *  Copyright (C) 2019 ARM Ltd.
-> 
-> I think you should live the original copyright assignment here.
-> This really isn't anything new.
-> 
+This looks strange. For one you implement your own reference counting - if
+drivers have a need for drm_atomic_state_put_irq then I
+think we should implement this in the core code.
 
-Ok,
+The other bit is that atomic commits are meant to simply wait for
+everything to finish - commit_tail doesn't hold locks, it's only ordered
+through drm_crtc_commit events (at least with the async implementation in
+the helpers), so you can just block there until your interrupt handler is
+done processing the commit. Depending how you want to do this you might
+want to wait before or after drm_atomic_helper_commit_hw_done().
+-Daniel
 
-> > + *  All Rights Reserved
-> > + */
-> > +
-> > +int kvm_arch_ptp_init(void);
-> > +int kvm_arch_ptp_get_clock(struct timespec64 *ts); int
-> > +kvm_arch_ptp_get_crosststamp(unsigned long *cycle,
-> > +		struct timespec64 *tspec, void *cs);
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 11 +++-
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 79 +++++++++++++++++++++++++
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.h  |  9 +++
+>  3 files changed, 97 insertions(+), 2 deletions(-)
 > 
-> Why is this include file in asm-generic? This isn't a kernel-wide API.
-> 
-> I think it should be sitting in drivers/ptp, as it is only shared between the
-> generic and arch-specific stuff.
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index 29d0582e90e9..68b92adc96bb 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -7,7 +7,7 @@
+>  #include <linux/pm_runtime.h>
+>  
+>  #include <asm/barrier.h>
+> -
+> +#include <drm/drm_atomic.h>
+>  #include <drm/drm_atomic_helper.h>
+>  #include <drm/drm_plane_helper.h>
+>  #include <drm/drm_probe_helper.h>
+> @@ -47,6 +47,7 @@ struct mtk_drm_crtc {
+>  	struct mtk_disp_mutex		*mutex;
+>  	unsigned int			ddp_comp_nr;
+>  	struct mtk_ddp_comp		**ddp_comp;
+> +	struct drm_crtc_state		*old_crtc_state;
+>  };
+>  
+>  struct mtk_crtc_state {
+> @@ -362,6 +363,7 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+>  static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+>  {
+>  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+> +	struct drm_atomic_state *atomic_state = mtk_crtc->old_crtc_state->state;
+>  	struct mtk_crtc_state *state = to_mtk_crtc_state(mtk_crtc->base.state);
+>  	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
+>  	unsigned int i;
+> @@ -399,6 +401,7 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+>  			plane_state->pending.config = false;
+>  		}
+>  		mtk_crtc->pending_planes = false;
+> +		mtk_atomic_state_put_queue(atomic_state);
+>  	}
+>  }
+>  
+> @@ -494,6 +497,7 @@ static void mtk_drm_crtc_atomic_begin(struct drm_crtc *crtc,
+>  static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
+>  				      struct drm_crtc_state *old_crtc_state)
+>  {
+> +	struct drm_atomic_state *old_atomic_state = old_crtc_state->state;
+>  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+>  	struct mtk_drm_private *priv = crtc->dev->dev_private;
+>  	unsigned int pending_planes = 0;
+> @@ -512,8 +516,11 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
+>  			pending_planes |= BIT(i);
+>  		}
+>  	}
+> -	if (pending_planes)
+> +	if (pending_planes) {
+>  		mtk_crtc->pending_planes = true;
+> +		drm_atomic_state_get(old_atomic_state);
+> +		mtk_crtc->old_crtc_state = old_crtc_state;
+> +	}
+>  	if (crtc->state->color_mgmt_changed)
+>  		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
+>  			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i], crtc->state);
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index 6588dc6dd5e3..6c68283b6124 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -115,10 +115,85 @@ static int mtk_atomic_commit(struct drm_device *drm,
+>  	return 0;
+>  }
+>  
+> +struct mtk_atomic_state {
+> +	struct drm_atomic_state base;
+> +	struct list_head list;
+> +};
+> +
+> +static inline struct mtk_atomic_state *to_mtk_state(struct drm_atomic_state *s)
+> +{
+> +	return container_of(s, struct mtk_atomic_state, base);
+> +}
+> +
+> +void mtk_atomic_state_put_queue(struct drm_atomic_state *state)
+> +{
+> +	struct drm_device *drm = state->dev;
+> +	struct mtk_drm_private *mtk_drm = drm->dev_private;
+> +	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
+> +	list_add_tail(&mtk_state->list, &mtk_drm->unreference.list);
+> +	spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
+> +
+> +	schedule_work(&mtk_drm->unreference.work);
+> +}
+> +
+> +static void mtk_unreference_work(struct work_struct *work)
+> +{
+> +	struct mtk_drm_private *mtk_drm = container_of(work,
+> +			struct mtk_drm_private, unreference.work);
+> +	unsigned long flags;
+> +	struct mtk_atomic_state *state, *tmp;
+> +
+> +	/*
+> +	 * framebuffers cannot be unreferenced in atomic context.
+> +	 * Therefore, only hold the spinlock when iterating unreference_list,
+> +	 * and drop it when doing the unreference.
+> +	 */
+> +	spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
+> +	list_for_each_entry_safe(state, tmp, &mtk_drm->unreference.list, list) {
+> +		list_del(&state->list);
+> +		spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
+> +		drm_atomic_state_put(&state->base);
+> +		spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
+> +	}
+> +	spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
+> +}
+> +
+> +static struct drm_atomic_state *
+> +		mtk_drm_atomic_state_alloc(struct drm_device *dev)
+> +{
+> +	struct mtk_atomic_state *mtk_state;
+> +
+> +	mtk_state = kzalloc(sizeof(*mtk_state), GFP_KERNEL);
+> +	if (!mtk_state)
+> +		return NULL;
+> +
+> +	if (drm_atomic_state_init(dev, &mtk_state->base) < 0) {
+> +		kfree(mtk_state);
+> +		return NULL;
+> +	}
+> +
+> +	INIT_LIST_HEAD(&mtk_state->list);
+> +
+> +	return &mtk_state->base;
+> +}
+> +
+> +static void mtk_drm_atomic_state_free(struct drm_atomic_state *state)
+> +{
+> +	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
+> +
+> +	drm_atomic_state_default_release(state);
+> +	kfree(mtk_state);
+> +}
+> +
+>  static const struct drm_mode_config_funcs mtk_drm_mode_config_funcs = {
+>  	.fb_create = mtk_drm_mode_fb_create,
+>  	.atomic_check = drm_atomic_helper_check,
+>  	.atomic_commit = mtk_atomic_commit,
+> +	.atomic_state_alloc = mtk_drm_atomic_state_alloc,
+> +	.atomic_state_free = mtk_drm_atomic_state_free
+>  };
+>  
+>  static const enum mtk_ddp_comp_id mt2701_mtk_ddp_main[] = {
+> @@ -337,6 +412,10 @@ static int mtk_drm_kms_init(struct drm_device *drm)
+>  	drm_kms_helper_poll_init(drm);
+>  	drm_mode_config_reset(drm);
+>  
+> +	INIT_WORK(&private->unreference.work, mtk_unreference_work);
+> +	INIT_LIST_HEAD(&private->unreference.list);
+> +	spin_lock_init(&private->unreference.lock);
+> +
+>  	return 0;
+>  
+>  err_unset_dma_parms:
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> index b6a82728d563..c37d835cf949 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> @@ -55,6 +55,13 @@ struct mtk_drm_private {
+>  
+>  	struct drm_atomic_state *suspend_state;
+>  
+> +	struct {
+> +		struct work_struct	work;
+> +		struct list_head	list;
+> +		/* lock for unreference list */
+> +		spinlock_t		lock;
+> +	} unreference;
+> +
+>  	bool dma_parms_allocated;
+>  };
+>  
+> @@ -66,4 +73,6 @@ extern struct platform_driver mtk_dpi_driver;
+>  extern struct platform_driver mtk_dsi_driver;
+>  extern struct platform_driver mtk_mipi_tx_driver;
+>  
+> +void mtk_atomic_state_put_queue(struct drm_atomic_state *state);
+> +
+>  #endif /* MTK_DRM_DRV_H */
+> -- 
+> 2.18.0
 
-Ok, all these APIs used under driver/ptp, so it's better to move that header file into it.
+-- 
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
 
-Thanks
-Jianyong
-> 
-> Thanks,
-> 
->          M.
-> --
-> Jazz is not dead. It just smells funny...
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
