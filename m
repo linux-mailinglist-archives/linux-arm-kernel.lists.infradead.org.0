@@ -2,56 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0996A10A43A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 19:52:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEBBF10A4A0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 20:36:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+KyyWz6ZxZX+zNQx0HEIovzJ4NBoF5LW7xc6K932Mtc=; b=E3TXmnFW052SqO8p6zpuOKiPa
-	Mv3TBW+SoPn2z2arZ2QNqK9RZMhf1/x9GlJ5ra3q48B2TLyfk/ymIqVamE2F99MSTXHCpILsUasb9
-	lXOp4dPSN7prb/yKlsx+9vPeh1luocZ37CR2uioMm3XPlRxff/hH4E/i6GV+zlo3bqR/awUSHxwvS
-	zwh5ats0MuNw3OlCBmBB/L694Evf0wONTApXywSxyLF273rbmNj2N0AxvsxGE90SKGM2eDGrA9BRF
-	USYBoqhvHzPmU14lUrksVE1RWEbLczJynmiKnfggaQmmo8orL97Wv3tJa1tT30xt4VFp9sivBnCRA
-	dh1JbguJA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=cBZ2qVi0gSg7OShOYUfpCiqzD6fIykye0EA9oToREJE=; b=CcRXsdD/Mn2sYW4Oa1CGL15b6r
+	cGbtkdToVotS5ulHa0RhUYVmoZ8BtWx69R0y4FbCGfuWEWdDl3EjTqp/EDfXXXdptHncqNbH8AKL+
+	FHt9hhkJBTrJ128mCWdcdsvvO7/3kJ9jj4M8j2PdhveGTigENbOF6cHuki/OeUcMYqy10YWts3i5m
+	lFfsMVAgPc1F3aIXS7QEQsmTuVjEq8GmaJummRQHaCcmzc9cK43JoKLyYrmQzkck2+yiPy+UlsaO2
+	nKIudepHl7Vp2ZbpZPJGHXtpMJG0wq96/6UhLYd5aaaEGBhlQfPv6k7r2pkk65SebNEJ2wvKLGKB+
+	RbD8f2KA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZfwj-00014X-VH; Tue, 26 Nov 2019 18:52:21 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1iZgd1-0008UY-Bs; Tue, 26 Nov 2019 19:36:03 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZfwa-00013o-W0
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 18:52:14 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 38C30ABD6;
- Tue, 26 Nov 2019 18:52:08 +0000 (UTC)
-Message-ID: <45feed391bbd95c46f64b31cf8817d4f773c8da1.camel@suse.de>
-Subject: Re: [PATCH v2] dma-mapping: treat dev->bus_dma_mask as a DMA limit
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>, 
- Nathan Chancellor <natechancellor@gmail.com>
-Date: Tue, 26 Nov 2019 19:51:59 +0100
-In-Reply-To: <0b851d0e-37c7-062e-c287-05f8c8a54c16@arm.com>
-References: <20191121092646.8449-1-nsaenzjulienne@suse.de>
- <20191123165108.GA15306@ubuntu-x2-xlarge-x86>
- <20191125074412.GA30595@lst.de>
- <0b851d0e-37c7-062e-c287-05f8c8a54c16@arm.com>
-User-Agent: Evolution 3.34.1 
+ id 1iZgct-0008To-WB
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 19:35:57 +0000
+Received: by mail-ot1-x342.google.com with SMTP id q23so11136626otn.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 Nov 2019 11:35:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :content-transfer-encoding;
+ bh=HT2M1Xfv+tvpjG1ucYQkF2fvfzcdx/n3wzuhyYktctM=;
+ b=JOLm1AXku5RalOJtjRieB/kQKtK0udRdscDeEXxH1KAHd/fYWGsjz4xkUcLdpDNU4L
+ 3LF5fe0fVVNNP+dspxrYrGnLoyux4FgkHnDl0YpGt74hEHT9r9fZ5SLTycjn5+fy07Lk
+ uq/Bkwg4bYsgKll9SLSzdzC1rkiciuWzGekJqBGenTIabcP8aqXBMUgPtuU1zOvRo6Iy
+ jg/61mts1Vg1P41pVsgPAVb+vVUfGFy+4WeI0e+EFwSdLoATYfQHsd+3/aR5alvw3+XX
+ Q0NpGmPM1EXKaiGqf9+ZtKOC735yL/I9wWudIFHWCSHwQqgLZhGZ1Y7V1blYW8MXGocZ
+ ZPyQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:content-transfer-encoding;
+ bh=HT2M1Xfv+tvpjG1ucYQkF2fvfzcdx/n3wzuhyYktctM=;
+ b=uRwt9Iu1bN/qcEN1FCoCcJ/YpokSFEiCPhifxB7pDINTW3y/yODueQgbSO+i29Z2iF
+ FqRulZR6W0Pz/mc5Vhp/ehrQcKbVNx0ZMUHtikB18uVUZJDBjebAiaOdl5VHiMtHcFsM
+ 1OvBkHstzCAGtV5roR8+IkZvLlWsBIcmfoFdasQC/8CZ7Z2VAb6aPA527Lo5zUS2a3bq
+ gkVbqbeoWZ5YrwfgRIk7Dox758SN3PrNcKGH6XzgdGMewsTWluJTPbWGhP5A9W1c2UpA
+ 0FB6GFSG7RDK9Z0ebrhKMmNHnVV4N2ppt9Om0/COZ9Zf7kSBVYFt1NA+wzyIzCT6FNrn
+ nlrg==
+X-Gm-Message-State: APjAAAXiy+piHn35/fO63ScN0rMvvA3nBYnu4oXTatvAlVuPeKPchUBk
+ xGWVPAmLeKKSn8nHB6MtkEFjxneH36qF+/LrlNk=
+X-Google-Smtp-Source: APXvYqxwy2YH1zXRvoLZhDl2LwHUaPWwfU4ZwllfPWEY5VmEMkXSvMDIFkZLaOj3kJ+NneohsrgZgOhpJ7pdvQg1LaY=
+X-Received: by 2002:a9d:64ce:: with SMTP id n14mr472946otl.263.1574796954091; 
+ Tue, 26 Nov 2019 11:35:54 -0800 (PST)
 MIME-Version: 1.0
+References: <20190810052829.6032-1-tiny.windzz@gmail.com>
+ <20190901215214.f4vbxemdd7mf3gun@core.my.home>
+ <20190902072735.zkrueocyz4glc26n@flea>
+ <20190902105816.zurkkh2vjfexft7t@core.my.home>
+In-Reply-To: <20190902105816.zurkkh2vjfexft7t@core.my.home>
+From: Vasily Khoruzhick <anarsoul@gmail.com>
+Date: Tue, 26 Nov 2019 11:36:37 -0800
+Message-ID: <CA+E=qVdzHGZsazfeZYBA2YZBZv_rSpk7NsV5wbiAFH80cjxajQ@mail.gmail.com>
+Subject: Re: [PATCH v5 00/18] add thermal driver for h6
+To: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, 
+ rui.zhang@intel.com, Eduardo Valentin <edubezval@gmail.com>, 
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Rob Herring <robh+dt@kernel.org>, 
+ Mark Rutland <mark.rutland@arm.com>, Chen-Yu Tsai <wens@csie.org>, 
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jonathan.Cameron@huawei.com, 
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ devicetree <devicetree@vger.kernel.org>, 
+ linux-kernel <linux-kernel@vger.kernel.org>, 
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ Linux PM <linux-pm@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_105213_179040_2C33EF5B 
-X-CRM114-Status: GOOD (  13.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191126_113556_060995_9755EE93 
+X-CRM114-Status: GOOD (  22.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (anarsoul[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,97 +109,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-mips@vger.kernel.org,
- linux-ide@vger.kernel.org, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, Frank Rowand <frowand.list@gmail.com>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Paul Burton <paulburton@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
- Joerg Roedel <joro@8bytes.org>, x86@kernel.org, linux-acpi@vger.kernel.org,
- Ingo Molnar <mingo@redhat.com>, linux-pci@vger.kernel.org,
- James Hogan <jhogan@kernel.org>, Len Brown <lenb@kernel.org>,
- devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Jens Axboe <axboe@kernel.dk>, "Rafael J.
- Wysocki" <rjw@rjwysocki.net>, Hanjun Guo <guohanjun@huawei.com>,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- iommu@lists.linux-foundation.org, Sudeep Holla <sudeep.holla@arm.com>,
- linuxppc-dev@lists.ozlabs.org
-Content-Type: multipart/mixed; boundary="===============0233013299834410872=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============0233013299834410872==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-B9dp7hYRMOcivm0VMcWv"
-
-
---=-B9dp7hYRMOcivm0VMcWv
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, 2019-11-25 at 16:33 +0000, Robin Murphy wrote:
-> On 25/11/2019 7:44 am, Christoph Hellwig wrote:
-> > On Sat, Nov 23, 2019 at 09:51:08AM -0700, Nathan Chancellor wrote:
-> > > Just as an FYI, this introduces a warning on arm32 allyesconfig for m=
-e:
-> >=20
-> > I think the dma_limit argument to iommu_dma_alloc_iova should be a u64
-> > and/or we need to use min_t and open code the zero exception.
-> >=20
-> > Robin, Nicolas - any opinions?
->=20
-> Yeah, given that it's always held a mask I'm not entirely sure why it=20
-> was ever a dma_addr_t rather than a u64. Unless anyone else is desperate=
-=20
-> to do it I'll get a cleanup patch ready for rc1.
-
-Sounds good to me too
-
-Robin, since I started the mess, I'll be happy to do it if it helps offload=
-ing
-some work from you.
-
-Regards,
-Nicolas
-
-
---=-B9dp7hYRMOcivm0VMcWv
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3ddE8ACgkQlfZmHno8
-x/5fVwgAnN7cpWXNHEbGgqyZcMqmBWCtR0bMa/xIu1xNgr/CAwMMZj0Z3/+6d18p
-mlU5N6AqlkTxefP9mV5ZxBzugcsriGR4+qJ05kZZAMxAeG625qDkfhSEl0FmUZRT
-WmEv98IN0aFzHEjZJAyPDNV8Ff1a3JpoHKQmnYs5z438rMZt49CPBC0jNPFdaEuj
-v9ry1DkR+cGYuD1WRyBQJjtze14XoG7ZCu0o9Htc02GZHq3OuabxDikuTC+UJ1jR
-BZX4ak4qGpJUGYT8fQA7IOA94Sd/N/CHMrDp8yv5f/kRcprKqgGX8PnMCUOPf4ns
-PsCZZGhEKvVwZy3/+QzWSYQ7q20O8w==
-=WYKI
------END PGP SIGNATURE-----
-
---=-B9dp7hYRMOcivm0VMcWv--
-
-
-
---===============0233013299834410872==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0233013299834410872==--
-
-
+T24gTW9uLCBTZXAgMiwgMjAxOSBhdCAzOjU4IEFNIE9uZMWZZWogSmlybWFuIDxtZWdvdXNAbWVn
+b3VzLmNvbT4gd3JvdGU6Cj4KPiBIZWxsbyBNYXhpbWUsCj4KPiBPbiBNb24sIFNlcCAwMiwgMjAx
+OSBhdCAwOToyNzozNUFNICswMjAwLCBNYXhpbWUgUmlwYXJkIHdyb3RlOgo+ID4gSGksCj4gPgo+
+ID4gT24gU3VuLCBTZXAgMDEsIDIwMTkgYXQgMTE6NTI6MTRQTSArMDIwMCwgT25kxZllaiBKaXJt
+YW4gd3JvdGU6Cj4gPiA+IEhlbGxvIFlhbmd0YW8sCj4gPiA+Cj4gPiA+IE9uIFNhdCwgQXVnIDEw
+LCAyMDE5IGF0IDA1OjI4OjExQU0gKzAwMDAsIFlhbmd0YW8gTGkgd3JvdGU6Cj4gPiA+ID4gVGhp
+cyBwYXRjaHNldCBhZGQgc3VwcG9ydCBmb3IgQTY0LCBIMywgSDUsIEg2IGFuZCBSNDAgdGhlcm1h
+bCBzZW5zb3IuCj4gPiA+ID4KPiA+ID4gPiBUaHggdG8gSWNlbm93eSBhbmQgVmFzaWx5Lgo+ID4g
+PiA+Cj4gPiA+ID4gQlRZLCBkbyBhIGNsZWFudXAgaW4gdGhlcm1hbCBtYWtmaWxlLgoKSGV5IFlh
+bmd0YW8sCgpBcmUgdGhlcmUgYW55IHBsYW5zIGZvciB2Nj8KClJlZ2FyZHMsClZhc2lseQoKPiA+
+ID4gSSd2ZSBhZGRlZCBzdXBwb3J0IGZvciBBODNUIGFuZCBhbHNvIHNvbWUgY2xlYW51cHMsIGFj
+Y29yZGluZyB0byBteQo+ID4gPiBmZWVkYmFjazoKPiA+ID4KPiA+ID4gaHR0cHM6Ly9tZWdvdXMu
+Y29tL2dpdC9saW51eC9sb2cvP2g9dGhzLTUuMwo+ID4gPgo+ID4gPiBGZWVsIGZyZWUgdG8gcGlj
+ayB1cCB3aGF0ZXZlciB5b3UgbGlrZSBmcm9tIHRoYXQgdHJlZS4KPiA+ID4KPiA+ID4gRm9yIG90
+aGVycywgdGhlcmUgYXJlIGFsc28gRFRTIHBhdGNoZXMgaW4gdGhhdCB0cmVlIGZvciBIMywgSDUs
+IEE4M1QsIGFuZCBINiwgc28KPiA+ID4gdGhhdCBzaG91bCBtYWtlIHRlc3Rpbmcgb2YgdGhpcyBk
+cml2ZXIgZWFzaWVyLgo+ID4KPiA+IEknbSBub3QgY29udmluY2VkIHRoYXQgYWx3YXlzIGV4cGFu
+ZGluZyB0aGUgbnVtYmVyIG9mIFNvQyBzdXBwb3J0ZWQgaXMKPiA+IHRoZSBiZXN0IHN0cmF0ZWd5
+IHRvIGdldCB0aGlzIG1lcmdlZC4gVXN1YWxseSwga2VlcGluZyB0aGUgc2FtZQo+ID4gZmVhdHVy
+ZSBzZXQgYWNyb3NzIHZlcnNpb24sIGNvbnNvbGlkYXRpbmcgdGhhdCwgYW5kIHRoZW4gb25jZSBp
+dCdzIGluCj4gPiBzZW5kaW5nIHRoZSBuZXcgU29DIHN1cHBvcnQgd29ya3MgYmVzdC4KPgo+IFRo
+YXQncyBmaW5lIGFuZCBhbGwsIGJ1dCBJJ3ZlIG1vc3RseSBhZGRlZCBEVCBkZXNjcmlwdGlvbnMg
+Zm9yIGFscmVhZHkgc3VwcG9ydGVkCj4gU29DcyBhbmQgZml4ZWQgYnVncyBpbiB0aGUgZHJpdmVy
+LCBzbyB0aGF0IHBlb3BsZSBjYW4gYWN0dWFsbHkgdGVzdCB0aGUgZXhpc3RpbmcKPiBkcml2ZXIu
+Cj4KPiBJIHRoaW5rIGFkZGluZyBEVCBjaGFuZ2VzIHdpbGwgYWN0dWFsbHkgaGVscCBnZXQgbmVl
+ZGVkIGV4cG9zdXJlIGZvciB0aGlzCj4gcGF0Y2ggc2VyaWVzLgo+Cj4gQTgzVCBzdXBwb3J0IHRo
+YXQgSSBhZGRlZCwgd2FzIGFjdHVhbGx5IGp1c3QgYSBzbWFsbCBjaGFuZ2UgdG8gdGhlIGRyaXZl
+ci4KPgo+IHJlZ2FyZHMsCj4gICAgICAgICBvLgo+Cj4gPiBNYXhpbWUKPiA+Cj4gPiAtLQo+ID4g
+TWF4aW1lIFJpcGFyZCwgQm9vdGxpbgo+ID4gRW1iZWRkZWQgTGludXggYW5kIEtlcm5lbCBlbmdp
+bmVlcmluZwo+ID4gaHR0cHM6Ly9ib290bGluLmNvbQo+ID4KPiA+IF9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gPiBsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdAo+ID4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gPiBodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Pgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gbGlu
+dXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKPiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
+bnV4LWFybS1rZXJuZWwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
