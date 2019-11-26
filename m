@@ -2,112 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE49A109D5E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 12:57:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 289C1109D6E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 13:02:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=04qhbHX+GgPT42rwjXjeF8IQ0dH5sKUNeecSinaQdxc=; b=I51+pWJurGvNfj
-	34GHLuPSanXaldm/cdg5B0N+J12YWGKyjx/aq1CTURL0K947zT6EiwRk8WKD/uJnDmM1WUaFVHe1k
-	VXMN34y79a48D1hg8GFM9ugml/f9UnUGT9xPZa0iJ0piqgAisUpNGHeSiFAzAwUBHcyuar3sllP67
-	Qi/afTA8+2hTbTfWOho5PUm2jGXwRwB96VZGmVLCeSiuYAsSaTJ8kFq5qGqh3vCwjnsq/XCjG05cV
-	/iFyIa3JmqhFg6lmLGtb8F2AJUOquuEdo/aIxeNmKDMXrJiCEm17VZAvFmVOTwB+U/FzsZvWVoSNl
-	X9s+4Gvp6GH4j8S8asxA==;
+	List-Owner; bh=ED9GhkVdELACmF9Tk3S1Qgd/wZta+E0hzBiIZahOoLE=; b=PO0gI4/KxpiB4X
+	7qjFoJmzUOwaQY0FjTz8uPatk3KVkFF4LhO86QUDDSmGO5crTvcRz6BrNvUVfe736VW+NguVfiseg
+	+8Uyg7zrnxEcQhw+Z237xynuRLrtdtP2souZg/eIP2i1cBYBWSqhTfeqm4VgyD+Uoh5H6ZkvZLZ6/
+	xvkauAufRyqkLOipFN8qU1ofTgyBClQQrq1KeBadfvd9rIU8IbfUfLkHamJA3aMQcQt7zeCiOR2eh
+	VEH1ChN9lFNrfeg9uXIMNIS+za19NutnL7qcqmHu4EnACiHFOqYbvR3ZpMYJzTj0DxV27qnHeEU72
+	p4oFW8qJM8Q9e88J2Y2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZZSm-00015U-KN; Tue, 26 Nov 2019 11:57:00 +0000
-Received: from mail-eopbgr790054.outbound.protection.outlook.com
- ([40.107.79.54] helo=NAM03-CO1-obe.outbound.protection.outlook.com)
+	id 1iZZXq-0006An-Bd; Tue, 26 Nov 2019 12:02:14 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZZSS-0000as-AB
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 11:56:41 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=h5RUw7q0ndUpTWrrrcdCwgmEtGPUxIUI189c4GaJDHSVzRSPt0PLHMRXdiWMw95O3+D+rbvlypj+gcZxDo0O1GfHj+/MnD1CXZHSd5v8SLk/3Q9UJt0npIW+VoP9bRTV6bcveU8UGD5HOwc3eVTmrmcMVn/oWhVDKiOQ3+O9DkiBA8YgWO1Onyi9qnZ80++nUN99yS8sM73wsCGF/rrAJbxWHYWgv+PcFNzDXfrFbir280brBkQtkVV0GCCbpo6DZRhObLe4bN8TEbOrxn3JXrRkdzpusVNuypCwnV18qpW4/qor5F1e9F0TZLfTZWh8MERfcTY+KF/zAuwiDqB/rQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=uoz0kP7TlyyO8x7+RhU2QNe28uAYxMWtipV31PkCT0k=;
- b=bHx6hKpoutKIkx1wk+nFTYJE+SjAQFRiEACe/bdSsh2YXE1yiTggKcAHXeRdEDqvWvkq+JW2rCd2YFLxd1B+pkGDKI/L7gJ3OJdcY0f88rVMUx3mDej57csBzKvFSfzhT9YjnOBbP8D+4HuapdL7I3BbWHIPaWzOQHgXBNvqJP5eyCEz9XXoMxxRn5bNS4lEmPkQwJLwXw6FBB4s4+nReRB8fXIPUFrFIFI8rB9vsgZKNTrZLjjJGT7ZmlRCUF1P6FhNsf04opLE9S4FRq+iiOSP/amA+exPSSXx2jd3KySOPVkFS6kzoyD+Tj6Lhe9WcpsStWzadnavor9xmQNG7w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=uoz0kP7TlyyO8x7+RhU2QNe28uAYxMWtipV31PkCT0k=;
- b=Y8HjHE2YaJE3kYJyDQhY3ki4AKAgZrlMd/wgufzTjZNNffRsKfTfLblagSj+ID7M800/Y0zwlO+BIVRVqiMbF/jObEfq5ytKZML8RLhcxw5EQLfJ/9CdH+tEyWhN1x9/NN2iloPNqXWF9q/6jUHkVB5ueTnaY78DFzsXPV7UWPw=
-Received: from BYAPR02MB4055.namprd02.prod.outlook.com (52.135.202.143) by
- BYAPR02MB4696.namprd02.prod.outlook.com (52.135.235.209) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2474.17; Tue, 26 Nov 2019 11:56:37 +0000
-Received: from BYAPR02MB4055.namprd02.prod.outlook.com
- ([fe80::fccc:d399:e650:9a9e]) by BYAPR02MB4055.namprd02.prod.outlook.com
- ([fe80::fccc:d399:e650:9a9e%5]) with mapi id 15.20.2474.023; Tue, 26 Nov 2019
- 11:56:36 +0000
-From: Rajan Vaja <RAJANV@xilinx.com>
-To: "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>
-Subject: RE: [PATCH] drivers: clocksource: Use ttc driver as platform driver
-Thread-Topic: [PATCH] drivers: clocksource: Use ttc driver as platform driver
-Thread-Index: AQHVlVaOW+EHQwVffUWJv7WplPkHr6edcAHggAAGWTA=
-Date: Tue, 26 Nov 2019 11:56:36 +0000
-Message-ID: <BYAPR02MB40553CE8C7355FBA8E659F22B7450@BYAPR02MB4055.namprd02.prod.outlook.com>
-References: <1573122659-13947-1-git-send-email-rajan.vaja@xilinx.com>
- <BYAPR02MB4055F607B83F35B5FBF68CC6B7450@BYAPR02MB4055.namprd02.prod.outlook.com>
-In-Reply-To: <BYAPR02MB4055F607B83F35B5FBF68CC6B7450@BYAPR02MB4055.namprd02.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=RAJANV@xilinx.com; 
-x-originating-ip: [14.142.15.114]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 8258dc0f-0f8f-4d65-4eea-08d77267b0ce
-x-ms-traffictypediagnostic: BYAPR02MB4696:
-x-microsoft-antispam-prvs: <BYAPR02MB4696C40008F7EE939F514F56B7450@BYAPR02MB4696.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
-x-forefront-prvs: 0233768B38
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(136003)(39860400002)(396003)(366004)(376002)(189003)(13464003)(199004)(478600001)(14454004)(8936002)(86362001)(66946007)(66476007)(66556008)(64756008)(55236004)(2501003)(76176011)(316002)(7696005)(6506007)(5660300002)(55016002)(66446008)(229853002)(256004)(14444005)(2906002)(33656002)(7736002)(305945005)(102836004)(74316002)(3846002)(26005)(186003)(71190400001)(6116002)(4326008)(71200400001)(52536014)(110136005)(53546011)(54906003)(99286004)(25786009)(76116006)(2940100002)(81156014)(9686003)(8676002)(66066001)(446003)(6436002)(6246003)(81166006)(11346002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB4696;
- H:BYAPR02MB4055.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: Cd09L+3NHlOri9vCPQS1U+EVyakNttCHioqctZRvSWN8AJeYde/E4cxohZ+DmqFysmaPGCv+wU/YPKyx/0JZMjwggtWaQZStm5ZQGjWXNTF7ST7I8nhBA8eambNwUKfwqIdKz0LdofjE0KYKwhgzPdl5jp+vR3bO5YjFX7LRkJZS6TeHyheIY1WYHPE04jx4lm0o+5khTMIdj7BRsAia8nEmbFwNcfymOLFHUduOdg+r3eAEtLFg986DeQdZMxk28p/1b69Isa7cGiusgTx1qO32TIgiC8xQ7UYpwp4MpDv0SAHH3dygKPs08ASbR68tCzOo73mtaEses5zKKY3l8MBnwSBWNubw1q2cCNBOyDzZe7KYGMpDXYqbV89RCF9ogkUnnXyF7qzsarrdnA7/m27H2W+41nO2SKgrr6JS8WPYS5BhOZKQgLpSxSKc90VZ
-x-ms-exchange-transport-forked: True
+ id 1iZZX4-0004jn-GT; Tue, 26 Nov 2019 12:01:28 +0000
+X-UUID: 5a143ef2b16043659940667350bc306d-20191126
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=cf/+Fd44n82yxYvT6oK5GVT20nXgRHeDU//VgBA/A7U=; 
+ b=aXSXGZ+dqF5NLHqmsZ2KO8NtP6ctGH4f7bj8Jnf/rw/9txYmUFGgLgNMGjflbs3zT+4jGi892Iea/IQ8mWY3xTxD1zg9VQtGZorbDteXrg4+zIoz3p+356hyQjJcQ22fVfF9RLyQ8n0GGHogT5TBngkfVsN+YdQon9U+uybVzMQ=;
+X-UUID: 5a143ef2b16043659940667350bc306d-20191126
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <andrew-sh.cheng@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1999021653; Tue, 26 Nov 2019 04:01:20 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 26 Nov 2019 03:51:54 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 26 Nov 2019 19:51:13 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Tue, 26 Nov 2019 19:51:16 +0800
+From: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
+To: MyungJoo Ham <myungjoo.ham@samsung.com>, Kyungmin Park
+ <kyungmin.park@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>, "Rob
+ Herring" <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, "Matthias
+ Brugger" <matthias.bgg@gmail.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Nishanth Menon <nm@ti.com>, "Stephen
+ Boyd" <sboyd@kernel.org>
+Subject: [v5, PATCH 3/5] devfreq: add mediatek cci devfreq
+Date: Tue, 26 Nov 2019 19:50:44 +0800
+Message-ID: <1574769046-28449-4-git-send-email-andrew-sh.cheng@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1574769046-28449-1-git-send-email-andrew-sh.cheng@mediatek.com>
+References: <1574769046-28449-1-git-send-email-andrew-sh.cheng@mediatek.com>
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8258dc0f-0f8f-4d65-4eea-08d77267b0ce
-X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Nov 2019 11:56:36.8853 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: +cGXQUABB1zs/9WRWPHSHi3m0HtnNJ8v1acP01rgR6tL4LWUaAqe7hp+mrZOL9M5ap+wQyrbsHahhLCsNvP2Nw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB4696
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_035640_368626_FCC8DCA6 
-X-CRM114-Status: GOOD (  18.43  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191126_040126_576313_44A742E9 
+X-CRM114-Status: GOOD (  18.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.79.54 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,115 +89,321 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org,
+ "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>, srv_heupstream@mediatek.com,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, fan.chen@mediatek.com,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Please ignore this request.
+From: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>
 
-Thanks,
-Rajan
+This adds a devfreq driver for the Cache Coherent Interconnect (CCI)
+of the Mediatek MT8183.
 
-> -----Original Message-----
-> From: Rajan Vaja
-> Sent: 26 November 2019 05:06 PM
-> To: Rajan Vaja <RAJANV@xilinx.com>; ichal.simek@xilinx.com;
-> daniel.lezcano@linaro.org; tglx@linutronix.de
-> Cc: linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org
-> Subject: RE: [PATCH] drivers: clocksource: Use ttc driver as platform driver
-> 
-> Request for review.
-> 
-> Thanks,
-> Rajan
-> 
-> > -----Original Message-----
-> > From: Rajan Vaja <rajan.vaja@xilinx.com>
-> > Sent: 07 November 2019 04:01 PM
-> > To: ichal.simek@xilinx.com; daniel.lezcano@linaro.org; tglx@linutronix.de
-> > Cc: linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Rajan
-> Vaja
-> > <RAJANV@xilinx.com>
-> > Subject: [PATCH] drivers: clocksource: Use ttc driver as platform driver
-> >
-> > Currently TTC driver is TIMER_OF_DECLARE type driver. Because of
-> > that, TTC driver may be initialized before other clock drivers. If
-> > TTC driver is dependent on that clock driver then initialization of
-> > TTC driver will failed.
-> >
-> > So use TTC driver as platform driver instead of using
-> > TIMER_OF_DECLARE.
-> >
-> > Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
-> > ---
-> >  drivers/clocksource/timer-cadence-ttc.c | 26 ++++++++++++++++++--------
-> >  1 file changed, 18 insertions(+), 8 deletions(-)
-> >
-> > diff --git a/drivers/clocksource/timer-cadence-ttc.c b/drivers/clocksource/timer-
-> > cadence-ttc.c
-> > index 88fe2e9..38858e1 100644
-> > --- a/drivers/clocksource/timer-cadence-ttc.c
-> > +++ b/drivers/clocksource/timer-cadence-ttc.c
-> > @@ -15,6 +15,8 @@
-> >  #include <linux/of_irq.h>
-> >  #include <linux/slab.h>
-> >  #include <linux/sched_clock.h>
-> > +#include <linux/module.h>
-> > +#include <linux/of_platform.h>
-> >
-> >  /*
-> >   * This driver configures the 2 16/32-bit count-up timers as follows:
-> > @@ -464,13 +466,7 @@ static int __init ttc_setup_clockevent(struct clk *clk,
-> >  	return 0;
-> >  }
-> >
-> > -/**
-> > - * ttc_timer_init - Initialize the timer
-> > - *
-> > - * Initializes the timer hardware and register the clock source and clock event
-> > - * timers with Linux kernal timer framework
-> > - */
-> > -static int __init ttc_timer_init(struct device_node *timer)
-> > +static int __init ttc_timer_probe(struct platform_device *pdev)
-> >  {
-> >  	unsigned int irq;
-> >  	void __iomem *timer_baseaddr;
-> > @@ -478,6 +474,7 @@ static int __init ttc_timer_init(struct device_node *timer)
-> >  	static int initialized;
-> >  	int clksel, ret;
-> >  	u32 timer_width = 16;
-> > +	struct device_node *timer = pdev->dev.of_node;
-> >
-> >  	if (initialized)
-> >  		return 0;
-> > @@ -532,4 +529,17 @@ static int __init ttc_timer_init(struct device_node
-> *timer)
-> >  	return 0;
-> >  }
-> >
-> > -TIMER_OF_DECLARE(ttc, "cdns,ttc", ttc_timer_init);
-> > +static const struct of_device_id ttc_timer_of_match[] = {
-> > +	{.compatible = "cdns,ttc"},
-> > +	{},
-> > +};
-> > +
-> > +MODULE_DEVICE_TABLE(of, ttc_timer_of_match);
-> > +
-> > +static struct platform_driver ttc_timer_driver = {
-> > +	.driver = {
-> > +		.name	= "cdns_ttc_timer",
-> > +		.of_match_table = ttc_timer_of_match,
-> > +	},
-> > +};
-> > +builtin_platform_driver_probe(ttc_timer_driver, ttc_timer_probe);
-> > --
-> > 2.7.4
+On the MT8183 the CCI is supplied by the same regulator as the LITTLE
+cores. The driver is notified when the regulator voltage changes
+(driven by cpufreq) and adjusts the CCI frequency to the maximum
+possible value.
 
+Signed-off-by: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
+---
+ drivers/devfreq/Kconfig              |  10 ++
+ drivers/devfreq/Makefile             |   1 +
+ drivers/devfreq/mt8183-cci-devfreq.c | 247 +++++++++++++++++++++++++++++++++++
+ 3 files changed, 258 insertions(+)
+ create mode 100644 drivers/devfreq/mt8183-cci-devfreq.c
 
+diff --git a/drivers/devfreq/Kconfig b/drivers/devfreq/Kconfig
+index defe1d438710..76bc42657787 100644
+--- a/drivers/devfreq/Kconfig
++++ b/drivers/devfreq/Kconfig
+@@ -92,6 +92,16 @@ config ARM_EXYNOS_BUS_DEVFREQ
+ 	  and adjusts the operating frequencies and voltages with OPP support.
+ 	  This does not yet operate with optimal voltages.
+ 
++config ARM_MT8183_CCI_DEVFREQ
++	tristate "MT8183 CCI DEVFREQ Driver"
++	depends on ARM_MEDIATEK_CPUFREQ
++	help
++		This adds a devfreq driver for Cache Coherent Interconnect
++		of Mediatek MT8183, which is shared the same regulator
++		with cpu cluster.
++		It can track buck voltage and update a proper cci frequency.
++		Use notification to get regulator status.
++
+ config ARM_TEGRA_DEVFREQ
+ 	tristate "NVIDIA Tegra30/114/124/210 DEVFREQ Driver"
+ 	depends on ARCH_TEGRA_3x_SOC || ARCH_TEGRA_114_SOC || \
+diff --git a/drivers/devfreq/Makefile b/drivers/devfreq/Makefile
+index 338ae8440db6..1fa05e39e4ff 100644
+--- a/drivers/devfreq/Makefile
++++ b/drivers/devfreq/Makefile
+@@ -9,6 +9,7 @@ obj-$(CONFIG_DEVFREQ_GOV_PASSIVE)	+= governor_passive.o
+ 
+ # DEVFREQ Drivers
+ obj-$(CONFIG_ARM_EXYNOS_BUS_DEVFREQ)	+= exynos-bus.o
++obj-$(CONFIG_ARM_MT8183_CCI_DEVFREQ)	+= mt8183-cci-devfreq.o
+ obj-$(CONFIG_ARM_RK3399_DMC_DEVFREQ)	+= rk3399_dmc.o
+ obj-$(CONFIG_ARM_TEGRA_DEVFREQ)		+= tegra30-devfreq.o
+ obj-$(CONFIG_ARM_TEGRA20_DEVFREQ)	+= tegra20-devfreq.o
+diff --git a/drivers/devfreq/mt8183-cci-devfreq.c b/drivers/devfreq/mt8183-cci-devfreq.c
+new file mode 100644
+index 000000000000..818a167c442f
+--- /dev/null
++++ b/drivers/devfreq/mt8183-cci-devfreq.c
+@@ -0,0 +1,247 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (c) 2019 MediaTek Inc.
++
++ * Author: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
++ */
++
++#include <linux/clk.h>
++#include <linux/devfreq.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/platform_device.h>
++#include <linux/regulator/consumer.h>
++
++#include "governor.h"
++
++struct cci_devfreq {
++	struct devfreq *devfreq;
++	struct regulator *proc_reg;
++	unsigned long proc_reg_uV;
++	struct clk *cci_clk;
++	struct notifier_block nb;
++};
++
++static int cci_devfreq_regulator_notifier(struct notifier_block *nb,
++					  unsigned long val, void *data)
++{
++	int ret;
++	struct cci_devfreq *cci_df =
++		container_of(nb, struct cci_devfreq, nb);
++
++	/* deal with reduce frequency */
++	if (val & REGULATOR_EVENT_PRE_VOLTAGE_CHANGE) {
++		struct pre_voltage_change_data *pvc_data = data;
++
++		if (pvc_data->min_uV < pvc_data->old_uV) {
++			cci_df->proc_reg_uV =
++				(unsigned long)(pvc_data->min_uV);
++			mutex_lock(&cci_df->devfreq->lock);
++			ret = update_devfreq(cci_df->devfreq);
++			if (ret)
++				pr_err("Fail to reduce cci frequency: %d\n",
++				       ret);
++			mutex_unlock(&cci_df->devfreq->lock);
++		}
++	} else if ((val & REGULATOR_EVENT_ABORT_VOLTAGE_CHANGE) &&
++	    ((unsigned long)data > cci_df->proc_reg_uV)) {
++		cci_df->proc_reg_uV = (unsigned long)data;
++		mutex_lock(&cci_df->devfreq->lock);
++		ret = update_devfreq(cci_df->devfreq);
++		if (ret)
++			pr_err("Fail to raise cci frequency back: %d\n", ret);
++		mutex_unlock(&cci_df->devfreq->lock);
++	} else if ((val & REGULATOR_EVENT_VOLTAGE_CHANGE) &&
++	    (cci_df->proc_reg_uV < (unsigned long)data)) {
++		/* deal with increase frequency */
++		cci_df->proc_reg_uV = (unsigned long)data;
++		mutex_lock(&cci_df->devfreq->lock);
++		ret = update_devfreq(cci_df->devfreq);
++		if (ret)
++			pr_err("Fail to raise cci frequency: %d\n", ret);
++		mutex_unlock(&cci_df->devfreq->lock);
++	}
++
++	return 0;
++}
++
++static int mtk_cci_governor_get_target(struct devfreq *devfreq,
++				       unsigned long *freq)
++{
++	struct cci_devfreq *cci_df;
++	struct dev_pm_opp *opp;
++
++	cci_df = dev_get_drvdata(devfreq->dev.parent);
++
++	/* find available frequency */
++	opp = dev_pm_opp_find_freq_ceil_by_volt(devfreq->dev.parent,
++						cci_df->proc_reg_uV);
++	*freq = dev_pm_opp_get_freq(opp);
++
++	return 0;
++}
++
++static int mtk_cci_governor_event_handler(struct devfreq *devfreq,
++					  unsigned int event, void *data)
++{
++	int ret;
++	struct cci_devfreq *cci_df;
++	struct notifier_block *nb;
++
++	cci_df = dev_get_drvdata(devfreq->dev.parent);
++	nb = &cci_df->nb;
++
++	switch (event) {
++	case DEVFREQ_GOV_START:
++	case DEVFREQ_GOV_RESUME:
++		nb->notifier_call = cci_devfreq_regulator_notifier;
++		ret = regulator_register_notifier(cci_df->proc_reg,
++						  nb);
++		if (ret)
++			pr_err("%s: failed to add governor: %d\n", __func__,
++			       ret);
++		break;
++
++	case DEVFREQ_GOV_STOP:
++	case DEVFREQ_GOV_SUSPEND:
++		ret = regulator_unregister_notifier(cci_df->proc_reg,
++						    nb);
++		if (ret)
++			pr_err("%s: failed to add governor: %d\n", __func__,
++			       ret);
++		break;
++
++	default:
++		break;
++	}
++
++	return 0;
++}
++
++static struct devfreq_governor mtk_cci_devfreq_governor = {
++	.name = "mtk_cci_vmon",
++	.get_target_freq = mtk_cci_governor_get_target,
++	.event_handler = mtk_cci_governor_event_handler,
++	.immutable = true
++};
++
++static int mtk_cci_devfreq_target(struct device *dev, unsigned long *freq,
++				  u32 flags)
++{
++	int ret;
++	struct cci_devfreq *cci_df = dev_get_drvdata(dev);
++
++	if (!cci_df)
++		return -EINVAL;
++
++	ret = clk_set_rate(cci_df->cci_clk, *freq);
++	if (ret) {
++		pr_err("%s: failed cci to set rate: %d\n", __func__,
++		       ret);
++		return ret;
++	}
++
++	return 0;
++}
++
++static struct devfreq_dev_profile cci_devfreq_profile = {
++	.target = mtk_cci_devfreq_target,
++};
++
++static int mtk_cci_devfreq_probe(struct platform_device *pdev)
++{
++	struct device *cci_dev = &pdev->dev;
++	struct cci_devfreq *cci_df;
++	int ret;
++
++	cci_df = devm_kzalloc(cci_dev, sizeof(*cci_df), GFP_KERNEL);
++	if (!cci_df)
++		return -ENOMEM;
++
++	cci_df->cci_clk = devm_clk_get(cci_dev, "cci_clock");
++	ret = PTR_ERR_OR_ZERO(cci_df->cci_clk);
++	if (ret) {
++		if (ret != -EPROBE_DEFER)
++			dev_err(cci_dev, "failed to get clock for CCI: %d\n",
++				ret);
++		return ret;
++	}
++	cci_df->proc_reg = devm_regulator_get_optional(cci_dev, "proc");
++	ret = PTR_ERR_OR_ZERO(cci_df->proc_reg);
++	if (ret) {
++		if (ret != -EPROBE_DEFER)
++			dev_err(cci_dev, "failed to get regulator for CCI: %d\n",
++				ret);
++		return ret;
++	}
++
++	ret = dev_pm_opp_of_add_table(cci_dev);
++	if (ret) {
++		dev_err(cci_dev, "Fail to init CCI OPP table: %d\n", ret);
++		return ret;
++	}
++
++	platform_set_drvdata(pdev, cci_df);
++
++	cci_df->devfreq = devm_devfreq_add_device(cci_dev,
++						  &cci_devfreq_profile,
++						  "mtk_cci_vmon",
++						  NULL);
++	if (IS_ERR(cci_df->devfreq)) {
++		ret = PTR_ERR(cci_df->devfreq);
++		dev_err(cci_dev, "cannot create cci devfreq device:%d\n", ret);
++		dev_pm_opp_of_remove_table(cci_dev);
++		return ret;
++	}
++
++	return 0;
++}
++
++static const __maybe_unused struct of_device_id
++	mediatek_cci_devfreq_of_match[] = {
++	{ .compatible = "mediatek,mt8183-cci" },
++	{ },
++};
++MODULE_DEVICE_TABLE(of, mediatek_cci_devfreq_of_match);
++
++static struct platform_driver cci_devfreq_driver = {
++	.probe	= mtk_cci_devfreq_probe,
++	.driver = {
++		.name = "mediatek-cci-devfreq",
++		.of_match_table = of_match_ptr(mediatek_cci_devfreq_of_match),
++	},
++};
++
++static int __init mtk_cci_devfreq_init(void)
++{
++	int ret;
++
++	ret = devfreq_add_governor(&mtk_cci_devfreq_governor);
++	if (ret) {
++		pr_err("%s: failed to add governor: %d\n", __func__, ret);
++		return ret;
++	}
++
++	ret = platform_driver_register(&cci_devfreq_driver);
++	if (ret)
++		devfreq_remove_governor(&mtk_cci_devfreq_governor);
++
++	return ret;
++}
++module_init(mtk_cci_devfreq_init)
++
++static void __exit mtk_cci_devfreq_exit(void)
++{
++	int ret;
++
++	ret = devfreq_remove_governor(&mtk_cci_devfreq_governor);
++	if (ret)
++		pr_err("%s: failed to remove governor: %d\n", __func__, ret);
++
++	platform_driver_unregister(&cci_devfreq_driver);
++}
++module_exit(mtk_cci_devfreq_exit)
++
++MODULE_DESCRIPTION("Mediatek CCI devfreq driver");
++MODULE_AUTHOR("Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>");
++MODULE_LICENSE("GPL v2");
+-- 
+2.12.5
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
