@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FDCA109EB6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 14:14:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C79DA109ECE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 Nov 2019 14:15:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X/jS0Q9ORrgsT0P80vobVZn8yfnf86EZ8kadlnTKt2I=; b=JYCBFkNoGVxgn7
-	s60+7mdweJQNijLDE9i1lF7dUNKTgczgyFVWFb3QSwPi5wiOK+5cQa1tRMsorUh1kT+bDS4YNSlMc
-	eltHwW1LV5g6eQdBXAnk3XSFaPPGJ3wEpK5f5lhLjx7z4jC3C+KiFv7Jtw07x1tAtZPbfnm7s5aoH
-	HjhpB81sOyw0JJztzHGMo6eYKZaBlHPEXugCICNXbofpDH9IiZvswgPHOBgeY0CTTdNOMFADWeXqc
-	SlbduhxtlyGsdqgk/YhzDrXh4ffydcog+MT1ejwym//hA0jn0EBG1eOCmxKydMQoBfetImnAveNTP
-	asTEMgU9E5PIHz/YrARg==;
+	List-Owner; bh=AY/YXYLjM07ho0upbfD0CblSxf7qAPYzvH7TTuYq6FY=; b=NQv9G6DMUcFoxs
+	vQGfIoGl8JC3vT4HKlcp5vIvAMrCjMQBxIuLQUDxiWvTfLB5XTxlXQ23HQz83RSvqiTYYHzH20KM9
+	O6emThuVZI7BNXZBUA5yWU0SYW3+28Z94ygOY6Ud+mMTWswWLXRS2zSnUpBGxgK862UvnULGbDz2o
+	OfxzzdA0YXGSv5qAMVSP6ut2idTKBUIYCefiH8JssBCvyah+FVKaAH8ADZF1rFtON9FZ8lJAsl5Tf
+	ks+Oe+8r6n5/yA0zZlQaLm6Plb9okDDNC24AUKuvQ6vMBCUGvVYhGiMU/fda++htXTG7e8HbK6ICh
+	Bfv8UhdruLos0vf2o4Bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZafQ-0000jp-0R; Tue, 26 Nov 2019 13:14:08 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1iZagu-0005Xf-8b; Tue, 26 Nov 2019 13:15:40 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZaeK-0007Jl-Ue
- for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 13:13:02 +0000
-Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
+ id 1iZaeU-00081y-4f
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 Nov 2019 13:13:11 +0000
+Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="Claudiu.Beznea@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,56 +34,57 @@ Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
  a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
  include:servers.mcsv.net include:mktomail.com
  include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa4.microchip.iphmx.com: no sender
+Received-SPF: None (esa3.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa4.microchip.iphmx.com;
+Authentication-Results: esa3.microchip.iphmx.com;
  dkim=none (message not signed) header.i=none;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: KxslchlwZBJmurAvl/0rXqdVNm05ODGfgUNjjqt91fLE9YEbmObXWCPniQ/PsycbLZ7s7gDw0V
- tLUeQVe8E1SYHN1lLBmHYAQcK29XnVhtZ+Yh4MYtkWRz9BW2EL9quD1cxOCOi16KfincaYMcvb
- N0PJ2LxQXcz+fwaQ8SzVH497XdmNLGwbdwL8/fcPkSjtBG9vECkQjfqi/FfVr3at97xnBTYJKP
- Roj06q1jR+iYdNyJ/4TCpqesEEXIXAxBWHa3Skr8lhqsd0mGFfo1Mmv3b2epLrXG8fv88ck0Of
- 1N0=
-X-IronPort-AV: E=Sophos;i="5.69,245,1571727600"; d="scan'208";a="56669027"
+IronPort-SDR: X5XRdjIRH6rUZG20jT9xLXmORZLqvGFuypEdGUw0cQ4NXvDMlzeWOoJnVpR6qCI5N73VsaW6G8
+ Z0hWHXseT+VHHB62FcEXkdZCrCCNJp7BtLihcXPE43NyQEtoRnz2Ik4QjhuTCJWYWXbTePWvbp
+ Iro5Vy7lN/+MO7GXBKTTlQkJry1cBSyxmV3syUlFIhycexKeL092Y8ZfkMb10vdFAXARdMvuAq
+ r+Q/eNm6PHPL7tyb596ExKMunVlYOpbdPJcmlEXUS25febwH8wxTRkKdL3iKQdcv1d4iaihRqZ
+ JLQ=
+X-IronPort-AV: E=Sophos;i="5.69,245,1571727600"; d="scan'208";a="58391094"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 26 Nov 2019 06:12:58 -0700
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 26 Nov 2019 06:13:08 -0700
 Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 26 Nov 2019 06:12:57 -0700
+ 15.1.1713.5; Tue, 26 Nov 2019 06:13:00 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Tue, 26 Nov 2019 06:12:55 -0700
+ 15.1.1713.5 via Frontend Transport; Tue, 26 Nov 2019 06:12:57 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <linux@armlinux.org.uk>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>,
  <sre@kernel.org>
-Subject: [PATCH v2 02/17] ARM: at91: pm: move SAM9X60's PM under its own SoC
+Subject: [PATCH v2 03/17] drivers: soc: atmel: move sam9x60 under its own
  config flag
-Date: Tue, 26 Nov 2019 15:12:06 +0200
-Message-ID: <1574773941-20649-3-git-send-email-claudiu.beznea@microchip.com>
+Date: Tue, 26 Nov 2019 15:12:07 +0200
+Message-ID: <1574773941-20649-4-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1574773941-20649-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1574773941-20649-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_051301_044462_67AAD658 
-X-CRM114-Status: GOOD (  12.33  )
+X-CRM114-CacheID: sfid-20191126_051310_257985_F4379A86 
+X-CRM114-Status: UNSURE (   7.91  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,110 +105,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Move SAM9X60's PM part under SoC config flag. This allows the building
-of SAM9X60 platform withouth depending on CONFIG_SOC_AT91SAM9 flag,
-allowing us to select only necessary config flags for SAM9X60.
+Move SAM9X60 under its own config flag.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- arch/arm/mach-at91/Makefile   |  1 +
- arch/arm/mach-at91/at91sam9.c | 18 ------------------
- arch/arm/mach-at91/pm.c       |  2 +-
- arch/arm/mach-at91/sam9x60.c  | 34 ++++++++++++++++++++++++++++++++++
- 4 files changed, 36 insertions(+), 19 deletions(-)
- create mode 100644 arch/arm/mach-at91/sam9x60.c
+ drivers/soc/atmel/soc.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/mach-at91/Makefile b/arch/arm/mach-at91/Makefile
-index de64301dcff2..f565490f1b70 100644
---- a/arch/arm/mach-at91/Makefile
-+++ b/arch/arm/mach-at91/Makefile
-@@ -6,6 +6,7 @@
- # CPU-specific support
- obj-$(CONFIG_SOC_AT91RM9200)	+= at91rm9200.o
- obj-$(CONFIG_SOC_AT91SAM9)	+= at91sam9.o
-+obj-$(CONFIG_SOC_SAM9X60)	+= sam9x60.o
- obj-$(CONFIG_SOC_SAMA5)		+= sama5.o
- obj-$(CONFIG_SOC_SAMV7)		+= samv7.o
- 
-diff --git a/arch/arm/mach-at91/at91sam9.c b/arch/arm/mach-at91/at91sam9.c
-index bf629c90c758..7e572189a5eb 100644
---- a/arch/arm/mach-at91/at91sam9.c
-+++ b/arch/arm/mach-at91/at91sam9.c
-@@ -31,21 +31,3 @@ DT_MACHINE_START(at91sam_dt, "Atmel AT91SAM9")
- 	.init_machine	= at91sam9_init,
- 	.dt_compat	= at91_dt_board_compat,
- MACHINE_END
--
--static void __init sam9x60_init(void)
--{
--	of_platform_default_populate(NULL, NULL, NULL);
--
--	sam9x60_pm_init();
--}
--
--static const char *const sam9x60_dt_board_compat[] __initconst = {
--	"microchip,sam9x60",
--	NULL
--};
--
--DT_MACHINE_START(sam9x60_dt, "Microchip SAM9X60")
--	/* Maintainer: Microchip */
--	.init_machine	= sam9x60_init,
--	.dt_compat	= sam9x60_dt_board_compat,
--MACHINE_END
-diff --git a/arch/arm/mach-at91/pm.c b/arch/arm/mach-at91/pm.c
-index d5af6aedc02c..56a6a49b19e2 100644
---- a/arch/arm/mach-at91/pm.c
-+++ b/arch/arm/mach-at91/pm.c
-@@ -805,7 +805,7 @@ void __init at91rm9200_pm_init(void)
- 
- void __init sam9x60_pm_init(void)
- {
--	if (!IS_ENABLED(CONFIG_SOC_AT91SAM9))
-+	if (!IS_ENABLED(CONFIG_SOC_SAM9X60))
- 		return;
- 
- 	at91_pm_modes_init();
-diff --git a/arch/arm/mach-at91/sam9x60.c b/arch/arm/mach-at91/sam9x60.c
-new file mode 100644
-index 000000000000..d8c739d25458
---- /dev/null
-+++ b/arch/arm/mach-at91/sam9x60.c
-@@ -0,0 +1,34 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Setup code for SAM9X60.
-+ *
-+ * Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries
-+ *
-+ * Author: Claudiu Beznea <claudiu.beznea@microchip.com>
-+ */
-+
-+#include <linux/of.h>
-+#include <linux/of_platform.h>
-+
-+#include <asm/mach/arch.h>
-+#include <asm/system_misc.h>
-+
-+#include "generic.h"
-+
-+static void __init sam9x60_init(void)
-+{
-+	of_platform_default_populate(NULL, NULL, NULL);
-+
-+	sam9x60_pm_init();
-+}
-+
-+static const char *const sam9x60_dt_board_compat[] __initconst = {
-+	"microchip,sam9x60",
-+	NULL
-+};
-+
-+DT_MACHINE_START(sam9x60_dt, "Microchip SAM9X60")
-+	/* Maintainer: Microchip */
-+	.init_machine	= sam9x60_init,
-+	.dt_compat	= sam9x60_dt_board_compat,
-+MACHINE_END
+diff --git a/drivers/soc/atmel/soc.c b/drivers/soc/atmel/soc.c
+index 096a83cf0caf..55a1f57a4d8c 100644
+--- a/drivers/soc/atmel/soc.c
++++ b/drivers/soc/atmel/soc.c
+@@ -66,8 +66,9 @@ static const struct at91_soc __initconst socs[] = {
+ 	AT91_SOC(AT91SAM9XE128_CIDR_MATCH, 0, "at91sam9xe128", "at91sam9xe128"),
+ 	AT91_SOC(AT91SAM9XE256_CIDR_MATCH, 0, "at91sam9xe256", "at91sam9xe256"),
+ 	AT91_SOC(AT91SAM9XE512_CIDR_MATCH, 0, "at91sam9xe512", "at91sam9xe512"),
+-	AT91_SOC(SAM9X60_CIDR_MATCH, SAM9X60_EXID_MATCH,
+-		 "sam9x60", "sam9x60"),
++#endif
++#ifdef CONFIG_SOC_SAM9X60
++	AT91_SOC(SAM9X60_CIDR_MATCH, SAM9X60_EXID_MATCH, "sam9x60", "sam9x60"),
+ #endif
+ #ifdef CONFIG_SOC_SAMA5
+ 	AT91_SOC(SAMA5D2_CIDR_MATCH, SAMA5D21CU_EXID_MATCH,
 -- 
 2.7.4
 
