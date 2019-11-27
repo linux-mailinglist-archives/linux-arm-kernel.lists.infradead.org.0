@@ -2,60 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1B0610B3A3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 17:41:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBABC10B3B1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 17:43:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DsGkkP+y3R7DiKg/TPqM1XqbfZZt4VeAsEl2RJF9PL0=; b=H1rIyy2WJ3Lq+2
-	x1ctVf3VuIH0ZuuFOO4Nz+RrCylnIM6y8OLLRXTpFA+o3Cuo45WtHIOCaFCambqWEdrg+4QZx5KfH
-	Qo+nF/h63zqWX9843mSymKgW4S86NsPhD2M2cCqR7yfIQjZBd5ZsQ9iacXe5o0xsykIOETkBJVP8Y
-	I2ugjr7jeRQoVmz/Z/Yyw3teHqapyCK3WeUQPDOFOCyx4fOibH1Te0C/6lIm92EmbIERKPuE2XHv5
-	jc0aYxrtaiNCjHSgGipHJCfJjy0dMiMYe0ygatJWImTscSiE+udTlyDAXS3oOz8BZQ4/oJ6Kgd4bc
-	i7MHvSiPlsoy1kr0EX0g==;
+	List-Owner; bh=QviRg2ys87UjArvtEhaUnNnMEfFlIAQSsHKq+ZJuyP8=; b=dpakhaqLOeIPZ5
+	4plERfgdNeOy6JV+EW5nZ3qkBG2pncFGjXwMQ74NXcpuMex8qWVhFoD/cy/G2Jc2eHZ3qh7hP4XSc
+	zvGH64T61bfnj3uBUgmPgL9jljFwnhUZfyf2BQh2xeBIREGgvsTc5WT4g2k3qBuB8P4e8QYMCjKzp
+	ANuQH/6JjFth9uoU5G+jFJZkwMV/ZzmCWNR1K9IRuLHW9x2Z3aHU2sBRKrJ8JOS1bjv+b9x6moEqS
+	EqXqve1TR6jhITpy83b0WMM4kieDNzLxlUZ+95KYF2gl3I+t/V6suri8cSd0xKnJoXx/Eywj4tw3U
+	AeaiWDz1OnhhwaLQIrTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia0N5-0000fU-E9; Wed, 27 Nov 2019 16:40:55 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1ia0P3-00016I-0y; Wed, 27 Nov 2019 16:42:57 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia0Mv-0000es-IQ; Wed, 27 Nov 2019 16:40:46 +0000
-Received: by mail-pl1-x642.google.com with SMTP id bb5so10016384plb.4;
- Wed, 27 Nov 2019 08:40:44 -0800 (PST)
+ id 1ia0Or-00015B-JW; Wed, 27 Nov 2019 16:42:48 +0000
+Received: by mail-pg1-x542.google.com with SMTP id t3so10708768pgl.5;
+ Wed, 27 Nov 2019 08:42:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=XxnZyGcP9Rmlyi/FludPQAATJUUTPMQYYmErZMfJYoQ=;
- b=e+kP32NcUaqG5wx8/nGkohEXD3ItQ8/aha7ve3XqxfVhMblGDvxeUUyCNi48rX4WAX
- G2RH/hCsTv8YroV9j5FaPEN4in8mhio2C4a6/8xvcdfkxy+4sPu+JgE0eZX7HUuqCimG
- eMy/u5PPC3X3Eee3qtbxFY92aAGsGyLaWdW5Pj56veJNVw4uPbn6T4odwbKXc36gJnCE
- V1IZ5CUqiLZ7f32a4/4vsWG2mZM8X6Y3h/e1lTBU5P9Pf66sd2HzC2py/NWzkZetZOYZ
- YGRF4/bj2J9Z2DtLX3cRou4KkuT5D7LvQVS5uyAeS7K2uX24K9BzRozkqmt9S6vQ0qM8
- ftcw==
+ bh=Xl4Glegm6mdECeLqfmquxCwZlwbSQB4i6Znnj9ZE+DI=;
+ b=aaLImqaXXEFyDQoHrPEMGh8ndhdl9gZJuOmHyu+pZZDTZWbfo8bKC+whjrSQVWhuxU
+ NYt+PbFK7OG+rEYQVDWtB8A0KHHEIDstj61l0+aHTIFEZ3ibUY4OeJYXrC+28XbcaqqY
+ atqmBXE+O4sp1cYypiKae5R6bxlRt8myyVVJ1So1UTPM+Bv2pXNfGlal4+Fo2eYANxA/
+ b9F0B4VdjmNO6gO5aXgVhVpAa8kcNBSkcwJzRmb4430VOcNRZAgSNLtP/9Oiq7y1w4ne
+ sjDEqe9L1scDSQetQaLeZAncSNqzJT0GL8oFf05RRmWtALJqS5XFvK2+YIZ0W4zrVlL+
+ F/pA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=XxnZyGcP9Rmlyi/FludPQAATJUUTPMQYYmErZMfJYoQ=;
- b=sfNvOvqjnqXdEHwyIaPKw+72BkzBj677G/3V2BVoh0GuzCB9OiBoAyHe/nDP5gdcGQ
- y+IOPkzx9e6XGHFYsC6AsBnHnGFWkHkQbUT6pNXeZK0PJ4UxfRZKf46YkTjy2ZW1wBsZ
- i916SfYxkPf/L2r4A5VyAEN0M8rOwd5MUoNYX47jdo1c0y8niG/OGa/4UrgKbSWlUvgg
- zKBnz7w9JE9WtAZkbJv++vbUFSNoWBbV28WEZ7B7fbriviPf+EAEI2TdnMEkl+n8BVKx
- ZgQXQQx+yze/ihGItle040aY5kux4hNeEjiuMkI0psZ3PiuyhD0r2PtLw7+zY+oHTbam
- M2jA==
-X-Gm-Message-State: APjAAAWFal9FI2RSpud9ExllI01JYsXAMCSRMIhXeEdx/5+/2RqPpJov
- 8eWrlCq9Eco+BCnOCV17mKUcVqXxpf/WFg==
-X-Google-Smtp-Source: APXvYqyOTdv5RtT17pzoqksEp4sCN6AzyskRPbgNbPryeVBL24MqJrBpusefhvfglg/U4YVOO8vpYw==
-X-Received: by 2002:a17:902:7586:: with SMTP id
- j6mr5091675pll.43.1574872844265; 
- Wed, 27 Nov 2019 08:40:44 -0800 (PST)
+ bh=Xl4Glegm6mdECeLqfmquxCwZlwbSQB4i6Znnj9ZE+DI=;
+ b=lC+52JBUkS3I5X7dLvnzPkDKLF9oDe9WQmCMLlZcXA+jwMvt/JuC+fvD9D4FJFt/AH
+ DNGNBzhiDec+AnZ/+n5m+/NMgHHy+d+Gy2VNQOBkRiWB7yJWr8F5WfnzOtBh2AAVCq2n
+ EJApTOf2QcIdOd2e/+e+5WfYQG7yaL9HSU4wOBDs+9s10mZPRIemuWatC2WvK5X/Pdgg
+ pF7lU4N6gdLAb5+9yfulvAPiUx6xrHLO27u+ZMKyCOvr1YlSlTYb1ks2hNev2By0TDgH
+ sawo9b8bDGBN4ms952ynODwvWe0BqJqWho9vYQ3ilH/vhadODGl3gvlGhRAI7KgLJ9lM
+ vLVg==
+X-Gm-Message-State: APjAAAWPwKrjf72Pq0DZ4kkJ9IENtqOwOR9XEzOIi3aA2XiIYr0YOUfz
+ Pw/37kWAmh4pybepr3+Lg4g=
+X-Google-Smtp-Source: APXvYqwlDU2Ab8PAuwqLDAc5/btU/U8B8e0EchIgGnZlTuxZOq1jBwxBcCm7mSvfv1ntAHxZjKgsbg==
+X-Received: by 2002:a65:590f:: with SMTP id f15mr5870948pgu.381.1574872964385; 
+ Wed, 27 Nov 2019 08:42:44 -0800 (PST)
 Received: from nishad ([106.51.232.103])
- by smtp.gmail.com with ESMTPSA id y17sm17002645pfl.92.2019.11.27.08.40.37
+ by smtp.gmail.com with ESMTPSA id v3sm16827100pfn.129.2019.11.27.08.42.37
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 27 Nov 2019 08:40:43 -0800 (PST)
-Date: Wed, 27 Nov 2019 22:10:33 +0530
+ Wed, 27 Nov 2019 08:42:43 -0800 (PST)
+Date: Wed, 27 Nov 2019 22:12:33 +0530
 From: Nishad Kamdar <nishadkamdar@gmail.com>
 To: Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
@@ -68,24 +67,24 @@ To: Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Joe Perches <joe@perches.com>,
  Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: [PATCH 1/5] pinctrl: actions: Use the correct style for SPDX License
- Identifier
-Message-ID: <5b588fc885efca6efdc73869aa4b1eeeb3d6f6c5.1574871463.git.nishadkamdar@gmail.com>
+Subject: [PATCH 2/5] pinctrl: mediatek: Use the correct style for SPDX
+ License Identifier
+Message-ID: <2994fb2f3375790e832396cdbb0a279dc8c8839f.1574871463.git.nishadkamdar@gmail.com>
 References: <cover.1574871463.git.nishadkamdar@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <cover.1574871463.git.nishadkamdar@gmail.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_084045_609555_BF930D2F 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20191127_084245_648625_0F668311 
+X-CRM114-Status: GOOD (  11.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -119,7 +118,7 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 This patch corrects the SPDX License Identifier style in
-header file related Actions Semi OWL pinctrl driver.
+header file related mediatek mt2712 pinctrl driver.
 For C header files Documentation/process/license-rules.rst
 mandates C-like comments (opposed to C source files where
 C++ style should be used).
@@ -130,19 +129,19 @@ https://lkml.org/lkml/2019/2/7/46.
 Suggested-by: Joe Perches <joe@perches.com>
 Signed-off-by: Nishad Kamdar <nishadkamdar@gmail.com>
 ---
- drivers/pinctrl/actions/pinctrl-owl.h | 2 +-
+ drivers/pinctrl/mediatek/pinctrl-mtk-mt2712.h | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/pinctrl/actions/pinctrl-owl.h b/drivers/pinctrl/actions/pinctrl-owl.h
-index dae2e8363fd5..feee7ad7e27e 100644
---- a/drivers/pinctrl/actions/pinctrl-owl.h
-+++ b/drivers/pinctrl/actions/pinctrl-owl.h
+diff --git a/drivers/pinctrl/mediatek/pinctrl-mtk-mt2712.h b/drivers/pinctrl/mediatek/pinctrl-mtk-mt2712.h
+index ba2356a8ab89..845c408b5fdb 100644
+--- a/drivers/pinctrl/mediatek/pinctrl-mtk-mt2712.h
++++ b/drivers/pinctrl/mediatek/pinctrl-mtk-mt2712.h
 @@ -1,4 +1,4 @@
--// SPDX-License-Identifier: GPL-2.0+
-+/* SPDX-License-Identifier: GPL-2.0+ */
+-// SPDX-License-Identifier: GPL-2.0
++/* SPDX-License-Identifier: GPL-2.0 */
  /*
-  * OWL SoC's Pinctrl definitions
-  *
+  * Copyright (C) 2018 MediaTek Inc.
+  * Author: Zhiyong Tao <zhiyong.tao@mediatek.com>
 -- 
 2.17.1
 
