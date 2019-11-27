@@ -2,104 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D2BC10AA3A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 06:31:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED9F210AA4F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 06:41:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hIFy7oZ6sxQlwnl8xYPL8jcmVzwhvI97YD2amTSVq48=; b=pLyrMXL2bfI7HQ
-	qGitWLiF3PABHGONWi7DPVFGoExQ0JWtbW2AMXejFm5KI4BOOC5vvwMljSXLVl1oLyI5fyIitgs0R
-	FVscxB/eEvcD9cLi76rSnjxhPvzRt68zFgtJzbgSx1/+yL35rw+NfgEvJwsi9Q2o/WkOVbslM7+ca
-	DwbOyEsnj+Q+oemN3PPx2Ht1vWhqYx1QeqxjtFf6Qk4sM9KaCqkOYre5rmeGuPiwAiUEXNxY1nj2H
-	E9ZVcbvFyGhxX+w+uOLtTFN9CGBuE4GOlocV1F8CtUv4H8KYLLIYUoKCNbQ31VBPe98u0tlcVgKPf
-	WjFYyI8ZL7kwrS3Y4hhA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XP+xAHdratTSy6sIQj4n3e4FExdR85T4yXAp6o31nqw=; b=fz/29LilCV/FwC
+	B5tAaGAZVu2JFDk1gav/9Dhq/nicNyBEHcaJam9kL6eon2S2vKysehGKT/QtqGJZWd9rZvpfPyi5m
+	Vt5Vlnb7tgEbzArRg5NDTAX0RoIilG2kLcfcvrYDWROTtGWWgdr98s2sn+ogrYw0j4Sz376Llszir
+	n5rsdw/b9hrhT7aWzcjpR/6yaoBID++hwsXz819IVHT73htGys8fRV2uFwMOa+4QxmfS4f+v3zjDw
+	hpN0PtnKXrUS4nWf9mdhehR/W8AH16takNVapM9iEDFmo2nYsmNAcTfAt/idwpK6zxnEJ5DRXCvzM
+	G6/o8jBGzEcUaMMSAmBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZpvS-0003LE-85; Wed, 27 Nov 2019 05:31:42 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZpty-0001PR-W5
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 05:30:13 +0000
-Received: by mail-pf1-x443.google.com with SMTP id z4so10371178pfn.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 Nov 2019 21:30:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=x/g/N4KzHVV4RuzvNHUGZqmzy45B3KGb/OK0/1dB9T8=;
- b=Gxdw2rKqQP1tFFYTh/7YkqTFLDu3h8wGRO7A1pwADtbKv2Icos2XLtwyzFORJg/COV
- TGLg+lJEUAZMQtn6c/DFzattserk6a18kPE5ZaGOBFHdH+5MrZecQxb6/iQh3dbUrT8u
- hdlMKJw3tj/OITbVx3catDXjgCa6Lb2AWMv0s/4UQzk91IWq2EN3SZQILiAtMa4BcQ2g
- CEBOf6ALxwOV0q2OndJ+0UwkdUHDI7Nu3zV/2kzhFWqRZQPfCP4rUcgLPteBn5Fxh/24
- jDN2vJM4bRSFNsu0p62O3obzwE92hYEy7tibnNz/X2KCALhL0CwRtQDB/Tb7pBcvQ0be
- wNZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=x/g/N4KzHVV4RuzvNHUGZqmzy45B3KGb/OK0/1dB9T8=;
- b=jwg2GPDWZbILVDcJ/0agICXfJ7Z2pxGDS4usOIiJN6e60tmgnPgC2S2o4NnEGsfIhd
- NoF21EeHMu7tkVkfVVjiD/T27FXJKSDWFEPFRy4zpsN6a5lTlR6xsWh6ITpOQ3i+rWfS
- vQhegVeoCy22vz77Yg33/dmz6zMXRaYmnY8HImpbCtqbgtWyFo+LUyMvzR+/OhpiphTI
- aE+fdl85/uGRHokyR28zoBl7qsnyf7nMsGauMUjUO3EiITz6Mp6A9URvhXgk6LyD+yq5
- /NfcrdAmqRmba1Fsal2LERJIKedK+3Fc89vMZlaqr9heuM8PHC339tmH0r2RfQu5NRgs
- X3tg==
-X-Gm-Message-State: APjAAAXFzCcBcrwZjVtCbO09C2Dlybxj+drMOUJ93KFG06ABiOHQBvkQ
- bHxzz44F+q3f3AbujE3AvvI=
-X-Google-Smtp-Source: APXvYqytlD1vXHcdOuDq5LuRIkSh1p/G+80uJlZCuAO/WdysYgSu7XidkxJyqo2lBaGefFezyXGcUA==
-X-Received: by 2002:aa7:8517:: with SMTP id v23mr44949740pfn.75.1574832608526; 
- Tue, 26 Nov 2019 21:30:08 -0800 (PST)
-Received: from anarsoul-thinkpad.lan (216-71-213-236.dyn.novuscom.net.
- [216.71.213.236])
- by smtp.gmail.com with ESMTPSA id p38sm4360825pjp.27.2019.11.26.21.30.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 Nov 2019 21:30:08 -0800 (PST)
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-To: Yangtao Li <tiny.windzz@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
- Eduardo Valentin <edubezval@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-pm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- =?UTF-8?q?Ond=C5=99ej=20Jirman?= <megous@megous.com>,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v6 7/7] arm64: dts: allwinner: a64: Add thermal sensors and
- thermal zones
-Date: Tue, 26 Nov 2019 21:29:35 -0800
-Message-Id: <20191127052935.1719897-8-anarsoul@gmail.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191127052935.1719897-1-anarsoul@gmail.com>
-References: <20191127052935.1719897-1-anarsoul@gmail.com>
-MIME-Version: 1.0
+	id 1iZq4s-0006ad-AY; Wed, 27 Nov 2019 05:41:26 +0000
+Received: from coyote.holtmann.net ([212.227.132.17] helo=mail.holtmann.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iZq4g-0006YW-3N; Wed, 27 Nov 2019 05:41:17 +0000
+Received: from marcel-macbook.fritz.box (p4FF9F0D1.dip0.t-ipconnect.de
+ [79.249.240.209])
+ by mail.holtmann.org (Postfix) with ESMTPSA id 25CC6CED06;
+ Wed, 27 Nov 2019 06:50:04 +0100 (CET)
+Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3601.0.10\))
+Subject: Re: [PATCH] Bluetooth: btusb: Edit the logical value for Realtek
+ Bluetooth reset
+From: Marcel Holtmann <marcel@holtmann.org>
+In-Reply-To: <20191127030107.17604-1-max.chou@realtek.com>
+Date: Wed, 27 Nov 2019 06:40:55 +0100
+Message-Id: <E65E251A-53D0-4376-86FB-9EB1AA0074EA@holtmann.org>
+References: <20191127030107.17604-1-max.chou@realtek.com>
+To: Max Chou <max.chou@realtek.com>
+X-Mailer: Apple Mail (2.3601.0.10)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_213011_149342_5830CFD7 
-X-CRM114-Status: GOOD (  13.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191126_214114_289228_A14684F9 
+X-CRM114-Status: UNSURE (   7.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
+ no trust [212.227.132.17 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,94 +60,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Johan Hedberg <johan.hedberg@gmail.com>,
+ lkml <linux-kernel@vger.kernel.org>,
+ Bluez mailing list <linux-bluetooth@vger.kernel.org>, alex_lu@realsil.com.cn,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A64 has 3 thermal sensors: 1 for CPU, 2 for GPU.
+Hi Max,
 
-Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
----
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 42 +++++++++++++++++++
- 1 file changed, 42 insertions(+)
+> It should be pull low and pull high on the physical line for the Realtek
+> Bluetooth reset. gpiod_set_value_cansleep() takes ACTIVE_LOW status for
+> the logical value settings, so the original commit should be corrected.
+> 
+> Signed-off-by: Max Chou <max.chou@realtek.com>
+> ---
+> drivers/bluetooth/btusb.c | 4 ++--
+> 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 70f4cce6be43..59ef6410c6e0 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -49,6 +49,7 @@
- #include <dt-bindings/reset/sun50i-a64-ccu.h>
- #include <dt-bindings/reset/sun8i-de2.h>
- #include <dt-bindings/reset/sun8i-r-ccu.h>
-+#include <dt-bindings/thermal/thermal.h>
- 
- / {
- 	interrupt-parent = <&gic>;
-@@ -202,6 +203,29 @@
- 			(GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
- 	};
- 
-+	thermal-zones {
-+		cpu_thermal: cpu0-thermal {
-+			/* milliseconds */
-+			polling-delay-passive = <0>;
-+			polling-delay = <0>;
-+			thermal-sensors = <&ths 0>;
-+		};
-+
-+		gpu0_thermal: gpu0-thermal {
-+			/* milliseconds */
-+			polling-delay-passive = <0>;
-+			polling-delay = <0>;
-+			thermal-sensors = <&ths 1>;
-+		};
-+
-+		gpu1_thermal: gpu1-thermal {
-+			/* milliseconds */
-+			polling-delay-passive = <0>;
-+			polling-delay = <0>;
-+			thermal-sensors = <&ths 2>;
-+		};
-+	};
-+
- 	soc {
- 		compatible = "simple-bus";
- 		#address-cells = <1>;
-@@ -476,6 +500,12 @@
- 		sid: eeprom@1c14000 {
- 			compatible = "allwinner,sun50i-a64-sid";
- 			reg = <0x1c14000 0x400>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			ths_calibration: thermal-sensor-calibration@34 {
-+				reg = <0x34 0x6>;
-+			};
- 		};
- 
- 		usb_otg: usb@1c19000 {
-@@ -792,6 +822,18 @@
- 			status = "disabled";
- 		};
- 
-+		ths: thermal-sensor@1c25000 {
-+			compatible = "allwinner,sun50i-a64-ths";
-+			reg = <0x01c25000 0x100>;
-+			clocks = <&ccu CLK_BUS_THS>, <&ccu CLK_THS>;
-+			clock-names = "bus", "mod";
-+			interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
-+			resets = <&ccu RST_BUS_THS>;
-+			nvmem-cells = <&ths_calibration>;
-+			nvmem-cell-names = "calibration";
-+			#thermal-sensor-cells = <1>;
-+		};
-+
- 		uart0: serial@1c28000 {
- 			compatible = "snps,dw-apb-uart";
- 			reg = <0x01c28000 0x400>;
--- 
-2.24.0
+patch has been applied to bluetooth-next tree.
+
+Regards
+
+Marcel
 
 
 _______________________________________________
