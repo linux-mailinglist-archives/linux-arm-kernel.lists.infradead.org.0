@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E24C10ADBE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:31:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B86A810ADC3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:32:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=vRDIbRu95hdAH9GLrARCCTrO2s1BqIyDgaeOrstrj5s=; b=IxQPMuz3N0wXIy+4soOFUf0Otq
-	7DuPACeOpWXXkCmrThQ6JnvVN1w9eoAzLZqUO2Z7C60pQoBn2DKSYpgS1HroOsvXE/fHiOyRL2SMo
-	fBfwgaGiz33ae0UCKCFik2JrYuv7Duoz77tCNjb7kJF0TaSTwG0MrHQ8N8sYduAQGfDlRAyUZrzNr
-	XSgjZ5EFYvKGJGtkQEPTvdO+hV4cIx/OmnNHd6b0eg6MzNETRjwnG9XhC2liaWR54omZzX5H51zlb
-	BOnP/knGXe0Z2h9eud2olneFqk6HWLLIP2AN7Cu3nrURbgXCAHxO5MaX/leWwuQvrbNd3zqSkPMEC
-	X3yQtLQA==;
+	bh=u2QmezXNP31rduVZdH2OBXEOkAXZZWYmHBKE6jJRmy8=; b=AEXGMtU5McnX5mJu6gf4T9s0VE
+	Tmj9h1bdRdi0aW3mNv9zUUhs02qgM4Gq5ByJDHDIgEDpND0tlFKdb3XxyDB/43FAN3PphSHjXQ7ya
+	zSs2C4YYDkUqoWJT6LUmBDqPD/khc7uXe5YJMNucyrcNxfBHXogo8jhEDp7BgEiG2QHzQU5cug6PY
+	gq9xdyC8I7Zb3A4D71lwDGkqJVAeMRegQR2PL1gvXrnEP1XGRZ/FFlq4sh8tpzpbMDHLidnrp9dIe
+	hzSYRsEJqYbu1xcr36ytlg5QXEvsrdibuTAQb7E6NFe1VME3jdzxpSlyV5HNdO8+0KRq+jq5nAsPU
+	13Agb4qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZubT-00081q-8i; Wed, 27 Nov 2019 10:31:23 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1iZucW-0000g6-6j; Wed, 27 Nov 2019 10:32:28 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZuZg-0005gr-3K
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 10:29:34 +0000
-Received: by mail-lj1-x241.google.com with SMTP id n5so23825546ljc.9
+ id 1iZuZh-0005iI-BI
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 10:29:35 +0000
+Received: by mail-lf1-x144.google.com with SMTP id 203so16677445lfa.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 Nov 2019 02:29:31 -0800 (PST)
+ Wed, 27 Nov 2019 02:29:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=SHPjR9zZ7uq0Kj/IaV5FCx5nyj5I/bGlCTsLFROfK7Q=;
- b=SpKow93TEIjeXQjtQiOs3Xwd8CuMBf0zXNBrjjIn1bEdIvtZtHvQhEPY5pQzU0bVJW
- pdcv+s2kEU6Qz7/PWhSyBwIqZmOGha0i5j4ktryefoH2e4vK2DMfoIuw91Kw4YKjUBld
- s8z83GMKLj6qPxMqs5aRmxjXH2Z6OnWyoDkEd+SayE1WBAU+OgkbS7UyXudARePKUOCp
- 155TWhdsIrS5XtWfS6TX5oGKGGo66sB2uR7ZpMS3JkALDcoWZk6ZkiyVF0+xqhKzutxD
- YrkCUjwTJnc5jgoaZZaTQNQirBpZBBftlCFWx54snz3N8yM/ac8lF1KuRuDCQS1v8Bij
- TMow==
+ bh=YDuIKF2u/t0zqT/PFLBo98uaEM9517X/GbUauBtkgr4=;
+ b=uwA+m9WfDKjbBezkbOrLRu6yVTPgdRr7kEaV+WDMwVHp8ndZU/bqjiqpTu6iTDRlwE
+ GEWtK1C4weec3gXsxWUz/Zt1apMdmrxCCgNwXHY7InzJGDHWLtrYlLRO35DEsLa1CTJn
+ 1l99Xc5nKfxNduW4sFOWbjZ3zYHkk/mf5TJlf7YixTNEvWaG8LrHE0i5fl45a4zGrGp1
+ iXLfXve7JYW27J32oSQ90Gl7NOb/jFc8I9ZxbFGbYFzT5zDOD25O6IAc7rkRood2iEFi
+ bUj9OMlBVeQ4c8LxU358f78a4DJDQ/xZvj9XRyBM1QFFM4b9F7yFMc0Xwsd+wQusQnuS
+ Nu8Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=SHPjR9zZ7uq0Kj/IaV5FCx5nyj5I/bGlCTsLFROfK7Q=;
- b=ZbSRpqT0M1WbakSxmwGkvLdv+j69AmZYUNfJ9Vm/YErl8Vled+1JQO9BGe06pImCo4
- xTNv/a1gkJyJyfWf9op25NhCOKb4r8Z3/svhnxhnFrpbwHO4Ul9I3E8fwJSVNYhs9/1f
- iVW8c7uJSb4d5bSo3JQk6+JL7uyuCE5j3ByqCe3do/siNCTdOokqUp9KMbvpXQEYd6VU
- t0KvO8OsrSDbXT+F6gQd9824onr6NW4OW3Zl914RBbdOIYRQviVvj3fTz5A2W0v2qoW/
- jV6B5t7xX7/iHnZ9DIr8zTkLT1weGx1KJoPcuBsYxAS9RttLoC2n7BO+1f2xSWhKEvax
- Wfmg==
-X-Gm-Message-State: APjAAAVdbS1R2PB+kjDiU1IownLApOCIH9oCC/feP3loBcVVl4UhEGui
- bSQgJgfL0i9WpI7gHhoffZxeTw==
-X-Google-Smtp-Source: APXvYqxkmkb3820IUsRaukyCsGnVs+nkOdYxPeLsccuW5B67YbC/Kw/2Tts/IPcs+rrCdKFXCsMFOA==
-X-Received: by 2002:a2e:7202:: with SMTP id n2mr27337481ljc.194.1574850569746; 
- Wed, 27 Nov 2019 02:29:29 -0800 (PST)
+ bh=YDuIKF2u/t0zqT/PFLBo98uaEM9517X/GbUauBtkgr4=;
+ b=RhdBGZ0rQLOWd6Rfa1PJFLi2VXdaF7mO6SxrhVIFNtBzhn0QIZ9vixtgQZ0unmDeNc
+ UUohLnpGyoismTAFLozNCjN6UVWj1GBBEzMAQObWKhQjVWK9Z/neSSJurmBffQ9S2L61
+ al+0REWg6R5Aim+lzPkm2ccWUmZXPwzxgxIJFOt3Ef0jwECztz5++FisGth2dGqSfB7s
+ vjRZwSPPkVoRQFxKbt1oWwqTFgJnVFgJH7UNionj8ooIBTRZ7qydZOynqGuDj83h8Uw0
+ /1sjpUEIpfgN5x5j/gqgAhhN6FQBC9kIeunxgAfD2I9muyqe4f1i6b4aZUPOnkP1/yZ/
+ 8lsg==
+X-Gm-Message-State: APjAAAVJHp7ym3NyP4mzDn6biozFUbLcqTA7CRTOF/OXsLZgfOS0P3sE
+ LMZIe6FaiqpmL19Bn+AkgaedCA==
+X-Google-Smtp-Source: APXvYqzR+IbfU/o0Fa1cQvZhfrwH8z5ze9YCQCLSUiMUNU6DIDIY20P09bbx6zldipb6zrULTiqGXw==
+X-Received: by 2002:ac2:5462:: with SMTP id e2mr18613613lfn.181.1574850570998; 
+ Wed, 27 Nov 2019 02:29:30 -0800 (PST)
 Received: from uffe-XPS-13-9360.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id t9sm6868260ljj.19.2019.11.27.02.29.28
+ by smtp.gmail.com with ESMTPSA id t9sm6868260ljj.19.2019.11.27.02.29.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 Nov 2019 02:29:29 -0800 (PST)
+ Wed, 27 Nov 2019 02:29:30 -0800 (PST)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
  Rob Herring <robh+dt@kernel.org>, linux-pm@vger.kernel.org
-Subject: [PATCH v3 08/13] cpuidle: psci: Add a helper to attach a CPU to its
- PM domain
-Date: Wed, 27 Nov 2019 11:29:09 +0100
-Message-Id: <20191127102914.18729-9-ulf.hansson@linaro.org>
+Subject: [PATCH v3 09/13] cpuidle: psci: Attach CPU devices to their PM domains
+Date: Wed, 27 Nov 2019 11:29:10 +0100
+Message-Id: <20191127102914.18729-10-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191127102914.18729-1-ulf.hansson@linaro.org>
 References: <20191127102914.18729-1-ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_022932_184693_B44FE23C 
-X-CRM114-Status: GOOD (  17.62  )
+X-CRM114-CacheID: sfid-20191127_022933_442240_35A2E34F 
+X-CRM114-Status: GOOD (  15.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,18 +109,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Introduce a PSCI DT helper function, psci_dt_attach_cpu(), which takes a
-CPU number as an in-parameter and tries to attach the CPU's struct device
-to its corresponding PM domain.
+In order to enable a CPU to be power managed through its PM domain, let's
+try to attach it by calling psci_dt_attach_cpu() during the cpuidle
+initialization.
 
-Let's makes use of dev_pm_domain_attach_by_name(), as it allows us to
-specify "psci" as the "name" of the PM domain to attach to. Additionally,
-let's also prepare the attached device to be power managed via runtime PM.
-
-Note that, the implementation of the new helper function is in a new
-separate c-file, which may seems a bit too much at this point. However,
-subsequent changes that implements the remaining part of the PM domain
-support for cpuidle-psci, helps to justify this split.
+psci_dt_attach_cpu() returns a pointer to the attached struct device, which
+later should be used for runtime PM, hence we need to store it somewhere.
+Rather than adding yet another per CPU variable, let's create a per CPU
+struct to collect the relevant per CPU variables.
 
 Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 ---
@@ -130,88 +125,65 @@ Changes in v3:
 	- None.
 
 ---
- drivers/cpuidle/Makefile              |  4 ++-
- drivers/cpuidle/cpuidle-psci-domain.c | 36 +++++++++++++++++++++++++++
- drivers/cpuidle/cpuidle-psci.h        | 12 +++++++++
- 3 files changed, 51 insertions(+), 1 deletion(-)
- create mode 100644 drivers/cpuidle/cpuidle-psci-domain.c
- create mode 100644 drivers/cpuidle/cpuidle-psci.h
+ drivers/cpuidle/cpuidle-psci.c | 24 ++++++++++++++++++++----
+ 1 file changed, 20 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/cpuidle/Makefile b/drivers/cpuidle/Makefile
-index ee70d5cc5b99..cc8c769d7fa9 100644
---- a/drivers/cpuidle/Makefile
-+++ b/drivers/cpuidle/Makefile
-@@ -21,7 +21,9 @@ obj-$(CONFIG_ARM_U8500_CPUIDLE)         += cpuidle-ux500.o
- obj-$(CONFIG_ARM_AT91_CPUIDLE)          += cpuidle-at91.o
- obj-$(CONFIG_ARM_EXYNOS_CPUIDLE)        += cpuidle-exynos.o
- obj-$(CONFIG_ARM_CPUIDLE)		+= cpuidle-arm.o
--obj-$(CONFIG_ARM_PSCI_CPUIDLE)		+= cpuidle-psci.o
-+obj-$(CONFIG_ARM_PSCI_CPUIDLE)		+= cpuidle_psci.o
-+cpuidle_psci-y				:= cpuidle-psci.o
-+cpuidle_psci-$(CONFIG_PM_GENERIC_DOMAINS_OF) += cpuidle-psci-domain.o
+diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
+index 830995b8a56f..167249d0493f 100644
+--- a/drivers/cpuidle/cpuidle-psci.c
++++ b/drivers/cpuidle/cpuidle-psci.c
+@@ -20,14 +20,20 @@
  
- ###############################################################################
- # MIPS drivers
-diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
-new file mode 100644
-index 000000000000..bc7df4dc0686
---- /dev/null
-+++ b/drivers/cpuidle/cpuidle-psci-domain.c
-@@ -0,0 +1,36 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * PM domains for CPUs via genpd - managed by cpuidle-psci.
-+ *
-+ * Copyright (C) 2019 Linaro Ltd.
-+ * Author: Ulf Hansson <ulf.hansson@linaro.org>
-+ *
-+ */
-+
-+#include <linux/cpu.h>
-+#include <linux/device.h>
-+#include <linux/kernel.h>
-+#include <linux/pm_domain.h>
-+#include <linux/pm_runtime.h>
-+#include <linux/psci.h>
-+
+ #include <asm/cpuidle.h>
+ 
 +#include "cpuidle-psci.h"
-+
-+struct device *psci_dt_attach_cpu(int cpu)
-+{
+ #include "dt_idle_states.h"
+ 
+-static DEFINE_PER_CPU_READ_MOSTLY(u32 *, psci_power_state);
++struct psci_cpuidle_data {
++	u32 *psci_states;
 +	struct device *dev;
++};
 +
-+	/* Currently limit the hierarchical topology to be used in OSI mode. */
-+	if (!psci_has_osi_support())
-+		return NULL;
++static DEFINE_PER_CPU_READ_MOSTLY(struct psci_cpuidle_data, psci_cpuidle_data);
+ 
+ static int psci_enter_idle_state(struct cpuidle_device *dev,
+ 				struct cpuidle_driver *drv, int idx)
+ {
+-	u32 *state = __this_cpu_read(psci_power_state);
++	u32 *state = __this_cpu_read(psci_cpuidle_data.psci_states);
+ 
+ 	return CPU_PM_CPU_IDLE_ENTER_PARAM(psci_cpu_suspend_enter,
+ 					   idx, state[idx]);
+@@ -78,7 +84,9 @@ static int __init psci_dt_cpu_init_idle(struct device_node *cpu_node,
+ {
+ 	int i, ret = 0;
+ 	u32 *psci_states;
++	struct device *dev;
+ 	struct device_node *state_node;
++	struct psci_cpuidle_data *data = per_cpu_ptr(&psci_cpuidle_data, cpu);
+ 
+ 	state_count++; /* Add WFI state too */
+ 	psci_states = kcalloc(state_count, sizeof(*psci_states), GFP_KERNEL);
+@@ -104,8 +112,16 @@ static int __init psci_dt_cpu_init_idle(struct device_node *cpu_node,
+ 		goto free_mem;
+ 	}
+ 
+-	/* Idle states parsed correctly, initialize per-cpu pointer */
+-	per_cpu(psci_power_state, cpu) = psci_states;
++	dev = psci_dt_attach_cpu(cpu);
++	if (IS_ERR(dev)) {
++		ret = PTR_ERR(dev);
++		goto free_mem;
++	}
 +
-+	dev = dev_pm_domain_attach_by_name(get_cpu_device(cpu), "psci");
-+	if (IS_ERR_OR_NULL(dev))
-+		return dev;
++	data->dev = dev;
 +
-+	pm_runtime_irq_safe(dev);
-+	if (cpu_online(cpu))
-+		pm_runtime_get_sync(dev);
-+
-+	return dev;
-+}
-diff --git a/drivers/cpuidle/cpuidle-psci.h b/drivers/cpuidle/cpuidle-psci.h
-new file mode 100644
-index 000000000000..0cadbb71dc55
---- /dev/null
-+++ b/drivers/cpuidle/cpuidle-psci.h
-@@ -0,0 +1,12 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+
-+#ifndef __CPUIDLE_PSCI_H
-+#define __CPUIDLE_PSCI_H
-+
-+#ifdef CONFIG_PM_GENERIC_DOMAINS_OF
-+struct device *psci_dt_attach_cpu(int cpu);
-+#else
-+static inline struct device *psci_dt_attach_cpu(int cpu) { return NULL; }
-+#endif
-+
-+#endif /* __CPUIDLE_PSCI_H */
++	/* Idle states parsed correctly, store them in the per-cpu struct. */
++	data->psci_states = psci_states;
+ 	return 0;
+ 
+ free_mem:
 -- 
 2.17.1
 
