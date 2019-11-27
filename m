@@ -2,57 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A55A210B2E4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 17:04:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F41E10B2F0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 17:06:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hU7UZf/btUyERsTn7DVHel/FRTBnWrF97VDpIPcjYTQ=; b=pYkhj9i5SnMCKT
-	JeiwDWyE2Kj4oA40yPMu9YcMItzfgnEvUJDAITXW6BqBXuC8IHc3Guld7T0xyTIR0kX70xZqyfXaZ
-	+U2dt6fHBFEqnXJl8eHIn3VPmig6soGjYgJH3ZLW7ld1Fop3sKZ3D/W5UkidM1B76aX6Qu4f9XjEl
-	VEn6w3LzFnuHhSinn1cr2tmNqQmmrwo/vfn19DxFr/sKkZZkyAlKZIQwZdSi9oeQMZGebARTqlXYi
-	qIek2P47VeXZ9/pG2NCKmv+cGj/uvApkAmWc8/VH/1oRj2gv779QJQzLewTAWIGaqw8GZuW2tmibs
-	i1+OvnTr/LokV5oOEoOQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8gbDblhj1m4ZSpTlz4/P3DHF1Nb+HlHmmowfyFakqi4=; b=Lu+ZlewqoADvHq
+	7aCyEuvPFYc180YHiTj2uqkH04zULNlOy9Vhkj2D1OAPJ0tb+DGXxlgPPcXOyjCdJ+alImvTabAFo
+	UEfMwqEEGwu3YEdaDyKFHG3XK1tmSZwIx2dntG/A3vYkydRsU2hXRpXxost65Tz7Lg9EcGb8Iym5X
+	CoPgwkGkfnHKhKcdoKmgWs26CP4mtDoqU1o5niNoQljrhxupPcelLXJYhlxf4mrajS6USk+kVS3OB
+	C7VRFLX6m7t6j+OikTiKKOUQWIWVorr8wBkRDLMwrTzAsXJ6qmB4IXXjvbJVmYE2EoMG1QoBo/Y57
+	POZi0u3f9yCb4BBZZwVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZznN-0002vj-AP; Wed, 27 Nov 2019 16:04:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1iZzq0-0004YJ-VW; Wed, 27 Nov 2019 16:06:44 +0000
+Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZznD-0002uS-Is
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 16:03:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1388630E;
- Wed, 27 Nov 2019 08:03:48 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 50F533F68E;
- Wed, 27 Nov 2019 08:03:45 -0800 (PST)
-Date: Wed, 27 Nov 2019 16:03:43 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Pavel Tatashin <pasha.tatashin@soleen.com>
-Subject: Re: [PATCH v2 3/3] arm64: remove the rest of asm-uaccess.h
-Message-ID: <20191127160342.GF51937@lakrids.cambridge.arm.com>
-References: <20191122022406.590141-1-pasha.tatashin@soleen.com>
- <20191122022406.590141-4-pasha.tatashin@soleen.com>
- <20191127151154.GC51937@lakrids.cambridge.arm.com>
- <CA+CK2bDDom_pwLC-ABwDw66ynyELH3f3NdjUEdhr1LYLkgWJvg@mail.gmail.com>
+ id 1iZzpr-0004Xi-RF
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 16:06:37 +0000
+Received: from hillo.muru.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTP id 56AC38102;
+ Wed, 27 Nov 2019 16:07:11 +0000 (UTC)
+From: Tony Lindgren <tony@atomide.com>
+To: soc@kernel.org
+Subject: [GIT PULL] few omap dts fixes for v5.5 merge window
+Date: Wed, 27 Nov 2019 08:06:27 -0800
+Message-Id: <pull-1574870758-237468@atomide.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CA+CK2bDDom_pwLC-ABwDw66ynyELH3f3NdjUEdhr1LYLkgWJvg@mail.gmail.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_080351_667978_CFB77161 
-X-CRM114-Status: GOOD (  18.42  )
+X-CRM114-CacheID: sfid-20191127_080635_921250_A28DC17D 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,65 +57,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Stefan Agner <stefan@agner.ch>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, Will Deacon <will@kernel.org>,
- boris.ostrovsky@oracle.com, Sasha Levin <sashal@kernel.org>,
- Stefano Stabellini <sstabellini@kernel.org>, James Morris <jmorris@namei.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- xen-devel@lists.xenproject.org, Vladimir Murzin <vladimir.murzin@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, alexios.zavras@intel.com,
- Thomas Gleixner <tglx@linutronix.de>, allison@lohutok.net, jgross@suse.com,
- steve.capper@arm.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
- info@metux.net
+Cc: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org,
+ arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 27, 2019 at 10:31:54AM -0500, Pavel Tatashin wrote:
-> On Wed, Nov 27, 2019 at 10:12 AM Mark Rutland <mark.rutland@arm.com> wrote:
-> >
-> > On Thu, Nov 21, 2019 at 09:24:06PM -0500, Pavel Tatashin wrote:
-> > > The __uaccess_ttbr0_disable and __uaccess_ttbr0_enable,
-> > > are the last two macros defined in asm-uaccess.h.
-> > >
-> > > Replace them with C wrappers and call C functions from
-> > > kernel_entry and kernel_exit.
-> >
-> > For now, please leave those as-is.
-> >
-> > I don't think we want to have out-of-line C wrappers in the middle of
-> > the entry assembly where we don't have a complete kernel environment.
-> > The use in entry code can also assume non-preemptibility, while the C
-> > functions have to explcitily disable that.
-> 
-> I do not understand, if C function is called form non-preemptible
-> context it stays non-preemptible. kernel_exit already may call C
-> functions around the time __uaccess_ttbr0_enable is called (it may
-> call post_ttbr_update_workaround), and that C functions does not do
-> explicit preempt disable:
+From: "Tony Lindgren" <tony@atomide.com>
 
-Sorry, I meant that IRQs are disabled here.
+The following changes since commit abb0e36b434d784864fe0e4d5dedd17f4d72f3e3:
 
-The C wrapper calls __uaccess_ttbr0_enable(), which calls
-local_irq_save() and local_irq_restore(). Those are pointless in the
-bowels of the entry code, and potentially expensive if IRQ prio masking
-is in use.
+  ARM: dts: logicpd-torpedo: Disable USB Host (2019-11-11 13:03:06 -0800)
 
-I'd rather not add more out-of-line C code calls here right now as I'd
-prefer to factor out the logic to C in a better way.
+are available in the Git repository at:
 
-> > We can certainly remove the includes of <asm/asm-uaccess.h> elsewhere,
-> > and maybe fold the macros into entry.S if it's not too crowded.
-> 
-> I can do this as a separate patch.
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.5/dt-fixes-merge-window-signed
 
-That sounds fine to me,
+for you to fetch changes up to 3e5c3c41ae925458150273e2f74ffbf999530c5f:
 
-Thanks,
-Mark.
+  ARM: dts: Fix sgx sysconfig register for omap4 (2019-11-25 07:40:01 -0800)
+
+----------------------------------------------------------------
+Device tree fixes for omap variants for for v5.5 merge window
+
+This series of changes contains fixes for few SoC and board specific
+issues that would be good to have merged for v5.5-rc1:
+
+- Fix incorrect MMC card detection polarity for omap3-tao3530
+
+- Fix wrong am57xx-beagle-x15 pinmux named states for eMMC
+
+- Fix dra7 cpsw mdio clock that causes wrong speed
+
+- Fix vcsi for droid4 so it won't get turned off after init
+
+- Fix rev and sysconfig register offsets for omap4 sgx so it can idle
+
+Then there are also two minor late changes to logicpd-torpedo-baseboard
+to configure 1-wire HDQ for battery stats, and remove out of date
+workaround comments no longer needed.
+
+----------------------------------------------------------------
+Adam Ford (2):
+      ARM: dts: logicpd-torpedo-baseboard:  Enable HDQ
+      ARM: dts: logicpd-torpedo: Remove unnecessary notes/comments
+
+Faiz Abbas (1):
+      ARM: dts: am57xx-beagle-x15: Update pinmux name to ddr_3_3v
+
+Grygorii Strashko (1):
+      ARM: dts: dra7: fix cpsw mdio fck clock
+
+Jarkko Nikula (1):
+      ARM: dts: omap3-tao3530: Fix incorrect MMC card detection GPIO polarity
+
+Tony Lindgren (2):
+      ARM: dts: Fix vcsi regulator to be always-on for droid4 to prevent hangs
+      ARM: dts: Fix sgx sysconfig register for omap4
+
+ arch/arm/boot/dts/am57xx-beagle-x15-revb1.dts        |  2 +-
+ arch/arm/boot/dts/am57xx-beagle-x15-revc.dts         |  2 +-
+ arch/arm/boot/dts/dra7-l4.dtsi                       |  2 +-
+ arch/arm/boot/dts/logicpd-torpedo-37xx-devkit-28.dts |  1 -
+ arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi     | 13 ++++++++++++-
+ arch/arm/boot/dts/motorola-cpcap-mapphone.dtsi       |  4 ++--
+ arch/arm/boot/dts/omap3-tao3530.dtsi                 |  2 +-
+ arch/arm/boot/dts/omap4.dtsi                         |  4 ++--
+ 8 files changed, 20 insertions(+), 10 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
