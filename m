@@ -2,92 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4F3110C087
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 00:15:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5423E10C090
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 00:22:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8kReVsD/P1YH5ryTKorjGijhY3TUUuc5u37pXIx3P7M=; b=SChttlo0/JaBsP
-	4vuo0ALVt/YAw7FQdCoywV/OVWqGtDIezDFshF6HKUPokfrJIaET2YQDtBcoUufCKLMFp0GE6171n
-	qVxV3yX37gVNYwpP2tA3XEcuGKVd2BZRrkFFEgoEad5uFWs2Pr97tJpMi1BjKZ2CdZuOKcWgwuO1Y
-	z30S76+K/Bv1Wy6SYw2oHAaAbzuhoF+WsaSWtg9fpyhCeqHPNuUKr/kf3XgU/Hy0ekswJYyFwC76t
-	ju3Pjti2SYr15Q+ggdVhxbc72zDKMvWy98K2646QRVxGT096yIWDSoVoz0feNLJx+xq8uNzIw/Xb8
-	zQyZYGoEivIwTJOkfTGg==;
+	List-Owner; bh=iEFJy9sLEKgt5sChOtb6aXAWtqarVk6fDmsrKt70uYU=; b=EGZFWzktMDmMMQ
+	FuXF6WQ4ol0T6yL5+ctpLwsNHTA4Loo8zPVG5HMASVJhh+XKHCvn5xaFqipVEZslUT/pyV8DCxzwe
+	y8+qS3AKUrG7TJfl3SKozL/6P3Nc72hdNd6oGVsUdcOulDabT3zRiAqjV79vjrarFcwo1QU0ikc7S
+	5C/bCyD18/Z+zJwJttXGlqjROVX2c7LKe0wWaYdw2JOz5jZb6ZqnpdPeQSSDzd4Hr+RzJhknJ3iap
+	6ANAZlciLzwE8gj7PQbYAikBFtCFoUHecUjsIIKmtiyX4gkYWzfU54AVWxbnRf2gTt+3+CSbKAt1H
+	yhVpmsqciEIJaXcLDaUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia6WM-00079M-Cy; Wed, 27 Nov 2019 23:14:54 +0000
-Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+	id 1ia6dA-0001kj-Mf; Wed, 27 Nov 2019 23:21:56 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia6WD-00078U-D7
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 23:14:47 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 5DB58225AC;
- Wed, 27 Nov 2019 18:14:39 -0500 (EST)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 27 Nov 2019 18:14:39 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm1; bh=LW1r4r/I0SNnkloRX9HX4mmC7sWJfJm
- nrDXtKizCASk=; b=ev3qIbVOF14mie9Dd2Z/uZT6bzbs39plEJnGhmjPPxZBeoo
- 0fsEkEZcQLvt/pRBl3dvplNuRMZlHv5RAJkuMu+oYOLrppBd5cof4XRUU3fs2JFe
- p4LQvX6X0S2QB8f7Tnn1CSWeCGzt9+imHTdvVqR5Xm3jA/pHuDKv52dNsH+sI/Gy
- Dtfu9yWU/XG9nC7SUCyz+RbQw1KuqLWcr42uH5K0bvTe4MCZG1K+y4oA5WY/RjR8
- RNFgPtu5sScztHp8cl3e2f+OHHkr2GBTyJJgPs6NqnQeq+Cmw5txqPa+LwR8EAdG
- Kp6PziHCb1wOUqN4rmVJO4SAsxt2zk4FCs8H33A==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=LW1r4r
- /I0SNnkloRX9HX4mmC7sWJfJmnrDXtKizCASk=; b=tMCEz7MCdBLdjGfQ9A8rfZ
- 0/93urLs9lIOGdFCdzOG8wKPUh3ltOD+cPmRhC8W5qp0+DAfPSQ4d53RAvkuVgDU
- 6rOyYZTwjrfXyljBaIgE95xIAQSjsR7Da9WRrdwOXe0qTIixw2kFA3i4Azxqt42G
- unb4VuWrOv1wduboPgTTG6+na+pg6oMf83AjzXpACjktGvUNbmEn0wGCf54qvMsb
- CK0t5ZP7en1oRJY36MpQL3Unzqp6J1Hnd5gCSANCxnCN9z8u+viYQCtUSUFBD0MG
- AphTzYVQDFonneDOvr0nJATMIjGfvAwVR5CT39j8RTx4ka0A5b/BU22EWHUrHpRw
- ==
-X-ME-Sender: <xms:XQPfXQNXgPnturoN7Y95pHCc4fOE6GeEm8JWFsAo4mkCbagmNn2iBw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudeiiedgtdejucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
- rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
- grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
- rhfuihiivgeptd
-X-ME-Proxy: <xmx:XQPfXTT4FaIu7OuUpNt4nYpuCC0Yuz8Y2rU_6Nwy9a0wro6LApr7GA>
- <xmx:XQPfXb-rJGtb8FYprHbcVLt9j0tJzosE0o65qJ-6HiUbkpS8sFpH0A>
- <xmx:XQPfXdOwXS-jM9n1gjx7c0X7hxINAjQw1ScSuEwgkawHilWAZTlTdQ>
- <xmx:XwPfXQa3UmYHG4Jmou0mRvHerV7S1MVMEf7NU6QuMLPW-sLC7rRNhw>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id A9722E00A2; Wed, 27 Nov 2019 18:14:37 -0500 (EST)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-578-g826f590-fmstable-20191119v1
-Mime-Version: 1.0
-Message-Id: <1a1db770-1f34-4bfe-a235-1b05841428b0@www.fastmail.com>
-In-Reply-To: <20191126022243.215261-2-joel@jms.id.au>
-References: <20191126022243.215261-1-joel@jms.id.au>
- <20191126022243.215261-2-joel@jms.id.au>
-Date: Thu, 28 Nov 2019 09:46:08 +1030
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Joel Stanley" <joel@jms.id.au>, "Lee Jones" <lee.jones@linaro.org>,
- "Rob Herring" <robh+dt@kernel.org>, "Philipp Zabel" <p.zabel@pengutronix.de>
-Subject: Re: [PATCH 1/2] dt-bindings: mfd: Add ast2600 to ASPEED LPC
+ id 1ia6d0-0000Qv-3d
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 23:21:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ua2UG/3P9FGM6hlUDIsduttPdTTUDw7lB1+OC0/Vfew=; b=IjC7afpgiGMCcN4wtGhOcSgAp
+ IBpLPlsr+Nb0dfjpSQITFGlg9cdDYE+YLytWxj+dAlh1QFZ5rsVVHTJEjeuPXLA+ZLytfzENdxqJC
+ Xtl0lkHMghG6tdcGWtLM+Gu8QOjKU6T2NJXmkeUJuT3CDqrYgPC5CViy3LKtnRLd4YHPHmvAtD5oH
+ pXSPlBWSep8AOrtyYM2g+Jye9/vNXyiDr7Y2tgxMtpo+tRcRxNMQCqcsifEbTfE4PYXBg5MvnJsbp
+ w7ssCmpKKNTAQ+Nd9CTgcEIDsoFN/8MYItxVxm9ZNyqSdrlyuqCMfJH5QHd3NBzURQFvvtI0WOnA4
+ fL0WaxJzw==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:45502)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1ia6aW-0005x5-LR; Wed, 27 Nov 2019 23:19:12 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1ia6aK-0000gJ-V4; Wed, 27 Nov 2019 23:19:00 +0000
+Date: Wed, 27 Nov 2019 23:19:00 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+Subject: Re: ARM expections for location of kernel, ramdisk and dtb
+Message-ID: <20191127231900.GG25745@shell.armlinux.org.uk>
+References: <e1f7cca54843abcef0c2703a5f7071c045b99baa.camel@alliedtelesis.co.nz>
+ <20191127092615.GC25745@shell.armlinux.org.uk>
+ <c108d58e3ee511040bb99edb28c893b27b238bdb.camel@alliedtelesis.co.nz>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <c108d58e3ee511040bb99edb28c893b27b238bdb.camel@alliedtelesis.co.nz>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_151445_580801_6C994FCB 
-X-CRM114-Status: GOOD (  15.33  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191127_152146_145145_376066BE 
+X-CRM114-Status: GOOD (  25.69  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.28 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.28 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -95,7 +77,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,83 +88,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Hamish Martin <Hamish.Martin@alliedtelesis.co.nz>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "nico@fluxnic.net" <nico@fluxnic.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "stefan@agner.ch" <stefan@agner.ch>, "tglx@linutronix.de" <tglx@linutronix.de>,
+ "natechancellor@gmail.com" <natechancellor@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On Tue, 26 Nov 2019, at 12:52, Joel Stanley wrote:
-> The AST2600 has the same LPC layout as previous generation SoCs.
+On Wed, Nov 27, 2019 at 10:15:57PM +0000, Chris Packham wrote:
+> Hi Russell,
 > 
-> Signed-off-by: Joel Stanley <joel@jms.id.au>
-> ---
->  Documentation/devicetree/bindings/mfd/aspeed-lpc.txt | 11 +++++++++--
->  1 file changed, 9 insertions(+), 2 deletions(-)
+> On Wed, 2019-11-27 at 09:26 +0000, Russell King - ARM Linux admin
+> wrote:
+> > On Wed, Nov 27, 2019 at 08:20:12AM +0000, Chris Packham wrote:
+> > > Hi All,
+> > > 
+> > > We're updating our systems to use the latest kernel. For many of them
+> > > this is a fairly large leap. One problem we've hit is that durng boot
+> > > the dtb is clobbered by the uncompressed kernel.
+> > > 
+> > > Here's a snippet of output from u-boot
+> > > 
+> > > ## Loading kernel from FIT Image at 62000000 ...
+> > >    Using 'XS916MXS@2' configuration
+> > >    Trying 'kernel@1' kernel subimage
+> > >      Description:  linux
+> > >      Created:      2019-11-27   6:53:48 UTC
+> > >      Type:         Kernel Image
+> > >      Compression:  uncompressed
+> > >      Data Start:   0x62000174
+> > >      Data Size:    3495432 Bytes = 3.3 MiB
+> > >      Architecture: ARM
+> > >      OS:           Linux
+> > >      Load Address: 0x00800000
+> > >      Entry Point:  0x60800000
+> > >    ...
+> > >    Booting using the fdt blob at 0x63b90f6c
+> > >    Loading Kernel Image ... OK
+> > >    Loading Ramdisk to 6e7c6000, end 70000000 ... OK
+> > >    Loading Device Tree to 607fb000, end 607fffd8 ... OK
+> > > 
+> > > Starting kernel ...
+> > > 
+> > > Uncompressing Linux... done, booting the kernel.
+> > > 
+> > > Error: invalid dtb and unrecognized/unsupported machine ID
+> > >   r1=0x0000206e, r2=0x00000000
+> > > 
+> > > Between old and new the location of the devicetree hasn't actually
+> > > changed. But what has changed is the size of the kernel the self
+> > > extracting kernel unpacks to 0x60008000 and with our current
+> > > configuration extends into where the dtb is located.
+> > > 
+> > > Documentation/arm/booting.rst says that "The dtb must be placed in a
+> > > region of memory where the kernel decompressor will not overwrite it". 
+> > > 
+> > > This suggests that the problem is with our u-boot configuration, but
+> > > how is u-boot supposed to know where the self-extracting kernel is
+> > > going to place things? As far as I can tell u-boot is doing a
+> > > reasonable job of finding a place to put the dtb which it thinks is
+> > > unused. I'm not sure why it's picked 0x607fb000 instead of putting it
+> > > just under the ramdisk but regardless with the information u-boot has
+> > > that address is up for grabs.
+> > > 
+> > > Has this come up before? The self-extraction code is fairly careful not
+> > > to overwrite itself but doesn't seem to pay any attention to the dtb
+> > > which surprised me. So I wonder if I'm missing something?
+> > 
+> > The self-extraction hasn't changed much over the years, and basically
+> > follows the same method which has worked for the vast majority of
+> > platforms.
+> > 
+> > Where things fall down is where things are placed too close, and yes,
+> > as the kernel grows, what was reasonable years ago becomes too close
+> > with modern kernels.
+> > 
+> > The problem has been compounded by the various different compression
+> > algorithms that can now be used for the compressed kernel.
+> > 
 > 
-> diff --git a/Documentation/devicetree/bindings/mfd/aspeed-lpc.txt 
-> b/Documentation/devicetree/bindings/mfd/aspeed-lpc.txt
-> index 86446074e206..bef07c3b1a3e 100644
-> --- a/Documentation/devicetree/bindings/mfd/aspeed-lpc.txt
-> +++ b/Documentation/devicetree/bindings/mfd/aspeed-lpc.txt
-> @@ -46,6 +46,7 @@ Required properties
->  - compatible:	One of:
->  		"aspeed,ast2400-lpc", "simple-mfd"
->  		"aspeed,ast2500-lpc", "simple-mfd"
-> +		"aspeed,ast2600-lpc", "simple-mfd"
->  
->  - reg:		contains the physical address and length values of the Aspeed
->                  LPC memory region.
-> @@ -64,6 +65,7 @@ BMC Node
->  - compatible:	One of:
->  		"aspeed,ast2400-lpc-bmc"
->  		"aspeed,ast2500-lpc-bmc"
-> +		"aspeed,ast2600-lpc-bmc"
->  
->  - reg:		contains the physical address and length values of the
->                  H8S/2168-compatible LPC controller memory region
-> @@ -128,6 +130,7 @@ Required properties:
->  - compatible:	One of:
->  		"aspeed,ast2400-lpc-ctrl";
->  		"aspeed,ast2500-lpc-ctrl";
-> +		"aspeed,ast2600-lpc-ctrl";
->  
->  - reg:		contains offset/length values of the host interface controller
->  		memory regions
-> @@ -168,6 +171,7 @@ Required properties:
->  - compatible:	One of:
->  		"aspeed,ast2400-lhc";
->  		"aspeed,ast2500-lhc";
-> +		"aspeed,ast2600-lhc";
->  
->  - reg:		contains offset/length values of the LHC memory regions. In the
->  		AST2400 and AST2500 there are two regions.
-> @@ -187,8 +191,11 @@ state of the LPC bus. Some systems may chose to 
-> modify this configuration.
->  
->  Required properties:
->  
-> - - compatible:		"aspeed,ast2500-lpc-reset" or
-> -			"aspeed,ast2400-lpc-reset"
-> + - compatible:		One of:
-> +			"aspeed,ast2400-lhc";
-> +			"aspeed,ast2500-lhc";
-> +			"aspeed,ast2600-lhc";
+> I don't think it's that we don't know how big the extracted kernel will
+> be. It's just that we aren't doing anything with that information w.r.t
+> the dtb.
 
-This doesn't look right, you've removed the reset compatibles. It looks like
-copy/paste from the hunk before.
+I believe u-boot tried at one point to instigate some kind of standard
+placement of the kernel / dtb with respect to the available RAM, but
+vendors tried hard to ignore u-boot and go their own way - resulting
+in systems that didn't boot without customising various u-boot
+environment variables.  It's very annoying when vendors ignore the
+community...
 
-> +
->   - reg:			offset and length of the IP in the LHC memory region
->   - #reset-controller	indicates the number of reset cells expected
->  
-> -- 
-> 2.24.0
-> 
->
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
