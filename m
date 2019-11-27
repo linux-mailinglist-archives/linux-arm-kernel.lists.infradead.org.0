@@ -2,50 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23CF310B1B8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 15:59:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AFFC10B1C5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 16:02:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9nvlI0iyvvTbwWePkWJmZ/HTWL9vX0A3QLEcW8DFnZY=; b=eMUwN5KNL6QgBZ
-	OaOS2FdmDtWE36SmQTz89uTcGuVwsOPttem1zndlM+m/1DS0rYigzsx/P+xnv73QF8IiRseyVbi+3
-	6ZltYuLZR9yNZq0bQaYzuNBEtmi41X+LVcN2Gl+xkjH0ZrauH7TkWrh+a+y2RuDTV9saJ0G0tnG4H
-	vF8hu849vwujxefwcX72HuwBzyBcSunOPs/uO0Vg5kE9thn0prHUKThNk5LsnA2QtLuRva9rTVWol
-	oPBAev2ZWU6m1NE+hndhoxt09xd005QNynz9n+hnI3x1RxVZv2kRio+9LJcI8KQdUOebHkP14A4IW
-	2YBnydPHkIzodnSJi2pw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+CQpZ5tpL7B1O1Sv8K8LoKN0Qyvuis1oQYlfsopViTg=; b=Qhl4dmpxlIcoJj
+	R9Vj6FosH2hgWdFfdPHSTo5HnjRHotmP47J5bRFDzHBFUjFbZz20n9h0AIsF8iO4jpPbWWsTlaA/R
+	ypgzw3Tf6dgM1aHJKtu2cJ8eHh1jBN6le8uITePffFgxDSjpE6hV3TQSrv/Sg4Y7jltT94f/T3Gc5
+	oE/LyyjfFDJ1rIf9Lv9AUDeAzoo2gbf0MnTf+e1BuGZmANIIJlte5G1FzWKfQALL2C1ex8K4vjHvZ
+	YQaOVocbZ3iUdS/8v1rFMWVKb/WLkaxk7JqHUzn4azN0WKSv3tuKqnq91l5h1lK6doLAZAbSsY+pZ
+	Y7gvcBeC33HVFhNKeE3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZymW-000488-Mn; Wed, 27 Nov 2019 14:59:04 +0000
+	id 1iZypI-0005jB-7Z; Wed, 27 Nov 2019 15:01:56 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZymN-00047j-9I
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 14:58:56 +0000
+ id 1iZyp7-0005iQ-3K
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 15:01:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A22E430E;
- Wed, 27 Nov 2019 06:58:52 -0800 (PST)
-Received: from [192.168.0.9] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 268D63F68E;
- Wed, 27 Nov 2019 06:58:51 -0800 (PST)
-Subject: Re: [PATCH] cpufreq: vexpress-spc: Fix wrong alternation of
- policy->related_cpus during CPU hp
-To: Sudeep Holla <sudeep.holla@arm.com>, Viresh Kumar <viresh.kumar@linaro.org>
-References: <20191127114801.23837-1-dietmar.eggemann@arm.com>
- <20191127120816.GC29301@bogus> <20191127121402.vd3tul4gmqm6qtyb@vireshk-i7>
- <20191127133200.GE29301@bogus>
-From: Dietmar Eggemann <dietmar.eggemann@arm.com>
-Message-ID: <a60cab69-4d47-d418-94bd-74630bf9e846@arm.com>
-Date: Wed, 27 Nov 2019 15:58:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A53ED30E;
+ Wed, 27 Nov 2019 07:01:42 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DFC373F68E;
+ Wed, 27 Nov 2019 07:01:39 -0800 (PST)
+Date: Wed, 27 Nov 2019 15:01:37 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Pavel Tatashin <pasha.tatashin@soleen.com>
+Subject: Re: [PATCH v2 2/3] arm64: remove uaccess_ttbr0 asm macros from cache
+ functions
+Message-ID: <20191127150137.GB51937@lakrids.cambridge.arm.com>
+References: <20191122022406.590141-1-pasha.tatashin@soleen.com>
+ <20191122022406.590141-3-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
-In-Reply-To: <20191127133200.GE29301@bogus>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191122022406.590141-3-pasha.tatashin@soleen.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_065855_379876_BED2AAC8 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20191127_070145_189352_3BCF0DE9 
+X-CRM114-Status: GOOD (  12.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,70 +63,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pm@vger.kernel.org,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Liviu Dudau <liviu.dudau@arm.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Morten Rasmussen <morten.rasmussen@arm.com>, Lukasz Luba <lukasz.luba@arm.com>
+Cc: catalin.marinas@arm.com, stefan@agner.ch, linux@armlinux.org.uk,
+ yamada.masahiro@socionext.com, will@kernel.org, boris.ostrovsky@oracle.com,
+ sashal@kernel.org, sstabellini@kernel.org, jmorris@namei.org,
+ linux-arm-kernel@lists.infradead.org, xen-devel@lists.xenproject.org,
+ vladimir.murzin@arm.com, marc.zyngier@arm.com, alexios.zavras@intel.com,
+ tglx@linutronix.de, allison@lohutok.net, jgross@suse.com, steve.capper@arm.com,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, james.morse@arm.com,
+ info@metux.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/11/2019 14:32, Sudeep Holla wrote:
-> On Wed, Nov 27, 2019 at 05:44:02PM +0530, Viresh Kumar wrote:
->> On 27-11-19, 12:08, Sudeep Holla wrote:
->>> On Wed, Nov 27, 2019 at 12:48:01PM +0100, Dietmar Eggemann wrote:
+Hi Pavel,
+
+On Thu, Nov 21, 2019 at 09:24:05PM -0500, Pavel Tatashin wrote:
+> Replace the uaccess_ttbr0_disable/uaccess_ttbr0_enable via
+> inline variants, and remove asm macros.
+
+A commit message should provide rationale, rather than just a
+description of the patch. Something like:
+
+| We currently duplicate the logic to enable/disable uaccess via TTBR0,
+| with C functions and assembly macros. This is a maintenenace burden
+| and is liable to lead to subtle bugs, so let's get rid of the assembly
+| macros, and always use the C functions. This requires refactoring
+| some assembly functions to have a C wrapper.
 
 [...]
 
->>> Unlike DT based drivers, it not easy to get the fixed cpumask unless we
->>> add some mechanism to extract it based on clks/OPP added. I prefer
->>> this simple solution instead.
->>
->> I will call this a work-around for the problem and not really the
->> solution, though I won't necessarily oppose it. There are cases which
->> will break even with this solution.
->>
-> 
-> I agree and that's the reason I spoke out my thought aloud here :)
-> 
->> - Boot board with cpufreq driver as module.
->> - Offline all CPUs except CPU0.
->> - insert cpufreq driver.
->> - online all CPUs.
->>
-> 
-> Indeed, not just boot anytime since it's a module :)
-> 
->> Now there is no guarantee that the last online will get the mask
->> properly, if I have understood the problem well :)
->>
-> 
-> Yes
-> 
->> But yeah, who does this kind of messy work anyway :)
->>
-> 
-> I won't bet on that ;)
-> 
->> FWIW, we need a proper way (may be from architecture code) to find
->> list of all CPUs that share clock line.
->>
-> 
-> Yes but there's no architectural way. I need to revise and see tc2_pm.c
-> to check if we can do any magic there.
+> +static inline int invalidate_icache_range(unsigned long start,
+> +					  unsigned long end)
+> +{
+> +	int rv;
+> +#if ARM64_HAS_CACHE_DIC
+> +	rv = arch_invalidate_icache_range(start, end);
+> +#else
+> +	uaccess_ttbr0_enable();
+> +	rv = arch_invalidate_icache_range(start, end);
+> +	uaccess_ttbr0_disable();
+> +#endif
+> +	return rv;
+> +}
 
-I'm fine with finding a better solution to return a fixed topology core
-cpumask or calling this patch a workaround. AFAICS, only TC2 is affected.
+This ifdeffery is not the same as an alternative_if, and even if it were
+the ARM64_HAS_CACHE_DIC behaviour is not the same as the existing
+assembly.
 
-("arm: Fix topology setup in case of CPU hotplug for CONFIG_SCHED_MC")
-is needed for other systems as well in case we have commit ca74b316df96
-("arm: Use common cpu_topology structure and functions."). We probably
-don't want to revert commit ca74b316df96?
+This should be:
 
-We do CPU hp stress tests in our EAS mainline integration test suite
-https://developer.arm.com/tools-and-software/open-source-software/linux-kernel/energy-aware-scheduling/eas-mainline-development
-and there is where we initially encountered this issue on TC2.
+static inline int invalidate_icache_range(unsigned long start,
+					  unsigned long end)
+{
+	int ret;
+
+	if (cpus_have_const_cap(ARM64_HAS_CACHE_DIC)) {
+		isb();
+		return 0;
+	}
+	
+	uaccess_ttbr0_enable();
+	ret = arch_invalidate_icache_range(start, end);
+	uaccess_ttbr0_disable();
+
+	return ret;
+}
+
+The 'arch_' prefix should probably be 'asm_' (or have an '_asm' suffix),
+since this is entirely local to the arch code, and even then should only
+be called from the C wrappers.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
