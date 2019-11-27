@@ -2,80 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EBCB10B698
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 20:20:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F27CC10B6EF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 20:41:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=eHt4TFuQhw+47dpyJkyh/cJDuHVXhiCAYsA/IXCndxk=; b=TIe
-	Vv0vtXOeYcBi5zjHur0hfdrRsQof6Mi/+DqUDjQg+IEiueKlgDrRJQ3tjLrAJ7gn3IT0Vc0gCLtug
-	OFTHsY7xXTvA8sfcTs3vq8mumFvYqtuu1416OrAKXj5JVvZBR7KLv2jvyvU1i38MNLRevKr1JsOfX
-	qYn/20+3ZdUxJU0xeDEjreeWax783VfPxkNR09aSH9M6/sOh0+XRrOjmz/aouyEMslRTWomqzNvBL
-	RVJbIFMQFoj1wHgmr6P9dun8ouF7uoYflmWlb7ML3kz2e7YAe28tsy/2Ws7583UE1wfHAKtw9VYUf
-	sdDCrdLlUOSfsbPDdbJQ+88Ys8dA4DA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=OadwQITCH2NTV0vA3USjJtkVRemHv9lpvUpv+Jn8n84=; b=FVGB8LXPn4O7gLm411TKsdF9ji
+	8Q0HCvRYpkJqfacFC+C4+Ajm2KA+KTSsRnTHEiITN+cfhHIiLC9sTOOkji80VyopWNNo7M7N2+6jK
+	gUXOfXDz1L/djCBGhdN0Pv9923spisHXVqpS/J2xD7+B5g2rDyYR6qfyq/tCfkVNyzrlNgzlrhIOJ
+	bP1Z/hhj9sntctuK8gOiG7EtRysJdS+Y1Sbg67jCVSCB0oTpvXQAboXrTakpEE/H/RyE5bVkuc1RG
+	EApMsL/WmryuaRnUAJhHhR3ItEm/5zNFcZ0QpXV2W9mmWmBuao4izMn8tqwTteIF58XSPq3gpUXAD
+	yOt7yq+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia2qu-0006xp-Te; Wed, 27 Nov 2019 19:19:52 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1ia3BO-0000LY-Pl; Wed, 27 Nov 2019 19:41:02 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia2qk-0006xQ-6A
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 19:19:43 +0000
-Received: by mail-wm1-x344.google.com with SMTP id g206so8319201wme.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 Nov 2019 11:19:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=M+0NuMZQaK1+LEWLPTyUvNajoYkjV4XKtzL52YNTL00=;
- b=CoDBS3lpR61f4rI0KCcuztGkQWopeytpzE5omE0pg516D1wzj5OSzxWSy9K4OXVN1y
- Xix1fbFxlbYfd0QTn7F+XnYty55eDoeyL7mRbz0aQZ2YqFY7uJGI8Yh7VWI84HhlG5zU
- 2ozNv6tY8Spi9AoCgH1AMV769EngqCXRIj1ytuoMx8tt+d3Puju8nEPNjjBxAEsDH8Yw
- J0eplvEEMsyq3WZycgksI5Sa3IebipU6zCBhNkk0RIx76a2AjQI3t53r/n2jEr+SA8N+
- U8qRXI+uiGQW93lNYHVieCtK725DG/TWsYiI1xsvM5+Knus80GFKpxePEfio5/lv4i0A
- Eu3Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=M+0NuMZQaK1+LEWLPTyUvNajoYkjV4XKtzL52YNTL00=;
- b=Ezg91T0LuOJv6uG6jmrSJnqATHUVvvYYb71l+TYhjwX8XajyOVcXY4HY0od88gX3t1
- 9k1Jm9AhSX/GoMnxGWlRtrM8yQ+a2CxIzha/Rh2n3V6OloTHMzzFvHKWPXI5rmjEtPXM
- UI9UiDjjGNE4rJWBu1ZFNsjESVFJyjLO3dtOw6bzJzeR2x1ea0B8YC5tgaVmtZWedP5q
- QHfGSbBiFfpji6ksP6sf9Vn2+1V+Sl7ASEaYaZEIpCIYwWLoAvD9rqZ2CFN6tEkWKTGu
- cjBoyKPovqMKpLCWS9vJNL/Hwi4TU2Zgvxrc6SkKrISiale12UNWxKa+slutllNUl2c1
- VVrw==
-X-Gm-Message-State: APjAAAW/ckGuhSkRFwBrk6X5SSSiOBAARBILoHEXgzH1QR4B3Xr4QdPj
- IdM9aujcOqfksMZ0uSfO+t0=
-X-Google-Smtp-Source: APXvYqxOWvNZym0FA0f/eBL6n7FVBRMfXqIYyFbHSVaoFZyv9fn1aO75XWOpY0fGhmS/ZpXL0HDSvA==
-X-Received: by 2002:a05:600c:2295:: with SMTP id
- 21mr5597608wmf.85.1574882380419; 
- Wed, 27 Nov 2019 11:19:40 -0800 (PST)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id b186sm7546613wmb.21.2019.11.27.11.19.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 Nov 2019 11:19:39 -0800 (PST)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: soc@kernel.org
-Subject: [GIT PULL] Broadcom maintainers changes for 5.5 (part 2)
-Date: Wed, 27 Nov 2019 11:19:32 -0800
-Message-Id: <20191127191932.9711-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1ia3BE-0000JI-3k
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 19:40:53 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 0F7C96E1B;
+ Wed, 27 Nov 2019 14:40:43 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute5.internal (MEProxy); Wed, 27 Nov 2019 14:40:43 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ subject:to:references:from:message-id:date:mime-version
+ :in-reply-to:content-type:content-transfer-encoding; s=fm1; bh=E
+ /eIlh2168YayUz7yI7wcMUEWzVWY48EgCDeJX0YMmc=; b=OGV5MB7v9L4rOLaXQ
+ J2XEyZ+7vKPjJVyBSlgfr4asg+jthrU79qhCu9A77Kai+VIUoyMt/UspFCmISUvh
+ fN/SwO6HeCySalYiK5IWjFxCQjK1JuL/wR7Zq/rP/FPXus35l7U45dhoceTMpckw
+ koT4wVAThGHzQ+pR3pJGIef9HFXr4wln7d8bBA4PhWLWsRA/0g6MSkuONbA19g5z
+ 0NHcFzKOxrDS881CzG4qU5bFBACrc2qJltShmQuEG+SlpGsFIrUn21Nv9SvWfS/a
+ ARl6kvtkpl52tZ26c0h1R2udVVGRSKeo9GNOhsxF2eRX57b4pBj0tGP8HisB4vT7
+ /o2AQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=content-transfer-encoding:content-type
+ :date:from:in-reply-to:message-id:mime-version:references
+ :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm1; bh=E/eIlh2168YayUz7yI7wcMUEWzVWY48EgCDeJX0YM
+ mc=; b=a9kBxkyVK77sxjD/7mLsLVOu7ZRh8aqcB+qVA6ZhTszjPgdeGUsZCBr5W
+ 9XdNCfEEx0Ki8DFVR2oeEvPlpperlCQCoBXlPOBLm3lS3aalBRSBCbkiLzPz0uPk
+ nF+lfeV1s+/abGu1wou3b+MktFjRpG/zLVHI7fJkZpeq5ovIdKzfoEsFTA4ZU8du
+ VsuGjH05IwzNfKqIuZzm9Pmh8jPE6CWerFIAQ2EAyG9ljYIsKHsO41A750agoNdP
+ IC0jeNj/pcF7thyz2zUKUUzaoTHhsDQ9eK4rpWvfi7FlkC8ih7r4Kss+UJ0HvAYN
+ Aq36RAcm02qB8ha8h7unRK98xAHKQ==
+X-ME-Sender: <xms:OdHeXUEWs5o7TXILYIJAwNVE41K8opmhTyiisUdezT0C-4kS03zb3w>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudeihedguddvjecutefuodetggdotefrod
+ ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+ necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+ enucfjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghm
+ uhgvlhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenuc
+ fkphepudefiedrfedvrdeifedrvdegvdenucfrrghrrghmpehmrghilhhfrhhomhepshgr
+ mhhuvghlsehshhholhhlrghnugdrohhrghenucevlhhushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:OdHeXX0aDv9YBuzW9gWZzwC_E7nc8j3Os2ip8HRqKFAqedL0SHn58w>
+ <xmx:OdHeXfQ8HroTLDfDwnRpl9fDY2QZ_IhN9kghtJznHLSIqw_3YNPjvw>
+ <xmx:OdHeXU0LaTyk-Lv0e1VJGkou9C58ojI5-GpBIUHTLFAdWC2enbrYxQ>
+ <xmx:O9HeXUNxhlDeXv0rzUm5lt1jPWYDVLAzSEZA_u4O5InPWEkSuoNgaw>
+Received: from [192.168.16.195] (unknown [136.32.63.242])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 4BEF980059;
+ Wed, 27 Nov 2019 14:40:40 -0500 (EST)
+Subject: Re: [PATCH v6 4/7] ARM: dts: sun8i-h3: Add thermal sensor and thermal
+ zones
+To: Vasily Khoruzhick <anarsoul@gmail.com>, Yangtao Li
+ <tiny.windzz@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Amit Kucheria <amit.kucheria@verdurent.com>, Rob Herring
+ <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-pm@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ =?UTF-8?Q?Ond=c5=99ej_Jirman?= <megous@megous.com>,
+ linux-kernel@vger.kernel.org
+References: <20191127052935.1719897-1-anarsoul@gmail.com>
+ <20191127052935.1719897-5-anarsoul@gmail.com>
+From: Samuel Holland <samuel@sholland.org>
+Message-ID: <78c38148-872d-6aa1-5848-c0df2c22c2b6@sholland.org>
+Date: Wed, 27 Nov 2019 13:40:39 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
+MIME-Version: 1.0
+In-Reply-To: <20191127052935.1719897-5-anarsoul@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_111942_228566_211E20E6 
-X-CRM114-Status: GOOD (  10.50  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191127_114052_291102_056E1B5E 
+X-CRM114-Status: GOOD (  14.95  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,41 +120,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, arnd@arndb.de, khilman@kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, Eric Anholt <eric@anholt.net>,
- bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
- olof@lixom.net, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit 0d660ffbca1a5f16f6db8f6ccbea5c207ec7e361:
+Hi,
 
-  MAINTAINERS: Remove Gregory and Brian for ARCH_BRCMSTB (2019-10-23 12:02:05 -0700)
+On 11/26/19 11:29 PM, Vasily Khoruzhick wrote:
+> From: Ondrej Jirman <megous@megous.com>
+> 
+> There is just one sensor for the CPU.
+> 
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
+> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> ---
+>  arch/arm/boot/dts/sun8i-h3.dtsi | 26 ++++++++++++++++++++++++++
+>  1 file changed, 26 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
+> index e37c30e811d3..42fd0418d678 100644
+> --- a/arch/arm/boot/dts/sun8i-h3.dtsi
+> +++ b/arch/arm/boot/dts/sun8i-h3.dtsi
+> @@ -177,6 +177,26 @@
+>  			assigned-clocks = <&ccu CLK_GPU>;
+>  			assigned-clock-rates = <384000000>;
+>  		};
+> +
+> +		ths: ths@1c25000 {
+> +			compatible = "allwinner,sun8i-h3-ths";
+> +			reg = <0x01c25000 0x400>;
+> +			interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
+> +			resets = <&ccu RST_BUS_THS>;
+> +			clocks = <&ccu CLK_BUS_THS>, <&ccu CLK_THS>;
+> +			clock-names = "bus", "mod";
+> +			nvmem-cells = <&ths_calibration>;
+> +			nvmem-cell-names = "calibration";
+> +			#thermal-sensor-cells = <0>;
+> +		};
+> +	};
+> +
+> +	thermal-zones {
+> +		cpu_thermal: cpu-thermal {
+> +			polling-delay-passive = <0>;
+> +			polling-delay = <0>;
+> +			thermal-sensors = <&ths 0>;
+> +		};
+>  	};
+>  };
+>  
+> @@ -234,4 +254,10 @@
+>  
+>  &sid {
+>  	compatible = "allwinner,sun8i-h3-sid";
+> +	#address-cells = <1>;
+> +	#size-cells = <1>;
+> +
+> +	ths_calibration: thermal-sensor-calibration@34 {
+> +		reg = <0x34 4>;
+> +	};
 
-are available in the Git repository at:
+All of the lines added here are common between the H3 and H5, so they can go in
+the shared SID node in sunxi-h3-h5.dtsi.
 
-  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.5/maintainers-part2
+Cheers,
+Samuel
 
-for you to fetch changes up to 6859ad379439df609915fd2e0c44dc39605c6618:
+>  };
+> 
 
-  MAINTAINERS: Make Nicolas Saenz Julienne the new bcm2835 maintainer (2019-11-26 12:00:34 -0800)
-
-----------------------------------------------------------------
-This pull request contains MAINTAINERS file updates for Broadcom SoCs,
-please pull the following:
-
-- Stefan and Eric step down from doing BCM283x maintenance and Nicolas
-  replaces them both moving forward
-
-----------------------------------------------------------------
-Stefan Wahren (1):
-      MAINTAINERS: Make Nicolas Saenz Julienne the new bcm2835 maintainer
-
- MAINTAINERS | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
