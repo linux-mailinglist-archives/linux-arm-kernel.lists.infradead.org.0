@@ -2,57 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8266410B693
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 20:17:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EBCB10B698
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 20:20:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kIXl6Hbjz2USQI4wGduOXvVT2xGS9kXZMn+2+ggE0ss=; b=dHFm++XLTH0w1jJq5I7n0hBL3
-	BA+UJ2XXkhuwJRxixtIFQ3v62MHv+sxiT5VYng3TawNCBcoj+AIWs83LyTuQOT8K3nI7IKZSDHFNR
-	6OL3/9Vrrsb/lVaQllpLFHvVF4BaEXEBG2WyAsdkands1Jfc5V5lhBQAmzVrxHUSrHhlhUzslyfpw
-	8WuZKKZLLtpu7l644UlImbqhf9uSiAG9YWPN/kv2UX/FHg/SSKYEX/SGjZctNmEKiay1M+sLzQLoJ
-	od9uLjjZ83iMVUcbhMxju7d5wW6MYr4I1AcKeGSDRktOsa+e95owzV6aoQnPGugjYXUYpEUXqv2ea
-	0Pin7rsvQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=eHt4TFuQhw+47dpyJkyh/cJDuHVXhiCAYsA/IXCndxk=; b=TIe
+	Vv0vtXOeYcBi5zjHur0hfdrRsQof6Mi/+DqUDjQg+IEiueKlgDrRJQ3tjLrAJ7gn3IT0Vc0gCLtug
+	OFTHsY7xXTvA8sfcTs3vq8mumFvYqtuu1416OrAKXj5JVvZBR7KLv2jvyvU1i38MNLRevKr1JsOfX
+	qYn/20+3ZdUxJU0xeDEjreeWax783VfPxkNR09aSH9M6/sOh0+XRrOjmz/aouyEMslRTWomqzNvBL
+	RVJbIFMQFoj1wHgmr6P9dun8ouF7uoYflmWlb7ML3kz2e7YAe28tsy/2Ws7583UE1wfHAKtw9VYUf
+	sdDCrdLlUOSfsbPDdbJQ+88Ys8dA4DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia2o0-0006aA-VK; Wed, 27 Nov 2019 19:16:52 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1ia2qu-0006xp-Te; Wed, 27 Nov 2019 19:19:52 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia2np-0006ZR-Oq; Wed, 27 Nov 2019 19:16:43 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id C825BACEF;
- Wed, 27 Nov 2019 19:16:36 +0000 (UTC)
-Message-ID: <c3885c2ed8bec892290c3d957c8c5012039b6759.camel@suse.de>
-Subject: Re: [PATCH v3 1/7] linux/log2.h: Add roundup/rounddown_pow_two64()
- family of functions
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Robin Murphy <robin.murphy@arm.com>, Leon Romanovsky <leon@kernel.org>
-Date: Wed, 27 Nov 2019 20:16:27 +0100
-In-Reply-To: <c08863a7-49c6-962e-e968-92adb8ee2cc9@arm.com>
-References: <20191126091946.7970-1-nsaenzjulienne@suse.de>
- <20191126091946.7970-2-nsaenzjulienne@suse.de>
- <20191126125137.GA10331@unreal>
- <6e0b9079-9efd-2884-26d1-3db2d622079d@arm.com>
- <b30002d48c9d010a1ee81c16cd29beee914c3b1d.camel@suse.de>
- <c08863a7-49c6-962e-e968-92adb8ee2cc9@arm.com>
-User-Agent: Evolution 3.34.1 
-MIME-Version: 1.0
+ id 1ia2qk-0006xQ-6A
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 19:19:43 +0000
+Received: by mail-wm1-x344.google.com with SMTP id g206so8319201wme.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 Nov 2019 11:19:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=M+0NuMZQaK1+LEWLPTyUvNajoYkjV4XKtzL52YNTL00=;
+ b=CoDBS3lpR61f4rI0KCcuztGkQWopeytpzE5omE0pg516D1wzj5OSzxWSy9K4OXVN1y
+ Xix1fbFxlbYfd0QTn7F+XnYty55eDoeyL7mRbz0aQZ2YqFY7uJGI8Yh7VWI84HhlG5zU
+ 2ozNv6tY8Spi9AoCgH1AMV769EngqCXRIj1ytuoMx8tt+d3Puju8nEPNjjBxAEsDH8Yw
+ J0eplvEEMsyq3WZycgksI5Sa3IebipU6zCBhNkk0RIx76a2AjQI3t53r/n2jEr+SA8N+
+ U8qRXI+uiGQW93lNYHVieCtK725DG/TWsYiI1xsvM5+Knus80GFKpxePEfio5/lv4i0A
+ Eu3Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=M+0NuMZQaK1+LEWLPTyUvNajoYkjV4XKtzL52YNTL00=;
+ b=Ezg91T0LuOJv6uG6jmrSJnqATHUVvvYYb71l+TYhjwX8XajyOVcXY4HY0od88gX3t1
+ 9k1Jm9AhSX/GoMnxGWlRtrM8yQ+a2CxIzha/Rh2n3V6OloTHMzzFvHKWPXI5rmjEtPXM
+ UI9UiDjjGNE4rJWBu1ZFNsjESVFJyjLO3dtOw6bzJzeR2x1ea0B8YC5tgaVmtZWedP5q
+ QHfGSbBiFfpji6ksP6sf9Vn2+1V+Sl7ASEaYaZEIpCIYwWLoAvD9rqZ2CFN6tEkWKTGu
+ cjBoyKPovqMKpLCWS9vJNL/Hwi4TU2Zgvxrc6SkKrISiale12UNWxKa+slutllNUl2c1
+ VVrw==
+X-Gm-Message-State: APjAAAW/ckGuhSkRFwBrk6X5SSSiOBAARBILoHEXgzH1QR4B3Xr4QdPj
+ IdM9aujcOqfksMZ0uSfO+t0=
+X-Google-Smtp-Source: APXvYqxOWvNZym0FA0f/eBL6n7FVBRMfXqIYyFbHSVaoFZyv9fn1aO75XWOpY0fGhmS/ZpXL0HDSvA==
+X-Received: by 2002:a05:600c:2295:: with SMTP id
+ 21mr5597608wmf.85.1574882380419; 
+ Wed, 27 Nov 2019 11:19:40 -0800 (PST)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id b186sm7546613wmb.21.2019.11.27.11.19.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 27 Nov 2019 11:19:39 -0800 (PST)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: soc@kernel.org
+Subject: [GIT PULL] Broadcom maintainers changes for 5.5 (part 2)
+Date: Wed, 27 Nov 2019 11:19:32 -0800
+Message-Id: <20191127191932.9711-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_111642_101422_F79E1B0E 
-X-CRM114-Status: GOOD (  20.93  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191127_111942_228566_211E20E6 
+X-CRM114-Status: GOOD (  10.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,153 +94,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>, Hanjun Guo <guohanjun@huawei.com>,
- Frank Rowand <frowand.list@gmail.com>, Christoph Hellwig <hch@lst.de>,
- Marek Szyprowski <m.szyprowski@samsung.com>, f.fainelli@gmail.com,
- linux-rockchip@lists.infradead.org, linux-rdma@vger.kernel.org, maz@kernel.org,
- phil@raspberrypi.org, linux-acpi@vger.kernel.org, Len Brown <lenb@kernel.org>,
- devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-rpi-kernel@lists.infradead.org, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org, mbrugger@suse.com,
- netdev@vger.kernel.org, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
- wahrenst@gmx.net, james.quinlan@broadcom.com,
- Sudeep Holla <sudeep.holla@arm.com>, andrew.murray@arm.com,
- "David S. Miller" <davem@davemloft.net>, Tariq Toukan <tariqt@mellanox.com>
-Content-Type: multipart/mixed; boundary="===============6079460228717787401=="
+Cc: Florian Fainelli <f.fainelli@gmail.com>, arnd@arndb.de, khilman@kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, Eric Anholt <eric@anholt.net>,
+ bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
+ olof@lixom.net, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The following changes since commit 0d660ffbca1a5f16f6db8f6ccbea5c207ec7e361:
 
---===============6079460228717787401==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-O+wgk4AZ6l++1CDkyqmb"
+  MAINTAINERS: Remove Gregory and Brian for ARCH_BRCMSTB (2019-10-23 12:02:05 -0700)
 
+are available in the Git repository at:
 
---=-O+wgk4AZ6l++1CDkyqmb
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.5/maintainers-part2
 
-On Wed, 2019-11-27 at 19:06 +0000, Robin Murphy wrote:
-> On 27/11/2019 6:24 pm, Nicolas Saenz Julienne wrote:
-> > On Wed, 2019-11-27 at 18:06 +0000, Robin Murphy wrote:
-> > > On 26/11/2019 12:51 pm, Leon Romanovsky wrote:
-> > > > On Tue, Nov 26, 2019 at 10:19:39AM +0100, Nicolas Saenz Julienne wr=
-ote:
-> > > > > Some users need to make sure their rounding function accepts and
-> > > > > returns
-> > > > > 64bit long variables regardless of the architecture. Sadly
-> > > > > roundup/rounddown_pow_two() takes and returns unsigned longs. Cre=
-ate a
-> > > > > new generic 64bit variant of the function and cleanup rougue cust=
-om
-> > > > > implementations.
-> > > >=20
-> > > > Is it possible to create general roundup/rounddown_pow_two() which =
-will
-> > > > work correctly for any type of variables, instead of creating speci=
-al
-> > > > variant for every type?
-> > >=20
-> > > In fact, that is sort of the case already - roundup_pow_of_two() itse=
-lf
-> > > wraps ilog2() such that the constant case *is* type-independent. And
-> > > since ilog2() handles non-constant values anyway, might it be reasona=
-ble
-> > > to just take the strongly-typed __roundup_pow_of_two() helper out of =
-the
-> > > loop as below?
-> > >=20
-> > > Robin
-> > >=20
-> >=20
-> > That looks way better that's for sure. Some questions.
-> >=20
-> > > ----->8-----
-> > > diff --git a/include/linux/log2.h b/include/linux/log2.h
-> > > index 83a4a3ca3e8a..e825f8a6e8b5 100644
-> > > --- a/include/linux/log2.h
-> > > +++ b/include/linux/log2.h
-> > > @@ -172,11 +172,8 @@ unsigned long __rounddown_pow_of_two(unsigned lo=
-ng n)
-> > >     */
-> > >    #define roundup_pow_of_two(n)			\
-> > >    (						\
-> > > -	__builtin_constant_p(n) ? (		\
-> > > -		(n =3D=3D 1) ? 1 :			\
-> > > -		(1UL << (ilog2((n) - 1) + 1))	\
-> > > -				   ) :		\
-> > > -	__roundup_pow_of_two(n)			\
-> > > +	(__builtin_constant_p(n) && (n =3D=3D 1)) ?	\
-> > > +	1 : (1UL << (ilog2((n) - 1) + 1))	\
-> >=20
-> > Then here you'd have to use ULL instead of UL, right? I want my 64bit v=
-alue
-> > everywhere regardless of the CPU arch. The downside is that would affec=
-t
-> > performance to some extent (i.e. returning a 64bit value where you used=
- to
-> > have
-> > a 32bit one)?
->=20
-> True, although it's possible that 1ULL might result in the same codegen=
-=20
-> if the compiler can see that the result is immediately truncated back to=
-=20
-> long anyway. Or at worst, I suppose "(typeof(n))1" could suffice,=20
-> however ugly. Either way, this diff was only an illustration rather than=
-=20
-> a concrete proposal, but it might be an interesting diversion to=20
-> investigate.
->=20
-> On that note, though, you should probably be using ULL in your current=
-=20
-> patch too.
+for you to fetch changes up to 6859ad379439df609915fd2e0c44dc39605c6618:
 
-I actually meant to, the fix got lost. Thanks for pointing it out.
+  MAINTAINERS: Make Nicolas Saenz Julienne the new bcm2835 maintainer (2019-11-26 12:00:34 -0800)
 
-As I see Leon also likes this, I'll try out this implementation and come ba=
-ck
-with some results.
+----------------------------------------------------------------
+This pull request contains MAINTAINERS file updates for Broadcom SoCs,
+please pull the following:
 
-Regards,
-Nicolas
+- Stefan and Eric step down from doing BCM283x maintenance and Nicolas
+  replaces them both moving forward
 
+----------------------------------------------------------------
+Stefan Wahren (1):
+      MAINTAINERS: Make Nicolas Saenz Julienne the new bcm2835 maintainer
 
---=-O+wgk4AZ6l++1CDkyqmb
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3ey4sACgkQlfZmHno8
-x/4qGggAi4+Q7jM0+bmigNE35y3GihyLXM3ahA2qmQ9ftiZshh+Z8XQUYcRi7852
-LsPNmYpHjwV3LyoaBXdnHaIVR5I1rE6RXSAZEK4xRF872qqm9rKDeMGF1GXxrw3u
-BJl/LR2xhGkhYepUUAiZ+vGy3FyTfl8ADH/V9AHtFtvXuFTpStBZS3/xYgaO9mRa
-E0hCB01yKy14h+FAXRiEB0E6onkyAqWjLHPmAXCGmk4ZsJwAjdVr3QyVq6AUBBKt
-CaBQ7gUU8NOTg8ZE9WDRdTfIlQ+1Gpiu2xk1jML8Y1eCGxB3wtXy0t5GdjOaiwzi
-fzp73AN5N4UigGnR/sl3LgJQXPe3yA==
-=ixwn
------END PGP SIGNATURE-----
-
---=-O+wgk4AZ6l++1CDkyqmb--
-
-
-
---===============6079460228717787401==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+ MAINTAINERS | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6079460228717787401==--
-
-
