@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66F8710AD2A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:04:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96A5D10AD37
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:07:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LgMWkai0wK+fnVFMfp6W9J2UNO+z37Hqap2vAvPOWzA=; b=JWzCH5lNqd7ySX
-	lA1sx9CJERJyRUPsMONfptUYnJyCc2VsPU4Hfd4pgRtJY8AqLXwPEmBRPd07ZwuX/zyyr9zqQqCa4
-	CzHul4xnVpb/PY6Ir1xQfkSAyzqomBo7iku9tpagytm1YWOPNRVG6khdyAqjrnbHv69+Mm+E1QolB
-	wKy7IU7Uhfw0fM6PThanMNryEelVMCiMTVieuC9EDiQedAHAvIbJtmTFZLnsQGrxYyNf1BnzMqtHu
-	eTK6s92Gg+mSNAnIB30DMrWnXFr6niwIhhq3CHmmwlRtvi1WK63rIV8YzYoh3Y+9gmQXCQy/LLj+d
-	TQvVMf6eM/wmvgxJjnQQ==;
+	List-Owner; bh=B0mF5ASwaMUNE3uqX09FGCMB6bfwla8KQvASBAHyvuI=; b=Ujva2xPnfDcC/0
+	g4Nh5NxC36nSh/rgRTENDJwLZx7Ozvs6wPb1OimxlvYc33ZVBvCCs/OPqFPHmLwdkvLn9imjuQ/fD
+	HtsUkHKlIzwqwT3ndmoai+kjgArzeDZPn0OC1j8YuJWpZnCijRLFObKouJOGvTUbEEYpmnFHy4Jr/
+	lJh0MehoVv/H9xad8LrhfuBhOMTZCDFtyx8J6S0F6othH1TGeK1Gsl8wrn22XbJLfgIW+CAF6WJe8
+	B7FmPhM+nOTxu/4OVsXaK8zMcPR9BDJbpPrCPwZhutexoBIWvG3d8ogPx/S3po6s+03+wliVs5hPl
+	n3NEzfEk4msz6TVEicHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZuBe-0003hB-Cw; Wed, 27 Nov 2019 10:04:42 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iZuEP-0005KQ-2Y; Wed, 27 Nov 2019 10:07:33 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZuBQ-0003gA-Ol
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 10:04:30 +0000
-Received: by mail-pf1-x441.google.com with SMTP id z4so10725842pfn.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 Nov 2019 02:04:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Fla0mLE3kPARMpuw52rBb145CpRIcrUfv5y6FZzfYow=;
- b=RwOyeu/bPVGltW59qJ4ylCblmR5cOGkzUq9UNiaKHpWvfQPMChAxhON+4bSUJovU8n
- zUPQsv3tpq+x4Lwhx4KaW+DIEzK+DzY9Kc7Cg5Lh4sj0Tgu9zIi8ibZ8YPn58QTJuUO+
- G4lekg7BfIooWsOH7uQR0q7Y9LKF4gHyFwK9A=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Fla0mLE3kPARMpuw52rBb145CpRIcrUfv5y6FZzfYow=;
- b=CNjtnFc6vxnoBr5njWOSYwRqMrl13o72WNkgJScVmvxs1r68ed63mI8a4oCN5SQTMs
- qvTIGYxY9o+TJuFdZ45dZmOpbFacq1h88WPRUq70v2fZ6OrQrGrau0h74gVSdeBPEdGV
- VpA31JTrAHuxl6CJLv4uz2Y0dzKesbqZy1IniAl04N81LOsrbyjpMZoPYjKn4cHMKwpB
- +zqX7MLvCJWGhhdCNF6iIguPZfZ6UzcdsKCBo3RVLDxsByKrA/4combH2LByMaIZdzH7
- HlZ0lzMx0a3drP3krvfgpInH8CfzAB4ZE7m78BV4FJontJqVaVDO6D3byS7OrlYkFJ5r
- s8OA==
-X-Gm-Message-State: APjAAAV+mkGF4PlAi841aWSk+PI3LYK/dX+oPS/CjupADZbAH2kiR8I5
- oBBrj8LOAq8qne0Y7jge0HF/xQ==
-X-Google-Smtp-Source: APXvYqzXspCMDcVbYgH/6lgSpThq/u782otjCOXgjkwhYm6xw8BQ13uACOi72z9Q3T6FJKzNAto7hg==
-X-Received: by 2002:a65:4809:: with SMTP id h9mr3814513pgs.265.1574849067339; 
- Wed, 27 Nov 2019 02:04:27 -0800 (PST)
-Received: from pihsun-z840.tpe.corp.google.com
- ([2401:fa00:1:10:7889:7a43:f899:134c])
- by smtp.googlemail.com with ESMTPSA id
- n18sm16063907pff.152.2019.11.27.02.04.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 Nov 2019 02:04:26 -0800 (PST)
-From: Pi-Hsun Shih <pihsun@chromium.org>
-To: 
-Subject: [PATCH] drm/mediatek: Fix can't get component for external display
- plane.
-Date: Wed, 27 Nov 2019 18:04:19 +0800
-Message-Id: <20191127100419.130300-1-pihsun@chromium.org>
-X-Mailer: git-send-email 2.24.0.393.g34dc348eaf-goog
+ id 1iZuEA-0005JU-MS
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 10:07:20 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xARA78Z8032339; Wed, 27 Nov 2019 11:07:09 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : subject :
+ date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=9tjm8fNHXd7RQHbuYQoITgl8ZEvG9cJE+90w2nU8sfU=;
+ b=qa/4NoKEDSzC0bbGBLnavax+pgzTcNiOdWZAy9YsZwtUEjb7FYQCEPSRllDjTbN3IdnX
+ UojIu3TVSkFQWm/JzsQTjVvdbW7CZ+rqsraHgSnm69inuICIC3HS7f49qUJYkPUJymKF
+ a1wltB9XWTKH7Og/vidIKNlPdCIfpldcmJj5aMZMVJQSMiUMdqxOP8Fl5mEuJ8GL4lVK
+ DbL8SQwVPzny+2CDlQdUC/+Ur6LK8Trzy4Uuc1di3MlCOXaudLkMzIF08SF7VRX+yfJJ
+ 40MzuqvD2URqX2OdFUYpD2hCoyZ6GG3dXDW3uAHda3mLXh53VEtzPAT+RZ+dYVnDdbRU Dw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2whcxsawxu-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 27 Nov 2019 11:07:09 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4958810002A;
+ Wed, 27 Nov 2019 11:06:59 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 941992AEF1C;
+ Wed, 27 Nov 2019 11:06:59 +0100 (CET)
+Received: from localhost (10.75.127.44) by SFHDAG6NODE2.st.com (10.75.127.17)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2;
+ Wed, 27 Nov 2019 11:06:59 +0100
+From: Olivier Moysan <olivier.moysan@st.com>
+To: <jic23@kernel.org>, <knaack.h@gmx.de>, <lars@metafoo.de>,
+ <pmeerw@pmeerw.net>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>, <fabrice.gasnier@st.com>,
+ <linux-iio@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <benjamin.gaignard@st.com>, <olivier.moysan@st.com>
+Subject: [INTERNAL][PATCH] iio: adc: stm32-dfsdm: fix single conversion
+Date: Wed, 27 Nov 2019 11:06:57 +0100
+Message-ID: <20191127100657.24485-1-olivier.moysan@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG6NODE2.st.com
+ (10.75.127.17)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-27_02:2019-11-27,2019-11-27 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_020428_831377_50CBB5D9 
-X-CRM114-Status: GOOD (  12.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191127_020719_093540_8131F230 
+X-CRM114-Status: GOOD (  11.01  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,63 +96,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-mediatek@lists.infradead.org>, open list <linux-kernel@vger.kernel.org>,
- "open list:DRM DRIVERS FOR MEDIATEK" <dri-devel@lists.freedesktop.org>,
- Yongqiang Niu <yongqiang.niu@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Pi-Hsun Shih <pihsun@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, CK Hu <ck.hu@mediatek.com>,
- Sean Paul <seanpaul@chromium.org>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Apply data formatting to single conversion,
+as this is already done in continuous and trigger modes.
 
-The original logic is ok for primary display, but will not find out
-component for external display.
+Fixes: 102afde62937 ("iio: adc: stm32-dfsdm: manage data resolution in trigger mode")
 
-For example, plane->index is 6 for external display, but there are only
-2 layer nr in external display, and this condition will never happen:
-if (plane->index < (count + mtk_ddp_comp_layer_nr(comp)))
-
-Fix this by using the offset of the plane to mtk_crtc->planes as index,
-instead of plane->index.
-
-Fixes: d6b53f68356f ("drm/mediatek: Add helper to get component for a plane")
-Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-Signed-off-by: Pi-Hsun Shih <pihsun@chromium.org>
+Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ drivers/iio/adc/stm32-dfsdm-adc.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index f80a8ba75977..b34e7d70702a 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -215,11 +215,12 @@ struct mtk_ddp_comp *mtk_drm_ddp_comp_for_plane(struct drm_crtc *crtc,
- 	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
- 	struct mtk_ddp_comp *comp;
- 	int i, count = 0;
-+	unsigned int local_index = plane - mtk_crtc->planes;
+diff --git a/drivers/iio/adc/stm32-dfsdm-adc.c b/drivers/iio/adc/stm32-dfsdm-adc.c
+index e493242c266e..0339ecdd06bd 100644
+--- a/drivers/iio/adc/stm32-dfsdm-adc.c
++++ b/drivers/iio/adc/stm32-dfsdm-adc.c
+@@ -1204,6 +1204,8 @@ static int stm32_dfsdm_single_conv(struct iio_dev *indio_dev,
  
- 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
- 		comp = mtk_crtc->ddp_comp[i];
--		if (plane->index < (count + mtk_ddp_comp_layer_nr(comp))) {
--			*local_layer = plane->index - count;
-+		if (local_index < (count + mtk_ddp_comp_layer_nr(comp))) {
-+			*local_layer = local_index - count;
- 			return comp;
- 		}
- 		count += mtk_ddp_comp_layer_nr(comp);
-
-base-commit: 1875ff320f14afe21731a6e4c7b46dd33e45dfaa
+ 	stm32_dfsdm_stop_conv(adc);
+ 
++	stm32_dfsdm_process_data(adc, res);
++
+ stop_dfsdm:
+ 	stm32_dfsdm_stop_dfsdm(adc->dfsdm);
+ 
 -- 
-2.24.0.393.g34dc348eaf-goog
+2.17.1
 
 
 _______________________________________________
