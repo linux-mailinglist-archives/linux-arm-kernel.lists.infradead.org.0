@@ -2,91 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7673B10ADCB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:33:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E94DD10ADCD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:34:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=PklEurN2Ucy2jn3fHRIzCaobmzIaIp0YXND3rS6dDrg=; b=IrUwxVD2fgdqM7DLuNI70Mtgji
-	BR+UQrIwz5tW/YEG3ZYTxEiN6xmJDPNqPnub66Sksn6x/0/IGy6Vpg/8/TJXrTNu0Y8xgql5r/zgj
-	9YNkhdCVg3gytOAg5X4SwBdmhIXlsSUXLA3edndTi/7WTHqObAqBrig2T5t61sDZ9KrDZS8bLM4Nd
-	kawKZ6WiWJA7zQZruJzmZ7Iq+M1bQedqeQc7zqKCuY1iMbtNVl62bQmdVaK3YMsMVpMCenuFPfbJQ
-	41e7Y6I3UgQ3LSEzKOrz7lRl5XzxagqAcmAabXCofYh/7znoZAh11uFPIeeaIP4ZB2oKwUP9uV+XG
-	iBEe6KWA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=aPmI5Yh7OmEz5vVH0HfrwlA10iHFWtLBEYnzUAr8JAg=; b=E1q
+	KmQjf4Ide/LlwxZ7IpuPxaDO4wUnv2rDIdW8DyAg4ja0Fc0F0a69+OEaNyy4pF3r+nw/QfhsCao3t
+	gyV+HfSAsXdwP2Cn1c8MTLaaPnmKGhX+sDubDqWuiv/XOBWZ8hct0IjiXBjyEujfBGHW43oiEaH9O
+	/UXjHwp14YlZNvQzd6H+vdAR0ePFVxojLRYukyw0nm2wXyl2f4cVJbajYm1vz/NLdqmtSGTn9C9tr
+	QKKBAOEiqFAJ3uRCBoUO/LBQ+U1DmQcEJpzr5NmXn/VE6rTI2F2OtWM6K3nHrSPmWJbHbb75xle6h
+	WHi+vm2Wo6J2vsqJCG97Ha7R+tCbn3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZudV-0001XL-Rc; Wed, 27 Nov 2019 10:33:29 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZuZn-0005oA-Dl
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 10:29:41 +0000
-Received: by mail-lf1-x144.google.com with SMTP id y5so4001974lfy.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 Nov 2019 02:29:39 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=YE8YvkurDwcmK3uqareXLGBcqQwJuyVozrMdvAFxIY4=;
- b=V0sHWW+6lT6XzspaGhjr68xPBxpq7cPOhMWh1T+Yuzw50GwEW9jikpXcj4Xys51BZG
- +uEZgF33ABgUWs+x7CUqOSTxvnuanzhxSRePKrmiiqBpnMsbA9sZbF7VmOpPS/SNkGPm
- BIparBEt6Symbx9RStqtt6zw4wByrXDGWpP1pkjmBBNf+j2SYGbQn7tZOFc8OmK4X6LG
- HBj6c6FBilNnoTc9kiephZw+sT4KpxSMylomgmXHxbP21AhsU00DviVyClbq2NucHpB2
- lPNQAS61sJFOUXirZNTvRAMgUOUuuPQroVBFt2umHunxgvkAe+QY+F9rKUVTNv7HP6o8
- Hegg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=YE8YvkurDwcmK3uqareXLGBcqQwJuyVozrMdvAFxIY4=;
- b=UPLvQaWI1gTiix94/j67R83KLlyrZG064vagc4Jm4e3xue8f7/YOvkcLTfxI9gTws3
- tU+GdmtK41b95Sx05ObjQimyaNrnfJ4/JuzvPbapaPsAAqvfCcq9/bCUFcB0EgqoW4cU
- eZy33wWu1xODmRn3lHeBq5tff4cboKNJFFxjU2BU6B98WSYJSxcLy9+wQBMOWhrWK3WT
- ZcZWyors9HKixjNpz/DSslDxFLlpcOs2rUL/qNrWd1BgupBVIPPZPOtSXsukHzoUlmFr
- L/31FWTbxiU38Ub+TaHLDXaT1hsIktPGxjHbj/Ta3oyep4PySWRfP8htZ8X9XCVNr4aP
- t+xg==
-X-Gm-Message-State: APjAAAUjeenGRpx1QnWyvwhuchJwHM+r8vVWHIToByvvgSY1gJ0IVj+4
- nx2QuXGDeBvS5BpQ3D77QOoG9Q==
-X-Google-Smtp-Source: APXvYqzfK7p4G4XeXLmvxRBXQfax0x8CjKcQ8ndzaEP1RnAz44tx+i8EzhOqNotZjQZFL/St0ciykg==
-X-Received: by 2002:a19:8c4e:: with SMTP id i14mr14761604lfj.90.1574850577700; 
- Wed, 27 Nov 2019 02:29:37 -0800 (PST)
-Received: from uffe-XPS-13-9360.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id t9sm6868260ljj.19.2019.11.27.02.29.36
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 Nov 2019 02:29:37 -0800 (PST)
-From: Ulf Hansson <ulf.hansson@linaro.org>
-To: Sudeep Holla <sudeep.holla@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Rob Herring <robh+dt@kernel.org>, linux-pm@vger.kernel.org
-Subject: [PATCH v3 13/13] arm64: dts: Convert to the hierarchical CPU topology
- layout for MSM8916
-Date: Wed, 27 Nov 2019 11:29:14 +0100
-Message-Id: <20191127102914.18729-14-ulf.hansson@linaro.org>
+	id 1iZuei-00024q-90; Wed, 27 Nov 2019 10:34:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iZueX-000241-AY
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 10:34:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7A6DC30E;
+ Wed, 27 Nov 2019 02:34:30 -0800 (PST)
+Received: from dell3630.arm.com (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 890C23F6C4;
+ Wed, 27 Nov 2019 02:34:28 -0800 (PST)
+From: Dietmar Eggemann <dietmar.eggemann@arm.com>
+To: Atish Patra <atish.patra@wdc.com>,
+	Russell King <linux@armlinux.org.uk>
+Subject: [PATCH v2] arm: Fix topology setup in case of CPU hotplug for
+ CONFIG_SCHED_MC
+Date: Wed, 27 Nov 2019 11:33:53 +0100
+Message-Id: <20191127103353.12417-1-dietmar.eggemann@arm.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191127102914.18729-1-ulf.hansson@linaro.org>
-References: <20191127102914.18729-1-ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_022939_496429_F3EA545B 
-X-CRM114-Status: GOOD (  12.36  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191127_023433_458533_A1C599E6 
+X-CRM114-Status: GOOD (  13.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,154 +58,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- linux-arm-msm@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
- Lina Iyer <lina.iyer@linaro.org>, linux-arm-kernel@lists.infradead.org
+Cc: Ondrej Jirman <megous@megous.com>, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
+ Sugaya Taichi <sugaya.taichi@socionext.com>, Joel Stanley <joel@jms.id.au>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ Morten Rasmussen <morten.rasmussen@arm.com>, Lukasz Luba <lukasz.luba@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To enable the OS to better support PSCI OS initiated CPU suspend mode,
-let's convert from the flattened layout to the hierarchical layout.
+Commit ca74b316df96 ("arm: Use common cpu_topology structure and
+functions.") changed cpu_coregroup_mask() from the ARM32 specific
+implementation in arch/arm/include/asm/topology.h to the one shared
+with ARM64 and RISCV in drivers/base/arch_topology.c.
 
-In the hierarchical layout, let's create a power domain provider per CPU
-and describe the idle states for each CPU inside the power domain provider
-node. To group the CPUs into a cluster, let's add another power domain
-provider and make it act as the master domain. Note that, the CPU's idle
-states remains compatible with "arm,idle-state", while the cluster's idle
-state becomes compatible with "domain-idle-state".
+Currently on ARM32 (TC2 w/ CONFIG_SCHED_MC) the task scheduler setup
+code (w/ CONFIG_SCHED_DEBUG) shows this during CPU hotplug:
 
-Co-developed-by: Lina Iyer <lina.iyer@linaro.org>
-Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
-Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+  ERROR: groups don't span domain->span
+
+It happens to CPUs of the cluster of the CPU which gets hot-plugged
+out on scheduler domain MC.
+
+Turns out that the shared cpu_coregroup_mask() requires that the
+hot-plugged CPU is removed from the core_sibling mask via
+remove_cpu_topology(). Otherwise the 'is core_sibling subset of
+cpumask_of_node()' doesn't work. In this case the task scheduler has to
+deal with cpumask_of_node instead of core_sibling which is wrong on
+scheduler domain MC.
+
+e.g. CPU3 hot-plugged out on TC2 [cluster0: 0,3-4 cluster1: 1-2]:
+
+  cpu_coregroup_mask(): CPU3 cpumask_of_node=0-2,4 core_sibling=0,3-4
+                                                                  ^
+should be:
+
+  cpu_coregroup_mask(): CPU3 cpumask_of_node=0-2,4 core_sibling=0,4
+
+Add remove_cpu_topology() to __cpu_disable() to remove the CPU from the
+topology masks in case of a CPU hotplug out operation.
+
+At the same time tweak store_cpu_topology() slightly so it will call
+update_siblings_masks() in case of CPU hotplug in operation via
+secondary_start_kernel()->smp_store_cpu_info().
+
+This aligns the ARM32 implementation with the ARM64 one.
+
+Guarding remove_cpu_topology() with CONFIG_GENERIC_ARCH_TOPOLOGY is
+necessary since some Arm32 defconfigs (aspeed_g5_defconfig,
+milbeaut_m10v_defconfig, spear13xx_defconfig) specify an explicit
+
+ # CONFIG_ARM_CPU_TOPOLOGY is not set
+
+w/ ./arch/arm/Kconfig: select GENERIC_ARCH_TOPOLOGY if ARM_CPU_TOPOLOGY
+
+Fixes: ca74b316df96 ("arm: Use common cpu_topology structure and functions")
+Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+Reviewed-by: Lukasz Luba <lukasz.luba@arm.com>
+Tested-by: Lukasz Luba <lukasz.luba@arm.com>
+Tested-by: Ondrej Jirman <megous@megous.com>
+Signed-off-by: Dietmar Eggemann <dietmar.eggemann@arm.com>
 ---
 
-Changes in v3:
-	- None.
+Changes in v2:
 
----
- arch/arm64/boot/dts/qcom/msm8916.dtsi | 57 +++++++++++++++++++++++++--
- 1 file changed, 53 insertions(+), 4 deletions(-)
+- Removed cosmetic cleanup in pr_info() of store_cpu_topology()
+- Guarded remove_cpu_topology() with CONFIG_GENERIC_ARCH_TOPOLOGY
 
-diff --git a/arch/arm64/boot/dts/qcom/msm8916.dtsi b/arch/arm64/boot/dts/qcom/msm8916.dtsi
-index 5ea9fb8f2f87..1ece0c763592 100644
---- a/arch/arm64/boot/dts/qcom/msm8916.dtsi
-+++ b/arch/arm64/boot/dts/qcom/msm8916.dtsi
-@@ -102,10 +102,11 @@
- 			reg = <0x0>;
- 			next-level-cache = <&L2_0>;
- 			enable-method = "psci";
--			cpu-idle-states = <&CPU_SLEEP_0>;
- 			clocks = <&apcs>;
- 			operating-points-v2 = <&cpu_opp_table>;
- 			#cooling-cells = <2>;
-+			power-domains = <&CPU_PD0>;
-+			power-domain-names = "psci";
- 		};
+I opted for an #ifdef in __cpu_disable rather than a stub definition of
+remove_cpu_topology() in include/linux/arch_topology.h to keep this
+change small.
+
+ arch/arm/kernel/smp.c      |  4 ++++
+ arch/arm/kernel/topology.c | 10 +++++-----
+ 2 files changed, 9 insertions(+), 5 deletions(-)
+
+diff --git a/arch/arm/kernel/smp.c b/arch/arm/kernel/smp.c
+index 4b0bab2607e4..46e1be9e57a8 100644
+--- a/arch/arm/kernel/smp.c
++++ b/arch/arm/kernel/smp.c
+@@ -240,6 +240,10 @@ int __cpu_disable(void)
+ 	if (ret)
+ 		return ret;
  
- 		CPU1: cpu@1 {
-@@ -114,10 +115,11 @@
- 			reg = <0x1>;
- 			next-level-cache = <&L2_0>;
- 			enable-method = "psci";
--			cpu-idle-states = <&CPU_SLEEP_0>;
- 			clocks = <&apcs>;
- 			operating-points-v2 = <&cpu_opp_table>;
- 			#cooling-cells = <2>;
-+			power-domains = <&CPU_PD1>;
-+			power-domain-names = "psci";
- 		};
++#ifdef CONFIG_GENERIC_ARCH_TOPOLOGY
++	remove_cpu_topology(cpu);
++#endif
++
+ 	/*
+ 	 * Take this CPU offline.  Once we clear this, we can't return,
+ 	 * and we must not schedule until we're ready to give up the cpu.
+diff --git a/arch/arm/kernel/topology.c b/arch/arm/kernel/topology.c
+index 5b9faba03afb..8d2e61d9e7a6 100644
+--- a/arch/arm/kernel/topology.c
++++ b/arch/arm/kernel/topology.c
+@@ -196,9 +196,8 @@ void store_cpu_topology(unsigned int cpuid)
+ 	struct cpu_topology *cpuid_topo = &cpu_topology[cpuid];
+ 	unsigned int mpidr;
  
- 		CPU2: cpu@2 {
-@@ -126,10 +128,11 @@
- 			reg = <0x2>;
- 			next-level-cache = <&L2_0>;
- 			enable-method = "psci";
--			cpu-idle-states = <&CPU_SLEEP_0>;
- 			clocks = <&apcs>;
- 			operating-points-v2 = <&cpu_opp_table>;
- 			#cooling-cells = <2>;
-+			power-domains = <&CPU_PD2>;
-+			power-domain-names = "psci";
- 		};
+-	/* If the cpu topology has been already set, just return */
+-	if (cpuid_topo->core_id != -1)
+-		return;
++	if (cpuid_topo->package_id != -1)
++		goto topology_populated;
  
- 		CPU3: cpu@3 {
-@@ -138,10 +141,11 @@
- 			reg = <0x3>;
- 			next-level-cache = <&L2_0>;
- 			enable-method = "psci";
--			cpu-idle-states = <&CPU_SLEEP_0>;
- 			clocks = <&apcs>;
- 			operating-points-v2 = <&cpu_opp_table>;
- 			#cooling-cells = <2>;
-+			power-domains = <&CPU_PD3>;
-+			power-domain-names = "psci";
- 		};
+ 	mpidr = read_cpuid_mpidr();
  
- 		L2_0: l2-cache {
-@@ -161,12 +165,57 @@
- 				min-residency-us = <2000>;
- 				local-timer-stop;
- 			};
-+
-+			CLUSTER_RET: cluster-retention {
-+				compatible = "domain-idle-state";
-+				arm,psci-suspend-param = <0x41000012>;
-+				entry-latency-us = <500>;
-+				exit-latency-us = <500>;
-+				min-residency-us = <2000>;
-+			};
-+
-+			CLUSTER_PWRDN: cluster-gdhs {
-+				compatible = "domain-idle-state";
-+				arm,psci-suspend-param = <0x41000032>;
-+				entry-latency-us = <2000>;
-+				exit-latency-us = <2000>;
-+				min-residency-us = <6000>;
-+			};
- 		};
- 	};
+@@ -231,14 +230,15 @@ void store_cpu_topology(unsigned int cpuid)
+ 		cpuid_topo->package_id = -1;
+ 	}
  
- 	psci {
- 		compatible = "arm,psci-1.0";
- 		method = "smc";
-+
-+		CPU_PD0: cpu-pd0 {
-+			#power-domain-cells = <0>;
-+			power-domains = <&CLUSTER_PD>;
-+			domain-idle-states = <&CPU_SLEEP_0>;
-+		};
-+
-+		CPU_PD1: cpu-pd1 {
-+			#power-domain-cells = <0>;
-+			power-domains = <&CLUSTER_PD>;
-+			domain-idle-states = <&CPU_SLEEP_0>;
-+		};
-+
-+		CPU_PD2: cpu-pd2 {
-+			#power-domain-cells = <0>;
-+			power-domains = <&CLUSTER_PD>;
-+			domain-idle-states = <&CPU_SLEEP_0>;
-+		};
-+
-+		CPU_PD3: cpu-pd3 {
-+			#power-domain-cells = <0>;
-+			power-domains = <&CLUSTER_PD>;
-+			domain-idle-states = <&CPU_SLEEP_0>;
-+		};
-+
-+		CLUSTER_PD: cluster-pd {
-+			#power-domain-cells = <0>;
-+			domain-idle-states = <&CLUSTER_RET>, <&CLUSTER_PWRDN>;
-+		};
- 	};
+-	update_siblings_masks(cpuid);
+-
+ 	update_cpu_capacity(cpuid);
  
- 	pmu {
+ 	pr_info("CPU%u: thread %d, cpu %d, socket %d, mpidr %x\n",
+ 		cpuid, cpu_topology[cpuid].thread_id,
+ 		cpu_topology[cpuid].core_id,
+ 		cpu_topology[cpuid].package_id, mpidr);
++
++topology_populated:
++	update_siblings_masks(cpuid);
+ }
+ 
+ static inline int cpu_corepower_flags(void)
 -- 
 2.17.1
 
