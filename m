@@ -2,55 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72A5B10B162
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 15:32:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23CF310B1B8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 15:59:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=FvohmoTWOg9KKOhYaO0deCrKZ8ZW8URO+ZgT+NEhZOs=; b=BJ3xGrY5pz2y+3sW2iJO5hFXLJ
-	rBU3FaLZrx5XxMFho/pBZ2sjrgXGIH4XvOvxm9yh9IlAY7x0FW4D96y2vG/p7iX9FeBzt273IGTtN
-	U2HpBefWLm+AWP3gAYXK7yjrbzJ1NxCPvwrIcmGlNLt3Yz//x4XICloaVwp3+B7V4I4BKpl042TPL
-	UwW4cRX4HmrdZFoCcSRnpIB7LYSOiBFHLCOkRhoGk1Laefr+5oDCkbiIXWpU4+cygrZvd3vUlDril
-	dVt3bOLm0QLuhzt6AQpGsu/nwRHPHO83gsBSW+CkH/sVD6kZU8yvo4XovSfsHo7fQdeRHhn5Xt1Ob
-	Fhs+wb3Q==;
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9nvlI0iyvvTbwWePkWJmZ/HTWL9vX0A3QLEcW8DFnZY=; b=eMUwN5KNL6QgBZ
+	OaOS2FdmDtWE36SmQTz89uTcGuVwsOPttem1zndlM+m/1DS0rYigzsx/P+xnv73QF8IiRseyVbi+3
+	6ZltYuLZR9yNZq0bQaYzuNBEtmi41X+LVcN2Gl+xkjH0ZrauH7TkWrh+a+y2RuDTV9saJ0G0tnG4H
+	vF8hu849vwujxefwcX72HuwBzyBcSunOPs/uO0Vg5kE9thn0prHUKThNk5LsnA2QtLuRva9rTVWol
+	oPBAev2ZWU6m1NE+hndhoxt09xd005QNynz9n+hnI3x1RxVZv2kRio+9LJcI8KQdUOebHkP14A4IW
+	2YBnydPHkIzodnSJi2pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZyMB-0003M4-Uw; Wed, 27 Nov 2019 14:31:52 +0000
+	id 1iZymW-000488-Mn; Wed, 27 Nov 2019 14:59:04 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZyM2-0003LY-CS
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 14:31:43 +0000
+ id 1iZymN-00047j-9I
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 14:58:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 065A831B;
- Wed, 27 Nov 2019 06:31:41 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A22E430E;
+ Wed, 27 Nov 2019 06:58:52 -0800 (PST)
 Received: from [192.168.0.9] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DF94F3F68E;
- Wed, 27 Nov 2019 06:31:39 -0800 (PST)
-Subject: Re: [PATCH] arm: Fix topology setup in case of CPU hotplug for
- CONFIG_SCHED_MC
-To: Atish Patra <atish.patra@wdc.com>, Russell King <linux@armlinux.org.uk>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- Morten Rasmussen <morten.rasmussen@arm.com>,
- Lukasz Luba <lukasz.luba@arm.com>, Sudeep Holla <sudeep.holla@arm.com>
-References: <20191120104212.14791-1-dietmar.eggemann@arm.com>
- <20191124214753.m6lwcdemnddltctw@core.my.home>
- <50dfafee-55c3-767c-55f4-7d263feafe87@arm.com>
- <20191126214557.53afmorihwqimq2n@core.my.home>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 268D63F68E;
+ Wed, 27 Nov 2019 06:58:51 -0800 (PST)
+Subject: Re: [PATCH] cpufreq: vexpress-spc: Fix wrong alternation of
+ policy->related_cpus during CPU hp
+To: Sudeep Holla <sudeep.holla@arm.com>, Viresh Kumar <viresh.kumar@linaro.org>
+References: <20191127114801.23837-1-dietmar.eggemann@arm.com>
+ <20191127120816.GC29301@bogus> <20191127121402.vd3tul4gmqm6qtyb@vireshk-i7>
+ <20191127133200.GE29301@bogus>
 From: Dietmar Eggemann <dietmar.eggemann@arm.com>
-Message-ID: <9119c1db-b98d-67d4-ce4c-d9a9b298937a@arm.com>
-Date: Wed, 27 Nov 2019 15:31:38 +0100
+Message-ID: <a60cab69-4d47-d418-94bd-74630bf9e846@arm.com>
+Date: Wed, 27 Nov 2019 15:58:49 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191126214557.53afmorihwqimq2n@core.my.home>
+In-Reply-To: <20191127133200.GE29301@bogus>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_063142_474506_2FA70B6E 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20191127_065855_379876_BED2AAC8 
+X-CRM114-Status: GOOD (  15.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,21 +64,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pm@vger.kernel.org,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Liviu Dudau <liviu.dudau@arm.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Morten Rasmussen <morten.rasmussen@arm.com>, Lukasz Luba <lukasz.luba@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjYvMTEvMjAxOSAyMjo0NSwgT25kxZllaiBKaXJtYW4gd3JvdGU6Cj4gT24gVHVlLCBOb3Yg
-MjYsIDIwMTkgYXQgMTE6NDI6MDJBTSArMDEwMCwgRGlldG1hciBFZ2dlbWFubiB3cm90ZToKPj4g
-T24gMjQvMTEvMjAxOSAyMjo0NywgT25kxZllaiBKaXJtYW4gd3JvdGU6Cj4+PiBIZWxsbywKPj4+
-Cj4+PiBPbiBXZWQsIE5vdiAyMCwgMjAxOSBhdCAxMDo0MjoxMkFNICswMDAwLCBEaWV0bWFyIEVn
-Z2VtYW5uIHdyb3RlOgoKWy4uLl0KCj4+IFRoYW5rcyBmb3IgdGVzdGluZyEgV2hpY2ggQ3B1ZnJl
-cSBkcml2ZXIgaXMgeW91ciBzeXN0ZW0gdXNpbmc/Cj4gCj4gSGVsbG8sCj4gCj4gaXQncyB1c2lu
-ZyBjcHVmcmVxLWR0LgoKVGhhbmtzIGZvciB0aGUgaW5mbyEgSXQncyBkdC1iYXNlZCBzbyB0aGlz
-IG9uZSBpcyBzYWZlIGluIHJlZ2FyZHMgdG8KcmV0cmlldmluZyB0aGUgY29ycmVjdCB0b3BvbG9n
-eSBjb3JlIG1hc2sgZHVyaW5nIENQVSBocCBzdHJlc3MgKGkuZS4KZnJvbSBtdWx0aXBsZSBDUFVz
-IGF0IHRoZSBzYW1lIHRpbWUpLgoKWy4uLl0KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 27/11/2019 14:32, Sudeep Holla wrote:
+> On Wed, Nov 27, 2019 at 05:44:02PM +0530, Viresh Kumar wrote:
+>> On 27-11-19, 12:08, Sudeep Holla wrote:
+>>> On Wed, Nov 27, 2019 at 12:48:01PM +0100, Dietmar Eggemann wrote:
+
+[...]
+
+>>> Unlike DT based drivers, it not easy to get the fixed cpumask unless we
+>>> add some mechanism to extract it based on clks/OPP added. I prefer
+>>> this simple solution instead.
+>>
+>> I will call this a work-around for the problem and not really the
+>> solution, though I won't necessarily oppose it. There are cases which
+>> will break even with this solution.
+>>
+> 
+> I agree and that's the reason I spoke out my thought aloud here :)
+> 
+>> - Boot board with cpufreq driver as module.
+>> - Offline all CPUs except CPU0.
+>> - insert cpufreq driver.
+>> - online all CPUs.
+>>
+> 
+> Indeed, not just boot anytime since it's a module :)
+> 
+>> Now there is no guarantee that the last online will get the mask
+>> properly, if I have understood the problem well :)
+>>
+> 
+> Yes
+> 
+>> But yeah, who does this kind of messy work anyway :)
+>>
+> 
+> I won't bet on that ;)
+> 
+>> FWIW, we need a proper way (may be from architecture code) to find
+>> list of all CPUs that share clock line.
+>>
+> 
+> Yes but there's no architectural way. I need to revise and see tc2_pm.c
+> to check if we can do any magic there.
+
+I'm fine with finding a better solution to return a fixed topology core
+cpumask or calling this patch a workaround. AFAICS, only TC2 is affected.
+
+("arm: Fix topology setup in case of CPU hotplug for CONFIG_SCHED_MC")
+is needed for other systems as well in case we have commit ca74b316df96
+("arm: Use common cpu_topology structure and functions."). We probably
+don't want to revert commit ca74b316df96?
+
+We do CPU hp stress tests in our EAS mainline integration test suite
+https://developer.arm.com/tools-and-software/open-source-software/linux-kernel/energy-aware-scheduling/eas-mainline-development
+and there is where we initially encountered this issue on TC2.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
