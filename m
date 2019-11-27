@@ -2,100 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F27B910B54C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 19:10:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FB7010B550
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 19:11:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1jDU7mgTqHG0bPiWBRQvpxVeLvKrXV4ffQOaDkgaOFQ=; b=VBZXrdcGtzA77A
-	XgYqoH6RNhCEA3RT0yva2GljYbvLz9x/4UmCYt7m/9WcwT6oRmtrfSbP/ARbd3aaa9JNW/ZihvchF
-	Oz/VfeWfbX1UjCHtBkGAA9X8KP4Ui5PbBBglTUEeeIWAg1qihRiZuCkUNZTHz+4ke6UW8XpMUy6Ds
-	FvtSbECNy+PPaQBTj+lIzhvJ2A/3Ds6rtYeJOK8fFFm24IOIX2eqxSoZfxZCgnRJ1iX9nn7n7YxDu
-	iYQ5Mw4ait7n9dlEXR35l0zC20e688R2kAVK/LhpINAaxJWJd6ItzanuRs/ohbwFo1V86wHs1t2v3
-	a36b/VF98FWMcooZ1z0Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=KIHgu5N6JFrfxDz+d3oo88jUPqUE6dAWgRa6jofmNAw=; b=rXD
+	auGzkQKuQpYADtp4u6MP6W01bJZDJC1mHWT3+dj0zWEzo9n5gqv2prt/a6+sBfVIPg4A/HJnFiJB+
+	rE6T54O1eV9XwNQuOuBzaw43rGG+1u5clTjVH4psqJ3cOjW2VqdETexDxX66LYOULnbOHKLja8GRr
+	4UyjlbBV+I0a+x1KgT290oKt2gdadae1FIiaJoBvZQCzwr/0yUGsNiN6Bu1VgayuEtF2S2LgpJctv
+	Pt3Ea2TqF65cnzSz1goOh+Ic0ayki6ksLBRmrhQYwv9muOILG2Hb6jDzEz0AsurQhiy9QpuChAKwc
+	6ZTJ4JTOmXqg1waX77CMVjS/xqRjHYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia1m5-00053a-Iw; Wed, 27 Nov 2019 18:10:49 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1ia1mO-0005JJ-13; Wed, 27 Nov 2019 18:11:08 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia1lt-00052t-Gh
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 18:10:39 +0000
-Received: by mail-wm1-x344.google.com with SMTP id y23so935073wma.0
+ id 1ia1m6-0005Bx-4D
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 18:10:53 +0000
+Received: by mail-oi1-x244.google.com with SMTP id d22so20923914oic.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 Nov 2019 10:10:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=date:from:to:cc:subject:message-id:mail-followup-to:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=cbv/8/r3sfhd+NMk4eKHS1W+CsksoJnBQ/vFeBDEews=;
- b=EUqC/uYyOQLRXEtsbXGbq5CLVRefhyQ+qJRAcGcsLyvHr6z7hJsxzKw6xqplaCJ7oW
- 2vGwh6hRhxvmaeycEjkOAoLO6jgGGXS1+FEW2lE1eHsWd3mxTu694LM41fWeoIpBH7Vg
- YhUg+vlDlYJk9n5tYVNZtLLEKm/64IfgV4D5I=
+ Wed, 27 Nov 2019 10:10:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:from:to:cc:subject:date:message-id;
+ bh=uxEj17EH5QDpY8K7ZHM7212FFpoAkQlxU7CFuDOGP+Y=;
+ b=rUpl9QYmegwYqCdnbUVyixbewmxfJT1zOxnT5af36XES30mvqACGz5wpOUYuF1fxhS
+ E/FNymtgdtEDOAyBMSHlLzdSDOEYhO1vn4oYDmbOpTqlXWsQSO7g26S4Tw3swqCIoGN2
+ xDHjnc+oXgPFw5hrvi8YefHvT8aXs3HbsMtC3IBQszhL+A0M5K7F42jNC890p+hHhixZ
+ ZWZ9wRaMcCJSqiEx7CF8BaRyU/HpaxVkrYgY3o+p0UzLYo8hwNMDJ2R32NB3GYNanEb9
+ LS36OnFBi69j5cblsw8Ull2HUmXmvJLYU4jOCoo9GWWuVz6aYGmygh8if1++215ofyiN
+ ATPg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=cbv/8/r3sfhd+NMk4eKHS1W+CsksoJnBQ/vFeBDEews=;
- b=NxqwwXqCdG7TzpmgBVurVWKBdThT6BT6sz+Es9k0cKxEKt/7RKe/o/sRUJRDbilD9d
- +xvP/ZAtGlD5JHUrlo4gbcPLF0WNRTFloG/Vho58ShVfthrHAhSnLvA7NnewAn/Aqh35
- UyDQ17teht2cOcgINmib4ZVOdxVMSq/W1EBgu1J+Yr1nU/ejI0KxUPEicQAKO2dHGmr5
- kmc0SnQCn8df/Ej5aw7x9lNdkDcgg2TYdu3UVuYQWyUNHSeFIpLg8zQlIkVhIWTt+b4j
- 62mg7MTQwRcFDGsz4uMBJLklMJUC+snvGL2UVdqQAs9fQQhcH8xAnWut5Jx2tfGl2Gc4
- 9Mfg==
-X-Gm-Message-State: APjAAAWKtn8A0ncjQF/kiM+z5xZcGsgKAvymKGOLp7EOkO4EV096tx4K
- zMad7RHvpXk/NHArkZgq5MOQZg==
-X-Google-Smtp-Source: APXvYqzT8jaNqsYVNrsvu4LEeci1CDFvdEtIFSjKTmi0obdbFp5KUyHs9EfQvXEQTmYckN8AwBDGHw==
-X-Received: by 2002:a05:600c:2257:: with SMTP id
- a23mr5940479wmm.143.1574878236283; 
- Wed, 27 Nov 2019 10:10:36 -0800 (PST)
-Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
- [212.51.149.96])
- by smtp.gmail.com with ESMTPSA id g11sm7742001wmh.27.2019.11.27.10.10.34
+ h=x-gm-message-state:sender:from:to:cc:subject:date:message-id;
+ bh=uxEj17EH5QDpY8K7ZHM7212FFpoAkQlxU7CFuDOGP+Y=;
+ b=hbqhoka4LcfZHm1I/ia4JFF0xs9Fw95JSAWbGhjFuxm+u71gLybC4C92UMBtgDNGYN
+ d5WmDGWW9jsYfW88Eq17aAhWV8ditKzE62SoJIu14nN9CTV2Q4X9ApEiwum7T/XTuseh
+ htYrUDnCoaOEA854iqO2YUAhtU8bUc0CNf8e3i8BQuNwi8d53rEZtmTCgMuaRwzt82zo
+ ctHj5MYSvP3zBpi2nrNUjZPpWBoPKHD/+DvPWPQu+FNholaATLke2D9abmKuRoyTQUjB
+ krEGWlEmVSkj7NsspzndonA02qDY5TI5A9IBqzRAM0oR/GVeOvxinfJYQPWtHtp1L59V
+ 0z3A==
+X-Gm-Message-State: APjAAAU6Ce5D+jM63cjL3ja7qD4JaD0P/GoHQBVA12ELwd+o6PN6ftsf
+ QMgqi0BLqqRyQZlh3GS7Eg==
+X-Google-Smtp-Source: APXvYqxteMLih00Yd5/isxRTuteps1PyGruEVoLHwBSMJ8pX9NyVFAVfwKnOws5vahq/ZlcTg/XTpw==
+X-Received: by 2002:a05:6808:d8:: with SMTP id
+ t24mr5244728oic.36.1574878248504; 
+ Wed, 27 Nov 2019 10:10:48 -0800 (PST)
+Received: from serve.minyard.net ([47.184.136.59])
+ by smtp.gmail.com with ESMTPSA id r13sm5114421otp.54.2019.11.27.10.10.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 Nov 2019 10:10:35 -0800 (PST)
-Date: Wed, 27 Nov 2019 19:10:33 +0100
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Mihail Atanassov <Mihail.Atanassov@arm.com>
-Subject: Re: [PATCH] drm/mediatek: Fix build break
-Message-ID: <20191127181033.GF406127@phenom.ffwll.local>
-Mail-Followup-To: Mihail Atanassov <Mihail.Atanassov@arm.com>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- nd <nd@arm.com>, CK Hu <ck.hu@mediatek.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- David Airlie <airlied@linux.ie>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-References: <20191127170513.42251-1-mihail.atanassov@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191127170513.42251-1-mihail.atanassov@arm.com>
-X-Operating-System: Linux phenom 5.3.0-2-amd64 
-User-Agent: Mutt/1.12.2 (2019-09-21)
+ Wed, 27 Nov 2019 10:10:47 -0800 (PST)
+Received: from t560.minyard.net (unknown [192.168.27.180])
+ by serve.minyard.net (Postfix) with ESMTPA id 15733180046;
+ Wed, 27 Nov 2019 18:10:47 +0000 (UTC)
+From: minyard@acm.org
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: Fix compile error with KVM and !HARDEN_BRANCH_PREDICTOR
+Date: Wed, 27 Nov 2019 12:10:40 -0600
+Message-Id: <20191127181040.20012-1-minyard@acm.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_101037_560279_E6B01C09 
-X-CRM114-Status: GOOD (  14.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191127_101050_190552_4AE897A8 
+X-CRM114-Status: GOOD (  14.80  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tcminyard[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,60 +99,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel.vetter@ffwll.ch>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, CK Hu <ck.hu@mediatek.com>,
- nd <nd@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Stefan Wahren <stefan.wahren@i2se.com>, Corey Minyard <cminyard@mvista.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 27, 2019 at 05:05:32PM +0000, Mihail Atanassov wrote:
-> Caused by file removal without adjusting the Makefile.
-> 
-> Fixes: d268f42e6856 ("drm/mediatek: don't open-code drm_gem_fb_create")
-> Cc: Daniel Vetter <daniel.vetter@ffwll.ch>
-> Cc: CK Hu <ck.hu@mediatek.com>
-> Cc: Philipp Zabel <p.zabel@pengutronix.de>
-> Cc: Matthias Brugger <matthias.bgg@gmail.com>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-mediatek@lists.infradead.org
-> Signed-off-by: Mihail Atanassov <mihail.atanassov@arm.com>
+From: Corey Minyard <cminyard@mvista.com>
 
-Drat, kbuild still sucks if you dont do a clean rebuild :-/
+When compiling with KVM enabled and without HARDEN_BRANCH_PREDICTOR,
+the following compile error happens:
 
-Thanks for the patch, I pushed it.
--Daniel
-> ---
->  drivers/gpu/drm/mediatek/Makefile | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/Makefile b/drivers/gpu/drm/mediatek/Makefile
-> index 8067a4be8311..5044dfb8e3d6 100644
-> --- a/drivers/gpu/drm/mediatek/Makefile
-> +++ b/drivers/gpu/drm/mediatek/Makefile
-> @@ -7,7 +7,6 @@ mediatek-drm-y := mtk_disp_color.o \
->  		  mtk_drm_ddp.o \
->  		  mtk_drm_ddp_comp.o \
->  		  mtk_drm_drv.o \
-> -		  mtk_drm_fb.o \
->  		  mtk_drm_gem.o \
->  		  mtk_drm_plane.o \
->  		  mtk_dsi.o \
-> -- 
-> 2.23.0
-> 
+arch/arm64/kernel/cpu_errata.c:92:23:
+error: '__bp_harden_hyp_vecs_start' undeclared (first use in this function);
+did you mean 'hyp_vecs_start'?
+  void *dst = lm_alias(__bp_harden_hyp_vecs_start + slot * SZ_2K);
 
+Some ifdefs were removed by 3e91f3eacc91d9 "arm64: Always enable
+spectre-v2 vulnerability detection" for CONFIG_HARDEN_BRANCH_PREDICTOR,
+but __bp_harden_hyp_vecs_start is only defined if that config is
+enabled.
+
+Add CONFIG_HARDEN_BRANCH_PREDICTOR to the #if that has CONFIG_KVM,
+It looks like you need both of those for that code to be valid.
+
+Fixes: 3e91f3eacc91d9 "arm64: Always enable spectre-v2 vulnerability detection"
+Cc: Andre Przywara <andre.przywara@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Stefan Wahren <stefan.wahren@i2se.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Signed-off-by: Corey Minyard <cminyard@mvista.com>
+---
+This is for 4.14, I'm not sure if it is needed for other kernels.
+
+It is not needed in master because a new config item was added,
+CONFIG_KVM_INDIRECT_VECTORS, that depends on KVM and
+HARDEN_BRANCH_PREDICTOR being configured.  I looked at pulling the
+patches that add the required changes, and they make a lot of
+changes.  This change is the simple fix, but I'm not sure if we want to
+pull all those other changes into 4.14 and whatever other kernels
+are required.
+
+ arch/arm64/kernel/cpu_errata.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
+index 7d15f4cb6393..e565ec5e072f 100644
+--- a/arch/arm64/kernel/cpu_errata.c
++++ b/arch/arm64/kernel/cpu_errata.c
+@@ -82,7 +82,7 @@ cpu_enable_trap_ctr_access(const struct arm64_cpu_capabilities *__unused)
+ 
+ DEFINE_PER_CPU_READ_MOSTLY(struct bp_hardening_data, bp_hardening_data);
+ 
+-#ifdef CONFIG_KVM
++#if defined(CONFIG_KVM) && defined(CONFIG_HARDEN_BRANCH_PREDICTOR)
+ extern char __smccc_workaround_1_smc_start[];
+ extern char __smccc_workaround_1_smc_end[];
+ 
 -- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
