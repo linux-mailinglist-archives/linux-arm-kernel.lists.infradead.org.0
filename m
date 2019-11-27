@@ -2,59 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2607D10B667
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 20:06:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BA8C10B66F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 20:09:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dvIgUhVdiqP7zRphBsuxHoMMewetpUfST0BrZd499Tk=; b=P51NGA6Bg0ci0SNtB+Dhooni/
-	eO9eDKbhv+6Jj1qztFip3DnKdbSx7EljyE3WQK3BrRvfRg4r1lw/NKrExuTBYEitSYYXn3e1WJMNl
-	+bDEWHFjFzIH6ryJ9gK08TJ1ZK39wwyjZlK4Qu2gc4Q5NlpSDefCo56MCoIAteo64S5K3Sbkd+c6C
-	BxleopHWpr7mlga+oJo3+/WihDeXJLRwL9Ik9y1MRqbqyDCQRIpRTuUqgtgwwF6ZJxG0zOWZdGp5e
-	mrrIgwCmyyCIlaie5GgGt5ZxFBJI06KfO/UJ9rFRt8bXZGF5mS+o8u3fJEwqqfna6rGMYH7MuhGjs
-	+bgr+XZ+w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XC2ZFmjP24ZkjR3PtRI6CnQvspIPSxy6wRLy5gbWAgw=; b=RmHE+vheKmB3Nr
+	aMkCJ2dVZJOw698kv9FbAPJeame9Qj0AvarMhPj9FpL2sGompip6HIj8b+NirYzZIjRudbBmTWPaS
+	DUbWBNrulnUoEFEpLr+I9AdcdaS1fYvgt/2GXL/y90+6t8XCekgbB/X7kCy/4hwd+P8q217r0JF5i
+	RsCuwjm8zgHBq32jWPqc0lbagzp0WwdilONu2HBZS5kgTGhcZwhMgNWcIa9gD/9DK5OxlLKSdD0IV
+	8RRALudFwnmM6cA9mI0iQw1jTWsGDSgUxn7ahhM1Vq3xuXYOCOgPnbCbqUWMrEin+big29xdD3amZ
+	kJh4f1BRZS5/YglE49lQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia2dz-0002UV-9A; Wed, 27 Nov 2019 19:06:31 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia2dp-0002TN-1K; Wed, 27 Nov 2019 19:06:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 04C6F31B;
- Wed, 27 Nov 2019 11:06:20 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D3B673F6C4;
- Wed, 27 Nov 2019 11:06:14 -0800 (PST)
-Subject: Re: [PATCH v3 1/7] linux/log2.h: Add roundup/rounddown_pow_two64()
- family of functions
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Leon Romanovsky <leon@kernel.org>
-References: <20191126091946.7970-1-nsaenzjulienne@suse.de>
- <20191126091946.7970-2-nsaenzjulienne@suse.de>
- <20191126125137.GA10331@unreal>
- <6e0b9079-9efd-2884-26d1-3db2d622079d@arm.com>
- <b30002d48c9d010a1ee81c16cd29beee914c3b1d.camel@suse.de>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <c08863a7-49c6-962e-e968-92adb8ee2cc9@arm.com>
-Date: Wed, 27 Nov 2019 19:06:12 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1ia2gQ-0002w2-QB; Wed, 27 Nov 2019 19:09:02 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ia2gF-0002vh-5d
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 19:08:52 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id w8so10440901pjh.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 Nov 2019 11:08:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=96H218eeF6JZfYrMNDF+h5hMtKA/hT5z66cJp43pWyI=;
+ b=cBhYSQtqqblpGZTuLvw9Zy2AtHGTNb11Cv0PS7hYetaBbkMe7ErGWIdFm0vlEnXdel
+ TcvGeq/1mQIv1xmfFebhSgBtqWrl6++3mEZlE6JislZn0hs31oLgE6qGTGaso9bLxwV+
+ IZ7ATIt32IYOmsObFvuCMRZ/ssF80gtkdicmECoVcnU+rtYwLHOFJKwrdAlZB7Hog9QF
+ +yetSrMXtQG0ew2J2aQdW3zNRSh6ZV/JgzaCRL91dAlJ/O03WzBLJ3aAW4WFBthNEet8
+ cnfoFp/f6wwGgqLQZENpR+M/DJ1fpfi//9tMCyuhZT2MjS8oiGOvxkb0b+ND7GVmGWmi
+ zJpg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=96H218eeF6JZfYrMNDF+h5hMtKA/hT5z66cJp43pWyI=;
+ b=KoaDbCo0WwmmdKqEHFt9iW9Owog6i4PcVL0uEiBvCWDaCPnHF8yOewcTPQ47g6lg+k
+ bRxNVYmKQMaJnbAMRegT/ZAnV7Vz8GaS3T5vMh1cbgerSArM/WPN/aAgd/0x3DcKwlww
+ fj+S1IjDVoXD0WacJGqit5FgycEqif5/yl5gjTG1ZWrmW75qYcVD8rqgFKW6K2vwJVYe
+ 3elVfEsVXxovtRXFeegUV5YWgyL/x8hqVrNMrhjQMHVIdECwcPs5FKD74u10R+m9d4Yi
+ j50lonjDUD+lkSQx1JXQLTzkuCIyiNkUYizHNW37CrhhOHAlz/P2PaCY6n9uoMyhUp4C
+ smGg==
+X-Gm-Message-State: APjAAAV8yIISQ3jN33DmuEbwN+5S40AV88CEoYudqRZMdMtfGWvTXRsG
+ WezMF4xW/DgyrbmR4hfpP0J6aw==
+X-Google-Smtp-Source: APXvYqx+Un/0YdMBxWG9C8VV0SxFi2jCnPHkzXbhC8ezEmt5lN/1Liha59YFuItEO5sEs4Vpn4hO9g==
+X-Received: by 2002:a17:902:b68c:: with SMTP id
+ c12mr5680161pls.126.1574881730173; 
+ Wed, 27 Nov 2019 11:08:50 -0800 (PST)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id j18sm957568pfn.112.2019.11.27.11.08.49
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 27 Nov 2019 11:08:49 -0800 (PST)
+Date: Wed, 27 Nov 2019 12:08:47 -0700
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH v5 14/14] docs: sysfs: coresight: Add sysfs ABI
+ documentation for CTI
+Message-ID: <20191127190847.GE26544@xps15>
+References: <20191119231912.12768-1-mike.leach@linaro.org>
+ <20191119231912.12768-15-mike.leach@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <b30002d48c9d010a1ee81c16cd29beee914c3b1d.camel@suse.de>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20191119231912.12768-15-mike.leach@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_110621_169334_9C46EABA 
-X-CRM114-Status: GOOD (  18.48  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191127_110851_225849_E82138CC 
+X-CRM114-Status: GOOD (  18.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,91 +97,263 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>, Hanjun Guo <guohanjun@huawei.com>,
- Frank Rowand <frowand.list@gmail.com>, Christoph Hellwig <hch@lst.de>,
- Marek Szyprowski <m.szyprowski@samsung.com>, f.fainelli@gmail.com,
- linux-rockchip@lists.infradead.org, linux-rdma@vger.kernel.org, maz@kernel.org,
- phil@raspberrypi.org, linux-acpi@vger.kernel.org, Len Brown <lenb@kernel.org>,
- devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-rpi-kernel@lists.infradead.org, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org, mbrugger@suse.com,
- netdev@vger.kernel.org, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
- wahrenst@gmx.net, james.quinlan@broadcom.com,
- Sudeep Holla <sudeep.holla@arm.com>, andrew.murray@arm.com,
- "David S. Miller" <davem@davemloft.net>, Tariq Toukan <tariqt@mellanox.com>
+Cc: devicetree@vger.kernel.org, coresight@lists.linaro.org,
+ suzuki.poulose@arm.com, linux-arm-kernel@lists.infradead.org,
+ linux-doc@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/11/2019 6:24 pm, Nicolas Saenz Julienne wrote:
-> On Wed, 2019-11-27 at 18:06 +0000, Robin Murphy wrote:
->> On 26/11/2019 12:51 pm, Leon Romanovsky wrote:
->>> On Tue, Nov 26, 2019 at 10:19:39AM +0100, Nicolas Saenz Julienne wrote:
->>>> Some users need to make sure their rounding function accepts and returns
->>>> 64bit long variables regardless of the architecture. Sadly
->>>> roundup/rounddown_pow_two() takes and returns unsigned longs. Create a
->>>> new generic 64bit variant of the function and cleanup rougue custom
->>>> implementations.
->>>
->>> Is it possible to create general roundup/rounddown_pow_two() which will
->>> work correctly for any type of variables, instead of creating special
->>> variant for every type?
->>
->> In fact, that is sort of the case already - roundup_pow_of_two() itself
->> wraps ilog2() such that the constant case *is* type-independent. And
->> since ilog2() handles non-constant values anyway, might it be reasonable
->> to just take the strongly-typed __roundup_pow_of_two() helper out of the
->> loop as below?
->>
->> Robin
->>
+On Tue, Nov 19, 2019 at 11:19:12PM +0000, Mike Leach wrote:
+> Add API usage document for sysfs API in CTI driver.
 > 
-> That looks way better that's for sure. Some questions.
+> Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> ---
+>  .../testing/sysfs-bus-coresight-devices-cti   | 221 ++++++++++++++++++
+>  1 file changed, 221 insertions(+)
+>  create mode 100644 Documentation/ABI/testing/sysfs-bus-coresight-devices-cti
 > 
->> ----->8-----
->> diff --git a/include/linux/log2.h b/include/linux/log2.h
->> index 83a4a3ca3e8a..e825f8a6e8b5 100644
->> --- a/include/linux/log2.h
->> +++ b/include/linux/log2.h
->> @@ -172,11 +172,8 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
->>     */
->>    #define roundup_pow_of_two(n)			\
->>    (						\
->> -	__builtin_constant_p(n) ? (		\
->> -		(n == 1) ? 1 :			\
->> -		(1UL << (ilog2((n) - 1) + 1))	\
->> -				   ) :		\
->> -	__roundup_pow_of_two(n)			\
->> +	(__builtin_constant_p(n) && (n == 1)) ?	\
->> +	1 : (1UL << (ilog2((n) - 1) + 1))	\
+> diff --git a/Documentation/ABI/testing/sysfs-bus-coresight-devices-cti b/Documentation/ABI/testing/sysfs-bus-coresight-devices-cti
+> new file mode 100644
+> index 000000000000..d867800f567f
+> --- /dev/null
+> +++ b/Documentation/ABI/testing/sysfs-bus-coresight-devices-cti
+> @@ -0,0 +1,221 @@
+> +What:		/sys/bus/coresight/devices/<cti-name>/enable
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(RW) Enable/Disable the CTI hardware.
+
+This will (likely) go in kernel 5.6 that should be released in January 2020.
+
+In your next revision please add yourself as an official reviewer to the
+coresight subsystem.  This should be done at the end of the set, in a patch on
+its own.
+
+Thanks,
+Mathieu
+
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/ctmid
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) Display the associated CTM ID
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/nr_trigger_cons
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) Number of devices connected to triggers on this CTI
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/triggers<N>/name
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) Name of connected device <N>
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/triggers<N>/in_signals
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) Input trigger signals from connected device <N>
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/triggers<N>/in_types
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) Functional types for the input trigger signals
+> +		from connected device <N>
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/triggers<N>/out_signals
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) Output trigger signals to connected device <N>
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/triggers<N>/out_types
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) Functional types for the output trigger signals
+> +		to connected device <N>
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/inout_sel
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(RW) Select the index for inen and outen registers.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/inen
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(RW) Read or write the CTIINEN register selected by inout_sel.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/outen
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(RW) Read or write the CTIOUTEN register selected by inout_sel.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/gate
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(RW) Read or write CTIGATE register.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/asicctl
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(RW) Read or write ASICCTL register.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/intack
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Write the INTACK register.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/appset
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(RW) Set CTIAPPSET register to activate channel. Read back to
+> +		determine current value of register.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/appclear
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Write APPCLEAR register to deactivate channel.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/apppulse
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Write APPPULSE to pulse a channel active for one clock
+> +		cycle.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/chinstatus
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) Read current status of channel inputs.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/choutstatus
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) read current status of channel outputs.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/triginstatus
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) read current status of input trigger signals
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/regs/trigoutstatus
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) read current status of output trigger signals.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/trigin_attach
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Attach a CTI input trigger to a CTM channel.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/trigin_detach
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Detach a CTI input trigger from a CTM channel.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/trigout_attach
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Attach a CTI output trigger to a CTM channel.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/trigout_detach
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Detach a CTI output trigger from a CTM channel.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_gate_enable
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(RW) Enable CTIGATE for single channel (W) or list enabled
+> +		channels through the gate (R).
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_gate_disable
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Disable CTIGATE for single channel.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_set
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Activate a single channel.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_clear
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Deactivate a single channel.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_pulse
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Pulse a single channel - activate for a single clock cycle.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/trigout_filtered
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) List of output triggers filtered across all connections.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/trig_filter_enable
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(RW) Enable or disable trigger output signal filtering.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_inuse
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) show channels with at least one attached trigger signal.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_free
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(R) show channels with no attached trigger signals.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_xtrigs_view
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(RW) Write channel number to select a channel to view, read to
+> +		see triggers attached to selected channel on this CTI.
+> +
+> +What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_xtrigs_reset
+> +Date:		Jul 2019
+> +KernelVersion	5.4
+> +Contact:	Mike Leach or Mathieu Poirier
+> +Description:	(W) Clear all channel / trigger programming.
+> -- 
+> 2.17.1
 > 
-> Then here you'd have to use ULL instead of UL, right? I want my 64bit value
-> everywhere regardless of the CPU arch. The downside is that would affect
-> performance to some extent (i.e. returning a 64bit value where you used to have
-> a 32bit one)?
-
-True, although it's possible that 1ULL might result in the same codegen 
-if the compiler can see that the result is immediately truncated back to 
-long anyway. Or at worst, I suppose "(typeof(n))1" could suffice, 
-however ugly. Either way, this diff was only an illustration rather than 
-a concrete proposal, but it might be an interesting diversion to 
-investigate.
-
-On that note, though, you should probably be using ULL in your current 
-patch too.
-
-> Also, what about callers to this function on platforms with 32bit 'unsigned
-> longs' that happen to input a 64bit value into this. IIUC we'd have a change of
-> behaviour.
-
-Indeed, although the change in such a case would be "start getting the 
-expected value instead of nonsense", so it might very well be welcome ;)
-
-Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
