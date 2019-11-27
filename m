@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8CD410A87E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 03:02:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C86A110A87C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 03:02:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nc8j4KhfCLm+4K5BOpWRpvwC/BteMPsHvbmwRubnpDY=; b=hBDjITaNlIAV8F
-	ET//pZI1JhZZuEypuaiZ5a/rXSqGf1Rt+yko5hf+lFTR05Ja9V0V5YRe1FzOMlD8ZKCdfAZR4WS1u
-	fMyHiaVI88m9YdxlV9OCNa74Zfz3zdO7tAXXR4ennIH0PrjMK8U3zAg39lfWZQemg3Hq3ywN06Zac
-	/DQzqw8j2RNWuChbS1/MspOOr67j684KcRi2VvTZEiK+aG7LfHusk6bQ4Oj7MjDgjNPQKa5Ulw3Ca
-	qF6q+1/cG/6RfQXOM5DbqiQRXReeF9sBeAeYNl5O8sJ1+jNkef2s3p1IrtSPsUb025HRTG+H8wVva
-	EoGw1M26LsxBgE4jh79A==;
+	List-Owner; bh=C0uJti+tb/SPkJtJo718vUOTQHZfoUWVrvMIxzmj9eg=; b=LVEee0rqZJtmPL
+	dXOgVdfGWAg4uOS6rMwIDACKscp8LFJgEdiGbwip6MuOc8S0Yn6XGGh6HXKsKl08Z5h0M/lXLsnX8
+	OXihqvUxcOW8Z2rTAwRMOYb0b8srcod8CCDTGMHr4eQSUH30DQi9qZ7F9gYdSjKei7fumjujC8Glz
+	yGkbn5YKfuAalKrz3pUJ+Emu0Oebd6H3huX6BUOovELF7E48T7OsPWJXwR9mvkcKYbhZeZcGyQ9aM
+	86HEn8H8fQryr2xeH3ojpj/25BUYl2EoEed7lUdVmpdmyP9qL6WtUHxZC2xuWVp5kUeisNhK+GaBA
+	uGBgr/Jhy2OrppCC5kLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZmfJ-0000aT-8E; Wed, 27 Nov 2019 02:02:49 +0000
+	id 1iZmf3-0000Jo-Vf; Wed, 27 Nov 2019 02:02:33 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZmby-0004Xn-Jy; Wed, 27 Nov 2019 01:59:24 +0000
-X-UUID: 2e156b9f0197425290428511759d2f38-20191126
+ id 1iZmby-0004Xk-Pk; Wed, 27 Nov 2019 01:59:24 +0000
+X-UUID: 66b1907e3556472eaa74509d77ea7e05-20191126
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=otgyjccjU3Jcg3ZFhBOHDV+FECv2mn5CGbV/nCdhKDk=; 
- b=nUNBjPIaNuFiqznoPP24Q9Z6MwaVdH5Ghukga14Q7bBvcbN88+OyTvszXEn5VCangvk/Sg8/iK6VdcL6zH/DT5xgzyHwdYVdgqVZNcmLYu3lYaW6z91xbTXYdre1kf6TICEOldnR8MiPplbAzJXYS/azCWrpmxwassj/kg+qGQ8=;
-X-UUID: 2e156b9f0197425290428511759d2f38-20191126
+ bh=f9tOpTNCngTFNlaWleKgUECGbxlKvCdla8iMy1g4J7I=; 
+ b=OzEHMVqLhbal0AcrtBIVnZOzOCBWqt03fPgQRSRrOKGKqJScDRt4/mahrocYA8w5wNGQ3r2EIyGKhk3rHxoXN2hmBaO+JXmpPIX65Dcf6zw2VFlLUK/WttQqoNE/Qshz3XfksBHaDwhNJmSL7lV4XPnFAEkW6hJXXklpv08fgGk=;
+X-UUID: 66b1907e3556472eaa74509d77ea7e05-20191126
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <dennis-yc.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 4489092; Tue, 26 Nov 2019 17:59:11 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 26 Nov 2019 17:59:18 -0800
+ with ESMTP id 2070271486; Tue, 26 Nov 2019 17:59:12 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 26 Nov 2019 17:59:41 -0800
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 27 Nov 2019 09:58:30 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 27 Nov 2019 09:58:57 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Wed, 27 Nov 2019 09:58:18 +0800
+ Frontend Transport; Wed, 27 Nov 2019 09:58:19 +0800
 From: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Matthias Brugger
  <matthias.bgg@gmail.com>, Jassi Brar <jassisinghbrar@gmail.com>
-Subject: [PATCH v2 05/14] arm64: dts: add gce node for mt6779
-Date: Wed, 27 Nov 2019 09:58:48 +0800
-Message-ID: <1574819937-6246-7-git-send-email-dennis-yc.hsieh@mediatek.com>
+Subject: [PATCH v2 06/14] soc: mediatek: cmdq: return send msg error code
+Date: Wed, 27 Nov 2019 09:58:49 +0800
+Message-ID: <1574819937-6246-8-git-send-email-dennis-yc.hsieh@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
 References: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_175922_748546_660A504A 
-X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-CacheID: sfid-20191126_175922_879136_3E302D2B 
+X-CRM114-Status: UNSURE (   8.77  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -98,41 +98,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-add gce device node for mt6779
+Return error code to client if send message fail,
+so that client has chance to error handling.
 
 Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
 ---
- arch/arm64/boot/dts/mediatek/mt6779.dtsi | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ drivers/soc/mediatek/mtk-cmdq-helper.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt6779.dtsi b/arch/arm64/boot/dts/mediatek/mt6779.dtsi
-index daa25b75788f..10d59385f4a1 100644
---- a/arch/arm64/boot/dts/mediatek/mt6779.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt6779.dtsi
-@@ -8,6 +8,7 @@
- #include <dt-bindings/clock/mt6779-clk.h>
- #include <dt-bindings/interrupt-controller/irq.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
-+#include <dt-bindings/gce/mt6779-gce.h>
+diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+index 274f6f311d05..8421b4090304 100644
+--- a/drivers/soc/mediatek/mtk-cmdq-helper.c
++++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+@@ -353,11 +353,11 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
+ 		spin_unlock_irqrestore(&client->lock, flags);
+ 	}
  
- / {
- 	compatible = "mediatek,mt6779";
-@@ -159,6 +160,15 @@
- 			#clock-cells = <1>;
- 		};
+-	mbox_send_message(client->chan, pkt);
++	err = mbox_send_message(client->chan, pkt);
+ 	/* We can send next packet immediately, so just call txdone. */
+ 	mbox_client_txdone(client->chan, 0);
  
-+		gce: mailbox@10228000 {
-+			compatible = "mediatek,mt6779-gce";
-+			reg = <0 0x10228000 0 0x4000>;
-+			interrupts = <GIC_SPI 185 IRQ_TYPE_LEVEL_LOW>;
-+			#mbox-cells = <3>;
-+			clocks = <&infracfg_ao CLK_INFRA_GCE>;
-+			clock-names = "gce";
-+		};
-+
- 		uart0: serial@11002000 {
- 			compatible = "mediatek,mt6779-uart",
- 				     "mediatek,mt6577-uart";
+-	return 0;
++	return err;
+ }
+ EXPORT_SYMBOL(cmdq_pkt_flush_async);
+ 
 -- 
 2.18.0
 _______________________________________________
