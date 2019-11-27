@@ -2,76 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9395010ADB5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:29:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5ED310ADB7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:30:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/AV7yseLUU29KENZM8CfCEyiBxm4UGZtEkxx2tXKmXs=; b=ij9
-	HWrcF9KcDiE1C+191xeEVVTkvf4xhJZqbtj9ZCD9ETV5A2GdCCNZraZwGmdHiIo28R0PuUhyRRxzm
-	vpCyhNoaiC7ZQlUqb9hSBl4TuoOkOUShWv4zHeYFaxDhHYplyDKCX80Dej2knFKNbZ3f4h6aT4bqS
-	xMiEvM/jEurZxYlD1HaqzOBE4OMQ5l0ymDfwns4FQSEKj8FJyyf3xiVuUm05W3rlxpsDcW1+OQXQh
-	8HR1QwCNBOv1qTRe83VK43EBRwmXy0u3axazficcFBziaD3Oy88nxktI71MdIk62Bq2NAx8QptSeV
-	l1FNDPqfXZL7DK6O6zkyjAOR3mi5g/g==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=allQLhPwr33/qbOmrDVuR5k5cCw/IVjC8QiIwkOJom4=; b=u2cTt2z/OdbsyESeFIXOumDLZ6
+	YcmhZwlEwK9KZXovbp1W5ksxbtWPu1uJIuA6vuk2szWpv0RuF8KV3pFUoRtgpDBiMuJ99euzV3XOA
+	Yomj3wFt9TPsO7Mn7MVkKr8CiTp/I6EaxmLSytMWt16bOIjam4dkfFq7PQVfz8VSWf7F+NlHUyUFK
+	zgLl9wLEc13I1GQgk0S8G+ocuFVUQaMof3Z45nCFyg/tgMO2qRYqQLzvnhqfIuIqwmsFeOIzJr1vl
+	+VQEhYsulqRogFNCBDxNrO0jAPHlR7QmRHNeFmuvFG0goKcz/XQaR87n9rMnXzmuabiOhnsCyhC8/
+	sepnkEeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZuZm-0005ZO-Rj; Wed, 27 Nov 2019 10:29:38 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1iZua5-0005pj-7a; Wed, 27 Nov 2019 10:29:57 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZuZU-0005Xf-55
+ id 1iZuZU-0005Xg-LR
  for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 10:29:22 +0000
-Received: by mail-lf1-x143.google.com with SMTP id d6so16736083lfc.0
+Received: by mail-lj1-x244.google.com with SMTP id m4so23824970ljj.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 Nov 2019 02:29:19 -0800 (PST)
+ Wed, 27 Nov 2019 02:29:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=ix8gklYmB6UDNV/QC3c+tosxDnV18E4E+uiNnO6VScw=;
- b=WjmA9qLe/NecRbZ3fzetc0/1Nm2xYFXmf6V+NnuxS9t/I35sAGxJE5N2A/3ajU1how
- 1tmTUhAQ8BZ2SL12A5B+pD1I7QQAgUKS/3lecivVvUrmS42uKZQOvokBmcaKA6fXiyhz
- 71cGRHIkFcMNWPhnwTGyeJYz4qUUjDM9W9cgT8Gg6qRWI55mgOTpkJnwhsNeutE+NNbB
- Chcr7Pe9cW7ZF1uEAQMpz7qMtS/jK0OTWPq+BR3+MPTnPSq6HQyxyAAGny6hl2799QzJ
- /ipHdBqyNwQcDJ7CHr5feCfwYuQqGZkZS05veAwKx65zFqrQVAW1uiXiV8e2CU11dm2s
- wiSA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=75TMc1cT7FH1sabSgSiOxKjblChN2q0Nv5wC1JCjNcA=;
+ b=yfkFQHGSTi+m76i8sYvYqdEiuggix6PnBHJpJpmRd1TB3+HBk28IT3r3QivTmsosW3
+ P5rPoeO+FgUBK3MOmVvO1JUHb3eLFY79MhHRnE+icFW+jjT2WL7HFRR4tp1G8qN/A2sn
+ IIk4sfepSYFdvVBdNHNiNtnCUlt8z8lm4+AI1Ls/4Cvp4dN4v5vpvGLeGmY3v9m51pCV
+ 1RtoYLhYErI+uFTBrPbHuDMbEngyxAmo7PHnH4UB7Eu/VvccG3FfcCkbWvfKNP5FdLhC
+ 1DlAD7Zg1BdRyBzmBv/jdXinAsrYRjK3KNI+WtKDTJtemO4A9AWbEjfPE5iReHNipErB
+ ByLQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=ix8gklYmB6UDNV/QC3c+tosxDnV18E4E+uiNnO6VScw=;
- b=PgeLx8S8qmMSHGzUb2A03e51puaaoyufukr0qQSn/ePKi9EMGdyTwqAsbd80Cgut9H
- 76EqwtNnD/cAUDyQqTQzn3X1alXxRbMYy9PSg2wJxyiKhe+NJnJ5UMo3PFA77UCDZ9Bj
- vay++drrkQnvVobUBJo+yEPIgkcygCFLgg9OaGEOjWUE2LruawjLDexfsbdk3OFJUp6u
- HFsOlE1spw37RJTdwOglhiV8XB39mRSSe//mvmtwY4z/2VW15DuYI4Mq2Q/Wjvxu1VRW
- L/hecyNUOIh2CPpWghH4UN3U7suQTgHr7q/86fEJdNOeJS0mjZSy3DMXfPVbaPdsM73a
- wpVw==
-X-Gm-Message-State: APjAAAUr0tlK0dfdXrwpCv8jJQ8b89H7V8LpMM01PSQpM5DGTf9X2Gil
- nN2qC4PgDP+IzDxQ8Ey2GXvsWQ==
-X-Google-Smtp-Source: APXvYqzwxSjoX0WePnCcqKWVwhIrIupw9nuRgrbFXnTzGgsvQBmMgqmcnl+RS0sDa/QqD5iVi1qHMA==
-X-Received: by 2002:ac2:4312:: with SMTP id l18mr28284015lfh.38.1574850557532; 
- Wed, 27 Nov 2019 02:29:17 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=75TMc1cT7FH1sabSgSiOxKjblChN2q0Nv5wC1JCjNcA=;
+ b=iXUx6OoVW2Ngh2bibf3i1khTNsnasXw+zWZzflMyA2bX3mK8EebnUZp4mE1DJWKRga
+ L1FpmgOjl2gio/VNx9Sw30WOIYvpDhK4aAuNdSfkgXHbIQlt7vQ8HJAlADlyty/h0LvC
+ 8FpgE3Go1Zn9VOIzJV6YxA0Z2zLd6ZCAHNm6dsKMgupVOV+Tkypq4f6YQk9gk6UaL7Lk
+ CD2/LCY/iZnFdQZcEmRW9D9fp50YBODG3og50oJB53uMnqrybs8YJKHTcGJsC51wV5U9
+ CsrAH8ExMEf7C4hh4XiBxW7sARIByMFOWqEjP5xxq1u70lDfbYI/QDkIkuZLsH+fHIDe
+ WsHg==
+X-Gm-Message-State: APjAAAXFRNpecRrsduoVV5UPAl20zknGBZkK7ySwEiLdhmcyYxR8cHgZ
+ BZmEg/OPOBjJuXLE8qfG/4x9ug==
+X-Google-Smtp-Source: APXvYqyU1IApp4NI9wl22/OIUXj5aD2EpYZqlLflyJ4cORj4qNdhYEZOz8nnWtIV00rgXD1rv0nt9g==
+X-Received: by 2002:a2e:b818:: with SMTP id u24mr15059006ljo.33.1574850558878; 
+ Wed, 27 Nov 2019 02:29:18 -0800 (PST)
 Received: from uffe-XPS-13-9360.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id t9sm6868260ljj.19.2019.11.27.02.29.16
+ by smtp.gmail.com with ESMTPSA id t9sm6868260ljj.19.2019.11.27.02.29.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 Nov 2019 02:29:16 -0800 (PST)
+ Wed, 27 Nov 2019 02:29:18 -0800 (PST)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
  Rob Herring <robh+dt@kernel.org>, linux-pm@vger.kernel.org
-Subject: [PATCH v3 00/13] cpuidle: psci: Support hierarchical CPU arrangement
-Date: Wed, 27 Nov 2019 11:29:01 +0100
-Message-Id: <20191127102914.18729-1-ulf.hansson@linaro.org>
+Subject: [PATCH v3 01/13] cpuidle: psci: Align psci_power_state count with
+ idle state count
+Date: Wed, 27 Nov 2019 11:29:02 +0100
+Message-Id: <20191127102914.18729-2-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191127102914.18729-1-ulf.hansson@linaro.org>
+References: <20191127102914.18729-1-ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_022920_227378_C8FE42C2 
-X-CRM114-Status: GOOD (  16.32  )
+X-CRM114-CacheID: sfid-20191127_022920_700903_CDD49893 
+X-CRM114-Status: GOOD (  14.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,85 +110,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rob, Lorenzo, Sudeep - apologize for sending a new version in the middle of the
-merge window, but I thought I might as well get this out, especially since
-there are only a very small amount of updates. Please review, whenever you find
-some time for it.
+From: Sudeep Holla <sudeep.holla@arm.com>
 
-Kind regards
-Ulf Hansson
+Instead of allocating 'n-1' states in psci_power_state to manage 'n'
+idle states which include "ARM WFI" state, it would be simpler to have
+1:1 mapping between psci_power_state and cpuidle driver states.
+
+ARM WFI state(i.e. idx == 0) is handled specially in the generic macro
+CPU_PM_CPU_IDLE_ENTER_PARAM and hence state[-1] is not possible. However
+for sake of code readability, it is better to have 1:1 mapping and not
+use [idx - 1] to access psci_power_state corresponding to driver cpuidle
+state for idx.
+
+psci_power_state[0] is default initialised to 0 and is never accessed
+while entering WFI state.
+
+Reported-by: Ulf Hansson <ulf.hansson@linaro.org>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+Reviewed-by: Ulf Hansson <ulf.hansson@linaro.org>
+---
 
 Changes in v3:
-	- Take one step further to completely avoid executing any OSI specific
-	code from the ->enter() callback, while operating in the default PSCI
-	Platform Coordinated mode.
-	- Update example for the PSCI DT bindings to make it compile with
-	"make dt_binding_check"
+	- None.
 
-Changes in v2:
-	- Avoid to affect the non-OSI path with specific changes for OSI. This
-	forced me to re-order the series and a caused more or less minor changes
-	to most of the patches.
-	- Updated the DT bindings for PSCI to clarify and to include the "psci"
-	name of the PM domain to attach to.
-	- Replaced patch1 with another patch from Sudeep, solving the same
-	problem, but in a different way.
+---
+ drivers/cpuidle/cpuidle-psci.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
-This series enables initial support for hierarchical CPU arrangement, managed
-by PSCI and its corresponding cpuidle driver. It's based on using the generic
-PM domain (genpd), which nowadays also supports devices belonging to CPUs.
-
-The last DTS patch enables the hierarchical topology to be used for the Qcom
-410c Dragonboard, which supports the PSCI OS-initiated mode.
-
-More detailed background can be found from previous submissions [1].
-
-The series is also available at:
-git.linaro.org/people/ulf.hansson/linux-pm.git next
-
-Kind regards
-Ulf Hansson
-
-[1]
-https://lwn.net/Articles/788306/
-
-Lina Iyer (1):
-  cpuidle: dt: Support hierarchical CPU idle states
-
-Sudeep Holla (1):
-  cpuidle: psci: Align psci_power_state count with idle state count
-
-Ulf Hansson (11):
-  dt: psci: Update DT bindings to support hierarchical PSCI states
-  firmware: psci: Export functions to manage the OSI mode
-  of: base: Add of_get_cpu_state_node() to get idle states for a CPU
-    node
-  cpuidle: psci: Simplify OF parsing of CPU idle state nodes
-  cpuidle: psci: Support hierarchical CPU idle states
-  cpuidle: psci: Add a helper to attach a CPU to its PM domain
-  cpuidle: psci: Attach CPU devices to their PM domains
-  cpuidle: psci: Prepare to use OS initiated suspend mode via PM domains
-  cpuidle: psci: Manage runtime PM in the idle path
-  cpuidle: psci: Add support for PM domains by using genpd
-  arm64: dts: Convert to the hierarchical CPU topology layout for
-    MSM8916
-
- .../devicetree/bindings/arm/cpus.yaml         |  15 +
- .../devicetree/bindings/arm/psci.yaml         | 104 ++++++
- arch/arm64/boot/dts/qcom/msm8916.dtsi         |  57 +++-
- drivers/cpuidle/Makefile                      |   4 +-
- drivers/cpuidle/cpuidle-psci-domain.c         | 302 ++++++++++++++++++
- drivers/cpuidle/cpuidle-psci.c                | 114 +++++--
- drivers/cpuidle/cpuidle-psci.h                |  17 +
- drivers/cpuidle/dt_idle_states.c              |   5 +-
- drivers/firmware/psci/psci.c                  |  18 +-
- drivers/of/base.c                             |  36 +++
- include/linux/of.h                            |   8 +
- include/linux/psci.h                          |   2 +
- 12 files changed, 647 insertions(+), 35 deletions(-)
- create mode 100644 drivers/cpuidle/cpuidle-psci-domain.c
- create mode 100644 drivers/cpuidle/cpuidle-psci.h
-
+diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
+index f3c1a2396f98..361985f52ddd 100644
+--- a/drivers/cpuidle/cpuidle-psci.c
++++ b/drivers/cpuidle/cpuidle-psci.c
+@@ -30,7 +30,7 @@ static int psci_enter_idle_state(struct cpuidle_device *dev,
+ 	u32 *state = __this_cpu_read(psci_power_state);
+ 
+ 	return CPU_PM_CPU_IDLE_ENTER_PARAM(psci_cpu_suspend_enter,
+-					   idx, state[idx - 1]);
++					   idx, state[idx]);
+ }
+ 
+ static struct cpuidle_driver psci_idle_driver __initdata = {
+@@ -89,12 +89,14 @@ static int __init psci_dt_cpu_init_idle(struct device_node *cpu_node, int cpu)
+ 	if (!count)
+ 		return -ENODEV;
+ 
++	count++; /* Add WFI state too */
+ 	psci_states = kcalloc(count, sizeof(*psci_states), GFP_KERNEL);
+ 	if (!psci_states)
+ 		return -ENOMEM;
+ 
+-	for (i = 0; i < count; i++) {
+-		state_node = of_parse_phandle(cpu_node, "cpu-idle-states", i);
++	for (i = 1; i < count; i++) {
++		state_node = of_parse_phandle(cpu_node, "cpu-idle-states",
++					      i - 1);
+ 		ret = psci_dt_parse_state_node(state_node, &psci_states[i]);
+ 		of_node_put(state_node);
+ 
 -- 
 2.17.1
 
