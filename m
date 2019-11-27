@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58DFE10B602
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 19:45:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EB1210B604
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 19:46:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i5j8Qpg2ZlRBypMBBPvzXn6NJbMzAfunGgdGwZP7ZOo=; b=k0FSmyIvKLZ7Wy
-	2PkBy51MqGu/usE1G091e7RXj4JahIRZ/kaiMl+4nhJoOOjp0201bZcohimoeKaF5M5l+z5p9LEc8
-	WgJto8eMUK1Esi/QQIq6hTiAiNxXjLbb/Y+xXCvtxLDnFFmPNnCX5ITcTqqAuzQ98zHaUrhJrLoZU
-	ieNAMmNaGwfbuvmhZQyoBLNi0UkbpdazMXf02vDox4XW1556FBWBquSBlINbOjNzYbXHW54ZquTbw
-	T9OVTyjqv1sOV9lJPEAnq0hxNXLZzXF6uT+dCw51BfoCMM4sqK2QnvTjhNTrC4WcuEdnii8jiijmH
-	75YGZJYrvOnwTi9/p5lw==;
+	List-Owner; bh=AJq72BrPC9WeiF8aS3/9Y4kc6xy6VzvF+/UTD9Fyvy0=; b=rc/gsIKmIOzqKM
+	pVuZuDZJwts3jwtqbcOcWr9MecHRu1MfRbHPpbqpUFOP/7HSXYWpvkFGWCKFlWesnm3cqvqTyqr5w
+	cVaawV+0hbMTqTe/T7PqJ02Y4DpGDgfv5DFQjOOiG/D6gB7+RnvYoIaCoODXHn+OqGvCcACD/jBTp
+	spW7lv+udotYjnXWtvKmUsyyPFDc75k2bJWKAfWkYkmIgyrCiBaLupMcchlHbUVeVVw4K4Cv8MrZY
+	BoQrQVhrInlYK8/6wJxsXaObDep/I93TrSYQPkEwbhiLio1Fcd5dybP8/aVzaH365RgKcdk8ppJSz
+	6uMDs+f8HIO8LrU/8z0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia2Jt-0002BP-5b; Wed, 27 Nov 2019 18:45:45 +0000
-Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
+	id 1ia2KV-0002mv-Fo; Wed, 27 Nov 2019 18:46:23 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia2JA-0000kz-TD
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 18:45:03 +0000
-Received: by mail-qv1-xf42.google.com with SMTP id v16so9331029qvq.6
+ id 1ia2JB-0000ls-RQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 18:45:05 +0000
+Received: by mail-qk1-x743.google.com with SMTP id x1so5714436qkl.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 Nov 2019 10:45:00 -0800 (PST)
+ Wed, 27 Nov 2019 10:45:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=9lPl6Jq4cYK2gojP+93gKcsx89x6uNAQ+LS+NmqUUhU=;
- b=IQsLDxJ+1VvjHD/P7eC7cAA4v7pBTTpIKgyonX2PX42sEHf/f/SKXneXyDBIlknS2r
- oIELbxkyYWw6JbpVPgNBOFnYRlCp6Br362toJf3SCfGcztLqkclw7ACoh7fDogq4pBtK
- re+SrGOuchzjshkDeb9CSCsDa6ss5XZDFOaQphuLrxn+gKsLt2ORYD1LWoWzNdPyb9N6
- kc2zITJLABah5HoRpMLGVXN9gKAi3DTawfv9mZ9nwsKWLXRlK/EaWipM1dsdz3hkZGX5
- RR+w9/UlQwePfQyXu6ondg/qhbrne1w+wbomDMRP2AgPE/1v+Plq9RlH8qbjRrM/T6Dy
- odRA==
+ bh=FcqPaEmX1C8efPcruT1Ss1wL4IPrdaYzf7CQNMsgj94=;
+ b=eznVBLONWH9RFdeS+JWy0FGl8QAD+vm34z6dm1k2p5zZ7HI/8kjI36VWlkWqDfubeh
+ lEd78mcbZwoqmJ7F5+KAxxTIFaBL6G9fSDL8/ukeSwC810swC1cKx9/8HSV0NBoFKg9Y
+ wIoaXrXkUeM4AXY49Bsoo3CAOCUB2fs01Fq7BYq1L9JH3lV+TdRn8+jEueaUdGkkk4UY
+ HB/rqkhuzNEPqEkkNmO5FnRFsFjekB5xmmsdDbY4BPP94oCrK94N4kQcUAL42YPfuFt0
+ 1MyFLFDzOXAT5KmLPlFmxy00UWnou60rtqyNAyWi5fDUd5HVt5zlKYcp3I7NjXNzN3r5
+ FlZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=9lPl6Jq4cYK2gojP+93gKcsx89x6uNAQ+LS+NmqUUhU=;
- b=M0OIQqn9Tvu2JFYBgT2PQ5yguaELivQb/StQIcOp+SkK5TOyxtLZqhCcyztqZtUnw8
- Joz35jDUDSqxBM2+lQ1uP8cLMCbRHkj/K4OUlBltJFM7Lj6U807nIecjVIxcyirKgEcM
- tvADM5WCia1F0a+XHPUkYA0Kyv4Oiyi9eH9kJ7QzbCkUShRpEC5Onb03uCRW50fCVmSL
- P75nl+iyjaS8htioCSMXo0nccv/IlM7uxYxQJmD8ZdcjLIMJiz0gZ9LgA9f11gHh38MF
- Bj83PbGlxgYeQuF+CNhm9aHWSRe0TYBvZcbRadVzHPmAV9IYMD0T0CO7Rw2Dya11d7MZ
- GhFg==
-X-Gm-Message-State: APjAAAUKosrzvD8WFm+PiJc3IIRSJ0zix/avoqj7EM0eEpOak6DbabfS
- lEqnqh2E2xTL1Eb19pZnLwEIEA==
-X-Google-Smtp-Source: APXvYqzmB2+/vCZ7yiPOaRcYDbuGKkTFb4dB7fx5MMvjqYVhbYaDdbIryOEqm0eCwEaXqsRLhNlikw==
-X-Received: by 2002:a0c:dd01:: with SMTP id u1mr6637926qvk.69.1574880299262;
- Wed, 27 Nov 2019 10:44:59 -0800 (PST)
+ bh=FcqPaEmX1C8efPcruT1Ss1wL4IPrdaYzf7CQNMsgj94=;
+ b=COFKfjvdlNARk2QDJbSpraejEEZ9Chhidbd8R/SQSks1VDxtlunUJzfhmKO2os9Vau
+ 1WVpxrJqYr9oBo1z5FrabryqEihfTN5QIcrsqyVjXeVa1UAoVW2W4eewYuZlkKnQfWpP
+ Hyg0N7wMS65O15+4AJbwPjTaspdAo0FHd9M2m1y4RWiCetZFGXHulUxnlWwYkcGG+xK7
+ CQN5z1x6Y94eXHHx6sikR8nVpUiVhkgn850IUvkbCFcQ3oQSiK04fmBkQQCaB+soojqR
+ PVON+3TlBecUgqWniy7670aihkbnUe8F5uX45oDdQdp3ykrYKZl4U/BgVACoyLm9Pjii
+ fAiw==
+X-Gm-Message-State: APjAAAWEnya9c0LWTOsy24AdIN4l0ngCCiZRHQojhDF6d8XiKmDJDiSQ
+ NsjkOm84Gd2G8Fa/nw4R6boxPA==
+X-Google-Smtp-Source: APXvYqxODZjoyu3d3RGASH7OUduNJ/cZUXkrbGjWhw9cRiiL8AHlBVoF9V2wf1+s54sFfgF+kEcm/g==
+X-Received: by 2002:a37:61c2:: with SMTP id v185mr6048615qkb.429.1574880300941; 
+ Wed, 27 Nov 2019 10:45:00 -0800 (PST)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id o62sm2748024qte.76.2019.11.27.10.44.57
+ by smtp.gmail.com with ESMTPSA id o62sm2748024qte.76.2019.11.27.10.44.59
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 Nov 2019 10:44:58 -0800 (PST)
+ Wed, 27 Nov 2019 10:45:00 -0800 (PST)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  linux-kernel@vger.kernel.org, catalin.marinas@arm.com, will@kernel.org,
@@ -67,22 +67,24 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  sstabellini@kernel.org, boris.ostrovsky@oracle.com, jgross@suse.com,
  stefan@agner.ch, yamada.masahiro@socionext.com,
  xen-devel@lists.xenproject.org, linux@armlinux.org.uk
-Subject: [PATCH 2/3] arm64: remove uaccess_ttbr0 asm macros from cache
- functions
-Date: Wed, 27 Nov 2019 13:44:52 -0500
-Message-Id: <20191127184453.229321-3-pasha.tatashin@soleen.com>
+Subject: [PATCH 3/3] arm64: remove the rest of asm-uaccess.h
+Date: Wed, 27 Nov 2019 13:44:53 -0500
+Message-Id: <20191127184453.229321-4-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191127184453.229321-1-pasha.tatashin@soleen.com>
 References: <20191127184453.229321-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_104500_945323_FD6A0686 
-X-CRM114-Status: GOOD (  11.39  )
+X-CRM114-CacheID: sfid-20191127_104501_977697_1CFD050C 
+X-CRM114-Status: GOOD (  12.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -108,211 +110,184 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We currently duplicate the logic to enable/disable uaccess via TTBR0,
-with C functions and assembly macros. This is a maintenenace burden
-and is liable to lead to subtle bugs, so let's get rid of the assembly
-macros, and always use the C functions. This requires refactoring
-some assembly functions to have a C wrapper.
+The __uaccess_ttbr0_disable and __uaccess_ttbr0_enable,
+are the last two macros defined in asm-uaccess.h.
+
+For now move them to entry.S where they are used. Eventually,
+these macros should be replaced with C wrappers to reduce the
+maintenance burden.
+
+Also, once these macros are unified with the C counterparts, it
+is a good idea to check that PAN is in correct state on every
+enable/disable calls.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- arch/arm64/include/asm/asm-uaccess.h | 22 ---------------
- arch/arm64/include/asm/cacheflush.h  | 39 ++++++++++++++++++++++++--
- arch/arm64/mm/cache.S                | 41 +++++++++-------------------
- arch/arm64/mm/flush.c                |  2 +-
- 4 files changed, 50 insertions(+), 54 deletions(-)
+ arch/arm64/include/asm/asm-uaccess.h | 39 ----------------------------
+ arch/arm64/kernel/entry.S            | 27 ++++++++++++++++++-
+ arch/arm64/lib/clear_user.S          |  2 +-
+ arch/arm64/lib/copy_from_user.S      |  2 +-
+ arch/arm64/lib/copy_in_user.S        |  2 +-
+ arch/arm64/lib/copy_to_user.S        |  2 +-
+ arch/arm64/mm/cache.S                |  1 -
+ 7 files changed, 30 insertions(+), 45 deletions(-)
+ delete mode 100644 arch/arm64/include/asm/asm-uaccess.h
 
 diff --git a/arch/arm64/include/asm/asm-uaccess.h b/arch/arm64/include/asm/asm-uaccess.h
-index f68a0e64482a..fba2a69f7fef 100644
+deleted file mode 100644
+index fba2a69f7fef..000000000000
 --- a/arch/arm64/include/asm/asm-uaccess.h
-+++ b/arch/arm64/include/asm/asm-uaccess.h
-@@ -34,28 +34,6 @@
- 	msr	ttbr0_el1, \tmp1		// set the non-PAN TTBR0_EL1
- 	isb
++++ /dev/null
+@@ -1,39 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0 */
+-#ifndef __ASM_ASM_UACCESS_H
+-#define __ASM_ASM_UACCESS_H
+-
+-#include <asm/alternative.h>
+-#include <asm/kernel-pgtable.h>
+-#include <asm/mmu.h>
+-#include <asm/sysreg.h>
+-#include <asm/assembler.h>
+-
+-/*
+- * User access enabling/disabling macros.
+- */
+-#ifdef CONFIG_ARM64_SW_TTBR0_PAN
+-	.macro	__uaccess_ttbr0_disable, tmp1
+-	mrs	\tmp1, ttbr1_el1			// swapper_pg_dir
+-	bic	\tmp1, \tmp1, #TTBR_ASID_MASK
+-	sub	\tmp1, \tmp1, #RESERVED_TTBR0_SIZE	// reserved_ttbr0 just before swapper_pg_dir
+-	msr	ttbr0_el1, \tmp1			// set reserved TTBR0_EL1
+-	isb
+-	add	\tmp1, \tmp1, #RESERVED_TTBR0_SIZE
+-	msr	ttbr1_el1, \tmp1		// set reserved ASID
+-	isb
+-	.endm
+-
+-	.macro	__uaccess_ttbr0_enable, tmp1, tmp2
+-	get_current_task \tmp1
+-	ldr	\tmp1, [\tmp1, #TSK_TI_TTBR0]	// load saved TTBR0_EL1
+-	mrs	\tmp2, ttbr1_el1
+-	extr    \tmp2, \tmp2, \tmp1, #48
+-	ror     \tmp2, \tmp2, #16
+-	msr	ttbr1_el1, \tmp2		// set the active ASID
+-	isb
+-	msr	ttbr0_el1, \tmp1		// set the non-PAN TTBR0_EL1
+-	isb
+-	.endm
+-#endif
+-
+-#endif
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 583f71abbe98..446d90ab31af 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -22,8 +22,8 @@
+ #include <asm/mmu.h>
+ #include <asm/processor.h>
+ #include <asm/ptrace.h>
++#include <asm/kernel-pgtable.h>
+ #include <asm/thread_info.h>
+-#include <asm/asm-uaccess.h>
+ #include <asm/unistd.h>
+ 
+ /*
+@@ -143,6 +143,31 @@ alternative_cb_end
+ #endif
  	.endm
--
--	.macro	uaccess_ttbr0_disable, tmp1, tmp2
--alternative_if_not ARM64_HAS_PAN
--	save_and_disable_irq \tmp2		// avoid preemption
--	__uaccess_ttbr0_disable \tmp1
--	restore_irq \tmp2
--alternative_else_nop_endif
--	.endm
--
--	.macro	uaccess_ttbr0_enable, tmp1, tmp2, tmp3
--alternative_if_not ARM64_HAS_PAN
--	save_and_disable_irq \tmp3		// avoid preemption
--	__uaccess_ttbr0_enable \tmp1, \tmp2
--	restore_irq \tmp3
--alternative_else_nop_endif
--	.endm
--#else
--	.macro	uaccess_ttbr0_disable, tmp1, tmp2
--	.endm
--
--	.macro	uaccess_ttbr0_enable, tmp1, tmp2, tmp3
--	.endm
- #endif
  
- #endif
-diff --git a/arch/arm64/include/asm/cacheflush.h b/arch/arm64/include/asm/cacheflush.h
-index 665c78e0665a..c0b265e12d9d 100644
---- a/arch/arm64/include/asm/cacheflush.h
-+++ b/arch/arm64/include/asm/cacheflush.h
-@@ -61,16 +61,49 @@
-  *		- kaddr  - page address
-  *		- size   - region size
++#ifdef CONFIG_ARM64_SW_TTBR0_PAN
++	.macro	__uaccess_ttbr0_disable, tmp1
++	mrs	\tmp1, ttbr1_el1		// swapper_pg_dir
++	bic	\tmp1, \tmp1, #TTBR_ASID_MASK
++	sub	\tmp1, \tmp1, #RESERVED_TTBR0_SIZE // reserved_ttbr0 just before swapper_pg_dir
++	msr	ttbr0_el1, \tmp1		// set reserved TTBR0_EL1
++	isb
++	add	\tmp1, \tmp1, #RESERVED_TTBR0_SIZE
++	msr	ttbr1_el1, \tmp1		// set reserved ASID
++	isb
++	.endm
++
++	.macro	__uaccess_ttbr0_enable, tmp1, tmp2
++	get_current_task \tmp1
++	ldr	\tmp1, [\tmp1, #TSK_TI_TTBR0]	// load saved TTBR0_EL1
++	mrs	\tmp2, ttbr1_el1
++	extr	\tmp2, \tmp2, \tmp1, #48
++	ror	\tmp2, \tmp2, #16
++	msr	ttbr1_el1, \tmp2		// set the active ASID
++	isb
++	msr	ttbr0_el1, \tmp1		// set the non-PAN TTBR0_EL1
++	isb
++	.endm
++#endif
++
+ 	.macro	kernel_entry, el, regsize = 64
+ 	.if	\regsize == 32
+ 	mov	w0, w0				// zero upper 32 bits of x0
+diff --git a/arch/arm64/lib/clear_user.S b/arch/arm64/lib/clear_user.S
+index aeafc03e961a..b0b4a86a09e2 100644
+--- a/arch/arm64/lib/clear_user.S
++++ b/arch/arm64/lib/clear_user.S
+@@ -6,7 +6,7 @@
   */
--extern void __flush_icache_range(unsigned long start, unsigned long end);
--extern int  invalidate_icache_range(unsigned long start, unsigned long end);
-+extern void __asm_flush_icache_range(unsigned long start, unsigned long end);
-+extern long __asm_flush_cache_user_range(unsigned long start,
-+					 unsigned long end);
-+extern int  asm_invalidate_icache_range(unsigned long start,
-+					unsigned long end);
- extern void __flush_dcache_area(void *addr, size_t len);
- extern void __inval_dcache_area(void *addr, size_t len);
- extern void __clean_dcache_area_poc(void *addr, size_t len);
- extern void __clean_dcache_area_pop(void *addr, size_t len);
- extern void __clean_dcache_area_pou(void *addr, size_t len);
--extern long __flush_cache_user_range(unsigned long start, unsigned long end);
- extern void sync_icache_aliases(void *kaddr, unsigned long len);
+ #include <linux/linkage.h>
  
-+static inline void __flush_icache_range(unsigned long start, unsigned long end)
-+{
-+	uaccess_ttbr0_enable();
-+	__asm_flush_icache_range(start, end);
-+	uaccess_ttbr0_disable();
-+}
-+
-+static inline void __flush_cache_user_range(unsigned long start,
-+					    unsigned long end)
-+{
-+	uaccess_ttbr0_enable();
-+	__asm_flush_cache_user_range(start, end);
-+	uaccess_ttbr0_disable();
-+}
-+
-+static inline int invalidate_icache_range(unsigned long start,
-+					  unsigned long end)
-+{
-+	int rv;
-+
-+	if (cpus_have_const_cap(ARM64_HAS_CACHE_DIC)) {
-+		isb();
-+		return 0;
-+	}
-+	uaccess_ttbr0_enable();
-+	rv = asm_invalidate_icache_range(start, end);
-+	uaccess_ttbr0_disable();
-+
-+	return rv;
-+}
-+
- static inline void flush_icache_range(unsigned long start, unsigned long end)
- {
- 	__flush_icache_range(start, end);
+-#include <asm/asm-uaccess.h>
++#include <asm/alternative.h>
+ #include <asm/assembler.h>
+ 
+ 	.text
+diff --git a/arch/arm64/lib/copy_from_user.S b/arch/arm64/lib/copy_from_user.S
+index ebb3c06cbb5d..142bc7505518 100644
+--- a/arch/arm64/lib/copy_from_user.S
++++ b/arch/arm64/lib/copy_from_user.S
+@@ -5,7 +5,7 @@
+ 
+ #include <linux/linkage.h>
+ 
+-#include <asm/asm-uaccess.h>
++#include <asm/alternative.h>
+ #include <asm/assembler.h>
+ #include <asm/cache.h>
+ 
+diff --git a/arch/arm64/lib/copy_in_user.S b/arch/arm64/lib/copy_in_user.S
+index 3d8153a1ebce..04dc48ca26f7 100644
+--- a/arch/arm64/lib/copy_in_user.S
++++ b/arch/arm64/lib/copy_in_user.S
+@@ -7,7 +7,7 @@
+ 
+ #include <linux/linkage.h>
+ 
+-#include <asm/asm-uaccess.h>
++#include <asm/alternative.h>
+ #include <asm/assembler.h>
+ #include <asm/cache.h>
+ 
+diff --git a/arch/arm64/lib/copy_to_user.S b/arch/arm64/lib/copy_to_user.S
+index 357eae2c18eb..8f3218ae88ab 100644
+--- a/arch/arm64/lib/copy_to_user.S
++++ b/arch/arm64/lib/copy_to_user.S
+@@ -5,7 +5,7 @@
+ 
+ #include <linux/linkage.h>
+ 
+-#include <asm/asm-uaccess.h>
++#include <asm/alternative.h>
+ #include <asm/assembler.h>
+ #include <asm/cache.h>
+ 
 diff --git a/arch/arm64/mm/cache.S b/arch/arm64/mm/cache.S
-index db767b072601..a48b6dba304e 100644
+index a48b6dba304e..f7130c30d6e3 100644
 --- a/arch/arm64/mm/cache.S
 +++ b/arch/arm64/mm/cache.S
-@@ -15,7 +15,7 @@
- #include <asm/asm-uaccess.h>
+@@ -12,7 +12,6 @@
+ #include <asm/assembler.h>
+ #include <asm/cpufeature.h>
+ #include <asm/alternative.h>
+-#include <asm/asm-uaccess.h>
  
  /*
-- *	flush_icache_range(start,end)
-+ *	__asm_flush_icache_range(start,end)
-  *
-  *	Ensure that the I and D caches are coherent within specified region.
-  *	This is typically used when code has been written to a memory region,
-@@ -24,11 +24,11 @@
-  *	- start   - virtual start address of region
-  *	- end     - virtual end address of region
-  */
--ENTRY(__flush_icache_range)
-+ENTRY(__asm_flush_icache_range)
- 	/* FALLTHROUGH */
- 
- /*
-- *	__flush_cache_user_range(start,end)
-+ *	__asm_flush_cache_user_range(start,end)
-  *
-  *	Ensure that the I and D caches are coherent within specified region.
-  *	This is typically used when code has been written to a memory region,
-@@ -37,8 +37,7 @@ ENTRY(__flush_icache_range)
-  *	- start   - virtual start address of region
-  *	- end     - virtual end address of region
-  */
--ENTRY(__flush_cache_user_range)
--	uaccess_ttbr0_enable x2, x3, x4
-+ENTRY(__asm_flush_cache_user_range)
- alternative_if ARM64_HAS_CACHE_IDC
- 	dsb	ishst
- 	b	7f
-@@ -60,41 +59,27 @@ alternative_if ARM64_HAS_CACHE_DIC
- alternative_else_nop_endif
- 	invalidate_icache_by_line x0, x1, x2, x3, 9f
- 8:	mov	x0, #0
--1:
--	uaccess_ttbr0_disable x1, x2
--	ret
--9:
--	mov	x0, #-EFAULT
-+1:	ret
-+9:	mov	x0, #-EFAULT
- 	b	1b
--ENDPROC(__flush_icache_range)
--ENDPROC(__flush_cache_user_range)
-+ENDPROC(__asm_flush_icache_range)
-+ENDPROC(__asm_flush_cache_user_range)
- 
- /*
-- *	invalidate_icache_range(start,end)
-+ *	asm_invalidate_icache_range(start,end)
-  *
-  *	Ensure that the I cache is invalid within specified region.
-  *
-  *	- start   - virtual start address of region
-  *	- end     - virtual end address of region
-  */
--ENTRY(invalidate_icache_range)
--alternative_if ARM64_HAS_CACHE_DIC
--	mov	x0, xzr
--	isb
--	ret
--alternative_else_nop_endif
--
--	uaccess_ttbr0_enable x2, x3, x4
--
-+ENTRY(asm_invalidate_icache_range)
- 	invalidate_icache_by_line x0, x1, x2, x3, 2f
- 	mov	x0, xzr
--1:
--	uaccess_ttbr0_disable x1, x2
--	ret
--2:
--	mov	x0, #-EFAULT
-+1:	ret
-+2:	mov	x0, #-EFAULT
- 	b	1b
--ENDPROC(invalidate_icache_range)
-+ENDPROC(asm_invalidate_icache_range)
- 
- /*
-  *	__flush_dcache_area(kaddr, size)
-diff --git a/arch/arm64/mm/flush.c b/arch/arm64/mm/flush.c
-index ac485163a4a7..b23f34d23f31 100644
---- a/arch/arm64/mm/flush.c
-+++ b/arch/arm64/mm/flush.c
-@@ -75,7 +75,7 @@ EXPORT_SYMBOL(flush_dcache_page);
- /*
-  * Additional functions defined in assembly.
-  */
--EXPORT_SYMBOL(__flush_icache_range);
-+EXPORT_SYMBOL(__asm_flush_icache_range);
- 
- #ifdef CONFIG_ARCH_HAS_PMEM_API
- void arch_wb_cache_pmem(void *addr, size_t size)
+  *	__asm_flush_icache_range(start,end)
 -- 
 2.24.0
 
