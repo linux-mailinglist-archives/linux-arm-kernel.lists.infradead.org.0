@@ -2,51 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E94DD10ADCD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:34:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7169E10AE19
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:46:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=aPmI5Yh7OmEz5vVH0HfrwlA10iHFWtLBEYnzUAr8JAg=; b=E1q
-	KmQjf4Ide/LlwxZ7IpuPxaDO4wUnv2rDIdW8DyAg4ja0Fc0F0a69+OEaNyy4pF3r+nw/QfhsCao3t
-	gyV+HfSAsXdwP2Cn1c8MTLaaPnmKGhX+sDubDqWuiv/XOBWZ8hct0IjiXBjyEujfBGHW43oiEaH9O
-	/UXjHwp14YlZNvQzd6H+vdAR0ePFVxojLRYukyw0nm2wXyl2f4cVJbajYm1vz/NLdqmtSGTn9C9tr
-	QKKBAOEiqFAJ3uRCBoUO/LBQ+U1DmQcEJpzr5NmXn/VE6rTI2F2OtWM6K3nHrSPmWJbHbb75xle6h
-	WHi+vm2Wo6J2vsqJCG97Ha7R+tCbn3g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=v94HHb1IrjaLbv+YpvR9qWexdcg2vxvfudPG8n0VNEQ=; b=fcWWLUuukBXNAF
+	olMHVJd1gQRRqr+mhU5yi7urAp/Jw33ARH/cYiTGlvPkWwBK07Iekmg4EbVLFatc0yKbonUx3o0BS
+	ZubCSpxUMHAq3libiA0OMUxqMoL3YSziNcpW8dkrFFTX1clsWdHuu2TPNzsrjqsIsiEw6/783AmI3
+	vD9vNlcHrJxA2Kb4qipBFZRoI0W+Ngupk+g1FTR5THBk5A+a6eSW6a50NMTYa26tAjY8cCxBu5M24
+	pJSPFwYH3K3wuJNJaAvf2hHUBar3ESU8fPjbI/XMDFWndL6E5mpWpkO3Qfhp1eZazzgzb5tZ2eTwT
+	wq1BigrIeliOXnO3uwYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZuei-00024q-90; Wed, 27 Nov 2019 10:34:44 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZueX-000241-AY
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 10:34:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7A6DC30E;
- Wed, 27 Nov 2019 02:34:30 -0800 (PST)
-Received: from dell3630.arm.com (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 890C23F6C4;
- Wed, 27 Nov 2019 02:34:28 -0800 (PST)
-From: Dietmar Eggemann <dietmar.eggemann@arm.com>
-To: Atish Patra <atish.patra@wdc.com>,
-	Russell King <linux@armlinux.org.uk>
-Subject: [PATCH v2] arm: Fix topology setup in case of CPU hotplug for
- CONFIG_SCHED_MC
-Date: Wed, 27 Nov 2019 11:33:53 +0100
-Message-Id: <20191127103353.12417-1-dietmar.eggemann@arm.com>
-X-Mailer: git-send-email 2.17.1
+	id 1iZupz-0006ux-JM; Wed, 27 Nov 2019 10:46:23 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iZupq-0006uQ-MI
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 10:46:16 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xARAgL7E002710; Wed, 27 Nov 2019 11:46:03 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=AfM+ZEMb0CjRpx4WonEZ50fg5isv/g8XPgB1p+eqsd4=;
+ b=E7pjnlJQo5I+OUI5agfXbT8pqNABXyQBlEo0IsEo9o7hmnKoy40vHSxIHuTxCPiyb3ET
+ MK3zXfj1z+n+zf72KoOt7ETcMjYNb09GiUVnbzQW/nzRiTV02M51fc7prxiu1hBzabPO
+ imnSjp6FD7ypRBQhH6kWlbQV8f1zjkZjIqJXIMF1MxUED10Rz9l7P9u0nuFXqAtO0JJZ
+ UWamJ4at5N6IPPzFGa/cIoXht/v7apQkv0i/VcfUg084YRlc4X6jZo/5hgrhTaY0Owd9
+ hxfCtwMq0urikkPuMStsxXHu/vOrcrr2PxilaxYMxDj512WSVbnlWZFp/aYg9tiOp2Ur fg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2whcxj3269-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 27 Nov 2019 11:46:02 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 14F4810002A;
+ Wed, 27 Nov 2019 11:46:02 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EF7EF2B242E;
+ Wed, 27 Nov 2019 11:46:01 +0100 (CET)
+Received: from localhost (10.75.127.48) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 27 Nov 2019 11:46:01
+ +0100
+From: Alain Volmat <alain.volmat@st.com>
+To: <wsa@the-dreams.de>, <robh+dt@kernel.org>
+Subject: [PATCH 0/4] stm32: i2c: Add suspend/resume & add sleep pinctrls
+Date: Wed, 27 Nov 2019 11:46:01 +0100
+Message-ID: <1574851561-25501-1-git-send-email-alain.volmat@st.com>
+X-Mailer: git-send-email 2.7.4
+MIME-Version: 1.0
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG6NODE1.st.com (10.75.127.16) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-27_02:2019-11-27,2019-11-27 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_023433_458533_A1C599E6 
-X-CRM114-Status: GOOD (  13.57  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191127_024615_188250_C75508B6 
+X-CRM114-Status: GOOD (  11.37  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,135 +90,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
- Sugaya Taichi <sugaya.taichi@socionext.com>, Joel Stanley <joel@jms.id.au>,
- Sudeep Holla <sudeep.holla@arm.com>,
- Morten Rasmussen <morten.rasmussen@arm.com>, Lukasz Luba <lukasz.luba@arm.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
+ linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com,
+ linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit ca74b316df96 ("arm: Use common cpu_topology structure and
-functions.") changed cpu_coregroup_mask() from the ARM32 specific
-implementation in arch/arm/include/asm/topology.h to the one shared
-with ARM64 and RISCV in drivers/base/arch_topology.c.
+This small series add missing sleep pinctrl in boards device-tree including
+i2c-stm32f7 nodes.
+The driver is also enhanced to add support for PM_SLEEP suspend/resume.
 
-Currently on ARM32 (TC2 w/ CONFIG_SCHED_MC) the task scheduler setup
-code (w/ CONFIG_SCHED_DEBUG) shows this during CPU hotplug:
+Alain Volmat (4):
+  ARM: dts: stm32: add i2c4 sleep pinctrl on stm32mp157a-dk1
+  ARM: dts: stm32: add i2c4 sleep pinctrl on stm32mp157c-ed1
+  ARM: dts: stm32: add i2c2/i2c5 sleep pinctrl on stm32mp157c-ev1
+  i2c: i2c-stm32f7: add PM_SLEEP suspend/resume support
 
-  ERROR: groups don't span domain->span
+ arch/arm/boot/dts/stm32mp157a-dk1.dts |   3 +-
+ arch/arm/boot/dts/stm32mp157c-ed1.dts |   3 +-
+ arch/arm/boot/dts/stm32mp157c-ev1.dts |   6 +-
+ drivers/i2c/busses/i2c-stm32f7.c      | 118 ++++++++++++++++++++++++++++++++--
+ 4 files changed, 119 insertions(+), 8 deletions(-)
 
-It happens to CPUs of the cluster of the CPU which gets hot-plugged
-out on scheduler domain MC.
-
-Turns out that the shared cpu_coregroup_mask() requires that the
-hot-plugged CPU is removed from the core_sibling mask via
-remove_cpu_topology(). Otherwise the 'is core_sibling subset of
-cpumask_of_node()' doesn't work. In this case the task scheduler has to
-deal with cpumask_of_node instead of core_sibling which is wrong on
-scheduler domain MC.
-
-e.g. CPU3 hot-plugged out on TC2 [cluster0: 0,3-4 cluster1: 1-2]:
-
-  cpu_coregroup_mask(): CPU3 cpumask_of_node=0-2,4 core_sibling=0,3-4
-                                                                  ^
-should be:
-
-  cpu_coregroup_mask(): CPU3 cpumask_of_node=0-2,4 core_sibling=0,4
-
-Add remove_cpu_topology() to __cpu_disable() to remove the CPU from the
-topology masks in case of a CPU hotplug out operation.
-
-At the same time tweak store_cpu_topology() slightly so it will call
-update_siblings_masks() in case of CPU hotplug in operation via
-secondary_start_kernel()->smp_store_cpu_info().
-
-This aligns the ARM32 implementation with the ARM64 one.
-
-Guarding remove_cpu_topology() with CONFIG_GENERIC_ARCH_TOPOLOGY is
-necessary since some Arm32 defconfigs (aspeed_g5_defconfig,
-milbeaut_m10v_defconfig, spear13xx_defconfig) specify an explicit
-
- # CONFIG_ARM_CPU_TOPOLOGY is not set
-
-w/ ./arch/arm/Kconfig: select GENERIC_ARCH_TOPOLOGY if ARM_CPU_TOPOLOGY
-
-Fixes: ca74b316df96 ("arm: Use common cpu_topology structure and functions")
-Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-Reviewed-by: Lukasz Luba <lukasz.luba@arm.com>
-Tested-by: Lukasz Luba <lukasz.luba@arm.com>
-Tested-by: Ondrej Jirman <megous@megous.com>
-Signed-off-by: Dietmar Eggemann <dietmar.eggemann@arm.com>
----
-
-Changes in v2:
-
-- Removed cosmetic cleanup in pr_info() of store_cpu_topology()
-- Guarded remove_cpu_topology() with CONFIG_GENERIC_ARCH_TOPOLOGY
-
-I opted for an #ifdef in __cpu_disable rather than a stub definition of
-remove_cpu_topology() in include/linux/arch_topology.h to keep this
-change small.
-
- arch/arm/kernel/smp.c      |  4 ++++
- arch/arm/kernel/topology.c | 10 +++++-----
- 2 files changed, 9 insertions(+), 5 deletions(-)
-
-diff --git a/arch/arm/kernel/smp.c b/arch/arm/kernel/smp.c
-index 4b0bab2607e4..46e1be9e57a8 100644
---- a/arch/arm/kernel/smp.c
-+++ b/arch/arm/kernel/smp.c
-@@ -240,6 +240,10 @@ int __cpu_disable(void)
- 	if (ret)
- 		return ret;
- 
-+#ifdef CONFIG_GENERIC_ARCH_TOPOLOGY
-+	remove_cpu_topology(cpu);
-+#endif
-+
- 	/*
- 	 * Take this CPU offline.  Once we clear this, we can't return,
- 	 * and we must not schedule until we're ready to give up the cpu.
-diff --git a/arch/arm/kernel/topology.c b/arch/arm/kernel/topology.c
-index 5b9faba03afb..8d2e61d9e7a6 100644
---- a/arch/arm/kernel/topology.c
-+++ b/arch/arm/kernel/topology.c
-@@ -196,9 +196,8 @@ void store_cpu_topology(unsigned int cpuid)
- 	struct cpu_topology *cpuid_topo = &cpu_topology[cpuid];
- 	unsigned int mpidr;
- 
--	/* If the cpu topology has been already set, just return */
--	if (cpuid_topo->core_id != -1)
--		return;
-+	if (cpuid_topo->package_id != -1)
-+		goto topology_populated;
- 
- 	mpidr = read_cpuid_mpidr();
- 
-@@ -231,14 +230,15 @@ void store_cpu_topology(unsigned int cpuid)
- 		cpuid_topo->package_id = -1;
- 	}
- 
--	update_siblings_masks(cpuid);
--
- 	update_cpu_capacity(cpuid);
- 
- 	pr_info("CPU%u: thread %d, cpu %d, socket %d, mpidr %x\n",
- 		cpuid, cpu_topology[cpuid].thread_id,
- 		cpu_topology[cpuid].core_id,
- 		cpu_topology[cpuid].package_id, mpidr);
-+
-+topology_populated:
-+	update_siblings_masks(cpuid);
- }
- 
- static inline int cpu_corepower_flags(void)
 -- 
-2.17.1
+2.7.4
 
 
 _______________________________________________
