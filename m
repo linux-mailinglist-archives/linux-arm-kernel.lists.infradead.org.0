@@ -2,56 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DD9D10B037
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 14:32:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D5DA10B0B5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 14:59:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mi+r/mPNYWcwPupxfjftUZT70vAMX5KkSuxcFIVt1QQ=; b=XlQCYrREbOrnvY
-	XCXHsWV9fv2fx+Oym9Df+Kz8curQcHp0yBm7lwN+rAtvGwO1zQ9PjAmS+VD66qhc3VpG9rh9JwPwC
-	RUaxcDFlNCV/gLgOmu1nETQzZmHSGj6lod9MELLw6k+mMw9gMMPtVge8MuiXRFrn6E/ND0UR75ZNU
-	nvpdjJoJhBT6pSCY+7Ps7Mo7zjSu+IesLjF5/5Z6AMxiAqap6oNs6aIYICTopWD1z+mMjOcgr4T8Z
-	CZG6kTMfyBn1eCUT0N+R1SSJFxE39F7xDLl1qSrTiJ4cJyGezGmTrSMHLoVcR+I2Ff8T7XSXNB7dK
-	/W//6dpqbYDa9P9fwW7A==;
+	List-Owner; bh=S8f1kbV40KMlIV5ga2HrZRaIwkws1Zh+BpaiDGlxgtU=; b=Tv61Ma6PZXYJjr
+	1aZIGB5rTV3H3OPYgX4+mXLq3RwVg30U/pLfR+YYljqN6mLBD1CDi5v3N2YTLUlMd2TDumxvZC3JK
+	RCkYWVkEsJUEqQl7PSVuxe5VnoHJMEBeSkTrRXEVPf1f2fhEw66MUWyRaKGwZ7TsSy2gui3xKd2pe
+	nXk2jgbYDtPdt8oyJ5IB+ymQ8Lea2gqbe6NTXs5ncYgY3EvZW6inGdsMzG1ETyO6D+Ng2JC5NIEP1
+	6AV1aoAMv2gNPuIyV+TQe6kh+dXMOERsAT6IgUTF8pOG36DsrRkWjkzJd8UZNrSMWDmeKNTvINKWu
+	y7l2Bgd5VR8P4Ge9Ntmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZxQX-000525-4q; Wed, 27 Nov 2019 13:32:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZxQO-00051I-JU
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 13:32:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8C58D31B;
- Wed, 27 Nov 2019 05:32:04 -0800 (PST)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1D9A83F52E;
- Wed, 27 Nov 2019 05:32:03 -0800 (PST)
-Date: Wed, 27 Nov 2019 13:32:01 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH] cpufreq: vexpress-spc: Fix wrong alternation of
- policy->related_cpus during CPU hp
-Message-ID: <20191127133200.GE29301@bogus>
-References: <20191127114801.23837-1-dietmar.eggemann@arm.com>
- <20191127120816.GC29301@bogus>
- <20191127121402.vd3tul4gmqm6qtyb@vireshk-i7>
+	id 1iZxqc-00068p-02; Wed, 27 Nov 2019 13:59:14 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iZxqS-000683-DN
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 13:59:05 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id m9so15246974vsq.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 Nov 2019 05:59:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gAq++vOmWlGE0rfhdloa1GAF3bf8ceEKuBq/5jw6JRM=;
+ b=autV2GM15bvqwiA+NNcmk4/aTXU/HSFEF/5su4++BbyqM9TTPEl160Dl4aSSi4PSHx
+ 7dEzEqyacVs+yewRvnBZ83UHqscNkWGpzMcJWLLLi+QCkk1xhjhnBlxejNfHU/qVmTuj
+ T8igdSS/tZRj5c7YLCT4H6AYMtIaHIBwPBfL+kI7kHRiUmSNwFnRVIFTZRS1Wyt1h3R3
+ cyqBUvI2GSXDWeDlgidAaqloDquB80gWY3CD6nCyEEBi1JxlLSFZcsLD22SLWLifDTD2
+ +z7R1ny87pHoyTM6Q6jqCBqMtdOrTs+pljEMTkDmflCfHXKg6KEMU4pBGfyFDHpkZxXz
+ MSgA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gAq++vOmWlGE0rfhdloa1GAF3bf8ceEKuBq/5jw6JRM=;
+ b=UYJvTJ4I4Tk13KG5rAYb6d+aDY0JfqKtgiCEc96Y8/NRyFlKQR9IJR7m7Z52zbeMSx
+ oXPCfkhyUwNTUhBp+SUwRJC/6RziY/g/c70liGoM4SjV04FWlqmdO6iIfmEhoa6cVwQS
+ XHM3vCI0f/KV07IklzXsretygbWV0r2HtvNn3Pebv5aFehEvDz1q5sb7UouFxVAkhfFJ
+ Qmi/e6Hu2iWJcI6QzTpU0Tr3qEImt73IZ4bJ4zG6rb+53j6J3Xkp6HufT7ybMX4uvmO3
+ Hx8SX9SeP9xhtgFUztCGpg72r/Oe9LGXrF/JQyqdUjNaJXLO+smhS5WmVLltYIT4ILrb
+ TXng==
+X-Gm-Message-State: APjAAAW+ruKQ3IW6Qx3tfVqMMXrIhVkdqHIjN0iQNV3vonN34vuSIDTM
+ gjPO7uRHjGxauIfxOf0vCvdStpiDxHF8sYj4F5QKhA==
+X-Google-Smtp-Source: APXvYqyf8H0dROBB9bvOXaLHvIe1OfTnJRLDLNL9AnIDcuNOVVLHNLEtVlUz2d1I4D3NhQ2ISu26ZnJQDRyo/JcRIiU=
+X-Received: by 2002:a67:88c8:: with SMTP id k191mr3366250vsd.86.1574863141682; 
+ Wed, 27 Nov 2019 05:59:01 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191127121402.vd3tul4gmqm6qtyb@vireshk-i7>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20191124195728.32226-1-stephan@gerhold.net>
+In-Reply-To: <20191124195728.32226-1-stephan@gerhold.net>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 27 Nov 2019 14:58:50 +0100
+Message-ID: <CACRpkdagXoVamNGj6hQ-0YQAoDpwTVOY8uUCVB8wwsXY9aQj4A@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: ux500: Add "simple-bus" compatible to soc node
+To: Stephan Gerhold <stephan@gerhold.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_053208_686732_6DA1133D 
-X-CRM114-Status: GOOD (  21.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191127_055904_482267_3588A159 
+X-CRM114-Status: GOOD (  11.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,83 +90,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pm@vger.kernel.org,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Liviu Dudau <liviu.dudau@arm.com>,
- linux-kernel@vger.kernel.org, Dietmar Eggemann <dietmar.eggemann@arm.com>,
- linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>,
- Morten Rasmussen <morten.rasmussen@arm.com>, Lukasz Luba <lukasz.luba@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 27, 2019 at 05:44:02PM +0530, Viresh Kumar wrote:
-> On 27-11-19, 12:08, Sudeep Holla wrote:
-> > On Wed, Nov 27, 2019 at 12:48:01PM +0100, Dietmar Eggemann wrote:
-> > > Since commit ca74b316df96 ("arm: Use common cpu_topology structure and
-> > > functions.") the core cpumask has to be modified during cpu hotplug
-> > > operations.
-> > >
-> > > ("arm: Fix topology setup in case of CPU hotplug for CONFIG_SCHED_MC")
-> > > [1] fixed that but revealed another issue on TC2, i.e in its cpufreq
-> > > driver.
-> > >
-> > > During CPU hp stress operations on multiple CPUs, policy->related_cpus
-> > > can be altered. This is wrong since this cpumask should contain the
-> > > online and offline CPUs.
-> > >
-> > > The WARN_ON(!cpumask_test_cpu(cpu, policy->related_cpus)) in
-> > > cpufreq_online() triggers in this case.
-> > >
-> > > The core cpumask can't be used to set the policy->cpus in
-> > > ve_spc_cpufreq_init() anymore in case it is called via
-> > > cpuhp_cpufreq_online()->cpufreq_online()->cpufreq_driver->init().
-> > >
-> > > An empty online() callback can be used to avoid that the init()
-> > > driver function is called during CPU hotplug in so that
-> > > policy->related_cpus will not be changed.
-> > >
-> >
-> > Unlike DT based drivers, it not easy to get the fixed cpumask unless we
-> > add some mechanism to extract it based on clks/OPP added. I prefer
-> > this simple solution instead.
+On Sun, Nov 24, 2019 at 8:58 PM Stephan Gerhold <stephan@gerhold.net> wrote:
+
+> The "soc" node in the Ux500 device tree does not need any special
+> handling - it is just a simple I/O bus that can be accessed without
+> additional configuration.
 >
-> I will call this a work-around for the problem and not really the
-> solution, though I won't necessarily oppose it. There are cases which
-> will break even with this solution.
+> Therefore we can additionally describe it as compatible with "simple-bus".
+> This can be used by platforms to probe devices under the soc node without
+> special handling for our custom "stericsson,db8500" compatible
+> (e.g. in U-Boot).
 >
+> Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
 
-I agree and that's the reason I spoke out my thought aloud here :)
+Patch applied.
 
-> - Boot board with cpufreq driver as module.
-> - Offline all CPUs except CPU0.
-> - insert cpufreq driver.
-> - online all CPUs.
->
-
-Indeed, not just boot anytime since it's a module :)
-
-> Now there is no guarantee that the last online will get the mask
-> properly, if I have understood the problem well :)
->
-
-Yes
-
-> But yeah, who does this kind of messy work anyway :)
->
-
-I won't bet on that ;)
-
-> FWIW, we need a proper way (may be from architecture code) to find
-> list of all CPUs that share clock line.
->
-
-Yes but there's no architectural way. I need to revise and see tc2_pm.c
-to check if we can do any magic there.
-
---
-Regards,
-Sudeep
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
