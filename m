@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E42E110AA36
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 06:31:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2686610AA38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 06:31:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bKlRJEH2LkwblWUnwS1/KtpdYuQwadtDT4uL+Ih1zX0=; b=f8i0v5Khz6FFDR
-	ofktrESA34hJh6j60LFv84pqb3AHZ5BKg9TKBwVk8yDr1DD884H+hF8E2faQhpDHXJwdn1ebT/FYX
-	IWY5CT7dOsmDHzwp0pspmixUKn7bJkokepP3UrIpgweTlUgvY7ZEf98HfM+5rLaASbXP5Quvq22oU
-	aD436WUYuIpeeNA0SC5nnE89FDj0wxAGVI/1vmjy7cAFjKJoTSWnKnApjwzcy3AOd3dK8R0GpcoYJ
-	K9NWNx7FHw/CaCr8uW7w+BK5+iIRdvIMY2HE55PynVG1LRuCzHkOfeYShGihJLPFJKCG8Cys+4yW1
-	nJBSmiN4baAqZKO040cA==;
+	List-Owner; bh=ehkHjMVpIrkQoeCXnQJvoi34Uj6rDpLV7J5x0HyPKjg=; b=sXqltHyCg0Cpb9
+	X0N27vZ/FIiB+ZiSlfEdDHtqaR4u1INOyjtQ229fV2TWAxq6vqvtPeyZL65GWt65GJAZ5acdtkZd2
+	0qrr1IYvxlAtIUpt0mzqZIZfXcux3kYUD0Qhd+oPkvLMaHxplNTFKXfJl8RSt1K36ypvU8OsipMbw
+	fEopJr9Eey2Y3rzIBlp/vylsXLfuBJIUgMeOTUK9B6n7brwDxn8F3I2YRxNEu9kt1OoEbzQU2Hd1b
+	bjfEL16P3kyi4ZJLPen+MlasuoJdcZDe3CVO7OI8/2dw62PPQTSXHDCRiticuHTQ7JKswkCCroj6O
+	ki84YJY7K9MGsnRuG9hQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZpum-0002RN-S4; Wed, 27 Nov 2019 05:31:00 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iZpv7-0002qP-UZ; Wed, 27 Nov 2019 05:31:21 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZptu-0001Ae-K5
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 05:30:10 +0000
-Received: by mail-pg1-x542.google.com with SMTP id k1so10181580pgg.12
+ id 1iZptw-0001FD-2H
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 05:30:11 +0000
+Received: by mail-pf1-x441.google.com with SMTP id z4so10371118pfn.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 Nov 2019 21:30:06 -0800 (PST)
+ Tue, 26 Nov 2019 21:30:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=vhMu4ADnQOnOcJ6BIbNumeV+R111igTahrNXaoaT2bg=;
- b=JI9vifZO/hlNlsVdVbkQAosj4wct0Y/Ey9lvPG25NoShcDsu71L11PV96pOoMZL980
- 5OITy+OqvSpfCMS4dHDjs+M9mEvAXpC1wPk0vzK5SAaM6xGy2F32057VuoCjH5P0Mz5I
- ksBf/dHPnPYiBp+jVZIbJmg4T7Zr0L6frm4tgTZYPA8/Vjnhg/Lif+jKoCRmIpVec24Z
- 3nRW0I5i/LWRo5q9smCmOtu9ecJtC0384AvF8Fa+hGl43nnexUQHchB5yX3mvbZS9Ope
- U6ptKcW6pV6EGCxhP/yzZs150YOd+LEMO6ovqiDy1R75y2l6o8Jw8oWjT2MA1Im1z1b8
- XYLQ==
+ bh=K9R7+DQrvs6TQPapCAJo0gk7ntwM61doRyvwyArb+eI=;
+ b=TH8Cv41KFqnO7YoWhF3rUR1KCNUQJDWeIWCGHjxg+IoW5wMeCB2YlPG+nzKRWR7hf0
+ MxQ0cDN93bo4wWlrE9FvswOP05pIKVpdcEhRj0WcRGaQYcb3WLXGFM9YlVQCJ1UI/0u7
+ Lp8gLjpxu1/xO7JUwotlfW0WFz1XiwHhSHACilfn7HOzTcXC7QMiGQjcnqNFhU13Mdle
+ 5SFBHc0iO4GABmm+pWKmStDq/jZF9s4RXg0VWfeP5X/+bZaWSZy0ihRODHIc+W8K8bpN
+ CXEfV5zgzQ0zp9rAkPfkqpjFp+H/FLGZQZ/ZHOFzBLoaIhMxC7sDnUeHJ+OeSU7sRv7b
+ 02DA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=vhMu4ADnQOnOcJ6BIbNumeV+R111igTahrNXaoaT2bg=;
- b=EM3eU6U0Mz5utHOfDeoZB/8aQeXG+Aspjo5m2xshOF9RlnIinS5IXWFuS1zOLHpWER
- YqAB4K7GbYJ33S4iUDGtCQaFUlaDhiFTU2qC0Ffp/MyxXRgO7t3rDXXfs4BAcRCFC0Xd
- dVy+Qf1kqD8J+1hlcVtfBnUivbCH5r5fVTvmBi7uYhg6LGjy/tnTqleV9EgZAnII8rvg
- A7E8DxRmREg8Q/DPF13Skx6xWjgIH+WxMQ3yfqqChjrCjka36p5DkEuAuZFHL1TGlb3v
- U2UjQE5OzpqalGrStfiGtmW8tM9j5j1IolTB61FSK+T1Uv0ZxSL93qK/VHpoUPESFxma
- RSLQ==
-X-Gm-Message-State: APjAAAXWDX1Jhhcr84729b3i6aCIZIC+TKy5MZAU4ZvfGnzafob3IrGO
- NVeTuq0ppwPKpgw87Jlr/kg=
-X-Google-Smtp-Source: APXvYqzVeWRQSqkKyH0MFBGH6b0eZNxA9y0WDKi5fRr/9ehuoyu+hi9MIjxq+m8LFWvRCkkg2Ut39Q==
-X-Received: by 2002:a62:b40b:: with SMTP id h11mr44293621pfn.57.1574832605993; 
- Tue, 26 Nov 2019 21:30:05 -0800 (PST)
+ bh=K9R7+DQrvs6TQPapCAJo0gk7ntwM61doRyvwyArb+eI=;
+ b=kV7QRStrrbU67kxnCNcQFyQnDg0u+LmPeYC95RdvDlt0PI7Lvdcs/J2ceX4O45Q2IP
+ OrFyT8vohhayF2AhNoIvO/4grQE9KgnXCWQTAdeBNK7AwebMQril4g2ae5F8vbiVmor0
+ ERYvr1pFmSoqMR+zZwlbrAmEQ7HTO7YNbqvQXN/oWrk+zK2PwyueQ7cv1VdVXFxdvF2s
+ /3RfqVRclqNWceWfvrAGbsp6tLHf4K4VPJNMd8/s4gSdDverGAADRYrnslaYMfSQZAhb
+ lfsoHH/eczfnaLS10ilqpnjs6d89g49pZqZkK/CoRGgr5QjqY55Opi8KiJnJ5ELcXayj
+ B9Vw==
+X-Gm-Message-State: APjAAAUIrJFLcs3rcObfA0JEAu+yE12HtO6xHhQ984q7MZD+AC72nvdg
+ 51fsnLn2M5RKKuvDuW4DaXo=
+X-Google-Smtp-Source: APXvYqxTI+MD/D0kvl0k+/tjZfeKHHZWlWyAB8qP26s2p6gtSih/hYSQl8OXFDwnSnq2wB0zXiS2ug==
+X-Received: by 2002:aa7:90d5:: with SMTP id k21mr45284823pfk.178.1574832606794; 
+ Tue, 26 Nov 2019 21:30:06 -0800 (PST)
 Received: from anarsoul-thinkpad.lan (216-71-213-236.dyn.novuscom.net.
  [216.71.213.236])
- by smtp.gmail.com with ESMTPSA id p38sm4360825pjp.27.2019.11.26.21.30.05
+ by smtp.gmail.com with ESMTPSA id p38sm4360825pjp.27.2019.11.26.21.30.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 Nov 2019 21:30:05 -0800 (PST)
+ Tue, 26 Nov 2019 21:30:06 -0800 (PST)
 From: Vasily Khoruzhick <anarsoul@gmail.com>
 To: Yangtao Li <tiny.windzz@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
  Eduardo Valentin <edubezval@gmail.com>,
@@ -70,24 +70,24 @@ To: Yangtao Li <tiny.windzz@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  =?UTF-8?q?Ond=C5=99ej=20Jirman?= <megous@megous.com>,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v6 4/7] ARM: dts: sun8i-h3: Add thermal sensor and thermal
- zones
-Date: Tue, 26 Nov 2019 21:29:32 -0800
-Message-Id: <20191127052935.1719897-5-anarsoul@gmail.com>
+Subject: [PATCH v6 5/7] arm64: dts: allwinner: sun50i-h5: Add thermal sensor
+ and thermal zones
+Date: Tue, 26 Nov 2019 21:29:33 -0800
+Message-Id: <20191127052935.1719897-6-anarsoul@gmail.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191127052935.1719897-1-anarsoul@gmail.com>
 References: <20191127052935.1719897-1-anarsoul@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_213006_773033_D9983DA7 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20191126_213008_149399_A3598643 
+X-CRM114-Status: GOOD (  11.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (anarsoul[at]gmail.com)
@@ -118,25 +118,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-There is just one sensor for the CPU.
+There are two sensors, one for CPU, one for GPU.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 ---
- arch/arm/boot/dts/sun8i-h3.dtsi | 26 ++++++++++++++++++++++++++
- 1 file changed, 26 insertions(+)
+ arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi | 32 ++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
-index e37c30e811d3..42fd0418d678 100644
---- a/arch/arm/boot/dts/sun8i-h3.dtsi
-+++ b/arch/arm/boot/dts/sun8i-h3.dtsi
-@@ -177,6 +177,26 @@
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
+index f002a496d7cb..27fb0d2fc9a7 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
+@@ -167,6 +167,32 @@
  			assigned-clocks = <&ccu CLK_GPU>;
  			assigned-clock-rates = <384000000>;
  		};
 +
 +		ths: ths@1c25000 {
-+			compatible = "allwinner,sun8i-h3-ths";
++			compatible = "allwinner,sun50i-h5-ths";
 +			reg = <0x01c25000 0x400>;
 +			interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
 +			resets = <&ccu RST_BUS_THS>;
@@ -144,7 +144,7 @@ index e37c30e811d3..42fd0418d678 100644
 +			clock-names = "bus", "mod";
 +			nvmem-cells = <&ths_calibration>;
 +			nvmem-cell-names = "calibration";
-+			#thermal-sensor-cells = <0>;
++			#thermal-sensor-cells = <1>;
 +		};
 +	};
 +
@@ -154,13 +154,19 @@ index e37c30e811d3..42fd0418d678 100644
 +			polling-delay = <0>;
 +			thermal-sensors = <&ths 0>;
 +		};
++
++		gpu_thermal {
++			polling-delay-passive = <0>;
++			polling-delay = <0>;
++			thermal-sensors = <&ths 1>;
++		};
  	};
  };
  
-@@ -234,4 +254,10 @@
+@@ -212,4 +238,10 @@
  
  &sid {
- 	compatible = "allwinner,sun8i-h3-sid";
+ 	compatible = "allwinner,sun50i-h5-sid";
 +	#address-cells = <1>;
 +	#size-cells = <1>;
 +
