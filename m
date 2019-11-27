@@ -2,57 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76B0D10B522
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 19:06:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 522E210B538
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 19:08:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CffgRH+BNNsN66NZgpTr7mvzG7IAWgKAbA9zM48cY0o=; b=H9YaeT3ncnAAQFWLg+G2Hizhl
-	lnHPYSK4/9mqRgYuQPBkPgK81+qcvO6erI8tbPq5H/aVxHa5kuD6k2DKBNVZXwKxE9ssR2eCIpTZb
-	xOQiGivOtEyZrV9vqfAvEeEm+s1XYsKMIxHr3u3WY+8l31+36uDBNJiSZWauv8JRbeYTMYZ82Hah1
-	psr3A7vkUPfZJKOXKk4xuD9ZPMa1xL3OEjaX9qL5AuCPKPL/RIoxISzLRxJ0BpF66UMATe7m2l3c1
-	GszdyWh5wzjQC61u6iwKzpHbPPTuwlR1miUp780A3E9nBiU/ZboMI1a4xaCpZ7ovlXei2GbEvnYeG
-	cECNeVo1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Fa3r73sfaa594DXH4x0xIXdXmMJGKP9ARWUhZT/uU0Y=; b=EM2f16C9uBd9Td
+	E40ICl3CmsN6iv1T4Q2I5tQAq4d/eQz5gZPLRsskFIXJ0KNZfFJRrgdrpoT69lXStrzrs0MYxpa3l
+	lFgQLcZn+Z/JqqVtCcXuuHUqWf1OavRNGdhYblqy54KeYyRBBkyufg63Rxmjhs+GehPkqzpoSloxs
+	4453zqlEtQ+1v4GT12mw638jeRvyLcWqW/5IGTRPmj6TPvNCGnuRNX3IpJGHa7B0G+Pgy+NbajAcV
+	FybF3Y66h9WRIkIT/NFNkYO+anluTiJYmxwh84jBBspL4k8sQYmIKLk6wDwxbKykoxg6aWyhVeiZy
+	pQ//5b7+BtibuUozTdBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia1i6-0002YG-D9; Wed, 27 Nov 2019 18:06:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia1hr-0002XG-6R; Wed, 27 Nov 2019 18:06:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1924431B;
- Wed, 27 Nov 2019 10:06:25 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 210853F6C4;
- Wed, 27 Nov 2019 10:06:20 -0800 (PST)
-Subject: Re: [PATCH v3 1/7] linux/log2.h: Add roundup/rounddown_pow_two64()
- family of functions
-To: Leon Romanovsky <leon@kernel.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-References: <20191126091946.7970-1-nsaenzjulienne@suse.de>
- <20191126091946.7970-2-nsaenzjulienne@suse.de>
- <20191126125137.GA10331@unreal>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <6e0b9079-9efd-2884-26d1-3db2d622079d@arm.com>
-Date: Wed, 27 Nov 2019 18:06:18 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1ia1jL-00035O-SU; Wed, 27 Nov 2019 18:07:59 +0000
+Received: from vps.xff.cz ([195.181.215.36])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ia1j8-00034C-OF
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 18:07:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1574878064; bh=4VzrydAkThomO1NgCSzfkzhhez9X+ie12XCY93OYl4Y=;
+ h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
+ b=EhbwSR5v8v8tPutBJipalzt60OO/s3cONAVvDxDWU8qLetxCn9MUhXeR6DPphGW66
+ 1y1UxCnqcfb68suXdYaoqRW9qrZC4/BzcBjFxECihzsadeFcyqjySAtvJJlBnCP5Zb
+ YIB99+uHHsPQMy+P/A19mNaJ5ky6dNVfJFd5VwD4=
+Date: Wed, 27 Nov 2019 19:07:43 +0100
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH v6 2/7] dt-bindings: thermal: add YAML schema for
+ sun8i-thermal driver bindings
+Message-ID: <20191127180743.ww5npenlg2urxtjn@core.my.home>
+Mail-Followup-To: Maxime Ripard <mripard@kernel.org>,
+ Vasily Khoruzhick <anarsoul@gmail.com>,
+ Yangtao Li <tiny.windzz@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Chen-Yu Tsai <wens@csie.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-pm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20191127052935.1719897-1-anarsoul@gmail.com>
+ <20191127052935.1719897-3-anarsoul@gmail.com>
+ <20191127174434.wousbqosmm5vxcsu@gilmour.lan>
 MIME-Version: 1.0
-In-Reply-To: <20191126125137.GA10331@unreal>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20191127174434.wousbqosmm5vxcsu@gilmour.lan>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_100627_283838_CC67DCC3 
-X-CRM114-Status: GOOD (  13.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191127_100747_118309_8529B0E3 
+X-CRM114-Status: GOOD (  21.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,65 +84,191 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>, Hanjun Guo <guohanjun@huawei.com>,
- Frank Rowand <frowand.list@gmail.com>, Christoph Hellwig <hch@lst.de>,
- Marek Szyprowski <m.szyprowski@samsung.com>, f.fainelli@gmail.com,
- linux-rockchip@lists.infradead.org, linux-rdma@vger.kernel.org, maz@kernel.org,
- phil@raspberrypi.org, linux-acpi@vger.kernel.org, Len Brown <lenb@kernel.org>,
- devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-rpi-kernel@lists.infradead.org, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org, mbrugger@suse.com,
- netdev@vger.kernel.org, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
- wahrenst@gmx.net, james.quinlan@broadcom.com,
- Sudeep Holla <sudeep.holla@arm.com>, andrew.murray@arm.com,
- "David S. Miller" <davem@davemloft.net>, Tariq Toukan <tariqt@mellanox.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Eduardo Valentin <edubezval@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>, linux-pm@vger.kernel.org,
+ Yangtao Li <tiny.windzz@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Zhang Rui <rui.zhang@intel.com>, "David S. Miller" <davem@davemloft.net>,
+ devicetree@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 26/11/2019 12:51 pm, Leon Romanovsky wrote:
-> On Tue, Nov 26, 2019 at 10:19:39AM +0100, Nicolas Saenz Julienne wrote:
->> Some users need to make sure their rounding function accepts and returns
->> 64bit long variables regardless of the architecture. Sadly
->> roundup/rounddown_pow_two() takes and returns unsigned longs. Create a
->> new generic 64bit variant of the function and cleanup rougue custom
->> implementations.
+Hi,
+
+On Wed, Nov 27, 2019 at 06:44:34PM +0100, Maxime Ripard wrote:
+> Hi,
 > 
-> Is it possible to create general roundup/rounddown_pow_two() which will
-> work correctly for any type of variables, instead of creating special
-> variant for every type?
+> On Tue, Nov 26, 2019 at 09:29:30PM -0800, Vasily Khoruzhick wrote:
+> > From: Yangtao Li <tiny.windzz@gmail.com>
+> >
+> > sun8i-thermal driver supports thermal sensor in wide range of Allwinner
+> > SoCs. Add YAML schema for its bindings.
+> >
+> > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> > Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> > ---
+> >  .../thermal/allwinner,sun8i-a83t-ths.yaml     | 103 ++++++++++++++++++
+> >  1 file changed, 103 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/thermal/allwinner,sun8i-a83t-ths.yaml
+> >
+> > diff --git a/Documentation/devicetree/bindings/thermal/allwinner,sun8i-a83t-ths.yaml b/Documentation/devicetree/bindings/thermal/allwinner,sun8i-a83t-ths.yaml
+> > new file mode 100644
+> > index 000000000000..e622f0a4be90
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/thermal/allwinner,sun8i-a83t-ths.yaml
+> > @@ -0,0 +1,103 @@
+> > +# SPDX-License-Identifier: GPL-2.0
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/thermal/allwinner,sun8i-a83t-ths.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Allwinner SUN8I Thermal Controller Device Tree Bindings
+> > +
+> > +maintainers:
+> > +  - Yangtao Li <tiny.windzz@gmail.com>
+> > +
+> > +properties:
+> > +  compatible:
+> > +    oneOf:
+> > +      - const: allwinner,sun8i-a83t-ths
+> > +      - const: allwinner,sun8i-h3-ths
+> > +      - const: allwinner,sun8i-r40-ths
+> > +      - const: allwinner,sun50i-a64-ths
+> > +      - const: allwinner,sun50i-h5-ths
+> > +      - const: allwinner,sun50i-h6-ths
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  interrupts:
+> > +    maxItems: 1
+> > +
+> > +  resets:
+> > +    maxItems: 1
+> > +
+> > +  clocks:
+> > +    minItems: 1
+> > +    maxItems: 2
+> > +
+> > +  clock-names:
+> > +    anyOf:
+> > +      - items:
+> > +        - const: bus
+> > +        - const: mod
+> > +      - items:
+> > +        - const: bus
+> 
+> This can be:
+> 
+> clock-names:
+>   minItems: 1
 
-In fact, that is sort of the case already - roundup_pow_of_two() itself 
-wraps ilog2() such that the constant case *is* type-independent. And 
-since ilog2() handles non-constant values anyway, might it be reasonable 
-to just take the strongly-typed __roundup_pow_of_two() helper out of the 
-loop as below?
+Additionally, minItems should be 0, since A83T doesn't have bus clock/reset. And
+then there should be a special case for A83T too with min/maxItems = 0 for both
+resets and clocks.
 
-Robin
+regards,
+	o.
 
------>8-----
-diff --git a/include/linux/log2.h b/include/linux/log2.h
-index 83a4a3ca3e8a..e825f8a6e8b5 100644
---- a/include/linux/log2.h
-+++ b/include/linux/log2.h
-@@ -172,11 +172,8 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
-   */
-  #define roundup_pow_of_two(n)			\
-  (						\
--	__builtin_constant_p(n) ? (		\
--		(n == 1) ? 1 :			\
--		(1UL << (ilog2((n) - 1) + 1))	\
--				   ) :		\
--	__roundup_pow_of_two(n)			\
-+	(__builtin_constant_p(n) && (n == 1)) ?	\
-+	1 : (1UL << (ilog2((n) - 1) + 1))	\
-   )
+>   maxItems: 2
+>   items:
+>     - const: bus
+>     - const: mod
+> 
+> And the length should be checked based on the compatible value, with
+> something like
+> 
+> if:
+>   properties:
+>     compatible:
+>       contains:
+>         const: allwinner,sun50i-h6-ths
+> 
+> then:
+>   properties:
+>     clocks:
+>       maxItems: 1
+> 
+>     clock-names:
+>       maxItems: 1
+> 
+> else:
+>   properties:
+>     clocks:
+>       maxItems: 2
+> 
+>     clock-names:
+>       maxItems: 2
+> 
+> > +
+> > +  '#thermal-sensor-cells':
+> > +    enum: [ 0, 1 ]
+> > +    description: |
+> > +      Definition depends on soc version:
+> > +
+> > +      For "allwinner,sun8i-h3-ths",
+> > +      value must be 0.
+> > +      For all other compatibles
+> > +      value must be 1.
+> 
+> This should be checked using an if as well.
+> 
+> > +
+> > +  nvmem-cells:
+> > +    maxItems: 1
+> > +    items:
+> > +      - description: Calibration data for thermal sensors
+> 
+> You can drop the items and just move the description up one level,
+> under nvmem-cells
+> 
+> > +
+> > +  nvmem-cell-names:
+> > +    items:
+> > +      - const: calibration
+> 
+> Ditto for the const
+> 
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - interrupts
+> > +  - '#thermal-sensor-cells'
+> 
+> Whether clocks, clock-names and resets are thereshould be check using
+> an if statement as well.
+> 
+> > +
+> > +examples:
+> > +  - |
+> > +    ths_a83t: ths@1f04000 {
+> 
+> You don't need the label at all, and the node name should be
+> temperature-sensor according to the DT spec, not ths. This applies to
+> all you examples.
+> 
+> > +         compatible = "allwinner,sun8i-a83t-ths";
+> > +         reg = <0x01f04000 0x100>;
+> > +         interrupts = <0 31 0>;
+> > +         nvmem-cells = <&ths_calibration>;
+> > +         nvmem-cell-names = "calibration";
+> > +         #thermal-sensor-cells = <1>;
+> > +    };
+> 
+> New line.
+> 
+> Thanks!
+> Maxime
 
-  /**
+
 
 _______________________________________________
 linux-arm-kernel mailing list
