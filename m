@@ -2,55 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0814B10B575
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 19:19:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8662210B578
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 19:20:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=q4HUu5T+l5apyAyoOI9lXMi9Iv5ksaaFtxe3YjbSa7s=; b=YIaNLizQW2KqxA
-	bPbqlRHfCnxkEe/iDKTZ+dW5+rZFm54zOcB5KXTNDLomsfEfJDuLVM0YAScf2MoqxpPSKFonL7NwK
-	fyxgo9smgU+hCiZjaost23ZGYGP+3qN3M2LjtGvtiV9MLgh/Lw3jEoUCoMjQUxpSMdDOMWLQh0tja
-	Qq29tgbpmSfv4L0S2SED9p+F0G9PFNWm/IKBx6AC76Z+joa/BrY+jSdNUgcCQRgQi5GCHT8voVXkC
-	tHpVMGqAsYlFJoCl1CctBIs3bU7Kp5GbMb37bOLQzsxmUyuzRSdwopgHgeVg1kVnfSFGdicc6F1sR
-	3/v8ebhA8YnFAgxnhU4A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Dkc7ISNrTY2iNrvb2NiaCHEi7Zcmsh3I39i2jqVuRYI=; b=ccX01BZq6JYbYv
+	VBnH+HvKW6BEITQa5mtMHasiKbTwC6NVarEqnK/tL8Ei/FaPpplsBvEQbiH0enkNTCEBtXaQG2QZc
+	9nB/xpwBT86gmSN3BJGJbUjXxX2rFu3HxykJScIrTpz8GwSXRisTgufuXTGEoizBKNHO38X6izi0p
+	VhzL2duD0GLEZEi2D9Bc+uY/reJD2aVwfvlpr5ndugfGgwOWy+1ix2cPT98YQRLCXnG/Obs9JB3R/
+	hmIW3WNWK9S/62Ai5dATsfhCcFuE0omC9IyXoX00yxnou0BiQipVn/UJqMoeDWQ2TNAwLKPWx9AkY
+	xUA68fmrpU13XeQmhbvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia1ua-0007UA-ML; Wed, 27 Nov 2019 18:19:36 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1ia1us-0007hw-J8; Wed, 27 Nov 2019 18:19:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia1uQ-0007TV-DE
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 18:19:27 +0000
-Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
- helo=dude02.pengutronix.de.)
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1ia1uL-0001Xh-Le; Wed, 27 Nov 2019 19:19:21 +0100
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH] arm64: dts: zii-ultra: adjust board names
-Date: Wed, 27 Nov 2019 19:19:21 +0100
-Message-Id: <20191127181921.22030-1-l.stach@pengutronix.de>
-X-Mailer: git-send-email 2.20.1
+ id 1ia1uh-0007gw-5P
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 18:19:44 +0000
+Received: from sol.localdomain (c-24-5-143-220.hsd1.ca.comcast.net
+ [24.5.143.220])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3DEA72070B;
+ Wed, 27 Nov 2019 18:19:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574878782;
+ bh=3z/LI0ZW+lWzsFFtnbhGfCPlI9pGPLBMxsnuKFuuTxE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=yCI00rr6Y6zcqdb8oSw3hpBOnEFRedT3VgxdgpCBrRq0CHnPg+iFvzaoFjMMou/tm
+ lLPWW4i7EsV+xNfeARsrDmT3BPHdCbbuKt0StnvdNbWj4KfPY5Lrlcirz5leqh+QAk
+ DLwSqC8CR65E43Xx9abjOEfXf/edj6DU1MR/MyR0=
+Date: Wed, 27 Nov 2019 10:19:40 -0800
+From: Eric Biggers <ebiggers@kernel.org>
+To: Sami Tolvanen <samitolvanen@google.com>
+Subject: Re: [PATCH v3] crypto: arm64/sha: fix function types
+Message-ID: <20191127181940.GB49214@sol.localdomain>
+References: <20191112223046.176097-1-samitolvanen@google.com>
+ <20191119201353.2589-1-samitolvanen@google.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20191119201353.2589-1-samitolvanen@google.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_101926_448330_447B792D 
-X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-CacheID: sfid-20191127_101943_223333_C52E2EA9 
+X-CRM114-Status: UNSURE (   7.88  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,54 +79,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
- kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
- patchwork-lst@pengutronix.de
+Cc: Herbert Xu <herbert@gondor.apana.org.au>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-crypto@vger.kernel.org, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kees Cook <keescook@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Ruslan V. Sushko" <ruslan.sushko@zii.aero>
+On Tue, Nov 19, 2019 at 12:13:53PM -0800, Sami Tolvanen wrote:
+> +static void __sha1_ce_transform(struct sha1_state *sst, u8 const *src,
+> +				int blocks)
+> +{
+> +	return sha1_ce_transform(container_of(sst, struct sha1_ce_state, sst),
+> +				 src, blocks);
+> +}
+> +
 
-Change ZII Ultra board names to be more in line with other ZII RDU platforms.
+'return' isn't needed in functions that return void.
 
-Signed-off-by: Ruslan Sushko <Ruslan.Sushko@zii.aero>
-Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
----
- arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-rmb3.dts | 2 +-
- arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-zest.dts | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+Likewise everywhere else in this patch.
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-rmb3.dts b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-rmb3.dts
-index d2a6da479980..6b3581366d67 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-rmb3.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-rmb3.dts
-@@ -8,7 +8,7 @@
- #include "imx8mq-zii-ultra.dtsi"
- 
- / {
--	model = "ZII i.MX8MQ Ultra RMB3 Board";
-+	model = "ZII Ultra RMB3 Board";
- 	compatible = "zii,imx8mq-ultra-rmb3", "zii,imx8mq-ultra", "fsl,imx8mq";
- };
- 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-zest.dts b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-zest.dts
-index 1084d9330403..173b9e9b2bbd 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-zest.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-zest.dts
-@@ -8,7 +8,7 @@
- #include "imx8mq-zii-ultra.dtsi"
- 
- / {
--	model = "ZII i.MX8MQ Ultra Zest Board";
-+	model = "ZII Ultra Zest Board";
- 	compatible = "zii,imx8mq-ultra-zest", "zii,imx8mq-ultra", "fsl,imx8mq";
- };
- 
--- 
-2.20.1
+Otherwise this patch looks fine.
 
+- Eric
 
 _______________________________________________
 linux-arm-kernel mailing list
