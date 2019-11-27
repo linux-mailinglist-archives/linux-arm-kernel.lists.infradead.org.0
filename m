@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0A7910B291
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 16:41:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A55A210B2E4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 17:04:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dMHsMOio0S4D9P96MTqBHAoGeSDHoTMdDcb+13jTNWY=; b=gSggR6Z4UV/DMs
-	LJnFSZ6Z4Ja53utx9DX8VeeZlorTH+6zJ6g/yKKQrdVOon0LF82T8PGr9pg4G1WdnJb2GiCtbLK8t
-	591vS2XJq18p6ijRk0gyfTLoJtoRnL1Fhb/1AhaobAblclR7h52uFE7nxAxDQr50vPcDun5ahWv57
-	TedTamZu5prioYmMk+1++q/FTCsex+QmRbTMoXs8F4SqGXX4z2c+E9HPy5P+bWBDGK1ncBLgicFGl
-	AbOMSDlmDXe/b7bXTHHwvJfhjD8a28gltTKF4Gbs6+7EG/VBeMLMttTWTvzK8bXd6h0a8zCafQS5M
-	Negsus3b6sVXcOEfWthw==;
+	List-Owner; bh=hU7UZf/btUyERsTn7DVHel/FRTBnWrF97VDpIPcjYTQ=; b=pYkhj9i5SnMCKT
+	JeiwDWyE2Kj4oA40yPMu9YcMItzfgnEvUJDAITXW6BqBXuC8IHc3Guld7T0xyTIR0kX70xZqyfXaZ
+	+U2dt6fHBFEqnXJl8eHIn3VPmig6soGjYgJH3ZLW7ld1Fop3sKZ3D/W5UkidM1B76aX6Qu4f9XjEl
+	VEn6w3LzFnuHhSinn1cr2tmNqQmmrwo/vfn19DxFr/sKkZZkyAlKZIQwZdSi9oeQMZGebARTqlXYi
+	qIek2P47VeXZ9/pG2NCKmv+cGj/uvApkAmWc8/VH/1oRj2gv779QJQzLewTAWIGaqw8GZuW2tmibs
+	i1+OvnTr/LokV5oOEoOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZzRc-00042r-LK; Wed, 27 Nov 2019 15:41:32 +0000
+	id 1iZznN-0002vj-AP; Wed, 27 Nov 2019 16:04:01 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZzRS-000421-2H
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 15:41:24 +0000
+ id 1iZznD-0002uS-Is
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 16:03:53 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 42FDF1045;
- Wed, 27 Nov 2019 07:41:19 -0800 (PST)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CB58F3F68E;
- Wed, 27 Nov 2019 07:41:17 -0800 (PST)
-Date: Wed, 27 Nov 2019 15:40:29 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Dietmar Eggemann <dietmar.eggemann@arm.com>
-Subject: Re: [PATCH] cpufreq: vexpress-spc: Fix wrong alternation of
- policy->related_cpus during CPU hp
-Message-ID: <20191127154029.GA4826@bogus>
-References: <20191127114801.23837-1-dietmar.eggemann@arm.com>
- <20191127120816.GC29301@bogus>
- <20191127121402.vd3tul4gmqm6qtyb@vireshk-i7>
- <20191127133200.GE29301@bogus>
- <a60cab69-4d47-d418-94bd-74630bf9e846@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1388630E;
+ Wed, 27 Nov 2019 08:03:48 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 50F533F68E;
+ Wed, 27 Nov 2019 08:03:45 -0800 (PST)
+Date: Wed, 27 Nov 2019 16:03:43 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Pavel Tatashin <pasha.tatashin@soleen.com>
+Subject: Re: [PATCH v2 3/3] arm64: remove the rest of asm-uaccess.h
+Message-ID: <20191127160342.GF51937@lakrids.cambridge.arm.com>
+References: <20191122022406.590141-1-pasha.tatashin@soleen.com>
+ <20191122022406.590141-4-pasha.tatashin@soleen.com>
+ <20191127151154.GC51937@lakrids.cambridge.arm.com>
+ <CA+CK2bDDom_pwLC-ABwDw66ynyELH3f3NdjUEdhr1LYLkgWJvg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <a60cab69-4d47-d418-94bd-74630bf9e846@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <CA+CK2bDDom_pwLC-ABwDw66ynyELH3f3NdjUEdhr1LYLkgWJvg@mail.gmail.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_074122_195640_D62B80BE 
-X-CRM114-Status: GOOD (  17.83  )
+X-CRM114-CacheID: sfid-20191127_080351_667978_CFB77161 
+X-CRM114-Status: GOOD (  18.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,99 +64,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pm@vger.kernel.org,
- Viresh Kumar <viresh.kumar@linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Sudeep Holla <sudeep.holla@arm.com>,
- Morten Rasmussen <morten.rasmussen@arm.com>, Lukasz Luba <lukasz.luba@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Stefan Agner <stefan@agner.ch>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, Will Deacon <will@kernel.org>,
+ boris.ostrovsky@oracle.com, Sasha Levin <sashal@kernel.org>,
+ Stefano Stabellini <sstabellini@kernel.org>, James Morris <jmorris@namei.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ xen-devel@lists.xenproject.org, Vladimir Murzin <vladimir.murzin@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, alexios.zavras@intel.com,
+ Thomas Gleixner <tglx@linutronix.de>, allison@lohutok.net, jgross@suse.com,
+ steve.capper@arm.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
+ info@metux.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 27, 2019 at 03:58:49PM +0100, Dietmar Eggemann wrote:
-> On 27/11/2019 14:32, Sudeep Holla wrote:
-
-[...]
-
+On Wed, Nov 27, 2019 at 10:31:54AM -0500, Pavel Tatashin wrote:
+> On Wed, Nov 27, 2019 at 10:12 AM Mark Rutland <mark.rutland@arm.com> wrote:
 > >
-> > Yes but there's no architectural way. I need to revise and see tc2_pm.c
-> > to check if we can do any magic there.
->
-> I'm fine with finding a better solution to return a fixed topology core
-> cpumask or calling this patch a workaround. AFAICS, only TC2 is affected.
->
-> ("arm: Fix topology setup in case of CPU hotplug for CONFIG_SCHED_MC")
-> is needed for other systems as well in case we have commit ca74b316df96
-> ("arm: Use common cpu_topology structure and functions."). We probably
-> don't want to revert commit ca74b316df96?
->
+> > On Thu, Nov 21, 2019 at 09:24:06PM -0500, Pavel Tatashin wrote:
+> > > The __uaccess_ttbr0_disable and __uaccess_ttbr0_enable,
+> > > are the last two macros defined in asm-uaccess.h.
+> > >
+> > > Replace them with C wrappers and call C functions from
+> > > kernel_entry and kernel_exit.
+> >
+> > For now, please leave those as-is.
+> >
+> > I don't think we want to have out-of-line C wrappers in the middle of
+> > the entry assembly where we don't have a complete kernel environment.
+> > The use in entry code can also assume non-preemptibility, while the C
+> > functions have to explcitily disable that.
+> 
+> I do not understand, if C function is called form non-preemptible
+> context it stays non-preemptible. kernel_exit already may call C
+> functions around the time __uaccess_ttbr0_enable is called (it may
+> call post_ttbr_update_workaround), and that C functions does not do
+> explicit preempt disable:
 
-Correct
+Sorry, I meant that IRQs are disabled here.
 
-> We do CPU hp stress tests in our EAS mainline integration test suite
-> https://developer.arm.com/tools-and-software/open-source-software/linux-kernel/energy-aware-scheduling/eas-mainline-development
-> and there is where we initially encountered this issue on TC2.
+The C wrapper calls __uaccess_ttbr0_enable(), which calls
+local_irq_save() and local_irq_restore(). Those are pointless in the
+bowels of the entry code, and potentially expensive if IRQ prio masking
+is in use.
 
-I could come up with the patch below. If this is any cleaner and acceptable
-I am happy to post it. One advantage of moving the use of topology_core_cpumask
-inside ve_spc_clk_init is that it's just device_initcall and not a module.
-It allows to handle ve_spc_cpufreq as module. I prefer this than the
-previous solution/workaround. Let me know.
+I'd rather not add more out-of-line C code calls here right now as I'd
+prefer to factor out the logic to C in a better way.
 
-Regards,
-Sudeep
+> > We can certainly remove the includes of <asm/asm-uaccess.h> elsewhere,
+> > and maybe fold the macros into entry.S if it's not too crowded.
+> 
+> I can do this as a separate patch.
 
--->8
+That sounds fine to me,
 
-diff --git i/arch/arm/mach-vexpress/spc.c w/arch/arm/mach-vexpress/spc.c
-index 354e0e7025ae..e0e2e789a0b7 100644
---- i/arch/arm/mach-vexpress/spc.c
-+++ w/arch/arm/mach-vexpress/spc.c
-@@ -551,8 +551,9 @@ static struct clk *ve_spc_clk_register(struct device *cpu_dev)
-
- static int __init ve_spc_clk_init(void)
- {
--       int cpu;
-+       int cpu, cluster;
-        struct clk *clk;
-+       bool init_opp_table[MAX_CLUSTERS] = { false };
-
-        if (!info)
-                return 0; /* Continue only if SPC is initialised */
-@@ -578,8 +579,17 @@ static int __init ve_spc_clk_init(void)
-                        continue;
-                }
-
-+               cluster = topology_physical_package_id(cpu_dev->id);
-+               if (init_opp_table[cluster])
-+                       continue;
-+
-                if (ve_init_opp_table(cpu_dev))
-                        pr_warn("failed to initialise cpu%d opp table\n", cpu);
-+               else if (dev_pm_opp_set_sharing_cpus(cpu_dev,
-+                        topology_core_cpumask(cpu_dev->id)))
-+                       pr_warn("failed to mark OPPs shared for cpu%d\n", cpu);
-+
-+               init_opp_table[cluster] = true;
-        }
-
-        platform_device_register_simple("vexpress-spc-cpufreq", -1, NULL, 0);
-diff --git i/drivers/cpufreq/vexpress-spc-cpufreq.c w/drivers/cpufreq/vexpress-spc-cpufreq.c
-index 506e3f2bf53a..83c85d3d67e3 100644
---- i/drivers/cpufreq/vexpress-spc-cpufreq.c
-+++ w/drivers/cpufreq/vexpress-spc-cpufreq.c
-@@ -434,7 +434,7 @@ static int ve_spc_cpufreq_init(struct cpufreq_policy *policy)
-        if (cur_cluster < MAX_CLUSTERS) {
-                int cpu;
-
--               cpumask_copy(policy->cpus, topology_core_cpumask(policy->cpu));
-+               dev_pm_opp_get_sharing_cpus(cpu_dev, policy->cpus);
-
-                for_each_cpu(cpu, policy->cpus)
-                        per_cpu(physical_cluster, cpu) = cur_cluster;
-
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
