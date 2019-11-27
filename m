@@ -2,74 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C641610A843
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 02:58:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D074E10A853
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 02:59:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5RQYfursDPdJx1ShUO6TgrqkOCHCNbG1uKSgzEb2BjQ=; b=AtOoS2yPfhaS77
-	IDSVt5VieFZP+Ugqvglq0yeN+hu1T57LHUvEdCBNwb1dRs4co700ZtYhFOlqZQTkaRhgMNxVMb8wa
-	LCNC0crz7QulH6fzUE3Qi4LvwRrbsFV7d1+Oe4M7A5EeysNFdBbV+Onsil8g4bCld9W+V7IsDP8se
-	TxAJRaEN+iwKVafAByc93jT2kPqbLJz6HIZC/dbeBXORrLtEfcyooLwYIZaam37yCMdyEjX0ccVCL
-	pluYqKm1G+JfzL61bJOiApG0R6CQp+p2oZQyvQ3EL/zjkkX2JeEChqQaT4/h2BGF42Whf7J/rr2jf
-	C1/O5gUVr3++1y4haQuQ==;
+	List-Owner; bh=ByCjlK3qAs5Oj0z8OY3FFEbe84iXrZtfmBPrtVIew1c=; b=GtLZScf7OeZpKw
+	WkEFIb3jLmg4A5KCcpCO48hYIWZ9jghOTMkiYPGEomcNwqVBLcRhPRNVdNz88tBLwYFn/8sqwKbzG
+	E2MHBS1xCtiVsWPMyi7Xsu232eKozwGZHz47VhRtjkOpADZ8WkyHKiLBOy2Qt4WcAYYnzk4x5Irzc
+	aNTPBZtM3I2HrcUPApcxZXgfGet+WbJ8EpPCXzg0RY3AvyaYP2DIQnTDfFIzlLArFYYjY/hcH5WUg
+	KCfNQq+VlxmacqAiNgOVwDLKlScVjagMWb9ZZE74F7xTinfeoqyJS7PjvJx4MChZSMyuQ27amf7tw
+	HjsznENne3nToBUX42BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZmb8-0003wx-DI; Wed, 27 Nov 2019 01:58:30 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iZmcF-0004eo-CC; Wed, 27 Nov 2019 01:59:39 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZmaw-0003wE-GV
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 01:58:19 +0000
-Received: from mail-lf1-f42.google.com (mail-lf1-f42.google.com
- [209.85.167.42])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9612020835
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 Nov 2019 01:58:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574819897;
- bh=yUbAjVfl4t6YJAMVRmQUHJSbU7woRgvSxyinA20eFYM=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=0ZNGcffCJymTkmD+GCOqe68NqvcHxx9oTOOiXzNOkx1yaNP67r6T4TeXgp02Ewifv
- HxjD97jqQqE1rS31Nh2HR41UdfBARkHMMQ1Msg0KzDdgc4Ehm1RHF7rYyLKZVjo6c1
- UepOkE+88NNcDcV0vn96sTXFYJVTPm5PAkcJtTXI=
-Received: by mail-lf1-f42.google.com with SMTP id a17so15717740lfi.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 Nov 2019 17:58:17 -0800 (PST)
-X-Gm-Message-State: APjAAAU0G89c0XIE4ioRJPu06VMMhHU7A+sBurImki0ASB+utZd96D6M
- MllbyPyBTf0woJ5pcJRv/N7Zz0C1ei4SYnvh/48=
-X-Google-Smtp-Source: APXvYqwqQ/PbVuU9oIO70cIYil2g5zlwFyjYkXkGME8+qAz9dLFuBuYWwtL8567qd0a3L5qbl7PDHSoong7wifBfy60=
-X-Received: by 2002:a19:7510:: with SMTP id y16mr26681496lfe.24.1574819895739; 
- Tue, 26 Nov 2019 17:58:15 -0800 (PST)
+ id 1iZmbs-0004Xo-Mf; Wed, 27 Nov 2019 01:59:18 +0000
+X-UUID: 1030723f42e942719bd2b10a2cd41bda-20191126
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=FdRT2zy0znueH9kDzJ8afxW0I077oey2yRxx8zkCk4Q=; 
+ b=jGnljDK73swEGHkxQ0gMSRpAMvGgpC34ftn6zq6tO0eh9wg6TaYBDsiGQkDa8r6xqd5Kc5DbAmzaxnQN/qjem4c1FpkbM6jlJYvdUESqJfInQuU14VaMnOkonN6QxVp9HelLxfuI/MJr/sYAioL084eN7//hFmFJAmA/7GatGGQ=;
+X-UUID: 1030723f42e942719bd2b10a2cd41bda-20191126
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <dennis-yc.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1755387126; Tue, 26 Nov 2019 17:59:13 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 26 Nov 2019 17:59:42 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 27 Nov 2019 09:59:00 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 27 Nov 2019 09:58:18 +0800
+From: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Jassi Brar <jassisinghbrar@gmail.com>
+Subject: [PATCH v2 04/14] mailbox: mediatek: cmdq: clear task in channel
+ before shutdown
+Date: Wed, 27 Nov 2019 09:58:47 +0800
+Message-ID: <1574819937-6246-6-git-send-email-dennis-yc.hsieh@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+References: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
 MIME-Version: 1.0
-References: <CGME20191121072643epcas2p452071a503725c7764acf5084d24425b1@epcas2p4.samsung.com>
- <001001d5a03d$05de1f70$119a5e50$@samsung.com>
- <CAJKOXPckbRowhCmnJfT8-DT3gYaTpDOf0wVxmxdf-tZpOyM5ew@mail.gmail.com>
- <028901d5a3f6$e2d72310$a8856930$@samsung.com>
- <CAJKOXPdy=oxkwspt3CpF-qV5XRPMKrupMOpbWXJT3e7trqvXkw@mail.gmail.com>
-In-Reply-To: <CAJKOXPdy=oxkwspt3CpF-qV5XRPMKrupMOpbWXJT3e7trqvXkw@mail.gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 27 Nov 2019 09:58:04 +0800
-X-Gmail-Original-Message-ID: <CAJKOXPdDYv2McfMPabmTkhDFFL-68yHqcOOTCw75=+HpCRRHMg@mail.gmail.com>
-Message-ID: <CAJKOXPdDYv2McfMPabmTkhDFFL-68yHqcOOTCw75=+HpCRRHMg@mail.gmail.com>
-Subject: Re: [PATCH] pinctrl: samsung: modularize samsung pinctrl driver
-To: Hyunki Koo <hyunki00.koo@samsung.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_175818_571432_3E12AF8A 
-X-CRM114-Status: GOOD (  18.74  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191126_175916_740643_0545D6CD 
+X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -77,7 +74,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,42 +87,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- linus.walleij@linaro.org, Tomasz Figa <tomasz.figa@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-gpio@vger.kernel.org, s.nawrocki@samsung.com,
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>, Dennis
+ YC Hsieh <dennis-yc.hsieh@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Bibby Hsieh <bibby.hsieh@mediatek.com>, CK Hu <ck.hu@mediatek.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCAyNiBOb3YgMjAxOSBhdCAxNDowOSwgS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6a0Br
-ZXJuZWwub3JnPiB3cm90ZToKPgo+IE9uIFR1ZSwgMjYgTm92IDIwMTkgYXQgMDk6MTQsIEh5dW5r
-aSBLb28gPGh5dW5raTAwLmtvb0BzYW1zdW5nLmNvbT4gd3JvdGU6Cj4gPgo+ID4gT24gVGh1LCAy
-MSBOb3YgMjAxOSBhdCAxNjozOCwgS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3Jn
-PiB3cm90ZToKPiA+ID4gSGksCj4gPiA+Cj4gPiA+IFRoYW5rcyBmb3IgdGhlIHBhdGNoLiBGZXcg
-Y29tbWVudHMgYmVsb3c6Cj4gPiA+Cj4gPiA+IE9uIFRodSwgMjEgTm92IDIwMTkgYXQgMTU6MjYs
-IOq1rO2YhOq4sCA8aHl1bmtpMDAua29vQHNhbXN1bmcuY29tPiB3cm90ZToKPiA+ID4+Cj4gPiA+
-PiBFbmFibGUgc2Ftc3VuZyBwaW5jdHJsIGRyaXZlciB0byBiZSBjb21waWxlZCBhcyBtb2R1bGVz
-Lgo+ID4gPgo+ID4gPiBXaHk/IFdoYXQncyB0aGUgYmVuZWZpdD8gQXJlIHBsYXRmb3JtcyBjYXBh
-YmxlIG9mIHN1Y2ggYm9vdD8gUGluY3RybCBpcyBuZWVkZWQgZWFybHkgLSBldmVuIGJlZm9yZSBt
-b3VudGluZyByb290ZnMuLi4KPiA+ID4gV2hhdCBhYm91dCBtb2R1bGUgdW5sb2FkaW5nPyBJcyBp
-dCByZWFzb25hYmxlPwo+ID4gPiBQbGVhc2UgYW5zd2VyIHRvIGFsbCB0aGlzIGFsc28gaW4gY29t
-bWl0IG1lc3NhZ2UuCj4gPiA+Cj4gPgo+ID4gU29ycnkgdG8gbGF0ZSBhbmQgVGhhbmsgeW91IGZv
-ciB5b3VyIGNvbW1lbnQsIEkgd291bGQgbGlrZSB0byBhcHBseSBHS0kgb24gdGhlIHBpbmN0cmwg
-ZHJpdmVyCj4gPiBTbyBJIHdvdWxkIGxpa2UgdG8gY3V0IG9mZiBkZXBlbmRlbmN5IGZyb20gQVJD
-SF9FWFlOT1MuCj4KPiBUaGlzIGlzIGRyaXZlciBmb3IgRXh5bm9zIGFuZCBTM0Mgc28gd2h5IGN1
-dHRpbmcgb2ZmIHRoZSBkZXBlbmRlbmN5PyBJCj4gbWVhbiwgd2FpdCwgaXQgaXMgYSBkcml2ZXIg
-Zm9yIEV4eW5vcyBzbyBpdCBjYW5ub3Qgd29yayBvbiBvdGhlcgo+IGJvYXJkcy4uLgoKT25lIG1v
-cmUgdGhvdWdodCBhYm91dCBHZW5lcmljIEtlcm5lbCBJbWFnZSBmb3IgQW5kcm9pZC4gSXQgaW1w
-bGllcwp0aGF0IHZlbmRvciBzdHVmZiB3aWxsIGJlIGluIG1vZHVsZXMuLi4gYnV0IG9ubHkgZm9y
-IG91dC1vZi10cmVlIGNvZGUuClRoZSBFeHlub3MgcGluY3RybCBkcml2ZXIgaXMgYWxyZWFkeSBp
-biBtYWlubGluZSBzbyBtb3ZpbmcgaXQgaW50bwptb2R1bGUgaXMgbm90IG5lY2Vzc2FyeS4KCkFz
-IGZvciBkZXBlbmRlbmN5IG9uIEFSQ0hfRVhZTk9TIC0gSSBkbyBub3QgZ2V0IHdoeSB0aGlzIGlz
-IGEgcHJvYmxlbS4KQVJDSF9FWFlOT1MgaXMgbXVsdGlwbGF0Zm9ybSByZWFkeSBzbyB5b3UgY2Fu
-IGJvb3QgbXVsdGlfdjcuLi4gV2hhdAp3b3VsZCBiZSB0aGUgYmVuZWZpdCBvZiByZW1vdmluZyB0
-aGlzIGRlcGVuZGVuY3k/CgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
-IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Do success callback in channel when shutdown. For those task not finish,
+callback with error code thus client has chance to cleanup or reset.
+
+Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+---
+ drivers/mailbox/mtk-cmdq-mailbox.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+
+diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
+index fd519b6f518b..c12a768d1175 100644
+--- a/drivers/mailbox/mtk-cmdq-mailbox.c
++++ b/drivers/mailbox/mtk-cmdq-mailbox.c
+@@ -450,6 +450,32 @@ static int cmdq_mbox_startup(struct mbox_chan *chan)
+ 
+ static void cmdq_mbox_shutdown(struct mbox_chan *chan)
+ {
++	struct cmdq_thread *thread = (struct cmdq_thread *)chan->con_priv;
++	struct cmdq *cmdq = dev_get_drvdata(chan->mbox->dev);
++	struct cmdq_task *task, *tmp;
++	unsigned long flags;
++
++	spin_lock_irqsave(&thread->chan->lock, flags);
++	if (list_empty(&thread->task_busy_list))
++		goto done;
++
++	WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
++
++	/* make sure executed tasks have success callback */
++	cmdq_thread_irq_handler(cmdq, thread);
++	if (list_empty(&thread->task_busy_list))
++		goto done;
++
++	list_for_each_entry_safe(task, tmp, &thread->task_busy_list,
++				 list_entry) {
++		cmdq_task_exec_done(task, -ECONNABORTED);
++		kfree(task);
++	}
++
++	cmdq_thread_disable(cmdq, thread);
++	clk_disable(cmdq->clock);
++done:
++	spin_unlock_irqrestore(&thread->chan->lock, flags);
+ }
+ 
+ static const struct mbox_chan_ops cmdq_mbox_chan_ops = {
+-- 
+2.18.0
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
