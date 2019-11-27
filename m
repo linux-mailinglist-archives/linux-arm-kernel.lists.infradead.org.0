@@ -2,81 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83A0F10B42F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 18:13:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFC4710B43C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 18:17:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yV8UjDRHXkY+GRU9w0klUw1CwEJMn2357kRA5qoDrRc=; b=LrUnCi16m0H/sV
-	e3IH2mM2vqirtTu3u7Uyj0AmBeozFSHjmF4JsJ4/j11t9ij59T/X4s6x+TCbObb/iWjHP2ZfEVFFL
-	JNuGwHNeaGgOxmTZKlcLsFIeShr609DJul9Z/GpvmTwqWACxZI1SdJwhtaWWCfC7zwKBVj1hHOK4s
-	ZJMEsDXmdIQZLY1xvcaA8023FT/5Ju8jYC3P6avakOmCAyQvjbF5Syj+eBLKBS+8CkvLmlpXqHmyI
-	61M7ku5GstRURh23G15nkmsxeROR7z1IKSthhFoShb2AOxcPosh1VIecJbT+rOqWR6MTLis+bx3CM
-	oggwISnCQRZwn7p/XEAQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=y6OLe+3Xi1IPQQap97khVTSHeYZ7lEbUwXHRVd7qKpM=; b=Rb27wKXc345hpl
+	4AvGlvmopCp1H22iHwnWoolTeV1yrhWNsNIEq5EgzSMk0Zs4FtxTTD7IV2gnAjm5FbaWpbVbafMMA
+	vilNfkWpoRXGEiz19Ucx5wX/QcAY6Uqm2Mi82lYR17zRTZNnjRyHZmzA+ptsqlCiHlhfzptYqVrry
+	U9RXxd3qiVEEBFHFmLQwVEmz0c9yzbF8P0gXAgT6upexzR4YXJmLElSKBE3bK4U89In4x5qsQvYOQ
+	C+EhNNXCSFbTG6BfV9XQPZ+/5qw0SfxyZViOgTgVe62jPHq0zEqWAyd1p9S+gDshxt84mE2G5Mh1e
+	oVLV8zWQlr0dgioYPHzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia0so-0005O8-Es; Wed, 27 Nov 2019 17:13:42 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1ia0wR-00072I-31; Wed, 27 Nov 2019 17:17:27 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia0si-0005N4-FZ
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 17:13:38 +0000
-Received: by mail-ed1-x541.google.com with SMTP id e10so235304edv.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 Nov 2019 09:13:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=avbwI72EZ/UijnuZGSSoSC9YggMOVPWaFwJMxK6riZw=;
- b=jr9gJxmSQPb7Bj1DBwRNdZPRhmzt3zcOh776U79Aj1KoLk7VZjrppm/SOMSRGGbp5c
- p1XaJcFjws7wmiP8QdJXjCiKeXZGkBx4jqSfuNjk5XWpbS8/pLt2/OypTPnZpRW7rML2
- SsgFG2+xx28j8f42EQAh/yBk/leVmiClheJEXQA152z+RA0QBTn9Z+5nZhUpB39bm/dd
- FjqiQL/thqEGbY0p3Kd2yPu6WIFj5H7/da+9liGtltzOiOYT7fDTuHbpx/G6sgSNhaSX
- PdxJT7++0nqLEnbqtEwa3p5MEx0MITdbEXJb6AYy/l1nrbAT/LidVBkuD1XiPYJO9HIs
- eOqA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=avbwI72EZ/UijnuZGSSoSC9YggMOVPWaFwJMxK6riZw=;
- b=KRQlvUf2FJPIdv6IJ6XIp4P9DQ4T3EtmS3QnQ3SjDhzeVSmJrgQm9fmaQuD0JGDgvp
- 13aL05LtCMx2g2guSu03hfjmWHENn5sdYPbQJO+1iQU79jERDmHy/wFaQfN7F1SZuEdy
- JxmzWBvBhoo9Mvn2Qkuh/lnHCRTXo07sAIkhnbKZqZVNlh2wA6ptzqwMsLtMYbjzt5Av
- S+D1s9l2OCavPeZbbo8E4ekl6VMH3TLbabsy+ofojWZAdqj/c2pAc7nLCQbEqSQmRvxG
- OPlq4RM+JTxdVt8JKTxu+XGcjoC4CtIbRz7cTero3ufXXUB4++i4EVzTjEmDhWSsB+KI
- DwRg==
-X-Gm-Message-State: APjAAAXmLwZSjkD1jru8W/h+FwxeZX8yeAOf+AgvYWgs3t4hQqbThebY
- k8bjBWc+WojBhdFqQu7A7FpC8+xqSOAFbxC3b2By1A==
-X-Google-Smtp-Source: APXvYqyZqD0tAbB7ilB8c3qt9BESX6KvcTNCcWyh8K0d4RwfSXJa3D/ae359IAhZ5F4Vw7HUXyFo+QE2ejNz+5zwlYs=
-X-Received: by 2002:a17:906:a2d0:: with SMTP id
- by16mr1819282ejb.322.1574874813251; 
- Wed, 27 Nov 2019 09:13:33 -0800 (PST)
+ id 1ia0wH-00071d-GO
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 17:17:19 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xARH2pcu012552; Wed, 27 Nov 2019 18:17:01 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=fNAp9C+/NbGS9PcvQ8oHpxudnwZNMo8lEEBUEvBZe2E=;
+ b=xjp/i3+yYCaibmCaE3zAQsnM0xazAt9F/0hKy0lUglyNBxw3m0F3zZgY330s6sxKdlPZ
+ UH52Qy4f6nxnqaGwOU/onjfIV3PAxkLpmMqotO5B9KdlNcVIJ/DSOgMrr43St+uoNqFS
+ l8cKD1/sVxyIyeYU/QiIOwE15c8LlwBFI/hjaVp7T/SHW+dwllqeO6IRYebUI8T2b58n
+ 0934JBSNyWWdV9+lzDphdITrzh+aWX9EgkrSxoYTuqLYbVOZ53ZB8i8WHMNH08oB7oqj
+ hU50iYK+1l1LAGi7WKOkGr5+F5s4G92cLLYe52CCd0IFdkMj03ZSG7nvCTTyUXWLvCdw Ow== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2whcxkmw4x-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 27 Nov 2019 18:17:01 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3245710002A;
+ Wed, 27 Nov 2019 18:17:01 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6E3F42C4FDF;
+ Wed, 27 Nov 2019 18:17:00 +0100 (CET)
+Received: from localhost (10.75.127.46) by SFHDAG6NODE2.st.com (10.75.127.17)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2;
+ Wed, 27 Nov 2019 18:16:59 +0100
+From: Olivier Moysan <olivier.moysan@st.com>
+To: <jic23@kernel.org>, <robh+dt@kernel.org>, <olivier.moysan@st.com>
+Subject: [PATCH] dt-bindings: iio: adc: convert sd modulator to json-schema
+Date: Wed, 27 Nov 2019 18:16:42 +0100
+Message-ID: <20191127171642.6014-1-olivier.moysan@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20191122022406.590141-1-pasha.tatashin@soleen.com>
- <20191122022406.590141-4-pasha.tatashin@soleen.com>
- <20191127151154.GC51937@lakrids.cambridge.arm.com>
- <CA+CK2bDDom_pwLC-ABwDw66ynyELH3f3NdjUEdhr1LYLkgWJvg@mail.gmail.com>
- <20191127160342.GF51937@lakrids.cambridge.arm.com>
- <CA+CK2bBszdMYbneQ1UiYxSndN8zmoVwbTVJ20NeajYPehT_X5Q@mail.gmail.com>
- <20191127170148.GG51937@lakrids.cambridge.arm.com>
-In-Reply-To: <20191127170148.GG51937@lakrids.cambridge.arm.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Wed, 27 Nov 2019 12:13:22 -0500
-Message-ID: <CA+CK2bByJJO+0_0H8sDOyWQ-igMvw8pJd_2FR1okX3EAr1r__A@mail.gmail.com>
-Subject: Re: [PATCH v2 3/3] arm64: remove the rest of asm-uaccess.h
-To: Mark Rutland <mark.rutland@arm.com>
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG6NODE2.st.com
+ (10.75.127.17)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-27_04:2019-11-27,2019-11-27 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_091336_939490_90307DB8 
-X-CRM114-Status: GOOD (  22.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191127_091718_015706_E0F9112E 
+X-CRM114-Status: GOOD (  15.66  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,83 +90,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Stefan Agner <stefan@agner.ch>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, Will Deacon <will@kernel.org>,
- boris.ostrovsky@oracle.com, Sasha Levin <sashal@kernel.org>,
- Stefano Stabellini <sstabellini@kernel.org>, James Morris <jmorris@namei.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- xen-devel@lists.xenproject.org, Vladimir Murzin <vladimir.murzin@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, alexios.zavras@intel.com,
- Thomas Gleixner <tglx@linutronix.de>, allison@lohutok.net, jgross@suse.com,
- steve.capper@arm.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
- info@metux.net
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
+ pmeerw@pmeerw.net, linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, knaack.h@gmx.de, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 27, 2019 at 12:01 PM Mark Rutland <mark.rutland@arm.com> wrote:
->
-> On Wed, Nov 27, 2019 at 11:09:35AM -0500, Pavel Tatashin wrote:
-> > On Wed, Nov 27, 2019 at 11:03 AM Mark Rutland <mark.rutland@arm.com> wrote:
-> > >
-> > > On Wed, Nov 27, 2019 at 10:31:54AM -0500, Pavel Tatashin wrote:
-> > > > On Wed, Nov 27, 2019 at 10:12 AM Mark Rutland <mark.rutland@arm.com> wrote:
-> > > > >
-> > > > > On Thu, Nov 21, 2019 at 09:24:06PM -0500, Pavel Tatashin wrote:
-> > > > > > The __uaccess_ttbr0_disable and __uaccess_ttbr0_enable,
-> > > > > > are the last two macros defined in asm-uaccess.h.
-> > > > > >
-> > > > > > Replace them with C wrappers and call C functions from
-> > > > > > kernel_entry and kernel_exit.
-> > > > >
-> > > > > For now, please leave those as-is.
-> > > > >
-> > > > > I don't think we want to have out-of-line C wrappers in the middle of
-> > > > > the entry assembly where we don't have a complete kernel environment.
-> > > > > The use in entry code can also assume non-preemptibility, while the C
-> > > > > functions have to explcitily disable that.
-> > > >
-> > > > I do not understand, if C function is called form non-preemptible
-> > > > context it stays non-preemptible. kernel_exit already may call C
-> > > > functions around the time __uaccess_ttbr0_enable is called (it may
-> > > > call post_ttbr_update_workaround), and that C functions does not do
-> > > > explicit preempt disable:
-> > >
-> > > Sorry, I meant that IRQs are disabled here.
-> > >
-> > > The C wrapper calls __uaccess_ttbr0_enable(), which calls
-> > > local_irq_save() and local_irq_restore(). Those are pointless in the
-> > > bowels of the entry code, and potentially expensive if IRQ prio masking
-> > > is in use.
-> > >
-> > > I'd rather not add more out-of-line C code calls here right now as I'd
-> > > prefer to factor out the logic to C in a better way.
-> >
-> > Ah, yes, this makes sense. I could certainly factor out C calls in a
-> > better way, or is this something you want to work on?
->
-> I'm hoping to do that as part of ongoing entry-deasm work, now that a
-> lot of the prerequisite work was merged in v5.4.
+Convert the sigma delta modulator bindings
+to DT schema format using json-schema.
 
-OK, I will send new patches with what we agreed on, and your comments addressed.
+Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+---
+ .../iio/adc/sigma-delta-modulator.txt         | 13 -------
+ .../iio/adc/sigma-delta-modulator.yaml        | 35 +++++++++++++++++++
+ 2 files changed, 35 insertions(+), 13 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/iio/adc/sigma-delta-modulator.txt
+ create mode 100644 Documentation/devicetree/bindings/iio/adc/sigma-delta-modulator.yaml
 
->
-> > Without removing these assembly macros I do not think we want to
-> > address this suggestion from Kees Cook:
-> > https://lore.kernel.org/lkml/CA+CK2bCBS2fKOTmTFm13iv3u5TBPwpoCsYeeP352DVE-gs9GJw@mail.gmail.com/
->
-> In the mean time, we could add checks around addr_limit_user_check(),
-> and in the context-switch path. I have some preparatory cleanup to allow
-> for the context-switch check, which I'll send out at -rc1. That was what
-> I used to detect the case you reported previously.
+diff --git a/Documentation/devicetree/bindings/iio/adc/sigma-delta-modulator.txt b/Documentation/devicetree/bindings/iio/adc/sigma-delta-modulator.txt
+deleted file mode 100644
+index 59b92cd32552..000000000000
+--- a/Documentation/devicetree/bindings/iio/adc/sigma-delta-modulator.txt
++++ /dev/null
+@@ -1,13 +0,0 @@
+-Device-Tree bindings for sigma delta modulator
+-
+-Required properties:
+-- compatible: should be "ads1201", "sd-modulator". "sd-modulator" can be use
+-	as a generic SD modulator if modulator not specified in compatible list.
+-- #io-channel-cells = <0>: See the IIO bindings section "IIO consumers".
+-
+-Example node:
+-
+-	ads1202: adc {
+-		compatible = "sd-modulator";
+-		#io-channel-cells = <0>;
+-	};
+diff --git a/Documentation/devicetree/bindings/iio/adc/sigma-delta-modulator.yaml b/Documentation/devicetree/bindings/iio/adc/sigma-delta-modulator.yaml
+new file mode 100644
+index 000000000000..8967c6f06d9d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/iio/adc/sigma-delta-modulator.yaml
+@@ -0,0 +1,35 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/iio/adc/sigma-delta-modulator.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Device-Tree bindings for sigma delta modulator
++
++maintainers:
++  - Arnaud Pouliquen <arnaud.pouliquen@st.com>
++
++properties:
++  compatible:
++    description: |
++      "sd-modulator" can be used as a generic SD modulator,
++      if the modulator is not specified in the compatible list.
++    enum:
++      - sd-modulator
++      - ads1201
++
++  '#io-channel-cells':
++    const: 0
++
++required:
++  - compatible
++  - '#io-channel-cells'
++
++examples:
++  - |
++    ads1202: adc@0 {
++      compatible = "sd-modulator";
++      #io-channel-cells = <0>;
++    };
++
++...
+-- 
+2.17.1
 
-Sounds good.
-
-Thank you,
-Pasha
 
 _______________________________________________
 linux-arm-kernel mailing list
