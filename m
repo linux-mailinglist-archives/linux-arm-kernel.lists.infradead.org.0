@@ -2,84 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8462010A7B7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 01:59:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CF6010A7ED
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 02:28:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ciJg7lEGoPwD+vCwOVa+rAawBfggwSM87aBsQibeuZ8=; b=rYjMgS/xFMF8uj
-	ovdtNJIyTDKA5easZnol2vQ7/sUHgBlx/t9sAYMZZp91TJJtBqbRN9/cAdBWDnNkXRM5LZqjVQjBO
-	V/nUQLd+9G5iDcSWYo5FZinQIuoK0QbTr/wXvNHMztLCO8CKSwmpNZirPs0Y/pi9slp4O5020rqXC
-	6E7iPaOiJ72i/426zYpuCXkPjVRYBMPbVMhSS+SECPSMw6mV/uc3SPy4wIrI+UU0BKU45wd9Fe5my
-	pl7C+CUjmVKvtDMLtHjs0s6s41ynk0JOXe006tZithwp7MmCxqnrMBYj9MzYHhgEXmijHz6iC1Yed
-	syh6WvrGbRVEduikPtRA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JBswaSysVfr/rC47U7xCD2AxxxsWb3vcx2kgeOV8tvI=; b=PxCZ3qZ2U1uyza
+	lBw/j1dSH8Ei+JXh2KuDb4CvcnYysCQnTSgbRGOqalZLEKPGwLAERZ7qJvjnt9oJ12X+76tsIBufx
+	NjZs7wLof+YeVan4z/aVN/B65xT2+ZAwwoNCOXH53qZy3F0vV5KiUOiatZ1LOUhcu6dbPRCV3Potv
+	LLOGFWMjQWYR+r0dxQGzTWhfh78KyApJFDoMI+LxgOpXsO4iRjHtxoj4k9ApHAgtEfGaWZe8Clft/
+	YKKUcGCnm6xLIlObEvqlGjs+TsmwsfnY0iarFukYf45Y5pLcbqyurRP3mJ6dNg5/C1ojeKWAI2bpG
+	6KfhUWIQHCHxgrygPPlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZlfv-0000CB-5a; Wed, 27 Nov 2019 00:59:23 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iZm7r-0001nM-JY; Wed, 27 Nov 2019 01:28:15 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZlfn-0000BS-F1
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 00:59:16 +0000
-Received: by mail-io1-xd43.google.com with SMTP id k24so12233579ioc.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 Nov 2019 16:59:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :user-agent:mime-version;
- bh=VbU/38+yNJ+zfC9u+frCXiwxMQpfNcWxp5XLS8niF1A=;
- b=A10E0Zkk+zRrcOORDMMGCsKvy9BHFgf9FxT8Q5Z+F9T0wHGy8ix5R/AeW+qpfr2BLY
- AuSpKXkAJKbWFrfzzgtr9gXIip0OYbus86/WG9/IaIKfRq2eNqfUL4oW0gSl7kAGiLKC
- hpLn9uWQyeaELHETva1e3D83DjU/edfu7aUWAOAV7ru9LRkEs1dfRabuSYfIFDcLaDFu
- IReRx9b2JQ1INbGgMuTdZECfpMi3o8NeOqWOkz82VQhy4PIh54PN+jRYK96gnq2z7w4q
- ywrDF0yv5vR+B5AzLX9VjE216xTiY7ZcEEGWPiRNZbxy8JRTu5eTmdXKEHIE7XLW7Xbq
- V6gA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:user-agent:mime-version;
- bh=VbU/38+yNJ+zfC9u+frCXiwxMQpfNcWxp5XLS8niF1A=;
- b=ZqBJXaHVzblQIFyz/31J17yhA1k3i+GmC83h5GkTCObMADuyGYOdvQ24sJjCMhaN7Z
- AbDWDbcW1jCRMYUPOl+Ja6aArdBVdZOp2NtpFS8wQbqSYYswWVqtttJJ1TrhQYeLHRMn
- D7WW7pq6OpVJpyEn5ShGFB2MoYOLMMvjk41RUAdSwS9qLpnOhZ9cME7nawvr+NaZ1Taa
- 3XTDaJZtw+pCPpRxGvPSq7m0MzGZo3DRjcczywq65W6yKTpIIMLjtRWR4M/fvWC+f+mv
- 9c71w/vdh4GhFQTnBEWyyhA5Wxteiuk6lPcwOj9QYNyqPvgyl0EDM/bLQ7CF9AgDFHaz
- fetw==
-X-Gm-Message-State: APjAAAUKaiEGK62viNKDhhLHoPySwGBKqXZO30ptASzihkQMGOX3xQqj
- 7rbrjM0JZjFJOeuBJj01daP0Fg==
-X-Google-Smtp-Source: APXvYqxCcCkr//QkJqo4RilDXTt5UmXBfkRr7b/U5pz2/bN55Ik8XDB5pe77KNzYh8fyijKcertCWA==
-X-Received: by 2002:a5d:9b08:: with SMTP id y8mr36537219ion.108.1574816354041; 
- Tue, 26 Nov 2019 16:59:14 -0800 (PST)
-Received: from localhost (67-0-26-4.albq.qwest.net. [67.0.26.4])
- by smtp.gmail.com with ESMTPSA id k20sm3215043iol.3.2019.11.26.16.59.11
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 Nov 2019 16:59:12 -0800 (PST)
-Date: Tue, 26 Nov 2019 16:59:11 -0800 (PST)
-From: Paul Walmsley <paul.walmsley@sifive.com>
-X-X-Sender: paulw@viisi.sifive.com
-To: Kees Cook <keescook@chromium.org>
-Subject: Re: [GIT PULL] seccomp updates for v5.5-rc1
-In-Reply-To: <201911260818.9C5DC1E@keescook>
-Message-ID: <alpine.DEB.2.21.9999.1911261656110.23039@viisi.sifive.com>
-References: <201911260818.9C5DC1E@keescook>
-User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
+ id 1iZm7g-0001lm-Jk; Wed, 27 Nov 2019 01:28:06 +0000
+X-UUID: 2de695ce036d41dba26a69c04e0ef12a-20191126
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=0KnhnC91YWzoMubvDqpW4dGN3q1TdTr1bqtKF7j6sHs=; 
+ b=AWczb0RYe5OQHfnSQbwiqlF479m6VhXu4NH0K77dk3NIvaBknXDs99HdOggUeU9zNlhjwkFP7k/M8/snf5tFYrXF0xNYx8V3Jeon8YTRDKZLPv+ubYr/WuFy+EKgbzCgOzwO4mZQS8zsvLiwMuDj8H51RhsYWTicC+DO1+0Mv88=;
+X-UUID: 2de695ce036d41dba26a69c04e0ef12a-20191126
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <yongqiang.niu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1499076403; Tue, 26 Nov 2019 17:28:03 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 26 Nov 2019 17:18:35 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 27 Nov 2019 09:17:51 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 27 Nov 2019 09:17:09 +0800
+From: <yongqiang.niu@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
+ Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH v1, 0/2] drm/mediatek: Fix external display issue 
+Date: Wed, 27 Nov 2019 09:17:53 +0800
+Message-ID: <1574817475-22378-1-git-send-email-yongqiang.niu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_165915_628871_CDC074CD 
-X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-CacheID: sfid-20191126_172804_663762_A79E03D6 
+X-CRM114-Status: UNSURE (   6.87  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,6 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,41 +84,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>, Alexei Starovoitov <ast@kernel.org>,
- Oleg Nesterov <oleg@redhat.com>, linux-kselftest@vger.kernel.org,
- Christian Brauner <christian.brauner@ubuntu.com>,
- Shuah Khan <shuah@kernel.org>, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Daniel Borkmann <daniel@iogearbox.net>,
- kernel test robot <rong.a.chen@intel.com>, x86@kernel.org,
- Yonghong Song <yhs@fb.com>, Borislav Petkov <bp@suse.de>,
- linux-um@lists.infradead.org, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Will Drewry <wad@chromium.org>, linux-parisc@vger.kernel.org,
- David Abdurachmanov <david.abdurachmanov@sifive.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Tyler Hicks <tyhicks@canonical.com>,
- bpf@vger.kernel.org, Linus Torvalds <torvalds@linux-foundation.org>,
- Martin KaFai Lau <kafai@fb.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 26 Nov 2019, Kees Cook wrote:
+From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 
-> Most notably, the secure_computing() prototype has changed (to remove an 
-> unused argument), but this has happened at the same time as riscv adding 
-> seccomp support, so the cleanest merge order would be to merge riscv 
-> first, then seccomp with the following patch for riscv to handle the 
-> change from "seccomp: simplify secure_computing()":
+Fix external display issue
 
-The RISC-V pull request that contains the seccomp change has been sent.  
-It's here:
+Yongqiang Niu (2):
+  drm/mediatek: Fixup external display black screen issue
+  drm/mediatek: Fix external display vblank timeout issue
 
-https://lore.kernel.org/linux-riscv/alpine.DEB.2.21.9999.1911261311520.23039@viisi.sifive.com/T/#u
+ drivers/gpu/drm/mediatek/mtk_dpi.c          | 14 +++++----
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 45 ++++++++++++++++++++---------
+ drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h | 14 +++++++++
+ 3 files changed, 54 insertions(+), 19 deletions(-)
 
-
-- Paul
-
+-- 
+1.8.1.1.dirty
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
