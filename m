@@ -2,73 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D668110AD42
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:08:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F17E10AD72
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 11:23:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mebJ2ukg1Ht5QUQWvCpimCidAN2XafiZgDN5gIOG4aM=; b=icvqyH1IMftBt7
-	RqJyOguE7B46ZH37g1ExUCyHH/vE1qE0GO9SDoD9U1JBZMwL/M5aQvQCP/XDQvtuCkA6rDxFRZ5jw
-	0t1qiq5nwEaHjeOLo23Kd0O/CZQEO/+6lBxKaCxLBjutd+IMQ/d2jNL5TMEAit4BHslAdqfAmYgeR
-	dgJZG77X+oBLomKYvG8AN8k3yc5SNE0TWGyHJ1/9uGnZmm6uJY6BqwQrHZsH5rUu+mhuHl3U0s3Yc
-	fpAuNi6VedaU/h66HQFEUT4q0RluYC2h10ss3UDA9Ob0ZPPSFoH+HtNFrmCJdMojZSbQwvj2MEVYh
-	oTM7yxt0nqYLTjF66+GA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3DI22mOJix6OBUPFKac6sjSMwWTKaaN9u46UomjAnzU=; b=cD+XdnpSRZ+NBw
+	0PZ7C5j7mBvfJm1aXLZzKJu9BY56GmpHJVh3uN+0h+M4is7CTmnzwB4LmRE4Cv0YDUNQ/mTHFk4iB
+	tMeDZx4hsCCf1+YXV7Jme08Lqbtgk56Ss5f941gqDXTSlj4y5PXit4Ap5wuX8PRpIICpELCTOYFyK
+	ikX4GpjqB/Pgp0itz3mD2VAGVbAT5KXWiE75DT5nvbRHp5G8qifzfbDDCqVLGxxsHB4DhCIvz2qi3
+	YWv7aQKtQ2aWRRBthvCEJcu76s8xUvNPCMZCPaDbxs3Rl/vLr3sasmvKhx6Pt4gXgYt/FNi+HzadY
+	c2QWL5CWzypcZ2/4QTDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZuFD-0005tB-LJ; Wed, 27 Nov 2019 10:08:23 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1iZuTU-0002oO-Rt; Wed, 27 Nov 2019 10:23:08 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZuF4-0005t5-UP
- for linux-arm-kernel@bombadil.infradead.org; Wed, 27 Nov 2019 10:08:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=tIKlrou5vu+SRxjzOJcT4cullNoWyUFjyhWuengpKAs=; b=s6LCUtPtLK+vn48a40xQ9dUTf
- b5yxgROddpLWnOutQC1BMXygGBT5ne5280TlOe1RQjGSWYXRmzmeIcGW4QF9/R+j1GJjFiB0F3fkl
- EcuGZKtz3QJONNDU48Yaaz4kzUGHK37mGoD3gAiHXduoDc9rdQi3sNXH1Oc3aR2y+OjiVvJas3+x+
- zqFSLB1CGE7A2a3ydhYFgL++p6d2WFVzcifIKkQzDWdWg26huB4p5l/06A7GVfc8Cy04Puzsf8NYo
- 1Qx+WImVBgp3SNQSMbAzRtwtKfcH0GzHbAgY0sZOuwebka/qREu2QJ2jBhu38xYbNT5ENtZF/iQmi
- yID2FSBHA==;
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZuF1-00042Y-Um
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 10:08:13 +0000
-X-Originating-IP: 90.65.102.129
-Received: from localhost (lfbn-1-1480-129.w90-65.abo.wanadoo.fr
- [90.65.102.129])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 25041E002F;
- Wed, 27 Nov 2019 10:07:23 +0000 (UTC)
-Date: Wed, 27 Nov 2019 11:07:22 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Claudiu.Beznea@microchip.com
-Subject: Re: [PATCH v2 02/17] ARM: at91: pm: move SAM9X60's PM under its own
- SoC config flag
-Message-ID: <20191127100722.GI299836@piout.net>
-References: <1574773941-20649-1-git-send-email-claudiu.beznea@microchip.com>
- <1574773941-20649-3-git-send-email-claudiu.beznea@microchip.com>
- <20191126212841.GR299836@piout.net>
- <10705ea9-7a0f-5af4-e383-293fabed6b89@microchip.com>
+ id 1iZuTL-0002nj-M9
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 10:23:01 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xARAM3r3006174; Wed, 27 Nov 2019 11:22:51 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : subject :
+ date : message-id : mime-version : content-type :
+ content-transfer-encoding; s=STMicroelectronics;
+ bh=DGAu8nBd8sSn0yVexjpoA/8nuPadx0SdCFMZkuAqTjI=;
+ b=ygulLg2e5rLFuUd584h0vuVZhD+RKemgd493AWF3vztp/dF30AIlPn83ICzuODlilTxU
+ 68GX8ZqJt66704So7IBm4ukcmBA8GkDdLslHejaaqixJcgaRkjF4QV4GlSuEqvIBc29i
+ mJXPz/6TRQqMtI9NOvyTIFIZVOTr3E1MxaRbvXKanIGnsjB2vYegAlDIYVe95fUGzwTH
+ TIa7QobmHTOohdnwiXst1FjfyPY0PnoyjiRDohKzq/ZdTHdjt1LGIJ7puffGWhwdB21A
+ jueEyE2x/gECpq6uTHG6hwTYfZLyQ6ePA6pSWlnSMDu3aBgDsku+AvNgXJ3yDN+V2OmP JA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2whcxj2xh5-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 27 Nov 2019 11:22:51 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BF3FB10002A;
+ Wed, 27 Nov 2019 11:22:50 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 199782B1211;
+ Wed, 27 Nov 2019 11:22:51 +0100 (CET)
+Received: from localhost (10.75.127.46) by SFHDAG6NODE1.st.com (10.75.127.16)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Wed, 27 Nov 2019 11:22:50 +0100
+From: Yannick Fertre <yannick.fertre@st.com>
+To: Yannick Fertre <yannick.fertre@st.com>, Philippe Cornu
+ <philippe.cornu@st.com>, Benjamin Gaignard <benjamin.gaignard@st.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ <dri-devel@lists.freedesktop.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH] drm/bridge/synopsys: dsi: check post disable
+Date: Wed, 27 Nov 2019 11:22:45 +0100
+Message-ID: <1574850165-13135-1-git-send-email-yannick.fertre@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <10705ea9-7a0f-5af4-e383-293fabed6b89@microchip.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG6NODE1.st.com
+ (10.75.127.16)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-11-27_02:2019-11-27,2019-11-27 signatures=0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191127_022300_086027_F780528B 
+X-CRM114-Status: GOOD (  11.97  )
+X-Spam-Score: -0.9 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,154 +98,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux@armlinux.org.uk, Ludovic.Desroches@microchip.com, sre@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/11/2019 08:06:47+0000, Claudiu.Beznea@microchip.com wrote:
-> 
-> 
-> On 26.11.2019 23:28, Alexandre Belloni wrote:
-> > EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
-> > 
-> > On 26/11/2019 15:12:06+0200, Claudiu Beznea wrote:
-> >> Move SAM9X60's PM part under SoC config flag. This allows the building
-> >> of SAM9X60 platform withouth depending on CONFIG_SOC_AT91SAM9 flag,
-> >> allowing us to select only necessary config flags for SAM9X60.
-> >>
-> > 
-> > I'm really wondering, how much space does that really save?
-> > 
-> > The net benefit seems to be very small...
-> 
-> Not that much, indeed. We want to be independent of SOC_AT91SAM9.
-> 
-
-The question is why? I don't see the technical benefit but I
-definitively see the maintenance burden of having two separate configs
-doing almost the same thing.
-
-> > 
-> >> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-> >> ---
-> >>  arch/arm/mach-at91/Makefile   |  1 +
-> >>  arch/arm/mach-at91/at91sam9.c | 18 ------------------
-> >>  arch/arm/mach-at91/pm.c       |  2 +-
-> >>  arch/arm/mach-at91/sam9x60.c  | 34 ++++++++++++++++++++++++++++++++++
-> >>  4 files changed, 36 insertions(+), 19 deletions(-)
-> >>  create mode 100644 arch/arm/mach-at91/sam9x60.c
-> >>
-> >> diff --git a/arch/arm/mach-at91/Makefile b/arch/arm/mach-at91/Makefile
-> >> index de64301dcff2..f565490f1b70 100644
-> >> --- a/arch/arm/mach-at91/Makefile
-> >> +++ b/arch/arm/mach-at91/Makefile
-> >> @@ -6,6 +6,7 @@
-> >>  # CPU-specific support
-> >>  obj-$(CONFIG_SOC_AT91RM9200) += at91rm9200.o
-> >>  obj-$(CONFIG_SOC_AT91SAM9)   += at91sam9.o
-> >> +obj-$(CONFIG_SOC_SAM9X60)    += sam9x60.o
-> >>  obj-$(CONFIG_SOC_SAMA5)              += sama5.o
-> >>  obj-$(CONFIG_SOC_SAMV7)              += samv7.o
-> >>
-> >> diff --git a/arch/arm/mach-at91/at91sam9.c b/arch/arm/mach-at91/at91sam9.c
-> >> index bf629c90c758..7e572189a5eb 100644
-> >> --- a/arch/arm/mach-at91/at91sam9.c
-> >> +++ b/arch/arm/mach-at91/at91sam9.c
-> >> @@ -31,21 +31,3 @@ DT_MACHINE_START(at91sam_dt, "Atmel AT91SAM9")
-> >>       .init_machine   = at91sam9_init,
-> >>       .dt_compat      = at91_dt_board_compat,
-> >>  MACHINE_END
-> >> -
-> >> -static void __init sam9x60_init(void)
-> >> -{
-> >> -     of_platform_default_populate(NULL, NULL, NULL);
-> >> -
-> >> -     sam9x60_pm_init();
-> >> -}
-> >> -
-> >> -static const char *const sam9x60_dt_board_compat[] __initconst = {
-> >> -     "microchip,sam9x60",
-> >> -     NULL
-> >> -};
-> >> -
-> >> -DT_MACHINE_START(sam9x60_dt, "Microchip SAM9X60")
-> >> -     /* Maintainer: Microchip */
-> >> -     .init_machine   = sam9x60_init,
-> >> -     .dt_compat      = sam9x60_dt_board_compat,
-> >> -MACHINE_END
-> >> diff --git a/arch/arm/mach-at91/pm.c b/arch/arm/mach-at91/pm.c
-> >> index d5af6aedc02c..56a6a49b19e2 100644
-> >> --- a/arch/arm/mach-at91/pm.c
-> >> +++ b/arch/arm/mach-at91/pm.c
-> >> @@ -805,7 +805,7 @@ void __init at91rm9200_pm_init(void)
-> >>
-> >>  void __init sam9x60_pm_init(void)
-> >>  {
-> >> -     if (!IS_ENABLED(CONFIG_SOC_AT91SAM9))
-> >> +     if (!IS_ENABLED(CONFIG_SOC_SAM9X60))
-> >>               return;
-> >>
-> >>       at91_pm_modes_init();
-> >> diff --git a/arch/arm/mach-at91/sam9x60.c b/arch/arm/mach-at91/sam9x60.c
-> >> new file mode 100644
-> >> index 000000000000..d8c739d25458
-> >> --- /dev/null
-> >> +++ b/arch/arm/mach-at91/sam9x60.c
-> >> @@ -0,0 +1,34 @@
-> >> +// SPDX-License-Identifier: GPL-2.0+
-> >> +/*
-> >> + * Setup code for SAM9X60.
-> >> + *
-> >> + * Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries
-> >> + *
-> >> + * Author: Claudiu Beznea <claudiu.beznea@microchip.com>
-> >> + */
-> >> +
-> >> +#include <linux/of.h>
-> >> +#include <linux/of_platform.h>
-> >> +
-> >> +#include <asm/mach/arch.h>
-> >> +#include <asm/system_misc.h>
-> >> +
-> >> +#include "generic.h"
-> >> +
-> >> +static void __init sam9x60_init(void)
-> >> +{
-> >> +     of_platform_default_populate(NULL, NULL, NULL);
-> >> +
-> >> +     sam9x60_pm_init();
-> >> +}
-> >> +
-> >> +static const char *const sam9x60_dt_board_compat[] __initconst = {
-> >> +     "microchip,sam9x60",
-> >> +     NULL
-> >> +};
-> >> +
-> >> +DT_MACHINE_START(sam9x60_dt, "Microchip SAM9X60")
-> >> +     /* Maintainer: Microchip */
-> >> +     .init_machine   = sam9x60_init,
-> >> +     .dt_compat      = sam9x60_dt_board_compat,
-> >> +MACHINE_END
-> >> --
-> >> 2.7.4
-> >>
-> > 
-> > --
-> > Alexandre Belloni, Bootlin
-> > Embedded Linux and Kernel engineering
-> > https://bootlin.com
-> > 
-
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RnJvbTogWWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZlcnRyZUBzdC5jb20+CgpTb21lIGJyaWRn
+ZXMgZGlkIG5vdCByZWdpc3RlcmVkIHRoZSBwb3N0X2Rpc2FibGUgZnVuY3Rpb24uClRvIGF2b2lk
+IGEgY3Jhc2gsIGNoZWNrIGl0IGJlZm9yZSBjYWxsaW5nLgoKU2lnbmVkLW9mZi1ieTogWWFubmlj
+ayBGZXJ0cmUgPHlhbm5pY2suZmVydHJlQHN0LmNvbT4KLS0tCiBkcml2ZXJzL2dwdS9kcm0vYnJp
+ZGdlL3N5bm9wc3lzL2R3LW1pcGktZHNpLmMgfCAzICsrLQogMSBmaWxlIGNoYW5nZWQsIDIgaW5z
+ZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9i
+cmlkZ2Uvc3lub3BzeXMvZHctbWlwaS1kc2kuYyBiL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2Uvc3lu
+b3BzeXMvZHctbWlwaS1kc2kuYwppbmRleCBjYzgwNmJhLi4xZTM3MjMzIDEwMDY0NAotLS0gYS9k
+cml2ZXJzL2dwdS9kcm0vYnJpZGdlL3N5bm9wc3lzL2R3LW1pcGktZHNpLmMKKysrIGIvZHJpdmVy
+cy9ncHUvZHJtL2JyaWRnZS9zeW5vcHN5cy9kdy1taXBpLWRzaS5jCkBAIC04ODYsNyArODg2LDgg
+QEAgc3RhdGljIHZvaWQgZHdfbWlwaV9kc2lfYnJpZGdlX3Bvc3RfZGlzYWJsZShzdHJ1Y3QgZHJt
+X2JyaWRnZSAqYnJpZGdlKQogCSAqIFRoaXMgbmVlZHMgdG8gYmUgZml4ZWQgaW4gdGhlIGRybV9i
+cmlkZ2UgZnJhbWV3b3JrIGFuZCB0aGUgQVBJCiAJICogbmVlZHMgdG8gYmUgdXBkYXRlZCB0byBt
+YW5hZ2Ugb3VyIG93biBjYWxsIGNoYWlucy4uLgogCSAqLwotCWRzaS0+cGFuZWxfYnJpZGdlLT5m
+dW5jcy0+cG9zdF9kaXNhYmxlKGRzaS0+cGFuZWxfYnJpZGdlKTsKKwlpZiAoZHNpLT5wYW5lbF9i
+cmlkZ2UtPmZ1bmNzLT5wb3N0X2Rpc2FibGUpCisJCWRzaS0+cGFuZWxfYnJpZGdlLT5mdW5jcy0+
+cG9zdF9kaXNhYmxlKGRzaS0+cGFuZWxfYnJpZGdlKTsKIAogCWlmIChkc2ktPnNsYXZlKSB7CiAJ
+CWR3X21pcGlfZHNpX2Rpc2FibGUoZHNpLT5zbGF2ZSk7Ci0tIAoyLjcuNAoKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
