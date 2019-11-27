@@ -2,59 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CF6010A7ED
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 02:28:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C933B10A7E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 02:18:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JBswaSysVfr/rC47U7xCD2AxxxsWb3vcx2kgeOV8tvI=; b=PxCZ3qZ2U1uyza
-	lBw/j1dSH8Ei+JXh2KuDb4CvcnYysCQnTSgbRGOqalZLEKPGwLAERZ7qJvjnt9oJ12X+76tsIBufx
-	NjZs7wLof+YeVan4z/aVN/B65xT2+ZAwwoNCOXH53qZy3F0vV5KiUOiatZ1LOUhcu6dbPRCV3Potv
-	LLOGFWMjQWYR+r0dxQGzTWhfh78KyApJFDoMI+LxgOpXsO4iRjHtxoj4k9ApHAgtEfGaWZe8Clft/
-	YKKUcGCnm6xLIlObEvqlGjs+TsmwsfnY0iarFukYf45Y5pLcbqyurRP3mJ6dNg5/C1ojeKWAI2bpG
-	6KfhUWIQHCHxgrygPPlQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jRv3s4qzFrBL19TVEyVFhsOMQcTooEYqQz7tLYJmW8g=; b=Fn7ryKlmvcyw3v
+	sTI3/E/LwuNBoNnYpkp4UGE8FgD6iDLVaWb4zk/bVqvdwaRM8lcRVTz1uFQOQd9B8TZYTmMoqNN9L
+	ZD0YCdw6vx5R+RV2fh1yrxU6umjLOzVYKgt569wjviNJBB7bqWzq6dVSfqxzX/EsIkDkGtocigkzR
+	daeJhASMgFsykCPU61M+sIBGworbsjoMMqQ4uFeQXBwiVqE7tpzGpzgQkcz3VT/iZUmQzQwbhOnvK
+	2tp8ygP3VxOlowXYuUHPx6DIyD8qiNwNYORVpcJCmLmt6H2hr0nn1kdX5rw68aCx4KrUwEa9Y5i5w
+	rcd4j3MCzVljiuWR2Q5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZm7r-0001nM-JY; Wed, 27 Nov 2019 01:28:15 +0000
+	id 1iZlyb-0006bz-S9; Wed, 27 Nov 2019 01:18:41 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZm7g-0001lm-Jk; Wed, 27 Nov 2019 01:28:06 +0000
-X-UUID: 2de695ce036d41dba26a69c04e0ef12a-20191126
+ id 1iZly6-0006M3-LD; Wed, 27 Nov 2019 01:18:12 +0000
+X-UUID: a45640faeb9449fc93359b8a40ae8e24-20191126
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=0KnhnC91YWzoMubvDqpW4dGN3q1TdTr1bqtKF7j6sHs=; 
- b=AWczb0RYe5OQHfnSQbwiqlF479m6VhXu4NH0K77dk3NIvaBknXDs99HdOggUeU9zNlhjwkFP7k/M8/snf5tFYrXF0xNYx8V3Jeon8YTRDKZLPv+ubYr/WuFy+EKgbzCgOzwO4mZQS8zsvLiwMuDj8H51RhsYWTicC+DO1+0Mv88=;
-X-UUID: 2de695ce036d41dba26a69c04e0ef12a-20191126
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=ukDKw46dJ6kUKB8fK1XW/KSDkxflYgyotMjPJ393R3U=; 
+ b=JxAsfkmYsU7GZwD1SjwJD3VODWVjmdz0BDgX2HXzPJ3BNq1bl5aN1gnVaW3q4ClflHxAAYeQmHskIWtjV5ON/xca9ecOf2WklWWlpUspMG2oOn/hdOnd5AtrBgUQYmuH2bJhLy70tUhbVFMps9X/Eb+JEEqW/vS8M1iRIIDoALw=;
+X-UUID: a45640faeb9449fc93359b8a40ae8e24-20191126
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <yongqiang.niu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1499076403; Tue, 26 Nov 2019 17:28:03 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 26 Nov 2019 17:18:35 -0800
+ with ESMTP id 1781169808; Tue, 26 Nov 2019 17:18:04 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 26 Nov 2019 17:18:33 -0800
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 27 Nov 2019 09:17:51 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 27 Nov 2019 09:17:49 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 27 Nov 2019 09:17:09 +0800
+ Transport; Wed, 27 Nov 2019 09:17:10 +0800
 From: <yongqiang.niu@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
  Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v1, 0/2] drm/mediatek: Fix external display issue 
-Date: Wed, 27 Nov 2019 09:17:53 +0800
-Message-ID: <1574817475-22378-1-git-send-email-yongqiang.niu@mediatek.com>
+Subject: [PATCH v1,
+ 1/2] drm/mediatek: Fixup external display black screen issue
+Date: Wed, 27 Nov 2019 09:17:54 +0800
+Message-ID: <1574817475-22378-2-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1574817475-22378-1-git-send-email-yongqiang.niu@mediatek.com>
+References: <1574817475-22378-1-git-send-email-yongqiang.niu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_172804_663762_A79E03D6 
-X-CRM114-Status: UNSURE (   6.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191126_171810_710178_0748CF42 
+X-CRM114-Status: GOOD (  12.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,17 +98,85 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 
-Fix external display issue
+Problem:
+overlay hangup when external display hotplut test
 
-Yongqiang Niu (2):
-  drm/mediatek: Fixup external display black screen issue
-  drm/mediatek: Fix external display vblank timeout issue
+Fix:
+disable overlay when crtc disable
 
- drivers/gpu/drm/mediatek/mtk_dpi.c          | 14 +++++----
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 45 ++++++++++++++++++++---------
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h | 14 +++++++++
- 3 files changed, 54 insertions(+), 19 deletions(-)
+Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+---
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 39 +++++++++++++++++++++------------
+ 1 file changed, 25 insertions(+), 14 deletions(-)
 
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index 4fb346c..7eca02f 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -369,6 +369,20 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+ 	mtk_disp_mutex_add_comp(mtk_crtc->mutex, mtk_crtc->ddp_comp[i]->id);
+ 	mtk_disp_mutex_enable(mtk_crtc->mutex);
+ 
++	/* Initially configure all planes */
++	for (i = 0; i < mtk_crtc->layer_nr; i++) {
++		struct drm_plane *plane = &mtk_crtc->planes[i];
++		struct mtk_plane_state *plane_state;
++		struct mtk_ddp_comp *comp;
++		unsigned int local_layer;
++
++		plane_state = to_mtk_plane_state(plane->state);
++		comp = mtk_drm_ddp_comp_for_plane(crtc, plane, &local_layer);
++		if (comp)
++			mtk_ddp_comp_layer_config(comp, local_layer,
++						  plane_state, NULL);
++	}
++
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
+ 		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[i];
+ 		enum mtk_ddp_comp_id prev;
+@@ -385,20 +399,6 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+ 		mtk_ddp_comp_start(comp);
+ 	}
+ 
+-	/* Initially configure all planes */
+-	for (i = 0; i < mtk_crtc->layer_nr; i++) {
+-		struct drm_plane *plane = &mtk_crtc->planes[i];
+-		struct mtk_plane_state *plane_state;
+-		struct mtk_ddp_comp *comp;
+-		unsigned int local_layer;
+-
+-		plane_state = to_mtk_plane_state(plane->state);
+-		comp = mtk_drm_ddp_comp_for_plane(crtc, plane, &local_layer);
+-		if (comp)
+-			mtk_ddp_comp_layer_config(comp, local_layer,
+-						  plane_state, NULL);
+-	}
+-
+ 	return 0;
+ 
+ err_mutex_unprepare:
+@@ -607,10 +607,21 @@ static void mtk_drm_crtc_atomic_disable(struct drm_crtc *crtc,
+ 	for (i = 0; i < mtk_crtc->layer_nr; i++) {
+ 		struct drm_plane *plane = &mtk_crtc->planes[i];
+ 		struct mtk_plane_state *plane_state;
++		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
++		unsigned int comp_layer_nr = mtk_ddp_comp_layer_nr(comp);
++		unsigned int local_layer;
+ 
+ 		plane_state = to_mtk_plane_state(plane->state);
+ 		plane_state->pending.enable = false;
+ 		plane_state->pending.config = true;
++
++		if (i >= comp_layer_nr) {
++			comp = mtk_crtc->ddp_comp[1];
++			local_layer = i - comp_layer_nr;
++		} else
++			local_layer = i;
++		mtk_ddp_comp_layer_config(comp, local_layer,
++					  plane_state, NULL);
+ 	}
+ 	mtk_crtc->pending_planes = true;
+ 
 -- 
 1.8.1.1.dirty
 _______________________________________________
