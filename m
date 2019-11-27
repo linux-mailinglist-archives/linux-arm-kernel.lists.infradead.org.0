@@ -2,66 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 334C910A810
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 02:42:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C641610A843
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 02:58:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CyooDUZIh8P9FTF/LlyjoQDlPqlCa9Pq5nYtZA7fL/w=; b=rG+TiTEw57RPk+
-	VP0Zv/wAMiVDii+UjtDMsUkeF6JpMzbO/cxl5vqruml936y/tI2qioD5vNY+Wcx5uNqYrGlJbMjZm
-	LzYCndmv13qDpQGLC6mqbV9ne7cFwbEyBYS7P/HjmR8jW4jAufxPgLEaiBMTxbYIhevH9aELLlbBi
-	+RvfBqeH31dNYVg3Di8/Rf6GI/jcXwkXGS5Uc9/akfEO4bYt4XRqKDrIU34nAUUXKs4MRwzL5YJwK
-	mlkJzjJ+yuJ/x8aKEfuHVSmd9MCjhs3U+P+TXY18FiGVqreyPmnTYHAtAF2amRshMhlklkKa6tjcn
-	ulo/3t0hjB6/VJcua+/w==;
+	List-Owner; bh=5RQYfursDPdJx1ShUO6TgrqkOCHCNbG1uKSgzEb2BjQ=; b=AtOoS2yPfhaS77
+	IDSVt5VieFZP+Ugqvglq0yeN+hu1T57LHUvEdCBNwb1dRs4co700ZtYhFOlqZQTkaRhgMNxVMb8wa
+	LCNC0crz7QulH6fzUE3Qi4LvwRrbsFV7d1+Oe4M7A5EeysNFdBbV+Onsil8g4bCld9W+V7IsDP8se
+	TxAJRaEN+iwKVafAByc93jT2kPqbLJz6HIZC/dbeBXORrLtEfcyooLwYIZaam37yCMdyEjX0ccVCL
+	pluYqKm1G+JfzL61bJOiApG0R6CQp+p2oZQyvQ3EL/zjkkX2JeEChqQaT4/h2BGF42Whf7J/rr2jf
+	C1/O5gUVr3++1y4haQuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZmLJ-00078O-1L; Wed, 27 Nov 2019 01:42:09 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1iZmb8-0003wx-DI; Wed, 27 Nov 2019 01:58:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZmLA-00077m-0k; Wed, 27 Nov 2019 01:42:01 +0000
-X-UUID: 7c3d6612898d415694e5a0ad0ae8ee3f-20191126
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=bpeIC/27WUq2ckUZMjs4NbBYFnnRBnPZhW6j/rfxdh0=; 
- b=ZrbVV6YmBGS/XTUhlbwx9050DJDrjFDc3n2oPWRriLmqMicAVeti3zu/CrnblE26IeY4i1u160oVG9qBfBKJKhF9JwiONc8V+OPSZPOY6Qzq0gRV1hkF6m+LB3448vwDZ1li8JJh7H5n6p6N2B80ga8rFH4mpQx4dbfh4x9f79g=;
-X-UUID: 7c3d6612898d415694e5a0ad0ae8ee3f-20191126
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <bibby.hsieh@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1077585862; Tue, 26 Nov 2019 17:41:56 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 26 Nov 2019 17:42:02 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 27 Nov 2019 09:41:43 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 27 Nov 2019 09:41:02 +0800
-Message-ID: <1574818912.27852.2.camel@mtksdaap41>
-Subject: Re: [PATCH 1/7] drm/mediatek: fix atomic_state reference counting
-From: Bibby Hsieh <bibby.hsieh@mediatek.com>
-To: Daniel Vetter <daniel@ffwll.ch>
-Date: Wed, 27 Nov 2019 09:41:52 +0800
-In-Reply-To: <20191126084951.GQ29965@phenom.ffwll.local>
-References: <20191126062932.19773-1-bibby.hsieh@mediatek.com>
- <20191126062932.19773-2-bibby.hsieh@mediatek.com>
- <20191126084951.GQ29965@phenom.ffwll.local>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1iZmaw-0003wE-GV
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 01:58:19 +0000
+Received: from mail-lf1-f42.google.com (mail-lf1-f42.google.com
+ [209.85.167.42])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9612020835
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 Nov 2019 01:58:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574819897;
+ bh=yUbAjVfl4t6YJAMVRmQUHJSbU7woRgvSxyinA20eFYM=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=0ZNGcffCJymTkmD+GCOqe68NqvcHxx9oTOOiXzNOkx1yaNP67r6T4TeXgp02Ewifv
+ HxjD97jqQqE1rS31Nh2HR41UdfBARkHMMQ1Msg0KzDdgc4Ehm1RHF7rYyLKZVjo6c1
+ UepOkE+88NNcDcV0vn96sTXFYJVTPm5PAkcJtTXI=
+Received: by mail-lf1-f42.google.com with SMTP id a17so15717740lfi.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 Nov 2019 17:58:17 -0800 (PST)
+X-Gm-Message-State: APjAAAU0G89c0XIE4ioRJPu06VMMhHU7A+sBurImki0ASB+utZd96D6M
+ MllbyPyBTf0woJ5pcJRv/N7Zz0C1ei4SYnvh/48=
+X-Google-Smtp-Source: APXvYqwqQ/PbVuU9oIO70cIYil2g5zlwFyjYkXkGME8+qAz9dLFuBuYWwtL8567qd0a3L5qbl7PDHSoong7wifBfy60=
+X-Received: by 2002:a19:7510:: with SMTP id y16mr26681496lfe.24.1574819895739; 
+ Tue, 26 Nov 2019 17:58:15 -0800 (PST)
 MIME-Version: 1.0
-X-MTK: N
+References: <CGME20191121072643epcas2p452071a503725c7764acf5084d24425b1@epcas2p4.samsung.com>
+ <001001d5a03d$05de1f70$119a5e50$@samsung.com>
+ <CAJKOXPckbRowhCmnJfT8-DT3gYaTpDOf0wVxmxdf-tZpOyM5ew@mail.gmail.com>
+ <028901d5a3f6$e2d72310$a8856930$@samsung.com>
+ <CAJKOXPdy=oxkwspt3CpF-qV5XRPMKrupMOpbWXJT3e7trqvXkw@mail.gmail.com>
+In-Reply-To: <CAJKOXPdy=oxkwspt3CpF-qV5XRPMKrupMOpbWXJT3e7trqvXkw@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Wed, 27 Nov 2019 09:58:04 +0800
+X-Gmail-Original-Message-ID: <CAJKOXPdDYv2McfMPabmTkhDFFL-68yHqcOOTCw75=+HpCRRHMg@mail.gmail.com>
+Message-ID: <CAJKOXPdDYv2McfMPabmTkhDFFL-68yHqcOOTCw75=+HpCRRHMg@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: samsung: modularize samsung pinctrl driver
+To: Hyunki Koo <hyunki00.koo@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_174200_075926_3E623924 
-X-CRM114-Status: GOOD (  28.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191126_175818_571432_3E12AF8A 
+X-CRM114-Status: GOOD (  18.74  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -71,8 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,249 +89,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, srv_heupstream@mediatek.com,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- tfiga@chromium.org, YT Shen <yt.shen@mediatek.com>, CK Hu <ck.hu@mediatek.com>,
- Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linus.walleij@linaro.org, Tomasz Figa <tomasz.figa@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-gpio@vger.kernel.org, s.nawrocki@samsung.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-11-26 at 09:49 +0100, Daniel Vetter wrote:
-> On Tue, Nov 26, 2019 at 02:29:26PM +0800, Bibby Hsieh wrote:
-> > The DRM core takes care of all atomic state refcounting.
-> > However, mediatek drm defers some work that accesses planes
-> > and plane_states in drm_atomic_state, and must therefore
-> > keep its own atomic state references until this work complete.
-> > 
-> > We take the atomic_state reference in atomic_fulsh() and ensure all the
-> > information in atomic_state already was updated in hardware for
-> > showing on screen and then schedules unreference_work to drop references
-> > on atomic_state.
-> > 
-> > Fixes: 119f5173628a ("drm/mediatek: Add DRM Driver for Mediatek SoC MT8173.")
-> > 
-> > Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> 
-> This looks strange. For one you implement your own reference counting - if
-> drivers have a need for drm_atomic_state_put_irq then I
-> think we should implement this in the core code.
-> 
-> The other bit is that atomic commits are meant to simply wait for
-> everything to finish - commit_tail doesn't hold locks, it's only ordered
-> through drm_crtc_commit events (at least with the async implementation in
-> the helpers), so you can just block there until your interrupt handler is
-> done processing the commit. Depending how you want to do this you might
-> want to wait before or after drm_atomic_helper_commit_hw_done().
-
-OK, I will try to add a simple wait/completion before
-drm_atomic_helper_commit_hw_done() until the commit was processed.
-
-Thanks.
-
-Bibby
-> -Daniel
-> 
-> > ---
-> >  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 11 +++-
-> >  drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 79 +++++++++++++++++++++++++
-> >  drivers/gpu/drm/mediatek/mtk_drm_drv.h  |  9 +++
-> >  3 files changed, 97 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > index 29d0582e90e9..68b92adc96bb 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > @@ -7,7 +7,7 @@
-> >  #include <linux/pm_runtime.h>
-> >  
-> >  #include <asm/barrier.h>
-> > -
-> > +#include <drm/drm_atomic.h>
-> >  #include <drm/drm_atomic_helper.h>
-> >  #include <drm/drm_plane_helper.h>
-> >  #include <drm/drm_probe_helper.h>
-> > @@ -47,6 +47,7 @@ struct mtk_drm_crtc {
-> >  	struct mtk_disp_mutex		*mutex;
-> >  	unsigned int			ddp_comp_nr;
-> >  	struct mtk_ddp_comp		**ddp_comp;
-> > +	struct drm_crtc_state		*old_crtc_state;
-> >  };
-> >  
-> >  struct mtk_crtc_state {
-> > @@ -362,6 +363,7 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
-> >  static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
-> >  {
-> >  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> > +	struct drm_atomic_state *atomic_state = mtk_crtc->old_crtc_state->state;
-> >  	struct mtk_crtc_state *state = to_mtk_crtc_state(mtk_crtc->base.state);
-> >  	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
-> >  	unsigned int i;
-> > @@ -399,6 +401,7 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
-> >  			plane_state->pending.config = false;
-> >  		}
-> >  		mtk_crtc->pending_planes = false;
-> > +		mtk_atomic_state_put_queue(atomic_state);
-> >  	}
-> >  }
-> >  
-> > @@ -494,6 +497,7 @@ static void mtk_drm_crtc_atomic_begin(struct drm_crtc *crtc,
-> >  static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
-> >  				      struct drm_crtc_state *old_crtc_state)
-> >  {
-> > +	struct drm_atomic_state *old_atomic_state = old_crtc_state->state;
-> >  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> >  	struct mtk_drm_private *priv = crtc->dev->dev_private;
-> >  	unsigned int pending_planes = 0;
-> > @@ -512,8 +516,11 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
-> >  			pending_planes |= BIT(i);
-> >  		}
-> >  	}
-> > -	if (pending_planes)
-> > +	if (pending_planes) {
-> >  		mtk_crtc->pending_planes = true;
-> > +		drm_atomic_state_get(old_atomic_state);
-> > +		mtk_crtc->old_crtc_state = old_crtc_state;
-> > +	}
-> >  	if (crtc->state->color_mgmt_changed)
-> >  		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
-> >  			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i], crtc->state);
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> > index 6588dc6dd5e3..6c68283b6124 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> > @@ -115,10 +115,85 @@ static int mtk_atomic_commit(struct drm_device *drm,
-> >  	return 0;
-> >  }
-> >  
-> > +struct mtk_atomic_state {
-> > +	struct drm_atomic_state base;
-> > +	struct list_head list;
-> > +};
-> > +
-> > +static inline struct mtk_atomic_state *to_mtk_state(struct drm_atomic_state *s)
-> > +{
-> > +	return container_of(s, struct mtk_atomic_state, base);
-> > +}
-> > +
-> > +void mtk_atomic_state_put_queue(struct drm_atomic_state *state)
-> > +{
-> > +	struct drm_device *drm = state->dev;
-> > +	struct mtk_drm_private *mtk_drm = drm->dev_private;
-> > +	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
-> > +	unsigned long flags;
-> > +
-> > +	spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
-> > +	list_add_tail(&mtk_state->list, &mtk_drm->unreference.list);
-> > +	spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
-> > +
-> > +	schedule_work(&mtk_drm->unreference.work);
-> > +}
-> > +
-> > +static void mtk_unreference_work(struct work_struct *work)
-> > +{
-> > +	struct mtk_drm_private *mtk_drm = container_of(work,
-> > +			struct mtk_drm_private, unreference.work);
-> > +	unsigned long flags;
-> > +	struct mtk_atomic_state *state, *tmp;
-> > +
-> > +	/*
-> > +	 * framebuffers cannot be unreferenced in atomic context.
-> > +	 * Therefore, only hold the spinlock when iterating unreference_list,
-> > +	 * and drop it when doing the unreference.
-> > +	 */
-> > +	spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
-> > +	list_for_each_entry_safe(state, tmp, &mtk_drm->unreference.list, list) {
-> > +		list_del(&state->list);
-> > +		spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
-> > +		drm_atomic_state_put(&state->base);
-> > +		spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
-> > +	}
-> > +	spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
-> > +}
-> > +
-> > +static struct drm_atomic_state *
-> > +		mtk_drm_atomic_state_alloc(struct drm_device *dev)
-> > +{
-> > +	struct mtk_atomic_state *mtk_state;
-> > +
-> > +	mtk_state = kzalloc(sizeof(*mtk_state), GFP_KERNEL);
-> > +	if (!mtk_state)
-> > +		return NULL;
-> > +
-> > +	if (drm_atomic_state_init(dev, &mtk_state->base) < 0) {
-> > +		kfree(mtk_state);
-> > +		return NULL;
-> > +	}
-> > +
-> > +	INIT_LIST_HEAD(&mtk_state->list);
-> > +
-> > +	return &mtk_state->base;
-> > +}
-> > +
-> > +static void mtk_drm_atomic_state_free(struct drm_atomic_state *state)
-> > +{
-> > +	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
-> > +
-> > +	drm_atomic_state_default_release(state);
-> > +	kfree(mtk_state);
-> > +}
-> > +
-> >  static const struct drm_mode_config_funcs mtk_drm_mode_config_funcs = {
-> >  	.fb_create = mtk_drm_mode_fb_create,
-> >  	.atomic_check = drm_atomic_helper_check,
-> >  	.atomic_commit = mtk_atomic_commit,
-> > +	.atomic_state_alloc = mtk_drm_atomic_state_alloc,
-> > +	.atomic_state_free = mtk_drm_atomic_state_free
-> >  };
-> >  
-> >  static const enum mtk_ddp_comp_id mt2701_mtk_ddp_main[] = {
-> > @@ -337,6 +412,10 @@ static int mtk_drm_kms_init(struct drm_device *drm)
-> >  	drm_kms_helper_poll_init(drm);
-> >  	drm_mode_config_reset(drm);
-> >  
-> > +	INIT_WORK(&private->unreference.work, mtk_unreference_work);
-> > +	INIT_LIST_HEAD(&private->unreference.list);
-> > +	spin_lock_init(&private->unreference.lock);
-> > +
-> >  	return 0;
-> >  
-> >  err_unset_dma_parms:
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> > index b6a82728d563..c37d835cf949 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> > @@ -55,6 +55,13 @@ struct mtk_drm_private {
-> >  
-> >  	struct drm_atomic_state *suspend_state;
-> >  
-> > +	struct {
-> > +		struct work_struct	work;
-> > +		struct list_head	list;
-> > +		/* lock for unreference list */
-> > +		spinlock_t		lock;
-> > +	} unreference;
-> > +
-> >  	bool dma_parms_allocated;
-> >  };
-> >  
-> > @@ -66,4 +73,6 @@ extern struct platform_driver mtk_dpi_driver;
-> >  extern struct platform_driver mtk_dsi_driver;
-> >  extern struct platform_driver mtk_mipi_tx_driver;
-> >  
-> > +void mtk_atomic_state_put_queue(struct drm_atomic_state *state);
-> > +
-> >  #endif /* MTK_DRM_DRV_H */
-> > -- 
-> > 2.18.0
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCAyNiBOb3YgMjAxOSBhdCAxNDowOSwgS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6a0Br
+ZXJuZWwub3JnPiB3cm90ZToKPgo+IE9uIFR1ZSwgMjYgTm92IDIwMTkgYXQgMDk6MTQsIEh5dW5r
+aSBLb28gPGh5dW5raTAwLmtvb0BzYW1zdW5nLmNvbT4gd3JvdGU6Cj4gPgo+ID4gT24gVGh1LCAy
+MSBOb3YgMjAxOSBhdCAxNjozOCwgS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3Jn
+PiB3cm90ZToKPiA+ID4gSGksCj4gPiA+Cj4gPiA+IFRoYW5rcyBmb3IgdGhlIHBhdGNoLiBGZXcg
+Y29tbWVudHMgYmVsb3c6Cj4gPiA+Cj4gPiA+IE9uIFRodSwgMjEgTm92IDIwMTkgYXQgMTU6MjYs
+IOq1rO2YhOq4sCA8aHl1bmtpMDAua29vQHNhbXN1bmcuY29tPiB3cm90ZToKPiA+ID4+Cj4gPiA+
+PiBFbmFibGUgc2Ftc3VuZyBwaW5jdHJsIGRyaXZlciB0byBiZSBjb21waWxlZCBhcyBtb2R1bGVz
+Lgo+ID4gPgo+ID4gPiBXaHk/IFdoYXQncyB0aGUgYmVuZWZpdD8gQXJlIHBsYXRmb3JtcyBjYXBh
+YmxlIG9mIHN1Y2ggYm9vdD8gUGluY3RybCBpcyBuZWVkZWQgZWFybHkgLSBldmVuIGJlZm9yZSBt
+b3VudGluZyByb290ZnMuLi4KPiA+ID4gV2hhdCBhYm91dCBtb2R1bGUgdW5sb2FkaW5nPyBJcyBp
+dCByZWFzb25hYmxlPwo+ID4gPiBQbGVhc2UgYW5zd2VyIHRvIGFsbCB0aGlzIGFsc28gaW4gY29t
+bWl0IG1lc3NhZ2UuCj4gPiA+Cj4gPgo+ID4gU29ycnkgdG8gbGF0ZSBhbmQgVGhhbmsgeW91IGZv
+ciB5b3VyIGNvbW1lbnQsIEkgd291bGQgbGlrZSB0byBhcHBseSBHS0kgb24gdGhlIHBpbmN0cmwg
+ZHJpdmVyCj4gPiBTbyBJIHdvdWxkIGxpa2UgdG8gY3V0IG9mZiBkZXBlbmRlbmN5IGZyb20gQVJD
+SF9FWFlOT1MuCj4KPiBUaGlzIGlzIGRyaXZlciBmb3IgRXh5bm9zIGFuZCBTM0Mgc28gd2h5IGN1
+dHRpbmcgb2ZmIHRoZSBkZXBlbmRlbmN5PyBJCj4gbWVhbiwgd2FpdCwgaXQgaXMgYSBkcml2ZXIg
+Zm9yIEV4eW5vcyBzbyBpdCBjYW5ub3Qgd29yayBvbiBvdGhlcgo+IGJvYXJkcy4uLgoKT25lIG1v
+cmUgdGhvdWdodCBhYm91dCBHZW5lcmljIEtlcm5lbCBJbWFnZSBmb3IgQW5kcm9pZC4gSXQgaW1w
+bGllcwp0aGF0IHZlbmRvciBzdHVmZiB3aWxsIGJlIGluIG1vZHVsZXMuLi4gYnV0IG9ubHkgZm9y
+IG91dC1vZi10cmVlIGNvZGUuClRoZSBFeHlub3MgcGluY3RybCBkcml2ZXIgaXMgYWxyZWFkeSBp
+biBtYWlubGluZSBzbyBtb3ZpbmcgaXQgaW50bwptb2R1bGUgaXMgbm90IG5lY2Vzc2FyeS4KCkFz
+IGZvciBkZXBlbmRlbmN5IG9uIEFSQ0hfRVhZTk9TIC0gSSBkbyBub3QgZ2V0IHdoeSB0aGlzIGlz
+IGEgcHJvYmxlbS4KQVJDSF9FWFlOT1MgaXMgbXVsdGlwbGF0Zm9ybSByZWFkeSBzbyB5b3UgY2Fu
+IGJvb3QgbXVsdGlfdjcuLi4gV2hhdAp3b3VsZCBiZSB0aGUgYmVuZWZpdCBvZiByZW1vdmluZyB0
+aGlzIGRlcGVuZGVuY3k/CgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
