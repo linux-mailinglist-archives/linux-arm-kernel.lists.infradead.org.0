@@ -2,55 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9D1610AF60
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 13:10:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53E3110AF67
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 13:14:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XSSdNe9c9AgTMTspfNvg5phH3Jg+6Cdf8BynZNq2Esk=; b=hB9bU/6yW306ZP
-	KA2y3PqIvBMFSJhyBMiglf5E+43URpO8LQtFJJgAhl8l36WB0vvHwH3ZK2AFiQxE7E2TgcDfMVENz
-	EDcH/1WTQ2Rzm4yvmCKPGO6JIu3VMdSjeiU+mIEUsdGNFIRuEOiRe8Mw4dEYmpmRQ/x5uem39dWdQ
-	E2kqyBGvSI+LVdNn+kzzDMIzTXt0iwVsa+C0Vy+bp/MQUCC0HgWrgkr+BtYv1/uT0q9dr5a5elneG
-	yGxVnjwyMCvv2ZCS0LNQ6uIQjATni2W2kg5MG/JRs2GuJp14gix6iQ46o+VmNpy1tApnRo0zp4lrb
-	zpgbdPSieGGX745OoZcg==;
+	List-Owner; bh=Y7rEOSHVSs2HnGJwiEYuthE/iyewbNAeEVKE673gbV8=; b=J2M6hpJzcaj6fE
+	1buVAlLsr5X6t6S72F1DCpjt7oY3LdIx214uUR8HmjipxhH7OsqAxonhfYBxPwPR2nGpWMAMSDi1h
+	hjChMKKv12vIJbTzDQgTOWDI5oEkqEQJBj7kHQTZFo9UYWxJVvRnv0xCgBxM70EewZHHVOvwzVI2J
+	KU+aInRmeUiJA3Eiv4074OAxTGSAXkPY11XMPK6ZhR3kIUn5DUziFapzDKei+rvk7M4TnbId71DOi
+	4Q7ETMxC/Mb7JkCYTH278CRc8r48Ed58XJ2+9yose0E+52VrA1oXgd7eyCAm9BrgAEJIF/ke5QJGY
+	t7L6L6umDitvYseR7fww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZw9Y-0002MQ-VK; Wed, 27 Nov 2019 12:10:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZw9O-0002LU-3B
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 12:10:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C48DF30E;
- Wed, 27 Nov 2019 04:10:28 -0800 (PST)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 54C553F6C4;
- Wed, 27 Nov 2019 04:10:27 -0800 (PST)
-Date: Wed, 27 Nov 2019 12:10:25 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
+	id 1iZwD2-0002px-OX; Wed, 27 Nov 2019 12:14:16 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iZwCs-0002pC-VU
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 12:14:09 +0000
+Received: by mail-pf1-x442.google.com with SMTP id y206so2282417pfb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 Nov 2019 04:14:05 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=7BbLhqWTTG2Etn1jUokhvCpbFC9M+0mSaR7SHkjHB38=;
+ b=MJV43KtfU5dh6w6aXoZKp8+WYygfis1sjvm07Kl9Wd2wNneinEn9vQZrPavzQrE2CW
+ An4nyqIzxlGj2Uo04rQvD5QQ8E2bKZvL3K7REcobBBGj+ZIeP45pAwN51u05YbYjMYpI
+ k0cJPlotmo9gi6yJxu6kZX7dwVfqaZoZ0xos/iPV1VMqs84HRBSw0mfakGzaZU7YJjT7
+ /enzk9H6qXC02B3XolxZ9hyB0j/3AKfz03WOdPpltou7SEkO3bdeCatGXYnCp3Nml1f+
+ Px8qwJrGFvmCqWMZvTF+k1Vcxj8wZf+r6TJgOp3FB3DagUvJWrOycjBoRDKl7DkFqDGF
+ PtXQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=7BbLhqWTTG2Etn1jUokhvCpbFC9M+0mSaR7SHkjHB38=;
+ b=mYo3rP5UPrg4axqDcZfakFaVUPWCxK0c6HO160xmWSuZHYWTvW3T8Po1SGSAQB9v0g
+ bwzTfEZFJDaeQWRlFk2s/aTW6mUvPs0WXXaLwBYXg8kii78rtfpQo3z6RRWEN3m80/qa
+ 8ZMTFuKtRUSYCTs6VCO5gzttKVyQljCNPzrcAzwFX2M+ZsaZNJFURTzntsX0V5vxYxxh
+ wU9ipx1kZlxe1+/a6Sr2idyUvfxSMpYNLzLv0bii50EsZukPEoZrI3+3NiioA5yVAhbr
+ jtFa8gKUaRnCljuuwc8QyrrBPMiqoPfkVrcLrXjUZPvRC5jsT9syBygaw04JHwINZb9p
+ PWlw==
+X-Gm-Message-State: APjAAAWpuD0fS13nrL1FaiFI2KQ9fbsQtDguTRadySgO0y82WFdd1ztT
+ odNG7qKjpGE+EdntQ6N0/QBlUg==
+X-Google-Smtp-Source: APXvYqwzOguWLwbfuOMSUTEFzH0IEWbfLeEU8s4GwdBdvUFeC/cQe/AC6XVbhE9JsWqq2Fvg6hcDAw==
+X-Received: by 2002:a62:2a4c:: with SMTP id q73mr46113496pfq.94.1574856844848; 
+ Wed, 27 Nov 2019 04:14:04 -0800 (PST)
+Received: from localhost ([122.171.112.123])
+ by smtp.gmail.com with ESMTPSA id z10sm16126812pgg.39.2019.11.27.04.14.03
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 27 Nov 2019 04:14:04 -0800 (PST)
+Date: Wed, 27 Nov 2019 17:44:02 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Sudeep Holla <sudeep.holla@arm.com>
 Subject: Re: [PATCH] cpufreq: vexpress-spc: Fix wrong alternation of
  policy->related_cpus during CPU hp
-Message-ID: <20191127121025.GD29301@bogus>
+Message-ID: <20191127121402.vd3tul4gmqm6qtyb@vireshk-i7>
 References: <20191127114801.23837-1-dietmar.eggemann@arm.com>
- <20191127120744.iivgw25nixovfj7i@vireshk-i7>
+ <20191127120816.GC29301@bogus>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191127120744.iivgw25nixovfj7i@vireshk-i7>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20191127120816.GC29301@bogus>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_041030_189076_7075C643 
-X-CRM114-Status: GOOD (  19.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191127_041407_030217_9F3BF7FB 
+X-CRM114-Status: GOOD (  19.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,15 +102,15 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pm@vger.kernel.org,
  "Rafael J . Wysocki" <rjw@rjwysocki.net>, Liviu Dudau <liviu.dudau@arm.com>,
  linux-kernel@vger.kernel.org, Morten Rasmussen <morten.rasmussen@arm.com>,
- linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org,
  Dietmar Eggemann <dietmar.eggemann@arm.com>, Lukasz Luba <lukasz.luba@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 27, 2019 at 05:37:44PM +0530, Viresh Kumar wrote:
-> On 27-11-19, 12:48, Dietmar Eggemann wrote:
+On 27-11-19, 12:08, Sudeep Holla wrote:
+> On Wed, Nov 27, 2019 at 12:48:01PM +0100, Dietmar Eggemann wrote:
 > > Since commit ca74b316df96 ("arm: Use common cpu_topology structure and
 > > functions.") the core cpumask has to be modified during cpu hotplug
 > > operations.
@@ -97,31 +134,30 @@ On Wed, Nov 27, 2019 at 05:37:44PM +0530, Viresh Kumar wrote:
 > > driver function is called during CPU hotplug in so that
 > > policy->related_cpus will not be changed.
 > >
-> > Implementing an online() also requires an offline() callback.
-> >
-> > Tested on TC2 with CPU hp stress test (CPU hp from multiple CPUs at
-> > the same time).
-> >
-> > [1]
-> > https://lore.kernel.org/r/20191127103353.12417-1-dietmar.eggemann@arm.com
-> >
-> > Signed-off-by: Dietmar Eggemann <dietmar.eggemann@arm.com>
->
-> Wanna provide any fixes tag ?
->
-> > ---
-> >  drivers/cpufreq/vexpress-spc-cpufreq.c | 12 ++++++++++++
-> >  1 file changed, 12 insertions(+)
->
-> This is 5.5 material or 5.6 ?
->
+> 
+> Unlike DT based drivers, it not easy to get the fixed cpumask unless we
+> add some mechanism to extract it based on clks/OPP added. I prefer
+> this simple solution instead.
 
-v5.5 for sure, broken even on v5.4 but unless someone really cares for
-stable on TC2, I am happy to skip it.
+I will call this a work-around for the problem and not really the
+solution, though I won't necessarily oppose it. There are cases which
+will break even with this solution.
 
---
-Regards,
-Sudeep
+- Boot board with cpufreq driver as module.
+- Offline all CPUs except CPU0.
+- insert cpufreq driver.
+- online all CPUs.
+
+Now there is no guarantee that the last online will get the mask
+properly, if I have understood the problem well :)
+
+But yeah, who does this kind of messy work anyway :)
+
+FWIW, we need a proper way (may be from architecture code) to find
+list of all CPUs that share clock line.
+
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
