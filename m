@@ -2,50 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F41E10B2F0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 17:06:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D063F10B2F8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 17:09:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8gbDblhj1m4ZSpTlz4/P3DHF1Nb+HlHmmowfyFakqi4=; b=Lu+ZlewqoADvHq
-	7aCyEuvPFYc180YHiTj2uqkH04zULNlOy9Vhkj2D1OAPJ0tb+DGXxlgPPcXOyjCdJ+alImvTabAFo
-	UEfMwqEEGwu3YEdaDyKFHG3XK1tmSZwIx2dntG/A3vYkydRsU2hXRpXxost65Tz7Lg9EcGb8Iym5X
-	CoPgwkGkfnHKhKcdoKmgWs26CP4mtDoqU1o5niNoQljrhxupPcelLXJYhlxf4mrajS6USk+kVS3OB
-	C7VRFLX6m7t6j+OikTiKKOUQWIWVorr8wBkRDLMwrTzAsXJ6qmB4IXXjvbJVmYE2EoMG1QoBo/Y57
-	POZi0u3f9yCb4BBZZwVA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QRVQZe93jX+lvoZVCrz3yT7kcqOpzR87d8ygLZ9ZNRY=; b=sXmgc+JcjABBV6
+	Reh1lfMaMTOR+NONaXCgpHoAAT7elgnw4RIX3qFl8B+t8CBX/tf3xBRUcXrDp/KKujbfQgNyVFtXG
+	76DYjqoqkZZNHllBJYh9JBdmQEtuwx+e5M48TvzqrGMGhtRn8ZKEAlLmfwJvqpSJm+jDJbRnTiXN/
+	nBumODsSh5wMzj9mJf4hj6hksOACXk6NJuon1CDqMu4SAH+/4WyMUpw8ZXZxLgm7rIiBYB9L+DEDJ
+	AzFLreX4fZxqjizB6tP+r9yf51OWbTTn7fx/R2S3W+AQ5WTrd3HN6dxm844JANLB+4//RS8+pt6ek
+	9UnhnhSi9Ae2QZQeEo8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZzq0-0004YJ-VW; Wed, 27 Nov 2019 16:06:44 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZzpr-0004Xi-RF
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 16:06:37 +0000
-Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 56AC38102;
- Wed, 27 Nov 2019 16:07:11 +0000 (UTC)
-From: Tony Lindgren <tony@atomide.com>
-To: soc@kernel.org
-Subject: [GIT PULL] few omap dts fixes for v5.5 merge window
-Date: Wed, 27 Nov 2019 08:06:27 -0800
-Message-Id: <pull-1574870758-237468@atomide.com>
-X-Mailer: git-send-email 2.24.0
+	id 1iZzt8-0004zP-2y; Wed, 27 Nov 2019 16:09:58 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iZzsy-0004yf-JI
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 16:09:50 +0000
+Received: by mail-ed1-x541.google.com with SMTP id s10so20118816edi.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 Nov 2019 08:09:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=MVh7tTi5rObsII1vRb5KH/Kj99TQG5j4kV172FFYaNU=;
+ b=gbR63fcLJRi/WLgkSC3biBeSS5ksFa+SgBNncFI/dtnu6JomxUFkEypKo6Hde4vGot
+ YLEamBKO3NHi3MEiQhVD1VJ4Zd4YNbkgRwzuK3F+qQo35SAO10ZOP94oMfC6WY6/Wh/U
+ 0eKrxx18EfmCr04w4Gqxt2XGo46PBzhuFnQsl2l2UcZ/0xLjG/PGnelMJoYElJM5pyp4
+ tvt0Np+1js8hOTW2NFTqQaugebPGC6rxkL/ADeoJv7eyygV5BDFyATPfvj8v+A0BWw7r
+ Kp3ix1Ofv6QK+yQq/Zlr0cnpeMqh8iDM9Y9JJ5A/IMywhztDuC2O6mUHpjN7w2VaAD6S
+ qlHA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MVh7tTi5rObsII1vRb5KH/Kj99TQG5j4kV172FFYaNU=;
+ b=bREVDujs0w+xb+3T2X/EE6SrDxD9RFk0tdG0lv2B5E2cOf5Uw5kJfvHeVnqddFxTUH
+ EN7uXQOknbZGqmetj669kG51OhmJs2svY6/9BwbCKTHStaSfz8lRUaHVax4+hlP88fNj
+ 838rQPwNGJ5UHOrwDTKhB26jKsndIWtF9Z5z0pA9aY6fNCF1DfDLiw5EOkjlqFcy2anF
+ 3pudYuytue3tzSTRQbgjnCVc6sKulPUaeRSMXmIksjhfFFAUxKw2mgBa5JMr1FRZtk3O
+ tBKDNO+JbGh6xKR/rmfkEQYA92ci5ZAy9XmElmu0ntmzgc1Ha5zTYBbnGlnQ4wYanjIN
+ pE2g==
+X-Gm-Message-State: APjAAAXm7YYMsKGhOeQLiYWpn3xp9SjVTewyB5KMJ/PQxCd+Aemdh/cF
+ VpApAPHboOD2v/vY+DCmbecLlQXe0dtk8/Bx3nJSJg==
+X-Google-Smtp-Source: APXvYqyGvrGVufQv8/trojtgiiYMTMZNR892vMYV853ZwD/Xo8IVHZPoSX4tMMrkndkbkHl7S1A5sUcM3uaSQGcM8Lo=
+X-Received: by 2002:a50:9e22:: with SMTP id z31mr7697426ede.258.1574870986619; 
+ Wed, 27 Nov 2019 08:09:46 -0800 (PST)
 MIME-Version: 1.0
+References: <20191122022406.590141-1-pasha.tatashin@soleen.com>
+ <20191122022406.590141-4-pasha.tatashin@soleen.com>
+ <20191127151154.GC51937@lakrids.cambridge.arm.com>
+ <CA+CK2bDDom_pwLC-ABwDw66ynyELH3f3NdjUEdhr1LYLkgWJvg@mail.gmail.com>
+ <20191127160342.GF51937@lakrids.cambridge.arm.com>
+In-Reply-To: <20191127160342.GF51937@lakrids.cambridge.arm.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Wed, 27 Nov 2019 11:09:35 -0500
+Message-ID: <CA+CK2bBszdMYbneQ1UiYxSndN8zmoVwbTVJ20NeajYPehT_X5Q@mail.gmail.com>
+Subject: Re: [PATCH v2 3/3] arm64: remove the rest of asm-uaccess.h
+To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_080635_921250_A28DC17D 
-X-CRM114-Status: UNSURE (   9.88  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191127_080948_637921_FD770F2D 
+X-CRM114-Status: GOOD (  18.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,74 +94,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org,
- arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Stefan Agner <stefan@agner.ch>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, Will Deacon <will@kernel.org>,
+ boris.ostrovsky@oracle.com, Sasha Levin <sashal@kernel.org>,
+ Stefano Stabellini <sstabellini@kernel.org>, James Morris <jmorris@namei.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ xen-devel@lists.xenproject.org, Vladimir Murzin <vladimir.murzin@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, alexios.zavras@intel.com,
+ Thomas Gleixner <tglx@linutronix.de>, allison@lohutok.net, jgross@suse.com,
+ steve.capper@arm.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
+ info@metux.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Tony Lindgren" <tony@atomide.com>
+On Wed, Nov 27, 2019 at 11:03 AM Mark Rutland <mark.rutland@arm.com> wrote:
+>
+> On Wed, Nov 27, 2019 at 10:31:54AM -0500, Pavel Tatashin wrote:
+> > On Wed, Nov 27, 2019 at 10:12 AM Mark Rutland <mark.rutland@arm.com> wrote:
+> > >
+> > > On Thu, Nov 21, 2019 at 09:24:06PM -0500, Pavel Tatashin wrote:
+> > > > The __uaccess_ttbr0_disable and __uaccess_ttbr0_enable,
+> > > > are the last two macros defined in asm-uaccess.h.
+> > > >
+> > > > Replace them with C wrappers and call C functions from
+> > > > kernel_entry and kernel_exit.
+> > >
+> > > For now, please leave those as-is.
+> > >
+> > > I don't think we want to have out-of-line C wrappers in the middle of
+> > > the entry assembly where we don't have a complete kernel environment.
+> > > The use in entry code can also assume non-preemptibility, while the C
+> > > functions have to explcitily disable that.
+> >
+> > I do not understand, if C function is called form non-preemptible
+> > context it stays non-preemptible. kernel_exit already may call C
+> > functions around the time __uaccess_ttbr0_enable is called (it may
+> > call post_ttbr_update_workaround), and that C functions does not do
+> > explicit preempt disable:
+>
+> Sorry, I meant that IRQs are disabled here.
+>
+> The C wrapper calls __uaccess_ttbr0_enable(), which calls
+> local_irq_save() and local_irq_restore(). Those are pointless in the
+> bowels of the entry code, and potentially expensive if IRQ prio masking
+> is in use.
+>
+> I'd rather not add more out-of-line C code calls here right now as I'd
+> prefer to factor out the logic to C in a better way.
 
-The following changes since commit abb0e36b434d784864fe0e4d5dedd17f4d72f3e3:
+Ah, yes, this makes sense. I could certainly factor out C calls in a
+better way, or is this something you want to work on?
 
-  ARM: dts: logicpd-torpedo: Disable USB Host (2019-11-11 13:03:06 -0800)
+Without removing these assembly macros I do not think we want to
+address this suggestion from Kees Cook:
+https://lore.kernel.org/lkml/CA+CK2bCBS2fKOTmTFm13iv3u5TBPwpoCsYeeP352DVE-gs9GJw@mail.gmail.com/
 
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.5/dt-fixes-merge-window-signed
-
-for you to fetch changes up to 3e5c3c41ae925458150273e2f74ffbf999530c5f:
-
-  ARM: dts: Fix sgx sysconfig register for omap4 (2019-11-25 07:40:01 -0800)
-
-----------------------------------------------------------------
-Device tree fixes for omap variants for for v5.5 merge window
-
-This series of changes contains fixes for few SoC and board specific
-issues that would be good to have merged for v5.5-rc1:
-
-- Fix incorrect MMC card detection polarity for omap3-tao3530
-
-- Fix wrong am57xx-beagle-x15 pinmux named states for eMMC
-
-- Fix dra7 cpsw mdio clock that causes wrong speed
-
-- Fix vcsi for droid4 so it won't get turned off after init
-
-- Fix rev and sysconfig register offsets for omap4 sgx so it can idle
-
-Then there are also two minor late changes to logicpd-torpedo-baseboard
-to configure 1-wire HDQ for battery stats, and remove out of date
-workaround comments no longer needed.
-
-----------------------------------------------------------------
-Adam Ford (2):
-      ARM: dts: logicpd-torpedo-baseboard:  Enable HDQ
-      ARM: dts: logicpd-torpedo: Remove unnecessary notes/comments
-
-Faiz Abbas (1):
-      ARM: dts: am57xx-beagle-x15: Update pinmux name to ddr_3_3v
-
-Grygorii Strashko (1):
-      ARM: dts: dra7: fix cpsw mdio fck clock
-
-Jarkko Nikula (1):
-      ARM: dts: omap3-tao3530: Fix incorrect MMC card detection GPIO polarity
-
-Tony Lindgren (2):
-      ARM: dts: Fix vcsi regulator to be always-on for droid4 to prevent hangs
-      ARM: dts: Fix sgx sysconfig register for omap4
-
- arch/arm/boot/dts/am57xx-beagle-x15-revb1.dts        |  2 +-
- arch/arm/boot/dts/am57xx-beagle-x15-revc.dts         |  2 +-
- arch/arm/boot/dts/dra7-l4.dtsi                       |  2 +-
- arch/arm/boot/dts/logicpd-torpedo-37xx-devkit-28.dts |  1 -
- arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi     | 13 ++++++++++++-
- arch/arm/boot/dts/motorola-cpcap-mapphone.dtsi       |  4 ++--
- arch/arm/boot/dts/omap3-tao3530.dtsi                 |  2 +-
- arch/arm/boot/dts/omap4.dtsi                         |  4 ++--
- 8 files changed, 20 insertions(+), 10 deletions(-)
+Thank you,
+Pasha
 
 _______________________________________________
 linux-arm-kernel mailing list
