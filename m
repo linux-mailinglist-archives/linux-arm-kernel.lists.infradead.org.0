@@ -2,88 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4369110B760
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 21:24:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD87C10B7E5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 21:38:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UNIok3tI+0jbT5nkemWbHv1NgWyPtFZnwGZvqRITuNw=; b=ZasQgcYN9GHlU8
-	6i5NtyKi7SDwDabClfaoAc6fWVu5Rgkx564G0oZf9c+OyKCI0wZxqwpJi9djyO0fJRixE1gfdZLJc
-	fcJNpFNhTbThUbhkQ8P8VGG6208hLevEbnhSguKyuWddTFE38DFZ/OiuvFKW8l76fBIwOjOCJyasR
-	f1BLDICUzrQeRO58012sutBT0/HPkJY3Q1kqnvYRutiDb0+SPHMX0SJvsGm+Na/yc1EWAsG1r1kCh
-	JNFnO/Cwl2gUc7NKUQLK016KjJjH8Lp3Wvw3PcyrQH1WFTof9dExwzkMy3QxhD1DR8Sv2pyp27VhA
-	EYVwMmo4njzvxtVeyZ7g==;
+	List-Owner; bh=7yyZUBfCkfnh4LTOMGg+Jagl9OK+uldyK4Fr4bIcovc=; b=qiVbu7DEQA/kDl
+	ygcW0eIjfcpYdsYD0/xQ5y6sXFveadID80qt3iGF/cb8OzSdlb1ObFpOC4AQY9k58WKMfpOl/F8IY
+	AlElt9JvfwshobHOLC3t1Tf2j4E04Em95vJkrAJS7sG2j5Xnywn+ZivuSXYfD/Xip/7yQAibKwyf/
+	sp4ZTTenyCpi2MbkUtpjqEsWkY3lQ58ZJ3timsj3RCdKZvhTSb63RQ+WRkkq7K0sqCpCAnfpJVNiW
+	MOha0KY8UoW7nlscIeysx4/AfDGJY45qatYfQBa3vWxChlUtLTZJIqkbZtTwZD3eYOEqBKhTE4wnn
+	6WY8IVims3CSnky1Ifvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia3rQ-0007Hx-Vk; Wed, 27 Nov 2019 20:24:28 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1ia44i-00052n-Sg; Wed, 27 Nov 2019 20:38:12 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia3rH-0007HV-OP
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 20:24:21 +0000
-Received: by mail-ot1-x343.google.com with SMTP id z25so20264769oti.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 Nov 2019 12:24:19 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=MixxgPNvg3pUnry2JzNoXYx2kY3tKkdeMgXAkzkyNYs=;
- b=Q8xCo+ZbqsfjOgoXWTnHWNvKIjvPEEcwP+yXEBzmj2ekJJlDCBa94VFtCAGp2f+bzq
- elQN5VZ0Q6MrI3M85kFAM7EcRpIT6dOyhTlaodtLBSugf0KJru8davD/6imekZuJmkNx
- PKcyk5pw+9Yw45suj7kCI5epoouGLLTi0kYP0fey25mulV3BNtcIR6WKxFwJiFpSvh39
- r+fZZtaHTh8Vqg56FBTN6g91jdzGaHCpToEq7ANGcvTUaONmosJTjEnzZ0amMb7T/Dfh
- 2sMqDroQQ4rqoAnUrp4pRzTkVcUnPo3MZ6ZYkFQ/jv9nMvj+GO/NOi53qfubSe832egJ
- s8hw==
+ id 1ia44Y-00051Q-RJ; Wed, 27 Nov 2019 20:38:04 +0000
+Received: by mail-ot1-f68.google.com with SMTP id w11so20335705ote.1;
+ Wed, 27 Nov 2019 12:37:59 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=MixxgPNvg3pUnry2JzNoXYx2kY3tKkdeMgXAkzkyNYs=;
- b=d38Fw47aMu4/nP5OvEn0C0pv28N35vEnp8djkRRbimdZNaZ8jYdITEn2EG34GbUt/4
- ObporFw1HMiUUxYIqzFtNs21buoUHiqTIuvvBlyyVCXBGXrmzx15mipvOKz0EdwPj+DA
- UG+0y5Btrr6mEtZxXLw0wM65/iGQou3tgYB5kj7UBOqLGExjClr9tj4g8+EgKFxdON9c
- kH3FvSiZe0eJT1gdh7eX3wHh1+jyJBU5FMv+PLmYotB8k05RMKvCKMd16cBc31YlbKth
- wUuK7MYtZMt+BI69XMFowHHkP5ouK4S8ADwxrInbcBKtAu42uo90krXC0v64Xc411FXw
- KQeg==
-X-Gm-Message-State: APjAAAUUqzldPa98PziyB6Aa5ObKLiUOmLJDvR8XMsbufTF8tfyyFfjz
- AX6O4G88kWZyKMEE5m1ccmuyrpGe+wNLAhJjSpg=
-X-Google-Smtp-Source: APXvYqzQ//Ez72MjlZ6tnpozQgzvE/hhO0Vn1XVq9GxyZPcPEL2qouYxRSGFV+mE8Gods9QDh7e/ODo46N4kJh7VLCE=
-X-Received: by 2002:a9d:6acf:: with SMTP id m15mr5155723otq.312.1574886258682; 
- Wed, 27 Nov 2019 12:24:18 -0800 (PST)
+ bh=14vyCpwlco5dNMekZ671HzsQ/qD/jZMl32Sz5ULoC/U=;
+ b=TbtDokcVXJefsEWMvSaPzEh5dIurBybvR0zu9LHr6h97ze16YLVDTrniApvEHX06bu
+ o8q2SjPfXxkcJ73egrrskyTQmQidaOmFymWFwAkswfexeNUUNsiY4X8VVBvTZAUPthSx
+ Vr2J4heSrCrGcb9rWOGO7KIMPAcTr5bpG7cZy97P2ql3dlkuUfNY2KAsWwm7FM2Ys439
+ lVe9Ne+MSmsg9hzAWISygWYfiGR/DnIW6EtGRxJHQGj90On1447mNZysvgDHQM4+LyOR
+ 2WWyBF+Daq5/bJRNS9o509EJDWU7zKjDn/uS2Mx8oFBzSlOscPo22RooaQjLYzgKJtEP
+ BMUQ==
+X-Gm-Message-State: APjAAAVbBPxsG0cWg6QsyelVd31pUSkx0Hp7utOslIEF5TYMr6zbv7Dc
+ igc1HLekxy+YvLfGy3Mt4twQA/550CYg44kzG+I=
+X-Google-Smtp-Source: APXvYqyekyFnyyTzxDAaVF4lh76x3pVg0AJcETDtG/R5UDB8kyib7ugeAakdgVvr7ZJMAAkTJwIUv0P5kqimosEUmPw=
+X-Received: by 2002:a9d:2073:: with SMTP id n106mr5117337ota.145.1574887078997; 
+ Wed, 27 Nov 2019 12:37:58 -0800 (PST)
 MIME-Version: 1.0
-References: <20191127052935.1719897-1-anarsoul@gmail.com>
- <20191127052935.1719897-3-anarsoul@gmail.com>
- <20191127174434.wousbqosmm5vxcsu@gilmour.lan>
-In-Reply-To: <20191127174434.wousbqosmm5vxcsu@gilmour.lan>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Wed, 27 Nov 2019 12:23:53 -0800
-Message-ID: <CA+E=qVe22T1uhUo6iq9a82Y9bC014CZSkAtSJJNX4qsn6dJL9w@mail.gmail.com>
-Subject: Re: [PATCH v6 2/7] dt-bindings: thermal: add YAML schema for
- sun8i-thermal driver bindings
-To: Maxime Ripard <mripard@kernel.org>
+References: <cover.1574871463.git.nishadkamdar@gmail.com>
+ <5a7ed2e4b58ba7ff2f0638a2435a3a1e1c62c9f6.1574871463.git.nishadkamdar@gmail.com>
+In-Reply-To: <5a7ed2e4b58ba7ff2f0638a2435a3a1e1c62c9f6.1574871463.git.nishadkamdar@gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 27 Nov 2019 21:37:47 +0100
+Message-ID: <CAMuHMdUqfRioTBV27AKx9zv9YuSqEod6x+A4aguf=h20TDXr6w@mail.gmail.com>
+Subject: Re: [PATCH 4/5] pinctrl: sh-pfc: Use the correct style for SPDX
+ License Identifier
+To: Nishad Kamdar <nishadkamdar@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_122419_823310_484F28F7 
-X-CRM114-Status: GOOD (  22.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191127_123802_882710_FFC7754A 
+X-CRM114-Status: GOOD (  14.32  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,200 +82,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Linux PM <linux-pm@vger.kernel.org>, Yangtao Li <tiny.windzz@gmail.com>,
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Eduardo Valentin <edubezval@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>,
- =?UTF-8?Q?Ond=C5=99ej_Jirman?= <megous@megous.com>,
- "David S. Miller" <davem@davemloft.net>,
- arm-linux <linux-arm-kernel@lists.infradead.org>
+ Kevin Hilman <khilman@baylibre.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Sean Wang <sean.wang@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Joe Perches <joe@perches.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ linux-mediatek@lists.infradead.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 27, 2019 at 9:44 AM Maxime Ripard <mripard@kernel.org> wrote:
->
-> Hi,
->
-> On Tue, Nov 26, 2019 at 09:29:30PM -0800, Vasily Khoruzhick wrote:
-> > From: Yangtao Li <tiny.windzz@gmail.com>
-> >
-> > sun8i-thermal driver supports thermal sensor in wide range of Allwinner
-> > SoCs. Add YAML schema for its bindings.
-> >
-> > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> > Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
-> > ---
-> >  .../thermal/allwinner,sun8i-a83t-ths.yaml     | 103 ++++++++++++++++++
-> >  1 file changed, 103 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/thermal/allwinner,sun8i-a83t-ths.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/thermal/allwinner,sun8i-a83t-ths.yaml b/Documentation/devicetree/bindings/thermal/allwinner,sun8i-a83t-ths.yaml
-> > new file mode 100644
-> > index 000000000000..e622f0a4be90
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/thermal/allwinner,sun8i-a83t-ths.yaml
-> > @@ -0,0 +1,103 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/thermal/allwinner,sun8i-a83t-ths.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Allwinner SUN8I Thermal Controller Device Tree Bindings
-> > +
-> > +maintainers:
-> > +  - Yangtao Li <tiny.windzz@gmail.com>
-> > +
-> > +properties:
-> > +  compatible:
-> > +    oneOf:
-> > +      - const: allwinner,sun8i-a83t-ths
-> > +      - const: allwinner,sun8i-h3-ths
-> > +      - const: allwinner,sun8i-r40-ths
-> > +      - const: allwinner,sun50i-a64-ths
-> > +      - const: allwinner,sun50i-h5-ths
-> > +      - const: allwinner,sun50i-h6-ths
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  interrupts:
-> > +    maxItems: 1
-> > +
-> > +  resets:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    minItems: 1
-> > +    maxItems: 2
-> > +
-> > +  clock-names:
-> > +    anyOf:
-> > +      - items:
-> > +        - const: bus
-> > +        - const: mod
-> > +      - items:
-> > +        - const: bus
->
-> This can be:
->
-> clock-names:
->   minItems: 1
->   maxItems: 2
->   items:
->     - const: bus
->     - const: mod
->
-> And the length should be checked based on the compatible value, with
-> something like
->
-> if:
->   properties:
->     compatible:
->       contains:
->         const: allwinner,sun50i-h6-ths
->
-> then:
->   properties:
->     clocks:
->       maxItems: 1
->
->     clock-names:
->       maxItems: 1
->
-> else:
->   properties:
->     clocks:
->       maxItems: 2
->
->     clock-names:
->       maxItems: 2
+Hi Nishad,
 
-OK, will do
+On Wed, Nov 27, 2019 at 5:46 PM Nishad Kamdar <nishadkamdar@gmail.com> wrote:
+> This patch corrects the SPDX License Identifier style in
+> header files related to Reneses Soc pinctrl driver.
+> It assigns explicit block comment for the SPDX License Identifier.
 
-> > +
-> > +  '#thermal-sensor-cells':
-> > +    enum: [ 0, 1 ]
-> > +    description: |
-> > +      Definition depends on soc version:
-> > +
-> > +      For "allwinner,sun8i-h3-ths",
-> > +      value must be 0.
-> > +      For all other compatibles
-> > +      value must be 1.
+Is it incorrect to not have an explicit block comment?
+Other recommendations have been to integrate the SPDX comment line
+into an existing comment header, if it exists....
+
+> Changes made by using a script provided by Joe Perches here:
+> https://lkml.org/lkml/2019/2/7/46.
 >
-> This should be checked using an if as well.
-
-Will do.
-
-> > +
-> > +  nvmem-cells:
-> > +    maxItems: 1
-> > +    items:
-> > +      - description: Calibration data for thermal sensors
+> Suggested-by: Joe Perches <joe@perches.com>
+> Signed-off-by: Nishad Kamdar <nishadkamdar@gmail.com>
+> ---
+>  drivers/pinctrl/sh-pfc/core.h   | 4 ++--
+>  drivers/pinctrl/sh-pfc/sh_pfc.h | 4 ++--
+>  2 files changed, 4 insertions(+), 4 deletions(-)
 >
-> You can drop the items and just move the description up one level,
-> under nvmem-cells
+> diff --git a/drivers/pinctrl/sh-pfc/core.h b/drivers/pinctrl/sh-pfc/core.h
+> index b5b1d163e98a..5ad0ab8f9e14 100644
+> --- a/drivers/pinctrl/sh-pfc/core.h
+> +++ b/drivers/pinctrl/sh-pfc/core.h
+> @@ -1,5 +1,5 @@
+> -/* SPDX-License-Identifier: GPL-2.0
+> - *
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+>   * SuperH Pin Function Controller support.
+>   *
+>   * Copyright (C) 2012  Renesas Solutions Corp.
+> diff --git a/drivers/pinctrl/sh-pfc/sh_pfc.h b/drivers/pinctrl/sh-pfc/sh_pfc.h
+> index 640d2a4cb838..fff9cbb7a0f8 100644
+> --- a/drivers/pinctrl/sh-pfc/sh_pfc.h
+> +++ b/drivers/pinctrl/sh-pfc/sh_pfc.h
+> @@ -1,5 +1,5 @@
+> -/* SPDX-License-Identifier: GPL-2.0
+> - *
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+>   * SuperH Pin Function Controller Support
+>   *
+>   * Copyright (c) 2008 Magnus Damm
 
-Will do.
+Gr{oetje,eeting}s,
 
-> > +
-> > +  nvmem-cell-names:
-> > +    items:
-> > +      - const: calibration
->
-> Ditto for the const
+                        Geert
 
-Sorry, I don't quite get it. What exactly do you want me to do with
-this one? nvmem-cell-names must be "calibration"
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - interrupts
-> > +  - '#thermal-sensor-cells'
->
-> Whether clocks, clock-names and resets are thereshould be check using
-> an if statement as well.
-
-Will do
-
-> > +
-> > +examples:
-> > +  - |
-> > +    ths_a83t: ths@1f04000 {
->
-> You don't need the label at all, and the node name should be
-> temperature-sensor according to the DT spec, not ths. This applies to
-> all you examples.
-
-OK
-
-> > +         compatible = "allwinner,sun8i-a83t-ths";
-> > +         reg = <0x01f04000 0x100>;
-> > +         interrupts = <0 31 0>;
-> > +         nvmem-cells = <&ths_calibration>;
-> > +         nvmem-cell-names = "calibration";
-> > +         #thermal-sensor-cells = <1>;
-> > +    };
->
-> New line.
-
-OK
-
->
-> Thanks!
-> Maxime
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
