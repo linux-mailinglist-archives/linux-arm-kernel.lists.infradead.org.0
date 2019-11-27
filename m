@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D5DA10B0B5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 14:59:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5016D10B0C6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 15:00:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S8f1kbV40KMlIV5ga2HrZRaIwkws1Zh+BpaiDGlxgtU=; b=Tv61Ma6PZXYJjr
-	1aZIGB5rTV3H3OPYgX4+mXLq3RwVg30U/pLfR+YYljqN6mLBD1CDi5v3N2YTLUlMd2TDumxvZC3JK
-	RCkYWVkEsJUEqQl7PSVuxe5VnoHJMEBeSkTrRXEVPf1f2fhEw66MUWyRaKGwZ7TsSy2gui3xKd2pe
-	nXk2jgbYDtPdt8oyJ5IB+ymQ8Lea2gqbe6NTXs5ncYgY3EvZW6inGdsMzG1ETyO6D+Ng2JC5NIEP1
-	6AV1aoAMv2gNPuIyV+TQe6kh+dXMOERsAT6IgUTF8pOG36DsrRkWjkzJd8UZNrSMWDmeKNTvINKWu
-	y7l2Bgd5VR8P4Ge9Ntmw==;
+	List-Owner; bh=j2C0+nyXHq4G/dRQMuHvKSfVUJ4fl9xnUHqxNwF32xs=; b=BQVrTpXsoD30ok
+	Nzjrra+hEcmGhDDIE2t4WfrwMaHdXF20yT9zzpm5RlAjuVw28Tt7lg8GY91kpASrZwO1NVsODZSil
+	coalFBJLfpmGY14ELtv+ye7SIMiiQD9I1uAylI/eB4QpJAL6NUWjRkAbNZIYU71fxa7AyNy4M4mlj
+	9wEei121npTsFvZQtivF3RQqn9XaxyuJtmWj8PF08LY6/j/4YpSp6NongSOXYcYdi410iT2F2QInI
+	BLu5hx33rRyjK5RGpRAjnnR4Iy0c5wOcErSBEBgPvRjw03tg7ctzXXJ1gv0k3gjHGfZ8TmpxxXbmb
+	Qcz1vCa7qM52On6eg1aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZxqc-00068p-02; Wed, 27 Nov 2019 13:59:14 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1iZxrs-0006c1-Ft; Wed, 27 Nov 2019 14:00:32 +0000
+Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZxqS-000683-DN
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 13:59:05 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id m9so15246974vsq.7
+ id 1iZxrf-0006S6-KQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 14:00:21 +0000
+Received: by mail-vk1-xa41.google.com with SMTP id m128so3847098vkb.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 Nov 2019 05:59:02 -0800 (PST)
+ Wed, 27 Nov 2019 06:00:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gAq++vOmWlGE0rfhdloa1GAF3bf8ceEKuBq/5jw6JRM=;
- b=autV2GM15bvqwiA+NNcmk4/aTXU/HSFEF/5su4++BbyqM9TTPEl160Dl4aSSi4PSHx
- 7dEzEqyacVs+yewRvnBZ83UHqscNkWGpzMcJWLLLi+QCkk1xhjhnBlxejNfHU/qVmTuj
- T8igdSS/tZRj5c7YLCT4H6AYMtIaHIBwPBfL+kI7kHRiUmSNwFnRVIFTZRS1Wyt1h3R3
- cyqBUvI2GSXDWeDlgidAaqloDquB80gWY3CD6nCyEEBi1JxlLSFZcsLD22SLWLifDTD2
- +z7R1ny87pHoyTM6Q6jqCBqMtdOrTs+pljEMTkDmflCfHXKg6KEMU4pBGfyFDHpkZxXz
- MSgA==
+ :cc; bh=Xv0agzTrWmCHWWQdEdnjrauxL6G7A6I1j0PhE1Au3GA=;
+ b=SMS3LbaEfWEtk84MXTU1uY5sFT4i44DeL2NZO367/zZdh7MGxJwvobTxGQZIvkXmjt
+ HKCivkes+H/swMNZxbygP2FDC6U+xHFyiW05trlZU1cniHBIu60/1Ik96HlX/dL/RH27
+ Le3sp14Ldq4KMTRYJNQKVZZLhHUiDylCzNRBnESSO4lHsd3c3knyPh7TClIcSdxRGZX1
+ N9HCa83BV9qLZHtXkGgqq469wsJeY0mdHM1TCf7UcvPhCkxgZCa2pK1yweCcAZjj4KNw
+ +qE41yWCXXY+Ue6T0MSwV/Eb6ZcRLspo3Jlp4dxp5mBSEWDYthXsphbE+mMoG36oY64I
+ RW8Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=gAq++vOmWlGE0rfhdloa1GAF3bf8ceEKuBq/5jw6JRM=;
- b=UYJvTJ4I4Tk13KG5rAYb6d+aDY0JfqKtgiCEc96Y8/NRyFlKQR9IJR7m7Z52zbeMSx
- oXPCfkhyUwNTUhBp+SUwRJC/6RziY/g/c70liGoM4SjV04FWlqmdO6iIfmEhoa6cVwQS
- XHM3vCI0f/KV07IklzXsretygbWV0r2HtvNn3Pebv5aFehEvDz1q5sb7UouFxVAkhfFJ
- Qmi/e6Hu2iWJcI6QzTpU0Tr3qEImt73IZ4bJ4zG6rb+53j6J3Xkp6HufT7ybMX4uvmO3
- Hx8SX9SeP9xhtgFUztCGpg72r/Oe9LGXrF/JQyqdUjNaJXLO+smhS5WmVLltYIT4ILrb
- TXng==
-X-Gm-Message-State: APjAAAW+ruKQ3IW6Qx3tfVqMMXrIhVkdqHIjN0iQNV3vonN34vuSIDTM
- gjPO7uRHjGxauIfxOf0vCvdStpiDxHF8sYj4F5QKhA==
-X-Google-Smtp-Source: APXvYqyf8H0dROBB9bvOXaLHvIe1OfTnJRLDLNL9AnIDcuNOVVLHNLEtVlUz2d1I4D3NhQ2ISu26ZnJQDRyo/JcRIiU=
-X-Received: by 2002:a67:88c8:: with SMTP id k191mr3366250vsd.86.1574863141682; 
- Wed, 27 Nov 2019 05:59:01 -0800 (PST)
+ bh=Xv0agzTrWmCHWWQdEdnjrauxL6G7A6I1j0PhE1Au3GA=;
+ b=nyHokYr2AiZ1EM/i5dyG/h0JMbamofoATLcs2Tpo5glyj6JnEQgyo0MibwTBBgPQeB
+ 9OCYxkYknPi+NFuswzltOxST4zQkLXdHJ8pstZ9bNiKCp9Ll12dktsV3lfecLtnfDq1n
+ +jZw2FavcOl89Io8JZYD8lfPBzcsPP2+2FOkGH9BwCsM2m2qTB0c4KSHmszbxn+h7w41
+ G7j+FWinslwSCvRX333pMb/6gY5HQOXNc7jYsGL+bwVuqjKYp8WT9ls0QqNaTHqnSt2H
+ oqDNI2V3vxRMUKpDEs5QWZLIyMHzuDmVlL8HKevqbOyHbxvfjd830ne7+eG8cCaJ99ej
+ wXFg==
+X-Gm-Message-State: APjAAAWf/WL5ozKUjgW1QnBue87dLIWWnlM7rcLK+Ukdg0qmM2S43q5Q
+ v7TKk7NLXR/p1IXVrYwQdtfiSGZ2+0G7P4UWkfxxfw==
+X-Google-Smtp-Source: APXvYqy2z1ESn19JzZsxw2MQg1P7KKVZTecOuQKJc1YhRGnEfvelj4LBPw5SELJgHKFj9GZ2pB9Vdn4PruN7+IvV/3w=
+X-Received: by 2002:a1f:cf43:: with SMTP id f64mr2942105vkg.18.1574863217253; 
+ Wed, 27 Nov 2019 06:00:17 -0800 (PST)
 MIME-Version: 1.0
-References: <20191124195728.32226-1-stephan@gerhold.net>
-In-Reply-To: <20191124195728.32226-1-stephan@gerhold.net>
+References: <20191124205110.48031-1-stephan@gerhold.net>
+In-Reply-To: <20191124205110.48031-1-stephan@gerhold.net>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 27 Nov 2019 14:58:50 +0100
-Message-ID: <CACRpkdagXoVamNGj6hQ-0YQAoDpwTVOY8uUCVB8wwsXY9aQj4A@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: ux500: Add "simple-bus" compatible to soc node
+Date: Wed, 27 Nov 2019 15:00:06 +0100
+Message-ID: <CACRpkdYnR3jYtrEWyKf=fi2c1Mvype9FeiKKmoLjK+1R73iVBQ@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: ux500: Use "arm,pl031" compatible for PL031
 To: Stephan Gerhold <stephan@gerhold.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_055904_482267_3588A159 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20191127_060019_687289_8F40C7CC 
+X-CRM114-Status: GOOD (  11.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,16 +100,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Nov 24, 2019 at 8:58 PM Stephan Gerhold <stephan@gerhold.net> wrote:
+On Sun, Nov 24, 2019 at 9:52 PM Stephan Gerhold <stephan@gerhold.net> wrote:
 
-> The "soc" node in the Ux500 device tree does not need any special
-> handling - it is just a simple I/O bus that can be accessed without
-> additional configuration.
+> The Ux500 device tree uses "arm,rtc-pl031" as compatible for PL031.
+> All other boards in Linux describe it using "arm,pl031" instead.
+> This works because the compatible is not actually used in Linux:
+> AMBA devices get probed based on "arm,primecell" and their peripheral ID.
 >
-> Therefore we can additionally describe it as compatible with "simple-bus".
-> This can be used by platforms to probe devices under the soc node without
-> special handling for our custom "stericsson,db8500" compatible
-> (e.g. in U-Boot).
+> Nevertheless, some other projects (e.g. U-Boot) rely on the compatible
+> to probe the device with the correct driver. Those will look for
+> "arm,pl031" instead of "arm,rtc-pl031", preventing the RTC from being
+> probed.
+>
+> Change it to "arm,pl031" to match all other boards.
 >
 > Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
 
