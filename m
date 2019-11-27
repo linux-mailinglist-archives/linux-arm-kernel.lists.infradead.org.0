@@ -2,70 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7777610B46A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 18:27:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CBF510B472
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 18:29:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zKOAJs8D1fAqctkvEXMqLI6zgh0Uk3B+rfGDgrfw3PI=; b=NWjHN9vS3S39El
-	EUwCrV/MA/gcDV1lCG0y1hC6QvdEBC5MEWhebD3d5tPKvojMFyeuQw1sp3nIF5ZKKsQ7yuHEt4G0H
-	w9Jy+cygpojfGPmBb5g5SK8CCoe/1fDnCLYgklnBMCl+xQUTKNm4R0S8gu1JNPFOnloBStrI/mPMM
-	UYWzoYD+BgkRDp8T4MG0R6aNNMFOSq1DtXD3UjCa2fvTLaP8Sz/4ySgRs230CdM1qPnlhFILspNmn
-	oabLcAI0JqLnJyHRHGPTEivNKjFB1mWS63C/R0Xc5Urs20+mDBpSKlE6pssy7dTM8+glqHRVMHMYU
-	4wBDpbAbS5KwM+UZm+oQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=R9wJMe2rwvMH0og4yE5r/lm3oYHj6+nSuxYJUcuL4hM=; b=tBPUuw/2iNbd3eGMZANwprV1l
+	kYssg8X2moC7kk+Y8urZGyc1QsvwfkBkdoG0KACeNCBNRIA3bjLx2IIxLctFLZczu5G6Tetf9hlAW
+	Ns44yD1unIa5y5bFAGV5Lyglhy/qOj+os7D4pnGgE7p51MWj/jHfddKiTW9QXCX8N52WPHLRiV711
+	9mUIVUj5xqAYGSi9QJFoMt9H67LHb0Vp/AOio5PKberKMCf4qvLit88EQ0OuImFXYQ/l8QsSgC5on
+	TuC68KCIKOE7xsASRvxGSHM/Nh933hoFcjT3mvzj/0qyAugu+yWfbVcqfMovNePLggS5X3DapK1PT
+	qxhRRNjRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia16P-0002sh-O9; Wed, 27 Nov 2019 17:27:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ia17T-00039x-6I; Wed, 27 Nov 2019 17:28:51 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia16G-0002s5-FF
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 17:27:37 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0690E20684;
- Wed, 27 Nov 2019 17:27:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574875655;
- bh=ByMqMjORvr1UlWAYYDkMyxfvBy+o3EuQgE3OMZXqSEQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2AIH2IH/uPxLpJz3SDjwC/o0aCYNhuQfHG5cvFiEgalqTLyWXggWEwYIgLXxB+9BM
- A2TIRW1oN8Rag6Xq/2OVFN4vMk/Vuq6zj3BU94NY+NccQpJWbVrb1oza+Q3zTSb7p7
- vgOfKS83SpKTZ10fMN6mdV2l5TZjWsOZL2etF+3Q=
-Date: Wed, 27 Nov 2019 18:27:31 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH v6 1/7] thermal: sun8i: add thermal driver for
- H6/H5/H3/A64/A83T/R40
-Message-ID: <20191127172731.mwmo3zctn7pi6mmp@gilmour.lan>
-References: <20191127052935.1719897-1-anarsoul@gmail.com>
- <20191127052935.1719897-2-anarsoul@gmail.com>
+ id 1ia17J-00039F-6k; Wed, 27 Nov 2019 17:28:42 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 25895AF22;
+ Wed, 27 Nov 2019 17:28:39 +0000 (UTC)
+Message-ID: <eccd6a23d8dbc577058c538fa4ef79ba376cd04a.camel@suse.de>
+Subject: Re: [PATCH v3 0/7] Raspberry Pi 4 PCIe support
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Bjorn Helgaas <helgaas@kernel.org>
+Date: Wed, 27 Nov 2019 18:28:35 +0100
+In-Reply-To: <20191126215020.GA191414@google.com>
+References: <20191126215020.GA191414@google.com>
+User-Agent: Evolution 3.34.1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191127052935.1719897-2-anarsoul@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_092736_542224_2E689975 
-X-CRM114-Status: GOOD (  11.36  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191127_092841_391782_BB6D9087 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,43 +59,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Amit Kucheria <amit.kucheria@verdurent.com>, linux-pm@vger.kernel.org,
- Yangtao Li <tiny.windzz@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Eduardo Valentin <edubezval@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>,
- =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, f.fainelli@gmail.com,
+ linux-rockchip@lists.infradead.org, linux-rdma@vger.kernel.org, maz@kernel.org,
+ phil@raspberrypi.org, linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
+ mbrugger@suse.com, bcm-kernel-feedback-list@broadcom.com, wahrenst@gmx.net,
+ james.quinlan@broadcom.com, linux-pci@vger.kernel.org, andrew.murray@arm.com,
+ Robin Murphy <robin.murphy@arm.com>, netdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8452974568876223862=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
 
-Thanks for sending a new version of this!
+--===============8452974568876223862==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-LD8Ga7xd6xkOxp2WErAx"
 
-On Tue, Nov 26, 2019 at 09:29:29PM -0800, Vasily Khoruzhick wrote:
-> From: Yangtao Li <tiny.windzz@gmail.com>
->
-> This patch adds the support for allwinner thermal sensor, within
-> allwinner SoC. It will register sensors for thermal framework
-> and use device tree to bind cooling device.
->
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 
-Acked-by: Maxime Ripard <mripard@kernel.org>
+--=-LD8Ga7xd6xkOxp2WErAx
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-Thanks!
-Maxime
+Hi Bjorn,
+
+On Tue, 2019-11-26 at 15:50 -0600, Bjorn Helgaas wrote:
+> On Tue, Nov 26, 2019 at 10:19:38AM +0100, Nicolas Saenz Julienne wrote:
+> > This series aims at providing support for Raspberry Pi 4's PCIe
+> > controller, which is also shared with the Broadcom STB family of
+> > devices.
+> > Jim Quinlan (3):
+> >   dt-bindings: PCI: Add bindings for brcmstb's PCIe device
+> >   PCI: brcmstb: add Broadcom STB PCIe host controller driver
+> >   PCI: brcmstb: add MSI capability
+>=20
+> Please update these subjects to match the others, i.e., capitalize
+> "Add".  Also, I think "Add MSI capability" really means "Add support
+> for MSI ..."; in PCIe terms the "MSI Capability" is a structure in
+> config space and it's there whether the OS supports it or not.
+>=20
+> No need to repost just for this.
+
+Noted, I'll update them.
+
+Regards,
+Nicolas
+
+
+--=-LD8Ga7xd6xkOxp2WErAx
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3eskMACgkQlfZmHno8
+x/60Swf/Rwz7o3DibuLSdZZBrCQ9sK0AToOIKPKSSquZNgW7MKr1ByJjnNAS9/4r
+9N3namc6tZJcCE7C+QKKVcikyMR0ENUSovq0hrCA6WCiUipefFyD22H/WEtsWvHf
+1QcGifBBN6mjLDS1DSnBTPiDAVqWm5w1celUlauXFZAZc5YQftSwRQRVkZui2q9H
+aljeQuVsPZ+CfdOFgqo1xlwJvk+BbfDIxgQ+cg4du/tS3enlrrMspevtkEw/awv9
+aZl62mLNRTUPlsHW07akov+GIKROrknLnBTqiCKLg0Ei7J3dTo3Su/wzSyZQw7H4
+hOq7QZ/9Qezc3LUiCtuauS3v8a6ang==
+=dKU6
+-----END PGP SIGNATURE-----
+
+--=-LD8Ga7xd6xkOxp2WErAx--
+
+
+
+--===============8452974568876223862==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8452974568876223862==--
+
+
