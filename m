@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BF4610AA35
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 06:31:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E42E110AA36
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 Nov 2019 06:31:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A4UqANpPKeW2Paylgzz1lnBAl+yvY40N2LDedU18ihY=; b=nL/Q4atoo0kWlz
-	MBg4/oAuCKLWMYjc/bd0mSW46CAPbUDidv8S4oFHUYHzM2N9JFGCJ5ZgnDtzhcBkbXin1XU0lTT16
-	Npyz0JizRiGmkayxXDXOqZIKj5yEZ6DpFDG8B87Mbc3r3UYoJIZktxuV3vuFlFMShxaAuJV9XWpQy
-	7k+W1KD7j2Q4SImgYb7XygFqPbuJDR/zk3RzW5JLAdF4vuAzyHGBb5Tm8dUMNoelLHsYO8D6hiMv8
-	mxkRenS7GOS+fAGoLeFk0vC3qtykVc9IW+iMye5Y5mvT7n+AOhSz2Oqnxc9h+vQxWteim/AGnV+SP
-	dB0mE9TvgsOqwqcs/UvQ==;
+	List-Owner; bh=bKlRJEH2LkwblWUnwS1/KtpdYuQwadtDT4uL+Ih1zX0=; b=f8i0v5Khz6FFDR
+	ofktrESA34hJh6j60LFv84pqb3AHZ5BKg9TKBwVk8yDr1DD884H+hF8E2faQhpDHXJwdn1ebT/FYX
+	IWY5CT7dOsmDHzwp0pspmixUKn7bJkokepP3UrIpgweTlUgvY7ZEf98HfM+5rLaASbXP5Quvq22oU
+	aD436WUYuIpeeNA0SC5nnE89FDj0wxAGVI/1vmjy7cAFjKJoTSWnKnApjwzcy3AOd3dK8R0GpcoYJ
+	K9NWNx7FHw/CaCr8uW7w+BK5+iIRdvIMY2HE55PynVG1LRuCzHkOfeYShGihJLPFJKCG8Cys+4yW1
+	nJBSmiN4baAqZKO040cA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZpuf-00029C-Qr; Wed, 27 Nov 2019 05:30:53 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iZpum-0002RN-S4; Wed, 27 Nov 2019 05:31:00 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZptu-00015C-82
- for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 05:30:09 +0000
-Received: by mail-pf1-x444.google.com with SMTP id b19so10394987pfd.3
+ id 1iZptu-0001Ae-K5
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 Nov 2019 05:30:10 +0000
+Received: by mail-pg1-x542.google.com with SMTP id k1so10181580pgg.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 Nov 2019 21:30:05 -0800 (PST)
+ Tue, 26 Nov 2019 21:30:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=irJ5JXDAAWtDIqC+IX6BV3MY5DktCoDeX+ljdjsD0XI=;
- b=mhEmJx9hcwu5d1h9HTaGxnILMXdc/7kSoKUUBfqVL0r1k5OXwgnv8wBTxtEFm7Osky
- BFg1rZoQso8y0b6302pp7BaU6+l+veKvr2d2k2iM9ye60J0mT9tzXyyvA0jRbtNO2KzX
- lOq5tGLsjneCg9GQMW/nq6V5gV7PSiMxUD0S2YbTNYlq5pZ+mCIMmN+GQPRZdXawACG0
- St975uAtwxmbBvx8FfOv9jB0VDJXxkgm+CeqXCFg+Klenk6sTyMuIFK/ADzAwSy0H6bG
- CFgWgJacIFBmfjca5oLZD5f4LJyyKsjICugTWvcXlMJPGHkJ33kkPALH0jtrNDtwIcPz
- YEpQ==
+ bh=vhMu4ADnQOnOcJ6BIbNumeV+R111igTahrNXaoaT2bg=;
+ b=JI9vifZO/hlNlsVdVbkQAosj4wct0Y/Ey9lvPG25NoShcDsu71L11PV96pOoMZL980
+ 5OITy+OqvSpfCMS4dHDjs+M9mEvAXpC1wPk0vzK5SAaM6xGy2F32057VuoCjH5P0Mz5I
+ ksBf/dHPnPYiBp+jVZIbJmg4T7Zr0L6frm4tgTZYPA8/Vjnhg/Lif+jKoCRmIpVec24Z
+ 3nRW0I5i/LWRo5q9smCmOtu9ecJtC0384AvF8Fa+hGl43nnexUQHchB5yX3mvbZS9Ope
+ U6ptKcW6pV6EGCxhP/yzZs150YOd+LEMO6ovqiDy1R75y2l6o8Jw8oWjT2MA1Im1z1b8
+ XYLQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=irJ5JXDAAWtDIqC+IX6BV3MY5DktCoDeX+ljdjsD0XI=;
- b=EpuMekr3YY0eEaBTUiXvBvluXVRN0mJRuQ6cD6BxAFFon8bRh+yIRQXJXmEvO2iMtO
- tdXLSWG/k4mUSpSTlmsFX9/mFiheHcB2GbuI3kPiANdD0nwhzYW4FDbodOaZJbIHdRB0
- qC90Lgb/x2UKeBuYM064kmAYCTrFCiP3VTkKH6WXHqI5Y2RL9IyiWjNcNhqH03VhaUON
- 5wZV9TS3dVAnJ1cZiV5MVjyZu1vtcaMIm+CtBaqkHgC9Q3Alg1wiwStB0iOW5ZCri3aY
- kcfyBUuyLTuuHboCHdN4L9yvDwJ7RGiGLjm2W6j0WtWvMiA59Cf27CyJKZVnq57zAyLT
- R3Ng==
-X-Gm-Message-State: APjAAAUisp2clQ4gyM7nxuqlMbKC6TgDcNkOm27Jk7rjIGlrAkm5q+YZ
- N5AIiNBTbbREUsKmvQLVjqbiek0wC30=
-X-Google-Smtp-Source: APXvYqz8sVivaA2EbLiosDrKvBFKz+ssRSlkYw2TUmhAhOCKERRFiVZSgC2YBw7AstdoX0IbBoWQPg==
-X-Received: by 2002:a63:2b51:: with SMTP id r78mr2801429pgr.4.1574832605006;
+ bh=vhMu4ADnQOnOcJ6BIbNumeV+R111igTahrNXaoaT2bg=;
+ b=EM3eU6U0Mz5utHOfDeoZB/8aQeXG+Aspjo5m2xshOF9RlnIinS5IXWFuS1zOLHpWER
+ YqAB4K7GbYJ33S4iUDGtCQaFUlaDhiFTU2qC0Ffp/MyxXRgO7t3rDXXfs4BAcRCFC0Xd
+ dVy+Qf1kqD8J+1hlcVtfBnUivbCH5r5fVTvmBi7uYhg6LGjy/tnTqleV9EgZAnII8rvg
+ A7E8DxRmREg8Q/DPF13Skx6xWjgIH+WxMQ3yfqqChjrCjka36p5DkEuAuZFHL1TGlb3v
+ U2UjQE5OzpqalGrStfiGtmW8tM9j5j1IolTB61FSK+T1Uv0ZxSL93qK/VHpoUPESFxma
+ RSLQ==
+X-Gm-Message-State: APjAAAXWDX1Jhhcr84729b3i6aCIZIC+TKy5MZAU4ZvfGnzafob3IrGO
+ NVeTuq0ppwPKpgw87Jlr/kg=
+X-Google-Smtp-Source: APXvYqzVeWRQSqkKyH0MFBGH6b0eZNxA9y0WDKi5fRr/9ehuoyu+hi9MIjxq+m8LFWvRCkkg2Ut39Q==
+X-Received: by 2002:a62:b40b:: with SMTP id h11mr44293621pfn.57.1574832605993; 
  Tue, 26 Nov 2019 21:30:05 -0800 (PST)
 Received: from anarsoul-thinkpad.lan (216-71-213-236.dyn.novuscom.net.
  [216.71.213.236])
- by smtp.gmail.com with ESMTPSA id p38sm4360825pjp.27.2019.11.26.21.30.04
+ by smtp.gmail.com with ESMTPSA id p38sm4360825pjp.27.2019.11.26.21.30.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 Nov 2019 21:30:04 -0800 (PST)
+ Tue, 26 Nov 2019 21:30:05 -0800 (PST)
 From: Vasily Khoruzhick <anarsoul@gmail.com>
 To: Yangtao Li <tiny.windzz@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
  Eduardo Valentin <edubezval@gmail.com>,
@@ -70,24 +70,24 @@ To: Yangtao Li <tiny.windzz@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  =?UTF-8?q?Ond=C5=99ej=20Jirman?= <megous@megous.com>,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v6 3/7] ARM: dts: sun8i-a83t: Add thermal sensor and thermal
+Subject: [PATCH v6 4/7] ARM: dts: sun8i-h3: Add thermal sensor and thermal
  zones
-Date: Tue, 26 Nov 2019 21:29:31 -0800
-Message-Id: <20191127052935.1719897-4-anarsoul@gmail.com>
+Date: Tue, 26 Nov 2019 21:29:32 -0800
+Message-Id: <20191127052935.1719897-5-anarsoul@gmail.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191127052935.1719897-1-anarsoul@gmail.com>
 References: <20191127052935.1719897-1-anarsoul@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_213006_336063_C6CBF673 
-X-CRM114-Status: GOOD (  12.09  )
+X-CRM114-CacheID: sfid-20191126_213006_773033_D9983DA7 
+X-CRM114-Status: GOOD (  11.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (anarsoul[at]gmail.com)
@@ -118,73 +118,55 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-There are three sensors, two for each CPU cluster, one for GPU.
+There is just one sensor for the CPU.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 ---
- arch/arm/boot/dts/sun8i-a83t.dtsi | 36 +++++++++++++++++++++++++++++++
- 1 file changed, 36 insertions(+)
+ arch/arm/boot/dts/sun8i-h3.dtsi | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sun8i-a83t.dtsi b/arch/arm/boot/dts/sun8i-a83t.dtsi
-index 74bb053cf23c..902fee8be688 100644
---- a/arch/arm/boot/dts/sun8i-a83t.dtsi
-+++ b/arch/arm/boot/dts/sun8i-a83t.dtsi
-@@ -50,6 +50,7 @@
- #include <dt-bindings/reset/sun8i-a83t-ccu.h>
- #include <dt-bindings/reset/sun8i-de2.h>
- #include <dt-bindings/reset/sun8i-r-ccu.h>
-+#include <dt-bindings/thermal/thermal.h>
- 
- / {
- 	interrupt-parent = <&gic>;
-@@ -581,6 +582,12 @@
- 		sid: eeprom@1c14000 {
- 			compatible = "allwinner,sun8i-a83t-sid";
- 			reg = <0x1c14000 0x400>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			ths_calibration: thermal-sensor-calibration@34 {
-+				reg = <0x34 8>;
-+			};
- 		};
- 
- 		usb_otg: usb@1c19000 {
-@@ -1156,5 +1163,34 @@
- 			#address-cells = <1>;
- 			#size-cells = <0>;
+diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
+index e37c30e811d3..42fd0418d678 100644
+--- a/arch/arm/boot/dts/sun8i-h3.dtsi
++++ b/arch/arm/boot/dts/sun8i-h3.dtsi
+@@ -177,6 +177,26 @@
+ 			assigned-clocks = <&ccu CLK_GPU>;
+ 			assigned-clock-rates = <384000000>;
  		};
 +
-+		ths: ths@1f04000 {
-+			compatible = "allwinner,sun8i-a83t-ths";
-+			reg = <0x01f04000 0x100>;
-+			interrupts = <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
++		ths: ths@1c25000 {
++			compatible = "allwinner,sun8i-h3-ths";
++			reg = <0x01c25000 0x400>;
++			interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
++			resets = <&ccu RST_BUS_THS>;
++			clocks = <&ccu CLK_BUS_THS>, <&ccu CLK_THS>;
++			clock-names = "bus", "mod";
 +			nvmem-cells = <&ths_calibration>;
 +			nvmem-cell-names = "calibration";
-+			#thermal-sensor-cells = <1>;
++			#thermal-sensor-cells = <0>;
 +		};
 +	};
 +
 +	thermal-zones {
-+		cpu0_thermal: cpu0-thermal {
++		cpu_thermal: cpu-thermal {
 +			polling-delay-passive = <0>;
 +			polling-delay = <0>;
 +			thermal-sensors = <&ths 0>;
 +		};
-+
-+		cpu1_thermal: cpu1-thermal {
-+			polling-delay-passive = <0>;
-+			polling-delay = <0>;
-+			thermal-sensors = <&ths 1>;
-+		};
-+
-+		gpu_thermal: gpu-thermal {
-+			polling-delay-passive = <0>;
-+			polling-delay = <0>;
-+			thermal-sensors = <&ths 2>;
-+		};
  	};
+ };
+ 
+@@ -234,4 +254,10 @@
+ 
+ &sid {
+ 	compatible = "allwinner,sun8i-h3-sid";
++	#address-cells = <1>;
++	#size-cells = <1>;
++
++	ths_calibration: thermal-sensor-calibration@34 {
++		reg = <0x34 4>;
++	};
  };
 -- 
 2.24.0
