@@ -2,88 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB92E10CA73
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 15:36:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 582B510CA70
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 15:35:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8gqFmpPoREfK6DyMpYuA+x5dJlZ0tCBd/R5TXpw1ZEI=; b=RoDjrHvX7LX+Fh
-	hT3OdmYyjBMP+xvXjdb2oq5yoTunA0DZMnla2iGVuLFUd4+IhCGi3U5aRJTP3LBk1niuDKq/E1PUe
-	dcFIReJCfRjUv8xE0UowGQXVSFIcWsNk/TcDc2LRxmqmRfVYfnoVM+xrB3InyzBjTeSG3dxBP/NG6
-	QWipENIHr+29DS1p30te/Esgm2hTCK0qtxCeG3zVtrWKHNQouH0/z1XlpAgrT4EnCy0tvmn/1mkhk
-	FKG9wZAEkop30LjrXVAkf3ebrDDE/4rUz6h1t6kEugYzoDwNdwnhNr0tn0tx2WBk/NliPvG8HOz+m
-	l95l+Pc4iSbJQbeIlkTA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:
+	Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=eT4iLmgNnvqTPadhvqgwsNvrDwyhYkcV1s7J9eXgECY=; b=sPXwAfRvhsMgxVsmo/jUwmptd
+	L22ZGnil7ikp6klfbHAO66OfqKA252e9IScue72I6oGWnmo9keUd266YoBWcJ2fV4cOnnrC3aWBCs
+	/9qmoRMSdAi2u/gf1ii02AP0HGpHjOoWsn4N8cWilOlnb3NuqENVy0mSui1da4uW4qq0NdHRxVupY
+	Cg3agtsLFDH0sewJzCIM9+IABjGuM/DM8abBYVLjkh5ERNdKyL0gB7p6jezgEk7PRMtDG8KgEDgfe
+	2x879Tml9K8mKdIDFSGwzg5cJ6tDkfZuLSahnie7r8Q6YkJVwNpVMGycqjRvBfYdVX7knDJBj4NYB
+	TAhCPvDlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaKu5-0008QL-SU; Thu, 28 Nov 2019 14:36:21 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iaKta-000845-Ig; Thu, 28 Nov 2019 14:35:50 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaKtp-0008Pc-7x
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:36:07 +0000
-Received: by mail-wm1-x342.google.com with SMTP id l17so11234677wmh.0
+ id 1iaKtP-00083g-IJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:35:41 +0000
+Received: by mail-io1-xd42.google.com with SMTP id l17so2961112ioj.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 06:36:04 -0800 (PST)
+ Thu, 28 Nov 2019 06:35:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=RKiEZcP/L0A2rXbC8H4X5BIo7afN1A6dEGoky6fB7+8=;
- b=RhXR0ZeX7CH630cBBVDoTbDoIg+bfQnEe2e5PKJaG+yclednb5kM9Y8Eng7aDWJBHD
- FU+5IR6gwHueelOoVC5PQ9vj7rTsr6WVwO/xezZKm9KcUrDbc3Y5NXad2IRnlpsxCcqK
- Gss6Um5uf+b8l7ectAJJFFZnmILUBtHFPQkOue+8KkSReFVzzVWOau+8x2QV2jTKpVYL
- nyzYgq5pEwhmLshnmQ3nFu6lftJ7Biw967BKpgd1OE56aukGAWt0nMdm00/+wDERZqc3
- DmGmmlALK+fd77in10AzgYAaYH6EW0ZfplukAUtqjF0UMXZX/qOaWtJlVTN1gUV6QRfJ
- 6q0A==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ys0oMorfIi7C824w1iSly86fym9t4iyqfpjSyuy5/k0=;
+ b=PioA0zCk+Zd1n1my8PwKcIy9bGLuGHvxzfRo+ZfAPyjeRq+t7owhwcYEMQIPTfrnqv
+ EU+zFJ8MD/b9LESDZxyRZl+lq98TXlmoP3C/l3/7Yx/44I0GRpe1LHLi9k4z7UBseA4w
+ Z4JmUD/WHtxFKrZ7HTsYtdtODVh1WugT0FZSoZyLM+RRL2sb5U1K8ZCuY70/n8frH34T
+ N96cyOTf9JtCSEs6/uFNKga29ug5uOeOLvweU8aY2N2RzHXeKaESO32IKOpwhaKWuhr5
+ MPyi3LMKkp2CfBjZH1Q70UelnV1rkoMhfNqfa2K8ERWEORXWWR4uYwVK/esOZq7LFZil
+ kiNg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=RKiEZcP/L0A2rXbC8H4X5BIo7afN1A6dEGoky6fB7+8=;
- b=ZOUH4Yl8lcZLLYYcx0Xyb8Azf/FBe2rrI9Dm46CA9UhMzJN0f2irKdTHrwjg7yOzBv
- FKdoA9c9uDJnOwz9ajpxHlILTsLUDqZE+EjI9f/mlNvkOfEG0UBb39eNQRACmIKZU/Hk
- luSUi3b/9+K3u4zPWaQWEawIdVJ9C4SB46Bz6UwKpfdcbuLM/mTIWVY0GvnlM4atkiZU
- kMt9HFhfcejUTaB3daE6C2Xayqjr+bDaJg32hylwlqlaUPVGKos6bs1Vj5PdTSL3xkSQ
- FsJCttd3YzQ470J3xndSZqsmO3R8KcmKd0yWVdWHol70Mya+aOOtrZKZrsQF60EkMKuc
- Sxgw==
-X-Gm-Message-State: APjAAAXgZgRUWlnyzThkv8MnuWSQwAVGHmuOS+Dml0xDvUYtZGl3Ig/i
- DFx+/KgUIwEc6caGixA3oZA=
-X-Google-Smtp-Source: APXvYqz92pJeCW/D9VAvn7Uh3kFxNyM3AMWtDGRKPIpvVxERBR51hrNagMQf2h4L/AmqzwtIH2/3AA==
-X-Received: by 2002:a7b:c95a:: with SMTP id i26mr10220347wml.41.1574951763538; 
- Thu, 28 Nov 2019 06:36:03 -0800 (PST)
-Received: from localhost ([193.47.161.132])
- by smtp.gmail.com with ESMTPSA id m15sm23751006wrj.52.2019.11.28.06.36.02
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 28 Nov 2019 06:36:02 -0800 (PST)
-Date: Thu, 28 Nov 2019 13:16:44 +0100
-From: Oliver Graute <oliver.graute@gmail.com>
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Subject: Re: [PATCH] arm64: defconfig: Change CONFIG_AT803X_PHY from m to y
-Message-ID: <20191128121644.GD2460@optiplex>
-References: <20191127124638.GC5108@optiplex>
- <1ed54a69-c29f-6008-02ae-11d16f68b265@free.fr>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ys0oMorfIi7C824w1iSly86fym9t4iyqfpjSyuy5/k0=;
+ b=siVYYbx0QlhC+PtO8PFat5PQd2qzWzs9cwKsNOMW/mCPrq4eiWelsJK5EOWUs7Sw85
+ +12TLQoV5hf3yIckWSN5BH/nYP1Wp5wfzgSXy/2k7S6+TaDIaa21iIv4eoVTjhtETBsd
+ RltP0d7WOwqyEr4MA7wSnTZJmYcguzwktrr9wK79Koy0fQFUwbJEJbdYxcKZm+SDYqo2
+ /8Zh3pfnrs9prJyI0BN84rCiciHx4ici2IOaF0JfAeJT6+eudE9VB/p3XkIr1o3AVIsL
+ ep6oPp9F7HrwtiUIV4f18+kHS7ngfcMtBv7LxZ2dY7Ct9JrhdxVfDA+s2N0J3UhClzF6
+ jPUQ==
+X-Gm-Message-State: APjAAAUi6wrK7pYaEcgHEI4Ro1oMb/BbU4Og37CEypq7IyXEOIGUsQUR
+ ecbgQblaSAyJZMPdvAZOcu1KV+im3zquERlWZoQ=
+X-Google-Smtp-Source: APXvYqyoGjY0mx1trgavH/ZA03bPvP02qQfLhuQ1bKJZqfjHvrQEWB4fK7mvLNy2ZuozIPH7DeV9tZeFX3KAwFGNV7c=
+X-Received: by 2002:a5d:8953:: with SMTP id b19mr14362242iot.168.1574951738305; 
+ Thu, 28 Nov 2019 06:35:38 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1ed54a69-c29f-6008-02ae-11d16f68b265@free.fr>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20191127052935.1719897-1-anarsoul@gmail.com>
+ <20191127052935.1719897-3-anarsoul@gmail.com>
+ <20191127174434.wousbqosmm5vxcsu@gilmour.lan>
+ <CA+E=qVe22T1uhUo6iq9a82Y9bC014CZSkAtSJJNX4qsn6dJL9w@mail.gmail.com>
+ <20191128074325.q47rpzhufwog6mbb@gilmour.lan>
+In-Reply-To: <20191128074325.q47rpzhufwog6mbb@gilmour.lan>
+From: Frank Lee <tiny.windzz@gmail.com>
+Date: Thu, 28 Nov 2019 22:35:26 +0800
+Message-ID: <CAEExFWs7A4TcB-QcatfR3w1hUX88dC-Sxd=epQppwB7p2CC6SA@mail.gmail.com>
+Subject: Re: [PATCH v6 2/7] dt-bindings: thermal: add YAML schema for
+ sun8i-thermal driver bindings
+To: Maxime Ripard <mripard@kernel.org>
+Content-Type: multipart/mixed; boundary="000000000000e697a30598690697"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_063605_282524_AFA7BD7F 
-X-CRM114-Status: GOOD (  19.93  )
-X-Spam-Score: 3.4 (+++)
+X-CRM114-CacheID: sfid-20191128_063539_630537_2B858629 
+X-CRM114-Status: GOOD (  13.77  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [193.47.161.132 listed in zen.spamhaus.org]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (oliver.graute[at]gmail.com)
+ provider (tiny.windzz[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -102,110 +98,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Peng Fan <peng.fan@nxp.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Anson Huang <anson.huang@nxp.com>,
- =?iso-8859-1?Q?Andr=E9?= Draszik <git@andred.net>,
- LKML <linux-kernel@vger.kernel.org>, Russell King <rmk+kernel@armlinux.org.uk>,
- dl-linux-imx <linux-imx@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Eduardo Valentin <edubezval@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Linux PM <linux-pm@vger.kernel.org>,
+ =?UTF-8?Q?Ond=C5=99ej_Jirman?= <megous@megous.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Zhang Rui <rui.zhang@intel.com>, "David S. Miller" <davem@davemloft.net>,
+ devicetree <devicetree@vger.kernel.org>
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28/11/19, Marc Gonzalez wrote:
-> On 27/11/2019 13:46, Oliver Graute wrote:
-> 
-> > On 27/11/19, Marc Gonzalez wrote:
-> >
-> >> On 26/11/2019 15:54, Oliver Graute wrote:
-> >>
-> >>> this patch broke my imx8qm nfs setup. With the generic phy driver my
-> >>> board is booting fine. But with the AT803X_PHY=y enabled  I'm running
-> >>> into the following phy issue. So on my side it looks inverse as on
-> >>> yours. What is the best proposal to fix this?
-> >>>
-> >>> [    5.550442] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
-> >>> [    5.573206] Sending DHCP requests ...... timed out!
-> >>> [   95.339702] IP-Config: Retrying forever (NFS root)...
-> >>> [   95.348873] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
-> >>> [   99.438443] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
-> >>> [   99.461206] Sending DHCP requests ...... timed out!
-> >>
-> >> Which DTS are you using?
-> > 
-> > I'am using this DTS which I'am currently working on:
-> > 
-> > https://lists.infradead.org/pipermail/linux-arm-kernel/2019-October/689501.html
-> >>
-> >> I bet one dollar that 6d4cd041f0af triggered a latent bug in the DTS.
-> > 
-> > So what should I fix in my device tree?
-> 
-> In the board DTS I used to work on, I had this:
-> 
-> &eth0 {
-> 	phy-connection-type = "rgmii-id";
-> 	phy-handle = <&eth0_phy>;
-> 	#address-cells = <1>;
-> 	#size-cells = <0>;
-> 
-> 	/* Atheros AR8035 */
-> 	eth0_phy: ethernet-phy@4 {
-> 		compatible = "ethernet-phy-id004d.d072",
-> 			     "ethernet-phy-ieee802.3-c22";
-> 		interrupts = <37 IRQ_TYPE_EDGE_RISING>;
-> 		reg = <4>;
-> 	};
-> };
-> 
-> In your DTS, you #include "imx8qm.dtsi"
-> I found no such file:
-> $ git ls-files | grep imx8qm
+--000000000000e697a30598690697
+Content-Type: text/plain; charset="UTF-8"
 
-yes this file is not yet added to Shawn Guos next tree.
-Latest patch can be found here:
+Hi,
 
- https://patchwork.kernel.org/patch/11248331/
-
-> 
-> In your patch:
-> https://patchwork.kernel.org/patch/11211567/
-> 
-> +&fec1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_fec1>;
-> +	phy-mode = "rgmii-txid";
-> +	phy-handle = <&ethphy0>;
-> +	fsl,magic-packet;
-> +	fsl,rgmii_rxc_dly;
-> +	status = "okay";
-> +
-> +	mdio {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		ethphy0: ethernet-phy@0 {
-> +			compatible = "ethernet-phy-ieee802.3-c22";
-> +			reg = <4>;
-> +			at803x,eee-disabled;
-> +			at803x,vddio-1p8v;
-> +		};
-> +	};
-> +};
-> 
-> Try all possible 'phy-mode' (rgmii, rgmii-id, rgmii-rxid, rgmii-txid)
-> Investigate 'fsl,rgmii_rxc_dly' (it's not a standard Linux DT prop)
-> Documentation/devicetree/bindings/net/ethernet-controller.yaml
-
-thx for this hint.
+How about this?
 
 Best regards,
+Yangtao
 
-Oliver
+--000000000000e697a30598690697
+Content-Type: text/x-patch; charset="US-ASCII"; 
+	name="0001-dt-bindings-thermal-add-YAML-schema-for-sun8i-therma.patch"
+Content-Disposition: attachment; 
+	filename="0001-dt-bindings-thermal-add-YAML-schema-for-sun8i-therma.patch"
+Content-Transfer-Encoding: base64
+Content-ID: <f_k3itjtrt0>
+X-Attachment-Id: f_k3itjtrt0
+
+RnJvbSAzOGRkMGU0MTYyYjY5OGEzMDA3ZDRlZWU3NzFlMzQ4MTBkM2E4ZjlhIE1vbiBTZXAgMTcg
+MDA6MDA6MDAgMjAwMQpGcm9tOiBZYW5ndGFvIExpIDx0aW55LndpbmR6ekBnbWFpbC5jb20+CkRh
+dGU6IFRodSwgMjggTm92IDIwMTkgMjI6MzE6MjggKzA4MDAKU3ViamVjdDogW1BBVENIXSBkdC1i
+aW5kaW5nczogdGhlcm1hbDogYWRkIFlBTUwgc2NoZW1hIGZvciBzdW44aS10aGVybWFsCiBkcml2
+ZXIgYmluZGluZ3MKCnN1bjhpLXRoZXJtYWwgZHJpdmVyIHN1cHBvcnRzIHRoZXJtYWwgc2Vuc29y
+IGluIHdpZGUgcmFuZ2Ugb2YgQWxsd2lubmVyClNvQ3MuIEFkZCBZQU1MIHNjaGVtYSBmb3IgaXRz
+IGJpbmRpbmdzLgoKU2lnbmVkLW9mZi1ieTogWWFuZ3RhbyBMaSA8dGlueS53aW5kenpAZ21haWwu
+Y29tPgotLS0KIC4uLi9iaW5kaW5ncy90aGVybWFsL3N1bjhpLXRoZXJtYWwueWFtbCAgICAgICB8
+IDE2MCArKysrKysrKysrKysrKysrKysKIDEgZmlsZSBjaGFuZ2VkLCAxNjAgaW5zZXJ0aW9ucygr
+KQogY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy90
+aGVybWFsL3N1bjhpLXRoZXJtYWwueWFtbAoKZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2
+aWNldHJlZS9iaW5kaW5ncy90aGVybWFsL3N1bjhpLXRoZXJtYWwueWFtbCBiL0RvY3VtZW50YXRp
+b24vZGV2aWNldHJlZS9iaW5kaW5ncy90aGVybWFsL3N1bjhpLXRoZXJtYWwueWFtbApuZXcgZmls
+ZSBtb2RlIDEwMDY0NAppbmRleCAwMDAwMDAwMDAwMDAuLjFiZTMyZjA5ZmNjOAotLS0gL2Rldi9u
+dWxsCisrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy90aGVybWFsL3N1bjhp
+LXRoZXJtYWwueWFtbApAQCAtMCwwICsxLDE2MCBAQAorIyBTUERYLUxpY2Vuc2UtSWRlbnRpZmll
+cjogR1BMLTIuMAorJVlBTUwgMS4yCistLS0KKyRpZDogaHR0cDovL2RldmljZXRyZWUub3JnL3Nj
+aGVtYXMvdGhlcm1hbC9zdW44aS10aGVybWFsLnlhbWwjCiskc2NoZW1hOiBodHRwOi8vZGV2aWNl
+dHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKKwordGl0bGU6IEFsbHdpbm5lciBTVU44
+SSBUaGVybWFsIENvbnRyb2xsZXIgRGV2aWNlIFRyZWUgQmluZGluZ3MKKworbWFpbnRhaW5lcnM6
+CisgIC0gWWFuZ3RhbyBMaSA8dGlueS53aW5kenpAZ21haWwuY29tPgorCitkZXNjcmlwdGlvbjog
+fC0KKyAgVGhpcyBkZXNjcmliZXMgdGhlIGRldmljZSB0cmVlIGJpbmRpbmcgZm9yIHRoZSBBbGx3
+aW5uZXIgdGhlcm1hbAorICBjb250cm9sbGVyIHdoaWNoIG1lYXN1cmVzIHRoZSBvbi1Tb0MgdGVt
+cGVyYXR1cmVzLgorCitwcm9wZXJ0aWVzOgorICBjb21wYXRpYmxlOgorICAgIGVudW06CisgICAg
+ICAtIGFsbHdpbm5lcixzdW44aS1hODN0LXRocworICAgICAgLSBhbGx3aW5uZXIsc3VuOGktaDMt
+dGhzCisgICAgICAtIGFsbHdpbm5lcixzdW44aS1yNDAtdGhzCisgICAgICAtIGFsbHdpbm5lcixz
+dW41MGktYTY0LXRocworICAgICAgLSBhbGx3aW5uZXIsc3VuNTBpLWg1LXRocworICAgICAgLSBh
+bGx3aW5uZXIsc3VuNTBpLWg2LXRocworCisgIHJlZzoKKyAgICBtYXhJdGVtczogMQorCisgIGlu
+dGVycnVwdHM6CisgICAgbWF4SXRlbXM6IDEKKworICByZXNldHM6CisgICAgbWF4SXRlbXM6IDEK
+KworICBjbG9ja3M6CisgICAgbWluSXRlbXM6IDEKKyAgICBtYXhJdGVtczogMgorICAgIGl0ZW1z
+OgorICAgICAgLSBkZXNjcmlwdGlvbjogdGhzIGJ1cyBjbG9jaworICAgICAgLSBkZXNjcmlwdGlv
+bjogdGhzIG1vZCBjbG9jaworCisgIGNsb2NrLW5hbWVzOgorICAgIG1pbkl0ZW1zOiAxCisgICAg
+bWF4SXRlbXM6IDIKKyAgICBpdGVtczoKKyAgICAgIC0gY29uc3Q6IGJ1cworICAgICAgLSBjb25z
+dDogbW9kCisKKyAgIiN0aGVybWFsLXNlbnNvci1jZWxscyI6CisgICAgZW51bTogWyAwLCAxIF0K
+KworICBudm1lbS1jZWxsczoKKyAgICBkZXNjcmlwdGlvbjogdGhzIGNhbGlicmF0ZSBkYXRhCisK
+KyAgbnZtZW0tY2VsbC1uYW1lczoKKyAgICBjb25zdDogY2FsaWJyYXRpb24KKworcmVxdWlyZWQ6
+CisgIC0gY29tcGF0aWJsZQorICAtIHJlZworICAtIGludGVycnVwdHMKKyAgLSAiI3RoZXJtYWwt
+c2Vuc29yLWNlbGxzIgorCithbGxPZjoKKyAgLSBpZjoKKyAgICAgIHByb3BlcnRpZXM6CisgICAg
+ICAgIGNvbXBhdGlibGU6CisgICAgICAgICAgY29udGFpbnM6CisgICAgICAgICAgICBlbnVtOgor
+ICAgICAgICAgICAgICAtIGFsbHdpbm5lcixzdW44aS1oMy10aHMKKyAgICAgICAgICAgICAgLSBh
+bGx3aW5uZXIsc3VuOGktcjQwLXRocworICAgICAgICAgICAgICAtIGFsbHdpbm5lcixzdW41MGkt
+YTY0LXRocworICAgICAgICAgICAgICAtIGFsbHdpbm5lcixzdW41MGktaDUtdGhzCisgICAgICAg
+ICAgICAgIC0gYWxsd2lubmVyLHN1bjUwaS1oNi10aHMKKworICAgIHRoZW46CisgICAgICBwcm9w
+ZXJ0aWVzOgorICAgICAgICByZXNldHM6CisgICAgICAgICAgbWluSXRlbXM6IDEKKyAgICAgICAg
+ICBtYXhJdGVtczogMQorCisgIC0gaWY6CisgICAgICBwcm9wZXJ0aWVzOgorICAgICAgICBjb21w
+YXRpYmxlOgorICAgICAgICAgIGNvbnRhaW5zOgorICAgICAgICAgICAgY29uc3Q6IGFsbHdpbm5l
+cixzdW41MGktaDYtdGhzCisKKyAgICB0aGVuOgorICAgICAgcHJvcGVydGllczoKKyAgICAgICAg
+Y2xvY2tzOgorICAgICAgICAgIG1pbkl0ZW1zOiAxCisgICAgICAgICAgbWF4SXRlbXM6IDEKKwor
+ICAgICAgICBjbG9jay1uYW1lczoKKyAgICAgICAgICBtaW5JdGVtczogMQorICAgICAgICAgIG1h
+eEl0ZW1zOiAxCisKKyAgICBlbHNlOgorICAgICAgaWY6CisgICAgICAgIHByb3BlcnRpZXM6Cisg
+ICAgICAgICAgY29tcGF0aWJsZToKKyAgICAgICAgICAgIGNvbnRhaW5zOgorICAgICAgICAgICAg
+ICBlbnVtOgorICAgICAgICAgICAgICAgIC0gYWxsd2lubmVyLHN1bjhpLWgzLXRocworICAgICAg
+ICAgICAgICAgIC0gYWxsd2lubmVyLHN1bjhpLXI0MC10aHMKKyAgICAgICAgICAgICAgICAtIGFs
+bHdpbm5lcixzdW41MGktYTY0LXRocworICAgICAgICAgICAgICAgIC0gYWxsd2lubmVyLHN1bjUw
+aS1oNS10aHMKKworICAgICAgdGhlbjoKKyAgICAgICAgcHJvcGVydGllczoKKyAgICAgICAgICBj
+bG9ja3M6CisgICAgICAgICAgICBtaW5JdGVtczogMgorICAgICAgICAgICAgbWF4SXRlbXM6IDIK
+KworICAgICAgICAgIGNsb2NrLW5hbWVzOgorICAgICAgICAgICAgbWluSXRlbXM6IDIKKyAgICAg
+ICAgICAgIG1heEl0ZW1zOiAyCisKKyAgLSBpZjoKKyAgICAgIHByb3BlcnRpZXM6CisgICAgICAg
+IGNvbXBhdGlibGU6CisgICAgICAgICAgY29udGFpbnM6CisgICAgICAgICAgICBjb25zdDogYWxs
+d2lubmVyLHN1bjhpLWgzLXRocworCisgICAgdGhlbjoKKyAgICAgIHByb3BlcnRpZXM6CisgICAg
+ICAgICIjdGhlcm1hbC1zZW5zb3ItY2VsbHMiOgorICAgICAgICAgIGNvbnN0OiAwCisKKyAgICBl
+bHNlOgorICAgICAgcHJvcGVydGllczoKKyAgICAgICAgIiN0aGVybWFsLXNlbnNvci1jZWxscyI6
+CisgICAgICAgICAgY29uc3Q6IDEKKworYWRkaXRpb25hbFByb3BlcnRpZXM6IGZhbHNlCisKK2V4
+YW1wbGVzOgorICAtIHwKKyAgICB0aHM6IHRoc0A1MDcwNDAwIHsKKyAgICAgICAgY29tcGF0aWJs
+ZSA9ICJhbGx3aW5uZXIsc3VuNTBpLWg2LXRocyI7CisgICAgICAgIHJlZyA9IDwweDA1MDcwNDAw
+IDB4MTAwPjsKKyAgICAgICAgY2xvY2tzID0gPCZjY3UgODk+OworICAgICAgICBjbG9jay1uYW1l
+cyA9ICJidXMiOworICAgICAgICByZXNldHMgPSA8JmNjdSAzNj47CisgICAgICAgIGludGVycnVw
+dHMgPSA8MCAxNSA0PjsKKyAgICAgICAgbnZtZW0tY2VsbHMgPSA8JnRzZW5fY2FsaWI+OworICAg
+ICAgICBudm1lbS1jZWxsLW5hbWVzID0gImNhbGlicmF0aW9uIjsKKyAgICAgICAgI3RoZXJtYWwt
+c2Vuc29yLWNlbGxzID0gPDE+OworICAgIH07CisKKyAgICBzaWQ6IHNpZEAzMDA2MDAwIHsKKyAg
+ICAgICAgY29tcGF0aWJsZSA9ICJhbGx3aW5uZXIsc3VuNTBpLWg2LXNpZCI7CisgICAgICAgIHJl
+ZyA9IDwweDAzMDA2MDAwIDB4NDAwPjsKKyAgICAgICAgI2FkZHJlc3MtY2VsbHMgPSA8MT47Cisg
+ICAgICAgICNzaXplLWNlbGxzID0gPDE+OworICAgICAgICB0c2VuX2NhbGliOiBjYWxpYkAxNCB7
+CisgICAgICAgICAgICAgICAgcmVnID0gPDB4MTQgNj47CisgICAgICAgIH07CisgICAgfTsKKy4u
+LgotLSAKMi4xNy4xCgo=
+--000000000000e697a30598690697
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--000000000000e697a30598690697--
+
