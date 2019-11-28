@@ -2,73 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D139810CD71
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 18:06:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C9C310CD8C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 18:14:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0vJ1VL2DV7h3NdlghWve+rItBrokh9zwoTuqXt914UA=; b=YBB+ZjS7qn+ur1
-	OMocvBLv856AkmZFzLCAbUVYOg0KrkChvn7zeYvxg/PfG26fqre13A1QYtNWYAfmCs6iqa0mrQFMk
-	mxUiD+VUg00xVSMVPiCV6YWc/a8KmJIXLEt8L+6JU4HcZm6Fa0N1pKt1N/qIPpz0z7ZO3t8Pi56Sg
-	XohjiVVZQrnr1of/lHMFVOWCN0exPTgMlaPjXsubU0sSri5RJNi+KqmnaH8N9MsOXAKO5KvudAopp
-	+TnW2ZCLv/yOPtev9IpTwzKwOiDMxQ9WOYVqe7TcZO2LK4LaaLTVmxg5hXHxFF6GOoRRdrckwo5pd
-	T9iPlvoP94eXpaMgnQ8w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=L4GCHh1U81E6vLZuXa2hHOXfGJexV11OsqfRImlh3dg=; b=CRJHWAEsO9TXep
+	LCvpp7bVxj/u+2PZe7wYXjYB9L+yBkomNLjkX99forltGpg5TWLB8fVjQPXmRHJh876VLK7l9ZvrA
+	4RRNoWR9G01YmYwaIwoETsA4QK7xHRzrjkA2NUWXtrLHM4lhR4y15EjyJJEEHDqs6NKnJsQJFBACy
+	/Mfyr/2PE1SXbc7Bh1I6Q/q22Ta2HgQnzP4lMlNelOi5jfaalCkYdiWXwSqUok23+GcndkNHMJQvI
+	HD9ZWj6SwfZvQ1Jy9DIa9hTHlpyH9Tl+NLDLJszAzbEneRD49XTGXS1lnNid7ztGRyc8fY4qWbWNZ
+	Wk8fnijQFrj/8kKuMekg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaNFZ-0006Nj-QM; Thu, 28 Nov 2019 17:06:41 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1iaNNI-0000ci-CO; Thu, 28 Nov 2019 17:14:40 +0000
+Received: from mail-ve1eur03on0712.outbound.protection.outlook.com
+ ([2a01:111:f400:fe09::712]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaNFN-0006Me-SO
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 17:06:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1574960786; bh=PT/bZ+w0RKKLjJh1BSV8VqHpNPMML9cbWK5/bgYOfQw=;
- h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
- b=exOTQ5izA9EUgQ5p51HPyCISM3EsP3LCcJbXNgJdaX6sn8Q1m6EnUcocDHdEuPcDN
- IFexe918LD7KwKnsJtD3mK18Bp7iLWkmi87QsDdgZiolRu1466OIlAdte3BkHDQM76
- 4YeOQHe+tobDiM6fFIKxBbcIlYn2i8kWdwqPVQAg=
-Date: Thu, 28 Nov 2019 18:06:26 +0100
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: Frank Lee <tiny.windzz@gmail.com>
-Subject: Re: [PATCH v6 1/7] thermal: sun8i: add thermal driver for
- H6/H5/H3/A64/A83T/R40
-Message-ID: <20191128170626.xsm7xmizmbenqval@core.my.home>
-Mail-Followup-To: Frank Lee <tiny.windzz@gmail.com>,
- Vasily Khoruzhick <anarsoul@gmail.com>,
- Zhang Rui <rui.zhang@intel.com>,
- Eduardo Valentin <edubezval@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux PM <linux-pm@vger.kernel.org>,
- devicetree <devicetree@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-References: <20191127052935.1719897-1-anarsoul@gmail.com>
- <20191127052935.1719897-2-anarsoul@gmail.com>
- <CAEExFWtGcxevppy7yRHbcQSbMued_s_0u6FV6rT=fe+1AW=Jbg@mail.gmail.com>
+ id 1iaNN6-0000b4-Ld
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 17:14:30 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GTnS/SJ3Z4qw66fGctowkd5akkiu2+81iCay5C20jAR7LpSiRBYLV3XCGvYFuLZ+oyKcKP0YRJ2TIx3CK3XDtgGgPvGqyhSG2/QB+JXczqYaTLzy4+eGeqZNsZ/QAp/m0WZpmPFpnZfu+eCb/Kx//On582+EnZgLjreg10XuPx9JX4du7vyfC2YFOMdmEe/SnlIps7hHnvwoZSEVBjF2xlQKiyCn6vWD5NKikhxrovMc2mauXEJQBWP9GSnuLUcDs8+iNg0dLOjn0V3M8WxzKiP3aLrZoUXfBKR/ctfClsTISCO+H1ef68w1FSKi2zaY9dpVvy6gamPkj6qAf6/jvw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+Jy/224qa3rjOnGkkyy4fEEfufrooTrgQg6bDZ1wCWY=;
+ b=nFA0Sdr0ug21QyndXyGcdIDIg7tmpOjBkvyqzwozunX084SN2fD35tBjv/n1p7DInP75smrwz/xZ2ptxedAZlnvC9VRMWrNfmCKLMeEdbMbHfNQcYr0jKCpqKj4eUWIOk/CN8UUbDOcgTM7JYLirPxdUpQAClb7CeJNjeE4us+p+d7/fMdd0deV6Ck6Ti13XhRU52g+6FM6J2RIrrhc61rmzhREx01EegrzjlCz3p4AsFN5aEiNb6V91VMKUchz1yB05TiE1mgb+aReEJiynRQpZkuV8SUakmMFooLv+HGnP1WbUxhcIo+rvTnNt4YLCVNJAGA916ePhdY44wJPK1w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=+Jy/224qa3rjOnGkkyy4fEEfufrooTrgQg6bDZ1wCWY=;
+ b=q3S2bHMpG1Y56EzOOLWn12m2BoEoOgyDkc/Sh01YUMV1lHbAF71jSWOgCklHaIuRC6ycJNg2uSltin6GS8bn1t7odRGQnllN5QJZ2U5g+sVmkeWIeWVflCID08ht2nKrMvBbk1yyYbMJvb9jBYXnNkvO0CZKzGAMWRtDYRNEDEA=
+Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com (52.134.19.20) by
+ DB7SPR01MB0038.eurprd05.prod.outlook.com (20.178.109.10) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2495.17; Thu, 28 Nov 2019 17:14:14 +0000
+Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com
+ ([fe80::9c71:c13d:43ed:8cca]) by VI1PR0502MB3965.eurprd05.prod.outlook.com
+ ([fe80::9c71:c13d:43ed:8cca%4]) with mapi id 15.20.2495.014; Thu, 28 Nov 2019
+ 17:14:14 +0000
+From: Philippe Schenker <philippe.schenker@toradex.com>
+To: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, Rob Herring
+ <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH] ARM: dts: colibri-imx6ull: correct wrong pinmuxing and add
+ comments
+Thread-Topic: [PATCH] ARM: dts: colibri-imx6ull: correct wrong pinmuxing and
+ add comments
+Thread-Index: AQHVpg9CbW3aF/fg0EikRNbQTR92PA==
+Date: Thu, 28 Nov 2019 17:14:14 +0000
+Message-ID: <20191128171345.10533-1-philippe.schenker@toradex.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: GV0P278CA0024.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:710:28::11) To VI1PR0502MB3965.eurprd05.prod.outlook.com
+ (2603:10a6:803:26::20)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=philippe.schenker@toradex.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.24.0
+x-originating-ip: [31.10.206.124]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 013e3aae-5c3d-40fc-f186-08d774266488
+x-ms-traffictypediagnostic: DB7SPR01MB0038:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB7SPR01MB0038D9085B6D744CD44945CAF4470@DB7SPR01MB0038.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3383;
+x-forefront-prvs: 0235CBE7D0
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(376002)(396003)(346002)(39850400004)(366004)(136003)(199004)(189003)(102836004)(30864003)(54906003)(66946007)(66556008)(64756008)(71190400001)(5660300002)(66476007)(66446008)(110136005)(8676002)(71200400001)(50226002)(81166006)(7736002)(81156014)(7416002)(36756003)(256004)(14454004)(316002)(52116002)(6486002)(478600001)(186003)(2501003)(2906002)(6506007)(386003)(6436002)(4326008)(305945005)(66066001)(3846002)(6116002)(1076003)(25786009)(86362001)(6512007)(44832011)(99286004)(2616005)(8936002)(26005)(334744003);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DB7SPR01MB0038;
+ H:VI1PR0502MB3965.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: toradex.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: CZTEF6b/G4T6JISqX0N2W2/DeS4ZUFrn3WwqDEjQXBSGDtgB6XTT9WrjtWiIwqPkLfEn5/Z34WFAWbF4jIh7xVN4iVZIa1ppZyyBqEgvGL276txIcfqNMY+gGPBHi8AtRUcTQGokAz5NTHoQQMu9AXLfUK5yPeefWUvFLzarCmbWWAsjVlT3hGbgB62MPzarj60THpuP7p0f519gHo5Kcq09TpVAEcoxMmtPnsyVwS+Yki6Z7BsPLM1NVOBbwj0XEh8sEhYrkXADzMFJ3ulnOdUbWtL3qETQmoG/MUxGF6FMIr0blfo2pAEIur97V/rrkAPSRohGEx1orww+ImTh1COUMF7IGGCNX4n9I373vTih+7i9VmHIFS4l+xded50aD8m1OB1MaVrBz2F3mc6ybIx2zF8P9SOEPDVIhLXSH4QgGhHLjgWi9K+1K+L32VdM
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAEExFWtGcxevppy7yRHbcQSbMued_s_0u6FV6rT=fe+1AW=Jbg@mail.gmail.com>
-X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
- <https://xff.cz/key.txt>
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 013e3aae-5c3d-40fc-f186-08d774266488
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Nov 2019 17:14:14.4367 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: paPHT7RPiGKnlA4qrLvleTCLxmGQN7+XmTs5jRMZD0jcojqCQMSGtpzuwUBfgh+2EP3SdMzZBdXyNsYMyTqpaT5YHVtEXIXnv/A/mgM871I=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7SPR01MB0038
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_090630_426647_188644E6 
-X-CRM114-Status: GOOD (  32.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191128_091428_871238_32A7F96C 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe09:0:0:0:712 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -76,6 +117,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,783 +129,400 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Eduardo Valentin <edubezval@gmail.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- Linux PM <linux-pm@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>, "David S. Miller" <davem@davemloft.net>,
- devicetree <devicetree@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 29, 2019 at 12:43:02AM +0800, Frank Lee wrote:
-> HI,
-> 
-> I took a closer look at it, and I had some questions about these places.
-> 
-> On Wed, Nov 27, 2019 at 1:30 PM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
-> >
-> > From: Yangtao Li <tiny.windzz@gmail.com>
-> >
-> > This patch adds the support for allwinner thermal sensor, within
-> > allwinner SoC. It will register sensors for thermal framework
-> > and use device tree to bind cooling device.
-> >
-> > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> > Signed-off-by: Ondrej Jirman <megous@megous.com>
-> > Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
-> > ---
-> >  MAINTAINERS                     |   7 +
-> >  drivers/thermal/Kconfig         |  14 +
-> >  drivers/thermal/Makefile        |   1 +
-> >  drivers/thermal/sun8i_thermal.c | 643 ++++++++++++++++++++++++++++++++
-> >  4 files changed, 665 insertions(+)
-> >  create mode 100644 drivers/thermal/sun8i_thermal.c
-> >
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> > index 66cc549ac327..da34f3f2e80b 100644
-> > --- a/MAINTAINERS
-> > +++ b/MAINTAINERS
-> > @@ -688,6 +688,13 @@ L: linux-crypto@vger.kernel.org
-> >  S:     Maintained
-> >  F:     drivers/crypto/allwinner/
-> >
-> > +ALLWINNER THERMAL DRIVER
-> > +M:     Yangtao Li <tiny.windzz@gmail.com>
-> > +L:     linux-pm@vger.kernel.org
-> > +S:     Maintained
-> > +F:     Documentation/devicetree/bindings/thermal/allwinner,sun8i-a83t-ths.yaml
-> > +F:     drivers/thermal/sun8i_thermal.c
-> > +
-> >  ALLWINNER VPU DRIVER
-> >  M:     Maxime Ripard <mripard@kernel.org>
-> >  M:     Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> > diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
-> > index 001a21abcc28..0b0422e89adb 100644
-> > --- a/drivers/thermal/Kconfig
-> > +++ b/drivers/thermal/Kconfig
-> > @@ -262,6 +262,20 @@ config SPEAR_THERMAL
-> >           Enable this to plug the SPEAr thermal sensor driver into the Linux
-> >           thermal framework.
-> >
-> > +config SUN8I_THERMAL
-> > +       tristate "Allwinner sun8i thermal driver"
-> > +       depends on ARCH_SUNXI || COMPILE_TEST
-> > +       depends on HAS_IOMEM
-> > +       depends on NVMEM
-> > +       depends on OF
-> > +       depends on RESET_CONTROLLER
-> > +       help
-> > +         Support for the sun8i thermal sensor driver into the Linux thermal
-> > +         framework.
-> > +
-> > +         To compile this driver as a module, choose M here: the
-> > +         module will be called sun8i-thermal.
-> > +
-> >  config ROCKCHIP_THERMAL
-> >         tristate "Rockchip thermal driver"
-> >         depends on ARCH_ROCKCHIP || COMPILE_TEST
-> > diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile
-> > index 74a37c7f847a..fa6f8b206281 100644
-> > --- a/drivers/thermal/Makefile
-> > +++ b/drivers/thermal/Makefile
-> > @@ -31,6 +31,7 @@ thermal_sys-$(CONFIG_DEVFREQ_THERMAL) += devfreq_cooling.o
-> >  obj-y                          += broadcom/
-> >  obj-$(CONFIG_THERMAL_MMIO)             += thermal_mmio.o
-> >  obj-$(CONFIG_SPEAR_THERMAL)    += spear_thermal.o
-> > +obj-$(CONFIG_SUN8I_THERMAL)     += sun8i_thermal.o
-> >  obj-$(CONFIG_ROCKCHIP_THERMAL) += rockchip_thermal.o
-> >  obj-$(CONFIG_RCAR_THERMAL)     += rcar_thermal.o
-> >  obj-$(CONFIG_RCAR_GEN3_THERMAL)        += rcar_gen3_thermal.o
-> > diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
-> > new file mode 100644
-> > index 000000000000..e86b64f51196
-> > --- /dev/null
-> > +++ b/drivers/thermal/sun8i_thermal.c
-> > @@ -0,0 +1,643 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Thermal sensor driver for Allwinner SOC
-> > + * Copyright (C) 2019 Yangtao Li
-> > + *
-> > + * Based on the work of Icenowy Zheng <icenowy@aosc.io>
-> > + * Based on the work of Ondrej Jirman <megous@megous.com>
-> > + * Based on the work of Josef Gajdusek <atx@atx.name>
-> > + */
-> > +
-> > +#include <linux/clk.h>
-> > +#include <linux/device.h>
-> > +#include <linux/interrupt.h>
-> > +#include <linux/module.h>
-> > +#include <linux/nvmem-consumer.h>
-> > +#include <linux/of_device.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/regmap.h>
-> > +#include <linux/reset.h>
-> > +#include <linux/slab.h>
-> > +#include <linux/thermal.h>
-> > +
-> > +#define MAX_SENSOR_NUM 4
-> > +
-> > +#define FT_TEMP_MASK                           GENMASK(11, 0)
-> > +#define TEMP_CALIB_MASK                                GENMASK(11, 0)
-> > +#define CALIBRATE_DEFAULT                      0x800
-> > +
-> > +#define SUN8I_THS_CTRL0                                0x00
-> > +#define SUN8I_THS_CTRL2                                0x40
-> > +#define SUN8I_THS_IC                           0x44
-> > +#define SUN8I_THS_IS                           0x48
-> > +#define SUN8I_THS_MFC                          0x70
-> > +#define SUN8I_THS_TEMP_CALIB                   0x74
-> > +#define SUN8I_THS_TEMP_DATA                    0x80
-> > +
-> > +#define SUN50I_THS_CTRL0                       0x00
-> > +#define SUN50I_H6_THS_ENABLE                   0x04
-> > +#define SUN50I_H6_THS_PC                       0x08
-> > +#define SUN50I_H6_THS_DIC                      0x10
-> > +#define SUN50I_H6_THS_DIS                      0x20
-> > +#define SUN50I_H6_THS_MFC                      0x30
-> > +#define SUN50I_H6_THS_TEMP_CALIB               0xa0
-> > +#define SUN50I_H6_THS_TEMP_DATA                        0xc0
-> > +
-> > +#define SUN8I_THS_CTRL0_T_ACQ0(x)              (GENMASK(15, 0) & (x))
-> > +#define SUN8I_THS_CTRL2_T_ACQ1(x)              ((GENMASK(15, 0) & (x)) << 16)
-> > +#define SUN8I_THS_DATA_IRQ_STS(x)              BIT(x + 8)
-> > +
-> > +#define SUN50I_THS_CTRL0_T_ACQ(x)              ((GENMASK(15, 0) & (x)) << 16)
-> > +#define SUN50I_THS_FILTER_EN                   BIT(2)
-> > +#define SUN50I_THS_FILTER_TYPE(x)              (GENMASK(1, 0) & (x))
-> > +#define SUN50I_H6_THS_PC_TEMP_PERIOD(x)                ((GENMASK(19, 0) & (x)) << 12)
-> > +#define SUN50I_H6_THS_DATA_IRQ_STS(x)          BIT(x)
-> > +
-> > +/* millidegree celsius */
-> > +#define THS_EFUSE_CP_FT_MASK                   0x3000
-> > +#define THS_EFUSE_CP_FT_BIT                    12
-> > +#define THS_CALIBRATION_IN_FT                  1
-> > +
-> > +struct ths_device;
-> > +
-> > +struct tsensor {
-> > +       struct ths_device               *tmdev;
-> > +       struct thermal_zone_device      *tzd;
-> > +       int                             id;
-> > +};
-> > +
-> > +struct ths_thermal_chip {
-> > +       bool            has_mod_clk;
-> > +       bool            has_bus_clk_reset;
-> > +       int             sensor_num;
-> > +       int             offset;
-> > +       int             scale;
-> > +       int             ft_deviation;
-> > +       int             temp_data_base;
-> > +       int             (*calibrate)(struct ths_device *tmdev,
-> > +                                    u16 *caldata, int callen);
-> > +       int             (*init)(struct ths_device *tmdev);
-> > +       int             (*irq_ack)(struct ths_device *tmdev);
-> > +       int             (*calc_temp)(struct ths_device *tmdev,
-> > +                                    int id, int reg);
-> > +};
-> > +
-> > +struct ths_device {
-> > +       const struct ths_thermal_chip           *chip;
-> > +       struct device                           *dev;
-> > +       struct regmap                           *regmap;
-> > +       struct reset_control                    *reset;
-> > +       struct clk                              *bus_clk;
-> > +       struct clk                              *mod_clk;
-> > +       struct tsensor                          sensor[MAX_SENSOR_NUM];
-> > +       u32                                     cp_ft_flag;
-> > +};
-> > +
-> > +/* Temp Unit: millidegree Celsius */
-> > +static int sun8i_ths_calc_temp(struct ths_device *tmdev,
-> > +                              int id, int reg)
-> > +{
-> > +       return tmdev->chip->offset - (reg * tmdev->chip->scale / 10);
-> > +}
-> > +
-> > +static int sun50i_h5_calc_temp(struct ths_device *tmdev,
-> > +                              int id, int reg)
-> > +{
-> > +       if (reg >= 0x500)
-> > +               return -1191 * reg / 10 + 223000;
-> > +       else if (!id)
-> > +               return -1452 * reg / 10 + 259000;
-> > +       else
-> > +               return -1590 * reg / 10 + 276000;
-> > +}
-> > +
-> > +static int sun8i_ths_get_temp(void *data, int *temp)
-> > +{
-> > +       struct tsensor *s = data;
-> > +       struct ths_device *tmdev = s->tmdev;
-> > +       int val = 0;
-> > +
-> > +       regmap_read(tmdev->regmap, tmdev->chip->temp_data_base +
-> > +                   0x4 * s->id, &val);
-> > +
-> > +       /* ths have no data yet */
-> > +       if (!val)
-> > +               return -EAGAIN;
-> > +
-> > +       *temp = tmdev->chip->calc_temp(tmdev, s->id, val);
-> > +       /*
-> > +        * According to the original sdk, there are some platforms(rarely)
-> > +        * that add a fixed offset value after calculating the temperature
-> > +        * value. We can't simply put it on the formula for calculating the
-> > +        * temperature above, because the formula for calculating the
-> > +        * temperature above is also used when the sensor is calibrated. If
-> > +        * do this, the correct calibration formula is hard to know.
-> > +        */
-> > +       *temp += tmdev->chip->ft_deviation;
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static const struct thermal_zone_of_device_ops ths_ops = {
-> > +       .get_temp = sun8i_ths_get_temp,
-> > +};
-> > +
-> > +static const struct regmap_config config = {
-> > +       .reg_bits = 32,
-> > +       .val_bits = 32,
-> > +       .reg_stride = 4,
-> > +       .fast_io = true,
-> > +       .max_register = 0xfc,
-> > +};
-> > +
-> > +static int sun8i_h3_irq_ack(struct ths_device *tmdev)
-> > +{
-> > +       int i, state, ret = 0;
-> > +
-> > +       regmap_read(tmdev->regmap, SUN8I_THS_IS, &state);
-> > +
-> > +       for (i = 0; i < tmdev->chip->sensor_num; i++) {
-> > +               if (state & SUN8I_THS_DATA_IRQ_STS(i)) {
-> > +                       regmap_write(tmdev->regmap, SUN8I_THS_IS,
-> > +                                    SUN8I_THS_DATA_IRQ_STS(i));
-> > +                       ret |= BIT(i);
-> > +               }
-> > +       }
-> > +
-> > +       return ret;
-> > +}
-> > +
-> > +static int sun50i_h6_irq_ack(struct ths_device *tmdev)
-> > +{
-> > +       int i, state, ret = 0;
-> > +
-> > +       regmap_read(tmdev->regmap, SUN50I_H6_THS_DIS, &state);
-> > +
-> > +       for (i = 0; i < tmdev->chip->sensor_num; i++) {
-> > +               if (state & SUN50I_H6_THS_DATA_IRQ_STS(i)) {
-> > +                       regmap_write(tmdev->regmap, SUN50I_H6_THS_DIS,
-> > +                                    SUN50I_H6_THS_DATA_IRQ_STS(i));
-> > +                       ret |= BIT(i);
-> > +               }
-> > +       }
-> > +
-> > +       return ret;
-> > +}
-> > +
-> > +static irqreturn_t sun8i_irq_thread(int irq, void *data)
-> > +{
-> > +       struct ths_device *tmdev = data;
-> > +       int i, state;
-> > +
-> > +       state = tmdev->chip->irq_ack(tmdev);
-> > +
-> > +       for (i = 0; i < tmdev->chip->sensor_num; i++) {
-> > +               if (state & BIT(i))
-> > +                       thermal_zone_device_update(tmdev->sensor[i].tzd,
-> > +                                                  THERMAL_EVENT_UNSPECIFIED);
-> > +       }
-> > +
-> > +       return IRQ_HANDLED;
-> > +}
-> > +
-> > +static int sun8i_h3_ths_calibrate(struct ths_device *tmdev,
-> > +                                 u16 *caldata, int callen)
-> > +{
-> > +       int i;
-> > +
-> > +       if (!caldata[0] || callen < 2 * tmdev->chip->sensor_num)
-> > +               return -EINVAL;
-> > +
-> > +       for (i = 0; i < tmdev->chip->sensor_num; i++) {
-> > +               int offset = (i % 2) << 4;
-> > +
-> > +               regmap_update_bits(tmdev->regmap,
-> > +                                  SUN8I_THS_TEMP_CALIB + (4 * (i >> 1)),
-> > +                                  0xfff << offset,
-> > +                                  caldata[i] << offset);
-> > +       }
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static int sun50i_h6_ths_calibrate(struct ths_device *tmdev,
-> > +                                  u16 *caldata, int callen)
-> > +{
-> > +       struct device *dev = tmdev->dev;
-> > +       int i, ft_temp;
-> > +
-> > +       if (!caldata[0] || callen < 2 + 2 * tmdev->chip->sensor_num)
-> > +               return -EINVAL;
-> > +
-> > +       /*
-> > +        * efuse layout:
-> > +        *
-> > +        *      0   11  16       32
-> > +        *      +-------+-------+-------+
-> > +        *      |temp|  |sensor0|sensor1|
-> > +        *      +-------+-------+-------+
-> > +        *
-> > +        * The calibration data on the H6 is the ambient temperature and
-> > +        * sensor values that are filled during the factory test stage.
-> > +        *
-> > +        * The unit of stored FT temperature is 0.1 degreee celusis.
-> > +        *
-> > +        * We need to calculate a delta between measured and caluclated
-> > +        * register values and this will become a calibration offset.
-> > +        */
-> > +       ft_temp = (caldata[0] & FT_TEMP_MASK) * 100;
-> > +       tmdev->cp_ft_flag = (caldata[0] & THS_EFUSE_CP_FT_MASK)
-> > +               >> THS_EFUSE_CP_FT_BIT;
-> 
-> Here got an unused data "cp_ft_flag",
-> which is used in the calculation of the temperature function according
-> to the source code.
-> 
-> https://github.com/orangepi-xunlong/OrangePiH6_kernel/blob/master/drivers/thermal/sunxi_thermal/sunxi_ths_core.c#L392
+Some pinmuxings are obviously wrong, originating from a copy/paste
+error. This patch corrects that with the following strategy:
 
-It should be used to enable the addition of ft_deviation in
-sun8i_ths_get_temp(), I guess. Probably an ommission. I guess most of H6
-chips will have this set anyway.
+- Set all reserved bits to zero
+- Leave drive strength and slew rate as is
+- Add sensible pull and hysteresis depending on the function of the pin
+- Not used pins are muxed to their reset-value defined by the SoC
 
-> > +
-> > +       for (i = 0; i < tmdev->chip->sensor_num; i++) {
-> > +               int sensor_reg = caldata[i + 1];
-> > +               int cdata, offset;
-> > +               int sensor_temp = tmdev->chip->calc_temp(tmdev, i, sensor_reg);
-> > +
-> > +               /*
-> > +                * Calibration data is CALIBRATE_DEFAULT - (calculated
-> > +                * temperature from sensor reading at factory temperature
-> > +                * minus actual factory temperature) * 14.88 (scale from
-> > +                * temperature to register values)
-> > +                */
-> > +               cdata = CALIBRATE_DEFAULT -
-> > +                       ((sensor_temp - ft_temp) * 10 / tmdev->chip->scale);
-> 
-> Why change the formula here.
-> 
-> https://github.com/orangepi-xunlong/OrangePiH6_kernel/blob/master/drivers/thermal/sunxi_thermal/sunxi_ths_core.c#L339
+Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
 
-It looks the same to me as before. Here's the original patch:
+---
 
-https://megous.com/git/linux/commit/?h=ths-5.4&id=cae28a7dfa6fc79ba37e31d4dff281947247e822
+ arch/arm/boot/dts/imx6ull-colibri.dtsi | 188 ++++++++++++-------------
+ 1 file changed, 94 insertions(+), 94 deletions(-)
 
-It's basicaly to avoid magic values TEMP_TO_REG and use what's defined
-in the chip struct.
+diff --git a/arch/arm/boot/dts/imx6ull-colibri.dtsi b/arch/arm/boot/dts/imx6ull-colibri.dtsi
+index d56728f03c35..767fac47615b 100644
+--- a/arch/arm/boot/dts/imx6ull-colibri.dtsi
++++ b/arch/arm/boot/dts/imx6ull-colibri.dtsi
+@@ -201,7 +201,7 @@
+ &iomuxc {
+ 	pinctrl_can_int: canint-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_ENET1_TX_DATA1__GPIO2_IO04	0X14 /* SODIMM 73 */
++			MX6UL_PAD_ENET1_TX_DATA1__GPIO2_IO04	0x13010	/* SODIMM 73 */
+ 		>;
+ 	};
+ 
+@@ -222,15 +222,15 @@
+ 
+ 	pinctrl_ecspi1_cs: ecspi1-cs-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_LCD_DATA21__GPIO3_IO26	0x000a0
++			MX6UL_PAD_LCD_DATA21__GPIO3_IO26	0x70a0	/* SODIMM 86 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_ecspi1: ecspi1-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_LCD_DATA20__ECSPI1_SCLK	0x000a0
+-			MX6UL_PAD_LCD_DATA22__ECSPI1_MOSI	0x000a0
+-			MX6UL_PAD_LCD_DATA23__ECSPI1_MISO	0x100a0
++			MX6UL_PAD_LCD_DATA20__ECSPI1_SCLK	0x000a0	/* SODIMM 88 */
++			MX6UL_PAD_LCD_DATA22__ECSPI1_MOSI	0x000a0 /* SODIMM 92 */
++			MX6UL_PAD_LCD_DATA23__ECSPI1_MISO	0x100a0 /* SODIMM 90 */
+ 		>;
+ 	};
+ 
+@@ -243,63 +243,63 @@
+ 
+ 	pinctrl_gpio_bl_on: gpio-bl-on-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_JTAG_TMS__GPIO1_IO11		0x000a0
++			MX6UL_PAD_JTAG_TMS__GPIO1_IO11		0x30a0	/* SODIMM 71 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_gpio1: gpio1-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_ENET1_RX_DATA0__GPIO2_IO00	0x74 /* SODIMM 55 */
+-			MX6UL_PAD_ENET1_RX_DATA1__GPIO2_IO01	0x74 /* SODIMM 63 */
+-			MX6UL_PAD_UART3_RX_DATA__GPIO1_IO25	0X14 /* SODIMM 77 */
+-			MX6UL_PAD_JTAG_TCK__GPIO1_IO14		0x14 /* SODIMM 99 */
+-			MX6UL_PAD_NAND_CE1_B__GPIO4_IO14	0x14 /* SODIMM 133 */
+-			MX6UL_PAD_UART3_TX_DATA__GPIO1_IO24	0x14 /* SODIMM 135 */
+-			MX6UL_PAD_UART3_CTS_B__GPIO1_IO26	0x14 /* SODIMM 100 */
+-			MX6UL_PAD_JTAG_TRST_B__GPIO1_IO15	0x14 /* SODIMM 102 */
+-			MX6UL_PAD_ENET1_RX_ER__GPIO2_IO07	0x14 /* SODIMM 104 */
+-			MX6UL_PAD_UART3_RTS_B__GPIO1_IO27	0x14 /* SODIMM 186 */
++			MX6UL_PAD_ENET1_RX_DATA0__GPIO2_IO00	0xb0b0 /* SODIMM 55 */
++			MX6UL_PAD_ENET1_RX_DATA1__GPIO2_IO01	0xb0b0 /* SODIMM 63 */
++			MX6UL_PAD_UART3_RX_DATA__GPIO1_IO25	0x10b0 /* SODIMM 77 */
++			MX6UL_PAD_JTAG_TCK__GPIO1_IO14		0x70a0 /* SODIMM 99 */
++			MX6UL_PAD_NAND_CE1_B__GPIO4_IO14	0x10b0 /* SODIMM 133 */
++			MX6UL_PAD_UART3_TX_DATA__GPIO1_IO24	0x10b0 /* SODIMM 135 */
++			MX6UL_PAD_UART3_CTS_B__GPIO1_IO26	0x10b0 /* SODIMM 100 */
++			MX6UL_PAD_JTAG_TRST_B__GPIO1_IO15	0x70a0 /* SODIMM 102 */
++			MX6UL_PAD_ENET1_RX_ER__GPIO2_IO07	0x10b0 /* SODIMM 104 */
++			MX6UL_PAD_UART3_RTS_B__GPIO1_IO27	0x10b0 /* SODIMM 186 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_gpio2: gpio2-grp { /* Camera */
+ 		fsl,pins = <
+-			MX6UL_PAD_CSI_DATA04__GPIO4_IO25	0x74 /* SODIMM 69 */
+-			MX6UL_PAD_CSI_MCLK__GPIO4_IO17		0x14 /* SODIMM 75 */
+-			MX6UL_PAD_CSI_DATA06__GPIO4_IO27	0x14 /* SODIMM 85 */
+-			MX6UL_PAD_CSI_PIXCLK__GPIO4_IO18	0x14 /* SODIMM 96 */
+-			MX6UL_PAD_CSI_DATA05__GPIO4_IO26	0x14 /* SODIMM 98 */
++			MX6UL_PAD_CSI_DATA04__GPIO4_IO25	0x10b0 /* SODIMM 69 */
++			MX6UL_PAD_CSI_MCLK__GPIO4_IO17		0x10b0 /* SODIMM 75 */
++			MX6UL_PAD_CSI_DATA06__GPIO4_IO27	0x10b0 /* SODIMM 85 */
++			MX6UL_PAD_CSI_PIXCLK__GPIO4_IO18	0x10b0 /* SODIMM 96 */
++			MX6UL_PAD_CSI_DATA05__GPIO4_IO26	0x10b0 /* SODIMM 98 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_gpio3: gpio3-grp { /* CAN2 */
+ 		fsl,pins = <
+-			MX6UL_PAD_ENET1_RX_EN__GPIO2_IO02	0x14 /* SODIMM 178 */
+-			MX6UL_PAD_ENET1_TX_DATA0__GPIO2_IO03	0x14 /* SODIMM 188 */
++			MX6UL_PAD_ENET1_RX_EN__GPIO2_IO02	0x10b0 /* SODIMM 178 */
++			MX6UL_PAD_ENET1_TX_DATA0__GPIO2_IO03	0x10b0 /* SODIMM 188 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_gpio4: gpio4-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_CSI_DATA07__GPIO4_IO28	0x74 /* SODIMM 65 */
++			MX6UL_PAD_CSI_DATA07__GPIO4_IO28	0x10b0 /* SODIMM 65 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_gpio5: gpio5-grp { /* ATMEL MXT TOUCH */
+ 		fsl,pins = <
+-			MX6UL_PAD_JTAG_MOD__GPIO1_IO10		0x74 /* SODIMM 106 */
++			MX6UL_PAD_JTAG_MOD__GPIO1_IO10		0xb0a0 /* SODIMM 106 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_gpio6: gpio6-grp { /* Wifi pins */
+ 		fsl,pins = <
+-			MX6UL_PAD_GPIO1_IO03__GPIO1_IO03	0x14 /* SODIMM 89 */
+-			MX6UL_PAD_CSI_DATA02__GPIO4_IO23	0x14 /* SODIMM 79 */
+-			MX6UL_PAD_CSI_VSYNC__GPIO4_IO19		0x14 /* SODIMM 81 */
+-			MX6UL_PAD_CSI_DATA03__GPIO4_IO24	0x14 /* SODIMM 97 */
+-			MX6UL_PAD_CSI_DATA00__GPIO4_IO21	0x14 /* SODIMM 101 */
+-			MX6UL_PAD_CSI_DATA01__GPIO4_IO22	0x14 /* SODIMM 103 */
+-			MX6UL_PAD_CSI_HSYNC__GPIO4_IO20		0x14 /* SODIMM 94 */
++			MX6UL_PAD_GPIO1_IO03__GPIO1_IO03	0x10b0 /* SODIMM 89 */
++			MX6UL_PAD_CSI_DATA02__GPIO4_IO23	0x10b0 /* SODIMM 79 */
++			MX6UL_PAD_CSI_VSYNC__GPIO4_IO19		0x10b0 /* SODIMM 81 */
++			MX6UL_PAD_CSI_DATA03__GPIO4_IO24	0x10b0 /* SODIMM 97 */
++			MX6UL_PAD_CSI_DATA00__GPIO4_IO21	0x10b0 /* SODIMM 101 */
++			MX6UL_PAD_CSI_DATA01__GPIO4_IO22	0x10b0 /* SODIMM 103 */
++			MX6UL_PAD_CSI_HSYNC__GPIO4_IO20		0x10b0 /* SODIMM 94 */
+ 		>;
+ 	};
+ 
+@@ -324,15 +324,15 @@
+ 
+ 	pinctrl_i2c1: i2c1-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_UART4_TX_DATA__I2C1_SCL 0x4001b8b0
+-			MX6UL_PAD_UART4_RX_DATA__I2C1_SDA 0x4001b8b0
++			MX6UL_PAD_UART4_TX_DATA__I2C1_SCL 0x4001b8b0	/* SODIMM 196 */
++			MX6UL_PAD_UART4_RX_DATA__I2C1_SDA 0x4001b8b0	/* SODIMM 194 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_i2c1_gpio: i2c1-gpio-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_UART4_TX_DATA__GPIO1_IO28 0x4001b8b0
+-			MX6UL_PAD_UART4_RX_DATA__GPIO1_IO29 0x4001b8b0
++			MX6UL_PAD_UART4_TX_DATA__GPIO1_IO28 0x4001b8b0	/* SODIMM 196 */
++			MX6UL_PAD_UART4_RX_DATA__GPIO1_IO29 0x4001b8b0	/* SODIMM 194 */
+ 		>;
+ 	};
+ 
+@@ -352,107 +352,107 @@
+ 
+ 	pinctrl_lcdif_dat: lcdif-dat-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_LCD_DATA00__LCDIF_DATA00  0x00079
+-			MX6UL_PAD_LCD_DATA01__LCDIF_DATA01  0x00079
+-			MX6UL_PAD_LCD_DATA02__LCDIF_DATA02  0x00079
+-			MX6UL_PAD_LCD_DATA03__LCDIF_DATA03  0x00079
+-			MX6UL_PAD_LCD_DATA04__LCDIF_DATA04  0x00079
+-			MX6UL_PAD_LCD_DATA05__LCDIF_DATA05  0x00079
+-			MX6UL_PAD_LCD_DATA06__LCDIF_DATA06  0x00079
+-			MX6UL_PAD_LCD_DATA07__LCDIF_DATA07  0x00079
+-			MX6UL_PAD_LCD_DATA08__LCDIF_DATA08  0x00079
+-			MX6UL_PAD_LCD_DATA09__LCDIF_DATA09  0x00079
+-			MX6UL_PAD_LCD_DATA10__LCDIF_DATA10  0x00079
+-			MX6UL_PAD_LCD_DATA11__LCDIF_DATA11  0x00079
+-			MX6UL_PAD_LCD_DATA12__LCDIF_DATA12  0x00079
+-			MX6UL_PAD_LCD_DATA13__LCDIF_DATA13  0x00079
+-			MX6UL_PAD_LCD_DATA14__LCDIF_DATA14  0x00079
+-			MX6UL_PAD_LCD_DATA15__LCDIF_DATA15  0x00079
+-			MX6UL_PAD_LCD_DATA16__LCDIF_DATA16  0x00079
+-			MX6UL_PAD_LCD_DATA17__LCDIF_DATA17  0x00079
++			MX6UL_PAD_LCD_DATA00__LCDIF_DATA00 0x00079	/* SODIMM 76 */
++			MX6UL_PAD_LCD_DATA01__LCDIF_DATA01 0x00079	/* SODIMM 70 */
++			MX6UL_PAD_LCD_DATA02__LCDIF_DATA02 0x00079	/* SODIMM 60 */
++			MX6UL_PAD_LCD_DATA03__LCDIF_DATA03 0x00079	/* SODIMM 58 */
++			MX6UL_PAD_LCD_DATA04__LCDIF_DATA04 0x00079	/* SODIMM 78 */
++			MX6UL_PAD_LCD_DATA05__LCDIF_DATA05 0x00079	/* SODIMM 72 */
++			MX6UL_PAD_LCD_DATA06__LCDIF_DATA06 0x00079	/* SODIMM 80 */
++			MX6UL_PAD_LCD_DATA07__LCDIF_DATA07 0x00079	/* SODIMM 46 */
++			MX6UL_PAD_LCD_DATA08__LCDIF_DATA08 0x00079	/* SODIMM 62 */
++			MX6UL_PAD_LCD_DATA09__LCDIF_DATA09 0x00079	/* SODIMM 48 */
++			MX6UL_PAD_LCD_DATA10__LCDIF_DATA10 0x00079	/* SODIMM 74 */
++			MX6UL_PAD_LCD_DATA11__LCDIF_DATA11 0x00079	/* SODIMM 50 */
++			MX6UL_PAD_LCD_DATA12__LCDIF_DATA12 0x00079	/* SODIMM 52 */
++			MX6UL_PAD_LCD_DATA13__LCDIF_DATA13 0x00079	/* SODIMM 54 */
++			MX6UL_PAD_LCD_DATA14__LCDIF_DATA14 0x00079	/* SODIMM 66 */
++			MX6UL_PAD_LCD_DATA15__LCDIF_DATA15 0x00079	/* SODIMM 64 */
++			MX6UL_PAD_LCD_DATA16__LCDIF_DATA16 0x00079	/* SODIMM 57 */
++			MX6UL_PAD_LCD_DATA17__LCDIF_DATA17 0x00079	/* SODIMM 61 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_lcdif_ctrl: lcdif-ctrl-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_LCD_CLK__LCDIF_CLK	    0x00079
+-			MX6UL_PAD_LCD_ENABLE__LCDIF_ENABLE  0x00079
+-			MX6UL_PAD_LCD_HSYNC__LCDIF_HSYNC    0x00079
+-			MX6UL_PAD_LCD_VSYNC__LCDIF_VSYNC    0x00079
++			MX6UL_PAD_LCD_CLK__LCDIF_CLK	    0x00079	/* SODIMM 56 */
++			MX6UL_PAD_LCD_ENABLE__LCDIF_ENABLE  0x00079	/* SODIMM 44 */
++			MX6UL_PAD_LCD_HSYNC__LCDIF_HSYNC    0x00079	/* SODIMM 68 */
++			MX6UL_PAD_LCD_VSYNC__LCDIF_VSYNC    0x00079	/* SODIMM 82 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_pwm4: pwm4-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_NAND_WP_B__PWM4_OUT	0x00079
++			MX6UL_PAD_NAND_WP_B__PWM4_OUT	0x00079		/* SODIMM 59 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_pwm5: pwm5-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_NAND_DQS__PWM5_OUT	0x00079
++			MX6UL_PAD_NAND_DQS__PWM5_OUT	0x00079		/* SODIMM 28 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_pwm6: pwm6-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_ENET1_TX_EN__PWM6_OUT	0x00079
++			MX6UL_PAD_ENET1_TX_EN__PWM6_OUT	0x00079		/* SODIMM 30 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_pwm7: pwm7-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_ENET1_TX_CLK__PWM7_OUT	0x00079
++			MX6UL_PAD_ENET1_TX_CLK__PWM7_OUT	0x00079	/* SODIMM 67 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_uart1: uart1-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_UART1_TX_DATA__UART1_DTE_RX	0x1b0b1
+-			MX6UL_PAD_UART1_RX_DATA__UART1_DTE_TX	0x1b0b1
+-			MX6UL_PAD_UART1_RTS_B__UART1_DTE_CTS	0x1b0b1
+-			MX6UL_PAD_UART1_CTS_B__UART1_DTE_RTS	0x1b0b1
++			MX6UL_PAD_UART1_TX_DATA__UART1_DTE_RX	0x1b0b1	/* SODIMM 33 */
++			MX6UL_PAD_UART1_RX_DATA__UART1_DTE_TX	0x1b0b1	/* SODIMM 35 */
++			MX6UL_PAD_UART1_RTS_B__UART1_DTE_CTS	0x1b0b1	/* SODIMM 27 */
++			MX6UL_PAD_UART1_CTS_B__UART1_DTE_RTS	0x1b0b1	/* SODIMM 25 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_uart1_ctrl1: uart1-ctrl1-grp { /* Additional DTR, DCD */
+ 		fsl,pins = <
+-			MX6UL_PAD_JTAG_TDI__GPIO1_IO13		0x1b0b1 /* DCD */
+-			MX6UL_PAD_LCD_DATA18__GPIO3_IO23	0x1b0b1 /* DSR */
+-			MX6UL_PAD_JTAG_TDO__GPIO1_IO12		0x1b0b1 /* DTR */
+-			MX6UL_PAD_LCD_DATA19__GPIO3_IO24        0x1b0b1 /* RI */
++			MX6UL_PAD_JTAG_TDI__GPIO1_IO13		0x70a0 /* SODIMM 31 */
++			MX6UL_PAD_LCD_DATA18__GPIO3_IO23	0x10b0 /* SODIMM 29 */
++			MX6UL_PAD_JTAG_TDO__GPIO1_IO12		0x90b1 /* SODIMM 23 */
++			MX6UL_PAD_LCD_DATA19__GPIO3_IO24        0x10b0 /* SODIMM 37 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_uart2: uart2-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_UART2_TX_DATA__UART2_DTE_RX	0x1b0b1
+-			MX6UL_PAD_UART2_RX_DATA__UART2_DTE_TX	0x1b0b1
+-			MX6UL_PAD_UART2_CTS_B__UART2_DTE_RTS	0x1b0b1
+-			MX6UL_PAD_UART2_RTS_B__UART2_DTE_CTS	0x1b0b1
++			MX6UL_PAD_UART2_TX_DATA__UART2_DTE_RX	0x1b0b1 /* SODIMM 36 */
++			MX6UL_PAD_UART2_RX_DATA__UART2_DTE_TX	0x1b0b1 /* SODIMM 38 */
++			MX6UL_PAD_UART2_CTS_B__UART2_DTE_RTS	0x1b0b1 /* SODIMM 32 */
++			MX6UL_PAD_UART2_RTS_B__UART2_DTE_CTS	0x1b0b1 /* SODIMM 34 */
+ 		>;
+ 	};
+ 	pinctrl_uart5: uart5-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_GPIO1_IO04__UART5_DTE_RX	0x1b0b1
+-			MX6UL_PAD_GPIO1_IO05__UART5_DTE_TX	0x1b0b1
++			MX6UL_PAD_GPIO1_IO04__UART5_DTE_RX	0x1b0b1 /* SODIMM 19 */
++			MX6UL_PAD_GPIO1_IO05__UART5_DTE_TX	0x1b0b1 /* SODIMM 21 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_usbh_reg: gpio-usbh-reg {
+ 		fsl,pins = <
+-			MX6UL_PAD_GPIO1_IO02__GPIO1_IO02	0x1b0b1 /* SODIMM 129 USBH PEN */
++			MX6UL_PAD_GPIO1_IO02__GPIO1_IO02	0x10b0 /* SODIMM 129 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_usdhc1: usdhc1-grp {
+ 		fsl,pins = <
+-			MX6UL_PAD_SD1_CLK__USDHC1_CLK		0x17059
+-			MX6UL_PAD_SD1_CMD__USDHC1_CMD		0x10059
+-			MX6UL_PAD_SD1_DATA0__USDHC1_DATA0	0x17059
+-			MX6UL_PAD_SD1_DATA1__USDHC1_DATA1	0x17059
+-			MX6UL_PAD_SD1_DATA2__USDHC1_DATA2	0x17059
+-			MX6UL_PAD_SD1_DATA3__USDHC1_DATA3	0x17059
++			MX6UL_PAD_SD1_CLK__USDHC1_CLK		0x17059 /* SODIMM 47 */
++			MX6UL_PAD_SD1_CMD__USDHC1_CMD		0x10059 /* SODIMM 190 */
++			MX6UL_PAD_SD1_DATA0__USDHC1_DATA0	0x17059 /* SODIMM 192 */
++			MX6UL_PAD_SD1_DATA1__USDHC1_DATA1	0x17059 /* SODIMM 49 */
++			MX6UL_PAD_SD1_DATA2__USDHC1_DATA2	0x17059 /* SODIMM 51 */
++			MX6UL_PAD_SD1_DATA3__USDHC1_DATA3	0x17059 /* SODIMM 53 */
+ 		>;
+ 	};
+ 
+@@ -487,7 +487,7 @@
+ 			MX6UL_PAD_CSI_HSYNC__USDHC2_CMD		0x17059
+ 			MX6UL_PAD_CSI_VSYNC__USDHC2_CLK		0x17059
+ 
+-			MX6UL_PAD_GPIO1_IO03__OSC32K_32K_OUT	0x14
++			MX6UL_PAD_GPIO1_IO03__REF_CLK_32K	0x10
+ 		>;
+ 	};
+ };
+@@ -495,23 +495,23 @@
+ &iomuxc_snvs {
+ 	pinctrl_snvs_gpio1: snvs-gpio1-grp {
+ 		fsl,pins = <
+-			MX6ULL_PAD_SNVS_TAMPER6__GPIO5_IO06	0x14 /* SODIMM 93 */
+-			MX6ULL_PAD_SNVS_TAMPER3__GPIO5_IO03	0x14 /* SODIMM 95 */
+-			MX6ULL_PAD_BOOT_MODE0__GPIO5_IO10	0x74 /* SODIMM 105 */
+-			MX6ULL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x14 /* SODIMM 131 USBH OC */
+-			MX6ULL_PAD_SNVS_TAMPER8__GPIO5_IO08	0x74 /* SODIMM 138 */
++			MX6ULL_PAD_SNVS_TAMPER6__GPIO5_IO06	0x110a0	/* SODIMM 93 */
++			MX6ULL_PAD_SNVS_TAMPER3__GPIO5_IO03	0x110a0	/* SODIMM 95 */
++			MX6ULL_PAD_BOOT_MODE0__GPIO5_IO10	0x1b0a0	/* SODIMM 105 */
++			MX6ULL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x0b0a0	/* SODIMM 131 */
++			MX6ULL_PAD_SNVS_TAMPER8__GPIO5_IO08	0x110a0	/* SODIMM 138 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_snvs_gpio2: snvs-gpio2-grp { /* ATMEL MXT TOUCH */
+ 		fsl,pins = <
+-			MX6ULL_PAD_SNVS_TAMPER4__GPIO5_IO04	0x74 /* SODIMM 107 */
++			MX6ULL_PAD_SNVS_TAMPER4__GPIO5_IO04	0xb0a0	/* SODIMM 107 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_snvs_gpio3: snvs-gpio3-grp { /* Wifi pins */
+ 		fsl,pins = <
+-			MX6ULL_PAD_BOOT_MODE1__GPIO5_IO11	0x14 /* SODIMM 127 */
++			MX6ULL_PAD_BOOT_MODE1__GPIO5_IO11	0x130a0	/* SODIMM 127 */
+ 		>;
+ 	};
+ 
+@@ -535,13 +535,13 @@
+ 
+ 	pinctrl_snvs_gpiokeys: snvs-gpiokeys-grp {
+ 		fsl,pins = <
+-			MX6ULL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x130b0
++			MX6ULL_PAD_SNVS_TAMPER1__GPIO5_IO01	0x130a0	/* SODIMM 45 */
+ 		>;
+ 	};
+ 
+ 	pinctrl_snvs_usdhc1_cd: snvs-usdhc1-cd-grp {
+ 		fsl,pins = <
+-			MX6ULL_PAD_SNVS_TAMPER0__GPIO5_IO00	0x1b0b0 /* CD */
++			MX6ULL_PAD_SNVS_TAMPER0__GPIO5_IO00	0x1b0a0 /* SODIMM 43 */
+ 		>;
+ 	};
+ 
+@@ -553,7 +553,7 @@
+ 
+ 	pinctrl_snvs_wifi_pdn: snvs-wifi-pdn-grp {
+ 		fsl,pins = <
+-			MX6ULL_PAD_BOOT_MODE1__GPIO5_IO11	0x14
++			MX6ULL_PAD_BOOT_MODE1__GPIO5_IO11	0x130a0
+ 		>;
+ 	};
+ };
+-- 
+2.24.0
 
-regards,
-	o.
-
-> > +               if (cdata & ~TEMP_CALIB_MASK) {
-> > +                       /*
-> > +                        * Calibration value more than 12-bit, but calibration
-> > +                        * register is 12-bit. In this case, ths hardware can
-> > +                        * still work without calibration, although the data
-> > +                        * won't be so accurate.
-> > +                        */
-> > +                       dev_warn(dev, "sensor%d is not calibrated.\n", i);
-> > +                       continue;
-> > +               }
-> > +
-> > +               offset = (i % 2) * 16;
-> > +               regmap_update_bits(tmdev->regmap,
-> > +                                  SUN50I_H6_THS_TEMP_CALIB + (i / 2 * 4),
-> > +                                  0xfff << offset,
-> > +                                  cdata << offset);
-> > +       }
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static int sun8i_ths_calibrate(struct ths_device *tmdev)
-> > +{
-> > +       struct nvmem_cell *calcell;
-> > +       struct device *dev = tmdev->dev;
-> > +       u16 *caldata;
-> > +       size_t callen;
-> > +       int ret = 0;
-> > +
-> > +       calcell = devm_nvmem_cell_get(dev, "calibration");
-> > +       if (IS_ERR(calcell)) {
-> > +               if (PTR_ERR(calcell) == -EPROBE_DEFER)
-> > +                       return -EPROBE_DEFER;
-> > +               /*
-> > +                * Even if the external calibration data stored in sid is
-> > +                * not accessible, the THS hardware can still work, although
-> > +                * the data won't be so accurate.
-> > +                *
-> > +                * The default value of calibration register is 0x800 for
-> > +                * every sensor, and the calibration value is usually 0x7xx
-> > +                * or 0x8xx, so they won't be away from the default value
-> > +                * for a lot.
-> > +                *
-> > +                * So here we do not return error if the calibartion data is
-> > +                * not available, except the probe needs deferring.
-> > +                */
-> > +               goto out;
-> > +       }
-> > +
-> > +       caldata = nvmem_cell_read(calcell, &callen);
-> > +       if (IS_ERR(caldata)) {
-> > +               ret = PTR_ERR(caldata);
-> > +               goto out;
-> > +       }
-> > +
-> > +       tmdev->chip->calibrate(tmdev, caldata, callen);
-> > +
-> > +       kfree(caldata);
-> > +out:
-> > +       return ret;
-> > +}
-> > +
-> > +static int sun8i_ths_resource_init(struct ths_device *tmdev)
-> > +{
-> > +       struct device *dev = tmdev->dev;
-> > +       struct platform_device *pdev = to_platform_device(dev);
-> > +       struct resource *mem;
-> > +       void __iomem *base;
-> > +       int ret;
-> > +
-> > +       mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> > +       base = devm_ioremap_resource(dev, mem);
-> > +       if (IS_ERR(base))
-> > +               return PTR_ERR(base);
-> > +
-> > +       tmdev->regmap = devm_regmap_init_mmio(dev, base, &config);
-> > +       if (IS_ERR(tmdev->regmap))
-> > +               return PTR_ERR(tmdev->regmap);
-> > +
-> > +       if (tmdev->chip->has_bus_clk_reset) {
-> > +               tmdev->reset = devm_reset_control_get(dev, 0);
-> > +               if (IS_ERR(tmdev->reset))
-> > +                       return PTR_ERR(tmdev->reset);
-> > +
-> > +               tmdev->bus_clk = devm_clk_get(&pdev->dev, "bus");
-> > +               if (IS_ERR(tmdev->bus_clk))
-> > +                       return PTR_ERR(tmdev->bus_clk);
-> > +       }
-> > +
-> > +       if (tmdev->chip->has_mod_clk) {
-> > +               tmdev->mod_clk = devm_clk_get(&pdev->dev, "mod");
-> > +               if (IS_ERR(tmdev->mod_clk))
-> > +                       return PTR_ERR(tmdev->mod_clk);
-> > +       }
-> > +
-> > +       ret = reset_control_deassert(tmdev->reset);
-> > +       if (ret)
-> > +               return ret;
-> > +
-> > +       ret = clk_prepare_enable(tmdev->bus_clk);
-> > +       if (ret)
-> > +               goto assert_reset;
-> > +
-> > +       ret = clk_set_rate(tmdev->mod_clk, 24000000);
-> > +       if (ret)
-> > +               goto bus_disable;
-> > +
-> > +       ret = clk_prepare_enable(tmdev->mod_clk);
-> > +       if (ret)
-> > +               goto bus_disable;
-> > +
-> > +       ret = sun8i_ths_calibrate(tmdev);
-> > +       if (ret)
-> > +               goto mod_disable;
-> > +
-> > +       return 0;
-> > +
-> > +mod_disable:
-> > +       clk_disable_unprepare(tmdev->mod_clk);
-> > +bus_disable:
-> > +       clk_disable_unprepare(tmdev->bus_clk);
-> > +assert_reset:
-> > +       reset_control_assert(tmdev->reset);
-> > +
-> > +       return ret;
-> > +}
-> > +
-> > +static int sun8i_h3_thermal_init(struct ths_device *tmdev)
-> > +{
-> > +       int val;
-> > +
-> > +       /* average over 4 samples */
-> > +       regmap_write(tmdev->regmap, SUN8I_THS_MFC,
-> > +                    SUN50I_THS_FILTER_EN |
-> > +                    SUN50I_THS_FILTER_TYPE(1));
-> > +       /*
-> > +        * clkin = 24MHz
-> > +        * filter_samples = 4
-> > +        * period = 0.25s
-> > +        *
-> > +        * x = period * clkin / 4096 / filter_samples - 1
-> > +        *   = 365
-> > +        */
-> > +       val = GENMASK(7 + tmdev->chip->sensor_num, 8);
-> > +       regmap_write(tmdev->regmap, SUN8I_THS_IC,
-> > +                    SUN50I_H6_THS_PC_TEMP_PERIOD(365) | val);
-> > +       /*
-> > +        * T_acq = 20us
-> > +        * clkin = 24MHz
-> > +        *
-> > +        * x = T_acq * clkin - 1
-> > +        *   = 479
-> > +        */
-> > +       regmap_write(tmdev->regmap, SUN8I_THS_CTRL0,
-> > +                    SUN8I_THS_CTRL0_T_ACQ0(479));
-> > +       val = GENMASK(tmdev->chip->sensor_num - 1, 0);
-> > +       regmap_write(tmdev->regmap, SUN8I_THS_CTRL2,
-> > +                    SUN8I_THS_CTRL2_T_ACQ1(479) | val);
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +/*
-> > + * Without this undocummented value, the returned temperatures would
-> > + * be higher than real ones by about 20C.
-> > + */
-> > +#define SUN50I_H6_CTRL0_UNK 0x0000002f
-> > +
-> > +static int sun50i_h6_thermal_init(struct ths_device *tmdev)
-> > +{
-> > +       int val;
-> > +
-> > +       /*
-> > +        * T_acq = 20us
-> > +        * clkin = 24MHz
-> > +        *
-> > +        * x = T_acq * clkin - 1
-> > +        *   = 479
-> > +        */
-> > +       regmap_write(tmdev->regmap, SUN50I_THS_CTRL0,
-> > +                    SUN50I_H6_CTRL0_UNK | SUN50I_THS_CTRL0_T_ACQ(479));
-> > +       /* average over 4 samples */
-> > +       regmap_write(tmdev->regmap, SUN50I_H6_THS_MFC,
-> > +                    SUN50I_THS_FILTER_EN |
-> > +                    SUN50I_THS_FILTER_TYPE(1));
-> > +       /*
-> > +        * clkin = 24MHz
-> > +        * filter_samples = 4
-> > +        * period = 0.25s
-> > +        *
-> > +        * x = period * clkin / 4096 / filter_samples - 1
-> > +        *   = 365
-> > +        */
-> > +       regmap_write(tmdev->regmap, SUN50I_H6_THS_PC,
-> > +                    SUN50I_H6_THS_PC_TEMP_PERIOD(365));
-> > +       /* enable sensor */
-> > +       val = GENMASK(tmdev->chip->sensor_num - 1, 0);
-> > +       regmap_write(tmdev->regmap, SUN50I_H6_THS_ENABLE, val);
-> > +       /* thermal data interrupt enable */
-> > +       val = GENMASK(tmdev->chip->sensor_num - 1, 0);
-> > +       regmap_write(tmdev->regmap, SUN50I_H6_THS_DIC, val);
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static int sun8i_ths_register(struct ths_device *tmdev)
-> > +{
-> > +       int i;
-> > +
-> > +       for (i = 0; i < tmdev->chip->sensor_num; i++) {
-> > +               tmdev->sensor[i].tmdev = tmdev;
-> > +               tmdev->sensor[i].id = i;
-> > +               tmdev->sensor[i].tzd =
-> > +                       devm_thermal_zone_of_sensor_register(tmdev->dev,
-> > +                                                            i,
-> > +                                                            &tmdev->sensor[i],
-> > +                                                            &ths_ops);
-> > +               if (IS_ERR(tmdev->sensor[i].tzd))
-> > +                       return PTR_ERR(tmdev->sensor[i].tzd);
-> > +       }
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static int sun8i_ths_probe(struct platform_device *pdev)
-> > +{
-> > +       struct ths_device *tmdev;
-> > +       struct device *dev = &pdev->dev;
-> > +       int ret, irq;
-> > +
-> > +       tmdev = devm_kzalloc(dev, sizeof(*tmdev), GFP_KERNEL);
-> > +       if (!tmdev)
-> > +               return -ENOMEM;
-> > +
-> > +       tmdev->dev = dev;
-> > +       tmdev->chip = of_device_get_match_data(&pdev->dev);
-> > +       if (!tmdev->chip)
-> > +               return -EINVAL;
-> > +
-> > +       platform_set_drvdata(pdev, tmdev);
-> > +
-> > +       ret = sun8i_ths_resource_init(tmdev);
-> > +       if (ret)
-> > +               return ret;
-> > +
-> > +       irq = platform_get_irq(pdev, 0);
-> > +       if (irq < 0)
-> > +               return irq;
-> > +
-> > +       ret = tmdev->chip->init(tmdev);
-> > +       if (ret)
-> > +               return ret;
-> > +
-> > +       ret = sun8i_ths_register(tmdev);
-> > +       if (ret)
-> > +               return ret;
-> > +
-> > +       /*
-> > +        * Avoid entering the interrupt handler, the thermal device is not
-> > +        * registered yet, we deffer the registration of the interrupt to
-> > +        * the end.
-> > +        */
-> > +       ret = devm_request_threaded_irq(dev, irq, NULL,
-> > +                                       sun8i_irq_thread,
-> > +                                       IRQF_ONESHOT, "ths", tmdev);
-> > +       if (ret)
-> > +               return ret;
-> > +
-> > +       return ret;
-> > +}
-> > +
-> > +static int sun8i_ths_remove(struct platform_device *pdev)
-> > +{
-> > +       struct ths_device *tmdev = platform_get_drvdata(pdev);
-> > +
-> > +       clk_disable_unprepare(tmdev->mod_clk);
-> > +       clk_disable_unprepare(tmdev->bus_clk);
-> > +       reset_control_assert(tmdev->reset);
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static const struct ths_thermal_chip sun8i_a83t_ths = {
-> > +       .sensor_num = 3,
-> > +       .scale = 705,
-> > +       .offset = 191668,
-> > +       .temp_data_base = SUN8I_THS_TEMP_DATA,
-> > +       .calibrate = sun8i_h3_ths_calibrate,
-> > +       .init = sun8i_h3_thermal_init,
-> > +       .irq_ack = sun8i_h3_irq_ack,
-> > +       .calc_temp = sun8i_ths_calc_temp,
-> > +};
-> > +
-> > +static const struct ths_thermal_chip sun8i_h3_ths = {
-> > +       .sensor_num = 1,
-> > +       .scale = 1211,
-> > +       .offset = 217000,
-> > +       .has_mod_clk = true,
-> > +       .has_bus_clk_reset = true,
-> > +       .temp_data_base = SUN8I_THS_TEMP_DATA,
-> > +       .calibrate = sun8i_h3_ths_calibrate,
-> > +       .init = sun8i_h3_thermal_init,
-> > +       .irq_ack = sun8i_h3_irq_ack,
-> > +       .calc_temp = sun8i_ths_calc_temp,
-> > +};
-> > +
-> > +static const struct ths_thermal_chip sun8i_r40_ths = {
-> > +       .sensor_num = 3,
-> > +       .offset = 251086,
-> > +       .scale = 1130,
-> > +       .has_mod_clk = true,
-> > +       .has_bus_clk_reset = true,
-> > +       .temp_data_base = SUN8I_THS_TEMP_DATA,
-> > +       .calibrate = sun8i_h3_ths_calibrate,
-> > +       .init = sun8i_h3_thermal_init,
-> > +       .irq_ack = sun8i_h3_irq_ack,
-> > +       .calc_temp = sun8i_ths_calc_temp,
-> > +};
-> > +
-> > +static const struct ths_thermal_chip sun50i_a64_ths = {
-> > +       .sensor_num = 3,
-> > +       .offset = 253890,
-> > +       .scale = 1170,
-> > +       .has_mod_clk = true,
-> > +       .has_bus_clk_reset = true,
-> > +       .temp_data_base = SUN8I_THS_TEMP_DATA,
-> > +       .calibrate = sun8i_h3_ths_calibrate,
-> > +       .init = sun8i_h3_thermal_init,
-> > +       .irq_ack = sun8i_h3_irq_ack,
-> > +       .calc_temp = sun8i_ths_calc_temp,
-> > +};
-> > +
-> > +static const struct ths_thermal_chip sun50i_h5_ths = {
-> > +       .sensor_num = 2,
-> > +       .has_mod_clk = true,
-> > +       .has_bus_clk_reset = true,
-> > +       .temp_data_base = SUN8I_THS_TEMP_DATA,
-> > +       .calibrate = sun8i_h3_ths_calibrate,
-> > +       .init = sun8i_h3_thermal_init,
-> > +       .irq_ack = sun8i_h3_irq_ack,
-> > +       .calc_temp = sun50i_h5_calc_temp,
-> > +};
-> > +
-> > +static const struct ths_thermal_chip sun50i_h6_ths = {
-> > +       .sensor_num = 2,
-> > +       .has_bus_clk_reset = true,
-> > +       .ft_deviation = 7000,
-> > +       .offset = 187744,
-> > +       .scale = 672,
-> > +       .temp_data_base = SUN50I_H6_THS_TEMP_DATA,
-> > +       .calibrate = sun50i_h6_ths_calibrate,
-> > +       .init = sun50i_h6_thermal_init,
-> > +       .irq_ack = sun50i_h6_irq_ack,
-> > +       .calc_temp = sun8i_ths_calc_temp,
-> > +};
-> > +
-> > +static const struct of_device_id of_ths_match[] = {
-> > +       { .compatible = "allwinner,sun8i-a83t-ths", .data = &sun8i_a83t_ths },
-> > +       { .compatible = "allwinner,sun8i-h3-ths", .data = &sun8i_h3_ths },
-> > +       { .compatible = "allwinner,sun8i-r40-ths", .data = &sun8i_r40_ths },
-> > +       { .compatible = "allwinner,sun50i-a64-ths", .data = &sun50i_a64_ths },
-> > +       { .compatible = "allwinner,sun50i-h5-ths", .data = &sun50i_h5_ths },
-> > +       { .compatible = "allwinner,sun50i-h6-ths", .data = &sun50i_h6_ths },
-> > +       { /* sentinel */ },
-> > +};
-> > +MODULE_DEVICE_TABLE(of, of_ths_match);
-> > +
-> > +static struct platform_driver ths_driver = {
-> > +       .probe = sun8i_ths_probe,
-> > +       .remove = sun8i_ths_remove,
-> > +       .driver = {
-> > +               .name = "sun8i-thermal",
-> > +               .of_match_table = of_ths_match,
-> > +       },
-> > +};
-> > +module_platform_driver(ths_driver);
-> > +
-> > +MODULE_DESCRIPTION("Thermal sensor driver for Allwinner SOC");
-> > +MODULE_LICENSE("GPL v2");
-> > --
-> > 2.24.0
-> >
-> 
-> Thx,
-> Yangtao
 
 _______________________________________________
 linux-arm-kernel mailing list
