@@ -2,85 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36A2510CC0D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:47:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1837810CC47
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:58:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Y0k1aCsIMi6M6NY8TPrCspXyY8qdOGqmQ5zMAsDn6ro=; b=mv0tjlEVoMW65t
-	PdQ7LNTd6GSjY24QfDMzZV8aOoEBc6j/ecFCY27qlZqeBiFaESZXzSOB/4rSxO5wRF6bIb+ZxI/dz
-	yDHoAFMe5032ulEU68kthynRxzWI2D4dY7IFypklXB85EURRr6klvR5tO6qNizCezUvZcSLQP/7Bl
-	eq5xiEU6SCMQfTfPUHB7SeDRr8JqDdnUDY4+ZNfpwhfNaE4wKFVPug2wVWQXKac6/C3DFvMdFQ+Zv
-	bMdzcPo5emxgX2RshOkStNeHZOwOjBS5U/bbJnaWg992KIaf5jS0LiaBo+JSecKRuGYwOhtaIs+Fe
-	Xzd0IC96JDf1cW3glIZA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=w2it+goqsF/pAw7NCfa018smZhkm/sLDK0vmFwRozX0=; b=kXBpm8Xb0bKkgUQ0PMqiCnymH
+	j90koSL03b1tpV6rz6GGsjAFdRrSkmF3+m5FXN4eTE3rC+DYi0jEhIyinn7D3hmAUNO/CkO1IBEbL
+	pFxVtH2SQC3ElI6NfQDlNWBVL5nEbIRaze/EnsE4r19qqBGCQt9YzGXvROhUCgaZJQWgLdkwi/XDC
+	U7eZt7L+c++EtZg7uxPE8wjWyq0cJJGWJhuAKcbNtBuqnrxXqhlxKLVNlybdwZ225HpNUHNljK3Du
+	MBzEjiQLHEzoDFQUQK23rZmYVhGPkqZk8Lzot2vcWjQqW1nlTRh+Cs86CGJty1DItFeFBB9ZfFzdI
+	9j+woKDgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaM0m-0006RV-A5; Thu, 28 Nov 2019 15:47:20 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iaMBp-0001kK-Pz; Thu, 28 Nov 2019 15:58:45 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaM0a-0006Qw-Du
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 15:47:10 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xASFgPVo023621; Thu, 28 Nov 2019 16:47:00 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=rUcrmp6FDis0MYM6sfyej2AR9/hatx5q+JoT9j7Vktc=;
- b=QgnRDT9ig/K54IfKnmwnt2JtFyprAUi04+kHWxFzQgcYH/QuQkzGhzskgFXZd9XgArH+
- UBtCPA2Y/6gadfBYviu05CWYYtwTy3lVmB/RI5CYW1uHdPnAThIkD/pNYsyVH/Mlyg7i
- 5I3fqSn+wL3QyxjLYI20t5wjBxw4Bk3f2v2w5fUJlOH4ge/Ot27pTadhSLehGzZwsyxX
- 3wjVqFe1nBQYQrLFWAn+A9yeXjXvz8R6gtC1ZYe/itZ9KneD4I2G+3+SoMFqMq1blm2k
- tqLp9L5fIkP7JZXInWUWIyUSpNlaC1Ppsl/v2/vE/nSUBKWti9Fj1rd4N7+iwC7TvpsS lw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2whcxktpp8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 28 Nov 2019 16:47:00 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D5DDE10002A;
- Thu, 28 Nov 2019 16:46:59 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id BFB482BF9AD;
- Thu, 28 Nov 2019 16:46:59 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG3NODE1.st.com (10.75.127.7)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 28 Nov 2019 16:46:58
- +0100
-From: Arnaud Pouliquen <arnaud.pouliquen@st.com>
-To: Rob Herring <robh@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Bjorn Andersson
- <bjorn.andersson@linaro.org>
-Subject: [PATCH] dt-bindings: stm32: convert mlahb to json-schema
-Date: Thu, 28 Nov 2019 16:46:03 +0100
-Message-ID: <20191128154603.6911-1-arnaud.pouliquen@st.com>
-X-Mailer: git-send-email 2.17.1
+ id 1iaMBd-0001jb-A6; Thu, 28 Nov 2019 15:58:35 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 113EC2923E3
+Subject: Re: [PATCH 1/3] drm/rockchip: Use drm_gem_fb_create_with_dirty
+To: Daniel Vetter <daniel.vetter@ffwll.ch>,
+ DRI Development <dri-devel@lists.freedesktop.org>
+References: <20191127180035.416209-1-daniel.vetter@ffwll.ch>
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Message-ID: <0b2b352c-c7fe-1629-3117-f245ed27d4c2@collabora.com>
+Date: Thu, 28 Nov 2019 16:58:26 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE1.st.com
- (10.75.127.7)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-11-28_04:2019-11-28,2019-11-28 signatures=0
+In-Reply-To: <20191127180035.416209-1-daniel.vetter@ffwll.ch>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_074708_922691_8250488A 
-X-CRM114-Status: GOOD (  16.80  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191128_075833_613598_5BBF14BF 
+X-CRM114-Status: GOOD (  17.56  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,155 +61,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- linux-kernel@vger.kernel.org, Fabien Dessenne <fabien.dessenne@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Daniel Vetter <daniel.vetter@intel.com>, linux-rockchip@lists.infradead.org,
+ Sandy Huang <hjc@rock-chips.com>, linux-arm-kernel@lists.infradead.org,
+ =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the ML-AHB bus bindings to DT schema format using json-schema
-
-Signed-off-by: Arnaud Pouliquen <arnaud.pouliquen@st.com>
----
-Notice that this patch requests an update of the simple-bus schema to add
-the support of the "dma-ranges" property.
-A Pull request has been sent in parallel to the dt-schema github repo:
-https://github.com/devicetree-org/dt-schema/pull/30
-
-To remind the topic around the use of "dma-ranges" please
-refer to following discussion: https://lkml.org/lkml/2019/4/3/1261
----
- .../devicetree/bindings/arm/stm32/mlahb.txt   | 37 ----------
- .../bindings/arm/stm32/st,mlahb.yaml          | 69 +++++++++++++++++++
- 2 files changed, 69 insertions(+), 37 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/stm32/mlahb.txt
- create mode 100644 Documentation/devicetree/bindings/arm/stm32/st,mlahb.yaml
-
-diff --git a/Documentation/devicetree/bindings/arm/stm32/mlahb.txt b/Documentation/devicetree/bindings/arm/stm32/mlahb.txt
-deleted file mode 100644
-index 25307aa1eb9b..000000000000
---- a/Documentation/devicetree/bindings/arm/stm32/mlahb.txt
-+++ /dev/null
-@@ -1,37 +0,0 @@
--ML-AHB interconnect bindings
--
--These bindings describe the STM32 SoCs ML-AHB interconnect bus which connects
--a Cortex-M subsystem with dedicated memories.
--The MCU SRAM and RETRAM memory parts can be accessed through different addresses
--(see "RAM aliases" in [1]) using different buses (see [2]) : balancing the
--Cortex-M firmware accesses among those ports allows to tune the system
--performance.
--
--[1]: https://www.st.com/resource/en/reference_manual/dm00327659.pdf
--[2]: https://wiki.st.com/stm32mpu/wiki/STM32MP15_RAM_mapping
--
--Required properties:
--- compatible: should be "simple-bus"
--- dma-ranges: describes memory addresses translation between the local CPU and
--	   the remote Cortex-M processor. Each memory region, is declared with
--	   3 parameters:
--		 - param 1: device base address (Cortex-M processor address)
--		 - param 2: physical base address (local CPU address)
--		 - param 3: size of the memory region.
--
--The Cortex-M remote processor accessed via the mlahb interconnect is described
--by a child node.
--
--Example:
--mlahb {
--	compatible = "simple-bus";
--	#address-cells = <1>;
--	#size-cells = <1>;
--	dma-ranges = <0x00000000 0x38000000 0x10000>,
--		     <0x10000000 0x10000000 0x60000>,
--		     <0x30000000 0x30000000 0x60000>;
--
--	m4_rproc: m4@10000000 {
--		...
--	};
--};
-diff --git a/Documentation/devicetree/bindings/arm/stm32/st,mlahb.yaml b/Documentation/devicetree/bindings/arm/stm32/st,mlahb.yaml
-new file mode 100644
-index 000000000000..8ad3f7c7f9ab
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/stm32/st,mlahb.yaml
-@@ -0,0 +1,69 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: "http://devicetree.org/schemas/arm/stm32/st,mlahb.yaml#"
-+$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-+
-+title: STMicroelectronics STM32 ML-AHB interconnect bindings
-+
-+maintainers:
-+  - Fabien Dessenne <fabien.dessenne@st.com>
-+  - Arnaud Pouliquen <arnaud.pouliquen@st.com>
-+
-+description: |
-+  These bindings describe the STM32 SoCs ML-AHB interconnect bus which connects
-+  a Cortex-M subsystem with dedicated memories. The MCU SRAM and RETRAM memory
-+  parts can be accessed through different addresses (see "RAM aliases" in [1])
-+  using different buses (see [2]): balancing the Cortex-M firmware accesses
-+  among those ports allows to tune the system performance.
-+  [1]: https://www.st.com/resource/en/reference_manual/dm00327659.pdf
-+  [2]: https://wiki.st.com/stm32mpu/wiki/STM32MP15_RAM_mapping
-+
-+allOf:
-+ - $ref: /schemas/simple-bus.yaml#
-+
-+properties:
-+  compatible:
-+    contains:
-+      enum:
-+        - st,mlahb
-+
-+  dma-ranges:
-+    description: |
-+      Describe memory addresses translation between the local CPU and the
-+      remote Cortex-M processor. Each memory region, is declared with
-+      3 parameters:
-+      - param 1: device base address (Cortex-M processor address)
-+      - param 2: physical base address (local CPU address)
-+      - param 3: size of the memory region.
-+    maxItems: 3
-+
-+  '#address-cells':
-+    const: 1
-+
-+  '#size-cells':
-+    const: 1
-+
-+required:
-+  - compatible
-+  - '#address-cells'
-+  - '#size-cells'
-+  - dma-ranges
-+
-+examples:
-+  - |
-+    mlahb: ahb {
-+      compatible = "st,mlahb", "simple-bus";
-+      #address-cells = <1>;
-+      #size-cells = <1>;
-+      reg = <0x10000000 0x40000>;
-+      dma-ranges = <0x00000000 0x38000000 0x10000>,
-+                   <0x10000000 0x10000000 0x60000>,
-+                   <0x30000000 0x30000000 0x60000>;
-+
-+      m4_rproc: m4@10000000 {
-+       reg = <0x10000000 0x40000>;
-+      };
-+    };
-+
-+...
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VyBkbml1IDI3LjExLjIwMTkgb8KgMTk6MDAsIERhbmllbCBWZXR0ZXIgcGlzemU6Cj4gSWYgcm9j
+a2NoaXAgd291bGQgc3dpdGNoIG92ZXIgdG8gdGhlIGdlbmVyaWMgZmJkZXYgc2V0dXAgd2UgY291
+bGQKPiBncmFiYWdlIGNvbGxlY3QgZXZlbiBtb3JlIG9mIGFsbCB0aGlzIGNvZGUgKGFsbCBvZiB0
+aGUgcmVtYWluaW5nIGZiCj4gaGFuZGxpbmcgY29kZSByZWFsbHkpLgo+IAo+IHYyOiBBY3R1YWxs
+eSB1c2UgX3dpdGhfZGlydHkgbGlrZSB0aGUgcGF0Y2ggc3ViamVjdCBwcm9taXNlZCAoQW5kcnpl
+aikKPiAKPiBDYzogQW5kcnplaiBQaWV0cmFzaWV3aWN6IDxhbmRyemVqLnBAY29sbGFib3JhLmNv
+bT4KPiBTaWduZWQtb2ZmLWJ5OiBEYW5pZWwgVmV0dGVyIDxkYW5pZWwudmV0dGVyQGludGVsLmNv
+bT4KPiBDYzogU2FuZHkgSHVhbmcgPGhqY0Byb2NrLWNoaXBzLmNvbT4KPiBDYzogIkhlaWtvIFN0
+w7xibmVyIiA8aGVpa29Ac250ZWNoLmRlPgo+IENjOiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKPiBDYzogbGludXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwoKSSB1
+bmRlcnN0YW5kIHRoYXQgY29tcHV0aW5nIG1pbl9zaXplIGlzIGNoYW5naW5nIGFzIHBlcgoKMDQy
+YmY3NTM4NDJkZApkcm0vZm91cmNjOiBBZGQgY2hhcl9wZXJfYmxvY2ssIGJsb2NrX3cgYW5kIGJs
+b2NrX2ggaW4gZHJtX2Zvcm1hdF9pbmZvLgoKV2l0aCBvdGhlciBxdWVzdGlvbnMgSSBoYWQgYmVm
+b3JlIGFuc3dlcmVkIGluIHlvdXIgcHJldmlvdXMgcmVwbHkgdGhlIGN1cnJlbnQKdmVyc2lvbiBv
+ZiB0aGlzIHBhdGNoIGlzCgpSZXZpZXdlZC1ieTogQW5kcnplaiBQaWV0cmFzaWV3aWN6IDxhbmRy
+emVqLnBAY29sbGFib3JhLmNvbT4KCj4gLS0tCj4gICBkcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAv
+cm9ja2NoaXBfZHJtX2ZiLmMgfCA1NCArLS0tLS0tLS0tLS0tLS0tLS0tLS0tCj4gICAxIGZpbGUg
+Y2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDUzIGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQg
+YS9kcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBfZHJtX2ZiLmMgYi9kcml2ZXJzL2dw
+dS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBfZHJtX2ZiLmMKPiBpbmRleCBjYTAxMjM0YzAzN2MuLjIy
+MWU3MmU3MTQzMiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2No
+aXBfZHJtX2ZiLmMKPiArKysgYi9kcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBfZHJt
+X2ZiLmMKPiBAQCAtNTMsNjQgKzUzLDEyIEBAIHJvY2tjaGlwX2ZiX2FsbG9jKHN0cnVjdCBkcm1f
+ZGV2aWNlICpkZXYsIGNvbnN0IHN0cnVjdCBkcm1fbW9kZV9mYl9jbWQyICptb2RlX2NtCj4gICAJ
+cmV0dXJuIGZiOwo+ICAgfQo+ICAgCj4gLXN0YXRpYyBzdHJ1Y3QgZHJtX2ZyYW1lYnVmZmVyICoK
+PiAtcm9ja2NoaXBfdXNlcl9mYl9jcmVhdGUoc3RydWN0IGRybV9kZXZpY2UgKmRldiwgc3RydWN0
+IGRybV9maWxlICpmaWxlX3ByaXYsCj4gLQkJCWNvbnN0IHN0cnVjdCBkcm1fbW9kZV9mYl9jbWQy
+ICptb2RlX2NtZCkKPiAtewo+IC0JY29uc3Qgc3RydWN0IGRybV9mb3JtYXRfaW5mbyAqaW5mbyA9
+IGRybV9nZXRfZm9ybWF0X2luZm8oZGV2LAo+IC0JCQkJCQkJCSBtb2RlX2NtZCk7Cj4gLQlzdHJ1
+Y3QgZHJtX2ZyYW1lYnVmZmVyICpmYjsKPiAtCXN0cnVjdCBkcm1fZ2VtX29iamVjdCAqb2Jqc1tS
+T0NLQ0hJUF9NQVhfRkJfQlVGRkVSXTsKPiAtCXN0cnVjdCBkcm1fZ2VtX29iamVjdCAqb2JqOwo+
+IC0JaW50IG51bV9wbGFuZXMgPSBtaW5fdChpbnQsIGluZm8tPm51bV9wbGFuZXMsIFJPQ0tDSElQ
+X01BWF9GQl9CVUZGRVIpOwo+IC0JaW50IHJldDsKPiAtCWludCBpOwo+IC0KPiAtCWZvciAoaSA9
+IDA7IGkgPCBudW1fcGxhbmVzOyBpKyspIHsKPiAtCQl1bnNpZ25lZCBpbnQgd2lkdGggPSBtb2Rl
+X2NtZC0+d2lkdGggLyAoaSA/IGluZm8tPmhzdWIgOiAxKTsKPiAtCQl1bnNpZ25lZCBpbnQgaGVp
+Z2h0ID0gbW9kZV9jbWQtPmhlaWdodCAvIChpID8gaW5mby0+dnN1YiA6IDEpOwo+IC0JCXVuc2ln
+bmVkIGludCBtaW5fc2l6ZTsKPiAtCj4gLQkJb2JqID0gZHJtX2dlbV9vYmplY3RfbG9va3VwKGZp
+bGVfcHJpdiwgbW9kZV9jbWQtPmhhbmRsZXNbaV0pOwo+IC0JCWlmICghb2JqKSB7Cj4gLQkJCURS
+TV9ERVZfRVJST1IoZGV2LT5kZXYsCj4gLQkJCQkgICAgICAiRmFpbGVkIHRvIGxvb2t1cCBHRU0g
+b2JqZWN0XG4iKTsKPiAtCQkJcmV0ID0gLUVOWElPOwo+IC0JCQlnb3RvIGVycl9nZW1fb2JqZWN0
+X3VucmVmZXJlbmNlOwo+IC0JCX0KPiAtCj4gLQkJbWluX3NpemUgPSAoaGVpZ2h0IC0gMSkgKiBt
+b2RlX2NtZC0+cGl0Y2hlc1tpXSArCj4gLQkJCW1vZGVfY21kLT5vZmZzZXRzW2ldICsKPiAtCQkJ
+d2lkdGggKiBpbmZvLT5jcHBbaV07Cj4gLQo+IC0JCWlmIChvYmotPnNpemUgPCBtaW5fc2l6ZSkg
+ewo+IC0JCQlkcm1fZ2VtX29iamVjdF9wdXRfdW5sb2NrZWQob2JqKTsKPiAtCQkJcmV0ID0gLUVJ
+TlZBTDsKPiAtCQkJZ290byBlcnJfZ2VtX29iamVjdF91bnJlZmVyZW5jZTsKPiAtCQl9Cj4gLQkJ
+b2Jqc1tpXSA9IG9iajsKPiAtCX0KPiAtCj4gLQlmYiA9IHJvY2tjaGlwX2ZiX2FsbG9jKGRldiwg
+bW9kZV9jbWQsIG9ianMsIGkpOwo+IC0JaWYgKElTX0VSUihmYikpIHsKPiAtCQlyZXQgPSBQVFJf
+RVJSKGZiKTsKPiAtCQlnb3RvIGVycl9nZW1fb2JqZWN0X3VucmVmZXJlbmNlOwo+IC0JfQo+IC0K
+PiAtCXJldHVybiBmYjsKPiAtCj4gLWVycl9nZW1fb2JqZWN0X3VucmVmZXJlbmNlOgo+IC0JZm9y
+IChpLS07IGkgPj0gMDsgaS0tKQo+IC0JCWRybV9nZW1fb2JqZWN0X3B1dF91bmxvY2tlZChvYmpz
+W2ldKTsKPiAtCXJldHVybiBFUlJfUFRSKHJldCk7Cj4gLX0KPiAtCj4gICBzdGF0aWMgY29uc3Qg
+c3RydWN0IGRybV9tb2RlX2NvbmZpZ19oZWxwZXJfZnVuY3Mgcm9ja2NoaXBfbW9kZV9jb25maWdf
+aGVscGVycyA9IHsKPiAgIAkuYXRvbWljX2NvbW1pdF90YWlsID0gZHJtX2F0b21pY19oZWxwZXJf
+Y29tbWl0X3RhaWxfcnBtLAo+ICAgfTsKPiAgIAo+ICAgc3RhdGljIGNvbnN0IHN0cnVjdCBkcm1f
+bW9kZV9jb25maWdfZnVuY3Mgcm9ja2NoaXBfZHJtX21vZGVfY29uZmlnX2Z1bmNzID0gewo+IC0J
+LmZiX2NyZWF0ZSA9IHJvY2tjaGlwX3VzZXJfZmJfY3JlYXRlLAo+ICsJLmZiX2NyZWF0ZSA9IGRy
+bV9nZW1fZmJfY3JlYXRlX3dpdGhfZGlydHksCj4gICAJLm91dHB1dF9wb2xsX2NoYW5nZWQgPSBk
+cm1fZmJfaGVscGVyX291dHB1dF9wb2xsX2NoYW5nZWQsCj4gICAJLmF0b21pY19jaGVjayA9IGRy
+bV9hdG9taWNfaGVscGVyX2NoZWNrLAo+ICAgCS5hdG9taWNfY29tbWl0ID0gZHJtX2F0b21pY19o
+ZWxwZXJfY29tbWl0LAo+IAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
