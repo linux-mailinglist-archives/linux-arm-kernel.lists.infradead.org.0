@@ -2,70 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2380C10CA84
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 15:43:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F70610CA8E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 15:45:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yPSAMolF+HuCysd01vETRXQshVR5gycFYULqhZhb8cA=; b=gSQygDYvmf2AWH
-	KBFdo6uGa2oTlziDaWr3D9KmgU6E6FUDlEY05EYNCliHs2UIRHdQxibcYpS6JgYUEsprwUZiGh4uH
-	oLWb+rHBJjqYq9zR+lj8uXSaflwlL01WAdnkukXc9IRrUC2A3RywJUVNVZ5DIwSt8wCyrGSZCdxRP
-	2+QFSseb9hzBNDLSqOnjQ8jqjMktdGb5s2+8J78Eyi5TMyg/H+c5tuV3AEgrm2TL75zF69FhlLjRi
-	0LUSc9K3D0p++SsdiLOdiEusauJR2JMz3OfH/Lyo6gcLvGpYeFa5zyYvEwu7VQeCYA2pwQpNfSm0b
-	3JvKx8RrIk7ERcDS2sXQ==;
+	List-Owner; bh=yVXsjVZygJTloJWutcW4wIq/nfR5jDWG3iK/BVbD8e4=; b=jnJJFSf+CqQ4AB
+	GnMIKOpQ1H4zggOfZ74gZcgoXZ8pyicxklahY4RLtUdviyQglK6QxeleDTvZjE6oiM2qjL7Z0oCUx
+	Xj9q2SS3PkDcYsKgPFlSxXnUlp49GgWqdPTrkzj0WZHlpxu868+y1E3cHF9C9O2EXh3rpZ3Q0u/lp
+	NlyKwgl9xdJ6BL1pOwYJnNNVtuNzFBU/htC7KXhcdJUg/9xroyrBCGGfddK7S84x2w8GvIc9GvdHQ
+	KZQc+ipU7Gy6L04ldaqenvUZ7NBwGB7Detqu/keNiNT6mebj4y+iPOSmTwp6tO5rnbqv5/DH0Z1QC
+	Ohy9wFAtLXQ4DiEu3j5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaL1C-00028L-Vv; Thu, 28 Nov 2019 14:43:42 +0000
+	id 1iaL2z-0003gP-1M; Thu, 28 Nov 2019 14:45:33 +0000
 Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaL13-00027o-8E
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:43:35 +0000
-Received: by mail-io1-xd42.google.com with SMTP id j13so29260996ioe.0
+ id 1iaL2j-0003b8-0x
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:45:18 +0000
+Received: by mail-io1-xd42.google.com with SMTP id f25so3079856iog.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 06:43:32 -0800 (PST)
+ Thu, 28 Nov 2019 06:45:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Z4OMB9FrnRPZRUHwvOwqK6rgFmvyxzvzmzgSErk1FuA=;
- b=GVR7QBA5LCthVUe8s3WHX6R1zzLV1oBi3txKCgqCMuk/fePCuPFPSkNWB917B0Ee8f
- fDwIiyF834JV7NaHFEZtEhwKcotP2gKhli9D9WqhfjjD2d9pZ+VCGKYxXI9TldFa0DDf
- kdZ/Vn4ql/t/W0h9xPh8zBg1fSig/B7KlQ+SOLwshC4KLnqO8/9rENX+6AaxVWShl77s
- vsslrAsMvZ24MU8nGRZJj03MF0XDdDJt7QH798QU7t10PDqynLWFNPTVz/0abfgi15tJ
- Jo6RdDOJYgRrRS3TADPYrmVWHSxRZ3DWDyY7jL7F+67QnwpKknF2jp4ekX5C8L+OQeOo
- 62KA==
+ :cc; bh=jSx1W6k2m7YVIJkPLFSMsX2YfgHqtWK8uY9ek4Pmf8I=;
+ b=X9Blg2OerSCWalXdH509wRdbP/CxlX29WC6jK8xUmtAVF+flTKe3nDE/R80ExoNQg+
+ pS4agCBMfd3Vm+UgEKVFKB9UzmB64Bsi2v3m9ReIyiP+9/8/mrkkbp4dI8q4zs2gqk3A
+ PzkVqCS36Iewh8ElHtAMwIIxnoM+YEjOmV96rgZHvFHkgAHDpzVY74sv1EXZtVID6Gn1
+ qowx6YYdNALYN64bWll/BHYm8m1xSkp6B5G9QanY/Td1fGKoQ+sxva7n08LF8SAkTX3/
+ UxT3cY5ZQ5RFNcjPjjZKy2Qtq/mbWZwD+E+3T7L2qgSaz0at0Lv7znMnmtP+khCNHP0A
+ omkQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Z4OMB9FrnRPZRUHwvOwqK6rgFmvyxzvzmzgSErk1FuA=;
- b=KdeLfT/Qh8+Ln7QSVnHlPjCOLU7WLZowqRzLZYJV9/FblGPUAmTGOaaKMLI6+beQC8
- pADHm0EKbu3ip5oHTS26+2iKwMdyhntjx5skSh0R1kAmG1j07SRfoZ7tksxBTBkt9l9f
- yu8QaBgkRSAwRUIbxSGX+4jGA+q7ZQOjSNX7HOKHeAzXX0A2mqTnimse06oPyvpBFGO+
- wzUh8+BTNtoiV6BGuV+q0diM6RKmWCwQzJDXlO8S7zSCr9pYyjbv+i2WusNaThi6Rfct
- 1j/nMr7ILnxpyGyho/vTyoJRHpAzoRk9JUm/lFlYKYbXQvsqVuSKA2GHrBR86KQ7Ib7c
- tyIw==
-X-Gm-Message-State: APjAAAVy0wioWw54AfRS3n5XFhhHk47urjS/ZIEg9i5ut9Mz7JO9t4W8
- P+33leBvvs5AlINH5Q5TDKCFjuCpKrQSx+0hs4o=
-X-Google-Smtp-Source: APXvYqxmYtcweNZvmQamB+3MqsYEvLc6Vlj1zSMxlf9AdoyRV0M1IpinPiPVlm6ML7fvBE97Hbo1OQQuaabfzT2qJ1I=
-X-Received: by 2002:a02:a0cf:: with SMTP id i15mr10296595jah.95.1574952211778; 
- Thu, 28 Nov 2019 06:43:31 -0800 (PST)
+ bh=jSx1W6k2m7YVIJkPLFSMsX2YfgHqtWK8uY9ek4Pmf8I=;
+ b=JycF2o4pgOec+dOPVSdwFbtBKDElCoGLxPDvR+Gmc48+QA+OK8gM4gogpwB9fRWiCA
+ VB3Q1Whhkuf1BBjh3yVvnz7SuoeqpJ4Ry/qnZd66N7780FA4VyPEKnTbM4h1uSf5HOOc
+ gPBCCcYGAcjoIY6l90LoJKSkQP2RmSl53+SfYqYDw4b9nBr/EcYUGwJrqlwN6Ew3/pfy
+ 9bavYtpUBJMDYmU5RToGVydwU5YxX3c5JdKSKjpZN4/OJldMRBNtRCUcX3Yf4CvhOstL
+ wRxz8YQiJEqVWUBICexduzMmSVSSMuWt4m6qd+cnnfO7lJQD0vy80ICtqN677va0cd1W
+ 7ysQ==
+X-Gm-Message-State: APjAAAVFyODsfI/HAVPEitpV/QAFV2M9KDOVDq+hy0FbJ6Rl67wzQMuS
+ wPqUyb4Naz1aTFIH3lrZMoLAgSGpkRJDu2TReU4=
+X-Google-Smtp-Source: APXvYqzLCeJzhm0WCeJJ0618OO8UX+1l72IcYyuPZXCOKVkkwktb50xDTqNF45Yemd5l5HIoAr3ZFDwmyA/+m/fzT90=
+X-Received: by 2002:a6b:b511:: with SMTP id e17mr12363141iof.18.1574952316211; 
+ Thu, 28 Nov 2019 06:45:16 -0800 (PST)
 MIME-Version: 1.0
-References: <cover.1574458460.git.leonard.crestez@nxp.com>
- <23e46c12c98947315229c20dea6784ad40d294c4.1574458460.git.leonard.crestez@nxp.com>
-In-Reply-To: <23e46c12c98947315229c20dea6784ad40d294c4.1574458460.git.leonard.crestez@nxp.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Thu, 28 Nov 2019 08:43:20 -0600
-Message-ID: <CAHCN7xK_w9m7sZOJtGFVtpeu1BHN_H6eyeYCOgZQS67t1SvmRQ@mail.gmail.com>
-Subject: Re: [PATCH v7 5/5] arm64: dts: imx8m: Add ddr controller nodes
-To: Leonard Crestez <leonard.crestez@nxp.com>
+References: <20191127052935.1719897-1-anarsoul@gmail.com>
+ <20191127052935.1719897-3-anarsoul@gmail.com>
+ <20191127174434.wousbqosmm5vxcsu@gilmour.lan>
+ <CA+E=qVe22T1uhUo6iq9a82Y9bC014CZSkAtSJJNX4qsn6dJL9w@mail.gmail.com>
+ <20191128074325.q47rpzhufwog6mbb@gilmour.lan>
+ <CAEExFWs7A4TcB-QcatfR3w1hUX88dC-Sxd=epQppwB7p2CC6SA@mail.gmail.com>
+In-Reply-To: <CAEExFWs7A4TcB-QcatfR3w1hUX88dC-Sxd=epQppwB7p2CC6SA@mail.gmail.com>
+From: Frank Lee <tiny.windzz@gmail.com>
+Date: Thu, 28 Nov 2019 22:45:04 +0800
+Message-ID: <CAEExFWu4MPxA+Vs1BNzCqeR5EkbVT2SjMf6hRBK6nZ2doJmduA@mail.gmail.com>
+Subject: Re: [PATCH v6 2/7] dt-bindings: thermal: add YAML schema for
+ sun8i-thermal driver bindings
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_064333_295952_E6A822FD 
-X-CRM114-Status: GOOD (  21.51  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191128_064517_074465_CE55941D 
+X-CRM114-Status: GOOD (  11.89  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
@@ -74,9 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
+ provider (tiny.windzz[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -95,246 +98,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>, linux-clk <linux-clk@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, NXP Linux Team <linux-imx@nxp.com>,
- devicetree <devicetree@vger.kernel.org>, linux-pm@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Martin Kepplinger <martink@posteo.de>,
- Silvano di Ninno <silvano.dininno@nxp.com>,
- arm-soc <linux-arm-kernel@lists.infradead.org>,
- Dong Aisheng <aisheng.dong@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Matthias Kaehlcke <mka@chromium.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Georgi Djakov <georgi.djakov@linaro.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Eduardo Valentin <edubezval@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Linux PM <linux-pm@vger.kernel.org>,
+ =?UTF-8?Q?Ond=C5=99ej_Jirman?= <megous@megous.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Zhang Rui <rui.zhang@intel.com>, "David S. Miller" <davem@davemloft.net>,
+ devicetree <devicetree@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 22, 2019 at 3:46 PM Leonard Crestez <leonard.crestez@nxp.com> wrote:
->
-> This is used by the imx-ddrc devfreq driver to implement dynamic
-> frequency scaling of DRAM.
->
-> Support for proactive scaling via interconnect will come later. The
-> high-performance bus masters which need that (display, vpu, gpu) are
-> mostly not yet enabled in upstream anyway.
->
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> ---
->  arch/arm64/boot/dts/freescale/imx8mm-evk.dts  | 18 ++++++++++++++
->  arch/arm64/boot/dts/freescale/imx8mm.dtsi     | 10 ++++++++
->  .../boot/dts/freescale/imx8mn-ddr4-evk.dts    | 18 ++++++++++++++
->  arch/arm64/boot/dts/freescale/imx8mn.dtsi     | 10 ++++++++
->  arch/arm64/boot/dts/freescale/imx8mq-evk.dts  | 24 +++++++++++++++++++
->  arch/arm64/boot/dts/freescale/imx8mq.dtsi     | 10 ++++++++
->  6 files changed, 90 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-> index 28ab17a277bb..ecf0d385c164 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-> @@ -75,10 +75,28 @@
->
->  &A53_0 {
->         cpu-supply = <&buck2_reg>;
->  };
->
-> +&ddrc {
-> +       operating-points-v2 = <&ddrc_opp_table>;
-> +
-> +       ddrc_opp_table: opp-table {
-> +               compatible = "operating-points-v2";
-> +
-> +               opp-25M {
-> +                       opp-hz = /bits/ 64 <25000000>;
-> +               };
-> +               opp-100M {
-> +                       opp-hz = /bits/ 64 <100000000>;
-> +               };
-> +               opp-750M {
-> +                       opp-hz = /bits/ 64 <750000000>;
-> +               };
-> +       };
-> +};
+diff --git a/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+new file mode 100644
+index 000000000000..1be32f09fcc8
+--- /dev/null
++++ b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+@@ -0,0 +1,160 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/thermal/sun8i-thermal.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner SUN8I Thermal Controller Device Tree Bindings
++
++maintainers:
++  - Yangtao Li <tiny.windzz@gmail.com>
++
++description: |-
++  This describes the device tree binding for the Allwinner thermal
++  controller which measures the on-SoC temperatures.
++
++properties:
++  compatible:
++    enum:
++      - allwinner,sun8i-a83t-ths
++      - allwinner,sun8i-h3-ths
++      - allwinner,sun8i-r40-ths
++      - allwinner,sun50i-a64-ths
++      - allwinner,sun50i-h5-ths
++      - allwinner,sun50i-h6-ths
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++  clocks:
++    minItems: 1
++    maxItems: 2
++    items:
++      - description: ths bus clock
++      - description: ths mod clock
++
++  clock-names:
++    minItems: 1
++    maxItems: 2
++    items:
++      - const: bus
++      - const: mod
++
++  "#thermal-sensor-cells":
++    enum: [ 0, 1 ]
++
++  nvmem-cells:
++    description: ths calibrate data
++
++  nvmem-cell-names:
++    const: calibration
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - "#thermal-sensor-cells"
++
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - allwinner,sun8i-h3-ths
++              - allwinner,sun8i-r40-ths
++              - allwinner,sun50i-a64-ths
++              - allwinner,sun50i-h5-ths
++              - allwinner,sun50i-h6-ths
++
++    then:
++      properties:
++        resets:
++          minItems: 1
++          maxItems: 1
++
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: allwinner,sun50i-h6-ths
++
++    then:
++      properties:
++        clocks:
++          minItems: 1
++          maxItems: 1
++
++        clock-names:
++          minItems: 1
++          maxItems: 1
++
++    else:
++      if:
++        properties:
++          compatible:
++            contains:
++              enum:
++                - allwinner,sun8i-h3-ths
++                - allwinner,sun8i-r40-ths
++                - allwinner,sun50i-a64-ths
++                - allwinner,sun50i-h5-ths
++
++      then:
++        properties:
++          clocks:
++            minItems: 2
++            maxItems: 2
++
++          clock-names:
++            minItems: 2
++            maxItems: 2
++
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: allwinner,sun8i-h3-ths
++
++    then:
++      properties:
++        "#thermal-sensor-cells":
++          const: 0
++
++    else:
++      properties:
++        "#thermal-sensor-cells":
++          const: 1
++
++additionalProperties: false
++
++examples:
++  - |
++    ths: ths@5070400 {
++        compatible = "allwinner,sun50i-h6-ths";
++        reg = <0x05070400 0x100>;
++        clocks = <&ccu 89>;
++        clock-names = "bus";
++        resets = <&ccu 36>;
++        interrupts = <0 15 4>;
++        nvmem-cells = <&tsen_calib>;
++        nvmem-cell-names = "calibration";
++        #thermal-sensor-cells = <1>;
++    };
++
++    sid: sid@3006000 {
++        compatible = "allwinner,sun50i-h6-sid";
++        reg = <0x03006000 0x400>;
++        #address-cells = <1>;
++        #size-cells = <1>;
++        tsen_calib: calib@14 {
++                reg = <0x14 6>;
++        };
++    };
++...
 
-The SoC's device tree has the opp for the SoC.  Since the SoC also has
-the DDR controller, why not put the opp for the DDR into the SoC's
-device tree set for its maximum rates.  If the individual boards need
-to change them, they can do it on a case-by-case basis.
-
-As more and more people add devices based on imx8m q/m/n, I can
-imaging a lot of these entries will be duplicated if they base their
-design on the reference evk for their respective SoC.
-
-> +
->  &fec1 {
->         pinctrl-names = "default";
->         pinctrl-0 = <&pinctrl_fec1>;
->         phy-mode = "rgmii-id";
->         phy-handle = <&ethphy0>;
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> index 6edbdfe2d0d7..3d4802375715 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> @@ -856,10 +856,20 @@
->                         #interrupt-cells = <3>;
->                         interrupt-controller;
->                         interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
->                 };
+On Thu, Nov 28, 2019 at 10:35 PM Frank Lee <tiny.windzz@gmail.com> wrote:
 >
-> +               ddrc: memory-controller@3d400000 {
-> +                       compatible = "fsl,imx8mm-ddrc", "fsl,imx8m-ddrc";
-> +                       reg = <0x3d400000 0x400000>;
-> +                       clock-names = "core", "pll", "alt", "apb";
-> +                       clocks = <&clk IMX8MM_CLK_DRAM_CORE>,
-> +                                <&clk IMX8MM_DRAM_PLL>,
-> +                                <&clk IMX8MM_CLK_DRAM_ALT>,
-> +                                <&clk IMX8MM_CLK_DRAM_APB>;
-> +               };
-> +
->                 ddr-pmu@3d800000 {
->                         compatible = "fsl,imx8mm-ddr-pmu", "fsl,imx8m-ddr-pmu";
->                         reg = <0x3d800000 0x400000>;
->                         interrupt-parent = <&gic>;
->                         interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
-> index 071949412caf..b051c927c11e 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8mn-ddr4-evk.dts
-> @@ -15,10 +15,28 @@
+> Hi,
 >
->  &A53_0 {
->         cpu-supply = <&buck2_reg>;
->  };
+> How about this?
 >
-> +&ddrc {
-> +       operating-points-v2 = <&ddrc_opp_table>;
-> +
-> +       ddrc_opp_table: opp-table {
-> +               compatible = "operating-points-v2";
-> +
-> +               opp-25M {
-> +                       opp-hz = /bits/ 64 <25000000>;
-> +               };
-> +               opp-100M {
-> +                       opp-hz = /bits/ 64 <100000000>;
-> +               };
-> +               opp-600M {
-> +                       opp-hz = /bits/ 64 <600000000>;
-> +               };
-> +       };
-> +};
-> +
->  &i2c1 {
->         pmic@4b {
->                 compatible = "rohm,bd71847";
->                 reg = <0x4b>;
->                 pinctrl-0 = <&pinctrl_pmic>;
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-> index e91625063f8e..3a79fdddc72b 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-> @@ -757,10 +757,20 @@
->                         #interrupt-cells = <3>;
->                         interrupt-controller;
->                         interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
->                 };
->
-> +               ddrc: memory-controller@3d400000 {
-> +                       compatible = "fsl,imx8mn-ddrc", "fsl,imx8m-ddrc";
-> +                       reg = <0x3d400000 0x400000>;
-> +                       clock-names = "core", "pll", "alt", "apb";
-> +                       clocks = <&clk IMX8MN_CLK_DRAM_CORE>,
-> +                                <&clk IMX8MN_DRAM_PLL>,
-> +                                <&clk IMX8MN_CLK_DRAM_ALT>,
-> +                                <&clk IMX8MN_CLK_DRAM_APB>;
-> +               };
-> +
->                 ddr-pmu@3d800000 {
->                         compatible = "fsl,imx8mn-ddr-pmu", "fsl,imx8m-ddr-pmu";
->                         reg = <0x3d800000 0x400000>;
->                         interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
->                 };
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-evk.dts b/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
-> index c36685916683..ee6dc5f07622 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq-evk.dts
-> @@ -103,10 +103,34 @@
->
->  &A53_3 {
->         cpu-supply = <&buck2_reg>;
->  };
->
-> +&ddrc {
-> +       operating-points-v2 = <&ddrc_opp_table>;
-> +
-> +       ddrc_opp_table: opp-table {
-> +               compatible = "operating-points-v2";
-> +
-> +               opp-25M {
-> +                       opp-hz = /bits/ 64 <25000000>;
-> +               };
-> +               opp-100M {
-> +                       opp-hz = /bits/ 64 <100000000>;
-> +               };
-> +               /*
-> +                * On imx8mq B0 PLL can't be bypassed so low bus is 166M
-> +                */
-> +               opp-166M {
-> +                       opp-hz = /bits/ 64 <166935483>;
-> +               };
-> +               opp-800M {
-> +                       opp-hz = /bits/ 64 <800000000>;
-> +               };
-> +       };
-> +};
-> +
->  &fec1 {
->         pinctrl-names = "default";
->         pinctrl-0 = <&pinctrl_fec1>;
->         phy-mode = "rgmii-id";
->         phy-handle = <&ethphy0>;
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> index 7f9319452b58..d1fcf9887f8b 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> @@ -1111,10 +1111,20 @@
->                         interrupt-controller;
->                         interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
->                         interrupt-parent = <&gic>;
->                 };
->
-> +               ddrc: memory-controller@3d400000 {
-> +                       compatible = "fsl,imx8mq-ddrc", "fsl,imx8m-ddrc";
-> +                       reg = <0x3d400000 0x400000>;
-> +                       clock-names = "core", "pll", "alt", "apb";
-> +                       clocks = <&clk IMX8MQ_CLK_DRAM_CORE>,
-> +                                <&clk IMX8MQ_DRAM_PLL_OUT>,
-> +                                <&clk IMX8MQ_CLK_DRAM_ALT>,
-> +                                <&clk IMX8MQ_CLK_DRAM_APB>;
-> +               };
-> +
->                 ddr-pmu@3d800000 {
->                         compatible = "fsl,imx8mq-ddr-pmu", "fsl,imx8m-ddr-pmu";
->                         reg = <0x3d800000 0x400000>;
->                         interrupt-parent = <&gic>;
->                         interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
-> --
-> 2.17.1
->
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> Best regards,
+> Yangtao
 
 _______________________________________________
 linux-arm-kernel mailing list
