@@ -2,86 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 473BE10CEF3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 20:43:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2512210CF03
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 20:58:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UIbRcVXokczV5oTaEp249bzdBg2Pyzbs0ioBEcheJHY=; b=lVaFYvyfJ9a9uQ
-	Cmz+Kn/nRBPK8uCjMzerWdJpo7Nk4lJN70oAa40cXGPbek8n+CxOexoOuP2qXYcFub9pPV3M5j8lc
-	5pJxXi6i5xcDg1JvogVowFV5ok6Kr61ko2gbPISDVVAGBkILO8/qcx0mq5Jlb5gwMb7Lgi/UVfT5a
-	0I3sAMlb+hvcAxwJXX+/RPkQRtRSfoa8NopK+NU/OOT4XsUrEf+KZ2zsZyT+6lCGyz4N+zApoTALx
-	8QtWcBbFjIs53CLVIozCdgsqjWzYXKFUPPND9HCfHOXh/Sirgth1AbR/phA96t36SGCTJIAK6QQJn
-	sUk8JnoSt5ZGN4Ten3Xg==;
+	List-Owner; bh=tDb70j79i1wUDl+AhFdM250N1ylR0sNp2nMFtqW2oXc=; b=hixNCqUo4LSRex
+	fZlU6i7s2ZxsS3h6zDOrOr5y47ge8wbELoZQwERseojop542wS35u63NIvPj4Ova7OkpMz18Kjdjy
+	SstgcUIjopd3aCGqQzFDKpsPe6KqNC3HjM2ZDmmtiCJ/r1Q1shZpDFCKNqEPX8Sw0R/4A66uiwjxi
+	PwEkv7BhS1gMyGzxcv1beAYwLN9WK11PAJBr2ehax+P7FxwEuR/RqfwXNzIVXPlYsVRq0odmQ3UXn
+	XM+zodX1wEIK2EpEjUdRwopYQgqKLkMAoNGbxXZF3kQvwc7JjrLnIDdyuqcjiJ8PVqTab3/oUsZfN
+	0mVkyH7wY8C2qDe4hp0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaPhH-0000Gh-Ph; Thu, 28 Nov 2019 19:43:27 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iaPvh-0005Ag-KQ; Thu, 28 Nov 2019 19:58:21 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaPh6-00005j-TI
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 19:43:18 +0000
-Received: by mail-lj1-x244.google.com with SMTP id j6so20568339lja.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 11:43:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=SpMIRIbW8ZYEXnPjVi1K5UjyfJnW9d0uWsvcAYJ8UAo=;
- b=oloUoFA6UEefUoSDn1DnzhQNTgPLoRmUIapMdu94c3HlssacdL3+A9JzQ7WyjHVcPk
- 1ieJiyoTLFE1nabxAMujJZbaYTZ72Ogj6LTaDRPPpPlpdWfysr5/jCh0A4R7zerP94PN
- Tkt86uIY+efghOxOaVuFVxM2WrT+3ZUM9pf/q6uhfOLDP9srSbSs9TUKcazQ1P/StUpu
- GL1fOWr9XZOgkhPiGsQhrv15r+AZObmrV3BEGACvF7LW9qaBJ/hUsjW0WxTkNYHFCd14
- Nx1+wc29hKo6hIMxcIPyYKhkWRFY6G8lxcT8179YJ4pepGzpxOBAeAJY2O2IGQymHu+A
- yeRw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=SpMIRIbW8ZYEXnPjVi1K5UjyfJnW9d0uWsvcAYJ8UAo=;
- b=gMFeK8KWlHaRCkU4rB6r1DMbekNIUtxDY9GjphKhUYqz32nm0I3sMqF/wkiU4IGwCh
- jojxK1xpiSC7Pd5Mv7GWMjaNOx8zVBFELEYkqlCqpwaUqv/oS/Ja6X5KltbbcHLpur8f
- V2q7lIs2V05XRb2sOYiIv1PlUq3lrsnrI3FhGLnPx6iru97KVx5fienE402LUjjsfYTL
- Y/E7Z4MEGgAeP+eZrvc1hELnu/vxK63a9IXFMwHRTggpoyLf3huG5rtuZP4b3nQHvkDA
- D4j6Wv4L/Xh69kDaGLLy5b6AibY5EtN12phfzsesgkM10cCf6e8N3PlJThtlR80GISXa
- M/6w==
-X-Gm-Message-State: APjAAAUEksTtm/HHIhW/wqx25iVCV1PsAyEaok1cshQfyGAJ76DVQKM4
- ezBDRMJzosrb7fDAARycfC4fIeLe0HiUTMMdEws=
-X-Google-Smtp-Source: APXvYqxpB0Wunf+56/hcaxrikPntTecjuCZskYxZSW3kIvL5RTbQlgjROVYSTQxDYPAHSZV7sIYaeI4FnnBsHnoxFQs=
-X-Received: by 2002:a2e:2c1a:: with SMTP id s26mr35884555ljs.239.1574970194248; 
- Thu, 28 Nov 2019 11:43:14 -0800 (PST)
+ id 1iaPvY-0005A0-LS
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 19:58:14 +0000
+Received: from bigeasy by Galois.linutronix.de with local (Exim 4.80)
+ (envelope-from <bigeasy@linutronix.de>)
+ id 1iaPvR-0001FP-B4; Thu, 28 Nov 2019 20:58:05 +0100
+Date: Thu, 28 Nov 2019 20:58:05 +0100
+From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
+To: James Morse <james.morse@arm.com>
+Subject: [PATCH v2] arm64: KVM: Invoke compute_layout() before alternatives
+ are applied
+Message-ID: <20191128195805.c2pryug4ohmcoqwd@linutronix.de>
+References: <20191016165953.o6ogh4fdmsjmd2sw@linutronix.de>
+ <ecfbb413-e97e-c3eb-e051-1f218b387edd@arm.com>
 MIME-Version: 1.0
-References: <20191127110509.29905-1-l.stach@pengutronix.de>
-In-Reply-To: <20191127110509.29905-1-l.stach@pengutronix.de>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 28 Nov 2019 16:43:26 -0300
-Message-ID: <CAOMZO5BAN-BTR=A=ODq_CcZgumYjww4b3h3e_r3Og+JBK=uoeQ@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: imx8mq: increase NOC clock to 800 MHz
-To: Lucas Stach <l.stach@pengutronix.de>
+Content-Disposition: inline
+In-Reply-To: <ecfbb413-e97e-c3eb-e051-1f218b387edd@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_114316_972735_607EF253 
-X-CRM114-Status: UNSURE (   7.67  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191128_115812_845171_AB915004 
+X-CRM114-Status: GOOD (  11.74  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
  [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,30 +61,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, patchwork-lst@pengutronix.de,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Marc Zyngier <maz@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 27, 2019 at 8:05 AM Lucas Stach <l.stach@pengutronix.de> wrote:
->
-> From: Philipp Zabel <p.zabel@pengutronix.de>
->
-> The NOC clock defaults to 400 MHz. Increase it to 800 MHz for improved
-> memory performance.
->
-> Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
-> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Y29tcHV0ZV9sYXlvdXQoKSBpcyBpbnZva2VkIGFzIHBhcnQgb2YgYW4gYWx0ZXJuYXRpdmUgZml4
+dXAgdW5kZXIKc3RvcF9tYWNoaW5lKCkuIFRoaXMgZnVuY3Rpb24gaW52b2tlcyBnZXRfcmFuZG9t
+X2xvbmcoKSB3aGljaCBhY3F1aXJlcyBhCnNsZWVwaW5nIGxvY2sgb24gLVJUIHdoaWNoIGNhbiBu
+b3QgYmUgYWNxdWlyZWQgaW4gdGhpcyBjb250ZXh0LgoKUmVuYW1lIGNvbXB1dGVfbGF5b3V0KCkg
+dG8ga3ZtX2NvbXB1dGVfbGF5b3V0KCkgYW5kIGludm9rZSBpdCBiZWZvcmUKc3RvcF9tYWNoaW5l
+KCkgYXBwbGllcyB0aGUgYWx0ZXJuYXRpdmVzLiBBZGQgYSBfX2luaXQgcHJlZml4IHRvCmt2bV9j
+b21wdXRlX2xheW91dCgpIGJlY2F1c2UgdGhlIGNhbGxlciBoYXMgaXQsIHRvbyAoYW5kIHNvIHRo
+ZSBjb2RlIGNhbiBiZQpkaXNjYXJkZWQgYWZ0ZXIgYm9vdCkuCgpTaWduZWQtb2ZmLWJ5OiBTZWJh
+c3RpYW4gQW5kcnplaiBTaWV3aW9yIDxiaWdlYXN5QGxpbnV0cm9uaXguZGU+Ci0tLQoKdjHigKZ2
+MjogTW92ZSBjb2RlIGFzIHN1Z2dlc3RlZCBieSBKYW1lcyBNb3JzZS4gRGlkbid0IGFkZCBoaXMg
+UmV2aWV3ZWQtYnkKICAgICAgIChhcyBzdWdnZXN0ZWQpIGJlY2F1c2UgSSdtIG5vdCBzdXJlIHRo
+YXQgSSBnb3QgZXZlcnl0aGluZwogICAgICAgY29ycmVjdC4KCiBhcmNoL2FybTY0L2luY2x1ZGUv
+YXNtL2t2bV9tbXUuaCB8IDEgKwogYXJjaC9hcm02NC9rZXJuZWwvc21wLmMgICAgICAgICAgfCA0
+ICsrKysKIGFyY2gvYXJtNjQva3ZtL3ZhX2xheW91dC5jICAgICAgIHwgOCArLS0tLS0tLQogMyBm
+aWxlcyBjaGFuZ2VkLCA2IGluc2VydGlvbnMoKyksIDcgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0
+IGEvYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9rdm1fbW11LmggYi9hcmNoL2FybTY0L2luY2x1ZGUv
+YXNtL2t2bV9tbXUuaAppbmRleCBiZWZlMzdkNGJjMGU1Li41M2Q4NDZmMWJmZTcwIDEwMDY0NAot
+LS0gYS9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL2t2bV9tbXUuaAorKysgYi9hcmNoL2FybTY0L2lu
+Y2x1ZGUvYXNtL2t2bV9tbXUuaApAQCAtOTEsNiArOTEsNyBAQCBhbHRlcm5hdGl2ZV9jYl9lbmQK
+IAogdm9pZCBrdm1fdXBkYXRlX3ZhX21hc2soc3RydWN0IGFsdF9pbnN0ciAqYWx0LAogCQkJX19s
+ZTMyICpvcmlncHRyLCBfX2xlMzIgKnVwZHB0ciwgaW50IG5yX2luc3QpOwordm9pZCBrdm1fY29t
+cHV0ZV9sYXlvdXQodm9pZCk7CiAKIHN0YXRpYyBpbmxpbmUgdW5zaWduZWQgbG9uZyBfX2tlcm5f
+aHlwX3ZhKHVuc2lnbmVkIGxvbmcgdikKIHsKZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQva2VybmVs
+L3NtcC5jIGIvYXJjaC9hcm02NC9rZXJuZWwvc21wLmMKaW5kZXggZGM5ZmU4NzljMjc5My4uMDJk
+NDFlYWUzZGE4NiAxMDA2NDQKLS0tIGEvYXJjaC9hcm02NC9rZXJuZWwvc21wLmMKKysrIGIvYXJj
+aC9hcm02NC9rZXJuZWwvc21wLmMKQEAgLTMxLDYgKzMxLDcgQEAKICNpbmNsdWRlIDxsaW51eC9v
+Zi5oPgogI2luY2x1ZGUgPGxpbnV4L2lycV93b3JrLmg+CiAjaW5jbHVkZSA8bGludXgva2V4ZWMu
+aD4KKyNpbmNsdWRlIDxsaW51eC9rdm1faG9zdC5oPgogCiAjaW5jbHVkZSA8YXNtL2FsdGVybmF0
+aXZlLmg+CiAjaW5jbHVkZSA8YXNtL2F0b21pYy5oPgpAQCAtMzksNiArNDAsNyBAQAogI2luY2x1
+ZGUgPGFzbS9jcHV0eXBlLmg+CiAjaW5jbHVkZSA8YXNtL2NwdV9vcHMuaD4KICNpbmNsdWRlIDxh
+c20vZGFpZmZsYWdzLmg+CisjaW5jbHVkZSA8YXNtL2t2bV9tbXUuaD4KICNpbmNsdWRlIDxhc20v
+bW11X2NvbnRleHQuaD4KICNpbmNsdWRlIDxhc20vbnVtYS5oPgogI2luY2x1ZGUgPGFzbS9wZ3Rh
+YmxlLmg+CkBAIC00MDgsNiArNDEwLDggQEAgc3RhdGljIHZvaWQgX19pbml0IGh5cF9tb2RlX2No
+ZWNrKHZvaWQpCiAJCQkgICAiQ1BVOiBDUFVzIHN0YXJ0ZWQgaW4gaW5jb25zaXN0ZW50IG1vZGVz
+Iik7CiAJZWxzZQogCQlwcl9pbmZvKCJDUFU6IEFsbCBDUFUocykgc3RhcnRlZCBhdCBFTDFcbiIp
+OworCWlmIChJU19FTkFCTEVEKENPTkZJR19LVk1fQVJNX0hPU1QpKQorCQlrdm1fY29tcHV0ZV9s
+YXlvdXQoKTsKIH0KIAogdm9pZCBfX2luaXQgc21wX2NwdXNfZG9uZSh1bnNpZ25lZCBpbnQgbWF4
+X2NwdXMpCmRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2t2bS92YV9sYXlvdXQuYyBiL2FyY2gvYXJt
+NjQva3ZtL3ZhX2xheW91dC5jCmluZGV4IDJjZjdkNGI2MDZjMzguLmRhYjFmZWE0NzUyYWEgMTAw
+NjQ0Ci0tLSBhL2FyY2gvYXJtNjQva3ZtL3ZhX2xheW91dC5jCisrKyBiL2FyY2gvYXJtNjQva3Zt
+L3ZhX2xheW91dC5jCkBAIC0yMiw3ICsyMiw3IEBAIHN0YXRpYyB1OCB0YWdfbHNiOwogc3RhdGlj
+IHU2NCB0YWdfdmFsOwogc3RhdGljIHU2NCB2YV9tYXNrOwogCi1zdGF0aWMgdm9pZCBjb21wdXRl
+X2xheW91dCh2b2lkKQorX19pbml0IHZvaWQga3ZtX2NvbXB1dGVfbGF5b3V0KHZvaWQpCiB7CiAJ
+cGh5c19hZGRyX3QgaWRtYXBfYWRkciA9IF9fcGFfc3ltYm9sKF9faHlwX2lkbWFwX3RleHRfc3Rh
+cnQpOwogCXU2NCBoeXBfdmFfbXNiOwpAQCAtMTEwLDkgKzExMCw2IEBAIHZvaWQgX19pbml0IGt2
+bV91cGRhdGVfdmFfbWFzayhzdHJ1Y3QgYWx0X2luc3RyICphbHQsCiAKIAlCVUdfT04obnJfaW5z
+dCAhPSA1KTsKIAotCWlmICghaGFzX3ZoZSgpICYmICF2YV9tYXNrKQotCQljb21wdXRlX2xheW91
+dCgpOwotCiAJZm9yIChpID0gMDsgaSA8IG5yX2luc3Q7IGkrKykgewogCQl1MzIgcmQsIHJuLCBp
+bnNuLCBvaW5zbjsKIApAQCAtMTU2LDkgKzE1Myw2IEBAIHZvaWQga3ZtX3BhdGNoX3ZlY3Rvcl9i
+cmFuY2goc3RydWN0IGFsdF9pbnN0ciAqYWx0LAogCQlyZXR1cm47CiAJfQogCi0JaWYgKCF2YV9t
+YXNrKQotCQljb21wdXRlX2xheW91dCgpOwotCiAJLyoKIAkgKiBDb21wdXRlIEhZUCBWQSBieSB1
+c2luZyB0aGUgc2FtZSBjb21wdXRhdGlvbiBhcyBrZXJuX2h5cF92YSgpCiAJICovCi0tIAoyLjI0
+LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
