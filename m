@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFD3B10CCE2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 17:35:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 532B910CCEA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 17:38:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jt1dfplXpiwbh+2APBAQy/MghZSou4PEzzpx4LKL4Hc=; b=FpxXxHh7W5fG3L
-	YLtqQWwPQY8LjfGSQ+jm/nHs9gOIco2xM9u/15qOupKRuT7oMrsCFyn6dQNfav9mxZ+CBZLyba6hq
-	G51amAWA9TqdFSl5HZj7EaPyfUplX+43b5FtqEF8fqzTK+Nt5POydtiiTyk/2JHmSavTrmohaSlkd
-	W0F9vPouTxBDxyr+/DpQnB/Vg92eFJbeyutoy6sdTNAAzSoPWkmPhRJXhIS3DsNQvRtkXoJ10zgdg
-	u7Iwa34Ioq66JPalXwTngKBz4V0f1uTycuk6QKbU8rNzkt6HdxM5MxGDLC9v1+fQtEirPnVnI474s
-	88pbBRWgup/qVtpfDgCg==;
+	List-Owner; bh=i8kC/kslWuNJ0eoYHcfPpC6S7m1YplQAOSgp2dLn5Y8=; b=LsrY21O2JNnDLe
+	Nu7K3GfyLmZOeZuo9iRsFETYWIAxFOcjFnytYnP5iJ37kaIECwQXbtMR1ABsObQ6GZ9A3fgSgJu0D
+	/IpHXiAA9jD/ZTnm0AZgJ4Scfdr0F9D/RZGkqocq8AnELB2S0HI2jy5nsylrtevAGZ3i6gtadoV8l
+	k4/ng5J/s/9Hj7NhtXzBRgyaed7VI6xEggjQMp5Un8UnWPAoumJSkISGZ0eS8sg2Q+DuUi2lnlc3w
+	KKLS9qZPO54LgSo2eKueXK27S57PeN2hi2jJAcB5+8lfBaG8zO9v0kjGXBIg0xF96SzEjBBRGnOtp
+	zwNz2/FEY0KrtYOvJIeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaMlQ-0007L4-Df; Thu, 28 Nov 2019 16:35:32 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaMlF-0007KG-2E
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 16:35:22 +0000
-Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1iaMlA-0001pe-Ss; Thu, 28 Nov 2019 17:35:16 +0100
-Message-ID: <ca111d6b252078357341363b7fb07adfb8e216ef.camel@pengutronix.de>
-Subject: Re: [PATCH 2/2] arm64: dts: zii-ultra: add sound support
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Daniel Baluta <daniel.baluta@nxp.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>
-Date: Thu, 28 Nov 2019 17:35:15 +0100
-In-Reply-To: <0909b60cb5943007e1c3db31e3f6c91f289c85f9.camel@nxp.com>
-References: <20191127182127.1204-1-l.stach@pengutronix.de>
- <20191127182127.1204-2-l.stach@pengutronix.de>
- <0909b60cb5943007e1c3db31e3f6c91f289c85f9.camel@nxp.com>
-User-Agent: Evolution 3.30.5-1.1 
+	id 1iaMoV-0007tS-K9; Thu, 28 Nov 2019 16:38:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iaMoM-0007t8-PO
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 16:38:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8CB0E1FB;
+ Thu, 28 Nov 2019 08:38:33 -0800 (PST)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A7F273F6C4;
+ Thu, 28 Nov 2019 08:38:32 -0800 (PST)
+Date: Thu, 28 Nov 2019 16:38:27 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] arm64: dts: juno: Fix DMA address translations by adding
+ SOC bus node
+Message-ID: <20191128163827.GA28000@bogus>
+References: <20191126165355.6696-1-sudeep.holla@arm.com>
+ <d9b057ed-acfc-a9a1-a466-d3048f008568@arm.com>
+ <20191128141521.GA3333@bogus>
+ <df7408c0-21a9-94a6-950c-98560d3e33e4@arm.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <df7408c0-21a9-94a6-950c-98560d3e33e4@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_083521_109184_6820E6BC 
-X-CRM114-Status: GOOD (  19.50  )
+X-CRM114-CacheID: sfid-20191128_083834_912149_E8CAFC3C 
+X-CRM114-Status: GOOD (  25.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,153 +64,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "patchwork-lst@pengutronix.de" <patchwork-lst@pengutronix.de>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Liviu Dudau <liviu.dudau@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Daniel,
-
-On Do, 2019-11-28 at 11:10 +0000, Daniel Baluta wrote:
-> Few comments inline about the naming:
-> 
-> On Wed, 2019-11-27 at 19:21 +0100, Lucas Stach wrote:
-> > This adds all the necessary device nodes to get audio support on both
-> > the
-> > RMB3 and Zest boards.
+On Thu, Nov 28, 2019 at 04:15:43PM +0000, Robin Murphy wrote:
+> On 28/11/2019 2:15 pm, Sudeep Holla wrote:
+> > On Thu, Nov 28, 2019 at 11:50:54AM +0000, Robin Murphy wrote:
+> > > Hi Sudeep,
+> > > 
+> > > On 2019-11-26 4:53 pm, Sudeep Holla wrote:
+> > > > Commit 951d48855d86 ("of: Make of_dma_get_range() work on bus nodes")
+> > > > reworked the logic such that of_dma_get_range() works correctly
+> > > > starting from a bus node containing "dma-ranges".
+> > > > 
+> > > > Since on Juno we don't have a SoC level bus node and "dma-ranges" is
+> > > > present only in the root node, we get the following error:
+> > > > 
+> > > > OF: translation of DMA address(0) to CPU address failed node(/sram@2e000000)
+> > > > OF: translation of DMA address(0) to CPU address failed node(/uart@7ff80000)
+> > > > ...
+> > > > OF: translation of DMA address(0) to CPU address failed node(/mhu@2b1f0000)
+> > > > OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
+> > > > OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
+> > > > OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
+> > > > 
+> > > > Let's fix it by adding a SoC bus node and moving all the devices along
+> > > > with the "dma-ranges" inside it.
+> > > > 
+> > > > Cc: Rob Herring <robh+dt@kernel.org>
+> > > > Cc: Liviu Dudau <liviu.dudau@arm.com>
+> > > > Cc: Robin Murphy <robin.murphy@arm.com>
+> > > > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > > > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> > > > ---
+> > > >    arch/arm64/boot/dts/arm/juno-base.dtsi        | 162 +++++++++---------
+> > > >    arch/arm64/boot/dts/arm/juno-clocks.dtsi      |   2 +
+> > > >    arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi     |   2 +
+> > > >    arch/arm64/boot/dts/arm/juno-motherboard.dtsi |   2 +
+> > > >    4 files changed, 88 insertions(+), 80 deletions(-)
+> > > > 
+> > > > Hi Rob, Robin,
+> > > > 
+> > > > Let me know if this is correct fix for the issue I am seeing with linux-next
+> > > > on Juno. This patch is generated with -b for ease of review. With lots of
+> > > > indentation, actual delta is:
+> > > > 
+> > > > 4 files changed, 1274 insertions(+), 1266 deletions(-)
+> > > 
+> > > Other than a few nits - the GIC should probably be under the soc node as
+> > > it's an MMIO device, while the clocks shouldn't; the dtsi's could probably
+> > > avoid churn with a "&soc {...}" phandle - I think this is a reasonable thing
+> > > to do, as it's generally the preferred structure.
+> > > 
 > > 
-> > Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
-> > ---
-> >  .../dts/freescale/imx8mq-zii-ultra-rmb3.dts   | 87 ++++++++++++++++
-> >  .../dts/freescale/imx8mq-zii-ultra-zest.dts   | 30 ++++++
-> >  .../boot/dts/freescale/imx8mq-zii-ultra.dtsi  | 98
-> > +++++++++++++++++++
-> >  3 files changed, 215 insertions(+)
-> > 
-> > diff --git a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-rmb3.dts
-> > b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-rmb3.dts
-> > index 6b3581366d67..d5e06885c683 100644
-> > --- a/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-rmb3.dts
-> > +++ b/arch/arm64/boot/dts/freescale/imx8mq-zii-ultra-rmb3.dts
-> > @@ -10,6 +10,56 @@
-> >  / {
-> >  	model = "ZII Ultra RMB3 Board";
-> >  	compatible = "zii,imx8mq-ultra-rmb3", "zii,imx8mq-ultra",
-> > "fsl,imx8mq";
-> > +
-> > +	sound1 {
+> > I agree and am still in confusion as what to put inside soc or not.
 > 
-> I find sound1 / sound2 pretty generic. Perhaps we can go with something
-> like sound-<codec_name>
-> 
-They are pretty generic, but I don't really see a reason to
-differentiate them more. Both sound paths are using a similar codec/hpa
-setup, the only difference is the SAI. If I name them after the SAI,
-will this really help much?
+> FWIW my understanding is that the "soc" node is used to provide a 'bus' to
+> represent on-chip MMIO - in principle we could nerd out and describe the
+> ACE-lite/AXI/APB slave interconnects in full, but there's really no benefit
+> to going into that much detail - so everything with a "reg" representing a
+> physical address goes inside it, while CPUs, clocks, firmware, regulators
+> etc. sit in the root node 'outside the PA space', regardless of whether
+> they're physically on-chip or not.
+>
 
-> 
-> > +		compatible = "simple-audio-card";
-> > +		simple-audio-card,name = "RMB3 audio front";
-> > +		simple-audio-card,format = "i2s";
-> > +		simple-audio-card,bitclock-master = <&sound1_codec>;
-> > +		simple-audio-card,frame-master = <&sound1_codec>;
-> > +		simple-audio-card,widgets =
-> > +			"Headphone", "Headphone Jack Front";
-> > +		simple-audio-card,routing =
-> > +			"Headphone Jack Front", "HPA1 HPLEFT",
-> > +			"Headphone Jack Front", "HPA1 HPRIGHT",
-> > +			"HPA1 LEFTIN", "HPL",
-> > +			"HPA1 RIGHTIN", "HPR";
-> > +		simple-audio-card,aux-devs = <&hpa1>;
-> > +
-> > +		sound1_cpu: simple-audio-card,cpu {
-> > +			sound-dai = <&sai2>;
-> > +		};
-> > +
-> > +		sound1_codec: simple-audio-card,codec {
-> > +			sound-dai = <&codec1>;
-> 
-> Codec1 here is too generic. Perpahs we can add real code name.
+I saw few other DTs and they all keep interrupt-controller and timer
+outside this "soc" node. Timer is sysreg based, so makes sense. GIC has
+both sysreg and MMIO components so I was not sure if it's done like that
+due to some dependency on how interrupt-parent property is used.
+e.g. arch/arm64/boot/dts/amd/amd-seattle-soc.dtsi
 
-I agree that this might seem like thoughtless generic naming from the
-outside, but actually it lines up pretty well with the naming used in
-the schematics. I'm really reluctant to change the naming here, as any
-change will inevitably make it harder to match up the DTS with the
-schematics.
+I expect even the motherboard IO shouldn't go inside it but again to avoid
+churn I kept it inside.
 
+I agree on firmware, clocks, regulators,..etc. I wanted to keep the churn
+minimum and it was not completely aligned to the principles you mentioned
+above. Anyways it's better to fix it in right manner for next cycle.
+
+--
 Regards,
-Lucas
-
-> > +			clocks = <&cs2000>;
-> > +		};
-> > +	};
-> > +
-> > +	sound2 {
-> > +		compatible = "simple-audio-card";
-> > +		simple-audio-card,name = "RMB3 audio back";
-> > +		simple-audio-card,format = "i2s";
-> > +		simple-audio-card,bitclock-master = <&sound2_codec>;
-> > +		simple-audio-card,frame-master = <&sound2_codec>;
-> > +		simple-audio-card,widgets =
-> > +			"Headphone", "Headphone Jack Back";
-> > +		simple-audio-card,routing =
-> > +			"Headphone Jack Back", "HPA2 HPLEFT",
-> > +			"Headphone Jack Back", "HPA2 HPRIGHT",
-> > +			"HPA2 LEFTIN", "HPL",
-> > +			"HPA2 RIGHTIN", "HPR";
-> > +		simple-audio-card,aux-devs = <&hpa2>;
-> > +
-> > +		sound2_cpu: simple-audio-card,cpu {
-> > +			sound-dai = <&sai3>;
-> > +		};
-> > +
-> > +		sound2_codec: simple-audio-card,codec {
-> > +			sound-dai = <&codec2>;
-> Ditto.
-> 
-> > +			clocks = <&cs2000>;
-> > +		};
-> > +	};
-> >  };
-> >  
-> >  &ecspi1 {
-> > @@ -27,6 +77,23 @@
-> >  	};
-> >  };
-> >  
-> > +&i2c1 {
-> > +	codec2: codec@18 {
-> 
-> Here we might go with something like: 
-> 
-> tlv320dac3100: codec@18
-> 
-> 
-> > +		compatible = "ti,tlv320dac3100";
-> > +		pinctrl-names = "default";
-> > +		pinctrl-0 = <&pinctrl_codec2>;
-> > +		reg = <0x18>;
-> > +		#sound-dai-cells = <0>;
-> > +		HPVDD-supply = <&reg_3p3v>;
-> > +		SPRVDD-supply = <&reg_3p3v>;
-> > +		SPLVDD-supply = <&reg_3p3v>;
-> > +		AVDD-supply = <&reg_3p3v>;
-> > +		IOVDD-supply = <&reg_3p3v>;
-> > +		DVDD-supply = <&vgen4_reg>;
-> > +		gpio-reset = <&gpio3 4 GPIO_ACTIVE_HIGH>;
-> > +	};
-> > +};
-> > 
-> 
-> This is just a thought, naming is hard. But it should help with
-> readability.
-
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
