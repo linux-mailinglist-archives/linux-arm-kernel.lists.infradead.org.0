@@ -2,56 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C23C510C833
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 12:51:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0A8010C83F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 12:54:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1ecV1tWRzv09qcTrtmzvQUHdCERdALyAK1VFZgKnSXk=; b=tdmGxnn7kVBoH5WgQB1nJat3V
-	SY8USHn4YggajcRHjUyLnPGHxGL+C9Du/2Lav3nyevlLQDDjdRtC6icZOqWhy7+nxnw/EiCJYm6dl
-	aZIucpz+MSGQGv6px0d60QNhXT3+6Ya/UtnVPZS67fnn+XFkaUiqEgdSzDwiVsybingNo8iGTQQFi
-	/6nNXWotWEFQH+uefQBnDphZ2q0L5cIg3iX89KjjPtMp7bl2KhRK6VuDZBtHS8gb8SkYjqbFll7GC
-	vI7kX+R4ibkSnSQhk1ounqDVb+urS53S32XCGumWe7QE3v7NpPldazZcTmfI6fZ37Bx7EqczsARhZ
-	oQM1YQmEQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JTsl//RminJ3izqWvx0Yhc6YNx5R7zMQ7EfP+4vB+2w=; b=XwU0i9ocrwffvR
+	JlEjNXrksN6DRtOK5dhZkKjeSZGXEk12pl4Ygnp3k6fiej0F8nmBIMfcj45DiQyjXhG5/8K+pDAGS
+	rJrtzS81MCf8PRnAxwcRELOZNAbp8YenvxvAwlTjRrT1LWrSjE6jzS31vSX5f0q6A6fs/tLyBR2i5
+	QLXuU3AbyqCcBi0KQVBlD6yOemWWTShTFQnHP/94IoK+aeJJuc9YEVHy2mh5mMiyEwf16JkqwUF8z
+	5HIeHahqu4btSWr8+pkPRrDyTlZr6e2V70rg7NDQ8KDSFiwGCd1a+nLzi0qKfaza0uCL1Cnl3cVom
+	TJBdsb4nVkdTA5CT/E4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaIKG-0007Zu-HS; Thu, 28 Nov 2019 11:51:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaIK7-0007ZR-Bu
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 11:51:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E0ED30E;
- Thu, 28 Nov 2019 03:51:01 -0800 (PST)
-Received: from [192.168.1.124] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D8ED3F6C4;
- Thu, 28 Nov 2019 03:50:59 -0800 (PST)
-Subject: Re: [PATCH] arm64: dts: juno: Fix DMA address translations by adding
- SOC bus node
-To: Sudeep Holla <sudeep.holla@arm.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <20191126165355.6696-1-sudeep.holla@arm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <d9b057ed-acfc-a9a1-a466-d3048f008568@arm.com>
-Date: Thu, 28 Nov 2019 11:50:54 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+	id 1iaINr-0008DN-MN; Thu, 28 Nov 2019 11:54:55 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iaINi-0008Ca-6g
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 11:54:47 +0000
+Received: by mail-ed1-x543.google.com with SMTP id cy15so14936354edb.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 28 Nov 2019 03:54:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=fJ1qEAjftKv4KFT+qYxhcQRrloDrH252fRzp4v2mOIA=;
+ b=HWQcb5fISvzc7dzW/LwSkYoYP72pXvepeXpeq0QChIvEEvJQZMv/9tsCBDDRZIS35Q
+ zL3ZMkuWSYUO/EyFXpermAZ9RZWZSkvu0pQto62bpXxuU6PIyE00l3ozUeZ7nIw7zgAB
+ g1Ro4CfkyjLTjaRQflNljm5GdxYLQMtvxlIt9yMX98x0ScmyqVc7n1lMfeaoWRLL1DJS
+ IhLbu5FosIRb1jQ7RwtCZMAqqJV4tR6TCGaIKnafsf8EmkQYedojHJxSp2XzaaBBgNLs
+ YCfHQ5o36094vUyplRqwjbwGQ/JHETvxtHkY5r4y+p084JRDCDIYJSQ0od55wJjU6nuv
+ Vafg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fJ1qEAjftKv4KFT+qYxhcQRrloDrH252fRzp4v2mOIA=;
+ b=knT//IpUp5pqbKsH4UC8lKohXt0JIJUsc5YrcLrkF8ryFpymgDJqjHASgQ9xUTEmwU
+ 9DLFq1C9DuXbT+PSCQLTY0FtBQ61bONniv9euBATmU+2HenBnIMXeh7ey5D/CoAsnF/4
+ o7d+RFRP3LINU3MJXGNOSnfwQaWKl9lJRU7IJru4mJtwO0OXmb5g0xabVWPtfQ0wN1sw
+ MeffRwOkXrhpeE20lyhOivTNwzECDcMUvlvD7l3Q6gL6d1jdr1WOrdcoxuracFU43l9R
+ eeMmcfg5Zu3oc97cVobVmalxhjS4TbjEmZDcKi4ebFaf4t8VYbnaFlXt0xBQnyZLw/pn
+ VL9g==
+X-Gm-Message-State: APjAAAXOD8oQm06aoYdxoH2j4y3TI54PLSvLnbkU2hvmSr9jRlPAY/FK
+ v1a2yzMf0Hz+CAXsBGbFGRsbOzfGFbLifxstBkoQG4M1
+X-Google-Smtp-Source: APXvYqyLp6/hXTjbnJ1ipBT5cREkaCmbhUdK6K4O2YMDxHaFUlhpK/aPWwzMePKrShDjywJgigpgYguLM50HKPA9rLM=
+X-Received: by 2002:a05:6402:3cf:: with SMTP id
+ t15mr37391787edw.21.1574942084243; 
+ Thu, 28 Nov 2019 03:54:44 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191126165355.6696-1-sudeep.holla@arm.com>
-Content-Language: en-GB
+References: <20190131213957.11568-1-alex.williams@ettus.com>
+ <CAKfKVtFM1zPb-MjBwY8WREy4xoHW60JrjZ-LnSzBvJ1Yv_zgsw@mail.gmail.com>
+ <CAJZzcDiv8BGDa8pj-2gP+BWiu=CfrsDi15xHr=UUFwCwE-E4zg@mail.gmail.com>
+In-Reply-To: <CAJZzcDiv8BGDa8pj-2gP+BWiu=CfrsDi15xHr=UUFwCwE-E4zg@mail.gmail.com>
+From: Shubhrajyoti Datta <shubhrajyoti.datta@gmail.com>
+Date: Thu, 28 Nov 2019 17:24:32 +0530
+Message-ID: <CAKfKVtE8zaQhcYCOSjO26u9MjTJhLDO_R_L2Nca7_EbzBz8DEg@mail.gmail.com>
+Subject: Re: [PATCH] i2c: cadence: Handle transfer_size rollover
+To: Alex Williams <alex.williams@ettus.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_035103_498319_0B265F13 
-X-CRM114-Status: GOOD (  22.90  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191128_035446_270097_5701CF1C 
+X-CRM114-Status: GOOD (  16.62  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (shubhrajyoti.datta[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,318 +95,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Rob Herring <robh+dt@kernel.org>, Liviu Dudau <liviu.dudau@arm.com>
+Cc: linux-kernel <linux-kernel@vger.kernel.org>,
+ Alex Williams <alex.williams@ni.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ mical.simek@xilinx.com, linux-i2c <linux-i2c@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sudeep,
-
-On 2019-11-26 4:53 pm, Sudeep Holla wrote:
-> Commit 951d48855d86 ("of: Make of_dma_get_range() work on bus nodes")
-> reworked the logic such that of_dma_get_range() works correctly
-> starting from a bus node containing "dma-ranges".
-> 
-> Since on Juno we don't have a SoC level bus node and "dma-ranges" is
-> present only in the root node, we get the following error:
-> 
-> OF: translation of DMA address(0) to CPU address failed node(/sram@2e000000)
-> OF: translation of DMA address(0) to CPU address failed node(/uart@7ff80000)
-> ...
-> OF: translation of DMA address(0) to CPU address failed node(/mhu@2b1f0000)
-> OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-> OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-> OF: translation of DMA address(0) to CPU address failed node(/iommu@2b600000)
-> 
-> Let's fix it by adding a SoC bus node and moving all the devices along
-> with the "dma-ranges" inside it.
-> 
-> Cc: Rob Herring <robh+dt@kernel.org>
-> Cc: Liviu Dudau <liviu.dudau@arm.com>
-> Cc: Robin Murphy <robin.murphy@arm.com>
-> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> ---
->   arch/arm64/boot/dts/arm/juno-base.dtsi        | 162 +++++++++---------
->   arch/arm64/boot/dts/arm/juno-clocks.dtsi      |   2 +
->   arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi     |   2 +
->   arch/arm64/boot/dts/arm/juno-motherboard.dtsi |   2 +
->   4 files changed, 88 insertions(+), 80 deletions(-)
-> 
-> Hi Rob, Robin,
-> 
-> Let me know if this is correct fix for the issue I am seeing with linux-next
-> on Juno. This patch is generated with -b for ease of review. With lots of
-> indentation, actual delta is:
-> 
-> 4 files changed, 1274 insertions(+), 1266 deletions(-)
-
-Other than a few nits - the GIC should probably be under the soc node as 
-it's an MMIO device, while the clocks shouldn't; the dtsi's could 
-probably avoid churn with a "&soc {...}" phandle - I think this is a 
-reasonable thing to do, as it's generally the preferred structure.
-
-The cruder but far simpler alternative would be to just drop the 
-dma-ranges property - I'm not sure the effort to make all 64-bit 
-platforms describe their dma-ranges has really panned out, and it isn't 
-actually necessary for Juno (which is why it didn't seem like sufficient 
-reason to do all this restructuring at the time, and instead I took a 
-very liberal interpretation of the spec to sneak it into the root node).
-
-Robin.
-
-> 
-> Regards,
-> Sudeep
-> 
-> diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
-> index 9e3e8ce6adfe..ef21d7245e3b 100644
-> --- a/arch/arm64/boot/dts/arm/juno-base.dtsi
-> +++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
-> @@ -3,6 +3,87 @@
->   #include "juno-motherboard.dtsi"
->   
->   / {
-> +	gic: interrupt-controller@2c010000 {
-> +		compatible = "arm,gic-400", "arm,cortex-a15-gic";
-> +		reg = <0x0 0x2c010000 0 0x1000>,
-> +		      <0x0 0x2c02f000 0 0x2000>,
-> +		      <0x0 0x2c04f000 0 0x2000>,
-> +		      <0x0 0x2c06f000 0 0x2000>;
-> +		#address-cells = <2>;
-> +		#interrupt-cells = <3>;
-> +		#size-cells = <2>;
-> +		interrupt-controller;
-> +		interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_HIGH)>;
-> +		ranges = <0 0 0 0x2c1c0000 0 0x40000>;
-> +
-> +		v2m_0: v2m@0 {
-> +			compatible = "arm,gic-v2m-frame";
-> +			msi-controller;
-> +			reg = <0 0 0 0x10000>;
-> +		};
-> +
-> +		v2m@10000 {
-> +			compatible = "arm,gic-v2m-frame";
-> +			msi-controller;
-> +			reg = <0 0x10000 0 0x10000>;
-> +		};
-> +
-> +		v2m@20000 {
-> +			compatible = "arm,gic-v2m-frame";
-> +			msi-controller;
-> +			reg = <0 0x20000 0 0x10000>;
-> +		};
-> +
-> +		v2m@30000 {
-> +			compatible = "arm,gic-v2m-frame";
-> +			msi-controller;
-> +			reg = <0 0x30000 0 0x10000>;
-> +		};
-> +	};
-> +
-> +	timer {
-> +		compatible = "arm,armv8-timer";
-> +		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
-> +			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
-> +			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
-> +			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>;
-> +	};
-> +
-> +	scpi {
-> +		compatible = "arm,scpi";
-> +		mboxes = <&mailbox 1>;
-> +		shmem = <&cpu_scp_hpri>;
-> +
-> +		clocks {
-> +			compatible = "arm,scpi-clocks";
-> +
-> +			scpi_dvfs: scpi-dvfs {
-> +				compatible = "arm,scpi-dvfs-clocks";
-> +				#clock-cells = <1>;
-> +				clock-indices = <0>, <1>, <2>;
-> +				clock-output-names = "atlclk", "aplclk","gpuclk";
-> +			};
-> +			scpi_clk: scpi-clk {
-> +				compatible = "arm,scpi-variable-clocks";
-> +				#clock-cells = <1>;
-> +				clock-indices = <3>;
-> +				clock-output-names = "pxlclk";
-> +			};
-> +		};
-> +
-> +		scpi_devpd: scpi-power-domains {
-> +			compatible = "arm,scpi-power-domains";
-> +			num-domains = <2>;
-> +			#power-domain-cells = <1>;
-> +		};
-> +
-> +		scpi_sensors0: sensors {
-> +			compatible = "arm,scpi-sensors";
-> +			#thermal-sensor-cells = <1>;
-> +		};
-> +	};
-> +
-> +	soc {
->   		/*
->   		 *  Devices shared by all Juno boards
->   		 */
-> @@ -69,52 +150,6 @@
->   			power-domains = <&scpi_devpd 0>;
->   		};
->   
-> -	gic: interrupt-controller@2c010000 {
-> -		compatible = "arm,gic-400", "arm,cortex-a15-gic";
-> -		reg = <0x0 0x2c010000 0 0x1000>,
-> -		      <0x0 0x2c02f000 0 0x2000>,
-> -		      <0x0 0x2c04f000 0 0x2000>,
-> -		      <0x0 0x2c06f000 0 0x2000>;
-> -		#address-cells = <2>;
-> -		#interrupt-cells = <3>;
-> -		#size-cells = <2>;
-> -		interrupt-controller;
-> -		interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_HIGH)>;
-> -		ranges = <0 0 0 0x2c1c0000 0 0x40000>;
-> -
-> -		v2m_0: v2m@0 {
-> -			compatible = "arm,gic-v2m-frame";
-> -			msi-controller;
-> -			reg = <0 0 0 0x10000>;
-> -		};
-> -
-> -		v2m@10000 {
-> -			compatible = "arm,gic-v2m-frame";
-> -			msi-controller;
-> -			reg = <0 0x10000 0 0x10000>;
-> -		};
-> -
-> -		v2m@20000 {
-> -			compatible = "arm,gic-v2m-frame";
-> -			msi-controller;
-> -			reg = <0 0x20000 0 0x10000>;
-> -		};
-> -
-> -		v2m@30000 {
-> -			compatible = "arm,gic-v2m-frame";
-> -			msi-controller;
-> -			reg = <0 0x30000 0 0x10000>;
-> -		};
-> -	};
-> -
-> -	timer {
-> -		compatible = "arm,armv8-timer";
-> -		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
-> -			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
-> -			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
-> -			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>;
-> -	};
-> -
->   		/*
->   		 * Juno TRMs specify the size for these coresight components as 64K.
->   		 * The actual size is just 4K though 64K is reserved. Access to the
-> @@ -557,40 +592,6 @@
->   			iommu-map = <0x0 &smmu_pcie 0x0 0x1>;
->   		};
->   
-> -	scpi {
-> -		compatible = "arm,scpi";
-> -		mboxes = <&mailbox 1>;
-> -		shmem = <&cpu_scp_hpri>;
-> -
-> -		clocks {
-> -			compatible = "arm,scpi-clocks";
-> -
-> -			scpi_dvfs: scpi-dvfs {
-> -				compatible = "arm,scpi-dvfs-clocks";
-> -				#clock-cells = <1>;
-> -				clock-indices = <0>, <1>, <2>;
-> -				clock-output-names = "atlclk", "aplclk","gpuclk";
-> -			};
-> -			scpi_clk: scpi-clk {
-> -				compatible = "arm,scpi-variable-clocks";
-> -				#clock-cells = <1>;
-> -				clock-indices = <3>;
-> -				clock-output-names = "pxlclk";
-> -			};
-> -		};
-> -
-> -		scpi_devpd: scpi-power-domains {
-> -			compatible = "arm,scpi-power-domains";
-> -			num-domains = <2>;
-> -			#power-domain-cells = <1>;
-> -		};
-> -
-> -		scpi_sensors0: sensors {
-> -			compatible = "arm,scpi-sensors";
-> -			#thermal-sensor-cells = <1>;
-> -		};
-> -	};
-> -
->   		thermal-zones {
->   			pmic {
->   				polling-delay = <1000>;
-> @@ -838,4 +839,5 @@
->   			interrupt-map-mask = <0 0>;
->   			interrupt-map = <0 0 &gic 0 0 GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>;
->   		};
-> +	};
->   };
-> diff --git a/arch/arm64/boot/dts/arm/juno-clocks.dtsi b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
-> index e5e265dfa902..3ea934017b98 100644
-> --- a/arch/arm64/boot/dts/arm/juno-clocks.dtsi
-> +++ b/arch/arm64/boot/dts/arm/juno-clocks.dtsi
-> @@ -7,6 +7,7 @@
->    *
->    */
->   / {
-> +	soc {
->   		/* SoC fixed clocks */
->   		soc_uartclk: refclk7273800hz {
->   			compatible = "fixed-clock";
-> @@ -42,4 +43,5 @@
->   			clock-frequency = <400000000>;
->   			clock-output-names = "faxi_clk";
->   		};
-> +	};
->   };
-> diff --git a/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi b/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi
-> index eda3d9e18af6..3f6e607b450d 100644
-> --- a/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi
-> +++ b/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi
-> @@ -1,5 +1,6 @@
->   // SPDX-License-Identifier: GPL-2.0
->   / {
-> +	soc {
->   		funnel@20130000 { /* cssys1 */
->   			compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
->   			reg = <0 0x20130000 0 0x1000>;
-> @@ -82,4 +83,5 @@
->   
->   			};
->   		};
-> +	};
->   };
-> diff --git a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-> index 9f60dacb4f80..638c6b5b342a 100644
-> --- a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-> +++ b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-> @@ -8,6 +8,7 @@
->    */
->   
->   / {
-> +	soc {
->   		smb@8000000 {
->   			mb_clk24mhz: clk24mhz {
->   				compatible = "fixed-clock";
-> @@ -292,4 +293,5 @@
->   				};
->   			};
->   		};
-> +	};
->   };
-> 
+Hi ,
+Apologies for teh late reply,
+Somehow replied only to Alex.
+On Fri, Feb 15, 2019 at 8:59 PM Alex Williams <alex.williams@ettus.com> wrote:
+>
+> On Fri, Feb 15, 2019 at 2:53 AM Shubhrajyoti Datta
+> <shubhrajyoti.datta@gmail.com> wrote:
+> >
+> > HI Alex,
+> >
+> > Thanks for the patch.
+> >
+> > On Fri, Feb 1, 2019 at 4:22 AM <alex.williams@ettus.com> wrote:
+> > >
+> > > From: Alex Williams <alex.williams@ni.com>
+> > >
+> > > Under certain conditions, Cadence's I2C controller's transfer_size
+> >
+> > Any help in reproducing the conditions would be appreciated
+> >
+> >
+> > > register will roll over and generate invalid read transactions. Before
+> > > this change, the ISR relied solely on the RXDV bit to determine when to
+> > > write more data to the user's buffer. The invalid read data would cause
+> > > overruns, smashing stacks and worse.
+> > >
+> > > This change stops the buffer writes to the requested boundary and
+> > > reports the error. The controller will be reset so normal transactions
+> > > may resume.
+> > >
+> > > Signed-off-by: Alex Williams <alex.williams@ni.com>
+>
+>
+> One possible related errata is here:
+> https://www.xilinx.com/support/answers/61664.html
+>
+> In our case, we only needed to hammer on i2c to reproduce in a few
+> minutes, with a script like this:
+> while true
+>     do date
+>     cat /sys/class/gpio/gpio882/direction > /dev/null
+>     cat /sys/class/gpio/gpio883/direction > /dev/null
+>     cat /sys/class/gpio/gpio884/direction > /dev/null
+>     cat /sys/class/gpio/gpio885/direction > /dev/null
+>     cat /sys/class/gpio/gpio886/direction > /dev/null
+>     cat /sys/class/gpio/gpio887/direction > /dev/null
+>     cat /sys/class/gpio/gpio888/direction > /dev/null
+>     cat /sys/class/gpio/gpio889/direction > /dev/null
+>     cat /sys/class/gpio/gpio890/direction > /dev/null
+>     cat /sys/class/gpio/gpio891/direction > /dev/null
+>     cat /sys/class/gpio/gpio892/direction > /dev/null
+>
+>     cat /sys/class/gpio/gpio894/direction > /dev/null
+>     cat /sys/class/gpio/gpio895/direction > /dev/null
+>     cat /sys/class/gpio/gpio896/direction > /dev/null
+>     cat /sys/class/gpio/gpio897/direction > /dev/null
+>     cat /sys/class/gpio/gpio898/direction > /dev/null
+>     cat /sys/class/gpio/gpio899/direction > /dev/null
+>     cat /sys/class/gpio/gpio900/direction > /dev/null
+>     cat /sys/class/gpio/gpio901/direction > /dev/null
+>     cat /sys/class/gpio/gpio902/direction > /dev/null
+>     cat /sys/class/gpio/gpio903/direction > /dev/null
+>     cat /sys/class/gpio/gpio904/direction > /dev/null
+>     cat /sys/class/gpio/gpio905/direction > /dev/null
+> done
+>
+> In normal usage, we have code that sets up a number of i2c GPIO
+> expanders and pokes them for values as it initializes devices.
+> Occasionally, the transfer size register will roll over, and the ISR
+> will cause memory corruption, since it doesn't stop writing at the
+> requested boundary.
+Reviewed-by: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
