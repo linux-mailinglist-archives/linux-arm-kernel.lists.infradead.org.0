@@ -2,107 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF7AA10C299
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 03:46:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C4DD10C2B4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 04:07:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QL1SrFI61/G+1hvreF8TJzvq8SNLMcF9vZBG0mMn/yE=; b=WjdrEt4ujPJ11w
-	wHSgHj94C0lrYST+99g4JRW34sr+b0eSMBzM0gqctrUpih/qSD7NsLL2X+5+kFLkqyhdMHDmTUvoJ
-	pn/e920w8PMlOIOTjpYylwhQpJwWcWeClv1IoSUMNCD+iwYsdiWowS+X8r5Lu24QgQcaA5wUfnKvU
-	XptQOGprmRTltCT4x+NnNNJEvazCy/eZRuQ58Tk0FhhtAfTLIanVBhW36m0J68x/hwVLUTrfsUWda
-	pKRAiW2FaHRu0Viu0Su2PdgQH+ns3SOJg0USfQ9MCe4vDOoN3EhFUIV0CjQa+VM7S6EX1I5ECPJTs
-	vCbFp2CRiC/O6uVGnfEA==;
+	List-Owner; bh=EfDUuie3WqQEsBd+WPkteBi4qiYXh97MwuauZdHSs0Q=; b=B3rlIWHfLWcas7
+	DaFnIz6U83IpoV5DaLv8dxry53MTjmllMdQ3NVnl/Yv1q84i90Pg3YDr8e9bmHYaYwAavaKl23/tx
+	Q0TCljVAGGYCUeqWPPQiXXH53tXAHj3A8TDy9EFKioKRYfMsNyskUAq7Jsjho/lvg+bSP1+yX89ZC
+	/rstBHkJWr5TuaZiJqv3TL+uQeAV8zPo+exm8QWN3C6E3noAZHhk2JxdZBBJusHGJo/dU9VxFkTUZ
+	DI07LMo8Pe/wWuhOacwdrSz+qsNiaefWx+0m9i+ZFFSXmLewGN6JSlpSSLcmr0hP629LSpiIrkeuN
+	Kmu0h/PsBNYjJIU/eqBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia9om-0002vK-Vj; Thu, 28 Nov 2019 02:46:08 +0000
-Received: from mail-eopbgr00075.outbound.protection.outlook.com ([40.107.0.75]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1iaA97-0001iV-R3; Thu, 28 Nov 2019 03:07:09 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia9oZ-0001wF-AA
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 02:45:57 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fVfood2aQUI1yW+raag/gnoaPAXpS/abIZ3tOGBSklL39V/e4fc6nqJ9WzfNT17bpozfM8IKV1ui9aUjIc6oQohKcB7Qnp6bnrcmWsapQQUldkbwkf49dTGDG+XYTdQALRphEw/02YJksd5vdm8cKJNKTV1Ob9I4TjP/seeST7F+CqDIFpw+DWGs9CqQrwyQCOQGSlUK06m86UXXG86xFciTTD7T5/ZTvsKUX89bmqojli4KHxy/AfcKrqtKUTRjcm+154Jms2KmZPRkVxgGFtT2gJDyJjSu7qNhb5JdM77bbTy/UQKfNf+W4c7xKhI7kKqucP3VIVvCwfkHdDR13w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yBUAQMT1gSwo/n+MArZ5u3w2kFcpbY5wmXTNcnEBJA0=;
- b=WQTtRVA89x1peVP6VEedyMloytpJRayYtvov3GIidUS57/HwmOgGAfY7je276RKFSuEylX4vLejYuwkP01ImrDgV+fsX6X1z2YylxFpM9Lv24yKoO2oioadcpm6fJQKq1yBg8rF6iUcGGHN6vbTGGX4IyiWinNH9kA6Jm1KkyCFGW5oo2x3DGTPZiH15VrarKrKqcsDriwx96T2w7DfgLcZfVSQnm46SElRe/Kc/QMpWNUebRoRCn5jj1mRiG1dXVyMy2NTaq3PGhyHawZEoHQ4dSyicrHeM8JoplyIz4c2RZfrJOoDuG3H/OrHsEsHdIwaq/KtTjYlt9nIz3y+9jw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yBUAQMT1gSwo/n+MArZ5u3w2kFcpbY5wmXTNcnEBJA0=;
- b=IX9bG93T1UIY3R9RruqpqKPDdA12GB9gcLffVP+Xn0k0wzfFqtz1NpPBUcxUcPsJH3tdQ5AF9vsW/UUUoR9M2r7N84oKz27auIMJJOYVqWNaL6gd8c5s2dUnDMuCdfJ0CuCgTsdW6H8NySdnavmPSWbXzlIxzSX8uc/Md5ndMpg=
-Received: from VI1PR04MB4431.eurprd04.prod.outlook.com (20.177.55.205) by
- VI1PR04MB6174.eurprd04.prod.outlook.com (20.179.26.145) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2474.17; Thu, 28 Nov 2019 02:45:52 +0000
-Received: from VI1PR04MB4431.eurprd04.prod.outlook.com
- ([fe80::c947:5ae7:2a68:a4f2]) by VI1PR04MB4431.eurprd04.prod.outlook.com
- ([fe80::c947:5ae7:2a68:a4f2%3]) with mapi id 15.20.2495.014; Thu, 28 Nov 2019
- 02:45:52 +0000
-From: Peng Ma <peng.ma@nxp.com>
-To: =?utf-8?B?VXdlIEtsZWluZS1Lw7ZuaWc=?= <u.kleine-koenig@pengutronix.de>
-Subject: RE: [EXT] Re: [PATCH] i2c: imx: Defer probing if EDMA not available
-Thread-Topic: [EXT] Re: [PATCH] i2c: imx: Defer probing if EDMA not available
-Thread-Index: AQHVpPH7P18PyO0DCUWpmTSTyww0uaeenlSAgAFCqIA=
-Date: Thu, 28 Nov 2019 02:45:52 +0000
-Message-ID: <VI1PR04MB44315FD37E81C7EE6903D49FED470@VI1PR04MB4431.eurprd04.prod.outlook.com>
-References: <20191127071136.5240-1-peng.ma@nxp.com>
- <20191127072723.7twwbjafqdd22v6m@pengutronix.de>
-In-Reply-To: <20191127072723.7twwbjafqdd22v6m@pengutronix.de>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.ma@nxp.com; 
-x-originating-ip: [119.31.174.73]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 3119104b-41e1-4c2f-b935-08d773ad1570
-x-ms-traffictypediagnostic: VI1PR04MB6174:|VI1PR04MB6174:
-x-ms-exchange-purlcount: 1
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB617469A3EF96EA05467C9371ED470@VI1PR04MB6174.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4125;
-x-forefront-prvs: 0235CBE7D0
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(396003)(366004)(346002)(376002)(39860400002)(199004)(13464003)(189003)(6506007)(71190400001)(71200400001)(102836004)(478600001)(14454004)(3846002)(6116002)(6916009)(446003)(99286004)(45080400002)(11346002)(86362001)(7736002)(74316002)(305945005)(26005)(44832011)(256004)(316002)(33656002)(66066001)(54906003)(186003)(66476007)(55016002)(8676002)(81166006)(66556008)(81156014)(6436002)(76116006)(4326008)(66946007)(6246003)(6306002)(229853002)(52536014)(7696005)(2906002)(8936002)(5660300002)(25786009)(66446008)(9686003)(76176011)(64756008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6174;
- H:VI1PR04MB4431.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: BstHFuXmRU1H6QTiUyXPhOUnZ/jbHEggdePER10eX9NpHC3fx2RyDeEa9+dAUYRiq1KkRnNIlj07n30REnGIGOpzw64gUy8tPf1RhFRbrwd4Z0X1aB6WqZfmNvIOD5aPIn0cuGWMxeEop7gmE5cvgf4F8U9zzfY0QwuKwNM987vo2fqvP+UriUgG5HHWtBxQ5JGlw+MpJZbrXloa9gakxpfhmm7HhvsGtzAUS3Yfy7KDAF6WhqHvQFOTGZoG+w/W1RWzzvd/Ynz21xD0qv/2m3aJdcDzk1vlFIZvrM8kFX59Ge+ZEWQmJs2h6ZJQZaabqd2du+U8l2+pD4mH9SZXIdsH7m/h2yVaKAuNg+6Wk/q2GVjFyAK2JQvUqNcHeJ/wMjRKb+HfDCkAnfqQc7C8GzTrgVFqz2rfu6CfDbQTnCeZ9ntIWsJXk41+GdMZCbDMdMBoqBVhjW/r4OJPglRBw+FeHiZBZb0eCawDXp06vAI=
+ id 1iaA8z-0001hT-LE
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 03:07:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1574910414; bh=s0u7Q5tCoSp3oxGSwaQ6izZaVYzIABS3Gf4oK5gp2yU=;
+ h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
+ b=EJ6mTm1/QSIj38AlCpaIu9dxOOeQ2Z1nlrGPfD1zFEvciSHY1yBzlpO3QM1y9NjgR
+ KS5/RS7PPDNcmYlcu/biPoRkj1E95jMk6VJZmGT79Gty4wlY7WVBmgMlTHaeQNWnrB
+ OQOLgbyXx+HWhDpWjzfGcHLi/22e1f+rGS2+4F2E=
+Date: Thu, 28 Nov 2019 04:06:53 +0100
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Yong <yong.deng@magewell.com>
+Subject: Re: [linux-sunxi] [PATCH] media: sun6i-csi: Fix incorrect
+ HSYNC/VSYNC/PCLK polarity configuration
+Message-ID: <20191128030653.5fhcolvib6tzf4zc@core.my.home>
+Mail-Followup-To: Yong <yong.deng@magewell.com>, linux-sunxi@googlegroups.com,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ "open list:CSI DRIVERS FOR ALLWINNER V3s" <linux-media@vger.kernel.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>, 
+ open list <linux-kernel@vger.kernel.org>
+References: <20191128020259.1338188-1-megous@megous.com>
+ <20191128102608.035cbb996c8681a6fb035336@magewell.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3119104b-41e1-4c2f-b935-08d773ad1570
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Nov 2019 02:45:52.1621 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: hV8eaLCANzbvn57v0flbsANuhJ/5EEVX0mwhzNTDvT/rEQ5b4PHa0TpvLy+WdmvK
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6174
+Content-Disposition: inline
+In-Reply-To: <20191128102608.035cbb996c8681a6fb035336@magewell.com>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_184555_363565_9F8826AB 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20191127_190701_865258_BC5A231A 
+X-CRM114-Status: GOOD (  24.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.75 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -121,49 +77,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux@rempel-privat.de" <linux@rempel-privat.de>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
+ open list <linux-kernel@vger.kernel.org>, linux-sunxi@googlegroups.com,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:CSI DRIVERS FOR ALLWINNER V3s" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCj4tLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPkZyb206IFV3ZSBLbGVpbmUtS8O2bmln
-IDx1LmtsZWluZS1rb2VuaWdAcGVuZ3V0cm9uaXguZGU+DQo+U2VudDogMjAxOeW5tDEx5pyIMjfm
-l6UgMTU6MjcNCj5UbzogUGVuZyBNYSA8cGVuZy5tYUBueHAuY29tPg0KPkNjOiBsaW51eEByZW1w
-ZWwtcHJpdmF0LmRlOyBrZXJuZWxAcGVuZ3V0cm9uaXguZGU7IHNoYXduZ3VvQGtlcm5lbC5vcmc7
-DQo+cy5oYXVlckBwZW5ndXRyb25peC5kZTsgbGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZzsg
-ZGwtbGludXgtaW14DQo+PGxpbnV4LWlteEBueHAuY29tPjsgZmVzdGV2YW1AZ21haWwuY29tOw0K
-PmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsgbGludXgtaTJjQHZnZXIua2Vy
-bmVsLm9yZw0KPlN1YmplY3Q6IFtFWFRdIFJlOiBbUEFUQ0hdIGkyYzogaW14OiBEZWZlciBwcm9i
-aW5nIGlmIEVETUEgbm90IGF2YWlsYWJsZQ0KPg0KPkNhdXRpb246IEVYVCBFbWFpbA0KPg0KPkhl
-bGxvLA0KPg0KPk9uIFdlZCwgTm92IDI3LCAyMDE5IGF0IDA3OjEyOjA5QU0gKzAwMDAsIFBlbmcg
-TWEgd3JvdGU6DQo+PiBFRE1BIG1heSBiZSBub3QgYXZhaWxhYmxlIG9yIGRlZmVyZWQgZHVlIHRv
-IGRlcGVuZGVuY2llcyBvbiBvdGhlcg0KPj4gbW9kdWxlcywgSWYgdGhlc2Ugc2NlbmFyaW9zIGlz
-IGVuY291bnRlcmVkLCB3ZSBzaG91bGQgZGVmZXIgcHJvYmluZy4NCj4NCj5JJ2Qgd3JpdGU6DQo+
-DQo+ICAgICAgICBpMmM6IGlteDogRGVmZXIgcHJvYmluZyBpZiByZXF1ZXN0aW5nIERNQSB5aWVs
-ZHMgRVBST0JFX0RFRkVSDQo+DQo+ICAgICAgICBETUEgbWlnaHQgbm90IGJlIGF2YWlsYWJsZSB5
-ZXQgd2hlbiB0aGUgaTJjIGRldmljZSBwcm9iZXMuDQo+ICAgICAgICBQcm9wZXJseSBoYW5kbGUg
-RVBST0JFX0RFRkVSIG9uIGRtYSBjaGFubmVsIGFsbG9jYXRpb24gYnkNCj4gICAgICAgIHBhc3Np
-bmcgb24gdGhpcyBlcnJvci4NCj4NCj5JdCB3b3VsZCBiZSBuaWNlIHRvIHBvaW50IG91dCB3aGVy
-ZS9ob3cgdGhpcyBmYWlsZWQgZm9yIHlvdS4NCj4NCj5PdGhlciB0aGFuIHRoYXQgdGhpcyBsb29r
-cyByZWFzb25hYmxlLg0KPg0KSGksIFV3ZSwNCg0KVGhhbmtzIHZlcnkgbXVjaCBmb3IgeW91ciBj
-b21tZW50cywgVGhhdCBsb29rcyBnb29kLg0KDQpCZXN0IFJlZ2FyZHMsDQpQZW5nDQo+QmVzdCBy
-ZWdhcmRzDQo+VXdlDQo+DQo+LS0NCj5QZW5ndXRyb25peCBlLksuICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgfCBVd2UgS2xlaW5lLUvDtm5pZw0KPnwNCj5JbmR1c3RyaWFsIExpbnV4IFNvbHV0
-aW9ucyAgICAgICAgICAgICAgICAgfA0KPmh0dHBzOi8vZXVyMDEuc2FmZWxpbmtzLnByb3RlY3Rp
-b24ub3V0bG9vay5jb20vP3VybD1odHRwcyUzQSUyRiUyRnd3dy5wDQo+ZW5ndXRyb25peC5kZSUy
-RiZhbXA7ZGF0YT0wMiU3QzAxJTdDcGVuZy5tYSU0MG54cC5jb20lN0M0MjZlYzRmDQo+NWYxZjE0
-NzUxMDIyZjA4ZDc3MzBiNDA0MyU3QzY4NmVhMWQzYmMyYjRjNmZhOTJjZDk5YzVjMzAxNjM1JTdD
-MA0KPiU3QzElN0M2MzcxMDQzNjQ0NzA1Njg3MjImYW1wO3NkYXRhPUpqRDJvdnk0b3hac2VVRVV3
-TkVSQVNCSkNrDQo+MG9NTFNwbGI4cVJUa2hhVEUlM0QmYW1wO3Jlc2VydmVkPTAgfA0KX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi,
+
+On Thu, Nov 28, 2019 at 10:26:08AM +0800, Yong wrote:
+> Hi Ondrej,
+> 
+> This has been discussed.
+> And Maxime sent a patch for this: 
+> https://www.mail-archive.com/linux-media@vger.kernel.org/msg127149.html
+
+Thanks for pointing to the previous patch. But that patch doesn't make any
+sense, and breaks things for me, and doesn't even match BSP code, which 
+has no such reversal, and works fine with about 30 cam drivers.
+
+Also how do you explain my findings?
+
+My camera is sending correct signals, verified by looking at them actually (see
+below), and CSI is not receiving the image. I have to flip HSYNC/VSYNC to be
+oposite of that what CSI driver expects and I get a noisy image and if I fix
+PCLK polarity too, the noise goes away, which means now I'm also sampling when
+the data are stable and not when they're changing.
+
+Here: (output from my cam, that I configured to have VSYNC ACTIVE LOW, HSYNC
+ACTIVE LOW) And the signal is clearly that, as you can see yourself:
+
+  https://megous.com/dl/tmp/98df81b7ed0126ec.png
+
+The above signals are received with CSI driver configured with
+V4L2_MBUS_VSYNC_ACTIVE_HIGH V4L2_MBUS_HSYNC_ACTIVE_HIGH. So CSI driver is
+clearly wrong.
+
+I think this is pretty clear the driver is buggy. At least for A83T SoC.
+
+I'm not sure what Maxime found out, but he should probably re-check his
+findings. Maxime, can you comment on this?
+
+regards,
+	o.
+
+> On Thu, 28 Nov 2019 03:02:59 +0100
+> Ondrej Jirman <megous@megous.com> wrote:
+> 
+> > This was discovered by writing a new camera driver and wondering, why
+> > hsync/vsync polarity setting behaves in reverse to what would be
+> > expected. Verified by looking at the actual signals and the SoC
+> > user manual.
+> > 
+> > Fixes: 5cc7522d8965 ("media: sun6i: Add support for Allwinner CSI V3s")
+> > Signed-off-by: Ondrej Jirman <megous@megous.com>
+> > ---
+> >  drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c | 6 +++---
+> >  1 file changed, 3 insertions(+), 3 deletions(-)
+> > 
+> > diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+> > index f17e5550602d..98bbcca59a90 100644
+> > --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+> > +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
+> > @@ -417,12 +417,12 @@ static void sun6i_csi_setup_bus(struct sun6i_csi_dev *sdev)
+> >  		if (flags & V4L2_MBUS_FIELD_EVEN_LOW)
+> >  			cfg |= CSI_IF_CFG_FIELD_POSITIVE;
+> >  
+> > -		if (flags & V4L2_MBUS_VSYNC_ACTIVE_LOW)
+> > +		if (flags & V4L2_MBUS_VSYNC_ACTIVE_HIGH)
+> >  			cfg |= CSI_IF_CFG_VREF_POL_POSITIVE;
+> > -		if (flags & V4L2_MBUS_HSYNC_ACTIVE_LOW)
+> > +		if (flags & V4L2_MBUS_HSYNC_ACTIVE_HIGH)
+> >  			cfg |= CSI_IF_CFG_HREF_POL_POSITIVE;
+> >  
+> > -		if (flags & V4L2_MBUS_PCLK_SAMPLE_RISING)
+> > +		if (flags & V4L2_MBUS_PCLK_SAMPLE_FALLING)
+> >  			cfg |= CSI_IF_CFG_CLK_POL_FALLING_EDGE;
+> >  		break;
+> >  	case V4L2_MBUS_BT656:
+> > -- 
+> > 2.24.0
+> > 
+> > -- 
+> > You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
+> > To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
+> > To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20191128020259.1338188-1-megous%40megous.com.
+> 
+> 
+> Thanks,
+> Yong
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
