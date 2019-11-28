@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DAC710CBC3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:34:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC57410CBC1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:33:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fZHyf26ip3d1vhoGWWjhlPozL45DG9PLBBK8UiB0tOY=; b=hsEQvLrgP6bHTE
-	zUurU0yBLnrFb0pJsZvRXqn0002plvwZfkrOrWBXjiB3/DtsR3w+zuqckOntt/RvhBwXnttD2m+n4
-	CS1nUVm1KP4/reG+6nMc9Fud05ZUbUw/IekKb83Y0tBkHMe5V0hUn0TIBbd/SW9Jazi38eJwtxy0s
-	vxy8Eo9G/H2ytdG9XARR7t7QyRFBsOWma1qECB63r2e/Co8r52xSK/PFMrmtu6MXKfnOBqMfYyNzt
-	XhGd0EXm12t8uUvP9Yyh9+MAXvlgOjN0l4iL2jTWEv3JCEP5AxneL5qSWfKztRqbx+cqtwYmqqmpL
-	bcZA1B11aY44cDDoke8Q==;
+	List-Owner; bh=/UGDjFNvuCUVe9ZXBE6laUrlQNcM3Cn5D9VZOdIabgc=; b=h8HLWiHNHWVJyw
+	Zhf0SWuZJjUl6xZYtbyyCBc6V7/UPaycIQer1O7SZzabDX7ISYNLcUJhfYEg6nS7neN6YqOY1nVic
+	/6572AvCSV1ens0AcVhADcO0GzeCoq12Rac8UuODdELl71ml1mCrnx1sw0wAbwtyZXlygMOYw2aXm
+	K4TPe9r924LYPpRHLLQQbCE3HcGWqtZC0OFqZGGZDbO1Ew6Jh4dCzVmUf8Vy6kvsoFXg0nwHxdBUG
+	CUatdeXxiNXWhvn6dcRUK5BIg6HSS4wfo3DBtCgAjW9b1up9+xpSGGglnNVwI+1qek9aGmAfSNi38
+	6hLpkAR/tJTdt0p9LHbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaLnu-0006yX-C6; Thu, 28 Nov 2019 15:34:02 +0000
+	id 1iaLnG-0006hh-Gm; Thu, 28 Nov 2019 15:33:22 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaLn3-0006hW-B2
- for linux-arm-kernel@bombadil.infradead.org; Thu, 28 Nov 2019 15:33:09 +0000
+ id 1iaLn1-0006hW-Ue
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 28 Nov 2019 15:33:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=PS8hZ/FNZ5fnmFnMC7wpuYE5CME6gqxRCzSgU7yOKOk=; b=DYApBAuvOF3gRsyp7fXVjEgE/R
- mTRfhfOM5BVlheIUd1VI7nfpUIjaydlK+o5izcwUOKArR4ccYyhncI0l2wD+BiptLWoPpuRrFICe+
- FDBWQFZNIQngCuqxla2rOX2zpphZrh2AECPq+Itv8fIsPqGpyVay8GLDrotC8Oqpi93EWPgMOdad6
- ZMpNt9x902qwjoO8rJ/lAnMSI2i2rAM6FXEAyX66wlylalsrwKHaUHChIi4ETljh/Kxy0a5/rCdnr
- R5BkfAzHmlvOWuUWAjmtQgLry58AXr+I0G13psHdnezADvuMEldXuGFJWrme8muQoXb6JTUJvAmVY
- ARKVoClg==;
+ bh=3Bun68+vGX0cpO8gva8KbJU3Sj9L3G/suxA//a5o0RU=; b=UgwOq3QYNBnymrva4R9z+QciIF
+ p49qfmlniKwulfNya8UGknU2/fMo5fuwbi65OFQ5bkCSHJg6tofLSrFbAEi4KT3/0JItVAiIpXF5M
+ jirhf/CThIPl3bBpZuM+05sGrFLiGPcBVnRzs+i28nt2ORC23tI0//tZuy/Vb2ZG9dTq5+hwrmwr1
+ GvD1bcG4ELYT1e+/RJTT6hnLUdLZ4h3LsLbwKfYV0vi48WRAzcfijRn4TTCjFGvVAKhEvznqoccfP
+ RIWOX7oi/uRa/2C51bzRJr7ejIpm8UdHHkpyJ7cHxBYkgGPRLf3ftMcAUPiResKmnn4NeFtFM6bJM
+ ZCNrpLDw==;
 Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaLEo-0002uG-R4
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:57:47 +0000
-Received: by mail-lj1-x244.google.com with SMTP id e10so19658754ljj.6
+ id 1iaLEz-0002uo-5S
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:57:57 +0000
+Received: by mail-lj1-x244.google.com with SMTP id t5so28870735ljk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 06:57:46 -0800 (PST)
+ Thu, 28 Nov 2019 06:57:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=PS8hZ/FNZ5fnmFnMC7wpuYE5CME6gqxRCzSgU7yOKOk=;
- b=Dwl4dqLdHHKnldphnAGAr1ToN610EqBZwSqoR/hgQSNxfsV/4wXOcOzAUM9uz6FotW
- 9qwt38QjaaeFHldetsUOgPoIM24I2pCcWdKTSDI7nv8y8op+zapWHlf8st+tVkHCz7P5
- bh30cwYMxpmBmbI75/QPPKlSxYLuOhMWYJifE=
+ bh=3Bun68+vGX0cpO8gva8KbJU3Sj9L3G/suxA//a5o0RU=;
+ b=BiUszVfH4xD7TeJbkxiZNgcYZYOIlp+5P2RR1S2/Rw4kQ+d9IE9N4RrFlOWACnk7Ws
+ VF2RmylZqWUGDJz4rHvV+iwDq4ISPLeUCaV7NiLCQBFZALMu33LIJqYp/YDL+Jp5UhJA
+ wSTZVT532Z+h6FFEsGS5Q1g2A5XNjVwix2Dc4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=PS8hZ/FNZ5fnmFnMC7wpuYE5CME6gqxRCzSgU7yOKOk=;
- b=NmwQ3ggY6QOxAx1+vj5LThjkfjLnwGwWMABhLGe+j81yj03oFGMVDz5G5JmnLJTQb+
- aDBtOD9vSxuvB1sluev1ar6I1M8TeAh+88dYxZf36P7dMO2L8MPdwNIvd8kS6vsdmtjq
- VswvfwZXVTeKszWT0Ca9nHnvmVL3F2MGS0RWKL4o6NqycBJ/H7FAU7hPLigJnkgUlkB+
- 7bbFiM7eCfRnCnO1odLSfYlvdAgJulZaUrdeIxlX3OH8CT4yvx4MUWP+EUvjoWaOX5qe
- ph8Cw8dbKN4t3EqglUFQCR+ldGhZfyRFYPglBpOk+ezoOE6yZj2ofXKz6PzfkxwBk2lQ
- TiVw==
-X-Gm-Message-State: APjAAAV6xIWm90kS0LHI+jKqI5M+Dvi9E440HSGXqULN9RzHcmffoOOB
- VwOhxVW+rXU76bFogqENEhMfnw==
-X-Google-Smtp-Source: APXvYqxr+KXWNUM6J8K1e3cWke7H28D8dBWc6wxWxJZiGdbp/JimSWw2nVOwCFqjHzoiT5BiVmBGsA==
-X-Received: by 2002:a2e:3e08:: with SMTP id l8mr5147340lja.236.1574953064981; 
- Thu, 28 Nov 2019 06:57:44 -0800 (PST)
+ bh=3Bun68+vGX0cpO8gva8KbJU3Sj9L3G/suxA//a5o0RU=;
+ b=HOR02zP1nzUepuBydHBCo+D5zqKSbPiMV3r7fEF9vyJ8jPDxf6TgZ+hK1jqSD65ceV
+ 31PJoU6cbYywvQ9H0gnAvzNIXulmcurH0Jw8rnfsawlOtYP5hN95rbjMUjAMVG7Gn5yO
+ OOJkqMbyqvRH+2uMkLdzKuxSIkUTv2URjUkf+aRQOfLCkzahFd1BJFHMAaiFapKikKvz
+ VSvQCVhwnHSqCefC0LDrlhrpb+QiVMTV7tSMWswjVrjUyK6vlP6HFkdVsuIFQnSY0Ho+
+ W5x1yh59Ne/Ktl3solAhV+F58G3GwwkAwCHHiQJjuIG/WwUzixLMtqM0av58CtHqj4OZ
+ Qqqw==
+X-Gm-Message-State: APjAAAWmmoFyM5tW1mOto1Mm+Fj0+215OkpWWgRhW4BtUfTbTwpLrv6Y
+ QkLoryPzofg/+7uXtarqJXsDEzxzzotmjvrD
+X-Google-Smtp-Source: APXvYqwaGl/+nUJyEvEWFx2+e9Z1DYPyhWNpmKm+QNrRw4gHEm8FZ1KH1eJwfl5J9bgJnXga5KzIdQ==
+X-Received: by 2002:a2e:8855:: with SMTP id z21mr36010930ljj.212.1574953075288; 
+ Thu, 28 Nov 2019 06:57:55 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.57.43
+ by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.57.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 Nov 2019 06:57:44 -0800 (PST)
+ Thu, 28 Nov 2019 06:57:54 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v6 30/49] serial: ucc_uart: factor out soft_uart initialization
-Date: Thu, 28 Nov 2019 15:55:35 +0100
-Message-Id: <20191128145554.1297-31-linux@rasmusvillemoes.dk>
+Subject: [PATCH v6 38/49] soc: fsl: qe: drop broken lazy call of
+ cpm_muram_init()
+Date: Thu, 28 Nov 2019 15:55:43 +0100
+Message-Id: <20191128145554.1297-39-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
 References: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
@@ -111,168 +112,51 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Timur Tabi <timur@kernel.org>, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
  linux-kernel@vger.kernel.org, Scott Wood <oss@buserror.net>,
- linux-serial@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The "soft uart" mechanism is a workaround for a silicon bug which (as
-far as I know) only affects some PPC-based SOCs.
+cpm_muram_alloc_common() tries to support a kind of lazy
+initialization - if the muram_pool has not been created yet, it calls
+cpm_muram_init(). Now, cpm_muram_alloc_common() is always called under
 
-The code that determines which microcode blob to request relies on
-some powerpc-specific bits (e.g. the mfspr(SPRN_SVR) and hence also
-the asm/reg.h header). This makes it a little awkward to allow this
-driver to be built for non-PPC based SOCs with a QE, even if they are
-not affected by that silicon bug and thus don't need any of the Soft
-UART logic.
+	spin_lock_irqsave(&cpm_muram_lock, flags);
 
-There's no way around guarding those bits with some ifdeffery, so to
-keep that isolated, factor out the
-do-we-need-soft-uart-and-if-so-handle-the-firmware to a separate
-function, which we can then easily stub out for non-PPC.
+and cpm_muram_init() does gen_pool_create() (which implies a
+GFP_KERNEL allocation) and ioremap(), not to mention the fun that
+ensues from cpm_muram_init() doing
+
+	spin_lock_init(&cpm_muram_lock);
+
+In other words, this has never worked, so nobody can have been relying
+on it.
+
+cpm_muram_init() is called from a subsys_initcall (either from
+cpm_init() in arch/powerpc/sysdev/cpm_common.c or, via qe_reset(),
+from qe_init() in drivers/soc/fsl/qe/qe.c).
 
 Reviewed-by: Timur Tabi <timur@kernel.org>
-Acked-by: Timur Tabi <timur@kernel.org>
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/tty/serial/ucc_uart.c | 110 ++++++++++++++++++----------------
- 1 file changed, 58 insertions(+), 52 deletions(-)
+ drivers/soc/fsl/qe/qe_common.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
-diff --git a/drivers/tty/serial/ucc_uart.c b/drivers/tty/serial/ucc_uart.c
-index 8a378ee5d34f..f286e91714cb 100644
---- a/drivers/tty/serial/ucc_uart.c
-+++ b/drivers/tty/serial/ucc_uart.c
-@@ -1183,70 +1183,76 @@ static void uart_firmware_cont(const struct firmware *fw, void *context)
- 	release_firmware(fw);
- }
+diff --git a/drivers/soc/fsl/qe/qe_common.c b/drivers/soc/fsl/qe/qe_common.c
+index 48c77bb92846..dcb267567d76 100644
+--- a/drivers/soc/fsl/qe/qe_common.c
++++ b/drivers/soc/fsl/qe/qe_common.c
+@@ -119,9 +119,6 @@ static s32 cpm_muram_alloc_common(unsigned long size,
+ 	struct muram_block *entry;
+ 	s32 start;
  
--static int ucc_uart_probe(struct platform_device *ofdev)
-+static int soft_uart_init(struct platform_device *ofdev)
- {
- 	struct device_node *np = ofdev->dev.of_node;
--	const unsigned int *iprop;      /* Integer OF properties */
--	const char *sprop;      /* String OF properties */
--	struct uart_qe_port *qe_port = NULL;
--	struct resource res;
-+	struct qe_firmware_info *qe_fw_info;
- 	int ret;
- 
--	/*
--	 * Determine if we need Soft-UART mode
--	 */
- 	if (of_find_property(np, "soft-uart", NULL)) {
- 		dev_dbg(&ofdev->dev, "using Soft-UART mode\n");
- 		soft_uart = 1;
-+	} else {
-+		return 0;
- 	}
- 
--	/*
--	 * If we are using Soft-UART, determine if we need to upload the
--	 * firmware, too.
--	 */
--	if (soft_uart) {
--		struct qe_firmware_info *qe_fw_info;
+-	if (!muram_pool && cpm_muram_init())
+-		goto out2;
 -
--		qe_fw_info = qe_get_firmware_info();
--
--		/* Check if the firmware has been uploaded. */
--		if (qe_fw_info && strstr(qe_fw_info->id, "Soft-UART")) {
--			firmware_loaded = 1;
--		} else {
--			char filename[32];
--			unsigned int soc;
--			unsigned int rev_h;
--			unsigned int rev_l;
--
--			soc = soc_info(&rev_h, &rev_l);
--			if (!soc) {
--				dev_err(&ofdev->dev, "unknown CPU model\n");
--				return -ENXIO;
--			}
--			sprintf(filename, "fsl_qe_ucode_uart_%u_%u%u.bin",
--				soc, rev_h, rev_l);
--
--			dev_info(&ofdev->dev, "waiting for firmware %s\n",
--				filename);
-+	qe_fw_info = qe_get_firmware_info();
- 
--			/*
--			 * We call request_firmware_nowait instead of
--			 * request_firmware so that the driver can load and
--			 * initialize the ports without holding up the rest of
--			 * the kernel.  If hotplug support is enabled in the
--			 * kernel, then we use it.
--			 */
--			ret = request_firmware_nowait(THIS_MODULE,
--				FW_ACTION_HOTPLUG, filename, &ofdev->dev,
--				GFP_KERNEL, &ofdev->dev, uart_firmware_cont);
--			if (ret) {
--				dev_err(&ofdev->dev,
--					"could not load firmware %s\n",
--					filename);
--				return ret;
--			}
-+	/* Check if the firmware has been uploaded. */
-+	if (qe_fw_info && strstr(qe_fw_info->id, "Soft-UART")) {
-+		firmware_loaded = 1;
-+	} else {
-+		char filename[32];
-+		unsigned int soc;
-+		unsigned int rev_h;
-+		unsigned int rev_l;
-+
-+		soc = soc_info(&rev_h, &rev_l);
-+		if (!soc) {
-+			dev_err(&ofdev->dev, "unknown CPU model\n");
-+			return -ENXIO;
-+		}
-+		sprintf(filename, "fsl_qe_ucode_uart_%u_%u%u.bin",
-+			soc, rev_h, rev_l);
-+
-+		dev_info(&ofdev->dev, "waiting for firmware %s\n",
-+			 filename);
-+
-+		/*
-+		 * We call request_firmware_nowait instead of
-+		 * request_firmware so that the driver can load and
-+		 * initialize the ports without holding up the rest of
-+		 * the kernel.  If hotplug support is enabled in the
-+		 * kernel, then we use it.
-+		 */
-+		ret = request_firmware_nowait(THIS_MODULE,
-+					      FW_ACTION_HOTPLUG, filename, &ofdev->dev,
-+					      GFP_KERNEL, &ofdev->dev, uart_firmware_cont);
-+		if (ret) {
-+			dev_err(&ofdev->dev,
-+				"could not load firmware %s\n",
-+				filename);
-+			return ret;
- 		}
- 	}
-+	return 0;
-+}
-+
-+static int ucc_uart_probe(struct platform_device *ofdev)
-+{
-+	struct device_node *np = ofdev->dev.of_node;
-+	const unsigned int *iprop;      /* Integer OF properties */
-+	const char *sprop;      /* String OF properties */
-+	struct uart_qe_port *qe_port = NULL;
-+	struct resource res;
-+	int ret;
-+
-+	/*
-+	 * Determine if we need Soft-UART mode
-+	 */
-+	ret = soft_uart_init(ofdev);
-+	if (ret)
-+		return ret;
- 
- 	qe_port = kzalloc(sizeof(struct uart_qe_port), GFP_KERNEL);
- 	if (!qe_port) {
+ 	start = gen_pool_alloc_algo(muram_pool, size, algo, data);
+ 	if (!start)
+ 		goto out2;
 -- 
 2.23.0
 
