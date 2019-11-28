@@ -2,106 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95C0910CB77
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:14:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4209010CB2E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:01:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=So0QbYKjW1yI1ekGki8yi+JpCSKg4q7k6LdYmcatxIg=; b=kh9X/X/1KxgLiO
-	yg//s5xs4HIvDMOmd4DKGTsTIOjQz4A7a2gzAc2A8VocUYqrNF/Z9xYCaC9OPL97c/Fo3Sydf2BKt
-	DW2+oagWV3oW4RDE9j+BcbhhAjU7hTdEfkXjUHlXRz6MNzari2Ity3lPyQfpppZ77qsPSbKikZl8l
-	b3GsaiHjEk67/FtLyF4ACS562w4vng+ros/VyKlZWlTZ1YuPaG5EyOqF8SCnDmOtM2OY7cfwjtbG8
-	SfUcdxq9LF7HX20WeGDV7d1vWlDnRe0S8HeCXNikwxWjF5qDVFKrOKmWUXj/JzxR48PwjjEabkBmT
-	Zsg6+18x9wCUghnffnzA==;
+	List-Owner; bh=VEFw8vbHNNkLLXWNDC2JolLJ+xpZo7r6MQRV2kR1v0o=; b=WjQR4Rco4gdb8K
+	blKIOYOUnLCHVtedXrf1Jjap1Mu3hSuQBaKb1efQ5lkHwn1HPG7oxRdM3l+F/AyudeBROGZsi9aGC
+	+apF9ZfNMbbecjvxHnpGnAu+qlNBzllzlR+JSTdR9i8dOVlV2ZslYjZmnEtKeCqd0lHG2Y3iC1D3Z
+	ylxEqtHY6LnzpfnoS7pqxqmg3Dt0lgvKxKI++/NeqD+Sdq0+kfz+RVSFBqoMYvnnVBDuaLup6pcir
+	TAIC/dEd/0FIErMvvYke+PLgtl0OVwTcTJp3q/1HEzHaOZnLzY9T7KvH8N+dQOMb4XUHADftLtebk
+	BRRBxAhDQNaCdd16Un8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaLV2-00076l-JD; Thu, 28 Nov 2019 15:14:32 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1iaLIi-0004Km-KO; Thu, 28 Nov 2019 15:01:48 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaLTT-0005rc-Tx
- for linux-arm-kernel@bombadil.infradead.org; Thu, 28 Nov 2019 15:12:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Vf2Fz+jj9lIDscUS3A8RQ3uOyXTjQEG0ba9IOOikoBs=; b=qG2W8F2Mh6xziwIYZHgf7w96Se
- vWYjKDRRCGdN+UCvWArIEy80oSzdNcf/G9Fmpp3JyThvemN3vWwfOxl3Zbtww9F++fvfBIPWdqxnX
- GcvgQuXnIP7C3bk6WYGLOyGf/eTc3CJOAVPBOIX3N5cm5hDZ1B0umtmgvOwJ1M1v9tZkzl0gY0DVS
- AEq2649gjug9JqBZhXMnpT+kuHeqzaihwbQzYwWUIFJMYQqTWrVTMno7yJx0Rw0qECkKPOwH3Y7cE
- hXhksJPIFK/oCodeTmsGcNGThyWh11lO2gnc9Iu5gbY6Prxscp+rivt+OO+6zNCh7TS67y0qAj09K
- 6jiHlm7Q==;
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaLEr-0005to-UK
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:57:51 +0000
-Received: by mail-lj1-x242.google.com with SMTP id m4so28803758ljj.8
+ id 1iaLER-0000jq-0B
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:57:41 +0000
+Received: by mail-lj1-x241.google.com with SMTP id m6so21458288ljc.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 06:57:20 -0800 (PST)
+ Thu, 28 Nov 2019 06:57:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Vf2Fz+jj9lIDscUS3A8RQ3uOyXTjQEG0ba9IOOikoBs=;
- b=f7ELNEHL3fudjaC9Is+gx4un2R7u3IQVwsuaM0hPXmik/iv0R/U+N8/DsXKAxHzE7F
- wU5L5PXvtHQrsrOCSpKiFkyxiU7KI6s9/dEg1DzoSWlHRS01JYdvN9QzEDQcu3m/rfeh
- g5XVdp+hoGqlaFksIMZ8c9vnaz5jW/z5ASgCQ=
+ bh=7doWLtIs5C5HFxi5cn3ktf4CtnoA/lQ4J3vsfz22wc8=;
+ b=aO3/jg+BwzSzONPk1rpjG2GDlnDMlC+YefcaRXSkX/jPfsL36WJdCL7smyNTh8Wp26
+ NXBsJzxBO1is32zHSwzrsgdqSK7aXP7qHUi7fUR8cWV4+dbTDQCQVuz23Trojq+aVOey
+ 50mP0nq7IWTi9zAUb4jvuxHPt41guV4oaqEP4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Vf2Fz+jj9lIDscUS3A8RQ3uOyXTjQEG0ba9IOOikoBs=;
- b=YsUMp0yNDPkaqBRPFbrC+ldDNusDJnxLyvKp8KqK+lv+1HZTldb7nmkRW18muiC1iU
- cXm84rMCkQ9PI1BVkiwIB0Ehw3wY5PKY7mDuOemzRqEzJGpJaWrUfV3MeI1h+SaYTnav
- m2uc+XVLAElSmEccIj2Y1ooVKwX/dGDOevje34EKxi8LN+MyLcMGXX9Ic4xpQVxkQpNI
- 1FV5hQXxeX27QxV01NxptzCwESHxKaZAT8oAbE5qZsqOp3W7oFbyXq4kBg2buA6S2P15
- VKdUu0U2AW861Lj5ymKzq1zFasVhZer7Kly3J4GyKfq1RfuxL52X6X2beO8emMCFlE/2
- JaPg==
-X-Gm-Message-State: APjAAAVav/eEekb7pb2+bOFGj2VpfWy0NrFzCZJB06lprNcesULwtp78
- 46IDUvf65DVvbSy5J5ynR4jmEw==
-X-Google-Smtp-Source: APXvYqxXd79lDtjCrRoNuvF4Qp9y2Rk63R+FMcFQzuUK6zJh8aMrNu5UNhh51q3RvAg4iprPycUgTA==
-X-Received: by 2002:a05:651c:305:: with SMTP id
- a5mr35412802ljp.144.1574953039041; 
- Thu, 28 Nov 2019 06:57:19 -0800 (PST)
+ bh=7doWLtIs5C5HFxi5cn3ktf4CtnoA/lQ4J3vsfz22wc8=;
+ b=H/j0dEB9+AjmPey0+5vrbzZqJTVNXQiuXEQ4MK20Zth7OzVoZDff4PGlCEjQtGKaxh
+ 36VWwIL7TwMN4XdMK+70MR48QeLUQcyqRo5HT7CnLfVRRSTo6g4UFl6ExFXdlT+k3i/H
+ qeJINAsEFAtUXEDMjW3UJfD7wsKdnsEm8P4oUFG5f2JhHjdBDtiTY6ahW/gbn/Kl9mx4
+ gSUPCm+E6/8widXUbzwiJVdz0Hi2zCJ1ujGvQONnxZEWbkL1CDwnmwGXvC0s+0xUIZqP
+ YNvwqr+lvWH04jQPcPBCS7KNcSS8DQaRcA19lWoc5HUvht4bMSlx7mbKZb9g2ZWfRT5P
+ gcYA==
+X-Gm-Message-State: APjAAAUQt5lTJQuLjyvWFweJGO36Io9nGndmzXdSE50ucIml7XzbAmhq
+ 73pMWG/WsAbUntzGZtyvk375PA==
+X-Google-Smtp-Source: APXvYqzxYXWq0AgrkTxp9ZPzOsVQAGLvcQEHbiVyhcVitqIGwayIbuZSR+RaeOawW1YdxueW0FM0mw==
+X-Received: by 2002:a2e:3a12:: with SMTP id h18mr28871911lja.217.1574953040857; 
+ Thu, 28 Nov 2019 06:57:20 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.57.17
+ by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.57.19
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 Nov 2019 06:57:18 -0800 (PST)
+ Thu, 28 Nov 2019 06:57:20 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v6 11/49] soc: fsl: qe: use qe_ic_cascade_{low,
- high}_mpic also on 83xx
-Date: Thu, 28 Nov 2019 15:55:16 +0100
-Message-Id: <20191128145554.1297-12-linux@rasmusvillemoes.dk>
+Subject: [PATCH v6 12/49] soc: fsl: qe: move calls of qe_ic_init out of
+ arch/powerpc/
+Date: Thu, 28 Nov 2019 15:55:17 +0100
+Message-Id: <20191128145554.1297-13-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
 References: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_145749_987826_CAD31712 
-X-CRM114-Status: GOOD (  15.18  )
+X-CRM114-CacheID: sfid-20191128_065723_154241_8C351BA2 
+X-CRM114-Status: GOOD (  17.37  )
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.2 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,85 +104,399 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The *_ipic and *_mpic handlers are almost identical - the only
-difference is that the latter end with an unconditional
-chip->irq_eoi() call. Since IPIC does not have ->irq_eoi, we can
-reduce some code duplication by calling irq_eoi conditionally.
+Having to call qe_ic_init() from platform-specific code makes it
+awkward to allow building the QE drivers for ARM. It's also a needless
+duplication of code, and slightly error-prone: Instead of the caller
+needing to know the details of whether the QUICC Engine High and QUICC
+Engine Low are actually the same interrupt (see e.g. the machine_is()
+in mpc85xx_mds_qeic_init), just let the init function choose the
+appropriate handlers after it has parsed the DT and figured it out. If
+the two interrupts are distinct, use separate handlers, otherwise use
+the handler which first checks the CHIVEC register (for the high
+priority interrupts), then the CIVEC.
 
-This is similar to what is already done in mpc8xxx_gpio_irq_cascade().
-
-This leaves the functions slightly misnamed, but that will be fixed in
-a subsequent patch.
+All existing callers pass 0 for flags, so continue to do that from the
+new single caller. Later cleanups will remove that argument
+from qe_ic_init and simplify the body, as well as make qe_ic_init into
+a proper init function for an IRQCHIP_DECLARE, eliminating the need to
+manually look up the fsl,qe-ic node.
 
 Reviewed-by: Timur Tabi <timur@kernel.org>
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- arch/powerpc/platforms/83xx/misc.c |  2 +-
- include/soc/fsl/qe/qe_ic.h         | 24 ++++--------------------
- 2 files changed, 5 insertions(+), 21 deletions(-)
+ arch/powerpc/platforms/83xx/km83xx.c          |  1 -
+ arch/powerpc/platforms/83xx/misc.c            | 16 ----------
+ arch/powerpc/platforms/83xx/mpc832x_mds.c     |  1 -
+ arch/powerpc/platforms/83xx/mpc832x_rdb.c     |  1 -
+ arch/powerpc/platforms/83xx/mpc836x_mds.c     |  1 -
+ arch/powerpc/platforms/83xx/mpc836x_rdk.c     |  1 -
+ arch/powerpc/platforms/83xx/mpc83xx.h         |  2 --
+ arch/powerpc/platforms/85xx/corenet_generic.c | 10 -------
+ arch/powerpc/platforms/85xx/mpc85xx_mds.c     | 27 -----------------
+ arch/powerpc/platforms/85xx/mpc85xx_rdb.c     | 17 -----------
+ arch/powerpc/platforms/85xx/twr_p102x.c       | 15 ----------
+ drivers/soc/fsl/qe/qe_ic.c                    | 29 +++++++++++++++++--
+ include/soc/fsl/qe/qe_ic.h                    |  7 -----
+ 13 files changed, 26 insertions(+), 102 deletions(-)
 
+diff --git a/arch/powerpc/platforms/83xx/km83xx.c b/arch/powerpc/platforms/83xx/km83xx.c
+index 273145aed90a..5c6227f7bc37 100644
+--- a/arch/powerpc/platforms/83xx/km83xx.c
++++ b/arch/powerpc/platforms/83xx/km83xx.c
+@@ -34,7 +34,6 @@
+ #include <sysdev/fsl_soc.h>
+ #include <sysdev/fsl_pci.h>
+ #include <soc/fsl/qe/qe.h>
+-#include <soc/fsl/qe/qe_ic.h>
+ 
+ #include "mpc83xx.h"
+ 
 diff --git a/arch/powerpc/platforms/83xx/misc.c b/arch/powerpc/platforms/83xx/misc.c
-index f46d7bf3b140..779791c0570f 100644
+index 779791c0570f..6935a5b9fbd1 100644
 --- a/arch/powerpc/platforms/83xx/misc.c
 +++ b/arch/powerpc/platforms/83xx/misc.c
-@@ -100,7 +100,7 @@ void __init mpc83xx_qe_init_IRQ(void)
- 		if (!np)
- 			return;
- 	}
--	qe_ic_init(np, 0, qe_ic_cascade_low_ipic, qe_ic_cascade_high_ipic);
-+	qe_ic_init(np, 0, qe_ic_cascade_low_mpic, qe_ic_cascade_high_mpic);
- 	of_node_put(np);
+@@ -14,7 +14,6 @@
+ #include <asm/io.h>
+ #include <asm/hw_irq.h>
+ #include <asm/ipic.h>
+-#include <soc/fsl/qe/qe_ic.h>
+ #include <sysdev/fsl_soc.h>
+ #include <sysdev/fsl_pci.h>
+ 
+@@ -90,24 +89,9 @@ void __init mpc83xx_ipic_init_IRQ(void)
  }
  
+ #ifdef CONFIG_QUICC_ENGINE
+-void __init mpc83xx_qe_init_IRQ(void)
+-{
+-	struct device_node *np;
+-
+-	np = of_find_compatible_node(NULL, NULL, "fsl,qe-ic");
+-	if (!np) {
+-		np = of_find_node_by_type(NULL, "qeic");
+-		if (!np)
+-			return;
+-	}
+-	qe_ic_init(np, 0, qe_ic_cascade_low_mpic, qe_ic_cascade_high_mpic);
+-	of_node_put(np);
+-}
+-
+ void __init mpc83xx_ipic_and_qe_init_IRQ(void)
+ {
+ 	mpc83xx_ipic_init_IRQ();
+-	mpc83xx_qe_init_IRQ();
+ }
+ #endif /* CONFIG_QUICC_ENGINE */
+ 
+diff --git a/arch/powerpc/platforms/83xx/mpc832x_mds.c b/arch/powerpc/platforms/83xx/mpc832x_mds.c
+index b428835e5919..1c73af104d19 100644
+--- a/arch/powerpc/platforms/83xx/mpc832x_mds.c
++++ b/arch/powerpc/platforms/83xx/mpc832x_mds.c
+@@ -33,7 +33,6 @@
+ #include <sysdev/fsl_soc.h>
+ #include <sysdev/fsl_pci.h>
+ #include <soc/fsl/qe/qe.h>
+-#include <soc/fsl/qe/qe_ic.h>
+ 
+ #include "mpc83xx.h"
+ 
+diff --git a/arch/powerpc/platforms/83xx/mpc832x_rdb.c b/arch/powerpc/platforms/83xx/mpc832x_rdb.c
+index 4588ce632484..87f68ca06255 100644
+--- a/arch/powerpc/platforms/83xx/mpc832x_rdb.c
++++ b/arch/powerpc/platforms/83xx/mpc832x_rdb.c
+@@ -22,7 +22,6 @@
+ #include <asm/ipic.h>
+ #include <asm/udbg.h>
+ #include <soc/fsl/qe/qe.h>
+-#include <soc/fsl/qe/qe_ic.h>
+ #include <sysdev/fsl_soc.h>
+ #include <sysdev/fsl_pci.h>
+ 
+diff --git a/arch/powerpc/platforms/83xx/mpc836x_mds.c b/arch/powerpc/platforms/83xx/mpc836x_mds.c
+index 4a4efa906d35..5b484da9533e 100644
+--- a/arch/powerpc/platforms/83xx/mpc836x_mds.c
++++ b/arch/powerpc/platforms/83xx/mpc836x_mds.c
+@@ -41,7 +41,6 @@
+ #include <sysdev/fsl_pci.h>
+ #include <sysdev/simple_gpio.h>
+ #include <soc/fsl/qe/qe.h>
+-#include <soc/fsl/qe/qe_ic.h>
+ 
+ #include "mpc83xx.h"
+ 
+diff --git a/arch/powerpc/platforms/83xx/mpc836x_rdk.c b/arch/powerpc/platforms/83xx/mpc836x_rdk.c
+index 9923059cb111..b7119e443920 100644
+--- a/arch/powerpc/platforms/83xx/mpc836x_rdk.c
++++ b/arch/powerpc/platforms/83xx/mpc836x_rdk.c
+@@ -17,7 +17,6 @@
+ #include <asm/ipic.h>
+ #include <asm/udbg.h>
+ #include <soc/fsl/qe/qe.h>
+-#include <soc/fsl/qe/qe_ic.h>
+ #include <sysdev/fsl_soc.h>
+ #include <sysdev/fsl_pci.h>
+ 
+diff --git a/arch/powerpc/platforms/83xx/mpc83xx.h b/arch/powerpc/platforms/83xx/mpc83xx.h
+index 459145623334..d343f6ce2599 100644
+--- a/arch/powerpc/platforms/83xx/mpc83xx.h
++++ b/arch/powerpc/platforms/83xx/mpc83xx.h
+@@ -73,10 +73,8 @@ extern int mpc834x_usb_cfg(void);
+ extern int mpc831x_usb_cfg(void);
+ extern void mpc83xx_ipic_init_IRQ(void);
+ #ifdef CONFIG_QUICC_ENGINE
+-extern void mpc83xx_qe_init_IRQ(void);
+ extern void mpc83xx_ipic_and_qe_init_IRQ(void);
+ #else
+-static inline void __init mpc83xx_qe_init_IRQ(void) {}
+ #define mpc83xx_ipic_and_qe_init_IRQ mpc83xx_ipic_init_IRQ
+ #endif /* CONFIG_QUICC_ENGINE */
+ 
+diff --git a/arch/powerpc/platforms/85xx/corenet_generic.c b/arch/powerpc/platforms/85xx/corenet_generic.c
+index 7ee2c6628f64..8c1bb3941642 100644
+--- a/arch/powerpc/platforms/85xx/corenet_generic.c
++++ b/arch/powerpc/platforms/85xx/corenet_generic.c
+@@ -24,7 +24,6 @@
+ #include <asm/mpic.h>
+ #include <asm/ehv_pic.h>
+ #include <asm/swiotlb.h>
+-#include <soc/fsl/qe/qe_ic.h>
+ 
+ #include <linux/of_platform.h>
+ #include <sysdev/fsl_soc.h>
+@@ -38,8 +37,6 @@ void __init corenet_gen_pic_init(void)
+ 	unsigned int flags = MPIC_BIG_ENDIAN | MPIC_SINGLE_DEST_CPU |
+ 		MPIC_NO_RESET;
+ 
+-	struct device_node *np;
+-
+ 	if (ppc_md.get_irq == mpic_get_coreint_irq)
+ 		flags |= MPIC_ENABLE_COREINT;
+ 
+@@ -47,13 +44,6 @@ void __init corenet_gen_pic_init(void)
+ 	BUG_ON(mpic == NULL);
+ 
+ 	mpic_init(mpic);
+-
+-	np = of_find_compatible_node(NULL, NULL, "fsl,qe-ic");
+-	if (np) {
+-		qe_ic_init(np, 0, qe_ic_cascade_low_mpic,
+-				qe_ic_cascade_high_mpic);
+-		of_node_put(np);
+-	}
+ }
+ 
+ /*
+diff --git a/arch/powerpc/platforms/85xx/mpc85xx_mds.c b/arch/powerpc/platforms/85xx/mpc85xx_mds.c
+index 5ca254256c47..4bc49e5ec0b6 100644
+--- a/arch/powerpc/platforms/85xx/mpc85xx_mds.c
++++ b/arch/powerpc/platforms/85xx/mpc85xx_mds.c
+@@ -45,7 +45,6 @@
+ #include <sysdev/fsl_pci.h>
+ #include <sysdev/simple_gpio.h>
+ #include <soc/fsl/qe/qe.h>
+-#include <soc/fsl/qe/qe_ic.h>
+ #include <asm/mpic.h>
+ #include <asm/swiotlb.h>
+ #include "smp.h"
+@@ -270,33 +269,8 @@ static void __init mpc85xx_mds_qe_init(void)
+ 	}
+ }
+ 
+-static void __init mpc85xx_mds_qeic_init(void)
+-{
+-	struct device_node *np;
+-
+-	np = of_find_compatible_node(NULL, NULL, "fsl,qe");
+-	if (!of_device_is_available(np)) {
+-		of_node_put(np);
+-		return;
+-	}
+-
+-	np = of_find_compatible_node(NULL, NULL, "fsl,qe-ic");
+-	if (!np) {
+-		np = of_find_node_by_type(NULL, "qeic");
+-		if (!np)
+-			return;
+-	}
+-
+-	if (machine_is(p1021_mds))
+-		qe_ic_init(np, 0, qe_ic_cascade_low_mpic,
+-				qe_ic_cascade_high_mpic);
+-	else
+-		qe_ic_init(np, 0, qe_ic_cascade_muxed_mpic, NULL);
+-	of_node_put(np);
+-}
+ #else
+ static void __init mpc85xx_mds_qe_init(void) { }
+-static void __init mpc85xx_mds_qeic_init(void) { }
+ #endif	/* CONFIG_QUICC_ENGINE */
+ 
+ static void __init mpc85xx_mds_setup_arch(void)
+@@ -371,7 +345,6 @@ static void __init mpc85xx_mds_pic_init(void)
+ 	BUG_ON(mpic == NULL);
+ 
+ 	mpic_init(mpic);
+-	mpc85xx_mds_qeic_init();
+ }
+ 
+ static int __init mpc85xx_mds_probe(void)
+diff --git a/arch/powerpc/platforms/85xx/mpc85xx_rdb.c b/arch/powerpc/platforms/85xx/mpc85xx_rdb.c
+index d3c540ee558f..14b5a61d49c1 100644
+--- a/arch/powerpc/platforms/85xx/mpc85xx_rdb.c
++++ b/arch/powerpc/platforms/85xx/mpc85xx_rdb.c
+@@ -23,7 +23,6 @@
+ #include <asm/udbg.h>
+ #include <asm/mpic.h>
+ #include <soc/fsl/qe/qe.h>
+-#include <soc/fsl/qe/qe_ic.h>
+ 
+ #include <sysdev/fsl_soc.h>
+ #include <sysdev/fsl_pci.h>
+@@ -44,10 +43,6 @@ void __init mpc85xx_rdb_pic_init(void)
+ {
+ 	struct mpic *mpic;
+ 
+-#ifdef CONFIG_QUICC_ENGINE
+-	struct device_node *np;
+-#endif
+-
+ 	if (of_machine_is_compatible("fsl,MPC85XXRDB-CAMP")) {
+ 		mpic = mpic_alloc(NULL, 0, MPIC_NO_RESET |
+ 			MPIC_BIG_ENDIAN |
+@@ -62,18 +57,6 @@ void __init mpc85xx_rdb_pic_init(void)
+ 
+ 	BUG_ON(mpic == NULL);
+ 	mpic_init(mpic);
+-
+-#ifdef CONFIG_QUICC_ENGINE
+-	np = of_find_compatible_node(NULL, NULL, "fsl,qe-ic");
+-	if (np) {
+-		qe_ic_init(np, 0, qe_ic_cascade_low_mpic,
+-				qe_ic_cascade_high_mpic);
+-		of_node_put(np);
+-
+-	} else
+-		pr_err("%s: Could not find qe-ic node\n", __func__);
+-#endif
+-
+ }
+ 
+ /*
+diff --git a/arch/powerpc/platforms/85xx/twr_p102x.c b/arch/powerpc/platforms/85xx/twr_p102x.c
+index 720b0c0f03ba..b099f5607120 100644
+--- a/arch/powerpc/platforms/85xx/twr_p102x.c
++++ b/arch/powerpc/platforms/85xx/twr_p102x.c
+@@ -19,7 +19,6 @@
+ #include <asm/udbg.h>
+ #include <asm/mpic.h>
+ #include <soc/fsl/qe/qe.h>
+-#include <soc/fsl/qe/qe_ic.h>
+ 
+ #include <sysdev/fsl_soc.h>
+ #include <sysdev/fsl_pci.h>
+@@ -31,26 +30,12 @@ static void __init twr_p1025_pic_init(void)
+ {
+ 	struct mpic *mpic;
+ 
+-#ifdef CONFIG_QUICC_ENGINE
+-	struct device_node *np;
+-#endif
+-
+ 	mpic = mpic_alloc(NULL, 0, MPIC_BIG_ENDIAN |
+ 			MPIC_SINGLE_DEST_CPU,
+ 			0, 256, " OpenPIC  ");
+ 
+ 	BUG_ON(mpic == NULL);
+ 	mpic_init(mpic);
+-
+-#ifdef CONFIG_QUICC_ENGINE
+-	np = of_find_compatible_node(NULL, NULL, "fsl,qe-ic");
+-	if (np) {
+-		qe_ic_init(np, 0, qe_ic_cascade_low_mpic,
+-				qe_ic_cascade_high_mpic);
+-		of_node_put(np);
+-	} else
+-		pr_err("Could not find qe-ic node\n");
+-#endif
+ }
+ 
+ /* ************************************************************************
+diff --git a/drivers/soc/fsl/qe/qe_ic.c b/drivers/soc/fsl/qe/qe_ic.c
+index f170926ce4d1..a062efac398b 100644
+--- a/drivers/soc/fsl/qe/qe_ic.c
++++ b/drivers/soc/fsl/qe/qe_ic.c
+@@ -314,10 +314,10 @@ unsigned int qe_ic_get_high_irq(struct qe_ic *qe_ic)
+ 	return irq_linear_revmap(qe_ic->irqhost, irq);
+ }
+ 
+-void __init qe_ic_init(struct device_node *node, unsigned int flags,
+-		       void (*low_handler)(struct irq_desc *desc),
+-		       void (*high_handler)(struct irq_desc *desc))
++static void __init qe_ic_init(struct device_node *node, unsigned int flags)
+ {
++	void (*low_handler)(struct irq_desc *desc);
++	void (*high_handler)(struct irq_desc *desc);
+ 	struct qe_ic *qe_ic;
+ 	struct resource res;
+ 	u32 temp = 0, ret;
+@@ -349,6 +349,13 @@ void __init qe_ic_init(struct device_node *node, unsigned int flags,
+ 		kfree(qe_ic);
+ 		return;
+ 	}
++	if (qe_ic->virq_high != qe_ic->virq_low) {
++		low_handler = qe_ic_cascade_low_mpic;
++		high_handler = qe_ic_cascade_high_mpic;
++	} else {
++		low_handler = qe_ic_cascade_muxed_mpic;
++		high_handler = NULL;
++	}
+ 
+ 	/* default priority scheme is grouped. If spread mode is    */
+ 	/* required, configure cicr accordingly.                    */
+@@ -381,6 +388,22 @@ void __init qe_ic_init(struct device_node *node, unsigned int flags,
+ 	}
+ }
+ 
++static int __init qe_ic_of_init(void)
++{
++	struct device_node *np;
++
++	np = of_find_compatible_node(NULL, NULL, "fsl,qe-ic");
++	if (!np) {
++		np = of_find_node_by_type(NULL, "qeic");
++		if (!np)
++			return -ENODEV;
++	}
++	qe_ic_init(np, 0);
++	of_node_put(np);
++	return 0;
++}
++subsys_initcall(qe_ic_of_init);
++
+ void qe_ic_set_highest_priority(unsigned int virq, int high)
+ {
+ 	struct qe_ic *qe_ic = qe_ic_from_irq(virq);
 diff --git a/include/soc/fsl/qe/qe_ic.h b/include/soc/fsl/qe/qe_ic.h
-index 714a9b890d8d..bfaa233d8328 100644
+index bfaa233d8328..a47a0d26acbd 100644
 --- a/include/soc/fsl/qe/qe_ic.h
 +++ b/include/soc/fsl/qe/qe_ic.h
-@@ -74,24 +74,6 @@ void qe_ic_set_highest_priority(unsigned int virq, int high);
- int qe_ic_set_priority(unsigned int virq, unsigned int priority);
- int qe_ic_set_high_priority(unsigned int virq, unsigned int priority, int high);
+@@ -54,16 +54,9 @@ enum qe_ic_grp_id {
+ };
  
--static inline void qe_ic_cascade_low_ipic(struct irq_desc *desc)
--{
--	struct qe_ic *qe_ic = irq_desc_get_handler_data(desc);
--	unsigned int cascade_irq = qe_ic_get_low_irq(qe_ic);
--
--	if (cascade_irq != NO_IRQ)
--		generic_handle_irq(cascade_irq);
--}
--
--static inline void qe_ic_cascade_high_ipic(struct irq_desc *desc)
--{
--	struct qe_ic *qe_ic = irq_desc_get_handler_data(desc);
--	unsigned int cascade_irq = qe_ic_get_high_irq(qe_ic);
--
--	if (cascade_irq != NO_IRQ)
--		generic_handle_irq(cascade_irq);
--}
--
- static inline void qe_ic_cascade_low_mpic(struct irq_desc *desc)
- {
- 	struct qe_ic *qe_ic = irq_desc_get_handler_data(desc);
-@@ -101,7 +83,8 @@ static inline void qe_ic_cascade_low_mpic(struct irq_desc *desc)
- 	if (cascade_irq != NO_IRQ)
- 		generic_handle_irq(cascade_irq);
- 
--	chip->irq_eoi(&desc->irq_data);
-+	if (chip->irq_eoi)
-+		chip->irq_eoi(&desc->irq_data);
- }
- 
- static inline void qe_ic_cascade_high_mpic(struct irq_desc *desc)
-@@ -113,7 +96,8 @@ static inline void qe_ic_cascade_high_mpic(struct irq_desc *desc)
- 	if (cascade_irq != NO_IRQ)
- 		generic_handle_irq(cascade_irq);
- 
--	chip->irq_eoi(&desc->irq_data);
-+	if (chip->irq_eoi)
-+		chip->irq_eoi(&desc->irq_data);
- }
- 
- static inline void qe_ic_cascade_muxed_mpic(struct irq_desc *desc)
+ #ifdef CONFIG_QUICC_ENGINE
+-void qe_ic_init(struct device_node *node, unsigned int flags,
+-		void (*low_handler)(struct irq_desc *desc),
+-		void (*high_handler)(struct irq_desc *desc));
+ unsigned int qe_ic_get_low_irq(struct qe_ic *qe_ic);
+ unsigned int qe_ic_get_high_irq(struct qe_ic *qe_ic);
+ #else
+-static inline void qe_ic_init(struct device_node *node, unsigned int flags,
+-		void (*low_handler)(struct irq_desc *desc),
+-		void (*high_handler)(struct irq_desc *desc))
+-{}
+ static inline unsigned int qe_ic_get_low_irq(struct qe_ic *qe_ic)
+ { return 0; }
+ static inline unsigned int qe_ic_get_high_irq(struct qe_ic *qe_ic)
 -- 
 2.23.0
 
