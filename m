@@ -2,93 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFBCE10CF3C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 21:27:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7846110CF45
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 21:31:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=8riVko8HPB2ImxftN4P0sGqyQe28Ezh+jDJ5hvXNDK4=; b=qw2V03wss5Mweus/fNFAKdg6xw
-	jd5DR9FPUrSt/7zplqujvHCjJe6s1NoanO7PP7L4P5JR21K9cRi8Tn7aauJAPH8mUthMnHCeN6xzN
-	kS1iWtk7oyO3cVWxkkkwNjX+kS1AzqJtCelcgnPiclCQ1VSJXdMT9jfUORlwNiF+cjyM7wKOnT1FR
-	v8t7Tyuozs+YQEHgxzmzrivIp/VSvcr5yPgCKcotIQvr6kjSgL6qFmT1jGta4bXgHIjZm8yvsCObF
-	pDHGPnC/R74j9zrvoI+sr+k/d7ZqCYS57VVH7gbyKcFqSqgr25ent6g5F8JLEcXwBLwfE+dz1w0+v
-	5lsFdHGg==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:
+	In-Reply-To:Date:To:From:Subject:Message-ID:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jUPP+M0Ix9JJHNxE4wYFjBMY6QDEZFR+Fl9uCPceHT4=; b=fn6s4LaUePsdoM
+	yNmroNE/Mr4WDJ4HvblNReZESSTl6F+BAajIJ8lc62mSTfzXt9A1/H45Aplj+vcE5lDMaGFhtDjbj
+	LLC7nv/Unc7nMNkSbpV8z5+OrYpZ5Te68pLTOYZPHFlfgzcdlwlR/TrePAOqGodk6juX4WfzNP0fP
+	EjJnhIK5Pehfw2DrPqryAx46IGTub1FlctyiHyWnLQJYyvV0utwKxutXl4/kia/n/uGnQIgbtfmQy
+	bQsoPRriPrPqTvdrULfZe3ki2pCVNQ3KmRBH2mRHQa8hWfSawBHJifRK50pfNhJpny/9omp/iYQTz
+	EH+PNYc6avDo1jiKO2hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaQNV-00088X-7T; Thu, 28 Nov 2019 20:27:05 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iaQRK-0001hl-PA; Thu, 28 Nov 2019 20:31:02 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaQMD-0007Jz-Es
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 20:25:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1574972743;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=41xNMejmkDpiENDKO7RxAxz9cPSeln8z2A1ifqUYAvQ=;
- b=XCaVDvtTGiCvnPXWT2UArwCUG5gfP7YNdiRewsTFOqHwObREjvf3u7dvEMxg+gf/79JdLx
- 43rqrYbO7ObyYzdQdTsD13S2NMd9OfLxOlrxzI5Bk7A3jfLW9IhhM39FMFe7hQTIOMeC33
- XuaFq+TTYP3+aVLIsWeW5qZIbVLr7Vo=
-Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com
- [209.85.210.200]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-367-Wasvybk8Nm68GUtuL8p3IA-1; Thu, 28 Nov 2019 15:25:42 -0500
-Received: by mail-pf1-f200.google.com with SMTP id h2so16701926pfr.20
+ id 1iaQR6-0001hN-K9
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 20:30:50 +0000
+Received: by mail-wr1-x441.google.com with SMTP id w15so1590944wru.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 12:25:41 -0800 (PST)
+ Thu, 28 Nov 2019 12:30:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=message-id:subject:from:reply-to:to:cc:date:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=/F4fjTqCSCbemLPACFLDEoRElFjhhoWK5H/bkTRiXCc=;
+ b=f2bgNO11ck3HaI0MToSAz5sfRIth2du04Y84p5Vj6Zoh7GfqecklqXv7Mc8w6QoW9c
+ 9YHbbZNIMjx3nr4p/OXY/12j63P1sTu0hxwW8t64mut2gNE9HxshnW0v6HDw4N84z4FF
+ obf0a1RUZ6pozT+TI1vcMXbn54XIPTQ3YzK2jM+FXirQjUcWLwjv7ci6D11069+9nmlF
+ /D/BY1CIHQo+kWLFL8Cug6HxxeY+xihVYLgrwdLry7UfFtDLIy4GM+MtXSc6Rq0kiC2s
+ wQGRqiSQqLBX3e5xKfYQpArRln9GKO47/omSl9u1w2U6gOYvtEn1zCDGGekyQPXd6t5k
+ ZXdg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=TnU1CF4ydXp0Re/7xQPqByhi17OoIqWu96aUm7ilAL8=;
- b=dvWgE+fFGK3muounHgbovE2BNSdIW+WJ2P6tPu/iurvJbDCupvhZthIldwQ1CTYeA8
- CIXtSAhHxZk8GgIRmJlw7xulScdcblC8W3XPhjHM8mV8BQYm5X02CNlP9V0GW6QAz1w2
- 1tJqcd+twG3/ROKLbmyHjo8yRWiFc1L7yK71jXRpaK7ENt1+AwRwLcVUg0WRwyxy7EYu
- 0+OsONoF/d3kSk7Q37vXUCcyKgqQ0OpuCLB8NzzAzIGq+lWBCj9TraAJjpKlQ3Mu+D+9
- pxUTSBOcGybFWJCUhw2ukcHgiKYOU6QaWMPmbxL/TKbjqFBr0C/EOGJDIwpSz3hbat+3
- lP0Q==
-X-Gm-Message-State: APjAAAXTzpDYoI84goc2OexJHFYbJl/2GM9YOMHZBurh9javTKBT/Tf0
- KqPXD8iKQXJqmgSWWSHA5gtVQC7hNJ2crjPoNYYBjoOZMsSKVXylXFuRyUCZfWofVKjgTnRsfcF
- B5sM9DleZh81GzFVFN/Mvgni5wqeJ/bAyg1o=
-X-Received: by 2002:a17:90a:3463:: with SMTP id
- o90mr14440647pjb.4.1574972741096; 
- Thu, 28 Nov 2019 12:25:41 -0800 (PST)
-X-Google-Smtp-Source: APXvYqw1994kyjpL8nA7jbNA2MDbvleaYMa6ZgrsQMiMtjPLDmyjZ21lIhTP8RXhXz67xc7yDAqxlg==
-X-Received: by 2002:a17:90a:3463:: with SMTP id
- o90mr14440628pjb.4.1574972740900; 
- Thu, 28 Nov 2019 12:25:40 -0800 (PST)
-Received: from localhost ([122.177.85.74])
- by smtp.gmail.com with ESMTPSA id c184sm22569924pfc.159.2019.11.28.12.25.39
+ h=x-gm-message-state:message-id:subject:from:reply-to:to:cc:date
+ :in-reply-to:references:mime-version:content-transfer-encoding;
+ bh=/F4fjTqCSCbemLPACFLDEoRElFjhhoWK5H/bkTRiXCc=;
+ b=ROsVvzZ1RQRZ5V0TdV7xcwPEXW1w0z5M3NEgHN8EZtwEbQYtkIfoPUHWL5XXp4PD3Z
+ 9x6tVEgmmJ4DQ7EdFMhU8cs7p6hk1VyCTxBggKSFyZpfB0cFCkQEmShHNInQMmb2U3Am
+ 9NAxf8kFRnLl1Lj2jPO4Vh8jFkpVw0ZPSpWgsS1hfADcNCS/pOavly3RlxDa4arBVdMs
+ LVAIsO7Hg2mNUzsbmfkXqFuBHfDMQ8VhKwrQZSWtVcJbFYE1UDFpzM+XEDdfe1M+M3HF
+ /TF+5IFSbTvfUqj/XdJ31k5rqxi49xuGbNlbISQ/LZVKRg4wEcLSmYaJHrKcp9w0lhjC
+ IXFA==
+X-Gm-Message-State: APjAAAVOfFuwJpT4sIQvzqymmF93myveI3T3l+LENpcd5Oh3N7MwP08Q
+ J/G4r7Sx4mdh4PAQ1ocUbVg=
+X-Google-Smtp-Source: APXvYqxwkJHZzFPosHHBBpY/9deoXC8APNrp9kOY0iXwsyFtedfw82C9F3QEEjvoxCLiTCcjwXo3SQ==
+X-Received: by 2002:a05:6000:149:: with SMTP id
+ r9mr10658203wrx.147.1574973046452; 
+ Thu, 28 Nov 2019 12:30:46 -0800 (PST)
+Received: from [192.168.0.87]
+ (HSI-KBW-109-192-080-035.hsi6.kabel-badenwuerttemberg.de. [109.192.80.35])
+ by smtp.gmail.com with ESMTPSA id k127sm5454220wmk.31.2019.11.28.12.30.45
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 28 Nov 2019 12:25:40 -0800 (PST)
-From: Bhupesh Sharma <bhsharma@redhat.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v5 5/5] Documentation/vmcoreinfo: Add documentation for
- 'TCR_EL1.T1SZ'
-Date: Fri, 29 Nov 2019 01:55:16 +0530
-Message-Id: <1574972716-25858-4-git-send-email-bhsharma@redhat.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1574972716-25858-1-git-send-email-bhsharma@redhat.com>
-References: <1574972716-25858-1-git-send-email-bhsharma@redhat.com>
-X-MC-Unique: Wasvybk8Nm68GUtuL8p3IA-1
-X-Mimecast-Spam-Score: 0
+ Thu, 28 Nov 2019 12:30:45 -0800 (PST)
+Message-ID: <1574973044.2362.11.camel@googlemail.com>
+Subject: Re: [PATCH v2 4/4] ARM: dts: phycore-imx6: set buck regulator modes
+ explicitly
+From: Christoph Fritz <chf.fritz@googlemail.com>
+To: Shawn Guo <shawnguo@kernel.org>
+Date: Thu, 28 Nov 2019 21:30:44 +0100
+In-Reply-To: <AM5PR1001MB099480739860863EB08EA73280760@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+References: <1573652416-9848-1-git-send-email-chf.fritz@googlemail.com>
+ <1573652416-9848-5-git-send-email-chf.fritz@googlemail.com>
+ <AM5PR1001MB099480739860863EB08EA73280760@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+X-Mailer: Evolution 3.12.9-1+b1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_122545_590893_56EDD682 
-X-CRM114-Status: GOOD (  12.25  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191128_123048_692641_7DC854C1 
+X-CRM114-Status: GOOD (  17.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.81 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (chf.fritz[at]googlemail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,7 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,61 +104,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Reply-To: chf.fritz@googlemail.com
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-doc@vger.kernel.org,
- Will Deacon <will@kernel.org>, bhsharma@redhat.com, x86@kernel.org,
- kexec@lists.infradead.org, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- James Morse <james.morse@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Anderson <anderson@redhat.com>, bhupesh.linux@gmail.com,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- Steve Capper <steve.capper@arm.com>
-MIME-Version: 1.0
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Support Opensource <Support.Opensource@diasemi.com>,
+ Fabio Estevam <festevam@gmail.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Brown <broonie@kernel.org>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ Lee Jones <lee.jones@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add documentation for TCR_EL1.T1SZ variable being added to
-vmcoreinfo.
+Hi Shawn,
 
-It indicates the size offset of the memory region addressed by TTBR1_EL1
-and hence can be used for determining the vabits_actual value.
+ any chance to get this patch queued for the upcoming kernel?
 
-Cc: James Morse <james.morse@arm.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Steve Capper <steve.capper@arm.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Cc: Dave Anderson <anderson@redhat.com>
-Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Cc: kexec@lists.infradead.org
-Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
----
- Documentation/admin-guide/kdump/vmcoreinfo.rst | 6 ++++++
- 1 file changed, 6 insertions(+)
+bye
+ -- Christoph
 
-diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst b/Documentation/admin-guide/kdump/vmcoreinfo.rst
-index 447b64314f56..f9349f9d3345 100644
---- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
-+++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
-@@ -398,6 +398,12 @@ KERNELOFFSET
- The kernel randomization offset. Used to compute the page offset. If
- KASLR is disabled, this value is zero.
- 
-+TCR_EL1.T1SZ
-+------------
-+
-+Indicates the size offset of the memory region addressed by TTBR1_EL1
-+and hence can be used for determining the vabits_actual value.
-+
- arm
- ===
- 
--- 
-2.7.4
+On Wed, 2019-11-13 at 16:26 +0000, Adam Thomson wrote:
+> On 13 November 2019 13:40, Christoph Fritz wrote:
+> 
+> > This patch sets initial buck regulator modes explicitly to a state this
+> > hardware needs. So a wrong initial mode set by bootloader or pmic itself
+> > does not interfere anymore.
+> > 
+> > Signed-off-by: Christoph Fritz <chf.fritz@googlemail.com>
+> 
+> Reviewed-by: Adam Thomson <Adam.Thomson.Opensource@diasemi.com>
+> 
+> > ---
+> >  arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 5 +++++
+> >  1 file changed, 5 insertions(+)
+> > 
+> > diff --git a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > index 6486df3..644625d 100644
+> > --- a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > +++ b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > @@ -5,6 +5,7 @@
+> >   */
+> > 
+> >  #include <dt-bindings/gpio/gpio.h>
+> > +#include <dt-bindings/regulator/dlg,da9063-regulator.h>
+> > 
+> >  / {
+> >  	aliases {
+> > @@ -109,6 +110,7 @@
+> >  				regulator-name = "vdd_arm";
+> >  				regulator-min-microvolt = <730000>;
+> >  				regulator-max-microvolt = <1380000>;
+> > +				regulator-initial-mode =
+> > <DA9063_BUCK_MODE_SYNC>;
+> >  				regulator-always-on;
+> >  			};
+> > 
+> > @@ -116,6 +118,7 @@
+> >  				regulator-name = "vdd_soc";
+> >  				regulator-min-microvolt = <730000>;
+> >  				regulator-max-microvolt = <1380000>;
+> > +				regulator-initial-mode =
+> > <DA9063_BUCK_MODE_SYNC>;
+> >  				regulator-always-on;
+> >  			};
+> > 
+> > @@ -123,6 +126,7 @@
+> >  				regulator-name = "vdd_ddr3";
+> >  				regulator-min-microvolt = <1500000>;
+> >  				regulator-max-microvolt = <1500000>;
+> > +				regulator-initial-mode =
+> > <DA9063_BUCK_MODE_SYNC>;
+> >  				regulator-always-on;
+> >  			};
+> > 
+> > @@ -130,6 +134,7 @@
+> >  				regulator-name = "vdd_eth";
+> >  				regulator-min-microvolt = <1200000>;
+> >  				regulator-max-microvolt = <1200000>;
+> > +				regulator-initial-mode =
+> > <DA9063_BUCK_MODE_SYNC>;
+> >  				regulator-always-on;
+> >  			};
+> > 
+> > --
+> > 2.1.4
+> 
+
+
 
 
 _______________________________________________
