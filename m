@@ -2,65 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2528910C6BC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 11:31:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B06FC10C6C2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 11:33:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YoqZ3Rr4qaz2QzlXi6KrtvE2Y6PZ1VfvNoR8sRr4i/w=; b=ihc4uHivnxghB3
-	kXOp9vRyHpn/vGVnNd+Bchj4zh9aRd53BLOZ7BQ9mxF7+2Djs0gZQpxP6Lg6mqZ25gWN8X0zds4ZV
-	SlxwSa3WaZ3TBBtpA6loYYmTi0JtO9Smx4qUioPbckDGg2RPhWeSj2mrVOgdkabaG5id3DFftJojQ
-	8Ky9o10HLr1v7UlGRZ+5txWxBr+O36tEbKflY4NCUJv7IXfnULB+3CnjIEutt1NUG/ZTomTrF3eD9
-	EovvU8V4r3Jy3JtDsAws1RsnxzYpj2HO3IHhj0nYB9Fqci9OKsp4xhZ23MdPE/uCUGKl/lhJM5vOF
-	VIgJGNPQVS25dcKN9UJQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zNnZmqYDTMgL7RpGSoEkV8xv+RP3teRC8ZRiSF3350A=; b=Cm0ura6V5as9wnW34877S58/h
+	sGvdrVu9ab5c+N+xYYGJ3GF+MkfFS5NYtKDFQxesN30SFRmy+B0jed/FwNJscUdRnSLjECQQl2pdn
+	GISe3KkMh7heKPV/Ft2ho3+0Ze+sCbUIoqrxYDI9B80UJcCwvRE5AhvbDC3RIRrW9q/K6zr2T5dVB
+	pAnijWnAmpKfQUjD97PXcVLHz/J8y0F1sNXzjZz+a7mD61EIGfIhMFl28TKh3LOgtafIrNJPqSe1J
+	NR7TS0kmfa+W2K/3dPTKQDaOWGYWj1/RY5maLu+HHU+XkewimFnJljLaj+jbHfM8M2A2bWlRzz5BG
+	E9s3V3Qmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaH5U-0007yq-5F; Thu, 28 Nov 2019 10:31:52 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iaH6r-0008HN-2g; Thu, 28 Nov 2019 10:33:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaH5G-0007ws-5V
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 10:31:39 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 7AFA22056B;
- Thu, 28 Nov 2019 11:31:35 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 6BCB2201B5;
- Thu, 28 Nov 2019 11:31:35 +0100 (CET)
-Subject: Re: [RFC PATCH 1/1] arm64: dts: added basic DTS for qmx8 congatec
- board
-To: Oliver Graute <oliver.graute@gmail.com>
-References: <20191029122026.14208-1-oliver.graute@kococonnector.com>
- <20191029122026.14208-2-oliver.graute@kococonnector.com>
- <9b865fc1-3c7a-f1bd-8ef2-65088d64b314@free.fr>
- <20191128095514.GA2460@optiplex>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <ed8b6139-a67d-d5d3-c65b-260d020c95e0@free.fr>
-Date: Thu, 28 Nov 2019 11:31:35 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1iaH6f-0008Gb-KX
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 10:33:06 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8A8F821774;
+ Thu, 28 Nov 2019 10:33:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1574937185;
+ bh=XkkZY50Ku/fTTkcm9Gj5G8wbLDZLo31fHLtFpoOVYCw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=13OFpcdb2oyl0G7fXdFH5DZQWxrcTEN4M4cMy0d8sc/zcZH7aOvPlsOmKKejf7uSK
+ GxuhBUi83tUboyJjztTNa5pya+hTY07JhVN3nZ2DhT4kl6XVhttuXcXguqPZEavXYM
+ eiHgzMrc1GjyRG/8pmyOhbMzQnQv6JU6eeqVScEM=
+Date: Thu, 28 Nov 2019 11:33:01 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Stefan Mavrodiev <stefan@olimex.com>
+Subject: Re: [PATCH 1/1] arm64: dts: allwinner: a64: olinuxino: Add VCC-PG
+ supply
+Message-ID: <20191128103301.vjpkvjscy45ycgwg@gilmour.lan>
+References: <20191126110508.15264-1-stefan@olimex.com>
+ <20191126162721.qi7scp3vadxn7k2i@gilmour.lan>
+ <0c1d7377-7064-f509-ffc5-bd1e8f2fbaa8@olimex.com>
 MIME-Version: 1.0
-In-Reply-To: <20191128095514.GA2460@optiplex>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Thu Nov 28 11:31:35 2019 +0100 (CET)
+In-Reply-To: <0c1d7377-7064-f509-ffc5-bd1e8f2fbaa8@olimex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_023138_354036_D08E1B18 
-X-CRM114-Status: UNSURE (   9.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191128_023305_698359_656ED9B6 
+X-CRM114-Status: GOOD (  19.93  )
+X-Spam-Score: -3.7 (---)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-3.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 1.5 FROM_FMBLA_NEWDOM      From domain was registered in last 7 days
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,41 +78,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DT <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-sunxi@googlegroups.com,
+ open list <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============8259009162085582505=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28/11/2019 10:55, Oliver Graute wrote:
 
-> On 28/11/19, Marc Gonzalez wrote:
-> 
->> On 29/10/2019 13:23, Oliver Graute wrote:
->>
->>> +&fec1 {
->>> +	pinctrl-names = "default";
->>> +	pinctrl-0 = <&pinctrl_fec1>;
->>> +	phy-mode = "rgmii";
->>> +	phy-handle = <&ethphy0>;
->>> +	fsl,magic-packet;
->>> +	fsl,rgmii_txc_dly;
->>> +	fsl,rgmii_rxc_dly;
->>> +	status = "okay";
->>
->> The two fsl,rgmii* properties do not exist in mainline.
->> I suppose there were copied from downstream?
-> 
-> you are right, I'll remove them.
+--===============8259009162085582505==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="stx4a5zlstsyhhjb"
+Content-Disposition: inline
 
-You should first check what the downstream driver does for them.
-And check if there is an equivalent action in mainline.
-These delays tend to be required for the PHY to work at all.
 
-Regards.
+--stx4a5zlstsyhhjb
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi Stefan,
+
+On Wed, Nov 27, 2019 at 09:07:40AM +0200, Stefan Mavrodiev wrote:
+> On 11/26/19 6:27 PM, Maxime Ripard wrote:
+> > Hi Stefan,
+> >
+> > On Tue, Nov 26, 2019 at 01:05:08PM +0200, Stefan Mavrodiev wrote:
+> > > On A64-OLinuXino boards, PG9 is used for USB1 enable/disable. The
+> > > port is supplied by DLDO4, which is disabled by default. The patch
+> > > adds the regulator as vcc-pg, which is later used by the pinctrl.
+> > >
+> > > Signed-off-by: Stefan Mavrodiev <stefan@olimex.com>
+> > > ---
+> > >   arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts | 4 ++++
+> > >   1 file changed, 4 insertions(+)
+> > >
+> > > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
+> > > index 01a9a52edae4..c9d8c9c4ef20 100644
+> > > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
+> > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
+> > > @@ -163,6 +163,10 @@
+> > >   	status = "okay";
+> > >   };
+> > >
+> > > +&pio {
+> > > +	vcc-pg-supply=<&reg_dldo4>;
+> > The equal sign should have spaces around it.
+> >
+> > Also, can you please list all the bank supplies while you're at it?
+>
+> Sure. Should the supplies defined as regulators names be added also to the
+> pio node?
+> For example reg_aldo1 is named "vcc-pe".
+
+As far as I can tell, the A64 has regulators for PC, PD, PE, PG and
+PL, so you should list those (PL being under r_pio)
+
+> Also, since the commit message will be different for better representation
+> of the changes, should I send the next
+> patch as v2 or as a new one?
+
+Either way works for me as long as the commit message matches the changes.
+
+Thanks!
+Maxime
+
+--stx4a5zlstsyhhjb
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXd+iXQAKCRDj7w1vZxhR
+xcehAP963qGMNNtuK9UziU1syhhW7rH4N5zmtnS3s2iN4Mp0JwD/d4k4t/rtURBA
+Lpwkgow4mIPRk/bmMRu8JfSG0GizbQY=
+=1Rzz
+-----END PGP SIGNATURE-----
+
+--stx4a5zlstsyhhjb--
+
+
+--===============8259009162085582505==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8259009162085582505==--
+
