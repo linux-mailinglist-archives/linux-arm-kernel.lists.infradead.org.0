@@ -2,86 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12ABD10CF27
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 21:24:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7558F10CF2B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 21:24:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=a7b0fsnrIgfaHa5rVE8blv8X/LXiVQPjJNsaVNwGdlc=; b=l1t
-	aM+ryHl5GD/mzsRKlwLEiXBg5GNduyDE29oop3b5tYGcfnPdr8zgEUOlpDCb4Qp8X3E5a15ayt1hz
-	QkdDzHg8lOome+/wycPRw4h9r77DtMC3oBPnLFOXzX1cC1fp2srewNAobYWDCtNR31AZ17HeT+d5I
-	M/dnwzumffSJuW5BdEMHQA/jM9hMXw9ozenM1uxmyRnRQVg0kSz5MLhnQx7mf9tJux2WTLl20qfs7
-	siyYQiMaCzaVN33VfB2CafarH2exQYmazCVCcPx/5kjOZBwRtOvkxvCfHd4pnyLhxSAHX93YyCk6W
-	0OPQ8pYyHr5vtS28zGLWqVpU7u0WhVQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=XzYiSrSj95drSkyIVn/2gc7bePp28Ua00H9oYNFQH/I=; b=EgobIsNtctXOa/YPnzr1ZOU6U6
+	VB8pGK/Le2Sb97VyJDwyltXsql4uGybXJy0fRh44RLanY+j8x5uze8253vSwj4y+EA53QVpPYiCVG
+	lP4vt8tNcQ19drFl4ZEzfGAQptFiECPb4cAngSWkudEwvE8nsu+LDTZ5vz4MCm9OblG/7o9B0038B
+	1NJvXP1TEgLKjd3cbV7XsnkoYe/pVgCtgfrt6gPcA9v0ncH2s1099pSf/8dZ7pBXZkt+Ls3uOZOa5
+	EF1uurR1BNgPBeKIHZUfE3TKgTFSKbgdzkQUomC3ZZLWKKVJ7dkoduemY1hrLGz59tQ8jGYG7I4Kh
+	a9BWa/jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaQKn-0005Ns-9P; Thu, 28 Nov 2019 20:24:17 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iaQLD-0005d7-8n; Thu, 28 Nov 2019 20:24:43 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaQKZ-0005Lt-AK
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 20:24:05 +0000
+ id 1iaQKb-0005Mw-W8
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 20:24:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1574972640;
+ s=mimecast20190719; t=1574972644;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=XqTwc5ebz6tenvnG6zkONwdSyh0ZcAJ7/GPADSmX7as=;
- b=daj/EdjYZyauOID1QtsTH6Bw5IeoGciF4aqx6kxqUUi+1fyUlrX/ZSyUOAbs5BOVkN/24T
- +u4PeeZYCPhA8rgl0LCAYGQigo8Pyj96oPiYgoc5Khmbl4Fx00UqaB8jxjc2tnTcwZmOX/
- ug1agBcZRNtQNttTHz4vwLWEcTecZBA=
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com
- [209.85.214.200]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-188-4NODHsHrMaOWwqZDKfEVYw-1; Thu, 28 Nov 2019 15:23:57 -0500
-Received: by mail-pl1-f200.google.com with SMTP id t17so4568942ply.5
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=/y8p7TWJ4+9dx0qZYntYI0vqqca78jHSFlqFEn+6Y9I=;
+ b=QC8uPqRsRsCLmvsV2ERymIaYn776KE0D3PuY4KJFlXnx7Z11zdromKo7V2MXHiy4hlKERd
+ NT2doOhuMoQk24dEZ9vafmxub1cVGmPIckS/ZW3uCBVn77POwA+L/MKtXOkM32n6PrCbmZ
+ fmuvfYYmBcoKq9w+6q3VqA/mvkCfEhw=
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com
+ [209.85.214.199]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-110-HkJThyEANdG0jVnfYlRdSw-1; Thu, 28 Nov 2019 15:24:03 -0500
+Received: by mail-pl1-f199.google.com with SMTP id d24so1474173pll.14
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 12:23:57 -0800 (PST)
+ Thu, 28 Nov 2019 12:24:02 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=GPEyz/IHgt6mAW0R3tmNHtqBX2Y5bDBhF2H/Q45W8jA=;
- b=hLEcVv4h75DbecUh3oeM9LbP/fUXvFGPP4yJdJ4yvexzHH45EoxQ670SMeW1PXuTKE
- k/hLP62Jf4UbPM7jgU8NlSf9NoJIIu0QyHXWfdyoeks6BJICFDXAFlMrO3vVXu/R9JF1
- jKAh6pgKl0TrxUNmgHzZwo7hIy1STCXbiscKA2WB2EcSq7Y/lThhwVZqRYp6PUUXll/O
- rOBY2go0bLfNtx0FyPKeUE9QEx7JObFqN/TbPYMYEMZy+as/ibAd+UbG+uva6xMMFOqi
- +D2dEyUvrPhGCAoDwrGRkZYzDLyXtTkProSDZ2MFigIdwN/mW6F8CE47H4cnGiNnmorc
- J0WQ==
-X-Gm-Message-State: APjAAAWaa9pzFKj4xJVKvf+8dbwJe0Wy+YHBY/W6OAkatX1CZEE94fdZ
- svkeuuezHRkoXrNPbrRLhJHCsj35ZbENmNXaoqGP+rjjb5Mi8I6Y0dPxk2JNJ8W2c7nDvuCNdh7
- 4ugtjfZV9B3Wblx34D58zhJLLflDyj5h150Q=
-X-Received: by 2002:a17:90b:3109:: with SMTP id
- gc9mr9966542pjb.30.1574972636142; 
- Thu, 28 Nov 2019 12:23:56 -0800 (PST)
-X-Google-Smtp-Source: APXvYqwLgmQBIVDgB8JTDBBuFEwN/117Vx9qIR4Jgevr8C1kD585Wc5/+quQsfVlRjSD579x56aJyQ==
-X-Received: by 2002:a17:90b:3109:: with SMTP id
- gc9mr9966493pjb.30.1574972635767; 
- Thu, 28 Nov 2019 12:23:55 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=D7Q1sNAJK7KGCeC1/osi4u/yd8LMbojW2DcAg7eyhwk=;
+ b=f7DKbIIuo4CO9CNa+YL4Bf2PvjKG/GbqgiLe+pQGMR/YeGFaobrfVpR9xv3FqrfHA5
+ oRL8+/sfLpr4Y2zspuerjjnB7+75LGEHNxeDH+tv6YXvHY1xduSkMZxj3hDJucWdhkOn
+ fA3zzjwsDF9o57ZFcYWwnhrG1+eqZM45x1uc5nlYxUdaIrPOPURkJwLF2lwUPKZiSPY1
+ kQzodp8AooRaQgc4RFqzOT3LxMS0NOMBwlrQlUI7EYfcjSF/YZ7ndLnkXio/HK5XS8ld
+ OD23kRgFUsTSO9JsBohkP/yRumR/T5XWHgaRY3lFruHDW/+cjJNJDqdlfgwLU+2DymmU
+ AErg==
+X-Gm-Message-State: APjAAAVfx7DGhDgB0/0L1v3ryGsQEL7LeUruK5a+WqUI1PKjC8yozE61
+ /jkdTlA1KV1vj86WTk4ptY4h2BECfLL53PqMn3L3RhBeydttU6Gi2lG+VptKapFse6+wrX+0QzM
+ 0TAkrAFjJD1RHMuIDs1/dGMkSftEu/jmhb80=
+X-Received: by 2002:a17:90a:3663:: with SMTP id
+ s90mr14556234pjb.1.1574972639196; 
+ Thu, 28 Nov 2019 12:23:59 -0800 (PST)
+X-Google-Smtp-Source: APXvYqwEBnny8bOGZ2sOhQL9nLkTVF0UqIXllrctdH9WVSgwdhpBSy3J7AMOGgxRJJki+CNRMtBZ+Q==
+X-Received: by 2002:a17:90a:3663:: with SMTP id
+ s90mr14556206pjb.1.1574972638976; 
+ Thu, 28 Nov 2019 12:23:58 -0800 (PST)
 Received: from localhost ([122.177.85.74])
- by smtp.gmail.com with ESMTPSA id a15sm2778299pfh.169.2019.11.28.12.23.53
+ by smtp.gmail.com with ESMTPSA id s66sm22322578pfb.38.2019.11.28.12.23.57
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 28 Nov 2019 12:23:54 -0800 (PST)
+ Thu, 28 Nov 2019 12:23:58 -0800 (PST)
 From: Bhupesh Sharma <bhsharma@redhat.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v5 0/5] Append new variables to vmcoreinfo (TCR_EL1.T1SZ for
- arm64 and MAX_PHYSMEM_BITS for all archs)
-Date: Fri, 29 Nov 2019 01:53:36 +0530
-Message-Id: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
+Subject: [PATCH v5 1/5] crash_core,
+ vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
+Date: Fri, 29 Nov 2019 01:53:37 +0530
+Message-Id: <1574972621-25750-2-git-send-email-bhsharma@redhat.com>
 X-Mailer: git-send-email 2.7.4
-X-MC-Unique: 4NODHsHrMaOWwqZDKfEVYw-1
+In-Reply-To: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
+References: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
+X-MC-Unique: HkJThyEANdG0jVnfYlRdSw-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_122403_438926_39711A71 
-X-CRM114-Status: GOOD (  16.11  )
+X-CRM114-CacheID: sfid-20191128_122406_164015_2AEBBF11 
+X-CRM114-Status: GOOD (  17.42  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.61 listed in list.dnswl.org]
+ medium trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,85 +108,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-doc@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, bhsharma@redhat.com,
- Paul Mackerras <paulus@samba.org>, Will Deacon <will@kernel.org>,
- Ingo Molnar <mingo@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, Dave Anderson <anderson@redhat.com>,
- Thomas Gleixner <tglx@linutronix.de>, bhupesh.linux@gmail.com,
- linux-arm-kernel@lists.infradead.org, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Steve Capper <steve.capper@arm.com>, kexec@lists.infradead.org,
- James Morse <james.morse@arm.com>, Boris Petkov <bp@alien8.de>,
- linuxppc-dev@lists.ozlabs.org
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-doc@vger.kernel.org,
+ Will Deacon <will@kernel.org>, bhsharma@redhat.com, x86@kernel.org,
+ kexec@lists.infradead.org, Dave Anderson <anderson@redhat.com>,
+ Paul Mackerras <paulus@samba.org>, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ Boris Petkov <bp@alien8.de>, Michael Ellerman <mpe@ellerman.id.au>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, bhupesh.linux@gmail.com,
+ linuxppc-dev@lists.ozlabs.org, Ingo Molnar <mingo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Steve Capper <steve.capper@arm.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Changes since v4:
-----------------
-- v4 can be seen here:
-  http://lists.infradead.org/pipermail/kexec/2019-November/023961.html
-- Addressed comments from Dave and added patches for documenting
-  new variables appended to vmcoreinfo documentation.
-- Added testing report shared by Akashi for PATCH 2/5.
+Right now user-space tools like 'makedumpfile' and 'crash' need to rely
+on a best-guess method of determining value of 'MAX_PHYSMEM_BITS'
+supported by underlying kernel.
 
-Changes since v3:
-----------------
-- v3 can be seen here:
-  http://lists.infradead.org/pipermail/kexec/2019-March/022590.html
-- Addressed comments from James and exported TCR_EL1.T1SZ in vmcoreinfo
-  instead of PTRS_PER_PGD.
-- Added a new patch (via [PATCH 3/3]), which fixes a simple typo in
-  'Documentation/arm64/memory.rst'
+This value is used in user-space code to calculate the bit-space
+required to store a section for SPARESMEM (similar to the existing
+calculation method used in the kernel implementation):
 
-Changes since v2:
-----------------
-- v2 can be seen here:
-  http://lists.infradead.org/pipermail/kexec/2019-March/022531.html
-- Protected 'MAX_PHYSMEM_BITS' vmcoreinfo variable under CONFIG_SPARSEMEM
-  ifdef sections, as suggested by Kazu.
-- Updated vmcoreinfo documentation to add description about
-  'MAX_PHYSMEM_BITS' variable (via [PATCH 3/3]).
+  #define SECTIONS_SHIFT    (MAX_PHYSMEM_BITS - SECTION_SIZE_BITS)
 
-Changes since v1:
-----------------
-- v1 was sent out as a single patch which can be seen here:
-  http://lists.infradead.org/pipermail/kexec/2019-February/022411.html
+Now, regressions have been reported in user-space utilities
+like 'makedumpfile' and 'crash' on arm64, with the recently added
+kernel support for 52-bit physical address space, as there is
+no clear method of determining this value in user-space
+(other than reading kernel CONFIG flags).
 
-- v2 breaks the single patch into two independent patches:
-  [PATCH 1/2] appends 'PTRS_PER_PGD' to vmcoreinfo for arm64 arch, whereas
-  [PATCH 2/2] appends 'MAX_PHYSMEM_BITS' to vmcoreinfo in core kernel code (all archs)
+As per suggestion from makedumpfile maintainer (Kazu), it makes more
+sense to append 'MAX_PHYSMEM_BITS' to vmcoreinfo in the core code itself
+rather than in arch-specific code, so that the user-space code for other
+archs can also benefit from this addition to the vmcoreinfo and use it
+as a standard way of determining 'SECTIONS_SHIFT' value in user-land.
 
-This patchset primarily fixes the regression reported in user-space
-utilities like 'makedumpfile' and 'crash-utility' on arm64 architecture
-with the availability of 52-bit address space feature in underlying
-kernel. These regressions have been reported both on CPUs which don't
-support ARMv8.2 extensions (i.e. LVA, LPA) and are running newer kernels
-and also on prototype platforms (like ARMv8 FVP simulator model) which
-support ARMv8.2 extensions and are running newer kernels.
+A reference 'makedumpfile' implementation which reads the
+'MAX_PHYSMEM_BITS' value from vmcoreinfo in a arch-independent fashion
+is available here:
 
-The reason for these regressions is that right now user-space tools
-have no direct access to these values (since these are not exported
-from the kernel) and hence need to rely on a best-guess method of
-determining value of 'vabits_actual' and 'MAX_PHYSMEM_BITS' supported
-by underlying kernel.
-
-Exporting these values via vmcoreinfo will help user-land in such cases.
-In addition, as per suggestion from makedumpfile maintainer (Kazu),
-it makes more sense to append 'MAX_PHYSMEM_BITS' to
-vmcoreinfo in the core code itself rather than in arm64 arch-specific
-code, so that the user-space code for other archs can also benefit from
-this addition to the vmcoreinfo and use it as a standard way of
-determining 'SECTIONS_SHIFT' value in user-land.
+[0]. https://github.com/bhupesh-sharma/makedumpfile/blob/remove-max-phys-mem-bit-v1/arch/ppc64.c#L471
 
 Cc: Boris Petkov <bp@alien8.de>
 Cc: Ingo Molnar <mingo@kernel.org>
 Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Jonathan Corbet <corbet@lwn.net>
 Cc: James Morse <james.morse@arm.com>
 Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: Will Deacon <will@kernel.org>
@@ -197,23 +171,24 @@ Cc: x86@kernel.org
 Cc: linuxppc-dev@lists.ozlabs.org
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
-Cc: linux-doc@vger.kernel.org
 Cc: kexec@lists.infradead.org
+Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
+---
+ kernel/crash_core.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Bhupesh Sharma (5):
-  crash_core, vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
-  arm64/crash_core: Export TCR_EL1.T1SZ in vmcoreinfo
-  Documentation/arm64: Fix a simple typo in memory.rst
-  Documentation/vmcoreinfo: Add documentation for 'MAX_PHYSMEM_BITS'
-  Documentation/vmcoreinfo: Add documentation for 'TCR_EL1.T1SZ'
-
- Documentation/admin-guide/kdump/vmcoreinfo.rst | 11 +++++++++++
- Documentation/arm64/memory.rst                 |  2 +-
- arch/arm64/include/asm/pgtable-hwdef.h         |  1 +
- arch/arm64/kernel/crash_core.c                 |  9 +++++++++
- kernel/crash_core.c                            |  1 +
- 5 files changed, 23 insertions(+), 1 deletion(-)
-
+diff --git a/kernel/crash_core.c b/kernel/crash_core.c
+index 9f1557b98468..18175687133a 100644
+--- a/kernel/crash_core.c
++++ b/kernel/crash_core.c
+@@ -413,6 +413,7 @@ static int __init crash_save_vmcoreinfo_init(void)
+ 	VMCOREINFO_LENGTH(mem_section, NR_SECTION_ROOTS);
+ 	VMCOREINFO_STRUCT_SIZE(mem_section);
+ 	VMCOREINFO_OFFSET(mem_section, section_mem_map);
++	VMCOREINFO_NUMBER(MAX_PHYSMEM_BITS);
+ #endif
+ 	VMCOREINFO_STRUCT_SIZE(page);
+ 	VMCOREINFO_STRUCT_SIZE(pglist_data);
 -- 
 2.7.4
 
