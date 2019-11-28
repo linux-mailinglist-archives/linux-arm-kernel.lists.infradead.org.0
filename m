@@ -2,94 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2153F10CB03
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 15:59:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38F4210CB13
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 15:59:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0LdxQgVGVxwe8LMa+kECwQYR3Oz8nxN8MnBglgbUMRA=; b=liQz5xHHVkUvXO
-	bY/aIO7/+CBmnHD+CwRHQvo9/E/DzmLb/17Q6B3uDbl2dHCms/LeKdr8ikT8HBV3Atc3HtZca9U4s
-	q03w6t/wZFmgflkEdXrU/NOe6owxY+0eB7Gg98pYbcQhuVjgOIulxdk3n3qVvHygF43soN7MO4SoR
-	e1MBxHnwEZ2BsLi25S1byEcuaTksFvvw5yLsKKCJyiDmfkQlNibU2oZY8SrT0Ftk98M1+mmhKROxs
-	A727ZOxNOVH87NZzO2WLE6qkfeXKfBKjkCMNUfk1INPKfkPBYcOWq1VA2RJWtHBE0ZyQ90b5wzU7e
-	kvZ6DTGSBCA95tHlcCGQ==;
+	List-Owner; bh=QkyXdi6x+/XXC0IBY9Ce7GTFXI8Hx7RaqSkmvkRTK2A=; b=sJsf2QNjgmBYdw
+	lDUMbqeCFRHwLVObqF7kB10twMb779gmO/UZORKrrYAFK2kj1u6upQvEmmrUceMNWANJJeH9y/ifQ
+	P7Ml5ToLYpgP964/4I4w9cNgalV1UG1tHlKvYIThqwvHZFz8jcpnPXTlP5lri3xVv813e4Wku+/MC
+	JwDlEDD1xfCVlBCsqhWeDy7jEXMMGazFc0QUHiI/Ct/olSY96lXMuRD5hDD+J/JwTVquLPLP5ueqr
+	JHbiqiJAHuCF2K+uF/Z0Rulla86CDq7PkEjFo1zucJrKL33Ldbgfqjv1nqyREtjfpCe6UNtXRjLTK
+	qB9zFUNNm8C78Hsq21LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaLFy-0001NI-6v; Thu, 28 Nov 2019 14:58:58 +0000
+	id 1iaLGM-0001bP-Lg; Thu, 28 Nov 2019 14:59:22 +0000
 Received: from casper.infradead.org ([85.118.1.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaLEI-0000bi-P6
- for linux-arm-kernel@bombadil.infradead.org; Thu, 28 Nov 2019 14:57:14 +0000
+ id 1iaLEN-0000bi-FR
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 28 Nov 2019 14:57:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=aHcxJAOlM2E0UFcUrH5w2LsmH/UDe+R/7sRutoa3dpE=; b=rGrrTGyidUu5Qc2dXRTDFSrHfs
- BgvB6chbpwX8WvdXDQC3FPCbrbGMv1tsG1BnEW1mWNNddBLeK/Rz7ZN8pohy8GlrJl+qcwxntmUN0
- tjKMRE/5o9in4ErKhyLKKfe0bwXbulVFctnDjmSwncrTnUvxqJdIKsi9kV/fQYKcxkRwtVhgF8P/V
- ttK1aJkDuZIVyQrGTwnYQ6i52PdLSrepLGGAvoVBXZbKYV9S7SZ/RTbrYanbIE1YMkgaJyH/mcT3D
- HPRLcOACQrAfOpqYD64qYw2dS9TTV1MujSSoY4Jht4GD1XAn+kUNVAvZ1UmZKg9tC96Pd9JZFcDAZ
- XUihbImw==;
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+ bh=1FO1UQTXh28fI62ubVME27vBFvBx/0Nlk287V+GPtYU=; b=IGwZEWyYfMv0gxO00JLC55hlZB
+ p6j/wsrrcAD1r1y80T3HifYP13JDaW2yWYWf1Ev8QRrNL0c2NwrzW9l2IdqST/wtFwXzKRmO8GYvi
+ cYeHA+Q5zGHMDDxMm8hfTP140DM3JIifYreRCRKgwcvfu2VviVsIpJPQWnkDLdKlIKPMnTNDZehHs
+ epKkzNKFEWmqdQS9DUMH3NtKX9jT+XR0IC3WbDsqLJTt6a80xMg49CuKHyABQiXNAWF5sM3kbsxaS
+ Yvscug8V9ugSvHenoebIWqJnvccvifbEILG160uy8gE0cikUTTbRofzD+23s+0yZgVT1H2lDA9c5Q
+ fce6+lmg==;
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaLEi-0005qr-B0
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:57:42 +0000
-Received: by mail-lj1-x244.google.com with SMTP id e9so28809946ljp.13
+ id 1iaLEl-0005sD-LH
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:57:45 +0000
+Received: by mail-lj1-x243.google.com with SMTP id t5so28868474ljk.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 06:57:10 -0800 (PST)
+ Thu, 28 Nov 2019 06:57:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=aHcxJAOlM2E0UFcUrH5w2LsmH/UDe+R/7sRutoa3dpE=;
- b=EUb+p9no9foRs+pvYVwlrkYjz0fIfmXYCIjBTuSuxtOBtWIiWlYQ1uvB7/qAonIE1k
- K3i+BDhjX2g6iUXYxdzFfaU1TNKhMk2zUbebWU2iemsINp4YzlAnTuA+W9YPQqPaaqT5
- oFbfA9tonS+865p0uSAYUJsqrcPYJt9uB6U/E=
+ bh=1FO1UQTXh28fI62ubVME27vBFvBx/0Nlk287V+GPtYU=;
+ b=ZNhCjhlXYdCo4kAsX4UTTimsvzqdgi2hv8plsAFFBTnJnb4euDfFWwFH4zxFx7MhZ+
+ RbpYnU0P9tFXmZQP1mq9z+OrG5+RlE+3xdI7EhoVDAA+VVIPGMPTe8TwM2ppgKuG8LGk
+ O1ZhnUDfTQ1fjCjBLJmqQ+eVOggVlMbYyMVqE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=aHcxJAOlM2E0UFcUrH5w2LsmH/UDe+R/7sRutoa3dpE=;
- b=s+8tOsyN2BzDPoWDhgmSf3Q4sGnmqTk1l8eMNLITebu5LCtbntqwr13gdwL5OUEVHU
- EM570dFrWTF0iil7+TsvzNbUTBau9CIr64h7hRvbti7vXBVXiIbUQiivyK9mmMtKu0Vi
- J/xvqOTwX1LhBhWohn/Imcu+UlPrGYwm68Vi3TYPjq2D1NTXfOfvb67oXLhxZoIG9eYA
- mH5dM8xxyWqQWaWo3arYxuaQM/MeEO2gS4cLcYiZrJddYwwClJ2/xOMiW5O0VNJXHhJb
- aQz32B2rIXY2kCykkRAKETyJ/yWchyJTTG+iYPNUtXcSG1hYgHYc2K5gOCC5Ole6NIDT
- SN3Q==
-X-Gm-Message-State: APjAAAVNXPRvu806uiStlwndalXKVeankUYKx2L1SjINozLc8wNh2HKo
- 1kOLvN/c5zgsaXvLBoAjiDRmtQpaCg3DOIya
-X-Google-Smtp-Source: APXvYqwmHQ/ui8WuFUvts+ovamA0J+L+w+hMprOkOCachr1eNFvyBTSzKiNKkiEwDN77yejqAuoyIA==
-X-Received: by 2002:a2e:9985:: with SMTP id w5mr4973026lji.162.1574953029303; 
- Thu, 28 Nov 2019 06:57:09 -0800 (PST)
+ bh=1FO1UQTXh28fI62ubVME27vBFvBx/0Nlk287V+GPtYU=;
+ b=t7Kj3gfAWs8Xs1KjF63QMPHuMDdiCqNlrV3A9t/nygMEA6fUXaelY152H+tn0WwtH8
+ MBE3RlPzFlXuBb4KGrG8OmE1x2/WcEzLYnTtf/xm7qhH8LcOqeva4ADcszYV7Y/6xh7Q
+ wePmNi+zF78PM8iVWKchXVz+tKvuTvtoFwUvXH9MMUn4gQmReNF8uPeqA+csHHFoulgR
+ 4n1Id4iMZLmKnUiQe3Iz0zdT/ld3mTMjR+ef551oGyYtvhPq/z0lQBZ/xE3e1+K5LzGp
+ V5SJgYDUsERKfUmoS6iEMJxuPrmWWH9Ps3mej8fuG3N1I0hqW/JUwtx5gge7SslEogWn
+ rNDg==
+X-Gm-Message-State: APjAAAW+dZZV4NhR4nPc4Mklv2z6pJwGiXe5zbk4VS9Om0cjKczLAZ9G
+ pHRe1XKRup00a6ArMj0rkzeXoQ==
+X-Google-Smtp-Source: APXvYqwWny19ndDBOcZFfoY6H4dtBKDtCID2hru7I1YwvHnyPzyw7kTW9NPWsf4LyhSpEJUZyub1AA==
+X-Received: by 2002:a2e:9006:: with SMTP id h6mr34696274ljg.231.1574953032680; 
+ Thu, 28 Nov 2019 06:57:12 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.57.08
+ by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.57.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 Nov 2019 06:57:08 -0800 (PST)
+ Thu, 28 Nov 2019 06:57:11 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v6 04/49] soc: fsl: qe: introduce qe_io{read,write}* wrappers
-Date: Thu, 28 Nov 2019 15:55:09 +0100
-Message-Id: <20191128145554.1297-5-linux@rasmusvillemoes.dk>
+Subject: [PATCH v6 06/49] soc: fsl: qe: replace spin_event_timeout by
+ readx_poll_timeout_atomic
+Date: Thu, 28 Nov 2019 15:55:11 +0100
+Message-Id: <20191128145554.1297-7-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
 References: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_145740_384970_574F19F9 
-X-CRM114-Status: GOOD (  10.30  )
+X-CRM114-CacheID: sfid-20191128_145743_718787_0F7CF605 
+X-CRM114-Status: GOOD (  12.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -119,73 +120,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The QUICC engine drivers use the powerpc-specific out_be32() etc. In
-order to allow those drivers to build for other architectures, those
-must be replaced by iowrite32be(). However, on powerpc, out_be32() is
-a simple inline function while iowrite32be() is out-of-line. So in
-order not to introduce a performance regression on powerpc when making
-the drivers work on other architectures, introduce qe_io* helpers.
-
-Also define the qe_{clr,set,clrset}bits* helpers in terms of these new
-macros.
+In preparation for allowing QE to be built for architectures other
+than ppc, use the generic readx_poll_timeout_atomic() helper from
+iopoll.h rather than the ppc-only spin_event_timeout().
 
 Reviewed-by: Timur Tabi <timur@kernel.org>
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- include/soc/fsl/qe/qe.h | 34 +++++++++++++++++++++++++---------
- 1 file changed, 25 insertions(+), 9 deletions(-)
+ drivers/soc/fsl/qe/qe.c | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
 
-diff --git a/include/soc/fsl/qe/qe.h b/include/soc/fsl/qe/qe.h
-index a1aa4eb28f0c..9cac04c692fd 100644
---- a/include/soc/fsl/qe/qe.h
-+++ b/include/soc/fsl/qe/qe.h
-@@ -241,21 +241,37 @@ static inline int qe_alive_during_sleep(void)
- #define qe_muram_offset cpm_muram_offset
- #define qe_muram_dma cpm_muram_dma
+diff --git a/drivers/soc/fsl/qe/qe.c b/drivers/soc/fsl/qe/qe.c
+index 456bd7416876..85737e6f5b62 100644
+--- a/drivers/soc/fsl/qe/qe.c
++++ b/drivers/soc/fsl/qe/qe.c
+@@ -22,6 +22,7 @@
+ #include <linux/module.h>
+ #include <linux/delay.h>
+ #include <linux/ioport.h>
++#include <linux/iopoll.h>
+ #include <linux/crc32.h>
+ #include <linux/mod_devicetable.h>
+ #include <linux/of_platform.h>
+@@ -108,7 +109,8 @@ int qe_issue_cmd(u32 cmd, u32 device, u8 mcn_protocol, u32 cmd_input)
+ {
+ 	unsigned long flags;
+ 	u8 mcn_shift = 0, dev_shift = 0;
+-	u32 ret;
++	u32 val;
++	int ret;
  
--#define qe_setbits_be32(_addr, _v) iowrite32be(ioread32be(_addr) |  (_v), (_addr))
--#define qe_clrbits_be32(_addr, _v) iowrite32be(ioread32be(_addr) & ~(_v), (_addr))
-+#ifdef CONFIG_PPC32
-+#define qe_iowrite8(val, addr)     out_8(addr, val)
-+#define qe_iowrite16be(val, addr)  out_be16(addr, val)
-+#define qe_iowrite32be(val, addr)  out_be32(addr, val)
-+#define qe_ioread8(addr)           in_8(addr)
-+#define qe_ioread16be(addr)        in_be16(addr)
-+#define qe_ioread32be(addr)        in_be32(addr)
-+#else
-+#define qe_iowrite8(val, addr)     iowrite8(val, addr)
-+#define qe_iowrite16be(val, addr)  iowrite16be(val, addr)
-+#define qe_iowrite32be(val, addr)  iowrite32be(val, addr)
-+#define qe_ioread8(addr)           ioread8(addr)
-+#define qe_ioread16be(addr)        ioread16be(addr)
-+#define qe_ioread32be(addr)        ioread32be(addr)
-+#endif
-+
-+#define qe_setbits_be32(_addr, _v) qe_iowrite32be(qe_ioread32be(_addr) |  (_v), (_addr))
-+#define qe_clrbits_be32(_addr, _v) qe_iowrite32be(qe_ioread32be(_addr) & ~(_v), (_addr))
+ 	spin_lock_irqsave(&qe_lock, flags);
+ 	if (cmd == QE_RESET) {
+@@ -135,13 +137,12 @@ int qe_issue_cmd(u32 cmd, u32 device, u8 mcn_protocol, u32 cmd_input)
+ 	}
  
--#define qe_setbits_be16(_addr, _v) iowrite16be(ioread16be(_addr) |  (_v), (_addr))
--#define qe_clrbits_be16(_addr, _v) iowrite16be(ioread16be(_addr) & ~(_v), (_addr))
-+#define qe_setbits_be16(_addr, _v) qe_iowrite16be(qe_ioread16be(_addr) |  (_v), (_addr))
-+#define qe_clrbits_be16(_addr, _v) qe_iowrite16be(qe_ioread16be(_addr) & ~(_v), (_addr))
+ 	/* wait for the QE_CR_FLG to clear */
+-	ret = spin_event_timeout((qe_ioread32be(&qe_immr->cp.cecr) & QE_CR_FLG) == 0,
+-				 100, 0);
+-	/* On timeout (e.g. failure), the expression will be false (ret == 0),
+-	   otherwise it will be true (ret == 1). */
++	ret = readx_poll_timeout_atomic(qe_ioread32be, &qe_immr->cp.cecr, val,
++					(val & QE_CR_FLG) == 0, 0, 100);
++	/* On timeout, ret is -ETIMEDOUT, otherwise it will be 0. */
+ 	spin_unlock_irqrestore(&qe_lock, flags);
  
--#define qe_setbits_8(_addr, _v) iowrite8(ioread8(_addr) |  (_v), (_addr))
--#define qe_clrbits_8(_addr, _v) iowrite8(ioread8(_addr) & ~(_v), (_addr))
-+#define qe_setbits_8(_addr, _v) qe_iowrite8(qe_ioread8(_addr) |  (_v), (_addr))
-+#define qe_clrbits_8(_addr, _v) qe_iowrite8(qe_ioread8(_addr) & ~(_v), (_addr))
+-	return ret == 1;
++	return ret == 0;
+ }
+ EXPORT_SYMBOL(qe_issue_cmd);
  
- #define qe_clrsetbits_be32(addr, clear, set) \
--	iowrite32be((ioread32be(addr) & ~(clear)) | (set), (addr))
-+	qe_iowrite32be((qe_ioread32be(addr) & ~(clear)) | (set), (addr))
- #define qe_clrsetbits_be16(addr, clear, set) \
--	iowrite16be((ioread16be(addr) & ~(clear)) | (set), (addr))
-+	qe_iowrite16be((qe_ioread16be(addr) & ~(clear)) | (set), (addr))
- #define qe_clrsetbits_8(addr, clear, set) \
--	iowrite8((ioread8(addr) & ~(clear)) | (set), (addr))
-+	qe_iowrite8((qe_ioread8(addr) & ~(clear)) | (set), (addr))
- 
- /* Structure that defines QE firmware binary files.
-  *
 -- 
 2.23.0
 
