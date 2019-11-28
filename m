@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5742510CB53
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:07:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0731A10CB59
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:08:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uenfZS3z34DH2VaYIDFsjzKx0lsmeZ9K7u4Z0/aohOA=; b=fQVOz1LYYzXapW
-	BAGvqayrSLtlCO1jxhgvrvS2JBEizmnUS2CCqhgDk/WjuHZW9lysP78zvZzZl+py5yNqGtHxXjkU7
-	yrFWFU9mds/cOezKJQJ4Es5WGPp8ggbT0CTc0MWyHsH7QRAM5HlNs1RF5kQ4yatecxvMJE55C1WtP
-	ms1QI/bXsazaXGunX3dPfs4eyW4KVm00R1AI83t96B9iWvaL515CMURqg4pJ+2S57tUw8LtXwhReJ
-	RkZ8tsRt84B4lkjzoTHxVzwFBqE7aXTQuOLpqrPUPkhhbmWxn9UWu5mMY6ugk2s4qGm2DntiUkwdn
-	OgWtLx4Etm2JScOcPICA==;
+	List-Owner; bh=/T2FFm8mYJbpjER0RYfLBjksItge/CelSIbIhXwicNM=; b=QHyiA0WxXNG67U
+	PAgQJGfOE4GMKcWTrNnBArIXIlzb4LogM3kshA+zLERjXp2F19pNcE4H5sUtiAbfVhmqGC24MidX2
+	ri6hbGwOr1rPLAFxKPiStErK41UbKakFztiYfCr9TRKjI8TQ8QPtkUGVAnwDe9PXV7uK2AsokHorr
+	4IFvJIGjW47A07DgXBpbtxq7DolS/zYsJgWsBur7KQ5KjyaKD4cEKhZkMs8vKzpk8hwiqM6OWFGP6
+	o216h8XlgHjTgvKgR+zJIlza/fMwyosjWeVf/ntvE6FpE21H8J2xkJdR2VdFJFQiDAsaG0WFabkik
+	wCujN7A8Uo/EJOfOssRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaLOb-0001w1-EJ; Thu, 28 Nov 2019 15:07:53 +0000
-Received: from mail-lj1-f193.google.com ([209.85.208.193])
+	id 1iaLPR-0002ft-Iz; Thu, 28 Nov 2019 15:08:45 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaLFB-0001A6-A8
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:58:15 +0000
-Received: by mail-lj1-f193.google.com with SMTP id n21so28799787ljg.12
+ id 1iaLFB-0001AL-Ig
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:58:18 +0000
+Received: by mail-lf1-x141.google.com with SMTP id l14so20242075lfh.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 06:58:08 -0800 (PST)
+ Thu, 28 Nov 2019 06:58:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Z0ILJLPvMSycr+N5z1WBGPbbOOzMeVGs3+El1NFG5gM=;
- b=MsBrXnDd/G1Zjj210ATgY6vuErblELNtwtEokGCaoA1MxxkLkU5DMXWZ/DqI4rkd5Z
- gETgTkCKjtmJ/BL1I8x41SvinDsW0tjkR9cfyiTi9zOlB2m8FMv18BEU617l2rIZlRYm
- JgqrkOdeLh5F0tEM8F/+7LQYmLCxUlP6KBeO0=
+ bh=ApKAjcbgk3TFllS4KVlYulsx0IXhA9sg3keVA4kG7Kg=;
+ b=Cu0pEa3DGH8Jq4DqyrRVVK+6bn2ungANZKmPnurdLgGvoCh7zh9ab2EKVG+2ifp9f9
+ rF8n9op4NSmEteqozoQv7Ma5TFukZVpXhMk//1OFvFLfiiCXPFq6mIrgqPDMuC4k0F+i
+ tPXfxNLVhzbivJVrd/o409oUcl06X8HPclCC8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Z0ILJLPvMSycr+N5z1WBGPbbOOzMeVGs3+El1NFG5gM=;
- b=mR5KnDZLK4q+ls6sHNQkbgU+sD3dxHgSFOh2JSnwZYaamJWkWfcXDCw7CXR3JyjBiw
- Fr2BXug6Nguf5xwQPLvCD5RTuc+E7Th7ZK2VlVG9wD9qPxBnRNhSPWZlutczvyLHXzZg
- 73rDlbq+tt4lSGkiKbti7x/+ADe3ziFFLXaa9rchZ4//fLSdm3RjNJl3ka/iBOI1C6Wp
- Z8OH41mG9FdpLpdvVWKsaxrGcjRda9zlprjx/KOOpEOjVg5EV4ZG1YpuKD1LaLCU4fXG
- hMBzQo/KkrLd1R+n5sGuAvGwT3zYnsHfo/xwtdRFRkWDHvqtWXVaBdYDFJh4Cs7SlFIW
- GWqg==
-X-Gm-Message-State: APjAAAUfkk4cMkG/aaYa6AuQYtU+PPYC9H8b8KKVK56hF56UbkadducH
- SHPwki2QzvWjo71y6zvQNy9jvw==
-X-Google-Smtp-Source: APXvYqzc2fQxY6lskiW/Z09onmsQDrBOExaD6v9SX5/irAT7oq304NVrn38+PRfo+mxcFltlRIIozA==
-X-Received: by 2002:a2e:9f4d:: with SMTP id v13mr35084645ljk.78.1574953086759; 
- Thu, 28 Nov 2019 06:58:06 -0800 (PST)
+ bh=ApKAjcbgk3TFllS4KVlYulsx0IXhA9sg3keVA4kG7Kg=;
+ b=eGWWNrpr+TLHxwp1Ma/mwkrWEEIB4n5z1VWhV15cuNnYSL9WoKKmz5F/Tt6rf5FN8f
+ wXdr/RNQaKYRJVjedv8J5/4ll5hRGolHuP9hwlGq5okbWJLMM6MOrGni/lDEe5fM4ewO
+ BsMEwok/Eh/RLOWXRzTQXZyHjZnMNeJ7hl4gVCFJCSKcCmS+1wSFzOSbgoh3vQmJRm/u
+ /9lsMM/8lSexugSE++VTta73OXWPzAZC2NRijfDUA1ttN5u+tRSXj82TUlekcXF1zwc/
+ XQ38Ivc3+SwBvCSvw8xUYBhK010W1A9NgreBP9v5GYTQzQXbEx7Y6DhfEXd1Ld+uS84A
+ qHXQ==
+X-Gm-Message-State: APjAAAXvWLQEewQMI4n9pqfTsfTarFq98AUc4itrBunKZ5LwVfMBr4di
+ iF40cyOG/jcGms55YWbCDh6TOw==
+X-Google-Smtp-Source: APXvYqwJ2pFRjS+aCBBi6M5p/vBXoIE7qINVl1Cxd1FpO3O+0xRHnhugtUuDHZc9+RuUfUWk5qB68w==
+X-Received: by 2002:ac2:4adc:: with SMTP id m28mr8797486lfp.26.1574953087899; 
+ Thu, 28 Nov 2019 06:58:07 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.58.05
+ by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.58.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 Nov 2019 06:58:06 -0800 (PST)
+ Thu, 28 Nov 2019 06:58:07 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v6 48/49] soc: fsl: qe: remove unused #include of asm/irq.h
- from ucc.c
-Date: Thu, 28 Nov 2019 15:55:53 +0100
-Message-Id: <20191128145554.1297-49-linux@rasmusvillemoes.dk>
+Subject: [PATCH v6 49/49] soc: fsl: qe: remove PPC32 dependency from
+ CONFIG_QUICC_ENGINE
+Date: Thu, 28 Nov 2019 15:55:54 +0100
+Message-Id: <20191128145554.1297-50-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
 References: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_065809_444796_3DFF3DB6 
-X-CRM114-Status: GOOD (  11.17  )
+X-CRM114-CacheID: sfid-20191128_065809_730129_5948846E 
+X-CRM114-Status: GOOD (  12.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.193 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -97,45 +96,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild test robot <lkp@intel.com>, Timur Tabi <timur@kernel.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>, linux-kernel@vger.kernel.org,
- Scott Wood <oss@buserror.net>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Timur Tabi <timur@kernel.org>, Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ linux-kernel@vger.kernel.org, Scott Wood <oss@buserror.net>,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When allowing this driver to be built for ARM, the build fails (for
-CONFIG_SMP=y) since ARM's asm/irq.h header is not self-contained:
+There are also PPC64, ARM and ARM64 based SOCs with a QUICC Engine,
+and the core QE code as well as net/wan/fsl_ucc_hdlc and
+tty/serial/ucc_uart has now been modified to not rely on ppcisms.
 
-  In file included from drivers/soc/fsl/qe/ucc.c:18:0:
->> arch/arm/include/asm/irq.h:34:50: error: unknown type name 'cpumask_t'
-    extern void arch_trigger_cpumask_backtrace(const cpumask_t *mask,
+So extend the architectures that can select QUICC_ENGINE, and add the
+rather modest requirements of OF && HAS_IOMEM.
 
-But nothing in this file actually uses anything from asm/irq.h -
-removing this #include generates identical object code, both on PPC32
-and on ARM (the latter with a patch added to asm/irq.h to make the
-build work in the first place).
+The core code as well as the ucc_uart driver has been tested on an
+LS1021A (arm), and it has also been tested that the QE code still
+works on an mpc8309 (ppc). Qiang Zhao has tested that the QE-HDLC code
+that gets enabled with this works on ARM64.
 
-Reported-by: kbuild test robot <lkp@intel.com>
+Reviewed-by: Timur Tabi <timur@kernel.org>
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/soc/fsl/qe/ucc.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/soc/fsl/qe/Kconfig | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/soc/fsl/qe/ucc.c b/drivers/soc/fsl/qe/ucc.c
-index da3d7e2dd837..90157acc5ba6 100644
---- a/drivers/soc/fsl/qe/ucc.c
-+++ b/drivers/soc/fsl/qe/ucc.c
-@@ -15,7 +15,6 @@
- #include <linux/spinlock.h>
- #include <linux/export.h>
+diff --git a/drivers/soc/fsl/qe/Kconfig b/drivers/soc/fsl/qe/Kconfig
+index cfa4b2939992..357c5800b112 100644
+--- a/drivers/soc/fsl/qe/Kconfig
++++ b/drivers/soc/fsl/qe/Kconfig
+@@ -5,7 +5,8 @@
  
--#include <asm/irq.h>
- #include <asm/io.h>
- #include <soc/fsl/qe/immap_qe.h>
- #include <soc/fsl/qe/qe.h>
+ config QUICC_ENGINE
+ 	bool "QUICC Engine (QE) framework support"
+-	depends on FSL_SOC && PPC32
++	depends on OF && HAS_IOMEM
++	depends on PPC || ARM || ARM64 || COMPILE_TEST
+ 	select GENERIC_ALLOCATOR
+ 	select CRC32
+ 	help
 -- 
 2.23.0
 
