@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C09510CD3B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 17:51:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A8DC10CD46
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 17:53:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=UQkAR0SZr8YD6u1ev3OBxMtPtfkQk5vZ9nKILRsX2RE=; b=nJI+P/t84y+61UAuUPVuw5flON
-	FhJLkw7aVfSbFb+OMMml2h/rxaGb8IoGSUGNuBNt1JV0DgZPCxKDfZ27p5wPIDHL0GqF4mCsExvO7
-	u7bvaD4naQ7YCqwctGo0GJTIItRlSeE3DlbJvWFD/JbFY3GXbVrxBdWvZOcHwP2Bmjn8MD7BqpNb5
-	ZhuUTwFhknFWJbKrwZy55UTebCVjBfGECVbV+jTR3mRy92+MABzT4gREJZFupTkWihbXQnwXZX6JR
-	d2e89UGQ4DGM1nO3+qFnDNSBOYmRljypln6igqpAoNDluGrPRNWLtm7/TZvnogZrMuelGt4m9Uz2B
-	J7RiXQRw==;
+	bh=GdVhlCL0AfK4ZNns2+YwoXffHjvNCYm7z0MGsPLfUzk=; b=QlPeArjDNAvob99wZoAp1X8sCc
+	Q/scfCIZibY+h0zjS/UxlVHn2BMhpLoH5nlkhsWlt3L3ehjpI4GOc4HPNyV419pd63dGnPngy48y3
+	QFs/Ss5RXtk8BCm+sx6JWSNF1ogtULrRV1d88OZ2RYGxgoX+hqNaKHfky/9WAEJ+qzVFRO4ZUkCTd
+	5XleJayiRYsBDtgiWJXKb8HYQq1R7iPIAEwqGgAPwgGFmJ3KU2aB+gy0SZfBnEdRhH4b5lmUiiDkn
+	hFEet5KCa/LccLcQ+zjuRa/VSNfmLGFxIuhLtYwsiieJkPPoE9D+jqFAj8FKJcN9BO5VBwTQZy7kT
+	OG2FeYBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaN1B-0005al-9l; Thu, 28 Nov 2019 16:51:49 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iaN2H-0006WI-2y; Thu, 28 Nov 2019 16:52:57 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaMzc-0004YO-Cr
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 16:50:16 +0000
-Received: by mail-pf1-x442.google.com with SMTP id y206so4753073pfb.0
+ id 1iaMzc-0004bU-D0
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 16:50:15 +0000
+Received: by mail-pg1-x543.google.com with SMTP id b137so10825534pga.6
  for <linux-arm-kernel@lists.infradead.org>;
  Thu, 28 Nov 2019 08:50:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=as0Dyqn9IW+Ib7FMH96nGeZ/5dUyDxEzw1IqFd6RcLM=;
- b=LWoQEcDUQHLetfKW6rW+t+LDD68rLNVYtb+J/5JvQjwdW2aCkD/yjcH+jbfyVtvH1P
- B+MXWFYRYwnd2grVFtyCK+NLuTWUPp1CmRnK1PxI/7J2Wet8vuP/tJwaPXyOeZfxp7Ji
- ZGgpo5WHMLI1xBw4tmsfd68A6ZnNXU/qJWUVCMaZFYsDsJlKGlnEjQzSGBjQFJac7zMB
- OFMCPKhQ3B6QDBzyULAvAf0RMWkl1CqZZo+beISxzWF4HTJLMQw8m+3FOr8RT6Ho7QIJ
- hu2J9gKiVLmU5Pj2CQO7JTKe/GIPgLr/gGT4FzH6qh6IzCdis72ohSNzRZTtpnVdQOJD
- lTfw==
+ bh=k+cv9/8Sp0jhDfTqkaHbtLM5d5QXQGR0f5kzjPotgaE=;
+ b=Yd4WyxjAx8E7rd/IcnhXBtcueXEooIqKr5vao3pVuHgjBkGq4ZaAjKekSK7fI51QyS
+ T3Go3A5pmOJD17IMW7rhikGV8N8kij+CEOuUarK5xLKoctOAsj4Rwd5wLAAmr56yeoyD
+ zLb+afITrkuBO3hkpfMtWS9ljhFWzf2DmSRynq3/Drb6buIrQvZyLD/qSjBn1wF37Klz
+ SUfduIUpjzIj3ZXYWTg5lTfyf4oEsu4X+a+SmVxzVpFdXbFqeexKBTcFf1WGUfXo/+y0
+ JZ8/aLdbI5VdH2fl9l6bNZIjyKdw5iC78x5Nk8JVNTcsyaxnMNyL91gSeYPRZBsOvJRf
+ q8eA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=as0Dyqn9IW+Ib7FMH96nGeZ/5dUyDxEzw1IqFd6RcLM=;
- b=IW96v5edu7pqDwRgemXXwfowVCxEUcs9+2xeaY62WLIQbQN/G8XtmQvjr2ml+K+MZl
- YXXJ0BkGuyIoyqyJ+QsdW6puPe+Ut1/uJ6EJDc9eSZDv7o5A+qDmhvl9eq3ATQIdksTe
- JOmxkP+8xbHVOOaCCKTxkK2268UmkfnjNYrJmzsXEXIQFUpn5AleHRw4HXoolmHXgna2
- wBW34ciVrCGMIjr8sUeyrVqcb5ptPL0odVfvznsWeba0VVBK7NtMHSiC5IcwNyMPG8jE
- YS9Xow7vQUhU8FE3x0N3FMOJRpGlzuUroj/pAvFISX0qQoEDOjehuhy5xOGWylUPRDg0
- 8Ivw==
-X-Gm-Message-State: APjAAAXYK6RWTO1vQ9nj2yykxcWYaFPRPbR8KugRqyIluLoAmXy4Odb9
- ON48qDDCj8iT+lGoHuc27cjbRHsXahg=
-X-Google-Smtp-Source: APXvYqwOnLS/7vwFXdBkF6U47M0v/d+v//XHzDBLADouTpgt0wZSZX1ch2wKxZSEtHp3izvH+R2zKw==
-X-Received: by 2002:a63:cc05:: with SMTP id x5mr12334748pgf.141.1574959810877; 
- Thu, 28 Nov 2019 08:50:10 -0800 (PST)
+ bh=k+cv9/8Sp0jhDfTqkaHbtLM5d5QXQGR0f5kzjPotgaE=;
+ b=euLO5q72HJqaTPkc7xc2KESqx9rmcBVauq180dvdHzUDQj16MWijKlORCJ98ImSx3m
+ UtX6O54Ku7uSFXxVAPGdKufIR24+oXzGM/J8YfV8h0BezqF0K4O9xr39EkdPTkmssZKt
+ LTc5UOov730S5nAAXdGIXeAkISdujnNuk/E7DvL7MlkhNNMfZaaXpulXtXr/b9w0atAk
+ mG36X/2hj5p/XPbHLESKbZvxl7FdZKD8Fjsb6NH2sLNWfYHWHlglv0+03RX7gRluLoh2
+ VmYmoUuELbDIoU10qzqTlBrfUHuWbBiUALYLDH34sFPgunqY3RUCNSZuxHlIvpCOFVLZ
+ 8CSQ==
+X-Gm-Message-State: APjAAAVJoXbjBddlcET01uc/GOH26hqSXlLd/Kj06XZuNK0qF+losKUb
+ FD0J5kNzbGRW0+lSYnMwp/Q4w4SL/t8=
+X-Google-Smtp-Source: APXvYqxMUMxa1h9uLzPiRHvcVLAXZAzEiAO/Y3bGcLiK5S5NnPVSNJLYsMbhcXpVdJJdVxnfyIP2MA==
+X-Received: by 2002:a63:3409:: with SMTP id b9mr12187554pga.320.1574959811725; 
+ Thu, 28 Nov 2019 08:50:11 -0800 (PST)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id a15sm2450343pfh.169.2019.11.28.08.50.10
+ by smtp.gmail.com with ESMTPSA id a15sm2450343pfh.169.2019.11.28.08.50.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 Nov 2019 08:50:10 -0800 (PST)
+ Thu, 28 Nov 2019 08:50:11 -0800 (PST)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: stable@vger.kernel.org
-Subject: [stable 4.19][PATCH 07/17] clk: stm32mp1: fix HSI divider flag
-Date: Thu, 28 Nov 2019 09:49:52 -0700
-Message-Id: <20191128165002.6234-8-mathieu.poirier@linaro.org>
+Subject: [stable 4.19][PATCH 08/17] clk: stm32mp1: fix mcu divider table
+Date: Thu, 28 Nov 2019 09:49:53 -0700
+Message-Id: <20191128165002.6234-9-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191128165002.6234-1-mathieu.poirier@linaro.org>
 References: <20191128165002.6234-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_085012_497220_E07E2E20 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20191128_085012_448550_4C293DC4 
+X-CRM114-Status: GOOD (  11.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,34 +105,32 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Gabriel Fernandez <gabriel.fernandez@st.com>
 
-commit d3f2e33c875de5052e032a9eefa64c897a930ed1 upstream
+commit 140fc4e406fac420b978a0ef2ee1fe3c641a6ae4 upstream
 
-The divider of HSI (clk-hsi-div) is power of two divider.
+index 8: ck_mcu is divided by 256 (not 512)
 
-Fixes: 9bee94e7b7da ("clk: stm32mp1: Introduce STM32MP1 clock driver")
+Fixes: e51d297e9a92 ("clk: stm32mp1: add Sub System clocks")
 Signed-off-by: Gabriel Fernandez <gabriel.fernandez@st.com>
 Signed-off-by: Stephen Boyd <sboyd@kernel.org>
 Cc: stable <stable@vger.kernel.org> # 4.19
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/clk/clk-stm32mp1.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/clk/clk-stm32mp1.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/clk/clk-stm32mp1.c b/drivers/clk/clk-stm32mp1.c
-index a907555b2a3d..d602ae72eb81 100644
+index d602ae72eb81..851fb4e9ac44 100644
 --- a/drivers/clk/clk-stm32mp1.c
 +++ b/drivers/clk/clk-stm32mp1.c
-@@ -1655,8 +1655,8 @@ static const struct stm32_mux_cfg ker_mux_cfg[M_LAST] = {
- 
- static const struct clock_config stm32mp1_clock_cfg[] = {
- 	/* Oscillator divider */
--	DIV(NO_ID, "clk-hsi-div", "clk-hsi", 0, RCC_HSICFGR, 0, 2,
--	    CLK_DIVIDER_READ_ONLY),
-+	DIV(NO_ID, "clk-hsi-div", "clk-hsi", CLK_DIVIDER_POWER_OF_TWO,
-+	    RCC_HSICFGR, 0, 2, CLK_DIVIDER_READ_ONLY),
- 
- 	/*  External / Internal Oscillators */
- 	GATE_MP1(CK_HSE, "ck_hse", "clk-hse", 0, RCC_OCENSETR, 8, 0),
+@@ -269,7 +269,7 @@ static const struct clk_div_table axi_div_table[] = {
+ static const struct clk_div_table mcu_div_table[] = {
+ 	{ 0, 1 }, { 1, 2 }, { 2, 4 }, { 3, 8 },
+ 	{ 4, 16 }, { 5, 32 }, { 6, 64 }, { 7, 128 },
+-	{ 8, 512 }, { 9, 512 }, { 10, 512}, { 11, 512 },
++	{ 8, 256 }, { 9, 512 }, { 10, 512}, { 11, 512 },
+ 	{ 12, 512 }, { 13, 512 }, { 14, 512}, { 15, 512 },
+ 	{ 0 },
+ };
 -- 
 2.17.1
 
