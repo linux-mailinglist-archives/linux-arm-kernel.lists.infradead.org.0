@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94C5D10CB46
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:05:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 290E310CB44
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:04:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qN5wA+9uu88IzMoyCmVqekH+d7LTl7O1KgiCCDObwIE=; b=O6BUU9CM4NzE6U
-	EFRf6MsaAPj6V4bylP4aXellgZDI5zfdmm6zXbkavJOvH/A/mVWvjeiltiVSYTvIpVCAxI/w5x2fc
-	VLmP5uXsXVB3V3X8SlaANqsQXxnp5VjyV//vZcOVquFRYL6yekXzTjezStaMadg2VXR+aLGWVU+W/
-	B/y4Tge+ujvtyAMSF39rjkOSd9InQDQRucHuRAD1X9nG9o0wu9rZzFlSB48bwe2wq4YUK2yrCALNS
-	0s/ubcTq5zxfs7LE/+yWZEFZmDVFrDJincwpehC9/KAAPQUhiyWSmF6ap/hRQOc9QJUAnCm4Zk1Pd
-	pGaeG6YBnn0mOFqfZBHQ==;
+	List-Owner; bh=WDcJpJjBJNsAtbf3eOei961KDmv4aSFu7t6CwzJauiA=; b=lqZtrMVDxgXSH3
+	T92obaYgrHLKSXzALoDira8BQb/owo+OO54XprMnVT2GlzoMl103higWQoT6F6assJLf3lJKTLjwh
+	IQ6MATfFvw7KQTzSDh9Q1ydtzHq/iUxfwQ40jVvM9PtoQUtrA8bjvraNxxd9QtnAZLTP7kq+OYAWu
+	8H86ch/LtDiUYf0hy9GjtjXe6j+DHdAEHhABAdeZavse8jN/ylUGi98hY3ARUfW83tyFvazFqF0Yk
+	eQZmntEaMz9kIc3eRCvJOuSUMkDRCoEzpmUCADZdYNMVOxH1oWsG2xVJ9nf9l4d5i8Yi3l1UwG+mN
+	a56xfC0oLalpLYxCbHRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaLMF-000819-Kk; Thu, 28 Nov 2019 15:05:27 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iaLLc-0006YF-Fn; Thu, 28 Nov 2019 15:04:48 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaLEr-0000yf-8o
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:58:03 +0000
-Received: by mail-lj1-x244.google.com with SMTP id k8so18299354ljh.5
+ id 1iaLEt-0000zC-2B
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:58:02 +0000
+Received: by mail-lj1-x242.google.com with SMTP id c19so1822284lji.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 06:57:49 -0800 (PST)
+ Thu, 28 Nov 2019 06:57:50 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=gOHk69/KFsExobLE9NJQaGShwXGaUdC/TzJxF/vkfiE=;
- b=BNS8YU7z/62qBru4p5dWldmGUqPFFFYcSf6UoO5+N8cI1t/eYIwVb93SWj/sJb/aPr
- CLgKaJzW4T4UJCDV6fxG/mFRQa5+pWEgUVNo9gk6Z/haJ0GbejDd0krX3Tx1ekUBIG7+
- Kf0VDKOEyN97OudALHUN6autns8qnyxm/Ncyk=
+ bh=QBhz5rvCw4g2Ox9AwtLP/2ydNw3vwlfo4gXSav3FB44=;
+ b=Fs4SgS4/1psPKfkuhI4Ny+x/2oJrTK7HBfKE4/RCaNwwy+uA8dMiNwd3beo5/zLTHw
+ 62oVxo+n4p+sA9/H9nbzmMU2pfSe0i3IY9PDEKXtA5Y16gW6pwQTd4R0Uiu6nNqFDpUH
+ SzXhTou8vQGjVBBwFvDic+ydbfn1zpUpRjhKA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=gOHk69/KFsExobLE9NJQaGShwXGaUdC/TzJxF/vkfiE=;
- b=PAaKQRM5mlnkEruMOe0vrsZ2TlDvxlqO29l5Gx8FMJOkTIFr8C5RlpeKzKCXWhuba2
- pPOnkRhHtfcCi20yQo3JFqSeW+TZ9RaAID23MFNXZ31E65UEno9W7/GunLlt/1lZ7gdS
- 4IUDy5+9Ee+3JV8snq9feHk0shULeJo4zntv0rL0tVv74jFct3JwcNg08HsvSuwhymeJ
- m2HX71BSWa9UQx6IQs5a+83Ektcy6LCdUHaeYhKfvD/gG/VUOp7oHbdqL06nzaQ2O5cv
- tsSYpt7woFgZpckx5BB5g7a9a1Vb6EJXgYGMc0OyUXuZwD4hFPWXLBAQYNcmcOvTb1tZ
- FGOQ==
-X-Gm-Message-State: APjAAAVbaCtKxrO3jRVqnZWcfxfCKJuDaGIQtyNZ4jHiJWGXHnhQt6zZ
- JNJhK7ZHIWgVJavqP1Ps+dLJWA==
-X-Google-Smtp-Source: APXvYqyIZpDYj/S47jI4BvahQQv0z5TMLaQBBFJjaoxjSz2gIfzyz1ZHAFXq4N7Oyd5IVHNFskfXyA==
-X-Received: by 2002:a2e:7405:: with SMTP id p5mr19349633ljc.34.1574953067629; 
- Thu, 28 Nov 2019 06:57:47 -0800 (PST)
+ bh=QBhz5rvCw4g2Ox9AwtLP/2ydNw3vwlfo4gXSav3FB44=;
+ b=NmjOP6eCorZ7qr5nl2KcjDSmniwUPJipTpdoO04DXTYcH86932YSbOoa2XtQpP8NSc
+ DQZl43nogB/3dDDqn95XIGEErpCwihedWTtNJ18AWSGjwNDzJGtj73h1TZklZaUPm+Dy
+ 1Ek8JTwmKZd+bVDJL9RkocB57gr2yF5U8Md483lhjtSBTbm/bl7cTLljxjLSsqhBhev6
+ c+sSY4Y7Qg1nDEEW5zXdDhXMbgILl3ZFZTZOD0oaZmby9LTgdHGto+GpaEfihi71furx
+ /fDZ18RvV88JAEM1kGy3wFx7vaSB6UgrK8YbAq6ThV6EhK/83AFV8SAio4wniNvT86+K
+ Rzzw==
+X-Gm-Message-State: APjAAAWDtTX7JiGcaqmKQdj4RqUQibBKfEHZihvsJV7z55OLu7Rl9ymW
+ 4njBMLo8M+ojnksavj/JJE9P5Q==
+X-Google-Smtp-Source: APXvYqx99pjU5nTC/rq9MmsMvdS7IjR/57AJ+W7tuU3iN95pO3rx6CAJcCzrdDDJbnd7jwEkPdc8CQ==
+X-Received: by 2002:a2e:888b:: with SMTP id k11mr10315128lji.87.1574953068992; 
+ Thu, 28 Nov 2019 06:57:48 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.57.46
+ by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.57.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 Nov 2019 06:57:47 -0800 (PST)
+ Thu, 28 Nov 2019 06:57:48 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v6 32/49] serial: ucc_uart: use of_property_read_u32() in
- ucc_uart_probe()
-Date: Thu, 28 Nov 2019 15:55:37 +0100
-Message-Id: <20191128145554.1297-33-linux@rasmusvillemoes.dk>
+Subject: [PATCH v6 33/49] serial: ucc_uart: limit brg-frequency workaround to
+ PPC32
+Date: Thu, 28 Nov 2019 15:55:38 +0100
+Message-Id: <20191128145554.1297-34-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
 References: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_065749_506065_0A53EAFC 
-X-CRM114-Status: GOOD (  15.67  )
+X-CRM114-CacheID: sfid-20191128_065751_131148_46C703CB 
+X-CRM114-Status: GOOD (  10.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,117 +105,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For this to work correctly on little-endian hosts, don't access the
-device-tree properties directly in native endianness, but use the
-of_property_read_u32() helper.
+According to Timur Tabi
 
+    This bug in older U-Boots is definitely PowerPC-specific
+
+So before allowing this driver to be built for platforms other than
+PPC32, make sure that we don't accept malformed device trees on those
+other platforms.
+
+Suggested-by: Timur Tabi <timur@kernel.org>
 Reviewed-by: Timur Tabi <timur@kernel.org>
 Acked-by: Timur Tabi <timur@kernel.org>
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/tty/serial/ucc_uart.c | 36 +++++++++++++++--------------------
- 1 file changed, 15 insertions(+), 21 deletions(-)
+ drivers/tty/serial/ucc_uart.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/drivers/tty/serial/ucc_uart.c b/drivers/tty/serial/ucc_uart.c
-index 313697842e24..c055abf4c919 100644
+index c055abf4c919..9436b93d5cfa 100644
 --- a/drivers/tty/serial/ucc_uart.c
 +++ b/drivers/tty/serial/ucc_uart.c
-@@ -1256,10 +1256,10 @@ static int soft_uart_init(struct platform_device *ofdev)
- static int ucc_uart_probe(struct platform_device *ofdev)
- {
- 	struct device_node *np = ofdev->dev.of_node;
--	const unsigned int *iprop;      /* Integer OF properties */
- 	const char *sprop;      /* String OF properties */
- 	struct uart_qe_port *qe_port = NULL;
- 	struct resource res;
-+	u32 val;
- 	int ret;
- 
- 	/*
-@@ -1290,23 +1290,20 @@ static int ucc_uart_probe(struct platform_device *ofdev)
- 
- 	/* Get the UCC number (device ID) */
- 	/* UCCs are numbered 1-7 */
--	iprop = of_get_property(np, "cell-index", NULL);
--	if (!iprop) {
--		iprop = of_get_property(np, "device-id", NULL);
--		if (!iprop) {
--			dev_err(&ofdev->dev, "UCC is unspecified in "
--				"device tree\n");
-+	if (of_property_read_u32(np, "cell-index", &val)) {
-+		if (of_property_read_u32(np, "device-id", &val)) {
-+			dev_err(&ofdev->dev, "UCC is unspecified in device tree\n");
- 			ret = -EINVAL;
- 			goto out_free;
- 		}
- 	}
- 
--	if ((*iprop < 1) || (*iprop > UCC_MAX_NUM)) {
--		dev_err(&ofdev->dev, "no support for UCC%u\n", *iprop);
-+	if (val < 1 || val > UCC_MAX_NUM) {
-+		dev_err(&ofdev->dev, "no support for UCC%u\n", val);
- 		ret = -ENODEV;
- 		goto out_free;
- 	}
--	qe_port->ucc_num = *iprop - 1;
-+	qe_port->ucc_num = val - 1;
- 
- 	/*
- 	 * In the future, we should not require the BRG to be specified in the
-@@ -1350,13 +1347,12 @@ static int ucc_uart_probe(struct platform_device *ofdev)
- 	}
- 
- 	/* Get the port number, numbered 0-3 */
--	iprop = of_get_property(np, "port-number", NULL);
--	if (!iprop) {
-+	if (of_property_read_u32(np, "port-number", &val)) {
- 		dev_err(&ofdev->dev, "missing port-number in device tree\n");
- 		ret = -EINVAL;
- 		goto out_free;
- 	}
--	qe_port->port.line = *iprop;
-+	qe_port->port.line = val;
- 	if (qe_port->port.line >= UCC_MAX_UART) {
- 		dev_err(&ofdev->dev, "port-number must be 0-%u\n",
- 			UCC_MAX_UART - 1);
-@@ -1386,31 +1382,29 @@ static int ucc_uart_probe(struct platform_device *ofdev)
- 		}
- 	}
- 
--	iprop = of_get_property(np, "brg-frequency", NULL);
--	if (!iprop) {
-+	if (of_property_read_u32(np, "brg-frequency", &val)) {
- 		dev_err(&ofdev->dev,
- 		       "missing brg-frequency in device tree\n");
- 		ret = -EINVAL;
- 		goto out_np;
- 	}
- 
--	if (*iprop)
--		qe_port->port.uartclk = *iprop;
-+	if (val)
-+		qe_port->port.uartclk = val;
+@@ -1392,6 +1392,13 @@ static int ucc_uart_probe(struct platform_device *ofdev)
+ 	if (val)
+ 		qe_port->port.uartclk = val;
  	else {
++		if (!IS_ENABLED(CONFIG_PPC32)) {
++			dev_err(&ofdev->dev,
++				"invalid brg-frequency in device tree\n");
++			ret = -EINVAL;
++			goto out_np;
++		}
++
  		/*
  		 * Older versions of U-Boot do not initialize the brg-frequency
  		 * property, so in this case we assume the BRG frequency is
- 		 * half the QE bus frequency.
- 		 */
--		iprop = of_get_property(np, "bus-frequency", NULL);
--		if (!iprop) {
-+		if (of_property_read_u32(np, "bus-frequency", &val)) {
- 			dev_err(&ofdev->dev,
- 				"missing QE bus-frequency in device tree\n");
- 			ret = -EINVAL;
- 			goto out_np;
- 		}
--		if (*iprop)
--			qe_port->port.uartclk = *iprop / 2;
-+		if (val)
-+			qe_port->port.uartclk = val / 2;
- 		else {
- 			dev_err(&ofdev->dev,
- 				"invalid QE bus-frequency in device tree\n");
 -- 
 2.23.0
 
