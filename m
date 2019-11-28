@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3B5210C5B6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 10:12:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92D8B10C5FB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 10:27:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e+FEIbW4vanfNQcZWhL1vQaU/B/GFDMFaMehQlFbXZM=; b=k1mAANJGrdAmcK
-	FVEHD1rbRuCrqZnZjI0QWmBvIErfZpSPI8rR4h8sjzazR4piETfHFjfnbI2ExVh8DaEd6JQYh1NAK
-	zE3RTbn/qkvvMmg+dE5qAQwYP815hNaYfOQR8mLVyg4gdEo3KWQIZbNveSzpTxG5gFC+qnh7bX0hR
-	M/79m+/i3jL/AViDmrv9iUvNmMNa9nyPnrcAjYcfa2OUUy3tp5iYajN0rDYZoNfP+cyiYjlhbz7pX
-	hZDXaMSVcisK1LM6Qm558bPXBhMqeiGFaQtSWCseWQIkjCC9AuWKFm56qXtOXS61GexpQGRMeUszI
-	P23bEDyLDIyB4q0v9cCg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nbFyQKncc4mfQTd4BxeuOu6tSrM9quUqx/BcLdRIcjU=; b=I1l8CTbiEZlC3l
+	2i5SViDGy/JEXe56RGCssAqqndZwAkwNzYaO7i9iJi3O9TPkWm97eoPUahOifY2/1ceg0qtB9P0l7
+	qctbKHd6lb3BNyXiXt/+xwZ/qTzxxt+1a6953ZVWUQtgY6LOXe/WNViS68QYZabwGseud7YAOLIJ6
+	3zed/6u6LgGJ4cfbLW30DwhjPKtXg9qmYj7GZo/5RYzPC3cOiZjWk2CAnL4o3H+hq0QrtPEMZdKi6
+	RJuTWni31Xd/R7QxvioT6X0NorIdpIC3Z26q2ZUZeoGJxGI0FlCyOWvb9vn/NjZAs+ZwHmVEY/2ka
+	XRtDybDs8dC55s44j/pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaFqI-0004Bh-FC; Thu, 28 Nov 2019 09:12:06 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iaG4o-0001UV-Th; Thu, 28 Nov 2019 09:27:06 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaFq8-0004Aj-Ro
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 09:11:58 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 136C42056B;
- Thu, 28 Nov 2019 10:11:52 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id E3DF120234;
- Thu, 28 Nov 2019 10:11:51 +0100 (CET)
-Subject: Re: [PATCH] arm64: defconfig: Change CONFIG_AT803X_PHY from m to y
-To: Oliver Graute <oliver.graute@gmail.com>
-References: <20191127124638.GC5108@optiplex>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <1ed54a69-c29f-6008-02ae-11d16f68b265@free.fr>
-Date: Thu, 28 Nov 2019 10:11:51 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iaG4g-0001Tg-ER
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 09:26:59 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 1F597E295C216E7C7B78;
+ Thu, 28 Nov 2019 17:26:56 +0800 (CST)
+Received: from huawei.com (10.175.105.18) by DGGEMS413-HUB.china.huawei.com
+ (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Thu, 28 Nov 2019
+ 17:26:45 +0800
+From: linmiaohe <linmiaohe@huawei.com>
+To: <maz@kernel.org>, <pbonzini@redhat.com>, <rkrcmar@redhat.com>,
+ <james.morse@arm.com>, <julien.thierry.kdev@gmail.com>,
+ <suzuki.poulose@arm.com>, <christoffer.dall@arm.com>,
+ <catalin.marinas@arm.com>, <eric.auger@redhat.com>,
+ <gregkh@linuxfoundation.org>, <will@kernel.org>, <andre.przywara@arm.com>,
+ <tglx@linutronix.de>
+Subject: [PATCH v2] KVM: vgic: Use wrapper function to lock/unlock all vcpus
+ in kvm_vgic_create()
+Date: Thu, 28 Nov 2019 17:26:48 +0800
+Message-ID: <1574933208-24911-1-git-send-email-linmiaohe@huawei.com>
+X-Mailer: git-send-email 1.8.3.1
 MIME-Version: 1.0
-In-Reply-To: <20191127124638.GC5108@optiplex>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Thu Nov 28 10:11:52 2019 +0100 (CET)
+X-Originating-IP: [10.175.105.18]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_011157_048439_68B2A15B 
-X-CRM114-Status: GOOD (  13.81  )
+X-CRM114-CacheID: sfid-20191128_012658_648465_9C4A66AB 
+X-CRM114-Status: GOOD (  10.15  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,99 +67,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Peng Fan <peng.fan@nxp.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Anson Huang <anson.huang@nxp.com>,
- =?UTF-8?Q?Andr=c3=a9_Draszik?= <git@andred.net>,
- LKML <linux-kernel@vger.kernel.org>, Russell King <rmk+kernel@armlinux.org.uk>,
- dl-linux-imx <linux-imx@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: linmiaohe@huawei.com, kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/11/2019 13:46, Oliver Graute wrote:
+From: Miaohe Lin <linmiaohe@huawei.com>
 
-> On 27/11/19, Marc Gonzalez wrote:
->
->> On 26/11/2019 15:54, Oliver Graute wrote:
->>
->>> this patch broke my imx8qm nfs setup. With the generic phy driver my
->>> board is booting fine. But with the AT803X_PHY=y enabled  I'm running
->>> into the following phy issue. So on my side it looks inverse as on
->>> yours. What is the best proposal to fix this?
->>>
->>> [    5.550442] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
->>> [    5.573206] Sending DHCP requests ...... timed out!
->>> [   95.339702] IP-Config: Retrying forever (NFS root)...
->>> [   95.348873] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
->>> [   99.438443] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
->>> [   99.461206] Sending DHCP requests ...... timed out!
->>
->> Which DTS are you using?
-> 
-> I'am using this DTS which I'am currently working on:
-> 
-> https://lists.infradead.org/pipermail/linux-arm-kernel/2019-October/689501.html
->>
->> I bet one dollar that 6d4cd041f0af triggered a latent bug in the DTS.
-> 
-> So what should I fix in my device tree?
+Use wrapper function lock_all_vcpus()/unlock_all_vcpus()
+in kvm_vgic_create() to remove duplicated code dealing
+with locking and unlocking all vcpus in a vm.
 
-In the board DTS I used to work on, I had this:
+Signed-off-by: Miaohe Lin <linmiaohe@huawei.com>
+---
+-v2:
+	Fix some spelling mistake in patch title and commit log.
+---
+ virt/kvm/arm/vgic/vgic-init.c | 14 ++++----------
+ 1 file changed, 4 insertions(+), 10 deletions(-)
 
-&eth0 {
-	phy-connection-type = "rgmii-id";
-	phy-handle = <&eth0_phy>;
-	#address-cells = <1>;
-	#size-cells = <0>;
+diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
+index b3c5de48064c..53e3969dfb52 100644
+--- a/virt/kvm/arm/vgic/vgic-init.c
++++ b/virt/kvm/arm/vgic/vgic-init.c
+@@ -70,7 +70,7 @@ void kvm_vgic_early_init(struct kvm *kvm)
+  */
+ int kvm_vgic_create(struct kvm *kvm, u32 type)
+ {
+-	int i, vcpu_lock_idx = -1, ret;
++	int i, ret;
+ 	struct kvm_vcpu *vcpu;
+ 
+ 	if (irqchip_in_kernel(kvm))
+@@ -92,11 +92,8 @@ int kvm_vgic_create(struct kvm *kvm, u32 type)
+ 	 * that no other VCPUs are run while we create the vgic.
+ 	 */
+ 	ret = -EBUSY;
+-	kvm_for_each_vcpu(i, vcpu, kvm) {
+-		if (!mutex_trylock(&vcpu->mutex))
+-			goto out_unlock;
+-		vcpu_lock_idx = i;
+-	}
++	if (!lock_all_vcpus(kvm))
++		return ret;
+ 
+ 	kvm_for_each_vcpu(i, vcpu, kvm) {
+ 		if (vcpu->arch.has_run_once)
+@@ -125,10 +122,7 @@ int kvm_vgic_create(struct kvm *kvm, u32 type)
+ 		INIT_LIST_HEAD(&kvm->arch.vgic.rd_regions);
+ 
+ out_unlock:
+-	for (; vcpu_lock_idx >= 0; vcpu_lock_idx--) {
+-		vcpu = kvm_get_vcpu(kvm, vcpu_lock_idx);
+-		mutex_unlock(&vcpu->mutex);
+-	}
++	unlock_all_vcpus(kvm);
+ 	return ret;
+ }
+ 
+-- 
+2.19.1
 
-	/* Atheros AR8035 */
-	eth0_phy: ethernet-phy@4 {
-		compatible = "ethernet-phy-id004d.d072",
-			     "ethernet-phy-ieee802.3-c22";
-		interrupts = <37 IRQ_TYPE_EDGE_RISING>;
-		reg = <4>;
-	};
-};
-
-In your DTS, you #include "imx8qm.dtsi"
-I found no such file:
-$ git ls-files | grep imx8qm
-drivers/pinctrl/freescale/pinctrl-imx8qm.c
-include/dt-bindings/pinctrl/pads-imx8qm.h
-
-In your patch:
-https://patchwork.kernel.org/patch/11211567/
-
-+&fec1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_fec1>;
-+	phy-mode = "rgmii-txid";
-+	phy-handle = <&ethphy0>;
-+	fsl,magic-packet;
-+	fsl,rgmii_rxc_dly;
-+	status = "okay";
-+
-+	mdio {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		ethphy0: ethernet-phy@0 {
-+			compatible = "ethernet-phy-ieee802.3-c22";
-+			reg = <4>;
-+			at803x,eee-disabled;
-+			at803x,vddio-1p8v;
-+		};
-+	};
-+};
-
-Try all possible 'phy-mode' (rgmii, rgmii-id, rgmii-rxid, rgmii-txid)
-Investigate 'fsl,rgmii_rxc_dly' (it's not a standard Linux DT prop)
-Documentation/devicetree/bindings/net/ethernet-controller.yaml
-
-Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
