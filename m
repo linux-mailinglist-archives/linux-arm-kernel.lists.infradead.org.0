@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A10E10C2B9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 04:09:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A9E510C2BD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 04:10:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=o3F7+lmnQkyQ76uFQ0GDycY6FRQE9FS9oVWAdLTdHFw=; b=JvXx+v20v7fAZo
-	KSA9BfDYFBt/U84+am3ZsXoyrZWKI4QVRUH4fa0frmOUD8dwXP4z/MIgM+FGpD+LLCyqb0jo4QASV
-	8v/4SygjS+ym5eS/i/zH2qo6blRZfl+l+VsmcDnPbS7QmFBstW0vkGKPxI+WAivSPaxSj/rI786n9
-	RDHYmIz836iKbYXYObeFWmbIZPpzjjD9ZCnMJduCDVTry/t2IuuqXzcEllJlrD4qNGzV02npIR0dV
-	s7q1NDtv8vQYlU5HZlhPgpSYYV5y86KMF7jYOj+TzqDT+soK1jcrpwkWei//UGDaab2iwRkY0GYI/
-	tlfkhsESGUIZ1YY79hDg==;
+	List-Owner; bh=wFvVUjYxbcW4ODRqUHQr6gUrrT2U93qMgTxyQS1t/Tw=; b=X68mT1fbX2jRf7
+	avmI+jEQgKGYUkd+Zl2RDcGOv5MvYnnBsq0m42EZnaZWxdFtfAGObS5CbVX8sP5ZZEwjjJOCZPHnH
+	as1l8fGaSVrarePhFTupARGIQH18y62mwDpQISQWVguR6980iFXlEvBFzK/KJBrhlMvN6emuvp8R9
+	dZIthQHxqHANXei73sGh8yrmmPoUmD43YOFcWnFOdBqTfJxp0bXVoQTn2NofnA6rA3o1WfCCMpA6a
+	izphlaP2Du+Nz0+1FLo4Q6h7Qxq624jSaUOoeoobELax8oauHY/DZPp7qITkdOldIpS4lXFUnUPI6
+	nj07nq7Lb7XlKFqhXx/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaABU-0002KB-Sa; Thu, 28 Nov 2019 03:09:36 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1iaABu-0002ZM-HF; Thu, 28 Nov 2019 03:10:02 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaABN-0002JA-UL
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 03:09:31 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id CCF043E07834170A7368;
- Thu, 28 Nov 2019 11:09:18 +0800 (CST)
-Received: from huawei.com (10.175.105.18) by DGGEMS407-HUB.china.huawei.com
- (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0; Thu, 28 Nov 2019
- 11:09:08 +0800
+ id 1iaABg-0002Y7-Ol
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 03:09:50 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 856BAF4DD1C48B2C5754;
+ Thu, 28 Nov 2019 11:09:46 +0800 (CST)
+Received: from huawei.com (10.175.105.18) by DGGEMS408-HUB.china.huawei.com
+ (10.3.19.208) with Microsoft SMTP Server id 14.3.439.0; Thu, 28 Nov 2019
+ 11:09:39 +0800
 From: linmiaohe <linmiaohe@huawei.com>
 To: <maz@kernel.org>, <pbonzini@redhat.com>, <rkrcmar@redhat.com>,
  <james.morse@arm.com>, <julien.thierry.kdev@gmail.com>,
@@ -36,25 +36,24 @@ To: <maz@kernel.org>, <pbonzini@redhat.com>, <rkrcmar@redhat.com>,
  <catalin.marinas@arm.com>, <eric.auger@redhat.com>,
  <gregkh@linuxfoundation.org>, <will@kernel.org>, <andre.przywara@arm.com>,
  <tglx@linutronix.de>
-Subject: [PATCH] KVM: vgic: Use warpper function to lock/unlock all vcpus in
- kvm_vgic_create()
-Date: Thu, 28 Nov 2019 11:09:11 +0800
-Message-ID: <1574910551-14351-1-git-send-email-linmiaohe@huawei.com>
+Subject: [PATCH] KVM: arm64: get rid of var ret and out jump label in
+ kvm_arch_vcpu_ioctl_set_guest_debug()
+Date: Thu, 28 Nov 2019 11:09:42 +0800
+Message-ID: <1574910582-14405-1-git-send-email-linmiaohe@huawei.com>
 X-Mailer: git-send-email 1.8.3.1
 MIME-Version: 1.0
 X-Originating-IP: [10.175.105.18]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_190930_134080_66126A14 
-X-CRM114-Status: UNSURE (   9.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191127_190948_971428_37344F1F 
+X-CRM114-Status: GOOD (  10.42  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,54 +76,44 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Miaohe Lin <linmiaohe@huawei.com>
 
-Use warpper function lock_all_vcpus()/unlock_all_vcpus()
-in kvm_vgic_create() to remove duplicated code dealing
-with locking and unlocking all vcpus in a vm.
-
+The var ret and out jump label is not really needed. Clean them
+up.
 Signed-off-by: Miaohe Lin <linmiaohe@huawei.com>
 ---
- virt/kvm/arm/vgic/vgic-init.c | 14 ++++----------
- 1 file changed, 4 insertions(+), 10 deletions(-)
+ arch/arm64/kvm/guest.c | 11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
 
-diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
-index b3c5de48064c..53e3969dfb52 100644
---- a/virt/kvm/arm/vgic/vgic-init.c
-+++ b/virt/kvm/arm/vgic/vgic-init.c
-@@ -70,7 +70,7 @@ void kvm_vgic_early_init(struct kvm *kvm)
-  */
- int kvm_vgic_create(struct kvm *kvm, u32 type)
+diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+index 2fff06114a8f..3b836c91609e 100644
+--- a/arch/arm64/kvm/guest.c
++++ b/arch/arm64/kvm/guest.c
+@@ -834,14 +834,10 @@ int kvm_arch_vcpu_ioctl_translate(struct kvm_vcpu *vcpu,
+ int kvm_arch_vcpu_ioctl_set_guest_debug(struct kvm_vcpu *vcpu,
+ 					struct kvm_guest_debug *dbg)
  {
--	int i, vcpu_lock_idx = -1, ret;
-+	int i, ret;
- 	struct kvm_vcpu *vcpu;
+-	int ret = 0;
+-
+ 	trace_kvm_set_guest_debug(vcpu, dbg->control);
  
- 	if (irqchip_in_kernel(kvm))
-@@ -92,11 +92,8 @@ int kvm_vgic_create(struct kvm *kvm, u32 type)
- 	 * that no other VCPUs are run while we create the vgic.
- 	 */
- 	ret = -EBUSY;
--	kvm_for_each_vcpu(i, vcpu, kvm) {
--		if (!mutex_trylock(&vcpu->mutex))
--			goto out_unlock;
--		vcpu_lock_idx = i;
+-	if (dbg->control & ~KVM_GUESTDBG_VALID_MASK) {
+-		ret = -EINVAL;
+-		goto out;
 -	}
-+	if (!lock_all_vcpus(kvm))
-+		return ret;
++	if (dbg->control & ~KVM_GUESTDBG_VALID_MASK)
++		return -EINVAL;
  
- 	kvm_for_each_vcpu(i, vcpu, kvm) {
- 		if (vcpu->arch.has_run_once)
-@@ -125,10 +122,7 @@ int kvm_vgic_create(struct kvm *kvm, u32 type)
- 		INIT_LIST_HEAD(&kvm->arch.vgic.rd_regions);
+ 	if (dbg->control & KVM_GUESTDBG_ENABLE) {
+ 		vcpu->guest_debug = dbg->control;
+@@ -856,8 +852,7 @@ int kvm_arch_vcpu_ioctl_set_guest_debug(struct kvm_vcpu *vcpu,
+ 		vcpu->guest_debug = 0;
+ 	}
  
- out_unlock:
--	for (; vcpu_lock_idx >= 0; vcpu_lock_idx--) {
--		vcpu = kvm_get_vcpu(kvm, vcpu_lock_idx);
--		mutex_unlock(&vcpu->mutex);
--	}
-+	unlock_all_vcpus(kvm);
- 	return ret;
+-out:
+-	return ret;
++	return 0;
  }
  
+ int kvm_arm_vcpu_arch_set_attr(struct kvm_vcpu *vcpu,
 -- 
 2.19.1
 
