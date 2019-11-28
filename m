@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1023C10CD40
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 17:52:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B155610CD45
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 17:52:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6JURbJYIN4ERTVdu7PU43vSp0qjAi2/tlykskmSqGYE=; b=IW/6hV8uNqUxOZBLJ3aQX8u+CP
-	cJFxcm2PA07pjWnbSrrz4TO7jBhvEbVBxgsSGI1/h5UJcHMq44zQorYR+tPJuCfZiwIqBF2lAtkRj
-	LNOIL/OggLunwGQtcuGncPXfhdzfYJaxhgVijDRvXKFruthFSkv5iNtDjcR1ppH9nNB9NvrT6vwfn
-	tpW2Gk/PWXOYkjKoIwGxu8B1Xz/3RzsNhYxLXlerCEXYin37mgpau0/oiKc+qrNTsKnLwSa6mnAaD
-	AGsHiz10LWZT4GjlnPA7hAFEVVUUOZBtNNsnUMMDuUYolK4z7fPKY8ENLAz+hXZ7K1itUFao79S1S
-	/MFFObew==;
+	bh=E1tyV8MjstiHoo6fFpnVHR8jz/tT8rzXAWjBVeFuMps=; b=RmV1XVIVRP31vcUk5Ng6F65Q01
+	CtRqgT7JmHn2on1a5EzVtOFY6JaGCu9rRWe6XAUtxwzLbUpkV9zH/qcmPE4rKb3wCJk+C9cs0mpw6
+	fXALy1MaEyBDdhVKA6i0QXmQysZn4d3L2NoKNbmofjyfUJV7krFtbFUC9Id/tTEnZTMMSFKtGBqzy
+	QRUFePkzROIwbwNdHErBn42SzELcfJiOAOGTkTcEaApvkdlld8rXVTQPNYR+I2rrf4U0p05c0fAKs
+	2CIh+d90FLTk5mGukxk/A7c2/Wa0wIIctrvevtCtoxdelVJtw4mEx5zc5AdBZItmeOOukf+Xr4kcw
+	RRITp5nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaN1V-0005oz-02; Thu, 28 Nov 2019 16:52:09 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iaN20-0006G7-Ub; Thu, 28 Nov 2019 16:52:40 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaMza-0004KG-WB
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 16:50:15 +0000
-Received: by mail-pg1-x543.google.com with SMTP id k1so4771060pga.13
+ id 1iaMzb-0004Qk-IV
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 16:50:16 +0000
+Received: by mail-pg1-x541.google.com with SMTP id e6so13117373pgi.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 08:50:09 -0800 (PST)
+ Thu, 28 Nov 2019 08:50:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=6rU2ZvHsnSzYwMs7Z05xUbhf11jabY6wDKJCR5AZiJ8=;
- b=xLaNPUaUIKXCW9bn1eGbhGpqCq44pw7uvqUvbHWA4HXNCC3j8wDWHuHJOglsgXtqSk
- WHKtLL/F++cUfpC9UOFnfKeZYczymLgalUAVwkbj2XQewDTZaY49MRx4nJHwuX2LQ22g
- hZCd2n+Fs45bxCw09A83bpNdll58/D85vKQUfLvPhdLeJGezwl2ddQlfKf/glagBUdp8
- 1m8c/kJuqMChbyaZPNkYaMtKvkiReM3ynaPvfVHGYkjtbrEIXiSF6jmuEjWy5hUisEd3
- Mo7glQ+8H5q3aaptBsBgrOKcyZoZ596KJiz3lV9SYRpWfxNey2AXYAhCR4YSM6ExV8xq
- OwkQ==
+ bh=/CYFf1/fglZp7zKhC9PXoy9tsiufDFpWHrIfBoNpSeA=;
+ b=j+pGVSDttH9jAktUOyITmB+U/zXlXzbNFhYXzCMcA9YJZsyvOI6ptywHmqwrnG657V
+ ftZVMmSzBzBStJF3FvFBVguNBN8TxhFKRNxvT/m6XssDlhTd8hg+TyGWXhlsA0w59WrP
+ BLzwMuPWzNVVol4FXSGqovGCtodZh3fUTlZJVirJH1GpmyUiwk+0m8+v5p2gzNNNGQxN
+ mVFASCDxrO4X8ORdulic6AyyRWOS3GnWNQdBZiXZSvIY6OrBimlNOZiFKyoeAAResIxx
+ qGIVd/cUVwNW2Qs4NUVrMmgeZSxr6+xP7wLPLbJt1DPDj/umY/SMhtsdLDi8QiGvAYMq
+ kWpQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=6rU2ZvHsnSzYwMs7Z05xUbhf11jabY6wDKJCR5AZiJ8=;
- b=ZaI2R85WPX1yeWlGOPcsrRnxTsQ3418eCHyvEo3/AbB8zNk0GWwvx9IA28owM5FceD
- SyQ6FIRxry4NQrK7VGzItSq3n0mLy05Owv8kNdBXZctCMvzEuZMpQlZO/AyPB8Kaqn70
- tYB2CDmNrufNdIG6yBZQNBtRqOHWEUpabroyPDVWIRsoKsA6xRF5MkORRTxf8J/0Z0fE
- jnfSSOvsHrKYnT/xjKXlio8C49VK8XKJ/xdtM2B7hnab3/AfWVqCuPL8ZxXWnx0A5DcF
- 794q79AYEyBdK+bq2gPlEj+/sqXwzkTKZlOhcePXacbAFA3rzDcnJBPxvgu2BIelTJd6
- Y0gQ==
-X-Gm-Message-State: APjAAAWiQqCgp/CnFAsn6HIml5f+Xn24hFzNHmiAnWexmn7rxB2ZPfSC
- 4/IZgv7kUVzpaz4jKCLDgzaTwA==
-X-Google-Smtp-Source: APXvYqwwS5sB68lbDlyVrgeTCJ16HYifOS/3Hk6LpNS+0KYfnvpq3hykK4GUDY5gN7r2/bWGXWlThQ==
-X-Received: by 2002:a63:4547:: with SMTP id u7mr12360882pgk.423.1574959809102; 
- Thu, 28 Nov 2019 08:50:09 -0800 (PST)
+ bh=/CYFf1/fglZp7zKhC9PXoy9tsiufDFpWHrIfBoNpSeA=;
+ b=WKn7h6Omk/9VAq0ReP+YwAIU/TBVdbJDKiKlYrA/VGlVCuCej/fwL7NxL4Jh3QtyO3
+ U7bVywTGePSqh+Pz2t0RV6QZPzurd2osXj/8asqUBCZJNhaq69EzB2O1maBjvn3yiuOD
+ OvbJvaC2gukAxKOSmyDVIQA/OjMdalbVozIMfVRQlbBLQkaNvI7MVIAb3MkrDHdFmCFT
+ QmJKoWPgfrBOEUxJQHOP2CWT2B6gyXDbDFIoqQ+IbZ4jkTu6VFqyBnl/Rr2OsZj5430p
+ XLF0/MHknLeobavd6SYbyD83AbSdbdE9W5FLBXpUZiNJ38SH73TuEduYU7Rh7ObGSBsv
+ L7XA==
+X-Gm-Message-State: APjAAAVcHa6DvDVq5z4Bl4yyKQdu9VPQb3m868pR2JQAyN1DXaXXiYNV
+ 0OBgwi3snI/jXHEl4mUxerd9uw==
+X-Google-Smtp-Source: APXvYqzpKQyfQldmlacCexxAJBteAtozIdoLogYWnWundKX96otdtVJvtxFQ/5CTEI8XhLTF/bnfEg==
+X-Received: by 2002:a63:f62:: with SMTP id 34mr11469684pgp.19.1574959810061;
+ Thu, 28 Nov 2019 08:50:10 -0800 (PST)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id a15sm2450343pfh.169.2019.11.28.08.50.08
+ by smtp.gmail.com with ESMTPSA id a15sm2450343pfh.169.2019.11.28.08.50.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 Nov 2019 08:50:08 -0800 (PST)
+ Thu, 28 Nov 2019 08:50:09 -0800 (PST)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: stable@vger.kernel.org
-Subject: [stable 4.19][PATCH 05/17] hwrng: stm32 - fix unbalanced
- pm_runtime_enable
-Date: Thu, 28 Nov 2019 09:49:50 -0700
-Message-Id: <20191128165002.6234-6-mathieu.poirier@linaro.org>
+Subject: [stable 4.19][PATCH 06/17] remoteproc: fix rproc_da_to_va in case of
+ unallocated carveout
+Date: Thu, 28 Nov 2019 09:49:51 -0700
+Message-Id: <20191128165002.6234-7-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191128165002.6234-1-mathieu.poirier@linaro.org>
 References: <20191128165002.6234-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_085011_128919_C173A254 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20191128_085011_707730_737E8552 
+X-CRM114-Status: GOOD (  10.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,48 +104,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lionel Debieve <lionel.debieve@st.com>
+From: Loic Pallardy <loic.pallardy@st.com>
 
-commit af0d4442dd6813de6e77309063beb064fa8e89ae upstream
+commit 74457c40f97a98142bb13153395d304ad3c85cdd upstream
 
-No remove function implemented yet in the driver.
-Without remove function, the pm_runtime implementation
-complains when removing and probing again the driver.
+With introduction of rproc_alloc_registered_carveouts() which
+delays carveout allocation just before the start of the remote
+processor, rproc_da_to_va() could be called before all carveouts
+are allocated.
+This patch adds a check in rproc_da_to_va() to return NULL if
+carveout is not allocated.
 
-Signed-off-by: Lionel Debieve <lionel.debieve@st.com>
-Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+Fixes: d7c51706d095 ("remoteproc: add alloc ops in rproc_mem_entry struct")
+
+Signed-off-by: Loic Pallardy <loic.pallardy@st.com>
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 Cc: stable <stable@vger.kernel.org> # 4.19
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/char/hw_random/stm32-rng.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ drivers/remoteproc/remoteproc_core.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/drivers/char/hw_random/stm32-rng.c b/drivers/char/hw_random/stm32-rng.c
-index 042860d97b15..37b338a76ba4 100644
---- a/drivers/char/hw_random/stm32-rng.c
-+++ b/drivers/char/hw_random/stm32-rng.c
-@@ -169,6 +169,13 @@ static int stm32_rng_probe(struct platform_device *ofdev)
- 	return devm_hwrng_register(dev, &priv->rng);
- }
+diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+index aa6206706fe3..af9d443e7796 100644
+--- a/drivers/remoteproc/remoteproc_core.c
++++ b/drivers/remoteproc/remoteproc_core.c
+@@ -183,6 +183,10 @@ void *rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+ 	list_for_each_entry(carveout, &rproc->carveouts, node) {
+ 		int offset = da - carveout->da;
  
-+static int stm32_rng_remove(struct platform_device *ofdev)
-+{
-+	pm_runtime_disable(&ofdev->dev);
++		/*  Verify that carveout is allocated */
++		if (!carveout->va)
++			continue;
 +
-+	return 0;
-+}
-+
- #ifdef CONFIG_PM
- static int stm32_rng_runtime_suspend(struct device *dev)
- {
-@@ -210,6 +217,7 @@ static struct platform_driver stm32_rng_driver = {
- 		.of_match_table = stm32_rng_match,
- 	},
- 	.probe = stm32_rng_probe,
-+	.remove = stm32_rng_remove,
- };
- 
- module_platform_driver(stm32_rng_driver);
+ 		/* try next carveout if da is too small */
+ 		if (offset < 0)
+ 			continue;
 -- 
 2.17.1
 
