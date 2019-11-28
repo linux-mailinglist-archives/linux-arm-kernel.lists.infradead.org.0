@@ -2,56 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B8C710C465
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 08:42:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CD8D10C46B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 08:43:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ILR6LC42cWnf/36QMHsrE3z8V1l2ZM9c0QxdrCM9RD4=; b=D7LUUTaoUius8TRLsohP25WJ0
-	vUhEnDhxD3uOPtqzpcs5PRez9I9fQoq8CQGcks3vYLWte3sDawmvxX1b8iF4ptF4ph5tys/a0w6Re
-	SqISHkxk+ahVbkyl10bV2p0NorLNkTkSU40n54OCMd5/cY/jfY/iUo+sToYCRRS2iLOvgXgC1DWbF
-	yyMNv4d9XF1289MPLy2UcMYPIZe735aRsGMKlFx06YoNU5guwGiYPLWr5fqchKQGSJ8hkbm9Mo3o+
-	V/tekFMKapGiJcqLm66chqrtkJasTeWCZCcslO2WKOnrDkeEjPwte4CLl7wTqzBh9qtdXbrx63pIQ
-	wWt5ZwPQA==;
+	 bh=0OQ2yryDOcnvLTjKUCwSOdMvvgZRGZyBoQKLbXvHhfY=; b=sezk5vOCoL7orAT21g6fUgTtT
+	twsViRs44eObRSMFomBMJQGf8F7GMnbaLv7tFkbN5OrSi4KiwFISLhoeTRAwFvByJDUqRAq/krkAO
+	OZO5pVhhdQoqXbunNGqWl8NGavXJxGZLBICn0BipduPp4zdly9AGn8EjSzSw+JpAu81E/WAVYAffo
+	l7Bqqyz5mbs22WkPrTPaj5WQ2hxVyXecvyGmzfZY/IRH5S3UWlgj1NUbS7fpw4i1J2FVyOja/V5qu
+	QzoJ4pmzZtwB9oiituIKH1+AHN0C8R6BpTqfi3/s+H+gNaRWj/5YKXrRmYvgApdAYN7sVkgdCPNhi
+	+7ssM3qxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaERd-0003UW-0A; Thu, 28 Nov 2019 07:42:33 +0000
+	id 1iaESk-0003kv-RG; Thu, 28 Nov 2019 07:43:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaERT-0003TW-VJ
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 07:42:25 +0000
+ id 1iaESW-0003jy-Gt
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 07:43:34 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 607442154A;
- Thu, 28 Nov 2019 07:42:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BAAB0215F2;
+ Thu, 28 Nov 2019 07:43:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574926940;
- bh=j0Tz96Fkl28s6zX+DlYzNGtrex6eFQbYospBRTigaKc=;
+ s=default; t=1574927008;
+ bh=MxbZZyhMxP8MypT5uzl2FbmRA7P2Fx2ZT4tGfc6hXSA=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1qi6fI/4PWQ2IEoHYlgo1pPyMok3HEHinsu6q5lLtbK/TaSl4hKDZOwg4iadRNEZO
- XTAVgHapTKp9dmOOVsGC2P/MUuxpot1Zo7v07gxQnLg8wDcHSGeru3xENxgCntlo2j
- RhCp+WavYVqGTBzXjhvxdgZaAoSD/Cy8nYmzZbBs=
-Date: Thu, 28 Nov 2019 08:42:18 +0100
+ b=wm8PVK7LJ/eHbBcPlypR34e9nGdlHpiyX+tDcKnSJxAQM91yQgFENMYbMHwZzBPie
+ yRkIECYbg027w8uzuxwxYyGyI6EDte1JFAmNABgHVQO8I88Z5HY8A4vPdyjwu2xwR6
+ QmnlLKgm3/xS4ZOJqZlhnywaFER5ex6PX8/4i3LE=
+Date: Thu, 28 Nov 2019 08:43:25 +0100
 From: Maxime Ripard <mripard@kernel.org>
 To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH v6 1/7] thermal: sun8i: add thermal driver for
- H6/H5/H3/A64/A83T/R40
-Message-ID: <20191128074218.6ctvumauyyerujqe@gilmour.lan>
+Subject: Re: [PATCH v6 2/7] dt-bindings: thermal: add YAML schema for
+ sun8i-thermal driver bindings
+Message-ID: <20191128074325.q47rpzhufwog6mbb@gilmour.lan>
 References: <20191127052935.1719897-1-anarsoul@gmail.com>
- <20191127052935.1719897-2-anarsoul@gmail.com>
- <20191127111419.z5hfu5soxceiivg6@core.my.home>
- <20191127173547.ch3pcv3lxgdcrfnu@gilmour.lan>
- <CAEExFWvG-Af4qtUrxQV4ssNQCVQAmpXfxB+92wX+6ZxUNfX-Jw@mail.gmail.com>
- <CA+E=qVcdwQO3Y8ismmBN-gRVNMs1Thx+TPLqstKM9fYf2_0qFQ@mail.gmail.com>
+ <20191127052935.1719897-3-anarsoul@gmail.com>
+ <20191127174434.wousbqosmm5vxcsu@gilmour.lan>
+ <CA+E=qVe22T1uhUo6iq9a82Y9bC014CZSkAtSJJNX4qsn6dJL9w@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CA+E=qVcdwQO3Y8ismmBN-gRVNMs1Thx+TPLqstKM9fYf2_0qFQ@mail.gmail.com>
+In-Reply-To: <CA+E=qVe22T1uhUo6iq9a82Y9bC014CZSkAtSJJNX4qsn6dJL9w@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_234224_029837_71CE736A 
-X-CRM114-Status: GOOD (  15.97  )
+X-CRM114-CacheID: sfid-20191127_234328_579251_3E60F138 
+X-CRM114-Status: GOOD (  12.13  )
 X-Spam-Score: -3.7 (---)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-3.7 points)
@@ -84,66 +82,66 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Mark Rutland <mark.rutland@arm.com>,
  devicetree <devicetree@vger.kernel.org>,
  Amit Kucheria <amit.kucheria@verdurent.com>,
- Linux PM <linux-pm@vger.kernel.org>, Frank Lee <tiny.windzz@gmail.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Yangtao Li <tiny.windzz@gmail.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
  Eduardo Valentin <edubezval@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>,
  Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>, "David S. Miller" <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1544622563425093516=="
+ Zhang Rui <rui.zhang@intel.com>,
+ =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============4629942109048837506=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1544622563425093516==
+--===============4629942109048837506==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="4x5ug6mtkmdsnllw"
+	protocol="application/pgp-signature"; boundary="cnk3ppztnbfqfu5l"
 Content-Disposition: inline
 
 
---4x5ug6mtkmdsnllw
+--cnk3ppztnbfqfu5l
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Wed, Nov 27, 2019 at 11:48:32AM -0800, Vasily Khoruzhick wrote:
-> On Wed, Nov 27, 2019 at 11:44 AM Frank Lee <tiny.windzz@gmail.com> wrote:
+On Wed, Nov 27, 2019 at 12:23:53PM -0800, Vasily Khoruzhick wrote:
+> On Wed, Nov 27, 2019 at 9:44 AM Maxime Ripard <mripard@kernel.org> wrote:
+> > > +
+> > > +  nvmem-cell-names:
+> > > +    items:
+> > > +      - const: calibration
 > >
-> > Hello Vasily,
-> >
-> > Thank you very much for your work on this.
-> > This looks good to me.
+> > Ditto for the const
 >
-> Thanks!
->
-> > By the way, I would like to ask comments about adding the following code.
->
-> Can we add it as follow up patch? I don't think that I have a device
-> with working suspend to test it and I'm hesitant to add any code that
-> I can't test.
+> Sorry, I don't quite get it. What exactly do you want me to do with
+> this one? nvmem-cell-names must be "calibration"
 
-Yeah, this should be a followup patch, otherwise this will never get
-merged.
+You don't need the items here either, this can be
+
+nvmem-cell-names:
+  const: calibration
 
 Maxime
 
---4x5ug6mtkmdsnllw
+--cnk3ppztnbfqfu5l
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXd96UwAKCRDj7w1vZxhR
-xWArAP9j8E1Vrf+8eJ4RgagjWjZ1+t05fXcWABrdX7WGAt2zgAEAoM/FkxgwTVNQ
-+PjXhrnAxqUcH3tDMorB60UQ+gYj2wo=
-=/Deg
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXd96nQAKCRDj7w1vZxhR
+xRLoAQC3m7wZvI4EmXSfHN3h/VKMdIvvo5P5sgtpMsfd6hwbiAEAwqYBPjEtyyKB
+IP3PzaCesyLXY9dHooofrsm3Z7+pIgw=
+=I+ik
 -----END PGP SIGNATURE-----
 
---4x5ug6mtkmdsnllw--
+--cnk3ppztnbfqfu5l--
 
 
---===============1544622563425093516==
+--===============4629942109048837506==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -154,5 +152,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1544622563425093516==--
+--===============4629942109048837506==--
 
