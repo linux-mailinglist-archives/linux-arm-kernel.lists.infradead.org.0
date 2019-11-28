@@ -2,60 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D218F10C241
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 03:26:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3734710C265
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 03:31:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+m4Uw2Ppv+Z2ifmpvXviCOqiCvAJj9o60JcRFOgI/30=; b=kNW0iL2chh4kzb
-	N8dOzCZMjyCmqtxxVPLSm5vaRWZ8cepwUDUk2VTo7xrjLnLKfm90KFZAl95z1f5D5g/Zm87cqYRsq
-	GkroTW4bv0DTCeuSoz6IvgkbJ/1lVTgL08DWwJeAhwj4XSJrt2KBcIIgsafq18R8Rpdjq8xOr4okN
-	0gMbXzPxmlcZnnU3TJycy2U4+kGo/whhZ0A3ms9I4k2ez0JTK7JEJDAN687XWGoZK2f6+8mMfT+xc
-	mwa23sdZ1gF+eZCpOPsfXEClSlJU9NcscX2lg2xFPdsKhWeTmOHD2Zy6PC0rKBFHYOsFamhTe8hGV
-	YMF4vq71J08/DDUYL5kA==;
+	List-Owner; bh=aHHbbYlDUCM5C3RtdIalmFIm6ZR3mZovWKnrj+A9MFI=; b=ZcBVfX7DyDUUqR
+	lYgnajgoxqUIu3wauMrtOMI3LmJxi2cJ5e60Gn+2iF3EuG/aXtw2o2Jb6zv2ddqbXT7RHH3Q7/EDs
+	AicV2+EnGhaLr2yQXhVBJ3rbBAqqvYmQ0EA4z2R5IARAXPvwjxCe2j9rsqU0eDnocv6oZwINgV6Ye
+	Xhb9L2ASIkwmlaSaZ4QkFu/6V24Kr1quHMfwEcEnrmdqghRdoM2WHFdNxdG4HD2NHO5BZDc+ZZgtL
+	djji3bWWyXLgP7paSH3kwj/XkYfJbN1rTNjMaKgacuadsF5pbKLyh4BkWFcoPzMcu3Tf4oU+1Neup
+	+WecVPW1dPMnX9FqTzvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia9Vh-00020x-1B; Thu, 28 Nov 2019 02:26:25 +0000
-Received: from out28-123.mail.aliyun.com ([115.124.28.123])
+	id 1ia9ad-00041o-41; Thu, 28 Nov 2019 02:31:31 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia9VY-0001zt-4v
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 02:26:18 +0000
-X-Alimail-AntiSpam: AC=CONTINUE; BC=0.1442634|-1; CH=green;
- DM=CONTINUE|CONTINUE|true|0.0651011-0.0193909-0.915508;
- DS=CONTINUE|ham_regular_dialog|0.216232-0.0239754-0.759793;
- FP=0|0|0|0|0|-1|-1|-1; HT=e01l07389; MF=yong.deng@magewell.com; NM=1; PH=DS;
- RN=8; RT=8; SR=0; TI=SMTPD_---.G6MWC7G_1574907969; 
-Received: from John(mailfrom:yong.deng@magewell.com
- fp:SMTPD_---.G6MWC7G_1574907969)
- by smtp.aliyun-inc.com(10.147.42.198);
- Thu, 28 Nov 2019 10:26:09 +0800
-Date: Thu, 28 Nov 2019 10:26:08 +0800
-From: Yong <yong.deng@magewell.com>
-To: megous@megous.com
-Subject: Re: [linux-sunxi] [PATCH] media: sun6i-csi: Fix incorrect
- HSYNC/VSYNC/PCLK polarity configuration
-Message-Id: <20191128102608.035cbb996c8681a6fb035336@magewell.com>
-In-Reply-To: <20191128020259.1338188-1-megous@megous.com>
-References: <20191128020259.1338188-1-megous@megous.com>
-X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.30; i686-pc-mingw32)
-Mime-Version: 1.0
+ id 1ia9aU-00041E-Ph
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 02:31:24 +0000
+Received: by mail-pg1-x541.google.com with SMTP id b10so12101672pgd.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 Nov 2019 18:31:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=w3MhAgNwJCDzFmg83BGAd8t/eEyIf/GsxgnTUb2ToXs=;
+ b=AbV2WhvURSc4H37cMnU1McRpKMN3PNtGgOrYok6XE+t9/06vmiOzXjxO8o2/A4nNp4
+ Th474P4Odokl5RWixStRMW5aLqjuL+perV6RJMm+oYT0og/XFeKaql61vRSRiMJ2pq32
+ 0omD61mSXnitttdyY+8RdTvxmea7rn86qHhC8uuVGiCvCxLNuvzRjfd/GUuY0RIQYSP2
+ cmdskrvBVEhe3S9Q8lDcJdRWRIlI7bSrEFH1y1U4Rk/tYvNaQaqZi/+FF5T+ytaNx+SZ
+ qeKAzvV5MkymttKH0wbACMhRa1dZMoMvjL94xGienEDXbooxuQVYAxmfQ3NFUZlSxovl
+ 0VrQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=w3MhAgNwJCDzFmg83BGAd8t/eEyIf/GsxgnTUb2ToXs=;
+ b=tkn0mOmfUTkNO3NM6FbkxJdNFHMdQm4djLZr5EzZmAW+GqyeyqHlTEG4schlLgLWzQ
+ eTBhZezlGyI5efn4yxT+Ll8E5N8ulDwLFGkKyN0l55I2LhqCVpoLJxH7aC84OBV40mbD
+ MoRbWxU7+4WHV5hnoh2y+gx69DA4UHGcrWB3bXE0bP5FDceXHUhbTf3Rn91Y6LPo2V0a
+ boIRSXO8HsK0sbZgaKnQvcT4y4anTEUW/lCJw4KK3lJTiivI0kSiGVCW1qkYzu7/6doR
+ Y5pZDxVrFipWvy4bVh5Oh8DbY729wRUJZeRRQnjbWktf4l6T/iezhTnJCs009sfxiGMp
+ ln1w==
+X-Gm-Message-State: APjAAAVcdPZadpSv7WKSu5Wc+neGWZoToGp5IPrjRFBIrjfEGC00up3f
+ fID7eD7PwPrPTE5k/FPe3yyO6g==
+X-Google-Smtp-Source: APXvYqx4TG+a8InkKBmHDvzMujmJEOUlgarnckvNwhCekHG+3RWiohoP5Zo9pN47GWMMV9wizulVyg==
+X-Received: by 2002:a62:cf46:: with SMTP id b67mr30054210pfg.77.1574908280836; 
+ Wed, 27 Nov 2019 18:31:20 -0800 (PST)
+Received: from localhost ([122.171.112.123])
+ by smtp.gmail.com with ESMTPSA id q15sm1312656pgi.55.2019.11.27.18.31.19
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 27 Nov 2019 18:31:20 -0800 (PST)
+Date: Thu, 28 Nov 2019 08:01:16 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: Re: [PATCH] cpufreq: vexpress-spc: Fix wrong alternation of
+ policy->related_cpus during CPU hp
+Message-ID: <20191128023116.3skwbeowk7wtjaxc@vireshk-i7>
+References: <20191127114801.23837-1-dietmar.eggemann@arm.com>
+ <20191127120816.GC29301@bogus>
+ <20191127121402.vd3tul4gmqm6qtyb@vireshk-i7>
+ <20191127133200.GE29301@bogus>
+ <a60cab69-4d47-d418-94bd-74630bf9e846@arm.com>
+ <20191127154029.GA4826@bogus>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191127154029.GA4826@bogus>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_182616_348654_3730F0A7 
-X-CRM114-Status: GOOD (  18.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191127_183122_861883_6E28EFF3 
+X-CRM114-Status: GOOD (  13.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [115.124.28.123 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,67 +103,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>, open
- list <linux-kernel@vger.kernel.org>, linux-sunxi@googlegroups.com,
- Mauro Carvalho Chehab <mchehab@kernel.org>, "moderated
- list:ARM/Allwinner sunXi SoC support" <linux-arm-kernel@lists.infradead.org>,
- "open list:CSI DRIVERS FOR ALLWINNER V3s" <linux-media@vger.kernel.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pm@vger.kernel.org,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Liviu Dudau <liviu.dudau@arm.com>,
+ linux-kernel@vger.kernel.org, Morten Rasmussen <morten.rasmussen@arm.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Dietmar Eggemann <dietmar.eggemann@arm.com>, Lukasz Luba <lukasz.luba@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ondrej,
-
-This has been discussed.
-And Maxime sent a patch for this: 
-https://www.mail-archive.com/linux-media@vger.kernel.org/msg127149.html
-
-On Thu, 28 Nov 2019 03:02:59 +0100
-Ondrej Jirman <megous@megous.com> wrote:
-
-> This was discovered by writing a new camera driver and wondering, why
-> hsync/vsync polarity setting behaves in reverse to what would be
-> expected. Verified by looking at the actual signals and the SoC
-> user manual.
+On 27-11-19, 15:40, Sudeep Holla wrote:
+> diff --git i/arch/arm/mach-vexpress/spc.c w/arch/arm/mach-vexpress/spc.c
+> index 354e0e7025ae..e0e2e789a0b7 100644
+> --- i/arch/arm/mach-vexpress/spc.c
+> +++ w/arch/arm/mach-vexpress/spc.c
+> @@ -551,8 +551,9 @@ static struct clk *ve_spc_clk_register(struct device *cpu_dev)
 > 
-> Fixes: 5cc7522d8965 ("media: sun6i: Add support for Allwinner CSI V3s")
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> ---
->  drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
+>  static int __init ve_spc_clk_init(void)
+>  {
+> -       int cpu;
+> +       int cpu, cluster;
+>         struct clk *clk;
+> +       bool init_opp_table[MAX_CLUSTERS] = { false };
 > 
-> diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-> index f17e5550602d..98bbcca59a90 100644
-> --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-> +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-> @@ -417,12 +417,12 @@ static void sun6i_csi_setup_bus(struct sun6i_csi_dev *sdev)
->  		if (flags & V4L2_MBUS_FIELD_EVEN_LOW)
->  			cfg |= CSI_IF_CFG_FIELD_POSITIVE;
->  
-> -		if (flags & V4L2_MBUS_VSYNC_ACTIVE_LOW)
-> +		if (flags & V4L2_MBUS_VSYNC_ACTIVE_HIGH)
->  			cfg |= CSI_IF_CFG_VREF_POL_POSITIVE;
-> -		if (flags & V4L2_MBUS_HSYNC_ACTIVE_LOW)
-> +		if (flags & V4L2_MBUS_HSYNC_ACTIVE_HIGH)
->  			cfg |= CSI_IF_CFG_HREF_POL_POSITIVE;
->  
-> -		if (flags & V4L2_MBUS_PCLK_SAMPLE_RISING)
-> +		if (flags & V4L2_MBUS_PCLK_SAMPLE_FALLING)
->  			cfg |= CSI_IF_CFG_CLK_POL_FALLING_EDGE;
->  		break;
->  	case V4L2_MBUS_BT656:
-> -- 
-> 2.24.0
+>         if (!info)
+>                 return 0; /* Continue only if SPC is initialised */
+> @@ -578,8 +579,17 @@ static int __init ve_spc_clk_init(void)
+>                         continue;
+>                 }
 > 
-> -- 
-> You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
-> To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
-> To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20191128020259.1338188-1-megous%40megous.com.
+> +               cluster = topology_physical_package_id(cpu_dev->id);
+> +               if (init_opp_table[cluster])
+> +                       continue;
+> +
+>                 if (ve_init_opp_table(cpu_dev))
+>                         pr_warn("failed to initialise cpu%d opp table\n", cpu);
+> +               else if (dev_pm_opp_set_sharing_cpus(cpu_dev,
+> +                        topology_core_cpumask(cpu_dev->id)))
+> +                       pr_warn("failed to mark OPPs shared for cpu%d\n", cpu);
+> +
+> +               init_opp_table[cluster] = true;
+>         }
+> 
+>         platform_device_register_simple("vexpress-spc-cpufreq", -1, NULL, 0);
+> diff --git i/drivers/cpufreq/vexpress-spc-cpufreq.c w/drivers/cpufreq/vexpress-spc-cpufreq.c
+> index 506e3f2bf53a..83c85d3d67e3 100644
+> --- i/drivers/cpufreq/vexpress-spc-cpufreq.c
+> +++ w/drivers/cpufreq/vexpress-spc-cpufreq.c
+> @@ -434,7 +434,7 @@ static int ve_spc_cpufreq_init(struct cpufreq_policy *policy)
+>         if (cur_cluster < MAX_CLUSTERS) {
+>                 int cpu;
+> 
+> -               cpumask_copy(policy->cpus, topology_core_cpumask(policy->cpu));
+> +               dev_pm_opp_get_sharing_cpus(cpu_dev, policy->cpus);
+> 
+>                 for_each_cpu(cpu, policy->cpus)
+>                         per_cpu(physical_cluster, cpu) = cur_cluster;
 
+This is a better *work-around* I would say, as we can't break it the
+way I explained earlier :)
 
-Thanks,
-Yong
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
