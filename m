@@ -2,97 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7846110CF45
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 21:31:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D04A10CF5F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 21:59:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:
-	In-Reply-To:Date:To:From:Subject:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jUPP+M0Ix9JJHNxE4wYFjBMY6QDEZFR+Fl9uCPceHT4=; b=fn6s4LaUePsdoM
-	yNmroNE/Mr4WDJ4HvblNReZESSTl6F+BAajIJ8lc62mSTfzXt9A1/H45Aplj+vcE5lDMaGFhtDjbj
-	LLC7nv/Unc7nMNkSbpV8z5+OrYpZ5Te68pLTOYZPHFlfgzcdlwlR/TrePAOqGodk6juX4WfzNP0fP
-	EjJnhIK5Pehfw2DrPqryAx46IGTub1FlctyiHyWnLQJYyvV0utwKxutXl4/kia/n/uGnQIgbtfmQy
-	bQsoPRriPrPqTvdrULfZe3ki2pCVNQ3KmRBH2mRHQa8hWfSawBHJifRK50pfNhJpny/9omp/iYQTz
-	EH+PNYc6avDo1jiKO2hA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=e/Y4FRQviOEe6f4p1PMr2OYKJ/kuJeQ6AX6clCsIuFI=; b=fs0
+	9dTrU2bfFRuBjOPt0vMa9RH7UCHA0zGpE+mmhtUZ++ceA0BtUfWY7ElEcF5Ar8KfpnqURFFw4/Nyh
+	PCa7Qnq41NIOuhm5X6ofPdQPbxgfCBKgcBc/kvZl89z1E3ja6Pv6yEjflwVuX0/nZ3qtLgDadiUCx
+	XC3aE9I0IJSmbFTzjakEOI2I6FzTavgEMBFll4kHAmMy+4EPKjq62mxrO19k/jTosGEVaV9tKiFO0
+	hFUDMLG0woOBcpxjcaouoQzkKMWpB2QC1EctJkNzTyOdw9Lf4ZSpkcRUQgTDMU08JwMUsjDRCfWWB
+	6TM8O3DFXyXJKfExLWZfnOxe6FAAFlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaQRK-0001hl-PA; Thu, 28 Nov 2019 20:31:02 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaQR6-0001hN-K9
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 20:30:50 +0000
-Received: by mail-wr1-x441.google.com with SMTP id w15so1590944wru.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 12:30:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=message-id:subject:from:reply-to:to:cc:date:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=/F4fjTqCSCbemLPACFLDEoRElFjhhoWK5H/bkTRiXCc=;
- b=f2bgNO11ck3HaI0MToSAz5sfRIth2du04Y84p5Vj6Zoh7GfqecklqXv7Mc8w6QoW9c
- 9YHbbZNIMjx3nr4p/OXY/12j63P1sTu0hxwW8t64mut2gNE9HxshnW0v6HDw4N84z4FF
- obf0a1RUZ6pozT+TI1vcMXbn54XIPTQ3YzK2jM+FXirQjUcWLwjv7ci6D11069+9nmlF
- /D/BY1CIHQo+kWLFL8Cug6HxxeY+xihVYLgrwdLry7UfFtDLIy4GM+MtXSc6Rq0kiC2s
- wQGRqiSQqLBX3e5xKfYQpArRln9GKO47/omSl9u1w2U6gOYvtEn1zCDGGekyQPXd6t5k
- ZXdg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:subject:from:reply-to:to:cc:date
- :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=/F4fjTqCSCbemLPACFLDEoRElFjhhoWK5H/bkTRiXCc=;
- b=ROsVvzZ1RQRZ5V0TdV7xcwPEXW1w0z5M3NEgHN8EZtwEbQYtkIfoPUHWL5XXp4PD3Z
- 9x6tVEgmmJ4DQ7EdFMhU8cs7p6hk1VyCTxBggKSFyZpfB0cFCkQEmShHNInQMmb2U3Am
- 9NAxf8kFRnLl1Lj2jPO4Vh8jFkpVw0ZPSpWgsS1hfADcNCS/pOavly3RlxDa4arBVdMs
- LVAIsO7Hg2mNUzsbmfkXqFuBHfDMQ8VhKwrQZSWtVcJbFYE1UDFpzM+XEDdfe1M+M3HF
- /TF+5IFSbTvfUqj/XdJ31k5rqxi49xuGbNlbISQ/LZVKRg4wEcLSmYaJHrKcp9w0lhjC
- IXFA==
-X-Gm-Message-State: APjAAAVOfFuwJpT4sIQvzqymmF93myveI3T3l+LENpcd5Oh3N7MwP08Q
- J/G4r7Sx4mdh4PAQ1ocUbVg=
-X-Google-Smtp-Source: APXvYqxwkJHZzFPosHHBBpY/9deoXC8APNrp9kOY0iXwsyFtedfw82C9F3QEEjvoxCLiTCcjwXo3SQ==
-X-Received: by 2002:a05:6000:149:: with SMTP id
- r9mr10658203wrx.147.1574973046452; 
- Thu, 28 Nov 2019 12:30:46 -0800 (PST)
-Received: from [192.168.0.87]
- (HSI-KBW-109-192-080-035.hsi6.kabel-badenwuerttemberg.de. [109.192.80.35])
- by smtp.gmail.com with ESMTPSA id k127sm5454220wmk.31.2019.11.28.12.30.45
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 28 Nov 2019 12:30:45 -0800 (PST)
-Message-ID: <1574973044.2362.11.camel@googlemail.com>
-Subject: Re: [PATCH v2 4/4] ARM: dts: phycore-imx6: set buck regulator modes
- explicitly
-From: Christoph Fritz <chf.fritz@googlemail.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Date: Thu, 28 Nov 2019 21:30:44 +0100
-In-Reply-To: <AM5PR1001MB099480739860863EB08EA73280760@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
-References: <1573652416-9848-1-git-send-email-chf.fritz@googlemail.com>
- <1573652416-9848-5-git-send-email-chf.fritz@googlemail.com>
- <AM5PR1001MB099480739860863EB08EA73280760@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
-X-Mailer: Evolution 3.12.9-1+b1 
-Mime-Version: 1.0
+	id 1iaQtB-0001UU-Se; Thu, 28 Nov 2019 20:59:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iaQt2-0001Tg-P9; Thu, 28 Nov 2019 20:59:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2C57530E;
+ Thu, 28 Nov 2019 12:59:37 -0800 (PST)
+Received: from DESKTOP-VLO843J.lan (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 504E43F68E;
+ Thu, 28 Nov 2019 12:59:36 -0800 (PST)
+From: Robin Murphy <robin.murphy@arm.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: Add GPU cooling device for RK3399
+Date: Thu, 28 Nov 2019 20:59:27 +0000
+Message-Id: <cb905e17526d846d6d35fb86fbd3c8ba4af4cdaf.1574974673.git.robin.murphy@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_123048_692641_7DC854C1 
-X-CRM114-Status: GOOD (  17.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191128_125940_859466_1C1A5A1C 
+X-CRM114-Status: GOOD (  13.09  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (chf.fritz[at]googlemail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,96 +55,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: chf.fritz@googlemail.com
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Support Opensource <Support.Opensource@diasemi.com>,
- Fabio Estevam <festevam@gmail.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Brown <broonie@kernel.org>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- Lee Jones <lee.jones@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Shawn,
+As for RK3288, now that we have a binding for the GPU we can
+hook up the missing cooling device for the thermal zone.
 
- any chance to get this patch queued for the upcoming kernel?
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-bye
- -- Christoph
-
-On Wed, 2019-11-13 at 16:26 +0000, Adam Thomson wrote:
-> On 13 November 2019 13:40, Christoph Fritz wrote:
-> 
-> > This patch sets initial buck regulator modes explicitly to a state this
-> > hardware needs. So a wrong initial mode set by bootloader or pmic itself
-> > does not interfere anymore.
-> > 
-> > Signed-off-by: Christoph Fritz <chf.fritz@googlemail.com>
-> 
-> Reviewed-by: Adam Thomson <Adam.Thomson.Opensource@diasemi.com>
-> 
-> > ---
-> >  arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 5 +++++
-> >  1 file changed, 5 insertions(+)
-> > 
-> > diff --git a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> > b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> > index 6486df3..644625d 100644
-> > --- a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> > +++ b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> > @@ -5,6 +5,7 @@
-> >   */
-> > 
-> >  #include <dt-bindings/gpio/gpio.h>
-> > +#include <dt-bindings/regulator/dlg,da9063-regulator.h>
-> > 
-> >  / {
-> >  	aliases {
-> > @@ -109,6 +110,7 @@
-> >  				regulator-name = "vdd_arm";
-> >  				regulator-min-microvolt = <730000>;
-> >  				regulator-max-microvolt = <1380000>;
-> > +				regulator-initial-mode =
-> > <DA9063_BUCK_MODE_SYNC>;
-> >  				regulator-always-on;
-> >  			};
-> > 
-> > @@ -116,6 +118,7 @@
-> >  				regulator-name = "vdd_soc";
-> >  				regulator-min-microvolt = <730000>;
-> >  				regulator-max-microvolt = <1380000>;
-> > +				regulator-initial-mode =
-> > <DA9063_BUCK_MODE_SYNC>;
-> >  				regulator-always-on;
-> >  			};
-> > 
-> > @@ -123,6 +126,7 @@
-> >  				regulator-name = "vdd_ddr3";
-> >  				regulator-min-microvolt = <1500000>;
-> >  				regulator-max-microvolt = <1500000>;
-> > +				regulator-initial-mode =
-> > <DA9063_BUCK_MODE_SYNC>;
-> >  				regulator-always-on;
-> >  			};
-> > 
-> > @@ -130,6 +134,7 @@
-> >  				regulator-name = "vdd_eth";
-> >  				regulator-min-microvolt = <1200000>;
-> >  				regulator-max-microvolt = <1200000>;
-> > +				regulator-initial-mode =
-> > <DA9063_BUCK_MODE_SYNC>;
-> >  				regulator-always-on;
-> >  			};
-> > 
-> > --
-> > 2.1.4
-> 
-
-
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+index cede1ad81be2..7c2953c052cf 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+@@ -827,6 +827,14 @@
+ 					type = "critical";
+ 				};
+ 			};
++
++			cooling-maps {
++				map0 {
++					trip = <&gpu_alert0>;
++					cooling-device =
++						<&gpu THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++				};
++			};
+ 		};
+ 	};
+ 
+@@ -1886,6 +1894,7 @@
+ 			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>;
+ 		interrupt-names = "gpu", "job", "mmu";
+ 		clocks = <&cru ACLK_GPU>;
++		#cooling-cells = <2>;
+ 		power-domains = <&power RK3399_PD_GPU>;
+ 		status = "disabled";
+ 	};
+-- 
+2.17.1
 
 
 _______________________________________________
