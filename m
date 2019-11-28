@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8715B10CB2C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:01:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66F3A10CB34
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 16:02:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J9SWhYxuYpStN1xFzhMgkypITg1KI4Mo5yXzdlZDVVQ=; b=aL3/9yukOerQ77
-	tPqNaOoE+pSI0V8fBt2DEQoVGEGV79ysHyOCqFmVvtWp/kxnLkQDiguHZ1IRQoYhYOrjKS7RSCK4W
-	tmlDndnyivvs3auSdQZ+CxYs6fXGOLiU/LNAzSwSOWXk4DFQKJO5phUK24eWyKhwW/Gg2i/SE4WtG
-	yqA3h/5dSBexqB+kP/x7JKJj5+9VPx9ge+XEsXYGRaxz6jk5tDPG1x3yvSPtUGSUg+gISZCnASWpX
-	52eq6w7brraj7ogzYCdQwmc2Untt1xjEUzwQk7HE52qXx7Atm72pDUhlfkytDfjpj/xMc0EK7wj5m
-	OOBTPWwOBVKtdVBt83HA==;
+	List-Owner; bh=RvDX5LDQWSyKNgpFDSsCnNUv2Wzd4cr0LfKPa/A0cmU=; b=UqG8GTpQBTjZmu
+	uwlKAfOkDo8xhzco8WpcyhJ3FMfLM9IHnyy0l6xogSR8fzZ8Z1SMaaaOC6Do5nRdqnRPvvr+CERsF
+	Pc0GvKbDF1q/dc7lWDM5AYLzr+X/Qjj6kvyo8Y3pcnBbPTCQb+gGfafxPGodc5ZpFSIxoEgPHFhk1
+	K0scwWDPzOR59ViQ94AqROtxdcHC6tXLUdBpaPGjYoFbLF2n6vAgJHS6gWa7KkOVV9qycG0YcmwE8
+	85VQ532B+G6feVTc0kuUrUbSsX7Ogk/DMSCoI+S4MfdZuudCyFaEmjxQPUOCp8BSw8dSOjj3IOh4t
+	JKNhaH9fG18RbcbMjhXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaLIK-00044E-FW; Thu, 28 Nov 2019 15:01:24 +0000
-Received: from mail-lj1-f195.google.com ([209.85.208.195])
+	id 1iaLIz-0004Z1-Sw; Thu, 28 Nov 2019 15:02:05 +0000
+Received: from mail-lf1-f65.google.com ([209.85.167.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaLEW-0000mz-4v
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:57:39 +0000
-Received: by mail-lj1-f195.google.com with SMTP id k15so28856866lja.3
+ id 1iaLEX-0000nZ-PC
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 14:57:43 +0000
+Received: by mail-lf1-f65.google.com with SMTP id a17so20227872lfi.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 06:57:27 -0800 (PST)
+ Thu, 28 Nov 2019 06:57:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=rasmusvillemoes.dk; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=fm8vGKJ4TPWor/SrNM6rE461Gf1D2pmUecTv9capx2A=;
- b=i39lh9aWGpqjz9XI/OFfEnvTGPZ/LiEky1vlTemc4GbVU8oOBhimEDgTQM9P09m6O6
- ObJeoq+Tbxu8vuPW/WPjlrom7jcqajGns3DbLkvaoMUMSW2SLdVnLnossT4Iz0XqNKud
- NCte6uFdJbKUOLro5cdE0VeP2XQzQJmLJ3NL4=
+ bh=r3X14YrVIUClSXLFCcykgpknPW7q8CkrbSuzPJYKIgU=;
+ b=BqgKvObsXIWxVEmBNUn1r6eHP5osq02sC3XtopwwdsqJh2mHsFg2vFe1Grf4Zhy+GH
+ vJZ6CKNbCCoIRxx0chQzVfOFFH7i6PyxiZ7yrLxxkmzx5MQJAXtj8erlwmiR/7AoKrSs
+ 5MlYJ+l3O471MKMNl0wm+kxWUwwPKQs4RLmLE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=fm8vGKJ4TPWor/SrNM6rE461Gf1D2pmUecTv9capx2A=;
- b=KFrT8XwcY4MU5jZZW5Y7I5iHhp1bvTWX3nToqVy7WmT+m4yUYsppM/Dg6Jn2GkvNBu
- ysuP1qsb3C37Da5UuC5eTC5i+B0SCDGPuhpK15oT6cNiSfXCc38mzXJkQD8surYJFwLm
- EorpEWyqvv7i2gJUaLT5AGr4WkyUFuwxJLSc2Sjs0SEI2HhFZyrpR2Ly/QSZf7NT/bj/
- JBxW85heULaNNIHHezeqDiNbG67pGpGiZz5lOLaIWqjZZX/LF2j+zsQrRC0/K9fhUn8z
- JZ0WZD/VSuOhfbEbaLBOoUWDywAstrchAiyOJwWkBuj/dX1MHYaywLc3Rdo1hHMjF4y/
- vuJA==
-X-Gm-Message-State: APjAAAXoOE8+UZHQHZLgl/2L7ua4t3ICt9m9J7NFsE2wCa9vuWboTHEd
- gPZz79dzx0+LXRRhiDbKe3keTg==
-X-Google-Smtp-Source: APXvYqzOH4CCR5V7oe5QpALAtS3/oGlBdApJLkD4j0pv6h8wj8vcXCUvjS7Un4muT3AhfCe2YXCDXA==
-X-Received: by 2002:a2e:6e07:: with SMTP id j7mr3589919ljc.18.1574953046004;
- Thu, 28 Nov 2019 06:57:26 -0800 (PST)
+ bh=r3X14YrVIUClSXLFCcykgpknPW7q8CkrbSuzPJYKIgU=;
+ b=DVGM/2wznxiDTlEzvimIuzm5etcnL/3CtgHa5ZI7y1xPJmnG4c+cXPpA5VPZDgenZi
+ WCyFDwMqADgga9SNcIXf3qy+WbaLPbqZ4rc1ztZi5E2X0QU1xQQ8UV5s+VGAkdAvDPW4
+ xHKEpEov/H8JIsnLMy4BW1ScbKr/Ool6P0QDxYbcYDYwdDuFFmooU24QRl85TiNC3pV6
+ 8WzQ+zkD/+nZNnSMsRjusQv2vGsd6e7hjNBtNYgY2jzet9nZS5sguSdCyzRzyHPmRO+u
+ KT3NwA/eSOPn44wysvDzjJP7W36jgrlY5Mdrnp0EJxMZvmfkREag5KP0+RUQ6GB4Cdk7
+ E7Vg==
+X-Gm-Message-State: APjAAAVr/rtGI2AXuJB7esnDk80xGt8Pa2GNLJtK7UPMWggQwlo13Nvg
+ AvmlD2IN5BPKisVP7SO4fmQWNA==
+X-Google-Smtp-Source: APXvYqy3g5ATq/JQp5xfPoK4/TMKrONa38Lkmq+otiNYXU7CSnx/L8zDrIc7fZRsl2bQRfYROFNJmQ==
+X-Received: by 2002:a19:e011:: with SMTP id x17mr8563557lfg.59.1574953047246; 
+ Thu, 28 Nov 2019 06:57:27 -0800 (PST)
 Received: from prevas-ravi.prevas.se ([81.216.59.226])
- by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.57.24
+ by smtp.gmail.com with ESMTPSA id u2sm2456803lfl.18.2019.11.28.06.57.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 Nov 2019 06:57:25 -0800 (PST)
+ Thu, 28 Nov 2019 06:57:26 -0800 (PST)
 From: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 To: Qiang Zhao <qiang.zhao@nxp.com>, Li Yang <leoyang.li@nxp.com>,
  Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH v6 16/49] soc: fsl: qe: rename qe_ic_cascade_low_mpic ->
- qe_ic_cascade_low
-Date: Thu, 28 Nov 2019 15:55:21 +0100
-Message-Id: <20191128145554.1297-17-linux@rasmusvillemoes.dk>
+Subject: [PATCH v6 17/49] soc: fsl: qe: remove unused qe_ic_set_* functions
+Date: Thu, 28 Nov 2019 15:55:22 +0100
+Message-Id: <20191128145554.1297-18-linux@rasmusvillemoes.dk>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
 References: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_065728_749105_A51317A6 
-X-CRM114-Status: GOOD (  10.90  )
+X-CRM114-CacheID: sfid-20191128_065729_930889_4A6088BC 
+X-CRM114-Status: GOOD (  13.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.195 listed in list.dnswl.org]
+ no trust [209.85.167.65 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.195 listed in wl.mailspike.net]
+ [209.85.167.65 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -105,49 +104,138 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The qe_ic_cascade_{low,high}_mpic functions are now used as handlers
-both when the interrupt parent is mpic as well as ipic, so remove the
-_mpic suffix.
+There are no current callers of these functions, and they use the
+ppc-specific virq_to_hw(). So removing them gets us one step closer to
+building QE support for ARM.
+
+If the functionality is ever actually needed, the code can be dug out
+of git and then adapted to work on all architectures, but for future
+reference please note that I believe qe_ic_set_priority is buggy: The
+"priority < 4" should be "priority <= 4", and in the else branch 24
+should be replaced by 28, at least if I'm reading the data sheet right.
 
 Reviewed-by: Timur Tabi <timur@kernel.org>
 Signed-off-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
 ---
- drivers/soc/fsl/qe/qe_ic.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ drivers/soc/fsl/qe/qe_ic.c | 94 --------------------------------------
+ include/soc/fsl/qe/qe_ic.h |  4 --
+ 2 files changed, 98 deletions(-)
 
 diff --git a/drivers/soc/fsl/qe/qe_ic.c b/drivers/soc/fsl/qe/qe_ic.c
-index 94ccbeeb1ad1..de2ca2e3a648 100644
+index de2ca2e3a648..4839dcd5c5d3 100644
 --- a/drivers/soc/fsl/qe/qe_ic.c
 +++ b/drivers/soc/fsl/qe/qe_ic.c
-@@ -314,7 +314,7 @@ unsigned int qe_ic_get_high_irq(struct qe_ic *qe_ic)
- 	return irq_linear_revmap(qe_ic->irqhost, irq);
+@@ -445,97 +445,3 @@ static int __init qe_ic_of_init(void)
+ 	return 0;
  }
+ subsys_initcall(qe_ic_of_init);
+-
+-void qe_ic_set_highest_priority(unsigned int virq, int high)
+-{
+-	struct qe_ic *qe_ic = qe_ic_from_irq(virq);
+-	unsigned int src = virq_to_hw(virq);
+-	u32 temp = 0;
+-
+-	temp = qe_ic_read(qe_ic->regs, QEIC_CICR);
+-
+-	temp &= ~CICR_HP_MASK;
+-	temp |= src << CICR_HP_SHIFT;
+-
+-	temp &= ~CICR_HPIT_MASK;
+-	temp |= (high ? SIGNAL_HIGH : SIGNAL_LOW) << CICR_HPIT_SHIFT;
+-
+-	qe_ic_write(qe_ic->regs, QEIC_CICR, temp);
+-}
+-
+-/* Set Priority level within its group, from 1 to 8 */
+-int qe_ic_set_priority(unsigned int virq, unsigned int priority)
+-{
+-	struct qe_ic *qe_ic = qe_ic_from_irq(virq);
+-	unsigned int src = virq_to_hw(virq);
+-	u32 temp;
+-
+-	if (priority > 8 || priority == 0)
+-		return -EINVAL;
+-	if (WARN_ONCE(src >= ARRAY_SIZE(qe_ic_info),
+-		      "%s: Invalid hw irq number for QEIC\n", __func__))
+-		return -EINVAL;
+-	if (qe_ic_info[src].pri_reg == 0)
+-		return -EINVAL;
+-
+-	temp = qe_ic_read(qe_ic->regs, qe_ic_info[src].pri_reg);
+-
+-	if (priority < 4) {
+-		temp &= ~(0x7 << (32 - priority * 3));
+-		temp |= qe_ic_info[src].pri_code << (32 - priority * 3);
+-	} else {
+-		temp &= ~(0x7 << (24 - priority * 3));
+-		temp |= qe_ic_info[src].pri_code << (24 - priority * 3);
+-	}
+-
+-	qe_ic_write(qe_ic->regs, qe_ic_info[src].pri_reg, temp);
+-
+-	return 0;
+-}
+-
+-/* Set a QE priority to use high irq, only priority 1~2 can use high irq */
+-int qe_ic_set_high_priority(unsigned int virq, unsigned int priority, int high)
+-{
+-	struct qe_ic *qe_ic = qe_ic_from_irq(virq);
+-	unsigned int src = virq_to_hw(virq);
+-	u32 temp, control_reg = QEIC_CICNR, shift = 0;
+-
+-	if (priority > 2 || priority == 0)
+-		return -EINVAL;
+-	if (WARN_ONCE(src >= ARRAY_SIZE(qe_ic_info),
+-		      "%s: Invalid hw irq number for QEIC\n", __func__))
+-		return -EINVAL;
+-
+-	switch (qe_ic_info[src].pri_reg) {
+-	case QEIC_CIPZCC:
+-		shift = CICNR_ZCC1T_SHIFT;
+-		break;
+-	case QEIC_CIPWCC:
+-		shift = CICNR_WCC1T_SHIFT;
+-		break;
+-	case QEIC_CIPYCC:
+-		shift = CICNR_YCC1T_SHIFT;
+-		break;
+-	case QEIC_CIPXCC:
+-		shift = CICNR_XCC1T_SHIFT;
+-		break;
+-	case QEIC_CIPRTA:
+-		shift = CRICR_RTA1T_SHIFT;
+-		control_reg = QEIC_CRICR;
+-		break;
+-	case QEIC_CIPRTB:
+-		shift = CRICR_RTB1T_SHIFT;
+-		control_reg = QEIC_CRICR;
+-		break;
+-	default:
+-		return -EINVAL;
+-	}
+-
+-	shift += (2 - priority) * 2;
+-	temp = qe_ic_read(qe_ic->regs, control_reg);
+-	temp &= ~(SIGNAL_MASK << shift);
+-	temp |= (high ? SIGNAL_HIGH : SIGNAL_LOW) << shift;
+-	qe_ic_write(qe_ic->regs, control_reg, temp);
+-
+-	return 0;
+-}
+diff --git a/include/soc/fsl/qe/qe_ic.h b/include/soc/fsl/qe/qe_ic.h
+index 43e4ce95c6a0..d47eb231519e 100644
+--- a/include/soc/fsl/qe/qe_ic.h
++++ b/include/soc/fsl/qe/qe_ic.h
+@@ -63,8 +63,4 @@ static inline unsigned int qe_ic_get_high_irq(struct qe_ic *qe_ic)
+ { return 0; }
+ #endif /* CONFIG_QUICC_ENGINE */
  
--static void qe_ic_cascade_low_mpic(struct irq_desc *desc)
-+static void qe_ic_cascade_low(struct irq_desc *desc)
- {
- 	struct qe_ic *qe_ic = irq_desc_get_handler_data(desc);
- 	unsigned int cascade_irq = qe_ic_get_low_irq(qe_ic);
-@@ -327,7 +327,7 @@ static void qe_ic_cascade_low_mpic(struct irq_desc *desc)
- 		chip->irq_eoi(&desc->irq_data);
- }
- 
--static void qe_ic_cascade_high_mpic(struct irq_desc *desc)
-+static void qe_ic_cascade_high(struct irq_desc *desc)
- {
- 	struct qe_ic *qe_ic = irq_desc_get_handler_data(desc);
- 	unsigned int cascade_irq = qe_ic_get_high_irq(qe_ic);
-@@ -392,8 +392,8 @@ static void __init qe_ic_init(struct device_node *node, unsigned int flags)
- 		return;
- 	}
- 	if (qe_ic->virq_high != qe_ic->virq_low) {
--		low_handler = qe_ic_cascade_low_mpic;
--		high_handler = qe_ic_cascade_high_mpic;
-+		low_handler = qe_ic_cascade_low;
-+		high_handler = qe_ic_cascade_high;
- 	} else {
- 		low_handler = qe_ic_cascade_muxed_mpic;
- 		high_handler = NULL;
+-void qe_ic_set_highest_priority(unsigned int virq, int high);
+-int qe_ic_set_priority(unsigned int virq, unsigned int priority);
+-int qe_ic_set_high_priority(unsigned int virq, unsigned int priority, int high);
+-
+ #endif /* _ASM_POWERPC_QE_IC_H */
 -- 
 2.23.0
 
