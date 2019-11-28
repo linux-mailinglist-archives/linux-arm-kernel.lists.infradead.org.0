@@ -2,58 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A67B10C651
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 11:02:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BCD510C65F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 Nov 2019 11:06:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PWeyLcHEpnGM1TrzTrR1+RIYPvr3+3iwZILWGOpXAmE=; b=ErkrM2fi92g8Z4
-	Bcu4qYnDYRjV2m5jUl4kuXJicGH23ebzhoh54SQumZeNS1+ko/c2d52GzjvGvr+J1Q11Mz0YsDgBv
-	+6Cew+QqHFECGqXssl3b2YzmgqjAEv76Kw7sCwiQU/Agbz+dL5UDxWz2DTdz0R98pT9mJLkI8IWiu
-	oMJzxH3TsFrgLj6mHjQDQAoS3fwBpgDcPllLcvelynFjdYXWC3l8BB244GMfmTx7O1y8Ib6JAJHZM
-	xDRKeE0mkFsRwtZg6Ie73EB5Y6pUaHz8BP+uqgyusNKb2qafFjQHw5Rxy1wPAHisrXSE+TzrFdhx/
-	xM7kKFEPSfxBEJMgfiog==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lHI5lvY4yfAF+CAYSNZAcQEUMU3uQfEdxKowB88+Sl8=; b=dKsDCYxJLzMt58
+	QUPyiB1GVHxESPAuhmChmmzTyh+xF6OP4d7gNkSdc2q/3CZcMW3Ot57aIqzbyk5gqZsr8Opq15cnZ
+	rvzPHe1u2KpPXMZH5rPFibfmjijwJ6v6f8n+StdA+pg3veNTND+S4Ymqrc4W/sTrhE11qSgUNubwH
+	vA4JsuMmg3Nvqw7AFCIoEvRUxBVcrXd2PLh+dgM6JkW6GFYdeMZEP4MbesLqnrxtJyTzOBkVMuaPV
+	+PeOzYp4NiZghWcTKTdHDN0tMkGVfmWoxt5QREPzIyKdlFog6uuqMmu9aLqf3hIS/WI1U/MDLidUS
+	QlG1gdlPjk5VyGWWwWyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaGcX-0005KO-H4; Thu, 28 Nov 2019 10:01:57 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaGcO-0005Je-02
- for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 10:01:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 90F1B1FB;
- Thu, 28 Nov 2019 02:01:46 -0800 (PST)
-Received: from [192.168.0.9] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 130FA3F6C4;
- Thu, 28 Nov 2019 02:01:44 -0800 (PST)
-Subject: Re: [PATCH] cpufreq: vexpress-spc: Fix wrong alternation of
- policy->related_cpus during CPU hp
-To: Viresh Kumar <viresh.kumar@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>
-References: <20191127114801.23837-1-dietmar.eggemann@arm.com>
- <20191127120816.GC29301@bogus> <20191127121402.vd3tul4gmqm6qtyb@vireshk-i7>
- <20191127133200.GE29301@bogus> <a60cab69-4d47-d418-94bd-74630bf9e846@arm.com>
- <20191127154029.GA4826@bogus> <20191128023116.3skwbeowk7wtjaxc@vireshk-i7>
-From: Dietmar Eggemann <dietmar.eggemann@arm.com>
-Message-ID: <0e1cf1c3-3790-3032-2843-04a112de1411@arm.com>
-Date: Thu, 28 Nov 2019 11:01:43 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+	id 1iaGhD-00073e-Af; Thu, 28 Nov 2019 10:06:47 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iaGh2-00071t-S3
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 Nov 2019 10:06:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=kAzGthTrVHAi7AX7oK1GGCcOfI4R/DIxoI7QEs76F5I=; b=na5oiyEis1GUKanh4lMUFOTQP
+ J1oTldWRG73YC7hsRSkSgrbMnI/UJrIbPiuHgWklDRuw+9e+E51uXkR+y2SAkIIJAKn/gsWjdocDX
+ +iUIcjua9ImyXRvVIajZawYfXc6kkyJB3OpoZuJhT7zETEpjE1ISyx7O7qYYEVzhIIBaSVqmWSh5O
+ JZygnJsgB3phfXJpHt30IYBn2Azng9gyu3oeTNnft1LCnTJ05Jv+1GW89fvBF9tQPm/9U/Hn/UIf6
+ ugkQWqXR5sLTG3JJhnqBta6dJoiW5pVv9yDwinXXd+zZm78mgtSbs4I0UnJ0ptbAD7XQWUYHYll6K
+ 1OlkN0hkQ==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:45710)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iaGgi-0000GT-Rg; Thu, 28 Nov 2019 10:06:17 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iaGgf-0001Bf-SB; Thu, 28 Nov 2019 10:06:13 +0000
+Date: Thu, 28 Nov 2019 10:06:13 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Peng Ma <peng.ma@nxp.com>
+Subject: Re: [PATCH] i2c: imx: Defer probing if EDMA not available
+Message-ID: <20191128100613.GI25745@shell.armlinux.org.uk>
+References: <20191127071136.5240-1-peng.ma@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20191128023116.3skwbeowk7wtjaxc@vireshk-i7>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191127071136.5240-1-peng.ma@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_020148_080669_5DA67010 
-X-CRM114-Status: GOOD (  12.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191128_020637_476683_9D474A24 
+X-CRM114-Status: GOOD (  21.39  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,70 +86,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pm@vger.kernel.org,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Liviu Dudau <liviu.dudau@arm.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Morten Rasmussen <morten.rasmussen@arm.com>, Lukasz Luba <lukasz.luba@arm.com>
+Cc: "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux@rempel-privat.de" <linux@rempel-privat.de>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28/11/2019 03:31, Viresh Kumar wrote:
-> On 27-11-19, 15:40, Sudeep Holla wrote:
->> diff --git i/arch/arm/mach-vexpress/spc.c w/arch/arm/mach-vexpress/spc.c
->> index 354e0e7025ae..e0e2e789a0b7 100644
->> --- i/arch/arm/mach-vexpress/spc.c
->> +++ w/arch/arm/mach-vexpress/spc.c
->> @@ -551,8 +551,9 @@ static struct clk *ve_spc_clk_register(struct device *cpu_dev)
->>
->>  static int __init ve_spc_clk_init(void)
->>  {
->> -       int cpu;
->> +       int cpu, cluster;
->>         struct clk *clk;
->> +       bool init_opp_table[MAX_CLUSTERS] = { false };
->>
->>         if (!info)
->>                 return 0; /* Continue only if SPC is initialised */
->> @@ -578,8 +579,17 @@ static int __init ve_spc_clk_init(void)
->>                         continue;
->>                 }
->>
->> +               cluster = topology_physical_package_id(cpu_dev->id);
->> +               if (init_opp_table[cluster])
->> +                       continue;
->> +
->>                 if (ve_init_opp_table(cpu_dev))
->>                         pr_warn("failed to initialise cpu%d opp table\n", cpu);
->> +               else if (dev_pm_opp_set_sharing_cpus(cpu_dev,
->> +                        topology_core_cpumask(cpu_dev->id)))
->> +                       pr_warn("failed to mark OPPs shared for cpu%d\n", cpu);
->> +
->> +               init_opp_table[cluster] = true;
->>         }
->>
->>         platform_device_register_simple("vexpress-spc-cpufreq", -1, NULL, 0);
->> diff --git i/drivers/cpufreq/vexpress-spc-cpufreq.c w/drivers/cpufreq/vexpress-spc-cpufreq.c
->> index 506e3f2bf53a..83c85d3d67e3 100644
->> --- i/drivers/cpufreq/vexpress-spc-cpufreq.c
->> +++ w/drivers/cpufreq/vexpress-spc-cpufreq.c
->> @@ -434,7 +434,7 @@ static int ve_spc_cpufreq_init(struct cpufreq_policy *policy)
->>         if (cur_cluster < MAX_CLUSTERS) {
->>                 int cpu;
->>
->> -               cpumask_copy(policy->cpus, topology_core_cpumask(policy->cpu));
->> +               dev_pm_opp_get_sharing_cpus(cpu_dev, policy->cpus);
->>
->>                 for_each_cpu(cpu, policy->cpus)
->>                         per_cpu(physical_cluster, cpu) = cur_cluster;
+On Wed, Nov 27, 2019 at 07:12:09AM +0000, Peng Ma wrote:
+> EDMA may be not available or defered due to dependencies on
+> other modules, If these scenarios is encountered, we should
+> defer probing.
+
+This has been tried before in this form, and it causes regressions.
+
+> Signed-off-by: Peng Ma <peng.ma@nxp.com>
+> ---
+>  drivers/i2c/busses/i2c-imx.c | 16 +++++++++++-----
+>  1 file changed, 11 insertions(+), 5 deletions(-)
 > 
-> This is a better *work-around* I would say, as we can't break it the
-> way I explained earlier :)
+> diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
+> index 40111a3..c2b0693 100644
+> --- a/drivers/i2c/busses/i2c-imx.c
+> +++ b/drivers/i2c/busses/i2c-imx.c
+> @@ -369,8 +369,8 @@ static void i2c_imx_reset_regs(struct imx_i2c_struct *i2c_imx)
+>  }
+>  
+>  /* Functions for DMA support */
+> -static void i2c_imx_dma_request(struct imx_i2c_struct *i2c_imx,
+> -						dma_addr_t phy_addr)
+> +static int i2c_imx_dma_request(struct imx_i2c_struct *i2c_imx,
+> +			       dma_addr_t phy_addr)
+>  {
+>  	struct imx_i2c_dma *dma;
+>  	struct dma_slave_config dma_sconfig;
+> @@ -379,7 +379,7 @@ static void i2c_imx_dma_request(struct imx_i2c_struct *i2c_imx,
+>  
+>  	dma = devm_kzalloc(dev, sizeof(*dma), GFP_KERNEL);
+>  	if (!dma)
+> -		return;
+> +		return -ENOMEM;
+>  
+>  	dma->chan_tx = dma_request_chan(dev, "tx");
+>  	if (IS_ERR(dma->chan_tx)) {
+> @@ -424,7 +424,7 @@ static void i2c_imx_dma_request(struct imx_i2c_struct *i2c_imx,
+>  	dev_info(dev, "using %s (tx) and %s (rx) for DMA transfers\n",
+>  		dma_chan_name(dma->chan_tx), dma_chan_name(dma->chan_rx));
+>  
+> -	return;
+> +	return 0;
+>  
+>  fail_rx:
+>  	dma_release_channel(dma->chan_rx);
+> @@ -432,6 +432,8 @@ static void i2c_imx_dma_request(struct imx_i2c_struct *i2c_imx,
+>  	dma_release_channel(dma->chan_tx);
+>  fail_al:
+>  	devm_kfree(dev, dma);
+> +
+> +	return ret;
 
-I do agree. Tested CPU hp stress on TC2 and it looks good.
+Some platforms don't have EDMA.  Doesn't this force everyone who wants
+I2C to have DMA?  The last attempt at this had:
 
-Tested-by: Dietmar Eggemann <dietmar.eggemann@arm.com>
+	/* return successfully if there is no dma support */
+	return ret == -ENODEV ? 0 : ret;
+
+here because of exactly this.
+
+>  }
+>  
+>  static void i2c_imx_dma_callback(void *arg)
+> @@ -1605,10 +1607,14 @@ static int i2c_imx_probe(struct platform_device *pdev)
+>  	dev_info(&i2c_imx->adapter.dev, "IMX I2C adapter registered\n");
+>  
+>  	/* Init DMA config if supported */
+> -	i2c_imx_dma_request(i2c_imx, phy_addr);
+> +	ret = i2c_imx_dma_request(i2c_imx, phy_addr);
+> +	if (ret == -EPROBE_DEFER)
+> +		goto i2c_adapter_remove;
+
+This happens _after_ the adapter has been published to the rest of the
+kernel.  Claiming resources after publication is racy - the adapter may
+be in use by a request at this point.  Secondly, there's been problems
+with this causing regressions when EDMA is built as a module and i2c-imx
+is built-in.
+
+See e8c220fac415 ("Revert "i2c: imx: improve the error handling in
+i2c_imx_dma_request()"") when exactly what you're proposing was tried
+and ended up having to be reverted.
+
+AFAIK nothing has changed since, so merely reinstating the known to be
+broken code, thereby reintroducing the same (and more) problems, isn't
+going to be acceptable.
+
+Sorry, but this gets a big NAK from me.
+
+>  
+>  	return 0;   /* Return OK */
+>  
+> +i2c_adapter_remove:
+> +	i2c_del_adapter(&i2c_imx->adapter);
+>  clk_notifier_unregister:
+>  	clk_notifier_unregister(i2c_imx->clk, &i2c_imx->clk_change_nb);
+>  rpm_disable:
+> -- 
+> 2.9.5
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
