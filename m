@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9174F10D9F9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 20:07:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7592510D9FA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 20:07:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=FbZZg6gqxLvgeKTlDSH5tKPadlksAiyOPwbWoJv15yw=; b=Ee85SMbY4cWczis3asBxEGkgfW
-	Bm6Rv9G20ksz/P8LQ1SZtzM5KmkEPWobLtb+52gqZNEqoe/cD71tcI1+jty67TcWvpUxXdmcpXyo1
-	3Pv2XuK9p4VUsC7OrpyCN+Jde3PIxyXxNBJMxkItWCmJp4k0b93a/+k2XO29pG1gRGMAErdS2+t52
-	mwitO6Ge6KOX7xJFBo2NsA9Vly53ogZxciGUnRdq+N43WzT/dR9Lu/aLywhvtzKYBKh9y/OggGapA
-	ZwJxxgX5BbEFKKbhtSUKdSrdIHxV0d+ENLMTMSAr7BynF4N6Q4nuVT3Ue/yFaqVMzBkU4qFaXrye9
-	3QMHzmaw==;
+	bh=YcULtx5pttp5oiRS0PWpGWLhThJmVvGnTTAICe4E07M=; b=fNXilA/rMpyE5wvxZ8R0gskaZM
+	Aqw08GBluYXOSxSGTxZg1I0Ts7Vgmua0kHe41ohaE9/kzCNGJMVO3E4yRCnijKvYNBHxE4dkKTGHU
+	EVGIZpsL2ocBBJu+hcYFykEKDX5B83PO7IwYPtsWAaHU2b/xFnvP55RPhoCTfJ07x3HvYicjJIjuC
+	ZArm/ZjTcQtyAtn0Jzpliw/E8WvSLuJYUO/tiHWoHzOqsgxco941F5zHyjIxOoMkA1ke7pN+59CWP
+	ISu89tTh3J+7yrH+oDiReefp/QTvAQY7sbUCl/yw4Ldx8xS6j/MpOyiRTQBC54zPaZ5LtfSOT7J1T
+	tduEEDLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ialbo-0006ww-DN; Fri, 29 Nov 2019 19:07:16 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1ialbz-0007Cd-Qg; Fri, 29 Nov 2019 19:07:27 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ialam-0006Ox-3w
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 19:06:13 +0000
-Received: by mail-pf1-x441.google.com with SMTP id x185so2305824pfc.5
+ id 1ialaq-0006S9-7j
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 19:06:18 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id t21so823570pjq.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 29 Nov 2019 11:06:11 -0800 (PST)
+ Fri, 29 Nov 2019 11:06:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=DmYsGklBxODi9ZXzG+eZphEo00SJ3Wr36G+fPUJuOQI=;
- b=zT92KeHeKw8smYn0Wg/ZkYYS3HUIgVo/BEAonyLQotvdGPO9EoJrWytsnE7ricRaJE
- 4dmmdhb4xHRJX+WKgQfGSe87j8EJk7d7XspMM+7qbebFTHlJavhgkTy6RXPJIaYDb3yq
- tVRGekzSoLjKN/4vMCyMr7qynj7lOQCKfGYNmezHByEt4fVM9QbjTQBUo7G0A08urYjl
- XoQ071BJ4RlUh7bgcrpKik6D9P4l8BWS+I0XZ394b7OO5cadlj2iKTCWi/c1DMJkZIcX
- JpxqJ/nOA8jViQj6VyS4RXGUJUOm+kheO8cyp1mOWT4beaJ0EXk16are4Eoazv7Vf1SR
- Ufbw==
+ bh=/FM9xo7QIIBKERzlsc9RY2lQmdtL0uWG+xaaghB/dV4=;
+ b=tNqp5p7dcPlaZftpP3TycmCHaYycdBuJHeVbtDykKAoJibe93S5N8XsAUYK9ayfAcl
+ Iaw1JF/4vRMyErNfvVyZm2qWAKkrV0SakuAY7meg13MWatjW1Ob2Byu2+QJoeCPV+r0d
+ VgnBSHlvUbgxIiU8k1S3UAy0/pnc0urZFPkQL/ChnqlyO1A3mv0znx6AU+mS5A+hUDBc
+ 3NLPVkZE+F+tWYSGU2PlGSm3CSmuEPS/uVSKr+uIqkM8qaC8ilzsCLoI6utdaggXBFps
+ Y+FUI2/lkIlOWLfNxaduQYR0K5UI4frt90Mc4OszFfpizS+NqPqTAbwEarlLoOmOkr3E
+ 2KqA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=DmYsGklBxODi9ZXzG+eZphEo00SJ3Wr36G+fPUJuOQI=;
- b=XqPYYcRHswhgK0WLNdUBeA8/OqzQLjHkeKYgQwsam2LJV1B+k8AOtJohP2S7tKYXfq
- QQICbDNz9Ujyn7AslpxKBKAh/fiere9EZnAm/1NrwctBwZd/J4jt8mhR+YrJsQEaTiqZ
- i6Fb7F6i2rUprXOWw7ydySYruo48cTtfc/TGSGj5WOY5ksDrCv3Y2UorRV8LE0oWXkQY
- ZpUwp/KFmg9GH2kzhbcTQsBse6W/wUpxlIIDMFV/zBb11/n2h2nNweoFDzxcBZdp9PxY
- p1XWRd/ii3PVlSq+rtaXOJ8Smj2CNuDhILQnmw+Aj8uWyW9lfC0/ViGTJi/KBUKgN397
- WwgA==
-X-Gm-Message-State: APjAAAVylaKa2l84XF0qZY7SA+Iq587VW+F717VWYvNQceOgJ1YvK7DN
- ywDLZ06VVLFjJ2SfJZLxXkdc
-X-Google-Smtp-Source: APXvYqzgig8XcKY6Z1Z5e1HRzFl4a4lC8ZhYAuK/3i+SnVPkIq/8PDUl4lpssyMcnNT2yb5tWXM7Mg==
-X-Received: by 2002:a65:5307:: with SMTP id m7mr18546705pgq.113.1575054370197; 
- Fri, 29 Nov 2019 11:06:10 -0800 (PST)
+ bh=/FM9xo7QIIBKERzlsc9RY2lQmdtL0uWG+xaaghB/dV4=;
+ b=mxVGpfdw6SBISPp8s40I7ghLzBIeDESlgKcNebUgGRR7mcjzZkTrFyDGrcyl+8gX7/
+ 0r2l3GdYFU9t3B5ZFVC4R32kqrObzOVqjWnJtO2EfrlM9rspbVvo5RCnqCPRkg4wMiV9
+ dPG5gc191TB8ZLUh++DDoAWvvBXxtut9kiYo49fbAgBrjRakdN56Fu3jKdIfLMRSxhad
+ 283XG+5fTehNEgNmx1dsES7HyraiC0lRACMjYbplBH4LVZ4exkAL4Dq0SVcSPbAZJXtf
+ x3rnpmblCKGGO+TOBhzknDrkEJkJV8j2Az5XE2SswpbMhuQu8qOB75vW6+S0AWopssN1
+ TH4Q==
+X-Gm-Message-State: APjAAAXrv3gkAF9E8YByFvQwfyDZNb6lxsmH+GbHNTDwD7iDlE8vTzYr
+ szMVoF2J7vZhBpJ9gQNJEmhP
+X-Google-Smtp-Source: APXvYqw99CLh8HXavEoyULyhtO2nxTDFigWCoqEaIX82JYh7hHk+VlWTCUefWQFUD7lg1xwR+i2dYw==
+X-Received: by 2002:a17:902:820f:: with SMTP id
+ x15mr16072824pln.125.1575054375293; 
+ Fri, 29 Nov 2019 11:06:15 -0800 (PST)
 Received: from localhost.localdomain
  ([2409:4072:638d:cc55:d006:f721:cde2:1059])
- by smtp.gmail.com with ESMTPSA id h9sm25159974pgk.84.2019.11.29.11.06.05
+ by smtp.gmail.com with ESMTPSA id h9sm25159974pgk.84.2019.11.29.11.06.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 Nov 2019 11:06:09 -0800 (PST)
+ Fri, 29 Nov 2019 11:06:14 -0800 (PST)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: mchehab@kernel.org,
 	sakari.ailus@iki.fi
-Subject: [PATCH 3/5] media: i2c: imx290: Add RAW12 mode support
-Date: Sat, 30 Nov 2019 00:35:39 +0530
-Message-Id: <20191129190541.30315-4-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH 4/5] media: i2c: imx290: Add support to enumerate all frame
+ sizes
+Date: Sat, 30 Nov 2019 00:35:40 +0530
+Message-Id: <20191129190541.30315-5-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191129190541.30315-1-manivannan.sadhasivam@linaro.org>
 References: <20191129190541.30315-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_110612_185574_C3E21DF9 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20191129_110616_304076_D39063A2 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -107,86 +106,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-IMX290 is capable of outputting frames in both Raw Bayer (packed) 10 and
-12 bit formats. Since the driver already supports RAW10 mode, let's add
-the missing RAW12 mode as well.
+Add support to enumerate all frame sizes supported by IMX290. This is
+required for using with userspace tools such as libcamera.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/media/i2c/imx290.c | 32 ++++++++++++++++++++++++++++++++
- 1 file changed, 32 insertions(+)
+ drivers/media/i2c/imx290.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
 diff --git a/drivers/media/i2c/imx290.c b/drivers/media/i2c/imx290.c
-index e218c959a729..d5bb3a59ac46 100644
+index d5bb3a59ac46..f26c4a0ee0a0 100644
 --- a/drivers/media/i2c/imx290.c
 +++ b/drivers/media/i2c/imx290.c
-@@ -75,6 +75,7 @@ struct imx290 {
- 	struct clk *xclk;
- 	struct regmap *regmap;
- 	int nlanes;
-+	u8 bpp;
+@@ -468,6 +468,25 @@ static int imx290_enum_mbus_code(struct v4l2_subdev *sd,
+ 	return 0;
+ }
  
- 	struct v4l2_subdev sd;
- 	struct v4l2_fwnode_endpoint ep;
-@@ -98,6 +99,7 @@ struct imx290_pixfmt {
- 
- static const struct imx290_pixfmt imx290_formats[] = {
- 	{ MEDIA_BUS_FMT_SRGGB10_1X10 },
-+	{ MEDIA_BUS_FMT_SRGGB12_1X12 },
++static int imx290_enum_frame_size(struct v4l2_subdev *subdev,
++				  struct v4l2_subdev_pad_config *cfg,
++				  struct v4l2_subdev_frame_size_enum *fse)
++{
++	if ((fse->code != imx290_formats[0].code) &&
++	    (fse->code != imx290_formats[1].code))
++		return -EINVAL;
++
++	if (fse->index >= ARRAY_SIZE(imx290_modes))
++		return -EINVAL;
++
++	fse->min_width = imx290_modes[fse->index].width;
++	fse->max_width = imx290_modes[fse->index].width;
++	fse->min_height = imx290_modes[fse->index].height;
++	fse->max_height = imx290_modes[fse->index].height;
++
++	return 0;
++}
++
+ static int imx290_get_fmt(struct v4l2_subdev *sd,
+ 			  struct v4l2_subdev_pad_config *cfg,
+ 			  struct v4l2_subdev_format *fmt)
+@@ -820,6 +839,7 @@ static const struct v4l2_subdev_video_ops imx290_video_ops = {
+ static const struct v4l2_subdev_pad_ops imx290_pad_ops = {
+ 	.init_cfg = imx290_entity_init_cfg,
+ 	.enum_mbus_code = imx290_enum_mbus_code,
++	.enum_frame_size = imx290_enum_frame_size,
+ 	.get_fmt = imx290_get_fmt,
+ 	.set_fmt = imx290_set_fmt,
  };
- 
- static const struct regmap_config imx290_regmap_config = {
-@@ -265,6 +267,18 @@ static const struct imx290_regval imx290_10bit_settings[] = {
- 	{ 0x300b, 0x00},
- };
- 
-+static const struct imx290_regval imx290_12bit_settings[] = {
-+	{ 0x3005, 0x01 },
-+	{ 0x3046, 0x01 },
-+	{ 0x3129, 0x00 },
-+	{ 0x317c, 0x00 },
-+	{ 0x31ec, 0x0e },
-+	{ 0x3441, 0x0c },
-+	{ 0x3442, 0x0c },
-+	{ 0x300a, 0xf0 },
-+	{ 0x300b, 0x00 },
-+};
-+
- /* supported link frequencies */
- static const s64 imx290_link_freq[] = {
- 	IMX290_DEFAULT_LINK_FREQ,
-@@ -550,6 +564,21 @@ static int imx290_write_current_format(struct imx290 *imx290,
- 			dev_err(imx290->dev, "Could not set format registers\n");
- 			return ret;
- 		}
-+
-+		imx290->bpp = 10;
-+
-+		break;
-+	case MEDIA_BUS_FMT_SRGGB12_1X12:
-+		ret = imx290_set_register_array(imx290, imx290_12bit_settings,
-+						ARRAY_SIZE(
-+							imx290_12bit_settings));
-+		if (ret < 0) {
-+			dev_err(imx290->dev, "Could not set format registers\n");
-+			return ret;
-+		}
-+
-+		imx290->bpp = 12;
-+
- 		break;
- 	default:
- 		dev_err(imx290->dev, "Unknown pixel format\n");
-@@ -910,6 +939,9 @@ static int imx290_probe(struct i2c_client *client)
- 		goto free_err;
- 	}
- 
-+	/* Default bits per pixel value */
-+	imx290->bpp = 10;
-+
- 	mutex_init(&imx290->lock);
- 
- 	v4l2_ctrl_handler_init(&imx290->ctrls, 4);
 -- 
 2.17.1
 
