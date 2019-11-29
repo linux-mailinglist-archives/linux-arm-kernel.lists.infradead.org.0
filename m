@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53F2110D01C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 01:08:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E9B810D022
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 01:16:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=m/vCjo/mjgvrDKYlE2LhtK4D7jPm3frsm7Cg1gz2h2o=; b=QtDQG+XaXjqoMg
-	6UgubrGm/xWtkaqfE7MxOJMb+GQ2AaEzgmZ2GfJ6YnwoOQ3OKqhdgqhMA+BkEVAwpzJ4BdRZftGLq
-	b+xNqeJANyrrUcCXvI2nRqa/1vJ7PrXkNDNEvGoIsHXS6KojJtfwMLQzWpUhOTAFy+WDvJn9wTEqe
-	U6FGZKqvnE4LJLvglv/LqY/0v8/SQta6fHMVQFdnBgisCL+o3rByj3Xm+nY8sr13CFUQc2C5KnF/E
-	aAwNuD1MWL6hiLg03TIMRorEZxxhmVswh8jJT2X+CfaNjbGmDGaE7RDYNvZJnJCXRHw0Ldp0D5R1A
-	bGV4ZnLOJ03+wBuDPdfw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9SH63d49rzEnX84D3CnUayhQGTvzR2nk6IjQere2Fmc=; b=WcSj3R4YHhLHLS
+	mdVGsvsny6RD8OfUr7qPfIUiSRQyAed20BZzOsg8MbEweU0QGYxe8lqt0TPbT9xjj/lkUD26DtBjF
+	OSJdgtalg8EmRT2KztmxwlmMI5tvSqs6FLfBXgrSV3xg0XaYZK8qRUdFeVwjo+SrHVq/vmHIbzyLs
+	BlPRMnSqqvAPvXz4xuOfTVSWczIwXs8wdIXX/XGusFL/plhOJ6BLIQPzbtOGzGrJyeI+hF/BkGzZC
+	q9S5TgwLzCsecLVWfn5/0thPFO6s0pmsPHJntm08XFE43CAZhBt2UWs+HBbMhrc3zaUUxGi4+T1K4
+	s64zAPdd1Fy5+d2wUJJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaTq3-0001qc-60; Fri, 29 Nov 2019 00:08:47 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1iaTx8-000565-0z; Fri, 29 Nov 2019 00:16:06 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaTpt-0001q6-Q0
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 00:08:39 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id r11so4639314pjp.12
+ id 1iaTww-00055X-Rv
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 00:15:56 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id ca19so2905574pjb.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 Nov 2019 16:08:37 -0800 (PST)
+ Thu, 28 Nov 2019 16:15:54 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=PzWN4cL1wf43O1PtpUjZOF/nWFYMcUCUfWytZsUUyVM=;
- b=dSi7tOORl2Yu58MKpmTJaZq8PC6pMrxWZlc3OrbfzabvskelxTZoHB06vlTrnU9Bfn
- vObC6N6DPm0iY1OwThGpe2g5fXDvIecJOoZaTQC8IlmTASyCiTH/O8lS1PpvWI61zTx8
- O6cEiOKKdWoUV6IAl7fmO4uFrYKs9WYuktiGMTtBQ2j9g9q4/fjcV3cA3BHgy2jnzJuh
- fk4H+hPQgfX6VWg5VCPLTZx8UJPyLdy6pOq2eaCffPuUSnDDuxGTTG4QwSyxp7ln8hnD
- zPTOiPliJH1UVmPFPsLrVz3IwL94xHiQXmuroN0SawURcRF6ImWYphHDbjo/u0QuEa7/
- ngYw==
+ h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=dpxFtxxgBElM+YJglBfx04/eAo0nvXB7AnoxAb/3UH0=;
+ b=hFf8A3Xuv+sXyGmJvDCRUD4X5Sxql7d54f08MeyyQc2L2AhMvtWP0mOin+7b8F8KiH
+ 7iykoIqbtUPxSYdOqptxx9NZZUvlvLbM5yeZqgKlekBCyN8Q9AkKk/FhlJZwdmHZH/ne
+ SWx4DbiXDrugh7fr7i2j05qfN0X8NylHkM2dAvalFJXZQqofGgRtAoqeW8Kug5sU4bHG
+ sN+xqwgogDJ4dJOcU0jnJv8fYQnRHAFfYYYek+wjT4B7DQqq6Hna9IWJuaEtFLaZmu7o
+ BJaudMXDRGwL7x7zTZ+AoqDnt5k/7EzAAE79vZ1iDWPK93IW/l1UNKBeycwY2macDkPZ
+ dnXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=PzWN4cL1wf43O1PtpUjZOF/nWFYMcUCUfWytZsUUyVM=;
- b=rEKcayhNWgroiOk3ogiWtspIkhA0rOlcSXN/Kjs3NzwrWtD/pGJUcXGaFl//QDecit
- /qLVvx2SUDRZ7Vyi0govQTjHbYPmGWn0mpjJEhw9zAM7f30bBZGxFqvmcXUdeVNgu3he
- GcCrDKuS8sPCFOf4A6yLvTz2WjJMz9F+CZOcE5yR5+AeLmeEfWm30y0O/GxlVxqBdVb5
- fxxZrmhA4tapReofS5VTeUTjKc3luUz6murXA/0N9bvU3GiIqjmjQ2Hu+kCHzHmLBMzw
- ef8PnttvqJ33MFK5pL4L8v47fplq7o7uJWd2i1copejpBp0jh/Vg929JLbz7PgvNGoRF
- yQCQ==
-X-Gm-Message-State: APjAAAV12kMNsgVJ45HDWvKn/pNcriV8agnpqLv9x9AeSqYuLFFpfhmg
- /6zwthUAXJx2+erQ3GE3MRBjsP88Oyd1qw==
-X-Google-Smtp-Source: APXvYqypDkqlvQWSySZaKfJe9FNPi29JX9+IyoO2gKYaFImONyEaQ2/LCAsDEoHGbHnhMZNnjhuHtg==
-X-Received: by 2002:a17:90a:cc18:: with SMTP id
- b24mr14709846pju.141.1574986116875; 
- Thu, 28 Nov 2019 16:08:36 -0800 (PST)
+ :in-reply-to:references:mime-version:content-transfer-encoding;
+ bh=dpxFtxxgBElM+YJglBfx04/eAo0nvXB7AnoxAb/3UH0=;
+ b=ndMIdYwb2E5luDAYlLstUkSPInc6TQJqzgL3v08/Xas8+Qk1Dg10gY0ShFWP9SdXQH
+ +NRNeZ+/pN8qrne1edK8I+zt9DerVXnJ25pjEjA4WsSY/IqRw81lTOcxzdjKK6fKN2UA
+ i6Ld+FW09V01jhR5gsR4gfF6uCZCJ63U83O2MAe2V2tKppSl6PUlr8JrSkcQMJFZ9fC6
+ 3Y58GpTuHZhIq/3syrfBoPQfblZ8r2PLn0jm3F8j1dLE75+j+H3K0rSDZio+nj4CwtX1
+ qe+SYBpxHwHaD7CiuXdWP77ettcte3Uts3K/zFK0HAHXjoLmYz15qmjMb4PR5DNliwOC
+ 5bSQ==
+X-Gm-Message-State: APjAAAXj9m48Ielvii6rYsunHCXRpUXztLPdzFBth6o2VkKgxAChNVM/
+ CUVBjtshGtBBlGSCNAYtzt4=
+X-Google-Smtp-Source: APXvYqxAFkWBLKQ16x08JOih5XHtxlgt8S5/tHtG4Wu9OpQMLx6GJcY1sTin3i+g5nxR2RtZAzZVsA==
+X-Received: by 2002:a17:90a:d58e:: with SMTP id
+ v14mr16105905pju.142.1574986121012; 
+ Thu, 28 Nov 2019 16:08:41 -0800 (PST)
 Received: from localhost.localdomain ([45.124.203.14])
- by smtp.gmail.com with ESMTPSA id d188sm21302075pfa.157.2019.11.28.16.08.32
+ by smtp.gmail.com with ESMTPSA id d188sm21302075pfa.157.2019.11.28.16.08.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 Nov 2019 16:08:35 -0800 (PST)
+ Thu, 28 Nov 2019 16:08:40 -0800 (PST)
 From: Joel Stanley <joel@jms.id.au>
 To: Lee Jones <lee.jones@linaro.org>, Rob Herring <robh+dt@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>
-Subject: [PATCH v2 0/2] reset: Add ast2600 support
-Date: Fri, 29 Nov 2019 10:38:25 +1030
-Message-Id: <20191129000827.650566-1-joel@jms.id.au>
+Subject: [PATCH v2 1/2] dt-bindings: mfd: Add ast2600 to ASPEED LPC
+Date: Fri, 29 Nov 2019 10:38:26 +1030
+Message-Id: <20191129000827.650566-2-joel@jms.id.au>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191129000827.650566-1-joel@jms.id.au>
+References: <20191129000827.650566-1-joel@jms.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_160837_848439_F6D0A605 
-X-CRM114-Status: UNSURE (   9.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191128_161554_928280_CE29000E 
+X-CRM114-Status: GOOD (  11.02  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -105,21 +106,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds ast2600 support to the reset-simple driver, and updates
-the device tree documentation for the LPC bindings.
+The AST2600 has the same LPC layout as previous generation SoCs.
 
-v2 fixes a typo in the bindings that Andrew found.
-
-Brad Bishop (1):
-  reset: simple: Add AST2600 compatibility string
-
-Joel Stanley (1):
-  dt-bindings: mfd: Add ast2600 to ASPEED LPC
-
+Signed-off-by: Joel Stanley <joel@jms.id.au>
+---
+v2: Fix cut and paste error in reset bindings
+---
  Documentation/devicetree/bindings/mfd/aspeed-lpc.txt | 11 +++++++++--
- drivers/reset/reset-simple.c                         |  1 +
- 2 files changed, 10 insertions(+), 2 deletions(-)
+ 1 file changed, 9 insertions(+), 2 deletions(-)
 
+diff --git a/Documentation/devicetree/bindings/mfd/aspeed-lpc.txt b/Documentation/devicetree/bindings/mfd/aspeed-lpc.txt
+index 86446074e206..a5d89aa9a3c1 100644
+--- a/Documentation/devicetree/bindings/mfd/aspeed-lpc.txt
++++ b/Documentation/devicetree/bindings/mfd/aspeed-lpc.txt
+@@ -46,6 +46,7 @@ Required properties
+ - compatible:	One of:
+ 		"aspeed,ast2400-lpc", "simple-mfd"
+ 		"aspeed,ast2500-lpc", "simple-mfd"
++		"aspeed,ast2600-lpc", "simple-mfd"
+ 
+ - reg:		contains the physical address and length values of the Aspeed
+                 LPC memory region.
+@@ -64,6 +65,7 @@ BMC Node
+ - compatible:	One of:
+ 		"aspeed,ast2400-lpc-bmc"
+ 		"aspeed,ast2500-lpc-bmc"
++		"aspeed,ast2600-lpc-bmc"
+ 
+ - reg:		contains the physical address and length values of the
+                 H8S/2168-compatible LPC controller memory region
+@@ -128,6 +130,7 @@ Required properties:
+ - compatible:	One of:
+ 		"aspeed,ast2400-lpc-ctrl";
+ 		"aspeed,ast2500-lpc-ctrl";
++		"aspeed,ast2600-lpc-ctrl";
+ 
+ - reg:		contains offset/length values of the host interface controller
+ 		memory regions
+@@ -168,6 +171,7 @@ Required properties:
+ - compatible:	One of:
+ 		"aspeed,ast2400-lhc";
+ 		"aspeed,ast2500-lhc";
++		"aspeed,ast2600-lhc";
+ 
+ - reg:		contains offset/length values of the LHC memory regions. In the
+ 		AST2400 and AST2500 there are two regions.
+@@ -187,8 +191,11 @@ state of the LPC bus. Some systems may chose to modify this configuration.
+ 
+ Required properties:
+ 
+- - compatible:		"aspeed,ast2500-lpc-reset" or
+-			"aspeed,ast2400-lpc-reset"
++ - compatible:		One of:
++			"aspeed,ast2400-reset";
++			"aspeed,ast2500-reset";
++			"aspeed,ast2600-reset";
++
+  - reg:			offset and length of the IP in the LHC memory region
+  - #reset-controller	indicates the number of reset cells expected
+ 
 -- 
 2.24.0
 
