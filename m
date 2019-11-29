@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D25DC10D18B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 07:44:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85E7410D18E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 07:46:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:References:
-	In-Reply-To:To:From:Subject:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=w+7xAFVmhz2hLwuCO+/YKzVM9YKh3QvCP6tdKCXHHnc=; b=Wp6MFp2hVR5EkxTUtDV0usXskW
-	xKTUIT2vHeBCddE+vIe7IzQ/eTXuquvT/aB0IQf1pDNu+IPyh2xEtfsPvoSw89ijuew5yxKMxIYT7
-	EZCHejvz7/GYAZRHfNrX5S/rWULA5nYwD/i1RH/+N7TUR8UyvgPcjS7akOA0vJWXRfkn1gp4/IXMP
-	/2F2R84YqLGfK7etJ4u6G3i6WtfxA1BkHyAA0/O938wGT4cg2GziJTCyI8Qub8uqar731cX+oSKCd
-	I/7hUcWudEo8EamuCEOrx8U1bYo1ZFOsLicU7Qqnh7lmaoZkRFiv8Euca4U4kBbhkEJuX3EMn4S64
-	s+Msg6Zg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5qNEp4B1M52HvRu7YUGlaL4CmmqbMA0w9argbcYeZ9k=; b=ucIzoQiDHssSum
+	Lsqs6v9u50DZIvWGv3CljK8DamKWC0id5jiH0zqAG65RlW3n4egBaMJdiKspeC+mJYD38myqBH++/
+	rHV6yvWGyEYfQlJa+IwLP4nQdeINQV0rMEzdOAO8ePwcOcL+qnuivSiUvP5FOP8rqFK7275raO6aE
+	px6cfF6eL1Eplkz8p19iqyNJXRNjssepydiwdBlvm+Ujn6xOy1/7KdHt65YCtBS+liOjfINrw9Fo1
+	A/SHJXShubXP1RzQZneGPGl1f7RWMA95Apm1/GsJBejY/lqxGIZISy0orG+h3YR/+MUU32/XaVDvK
+	AiGEIZVaCdFqKn+IIFTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaa0h-0000Yu-Q2; Fri, 29 Nov 2019 06:44:11 +0000
+	id 1iaa2t-00026j-OT; Fri, 29 Nov 2019 06:46:28 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaa0a-0000YV-8D; Fri, 29 Nov 2019 06:44:05 +0000
-X-UUID: 8206b91f85214a9d987943e9880c011e-20191128
+ id 1iaa2g-00026F-32; Fri, 29 Nov 2019 06:46:15 +0000
+X-UUID: d45a77c806644348bd431ef40993b1f9-20191128
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Date:Content-Type:References:In-Reply-To:CC:To:From:Subject:Message-ID;
- bh=oi4tPDzs8ZbqKpkDr986mLKVJSE8Ydo7EgiDBxABqc8=; 
- b=qfnE/gvHM0lLKuMXq76D7iOBs8W4yf36PnHxz7I7N5qOGu5Etqyn0daooLulozQyzdibxq8+4HT5vgvV1Td/5wEeglrI61C8luxJt2IJtGfarwCCbiIQJojIiJbgJDWo/KqclZzo3VFpgOxbpkP/9QyFihEuYN4yiKDgPZs/BkQ=;
-X-UUID: 8206b91f85214a9d987943e9880c011e-20191128
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=8lX9vCY1Mdos86S6vjMAmKgXT0YEpzezR8Mrp8YXb4A=; 
+ b=uu+M2xx7V/lnAFcToE8OA7newH3agzVK1H7cBaQqjYX5rBBxUM/5j9V+09tMg04Tir6Nr+ebBmU8/FZpEtnzS64rYozHAYGrmkZJjhbsB9+aqebgCHZzsP3EQFPTOxjawrFscxkuwF0GwwI4Jqiu6M4Ip3lQz2tQiaNA1+ih8sQ=;
+X-UUID: d45a77c806644348bd431ef40993b1f9-20191128
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <yong.liang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 807644758; Thu, 28 Nov 2019 22:44:01 -0800
+ with ESMTP id 1777826257; Thu, 28 Nov 2019 22:46:09 -0800
 Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 28 Nov 2019 22:44:10 -0800
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 28 Nov 2019 22:36:47 -0800
 Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
  (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 29 Nov 2019 14:43:53 +0800
+ Fri, 29 Nov 2019 14:36:03 +0800
 Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
  (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 29 Nov 2019 14:43:49 +0800
-Message-ID: <1575009205.6367.4.camel@mhfsdcap03>
+ Transport; Fri, 29 Nov 2019 14:36:16 +0800
+Message-ID: <1575009364.6367.5.camel@mhfsdcap03>
 Subject: Re: [PATCH v5 1/2] dt-bindings: mediatek: mt8183: Add #reset-cells
 From: Yong Liang <yong.liang@mediatek.com>
 To: Philipp Zabel <p.zabel@pengutronix.de>
+Date: Fri, 29 Nov 2019 14:36:04 +0800
 In-Reply-To: <49c94039ba327a1295fdfd5d74dca0b9805269b0.camel@pengutronix.de>
 References: <1574651030-29519-1-git-send-email-jiaxin.yu@mediatek.com>
  <1574651030-29519-2-git-send-email-jiaxin.yu@mediatek.com>
  <49c94039ba327a1295fdfd5d74dca0b9805269b0.camel@pengutronix.de>
-Date: Fri, 29 Nov 2019 14:33:25 +0800
-MIME-Version: 1.0
 X-Mailer: Evolution 3.10.4-0ubuntu2 
-X-TM-SNTS-SMTP: FF3A6F2BD736D72B4F26A39DECBD324E971B973519332DC24613CED2AD969F4E2000:8
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: 3F41035B15E86B2915F7C7EA21024C6D3762066A9BDAF3A95558A4C43D6A960A2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_224404_291677_2263E1E9 
-X-CRM114-Status: GOOD (  16.56  )
+X-CRM114-CacheID: sfid-20191128_224614_140331_E5DAD678 
+X-CRM114-Status: GOOD (  17.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -107,6 +106,7 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
+
 
 On Mon, 2019-11-25 at 18:07 +0800, Philipp Zabel wrote:
 > On Mon, 2019-11-25 at 11:03 +0800, Jiaxin Yu wrote:
@@ -222,6 +222,7 @@ On Mon, 2019-11-25 at 18:07 +0800, Philipp Zabel wrote:
 > Linux-mediatek mailing list
 > Linux-mediatek@lists.infradead.org
 > http://lists.infradead.org/mailman/listinfo/linux-mediatek
+
 
 _______________________________________________
 linux-arm-kernel mailing list
