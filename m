@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8995B10D0AE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 04:38:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22B4C10D0BD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 05:16:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Msw9sHteR8eBynYnxHOs0YX8e7/yn8BzVVHW1FY/Euo=; b=dKL4BTRQD1+Qas
-	IJ4mdgZAUam/QxH4E8XYSGpigA5IjaGeB5+6HJWJt1RqCuqe1/BTDTI48eQl6Jbkia3hX2kxlwhQt
-	C9B4eZ1Cvgrdmb2vWYmh/tYqXxzd0QrtSjsMbsjZwczadh4WMApsvU2tAFggF+OSN4Zi45DQl1MIL
-	nQPwumDKOD9W1RYYohGbv5+kX6/g/d2SzZtt2aSXsuxTjEtS+2YX1jWkIaTXwoUHolkeeUPh/M93c
-	FhC8hHsAXUg0ZZhryt0qGpjn/n1cBck6AbavfQn/2xuo4P08KaBGXdDm1CIIt7nhvgLMheL8tUcwa
-	9Sz9cZQczKhB6Mw3NVqg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=d0cFlVsTu+1aoTbq5X5W4Wuzk3bFOTWUyH5ILab2ZXM=; b=eD2
+	KLvy821U5w6BVFITjByrUl9oL1iaQfTwymdmz59RvX7NQHaNdYoP6RxwGF4Es4wq1XWhDF1BQXO3A
+	KYgiCUxCGlZZD80KW0dqSIAywcEDX59zsgmKSc0KqNlmRtFsfBfLMbnocrZx0Aq1QrR5xHkC2067W
+	ZJ7e5JuXahJp+VBCRICCoQjJG9Ue9kYs6ajJL/9cFlYmRIjpUBGskhs02j8rk4xh3ty5Xi8khSsJN
+	sV9IFpTxMzdO4eSxVcbCb4oLw4oGhNc96J7CtskUPvC1KbFFLN0qgd8RkitW9M5LKjdHnzCSTBp8e
+	xRSIJlfkd48xxbfc1h9Gl/fM0nm5V4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaX6V-0001Iz-T9; Fri, 29 Nov 2019 03:37:59 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaX6M-0001Hq-Hi
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 03:37:52 +0000
-Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 5F1338584C3E47A3F3DE;
- Fri, 29 Nov 2019 11:37:38 +0800 (CST)
-Received: from localhost.localdomain.localdomain (10.175.113.25) by
- DGGEMS402-HUB.china.huawei.com (10.3.19.202) with Microsoft SMTP Server id
- 14.3.439.0; Fri, 29 Nov 2019 11:37:31 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, "Michael
- Turquette" <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH -next] clk: bm1800: Remove set but not used variable 'fref'
-Date: Fri, 29 Nov 2019 03:35:34 +0000
-Message-ID: <20191129033534.188257-1-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
-X-Originating-IP: [10.175.113.25]
-X-CFilter-Loop: Reflected
+	id 1iaXhr-0005hG-0n; Fri, 29 Nov 2019 04:16:35 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iaXhi-0005gj-0V
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 04:16:27 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 29 Nov 2019 13:16:21 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id DA8A3603AB;
+ Fri, 29 Nov 2019 13:16:21 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Fri, 29 Nov 2019 13:16:44 +0900
+Received: from plum.e01.socionext.com (unknown [10.213.132.32])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id A00441A0006;
+ Fri, 29 Nov 2019 13:16:21 +0900 (JST)
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: [PATCH] clk: uniphier: Add SCSSI clock gate for each channel
+Date: Fri, 29 Nov 2019 13:16:08 +0900
+Message-Id: <1575000968-19434-1-git-send-email-hayashi.kunihiko@socionext.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_193750_757752_8E4FE83D 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191128_201626_167451_0362E4C7 
+X-CRM114-Status: GOOD (  10.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.248.49.38 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,47 +64,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: YueHaibing <yuehaibing@huawei.com>, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org, Hulk Robot <hulkci@huawei.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-kernel@vger.kernel.org,
+ Jassi Brar <jaswinder.singh@linaro.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fixes gcc '-Wunused-but-set-variable' warning:
+SCSSI has clock gates for each channel in the SoCs newer than Pro4,
+so this adds missing clock gates for channel 1, 2 and 3. And more, this
+moves MCSSI clock ID after SCSSI.
 
-drivers/clk/clk-bm1880.c: In function 'bm1880_pll_rate_calc':
-drivers/clk/clk-bm1880.c:477:13: warning:
- variable 'fref' set but not used [-Wunused-but-set-variable]
-
-It is never used, so remove it.
-
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- drivers/clk/clk-bm1880.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/clk/uniphier/clk-uniphier-peri.c | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/clk/clk-bm1880.c b/drivers/clk/clk-bm1880.c
-index 4cd175afce9b..e6d6599d310a 100644
---- a/drivers/clk/clk-bm1880.c
-+++ b/drivers/clk/clk-bm1880.c
-@@ -474,11 +474,10 @@ static struct bm1880_composite_clock bm1880_composite_clks[] = {
- static unsigned long bm1880_pll_rate_calc(u32 regval, unsigned long parent_rate)
- {
- 	u64 numerator;
--	u32 fbdiv, fref, refdiv;
-+	u32 fbdiv, refdiv;
- 	u32 postdiv1, postdiv2, denominator;
+diff --git a/drivers/clk/uniphier/clk-uniphier-peri.c b/drivers/clk/uniphier/clk-uniphier-peri.c
+index 9caa529..3e32db9 100644
+--- a/drivers/clk/uniphier/clk-uniphier-peri.c
++++ b/drivers/clk/uniphier/clk-uniphier-peri.c
+@@ -18,8 +18,8 @@
+ #define UNIPHIER_PERI_CLK_FI2C(idx, ch)					\
+ 	UNIPHIER_CLK_GATE("i2c" #ch, (idx), "i2c", 0x24, 24 + (ch))
  
- 	fbdiv = (regval >> 16) & 0xfff;
--	fref = parent_rate;
- 	refdiv = regval & 0x1f;
- 	postdiv1 = (regval >> 8) & 0x7;
- 	postdiv2 = (regval >> 12) & 0x7;
-
-
+-#define UNIPHIER_PERI_CLK_SCSSI(idx)					\
+-	UNIPHIER_CLK_GATE("scssi", (idx), "spi", 0x20, 17)
++#define UNIPHIER_PERI_CLK_SCSSI(idx, ch)				\
++	UNIPHIER_CLK_GATE("scssi" #ch, (idx), "spi", 0x20, 17 + (ch))
+ 
+ #define UNIPHIER_PERI_CLK_MCSSI(idx)					\
+ 	UNIPHIER_CLK_GATE("mcssi", (idx), "spi", 0x24, 14)
+@@ -35,7 +35,7 @@ const struct uniphier_clk_data uniphier_ld4_peri_clk_data[] = {
+ 	UNIPHIER_PERI_CLK_I2C(6, 2),
+ 	UNIPHIER_PERI_CLK_I2C(7, 3),
+ 	UNIPHIER_PERI_CLK_I2C(8, 4),
+-	UNIPHIER_PERI_CLK_SCSSI(11),
++	UNIPHIER_PERI_CLK_SCSSI(11, 0),
+ 	{ /* sentinel */ }
+ };
+ 
+@@ -51,7 +51,10 @@ const struct uniphier_clk_data uniphier_pro4_peri_clk_data[] = {
+ 	UNIPHIER_PERI_CLK_FI2C(8, 4),
+ 	UNIPHIER_PERI_CLK_FI2C(9, 5),
+ 	UNIPHIER_PERI_CLK_FI2C(10, 6),
+-	UNIPHIER_PERI_CLK_SCSSI(11),
+-	UNIPHIER_PERI_CLK_MCSSI(12),
++	UNIPHIER_PERI_CLK_SCSSI(11, 0),
++	UNIPHIER_PERI_CLK_SCSSI(12, 1),
++	UNIPHIER_PERI_CLK_SCSSI(13, 2),
++	UNIPHIER_PERI_CLK_SCSSI(14, 3),
++	UNIPHIER_PERI_CLK_MCSSI(15),
+ 	{ /* sentinel */ }
+ };
+-- 
+2.7.4
 
 
 _______________________________________________
