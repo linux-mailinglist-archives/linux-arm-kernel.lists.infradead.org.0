@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E29610D659
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 14:52:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9216C10D662
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 14:52:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HzS+I7fm9JK0r+yAW//E5ZsXRJ/Y/KgaDDHyZB1zaTw=; b=kFQlw4dTYnSavp
-	a/Aho4g6/TR9k5HpamOkM98LSVmQYGImolJHW9amEbHnOKla8hduLgVVTTxAQQCB6c/CsTJsnzkkU
-	12VaEyYn2YBOhOLV/BmuVmjchMatLtHwpOttv6VZMFYxB7WbJXJOs5Mv+LNM/E2ElJtzxu59Hk/kW
-	U5au1X7e2geORbor4fEyCSIASLn15HMu0jGnCltI/QFjG5u3maZlpHbw5PZeoFqsb5ZvooKGm/yfx
-	J44J0fjTBcxUmtkrAugrmakMB6HzaIwWXAoQVtL3FBbZ/gQ5VL2UXeZR+mPfRmdpSPESzAZcB5F/0
-	Na763Zun/j6NePllAh3Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UjiPMLAzSsNjv2xEL16Jw1yUFz7ZRUGCT3Sccva3uKs=; b=SysFBCavd2N/OM
+	X9b9jZMqiUs6uv0nRQR4Y16P2dFhRCcehcgrzD8p5mkWYVXrohAGxoSDjFpGIInJgWIU4iLO2BjaA
+	Hzt9zos8MxprWIvCOVR+bJ00YiHRAZ9nhUgIKUtjZZwCGWTbl/k6rLqI9tozlkGAcM/IRi7hkoFb+
+	Evihkpkt2bWdegzVRBvTbzxceZNFLhFEbmATLoOAVA9vPP8QAF2Hh2Ex6SccseCVN+Lci88uTm/ZW
+	/Iof2qb0rA0qeYlgNx6j40werkhhYn8YJxDCegZS0B7quSwh65q1jjy3FQcQN39CjL26wTUYCEcIH
+	hpICNdQyFiA97kq8wZTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaggr-0005SX-Sv; Fri, 29 Nov 2019 13:52:09 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1iaghC-0005cp-EY; Fri, 29 Nov 2019 13:52:30 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaggg-0005Ro-Mj
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 13:52:01 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+ id 1iaggl-0005U6-O5
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 13:52:05 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="Claudiu.Beznea@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,46 +34,48 @@ Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
  include:servers.mcsv.net include:mktomail.com
  include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
+Authentication-Results: esa1.microchip.iphmx.com;
  dkim=none (message not signed) header.i=none;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: h5SHTUUGrFynw3OqVDljNloPVDJf/ril5qn86YWzvZhV88T2PkE3APvVIe3R3c8x5aSbdTnqrU
- mgjnM1YxoiD4WNtamkfpsRja3cx4qIe/4dimTNcD1gGX5QDi8VoWWAExUdbR23GM5rZPA8Xb2d
- f78itzV5tPXN8cjFiYPEE1b9kTgzLMGjcUZqjln4NVaEdYcB1yC7CupdrUKUCZtyvjPN6FmEaC
- zVHqk4tt7U+kWJDsG7CVfiXUaF5mWJ1L2iBcY1jT1jKDZJrNNpUJ2jam+VkJJugINPjsflkr1W
- 7Os=
-X-IronPort-AV: E=Sophos;i="5.69,257,1571727600"; d="scan'208";a="57287972"
+IronPort-SDR: GxaVsQIFk2v9N+32Yaf/dZwtFt3bo5SeNrykirVRzWos8SH6VPMBkgo18GYWd8DqdwJCviB7EJ
+ cE6sDzLWR+gWNweT05/o5X501D66IxHHrHj7/qWYsnumIALOCQR3mJMO40yHLYsDyuyGETLiiJ
+ m2I+Ier/f5FW8yJGWnxZcZu1+oN168fOnFYrMXq5zMFqNWjazDJYyfqXA7iljCey2cjOaqidjI
+ Doupf6UrTsLx0f5wMn3VB4wHHactd/Fg6Dc5S9Lv0t1egm3liUmay+ear0MSoM+j7/pBt2gSWi
+ b/U=
+X-IronPort-AV: E=Sophos;i="5.69,257,1571727600"; d="scan'208";a="60119974"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 29 Nov 2019 06:51:53 -0700
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 29 Nov 2019 06:52:01 -0700
 Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 29 Nov 2019 06:51:53 -0700
+ 15.1.1713.5; Fri, 29 Nov 2019 06:51:55 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 29 Nov 2019 06:51:50 -0700
+ 15.1.1713.5 via Frontend Transport; Fri, 29 Nov 2019 06:51:53 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <linux@armlinux.org.uk>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>,
  <sre@kernel.org>
-Subject: [PATCH v3 0/9] SoC and defconfig support for SAM9X60
-Date: Fri, 29 Nov 2019 15:51:36 +0200
-Message-ID: <1575035505-6310-1-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH v3 1/9] ARM: at91: Kconfig: add sam9x60 pll config flag
+Date: Fri, 29 Nov 2019 15:51:37 +0200
+Message-ID: <1575035505-6310-2-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1575035505-6310-1-git-send-email-claudiu.beznea@microchip.com>
+References: <1575035505-6310-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_055158_747566_3D035B26 
-X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-CacheID: sfid-20191129_055203_824013_8E6771E1 
+X-CRM114-Status: UNSURE (   6.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -81,7 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -102,54 +104,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Add SAM9X60's pll config flag. It was first used in
+commit a436c2a447e5 ("clk: at91: add sam9x60 PLL driver").
 
-This series enables proper support for SAM9X60 in Kconfig and
-defconfig.
+Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+---
+ arch/arm/mach-at91/Kconfig | 3 +++
+ 1 file changed, 3 insertions(+)
 
-Thank you,
-Claudiu Beznea
-
-Changes in v3:
-- move patch "ARM: at91: Kconfig: add config flag for SAM9X60 SoC" before
-  the patches that uses CONFIG_SOC_SAM9X60
-- sqash defconfig patches (except the savedefconfig one)
-
-Changes in v2:
-- cahnged cover letter title; previously it was:
-  "add defconfig support for SAM9X60"
-- have new entry in arch/arm/mach-at91/Kconfig for SOC_SAM9X60
-  independent of SOC_AT91SAM9 to be able to select only necessary
-  config flags for SAM9X60 (patches 02/17, 03/17)
-- select POWER_RESET_AT91_RESET and POWER_RESET_AT91_SAMA5D2_SHDWC
-  as for SAMA5D2 (patches 04/17, 05/17)
-- select DEBUG_AT91_RM9200_DBGU (patch 06/17)
-- shaped a bit the patches titles and commit desciptions for defconfig
-  patches (patches 09-17/17)
-
-Claudiu Beznea (9):
-  ARM: at91: Kconfig: add sam9x60 pll config flag
-  ARM: at91: Kconfig: add config flag for SAM9X60 SoC
-  ARM: at91: pm: move SAM9X60's PM under its own SoC config flag
-  drivers: soc: atmel: move sam9x60 under its own config flag
-  power: reset: Kconfig: select POWER_RESET_AT91_RESET for sam9x60
-  drivers: soc: atmel: select POWER_RESET_AT91_SAMA5D2_SHDWC for sam9x60
-  ARM: debug-ll: select DEBUG_AT91_RM9200_DBGU for sam9x60
-  ARM: at91/defconfig: use savedefconfig
-  ARM: at91/defconfig: enable config flags for sam9x60 SoC
-
- arch/arm/Kconfig.debug             |  6 ++---
- arch/arm/configs/at91_dt_defconfig | 55 ++++++++++++++++++--------------------
- arch/arm/mach-at91/Kconfig         | 24 +++++++++++++++--
- arch/arm/mach-at91/Makefile        |  1 +
- arch/arm/mach-at91/at91sam9.c      | 18 -------------
- arch/arm/mach-at91/pm.c            |  2 +-
- arch/arm/mach-at91/sam9x60.c       | 34 +++++++++++++++++++++++
- drivers/power/reset/Kconfig        |  4 +--
- drivers/soc/atmel/soc.c            |  5 ++--
- 9 files changed, 92 insertions(+), 57 deletions(-)
- create mode 100644 arch/arm/mach-at91/sam9x60.c
-
+diff --git a/arch/arm/mach-at91/Kconfig b/arch/arm/mach-at91/Kconfig
+index af41725fcc72..262b550d7329 100644
+--- a/arch/arm/mach-at91/Kconfig
++++ b/arch/arm/mach-at91/Kconfig
+@@ -154,6 +154,9 @@ config HAVE_AT91_AUDIO_PLL
+ config HAVE_AT91_I2S_MUX_CLK
+ 	bool
+ 
++config HAVE_AT91_SAM9X60_PLL
++	bool
++
+ config SOC_SAM_V4_V5
+ 	bool
+ 
 -- 
 2.7.4
 
