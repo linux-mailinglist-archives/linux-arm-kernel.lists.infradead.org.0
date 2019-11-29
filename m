@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF3AC10DA56
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 21:01:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0088F10DA59
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 21:01:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,80 +11,82 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=rQUeEhnxe/fnikXZQt1i7+hvd8Og3QYtZI9n8u2JF1A=; b=nItL+DnsyXAmrDRFM630+BI7GB
-	QQyxU4xlNawPxkkfbpGf5yB4xUstQxwebRBkhoelFkUgaFc3izlUoSPLZfLzjI9ZBiSU7XH3Mettd
-	hzM1GbttrTmwDpNA3NFL9LbwuJ4WefOgvNMj34lg4LdOXmaOSRHUwokLewu7yM/Dhm2g+fffFe3+Z
-	xzCKvNB8CotbzViPZmZC+iyOhV4KVqgQNxMJbeBqr00YMOKtAdoj4Fy3qP3qEu03HQ5VTsS7jI1Ml
-	ji4L083vbUSwRN06tEZoX0SYUlNG4mIHB52nFAFaf2P1q6H9UqUDAtkbRGeSMDdnTm9DpPBeWRvQ+
-	11+oZ/cQ==;
+	bh=3czr7DZ6cD9WlPeQYvyMOsGAb9ivMfNdkbT+3/2p2ZU=; b=OTqM9ri2qHmlHsG7oUnDjhIORr
+	kdlguMWnYf17M6gijLg1qSDoZUw+tRbYTyCgzzEi9mbb2REtEGgIZcSb5BBVBig2IDHtNlGY7LGZb
+	FjTbxjSdf6tdVwaX4iDuPtrl1pGRrhUg336VrVlTFFMBc8wthhVZy4aD+MrmhH4FQ0dCwMfUwv5AN
+	oGM3Ly6MmVAELuEaoRzKMh4mOpPWw6c1M+swy+OmwOBv3wRLWxBhQqBnkmBNk5FBt712TumFXqkI/
+	lpOaFrhTRjcfgjeOoUYbXf9fPcV1+MwYvBufVkj/giU9bkrqvgnfT88b1S1lQlORb8XQRjjR2gMea
+	5dRW0cMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iamRk-0000cW-B8; Fri, 29 Nov 2019 20:00:56 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iamS9-0000xh-Aq; Fri, 29 Nov 2019 20:01:21 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iamQc-00079e-7O
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 19:59:48 +0000
+ id 1iamQf-0007CX-Lm
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 19:59:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1575057584;
+ s=mimecast20190719; t=1575057587;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=wgbAkKrJxLS1NEOR+82/qBcYhhrIFUtkNwc9k9kwPFE=;
- b=Ptf/TCYZpNUNBaJhgOdr4X7qUTDzH/XvQfUWPLBa/z/RuVThOqvtXr32eiyH4t1qDRLuzz
- U/nb6MDzKc9D4pxkmgnsGPcxUMkNN2WhYlYs9jkGxQ1QsL/MiK4yfOVIzvUGnaB8fIb2A3
- JWNsUiXKfOY7NcS1POS88HN1HBZfsLo=
-Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com
- [209.85.215.200]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-43-7QbnBYmzP2W_XcwRNvTJqA-1; Fri, 29 Nov 2019 14:59:41 -0500
-Received: by mail-pg1-f200.google.com with SMTP id o21so1659911pgm.11
+ bh=2FRKI5+6EDUKwn2QzAstv2u6dW0Q8/ilQLcz5atGxuE=;
+ b=B8Qyy3ZwqX1aKoo9QY+0r/F4xriA8glP+aBdWc4fGEKWl7zFQP9mtmf1bQ1TCkZaKATqgF
+ UG3gBc0yRgdaoXAYJy9C2UigbTFr0MlMjndq11X/gZW+wFDvV0LJoqJqOpidQ23+niT2fZ
+ pyed1rdA0fF4UCSBEop9ba9XcK0Qf7A=
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com
+ [209.85.210.198]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-218-vhQf1mC6MeqiuxWS9o6w0Q-1; Fri, 29 Nov 2019 14:59:45 -0500
+Received: by mail-pf1-f198.google.com with SMTP id b15so2876106pfo.16
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 29 Nov 2019 11:59:41 -0800 (PST)
+ Fri, 29 Nov 2019 11:59:45 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=iJyjrUFfcmHAhH3JG4K3fZfDXNCj7aMMhMdC/cxhP5Q=;
- b=ap8/vnF6lY49WE19fhzYrbMORqAuyFmzQOXe7IJ+ATGpHf387A9S3yD3ebJ9jEy2KM
- nmhynqelQ4RYNNTbtNd2ZkYOltJoLL+ulFdUYcHj+hT7C4/4eSZ9Xnehvrvee8SJtJKC
- 4muZf/AVOOo/qROMkfr0FpNF9RJyNKwhvfER18rGwirFGOlfp75rPD/WoUNr/IwOKjpq
- JbQLNT3GTuA7T8sNY+30vZy6I6PRCf5yq39UaC0/9tl0RAciUnSrk/xm5HE3dOZqb+js
- E/Yd7MYzTUm1gTcIvE+BcVcvTqWgIVoypbaBV+JLdZTJYpW0ofj6H8pFK79Zp0yjQerd
- /M2Q==
-X-Gm-Message-State: APjAAAUWar88ZNDSoRR0jGFpCRO9aeKi5I+YpM6KOyWonSWXYvJFV3LT
- PpYtlnRp739UpKUpPtgey+7x1jgnN7hsoUStDLQBjjZtIfYeDTDS75LT27zhoZUEuYVcO45BTw4
- ZfFj/KwaxS7PcGfUo4taFuLLaL7fxDahkUk8=
-X-Received: by 2002:a63:fb03:: with SMTP id o3mr18525468pgh.378.1575057580572; 
- Fri, 29 Nov 2019 11:59:40 -0800 (PST)
-X-Google-Smtp-Source: APXvYqxSS9+ZN7GKT/MIwc8aGAoCV6a/ldIDRYJOYbBvx5BLhqOQbU8FUr1Poz3Dix0kBpRLDW39Sw==
-X-Received: by 2002:a63:fb03:: with SMTP id o3mr18525441pgh.378.1575057580274; 
- Fri, 29 Nov 2019 11:59:40 -0800 (PST)
+ bh=BgAr5VVOQXh1yien5qVgdgmIL5RHbScoYGF2ala0/ak=;
+ b=JmeOYGjg7K2ZPxa6BLT/ijpywGM+HnIkWfTEo1htOEflkVYf4JmlSOP6sNp5bwkQpS
+ G0uqmXvveREBzgWY34+6mIzxmFi//VbtNaKIXkWGfiV/idOce8dM8Yues752nQj8ZHEI
+ 9op+vk2czwovJHol7eA/fwmr/F9Xf0xfb2I2kafDTg4dDtJ5+uMoAnz1//aZ5xZ/0tu6
+ y6Sit8Z/T6q0JDeiL0HkVEYDIzCfshTdVTkAa7Ny0TMkg+Y9xdsJKugQ6dzc1F/81yMH
+ r4nv3ozhoMwLIdJzEJPTQuNwpK1kOlt9r5BZOcq83gB2HxuFfSqPhUNAAafzTd+0BZsO
+ OTkQ==
+X-Gm-Message-State: APjAAAUDw7cbEpxmcG+mNmmbLUDssCuqSDJs3n1nfurQywe06bdamX9V
+ ZQlXoBsZRwbfb8jsYPS0WNazMTLLRurNa0FRTak5rO3EQcoW3uLT+N+cYnWmGVzyQd36QANdlC9
+ X4S+LA3sT/QhWPtml1/EAlklt6f2MUX7UYbg=
+X-Received: by 2002:a17:90a:fb53:: with SMTP id
+ iq19mr20314620pjb.138.1575057584293; 
+ Fri, 29 Nov 2019 11:59:44 -0800 (PST)
+X-Google-Smtp-Source: APXvYqz4gnI9c2bYrtjkLwMhPYvWHvZw+YasEX6lAkryf7HpqeVi2n8s5GR/Ai2re8lnbcSS3E4aLw==
+X-Received: by 2002:a17:90a:fb53:: with SMTP id
+ iq19mr20314608pjb.138.1575057584113; 
+ Fri, 29 Nov 2019 11:59:44 -0800 (PST)
 Received: from localhost ([122.177.85.74])
- by smtp.gmail.com with ESMTPSA id jx12sm6300003pjb.26.2019.11.29.11.59.38
+ by smtp.gmail.com with ESMTPSA id 67sm15725427pfw.82.2019.11.29.11.59.42
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 29 Nov 2019 11:59:39 -0800 (PST)
+ Fri, 29 Nov 2019 11:59:43 -0800 (PST)
 From: Bhupesh Sharma <bhsharma@redhat.com>
 To: linux-kernel@vger.kernel.org
-Subject: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ in
- vmcoreinfo
-Date: Sat, 30 Nov 2019 01:29:16 +0530
-Message-Id: <1575057559-25496-3-git-send-email-bhsharma@redhat.com>
+Subject: [RESEND PATCH v5 3/5] Documentation/arm64: Fix a simple typo in
+ memory.rst
+Date: Sat, 30 Nov 2019 01:29:17 +0530
+Message-Id: <1575057559-25496-4-git-send-email-bhsharma@redhat.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
 References: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
-X-MC-Unique: 7QbnBYmzP2W_XcwRNvTJqA-1
+X-MC-Unique: vhQf1mC6MeqiuxWS9o6w0Q-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_115946_390595_9C65B5EF 
-X-CRM114-Status: GOOD (  18.37  )
+X-CRM114-CacheID: sfid-20191129_115949_871322_4574C5C0 
+X-CRM114-Status: GOOD (  15.05  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.81 listed in list.dnswl.org]
+ medium trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -106,12 +108,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-doc@vger.kernel.org,
  Will Deacon <will@kernel.org>, bhsharma@redhat.com, x86@kernel.org,
- kexec@lists.infradead.org, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- James Morse <james.morse@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Anderson <anderson@redhat.com>, bhupesh.linux@gmail.com,
+ kexec@lists.infradead.org, James Morse <james.morse@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, bhupesh.linux@gmail.com,
  linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
  Steve Capper <steve.capper@arm.com>
 MIME-Version: 1.0
@@ -120,100 +121,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-vabits_actual variable on arm64 indicates the actual VA space size,
-and allows a single binary to support both 48-bit and 52-bit VA
-spaces.
+Fix a simple typo in arm64/memory.rst
 
-If the ARMv8.2-LVA optional feature is present, and we are running
-with a 64KB page size; then it is possible to use 52-bits of address
-space for both userspace and kernel addresses. However, any kernel
-binary that supports 52-bit must also be able to fall back to 48-bit
-at early boot time if the hardware feature is not present.
-
-Since TCR_EL1.T1SZ indicates the size offset of the memory region
-addressed by TTBR1_EL1 (and hence can be used for determining the
-vabits_actual value) it makes more sense to export the same in
-vmcoreinfo rather than vabits_actual variable, as the name of the
-variable can change in future kernel versions, but the architectural
-constructs like TCR_EL1.T1SZ can be used better to indicate intended
-specific fields to user-space.
-
-User-space utilities like makedumpfile and crash-utility, need to
-read/write this value from/to vmcoreinfo for determining if a virtual
-address lies in the linear map range.
-
-The user-space computation for determining whether an address lies in
-the linear map range is the same as we have in kernel-space:
-
-  #define __is_lm_address(addr)	(!(((u64)addr) & BIT(vabits_actual - 1)))
-
-I have sent out user-space patches for makedumpfile and crash-utility
-to add features for obtaining vabits_actual value from TCR_EL1.T1SZ (see
-[0] and [1]).
-
-Akashi reported that he was able to use this patchset and the user-space
-changes to get user-space working fine with the 52-bit kernel VA
-changes (see [2]).
-
-[0]. http://lists.infradead.org/pipermail/kexec/2019-November/023966.html
-[1]. http://lists.infradead.org/pipermail/kexec/2019-November/024006.html
-[2]. http://lists.infradead.org/pipermail/kexec/2019-November/023992.html
-
+Cc: Jonathan Corbet <corbet@lwn.net>
 Cc: James Morse <james.morse@arm.com>
 Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: Will Deacon <will@kernel.org>
 Cc: Steve Capper <steve.capper@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Cc: Dave Anderson <anderson@redhat.com>
-Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-doc@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
-Cc: kexec@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
 Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
 ---
- arch/arm64/include/asm/pgtable-hwdef.h | 1 +
- arch/arm64/kernel/crash_core.c         | 9 +++++++++
- 2 files changed, 10 insertions(+)
+ Documentation/arm64/memory.rst | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
-index d9fbd433cc17..d2e7aff5821e 100644
---- a/arch/arm64/include/asm/pgtable-hwdef.h
-+++ b/arch/arm64/include/asm/pgtable-hwdef.h
-@@ -215,6 +215,7 @@
- #define TCR_TxSZ(x)		(TCR_T0SZ(x) | TCR_T1SZ(x))
- #define TCR_TxSZ_WIDTH		6
- #define TCR_T0SZ_MASK		(((UL(1) << TCR_TxSZ_WIDTH) - 1) << TCR_T0SZ_OFFSET)
-+#define TCR_T1SZ_MASK		(((UL(1) << TCR_TxSZ_WIDTH) - 1) << TCR_T1SZ_OFFSET)
+diff --git a/Documentation/arm64/memory.rst b/Documentation/arm64/memory.rst
+index 02e02175e6f5..cf03b3290800 100644
+--- a/Documentation/arm64/memory.rst
++++ b/Documentation/arm64/memory.rst
+@@ -129,7 +129,7 @@ this logic.
  
- #define TCR_EPD0_SHIFT		7
- #define TCR_EPD0_MASK		(UL(1) << TCR_EPD0_SHIFT)
-diff --git a/arch/arm64/kernel/crash_core.c b/arch/arm64/kernel/crash_core.c
-index ca4c3e12d8c5..f78310ba65ea 100644
---- a/arch/arm64/kernel/crash_core.c
-+++ b/arch/arm64/kernel/crash_core.c
-@@ -7,6 +7,13 @@
- #include <linux/crash_core.h>
- #include <asm/memory.h>
+ As a single binary will need to support both 48-bit and 52-bit VA
+ spaces, the VMEMMAP must be sized large enough for 52-bit VAs and
+-also must be sized large enought to accommodate a fixed PAGE_OFFSET.
++also must be sized large enough to accommodate a fixed PAGE_OFFSET.
  
-+static inline u64 get_tcr_el1_t1sz(void);
-+
-+static inline u64 get_tcr_el1_t1sz(void)
-+{
-+	return (read_sysreg(tcr_el1) & TCR_T1SZ_MASK) >> TCR_T1SZ_OFFSET;
-+}
-+
- void arch_crash_save_vmcoreinfo(void)
- {
- 	VMCOREINFO_NUMBER(VA_BITS);
-@@ -15,5 +22,7 @@ void arch_crash_save_vmcoreinfo(void)
- 						kimage_voffset);
- 	vmcoreinfo_append_str("NUMBER(PHYS_OFFSET)=0x%llx\n",
- 						PHYS_OFFSET);
-+	vmcoreinfo_append_str("NUMBER(tcr_el1_t1sz)=0x%llx\n",
-+						get_tcr_el1_t1sz());
- 	vmcoreinfo_append_str("KERNELOFFSET=%lx\n", kaslr_offset());
- }
+ Most code in the kernel should not need to consider the VA_BITS, for
+ code that does need to know the VA size the variables are
 -- 
 2.7.4
 
