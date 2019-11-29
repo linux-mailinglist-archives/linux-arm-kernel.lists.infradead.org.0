@@ -2,82 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E437E10D619
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 14:27:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 527CB10D64E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 14:51:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Oy8rpNQTBkgYZAstjJ0wsiCGC9pBtCEspz/GgGDwtm8=; b=A109LaQyUnTlciji/XQGxkuAi
-	k6xYFXCjNSV1Du3Vu/SkDLzdqyi87GY5KSVqUZaUOd7P82Gmlke4xyS4v/Xo46AQXBEgeLN84vkEL
-	5XZULkFvO95gxDmvNgZp1+xv4o3wfN8LJw7/bt3Xop4f0gUlE1COKD8RDD9Pd3Ue2dTqgZgHu6GUf
-	aMzZDRgVMHJuaaKOHhK0c57jsWarlns7NGthGZu07PaGIgG12T+Of5NEWrE9SxSL62KEQu2XB4yER
-	fc+YDSBYvUWsoOzMlU46SOVrbQR7z+huz8gxID7W7L0UNRWDTfNI13pmhy6hYDgITaX45/2x1dIqL
-	UXSK5YLQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sR6AhjHzHsoEuY6QjUmSsOStWHtCyw3n2kDfwNsgxgc=; b=qIm2UqmJBIMyf2
+	lclu9zrOCRLTUsjiUYIZgtU0GFNkh4hSip+1jds5stbO76hUow796ULryRTx09YUzjXJNtXY4zz1i
+	n6U0/sXcgTi8+pqOO0F/1LL2Wo4t0LcnnSAfHpe1wL2q3fvUn094YYYBhpF+ubbCytLYnmPMWisex
+	hkZo6zRp/WaGg/Qa5bg4ItD9W6/ukVrbj2HknjTPmDfzMUZIPNaH6Lzslbi1K9mWVf40NQqS1s5OY
+	aRCBGRc/YGUk48Rl09dCBhM5sEhuFlKhs41QxQZyfxHJdmgwt7v7Az18bb1k4TLU8hC3e8aeHilY9
+	ULJil9gG5b3kOvPPd1eA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iagIV-0005De-Le; Fri, 29 Nov 2019 13:26:59 +0000
-Received: from hqemgate15.nvidia.com ([216.228.121.64])
+	id 1iagft-00059t-4d; Fri, 29 Nov 2019 13:51:09 +0000
+Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iagIL-0005Ce-9d
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 13:26:51 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5de11c8d0000>; Fri, 29 Nov 2019 05:26:38 -0800
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Fri, 29 Nov 2019 05:26:45 -0800
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Fri, 29 Nov 2019 05:26:45 -0800
-Received: from [10.25.75.74] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 29 Nov
- 2019 13:26:40 +0000
-Subject: Re: [PATCH 2/6] dt-bindings: PCI: tegra: Add DT support for PCIe EP
- nodes in Tegra194
-To: Rob Herring <robh+dt@kernel.org>
-References: <20191122104505.8986-1-vidyas@nvidia.com>
- <20191122104505.8986-3-vidyas@nvidia.com> <20191122131931.GB1315704@ulmo>
- <8fbdda8e-84af-576c-e240-61c381c85a8f@nvidia.com>
- <20191125073359.GD1409040@ulmo>
- <DM6PR12MB401074B85B9E9E592648FF65DA4A0@DM6PR12MB4010.namprd12.prod.outlook.com>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <b9e8e8cc-2d05-cab7-4fd8-34c3c835bf92@nvidia.com>
-Date: Fri, 29 Nov 2019 18:56:37 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1iagfg-00059L-S2
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 13:50:59 +0000
+Received: by mail-qv1-xf41.google.com with SMTP id p2so1284238qvo.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 29 Nov 2019 05:50:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+48mKtM249W0d1rotn10hWllhDwLN9J2dVtCthcPqL4=;
+ b=OOE9G76rausBfdbYb8bxjNq2Rt6iaFRyP9qNM8wv/LckC7NkN4FergteaCxEtr2fvQ
+ /aW/fah1SWUEss2EhP48D4YvZ/k/pONVMhd3IoCdu+UZ0QAAjXJAg9zw5MWYqZYNQyvo
+ jKONelM4wav1dRDlaxnVlPSSVzexTJ0dJ2zFKbqzERqa0IkwTky1r3ibXz5XZnJDUyf5
+ Q6bwsPf4HWJDAvzJ0zgAa1irL5cjJSu+1aNoEprx1sjquE0WD/9fTrcfKlNhfqO4TCf4
+ 0OeFCRtJdVS3iuTy+/7tbD8uBmQc7n//EMFY3+ewAcw7xi0aVxAGD3sa25JV8wRm4rfj
+ HMpg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+48mKtM249W0d1rotn10hWllhDwLN9J2dVtCthcPqL4=;
+ b=sCBSdvG3yCpJ7zY+qZgWT91bT2hwzA8tfDE4jwGKz4I8ucMhrSvvZckQ4FLo5U4dPv
+ KrjSxrqdYIM58W7VEoqUgUbrxBoaclSQel4OQPDTc17DVaUWBJwhz+mpTlfGSO+9Xrpz
+ 0MNBIFkjDlQe1nQZeJFF3SNBqh+DmTdC7Qa8ROR2SzcUO2xedIBybrcepadEkOC4zeiI
+ R6FJf8uSdV/QrIg2Kq0de3cPH6t5go6EV70mexD19iAd+bRatXkwcEM706c5aLIdOYg5
+ YD3Nim87u0dfqbHuInZbsHLO/B5zCtmh6u3hw+H1z1l6w3OymONzyo+f2bbLPVBlYOJy
+ kNUA==
+X-Gm-Message-State: APjAAAULj7OQVou3gCkzWI9pX7AcAxfiuM89o8Zt3OnxdQyBJXwHFPti
+ gIhlj22JGkq+FvTq/ddgbNj38VK2l+c5dSMbEYYAYA==
+X-Google-Smtp-Source: APXvYqykckBcci6gFbpOSRPso7Ikj0//b9XMmOTEShpPW27U8O6h795vgb3G60ElYxpquoytoJHoE4Fu1FWtoW2YDIE=
+X-Received: by 2002:ad4:4908:: with SMTP id bh8mr14025932qvb.251.1575035454874; 
+ Fri, 29 Nov 2019 05:50:54 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <DM6PR12MB401074B85B9E9E592648FF65DA4A0@DM6PR12MB4010.namprd12.prod.outlook.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL111.nvidia.com (172.20.187.18) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1575033998; bh=mMTtZ4d1o7bnD97qjTK6smbesgMNQVkHclIFEP2SR38=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=ahGFPJVRaxPfS+i8QpfRE1jdJU+yi0ZE+AbG6Om5nJwy1yTpqnqZQTTE8K8e/l5IM
- GL2IyBA1KAEYn5GBxuvX5y1ivmuDPZJHAUEVJbh9+Om0NQnwhCBLWQaIqDemrW4NbT
- 4yZS3UB2S5uFfmDlTHIlDCm7g1AGShlL0LQje31KozXLuH55PUt6WrWTb4PDJ2IGbJ
- 3BLi+8tPsPs2BqlF9zaBGxodKi16BT/XrDB1wE01/pDEeCnzjpjqKaZ50RYQ6/LP5c
- hMpFymiJcZf3XPm9fheAuv5L2MW/EHOPFKiUvgCWJkWoNQf1bYngEgwy4PuNvyjUoZ
- FmfQobntOf3OQ==
+References: <20191119231912.12768-1-mike.leach@linaro.org>
+ <20191119231912.12768-6-mike.leach@linaro.org>
+ <20191122233317.GA13904@bogus>
+In-Reply-To: <20191122233317.GA13904@bogus>
+From: Mike Leach <mike.leach@linaro.org>
+Date: Fri, 29 Nov 2019 13:50:43 +0000
+Message-ID: <CAJ9a7VhDnXQ4WL45F-naNqmwM5GTkKnqCnC512D9+wOFnMrdOg@mail.gmail.com>
+Subject: Re: [PATCH v5 05/14] dt-bindings: arm: Adds CoreSight CTI hardware
+ definitions.
+To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_052649_358042_A5E7C0AE 
-X-CRM114-Status: GOOD (  31.25  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191129_055056_945390_92142F0B 
+X-CRM114-Status: GOOD (  36.49  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -85,7 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,304 +90,495 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
- "mmaddireddy@nvidia.com" <mmaddireddy@nvidia.com>,
- "kthota@nvidia.com" <kthota@nvidia.com>,
- Gustavo Pimentel <Gustavo.Pimentel@synopsys.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "jonathanh@nvidia.com" <jonathanh@nvidia.com>,
- "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>, Jingoo Han <jingoohan1@gmail.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "andrew.murray@arm.com" <andrew.murray@arm.com>,
- "kishon@ti.com" <kishon@ti.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "sagar.tv@gmail.com" <sagar.tv@gmail.com>
+Cc: devicetree@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
+ Coresight ML <coresight@lists.linaro.org>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/25/2019 5:22 PM, Gustavo Pimentel wrote:
-> On Mon, Nov 25, 2019 at 7:33:59, Thierry Reding
-> <thierry.reding@gmail.com> wrote:
-> 
->> On Mon, Nov 25, 2019 at 12:53:42PM +0530, Vidya Sagar wrote:
->>> On 11/22/2019 6:49 PM, Thierry Reding wrote:
->>>> On Fri, Nov 22, 2019 at 04:15:01PM +0530, Vidya Sagar wrote:
->>>>> Add support for PCIe controllers that can operate in endpoint mode
->>>>> in Tegra194.
->>>>>
->>>>> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
->>>>> ---
->>>>>    .../bindings/pci/nvidia,tegra194-pcie-ep.txt  | 138 ++++++++++++++++++
->>>>>    1 file changed, 138 insertions(+)
->>>>>    create mode 100644 Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie-ep.txt
->>>>
->>>> The vast majority of this is a duplication of the host mode device tree
->>>> bindings. I think it'd be best to combine both and only highlight where
->>>> both modes differ.
->>>>
->>>> The designware-pcie.txt binding does something similar.
->>> Ok. I'll merge this into the host mode bindings file and in that differentiate between
->>> root mode and endpoint mode.
->>>
->>>>
->>>>> diff --git a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie-ep.txt b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie-ep.txt
->>>>> new file mode 100644
->>>>> index 000000000000..4676ccf7dfa5
->>>>> --- /dev/null
->>>>> +++ b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie-ep.txt
->>>>> @@ -0,0 +1,138 @@
->>>>> +NVIDIA Tegra PCIe Endpoint mode controller (Synopsys DesignWare Core based)
->>>>> +
->>>>> +Some of the PCIe controllers which are based on Synopsys DesignWare PCIe IP
->>>>> +are dual mode i.e. they can work in root port mode or endpoint mode but one
->>>>> + at a time. Since they are based on DesignWare IP, they inherit all the common
->>>>> +properties defined in designware-pcie.txt.
->>>>> +
->>>>> +Required properties:
->>>>> +- compatible: For Tegra19x, must contain "nvidia,tegra194-pcie".
->>>>
->>>> The device tree snippets that you added have "nvidia,tegra194-pcie-ep"
->>>> for EP mode controllers. So either this is wrong or the DTS files are
->>>> wrong.
->>> DTS file are correct. This is a mistake in this file. I'll correct this.
->>>
->>>>
->>>> This device tree binding describes the exact same hardware, so I don't
->>>> think we necessarily need two different compatible strings. It's fairly
->>>> easy to distinguish between which mode to run in by looking at which
->>>> properties exist. EP mode for example is the only one that uses the
->>>> "addr_space" reg entry.
->>>>
->>>> Rob, do you know why a different compatible string was chosen for the EP
->>>> mode? Looking at the driver, there are only a handful of differences in
->>>> the programming, but most of the driver remains identical. An extra DT
->>>> compatible string seems a bit exaggerated since it suggests that this is
->>>> actually different hardware, where it clearly isn't.
->>> Since all other implementations have done it this way, I just followed to be in sync
->>> with them. Even I would also like to hear from Rob on the rationale behind this.
-Rob, Could you please update on this?
+Hi Rob,
 
->>>
->>>>
->>>>> +  Tegra194: Only C0, C4 & C5 controllers are dual mode controllers.
->>>>> +- power-domains: A phandle to the node that controls power to the respective
->>>>> +  PCIe controller and a specifier name for the PCIe controller. Following are
->>>>> +  the specifiers for the different PCIe controllers
->>>>> +    TEGRA194_POWER_DOMAIN_PCIEX8B: C0
->>>>> +    TEGRA194_POWER_DOMAIN_PCIEX4A: C4
->>>>> +    TEGRA194_POWER_DOMAIN_PCIEX8A: C5
->>>>> +  these specifiers are defined in
->>>>> +  "include/dt-bindings/power/tegra194-powergate.h" file.
->>>>> +- reg: A list of physical base address and length pairs for each set of
->>>>> +  controller registers. Must contain an entry for each entry in the reg-names
->>>>> +  property.
->>>>> +- reg-names: Must include the following entries:
->>>>> +  "appl": Controller's application logic registers
->>>>> +  "atu_dma": iATU and DMA registers. This is where the iATU (internal Address
->>>>> +             Translation Unit) registers of the PCIe core are made available
->>>>> +             for SW access.
->>>>> +  "dbi": The aperture where root port's own configuration registers are
->>>>> +         available
->>>>> +  "addr_space": Used to map remote RC address space
->>>>> +- interrupts: A list of interrupt outputs of the controller. Must contain an
->>>>> +  entry for each entry in the interrupt-names property.
->>>>> +- interrupt-names: Must include the following entry:
->>>>> +  "intr": The Tegra interrupt that is asserted for controller interrupts
->>>>> +- clocks: Must contain an entry for each entry in clock-names.
->>>>> +  See ../clocks/clock-bindings.txt for details.
->>>>> +- clock-names: Must include the following entries:
->>>>> +  - core
->>>>> +- resets: Must contain an entry for each entry in reset-names.
->>>>> +  See ../reset/reset.txt for details.
->>>>> +- reset-names: Must include the following entries:
->>>>> +  - apb
->>>>> +  - core
->>>>> +- phys: Must contain a phandle to P2U PHY for each entry in phy-names.
->>>>> +- phy-names: Must include an entry for each active lane.
->>>>> +  "p2u-N": where N ranges from 0 to one less than the total number of lanes
->>>>> +- nvidia,bpmp: Must contain a pair of phandle to BPMP controller node followed
->>>>> +  by controller-id. Following are the controller ids for each controller.
->>>>> +    0: C0
->>>>> +    4: C4
->>>>> +    5: C5
->>>>> +- vddio-pex-ctl-supply: Regulator supply for PCIe side band signals
->>>>> +- nvidia,pex-rst-gpio: Must contain a phandle to a GPIO controller followed by
->>>>> +  GPIO that is being used as PERST signal
->>>>
->>>> Why is this NVIDIA specific? Do other instantiations of the DW IP not
->>>> also need a means to define which GPIO is the reset?
->>> I'm not sure. At least I didn't find anything like this in other implementations.
->>> My understanding is that, controller handles assert/de-assert on the PERST line
->>> automatically without SW intervention. I think it is for the same reason that other
->>> implementations don't wait for the REFCLK to flow in from host to configure the IP.
->>> I think they just use some internal clock for the configuration and switch to
->>> running the core based on REFCLK as and when it is available
->>> (i.e. whenever a de-assert is perceived on PERST line by the controller)
->>
->> That would be somewhat surprising, though. The IP used in Tegra must be
->> pretty close to the IP used in other SoCs, and the code that we need in
->> pex_ep_event_pex_rst_{assert,deassert}() is pretty significant. Why the
->> other instantiations wouldn't need something similar seems unlikely to
->> me.
->>
->> Perhaps Jingoo or Gustavo can shed some light on this.
-> 
-> On my current FPGA prototyping solution, I don't need to control the
-> PERST line and it's very likely that I don't even have access to control
-> it. I guess due to some particularity of my solution, the HW team
-> probably has decided to wire it up directly for some unknown reason to
-> me.
-> 
-> However, It seems to me that exynos, imx6, keystone, meson, al, histb,
-> kirin, and qcom drivers controls the PERST line in spite of others driver
-> that doesn't do it like in my prototype solution.
-> In the end I'd says that depends of how the IP solution of design by the
-> HW team.
-> 
-> Gustavo
-> 
->>
->> Thierry
->>
->>>
->>>>
->>>>> +
->>>>> +Optional properties:
->>>>> +- pinctrl-names: A list of pinctrl state names.
->>>>> +  It is mandatory for C5 controller and optional for other controllers.
->>>>> +  - "default": Configures PCIe I/O for proper operation.
->>>>> +- pinctrl-0: phandle for the 'default' state of pin configuration.
->>>>> +  It is mandatory for C5 controller and optional for other controllers.
->>>>> +- supports-clkreq: Refer to Documentation/devicetree/bindings/pci/pci.txt
->>>>> +- nvidia,update-fc-fixup: This is a boolean property and needs to be present to
->>>>> +    improve performance when a platform is designed in such a way that it
->>>>> +    satisfies at least one of the following conditions thereby enabling root
->>>>> +    port to exchange optimum number of FC (Flow Control) credits with
->>>>> +    downstream devices
->>>>> +    1. If C0/C4/C5 run at x1/x2 link widths (irrespective of speed and MPS)
->>>>> +    2. If C0/C4/C5 operate at their respective max link widths and
->>>>> +       a) speed is Gen-2 and MPS is 256B
->>>>> +       b) speed is >= Gen-3 with any MPS
->>>>> +- nvidia,aspm-cmrt-us: Common Mode Restore Time for proper operation of ASPM
->>>>> +   to be specified in microseconds
->>>>> +- nvidia,aspm-pwr-on-t-us: Power On time for proper operation of ASPM to be
->>>>> +   specified in microseconds
->>>>> +- nvidia,aspm-l0s-entrance-latency-us: ASPM L0s entrance latency to be
->>>>> +   specified in microseconds
->>>>> +
->>>>> +NOTE:- On Tegra194's P2972-0000 platform, only C5 controller can be enabled to
->>>>> +operate in the endpoint mode because of the way the platform is designed.
->>>>> +There is a mux that needs to be programmed to let the REFCLK from the host to
->>>>> +flow into C5 controller when it operates in the endpoint mode. This mux is
->>>>> +controlled by the GPIO (AA, 5) and it needs to be driven 'high'. For this to
->>>>> +happen, set status of "pex-refclk-sel-high" node under "gpio@c2f0000" node to
->>>>> +'okay'.
->>>>> +	When any dual mode controller is made to operate in the endpoint mode,
->>>>> +please make sure that its respective root port node's status is set to
->>>>> +'disabled'.
->>>>
->>>> This seems very brittle to me. There's no good way how we can detect
->>>> such misconfigurations. If instead we only have one node describing the
->>>> hardware fully, the chances of configuring things wrong (by for example
->>>> enabling both the host and EP mode device tree nodes) can be reduced.
->>>>
->>>> So I think instead of duplicating all of the device tree content to have
->>>> both a host and an EP node for each controller, it'd be better to just
->>>> have a single node and let the device tree bindings specify which
->>>> changes to apply to switch into EP mode.
->>>>
->>>> For example, there should be nothing wrong with specifying some of the
->>>> EP-only properties (like num-ib-windows and num-ob-windows) all the time
->>>> and only use them when we actually run in EP mode.
->>>>
->>>> As I mentioned earlier, there are a couple of easy ways to distinguish
->>>> the modes. The presence of the "addr_space" reg entry is one example,
->>>> but we could also key off the nvidia,pex-rst-gpio property, since that
->>>> (presumably) wouldn't be needed for host mode.
->>>>
->>>> That way we can just add default, host mode entries to tegra194.dtsi and
->>>> whenever somebody wants to enable EP mode, they can just override the
->>>> node in the board-level DTS file, like so:
->>>>
->>>> 	pcie@141a0000 {
->>>> 		reg = <0x00 0x141a0000 0x0 0x00020000   /* appl registers (128K)      */
->>>> 		       0x00 0x3a040000 0x0 0x00040000   /* iATU_DMA reg space (256K)  */
->>>> 		       0x00 0x3a080000 0x0 0x00040000   /* DBI reg space (256K)       */
->>>> 		       0x1c 0x00000000 0x4 0x00000000>; /* Address Space (16G)        */
->>>> 		reg-names = "appl", "atu_dma", "dbi", "addr_space";
->>>>
->>>> 		nvidia,pex-rst-gpio = <&gpio TEGRA194_MAIN_GPIO(GG, 1) GPIO_ACTIVE_LOW>;
->>>> 	};
->>>>
->>>> Thierry
->>> I like it and fine with making these modifications also but would like to hear from Rob
->>> also on this.
->>>
->>> - Vidya Sagar
->>>>
->>>>> +
->>>>> +Examples:
->>>>> +=========
->>>>> +
->>>>> +Tegra194:
->>>>> +--------
->>>>> +
->>>>> +	pcie_ep@141a0000 {
->>>>> +		compatible = "nvidia,tegra194-pcie-ep", "snps,dw-pcie-ep";
->>>>> +		power-domains = <&bpmp TEGRA194_POWER_DOMAIN_PCIEX8A>;
->>>>> +		reg = <0x00 0x141a0000 0x0 0x00020000   /* appl registers (128K)      */
->>>>> +		       0x00 0x3a040000 0x0 0x00040000   /* iATU_DMA reg space (256K)  */
->>>>> +		       0x00 0x3a080000 0x0 0x00040000   /* DBI reg space (256K)       */
->>>>> +		       0x1c 0x00000000 0x4 0x00000000>; /* Address Space (16G)        */
->>>>> +		reg-names = "appl", "atu_dma", "dbi", "addr_space";
->>>>> +
->>>>> +		num-lanes = <8>;
->>>>> +		num-ib-windows = <2>;
->>>>> +		num-ob-windows = <8>;
->>>>> +
->>>>> +		pinctrl-names = "default";
->>>>> +		pinctrl-0 = <&clkreq_c5_bi_dir_state>;
->>>>> +
->>>>> +		clocks = <&bpmp TEGRA194_CLK_PEX1_CORE_5>;
->>>>> +		clock-names = "core";
->>>>> +
->>>>> +		resets = <&bpmp TEGRA194_RESET_PEX1_CORE_5_APB>,
->>>>> +			 <&bpmp TEGRA194_RESET_PEX1_CORE_5>;
->>>>> +		reset-names = "apb", "core";
->>>>> +
->>>>> +		interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;	/* controller interrupt */
->>>>> +		interrupt-names = "intr";
->>>>> +
->>>>> +		nvidia,bpmp = <&bpmp 5>;
->>>>> +
->>>>> +		nvidia,aspm-cmrt-us = <60>;
->>>>> +		nvidia,aspm-pwr-on-t-us = <20>;
->>>>> +		nvidia,aspm-l0s-entrance-latency-us = <3>;
->>>>> +
->>>>> +		vddio-pex-ctl-supply = <&vdd_1v8ao>;
->>>>> +
->>>>> +		nvidia,pex-rst-gpio = <&gpio TEGRA194_MAIN_GPIO(GG, 1)
->>>>> +					GPIO_ACTIVE_LOW>;
->>>>> +
->>>>> +		phys = <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
->>>>> +		       <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
->>>>> +		       <&p2u_nvhs_6>, <&p2u_nvhs_7>;
->>>>> +
->>>>> +		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3", "p2u-4",
->>>>> +			    "p2u-5", "p2u-6", "p2u-7";
->>>>> +	};
->>>>> -- 
->>>>> 2.17.1
->>>>>
->>>
-> 
-> 
+On Fri, 22 Nov 2019 at 23:33, Rob Herring <robh@kernel.org> wrote:
+>
+> On Tue, Nov 19, 2019 at 11:19:03PM +0000, Mike Leach wrote:
+> > Adds new coresight-cti.yaml file describing the bindings required to define
+> > CTI in the device trees.
+> >
+> > Adds an include file to dt-bindings/arm to define constants describing
+> > common signal functionality used in CoreSight and generic usage.
+> >
+> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> > ---
+> >  .../bindings/arm/coresight-cti.yaml           | 303 ++++++++++++++++++
+> >  .../devicetree/bindings/arm/coresight.txt     |   7 +
+> >  MAINTAINERS                                   |   2 +
+> >  include/dt-bindings/arm/coresight-cti-dt.h    |  37 +++
+> >  4 files changed, 349 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/arm/coresight-cti.yaml
+> >  create mode 100644 include/dt-bindings/arm/coresight-cti-dt.h
+> >
+> > diff --git a/Documentation/devicetree/bindings/arm/coresight-cti.yaml b/Documentation/devicetree/bindings/arm/coresight-cti.yaml
+> > new file mode 100644
+> > index 000000000000..882c72f1c798
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/arm/coresight-cti.yaml
+> > @@ -0,0 +1,303 @@
+> > +# SPDX-License-Identifier: GPL-2.0
+>
+> Dual license new bindings please:
+>
+> (GPL-2.0-only OR BSD-2-Clause)
+>
+OK.
 
+> > +# Copyright 2019 Linaro Ltd.
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/arm/coresight-cti.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: ARM Coresight Cross Trigger Interface (CTI) device.
+> > +
+> > +description: |
+> > +  The CoreSight Embedded Cross Trigger (ECT) consists of CTI devices connected
+> > +  to one or more CoreSight components and/or a CPU, with CTIs interconnected in
+> > +  a star topology via the CTM (which is not programmable). The ECT components
+> > +  are not part of the trace generation data path and are thus not part of the
+> > +  CoreSight graph described in the general CoreSight bindings file
+> > +  coresight.txt.
+> > +
+> > +  The CTI component properties define the connections between the individual
+> > +  CTI and the components it is directly connected to, consisting of input and
+> > +  output hardware trigger signals. CTIs can have a maximum number of input and
+> > +  output hardware trigger signals (8 each for v1 CTI, 32 each for v2 CTI). The
+> > +  number is defined at design time, the maximum of each defined in the DEVID
+> > +  register.
+> > +
+> > +  CTIs are interconnected in a star topology via the CTM, using a number of
+> > +  programmable channels usually 4, but again implementation defined and
+> > +  described in the DEVID register. The star topology is not required to be
+> > +  described in the bindings as the actual connections are software
+> > +  programmable.
+> > +
+> > +  In general the connections between CTI and components via the trigger signals
+> > +  are implementation defined, other than when v8 core and ETM is present.
+> > +  The v8 architecture defines the required signal connections between CPU core
+> > +  and CTI, and ETM and CTI, if the ETM if present.
+> > +
+> > +  When only minimal information is available for the CTI trigger connections,
+> > +  then a minimal driver binding can be declare with no explicit trigger
+> > +  signals. This will result in the using the DEVID register to set the
+> > +  input and output triggers and channels in use. Any user / client
+> > +  application will require additional information on the connections
+> > +  between the CTI and other components for correct operation. This minimal
+> > +  binding may be used when using the Integration Control registers to
+> > +  discover connections between CTI and other CoreSight components,
+> > +
+> > +  Certain triggers between CoreSight devices and the CTI have specific types
+> > +  and usages. These can be defined along with the signal indexes with the
+> > +  constants defined in <dt-bindings/arm/coresight-cti-dt.h>
+> > +
+> > +  For example a CTI connected to a core will usually have a DBGREQ signal. This
+> > +  is defined in the binding as type PE_EDBGREQ. These types will appear in an
+> > +  optional array alongside the signal indexes. Omitting types will default all
+> > +  signals to GEN_IO.
+> > +
+> > +  Note that some hardware trigger signals can be connected to non-CoreSight
+> > +  components (e.g. UART etc) depending on hardware implementation.
+> > +
+> > +maintainers:
+> > +  - Mike Leach <mike.leach@linaro.org>
+> > +
+> > +allOf:
+> > +  - $ref: /schemas/arm/primecell.yaml#
+> > +
+> > +# Need a custom select here or 'arm,primecell' will match on lots of nodes
+> > +select:
+> > +  properties:
+> > +    compatible:
+> > +      contains:
+> > +        enum:
+> > +          - arm,coresight-cti
+> > +  required:
+> > +    - compatible
+> > +
+> > +properties:
+> > +  $nodename:
+> > +    pattern: "^cti(@[0-9a-f,]+)*$"
+>
+> Unit address should not be optional nor have a comma.
+>
+
+Will fix.
+
+> > +  compatible:
+> > +    items:
+> > +      - const: arm,coresight-cti
+> > +      - const: arm,primecell
+> > +
+> > +  reg:
+> > +    items:
+> > +      - description: device programming registers
+>
+> Just "maxItems: 1" is sufficient.
+>
+
+OK
+
+> > +
+> > +  arm,cti-v8-arch:
+> > +    type: boolean
+> > +    description:
+> > +      This CTI follows the v8 architecturally mandated layout for a CTI.
+>
+> Seems like the compatible or primecell ID registers should be used for
+> something like this.
+>
+
+Unfortunately it is possible and has happened that the same primecell
+regs for a CTI connected to a v8 core and one that is used as a
+general system CTI appear in the same system.
+There is no architectural requirement on the CTI to indicate that its
+external connections are as per v8 architecture spec when connected to
+ a PE/ETM combo.
+
+Therefore a compatible "arm,coresight-cti-v8" would seem the best
+route. I'll update the compatible portion of the schema and handling
+code accordingly.
+
+> > +      Bindings declaring this must declare a cpu, and optionally a single
+> > +      arm,cs-dev-assoc may be present to define an attached ETM. No additional
+> > +      trig-conns nodes are permitted. The driver will build a connection model
+> > +      according to architectural requirements. This will include a filter on
+> > +      the CPU dbgreq signal as described above.
+> > +
+> > +  cpu:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/phandle
+> > +    description: Handle to cpu this device is associated with.
+> > +
+> > +  arm,cti-ctm-id:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > +    description:
+> > +      Defines the CTM this CTI is connected to, in large systems with multiple
+> > +      separate CTI/CTM nets. Typically multi-socket systems where the CTM is
+> > +      propagated between sockets.
+> > +
+> > +  arm,cs-dev-assoc:
+> > +    allOf:
+> > +      - $ref: /schemas/types.yaml#/definitions/phandle
+> > +    description:
+> > +      defines a phandle reference to an associated CoreSight trace device.
+>
+> s/defines/Defines/
+>
+OK
+
+> > +      When the associated trace device is enabled, then the respective CTI
+> > +      will be enabled. Use in a trig-conns node, or in CTI base node when
+> > +      arm,cti-v8-arch present. If the associated device has not been registered
+> > +      then the node name will be stored as the connection name for later
+> > +      resolution. If the associated device is not a CoreSight device or not
+> > +      registered then the node name will remain the connection name and
+> > +      automatic enabling will not occur.
+> > +
+> > +patternProperties:
+> > +  '^trig_conns@[0-9]+$':
+>
+> trig-conns@...
+>
+will fix.
+
+> > +    type: object
+> > +    description:
+> > +      A trigger connections child node which describes the trigger signals
+> > +      between this CTI and another hardware device. This device may be a CPU,
+> > +      CoreSight device, any other hardware device or simple external IO lines.
+> > +      The connection may have both input and output triggers, or only one or the
+> > +      other.
+> > +
+> > +    properties:
+> > +
+> > +      arm,trig-in-sigs:
+> > +        allOf:
+> > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
+> > +        minItems: 1
+> > +        maxItems: 32
+> > +        description:
+> > +          List of CTI trigger in signal numbers in use by a trig-conns node.
+> > +
+> > +      arm,trig-in-types:
+> > +        allOf:
+> > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
+> > +        minItems: 1
+> > +        maxItems: 32
+> > +        description:
+> > +          List of constants representing the types for the CTI trigger in
+> > +          signals. Types in this array match to the corresponding signal in the
+> > +          arm,trig-in-sigs array. If the -types array is smaller, or omitted
+> > +          completely, then the types will default to GEN_IO.
+> > +
+> > +      arm,trig-out-sigs:
+> > +        allOf:
+> > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
+> > +        minItems: 1
+> > +        maxItems: 32
+> > +        description:
+> > +          List of CTI trigger out signal numbers in use by a trig-conns node.
+> > +
+> > +      arm,trig-out-types:
+> > +        allOf:
+> > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
+> > +        minItems: 1
+> > +        maxItems: 32
+> > +        description:
+> > +          List of constants representing the types for the CTI trigger out
+> > +          signals. Types in this array match to the corresponding signal
+> > +          in the arm,trig-out-sigs array. If the "-types" array is smaller,
+> > +          or omitted completely, then the types will default to GEN_IO.
+> > +
+> > +      arm,trig-filters:
+> > +        allOf:
+> > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
+> > +        minItems: 1
+> > +        maxItems: 32
+> > +        description:
+> > +          List of CTI trigger out signals that will be blocked from becoming
+> > +          active, unless filtering is disabled on the driver.
+> > +
+> > +      arm,trig-conn-name:
+> > +        allOf:
+> > +          - $ref: /schemas/types.yaml#/definitions/string
+> > +        description:
+> > +          Defines a connection name that will be displayed, if the cpu or
+> > +          arm,cs-dev-assoc properties are not being used in this connection.
+> > +          Principle use for CTI that are connected to non-CoreSight devices, or
+> > +          external IO.
+> > +
+> > +    anyOf:
+> > +      - required:
+> > +        - arm,trig-in-sigs
+> > +      - required:
+> > +        - arm,trig-out-sigs
+> > +    oneOf:
+> > +      - required:
+> > +        - arm,trig-conn-name
+> > +      - required:
+> > +        - cpu
+> > +      - required:
+> > +        - arm,cs-dev-assoc
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - clocks
+> > +  - clock-names
+> > +
+> > +examples:
+> > +  # minimum CTI definition. DEVID register used to set number of triggers.
+> > +  - |
+> > +    cti@20020000 {
+> > +      compatible = "arm,coresight-cti", "arm,primecell";
+> > +      reg = <0x20020000 0x1000>;
+> > +
+> > +      clocks = <&soc_smc50mhz>;
+> > +      clock-names = "apb_pclk";
+> > +    };
+> > +  #  v8 architecturally defined CTI - CPU + ETM connections generated by the
+> > +  #  driver according to the v8 architecture specification.
+> > +  - |
+> > +    cti@859000 {
+> > +      compatible = "arm,coresight-cti", "arm,primecell";
+> > +      reg = <0x859000 0x1000>;
+> > +
+> > +      clocks = <&soc_smc50mhz>;
+> > +      clock-names = "apb_pclk";
+> > +
+> > +      arm,cti-v8-arch;
+> > +      cpu = <&CPU1>;
+> > +      arm,cs-dev-assoc = <&etm1>;
+> > +    };
+> > +  # Implementation defined CTI - CPU + ETM connections explicitly defined..
+> > +  # Shows use of type constants from dt-bindings/arm/coresight-cti-dt.h
+> > +  - |
+> > +    #include <dt-bindings/arm/coresight-cti-dt.h>
+> > +
+> > +    cti@858000 {
+> > +      compatible = "arm,coresight-cti", "arm,primecell";
+> > +      reg = <0x858000 0x1000>;
+> > +
+> > +      clocks = <&soc_smc50mhz>;
+> > +      clock-names = "apb_pclk";
+> > +
+> > +      arm,cti-ctm-id = <1>;
+> > +
+> > +      trig-conns@0 {
+> > +            arm,trig-in-sigs = <4 5 6 7>;
+> > +            arm,trig-in-types = <ETM_EXTOUT
+> > +                                 ETM_EXTOUT
+> > +                                 ETM_EXTOUT
+> > +                                 ETM_EXTOUT>;
+> > +            arm,trig-out-sigs = <4 5 6 7>;
+> > +            arm,trig-out-types = <ETM_EXTIN
+> > +                                  ETM_EXTIN
+> > +                                  ETM_EXTIN
+> > +                                  ETM_EXTIN>;
+> > +            arm,cs-dev-assoc = <&etm0>;
+> > +      };
+> > +
+> > +      trig-conns@1 {
+> > +            cpu = <&CPU0>;
+> > +            arm,trig-in-sigs = <0 1>;
+> > +            arm,trig-in-types = <PE_DBGTRIGGER
+> > +                                 PE_PMUIRQ>;
+> > +            arm,trig-out-sigs=<0 1 2 >;
+> > +            arm,trig-out-types = <PE_EDBGREQ
+> > +                                  PE_DBGRESTART
+> > +                                  PE_CTIIRQ>;
+> > +
+> > +            arm,trig-filters = <0>;
+> > +      };
+> > +    };
+> > +  # Implementation defined CTI - none CoreSight component connections.
+> > +  - |
+> > +    cti@20110000 {
+> > +      compatible = "arm,coresight-cti", "arm,primecell";
+> > +      reg = <0 0x20110000 0 0x1000>;
+> > +
+> > +      clocks = <&soc_smc50mhz>;
+> > +      clock-names = "apb_pclk";
+> > +
+> > +      trig-conns@0 {
+> > +        arm,trig-in-sigs=<0>;
+> > +        arm,trig-in-types=<GEN_INTREQ>;
+> > +        arm,trig-out-sigs=<0>;
+> > +        arm,trig-out-types=<GEN_HALTREQ>;
+> > +        arm,trig-conn-name = "sys_profiler";
+> > +      };
+> > +
+> > +      trig-conns@1 {
+> > +        arm,trig-out-sigs=<2 3>;
+> > +        arm,trig-out-types=<GEN_HALTREQ GEN_RESTARTREQ>;
+> > +        arm,trig-conn-name = "watchdog";
+> > +      };
+> > +
+> > +      trig-conns@2 {
+> > +        arm,trig-in-sigs=<1 6>;
+> > +        arm,trig-in-types=<GEN_HALTREQ GEN_RESTARTREQ>;
+> > +        arm,trig-conn-name = "g_counter";
+> > +      };
+> > +    };
+> > +
+> > +...
+> > \ No newline at end of file
+>
+> '...' is preferred, but the fix the lack of newline.
+>
+Will do.
+
+Thanks for the feedback.
+
+Mike
+
+> > diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
+> > index d02c42d21f2f..846f6daae71b 100644
+> > --- a/Documentation/devicetree/bindings/arm/coresight.txt
+> > +++ b/Documentation/devicetree/bindings/arm/coresight.txt
+> > @@ -45,6 +45,10 @@ its hardware characteristcs.
+> >               - Coresight Address Translation Unit (CATU)
+> >                       "arm,coresight-catu", "arm,primecell";
+> >
+> > +             - Coresight Cross Trigger Interface (CTI):
+> > +                     "arm,coresight-cti", "arm,primecell";
+> > +                     See coresight-cti.yaml for full CTI definitions.
+> > +
+> >       * reg: physical base address and length of the register
+> >         set(s) of the component.
+> >
+> > @@ -72,6 +76,9 @@ its hardware characteristcs.
+> >       * reg-names: the only acceptable values are "stm-base" and
+> >         "stm-stimulus-base", each corresponding to the areas defined in "reg".
+> >
+> > +* Required properties for Coresight Cross Trigger Interface (CTI)
+> > +     See coresight-cti.yaml for full CTI definitions.
+> > +
+> >  * Required properties for devices that don't show up on the AMBA bus, such as
+> >    non-configurable replicators and non-configurable funnels:
+> >
+> > diff --git a/MAINTAINERS b/MAINTAINERS
+> > index 9de89d75dbcc..8d01a74068f7 100644
+> > --- a/MAINTAINERS
+> > +++ b/MAINTAINERS
+> > @@ -1608,9 +1608,11 @@ R:     Suzuki K Poulose <suzuki.poulose@arm.com>
+> >  L:   linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+> >  S:   Maintained
+> >  F:   drivers/hwtracing/coresight/*
+> > +F:   include/dt-bindings/arm/coresight-cti-dt.h
+> >  F:   Documentation/trace/coresight/*
+> >  F:   Documentation/devicetree/bindings/arm/coresight.txt
+> >  F:   Documentation/devicetree/bindings/arm/coresight-cpu-debug.txt
+> > +F:   Documentation/devicetree/bindings/arm/coresight-cti.yaml
+> >  F:   Documentation/ABI/testing/sysfs-bus-coresight-devices-*
+> >  F:   tools/perf/arch/arm/util/pmu.c
+> >  F:   tools/perf/arch/arm/util/auxtrace.c
+> > diff --git a/include/dt-bindings/arm/coresight-cti-dt.h b/include/dt-bindings/arm/coresight-cti-dt.h
+> > new file mode 100644
+> > index 000000000000..61e7bdf8ea6e
+> > --- /dev/null
+> > +++ b/include/dt-bindings/arm/coresight-cti-dt.h
+> > @@ -0,0 +1,37 @@
+> > +/* SPDX-License-Identifier: GPL-2.0 */
+> > +/*
+> > + * This header provides constants for the defined trigger signal
+> > + * types on CoreSight CTI.
+> > + */
+> > +
+> > +#ifndef _DT_BINDINGS_ARM_CORESIGHT_CTI_DT_H
+> > +#define _DT_BINDINGS_ARM_CORESIGHT_CTI_DT_H
+> > +
+> > +#define GEN_IO               0
+> > +#define GEN_INTREQ   1
+> > +#define GEN_INTACK   2
+> > +#define GEN_HALTREQ  3
+> > +#define GEN_RESTARTREQ       4
+> > +#define PE_EDBGREQ   5
+> > +#define PE_DBGRESTART        6
+> > +#define PE_CTIIRQ    7
+> > +#define PE_PMUIRQ    8
+> > +#define PE_DBGTRIGGER        9
+> > +#define ETM_EXTOUT   10
+> > +#define ETM_EXTIN    11
+> > +#define SNK_FULL     12
+> > +#define SNK_ACQCOMP  13
+> > +#define SNK_FLUSHCOMP        14
+> > +#define SNK_FLUSHIN  15
+> > +#define SNK_TRIGIN   16
+> > +#define STM_ASYNCOUT 17
+> > +#define STM_TOUT_SPTE        18
+> > +#define STM_TOUT_SW  19
+> > +#define STM_TOUT_HETE        20
+> > +#define STM_HWEVENT  21
+> > +#define ELA_TSTART   22
+> > +#define ELA_TSTOP    23
+> > +#define ELA_DBGREQ   24
+> > +#define CTI_TRIG_MAX 25
+> > +
+> > +#endif /*_DT_BINDINGS_ARM_CORESIGHT_CTI_DT_H */
+> > --
+> > 2.17.1
+> >
+
+
+
+-- 
+Mike Leach
+Principal Engineer, ARM Ltd.
+Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
