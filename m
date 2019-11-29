@@ -2,91 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4118D10D2DE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 09:59:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7770E10D2EB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 10:05:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yu9BPV1wxUfnQvR5X7461NYsjKOtijOsIuMepOdV7gc=; b=gjUTmEdlPCkUvY
-	XeXMxZBZ3DZF0RH1nEuMY7GvWlQLBxqB20tFi2qej9Bt2HuFDsRby2pQ6/p9a09t0CfLLm3doiRfs
-	clceC5SqC1hMt+VQh2CtHHxazZN6JDSHxqpq3ZcNJ1+E6VGsnifbBvZY/oIG7ZYVL4VN+/E9YV8q2
-	1pZ1FM3kKWSaIVqklXaoBnv92Oh6M93gpN/Xj6nEkE+yPogYTW5oB335UKDWN+7uR6EjKjtKDMMdm
-	cB92AzgMzsc+ZiEzNXwnrySQtF1/XrL5af5cFHUBMqMdL3/K9AjTR3kZYX9VPw0lOvhkM5QPJKZZP
-	zzbX9qFvBli5fYWZgSCw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aBIOVBkII2GR8CEdiL2GE6b8k0H5tDO+N6i/lrOhdjo=; b=UbV6u1uptBbNb/Rkj4N3UjIeO
+	ymXPEv00o9BG3Ot+KHm9it9r3tjOOBxiUAadPBhtraWxDjTkSCqF0m+ZaNS1j5ZiTbrtZIAaz7965
+	gya6eQVp1AHGG4s4n1zwmwV88xtwxr0ee3I1xjfnt40E3zDUH5ElT6MelJA5MnOfH1kN+J9taViEp
+	nCjJ1jd10sq/WXtyJwazlntHD2uqhFl7kH8LOkyT3UUgQubOnf2gTxe3zJSVPR1ZMuDWiOaKeaHod
+	C8m3oiBI6yx+4QonZoS2RyFh04yZO81fRCuByE3Y1YfFa+GzsxqJB4VlJhv2NlPp2VD1c4m/1XvXS
+	xtL/mpuig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iac7z-0007an-UH; Fri, 29 Nov 2019 08:59:51 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iacD4-00013k-3L; Fri, 29 Nov 2019 09:05:06 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iac7p-0007ZZ-2W
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 08:59:42 +0000
-Received: by mail-wr1-x444.google.com with SMTP id z3so34086928wru.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 29 Nov 2019 00:59:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=u5GY8FgVPiZfsADMBptn3Y6PSbHCbO3IRQ/RMArSlbg=;
- b=WaCYvfhUMHlkOs2je3sgX3kWq4LOuqCfcM5C5gvjPVtvqIQZBs2SGsgN26tSVAC5pA
- 45DGd7TCHuA21oZRc0enj8T0z5E40dDifh218um9W0nmFpQX4e/IG7V9eEQna4mxXdfR
- qZ9h41L0d0UCr1jSeEgYsCuBmmsCFNBh5NSY4=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=u5GY8FgVPiZfsADMBptn3Y6PSbHCbO3IRQ/RMArSlbg=;
- b=IkaNaFojYtzivz7kBxMYG4j15ph4mZqnpBvpf79jKmWlzfXFu+WRmGaXO5LbV4qb2h
- FAJjstdB/DVpI7USgspa8zcDJo273ho+th5lDvuoqo5RmwbY5npcUA9o9GrGxp2XhxLc
- so7ZIoiNYeK2ED5KB+qcQ2bNYzKEuXJjwt2HhYj6SpWaFLYUz1BhFU6Rmh7dMZCvuA1u
- JSPXSsvSBx+BwEXOBqik86DNJVIkE2iSfBZWHaNqUATiYuiZq19XXc2W2Hqxa6KHfpsR
- J9LCSfkWhsPV9I4gp5+KUWVSE89szSH9GxOjgtT6dW9r8gpzyXG2LdObwyDS+LIRSDrl
- OmyQ==
-X-Gm-Message-State: APjAAAX979hSvitmoz/A6hAOMYdMP/kF4p5jToQidUvSTw2JF0skuH5t
- aJtIdlZB7+fGqKoAPTyNXF9zAA==
-X-Google-Smtp-Source: APXvYqxQxH1gF2m+ItBF4B/ib1eQZiH7CXfgDp23jK65swYScFaH+kUNYyu9PdJjwH0Lm+PBowyTPg==
-X-Received: by 2002:adf:9c8a:: with SMTP id d10mr12905084wre.156.1575017977410; 
- Fri, 29 Nov 2019 00:59:37 -0800 (PST)
-Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
- [212.51.149.96])
- by smtp.gmail.com with ESMTPSA id m3sm26197924wrw.20.2019.11.29.00.59.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 Nov 2019 00:59:36 -0800 (PST)
-Date: Fri, 29 Nov 2019 09:59:34 +0100
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Subject: Re: [PATCH 1/3] drm/rockchip: Use drm_gem_fb_create_with_dirty
-Message-ID: <20191129085934.GB406127@phenom.ffwll.local>
-References: <20191127180035.416209-1-daniel.vetter@ffwll.ch>
- <0b2b352c-c7fe-1629-3117-f245ed27d4c2@collabora.com>
+ id 1iacCo-000133-82
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 09:04:52 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1iacCf-0004yC-5L; Fri, 29 Nov 2019 10:04:41 +0100
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH] arm64: Fix compile error with KVM and
+ =?UTF-8?Q?!HARDEN=5FBRANCH=5FPREDICTOR?=
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <0b2b352c-c7fe-1629-3117-f245ed27d4c2@collabora.com>
-X-Operating-System: Linux phenom 5.3.0-2-amd64 
-User-Agent: Mutt/1.12.2 (2019-09-21)
+Date: Fri, 29 Nov 2019 09:04:40 +0000
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <CAKv+Gu-CuNpu4jv7S6v2G9Z5dHCVOMX3nVX5VFYhoY4SfCK+cg@mail.gmail.com>
+References: <20191127181040.20012-1-minyard@acm.org>
+ <CAKv+Gu-Xbpky-VN4WgSKJ5k_98shRdr_7aEcXJBV9uZqJrV7Jw@mail.gmail.com>
+ <86pnhbywpo.wl-maz@kernel.org>
+ <CAKv+Gu-CuNpu4jv7S6v2G9Z5dHCVOMX3nVX5VFYhoY4SfCK+cg@mail.gmail.com>
+Message-ID: <ab0d3eff89247f18d6edcb28b577d186@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: ard.biesheuvel@linaro.org, minyard@acm.org,
+ linux-arm-kernel@lists.infradead.org, cminyard@mvista.com,
+ andre.przywara@arm.com, catalin.marinas@arm.com, stefan.wahren@i2se.com,
+ will@kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_005941_167576_F320D994 
-X-CRM114-Status: GOOD (  19.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191129_010450_435814_2FF7C4BB 
+X-CRM114-Status: GOOD (  26.10  )
+X-Spam-Score: 2.5 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 1.5 FROM_FMBLA_NEWDOM      From domain was registered in last 7 days
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,144 +71,167 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
- Daniel Vetter <daniel.vetter@ffwll.ch>, Sandy Huang <hjc@rock-chips.com>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- linux-rockchip@lists.infradead.org, Daniel Vetter <daniel.vetter@intel.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Stefan Wahren <stefan.wahren@i2se.com>, Corey Minyard <cminyard@mvista.com>,
+ minyard@acm.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 28, 2019 at 04:58:26PM +0100, Andrzej Pietrasiewicz wrote:
-> W dniu 27.11.2019 o=A019:00, Daniel Vetter pisze:
-> > If rockchip would switch over to the generic fbdev setup we could
-> > grabage collect even more of all this code (all of the remaining fb
-> > handling code really).
-> > =
+On 2019-11-29 07:25, Ard Biesheuvel wrote:
+> On Fri, 29 Nov 2019 at 08:21, Marc Zyngier <maz@kernel.org> wrote:
+>>
+>> On Thu, 28 Nov 2019 17:20:20 +0000,
+>>
+>> [fixing Will's email address]
+>>
+>> Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
+>> >
+>> > (+ Marc)
+>> >
+>> >
+>> >
+>> > On Wed, 27 Nov 2019 at 19:10, <minyard@acm.org> wrote:
+>> > >
+>> > > From: Corey Minyard <cminyard@mvista.com>
+>> > >
+>> > > When compiling with KVM enabled and without 
+>> HARDEN_BRANCH_PREDICTOR,
+>> > > the following compile error happens:
+>> > >
+>> > > arch/arm64/kernel/cpu_errata.c:92:23:
+>> > > error: '__bp_harden_hyp_vecs_start' undeclared (first use in 
+>> this function);
+>> > > did you mean 'hyp_vecs_start'?
+>> > >   void *dst = lm_alias(__bp_harden_hyp_vecs_start + slot * 
+>> SZ_2K);
+>> > >
+>> > > Some ifdefs were removed by 3e91f3eacc91d9 "arm64: Always enable
+>> > > spectre-v2 vulnerability detection" for 
+>> CONFIG_HARDEN_BRANCH_PREDICTOR,
+>> > > but __bp_harden_hyp_vecs_start is only defined if that config is
+>> > > enabled.
+>> > >
+>> > > Add CONFIG_HARDEN_BRANCH_PREDICTOR to the #if that has 
+>> CONFIG_KVM,
+>> > > It looks like you need both of those for that code to be valid.
+>> > >
+>> > > Fixes: 3e91f3eacc91d9 "arm64: Always enable spectre-v2 
+>> vulnerability detection"
+>> > > Cc: Andre Przywara <andre.przywara@arm.com>
+>> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
+>> > > Cc: Stefan Wahren <stefan.wahren@i2se.com>
+>> > > Cc: Will Deacon <will.deacon@arm.com>
+>> > > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+>> > > Signed-off-by: Corey Minyard <cminyard@mvista.com>
+>> > > ---
+>> > > This is for 4.14, I'm not sure if it is needed for other 
+>> kernels.
+>> > >
+>> > > It is not needed in master because a new config item was added,
+>> > > CONFIG_KVM_INDIRECT_VECTORS, that depends on KVM and
+>> > > HARDEN_BRANCH_PREDICTOR being configured.  I looked at pulling 
+>> the
+>> > > patches that add the required changes, and they make a lot of
+>> > > changes.  This change is the simple fix, but I'm not sure if we 
+>> want to
+>> > > pull all those other changes into 4.14 and whatever other 
+>> kernels
+>> > > are required.
+>> > >
+>> >
+>> > I agree that backporting this cleanly is going to be problematic,
+>> > since it pulls in the entire EL2 VA randomization feature with all 
+>> its
+>> > prerequisites.
+>> >
+>> > Backporting the following set could be done fairly cleanly, and 
+>> fixes
+>> > the problem at build time, but unfortunately, it causes a boot 
+>> time
+>> > crash (see below)
+>> >
+>> > 97eca4d2bfec (HEAD -> linux-4.14.y) arm64: Move the content of 
+>> bpi.S
+>> > to hyp-entry.S
+>> > 514dd33114c6 arm64: Make BP hardening slot counter available
+>> > d7ddf3ae9470 arm64; insn: Add encoder for the EXTR instruction
+>> > c0b2c4e56e10 arm64: KVM: Introduce EL2 VA randomisation
+>> > 56ab0a87c737 arm64: KVM: Dynamically compute the HYP VA mask
+>> > d92c02628dfb arm64: KVM: Allow far branches from vector slots to 
+>> the
+>> > main vectors
+>> > 7adec01c9674 arm64: cpufeatures: Drop the ARM64_HYP_OFFSET_LOW 
+>> feature flag
+>> > 1095e4fc3134 arm64: KVM: Move stashing of x0/x1 into the vector 
+>> code itself
+>> > bb2e1aceb423 arm64: KVM: Dynamically patch the kernel/hyp VA mask
+>> > 6f0ccfc451be arm64: KVM: Reserve 4 additional instructions in the 
+>> BPI template
+>> > bf425ffee07a arm64: insn: Add encoder for bitwise operations using 
+>> literals
+>> > 41dda94d1a9f arm64: insn: Add N immediate encoding
+>> > 3225668ebe00 arm64: KVM: Move BP hardening vectors into .hyp.text 
+>> section
+>> >
+>> > Marc?
+>>
+>> You need at least these:
+>>
+>> 1bb32a44aea1 KVM: arm/arm64: Keep GICv2 HYP VAs in 
+>> kvm_vgic_global_state
+>> 44a497abd621 KVM: arm/arm64: Do not use kern_hyp_va() with 
+>> kvm_vgic_global_state
+>>
+>
+> Yeah, I only did a fairly mechanical backport based on the actual
+> diffs depend on each other, but I did spot those two as possibly
+> related.
+>
+>> But that's definitely not enough to fix the crash.
+>>
+>> >
+>> > [    0.062126] CPU: All CPU(s) started at EL1
+>> > [    0.063109] alternatives: patching kernel code
+>> > [    0.064228] random: get_random_u64 called from
+>> > compute_layout+0x94/0xe8 with crng_init=0
+>> > [    0.066313] aarch64_insn_gen_add_sub_imm: invalid immediate 
+>> encoding 1904640
+>>
+>> OK, that one is really bizarre. This value (tag_val) is supposed to 
+>> be
+>> a small value (only 12 significant bits out of 24 at any given 
+>> time),
+>> and it is not (0x1D1000). So somehow compute_instruction() is not
+>> doing the right thing.
+>>
+>> Do you have a tree somewhere with this patches?
+>>
+>
+> Sure, thanks for having a look.
+>
+> 
+> https://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git/log/?h=arm64-v4.14-backport%2b%2b
 
-> > v2: Actually use _with_dirty like the patch subject promised (Andrzej)
-> > =
+OK, I tracked it down to this missing patch:
 
-> > Cc: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-> > Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
-> > Cc: Sandy Huang <hjc@rock-chips.com>
-> > Cc: "Heiko St=FCbner" <heiko@sntech.de>
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > Cc: linux-rockchip@lists.infradead.org
-> =
+11d764079c9f arm64: insn: Allow ADD/SUB (immediate) with LSL #12
 
-> I understand that computing min_size is changing as per
-> =
+I haven't tryied to boot the whole thing as a host though, only
+tested it as a guest.
 
-> 042bf753842dd
-> drm/fourcc: Add char_per_block, block_w and block_h in drm_format_info.
+> Another thing I found bizarre is that we actually run this code when
+> all CPUs boot at EL1. Or is that intended?
 
-Yeah it's the more flexible computation, but for everything that rockchip
-actually supports it should be the same.
+It is so that I can debug the whole thing in a guest! ;-)
 
-> With other questions I had before answered in your previous reply the cur=
-rent
-> version of this patch is
-> =
+Thanks,
 
-> Reviewed-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-
-Thanks for your review, patch applied.
--Daniel
-
-> =
-
-> > ---
-> >   drivers/gpu/drm/rockchip/rockchip_drm_fb.c | 54 +---------------------
-> >   1 file changed, 1 insertion(+), 53 deletions(-)
-> > =
-
-> > diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/d=
-rm/rockchip/rockchip_drm_fb.c
-> > index ca01234c037c..221e72e71432 100644
-> > --- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-> > +++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
-> > @@ -53,64 +53,12 @@ rockchip_fb_alloc(struct drm_device *dev, const str=
-uct drm_mode_fb_cmd2 *mode_cm
-> >   	return fb;
-> >   }
-> > -static struct drm_framebuffer *
-> > -rockchip_user_fb_create(struct drm_device *dev, struct drm_file *file_=
-priv,
-> > -			const struct drm_mode_fb_cmd2 *mode_cmd)
-> > -{
-> > -	const struct drm_format_info *info =3D drm_get_format_info(dev,
-> > -								 mode_cmd);
-> > -	struct drm_framebuffer *fb;
-> > -	struct drm_gem_object *objs[ROCKCHIP_MAX_FB_BUFFER];
-> > -	struct drm_gem_object *obj;
-> > -	int num_planes =3D min_t(int, info->num_planes, ROCKCHIP_MAX_FB_BUFFE=
-R);
-> > -	int ret;
-> > -	int i;
-> > -
-> > -	for (i =3D 0; i < num_planes; i++) {
-> > -		unsigned int width =3D mode_cmd->width / (i ? info->hsub : 1);
-> > -		unsigned int height =3D mode_cmd->height / (i ? info->vsub : 1);
-> > -		unsigned int min_size;
-> > -
-> > -		obj =3D drm_gem_object_lookup(file_priv, mode_cmd->handles[i]);
-> > -		if (!obj) {
-> > -			DRM_DEV_ERROR(dev->dev,
-> > -				      "Failed to lookup GEM object\n");
-> > -			ret =3D -ENXIO;
-> > -			goto err_gem_object_unreference;
-> > -		}
-> > -
-> > -		min_size =3D (height - 1) * mode_cmd->pitches[i] +
-> > -			mode_cmd->offsets[i] +
-> > -			width * info->cpp[i];
-> > -
-> > -		if (obj->size < min_size) {
-> > -			drm_gem_object_put_unlocked(obj);
-> > -			ret =3D -EINVAL;
-> > -			goto err_gem_object_unreference;
-> > -		}
-> > -		objs[i] =3D obj;
-> > -	}
-> > -
-> > -	fb =3D rockchip_fb_alloc(dev, mode_cmd, objs, i);
-> > -	if (IS_ERR(fb)) {
-> > -		ret =3D PTR_ERR(fb);
-> > -		goto err_gem_object_unreference;
-> > -	}
-> > -
-> > -	return fb;
-> > -
-> > -err_gem_object_unreference:
-> > -	for (i--; i >=3D 0; i--)
-> > -		drm_gem_object_put_unlocked(objs[i]);
-> > -	return ERR_PTR(ret);
-> > -}
-> > -
-> >   static const struct drm_mode_config_helper_funcs rockchip_mode_config=
-_helpers =3D {
-> >   	.atomic_commit_tail =3D drm_atomic_helper_commit_tail_rpm,
-> >   };
-> >   static const struct drm_mode_config_funcs rockchip_drm_mode_config_fu=
-ncs =3D {
-> > -	.fb_create =3D rockchip_user_fb_create,
-> > +	.fb_create =3D drm_gem_fb_create_with_dirty,
-> >   	.output_poll_changed =3D drm_fb_helper_output_poll_changed,
-> >   	.atomic_check =3D drm_atomic_helper_check,
-> >   	.atomic_commit =3D drm_atomic_helper_commit,
-> > =
-
-> =
-
-
--- =
-
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
