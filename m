@@ -2,49 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D929210D4DC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 12:30:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CCB010D510
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 12:41:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZAHvTetsn0cpAJc/W8QI/NBzgaAfHCeTITaAgnGp1Jk=; b=HCf3dNa+7OqPa9
-	G9D9qr2OAsVGXivqJaztMaCvH/NPIy09yY7nLDji589cha0gVnJKxWxMtJFzbQw3GCbp3iKi7e3KW
-	e4vOII6I9SGEcVWUOx1B6whhhznqS7ijhdHU6BD3S3aW2IcovyVT8wko6leppu+cTzc8yAisrLzBe
-	lvjgMGV/bfzw0exTwEhMTVRlblvBcgDjchQYvi6HOBzhEdno5wIuJlmFcN82ZTn6c401gLJijXTkN
-	pl2neaO6rQLrnSOJpfmD/HxE8ubMt6kaStOgjlBk67zSKUQaDzM8+ORCSQbDA3grgqPsm3eo7Dm5m
-	npHab4XqPJGay4RJvo5g==;
+	List-Owner; bh=I7S2iavLXMZmyieiON0IW+t1e9jRG+3XlNicwamkMFw=; b=JFiejXfze7GNQB
+	od3siIejCNsOxlmz6xNShrAb4rqNp6xmOWp9EH9qE7Gg/gz9wDSuGpOMavkVsx6udx63iU10cGik/
+	EYIJ3dm0mM+bptj4OkVqhl6mp9mpJiT6UuhhSGBABEbocue+gyJClEW6n0G7D1mf2tJCdjX6NgG1M
+	ydClrWPr6MdzUcybKDv1Go4RsCSdGV1d788ObvyMwUPP0+I9kQ38LPDcio7nY3I1vpN0CYp6dXTZi
+	Xa/vINEaOdcnb+3eNBqgGKE/T+ItDzhX+mNey86ok/3s6f1zU/Xx7lvAozARchG1zrBjMzR8y7089
+	UhysJ3zY39PJxK1FpKeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaeU9-0002rN-IM; Fri, 29 Nov 2019 11:30:53 +0000
-Received: from cloudserver094114.home.pl ([79.96.170.134])
+	id 1iaeeF-0007Sp-Re; Fri, 29 Nov 2019 11:41:19 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaeU2-0002qr-Uu
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 11:30:48 +0000
-Received: from 79.184.255.242.ipv4.supernova.orange.pl (79.184.255.242) (HELO
- kreacher.localnet)
- by serwer1319399.home.pl (79.96.170.134) with SMTP (IdeaSmtpServer 0.83.320)
- id edf759f14a6c300f; Fri, 29 Nov 2019 12:30:42 +0100
-From: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-To: Randy Dunlap <rdunlap@infradead.org>
-Subject: Re: [PATCH] cpuidle: minor Kconfig help text fixes
-Date: Fri, 29 Nov 2019 12:30:42 +0100
-Message-ID: <13585617.HsJz9ZEzGy@kreacher>
-In-Reply-To: <b0e9d1df-8bb9-9eee-f433-c7a8e8269e06@infradead.org>
-References: <b0e9d1df-8bb9-9eee-f433-c7a8e8269e06@infradead.org>
+ id 1iaedo-0007BF-8N; Fri, 29 Nov 2019 11:40:54 +0000
+X-UUID: 6999b7ab37e54ae19732fba1dc52b383-20191129
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=PwCHJ/ylLxsFTolp1LFDT4a1s0102DjGPATz1zjtxA0=; 
+ b=B0kGmm32hS6rMrCce03DSS9/I49LmnvX9Of9xHT/lE4Yysz5JkdCowVMOt2ZRII8RGPauflXRDTpVRv0T0+7II32lMHsf/zwEReNp4o9aO9ByBej+e2FzRcMbHI3TUv3pbabwCw7WTWibWCP3OwLzmF3DzwlF5paVrx67Xv1ZMU=;
+X-UUID: 6999b7ab37e54ae19732fba1dc52b383-20191129
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <neal.liu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 405862687; Fri, 29 Nov 2019 03:40:45 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 29 Nov 2019 03:31:23 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 29 Nov 2019 19:30:42 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 29 Nov 2019 19:30:44 +0800
+Message-ID: <1575027046.24848.4.camel@mtkswgap22>
+Subject: Re: [PATCH v5 3/3] hwrng: add mtk-sec-rng driver
+From: Neal Liu <neal.liu@mediatek.com>
+To: Lars Persson <lists@bofh.nu>
+Date: Fri, 29 Nov 2019 19:30:46 +0800
+In-Reply-To: <CADnJP=uhD=J2NrpSwiX8oCTd-u_q05=HhsAV-ErCsXNDwVS0rA@mail.gmail.com>
+References: <1574864578-467-1-git-send-email-neal.liu@mediatek.com>
+ <1574864578-467-4-git-send-email-neal.liu@mediatek.com>
+ <CADnJP=uhD=J2NrpSwiX8oCTd-u_q05=HhsAV-ErCsXNDwVS0rA@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_033047_156367_F279F080 
-X-CRM114-Status: GOOD (  10.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191129_034052_358308_3A6CEAC4 
+X-CRM114-Status: GOOD (  14.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,61 +84,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Lezcano <daniel.lezcano@linaro.org>,
- LAK <linux-arm-kernel@lists.infradead.org>,
- Linux PM list <linux-pm@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ wsd_upstream <wsd_upstream@mediatek.com>, Sean Wang <sean.wang@kernel.org>,
+ Linux Kernel
+ Mailing List <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Crystal Guo =?UTF-8?Q?=28=E9=83=AD=E6=99=B6=29?= <Crystal.Guo@mediatek.com>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
+ Matt Mackall <mpm@selenic.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thursday, November 28, 2019 11:38:03 PM CET Randy Dunlap wrote:
-> From: Randy Dunlap <rdunlap@infradead.org>
+On Fri, 2019-11-29 at 18:02 +0800, Lars Persson wrote:
+> Hi Neal,
 > 
-> End sentences in help text with a period (aka full stop).
+> On Wed, Nov 27, 2019 at 3:23 PM Neal Liu <neal.liu@mediatek.com> wrote:
+> >
+> > For MediaTek SoCs on ARMv8 with TrustZone enabled, peripherals like
+> > entropy sources is not accessible from normal world (linux) and
+> > rather accessible from secure world (ATF/TEE) only. This driver aims
+> > to provide a generic interface to ATF rng service.
+> >
 > 
-> Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
-> Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-> Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
-> Cc: linux-pm@vger.kernel.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> ---
->  drivers/cpuidle/Kconfig.arm |    6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
+> I am working on several SoCs that also will need this kind of driver
+> to get entropy from Arm trusted firmware.
+> If you intend to make this a generic interface, please clean up the
+> references to MediaTek and give it a more generic name. For example
+> "Arm Trusted Firmware random number driver".
 > 
-> --- lnx-54.orig/drivers/cpuidle/Kconfig.arm
-> +++ lnx-54/drivers/cpuidle/Kconfig.arm
-> @@ -65,21 +65,21 @@ config ARM_U8500_CPUIDLE
->  	bool "Cpu Idle Driver for the ST-E u8500 processors"
->  	depends on ARCH_U8500 && !ARM64
->  	help
-> -	  Select this to enable cpuidle for ST-E u8500 processors
-> +	  Select this to enable cpuidle for ST-E u8500 processors.
->  
->  config ARM_AT91_CPUIDLE
->  	bool "Cpu Idle Driver for the AT91 processors"
->  	default y
->  	depends on ARCH_AT91 && !ARM64
->  	help
-> -	  Select this to enable cpuidle for AT91 processors
-> +	  Select this to enable cpuidle for AT91 processors.
->  
->  config ARM_EXYNOS_CPUIDLE
->  	bool "Cpu Idle Driver for the Exynos processors"
->  	depends on ARCH_EXYNOS && !ARM64
->  	select ARCH_NEEDS_CPU_IDLE_COUPLED if SMP
->  	help
-> -	  Select this to enable cpuidle for Exynos processors
-> +	  Select this to enable cpuidle for Exynos processors.
->  
->  config ARM_MVEBU_V7_CPUIDLE
->  	bool "CPU Idle Driver for mvebu v7 family processors"
+> It will also be helpful if the SMC call number is configurable.
 > 
+> - Lars
 
-Applied as 5.5 material, thanks!
+Yes, I'm trying to make this to a generic interface. I'll try to make
+HW/platform related dependency to be configurable and let it more
+generic.
+Thanks for your suggestion.
 
-
-
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
 _______________________________________________
 linux-arm-kernel mailing list
