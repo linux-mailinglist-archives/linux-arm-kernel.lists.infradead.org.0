@@ -2,88 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B2AB10D7E2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 16:28:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF1B210D7FD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 16:40:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=CTS2pmGXc4+y7SKhSDxrx0RKO/t1qzNDpadqL3PjXUM=; b=YTP7aocq3rRXln6EJbiSJOAFH9
-	3Nzh36AgiFKN0xaBK3SczhMyQJ6NXU5NEfqvolELzBmGP2ZqbfcuecHpPivwosFatpySUi/Vt7IxT
-	DZ/siA2/MxfVfamOCy7pDs0YD5loLQHqBkTP83pRazydeLBQUXCcp809n7igG1M+IpaAMlTofuPTX
-	g6hGH4h7Bn5RPISEjBpue0Mb6IxYpHnJaBSXwTRV7G8xoLMS1fT4fPEWJpqCarxbFIwzqF7KsysqQ
-	190ULYHIW88Q3UAA2d1S1o6XTw9Clutm/2u8YCYv7fLL7MD68HF4fH97NxULE6d+MVJ7o1N/wkzHn
-	GlOqB7hw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RNofcuVetfP0HE+ftSDcjcKoAkGBnhqphjg6zUxGL90=; b=in4NFet6y4Jv9O
+	ZXkuZpJEDNL1lIaRX5BOXpwBukbcyGZW237VcCJ26lsHTgP58DSsoMNgE+vW18+b+9Fk7obBOy66W
+	Fy/u9Qjofoi2CvmWBcR9TCbpYatWDGBfukH29oSQhVWMXfMjwhRTegaAzDi49xCHDLqAAaXztqvuF
+	XO5aoxC2Cw/7JsR5JqzaCyqX/ZBVSEl/AkVhtPUTbZ1bp+eLRRsAqFrOAbn/G50Tuf9lh8ffABIev
+	NYzpVtXEHGzVeHqqH9jxa+FV8elXqKSEep0kJHr8JqEb+wbr2DJuYgr/3tT/+H9HAE+TxpNNV/kWf
+	L0G0MYOavVwzRuB/QIHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaiCL-0006J7-Bj; Fri, 29 Nov 2019 15:28:45 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iaiNr-0002Sh-9r; Fri, 29 Nov 2019 15:40:39 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaiCA-0006IF-OQ
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 15:28:37 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z3so35646039wru.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 29 Nov 2019 07:28:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=QBYK1E+SFEUtR4nuF0Hq1/Zl0vxT8rcgdq12kebEYCw=;
- b=fybemh1fl5FELIMmoJZnWKoGU6gkjl55CTvBtsMkTjKBe9+9q5azX3vK7CrnWlD4+m
- ATTa/+yYn808n2UnMe0zSU27V/ALJzcfyewxcwoGDLMpE+3nRgHaRQI6DA94AukXUiJB
- hjsqV4+jtcmEmj/BDh8dLZ/DRjse6sDrT0bCl7ecTrNNyYBw6BwzfFzs7Ti5p0v23MnE
- +fDRYLnLSJ559SpDXDxTsKfDHmPdDwfAe4/MCFncI1Wzvl2k8yyzbCe3Y5158WP0Gpt4
- xntmd2a+Rl7Oonw3WrC2tR2S9zGYEskSnvLdMeDrEhklUgWbep0gTuvPx0qYaX4l87Lz
- Gxwg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=QBYK1E+SFEUtR4nuF0Hq1/Zl0vxT8rcgdq12kebEYCw=;
- b=mRII4bhGLgNw0GKESVwfhpLewFXAAF7e+gZgeUadEUwBsNr4Yu1UihMJzba584XQjI
- GSEt31TLxOXtOjsZi98GU3pjQkaZ5HPdJLozQnMnWh/ZhPj1sfijVa0XmAv9UTWmpJ3S
- W/qrHlkXMydQOzhkRvBLJebwveElhy/1n0nzUQDHjiwwkXOKE0+CflgsE2h76iHEVcmK
- 6wUUOLqqabClgF/Tho9Yn4gJ6pePJwgLdjoM3lpUUpsDdHAgoqTCsq8L+6lDjJL5JF65
- rnFwud9GrZApLG+cNJ3KbpmXhPVn+bpg2+A1P5h7oWdqkEFBqz2363l+lzWPXe9bZza9
- oBpA==
-X-Gm-Message-State: APjAAAXJviGh4JzlZs7mkVaPetQNgEl8p+K/T1amDq49QtCooIJ50QYd
- Ia4VTj8LHHuBBb9kRItf8iFjQQ==
-X-Google-Smtp-Source: APXvYqwp522ZQItIPDw0UZZeNpADWsIPr6wHnrqJzszsiD5Ngr1SfU1KzHkCvXFfBFKhk2oWIkEzYw==
-X-Received: by 2002:a5d:4d8d:: with SMTP id b13mr10405744wru.6.1575041310867; 
- Fri, 29 Nov 2019 07:28:30 -0800 (PST)
-Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id m3sm27328570wrw.20.2019.11.29.07.28.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 Nov 2019 07:28:30 -0800 (PST)
-References: <20191129144605.182774-1-jian.hu@amlogic.com>
-User-agent: mu4e 1.3.3; emacs 26.2
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Jian Hu <jian.hu@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH v3 0/7] add Amlogic A1 clock controller driver
-In-reply-to: <20191129144605.182774-1-jian.hu@amlogic.com>
-Date: Fri, 29 Nov 2019 16:28:29 +0100
-Message-ID: <1jwobi7lcy.fsf@starbuckisacylon.baylibre.com>
+ id 1iaiNh-0002Rq-VE
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 15:40:32 +0000
+X-Originating-IP: 90.65.102.129
+Received: from localhost (lfbn-1-1480-129.w90-65.abo.wanadoo.fr
+ [90.65.102.129])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id B367A240006;
+ Fri, 29 Nov 2019 15:40:20 +0000 (UTC)
+Date: Fri, 29 Nov 2019 16:40:16 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Eugen.Hristev@microchip.com
+Subject: Re: [PATCH] power: reset: at91-reset: add sysfs interface to the
+ power on reason
+Message-ID: <20191129154016.GZ299836@piout.net>
+References: <20191017124058.19300-1-kamel.bouhara@bootlin.com>
+ <034c9d01-633a-eeaa-f61f-d185be7227f2@microchip.com>
+ <20191129110253.GX299836@piout.net>
+ <00f4e9a2-f6bd-9242-cafd-9c0c4f4dc619@microchip.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <00f4e9a2-f6bd-9242-cafd-9c0c4f4dc619@microchip.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_072834_824252_CE84C6D0 
-X-CRM114-Status: GOOD (  13.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191129_074030_283119_10A4CE44 
+X-CRM114-Status: GOOD (  19.99  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,93 +69,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>, devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: kamel.bouhara@bootlin.com, linux-pm@vger.kernel.org, sre@kernel.org,
+ linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ thomas.petazzoni@bootlin.com, Claudiu.Beznea@microchip.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 29/11/2019 11:15:18+0000, Eugen.Hristev@microchip.com wrote:
+> 
+> 
+> On 29.11.2019 13:02, Alexandre Belloni wrote:
+> 
+> > On 29/11/2019 10:57:45+0000, Claudiu.Beznea@microchip.com wrote:
+> >> Hi Kamel,
+> >>
+> >> On 17.10.2019 15:40, Kamel Bouhara wrote:
+> >>> This patch export the power on reason through the sysfs interface and
+> >>> introduce some generic reset sources.
+> >>> Update the ABI documentation to list current power on sources.
+> >>>
+> >>> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+> >>> ---
+> >>>   .../sysfs-devices-platform-power-on-reason    | 14 ++++++
+> >>>   drivers/power/reset/at91-reset.c              | 44 +++++++++++++------
+> >>>   include/linux/power/power_on_reason.h         | 19 ++++++++
+> >>>   3 files changed, 64 insertions(+), 13 deletions(-)
+> >>>   create mode 100644 Documentation/ABI/testing/sysfs-devices-platform-power-on-reason
+> >>>   create mode 100644 include/linux/power/power_on_reason.h
+> >>>
+> >>> diff --git a/Documentation/ABI/testing/sysfs-devices-platform-power-on-reason b/Documentation/ABI/testing/sysfs-devices-platform-power-on-reason
+> >>> new file mode 100644
+> >>> index 000000000000..83daeb9b1aa2
+> >>> --- /dev/null
+> >>> +++ b/Documentation/ABI/testing/sysfs-devices-platform-power-on-reason
+> >>> @@ -0,0 +1,14 @@
+> >>> +What:              /sys/devices/platform/.../power_on_reason
+> >>> +
+> >>> +Date:              October 2019
+> >>> +KernelVersion:     5.4
+> >>> +Contact:   Kamel Bouhara <kamel.bouhara@bootlin.com>
+> >>> +Description:       This file shows system power on reason.
+> >>> +           The possible sources are:
+> >>> +           General System Power-ON, RTC wakeup, Watchdog timeout,
+> >>> +           Software Reset, User pressed reset button,
+> >>> +           CPU Clock failure, 32.768kHz Oscillator Failure,
+> >>> +           Low power mode exit, Unknown.
+> >>> +
+> >>> +           The file is read only.
+> >>> +
+> >>> diff --git a/drivers/power/reset/at91-reset.c b/drivers/power/reset/at91-reset.c
+> >>> index 44ca983a49a1..3cb2df40af37 100644
+> >>> --- a/drivers/power/reset/at91-reset.c
+> >>> +++ b/drivers/power/reset/at91-reset.c
+> >>> @@ -17,7 +17,7 @@
+> >>>   #include <linux/of_address.h>
+> >>>   #include <linux/platform_device.h>
+> >>>   #include <linux/reboot.h>
+> >>> -
+> >>> +#include <linux/power/power_on_reason.h>
+> >>>   #include <soc/at91/at91sam9_ddrsdr.h>
+> >>>   #include <soc/at91/at91sam9_sdramc.h>
+> >>>
+> >>> @@ -146,42 +146,42 @@ static int samx7_restart(struct notifier_block *this, unsigned long mode,
+> >>>      return NOTIFY_DONE;
+> >>>   }
+> >>>
+> >>> -static void __init at91_reset_status(struct platform_device *pdev)
+> >>> +static const char *at91_reset_reason(struct platform_device *pdev)
+> >>>   {
+> >>>      const char *reason;
+> >>>      u32 reg = readl(at91_rstc_base + AT91_RSTC_SR);
+> >>>
+> >>>      switch ((reg & AT91_RSTC_RSTTYP) >> 8) {
+> >>>      case RESET_TYPE_GENERAL:
+> >>> -           reason = "general reset";
+> >>> +           reason = POWER_ON_REASON_GENERAL;
+> >>>              break;
+> >>>      case RESET_TYPE_WAKEUP:
+> >>> -           reason = "wakeup";
+> >>> +           reason = POWER_ON_REASON_RTC;
+> >>>              break;
+> >>>      case RESET_TYPE_WATCHDOG:
+> >>> -           reason = "watchdog reset";
+> >>> +           reason = POWER_ON_REASON_WATCHDOG;
+> >>>              break;
+> >>>      case RESET_TYPE_SOFTWARE:
+> >>> -           reason = "software reset";
+> >>> +           reason = POWER_ON_REASON_SOFTWARE;
+> >>>              break;
+> >>>      case RESET_TYPE_USER:
+> >>> -           reason = "user reset";
+> >>> +           reason = POWER_ON_REASON_USER;
+> >>>              break;
+> >>>      case RESET_TYPE_CPU_FAIL:
+> >>> -           reason = "CPU clock failure detection";
+> >>> +           reason = POWER_ON_REASON_CPU_FAIL;
+> >>>              break;
+> >>>      case RESET_TYPE_XTAL_FAIL:
+> >>> -           reason = "32.768 kHz crystal failure detection";
+> >>> +           reason = POWER_ON_REASON_XTAL_FAIL;
+> >>>              break;
+> >>>      case RESET_TYPE_ULP2:
+> >>> -           reason = "ULP2 reset";
+> >>> +           reason = POWER_ON_REASON_LOW_POWER;
+> >>>              break;
+> >>>      default:
+> >>> -           reason = "unknown reset";
+> >>> +           reason = POWER_ON_REASON_UNKNOWN;
+> >>>              break;
+> >>>      }
+> >>>
+> >>> -   dev_info(&pdev->dev, "Starting after %s\n", reason);
+> >>> +   return reason;
+> >>>   }
+> >>>
+> >>>   static const struct of_device_id at91_ramc_of_match[] = {
+> >>> @@ -204,6 +204,17 @@ static struct notifier_block at91_restart_nb = {
+> >>>      .priority = 192,
+> >>>   };
+> >>>
+> >>> +static ssize_t power_on_reason_show(struct device *dev,
+> >>> +                               struct device_attribute *attr,
+> >>> +                               char *buf)
+> >>> +{
+> >>> +   struct platform_device *pdev = to_platform_device(dev);
+> >>> +
+> >>> +   return sprintf(buf, "%s\n", at91_reset_reason(pdev));
+> >>> +}
+> >>> +
+> >>> +static DEVICE_ATTR_RO(power_on_reason);
+> >>> +
+> >>>   static int __init at91_reset_probe(struct platform_device *pdev)
+> >>>   {
+> >>>      const struct of_device_id *match;
+> >>> @@ -248,7 +259,14 @@ static int __init at91_reset_probe(struct platform_device *pdev)
+> >>>              return ret;
+> >>>      }
+> >>>
+> >>> -   at91_reset_status(pdev);
+> >>> +   ret = device_create_file(&pdev->dev, &dev_attr_power_on_reason);
+> >>> +   if (ret) {
+> >>> +           dev_err(&pdev->dev, "Could not create sysfs entry\n");
+> >>> +           return ret;
+> >>> +   }
+> >>> +
+> >>> +   dev_info(&pdev->dev, "Starting after %s reset\n",
+> >>> +            at91_reset_reason(pdev));
+> >>>
+> >>>      return 0;
+> >>>   }
+> >>> diff --git a/include/linux/power/power_on_reason.h b/include/linux/power/power_on_reason.h
+> >>> new file mode 100644
+> >>> index 000000000000..9978cc757427
+> >>> --- /dev/null
+> >>> +++ b/include/linux/power/power_on_reason.h
+> >>> @@ -0,0 +1,19 @@
+> >>> +/* SPDX-License-Identifier: GPL-2.0-only */
+> >>> +/*
+> >>> + * Author: Kamel Bouhra <kamel.bouhara@bootlin.com>
+> >>> + */
+> >>> +
+> >>> +#ifndef POWER_ON_REASON_H
+> >>> +#define POWER_ON_REASON_H
+> >>> +
+> >>> +#define POWER_ON_REASON_GENERAL "General"
+> >>> +#define POWER_ON_REASON_RTC "RTC wakeup"
+> >>> +#define POWER_ON_REASON_WATCHDOG "Watchdog timeout"
+> >>> +#define POWER_ON_REASON_SOFTWARE "Software"
+> >>> +#define POWER_ON_REASON_USER "User"
+> >>> +#define POWER_ON_REASON_CPU_FAIL "CPU Clock Failure"
+> >>> +#define POWER_ON_REASON_XTAL_FAIL "32.768k Crystal oscillator Failure"
+> 
+> Hi,
+> 
+> Looks rather odd to have a hardcoded crystal value inside a generic header.
+> Also how is REASON_CPU_FAIL related to CPU Clock ?
+> 
 
-On Fri 29 Nov 2019 at 15:45, Jian Hu <jian.hu@amlogic.com> wrote:
+Yes, I also think having the xtal rate is a bit too specific.
 
-> add support for Amlogic A1 clock driver, the clock includes 
-> three parts: peripheral clocks, pll clocks, CPU clocks.
-> sys pll and CPU clocks will be sent in next patch.
->
-> Changes since v1 at [2]:
-
-v2 or v1 ??
-
-> -add probe function for A1
-> -seperate the clock driver into two patch
-> -change some clock flags and ops
-> -add support for a1 PLL ops
-> -add A1 clock node
->
-> Changes since v1 at [1]:
-> -place A1 config alphabetically
-> -add actual reason for RO ops, CLK_IS_CRITICAL, CLK_IGNORE_UNUSED
-> -separate the driver into two driver: peripheral and pll driver
-> -delete CLK_IGNORE_UNUSED flag for pwm b/c/d/e/f clock, dsp clock
-> -delete the change in Kconfig.platforms, address to Kevin alone
-> -remove the useless comments
-> -modify the meson pll driver to support A1 PLLs
->
-> [1] https://lkml.kernel.org/r/1569411888-98116-1-git-send-email-jian.hu@amlogic.com
-> [2] https://lkml.kernel.org/r/1571382865-41978-1-git-send-email-jian.hu@amlogic.com
->
-> Jian Hu (7):
->   dt-bindings: clock: meson: add A1 PLL clock controller bindings
->   clk: meson: add support for A1 PLL clock ops
->   clk: meson: eeclk: refactor eeclk common driver to support A1
->   clk: meson: a1: add support for Amlogic A1 PLL clock driver
->   dt-bindings: clock: meson: add A1 peripheral clock controller bindings
->   clk: meson: a1: add support for Amlogic A1 Peripheral clock driver
->   arm64: dts: meson: add A1 PLL and periphs clock controller
-
-The arm64 is for the DT maintainer. Please send it separately after this
-series is applied (if it gets applied)
-
-> Please fix the underlying issue, then you can post your series again.
-
-This was a comment on your v2. Did you fix the orphan/ordering issue ?
-If you did, you probably should mention it here.
-If you did not, I'm probably not going to review this further until you do.
-
->
->  .../bindings/clock/amlogic,a1-clkc.yaml       |   70 +
->  .../bindings/clock/amlogic,a1-pll-clkc.yaml   |   56 +
->  arch/arm64/boot/dts/amlogic/meson-a1.dtsi     |   26 +
->  drivers/clk/meson/Kconfig                     |   20 +
->  drivers/clk/meson/Makefile                    |    2 +
->  drivers/clk/meson/a1-pll.c                    |  334 +++
->  drivers/clk/meson/a1-pll.h                    |   56 +
->  drivers/clk/meson/a1.c                        | 2309 +++++++++++++++++
->  drivers/clk/meson/a1.h                        |  120 +
->  drivers/clk/meson/clk-pll.c                   |   21 +
->  drivers/clk/meson/clk-pll.h                   |    1 +
->  drivers/clk/meson/meson-eeclk.c               |   59 +-
->  drivers/clk/meson/meson-eeclk.h               |    2 +
->  drivers/clk/meson/parm.h                      |    1 +
->  include/dt-bindings/clock/a1-clkc.h           |   98 +
->  include/dt-bindings/clock/a1-pll-clkc.h       |   16 +
->  16 files changed, 3181 insertions(+), 10 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml
->  create mode 100644 Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
->  create mode 100644 drivers/clk/meson/a1-pll.c
->  create mode 100644 drivers/clk/meson/a1-pll.h
->  create mode 100644 drivers/clk/meson/a1.c
->  create mode 100644 drivers/clk/meson/a1.h
->  create mode 100644 include/dt-bindings/clock/a1-clkc.h
->  create mode 100644 include/dt-bindings/clock/a1-pll-clkc.h
-
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
