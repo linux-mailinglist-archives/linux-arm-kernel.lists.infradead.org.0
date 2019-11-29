@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BB0310D311
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 10:14:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3A0010D315
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 10:15:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,24 +11,24 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=njlh1vsCDs/VyWaf86/8HBnX6ErYURFbbgoPMIVzmhc=; b=PsvjPkKzS0sCtw1ghYBX4MKjjb
-	YZ+Zr8FsMemnP0O/kp/dLSeDB1+GbGoRp/IG6rRGvx+f910i5niPGPyzw53ResQzXTHJ4mD4I6yuR
-	U4ofg+S/YQ1r1LKMyCeSDE9JBf7bPkTNOlWSB5S8K7DLXJDUg+Tcpj3bLHoPpw/qaK+63Oy4HOwnQ
-	m8g/Cd1QRLXPfiE61ySvPBFag9nRBwS8CHxHJXP7d0/QV3pc+DsLyO6Mb95YmwAu8EY86LbSZsKhc
-	HpQ0cOMLH/lo8/oQwZfU54hHR/m3GFpSFJ1fvYOU1SINIi2LAJ8s+Va7/ScpEUFTQlGnUK/7sq/O2
-	1ncTUERQ==;
+	bh=MokXux+e30TUhuvUGpyAmILGtCayQHqWAKZp3h4/65w=; b=t7QBi9b7QuSA69WEhyPX8rA5g6
+	RFReNDxsDYQM5ehvMtkgPw8XnFoIx+TQqKEW7aqora/OOtKu5Puzd3yr8R5gTYmtYnBTzis1/+Xiu
+	C4JOLFGm2/GiHIfDirKfpDlzUPm1uiXPiyhjNmcjY/uF+/jFJ8oiqBNAAomwXt2wZQWUr9wEpNsl/
+	2ljWsn0KXdgSe/1dLKbrRbxrXKvMS0u/6pqcB4i4YFNTqYoPvYyv8Fw/udpmS6yK+AzC5pZIlqPpr
+	/RyYDNTZCEfRCPP2yE4eeVDCytIndmkYAEPrUxQjJO2bHDK3mPqw5lp/owxrhxnd8HfP6QKUmK+va
+	Ilry95Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iacM3-0005Q9-Nh; Fri, 29 Nov 2019 09:14:23 +0000
+	id 1iacMb-0005s8-5u; Fri, 29 Nov 2019 09:14:57 +0000
 Received: from olimex.com ([184.105.72.32])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iacLt-0005OH-Ld
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 09:14:14 +0000
+ id 1iacLy-0005TQ-Ru
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 09:14:20 +0000
 Received: from localhost.localdomain ([94.155.250.134])
  by olimex.com with ESMTPSA
  (ECDHE-RSA-AES128-GCM-SHA256:TLSv1.2:Kx=ECDH:Au=RSA:Enc=AESGCM(128):Mac=AEAD)
  (SMTP-AUTH username stefan@olimex.com, mechanism PLAIN)
- for <linux-arm-kernel@lists.infradead.org>; Fri, 29 Nov 2019 01:14:04 -0800
+ for <linux-arm-kernel@lists.infradead.org>; Fri, 29 Nov 2019 01:14:09 -0800
 From: Stefan Mavrodiev <stefan@olimex.com>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -36,17 +36,16 @@ To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  support), 
  devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
  BINDINGS), linux-kernel@vger.kernel.org (open list)
-Subject: [PATCH 2/3] arm64: dts: allwinner: a64: olinuxino: Add bank supply
- regulators
-Date: Fri, 29 Nov 2019 11:13:35 +0200
-Message-Id: <20191129091336.13104-3-stefan@olimex.com>
+Subject: [PATCH 3/3] arm64: dts: allwinner: a64: olinuxino: Fix SDIO supply
+ regulator
+Date: Fri, 29 Nov 2019 11:13:36 +0200
+Message-Id: <20191129091336.13104-4-stefan@olimex.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191129091336.13104-1-stefan@olimex.com>
 References: <20191129091336.13104-1-stefan@olimex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_011413_707566_02697FE5 
-X-CRM114-Status: UNSURE (   9.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191129_011418_922795_7B28BFB1 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -72,59 +71,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allwinner A64 SoC has separate supplies for PC, PD, PE, PG and PL. This
-patch adds regulators for them to the pinctrl node.
+A64-OLinuXino uses DCDC1 (VCC-IO) for MMC1 supply. In the dts
+ALDO2 is set, which is VCC-PL. Since DCDC1 is always present, the boards
+are working without a problem.
 
-Exception is PL which is used by the RSB bus. To avoid circular
-dependencies, VCC-PL is omitted.
-
-On boards with eMMC, VCC-PC is supplied by ELDO1, instead of DCDC1.
+THis pacth sets the correct regulator.
 
 Signed-off-by: Stefan Mavrodiev <stefan@olimex.com>
 ---
- .../dts/allwinner/sun50i-a64-olinuxino-emmc.dts  |  4 ++++
- .../boot/dts/allwinner/sun50i-a64-olinuxino.dts  | 16 ++++++++++++++++
- 2 files changed, 20 insertions(+)
+ arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino-emmc.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino-emmc.dts
-index 7d135decbd53..75f101d9cd3e 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino-emmc.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino-emmc.dts
-@@ -21,3 +21,7 @@
- 	cap-mmc-hw-reset;
- 	status = "okay";
- };
-+
-+&pio {
-+	vcc-pc-supply = <&reg_eldo1>;
-+};
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-index 01a9a52edae4..ad3559c576dd 100644
+index ad3559c576dd..869bb146a9ff 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-olinuxino.dts
-@@ -163,6 +163,22 @@
- 	status = "okay";
- };
- 
-+&pio {
-+	vcc-pc-supply = <&reg_dcdc1>;
-+	vcc-pd-supply = <&reg_dcdc1>;
-+	vcc-pe-supply = <&reg_aldo1>;
-+	vcc-pg-supply = <&reg_dldo4>;
-+};
-+
-+&r_pio {
-+	/**
-+	 * Do not add vcc-pl-supply, since PL0 and PL1 are used
-+	 * by the RSB bus.
-+	 *
-+	 * vcc-pl-supply = <&reg_aldo2>;
-+	 */
-+};
-+
- &r_rsb {
- 	status = "okay";
- 
+@@ -140,7 +140,7 @@
+ &mmc1 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&mmc1_pins>;
+-	vmmc-supply = <&reg_aldo2>;
++	vmmc-supply = <&reg_dcdc1>;
+ 	vqmmc-supply = <&reg_dldo4>;
+ 	mmc-pwrseq = <&wifi_pwrseq>;
+ 	bus-width = <4>;
 -- 
 2.17.1
 
