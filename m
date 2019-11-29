@@ -2,56 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAF3410DA09
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 20:11:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35EE110D9EC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 20:06:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AgMfE5jaEBay9to7EKfQA3usQPz+VKynx7w5twU4g3A=; b=a/35MaVErHDjvsjxZHidZ4khI
-	23UNJRaH61X0IdQN5ctGtwvxrPO9kDTiJLu6R/9KdxqLJTrP6lLJDW7cO+BlXHbC3nq29tWaZCIHH
-	pFTyGvYW8zXR8mewAFzaTNwn198p42CCdMMIPDJswCzfNZk3ilbBPUEuYND1aQsQQnLb8H2PthJy+
-	T8HimsbphMx6T0Vav1sinCvnHUVPy+qRaLkt9cIrWFBnW/2CPmyvB6rQsIrTp4+3VN3iwG3S7K9kq
-	CGF/gUB0EVDbaMkyt0KXQs44kj+v5ZV9UFORLaTbYY/pVoEaYE9QqKjyn67FOcQp79gmUyWg3d4BE
-	8Q833gKMg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=oY8D26eH0XLjzrV+K98wKOy20x8Mb5aEGyBQoG/OrqU=; b=AMn
+	BWxm9UmnlB6DFZzCrFhBZC3r6TNrwIUCOw85krO6mGs4ooVsMhgGe7iyPh/qh4dvU+2/n39WcjuQu
+	X52aL/mhdOr3ynmDWM3g6LFB+N52gl9kH9RjZBbua1GsnSNf3ThBIkFscIdxu09vGpEgdy1PzuDpC
+	HzpW2VG1kktJsnAvHWxTjlXkMAMn7yEor1IW+2K8h/gGv7HOG0/atiCpDPJ8zw+zfNHzzL+8648Yr
+	ACTGQUYP03mOWaF3VKIKcJpRmfNEpOmAzCfv+HHEFt/KVIfpd72bYAQ0qCLwLdzu1IkMvpp5FQAKt
+	/z0VHRicCstQKjdj5pPD69IY92pBCOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ialfW-0000ra-Qs; Fri, 29 Nov 2019 19:11:06 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1ialag-0006Do-2b; Fri, 29 Nov 2019 19:06:06 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ialfM-0000qb-P8
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 19:10:58 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) (Authenticated sender: sre)
- with ESMTPSA id B1BE6292BA4
-Received: by earth.universe (Postfix, from userid 1000)
- id 990293C0C77; Fri, 29 Nov 2019 15:06:01 +0100 (CET)
-Date: Fri, 29 Nov 2019 15:06:01 +0100
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Subject: Re: [PATCH v2 04/17] power: reset: Kconfig: select
- POWER_RESET_AT91_RESET for sam9x60
-Message-ID: <20191129140601.fgbxwhk2c7rlvvyz@earth.universe>
-References: <1574773941-20649-1-git-send-email-claudiu.beznea@microchip.com>
- <1574773941-20649-5-git-send-email-claudiu.beznea@microchip.com>
-MIME-Version: 1.0
-In-Reply-To: <1574773941-20649-5-git-send-email-claudiu.beznea@microchip.com>
+ id 1ialaX-0006Cn-BD
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 19:05:58 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id y21so13637215pjn.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 29 Nov 2019 11:05:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=Tput1dndwwpf2AerG7ygIFUf2lPuIOL1u2Rfqh3NfVk=;
+ b=BvzraM8CKAkmCxfYac7IabmSaA3XEhDd8HpdyMp+V6oEIXnvMQ0HYoaW8qLnxl1Bu5
+ tdCjjxeqp+1ojRgWyB0OoM6qU9D3D0jDR5RlY+o2UwpnG6igqT/FSRv/uIULFVtUuJh2
+ WiNVnZbAIkyKXHxwBgcJl+Fj1e8+EOuOTj/BkpzkuFND2LlNyHcbjVO64ij5AALRU+g/
+ Lt87Iaq2d5y1Xc0iUzbnFBU+13p//CszEE0d7yQaHTNAOFN7PAwEpfnLtOcR6ZpP1ZnE
+ 7lw7T3rVc1h4Wr6Icxk0y38/JpYdb2+oFC2z+C/Fa2bP7ew8XXKD4FJH4jWle+BK1vX3
+ eSkA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Tput1dndwwpf2AerG7ygIFUf2lPuIOL1u2Rfqh3NfVk=;
+ b=Bxdd7CnuJE9FJt2zCRIQwjYlPZYhRaGOjvDXqgvNFFACYrHz97m/7kgs6UhDx/1VWn
+ 3NjkrbbZ0RNjFT9+9bnHgstOMhYKBAZen91iJR0ruA3+sQ98FWyFcxIbFRA7lliTEhmy
+ scRF/eay61/M8+IOs55BpqFVzOTLJAcb2lIrygVjXUD8f4syGKSPLBFKZHVhYsbrLvWz
+ 7BgOOlgIe8mKlgA6vTBg4oUP85x1ZrDZVpJx9vX0L+uRXQc37b6dObMQmGLo3B+kph3x
+ yiVd6gLucCQbuFdyadDyBsq0ApKZMbh/th9ECrFbHYCuevFO00AHiBSnDWMC5euNATc9
+ qFmw==
+X-Gm-Message-State: APjAAAUMIYLNdLbnKPyRyJ9rUAZZgLGYN4qvzimKMD9tliIBZHJahlT4
+ X4WI3K/0cCOwmazW5GGMjKCH
+X-Google-Smtp-Source: APXvYqzeLaLk5/vOg6eNz6870rE+kdGHOlazQZ3zrqxCvca4ydWQaL+eH7v+1YZ7kIhaW1TedvQLdg==
+X-Received: by 2002:a17:902:fe06:: with SMTP id
+ g6mr15355459plj.52.1575054353473; 
+ Fri, 29 Nov 2019 11:05:53 -0800 (PST)
+Received: from localhost.localdomain
+ ([2409:4072:638d:cc55:d006:f721:cde2:1059])
+ by smtp.gmail.com with ESMTPSA id h9sm25159974pgk.84.2019.11.29.11.05.47
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 29 Nov 2019 11:05:52 -0800 (PST)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: mchehab@kernel.org,
+	sakari.ailus@iki.fi
+Subject: [PATCH 0/5] Improvements to IMX290 CMOS driver
+Date: Sat, 30 Nov 2019 00:35:36 +0530
+Message-Id: <20191129190541.30315-1-manivannan.sadhasivam@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_111056_943540_EE5FA006 
-X-CRM114-Status: GOOD (  13.54  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20191129_110557_384939_11D3CDA8 
+X-CRM114-Status: UNSURE (   7.61  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.1 DATE_IN_PAST_03_06     Date: is 3 to 6 hours before Received: date
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,88 +92,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
- ludovic.desroches@microchip.com, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5463793270673336550=="
+Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
+ linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello,
 
---===============5463793270673336550==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="qqra4xv2pgsrtjif"
-Content-Disposition: inline
+This patchset adds improvements to the existing IMX290 CMOS driver from
+Sony. The major changes are adding 2 lane support, test pattern generation,
+RAW12 mode support and configurable link frequency & pixel rate.
 
+The link frequency & pixel rate combinations depend on various factors like
+lane count, resolution and image format as per the datasheet.
 
---qqra4xv2pgsrtjif
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Thanks,
+Mani
 
-Hi,
+Manivannan Sadhasivam (5):
+  media: i2c: imx290: Add support for 2 data lanes
+  media: i2c: imx290: Add support for test pattern generation
+  media: i2c: imx290: Add RAW12 mode support
+  media: i2c: imx290: Add support to enumerate all frame sizes
+  media: i2c: imx290: Add configurable link frequency and pixel rate
 
-On Tue, Nov 26, 2019 at 03:12:08PM +0200, Claudiu Beznea wrote:
-> Select POWER_RESET_AT91_RESET for SAM9X60 SoC.
->=20
-> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-> ---
->  drivers/power/reset/Kconfig | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->=20
-> diff --git a/drivers/power/reset/Kconfig b/drivers/power/reset/Kconfig
-> index c721939767eb..886e60017f4d 100644
-> --- a/drivers/power/reset/Kconfig
-> +++ b/drivers/power/reset/Kconfig
-> @@ -26,7 +26,7 @@ config POWER_RESET_AT91_POWEROFF
->  config POWER_RESET_AT91_RESET
->  	tristate "Atmel AT91 reset driver"
->  	depends on ARCH_AT91
-> -	default SOC_AT91SAM9 || SOC_SAMA5
-> +	default SOC_AT91SAM9 || SOC_SAM9X60 || SOC_SAMA5
->  	help
->  	  This driver supports restart for Atmel AT91SAM9 and SAMA5
->  	  SoCs
+ drivers/media/i2c/imx290.c | 328 +++++++++++++++++++++++++++++++------
+ 1 file changed, 277 insertions(+), 51 deletions(-)
 
-I suppose this will go through ARM:
+-- 
+2.17.1
 
-Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-
--- Sebastian
-
---qqra4xv2pgsrtjif
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl3hJckACgkQ2O7X88g7
-+pqhDQ//WNmLXqjre475NYvywJrUR10v2JH2NyVYPBlYw5NtMdaj/2qgjlOOA5by
-KaHTlh1gsCthLa5RF+xVpKc9QnKEPnt3ZIHys+QO1vBl50CA4uSdP7SJ0X8pqhSm
-s/KfSa5dlkGF0z3cu6XXJg4c/oG4HSsCGPnGrbwVIaCN1kQBA8ESEBhwyggIu59J
-DjBw092F4Wp+o+McqZW+xR/ILbNhqkqzz5OkJdg5r3XcWr+K3ubNUrfEIKn60+C6
-49PI6hvkvbZHtHRtJgkcxW7TX/IsmFNWGWO0VSPLh7sa5DiD9Pf4Mux3mHAU6uk6
-QaFfWZahcRqNvpwxcqJUqntwawnpIzYmoJfzDoqScHEfU1kZ+p3U/RenNfHBHioQ
-SPO/15E2hC5Anb7JNYbxS4JccBF+0xRmpVIGRqmNJFFRaVvEhRgYuH/LWZqdgQEn
-K/ZPHCXsYS/5cTMNOJ/Ma1FfgVaEbeCXv5r89ExS2/JuHtDXCD3KdC7eIYnwEvJn
-9nYnHxRdBJRH92QpooEUOJI0fXKgBsGBn2lcAwqlt7ctfVNG3fL/aK8E7SuXNomw
-LQyahophFRjRjCKT8ZscFperzBF70gMVXws0eiV2u55ZHVtvXBIEF7BapxxjgI6a
-dg22CtqsGb4xQGY2srR7qjL4rJd9JJuQrQcuRYBwxsRnDG80Wto=
-=HxsT
------END PGP SIGNATURE-----
-
---qqra4xv2pgsrtjif--
-
-
---===============5463793270673336550==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5463793270673336550==--
-
