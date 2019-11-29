@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 276D810D5F3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 14:02:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 487B810D60E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 14:23:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a4WLxMZ8l/5VZ6qEQ71gK/ffJFP7WNev5dbcnCP4X+4=; b=itgt+hKYf5nb/2
-	HL7GbBLch0cUnWaI1868GNuE5WPcBfP15iAVg8idq1sJd3t6ppmCwY19kq4fdN1RygRn7GuVrGajM
-	kR1RAgh+HQbYXrRWBU3hhwX/Ye1k746Vk4IxG25fF62zIzm+Htk9aI6f3+Q0B7Rmn4otuYOizHwO5
-	qQRCIl142XxyfTt7LJeK4NnzbcDNwAnaVTgsBp2BSUAiSoQnmQcqubm4N2tAt5kyB7l8h4NiyRgT1
-	8+6M+D+sCaxZ4IIMhm3nwugBOVtCSuuxzfunQ8rEMmHHRcS6XdajAiPRxwJU/DBEZf8726BRIX6nV
-	1bkywsaW8gUHTLQkOUVg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=V0IY/agr6mA2ZDvKMK0MF1f6FFSZ5pWb1GtbvG+uy0A=; b=PcTq3I04+BO7rGzo5qsvFw0jF
+	Hvv/UpYftUv6knNILGt9/PGeUlqaBkR9WehgEFUG4maBLtPGMOdQD6ArrfbpvHThSMCDY8NKimOen
+	WSp06Kj699Q84UTey+7kvQhVxqcY13glCtEQFcHxMijuweJlEfd5M7YiLeLWzs2ETMdFpO1nFkOx2
+	l2cxQqXcNJZhtcvN+N6prt5qZZxJBQDUnaQe8uhQcruzIm0MdzNF7kc0GN34MEj/Wz48E8ezcMwdH
+	aFPOe+wB6xACFjmIF6f3ZiMg6DR2TvbN8u5Q07wW7yWzcHK8gDjcndZMlYfouXJDKmUtOdkQ6vOxB
+	SRuLWpTTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iafuO-0001jQ-Vc; Fri, 29 Nov 2019 13:02:05 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1iagEk-0003Z2-45; Fri, 29 Nov 2019 13:23:06 +0000
+Received: from hqemgate14.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iafuF-0001iX-8b
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 13:01:56 +0000
-Received: by mail-qt1-x841.google.com with SMTP id i17so32408996qtq.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 29 Nov 2019 05:01:50 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Xn54XTvcNkal14NNHB7+Vzm9BZs6YXQQ3RAQ8lYr/oc=;
- b=An+4zXCFdte8eMvcqUEG3vfTxzYHLztNUyO+dIju42gILkNWJLODGcoxqgrQR7mqsl
- OfYl8RSMNw0xmz5Bgz11IFl+yVb5ur2ssG+rt2UWWkK3GXNcN5i0+6XzLBwaYkxROqrK
- hf05akothfHLjS+dc3IJ2nmpGRpB4rtw7hvhHxMw/wuCu0I+T8j69hAB5WrJ0UhCECxf
- RMt3xTOTWuVlOuPignDWsj0EBINdiInOto4yDYiZ/CqeuULQuwnS4TQ7ua9n3EYQ1Opt
- cF4tfnfdW0s1OqfNGbRi1bC6J2MgQcaHGhBWzpy10bkEgFRVncoZ+2BQibA0Id+qjfm/
- kEFw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Xn54XTvcNkal14NNHB7+Vzm9BZs6YXQQ3RAQ8lYr/oc=;
- b=ITbVyAh1GBEqgv3ga/IgypqAf/zhfuD1WjrY6iBQNNgdzrw6Y2Ypzzpd3sbRGOeaLz
- DxlzlI7Y8KqzXXwykhSPbfeP5mStpmEEgf4fTCpri08lDby6Ik4fP1E4JUmAQj3qgkAp
- jAOqyBFF4uZckgvsnUSqi/fTnk3U3QfHwaotqPu841lXRZtW6UbmXBeFz8ii5QGo9Smc
- M6aYpwpOoCeachPpgAxYf74r4PpN954Wj82csCwex46cBKV/M7Ah9j3+tpz+tkh2y335
- TGlB5UauFRy6HFtLhf5TXa8Uwa615Ta/4b/JO0z+MG5Iy7vnSk8vN77VHzMHXTK1LdoN
- GqIQ==
-X-Gm-Message-State: APjAAAUau5mS9LRUGPztiNEMo3DaIJFtHs3rYWIICE6JekrIzaQN+esq
- nSlLYkiDfX/0bSyxeNDoTUqv56vZF8b257nJl3FidA==
-X-Google-Smtp-Source: APXvYqxnCMUzN7K5F96FwviGs9debEPUho46vDAcIfSuTnPxYu+XchM5mkJV2q7pXMOhaWj2Um8cNDKqRVhiHyGh8zE=
-X-Received: by 2002:ac8:41c3:: with SMTP id o3mr35156316qtm.88.1575032508294; 
- Fri, 29 Nov 2019 05:01:48 -0800 (PST)
+ id 1iagEb-0003Yc-1v
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 13:22:58 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5de11bb20000>; Fri, 29 Nov 2019 05:22:58 -0800
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Fri, 29 Nov 2019 05:22:54 -0800
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Fri, 29 Nov 2019 05:22:54 -0800
+Received: from [10.25.75.74] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 29 Nov
+ 2019 13:22:50 +0000
+Subject: Re: [PATCH 3/6] PCI: tegra: Add support for PCIe endpoint mode in
+ Tegra194
+To: Bjorn Helgaas <helgaas@kernel.org>
+References: <20191126213718.GA185422@google.com>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <7298f15d-1745-e5c9-2d08-1235a27244ae@nvidia.com>
+Date: Fri, 29 Nov 2019 18:52:47 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-References: <20191119231912.12768-1-mike.leach@linaro.org>
- <20191119231912.12768-5-mike.leach@linaro.org>
- <ce6d3334-2baf-0528-33a1-0157a8ad0c57@arm.com>
-In-Reply-To: <ce6d3334-2baf-0528-33a1-0157a8ad0c57@arm.com>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Fri, 29 Nov 2019 13:01:37 +0000
-Message-ID: <CAJ9a7Vj0fL4bkA+k-ip-NBwJ4nU3B+sCmPQZH1j9PdXnR66Veg@mail.gmail.com>
-Subject: Re: [PATCH v5 04/14] coresight: cti: Add sysfs trigger / channel
- programming API
-To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
+In-Reply-To: <20191126213718.GA185422@google.com>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL111.nvidia.com (172.20.187.18) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1575033778; bh=7gO/CXj0wvWwogWev3Z+fNC4tNy+uDv47vsz0nrrl5w=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=Q1QlqQj9jsPpnd6pf7C27/BelCW4RWZRzBi2KaiDdVgmQRtcmInnvBKkDE6Iq/jDa
+ 3eEtcoGbjwFqH0XNmV+7oElfREV+vkp/uQUYaFN8MjIiVD/X1ZjwDEQWOShO+R+Krd
+ s0ELF/Yf578H0G6uMulK4hnMAXda5t1DwKz4j+AyJA5/sbYgIY6KVH82ppVtNN3ybN
+ MfmKAM5lE7RX5Q85hZMaus6bD4MIEM+bTbL5jSUereIJm5FxCXk9FLvlqSi6B8mzHc
+ KblxQObo77nRmb3bfFCnDhQUKusMgt67Q1Qdqvaia3kHhyOEpzmxYR5NVWzR0n67XT
+ YH7xjnMHHJ/JA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_050155_316273_9EF9AD81 
-X-CRM114-Status: GOOD (  13.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191129_052257_117472_57665F75 
+X-CRM114-Status: GOOD (  14.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.143 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -82,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,92 +93,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Coresight ML <coresight@lists.linaro.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mmaddireddy@nvidia.com, kthota@nvidia.com, gustavo.pimentel@synopsys.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, kishon@ti.com,
+ thierry.reding@gmail.com, linux-pci@vger.kernel.org,
+ linux-tegra@vger.kernel.org, andrew.murray@arm.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki,
+On 11/27/2019 3:07 AM, Bjorn Helgaas wrote:
+> On Fri, Nov 22, 2019 at 04:15:02PM +0530, Vidya Sagar wrote:
+>> Add support for the endpoint mode of Synopsys DesignWare core based
+>> dual mode PCIe controllers present in Tegra194 SoC.
+> 
+>> +static irqreturn_t tegra_pcie_ep_irq_handler(struct tegra_pcie_dw *pcie)
+>> +{
+>> +	struct dw_pcie_ep *ep = &pcie->pci.ep;
+>> +	u32 val, tmp;
+>> +
+>> +	val = appl_readl(pcie, APPL_INTR_STATUS_L0);
+>> +	if (val & APPL_INTR_STATUS_L0_LINK_STATE_INT) {
+>> +		val = appl_readl(pcie, APPL_INTR_STATUS_L1_0_0);
+>> +		appl_writel(pcie, val, APPL_INTR_STATUS_L1_0_0);
+>> +		if (val & APPL_INTR_STATUS_L1_0_0_HOT_RESET_DONE) {
+>> +			/* clear any stale PEX_RST interrupt */
+>> +			if (!kfifo_put(&pcie->event_fifo, EP_HOT_RST_DONE)) {
+>> +				dev_err(pcie->dev, "EVENT FIFO is full\n");
+>> +				return IRQ_HANDLED;
+>> +			}
+>> +			wake_up(&pcie->wq);
+>> +		}
+>> +		if (val & APPL_INTR_STATUS_L1_0_0_RDLH_LINK_UP_CHGED) {
+>> +			tmp = appl_readl(pcie, APPL_LINK_STATUS);
+>> +			if (tmp & APPL_LINK_STATUS_RDLH_LINK_UP) {
+>> +				dev_info(pcie->dev, "Link is up with Host\n");
+>> +				dw_pcie_ep_linkup(ep);
+>> +			}
+>> +		}
+>> +	} else if (val & APPL_INTR_STATUS_L0_PCI_CMD_EN_INT) {
+> 
+> Is it really the case that only one of
+> APPL_INTR_STATUS_L0_LINK_STATE_INT and
+> APPL_INTR_STATUS_L0_PCI_CMD_EN_INT can be set?
+Not really.
 
+> 
+> If it's possible that both could be set, maybe this should be
+> something like this?
+> 
+>    int spurious = 1;
+> 
+>    if (val & APPL_INTR_STATUS_L0_LINK_STATE_INT) {
+>      ...
+>      spurious = 0;
+>    }
+>    if (val & APPL_INTR_STATUS_L0_PCI_CMD_EN_INT) {
+>      ...
+>      spurious = 0;
+>    }
+> 
+>    if (spurious) {
+>      dev_warn(...)
+>    }
+I'll take care of this in the next patch series.
 
-On Wed, 27 Nov 2019 at 18:40, Suzuki Kuruppassery Poulose
-<suzuki.poulose@arm.com> wrote:
->
-> On 19/11/2019 23:19, Mike Leach wrote:
-> > Adds a user API to allow programming of CTI by trigger ID and
-> > channel number. This will take the channel and trigger ID supplied
-> > by the user and program the appropriate register values.
-> >
-> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> > ---
->
-> > +
-> > +static ssize_t chan_xtrigs_view_show(struct device *dev,
-> > +                                  struct device_attribute *attr,
-> > +                                  char *buf)
-> > +{
-> > +     struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> > +     struct cti_config *cfg = &drvdata->config;
-> > +     int used = 0, reg_idx;
-> > +     int buf_sz = PAGE_SIZE;
-> > +     u32 chan_mask = BIT(cfg->xtrig_rchan_sel);
-> > +
-> > +     used += scnprintf(buf, buf_sz, "[%d] IN: ", cfg->xtrig_rchan_sel);
-> > +     for (reg_idx = 0;
-> > +          reg_idx < drvdata->config.nr_trig_max;
-> > +          reg_idx++) {
-> > +             if (chan_mask & cfg->ctiinen[reg_idx]) {
-> > +                     used += scnprintf(buf + used, buf_sz - used, "%d ",
-> > +                                       reg_idx);
-> > +             }
-> > +     }
->
-> As a security measure, we must make sure that we have space left in the
-> buffer. We could end up passing "negative" numbers for the size
-> argument, in the worst case.
->
+> 
+>> +		val = appl_readl(pcie, APPL_INTR_STATUS_L1_15);
+>> +		appl_writel(pcie, val, APPL_INTR_STATUS_L1_15);
+>> +		if (val & APPL_INTR_STATUS_L1_15_CFG_BME_CHGED) {
+>> +			if (!kfifo_put(&pcie->event_fifo, EP_BME_CHANGE)) {
+>> +				dev_err(pcie->dev, "EVENT FIFO is full\n");
+>> +				return IRQ_HANDLED;
+>> +			}
+>> +			wake_up(&pcie->wq);
+>> +		}
+>> +	} else {
+>> +		dev_warn(pcie->dev, "Random interrupt (STATUS = 0x%08X)\n",
+>> +			 val);
+>> +		appl_writel(pcie, val, APPL_INTR_STATUS_L0);
+>> +	}
+>> +
+>> +	return IRQ_HANDLED;
+>> +}
+> 
+>> +static int tegra_pcie_ep_work_thread(void *p)
+>> +{
+>> +	struct tegra_pcie_dw *pcie = (struct tegra_pcie_dw *)p;
+>> +	u32 event;
+>> +
+>> +	while (true) {
+>> +		wait_event_interruptible(pcie->wq,
+>> +					 !kfifo_is_empty(&pcie->event_fifo));
+>> +
+>> +		if (kthread_should_stop())
+>> +			break;
+>> +
+>> +		if (!kfifo_get(&pcie->event_fifo, &event)) {
+>> +			dev_warn(pcie->dev, "EVENT FIFO is empty\n");
+>> +			continue;
+>> +		}
+>> +
+>> +		switch (event) {
+>> +		case EP_PEX_RST_DEASSERT:
+>> +			dev_info(pcie->dev, "EVENT: EP_PEX_RST_DEASSERT\n");
+>> +			pex_ep_event_pex_rst_deassert(pcie);
+>> +			break;
+>> +
+>> +		case EP_PEX_RST_ASSERT:
+>> +			dev_info(pcie->dev, "EVENT: EP_PEX_RST_ASSERT\n");
+>> +			pex_ep_event_pex_rst_assert(pcie);
+>> +			break;
+>> +
+>> +		case EP_HOT_RST_DONE:
+>> +			dev_info(pcie->dev, "EVENT: EP_HOT_RST_DONE\n");
+>> +			pex_ep_event_hot_rst_done(pcie);
+>> +			break;
+>> +
+>> +		case EP_BME_CHANGE:
+>> +			dev_info(pcie->dev, "EVENT: EP_BME_CHANGE\n");
+>> +			pex_ep_event_bme_change(pcie);
+>> +			break;
+>> +
+>> +		case EP_EVENT_EXIT:
+>> +			dev_info(pcie->dev, "EVENT: EP_EVENT_EXIT\n");
+>> +			return 0;
+>> +
+>> +		default:
+>> +			dev_warn(pcie->dev, "Invalid PCIe EP event\n");
+> 
+> Maybe include the invalid event value in the message?
+I'll take care of this in the next patch series
 
-The return value from scnprintf() is always the _actual_ number of
-characters added to the buffer, not as per snprintf() which returns
-the number that could have been printed if there were sufficient
-space.
-Thus used can never exceed the buffer size.
+> 
+>> +			break;
+>> +		}
+>> +	}
+>> +
+>> +	return 0;
+>> +}
 
-Regards
-
-Mike
-
-
-> > +
-> > +     used += scnprintf(buf + used, buf_sz - used, "OUT: ");
-> > +     for (reg_idx = 0;
-> > +          reg_idx < drvdata->config.nr_trig_max;
-> > +          reg_idx++) {
-> > +             if (chan_mask & cfg->ctiouten[reg_idx]) {
-> > +                     used += scnprintf(buf + used, buf_sz - used, "%d ",
-> > +                                       reg_idx);
-> > +             }
-> > +     }
-> > +     used += scnprintf(buf + used, buf_sz - used, "\n");
-> > +     return used;
-> > +}
-> > +static DEVICE_ATTR_RW(chan_xtrigs_view);
->
->
-> The rest looks fine to me.
->
-> Suzuki
-
-
-
--- 
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
