@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DF3F10D967
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 19:07:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A5BF10D964
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 19:06:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OhMd4A5nYOFrm9HDqwvhYZno2kc/+XhXuwYqTuKZ+wM=; b=Y9jTUb5NYW9mT5
-	FtjrdKKnKsqFTYqoZqBMERT03nEmyOETwig4qInTJqgThQ7SLpsnCTUX3pCQrX3vs0/GL/HxGHUDy
-	DF/a8pKl6AeALt0xow0l3/QerjF/Pmb7NKdC1RZHGXEWEsjXlzodsXJLM4U2Z6IZiZosh+QkkaZ3H
-	Vgrn9ASS9MWZt4PohngX3UYimURqYYKjJf/D0BKuZqjMSqKWJKGaVxEVkzLSawsxH5MzyGvjjyaTu
-	v++TkkaUjAnT9p4xZdPObYK0HHoAjlcBQHXLK0M1Z9dQtjR9ixqUz4BndJ8gWTRvxFb5hpLeozT8R
-	DbtEHSOeinyzZMlE6kCA==;
+	List-Owner; bh=Rax6q7QRZ3msK2F997iKcxLLGZd/Z9DaRk8gw/qmxjA=; b=F6vGZnqVWD7GmU
+	v7oFf1EdB3l5paZMYhq5DOm1kDrdp3e2W6WKrKRa+zd+Hmd8H4PM76dXwihUrqyh2ZvVPc1zFzah8
+	GbBmykT+9zH4UMIZ8fScVI8F3Ybt5J/ZUY5fRrkhVKSlbH+EKe914Rtd+GB7GjqnYqBnNL+AzNlua
+	0xa1fCWpShIGpVUS9P1plVhyWwICfASW68GTVJwC8k2ANm3MK9hh3t6C41Mq7amz1YY6hGShY+b/C
+	Jph5/c3b8Yza8e9EhI0C2R7XM2Olqnoeb0gFe8nZ+oPj+aATnv219sKuPWETpMUCT9INDiJ928xV/
+	iqGb2nLNHnjyoNz/KMqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iakg7-0002tk-Gn; Fri, 29 Nov 2019 18:07:39 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iakfH-00028d-Mk; Fri, 29 Nov 2019 18:06:47 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iakem-0001xq-6R
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 18:06:22 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xATI08mp024288; Fri, 29 Nov 2019 19:06:06 +0100
+ id 1iakel-0001xm-SX
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 18:06:18 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xATI28bE023932; Fri, 29 Nov 2019 19:06:07 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=dAq7R3H7IKdrtGpxINjpm51TQLi/qDTgGLAWiKNgOtg=;
- b=I3jX63QURBQNXTQCzaTMFLxGbe0DLV8yFgvhdy4EsEYg7AdJvd5tx9zVS+Paw1xrs3bs
- dfm+xn0sCbZ2iMNORvJWCmrTu+hr33fQvlDDKm6WO9KrQO6i0V07+1mq9YWkuwMugZUd
- NyTtqBfAVW724CVUTCFxsKmMzFz/jVrWTxWCmZnVrJKaRD/fPPZJ/VlO47iFkVOyvpG3
- oZHWmEwju0fsP048pkxVZxHXDKirN3KrZgfBHb9U8uXC3Q9ITP4kjNZ6Xv4EDvNw6zek
- soXNzoeJeszfMeI8xxM0LybJ8iB+EpKIE5hZ/nLu4L+2B5dXF6+kvRvD1T7+BGLgF1al Tg== 
+ bh=CGV8S/eMKv56unQRut98j0sGn8pkJ9E63CyqkZteevw=;
+ b=RKldKw/6udso8MS+BO337tY7q7pjmwU6gq6GFRL6ysNsjm/EaHCw91gbojyWYvcyt0rL
+ 58guH5bPJYQ/l09WZNW6cKVC2SHDaymZCAS2bdWniM7G0RGduEy6X92xf8Dqk72TpNmL
+ bvgAiY7dGhF3XJpuA85iCzdb83DM4TBFSx0UHwwVTwEonEX6nWiqFc1ORTWOCSsLKhVm
+ ANPGHOdzS7aPQx7Z+c54NRwc90NE9/x86XJHv669WioCXWDGVYPgy1s0tPRyDJClvtio
+ UQ6zaOrisslWdK+nKWRqlAFJ4rA8PVmr2RdSoY8JJlMfhTRP6yAz9/eNFy+2qSOlL3EG 1g== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2whcxss0n2-1
+ by mx07-00178001.pphosted.com with ESMTP id 2whcxjgr6t-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 29 Nov 2019 19:06:06 +0100
+ Fri, 29 Nov 2019 19:06:07 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0915E100038;
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 978CB100039;
  Fri, 29 Nov 2019 19:06:06 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EA6A1222D1F;
- Fri, 29 Nov 2019 19:06:05 +0100 (CET)
-Received: from localhost (10.75.127.48) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 29 Nov 2019 19:06:05
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8BD5C222D1F;
+ Fri, 29 Nov 2019 19:06:06 +0100 (CET)
+Received: from localhost (10.75.127.51) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 29 Nov 2019 19:06:06
  +0100
 From: Alexandre Torgue <alexandre.torgue@st.com>
 To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, <arnd@arndb.de>,
  <robh+dt@kernel.org>, <mark.rutland@arm.com>
-Subject: [PATCH v2 2/6] ARM: dts: stm32: Update stm32mp157 pinctrl files
-Date: Fri, 29 Nov 2019 19:05:58 +0100
-Message-ID: <20191129180602.28470-3-alexandre.torgue@st.com>
+Subject: [PATCH v2 3/6] ARM: dts: stm32: Introduce new STM32MP15 SOCs:
+ STM32MP151 and STM32MP153
+Date: Fri, 29 Nov 2019 19:05:59 +0100
+Message-ID: <20191129180602.28470-4-alexandre.torgue@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191129180602.28470-1-alexandre.torgue@st.com>
 References: <20191129180602.28470-1-alexandre.torgue@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG3NODE2.st.com (10.75.127.8) To SFHDAG3NODE2.st.com
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG4NODE1.st.com (10.75.127.10) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
  definitions=2019-11-29_06:2019-11-29,2019-11-29 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_100616_553521_F5DA42F6 
-X-CRM114-Status: GOOD (  13.69  )
+X-CRM114-CacheID: sfid-20191129_100616_388662_4B995D4F 
+X-CRM114-Status: GOOD (  14.79  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -104,670 +104,228 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to cover the STM32MP15 SOCs family this commit updates pinctrl
-file names (group definition and packages files).
-This family includes: STM32MP151, STM32MP153 and STM32MP157.
+STM32MP151 and STM32MP153 were not explicitly supported through
+stm32mp157c.dts. This commit adds dedicated files to support all STM32MP15
+SOCs family.
+
+The differences between those SOCs are:
+ -STM32MP151 [1]: common file.
+ -STM32MP153 [2]: STM32MP151 + CANs + a second CortexA7-CPU.
+ -STM32MP157 [3]: STM32MP153 + DSI + GPU.
+
+[1] https://www.st.com/resource/en/reference_manual/dm00366349.pdf
+[2] https://www.st.com/resource/en/reference_manual/dm00366355.pdf
+[3] https://www.st.com/resource/en/reference_manual/dm00327659.pdf
 
 Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
 
-diff --git a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-similarity index 100%
-rename from arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
-rename to arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp151.dtsi
+similarity index 96%
+rename from arch/arm/boot/dts/stm32mp157c.dtsi
+rename to arch/arm/boot/dts/stm32mp151.dtsi
+index ce641c4359cf..9a0b55be134d 100644
+--- a/arch/arm/boot/dts/stm32mp157c.dtsi
++++ b/arch/arm/boot/dts/stm32mp151.dtsi
+@@ -20,12 +20,6 @@
+ 			device_type = "cpu";
+ 			reg = <0>;
+ 		};
+-
+-		cpu1: cpu@1 {
+-			compatible = "arm,cortex-a7";
+-			device_type = "cpu";
+-			reg = <1>;
+-		};
+ 	};
+ 
+ 	psci {
+@@ -953,32 +947,6 @@
+ 			};
+ 		};
+ 
+-		m_can1: can@4400e000 {
+-			compatible = "bosch,m_can";
+-			reg = <0x4400e000 0x400>, <0x44011000 0x1400>;
+-			reg-names = "m_can", "message_ram";
+-			interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,
+-				     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
+-			interrupt-names = "int0", "int1";
+-			clocks = <&rcc CK_HSE>, <&rcc FDCAN_K>;
+-			clock-names = "hclk", "cclk";
+-			bosch,mram-cfg = <0x0 0 0 32 0 0 2 2>;
+-			status = "disabled";
+-		};
+-
+-		m_can2: can@4400f000 {
+-			compatible = "bosch,m_can";
+-			reg = <0x4400f000 0x400>, <0x44011000 0x2800>;
+-			reg-names = "m_can", "message_ram";
+-			interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>,
+-				     <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
+-			interrupt-names = "int0", "int1";
+-			clocks = <&rcc CK_HSE>, <&rcc FDCAN_K>;
+-			clock-names = "hclk", "cclk";
+-			bosch,mram-cfg = <0x1400 0 0 32 0 0 2 2>;
+-			status = "disabled";
+-		};
+-
+ 		dma1: dma@48000000 {
+ 			compatible = "st,stm32-dma";
+ 			reg = <0x48000000 0x400>;
+@@ -1444,26 +1412,6 @@
+ 			status = "disabled";
+ 		};
+ 
+-		gpu: gpu@59000000 {
+-			compatible = "vivante,gc";
+-			reg = <0x59000000 0x800>;
+-			interrupts = <GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&rcc GPU>, <&rcc GPU_K>;
+-			clock-names = "bus" ,"core";
+-			resets = <&rcc GPU_R>;
+-			status = "disabled";
+-		};
+-
+-		dsi: dsi@5a000000 {
+-			compatible = "st,stm32-dsi";
+-			reg = <0x5a000000 0x800>;
+-			clocks = <&rcc DSI_K>, <&clk_hse>, <&rcc DSI_PX>;
+-			clock-names = "pclk", "ref", "px_clk";
+-			resets = <&rcc DSI_R>;
+-			reset-names = "apb";
+-			status = "disabled";
+-		};
+-
+ 		ltdc: display-controller@5a001000 {
+ 			compatible = "st,stm32-ltdc";
+ 			reg = <0x5a001000 0x400>;
+diff --git a/arch/arm/boot/dts/stm32mp153.dtsi b/arch/arm/boot/dts/stm32mp153.dtsi
+new file mode 100644
+index 000000000000..2d759fc6015c
+--- /dev/null
++++ b/arch/arm/boot/dts/stm32mp153.dtsi
+@@ -0,0 +1,45 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
++/*
++ * Copyright (C) STMicroelectronics 2019 - All Rights Reserved
++ * Author: Alexandre Torgue <alexandre.torgue@st.com> for STMicroelectronics.
++ */
++
++#include "stm32mp151.dtsi"
++
++/ {
++	cpus {
++		cpu1: cpu@1 {
++			compatible = "arm,cortex-a7";
++			device_type = "cpu";
++			reg = <1>;
++		};
++	};
++
++	soc {
++		m_can1: can@4400e000 {
++			compatible = "bosch,m_can";
++			reg = <0x4400e000 0x400>, <0x44011000 0x1400>;
++			reg-names = "m_can", "message_ram";
++			interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "int0", "int1";
++			clocks = <&rcc CK_HSE>, <&rcc FDCAN_K>;
++			clock-names = "hclk", "cclk";
++			bosch,mram-cfg = <0x0 0 0 32 0 0 2 2>;
++			status = "disabled";
++		};
++
++		m_can2: can@4400f000 {
++			compatible = "bosch,m_can";
++			reg = <0x4400f000 0x400>, <0x44011000 0x2800>;
++			reg-names = "m_can", "message_ram";
++			interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "int0", "int1";
++			clocks = <&rcc CK_HSE>, <&rcc FDCAN_K>;
++			clock-names = "hclk", "cclk";
++			bosch,mram-cfg = <0x1400 0 0 32 0 0 2 2>;
++			status = "disabled";
++		};
++	};
++};
+diff --git a/arch/arm/boot/dts/stm32mp157.dtsi b/arch/arm/boot/dts/stm32mp157.dtsi
+new file mode 100644
+index 000000000000..3f0a4a91cce6
+--- /dev/null
++++ b/arch/arm/boot/dts/stm32mp157.dtsi
+@@ -0,0 +1,31 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
++/*
++ * Copyright (C) STMicroelectronics 2019 - All Rights Reserved
++ * Author: Alexandre Torgue <alexandre.torgue@st.com> for STMicroelectronics.
++ */
++
++#include "stm32mp153.dtsi"
++
++/ {
++	soc {
++		gpu: gpu@59000000 {
++			compatible = "vivante,gc";
++			reg = <0x59000000 0x800>;
++			interrupts = <GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&rcc GPU>, <&rcc GPU_K>;
++			clock-names = "bus" ,"core";
++			resets = <&rcc GPU_R>;
++			status = "disabled";
++		};
++
++		dsi: dsi@5a000000 {
++			compatible = "st,stm32-dsi";
++			reg = <0x5a000000 0x800>;
++			clocks = <&rcc DSI_K>, <&clk_hse>, <&rcc DSI_PX>;
++			clock-names = "pclk", "ref", "px_clk";
++			resets = <&rcc DSI_R>;
++			reset-names = "apb";
++			status = "disabled";
++		};
++	};
++};
 diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index 628c74a45a25..2f6dd51e8506 100644
+index 2f6dd51e8506..cbfa4075907e 100644
 --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
 +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -7,7 +7,8 @@
+@@ -6,7 +6,7 @@
+ 
  /dts-v1/;
  
- #include "stm32mp157c.dtsi"
--#include "stm32mp157xac-pinctrl.dtsi"
-+#include "stm32mp15-pinctrl.dtsi"
-+#include "stm32mp15xxac-pinctrl.dtsi"
+-#include "stm32mp157c.dtsi"
++#include "stm32mp157.dtsi"
+ #include "stm32mp15-pinctrl.dtsi"
+ #include "stm32mp15xxac-pinctrl.dtsi"
  #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/mfd/st,stpmic1.h>
- 
 diff --git a/arch/arm/boot/dts/stm32mp157a-dk1.dts b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-index 2f9f8cf94b02..7ee7b4d13d39 100644
+index 7ee7b4d13d39..3f869bd67082 100644
 --- a/arch/arm/boot/dts/stm32mp157a-dk1.dts
 +++ b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-@@ -7,7 +7,8 @@
+@@ -6,7 +6,7 @@
+ 
  /dts-v1/;
  
- #include "stm32mp157c.dtsi"
--#include "stm32mp157xac-pinctrl.dtsi"
-+#include "stm32mp15-pinctrl.dtsi"
-+#include "stm32mp15xxac-pinctrl.dtsi"
+-#include "stm32mp157c.dtsi"
++#include "stm32mp157.dtsi"
+ #include "stm32mp15-pinctrl.dtsi"
+ #include "stm32mp15xxac-pinctrl.dtsi"
  #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/mfd/st,stpmic1.h>
- 
 diff --git a/arch/arm/boot/dts/stm32mp157c-ed1.dts b/arch/arm/boot/dts/stm32mp157c-ed1.dts
-index 341fb6064447..e5d8da01aaef 100644
+index e5d8da01aaef..975f69ea4eed 100644
 --- a/arch/arm/boot/dts/stm32mp157c-ed1.dts
 +++ b/arch/arm/boot/dts/stm32mp157c-ed1.dts
-@@ -6,7 +6,8 @@
+@@ -5,7 +5,7 @@
+  */
  /dts-v1/;
  
- #include "stm32mp157c.dtsi"
--#include "stm32mp157xaa-pinctrl.dtsi"
-+#include "stm32mp15-pinctrl.dtsi"
-+#include "stm32mp15xxaa-pinctrl.dtsi"
+-#include "stm32mp157c.dtsi"
++#include "stm32mp157.dtsi"
+ #include "stm32mp15-pinctrl.dtsi"
+ #include "stm32mp15xxaa-pinctrl.dtsi"
  #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/mfd/st,stpmic1.h>
- 
-diff --git a/arch/arm/boot/dts/stm32mp157xaa-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157xaa-pinctrl.dtsi
-deleted file mode 100644
-index 875adf5e1e30..000000000000
---- a/arch/arm/boot/dts/stm32mp157xaa-pinctrl.dtsi
-+++ /dev/null
-@@ -1,90 +0,0 @@
--// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
--/*
-- * Copyright (C) STMicroelectronics 2019 - All Rights Reserved
-- * Author: Alexandre Torgue <alexandre.torgue@st.com>
-- */
--
--#include "stm32mp157-pinctrl.dtsi"
--/ {
--	soc {
--		pinctrl: pin-controller@50002000 {
--			st,package = <STM32MP_PKG_AA>;
--
--			gpioa: gpio@50002000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 0 16>;
--			};
--
--			gpiob: gpio@50003000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 16 16>;
--			};
--
--			gpioc: gpio@50004000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 32 16>;
--			};
--
--			gpiod: gpio@50005000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 48 16>;
--			};
--
--			gpioe: gpio@50006000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 64 16>;
--			};
--
--			gpiof: gpio@50007000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 80 16>;
--			};
--
--			gpiog: gpio@50008000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 96 16>;
--			};
--
--			gpioh: gpio@50009000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 112 16>;
--			};
--
--			gpioi: gpio@5000a000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 128 16>;
--			};
--
--			gpioj: gpio@5000b000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 144 16>;
--			};
--
--			gpiok: gpio@5000c000 {
--				status = "okay";
--				ngpios = <8>;
--				gpio-ranges = <&pinctrl 0 160 8>;
--			};
--		};
--
--		pinctrl_z: pin-controller-z@54004000 {
--			st,package = <STM32MP_PKG_AA>;
--
--			gpioz: gpio@54004000 {
--				status = "okay";
--				ngpios = <8>;
--				gpio-ranges = <&pinctrl_z 0 400 8>;
--			};
--		};
--	};
--};
-diff --git a/arch/arm/boot/dts/stm32mp157xab-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157xab-pinctrl.dtsi
-deleted file mode 100644
-index 961fa12a59c3..000000000000
---- a/arch/arm/boot/dts/stm32mp157xab-pinctrl.dtsi
-+++ /dev/null
-@@ -1,62 +0,0 @@
--// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
--/*
-- * Copyright (C) STMicroelectronics 2019 - All Rights Reserved
-- * Author: Alexandre Torgue <alexandre.torgue@st.com>
-- */
--
--#include "stm32mp157-pinctrl.dtsi"
--/ {
--	soc {
--		pinctrl: pin-controller@50002000 {
--			st,package = <STM32MP_PKG_AB>;
--
--			gpioa: gpio@50002000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 0 16>;
--			};
--
--			gpiob: gpio@50003000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 16 16>;
--			};
--
--			gpioc: gpio@50004000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 32 16>;
--			};
--
--			gpiod: gpio@50005000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 48 16>;
--			};
--
--			gpioe: gpio@50006000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 64 16>;
--			};
--
--			gpiof: gpio@50007000 {
--				status = "okay";
--				ngpios = <6>;
--				gpio-ranges = <&pinctrl 6 86 6>;
--			};
--
--			gpiog: gpio@50008000 {
--				status = "okay";
--				ngpios = <10>;
--				gpio-ranges = <&pinctrl 6 102 10>;
--			};
--
--			gpioh: gpio@50009000 {
--				status = "okay";
--				ngpios = <2>;
--				gpio-ranges = <&pinctrl 0 112 2>;
--			};
--		};
--	};
--};
-diff --git a/arch/arm/boot/dts/stm32mp157xac-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157xac-pinctrl.dtsi
-deleted file mode 100644
-index 26600f188d25..000000000000
---- a/arch/arm/boot/dts/stm32mp157xac-pinctrl.dtsi
-+++ /dev/null
-@@ -1,78 +0,0 @@
--// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
--/*
-- * Copyright (C) STMicroelectronics 2019 - All Rights Reserved
-- * Author: Alexandre Torgue <alexandre.torgue@st.com>
-- */
--
--#include "stm32mp157-pinctrl.dtsi"
--/ {
--	soc {
--		pinctrl: pin-controller@50002000 {
--			st,package = <STM32MP_PKG_AC>;
--
--			gpioa: gpio@50002000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 0 16>;
--			};
--
--			gpiob: gpio@50003000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 16 16>;
--			};
--
--			gpioc: gpio@50004000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 32 16>;
--			};
--
--			gpiod: gpio@50005000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 48 16>;
--			};
--
--			gpioe: gpio@50006000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 64 16>;
--			};
--
--			gpiof: gpio@50007000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 80 16>;
--			};
--
--			gpiog: gpio@50008000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 96 16>;
--			};
--
--			gpioh: gpio@50009000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 112 16>;
--			};
--
--			gpioi: gpio@5000a000 {
--				status = "okay";
--				ngpios = <12>;
--				gpio-ranges = <&pinctrl 0 128 12>;
--			};
--		};
--
--		pinctrl_z: pin-controller-z@54004000 {
--			st,package = <STM32MP_PKG_AC>;
--
--			gpioz: gpio@54004000 {
--				status = "okay";
--				ngpios = <8>;
--				gpio-ranges = <&pinctrl_z 0 400 8>;
--			};
--		};
--	};
--};
-diff --git a/arch/arm/boot/dts/stm32mp157xad-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157xad-pinctrl.dtsi
-deleted file mode 100644
-index 910113f3e69a..000000000000
---- a/arch/arm/boot/dts/stm32mp157xad-pinctrl.dtsi
-+++ /dev/null
-@@ -1,62 +0,0 @@
--// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
--/*
-- * Copyright (C) STMicroelectronics 2019 - All Rights Reserved
-- * Author: Alexandre Torgue <alexandre.torgue@st.com>
-- */
--
--#include "stm32mp157-pinctrl.dtsi"
--/ {
--	soc {
--		pinctrl: pin-controller@50002000 {
--			st,package = <STM32MP_PKG_AD>;
--
--			gpioa: gpio@50002000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 0 16>;
--			};
--
--			gpiob: gpio@50003000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 16 16>;
--			};
--
--			gpioc: gpio@50004000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 32 16>;
--			};
--
--			gpiod: gpio@50005000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 48 16>;
--			};
--
--			gpioe: gpio@50006000 {
--				status = "okay";
--				ngpios = <16>;
--				gpio-ranges = <&pinctrl 0 64 16>;
--			};
--
--			gpiof: gpio@50007000 {
--				status = "okay";
--				ngpios = <6>;
--				gpio-ranges = <&pinctrl 6 86 6>;
--			};
--
--			gpiog: gpio@50008000 {
--				status = "okay";
--				ngpios = <10>;
--				gpio-ranges = <&pinctrl 6 102 10>;
--			};
--
--			gpioh: gpio@50009000 {
--				status = "okay";
--				ngpios = <2>;
--				gpio-ranges = <&pinctrl 0 112 2>;
--			};
--		};
--	};
--};
-diff --git a/arch/arm/boot/dts/stm32mp15xxaa-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15xxaa-pinctrl.dtsi
-new file mode 100644
-index 000000000000..04f7a43ad66f
---- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp15xxaa-pinctrl.dtsi
-@@ -0,0 +1,85 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
-+/*
-+ * Copyright (C) STMicroelectronics 2019 - All Rights Reserved
-+ * Author: Alexandre Torgue <alexandre.torgue@st.com> for STMicroelectronics.
-+ */
-+
-+&pinctrl {
-+	st,package = <STM32MP_PKG_AA>;
-+
-+	gpioa: gpio@50002000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 0 16>;
-+	};
-+
-+	gpiob: gpio@50003000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 16 16>;
-+	};
-+
-+	gpioc: gpio@50004000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 32 16>;
-+	};
-+
-+	gpiod: gpio@50005000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 48 16>;
-+	};
-+
-+	gpioe: gpio@50006000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 64 16>;
-+	};
-+
-+	gpiof: gpio@50007000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 80 16>;
-+	};
-+
-+	gpiog: gpio@50008000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 96 16>;
-+	};
-+
-+	gpioh: gpio@50009000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 112 16>;
-+	};
-+
-+	gpioi: gpio@5000a000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 128 16>;
-+	};
-+
-+	gpioj: gpio@5000b000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 144 16>;
-+	};
-+
-+	gpiok: gpio@5000c000 {
-+		status = "okay";
-+		ngpios = <8>;
-+		gpio-ranges = <&pinctrl 0 160 8>;
-+	};
-+};
-+
-+&pinctrl_z {
-+	st,package = <STM32MP_PKG_AA>;
-+
-+	gpioz: gpio@54004000 {
-+		status = "okay";
-+		ngpios = <8>;
-+		gpio-ranges = <&pinctrl_z 0 400 8>;
-+	};
-+};
-diff --git a/arch/arm/boot/dts/stm32mp15xxab-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15xxab-pinctrl.dtsi
-new file mode 100644
-index 000000000000..328dad140e9b
---- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp15xxab-pinctrl.dtsi
-@@ -0,0 +1,57 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
-+/*
-+ * Copyright (C) STMicroelectronics 2019 - All Rights Reserved
-+ * Author: Alexandre Torgue <alexandre.torgue@st.com> for STMicroelectronics.
-+ */
-+
-+&pinctrl {
-+	st,package = <STM32MP_PKG_AB>;
-+
-+	gpioa: gpio@50002000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 0 16>;
-+	};
-+
-+	gpiob: gpio@50003000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 16 16>;
-+	};
-+
-+	gpioc: gpio@50004000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 32 16>;
-+	};
-+
-+	gpiod: gpio@50005000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 48 16>;
-+	};
-+
-+	gpioe: gpio@50006000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 64 16>;
-+	};
-+
-+	gpiof: gpio@50007000 {
-+		status = "okay";
-+		ngpios = <6>;
-+		gpio-ranges = <&pinctrl 6 86 6>;
-+	};
-+
-+	gpiog: gpio@50008000 {
-+		status = "okay";
-+		ngpios = <10>;
-+		gpio-ranges = <&pinctrl 6 102 10>;
-+	};
-+
-+	gpioh: gpio@50009000 {
-+		status = "okay";
-+		ngpios = <2>;
-+		gpio-ranges = <&pinctrl 0 112 2>;
-+	};
-+};
-diff --git a/arch/arm/boot/dts/stm32mp15xxac-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15xxac-pinctrl.dtsi
-new file mode 100644
-index 000000000000..7eaa245f44db
---- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp15xxac-pinctrl.dtsi
-@@ -0,0 +1,73 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
-+/*
-+ * Copyright (C) STMicroelectronics 2019 - All Rights Reserved
-+ * Author: Alexandre Torgue <alexandre.torgue@st.com> for STMicroelectronics.
-+ */
-+
-+&pinctrl {
-+	st,package = <STM32MP_PKG_AC>;
-+
-+	gpioa: gpio@50002000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 0 16>;
-+	};
-+
-+	gpiob: gpio@50003000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 16 16>;
-+	};
-+
-+	gpioc: gpio@50004000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 32 16>;
-+	};
-+
-+	gpiod: gpio@50005000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 48 16>;
-+	};
-+
-+	gpioe: gpio@50006000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 64 16>;
-+	};
-+
-+	gpiof: gpio@50007000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 80 16>;
-+	};
-+
-+	gpiog: gpio@50008000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 96 16>;
-+	};
-+
-+	gpioh: gpio@50009000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 112 16>;
-+	};
-+
-+	gpioi: gpio@5000a000 {
-+		status = "okay";
-+		ngpios = <12>;
-+		gpio-ranges = <&pinctrl 0 128 12>;
-+	};
-+};
-+
-+&pinctrl_z {
-+	st,package = <STM32MP_PKG_AC>;
-+
-+	gpioz: gpio@54004000 {
-+		status = "okay";
-+		ngpios = <8>;
-+		gpio-ranges = <&pinctrl_z 0 400 8>;
-+	};
-+};
-diff --git a/arch/arm/boot/dts/stm32mp15xxad-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15xxad-pinctrl.dtsi
-new file mode 100644
-index 000000000000..b63e207de216
---- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp15xxad-pinctrl.dtsi
-@@ -0,0 +1,57 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
-+/*
-+ * Copyright (C) STMicroelectronics 2019 - All Rights Reserved
-+ * Author: Alexandre Torgue <alexandre.torgue@st.com> for STMicroelectronics.
-+ */
-+
-+&pinctrl {
-+	st,package = <STM32MP_PKG_AD>;
-+
-+	gpioa: gpio@50002000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 0 16>;
-+	};
-+
-+	gpiob: gpio@50003000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 16 16>;
-+	};
-+
-+	gpioc: gpio@50004000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 32 16>;
-+	};
-+
-+	gpiod: gpio@50005000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 48 16>;
-+	};
-+
-+	gpioe: gpio@50006000 {
-+		status = "okay";
-+		ngpios = <16>;
-+		gpio-ranges = <&pinctrl 0 64 16>;
-+	};
-+
-+	gpiof: gpio@50007000 {
-+		status = "okay";
-+		ngpios = <6>;
-+		gpio-ranges = <&pinctrl 6 86 6>;
-+	};
-+
-+	gpiog: gpio@50008000 {
-+		status = "okay";
-+		ngpios = <10>;
-+		gpio-ranges = <&pinctrl 6 102 10>;
-+	};
-+
-+	gpioh: gpio@50009000 {
-+		status = "okay";
-+		ngpios = <2>;
-+		gpio-ranges = <&pinctrl 0 112 2>;
-+	};
-+};
 -- 
 2.17.1
 
