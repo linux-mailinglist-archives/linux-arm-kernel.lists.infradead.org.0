@@ -2,59 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7377E10D09B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 04:20:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8995B10D0AE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 04:38:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=i0ckkgNqdyzUhfS1qNGDQ8FPYcuFPoYsnOw00iim+ZU=; b=WO5jq8+UFLyO1o
-	/ti65LhVOwJvMuH3uV4OVHphHDYTaZbA4HCzmC8n4fjDYFxLtoppb/nqwuINsUuZiWcW6ZxleHygw
-	4oOK0zJuljeySSU8nnmk17lXGSAghH1/l4uy3cSxn4zo74ot16n75PkOavvun0mgKsXnztvUACfgw
-	MrvbxHttM88dy5+I/LrdDzBv2xGD6/cBJOFnoQYkp3Fz488838EtqVllbdqJYu2Nb+FjCEdMZ3OBd
-	KUZKgDEOvX7SsHLdk0yndofrk/AJ4GaNfp0WVIPFJDDG1FBI70TQuV2jzwwJhhU/oKkRr1uuAexMv
-	DWyhiqDhVZVYiAYHI2/Q==;
+	List-Owner; bh=Msw9sHteR8eBynYnxHOs0YX8e7/yn8BzVVHW1FY/Euo=; b=dKL4BTRQD1+Qas
+	IJ4mdgZAUam/QxH4E8XYSGpigA5IjaGeB5+6HJWJt1RqCuqe1/BTDTI48eQl6Jbkia3hX2kxlwhQt
+	C9B4eZ1Cvgrdmb2vWYmh/tYqXxzd0QrtSjsMbsjZwczadh4WMApsvU2tAFggF+OSN4Zi45DQl1MIL
+	nQPwumDKOD9W1RYYohGbv5+kX6/g/d2SzZtt2aSXsuxTjEtS+2YX1jWkIaTXwoUHolkeeUPh/M93c
+	FhC8hHsAXUg0ZZhryt0qGpjn/n1cBck6AbavfQn/2xuo4P08KaBGXdDm1CIIt7nhvgLMheL8tUcwa
+	9Sz9cZQczKhB6Mw3NVqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaWpJ-0003Sv-TK; Fri, 29 Nov 2019 03:20:13 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1iaX6V-0001Iz-T9; Fri, 29 Nov 2019 03:37:59 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaWpA-0002ao-4f
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 03:20:05 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 09800991634F43F95A93;
- Fri, 29 Nov 2019 11:19:54 +0800 (CST)
-Received: from huawei.com (10.175.105.18) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Fri, 29 Nov 2019
- 11:19:45 +0800
-From: linmiaohe <linmiaohe@huawei.com>
-To: <maz@kernel.org>, <pbonzini@redhat.com>, <rkrcmar@redhat.com>,
- <james.morse@arm.com>, <julien.thierry.kdev@gmail.com>,
- <suzuki.poulose@arm.com>, <christoffer.dall@arm.com>,
- <catalin.marinas@arm.com>, <eric.auger@redhat.com>,
- <gregkh@linuxfoundation.org>, <will@kernel.org>, <andre.przywara@arm.com>,
- <tglx@linutronix.de>
-Subject: [PATCH] KVM: arm/arm64: Fix some obsolete comments
-Date: Fri, 29 Nov 2019 11:19:47 +0800
-Message-ID: <1574997587-20842-1-git-send-email-linmiaohe@huawei.com>
-X-Mailer: git-send-email 1.8.3.1
+ id 1iaX6M-0001Hq-Hi
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 03:37:52 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 5F1338584C3E47A3F3DE;
+ Fri, 29 Nov 2019 11:37:38 +0800 (CST)
+Received: from localhost.localdomain.localdomain (10.175.113.25) by
+ DGGEMS402-HUB.china.huawei.com (10.3.19.202) with Microsoft SMTP Server id
+ 14.3.439.0; Fri, 29 Nov 2019 11:37:31 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, "Michael
+ Turquette" <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>
+Subject: [PATCH -next] clk: bm1800: Remove set but not used variable 'fref'
+Date: Fri, 29 Nov 2019 03:35:34 +0000
+Message-ID: <20191129033534.188257-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-Originating-IP: [10.175.105.18]
+X-Originating-IP: [10.175.113.25]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_192004_362257_090A634C 
-X-CRM114-Status: GOOD (  11.49  )
+X-CRM114-CacheID: sfid-20191128_193750_757752_8E4FE83D 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,67 +63,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linmiaohe@huawei.com, kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: YueHaibing <yuehaibing@huawei.com>, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Hulk Robot <hulkci@huawei.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Miaohe Lin <linmiaohe@huawei.com>
+Fixes gcc '-Wunused-but-set-variable' warning:
 
-Fix various comments, including comment typo, and obsolete comments
-no longer make sense.
-Signed-off-by: Miaohe Lin <linmiaohe@huawei.com>
+drivers/clk/clk-bm1880.c: In function 'bm1880_pll_rate_calc':
+drivers/clk/clk-bm1880.c:477:13: warning:
+ variable 'fref' set but not used [-Wunused-but-set-variable]
+
+It is never used, so remove it.
+
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- virt/kvm/arm/arch_timer.c    | 5 ++---
- virt/kvm/arm/arm.c           | 1 -
- virt/kvm/arm/vgic/vgic-its.c | 2 +-
- 3 files changed, 3 insertions(+), 5 deletions(-)
+ drivers/clk/clk-bm1880.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
-index 73867f97040c..d8d2f4bec935 100644
---- a/virt/kvm/arm/arch_timer.c
-+++ b/virt/kvm/arm/arch_timer.c
-@@ -322,9 +322,8 @@ static void timer_emulate(struct arch_timer_context *ctx)
- 	}
+diff --git a/drivers/clk/clk-bm1880.c b/drivers/clk/clk-bm1880.c
+index 4cd175afce9b..e6d6599d310a 100644
+--- a/drivers/clk/clk-bm1880.c
++++ b/drivers/clk/clk-bm1880.c
+@@ -474,11 +474,10 @@ static struct bm1880_composite_clock bm1880_composite_clks[] = {
+ static unsigned long bm1880_pll_rate_calc(u32 regval, unsigned long parent_rate)
+ {
+ 	u64 numerator;
+-	u32 fbdiv, fref, refdiv;
++	u32 fbdiv, refdiv;
+ 	u32 postdiv1, postdiv2, denominator;
  
- 	/*
--	 * If the timer can fire now, we don't need to have a soft timer
--	 * scheduled for the future.  If the timer cannot fire at all,
--	 * then we also don't need a soft timer.
-+	 * If the timer cannot fire at all, we don't need to have a
-+	 * soft timer scheduled for the future.
- 	 */
- 	if (!kvm_timer_irq_can_fire(ctx)) {
- 		soft_timer_cancel(&ctx->hrtimer);
-diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-index 8de4daf25097..7687663ab71b 100644
---- a/virt/kvm/arm/arm.c
-+++ b/virt/kvm/arm/arm.c
-@@ -525,7 +525,6 @@ static bool need_new_vmid_gen(struct kvm_vmid *vmid)
- 
- /**
-  * update_vmid - Update the vmid with a valid VMID for the current generation
-- * @kvm: The guest that struct vmid belongs to
-  * @vmid: The stage-2 VMID information struct
-  */
- static void update_vmid(struct kvm_vmid *vmid)
-diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
-index 98c7360d9fb7..d64569b30b5c 100644
---- a/virt/kvm/arm/vgic/vgic-its.c
-+++ b/virt/kvm/arm/vgic/vgic-its.c
-@@ -2564,7 +2564,7 @@ static int vgic_its_restore_collection_table(struct vgic_its *its)
- }
- 
- /**
-- * vgic_its_save_tables_v0 - Save the ITS tables into guest ARM
-+ * vgic_its_save_tables_v0 - Save the ITS tables into guest RAM
-  * according to v0 ABI
-  */
- static int vgic_its_save_tables_v0(struct vgic_its *its)
--- 
-2.19.1
+ 	fbdiv = (regval >> 16) & 0xfff;
+-	fref = parent_rate;
+ 	refdiv = regval & 0x1f;
+ 	postdiv1 = (regval >> 8) & 0x7;
+ 	postdiv2 = (regval >> 12) & 0x7;
+
+
 
 
 _______________________________________________
