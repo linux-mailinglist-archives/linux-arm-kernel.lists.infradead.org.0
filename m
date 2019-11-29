@@ -2,78 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C161210DACA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 22:10:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 381F610DACE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 22:11:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Y9zLZVCidXt0IzlkWETdEbqUg70WgeLOHpYSkNCJZUY=; b=GQPah10jx4Y2iZ
-	rmNqweSptNBhoJIP8o0UdrypMMK/YUdej3g4ZLELcw7vz0uouARojPEKfEIWYNQAjnrPtb/DV+m2i
-	kkxfSMwhR4ILo3aNamwBwac3JF8tRP4jB0t2MwJQkabzHsTIv+mCJPgwd17eEAKa2eOmQzK4shglA
-	gLqQVms+bSx1FwQ54iJK07heihisTef/CnOaB9If8yLA+8+12aOt1oDiKBbr0bh/azurDjabhxhJZ
-	ijvjgrLW5l+cytkJawEQtLpIBC4TvqIgnM9Ofdhdh54djkd9clruykNp3uK8oeUhFfc6I7n+m2UP0
-	tns6T4TnPZ0RPf5AnL+Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NwgTH29aEpHwzrTVzBqIjxLe9PjyJEE/uVfnOywQdiw=; b=X4zwdUJBOYtfMG
+	QdoSr4dju1jDSF5ctNkQio7MULOT0UvwpmSQI3Bci5ZVPAchpVjWUtdCdEjRiQCYUt7lUVyt75RM/
+	JF3fwzGD0qrqcdivsQ4tWpF9kyPlZ1eJE74ZyUgU4RCWZE/T/KzLewQg5LbD+/O7nFYAKsI5C9VL0
+	iC4k0bFgx1je0A38YbEA2sfpBhdaJA7uzOO/22AsQ/77/9LgwAm1WcH7HxbOUGN9qjU9oX1Fwh6D3
+	q4oPMVVsfHxIYVnPQh4TrNcig48eZeqqJkTTsZhHd+S0ZnsPaHkcrhup10wmXaR4H/52Iqg2nEAGK
+	8jAfrnhlwyhqs131rNHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ianWp-00074D-6W; Fri, 29 Nov 2019 21:10:15 +0000
-Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
+	id 1ianY8-0008DW-Mc; Fri, 29 Nov 2019 21:11:36 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ianWb-0006Tv-RC
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 21:10:04 +0000
-Received: from apollo.fritz.box (unknown
- [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id D75B723059;
- Fri, 29 Nov 2019 22:09:49 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1575061791;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding;
- bh=vBGH4Is8jTUA/hpecRwlSpOFBZJJLpBTculd0msTkEU=;
- b=EaG70I7RiyaiHNh/CcggLrwsnJYaFUU7+ulXZv6r7uax/uYOh4rlcOeqMH/3n3wvENoJIZ
- gN0VCKL7LHsbbJ8/s8YolS1WJTPmr/1amTZIigQC6/FpyBMa2hlTszvhPrVMarKnhtzWJb
- tC92UluXLeJUc8T3/mXoYXM5wBXYhyw=
-From: Michael Walle <michael@walle.cc>
-To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] arm64: dts: ls1028a: put SAIs into async mode
-Date: Fri, 29 Nov 2019 22:09:37 +0100
-Message-Id: <20191129210937.26808-1-michael@walle.cc>
-X-Mailer: git-send-email 2.20.1
+ id 1ianXy-00085c-5P
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 21:11:27 +0000
+Received: by mail-il1-x142.google.com with SMTP id t9so8340393iln.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 29 Nov 2019 13:11:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=J737RfycvasrkDMuXXVhGv8GjJozMIk9WjH6tUo8YNU=;
+ b=lB9otGP+R7D5FDCg+yCl5lzrEbHVc6Uxs0+r8izKBMVVOofA3vofUwCrTGfrnh/HzZ
+ nQhDEkKv9iFoZWHxi6Lm1vM755MYXzxCy5RZp4jPRE/gJ2i9XvIJGWnd9ekCs/i9szP+
+ 517eLdsZZuxFUU4mWYjZgOVY1hD6uyvbW1lnCzq/wktHxgnQA6T1f0c9qQjJHQmI0zbI
+ 8V+2XFBdclfe41bWEdDMCU2YuW4KMdfuROPYnbBrNDN52yqzzuCMy8RtBtAnZxGVEyDm
+ ntE4PwYVP+sP+TljhMeQQ5sxV0Ry0ylzC2Nuyf3oC2BT/Tqn/gwKUaSZXUT6AHKd8tDK
+ rpEA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=J737RfycvasrkDMuXXVhGv8GjJozMIk9WjH6tUo8YNU=;
+ b=oO+h2qY5jpwh87xZKL5RF6LmmFlld7MZADTUeNrwp+x+0M1n0SI0ArgQ6NL4teb9uZ
+ +DggLPzZHXFRbxIjlXlO8sdZFzUNnrfok2F2IHl3CGR1iEXSDtNYz0zNsVZKyrdWvWKN
+ ijaQbFHI478b+NIlDYFNq+nlp4Plm+zYRG2iDcbyvO008+fMTCzPcKVxjY11JD4O3hk5
+ eLCngigMb9dsE+z56rjOWefN8rF5icrqClytAt5jTSiptToTgj4PrbLtDG6WUn+HUizd
+ HdTAiA90VPyGfcK/URwvduK7CjiU4FjYVCDHMY/MAvlZ09t4ij1z/VE3gBKEajU7rQPv
+ goyA==
+X-Gm-Message-State: APjAAAVwBadNqN8iPFOe1+w/N64UDblG200ztGlfeavdQ9VUV5zLnXGW
+ mRbzelh53Dh+dEDqer/5wjx9iJCflcP6smdk1TGgLA==
+X-Google-Smtp-Source: APXvYqyOXHCVc3ozOJPEmGcC3VwB8m0Qnuuz5GE4mQlGcSQvgINwg2paqQAOa7PK0kmgMZbGH4Jw33/Thcthow443Ck=
+X-Received: by 2002:a92:1547:: with SMTP id v68mr13668342ilk.58.1575061884570; 
+ Fri, 29 Nov 2019 13:11:24 -0800 (PST)
 MIME-Version: 1.0
-X-Spamd-Bar: ++++++
-X-Spam-Level: ******
-X-Rspamd-Server: web
-X-Spam-Status: Yes, score=6.40
-X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: D75B723059
-X-Spamd-Result: default: False [6.40 / 15.00]; ARC_NA(0.00)[];
- FROM_HAS_DN(0.00)[]; TO_DN_SOME(0.00)[];
- R_MISSING_CHARSET(2.50)[]; TO_MATCH_ENVRCPT_ALL(0.00)[];
- TAGGED_RCPT(0.00)[dt]; MIME_GOOD(-0.10)[text/plain];
- BROKEN_CONTENT_TYPE(1.50)[]; DKIM_SIGNED(0.00)[];
- RCPT_COUNT_SEVEN(0.00)[8]; MID_CONTAINS_FROM(1.00)[];
- NEURAL_HAM(-0.00)[-0.607]; RCVD_COUNT_ZERO(0.00)[0];
- FROM_EQ_ENVFROM(0.00)[]; MIME_TRACE(0.00)[0:+];
- ASN(0.00)[asn:31334, ipnet:2a02:810c::/31, country:DE];
- SUSPICIOUS_RECIPS(1.50)[]
-X-Spam: Yes
+References: <20191119231912.12768-1-mike.leach@linaro.org>
+ <20191119231912.12768-8-mike.leach@linaro.org>
+ <20191125212258.GB18542@xps15> <35357ff3-2b1e-764e-cfbd-65bcc7a4faa6@arm.com>
+In-Reply-To: <35357ff3-2b1e-764e-cfbd-65bcc7a4faa6@arm.com>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Fri, 29 Nov 2019 14:11:13 -0700
+Message-ID: <CANLsYkxqO71aBzf=BqcFDWccp3XH3gXc4OESgRy0-rTEe27fJA@mail.gmail.com>
+Subject: Re: [PATCH v5 07/14] coresight: cti: Add device tree support for
+ custom CTI.
+To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_131002_075468_E943D599 
-X-CRM114-Status: GOOD (  11.25  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191129_131126_234353_241A1D6D 
+X-CRM114-Status: GOOD (  18.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,82 +93,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michael Walle <michael@walle.cc>,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Li Yang <leoyang.li@nxp.com>
+Cc: devicetree@vger.kernel.org, Coresight ML <coresight@lists.linaro.org>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The LS1028A SoC has only unidirectional SAIs. Therefore, it doesn't make
-sense to have the RX and TX part synchronous. Even worse, the RX part
-wont work out of the box because by default it is configured as
-synchronous to the TX part. And as said before, the pinmux of the SoC
-can only be configured to route either the RX or the TX signals to the
-SAI but never both at the same time. Thus configure the asynchronous
-mode by default.
+On Fri, 29 Nov 2019 at 07:16, Suzuki Kuruppassery Poulose
+<suzuki.poulose@arm.com> wrote:
+>
+> On 25/11/2019 21:22, Mathieu Poirier wrote:
+> > On Tue, Nov 19, 2019 at 11:19:05PM +0000, Mike Leach wrote:
+> >> Adds support for CTIs whose connections are implementation defined at
+> >> hardware design time, and not constrained by v8 architecture.
+> >>
+> >> These CTIs have no standard connection setup, all the settings have to
+> >> be defined in the device tree files. The patch creates a set of connections
+> >> and trigger signals based on the information provided.
+> >>
+> >> Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> >> ---
+> >>   .../coresight/coresight-cti-platform.c        | 250 +++++++++++++++++-
+> >>   .../hwtracing/coresight/coresight-cti-sysfs.c |  11 +
+> >>   2 files changed, 257 insertions(+), 4 deletions(-)
+>
+> >> +static int cti_plat_create_impdef_connections(struct device *dev,
+> >> +                                          struct cti_drvdata *drvdata)
+> >> +{
+> >> +    int rc = 0;
+> >> +    struct fwnode_handle *fwnode = dev_fwnode(dev);
+> >> +    struct fwnode_handle *child = NULL;
+> >> +
+> >> +    if (IS_ERR_OR_NULL(fwnode))
+> >> +            return -EINVAL;
+> >> +
+> >> +    fwnode_for_each_child_node(fwnode, child) {
+> >> +            if (cti_plat_node_name_eq(child, CTI_DT_CONNS))
+> >> +                    rc = cti_plat_create_connection(dev, drvdata, child);
+> >> +            if (rc != 0)
+> >> +                    break;
+> >> +    }
+> >> +    fwnode_handle_put(child);
+> >
+> > As far as I can tell we don't need to call fwnode_handle_put()?
+>
+> Actually we do, if we break the scan in between, at least for of_nodes.
+> I had to literally look it down all the way down to confirm this.
+>
+> So for CONFIG_OF it ends up in of_get_next_available_child(), which
+> drops the ref on "prev" and grabs the "next". So in case we break
+> the loop, we must drop the ref on the child.
 
-Signed-off-by: Michael Walle <michael@walle.cc>
----
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
+Well spotted.
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index 379913756e90..9be33426e5ce 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -637,6 +637,7 @@
- 			dma-names = "tx", "rx";
- 			dmas = <&edma0 1 4>,
- 			       <&edma0 1 3>;
-+			fsl,sai-asynchronous;
- 			status = "disabled";
- 		};
- 
-@@ -651,6 +652,7 @@
- 			dma-names = "tx", "rx";
- 			dmas = <&edma0 1 6>,
- 			       <&edma0 1 5>;
-+			fsl,sai-asynchronous;
- 			status = "disabled";
- 		};
- 
-@@ -665,6 +667,7 @@
- 			dma-names = "tx", "rx";
- 			dmas = <&edma0 1 8>,
- 			       <&edma0 1 7>;
-+			fsl,sai-asynchronous;
- 			status = "disabled";
- 		};
- 
-@@ -679,6 +682,7 @@
- 			dma-names = "tx", "rx";
- 			dmas = <&edma0 1 10>,
- 			       <&edma0 1 9>;
-+			fsl,sai-asynchronous;
- 			status = "disabled";
- 		};
- 
-@@ -693,6 +697,7 @@
- 			dma-names = "tx", "rx";
- 			dmas = <&edma0 1 12>,
- 			       <&edma0 1 11>;
-+			fsl,sai-asynchronous;
- 			status = "disabled";
- 		};
- 
-@@ -707,6 +712,7 @@
- 			dma-names = "tx", "rx";
- 			dmas = <&edma0 1 14>,
- 			       <&edma0 1 13>;
-+			fsl,sai-asynchronous;
- 			status = "disabled";
- 		};
- 
--- 
-2.20.1
-
+> Otherwise, the last
+> result would be NULL, which would have dropped the ref on the "last"
+> valid entry. And this is harmless with a NULL ptr.
+>
+> Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
