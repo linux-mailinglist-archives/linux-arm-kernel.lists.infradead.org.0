@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54C1E10D181
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 07:39:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D58E510D190
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 07:46:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5qNEp4B1M52HvRu7YUGlaL4CmmqbMA0w9argbcYeZ9k=; b=DZ/scfbdSIL2Rj
-	T6/B5zCkFlIJrrrRtFkuCtsxHH/lKCMuLrc1ybuCyGfBdEpK1UhBZ/zQ/ltGmzbqlWCQllboLuTGv
-	8P8IYDEEzx0mcJW8a8azBM5MqHODajbqT7OQFbyWDi0X2BUtD4wt/Z/p0qhMG6ndBUMsQEwbdpG9J
-	Hcax6X1lWw+8pLAhWDOw6eKhg7Pinwwdtwt99zk/dpvJVr566/PofvXks+2BLMqWfNYb6aCcpE8rE
-	jvx1vAK+Nvx98xWXUAaHmM6hc8JKY8hBywDbDF2lHuc8XzqBtWTJYt9W3rv2vTybG6sp3MqA4kPEz
-	TYOTM2GqV8wVxDgLyRJg==;
+	List-Owner; bh=6+ca2fZDhL8HaystX+2tfbDZn8Za4rl+ihYBpJyIy/o=; b=coesfQza+Qezp2
+	ru/dWoZZEUo4U0WDCdPY1DNZotzC7rwo+K0V06J0r3WC00BKa30nxWYMhOjRZh4iqZDH/Hq2AYekx
+	Mtwlby8fpUCsbBH43LLa2djjdEiO2NUspRiOO2clJvH4Kt0HP2TuJ052FIIVECWKen4P4ccO3v+1b
+	ESLnEBVRXyWeTd9FyZ/x5TZlQJWSEdRv1sWicnAzPEM7v8fC+TC9QxtIFUXRsIBLpxcEdNAXskXM3
+	NSexVU0HKQjqlIkNUvXe73ReUqk8FTjNoRswnbgqHkRpui7opIPdSqX01SWbUM3aBItXwZHZn3qHI
+	fRuzKCRw1v02jYz2wAmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaZwN-00075H-MZ; Fri, 29 Nov 2019 06:39:43 +0000
+	id 1iaa3A-0002Ls-GI; Fri, 29 Nov 2019 06:46:44 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaZwB-00074s-0h; Fri, 29 Nov 2019 06:39:32 +0000
-X-UUID: 2014a2c5e3c94d3ca910eb64e000d1ff-20191128
+ id 1iaa2j-00026W-3J; Fri, 29 Nov 2019 06:46:19 +0000
+X-UUID: 03cd0de7ee3646c9a9d9217b1ba20b6f-20191128
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=8lX9vCY1Mdos86S6vjMAmKgXT0YEpzezR8Mrp8YXb4A=; 
- b=rRdrD5gXqndIT3/njBf3FRX8oxFCcumb9b/DpktAiaCfjpXPOjOPyiwB6LtGbDR/WRknR0LgGCnDMKdhuuXkMguPn2mzW9IJzNEbCk6HTjShQ7bI449B12adyhq0xpFpYIRsw8MGR1Bf452Gb5QLc8SPnGSKjfa+eKVA3sBzkAg=;
-X-UUID: 2014a2c5e3c94d3ca910eb64e000d1ff-20191128
+ bh=BJloAEuE2ax6zBVcGIZ5VT6DVCBUKsREnq1jSiByuyY=; 
+ b=nIXE0LpzjxTSaDn9XirFfknQ6UN1a8+tW6coLEyAjLF6bjcQG0WC/J7HP+2lisAsPAKThxXLBQksHOt++6KOG8BrTDpBPiQYqZY/WHxoaFX5lKFTYQDly+WjxegL6pyyVH+/k3XYYDr99235E/fxjIkk0jGBFYRUJYDTITkZ3pw=;
+X-UUID: 03cd0de7ee3646c9a9d9217b1ba20b6f-20191128
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <yong.liang@mediatek.com>)
+ (envelope-from <ming-fan.chen@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 216339792; Thu, 28 Nov 2019 22:39:28 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 28 Nov 2019 22:40:00 -0800
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 29 Nov 2019 14:38:26 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 29 Nov 2019 14:39:23 +0800
-Message-ID: <1575009551.6367.7.camel@mhfsdcap03>
-Subject: Re: [PATCH v5 1/2] dt-bindings: mediatek: mt8183: Add #reset-cells
-From: Yong Liang <yong.liang@mediatek.com>
-To: Philipp Zabel <p.zabel@pengutronix.de>
-Date: Fri, 29 Nov 2019 14:39:11 +0800
-In-Reply-To: <49c94039ba327a1295fdfd5d74dca0b9805269b0.camel@pengutronix.de>
-References: <1574651030-29519-1-git-send-email-jiaxin.yu@mediatek.com>
- <1574651030-29519-2-git-send-email-jiaxin.yu@mediatek.com>
- <49c94039ba327a1295fdfd5d74dca0b9805269b0.camel@pengutronix.de>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ with ESMTP id 1542036136; Thu, 28 Nov 2019 22:46:09 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 28 Nov 2019 22:44:21 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 29 Nov 2019 14:43:36 +0800
+Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 29 Nov 2019 14:43:26 +0800
+Message-ID: <1575009815.12502.39.camel@mtkswgap22>
+Subject: Re: [PATCH v1 2/2] memory: mtk-smi: Add bandwidth initial golden
+ setting for MT6779
+From: Ming-Fan Chen <ming-fan.chen@mediatek.com>
+To: Yong Wu <yong.wu@mediatek.com>
+Date: Fri, 29 Nov 2019 14:43:35 +0800
+In-Reply-To: <1574420151.19130.196.camel@mhfsdcap03>
+References: <1573616362-2557-1-git-send-email-ming-fan.chen@mediatek.com>
+ <1573616362-2557-3-git-send-email-ming-fan.chen@mediatek.com>
+ <1574420151.19130.196.camel@mhfsdcap03>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: EA2D3B01FEF3DF1451F222F4DEAE6B23217E6232D37F6AAD440B8D1E6DE8FE882000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_223931_069710_C2B88837 
-X-CRM114-Status: GOOD (  17.33  )
+X-CRM114-CacheID: sfid-20191128_224617_197923_07C20BD1 
+X-CRM114-Status: GOOD (  29.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -87,142 +87,405 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, "perex@perex.cz" <perex@perex.cz>,
- "tzungbi@google.com" <tzungbi@google.com>,
- "broonie@kernel.org" <broonie@kernel.org>,
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Joerg Roedel <jroedel@suse.de>, wsd_upstream <wsd_upstream@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Evan Green <evgreen@chromium.org>, Rob Herring <robh+dt@kernel.org>,
  "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Jiaxin Yu =?UTF-8?Q?=28=E4=BF=9E=E5=AE=B6=E9=91=AB=29?=
- <Jiaxin.Yu@mediatek.com>,
- Eason Yen =?UTF-8?Q?=28=E9=A1=8F=E5=BB=B7=E4=BB=BB=29?=
- <Eason.Yen@mediatek.com>,
- Yingjoe Chen =?UTF-8?Q?=28=E9=99=B3=E8=8B=B1=E6=B4=B2=29?=
- <Yingjoe.Chen@mediatek.com>, "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "linux@roeck-us.net" <linux@roeck-us.net>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Dear Yong,
 
-On Mon, 2019-11-25 at 18:07 +0800, Philipp Zabel wrote:
-> On Mon, 2019-11-25 at 11:03 +0800, Jiaxin Yu wrote:
-> > From: "yong.liang" <yong.liang@mediatek.com>
+Thanks for your comments and advice.
+Most of them I would like to add/modify in next version.
+
+On Fri, 2019-11-22 at 18:55 +0800, Yong Wu wrote:
+> On Wed, 2019-11-13 at 11:39 +0800, Ming-Fan Chen wrote:
+> > SMI bandwidth initial golden setting for MT6779 make sure
+> > better performance of memory control for multimedia modules.
+> 
+> I think this patch should be splitted to two, one adds the basic mt6779
+> support and config_port which should be a part of IOMMU. the other adds
+> the bandwidth control support.
+> 
 > > 
-> > Add #reset-cells property and update example
-> > 
-> > Signed-off-by: yong.liang <yong.liang@mediatek.com>
-> > Signed-off-by: jiaxin.yu <jiaxin.yu@mediatek.com>
-> > Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
+> > Signed-off-by: Ming-Fan Chen <ming-fan.chen@mediatek.com>
 > > ---
-> >  .../devicetree/bindings/watchdog/mtk-wdt.txt  | 10 ++++++---
-> >  .../reset-controller/mt2712-resets.h          | 22 +++++++++++++++++++
-> >  .../reset-controller/mt8183-resets.h          | 15 +++++++++++++
-> >  3 files changed, 44 insertions(+), 3 deletions(-)
-> >  create mode 100644 include/dt-bindings/reset-controller/mt2712-resets.h
+> >  drivers/memory/mtk-smi.c |  141 +++++++++++++++++++++++++++++++++++++++++++++-
+> >  1 file changed, 139 insertions(+), 2 deletions(-)
 > > 
-> > diff --git a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> > index 3ee625d0812f..4dd36bd3f1ad 100644
-> > --- a/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> > +++ b/Documentation/devicetree/bindings/watchdog/mtk-wdt.txt
-> > @@ -4,6 +4,7 @@ Required properties:
+> > diff --git a/drivers/memory/mtk-smi.c b/drivers/memory/mtk-smi.c
+> > index 439d7d8..f3618d0 100644
+> > --- a/drivers/memory/mtk-smi.c
+> > +++ b/drivers/memory/mtk-smi.c
+> > @@ -41,21 +41,50 @@
+> >  #define SMI_LARB_NONSEC_CON(id)	(0x380 + ((id) * 4))
+> >  #define F_MMU_EN		BIT(0)
 > >  
-> >  - compatible should contain:
-> >  	"mediatek,mt2701-wdt", "mediatek,mt6589-wdt": for MT2701
-> > +	"mediatek,mt2712-wdt", "mediatek,mt6589-wdt": for MT2712
-> >  	"mediatek,mt6589-wdt": for MT6589
-> >  	"mediatek,mt6797-wdt", "mediatek,mt6589-wdt": for MT6797
-> >  	"mediatek,mt7622-wdt", "mediatek,mt6589-wdt": for MT7622
-> > @@ -16,11 +17,14 @@ Required properties:
+> > +#define SMI_LARB_CMD_THRT_CON	 0x24
+> > +#define SMI_LARB_SW_FLAG	 0x40
+> > +#define SMI_LARB_WRR_PORT	 0x100
+> > +#define SMI_LARB_WRR_PORTx(id)	 (SMI_LARB_WRR_PORT + (((id) & 0x1f) << 2))
+> 
+> The two WRR are not used. Remove.
+> 
+> > +#define SMI_LARB_OSTDL_PORT	 0x200
+> > +#define SMI_LARB_OSTDL_PORTx(id) (SMI_LARB_OSTDL_PORT + (((id) & 0x1f) << 2))
+> > +
+> >  /* SMI COMMON */
+> > +#define SMI_L1LEN			0x100
+> > +#define SMI_L1ARB0			0x104
+> > +#define SMI_L1ARB(id)			(SMI_L1ARB0 + (((id) & 0x7) << 2))
+> > +
+> >  #define SMI_BUS_SEL			0x220
+> >  #define SMI_BUS_LARB_SHIFT(larbid)	((larbid) << 1)
+> >  /* All are MMU0 defaultly. Only specialize mmu1 here. */
+> >  #define F_MMU1_LARB(larbid)		(0x1 << SMI_BUS_LARB_SHIFT(larbid))
 > >  
-> >  Optional properties:
-> >  - timeout-sec: contains the watchdog timeout in seconds.
-> > +- #reset-cells: Should be 1.
-> >  
-> >  Example:
-> >  
-> > -wdt: watchdog@10000000 {
-> > -	compatible = "mediatek,mt6589-wdt";
-> > -	reg = <0x10000000 0x18>;
-> > +watchdog: watchdog@10007000 {
-> > +	compatible = "mediatek,mt8183-wdt",
-> > +		     "mediatek,mt6589-wdt";
-> > +	reg = <0 0x10007000 0 0x100>;
-> >  	timeout-sec = <10>;
-> > +	#reset-cells = <1>;
+> > +#define SMI_M4U_TH			0x234
+> > +#define SMI_FIFO_TH1			0x238
+> > +#define SMI_FIFO_TH2			0x23c
+> > +#define SMI_DCM				0x300
+> > +#define SMI_DUMMY			0x444
+> > +
+> > +#define SMI_LARB_PORT_NR_MAX		32
+> > +#define SMI_COMMON_LARB_NR_MAX		8
+> > +#define SMI_LARB_MISC_NR		2
+> > +#define SMI_COMMON_MISC_NR		6
+> > +
+> >  enum mtk_smi_gen {
+> >  	MTK_SMI_GEN1,
+> >  	MTK_SMI_GEN2
 > >  };
-> > diff --git a/include/dt-bindings/reset-controller/mt2712-resets.h b/include/dt-bindings/reset-controller/mt2712-resets.h
-> > new file mode 100644
-> > index 000000000000..e81c8bb311b7
-> > --- /dev/null
-> > +++ b/include/dt-bindings/reset-controller/mt2712-resets.h
-> > @@ -0,0 +1,22 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +/*
-> > + * Copyright (c) 2019 MediaTek Inc.
-> > + * Author: Yong Liang <yong.liang@mediatek.com>
-> > + */
-> > +
-> > +#ifndef _DT_BINDINGS_RESET_CONTROLLER_MT2712
-> > +#define _DT_BINDINGS_RESET_CONTROLLER_MT2712
-> > +
-> > +#define MT2712_TOPRGU_INFRA_SW_RST				0
-> > +#define MT2712_TOPRGU_MM_SW_RST					1
-> > +#define MT2712_TOPRGU_MFG_SW_RST				2
-> > +#define MT2712_TOPRGU_VENC_SW_RST				3
-> > +#define MT2712_TOPRGU_VDEC_SW_RST				4
-> > +#define MT2712_TOPRGU_IMG_SW_RST				5
-> > +#define MT2712_TOPRGU_INFRA_AO_SW_RST				8
-> > +#define MT2712_TOPRGU_USB_SW_RST				9
-> > +#define MT2712_TOPRGU_APMIXED_SW_RST				10
-> > +
-> > +#define MT2712_TOPRGU_SW_RST_NUM				10
-> 
-> Setting rcdev->nr_resets to 10 will make the check in
-> of_reset_simple_xlate() fail for MT2712_TOPRGU_APMIXED_SW_RST.
-  -> OK. I will change MT2712_TOPRGU_SW_RST_NUM from 10 to 11
-> 
-> > +
-> > +#endif  /* _DT_BINDINGS_RESET_CONTROLLER_MT2712 */
-> > diff --git a/include/dt-bindings/reset-controller/mt8183-resets.h b/include/dt-bindings/reset-controller/mt8183-resets.h
-> > index 8804e34ebdd4..d582da6bedae 100644
-> > --- a/include/dt-bindings/reset-controller/mt8183-resets.h
-> > +++ b/include/dt-bindings/reset-controller/mt8183-resets.h
-> > @@ -78,4 +78,19 @@
-> >  #define MT8183_INFRACFG_AO_I2C7_SW_RST				126
-> >  #define MT8183_INFRACFG_AO_I2C8_SW_RST				127
 > >  
-> > +#define MT8183_TOPRGU_MM_SW_RST					1
-> > +#define MT8183_TOPRGU_MFG_SW_RST				2
-> > +#define MT8183_TOPRGU_VENC_SW_RST				3
-> > +#define MT8183_TOPRGU_VDEC_SW_RST				4
-> > +#define MT8183_TOPRGU_IMG_SW_RST				5
-> > +#define MT8183_TOPRGU_MD_SW_RST					7
-> > +#define MT8183_TOPRGU_CONN_SW_RST				9
-> > +#define MT8183_TOPRGU_CONN_MCU_SW_RST				12
-> > +#define MT8183_TOPRGU_IPU0_SW_RST				14
-> > +#define MT8183_TOPRGU_IPU1_SW_RST				15
-> > +#define MT8183_TOPRGU_AUDIO_SW_RST				17
-> > +#define MT8183_TOPRGU_CAMSYS_SW_RST				18
+> > +struct mtk_smi_reg_pair {
+> > +	u16	offset;
+> > +	u32	value;
+> > +};
 > > +
-> > +#define MT8183_TOPRGU_SW_RST_NUM				18
+> >  struct mtk_smi_common_plat {
+> >  	enum mtk_smi_gen gen;
+> >  	bool             has_gals;
+> >  	u32              bus_sel; /* Balance some larbs to enter mmu0 or mmu1 */
+> > +	u16                     *bwl;
+> > +	struct mtk_smi_reg_pair *misc;
+> >  };
+> >  
+> >  struct mtk_smi_larb_gen {
+> > @@ -63,6 +92,8 @@ struct mtk_smi_larb_gen {
+> >  	void (*config_port)(struct device *);
+> >  	unsigned int			larb_direct_to_common_mask;
+> >  	bool				has_gals;
+> > +	u8				*bwl;
 > 
-> Same here. If the driver uses the default of_xlate function, this has to
-> be larger than the index of the last reset.
-  -> I will change MT8183_TOPRGU_SW_RST_NUM from 18 to 19
+> Below you assign mtk_smi_larb_mt6779_bwl to this, it is:
+> static u8 mtk_smi_larb_mt6779_bwl[MTK_LARB_NR_MAX][SMI_LARB_PORT_NR_MAX]
 > 
-> regards
-> Philipp
+> then, is "u8 **" better?
 > 
+> > +	struct mtk_smi_reg_pair		*misc;
 > 
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+> ditto, use **?
+> 
+> >  };
+> >  
+> >  struct mtk_smi {
+> > @@ -160,7 +191,7 @@ static void mtk_smi_larb_config_port_gen2_general(struct device *dev)
+> >  {
+> >  	struct mtk_smi_larb *larb = dev_get_drvdata(dev);
+> >  	u32 reg;
+> > -	int i;
+> > +	int i, id;
+> >  
+> >  	if (BIT(larb->larbid) & larb->larb_gen->larb_direct_to_common_mask)
+> >  		return;
+> > @@ -170,6 +201,20 @@ static void mtk_smi_larb_config_port_gen2_general(struct device *dev)
+> >  		reg |= F_MMU_EN;
+> >  		writel(reg, larb->base + SMI_LARB_NONSEC_CON(i));
+> >  	}
+> > +
+> > +	if (larb->larb_gen->bwl)
+> > +		for (i = 0; i < larb->larb_gen->port_in_larb[larb->larbid]; i++)
+> > +			writel_relaxed(larb->larb_gen->bwl[larb->larbid *
+> > +				       SMI_LARB_PORT_NR_MAX + i],
+> > +				       larb->base + SMI_LARB_OSTDL_PORTx(i));
+> 
+> From this register name, I guess the name "bwl"(bandwidth limiter?) is
+> not so good. Maybe it should be called by "osdl". At least, you should
+> add a comment for this. like : u8  *bwl; /* for OSDL */
+> 
+> As below comment, If we don't have port_in_larb, always use 32 here, is
+> it OK? (writing 0 for the non-exist port).
+> 
+> > +
+> > +	if (larb->larb_gen->misc)
+> > +		for (i = 0, id = larb->larbid * SMI_LARB_MISC_NR;
+> > +			i < SMI_LARB_MISC_NR; i++, id++)
+> > +			writel_relaxed(larb->larb_gen->misc[id].value,
+> > +				       larb->base +
+> > +				       larb->larb_gen->misc[id].offset);
+> 
+> There are 3 intention, It's not easy to read. A not-strong suggestion:
+> we could add a new variable like has_bwc for mt6779 which have this
+> bandwidth initial setting. And use "u8 **" for bwl. then the code will
+> be like below:
+> 
+> struct mtk_smi_reg_pair *misc;
+> u8 *bwl;
+> 
+> if (!larb->larb_gen->has_bwc)
+> 	return;
+> 
+> for (i = 0, bwl = larb->larb_gen->bwl[larb->larbid];
+>      i < larb->larb_gen->port_in_larb[larb->larbid]; i++)
+> 	writel_relaxed(bwl[i], larb->base + SMI_LARB_OSTDL_PORTx(i));
+> 
+> for (i = 0,misc =larb->larb_gen->misc[larb->larbid];
+>      i < SMI_LARB_MISC_NR; i++)
+> 	writel_relaxed(misc[i].value, larb->base + misc[i].offset);
+> 
+> the writel_relaxed can be finished in one line.
+> 
+Using "u8 **" will not be the same as we expected.
+Because "u8 **" replys a pointer which points to a pointer.
+bwl[0] here will become 0xa0a01012801012828 by
+mtk_smi_larb_mt6779_bwl[0] = {0x28, 0x28, 0x01, 0x28, 0x01, 0x01, 0x0a,
+0x0a, ...} in little endian format.
 
+If single pointer is not acceptable, there is another way as follows:
+
+/* definition */
+struct mtk_smi_larb_gen {
+	const u8 (*bwl)[SMI_LARB_PORT_NR_MAX];
+};
+
+/* initialization */
+static const u8 mtk_smi_larb_mt6779_bwl[][SMI_LARB_PORT_NR_MAX] =
+{ ... };
+
+static const struct mtk_smi_larb_gen mtk_smi_larb_mt6779 = {
+	.bwl = mtk_smi_larb_mt6779_bwl,
+};	
+
+/* implementation */
+const u8 *bwl;
+
+for (i = 0, bwl = larb->larb_gen->bwl[larb->larbid];
+	i < larb->larb_gen->port_in_larb[larb->larbid]; i++)
+	writel_relaxed(bwl[i], larb->base + SMI_LARB_OSTDL_PORTx(i));
+
+Will this be okay with you?
+> 
+> > +	wmb(); /* make sure settings are written */
+> >  }
+> >  
+> >  static void mtk_smi_larb_config_port_mt8173(struct device *dev)
+> > @@ -246,6 +291,55 @@ static void mtk_smi_larb_config_port_gen1(struct device *dev)
+> >  				      /* IPU0 | IPU1 | CCU */
+> >  };
+> >  
+> > +static u8 mtk_smi_larb_mt6779_bwl[MTK_LARB_NR_MAX][SMI_LARB_PORT_NR_MAX] = {
+> 
+> Add const.
+> 
+> Here the larb number in this SoC isn't MTK_LARB_NR_MAX(16). May be you
+> could use:
+> static const u8 mtk_smi_larb_mt6779_bwl[][SMI_LARB_PORT_NR_MAX]
+> 
+> > +	{0x28, 0x28, 0x01, 0x28, 0x01, 0x01, 0x0a, 0x0a, 0x28,},
+> > +	{0x28, 0x01, 0x28, 0x28, 0x0a, 0x01, 0x01, 0x0d, 0x0d, 0x07,
+> > +	 0x01, 0x07, 0x01, 0x28,},
+> > +	{0x18, 0x01, 0x08, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x02,
+> > +	 0x01, 0x01},
+> > +	{0x01, 0x03, 0x02, 0x01, 0x01, 0x01, 0x01, 0x04, 0x02, 0x01,
+> > +	 0x04, 0x01, 0x01, 0x01, 0x01, 0x04, 0x0b, 0x13, 0x14,},
+> > +	{},
+> > +	{0x13, 0x0f, 0x0d, 0x07, 0x07, 0x04, 0x03, 0x01, 0x03, 0x01,
+> > +	 0x05, 0x0c, 0x01, 0x01, 0x08, 0x06, 0x02, 0x01, 0x08, 0x08,
+> > +	 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,},
+> > +	{0x01, 0x01, 0x01,},
+> > +	{0x01, 0x01, 0x01, 0x01,},
+> > +	{0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,},
+> > +	{0x1f, 0x1a, 0x02, 0x04, 0x1f, 0x02, 0x14, 0x01, 0x1f, 0x04,
+> > +	 0x04, 0x01, 0x01, 0x01, 0x02, 0x02, 0x04, 0x02, 0x01, 0x02,
+> > +	 0x04, 0x02, 0x02, 0x01,},
+> > +	{0x1f, 0x1a, 0x02, 0x04, 0x1f, 0x02, 0x14, 0x01, 0x1f, 0x1a,
+> > +	 0x02, 0x04, 0x1f, 0x02, 0x14, 0x01, 0x01, 0x02, 0x02, 0x04,
+> > +	 0x02, 0x0a, 0x02, 0x02, 0x04, 0x02, 0x0a, 0x02, 0x04, 0x02, 0x04,},
+> > +	{0x01, 0x01, 0x01, 0x01, 0x01,},
+> > +};
+> > +
+> > +static struct mtk_smi_reg_pair
+> 
+> const
+> 
+> > +	mtk_smi_larb_mt6779_misc[MTK_LARB_NR_MAX][SMI_LARB_MISC_NR] = {
+> > +	{{SMI_LARB_CMD_THRT_CON, 0x370256}, {SMI_LARB_SW_FLAG, 0x1},},
+> > +	{{SMI_LARB_CMD_THRT_CON, 0x300256}, {SMI_LARB_SW_FLAG, 0x1},},
+> > +	{{SMI_LARB_CMD_THRT_CON, 0x370256}, {SMI_LARB_SW_FLAG, 0x1},},
+> > +	{},
+> > +	{{SMI_LARB_CMD_THRT_CON, 0x300256}, {SMI_LARB_SW_FLAG, 0x1},},
+> > +	{{SMI_LARB_CMD_THRT_CON, 0x300256}, {SMI_LARB_SW_FLAG, 0x1},},
+> > +	{{SMI_LARB_CMD_THRT_CON, 0x300256}, {SMI_LARB_SW_FLAG, 0x1},},
+> > +	{{SMI_LARB_CMD_THRT_CON, 0x300256}, {SMI_LARB_SW_FLAG, 0x1},},
+> > +	{{SMI_LARB_CMD_THRT_CON, 0x370256}, {SMI_LARB_SW_FLAG, 0x1},},
+> > +	{{SMI_LARB_CMD_THRT_CON, 0x370256}, {SMI_LARB_SW_FLAG, 0x1},},
+> > +	{{SMI_LARB_CMD_THRT_CON, 0x370256}, {SMI_LARB_SW_FLAG, 0x1},},
+> > +};
+> > +
+> > +static const struct mtk_smi_larb_gen mtk_smi_larb_mt6779 = {
+> 
+> Move the mt6779 definition before mt8183.
+> 
+> > +	.port_in_larb = {9, 14, 12, 19, 0, 26, 3, 4, 10, 24, 31, 5,},
+> 
+> In mt2701, port_in_larb[n] is port_offset[n-1] + port_number[n-1].
+> It is not same with yours.
+> 
+> Maybe your definition is better, But If you change it, please also
+> change the mt2701. Make sure the meaning of port_in_larb are the same.
+> 
+> > +	.config_port  = mtk_smi_larb_config_port_gen2_general,
+> > +	.larb_direct_to_common_mask =
+> > +		BIT(4) | BIT(6) | BIT(11) | BIT(12) | BIT(13),
+> > +		/* DUMMY | IPU0 | IPU1 | CCU | MDLA */
+> > +	.bwl  = (u8 *)mtk_smi_larb_mt6779_bwl,
+> 
+> As above, here should be (u8 **).
+> 
+> > +	.misc = (struct mtk_smi_reg_pair *)mtk_smi_larb_mt6779_misc,
+> > +};
+> > +
+> >  static const struct of_device_id mtk_smi_larb_of_ids[] = {
+> >  	{
+> >  		.compatible = "mediatek,mt8173-smi-larb",
+> > @@ -260,6 +354,10 @@ static void mtk_smi_larb_config_port_gen1(struct device *dev)
+> >  		.data = &mtk_smi_larb_mt2712
+> >  	},
+> >  	{
+> > +		.compatible = "mediatek,mt6779-smi-larb",
+> > +		.data = &mtk_smi_larb_mt6779
+> > +	},
+> > +	{
+> >  		.compatible = "mediatek,mt8183-smi-larb",
+> >  		.data = &mtk_smi_larb_mt8183
+> >  	},
+> > @@ -393,6 +491,29 @@ static int __maybe_unused mtk_smi_larb_suspend(struct device *dev)
+> >  		    F_MMU1_LARB(7),
+> >  };
+> >  
+> > +static u16 mtk_smi_common_mt6779_bwl[SMI_COMMON_LARB_NR_MAX] = {
+> 
+> const.
+> 
+> This bwl smi-common setting always have 8 register? Will it be changed?
+> 
+> How about below?:
+> 
+> static u16 mtk_smi_common_mt6779_bwl[] = {
+> 
+> Add a new variable in struct mtk_smi_common_plat.
+> 
+> larb_nr = ARRAY_SIZE(mtk_smi_common_mt6779_bwl)
+> 
+> > +	0x1000, 0x1000, 0x1000, 0x1000, 0x1000, 0x1000, 0x1000, 0x1000,
+> > +};
+> > +
+> > +static struct mtk_smi_reg_pair
+> 
+> const
+> > +	mtk_smi_common_mt6779_misc[SMI_COMMON_MISC_NR] = {
+> 
+> The tab in this line is unnecessary.
+> 
+> > +	{SMI_L1LEN, 0xb},
+> > +	{SMI_M4U_TH, 0xe100e10},
+> > +	{SMI_FIFO_TH1, 0x506090a},
+> > +	{SMI_FIFO_TH2, 0x506090a},
+> > +	{SMI_DCM, 0x4f1},
+> > +	{SMI_DUMMY, 0x1},
+> 
+> 
+> Do all the settings above(including smi-larb) may be changed dynamically
+> in different scenario? or all the setting only be set once?
+> 
+The setting will only be set once here.
+The dynamic part will be in another patch about bandwidth control
+support you have mentioned.
+> > +};
+> > +
+> > +static const struct mtk_smi_common_plat mtk_smi_common_mt6779 = {
+> 
+> ditto. Move the mt6779 definition before mt8183.
+> 
+> > +	.gen      = MTK_SMI_GEN2,
+> > +	.has_gals = true,
+> 
+> If you also have has_gals, Please update the binding.
+> 
+> > +	.bus_sel  = F_MMU1_LARB(1) | F_MMU1_LARB(2) | F_MMU1_LARB(4) |
+> > +		    F_MMU1_LARB(5) | F_MMU1_LARB(6) | F_MMU1_LARB(7),
+> > +	.bwl      = mtk_smi_common_mt6779_bwl,
+> > +	.misc     = mtk_smi_common_mt6779_misc,
+> > +};
+> > +
+> >  static const struct of_device_id mtk_smi_common_of_ids[] = {
+> >  	{
+> >  		.compatible = "mediatek,mt8173-smi-common",
+> > @@ -407,6 +528,10 @@ static int __maybe_unused mtk_smi_larb_suspend(struct device *dev)
+> >  		.data = &mtk_smi_common_gen2,
+> >  	},
+> >  	{
+> > +		.compatible = "mediatek,mt6779-smi-common",
+> > +		.data = &mtk_smi_common_mt6779,
+> > +	},
+> > +	{
+> >  		.compatible = "mediatek,mt8183-smi-common",
+> >  		.data = &mtk_smi_common_mt8183,
+> >  	},
+> > @@ -484,7 +609,7 @@ static int __maybe_unused mtk_smi_common_resume(struct device *dev)
+> >  {
+> >  	struct mtk_smi *common = dev_get_drvdata(dev);
+> >  	u32 bus_sel = common->plat->bus_sel;
+> > -	int ret;
+> > +	int i, ret;
+> >  
+> >  	ret = mtk_smi_clk_enable(common);
+> >  	if (ret) {
+> > @@ -494,6 +619,18 @@ static int __maybe_unused mtk_smi_common_resume(struct device *dev)
+> >  
+> >  	if (common->plat->gen == MTK_SMI_GEN2 && bus_sel)
+> >  		writel(bus_sel, common->base + SMI_BUS_SEL);
+> 
+> SMI_BUS_SEL looks can be a register in your common->plat->misc.
+> This should be done in another patch.
+> 
+> > +
+> > +	if (common->plat->bwl)
+> > +		for (i = 0; i < SMI_COMMON_LARB_NR_MAX; i++)
+> > +			writel_relaxed(common->plat->bwl[i],
+> > +				       common->base + SMI_L1ARB(i));
+> 
+> From the register name, the "bwl" also is not so good. add a comment or
+> rename it like "l1arb"?
+> 
+> > +
+> > +	if (common->plat->misc)
+> > +		for (i = 0; i < SMI_COMMON_MISC_NR; i++)
+> > +			writel_relaxed(common->plat->misc[i].value,
+> > +				       common->base +
+> > +				       common->plat->misc[i].offset);
+> > +	wmb(); /* make sure settings are written */
+> >  	return 0;
+> >  }
+> >  
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
