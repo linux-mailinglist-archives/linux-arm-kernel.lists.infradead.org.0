@@ -2,58 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1786810D99E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 19:28:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAF3410DA09
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 20:11:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YILoxw9Gb4Lpv7bNaPGBpuM+RSe9ipMzPkbADg+dOWo=; b=WaEay6iJAz47YInNy13j/mBNQ
-	fEUbr9K5xi6gPTNFE6L0mGr03lFbl05QWr1gWxRxMsqfmwfa04CByp8/FAtW+UgphTU89aQm2HNVO
-	ntKd+wUB6vPvzuEILZJ3in4ClE3FcRqHHeLIg0K3W2H6CJNULEqgw9YHGtPvOOPrrhpph5PT4Tytd
-	dsr6udiQdB7XjgurTM6e9I/ITgrcbYzeCJpN1UZKmgZLcQlUIifLTStqRsphGyyfeSAJgNA/vxSzb
-	E5ZJdYdL5WLqTEqU9+cKFy1cb+yWZdVdth1lAOkHpjQCJSnSu5O6mkiOd/E/InXC49QCT8e5UpGGc
-	GgTrrqY6Q==;
+	 bh=AgMfE5jaEBay9to7EKfQA3usQPz+VKynx7w5twU4g3A=; b=a/35MaVErHDjvsjxZHidZ4khI
+	23UNJRaH61X0IdQN5ctGtwvxrPO9kDTiJLu6R/9KdxqLJTrP6lLJDW7cO+BlXHbC3nq29tWaZCIHH
+	pFTyGvYW8zXR8mewAFzaTNwn198p42CCdMMIPDJswCzfNZk3ilbBPUEuYND1aQsQQnLb8H2PthJy+
+	T8HimsbphMx6T0Vav1sinCvnHUVPy+qRaLkt9cIrWFBnW/2CPmyvB6rQsIrTp4+3VN3iwG3S7K9kq
+	CGF/gUB0EVDbaMkyt0KXQs44kj+v5ZV9UFORLaTbYY/pVoEaYE9QqKjyn67FOcQp79gmUyWg3d4BE
+	8Q833gKMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ial0K-0002sP-KR; Fri, 29 Nov 2019 18:28:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ial09-0002ri-8C
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 18:28:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A2AFE31B;
- Fri, 29 Nov 2019 10:28:18 -0800 (PST)
-Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D3DD23F68E;
- Fri, 29 Nov 2019 10:28:17 -0800 (PST)
-Subject: Re: [PATCH v5 08/14] coresight: cti: Enable CTI associated with
- devices.
-To: Mike Leach <mike.leach@linaro.org>, coresight@lists.linaro.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-doc@vger.kernel.org
-References: <20191119231912.12768-1-mike.leach@linaro.org>
- <20191119231912.12768-9-mike.leach@linaro.org>
-From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <c48fe3ee-335b-3dfb-33c1-a2cd7d5a00e6@arm.com>
-Date: Fri, 29 Nov 2019 18:28:16 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+	id 1ialfW-0000ra-Qs; Fri, 29 Nov 2019 19:11:06 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ialfM-0000qb-P8
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 19:10:58 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) (Authenticated sender: sre)
+ with ESMTPSA id B1BE6292BA4
+Received: by earth.universe (Postfix, from userid 1000)
+ id 990293C0C77; Fri, 29 Nov 2019 15:06:01 +0100 (CET)
+Date: Fri, 29 Nov 2019 15:06:01 +0100
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Claudiu Beznea <claudiu.beznea@microchip.com>
+Subject: Re: [PATCH v2 04/17] power: reset: Kconfig: select
+ POWER_RESET_AT91_RESET for sam9x60
+Message-ID: <20191129140601.fgbxwhk2c7rlvvyz@earth.universe>
+References: <1574773941-20649-1-git-send-email-claudiu.beznea@microchip.com>
+ <1574773941-20649-5-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
-In-Reply-To: <20191119231912.12768-9-mike.leach@linaro.org>
-Content-Language: en-US
+In-Reply-To: <1574773941-20649-5-git-send-email-claudiu.beznea@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_102821_379941_FBE6BEEA 
-X-CRM114-Status: GOOD (  35.57  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191129_111056_943540_EE5FA006 
+X-CRM114-Status: GOOD (  13.54  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.1 DATE_IN_PAST_03_06     Date: is 3 to 6 hours before Received: date
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,230 +63,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mathieu.poirier@linaro.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: alexandre.belloni@bootlin.com, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
+ ludovic.desroches@microchip.com, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5463793270673336550=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19/11/2019 23:19, Mike Leach wrote:
-> The CoreSight subsystem enables a path of devices from source to sink.
-> Any CTI devices associated with the path devices must be enabled at the
-> same time.
-> 
-> This patch adds an associated coresight_device element to the main
-> coresight device structure, and uses this to create associations between
-> the CTI and other devices based on the device tree data. The associated
-> device element is used to enable CTI in conjunction with the path elements.
-> 
-> CTI devices are reference counted so where a single CTI is associated with
-> multiple elements on the path, it will be enabled on the first associated
-> device enable, and disabled with the last associated device disable.
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
+
+--===============5463793270673336550==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="qqra4xv2pgsrtjif"
+Content-Disposition: inline
+
+
+--qqra4xv2pgsrtjif
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+On Tue, Nov 26, 2019 at 03:12:08PM +0200, Claudiu Beznea wrote:
+> Select POWER_RESET_AT91_RESET for SAM9X60 SoC.
+>=20
+> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > ---
->   drivers/hwtracing/coresight/coresight-cti.c   | 87 +++++++++++++++++++
->   .../hwtracing/coresight/coresight-platform.c  | 23 +++++
->   drivers/hwtracing/coresight/coresight-priv.h  |  6 ++
->   drivers/hwtracing/coresight/coresight.c       | 58 +++++++++++--
->   include/linux/coresight.h                     |  5 ++
->   5 files changed, 173 insertions(+), 6 deletions(-)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
-> index 369488dd7b8e..cf116463149a 100644
-> --- a/drivers/hwtracing/coresight/coresight-cti.c
-> +++ b/drivers/hwtracing/coresight/coresight-cti.c
-> @@ -440,6 +440,90 @@ int cti_channel_setop(struct device *dev, enum cti_chan_set_op op,
->   	return err;
->   }
->   
-> +/*
-> + * Look for a matching connection device name in the list of
-> + * connections. If found then swap in the csdev name and return
-> + * found.
-> + */
-> +static bool
-> +cti_match_con_name(struct cti_device *ctidev, const char *node_name,
-> +		   const char *csdev_name)
+>  drivers/power/reset/Kconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>=20
+> diff --git a/drivers/power/reset/Kconfig b/drivers/power/reset/Kconfig
+> index c721939767eb..886e60017f4d 100644
+> --- a/drivers/power/reset/Kconfig
+> +++ b/drivers/power/reset/Kconfig
+> @@ -26,7 +26,7 @@ config POWER_RESET_AT91_POWEROFF
+>  config POWER_RESET_AT91_RESET
+>  	tristate "Atmel AT91 reset driver"
+>  	depends on ARCH_AT91
+> -	default SOC_AT91SAM9 || SOC_SAMA5
+> +	default SOC_AT91SAM9 || SOC_SAM9X60 || SOC_SAMA5
+>  	help
+>  	  This driver supports restart for Atmel AT91SAM9 and SAMA5
+>  	  SoCs
 
-Here we actually fixup the name of the connection, rather than simply 
-matching it. So it may be apt to rename this to cti_match_fixup_name()
+I suppose this will go through ARM:
 
-> +{
-> +	struct cti_trig_con *trig_con;
-> +
-> +	list_for_each_entry(trig_con, &ctidev->trig_cons, node) {
-> +		if (trig_con->con_dev_name) {
-> +			if (!strcmp(node_name, trig_con->con_dev_name)) {
+Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 
-Can there be duplicate node_name's ? Does it make sense to store the 
-fwhandle along with the "temporary node_name" to match it later while
-fixing up ?
+-- Sebastian
 
-> +				/* match: so swap in csdev name */
-> +				kfree(trig_con->con_dev_name);
-> +				trig_con->con_dev_name =
-> +					kstrdup(csdev_name, GFP_KERNEL);
-> +				return true;
-> +			}
-> +		}
-> +	}
-> +	return false;
-> +}
+--qqra4xv2pgsrtjif
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl3hJckACgkQ2O7X88g7
++pqhDQ//WNmLXqjre475NYvywJrUR10v2JH2NyVYPBlYw5NtMdaj/2qgjlOOA5by
+KaHTlh1gsCthLa5RF+xVpKc9QnKEPnt3ZIHys+QO1vBl50CA4uSdP7SJ0X8pqhSm
+s/KfSa5dlkGF0z3cu6XXJg4c/oG4HSsCGPnGrbwVIaCN1kQBA8ESEBhwyggIu59J
+DjBw092F4Wp+o+McqZW+xR/ILbNhqkqzz5OkJdg5r3XcWr+K3ubNUrfEIKn60+C6
+49PI6hvkvbZHtHRtJgkcxW7TX/IsmFNWGWO0VSPLh7sa5DiD9Pf4Mux3mHAU6uk6
+QaFfWZahcRqNvpwxcqJUqntwawnpIzYmoJfzDoqScHEfU1kZ+p3U/RenNfHBHioQ
+SPO/15E2hC5Anb7JNYbxS4JccBF+0xRmpVIGRqmNJFFRaVvEhRgYuH/LWZqdgQEn
+K/ZPHCXsYS/5cTMNOJ/Ma1FfgVaEbeCXv5r89ExS2/JuHtDXCD3KdC7eIYnwEvJn
+9nYnHxRdBJRH92QpooEUOJI0fXKgBsGBn2lcAwqlt7ctfVNG3fL/aK8E7SuXNomw
+LQyahophFRjRjCKT8ZscFperzBF70gMVXws0eiV2u55ZHVtvXBIEF7BapxxjgI6a
+dg22CtqsGb4xQGY2srR7qjL4rJd9JJuQrQcuRYBwxsRnDG80Wto=
+=HxsT
+-----END PGP SIGNATURE-----
+
+--qqra4xv2pgsrtjif--
 
 
-> +/*
-> + * Search the cti list to add an associated CTI into the supplied CS device
-> + * This will set the association if CTI declared before the CS device
-> + */
-> +void cti_add_assoc_to_csdev(struct coresight_device *csdev)
-> +{
-
-..
-
- > +	struct cti_drvdata *ect_item;
- > +	struct cti_device *ctidev;
- > +	const char *node_name = NULL, *csdev_name;
- > +
- > +	/* protect the list */
- > +	mutex_lock(&ect_mutex);
- > +
- > +	/* exit if current is an ECT device.*/
- > +	if ((csdev->type == CORESIGHT_DEV_TYPE_ECT) || list_empty(&ect_net))
- > +		goto cti_add_done;
- > +
- > +	/* if we didn't find the csdev previously we used the fwnode name */
- > +	node_name = coresight_get_fwnode_name(csdev->dev.parent);
-
-We used "cti_plat_get_node_name()" when we added the name in the
-absence of csdev in patch 7, could we not reuse the function here ?
-
- > +
- > +	if (!node_name)
- > +		goto cti_add_done;
- > +
- > +	/* this is the name we want to use for the association */
- > +	csdev_name = dev_name(&csdev->dev);
-
-
-> +
-> +	/* for each CTI in list... */
-> +	list_for_each_entry(ect_item, &ect_net, node) {
-> +		ctidev = &ect_item->ctidev;
-> +		if (cti_match_con_name(ctidev, node_name, csdev_name)) {
-> +			/*
-> +			 * if we found a matching name then update the
-> +			 * association pointers.
-> +			 */
-> +			csdev->ect_dev = ect_item->csdev;
-> +			goto cti_add_done;
-
-			break; instead ?
-
-> +		}
-> +	}
-> +cti_add_done:
-> +	mutex_unlock(&ect_mutex);
-> +}
-> +EXPORT_SYMBOL_GPL(cti_add_assoc_to_csdev);
-> +
-> +/*
-> + * Update the cross references where the associated device was found
-> + * while we were building the connection info. This will occur if the
-> + * assoc device was registered before the CTI.
-> + */
-> +static void cti_update_conn_xrefs(struct cti_drvdata *drvdata)
-> +{
-> +	struct cti_trig_con *tc;
-> +	struct cti_device *ctidev = &drvdata->ctidev;
-> +
-> +	list_for_each_entry(tc, &ctidev->trig_cons, node) {
-> +		if (tc->con_dev)
-> +			tc->con_dev->ect_dev = drvdata->csdev;
-> +	}
-
-Does this need to take the coresight_mutex to avoid racing against
-a coresight_enable_path() ? Though this may be fine as long as the
-CTI driver detects that that device was not enabled.
-
-Also, it looks like we have a potential issue with perf vs sysfs mode.
-The perf mode doesn't seem to take the coresight_mutex, for
-build_path/enable_path operations. This is outside the scope of this
-series though.
-
-> +}
-> +
->   /** cti ect operations **/
->   int cti_enable(struct coresight_device *csdev)
->   {
-> @@ -574,6 +658,9 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
->   	drvdata->csdev_release = drvdata->csdev->dev.release;
->   	drvdata->csdev->dev.release = cti_device_release;
->   
-> +	/* set any cross references */
-> +	cti_update_conn_xrefs(drvdata);
-> +
-    	/* all done - dec pm refcount */
->   	pm_runtime_put(&adev->dev);
->   	dev_info(&drvdata->csdev->dev, "CTI initialized\n");
-> diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
-> index 3c5bee429105..6721cb1af5fe 100644
-> --- a/drivers/hwtracing/coresight/coresight-platform.c
-> +++ b/drivers/hwtracing/coresight/coresight-platform.c
-> @@ -293,6 +293,12 @@ static int of_get_coresight_platform_data(struct device *dev,
->   
->   	return 0;
->   }
-> +
-> +static inline const char *of_coresight_get_node_name(struct device *dev)
-> +{
-> +	return dev->of_node->full_name;
-> +}
-> +
->   #else
->   static inline int
->   of_get_coresight_platform_data(struct device *dev,
-> @@ -305,6 +311,11 @@ static inline int of_coresight_get_cpu(struct device *dev)
->   {
->   	return -ENODEV;
->   }
-> +
-> +static inline const char *of_coresight_get_node_name(struct device *dev)
-> +{
-> +	return NULL;
-> +}
->   #endif
->   
->   #ifdef CONFIG_ACPI
-> @@ -766,6 +777,18 @@ static inline int acpi_coresight_get_cpu(struct device *dev)
->   }
->   #endif
->   
-> +const char *coresight_get_fwnode_name(struct device *dev)
-
-As mentioned above, please could we reuse the name helper we used
-during the insertion rather than introducing a new wrapper which
-effectively does the same thing ?
-
-> +{
-> +	const char *node_name = NULL;
-> +	struct fwnode_handle *fwnode = dev_fwnode(dev);
-> +
-> +	if (is_of_node(fwnode))
-> +		node_name = of_coresight_get_node_name(dev);
-> +
-> +	return node_name;
-> +}
-> +EXPORT_SYMBOL_GPL(coresight_get_fwnode_name);
-
-Why does this get exported ? If a following patch needs it, you may
-always do that when you need it.
-
-
-Cheers
-Suzuki
+--===============5463793270673336550==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5463793270673336550==--
+
