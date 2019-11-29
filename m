@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85E7410D18E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 07:46:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A45710D17E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 07:37:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5qNEp4B1M52HvRu7YUGlaL4CmmqbMA0w9argbcYeZ9k=; b=ucIzoQiDHssSum
-	Lsqs6v9u50DZIvWGv3CljK8DamKWC0id5jiH0zqAG65RlW3n4egBaMJdiKspeC+mJYD38myqBH++/
-	rHV6yvWGyEYfQlJa+IwLP4nQdeINQV0rMEzdOAO8ePwcOcL+qnuivSiUvP5FOP8rqFK7275raO6aE
-	px6cfF6eL1Eplkz8p19iqyNJXRNjssepydiwdBlvm+Ujn6xOy1/7KdHt65YCtBS+liOjfINrw9Fo1
-	A/SHJXShubXP1RzQZneGPGl1f7RWMA95Apm1/GsJBejY/lqxGIZISy0orG+h3YR/+MUU32/XaVDvK
-	AiGEIZVaCdFqKn+IIFTg==;
+	List-Owner; bh=5qNEp4B1M52HvRu7YUGlaL4CmmqbMA0w9argbcYeZ9k=; b=MhrhAYPFPEHrdu
+	wOyc3XN1GTItL0amL+EmxEhTKxwbMlcOXdmumYmpPnuGjps66GqiaSa2nPDdI3RZP4lXyGXgi7ckj
+	sZ5uJoDpPTNuXuwGmxyQs2FNN3ZlRExsr8kvTfg//UMcLmbhOLLXThNTTyL1a5VFFY3IMkPtRpg17
+	onJKCEnTzLzGRmzOHMO46ONumKvpJWv7mZsmY8IODeHPWkeJrWnVu8MYgkHeYjQ18mLyfIj7lcKjX
+	ZScKHN1FNCDWS3e7KXEshs9Oq139K0XwvcKF3HsIECysyFE1A0ciI4xRk0DSkEsP/UKDArFFgRWmn
+	9AxqAVwpv//E1npU+L+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaa2t-00026j-OT; Fri, 29 Nov 2019 06:46:28 +0000
+	id 1iaZuL-0006lB-1w; Fri, 29 Nov 2019 06:37:37 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaa2g-00026F-32; Fri, 29 Nov 2019 06:46:15 +0000
-X-UUID: d45a77c806644348bd431ef40993b1f9-20191128
+ id 1iaZuB-0006kg-Kq; Fri, 29 Nov 2019 06:37:29 +0000
+X-UUID: 7628e1c4cd4a4767a5f350be23826242-20191128
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
  bh=8lX9vCY1Mdos86S6vjMAmKgXT0YEpzezR8Mrp8YXb4A=; 
- b=uu+M2xx7V/lnAFcToE8OA7newH3agzVK1H7cBaQqjYX5rBBxUM/5j9V+09tMg04Tir6Nr+ebBmU8/FZpEtnzS64rYozHAYGrmkZJjhbsB9+aqebgCHZzsP3EQFPTOxjawrFscxkuwF0GwwI4Jqiu6M4Ip3lQz2tQiaNA1+ih8sQ=;
-X-UUID: d45a77c806644348bd431ef40993b1f9-20191128
+ b=KKqkxPo8E+ctOuuKlg+jg8kG47MnWvgLDbOA6+w9C+i+qNiznQe1Re+YzcdAZsDjqUGAh0DHSsP1o4Nz0f/m8ZYj+TSqsyUcy96mGv70wJS0ZpQySx3kGn90wWL7LAdlczZ5CFck4iQvzibJeoN27plL7O0RPVJwl/IcGscumDM=;
+X-UUID: 7628e1c4cd4a4767a5f350be23826242-20191128
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <yong.liang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1777826257; Thu, 28 Nov 2019 22:46:09 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 28 Nov 2019 22:36:47 -0800
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 29 Nov 2019 14:36:03 +0800
+ with ESMTP id 35713696; Thu, 28 Nov 2019 22:37:20 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 28 Nov 2019 22:37:29 -0800
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N2.mediatek.inc
+ (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Fri, 29 Nov 2019 14:36:26 +0800
 Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
  (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 29 Nov 2019 14:36:16 +0800
-Message-ID: <1575009364.6367.5.camel@mhfsdcap03>
+ Transport; Fri, 29 Nov 2019 14:37:28 +0800
+Message-ID: <1575009436.6367.6.camel@mhfsdcap03>
 Subject: Re: [PATCH v5 1/2] dt-bindings: mediatek: mt8183: Add #reset-cells
 From: Yong Liang <yong.liang@mediatek.com>
 To: Philipp Zabel <p.zabel@pengutronix.de>
-Date: Fri, 29 Nov 2019 14:36:04 +0800
+Date: Fri, 29 Nov 2019 14:37:16 +0800
 In-Reply-To: <49c94039ba327a1295fdfd5d74dca0b9805269b0.camel@pengutronix.de>
 References: <1574651030-29519-1-git-send-email-jiaxin.yu@mediatek.com>
  <1574651030-29519-2-git-send-email-jiaxin.yu@mediatek.com>
  <49c94039ba327a1295fdfd5d74dca0b9805269b0.camel@pengutronix.de>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 3F41035B15E86B2915F7C7EA21024C6D3762066A9BDAF3A95558A4C43D6A960A2000:8
+X-TM-SNTS-SMTP: 690B49AA376DED3307D30E2046956457F70D0DC6A739D1DA8C5213334321E2D92000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_224614_140331_E5DAD678 
-X-CRM114-Status: GOOD (  17.23  )
+X-CRM114-CacheID: sfid-20191128_223727_692993_B566ECD6 
+X-CRM114-Status: GOOD (  17.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
