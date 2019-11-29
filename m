@@ -2,78 +2,161 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78FA910D56B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 13:06:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69D6410D5AA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 Nov 2019 13:25:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nuiSsm8JMDBwKV2ru5gfWRJHKbKfG4BOhhu5wiEuPVc=; b=r/3PKNoov5b53V
-	5HnJ76mu7qTA3BqLTT8ZWibZGndBuM/mUlcVhROcrHIBNDVUzgbodSs+KXSCjBr4B0tL/P2auWL58
-	HThV9XVPcVYZtQ1JWhRwUg2DvGg2syo/+d+a1AU0n4Gh6r6OpBbaCua6vM2s476owfSJqPdN1pje/
-	0KN1Dt18jmT59POGWJkLslubE+DjYcqV7z0fRIxhc0fQuZbg9zYxY2ngM74HmWAetOaS13WJpdkw7
-	UFkMec219tDk0Q1cJJVKTOzylcUCbPqhlZxntsr4Dov8Lr6XjQg/nSsVOfzaBic0pWJE08SFCnjWB
-	3ydlrBPRG2tJJRSfxBEA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yT/EVmmyKoKf50t6LOiRKU6JI175E9UMLFnd+cv85a8=; b=YZQkAXDGgu9ho1
+	VPVPtFHraOcP598WQl0+dLYwvkprXNfOekVKpYwxly4kHjnaJ/XD9mQqtnQvv2LKaPUngIuF3s7+q
+	PN6uFk3SGIrXC4zA+cJGUEDlcNun9ucqS+8uV7mCGHjPprueLvRrRE/ansyKjhFLsMw+gjcHfvnSS
+	s5MoN9wpT3gfeNNk6agG6NlO7AQNNfuuamVeutmI01f4s4ZIYEtsdcfygbGV4Uo+bu4owBiPGEYs/
+	fWwJcttExNS9HN3iF38uHXmEnuGMNSJpOYV02ubaJKyFASRuWou0jrmioEQA+eHfcV4nGhRUpjyhW
+	akZt6n3L1M+TsNywWrNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaf2c-0007wp-7M; Fri, 29 Nov 2019 12:06:30 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1iafLQ-0007DV-6X; Fri, 29 Nov 2019 12:25:56 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaf2R-0007w7-71
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 12:06:21 +0000
-Received: by mail-qk1-x741.google.com with SMTP id a137so23490505qkc.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 29 Nov 2019 04:06:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=sRsq1H79H3SLbpinKw5zokLUT+GaLK3RwOVX6nt73FY=;
- b=OTTULPKiIQOT+vyZGHWZPmxqkih3Hh6RRORnIy6dpyCx2NoPUYCznp7t7uXcWvJfFB
- 2xjnAJn955SfGxBDm4idJ2fUnOQ3/nbVCzdJl3nGl8VLihxxM1d+85B9uYx7QCwr6gOO
- uLxdP2hkHpQENBpqPTrgkhsC8zdf7cBhzUeg6Qbf2Qg+xfjO+uALwWv7Uk/4FjHUN0Ok
- aIsJ1cVO26NpNxpxZT9HWUA/tfSrzApnwXRRbolfVG+wzUQhvSkRqLBrI/aVQeSYh8TL
- oZmjnqC1gKI2mOlwSnTrsCXD+fKRT5RaCLS3y6sroU/J4FwA9apiFwht11ruyRlOhZhk
- Mf0w==
+ id 1iafLC-0007C1-O1; Fri, 29 Nov 2019 12:25:44 +0000
+Received: by mail-wr1-x442.google.com with SMTP id z3so34935889wru.3;
+ Fri, 29 Nov 2019 04:25:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=HzDJdmyVTI7r6DmGOcr7399TcwKpcyDjXaPwa+e5WOI=;
+ b=YkjXhxR0fVMSnhGY0nS/HWfhmmt6fkq0Ev+OjVap+0Mwh14VQrlXkrvXUdUG5aWRW6
+ 0p0AC9V24J7sohHrSNZSheUEa6fMy0SvD83xnizJRnrSjQndiVG/JpTeU8QTieulany3
+ 80h9yu2sjX3cbUrwIBwWEmgFGt1ZAi3NxEv76RNBqx1ouuPzOwKHWm6b4AHoiys6s2uc
+ bIrtMJa8l/pZFStkFPcS9uOhipqZJebUdZDqtUaQItp94IqOtFsiQI6bwRneU/j6/BhV
+ yd0JMSNZKyOptFKtdcWNiKAGQ2ZOObwMus8yCS5Hvld3KpUEWzYWwjX3Z9w8UaYSxwEg
+ E3UQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=sRsq1H79H3SLbpinKw5zokLUT+GaLK3RwOVX6nt73FY=;
- b=UZqN7XR0KINEVLhyjLpJS41OGZZf242NK4hRPU9W9SVb+FVQiwXC7TXcR2PipymnVi
- YaHTB1O15Q662zMwyamtbX8ajCcOhfvfy8AKb66SzGSyZyI08E64BcneJTf74kkGPj7G
- OXBQCQDaXE1rJ39VUsSiUJVQbFvoaRYCW/Hx163tudHWTca2AW7snAzmM7p7bUAkFbma
- 4pD5QHCud7y3yetRnTl4irpwBXasOYrvnwCXLwEonxbClT3AUSwlsWe2OgRK4FUGGLSB
- luVPWAiNKjC/j27zoeOxPD3kG2qhydwMGqAb8LmNx3N6Hx9iGR7LDPgC0Jo3+VjvOD3E
- RS1Q==
-X-Gm-Message-State: APjAAAXlptv4365rY+ipjIrYZn+qfIi52nT9BJjYl7SMAPuZXm+uTotq
- CzxHLnSmpNdtFhtXmV/oN0M7vTl1FHWpd1sKt6/WLA==
-X-Google-Smtp-Source: APXvYqxYJ/XTnVV2D0O5LIR8DcwEy685N4d9CsfVW42yMIEOsMvK04m5AOEIGODr+J13K/33Putoa+yrlFztG507vlo=
-X-Received: by 2002:a37:4ccb:: with SMTP id
- z194mr15433686qka.128.1575029178058; 
- Fri, 29 Nov 2019 04:06:18 -0800 (PST)
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=HzDJdmyVTI7r6DmGOcr7399TcwKpcyDjXaPwa+e5WOI=;
+ b=dazUny9szV8W+n7ep7pHq0MBjc9VbEvngK5o+dHvsP22MehmVMXTY99WDesEwis8eo
+ gGn2v8L/zqFqz454Pm9otA4wlTNPXhbZBQdknOOYb8w/z2OtxKnBFHhW8MS8VMSZ5JYY
+ 5U4rsHr9LsxjL23XPf679Ghp3UCnHsbPsawmpTmKrtRFXLI9c/KDSblfswTddcmBg/h4
+ M9/WrKRcuD1fTR8lxqVjKK4pz7/Z9txkF8o5pyQgR1UdIjYpa/Wedyx8Q1uDK11HjMPi
+ Qw+ZbmbFp43Q1yAL+AjHmFCmGnsv7dnTOCNIXQVLDQYuQIu5m2dy7fdC9yIxvWbAxXnO
+ I2pw==
+X-Gm-Message-State: APjAAAU7zt5s12I7k3oDQzlA5Zo0Qc3TvQFjwLuBZ8UwbcPXbXETkcos
+ 7kbLQ6XpbeZqyvE5UDTJYwU=
+X-Google-Smtp-Source: APXvYqyriBNEHZxUfG2NtnZXD0fu32QBVJ+O2gVExEelTa0r8s2/twugJmFsb/IjAhAX94bDyExSYA==
+X-Received: by 2002:adf:df8e:: with SMTP id z14mr52987511wrl.190.1575030338636; 
+ Fri, 29 Nov 2019 04:25:38 -0800 (PST)
+Received: from ziggy.stardust ([95.169.224.182])
+ by smtp.gmail.com with ESMTPSA id q5sm13440244wmc.27.2019.11.29.04.25.36
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 29 Nov 2019 04:25:37 -0800 (PST)
+Subject: Re: [PATCH] efi: arm64: Introduce /sys/firmware/efi/memreserve to
+ tell the persistent pages
+To: Masayoshi Mizuma <msys.mizuma@gmail.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-efi@vger.kernel.org
+References: <20191125184944.15556-1-msys.mizuma@gmail.com>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
+ fL3eT7ZsYV5nur7zctmJ+vbszoOASXUpfq8M+S5hU2w7sBaVk5rpH9yW8CUWz2+ZpQXPJcFa
+ OhLZuSKB1F5JcvLbETRjNzNU7B3TdS2+zkgQQdEyt7Ij2HXGLJ2w+yG2GuR9/iyCJRf10Okq
+ gTh//XESJZ8S6KlOWbLXRE+yfkKDXQx2Jr1XuVvM3zPqH5FMg8reRVFsQ+vI0b+OlyekT/Xe
+ 0Hwvqkev95GG6x7yseJwI+2ydDH6M5O7fPKFW5mzAdDE2g/K9B4e2tYK6/rA7Fq4cqiAw1+u
+ EgO44+eFgv082xtBez5WNkGn18vtw0LW3ESmKh19u6kEGoi0WZwslCNaGFrS4M7OH+aOJeqK
+ fx5dIv2CEbxc6xnHY7dwkcHikTA4QdbdFeUSuj4YhIZ+0QlDVtS1QEXyvZbZky7ur9rHkZvP
+ ZqlUsLJ2nOqsmahMTIQ8Mgx9SLEShWqD4kOF4zNfPJsgEMB49KbS2o9jxbGB+JKupjNddfxZ
+ HlH1KF8QwCMZEYaTNogrVazuEJzx6JdRpR3sFda/0x5qjTadwIW6Cl9tkqe2h391dOGX1eOA
+ 1ntn9O/39KqSrWNGvm+1raHK+Ev1yPtn0Wxn+0oy1tl67TxUjQARAQABtClNYXR0aGlhcyBC
+ cnVnZ2VyIDxtYXR0aGlhcy5iZ2dAZ21haWwuY29tPokCUgQTAQIAPAIbAwYLCQgHAwIGFQgC
+ CQoLBBYCAwECHgECF4AWIQTmuZIYwPLDJRwsOhfZFAuyVhMC8QUCWt3scQIZAQAKCRDZFAuy
+ VhMC8WzRD/4onkC+gCxG+dvui5SXCJ7bGLCu0xVtiGC673Kz5Aq3heITsERHBV0BqqctOEBy
+ ZozQQe2Hindu9lasOmwfH8+vfTK+2teCgWesoE3g3XKbrOCB4RSrQmXGC3JYx6rcvMlLV/Ch
+ YMRR3qv04BOchnjkGtvm9aZWH52/6XfChyh7XYndTe5F2bqeTjt+kF/ql+xMc4E6pniqIfkv
+ c0wsH4CkBHqoZl9w5e/b9MspTqsU9NszTEOFhy7p2CYw6JEa/vmzR6YDzGs8AihieIXDOfpT
+ DUr0YUlDrwDSrlm/2MjNIPTmSGHH94ScOqu/XmGW/0q1iar/Yr0leomUOeeEzCqQtunqShtE
+ 4Mn2uEixFL+9jiVtMjujr6mphznwpEqObPCZ3IcWqOFEz77rSL+oqFiEA03A2WBDlMm++Sve
+ 9jpkJBLosJRhAYmQ6ey6MFO6Krylw1LXcq5z1XQQavtFRgZoruHZ3XlhT5wcfLJtAqrtfCe0
+ aQ0kJW+4zj9/So0uxJDAtGuOpDYnmK26dgFN0tAhVuNInEVhtErtLJHeJzFKJzNyQ4GlCaLw
+ jKcwWcqDJcrx9R7LsCu4l2XpKiyxY6fO4O8DnSleVll9NPfAZFZvf8AIy3EQ8BokUsiuUYHz
+ wUo6pclk55PZRaAsHDX/fNr24uC6Eh5oNQ+v4Pax/gtyybkCDQRd1TkHARAAt1BBpmaH+0o+
+ deSyJotkrpzZZkbSs5ygBniCUGQqXpWqgrc7Uo/qtxOFL91uOsdX1/vsnJO9FyUv3ZNI2Thw
+ NVGCTvCP9E6u4gSSuxEfVyVThCSPvRJHCG2rC+EMAOUMpxokcX9M2b7bBEbcSjeP/E4KTa39
+ q+JJSeWliaghUfMXXdimT/uxpP5Aa2/D/vcUUGHLelf9TyihHyBohdyNzeEF3v9rq7kdqamZ
+ Ihb+WYrDio/SzqTd1g+wnPJbnu45zkoQrYtBu58n7u8oo+pUummOuTR2b6dcsiB9zJaiVRIg
+ OqL8p3K2fnE8Ewwn6IKHnLTyx5T/r2Z0ikyOeijDumZ0VOPPLTnwmb780Nym3LW1OUMieKtn
+ I3v5GzZyS83NontvsiRd4oPGQDRBT39jAyBr8vDRl/3RpLKuwWBFTs1bYMLu0sYarwowOz8+
+ Mn+CRFUvRrXxociw5n0P1PgJ7vQey4muCZ4VynH1SeVb3KZ59zcQHksKtpzz2OKhtX8FCeVO
+ mHW9u4x8s/oUVMZCXEq9QrmVhdIvJnBCqq+1bh5UC2Rfjm/vLHwt5hes0HDstbCzLyiA0LTI
+ ADdP77RN2OJbzBkCuWE21YCTLtc8kTQlP+G8m23K5w8k2jleCSKumprCr/5qPyNlkie1HC4E
+ GEAfdfN+uLsFw6qPzSAsmukAEQEAAYkEbAQYAQgAIBYhBOa5khjA8sMlHCw6F9kUC7JWEwLx
+ BQJd1TkHAhsCAkAJENkUC7JWEwLxwXQgBBkBCAAdFiEEUdvKHhzqrUYPB/u8L21+TfbCqH4F
+ Al3VOQcACgkQL21+TfbCqH79RRAAtlb6oAL9y8JM5R1T3v02THFip8OMh7YvEJCnezle9Apq
+ C6Vx26RSQjBV1JwSBv6BpgDBNXarTGCPXcre6KGfX8u1r6hnXAHZNHP7bFGJQiBv5RqGFf45
+ OhOhbjXCyHc0jrnNjY4M2jTkUC+KIuOzasvggU975nolC8MiaBqfgMB2ab5W+xEiTcNCOg3+
+ 1SRs5/ZkQ0iyyba2FihSeSw3jTUjPsJBF15xndexoc9jpi0RKuvPiJ191Xa3pzNntIxpsxqc
+ ZkS1HSqPI63/urNezeSejBzW0Xz2Bi/b/5R9Hpxp1AEC3OzabOBATY/1Bmh2eAVK3xpN2Fe1
+ Zj7HrTgmzBmSefMcSXN0oKQWEI5tHtBbw5XUj0Nw4hMhUtiMfE2HAqcaozsL34sEzi3eethZ
+ IvKnIOTmllsDFMbOBa8oUSoaNg7GzkWSKJ59a9qPJkoj/hJqqeyEXF+WTCUv6FcA8BtBJmVf
+ FppFzLFM/QzF5fgDZmfjc9czjRJHAGHRMMnQlW88iWamjYVye57srNq9pUql6A4lITF7w00B
+ 5PXINFk0lMcNUdkWipu24H6rJhOO6xSP4n6OrCCcGsXsAR5oH3d4TzA9iPYrmfXAXD+hTp82
+ s+7cEbTsCJ9MMq09/GTCeroTQiqkp50UaR0AvhuPdfjJwVYZfmMS1+5IXA/KY6DbGBAAs5ti
+ AK0ieoZlCv/YxOSMCz10EQWMymD2gghjxojf4iwB2MbGp8UN4+++oKLHz+2j+IL08rd2ioFN
+ YCJBFDVoDRpF/UnrQ8LsH55UZBHuu5XyMkdJzMaHRVQc1rzfluqx+0a/CQ6Cb2q7J2d45nYx
+ 8jMSCsGj1/iU/bKjMBtuh91hsbdWCxMRW0JnGXxcEUklbhA5uGj3W4VYCfTQxwK6JiVt7JYp
+ bX7JdRKIyq3iMDcsTXi7dhhwqsttQRwbBci0UdFGAG4jT5p6u65MMDVTXEgYfZy0674P06qf
+ uSyff73ivwvLR025akzJui8MLU23rWRywXOyTINz8nsPFT4ZSGT1hr5VnIBs/esk/2yFmVoc
+ FAxs1aBO29iHmjJ8D84EJvOcKfh9RKeW8yeBNKXHrcOV4MbMOts9+vpJgBFDnJeLFQPtTHuI
+ kQXT4+yLDvwOVAW9MPLfcHlczq/A/nhGVaG+RKWDfJWNSu/mbhqUQt4J+RFpfx1gmL3yV8NN
+ 7JXABPi5M97PeKdx6qc/c1o3oEHH8iBkWZIYMS9fd6rtAqV3+KH5Ors7tQVtwUIDYEvttmeO
+ ifvpW6U/4au4zBYfvvXagbyXJhG9mZvz+jN1cr0/G2ZC93IbjFFwUmHtXS4ttQ4pbrX6fjTe
+ lq5vmROjiWirpZGm+WA3Vx9QRjqfMdS5Ag0EXdU5SAEQAJu/Jk58uOB8HSGDSuGUB+lOacXC
+ bVOOSywZkq+Ayv+3q/XIabyeaYMwhriNuXHjUxIORQoWHIHzTCqsAgHpJFfSHoM4ulCuOPFt
+ XjqfEHkA0urB6S0jnvJ6ev875lL4Yi6JJO7WQYRs/l7OakJiT13GoOwDIn7hHH/PGUqQoZlA
+ d1n5SVdg6cRd7EqJ+RMNoud7ply6nUSCRMNWbNqbgyWjKsD98CMjHa33SB9WQQSQyFlf+dz+
+ dpirWENCoY3vvwKJaSpfeqKYuqPVSxnqpKXqqyjNnG9W46OWZp+JV5ejbyUR/2U+vMwbTilL
+ cIUpTgdmxPCA6J0GQjmKNsNKKYgIMn6W4o/LoiO7IgROm1sdn0KbJouCa2QZoQ0+p/7mJXhl
+ tA0XGZhNlI3npD1lLpjdd42lWboU4VeuUp4VNOXIWU/L1NZwEwMIqzFXl4HmRi8MYbHHbpN5
+ zW+VUrFfeRDPyjrYpax+vWS+l658PPH+sWmhj3VclIoAU1nP33FrsNfp5BiQzao30rwe4ntd
+ eEdPENvGmLfCwiUV2DNVrmJaE3CIUUl1KIRoB5oe7rJeOvf0WuQhWjIU98glXIrh3WYd7vsf
+ jtbEXDoWhVtwZMShMvp7ccPCe2c4YBToIthxpDhoDPUdNwOssHNLD8G4JIBexwi4q7IT9lP6
+ sVstwvA5ABEBAAGJAjYEGAEIACAWIQTmuZIYwPLDJRwsOhfZFAuyVhMC8QUCXdU5SAIbDAAK
+ CRDZFAuyVhMC8bXXD/4xyfbyPGnRYtR0KFlCgkG2XWeWSR2shSiM1PZGRPxR888zA2WBYHAk
+ 7NpJlFchpaErV6WdFrXQjDAd9YwaEHucfS7SAhxIqdIqzV5vNFrMjwhB1N8MfdUJDpgyX7Zu
+ k/Phd5aoZXNwsCRqaD2OwFZXr81zSXwE2UdPmIfTYTjeVsOAI7GZ7akCsRPK64ni0XfoXue2
+ XUSrUUTRimTkuMHrTYaHY3544a+GduQQLLA+avseLmjvKHxsU4zna0p0Yb4czwoJj+wSkVGQ
+ NMDbxcY26CMPK204jhRm9RG687qq6691hbiuAtWABeAsl1AS+mdS7aP/4uOM4kFCvXYgIHxP
+ /BoVz9CZTMEVAZVzbRKyYCLUf1wLhcHzugTiONz9fWMBLLskKvq7m1tlr61mNgY9nVwwClMU
+ uE7i1H9r/2/UXLd+pY82zcXhFrfmKuCDmOkB5xPsOMVQJH8I0/lbqfLAqfsxSb/X1VKaP243
+ jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
+ +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
+ y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
+Message-ID: <c27b6f69-befc-0c88-24b9-7b89d4f6e5a6@gmail.com>
+Date: Fri, 29 Nov 2019 13:25:36 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-References: <20191119231912.12768-1-mike.leach@linaro.org>
- <20191119231912.12768-2-mike.leach@linaro.org>
- <fce270a6-03a7-f620-9ebf-5117c5dd7cc6@arm.com>
-In-Reply-To: <fce270a6-03a7-f620-9ebf-5117c5dd7cc6@arm.com>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Fri, 29 Nov 2019 12:06:06 +0000
-Message-ID: <CAJ9a7ViVpUq7OCR2=QKDBX=YXpuKdm8hGGBkhjyttr3+L=v5qQ@mail.gmail.com>
-Subject: Re: [PATCH v5 01/14] coresight: cti: Initial CoreSight CTI Driver
-To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
+In-Reply-To: <20191125184944.15556-1-msys.mizuma@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_040619_259252_89A766AB 
-X-CRM114-Status: GOOD (  22.05  )
+X-CRM114-CacheID: sfid-20191129_042542_809386_A56B9043 
+X-CRM114-Status: GOOD (  23.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (matthias.bgg[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,213 +176,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Coresight ML <coresight@lists.linaro.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>
+Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, d.hatayama@fujitsu.com,
+ Eric Biederman <ebiederm@xmission.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki,
-
-Will be re-spinning due to later patches - so will fixup as requested
-
-Thanks
-
-Mike
-
-On Mon, 25 Nov 2019 at 19:03, Suzuki Kuruppassery Poulose
-<suzuki.poulose@arm.com> wrote:
->
-> On 19/11/2019 23:18, Mike Leach wrote:
-> > This introduces a baseline CTI driver and associated configuration files.
-> >
-> > Uses the platform agnostic naming standard for CoreSight devices, along
-> > with a generic platform probing method that currently supports device
-> > tree descriptions, but allows for the ACPI bindings to be added once these
-> > have been defined for the CTI devices.
-> >
-> > Driver will probe for the device on the AMBA bus, and load the CTI driver
-> > on CoreSight ID match to CTI IDs in tables.
-> >
-> > Initial sysfs support for enable / disable provided.
-> >
-> > Default CTI interconnection data is generated based on hardware
-> > register signal counts, with no additional connection information.
-> >
-> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
->
-> Looks good to me.  Some very minor nits, feel free to ignore if you are
-> not respinning the series.
->
-> > +/*
-> > + * Look at the HW DEVID register for some of the HW settings.
-> > + * DEVID[15:8] - max number of in / out triggers.
-> > + */
-> > +#define CTI_DEVID_MAXTRIGS(devid_val) (int)((devid_val & 0xFF00) >> 8)
->
-> BMVAL(devid_val, 15, 8)
->
-> > +
-> > +/* DEVID[19:16] - number of CTM channels */
-> > +#define CTI_DEVID_CTMCHANNELS(devid_val) (int)((devid_val & 0xF0000) >> 16)
->
-> BMVAL(devid_val, 19, 16)
->
-> > +
-> > +static void cti_set_default_config(struct device *dev,
-> > +                                struct cti_drvdata *drvdata)
-> > +{
-> > +     struct cti_config *config = &drvdata->config;
-> > +     u32 devid;
-> > +
-> > +     devid = readl_relaxed(drvdata->base + CORESIGHT_DEVID);
-> > +     config->nr_trig_max = CTI_DEVID_MAXTRIGS(devid);
-> > +
-> > +     /*
-> > +      * no current hardware should exceed this, but protect the driver
-> > +      * in case of fault / out of spec hw
-> > +      */
-> > +     if (config->nr_trig_max > CTIINOUTEN_MAX) {
-> > +             dev_warn_once(dev,
-> > +                     "Limiting HW MaxTrig value(%d) to driver max(%d)\n",
-> > +                     config->nr_trig_max, CTIINOUTEN_MAX);
-> > +             config->nr_trig_max = CTIINOUTEN_MAX;
-> > +     }
-> > +
-> > +     config->nr_ctm_channels = CTI_DEVID_CTMCHANNELS(devid);
-> > +
-> > +     /* Most regs default to 0 as zalloc'ed except...*/
-> > +     config->trig_filter_enable = true;
-> > +     config->ctigate = GENMASK(config->nr_ctm_channels - 1, 0);
-> > +     atomic_set(&config->enable_req_count, 0);
-> > +}
-> > +
-> > +/*
-> > + * Add a connection entry to the list of connections for this
-> > + * CTI device.
-> > + */
-> > +int cti_add_connection_entry(struct device *dev, struct cti_drvdata *drvdata,
-> > +                          struct cti_trig_con *tc,
-> > +                          struct coresight_device *csdev,
-> > +                          const char *assoc_dev_name)
-> > +{
-> > +     struct cti_device *cti_dev = &drvdata->ctidev;
-> > +
-> > +     tc->con_dev = csdev;
-> > +     /*
-> > +      * Prefer actual associated CS device dev name to supplied value -
-> > +      * which is likely to be node name / other conn name.
-> > +      */
-> > +     if (csdev)
-> > +             tc->con_dev_name = devm_kstrdup(dev,
-> > +                                             dev_name(&csdev->dev),
-> > +                                             GFP_KERNEL);
-> > +     else if (assoc_dev_name != NULL)
-> > +             tc->con_dev_name = devm_kstrdup(dev,
-> > +                                             assoc_dev_name, GFP_KERNEL);
-> > +     list_add_tail(&tc->node, &cti_dev->trig_cons);
-> > +     cti_dev->nr_trig_con++;
-> > +
-> > +     /* add connection usage bit info to overall info */
-> > +     drvdata->config.trig_in_use |= tc->con_in->used_mask;
-> > +     drvdata->config.trig_out_use |= tc->con_out->used_mask;
->
-> Do we need to make sure that they are exclusive ?
->
->   WARN_ON(drvdata->config.trig_in_use ^ ~(tc->con_in->used_mask));
->   WARN_ON(drvdata->config.trig_out_use ^ ~(tc->con_out->used_mask));
->
-> > +/** cti ect operations **/
-> > +int cti_enable(struct coresight_device *csdev)
-> > +{
-> > +     struct cti_drvdata *drvdata = csdev_to_cti_drvdata(csdev);
-> > +
-> > +     /* enable hardware with refcount */
->
-> nit: left over comment from previous revision ?
->
-> > +     return cti_enable_hw(drvdata);
-> > +}
-> > +
-> > +int cti_disable(struct coresight_device *csdev)
-> > +{
-> > +     struct cti_drvdata *drvdata = csdev_to_cti_drvdata(csdev);
-> > +
-> > +     /* disable hardware with refcount */
->
-> same here ?
->
-> > +     return cti_disable_hw(drvdata);
-> > +}
-> > +
->
-> > +
-> > +static int cti_probe(struct amba_device *adev, const struct amba_id *id)
-> > +{
-> > +     int ret = 0;
-> > +     void __iomem *base;
-> > +     struct device *dev = &adev->dev;
-> > +     struct cti_drvdata *drvdata = NULL;
-> > +     struct coresight_desc cti_desc;
-> > +     struct coresight_platform_data *pdata = NULL;
-> > +     struct resource *res = &adev->res;
-> > +
-> > +     /* driver data*/
-> > +     drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
-> > +     if (!drvdata) {
-> > +             ret = -ENOMEM;
-> > +             dev_info(dev, "%s, mem err\n", __func__);
->
-> dev_err() ? As they may have higher priority than "info" and will get
-> displayed in the rare chance of them getting hit.
->
-> > +             goto err_out;
-> > +     }
-> > +
-> > +     /* Validity for the resource is already checked by the AMBA core */
-> > +     base = devm_ioremap_resource(dev, res);
-> > +     if (IS_ERR(base)) {
-> > +             ret = PTR_ERR(base);
-> > +             dev_info(dev, "%s, remap err\n", __func__);
->
-> same here, dev_err()
->
-> > +             goto err_out;
-> > +     }
-> > +     drvdata->base = base;
-> > +
-> > +     dev_set_drvdata(dev, drvdata);
-> > +
-> > +     /* default CTI device info  */
-> > +     drvdata->ctidev.cpu = -1;
-> > +     drvdata->ctidev.nr_trig_con = 0;
-> > +     drvdata->ctidev.ctm_id = 0;
-> > +     INIT_LIST_HEAD(&drvdata->ctidev.trig_cons);
-> > +
-> > +     spin_lock_init(&drvdata->spinlock);
-> > +
-> > +     /* initialise CTI driver config values */
-> > +     cti_set_default_config(dev, drvdata);
-> > +
-> > +     /* Parse the .dts for connections and signals */
->
-> minor nit: I would not mention about ".dts" here. The function name is
-> implicit. You could actually remove that comment.
->
-> As mentioned above, the comments are minor nits. So you may add
-> with/without addressing them:
->
-> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
->
 
 
--- 
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
+On 25/11/2019 19:49, Masayoshi Mizuma wrote:
+> From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> 
+> kexec reboot stops in early boot sequence because efi_config_parse_tables()
+> refers garbage data. We can see the log with memblock=debug kernel option:
+> 
+>   efi:  ACPI 2.0=0x9821790014  PROP=0x8757f5c0  SMBIOS 3.0=0x9820740000  MEMRESERVE=0x9820bfdc58
+>   memblock_reserve: [0x0000009820bfdc58-0x0000009820bfdc67] efi_config_parse_tables+0x228/0x278
+>   memblock_reserve: [0x0000000082760000-0x00000000324d07ff] efi_config_parse_tables+0x228/0x278
+>   memblock_reserve: [0xcc4f84ecc0511670-0x5f6e5214a7fd91f9] efi_config_parse_tables+0x244/0x278
+>   memblock_reserve: [0xd2fd4144b9af693d-0xad0c1db1086f40a2] efi_config_parse_tables+0x244/0x278
+>   memblock_reserve: [0x0c719bb159b1fadc-0x5aa6e62a1417ce12] efi_config_parse_tables+0x244/0x278
+>   ...
+> 
+> That happens because 0x82760000, struct linux_efi_memreserve, is destroyed.
+> 0x82760000 is pointed from efi.mem_reseve, and efi.mem_reserve points the
+> head page of LPI pending table and LPI property table which are allocated by
+> gic_reserve_range().
+> 
+> The destroyer is kexec. kexec locates the initrd to the area:
+> 
+>   ]# kexec -d -l /boot/vmlinuz-5.4.0-rc7 /boot/initramfs-5.4.0-rc7.img --reuse-cmdline
+>   ...
+>   initrd: base 82290000, size 388dd8ah (59301258)
+>   ...
+> 
+> From dynamic debug log. initrd is located in segment[1]:
+>   machine_kexec_prepare:70:
+>     kexec kimage info:
+>       type:        0
+>       start:       85b30680
+>       head:        0
+>       nr_segments: 4
+>         segment[0]: 0000000080480000 - 0000000082290000, 0x1e10000 bytes, 481 pages
+>         segment[1]: 0000000082290000 - 0000000085b20000, 0x3890000 bytes, 905 pages
+>         segment[2]: 0000000085b20000 - 0000000085b30000, 0x10000 bytes, 1 pages
+>         segment[3]: 0000000085b30000 - 0000000085b40000, 0x10000 bytes, 1 pages
+> 
+> kexec searches the memory region to locate initrd through
+> "System RAM" in /proc/iomem. The pending tables are included in
+> "System RAM" because they are allocated by alloc_pages(), so kexec
+> destroys the LPI pending tables.
+> 
+
+Doesn't that mean that you haven't enough memory reserved so that you have to
+fallback to allocate it via __get_free_page()?
+
+
+> Introduce /sys/firmware/efi/memreserve to tell the pages pointed by
+> efi.mem_reserve so that kexec can avoid the area to locate initrd.
+> 
+
+Doesn't that need a patch for kexec-tools to actually take this into account?
+
+> Signed-off-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> ---
+>  drivers/firmware/efi/efi.c | 45 +++++++++++++++++++++++++++++++++++++-
+>  1 file changed, 44 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
+> index e98bbf8e5..0aa07cc09 100644
+> --- a/drivers/firmware/efi/efi.c
+> +++ b/drivers/firmware/efi/efi.c
+> @@ -141,6 +141,47 @@ static ssize_t systab_show(struct kobject *kobj,
+>  
+>  static struct kobj_attribute efi_attr_systab = __ATTR_RO_MODE(systab, 0400);
+>  
+> +static struct linux_efi_memreserve *efi_memreserve_root __ro_after_init;
+> +#ifdef CONFIG_KEXEC
+> +static ssize_t memreserve_show(struct kobject *kobj,
+> +			   struct kobj_attribute *attr, char *buf)
+> +{
+> +	struct linux_efi_memreserve *rsv;
+> +	phys_addr_t start, end;
+> +	unsigned long prsv;
+> +	char *str = buf;
+> +	int count, i;
+> +
+> +	if (!kobj || !buf)
+> +		return -EINVAL;
+> +
+> +	if ((efi_memreserve_root == (void *)ULONG_MAX) ||
+> +			(!efi_memreserve_root))
+> +		return -ENODEV;
+> +
+> +	for (prsv = efi_memreserve_root->next; prsv; prsv = rsv->next) {
+> +		rsv = memremap(prsv, sizeof(*rsv), MEMREMAP_WB);
+> +		if (!rsv) {
+> +			pr_err("Could not map efi_memreserve\n");
+> +			return -ENOMEM;
+> +		}
+> +		count = atomic_read(&rsv->count);
+> +		for (i = 0; i < count; i++) {
+> +			start = rsv->entry[i].base;
+> +			end = start + rsv->entry[i].size - 1;
+> +
+> +			str += sprintf(str, "%pa-%pa\n", &start, &end);
+
+What happens if we provide a buf which is too small?
+
+Regards,
+Matthias
 
 _______________________________________________
 linux-arm-kernel mailing list
