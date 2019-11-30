@@ -2,82 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F051D10DDDC
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 15:09:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86B2510DDEA
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 15:56:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lThe1f2NaQfiJsAZ4GW7g9QFkJ/AflPq8/w/tTDs1Dw=; b=IgtLWHmqaEtWWz
-	z1e1Gs9wzpSgO6onC4HKqmjg5Y7SXgi0VFV+GE3d+0fn+Xn93USbFSgDBpi/MNmdPIrB1PCO/ehk7
-	t20G4y0IbwgOeMmicfbWvSJg8/TcsmkpKNLlNCmerW1CpOtyVfEmURT8bfbd10k893YwzzdQ0hXBG
-	UvOsFr664gDCNfCf0MMw8Jg3N51Q1F6kDpXJUeLRCsT6h/jU4kVQwHIloUeolit7QDRbVRiNQXU+5
-	evObGXi+B/ZHRjgD2qAJ9CaWgmAUu4ORvyjLVMjhkOqYLfVeMjpCb3VuKq00azn+As/VcQ4Snq9Zb
-	uRr1GLb69S2u4EzED/GA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8uquwyrW9RIhaO3pxmBvbIyqmxALmjAuosx+bCwvpA8=; b=cV6JKmJinHJBV/
+	G0+76b2TkfqgmROlby2fEln9r8O2yLAy6Jm9rpJFOnqdhURPCERlKC7Yh40abALORYHKs/MXU7LO3
+	nAaKo1SOOUbFVzWYnGOobPgFxSfS2CM7Xmr+m8BYJpzGMDYe7lbv2F7l5KMnuFgzqSZnibUDEcpNZ
+	yb+XlIv0DkGB3Ph4VYIzi5RVPzhSMOrLGrdhsp7DkFbEjZjThnSn/AW20w8Mu+wvkw+XYZI5XU/pu
+	sphQzsnqboH8gzP8ZCIiECTgzaPtvseBrWkn7nULboIadr4j6OqGS4srEZs1G2PZ2IKDmLaoCjTke
+	y90x7qgK+/toQKI6e9zA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ib3RU-0000OQ-Qb; Sat, 30 Nov 2019 14:09:48 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1ib4Au-0006nR-58; Sat, 30 Nov 2019 14:56:44 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ib3RK-0000O1-Sj
- for linux-arm-kernel@lists.infradead.org; Sat, 30 Nov 2019 14:09:40 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id o11so59931pjp.9
+ id 1ib4Aj-0006mU-BH
+ for linux-arm-kernel@lists.infradead.org; Sat, 30 Nov 2019 14:56:34 +0000
+Received: by mail-wr1-x442.google.com with SMTP id t2so38424666wrr.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 30 Nov 2019 06:09:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=FKtvrB0Mt1dPDCU0lQQZ0+l4lFfg4eSb8vzPxs0x5Z8=;
- b=NMkJgp7dKL3T2uJcSbqnKzitPUjziDIfJ3LtXAhLmdnMzmv40dWWMkIqR1yKeiK+sI
- wCpyM5e8aHnsEfAZblNQgMSBbCbB8v2WFqNdByM6hZ3+z1o87nyVUenCwdt74D4+ulIO
- hAkbVXihxpLwP842/1Leq7lDEJr1QpvEeTE30S/uHthFsrG1XRv9Hx9was377htC/oBL
- g2K7hL6jrlQnP32lkWxK4Z54hEcMCXTbNwYEhUaTTfnUNX7qoivwHzVexEkbfpDXHZoK
- dmFi1XUaUbRfELLhcxQKs3S8F/R0o7A5bm8aDCkpbf5pVHtNV5B/JPdlS6CxxUiSIk5a
- uVaA==
+ Sat, 30 Nov 2019 06:56:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=PwCozoTs8XG2ql1FZKnvEokfnqeNfbyM67ucxeEUbfo=;
+ b=c33a1OSsBgCzx7NXCRReDmDQ2HWnQM1tDZadOh/TrDx47fxF5xc7+1WKtEvniCFm1H
+ copRaEtRL+RhWoL3tPJvo3E7wkYvqe9R5RnI2y/5cfKEi4iK6fOxHsTSZq+kwfSPY+p2
+ KHW/EwcaKDHkEa1hXO+9sNMvzVCIXio4TzVQzIiGIvmAP95H0SsnizRQFRGapb7okML6
+ D+0ViMS8yokFh1Q5JOIAEdTiDD6lzXMJs+9pjqGpxCTDMtMTmmUTHjiLs57RDkDfp31J
+ +ZB9qjAiSY8E/9WQuq576Xr8ZjTjYPlsZf7+4HYkOi0RbRfjDkIMOo3wKrznC4ljK8yp
+ fH4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=FKtvrB0Mt1dPDCU0lQQZ0+l4lFfg4eSb8vzPxs0x5Z8=;
- b=MqYaKajgpNp2CAxFVWoShHeLroSO/y9IRHj7HvufnZTnyMPbU6Qn5czkosdhRmXqyE
- QUfYT8EEjjEjoZuXX6LTbcFKH0GU8s70BJsF5j0BPQbUfsbZ2+vmj/U1cJjuujK1YQMw
- HoTQn2zX6jbf1aWb4iAUFrQY2/KmLQwadyKsh/la7BovXANXcPzu/mmKjSQqWrw+0cTU
- rpkEsSvcpMe1iAi24vWDmgk37Hl09ViZYDeLol7uhiZrzWtPzcJWCdBV23XOWXwLehto
- tLKo5lRuQOA7aPrrqgwapjPxK1HBxrzS8jz1n8d335/o1/EKoHp46yob5aoEGvqriOrq
- obhg==
-X-Gm-Message-State: APjAAAUxdptaolCXp1lvOmYdIRUWwRUoXdGMmrD2JQXQqmPmvX0BDyXf
- EOFwD4iZZTV5vWOTSJ5ZN6Br
-X-Google-Smtp-Source: APXvYqzDwytiCfrEZJAt8NDxceGrzYgYfocCmVVy6k9xea1LbWHW7Mwlsg5/EklXVb4xjzRje9x+UQ==
-X-Received: by 2002:a17:90a:c697:: with SMTP id
- n23mr434520pjt.37.1575122976893; 
- Sat, 30 Nov 2019 06:09:36 -0800 (PST)
-Received: from Mani-XPS-13-9360 ([2409:4072:980:53e7:19a8:fb8d:d702:6994])
- by smtp.gmail.com with ESMTPSA id p16sm28346128pgm.8.2019.11.30.06.09.31
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 30 Nov 2019 06:09:36 -0800 (PST)
-Date: Sat, 30 Nov 2019 19:39:29 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH 3/5] media: i2c: imx290: Add RAW12 mode support
-Message-ID: <20191130140929.GA23629@Mani-XPS-13-9360>
-References: <20191129190541.30315-1-manivannan.sadhasivam@linaro.org>
- <20191129190541.30315-4-manivannan.sadhasivam@linaro.org>
- <CAOMZO5Btkd0NLM5RBFZHD5dryE7mR5JZRLC2X__pQNmjHGCywA@mail.gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=PwCozoTs8XG2ql1FZKnvEokfnqeNfbyM67ucxeEUbfo=;
+ b=qssPq9a4TMApve/QWducRXg6IalS/8fkRdIOuZur95KT9QzKnFi+VjijxNL9gczXQr
+ sYL0P/paIURzQ+B8519Zgm3yriBxLNqj4ac8lqnT18FR6NxuB2xZYigSPdwIVveQEbjW
+ v2vK22fq9+qIdmsfLQA7s8ripdsnFb7jsab3Qvn2d9/E116Avew/pqPnhp3rCNTrWDUl
+ qv4SSTlSUAWLG3fYYpYBmcZtms/mrVrtoFR5VTS0HTQikSedaSicrLhJp3Tey+rMGzsz
+ aQMHQsjOtUeVyUwi6D1i/5q2ZGF+DDjXQlmaYsv+vLtFCQy0YBrNAzIuEZU4jaJ8jUyQ
+ OWOw==
+X-Gm-Message-State: APjAAAWsgwdVq1YTP3JW2O3nvivndEU8LupKrkHHKUiSOT7vQ6vCpU0m
+ 7HLdueJl7W+RqX68D3pSq30=
+X-Google-Smtp-Source: APXvYqw5vPFt6szAkomA55xwpp96G7mGWyk6w+xUYxH7mO7VnvBKH6M4Ne9jlegRNkKp21i0+9KIFw==
+X-Received: by 2002:adf:fe90:: with SMTP id l16mr11646557wrr.265.1575125790967; 
+ Sat, 30 Nov 2019 06:56:30 -0800 (PST)
+Received: from localhost.localdomain
+ (p200300F1371CB100428D5CFFFEB99DB8.dip0.t-ipconnect.de.
+ [2003:f1:371c:b100:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id b17sm7163391wrx.15.2019.11.30.06.56.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 30 Nov 2019 06:56:30 -0800 (PST)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: khilman@baylibre.com,
+	narmstrong@baylibre.com
+Subject: [PATCH 0/2] amlogic: meson-ee-pwrc: two small fixes
+Date: Sat, 30 Nov 2019 15:56:15 +0100
+Message-Id: <20191130145617.1490233-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOMZO5Btkd0NLM5RBFZHD5dryE7mR5JZRLC2X__pQNmjHGCywA@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191130_060938_956017_FC29B93F 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20191130_065633_410083_256C9EAE 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -97,49 +101,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, c.barrett@framos.com,
- linux-kernel <linux-kernel@vger.kernel.org>, a.brela@framos.com,
- Peter Griffin <peter.griffin@linaro.org>, Sakari Ailus <sakari.ailus@iki.fi>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Fabio,
+While working on power domain support for the 32-bit SoCs I had some
+crashes when trying to actually use the power domains. Turns out I had
+a bug in my patches which add support for the older SoCs to
+meson-ee-pwrc. However, I didn't notice these because the driver probed
+just fine.
 
-On Fri, Nov 29, 2019 at 04:49:25PM -0300, Fabio Estevam wrote:
-> Hi Manivannan,
-> 
-> On Fri, Nov 29, 2019 at 4:07 PM Manivannan Sadhasivam
-> <manivannan.sadhasivam@linaro.org> wrote:
->                }
-> > +
-> > +               imx290->bpp = 10;
-> > +
-> > +               break;
-> > +       case MEDIA_BUS_FMT_SRGGB12_1X12:
-> > +               ret = imx290_set_register_array(imx290, imx290_12bit_settings,
-> > +                                               ARRAY_SIZE(
-> > +                                                       imx290_12bit_settings));
-> 
-> Could you please write the ARRAY_SIZE and its parameter in the same line?
-> 
-> It would improve readability.
-> 
+This is my attempt to spot "problems" (bugs in my code) earlier.
 
-I don't favor this change but Sakari did this to supress the checkpatch
-warning while applying my initial patch, so now I did this here itself
-to maintain the uniformity.
 
-Thanks,
-Mani
+Martin Blumenstingl (2):
+  soc: amlogic: meson-ee-pwrc: propagate PD provider registration errors
+  soc: amlogic: meson-ee-pwrc: propagate errors from pm_genpd_init()
 
-> Thanks
+ drivers/soc/amlogic/meson-ee-pwrc.c | 24 +++++++++++++++---------
+ 1 file changed, 15 insertions(+), 9 deletions(-)
+
+-- 
+2.24.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
