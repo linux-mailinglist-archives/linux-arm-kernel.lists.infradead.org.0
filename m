@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86B2510DDEA
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 15:56:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EBDB10DDEB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 15:57:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8uquwyrW9RIhaO3pxmBvbIyqmxALmjAuosx+bCwvpA8=; b=cV6JKmJinHJBV/
-	G0+76b2TkfqgmROlby2fEln9r8O2yLAy6Jm9rpJFOnqdhURPCERlKC7Yh40abALORYHKs/MXU7LO3
-	nAaKo1SOOUbFVzWYnGOobPgFxSfS2CM7Xmr+m8BYJpzGMDYe7lbv2F7l5KMnuFgzqSZnibUDEcpNZ
-	yb+XlIv0DkGB3Ph4VYIzi5RVPzhSMOrLGrdhsp7DkFbEjZjThnSn/AW20w8Mu+wvkw+XYZI5XU/pu
-	sphQzsnqboH8gzP8ZCIiECTgzaPtvseBrWkn7nULboIadr4j6OqGS4srEZs1G2PZ2IKDmLaoCjTke
-	y90x7qgK+/toQKI6e9zA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7DAYfpntb6VqCkt/iHyDXHMQSeizcP8jQRSRrY83ftw=; b=s6C5N3iU6H51Dw
+	udHEJJAENjBFqcQWKLRVCSvvqrbdxi4Shgbnv6O1X64MvATksAFWPHabY5TL+zEilREBoblYhijoB
+	OKEh86d4M9GpZs5mF+4vFkyrHQJ5bvQ6rUT8Qj9TKI+NpOlDofEAce16haNj/jYS98HzasyUz8CD6
+	KenWW6gAHE/TcH8/GQohCXRnLg9Y6zatffuYnh+jzvISedVF2jZsxmtyEJnfhNw8GsBY3AsGPmV/Q
+	JY+lRJRqqtlPeINwxYKUJ2vtWjWTUWgSTkSi8DD1zVd9NblTTcX+wfPJlzUOuWIl2/F4xiWqOZIFn
+	MogRCyA3dtVTPwCOL1sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ib4Au-0006nR-58; Sat, 30 Nov 2019 14:56:44 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1ib4BA-0006va-Am; Sat, 30 Nov 2019 14:57:00 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ib4Aj-0006mU-BH
+ id 1ib4Aj-0006mV-MD
  for linux-arm-kernel@lists.infradead.org; Sat, 30 Nov 2019 14:56:34 +0000
-Received: by mail-wr1-x442.google.com with SMTP id t2so38424666wrr.1
+Received: by mail-wr1-x443.google.com with SMTP id i12so38545732wro.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 30 Nov 2019 06:56:32 -0800 (PST)
+ Sat, 30 Nov 2019 06:56:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=PwCozoTs8XG2ql1FZKnvEokfnqeNfbyM67ucxeEUbfo=;
- b=c33a1OSsBgCzx7NXCRReDmDQ2HWnQM1tDZadOh/TrDx47fxF5xc7+1WKtEvniCFm1H
- copRaEtRL+RhWoL3tPJvo3E7wkYvqe9R5RnI2y/5cfKEi4iK6fOxHsTSZq+kwfSPY+p2
- KHW/EwcaKDHkEa1hXO+9sNMvzVCIXio4TzVQzIiGIvmAP95H0SsnizRQFRGapb7okML6
- D+0ViMS8yokFh1Q5JOIAEdTiDD6lzXMJs+9pjqGpxCTDMtMTmmUTHjiLs57RDkDfp31J
- +ZB9qjAiSY8E/9WQuq576Xr8ZjTjYPlsZf7+4HYkOi0RbRfjDkIMOo3wKrznC4ljK8yp
- fH4A==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=TvmFsbPfOa+mv76uPLkgNY/Uv2Lmgpor1GwCekjIwTs=;
+ b=M2OY4GgAq/acdIl+mLclGxdW7OPPxsfPVW6tx+1uxT23OQtQ+pBYSHIgH39w4Reb6x
+ a/hBY4u4JfiMV+PSPDdI6/tDdeYyb21nQ/Yzehie+IZ50SxNRy3IhcuT87SaJ6ORtylG
+ aX2NVXNKAgmzvpFqdjZR2D/aCTwN3yqwsVVmaomo8/MQJZGbjbRf937V0PB/XWHhS7yo
+ 4te8IW4rw8JkK7CwxZt8AtozOgfmBCDLOLyD3FktNhWtTyEn7YpdhG7l3iqPgT8NvL5y
+ v4VofhZEft5rujuTS3aw2ovXWKeU/SDDNQXNmTwEkmwQW8azQDN4QKChGxa7O6j4CYLZ
+ AMYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=PwCozoTs8XG2ql1FZKnvEokfnqeNfbyM67ucxeEUbfo=;
- b=qssPq9a4TMApve/QWducRXg6IalS/8fkRdIOuZur95KT9QzKnFi+VjijxNL9gczXQr
- sYL0P/paIURzQ+B8519Zgm3yriBxLNqj4ac8lqnT18FR6NxuB2xZYigSPdwIVveQEbjW
- v2vK22fq9+qIdmsfLQA7s8ripdsnFb7jsab3Qvn2d9/E116Avew/pqPnhp3rCNTrWDUl
- qv4SSTlSUAWLG3fYYpYBmcZtms/mrVrtoFR5VTS0HTQikSedaSicrLhJp3Tey+rMGzsz
- aQMHQsjOtUeVyUwi6D1i/5q2ZGF+DDjXQlmaYsv+vLtFCQy0YBrNAzIuEZU4jaJ8jUyQ
- OWOw==
-X-Gm-Message-State: APjAAAWsgwdVq1YTP3JW2O3nvivndEU8LupKrkHHKUiSOT7vQ6vCpU0m
- 7HLdueJl7W+RqX68D3pSq30=
-X-Google-Smtp-Source: APXvYqw5vPFt6szAkomA55xwpp96G7mGWyk6w+xUYxH7mO7VnvBKH6M4Ne9jlegRNkKp21i0+9KIFw==
-X-Received: by 2002:adf:fe90:: with SMTP id l16mr11646557wrr.265.1575125790967; 
- Sat, 30 Nov 2019 06:56:30 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=TvmFsbPfOa+mv76uPLkgNY/Uv2Lmgpor1GwCekjIwTs=;
+ b=BZsneyqRFZSvhfyYyJ6CuC1i6F2jjr4t4SWolykKedGOB2X5xeTj6rs4Vy/Rxc2JKM
+ VBxV7EqDpkNuV2naH7QDdSIfmi14ZJpVM2zW/gF4c0PXJP/fQwzjRDvPv+BK4czlIrle
+ tEDU0y7Y/iTBC78jczL8iGnO+WIJkI+RN8RVDDZEV7gPwcEu3tedS4W7XWzb9LFHYsNZ
+ 3rYZ7/88z+vS61f9L/5jJ+i2GleJ+EdAg10MMWJOeXvME2r9TqggLOTa6G4jag1SijOX
+ 9GmuSMOvp64Ze6emhfwOeAKvgNV2L29UAvy82OSXww6YcJbtATzVRlBP/DPwcgppj+09
+ SXMA==
+X-Gm-Message-State: APjAAAUglXl7TbTFFk2cFw2pl2w//troYDQOScKfU8N1bfegUyv+7WmT
+ nbSaV8B1V8XQfQCr2xqLXOI=
+X-Google-Smtp-Source: APXvYqwq7I+JJ+i8EqMxpzPkWUJ0pqcwjJqfhJ6Cg2Qmyw5KvOuUGPnjOjJ66CYi44eYij/VVO0nVw==
+X-Received: by 2002:a5d:5704:: with SMTP id a4mr39371160wrv.198.1575125791823; 
+ Sat, 30 Nov 2019 06:56:31 -0800 (PST)
 Received: from localhost.localdomain
  (p200300F1371CB100428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:371c:b100:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id b17sm7163391wrx.15.2019.11.30.06.56.29
+ by smtp.googlemail.com with ESMTPSA id b17sm7163391wrx.15.2019.11.30.06.56.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 30 Nov 2019 06:56:30 -0800 (PST)
+ Sat, 30 Nov 2019 06:56:31 -0800 (PST)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: khilman@baylibre.com,
 	narmstrong@baylibre.com
-Subject: [PATCH 0/2] amlogic: meson-ee-pwrc: two small fixes
-Date: Sat, 30 Nov 2019 15:56:15 +0100
-Message-Id: <20191130145617.1490233-1-martin.blumenstingl@googlemail.com>
+Subject: [PATCH 1/2] soc: amlogic: meson-ee-pwrc: propagate PD provider
+ registration errors
+Date: Sat, 30 Nov 2019 15:56:16 +0100
+Message-Id: <20191130145617.1490233-2-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191130145617.1490233-1-martin.blumenstingl@googlemail.com>
+References: <20191130145617.1490233-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191130_065633_410083_256C9EAE 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191130_065633_720250_7BA0281D 
+X-CRM114-Status: GOOD (  12.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,22 +110,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While working on power domain support for the 32-bit SoCs I had some
-crashes when trying to actually use the power domains. Turns out I had
-a bug in my patches which add support for the older SoCs to
-meson-ee-pwrc. However, I didn't notice these because the driver probed
-just fine.
+of_genpd_add_provider_onecell() can return an error. Propagate the error
+so the driver registration fails when of_genpd_add_provider_onecell()
+did not work.
 
-This is my attempt to spot "problems" (bugs in my code) earlier.
+Fixes: eef3c2ba0a42a6 ("soc: amlogic: Add support for Everything-Else power domains controller")
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+---
+ drivers/soc/amlogic/meson-ee-pwrc.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-
-Martin Blumenstingl (2):
-  soc: amlogic: meson-ee-pwrc: propagate PD provider registration errors
-  soc: amlogic: meson-ee-pwrc: propagate errors from pm_genpd_init()
-
- drivers/soc/amlogic/meson-ee-pwrc.c | 24 +++++++++++++++---------
- 1 file changed, 15 insertions(+), 9 deletions(-)
-
+diff --git a/drivers/soc/amlogic/meson-ee-pwrc.c b/drivers/soc/amlogic/meson-ee-pwrc.c
+index 5823f5b67d16..df734a45da56 100644
+--- a/drivers/soc/amlogic/meson-ee-pwrc.c
++++ b/drivers/soc/amlogic/meson-ee-pwrc.c
+@@ -441,9 +441,7 @@ static int meson_ee_pwrc_probe(struct platform_device *pdev)
+ 		pwrc->xlate.domains[i] = &dom->base;
+ 	}
+ 
+-	of_genpd_add_provider_onecell(pdev->dev.of_node, &pwrc->xlate);
+-
+-	return 0;
++	return of_genpd_add_provider_onecell(pdev->dev.of_node, &pwrc->xlate);
+ }
+ 
+ static void meson_ee_pwrc_shutdown(struct platform_device *pdev)
 -- 
 2.24.0
 
