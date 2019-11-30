@@ -2,83 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35D4110DF9C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 23:26:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C1D610DFA1
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 23:30:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oqkF2ToKjYh32Rg1jkSOhefaF2gwfLarwmqJrnqgkGg=; b=lvNt6qhIokmegB
-	RS/ZSlFRe0U4miyxXt0DD2oBDeB/P2LZnBfa2bPI7Dth9GhG+DEsEG2BGew1M+BuKrVLOe2a5wvw3
-	oMUvJCbAkSLDJY965HJnUbADS6Jlb/wFJ6ne9NX6EkLLONgs0KnJPD/JIFonN5SpX1GN4nzP8WAbc
-	xnqSCcXuXc2AJItEz65MOjECmVSIIUJ9Th1deaLyY46WHoasXlNSB0klxfwirBuboeeTV1kXZMiqd
-	rdkwVqehCvo3Ad6qh9rPHxbLjZHPRZTVUEZ3Jtj8olYMF7Ve4FZYc7l4C7sKqLRAR/4pvMsQ9eGb1
-	lUUJWL193tqokbX8sOpg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6+tRDwQK99mhuxMbZ4WdXTgsGu86gEHErn49z89RDbo=; b=EWzIMDYxh3VdIc
+	RgXvJZWXIR2zLMr25wjX94MtFYf4KT+5p45T4nPf7yNoUOpvFjBpWVBX6BcMHvc9GV2nUKPw2Fxm+
+	Ob9ai8w3evUMKgRP+YY+2dkTcL00l40f5/rgNSUYTMCOYYmw3123/UmdhkO4ZCJy3PLCRZK3KXuhf
+	7twB7UWJxbupOjh66iS4Cz37sGY5TfqV9Js75T+BpvEWlj0t56FFtYT7uY2ksgT/FZE/CcHfM5lxc
+	NwROMC91CV0jaxMh406utcwKmqgl6VnrNXL2gBllELpY8ebNVpkcmFtdtKRmk8eankmkgy6VD94u0
+	UaYvfpWUVcJ/2KVsoCIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibBBv-0005D9-E0; Sat, 30 Nov 2019 22:26:15 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1ibBGJ-00070x-0R; Sat, 30 Nov 2019 22:30:47 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibBBk-0005Bu-9h; Sat, 30 Nov 2019 22:26:05 +0000
-Received: by mail-wr1-x444.google.com with SMTP id y17so684128wrh.5;
- Sat, 30 Nov 2019 14:26:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=bupTiDGvcydZYN2Rnj/bXhOvQ014P8Ct3uBt5NbJKS8=;
- b=fi6nj6EVbWIV/2fhXGOQgkkRptg3mNzbFfVm4h7Lx3k31Gd/rdMvatqedH2AHz+fTI
- JA/tugb+Ci5XR+WmopY5bNT3Kyc/wh4bp+rlLoxlfqmtdV7Pnnj5aaoixosAp7mmvaqy
- jippza5lpblGhOfDmzNUK+vsBOeBoY0cQoW5dTGXBO4cOrf5mlZ3yiMxbScXD0aLIWt5
- Aes9ebuA77Em4dDWQ+DshvhfptHrVRohoWlsTXL6zRv+W32H2/MH5XIFvTcKQeXuUTR2
- Aij4/EWbitIheNds46i9dsiG36YypcQcwmsV80mFsBv7rxHKQsOZ2ptDJ247SzPm9uYC
- WDwA==
+ id 1ibBGA-00070b-Hb
+ for linux-arm-kernel@lists.infradead.org; Sat, 30 Nov 2019 22:30:39 +0000
+Received: by mail-lf1-x144.google.com with SMTP id l14so25120355lfh.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 30 Nov 2019 14:30:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Z4tOixWpgcrdjui38T5oTL+44XGlT7eV3jeFaOo0/CU=;
+ b=JUpwMiLS5buD2r0U3njb3GQpt0fCXwP17Q0ZUa6Jo+q2lhsRmjFmbjWLbTtas2sF59
+ 4BQA//Z9gPOq86l6QfB+uiuQI5tjuprAreaQetVwcpYuKgEQkdDVaP9ACd27aWjojJOh
+ z7bhwBsX9TQz/Vy9CfFVKh53pw4eA+x3Frzj08Sk40CHRwuvzZhhRDjEu8NsuESJqiKm
+ goKc3Sl/dzGfxpZSZrhC0uFJzOsYlaO/auX8MzdyS22mbUmgAgQTzM28OK4q/iOCqI2v
+ KSz9ZOqCe4xKnziGCMnS0V0HF1SwTTwIGs1kNFVezgjkjCGR+p2eeDifBu9FwI1cE49F
+ JKGg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=bupTiDGvcydZYN2Rnj/bXhOvQ014P8Ct3uBt5NbJKS8=;
- b=LdmB1CPDVba/Fc/MeJp4t9jG3VyDMQzfjWKLBz7cTVOk+LD51Yfk89hHZzLFZVY883
- sp2LvbyV9cWw/pQSk6WnKy1djUUDJXzUE30i6yqkU+BbVAqm/nED5TiSv6qTuXFTSya9
- kU8aOdTFQt5KEn1z+gKm//18oHhiwFI4xNAQ6UfkIz2Zkur+21CJY4BktwynRIthjvv7
- f7Ddh0mGTGF7m9d1T21jWtrAgX1Mt9DLDa5ScoGylEZJcZMp8kklpf+qxUYzo5XHcUVY
- jni0f+QpUqh1hbR2z9DEFSNFHg6Nl/FF4NjI79625aaxuB5dKLeiz2AIP77V4ULFNn+Z
- P/cg==
-X-Gm-Message-State: APjAAAXQVxZ8/zwy+pdlAJ47MzAsug/XF+Gli/5wT2R6CqXvRZxRGh7F
- xgb1IOD5FA7GLGnFU7h/cqYgY//a
-X-Google-Smtp-Source: APXvYqwjN3lyPniHb9sLZ4uyBqG1FGZjCFKXKddgkyxV/pen1ugXXLKQtr2k6+big4hC461LRG5JBw==
-X-Received: by 2002:adf:f5c2:: with SMTP id k2mr60867770wrp.118.1575152762350; 
- Sat, 30 Nov 2019 14:26:02 -0800 (PST)
-Received: from localhost.localdomain
- (p200300F1371CB100428D5CFFFEB99DB8.dip0.t-ipconnect.de.
- [2003:f1:371c:b100:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id i71sm36265650wri.68.2019.11.30.14.26.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 30 Nov 2019 14:26:01 -0800 (PST)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: linux-amlogic@lists.infradead.org,
-	narmstrong@baylibre.com
-Subject: [PATCH] drm: meson: venc: cvbs: fix CVBS mode matching
-Date: Sat, 30 Nov 2019 23:25:55 +0100
-Message-Id: <20191130222555.2005375-1-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.24.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Z4tOixWpgcrdjui38T5oTL+44XGlT7eV3jeFaOo0/CU=;
+ b=GG6DAdLPV1jfhvkZfYBH1Lelq88mWhKPYTA0ZoGlVY0q8G4YH0hDnN/K157mgRfL2f
+ qOzgoDr8bAzNDMZ69CFkKGgzGsVYqdEHh/el3fQkE2v7TmlhdnK/xQfgWzYfs6u0BT2Y
+ mmiLe49mZPKEAZ9/A2JCV7DnRDEgrD5CLK7yxJfGGHakcE7H9h/xPFKnz0IfQpWJNdb9
+ sevKNm6RhkyIV2ZNtLIQ/2LLA/U+1m9YEsI3JeZXsh+ptGZ99hrXLr3mGJPActlvQxeO
+ T+mfDb0/PjtUT74fnOladNh/+ZqV5dO38D68qHS00sszNf/Gf++OeKKatCZk97+x4wwo
+ 3pCQ==
+X-Gm-Message-State: APjAAAVIP/jrfjNDRycUY/A3TTnnJLC3g/sQ41jMUOZ9FDn7iyDD0dIQ
+ ROd1ggXq4jRscN6vtkp8sM9+W+hqkg+dcw5Dok8=
+X-Google-Smtp-Source: APXvYqyuHeD4Xafj7MsA4yP65IUXVSAqx+KBRYqbOdUBNOl/5bFe92S3swaJTTlNZZO4J0bx19bSxo9sjure05JDEGc=
+X-Received: by 2002:ac2:50da:: with SMTP id h26mr4784575lfm.80.1575153036513; 
+ Sat, 30 Nov 2019 14:30:36 -0800 (PST)
 MIME-Version: 1.0
+References: <20191129234108.12732-1-aford173@gmail.com>
+ <20191129234108.12732-2-aford173@gmail.com>
+ <CAOMZO5AyLBrsxr5rqkWgf44X0CQdqHcdaCLRaWLC25b18bF+xw@mail.gmail.com>
+In-Reply-To: <CAOMZO5AyLBrsxr5rqkWgf44X0CQdqHcdaCLRaWLC25b18bF+xw@mail.gmail.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Sat, 30 Nov 2019 19:30:51 -0300
+Message-ID: <CAOMZO5ALQQxoWFC9J5ZwT6DtsuVg-FaWCcGbcPK=psokWWRF8Q@mail.gmail.com>
+Subject: Re: [PATCH 2/2] arm64: dts: Add GPC Support
+To: Adam Ford <aford173@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191130_142604_338422_37DEBA9B 
-X-CRM114-Status: GOOD (  11.41  )
+X-CRM114-CacheID: sfid-20191130_143038_607778_7F84F5F3 
+X-CRM114-Status: GOOD (  11.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -98,64 +94,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>, daniel@ffwll.ch,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Drop the picture_aspect_ratio from the drm_display_modes which are valid
-for the Amlogic Meson CVBS encoder. meson_venc_cvbs_encoder_atomic_check
-and meson_venc_cvbs_encoder_mode_set only support two very specific
-drm_display_modes.
+On Sat, Nov 30, 2019 at 7:25 PM Fabio Estevam <festevam@gmail.com> wrote:
+>
+> Hi Adam,
+>
+> On Fri, Nov 29, 2019 at 8:41 PM Adam Ford <aford173@gmail.com> wrote:
+>
+> > +
+> > +                       gpc: gpc@303a0000 {
+> > +                               compatible = "fsl,imx8mm-gpc";
+>
+> You could do like this instead:
+>
+> compatible = "fsl,imx8mm-gpc", "fsl,imx8mq-gpc";
+>
+> and then you don't need patch 1/2.
+>
+> Also, "fsl,imx8mm-gpc" needs to be documented.
 
-With commit 222ec1618c3ace ("drm: Add aspect ratio parsing in DRM
-layer") the drm core started honoring the picture_aspect_ratio field
-when comparing two drm_display_modes. Prior to that it was ignored.
-When the CVBS encoder driver was initially submitted there was no aspect
-ratio check.
+One more thing: when you add a v2, please specify the SoC name in the
+subject line:
 
-This patch fixes "kmscube" and X.org output using the CVBS connector
-with the Amlogic Meson VPU driver. Prior to this patch kmscube reported:
-  failed to set mode: Invalid argument
-Additionally it makes the CVBS mode checking behave identical to the
-sun4i (drivers/gpu/drm/sun4i/sun4i_tv.c sun4i_tv_mode_to_drm_mode) and
-ZTE (drivers/gpu/drm/zte/zx_tvenc.c tvenc_mode_{pal,ntsc}) which are
-both not setting "picture_aspect_ratio" either.
-
-Fixes: 222ec1618c3ace ("drm: Add aspect ratio parsing in DRM layer")
-Fixes: bbbe775ec5b5da ("drm: Add support for Amlogic Meson Graphic Controller")
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- drivers/gpu/drm/meson/meson_venc_cvbs.c | 2 --
- 1 file changed, 2 deletions(-)
-
-diff --git a/drivers/gpu/drm/meson/meson_venc_cvbs.c b/drivers/gpu/drm/meson/meson_venc_cvbs.c
-index 9ab27aecfcf3..2ddcda8fa5b0 100644
---- a/drivers/gpu/drm/meson/meson_venc_cvbs.c
-+++ b/drivers/gpu/drm/meson/meson_venc_cvbs.c
-@@ -49,7 +49,6 @@ struct meson_cvbs_mode meson_cvbs_modes[MESON_CVBS_MODES_COUNT] = {
- 				 720, 732, 795, 864, 0, 576, 580, 586, 625, 0,
- 				 DRM_MODE_FLAG_INTERLACE),
- 			.vrefresh = 50,
--			.picture_aspect_ratio = HDMI_PICTURE_ASPECT_4_3,
- 		},
- 	},
- 	{ /* NTSC */
-@@ -59,7 +58,6 @@ struct meson_cvbs_mode meson_cvbs_modes[MESON_CVBS_MODES_COUNT] = {
- 				720, 739, 801, 858, 0, 480, 488, 494, 525, 0,
- 				DRM_MODE_FLAG_INTERLACE),
- 			.vrefresh = 60,
--			.picture_aspect_ratio = HDMI_PICTURE_ASPECT_4_3,
- 		},
- 	},
- };
--- 
-2.24.0
-
+arm64: dts: imx8mm: Add GPC Support
 
 _______________________________________________
 linux-arm-kernel mailing list
