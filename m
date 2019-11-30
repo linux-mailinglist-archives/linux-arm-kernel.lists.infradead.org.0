@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54F4610DDF5
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 15:59:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDDB110DEAD
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 19:54:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t5IRATfTdTZlrBTLsbA22q+bHsDst+XRHE4Wmd9rz88=; b=iPzxvxI2JdnZEC
-	4A4Sgq30aCGHRqCfTppyoH+ot9bzHpRZib6Pk3vvd8WuC9g6cQnkzY2FHx4oHnk6VU6dbRre1Rb60
-	RTgvtIWXhJXuj+M5k/wtup+jipNZNhv+bzFS/dwVL9h8JUtx21YMm+PPU+osRXvZv9JNX2rmBc8vC
-	Tta0EfnVUG4PBTQUgGAzaqFfoNW6Cy+gd6v0Lr+x1tWY61ZOnoE7EnShuhhyDWqGXEfl75vx4Vj7Y
-	NWLuUzJEPrKgmrB+oD2dFwvV3lZP5zIe0kZAC8CBkMSnMGDzh6DMolpiwBi5+fE+OyarjUZAta8me
-	EwjN4UmTAAgYEAhE+EbA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CafUZymA4VAnCOG933yAxeQXFu0oAmT/eMf9FL6yMW0=; b=EoqqagW7/0woJo
+	i3uevSbz9SiZoscT7ytKehsuRTxudGdZKiowjURgF1htKM8OtPPAPUbRa+9NgvKHMy0CtlEw41grL
+	o6s5/bz45/gsmtIXNlCHdmBwNkvDtmkD8Z1iL6HuhSC80J5mYqfJ1ZXJZNYkXAIJ6jD7yLpDOi3e0
+	XFxmkFP5pLcOwS/yPHC7Rz6IMqJnV2FOnPOn9VcrlrZ9yn4cW2paKISXzB8GEjK+UlWvQz4qh5/Bw
+	0xMlUcw32brQsX3q+XEEZENVf4EJx+DuBtJ7+ozkeery+4uqfrl4WYBlOC0dIB5uW6HCa2sghLfIv
+	CTEYL7mUVrFKVRTlgqqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ib4DW-0008FK-Qc; Sat, 30 Nov 2019 14:59:26 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1ib7se-00051M-Im; Sat, 30 Nov 2019 18:54:08 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ib4Cd-0007e7-VW; Sat, 30 Nov 2019 14:58:34 +0000
-Received: by mail-wr1-x444.google.com with SMTP id q10so2292017wrm.11;
- Sat, 30 Nov 2019 06:58:31 -0800 (PST)
+ id 1ib7sS-0004zT-U6; Sat, 30 Nov 2019 18:53:58 +0000
+Received: by mail-wm1-x342.google.com with SMTP id u8so2874198wmu.0;
+ Sat, 30 Nov 2019 10:53:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=bUD5FdR6g2ASiBzE14YJrcmNzasb1Y2tz62iUE7N/xc=;
- b=UBvp/ytW4dLm9uvAfDdpEY+sIk0DHBNJsf9eC1RyWRYMIsvDbpmkW8ofy4BC422sTB
- +M1vbn1upImJvydQUcRb4uFJUGQ1E5v6u5UUXQmjkpNllnVCIKwLpd/Loc1l0imHGbNh
- vGOWZTXZ/SHfuhcvMyCAtqoL3oewv7FnK3qiAL4MVjFYXNpK7qUD09bx+r6UDzuqvVqT
- 7Q/uxFF/rrWw9q3VcXMdweNFjbc4ehrHVXkXTRN6bX7tGo6FHh3ZqvzJNv9vbfG29tl7
- 3TUbqM4XsXs+xz8ovggd2m9Mvwlk81d855Xx9aBSCZjxWhua+JIFgMgcO0zHtV8/riLJ
- MaIg==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=+kgxHfmrLrW74snZZglbmg5V/YCpIUHU33YjewUkzMA=;
+ b=tBO5/eSaNaTn3qZ5phIDYDVnDD/KurOdupHxeZOSTuhWIP8nSsFhAm/g9TZ0MrOTty
+ N1qkRdu2uEu15LuO9FJnXJqk1y44ZBoz7uU6bpqfP2TJwRDdmGUEzBLoxukNyke6HTSa
+ YeJ8SbdVnjX6KTlHHDtBtHmqfAyWwR4xPF/kLZKjPI9HGtTZwx+RKsgEKzrqG5WmPFJ+
+ 0kPEihJQsJvLZ+U9OaXyaxUv4GQCj2xX/Acro4FowuGOnyRGCoLdaLQRP1DVrLm/Uq6q
+ RJ9hjfDX81UtmVAOOJVIh/0hvyR4h5ZWaacb+Nw4Z5JpCaqU6p8e3ONvzpVA1aoakD7p
+ 8ZMA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=bUD5FdR6g2ASiBzE14YJrcmNzasb1Y2tz62iUE7N/xc=;
- b=dZLMxa70mEEF39wnUlLxviA5NsR9KBpGVrfrCEpVyhkY4cnpYh5Qrbks7ls9J1XGfl
- HA3EYLlckRAVqNBejuF2VhocxAkHlBOsxe5JzgRgwvNXFUCAtV+jnCCA6tKsQNN2CgXA
- gd8GSqv8cJlx69TfDZiyQHJRJ3x8RU6bAyQKgbnQink91LgEFnjtxgPnU/Ltp5DQLqtm
- zKFtqNFjTK/P2CGQuC+R/D5HXQfo0jRqVpH8fwmOqDS3h1zu4jgsfXMtp/eqvs4oOep2
- h7/Dkf6ynWkpV+J2LNnCJBJRTVzeBdT3cKkBj556wXsE3Is5h2UM6N24YcYY3bzKtMn8
- 89Nw==
-X-Gm-Message-State: APjAAAWQ26fJUHjxmMtduCOjhhi5zKJvCbT8mB3HJ3Q21oU7E7NITngn
- QSSfFaE0LPw6Bmc/b2vNaK/VVeSy
-X-Google-Smtp-Source: APXvYqw7/FFUtU7ZgBNzxnCt5W3VfthKgCKSSFdtQHPDyIi7xYUPTHYjqDMaMOPtQVwn54Dr0WNesQ==
-X-Received: by 2002:adf:da4d:: with SMTP id r13mr42788144wrl.307.1575125909679; 
- Sat, 30 Nov 2019 06:58:29 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=+kgxHfmrLrW74snZZglbmg5V/YCpIUHU33YjewUkzMA=;
+ b=WT1dwgh1hIY5wRLCjPP3uDasqgcPYvQ2mhitsFKkKopa4L7NshpLuSqIjDQ/K1Z+JS
+ GbeaI9lnIVDrbK6i/xAg62YEwXp3k6pRhfJANoY4qipZGGNR6pclcM8vGgkG+DBRsddL
+ Tl5HGmgqQB5sxTpJKCHl/0ajlaAva+oIoDgaupwnE9C0WbTyv2MDMrrBy3sq0x25HGmV
+ LLc/r3WcecUfPQJF6Ph3OYr6WzIB+RNbLSSdKT7cKtwdtuAn7FnQIzgnkoip9dyH3lta
+ tCEkbCFTxtHaplQ18hCT3ETSPviARu0YaMgQtY1fJkQax5q1528FNL/jpDCTlig7dQf7
+ goVg==
+X-Gm-Message-State: APjAAAVJQoUvZDkptacHyjDEB77jI73h251Wu8dy/gacqHFKRRWPulP9
+ bXycU9L+Kvu2kNK0e6SCLlYdDINy
+X-Google-Smtp-Source: APXvYqy+AptLFvOg56oiPA3eBF+V/0bqwP6CitN+KxZd1XEwAi/fIeyCYGRVq/t79HRYvwAZ1FDOOg==
+X-Received: by 2002:a1c:a5c2:: with SMTP id o185mr19716529wme.35.1575140034761; 
+ Sat, 30 Nov 2019 10:53:54 -0800 (PST)
 Received: from localhost.localdomain
  (p200300F1371CB100428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:371c:b100:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id c9sm3510202wmc.47.2019.11.30.06.58.28
+ by smtp.googlemail.com with ESMTPSA id r6sm19295637wrq.92.2019.11.30.10.53.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 30 Nov 2019 06:58:28 -0800 (PST)
+ Sat, 30 Nov 2019 10:53:54 -0800 (PST)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: linux-amlogic@lists.infradead.org, khilman@baylibre.com,
- narmstrong@baylibre.com
-Subject: [PATCH RESEND v1 2/2] soc: amlogic: meson-ee-pwrc: propagate errors
- from pm_genpd_init()
-Date: Sat, 30 Nov 2019 15:58:21 +0100
-Message-Id: <20191130145821.1490349-3-martin.blumenstingl@googlemail.com>
+To: p.zabel@pengutronix.de,
+	linux-amlogic@lists.infradead.org
+Subject: [PATCH] dt-bindings: reset: meson8b: fix duplicate reset IDs
+Date: Sat, 30 Nov 2019 19:53:37 +0100
+Message-Id: <20191130185337.1757000-1-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191130145821.1490349-1-martin.blumenstingl@googlemail.com>
-References: <20191130145821.1490349-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191130_065832_013452_9608B906 
-X-CRM114-Status: GOOD (  12.55  )
+X-CRM114-CacheID: sfid-20191130_105357_000194_B8AFD408 
+X-CRM114-Status: UNSURE (   9.58  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -102,63 +100,45 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, narmstrong@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-pm_genpd_init() can return an error. Propagate the error code to prevent
-the driver from indicating that it successfully probed while there were
-errors during pm_genpd_init().
+According to the public S805 datasheet the RESET2 register uses the
+following bits for the PIC_DC, PSC and NAND reset lines:
+- PIC_DC is at bit 3 (meaning: RESET_VD_RMEM + 3)
+- PSC is at bit 4 (meaning: RESET_VD_RMEM + 4)
+- NAND is at bit 5 (meaning: RESET_VD_RMEM + 4)
 
-Fixes: eef3c2ba0a42a6 ("soc: amlogic: Add support for Everything-Else power domains controller")
+Update the reset IDs of these three reset lines so they don't conflict
+with PIC_DC and map to the actual hardware reset lines.
+
+Fixes: 79795e20a184eb ("dt-bindings: reset: Add bindings for the Meson SoC Reset Controller")
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- drivers/soc/amlogic/meson-ee-pwrc.c | 20 ++++++++++++++------
- 1 file changed, 14 insertions(+), 6 deletions(-)
+ include/dt-bindings/reset/amlogic,meson8b-reset.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/soc/amlogic/meson-ee-pwrc.c b/drivers/soc/amlogic/meson-ee-pwrc.c
-index df734a45da56..3f0261d53ad9 100644
---- a/drivers/soc/amlogic/meson-ee-pwrc.c
-+++ b/drivers/soc/amlogic/meson-ee-pwrc.c
-@@ -323,6 +323,8 @@ static int meson_ee_pwrc_init_domain(struct platform_device *pdev,
- 				     struct meson_ee_pwrc *pwrc,
- 				     struct meson_ee_pwrc_domain *dom)
- {
-+	int ret;
-+
- 	dom->pwrc = pwrc;
- 	dom->num_rstc = dom->desc.reset_names_count;
- 	dom->num_clks = dom->desc.clk_names_count;
-@@ -368,15 +370,21 @@ static int meson_ee_pwrc_init_domain(struct platform_device *pdev,
-          * prepare/enable counters won't be in sync.
-          */
- 	if (dom->num_clks && dom->desc.get_power && !dom->desc.get_power(dom)) {
--		int ret = clk_bulk_prepare_enable(dom->num_clks, dom->clks);
-+		ret = clk_bulk_prepare_enable(dom->num_clks, dom->clks);
- 		if (ret)
- 			return ret;
- 
--		pm_genpd_init(&dom->base, &pm_domain_always_on_gov, false);
--	} else
--		pm_genpd_init(&dom->base, NULL,
--			      (dom->desc.get_power ?
--			       dom->desc.get_power(dom) : true));
-+		ret = pm_genpd_init(&dom->base, &pm_domain_always_on_gov,
-+				    false);
-+		if (ret)
-+			return ret;
-+	} else {
-+		ret = pm_genpd_init(&dom->base, NULL,
-+				    (dom->desc.get_power ?
-+				     dom->desc.get_power(dom) : true));
-+		if (ret)
-+			return ret;
-+	}
- 
- 	return 0;
- }
+diff --git a/include/dt-bindings/reset/amlogic,meson8b-reset.h b/include/dt-bindings/reset/amlogic,meson8b-reset.h
+index c614438bcbdb..fbc524a900da 100644
+--- a/include/dt-bindings/reset/amlogic,meson8b-reset.h
++++ b/include/dt-bindings/reset/amlogic,meson8b-reset.h
+@@ -46,9 +46,9 @@
+ #define RESET_VD_RMEM			64
+ #define RESET_AUDIN			65
+ #define RESET_DBLK			66
+-#define RESET_PIC_DC			66
+-#define RESET_PSC			66
+-#define RESET_NAND			66
++#define RESET_PIC_DC			67
++#define RESET_PSC			68
++#define RESET_NAND			69
+ #define RESET_GE2D			70
+ #define RESET_PARSER_REG		71
+ #define RESET_PARSER_FETCH		72
 -- 
 2.24.0
 
