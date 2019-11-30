@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABCB510DDA0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 13:32:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F051D10DDDC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 15:09:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tRFpLIx/+imMoig4qI0ndVsBpV7kUpd/eyKxK12WOE8=; b=B0X
-	dg/0p38R7pmxVuFmcHebasTICr9z5aNy5BvwImRTB3/xLaQmhc9SKgjBBEnSvshr84YzJEnfUovbi
-	q3ZclDEDSZo/PN7lHhbuhX+79Iu3sNIzSENbBLWcNGHkA4FBsdLmJyDFLikmOxfLHHYkE9DPbkpEo
-	xG4Roz4mEGq6cUauMDfI0JNAEF4yzsretlX2ZAnMOlVLkiQ50zS/jcy2OAsa52RaL/XaFDlvz3s+D
-	FrfgRUqZtDwA+y6EVrlqOMpJQEy3Qdcvr6zU8ZUUxsFJJS9nkp/xujw3s//GzbX1iES0qpjbUr2dV
-	l1R0xxqxqZBJjO3fw0xp5lU330jjdjw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lThe1f2NaQfiJsAZ4GW7g9QFkJ/AflPq8/w/tTDs1Dw=; b=IgtLWHmqaEtWWz
+	z1e1Gs9wzpSgO6onC4HKqmjg5Y7SXgi0VFV+GE3d+0fn+Xn93USbFSgDBpi/MNmdPIrB1PCO/ehk7
+	t20G4y0IbwgOeMmicfbWvSJg8/TcsmkpKNLlNCmerW1CpOtyVfEmURT8bfbd10k893YwzzdQ0hXBG
+	UvOsFr664gDCNfCf0MMw8Jg3N51Q1F6kDpXJUeLRCsT6h/jU4kVQwHIloUeolit7QDRbVRiNQXU+5
+	evObGXi+B/ZHRjgD2qAJ9CaWgmAUu4ORvyjLVMjhkOqYLfVeMjpCb3VuKq00azn+As/VcQ4Snq9Zb
+	uRr1GLb69S2u4EzED/GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ib1up-0006TN-BZ; Sat, 30 Nov 2019 12:31:59 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1ib3RU-0000OQ-Qb; Sat, 30 Nov 2019 14:09:48 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ib1ui-0006Sp-1n; Sat, 30 Nov 2019 12:31:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1575117101;
- bh=oXBpO8xtFCWk1OwtXAQzPjXIN3wBNzah/skH+/2fT1A=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=MknSO2kTWXw7LhuBY0xNQZ44W/gvblzA9Xm0EjLAcz9i1C3XcZpWMeGW1ZhWt/nl0
- TUDtZ5dqHObQ4hCBBX9IL5lS7wcFTzQV1kM+FxEXDbNsgQkfSOoQyyuJuM2fsrzKwq
- ay42rUbTLQjyWoQgcOyF1izhwMWCnXwIxnpHP0Oo=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from localhost.localdomain ([37.4.249.167]) by mail.gmx.com
- (mrgmx005 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 1Mj8mV-1i7lVI2II1-00fD4h; Sat, 30 Nov 2019 13:31:41 +0100
-From: Stefan Wahren <wahrenst@gmx.net>
-To: Florian Fainelli <f.fainelli@gmail.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH] ARM: dts: bcm283x: Fix critical trip point
-Date: Sat, 30 Nov 2019 13:31:13 +0100
-Message-Id: <1575117073-5990-1-git-send-email-wahrenst@gmx.net>
-X-Mailer: git-send-email 2.7.4
-X-Provags-ID: V03:K1:TnK9vmD0g3JCztO+URU69VRqdAYJzHs+nwwfWHPsw7LxQtMw5Jh
- KsXui6qu36Ay5s7DpLaumEOiSJ0nLC6kjs+oEPjvP0qb7fETosjB8WW6LzhDhDI60P8TgwQ
- n9ZDJXEumCCYEPMdb8TJr14MGo6w4jERxD0ckRz+Rf6s3HlvRllOaeKP/jDW+6TVaJELpfL
- X4Q8BOzuFNnl/OUQNtbQw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:fLyRrZcc6Lo=:UmCtmbbDwkkHFajJDosBH4
- J35iiFaNd/EELxd13M4dPnt9NvWNP437ZpnpVgsvBnr7eNfZCR7zbw8+0rbbMdgAULBAz/l4v
- N7yUbuEAkQTUGjmPmUeUOF13djmAsWmxqakm1VW24dwjfJMqR570/bD79tEmj0oLswq4S3ASU
- xribZOy7Qi4Gs7+6/GpAJXc0wa0CwxNK+MXVs9Kijbd9dX4lO3aMzR5SQMRHW3CKHAA4ob/q2
- 59S+Xhz2R+YJy7Jf1Q7uzepifq3NjVeY+QkZlI8gCz5KReY3BvCzxMnO9nXxD0O7sdQTmu/oC
- qp5o4Xfa4QJ2OJeCykYBxalxSy/kWU4Pf9a+0x9kal1+mErrbGtvxpP7PjwmLuIj6HoyhRq7x
- kFk95iAdXmY4Aebx97oMhA+uo7E/p5fm+oISn4P+6F/vRdQjICLC/uxsGEG+6A/pWzDwWlP23
- 1PhTzWB6V5PsxCakHVR8bq/2Lsm5LIp4Mya6DtqQUXtXae+wVyKdkLchPdXwjCacMMuUsY+9e
- OX66MjK13u+vJ9L03jIhFMQjqBhlLmNcL1gaQXaJHKNbIGysW8WkiLPw5bsxkrlQeMDaT2rA3
- e2uMs3tjXijhcodeK5QJ5BfNvSpIg6ul/UTnI7/f2V5CMrmDPuX/Tgj0jRX9uHwsCShlLx5JF
- hG9P/Zvsji9NcuZwcCp4y4GCFohUYNEZ4OuCIpLvOXZ6HBUabMdrvf5yEusPqgwsz+UF4wseg
- kIHdbM5dzX/j/9GXUI9tZkRIRrYtTYka6pLyIgmf7Y3WjkSLF93q6uu9yX9Ls3Ya5FvhJScZZ
- FxEygmpuw4ckxeSk76HCyIKRlpt0m0KKv2T1SSLl08PI3C147pADUm+0K3zkWWxH7fRaBwcN5
- PCDDfjIxgtf8rVwGPNtfqiK6YxnXVMmK0UNV4FjvMMf2QZF6wFBzunqLtwcd8qQSFcTaPVrfV
- BpeLg1wf4+yMq5hj9tDgbsjLLPmzn4NY4rHJDCwTg/vuEV/5HkzpW4FRRieY3Z+2mg+ikmFcN
- GooG6d7e2gIgwHrf7oPnqJacUa5UWBYfI6wMvsNhXe3QUiiNqkK3C1ULeLaY2QT7JtbdnQQH8
- mRTdoCEaFZaB9LCYXmf3dcHVGSzTiDtoVRW5rtyxLji+qQt6uHjsz1LCv1FelzKPmOqn6Hxo1
- iyv13lUA/wm3epOvlSUdnEAjPgr/uVWnYUHi1joR1uOG6wBCV9r7upBdOGFiAMyxmseXMwsH0
- GTeU9peL/dQWTsOIdKlH5/q6DgUd/nWGy5iCgHA==
+ id 1ib3RK-0000O1-Sj
+ for linux-arm-kernel@lists.infradead.org; Sat, 30 Nov 2019 14:09:40 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id o11so59931pjp.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 30 Nov 2019 06:09:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=FKtvrB0Mt1dPDCU0lQQZ0+l4lFfg4eSb8vzPxs0x5Z8=;
+ b=NMkJgp7dKL3T2uJcSbqnKzitPUjziDIfJ3LtXAhLmdnMzmv40dWWMkIqR1yKeiK+sI
+ wCpyM5e8aHnsEfAZblNQgMSBbCbB8v2WFqNdByM6hZ3+z1o87nyVUenCwdt74D4+ulIO
+ hAkbVXihxpLwP842/1Leq7lDEJr1QpvEeTE30S/uHthFsrG1XRv9Hx9was377htC/oBL
+ g2K7hL6jrlQnP32lkWxK4Z54hEcMCXTbNwYEhUaTTfnUNX7qoivwHzVexEkbfpDXHZoK
+ dmFi1XUaUbRfELLhcxQKs3S8F/R0o7A5bm8aDCkpbf5pVHtNV5B/JPdlS6CxxUiSIk5a
+ uVaA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=FKtvrB0Mt1dPDCU0lQQZ0+l4lFfg4eSb8vzPxs0x5Z8=;
+ b=MqYaKajgpNp2CAxFVWoShHeLroSO/y9IRHj7HvufnZTnyMPbU6Qn5czkosdhRmXqyE
+ QUfYT8EEjjEjoZuXX6LTbcFKH0GU8s70BJsF5j0BPQbUfsbZ2+vmj/U1cJjuujK1YQMw
+ HoTQn2zX6jbf1aWb4iAUFrQY2/KmLQwadyKsh/la7BovXANXcPzu/mmKjSQqWrw+0cTU
+ rpkEsSvcpMe1iAi24vWDmgk37Hl09ViZYDeLol7uhiZrzWtPzcJWCdBV23XOWXwLehto
+ tLKo5lRuQOA7aPrrqgwapjPxK1HBxrzS8jz1n8d335/o1/EKoHp46yob5aoEGvqriOrq
+ obhg==
+X-Gm-Message-State: APjAAAUxdptaolCXp1lvOmYdIRUWwRUoXdGMmrD2JQXQqmPmvX0BDyXf
+ EOFwD4iZZTV5vWOTSJ5ZN6Br
+X-Google-Smtp-Source: APXvYqzDwytiCfrEZJAt8NDxceGrzYgYfocCmVVy6k9xea1LbWHW7Mwlsg5/EklXVb4xjzRje9x+UQ==
+X-Received: by 2002:a17:90a:c697:: with SMTP id
+ n23mr434520pjt.37.1575122976893; 
+ Sat, 30 Nov 2019 06:09:36 -0800 (PST)
+Received: from Mani-XPS-13-9360 ([2409:4072:980:53e7:19a8:fb8d:d702:6994])
+ by smtp.gmail.com with ESMTPSA id p16sm28346128pgm.8.2019.11.30.06.09.31
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 30 Nov 2019 06:09:36 -0800 (PST)
+Date: Sat, 30 Nov 2019 19:39:29 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH 3/5] media: i2c: imx290: Add RAW12 mode support
+Message-ID: <20191130140929.GA23629@Mani-XPS-13-9360>
+References: <20191129190541.30315-1-manivannan.sadhasivam@linaro.org>
+ <20191129190541.30315-4-manivannan.sadhasivam@linaro.org>
+ <CAOMZO5Btkd0NLM5RBFZHD5dryE7mR5JZRLC2X__pQNmjHGCywA@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAOMZO5Btkd0NLM5RBFZHD5dryE7mR5JZRLC2X__pQNmjHGCywA@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191130_043152_423179_C281A28F 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20191130_060938_956017_FC29B93F 
+X-CRM114-Status: GOOD (  11.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -94,48 +97,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
-MIME-Version: 1.0
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, c.barrett@framos.com,
+ linux-kernel <linux-kernel@vger.kernel.org>, a.brela@framos.com,
+ Peter Griffin <peter.griffin@linaro.org>, Sakari Ailus <sakari.ailus@iki.fi>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-During definition of the CPU thermal zone of BCM283x SoC family there was
-a misunderstanding of the meaning "criticial trip point" and the thermal
-throttling range of the VideoCore firmware. The latter one takes effect
-when the core temperature is between 80 and 85 degree celsius. So the
-current critical trip point doesn't make sense, because the
-thermal shutdown appears before the firmware has a chance to throttle the
-ARM core(s).
+Hi Fabio,
 
-Fix these unwanted shutdowns by increasing the critical trip point
-to a value which shouldn't be reached with working thermal throttling.
+On Fri, Nov 29, 2019 at 04:49:25PM -0300, Fabio Estevam wrote:
+> Hi Manivannan,
+> 
+> On Fri, Nov 29, 2019 at 4:07 PM Manivannan Sadhasivam
+> <manivannan.sadhasivam@linaro.org> wrote:
+>                }
+> > +
+> > +               imx290->bpp = 10;
+> > +
+> > +               break;
+> > +       case MEDIA_BUS_FMT_SRGGB12_1X12:
+> > +               ret = imx290_set_register_array(imx290, imx290_12bit_settings,
+> > +                                               ARRAY_SIZE(
+> > +                                                       imx290_12bit_settings));
+> 
+> Could you please write the ARRAY_SIZE and its parameter in the same line?
+> 
+> It would improve readability.
+> 
 
-Fixes: 0fe4d2181cc4 ("ARM: dts: bcm283x: Add CPU thermal zone with 1 trip point")
-Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
----
- arch/arm/boot/dts/bcm283x.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+I don't favor this change but Sakari did this to supress the checkpatch
+warning while applying my initial patch, so now I did this here itself
+to maintain the uniformity.
 
-diff --git a/arch/arm/boot/dts/bcm283x.dtsi b/arch/arm/boot/dts/bcm283x.dtsi
-index 3caaa57..8394916 100644
---- a/arch/arm/boot/dts/bcm283x.dtsi
-+++ b/arch/arm/boot/dts/bcm283x.dtsi
-@@ -37,7 +37,7 @@
+Thanks,
+Mani
 
- 			trips {
- 				cpu-crit {
--					temperature	= <80000>;
-+					temperature	= <90000>;
- 					hysteresis	= <0>;
- 					type		= "critical";
- 				};
---
-2.7.4
-
+> Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
