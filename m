@@ -2,80 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C1D610DFA1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 23:30:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D40BD10DFAA
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 23:50:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6+tRDwQK99mhuxMbZ4WdXTgsGu86gEHErn49z89RDbo=; b=EWzIMDYxh3VdIc
-	RgXvJZWXIR2zLMr25wjX94MtFYf4KT+5p45T4nPf7yNoUOpvFjBpWVBX6BcMHvc9GV2nUKPw2Fxm+
-	Ob9ai8w3evUMKgRP+YY+2dkTcL00l40f5/rgNSUYTMCOYYmw3123/UmdhkO4ZCJy3PLCRZK3KXuhf
-	7twB7UWJxbupOjh66iS4Cz37sGY5TfqV9Js75T+BpvEWlj0t56FFtYT7uY2ksgT/FZE/CcHfM5lxc
-	NwROMC91CV0jaxMh406utcwKmqgl6VnrNXL2gBllELpY8ebNVpkcmFtdtKRmk8eankmkgy6VD94u0
-	UaYvfpWUVcJ/2KVsoCIw==;
+	List-Owner; bh=1geYsRh2D6ZNN7tkXw2ypm6gwGW2DWO+VjamdOTgWoU=; b=tHjhC0BQengbZ/
+	QpsdnZ8NFH8ziyHL9BMUsEQ46o0ShNF5dvf5ZdBDq0DHGvtrLVKW7d/Az2FrtoiUlumg0TY/PAj1Y
+	rKHhlKKIVtzGcqvCaZfw6d/jcBAsH7tLkXSPaBAkyrlrAQ+de8EsekErGTLj+EymdfkmrOg6Fw63L
+	3PyW3xeZDerKa5Lw8BaGY/HeKJaBM3+Q6+dLZgZrPX+l30m9AMeCwPJJvh0Ai+pej3NZBAI6+I80I
+	WvTR4SkUUkYCyHNwXoOVpgmnrfrgjdYqgL5iyasmpmGOqPM5CvSIWyjdkVQ9JLfMKpVwEbgNTMi7r
+	OBME3Nqgh372lKiNRk4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibBGJ-00070x-0R; Sat, 30 Nov 2019 22:30:47 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1ibBZF-0004pH-QQ; Sat, 30 Nov 2019 22:50:21 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibBGA-00070b-Hb
- for linux-arm-kernel@lists.infradead.org; Sat, 30 Nov 2019 22:30:39 +0000
-Received: by mail-lf1-x144.google.com with SMTP id l14so25120355lfh.10
+ id 1ibBZ7-0004o8-Iq
+ for linux-arm-kernel@lists.infradead.org; Sat, 30 Nov 2019 22:50:14 +0000
+Received: by mail-io1-xd43.google.com with SMTP id v18so5156038iol.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 30 Nov 2019 14:30:37 -0800 (PST)
+ Sat, 30 Nov 2019 14:50:10 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Z4tOixWpgcrdjui38T5oTL+44XGlT7eV3jeFaOo0/CU=;
- b=JUpwMiLS5buD2r0U3njb3GQpt0fCXwP17Q0ZUa6Jo+q2lhsRmjFmbjWLbTtas2sF59
- 4BQA//Z9gPOq86l6QfB+uiuQI5tjuprAreaQetVwcpYuKgEQkdDVaP9ACd27aWjojJOh
- z7bhwBsX9TQz/Vy9CfFVKh53pw4eA+x3Frzj08Sk40CHRwuvzZhhRDjEu8NsuESJqiKm
- goKc3Sl/dzGfxpZSZrhC0uFJzOsYlaO/auX8MzdyS22mbUmgAgQTzM28OK4q/iOCqI2v
- KSz9ZOqCe4xKnziGCMnS0V0HF1SwTTwIGs1kNFVezgjkjCGR+p2eeDifBu9FwI1cE49F
- JKGg==
+ :cc; bh=aSm4m1BOCZlWJCq+mZdak/muf8CTMd2nru46ETkG3PE=;
+ b=sUIEvkwxjGipfViu4Qtq1qVaUr0TxcZhsiLEzUXr15FnsUoaakNu2cuQyav66wlCVB
+ 1qKWWbdpUjpUuFQRk37jLudwTy1OaJsadey7XH41fDkawO2cxN/g2nI7kHvmdIbthwUF
+ zfe2X36M/asGIQbEj6ZcLmqrjh7uqiSRGY5/MN21gn5y2/Qr9eo2K/h5QFLVPLePFWbX
+ A9J6t86T+mng8f0gxzRmOy1C1xtJHaRSokEkSHD2GCjXBSPkc6vcUe9EgLiFC2xLHt3e
+ z46u/W9g4Po5VIurkkIjs7w8NZNKkJX8A1mkAgrguT5eM0Z83tY5so/gVFQZeCF4AI3v
+ 0Vqw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Z4tOixWpgcrdjui38T5oTL+44XGlT7eV3jeFaOo0/CU=;
- b=GG6DAdLPV1jfhvkZfYBH1Lelq88mWhKPYTA0ZoGlVY0q8G4YH0hDnN/K157mgRfL2f
- qOzgoDr8bAzNDMZ69CFkKGgzGsVYqdEHh/el3fQkE2v7TmlhdnK/xQfgWzYfs6u0BT2Y
- mmiLe49mZPKEAZ9/A2JCV7DnRDEgrD5CLK7yxJfGGHakcE7H9h/xPFKnz0IfQpWJNdb9
- sevKNm6RhkyIV2ZNtLIQ/2LLA/U+1m9YEsI3JeZXsh+ptGZ99hrXLr3mGJPActlvQxeO
- T+mfDb0/PjtUT74fnOladNh/+ZqV5dO38D68qHS00sszNf/Gf++OeKKatCZk97+x4wwo
- 3pCQ==
-X-Gm-Message-State: APjAAAVIP/jrfjNDRycUY/A3TTnnJLC3g/sQ41jMUOZ9FDn7iyDD0dIQ
- ROd1ggXq4jRscN6vtkp8sM9+W+hqkg+dcw5Dok8=
-X-Google-Smtp-Source: APXvYqyuHeD4Xafj7MsA4yP65IUXVSAqx+KBRYqbOdUBNOl/5bFe92S3swaJTTlNZZO4J0bx19bSxo9sjure05JDEGc=
-X-Received: by 2002:ac2:50da:: with SMTP id h26mr4784575lfm.80.1575153036513; 
- Sat, 30 Nov 2019 14:30:36 -0800 (PST)
+ bh=aSm4m1BOCZlWJCq+mZdak/muf8CTMd2nru46ETkG3PE=;
+ b=TnAg9p6t0T50ASnSIEEIy5eW4ZXiPCyfGanHUdvXvzYL35DchVFw0oLjL1UaDFWAUQ
+ uhbycQOUWYxQJUV7YwiFP2m4tHcvfM+OSRC4qQLr07UTQON29OWRVawJAOBsp6z0Og66
+ akSm8wzzWxhvnsIAJBDuW29HF/0VeU855dBLdYRsyYG2AwItHq+HnHC4m9/RSrflclHP
+ xYyiRVB0cLG1LcaOW5PJt44668raWloCbXOeKg7+SxeR46S9I3j4okSn/r18bhPlLMca
+ Wluh2CglHXlugtmDm/92TrjxFyKPsdwHNAyH+2J5PtQkOaO+FoAp1SALw3Mlpx9+NGzr
+ svbA==
+X-Gm-Message-State: APjAAAU6lE/Jl7nS/El4oiOUKxvGxATVLaKRDDJDccGf8s8yfk+bEhIG
+ TK5n/I++brLPZgjuTM4ljaPiMPLO/wiHCCjObfE=
+X-Google-Smtp-Source: APXvYqx9lxZ5l9irYpZzmpvtKFaAsoENmY6LFc6Y9ijpfal2ed8gNzhMRy9KR7bxZfhQZ3AoZPaQy5+d8qSSxHgrvBA=
+X-Received: by 2002:a02:5208:: with SMTP id d8mr9965664jab.55.1575154209616;
+ Sat, 30 Nov 2019 14:50:09 -0800 (PST)
 MIME-Version: 1.0
 References: <20191129234108.12732-1-aford173@gmail.com>
  <20191129234108.12732-2-aford173@gmail.com>
  <CAOMZO5AyLBrsxr5rqkWgf44X0CQdqHcdaCLRaWLC25b18bF+xw@mail.gmail.com>
-In-Reply-To: <CAOMZO5AyLBrsxr5rqkWgf44X0CQdqHcdaCLRaWLC25b18bF+xw@mail.gmail.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Sat, 30 Nov 2019 19:30:51 -0300
-Message-ID: <CAOMZO5ALQQxoWFC9J5ZwT6DtsuVg-FaWCcGbcPK=psokWWRF8Q@mail.gmail.com>
+ <CAOMZO5ALQQxoWFC9J5ZwT6DtsuVg-FaWCcGbcPK=psokWWRF8Q@mail.gmail.com>
+In-Reply-To: <CAOMZO5ALQQxoWFC9J5ZwT6DtsuVg-FaWCcGbcPK=psokWWRF8Q@mail.gmail.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Sat, 30 Nov 2019 16:49:58 -0600
+Message-ID: <CAHCN7x+zJt3i=Yw=2HjdtQa-rR4yMMvCMf319+wgMW0XQ=nF4g@mail.gmail.com>
 Subject: Re: [PATCH 2/2] arm64: dts: Add GPC Support
-To: Adam Ford <aford173@gmail.com>
+To: Fabio Estevam <festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191130_143038_607778_7F84F5F3 
-X-CRM114-Status: GOOD (  11.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191130_145013_650721_E7B0E547 
+X-CRM114-Status: GOOD (  14.87  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ provider (aford173[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -108,28 +111,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Nov 30, 2019 at 7:25 PM Fabio Estevam <festevam@gmail.com> wrote:
+On Sat, Nov 30, 2019 at 4:30 PM Fabio Estevam <festevam@gmail.com> wrote:
 >
-> Hi Adam,
->
-> On Fri, Nov 29, 2019 at 8:41 PM Adam Ford <aford173@gmail.com> wrote:
->
-> > +
-> > +                       gpc: gpc@303a0000 {
-> > +                               compatible = "fsl,imx8mm-gpc";
->
-> You could do like this instead:
->
-> compatible = "fsl,imx8mm-gpc", "fsl,imx8mq-gpc";
->
-> and then you don't need patch 1/2.
->
-> Also, "fsl,imx8mm-gpc" needs to be documented.
+> On Sat, Nov 30, 2019 at 7:25 PM Fabio Estevam <festevam@gmail.com> wrote:
+> >
+> > Hi Adam,
+> >
+> > On Fri, Nov 29, 2019 at 8:41 PM Adam Ford <aford173@gmail.com> wrote:
+> >
+> > > +
+> > > +                       gpc: gpc@303a0000 {
+> > > +                               compatible = "fsl,imx8mm-gpc";
+> >
+> > You could do like this instead:
+> >
+> > compatible = "fsl,imx8mm-gpc", "fsl,imx8mq-gpc";
+> >
+> > and then you don't need patch 1/2.
 
-One more thing: when you add a v2, please specify the SoC name in the
-subject line:
+I like that idea.
 
-arm64: dts: imx8mm: Add GPC Support
+> >
+> > Also, "fsl,imx8mm-gpc" needs to be documented.
+
+I held off intentionally because of all the txt->yaml conversion, I
+didn't want to get stuck in the middle of that.
+
+Would an tweak to the txt file be accepted?
+
+If not, should I just use the "fsl,imx8mq-gpc" and leave it alone?
+
+>
+> One more thing: when you add a v2, please specify the SoC name in the
+> subject line:
+>
+> arm64: dts: imx8mm: Add GPC Support
+
+Good catch.  Sorry about that.
+
+
+adam
 
 _______________________________________________
 linux-arm-kernel mailing list
