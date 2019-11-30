@@ -2,58 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9FDD10DCDB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 07:58:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABCB510DDA0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 13:32:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OR9bFBL8jZ8ml5UfLBUGbXYg2oTL6WnN32+/2l/gzJM=; b=NshH/on3GqXE3H9vz7aU5K1nR
-	453pm2BO6bpBpPlzaUG+xaMUJbKCEnba2nZ/uCO2GA0P1Nc+T/HS4ftXM6fabq+Elur1UIglAD8Qt
-	yOh9t2ed62A9jF9U3n1Cjbf6uv+krhxkVQCxf2mTEHFaF1VtlH6hKcE03OZvQNPn+tGdxTTsXQDOT
-	7PmynMWBcbC/ipKZhasN6Afaj5w0nJr2qNHIyZNmmu6DyJ+M6Jj2gdWvSLOlrYguzU7vjbDSIEX62
-	gb8KVCCEIFvXGV8VfMU7CxIpKfGv4DGBrPiwnT17mdP1XwE13fZeP8kZ2mmzrzYc6Vc2BI2qH4aIz
-	wOBtWeeSw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=tRFpLIx/+imMoig4qI0ndVsBpV7kUpd/eyKxK12WOE8=; b=B0X
+	dg/0p38R7pmxVuFmcHebasTICr9z5aNy5BvwImRTB3/xLaQmhc9SKgjBBEnSvshr84YzJEnfUovbi
+	q3ZclDEDSZo/PN7lHhbuhX+79Iu3sNIzSENbBLWcNGHkA4FBsdLmJyDFLikmOxfLHHYkE9DPbkpEo
+	xG4Roz4mEGq6cUauMDfI0JNAEF4yzsretlX2ZAnMOlVLkiQ50zS/jcy2OAsa52RaL/XaFDlvz3s+D
+	FrfgRUqZtDwA+y6EVrlqOMpJQEy3Qdcvr6zU8ZUUxsFJJS9nkp/xujw3s//GzbX1iES0qpjbUr2dV
+	l1R0xxqxqZBJjO3fw0xp5lU330jjdjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iawiK-0003ce-KH; Sat, 30 Nov 2019 06:58:44 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1ib1up-0006TN-BZ; Sat, 30 Nov 2019 12:31:59 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iawi9-0003cI-IR
- for linux-arm-kernel@lists.infradead.org; Sat, 30 Nov 2019 06:58:35 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 98767B9740C456E26BB8;
- Sat, 30 Nov 2019 14:58:24 +0800 (CST)
-Received: from [127.0.0.1] (10.133.216.73) by DGGEMS409-HUB.china.huawei.com
- (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0; Sat, 30 Nov 2019
- 14:58:17 +0800
-Subject: Re: [PATCH] kvm/arm64: change gicv3_cpuif to static likely branch
-To: Marc Zyngier <maz@kernel.org>
-References: <20191130031443.41696-1-guoheyi@huawei.com>
- <86mucdzx45.wl-maz@kernel.org>
-From: Guoheyi <guoheyi@huawei.com>
-Message-ID: <496cb45d-c312-295c-18f2-633ec5acc976@huawei.com>
-Date: Sat, 30 Nov 2019 14:58:16 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
-MIME-Version: 1.0
-In-Reply-To: <86mucdzx45.wl-maz@kernel.org>
-X-Originating-IP: [10.133.216.73]
-X-CFilter-Loop: Reflected
+ id 1ib1ui-0006Sp-1n; Sat, 30 Nov 2019 12:31:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1575117101;
+ bh=oXBpO8xtFCWk1OwtXAQzPjXIN3wBNzah/skH+/2fT1A=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=MknSO2kTWXw7LhuBY0xNQZ44W/gvblzA9Xm0EjLAcz9i1C3XcZpWMeGW1ZhWt/nl0
+ TUDtZ5dqHObQ4hCBBX9IL5lS7wcFTzQV1kM+FxEXDbNsgQkfSOoQyyuJuM2fsrzKwq
+ ay42rUbTLQjyWoQgcOyF1izhwMWCnXwIxnpHP0Oo=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from localhost.localdomain ([37.4.249.167]) by mail.gmx.com
+ (mrgmx005 [212.227.17.190]) with ESMTPSA (Nemesis) id
+ 1Mj8mV-1i7lVI2II1-00fD4h; Sat, 30 Nov 2019 13:31:41 +0100
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Florian Fainelli <f.fainelli@gmail.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: [PATCH] ARM: dts: bcm283x: Fix critical trip point
+Date: Sat, 30 Nov 2019 13:31:13 +0100
+Message-Id: <1575117073-5990-1-git-send-email-wahrenst@gmx.net>
+X-Mailer: git-send-email 2.7.4
+X-Provags-ID: V03:K1:TnK9vmD0g3JCztO+URU69VRqdAYJzHs+nwwfWHPsw7LxQtMw5Jh
+ KsXui6qu36Ay5s7DpLaumEOiSJ0nLC6kjs+oEPjvP0qb7fETosjB8WW6LzhDhDI60P8TgwQ
+ n9ZDJXEumCCYEPMdb8TJr14MGo6w4jERxD0ckRz+Rf6s3HlvRllOaeKP/jDW+6TVaJELpfL
+ X4Q8BOzuFNnl/OUQNtbQw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:fLyRrZcc6Lo=:UmCtmbbDwkkHFajJDosBH4
+ J35iiFaNd/EELxd13M4dPnt9NvWNP437ZpnpVgsvBnr7eNfZCR7zbw8+0rbbMdgAULBAz/l4v
+ N7yUbuEAkQTUGjmPmUeUOF13djmAsWmxqakm1VW24dwjfJMqR570/bD79tEmj0oLswq4S3ASU
+ xribZOy7Qi4Gs7+6/GpAJXc0wa0CwxNK+MXVs9Kijbd9dX4lO3aMzR5SQMRHW3CKHAA4ob/q2
+ 59S+Xhz2R+YJy7Jf1Q7uzepifq3NjVeY+QkZlI8gCz5KReY3BvCzxMnO9nXxD0O7sdQTmu/oC
+ qp5o4Xfa4QJ2OJeCykYBxalxSy/kWU4Pf9a+0x9kal1+mErrbGtvxpP7PjwmLuIj6HoyhRq7x
+ kFk95iAdXmY4Aebx97oMhA+uo7E/p5fm+oISn4P+6F/vRdQjICLC/uxsGEG+6A/pWzDwWlP23
+ 1PhTzWB6V5PsxCakHVR8bq/2Lsm5LIp4Mya6DtqQUXtXae+wVyKdkLchPdXwjCacMMuUsY+9e
+ OX66MjK13u+vJ9L03jIhFMQjqBhlLmNcL1gaQXaJHKNbIGysW8WkiLPw5bsxkrlQeMDaT2rA3
+ e2uMs3tjXijhcodeK5QJ5BfNvSpIg6ul/UTnI7/f2V5CMrmDPuX/Tgj0jRX9uHwsCShlLx5JF
+ hG9P/Zvsji9NcuZwcCp4y4GCFohUYNEZ4OuCIpLvOXZ6HBUabMdrvf5yEusPqgwsz+UF4wseg
+ kIHdbM5dzX/j/9GXUI9tZkRIRrYtTYka6pLyIgmf7Y3WjkSLF93q6uu9yX9Ls3Ya5FvhJScZZ
+ FxEygmpuw4ckxeSk76HCyIKRlpt0m0KKv2T1SSLl08PI3C147pADUm+0K3zkWWxH7fRaBwcN5
+ PCDDfjIxgtf8rVwGPNtfqiK6YxnXVMmK0UNV4FjvMMf2QZF6wFBzunqLtwcd8qQSFcTaPVrfV
+ BpeLg1wf4+yMq5hj9tDgbsjLLPmzn4NY4rHJDCwTg/vuEV/5HkzpW4FRRieY3Z+2mg+ikmFcN
+ GooG6d7e2gIgwHrf7oPnqJacUa5UWBYfI6wMvsNhXe3QUiiNqkK3C1ULeLaY2QT7JtbdnQQH8
+ mRTdoCEaFZaB9LCYXmf3dcHVGSzTiDtoVRW5rtyxLji+qQt6uHjsz1LCv1FelzKPmOqn6Hxo1
+ iyv13lUA/wm3epOvlSUdnEAjPgr/uVWnYUHi1joR1uOG6wBCV9r7upBdOGFiAMyxmseXMwsH0
+ GTeU9peL/dQWTsOIdKlH5/q6DgUd/nWGy5iCgHA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_225833_794086_3A5C049E 
-X-CRM114-Status: GOOD (  13.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191130_043152_423179_C281A28F 
+X-CRM114-Status: GOOD (  12.88  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,59 +94,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- wanghaibin.wang@huawei.com, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+During definition of the CPU thermal zone of BCM283x SoC family there was
+a misunderstanding of the meaning "criticial trip point" and the thermal
+throttling range of the VideoCore firmware. The latter one takes effect
+when the core temperature is between 80 and 85 degree celsius. So the
+current critical trip point doesn't make sense, because the
+thermal shutdown appears before the firmware has a chance to throttle the
+ARM core(s).
 
+Fix these unwanted shutdowns by increasing the critical trip point
+to a value which shouldn't be reached with working thermal throttling.
 
-On 2019/11/30 14:39, Marc Zyngier wrote:
-> On Sat, 30 Nov 2019 03:14:43 +0000,
-> Heyi Guo <guoheyi@huawei.com> wrote:
->> Platforms running hypervisor nowadays are normally powerful servers
->> which at least support GICv3, so it should be better to switch
->> kvm_vgic_global_state.gicv3_cpuif to static likely branch, which can
->> reduce two "b" instructions to a single "nop" for GICv3 branches.
->>
->> We don't update arm32 specific code for they may still only have
->> GICv2.
-> There is a number of disputable statements here.
->
-> Out of the fairly large zoo of arm64 systems I have access to, 75% of
-> them are based on GICv2, so they are still the overwhelming majority.
-> Yes, they all run KVM (otherwise I would ignore them).
-Really? I'm surprised to know that... Sorry I didn't see such GICv2 
-platforms in my work, so I made the wrong assumption.
-I don't expect much performance improvement for GICv3 platforms. The 
-precondition for this patch is that few platforms running KVM are using 
-GICv2. If it is not right, please just ignore it.
+Fixes: 0fe4d2181cc4 ("ARM: dts: bcm283x: Add CPU thermal zone with 1 trip point")
+Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+---
+ arch/arm/boot/dts/bcm283x.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Thanks,
-HG
+diff --git a/arch/arm/boot/dts/bcm283x.dtsi b/arch/arm/boot/dts/bcm283x.dtsi
+index 3caaa57..8394916 100644
+--- a/arch/arm/boot/dts/bcm283x.dtsi
++++ b/arch/arm/boot/dts/bcm283x.dtsi
+@@ -37,7 +37,7 @@
 
->
-> Furthermore, I would expect that "powerful servers" are perfectly
-> capable to execute a couple of branches without breaking a sweat.
->
-> Finally, you don't provide any number supporting that:
->
-> - GICv3 systems see a performance improvement across the large variety
->    of CPU implementations
-> - GICv2 systems don't see a performance regression
->
-> Once you provide such numbers, I'll reevaluate my position. Until
-> then, I'm not considering this kind of change.
->
-> Thanks,
->
-> 	M.
->
-
+ 			trips {
+ 				cpu-crit {
+-					temperature	= <80000>;
++					temperature	= <90000>;
+ 					hysteresis	= <0>;
+ 					type		= "critical";
+ 				};
+--
+2.7.4
 
 
 _______________________________________________
