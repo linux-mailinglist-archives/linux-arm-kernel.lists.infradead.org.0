@@ -2,94 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2B6E10DBD6
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 00:42:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87DA410DC2F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 Nov 2019 03:46:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2eVGBH3LNuNuQjp+SPFxLpikqUq7PShKJsgeVlOYseY=; b=CGx4c3GGJvZeEb
-	gOaiLlHQfZerdKHZl/RzPEEV6V+doe3uSNFKIjvSuHc1ONKFIBACqZqL67L2jdVu4oT2kX/79NuOs
-	Tazk8Zredu+bS9nqNiy9HMjwrEV93Yl4G363RmjwRogbBh+bZK+U8FeNCHOVZGdTSNSZ2TmQ5Gj2z
-	9ttcgQj6TUkrBBXab2CTjA1HHOjaLhrDbAzUhw+dYWSnSXt2M0slUJQ0yFRvLj0wnPvPLJygH8K5v
-	j6Ipy2FRpMQbj3Vsx/k/cvN1ycH8tTSS1xEENxpVXJt4QUW7SiLpLeTce22WhKcmioj0Hln9q2afx
-	1j0bmwvNIqdd7kko3J3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3xJUHayawNOBbFynH5h1YIPTdDPth+5IMFQTTJjvyYQ=; b=fWSrnehPAbTId6
+	YHlj92A2aj6VQvq17InLkeHfTaI6CICNzRFZD1oZ2RSnf4s0Uovu/c3f69wsV4itMbqg3yH4YarEy
+	YXEcuW6n80rO7eXIHzvG2H7QbKjP5spfNRMrkhkTrqB766Ym1efIkZnXzhURQwb34cqip2h3RsyTd
+	hN73Zbex3TKGDEZ/A6WIrEbvOpzPkiWTfDJ0qb9WECghCuBDMyXeAIN5avCGYmDTr+Ini40yxIRRR
+	UXM12DptSQpgez9RBm1nXMPsID/5EnNboDGFD1sUv/nWYvZ3TPTbxQ/msr8HIjJb6FnFiw1+wiOj2
+	lNviDKN/KV09/qY6hbsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaptb-0007Sn-16; Fri, 29 Nov 2019 23:41:55 +0000
-Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
+	id 1iaslW-00030y-Hf; Sat, 30 Nov 2019 02:45:46 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iapt5-0007Fx-Nm
- for linux-arm-kernel@lists.infradead.org; Fri, 29 Nov 2019 23:41:25 +0000
-Received: by mail-yb1-xb44.google.com with SMTP id v15so12104595ybp.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 29 Nov 2019 15:41:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=8rKiQHSwuUCF9AELRHNdLMuxf8z6xR1bB61s0tnxzNE=;
- b=kDfSvRU3IToCKYqz4BXDquOBvvC9Zy46H4g+899B8ZSEpHA3hMqRXTse+L/RAMQdHs
- bmQFjBLR0y596ZukQgj2Wc5ogj5Hv6DJuLb9qmfvbPuQIuwMnATeIHww7BXS1IB23d7u
- 7l82E71a+GM7IqRawG8KJdCvXVDAU9AyMiEZ0lM7Pjtq25E+6DTwxVtqo1mGhR7RACyn
- cgmzki2m8XR8GgiOIPPIbWdlqzAUy/p10XuivFsfN5iwaEhI8JmA/tH7D0+H6Z+K8RTi
- HsweW5NOqWWyoX56cZj3t2Ehllx3nqCipJDa0FeM1db6K5h53KNMytsNJy+G0VtEGJAC
- nFOA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=8rKiQHSwuUCF9AELRHNdLMuxf8z6xR1bB61s0tnxzNE=;
- b=kdK8WzIMyT1wzXQstQ4haJ/pCfVaf1VT2Ct8SFMFAJ+U6NgjbCYwh2Z4oPvqRmeWNG
- +r6B8FGQ3ks7qzWPL/dfEMHncG37K8+mg/nU7ndOjdZeUO2t8O1FSP7gj4OZyaKwXFJ0
- K2YvBtwnsLQhvt8qw7yR26xhKqUMexwtTHTIDokXVlKt5LrOc0AHuelyt569WTJasps+
- aEpKelTAXQQyilbplzcqb+4mH7xyDoElB4gJa2dG9Bld4/goOsI/X6HuLr5Vwk6EfKil
- T+ZfvdA/JgTDJVo5Lrk59xkOfN7tCZ8zUJZJvUY5oViD+JJRZpJUfX4tqpmW2oboMzL1
- lZlA==
-X-Gm-Message-State: APjAAAWWF2BQ8qxNSVflx+K9KRQJe6S6iW74eReZNq+Rg0+F+CPrVtAn
- IFfjHOImV+ZKFLan0eISGR/xQRDEeOw=
-X-Google-Smtp-Source: APXvYqwr/LIgU0jfzryCJVUcaDeplSmBTLSebhAPSCfhBOYQ8LJZyb6eDQWVMKL5MWICobsnwFY5rA==
-X-Received: by 2002:a25:245:: with SMTP id 66mr8022427ybc.104.1575070880925;
- Fri, 29 Nov 2019 15:41:20 -0800 (PST)
-Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
- [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id q131sm10636436ywh.22.2019.11.29.15.41.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 Nov 2019 15:41:20 -0800 (PST)
-From: Adam Ford <aford173@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] arm64: dts: Add GPC Support
-Date: Fri, 29 Nov 2019 17:41:08 -0600
-Message-Id: <20191129234108.12732-2-aford173@gmail.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191129234108.12732-1-aford173@gmail.com>
-References: <20191129234108.12732-1-aford173@gmail.com>
+ id 1iaslK-00030N-9d
+ for linux-arm-kernel@lists.infradead.org; Sat, 30 Nov 2019 02:45:36 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 96812B9628629FE8062D;
+ Sat, 30 Nov 2019 10:45:25 +0800 (CST)
+Received: from huawei.com (10.175.105.18) by DGGEMS402-HUB.china.huawei.com
+ (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Sat, 30 Nov 2019
+ 10:45:17 +0800
+From: linmiaohe <linmiaohe@huawei.com>
+To: <maz@kernel.org>, <pbonzini@redhat.com>, <rkrcmar@redhat.com>,
+ <james.morse@arm.com>, <julien.thierry.kdev@gmail.com>,
+ <suzuki.poulose@arm.com>, <christoffer.dall@arm.com>,
+ <catalin.marinas@arm.com>, <eric.auger@redhat.com>,
+ <gregkh@linuxfoundation.org>, <will@kernel.org>, <andre.przywara@arm.com>,
+ <tglx@linutronix.de>
+Subject: [PATCH v3] KVM: vgic: Use wrapper function to lock/unlock all vcpus
+ in kvm_vgic_create()
+Date: Sat, 30 Nov 2019 10:45:18 +0800
+Message-ID: <1575081918-11401-1-git-send-email-linmiaohe@huawei.com>
+X-Mailer: git-send-email 1.8.3.1
 MIME-Version: 1.0
+X-Originating-IP: [10.175.105.18]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_154123_797883_A602ED10 
-X-CRM114-Status: GOOD (  13.74  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191129_184534_506140_758C0672 
+X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,129 +68,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>, Adam Ford <aford173@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: linmiaohe@huawei.com, kvm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ steven.price@arm.com, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The General Power Controller (GPC) used on the i.MX8MQ is the
-same as what is used on the i.MX8M Mini.
+From: Miaohe Lin <linmiaohe@huawei.com>
 
-This patch adds the GPC support to the device tree for the SoC.
+Use wrapper function lock_all_vcpus()/unlock_all_vcpus()
+in kvm_vgic_create() to remove duplicated code dealing
+with locking and unlocking all vcpus in a vm.
 
-Signed-off-by: Adam Ford <aford173@gmail.com>
+Reviewed-by: Eric Auger <eric.auger@redhat.com>
+Reviewed-by: Steven Price <steven.price@arm.com>
+Signed-off-by: Miaohe Lin <linmiaohe@huawei.com>
+---
+-v2:
+	Fix some spelling mistake in patch title and commit log.
+-v3:
+	Remove the comment that no longer makes sense.
+---
+ virt/kvm/arm/vgic/vgic-init.c | 19 ++++---------------
+ 1 file changed, 4 insertions(+), 15 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 6edbdfe2d0d7..860cddec9632 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -4,6 +4,7 @@
+diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
+index b3c5de48064c..22ff73ecac80 100644
+--- a/virt/kvm/arm/vgic/vgic-init.c
++++ b/virt/kvm/arm/vgic/vgic-init.c
+@@ -70,7 +70,7 @@ void kvm_vgic_early_init(struct kvm *kvm)
   */
+ int kvm_vgic_create(struct kvm *kvm, u32 type)
+ {
+-	int i, vcpu_lock_idx = -1, ret;
++	int i, ret;
+ 	struct kvm_vcpu *vcpu;
  
- #include <dt-bindings/clock/imx8mm-clock.h>
-+#include <dt-bindings/power/imx8mq-power.h>
- #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/input/input.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
-@@ -498,6 +499,90 @@
- 				interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
- 				#reset-cells = <1>;
- 			};
-+
-+			gpc: gpc@303a0000 {
-+				compatible = "fsl,imx8mm-gpc";
-+				reg = <0x303a0000 0x10000>;
-+				interrupt-parent = <&gic>;
-+				interrupt-controller;
-+				#interrupt-cells = <3>;
-+
-+				pgc {
-+					#address-cells = <1>;
-+					#size-cells = <0>;
-+
-+					pgc_mipi: power-domain@0 {
-+						#power-domain-cells = <0>;
-+						reg = <IMX8M_POWER_DOMAIN_MIPI>;
-+					};
-+
-+					/*
-+					 * As per comment in ATF source code:
-+					 *
-+					 * PCIE1 and PCIE2 share the
-+					 * same reset signal, if we
-+					 * power down PCIE2, PCIE1
-+					 * will be held in reset too.
-+					 *
-+					 * So instead of creating two
-+					 * separate power domains for
-+					 * PCIE1 and PCIE2 we create a
-+					 * link between both and use
-+					 * it as a shared PCIE power
-+					 * domain.
-+					 */
-+					pgc_pcie: power-domain@1 {
-+						#power-domain-cells = <0>;
-+						reg = <IMX8M_POWER_DOMAIN_PCIE1>;
-+						power-domains = <&pgc_pcie2>;
-+					};
-+
-+					pgc_otg1: power-domain@2 {
-+						#power-domain-cells = <0>;
-+						reg = <IMX8M_POWER_DOMAIN_USB_OTG1>;
-+					};
-+
-+					pgc_otg2: power-domain@3 {
-+						#power-domain-cells = <0>;
-+						reg = <IMX8M_POWER_DOMAIN_USB_OTG2>;
-+					};
-+
-+					pgc_ddr1: power-domain@4 {
-+						#power-domain-cells = <0>;
-+						reg = <IMX8M_POWER_DOMAIN_DDR1>;
-+					};
-+
-+					pgc_gpu: power-domain@5 {
-+						#power-domain-cells = <0>;
-+						reg = <IMX8M_POWER_DOMAIN_GPU>;
-+					};
-+
-+					pgc_vpu: power-domain@6 {
-+						#power-domain-cells = <0>;
-+						reg = <IMX8M_POWER_DOMAIN_VPU>;
-+					};
-+
-+					pgc_disp: power-domain@7 {
-+						#power-domain-cells = <0>;
-+						reg = <IMX8M_POWER_DOMAIN_DISP>;
-+					};
-+
-+					pgc_mipi_csi1: power-domain@8 {
-+						#power-domain-cells = <0>;
-+						reg = <IMX8M_POWER_DOMAIN_MIPI_CSI1>;
-+					};
-+
-+					pgc_mipi_csi2: power-domain@9 {
-+						#power-domain-cells = <0>;
-+						reg = <IMX8M_POWER_DOMAIN_MIPI_CSI2>;
-+					};
-+
-+					pgc_pcie2: power-domain@a {
-+						#power-domain-cells = <0>;
-+						reg = <IMX8M_POWER_DOMAIN_PCIE2>;
-+					};
-+				};
-+			};
- 		};
+ 	if (irqchip_in_kernel(kvm))
+@@ -86,17 +86,9 @@ int kvm_vgic_create(struct kvm *kvm, u32 type)
+ 		!kvm_vgic_global_state.can_emulate_gicv2)
+ 		return -ENODEV;
  
- 		aips2: bus@30400000 {
+-	/*
+-	 * Any time a vcpu is run, vcpu_load is called which tries to grab the
+-	 * vcpu->mutex.  By grabbing the vcpu->mutex of all VCPUs we ensure
+-	 * that no other VCPUs are run while we create the vgic.
+-	 */
+ 	ret = -EBUSY;
+-	kvm_for_each_vcpu(i, vcpu, kvm) {
+-		if (!mutex_trylock(&vcpu->mutex))
+-			goto out_unlock;
+-		vcpu_lock_idx = i;
+-	}
++	if (!lock_all_vcpus(kvm))
++		return ret;
+ 
+ 	kvm_for_each_vcpu(i, vcpu, kvm) {
+ 		if (vcpu->arch.has_run_once)
+@@ -125,10 +117,7 @@ int kvm_vgic_create(struct kvm *kvm, u32 type)
+ 		INIT_LIST_HEAD(&kvm->arch.vgic.rd_regions);
+ 
+ out_unlock:
+-	for (; vcpu_lock_idx >= 0; vcpu_lock_idx--) {
+-		vcpu = kvm_get_vcpu(kvm, vcpu_lock_idx);
+-		mutex_unlock(&vcpu->mutex);
+-	}
++	unlock_all_vcpus(kvm);
+ 	return ret;
+ }
+ 
 -- 
-2.20.1
+2.19.1
 
 
 _______________________________________________
