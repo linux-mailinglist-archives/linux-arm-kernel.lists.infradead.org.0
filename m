@@ -2,70 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DE4410E2B6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Dec 2019 18:08:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3EA710E2F0
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Dec 2019 19:18:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XIIsfdCDU0lSXONTJzQc8E0Cjbaxmicm7tOIxbc/kwg=; b=e97fOpyOrWNBnZ
-	2SRyNPkbu4s4K5tRYQcoLUYG4x0nQGjSXWHyVt2klWDTH/+ydJZDpsjX2UjRLmbtWADYGOr+VMgX+
-	6DPPJRCMJq1XArnw+1vHnBF6hNLKcieZffUsmPNI0eGRgshuG0r1vVdDcKXaJC6ClrTI5mAKleTiq
-	l3H4kxbhwMpq8RYEsdbfQYySps6KPcTI2dp3IJqb36awiUnr2DuhgYFy65JcjOPlRAgcVVUKOoNpJ
-	JQZNb8HOWLI4Bo9j19n9/wfFELsyTxrblP3cKu3ZWKsuaHKfD3u2Wwyr0HAlE+br1fvcSgE9Um/kk
-	N6HFA4Kj1jaGvLsJmy5w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=rJT+vHoJRvsvTebl//7T2xfMKcUYXdAbrXBS91Tj1so=; b=dcy
+	arXWejI4A0GIYSsU4b3+4x9UwhwlAqTfZo7TdPpKs+i5+VniqRGmJTvJGLlVFy58PyR3Ueeu1Eojp
+	1SwDa4eBTKoWR2VzcenjaXh1xAnkEqaGTzUH0o4BsbczQJS3ad/XBTHv8AYgawJKHkn0nuM4+pb6b
+	2NA2vqyZE8TOLhUHFgeX595+LxQ2vq+4cMufS9a5baTfpnYEn598eltsn/ClZnX6R5ob6wgDPJGEa
+	F9/nWBw3SS9IepUoBd89hKivjtT5riaMSjKv3y6P+1VbAVfMImooa7RNBLwTIQhim0932DiFG2VT7
+	nL96c4AYjaa//hp62WWUyvT315Vz6Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibShX-0008Kj-Ga; Sun, 01 Dec 2019 17:08:03 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibShP-0008K6-67
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Dec 2019 17:07:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=g5DKla0xIjgClgoqUPuYUlrW+gPxBbbCyoXWMbyIx1k=; b=xJdu/YVY226RDchm+jMq+32OQI
- uQGE39LrYs3+im5cqeyF95nV+vE0LvZpmNOsqkrcpr99SscZMkEbtXE4igmME0O+78jPX7XYlUGNC
- 7uujPSuV2OPR/D1vq3dow8hpr+VHtssR4/6KNHVgCg6GN2loBU7/iwH8k7QeyDwgaQIA=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.92.2)
- (envelope-from <andrew@lunn.ch>)
- id 1ibShB-0005Hk-C1; Sun, 01 Dec 2019 18:07:41 +0100
-Date: Sun, 1 Dec 2019 18:07:41 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: Baruch Siach <baruch@tkos.co.il>
-Subject: Re: [PATCH] ARM: dts: mvebu: add support for SolidRun Clearfog GTR
-Message-ID: <20191201170741.GA20227@lunn.ch>
-References: <3a870e11b152e2f8ffb2b3256c5ac42741658c4c.1574960406.git.baruch@tkos.co.il>
- <20191129170717.GC28308@lunn.ch> <871rto7dbg.fsf@tarshish>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <871rto7dbg.fsf@tarshish>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1ibTnF-0007ZP-GU; Sun, 01 Dec 2019 18:18:01 +0000
+Received: from mail2.sp2max.com.br ([138.185.4.9])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ibTn8-0007HA-Fj; Sun, 01 Dec 2019 18:17:56 +0000
+Received: from pgsop.sopnet.com.ar (unknown [179.40.38.12])
+ (Authenticated sender: pablo@fliagreco.com.ar)
+ by mail2.sp2max.com.br (Postfix) with ESMTPA id 5618C7B30BD;
+ Sun,  1 Dec 2019 15:17:40 -0300 (-03)
+From: Pablo Greco <pgreco@centosproject.org>
+To: 
+Subject: [PATCH v1] mt76: mt7615: Fix build with older compilers
+Date: Sun,  1 Dec 2019 15:17:10 -0300
+Message-Id: <20191201181716.61892-1-pgreco@centosproject.org>
+X-Mailer: git-send-email 2.18.1
+X-SP2Max-MailScanner-Information: Please contact the ISP for more information
+X-SP2Max-MailScanner-ID: 5618C7B30BD.A1C61
+X-SP2Max-MailScanner: Sem Virus encontrado
+X-SP2Max-MailScanner-SpamCheck: nao spam, SpamAssassin (not cached,
+ escore=-2.9, requerido 6, autolearn=not spam, ALL_TRUSTED -1.00,
+ BAYES_00 -1.90)
+X-SP2Max-MailScanner-From: pgreco@centosproject.org
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191201_090755_228529_53DBFABF 
-X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-CacheID: sfid-20191201_101754_704824_4E500695 
+X-CRM114-Status: UNSURE (   6.03  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,32 +62,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Gregory Clement <gregory.clement@bootlin.com>,
- Jason Cooper <jason@lakedaemon.net>, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Ryder Lee <ryder.lee@mediatek.com>, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, Pablo Greco <pgreco@centosproject.org>,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Roy Luo <royluo@google.com>, Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>, Kalle Valo <kvalo@codeaurora.org>,
+ Felix Fietkau <nbd@nbd.name>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Baruch
+Some compilers (tested with 4.8.5 from CentOS 7) fail properly process
+FIELD_GET inside an inline function, which ends up in a BUILD_BUG_ON.
+Convert inline function to a macro.
 
-> >> +	sar-isolation {
-> >> +		gpio-hog;
-> >> +		gpios = <15 GPIO_ACTIVE_LOW>;
-> >> +		output-low;
-> >> +		line-name = "sar-isolation";
-> >> +	};
-> >
-> > What is SAR?
-> 
-> Sample at Reset. That's the Armada 38x datasheet term.
+Fixes commit bf92e7685100 ("mt76: mt7615: add support for per-chain
+signal strength reporting")
+Reported in https://lkml.org/lkml/2019/9/21/146
 
-So this is pretty specific to Marvell. Maybe a comment would be good,
-explaining what it is doing.
+Reported-by: kbuild test robot <lkp@intel.com>
+Signed-off-by: Pablo Greco <pgreco@centosproject.org>
+---
+ drivers/net/wireless/mediatek/mt76/mt7615/mac.c | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
 
-Thanks
-	Andrew
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/mac.c b/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
+index c77adc5d2552..77e395ca2c6a 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
+@@ -13,10 +13,7 @@
+ #include "../dma.h"
+ #include "mac.h"
+ 
+-static inline s8 to_rssi(u32 field, u32 rxv)
+-{
+-	return (FIELD_GET(field, rxv) - 220) / 2;
+-}
++#define to_rssi(field, rxv)		((FIELD_GET(field, rxv) - 220) / 2)
+ 
+ static struct mt76_wcid *mt7615_rx_get_wcid(struct mt7615_dev *dev,
+ 					    u8 idx, bool unicast)
+-- 
+2.18.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
