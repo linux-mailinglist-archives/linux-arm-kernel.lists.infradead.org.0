@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 967C510E19B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Dec 2019 12:33:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BD0210E19D
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Dec 2019 12:33:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g7VWML4L1Kwt/UwExbKSSfNMKHqDlFuFrFIUbbIHQMQ=; b=cwZjcFVUXoQMVZ
-	DhJvw73YP4OqjkufU7P52/wnrAiguvdShALUxnai7+r7d7iQx/h2I64BTP4tVwM5A96LN9vPw8DCA
-	ariq2aOdthCPMXdpRGFiEIvlMVhDAAJw9d7zI0d5c/wH7ifhMSbxAYTakPiiho8/TATBJX5gF7hLK
-	h5lU9LJGSlBgT5mBXKXSN4m/m3bDZuMLnF/oTzmwT2avBh2pokSXyg5G8JyiR790GomwTWQmGWNm+
-	GzPK91domZPoY4ZuXzvTiPZTnNxihODoUEtDEy78Yz7u4HoITDjyn6Hvrz2KX7TxHCAygoO86k04D
-	5uemJzd/h9rTpR563OSw==;
+	List-Owner; bh=qX0YYa0jpL7QRAl6aAR1e+DaPUbFOtTeVwXSPQWIgSk=; b=CF8jm7gTn0uFui
+	0SwCH8u6aafXmzTfKsiNsKUBvHb+9u7Re0h7rfVM4ENrFUYcw+Mm0L/w4dzaAj+ZJ8+0Zl3dsmfmy
+	Z6e7vv7jNZoxk4j+UcSE0+9eoYeiIem5y6ZPY0gFuDf6M1S3zWZVBTnlF2LgzlZGDyI6Qm9QbTfXZ
+	oVGXEYYqh0Ee38T0MpgJeuijhvHaWebcK4+g6UFEeolX2LW9WmxGbnUi6nwwgP97WfqYgRdDr9rsK
+	6nRQ5GUUhUnUR1UCG9/LkpfMZBrivTBIH/WsU7n6H5oH5HTTyAjl0xpPqgW9xK9IbtzD2LRiF/im4
+	FLtWLzA5kMJXRdozMApQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibNTL-0008Ax-Vp; Sun, 01 Dec 2019 11:33:03 +0000
+	id 1ibNTe-0008P0-NN; Sun, 01 Dec 2019 11:33:22 +0000
 Received: from asavdk3.altibox.net ([109.247.116.14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibNTD-0008AF-HL
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Dec 2019 11:32:57 +0000
+ id 1ibNTT-0008N1-2A
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Dec 2019 11:33:12 +0000
 Received: from ravnborg.org (unknown [158.248.194.18])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id 28D822003D;
- Sun,  1 Dec 2019 12:32:48 +0100 (CET)
-Date: Sun, 1 Dec 2019 12:32:46 +0100
+ by asavdk3.altibox.net (Postfix) with ESMTPS id 4862A20040;
+ Sun,  1 Dec 2019 12:33:08 +0100 (CET)
+Date: Sun, 1 Dec 2019 12:33:07 +0100
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH v1 03/16] drm/exynos: fix opencoded use of drm_panel_*
-Message-ID: <20191201113246.GC8753@ravnborg.org>
+Subject: Re: [PATCH v1 06/16] drm/msm: fix opencoded use of drm_panel_*
+Message-ID: <20191201113307.GD8753@ravnborg.org>
 References: <20190804201637.1240-1-sam@ravnborg.org>
- <20190804201637.1240-4-sam@ravnborg.org>
+ <20190804201637.1240-7-sam@ravnborg.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190804201637.1240-4-sam@ravnborg.org>
+In-Reply-To: <20190804201637.1240-7-sam@ravnborg.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CMAE-Score: 0
 X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
  a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
  a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=7gkXJVJtAAAA:8
- a=hD80L64hAAAA:8 a=VwQbUJbxAAAA:8 a=JfrnYn6hAAAA:8 a=XXxF64UjzUu2oWhWWqkA:9
- a=CjuIK1q_8ugA:10 a=E9Po1WZjFZOl8hwRPBS3:22 a=AjGcO6oz07-iQ99wixmX:22
- a=1CNFftbPRP8L7MoqJWF3:22
+ a=QyXUC8HyAAAA:8 a=3jHMjg6xAAAA:8 a=ZTmiYS-oAAAA:8 a=L-wgLTOa4tQtTzOwMPYA:9
+ a=CjuIK1q_8ugA:10 a=E9Po1WZjFZOl8hwRPBS3:22 a=_Ilv_KrDiT527o6t6YB_:22
+ a=Bgfdu2smNuKfk3vLOmSO:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191201_033255_759044_2C127907 
-X-CRM114-Status: GOOD (  18.36  )
+X-CRM114-CacheID: sfid-20191201_033311_287236_AC040F99 
+X-CRM114-Status: GOOD (  17.84  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -97,8 +97,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 04, 2019 at 10:16:24PM +0200, Sam Ravnborg wrote:
-> Call via drm_panel_get_modes().
+On Sun, Aug 04, 2019 at 10:16:27PM +0200, Sam Ravnborg wrote:
+> Use the function drm_panel_get_modes().
 > 
 
 Applied to drm-misc-next.
@@ -106,31 +106,28 @@ Applied to drm-misc-next.
         Sam
 
 > Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-> Cc: Inki Dae <inki.dae@samsung.com>
-> Cc: Joonyoung Shim <jy0922.shim@samsung.com>
-> Cc: Seung-Woo Kim <sw0312.kim@samsung.com>
-> Cc: Kyungmin Park <kyungmin.park@samsung.com>
-> Cc: Kukjin Kim <kgene@kernel.org>
-> Cc: Krzysztof Kozlowski <krzk@kernel.org>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-samsung-soc@vger.kernel.org
+> Cc: Alexios Zavras <alexios.zavras@intel.com>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Allison Randal <allison@lohutok.net>
+> Cc: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Enrico Weigelt <info@metux.net>
 > ---
->  drivers/gpu/drm/exynos/exynos_drm_dsi.c | 2 +-
+>  drivers/gpu/drm/msm/disp/mdp4/mdp4_lvds_connector.c | 2 +-
 >  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/drivers/gpu/drm/exynos/exynos_drm_dsi.c b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-> index 6926cee91b36..36b02b456d9c 100644
-> --- a/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-> +++ b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-> @@ -1460,7 +1460,7 @@ static int exynos_dsi_get_modes(struct drm_connector *connector)
->  	struct exynos_dsi *dsi = connector_to_dsi(connector);
+> diff --git a/drivers/gpu/drm/msm/disp/mdp4/mdp4_lvds_connector.c b/drivers/gpu/drm/msm/disp/mdp4/mdp4_lvds_connector.c
+> index ecef4f5b9f26..0e21252fd1d6 100644
+> --- a/drivers/gpu/drm/msm/disp/mdp4/mdp4_lvds_connector.c
+> +++ b/drivers/gpu/drm/msm/disp/mdp4/mdp4_lvds_connector.c
+> @@ -55,7 +55,7 @@ static int mdp4_lvds_connector_get_modes(struct drm_connector *connector)
+>  	if (panel) {
+>  		drm_panel_attach(panel, connector);
 >  
->  	if (dsi->panel)
-> -		return dsi->panel->funcs->get_modes(dsi->panel);
-> +		return drm_panel_get_modes(dsi->panel);
+> -		ret = panel->funcs->get_modes(panel);
+> +		ret = drm_panel_get_modes(panel);
 >  
->  	return 0;
->  }
+>  		drm_panel_detach(panel);
+>  	}
 > -- 
 > 2.20.1
 
