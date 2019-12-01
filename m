@@ -2,71 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8262510E197
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Dec 2019 12:31:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7106810E1A2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Dec 2019 12:34:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jJULa9HFEtQCkvvfQZZ+i2CUJWnI94hq5IhaxTH6RUU=; b=lxEr1NSwtDaQpL
-	Ds9jRebUV4ilWbTPSArRPl3SUlrbUZ+lkuTzD0KFMJEUeaxZktHSHLCFfhQlpnmxjLOGt0rysWGlu
-	nfGUelBOPfYF5oE/93nrs4Sl+K7wYdfO3LRDHIrQFA3U3ClnMHy90vOS3RkjUKghpj2qMEqz6jJsY
-	Fh10ybxjOjRBNdBIKeXBitLP4EZcl8RNL7FAyIzNNlbyJJMF252mTzi++lka/7p7xm6WDbzBMj+U7
-	R0aVRkdVwe75XhKMeWcV0CRlKLxODeK9q1px2q5/Mwcp7UTJQTUGvtu/jIO+pMa4tw6E+AOm/f2ZD
-	NacNyb/HqfUm56Gv/NKQ==;
+	List-Owner; bh=SC9CUR1gile+EEvoAWuK5n40KMtdTFagiYNjqOnJ6T8=; b=kAaeWJWn16sB+E
+	Z8utrCmEuSoxsdXUc9Mjxz0S+OFKxFdoFQkRut7Gg+PB6ZunMAl9ogE7htD3gzCikEQKc1RtsKTKW
+	urAAAl+tOtzzt+COKYcDp9415mOIcaWYq1EqGqQWFr+fqbLbPxo0hLhUzKg9l4g0oSylwfgY0+Opb
+	HYRVTgDfkOecP/miZPbeM6TkFZW70H20YtiKKGQ6FK1oWh7Gtq1lQkJldT+JIdfzSteemUJZrk4PS
+	66nuHEEtKrIFukyU34fZUJm38quhSq1Opgh3RSAyOpIyIY+/rlt7CwdPFM3dE6GDz1ABHXzDqMj9+
+	5TOVp5x/Y6UJBY8nyUjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibNRy-00074j-KN; Sun, 01 Dec 2019 11:31:38 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ibNV0-0000Tb-55; Sun, 01 Dec 2019 11:34:46 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibNRq-00074I-9u
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Dec 2019 11:31:32 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
+ id 1ibNUr-00089u-US
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Dec 2019 11:34:39 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 333ED20725;
- Sun,  1 Dec 2019 11:31:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575199888;
- bh=56XBnKJVmTYnYtton6KvBJ3ixR4lLH8rYw6S6VGdLYM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=SaiWAtPN/430lBSXZTbyDue198W2vmXMtdwb+WelVpClcD99pKyBqp/3Na4jqOaLf
- hNsVj366r/7ZIXNtrz06COEIcZKZWjiuKK+OuMjugS8t2q+Y9vUIaCTodotpX/Hzu6
- dKCpoM6GvWwTLtKvKR4LA6WHVIndE/wLUuO6J0jA=
-Date: Sun, 1 Dec 2019 11:31:23 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH] iio: adc: stm32-adc: Add check on overrun interrupt
-Message-ID: <20191201113123.1951460c@archlinux>
-In-Reply-To: <999ccf66-1184-7b9e-309c-8130ad643c82@st.com>
-References: <1574435294-19510-1-git-send-email-fabrice.gasnier@st.com>
- <20191123113623.3e58b2d1@archlinux>
- <999ccf66-1184-7b9e-309c-8130ad643c82@st.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id E99F22003B;
+ Sun,  1 Dec 2019 12:32:22 +0100 (CET)
+Date: Sun, 1 Dec 2019 12:32:21 +0100
+From: Sam Ravnborg <sam@ravnborg.org>
+To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>
+Subject: Re: [PATCH v1 02/16] drm/exynos: fix opencoded use of drm_panel_*
+Message-ID: <20191201113221.GB8753@ravnborg.org>
+References: <20190804201637.1240-1-sam@ravnborg.org>
+ <20190804201637.1240-3-sam@ravnborg.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190804201637.1240-3-sam@ravnborg.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=7gkXJVJtAAAA:8
+ a=hD80L64hAAAA:8 a=VwQbUJbxAAAA:8 a=JfrnYn6hAAAA:8 a=DKRLh2KxCiw4lqZK9CoA:9
+ a=CjuIK1q_8ugA:10 a=E9Po1WZjFZOl8hwRPBS3:22 a=AjGcO6oz07-iQ99wixmX:22
+ a=1CNFftbPRP8L7MoqJWF3:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191201_033130_390335_A1DF67EB 
-X-CRM114-Status: GOOD (  30.35  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191201_033438_356249_61FB1971 
+X-CRM114-Status: GOOD (  20.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,307 +67,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Linus Walleij <linus.walleij@linaro.org>, Stefan Agner <stefan@agner.ch>,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Fabio Estevam <festevam@gmail.com>, Marek Vasut <marex@denx.de>,
+ Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ Joonyoung Shim <jy0922.shim@samsung.com>,
+ Vincent Abriou <vincent.abriou@st.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Kukjin Kim <kgene@kernel.org>,
+ Allison Randal <allison@lohutok.net>, Philipp Zabel <p.zabel@pengutronix.de>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Jonas Karlman <jonas@kwiboo.se>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Alison Wang <alison.wang@nxp.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Gwan-gyeong Mun <gwan-gyeong.mun@intel.com>, Inki Dae <inki.dae@samsung.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, linux-samsung-soc@vger.kernel.org,
+ linux-tegra@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, Shawn Guo <shawnguo@kernel.org>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Enrico Weigelt <info@metux.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 25 Nov 2019 09:42:01 +0100
-Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
-
-> On 11/23/19 12:36 PM, Jonathan Cameron wrote:
-> > On Fri, 22 Nov 2019 16:08:14 +0100
-> > Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
-> >   
-> >> Enable overrun interrupt on STM32 ADC. In case data register hasn't been
-> >> read (by CPU or DMA), overrun condition is detected when there's new
-> >> conversion data available. Stop grabbing data and log an error message.
-> >> Use a threaded irq to avoid printing the error message from hard irq
-> >> context.
-> >>
-> >> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>  
-> > 
-> > Absolutely makes sense to notify the user this occurred and to stop
-> > the current process.  It may be useful to give a hint on how
-> > to restart capture?  
+On Sun, Aug 04, 2019 at 10:16:23PM +0200, Sam Ravnborg wrote:
+> drm_panel_attach() will check if there is a controller
+> already attached - drop the check in the driver.
 > 
-> Hi Jonathan,
-> 
-> Restarting the capture can simply be done by disabling/re-enabling, e.g.
-> from userland:
-> cd /sys/bus/iio/devices/iio:deviceX
-> echo 0 > buffer/enable
-> echo 1 > buffer/enable
-> 
-> Do you think such a hint should be added somewhere? (in the commit
-> message or in a comment...) ?
+> Use drm_panel_get_modes() so the driver no longer uses the function
+> pointer.
 
-Perhaps it should put something in the kernel log if
-the overflow occurs?
+Applied to drm-misc-next.
 
-Otherwise comment in code is always better than the commit log as chances
-of a random user finding the commit very low indeed ;)
-
-Jonathan
+	Sam
 
 > 
-> > 
-> > Is this a condition that can occur under 'normal conditions' such
-> > as something else grabbing the CPU for too long?  
+> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Inki Dae <inki.dae@samsung.com>
+> Cc: Joonyoung Shim <jy0922.shim@samsung.com>
+> Cc: Seung-Woo Kim <sw0312.kim@samsung.com>
+> Cc: Kyungmin Park <kyungmin.park@samsung.com>
+> Cc: Kukjin Kim <kgene@kernel.org>
+> Cc: Krzysztof Kozlowski <krzk@kernel.org>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-samsung-soc@vger.kernel.org
+> ---
+>  drivers/gpu/drm/exynos/exynos_drm_dpi.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 > 
-> Indeed, this may happen for instance when DMA isn't used (e.g. no DMA
-> channel as been assigned to the ADC, so using CPU/interrupts), and CPU
-> is busy for too long... I don't expect this may happen otherwise.
-> 
-> > 
-> > I'd just like to understand if we are dealing with a 'fault'
-> > case of just one where things go wrong under weird conditions.  
-> 
-> Of course something weird, wrong, faulty... happening on the DMA side
-> for example, may cause overrun. But it's quite unlikely.
-> 
-> > 
-> > Patch itself looks fine.  
-> 
-> Please let me know if I need to improve description.
-> 
-> Thanks for reviewing,
-> Fabrice
-> 
-> > 
-> > Thanks,
-> > 
-> > Jonathan
-> > 
-> >   
-> >> ---
-> >>  drivers/iio/adc/stm32-adc-core.c | 14 +++++------
-> >>  drivers/iio/adc/stm32-adc-core.h |  9 +++++++
-> >>  drivers/iio/adc/stm32-adc.c      | 53 ++++++++++++++++++++++++++++++++++++++--
-> >>  3 files changed, 67 insertions(+), 9 deletions(-)
-> >>
-> >> diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
-> >> index 6537f4f..97655d7 100644
-> >> --- a/drivers/iio/adc/stm32-adc-core.c
-> >> +++ b/drivers/iio/adc/stm32-adc-core.c
-> >> @@ -280,21 +280,21 @@ static int stm32h7_adc_clk_sel(struct platform_device *pdev,
-> >>  static const struct stm32_adc_common_regs stm32f4_adc_common_regs = {
-> >>  	.csr = STM32F4_ADC_CSR,
-> >>  	.ccr = STM32F4_ADC_CCR,
-> >> -	.eoc1_msk = STM32F4_EOC1,
-> >> -	.eoc2_msk = STM32F4_EOC2,
-> >> -	.eoc3_msk = STM32F4_EOC3,
-> >> +	.eoc1_msk = STM32F4_EOC1 | STM32F4_OVR1,
-> >> +	.eoc2_msk = STM32F4_EOC2 | STM32F4_OVR2,
-> >> +	.eoc3_msk = STM32F4_EOC3 | STM32F4_OVR3,
-> >>  	.ier = STM32F4_ADC_CR1,
-> >> -	.eocie_msk = STM32F4_EOCIE,
-> >> +	.eocie_msk = STM32F4_EOCIE | STM32F4_OVRIE,
-> >>  };
-> >>  
-> >>  /* STM32H7 common registers definitions */
-> >>  static const struct stm32_adc_common_regs stm32h7_adc_common_regs = {
-> >>  	.csr = STM32H7_ADC_CSR,
-> >>  	.ccr = STM32H7_ADC_CCR,
-> >> -	.eoc1_msk = STM32H7_EOC_MST,
-> >> -	.eoc2_msk = STM32H7_EOC_SLV,
-> >> +	.eoc1_msk = STM32H7_EOC_MST | STM32H7_OVR_MST,
-> >> +	.eoc2_msk = STM32H7_EOC_SLV | STM32H7_OVR_SLV,
-> >>  	.ier = STM32H7_ADC_IER,
-> >> -	.eocie_msk = STM32H7_EOCIE,
-> >> +	.eocie_msk = STM32H7_EOCIE | STM32H7_OVRIE,
-> >>  };
-> >>  
-> >>  static const unsigned int stm32_adc_offset[STM32_ADC_MAX_ADCS] = {
-> >> diff --git a/drivers/iio/adc/stm32-adc-core.h b/drivers/iio/adc/stm32-adc-core.h
-> >> index 2579d51..2322809 100644
-> >> --- a/drivers/iio/adc/stm32-adc-core.h
-> >> +++ b/drivers/iio/adc/stm32-adc-core.h
-> >> @@ -51,10 +51,12 @@
-> >>  #define STM32F4_ADC_CCR			(STM32_ADCX_COMN_OFFSET + 0x04)
-> >>  
-> >>  /* STM32F4_ADC_SR - bit fields */
-> >> +#define STM32F4_OVR			BIT(5)
-> >>  #define STM32F4_STRT			BIT(4)
-> >>  #define STM32F4_EOC			BIT(1)
-> >>  
-> >>  /* STM32F4_ADC_CR1 - bit fields */
-> >> +#define STM32F4_OVRIE			BIT(26)
-> >>  #define STM32F4_RES_SHIFT		24
-> >>  #define STM32F4_RES_MASK		GENMASK(25, 24)
-> >>  #define STM32F4_SCAN			BIT(8)
-> >> @@ -72,8 +74,11 @@
-> >>  #define STM32F4_ADON			BIT(0)
-> >>  
-> >>  /* STM32F4_ADC_CSR - bit fields */
-> >> +#define STM32F4_OVR3			BIT(21)
-> >>  #define STM32F4_EOC3			BIT(17)
-> >> +#define STM32F4_OVR2			BIT(13)
-> >>  #define STM32F4_EOC2			BIT(9)
-> >> +#define STM32F4_OVR1			BIT(5)
-> >>  #define STM32F4_EOC1			BIT(1)
-> >>  
-> >>  /* STM32F4_ADC_CCR - bit fields */
-> >> @@ -103,10 +108,12 @@
-> >>  
-> >>  /* STM32H7_ADC_ISR - bit fields */
-> >>  #define STM32MP1_VREGREADY		BIT(12)
-> >> +#define STM32H7_OVR			BIT(4)
-> >>  #define STM32H7_EOC			BIT(2)
-> >>  #define STM32H7_ADRDY			BIT(0)
-> >>  
-> >>  /* STM32H7_ADC_IER - bit fields */
-> >> +#define STM32H7_OVRIE			STM32H7_OVR
-> >>  #define STM32H7_EOCIE			STM32H7_EOC
-> >>  
-> >>  /* STM32H7_ADC_CR - bit fields */
-> >> @@ -155,7 +162,9 @@ enum stm32h7_adc_dmngt {
-> >>  #define STM32H7_LINCALFACT_MASK		GENMASK(29, 0)
-> >>  
-> >>  /* STM32H7_ADC_CSR - bit fields */
-> >> +#define STM32H7_OVR_SLV			BIT(20)
-> >>  #define STM32H7_EOC_SLV			BIT(18)
-> >> +#define STM32H7_OVR_MST			BIT(4)
-> >>  #define STM32H7_EOC_MST			BIT(2)
-> >>  
-> >>  /* STM32H7_ADC_CCR - bit fields */
-> >> diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
-> >> index 3b291d7..9361f92 100644
-> >> --- a/drivers/iio/adc/stm32-adc.c
-> >> +++ b/drivers/iio/adc/stm32-adc.c
-> >> @@ -117,7 +117,9 @@ struct stm32_adc_regs {
-> >>   * struct stm32_adc_regspec - stm32 registers definition
-> >>   * @dr:			data register offset
-> >>   * @ier_eoc:		interrupt enable register & eocie bitfield
-> >> + * @ier_ovr:		interrupt enable register & overrun bitfield
-> >>   * @isr_eoc:		interrupt status register & eoc bitfield
-> >> + * @isr_ovr:		interrupt status register & overrun bitfield
-> >>   * @sqr:		reference to sequence registers array
-> >>   * @exten:		trigger control register & bitfield
-> >>   * @extsel:		trigger selection register & bitfield
-> >> @@ -128,7 +130,9 @@ struct stm32_adc_regs {
-> >>  struct stm32_adc_regspec {
-> >>  	const u32 dr;
-> >>  	const struct stm32_adc_regs ier_eoc;
-> >> +	const struct stm32_adc_regs ier_ovr;
-> >>  	const struct stm32_adc_regs isr_eoc;
-> >> +	const struct stm32_adc_regs isr_ovr;
-> >>  	const struct stm32_adc_regs *sqr;
-> >>  	const struct stm32_adc_regs exten;
-> >>  	const struct stm32_adc_regs extsel;
-> >> @@ -337,7 +341,9 @@ static const unsigned int stm32f4_adc_smp_cycles[STM32_ADC_MAX_SMP + 1] = {
-> >>  static const struct stm32_adc_regspec stm32f4_adc_regspec = {
-> >>  	.dr = STM32F4_ADC_DR,
-> >>  	.ier_eoc = { STM32F4_ADC_CR1, STM32F4_EOCIE },
-> >> +	.ier_ovr = { STM32F4_ADC_CR1, STM32F4_OVRIE },
-> >>  	.isr_eoc = { STM32F4_ADC_SR, STM32F4_EOC },
-> >> +	.isr_ovr = { STM32F4_ADC_SR, STM32F4_OVR },
-> >>  	.sqr = stm32f4_sq,
-> >>  	.exten = { STM32F4_ADC_CR2, STM32F4_EXTEN_MASK, STM32F4_EXTEN_SHIFT },
-> >>  	.extsel = { STM32F4_ADC_CR2, STM32F4_EXTSEL_MASK,
-> >> @@ -429,7 +435,9 @@ static const unsigned int stm32h7_adc_smp_cycles[STM32_ADC_MAX_SMP + 1] = {
-> >>  static const struct stm32_adc_regspec stm32h7_adc_regspec = {
-> >>  	.dr = STM32H7_ADC_DR,
-> >>  	.ier_eoc = { STM32H7_ADC_IER, STM32H7_EOCIE },
-> >> +	.ier_ovr = { STM32H7_ADC_IER, STM32H7_OVRIE },
-> >>  	.isr_eoc = { STM32H7_ADC_ISR, STM32H7_EOC },
-> >> +	.isr_ovr = { STM32H7_ADC_ISR, STM32H7_OVR },
-> >>  	.sqr = stm32h7_sq,
-> >>  	.exten = { STM32H7_ADC_CFGR, STM32H7_EXTEN_MASK, STM32H7_EXTEN_SHIFT },
-> >>  	.extsel = { STM32H7_ADC_CFGR, STM32H7_EXTSEL_MASK,
-> >> @@ -506,6 +514,18 @@ static void stm32_adc_conv_irq_disable(struct stm32_adc *adc)
-> >>  			   adc->cfg->regs->ier_eoc.mask);
-> >>  }
-> >>  
-> >> +static void stm32_adc_ovr_irq_enable(struct stm32_adc *adc)
-> >> +{
-> >> +	stm32_adc_set_bits(adc, adc->cfg->regs->ier_ovr.reg,
-> >> +			   adc->cfg->regs->ier_ovr.mask);
-> >> +}
-> >> +
-> >> +static void stm32_adc_ovr_irq_disable(struct stm32_adc *adc)
-> >> +{
-> >> +	stm32_adc_clr_bits(adc, adc->cfg->regs->ier_ovr.reg,
-> >> +			   adc->cfg->regs->ier_ovr.mask);
-> >> +}
-> >> +
-> >>  static void stm32_adc_set_res(struct stm32_adc *adc)
-> >>  {
-> >>  	const struct stm32_adc_regs *res = &adc->cfg->regs->res;
-> >> @@ -1205,6 +1225,19 @@ static int stm32_adc_read_raw(struct iio_dev *indio_dev,
-> >>  	}
-> >>  }
-> >>  
-> >> +static irqreturn_t stm32_adc_threaded_isr(int irq, void *data)
-> >> +{
-> >> +	struct stm32_adc *adc = data;
-> >> +	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> >> +	const struct stm32_adc_regspec *regs = adc->cfg->regs;
-> >> +	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
-> >> +
-> >> +	if (status & regs->isr_ovr.mask)
-> >> +		dev_err(&indio_dev->dev, "Overrun interrupt, stopping.\n");
-> >> +
-> >> +	return IRQ_HANDLED;
-> >> +}
-> >> +
-> >>  static irqreturn_t stm32_adc_isr(int irq, void *data)
-> >>  {
-> >>  	struct stm32_adc *adc = data;
-> >> @@ -1212,6 +1245,17 @@ static irqreturn_t stm32_adc_isr(int irq, void *data)
-> >>  	const struct stm32_adc_regspec *regs = adc->cfg->regs;
-> >>  	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
-> >>  
-> >> +	if (status & regs->isr_ovr.mask) {
-> >> +		/*
-> >> +		 * Overrun occurred on regular conversions: data for wrong
-> >> +		 * channel may be read. Unconditionally disable interrupts
-> >> +		 * to stop processing data and print error message.
-> >> +		 */
-> >> +		stm32_adc_ovr_irq_disable(adc);
-> >> +		stm32_adc_conv_irq_disable(adc);
-> >> +		return IRQ_WAKE_THREAD;
-> >> +	}
-> >> +
-> >>  	if (status & regs->isr_eoc.mask) {
-> >>  		/* Reading DR also clears EOC status flag */
-> >>  		adc->buffer[adc->bufi] = stm32_adc_readw(adc, regs->dr);
-> >> @@ -1441,6 +1485,8 @@ static int __stm32_adc_buffer_postenable(struct iio_dev *indio_dev)
-> >>  	/* Reset adc buffer index */
-> >>  	adc->bufi = 0;
-> >>  
-> >> +	stm32_adc_ovr_irq_enable(adc);
-> >> +
-> >>  	if (!adc->dma_chan)
-> >>  		stm32_adc_conv_irq_enable(adc);
-> >>  
-> >> @@ -1481,6 +1527,8 @@ static void __stm32_adc_buffer_predisable(struct iio_dev *indio_dev)
-> >>  	if (!adc->dma_chan)
-> >>  		stm32_adc_conv_irq_disable(adc);
-> >>  
-> >> +	stm32_adc_ovr_irq_disable(adc);
-> >> +
-> >>  	if (adc->dma_chan)
-> >>  		dmaengine_terminate_sync(adc->dma_chan);
-> >>  
-> >> @@ -1818,8 +1866,9 @@ static int stm32_adc_probe(struct platform_device *pdev)
-> >>  	if (adc->irq < 0)
-> >>  		return adc->irq;
-> >>  
-> >> -	ret = devm_request_irq(&pdev->dev, adc->irq, stm32_adc_isr,
-> >> -			       0, pdev->name, adc);
-> >> +	ret = devm_request_threaded_irq(&pdev->dev, adc->irq, stm32_adc_isr,
-> >> +					stm32_adc_threaded_isr,
-> >> +					0, pdev->name, adc);
-> >>  	if (ret) {
-> >>  		dev_err(&pdev->dev, "failed to request IRQ\n");
-> >>  		return ret;  
-> >   
-
+> diff --git a/drivers/gpu/drm/exynos/exynos_drm_dpi.c b/drivers/gpu/drm/exynos/exynos_drm_dpi.c
+> index 3cebb19ec1c4..5479ff71cbc6 100644
+> --- a/drivers/gpu/drm/exynos/exynos_drm_dpi.c
+> +++ b/drivers/gpu/drm/exynos/exynos_drm_dpi.c
+> @@ -43,7 +43,7 @@ exynos_dpi_detect(struct drm_connector *connector, bool force)
+>  {
+>  	struct exynos_dpi *ctx = connector_to_dpi(connector);
+>  
+> -	if (ctx->panel && !ctx->panel->connector)
+> +	if (ctx->panel)
+>  		drm_panel_attach(ctx->panel, &ctx->connector);
+>  
+>  	return connector_status_connected;
+> @@ -85,7 +85,7 @@ static int exynos_dpi_get_modes(struct drm_connector *connector)
+>  	}
+>  
+>  	if (ctx->panel)
+> -		return ctx->panel->funcs->get_modes(ctx->panel);
+> +		return drm_panel_get_modes(ctx->panel);
+>  
+>  	return 0;
+>  }
+> -- 
+> 2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
