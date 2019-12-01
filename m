@@ -2,54 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEDE710E0ED
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Dec 2019 07:47:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8262510E197
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Dec 2019 12:31:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=qNlLaR5mjMyirRBqv2FVzbVbkEWVVz/+f9+ZRMCos1M=; b=M4KPochdtNqUHXSWDMz39+Y6vm
-	Ti3dIyvIH13JM2OEvbysjbKZoptS9nJ5RsbToh+qQoCGyQWExRvXAbU4yUvl7Uw9HmJMinAtWLASf
-	3mpw+wncyET9kwefIpdaeANUyvEEpJPMKMyihSyKNK1Shyqz68LAAF99x2pMovSvA697PLkjv5kEp
-	Ng3rZkiPpIA+OuXq0dhKYvdkuxs/QKuRErQPQIbU2l0oJGYECwotGXYn/Blf7NqngQ3yIbPyCfPt4
-	hvUeooLmfYceD2ucGgfGkiFfWeHEMvthziTeJT3ggirSEsl0Iu8gBJrsnGRfwLrsiusnPf4gtQ2w7
-	y40KcDkA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jJULa9HFEtQCkvvfQZZ+i2CUJWnI94hq5IhaxTH6RUU=; b=lxEr1NSwtDaQpL
+	Ds9jRebUV4ilWbTPSArRPl3SUlrbUZ+lkuTzD0KFMJEUeaxZktHSHLCFfhQlpnmxjLOGt0rysWGlu
+	nfGUelBOPfYF5oE/93nrs4Sl+K7wYdfO3LRDHIrQFA3U3ClnMHy90vOS3RkjUKghpj2qMEqz6jJsY
+	Fh10ybxjOjRBNdBIKeXBitLP4EZcl8RNL7FAyIzNNlbyJJMF252mTzi++lka/7p7xm6WDbzBMj+U7
+	R0aVRkdVwe75XhKMeWcV0CRlKLxODeK9q1px2q5/Mwcp7UTJQTUGvtu/jIO+pMa4tw6E+AOm/f2ZD
+	NacNyb/HqfUm56Gv/NKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibJ0d-00024y-0C; Sun, 01 Dec 2019 06:47:07 +0000
-Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
+	id 1ibNRy-00074j-KN; Sun, 01 Dec 2019 11:31:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibJ0T-00024d-9N
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Dec 2019 06:46:59 +0000
-Received: from tarshish (unknown [10.0.8.3])
+ id 1ibNRq-00074I-9u
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Dec 2019 11:31:32 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mx.tkos.co.il (Postfix) with ESMTPS id 0525B440022;
- Sun,  1 Dec 2019 08:46:43 +0200 (IST)
-References: <3a870e11b152e2f8ffb2b3256c5ac42741658c4c.1574960406.git.baruch@tkos.co.il>
- <20191129170717.GC28308@lunn.ch>
-User-agent: mu4e 1.2.0; emacs 26.1
-From: Baruch Siach <baruch@tkos.co.il>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: Re: [PATCH] ARM: dts: mvebu: add support for SolidRun Clearfog GTR
-In-reply-to: <20191129170717.GC28308@lunn.ch>
-Date: Sun, 01 Dec 2019 08:46:43 +0200
-Message-ID: <871rto7dbg.fsf@tarshish>
+ by mail.kernel.org (Postfix) with ESMTPSA id 333ED20725;
+ Sun,  1 Dec 2019 11:31:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575199888;
+ bh=56XBnKJVmTYnYtton6KvBJ3ixR4lLH8rYw6S6VGdLYM=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=SaiWAtPN/430lBSXZTbyDue198W2vmXMtdwb+WelVpClcD99pKyBqp/3Na4jqOaLf
+ hNsVj366r/7ZIXNtrz06COEIcZKZWjiuKK+OuMjugS8t2q+Y9vUIaCTodotpX/Hzu6
+ dKCpoM6GvWwTLtKvKR4LA6WHVIndE/wLUuO6J0jA=
+Date: Sun, 1 Dec 2019 11:31:23 +0000
+From: Jonathan Cameron <jic23@kernel.org>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH] iio: adc: stm32-adc: Add check on overrun interrupt
+Message-ID: <20191201113123.1951460c@archlinux>
+In-Reply-To: <999ccf66-1184-7b9e-309c-8130ad643c82@st.com>
+References: <1574435294-19510-1-git-send-email-fabrice.gasnier@st.com>
+ <20191123113623.3e58b2d1@archlinux>
+ <999ccf66-1184-7b9e-309c-8130ad643c82@st.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191130_224657_785072_274FEEA9 
-X-CRM114-Status: GOOD (  17.34  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191201_033130_390335_A1DF67EB 
+X-CRM114-Status: GOOD (  30.35  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,122 +78,307 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Gregory Clement <gregory.clement@bootlin.com>,
- Jason Cooper <jason@lakedaemon.net>, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+On Mon, 25 Nov 2019 09:42:01 +0100
+Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
 
-Thanks for your review.
+> On 11/23/19 12:36 PM, Jonathan Cameron wrote:
+> > On Fri, 22 Nov 2019 16:08:14 +0100
+> > Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
+> >   
+> >> Enable overrun interrupt on STM32 ADC. In case data register hasn't been
+> >> read (by CPU or DMA), overrun condition is detected when there's new
+> >> conversion data available. Stop grabbing data and log an error message.
+> >> Use a threaded irq to avoid printing the error message from hard irq
+> >> context.
+> >>
+> >> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>  
+> > 
+> > Absolutely makes sense to notify the user this occurred and to stop
+> > the current process.  It may be useful to give a hint on how
+> > to restart capture?  
+> 
+> Hi Jonathan,
+> 
+> Restarting the capture can simply be done by disabling/re-enabling, e.g.
+> from userland:
+> cd /sys/bus/iio/devices/iio:deviceX
+> echo 0 > buffer/enable
+> echo 1 > buffer/enable
+> 
+> Do you think such a hint should be added somewhere? (in the commit
+> message or in a comment...) ?
 
-On Fri, Nov 29 2019, Andrew Lunn wrote:
+Perhaps it should put something in the kernel log if
+the overflow occurs?
 
-> On Thu, Nov 28, 2019 at 07:00:06PM +0200, Baruch Siach wrote:
->> SolidRun Clearfog GTR L8 and S4 SBCs are based on Armada 385. They
->> features 8 (L8) or 4 (S4) switched Ethernet ports, 1 1Gb Ethernet port,
->> 1 directly connected SFP port, 1 SFP port behind the switch (not
->> currently described in DT),
->
-> Hi Baruch
->
-> Did you try to add the SFP on the switch? What problems did you have?
-> The general support for it should be there.
+Otherwise comment in code is always better than the commit log as chances
+of a random user finding the commit very low indeed ;)
 
-I have not tested this SFP yet.
+Jonathan
 
->> +			i2c@11100 { /* SFP */
->> +				pinctrl-0 = <&cf_gtr_i2c1_pins>;
->> +				pinctrl-names = "default";
->> +				status = "okay";
->> +			};
->
-> Since there are two SFPs, it would be a good idea to indicate which
-> one this is.
+> 
+> > 
+> > Is this a condition that can occur under 'normal conditions' such
+> > as something else grabbing the CPU for too long?  
+> 
+> Indeed, this may happen for instance when DMA isn't used (e.g. no DMA
+> channel as been assigned to the ADC, so using CPU/interrupts), and CPU
+> is busy for too long... I don't expect this may happen otherwise.
+> 
+> > 
+> > I'd just like to understand if we are dealing with a 'fault'
+> > case of just one where things go wrong under weird conditions.  
+> 
+> Of course something weird, wrong, faulty... happening on the DMA side
+> for example, may cause overrun. But it's quite unlikely.
+> 
+> > 
+> > Patch itself looks fine.  
+> 
+> Please let me know if I need to improve description.
+> 
+> Thanks for reviewing,
+> Fabrice
+> 
+> > 
+> > Thanks,
+> > 
+> > Jonathan
+> > 
+> >   
+> >> ---
+> >>  drivers/iio/adc/stm32-adc-core.c | 14 +++++------
+> >>  drivers/iio/adc/stm32-adc-core.h |  9 +++++++
+> >>  drivers/iio/adc/stm32-adc.c      | 53 ++++++++++++++++++++++++++++++++++++++--
+> >>  3 files changed, 67 insertions(+), 9 deletions(-)
+> >>
+> >> diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
+> >> index 6537f4f..97655d7 100644
+> >> --- a/drivers/iio/adc/stm32-adc-core.c
+> >> +++ b/drivers/iio/adc/stm32-adc-core.c
+> >> @@ -280,21 +280,21 @@ static int stm32h7_adc_clk_sel(struct platform_device *pdev,
+> >>  static const struct stm32_adc_common_regs stm32f4_adc_common_regs = {
+> >>  	.csr = STM32F4_ADC_CSR,
+> >>  	.ccr = STM32F4_ADC_CCR,
+> >> -	.eoc1_msk = STM32F4_EOC1,
+> >> -	.eoc2_msk = STM32F4_EOC2,
+> >> -	.eoc3_msk = STM32F4_EOC3,
+> >> +	.eoc1_msk = STM32F4_EOC1 | STM32F4_OVR1,
+> >> +	.eoc2_msk = STM32F4_EOC2 | STM32F4_OVR2,
+> >> +	.eoc3_msk = STM32F4_EOC3 | STM32F4_OVR3,
+> >>  	.ier = STM32F4_ADC_CR1,
+> >> -	.eocie_msk = STM32F4_EOCIE,
+> >> +	.eocie_msk = STM32F4_EOCIE | STM32F4_OVRIE,
+> >>  };
+> >>  
+> >>  /* STM32H7 common registers definitions */
+> >>  static const struct stm32_adc_common_regs stm32h7_adc_common_regs = {
+> >>  	.csr = STM32H7_ADC_CSR,
+> >>  	.ccr = STM32H7_ADC_CCR,
+> >> -	.eoc1_msk = STM32H7_EOC_MST,
+> >> -	.eoc2_msk = STM32H7_EOC_SLV,
+> >> +	.eoc1_msk = STM32H7_EOC_MST | STM32H7_OVR_MST,
+> >> +	.eoc2_msk = STM32H7_EOC_SLV | STM32H7_OVR_SLV,
+> >>  	.ier = STM32H7_ADC_IER,
+> >> -	.eocie_msk = STM32H7_EOCIE,
+> >> +	.eocie_msk = STM32H7_EOCIE | STM32H7_OVRIE,
+> >>  };
+> >>  
+> >>  static const unsigned int stm32_adc_offset[STM32_ADC_MAX_ADCS] = {
+> >> diff --git a/drivers/iio/adc/stm32-adc-core.h b/drivers/iio/adc/stm32-adc-core.h
+> >> index 2579d51..2322809 100644
+> >> --- a/drivers/iio/adc/stm32-adc-core.h
+> >> +++ b/drivers/iio/adc/stm32-adc-core.h
+> >> @@ -51,10 +51,12 @@
+> >>  #define STM32F4_ADC_CCR			(STM32_ADCX_COMN_OFFSET + 0x04)
+> >>  
+> >>  /* STM32F4_ADC_SR - bit fields */
+> >> +#define STM32F4_OVR			BIT(5)
+> >>  #define STM32F4_STRT			BIT(4)
+> >>  #define STM32F4_EOC			BIT(1)
+> >>  
+> >>  /* STM32F4_ADC_CR1 - bit fields */
+> >> +#define STM32F4_OVRIE			BIT(26)
+> >>  #define STM32F4_RES_SHIFT		24
+> >>  #define STM32F4_RES_MASK		GENMASK(25, 24)
+> >>  #define STM32F4_SCAN			BIT(8)
+> >> @@ -72,8 +74,11 @@
+> >>  #define STM32F4_ADON			BIT(0)
+> >>  
+> >>  /* STM32F4_ADC_CSR - bit fields */
+> >> +#define STM32F4_OVR3			BIT(21)
+> >>  #define STM32F4_EOC3			BIT(17)
+> >> +#define STM32F4_OVR2			BIT(13)
+> >>  #define STM32F4_EOC2			BIT(9)
+> >> +#define STM32F4_OVR1			BIT(5)
+> >>  #define STM32F4_EOC1			BIT(1)
+> >>  
+> >>  /* STM32F4_ADC_CCR - bit fields */
+> >> @@ -103,10 +108,12 @@
+> >>  
+> >>  /* STM32H7_ADC_ISR - bit fields */
+> >>  #define STM32MP1_VREGREADY		BIT(12)
+> >> +#define STM32H7_OVR			BIT(4)
+> >>  #define STM32H7_EOC			BIT(2)
+> >>  #define STM32H7_ADRDY			BIT(0)
+> >>  
+> >>  /* STM32H7_ADC_IER - bit fields */
+> >> +#define STM32H7_OVRIE			STM32H7_OVR
+> >>  #define STM32H7_EOCIE			STM32H7_EOC
+> >>  
+> >>  /* STM32H7_ADC_CR - bit fields */
+> >> @@ -155,7 +162,9 @@ enum stm32h7_adc_dmngt {
+> >>  #define STM32H7_LINCALFACT_MASK		GENMASK(29, 0)
+> >>  
+> >>  /* STM32H7_ADC_CSR - bit fields */
+> >> +#define STM32H7_OVR_SLV			BIT(20)
+> >>  #define STM32H7_EOC_SLV			BIT(18)
+> >> +#define STM32H7_OVR_MST			BIT(4)
+> >>  #define STM32H7_EOC_MST			BIT(2)
+> >>  
+> >>  /* STM32H7_ADC_CCR - bit fields */
+> >> diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
+> >> index 3b291d7..9361f92 100644
+> >> --- a/drivers/iio/adc/stm32-adc.c
+> >> +++ b/drivers/iio/adc/stm32-adc.c
+> >> @@ -117,7 +117,9 @@ struct stm32_adc_regs {
+> >>   * struct stm32_adc_regspec - stm32 registers definition
+> >>   * @dr:			data register offset
+> >>   * @ier_eoc:		interrupt enable register & eocie bitfield
+> >> + * @ier_ovr:		interrupt enable register & overrun bitfield
+> >>   * @isr_eoc:		interrupt status register & eoc bitfield
+> >> + * @isr_ovr:		interrupt status register & overrun bitfield
+> >>   * @sqr:		reference to sequence registers array
+> >>   * @exten:		trigger control register & bitfield
+> >>   * @extsel:		trigger selection register & bitfield
+> >> @@ -128,7 +130,9 @@ struct stm32_adc_regs {
+> >>  struct stm32_adc_regspec {
+> >>  	const u32 dr;
+> >>  	const struct stm32_adc_regs ier_eoc;
+> >> +	const struct stm32_adc_regs ier_ovr;
+> >>  	const struct stm32_adc_regs isr_eoc;
+> >> +	const struct stm32_adc_regs isr_ovr;
+> >>  	const struct stm32_adc_regs *sqr;
+> >>  	const struct stm32_adc_regs exten;
+> >>  	const struct stm32_adc_regs extsel;
+> >> @@ -337,7 +341,9 @@ static const unsigned int stm32f4_adc_smp_cycles[STM32_ADC_MAX_SMP + 1] = {
+> >>  static const struct stm32_adc_regspec stm32f4_adc_regspec = {
+> >>  	.dr = STM32F4_ADC_DR,
+> >>  	.ier_eoc = { STM32F4_ADC_CR1, STM32F4_EOCIE },
+> >> +	.ier_ovr = { STM32F4_ADC_CR1, STM32F4_OVRIE },
+> >>  	.isr_eoc = { STM32F4_ADC_SR, STM32F4_EOC },
+> >> +	.isr_ovr = { STM32F4_ADC_SR, STM32F4_OVR },
+> >>  	.sqr = stm32f4_sq,
+> >>  	.exten = { STM32F4_ADC_CR2, STM32F4_EXTEN_MASK, STM32F4_EXTEN_SHIFT },
+> >>  	.extsel = { STM32F4_ADC_CR2, STM32F4_EXTSEL_MASK,
+> >> @@ -429,7 +435,9 @@ static const unsigned int stm32h7_adc_smp_cycles[STM32_ADC_MAX_SMP + 1] = {
+> >>  static const struct stm32_adc_regspec stm32h7_adc_regspec = {
+> >>  	.dr = STM32H7_ADC_DR,
+> >>  	.ier_eoc = { STM32H7_ADC_IER, STM32H7_EOCIE },
+> >> +	.ier_ovr = { STM32H7_ADC_IER, STM32H7_OVRIE },
+> >>  	.isr_eoc = { STM32H7_ADC_ISR, STM32H7_EOC },
+> >> +	.isr_ovr = { STM32H7_ADC_ISR, STM32H7_OVR },
+> >>  	.sqr = stm32h7_sq,
+> >>  	.exten = { STM32H7_ADC_CFGR, STM32H7_EXTEN_MASK, STM32H7_EXTEN_SHIFT },
+> >>  	.extsel = { STM32H7_ADC_CFGR, STM32H7_EXTSEL_MASK,
+> >> @@ -506,6 +514,18 @@ static void stm32_adc_conv_irq_disable(struct stm32_adc *adc)
+> >>  			   adc->cfg->regs->ier_eoc.mask);
+> >>  }
+> >>  
+> >> +static void stm32_adc_ovr_irq_enable(struct stm32_adc *adc)
+> >> +{
+> >> +	stm32_adc_set_bits(adc, adc->cfg->regs->ier_ovr.reg,
+> >> +			   adc->cfg->regs->ier_ovr.mask);
+> >> +}
+> >> +
+> >> +static void stm32_adc_ovr_irq_disable(struct stm32_adc *adc)
+> >> +{
+> >> +	stm32_adc_clr_bits(adc, adc->cfg->regs->ier_ovr.reg,
+> >> +			   adc->cfg->regs->ier_ovr.mask);
+> >> +}
+> >> +
+> >>  static void stm32_adc_set_res(struct stm32_adc *adc)
+> >>  {
+> >>  	const struct stm32_adc_regs *res = &adc->cfg->regs->res;
+> >> @@ -1205,6 +1225,19 @@ static int stm32_adc_read_raw(struct iio_dev *indio_dev,
+> >>  	}
+> >>  }
+> >>  
+> >> +static irqreturn_t stm32_adc_threaded_isr(int irq, void *data)
+> >> +{
+> >> +	struct stm32_adc *adc = data;
+> >> +	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
+> >> +	const struct stm32_adc_regspec *regs = adc->cfg->regs;
+> >> +	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
+> >> +
+> >> +	if (status & regs->isr_ovr.mask)
+> >> +		dev_err(&indio_dev->dev, "Overrun interrupt, stopping.\n");
+> >> +
+> >> +	return IRQ_HANDLED;
+> >> +}
+> >> +
+> >>  static irqreturn_t stm32_adc_isr(int irq, void *data)
+> >>  {
+> >>  	struct stm32_adc *adc = data;
+> >> @@ -1212,6 +1245,17 @@ static irqreturn_t stm32_adc_isr(int irq, void *data)
+> >>  	const struct stm32_adc_regspec *regs = adc->cfg->regs;
+> >>  	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
+> >>  
+> >> +	if (status & regs->isr_ovr.mask) {
+> >> +		/*
+> >> +		 * Overrun occurred on regular conversions: data for wrong
+> >> +		 * channel may be read. Unconditionally disable interrupts
+> >> +		 * to stop processing data and print error message.
+> >> +		 */
+> >> +		stm32_adc_ovr_irq_disable(adc);
+> >> +		stm32_adc_conv_irq_disable(adc);
+> >> +		return IRQ_WAKE_THREAD;
+> >> +	}
+> >> +
+> >>  	if (status & regs->isr_eoc.mask) {
+> >>  		/* Reading DR also clears EOC status flag */
+> >>  		adc->buffer[adc->bufi] = stm32_adc_readw(adc, regs->dr);
+> >> @@ -1441,6 +1485,8 @@ static int __stm32_adc_buffer_postenable(struct iio_dev *indio_dev)
+> >>  	/* Reset adc buffer index */
+> >>  	adc->bufi = 0;
+> >>  
+> >> +	stm32_adc_ovr_irq_enable(adc);
+> >> +
+> >>  	if (!adc->dma_chan)
+> >>  		stm32_adc_conv_irq_enable(adc);
+> >>  
+> >> @@ -1481,6 +1527,8 @@ static void __stm32_adc_buffer_predisable(struct iio_dev *indio_dev)
+> >>  	if (!adc->dma_chan)
+> >>  		stm32_adc_conv_irq_disable(adc);
+> >>  
+> >> +	stm32_adc_ovr_irq_disable(adc);
+> >> +
+> >>  	if (adc->dma_chan)
+> >>  		dmaengine_terminate_sync(adc->dma_chan);
+> >>  
+> >> @@ -1818,8 +1866,9 @@ static int stm32_adc_probe(struct platform_device *pdev)
+> >>  	if (adc->irq < 0)
+> >>  		return adc->irq;
+> >>  
+> >> -	ret = devm_request_irq(&pdev->dev, adc->irq, stm32_adc_isr,
+> >> -			       0, pdev->name, adc);
+> >> +	ret = devm_request_threaded_irq(&pdev->dev, adc->irq, stm32_adc_isr,
+> >> +					stm32_adc_threaded_isr,
+> >> +					0, pdev->name, adc);
+> >>  	if (ret) {
+> >>  		dev_err(&pdev->dev, "failed to request IRQ\n");
+> >>  		return ret;  
+> >   
 
-This port is marked CON5/CON6 on the PCB. I'll extend the comment in v2.
-
->> +	sfp: sfp {
->> +		compatible = "sff,sfp";
->> +		i2c-bus = <&i2c1>;
->> +		los-gpio = <&gpio1 22 GPIO_ACTIVE_HIGH>;
->> +		mod-def0-gpio = <&gpio0 25 GPIO_ACTIVE_LOW>;
->> +		tx-disable-gpio = <&gpio1 14 GPIO_ACTIVE_HIGH>;
->> +	};
->
-> when you get the second sfp working you are going to have naming
-> issue. So maybe call this sfp0?
-
-Good idea.
-
->> +		led1 {
->> +			label = "led1";
->> +			gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
->> +		};
->> +
->> +		led2 {
->> +			label = "led2";
->> +			gpios = <&gpio1 20 GPIO_ACTIVE_HIGH>;
->> +		};
->
-> There is a naming convention of LEDS labels. This does not fit it.
-
-Indeed. The 'label' property is deprecated since commit
-c5d18dd6b64. These are general propose GPIOs. Not sure what 'function'
-property fits here. Also, these GPIOs go out to an optional front-panel
-connector. The 'color' property does not make much sense in that
-case. I'll stick LED_COLOR_ID_GREEN for the no front-panel option.
-
->> +&gpio0 {
->> +	pinctrl-0 = <&cf_gtr_fan_pwm>;
->> +	pinctrl-names = "default";
->> +
->> +	wifi-disable {
->> +		gpio-hog;
->> +		gpios = <30 GPIO_ACTIVE_LOW>, <31 GPIO_ACTIVE_LOW>;
->> +		output-low;
->> +		line-name = "wifi-disable";
->> +	};
->> +};
->
-> Isn't there a generic rfkill GPIO driver? Never looked, but it seems
-> like it should exist.
-
-Over the years there were attempts to add DT binding to rfkill-regulator
-or rfkill-gpio:
-
-  https://patchwork.kernel.org/patch/9407171/
-
-  http://lists.infradead.org/pipermail/linux-arm-kernel/2014-April/247328.html
-
-  https://www.spinics.net/lists/linux-wireless/msg84462.html
-
-Not sure what is the right way to let userspace know about GPIO that
-serves as rfkill.
-
->> +	sar-isolation {
->> +		gpio-hog;
->> +		gpios = <15 GPIO_ACTIVE_LOW>;
->> +		output-low;
->> +		line-name = "sar-isolation";
->> +	};
->
-> What is SAR?
-
-Sample at Reset. That's the Armada 38x datasheet term. This GPIO is
-active at reset time to isolate SAR signals from interference of
-external devices. We deassert isolation after reset to make these signal
-usable.
-
-baruch
-
---
-     http://baruch.siach.name/blog/                  ~. .~   Tk Open Systems
-=}------------------------------------------------ooO--U--Ooo------------{=
-   - baruch@tkos.co.il - tel: +972.52.368.4656, http://www.tkos.co.il -
 
 _______________________________________________
 linux-arm-kernel mailing list
