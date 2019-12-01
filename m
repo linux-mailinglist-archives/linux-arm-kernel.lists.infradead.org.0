@@ -2,98 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 101D710E347
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Dec 2019 20:06:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B52210E38C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Dec 2019 22:08:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lzmHGIigO8si/9GVI812qD0WBSxxWmp3GksOVqPRRU4=; b=ZbEM+J5bHJdGyPX+7/0IQwSZB
-	u/4GzX//dYr9EZ4jqb/ah04CGvrfapgY+4GOAYu2A1I/M4x5FPJwzO47h9K3faMGjudbdzFx0w19e
-	kUplwN3DgMZ+27bEz5LlkjyP9C4vvfnmeZpHcu4E+ldTaQfMCCLkA1J743HO5toIHpOmNY7/mkEHA
-	+ltzUl+KzIjuOILlSCmTXCwB24MCrO60UIWMm9qCqG8gN9HdC6KI5YL0AI/vmxkJkkNqMH1IQT5Od
-	PrApFFzDM7PXAtYTBnq2bPeNUEvrWEVWfaMEMQ0gZ5YYZiQqXGq3SSTbg+0EQ3TWX+DOzk/i85PQe
-	9A0pz/wSQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wOluy9u5P9hfyhP0uqq2nK3vCkVMpeMcF5byvFeK36Y=; b=rqKyJ1AbrVgDfr
+	FZPNRw2XAaI4yqz4DjcQft5vqdxh+2rOGrIfdOwL+ecjcFsGI7mXdGi0PfbNaTAUpiKJjlUUR/fVm
+	+qFMA74EKD49elCX5Swgc8nq/aPKqDg68ZPBoxSdeiiCf8tkZxKYWqIsEJOTMcpNS5WfyLZQVF3JJ
+	C0zot6Du8kEp98sBHyWNw1V6LJ+DTC2L9eU/O5lVJu30vLVJ/CbfjxNea5pHvQvo5jsa/51/+vEA/
+	0pAfarpgbZnWBRilNfLsmr7Z76yr40EVAhR1GBhjrewliK8h/sRI4oaDnJGxQfiDpeY1oE6d9gBAl
+	wpzSohsuPyiVEzxnzCjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibUYI-0002GO-KL; Sun, 01 Dec 2019 19:06:38 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1ibWSS-0005dP-Mw; Sun, 01 Dec 2019 21:08:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibUYA-0002Fy-2Q
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Dec 2019 19:06:31 +0000
-Received: by mail-qk1-x742.google.com with SMTP id d124so15217634qke.6
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 01 Dec 2019 11:06:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=jonmasters-org.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:organization:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=MYJMRHaiXc+sf5WEZ2y2GPKTcfT0mAf/egNeoJkGqUk=;
- b=jwOVcGbncaHcFffRkMA7LE9/UEhFUaIT8HSLGGQg6lzBye14j5BgANn42w4XkkyUfV
- ZOeYTUI0Dd3YuYKHFmy8XJ288eAiat5tF1T/Annsj7YQszO0ng4s3PnYNlcc6EvK8Mst
- nsUxYHAo+BA5vFB6wpkDCkxk7TWJ8NevfsWgUFUPHAht5Wo6CiF4uhiBp8edAwy1OiuX
- S1Jd1DrmUKk4BtedkskZETWYwSznYKzddZWM91onELxBhwwxx64JfrvTFsVTo8CLYBUB
- zeMcq1mqFwHppbPvN09508FJp8LjKrr8nCXj4xoCiyXtevuoR+S4h+dA+WQi+mdQEGob
- fBEg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=MYJMRHaiXc+sf5WEZ2y2GPKTcfT0mAf/egNeoJkGqUk=;
- b=XHRr+4blTXlmfuv28RsfXMuCsajFewnoka5CwFaNL1HFj7P0hRuVfFg2onGH7OIROD
- s3ETvEdut9uYPgmRTk0dSG/QwryEXkBGGKqB89iL09nyOuUR985vtgyScOeSipWrXcNw
- hXG29aP9Qpw4IgaQ/BxP5wkzA9aKZmjIIR3dFjTXIX+Dw2LudfhP435ZO83JBbGik6Ua
- 3upk79W4ZPU+BpzLhEsFK2cergbbP/Z3KkrTNo1gQdMuGLt6BLzPjw2HiKZAtg/xaqQw
- rxrnssluzvB/Dze7JtxgauOOI60hIdVV2toCBmz4E26yCRZCWvaryrjzLeBJdblMRuja
- Jeog==
-X-Gm-Message-State: APjAAAUcuho/i1Kv7EEPyY5lZ5EoUZBRJFPEIvAoZ9hFoI3EGtOci7Ye
- 3HjgplgaM6BeJ/B3p9KxZqbeVA==
-X-Google-Smtp-Source: APXvYqxQytCbo+98XXQij13g03gGpSRogXBmEDaQ9V4RHLtJy49OLvXxEnE89dRmw7RtqJlp/u3SRg==
-X-Received: by 2002:a05:620a:16a4:: with SMTP id
- s4mr5994651qkj.488.1575227185774; 
- Sun, 01 Dec 2019 11:06:25 -0800 (PST)
-Received: from independence.bos.jonmasters.org
- (24-148-33-89.s2391.c3-0.grn-cbr1.chi-grn.il.cable.rcncustomer.com.
- [24.148.33.89])
- by smtp.gmail.com with ESMTPSA id k123sm6414644qkd.4.2019.12.01.11.06.24
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 01 Dec 2019 11:06:25 -0800 (PST)
-Subject: Re: [PATCH 0/2] arm64: Introduce boot parameter to disable TLB flush
- instruction within the same inner shareable domain
-To: Will Deacon <will@kernel.org>, "qi.fuli@fujitsu.com" <qi.fuli@fujitsu.com>
-References: <20190617143255.10462-1-indou.takao@jp.fujitsu.com>
- <93009dbd-b31c-7364-86d2-21f0fac36676@jp.fujitsu.com>
- <20191101172851.GC3983@willie-the-truck>
-From: Jon Masters <jcm@jonmasters.org>
-Organization: World Organi{s,z}ation of Broken Dreams
-Message-ID: <a06ae400-29b2-d88f-af48-deafd7e355fe@jonmasters.org>
-Date: Sun, 1 Dec 2019 11:02:42 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1ibWSH-0005bx-Qv
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Dec 2019 21:08:36 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CE00B20865;
+ Sun,  1 Dec 2019 21:08:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575234513;
+ bh=xUtbib0mj42a6stnoW1G9F2urnfc6rxP/uq2AAN28Wk=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=UHXg0uT4VqwMSqggJJt3pmJuZnrzaA7EGyOv6K5l0HlOPHqmeIRPRVMRf94hgUnh9
+ nJYqbQrIIndqa9VdPXS3pHODnowcsYcqrSMPyBlkVKaNlcldpLQomUpMI0XN86htKv
+ IIWL4GSZRzRvv+/rPpen5/VQxUk0cqGMPRj564K0=
+Date: Sun, 1 Dec 2019 21:08:27 +0000
+From: Jonathan Cameron <jic23@kernel.org>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH] dt-bindings: iio: adc: stm32-adc: convert bindings to
+ json-schema
+Message-ID: <20191201210827.41e1612c@archlinux>
+In-Reply-To: <1574873325-9916-1-git-send-email-fabrice.gasnier@st.com>
+References: <1574873325-9916-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20191101172851.GC3983@willie-the-truck>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191201_110630_173052_FED914C5 
-X-CRM114-Status: GOOD (  19.91  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20191201_130833_919570_723A0FA4 
+X-CRM114-Status: GOOD (  23.33  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 1.1 DATE_IN_PAST_03_06     Date: is 3 to 6 hours before Received: date
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,77 +77,484 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "tokamoto@jp.fujitsu.com" <tokamoto@jp.fujitsu.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "peterz@infradead.org" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "maeda.naoaki@fujitsu.com" <maeda.naoaki@fujitsu.com>,
- "misono.tomohiro@fujitsu.com" <misono.tomohiro@fujitsu.com>,
- Itaru Kitayama <itaru.kitayama@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "indou.takao@fujitsu.com" <indou.takao@fujitsu.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
+ alexandre.torgue@st.com, linux-iio@vger.kernel.org, pmeerw@pmeerw.net,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/1/19 1:28 PM, Will Deacon wrote:
+On Wed, 27 Nov 2019 17:48:45 +0100
+Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
 
-> On Fri, Nov 01, 2019 at 09:56:05AM +0000, qi.fuli@fujitsu.com wrote:
-
->> In this thread, I explained that:
->> * I found a performance problem which is caused by TLBI-is instruction.
->> * The problem occurs like this:
->>    1) On a core, OS tries to flush TLB using TLBI-is instruction
->>    2) TLBI-is instruction causes a broadcast to all other cores, and
->>    each core received hard-wired signal
->>    3) Each core check if there are TLB entries which have the specified
->> ASID/VA
-
-(the above confuses implementation with architecture)
-
-<snip>
-
-> I think it's worth bearing in mind that I have little sympathy for the
-> problem that you are seeing. As far as I can tell, you've done the
-> following:
+> Convert the STM32 ADC binding to DT schema format using json-schema
 > 
->    1. You designed a CPU micro-architecture that stalls whenever it receives
->       a TLB invalidation request.
+> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+This one is complex enough that I'm going to leave it to the experts :)
+Definitely one for the DT maintainers.
 
-s/SPARC/Arm/ && wire in DVM
+Jonathan
 
->    2. You integrated said CPU design into a system where broadcast TLB
->       invalidation is not filtered and therefore stalls every CPU every
->       time that /any/ TLB invalidation is broadcast.
-> 
->    3. You deployed a mixture of Linux and jitter-sensitive software on
->       this system, and now you're failing to meet your performance
->       requirements.
-> 
-> Have I got that right?
-> 
-> If so, given that your CPU design isn't widely available, nobody else
-> appears to have made this mistake and jitter hasn't been reported as an
-> issue for any other systems, it's very unlikely that we're going to make
-> invasive upstream kernel changes to support you. I'm sorry, but all I can
-> suggest is that you check that your micro-architecture and performance
-> requirements are aligned with the design of Linux *before* building another
-> machine like this in future.
-> 
-> I hate to be blunt, but I also don't want to waste your time.
+> ---
+> Note: this applies on top of IIO tree currently (iio-for-5.5c).
+> diff --git a/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml b/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml
+> new file mode 100644
+> index 00000000..2ebc2e6
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml
+> @@ -0,0 +1,448 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/bindings/iio/adc/st,stm32-adc.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: STMicroelectronics STM32 ADC bindings
+> +
+> +description: |
+> +  STM32 ADC is a successive approximation analog-to-digital converter.
+> +  It has several multiplexed input channels. Conversions can be performed
+> +  in single, continuous, scan or discontinuous mode. Result of the ADC is
+> +  stored in a left-aligned or right-aligned 32-bit data register.
+> +  Conversions can be launched in software or using hardware triggers.
+> +
+> +  The analog watchdog feature allows the application to detect if the input
+> +  voltage goes beyond the user-defined, higher or lower thresholds.
+> +
+> +  Each STM32 ADC block can have up to 3 ADC instances.
+> +
+> +maintainers:
+> +  - Fabrice Gasnier <fabrice.gasnier@st.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - st,stm32f4-adc-core
+> +      - st,stm32h7-adc-core
+> +      - st,stm32mp1-adc-core
+> +
+> +  reg:
+> +    description: Offset and length of the ADC block register set
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    description: |
+> +      One or more interrupts for ADC block, depending on part used:
+> +        - stm32f4 and stm32h7 share a common ADC interrupt line.
+> +        - stm32mp1 has two separate interrupt lines, one for each ADC within
+> +          ADC block.
+> +
+> +  clocks:
+> +    description: |
+> +      Core can use up to two clocks, depending on part used:
+> +        - "adc" clock: for the analog circuitry, common to all ADCs.
+> +          It's required on stm32f4.
+> +          It's optional on stm32h7 and stm32mp1.
+> +        - "bus" clock: for registers access, common to all ADCs.
+> +          It's not present on stm32f4.
+> +          It's required on stm32h7 and stm32mp1.
+> +
+> +  clock-names: true
+> +
+> +  st,max-clk-rate-hz:
+> +    description: |
+> +      Allow to specify desired max clock rate used by analog circuitry.
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +
+> +  vdda-supply:
+> +    description: Phandle to the vdda input analog voltage.
+> +
+> +  vref-supply:
+> +    description: Phandle to the vref input analog reference voltage.
+> +
+> +  booster-supply:
+> +    description: |
+> +      Phandle to the embedded booster regulator that can be used to supply ADC
+> +      analog input switches on stm32h7 and stm32mp1.
+> +
+> +  vdd-supply:
+> +    description: |
+> +      Phandle to the vdd input voltage. It can be used to supply ADC analog
+> +      input switches on stm32mp1.
+> +
+> +  st,syscfg:
+> +    description: |
+> +      Phandle to system configuration controller. It can be used to control the
+> +      analog circuitry on stm32mp1.
+> +    allOf:
+> +      - $ref: "/schemas/types.yaml#/definitions/phandle-array"
+> +
+> +  interrupt-controller: true
+> +
+> +  '#interrupt-cells':
+> +    const: 1
+> +
+> +  '#address-cells':
+> +    const: 1
+> +
+> +  '#size-cells':
+> +    const: 0
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: st,stm32f4-adc-core
+> +
+> +    then:
+> +      properties:
+> +        clocks:
+> +          maxItems: 1
+> +
+> +        clock-names:
+> +          items:
+> +            const: adc
+> +          maxItems: 1
+> +
+> +        interrupts:
+> +          items:
+> +            - description: interrupt line common for all ADCs
+> +
+> +        booster-supply: false
+> +
+> +        vdd-supply: false
+> +
+> +        st,syscfg: false
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: st,stm32h7-adc-core
+> +
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 1
+> +          maxItems: 2
+> +
+> +        clock-names:
+> +          items:
+> +            - const: bus
+> +            - const: adc
+> +          minItems: 1
+> +          maxItems: 2
+> +
+> +        interrupts:
+> +          items:
+> +            - description: interrupt line common for all ADCs
+> +
+> +        vdd-supply: false
+> +
+> +        st,syscfg: false
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: st,stm32mp1-adc-core
+> +
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 1
+> +          maxItems: 2
+> +
+> +        clock-names:
+> +          items:
+> +            - const: bus
+> +            - const: adc
+> +          minItems: 1
+> +          maxItems: 2
+> +
+> +        interrupts:
+> +          items:
+> +            - description: interrupt line for ADC1
+> +            - description: interrupt line for ADC2
+> +
+> +additionalProperties: false
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - vdda-supply
+> +  - vref-supply
+> +  - interrupt-controller
+> +  - '#interrupt-cells'
+> +  - '#address-cells'
+> +  - '#size-cells'
+> +
+> +patternProperties:
+> +  "^adc@[0-9]+$":
+> +    type: object
+> +    description: |
+> +      An ADC block node should contain at least one subnode, representing an
+> +      ADC instance available on the machine.
+> +
+> +    properties:
+> +      compatible:
+> +        enum:
+> +          - st,stm32f4-adc
+> +          - st,stm32h7-adc
+> +          - st,stm32mp1-adc
+> +
+> +      reg:
+> +        description: |
+> +          Offset of ADC instance in ADC block. Valid values are:
+> +            - 0x0:   ADC1
+> +            - 0x100: ADC2
+> +            - 0x200: ADC3 (stm32f4 only)
+> +        maxItems: 1
+> +
+> +      '#io-channel-cells':
+> +        const: 1
+> +
+> +      interrupts:
+> +        description: |
+> +          IRQ Line for the ADC instance. Valid values are:
+> +            - 0 for adc@0
+> +            - 1 for adc@100
+> +            - 2 for adc@200 (stm32f4 only)
+> +        maxItems: 1
+> +
+> +      clocks:
+> +        description: |
+> +          Input clock private to this ADC instance. It's required only on
+> +          stm32f4, that has per instance clock input for registers access.
+> +        maxItems: 1
+> +
+> +      dmas:
+> +        description: RX DMA Channel
+> +        maxItems: 1
+> +
+> +      dma-names:
+> +        const: rx
+> +
+> +      assigned-resolution-bits:
+> +        description: |
+> +          Resolution (bits) to use for conversions:
+> +            - can be 6, 8, 10 or 12 on stm32f4
+> +            - can be 8, 10, 12, 14 or 16 on stm32h7 and stm32mp1
+> +        allOf:
+> +          - $ref: /schemas/types.yaml#/definitions/uint32
+> +
+> +      st,adc-channels:
+> +        description: |
+> +          List of single-ended channels muxed for this ADC. It can have up to:
+> +            - 16 channels, numbered from 0 to 15 (for in0..in15) on stm32f4
+> +            - 20 channels, numbered from 0 to 19 (for in0..in19) on stm32h7 and
+> +              stm32mp1.
+> +        allOf:
+> +          - $ref: /schemas/types.yaml#/definitions/uint32-array
+> +
+> +      st,adc-diff-channels:
+> +        description: |
+> +          List of differential channels muxed for this ADC. Some channels can
+> +          be configured as differential instead of single-ended on stm32h7 and
+> +          on stm32mp1. Positive and negative inputs pairs are listed:
+> +          <vinp vinn>, <vinp vinn>,... vinp and vinn are numbered from 0 to 19.
+> +
+> +          Note: At least one of "st,adc-channels" or "st,adc-diff-channels" is
+> +          required. Both properties can be used together. Some channels can be
+> +          used as single-ended and some other ones as differential (mixed). But
+> +          channels can't be configured both as single-ended and differential.
+> +        allOf:
+> +          - $ref: /schemas/types.yaml#/definitions/uint32-matrix
+> +          - items:
+> +              items:
+> +                - description: |
+> +                    "vinp" indicates positive input number
+> +                  minimum: 0
+> +                  maximum: 19
+> +                - description: |
+> +                    "vinn" indicates negative input number
+> +                  minimum: 0
+> +                  maximum: 19
+> +
+> +      st,min-sample-time-nsecs:
+> +        description: |
+> +          Minimum sampling time in nanoseconds. Depending on hardware (board)
+> +          e.g. high/low analog input source impedance, fine tune of ADC
+> +          sampling time may be recommended. This can be either one value or an
+> +          array that matches "st,adc-channels" and/or "st,adc-diff-channels"
+> +          list, to set sample time resp. for all channels, or independently for
+> +          each channel.
+> +        allOf:
+> +          - $ref: /schemas/types.yaml#/definitions/uint32-array
+> +
+> +    allOf:
+> +      - if:
+> +          properties:
+> +            compatible:
+> +              contains:
+> +                const: st,stm32f4-adc
+> +
+> +        then:
+> +          properties:
+> +            reg:
+> +              enum:
+> +                - 0x0
+> +                - 0x100
+> +                - 0x200
+> +
+> +            interrupts:
+> +              minimum: 0
+> +              maximum: 2
+> +
+> +            assigned-resolution-bits:
+> +              allOf:
+> +                - enum: [6, 8, 10, 12]
+> +                - default: 12
+> +
+> +            st,adc-channels:
+> +              allOf:
+> +                - maxItems: 16
+> +                  items:
+> +                    minimum: 0
+> +                    maximum: 15
+> +
+> +            st,adc-diff-channels: false
+> +
+> +            st,min-sample-time-nsecs:
+> +              allOf:
+> +                - maxItems: 16
+> +                  items:
+> +                    minimum: 80
+> +
+> +          required:
+> +            - clocks
+> +
+> +      - if:
+> +          properties:
+> +            compatible:
+> +              contains:
+> +                enum:
+> +                  - st,stm32h7-adc
+> +                  - st,stm32mp1-adc
+> +
+> +        then:
+> +          properties:
+> +            reg:
+> +              enum:
+> +                - 0x0
+> +                - 0x100
+> +
+> +            interrupts:
+> +              minimum: 0
+> +              maximum: 1
+> +
+> +            assigned-resolution-bits:
+> +              allOf:
+> +                - enum: [8, 10, 12, 14, 16]
+> +                - default: 16
+> +
+> +            st,adc-channels:
+> +              allOf:
+> +                - maxItems: 20
+> +                  items:
+> +                    minimum: 0
+> +                    maximum: 19
+> +
+> +            st,min-sample-time-nsecs:
+> +              allOf:
+> +                - maxItems: 20
+> +                  items:
+> +                    minimum: 40
+> +
+> +    additionalProperties: false
+> +
+> +    anyOf:
+> +      - required:
+> +          - st,adc-channels
+> +      - required:
+> +          - st,adc-diff-channels
+> +
+> +    required:
+> +      - compatible
+> +      - reg
+> +      - interrupts
+> +      - '#io-channel-cells'
+> +
+> +examples:
+> +  - |
+> +    // Example 1: with stm32f429
+> +      adc123: adc@40012000 {
+> +        compatible = "st,stm32f4-adc-core";
+> +        reg = <0x40012000 0x400>;
+> +        interrupts = <18>;
+> +        clocks = <&rcc 0 168>;
+> +        clock-names = "adc";
+> +        st,max-clk-rate-hz = <36000000>;
+> +        vdda-supply = <&vdda>;
+> +        vref-supply = <&vref>;
+> +        interrupt-controller;
+> +        #interrupt-cells = <1>;
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+> +        adc@0 {
+> +          compatible = "st,stm32f4-adc";
+> +          #io-channel-cells = <1>;
+> +          reg = <0x0>;
+> +          clocks = <&rcc 0 168>;
+> +          interrupt-parent = <&adc123>;
+> +          interrupts = <0>;
+> +          st,adc-channels = <8>;
+> +          dmas = <&dma2 0 0 0x400 0x0>;
+> +          dma-names = "rx";
+> +          assigned-resolution-bits = <8>;
+> +        };
+> +        // ...
+> +        // other adc child nodes follow...
+> +      };
+> +
+> +  - |
+> +    // Example 2: with stm32mp157c to setup ADC1 with:
+> +    // - channel 1 as single-ended
+> +    // - channels 2 & 3 as differential (with resp. 6 & 7 negative inputs)
+> +      #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +      #include <dt-bindings/clock/stm32mp1-clks.h>
+> +      adc12: adc@48003000 {
+> +        compatible = "st,stm32mp1-adc-core";
+> +        reg = <0x48003000 0x400>;
+> +        interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
+> +        clocks = <&rcc ADC12>, <&rcc ADC12_K>;
+> +        clock-names = "bus", "adc";
+> +        booster-supply = <&booster>;
+> +        vdd-supply = <&vdd>;
+> +        vdda-supply = <&vdda>;
+> +        vref-supply = <&vref>;
+> +        st,syscfg = <&syscfg>;
+> +        interrupt-controller;
+> +        #interrupt-cells = <1>;
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+> +        adc@0 {
+> +          compatible = "st,stm32mp1-adc";
+> +          #io-channel-cells = <1>;
+> +          reg = <0x0>;
+> +          interrupt-parent = <&adc12>;
+> +          interrupts = <0>;
+> +          st,adc-channels = <1>;
+> +          st,adc-diff-channels = <2 6>, <3 7>;
+> +          st,min-sample-time-nsecs = <5000>;
+> +          dmas = <&dmamux1 9 0x400 0x05>;
+> +          dma-names = "rx";
+> +        };
+> +        // ...
+> +        // other adc child node follow...
+> +      };
+> +
+> +...
 
-I always tried to ask nicely for the above to be heeded. There's a 
-difference between "hi, our implementation doesn't scale, and here's 
-why" vs "there's a problem with all TLBIs...". There isn't. The problem 
-is the implementation and that should have been called out first thing.
-
-Jon.
-
--- 
-Computer Architect
 
 _______________________________________________
 linux-arm-kernel mailing list
