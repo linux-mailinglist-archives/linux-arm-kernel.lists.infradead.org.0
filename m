@@ -2,76 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA70210ECD7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 17:08:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91ECD10ECD9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 17:11:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q6LCByc6mY9OMSG/gqOyi+a/0dlYfYjVVG3y8CvEr5Q=; b=dWnrHFqoSUKbbs
-	viglLRRzn40DVWzqMTkkUSik/J4b+dD0Fiqnd4A/w542EMzCcX4ihB5L3X/Al4G5n4wTKpGL3eV2M
-	cZDjqlPyfihqFq2GdHF4GXg20jA79TWUNV0gMFaAsH5WqX8TQYxlEp0nerTd5XpCeLhybxO5XlmKC
-	u+vXjQGNeq2XDzN564opdO1+zfNVv+Bf8JS4N/5L/HwFcV9p7uDKKf6T/ahmj7ekm2eZvY4zNhxNI
-	nAeI/pSryaQ8+JUlt9UX4yIeWYUxrz3yMLCMSJTycT/kGYumZLEqjY4MWKtRXmW8IdOuBu7CmxIa0
-	IWtg1d+KLN0zO0osWlcA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9Bv47rae9dIiknxrDId+7ZyAIOtmMjV9lRNECnudMEo=; b=TEI
+	9U+a7lDbPLEbp2dz/TR+EFBL11rYWrNe8u5h5ijl9+V3ZD7es08FhO4DI5cjrYjWSdZL9ySufouo3
+	Atnk2Ar47/D38xNdvG/5gE4161xocBXDyPoV84V9B/sJMrWO4Sv/Hsnv5pk0PIYhDCeQ0RPEWZG58
+	IW6d49ehPs7fqpTMF29PdeSkSI7XJ4eToR8MgKglTJCY4By7iQFLuNUDo2gtWUOGFekbQ5kSsLwHJ
+	LW9LyI0CTKoBNX5o9jew9WnWqxLAeMiRasqrxb38f7XjzJ/8L1yL6GSkx5DRrXJ+jRHxFZTvR2IQq
+	wopiprzDq+d3m0w1wGQ2Jw7sYUVuLTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iboF2-0005k7-HJ; Mon, 02 Dec 2019 16:08:04 +0000
-Received: from securetransport.cubewerk.de ([188.68.39.254])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iboEu-0005jM-SK
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 16:07:59 +0000
-Received: from DHPWEX01.DH-ELECTRONICS.ORG
- (ipbcc0caba.dynamic.kabel-deutschland.de [188.192.202.186])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by securetransport.cubewerk.de (Postfix) with ESMTPSA id 9FDC65E84E;
- Mon,  2 Dec 2019 17:06:50 +0100 (CET)
-Received: from DHPWEX01.DH-ELECTRONICS.ORG (10.64.2.30) by
- DHPWEX01.DH-ELECTRONICS.ORG (10.64.2.30) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.397.3; 
- Mon, 2 Dec 2019 17:06:49 +0100
-Received: from DHPWEX01.DH-ELECTRONICS.ORG ([fe80::6ced:fa7f:9a9c:e579]) by
- DHPWEX01.DH-ELECTRONICS.ORG ([fe80::6ced:fa7f:9a9c:e579%3]) with mapi id
- 15.02.0397.003; Mon, 2 Dec 2019 17:06:49 +0100
-X-secureTransport-forwarded: yes
-From: Christoph Niedermaier <cniedermaier@dh-electronics.com>
-Complaints-To: abuse@cubewerk.de
-To: Igor Plyatov <plyatov@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
- "Eduardo Valentin" <edubezval@gmail.com>, Daniel Lezcano
- <daniel.lezcano@linaro.org>, Amit Kucheria <amit.kucheria@verdurent.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, Fabio Estevam
- <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: Re: Issue with imx_get_temp()
-Thread-Topic: Issue with imx_get_temp()
-Thread-Index: AQHVqRbLqcYH4Jl9ek67aDFmXIL93aem88ow
-Date: Mon, 2 Dec 2019 16:06:49 +0000
-Message-ID: <be5267da90ad480e86df1de5019f542a@dh-electronics.com>
-References: <08794fde-cdd0-287c-62bf-e2e3b8c80686@gmail.com>
-In-Reply-To: <08794fde-cdd0-287c-62bf-e2e3b8c80686@gmail.com>
-Accept-Language: de-DE, en-US
-Content-Language: de-DE
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.64.3.50]
-MIME-Version: 1.0
+	id 1iboIF-00089r-PV; Mon, 02 Dec 2019 16:11:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iboI9-00089U-1K
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 16:11:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5BA8A31B;
+ Mon,  2 Dec 2019 08:11:14 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5A1433F52E;
+ Mon,  2 Dec 2019 08:11:13 -0800 (PST)
+From: Mark Rutland <mark.rutland@arm.com>
+To: linux-arm-kernel@lists.infradead.org, will@kernel.org,
+ catalin.marinas@arm.com
+Subject: [PATCH] arm64: insn: consistently handle exit text
+Date: Mon,  2 Dec 2019 16:11:07 +0000
+Message-Id: <20191202161107.19177-1-mark.rutland@arm.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_080757_216745_00A53013 
-X-CRM114-Status: GOOD (  14.75  )
+X-CRM114-CacheID: sfid-20191202_081117_166142_C6F6872D 
+X-CRM114-Status: GOOD (  16.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [188.68.39.254 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -85,126 +58,183 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>, Torsten Duwe <duwe@suse.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIA0KDQpGcm9tOiBsaW51eC1hcm0ta2VybmVsIFttYWlsdG86bGludXgtYXJtLWtlcm5lbC1i
-b3VuY2VzQGxpc3RzLmluZnJhZGVhZC5vcmddIE9uIEJlaGFsZiBPZiBJZ29yIFBseWF0b3YNClNl
-bnQ6IE1vbmRheSwgRGVjZW1iZXIgMiwgMjAxOSAyOjQ1IFBNDQo+DQo+IERlYXIgYWxsLA0KPg0K
-PiBwbGVhc2XCoCBsb29rIGF0IGJhY2stdHJhY2UgYmVsb3cuIEl0IGhhcHBlbnMgb24gRnJlZXNj
-YWxlIGkuTVg2IFF1YWQuDQo+DQo+IEZvdW5kIGEgZmV3IG9mIHRob3NlIGR1cmluZyBwb3dlciBv
-bi9vZmYgc3RyZXNzIHRlc3QgaW4gdGhlIGNsaW1hdGUgY2hhbWJlcjoNCj4NCj4gWyAgICAwLjY1
-NzU5Nl0gLS0tLS0tLS0tLS0tWyBjdXQgaGVyZSBdLS0tLS0tLS0tLS0tDQo+IFsgICAgMC42NTc2
-MjZdIFdBUk5JTkc6IENQVTogMyBQSUQ6IDE1MCBhdCAvaG9tZS9nZW9zaWcvZGV2ZWxvcG1lbnQv
-b2UtY29yZS10b3JhZGV4LWNyNy9idWlsZC90bXAtZ2xpYmMvd29yay1zaGFyZWQvY3I3L2tlcm5l
-bC1zb3VyY2Uva2VybmVsL2lycS9jaGlwLmM6MjQyIF9faXJxX3N0YXJ0dXArMHg5NC8weGE4DQo+
-IFsgICAgMC42NTc2MzBdIE1vZHVsZXMgbGlua2VkIGluOg0KDQpIYXZpbmcgdGhlIGZvbGxvd2lu
-ZyBpc3N1ZSBvbiBrZXJuZWwgNC4xOS44NyBvbiBhIGlteDZ1bGwgU29DLg0KVGhpcyBzb21ldGlt
-ZXMgaGFwcGVucyBkdXJpbmcga2VybmVsIGJvb3QsIGJ1dCB3aGVuIHRoZSBzeXN0ZW0gY29tZXMg
-dXAsIGl0IHdvcmtzIG5vcm1hbGx5Lg0KDQpVbmFibGUgdG8gaGFuZGxlIGtlcm5lbCBOVUxMIHBv
-aW50ZXIgZGVyZWZlcmVuY2UgYXQgdmlydHVhbCBhZGRyZXNzIDAwMDAwYzAwDQpwZ2QgPSAocHRy
-dmFsKQ0KWzAwMDAwYzAwXSAqcGdkPTAwMDAwMDAwDQpJbnRlcm5hbCBlcnJvcjogT29wczogODAw
-MDAwMDUgWyMxXSBQUkVFTVBUIFNNUCBBUk0NCk1vZHVsZXMgbGlua2VkIGluOg0KQ1BVOiAwIFBJ
-RDogNSBDb21tOiBrd29ya2VyLzA6MCBOb3QgdGFpbnRlZCA0LjE5Ljg3LWRoc29tLWc4YmJiZWY3
-MTNmYjAgIzINCkhhcmR3YXJlIG5hbWU6IEZyZWVzY2FsZSBpLk1YNiBVbHRyYWxpdGUgKERldmlj
-ZSBUcmVlKQ0KV29ya3F1ZXVlOiBldmVudHMgZGVmZXJyZWRfcHJvYmVfd29ya19mdW5jDQpQQyBp
-cyBhdCAweGMwMA0KTFIgaXMgYXQgX3Jhd19zcGluX2xvY2tfaXJxc2F2ZSsweDRjLzB4NTgNCnBj
-IDogWzwwMDAwMGMwMD5dICAgIGxyIDogWzxjMGE3YmM2OD5dICAgIHBzcjogNjAwMDAxOTMNCnNw
-IDogYzE2NDNjYzggIGlwIDogYzE2NDNjYzggIGZwIDogYzE2NDNjZjQNCnIxMDogMDAwMDAwMDAg
-IHI5IDogYzEwMTA1NDggIHI4IDogYzE2ZjIwMTANCnI3IDogYzE3MDU2MDAgIHI2IDogYzA1Njc1
-MTggIHI1IDogNjAwMDAxMTMgIHI0IDogYzE3MDU2MDANCnIzIDogYzE2MmIyMDAgIHIyIDogMDAw
-MDAwMDAgIHIxIDogMDAwMDAwMDAgIHIwIDogYzE3MDU2MDANCkZsYWdzOiBuWkN2ICBJUlFzIG9m
-ZiAgRklRcyBvbiAgTW9kZSBTVkNfMzIgIElTQSBBUk0gIFNlZ21lbnQgbm9uZQ0KQ29udHJvbDog
-MTBjNTM4N2QgIFRhYmxlOiA4MDAwNDA2YSAgREFDOiAwMDAwMDA1MQ0KUHJvY2VzcyBrd29ya2Vy
-LzA6MCAocGlkOiA1LCBzdGFjayBsaW1pdCA9IDB4KHB0cnZhbCkpDQpTdGFjazogKDB4YzE2NDNj
-YzggdG8gMHhjMTY0NDAwMCkNCjNjYzA6ICAgICAgICAgICAgICAgICAgIDAwMDAwMDAxIDAwMDAw
-MDAwIGMwNTY3NTE4IDQwMDAwMTEzIGMxNjQzY2ZjIGMxNzA1NjAwDQozY2UwOiAwMDAwMDE4NCAw
-MDAwMDAwMSBjMTY0M2QwYyBjMTY0M2NmOCBjMDU2NzUxOCBjMGE3YmMyOCBjMTcwNTYwMCAwMDAw
-MDE4NA0KM2QwMDogYzE2NDNkMmMgYzE2NDNkMTAgYzA1NmEyNDAgYzA1Njc1MTAgYzFjMWFmNDAg
-MDAwMDAwMTIgYzE2ZjIwMDAgYzE3MDU2MDANCjNkMjA6IGMxNjQzZDdjIGMxNjQzZDMwIGMwNzI2
-NTAwIGMwNTZhMjE4IDAwMDAwMDAwIDAwMDAwMDAwIDAwMDAwMDAwIDdhN2RhYWY4DQozZDQwOiBj
-MTZmMjAxMCBjMTZmMjAxMCAwMDAwMDA4MCA3YTdkYWFmOCBjMDU2NGU3YyAwMDAwMDAwMCBjMTZm
-MjAxMCBjMTA2MjlkNA0KM2Q2MDogYzE1Y2NjMWMgYzEwNjI5ZDQgMDAwMDAwMDEgMDAwMDAwMDAg
-YzE2NDNkOWMgYzE2NDNkODAgYzA1NTFlNWMgYzA3MjYzMDQNCjNkODA6IGMxNWNjYzE4IGMxNmYy
-MDEwIDAwMDAwMDAwIGMxNWNjYzFjIGMxNjQzZGNjIGMxNjQzZGEwIGMwNTRmZjA0IGMwNTUxZGY0
-DQozZGEwOiAwMDAwMDAwMCBjMTZmMjAxMCBjMTA2MjlkNCBjMTZmMjAxMCBjMDU1MDNhMCAwMDAw
-MDAwMSAwMDAwMDAwMSBjMTAxMDU0OA0KM2RjMDogYzE2NDNlMDQgYzE2NDNkZDAgYzA1NTAxNDgg
-YzA1NGZjZTQgYzA3OTU3NTQgYzA3OTNhMTAgYzE2NDNlMDQgYzE2NDNkZTgNCjNkZTA6IGMxMDYy
-OWQ0IGMxNjQzZTVjIGMxNmYyMDEwIGMwNTUwM2EwIDAwMDAwMDAxIDAwMDAwMDAxIGMxNjQzZTI0
-IGMxNjQzZTA4DQozZTAwOiBjMDU1MDQzMCBjMDU1MDBmMCAwMDAwMDAwMCBjMTY0M2U1YyBjMTAx
-MDU0OCBjMDU1MDNhMCBjMTY0M2U1NCBjMTY0M2UyOA0KM2UyMDogYzA1NGRmMjQgYzA1NTAzYWMg
-YzE2NDNlNTQgYzE1ZWJlZDQgYzFiY2QwZDQgN2E3ZGFhZjggYzE2ZjIwMTAgYzE2ZjIwNDQNCjNl
-NDA6IGMxMDEwNTQ4IGNiZGJjNjAwIGMxNjQzZThjIGMxNjQzZTU4IGMwNTRmYzUwIGMwNTRkZWI0
-IDAwMDAwMDAyIGMxNmYyMDEwDQozZTYwOiAwMDAwMDAwMSA3YTdkYWFmOCAwMDAwMDAwMCBjMTZm
-MjAxMCBjMTZmMjAxMCBjMTAzZjgwMCBjYmRiYzYwMCBjMTY0M2YwNA0KM2U4MDogYzE2NDNlOWMg
-YzE2NDNlOTAgYzA1NTA0NTQgYzA1NGZiODggYzE2NDNlYmMgYzE2NDNlYTAgYzA1NGVmZjAgYzA1
-NTA0NGMNCjNlYTA6IGMxNmYyMDEwIGMxMDNmNDNjIGMxMDNmNDg4IGNiZGJjNjAwIGMxNjQzZWRj
-IGMxNjQzZWMwIGMwNTRmNGJjIGMwNTRlZjZjDQozZWMwOiBjMTVmODcwMCBjMTAzZjQ5NCBjYmRi
-OTJjMCBjYmRiYzYwMCBjMTY0M2Y0NCBjMTY0M2VlMCBjMDEzYmNhYyBjMDU0ZjQ2NA0KM2VlMDog
-MDAwMDAwMDEgMDAwMDAwMDAgYzAxM2JjM2MgMDAwMDAwODAgMDAwMDAwMDAgMDAwMDAwMDAgMDAw
-MDAwMDAgMDAwMDAwMDANCjNmMDA6IGNiZGI5MmMwIGMxMDNmNDk0IGMxMWNmOTQwIDAwMDAwMDAw
-IGMwZGMyM2YwIDdhN2RhYWY4IGMwYTdiY2JjIGNiZGI5MmMwDQozZjIwOiBjMTVmODcxNCAwMDAw
-MDAwOCBjYmRiOTJmNCBjMTAwNTkwMCBjYmRiOTJjMCBjMTVmODcwMCBjMTY0M2Y3YyBjMTY0M2Y0
-OA0KM2Y0MDogYzAxM2JmNjAgYzAxM2JhZjggYzE1Zjg3ODAgMDAwMDAwMDAgYzE2NDNmN2MgYzE1
-Zjg3ODAgMDAwMDAwMDAgYzE2MDhlYzANCjNmNjA6IGMxNWY4NzAwIGMwMTNiZjM0IGMxNWY4N2I4
-IGMxNjFkZTQ4IGMxNjQzZmFjIGMxNjQzZjgwIGMwMTQyMDNjIGMwMTNiZjQwDQozZjgwOiAwMDAw
-MDAwMCBjMTYwOGVjMCBjMDE0MWYyNCAwMDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAw
-MCAwMDAwMDAwMA0KM2ZhMDogMDAwMDAwMDAgYzE2NDNmYjAgYzAxMDEwZTggYzAxNDFmMzAgMDAw
-MDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDANCjNmYzA6IDAwMDAwMDAwIDAwMDAwMDAw
-IDAwMDAwMDAwIDAwMDAwMDAwIDAwMDAwMDAwIDAwMDAwMDAwIDAwMDAwMDAwIDAwMDAwMDAwDQoz
-ZmUwOiAwMDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAxMyAwMDAwMDAw
-MCAwMDAwMDAwMCAwMDAwMDAwMA0KQmFja3RyYWNlOiANCls8YzBhN2JjMWM+XSAoX3Jhd19zcGlu
-X2xvY2tfaXJxc2F2ZSkgZnJvbSBbPGMwNTY3NTE4Pl0gKHJlZ21hcF9sb2NrX3NwaW5sb2NrKzB4
-MTQvMHgxYykNCiByNjowMDAwMDAwMSByNTowMDAwMDE4NCByNDpjMTcwNTYwMA0KWzxjMDU2NzUw
-ND5dIChyZWdtYXBfbG9ja19zcGlubG9jaykgZnJvbSBbPGMwNTZhMjQwPl0gKHJlZ21hcF93cml0
-ZSsweDM0LzB4NjQpDQogcjU6MDAwMDAxODQgcjQ6YzE3MDU2MDANCls8YzA1NmEyMGM+XSAocmVn
-bWFwX3dyaXRlKSBmcm9tIFs8YzA3MjY1MDA+XSAoaW14X3RoZXJtYWxfcHJvYmUrMHgyMDgvMHg2
-NTQpDQogcjc6YzE3MDU2MDAgcjY6YzE2ZjIwMDAgcjU6MDAwMDAwMTIgcjQ6YzFjMWFmNDANCls8
-YzA3MjYyZjg+XSAoaW14X3RoZXJtYWxfcHJvYmUpIGZyb20gWzxjMDU1MWU1Yz5dIChwbGF0Zm9y
-bV9kcnZfcHJvYmUrMHg3NC8weGFjKQ0KIHIxMDowMDAwMDAwMCByOTowMDAwMDAwMSByODpjMTA2
-MjlkNCByNzpjMTVjY2MxYyByNjpjMTA2MjlkNCByNTpjMTZmMjAxMA0KIHI0OjAwMDAwMDAwDQpb
-PGMwNTUxZGU4Pl0gKHBsYXRmb3JtX2Rydl9wcm9iZSkgZnJvbSBbPGMwNTRmZjA0Pl0gKHJlYWxs
-eV9wcm9iZSsweDIyYy8weDJkMCkNCiByNzpjMTVjY2MxYyByNjowMDAwMDAwMCByNTpjMTZmMjAx
-MCByNDpjMTVjY2MxOA0KWzxjMDU0ZmNkOD5dIChyZWFsbHlfcHJvYmUpIGZyb20gWzxjMDU1MDE0
-OD5dIChkcml2ZXJfcHJvYmVfZGV2aWNlKzB4NjQvMHgxODgpDQogcjEwOmMxMDEwNTQ4IHI5OjAw
-MDAwMDAxIHI4OjAwMDAwMDAxIHI3OmMwNTUwM2EwIHI2OmMxNmYyMDEwIHI1OmMxMDYyOWQ0DQog
-cjQ6YzE2ZjIwMTAgcjM6MDAwMDAwMDANCls8YzA1NTAwZTQ+XSAoZHJpdmVyX3Byb2JlX2Rldmlj
-ZSkgZnJvbSBbPGMwNTUwNDMwPl0gKF9fZGV2aWNlX2F0dGFjaF9kcml2ZXIrMHg5MC8weGEwKQ0K
-IHI5OjAwMDAwMDAxIHI4OjAwMDAwMDAxIHI3OmMwNTUwM2EwIHI2OmMxNmYyMDEwIHI1OmMxNjQz
-ZTVjIHI0OmMxMDYyOWQ0DQpbPGMwNTUwM2EwPl0gKF9fZGV2aWNlX2F0dGFjaF9kcml2ZXIpIGZy
-b20gWzxjMDU0ZGYyND5dIChidXNfZm9yX2VhY2hfZHJ2KzB4N2MvMHhjNCkNCiByNzpjMDU1MDNh
-MCByNjpjMTAxMDU0OCByNTpjMTY0M2U1YyByNDowMDAwMDAwMA0KWzxjMDU0ZGVhOD5dIChidXNf
-Zm9yX2VhY2hfZHJ2KSBmcm9tIFs8YzA1NGZjNTA+XSAoX19kZXZpY2VfYXR0YWNoKzB4ZDQvMHgx
-NDQpDQogcjc6Y2JkYmM2MDAgcjY6YzEwMTA1NDggcjU6YzE2ZjIwNDQgcjQ6YzE2ZjIwMTANCls8
-YzA1NGZiN2M+XSAoX19kZXZpY2VfYXR0YWNoKSBmcm9tIFs8YzA1NTA0NTQ+XSAoZGV2aWNlX2lu
-aXRpYWxfcHJvYmUrMHgxNC8weDE4KQ0KIHI4OmMxNjQzZjA0IHI3OmNiZGJjNjAwIHI2OmMxMDNm
-ODAwIHI1OmMxNmYyMDEwIHI0OmMxNmYyMDEwDQpbPGMwNTUwNDQwPl0gKGRldmljZV9pbml0aWFs
-X3Byb2JlKSBmcm9tIFs8YzA1NGVmZjA+XSAoYnVzX3Byb2JlX2RldmljZSsweDkwLzB4OTgpDQpb
-PGMwNTRlZjYwPl0gKGJ1c19wcm9iZV9kZXZpY2UpIGZyb20gWzxjMDU0ZjRiYz5dIChkZWZlcnJl
-ZF9wcm9iZV93b3JrX2Z1bmMrMHg2NC8weDk0KQ0KIHI3OmNiZGJjNjAwIHI2OmMxMDNmNDg4IHI1
-OmMxMDNmNDNjIHI0OmMxNmYyMDEwDQpbPGMwNTRmNDU4Pl0gKGRlZmVycmVkX3Byb2JlX3dvcmtf
-ZnVuYykgZnJvbSBbPGMwMTNiY2FjPl0gKHByb2Nlc3Nfb25lX3dvcmsrMHgxYzAvMHg0NDgpDQog
-cjc6Y2JkYmM2MDAgcjY6Y2JkYjkyYzAgcjU6YzEwM2Y0OTQgcjQ6YzE1Zjg3MDANCls8YzAxM2Jh
-ZWM+XSAocHJvY2Vzc19vbmVfd29yaykgZnJvbSBbPGMwMTNiZjYwPl0gKHdvcmtlcl90aHJlYWQr
-MHgyYy8weDUyMCkNCiByMTA6YzE1Zjg3MDAgcjk6Y2JkYjkyYzAgcjg6YzEwMDU5MDAgcjc6Y2Jk
-YjkyZjQgcjY6MDAwMDAwMDggcjU6YzE1Zjg3MTQNCiByNDpjYmRiOTJjMA0KWzxjMDEzYmYzND5d
-ICh3b3JrZXJfdGhyZWFkKSBmcm9tIFs8YzAxNDIwM2M+XSAoa3RocmVhZCsweDExOC8weDE1NCkN
-CiByMTA6YzE2MWRlNDggcjk6YzE1Zjg3Yjggcjg6YzAxM2JmMzQgcjc6YzE1Zjg3MDAgcjY6YzE2
-MDhlYzAgcjU6MDAwMDAwMDANCiByNDpjMTVmODc4MA0KWzxjMDE0MWYyND5dIChrdGhyZWFkKSBm
-cm9tIFs8YzAxMDEwZTg+XSAocmV0X2Zyb21fZm9yaysweDE0LzB4MmMpDQpFeGNlcHRpb24gc3Rh
-Y2soMHhjMTY0M2ZiMCB0byAweGMxNjQzZmY4KQ0KM2ZhMDogICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDANCjNmYzA6
-IDAwMDAwMDAwIDAwMDAwMDAwIDAwMDAwMDAwIDAwMDAwMDAwIDAwMDAwMDAwIDAwMDAwMDAwIDAw
-MDAwMDAwIDAwMDAwMDAwDQozZmUwOiAwMDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAw
-MCAwMDAwMDAxMyAwMDAwMDAwMA0KIHIxMDowMDAwMDAwMCByOTowMDAwMDAwMCByODowMDAwMDAw
-MCByNzowMDAwMDAwMCByNjowMDAwMDAwMCByNTpjMDE0MWYyNA0KIHI0OmMxNjA4ZWMwIHIzOjAw
-MDAwMDAwDQpDb2RlOiBiYWQgUEMgdmFsdWUNCi0tLVsgZW5kIHRyYWNlIDEyYTA3ODg3ZjNjOTdl
-YjAgXS0tLQ0KDQpDb3VsZCBteSBpc3N1ZSBhbmQgSWdvciBQbHlhdG92IGlzc3VlIGhhdmUgdGhl
-IHNhbWUgY2F1c2Ugb3IgYXJlIHRoZSB0d28gZGlmZmVyZW50IHByb2JsZW1zIG9mIHRoZSAiaW14
-X3RoZXJtYWwiIGRyaXZlcj8NCg0KVGhhbmtzIGFuZCBiZXN0IHJlZ2FyZHMsDQpDaHJpc3RvcGgN
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+A kernel built with KASAN && FTRACE_WITH_REGS && !MODULES, produces a
+boot-time splat in the bowels of ftrace:
+
+| [    0.000000] ftrace: allocating 32281 entries in 127 pages
+| [    0.000000] ------------[ cut here ]------------
+| [    0.000000] WARNING: CPU: 0 PID: 0 at kernel/trace/ftrace.c:2019 ftrace_bug+0x27c/0x328
+| [    0.000000] CPU: 0 PID: 0 Comm: swapper Not tainted 5.4.0-rc3-00008-g7f08ae53a7e3 #13
+| [    0.000000] Hardware name: linux,dummy-virt (DT)
+| [    0.000000] pstate: 60000085 (nZCv daIf -PAN -UAO)
+| [    0.000000] pc : ftrace_bug+0x27c/0x328
+| [    0.000000] lr : ftrace_init+0x640/0x6cc
+| [    0.000000] sp : ffffa000120e7e00
+| [    0.000000] x29: ffffa000120e7e00 x28: ffff00006ac01b10
+| [    0.000000] x27: ffff00006ac898c0 x26: dfffa00000000000
+| [    0.000000] x25: ffffa000120ef290 x24: ffffa0001216df40
+| [    0.000000] x23: 000000000000018d x22: ffffa0001244c700
+| [    0.000000] x21: ffffa00011bf393c x20: ffff00006ac898c0
+| [    0.000000] x19: 00000000ffffffff x18: 0000000000001584
+| [    0.000000] x17: 0000000000001540 x16: 0000000000000007
+| [    0.000000] x15: 0000000000000000 x14: ffffa00010432770
+| [    0.000000] x13: ffff940002483519 x12: 1ffff40002483518
+| [    0.000000] x11: 1ffff40002483518 x10: ffff940002483518
+| [    0.000000] x9 : dfffa00000000000 x8 : 0000000000000001
+| [    0.000000] x7 : ffff940002483519 x6 : ffffa0001241a8c0
+| [    0.000000] x5 : ffff940002483519 x4 : ffff940002483519
+| [    0.000000] x3 : ffffa00011780870 x2 : 0000000000000001
+| [    0.000000] x1 : 1fffe0000d591318 x0 : 0000000000000000
+| [    0.000000] Call trace:
+| [    0.000000]  ftrace_bug+0x27c/0x328
+| [    0.000000]  ftrace_init+0x640/0x6cc
+| [    0.000000]  start_kernel+0x27c/0x654
+| [    0.000000] random: get_random_bytes called from print_oops_end_marker+0x30/0x60 with crng_init=0
+| [    0.000000] ---[ end trace 0000000000000000 ]---
+| [    0.000000] ftrace faulted on writing
+| [    0.000000] [<ffffa00011bf393c>] _GLOBAL__sub_D_65535_0___tracepoint_initcall_level+0x4/0x28
+| [    0.000000] Initializing ftrace call sites
+| [    0.000000] ftrace record flags: 0
+| [    0.000000]  (0)
+| [    0.000000]  expected tramp: ffffa000100b3344
+
+This is due to an unfortunate combination of several factors.
+
+Building with KASAN results in the compiler generating anonymous
+functions to register/unregister global variables against the shadow
+memory. These functions are placed in .text.startup/.text.exit, and
+given mangled names like _GLOBAL__sub_{I,D}_65535_0_$OTHER_SYMBOL. The
+kernel linker script places these in .init.text and .exit.text
+respectively, which are both discarded at runtime as part of initmem.
+
+Building with FTRACE_WITH_REGS uses -fpatchable-function-entry=2, which
+also instruments KASAN's anonymous functions. When these are discarded
+with the rest of initmem, ftrace removes dangling references to these
+call sites.
+
+Building without MODULES implicitly disables STRICT_MODULE_RWX, and
+causes arm64's patch_map() function to treat any !core_kernel_text()
+symbol as something that can be modified in-place. As core_kernel_text()
+is only true for .text and .init.text, with the latter depending on
+system_state < SYSTEM_RUNNING, we'll treat .exit.text as something that
+can be patched in-place. However, .exit.text is mapped read-only.
+
+Hence in this configuration the ftrace init code blows up while trying
+to patch one of the functions generated by KASAN.
+
+We could try to filter out the call sites in .exit.text rather than
+initializing them, but this would be inconsistent with how we handle
+.init.text, and requires hooking into core bits of ftrace. The behaviour
+of patch_map() is also inconsistent today, so instead let's clean that
+up and have it consistently handle .exit.text.
+
+This patch teaches patch_map() to handle .exit.text at init time,
+preventing the boot-time splat above. The flow of patch_map() is
+reworked to make the logic clearer and minimize redundant
+conditionality.
+
+Fixes: 3b23e4991fb66f6d ("arm64: implement ftrace with regs")
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Torsten Duwe <duwe@suse.de>
+Cc: Will Deacon <will@kernel.org>
+---
+ arch/arm64/include/asm/sections.h |  1 +
+ arch/arm64/kernel/insn.c          | 22 ++++++++++++++++++----
+ arch/arm64/kernel/vmlinux.lds.S   |  3 +++
+ 3 files changed, 22 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm64/include/asm/sections.h b/arch/arm64/include/asm/sections.h
+index 788ae971f11c..25a73aab438f 100644
+--- a/arch/arm64/include/asm/sections.h
++++ b/arch/arm64/include/asm/sections.h
+@@ -15,6 +15,7 @@ extern char __hyp_text_start[], __hyp_text_end[];
+ extern char __idmap_text_start[], __idmap_text_end[];
+ extern char __initdata_begin[], __initdata_end[];
+ extern char __inittext_begin[], __inittext_end[];
++extern char __exittext_begin[], __exittext_end[];
+ extern char __irqentry_text_start[], __irqentry_text_end[];
+ extern char __mmuoff_data_start[], __mmuoff_data_end[];
+ extern char __entry_tramp_text_start[], __entry_tramp_text_end[];
+diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
+index 513b29c3e735..4a9e773a177f 100644
+--- a/arch/arm64/kernel/insn.c
++++ b/arch/arm64/kernel/insn.c
+@@ -21,6 +21,7 @@
+ #include <asm/fixmap.h>
+ #include <asm/insn.h>
+ #include <asm/kprobes.h>
++#include <asm/sections.h>
+ 
+ #define AARCH64_INSN_SF_BIT	BIT(31)
+ #define AARCH64_INSN_N_BIT	BIT(22)
+@@ -78,16 +79,29 @@ bool aarch64_insn_is_branch_imm(u32 insn)
+ 
+ static DEFINE_RAW_SPINLOCK(patch_lock);
+ 
++static bool is_exit_text(unsigned long addr)
++{
++	/* discarded with init text/data */
++	return system_state < SYSTEM_RUNNING &&
++		addr >= (unsigned long)__exittext_begin &&
++		addr < (unsigned long)__exittext_end;
++}
++
++static bool is_image_text(unsigned long addr)
++{
++	return core_kernel_text(addr) || is_exit_text(addr);
++}
++
+ static void __kprobes *patch_map(void *addr, int fixmap)
+ {
+ 	unsigned long uintaddr = (uintptr_t) addr;
+-	bool module = !core_kernel_text(uintaddr);
++	bool image = is_image_text(uintaddr);
+ 	struct page *page;
+ 
+-	if (module && IS_ENABLED(CONFIG_STRICT_MODULE_RWX))
+-		page = vmalloc_to_page(addr);
+-	else if (!module)
++	if (image)
+ 		page = phys_to_page(__pa_symbol(addr));
++	else if (IS_ENABLED(CONFIG_STRICT_MODULE_RWX))
++		page = vmalloc_to_page(addr);
+ 	else
+ 		return addr;
+ 
+diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
+index aa76f7259668..93752718f9d5 100644
+--- a/arch/arm64/kernel/vmlinux.lds.S
++++ b/arch/arm64/kernel/vmlinux.lds.S
+@@ -161,9 +161,12 @@ SECTIONS
+ 	__inittext_begin = .;
+ 
+ 	INIT_TEXT_SECTION(8)
++
++	__exittext_begin = .;
+ 	.exit.text : {
+ 		ARM_EXIT_KEEP(EXIT_TEXT)
+ 	}
++	__exittext_end = .;
+ 
+ 	. = ALIGN(4);
+ 	.altinstructions : {
+-- 
+2.11.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
