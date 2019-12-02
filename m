@@ -2,56 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2220410E5B1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 07:01:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6533910E5E5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 07:17:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GgR20ANF2wP6FeftRk2b2+/rPCeozcuDu+ty1I5vnLU=; b=Q+tWxKsi4J7tChMjvecRvFzPn
-	2GqffwV6AdjbO7TRXpIm/7Gp7zOOS+y/CfHmzNx1xSs1qYYGSn6W+nMJ5HvpdSbHCKeUjceWY45fG
-	8xuyTjxIA3rf/E7j0ZAztbv/QjBNTpTH9UKRb1jFJKeigGnLETdDolQmFr5j12kytb9JmmxiD4pga
-	kON7fopCzN9zitrIJy9ynfZ2gdkI1ybUFGtlqj4fKVSSAo6YPsOwQ6a8JYD3yFuNVAGeb+Oron1hX
-	4B1t7H0k70+0XMarxrT3mps2UyER8t8ZluFAwE+len0hILlsBBlarkKhkdTRlJRGkYjy7SlaarnYw
-	9IWh64Q3g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cXfgqBGjAxTYBQTuyVUFaqsP8iQv+737BskD+QgUfts=; b=WwYp8oydwyHY+o
+	RvyCKZifv6mMlCX9Okdc/eDoAg5yRA6YbaURLnpTjsDGdSBnHTShp+PBlCqo0Wbi+XqQTuCX5JemY
+	h28Xf8+7lXsxIrnVDxqslcK7E8IG/y8BhiaplDp6YSdr19clayqMxgQhOvwDI7yahjDNTWnR9xBi6
+	Wz4C8S/VIyaumUAoV3hJfsOjD6tPG7HgBziplNiHBbmPuMpHqPQXUzSjavijtwmWE5HEjGrG6EYZV
+	QpjWPFR42sVbDYRtwRMf8sDQfiJ4I+uIQsBOtHMFU/XVSHSkfevB0J3WSj95XS+zhMNLSq91VYPyj
+	2x5T9+v9m4x3izn6mX1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibemC-0008MQ-DX; Mon, 02 Dec 2019 06:01:40 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1ibf1Y-000789-L4; Mon, 02 Dec 2019 06:17:32 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibem2-0008La-Cq; Mon, 02 Dec 2019 06:01:32 +0000
-Received: from [10.28.39.99] (10.28.39.99) by mail-sz.amlogic.com (10.28.11.5)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Mon, 2 Dec
- 2019 14:01:47 +0800
-Subject: Re: [PATCH v3 0/7] add Amlogic A1 clock controller driver
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-References: <20191129144605.182774-1-jian.hu@amlogic.com>
- <1jwobi7lcy.fsf@starbuckisacylon.baylibre.com>
-From: Jian Hu <jian.hu@amlogic.com>
-Message-ID: <63d776af-6ded-02d2-cc34-1b3733e2625b@amlogic.com>
-Date: Mon, 2 Dec 2019 14:01:47 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1ibf1R-00077d-Ec; Mon, 02 Dec 2019 06:17:26 +0000
+X-UUID: eeacded1eedf4a4dbefe19808dbcf50a-20191201
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=1hVDXQnEXhl488d24pN92x7M9sMocqCpXtujHufwujQ=; 
+ b=ooyr+wvN/CzaisrsNJylXVzjAIEBxbERIjGlZFXs3PQSGD6omi/ffFnUUpG5neWtC+6adlVo584rAScqbQPgjzXshoUDXIDiYJ0OJDDSwiScpJfiZnFr6IASIO6eV6E5pRw01Lh32bWmSkvM/lDgEuBy6h4XDlQwvGP/8b1u+/I=;
+X-UUID: eeacded1eedf4a4dbefe19808dbcf50a-20191201
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 202567880; Sun, 01 Dec 2019 22:16:59 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 1 Dec 2019 22:08:01 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 2 Dec 2019 14:07:07 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 2 Dec 2019 14:07:03 +0800
+Message-ID: <1575266838.26513.0.camel@mtksdaap41>
+Subject: Re: [PATCH v1 2/6] drm/mediatek: use DRM core's atomic commit helper
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Mon, 2 Dec 2019 14:07:18 +0800
+In-Reply-To: <20191128024238.9399-3-bibby.hsieh@mediatek.com>
+References: <20191128024238.9399-1-bibby.hsieh@mediatek.com>
+ <20191128024238.9399-3-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <1jwobi7lcy.fsf@starbuckisacylon.baylibre.com>
-Content-Language: en-US
-X-Originating-IP: [10.28.39.99]
-X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
- (10.28.11.5)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191201_220130_844212_8B887670 
-X-CRM114-Status: GOOD (  15.49  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191201_221725_501348_9E8C9476 
+X-CRM114-Status: GOOD (  14.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,114 +83,170 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>, devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: drinkcat@chromium.org, srv_heupstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ tfiga@chromium.org, YT Shen <yt.shen@mediatek.com>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi, Bibby:
 
+On Thu, 2019-11-28 at 10:42 +0800, Bibby Hsieh wrote:
+> The DRM core atomic helper now supports asynchronous commits natively.
+> The custom drm implementation isn't needed anymore, remove it.
 
-On 2019/11/29 23:28, Jerome Brunet wrote:
-> 
-> On Fri 29 Nov 2019 at 15:45, Jian Hu <jian.hu@amlogic.com> wrote:
-> 
->> add support for Amlogic A1 clock driver, the clock includes
->> three parts: peripheral clocks, pll clocks, CPU clocks.
->> sys pll and CPU clocks will be sent in next patch.
->>
->> Changes since v1 at [2]:
-> 
-> v2 or v1 ??
-It is v2 here, I will fix it in next version.
-> 
->> -add probe function for A1
->> -seperate the clock driver into two patch
->> -change some clock flags and ops
->> -add support for a1 PLL ops
->> -add A1 clock node
->>
->> Changes since v1 at [1]:
->> -place A1 config alphabetically
->> -add actual reason for RO ops, CLK_IS_CRITICAL, CLK_IGNORE_UNUSED
->> -separate the driver into two driver: peripheral and pll driver
->> -delete CLK_IGNORE_UNUSED flag for pwm b/c/d/e/f clock, dsp clock
->> -delete the change in Kconfig.platforms, address to Kevin alone
->> -remove the useless comments
->> -modify the meson pll driver to support A1 PLLs
->>
->> [1] https://lkml.kernel.org/r/1569411888-98116-1-git-send-email-jian.hu@amlogic.com
->> [2] https://lkml.kernel.org/r/1571382865-41978-1-git-send-email-jian.hu@amlogic.com
->>
->> Jian Hu (7):
->>    dt-bindings: clock: meson: add A1 PLL clock controller bindings
->>    clk: meson: add support for A1 PLL clock ops
->>    clk: meson: eeclk: refactor eeclk common driver to support A1
->>    clk: meson: a1: add support for Amlogic A1 PLL clock driver
->>    dt-bindings: clock: meson: add A1 peripheral clock controller bindings
->>    clk: meson: a1: add support for Amlogic A1 Peripheral clock driver
->>    arm64: dts: meson: add A1 PLL and periphs clock controller
-> 
-> The arm64 is for the DT maintainer. Please send it separately after this
-> series is applied (if it gets applied)
-> 
->> Please fix the underlying issue, then you can post your series again.
-> 
-> This was a comment on your v2. Did you fix the orphan/ordering issue ?
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
-> If you did, you probably should mention it here.
-Yes, I have fixed it in A1 periphs driver, not fixed it in CCF.
-I have realised a probe function for A1 periphs driver, Not using the 
-common probe interface in meson-eeclk.c. Skip registering xtal_fixedpll 
-and xtal_hifipll clocks when register all periphs clocks. And after the 
-provider registration. Registering xtal_fixedpll and xtal_hifipll clock 
-alone.
+Regards,
+CK
 
-I will add some comments here about orphan issue.
-
-And I have noticed you have fixed it in CCF,  I will update the A1 
-periphs driver, drop the probe function in the next vertion.
-Could I send the v4 after your patch 'clk: walk orphan list on clock 
-provider registration' is applied? Or I can send v4 based on your patch now.
-
-> If you did not, I'm probably not going to review this further until you do.
 > 
->>
->>   .../bindings/clock/amlogic,a1-clkc.yaml       |   70 +
->>   .../bindings/clock/amlogic,a1-pll-clkc.yaml   |   56 +
->>   arch/arm64/boot/dts/amlogic/meson-a1.dtsi     |   26 +
->>   drivers/clk/meson/Kconfig                     |   20 +
->>   drivers/clk/meson/Makefile                    |    2 +
->>   drivers/clk/meson/a1-pll.c                    |  334 +++
->>   drivers/clk/meson/a1-pll.h                    |   56 +
->>   drivers/clk/meson/a1.c                        | 2309 +++++++++++++++++
->>   drivers/clk/meson/a1.h                        |  120 +
->>   drivers/clk/meson/clk-pll.c                   |   21 +
->>   drivers/clk/meson/clk-pll.h                   |    1 +
->>   drivers/clk/meson/meson-eeclk.c               |   59 +-
->>   drivers/clk/meson/meson-eeclk.h               |    2 +
->>   drivers/clk/meson/parm.h                      |    1 +
->>   include/dt-bindings/clock/a1-clkc.h           |   98 +
->>   include/dt-bindings/clock/a1-pll-clkc.h       |   16 +
->>   16 files changed, 3181 insertions(+), 10 deletions(-)
->>   create mode 100644 Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml
->>   create mode 100644 Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
->>   create mode 100644 drivers/clk/meson/a1-pll.c
->>   create mode 100644 drivers/clk/meson/a1-pll.h
->>   create mode 100644 drivers/clk/meson/a1.c
->>   create mode 100644 drivers/clk/meson/a1.h
->>   create mode 100644 include/dt-bindings/clock/a1-clkc.h
->>   create mode 100644 include/dt-bindings/clock/a1-pll-clkc.h
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c | 86 ++------------------------
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.h |  7 ---
+>  2 files changed, 5 insertions(+), 88 deletions(-)
 > 
-> .
-> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index 6588dc6dd5e3..16e5771d182e 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -36,89 +36,14 @@
+>  #define DRIVER_MAJOR 1
+>  #define DRIVER_MINOR 0
+>  
+> -static void mtk_atomic_schedule(struct mtk_drm_private *private,
+> -				struct drm_atomic_state *state)
+> -{
+> -	private->commit.state = state;
+> -	schedule_work(&private->commit.work);
+> -}
+> -
+> -static void mtk_atomic_complete(struct mtk_drm_private *private,
+> -				struct drm_atomic_state *state)
+> -{
+> -	struct drm_device *drm = private->drm;
+> -
+> -	drm_atomic_helper_wait_for_fences(drm, state, false);
+> -
+> -	/*
+> -	 * Mediatek drm supports runtime PM, so plane registers cannot be
+> -	 * written when their crtc is disabled.
+> -	 *
+> -	 * The comment for drm_atomic_helper_commit states:
+> -	 *     For drivers supporting runtime PM the recommended sequence is
+> -	 *
+> -	 *     drm_atomic_helper_commit_modeset_disables(dev, state);
+> -	 *     drm_atomic_helper_commit_modeset_enables(dev, state);
+> -	 *     drm_atomic_helper_commit_planes(dev, state,
+> -	 *                                     DRM_PLANE_COMMIT_ACTIVE_ONLY);
+> -	 *
+> -	 * See the kerneldoc entries for these three functions for more details.
+> -	 */
+> -	drm_atomic_helper_commit_modeset_disables(drm, state);
+> -	drm_atomic_helper_commit_modeset_enables(drm, state);
+> -	drm_atomic_helper_commit_planes(drm, state,
+> -					DRM_PLANE_COMMIT_ACTIVE_ONLY);
+> -
+> -	drm_atomic_helper_wait_for_vblanks(drm, state);
+> -
+> -	drm_atomic_helper_cleanup_planes(drm, state);
+> -	drm_atomic_state_put(state);
+> -}
+> -
+> -static void mtk_atomic_work(struct work_struct *work)
+> -{
+> -	struct mtk_drm_private *private = container_of(work,
+> -			struct mtk_drm_private, commit.work);
+> -
+> -	mtk_atomic_complete(private, private->commit.state);
+> -}
+> -
+> -static int mtk_atomic_commit(struct drm_device *drm,
+> -			     struct drm_atomic_state *state,
+> -			     bool async)
+> -{
+> -	struct mtk_drm_private *private = drm->dev_private;
+> -	int ret;
+> -
+> -	ret = drm_atomic_helper_prepare_planes(drm, state);
+> -	if (ret)
+> -		return ret;
+> -
+> -	mutex_lock(&private->commit.lock);
+> -	flush_work(&private->commit.work);
+> -
+> -	ret = drm_atomic_helper_swap_state(state, true);
+> -	if (ret) {
+> -		mutex_unlock(&private->commit.lock);
+> -		drm_atomic_helper_cleanup_planes(drm, state);
+> -		return ret;
+> -	}
+> -
+> -	drm_atomic_state_get(state);
+> -	if (async)
+> -		mtk_atomic_schedule(private, state);
+> -	else
+> -		mtk_atomic_complete(private, state);
+> -
+> -	mutex_unlock(&private->commit.lock);
+> -
+> -	return 0;
+> -}
+> +static const struct drm_mode_config_helper_funcs mtk_drm_mode_config_helpers = {
+> +	.atomic_commit_tail = drm_atomic_helper_commit_tail_rpm,
+> +};
+>  
+>  static const struct drm_mode_config_funcs mtk_drm_mode_config_funcs = {
+>  	.fb_create = mtk_drm_mode_fb_create,
+>  	.atomic_check = drm_atomic_helper_check,
+> -	.atomic_commit = mtk_atomic_commit,
+> +	.atomic_commit = drm_atomic_helper_commit,
+>  };
+>  
+>  static const enum mtk_ddp_comp_id mt2701_mtk_ddp_main[] = {
+> @@ -265,6 +190,7 @@ static int mtk_drm_kms_init(struct drm_device *drm)
+>  	drm->mode_config.max_width = 4096;
+>  	drm->mode_config.max_height = 4096;
+>  	drm->mode_config.funcs = &mtk_drm_mode_config_funcs;
+> +	drm->mode_config.helper_private = &mtk_drm_mode_config_helpers;
+>  
+>  	ret = component_bind_all(drm->dev, drm);
+>  	if (ret)
+> @@ -540,8 +466,6 @@ static int mtk_drm_probe(struct platform_device *pdev)
+>  	if (!private)
+>  		return -ENOMEM;
+>  
+> -	mutex_init(&private->commit.lock);
+> -	INIT_WORK(&private->commit.work, mtk_atomic_work);
+>  	private->data = of_device_get_match_data(dev);
+>  
+>  	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> index b6a82728d563..9f4ce60174f6 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> @@ -46,13 +46,6 @@ struct mtk_drm_private {
+>  	struct device_node *comp_node[DDP_COMPONENT_ID_MAX];
+>  	struct mtk_ddp_comp *ddp_comp[DDP_COMPONENT_ID_MAX];
+>  	const struct mtk_mmsys_driver_data *data;
+> -
+> -	struct {
+> -		struct drm_atomic_state *state;
+> -		struct work_struct work;
+> -		struct mutex lock;
+> -	} commit;
+> -
+>  	struct drm_atomic_state *suspend_state;
+>  
+>  	bool dma_parms_allocated;
 
 _______________________________________________
 linux-arm-kernel mailing list
