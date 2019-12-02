@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01F4110E6FD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 09:39:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C834210E6FF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 09:42:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qE9XeAmhU5mQe5C5v143duja4RQIWc4glUYMWbFLlqs=; b=hEzZIcZFLJKF/k
-	4BBgghSHOpZFA7mFb2TLIuGYxrrtIzifwaDad/PMwzARC7F6AFwrau1csMdo4btd4jXewMBZ9LanT
-	m0nHJM44hri3IPepY5CzdCae7+gLysNxCJrq1uFoeVIrxkTcuPQMWlSPBM28ZMoaxCEBvEXkf++l7
-	qyA4yU3hG7JPdwwM2o9P9Agi7LEjm74yt4ZWmdVRpi4raR/CXEJ4AdXWWWUBVW01jksjtCXY7eyR4
-	hmO/YFkbmDJF4W41kakVNw5s97puo0KnGlWco1SmHTgcAPbpvun68/ilBEHWZJNBiWDbptiwiAVSm
-	3rjFiuCxWqPMldoN7tYw==;
+	List-Owner; bh=T5La3hJSGHsqwlMzS/zq+sDd3IQIy8pxma/lHsOs4YE=; b=hMBcks3Xak006U
+	/LO2GKefsVwkEP2E2PO408CKWOwD4YJGKU8qYDg5hz+mA37Uit1dXuMlKiFOftaLl7SBQwpHCQQtb
+	fObzIlUKuocOCKCIRc1p0FWsz6mS3xIjS07rTDHRD1zWHNp2Wv5Kfnadp6QGWxxjcsST0fTP//Myg
+	N4BEs3ZYRCxX+iMOnEFj2odU+kenoHLwO5uHDllZ17deBz4qBb/XQYwJhJz76lnHpYAyZuU1ZUuGu
+	ZmL6ZE5P8XZGuVfdUjA8T1G5DHJi2enzmSv+ZG2lIr8MVSqZAn0xmAmPQjUD4/Bs0j7bjJIozUaV4
+	Zp2xzbv1TtkVgZZ6UWVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibhEW-0003bA-4a; Mon, 02 Dec 2019 08:39:04 +0000
+	id 1ibhI3-0005Dg-U4; Mon, 02 Dec 2019 08:42:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibhEO-0003am-OJ
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 08:38:58 +0000
+ id 1ibhHw-0005DH-9m
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 08:42:37 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BAD95215F1;
- Mon,  2 Dec 2019 08:38:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3750E214AF;
+ Mon,  2 Dec 2019 08:42:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575275936;
- bh=HPnBrd8TXP+68qZoG8LNSixiz/YCSXeBr6RQKOHtrC8=;
+ s=default; t=1575276156;
+ bh=DYAeZZ04KqOYDj2hpLpx0whSWeAoAiJAXf5alkSRa3A=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=bp2RcZzGdf+enbmwVBjF09UI/+xWqNpE/kBrQ+kP6Av8dF6B57wiy2JseC9QVHQKk
- EQoT5TaOQ+Zn+ZhFs7iy/I5DFOwaXuwJJdW6ecPdxEWTL3GaoAllmhpFYuvk8R4+MT
- Yw3Qd7igkMRqLftK1TDF0Ir9Dv+cX2ZPmcy0WbS0=
-Date: Mon, 2 Dec 2019 16:38:40 +0800
+ b=M+cAgfFv34adtKvNXUVVHJ1GIECoTLnJymcPiVC7Cg/JF0VncEy4XbAo4RLFos7KW
+ pgXzuAO1MmtJK8G9/0cb6b8gP5GN2dY+M2crpKD6pbGZpv1LxHUTh1u57ZJv3A2ezV
+ hINeo0i+sQe0zVS9+E5IFN/rc17C1WsY6+t1LKqQ=
+Date: Mon, 2 Dec 2019 16:42:24 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Oliver Graute <oliver.graute@gmail.com>
-Subject: Re: [PATCH] arm64: defconfig: Change CONFIG_AT803X_PHY from m to y
-Message-ID: <20191202083838.GE9767@dragon>
-References: <1572848275-30941-1-git-send-email-peng.fan@nxp.com>
- <20191126145450.GB5108@optiplex>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH] ARM: imx: Add i.MX7ULP SoC serial number support
+Message-ID: <20191202084222.GF9767@dragon>
+References: <1572852931-24101-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191126145450.GB5108@optiplex>
+In-Reply-To: <1572852931-24101-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_003856_831625_E8A8A4ED 
-X-CRM114-Status: GOOD (  17.59  )
+X-CRM114-CacheID: sfid-20191202_004236_363309_C62CB904 
+X-CRM114-Status: UNSURE (   7.66  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,95 +77,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mripard@kernel.org" <mripard@kernel.org>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "olof@lixom.net" <olof@lixom.net>, Leonard Crestez <leonard.crestez@nxp.com>,
- "will@kernel.org" <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: aisheng.dong@nxp.com, s.hauer@pengutronix.de, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 26, 2019 at 03:54:50PM +0100, Oliver Graute wrote:
-> On 04/11/19, Peng Fan wrote:
-> > From: Peng Fan <peng.fan@nxp.com>
-> > 
-> > With phy-reset-gpios are enabled for i.MX8MM-EVK board, phy
-> > will be reset. Without CONFIG_AT803X_PHY as y, board will stop
-> > booting in NFS DHCP, because phy is not ready. So mark
-> > CONFIG_AT803X_PHY from m to y to make board boot when using nfs rootfs.
-> > 
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > ---
-> >  arch/arm64/configs/defconfig | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> > index c9a867ac32d4..cd778c9ea8a4 100644
-> > --- a/arch/arm64/configs/defconfig
-> > +++ b/arch/arm64/configs/defconfig
-> > @@ -285,7 +285,7 @@ CONFIG_SNI_AVE=y
-> >  CONFIG_SNI_NETSEC=y
-> >  CONFIG_STMMAC_ETH=m
-> >  CONFIG_MDIO_BUS_MUX_MMIOREG=y
-> > -CONFIG_AT803X_PHY=m
-> > +CONFIG_AT803X_PHY=y
-> >  CONFIG_MARVELL_PHY=m
-> >  CONFIG_MARVELL_10G_PHY=m
-> >  CONFIG_MESON_GXL_PHY=m
-> > -- 
-> > 2.16.4
+On Mon, Nov 04, 2019 at 03:35:31PM +0800, Anson Huang wrote:
+> i.MX7ULP's unique ID layout in OCOTP is different from other
+> i.MX6/7 SoCs as below:
 > 
-> Hello Peng,
+> OCOTP layout		unique ID
 > 
-> this patch broke my imx8qm nfs setup. With the generic phy driver my
-> board is booting fine. But with the AT803X_PHY=y enabled  I'am running
-> into the following phy issue. So on my side it looks inverse as on
-> yours. What is the best proposal to fix this?
+> 0x4b0 bit[15:0]		bit[15:0]
+> 0x4c0 bit[15:0]		bit[31:16]
+> 0x4d0 bit[15:0]		bit[47:32]
+> 0x4e0 bit[15:0]		bit[63:48]
+> 
+> Add support for reading serial number from OCOTP on i.MX7ULP.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-So you are saying your Atheros 8035 device works with generic phy
-driver but not with AT803X_PHY driver?  That makes no sense.  Did you
-add phy-reset-gpios property for your device?
-
-Shawn
-
-> 
-> [    5.550442] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
-> [    5.573206] Sending DHCP requests ...... timed out!
-> [   95.339702] IP-Config: Retrying forever (NFS root)...
-> [   95.348873] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
-> [   99.438443] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
-> [   99.461206] Sending DHCP requests ...... timed out!
-> [  174.419639] IP-Config: Retrying forever (NFS root)...
-> [  174.428834] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
-> [  178.542418] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
-> [  178.565206] Sending DHCP requests .....
-> [  209.261271] random: crng init done
-> [  230.565202] . timed out!
-> [  260.577340] IP-Config: Retrying forever (NFS root)...
-> [  260.586497] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
-> [  264.686438] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
-> [  264.709206] Sending DHCP requests ...... timed out!
-> [  339.259701] IP-Config: Retrying forever (NFS root)...
-> [  339.268835] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
-> [  343.374422] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
-> [  343.405206] Sending DHCP requests ...... timed out!
-> [  433.171676] IP-Config: Retrying forever (NFS root)...
-> [  433.180842] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
-> [  437.294439] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
-> [  437.317206] Sending DHCP requests ...... timed out!
-> [  509.003660] IP-Config: Retrying forever (NFS root)...
-> [  509.012836] Atheros 8035 ethernet 5b040000.ethernet-1:06: attached PHY driver [Atheros 8035 ethernet] (mii_bus:phy_addr=5b040000.ethernet-1:06, irq=POLL)
-> [  513.102416] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
-> 
-> Best Regards,
-> 
-> Oliver
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
