@@ -2,84 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 114A010F193
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 21:32:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B93310F1A0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 21:40:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xqfTHF2tLqiKuhrHq2dmdyKImKqsPVEWwk2lCEM2XO0=; b=r3DkpRBHJfY73u
-	i9KQuC9VvTMM05qAlAQZ/vAUEkwGEE/lyx8TU6u5WxUDyaT1kvBEu8jbwHFBh+SK70trVUZC866Jw
-	n4jWWzWU0YCE3/6iVDQI+RENmTo5rCxj0gbNNAXfgwUKK3b03CYuugfuLkY98ABEmI2bBbDVEZPbi
-	zlzx1tMZG3m4LGpdm1I/z8QN5VxR56BnhI7CD+Ao9GwtRBE87+claiZguwsHkudUitQiFmuEvlXMd
-	9XG7wNtXd7+3e+zU56rDUZ/nfi52N3ne1TNtjtZFIjBrUHHIGVYeiy4XAMW4scHFNV3JNvc9os6A7
-	e7zE5TfLS+iGW7XP07Mw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=rMqPxAv4IRuB3n8Xhoov6C3zcxtktP8BvVnA7ag4xi0=; b=rqv
+	4lOORlyVM8dZvWlhDBznYskrkVcSadpn8t6UDJqffREsZwmuLAXsJ4NcbVRE+DSBbDXa8+nvimpM5
+	07VlGE4aRDoXGTcJTrBspTY9IJxCtjF1HNmtEPxTzsOIcyNJ0r/JcvGccmMYufhvoIMUyAl/BA7vD
+	MxCemmzGUmWMB3UgK5RyWY3+WbzIhHqAEd/gO0DKUejnQwR5dD6xMEBz2rZtnPN1vR54FHyf95jss
+	A7uWLSNMxHDF4FAZJZDlPIMA5YuIGAKleKhEntvTrEuolsOv+OPy9jqB2HVytSLXoc6yUrw+RvBwM
+	xR1na5vP+wgxV+8LglespYhLzRCmLgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibsMf-0006Rk-Vy; Mon, 02 Dec 2019 20:32:14 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1ibsUz-0001tf-8k; Mon, 02 Dec 2019 20:40:49 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibsMB-0005yA-MJ
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 20:31:45 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xB2KVa8I017066;
- Mon, 2 Dec 2019 14:31:36 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1575318696;
- bh=NofGx1mubkA1EF/TY40DJFtjPM3r2emRLLltVThbzP8=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=mFUq2q2P8wJLFE2MQBK5ogk/TlxF0z+0paKs0DaMBRaVo80E4zrbybKpgt9xkdn0R
- GUXzmnKPT/j2voBnFCODZtQ3Mmgk3IMX27vPLLunqEpmmFQRei4bMqQ4EkdJISVUN2
- kAJkhbwPjp0tmmzqRNQ/nlKJHlhrQKmtVlZohYr0=
-Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xB2KVaV3116999
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 2 Dec 2019 14:31:36 -0600
-Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 2 Dec
- 2019 14:31:35 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 2 Dec 2019 14:31:35 -0600
-Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id xB2KVOPo106889;
- Mon, 2 Dec 2019 14:31:33 -0600
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: <vkoul@kernel.org>
-Subject: [PATCH 3/3] dmaengine: ti: k3-udma: Fix early TX completion against
- PDMAs
-Date: Mon, 2 Dec 2019 22:31:28 +0200
-Message-ID: <20191202203128.14348-4-peter.ujfalusi@ti.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191202203128.14348-1-peter.ujfalusi@ti.com>
-References: <0191128105945.13071-1-peter.ujfalusi@ti.com>
- <20191202203128.14348-1-peter.ujfalusi@ti.com>
+ id 1ibsUs-0001t5-RT
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 20:40:44 +0000
+Received: by mail-il1-x141.google.com with SMTP id b15so959723ila.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Dec 2019 12:40:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=designa-electronics-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=IhJ2StDiA7OZp7K2mqE5mqNGAxO3Ft0EOf3eFRUg3LE=;
+ b=xiDu8F3hb8vkfRMcNz28+Ep38MeySfDxTFdu2oO6VF+W82oGdDSfdIVYhWaLJEj+0b
+ qouQpAmNavGpi7irFCIiYf0jVplV7rukgZSXDy7GjcYSeSUuLMDXVnYhfgYCUrPDYEXN
+ YIJctINmvb2Gpa9K+LeRe9B8aayIxwDO8GRAMuNWb356LAer5ZG7CNGZ29hVYVTX4apK
+ fRPIU87oU1oeEt4NnWlbvJtrC+t8A9N7PHK7OnuiHelZmxptFnQvIYKqIQb57/NNeGZJ
+ 1vWU34CkBqHVX492ANzXBLInw29cLL1R/MGm3PBrYbS2LDFoYVWdoRk9TECGFQKa3gJd
+ p0EA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=IhJ2StDiA7OZp7K2mqE5mqNGAxO3Ft0EOf3eFRUg3LE=;
+ b=MqNnNhDALKffjsbIHUtKt21gfFeLaiyIHkGkDX5H++lupH713EkxlBnzB3Hzt7COSD
+ ZjFUkVYpOSD4hjEa6Rc0DIuMMNSev4V6Rapjw6n89zjO2hl0RWghr7Zx7+Ue0wJiuqCF
+ Cl/DCavJ9oamMWTzgxia5docvK37V61ClBr7lDHuQ12DJa5aznL48BRJjobsoAitq0gT
+ 3kyxPpbMl0HAzf3qzQ+F4EdpplvS11oa5QXAfSRD5EplWmzBt4RZHvUre+6HCRP3x2DP
+ NwwXdb1YVxvJZH+fYLBoAWLSrjIg49noLdZuSb5lstrvfSvqxmAR4GVLvXLroWtLM227
+ whlA==
+X-Gm-Message-State: APjAAAUj1FtFKpq8hkoaTr8TA7Tu19+BdnVsHwoF6VzUb8FHKAGiXFAG
+ 8095aOf4pSD84DdWVnm/B6lcv70A+dABVw==
+X-Google-Smtp-Source: APXvYqwa238eaylXb9/Wq1Ssz3PoAo0e+GiBOQJ9Vn50O+Yjg9fLKt7vbmsf/ItsrfsXxoxBHFkRxQ==
+X-Received: by 2002:a92:ce4b:: with SMTP id a11mr792306ilr.181.1575319241315; 
+ Mon, 02 Dec 2019 12:40:41 -0800 (PST)
+Received: from mail-il1-f177.google.com (mail-il1-f177.google.com.
+ [209.85.166.177])
+ by smtp.gmail.com with ESMTPSA id e85sm135645ilk.78.2019.12.02.12.40.40
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 02 Dec 2019 12:40:40 -0800 (PST)
+Received: by mail-il1-f177.google.com with SMTP id u16so941452ilg.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Dec 2019 12:40:40 -0800 (PST)
+X-Received: by 2002:a92:9959:: with SMTP id p86mr829866ili.124.1575319239665; 
+ Mon, 02 Dec 2019 12:40:39 -0800 (PST)
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+From: Andre Renaud <arenaud@designa-electronics.com>
+Date: Tue, 3 Dec 2019 09:40:28 +1300
+X-Gmail-Original-Message-ID: <CAEj2-1PyhkhEJ1+uRWio4vYxGuFOuR9mpZOdxmDDjGt_Az+3uA@mail.gmail.com>
+Message-ID: <CAEj2-1PyhkhEJ1+uRWio4vYxGuFOuR9mpZOdxmDDjGt_Az+3uA@mail.gmail.com>
+Subject: iMX6/UART imprecise external abort
+To: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_123143_812640_80DCE1C9 
-X-CRM114-Status: GOOD (  23.19  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191202_124042_894090_7158469E 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,209 +97,187 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: grygorii.strashko@ti.com, vigneshr@ti.com, tony@atomide.com,
- linux-kernel@vger.kernel.org, t-kristo@ti.com, dmaengine@vger.kernel.org,
- dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If the peripheral is disabled (or it is not able to send out data) the
-UDMAP will complete a 'short' transfer. In other words: if the amount of
-data can fit into PSI-L and PDMA (and peripheral FIFO) then UDMAP will
-send out the data and return as the transfer is completed, however the
-peripheral did not actually received all the data.
+Hello,
+I am working with an iMX6Q system that is exhibiting a crash when
+using the serial ports.
+We have /dev/ttymxc2 configured as an RS485 UART, and are seeing an
+'imprecise external abort' after some time of use (panic listed
+below).
 
-It was wrong to issue a normal teardown on the channel for several reasons:
-UDMAP is not processing any packet so it will just return the TDCM and if
-the peripheral is not consuming data from PDMA then we will have constant
-flood of TDCMs (interrupts).
-After the teardown the channel will be in reset state and we would need to
-reset the rings as well, but it can not be done in interrupt context.
-If the peripheral is just slow to consume data or even there is a delay
-between starting the DMA then we will have again issues detecting the
-state.
+We are able to replicate this both on the custom kernel we're using,
+as well as on the 5.3.x+fslc image from
+https://github.com/Freescale/linux-fslc
 
-We could set force teardown, but that will make PDMA to discard the data
-which is not correct in case of slow or delayed transfer start on the
-peripheral.
+To replicate it we have the mx6 hooked up to a PC, with each end
+sending short 3-4 character messages every second. The fault kicks in
+after about 15-30 minutes. This seems similar to the fault described
+here: https://lkml.org/lkml/2019/11/11/588. We have tried shutting
+down DMA and various performance/cpuidle systems, but that doesn't
+seem to have any impact.
 
-The only solution is to use a work and check the progress in there after
-the descriptor is returned and the UDMA and PDMA counters are not showing
-the same number of bytes processed.
+Does anyone have any thoughts on how to solve this?
 
-Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
----
- drivers/dma/ti/k3-udma.c | 74 ++++++++++++++++++++++++++++++----------
- 1 file changed, 56 insertions(+), 18 deletions(-)
+Regards,
+Andre
 
-diff --git a/drivers/dma/ti/k3-udma.c b/drivers/dma/ti/k3-udma.c
-index 3aede5db9604..39ca371a67dd 100644
---- a/drivers/dma/ti/k3-udma.c
-+++ b/drivers/dma/ti/k3-udma.c
-@@ -165,10 +165,15 @@ struct udma_desc {
- enum udma_chan_state {
- 	UDMA_CHAN_IS_IDLE = 0, /* not active, no teardown is in progress */
- 	UDMA_CHAN_IS_ACTIVE, /* Normal operation */
--	UDMA_CHAN_IS_ACTIVE_FLUSH, /* Flushing for delayed tx */
- 	UDMA_CHAN_IS_TERMINATING, /* channel is being terminated */
- };
- 
-+struct udma_tx_drain {
-+	struct delayed_work work;
-+	unsigned long jiffie;
-+	u32 residue;
-+};
-+
- struct udma_chan {
- 	struct virt_dma_chan vc;
- 	struct dma_slave_config	cfg;
-@@ -193,6 +198,8 @@ struct udma_chan {
- 	enum udma_chan_state state;
- 	struct completion teardown_completed;
- 
-+	struct udma_tx_drain tx_drain;
-+
- 	u32 bcnt; /* number of bytes completed since the start of the channel */
- 	u32 in_ring_cnt; /* number of descriptors in flight */
- 
-@@ -928,22 +935,51 @@ static bool udma_is_desc_really_done(struct udma_chan *uc, struct udma_desc *d)
- 	peer_bcnt = udma_tchanrt_read(uc->tchan, UDMA_TCHAN_RT_PEER_BCNT_REG);
- 	bcnt = udma_tchanrt_read(uc->tchan, UDMA_TCHAN_RT_BCNT_REG);
- 
--	if (peer_bcnt < bcnt)
-+	if (peer_bcnt < bcnt) {
-+		uc->tx_drain.residue = bcnt - peer_bcnt;
-+		uc->tx_drain.jiffie = jiffies;
- 		return false;
-+	}
- 
- 	return true;
- }
- 
--static void udma_flush_tx(struct udma_chan *uc)
-+static void udma_check_tx_completion(struct work_struct *work)
- {
--	if (uc->dir != DMA_MEM_TO_DEV)
--		return;
-+	struct udma_chan *uc = container_of(work, typeof(*uc),
-+					    tx_drain.work.work);
-+	bool desc_done = true;
-+	u32 residue_diff;
-+	unsigned long jiffie_diff, delay;
-+
-+	if (uc->desc) {
-+		residue_diff = uc->tx_drain.residue;
-+		jiffie_diff = uc->tx_drain.jiffie;
-+		desc_done = udma_is_desc_really_done(uc, uc->desc);
-+	}
-+
-+	if (!desc_done) {
-+		jiffie_diff = uc->tx_drain.jiffie - jiffie_diff;
-+		residue_diff -= uc->tx_drain.residue;
-+		if (residue_diff) {
-+			/* Try to guess when we should check next time */
-+			residue_diff /= jiffie_diff;
-+			delay = uc->tx_drain.residue / residue_diff / 3;
-+			if (jiffies_to_msecs(delay) < 5)
-+				delay = 0;
-+		} else {
-+			/* No progress, check again in 1 second  */
-+			delay = HZ;
-+		}
- 
--	uc->state = UDMA_CHAN_IS_ACTIVE_FLUSH;
-+		schedule_delayed_work(&uc->tx_drain.work, delay);
-+	} else if (uc->desc) {
-+		struct udma_desc *d = uc->desc;
- 
--	udma_tchanrt_write(uc->tchan, UDMA_TCHAN_RT_CTL_REG,
--			   UDMA_CHAN_RT_CTL_EN |
--			   UDMA_CHAN_RT_CTL_TDOWN);
-+		uc->bcnt += d->residue;
-+		udma_start(uc);
-+		vchan_cookie_complete(&d->vd);
-+	}
- }
- 
- static irqreturn_t udma_ring_irq_handler(int irq, void *data)
-@@ -973,11 +1009,7 @@ static irqreturn_t udma_ring_irq_handler(int irq, void *data)
- 		if (!uc->desc)
- 			udma_start(uc);
- 
--		if (uc->state != UDMA_CHAN_IS_ACTIVE_FLUSH)
--			goto out;
--		else if (uc->desc)
--			paddr = udma_curr_cppi5_desc_paddr(uc->desc,
--							   uc->desc->desc_idx);
-+		goto out;
- 	}
- 
- 	d = udma_udma_desc_from_paddr(uc, paddr);
-@@ -997,7 +1029,7 @@ static irqreturn_t udma_ring_irq_handler(int irq, void *data)
- 				vchan_cyclic_callback(&d->vd);
- 			}
- 		} else {
--			bool desc_done = true;
-+			bool desc_done = false;
- 
- 			if (d == uc->desc) {
- 				desc_done = udma_is_desc_really_done(uc, d);
-@@ -1006,10 +1038,9 @@ static irqreturn_t udma_ring_irq_handler(int irq, void *data)
- 					uc->bcnt += d->residue;
- 					udma_start(uc);
- 				} else {
--					udma_flush_tx(uc);
-+					schedule_delayed_work(&uc->tx_drain.work,
-+							      0);
- 				}
--			} else if (d == uc->terminated_desc) {
--				uc->terminated_desc = NULL;
- 			}
- 
- 			if (desc_done)
-@@ -1818,6 +1849,8 @@ static int udma_alloc_chan_resources(struct dma_chan *chan)
- 
- 	udma_reset_rings(uc);
- 
-+	INIT_DELAYED_WORK_ONSTACK(&uc->tx_drain.work,
-+				  udma_check_tx_completion);
- 	return 0;
- 
- err_irq_free:
-@@ -2727,6 +2760,7 @@ static int udma_terminate_all(struct dma_chan *chan)
- 		uc->terminated_desc = uc->desc;
- 		uc->desc = NULL;
- 		uc->terminated_desc->terminated = true;
-+		cancel_delayed_work(&uc->tx_drain.work);
- 	}
- 
- 	uc->paused = false;
-@@ -2760,6 +2794,7 @@ static void udma_synchronize(struct dma_chan *chan)
- 	if (udma_is_chan_running(uc))
- 		dev_warn(uc->ud->dev, "chan%d refused to stop!\n", uc->id);
- 
-+	cancel_delayed_work_sync(&uc->tx_drain.work);
- 	udma_reset_rings(uc);
- }
- 
-@@ -2847,6 +2882,9 @@ static void udma_free_chan_resources(struct dma_chan *chan)
- 		udma_reset_rings(uc);
- 	}
- 
-+	cancel_delayed_work_sync(&uc->tx_drain.work);
-+	destroy_delayed_work_on_stack(&uc->tx_drain.work);
-+
- 	if (uc->irq_num_ring > 0) {
- 		free_irq(uc->irq_num_ring, uc);
- 
--- 
-Peter
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
+[ 5047.074427] Unhandled fault: imprecise external abort (0x1406) at 0xb6e00f78
+[ 5047.081498] pgd = c0004000
+[ 5047.084213] [b6e00f78] *pgd=00000000
+[ 5047.087813] Internal error: : 1406 [#1] SMP ARM
+[ 5047.092348] Modules linked in:
+[ 5047.095429] CPU: 1 PID: 0 Comm: swapper/1 Not tainted 4.8.0+ #19
+[ 5047.101440] Hardware name: Freescale i.MX6 Quad/DualLite (Device Tree)
+[ 5047.107974] task: ef0ecd00 task.stack: ef158000
+[ 5047.112521] PC is at arch_cpu_idle+0x48/0x4c
+[ 5047.116799] LR is at arch_cpu_idle+0x44/0x4c
+[ 5047.121077] pc : [<c0108c70>]    lr : [<c0108c6c>]    psr: 60070013
+[ 5047.121077] sp : ef159f98  ip : ef159fa8  fp : ef159fa4
+[ 5047.132560] r10: 00000000  r9 : 00000002  r8 : c0d025dc
+[ 5047.137791] r7 : c0d95448  r6 : ef158000  r5 : c0d02648  r4 : ef158000
+[ 5047.144324] r3 : c011a140  r2 : 005bc18a  r1 : ef7ae3c0  r0 : 00000000
+[ 5047.150858] Flags: nZCv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Segment none
+[ 5047.157998] Control: 10c5387d  Table: 3dd9804a  DAC: 00000051
+[ 5047.163748] Process swapper/1 (pid: 0, stack limit = 0xef158210)
+[ 5047.169759] Stack: (0xef159f98 to 0xef15a000)
+[ 5047.174124] 9f80:
+    ef159fb4 ef159fa8
+[ 5047.182310] 9fa0: c0170b54 c0108c34 ef159fdc ef159fb8 c0170da4
+c0170b30 c0a8fb48 c0d8b845
+[ 5047.190496] 9fc0: c0d8c48c c0d025dc 10c0387d c0d95448 ef159ff4
+ef159fe0 c010e6cc c0170b6c
+[ 5047.198682] 9fe0: 3f0fc06a 00000051 00000000 ef159ff8 101018cc
+c010e580 edddf4eb ffeebffd
+[ 5047.206887] [<c0108c70>] (arch_cpu_idle) from [<c0170b54>]
+(default_idle_call+0x30/0x3c)
+[ 5047.214993] [<c0170b54>] (default_idle_call) from [<c0170da4>]
+(cpu_startup_entry+0x244/0x298)
+[ 5047.223619] [<c0170da4>] (cpu_startup_entry) from [<c010e6cc>]
+(secondary_start_kernel+0x158/0x164)
+[ 5047.232677] [<c010e6cc>] (secondary_start_kernel) from [<101018cc>]
+(0x101018cc)
+[ 5047.240083] Code: e34c30d0 e5933014 e12fff33 f1080080 (e89da800)
+[ 5047.246190] ---[ end trace 853e028df8c9b7cd ]---
+[ 5047.250814] Kernel panic - not syncing: Attempted to kill the idle task!
+[ 5047.257528] CPU2: stopping
+[ 5047.260250] CPU: 2 PID: 0 Comm: swapper/2 Tainted: G      D
+4.8.0+ #19
+[ 5047.267476] Hardware name: Freescale i.MX6 Quad/DualLite (Device Tree)
+[ 5047.274022] [<c0110cc4>] (unwind_backtrace) from [<c010c9d0>]
+(show_stack+0x20/0x24)
+[ 5047.281783] [<c010c9d0>] (show_stack) from [<c04939c8>]
+(dump_stack+0x90/0xa4)
+[ 5047.289019] [<c04939c8>] (dump_stack) from [<c010ebe8>]
+(handle_IPI+0x2a4/0x2c4)
+[ 5047.296426] [<c010ebe8>] (handle_IPI) from [<c01014dc>]
+(gic_handle_irq+0x80/0x84)
+[ 5047.304013] [<c01014dc>] (gic_handle_irq) from [<c080c8cc>]
+(__irq_svc+0x6c/0x90)
+[ 5047.311500] Exception stack(0xef15bf48 to 0xef15bf90)
+[ 5047.316561] bf40:                   00000000 ef7bd3c0 00729232
+c011a140 ef15a000 c0d02648
+[ 5047.324747] bf60: ef15a000 c0d95448 c0d025dc 00000004 00000000
+ef15bfa4 ef15bfa8 ef15bf98
+[ 5047.332930] bf80: c0108c6c c0108c70 60000013 ffffffff
+[ 5047.337999] [<c080c8cc>] (__irq_svc) from [<c0108c70>]
+(arch_cpu_idle+0x48/0x4c)
+[ 5047.345410] [<c0108c70>] (arch_cpu_idle) from [<c0170b54>]
+(default_idle_call+0x30/0x3c)
+[ 5047.353514] [<c0170b54>] (default_idle_call) from [<c0170da4>]
+(cpu_startup_entry+0x244/0x298)
+[ 5047.362137] [<c0170da4>] (cpu_startup_entry) from [<c010e6cc>]
+(secondary_start_kernel+0x158/0x164)
+[ 5047.371191] [<c010e6cc>] (secondary_start_kernel) from [<101018cc>]
+(0x101018cc)
+[ 5047.378593] CPU3: stopping
+[ 5047.381314] CPU: 3 PID: 0 Comm: swapper/3 Tainted: G      D
+4.8.0+ #19
+[ 5047.388540] Hardware name: Freescale i.MX6 Quad/DualLite (Device Tree)
+[ 5047.395085] [<c0110cc4>] (unwind_backtrace) from [<c010c9d0>]
+(show_stack+0x20/0x24)
+[ 5047.402841] [<c010c9d0>] (show_stack) from [<c04939c8>]
+(dump_stack+0x90/0xa4)
+[ 5047.410073] [<c04939c8>] (dump_stack) from [<c010ebe8>]
+(handle_IPI+0x2a4/0x2c4)
+[ 5047.417479] [<c010ebe8>] (handle_IPI) from [<c01014dc>]
+(gic_handle_irq+0x80/0x84)
+[ 5047.425060] [<c01014dc>] (gic_handle_irq) from [<c080c8cc>]
+(__irq_svc+0x6c/0x90)
+[ 5047.432546] Exception stack(0xef15df48 to 0xef15df90)
+[ 5047.437606] df40:                   00000000 ef7cc3c0 00512f92
+c011a140 ef15c000 c0d02648
+[ 5047.445792] df60: ef15c000 c0d95448 c0d025dc 00000008 00000000
+ef15dfa4 ef15dfa8 ef15df98
+[ 5047.453974] df80: c0108c6c c0108c70 600d0013 ffffffff
+[ 5047.459041] [<c080c8cc>] (__irq_svc) from [<c0108c70>]
+(arch_cpu_idle+0x48/0x4c)
+[ 5047.466452] [<c0108c70>] (arch_cpu_idle) from [<c0170b54>]
+(default_idle_call+0x30/0x3c)
+[ 5047.474555] [<c0170b54>] (default_idle_call) from [<c0170da4>]
+(cpu_startup_entry+0x244/0x298)
+[ 5047.483179] [<c0170da4>] (cpu_startup_entry) from [<c010e6cc>]
+(secondary_start_kernel+0x158/0x164)
+[ 5047.492234] [<c010e6cc>] (secondary_start_kernel) from [<101018cc>]
+(0x101018cc)
+[ 5047.499635] CPU0: stopping
+[ 5047.502356] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G      D
+4.8.0+ #19
+[ 5047.509582] Hardware name: Freescale i.MX6 Quad/DualLite (Device Tree)
+[ 5047.516126] [<c0110cc4>] (unwind_backtrace) from [<c010c9d0>]
+(show_stack+0x20/0x24)
+[ 5047.523883] [<c010c9d0>] (show_stack) from [<c04939c8>]
+(dump_stack+0x90/0xa4)
+[ 5047.531116] [<c04939c8>] (dump_stack) from [<c010ebe8>]
+(handle_IPI+0x2a4/0x2c4)
+[ 5047.538521] [<c010ebe8>] (handle_IPI) from [<c01014dc>]
+(gic_handle_irq+0x80/0x84)
+[ 5047.546102] [<c01014dc>] (gic_handle_irq) from [<c080c8cc>]
+(__irq_svc+0x6c/0x90)
+[ 5047.553588] Exception stack(0xc0d01d78 to 0xc0d01dc0)
+[ 5047.558645] 1d60:
+    ee4dfae8 20070113
+[ 5047.566831] 1d80: 00000730 000049db ee4dfa80 ef3d9de0 ee4dfae8
+20070113 00000020 00000000
+[ 5047.575016] 1da0: c0d0799c c0d01dd4 c0d01dd8 c0d01dc8 c05fdd00
+c080c26c 60070113 ffffffff
+[ 5047.583205] [<c080c8cc>] (__irq_svc) from [<c080c26c>]
+(_raw_spin_unlock_irqrestore+0x30/0x34)
+[ 5047.591839] [<c080c26c>] (_raw_spin_unlock_irqrestore) from
+[<c05fdd00>] (sdhci_tasklet_finish+0xfc/0x234)
+[ 5047.601507] [<c05fdd00>] (sdhci_tasklet_finish) from [<c012dfe8>]
+(tasklet_action+0x68/0xf8)
+[ 5047.609955] [<c012dfe8>] (tasklet_action) from [<c0101630>]
+(__do_softirq+0x150/0x34c)
+[ 5047.617892] [<c0101630>] (__do_softirq) from [<c012d9e0>]
+(irq_exit+0xc8/0x128)
+[ 5047.625218] [<c012d9e0>] (irq_exit) from [<c0181338>]
+(__handle_domain_irq+0x70/0xc4)
+[ 5047.633060] [<c0181338>] (__handle_domain_irq) from [<c01014a4>]
+(gic_handle_irq+0x48/0x84)
+[ 5047.641421] [<c01014a4>] (gic_handle_irq) from [<c080c8cc>]
+(__irq_svc+0x6c/0x90)
+[ 5047.648907] Exception stack(0xc0d01f08 to 0xc0d01f50)
+[ 5047.653965] 1f00:                   00000000 ef79f3c0 00449df4
+c011a140 c0d00000 c0d02648
+[ 5047.662151] 1f20: c0d00000 c0d02540 c0d025dc 00000001 ef7db300
+c0d01f64 c0d01f68 c0d01f58
+[ 5047.670333] 1f40: c0108c6c c0108c70 60070013 ffffffff
+[ 5047.675399] [<c080c8cc>] (__irq_svc) from [<c0108c70>]
+(arch_cpu_idle+0x48/0x4c)
+[ 5047.682809] [<c0108c70>] (arch_cpu_idle) from [<c0170b54>]
+(default_idle_call+0x30/0x3c)
+[ 5047.690911] [<c0170b54>] (default_idle_call) from [<c0170da4>]
+(cpu_startup_entry+0x244/0x298)
+[ 5047.699533] [<c0170da4>] (cpu_startup_entry) from [<c0806eb8>]
+(rest_init+0x84/0x88)
+[ 5047.707292] [<c0806eb8>] (rest_init) from [<c0c00d34>]
+(start_kernel+0x390/0x39c)
+[ 5047.714786] ---[ end Kernel panic - not syncing: Attempted to kill
+the idle task!
 
 _______________________________________________
 linux-arm-kernel mailing list
