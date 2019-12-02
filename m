@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6A3010F0B7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 20:38:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D62E510F0B6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 20:38:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U0ZxyZWAtDjM9uT9hB5PwVoBV1JdzpcaRHEmCuhCAPE=; b=K6Q50DuSY9c3m+
-	xdPhf87TGeZ7ssdlx0TIS/1ZhYpP0Gmx/RGN/fUDUePOexSaDZ/5FN1gbC0Tj32hHw+Uy8drjWpzQ
-	pTYnd/jQobalYc3IpCKKLLwQBSTR42qIh5v/BfgUV06KLdlpfIaQW3gs7I//HSrvRmSweTcsgjkJt
-	PD7hDoYU5366fIiTPm7bFmihsNX38udKovI2CnihiYWGuIxJjoDxjxYuq24SMSmwtAlEaATVw1k4T
-	0r/jidZoEwkF50CLUUbFjCf8WHc31K4pI5P0uVK6cRdnl552WU4o6mi0k7TRrImnrTxkP9qrejkur
-	b8kLhBHXF8ht5x4kOZPg==;
+	List-Owner; bh=o7StV/RMqe8wBfU3PHMvqc4OLF4UuWVGlycuJfPeo+s=; b=b15+0Kw8UEE7Q0
+	7nQLZcHGL4B4NuKHk2EHV5Yn5lIhDzhv4vmVZ2n+PBfBpK1Ahc3c8o2xdbbOpVV1Sxa0FE1ka7qZ8
+	V3HAAG2YIt7yGyN6Hp0NxzzBmtyT+L2cx2rM4PgDGtJZWFCARnlnU05Z7uR0nDcGIjvcD5FGTQRNj
+	yZH77+EMqwXICcmuX8RWhdmpMrr9uygv1dxVa1dlxd1lL9Uv3eSjReM0QZdsQDGVF6hU/ShC5S4/3
+	vAuo43r++qg0mfLy5GbQH59/0vo745X94IPY3Y2X1TMiq3FfOWRoCiXacfRPipwVZpySkoE6U3Thj
+	wEKMhRVugbNFSCwT0A6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibrWr-0004wQ-GU; Mon, 02 Dec 2019 19:38:41 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1ibrWg-0004iS-DI; Mon, 02 Dec 2019 19:38:30 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibrRt-0007hl-AP; Mon, 02 Dec 2019 19:33:39 +0000
-Received: by mail-lj1-x241.google.com with SMTP id m6so868913ljc.1;
- Mon, 02 Dec 2019 11:33:33 -0800 (PST)
+ id 1ibrRu-0007jC-UQ; Mon, 02 Dec 2019 19:33:40 +0000
+Received: by mail-lf1-x142.google.com with SMTP id r14so786932lfm.5;
+ Mon, 02 Dec 2019 11:33:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=+5RYUpfQaHxKRkMXMkrP8oHu/MU7hdMpYDFxNzucUWs=;
- b=FxrKOZXvIF29xM5J+pbmyhXLfeQ1nklAk2wjlXyurWeQsWf2xXMKDXqzoBzjlf8k4h
- sPXZBUKfoTu2+QPSuB1Mun/NjlwEGG6y4s2LuJC2ikplHxAIxTxYdo0/pT+lQxVE/Dqe
- Q+qDzTGbtGOUWoFMzbsYsrXtMhBrHPAbakZ4oo4+KxLNrE9+Vhsr57kf756kruBBfiwo
- fnvVT2HrnRTkdac8TGx+bWQLxc5opFap8I718aRsVi5UBY2ky009OO8SgyF0Ws/zpy+y
- t4dIPeOh16FHiRVp976VpPmmC4FK7tfYfhZNi1xoQOGrwALJKP5AAjb0a2R93fuuE4wZ
- p52g==
+ bh=mwTbXFs73rhfB3XHykRb+0twTubxbVTCKbes8vP1eoM=;
+ b=fWsZc6pxE2cR74tH1x5bcK85tMs5P3XVQy6wY8Dzsei7SXL9iuN8fSp5lSWf7pMIdC
+ xa4gKaBfW9GQl0tsJcMEulN2LTZ1dFp27MuO1x3ucEfaXHh9k03NMnT8pnU6IY5gCxpY
+ 8kA6ToWIuyco+mlNtxdfOniENQxwNYP7VK8XAJSeokDRcbVtY0rN/Vsyg4bJBVWLT3gI
+ W4lYkw+KLbAeuKXj6iVyrITCefWtK7oUSk1KodcyX+U7pkfYxsD190Gy9r+bVtOrtIq+
+ AHb1cVc40/4a1zUiR1PFruWHBNmyVb28/b76FXir/cJ/Zsd30ak1i5gzL2R8sNvMdh7l
+ S3Wg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=+5RYUpfQaHxKRkMXMkrP8oHu/MU7hdMpYDFxNzucUWs=;
- b=VLX/da3eSf7kVFpfeivAVk/nYz+9lX6KBleiYOsInZGxi0dUBYMBxJUrU9BOsuZJci
- lZVLCZvX3Mmp/KRR9kDp527PrYLIR/DJoKRXp6Js6dKW9vRn/dou1yLWRWEUxgyyYWiH
- GEDXHp449X3zKK5ReW1IgVvcnd61SiHEuglq7oWZOjnCj3RZlZtXS15tZRsbcgJNdsWA
- uSWqGRaY61oBNePaCLomYNPgUX0Gu0sDQ/3yQXFRtwFmOF15/dnb/g1hytsWT6QZfL2n
- 8EZVvlwuKvFHK+n7Wt18Ajba1eqLjnDfJhM2aNCqhohz4IbfIMPPxN0D/Y27S5IaChBX
- YssA==
-X-Gm-Message-State: APjAAAUQBHeniLDrzOBctRt+a7lTt09MhY5Q20znNPuL17uF1JxZhF8W
- nTxIOYmCQAuM+aiWT+c+hjc=
-X-Google-Smtp-Source: APXvYqw6xZ1V1bDQy1s46yIVtGq4D/aLE8LZc7NwSI+fkDGgYQgqenzANQAALXlLLg5Wahg+qt2cSA==
-X-Received: by 2002:a2e:3a15:: with SMTP id h21mr266843lja.256.1575315211669; 
- Mon, 02 Dec 2019 11:33:31 -0800 (PST)
+ bh=mwTbXFs73rhfB3XHykRb+0twTubxbVTCKbes8vP1eoM=;
+ b=KGMk4dVQ64MrUQzfJ0ngWRhweNGi4PwI58eZ4XbhJ2aO2e07llqkXJNGQDS8Nm2xM9
+ lWkqq2dd/PGl/zSzYkDH3D+vzgwg7O6AHFlDG5ienTAsyyxPtCjBiXBEJIZBn4mbhUKR
+ UyhE0Na2SkS+Rl8BpkLJOamu0JZeJbNBQCYNPrNoxdjOTEEXf0uZOob87nNLgAbY3Ted
+ x4ozHCxQG5V57p3322Dc8Yfx9ZuenXr7NpnJDSIV3S5sfY9plhIHZWe8Vr1DThPZzrW6
+ v4iBH+NfwVYzbaJgsINpgOpkUj7LOqht2sRgx7g9d24tjuFt6iDu89AT5iAoEimSOd4T
+ UMzA==
+X-Gm-Message-State: APjAAAWTr6vArJVTEE8V2xrRXlgbmWPVokHWtavgz+7f5UfVKrhw1Vam
+ CI8laQ/a4RJ2gFQRd+smOyo=
+X-Google-Smtp-Source: APXvYqxzH31f+2bGhDcEEDLD8E4lagqqgmHLv3NkKQxX8k5tVEOx+63XjFDyGaJYh0xM4o22P4hcLw==
+X-Received: by 2002:ac2:5a1a:: with SMTP id q26mr431452lfn.33.1575315213309;
+ Mon, 02 Dec 2019 11:33:33 -0800 (PST)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- g13sm79482lfb.74.2019.12.02.11.33.30
+ g13sm79482lfb.74.2019.12.02.11.33.31
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Dec 2019 11:33:31 -0800 (PST)
+ Mon, 02 Dec 2019 11:33:32 -0800 (PST)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: [PATCH v1 14/26] drm/panel: olimex-lcd-olinuxino: use drm_panel
+Subject: [PATCH v1 15/26] drm/panel: osd-osd101t2587-53ts: use drm_panel
  backlight support
-Date: Mon,  2 Dec 2019 20:32:18 +0100
-Message-Id: <20191202193230.21310-15-sam@ravnborg.org>
+Date: Mon,  2 Dec 2019 20:32:19 +0100
+Message-Id: <20191202193230.21310-16-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191202193230.21310-1-sam@ravnborg.org>
 References: <20191202193230.21310-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_113333_489093_98724C98 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20191202_113335_087599_B865559B 
+X-CRM114-Status: GOOD (  12.42  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -106,8 +106,7 @@ Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
  Andrzej Hajda <a.hajda@samsung.com>,
  Benjamin Gaignard <benjamin.gaignard@linaro.org>,
  Sam Ravnborg <sam@ravnborg.org>, linux-samsung-soc@vger.kernel.org,
- Stefan Mavrodiev <stefan@olimex.com>, linux-rockchip@lists.infradead.org,
- Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ linux-rockchip@lists.infradead.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
  Jagan Teki <jagan@amarulasolutions.com>, NXP Linux Team <linux-imx@nxp.com>,
  Jitao Shi <jitao.shi@mediatek.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
@@ -126,80 +125,100 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Use the backlight support in drm_panel to simplify the driver
 
 Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-Cc: Stefan Mavrodiev <stefan@olimex.com>
 Cc: Thierry Reding <thierry.reding@gmail.com>
 Cc: Sam Ravnborg <sam@ravnborg.org>
 ---
- .../gpu/drm/panel/panel-olimex-lcd-olinuxino.c | 18 ++++++------------
- 1 file changed, 6 insertions(+), 12 deletions(-)
+ .../drm/panel/panel-osd-osd101t2587-53ts.c    | 24 +++++++------------
+ 1 file changed, 9 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/gpu/drm/panel/panel-olimex-lcd-olinuxino.c b/drivers/gpu/drm/panel/panel-olimex-lcd-olinuxino.c
-index e553e584399b..09deb99981a4 100644
---- a/drivers/gpu/drm/panel/panel-olimex-lcd-olinuxino.c
-+++ b/drivers/gpu/drm/panel/panel-olimex-lcd-olinuxino.c
-@@ -6,7 +6,6 @@
-  *   Author: Stefan Mavrodiev <stefan@olimex.com>
+diff --git a/drivers/gpu/drm/panel/panel-osd-osd101t2587-53ts.c b/drivers/gpu/drm/panel/panel-osd-osd101t2587-53ts.c
+index 2734b4835dfa..3a0229d60095 100644
+--- a/drivers/gpu/drm/panel/panel-osd-osd101t2587-53ts.c
++++ b/drivers/gpu/drm/panel/panel-osd-osd101t2587-53ts.c
+@@ -4,7 +4,6 @@
+  *  Author: Peter Ujfalusi <peter.ujfalusi@ti.com>
   */
  
 -#include <linux/backlight.h>
- #include <linux/crc32.h>
- #include <linux/gpio/consumer.h>
- #include <linux/i2c.h>
-@@ -68,7 +67,6 @@ struct lcd_olinuxino {
- 	bool prepared;
- 	bool enabled;
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/regulator/consumer.h>
+@@ -20,7 +19,6 @@ struct osd101t2587_panel {
+ 	struct drm_panel base;
+ 	struct mipi_dsi_device *dsi;
  
 -	struct backlight_device *backlight;
  	struct regulator *supply;
- 	struct gpio_desc *enable_gpio;
  
-@@ -87,8 +85,6 @@ static int lcd_olinuxino_disable(struct drm_panel *panel)
- 	if (!lcd->enabled)
+ 	bool prepared;
+@@ -42,8 +40,6 @@ static int osd101t2587_panel_disable(struct drm_panel *panel)
+ 	if (!osd101t2587->enabled)
  		return 0;
  
--	backlight_disable(lcd->backlight);
+-	backlight_disable(osd101t2587->backlight);
 -
- 	lcd->enabled = false;
+ 	ret = mipi_dsi_shutdown_peripheral(osd101t2587->dsi);
  
- 	return 0;
-@@ -134,8 +130,6 @@ static int lcd_olinuxino_enable(struct drm_panel *panel)
- 	if (lcd->enabled)
- 		return 0;
+ 	osd101t2587->enabled = false;
+@@ -91,8 +87,6 @@ static int osd101t2587_panel_enable(struct drm_panel *panel)
+ 	if (ret)
+ 		return ret;
  
--	backlight_enable(lcd->backlight);
+-	backlight_enable(osd101t2587->backlight);
 -
- 	lcd->enabled = true;
+ 	osd101t2587->enabled = true;
  
- 	return 0;
-@@ -283,13 +277,13 @@ static int lcd_olinuxino_probe(struct i2c_client *client,
- 	if (IS_ERR(lcd->enable_gpio))
- 		return PTR_ERR(lcd->enable_gpio);
+ 	return ret;
+@@ -158,18 +152,19 @@ MODULE_DEVICE_TABLE(of, osd101t2587_of_match);
+ static int osd101t2587_panel_add(struct osd101t2587_panel *osd101t2587)
+ {
+ 	struct device *dev = &osd101t2587->dsi->dev;
++	int ret;
  
--	lcd->backlight = devm_of_find_backlight(dev);
--	if (IS_ERR(lcd->backlight))
--		return PTR_ERR(lcd->backlight);
+ 	osd101t2587->supply = devm_regulator_get(dev, "power");
+ 	if (IS_ERR(osd101t2587->supply))
+ 		return PTR_ERR(osd101t2587->supply);
+ 
+-	osd101t2587->backlight = devm_of_find_backlight(dev);
+-	if (IS_ERR(osd101t2587->backlight))
+-		return PTR_ERR(osd101t2587->backlight);
 -
- 	drm_panel_init(&lcd->panel, dev, &lcd_olinuxino_funcs,
- 		       DRM_MODE_CONNECTOR_DPI);
+ 	drm_panel_init(&osd101t2587->base, &osd101t2587->dsi->dev,
+ 		       &osd101t2587_panel_funcs, DRM_MODE_CONNECTOR_DSI);
  
-+	ret = drm_panel_of_backlight(&lcd->panel);
++	ret = drm_panel_of_backlight(&osd101t2587->base);
 +	if (ret)
 +		return ret;
 +
- 	return drm_panel_add(&lcd->panel);
+ 	return drm_panel_add(&osd101t2587->base);
  }
  
-@@ -299,8 +293,8 @@ static int lcd_olinuxino_remove(struct i2c_client *client)
+@@ -215,12 +210,11 @@ static int osd101t2587_panel_remove(struct mipi_dsi_device *dsi)
+ 	struct osd101t2587_panel *osd101t2587 = mipi_dsi_get_drvdata(dsi);
+ 	int ret;
  
- 	drm_panel_remove(&panel->panel);
+-	ret = osd101t2587_panel_disable(&osd101t2587->base);
++	ret = drm_panel_disable(&osd101t2587->base);
+ 	if (ret < 0)
+ 		dev_warn(&dsi->dev, "failed to disable panel: %d\n", ret);
  
--	lcd_olinuxino_disable(&panel->panel);
--	lcd_olinuxino_unprepare(&panel->panel);
-+	drm_panel_disable(&panel->panel);
-+	drm_panel_unprepare(&panel->panel);
+-	osd101t2587_panel_unprepare(&osd101t2587->base);
+-
++	drm_panel_unprepare(&osd101t2587->base);
+ 	drm_panel_remove(&osd101t2587->base);
  
- 	return 0;
+ 	ret = mipi_dsi_detach(dsi);
+@@ -234,8 +228,8 @@ static void osd101t2587_panel_shutdown(struct mipi_dsi_device *dsi)
+ {
+ 	struct osd101t2587_panel *osd101t2587 = mipi_dsi_get_drvdata(dsi);
+ 
+-	osd101t2587_panel_disable(&osd101t2587->base);
+-	osd101t2587_panel_unprepare(&osd101t2587->base);
++	drm_panel_disable(&osd101t2587->base);
++	drm_panel_unprepare(&osd101t2587->base);
  }
+ 
+ static struct mipi_dsi_driver osd101t2587_panel_driver = {
 -- 
 2.20.1
 
