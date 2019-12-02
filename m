@@ -2,114 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7E0010E7E3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 10:45:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2ECA210E7E8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 10:48:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Z9s1yH/Tcqft1SYbzIkFDGxz5ABwj0ArQqBKkXRSiY=; b=MH5AIzsaCsvNuy
-	KUCo0OWH/BIfHmJ57jxtaHUwZInovWDpCzIHZ2OL/RNxMTbzQ+vRflO+X+0SQS720SfTlIuGxVcib
-	NuUH4/RDNRvgr0qrkGeQo52IMOCLI9uCLKYiuSBQGQJWkVNvzkW96GCgpwoorGj3BJ9CMA+yi9vIO
-	K2zzVrRmkuS3/8gMJVRS3DzNxIK1YEYKYC465ojDUG2BK1l9vl2VfWzLz4D3qCtYTP7W/WU2Gnwp5
-	ep9IQEzTou5bCUDyfUMIfpUXET4ii89mcpqDO4P34dXEBmrQ3KB8N2KIxb3g+f3zT/Ij0Jw70w527
-	rsjzdDAfzUv8Ayau9vIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zPgN6vQDRojKFl/uo0mCwO1PSODcNkjW0m9I0+w+F38=; b=lXCrFZNXfIv8FxF8/c4wDVNqj
+	yBE2j9JXx72L5Ea+5nU7geYpA1CYeVHMbGXugvwEPiBDCVx80nSBDYwgFH7sKWopYDCLZXVQYVlED
+	qxaaaP1bb/E87qQd8c4IuX0+rvE1kH5YfSjyqIb4y4AOh0m5+o2D787JT7TNntnupvcmX4K1oOyux
+	oVdrDPcyuF3bWtb3nP/7YRKQcZcKyesynZUSlvJkUEXuISa1cQY4tpX8f6P1kR67efIOh6gUj1h5/
+	nKvQgRcncH/ZWVWboERR8fGOE/Vnvgr9SkaK/FmPd8fdjaubNFploIcfUGExJO3SUhnqcv4f7z1pu
+	kTPiR0V7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibiGt-0005Kd-6U; Mon, 02 Dec 2019 09:45:35 +0000
-Received: from mail-eopbgr40059.outbound.protection.outlook.com ([40.107.4.59]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibiGm-0005K3-7g
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 09:45:29 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=IJLDTQMACobf7e8u1MsoZNm1aD6yX2Y+Nq5pRnpssF2wyJqVU8wf000ApJbVwgCyOFDBoW1bbQTa4StOl0kThhVOhZeQmWE9RLMERB1lzR+OXww88BA/m8NQwabZyqXFAEPynlTya1EfDEO3+EId/SKrmTRD1INtfdS3dIcYE5xXiMkDker2294bLhMpZ4SKmUU41Y8gK08hcBvoHKukWhVlzgwDwchHR/HhPAr1cpAuQKr/UfixczUtLBqsQv1uA+UOkMS0XYdzDBli1kyJgd/cE7tkEpWk1oaNbiCtTT+9lVgvKHDeek93RxVzUfr0aXWIfJfInsNptJ/QI9aMnw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=iHKD30VXFMShPA1Yq6qDTuokNKWFsacsp5qNK3o/p64=;
- b=I1voTlVJXQB+JfmzA9dEULelTVvbX0j6wzdtCZsbZiXKjbirU6UTPD7l7zp9l5k27nuowjfQzVr82IbuWNmRKWM1m1E3J0sL62RUu46N7NLWabdN7qO5d0BDOpji6nKHWqcWI9OG2epFdTvee+FFzqw5c6OEDUMZkKhFoqs7jrBYUc6WPU0wwqup3v6mItoL37v9KDCH6huDzmQItCzygffuXbl/G3CoFZGiUXGkTIqHNqaqhdCWYx8q9bDbebmGj2e8bGV2zV3Zn8utsiLj1xd2gi/i3x5fMQANWIAT832W1/rXlKkDCyBEIgYM3NIGxVWdvIgmSiC40oUnE3bTKQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=iHKD30VXFMShPA1Yq6qDTuokNKWFsacsp5qNK3o/p64=;
- b=XBO2mq/YZiFY6rBDHHqB5Ytki70GiKKT/jmTJI/zYWggmLcVCJvHW7cporhosGQh/6dqTumKt5fCPfbXovRQOsefVICaVNraPZek9pjnBD4H5U07jYMz3lQtDrA2EbzJciJbtya+1AvCBfiee8nAhEN12xuUf/+qGAdE9x5nImw=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4706.eurprd04.prod.outlook.com (20.177.40.78) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2495.22; Mon, 2 Dec 2019 09:45:25 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::f16d:a26a:840:f97c]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::f16d:a26a:840:f97c%4]) with mapi id 15.20.2495.014; Mon, 2 Dec 2019
- 09:45:25 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "axboe@kernel.dk" <axboe@kernel.dk>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "hdegoede@redhat.com" <hdegoede@redhat.com>, "tj@kernel.org" <tj@kernel.org>
-Subject: RE: [PATCH] ahci: imx: i.MX8QM: fix error handling
-Thread-Topic: [PATCH] ahci: imx: i.MX8QM: fix error handling
-Thread-Index: AQHVmRhVtJOcbRZcDU+JyEEqGXtClKemuBgg
-Date: Mon, 2 Dec 2019 09:45:24 +0000
-Message-ID: <AM0PR04MB448164AD76243D955BC025E588430@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1573535674-25364-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1573535674-25364-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [114.220.170.63]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 43451e89-36f8-425a-190a-08d7770c5b51
-x-ms-traffictypediagnostic: AM0PR04MB4706:|AM0PR04MB4706:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB4706391460B390501E44673D88430@AM0PR04MB4706.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4714;
-x-forefront-prvs: 0239D46DB6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(396003)(376002)(39860400002)(366004)(346002)(199004)(189003)(51234002)(2906002)(229853002)(9686003)(6246003)(102836004)(14454004)(478600001)(110136005)(66476007)(7736002)(86362001)(66556008)(64756008)(26005)(256004)(76176011)(14444005)(4326008)(5024004)(66446008)(6506007)(7696005)(7416002)(25786009)(74316002)(71190400001)(71200400001)(186003)(52536014)(6436002)(55016002)(54906003)(6116002)(3846002)(305945005)(8936002)(11346002)(2201001)(446003)(76116006)(5660300002)(2501003)(81156014)(8676002)(81166006)(33656002)(99286004)(44832011)(316002)(66946007)(66066001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4706;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: R5xLjIX6aMgomFluNY6YbB5tHZ8IQwdpGFRAsLzlJods3zXp8Q5KxrrkEJlarI61tJETQfzO8UdGNRRmjMm24NLeibbckBaOmlfRBL2cgyHHT9Pe0GvdaxQ/NkUNeWTZ+WlWXEzjQTBDLxgh9mI+0JK68E6gH5xmAe1PvhaO0XVCEGirXsQRgiE5J2h2bsxm8Tnl9MsGxY8ZGMc4Y3QhTAkn/PEgOaaJKEcsYNxuhvnJj0BhdeDZMRTWYCPTvmvZg9seItgnlZgzZBlbipTZufVBnlFsIz6uceyKzPQHE0RKjSw8b2dsdVeT9zNY9WEiYi7H+t0qYciZEVeBl8mu0l/Js5T6dLVobP+DaXwf/sXOzYqg9zw6HuYMgVR4S0aEXxCIWDGCpmp9fVcHiePHNmqi0Nud7swN+x+9oSGxpGQXCmxZ6FcNI8ICBuElw+9xmUYYXllmkBIxWeRynD7hZA==
+	id 1ibiJN-0005cx-KC; Mon, 02 Dec 2019 09:48:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ibiJF-0005cO-Th
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 09:48:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0ED68328;
+ Mon,  2 Dec 2019 01:47:59 -0800 (PST)
+Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 271BE3F68E;
+ Mon,  2 Dec 2019 01:47:58 -0800 (PST)
+Subject: Re: [PATCH v5 09/14] coresight: cti: Add connection information to
+ sysfs
+To: Mike Leach <mike.leach@linaro.org>, coresight@lists.linaro.org,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-doc@vger.kernel.org
+References: <20191119231912.12768-1-mike.leach@linaro.org>
+ <20191119231912.12768-10-mike.leach@linaro.org>
+From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
+Message-ID: <ad75693c-8c6f-35fd-f9bb-0317c2b4dcd2@arm.com>
+Date: Mon, 2 Dec 2019 09:47:57 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 43451e89-36f8-425a-190a-08d7770c5b51
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Dec 2019 09:45:24.9110 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: /PK47h6uymx3cvgoeIkORYdEQFpU9tU4SBVCzQ6HbzLHpysw1sn1Eh5raqbsuVys5USDmo4q296VLIV6e2P09w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4706
+In-Reply-To: <20191119231912.12768-10-mike.leach@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_014528_278504_702C9EEC 
-X-CRM114-Status: GOOD (  11.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191202_014802_046521_D32307A1 
+X-CRM114-Status: GOOD (  31.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.59 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,91 +65,430 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Zhu <hongxing.zhu@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-ide@vger.kernel.org" <linux-ide@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mathieu.poirier@linaro.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: [PATCH] ahci: imx: i.MX8QM: fix error handling
-
-Ping..
-
-Thanks,
-Peng.
-
+On 19/11/2019 23:19, Mike Leach wrote:
+> Dynamically adds sysfs attributes for all connections defined in the CTI.
 > 
-> From: Peng Fan <peng.fan@nxp.com>
+> Each connection has a triggers<N> sub-directory with name, in_signals,
+> in_types, out_signals and out_types as read-only parameters in the
+> directory. in_ or out_ parameters may be omitted if there are no in or
+> out signals for the connection.
 > 
-> When imx8_sata_enable failed, need to jump to path disable_clk.
-> Otherwise there will be kernel dump as following.
->     Workqueue: events deferred_probe_work_func
->     pstate: 60000005 (nZCv daif -PAN -UAO)
->     pc : _regulator_put.part.27+0x34/0x158
->     lr : _regulator_put.part.27+0x2c/0x158
->     sp : ffff80001286bb00
->     x29: ffff80001286bb00 x28: 0000000000000000
->     x27: 0000000000000000 x26: ffff8000100fddf0
->     x25: 0000000000000000 x24: 000000000000001b
->     x23: ffff80001286bbd8 x22: ffff0008ea007600
->     x21: ffff0008ea0104f0 x20: ffff0008ea007e00
->     x19: ffff8000120753e8 x18: 0000000000000010
->     x17: 00000000eefd8a54 x16: 00000000deadbeef
->     x15: ffffffffffffffff x14: ffff800011f198c8
->     x13: 0000000000000000 x12: 0000000000000001
->     x11: 0000000000000000 x10: 0000000000000990
->     x9 : ffff80001286b870 x8 : ffff0008eb99c0f0
->     x7 : ffff0008eb99b880 x6 : ffff0008eb99b7c0
->     x5 : 00000000000001df x4 : 0000000000001adb
->     x3 : ffff8008de089000 x2 : a4c383a3cc862400
->     x1 : 0000000000000000 x0 : 0000000000000001
->     Call trace:
->      _regulator_put.part.27+0x34/0x158
->      regulator_put+0x34/0x48
->      ahci_platform_put_resources+0x64/0xd0
->      release_nodes+0x1b0/0x220
->      devres_release_all+0x34/0x50
->      really_probe+0x1b8/0x308
->      driver_probe_device+0x54/0xe8
->      __device_attach_driver+0x80/0xb8
->      bus_for_each_drv+0x78/0xc8
->      __device_attach+0xd4/0x130
->      device_initial_probe+0x10/0x18
->      bus_probe_device+0x90/0x98
->      deferred_probe_work_func+0x64/0x98
->      process_one_work+0x1e0/0x358
->      worker_thread+0x208/0x488
->      kthread+0x118/0x120
->      ret_from_fork+0x10/0x18
+> Additionally each device has a nr_cons in the connections sub-directory.
 > 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> This allows clients to explore the connection and trigger signal details
+> without needing to refer to device tree or specification of the device.
+> 
+> Standardised type information is provided for certain common functions -
+> e.g. snk_full for a trigger from a sink indicating full. Otherwise type
+> defaults to genio.
+> 
+> Signed-off-by: Mike Leach <mike.leach@linaro.org>
 > ---
->  drivers/ata/ahci_imx.c | 2 ++
->  1 file changed, 2 insertions(+)
+>   .../hwtracing/coresight/coresight-cti-sysfs.c | 376 +++++++++++++++++-
+>   drivers/hwtracing/coresight/coresight-cti.c   |  13 +-
+>   drivers/hwtracing/coresight/coresight-cti.h   |  11 +-
+>   3 files changed, 396 insertions(+), 4 deletions(-)
 > 
-> diff --git a/drivers/ata/ahci_imx.c b/drivers/ata/ahci_imx.c index
-> bfc617cc8ac5..1d6a5ef78259 100644
-> --- a/drivers/ata/ahci_imx.c
-> +++ b/drivers/ata/ahci_imx.c
-> @@ -692,6 +692,8 @@ static int imx_sata_enable(struct ahci_host_priv
-> *hpriv)
->  		}
->  	} else if (imxpriv->type == AHCI_IMX8QM) {
->  		ret = imx8_sata_enable(hpriv);
-> +		if (ret)
-> +			goto disable_clk;
->  	}
-> 
->  	usleep_range(1000, 2000);
-> --
-> 2.16.4
 
+
+The patch looks good overall, some minor comments below.
+
+
+> diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> index f800402f73da..91986732506f 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> @@ -8,6 +8,67 @@
+
+
+> @@ -818,7 +890,306 @@ static struct attribute *coresight_cti_channel_attrs[] = {
+>   	NULL,
+>   };
+>   
+> -/* sysfs groups */
+> +/* Create the connections trigger groups and attrs dynamically */
+> +/*
+> + * Each connection has dynamic group triggers<N> + name, trigin/out sigs/types
+> + * attributes, + each device has static nr_trigger_cons giving the number
+> + * of groups. e.g. in sysfs:-
+> + * /cti_<name>/triggers0
+> + * /cti_<name>/triggers1
+> + * /cti_<name>/nr_trigger_cons
+> + * where nr_trigger_cons = 2
+> + */
+> +static ssize_t con_name_show(struct device *dev,
+> +			     struct device_attribute *attr,
+> +			     char *buf)
+> +{
+> +	struct dev_ext_attribute *ext_attr =
+> +		container_of(attr, struct dev_ext_attribute, attr);
+> +	struct cti_trig_con *con = (struct cti_trig_con *)ext_attr->var;
+> +
+> +	return scnprintf(buf, PAGE_SIZE, "%s\n", con->con_dev_name);
+> +}
+> +
+> +static ssize_t trigin_sig_show(struct device *dev,
+> +			       struct device_attribute *attr,
+> +			       char *buf)
+> +{
+> +	struct dev_ext_attribute *ext_attr =
+> +		container_of(attr, struct dev_ext_attribute, attr);
+> +	struct cti_trig_con *con = (struct cti_trig_con *)ext_attr->var;
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct cti_config *cfg = &drvdata->config;
+> +	unsigned long mask = con->con_in->used_mask;
+> +
+> +	return bitmap_print_to_pagebuf(true, buf, &mask, cfg->nr_trig_max);
+> +}
+> +
+> +static ssize_t trigout_sig_show(struct device *dev,
+> +				struct device_attribute *attr,
+> +				char *buf)
+> +{
+> +	struct dev_ext_attribute *ext_attr =
+> +		container_of(attr, struct dev_ext_attribute, attr);
+> +	struct cti_trig_con *con = (struct cti_trig_con *)ext_attr->var;
+> +	struct cti_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct cti_config *cfg = &drvdata->config;
+> +	unsigned long mask = con->con_out->used_mask;
+> +
+> +	return bitmap_print_to_pagebuf(true, buf, &mask, cfg->nr_trig_max);
+> +}
+> +
+> +/* convert a sig type id to a name */
+> +static const char *
+> +cti_sig_type_name(struct cti_trig_con *con, int used_count, bool in)
+> +{
+> +	int idx = 0;
+> +	struct cti_trig_grp *grp = in ? con->con_in : con->con_out;
+> +
+> +	if (grp->sig_types) {
+> +		if (used_count < grp->nr_sigs)
+> +			idx = grp->sig_types[used_count];
+> +	}
+> +	return sig_type_names[idx];
+> +}
+> +
+> +static ssize_t trigin_type_show(struct device *dev,
+> +				struct device_attribute *attr,
+> +				char *buf)
+> +{
+> +	struct dev_ext_attribute *ext_attr =
+> +		container_of(attr, struct dev_ext_attribute, attr);
+> +	struct cti_trig_con *con = (struct cti_trig_con *)ext_attr->var;
+> +	int sig_idx, used = 0, b_sz = PAGE_SIZE;
+> +	const char *name;
+> +
+> +	for (sig_idx = 0; sig_idx < con->con_in->nr_sigs; sig_idx++) {
+> +		name = cti_sig_type_name(con, sig_idx, true);
+> +		used += scnprintf(buf + used, b_sz - used, "%s ", name);
+> +	}
+> +	used += scnprintf(buf + used, b_sz - used, "\n");
+> +	return used;
+> +}
+> +
+> +static ssize_t trigout_type_show(struct device *dev,
+> +				 struct device_attribute *attr,
+> +				 char *buf)
+> +{
+> +	struct dev_ext_attribute *ext_attr =
+> +		container_of(attr, struct dev_ext_attribute, attr);
+> +	struct cti_trig_con *con = (struct cti_trig_con *)ext_attr->var;
+> +	int sig_idx, used = 0, b_sz = PAGE_SIZE;
+> +	const char *name;
+> +
+> +	for (sig_idx = 0; sig_idx < con->con_out->nr_sigs; sig_idx++) {
+> +		name = cti_sig_type_name(con, sig_idx, false);
+> +		used += scnprintf(buf + used, b_sz - used, "%s ", name);
+> +	}
+> +	used += scnprintf(buf + used, b_sz - used, "\n");
+> +	return used;
+> +}
+> +
+> +/*
+> + * Array of show function names declared above to allow selection
+> + * for the connection attributes
+> + */
+> +static p_show_fn show_fns[CTI_CON_ATTR_MAX] = {
+> +	con_name_show,
+> +	trigin_sig_show,
+> +	trigout_sig_show,
+> +	trigin_type_show,
+> +	trigout_type_show,
+> +};
+> +
+> +static int cti_create_con_sysfs_attr(struct cti_trig_con *con,
+> +				     enum cti_conn_attr_type attr_type,
+> +				     int attr_idx)
+> +{
+> +	struct dev_ext_attribute *dev_ext_attr = 0;
+
+super minor nit: You may use "eattr" instead.
+
+
+> +	char *name = 0;
+> +
+> +	dev_ext_attr = kzalloc(sizeof(struct dev_ext_attribute), GFP_KERNEL);
+
+
+Could we not use devm_* alloc helpers everywhere ?
+
+> +	if (dev_ext_attr) {
+> +		name = kstrdup(con_attr_names[attr_type], GFP_KERNEL);
+> +		if (name) {
+> +			/* fill out the underlying attribute struct */
+> +			dev_ext_attr->attr.attr.name = name;
+> +			dev_ext_attr->attr.attr.mode = 0444;
+> +
+> +			/* now the device_attribute struct */
+> +			dev_ext_attr->attr.show = show_fns[attr_type];
+> +		} else {
+> +			kfree(dev_ext_attr);
+> +			return -ENOMEM;
+> +		}
+> +	} else {
+> +		return -ENOMEM;
+> +	}
+> +	dev_ext_attr->var = con;
+> +	con->con_attrs[attr_idx] = &dev_ext_attr->attr.attr;
+> +	return 0;
+> +}
+> +
+> +static struct attribute_group *
+> +cti_create_con_sysfs_group(struct cti_device *ctidev, int con_idx,
+> +			   struct cti_trig_con *con)
+> +{
+> +	struct attribute_group *group = NULL;
+> +
+> +	group = kzalloc(sizeof(struct attribute_group), GFP_KERNEL);
+> +	if (!group)
+> +		return NULL;
+> +
+> +	group->name = kasprintf(GFP_KERNEL, "triggers%d", con_idx);
+> +	if (!group->name) {
+> +		kfree(group);
+> +		return NULL;
+> +	}
+> +
+> +	ctidev->con_groups[con_idx + CORESIGHT_CTI_STATIC_GROUPS_MAX - 1]
+> +		= group;
+
+nit:
+	con_idx +=  CORESIGHT_CTI_STATIC_GROUPS_MAX - 1;
+	ctidev->con_groups[con_idx] = group;
+
+
+> +	con->attr_group = group;
+> +	return group;
+> +}
+> +
+> +/* create a triggers connection group and the attributes for that group */
+> +static int cti_create_con_attr_set(int con_idx, struct cti_device *ctidev,
+> +				   struct cti_trig_con *con)
+> +{
+> +	struct attribute_group *attr_group = NULL;
+> +	int attr_idx = 0;
+> +	int err = -ENOMEM;
+> +
+> +	attr_group = cti_create_con_sysfs_group(ctidev, con_idx, con);
+> +	if (!attr_group)
+> +		return -ENOMEM;
+> +
+> +	/* allocate NULL terminated array of attributes */
+> +	con->con_attrs = kcalloc(CTI_CON_ATTR_MAX + 1,
+> +				 sizeof(struct attribute *),
+> +				 GFP_KERNEL);
+
+Again why not devm_* allocations ? That takes the pain of freeing the
+memory away and helps prevent memory leaks.
+
+> +	if (!con->con_attrs)
+> +		return -ENOMEM;
+> +
+> +	err = cti_create_con_sysfs_attr(con, CTI_CON_ATTR_NAME, attr_idx++);
+> +	if (err)
+> +		return err;
+> +
+> +	if (con->con_in->nr_sigs > 0) {
+> +		err = cti_create_con_sysfs_attr(con, CTI_CON_ATTR_TRIGIN_SIG,
+> +						attr_idx++);
+> +		if (err)
+> +			return err;
+> +
+> +		err = cti_create_con_sysfs_attr(con, CTI_CON_ATTR_TRIGIN_TYPES,
+> +						attr_idx++);
+> +		if (err)
+> +			return err;
+> +	}
+> +
+> +	if (con->con_in->nr_sigs > 0) {
+> +		err = cti_create_con_sysfs_attr(con, CTI_CON_ATTR_TRIGOUT_SIG,
+> +						attr_idx++);
+> +		if (err)
+> +			return err;
+> +
+> +		err = cti_create_con_sysfs_attr(con, CTI_CON_ATTR_TRIGOUT_TYPES,
+> +						attr_idx++);
+> +		if (err)
+> +			return err;
+> +	}
+> +	attr_group->attrs = con->con_attrs;
+> +	return 0;
+> +}
+> +
+> +/* create the array of group pointers for the CTI sysfs groups */
+> +int cti_create_cons_groups(struct cti_device *ctidev)
+> +{
+> +	int i, nr_groups;
+> +
+> +	/* nr groups - dynamic + static + NULL terminator */
+> +	nr_groups = ctidev->nr_trig_con + CORESIGHT_CTI_STATIC_GROUPS_MAX;
+> +	ctidev->con_groups = kcalloc(nr_groups,
+> +				     sizeof(struct attribute_group *),
+> +				     GFP_KERNEL);
+> +	if (!ctidev->con_groups)
+> +		return -ENOMEM;
+> +
+> +	/* populate first locations with the static set of groups */
+> +	for (i = 0; i < (CORESIGHT_CTI_STATIC_GROUPS_MAX - 1); i++)
+> +		ctidev->con_groups[i] = coresight_cti_groups[i];
+> +
+> +	return 0;
+> +}
+> +
+
+To be frank, it doesn't make sense to have this split of populating
+the groups.
+
+> +int cti_create_cons_sysfs(struct cti_drvdata *drvdata)
+> +{
+> +	struct cti_device *ctidev = &drvdata->ctidev;
+> +	int err, con_idx = 0;
+> +	struct cti_trig_con *tc = NULL;
+> +
+> +	err = cti_create_cons_groups(ctidev);
+> +	if (err)
+> +		return err;
+> +
+> +	/* add dynamic set for each connection */
+> +	list_for_each_entry(tc, &ctidev->trig_cons, node) {
+> +		err = cti_create_con_attr_set(con_idx++, ctidev, tc);
+> +		if (err)
+> +			goto cons_sysfs_err;
+> +	}
+> +	return 0;
+> +
+> +cons_sysfs_err:
+> +	cti_destroy_cons_sysfs(ctidev);
+> +	return err;
+> +}
+> +
+> +void cti_free_con_attr(struct attribute *con_attr)
+> +{
+> +	struct device_attribute *dattr =
+> +		container_of(con_attr, struct device_attribute, attr);
+> +	struct dev_ext_attribute *dev_ext_attr =
+> +		container_of(dattr, struct dev_ext_attribute, attr);
+> +	kfree(con_attr->name);
+> +	kfree(dev_ext_attr);
+> +}
+> +
+> +void cti_free_con_group(struct attribute_group *attr_group)
+> +{
+> +	if (attr_group) {
+> +		kfree(attr_group->name);
+> +		kfree(attr_group);
+> +	}
+> +}
+> +
+> +void cti_destroy_cons_attr_set(int con_idx, struct cti_device *ctidev,
+> +			       struct cti_trig_con *con)
+> +{
+> +	int i;
+> +
+> +	if (con->con_attrs) {
+> +		for (i = 0; i < CTI_CON_ATTR_MAX; i++) {
+> +			if (con->con_attrs[i])
+> +				cti_free_con_attr(con->con_attrs[i]);
+> +		}
+> +		kfree(con->con_attrs);
+> +	}
+> +	cti_free_con_group(con->attr_group);
+> +}
+> +
+> +void cti_destroy_cons_sysfs(struct cti_device *ctidev)
+> +{
+> +	struct cti_trig_con *tc;
+
+minor nit: Please keep the variable name consistent if possible, helps a
+lot with the code following. i.e, tc vs con above in 
+cti_destroy_cons_attr_set().
+
+> +	int con_idx = 0;
+> +
+> +	list_for_each_entry(tc, &ctidev->trig_cons, node) {
+> +		cti_destroy_cons_attr_set(con_idx++, ctidev, tc);
+> +	}
+> +	kfree(ctidev->con_groups);
+> +}
+> +
+> +/* attribute and group sysfs tables. */
+>   static const struct attribute_group coresight_cti_group = {
+>   	.attrs = coresight_cti_attrs,
+>   };
+> @@ -838,7 +1209,8 @@ static const struct attribute_group coresight_cti_channels_group = {
+>   	.name = "channels",
+>   };
+>   
+> -const struct attribute_group *coresight_cti_groups[] = {
+> +const struct attribute_group *
+> +coresight_cti_groups[CORESIGHT_CTI_STATIC_GROUPS_MAX] = {
+>   	&coresight_cti_group,
+>   	&coresight_cti_mgmt_group,
+>   	&coresight_cti_regs_group,
+> diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
+> index cf116463149a..c3d63cc53bdd 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti.c
+> @@ -561,6 +561,9 @@ static void cti_device_release(struct device *dev)
+>   
+>   	mutex_lock(&ect_mutex);
+>   
+> +	/* clear the dynamic sysfs associate with connections */
+> +	cti_destroy_cons_sysfs(&drvdata->ctidev);
+> +
+>   	/* remove from the list */
+>   	list_for_each_entry_safe(ect_item, ect_tmp, &ect_net, node) {
+>   		if (ect_item == drvdata) {
+> @@ -636,12 +639,20 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
+>   		goto err_out;
+>   	}
+>   
+> +	/* create dynamic attributes for connections */
+> +	ret = cti_create_cons_sysfs(drvdata);
+> +	if (ret) {
+> +		pr_err("%s: create dynamic sysfs entries failed\n",
+> +		       cti_desc.name);
+
+nit: It may be a good idea to include the actual device name (rather 
+than just cti_xxx). so may be :
+
+  dev_err(dev, "%s:....", cti_desc.name) ?
+
+
+> +		goto err_out;
+> +	}
+
+
+Except for the devm_ alloc question, rest are fine.
+
+Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
