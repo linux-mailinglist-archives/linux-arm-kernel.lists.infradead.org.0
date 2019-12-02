@@ -2,67 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6533910E5E5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 07:17:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A52610E5C4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 07:13:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cXfgqBGjAxTYBQTuyVUFaqsP8iQv+737BskD+QgUfts=; b=WwYp8oydwyHY+o
-	RvyCKZifv6mMlCX9Okdc/eDoAg5yRA6YbaURLnpTjsDGdSBnHTShp+PBlCqo0Wbi+XqQTuCX5JemY
-	h28Xf8+7lXsxIrnVDxqslcK7E8IG/y8BhiaplDp6YSdr19clayqMxgQhOvwDI7yahjDNTWnR9xBi6
-	Wz4C8S/VIyaumUAoV3hJfsOjD6tPG7HgBziplNiHBbmPuMpHqPQXUzSjavijtwmWE5HEjGrG6EYZV
-	QpjWPFR42sVbDYRtwRMf8sDQfiJ4I+uIQsBOtHMFU/XVSHSkfevB0J3WSj95XS+zhMNLSq91VYPyj
-	2x5T9+v9m4x3izn6mX1w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MZdqCdyLD5810fN1x5bXk2JJiibRTW05vVsfzZ+1esU=; b=YZCJfeU7yKTg1u
+	taz0HWLOAp+rMPlqc++7Osvbuh8bvJHqzZA52nkVUtCgXovs8zm//yqfHuVR66c+ET8nq/zDlzyKw
+	JaAyoMKRWzmVAtYDV8oL5bXJqyiJpmYsekPlUUS3V1ZjkG0N0x7M4IcERBDTrPnXn/uQ7S6S/oc3K
+	yGOB/bV96I3KcFnndNCyNgdfvc1Bu1MDhAocj4Tsnru5gpE8b/Zgskp5tsyXH5OOzJbzsuei+MFIN
+	MAY0bpQj5abK0HSm+I7gkl07aV1SrdA5CwDwr1X34FrtmgKqVzCQoMIs5RDsaJcDtWyKZ6Tfhfju8
+	G5jQYxMDq3rmz7x1O5jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibf1Y-000789-L4; Mon, 02 Dec 2019 06:17:32 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ibexs-0003uq-De; Mon, 02 Dec 2019 06:13:44 +0000
+Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibf1R-00077d-Ec; Mon, 02 Dec 2019 06:17:26 +0000
-X-UUID: eeacded1eedf4a4dbefe19808dbcf50a-20191201
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=1hVDXQnEXhl488d24pN92x7M9sMocqCpXtujHufwujQ=; 
- b=ooyr+wvN/CzaisrsNJylXVzjAIEBxbERIjGlZFXs3PQSGD6omi/ffFnUUpG5neWtC+6adlVo584rAScqbQPgjzXshoUDXIDiYJ0OJDDSwiScpJfiZnFr6IASIO6eV6E5pRw01Lh32bWmSkvM/lDgEuBy6h4XDlQwvGP/8b1u+/I=;
-X-UUID: eeacded1eedf4a4dbefe19808dbcf50a-20191201
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 202567880; Sun, 01 Dec 2019 22:16:59 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 1 Dec 2019 22:08:01 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 2 Dec 2019 14:07:07 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 2 Dec 2019 14:07:03 +0800
-Message-ID: <1575266838.26513.0.camel@mtksdaap41>
-Subject: Re: [PATCH v1 2/6] drm/mediatek: use DRM core's atomic commit helper
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Mon, 2 Dec 2019 14:07:18 +0800
-In-Reply-To: <20191128024238.9399-3-bibby.hsieh@mediatek.com>
-References: <20191128024238.9399-1-bibby.hsieh@mediatek.com>
- <20191128024238.9399-3-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1ibex7-0003Rd-97
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 06:13:00 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 85EBE22639;
+ Mon,  2 Dec 2019 01:12:50 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 02 Dec 2019 01:12:50 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
+ :to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm1; bh=0RjErlsd2BgGPzWKY9035wj5+w
+ 1sayMAH/KmpcDz7N0=; b=ic8mng/k1DqnwT6Gl3dHcq25QjL4puHw+CyRFrcjRO
+ SSY7IGpT8mmRmFsxz2qYv3Xc3b9vlyT4Xkfm99QJimK0YafQ+8HOHtAuZoqbNeCZ
+ G6u6uerhmJlfdm5cXkRHA+gZ3LjfIn0nzwUQW4PIRiFBXHXBFjuCm2+f/msR5ObV
+ /dod50vtchx47qZAvTxev57NgvkjflpWcE4NLA8KCW0Rd1iHWnFNCHBtRY/Rbpz8
+ s079MHvJo8fOtdV9CIzjlqTFeLxiwExMHhNBKnPMew7u9Na6/nb5L9FPqc4gOmFZ
+ laozeS1WEdrbw+/gAibQSjN2I1nvgcvhouLFBF/WjkjQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=0RjErlsd2BgGPzWKY
+ 9035wj5+w1sayMAH/KmpcDz7N0=; b=UFQ+ITXGYvmYQjvyDNA2IYiO7w2MnBI1K
+ 7x9B6Q0St7fwbUcJ4jsJuBKjdZxohm5U+ghYDuMkVWYnFyXPOFKINrbCKBZon5qP
+ RYkWFcK8cgT17qA+S3Ind7WAKDZ9Gpo6M6A4xHtTvlF/Czsugw8ZDXrxMYDf746t
+ 1YXSc53OO7ZiM8d1VxLR7CJx5m7ztoNs2CTvVXc8NC6AciC/7A5qznHxBJIB6/Tv
+ 1kllmuxdxY08QpsYdwPRM8gOIVaRp1WxYh+HFbpxXebk3L+oLRtLAXwSrrVTDXwH
+ xSVnOW8yl8mg+kAPJt63ldKiMlnKvk0eT+aZnfcdFGbUCUBcOGy1w==
+X-ME-Sender: <xms:YKvkXTtUo9MuWIb4KRGwNzRSB6KEmk60U2YiyaFwcq6-DNMnor8gww>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudejgedgleegucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgggfestdekredtre
+ dttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegrjhdr
+ ihgurdgruheqnecukfhppeduudekrddvuddurdelvddrudefnecurfgrrhgrmhepmhgrih
+ hlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihiivgep
+ td
+X-ME-Proxy: <xmx:YKvkXQ1ffOumc3312OXu_BO_dhduMphO8uo0uIZE0SeR5zU9UVX1xQ>
+ <xmx:YKvkXbO3ESr9sYNGBCOALc6hnrwD1rbGdkvonL0h7minx4vzuGinNQ>
+ <xmx:YKvkXQUez-46vBL-lcju1Yhmy76kz6jjcdnItmBN6EiH85gXdEvmJA>
+ <xmx:YqvkXdbwbi_GhewCX739IsuQ7ztsMluU8SB46CIkruCFZDo5Y3r35w>
+Received: from mistburn.lan (unknown [118.211.92.13])
+ by mail.messagingengine.com (Postfix) with ESMTPA id AE8D080062;
+ Mon,  2 Dec 2019 01:12:45 -0500 (EST)
+From: Andrew Jeffery <andrew@aj.id.au>
+To: linux-gpio@vger.kernel.org
+Subject: [PATCH 0/7] pinctrl: aspeed-g6: USB and pinconf support
+Date: Mon,  2 Dec 2019 16:44:25 +1030
+Message-Id: <20191202061432.3996-1-andrew@aj.id.au>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191201_221725_501348_9E8C9476 
-X-CRM114-Status: GOOD (  14.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191201_221258_205149_86C76705 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -70,8 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,170 +100,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, srv_heupstream@mediatek.com,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- tfiga@chromium.org, YT Shen <yt.shen@mediatek.com>,
- Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, linus.walleij@linaro.org,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, joel@jms.id.au,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Bibby:
+Hello,
 
-On Thu, 2019-11-28 at 10:42 +0800, Bibby Hsieh wrote:
-> The DRM core atomic helper now supports asynchronous commits natively.
-> The custom drm implementation isn't needed anymore, remove it.
+This series adds USB and pinconf support to the AST2600 pincontrol driver. The
+patches have largely been developed by Johnny Huang from ASPEED and have been
+used for bringup and verification of the chip. The were developed around the
+time of the 5.4 merge window but I got distracted for a while and haven't had
+an opportunity to send them until now. They've had a run in the OpenBMC kernel
+tree and so shouldn't cause any issues, but given where we are for 5.5 I'm just
+getting them in early for 5.6 so we don't miss another release.
 
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
+Please review!
 
-Regards,
-CK
+Andrew Jeffery (1):
+  dt-bindings: pinctrl: aspeed-g6: Add USB functions and groups
 
-> 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_drm_drv.c | 86 ++------------------------
->  drivers/gpu/drm/mediatek/mtk_drm_drv.h |  7 ---
->  2 files changed, 5 insertions(+), 88 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> index 6588dc6dd5e3..16e5771d182e 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> @@ -36,89 +36,14 @@
->  #define DRIVER_MAJOR 1
->  #define DRIVER_MINOR 0
->  
-> -static void mtk_atomic_schedule(struct mtk_drm_private *private,
-> -				struct drm_atomic_state *state)
-> -{
-> -	private->commit.state = state;
-> -	schedule_work(&private->commit.work);
-> -}
-> -
-> -static void mtk_atomic_complete(struct mtk_drm_private *private,
-> -				struct drm_atomic_state *state)
-> -{
-> -	struct drm_device *drm = private->drm;
-> -
-> -	drm_atomic_helper_wait_for_fences(drm, state, false);
-> -
-> -	/*
-> -	 * Mediatek drm supports runtime PM, so plane registers cannot be
-> -	 * written when their crtc is disabled.
-> -	 *
-> -	 * The comment for drm_atomic_helper_commit states:
-> -	 *     For drivers supporting runtime PM the recommended sequence is
-> -	 *
-> -	 *     drm_atomic_helper_commit_modeset_disables(dev, state);
-> -	 *     drm_atomic_helper_commit_modeset_enables(dev, state);
-> -	 *     drm_atomic_helper_commit_planes(dev, state,
-> -	 *                                     DRM_PLANE_COMMIT_ACTIVE_ONLY);
-> -	 *
-> -	 * See the kerneldoc entries for these three functions for more details.
-> -	 */
-> -	drm_atomic_helper_commit_modeset_disables(drm, state);
-> -	drm_atomic_helper_commit_modeset_enables(drm, state);
-> -	drm_atomic_helper_commit_planes(drm, state,
-> -					DRM_PLANE_COMMIT_ACTIVE_ONLY);
-> -
-> -	drm_atomic_helper_wait_for_vblanks(drm, state);
-> -
-> -	drm_atomic_helper_cleanup_planes(drm, state);
-> -	drm_atomic_state_put(state);
-> -}
-> -
-> -static void mtk_atomic_work(struct work_struct *work)
-> -{
-> -	struct mtk_drm_private *private = container_of(work,
-> -			struct mtk_drm_private, commit.work);
-> -
-> -	mtk_atomic_complete(private, private->commit.state);
-> -}
-> -
-> -static int mtk_atomic_commit(struct drm_device *drm,
-> -			     struct drm_atomic_state *state,
-> -			     bool async)
-> -{
-> -	struct mtk_drm_private *private = drm->dev_private;
-> -	int ret;
-> -
-> -	ret = drm_atomic_helper_prepare_planes(drm, state);
-> -	if (ret)
-> -		return ret;
-> -
-> -	mutex_lock(&private->commit.lock);
-> -	flush_work(&private->commit.work);
-> -
-> -	ret = drm_atomic_helper_swap_state(state, true);
-> -	if (ret) {
-> -		mutex_unlock(&private->commit.lock);
-> -		drm_atomic_helper_cleanup_planes(drm, state);
-> -		return ret;
-> -	}
-> -
-> -	drm_atomic_state_get(state);
-> -	if (async)
-> -		mtk_atomic_schedule(private, state);
-> -	else
-> -		mtk_atomic_complete(private, state);
-> -
-> -	mutex_unlock(&private->commit.lock);
-> -
-> -	return 0;
-> -}
-> +static const struct drm_mode_config_helper_funcs mtk_drm_mode_config_helpers = {
-> +	.atomic_commit_tail = drm_atomic_helper_commit_tail_rpm,
-> +};
->  
->  static const struct drm_mode_config_funcs mtk_drm_mode_config_funcs = {
->  	.fb_create = mtk_drm_mode_fb_create,
->  	.atomic_check = drm_atomic_helper_check,
-> -	.atomic_commit = mtk_atomic_commit,
-> +	.atomic_commit = drm_atomic_helper_commit,
->  };
->  
->  static const enum mtk_ddp_comp_id mt2701_mtk_ddp_main[] = {
-> @@ -265,6 +190,7 @@ static int mtk_drm_kms_init(struct drm_device *drm)
->  	drm->mode_config.max_width = 4096;
->  	drm->mode_config.max_height = 4096;
->  	drm->mode_config.funcs = &mtk_drm_mode_config_funcs;
-> +	drm->mode_config.helper_private = &mtk_drm_mode_config_helpers;
->  
->  	ret = component_bind_all(drm->dev, drm);
->  	if (ret)
-> @@ -540,8 +466,6 @@ static int mtk_drm_probe(struct platform_device *pdev)
->  	if (!private)
->  		return -ENOMEM;
->  
-> -	mutex_init(&private->commit.lock);
-> -	INIT_WORK(&private->commit.work, mtk_atomic_work);
->  	private->data = of_device_get_match_data(dev);
->  
->  	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> index b6a82728d563..9f4ce60174f6 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> @@ -46,13 +46,6 @@ struct mtk_drm_private {
->  	struct device_node *comp_node[DDP_COMPONENT_ID_MAX];
->  	struct mtk_ddp_comp *ddp_comp[DDP_COMPONENT_ID_MAX];
->  	const struct mtk_mmsys_driver_data *data;
-> -
-> -	struct {
-> -		struct drm_atomic_state *state;
-> -		struct work_struct work;
-> -		struct mutex lock;
-> -	} commit;
-> -
->  	struct drm_atomic_state *suspend_state;
->  
->  	bool dma_parms_allocated;
+Johnny Huang (6):
+  pinctrl: aspeed-g6: Add AST2600 I3C1 and I3C2 pinmux config
+  pinctrl: aspeed-g6: Add support for the AST2600 USB pinmux
+  pinctrl: aspeed: Add ASPEED_SB_PINCONF() helper
+  pinctrl: aspeed: Move aspeed_pin_config_map to separate source file
+  pinctrl: aspeed: Use masks to describe pinconf bitfields
+  pinctrl: aspeed-g6: Add AST2600 pinconf support
+
+ .../pinctrl/aspeed,ast2600-pinctrl.yaml       |   9 +-
+ drivers/pinctrl/aspeed/pinctrl-aspeed-g4.c    | 170 ++++----
+ drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c    | 212 +++++-----
+ drivers/pinctrl/aspeed/pinctrl-aspeed-g6.c    | 387 +++++++++++++++++-
+ drivers/pinctrl/aspeed/pinctrl-aspeed.c       |  50 +--
+ drivers/pinctrl/aspeed/pinctrl-aspeed.h       |  38 +-
+ drivers/pinctrl/aspeed/pinmux-aspeed.h        |   1 +
+ 7 files changed, 640 insertions(+), 227 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
