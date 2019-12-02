@@ -2,77 +2,154 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2ADB510E724
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 09:55:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D91510E73D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 09:56:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yxt8uI130yGFObHM/+8SKEGidY8E7+j0Rbye4AJuz80=; b=jqejLEVV4+X/mo
-	iSexJ6brouBw8C8UW7Pv65CCxgR6+24Lb/hQ7IGKDdeq9DWa97fz3z+mhUkLk+u4XokPMU6ywDt08
-	m6zS0WO3W3M7A29/R+RDwVwidH/ihekWdTEFyEt7/p6bRWhnUNAEM9llJrLsQ1U53CrCJh10Mpy28
-	rL8TWD7LNWumlLfHCEu6fU3a3EtpGqn9e0fQd3wARNJ7dlJ/bxB0DbaA5rcViWySZem5dMtjDGT08
-	mJ8OgnNYy09eJiNstjv/HZafW8Dsx30SE0dFAsQRO6JGVG/Q449cBC3zVdm8lxRFXWqsUy5lnD6G5
-	0ZctjhS15mT0GhHl0zVQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PHUz85jnB9eG6lDCRKKfkofRxRENlv1raWkPT9ZiGC4=; b=soMJXCMe+eBDnh
+	Mdei1QLBfib53XZ7xCDPpv+I+9T4boy+N4O2qiHV+XVUJpc5wUUMPy5Oj1A9itIVzzIaP3r6yXMCV
+	sifO5LkPGoi2GaQvSEpbTkUPez8EiHfY24eiZWytFGKa3+YHuB2LrxuKyN28ABB7FMiMpXaqSQ6v2
+	6MiqYzVqsyvxZNJi8V/WH8F2LXNVIXfogyfVlPCMVkijuZvKYJQIe6M/G8nx4i85A5kTJTctXXkgu
+	medoYYQ8VaPqgsFWYSf+id0tXh5npY0TSjQ51KcHjcOiYNcQOlFCQ3BpmqFvrQAZ0sOMvXScHQ42z
+	eo8RKbJ3ddU2dBM9FaMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibhUi-0002AJ-HI; Mon, 02 Dec 2019 08:55:48 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ibhVm-0002cJ-5Z; Mon, 02 Dec 2019 08:56:54 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibhUZ-00028m-Hd; Mon, 02 Dec 2019 08:55:41 +0000
-X-UUID: c5fa9dd1356e493f86f7d461ec31aa97-20191202
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=uXxPm6Kc6afNppHkjKnTzIzbererUFZh8m/i5JmT/xM=; 
- b=COnBxzIOi4mcndQRlWWKzCDzXQ7rp99wozxSGJv3pu9r0Iby9CqbySqY68+SvXRTpKTFyuwabCYHmCkzlg1sA5/fmYkK2cEucDEQZ7ghwzobavTvzWFBzxhoqL+LzGjwWLNTKQCgTTegOt6v4VFn2b46L35VYH1A3853lbQXUAk=;
-X-UUID: c5fa9dd1356e493f86f7d461ec31aa97-20191202
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <owen.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 285716791; Mon, 02 Dec 2019 00:55:34 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 2 Dec 2019 00:55:43 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 2 Dec 2019 16:55:26 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 2 Dec 2019 16:54:45 +0800
-Message-ID: <1575276931.3435.2.camel@mtkswgap22>
-Subject: Re: [PATCH v6 5/8] clk: mediatek: Add MT6765 clock support
-From: Owen Chen <owen.chen@mediatek.com>
-To: Stephen Boyd <sboyd@kernel.org>
-Date: Mon, 2 Dec 2019 16:55:31 +0800
-In-Reply-To: <20190815002721.A71C72083B@mail.kernel.org>
-References: <1562924653-10056-1-git-send-email-macpaul.lin@mediatek.com>
- <1562924653-10056-6-git-send-email-macpaul.lin@mediatek.com>
- <20190815002721.A71C72083B@mail.kernel.org>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1ibhVb-0002bV-78
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 08:56:45 +0000
+Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+ Eugen.Hristev@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="Eugen.Hristev@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa5.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa5.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: TheEbjbVuoBPwYNFL8q8ktO9aQ/LtS0BlmyUmcU2uIPAFQQxVuGKhGtKGzXqtmuLx0+/QgV1VY
+ +illVRzsS6+51HX4ZBeN0tKzL5nacU7FywnBlroM9wXQdPV5Txh3r5T1lZcEje1Q07quzknnN9
+ hzABptK9eNAoMV/DPG/86lWKFRYMphktaYABkScisWcfOiRuaxMw69VBiOVpddthm+34cSx+RS
+ dsinc4LYkG5GyFEzz7CJ8aDVj6eCHYZYKI6BDAPuhidukFt1SV2EjvmfbnuRE0qIB6A8wbl4MW
+ 0ws=
+X-IronPort-AV: E=Sophos;i="5.69,268,1571727600"; d="scan'208";a="57450838"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 02 Dec 2019 01:56:39 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 2 Dec 2019 01:56:38 -0700
+Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Mon, 2 Dec 2019 01:56:38 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ha6mRad9TVy4w66cwqLXylWHrMTo/pYk9ozTbr4CJIUSV3uN0opGFBChGlHunYXHX7H/oNvaU/9cmgCPXzCz6mCYFbU2ufFC2Q6M2YjZhyFjdI+Yd/mCy3lw2l8+pgVY0fN3v8+4zjnln0SsjTpcRESIO461bK6Y7p5f3TKzqvwr0lOBxCfNsdgRKXjSxDAjwvbZy6nU6g/dJbh5AoLKjSUNSVXbIy+K+wME8zzMExcalOxUAz6X1ODTZYuHu8J8bfjmGWE+aEit86YZQ8287Q4jnS6BsDVaCFJvOyZz7p3R1Y9O/ZLFBWCT0w2kSgNh/coRteXWqPPvY+M9d1pzqQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=scG65duMYj6zxPkrVo+dHca8qQNKPZFA8PWACuhzchQ=;
+ b=Fm+q25srSsDZqWT7+doHYUGPHBcLeml26Vsk++VkD8p2iqHqjacD+joz7sqYkMJ8bvb3jleje0tTsLkVCZymxuPFje50Er37f7YXIrk++R3Ma2yHb+jFrSrw5Gwd561j7+MWPfdK9hCl2fD+0TMDg7fC0QCDXGRvUsQk9RQyKZGH+UT/PdzRnzfO41fD6GmJtmKgJSY3rqLGAvoP80AzLYhwsKRmJKZuttI3aqsXeVWLaQjNGsPlCo00gyyEIU/WcmQRfVABYeREJ1JIr5fhy3ZiUdVO8WomrsWYXTJIfC0IZS6MqKK2OlmbpLOjM3TmOWYHy9hWRKvQyNovifc4VQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=scG65duMYj6zxPkrVo+dHca8qQNKPZFA8PWACuhzchQ=;
+ b=JLr1bnhU41qzYbEA2ZsqzVUtZk7sXiSkO+U5u3bwI7zijWzHm20DlEi3aQ5UTVuiliP2J/FmEvH40EJ6m182NnI1k14vztnMr5qQ9AvGV5mbu01XlV1BRjpW6mZ5W+w5nCfUQN6imKoKXnynb1Bw4qMA6fE06efP9Ch+ucr6Ilg=
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
+ DM5PR11MB1482.namprd11.prod.outlook.com (10.172.34.13) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2495.22; Mon, 2 Dec 2019 08:56:36 +0000
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::9039:e0e8:9032:20c1]) by DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::9039:e0e8:9032:20c1%12]) with mapi id 15.20.2495.014; Mon, 2 Dec 2019
+ 08:56:36 +0000
+From: <Eugen.Hristev@microchip.com>
+To: <robh+dt@kernel.org>, <Ludovic.Desroches@microchip.com>,
+ <wsa@the-dreams.de>, <linux-i2c@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>, <peda@axentia.se>
+Subject: [PATCH 1/3] dt-bindings: i2c: at91: cosmetic formatting of compatible
+ list
+Thread-Topic: [PATCH 1/3] dt-bindings: i2c: at91: cosmetic formatting of
+ compatible list
+Thread-Index: AQHVqO5mfhsm9BhFXkuy2KXBFoWS5A==
+Date: Mon, 2 Dec 2019 08:56:35 +0000
+Message-ID: <1575276957-5615-1-git-send-email-eugen.hristev@microchip.com>
+Accept-Language: en-US, ro-RO
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: AM0PR02CA0037.eurprd02.prod.outlook.com
+ (2603:10a6:208:d2::14) To DM5PR11MB1242.namprd11.prod.outlook.com
+ (2603:10b6:3:14::8)
+x-mailer: git-send-email 2.7.4
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 13cea678-c883-48f6-02cc-08d7770588fb
+x-ms-traffictypediagnostic: DM5PR11MB1482:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM5PR11MB1482AA396DE581538D7CCA7DE8430@DM5PR11MB1482.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
+x-forefront-prvs: 0239D46DB6
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(39860400002)(136003)(346002)(396003)(376002)(199004)(189003)(14454004)(305945005)(2906002)(6512007)(4326008)(54906003)(110136005)(316002)(71190400001)(71200400001)(5660300002)(6436002)(6486002)(2501003)(256004)(2201001)(36756003)(386003)(6506007)(102836004)(52116002)(2616005)(186003)(26005)(7736002)(86362001)(81156014)(50226002)(8676002)(8936002)(107886003)(25786009)(6116002)(81166006)(66556008)(66476007)(66446008)(64756008)(66946007)(99286004)(66066001)(478600001)(3846002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1482;
+ H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: Z1jY+Nrbs6reBrYZ5IudK2ADo7Sjy/l+YIQ9qnZWS0pVGvn31c97NcCxyXrNqR8HYPZ7CnDkZHtmQWvJFud42Am5D+b2515y9a5/IFE0Gw0O9ykfSTpGjn/NCTfJtiT/hjSBQl/JleIRLB+jJPkWJSYffn4RdIbd21RrlK/p/gjhr5QS9l8fUlem+EYLOb025n/b3V71abnWn8YpoXQhBVD62bSuGEPW+Bpaku/TRTGzG1YfYyn9BvqqlCH3BR6KWhBXX2VBEC0+VhKABJUNgBYykl8tGC6m+MU/f5qZGy15F2OwEck65S2goIXsKmw0ChASC0yCwfyqUNwAbR79AO7Yz7bklwWe+SPjr/9r7KaE8J/c4H9AlNbpB3sQ1wm+Ju601T2/UplKHGEnIdnAxzkOQjcaCBjyjW42x1SBuJKSCHlO2DzK+BuiGT0qCZXI
 MIME-Version: 1.0
-X-MTK: N
+X-MS-Exchange-CrossTenant-Network-Message-Id: 13cea678-c883-48f6-02cc-08d7770588fb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Dec 2019 08:56:35.7945 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ANPejSohsljpjZ+PjhPbz9vC+q2/uCRzQNRGyR9CvRvpA1ulL7c8b+PDrSY8m51IkEDugWU/e8nYHNog/T/cIY7vjr1M0LsOplXY2VUIGQo=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1482
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_005539_599397_9F917415 
-X-CRM114-Status: GOOD (  17.61  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191202_005643_301065_FC1ACA0C 
+X-CRM114-Status: UNSURE (   6.36  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,388 +161,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Ryder Lee =?UTF-8?Q?=28=E6=9D=8E=E5=BA=9A=E8=AB=BA=29?=
- <Ryder.Lee@mediatek.com>, wsd_upstream <wsd_upstream@mediatek.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Sean Wang <Sean.Wang@mediatek.com>, Loda
- Chou =?UTF-8?Q?=28=E5=91=A8=E5=AE=8F=E9=9C=96=29?= <Loda.Chou@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Mars Cheng =?UTF-8?Q?=28=E9=84=AD=E6=A3=AE=E5=8F=8B=29?=
- <Mars.Cheng@mediatek.com>,
- Macpaul Lin =?UTF-8?Q?=28=E6=9E=97=E6=99=BA=E6=96=8C=29?=
- <Macpaul.Lin@mediatek.com>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- CC Hwang =?UTF-8?Q?=28=E9=BB=83=E8=87=B4=E9=8A=93=29?= <cc.hwang@mediatek.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Eugen.Hristev@microchip.com, Codrin.Ciubotariu@microchip.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-08-15 at 08:27 +0800, Stephen Boyd wrote:
-> Quoting Macpaul Lin (2019-07-12 02:43:41)
-> > diff --git a/drivers/clk/mediatek/clk-mt6765-audio.c b/drivers/clk/mediatek/clk-mt6765-audio.c
-> > new file mode 100644
-> > index 000000000000..41f19343dfb9
-> > --- /dev/null
-> > +++ b/drivers/clk/mediatek/clk-mt6765-audio.c
-> > @@ -0,0 +1,109 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright (c) 2018 MediaTek Inc.
-> > + * Author: Owen Chen <owen.chen@mediatek.com>
-> > + *
-> > + * This program is free software; you can redistribute it and/or modify
-> > + * it under the terms of the GNU General Public License version 2 as
-> > + * published by the Free Software Foundation.
-> > + *
-> > + * This program is distributed in the hope that it will be useful,
-> > + * but WITHOUT ANY WARRANTY; without even the implied warranty of
-> > + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-> > + * GNU General Public License for more details.
-> 
-> Please use SPDX tags.
-> 
-> > + */
-> > +
-> > +#include <linux/clk-provider.h>
-> > +#include <linux/platform_device.h>
-> > +
-> > +#include "clk-mtk.h"
-> > +#include "clk-gate.h"
-> > +
-> > diff --git a/drivers/clk/mediatek/clk-mt6765-vcodec.c b/drivers/clk/mediatek/clk-mt6765-vcodec.c
-> > new file mode 100644
-> > index 000000000000..eb9ae1c2c99c
-> > --- /dev/null
-> > +++ b/drivers/clk/mediatek/clk-mt6765-vcodec.c
-> > @@ -0,0 +1,79 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright (c) 2018 MediaTek Inc.
-> > + * Author: Owen Chen <owen.chen@mediatek.com>
-> > + *
-> > + * This program is free software; you can redistribute it and/or modify
-> > + * it under the terms of the GNU General Public License version 2 as
-> > + * published by the Free Software Foundation.
-> > + *
-> > + * This program is distributed in the hope that it will be useful,
-> > + * but WITHOUT ANY WARRANTY; without even the implied warranty of
-> > + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-> > + * GNU General Public License for more details.
-> > + */
-> 
-> SPDX tags.
-> 
-> > diff --git a/drivers/clk/mediatek/clk-mt6765.c b/drivers/clk/mediatek/clk-mt6765.c
-> > new file mode 100644
-> > index 000000000000..f716a48a926d
-> > --- /dev/null
-> > +++ b/drivers/clk/mediatek/clk-mt6765.c
-> > @@ -0,0 +1,961 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright (c) 2018 MediaTek Inc.
-> > + * Author: Owen Chen <owen.chen@mediatek.com>
-> > + *
-> > + * This program is free software; you can redistribute it and/or modify
-> > + * it under the terms of the GNU General Public License version 2 as
-> > + * published by the Free Software Foundation.
-> > + *
-> > + * This program is distributed in the hope that it will be useful,
-> > + * but WITHOUT ANY WARRANTY; without even the implied warranty of
-> > + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-> > + * GNU General Public License for more details.
-> 
-> SPDX tags.
-> 
-> > + */
-> > +
-> > +#include <linux/clk-provider.h>
-> > +#include <linux/of.h>
-> > +#include <linux/of_address.h>
-> > +#include <linux/slab.h>
-> > +#include <linux/mfd/syscon.h>
-> 
-> Is this used? Maybe I deleted it.
-> 
-> > +#include <linux/of_device.h>
-> > +#include <linux/platform_device.h>
-> [...]
-> > +
-> > +static const char * const axi_parents[] = {
-> > +       "clk26m",
-> > +       "syspll_d7",
-> > +       "syspll1_d4",
-> > +       "syspll3_d2"
-> > +};
-> > +
-> > +static const char * const mem_parents[] = {
-> > +       "clk26m",
-> > +       "dmpll_ck",
-> > +       "apll1_ck"
-> > +};
-> > +
-> > +static const char * const mm_parents[] = {
-> > +       "clk26m",
-> > +       "mmpll_ck",
-> > +       "syspll1_d2",
-> > +       "syspll_d5",
-> > +       "syspll1_d4",
-> > +       "univpll_d5",
-> > +       "univpll1_d2",
-> > +       "mmpll_d2"
-> > +};
-> > +
-> > +static const char * const scp_parents[] = {
-> > +       "clk26m",
-> > +       "syspll4_d2",
-> > +       "univpll2_d2",
-> > +       "syspll1_d2",
-> > +       "univpll1_d2",
-> > +       "syspll_d3",
-> > +       "univpll_d3"
-> > +};
-> > +
-> > +static const char * const mfg_parents[] = {
-> > +       "clk26m",
-> > +       "mfgpll_ck",
-> > +       "syspll_d3",
-> > +       "univpll_d3"
-> > +};
-> > +
-> > +static const char * const atb_parents[] = {
-> > +       "clk26m",
-> > +       "syspll1_d4",
-> > +       "syspll1_d2"
-> > +};
-> > +
-> > +static const char * const camtg_parents[] = {
-> > +       "clk26m",
-> > +       "usb20_192m_d8",
-> > +       "univpll2_d8",
-> > +       "usb20_192m_d4",
-> > +       "univpll2_d32",
-> > +       "usb20_192m_d16",
-> > +       "usb20_192m_d32"
-> > +};
-> > +
-> > +static const char * const uart_parents[] = {
-> > +       "clk26m",
-> > +       "univpll2_d8"
-> > +};
-> > +
-> > +static const char * const spi_parents[] = {
-> > +       "clk26m",
-> > +       "syspll3_d2",
-> > +       "syspll4_d2",
-> > +       "syspll2_d4"
-> > +};
-> > +
-> > +static const char * const msdc5hclk_parents[] = {
-> > +       "clk26m",
-> > +       "syspll1_d2",
-> > +       "univpll1_d4",
-> > +       "syspll2_d2"
-> > +};
-> > +
-> > +static const char * const msdc50_0_parents[] = {
-> > +       "clk26m",
-> > +       "msdcpll_ck",
-> > +       "syspll2_d2",
-> > +       "syspll4_d2",
-> > +       "univpll1_d2",
-> > +       "syspll1_d2",
-> > +       "univpll_d5",
-> > +       "univpll1_d4"
-> > +};
-> > +
-> > +static const char * const msdc30_1_parents[] = {
-> > +       "clk26m",
-> > +       "msdcpll_d2",
-> > +       "univpll2_d2",
-> > +       "syspll2_d2",
-> > +       "syspll1_d4",
-> > +       "univpll1_d4",
-> > +       "usb20_192m_d4",
-> > +       "syspll2_d4"
-> > +};
-> > +
-> > +static const char * const audio_parents[] = {
-> > +       "clk26m",
-> > +       "syspll3_d4",
-> > +       "syspll4_d4",
-> > +       "syspll1_d16"
-> > +};
-> > +
-> > +static const char * const aud_intbus_parents[] = {
-> > +       "clk26m",
-> > +       "syspll1_d4",
-> > +       "syspll4_d2"
-> > +};
-> > +
-> > +static const char * const aud_1_parents[] = {
-> > +       "clk26m",
-> > +       "apll1_ck"
-> > +};
-> > +
-> > +static const char * const aud_engen1_parents[] = {
-> > +       "clk26m",
-> > +       "apll1_d2",
-> > +       "apll1_d4",
-> > +       "apll1_d8"
-> > +};
-> > +
-> > +static const char * const disp_pwm_parents[] = {
-> > +       "clk26m",
-> > +       "univpll2_d4",
-> > +       "ulposc1_d2",
-> > +       "ulposc1_d8"
-> > +};
-> > +
-> > +static const char * const sspm_parents[] = {
-> > +       "clk26m",
-> > +       "syspll1_d2",
-> > +       "syspll_d3"
-> > +};
-> > +
-> > +static const char * const dxcc_parents[] = {
-> > +       "clk26m",
-> > +       "syspll1_d2",
-> > +       "syspll1_d4",
-> > +       "syspll1_d8"
-> > +};
-> > +
-> > +static const char * const usb_top_parents[] = {
-> > +       "clk26m",
-> > +       "univpll3_d4"
-> > +};
-> > +
-> > +static const char * const spm_parents[] = {
-> > +       "clk26m",
-> > +       "syspll1_d8"
-> > +};
-> > +
-> > +static const char * const i2c_parents[] = {
-> > +       "clk26m",
-> > +       "univpll3_d4",
-> > +       "univpll3_d2",
-> > +       "syspll1_d8",
-> > +       "syspll2_d8"
-> > +};
-> > +
-> > +static const char * const pwm_parents[] = {
-> > +       "clk26m",
-> > +       "univpll3_d4",
-> > +       "syspll1_d8"
-> > +};
-> > +
-> > +static const char * const seninf_parents[] = {
-> > +       "clk26m",
-> > +       "univpll1_d4",
-> > +       "univpll1_d2",
-> > +       "univpll2_d2"
-> > +};
-> > +
-> > +static const char * const aes_fde_parents[] = {
-> > +       "clk26m",
-> > +       "msdcpll_ck",
-> > +       "univpll_d3",
-> > +       "univpll2_d2",
-> > +       "univpll1_d2",
-> > +       "syspll1_d2"
-> > +};
-> > +
-> > +static const char * const ulposc_parents[] = {
-> > +       "clk26m",
-> > +       "ulposc1_d4",
-> > +       "ulposc1_d8",
-> > +       "ulposc1_d16",
-> > +       "ulposc1_d32"
-> > +};
-> > +
-> > +static const char * const camtm_parents[] = {
-> > +       "clk26m",
-> > +       "univpll1_d4",
-> > +       "univpll1_d2",
-> > +       "univpll2_d2"
-> > +};
-> > +
-> 
-> Can you migrate this driver to the new way of specifying clk parents?
-> That way we don't just have lists of strings.
-> 
+From: Eugen Hristev <eugen.hristev@microchip.com>
 
-Do you mean hide the string list information inside DTS file or clk
-header file?
+Format the list of compatibles with one compatible per line.
 
-> > +#define INVALID_UPDATE_REG 0xFFFFFFFF
-> > +#define INVALID_UPDATE_SHIFT -1
-> > +#define INVALID_MUX_GATE -1
-> > +
-> > +static const struct mtk_mux top_muxes[] = {
-> > +       /* CLK_CFG_0 */
-> > +       MUX_GATE_CLR_SET_UPD_FLAGS(CLK_TOP_AXI_SEL, "axi_sel", axi_parents,
-> > +                             CLK_CFG_0, CLK_CFG_0_SET, CLK_CFG_0_CLR,
-> > +                             0, 2, 7, CLK_CFG_UPDATE, 0, CLK_IS_CRITICAL),
-> 
-> Please add a comment why CLK_IS_CRITICAL flag is used in each place.
-> 
-> > +       MUX_GATE_CLR_SET_UPD_FLAGS(CLK_TOP_MEM_SEL, "mem_sel", mem_parents,
-> > +                             CLK_CFG_0, CLK_CFG_0_SET, CLK_CFG_0_CLR,
-> > +                             8, 2, 15, CLK_CFG_UPDATE, 1, CLK_IS_CRITICAL),
-> > +       MUX_GATE_CLR_SET_UPD(CLK_TOP_MM_SEL, "mm_sel", mm_parents, CLK_CFG_0,
-> > +                       CLK_CFG_0_SET, CLK_CFG_0_CLR, 16, 3, 23,
-> > +                       CLK_CFG_UPDATE, 2),
-> > +       MUX_GATE_CLR_SET_UPD(CLK_TOP_SCP_SEL, "scp_sel", scp_parents, CLK_CFG_0,
-> > +                       CLK_CFG_0_SET, CLK_CFG_0_CLR, 24, 3, 31,
-> > +                       CLK_CFG_UPDATE, 3),
-> [...]
-> > +       }, {
-> > +               .compatible = "mediatek,mt6765-topckgen",
-> > +               .data = clk_mt6765_top_probe,
-> > +       }, {
-> > +               .compatible = "mediatek,mt6765-infracfg",
-> > +               .data = clk_mt6765_ifr_probe,
-> > +       }, {
-> > +               /* sentinel */
-> > +       }
-> > +};
-> > +
-> > +static int clk_mt6765_probe(struct platform_device *pdev)
-> > +{
-> > +       int (*clk_probe)(struct platform_device *d);
-> > +       int r;
-> > +
-> > +       clk_probe = of_device_get_match_data(&pdev->dev);
-> > +       if (!clk_probe)
-> > +               return -EINVAL;
-> > +
-> > +       r = clk_probe(pdev);
-> > +       if (r)
-> > +               dev_err(&pdev->dev,
-> > +                       "could not register clock provider: %s: %d\n",
-> > +                       pdev->name, r);
-> > +
-> > +       return r;
-> > +}
-> > +
-> > +static struct platform_driver clk_mt6765_drv = {
-> > +       .probe = clk_mt6765_probe,
-> > +       .driver = {
-> > +               .name = "clk-mt6765",
-> > +               .owner = THIS_MODULE,
-> 
-> Remove this line, platform_driver_register() should take care of it.
-> 
-> > +               .of_match_table = of_match_clk_mt6765,
-> > +       },
-> > +};
-> > +
+Suggested-by: Peter Rosin <peda@axentia.se>
+Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+---
+ Documentation/devicetree/bindings/i2c/i2c-at91.txt | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/i2c/i2c-at91.txt b/Documentation/devicetree/bindings/i2c/i2c-at91.txt
+index 2210f43..d35cd63 100644
+--- a/Documentation/devicetree/bindings/i2c/i2c-at91.txt
++++ b/Documentation/devicetree/bindings/i2c/i2c-at91.txt
+@@ -1,10 +1,16 @@
+ I2C for Atmel platforms
+ 
+ Required properties :
+-- compatible : Must be "atmel,at91rm9200-i2c", "atmel,at91sam9261-i2c",
+-     "atmel,at91sam9260-i2c", "atmel,at91sam9g20-i2c", "atmel,at91sam9g10-i2c",
+-     "atmel,at91sam9x5-i2c", "atmel,sama5d4-i2c", "atmel,sama5d2-i2c" or
+-     "microchip,sam9x60-i2c"
++- compatible : Must be one of:
++	"atmel,at91rm9200-i2c",
++	"atmel,at91sam9261-i2c",
++	"atmel,at91sam9260-i2c",
++	"atmel,at91sam9g20-i2c",
++	"atmel,at91sam9g10-i2c",
++	"atmel,at91sam9x5-i2c",
++	"atmel,sama5d4-i2c",
++	"atmel,sama5d2-i2c",
++	"microchip,sam9x60-i2c".
+ - reg: physical base address of the controller and length of memory mapped
+      region.
+ - interrupts: interrupt number to the cpu.
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
