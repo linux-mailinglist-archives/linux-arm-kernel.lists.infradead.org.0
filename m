@@ -2,69 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E379D10EFBC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 20:04:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFFCC10EFDB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 20:12:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7ycIwdNAYnwlILdl+48BRjFW0Z5r7ckum0U+Vvu21xg=; b=unmhi5ihR9JjG73SkvjMVUQgd
-	rwmBLb9OUmtuYWiFFtOh9+nmVTus+JaLHmd92UvdPFQkfWdq8pDQcaERB+8CoZvoAAcTFL+tMUXyM
-	4HzCz1rhQZAPQsy10XYWjvqVl2dzyCtU/M000vt6g7mC4HbHi0Ku0elE6vxLj3e7KFkrTpdJVLLo6
-	GRz6zMbarh7HgUt1AZ+CMZDR6vBO21iDdKjtNqpNBAZMN/HBUM2Lo5gF/mbixEFg7Mw2SwkMrgaWR
-	N9TfwjfRDcTnBbiQU9vUoG3geHdYVxtHp2vaaEVle8RzOh8nJF9Lz8sY8QyPgWwWH46zofM2p2ea9
-	TVmQS6h+w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Mwd5blNtUoFFzRt1fwyvILq10Zr1woafjv7psx6gzBc=; b=C/b6msJtXwgGHz
+	pX9U5/YNbmMZo8W7ovIl1mNPS4eYJ+2zWIGXgSArnZuK//WctSNT/UKNi+3S1EQq2rhW9IjwQyC9J
+	X2+jfKPTuOtKJvjbauDiOBw1xWwdsGVxQVRvCRnsgIHDo1S208HvS8IUvOPAgg3cFKz/Lti27hAQ7
+	oixVPep7+KqfKKcLB4BABrZmRuMGejWBUyrYSKgl2LGsPMdLMULorOQuCd3nKpj/eRzmVeI7L/YcI
+	223ytZa7m74u6AO2WGpVmpLRlBJ6zMClkNJZruC00xlHK1+QdYBPlH3aNMzOdFaN6FWipfXe3pAma
+	2302iU46SOtw0XGsQgPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibqzN-0003cZ-FG; Mon, 02 Dec 2019 19:04:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ibr7L-0006nL-DC; Mon, 02 Dec 2019 19:12:19 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibqzH-0003cE-Lz
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 19:04:00 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 529672464D;
- Mon,  2 Dec 2019 19:03:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575313438;
- bh=YN9GuRfgXIuurVuKgzNcuNcr1boHSN8O9OuM+vIKERw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=KT/un5HeTJMSt0OxMkqXRNv0RQbcljBwmtHpUe+qit9pBR/Iu0eiJp63USFvR93Av
- XONKDC2Y+YyS+SfrDRN8DcgJZ0j/MUKZkn/OcGvkBbVOTzp2sYNEClo6L4ux1Uuur5
- 4CeiQeG4AJggO0J0zYk6UkuQ6OgeRdRhdqiwCUng=
-Date: Mon, 2 Dec 2019 20:03:56 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Hugo Grostabussiat <bonstra@bonstra.fr.eu.org>
-Subject: Re: [PATCH v4 3/3] arm64: dts: allwinner: a64: Enable Bluetooth on
- Teres-I
-Message-ID: <20191202190356.g5aaa2iotrozfirm@gilmour.lan>
-References: <20191130202314.142096-1-bonstra@bonstra.fr.eu.org>
- <20191130202314.142096-4-bonstra@bonstra.fr.eu.org>
+ id 1ibr79-0006lU-3b; Mon, 02 Dec 2019 19:12:09 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1ibr6q-0006Qj-Gm; Mon, 02 Dec 2019 20:11:48 +0100
+Date: Mon, 2 Dec 2019 19:11:46 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH v5 3/3] hwrng: add mtk-sec-rng driver
+Message-ID: <20191202191146.79e6368c@why>
+In-Reply-To: <CAKv+Gu_um7eRYXbieW7ogDX5mmZaxP7JQBJM9CajK+6CsO5RgQ@mail.gmail.com>
+References: <1574864578-467-1-git-send-email-neal.liu@mediatek.com>
+ <1574864578-467-4-git-send-email-neal.liu@mediatek.com>
+ <CADnJP=uhD=J2NrpSwiX8oCTd-u_q05=HhsAV-ErCsXNDwVS0rA@mail.gmail.com>
+ <1575027046.24848.4.camel@mtkswgap22>
+ <CAKv+Gu_um7eRYXbieW7ogDX5mmZaxP7JQBJM9CajK+6CsO5RgQ@mail.gmail.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20191130202314.142096-4-bonstra@bonstra.fr.eu.org>
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: ard.biesheuvel@linaro.org, neal.liu@mediatek.com,
+ catalin.marinas@arm.com, will@kernel.org, lists@bofh.nu, mark.rutland@arm.com,
+ devicetree@vger.kernel.org, herbert@gondor.apana.org.au,
+ wsd_upstream@mediatek.com, sean.wang@kernel.org, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, Crystal.Guo@mediatek.com, linux-crypto@vger.kernel.org,
+ mpm@selenic.com, matthias.bgg@gmail.com, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_110359_735202_C2B43802 
-X-CRM114-Status: GOOD (  17.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191202_111208_078181_0F50DF17 
+X-CRM114-Status: GOOD (  19.62  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,80 +73,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Johan Hedberg <johan.hedberg@gmail.com>, Marcel Holtmann <marcel@holtmann.org>,
- linux-bluetooth@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3850001433944998323=="
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ wsd_upstream <wsd_upstream@mediatek.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Sean Wang <sean.wang@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Neal Liu <neal.liu@mediatek.com>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
+ Matt Mackall <mpm@selenic.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ "Crystal Guo \(=?UTF-8?Q?=E9=83=AD=E6=99=B6?=\)" <Crystal.Guo@mediatek.com>,
+ Will Deacon <will@kernel.org>, Lars Persson <lists@bofh.nu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, 2 Dec 2019 16:12:09 +0000
+Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
 
---===============3850001433944998323==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ds3wtmj4ifzz5c6h"
-Content-Disposition: inline
+> (adding some more arm64 folks)
+> 
+> On Fri, 29 Nov 2019 at 11:30, Neal Liu <neal.liu@mediatek.com> wrote:
+> >
+> > On Fri, 2019-11-29 at 18:02 +0800, Lars Persson wrote:  
+> > > Hi Neal,
+> > >
+> > > On Wed, Nov 27, 2019 at 3:23 PM Neal Liu <neal.liu@mediatek.com> wrote:  
+> > > >
+> > > > For MediaTek SoCs on ARMv8 with TrustZone enabled, peripherals like
+> > > > entropy sources is not accessible from normal world (linux) and
+> > > > rather accessible from secure world (ATF/TEE) only. This driver aims
+> > > > to provide a generic interface to ATF rng service.
+> > > >  
+> > >
+> > > I am working on several SoCs that also will need this kind of driver
+> > > to get entropy from Arm trusted firmware.
+> > > If you intend to make this a generic interface, please clean up the
+> > > references to MediaTek and give it a more generic name. For example
+> > > "Arm Trusted Firmware random number driver".
+> > >
+> > > It will also be helpful if the SMC call number is configurable.
+> > >
+> > > - Lars  
+> >
+> > Yes, I'm trying to make this to a generic interface. I'll try to make
+> > HW/platform related dependency to be configurable and let it more
+> > generic.
+> > Thanks for your suggestion.
+> >  
+> 
+> I don't think it makes sense for each arm64 platform to expose an
+> entropy source via SMC calls in a slightly different way, and model it
+> as a h/w driver. Instead, we should try to standardize this, and
+> perhaps expose it via the architectural helpers that already exist
+> (get_random_seed_long() and friends), so they get plugged into the
+> kernel random pool driver directly.
 
+Absolutely. I'd love to see a standard, ARM-specified, virtualizable
+RNG that is abstracted from the HW.
 
---ds3wtmj4ifzz5c6h
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+> Note that in addition to drivers based on vendor SMC calls, we already
+> have a RNG h/w driver based on OP-TEE as well, where the driver
+> attaches to a standardized trusted OS interface identified by a UUID,
+> and which also gets invoked via SMC calls into secure firmware.
 
-On Sat, Nov 30, 2019 at 09:23:14PM +0100, Hugo Grostabussiat wrote:
-> The UART1 on the Teres-A64-I is connected to a rtl8723bs combo
-> WLAN/Bluetooth controller, with three GPIOs used for device reset,
-> host wake up and device wake up.
->
-> Currently, the host wake up feature is not supported by the HCI H5
-> driver.
->
-> Signed-off-by: Hugo Grostabussiat <bonstra@bonstra.fr.eu.org>
-> ---
->  .../boot/dts/allwinner/sun50i-a64-teres-i.dts      | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-> index 1069e7012c9c..b28e6d7cb227 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-> @@ -325,6 +325,20 @@
->  	status = "okay";
->  };
->
-> +&uart1 {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
-> +	status = "okay";
+... and probably an unhealthy number of hypervisor-specific hacks that
+do the same thing. The sooner we plug this, the better.
 
-You'll need to set uart-has-rtscts too.
+Thanks,
 
-Maxime
->
-
---ds3wtmj4ifzz5c6h
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXeVgHAAKCRDj7w1vZxhR
-xb7hAQDVUoJULA2Q6eKcdWkB1OsAuiM58pn9qGHbjuZ/9ik2NAEAiApjGPIlTlkm
-XviRcDU3beEJ0GuqAK8OguvH6No8dAI=
-=fmkc
------END PGP SIGNATURE-----
-
---ds3wtmj4ifzz5c6h--
-
-
---===============3850001433944998323==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3850001433944998323==--
-
