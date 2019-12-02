@@ -2,67 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FAFB10E770
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 10:11:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0EAD10E776
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 10:12:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rvj2V6+Vetj5PgHCIQwEtV+3hOJ1VquCSqQbuHp0jVU=; b=VTRxSph5tNusfh
-	Ay8uB5hsa7BdhuNUog+0RkjavnMUU5K7jJI4bywOroSfWcYggjzjinlSxAosMf5W1H9vrMjhH19kf
-	CTCEUweZscppW3eBmiE66VuQsaxJq4Pw3iKOBdi955c+mqkJLWPGxxifczLLTXvbDwszBrK2A//4w
-	AW1CDeXwkSd7HmsNAkfA0u7jTKN20p4Ub2OzUj3bTO7d4YHRw2mWdlB2lkwO50DvC/x01ZvTL9EBU
-	vfKcULsNObmlAI++Me1TddzBQHcnkxedska+9Kgg3PB2edhQTjmwryTvsEG9i3/DOYtV63SxJ3aJj
-	uXylWp8bQjtGYvrvRU0w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=muULRNogOhlSmZ5HxJCZG/LSw3SRaVXK6NKVywMISH0=; b=iMzP+5DsMjQMmn
+	qnHIYNi8co4+WNNi9IkCGeNNti7jADrhTVD1+sAh+cnEpDdu4QTebMAatuAMGWSx6XaCZAfxzYU9F
+	e1e++8tWuP2rGh84Mj/hBGethTDT8DWhl4FW2iks+Dr2tJQ/VbU1ZPCVB/Mj2WgBJTgCe3lhLmkn5
+	vKwcjiEK9xPCRrEkIQvA7+oVcno+0/851xyhQPE8qidQd392hXfBgeB5hAznrd0l9PLSaaWTtIhME
+	fdc6R/cHkgTpRl1/PVboU5E2NA8oNt0HKOfOu2JpnL/rdnjSDTYjcZEpkN++kqyAuhlSWJYe+xSe4
+	77QR/P8Uu/U5jndMeUSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibhjS-0001bp-C3; Mon, 02 Dec 2019 09:11:02 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ibhkl-0001wX-O8; Mon, 02 Dec 2019 09:12:23 +0000
+Received: from mail-eopbgr140078.outbound.protection.outlook.com
+ ([40.107.14.78] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibhjK-0001aD-8k; Mon, 02 Dec 2019 09:10:56 +0000
-X-UUID: d07467977ea74e70991e563dcf257e01-20191202
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=77BHlXRq8SWcz9OZW4vRLcX/STRmZd2DJc8sv5irofo=; 
- b=reYIgDcmJ9SPOE7bIVGGdiC4W7DCRt2Ts+05CW3TMnVmCsRaEAHpXDEGpkfRGMyGpVH+UUveXZguN81eRLF1N3Zbpn0mV+a8e5tiFJ/oMqtXpVIKDE8JCrpxAFA+FiF7nf14nOKQixRdVCc5ugajb+tHJErYGSafyWS5w9Tk6FQ=;
-X-UUID: d07467977ea74e70991e563dcf257e01-20191202
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <yongqiang.niu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1373447161; Mon, 02 Dec 2019 01:10:50 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 2 Dec 2019 01:04:38 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 2 Dec 2019 17:03:36 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 2 Dec 2019 17:03:34 +0800
-From: <yongqiang.niu@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
- Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v2] drm/mediatek: add ctm property support
-Date: Mon, 2 Dec 2019 17:03:43 +0800
-Message-ID: <1575277423-31182-1-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
+ id 1ibhke-0001vx-6N
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 09:12:18 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=kxYSKdSp71zxbDWyvB+lUJ+YLkNgP1r/7HuMwFgce4JRY+Iv6cPlRo1BniBmurjDvF5N6Ssu/b8S/RjdFL4UBjpZ03uULB7tAmaCyWUwE+nDZrKS7F+pQ/VY6MhsJqvb/GwPaKYGSghySuj5E3hfVNbyA4QM8+6wJOFpq6F4zoikoe9RmSCo5t3kLhiWh/2mJaHN8R24it2mUrkocWc24YqzaH7+/3ofRfvm2+a3GeEDaAGlQl8LyudxVj7Xe1Jbu0+9Lhp23njoXsUlDm3ZrI0VsU6QS55Edu/xwqkI3Qh0epUeJCDRk4d6cwT9pg/fpSn2yLJaQNc3DhO4SDDTuQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=W1lAghbsehuGUkObX/2N39noCyI7M2frzmfou/uP8/s=;
+ b=D/L9wCZ5uCZHTTJiJAlmnOicIy0vouOaRWFD4Htzo6sQgvyZWKQGV+wvjQz915fCCOQJYi41HtlBQFxLS0vDSG0H9Biq494txj6s6CcFNs/YrQ/+cnjvSOfDz9ei+oKjXOMM9D9nUyLFZzHzJnuievm4ib7p6CeV6CN7Iawo9cafvzQXIBTEIjsL/JK8vqyEcjZZbEzGhHOtZGTYueuX38m5LgX+6+o9bNlhWFrlU2mtOwu9biN913UeLX9cpBZtNGEkqo/19OgvrP5/hK6C04btpnTpinEv5owklPJi5H5MuSYAWzn9LuoiudCr78Dtx3LB1HmR05DA/Npa3p+SrQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=W1lAghbsehuGUkObX/2N39noCyI7M2frzmfou/uP8/s=;
+ b=ETut1sO0AwpcCjz9auFQ9Nw7sKN0NKfMTRPk7fHkbAPfrTULLN/8dcYe/T5CLYMKWjA1uEBQasifp09Qw9k4Lu2Mqza/jbHnmhxDuYGmeDsc4WC8S0l/74YWkesNhFCOpDLPIYVLqr6IFYsxHWI/4aII+B1TX9P/QjoLzPJTxrM=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB4224.eurprd04.prod.outlook.com (52.134.122.156) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2495.20; Mon, 2 Dec 2019 09:12:13 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::dd0c:72dc:e462:16b3]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::dd0c:72dc:e462:16b3%5]) with mapi id 15.20.2495.014; Mon, 2 Dec 2019
+ 09:12:12 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH v3 4/6] PM / devfreq: Add dynamic scaling for imx ddr
+ controller
+Thread-Topic: [PATCH v3 4/6] PM / devfreq: Add dynamic scaling for imx ddr
+ controller
+Thread-Index: AQHVkDU751yT9FzEn0iAYnZvaAii3w==
+Date: Mon, 2 Dec 2019 09:12:12 +0000
+Message-ID: <VI1PR04MB70234400D6CF248C18321FDBEE430@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <cover.1572558427.git.leonard.crestez@nxp.com>
+ <5fcf829265ecde1af32cb1369528c97361c76992.1572558427.git.leonard.crestez@nxp.com>
+ <20191202053847.GC9767@dragon>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [92.121.36.198]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 5718e995-a24e-4822-663a-08d77707b7e3
+x-ms-traffictypediagnostic: VI1PR04MB4224:|VI1PR04MB4224:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR04MB42246E50A4262B5E61B861A5EE430@VI1PR04MB4224.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:289;
+x-forefront-prvs: 0239D46DB6
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(346002)(366004)(136003)(396003)(39860400002)(199004)(189003)(316002)(2906002)(8936002)(54906003)(110136005)(305945005)(74316002)(81166006)(81156014)(7736002)(25786009)(3846002)(6116002)(99286004)(8676002)(26005)(66066001)(4326008)(44832011)(14444005)(256004)(446003)(14454004)(6436002)(71200400001)(71190400001)(33656002)(6246003)(186003)(86362001)(229853002)(478600001)(64756008)(966005)(66446008)(66556008)(66476007)(66946007)(76176011)(7696005)(76116006)(53546011)(91956017)(6506007)(102836004)(5660300002)(6306002)(55016002)(9686003)(52536014)(7416002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4224;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: A3zAas3Y0OC+W9ocksV5y89GwgG8A0kJXSxkR0mIulGXBLbQhzYcAzso35XQ3AxNktMDcFmkUNfYaLoLQ9UpyEHamENq29NGkGzJd0G7Sl+fhaaiABSyPRgXHZIf3QgJhAOEgLpxRtHDHpSo7k1fyANdiOPrKw5qJEY5FyvUqYVP7VpoHtKzrHPRn+Zs8LQ1GcTWCW4r48W964d+fXyn0jAG73F903XGaMuXDm0qBhzOHyIdG1oAaYifziLjBQqZ7v9zlV7yHyFfPIr5SzbWJtKh+zLiEfujF/l5XBqQ7YjpayNllstz4XZjFBgiAywTsmre6qp/VeFL7gaCWyVhCjBFsegwIsgiAXA+0Kgc8dsJsnOpTVHniNn4pbbaNrUX6rdrnMj/GTQuatnyMXJ11ISThVY8KP31wij6HiV32Ty/HBdwlIGO6OJ1H3DY/2vFk73xGnaEoYPS2MP0+m+sp6a8GER+6U8QuFiFW7hU2rA=
 MIME-Version: 1.0
-X-MTK: N
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5718e995-a24e-4822-663a-08d77707b7e3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Dec 2019 09:12:12.8141 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: UOrvi4VQh6iSbWirD49Ten+f5zibfkJMCsK88205W/Fips7VbB08GYhqU4j+77a8bjgLFMcpKU2HgDwr0Uli9w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4224
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_011054_322148_D6578336 
-X-CRM114-Status: GOOD (  14.40  )
+X-CRM114-CacheID: sfid-20191202_011216_323913_035EC739 
+X-CRM114-Status: GOOD (  14.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.14.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -70,8 +111,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,203 +122,232 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
+ Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
+ Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Martin Kepplinger <martink@posteo.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ "Rafael J.
+ Wysocki" <rjw@rjwysocki.net>, Kyungmin Park <kyungmin.park@samsung.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+On 2019-12-02 7:39 AM, Shawn Guo wrote:
+> On Thu, Oct 31, 2019 at 11:50:25PM +0200, Leonard Crestez wrote:
+>> Add driver for dynamic scaling the DDR Controller on imx8m chips. Actual
+>> frequency switching is implemented inside TF-A, this driver wraps the
+>> SMC calls and synchronizes the clk tree.
+>>
+>> The DRAM clocks on imx8m have the following structure (abridged):
+>>
+>>   +----------+       |\            +------+
+>>   | dram_pll |-------|M| dram_core |      |
+>>   +----------+       |U|---------->| D    |
+>>                   /--|X|           |  D   |
+>>     dram_alt_root |  |/            |   R  |
+>>                   |                |    C |
+>>              +---------+           |      |
+>>              |FIX DIV/4|           |      |
+>>              +---------+           |      |
+>>    composite:     |                |      |
+>>   +----------+    |                |      |
+>>   | dram_alt |----/                |      |
+>>   +----------+                     |      |
+>>   | dram_apb |-------------------->|      |
+>>   +----------+                     +------+
+>>
+>> The dram_pll is used for higher rates and dram_alt is used for lower
+>> rates. The dram_alt and dram_apb clocks are "imx composite" and their
+>> parent can also be modified.
+>>
+>> This driver will prepare/enable the new parents ahead of switching (so
+>> that the expected roots are enabled) and afterwards it will call
+>> clk_set_parent to ensure the parents in clock framework are up-to-date.
+>>
+>> The driver relies on dram_pll dram_alt and dram_apb being marked with
+>> CLK_GET_RATE_NOCACHE for rate updates.
+>>
+>> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 
-add ctm property support
+A more recent version of this patch is already in next:
 
-Change-Id: I8111da7b309b1809c6302e7748dd9fd06dc97bde
-Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
----
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 15 ++++++-
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 61 ++++++++++++++++++++++++++++-
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h | 11 ++++++
- 3 files changed, 84 insertions(+), 3 deletions(-)
+https://git.kernel.org/pub/scm/linux/kernel/git/chanwoo/linux.git/commit/?h=devfreq-next&id=518e99e2a22e318944d531a92aab5082fabb4d38
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index 4fb346c..12dc684 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -666,10 +666,13 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
- 	int i;
- 
- 	if (crtc->state->color_mgmt_changed)
--		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
-+		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
- 			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i],
- 					  crtc->state,
- 					  mtk_crtc_state->cmdq_handle);
-+			mtk_ddp_ctm_set(mtk_crtc->ddp_comp[i], crtc->state);
-+		}
-+
- #ifdef CONFIG_MTK_CMDQ
- 	if (mtk_crtc->cmdq_client) {
- 		drm_atomic_state_get(old_atomic_state);
-@@ -819,6 +822,8 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 	int pipe = priv->num_pipes;
- 	int ret;
- 	int i;
-+	bool has_ctm = false;
-+	uint gamma_lut_size = 0;
- 
- 	if (!path)
- 		return 0;
-@@ -870,6 +875,12 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 		}
- 
- 		mtk_crtc->ddp_comp[i] = comp;
-+
-+		if (comp_id == DDP_COMPONENT_CCORR)
-+			has_ctm = true;
-+
-+		if (comp_id == DDP_COMPONENT_GAMMA)
-+			gamma_lut_size = MTK_LUT_SIZE;
- 	}
- 
- 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
-@@ -891,7 +902,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 	if (ret < 0)
- 		return ret;
- 	drm_mode_crtc_set_gamma_size(&mtk_crtc->base, MTK_LUT_SIZE);
--	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, MTK_LUT_SIZE);
-+	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, has_ctm, gamma_lut_size);
- 	priv->num_pipes++;
- #ifdef CONFIG_MTK_CMDQ
- 	mtk_crtc->cmdq_client =
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-index 9cc12af..2fd52ba 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-@@ -38,7 +38,15 @@
- #define CCORR_EN				BIT(0)
- #define DISP_CCORR_CFG				0x0020
- #define CCORR_RELAY_MODE			BIT(0)
-+#define CCORR_ENGINE_EN				BIT(1)
-+#define CCORR_GAMMA_OFF				BIT(2)
-+#define CCORR_WGAMUT_SRC_CLIP			BIT(3)
- #define DISP_CCORR_SIZE				0x0030
-+#define DISP_CCORR_COEF_0			0x0080
-+#define DISP_CCORR_COEF_1			0x0084
-+#define DISP_CCORR_COEF_2			0x0088
-+#define DISP_CCORR_COEF_3			0x008C
-+#define DISP_CCORR_COEF_4			0x0090
- 
- #define DISP_DITHER_EN				0x0000
- #define DITHER_EN				BIT(0)
-@@ -187,7 +195,7 @@ static void mtk_ccorr_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			     unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
- 	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_CCORR_SIZE);
--	mtk_ddp_write(cmdq_pkt, CCORR_RELAY_MODE, comp, DISP_CCORR_CFG);
-+	mtk_ddp_write(cmdq_pkt, CCORR_ENGINE_EN, comp, DISP_CCORR_CFG);
- }
- 
- static void mtk_ccorr_start(struct mtk_ddp_comp *comp)
-@@ -200,6 +208,56 @@ static void mtk_ccorr_stop(struct mtk_ddp_comp *comp)
- 	writel_relaxed(0x0, comp->regs + DISP_CCORR_EN);
- }
- 
-+/* Converts a DRM S31.32 value to the HW S0.11 format. */
-+static u16 mtk_ctm_s31_32_to_s0_11(u64 in)
-+{
-+	u16 r;
-+
-+	/* Sign bit. */
-+	r = in & BIT_ULL(63) ? BIT(11) : 0;
-+
-+	if ((in & GENMASK_ULL(62, 33)) > 0) {
-+		/* We have zero integer bits so we can only saturate here. */
-+		r |= GENMASK(10, 0);
-+	} else {
-+		/* Otherwise take the 9 most important fractional bits. */
-+		r |= (in >> 22) & GENMASK(10, 0);
-+	}
-+
-+	return r;
-+}
-+
-+static void mtk_ccorr_ctm_set(struct mtk_ddp_comp *comp,
-+			      struct drm_crtc_state *state
-+			      struct cmdq_pkt *cmdq_pkt)
-+{
-+	struct drm_property_blob *blob = state->ctm;
-+	struct drm_color_ctm *ctm;
-+	const u64 *input;
-+	uint16_t coeffs[9] = { 0 };
-+	int i;
-+
-+	if (!blob)
-+		return;
-+
-+	ctm = (struct drm_color_ctm *)blob->data;
-+	input = ctm->matrix;
-+
-+	for (i = 0; i < ARRAY_SIZE(coeffs); i++)
-+		coeffs[i] = mtk_ctm_s31_32_to_s0_11(input[i]);
-+
-+	mtk_ddp_write(cmdq_pkt, coeffs[0] << 16 | coeffs[1],
-+		      comp, DISP_CCORR_COEF_0);
-+	mtk_ddp_write(cmdq_pkt, coeffs[2] << 16 | coeffs[3],
-+		      comp, DISP_CCORR_COEF_1);
-+	mtk_ddp_write(cmdq_pkt, coeffs[4] << 16 | coeffs[5],
-+		      comp, DISP_CCORR_COEF_2);
-+	mtk_ddp_write(cmdq_pkt, coeffs[6] << 16 | coeffs[7],
-+		      comp, DISP_CCORR_COEF_3);
-+	mtk_ddp_write(cmdq_pkt, coeffs[8] << 16,
-+		      comp, DISP_CCORR_COEF_4);
-+}
-+
- static void mtk_dither_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			      unsigned int h, unsigned int vrefresh,
- 			      unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
-@@ -269,6 +327,7 @@ static void mtk_gamma_set(struct mtk_ddp_comp *comp,
- 	.config = mtk_ccorr_config,
- 	.start = mtk_ccorr_start,
- 	.stop = mtk_ccorr_stop,
-+	.ctm_set = mtk_ccorr_ctm_set,
- };
- 
- static const struct mtk_ddp_comp_funcs ddp_dither = {
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-index 5b0a3d4..4e3e5aa 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-@@ -95,6 +95,9 @@ struct mtk_ddp_comp_funcs {
- 			  struct cmdq_pkt *cmdq_pkt);
- 	void (*bgclr_in_on)(struct mtk_ddp_comp *comp);
- 	void (*bgclr_in_off)(struct mtk_ddp_comp *comp);
-+	void (*ctm_set)(struct mtk_ddp_comp *comp,
-+			struct drm_crtc_state *state
-+			struct cmdq_pkt *cmdq_pkt);
- };
- 
- struct mtk_ddp_comp {
-@@ -213,6 +216,14 @@ static inline void mtk_ddp_comp_bgclr_in_off(struct mtk_ddp_comp *comp)
- 		comp->funcs->bgclr_in_off(comp);
- }
- 
-+static inline void mtk_ddp_ctm_set(struct mtk_ddp_comp *comp,
-+				   struct drm_crtc_state *state
-+				   struct cmdq_pkt *cmdq_pkt)
-+{
-+	if (comp->funcs && comp->funcs->ctm_set)
-+		comp->funcs->ctm_set(comp, state);
-+}
-+
- int mtk_ddp_comp_get_id(struct device_node *node,
- 			enum mtk_ddp_comp_type comp_type);
- int mtk_ddp_comp_init(struct device *dev, struct device_node *comp_node,
--- 
-1.8.1.1.dirty
+>>   drivers/devfreq/Makefile   |   1 +
+>>   drivers/devfreq/imx-ddrc.c | 430 +++++++++++++++++++++++++++++++++++++
+>>   2 files changed, 431 insertions(+)
+>>   create mode 100644 drivers/devfreq/imx-ddrc.c
+
+>> +++ b/drivers/devfreq/imx-ddrc.c
+>> @@ -0,0 +1,430 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * Copyright 2019 NXP
+>> + */
+>> +
+>> +#include <linux/module.h>
+>> +#include <linux/device.h>
+>> +#include <linux/of_device.h>
+>> +#include <linux/platform_device.h>
+>> +#include <linux/devfreq.h>
+>> +#include <linux/pm_opp.h>
+>> +#include <linux/clk.h>
+>> +#include <linux/clk-provider.h>
+> 
+> This is a header that should ideally be used by clock drivers only.
+> 
+>> +#include <linux/arm-smccc.h>
+>> +
+>> +#define IMX_SIP_DDR_DVFS			0xc2000004
+>> +
+>> +/* Values starting from 0 switch to specific frequency */
+>> +#define IMX_SIP_DDR_FREQ_SET_HIGH		0x00
+>> +
+>> +/* Deprecated after moving IRQ handling to ATF */
+>> +#define IMX_SIP_DDR_DVFS_WAIT_CHANGE		0x0F
+> 
+> These two defines are not used.  Will be?
+
+No, can post a separate patch to remove them.
+> 
+>> +
+>> +/* Query available frequencies. */
+>> +#define IMX_SIP_DDR_DVFS_GET_FREQ_COUNT		0x10
+>> +#define IMX_SIP_DDR_DVFS_GET_FREQ_INFO		0x11
+>> +
+>> +/*
+>> + * This should be in a 1:1 mapping with devicetree OPPs but
+>> + * firmware provides additional info.
+>> + */
+>> +struct imx_ddrc_freq {
+>> +	unsigned long rate;
+>> +	unsigned long smcarg;
+>> +	int dram_core_parent_index;
+>> +	int dram_alt_parent_index;
+>> +	int dram_apb_parent_index;
+>> +};
+>> +
+>> +/* Hardware limitation */
+>> +#define IMX_DDRC_MAX_FREQ_COUNT 4
+>> +
+>> +/*
+>> + * imx DRAM controller
+>> + *
+>> + * imx DRAM controller clocks have the following structure (abridged):
+>> + *
+>> + * +----------+       |\            +------+
+>> + * | dram_pll |-------|M| dram_core |      |
+>> + * +----------+       |U|---------->| D    |
+>> + *                 /--|X|           |  D   |
+>> + *   dram_alt_root |  |/            |   R  |
+>> + *                 |                |    C |
+>> + *            +---------+           |      |
+>> + *            |FIX DIV/4|           |      |
+>> + *            +---------+           |      |
+>> + *  composite:     |                |      |
+>> + * +----------+    |                |      |
+>> + * | dram_alt |----/                |      |
+>> + * +----------+                     |      |
+>> + * | dram_apb |-------------------->|      |
+>> + * +----------+                     +------+
+>> + *
+>> + * The dram_pll is used for higher rates and dram_alt is used for lower rates.
+>> + *
+>> + * Frequency switching is implemented in TF-A (via SMC call) and can change the
+>> + * configuration of the clocks, including mux parents. The dram_alt and
+>> + * dram_apb clocks are "imx composite" and their parent can change too.
+>> + *
+>> + * We need to prepare/enable the new mux parents head of switching and update
+>> + * their information afterwards.
+>> + */
+>> +struct imx_ddrc {
+>> +	struct devfreq_dev_profile profile;
+>> +	struct devfreq *devfreq;
+>> +
+>> +	/* For frequency switching: */
+>> +	struct clk *dram_core;
+>> +	struct clk *dram_pll;
+>> +	struct clk *dram_alt;
+>> +	struct clk *dram_apb;
+>> +
+>> +	int freq_count;
+>> +	struct imx_ddrc_freq freq_table[IMX_DDRC_MAX_FREQ_COUNT];
+>> +};
+>> +
+
+... snip ...
+
+>> +static void imx_ddrc_smc_set_freq(int target_freq)
+>> +{
+>> +	struct arm_smccc_res res;
+>> +	u32 online_cpus = 0;
+>> +	int cpu;
+>> +
+>> +	local_irq_disable();
+>> +
+>> +	for_each_online_cpu(cpu)
+>> +		online_cpus |= (1 << (cpu * 8));
+> 
+> Nit: one level of unnecessary parentheses.
+
+Yes
+
+>> +
+>> +	/* change the ddr freqency */
+>> +	arm_smccc_smc(IMX_SIP_DDR_DVFS, target_freq, online_cpus,
+>> +			0, 0, 0, 0, 0, &res);
+>> +
+>> +	local_irq_enable();
+>> +}
+>> +
+>> +struct clk *clk_get_parent_by_index(struct clk *clk, int index)
+>> +{
+>> +	struct clk_hw *hw;
+>> +
+>> +	hw = clk_hw_get_parent_by_index(__clk_get_hw(clk), index);
+> 
+> Okay, this is why you need clk-provider.h.  But this
+> clk_get_parent_by_index() function looks completely generic, and should
+> be proposed to clock core?
+
+There are very few driver users of clk_hw_get_parent_by_index:
+
+$ git grep -wl clk_hw_get_parent_by_index |grep -v drivers/clk
+arch/mips/alchemy/common/clock.c
+drivers/cpufreq/qoriq-cpufreq.c
+drivers/devfreq/imx8m-ddrc.c
+drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c
+drivers/gpu/drm/sun4i/sun8i_hdmi_phy_clk.c
+drivers/media/platform/atmel/atmel-isc-base.c
+drivers/rtc/rtc-ac100.c
+include/linux/clk-provider.h
+
+Even clk_get_parent has few users and it contains this strange comment:
+
+/* TODO: Create a per-user clk and change callers to call clk_put */
+
+That proposed change effectively creates a new API? I didn't want to add 
+a new clk core API with unclear semantics.
+
+--
+Regards,
+Leonard
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
