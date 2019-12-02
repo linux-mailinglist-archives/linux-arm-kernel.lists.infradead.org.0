@@ -2,55 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C50F610ED66
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 17:45:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC59210EDA2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 18:01:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0VwaZUcnlDZs3p9r1fykVI+uExIEQ6Gi64H9EhLf2fU=; b=pvnJ/f1Cj8NWon
-	tO2FcMH2Hv872T/VAhyQ32JhV/IZRWuMgIQl7CEzXduNWbdV9xZuk8OmWX3chtlxCZYEPgqNP00Ng
-	/rchGPWpY6HFnPlr23JHYf/QVFFJ+XuPkUKooorxhhAqIAMO/jPolNFHchCGrdaNKK/orlaJ7zOXH
-	Zgg4xCtB5BP9+BTxP7ATe4eQanK5LmO3ey0M6iKIl4wh8QC1KcgcW2BxvLWvlDu0ZxxbG4Zzhq4ls
-	r6AilMxGOHPqk+rnYd1nTRE2aDkJFkNFrmaV/etk4NVhuYTHiQmCJM+rvZxEZbBWvVDzj3isHlyzM
-	Pbr5WcUIeDQ/e4av+Eog==;
+	List-Owner; bh=COnwQ3OMo6zf/vKyGwGaTj0mffSsNVPFxP2wFCPAI1I=; b=U8xthPfsR2j412
+	JYQAxStSVr+4nI6gcIO011uMwFynQfZR54zBUj5cbZIdl4ZtZlP+/xoems3onr0/WyTwEwFwa7IxL
+	IQlqpuh/0pfK/dBpEG84S37XVEdqi6UfCU5ulvqtwiL4JJ6ggioWIoTUTFfD7roUvnkuPe6T7g2gs
+	Eq8qp2xB9ieP2C8kHP4z7A6tINL7wJU6YnwDzhJfWgN9bw1DACAwmHMgwrIhulN5UWV3WcRjQcFQN
+	euMCaZyME+xE7jpyOm/krbNa/JwACzFAS26syRRmVERj6USiq99/WiwrMsIHZF+u6cb0bA6ShxXk5
+	SrARco8ZzdlyL/De8uYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibop8-0003kI-7p; Mon, 02 Dec 2019 16:45:22 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1ibp4G-0000mj-ON; Mon, 02 Dec 2019 17:01:00 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibop0-0003jr-1L
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 16:45:15 +0000
-Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
- helo=dude02.pengutronix.de.)
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1iboot-0005bb-Fx; Mon, 02 Dec 2019 17:45:07 +0100
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- John Stultz <john.stultz@linaro.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: [PATCH] arm/twd: avoid waking deeply sleeping CPUs for rate change
- notifier
-Date: Mon,  2 Dec 2019 17:45:06 +0100
-Message-Id: <20191202164506.28845-1-l.stach@pengutronix.de>
+ id 1ibp49-0000m8-3R; Mon, 02 Dec 2019 17:00:55 +0000
+X-Originating-IP: 91.224.148.103
+Received: from localhost.localdomain (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id B7E822001F;
+ Mon,  2 Dec 2019 17:00:38 +0000 (UTC)
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH] arm64: dts: rockchip: Fix IOMMU second clock name
+Date: Mon,  2 Dec 2019 18:00:28 +0100
+Message-Id: <20191202170028.26169-1-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_084514_091202_E22F917D 
-X-CRM114-Status: GOOD (  14.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191202_090053_282939_1B71F261 
+X-CRM114-Status: GOOD (  12.36  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,103 +58,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
- patchwork-lst@pengutronix.de
+Cc: devicetree@vger.kernel.org,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The current clock notifier sends an IPI to all CPUs, even if they are in
-deep sleep state with the local timer disabled and switched to tick
-broadcast. This needlessly cuts the CPU sleep times, as nothing is gained
-from updating a disabled TWDs rate.
+By precedence, both the IOMMU driver and the bindings in the doc
+impose two clocks to be filled in Rockchip device trees featuring an
+IOMMU:
+* The AXI clock called 'aclk'.
+* The main peripheral bus clock (PCLK/HCL) called 'iface'.
 
-Keep track of the enabled TWDs and only send an IPI to those CPUs with an
-active local timer. As disabled TWDs may now miss a CPU frequency update
-we need to make sure to refresh the rate on re-enabling of the timer.
+Currently, the second clock in px30.dtsi is called 'hclk' and this
+produces the following errors at boot:
 
-Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+        rk_iommu ff460f00.iommu: Failed to get clk 'iface': -2
+        rk_iommu ff470f00.iommu: Failed to get clk 'iface': -2
+
+Fix the PX30 device tree by renaming the second misnamed clock. The
+issue has not been reported before probably because the clk_get() call
+is optional for backward DT compatibility reasons.
+
+Fixes: 7053e06b1422 ("arm64: dts: rockchip: add core dtsi file for PX30 SoCs")
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- arch/arm/kernel/smp_twd.c | 31 +++++++++++++++++++++++++++++--
- 1 file changed, 29 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/rockchip/px30.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/kernel/smp_twd.c b/arch/arm/kernel/smp_twd.c
-index 9a14f721a2b0..3055c2623d4d 100644
---- a/arch/arm/kernel/smp_twd.c
-+++ b/arch/arm/kernel/smp_twd.c
-@@ -29,6 +29,8 @@ static struct clk *twd_clk;
- static unsigned long twd_timer_rate;
- static DEFINE_PER_CPU(bool, percpu_setup_called);
- 
-+static cpumask_var_t active_twd_mask;
-+
- static struct clock_event_device __percpu *twd_evt;
- static unsigned int twd_features =
- 		CLOCK_EVT_FEAT_PERIODIC | CLOCK_EVT_FEAT_ONESHOT;
-@@ -36,12 +38,24 @@ static int twd_ppi;
- 
- static int twd_shutdown(struct clock_event_device *clk)
- {
-+	cpumask_clear_cpu(smp_processor_id(), active_twd_mask);
-+
- 	writel_relaxed(0, twd_base + TWD_TIMER_CONTROL);
- 	return 0;
- }
- 
- static int twd_set_oneshot(struct clock_event_device *clk)
- {
-+	cpumask_set_cpu(smp_processor_id(), active_twd_mask);
-+
-+	/*
-+	 * When going from shutdown to oneshot we might have missed some
-+	 * frequency updates if the CPU was sleeping. Make sure to update
-+	 * the timer frequency with the current rate.
-+	 */
-+	if (clockevent_state_shutdown(clk))
-+		clockevents_update_freq(clk, twd_timer_rate);
-+
- 	/* period set, and timer enabled in 'next_event' hook */
- 	writel_relaxed(TWD_TIMER_CONTROL_IT_ENABLE | TWD_TIMER_CONTROL_ONESHOT,
- 		       twd_base + TWD_TIMER_CONTROL);
-@@ -54,6 +68,16 @@ static int twd_set_periodic(struct clock_event_device *clk)
- 			     TWD_TIMER_CONTROL_IT_ENABLE |
- 			     TWD_TIMER_CONTROL_PERIODIC;
- 
-+	cpumask_set_cpu(smp_processor_id(), active_twd_mask);
-+
-+	/*
-+	 * When going from shutdown to periodic we might have missed some
-+	 * frequency updates if the CPU was sleeping. Make sure to update
-+	 * the timer frequency with the current rate.
-+	 */
-+	if (clockevent_state_shutdown(clk))
-+		clockevents_update_freq(clk, twd_timer_rate);
-+
- 	writel_relaxed(DIV_ROUND_CLOSEST(twd_timer_rate, HZ),
- 		       twd_base + TWD_TIMER_LOAD);
- 	writel_relaxed(ctrl, twd_base + TWD_TIMER_CONTROL);
-@@ -119,8 +143,8 @@ static int twd_rate_change(struct notifier_block *nb,
- 	 * changing cpu.
- 	 */
- 	if (flags == POST_RATE_CHANGE)
--		on_each_cpu(twd_update_frequency,
--				  (void *)&cnd->new_rate, 1);
-+		on_each_cpu_mask(active_twd_mask, twd_update_frequency,
-+				 (void *)&cnd->new_rate, 1);
- 
- 	return NOTIFY_OK;
- }
-@@ -273,6 +297,9 @@ static int __init twd_local_timer_common_register(struct device_node *np)
- {
- 	int err;
- 
-+	if (!zalloc_cpumask_var(&active_twd_mask, GFP_KERNEL))
-+		return -ENOMEM;
-+
- 	twd_evt = alloc_percpu(struct clock_event_device);
- 	if (!twd_evt) {
- 		err = -ENOMEM;
+diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+index eb992d60e6ba..1fd12bd09e83 100644
+--- a/arch/arm64/boot/dts/rockchip/px30.dtsi
++++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+@@ -831,7 +831,7 @@
+ 		interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>;
+ 		interrupt-names = "vopb_mmu";
+ 		clocks = <&cru ACLK_VOPB>, <&cru HCLK_VOPB>;
+-		clock-names = "aclk", "hclk";
++		clock-names = "aclk", "iface";
+ 		power-domains = <&power PX30_PD_VO>;
+ 		#iommu-cells = <0>;
+ 		status = "disabled";
+@@ -863,7 +863,7 @@
+ 		interrupts = <GIC_SPI 79 IRQ_TYPE_LEVEL_HIGH>;
+ 		interrupt-names = "vopl_mmu";
+ 		clocks = <&cru ACLK_VOPL>, <&cru HCLK_VOPL>;
+-		clock-names = "aclk", "hclk";
++		clock-names = "aclk", "iface";
+ 		power-domains = <&power PX30_PD_VO>;
+ 		#iommu-cells = <0>;
+ 		status = "disabled";
 -- 
 2.20.1
 
