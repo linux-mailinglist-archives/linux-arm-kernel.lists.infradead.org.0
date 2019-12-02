@@ -2,77 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEC7910E763
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 10:03:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FAFB10E770
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 10:11:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6C4ZlEu6lkF+icagKt60m6B9ExXpao+QxKgghcQAd3Y=; b=YXHSUEU04KIeRO
-	ptb9X2N4PRNdvsqIMlmf/I+zXvc6/EjouYzwnhZDTClZwUhiohEkA03Yih/AlFbNgVnZqCDtG2kIT
-	pHokVoFQv8DWI72u3Yy8u/mewGfozGA0XGjE0/Gc+NEJQ1IDGhur/TDzJ6ODfHueEfhi3AGrOUf72
-	buxrGZy1cfS5TFeJLdXZCjCFJbewXCMrJ9pAKtky9MzlXOdKkpI7OE9+DalCYAYm+e2mlwhqMydGx
-	DhvwmD+YHXN0qKy/hAD/0+QYTilLflfVNjfOzvyB3b+26Ysa+BXRPd7pfKizS2sTqkpbNA1+TEPv6
-	1UFTIv2OFkuf5fbKaTLQ==;
+	List-Owner; bh=rvj2V6+Vetj5PgHCIQwEtV+3hOJ1VquCSqQbuHp0jVU=; b=VTRxSph5tNusfh
+	Ay8uB5hsa7BdhuNUog+0RkjavnMUU5K7jJI4bywOroSfWcYggjzjinlSxAosMf5W1H9vrMjhH19kf
+	CTCEUweZscppW3eBmiE66VuQsaxJq4Pw3iKOBdi955c+mqkJLWPGxxifczLLTXvbDwszBrK2A//4w
+	AW1CDeXwkSd7HmsNAkfA0u7jTKN20p4Ub2OzUj3bTO7d4YHRw2mWdlB2lkwO50DvC/x01ZvTL9EBU
+	vfKcULsNObmlAI++Me1TddzBQHcnkxedska+9Kgg3PB2edhQTjmwryTvsEG9i3/DOYtV63SxJ3aJj
+	uXylWp8bQjtGYvrvRU0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibhbi-00066O-Fa; Mon, 02 Dec 2019 09:03:02 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1ibhjS-0001bp-C3; Mon, 02 Dec 2019 09:11:02 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibhbL-0005wA-4w
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 09:02:41 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xB28v7WJ014947; Mon, 2 Dec 2019 10:02:30 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=KxG3BCoKOSqzI4K4WcjispGuPeQ0ALDJln5WgXTWrsI=;
- b=UF1I1/wYimSGR8fUMCmBwyfMeVB/KqUceQJhmUNUC51KJ5H1gmr51qxalx5yq7gdstKp
- eT25DfBzoc8SR/o3lyWi9orGzXqwDr3U8KPrQYIztzCE2Hs3R+fh/JMKJCuvu8oDPFbh
- hiVoZGR4ng/k/wYkDfFNCKCs56cmBx4v7cmfrH1omhRHE/t+P7D7kUpieZ+uNkInl1xn
- Vy8tDE3eWamDVGIHAzsKHipe+VTk9FHVNshXckWMTezY3JkEDpZepJ+oYFD6OIO7ibJg
- jmjF2L3i5miCquyxGnqJIP2T/PPltkbkeLn5SOqF7C2ehUY+vD9yIf+GjQzblHqvA5fl Ug== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wkee9rvj0-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 02 Dec 2019 10:02:29 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2DE6910003A;
- Mon,  2 Dec 2019 10:02:28 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1729E2ACD4E;
- Mon,  2 Dec 2019 10:02:28 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG5NODE3.st.com (10.75.127.15)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Mon, 2 Dec 2019 10:02:27 +0100
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <jic23@kernel.org>
-Subject: [PATCH v2] iio: adc: stm32-adc: Add check on overrun interrupt
-Date: Mon, 2 Dec 2019 10:02:19 +0100
-Message-ID: <1575277339-30237-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1ibhjK-0001aD-8k; Mon, 02 Dec 2019 09:10:56 +0000
+X-UUID: d07467977ea74e70991e563dcf257e01-20191202
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=77BHlXRq8SWcz9OZW4vRLcX/STRmZd2DJc8sv5irofo=; 
+ b=reYIgDcmJ9SPOE7bIVGGdiC4W7DCRt2Ts+05CW3TMnVmCsRaEAHpXDEGpkfRGMyGpVH+UUveXZguN81eRLF1N3Zbpn0mV+a8e5tiFJ/oMqtXpVIKDE8JCrpxAFA+FiF7nf14nOKQixRdVCc5ugajb+tHJErYGSafyWS5w9Tk6FQ=;
+X-UUID: d07467977ea74e70991e563dcf257e01-20191202
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <yongqiang.niu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1373447161; Mon, 02 Dec 2019 01:10:50 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 2 Dec 2019 01:04:38 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 2 Dec 2019 17:03:36 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 2 Dec 2019 17:03:34 +0800
+From: <yongqiang.niu@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
+ Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH v2] drm/mediatek: add ctm property support
+Date: Mon, 2 Dec 2019 17:03:43 +0800
+Message-ID: <1575277423-31182-1-git-send-email-yongqiang.niu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-12-02_01:2019-11-29,2019-12-02 signatures=0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_010239_514988_9DFB91E4 
-X-CRM114-Status: GOOD (  21.06  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191202_011054_322148_D6578336 
+X-CRM114-Status: GOOD (  14.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -80,6 +70,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,255 +83,203 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lars@metafoo.de, olivier.moysan@st.com, alexandre.torgue@st.com,
- linux-iio@vger.kernel.org, pmeerw@pmeerw.net, linux-kernel@vger.kernel.org,
- mcoquelin.stm32@gmail.com, knaack.h@gmx.de, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable overrun interrupt on STM32 ADC. In case data register hasn't been
-read (by CPU or DMA), overrun condition is detected when there's new
-conversion data available. Stop grabbing data and log an error message.
-Use a threaded irq to avoid printing the error message from hard irq
-context.
+From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
-Changes in v2:
-- Add a comment in the code, to give a hint on how to restart the capture,
-  as suggested by Jonathan. Also update the error message to mention a
-  restart is needed.
----
- drivers/iio/adc/stm32-adc-core.c | 14 +++++-----
- drivers/iio/adc/stm32-adc-core.h |  9 +++++++
- drivers/iio/adc/stm32-adc.c      | 55 ++++++++++++++++++++++++++++++++++++++--
- 3 files changed, 69 insertions(+), 9 deletions(-)
+add ctm property support
 
-diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
-index 6537f4f..97655d7 100644
---- a/drivers/iio/adc/stm32-adc-core.c
-+++ b/drivers/iio/adc/stm32-adc-core.c
-@@ -280,21 +280,21 @@ static int stm32h7_adc_clk_sel(struct platform_device *pdev,
- static const struct stm32_adc_common_regs stm32f4_adc_common_regs = {
- 	.csr = STM32F4_ADC_CSR,
- 	.ccr = STM32F4_ADC_CCR,
--	.eoc1_msk = STM32F4_EOC1,
--	.eoc2_msk = STM32F4_EOC2,
--	.eoc3_msk = STM32F4_EOC3,
-+	.eoc1_msk = STM32F4_EOC1 | STM32F4_OVR1,
-+	.eoc2_msk = STM32F4_EOC2 | STM32F4_OVR2,
-+	.eoc3_msk = STM32F4_EOC3 | STM32F4_OVR3,
- 	.ier = STM32F4_ADC_CR1,
--	.eocie_msk = STM32F4_EOCIE,
-+	.eocie_msk = STM32F4_EOCIE | STM32F4_OVRIE,
- };
+Change-Id: I8111da7b309b1809c6302e7748dd9fd06dc97bde
+Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+---
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 15 ++++++-
+ drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 61 ++++++++++++++++++++++++++++-
+ drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h | 11 ++++++
+ 3 files changed, 84 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index 4fb346c..12dc684 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -666,10 +666,13 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
+ 	int i;
  
- /* STM32H7 common registers definitions */
- static const struct stm32_adc_common_regs stm32h7_adc_common_regs = {
- 	.csr = STM32H7_ADC_CSR,
- 	.ccr = STM32H7_ADC_CCR,
--	.eoc1_msk = STM32H7_EOC_MST,
--	.eoc2_msk = STM32H7_EOC_SLV,
-+	.eoc1_msk = STM32H7_EOC_MST | STM32H7_OVR_MST,
-+	.eoc2_msk = STM32H7_EOC_SLV | STM32H7_OVR_SLV,
- 	.ier = STM32H7_ADC_IER,
--	.eocie_msk = STM32H7_EOCIE,
-+	.eocie_msk = STM32H7_EOCIE | STM32H7_OVRIE,
- };
- 
- static const unsigned int stm32_adc_offset[STM32_ADC_MAX_ADCS] = {
-diff --git a/drivers/iio/adc/stm32-adc-core.h b/drivers/iio/adc/stm32-adc-core.h
-index 2579d51..2322809 100644
---- a/drivers/iio/adc/stm32-adc-core.h
-+++ b/drivers/iio/adc/stm32-adc-core.h
-@@ -51,10 +51,12 @@
- #define STM32F4_ADC_CCR			(STM32_ADCX_COMN_OFFSET + 0x04)
- 
- /* STM32F4_ADC_SR - bit fields */
-+#define STM32F4_OVR			BIT(5)
- #define STM32F4_STRT			BIT(4)
- #define STM32F4_EOC			BIT(1)
- 
- /* STM32F4_ADC_CR1 - bit fields */
-+#define STM32F4_OVRIE			BIT(26)
- #define STM32F4_RES_SHIFT		24
- #define STM32F4_RES_MASK		GENMASK(25, 24)
- #define STM32F4_SCAN			BIT(8)
-@@ -72,8 +74,11 @@
- #define STM32F4_ADON			BIT(0)
- 
- /* STM32F4_ADC_CSR - bit fields */
-+#define STM32F4_OVR3			BIT(21)
- #define STM32F4_EOC3			BIT(17)
-+#define STM32F4_OVR2			BIT(13)
- #define STM32F4_EOC2			BIT(9)
-+#define STM32F4_OVR1			BIT(5)
- #define STM32F4_EOC1			BIT(1)
- 
- /* STM32F4_ADC_CCR - bit fields */
-@@ -103,10 +108,12 @@
- 
- /* STM32H7_ADC_ISR - bit fields */
- #define STM32MP1_VREGREADY		BIT(12)
-+#define STM32H7_OVR			BIT(4)
- #define STM32H7_EOC			BIT(2)
- #define STM32H7_ADRDY			BIT(0)
- 
- /* STM32H7_ADC_IER - bit fields */
-+#define STM32H7_OVRIE			STM32H7_OVR
- #define STM32H7_EOCIE			STM32H7_EOC
- 
- /* STM32H7_ADC_CR - bit fields */
-@@ -155,7 +162,9 @@ enum stm32h7_adc_dmngt {
- #define STM32H7_LINCALFACT_MASK		GENMASK(29, 0)
- 
- /* STM32H7_ADC_CSR - bit fields */
-+#define STM32H7_OVR_SLV			BIT(20)
- #define STM32H7_EOC_SLV			BIT(18)
-+#define STM32H7_OVR_MST			BIT(4)
- #define STM32H7_EOC_MST			BIT(2)
- 
- /* STM32H7_ADC_CCR - bit fields */
-diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
-index 3b291d7..5f05bf9 100644
---- a/drivers/iio/adc/stm32-adc.c
-+++ b/drivers/iio/adc/stm32-adc.c
-@@ -117,7 +117,9 @@ struct stm32_adc_regs {
-  * struct stm32_adc_regspec - stm32 registers definition
-  * @dr:			data register offset
-  * @ier_eoc:		interrupt enable register & eocie bitfield
-+ * @ier_ovr:		interrupt enable register & overrun bitfield
-  * @isr_eoc:		interrupt status register & eoc bitfield
-+ * @isr_ovr:		interrupt status register & overrun bitfield
-  * @sqr:		reference to sequence registers array
-  * @exten:		trigger control register & bitfield
-  * @extsel:		trigger selection register & bitfield
-@@ -128,7 +130,9 @@ struct stm32_adc_regs {
- struct stm32_adc_regspec {
- 	const u32 dr;
- 	const struct stm32_adc_regs ier_eoc;
-+	const struct stm32_adc_regs ier_ovr;
- 	const struct stm32_adc_regs isr_eoc;
-+	const struct stm32_adc_regs isr_ovr;
- 	const struct stm32_adc_regs *sqr;
- 	const struct stm32_adc_regs exten;
- 	const struct stm32_adc_regs extsel;
-@@ -337,7 +341,9 @@ static const unsigned int stm32f4_adc_smp_cycles[STM32_ADC_MAX_SMP + 1] = {
- static const struct stm32_adc_regspec stm32f4_adc_regspec = {
- 	.dr = STM32F4_ADC_DR,
- 	.ier_eoc = { STM32F4_ADC_CR1, STM32F4_EOCIE },
-+	.ier_ovr = { STM32F4_ADC_CR1, STM32F4_OVRIE },
- 	.isr_eoc = { STM32F4_ADC_SR, STM32F4_EOC },
-+	.isr_ovr = { STM32F4_ADC_SR, STM32F4_OVR },
- 	.sqr = stm32f4_sq,
- 	.exten = { STM32F4_ADC_CR2, STM32F4_EXTEN_MASK, STM32F4_EXTEN_SHIFT },
- 	.extsel = { STM32F4_ADC_CR2, STM32F4_EXTSEL_MASK,
-@@ -429,7 +435,9 @@ static const unsigned int stm32h7_adc_smp_cycles[STM32_ADC_MAX_SMP + 1] = {
- static const struct stm32_adc_regspec stm32h7_adc_regspec = {
- 	.dr = STM32H7_ADC_DR,
- 	.ier_eoc = { STM32H7_ADC_IER, STM32H7_EOCIE },
-+	.ier_ovr = { STM32H7_ADC_IER, STM32H7_OVRIE },
- 	.isr_eoc = { STM32H7_ADC_ISR, STM32H7_EOC },
-+	.isr_ovr = { STM32H7_ADC_ISR, STM32H7_OVR },
- 	.sqr = stm32h7_sq,
- 	.exten = { STM32H7_ADC_CFGR, STM32H7_EXTEN_MASK, STM32H7_EXTEN_SHIFT },
- 	.extsel = { STM32H7_ADC_CFGR, STM32H7_EXTSEL_MASK,
-@@ -506,6 +514,18 @@ static void stm32_adc_conv_irq_disable(struct stm32_adc *adc)
- 			   adc->cfg->regs->ier_eoc.mask);
- }
- 
-+static void stm32_adc_ovr_irq_enable(struct stm32_adc *adc)
-+{
-+	stm32_adc_set_bits(adc, adc->cfg->regs->ier_ovr.reg,
-+			   adc->cfg->regs->ier_ovr.mask);
-+}
+ 	if (crtc->state->color_mgmt_changed)
+-		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
++		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
+ 			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i],
+ 					  crtc->state,
+ 					  mtk_crtc_state->cmdq_handle);
++			mtk_ddp_ctm_set(mtk_crtc->ddp_comp[i], crtc->state);
++		}
 +
-+static void stm32_adc_ovr_irq_disable(struct stm32_adc *adc)
-+{
-+	stm32_adc_clr_bits(adc, adc->cfg->regs->ier_ovr.reg,
-+			   adc->cfg->regs->ier_ovr.mask);
-+}
+ #ifdef CONFIG_MTK_CMDQ
+ 	if (mtk_crtc->cmdq_client) {
+ 		drm_atomic_state_get(old_atomic_state);
+@@ -819,6 +822,8 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 	int pipe = priv->num_pipes;
+ 	int ret;
+ 	int i;
++	bool has_ctm = false;
++	uint gamma_lut_size = 0;
+ 
+ 	if (!path)
+ 		return 0;
+@@ -870,6 +875,12 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 		}
+ 
+ 		mtk_crtc->ddp_comp[i] = comp;
 +
- static void stm32_adc_set_res(struct stm32_adc *adc)
- {
- 	const struct stm32_adc_regs *res = &adc->cfg->regs->res;
-@@ -1205,6 +1225,19 @@ static int stm32_adc_read_raw(struct iio_dev *indio_dev,
++		if (comp_id == DDP_COMPONENT_CCORR)
++			has_ctm = true;
++
++		if (comp_id == DDP_COMPONENT_GAMMA)
++			gamma_lut_size = MTK_LUT_SIZE;
  	}
+ 
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
+@@ -891,7 +902,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 	if (ret < 0)
+ 		return ret;
+ 	drm_mode_crtc_set_gamma_size(&mtk_crtc->base, MTK_LUT_SIZE);
+-	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, MTK_LUT_SIZE);
++	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, has_ctm, gamma_lut_size);
+ 	priv->num_pipes++;
+ #ifdef CONFIG_MTK_CMDQ
+ 	mtk_crtc->cmdq_client =
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
+index 9cc12af..2fd52ba 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
+@@ -38,7 +38,15 @@
+ #define CCORR_EN				BIT(0)
+ #define DISP_CCORR_CFG				0x0020
+ #define CCORR_RELAY_MODE			BIT(0)
++#define CCORR_ENGINE_EN				BIT(1)
++#define CCORR_GAMMA_OFF				BIT(2)
++#define CCORR_WGAMUT_SRC_CLIP			BIT(3)
+ #define DISP_CCORR_SIZE				0x0030
++#define DISP_CCORR_COEF_0			0x0080
++#define DISP_CCORR_COEF_1			0x0084
++#define DISP_CCORR_COEF_2			0x0088
++#define DISP_CCORR_COEF_3			0x008C
++#define DISP_CCORR_COEF_4			0x0090
+ 
+ #define DISP_DITHER_EN				0x0000
+ #define DITHER_EN				BIT(0)
+@@ -187,7 +195,7 @@ static void mtk_ccorr_config(struct mtk_ddp_comp *comp, unsigned int w,
+ 			     unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
+ {
+ 	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_CCORR_SIZE);
+-	mtk_ddp_write(cmdq_pkt, CCORR_RELAY_MODE, comp, DISP_CCORR_CFG);
++	mtk_ddp_write(cmdq_pkt, CCORR_ENGINE_EN, comp, DISP_CCORR_CFG);
  }
  
-+static irqreturn_t stm32_adc_threaded_isr(int irq, void *data)
-+{
-+	struct stm32_adc *adc = data;
-+	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-+	const struct stm32_adc_regspec *regs = adc->cfg->regs;
-+	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
-+
-+	if (status & regs->isr_ovr.mask)
-+		dev_err(&indio_dev->dev, "Overrun, stopping: restart needed\n");
-+
-+	return IRQ_HANDLED;
-+}
-+
- static irqreturn_t stm32_adc_isr(int irq, void *data)
- {
- 	struct stm32_adc *adc = data;
-@@ -1212,6 +1245,19 @@ static irqreturn_t stm32_adc_isr(int irq, void *data)
- 	const struct stm32_adc_regspec *regs = adc->cfg->regs;
- 	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
+ static void mtk_ccorr_start(struct mtk_ddp_comp *comp)
+@@ -200,6 +208,56 @@ static void mtk_ccorr_stop(struct mtk_ddp_comp *comp)
+ 	writel_relaxed(0x0, comp->regs + DISP_CCORR_EN);
+ }
  
-+	if (status & regs->isr_ovr.mask) {
-+		/*
-+		 * Overrun occurred on regular conversions: data for wrong
-+		 * channel may be read. Unconditionally disable interrupts
-+		 * to stop processing data and print error message.
-+		 * Restarting the capture can be done by disabling, then
-+		 * re-enabling it (e.g. write 0, then 1 to buffer/enable).
-+		 */
-+		stm32_adc_ovr_irq_disable(adc);
-+		stm32_adc_conv_irq_disable(adc);
-+		return IRQ_WAKE_THREAD;
++/* Converts a DRM S31.32 value to the HW S0.11 format. */
++static u16 mtk_ctm_s31_32_to_s0_11(u64 in)
++{
++	u16 r;
++
++	/* Sign bit. */
++	r = in & BIT_ULL(63) ? BIT(11) : 0;
++
++	if ((in & GENMASK_ULL(62, 33)) > 0) {
++		/* We have zero integer bits so we can only saturate here. */
++		r |= GENMASK(10, 0);
++	} else {
++		/* Otherwise take the 9 most important fractional bits. */
++		r |= (in >> 22) & GENMASK(10, 0);
 +	}
 +
- 	if (status & regs->isr_eoc.mask) {
- 		/* Reading DR also clears EOC status flag */
- 		adc->buffer[adc->bufi] = stm32_adc_readw(adc, regs->dr);
-@@ -1441,6 +1487,8 @@ static int __stm32_adc_buffer_postenable(struct iio_dev *indio_dev)
- 	/* Reset adc buffer index */
- 	adc->bufi = 0;
- 
-+	stm32_adc_ovr_irq_enable(adc);
++	return r;
++}
 +
- 	if (!adc->dma_chan)
- 		stm32_adc_conv_irq_enable(adc);
- 
-@@ -1481,6 +1529,8 @@ static void __stm32_adc_buffer_predisable(struct iio_dev *indio_dev)
- 	if (!adc->dma_chan)
- 		stm32_adc_conv_irq_disable(adc);
- 
-+	stm32_adc_ovr_irq_disable(adc);
++static void mtk_ccorr_ctm_set(struct mtk_ddp_comp *comp,
++			      struct drm_crtc_state *state
++			      struct cmdq_pkt *cmdq_pkt)
++{
++	struct drm_property_blob *blob = state->ctm;
++	struct drm_color_ctm *ctm;
++	const u64 *input;
++	uint16_t coeffs[9] = { 0 };
++	int i;
 +
- 	if (adc->dma_chan)
- 		dmaengine_terminate_sync(adc->dma_chan);
++	if (!blob)
++		return;
++
++	ctm = (struct drm_color_ctm *)blob->data;
++	input = ctm->matrix;
++
++	for (i = 0; i < ARRAY_SIZE(coeffs); i++)
++		coeffs[i] = mtk_ctm_s31_32_to_s0_11(input[i]);
++
++	mtk_ddp_write(cmdq_pkt, coeffs[0] << 16 | coeffs[1],
++		      comp, DISP_CCORR_COEF_0);
++	mtk_ddp_write(cmdq_pkt, coeffs[2] << 16 | coeffs[3],
++		      comp, DISP_CCORR_COEF_1);
++	mtk_ddp_write(cmdq_pkt, coeffs[4] << 16 | coeffs[5],
++		      comp, DISP_CCORR_COEF_2);
++	mtk_ddp_write(cmdq_pkt, coeffs[6] << 16 | coeffs[7],
++		      comp, DISP_CCORR_COEF_3);
++	mtk_ddp_write(cmdq_pkt, coeffs[8] << 16,
++		      comp, DISP_CCORR_COEF_4);
++}
++
+ static void mtk_dither_config(struct mtk_ddp_comp *comp, unsigned int w,
+ 			      unsigned int h, unsigned int vrefresh,
+ 			      unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
+@@ -269,6 +327,7 @@ static void mtk_gamma_set(struct mtk_ddp_comp *comp,
+ 	.config = mtk_ccorr_config,
+ 	.start = mtk_ccorr_start,
+ 	.stop = mtk_ccorr_stop,
++	.ctm_set = mtk_ccorr_ctm_set,
+ };
  
-@@ -1818,8 +1868,9 @@ static int stm32_adc_probe(struct platform_device *pdev)
- 	if (adc->irq < 0)
- 		return adc->irq;
+ static const struct mtk_ddp_comp_funcs ddp_dither = {
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
+index 5b0a3d4..4e3e5aa 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
++++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
+@@ -95,6 +95,9 @@ struct mtk_ddp_comp_funcs {
+ 			  struct cmdq_pkt *cmdq_pkt);
+ 	void (*bgclr_in_on)(struct mtk_ddp_comp *comp);
+ 	void (*bgclr_in_off)(struct mtk_ddp_comp *comp);
++	void (*ctm_set)(struct mtk_ddp_comp *comp,
++			struct drm_crtc_state *state
++			struct cmdq_pkt *cmdq_pkt);
+ };
  
--	ret = devm_request_irq(&pdev->dev, adc->irq, stm32_adc_isr,
--			       0, pdev->name, adc);
-+	ret = devm_request_threaded_irq(&pdev->dev, adc->irq, stm32_adc_isr,
-+					stm32_adc_threaded_isr,
-+					0, pdev->name, adc);
- 	if (ret) {
- 		dev_err(&pdev->dev, "failed to request IRQ\n");
- 		return ret;
+ struct mtk_ddp_comp {
+@@ -213,6 +216,14 @@ static inline void mtk_ddp_comp_bgclr_in_off(struct mtk_ddp_comp *comp)
+ 		comp->funcs->bgclr_in_off(comp);
+ }
+ 
++static inline void mtk_ddp_ctm_set(struct mtk_ddp_comp *comp,
++				   struct drm_crtc_state *state
++				   struct cmdq_pkt *cmdq_pkt)
++{
++	if (comp->funcs && comp->funcs->ctm_set)
++		comp->funcs->ctm_set(comp, state);
++}
++
+ int mtk_ddp_comp_get_id(struct device_node *node,
+ 			enum mtk_ddp_comp_type comp_type);
+ int mtk_ddp_comp_init(struct device *dev, struct device_node *comp_node,
 -- 
-2.7.4
-
-
+1.8.1.1.dirty
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
