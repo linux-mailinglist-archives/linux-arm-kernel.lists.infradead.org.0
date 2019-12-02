@@ -2,83 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06D9510F0F9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 20:46:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E405910F13A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 20:59:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/wxeTbMunMBYg6iBCCJWN/+7C5oq1mDwXqlKXYtolqM=; b=qnRju44ItfjqEk
-	XLZ9BOMAlr8I1GAwYrwBre5CP1MS+wKW9yqDOW24s6DpjKnEeR6hkcR41AmWUtdusMoi6u+hNSQ7I
-	4yxsKZmRzasq0nAoiw50HoFapz5sFrpqYh/Mvnls7SZ/T+uPU1qhE87k7gW8UrDKY6Kpk2h162vnR
-	X79/xAsHGksj8KjAcfQKSsFHb4zhnrgnwzwR8FqM01IGoEhrEEnEy7LTWz/gZCw9M/fyGtvzoXywV
-	B0OT0bh2KHB0v8h/hKCsXXy5KGjee1A+/kHbL3ie1EkXZyxQHbmxfZ7hv6vgTJ9IUFU/e+HIBqJyr
-	bEwbZr7CmMgLk6EZh3SA==;
+	List-Owner; bh=igRqjOuNAAQhVJwNjZgob5jdLItM4FcLoCnDSZXEpPQ=; b=KXoEcbbKXwFRFa
+	CN6TWxDpLXGx4X9Ik2liJ2Fh8ZONVwwvf0YtuuUX7gY2A7LGi316VozOLX6+auLUYXrlBtC3tloCT
+	kty8d7m30tm6/hVUXaruE2XdWOoRu2ILvZD+kGMZdivs56NLBVh1kiSnKZ+YNS8p1M43AXsAzi90b
+	sVo3AXd9OD6jFtngFAfwNXMzIVIXdavRAB21IcJshX0Coi9nqbFXN1fUuIbAYxFiUyKgr5mzU3J1/
+	jg5CrcrVn38T0Yi5CXR471/r3IU7jguJYJV/yQ5QDmOPYIwCyh4gsTfPsLOBkxq4JjiVpeZjhTt6P
+	fBTGVoa0SjXShn6LPqeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibreB-00069O-Dg; Mon, 02 Dec 2019 19:46:15 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1ibrrQ-0001o2-DR; Mon, 02 Dec 2019 19:59:56 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibrdu-00065n-JS
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 19:46:00 +0000
-Received: by mail-wm1-x344.google.com with SMTP id a131so584456wme.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Dec 2019 11:45:57 -0800 (PST)
+ id 1ibrrD-0001li-VY; Mon, 02 Dec 2019 19:59:45 +0000
+Received: by mail-il1-x143.google.com with SMTP id w13so886503ilo.1;
+ Mon, 02 Dec 2019 11:59:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=Q+cqCA3vFJBC2ze3sBubc6LgUvtvvPu900gSE3tdtbQ=;
- b=kwgK6Jo7GBxlhfYekLlesw9h9QR3xWr9IHus9m8cO1+2q9jty9chPEcNK0U+aNSzQN
- E28kwdeketz3GrQuMMuxCK7ju5Wik4JOzHJTLSBXqWrHAcQ1kbmtWdUMUdnKQw/sTGyk
- 5GIbT53dgt4Z5Ro21lmPFO8MtJgxUKyeabY75btaPnoQD/QhycPREDOZbPyVMrguM2P1
- a8dm1O75hJPNCOOSn5DVrmuUkqn7nFz51SXtZHpT7n3TeUZYPQ2VvV05/pWfb13KODDn
- XJniHmXV/TVWlTPBpPkoOoPtuNPYaM8CyAszZ3mn+7VBiTjuTDpvPHwTfrySq1eB51f1
- A0pA==
+ :cc; bh=/1GIiVAt9IkBpoZ9Uj4zenbh/EnV7XYXqjcP5Gkayek=;
+ b=InHq5aiL3hR9tFDnhuqx6aayq30VOPnHw69PCMZh0fSzKM55HtwqVJl0b4YhHu7o0S
+ +vKSRzTuJwrb/lXpHGExaIBaelO+6e1no2J7UB2BWeJc2O8zSrV6zrjf11Joenv7+K+O
+ bIOK66rwnalFLRsaiCMoP1L5Q+Gri2cgksvOUQua6x2NZ9JNO0modjT5LhxhvqbmC8dc
+ 2FZZWCxZ4UxsFPSHkDVN45m1Rxjv8DMuTLQZdROk5eqrpDHYKSl4SPzzPtiTLnQvNG4L
+ Gdc25pYlvp0qSQqCaGqVXUgLhtnumBY8uup6p7tMk8yK2DpH0DcOK17AODcn1FefgjKv
+ oLRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=Q+cqCA3vFJBC2ze3sBubc6LgUvtvvPu900gSE3tdtbQ=;
- b=obNfNj/VCVpRQG0QqqpmeJM6fsdcvE5JkGXQKkn08o9QTUit1fAmOTZgewfU9TtOMC
- hUCQJDs7mbv575GQMshh6RfSJYSwS26Q8Odey085Ui6sSa+uqluKwohpwwO56aNK5KUM
- ziwISnc24HDlI6ouNXcHNlTpWMrTU4ByZPmck2v/WAe5xZTBX6x+YIXEazqf3J8FBbvw
- U4fccDItjKZOJpBpnDyZqZ6o77RszzRYaGi1qC7dV5UeQwOClGju1pk0xV/OARVcG7vS
- qL1AUskzvWlY0tmqGfqUSvjcEx6FmIDOr4jdKRdw1WuTc9GZtJFwatoaqMZrZdEqmfYL
- ANgg==
-X-Gm-Message-State: APjAAAXmYRy5FHSISnYU4yt6ZleMyRHDhpJgNwxIUIjq3Gu7odF0EvHM
- AAFGOVNQKaC3ntaVs+ac3PWgICzoZjQPFfXFmt0=
-X-Google-Smtp-Source: APXvYqyr0g6hi3TjSjrCw51zPNFeO43OqoJHM+RJQ7FIuG8nWWCnCvSkX5tH08BNAKmt3b9Ab4BcmaLx7uxUPmEMrgY=
-X-Received: by 2002:a05:600c:2207:: with SMTP id
- z7mr9134099wml.138.1575315955894; 
- Mon, 02 Dec 2019 11:45:55 -0800 (PST)
+ :message-id:subject:to:cc;
+ bh=/1GIiVAt9IkBpoZ9Uj4zenbh/EnV7XYXqjcP5Gkayek=;
+ b=q+hO3jzAUPXrexqIFoFOJMuCDVrKsXsOwEApr79wxzos+xjyTV2zZobjwt2yCQINDl
+ USckEEkCVGNiH++rzB6fylOepLWebIw8HRgD+wpjgPk9+pkgDZgrylchBwQPUCUNK2iD
+ GpvWoYu7AOixTBzpN6WKlHkP9IOqUST+4ccRILUHnwrUgENS93sQ3rG9UhEwfUKqHZQw
+ QSyk5zCNosec5PvaM4TmJgfgPVocn/hPoFN5HUASy/QG9MaNrDGhDxBiCH2zJ+pVGwUN
+ vr/fqixKZhmki7UGHGfL0Vi+XFIS8vbiJIsEHz+yDavvayS9Nv/uyQQQ5PeGgfSWh3TW
+ m68w==
+X-Gm-Message-State: APjAAAXeivuTcXrFyLDRIGodBDPNnSkNDvwA4rUCYQfqw78Y++FNrkpo
+ aiFVbs8cqtsYuBhIwIhhA+UIjlk/hUyLgXFp5Po=
+X-Google-Smtp-Source: APXvYqx6YUMOUm+z16ig9xldwuTeM19+Bd22B3aBAblOLhFaOGglg7N1XrSehMoTWzvuuSea3OH9TLlXRGuqdFXhTE0=
+X-Received: by 2002:a92:4891:: with SMTP id j17mr565262ilg.33.1575316780879;
+ Mon, 02 Dec 2019 11:59:40 -0800 (PST)
 MIME-Version: 1.0
-References: <20191123132435.22093-1-peron.clem@gmail.com>
- <20191128174204.tbr5ldilkadw42gc@gilmour.lan>
- <CAJiuCccY7AFsd22bOxKZW=BAne5YEG0vmnVmUNFamU9cpW_vNA@mail.gmail.com>
- <20191202191205.2izimptezz5rf5kp@gilmour.lan>
-In-Reply-To: <20191202191205.2izimptezz5rf5kp@gilmour.lan>
-From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Date: Mon, 2 Dec 2019 20:45:44 +0100
-Message-ID: <CAJiuCcdKi9vedvCWz1BvCS8B0h9rEX1oafZzdok9noFsnvg1NA@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: allwinner: Convert to new-style SPDX license
- identifiers
-To: Maxime Ripard <mripard@kernel.org>
+References: <20191202193230.21310-1-sam@ravnborg.org>
+In-Reply-To: <20191202193230.21310-1-sam@ravnborg.org>
+From: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
+Date: Mon, 2 Dec 2019 12:59:29 -0700
+Message-ID: <CAOCk7NoKPoxcETLYQ4CyAtYGnPwvYapdSavZM=aRdswDydTLEA@mail.gmail.com>
+Subject: Re: [PATCH v1 0/26] drm/panel infrastructure + backlight update
+To: Sam Ravnborg <sam@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_114558_644391_EBC3D6B0 
-X-CRM114-Status: GOOD (  42.88  )
+X-CRM114-CacheID: sfid-20191202_115944_020011_0AA751B6 
+X-CRM114-Status: GOOD (  19.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peron.clem[at]gmail.com)
+ provider (jeffrey.l.hugo[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -98,171 +90,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Linus Walleij <linus.walleij@linaro.org>, Stefan Agner <stefan@agner.ch>,
+ Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ linux-samsung-soc@vger.kernel.org, Abhinav Kumar <abhinavk@codeaurora.org>,
+ linux-rockchip@lists.infradead.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Jagan Teki <jagan@amarulasolutions.com>,
+ Jitao Shi <jitao.shi@mediatek.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ linux-tegra@vger.kernel.org, Sean Paul <sean@poorly.run>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Purism Kernel Team <kernel@puri.sm>, linux-renesas-soc@vger.kernel.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWF4aW1lLAoKT24gTW9uLCAyIERlYyAyMDE5IGF0IDIwOjEyLCBNYXhpbWUgUmlwYXJkIDxt
-cmlwYXJkQGtlcm5lbC5vcmc+IHdyb3RlOgo+Cj4gT24gVGh1LCBOb3YgMjgsIDIwMTkgYXQgMDc6
-MTI6MTZQTSArMDEwMCwgQ2zDqW1lbnQgUMOpcm9uIHdyb3RlOgo+ID4gT24gVGh1LCAyOCBOb3Yg
-MjAxOSBhdCAxODo0MiwgTWF4aW1lIFJpcGFyZCA8bXJpcGFyZEBrZXJuZWwub3JnPiB3cm90ZToK
-PiA+ID4KPiA+ID4gSGkgQ2xlbWVudCwKPiA+ID4KPiA+ID4gU29ycnkgZm9yIHRoZSBwcmV0dHkg
-c2xvdyBhbnN3ZXIKPiA+ID4KPiA+ID4gT24gU2F0LCBOb3YgMjMsIDIwMTkgYXQgMDI6MjQ6MzVQ
-TSArMDEwMCwgQ2zDqW1lbnQgUMOpcm9uIHdyb3RlOgo+ID4gPiA+IE1vdmUgdGhlIFNQRFgtTGlj
-ZW5zZS1JZGVudGlmaWVyIGxpbmVzIHRvIHRoZSB0b3AgYW5kIGRyb3AgdGhlCj4gPiA+ID4gbGlj
-ZW5zZSBzcGxhdC4KPiA+ID4gPgo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IENsw6ltZW50IFDDqXJv
-biA8cGVyb24uY2xlbUBnbWFpbC5jb20+Cj4gPiA+ID4gLS0tCj4gPiA+ID4KPiA+ID4gPiBIaSwK
-PiA+ID4gPgo+ID4gPiA+IFRoaXMgdGhlIHNhbWUgbG9naWMgdGhhdCB3aGF0IGhhcyBiZSBkb25l
-IG9uIEFtbG9naWMuCj4gPiA+ID4KPiA+ID4gPiBDb21taXQ6IEFSTTY0OiBkdHM6IGFtbG9naWM6
-IENvbnZlcnQgdG8gbmV3LXN0eWxlIFNQRFggbGljZW5zZSBpZGVudGlmaWVycwo+ID4gPiA+IGh0
-dHBzOi8vbG9yZS5rZXJuZWwub3JnL3BhdGNod29yay9wYXRjaC84OTA0NTUvCj4gPiA+Cj4gPiA+
-IFNvIHRoZXJlJ3MgYSBidW5jaCBvZiBkaWZmZXJlbnQgdGhpbmdzIHRoYXQgc2hvdWxkIGJlIGFk
-ZHJlc3NlZCBpbgo+ID4gPiBzZXBhcmF0ZSBwYXRjaGVzIGhlcmUgSSBiZWxpZXZlLgo+ID4gPgo+
-ID4gPiA+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9heHA4MDMuZHRzaSAgICAgfCAz
-OSArLS0tLS0tLS0tLS0tLS0tLQo+ID4gPiA+ICAuLi4vZHRzL2FsbHdpbm5lci9zdW41MGktYTY0
-LWJhbmFuYXBpLW02NC5kdHMgfCAzOSArLS0tLS0tLS0tLS0tLS0tLQo+ID4gPiA+ICAuLi4vZHRz
-L2FsbHdpbm5lci9zdW41MGktYTY0LW5hbm9waS1hNjQuZHRzICAgfCAzOSArLS0tLS0tLS0tLS0t
-LS0tLQo+ID4gPiA+ICAuLi4vZHRzL2FsbHdpbm5lci9zdW41MGktYTY0LW9saW51eGluby5kdHMg
-ICAgfCAzOSArLS0tLS0tLS0tLS0tLS0tLQo+ID4gPiA+ICAuLi4vZHRzL2FsbHdpbm5lci9zdW41
-MGktYTY0LW9yYW5nZXBpLXdpbi5kdHMgfCAzOSArLS0tLS0tLS0tLS0tLS0tLQo+ID4gPiA+ICAu
-Li4vZHRzL2FsbHdpbm5lci9zdW41MGktYTY0LXBpbmU2NC1sdHMuZHRzICAgfCAgMyArLQo+ID4g
-PiA+ICAuLi4vZHRzL2FsbHdpbm5lci9zdW41MGktYTY0LXBpbmU2NC1wbHVzLmR0cyAgfCAzOSAr
-LS0tLS0tLS0tLS0tLS0tLQo+ID4gPiA+ICAuLi4vYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1h
-NjQtcGluZTY0LmR0cyAgfCAzOSArLS0tLS0tLS0tLS0tLS0tLQo+ID4gPiA+ICAuLi4vZHRzL2Fs
-bHdpbm5lci9zdW41MGktYTY0LXBpbmVib29rLmR0cyAgICAgfCAgMSAtCj4gPiA+ID4gIC4uLi9h
-bGx3aW5uZXIvc3VuNTBpLWE2NC1zb3BpbmUtYmFzZWJvYXJkLmR0cyB8IDQyICstLS0tLS0tLS0t
-LS0tLS0tLS0KPiA+ID4gPiAgLi4uL2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktYTY0LXNvcGlu
-ZS5kdHNpIHwgNDIgKy0tLS0tLS0tLS0tLS0tLS0tLQo+ID4gPiA+ICAuLi4vYm9vdC9kdHMvYWxs
-d2lubmVyL3N1bjUwaS1hNjQtdGVyZXMtaS5kdHMgfCAgMyArLQo+ID4gPiA+ICBhcmNoL2FybTY0
-L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktYTY0LmR0c2kgfCAzOSArLS0tLS0tLS0tLS0tLS0t
-LQo+ID4gPiA+ICAuLi4vc3VuNTBpLWg1LWJhbmFuYXBpLW0yLXBsdXMtdjEuMi5kdHMgICAgICAg
-fCAgNCArLQo+ID4gPiA+ICAuLi4vYWxsd2lubmVyL3N1bjUwaS1oNS1iYW5hbmFwaS1tMi1wbHVz
-LmR0cyAgfCAgNCArLQo+ID4gPiA+ICAuLi4vYWxsd2lubmVyL3N1bjUwaS1oNS1uYW5vcGktbmVv
-LXBsdXMyLmR0cyAgfCAzOSArLS0tLS0tLS0tLS0tLS0tLQo+ID4gPiA+ICAuLi4vZHRzL2FsbHdp
-bm5lci9zdW41MGktaDUtbmFub3BpLW5lbzIuZHRzICAgfCAzOSArLS0tLS0tLS0tLS0tLS0tLQo+
-ID4gPiA+ICAuLi4vZHRzL2FsbHdpbm5lci9zdW41MGktaDUtb3JhbmdlcGktcGMyLmR0cyAgfCAz
-OSArLS0tLS0tLS0tLS0tLS0tLQo+ID4gPiA+ICAuLi4vYWxsd2lubmVyL3N1bjUwaS1oNS1vcmFu
-Z2VwaS1wcmltZS5kdHMgICAgfCA0MiArLS0tLS0tLS0tLS0tLS0tLS0tCj4gPiA+ID4gIC4uLi9z
-dW41MGktaDUtb3JhbmdlcGktemVyby1wbHVzLmR0cyAgICAgICAgICB8ICAzICstCj4gPiA+ID4g
-IC4uLi9zdW41MGktaDUtb3JhbmdlcGktemVyby1wbHVzMi5kdHMgICAgICAgICB8IDM5ICstLS0t
-LS0tLS0tLS0tLS0tCj4gPiA+ID4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUw
-aS1oNS5kdHNpICB8IDM5ICstLS0tLS0tLS0tLS0tLS0tCj4gPiA+ID4gIC4uLi9kdHMvYWxsd2lu
-bmVyL3N1bjUwaS1oNi1iZWVsaW5rLWdzMS5kdHMgICB8ICAyICstCj4gPiA+ID4gIC4uLi9kdHMv
-YWxsd2lubmVyL3N1bjUwaS1oNi1vcmFuZ2VwaS0zLmR0cyAgICB8ICAyICstCj4gPiA+ID4gIC4u
-Li9hbGx3aW5uZXIvc3VuNTBpLWg2LW9yYW5nZXBpLWxpdGUyLmR0cyAgICB8ICAyICstCj4gPiA+
-ID4gIC4uLi9hbGx3aW5uZXIvc3VuNTBpLWg2LW9yYW5nZXBpLW9uZS1wbHVzLmR0cyB8ICAyICst
-Cj4gPiA+ID4gIC4uLi9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi1vcmFuZ2VwaS5kdHNpICAgICB8
-ICAyICstCj4gPiA+ID4gIC4uLi9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LXBpbmUtaDY0
-LmR0cyB8ICAyICstCj4gPiA+ID4gIC4uLi9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi10YW5peC10
-eDYuZHRzICAgICB8ICAyICstCj4gPiA+ID4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVy
-L3N1bjUwaS1oNi5kdHNpICB8ICAyICstCj4gPiA+ID4gIDMwIGZpbGVzIGNoYW5nZWQsIDMzIGlu
-c2VydGlvbnMoKyksIDYzNCBkZWxldGlvbnMoLSkKPiA+ID4gPgo+ID4gPiA+IGRpZmYgLS1naXQg
-YS9hcmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9heHA4MDMuZHRzaSBiL2FyY2gvYXJtNjQv
-Ym9vdC9kdHMvYWxsd2lubmVyL2F4cDgwMy5kdHNpCj4gPiA+ID4gaW5kZXggZjAzNDllZjRiZmRk
-Li5mNGYyYzcwZmRlNWMgMTAwNjQ0Cj4gPiA+ID4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9h
-bGx3aW5uZXIvYXhwODAzLmR0c2kKPiA+ID4gPiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2Fs
-bHdpbm5lci9heHA4MDMuZHRzaQo+ID4gPiA+IEBAIC0xLDQzICsxLDYgQEAKPiA+ID4gPiArLy8g
-U1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4wKyBPUiBNSVQpCj4gPiA+ID4gIC8qCj4g
-PiA+ID4gICAqIENvcHlyaWdodCAyMDE3IEljZW5vd3kgWmhlbmcgPGljZW5vd3lAYW9zYy54eXo+
-Cj4gPiA+ID4gLSAqCj4gPiA+ID4gLSAqIFRoaXMgZmlsZSBpcyBkdWFsLWxpY2Vuc2VkOiB5b3Ug
-Y2FuIHVzZSBpdCBlaXRoZXIgdW5kZXIgdGhlIHRlcm1zCj4gPiA+ID4gLSAqIG9mIHRoZSBHUEwg
-b3IgdGhlIFgxMSBsaWNlbnNlLCBhdCB5b3VyIG9wdGlvbi4gTm90ZSB0aGF0IHRoaXMgZHVhbAo+
-ID4gPiA+IC0gKiBsaWNlbnNpbmcgb25seSBhcHBsaWVzIHRvIHRoaXMgZmlsZSwgYW5kIG5vdCB0
-aGlzIHByb2plY3QgYXMgYQo+ID4gPiA+IC0gKiB3aG9sZS4KPiA+ID4gPiAtICoKPiA+ID4gPiAt
-ICogIGEpIFRoaXMgZmlsZSBpcyBmcmVlIHNvZnR3YXJlOyB5b3UgY2FuIHJlZGlzdHJpYnV0ZSBp
-dCBhbmQvb3IKPiA+ID4gPiAtICogICAgIG1vZGlmeSBpdCB1bmRlciB0aGUgdGVybXMgb2YgdGhl
-IEdOVSBHZW5lcmFsIFB1YmxpYyBMaWNlbnNlIGFzCj4gPiA+ID4gLSAqICAgICBwdWJsaXNoZWQg
-YnkgdGhlIEZyZWUgU29mdHdhcmUgRm91bmRhdGlvbjsgZWl0aGVyIHZlcnNpb24gMiBvZiB0aGUK
-PiA+ID4gPiAtICogICAgIExpY2Vuc2UsIG9yIChhdCB5b3VyIG9wdGlvbikgYW55IGxhdGVyIHZl
-cnNpb24uCj4gPiA+ID4gLSAqCj4gPiA+ID4gLSAqICAgICBUaGlzIGZpbGUgaXMgZGlzdHJpYnV0
-ZWQgaW4gdGhlIGhvcGUgdGhhdCBpdCB3aWxsIGJlIHVzZWZ1bCwKPiA+ID4gPiAtICogICAgIGJ1
-dCBXSVRIT1VUIEFOWSBXQVJSQU5UWTsgd2l0aG91dCBldmVuIHRoZSBpbXBsaWVkIHdhcnJhbnR5
-IG9mCj4gPiA+ID4gLSAqICAgICBNRVJDSEFOVEFCSUxJVFkgb3IgRklUTkVTUyBGT1IgQSBQQVJU
-SUNVTEFSIFBVUlBPU0UuICBTZWUgdGhlCj4gPiA+ID4gLSAqICAgICBHTlUgR2VuZXJhbCBQdWJs
-aWMgTGljZW5zZSBmb3IgbW9yZSBkZXRhaWxzLgo+ID4gPiA+IC0gKgo+ID4gPiA+IC0gKiBPciwg
-YWx0ZXJuYXRpdmVseSwKPiA+ID4gPiAtICoKPiA+ID4gPiAtICogIGIpIFBlcm1pc3Npb24gaXMg
-aGVyZWJ5IGdyYW50ZWQsIGZyZWUgb2YgY2hhcmdlLCB0byBhbnkgcGVyc29uCj4gPiA+ID4gLSAq
-ICAgICBvYnRhaW5pbmcgYSBjb3B5IG9mIHRoaXMgc29mdHdhcmUgYW5kIGFzc29jaWF0ZWQgZG9j
-dW1lbnRhdGlvbgo+ID4gPiA+IC0gKiAgICAgZmlsZXMgKHRoZSAiU29mdHdhcmUiKSwgdG8gZGVh
-bCBpbiB0aGUgU29mdHdhcmUgd2l0aG91dAo+ID4gPiA+IC0gKiAgICAgcmVzdHJpY3Rpb24sIGlu
-Y2x1ZGluZyB3aXRob3V0IGxpbWl0YXRpb24gdGhlIHJpZ2h0cyB0byB1c2UsCj4gPiA+ID4gLSAq
-ICAgICBjb3B5LCBtb2RpZnksIG1lcmdlLCBwdWJsaXNoLCBkaXN0cmlidXRlLCBzdWJsaWNlbnNl
-LCBhbmQvb3IKPiA+ID4gPiAtICogICAgIHNlbGwgY29waWVzIG9mIHRoZSBTb2Z0d2FyZSwgYW5k
-IHRvIHBlcm1pdCBwZXJzb25zIHRvIHdob20gdGhlCj4gPiA+ID4gLSAqICAgICBTb2Z0d2FyZSBp
-cyBmdXJuaXNoZWQgdG8gZG8gc28sIHN1YmplY3QgdG8gdGhlIGZvbGxvd2luZwo+ID4gPiA+IC0g
-KiAgICAgY29uZGl0aW9uczoKPiA+ID4gPiAtICoKPiA+ID4gPiAtICogICAgIFRoZSBhYm92ZSBj
-b3B5cmlnaHQgbm90aWNlIGFuZCB0aGlzIHBlcm1pc3Npb24gbm90aWNlIHNoYWxsIGJlCj4gPiA+
-ID4gLSAqICAgICBpbmNsdWRlZCBpbiBhbGwgY29waWVzIG9yIHN1YnN0YW50aWFsIHBvcnRpb25z
-IG9mIHRoZSBTb2Z0d2FyZS4KPiA+ID4gPiAtICoKPiA+ID4gPiAtICogICAgIFRIRSBTT0ZUV0FS
-RSBJUyBQUk9WSURFRCAiQVMgSVMiLCBXSVRIT1VUIFdBUlJBTlRZIE9GIEFOWSBLSU5ELAo+ID4g
-PiA+IC0gKiAgICAgRVhQUkVTUyBPUiBJTVBMSUVELCBJTkNMVURJTkcgQlVUIE5PVCBMSU1JVEVE
-IFRPIFRIRSBXQVJSQU5USUVTCj4gPiA+ID4gLSAqICAgICBPRiBNRVJDSEFOVEFCSUxJVFksIEZJ
-VE5FU1MgRk9SIEEgUEFSVElDVUxBUiBQVVJQT1NFIEFORAo+ID4gPiA+IC0gKiAgICAgTk9OSU5G
-UklOR0VNRU5ULiBJTiBOTyBFVkVOVCBTSEFMTCBUSEUgQVVUSE9SUyBPUiBDT1BZUklHSFQKPiA+
-ID4gPiAtICogICAgIEhPTERFUlMgQkUgTElBQkxFIEZPUiBBTlkgQ0xBSU0sIERBTUFHRVMgT1Ig
-T1RIRVIgTElBQklMSVRZLAo+ID4gPiA+IC0gKiAgICAgV0hFVEhFUiBJTiBBTiBBQ1RJT04gT0Yg
-Q09OVFJBQ1QsIFRPUlQgT1IgT1RIRVJXSVNFLCBBUklTSU5HCj4gPiA+ID4gLSAqICAgICBGUk9N
-LCBPVVQgT0YgT1IgSU4gQ09OTkVDVElPTiBXSVRIIFRIRSBTT0ZUV0FSRSBPUiBUSEUgVVNFIE9S
-Cj4gPiA+ID4gLSAqICAgICBPVEhFUiBERUFMSU5HUyBJTiBUSEUgU09GVFdBUkUuCj4gPiA+ID4g
-ICAqLwo+ID4gPgo+ID4gPiBTbyB0aGlzIGlzIHRoZSBmaXJzdCwgb2J2aW91cywgb25lIHRoYXQg
-eW91IHRhbGsgYWJvdXQgaW4geW91ciBjb21taXQKPiA+ID4gbG9nLiBXaGlsZSB0aGUgbGljZW5z
-ZSBzYXlzIHRoYXQgaXQncyBYMTEsIFNQRFggcmVwb3J0cyB0aGF0IGl0J3Mgbm93Cj4gPiA+IE1J
-VCwgY2FuIHlvdSBjbGFyaWZ5IHRoaXM/Cj4gPgo+ID4gQXMgZmFyIGFzIEkga25vdyBYMTEgYW5k
-IE1JVCBhcmUgc2ltaWxhciBhbmQgTUlUIGlzIHByZWZlcnJlZCBpbiBMaW51eC4KPiA+IHNlZTog
-TElDRU5TRVMvcHJlZmVycmVkLgo+ID4gU28gSSBoYXZlIGNvbnZlcnRlZCB0aGUgWDExIHRvIE1J
-VCBidXQgaXQgY2FuIGJlIGFuIGV4cGxpY2l0IGNvbW1pdC4KPiA+IFRoaXMgaXMgZG9uZSBpbXBs
-aWNpdGx5IGluIHRoZSBBbWxvZ2ljIGNvbW1pdC4KPgo+IEl0J3Mgbm90IHJlYWxseSBteSBtYWlu
-IGNvbmNlcm4sIGl0J3MgbW9yZSB0aGF0IGlmIGl0J3MgYSBsaWNlbnNlCj4gY2hhbmdlLCB0aGVu
-IHlvdSBuZWVkIHRoZSBhZ3JlZW1lbnQgb2YgYWxsIHRoZSBhdXRob3JzLCBzbyBiYXNpY2FsbHkK
-PiBhbnlvbmUgdGhhdCB0b3VjaGVkIGFsbCB0aG9zZSBEVC4KT0sKCj4KPiA+ID4gPiBkaWZmIC0t
-Z2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWE2NC1waW5lNjQtbHRz
-LmR0cyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1hNjQtcGluZTY0LWx0
-cy5kdHMKPiA+ID4gPiBpbmRleCA3MmQ2OTYxZGMzMTIuLjJjYTM2NTgwNDM2YyAxMDA2NDQKPiA+
-ID4gPiAtLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktYTY0LXBpbmU2
-NC1sdHMuZHRzCj4gPiA+ID4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5uZXIvc3Vu
-NTBpLWE2NC1waW5lNjQtbHRzLmR0cwo+ID4gPiA+IEBAIC0xLDYgKzEsNSBAQAo+ID4gPiA+ICsv
-LyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjArIE9SIE1JVCkKPiA+ID4gPiAgLyoK
-PiA+ID4gPiAtICogU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4wKyBPUiBNSVQpCj4g
-PiA+ID4gLSAqCj4gPiA+ID4gICAqIENvcHlyaWdodCAoYykgMjAxOCBBUk0gTHRkLgo+ID4gPiA+
-ICAgKi8KPiA+ID4KPiA+ID4gVGhpcyBpcyBhbm90aGVyIGtpbmQgb2YgY2hhbmdlcyB0aG91Z2gu
-IFRoZSBTUERYIGlkZW50aWZpZXIgaXMgdGhlcmUsCj4gPiA+IGJ1dCB1bmRlciB0aGUgd3Jvbmcg
-Zm9ybWF0IGFuZCB5b3UncmUgZml4aW5nIGl0Lgo+ID4gPgo+ID4gPiBUaGF0IGJlaW5nIHNhaWQs
-IEknbSBub3QgYSBzdXBlciBmYW4gb2YgbWl4aW5nIHRoZSB0d28gY29tbWVudCBzdHlsZXMKPiA+
-ID4gZm9yIHR3byBsaW5lcy4KPiA+ID4KPiA+ID4gV2hhdCBhYm91dCB1c2luZyBvbmx5IC8vIHN0
-eWxlIGNvbW1lbnRzIGZvciB0aGUgaGVhZGVyPwo+ID4KPiA+IE1vc3Qgb2YgdGhlIG90aGVyIGR0
-cyB1c2UgdGhpcyBzdHlsZSBmb3IgdGhlIGhlYWRlciBzbyBJIHdvdWxkIGxpa2UgdG8KPiA+IGtl
-ZXAgdGhpcyBraW5kIG9mIHN0eWxlLgo+ID4gRXhjZXB0IGlmIERUIG1haW50YWluZXJzIHdhbnQg
-ZXhwbGljaXR5IHRvIG1vdmUgdG8gYW5vdGhlciBzdHlsZS4KPiA+IEhhdmluZyBhIGNvaGVyZW5j
-eSBpbiBhbGwgZHRzIGlzIGJldHRlciBhbmQgd2UgY2FuIG1vdmUgdG8gYW5vdGhlcgo+ID4gc3R5
-bGUgd2l0aCBhIHNpbXBsZSBzY3JpcHQuCj4KPiBTb21lIGRyaXZlcnMgYWxyZWFkeSB1c2UgdGhl
-IC8vIGNvbW1lbnQgZm9yIHRoZWlyIGNvcHlyaWdodCBub3RpY2UsCj4gdGhlIGNvZGluZyBzdHls
-ZSBhbGxvd3MgaXQgZm9yIHNpbmdsZSBsaW5lIGNvbW1lbnQgYW5kIG91ciBEVHMgYWxyZWFkeQo+
-IHVzZSBpdCwgc28gaXQncyB0aGUgY2xlYW5lc3Qgc29sdXRpb24gaW1oby4KT2ssIEkgd2lsbCBn
-byBmb3IgdGhpcyBzdHlsZS4KCj4KPiA+ID4gPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290
-L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LWJlZWxpbmstZ3MxLmR0cyBiL2FyY2gvYXJtNjQvYm9v
-dC9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi1iZWVsaW5rLWdzMS5kdHMKPiA+ID4gPiBpbmRleCBm
-MzM1Zjc0ODJhNzMuLjg0YjdlOTkzNjMwMCAxMDA2NDQKPiA+ID4gPiAtLS0gYS9hcmNoL2FybTY0
-L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktaDYtYmVlbGluay1nczEuZHRzCj4gPiA+ID4gKysr
-IGIvYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LWJlZWxpbmstZ3MxLmR0
-cwo+ID4gPiA+IEBAIC0xLDQgKzEsNCBAQAo+ID4gPiA+IC0vLyBTUERYLUxpY2Vuc2UtSWRlbnRp
-ZmllcjogKEdQTC0yLjArIG9yIE1JVCkKPiA+ID4gPiArLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZp
-ZXI6IChHUEwtMi4wKyBPUiBNSVQpCj4gPiA+ID4gIC8qCj4gPiA+ID4gICAqIENvcHlyaWdodCAo
-QykgMjAxOSBDbMOpbWVudCBQw6lyb24gPHBlcm9uLmNsZW1AZ21haWwuY29tPgo+ID4gPiA+ICAg
-Ki8KPiA+ID4KPiA+ID4gQW5kIEknbSBub3Qgc3VyZSB3aGF0IHRoaXMgb25lIChhbmQgdGhlIG5l
-eHQpIGlzPwo+ID4KPiA+IFRoZSBsaWNlbnNlIGV4cHJlc3Npb25zIGluIGR1YWwgbGljZW5zZWQg
-ZmlsZXMgaXMgd3JvbmcgaGVyZSwgIk9SIgo+ID4gc2hvdWxkIGJlIHVwcGVyY2FzZS4KPiA+IEkg
-Y2FuIG1vdmUgaXQgdG8gYSBzZXBhcmF0ZSBjb21taXQgaWYgeW91IGxpa2UuCj4KPiBBaCwgcmln
-aHQsIGluZGVlZCwgdGhpcyBzaG91bGQgYmUgaW4gYSBzZXBhcmF0ZSBwYXRjaC4KU28gaG93IG1h
-bnkgcGF0Y2ggZG8geW91IHJlY29tbWVuZCBoZXJlID8KCjEgZm9yIHRoZSBvciAtPiBPUiBzdHls
-ZSBmaXguCjEgdG8gY2hhbmdlIHRvIFNQRFguCmFuZCAxIHRvIHVzZSB0aGUgc2FtZSAvLyBzdHls
-ZSBldmVyeXdoZXJlID8KClJlZ2FyZHMsCkNsZW1lbnQKCj4KPiBUaGFua3MhCj4gTWF4aW1lCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
-a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
-bmVsCg==
+On Mon, Dec 2, 2019 at 12:33 PM Sam Ravnborg <sam@ravnborg.org> wrote:
+>
+> This patchset include a couple of different
+> things - all related to panels.
+>
+> - The panel callbacks are optional - so drop error if
+>   callback is not present.
+>
+> - Add support for backlight in drm_panel.
+>   This allows us to make much simpler backlight
+>   support to most panels.
+>   The patchset include conversion of most of the
+>   trivial cases.
+>
+> - Drop drm_connector from drm_panel.
+>   This change required many changes to most
+>   panels and many bridges and display drivers.
+>   This is by far the most invasive change in this patchset.
+>
+> - Drop the unused get_timings() callback.
+>   No users, so no need to keep it around.
+>
+> With this patchset drm_panel_(attach|detach) are nop's
+> but they are kept for now.
+>
+> A few of these patches has been sent out before - but versioning
+> started again from v1 - as the most patches are new.
+>
+> I have tested the panel-simple changes, and thus some
+> of the infrastructure changes.
+> The testing was done on an earlier iteration - and I ended
+> up submitting this as Laurent and others started to depend on it.
+> Jitao has a patch to add more callbacks, and I wanted the
+> simplification of the callbacks before we add more callbacks.
+>
+>         Sam
+>
+>
+> Sam Ravnborg (26):
+>       drm/drm_panel: no error when no callback
+>       drm/panel: add backlight support
+>       drm/panel: simple: use drm_panel backlight support
+>       drm: get drm_bridge_panel connector via helper
+>       drm/panel: add drm_connector argument to get_modes()
+>       drm/panel: decouple connector from drm_panel
+>       drm/panel: remove get_timings
+>       drm/panel: drop drm_device from drm_panel
+>       drm/panel: feiyang-fy07024di26a30d: use drm_panel backlight support
+>       drm/panel: ilitek-ili9881c: use drm_panel backlight support
+>       drm/panel: innolux-p079zca: use drm_panel backlight support
+>       drm/panel: kingdisplay-kd097d04: use drm_panel backlight support
+>       drm/panel: lvds: use drm_panel backlight support
+>       drm/panel: olimex-lcd-olinuxino: use drm_panel backlight support
+>       drm/panel: osd-osd101t2587-53ts: use drm_panel backlight support
+>       drm/panel: panasonic-vvx10f034n00: use drm_panel backlight support
+>       drm/panel: raydium-rm68200: use drm_panel backlight support
+>       drm/panel: rocktech-jh057n00900: use drm_panel backlight support
+>       drm/panel: ronbo-rb070d30: use drm_panel backlight support
+>       drm/panel: seiko-43wvf1g: use drm_panel backlight support
+>       drm/panel: sharp-lq101r1sx01: use drm_panel backlight support
+>       drm/panel: sharp-ls043t1le01: use drm_panel backlight support
+>       drm/panel: sitronix-st7701: use drm_panel backlight support
+>       drm/panel: sitronix-st7789v: use drm_panel backlight support
+>       drm/panel: tpo-td028ttec1: use drm_panel backlight support
+>       drm/panel: tpo-tpg110: use drm_panel backlight support
+>
+>  drivers/gpu/drm/bridge/analogix/analogix-anx6345.c |   2 +-
+>  drivers/gpu/drm/bridge/analogix/analogix_dp_core.c |   2 +-
+>  drivers/gpu/drm/bridge/panel.c                     |  18 +++-
+>  drivers/gpu/drm/bridge/parade-ps8622.c             |   2 +-
+>  drivers/gpu/drm/bridge/tc358764.c                  |   2 +-
+>  drivers/gpu/drm/bridge/tc358767.c                  |   2 +-
+>  drivers/gpu/drm/bridge/ti-sn65dsi86.c              |   2 +-
+>  drivers/gpu/drm/drm_panel.c                        |  96 ++++++++++++++----
+>  drivers/gpu/drm/exynos/exynos_drm_dpi.c            |   2 +-
+>  drivers/gpu/drm/exynos/exynos_drm_dsi.c            |   2 +-
+>  drivers/gpu/drm/fsl-dcu/fsl_dcu_drm_rgb.c          |   2 +-
+>  drivers/gpu/drm/imx/imx-ldb.c                      |   2 +-
+>  drivers/gpu/drm/imx/parallel-display.c             |   2 +-
+>  drivers/gpu/drm/mediatek/mtk_dsi.c                 |   2 +-
+>  .../gpu/drm/msm/disp/mdp4/mdp4_lvds_connector.c    |   2 +-
+>  drivers/gpu/drm/msm/dsi/dsi_manager.c              |   2 +-
+
+How come the diff stat in the cover letter here indicates a change to
+this file, yet I cannot find a change to this file in any of the
+patches?  What am I missing?
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
