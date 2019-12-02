@@ -2,62 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3605A10F2BD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 23:15:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A535010F2DD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 23:28:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eqvQ39C0EPgHSZHJ6yFsv2UwyNKYz8VzhewphqBtb3s=; b=qiKbosFT+pjqu+
-	pTbB6iwohVDKZcjpMgY4t3sTCJfsjhzivDwxlR7XmaqW1lA1IWGmW/WSroN3WewknZbhLMUwoE+vR
-	mADFwFQw/31wFm5HJFQDXh+wwX/UK1ootXg+cPVS9CmpD5OPnm5GcuG8C4CoNveVPULgHvWc5hlPL
-	HFVnmg5+aLSXFs7n3I+b4fq/ldgv5RFsbxJUFTU1EVxCvQMDXRubiLlEq+RBcf7JX1mPNm2m8spY+
-	7I2Klb5s6znLpsDp5V6PuyVwA0ENYRIoVzaifNNnMOp0QrDBb4sagjmXesjhqKLSOMBAONpRmPB4p
-	KSLgmErngpBp7AuzMr4A==;
+	List-Owner; bh=NMa/GGPYNbdKkHixcI2RM9sLLWq6SPm+tGRFujHMDIk=; b=PWw87Ny6OlDbuT
+	3SRvRevYsRZg+Qm1QufjToqZXxPSzyUa8qh2SZSUxI0CN+/qZxAUkvoPOZ+FkwQkBUhkGm6BLbWuA
+	9PJZrS1S0Xxe9FTn5tfLGO4AJ6tidS7wbqaY/V4FY3KZ4GlDwvzBrqA6bXkaH5bbTP6kUrfj2LrpK
+	BNAHpjI/0NihxTgeW+ePntK7XTGDoZx2hoi1nZyLLfjG+3m0EmifN/D9xG8NJshKuz9j70pHycgNZ
+	IIx+AzzUokz/E6hV44G/zvgeXqWpYWyWhR7zibcCmMIUlRY+TtHFvNc6xg+kko/Ms7l50LHNNEds9
+	EF32HUPYLTGSne2EolKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibtyn-00045J-Jd; Mon, 02 Dec 2019 22:15:41 +0000
-Received: from mail.andi.de1.cc ([2a01:238:4321:8900:456f:ecd6:43e:202c])
+	id 1ibuB7-00018w-PO; Mon, 02 Dec 2019 22:28:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibtyd-00044e-RC
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 22:15:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=kemnade.info; s=20180802; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=87DJGgaOP4OR26er35jT2d/3xlEOtUkjxl/DEu2Hv4A=; b=hJ2jxg0GQjdVMV90G3GTon9LzP
- 71+pbAIhRDz3VxHs5UvWw2oSaW56+b3e9zgmTUTcandElA+kNrbzsnGSsp9BNhIcjj/b9y0gS2U5y
- 86W+CopAbhsHmyZresdzs0aZ4nRuxZyZc6L6WiVP30w3R1dqcc6NTv1USIjxt/xdoCN8=;
-Received: from p200300ccff066f001a3da2fffebfd33a.dip0.t-ipconnect.de
- ([2003:cc:ff06:6f00:1a3d:a2ff:febf:d33a] helo=aktux)
- by mail.andi.de1.cc with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <andreas@kemnade.info>)
- id 1ibtyV-0008V1-Oz; Mon, 02 Dec 2019 23:15:24 +0100
-Date: Mon, 2 Dec 2019 23:15:22 +0100
-From: Andreas Kemnade <andreas@kemnade.info>
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Subject: Re: [PATCH] ARM: OMAP2+: Fix warnings with broken
- omap2_set_init_voltage()
-Message-ID: <20191202231522.5e7fe3f8@aktux>
-In-Reply-To: <8FFD44DB-73F8-4807-91E1-C97DA8F781BA@goldelico.com>
-References: <20190924233222.52757-1-tony@atomide.com>
- <8FFD44DB-73F8-4807-91E1-C97DA8F781BA@goldelico.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1ibuB1-00018d-3f
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 22:28:20 +0000
+Received: from mail-qk1-f169.google.com (mail-qk1-f169.google.com
+ [209.85.222.169])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A308A20866
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon,  2 Dec 2019 22:28:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575325698;
+ bh=vtI7mRkc90kox/lp/QnBdenTVtng043mxOskJbzb9LY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=raTio8Ys9WlfQ98qiG2STnIIyPWVEnVIJb/FJkcQEoyHYxDITPZpNIkt5Y2yp16Ts
+ cSsS+PL/X2nuQTOuK7wBZo8pC7jiTNQfD/fR/7rgytt+/QGcfnzlE76pmReo+TDIUk
+ J9lMFH+gNRZ8S4//f6ye6YEbjkvZgO5VRaZPSJg8=
+Received: by mail-qk1-f169.google.com with SMTP id f5so1309965qkm.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Dec 2019 14:28:18 -0800 (PST)
+X-Gm-Message-State: APjAAAUaZPynrHHySDsM9BS/xstLN2lYLY87nqIr5NH50OVU6LmrFyEn
+ kkmEmCGwi8iaQyD0WT2XT3gIvzHYur4fBCFKBw==
+X-Google-Smtp-Source: APXvYqwalRjZ37h1dEK3CqI89rRu9nNpBLiaC1kZVv+jq2pIZ7D2g8faIIJOpR+XFOSAiuprP7WyGvAVM0hjiKKL/qQ=
+X-Received: by 2002:a37:4904:: with SMTP id w4mr1472009qka.119.1575325697704; 
+ Mon, 02 Dec 2019 14:28:17 -0800 (PST)
 MIME-Version: 1.0
-X-Spam-Score: -1.0 (-)
+References: <20191128090726.51107-1-linus.walleij@linaro.org>
+In-Reply-To: <20191128090726.51107-1-linus.walleij@linaro.org>
+From: Rob Herring <robh@kernel.org>
+Date: Mon, 2 Dec 2019 16:28:05 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqL5RpR9QVsdJGZoBfGfeAmpSoVKW=60zHLWZ3BkPuwbJQ@mail.gmail.com>
+Message-ID: <CAL_JsqL5RpR9QVsdJGZoBfGfeAmpSoVKW=60zHLWZ3BkPuwbJQ@mail.gmail.com>
+Subject: Re: [PATCH v6] drm/panel: Add generic DSI display controller YAML
+ bindings
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_141532_179497_9A483121 
-X-CRM114-Status: GOOD (  18.06  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191202_142819_194497_A9D4F666 
+X-CRM114-Status: GOOD (  27.19  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -66,6 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,58 +86,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- Tony Lindgren <tony@atomide.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, =?UTF-8?B?QW5kcsOp?= Roth <neolynx@gmail.com>,
- Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <aford173@gmail.com>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Stephan Gerhold <stephan@gerhold.net>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Sean Paul <sean@poorly.run>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCAyIERlYyAyMDE5IDIyOjA5OjI2ICswMTAwCiJILiBOaWtvbGF1cyBTY2hhbGxlciIg
-PGhuc0Bnb2xkZWxpY28uY29tPiB3cm90ZToKCj4gSGkgVG9ueSwKPiAKPiA+IEFtIDI1LjA5LjIw
-MTkgdW0gMDE6MzIgc2NocmllYiBUb255IExpbmRncmVuIDx0b255QGF0b21pZGUuY29tPjoKPiA+
-IAo+ID4gVGhpcyBjb2RlIGlzIGN1cnJlbnRseSB1bmFibGUgdG8gZmluZCB0aGUgZHRzIG9wcCB0
-YWJsZXMgYXMgdGktY3B1ZnJlcQo+ID4gbmVlZHMgdG8gc2V0IHRoZW0gdXAgZmlyc3QgYmFzZWQg
-b24gc3BlZWQgYmlubmluZy4KPiA+IAo+ID4gV2Ugc3RvcHBlZCBpbml0aWFsaXppbmcgdGhlIG9w
-cCB0YWJsZXMgd2l0aCBwbGF0Zm9ybSBjb2RlIHllYXJzIGFnbyBmb3IKPiA+IGRldmljZSB0cmVl
-IGJhc2VkIGJvb3Rpbmcgd2l0aCBjb21taXQgOTJkNTE4NTZkNzQwICgiQVJNOiBPTUFQMys6IGRv
-IG5vdAo+ID4gcmVnaXN0ZXIgbm9uLWR0IE9QUCB0YWJsZXMgZm9yIGRldmljZSB0cmVlIGJvb3Qi
-KSwgYW5kIGFsbCBvZiBtYWNoLW9tYXAyCj4gPiBpcyBub3cgYm9vdGluZyB1c2luZyBkZXZpY2Ug
-dHJlZS4KPiA+IAo+ID4gV2UgY3VycmVudGx5IGdldCB0aGUgZm9sbG93aW5nIGVycm9ycyBvbiBp
-bml0Ogo+ID4gCj4gPiBvbWFwMl9zZXRfaW5pdF92b2x0YWdlOiB1bmFibGUgdG8gZmluZCBib290
-IHVwIE9QUCBmb3IgdmRkX21wdQo+ID4gb21hcDJfc2V0X2luaXRfdm9sdGFnZTogdW5hYmxlIHRv
-IHNldCB2ZGRfbXB1Cj4gPiBvbWFwMl9zZXRfaW5pdF92b2x0YWdlOiB1bmFibGUgdG8gZmluZCBi
-b290IHVwIE9QUCBmb3IgdmRkX2NvcmUKPiA+IG9tYXAyX3NldF9pbml0X3ZvbHRhZ2U6IHVuYWJs
-ZSB0byBzZXQgdmRkX2NvcmUKPiA+IG9tYXAyX3NldF9pbml0X3ZvbHRhZ2U6IHVuYWJsZSB0byBm
-aW5kIGJvb3QgdXAgT1BQIGZvciB2ZGRfaXZhCj4gPiBvbWFwMl9zZXRfaW5pdF92b2x0YWdlOiB1
-bmFibGUgdG8gc2V0IHZkZF9pdmEKPiA+IAo+ID4gTGV0J3MganVzdCBkcm9wIHRoZSB1bnVzZWQg
-Y29kZS4gTm93YWRheXMgdGktY3B1ZnJlcSBzaG91bGQgYmUgdXNlZCB0bwo+ID4gdG8gaW5pdGlh
-bGl6ZSB0aGluZ3MgcHJvcGVybHkuCj4gPiAKPiA+IENjOiBBZGFtIEZvcmQgPGFmb3JkMTczQGdt
-YWlsLmNvbT4KPiA+IENjOiBBbmRyw6kgUm90aCA8bmVvbHlueEBnbWFpbC5jb20+Cj4gPiBDYzog
-IkguIE5pa29sYXVzIFNjaGFsbGVyIiA8aG5zQGdvbGRlbGljby5jb20+Cj4gPiBDYzogTmlzaGFu
-dGggTWVub24gPG5tQHRpLmNvbT4KPiA+IENjOiBUZXJvIEtyaXN0byA8dC1rcmlzdG9AdGkuY29t
-Pgo+ID4gU2lnbmVkLW9mZi1ieTogVG9ueSBMaW5kZ3JlbiA8dG9ueUBhdG9taWRlLmNvbT4KPiA+
-IC0tLQo+ID4gCj4gPiBHdXlzLCBwbGVhc2UgY2hlY2sgYW5kIGFjayBpZiB3ZSBjYW4gcmVhbGx5
-IGRvIHRoaXMgdG8gZ2V0IHJpZCBvZiBzb21lCj4gPiBwb2ludGxlc3MgZG1lc2cgLWwzIGVycm9y
-cyB3aXRob3V0IGFmZmVjdGluZyB0aGUgb25nb2luZyBjcHVmcmVxIGFuZAo+ID4gdm9sdGFnZSB3
-b3JrLiAgCj4gCj4gdW5mb3J0dW5hdGVseSB3ZSBkaWQgbm90IHlldCB0ZXN0IGluIGNvbWJpbmF0
-aW9uIHdpdGggdGhlIDFHSHogT1BQCj4gcGF0Y2hlcyBmb3Igb21hcDM2MzAgKHF1ZXVlZCBmb3Ig
-djUuNS1yYzEpIGFuZCBpdCBhcHBlYXJzIHRoYXQgdGhpcwo+IHBhdGNoIGJyZWFrcyB0aGUgMUdI
-eiBPUFAuCj4gCj4gVGhlIHN5bXB0b20gaXMgdGhhdCBpdCB3b3JrcyBmaW5lIG9uIGEgZG0zNzMw
-IHdpdGggODAwTUh6IHJhdGluZwo+IGJ1dCByZXN1bHRzIGluIHNwdXJpb3VzIGtlcm5lbCBwYW5p
-Y3MsIHN0YWNrIGNvcnJ1cHRpb24sIHZpcnR1YWwgbWVtb3J5Cj4gZmFpbHVyZXMsIE9uZU5BTkQg
-RE1BIHRpbWVvdXRzIGV0Yy4gb24gYSBkbTM3MzAgd2l0aCAxR0h6IHNwZWVkIGdyYWRlLgo+IApJ
-ICNpZiAwJ2VkIHRoZSAxR2h6IG9wcCBhbmQgZm91bmQgb3V0IHRoYXQgdGhlIE9uZU5BTkQgRE1B
-IHRpbWVvdXRzCmFyZSBpbmRlcGVuZGFudCBvZiAxR2h6LiBCdXQgdGhlIHJlc3VsdCBpcyBpbnRl
-cmVzdGluZzoKV2l0aCB0aGlzIHBhdGNoCnh4ZCAvZGV2L210ZDAgc2hvd3Mgb25seSBmZgp3aXRo
-b3V0IHRoaXMgcGF0Y2ggZ2l2ZXMgY29udGVudCwgaXQgaXMgc2xvd2VyLgpJbiBib3RoIGNhc2Vz
-IEkgc2VlClsgIDQ3Ni41MzM0NzddIG9tYXAyLW9uZW5hbmQgNDAwMDAwMC5vbmVuYW5kOiB0aW1l
-b3V0IHdhaXRpbmcgZm9yIERNQQoKUmVnYXJkcywKQW5kcmVhcwoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Nov 28, 2019 at 3:07 AM Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> This adds a starting point for processing and defining generic
+> bindings used by DSI display controllers and panels attached to
+> the virtual DSI ports.
+>
+> Cc: Stephan Gerhold <stephan@gerhold.net>
+> Cc: devicetree@vger.kernel.org
+> Suggested-by: Rob Herring <robh@kernel.org>
+> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+> ---
+> ChangeLog v5->v6:
+> - Rename subject to pertain to DSI display controllers in general.
+> - Change some of the wording in the DSI controller description text,
+>   making it clear that the binding pertains to the combination of a
+>   DSI controller with at least one panel attached.
+> - Add a proper compiling example.
+> ChangeLog v4->v5:
+> - Drop the example.
+> - I still have a vert annoying error message in the Sony
+>   panel bindings that uses this schema:
+>   sony,acx424akp.example.dt.yaml: panel@0: $nodename:0: 'panel@0' does not match '^dsi-controller(@.*)?$'
+>   As this is modeled very closely to
+>   Documentation/devicetree/bindings/net/mdio.yaml
+>   and that one doesn't emit this type of warning for its ethernet-phy@0
+>   etc I am pretty much clueless and just can't see what the problem
+>   is.
+> - If I can't figure this out the only viable next step is to drop the
+>   ambition to create yaml bindings simply because I'm unable to do
+>   it, and go back to traditional text bindings :(
+> ChangeLog v3->v4:
+> - Rename into display/dsi-controller.yaml
+> - Require a virtual channel number for the DSI panel, as
+>   DSI have this 2-bit virtual address field.
+> - Bring in some but not all properties from the existing MIPI
+>   DSI bindings. This schema can be used with simpler panels but
+>   not complex panels with multiple virtual channels for the
+>   moment. Let's handle it when we get there.
+> - Add an example.
+> ChangeLog v2->v3:
+> - Make a more complete DSI panel binding including the controller
+>   and its address-cells and size-cells and a pattern for the panel
+>   nodes. The panel is one per DSI master, the reg property is
+>   compulsory but should always be 0 (as far as I can tell) as
+>   only one panel can be connected. The bus doesn't really have
+>   any addresses for the panel, the address/reg notation seems
+>   to be cargo-culted from the port graphs and is not necessary
+>   to parse some device trees, it is used to tell whether the
+>   node is a panel or not rather than any addressing.
+> - I have no idea how many displays you can daisychain on a single
+>   DSI master, I just guess 15 will be enough. The MIPI-specs
+>   are memberwalled. Someone who knows can tell perhaps?
+> ChangeLog v1->v2:
+> - New patch after feedback.
+> ---
+>  .../bindings/display/dsi-controller.yaml      | 91 +++++++++++++++++++
+>  1 file changed, 91 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/dsi-controller.yaml
+
+I'll let you apply to drm-misc.
+
+Reviewed-by: Rob Herring <robh@kernel.org>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
