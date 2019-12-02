@@ -2,61 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A52F010E9B7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 12:44:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98C8F10E9BF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 12:45:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QVXAnoZmRDS95ydEpR/k1pUOENNt8b5Fk75RdYHBPW8=; b=qRsjBvigcW9YFl
-	0BOsOfM94zxG6K3CgaPaejBSInOX+q63Y58KfqAdxTcMx4UfBly+DTtWWQYmcFuvEzCLpJrA4f4n3
-	HfLHWZSzKRN1KRmp8RY/E1G6bB58r7MT9Zs1JxUu7Nhhxy0D7ilGcX6qOwpkP6hAs6gg7eDCd6iJW
-	hd1B5Q6tVOJYS2dWBteO9uG3q/6GWylVWis6wME7CJRgLNQCzD7oeo7wVBxwlFJ2uexzbuf9eNB6M
-	5SsFi1SPYNV94c8FZt3yIDCFc0jGofBaQMTRQY7Xhm6ruFaU7BO0XHY5uhhPk9nfXntY1DShpCxmk
-	HbIehmlaj8KIdDIyAI4g==;
+	List-Owner; bh=ooHdpGx8CZQ5HxqarnDsLygo5IwXi7lDccSfyF3lleA=; b=AUcfnib/9s2U/c
+	j37VOnrH18EVxr5MVxw1ZAeVPQwWJitawlNK7INHenp2KBypBmNr/UdNkIwIkUsieUv8WF9BOOsvN
+	EovFlzrVsQRQ1055v7UcoHt8P7voKuWZ+dlVHiuHZWo2k+GnQiMfPyoxjeEjbFK9RDzAfLY42HVtu
+	QDzklJoMeDP0vCy7VAL78fgCQ6OdTOMIlfn5AmxrWHFoiul4wCAZ/LZLfvs6T13K+zOSo76nSNiHX
+	tsjc+PHDidKqZ0YVVK6fuvRmd2zQ9udu+j1PxtOTI5gXZTVX7/zfKAcgbqcF0kgUbhAqVq5zIn5Io
+	NmawhGyoVBsarXO68pGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibk85-0000d2-T2; Mon, 02 Dec 2019 11:44:37 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1ibk8h-0001LK-4h; Mon, 02 Dec 2019 11:45:15 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibk7x-0000bq-5E
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 11:44:32 +0000
-X-Originating-IP: 90.65.102.129
-Received: from kb-xps (lfbn-1-1480-129.w90-65.abo.wanadoo.fr [90.65.102.129])
- (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 7547E240006;
- Mon,  2 Dec 2019 11:44:19 +0000 (UTC)
-Date: Mon, 2 Dec 2019 12:44:18 +0100
-From: Kamel Bouhara <kamel.bouhara@bootlin.com>
-To: Eugen.Hristev@microchip.com
-Subject: Re: [PATCH] power: reset: at91-reset: add sysfs interface to the
- power on reason
-Message-ID: <20191202114418.GA196913@kb-xps>
-References: <20191017124058.19300-1-kamel.bouhara@bootlin.com>
- <034c9d01-633a-eeaa-f61f-d185be7227f2@microchip.com>
- <20191129110253.GX299836@piout.net>
- <00f4e9a2-f6bd-9242-cafd-9c0c4f4dc619@microchip.com>
+ id 1ibk8T-0000te-Qv
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 11:45:03 +0000
+Received: by mail-lf1-x141.google.com with SMTP id n25so2652777lfl.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Dec 2019 03:45:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=9dbeOa/yZiXLwAKhqVdLm2n/zVETLaeGOMkXijhyOxI=;
+ b=JLrik/Q57hkA2pLMTsCgFgbbXQCV50ILFodTufcKAu1zVJThyK0XovKHqlm3wjIFXo
+ thgwxcec57cupokH5vqIRP6Afm0WjEpc8qBe4nJwWGCNznGEyDTdlFrWzt3OQTWUtu7B
+ 9ojKBJ/a48Jp/wQ+CQoM8wncSSs9mNnuHZ41QHW7sAbD1bWBUOfgQH8nXdwsrzD82tOh
+ +IJzbYXg/z1w5aY7ZGrLvj9474omGAyq7H6tFWkuH4FUM5PHsVMnE5lVUh/cwKaJl5tf
+ /hhm7GuvMk6MXuDzwMfDqLgev32ArbhFfgAw6Pg0WZ76yLzTdJvlrpcRC1xyT7XWfzk0
+ QIiA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=9dbeOa/yZiXLwAKhqVdLm2n/zVETLaeGOMkXijhyOxI=;
+ b=tfHQ27UgLJ46BN+WTCAMyMBfNUGk69pWGdcteLk0VdG29BYTGng0uWcHDuXgWx2Nwm
+ X6cpQg9JSfy2fdAWPyPn8XVLIQ/20ITCavgTthloh8jNzrgn0cdXTwcdf23rV6B6GpXY
+ fQSp0rSbrFwDod5SExPEmuRiRVg84eSRlM+GDuBrxDbzdAc7XfdVm3f9FfRu2c5xqKeJ
+ ZFaeUaPe/x5eeSURUbYDzPDFPwHTJMk+Tr/KMNeiEbIW1fzE/yMwn4sAGbtUjdH2VDfB
+ xSTUQeA9VPsMqcJ/DAcRSUFNdRVaAirmL1j13Qz+vIwSO+VJ6xEbijaI4CS1DT0TMVTF
+ ko9w==
+X-Gm-Message-State: APjAAAXO0vnapB3HCasbU343ZejyU+/1Rk1o3iiKecSjYXXIxggQwvyY
+ kMm1Ia1IOZ11Z98y7aB2BxRAdRBB5SGHiJr3VqRnTw==
+X-Google-Smtp-Source: APXvYqyoHJVudY4Th9gkUkwA7ZvcT7SMc/yaucVRZjkFgzCxhl/qzF5ng9XGEy78xknVHWJ5WXqV+foidMFPzNGJqww=
+X-Received: by 2002:ac2:4945:: with SMTP id o5mr41600526lfi.93.1575287099487; 
+ Mon, 02 Dec 2019 03:44:59 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <00f4e9a2-f6bd-9242-cafd-9c0c4f4dc619@microchip.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+References: <20191129172537.31410-1-m.felsch@pengutronix.de>
+In-Reply-To: <20191129172537.31410-1-m.felsch@pengutronix.de>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 2 Dec 2019 12:44:48 +0100
+Message-ID: <CACRpkdaSmwORgetv7aZjtgk+2OchcvQR4SBjdWQ4KsRMHuUvSg@mail.gmail.com>
+Subject: Re: [PATCH v3 0/6] DA9062 PMIC features
+To: Marco Felsch <m.felsch@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_034429_471859_38296B41 
-X-CRM114-Status: GOOD (  22.33  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191202_034501_923874_B26A8D26 
+X-CRM114-Status: GOOD (  10.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.193 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,221 +90,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, sre@kernel.org, Ludovic.Desroches@microchip.com,
- thomas.petazzoni@bootlin.com, Claudiu.Beznea@microchip.com,
- linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Support Opensource <support.opensource@diasemi.com>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Andrew Jeffery <andrew@aj.id.au>, Mark Brown <broonie@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Sascha Hauer <kernel@pengutronix.de>, Lee Jones <lee.jones@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Nov 29, 2019 at 11:15:18AM +0000, Eugen.Hristev@microchip.com wrote:
->
->
-> On 29.11.2019 13:02, Alexandre Belloni wrote:
->
-> > On 29/11/2019 10:57:45+0000, Claudiu.Beznea@microchip.com wrote:
-> >> Hi Kamel,
-> >>
-> >> On 17.10.2019 15:40, Kamel Bouhara wrote:
-> >>> This patch export the power on reason through the sysfs interface and
-> >>> introduce some generic reset sources.
-> >>> Update the ABI documentation to list current power on sources.
-> >>>
-> >>> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> >>> ---
-> >>>   .../sysfs-devices-platform-power-on-reason    | 14 ++++++
-> >>>   drivers/power/reset/at91-reset.c              | 44 +++++++++++++------
-> >>>   include/linux/power/power_on_reason.h         | 19 ++++++++
-> >>>   3 files changed, 64 insertions(+), 13 deletions(-)
-> >>>   create mode 100644 Documentation/ABI/testing/sysfs-devices-platform-power-on-reason
-> >>>   create mode 100644 include/linux/power/power_on_reason.h
-> >>>
-> >>> diff --git a/Documentation/ABI/testing/sysfs-devices-platform-power-on-reason b/Documentation/ABI/testing/sysfs-devices-platform-power-on-reason
-> >>> new file mode 100644
-> >>> index 000000000000..83daeb9b1aa2
-> >>> --- /dev/null
-> >>> +++ b/Documentation/ABI/testing/sysfs-devices-platform-power-on-reason
-> >>> @@ -0,0 +1,14 @@
-> >>> +What:              /sys/devices/platform/.../power_on_reason
-> >>> +
-> >>> +Date:              October 2019
-> >>> +KernelVersion:     5.4
-> >>> +Contact:   Kamel Bouhara <kamel.bouhara@bootlin.com>
-> >>> +Description:       This file shows system power on reason.
-> >>> +           The possible sources are:
-> >>> +           General System Power-ON, RTC wakeup, Watchdog timeout,
-> >>> +           Software Reset, User pressed reset button,
-> >>> +           CPU Clock failure, 32.768kHz Oscillator Failure,
-> >>> +           Low power mode exit, Unknown.
-> >>> +
-> >>> +           The file is read only.
-> >>> +
-> >>> diff --git a/drivers/power/reset/at91-reset.c b/drivers/power/reset/at91-reset.c
-> >>> index 44ca983a49a1..3cb2df40af37 100644
-> >>> --- a/drivers/power/reset/at91-reset.c
-> >>> +++ b/drivers/power/reset/at91-reset.c
-> >>> @@ -17,7 +17,7 @@
-> >>>   #include <linux/of_address.h>
-> >>>   #include <linux/platform_device.h>
-> >>>   #include <linux/reboot.h>
-> >>> -
-> >>> +#include <linux/power/power_on_reason.h>
-> >>>   #include <soc/at91/at91sam9_ddrsdr.h>
-> >>>   #include <soc/at91/at91sam9_sdramc.h>
-> >>>
-> >>> @@ -146,42 +146,42 @@ static int samx7_restart(struct notifier_block *this, unsigned long mode,
-> >>>      return NOTIFY_DONE;
-> >>>   }
-> >>>
-> >>> -static void __init at91_reset_status(struct platform_device *pdev)
-> >>> +static const char *at91_reset_reason(struct platform_device *pdev)
-> >>>   {
-> >>>      const char *reason;
-> >>>      u32 reg = readl(at91_rstc_base + AT91_RSTC_SR);
-> >>>
-> >>>      switch ((reg & AT91_RSTC_RSTTYP) >> 8) {
-> >>>      case RESET_TYPE_GENERAL:
-> >>> -           reason = "general reset";
-> >>> +           reason = POWER_ON_REASON_GENERAL;
-> >>>              break;
-> >>>      case RESET_TYPE_WAKEUP:
-> >>> -           reason = "wakeup";
-> >>> +           reason = POWER_ON_REASON_RTC;
-> >>>              break;
-> >>>      case RESET_TYPE_WATCHDOG:
-> >>> -           reason = "watchdog reset";
-> >>> +           reason = POWER_ON_REASON_WATCHDOG;
-> >>>              break;
-> >>>      case RESET_TYPE_SOFTWARE:
-> >>> -           reason = "software reset";
-> >>> +           reason = POWER_ON_REASON_SOFTWARE;
-> >>>              break;
-> >>>      case RESET_TYPE_USER:
-> >>> -           reason = "user reset";
-> >>> +           reason = POWER_ON_REASON_USER;
-> >>>              break;
-> >>>      case RESET_TYPE_CPU_FAIL:
-> >>> -           reason = "CPU clock failure detection";
-> >>> +           reason = POWER_ON_REASON_CPU_FAIL;
-> >>>              break;
-> >>>      case RESET_TYPE_XTAL_FAIL:
-> >>> -           reason = "32.768 kHz crystal failure detection";
-> >>> +           reason = POWER_ON_REASON_XTAL_FAIL;
-> >>>              break;
-> >>>      case RESET_TYPE_ULP2:
-> >>> -           reason = "ULP2 reset";
-> >>> +           reason = POWER_ON_REASON_LOW_POWER;
-> >>>              break;
-> >>>      default:
-> >>> -           reason = "unknown reset";
-> >>> +           reason = POWER_ON_REASON_UNKNOWN;
-> >>>              break;
-> >>>      }
-> >>>
-> >>> -   dev_info(&pdev->dev, "Starting after %s\n", reason);
-> >>> +   return reason;
-> >>>   }
-> >>>
-> >>>   static const struct of_device_id at91_ramc_of_match[] = {
-> >>> @@ -204,6 +204,17 @@ static struct notifier_block at91_restart_nb = {
-> >>>      .priority = 192,
-> >>>   };
-> >>>
-> >>> +static ssize_t power_on_reason_show(struct device *dev,
-> >>> +                               struct device_attribute *attr,
-> >>> +                               char *buf)
-> >>> +{
-> >>> +   struct platform_device *pdev = to_platform_device(dev);
-> >>> +
-> >>> +   return sprintf(buf, "%s\n", at91_reset_reason(pdev));
-> >>> +}
-> >>> +
-> >>> +static DEVICE_ATTR_RO(power_on_reason);
-> >>> +
-> >>>   static int __init at91_reset_probe(struct platform_device *pdev)
-> >>>   {
-> >>>      const struct of_device_id *match;
-> >>> @@ -248,7 +259,14 @@ static int __init at91_reset_probe(struct platform_device *pdev)
-> >>>              return ret;
-> >>>      }
-> >>>
-> >>> -   at91_reset_status(pdev);
-> >>> +   ret = device_create_file(&pdev->dev, &dev_attr_power_on_reason);
-> >>> +   if (ret) {
-> >>> +           dev_err(&pdev->dev, "Could not create sysfs entry\n");
-> >>> +           return ret;
-> >>> +   }
-> >>> +
-> >>> +   dev_info(&pdev->dev, "Starting after %s reset\n",
-> >>> +            at91_reset_reason(pdev));
-> >>>
-> >>>      return 0;
-> >>>   }
-> >>> diff --git a/include/linux/power/power_on_reason.h b/include/linux/power/power_on_reason.h
-> >>> new file mode 100644
-> >>> index 000000000000..9978cc757427
-> >>> --- /dev/null
-> >>> +++ b/include/linux/power/power_on_reason.h
-> >>> @@ -0,0 +1,19 @@
-> >>> +/* SPDX-License-Identifier: GPL-2.0-only */
-> >>> +/*
-> >>> + * Author: Kamel Bouhra <kamel.bouhara@bootlin.com>
-> >>> + */
-> >>> +
-> >>> +#ifndef POWER_ON_REASON_H
-> >>> +#define POWER_ON_REASON_H
-> >>> +
-> >>> +#define POWER_ON_REASON_GENERAL "General"
-> >>> +#define POWER_ON_REASON_RTC "RTC wakeup"
-> >>> +#define POWER_ON_REASON_WATCHDOG "Watchdog timeout"
-> >>> +#define POWER_ON_REASON_SOFTWARE "Software"
-> >>> +#define POWER_ON_REASON_USER "User"
-> >>> +#define POWER_ON_REASON_CPU_FAIL "CPU Clock Failure"
-> >>> +#define POWER_ON_REASON_XTAL_FAIL "32.768k Crystal oscillator Failure"
->
-> Hi,
->
-> Looks rather odd to have a hardcoded crystal value inside a generic header.
-> Also how is REASON_CPU_FAIL related to CPU Clock ?
->
-Hi, Eugen,
+On Fri, Nov 29, 2019 at 6:25 PM Marco Felsch <m.felsch@pengutronix.de> wrote:
 
-I agree we should hide the crystal value.
-For the reset status, I've just move those from the driver. I guess the
-REASON_CPU_FAIL is related to some clock overclocking issue.
+> this series address all comments made on [1]. Patch "gpio: add support
+> to get local gpio number" is splitted into:
+>  - "gpio: treewide rename gpio_chip_hwgpio to gpiod_to_offset"
+>  - "gpio: make gpiod_to_offset() available for other users"
+> Please check the discussion [1] for more information. You need to apply
+> [2] to test the new features.
 
-Kamel
+I am very happy with the shape of patches (1) and (2).
 
-> Eugen
->
-> >>> +#define POWER_ON_REASON_LOW_POWER "Low power exit"
-> >>> +#define POWER_ON_REASON_UNKNOWN "Unknown"
-> >>> +
-> >>> +#endif /* POWER_ON_REASON_H */
-> >>
-> >> Is this new header necessary?
-> >>
-> >
-> > Yes because we want other drivers to be able to reuse them as-is so the
-> > ABI is stable.
-> >
-> > --
-> > Alexandre Belloni, Bootlin
-> > Embedded Linux and Kernel engineering
-> > https://bootlin.com
-> >
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> >
+I can apply these on an immutable branch and merge into the
+GPIO tree at v5.5-rc1 and offer to other subsystem maintainers
+to pull in so they can merge the rest of the patch series on
+top.
 
---
-Kamel Bouhara, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
+Alternatively I can merge all the patches into the GPIO tree.
+
+I suppose this is not so much of a MFD business at this
+point so whatever the regulator maintainer prefers I suppose?
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
