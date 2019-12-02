@@ -2,83 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE6CA10E79E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 10:25:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58CA010E7A3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 10:25:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DltiBpxGSukvoV/tfmYNXRXexYGKaUEXS1YL5o028j0=; b=cqiEqgoQMA3a5F
-	5f8UWU57RX3AZHWQmp+vw1x4MiNwUzS4fbu32FQwMBWt5ZtPmKhSXGrRK2TgxMaUs5lC0LR4jmdma
-	9cBZN06nyIhC+/ijEouIbyDDICvyHi7Y36ZUznOQQ5OYqN9ujy0QS81yAD1YUQQ0YamB7zVHVLTR1
-	xig/M1MDxIV9lrZFEXG+ntavOGHdj+2tsCmLT94Vu38FPvubxWCFjO+p+OglIy4wgYYT3LYoyX6nj
-	q4AFIIcNDUwwAxIfpD4t6+o/URQ3bXgfAmZKXJhkMyQxu6wYfpjaBgCbKJFfUAORYIus+c+aAZZfP
-	XWMnEmY/+0WbuzMFtd5Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XgiRZfej5BnvDISKPHIGDqxelYxoDFYaRRHfMIhkWWc=; b=MhcpxUyz8w32yf
+	EMJhLBJ6s1PsMJTcJ/JaaIs0LIh6QyLpBqwtLy8XeOXrK6vzDPX5mdP7YDYcLDwsbsvz13b+Uprkt
+	N0CY/Vf0qZf+IySoUDTJFHV/9DViC3UX2XapHwnmedEWtNAgTwDKUnePO55YQaaGk26tNMZxcHB5y
+	Kiw7YSXJGsRI1qLljL0pk2iGSndI7KYZNmOlvJMXrjEyaYr4kbvogg8WOd6w8HCn7KUQ7bIzBY/GD
+	akv3ZZ4GYDaNN675svhXuBCf39KVJaCjxbVm3OMu/DN5P7Ekzf/q31opCjDzj5+7LgwZG9lvWT0d+
+	/UG9oSVOvMVaX28i78pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibhxI-0007Jw-1W; Mon, 02 Dec 2019 09:25:20 +0000
-Received: from a27-188.smtp-out.us-west-2.amazonses.com ([54.240.27.188])
+	id 1ibhxp-0007ba-KN; Mon, 02 Dec 2019 09:25:53 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibhx7-0006c4-48; Mon, 02 Dec 2019 09:25:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=zsmsymrwgfyinv5wlfyidntwsjeeldzt; d=codeaurora.org; t=1575278705;
- h=From:To:Cc:Subject:References:Date:In-Reply-To:Message-ID:MIME-Version:Content-Type;
- bh=PsbuLqg3PnKHZC8fFLVJ8BSKlIh+aXX3eRcWBfbOHQk=;
- b=JlF4sKGzqfKyhUUPkMR9i8e8xkUE6AO3en95zysRt23Qqb645ZBLk9bJIuSBWcWS
- Ug84EuxiBWcMwXc7IIHhL3QlzgMyHKJJ0TRp69lORlJs1/ndebbJ4UGGl+ggM8wH91S
- enIFinMvcGH4b0K+6G7bEZcLOLCtZNhbnIYRLuWE=
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1575278705;
- h=From:To:Cc:Subject:References:Date:In-Reply-To:Message-ID:MIME-Version:Content-Type:Feedback-ID;
- bh=PsbuLqg3PnKHZC8fFLVJ8BSKlIh+aXX3eRcWBfbOHQk=;
- b=dGTJRBE49IOZbjfisuV7Y2WsSTNpz4KwJe73vr3ftf/Y9LYzpMZbReiIXvsveEZQ
- rRP4N7BI3XD2n6uVlqcNL+D0hidtt3fxblaBgLVMYCAPuHDWtt+ZfF2K0EUPiciBsaN
- djxXuzwCr931qx7xz08ssGiZ1S95wUq8dnFApMbQ=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 7F829C43383
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
-From: Kalle Valo <kvalo@codeaurora.org>
-To: Pablo Greco <pgreco@centosproject.org>
-Subject: Re: [PATCH v1] mt76: mt7615: Fix build with older compilers
-References: <20191201181716.61892-1-pgreco@centosproject.org>
-Date: Mon, 2 Dec 2019 09:25:05 +0000
-In-Reply-To: <20191201181716.61892-1-pgreco@centosproject.org> (Pablo Greco's
- message of "Sun, 1 Dec 2019 15:17:10 -0300")
-Message-ID: <0101016ec5ed7c1c-0d86f585-372a-4b20-af6e-5b59e732b70c-000000@us-west-2.amazonses.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
+ id 1ibhxf-0007al-6z
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 09:25:44 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 907632041C;
+ Mon,  2 Dec 2019 10:25:37 +0100 (CET)
+Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 7DB261FFCE;
+ Mon,  2 Dec 2019 10:25:37 +0100 (CET)
+Subject: Re: [PATCH v1] clk: Convert managed get functions to devm_add_action
+ API
+To: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
+References: <3d8a58bf-0814-1ec1-038a-10a20b9646ad@free.fr>
+ <20191128185630.GK82109@yoga> <20191202014237.GR248138@dtor-ws>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <f177ef95-ef7e-cab0-1322-6de28f18ecdb@free.fr>
+Date: Mon, 2 Dec 2019 10:25:37 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-X-SES-Outgoing: 2019.12.02-54.240.27.188
-Feedback-ID: 1.us-west-2.CZuq2qbDmUIuT3qdvXlRHZZCpfZqZ4GtG9v3VKgRyF0=:AmazonSES
+In-Reply-To: <20191202014237.GR248138@dtor-ws>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Mon Dec  2 10:25:37 2019 +0100 (CET)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_012509_194988_02B74BCC 
-X-CRM114-Status: GOOD (  13.93  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191202_012543_397711_6B15D285 
+X-CRM114-Status: GOOD (  14.02  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [54.240.27.188 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,55 +70,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ryder Lee <ryder.lee@mediatek.com>, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Roy Luo <royluo@google.com>, Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Felix Fietkau <nbd@nbd.name>
+Cc: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Guenter Roeck <linux@roeck-us.net>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Pablo Greco <pgreco@centosproject.org> writes:
+On 02/12/2019 02:42, Dmitry Torokhov wrote:
 
-> Some compilers (tested with 4.8.5 from CentOS 7) fail properly process
-> FIELD_GET inside an inline function, which ends up in a BUILD_BUG_ON.
-> Convert inline function to a macro.
->
-> Fixes commit bf92e7685100 ("mt76: mt7615: add support for per-chain
-> signal strength reporting")
-> Reported in https://lkml.org/lkml/2019/9/21/146
->
-> Reported-by: kbuild test robot <lkp@intel.com>
-> Signed-off-by: Pablo Greco <pgreco@centosproject.org>
-> ---
->  drivers/net/wireless/mediatek/mt76/mt7615/mac.c | 5 +----
->  1 file changed, 1 insertion(+), 4 deletions(-)
->
-> diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/mac.c b/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-> index c77adc5d2552..77e395ca2c6a 100644
-> --- a/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-> +++ b/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-> @@ -13,10 +13,7 @@
->  #include "../dma.h"
->  #include "mac.h"
->  
-> -static inline s8 to_rssi(u32 field, u32 rxv)
-> -{
-> -	return (FIELD_GET(field, rxv) - 220) / 2;
-> -}
-> +#define to_rssi(field, rxv)		((FIELD_GET(field, rxv) - 220) / 2)
+> On Thu, Nov 28, 2019 at 10:56:30AM -0800, Bjorn Andersson wrote:
+> 
+>> On Tue 26 Nov 08:13 PST 2019, Marc Gonzalez wrote:
+>>
+>>> Date: Tue, 26 Nov 2019 13:56:53 +0100
+>>>
+>>> Using devm_add_action_or_reset() produces simpler code and smaller
+>>> object size:
+>>>
+>>> 1 file changed, 16 insertions(+), 46 deletions(-)
+>>>
+>>>     text	   data	    bss	    dec	    hex	filename
+>>> -   1797	     80	      0	   1877	    755	drivers/clk/clk-devres.o
+>>> +   1499	     56	      0	   1555	    613	drivers/clk/clk-devres.o
+>>>
+>>> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
+>>
+>> Looks neat
+>>
+>> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> 
+> This however increases the runtime costs as each custom action cost us
+> an extra pointer. Given that in a system we likely have many clocks
+> managed by devres, I am not sure that this code savings is actually
+> gives us overall win. It might still, I just want to understand how we
+> are allocating/packing devres structures.
 
-What about u32_get_bits() instead of FIELD_GET(), would that work? I
-guess chances for that is slim, but it's always a shame to convert a
-function to a macro so we should try other methods first.
+I'm not 100% sure what you are saying.
 
-Or even better if we could fix FIELD_GET() to work with older compilers.
+Are you arguing that the proposed patch increases the run-time cost of
+devm_clk_put() so much that the listed improvements (simpler source code,
+smaller object size) are not worth it?
 
--- 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+AFAIU, the release action is only called
+- explicitly, when devm_clk_put() is called
+- implicitly, when the device is removed
+
+How often are clocks removed?
+
+In hot code-path (called hundreds of times per second) it makes sense to
+write more complex code, to shave a few cycles every iteration. But in
+cold code-path, I think it's better to write short/simple code.
+
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
