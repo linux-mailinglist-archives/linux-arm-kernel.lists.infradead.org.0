@@ -2,78 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD71210E665
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 08:37:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E28C10E670
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 08:42:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VaZH6qOlGhOh8IQqbwcqRyNoL8+fV8x3jrd68Rc8R8k=; b=TgxTBo0EBy41CN
-	HFnWp+UBHFPUK3xabmGbghEE8OshmWttVOHEhZeFgGwl3WC3zAiirO0lh5TwxHYmIf8IoE/NiFbxB
-	59LZBk2s0X5adATxweT6TTYSMM6GyY9P3pVdiyWK74r5wTB2FsajGJowMZMe2ih2u4RmhNAZ5di7i
-	ibHRdai9YotZtPwwDrobWaZF8VXVwdg9eZY1/78oxas37FUce3uljzvnuQajpLgAeFA9LwL5AQEUE
-	RiRChdx5bNgK2+0SOaI6lRpmvvv/INSiiPjnY2hnDxnqhp+2SWn9O2gC+NsB0iyTkxmDeug73Y4X8
-	i7jjLxY7RCu27rKeNZ+w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=FxogTn96x2iHpfn4o1XzeUAo5VOtfgjOH/wkyyJcVlI=; b=cqs
+	HVE1TFUMurKhi0WQBGoUD5j1dPzPmJL0F5NqhX6mNC6cL7tnwsux4+WDkNG08gQ7Y7p1ffhuhlk3D
+	QyES2JK/yEw5GF72ljVvaYkl4wrjACZ6opIt+IX2YUFHmIFd8Kl4JBNdEAhprjRRS9eMjilYwvJX8
+	wpNu+/dXl9FTB2f5YxEcjKEhxeYtX0cbAbTJZvDY3gqA0x8SAlB0U22CwOy6/lPUjiKn1V6q9AOh4
+	ojJ1VIlKTl+50CTmar8BQqcKDsXZiVtYE08paQbi7l78r7Ymf0hEpZRmzOEwfh2GeH6OGDAIlq+/4
+	ZTTY7DvZ0cq+MU/8Twqzelb2G/+aWJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibgHA-0007dZ-BA; Mon, 02 Dec 2019 07:37:44 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ibgLQ-00011F-3W; Mon, 02 Dec 2019 07:42:08 +0000
+Received: from out30-131.freemail.mail.aliyun.com ([115.124.30.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibgH2-0007bi-57; Mon, 02 Dec 2019 07:37:37 +0000
-X-UUID: bd4a02df2a1c45b3a52f7877c4fbffe2-20191201
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=a5jrEc352xLH4E1s0PphYrET7imYAjDTOReZgNhh1M0=; 
- b=WjqhFtT+ODJTbcI7PX3tnXSIa6l/QE5ytSY94MIzfmFr8u2UMCmx9qN14Evm6Kgt0XzOADaZ9U28l6SabDAA/BKasRvQCrOflUSp8p8zecTbq3dSKXX/cF2e6+mOlYM3PrrHLMZqw4ferSYhNgy/ra8PXda73UFaHqRqMPwGUrQ=;
-X-UUID: bd4a02df2a1c45b3a52f7877c4fbffe2-20191201
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <yongqiang.niu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1406023877; Sun, 01 Dec 2019 23:37:28 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 1 Dec 2019 23:32:19 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 2 Dec 2019 15:31:22 +0800
-Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 2 Dec 2019 15:31:20 +0800
-From: <yongqiang.niu@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
- Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v1] drm/mediatek: add ctm property support
-Date: Mon, 2 Dec 2019 15:31:32 +0800
-Message-ID: <1575271892-25117-1-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-MIME-Version: 1.0
-X-MTK: N
+ id 1ibgLJ-00010E-6i
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 07:42:02 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R301e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e04423;
+ MF=shannon.zhao@linux.alibaba.com; NM=1; PH=DS; RN=5; SR=0;
+ TI=SMTPD_---0TjfbfVy_1575272511; 
+Received: from localhost(mailfrom:shannon.zhao@linux.alibaba.com
+ fp:SMTPD_---0TjfbfVy_1575272511) by smtp.aliyun-inc.com(127.0.0.1);
+ Mon, 02 Dec 2019 15:41:51 +0800
+From: Shannon Zhao <shannon.zhao@linux.alibaba.com>
+To: kvmarm@lists.cs.columbia.edu,
+	maz@kernel.org,
+	suzuki.poulose@arm.com
+Subject: [PATCH] KVM: ARM: call hyp_cpu_pm_exit at the right place
+Date: Mon,  2 Dec 2019 15:42:11 +0800
+Message-Id: <1575272531-3204-1-git-send-email-shannon.zhao@linux.alibaba.com>
+X-Mailer: git-send-email 1.8.3.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191201_233736_208266_6CCA1B4B 
-X-CRM114-Status: GOOD (  13.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191201_234201_425898_DE55F76E 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -8.0 (--------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-8.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [115.124.30.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,176 +68,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+It doesn't needs to call hyp_cpu_pm_exit() in init_hyp_mode() when some
+error occurs. hyp_cpu_pm_exit() only needs to be called in
+kvm_arch_init() if init_subsystems() fails. So move hyp_cpu_pm_exit()
+out from teardown_hyp_mode() and call it directly in kvm_arch_init().
 
-add ctm property support
-
-Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Signed-off-by: Shannon Zhao <shannon.zhao@linux.alibaba.com>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c     |  7 +++-
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 59 ++++++++++++++++++++++++++++-
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  9 +++++
- 3 files changed, 72 insertions(+), 3 deletions(-)
+ virt/kvm/arm/arm.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index 4fb346c..e7e3aa9 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -666,10 +666,13 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
- 	int i;
- 
- 	if (crtc->state->color_mgmt_changed)
--		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
-+		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
- 			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i],
- 					  crtc->state,
- 					  mtk_crtc_state->cmdq_handle);
-+			mtk_ddp_ctm_set(mtk_crtc->ddp_comp[i], crtc->state);
-+		}
-+
- #ifdef CONFIG_MTK_CMDQ
- 	if (mtk_crtc->cmdq_client) {
- 		drm_atomic_state_get(old_atomic_state);
-@@ -891,7 +894,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 	if (ret < 0)
- 		return ret;
- 	drm_mode_crtc_set_gamma_size(&mtk_crtc->base, MTK_LUT_SIZE);
--	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, MTK_LUT_SIZE);
-+	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, true, MTK_LUT_SIZE);
- 	priv->num_pipes++;
- #ifdef CONFIG_MTK_CMDQ
- 	mtk_crtc->cmdq_client =
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-index 9cc12af..4bbbac7 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-@@ -38,7 +38,15 @@
- #define CCORR_EN				BIT(0)
- #define DISP_CCORR_CFG				0x0020
- #define CCORR_RELAY_MODE			BIT(0)
-+#define CCORR_ENGINE_EN				BIT(1)
-+#define CCORR_GAMMA_OFF				BIT(2)
-+#define CCORR_WGAMUT_SRC_CLIP			BIT(3)
- #define DISP_CCORR_SIZE				0x0030
-+#define DISP_CCORR_COEF_0			0x0080
-+#define DISP_CCORR_COEF_1			0x0084
-+#define DISP_CCORR_COEF_2			0x0088
-+#define DISP_CCORR_COEF_3			0x008C
-+#define DISP_CCORR_COEF_4			0x0090
- 
- #define DISP_DITHER_EN				0x0000
- #define DITHER_EN				BIT(0)
-@@ -187,7 +195,7 @@ static void mtk_ccorr_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			     unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
- 	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_CCORR_SIZE);
--	mtk_ddp_write(cmdq_pkt, CCORR_RELAY_MODE, comp, DISP_CCORR_CFG);
-+	mtk_ddp_write(cmdq_pkt, CCORR_ENGINE_EN, comp, DISP_CCORR_CFG);
+diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+index 12e0280..3b13ade 100644
+--- a/virt/kvm/arm/arm.c
++++ b/virt/kvm/arm/arm.c
+@@ -1537,7 +1537,6 @@ static void teardown_hyp_mode(void)
+ 	free_hyp_pgds();
+ 	for_each_possible_cpu(cpu)
+ 		free_page(per_cpu(kvm_arm_hyp_stack_page, cpu));
+-	hyp_cpu_pm_exit();
  }
  
- static void mtk_ccorr_start(struct mtk_ddp_comp *comp)
-@@ -200,6 +208,54 @@ static void mtk_ccorr_stop(struct mtk_ddp_comp *comp)
- 	writel_relaxed(0x0, comp->regs + DISP_CCORR_EN);
- }
+ /**
+@@ -1751,6 +1750,7 @@ int kvm_arch_init(void *opaque)
+ 	return 0;
  
-+/* Converts a DRM S31.32 value to the HW S0.11 format. */
-+static u16 mtk_ctm_s31_32_to_s0_11(u64 in)
-+{
-+	u16 r;
-+
-+	/* Sign bit. */
-+	r = in & BIT_ULL(63) ? BIT(11) : 0;
-+
-+	if ((in & GENMASK_ULL(62, 33)) > 0) {
-+		/* We have zero integer bits so we can only saturate here. */
-+		r |= GENMASK(10, 0);
-+	} else {
-+		/* Otherwise take the 9 most important fractional bits. */
-+		r |= (in >> 22) & GENMASK(10, 0);
-+	}
-+
-+	return r;
-+}
-+
-+static void mtk_ccorr_ctm_set(struct mtk_ddp_comp *comp,
-+			      struct drm_crtc_state *state)
-+{
-+	struct drm_property_blob *blob = state->ctm;
-+	struct drm_color_ctm *ctm;
-+	const u64 *input;
-+	uint16_t coeffs[9] = { 0 };
-+	int i;
-+
-+	if (!blob)
-+		return;
-+
-+	ctm = (struct drm_color_ctm *)blob->data;
-+	input = ctm->matrix;
-+
-+	for (i = 0; i < ARRAY_SIZE(coeffs); i++)
-+		coeffs[i] = mtk_ctm_s31_32_to_s0_11(input[i]);
-+
-+	writel_relaxed(coeffs[0] << 16 | coeffs[1],
-+		       comp->regs + DISP_CCORR_COEF_0);
-+	writel_relaxed(coeffs[2] << 16 | coeffs[3],
-+		       comp->regs + DISP_CCORR_COEF_1);
-+	writel_relaxed(coeffs[4] << 16 | coeffs[5],
-+		       comp->regs + DISP_CCORR_COEF_2);
-+	writel_relaxed(coeffs[6] << 16 | coeffs[7],
-+		       comp->regs + DISP_CCORR_COEF_3);
-+	writel_relaxed(coeffs[8] << 16, comp->regs + DISP_CCORR_COEF_4);
-+}
-+
- static void mtk_dither_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			      unsigned int h, unsigned int vrefresh,
- 			      unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
-@@ -269,6 +325,7 @@ static void mtk_gamma_set(struct mtk_ddp_comp *comp,
- 	.config = mtk_ccorr_config,
- 	.start = mtk_ccorr_start,
- 	.stop = mtk_ccorr_stop,
-+	.ctm_set = mtk_ccorr_ctm_set,
- };
- 
- static const struct mtk_ddp_comp_funcs ddp_dither = {
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-index 5b0a3d4..5100c3d 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-@@ -95,6 +95,8 @@ struct mtk_ddp_comp_funcs {
- 			  struct cmdq_pkt *cmdq_pkt);
- 	void (*bgclr_in_on)(struct mtk_ddp_comp *comp);
- 	void (*bgclr_in_off)(struct mtk_ddp_comp *comp);
-+	void (*ctm_set)(struct mtk_ddp_comp *comp,
-+			struct drm_crtc_state *state);
- };
- 
- struct mtk_ddp_comp {
-@@ -213,6 +215,13 @@ static inline void mtk_ddp_comp_bgclr_in_off(struct mtk_ddp_comp *comp)
- 		comp->funcs->bgclr_in_off(comp);
- }
- 
-+static inline void mtk_ddp_ctm_set(struct mtk_ddp_comp *comp,
-+				   struct drm_crtc_state *state)
-+{
-+	if (comp->funcs && comp->funcs->ctm_set)
-+		comp->funcs->ctm_set(comp, state);
-+}
-+
- int mtk_ddp_comp_get_id(struct device_node *node,
- 			enum mtk_ddp_comp_type comp_type);
- int mtk_ddp_comp_init(struct device *dev, struct device_node *comp_node,
+ out_hyp:
++	hyp_cpu_pm_exit();
+ 	if (!in_hyp_mode)
+ 		teardown_hyp_mode();
+ out_err:
 -- 
-1.8.1.1.dirty
+1.8.3.1
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
