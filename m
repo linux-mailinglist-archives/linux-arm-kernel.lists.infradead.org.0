@@ -2,54 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C36810EA06
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 13:22:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E565710EA12
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 13:30:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Pi3k8CzX8EMUniq8va1r9Sm57cI47kjG/VfooVWZPWI=; b=iFUT4K+LKfkVXZQCswZPR41xv
-	3rfznaXcGjTWUeVQxaOjK4vz3myROk9YDD0qlPVlO2TVkXD1++sffNV/vJf9ZNxdkDXbyoHDLjWMU
-	Q4onPExL/a22D5SRckoDM9EJvjlQFRHe7k8CmiwGH4YGwPK38HBwH2UXj7JLvhCfGXIYDiViazOEu
-	8Cgz62lBWdndDhLd7GRp7lQwgM7tysbdFIKAF62zRuUSdVxJZoJk9YG835KwYQwXU1whtrHsT0LTP
-	ZPifBbRaSm4/3LAIPmn/w6tCCdyV8ToB3MaSgwiP5IYoG9wqsNQX4bTLgqxZy1tKU3qwqXKbsfdU5
-	ohxd9BLHA==;
+	 bh=vXHu2v5/yBAaKk82b257Ut7u1X7UT9gjKcd1SmPICJE=; b=lNmzZS6YGBkJHoCf0KOewAFvK
+	DQtU52t/4JssYv3y4+WZEnsDXYeQm/A/k79BiADMHb1a6s+stCMEy/8T3h5IGpxTcKWAIH8ZB5sSx
+	KE4T62Tvx99NTWpQiD/VkB4TauEIvtFMHUETlNCdro1nWL8bhQcw+GZa3yYktNAo9kgNL8SXUymTY
+	barR37IVqj2myP0S2TluQg4zQDiRmsoVqrFQlKMiCS+BgEzNDs5UeqxZC4hMrvsBXEbN3L94i9ZOk
+	vVgiOiiAN/+NAND3kkVr0HKMXE42+rg1s9VmRUe+j+M9GEKaALuNkX/C2PfrERa+qiBB6OLUB9tfs
+	ZtDSBbIdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibkib-0006ru-6l; Mon, 02 Dec 2019 12:22:21 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1ibkqI-0001me-CJ; Mon, 02 Dec 2019 12:30:18 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibkiU-0006rP-Da; Mon, 02 Dec 2019 12:22:16 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 57ED8B3A9;
- Mon,  2 Dec 2019 12:22:12 +0000 (UTC)
-Message-ID: <c63647bb1b13cc05c9cecdd7f25e497ab9416e4f.camel@suse.de>
-Subject: Re: [PATCH v3 5/7] PCI: brcmstb: add MSI capability
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Andrew Murray <andrew.murray@arm.com>
-Date: Mon, 02 Dec 2019 13:22:09 +0100
-In-Reply-To: <20191202122050.GA18399@e119886-lin.cambridge.arm.com>
-References: <20191126091946.7970-1-nsaenzjulienne@suse.de>
- <20191126091946.7970-6-nsaenzjulienne@suse.de>
- <20191129154629.GF43905@e119886-lin.cambridge.arm.com>
- <2820f3fb9abc69d54df0dee1b6233eaf3cb63834.camel@suse.de>
- <20191202122050.GA18399@e119886-lin.cambridge.arm.com>
-User-Agent: Evolution 3.34.1 
+ id 1ibkqB-0001dl-MQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 12:30:13 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1ibkpz-0000HJ-ES; Mon, 02 Dec 2019 13:29:59 +0100
+To: Daode Huang <huangdaode@hisilicon.com>
+Subject: Re: [PATCH] irqchip/stm32: Fix "WARNING: invalid free of
+ =?UTF-8?Q?devm=5F=20allocated?=
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
+Date: Mon, 02 Dec 2019 12:29:59 +0000
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <1574931880-168682-1-git-send-email-huangdaode@hisilicon.com>
+References: <1574931880-168682-1-git-send-email-huangdaode@hisilicon.com>
+Message-ID: <8acaa494701c91b8a8acd60a2390d810@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: huangdaode@hisilicon.com, tglx@linutronix.de,
+ jason@lakedaemon.net, mcoquelin.stm32@gmail.com, alexandre.torgue@st.com,
+ fabien.dessenne@st.com, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_042214_747091_CBAEE8E4 
-X-CRM114-Status: GOOD (  16.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191202_043011_887442_78818268 
+X-CRM114-Status: GOOD (  10.27  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -62,121 +67,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, maz@kernel.org,
- phil@raspberrypi.org, linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- Eric Anholt <eric@anholt.net>, mbrugger@suse.com,
- bcm-kernel-feedback-list@broadcom.com, Stefan Wahren <wahrenst@gmx.net>,
- james.quinlan@broadcom.com, linux-pci@vger.kernel.org,
- Bjorn Helgaas <bhelgaas@google.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4227757875292256375=="
+Cc: jason@lakedaemon.net, linux-kernel@vger.kernel.org, fabien.dessenne@st.com,
+ mcoquelin.stm32@gmail.com, tglx@linutronix.de,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ alexandre.torgue@st.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 2019-11-28 09:04, Daode Huang wrote:
+> Since devm_ allocated data can be automaitcally released, it's no
+> need to free it apparently, just remove it.
+>
+> Fixes: cfbf9e497094 ("irqchip/stm32: Use a platform driver for
+> stm32mp1-exti device")
+> Signed-off-by: Daode Huang <huangdaode@hisilicon.com>
+> ---
+>  drivers/irqchip/irq-stm32-exti.c | 2 --
+>  1 file changed, 2 deletions(-)
+>
+> diff --git a/drivers/irqchip/irq-stm32-exti.c
+> b/drivers/irqchip/irq-stm32-exti.c
+> index e00f2fa..46ec0af 100644
+> --- a/drivers/irqchip/irq-stm32-exti.c
+> +++ b/drivers/irqchip/irq-stm32-exti.c
+> @@ -779,8 +779,6 @@ static int __init stm32_exti_init(const struct
+> stm32_exti_drv_data *drv_data,
+>  	irq_domain_remove(domain);
+>  out_unmap:
+>  	iounmap(host_data->base);
+> -	kfree(host_data->chips_data);
+> -	kfree(host_data);
+>  	return ret;
+>  }
 
---===============4227757875292256375==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-NzVbf7bNfje0MokF6jK8"
+Applied, thanks.
 
-
---=-NzVbf7bNfje0MokF6jK8
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, 2019-12-02 at 12:20 +0000, Andrew Murray wrote:
-> On Mon, Dec 02, 2019 at 10:59:36AM +0100, Nicolas Saenz Julienne wrote:
-> > Hi Andrew,
-> >=20
-> > On Fri, 2019-11-29 at 15:46 +0000, Andrew Murray wrote:
-> > > On Tue, Nov 26, 2019 at 10:19:43AM +0100, Nicolas Saenz Julienne wrot=
-e:
-> > > > From: Jim Quinlan <james.quinlan@broadcom.com>
-> > > >=20
-> > > > This adds MSI support to the Broadcom STB PCIe host controller. The=
- MSI
-> > > > controller is physically located within the PCIe block, however, th=
-ere
-> > > > is no reason why the MSI controller could not be moved elsewhere in=
- the
-> > > > future. MSIX is not supported by the HW.
-> > > >=20
-> > > > Since the internal Brcmstb MSI controller is intertwined with the P=
-CIe
-> > > > controller, it is not its own platform device but rather part of th=
-e
-> > > > PCIe platform device.
-> > > >=20
-> > > > Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
-> > > > Co-developed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> > > > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> > > > Reviewed-by: Marc Zyngier <maz@kernel.org>
-> > > >=20
-> > > > ---
-> > > >=20
-> > > > Changes since v2 (kept Marc's Reviewed-by as changes didn't affect =
-irq
-> > > > subsystem stuff or seem petty enough):
-> > > >   - Use standard APIs on register operations
-> > > >   - Get rid of revision code
-> > >=20
-> > > Do any RPI4's have a HW revision of less than 33?
-> >=20
-> > No, IIRC it's actually revision 34. I had left that bit of code in,
-> > following
-> > the same train of thought as with the of_data on the device-tree part o=
-f the
-> > driver: "It's harmless and should make accomodating other devices easie=
-r."
-> > It
-> > turned out not to be such a great approach. Lesson's learned. So I deci=
-ded
-> > to
-> > remove it.
->=20
-> OK you can add my:
->=20
-> Reviewed-by: Andrew Murray <andrew.murray@arm.com>
->=20
-> Thanks,
->=20
-> Andrew Murray
-
-Thanks!
-
-
---=-NzVbf7bNfje0MokF6jK8
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3lAfEACgkQlfZmHno8
-x/7l3wf+KA81gHEGBFGfNHE8rju8uZ8OgP4N968EIm5vkR4PT4s7PdSjcrGBzcjg
-25Vb581Thmdr/qOfPARI3DHCsAa03D6+/mugzFho54yTbHagqr5tV2iHHvkTcnFx
-l0/j2eJ5s4FMW6G4cmvkuJNUz8ZTX98V4e9bWiwAhAXKQG3cTAZntmc1/mhqcvme
-ba7YOMykf1auwSWtE12VIOCb80iFBF8PfWMW5KBQ3jqQ/0n2+r4Ov5qYRrBYj3b/
-suKogbQcADjTRSf84HH57xGDBTTb6hpSm5NDyHMAa7+82kP4JdhKdwJo+brTQ0/X
-JE7JgkxNISdvCaNJmtpscdI/FI6f7g==
-=TEyC
------END PGP SIGNATURE-----
-
---=-NzVbf7bNfje0MokF6jK8--
-
-
-
---===============4227757875292256375==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4227757875292256375==--
-
-
