@@ -2,93 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C72CF10E7FD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 10:54:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C062F10E7FB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 10:52:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PpU47v6SClHx2C7mPL949IaqiyHpXgfy9SyC+/8rB78=; b=DnoSHGFD2coQqr
-	wfLNb45zWIVW+PY1smqkSZf6tHTJvzQdaQPcgVEPIyKJS8sgkjw9Ikl4lDoPKRC63FGWExkm7XpWH
-	wjCdCNJ8TOZm5Z4U6AHAJjCeMgKydcVlq8HoCkDVIg1B6CaQrd64DUW4cHl3aQqBJJ4jxPzg/oAHp
-	7BcE2LrSZmRQQ1gy3vg+4sht3sf3wMAshlHcJDY7uxVeGEtjQlYHVDNhxcliaesZSHZba3aTHUNQ6
-	2xdDZYIuDpGRyuApBhoCDx68Q+8vqm3Hr7reEWpxU1z18bGrni3TPdOvXwxN/vmizMD7jZ/U17YeG
-	GshaF4PyHQHE81F5pKYg==;
+	List-Owner; bh=T3XJru3i3U1oOZz9P8IOzDoi29TQJADmFbXsVaHTe38=; b=jQsS1WgG4Sgo0K
+	x1hUxqSVdxxqr3D6FE+xcsdQy9+Tpms36zjSzu0yWtfmBwEzlI3hQNS/ENMY01CSNQi8NbCWnip3V
+	AUnetoS4+JeHFq2C4WHhBcld21boUSZGzJaT9fFOIvK0ST9pxa2anIZ+O14zOr0vli0uIUhaNdRtt
+	5VBaN7qJG5nxNE/Rri/tXti9N/Hjp53y5zWGy7HpxIFDIVuSJGyM2IMggyqX9nAmF7DTcACKkzsr2
+	JOjK5IC8Q+xxDJSi++eFHsZqy+mjiEoO+uCNxUzd2tAJxLEPMhQCsklSOK4yu24fhIpDdjBpb8OOr
+	Hw5gRcz7RK1mKThqAxbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibiPV-0007mf-9v; Mon, 02 Dec 2019 09:54:29 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1ibiNG-0007Ok-9X; Mon, 02 Dec 2019 09:52:10 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibiPP-0007mW-Tl
- for linux-arm-kernel@bombadil.infradead.org; Mon, 02 Dec 2019 09:54:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=MIME-Version:Content-Transfer-Encoding:
- Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=A6bY20wJDarnTl2cSGmzk6nzNli5s4l03QNQ5nIvnTg=; b=j8N4WQ6jzdzl3+JE44T6lW4+e5
- DeW4WkYMYLXG5V3zQv4eDKYN8lRUNDs6rFU/YpWk8mCNcZC7Hu9J8VkRmxgUrMaFkpru5pD60HFDZ
- oOQIUYRAK2RmXqTCn+3W5fsroiKfQ9zAjUBpU2gWNE3Di44SIVg5DvoLa2TjgQ96afjjNhuwTa0/x
- qdyQdxcDhzOJqGsxvUReJJ6oN9QRvyCsF+GI2Ut7kCYqWi9/xUmJyCDzALz87k34zdkJ9HGI+SVD4
- 3JxJo9zMdG8d36Kb9Iij8KvgxWdS6+YtjblQEWEeQlSuvmHV7NCvXRP7Xky4JAl7o1QqKP3Zyq+Hf
- mC1vZOYA==;
-Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibiPl-000077-Ga
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 09:54:49 +0000
-Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID xB29oALQ029104,
- This message is accepted by code: ctloc85258
-Received: from mail.realtek.com ([172.21.6.12])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id xB29oALQ029104
- (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 2 Dec 2019 17:50:10 +0800
-Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
- RTITCAS11.realtek.com.tw (172.21.6.12) with Microsoft SMTP Server (TLS) id
- 14.3.468.0; Mon, 2 Dec 2019 17:49:57 +0800
-Received: from RTEXMB03.realtek.com.tw (172.21.6.96) by
- RTEXMB03.realtek.com.tw (172.21.6.96) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1779.2; Mon, 2 Dec 2019 17:49:57 +0800
-Received: from RTEXMB03.realtek.com.tw ([fe80::35ac:d9d0:1393:a902]) by
- RTEXMB03.realtek.com.tw ([fe80::35ac:d9d0:1393:a902%8]) with mapi id
- 15.01.1779.005; Mon, 2 Dec 2019 17:49:57 +0800
-From: James Tai <james.tai@realtek.com>
-To: =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>,
- "linux-realtek-soc@lists.infradead.org"
- <linux-realtek-soc@lists.infradead.org>
-Subject: RE: [PATCH 2/7] arm64: dts: realtek: rtd129x: Use reserved-memory for
- RPC regions
-Thread-Topic: [PATCH 2/7] arm64: dts: realtek: rtd129x: Use reserved-memory
- for RPC regions
-Thread-Index: AQHVmDzfamWec3ddWkiVVX1ELT676KemGsuAgACXBLA=
-Date: Mon, 2 Dec 2019 09:49:56 +0000
-Message-ID: <a511b94a991946a1b3f26dcdc485d4fa@realtek.com>
-References: <20191111030434.29977-1-afaerber@suse.de>
- <20191111030434.29977-3-afaerber@suse.de>
- <1f25f2fc-5d31-1d74-b730-78ad7861ffce@suse.de>
-In-Reply-To: <1f25f2fc-5d31-1d74-b730-78ad7861ffce@suse.de>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.21.190.187]
+ id 1ibiN8-0007O4-DC; Mon, 02 Dec 2019 09:52:04 +0000
+X-UUID: 1098bc5e2c274cadbb54ebe95c02bdba-20191202
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=A3ws5GGEKRqOLU1wWYe6/80BETyiRzq/ioApqkBTwMQ=; 
+ b=fKz+uUWsCOHubUK9lTVtj1V2zlUFFikeTk8Qc8JTkfCREj+t1xy57G2HlCF7fhe1r2GylP62S8/ru+Xc0qTGGhUtCOug1OfMI6nqoHlpbdKWbWq8wSexQVkM6hyZqN5vstNEk1QYWXFNDS0rcOfwlQ4rWgPQBlmRtGscUhseIck=;
+X-UUID: 1098bc5e2c274cadbb54ebe95c02bdba-20191202
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 85731809; Mon, 02 Dec 2019 01:51:56 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 2 Dec 2019 01:52:06 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 2 Dec 2019 17:51:49 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 2 Dec 2019 17:51:37 +0800
+Message-ID: <1575280313.19176.1.camel@mtksdaap41>
+Subject: Re: [PATCH v1 4/6] drm/mediatek: update cursors by using async
+ atomic update
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Mon, 2 Dec 2019 17:51:53 +0800
+In-Reply-To: <20191128024238.9399-5-bibby.hsieh@mediatek.com>
+References: <20191128024238.9399-1-bibby.hsieh@mediatek.com>
+ <20191128024238.9399-5-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_095445_851598_24D51F55 
-X-CRM114-Status: GOOD (  12.35  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (0.0 points, 5.0 required)
+X-CRM114-CacheID: sfid-20191202_015202_465123_2559AD79 
+X-CRM114-Status: GOOD (  18.02  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.75.126.72 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,55 +86,264 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: drinkcat@chromium.org, srv_heupstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ tfiga@chromium.org, YT Shen <yt.shen@mediatek.com>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andreas,
 
-> >  /memreserve/	0x0000000000000000 0x0000000000030000;
-> > -/memreserve/	0x000000000001f000 0x0000000000001000;
-> >  /memreserve/	0x0000000000030000 0x00000000000d0000;
-> >  /memreserve/	0x0000000001b00000 0x00000000004be000;
-> > -/memreserve/	0x0000000001ffe000 0x0000000000004000;
-> >
+Hi, Bibby:
 
-> >  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> >  #include <dt-bindings/reset/realtek,rtd1295.h>
-> > @@ -19,6 +17,25 @@
-> >  	#address-cells = <1>;
-> >  	#size-cells = <1>;
-> >
-> > +	reserved-memory {
-> > +		#address-cells = <1>;
-> > +		#size-cells = <1>;
-> > +		ranges;
-> > +
-> > +		rpc_comm: rpc@1f000 {
-> > +			reg = <0x1f000 0x1000>;
-> > +		};
-> > +
-> > +		rpc_ringbuf: rpc@1ffe000 {
-> > +			reg = <0x1ffe000 0x4000>;
-> > +		};
+On Thu, 2019-11-28 at 10:42 +0800, Bibby Hsieh wrote:
+> Support to async updates of cursors by using the new atomic
+> interface for that.
 > 
-> Have you reviewed this patch to be correct? I.e., are the above two regions
-> reserved RAM (assumption above), or is this rather MMIO shadowing RAM?
-> (then we would need to update the /memory reg and /soc ranges properties)
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c  | 35 +++++++++++++++++
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.h  |  2 +
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c   | 22 ++++++++++-
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.h   |  2 +
+>  drivers/gpu/drm/mediatek/mtk_drm_plane.c | 50 ++++++++++++++++++++++++
+>  drivers/gpu/drm/mediatek/mtk_drm_plane.h |  2 +
+>  6 files changed, 112 insertions(+), 1 deletion(-)
 > 
-> That also affects RTD1619, which currently has neither.
-> 
-The RPC common buffer and RPC ring buffer address is correct.
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index cb87a538b8ff..b26b7a98587b 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -422,6 +422,41 @@ int mtk_drm_crtc_plane_check(struct drm_crtc *crtc, struct drm_plane *plane,
+>  	return 0;
+>  }
+>  
+> +void mtk_drm_crtc_cursor_update(struct drm_crtc *crtc, struct drm_plane *plane,
+> +				struct drm_plane_state *new_state)
 
+I do not like to use 'cursor' for naming. The async function may be not
+just used for cursor. The name 'async' is more general.
+
+> +{
+> +	struct mtk_drm_private *priv = crtc->dev->dev_private;
+> +	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+> +	const struct drm_plane_helper_funcs *plane_helper_funcs =
+> +			plane->helper_private;
+> +	int i;
+> +
+> +	if (!mtk_crtc->enabled)
+> +		return;
+> +
+> +	mutex_lock(&priv->hw_lock);
+
+Please make sure what variable you want to protect, and make critical
+section smaller.
+
+> +	plane_helper_funcs->atomic_update(plane, new_state);
+> +
+> +	for (i = 0; i < mtk_crtc->layer_nr; i++) {
+> +		struct drm_plane *plane = &mtk_crtc->planes[i];
+> +		struct mtk_plane_state *plane_state;
+> +
+> +		plane_state = to_mtk_plane_state(plane->state);
+> +		if (plane_state->pending.cursor_dirty) {
+> +			plane_state->pending.config = true;
+> +			plane_state->pending.cursor_update = false;
+> +			plane_state->pending.cursor_dirty = false;
+> +		}
+> +	}
+> +	mtk_crtc->pending_planes = true;
+> +	if (priv->data->shadow_register) {
+> +		mtk_disp_mutex_acquire(mtk_crtc->mutex);
+> +		mtk_crtc_ddp_config(crtc);
+> +		mtk_disp_mutex_release(mtk_crtc->mutex);
+> +	}
+> +	mutex_unlock(&priv->hw_lock);
+> +}
+> +
+>  static void mtk_drm_crtc_atomic_enable(struct drm_crtc *crtc,
+>  				       struct drm_crtc_state *old_state)
+>  {
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
+> index 6afe1c19557a..d57958f0b7b5 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
+> @@ -21,5 +21,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+>  			unsigned int path_len);
+>  int mtk_drm_crtc_plane_check(struct drm_crtc *crtc, struct drm_plane *plane,
+>  			     struct mtk_plane_state *state);
+> +void mtk_drm_crtc_cursor_update(struct drm_crtc *crtc, struct drm_plane *plane,
+> +				struct drm_plane_state *plane_state);
+>  
+>  #endif /* MTK_DRM_CRTC_H */
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index 16e5771d182e..0f7fbb68295d 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -36,8 +36,27 @@
+>  #define DRIVER_MAJOR 1
+>  #define DRIVER_MINOR 0
+>  
+> +static void
+> +mtk_drm_atomic_helper_commit_tail_rpm(struct drm_atomic_state *old_state)
+> +{
+> +	struct drm_device *dev = old_state->dev;
+> +	struct mtk_drm_private *private = dev->dev_private;
+> +
+> +	drm_atomic_helper_wait_for_fences(dev, old_state, false);
+> +	mutex_lock(&private->hw_lock);
+> +	drm_atomic_helper_commit_modeset_disables(dev, old_state);
+> +	drm_atomic_helper_commit_modeset_enables(dev, old_state);
+> +	drm_atomic_helper_commit_planes(dev, old_state,
+> +					DRM_PLANE_COMMIT_ACTIVE_ONLY);
+> +	mutex_unlock(&private->hw_lock);
+
+You implement mtk version just want to add mutex protect. But I think
+you should not protect here because what you should protect is the
+common variable touched by sync plane and async plane. In
+mtk_drm_crtc_cursor_update(), you already know what is the variable you
+need to protect, and these variable is touched in
+mtk_drm_crtc_atomic_flush() or mtk_plane_atomic_update(), so I think you
+should just protect inside these function and need not to implement this
+function.
 
 Regards,
-James
+CK
+
+> +	drm_atomic_helper_fake_vblank(old_state);
+> +	drm_atomic_helper_commit_hw_done(old_state);
+> +	drm_atomic_helper_wait_for_vblanks(dev, old_state);
+> +	drm_atomic_helper_cleanup_planes(dev, old_state);
+> +}
+> +
+>  static const struct drm_mode_config_helper_funcs mtk_drm_mode_config_helpers = {
+> -	.atomic_commit_tail = drm_atomic_helper_commit_tail_rpm,
+> +	.atomic_commit_tail = mtk_drm_atomic_helper_commit_tail_rpm,
+>  };
+>  
+>  static const struct drm_mode_config_funcs mtk_drm_mode_config_funcs = {
+> @@ -262,6 +281,7 @@ static int mtk_drm_kms_init(struct drm_device *drm)
+>  
+>  	drm_kms_helper_poll_init(drm);
+>  	drm_mode_config_reset(drm);
+> +	mutex_init(&private->hw_lock);
+>  
+>  	return 0;
+>  
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> index 9f4ce60174f6..c61adaa92626 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> @@ -48,6 +48,8 @@ struct mtk_drm_private {
+>  	const struct mtk_mmsys_driver_data *data;
+>  	struct drm_atomic_state *suspend_state;
+>  
+> +	/* lock for display hw access */
+> +	struct mutex hw_lock;
+>  	bool dma_parms_allocated;
+>  };
+>  
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> index cd7c97eb7ee6..d7a8853d94a1 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+> @@ -7,6 +7,7 @@
+>  #include <drm/drm_atomic.h>
+>  #include <drm/drm_atomic_helper.h>
+>  #include <drm/drm_fourcc.h>
+> +#include <drm/drm_atomic_uapi.h>
+>  #include <drm/drm_plane_helper.h>
+>  #include <drm/drm_gem_framebuffer_helper.h>
+>  
+> @@ -70,6 +71,50 @@ static void mtk_drm_plane_destroy_state(struct drm_plane *plane,
+>  	kfree(to_mtk_plane_state(state));
+>  }
+>  
+> +static int mtk_plane_atomic_async_check(struct drm_plane *plane,
+> +					struct drm_plane_state *state)
+> +{
+> +	struct drm_crtc_state *crtc_state;
+> +
+> +	if (plane != state->crtc->cursor)
+> +		return -EINVAL;
+> +
+> +	if (!plane->state)
+> +		return -EINVAL;
+> +
+> +	if (!plane->state->fb)
+> +		return -EINVAL;
+> +
+> +	if (state->state)
+> +		crtc_state = drm_atomic_get_existing_crtc_state(state->state,
+> +								state->crtc);
+> +	else /* Special case for asynchronous cursor updates. */
+> +		crtc_state = state->crtc->state;
+> +
+> +	return drm_atomic_helper_check_plane_state(plane->state, crtc_state,
+> +						   DRM_PLANE_HELPER_NO_SCALING,
+> +						   DRM_PLANE_HELPER_NO_SCALING,
+> +						   true, true);
+> +}
+> +
+> +static void mtk_plane_atomic_async_update(struct drm_plane *plane,
+> +					  struct drm_plane_state *new_state)
+> +{
+> +	struct mtk_plane_state *state = to_mtk_plane_state(plane->state);
+> +
+> +	plane->state->crtc_x = new_state->crtc_x;
+> +	plane->state->crtc_y = new_state->crtc_y;
+> +	plane->state->crtc_h = new_state->crtc_h;
+> +	plane->state->crtc_w = new_state->crtc_w;
+> +	plane->state->src_x = new_state->src_x;
+> +	plane->state->src_y = new_state->src_y;
+> +	plane->state->src_h = new_state->src_h;
+> +	plane->state->src_w = new_state->src_w;
+> +	state->pending.cursor_update = true;
+> +
+> +	mtk_drm_crtc_cursor_update(new_state->crtc, plane, new_state);
+> +}
+> +
+>  static const struct drm_plane_funcs mtk_plane_funcs = {
+>  	.update_plane = drm_atomic_helper_update_plane,
+>  	.disable_plane = drm_atomic_helper_disable_plane,
+> @@ -141,6 +186,9 @@ static void mtk_plane_atomic_update(struct drm_plane *plane,
+>  	state->pending.rotation = plane->state->rotation;
+>  	wmb(); /* Make sure the above parameters are set before update */
+>  	state->pending.dirty = true;
+> +
+> +	if (state->pending.cursor_update)
+> +		state->pending.cursor_dirty = true;
+>  }
+>  
+>  static void mtk_plane_atomic_disable(struct drm_plane *plane,
+> @@ -158,6 +206,8 @@ static const struct drm_plane_helper_funcs mtk_plane_helper_funcs = {
+>  	.atomic_check = mtk_plane_atomic_check,
+>  	.atomic_update = mtk_plane_atomic_update,
+>  	.atomic_disable = mtk_plane_atomic_disable,
+> +	.atomic_async_update = mtk_plane_atomic_async_update,
+> +	.atomic_async_check = mtk_plane_atomic_async_check,
+>  };
+>  
+>  int mtk_plane_init(struct drm_device *dev, struct drm_plane *plane,
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.h b/drivers/gpu/drm/mediatek/mtk_drm_plane.h
+> index 760885e35b27..113a10344805 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.h
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.h
+> @@ -22,6 +22,8 @@ struct mtk_plane_pending_state {
+>  	unsigned int			height;
+>  	unsigned int			rotation;
+>  	bool				dirty;
+> +	bool				cursor_dirty;
+> +	bool				cursor_update;
+>  };
+>  
+>  struct mtk_plane_state {
 
 
 _______________________________________________
