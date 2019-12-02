@@ -2,73 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AEEB10EAE7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 14:35:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 307EA10EAF9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Dec 2019 14:41:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HF/v/EZKOaj//LyY5XzluOy13UJWeOCsQs6BcApfiLU=; b=SRfhEzwyMoxhwK
-	8OtbGc4mSnrOuPbXIZxs0EXvWTq8mIqdKB2gqY9aS4OoW+XmiCJ3AEjGWtBKgmvE3WjtTyueg7XXq
-	k7VpgN7q4Lwh4DegFkc0IPAcuL0T6Z3L6d10ULie+PgnlBI1PeLQDhbRENEqftI8w80tdJIleiVEP
-	Dj6RHWHb079KcQbX5VOTDLzsxowYpKpziEGiaIaiJLnq+Byr2wqYsU86EEQ38/OOErH/iazux/REC
-	2LxKbzun6ye8FX2g3MdULZ5QLsgesiLFl8fW3yWml45m4t50YcSMLC2eV2eWC2TNYzfHoz8BbWjIa
-	HkmVRWj0X39cogRpli+A==;
+	List-Owner; bh=pm531k0VtI2JwubKoX1HQKcslD/xygKLg+T+ExNAXAI=; b=CxYwRS7DWF1doj
+	nTZ3ycFerAUe44hfXKYcbk0O0Gj9+kzREiPMboM8H3wYS0tdiRwOxouYuh9SjFtXmkWDLQCc8TWvS
+	XTczmCvDX/0L5BxToJ3PJNfBV2qfbhvUICWfMFG4SgwB3jBopwS4EXnyRv5mPwKzQ1OfzMG3NjEms
+	Ax1YNbXQLUrIdLb+K8oY9y+Hy/Qvei1wyMluEzqKwqaPekKbzxe1UoFXZt0jq41EM6arUFU689QNd
+	NAcCLkjk1G6ZYw+fF/aFWvFfqO0+FAAMv6cVgoZWsevfvXrmNYslcWNsudSGAC4La9xSkE93JX67h
+	G7A97/lK3lvDNIP0tCsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iblrB-0002J8-9A; Mon, 02 Dec 2019 13:35:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iblr5-0002Ie-2P
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 13:35:12 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2CD5020833;
- Mon,  2 Dec 2019 13:35:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575293710;
- bh=wxSZfFo7SznwT1ayrLRxDPV9OD+qKtgr4xwwiWvEVkA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dQc5qo85Bdrd3bB/Si1OSU1+SyQi7l8HIZFBAv7bnUXLMsReDrt+nCn6TCsfVTmiX
- cK37EoODq3M8t22DmDv6IY6cmmxfz/toFy2QQBS+8tAu+P81ExkQvXeex9s+EDIlLT
- dG9fJJ+vEX5YMXQ+GKJ7+WJXVZDJL82or/uqURtc=
-Date: Mon, 2 Dec 2019 21:34:51 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH v3 4/6] PM / devfreq: Add dynamic scaling for imx ddr
- controller
-Message-ID: <20191202133449.GA21897@dragon>
-References: <cover.1572558427.git.leonard.crestez@nxp.com>
- <5fcf829265ecde1af32cb1369528c97361c76992.1572558427.git.leonard.crestez@nxp.com>
- <20191202053847.GC9767@dragon>
- <VI1PR04MB70234400D6CF248C18321FDBEE430@VI1PR04MB7023.eurprd04.prod.outlook.com>
+	id 1iblxI-00058S-7Z; Mon, 02 Dec 2019 13:41:36 +0000
+Received: from mickerik.phytec.de ([195.145.39.210])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iblx7-00053d-P2
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Dec 2019 13:41:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; d=phytec.de; s=a1; c=relaxed/simple;
+ q=dns/txt; i=@phytec.de; t=1575294081; x=1577886081;
+ h=From:Sender:Reply-To:Subject:Date:Message-Id:To:Cc:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=8Ywufm8RU+0xOhYr5T5lulicdk5+6gM3bDqDT+VhHg4=;
+ b=BEYW1k7yVdkoVTwG8vLGUJXY0+jRZs1ZwcuAuAlpyDUqF2X7fMpUnEnTSOKZ1VYF
+ H6xTwIp5StXBZlWEH0tp4Ouxi6m++r2N7ZsPt84z+IilKccb7mOssYOmj+ynWTeq
+ aTCYRmrPvsaJebmOLXW1xEDxgoyHX8XFj0dpnfu8dCE=;
+X-AuditID: c39127d2-e0fff7000000408f-ac-5de514800f1c
+Received: from idefix.phytec.de (Unknown_Domain [172.16.0.10])
+ by mickerik.phytec.de (PHYTEC Mail Gateway) with SMTP id 35.3E.16527.08415ED5;
+ Mon,  2 Dec 2019 14:41:20 +0100 (CET)
+Received: from augenblix2.phytec.de ([172.16.0.56])
+ by idefix.phytec.de (IBM Domino Release 9.0.1FP7)
+ with ESMTP id 2019120214411992-25353 ;
+ Mon, 2 Dec 2019 14:41:19 +0100 
+From: Jan Remmet <j.remmet@phytec.de>
+To: s.hauer@pengutronix.de, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [RESEND][PATCH] clk: imx6q: disable non functional divider
+Date: Mon, 2 Dec 2019 14:41:19 +0100
+Message-Id: <20191202134119.194625-1-j.remmet@phytec.de>
+X-Mailer: git-send-email 2.23.0
+In-Reply-To: <1573818017-31949-1-git-send-email-j.remmet@phytec.de>
+References: <1573818017-31949-1-git-send-email-j.remmet@phytec.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <VI1PR04MB70234400D6CF248C18321FDBEE430@VI1PR04MB7023.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+X-MIMETrack: Itemize by SMTP Server on Idefix/Phytec(Release 9.0.1FP7|August
+ 17, 2016) at 02.12.2019 14:41:20,
+ Serialize by Router on Idefix/Phytec(Release 9.0.1FP7|August  17, 2016) at
+ 02.12.2019 14:41:20
+X-TNEFEvaluated: 1
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprALMWRmVeSWpSXmKPExsWyRoCBS7dB5GmswdnVlhabHl9jtfi7fROL
+ xYst4g7MHptWdbJ5bF5S79H/1yCAOYrLJiU1J7MstUjfLoErY9PV9IJHAhUz515naWC8ydfF
+ yMkhIWAicX/9NCYQW0hgK6PE9O3eXYxcQPZZRon5J16ygSTYBFQlDv6+xwhiiwiESuw98R2s
+ QVjAWWLH/58sIDaLgIrE6cYF7F2MHBy8AhYSPXs1QUwJAXmJw4eyQCo4gapvrt7OCrHKSWJh
+ dxc7iM0rIChxcuYTFpC1EgJXGCUmvtnIAnGbkMTpxWeZQWxmAW2JZQtfM09g5J+FpGcWktQC
+ RqZVjEK5mcnZqUWZ2XoFGZUlqcl6KambGIGhdnii+qUdjH1zPA4xMnEwHmKU4GBWEuG9rvQw
+ Vog3JbGyKrUoP76oNCe1+BCjNAeLkjjvBt6SMCGB9MSS1OzU1ILUIpgsEwenVAOj0FbXlM8r
+ z+/OVdk99c+6j5PlhJPnJn7+UbWvbsmcd2+D/qx8c3+LwwJV5kv3uwWrbvTX/ZmiumRLWGHO
+ Xb7PnKXOLstnnGWR6+vjsxS0Wtay6l3a/wNcCw+enNY91c5awKd6uyNH3OqoF7c87spNclJS
+ cI2L8txhEXiJvfPso4behnWfliVxK7EUZyQaajEXFScCAB46GgUjAgAA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_053511_156532_755F413B 
-X-CRM114-Status: GOOD (  12.53  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191202_054126_046653_3267B461 
+X-CRM114-Status: GOOD (  11.38  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [195.145.39.210 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,74 +92,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
- Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Martin Kepplinger <martink@posteo.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- Georgi Djakov <georgi.djakov@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 02, 2019 at 09:12:12AM +0000, Leonard Crestez wrote:
-> >> +
-> >> +	/* change the ddr freqency */
-> >> +	arm_smccc_smc(IMX_SIP_DDR_DVFS, target_freq, online_cpus,
-> >> +			0, 0, 0, 0, 0, &res);
-> >> +
-> >> +	local_irq_enable();
-> >> +}
-> >> +
-> >> +struct clk *clk_get_parent_by_index(struct clk *clk, int index)
-> >> +{
-> >> +	struct clk_hw *hw;
-> >> +
-> >> +	hw = clk_hw_get_parent_by_index(__clk_get_hw(clk), index);
-> > 
-> > Okay, this is why you need clk-provider.h.  But this
-> > clk_get_parent_by_index() function looks completely generic, and should
-> > be proposed to clock core?
-> 
-> There are very few driver users of clk_hw_get_parent_by_index:
-> 
-> $ git grep -wl clk_hw_get_parent_by_index |grep -v drivers/clk
-> arch/mips/alchemy/common/clock.c
-> drivers/cpufreq/qoriq-cpufreq.c
-> drivers/devfreq/imx8m-ddrc.c
-> drivers/gpu/drm/sun4i/sun4i_hdmi_tmds_clk.c
-> drivers/gpu/drm/sun4i/sun8i_hdmi_phy_clk.c
-> drivers/media/platform/atmel/atmel-isc-base.c
-> drivers/rtc/rtc-ac100.c
-> include/linux/clk-provider.h
-> 
-> Even clk_get_parent has few users and it contains this strange comment:
-> 
-> /* TODO: Create a per-user clk and change callers to call clk_put */
-> 
-> That proposed change effectively creates a new API? I didn't want to add 
-> a new clk core API with unclear semantics.
+The /2 divider between pll4_audio_div and pll4_post_div is not working
+on imx6q. The frequency is not halved as reported by the clock tree
+and measured on clko.
+In the technical reference manual the divider was removed in revision 4.
+It's also not listed in the imx6qp manual.
 
-Since the merged version has 'static' added for clk_get_parent_by_index(),
-I'm fine with it being a local function.  It's Stephen's call whether
-we should have it at clock core level.
+imx6dl manual mentions a divider for PLL4 and the according register
+description. So keep the divider here.
 
-Shawn
+Signed-off-by: Jan Remmet <j.remmet@phytec.de>
+---
+ drivers/clk/imx/clk-imx6q.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/clk/imx/clk-imx6q.c b/drivers/clk/imx/clk-imx6q.c
+index 60f2de851f39..ba33c79158de 100644
+--- a/drivers/clk/imx/clk-imx6q.c
++++ b/drivers/clk/imx/clk-imx6q.c
+@@ -598,7 +598,10 @@ static void __init imx6q_clocks_init(struct device_node *ccm_node)
+ 	}
+ 
+ 	hws[IMX6QDL_CLK_PLL4_POST_DIV] = clk_hw_register_divider_table(NULL, "pll4_post_div", "pll4_audio", CLK_SET_RATE_PARENT, base + 0x70, 19, 2, 0, post_div_table, &imx_ccm_lock);
+-	hws[IMX6QDL_CLK_PLL4_AUDIO_DIV] = clk_hw_register_divider(NULL, "pll4_audio_div", "pll4_post_div", CLK_SET_RATE_PARENT, base + 0x170, 15, 1, 0, &imx_ccm_lock);
++	if (clk_on_imx6q() || clk_on_imx6qp())
++		hws[IMX6QDL_CLK_PLL4_AUDIO_DIV] = imx_clk_hw_fixed_factor("pll4_audio_div", "pll4_post_div", 1, 1);
++	else
++		hws[IMX6QDL_CLK_PLL4_AUDIO_DIV] = clk_hw_register_divider(NULL, "pll4_audio_div", "pll4_post_div", CLK_SET_RATE_PARENT, base + 0x170, 15, 1, 0, &imx_ccm_lock);
+ 	hws[IMX6QDL_CLK_PLL5_POST_DIV] = clk_hw_register_divider_table(NULL, "pll5_post_div", "pll5_video", CLK_SET_RATE_PARENT, base + 0xa0, 19, 2, 0, post_div_table, &imx_ccm_lock);
+ 	hws[IMX6QDL_CLK_PLL5_VIDEO_DIV] = clk_hw_register_divider_table(NULL, "pll5_video_div", "pll5_post_div", CLK_SET_RATE_PARENT, base + 0x170, 30, 2, 0, video_div_table, &imx_ccm_lock);
+ 
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
