@@ -2,94 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71A6D111B63
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 23:09:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97486111B79
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 23:14:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/gLRYVUTtSAZdQscM/+42QQ5Z1SfurFc1u++qOwr9fM=; b=KGMNrIkmQCjypYqCZaNBRk2eR
-	dg0acbq/DIk830oalKr4hy+4FgsupZ6MHVlRjLeGVjwN7nIqKRbgwsJbLXmdVBRJbP1yYtEfS9QLi
-	OOWx3Bl9xa5KjwFfIQwb83cvpJ8YmgGHq85sg/lklvDPagkXRF6Af0tp8/ClQZiPeFAan3ZckArl0
-	NVeSTARty0MSMRIxXv81AWzofACQid6dF6GHrj55VPILGFNjtuC0qa9WULrMQnEctQfGNT65sToun
-	UiGgTl6NWcFwPd0fe3Q6BdiSMp7sdXpFZ1ypnd0GxAoLGnCU7znaKFvYXBtEXZP15D2WcCHUkknRO
-	86aiVB0nw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1cwkxem9u5H6xOrEHw7ibjPZGOxghsLHl7j7BOfM18Y=; b=az8fQiliszo1MW
+	uw9VxggwmLn3Frazw25Gbaama+jyQAJ1CpERb5Sp04owrVQLDo9eCLiYFLtaZ40imuBUb4g18RQkz
+	VoZv7XlqMGCvsMYEZN3+RRd0bixD9DbZsiZTSnwuz/QiKlu1OsnmA4fOLisUWx7dJA6fckEAtbioK
+	aK3+Tq6a9qClPp1DBTmrWPGzDh1munQvB3Gy0koE9r0kZO0eLVJHkwKoVqW0ZPdsW2U+/z5hxfBFF
+	HretxVxekcM5TRCdxj6LhfMhhfQoKtZdbVrlhzlCm8CbZgkERdVtKIpJdx9ODBxeN+NQk6PnFPS+0
+	JP8wwQVmbJIWuZne+esw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icGMY-00027N-EB; Tue, 03 Dec 2019 22:09:42 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1icGRO-0004TP-Ns; Tue, 03 Dec 2019 22:14:42 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icGMR-00026i-3i
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 22:09:36 +0000
-Received: by mail-pg1-x541.google.com with SMTP id z124so2257420pgb.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 14:09:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=mSBIYOscptZnYWaI4AeOjEh64oDv5ru63qkreKiXvlY=;
- b=geuMiRjARcxU+pIzzuOeH6lx6cneFVRMrKbm5tRMvY3hwxiwCgtP/MLufBqpU4RJ7h
- 3UO8ZYfwl1j2qXpO4wsmCZlyRB/63Co3z+e4AVTFnaN3wUIXNoU58uL87/FjdMvz5C9t
- dSKy47buYSGEPK+Do9zawbCYg+AbEQpnBDPBU=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=mSBIYOscptZnYWaI4AeOjEh64oDv5ru63qkreKiXvlY=;
- b=PPEt2D5wZRT6ikLYbzfX15PFnsklhZ+2tpc+uAchTO12H7E2dAUB2dIR407faX8pws
- NaOXhGNAJ2xJ7uSLOtPRCPdTc6Q2cpRbfctrmQkibWDC8CxDc3HZtqGfuRs/HLQ7twZN
- RNWrL/uIzDpLgvnOSSYJrkJGbvxt/X5RcaNRWdpG4GiLQgZ3Za/7JBRrca2WwDTHlOCi
- FpUxU5TuwYWiE+vf36j5Bj54KK2SWcTPcdhSPa+vdDdb0VzLrBO99Lcy19PQW5fLsRy3
- xfXpOlsdqLDSU/JFEzgc9qold1u9FfUJemI3y09JQlZ/NvRd/lwetnf+xaBwhG7D5Irg
- dhuA==
-X-Gm-Message-State: APjAAAUY6vpkqEBKrNMyB3zVgGqAMgEoSxJEi6HvML6sBA6YQJ2sIvxj
- Zj1IN/D71prW0FvPeLtjiZIrPg==
-X-Google-Smtp-Source: APXvYqylfTPPGwnkmI3aoo7y5yzJGuEDLuZJ1o057PLvAd+XFAn29jSN6QkIzubcCN2MEgWSyp95Dg==
-X-Received: by 2002:a63:6704:: with SMTP id b4mr8002284pgc.424.1575410973842; 
- Tue, 03 Dec 2019 14:09:33 -0800 (PST)
-Received: from rj-aorus.ric.broadcom.com ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id k12sm4471207pgm.65.2019.12.03.14.09.26
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 03 Dec 2019 14:09:33 -0800 (PST)
-Subject: Re: [PATCH v3 2/6] PCI: iproc: Add INTx support with better modeling
-To: Andy Shevchenko <andy.shevchenko@gmail.com>,
- Andrew Murray <andrew.murray@arm.com>
-References: <1575349026-8743-1-git-send-email-srinath.mannam@broadcom.com>
- <1575349026-8743-3-git-send-email-srinath.mannam@broadcom.com>
- <20191203155514.GE18399@e119886-lin.cambridge.arm.com>
- <CAHp75Vf7d=Gw24MTq2q3BKspkLEDDM24GVK4Zh_4zfZEzVuZjw@mail.gmail.com>
-From: Ray Jui <ray.jui@broadcom.com>
-Message-ID: <40fffa66-4b06-a851-84c2-4de36d5c6777@broadcom.com>
-Date: Tue, 3 Dec 2019 14:09:22 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1icGRH-0004Se-LJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 22:14:36 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 03 Dec 2019 14:14:34 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,275,1571727600"; d="scan'208";a="201159390"
+Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
+ ([10.54.74.41])
+ by orsmga007.jf.intel.com with ESMTP; 03 Dec 2019 14:14:33 -0800
+Date: Tue, 3 Dec 2019 14:14:33 -0800
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: James Hogan <jhogan@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Radim =?utf-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+ Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v3 00/15] KVM: Dynamically size memslot arrays
+Message-ID: <20191203221433.GK19877@linux.intel.com>
+References: <20191024230744.14543-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
-In-Reply-To: <CAHp75Vf7d=Gw24MTq2q3BKspkLEDDM24GVK4Zh_4zfZEzVuZjw@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191024230744.14543-1-sean.j.christopherson@intel.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_140935_150749_5F86C1C6 
-X-CRM114-Status: GOOD (  16.50  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191203_141435_709838_3B737811 
+X-CRM114-Status: GOOD (  13.53  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,60 +71,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
- Ray Jui <rjui@broadcom.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Srinath Mannam <srinath.mannam@broadcom.com>, linux-pci@vger.kernel.org,
- Bjorn Helgaas <bhelgaas@google.com>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Christoffer Dall <christoffer.dall@arm.com>,
+ Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, Joerg Roedel <joro@8bytes.org>,
+ Cornelia Huck <cohuck@redhat.com>, linux-mips@vger.kernel.org,
+ kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Jim Mattson <jmattson@google.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 12/3/19 11:27 AM, Andy Shevchenko wrote:
-> On Tue, Dec 3, 2019 at 5:55 PM Andrew Murray <andrew.murray@arm.com> wrote:
->> On Tue, Dec 03, 2019 at 10:27:02AM +0530, Srinath Mannam wrote:
+On Thu, Oct 24, 2019 at 04:07:29PM -0700, Sean Christopherson wrote:
+> The end goal of this series is to dynamically size the memslot array so
+> that KVM allocates memory based on the number of memslots in use, as
+> opposed to unconditionally allocating memory for the maximum number of
+> memslots.  On x86, each memslot consumes 88 bytes, and so with 2 address
+> spaces of 512 memslots, each VM consumes ~90k bytes for the memslots.
+> E.g. given a VM that uses a total of 30 memslots, dynamic sizing reduces
+> the memory footprint from 90k to ~2.6k bytes.
 > 
->>> +     /* go through INTx A, B, C, D until all interrupts are handled */
->>> +     do {
->>> +             status = iproc_pcie_read_reg(pcie, IPROC_PCIE_INTX_CSR);
->>
->> By performing this read once and outside of the do/while loop you may improve
->> performance. I wonder how probable it is to get another INTx whilst handling
->> one?
+> The changes required to support dynamic sizing are relatively small,
+> e.g. are essentially contained in patches 14/15 and 15/15.  Patches 1-13
+> clean up the memslot code, which has gotten quite crusty, especially
+> __kvm_set_memory_region().  The clean up is likely not strictly necessary
+> to switch to dynamic sizing, but I didn't have a remotely reasonable
+> level of confidence in the correctness of the dynamic sizing without first
+> doing the clean up.
 > 
-> May I ask how it can be improved?
-> One read will be needed any way, and so does this code.
+> Christoffer, I added your Tested-by to the patches that I was confident
+> would be fully tested based on the desription of what you tested.  Let me
+> know if you disagree with any of 'em.
 > 
-
-I guess the current code will cause the IPROC_PCIE_INTX_CSR register to 
-be read TWICE, if it's ever set to start with.
-
-But then if we do it outside of the while loop, if we ever receive an 
-interrupt while servicing one, the interrupt will still need to be 
-serviced, and in this case, it will cause additional context switch 
-overhead by going out and back in the interrupt context.
-
-My take is that it's probably more ideal to leave this portion of code 
-as it is.
-
->>> +             for_each_set_bit(bit, &status, PCI_NUM_INTX) {
->>> +                     virq = irq_find_mapping(pcie->irq_domain, bit);
->>> +                     if (virq)
->>> +                             generic_handle_irq(virq);
->>> +                     else
->>> +                             dev_err(dev, "unexpected INTx%u\n", bit);
->>> +             }
->>> +     } while ((status & SYS_RC_INTX_MASK) != 0);
+> v3:
+>   - Fix build errors on PPC and MIPS due to missed params during
+>     refactoring [kbuild test robot].
+>   - Rename the helpers for update_memslots() and add comments describing
+>     the new algorithm and how it interacts with searching [Paolo].
+>   - Remove the unnecessary and obnoxious warning regarding memslots being
+>     a flexible array [Paolo].
+>   - Fix typos in the changelog of patch 09/15 [Christoffer].
+>   - Collect tags [Christoffer].
 > 
+> v2:
+>   - Split "Drop kvm_arch_create_memslot()" into three patches to move
+>     minor functional changes to standalone patches [Janosch].
+>   - Rebase to latest kvm/queue (f0574a1cea5b, "KVM: x86: fix ...")
+>   - Collect an Acked-by and a Reviewed-by
+
+Paolo, do you want me to rebase this to the latest kvm/queue?
 
 _______________________________________________
 linux-arm-kernel mailing list
