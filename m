@@ -2,79 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BB8510F9C8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 09:26:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C4F410F9DE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 09:33:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gZJG0tQDNIkCkf5SGLo2ZBft8Su4FIfUkFxqAOMiP84=; b=P1mEeGFWtC/PgQ
-	6W8iIWRsv5qvou++JY1flHNkAfznVw/DCxqwuPQGBHb+F5TvSP/X1rqMmVCnwHu5ZUw0iLLdkq2Sp
-	iu1eUjDj10p/JhVni4Ibr3xlDkmreLhfkFdyjgl6qYr3NSxuhi1V2fitaH9nXna3LDboBS3wG2KYO
-	0VjYz/BDgtoNDCC21aDitgC3W4ZNjujG6rE7uuT9Su+s6pLfQOg/7c5vGJQ9v5HvnVRs93jRuTntH
-	8hjyjcSelobVJ6oKxF6beGp/AyBX8iUfvXUxqVumfVijYn2W7YHbqXq0k9YEaSxcfWACrbxPoml37
-	jP8WvQ+d/RR7P2i85tyA==;
+	List-Owner; bh=npK1BQVXzM5+D65AdyLmDGJXD/kHZSSLruOxM2tyMJE=; b=uYiBgrrEZ5mjjk
+	8bEzsCQh8TKZlqscK6WT9gzfOebjAWC8TYD6qYXhxhl2zht0SDo8LEKOgSyp/MOGvXwGSr1mC3SGB
+	G4I58lfu3PdIWFH9PhMV/qaTdVf4IY/OnUrdL9jd2pGLhybnJeaVAVRpWW5hQHT1Tfp/9ZrmGUmpu
+	X/xoTuLvCi5mEtmPJ3RBwk2Hyv0rfEsgjlNpYdJjpkPlD+KEgASLQmj52T92HjLndgZD8bsaRyCCn
+	wBtL0nJmip334/ojiOE7Hw3Mihvqo7eCOR9Otp6Q/mgg14t1FPXj/mZykmGrEI89T9KxEVW7QBeDN
+	BO+9BcOM4NRB6UsP0MtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic3VX-0007LW-Nz; Tue, 03 Dec 2019 08:26:07 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ic3cX-00012a-6V; Tue, 03 Dec 2019 08:33:21 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic3VQ-0007Kk-0t; Tue, 03 Dec 2019 08:26:01 +0000
-X-UUID: 05b7ff2a45b149e281b37e4dc233aa7e-20191203
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=Q2EnrRAMwmQvs3z2Y9NW1LlhZHGyGeQTCplIkYb1FCo=; 
- b=bsLCDEk68TnyHNU+iqON0Nhh0d1z/WAEC96n9bNkXE1SJuv7LpEh9E3aAPse3jP692wPJDu9+8h/FVcmR57iShVofpDrK+DCz9zYzvwvuEHFZa8BUJyi80fHy0JlrOEVC4WxceenFwo4Jf900T/OJPuY8MihMQjexnCvITdqXZg=;
-X-UUID: 05b7ff2a45b149e281b37e4dc233aa7e-20191203
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 513499180; Tue, 03 Dec 2019 00:25:56 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Dec 2019 00:26:42 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Dec 2019 16:25:42 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 3 Dec 2019 16:25:25 +0800
-Message-ID: <1575361546.17950.1.camel@mtksdaap41>
-Subject: Re: [PATCH v1, 1/2] drm/mediatek: Fixup external display black
- screen issue
-From: CK Hu <ck.hu@mediatek.com>
-To: <yongqiang.niu@mediatek.com>
-Date: Tue, 3 Dec 2019 16:25:46 +0800
-In-Reply-To: <1575359027.10160.2.camel@mhfsdcap03>
-References: <1574817475-22378-1-git-send-email-yongqiang.niu@mediatek.com>
- <1574817475-22378-2-git-send-email-yongqiang.niu@mediatek.com>
- <1575352101.2457.8.camel@mtksdaap41> <1575359027.10160.2.camel@mhfsdcap03>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1ic3cO-00011R-SK
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 08:33:15 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1ic3cJ-0003ra-R5; Tue, 03 Dec 2019 09:33:07 +0100
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1ic3cJ-0006zU-Cc; Tue, 03 Dec 2019 09:33:07 +0100
+Date: Tue, 3 Dec 2019 09:33:07 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Stefan =?iso-8859-1?Q?Riedm=FCller?= <s.riedmueller@phytec.de>
+Subject: Re: [PATCH 1/3] ARM: dts: imx6: phycore-som: fix arm and soc minimum
+ voltage
+Message-ID: <20191203083307.ntoe2bwha7hzlr42@pengutronix.de>
+References: <20191129164859.15632-1-m.felsch@pengutronix.de>
+ <ec29daf9-d87f-276f-2927-da66b153840f@phytec.de>
+ <20191202124200.mvwnsne2vnszyprj@pengutronix.de>
+ <b4e1fb4d-6e0f-4501-17a4-ee837548ad86@phytec.de>
+ <20191202141406.gvzc3lnxefczd33b@pengutronix.de>
+ <dc55f52f-c01b-1f9e-4149-740e2c6d9663@phytec.de>
+ <20191202145308.7w5pic3fwpq752mz@pengutronix.de>
+ <acdbab96-dfc0-87ab-b759-79c7bfe77c3c@phytec.de>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 5C730EAB590D19C2DF8D014B791E170B5ADEEEA52FF9340D2E16167DCF71586A2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <acdbab96-dfc0-87ab-b759-79c7bfe77c3c@phytec.de>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 09:19:09 up 17 days, 23:37, 26 users,  load average: 0.02, 0.02, 0.04
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_002600_070965_B8490067 
-X-CRM114-Status: GOOD (  21.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191203_003313_462995_3D81364F 
+X-CRM114-Status: GOOD (  39.88  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,132 +81,361 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: s.christ@phytec.de, chf.fritz@googlemail.com, robh+dt@kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, c.hemp@phytec.de,
+ shawnguo@kernel.org, festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Yongqiang:
+Hi Stefan,
 
-On Tue, 2019-12-03 at 15:43 +0800, Yongqiang Niu wrote:
-> On Tue, 2019-12-03 at 13:48 +0800, CK Hu wrote:
-> > Hi, Yongqiang:
-> > 
-> > On Wed, 2019-11-27 at 09:17 +0800, yongqiang.niu@mediatek.com wrote:
-> > > From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> > > 
-> > > Problem:
-> > > overlay hangup when external display hotplut test
-> > > 
-> > > Fix:
-> > > disable overlay when crtc disable
-> > 
-> > I think you do two things in this patch. The first is to config layer
-> > before component start, and the second is disable layer when crtc
-> > disable. So separate to two patches.
-> > 
-> > > 
-> > > Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> > > ---
-> > >  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 39 +++++++++++++++++++++------------
-> > >  1 file changed, 25 insertions(+), 14 deletions(-)
-> > > 
-> > > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > > index 4fb346c..7eca02f 100644
-> > > --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > > +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > > @@ -369,6 +369,20 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
-> > >  	mtk_disp_mutex_add_comp(mtk_crtc->mutex, mtk_crtc->ddp_comp[i]->id);
-> > >  	mtk_disp_mutex_enable(mtk_crtc->mutex);
-> > >  
-> > > +	/* Initially configure all planes */
-> > > +	for (i = 0; i < mtk_crtc->layer_nr; i++) {
-> > > +		struct drm_plane *plane = &mtk_crtc->planes[i];
-> > > +		struct mtk_plane_state *plane_state;
-> > > +		struct mtk_ddp_comp *comp;
-> > > +		unsigned int local_layer;
-> > > +
-> > > +		plane_state = to_mtk_plane_state(plane->state);
-> > > +		comp = mtk_drm_ddp_comp_for_plane(crtc, plane, &local_layer);
-> > > +		if (comp)
-> > > +			mtk_ddp_comp_layer_config(comp, local_layer,
-> > > +						  plane_state, NULL);
-> > > +	}
-> > > +
-> > >  	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
-> > >  		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[i];
-> > >  		enum mtk_ddp_comp_id prev;
-> > > @@ -385,20 +399,6 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
-> > >  		mtk_ddp_comp_start(comp);
-> > >  	}
-> > >  
-> > > -	/* Initially configure all planes */
-> > > -	for (i = 0; i < mtk_crtc->layer_nr; i++) {
-> > > -		struct drm_plane *plane = &mtk_crtc->planes[i];
-> > > -		struct mtk_plane_state *plane_state;
-> > > -		struct mtk_ddp_comp *comp;
-> > > -		unsigned int local_layer;
-> > > -
-> > > -		plane_state = to_mtk_plane_state(plane->state);
-> > > -		comp = mtk_drm_ddp_comp_for_plane(crtc, plane, &local_layer);
-> > > -		if (comp)
-> > > -			mtk_ddp_comp_layer_config(comp, local_layer,
-> > > -						  plane_state, NULL);
-> > > -	}
-> > > -
-> > >  	return 0;
-> > >  
-> > >  err_mutex_unprepare:
-> > > @@ -607,10 +607,21 @@ static void mtk_drm_crtc_atomic_disable(struct drm_crtc *crtc,
-> > >  	for (i = 0; i < mtk_crtc->layer_nr; i++) {
-> > >  		struct drm_plane *plane = &mtk_crtc->planes[i];
-> > >  		struct mtk_plane_state *plane_state;
-> > > +		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
-> > > +		unsigned int comp_layer_nr = mtk_ddp_comp_layer_nr(comp);
-> > > +		unsigned int local_layer;
-> > >  
-> > >  		plane_state = to_mtk_plane_state(plane->state);
-> > >  		plane_state->pending.enable = false;
-> > >  		plane_state->pending.config = true;
-> > > +
-> > > +		if (i >= comp_layer_nr) {
-> > > +			comp = mtk_crtc->ddp_comp[1];
-> > > +			local_layer = i - comp_layer_nr;
-> > > +		} else
-> > > +			local_layer = i;
-> > > +		mtk_ddp_comp_layer_config(comp, local_layer,
-> > > +					  plane_state, NULL);
-> > 
-> > I'm confused with this part. The design of this loop is to set
-> > plane_state->pending.enable = false and wait for irq handler to write
-> > register. Why do you directly write register?
-> > 
+On 19-12-03 09:11, Stefan Riedm=FCller wrote:
+> Hi Marco,
+> =
+
+> On 02.12.19 15:53, Marco Felsch wrote:
+> > On 19-12-02 15:30, Stefan Riedm=FCller wrote:
+> > > Hi Marco,
+> > > =
+
+> > > On 02.12.19 15:14, Marco Felsch wrote:
+> > > > Hi Stefan,
+> > > > =
+
+> > > > On 19-12-02 14:55, Stefan Riedm=FCller wrote:
+> > > > > Hi Marco,
+> > > > > =
+
+> > > > > On 02.12.19 13:42, Marco Felsch wrote:
+> > > > > > Hi Stefan,
+> > > > > > =
+
+> > > > > > On 19-12-02 11:09, Stefan Riedm=FCller wrote:
+> > > > > > > Hi Marco,
+> > > > > > > =
+
+> > > > > > > your proposed setting is only valid for the LDO enabled case =
+but not for the
+> > > > > > > case where the LDO's are in bypass mode. Is that intended? In=
+ bypass mode it
+> > > > > > > actually needs to be 0.925 V min for ARM and 1.15 V min for S=
+OC.
+> > > > > > =
+
+> > > > > > The case is that the driver doesn't support the bypass mode cur=
+rently so
+> > > > > > yes it was intended.
+> > > > > =
+
+> > > > > Ok, I see.
+> > > > > =
+
+> > > > > > =
+
+> > > > > > > Did you experience an issue with the current settings or is t=
+his just a
+> > > > > > > cosmetic change?
+> > > > > > =
+
+> > > > > > There is currently no issue because the internally LDO's don't =
+try to
+> > > > > > apply such a low voltage value. But I think it isn't a cosmetic=
+ change
+> > > > > > because this value is wrong. We need to specify the valid volta=
+ge range.
+> > > > > =
+
+> > > > > Please correct me if I'm wrong, but isn't the regulator-min and
+> > > > > regulator-max values supposed to reflect the min and max values t=
+his
+> > > > > regulator can deliver?
+> > > > =
+
+> > > > Nope, the constraints are hard coded within the driver e.g. da9062:=
+ >
+> > > > 8<-----------------------------------------------------------------
+> > > > /* Regulator operations */
+> > > > =
+
+> > > > /* Current limits array (in uA)
+> > > >    * - DA9061_ID_[BUCK1|BUCK3]
+> > > >    * - DA9062_ID_[BUCK1|BUCK2|BUCK4]
+> > > >    * Entry indexes corresponds to register values.
+> > > >    */
+> > > > static const unsigned int da9062_buck_a_limits[] =3D {
+> > > > 	500000,  600000,  700000,  800000,  900000, 1000000,
+> > > > 	1100000, 1200000,
+> > > > 	1300000, 1400000, 1500000, 1600000, 1700000,
+> > > > 	1800000, 1900000, 2000000
+> > > > };
+> > > > =
+
+> > > > /* Current limits array (in uA)
+> > > >    * - DA9061_ID_BUCK2
+> > > >    * - DA9062_ID_BUCK3
+> > > >    * Entry indexes corresponds to register values.
+> > > >    */
+> > > > static const unsigned int
+> > > > da9062_buck_b_limits[] =3D {
+> > > > 	1500000, 1600000, 1700000, 1800000,
+> > > > 	1900000, 2000000, 2100000, 2200000,
+> > > > 	2300000, 2400000, 2500000,
+> > > > 	2600000, 2700000, 2800000,
+> > > > 	2900000, 3000000
+> > > > };
+> > > > =
+
+> > > > 8<-----------------------------------------------------------------
+> > > > =
+
+> > > =
+
+> > > These are the available current limits for the buck regulators. I don=
+'t see
+> > > where they correspond to the min/max settable output voltage. Maybe I=
+ missed
+> > > something?
+> > =
+
+> > Please check the following structs:
+> > =
+
+> >   - static const struct da9062_regulator_info local_da9061_regulator_in=
+fo[]
+> >   - static const struct da9062_regulator_info local_da9062_regulator_in=
+fo[]
+> > =
+
+> > There you have the min_uV, uV_step, n_voltages so the core can validate
+> > if the dt-value is within the range.
+> =
+
+> Thanks, that makes more sense.
+> =
+
+> > =
+
+> > > The regulator bindings state:
+> > > - regulator-min-microvolt: smallest voltage consumers may set
+> > > =
+
+> > > - regulator-max-microvolt: largest voltage consumers may set
+> > =
+
+> > Yes and according the datasheet I mentionied the current values aren't
+> > correct.
+> > =
+
+> > > For me that is device depended and not design depended.
+> > > =
+
+> > > What is the scenario you're thinking about which would cause the SOC,=
+ as a
+> > > consumer, to request a lower voltage as it needs?
+> > =
+
+> > The thing is that the DT abstracts the HW and these values are not
+> > correct. As mentioned in my commit message the values should meet
+> > the datasheet restrictions and this isn't the case yet.
+> =
+
+> I don't agree. The datasheet you mention is the i.MX 6 datasheet and thus
+> the limitation should reside in the i.MX 6 regulators and not in the PMIC=
+'s.
+> This limitation is not just valid in combination with that PMIC but for a=
+ll
+> i.MX 6.
+
+The datasheet tells you which voltage should be applied to the imx6 and
+so you have to set this here. What happens if the internally ldo
+request a voltage value below 0.9V? Then the value will be applied
+because we specified 0.73V and the system don't work anymore or did you
+verified that case?
+
+> If I have this wrong and the maintainers agree with you could you please
+> make sure to account for the bypass mode as well since these values from =
+the
+> datasheet are valid too?
+
+As I said, the bypass mode isn't supported by the driver and all imx6
+based devicetrees follow that case. So we don't have to take that into
+account. Also we can't meet both contraints with one dt and futhermore
+the bypass mode decrease your imx6 lifetime due the the increased ripple
+on the arm-core supply. So I think no one wants this setup in the near
+future.
+
+Regards,
+  Marco
+
+> Regards,
+> Stefan
+> =
+
+> > =
+
 > > Regards,
-> > CK
-> 
-> when cmdq enable, mtk_crtc->cmdq_client will be always true when crtc
-> create, there is no chance for mtk_crtc_ddp_config process in ddp irq 
-> callback function
+> >    Marco
+> > =
 
-I think this is a bug of patch [1] which has not been upstream yet. So
-this part should be moved to that patch.
+> > > Regards,
+> > > Stefan
+> > > =
 
-[1] https://patchwork.kernel.org/patch/11270637/
+> > > > So you have to specify the min/max voltage for your design.
+> > > > =
 
-> > 
-> > >  	}
-> > >  	mtk_crtc->pending_planes = true;
-> > >  
-> > 
-> > 
-> 
-> 
+> > > > Regards,
+> > > >     Marco
+> > > > =
+
+> > > > > Maybe your change is better placed in the anatop regulators. Btw =
+they also
+> > > > > have a 0.725 V minimum voltage:
+> > > > > =
+
+> > > > >   From arch/arm/boot/dts/imx6qdl.dtsi:
+> > > > > =
+
+> > > > >                                   reg_arm: regulator-vddcore {
+> > > > > =
+
+> > > > >                                           compatible =3D "fsl,ana=
+top-regulator";
+> > > > >                                           regulator-name =3D "vdd=
+arm";
+> > > > > =
+
+> > > > >                                           regulator-min-microvolt=
+ =3D <725000>;
+> > > > > =
+
+> > > > >                                           regulator-max-microvolt=
+ =3D <1450000>;
+> > > > >                                           regulator-always-on;
+> > > > > =
+
+> > > > >                                           anatop-reg-offset =3D <=
+0x140>;
+> > > > > =
+
+> > > > >                                           anatop-vol-bit-shift =
+=3D <0>;
+> > > > > =
+
+> > > > >                                           anatop-vol-bit-width =
+=3D <5>;
+> > > > > =
+
+> > > > >                                           anatop-delay-reg-offset=
+ =3D <0x170>;
+> > > > > =
+
+> > > > >                                           anatop-delay-bit-shift =
+=3D <24>;
+> > > > > =
+
+> > > > >                                           anatop-delay-bit-width =
+=3D <2>;
+> > > > > =
+
+> > > > >                                           anatop-min-bit-val =3D =
+<1>;
+> > > > > =
+
+> > > > >                                           anatop-min-voltage =3D =
+<725000>;
+> > > > > =
+
+> > > > >                                           anatop-max-voltage =3D =
+<1450000>;
+> > > > > =
+
+> > > > >                                   };
+> > > > > =
+
+> > > > > =
+
+> > > > > Regards,
+> > > > > Stefan
+> > > > > =
+
+> > > > > > =
+
+> > > > > > Regards,
+> > > > > >      Marco
+> > > > > > =
+
+> > > > > > > Regards,
+> > > > > > > Stefan
+> > > > > > > =
+
+> > > > > > > =
+
+> > > > > > > On 29.11.19 17:48, Marco Felsch wrote:
+> > > > > > > > The current set minimum voltage of 730000mV seems to be wro=
+ng. I don't
+> > > > > > > > know the document which specifies that but the imx6qdl data=
+sheets says
+> > > > > > > > that the minimum voltage should be 1.05V for VDD_ARM (LDO e=
+nabled, lowest
+> > > > > > > > opp) and 1.275V for VDD_SOC (LDO enabled, lowest opp).
+> > > > > > > > =
+
+> > > > > > > > Fixes: ddec5d1c0047 ("ARM: dts: imx6: Add initial support f=
+or phyCORE-i.MX 6 SOM")
+> > > > > > > > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+> > > > > > > > ---
+> > > > > > > >      arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 4 =
+++--
+> > > > > > > >      1 file changed, 2 insertions(+), 2 deletions(-)
+> > > > > > > > =
+
+> > > > > > > > diff --git a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.d=
+tsi b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > > > > > > > index 6486df3e2942..46d4953c5588 100644
+> > > > > > > > --- a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > > > > > > > +++ b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > > > > > > > @@ -107,14 +107,14 @@
+> > > > > > > >      		regulators {
+> > > > > > > >      			vdd_arm: buck1 {
+> > > > > > > >      				regulator-name =3D "vdd_arm";
+> > > > > > > > -				regulator-min-microvolt =3D <730000>;
+> > > > > > > > +				regulator-min-microvolt =3D <1050000>;
+> > > > > > > >      				regulator-max-microvolt =3D <1380000>;
+> > > > > > > >      				regulator-always-on;
+> > > > > > > >      			};
+> > > > > > > >      			vdd_soc: buck2 {
+> > > > > > > >      				regulator-name =3D "vdd_soc";
+> > > > > > > > -				regulator-min-microvolt =3D <730000>;
+> > > > > > > > +				regulator-min-microvolt =3D <1275000>;
+> > > > > > > >      				regulator-max-microvolt =3D <1380000>;
+> > > > > > > >      				regulator-always-on;
+> > > > > > > >      			};
+> > > > > > > > =
+
+> > > > > > > =
+
+> > > > > > =
+
+> > > > > =
+
+> > > > =
+
+> > > =
+
+> > =
+
+> =
+
+
+-- =
+
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
