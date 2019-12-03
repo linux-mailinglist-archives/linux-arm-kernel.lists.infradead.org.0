@@ -2,53 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A47110FD65
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:10:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBF1B10FD6D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:11:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mBClga5qVYKvlGdCOPPo5iq7Vtzvnj+G3u4J1tarSMQ=; b=EdF0J5JiONGMt/UiDeo4haNZtO
-	VMi4hZpZcJ5QynYU40PnqlU1DPBXrhrVlCD+i7i1i06PW7812+MxKeJKCWDyZ+dc8jQO8TkSO5CZ5
-	3RGYQxN1WEvKvqh9HEzpPkrx6oznjHUdgtlmcp6v/R/9vY/VTddNAH2878b7jL3gkP3LyaC1Xhctk
-	LM9tcDFeRelVwMcKnc99NkVzz4TULe6v8oEiU6X73uxJb4eoYRw+8YH7CZe+OBqAmYFDsReX0pDNN
-	7qLPclm9co/KDfYvT+O2GKAodEtFX+dYtBToAmF1Jw6cr0Tgffsu+nyzVuJzMNqkz3iFjEwrofemZ
-	SofDhTzw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=d9G0fy+ThKa2PuTy4QjrVx6NzSXfWSoBZIPS1K8fRf8=; b=VomnHPQudmtvKE
+	FwKR61UYn8J+uAAYl+JqpqPR6gmX8Ssoz24C5xYprRdrkZRtYsN79O/w7ZP7VH6cJSF7fVqdNTWut
+	ia9f+rhKF5vY91wt+BojQy87c5aV+ZosiqTq06X0pnKjpKr2tUDnJNJI1OenkvA1gw1ScXYyT1qmu
+	fpyyA3QCgivruJJBENXAhvkQr/zUO+HX/0zmTLCT++t6wH0OiL17Y9ArKK5zmqGdfmQrsw9a42VoQ
+	wU0xWGFJYdPWI/1KeaEtd+8wHurkhnHxDTd6CaxLClpj5+fRhuUbAptMcq9rXoR9Q5aUJLKfI7uLS
+	qFI7/ymqutu9FrXjpKew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic70a-00086k-Ul; Tue, 03 Dec 2019 12:10:24 +0000
+	id 1ic71G-0000pr-SL; Tue, 03 Dec 2019 12:11:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic6zv-00074N-Dp
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:09:45 +0000
-Received: from e123331-lin.cambridge.arm.com (fw-tnat-cam5.arm.com
- [217.140.106.53])
+ id 1ic716-0000pJ-A6
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:10:58 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B276C2073C;
- Tue,  3 Dec 2019 12:09:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3F49C20659;
+ Tue,  3 Dec 2019 12:10:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575374983;
- bh=copjafRuSpR3VqMDvYW+aYmE1dOaRIgJtRncgMnwbKo=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=P1OzBsD81YMr4+KqvtFjTVgVKLjymWBk3279dOtTKen0vYxVr07texzrl98g7qPd8
- lR4Qx6t3KYVaBl9BCnDyfu+2Z62bOPIMgumW7aio1ZUiQfFIll41R8g+8Bs7Enx8Ag
- yD/sK12Jg2/Ve85H3mZVY0rFde97OmLRL4qixZOM=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-efi@vger.kernel.org
-Subject: [PATCH 2/2] efi: move handling of properties table to x86 specific
- code
-Date: Tue,  3 Dec 2019 12:09:17 +0000
-Message-Id: <20191203120917.25981-3-ardb@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191203120917.25981-1-ardb@kernel.org>
-References: <20191203120917.25981-1-ardb@kernel.org>
+ s=default; t=1575375056;
+ bh=mM13KHxBngohOxFi/TTFeMlKRJJ80enDLR3A+PBKNYg=;
+ h=From:To:Cc:Subject:Date:From;
+ b=YJq54cNGOravzW6GKl2E/rJ1C/BJibT6H/beqkESWRLue1bUynPWXuNY7N+wW6/zH
+ fP7avqLbUEo+Q7OMcHsTF0rM2UBgQF8zMof3ZaYih+p45LV7/+89Bz82xezXXTFoVx
+ q4jsxxEKSoz9xBFXRYeOKrjzRBsG7dddYcExEwRk=
+From: Will Deacon <will@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: mm: Fix initialisation of DMA zones on non-NUMA systems
+Date: Tue,  3 Dec 2019 12:10:13 +0000
+Message-Id: <20191203121013.9280-1-will@kernel.org>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_040943_539680_5D4C862B 
-X-CRM114-Status: GOOD (  17.28  )
+X-CRM114-CacheID: sfid-20191203_041056_391195_F8A11AF0 
+X-CRM114-Status: GOOD (  15.16  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,142 +74,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, james.morse@arm.com, Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ John Stultz <john.stultz@linaro.org>, Will Deacon <will@kernel.org>,
+ Christoph Hellwig <hch@lst.de>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The EFI properties table defines only a single property called
-EFI_PROPERTIES_RUNTIME_MEMORY_PROTECTION_NON_EXECUTABLE_PE_DATA which
-was deprecated almost immediately after it was defined, given that
-splitting EFI runtime code regions into code and data segments is not
-generally possible because the OS may apply a virtual mapping that
-corrupts relative references between those segments. Instead, a new
-memory attributes table has been defined that supersedes this feature.
+John reports that the recently merged commit 1a8e1cef7603 ("arm64: use
+both ZONE_DMA and ZONE_DMA32") breaks the boot on his DB845C board:
 
-Some x86 implementations of this property are known to exist in the field,
-and the x86 EFI support code actually takes this property into account if
-no memory attributes table is provided, but on other architectures, the
-property is ignored entirely. So let's move the code that supports this
-feature into the arch/x86 tree.
+  | Booting Linux on physical CPU 0x0000000000 [0x517f803c]
+  | Linux version 5.4.0-mainline-10675-g957a03b9e38f
+  | Machine model: Thundercomm Dragonboard 845c
+  | [...]
+  | Built 1 zonelists, mobility grouping on.  Total pages: -188245
+  | Kernel command line: earlycon
+  | firmware_class.path=/vendor/firmware/ androidboot.hardware=db845c
+  | init=/init androidboot.boot_devices=soc/1d84000.ufshc
+  | printk.devkmsg=on buildvariant=userdebug root=/dev/sda2
+  | androidboot.bootdevice=1d84000.ufshc androidboot.serialno=c4e1189c
+  | androidboot.baseband=sda
+  | msm_drm.dsi_display0=dsi_lt9611_1080_video_display:
+  | androidboot.slot_suffix=_a skip_initramfs rootwait ro init=/init
+  |
+  | <hangs indefinitely here>
 
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+This is because, when CONFIG_NUMA=n, zone_sizes_init() fails to handle
+memblocks that fall entirely within the ZONE_DMA region and erroneously ends up
+trying to add a negatively-sized region into the following ZONE_DMA32, which is
+later interpreted as a large unsigned region by the core MM code.
+
+Rework the non-NUMA implementation of zone_sizes_init() so that the start
+address of the memblock being processed is adjusted according to the end of the
+previous zone, which is then range-checked before updating the hole information
+of subsequent zones.
+
+Cc: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Christoph Hellwig <hch@lst.de>
+Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+Link: https://lore.kernel.org/lkml/CALAqxLVVcsmFrDKLRGRq7GewcW405yTOxG=KR3csVzQ6bXutkA@mail.gmail.com
+Fixes: 1a8e1cef7603 ("arm64: use both ZONE_DMA and ZONE_DMA32")
+Reported-by: John Stultz <john.stultz@linaro.org>
+Signed-off-by: Will Deacon <will@kernel.org>
 ---
- arch/x86/platform/efi/efi.c | 22 +++++++++++++++++++-
- drivers/firmware/efi/efi.c  | 19 -----------------
- include/linux/efi.h         |  1 -
- 3 files changed, 21 insertions(+), 21 deletions(-)
+ arch/arm64/mm/init.c | 25 +++++++++++--------------
+ 1 file changed, 11 insertions(+), 14 deletions(-)
 
-diff --git a/arch/x86/platform/efi/efi.c b/arch/x86/platform/efi/efi.c
-index 38d44f36d5ed..dda52770d78a 100644
---- a/arch/x86/platform/efi/efi.c
-+++ b/arch/x86/platform/efi/efi.c
-@@ -57,10 +57,13 @@
- static struct efi efi_phys __initdata;
- static efi_system_table_t efi_systab __initdata;
+Compile-tested only.
+
+diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+index be9481cdf3b9..b65dffdfb201 100644
+--- a/arch/arm64/mm/init.c
++++ b/arch/arm64/mm/init.c
+@@ -214,15 +214,14 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
+ {
+ 	struct memblock_region *reg;
+ 	unsigned long zone_size[MAX_NR_ZONES], zhole_size[MAX_NR_ZONES];
+-	unsigned long max_dma32 = min;
+-	unsigned long __maybe_unused max_dma = min;
++	unsigned long __maybe_unused max_dma, max_dma32;
  
-+static unsigned long properties_table = EFI_INVALID_TABLE_ADDR;
-+
- static efi_config_table_type_t arch_tables[] __initdata = {
- #ifdef CONFIG_X86_UV
- 	{UV_SYSTEM_TABLE_GUID, "UVsystab", &uv_systab_phys},
+ 	memset(zone_size, 0, sizeof(zone_size));
+ 
++	max_dma = max_dma32 = min;
+ #ifdef CONFIG_ZONE_DMA
+-	max_dma = PFN_DOWN(arm64_dma_phys_limit);
++	max_dma = max_dma32 = PFN_DOWN(arm64_dma_phys_limit);
+ 	zone_size[ZONE_DMA] = max_dma - min;
+-	max_dma32 = max_dma;
  #endif
-+	{EFI_PROPERTIES_TABLE_GUID, "PROP", &properties_table},
- 	{NULL_GUID, NULL, NULL},
- };
+ #ifdef CONFIG_ZONE_DMA32
+ 	max_dma32 = PFN_DOWN(arm64_dma32_phys_limit);
+@@ -236,25 +235,23 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
+ 		unsigned long start = memblock_region_memory_base_pfn(reg);
+ 		unsigned long end = memblock_region_memory_end_pfn(reg);
  
-@@ -80,7 +83,7 @@ static const unsigned long * const efi_tables[] = {
- 	&efi.runtime,
- 	&efi.config_table,
- 	&efi.esrt,
--	&efi.properties_table,
-+	&properties_table,
- 	&efi.mem_attr_table,
- #ifdef CONFIG_EFI_RCI2_TABLE
- 	&rci2_table_phys,
-@@ -585,6 +588,23 @@ void __init efi_init(void)
- 	if (efi_config_init(arch_tables))
- 		return;
+-		if (start >= max)
+-			continue;
+ #ifdef CONFIG_ZONE_DMA
+-		if (start < max_dma) {
+-			unsigned long dma_end = min_not_zero(end, max_dma);
++		if (start >= min && start < max_dma) {
++			unsigned long dma_end = min(end, max_dma);
+ 			zhole_size[ZONE_DMA] -= dma_end - start;
++			start = dma_end;
+ 		}
+ #endif
+ #ifdef CONFIG_ZONE_DMA32
+-		if (start < max_dma32) {
++		if (start >= max_dma && start < max_dma32) {
+ 			unsigned long dma32_end = min(end, max_dma32);
+-			unsigned long dma32_start = max(start, max_dma);
+-			zhole_size[ZONE_DMA32] -= dma32_end - dma32_start;
++			zhole_size[ZONE_DMA32] -= dma32_end - start;
++			start = dma32_end;
+ 		}
+ #endif
+-		if (end > max_dma32) {
++		if (start >= max_dma32 && start < max) {
+ 			unsigned long normal_end = min(end, max);
+-			unsigned long normal_start = max(start, max_dma32);
+-			zhole_size[ZONE_NORMAL] -= normal_end - normal_start;
++			zhole_size[ZONE_NORMAL] -= normal_end - start;
+ 		}
+ 	}
  
-+	/* Parse the EFI Properties table if it exists */
-+	if (properties_table != EFI_INVALID_TABLE_ADDR) {
-+		efi_properties_table_t *tbl;
-+
-+		tbl = early_memremap(properties_table, sizeof(*tbl));
-+		if (tbl == NULL) {
-+			pr_err("Could not map Properties table!\n");
-+			return -ENOMEM;
-+		}
-+
-+		if (tbl->memory_protection_attribute &
-+		    EFI_PROPERTIES_RUNTIME_MEMORY_PROTECTION_NON_EXECUTABLE_PE_DATA)
-+			set_bit(EFI_NX_PE_DATA, &efi.flags);
-+
-+		early_memunmap(tbl, sizeof(*tbl));
-+	}
-+
- 	/*
- 	 * Note: We currently don't support runtime services on an EFI
- 	 * that doesn't match the kernel 32/64-bit mode.
-diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index d101f072c8f8..ff35c5533581 100644
---- a/drivers/firmware/efi/efi.c
-+++ b/drivers/firmware/efi/efi.c
-@@ -47,7 +47,6 @@ struct efi __read_mostly efi = {
- 	.runtime		= EFI_INVALID_TABLE_ADDR,
- 	.config_table		= EFI_INVALID_TABLE_ADDR,
- 	.esrt			= EFI_INVALID_TABLE_ADDR,
--	.properties_table	= EFI_INVALID_TABLE_ADDR,
- 	.mem_attr_table		= EFI_INVALID_TABLE_ADDR,
- 	.rng_seed		= EFI_INVALID_TABLE_ADDR,
- 	.tpm_log		= EFI_INVALID_TABLE_ADDR,
-@@ -476,7 +475,6 @@ static __initdata efi_config_table_type_t common_tables[] = {
- 	{SMBIOS3_TABLE_GUID, "SMBIOS 3.0", &efi.smbios3},
- 	{UGA_IO_PROTOCOL_GUID, "UGA", &efi.uga},
- 	{EFI_SYSTEM_RESOURCE_TABLE_GUID, "ESRT", &efi.esrt},
--	{EFI_PROPERTIES_TABLE_GUID, "PROP", &efi.properties_table},
- 	{EFI_MEMORY_ATTRIBUTES_TABLE_GUID, "MEMATTR", &efi.mem_attr_table},
- 	{LINUX_EFI_RANDOM_SEED_TABLE_GUID, "RNG", &efi.rng_seed},
- 	{LINUX_EFI_TPM_EVENT_LOG_GUID, "TPMEventLog", &efi.tpm_log},
-@@ -575,23 +573,6 @@ int __init efi_config_parse_tables(void *config_tables, int count, int sz,
- 
- 	efi_tpm_eventlog_init();
- 
--	/* Parse the EFI Properties table if it exists */
--	if (efi.properties_table != EFI_INVALID_TABLE_ADDR) {
--		efi_properties_table_t *tbl;
--
--		tbl = early_memremap(efi.properties_table, sizeof(*tbl));
--		if (tbl == NULL) {
--			pr_err("Could not map Properties table!\n");
--			return -ENOMEM;
--		}
--
--		if (tbl->memory_protection_attribute &
--		    EFI_PROPERTIES_RUNTIME_MEMORY_PROTECTION_NON_EXECUTABLE_PE_DATA)
--			set_bit(EFI_NX_PE_DATA, &efi.flags);
--
--		early_memunmap(tbl, sizeof(*tbl));
--	}
--
- 	if (efi.mem_reserve != EFI_INVALID_TABLE_ADDR) {
- 		unsigned long prsv = efi.mem_reserve;
- 
-diff --git a/include/linux/efi.h b/include/linux/efi.h
-index 99dfea595c8c..a6a7698a6ad1 100644
---- a/include/linux/efi.h
-+++ b/include/linux/efi.h
-@@ -995,7 +995,6 @@ extern struct efi {
- 	unsigned long runtime;		/* runtime table */
- 	unsigned long config_table;	/* config tables */
- 	unsigned long esrt;		/* ESRT table */
--	unsigned long properties_table;	/* properties table */
- 	unsigned long mem_attr_table;	/* memory attributes table */
- 	unsigned long rng_seed;		/* UEFI firmware random seed */
- 	unsigned long tpm_log;		/* TPM2 Event Log table */
 -- 
 2.17.1
 
