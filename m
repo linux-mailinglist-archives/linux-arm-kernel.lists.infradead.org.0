@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B378F10FD2A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:04:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A223310FD2B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:04:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7BblhCsSRpuYP4gQ9pMoUQXjG6Rq7nQKmzsIzRTQI90=; b=n4XyIvL5D8w+HA
-	ZwdbEQ7RzGpGelVdKLd6Y7dUyP/Fxh2VVSKsPL35tCjtUJxFwLEJj2nGFgWpyzlgLEYzazPxl/IYl
-	cxt2yITO9G3fR68hmdkAnUXfu/HXjxAfWzyJjDlrj3d0uyQru1sFsaylmpCUHYr4UMRLkb1dkZfZH
-	7ckX2n/EzAKPIVYzv5kDUWNy0vjGSYMSx+58lVSz1eoVZ7xGhl0FsQNXeL5JkWv0SOh9VYSTta6NN
-	3BSwAExEEjOhQW6EKYd5/CM3Kl8ibXuxBwhHpONuKKSckfWYK5Hqy1O+IBAu6PSMqwN3KsVp7MsjA
-	NM2Nh2iIJNzowyBJfBzg==;
+	List-Owner; bh=NxVuRs/X8dXPSshEWW6WsvseGAP1GTwtofz85qN8kqk=; b=UtvIAPcMhmarxl
+	5+H6HxG39FonFo1HPfz3vjyZedFjslVromsTlzJxqpPzBOQ5QPmXRmGobz5KB+rrQqqYgD5xBrnXx
+	avX/kPp9lubOhwxQeJflure/OefKe5rSysly8rl7+49NTmGmPm/xegVsYhUBdtImy65xCM/MXlEFH
+	c9I/RNq/lyuaJJ4y5r4NgJgdlC1Hhf+0dxF9weMTHnbwRQr2ge7pyrzsjoyoATZKN44MBkgdqZK6F
+	+0kzw8Trzm6ZdEDt3B2H7ePiBLOd8fx/KwvOy5hITA9j5oDdTsWBIxh1LPovmgx7QaGxAmFIg3O1P
+	a+wv1iLePIaxMN8P413Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic6v1-00024B-Ue; Tue, 03 Dec 2019 12:04:39 +0000
+	id 1ic6vJ-0002JX-8g; Tue, 03 Dec 2019 12:04:57 +0000
 Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic6tY-0000r5-ED
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:03:10 +0000
+ id 1ic6tc-0000wI-C2
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:03:14 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 5D465223F2;
- Tue,  3 Dec 2019 07:03:07 -0500 (EST)
+ by mailout.nyi.internal (Postfix) with ESMTP id 678DD223CD;
+ Tue,  3 Dec 2019 07:03:11 -0500 (EST)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Tue, 03 Dec 2019 07:03:07 -0500
+ by compute4.internal (MEProxy); Tue, 03 Dec 2019 07:03:11 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm1; bh=7tglTbsrzj15B
- FYdwtCNlMSUTM/CZ/wbtl0qCFh3E+0=; b=GGvhoydVUQlN4HGmCxhiL2YtAsL9h
- y6Dq1zMIjxR2CBPg9wCnoRmNLZ8zGprdX41nDxFWaMK8CGcgd7xf8JsGbwjj+Qa9
- 1j/rfgvu0KXkD1h9+mf3xppWzfscljlHx4KxWKJN6D0YA1d4Qgsf6viz6O0/jqdk
- 4We6S68LN1QI9gcVOKqDvxiuHCIdjZYZjvYfvP+NwdZr6KxcqveQmy7h9kTANje4
- dBzOHMqZZzeSU4T0hcGRcIUFXf6Zv1uwRL+2G68/HRXH0U7STzMi4XxJO5hnapQr
- VwhLOJ3GhJpGOOvogDjZyg8k5gi5NSxjf673boBiMWzoCw7GU2DB8Kvxw==
+ :mime-version:content-transfer-encoding; s=fm1; bh=PCLgeyjEmKJVx
+ dVpuK/Lt0i4thMBkeilCIZdg4t3xm8=; b=fXL0NvN0X4skl+hU9FH0/6yLwtDJJ
+ NutsYa+jnJwuMsuqmwIEJNq0+6DmKCFCNjjuT9ge/sxdF8E6HonA0vzc0MnM9cE4
+ DiOou0/ZVAnMhbTRVCd3sQVl/xK9ZecbOHqpoL4cSt16ZetLpDKJexCt07FFmk6y
+ DV9EOUsCaj9vzVwvPqR4ikc69uP9nbbHFV8LKEwX9P3IUEPjWYWeiZwldg2ht94F
+ qeKzl+nPC7cPRVz9GaFP/Tja8BA/hr5UgwlLeXIJhw6KhFacpzSLgTDIb9N4D/yi
+ amq5dvj2VQu/LMV7jbUKZREdqcW80aCe04ZIAldtjvNIL4x+wHTJGNdGg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; bh=7tglTbsrzj15BFYdwtCNlMSUTM/CZ/wbtl0qCFh3E+0=; b=f8bekuom
- KnsH3MnC4rVm+vWVIp2F0mRuE7fC3DKJhwBGyg3Lsfxbbfs0njAKaSqxYjapVT2z
- nP/S6wK0L7eA5Gh8sdz3cBjh504qBOQS7EGBmWBSILRb7A+sMMVm+NPbcmkak8l/
- DHYqhHOP3jC/f2F0xloFoiGT/WiuPjTC1OIo/DR5NK6JdXyEdQMIp1XNRzHbaC10
- qDkpEnZsWpFjWgJmyosbcJPzNmP6A9W41Z7iXteS/UNqwRt8jIzfbtxunG8LT0Yr
- J64c8XY426w+nfAJzX9BT+JcZINQNp2kTSHJ63LJxe98EwRU4x4wM5gl7aRuKSYl
- OhMrMcAHxUJENQ==
-X-ME-Sender: <xms:-07mXTYq7A3QCVF_gcYOC1XYtyuKRs03NnwuB6eJWHhv5RqDU_kzRg>
+ fm1; bh=PCLgeyjEmKJVxdVpuK/Lt0i4thMBkeilCIZdg4t3xm8=; b=OvqiKA1k
+ /xE3GXVxbEb+aw2heRU+J2ZsdcGi4sw52FlX624jUM3mSZjq5m4ZcIfwFxH7Y41x
+ aQ7TLeOIfbj430YsNd+fJnQ4BytH8ITkX2cUo5ZoKPc2tbxXqmzgQISh4FfCgyUg
+ ouJZ0+7eez+pYsdPT/c3AsExCV5b9nzKnVOJwhfJEa9tHAtPwr04TJgTfGh0D/7n
+ gxEUewdWbGgXXJ3ZUuUNechD9dd/ujGulf/JY1XwJsumCqr23jTQjCSM2Ajk2wh7
+ 6vSeD42xdZdgpgGSOY1W8ev4naZa+X+ZAlREmrhwC6XaX2JODIiZJBof6FSHhC2s
+ Mxv6b3fFOQWErw==
+X-ME-Sender: <xms:_07mXfZ4RKqP1eGWgujakp2Ez-Fum8CPA1iLXjHU1TfvtGdCXNAcZw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudejjedgfeejucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeetnhgurhgv
  ficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfkphepudduke
  drvdduuddrledvrddufeenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegr
- jhdrihgurdgruhenucevlhhushhtvghrufhiiigvpeeh
-X-ME-Proxy: <xmx:-07mXWfA9jEhiNCLRTW9ZDBw8K0wXlO3gwsBsAHgMTBtqNyUt9eRcQ>
- <xmx:-07mXXFbKR50YClm5Ber4YI8gMxD91yvxyYQM9uHA23t-Hh_qnioww>
- <xmx:-07mXTDT12r7upPIc8QFCoKC35KKk2Pr0f4mlzWdHsycdUR2w9_ODA>
- <xmx:-07mXVmWdDtKyOBN_9n3szeI6c3j6HChFNtV4htDM910RSS3WF8OkQ>
+ jhdrihgurdgruhenucevlhhushhtvghrufhiiigvpeei
+X-ME-Proxy: <xmx:_07mXRVnUJuT5gTnoSYYNV3WWpSPw_1oZd_sj0-9aGz1f-Y99WYASQ>
+ <xmx:_07mXVUpA8CQLA2Riqu2y5KjnwefNa21IsgOMag1PxF9QWUmtneXuQ>
+ <xmx:_07mXdLjRUPj5mgBfi8Hip5-ZMEZ9aqyc3e6VyfZ_oifhjph13UIvQ>
+ <xmx:_07mXTeVIiarc6YSA9AjLsiPTQ-9UBsbTr3c7bwjudEPKjgJhFp3Cw>
 Received: from mistburn.lan (unknown [118.211.92.13])
- by mail.messagingengine.com (Postfix) with ESMTPA id 4177A30600D2;
- Tue,  3 Dec 2019 07:03:03 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id ACA2130600D2;
+ Tue,  3 Dec 2019 07:03:07 -0500 (EST)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-aspeed@lists.ozlabs.org
-Subject: [PATCH 06/14] ARM: dts: vesnin: Add unit address for memory node
-Date: Tue,  3 Dec 2019 22:34:07 +1030
-Message-Id: <5542cc20633c5d185262e3acc1ff6a81a6327a34.1575369656.git-series.andrew@aj.id.au>
+Subject: [PATCH 07/14] ARM: dts: fp5280g2: Cleanup gpio-keys-polled properties
+Date: Tue,  3 Dec 2019 22:34:08 +1030
+Message-Id: <ca7ab33d96a8c20c1b09602ec6aee33374f7c5fb.1575369656.git-series.andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <cover.08e3a6c95159f017b753d0f240086d1a7923758b.1575369656.git-series.andrew@aj.id.au>
 References: <cover.08e3a6c95159f017b753d0f240086d1a7923758b.1575369656.git-series.andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_040308_705078_E7C031DA 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20191203_040312_813045_7ACB0F2B 
+X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -103,39 +104,40 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Alexander Filippov <a.filippov@yadro.com>,
- robh+dt@kernel.org, joel@jms.id.au, linux-arm-kernel@lists.infradead.org
+ Adriana Kobylak <anoo@us.ibm.com>, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, joel@jms.id.au, linux-arm-kernel@lists.infradead.org,
+ John Wang <wangzqbj@inspur.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fixes the following warnings:
+dtbs_check gave the following warning:
 
-    arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dt.yaml: /: memory: False schema does not allow {'reg': [[1073741824, 536870912]]}
-    arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dt.yaml: memory: 'device_type' is a required property
+    Warning (avoid_unnecessary_addr_size): /gpio-keys-polled: unnecessary #address-cells/#size-cells without "ranges" or child "reg" property
 
-Cc: Alexander Filippov <a.filippov@yadro.com>
+Cc: John Wang <wangzqbj@inspur.com>
 Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 Reviewed-by: Joel Stanley <joel@jms.id.au>
-Tested-by: Alexander Filippov <a.filippov@yadro.com>
+Reviewed-by: Adriana Kobylak <anoo@us.ibm.com>
+Tested-by: Adriana Kobylak <anoo@us.ibm.com>
 ---
- arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/boot/dts/aspeed-bmc-inspur-fp5280g2.dts | 2 --
+ 1 file changed, 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-index affd2c8743b1..c46aec4baec9 100644
---- a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-@@ -14,7 +14,7 @@
- 		bootargs = "console=ttyS4,115200 earlyprintk";
- 	};
+diff --git a/arch/arm/boot/dts/aspeed-bmc-inspur-fp5280g2.dts b/arch/arm/boot/dts/aspeed-bmc-inspur-fp5280g2.dts
+index d69da58476fe..d6bb0c91d2d3 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-inspur-fp5280g2.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-inspur-fp5280g2.dts
+@@ -94,8 +94,6 @@
  
--	memory {
-+	memory@40000000 {
- 		reg = <0x40000000 0x20000000>;
- 	};
+ 	gpio-keys-polled {
+ 		compatible = "gpio-keys-polled";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+ 		poll-interval = <1000>;
  
+ 		fan0-presence {
 -- 
 git-series 0.9.1
 
