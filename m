@@ -2,119 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCA2B110444
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 19:30:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2118110453
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 19:35:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z//tcA/ZFUs/D6eCCOJ1Un4ZRxBxKFckfZLDXOto8/8=; b=aM7PSx5ubqZk3t
-	YkRLxJVbWURHz2O5i2F9Gz2pcADHPemit1ndl+7GWBfLFBw0tjA9aaZ8RSvNJqhCiFoVM6hettKfZ
-	2lRFdeceiRnq0KyNazypMDcq6557wDx2zaNNAvYqfMspvXaQ482rA903NBpTVTVWOWoIbuPbWEbqe
-	iarZIFZQ23C3DjJkuH52c120BgStwVw4SnBEOlIIWMpVrUg3zKKI3h//dGqMScy+xBFFXPTL/yLnv
-	9SLproQGGj8RTZoCfh7l7pXWer8Yn5gl6I6kRyU3o0oSC/Y2wGy26MdqQTewg64SGRmwiGXojDMY3
-	bswTXpYSdDT/tgAXFwQA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KqOaqmq4ilJFDK0DlLBO2NbKxhxJVSj7Ut6MLIgeVmQ=; b=JhqQ3hvJmUneJI
+	1fwo7pbSzr8M2DWj62/rJk1r+BqL+/Hp9RAYqhtC1BBdlwQwBpfYAK3sYifUauQuHtaFNiTUimwGg
+	ZecmwzLtZ4/dE/3dezIF0o2oXNVfkZvehwAA+MiyutBvrGXWsmDnQxz/aP6yOYWRDIsHIeTh5C0Ys
+	zWOMK/o2NMT7z1CndBMbLhDS8tA3HvvUcXkoi75hZhhe1IAwSG/mlyR0sLBrlLcbBBfbzBJ4VxDQT
+	MOTcogr+3d2mp9VfvsTI5ygI8EzC/hMb+0HagOEkGcl7SeLvUtIVI6u5X4AStwvzZaQa1jUorC/ZT
+	FOfF6VLvlVItySd4PJTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icCwm-0003ZR-BY; Tue, 03 Dec 2019 18:30:52 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1icD1Z-0005bF-Rh; Tue, 03 Dec 2019 18:35:49 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icCwg-0003Yf-UF
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 18:30:48 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xB3ITmIe106750;
- Tue, 3 Dec 2019 12:29:48 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1575397788;
- bh=Gw61uIAfava2/lngpu+oIWDBGa+goOCXS+FsGSp85fc=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=UYEdb/3CyAB5c31EColIaixSWffTaKrqzACvQleAmF4c+NQ1SlH7q5ixI9j5Yvf6M
- 1UGO+MO0e4WDvxz27Xq2Uh9aFBlE7WhIaJlGyC2J4p+mgtm9tyrnyow4nzRSLjl72q
- jlw0QGDfb+72bYwN0sEPEQCNz/WteaYd9nXEF4ug=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xB3ITmRf077980;
- Tue, 3 Dec 2019 12:29:48 -0600
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 3 Dec
- 2019 12:29:48 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 3 Dec 2019 12:29:48 -0600
-Received: from [10.1.3.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xB3ITjfK031299;
- Tue, 3 Dec 2019 12:29:46 -0600
-Subject: Re: [PATCH] drm/tilcdc: Switch to using GPIO descriptors
-To: Linus Walleij <linus.walleij@linaro.org>,
- <dri-devel@lists.freedesktop.org>, Maarten Lankhorst
- <maarten.lankhorst@linux.intel.com>, Maxime Ripard
- <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
-References: <20191203130916.155779-1-linus.walleij@linaro.org>
-From: Jyri Sarha <jsarha@ti.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jsarha@ti.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <b3e3e44b-3061-7531-4e88-7ee9b44f40a7@ti.com>
-Date: Tue, 3 Dec 2019 20:29:45 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1icD1S-0005aK-2c
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 18:35:44 +0000
+Received: by mail-wm1-x344.google.com with SMTP id u8so4762154wmu.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Dec 2019 10:35:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=XwArOR4C0XF+kRvMIYoAKnaKme3pVq6kwIwJUWDLg6U=;
+ b=CqHrPa4x+UW8bgsz8tmVg0uU6ij0wjt5D7x5H/+16R8lSjWzSTwE96HWGr32NuP5R6
+ HWCGNEfVwypnjkS4ebATHQCBM/qkQWtEL5o+h4cCmooHDLGjFMf+YlVf97LCTx++YXaC
+ S8d5OxdZp6xOZuO6bAGenBlIaISfMQRJnd7sqbQ5CQBcUa/tvecUCbpEQ1gIEli/WfK2
+ bDub3SVe5IwcOENmjv6j/NC+3GrcaS2EqBnTWojjHEqIArOOoLUJ0Sg0Nlu9sjHG8/ux
+ F/rLgbyWOg3Ow+sgJR6mYa0MuJ0vCgQN7j+LGBLK7V02ExMcBSypeMmQRXKyL5Ykqosd
+ aBPA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XwArOR4C0XF+kRvMIYoAKnaKme3pVq6kwIwJUWDLg6U=;
+ b=qFFEZTdl2U8il9F0vLPasqLE7BOLC4uw9ymx0wRJNIoSkcQhyomudUyjMcT9iKVSdL
+ leVXzd+wFFiGcryXEUBQAt002f33yHT9rtxL9t6L3PIc+k8HpvbN7t94oj48szvLZDmq
+ CG+VbBK0ztOvE1jmMnyDHUTZhj937PnX0iX7g0zLV4zFP0pobS9gHqlew1wAX0IlyzEN
+ ZRelePz4jkx2I4aoGxj19XSD6C0KUd2kcBk0/ktml8DyjgmF3RuJLo6AioFqmgiwYXp9
+ CCenzLMXrVXQZWAsR71/r3IMbcI/en1FC2LObqsf/w+f13i1F7OXsBkGpyRwDgm4Vzqm
+ SIMw==
+X-Gm-Message-State: APjAAAVUkv5U4fNVCQ/wXOwMZ/3ygIslfmSi+zmKuSlMgf0F7ka/j8+z
+ AhKtFFTq8ZLUipJOsZbCkQAgOtzcnpcVRn0JEmxxnw==
+X-Google-Smtp-Source: APXvYqzrpNGCWeVFA2dB6Xc40zaVHtfGJ79zMYZysVt/DkTxuPrTVDXkQQI3SGhV0vO+iOYQIqywQUI3jyr3Z9rF0AA=
+X-Received: by 2002:a1c:b1c3:: with SMTP id a186mr36521819wmf.10.1575398140049; 
+ Tue, 03 Dec 2019 10:35:40 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191203130916.155779-1-linus.walleij@linaro.org>
-Content-Language: en-GB
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20191127181040.20012-1-minyard@acm.org>
+ <CAKv+Gu-Xbpky-VN4WgSKJ5k_98shRdr_7aEcXJBV9uZqJrV7Jw@mail.gmail.com>
+ <86pnhbywpo.wl-maz@kernel.org>
+ <CAKv+Gu-CuNpu4jv7S6v2G9Z5dHCVOMX3nVX5VFYhoY4SfCK+cg@mail.gmail.com>
+ <ab0d3eff89247f18d6edcb28b577d186@www.loen.fr>
+In-Reply-To: <ab0d3eff89247f18d6edcb28b577d186@www.loen.fr>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Tue, 3 Dec 2019 18:35:35 +0000
+Message-ID: <CAKv+Gu9mS2BZj+YMemMTy-e=42wBdu7u3+Rp=w9cWZXMmbpt7A@mail.gmail.com>
+Subject: Re: [PATCH] arm64: Fix compile error with KVM and
+ !HARDEN_BRANCH_PREDICTOR
+To: Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_103047_063666_20D9A913 
-X-CRM114-Status: GOOD (  24.44  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191203_103542_151598_AC3C49E1 
+X-CRM114-Status: GOOD (  32.91  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -124,7 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.5 PDS_BTC_ID             FP reduced Bitcoin ID
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -136,118 +96,184 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>,
- David Lechner <david@lechnology.com>, linux-arm-kernel@lists.infradead.org
+Cc: Stefan Wahren <stefan.wahren@i2se.com>, Corey Minyard <cminyard@mvista.com>,
+ minyard@acm.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/12/2019 15:09, Linus Walleij wrote:
-> The TI LCDC picks a GPIO line from the device tree to use
-> for DPMS power on/off. We can switch this to use a GPIO
-> descriptor pretty easily. Make sure to request the GPIO
-> "as is" so that the DPMS state that we start (boot) in is
-> preserved.
-> 
+On Fri, 29 Nov 2019 at 09:04, Marc Zyngier <maz@kernel.org> wrote:
+>
+> On 2019-11-29 07:25, Ard Biesheuvel wrote:
+> > On Fri, 29 Nov 2019 at 08:21, Marc Zyngier <maz@kernel.org> wrote:
+> >>
+> >> On Thu, 28 Nov 2019 17:20:20 +0000,
+> >>
+> >> [fixing Will's email address]
+> >>
+> >> Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
+> >> >
+> >> > (+ Marc)
+> >> >
+> >> >
+> >> >
+> >> > On Wed, 27 Nov 2019 at 19:10, <minyard@acm.org> wrote:
+> >> > >
+> >> > > From: Corey Minyard <cminyard@mvista.com>
+> >> > >
+> >> > > When compiling with KVM enabled and without
+> >> HARDEN_BRANCH_PREDICTOR,
+> >> > > the following compile error happens:
+> >> > >
+> >> > > arch/arm64/kernel/cpu_errata.c:92:23:
+> >> > > error: '__bp_harden_hyp_vecs_start' undeclared (first use in
+> >> this function);
+> >> > > did you mean 'hyp_vecs_start'?
+> >> > >   void *dst = lm_alias(__bp_harden_hyp_vecs_start + slot *
+> >> SZ_2K);
+> >> > >
+> >> > > Some ifdefs were removed by 3e91f3eacc91d9 "arm64: Always enable
+> >> > > spectre-v2 vulnerability detection" for
+> >> CONFIG_HARDEN_BRANCH_PREDICTOR,
+> >> > > but __bp_harden_hyp_vecs_start is only defined if that config is
+> >> > > enabled.
+> >> > >
+> >> > > Add CONFIG_HARDEN_BRANCH_PREDICTOR to the #if that has
+> >> CONFIG_KVM,
+> >> > > It looks like you need both of those for that code to be valid.
+> >> > >
+> >> > > Fixes: 3e91f3eacc91d9 "arm64: Always enable spectre-v2
+> >> vulnerability detection"
+> >> > > Cc: Andre Przywara <andre.przywara@arm.com>
+> >> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> >> > > Cc: Stefan Wahren <stefan.wahren@i2se.com>
+> >> > > Cc: Will Deacon <will.deacon@arm.com>
+> >> > > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> >> > > Signed-off-by: Corey Minyard <cminyard@mvista.com>
+> >> > > ---
+> >> > > This is for 4.14, I'm not sure if it is needed for other
+> >> kernels.
+> >> > >
+> >> > > It is not needed in master because a new config item was added,
+> >> > > CONFIG_KVM_INDIRECT_VECTORS, that depends on KVM and
+> >> > > HARDEN_BRANCH_PREDICTOR being configured.  I looked at pulling
+> >> the
+> >> > > patches that add the required changes, and they make a lot of
+> >> > > changes.  This change is the simple fix, but I'm not sure if we
+> >> want to
+> >> > > pull all those other changes into 4.14 and whatever other
+> >> kernels
+> >> > > are required.
+> >> > >
+> >> >
+> >> > I agree that backporting this cleanly is going to be problematic,
+> >> > since it pulls in the entire EL2 VA randomization feature with all
+> >> its
+> >> > prerequisites.
+> >> >
+> >> > Backporting the following set could be done fairly cleanly, and
+> >> fixes
+> >> > the problem at build time, but unfortunately, it causes a boot
+> >> time
+> >> > crash (see below)
+> >> >
+> >> > 97eca4d2bfec (HEAD -> linux-4.14.y) arm64: Move the content of
+> >> bpi.S
+> >> > to hyp-entry.S
+> >> > 514dd33114c6 arm64: Make BP hardening slot counter available
+> >> > d7ddf3ae9470 arm64; insn: Add encoder for the EXTR instruction
+> >> > c0b2c4e56e10 arm64: KVM: Introduce EL2 VA randomisation
+> >> > 56ab0a87c737 arm64: KVM: Dynamically compute the HYP VA mask
+> >> > d92c02628dfb arm64: KVM: Allow far branches from vector slots to
+> >> the
+> >> > main vectors
+> >> > 7adec01c9674 arm64: cpufeatures: Drop the ARM64_HYP_OFFSET_LOW
+> >> feature flag
+> >> > 1095e4fc3134 arm64: KVM: Move stashing of x0/x1 into the vector
+> >> code itself
+> >> > bb2e1aceb423 arm64: KVM: Dynamically patch the kernel/hyp VA mask
+> >> > 6f0ccfc451be arm64: KVM: Reserve 4 additional instructions in the
+> >> BPI template
+> >> > bf425ffee07a arm64: insn: Add encoder for bitwise operations using
+> >> literals
+> >> > 41dda94d1a9f arm64: insn: Add N immediate encoding
+> >> > 3225668ebe00 arm64: KVM: Move BP hardening vectors into .hyp.text
+> >> section
+> >> >
+> >> > Marc?
+> >>
+> >> You need at least these:
+> >>
+> >> 1bb32a44aea1 KVM: arm/arm64: Keep GICv2 HYP VAs in
+> >> kvm_vgic_global_state
+> >> 44a497abd621 KVM: arm/arm64: Do not use kern_hyp_va() with
+> >> kvm_vgic_global_state
+> >>
+> >
+> > Yeah, I only did a fairly mechanical backport based on the actual
+> > diffs depend on each other, but I did spot those two as possibly
+> > related.
+> >
+> >> But that's definitely not enough to fix the crash.
+> >>
+> >> >
+> >> > [    0.062126] CPU: All CPU(s) started at EL1
+> >> > [    0.063109] alternatives: patching kernel code
+> >> > [    0.064228] random: get_random_u64 called from
+> >> > compute_layout+0x94/0xe8 with crng_init=0
+> >> > [    0.066313] aarch64_insn_gen_add_sub_imm: invalid immediate
+> >> encoding 1904640
+> >>
+> >> OK, that one is really bizarre. This value (tag_val) is supposed to
+> >> be
+> >> a small value (only 12 significant bits out of 24 at any given
+> >> time),
+> >> and it is not (0x1D1000). So somehow compute_instruction() is not
+> >> doing the right thing.
+> >>
+> >> Do you have a tree somewhere with this patches?
+> >>
+> >
+> > Sure, thanks for having a look.
+> >
+> >
+> > https://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git/log/?h=arm64-v4.14-backport%2b%2b
+>
+> OK, I tracked it down to this missing patch:
+>
+> 11d764079c9f arm64: insn: Allow ADD/SUB (immediate) with LSL #12
+>
+> I haven't tryied to boot the whole thing as a host though, only
+> tested it as a guest.
+>
+> > Another thing I found bizarre is that we actually run this code when
+> > all CPUs boot at EL1. Or is that intended?
+>
+> It is so that I can debug the whole thing in a guest! ;-)
+>
 
-Hmmm, I have been considering ditching this driver all together since no
-mainline platform has ever used it. Also, if anybody ever wants to
-connect tfp410 to tilcdc, he should use drm/bridge/ti-tfp410.c instead.
+OK, I have prepared a branch that carries all these patches in the
+right order with the upstream commit reference added to the commit
+log. I'll send this out for review first, before actually sending it
+to -stable, unless anyone feels that this is a bad idea.
 
-But since the patch is there, maybe I should pick it up, and remove the
-bundled driver later a bit later.
-
-BR,
-Jyri
-
-> Cc: Jyri Sarha <jsarha@ti.com>
-> Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>
-> Cc: David Lechner <david@lechnology.com>
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
-> ---
->  drivers/gpu/drm/tilcdc/tilcdc_tfp410.c | 30 ++++++++++++--------------
->  1 file changed, 14 insertions(+), 16 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
-> index 530edb3b51cc..41cd9a7c4316 100644
-> --- a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
-> +++ b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
-> @@ -4,9 +4,8 @@
->   * Author: Rob Clark <robdclark@gmail.com>
->   */
->  
-> -#include <linux/gpio.h>
-> +#include <linux/gpio/consumer.h>
->  #include <linux/mod_devicetable.h>
-> -#include <linux/of_gpio.h>
->  #include <linux/pinctrl/consumer.h>
->  #include <linux/platform_device.h>
->  
-> @@ -21,7 +20,7 @@
->  struct tfp410_module {
->  	struct tilcdc_module base;
->  	struct i2c_adapter *i2c;
-> -	int gpio;
-> +	struct gpio_desc *power_gpiod;
->  };
->  #define to_tfp410_module(x) container_of(x, struct tfp410_module, base)
->  
-> @@ -58,10 +57,10 @@ static void tfp410_encoder_dpms(struct drm_encoder *encoder, int mode)
->  
->  	if (mode == DRM_MODE_DPMS_ON) {
->  		DBG("Power on");
-> -		gpio_direction_output(tfp410_encoder->mod->gpio, 1);
-> +		gpiod_direction_output(tfp410_encoder->mod->power_gpiod, 1);
->  	} else {
->  		DBG("Power off");
-> -		gpio_direction_output(tfp410_encoder->mod->gpio, 0);
-> +		gpiod_direction_output(tfp410_encoder->mod->power_gpiod, 0);
->  	}
->  
->  	tfp410_encoder->dpms = mode;
-> @@ -318,17 +317,17 @@ static int tfp410_probe(struct platform_device *pdev)
->  
->  	of_node_put(i2c_node);
->  
-> -	tfp410_mod->gpio = of_get_named_gpio_flags(node, "powerdn-gpio",
-> -			0, NULL);
-> -	if (tfp410_mod->gpio < 0) {
-> -		dev_warn(&pdev->dev, "No power down GPIO\n");
-> -	} else {
-> -		ret = gpio_request(tfp410_mod->gpio, "DVI_PDn");
-> -		if (ret) {
-> -			dev_err(&pdev->dev, "could not get DVI_PDn gpio\n");
-> -			goto fail_adapter;
-> -		}
-> +	tfp410_mod->power_gpiod = devm_gpiod_get_optional(&pdev->dev,
-> +							  "powerdn",
-> +							  GPIOD_ASIS);
-> +	if (IS_ERR(tfp410_mod->power_gpiod)) {
-> +		dev_err(&pdev->dev, "could not get DVI_PDn gpio\n");
-> +		goto fail_adapter;
->  	}
-> +	if (!tfp410_mod->power_gpiod)
-> +		dev_warn(&pdev->dev, "No power down GPIO\n");
-> +	else
-> +		gpiod_set_consumer_name(tfp410_mod->power_gpiod, "DVI_PDn");
->  
->  	return 0;
->  
-> @@ -346,7 +345,6 @@ static int tfp410_remove(struct platform_device *pdev)
->  	struct tfp410_module *tfp410_mod = to_tfp410_module(mod);
->  
->  	i2c_put_adapter(tfp410_mod->i2c);
-> -	gpio_free(tfp410_mod->gpio);
->  
->  	tilcdc_module_cleanup(mod);
->  
-> 
-
-
--- 
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+arm64: KVM: Move BP hardening vectors into .hyp.text section
+arm64: insn: Add N immediate encoding
+arm64: insn: Add encoder for bitwise operations using literals
+arm64: KVM: Dynamically patch the kernel/hyp VA mask
+arm64: cpufeatures: Drop the ARM64_HYP_OFFSET_LOW feature flag
+arm64; insn: Add encoder for the EXTR instruction
+arm64: insn: Allow ADD/SUB (immediate) with LSL #12
+arm64: KVM: Dynamically compute the HYP VA mask
+arm64: KVM: Introduce EL2 VA randomisation
+arm64: KVM: Move stashing of x0/x1 into the vector code itself
+arm64: KVM: Reserve 4 additional instructions in the BPI template
+arm64: KVM: Allow far branches from vector slots to the main vectors
+arm64: Make BP hardening slot counter available
+arm64: Move the content of bpi.S to hyp-entry.S
 
 _______________________________________________
 linux-arm-kernel mailing list
