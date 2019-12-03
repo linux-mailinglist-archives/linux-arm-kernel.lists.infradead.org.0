@@ -2,102 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DD9A10F69C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 06:05:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B632210F6A2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 06:09:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4DbMf1SMxjpHrhwzPvbChCyuS6WbsAzH60z0GLLzFuU=; b=e3w4ul+5j7QmS/LjHKDIgHdAo
-	U5B80TuHEevApnbOsjv3ciij8K1wQH7oVtVLxWeJ6Rp75PTWfukzOcgmnqQFVgwAIwIsthGlofD4Z
-	pjB8GR+xAO8teQghxm3NwMFjLWtPG+7glxgv38qnZppgHZHeOpIPszmowvNgzozlKB4l/zFbqBUlT
-	FTKbr58JvhwdN+HuRV8wu6A/NY9rCTt3cqruVKRYc57cGpFL5QnGtS0etBrH17sbqfST8AKXSrIBl
-	zPZX/RYFLzCcuqk7NkMiwPpkJsEhYAA+PKSW4uxvVkm00RFgn3+73OL2irP19a0E4T/MlaagE7vPw
-	muSTykGvg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WzAuOPdh3xMAnMxpbvPozgaZUzF6EwYtj4TMcCQbrSM=; b=PyFHq6+3IRl3Qj
+	197rlbmSlPq5J0aMxKfSlEDf6SYcXc3U7m38bnsQP8ZQshqIr1hL1t67PtNoBHnOP17PlC2ndt/t6
+	qXyJIdUzp9v//UVMhZwXQuksY8GPGTpqOHLrYTdbi9OAagJnZ3y7zPsodaw7C9JY2V1ve8nJue2DU
+	wcfHbxs8SqB9VaIG5ErfcC9vNbbrjBZwkn6zOeZzZhRUdjOyR6ixbfVFOW3KHd3ilktmEYAsYEfHQ
+	XQOWMb6A0LBNA2dyQcKNdW105POIwQ4gB8+YBBPLrucvB1bzf47KgyrLzmRwGYQtGoYIUsInOIBhX
+	ctQhRyuj/SA5BKWUnyuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic0Nh-00051T-QC; Tue, 03 Dec 2019 05:05:49 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1ic0Qk-0005dy-T2; Tue, 03 Dec 2019 05:08:58 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic0Na-000517-Dv; Tue, 03 Dec 2019 05:05:44 +0000
-Received: by mail-pg1-x542.google.com with SMTP id k1so1078473pgg.12;
- Mon, 02 Dec 2019 21:05:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=eyhijRr/YQI/e+nakiYV1XQUenXP3bUm+J4bO1NawYU=;
- b=P72HkHNEdTVxL582N76mLhFt/aJgUyPBDfr8x48oFP/rsd60PaSZ8xPVUthbIexaYw
- QkzBOCoaHvWZ2etMK9YFs9IBqHECv4Q/nmZ8TbvBMJBM1Aog4STvGOCmrk0bOQ9JhrpP
- wFiH0gaIEFuEPb2jbaNv3ZqWxkQxw8Aa1c1YoUAWLt6fq5+REO1l0xdvDRoSo5g+JYVm
- lYFA6F0tk2eq5YFuwNFN3HqGBSELuPKxrxjMnoqPo5kTl0moJ3A1X0K5SIpZHCcjzl1t
- ebIK9zXhKVT9vQ+moUbJQdZAIurf6MqdVb8Td6Ie8/TXrUE5RCbG/RmvvNgZ5W/uv2tM
- heoA==
+ id 1ic0Qd-0005dA-Jl
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 05:08:53 +0000
+Received: by mail-ot1-x342.google.com with SMTP id i4so1837675otr.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Dec 2019 21:08:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=WZKMAVxtDLCraxcIiN00SsJEJBiXhWtyCoaPrnrSK7s=;
+ b=oBqcKe8GwpzMfWCzOpz6k8A9kpdP/IpogOa4QMVMi1V41uaJwMzkXho7ydtuEMajNz
+ szdX7Xtr7bE/4qsM0T2BFq8e80vtNeL84dLeM/iqGREr49p8N2c53zCmQa+n950nVR6Z
+ 6iGPayd+018+WDpv5SCby8xhrf+/42Npi3JOslIr4vH65sAgSziSEZGuefAlnAJocoBn
+ id++ytyCPP/m9lOSO70QGToIxsNbT+MBZz33hSF1z/NGLHQr2n4eusakZHYVnS/cRl7g
+ tqkF2YKPkJGN/mt88IQpUZ6SPZUwQmO8hGjGrYvQrv6Yq9v3/NTajW6FAB8XUZFC01vr
+ bafw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=eyhijRr/YQI/e+nakiYV1XQUenXP3bUm+J4bO1NawYU=;
- b=kkP+VWInCAPz64ozTlJuUPPNseu6IuZZ+984Qc+yk+Y2jVDt5TmralHmNm6HxzZ0Pg
- Rdb6Hi5pd9dDA25crxVTLkOwNFFh5uBT5WcrwV8bb1wKl+evY22s38T3c6/CySGO643u
- 2mE++UKmVNkvfIWODrcjLJMzQzCO32xoKXQMNuluZtPYAgSTg+GAJYfY7iVUkopfHZBM
- Uac5xTtRRIPfJV0K+4trXxPvRGz3d/ZxpRzoz0baYf/b5IxooyPhx6VgmVoZ4mDRZnLJ
- OdTHP6wJU/lSOop362vpgRxQPelW28dO4z0c00zuIbgDGxuPwtDuInhT+sdy1McWG6jU
- hXMA==
-X-Gm-Message-State: APjAAAUftSdcfqoNberpaoatuT+QX16/ECrPoFdv6UNKmW+nt/F69Gmi
- Ivnl5RJeaUOkCL2Kfwx3Xwo=
-X-Google-Smtp-Source: APXvYqyfI2axwjuybif7oNpVQ4sCIgYVs/mOpWhuPqRWpM/uK3ySjzI3swZw55nmmNBtgQmn63CC7g==
-X-Received: by 2002:aa7:9510:: with SMTP id b16mr2812758pfp.65.1575349540517; 
- Mon, 02 Dec 2019 21:05:40 -0800 (PST)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- 67sm1393499pfw.82.2019.12.02.21.05.37
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 02 Dec 2019 21:05:38 -0800 (PST)
-Subject: Re: [PATCH v5 2/2] watchdog: mtk_wdt: mt8183: Add reset controller
-To: Yong Liang <yong.liang@mediatek.com>,
- Philipp Zabel <p.zabel@pengutronix.de>
-References: <20191125061627.GA7313@roeck-us.net>
- <e138b69efad563822da1db8e160d43458c21eae1.camel@pengutronix.de>
- <1575016588.7013.8.camel@mhfsdcap03>
- <88994e7445df8b2d98f3548e2043eb29bf5fa95f.camel@pengutronix.de>
- <1575342124.7013.13.camel@mhfsdcap03>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <f9628c90-4c9b-ff4b-b3dd-887dbc987d46@roeck-us.net>
-Date: Mon, 2 Dec 2019 21:05:36 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=WZKMAVxtDLCraxcIiN00SsJEJBiXhWtyCoaPrnrSK7s=;
+ b=LTrCCsHnuYPLtZAfjutWP0HWBXirutOle0IrImGzP+oGK9qbouRv7sviYhfQLViMSt
+ 1+4Yw+cpqL3pPCsDShX65UvyA5Atf9W+GXhbvik9EJLxgUmiA9o34fbH9DdSOuDxZkpc
+ h49S5F+DvnaMrgYkhqlcIetA4+Np1OwqlSrxVk5rkUfkOxiyQz//l5BakjSImozgJ3S1
+ jZ+4CG/OekJpL14+ELV9ocQFCsE7eZx9NusTW5BwtiDl5FVsGBs5ksAzirtePhsiOZyN
+ dgAaYOKJb4yGHcy6PwVB//+ekq5EXTYy9+JrrITIQVx1ylpSuMUYhropHHDg9l5S+0Nx
+ Ka2Q==
+X-Gm-Message-State: APjAAAXMcmYenTERFxPiUEin+06S01DQN0d7+LEA+smZP1yelmvaSGB8
+ JlpmsKkq7jCyDhhJ2xiT5oBwbyZ7Yvw2gKyN66FXSA==
+X-Google-Smtp-Source: APXvYqzEJd0JnrQikt41atghBrKjPPeBmz9MNjbEqllktVwshO8ISesIC+M+S9vKnsCFZYOczBBF7MBhb09xnC6+tFw=
+X-Received: by 2002:a9d:66ca:: with SMTP id t10mr1941618otm.352.1575349730156; 
+ Mon, 02 Dec 2019 21:08:50 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <1575342124.7013.13.camel@mhfsdcap03>
-Content-Language: en-US
+References: <20190911182546.17094-1-nsaenzjulienne@suse.de>
+ <20190911182546.17094-4-nsaenzjulienne@suse.de>
+In-Reply-To: <20190911182546.17094-4-nsaenzjulienne@suse.de>
+From: John Stultz <john.stultz@linaro.org>
+Date: Mon, 2 Dec 2019 21:08:38 -0800
+Message-ID: <CALAqxLVVcsmFrDKLRGRq7GewcW405yTOxG=KR3csVzQ6bXutkA@mail.gmail.com>
+Subject: Re: [PATCH v6 3/4] arm64: use both ZONE_DMA and ZONE_DMA32
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_210542_495047_D144B39E 
-X-CRM114-Status: GOOD (  21.82  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191202_210851_653377_CAE23EA9 
+X-CRM114-Status: GOOD (  14.16  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,173 +91,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- =?UTF-8?B?SmlheGluIFl1ICjkv57lrrbpkasp?= <Jiaxin.Yu@mediatek.com>,
- "perex@perex.cz" <perex@perex.cz>, "tzungbi@google.com" <tzungbi@google.com>,
- "broonie@kernel.org" <broonie@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- =?UTF-8?B?RWFzb24gWWVuICjpoY/lu7fku7sp?= <Eason.Yen@mediatek.com>,
- =?UTF-8?B?WWluZ2pvZSBDaGVuICjpmbPoi7HmtLIp?= <Yingjoe.Chen@mediatek.com>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Amit Pundir <amit.pundir@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Will Deacon <will@kernel.org>,
+ mbrugger@suse.com, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, lkml <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, linux-mm <linux-mm@kvack.org>,
+ Nicolas Dechense <nicolas.dechesne@linaro.org>,
+ Rob Herring <robh+dt@kernel.org>, wahrenst@gmx.net,
+ Marek Szyprowski <m.szyprowski@samsung.com>, phill@raspberrypi.org,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/2/19 7:02 PM, Yong Liang wrote:
-> On Mon, 2019-12-02 at 21:02 +0800, Philipp Zabel wrote:
->> On Fri, 2019-11-29 at 16:36 +0800, Yong Liang wrote:
->>> On Mon, 2019-11-25 at 17:51 +0800, Philipp Zabel wrote:
->>>> On Sun, 2019-11-24 at 22:16 -0800, Guenter Roeck wrote:
->>>>> On Mon, Nov 25, 2019 at 11:03:50AM +0800, Jiaxin Yu wrote:
->>>>>> From: "yong.liang" <yong.liang@mediatek.com>
->>>>>>
->>>>>> Add reset controller API in watchdog driver.
->>>>>> Besides watchdog, MTK toprgu module also provide sub-system (eg, audio,
->>>>>> camera, codec and connectivity) software reset functionality.
->>>>>>
->>>>>> Signed-off-by: yong.liang <yong.liang@mediatek.com>
->>>>>> Signed-off-by: jiaxin.yu <jiaxin.yu@mediatek.com>
->>>>>> Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
->>>>>> ---
->>>>>>   drivers/watchdog/Kconfig   |   1 +
->>>>>>   drivers/watchdog/mtk_wdt.c | 111 ++++++++++++++++++++++++++++++++++++-
->>>>>>   2 files changed, 111 insertions(+), 1 deletion(-)
->>>>>>
->>>>>> diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
->>>>>> index 2e07caab9db2..629249fe5305 100644
->>>>>> --- a/drivers/watchdog/Kconfig
->>>>>> +++ b/drivers/watchdog/Kconfig
->>>>>> @@ -717,6 +717,7 @@ config MEDIATEK_WATCHDOG
->>>>>>   	tristate "Mediatek SoCs watchdog support"
->>>>>>   	depends on ARCH_MEDIATEK || COMPILE_TEST
->>>>>>   	select WATCHDOG_CORE
->>>>>> +	select RESET_CONTROLLER
->>>>>>   	help
->>>>>>   	  Say Y here to include support for the watchdog timer
->>>>>>   	  in Mediatek SoCs.
->>>>>> diff --git a/drivers/watchdog/mtk_wdt.c b/drivers/watchdog/mtk_wdt.c
->>>>>> index 9c3d0033260d..d29484c7940a 100644
->>>>>> --- a/drivers/watchdog/mtk_wdt.c
->>>>>> +++ b/drivers/watchdog/mtk_wdt.c
->>>>>> @@ -9,6 +9,9 @@
->>>>>>    * Based on sunxi_wdt.c
->>>>>>    */
->>>>>>   
->>>>>> +#include <dt-bindings/reset-controller/mt2712-resets.h>
->>>>>> +#include <dt-bindings/reset-controller/mt8183-resets.h>
->>>>>> +#include <linux/delay.h>
->>>>>>   #include <linux/err.h>
->>>>>>   #include <linux/init.h>
->>>>>>   #include <linux/io.h>
->>>>>> @@ -16,10 +19,12 @@
->>>>>>   #include <linux/module.h>
->>>>>>   #include <linux/moduleparam.h>
->>>>>>   #include <linux/of.h>
->>>>>> +#include <linux/of_device.h>
->>>>>>   #include <linux/platform_device.h>
->>>>>> +#include <linux/reset-controller.h>
->>>>>> +#include <linux/slab.h>
->>>>>>   #include <linux/types.h>
->>>>>>   #include <linux/watchdog.h>
->>>>>> -#include <linux/delay.h>
->>>>>>   
->>>>>>   #define WDT_MAX_TIMEOUT		31
->>>>>>   #define WDT_MIN_TIMEOUT		1
->>>>>> @@ -44,6 +49,9 @@
->>>>>>   #define WDT_SWRST		0x14
->>>>>>   #define WDT_SWRST_KEY		0x1209
->>>>>>   
->>>>>> +#define WDT_SWSYSRST		0x18U
->>>>>> +#define WDT_SWSYS_RST_KEY	0x88000000
->>>>>> +
->>>>>>   #define DRV_NAME		"mtk-wdt"
->>>>>>   #define DRV_VERSION		"1.0"
->>>>>>   
->>>>>> @@ -53,8 +61,99 @@ static unsigned int timeout;
->>>>>>   struct mtk_wdt_dev {
->>>>>>   	struct watchdog_device wdt_dev;
->>>>>>   	void __iomem *wdt_base;
->>>>>> +	spinlock_t lock; /* protects WDT_SWSYSRST reg */
->>>>>> +	struct reset_controller_dev rcdev;
->>>>>> +};
->>>>>> +
->>>>>> +struct mtk_wdt_data {
->>>>>> +	int sw_rst_num;
->>>>>>   };
->>>>>>   
->>>>>> +static const struct mtk_wdt_data mt2712_data = {
->>>>>> +	.sw_rst_num = MT2712_TOPRGU_SW_RST_NUM,
->>>>>> +};
->>>>>> +
->>>>>> +static const struct mtk_wdt_data mt8183_data = {
->>>>>> +	.sw_rst_num = MT8183_TOPRGU_SW_RST_NUM,
->>>>>> +};
->>>>>
->>>>> The number of resets can be set in .data directly; there is no need
->>>>> for the structures.
->>>
->>>      We want to put all properities in mtxxxx-resets.h and it easy to
->>> manager. If there are new properity in the feture, we can put it in
->>> mtk_wdt_data mtxxxx_data
->>
->> Do you expect there will be more properties in the future?
-> 
->    Yes, We may put some infra reset bit and max number in mtxxxx-resets.h
+On Wed, Sep 11, 2019 at 11:26 AM Nicolas Saenz Julienne
+<nsaenzjulienne@suse.de> wrote:
+> So far all arm64 devices have supported 32 bit DMA masks for their
+> peripherals. This is not true anymore for the Raspberry Pi 4 as most of
+> it's peripherals can only address the first GB of memory on a total of
+> up to 4 GB.
+>
+> This goes against ZONE_DMA32's intent, as it's expected for ZONE_DMA32
+> to be addressable with a 32 bit mask. So it was decided to re-introduce
+> ZONE_DMA in arm64.
+>
+> ZONE_DMA will contain the lower 1G of memory, which is currently the
+> memory area addressable by any peripheral on an arm64 device.
+> ZONE_DMA32 will contain the rest of the 32 bit addressable memory.
+>
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 
-Please either do that now or introduce the complexity when needed.
+Hey Nicolas,
+  Testing the db845c with linus/master, I found a regression causing
+system hangs in early boot:
 
-Thanks,
-Guenter
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x517f803c]
+[    0.000000] Linux version 5.4.0-mainline-10675-g957a03b9e38f
+(docker@a4ec90a1e72c) (gcc version 7.4.0 (Ubuntu/Linaro
+7.4.0-1ubuntu1~18.04.1)) #1209 SMP PREEMPT Tue Dec 3 00:23:15 UTC 2019
+[    0.000000] Machine model: Thundercomm Dragonboard 845c
+[    0.000000] earlycon: qcom_geni0 at MMIO 0x0000000000a84000
+(options '115200n8')
+[    0.000000] printk: bootconsole [qcom_geni0] enabled
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] cma: Reserved 16 MiB at 0x00000000ff000000
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.0
+[    0.000000] psci: OSI mode supported.
+[    0.000000] percpu: Embedded 31 pages/cpu s87512 r8192 d31272 u126976
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: GIC system register CPU interface
+[    0.000000] CPU features: kernel page table isolation forced ON by KASLR
+[    0.000000] CPU features: detected: Kernel page table isolation (KPTI)
+[    0.000000] ARM_SMCCC_ARCH_WORKAROUND_1 missing from firmware
+[    0.000000] CPU features: detected: Hardware dirty bit management
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: -188245
+[    0.000000] Kernel command line: earlycon
+firmware_class.path=/vendor/firmware/ androidboot.hardware=db845c
+init=/init androidboot.boot_devices=soc/1d84000.ufshc
+printk.devkmsg=on buildvariant=userdebug root=/dev/sda2
+androidboot.bootdevice=1d84000.ufshc androidboot.serialno=c4e1189c
+androidboot.baseband=sda
+msm_drm.dsi_display0=dsi_lt9611_1080_video_display:
+androidboot.slot_suffix=_a skip_initramfs rootwait ro init=/init
 
->>
->>>>>> +static int toprgu_reset_deassert(struct reset_controller_dev *rcdev,
->>>>>> +				 unsigned long id)
->>>>>> +{
->>>>>> +	unsigned int tmp;
->>>>>> +	unsigned long flags;
->>>>>> +	struct mtk_wdt_dev *data =
->>>>>> +		 container_of(rcdev, struct mtk_wdt_dev, rcdev);
->>>>>> +
->>>>>> +	spin_lock_irqsave(&data->lock, flags);
->>>>>> +
->>>>>> +	tmp = __raw_readl(data->wdt_base + WDT_SWSYSRST);
->>>>>> +	tmp &= ~BIT(id);
->>>>>> +	tmp |= WDT_SWSYS_RST_KEY;
->>>>>> +	writel(tmp, data->wdt_base + WDT_SWSYSRST);
->>>>>> +
->>>>>> +	spin_unlock_irqrestore(&data->lock, flags);
->>>>>> +
->>>>>> +	return 0;
->>>>>> +}
->>>>>
->>>>> There is a lot of duplication in those functions. Only one line
->>>>> is different. I think this is a good example where a helper function
->>>>> with an additional argument indicating set or reset would be helpful.
->>>>>
->>>      .assert and .dessert are two numbers of struct reset_control_ops.
->>>       I think it's better to define both of them.
->>
->> The suggestion was to have two very short _assert and _deassert
->> functions that only contain a single call to a common helper function.
->> See the reset-a10sr.c driver for an example.
-> 
->    OK. I will modify it as reset-a10sr.c do.
->>
->> regards
->> Philipp
->>
->>
->> _______________________________________________
->> Linux-mediatek mailing list
->> Linux-mediatek@lists.infradead.org
->> http://lists.infradead.org/mailman/listinfo/linux-mediatek
-> 
+<hangs indefinitely here>
 
+I bisected the issue down to this patch (1a8e1cef7603 upstream - the
+previous patch a573cdd7973d works though I need to apply the
+arm64_dma_phys_limit bit from this one as the previous patch doesn't
+build on its own).
+
+In the above log:
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: -188245
+looks the most suspect, and going back to the working a573cdd7973d +
+build fix I see:
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 957419
+
+Do you have any suggestions for what might be going wrong?
+
+thanks
+-john
 
 _______________________________________________
 linux-arm-kernel mailing list
