@@ -2,130 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4E5E10F666
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 05:53:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56BC610F676
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 05:57:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TbG5R94+TDFh8GI3GQKCRcxgEMvLW8yUi4R3Tvc8P7s=; b=XlYCH6RtOesQOE
-	MenirIco/qtKd/Snblk5ODFxDpeA5br7XOTvDP3Q+OZ4zQJWNQrp6s0p7fBdPKCHgcAUE+Qh2gDWq
-	QDJHHDNhZtzqZkYBvKFqv1EeNAXC7Qhjb0/oxB6+EyeD6FDjIJUxszrDAPCk1KLQ0L/PCF+ftOEeQ
-	lbKJds8DLBoqjm6xEMifO2bPw+/em52MexboUQU7N4tRSiNtGCIdpplEGlrpHVVlJDkeBXVna+fpq
-	W72ZsGtU9NvUfVfCb4ij9lCDSj+/qeGWNGJDfg6QR/CIlyMZbvINx3bacagYkel3DiNVIqjj7rvC9
-	7WnREf5dTBUhzrNX6Cgg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=0QFd0CFL4Xpe7nrWYZeH8yL070CI+1bBlEQg/k4KwPE=; b=NSH
+	BzG2jrbpsrxIrCbdU2K6UcX6ClsRlCrI1t639o5CfZS4L7tXHofNerN++r9HGtORFIDZhc3BYaqeD
+	o2CtoGjGefyVMdpx+CTbh9yonSPj01b78OP8FW6W6Lcu98TpzE+mcxg8RKIXFYDCM4RK/8UpqQkxZ
+	FRLjM4Dw60itsi2bi87eniWoxkd3GS2FKkJfnymWcWzi0V7AqC1/d+9cYIaijYH2uOD7V1P3oNQTO
+	lGgKXhkD6pGSoDojdTXM26f+cCrzMw1RbCNGe1+14yKo4XZVinjKekIuIXTxS1LW9yw0BjN/sVO3A
+	CxmnYckRomuaMv8Bzq1bzAcVwllFjpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic0BF-0006o1-Q2; Tue, 03 Dec 2019 04:52:57 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1ic0Fm-0000UV-Fw; Tue, 03 Dec 2019 04:57:38 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic0B8-0006nS-Pt
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 04:52:52 +0000
-Received: from epcas1p1.samsung.com (unknown [182.195.41.45])
- by mailout4.samsung.com (KnoxPortal) with ESMTP id
- 20191203045245epoutp042916af3c07a9dbbdf8049d5213c98a8f~cw1r5dCmw0975709757epoutp04O
+ id 1ic0Ff-0000To-NU
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 04:57:33 +0000
+Received: by mail-wr1-x442.google.com with SMTP id w15so1988588wru.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue,  3 Dec 2019 04:52:45 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
- 20191203045245epoutp042916af3c07a9dbbdf8049d5213c98a8f~cw1r5dCmw0975709757epoutp04O
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1575348765;
- bh=xmJU0vFcQ0KvSSiUfaN4Scg6dcjYCAueY7Rz3xbGdes=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=Q6Zs69CtY/fHJw61+GF5Ofz7pqDmqTzT+ocfYlijQHfVJlHzkmA7bl21LViA+tfw8
- QEgPNav32VV4TvHZWntg67uqVgfRLGoIIRWr4dzmwaE/dDpLK28g7Gjwf0pOXSuT4L
- 7epKc+L6BulVSZdqCt0NKscVP+x5A58llGuXFFhE=
-Received: from epsnrtp2.localdomain (unknown [182.195.42.163]) by
- epcas1p3.samsung.com (KnoxPortal) with ESMTP id
- 20191203045244epcas1p3d26b5c662075923003846892953fc38a~cw1rQSe6-2749727497epcas1p3_;
- Tue,  3 Dec 2019 04:52:44 +0000 (GMT)
-Received: from epsmges1p4.samsung.com (unknown [182.195.40.158]) by
- epsnrtp2.localdomain (Postfix) with ESMTP id 47RqNV2sDLzMqYkk; Tue,  3 Dec
- 2019 04:52:42 +0000 (GMT)
-Received: from epcas1p3.samsung.com ( [182.195.41.47]) by
- epsmges1p4.samsung.com (Symantec Messaging Gateway) with SMTP id
- 72.36.48019.A1AE5ED5; Tue,  3 Dec 2019 13:52:42 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas1p3.samsung.com (KnoxPortal) with ESMTPA id
- 20191203045241epcas1p304f6496a75fe1a323bcdad5b4018f286~cw1od5o912749727497epcas1p3v;
- Tue,  3 Dec 2019 04:52:41 +0000 (GMT)
-Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20191203045241epsmtrp2bda2424507eed869ae504ca6fc0852c5~cw1ocz90q3052430524epsmtrp2q;
- Tue,  3 Dec 2019 04:52:41 +0000 (GMT)
-X-AuditID: b6c32a38-257ff7000001bb93-45-5de5ea1aef68
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 18.21.06569.91AE5ED5; Tue,  3 Dec 2019 13:52:41 +0900 (KST)
-Received: from [10.113.221.211] (unknown [10.113.221.211]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20191203045241epsmtip229100121f225985f3095f125b11c10e8~cw1oOKq892451924519epsmtip2H;
- Tue,  3 Dec 2019 04:52:41 +0000 (GMT)
-Subject: Re: [PATCH 22/30] drm/exynos: mic: Use drm_bridge_init()
-To: Mihail Atanassov <Mihail.Atanassov@arm.com>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>
-From: Inki Dae <inki.dae@samsung.com>
-Message-ID: <77306b25-e9b2-5b91-9d98-04e6d9e7299b@samsung.com>
-Date: Tue, 3 Dec 2019 13:54:59 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191126131541.47393-23-mihail.atanassov@arm.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrDJsWRmVeSWpSXmKPExsWy7bCmvq7Uq6exBufvClv0njvJZPF/20Rm
- iytf37NZvLh3kcWi//FrZovz5zewW5xtesNusenxNVaLy7vmsFnMOL+PyeLm5WMsFmeW9zBb
- zJj8ks2B12PNvDWMHnu/LWDx2LSqk81j+7cHrB73u48zeWxeUu/Rt2UVo8fnTXIBHFHZNhmp
- iSmpRQqpecn5KZl56bZK3sHxzvGmZgaGuoaWFuZKCnmJuam2Si4+AbpumTlAJysplCXmlAKF
- AhKLi5X07WyK8ktLUhUy8otLbJVSC1JyCiwL9IoTc4tL89L1kvNzrQwNDIxMgQoTsjPmvHnL
- UrCCu2LP3ndMDYyrOLsYOTkkBEwkphxdxtbFyMUhJLCDUWLa9sWsEM4nRokdv46xQzjfGCXu
- bH/JCtPy8MMaqKq9jBJ3l/1kBkkICbxnlDjysxjEFhZwlJjx8w9Yg4hAmcS/s/OZQRqYBf4y
- S7y/uYIRJMEmoCoxccV9NhCbV8BO4uWLU2ANLAIqEpvvLwZq4OAQFYiQOP01EaJEUOLkzCcs
- IGFOAXuJJ5NrQcLMAuISt57MZ4Kw5SWat84GWyUhsIpd4uf0JqijXSQO/2hkgbCFJV4d38IO
- YUtJfH63lw3CLpd49u4Z2HwJgRqJb3MrIExjiYsrUkBMZgFNifW79CGKFSV2/p7LCLGVT+Ld
- 1x5WiGpeiY42IYgSJYljF28wQtgSEheWTGSDKPGQmH+ucgKj4iwkX81C8sosJK/MQti7gJFl
- FaNYakFxbnpqsWGBCXJEb2IEp2Qtix2Me875HGIU4GBU4uHN+PUkVog1say4MvcQowQHs5II
- 7zaJp7FCvCmJlVWpRfnxRaU5qcWHGE2BYT6RWUo0OR+YL/JK4g1NjYyNjS1MDM1MDQ2VxHk5
- flyMFRJITyxJzU5NLUgtgulj4uCUamBMYTklnGybrM7ec8EzznjXv+IAByM7Be29xhY99Y9W
- V6VvKdxwe1uwttukLfVn0oMWPrHo5+Py3WrFqVCn757YeulTxemPT6Zz31FjP/h45pej/x8L
- LVLfanf8582rN+8/MdBd/Svs/QuT1scLtkpdEjXL0v6r9XdHxlTDC/NyeRTsz1tsX/dciaU4
- I9FQi7moOBEAEbbVoN8DAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrPIsWRmVeSWpSXmKPExsWy7bCSvK7kq6exBlvbxSx6z51ksvi/bSKz
- xZWv79ksXty7yGLR//g1s8X58xvYLc42vWG32PT4GqvF5V1z2CxmnN/HZHHz8jEWizPLe5gt
- Zkx+yebA67Fm3hpGj73fFrB4bFrVyeax/dsDVo/73ceZPDYvqffo27KK0ePzJrkAjigum5TU
- nMyy1CJ9uwSujDlv3rIUrOCu2LP3HVMD4yrOLkZODgkBE4mHH9awdjFycQgJ7GaUeL/uD3sX
- IwdQQkJiy1YOCFNY4vDhYoiSt4wSHffns4D0Cgs4Ssz4+YcVxBYRKJPY0XyYGaSIWeA/s8Sx
- 2Xuhhh5jlDh1dhIbSBWbgKrExBX3wWxeATuJly9OgXWzCKhIbL6/mBnEFhWIkHi+/QYjRI2g
- xMmZT1hAruAUsJd4MrkWJMwsoC7xZ94lZghbXOLWk/lMELa8RPPW2cwTGIVmIemehaRlFpKW
- WUhaFjCyrGKUTC0ozk3PLTYsMMpLLdcrTswtLs1L10vOz93ECI5GLa0djCdOxB9iFOBgVOLh
- zfj1JFaINbGsuDL3EKMEB7OSCO82iaexQrwpiZVVqUX58UWlOanFhxilOViUxHnl849FCgmk
- J5akZqemFqQWwWSZODilGhh5BBQVze5s7J+/hnlvg3vi3hiPU9WFSuq8/MoVrnofOK7rKNqe
- 6bueN1/56t2iFv8TM9z+bfZh/b1oXibH7HTGGYHKBoZ6fe73er7G/7/14j7TaS8b9zXf6nvb
- bv1dsH/Zwl03XLRXeB5VL54bejEz8FfOzOdHkvUqe42cdsmmb6g/cbzx+Q4lluKMREMt5qLi
- RABpiFDBwgIAAA==
-X-CMS-MailID: 20191203045241epcas1p304f6496a75fe1a323bcdad5b4018f286
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191126131754epcas5p250f5357a8a31292a83620680f68444cb
-References: <20191126131541.47393-1-mihail.atanassov@arm.com>
- <CGME20191126131754epcas5p250f5357a8a31292a83620680f68444cb@epcas5p2.samsung.com>
- <20191126131541.47393-23-mihail.atanassov@arm.com>
+ Mon, 02 Dec 2019 20:57:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=pbRW1viad/GHjUmf3l7SOTRxkxISCKNgTFW5qUzFG18=;
+ b=WLmdWgtocCq7SfivDEJxGQ0qYWEVC1FNP6Ngu0ZWhp++etMTGHgs+n3xeIFW14fTiV
+ yhMj5yJWWCPDS2EsRAWEKGXN55BwurbaZnbUTdFro30TSZBmm596DFT99kyC5Rb5b2Zp
+ hE6zmZw+W99FOnPwPVSHB2AwA5Hq6AacNcqZg=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=pbRW1viad/GHjUmf3l7SOTRxkxISCKNgTFW5qUzFG18=;
+ b=oeNzT0D8WnzJ/1CLtlLMJ9gT71hRAVtc1oRr2+rZ8lg1eSS6Vi8aRd67o8CS8LhCcA
+ reKpzfVB8HYHgTHpUl3idBYZPVLMyO6GBvEBg+UiWys+aMBp+mLFPesR90BM6M3ZzFcJ
+ F4ovJLfNi4+RVgCtLarKy+YXNWYJ1CWHYVfzaR24rGN0D+u8F4K0fU4IxOrEtelgxrlr
+ zd/OPyt1dPqTOvG088taJ6Qyata26tke0uktNgACYrR5xTwt6yjNw50SG7S+i6wr43lf
+ vmXbAf3qdx/MTT8w+0X5oly4qDgWok29HiQ5ShHlLdvFnKVWJvsJbYIWE5Q/6WYflfBt
+ T8dA==
+X-Gm-Message-State: APjAAAW7rMs6ktIInedUkW0+pq5KVzbls8LbqFaQ6A7lcFuA/c5GrUq5
+ rDPemZP1QKd5KGrUkZALoXLQuA==
+X-Google-Smtp-Source: APXvYqyUrHD9fDQwouHUkuIiwPBscZSDLCvUsyiXCIoV/4MEv6faKFnYd8o4XCGdWtnIMoM9UkEcaw==
+X-Received: by 2002:a5d:5284:: with SMTP id c4mr2679212wrv.376.1575349049792; 
+ Mon, 02 Dec 2019 20:57:29 -0800 (PST)
+Received: from mannams-OptiPlex-7010.dhcp.broadcom.net ([192.19.234.250])
+ by smtp.gmail.com with ESMTPSA id k4sm1667807wmk.26.2019.12.02.20.57.24
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Mon, 02 Dec 2019 20:57:29 -0800 (PST)
+From: Srinath Mannam <srinath.mannam@broadcom.com>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Arnd Bergmann <arnd@arndb.de>
+Subject: [PATCH v3 0/6] PAXB INTx support with proper model
+Date: Tue,  3 Dec 2019 10:27:00 +0530
+Message-Id: <1575349026-8743-1-git-send-email-srinath.mannam@broadcom.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_205251_257351_446031DC 
-X-CRM114-Status: GOOD (  19.98  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191202_205731_764696_5932B9C4 
+X-CRM114-Status: GOOD (  12.70  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.34 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -145,44 +93,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- Joonyoung Shim <jy0922.shim@samsung.com>, David Airlie <airlied@linux.ie>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>, nd <nd@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Srinath Mannam <srinath.mannam@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CjE5LiAxMS4gMjYuIOyYpO2bhCAxMDoxNuyXkCBNaWhhaWwgQXRhbmFzc292IOydtCjqsIApIOyT
-tCDquIA6Cj4gTm8gZnVuY3Rpb25hbCBjaGFuZ2U6IG5vIGxvZ2ljIGRlcGVuZHMgb24gZHJpdmVy
-X3ByaXZhdGUgYmVpbmcgTlVMTCwgc28KPiBpdCdzIHNhZmUgdG8gc2V0IGl0IGVhcmxpZXIgaW4g
-ZXh5bm9zX21pY19wcm9iZS4KQWNrZWQtYnk6IElua2kgRGFlIDxpbmtpLmRhZUBzYW1zdW5nLmNv
-bT4KCkFuZCB0ZXN0ZWQgdGhpcyBwYXRjaCBvbiBUTTIgYW5kIFRNMkUgYm9hcmRzLgpUZXN0ZWQt
-Ynk6IElua2kgRGFlIDxpbmtpLmRhZUBzYW1zdW5nLmNvbT4KClRoYW5rcywKSW5raSBEYWUKCj4g
-Cj4gU2lnbmVkLW9mZi1ieTogTWloYWlsIEF0YW5hc3NvdiA8bWloYWlsLmF0YW5hc3NvdkBhcm0u
-Y29tPgo+IC0tLQo+ICBkcml2ZXJzL2dwdS9kcm0vZXh5bm9zL2V4eW5vc19kcm1fbWljLmMgfCA4
-ICstLS0tLS0tCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgNyBkZWxldGlvbnMo
-LSkKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL2V4eW5vcy9leHlub3NfZHJtX21p
-Yy5jIGIvZHJpdmVycy9ncHUvZHJtL2V4eW5vcy9leHlub3NfZHJtX21pYy5jCj4gaW5kZXggZjQx
-ZDc1OTIzNTU3Li5jYWFkMzQ4YTU2NDYgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9ncHUvZHJtL2V4
-eW5vcy9leHlub3NfZHJtX21pYy5jCj4gKysrIGIvZHJpdmVycy9ncHUvZHJtL2V4eW5vcy9leHlu
-b3NfZHJtX21pYy5jCj4gQEAgLTMwOSwxMCArMzA5LDYgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBk
-cm1fYnJpZGdlX2Z1bmNzIG1pY19icmlkZ2VfZnVuY3MgPSB7Cj4gIHN0YXRpYyBpbnQgZXh5bm9z
-X21pY19iaW5kKHN0cnVjdCBkZXZpY2UgKmRldiwgc3RydWN0IGRldmljZSAqbWFzdGVyLAo+ICAJ
-CQkgICB2b2lkICpkYXRhKQo+ICB7Cj4gLQlzdHJ1Y3QgZXh5bm9zX21pYyAqbWljID0gZGV2X2dl
-dF9kcnZkYXRhKGRldik7Cj4gLQo+IC0JbWljLT5icmlkZ2UuZHJpdmVyX3ByaXZhdGUgPSBtaWM7
-Cj4gLQo+ICAJcmV0dXJuIDA7Cj4gIH0KPiAgCj4gQEAgLTQyMiw5ICs0MTgsNyBAQCBzdGF0aWMg
-aW50IGV4eW5vc19taWNfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgCj4g
-IAlwbGF0Zm9ybV9zZXRfZHJ2ZGF0YShwZGV2LCBtaWMpOwo+ICAKPiAtCW1pYy0+YnJpZGdlLmZ1
-bmNzID0gJm1pY19icmlkZ2VfZnVuY3M7Cj4gLQltaWMtPmJyaWRnZS5vZl9ub2RlID0gZGV2LT5v
-Zl9ub2RlOwo+IC0KPiArCWRybV9icmlkZ2VfaW5pdCgmbWljLT5icmlkZ2UsIGRldiwgJm1pY19i
-cmlkZ2VfZnVuY3MsIE5VTEwsIG1pYyk7Cj4gIAlkcm1fYnJpZGdlX2FkZCgmbWljLT5icmlkZ2Up
-Owo+ICAKPiAgCXBtX3J1bnRpbWVfZW5hYmxlKGRldik7Cj4gCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+This patch series adds PCIe legacy interrupt (INTx) support to the iProc
+PCIe driver by modeling it with its own IRQ domain. All 4 interrupts INTA,
+INTB, INTC, INTD share the same interrupt line connected to the GIC
+in the system. This is now modeled by using its own IRQ domain.
+
+Also update all relevant devicetree files to adapt to the new model.
+
+This patch set is based on Linux-5.4.
+
+Changes from v2:
+  - Addressed Lorenzo's comments
+    - Corrected INTx to PIN mapping.
+
+Changes from v1:
+  - Addressed Rob, Lorenzo, Arnd's comments
+    - Used child node for interrupt controller.
+  - Addressed Andy Shevchenko's comments
+    - Replaced while loop with do-while.
+
+Ray Jui (6):
+  dt-bindings: pci: Update iProc PCI binding for INTx support
+  PCI: iproc: Add INTx support with better modeling
+  arm: dts: Change PCIe INTx mapping for Cygnus
+  arm: dts: Change PCIe INTx mapping for NSP
+  arm: dts: Change PCIe INTx mapping for HR2
+  arm64: dts: Change PCIe INTx mapping for NS2
+
+ .../devicetree/bindings/pci/brcm,iproc-pcie.txt    |  48 ++++++++--
+ arch/arm/boot/dts/bcm-cygnus.dtsi                  |  30 ++++++-
+ arch/arm/boot/dts/bcm-hr2.dtsi                     |  30 ++++++-
+ arch/arm/boot/dts/bcm-nsp.dtsi                     |  45 ++++++++--
+ arch/arm64/boot/dts/broadcom/northstar2/ns2.dtsi   |  28 +++++-
+ drivers/pci/controller/pcie-iproc.c                | 100 ++++++++++++++++++++-
+ drivers/pci/controller/pcie-iproc.h                |   6 ++
+ 7 files changed, 260 insertions(+), 27 deletions(-)
+
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
