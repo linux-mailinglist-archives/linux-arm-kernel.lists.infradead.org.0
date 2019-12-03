@@ -2,88 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5521C10FDC8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:37:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41EAA10FE3F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:58:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5LNmNt38g3XuYb4TZ3dU732Yb/prsAK5LNH0S6QWZpw=; b=GVJZn7cYQbPTBN
-	Ug1l7R4O0YcUKgzzkK91Hz38GC8qJaN15lICYp5F86GMFxSBeM0atMWvDhQp3YG7HWpLZmCCJ1Vda
-	k7SpwzDwkB89aArREVVrRkx4fX0Ac2BD2ULL76mZh/ZIFCMjGvUi4DniUDOHPTxZ0Cs/lbrRR0aRa
-	RGix88L18Cn9oRRoLWH/p6W9xEknEqLawhjGeLiAcBCq9ZEvzk8n/SHZ6TQ4jLFOaYw10OTetxoRB
-	S2dhQkWQv5Mldj+pSFOvjsBvBps0monCZuaNf4L1kvE5EJ1VwU0qhKpvUie5FClhGPWEtS4weoC7m
-	JtjZUA/6wczCKwdYrxKw==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=llM+NNXVPurdN4OMtaK6Cwuv4yu0ytuhOc9NEUYdmVg=; b=Pg8aNv4UYXz7R+
+	5gvwg2+rc70x8T2oc9GrgKFZWOETmAXngDwQ5vgXN1PXOObljsHYq1VprdfK5AEG73swyI+oLGgTR
+	bUnXqmcU14c/puMIxw9VYoGYHH9B3+JZHnk5uGYmCgUG+CZKqW/0LdCh32Twi1+7pwc6iWvwsn1QX
+	1oeqF6bFRMiDbwq/f8HiX1Vq1HPaPcKeO632BbwENgZiuXC72JCKq7khtu7Ld8Er+f7RB5LZBKeqZ
+	KFkf9VMa5zqHcDreB0ARmf26JieuQeeG5M7LUdN/1saSe6h4uUkrZtXJ6T0qt8Vqr6MDQ/f65UPw2
+	h+bysEg+brlLCKq2BxFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic7Qy-0005Hs-MO; Tue, 03 Dec 2019 12:37:40 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1ic7l4-00053q-VN; Tue, 03 Dec 2019 12:58:26 +0000
+Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic7QH-0004nc-GX
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:36:59 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 4D9A86DE1;
- Tue,  3 Dec 2019 07:36:56 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Tue, 03 Dec 2019 07:36:56 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm1; bh=kjWpovueN8CzO
- esF420v4iyncH+ByIeT2cD2JH7lblI=; b=T5CKLPD+spFW1igauzqE8+IrNWikW
- 3Qpwh1ZRCcALvz/non+Glg6hMwkFrcuiwUKm+hH/VYqi4+LsHT6KHwapzeUscqVX
- /TfiaKF4XP3cYYmqmMJXctkmVNRRNdjd6Ln11PKkS2ByUB3K36tbmmQjFRu0RYSF
- H20rNf86NBR+qA2HcmhEvmr20cdh28hZQTQEvhMfZdcwfCQU9n3ozSwp9vhrQ0dv
- 3OF4XUaXAcgt1kNzi1qAZJBBGhjezLsdVaQyf/bkiALhU7T3UHOIgrU7NCoP7Zz6
- c/COaXQQ/MkNBULbVDPuK09r1Yzfo2tyfajG//5CQfx6GnLk/A0XBLDEw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; bh=kjWpovueN8CzOesF420v4iyncH+ByIeT2cD2JH7lblI=; b=BcqBHJDT
- yycSW8cZYYAuQlu9+h6RthTMirtCmI0XXsToehA55RFutmDylPvqP0ZMcsgL+pde
- gAmyug5sfJUE/GTJtJIMQ7u4EqopvX1BxaCS5aLlJwVrhHnF2d9mteSUfuhPzxv7
- VXnbz8cOwJ2rNVNKUwhP7nyHt8Ft2k+0tC7VAslYvXSpig9qLgHxx1pMIEldqvBy
- fT4GluyakCab7XezF6etV6UWTG85wO/h3KJzMLuLvRLyG6OsCeQHgzWTcBsMqbXs
- dewHBqiCTV85CVRofrfrLknR/b46JCysWtEvi6IH51tSH2WRm7iiiVcfpmHeQcle
- fgBCfjZQ0fc5wQ==
-X-ME-Sender: <xms:6FbmXWT95O0CWteAxP0WBCn_xYNd5W4NOhsmjX-u2al4BB7Y-fRcuA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudejjedggeefucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeetnhgurhgv
- ficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfkphepudduke
- drvdduuddrledvrddufeenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegr
- jhdrihgurdgruhenucevlhhushhtvghrufhiiigvpedv
-X-ME-Proxy: <xmx:6FbmXWrXU8yHp46kF_4pgnAJRlwoG_pjs2BFWskoVY-ypp7GFOGotw>
- <xmx:6FbmXeA_Wqa4mgPsSOWUnL8Ccrt6T627QzZo__dl4wTkMd67Q4joDA>
- <xmx:6FbmXTuwT9yS-HHx-s_iWbEG_7IdG4C07T_lxzlv19YdOw9rpxGwmQ>
- <xmx:6FbmXYIiMhg-sBX9RKzSZAn-GYTlCTs8clJBvNx1K9pwKMQeKimy3w>
-Received: from mistburn.lan (unknown [118.211.92.13])
- by mail.messagingengine.com (Postfix) with ESMTPA id E0C8630600AA;
- Tue,  3 Dec 2019 07:36:51 -0500 (EST)
-From: Andrew Jeffery <andrew@aj.id.au>
-To: openipmi-developer@lists.sourceforge.net
-Subject: [PATCH 3/3] ipmi: kcs: aspeed: Implement v2 bindings
-Date: Tue,  3 Dec 2019 23:08:25 +1030
-Message-Id: <4e9def3a71d67a190982f22dbfe723ad42ca3661.1575376664.git-series.andrew@aj.id.au>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <cover.5630f63168ad5cddf02e9796106f8e086c196907.1575376664.git-series.andrew@aj.id.au>
-References: <cover.5630f63168ad5cddf02e9796106f8e086c196907.1575376664.git-series.andrew@aj.id.au>
-MIME-Version: 1.0
+ id 1ic7kx-00053J-HI
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:58:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1575377897;
+ s=strato-dkim-0002; d=goldelico.com;
+ h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=87WHGRshVeBhlmae2Rpoqq+PFlF4eGL+Y6NwEivh8Io=;
+ b=cX4AjnbLSQcoiltXxlbWqUZOiAg7v9VN0KiQuV7XsxtRcYg2PiULT3m6O206fxGVFv
+ z+6DWszx+pek+JiSng6NnGlFYQnFpOIOjcvFSQ4OuG36dWhk3+eIAAd7I5JuuBJtYXfs
+ Lo4MWtgVrVISQ4OM/3CYCaFZO8Jq26T75Y/Ixh9lcmMMnUHVHpmQhX7Y4bcGS6vdPoe4
+ ETLtQntUtBeN3wL5JZsFwA1079aWlv+mIexW3QLNf4YCaHxERBAanyLj2p6XL7osyEaz
+ 9xG9Gjw4bRwjTt0eYf/n9Na/WWFl1C8uh1Q4+Iv9bqg2ltZVO7vB/f+wRjELKUeGUBe6
+ AZnA==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj5Qpw97WFDlacXAYPiQ=="
+X-RZG-CLASS-ID: mo00
+Received: from imac.fritz.box by smtp.strato.de (RZmta 46.0.2 DYNA|AUTH)
+ with ESMTPSA id 6067eavB3Cw958a
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
+ ECDH bits, eq. 3072 bits RSA))
+ (Client did not present a certificate);
+ Tue, 3 Dec 2019 13:58:09 +0100 (CET)
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+Subject: Re: [PATCH] ARM: OMAP2+: Fix warnings with broken
+ omap2_set_init_voltage()
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <BAF5B057-1017-4174-8C3F-4B49B31E2E0D@goldelico.com>
+Date: Tue, 3 Dec 2019 13:58:09 +0100
+Message-Id: <33A772D8-5A90-4FB0-A5A2-CAE0AB33E518@goldelico.com>
+References: <20190924233222.52757-1-tony@atomide.com>
+ <8FFD44DB-73F8-4807-91E1-C97DA8F781BA@goldelico.com>
+ <20191202213929.GB35479@atomide.com>
+ <EE749881-C3DB-4BBE-85FE-E5AF3D34884F@goldelico.com>
+ <BAF5B057-1017-4174-8C3F-4B49B31E2E0D@goldelico.com>
+To: Tony Lindgren <tony@atomide.com>
+X-Mailer: Apple Mail (2.3124)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_043657_770357_6D948A74 
-X-CRM114-Status: GOOD (  14.71  )
+X-CRM114-CacheID: sfid-20191203_045820_162696_6C778003 
+X-CRM114-Status: GOOD (  27.51  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.224 listed in list.dnswl.org]
+ low trust [2a01:238:20a:202:5301:0:0:3 listed in]
+ [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -102,227 +87,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Haiyue Wang <haiyue.wang@linux.intel.com>, minyard@acm.org, arnd@arndb.de,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- linux-aspeed@lists.ozlabs.org, robh+dt@kernel.org, joel@jms.id.au,
- linux-arm-kernel@lists.infradead.org
+Cc: Nishanth Menon <nm@ti.com>,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, =?utf-8?Q?Andr=C3=A9_Roth?= <neolynx@gmail.com>,
+ Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <aford173@gmail.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The v2 bindings allow us to extract the resources from the devicetree.
-The table in the driver is retained to derive the channel index, which
-removes the need for kcs_chan property from the v1 bindings. The v2
-bindings allow us to reduce the number of warnings generated by the
-existing devicetree nodes.
 
-Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-Reviewed-by: Joel Stanley <joel@jms.id.au>
-Reviewed-by: Haiyue Wang <haiyue.wang@linux.intel.com>
----
- drivers/char/ipmi/kcs_bmc_aspeed.c | 144 +++++++++++++++++++++++++-----
- 1 file changed, 121 insertions(+), 23 deletions(-)
+> Am 03.12.2019 um 13:30 schrieb H. Nikolaus Schaller <hns@goldelico.com>:
+> 
+>> 
+>> Am 03.12.2019 um 10:53 schrieb H. Nikolaus Schaller <hns@goldelico.com>:
+>> 
+>> HiTony,
+>> 
+>>> Am 02.12.2019 um 22:39 schrieb Tony Lindgren <tony@atomide.com>:
+>>> 
+>>> Hi,
+>>> 
+>>> * H. Nikolaus Schaller <hns@goldelico.com> [191202 21:10]:
+>>>>> Am 25.09.2019 um 01:32 schrieb Tony Lindgren <tony@atomide.com>:
+>>>>> Guys, please check and ack if we can really do this to get rid of some
+>>>>> pointless dmesg -l3 errors without affecting the ongoing cpufreq and
+>>>>> voltage work.
+>>>> 
+>>>> unfortunately we did not yet test in combination with the 1GHz OPP
+>>>> patches for omap3630 (queued for v5.5-rc1) and it appears that this
+>>>> patch breaks the 1GHz OPP.
+>>>> 
+>>>> The symptom is that it works fine on a dm3730 with 800MHz rating
+>>>> but results in spurious kernel panics, stack corruption, virtual memory
+>>>> failures, OneNAND DMA timeouts etc. on a dm3730 with 1GHz speed grade.
+>>> 
+>>> Hmm yeah OK, I was a bit worried about this breaking something.
+>>> 
+>>>> We can also re-add the "turbo-mode" tags in the omap36xx.dtsi (or
+>>>> remove the 1GHz OPP) and can then boot with 800MHz max. clock. But
+>>>> enabling boost (echo 1 >/sys/devices/system/cpu/cpufreq/boost) makes
+>>>> the problem and its symptoms appear almost immediately.
+>>>> 
+>>>> After some scratching our heads we found that v5.3.7 is still good and
+>>>> v5.3.8 is bad. A bisect of our tree (which includes the 1GHz OPP) did
+>>>> point to this patch whichwas apparently already backported to v5.3.8 and
+>>>> v5.4.
+>>>> 
+>>>> So I assume that the code removed here enabled or initialized something
+>>>> we need for safe 1GHz transitions. Maybe the ABB-LDO. Or it looks up the
+>>>> vdd regulator and initializes it earlier than without this code. Maybe
+>>>> it also (pre-)initializes some clk which could now be left uninitialized
+>>>> too long?
+>>> 
+>>> It was just doing voltdm_lookup() and clk_get_rate() and then failed
+>>> dev_pm_opp_find_freq_ceil(), but I don't see what these might affect..
+>>> 
+>>>> Note that seeing the log message indicates that voltdm_scale() and
+>>>> dev_pm_opp_get_voltage() are not called, but all functions before could
+>>>> be with side-effects.
+>>> 
+>>> Yes that is strange. There's no clk_prepare() before we proceed to
+>>> call clk_get_rate() either, not sure if that matter here though.
+>>> 
+>>>> v5.5-rc1 will likely fail right from the beginning (only on 1GHz rated
+>>>> omap36xx) because it makes the combination of this patch and 1GHz OPP
+>>>> public (linux-next should already fail but it appears that nobody has
+>>>> tested).
+>>> 
+>>> OK
+>> 
+>> Well, it is not that urgent as I thought since I have not yet submitted
+>> my patch to remove the turbo-mode tags for 1GHz OPP. Therefore even if this
+>> code is deployed, no dm3730 will try to boot or run at 1GHz unless
+>> manually enabled by echo 1 >/sys/devices/system/cpu/cpufreq/boost.
+>> 
+>>> 
+>>>> Any ideas how to fix? Before I try to do a revert and then add goto exit;
+>>>> after each function call and see which ones are essential for 1GHz.
+>>> 
+>>> If you have things reproducable, care to try to narrow the issue down
+>>> a bit by trying see which parts of the old omap2_set_init_voltage()
+>>> fix the issue?
+>>> 
+>>> The issue should be there somewhere in the few lines of code before
+>>> dev_pm_opp_find_freq_ceil(), right?
+>>> 
+>>> It would be good to understand what's going on before reverting or
+>>> fixing things condering that a revert would add back code that has
+>>> it's own errors and fails to init :)
+>> 
+>> Indeed!
+>> 
+>>> 
+>>> Another thing to check is if the dev instance is actually the right
+>>> one we had in omap2_set_init_voltage() vs the dts dev instance as
+>>> we use that with dev_pm_opp_find_freq_ceil().
+>> 
+>> As a first step I tried to comment out some steps but immediately
+>> got failures.
+>> 
+>> What I then noticed is that there is only a message for
+>> 
+>> [    2.508392] omap2_set_init_voltage: unable to find boot up OPP for vdd_core
+>> [    2.517639] omap2_set_init_voltage: unable to set vdd_core
+>> 
+>> There is none for vdd_mpu_iva. This OPP initialization is successful
+>> and does call voltdm_scale() once.
+>> 
+>> So it appears as if omap3_init_voltages() is not a complete no-op.
+>> 
+>> IMHO the reason for the message is that u-boot defines a frequency
+>> and voltage that can not be found in the OPP table at all.
+>> 
+>> Maybe a better solution to get rid of the message would be to modify 
+>> dev_pm_opp_find_freq_ceil() to interpolate between OPPs?
+>> 
+>> Hm. After looking into the code I start to wonder why it fails at
+>> all. _find_freq_ceil() should return the highest available frequency
+>> above the one passed in and u-boot should not pass more than 800 MHz...
+>> 
+>> That is IMHO a good next step to go into details.
+> 
+> Ok, dev_pm_opp_find_freq_ceil() is doing what it should do and it
+> returns the first OPP higher or equal than the frequency passed in.
+> 
+> The real reason for the warning is that the same OPP table is used
+> for vdd_mpu_iva and vdd_core and it appears as if "core" (l3_ick)
+> runs at 200 MHz which does not correspond to a valid OPP.
+> 
+> So to silcence the warning it suffices to remove
+> 
+> 	omap2_set_init_voltage("core", "l3_ick", "l3_main");
+> 
+> The question is now what l3_ick has to do with the OPPs at all
+> and how it should interwork with OPPs and cpufreq.
+> 
+> Or does all this mean we may need a second OPP fable for vdd_core
+> and 200 MHz? But what would it be good for? I have not seen any
+> reference for "core-OPPs" in the TRM.
 
-diff --git a/drivers/char/ipmi/kcs_bmc_aspeed.c b/drivers/char/ipmi/kcs_bmc_aspeed.c
-index e3dd09022589..509e0d3c6eb1 100644
---- a/drivers/char/ipmi/kcs_bmc_aspeed.c
-+++ b/drivers/char/ipmi/kcs_bmc_aspeed.c
-@@ -12,6 +12,7 @@
- #include <linux/mfd/syscon.h>
- #include <linux/module.h>
- #include <linux/of.h>
-+#include <linux/of_address.h>
- #include <linux/platform_device.h>
- #include <linux/poll.h>
- #include <linux/regmap.h>
-@@ -233,38 +234,133 @@ static const struct kcs_ioreg ast_kcs_bmc_ioregs[KCS_CHANNEL_MAX] = {
- 	{ .idr = LPC_IDR4, .odr = LPC_ODR4, .str = LPC_STR4 },
- };
- 
--static int aspeed_kcs_probe(struct platform_device *pdev)
-+static struct kcs_bmc *aspeed_kcs_probe_of_v1(struct platform_device *pdev)
- {
--	struct device *dev = &pdev->dev;
- 	struct aspeed_kcs_bmc *priv;
--	struct kcs_bmc *kcs_bmc;
--	u32 chan, addr;
-+	struct device_node *np;
-+	struct kcs_bmc *kcs;
-+	u32 channel;
-+	u32 slave;
- 	int rc;
- 
--	rc = of_property_read_u32(dev->of_node, "kcs_chan", &chan);
--	if ((rc != 0) || (chan == 0 || chan > KCS_CHANNEL_MAX)) {
--		dev_err(dev, "no valid 'kcs_chan' configured\n");
--		return -ENODEV;
-+	np = pdev->dev.of_node;
-+
-+	rc = of_property_read_u32(np, "kcs_chan", &channel);
-+	if ((rc != 0) || (channel == 0 || channel > KCS_CHANNEL_MAX)) {
-+		dev_err(&pdev->dev, "no valid 'kcs_chan' configured\n");
-+		return ERR_PTR(-EINVAL);
- 	}
- 
--	rc = of_property_read_u32(dev->of_node, "kcs_addr", &addr);
-+	kcs = kcs_bmc_alloc(&pdev->dev, sizeof(struct aspeed_kcs_bmc), channel);
-+	if (!kcs)
-+		return ERR_PTR(-ENOMEM);
-+
-+	priv = kcs_bmc_priv(kcs);
-+	priv->map = syscon_node_to_regmap(pdev->dev.parent->of_node);
-+	if (IS_ERR(priv->map)) {
-+		dev_err(&pdev->dev, "Couldn't get regmap\n");
-+		return ERR_PTR(-ENODEV);
-+	}
-+
-+	rc = of_property_read_u32(np, "kcs_addr", &slave);
- 	if (rc) {
--		dev_err(dev, "no valid 'kcs_addr' configured\n");
--		return -ENODEV;
-+		dev_err(&pdev->dev, "no valid 'kcs_addr' configured\n");
-+		return ERR_PTR(-EINVAL);
- 	}
- 
--	kcs_bmc = kcs_bmc_alloc(dev, sizeof(*priv), chan);
--	if (!kcs_bmc)
--		return -ENOMEM;
-+	kcs->ioreg = ast_kcs_bmc_ioregs[channel - 1];
-+	aspeed_kcs_set_address(kcs, slave);
-+
-+	return 0;
-+}
-+
-+static int aspeed_kcs_calculate_channel(const struct kcs_ioreg *regs)
-+{
-+	int i;
-+
-+	for (i = 0; i < ARRAY_SIZE(ast_kcs_bmc_ioregs); i++) {
-+		if (!memcmp(&ast_kcs_bmc_ioregs[i], regs, sizeof(*regs)))
-+			return i + 1;
-+	}
-+
-+	return -EINVAL;
-+}
-+
-+static struct kcs_bmc *aspeed_kcs_probe_of_v2(struct platform_device *pdev)
-+{
-+	struct aspeed_kcs_bmc *priv;
-+	struct device_node *np;
-+	struct kcs_ioreg ioreg;
-+	struct kcs_bmc *kcs;
-+	const __be32 *reg;
-+	int channel;
-+	u32 slave;
-+	int rc;
- 
--	priv = kcs_bmc_priv(kcs_bmc);
--	priv->map = syscon_node_to_regmap(dev->parent->of_node);
-+	np = pdev->dev.of_node;
-+
-+	/* Don't translate addresses, we want offsets for the regmaps */
-+	reg = of_get_address(np, 0, NULL, NULL);
-+	if (!reg)
-+		return ERR_PTR(-EINVAL);
-+	ioreg.idr = be32_to_cpup(reg);
-+
-+	reg = of_get_address(np, 1, NULL, NULL);
-+	if (!reg)
-+		return ERR_PTR(-EINVAL);
-+	ioreg.odr = be32_to_cpup(reg);
-+
-+	reg = of_get_address(np, 2, NULL, NULL);
-+	if (!reg)
-+		return ERR_PTR(-EINVAL);
-+	ioreg.str = be32_to_cpup(reg);
-+
-+	channel = aspeed_kcs_calculate_channel(&ioreg);
-+	if (channel < 0)
-+		return ERR_PTR(channel);
-+
-+	kcs = kcs_bmc_alloc(&pdev->dev, sizeof(struct aspeed_kcs_bmc), channel);
-+	if (!kcs)
-+		return ERR_PTR(-ENOMEM);
-+
-+	kcs->ioreg = ioreg;
-+
-+	priv = kcs_bmc_priv(kcs);
-+	priv->map = syscon_node_to_regmap(pdev->dev.parent->of_node);
- 	if (IS_ERR(priv->map)) {
--		dev_err(dev, "Couldn't get regmap\n");
--		return -ENODEV;
-+		dev_err(&pdev->dev, "Couldn't get regmap\n");
-+		return ERR_PTR(-ENODEV);
- 	}
- 
--	kcs_bmc->ioreg = ast_kcs_bmc_ioregs[chan - 1];
-+	rc = of_property_read_u32(np, "slave-reg", &slave);
-+	if (rc)
-+		return ERR_PTR(rc);
-+
-+	aspeed_kcs_set_address(kcs, slave);
-+
-+	return kcs;
-+}
-+
-+static int aspeed_kcs_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct kcs_bmc *kcs_bmc;
-+	struct device_node *np;
-+	int rc;
-+
-+	np = pdev->dev.of_node;
-+	if (of_device_is_compatible(np, "aspeed,ast2400-kcs-bmc") ||
-+			of_device_is_compatible(np, "aspeed,ast2500-kcs-bmc"))
-+		kcs_bmc = aspeed_kcs_probe_of_v1(pdev);
-+	else if (of_device_is_compatible(np, "aspeed,ast2400-kcs-bmc-v2") ||
-+			of_device_is_compatible(np, "aspeed,ast2500-kcs-bmc-v2"))
-+		kcs_bmc = aspeed_kcs_probe_of_v2(pdev);
-+	else
-+		return -EINVAL;
-+
-+	if (IS_ERR(kcs_bmc))
-+		return PTR_ERR(kcs_bmc);
-+
- 	kcs_bmc->io_inputb = aspeed_kcs_inb;
- 	kcs_bmc->io_outputb = aspeed_kcs_outb;
- 
-@@ -274,7 +370,6 @@ static int aspeed_kcs_probe(struct platform_device *pdev)
- 
- 	dev_set_drvdata(dev, kcs_bmc);
- 
--	aspeed_kcs_set_address(kcs_bmc, addr);
- 	aspeed_kcs_enable_channel(kcs_bmc, true);
- 
- 	rc = misc_register(&kcs_bmc->miscdev);
-@@ -283,9 +378,10 @@ static int aspeed_kcs_probe(struct platform_device *pdev)
- 		return rc;
- 	}
- 
--	pr_info("channel=%u addr=0x%x idr=0x%x odr=0x%x str=0x%x\n",
--		chan, addr,
--		kcs_bmc->ioreg.idr, kcs_bmc->ioreg.odr, kcs_bmc->ioreg.str);
-+	dev_dbg(&pdev->dev,
-+		"Probed KCS device %d (IDR=0x%x, ODR=0x%x, STR=0x%x)\n",
-+		kcs_bmc->channel, kcs_bmc->ioreg.idr, kcs_bmc->ioreg.odr,
-+		kcs_bmc->ioreg.str);
- 
- 	return 0;
- }
-@@ -302,6 +398,8 @@ static int aspeed_kcs_remove(struct platform_device *pdev)
- static const struct of_device_id ast_kcs_bmc_match[] = {
- 	{ .compatible = "aspeed,ast2400-kcs-bmc" },
- 	{ .compatible = "aspeed,ast2500-kcs-bmc" },
-+	{ .compatible = "aspeed,ast2400-kcs-bmc-v2" },
-+	{ .compatible = "aspeed,ast2500-kcs-bmc-v2" },
- 	{ }
- };
- MODULE_DEVICE_TABLE(of, ast_kcs_bmc_match);
--- 
-git-series 0.9.1
+One more, maybe important, finding:
+
+cpufreq_init() is called ca. 0.4 seconds before omap2_set_init_voltage()
+and dpll1_ck may already be 1 GHz at that point.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
