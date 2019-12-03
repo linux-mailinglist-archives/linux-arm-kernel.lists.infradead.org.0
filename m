@@ -2,79 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FEFA10FDA8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:30:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01DF410FDAA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:31:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Of2eMby4qrX7+p7HG3AXGFL8szEi3pf904zMoSJKv44=; b=umHjo9xlJT4YSK
-	TW8i0pochmFii9RBg32mi1jiy+6ZthaAzPJ6w3tVd6x72ki70f6pmB+0G3hkooSoLQ3L2dDiLopjf
-	BGOTs0dN+aAWzCmnxo+/QNlJGvWChmOt9/gT/f8FPHxM/PEyiEMbURbJr+3rNrsjwco5vM/s/1OU0
-	YIhaVNUcFr5xPVQQ1C4e92x80xaB3gHTROoz0j6FPmj/uD4kRwLguKjrnK2pvj0nKlW5aqTVf7N2a
-	ZwBTg311w2kAmSE8ezzJC9TMYgGeJ0TSXIGJlTbQEPrajxwNxA2zFiy3UlVqTqTO0kYx5qUCxRjIK
-	+fE0gf4VHWn7m79EmBEA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:From:To:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AJVtVp+J+dEO0NpqUqqXQNNLuGa6dLOKJ+fR3jtZ7hM=; b=jAWYofVBvJ5pXe
+	I9H6CLXIYQM7nkD3F5JX3Hofyo/tXXPeDAWjeSpql+/5kVUR+5CUG6J6hkhW2M1HkA4PSgFmfwpX4
+	Ajmzx2bbC9Su8VXOQQj0kdqIQ7OzGU7v7hWN8U6y/egMxOQ0mWKT63iVHfiEaF6wtM5YUobMEaxOy
+	lCYjahUqf8xCHQbPVns6W/kU2VWJu52J7xlV7XD7omXm+iQzbQ0CDSinQhfDys252QAGSjsJ3TkMM
+	GEw/n35gJtFzGbQGtxYp7qNXoLh3ijzM8GP1V1NXtbY/fjKshrBXeToKTrG6hs1HNyMB6e3gGUEro
+	2Yekcdob2FHX9TI0kEZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic7K1-0001D2-W8; Tue, 03 Dec 2019 12:30:30 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::11])
+	id 1ic7Kj-0001Sw-MC; Tue, 03 Dec 2019 12:31:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic7Jt-0001C7-57
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:30:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1575376217;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=GF0dYqjJYl0N07n81fkOYGJuW0P2Xwn9EWFBb3GXqeg=;
- b=jXrpWtSRz93rCKfR7NagdoWHdNnw1J8Ahqfi73ASMZ+zjOtT49Kkiu3yFiyv1ARBXd
- wbEwpLocX7YUqeJXi1JKQrPCJWji+sqVPFIue2DELLmgL4JPQokix4gTu5Ms4bPE5uyG
- JOpxXW/5t1k7Zsui344JBybckAFG+nipZOKO+Z+D0HVTmszDmSPQ4kxhBsUh0ebki+vO
- T3qg4YRGgmMob5TsSbZkT9b9RXCc3+JT6XI2EXtQA/e6SdQOnNdmk83KgZ/W6ur65YZi
- rHOTV5oYLHCR0x5IEQipUIqRFvm6Se1HKPBnqJTcbInRSV/KfsaBJ/xw2sZbopO4Myja
- /AzA==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj5Qpw97WFDlacXAYPiQ=="
-X-RZG-CLASS-ID: mo00
-Received: from imac.fritz.box by smtp.strato.de (RZmta 46.0.2 DYNA|AUTH)
- with ESMTPSA id 6067eavB3CU74yO
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
- ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Tue, 3 Dec 2019 13:30:07 +0100 (CET)
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-Subject: Re: [PATCH] ARM: OMAP2+: Fix warnings with broken
- omap2_set_init_voltage()
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <EE749881-C3DB-4BBE-85FE-E5AF3D34884F@goldelico.com>
-Date: Tue, 3 Dec 2019 13:30:07 +0100
-Message-Id: <BAF5B057-1017-4174-8C3F-4B49B31E2E0D@goldelico.com>
-References: <20190924233222.52757-1-tony@atomide.com>
- <8FFD44DB-73F8-4807-91E1-C97DA8F781BA@goldelico.com>
- <20191202213929.GB35479@atomide.com>
- <EE749881-C3DB-4BBE-85FE-E5AF3D34884F@goldelico.com>
-To: Tony Lindgren <tony@atomide.com>
-X-Mailer: Apple Mail (2.3124)
+ id 1ic7KW-0001SK-L1; Tue, 03 Dec 2019 12:31:02 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 127E52073C;
+ Tue,  3 Dec 2019 12:30:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575376259;
+ bh=4bPoHww62PiAifL9wchSjqkMtb4cUfKs/nolfKBokxk=;
+ h=Subject:To:Cc:From:Date:From;
+ b=j/GH6XF20vW2yLEZJk09oFfKGzC1K829y6CayX2nmVKV6Jjc2zyhpflx4P7ediHgm
+ Hf3XKlbGQQR/BuTeH5LY0zObVjYa0lVDWnv5uQtJZl4rTutUPnFERIOreiiluBi4Iy
+ 29m5FGPywEZ8UXw/LaMTYlgS+yQd57bw/3s8aR3A=
+Subject: Patch "mtd: rawnand: atmel: fix possible object reference leak" has
+ been added to the 4.14-stable tree
+To: alexandre.belloni@bootlin.com, bbrezillon@kernel.org,
+ computersforpeace@gmail.com, dwmw2@infradead.org, gregkh@linuxfoundation.org,
+ lee.jones@linaro.org, linux-arm-kernel@lists.infradead.org,
+ linux-mtd@lists.infradead.org, ludovic.desroches@microchip.com,
+ marek.vasut@gmail.com, miquel.raynal@bootlin.com, nicolas.ferre@microchip.com,
+ richard@nod.at, tudor.ambarus@microchip.com, yellowriver2010@hotmail.com
+From: <gregkh@linuxfoundation.org>
+Date: Tue, 03 Dec 2019 13:30:43 +0100
+Message-ID: <1575376243232191@kroah.com>
+MIME-Version: 1.0
+X-stable: commit
+X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_043021_783413_77B390F3 
-X-CRM114-Status: GOOD (  28.72  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191203_043100_729076_9E58316E 
+X-CRM114-Status: GOOD (  14.93  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5301:0:0:11 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,149 +76,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, =?utf-8?Q?Andr=C3=A9_Roth?= <neolynx@gmail.com>,
- Andreas Kemnade <andreas@kemnade.info>,
- Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <aford173@gmail.com>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
+Cc: stable-commits@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-> Am 03.12.2019 um 10:53 schrieb H. Nikolaus Schaller <hns@goldelico.com>:
-> 
-> HiTony,
-> 
->> Am 02.12.2019 um 22:39 schrieb Tony Lindgren <tony@atomide.com>:
->> 
->> Hi,
->> 
->> * H. Nikolaus Schaller <hns@goldelico.com> [191202 21:10]:
->>>> Am 25.09.2019 um 01:32 schrieb Tony Lindgren <tony@atomide.com>:
->>>> Guys, please check and ack if we can really do this to get rid of some
->>>> pointless dmesg -l3 errors without affecting the ongoing cpufreq and
->>>> voltage work.
->>> 
->>> unfortunately we did not yet test in combination with the 1GHz OPP
->>> patches for omap3630 (queued for v5.5-rc1) and it appears that this
->>> patch breaks the 1GHz OPP.
->>> 
->>> The symptom is that it works fine on a dm3730 with 800MHz rating
->>> but results in spurious kernel panics, stack corruption, virtual memory
->>> failures, OneNAND DMA timeouts etc. on a dm3730 with 1GHz speed grade.
->> 
->> Hmm yeah OK, I was a bit worried about this breaking something.
->> 
->>> We can also re-add the "turbo-mode" tags in the omap36xx.dtsi (or
->>> remove the 1GHz OPP) and can then boot with 800MHz max. clock. But
->>> enabling boost (echo 1 >/sys/devices/system/cpu/cpufreq/boost) makes
->>> the problem and its symptoms appear almost immediately.
->>> 
->>> After some scratching our heads we found that v5.3.7 is still good and
->>> v5.3.8 is bad. A bisect of our tree (which includes the 1GHz OPP) did
->>> point to this patch whichwas apparently already backported to v5.3.8 and
->>> v5.4.
->>> 
->>> So I assume that the code removed here enabled or initialized something
->>> we need for safe 1GHz transitions. Maybe the ABB-LDO. Or it looks up the
->>> vdd regulator and initializes it earlier than without this code. Maybe
->>> it also (pre-)initializes some clk which could now be left uninitialized
->>> too long?
->> 
->> It was just doing voltdm_lookup() and clk_get_rate() and then failed
->> dev_pm_opp_find_freq_ceil(), but I don't see what these might affect..
->> 
->>> Note that seeing the log message indicates that voltdm_scale() and
->>> dev_pm_opp_get_voltage() are not called, but all functions before could
->>> be with side-effects.
->> 
->> Yes that is strange. There's no clk_prepare() before we proceed to
->> call clk_get_rate() either, not sure if that matter here though.
->> 
->>> v5.5-rc1 will likely fail right from the beginning (only on 1GHz rated
->>> omap36xx) because it makes the combination of this patch and 1GHz OPP
->>> public (linux-next should already fail but it appears that nobody has
->>> tested).
->> 
->> OK
-> 
-> Well, it is not that urgent as I thought since I have not yet submitted
-> my patch to remove the turbo-mode tags for 1GHz OPP. Therefore even if this
-> code is deployed, no dm3730 will try to boot or run at 1GHz unless
-> manually enabled by echo 1 >/sys/devices/system/cpu/cpufreq/boost.
-> 
->> 
->>> Any ideas how to fix? Before I try to do a revert and then add goto exit;
->>> after each function call and see which ones are essential for 1GHz.
->> 
->> If you have things reproducable, care to try to narrow the issue down
->> a bit by trying see which parts of the old omap2_set_init_voltage()
->> fix the issue?
->> 
->> The issue should be there somewhere in the few lines of code before
->> dev_pm_opp_find_freq_ceil(), right?
->> 
->> It would be good to understand what's going on before reverting or
->> fixing things condering that a revert would add back code that has
->> it's own errors and fails to init :)
-> 
-> Indeed!
-> 
->> 
->> Another thing to check is if the dev instance is actually the right
->> one we had in omap2_set_init_voltage() vs the dts dev instance as
->> we use that with dev_pm_opp_find_freq_ceil().
-> 
-> As a first step I tried to comment out some steps but immediately
-> got failures.
-> 
-> What I then noticed is that there is only a message for
-> 
-> [    2.508392] omap2_set_init_voltage: unable to find boot up OPP for vdd_core
-> [    2.517639] omap2_set_init_voltage: unable to set vdd_core
-> 
-> There is none for vdd_mpu_iva. This OPP initialization is successful
-> and does call voltdm_scale() once.
-> 
-> So it appears as if omap3_init_voltages() is not a complete no-op.
-> 
-> IMHO the reason for the message is that u-boot defines a frequency
-> and voltage that can not be found in the OPP table at all.
-> 
-> Maybe a better solution to get rid of the message would be to modify 
-> dev_pm_opp_find_freq_ceil() to interpolate between OPPs?
-> 
-> Hm. After looking into the code I start to wonder why it fails at
-> all. _find_freq_ceil() should return the highest available frequency
-> above the one passed in and u-boot should not pass more than 800 MHz...
-> 
-> That is IMHO a good next step to go into details.
+This is a note to let you know that I've just added the patch titled
 
-Ok, dev_pm_opp_find_freq_ceil() is doing what it should do and it
-returns the first OPP higher or equal than the frequency passed in.
+    mtd: rawnand: atmel: fix possible object reference leak
 
-The real reason for the warning is that the same OPP table is used
-for vdd_mpu_iva and vdd_core and it appears as if "core" (l3_ick)
-runs at 200 MHz which does not correspond to a valid OPP.
+to the 4.14-stable tree which can be found at:
+    http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
-So to silcence the warning it suffices to remove
+The filename of the patch is:
+     mtd-rawnand-atmel-fix-possible-object-reference-leak.patch
+and it can be found in the queue-4.14 subdirectory.
 
-	omap2_set_init_voltage("core", "l3_ick", "l3_main");
+If you, or anyone else, feels it should not be added to the stable tree,
+please let <stable@vger.kernel.org> know about it.
 
-The question is now what l3_ick has to do with the OPPs at all
-and how it should interwork with OPPs and cpufreq.
 
-Or does all this mean we may need a second OPP fable for vdd_core
-and 200 MHz? But what would it be good for? I have not seen any
-reference for "core-OPPs" in the TRM.
+From a12085d13997ed15f745f33a0e01002541160179 Mon Sep 17 00:00:00 2001
+From: Wen Yang <yellowriver2010@hotmail.com>
+Date: Thu, 7 Feb 2019 03:50:55 +0000
+Subject: mtd: rawnand: atmel: fix possible object reference leak
 
-BR,
-Nikolaus
+From: Wen Yang <yellowriver2010@hotmail.com>
 
+commit a12085d13997ed15f745f33a0e01002541160179 upstream.
+
+of_find_device_by_node() takes a reference to the struct device
+when it finds a match via get_device, there is no need to call
+get_device() twice.
+We also should make sure to drop the reference to the device
+taken by of_find_device_by_node() on driver unbind.
+
+Fixes: f88fc122cc34 ("mtd: nand: Cleanup/rework the atmel_nand driver")
+Signed-off-by: Wen Yang <yellowriver2010@hotmail.com>
+Suggested-by: Boris Brezillon <bbrezillon@kernel.org>
+Reviewed-by: Boris Brezillon <bbrezillon@kernel.org>
+Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Acked-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Cc: Tudor Ambarus <tudor.ambarus@microchip.com>
+Cc: Boris Brezillon <bbrezillon@kernel.org>
+Cc: Miquel Raynal <miquel.raynal@bootlin.com>
+Cc: Richard Weinberger <richard@nod.at>
+Cc: David Woodhouse <dwmw2@infradead.org>
+Cc: Brian Norris <computersforpeace@gmail.com>
+Cc: Marek Vasut <marek.vasut@gmail.com>
+Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
+Cc: linux-mtd@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Signed-off-by: Lee Jones <lee.jones@linaro.org>
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+---
+ drivers/mtd/nand/atmel/pmecc.c |   21 +++++++++++++++------
+ 1 file changed, 15 insertions(+), 6 deletions(-)
+
+--- a/drivers/mtd/nand/atmel/pmecc.c
++++ b/drivers/mtd/nand/atmel/pmecc.c
+@@ -875,23 +875,32 @@ static struct atmel_pmecc *atmel_pmecc_g
+ {
+ 	struct platform_device *pdev;
+ 	struct atmel_pmecc *pmecc, **ptr;
++	int ret;
+ 
+ 	pdev = of_find_device_by_node(np);
+-	if (!pdev || !platform_get_drvdata(pdev))
++	if (!pdev)
+ 		return ERR_PTR(-EPROBE_DEFER);
++	pmecc = platform_get_drvdata(pdev);
++	if (!pmecc) {
++		ret = -EPROBE_DEFER;
++		goto err_put_device;
++	}
+ 
+ 	ptr = devres_alloc(devm_atmel_pmecc_put, sizeof(*ptr), GFP_KERNEL);
+-	if (!ptr)
+-		return ERR_PTR(-ENOMEM);
+-
+-	get_device(&pdev->dev);
+-	pmecc = platform_get_drvdata(pdev);
++	if (!ptr) {
++		ret = -ENOMEM;
++		goto err_put_device;
++	}
+ 
+ 	*ptr = pmecc;
+ 
+ 	devres_add(userdev, ptr);
+ 
+ 	return pmecc;
++
++err_put_device:
++	put_device(&pdev->dev);
++	return ERR_PTR(ret);
+ }
+ 
+ static const int atmel_pmecc_strengths[] = { 2, 4, 8, 12, 24, 32 };
+
+
+Patches currently in stable-queue which might be from yellowriver2010@hotmail.com are
+
+queue-4.14/mtd-rawnand-atmel-fix-possible-object-reference-leak.patch
 
 _______________________________________________
 linux-arm-kernel mailing list
