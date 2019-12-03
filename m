@@ -2,73 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DA1D1104EF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 20:19:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42F121104F3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 20:19:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g6R1+2oL/kRXQvh4FxIUJ5f12QrK/uxvTDenDqT5ktM=; b=MK2GyKInPiAA5p
-	g0lgHmAHAhzL0qkG/mTeXhS7I+D7TptsbDtMkXnY9Amn0iwJZ+eUzVbObi1xwuWJDD2IG3fdP7t6F
-	/54zyFDnv//Nu+lW8xR/2O+jWitL/UqhBwyssOkIZkORa++aGn+6QD7tbIVGwYBL0xo70xnwPn6hQ
-	V2IaCaHM4N3rqIXI6se4btumntgDx00elXgGeX4VDfKp2NZyuR8m7jd/nLoaxGLyX4f2P62TCVojX
-	eeVfVJFKKcUmG4fbkrnhpcqyAnfURZxrJMUlr3je7o+TfYQFzqmnMZhG7VKWMpZmo5HeXRC8WNsHI
-	QHVcAequSp3dS25X3/+w==;
+	List-Owner; bh=7yJHiKduPhjBq5HkJcf3ytfQ22YVM7NWa7CtjkAXDbo=; b=Ka07zzoC5//6Ym
+	3ZqValGw0W/iX54+qg26JKzh8d3bg6KA7M10nHFJg9WoCPf6LjaPpbqKkVlkmX/qdhU08LThrzNfh
+	wC/yhrWkFKYs/nByUpjDasGNGUzO/X9DXWoiSkV4axlH6IGsx1dEBUEDCtXtmrFPaBkIOH56kM/8p
+	wb0Ung6fSXKBm0+vSbKx99ZFWeZUfONtsbfF/PiBiD3AY8amgrp16tp5fy3Zdctg5U4XpjTCFJZZm
+	wtBD4V0mRquMZYhZilg73bhKiwwTsD1rwp+2hLhWcVeLGjFNLioizExNY/D3FrTjyGU9PiZKXRT4s
+	0gDAvxsbKLOQQdkXWSXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icDhX-0005Ox-2e; Tue, 03 Dec 2019 19:19:11 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1icDhr-0005eQ-Oy; Tue, 03 Dec 2019 19:19:31 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icDhK-0005Oc-Id
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 19:18:59 +0000
-Received: by mail-ot1-f68.google.com with SMTP id d17so4016934otc.0
+ id 1icDhb-0005bw-9B
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 19:19:17 +0000
+Received: by mail-oi1-f195.google.com with SMTP id a124so4361710oii.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 11:18:58 -0800 (PST)
+ Tue, 03 Dec 2019 11:19:15 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=FLXMRyKICPlNOZ05fFO5shGyYBI5uM+0oVnpeDhbnQM=;
- b=tV6u4MjHmrDuavZVXHU1L0cj0KGeGLDikNbzmB0RQnq1yvjhOj5AYAmnX2o0IYqS22
- fpMjIzk2xfQsfNc0rkydqJCubIfCe5xGSjjaaRRM6Ko/1SKTwnbKXN2c/YMBzaup0JdG
- /ZxL9/UxKyEvyI4CCcPqsT7RljJa/ihEgtLBLeyUD+UCwBe/a+e0KcfK/eTThJf9Xr/8
- 0N4BSgU5sGGkU4oqBxG8+Mpj7w4M4vYKDSbgQDeWCAAz6GpKC4lMkIFrv4RuayqJocN7
- UrUqfYXuxz3+DyyzY+ju7mlOa9/6KMkuLqrOJuTU46HxSxrXzbPVmD/S+vBt7WMGMi6U
- LTnQ==
-X-Gm-Message-State: APjAAAXIa9uGVWrSIVXOKjaW8RBKLu6XG/qjw23QSzs2MkEFGzkrtu8O
- rxPnaT6iEdNnY8gVnBbd1flN9ig=
-X-Google-Smtp-Source: APXvYqzfMXYRpS6RB54EALQSkRj1NegXLtdiWeUYH7IkLsa+ocFmXr6dZDyL/GCEN559Imx4AOyWZA==
-X-Received: by 2002:a9d:74d8:: with SMTP id a24mr4704586otl.100.1575400737646; 
- Tue, 03 Dec 2019 11:18:57 -0800 (PST)
+ bh=VhGuCOSgKbP4988nwTLXWSOEoYXbGs7dSJ2jvNBuhT4=;
+ b=V5WeYGjEVreJyP7UhNirtb6f3zURltrpfFD60Os6O+nf9zmYYCW3M18cZ417/LuWX9
+ uOdavZhNSzxMcAfphX8FttsHYQgVsVqiNgFpTm5+ufrNIivrrFF4qiu8MJarEiBz12gS
+ mBIU/Jv1ivEMyAauItJi4e+15oSVoi2DWHMYWuA2S34F+N6xrnYubL6/j0eTRl41sbyb
+ txwB1iN/NdEArx5T1EmSp44VZm/IswlyR9/ZvRJiEJ0zM/7s7T+pKguHcTMcJpqCbXHB
+ 9uXddlCNqarlBpxHnzPhWjGigM8n0PCv/65+YItn1DoxCghYpkfKrv2vorlupB4FAwuu
+ jruQ==
+X-Gm-Message-State: APjAAAV9ZKut21rAp/j8PSGBUOu9IceLr8Pn+NuvhgvXOse9Y3TW2KFO
+ tU27Llkkqc1F7KFT11HkdT/9PeQ=
+X-Google-Smtp-Source: APXvYqwXMVbFZmRe8QxF27h0Kfw3uND3v8OqThcJ1mrg8to0o6bWBoF0eqOAN8t4mfWgef6ZruT5hA==
+X-Received: by 2002:a05:6808:b2d:: with SMTP id
+ t13mr5046037oij.83.1575400754268; 
+ Tue, 03 Dec 2019 11:19:14 -0800 (PST)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id z17sm1445722oib.3.2019.12.03.11.18.57
+ by smtp.gmail.com with ESMTPSA id y16sm1345750otq.60.2019.12.03.11.19.13
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Dec 2019 11:18:57 -0800 (PST)
-Date: Tue, 3 Dec 2019 13:18:56 -0600
+ Tue, 03 Dec 2019 11:19:13 -0800 (PST)
+Date: Tue, 3 Dec 2019 13:19:13 -0600
 From: Rob Herring <robh@kernel.org>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v12 2/7] dt-bindings: sun6i-dsi: Add A64 DPHY compatible
- (w/ A31 fallback)
-Message-ID: <20191203191856.GA17427@bogus>
-References: <20191203134816.5319-1-jagan@amarulasolutions.com>
- <20191203134816.5319-3-jagan@amarulasolutions.com>
+To: Srinath Mannam <srinath.mannam@broadcom.com>
+Subject: Re: [PATCH v3 1/6] dt-bindings: pci: Update iProc PCI binding for
+ INTx support
+Message-ID: <20191203191913.GA20024@bogus>
+References: <1575349026-8743-1-git-send-email-srinath.mannam@broadcom.com>
+ <1575349026-8743-2-git-send-email-srinath.mannam@broadcom.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191203134816.5319-3-jagan@amarulasolutions.com>
+In-Reply-To: <1575349026-8743-2-git-send-email-srinath.mannam@broadcom.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_111858_629953_34B48628 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20191203_111915_350486_66FB8BFE 
+X-CRM114-Status: GOOD (  13.52  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
@@ -77,9 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -94,32 +94,36 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, linux-sunxi <linux-sunxi@googlegroups.com>,
- Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, dri-devel@lists.freedesktop.org,
- Daniel Vetter <daniel@ffwll.ch>, michael@amarulasolutions.com,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
+ Florian Fainelli <f.fainelli@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
+ Ray Jui <rjui@broadcom.com>, Srinath Mannam <srinath.mannam@broadcom.com>,
+ linux-kernel@vger.kernel.org, Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-pci@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>, Ray Jui <ray.jui@broadcom.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 03, 2019 at 07:18:11PM +0530, Jagan Teki wrote:
-> The MIPI DSI PHY controller on Allwinner A64 is similar
-> on the one on A31.
+On Tue,  3 Dec 2019 10:27:01 +0530, Srinath Mannam wrote:
+> From: Ray Jui <ray.jui@broadcom.com>
 > 
-> Add A64 compatible and append A31 compatible as fallback.
+> Update the iProc PCIe binding document for better modeling of the legacy
+> interrupt (INTx) support
 > 
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> Signed-off-by: Ray Jui <ray.jui@broadcom.com>
+> Signed-off-by: Srinath Mannam <srinath.mannam@broadcom.com>
 > ---
-> Changes for v12:
-> - none
+>  .../devicetree/bindings/pci/brcm,iproc-pcie.txt    | 48 ++++++++++++++++++----
+>  1 file changed, 41 insertions(+), 7 deletions(-)
 > 
->  .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml         | 6 +++++-
->  1 file changed, 5 insertions(+), 1 deletion(-)
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Please add Acked-by/Reviewed-by tags when posting new versions. However,
+there's no need to repost patches *only* to add the tags. The upstream
+maintainer will do that for acks received on the version they apply.
+
+If a tag was not added on purpose, please state why and what changed.
 
 _______________________________________________
 linux-arm-kernel mailing list
