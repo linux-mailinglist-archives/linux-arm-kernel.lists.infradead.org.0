@@ -2,92 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AA97112024
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 00:19:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 957AC11202B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 00:21:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T7od0a7RNDC000pnKWdUKR2Ex1bE1rYjzttlYQp4bBE=; b=svK3YwbGoKszc8
-	1vcR/54PguEVDLyNIGK4jd2Ula+80H2sS0bW2M1SJ1oIZ52XeP3WConklmm2Jl9ZhIhzLrhaFeFsL
-	nXKp1vqzXx83vQmrcTdOUCu5d4rFbtkidG5PGtqVlhQT6nQEDN4e50xEw75jvXWM2zGV5vwYKXIzo
-	uqXeoqOoJbmVILZI3hJrqPUAurZEXCMEW/qb0cg8+yG4E1mlGq3RQKW8pm+GLptNEmkKSkalEMKLw
-	ahyMpULiLg1+j4C/e1ayLhM8wwJeOKHtfo/GoTjmEZHCYhVdV4T8WjKxSWXimIloE+DDNJPoLPiF8
-	oIwwzwTqNGV7WsKkV04A==;
+	List-Owner; bh=bdWqqhQ1HHxSywB1CpIy2m/w2Oq0DpOEwR8beSuojR8=; b=JnYUndeYskVgTH
+	/sqeXsIHpJI8KQ4OodKLXLe87c4i4HW3Cv09FazEwfghzeSAIJGJF092n1tvbk27HpdOr/u6KNsWC
+	ipWkBpUf7cvnwNeG7dqBE+Sf5Hz9fwTkxGaKwVeyEgDWmXGu2X4RulS2cJmt0zji0uRs6RR2NsgfD
+	H51hgf4xpjKZ67B7TAFrMh4X4e7KBFnpjAfDx0+FVQf13rZxh37WUnlnA/9z/gX4eTEdhS4zYhLpF
+	l2nMHRsHEJeuBcC/hmiMDfQUR2VSIYqEZNM05codggE1p/XBjyWtwQcQBBkk3Ij2vVkl7IMnwAtH3
+	dx4JZwOxta95yKXwSqJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icHRq-0003pE-3x; Tue, 03 Dec 2019 23:19:14 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1icHTs-0005Op-3u; Tue, 03 Dec 2019 23:21:20 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icHRj-0003oK-Of
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 23:19:09 +0000
-Received: by mail-pl1-x643.google.com with SMTP id w7so2292775plz.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 15:19:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=9aXu3KlzmsFJZ6e1TagDw+H66vR2neNxwDhx8plTDXE=;
- b=P2ym4D4fL1+2jZqsid93tZ5apni+LjMsWc92QordN593FLqJA+W4QsDirE/huNl5P1
- knTb5ViKDuyT37oe2VN6u4X65E0qoBXrLkTPFAuJUi/5puCIe1qhO5AoFzYvaAhJhDJ/
- ZGHsuAM2+IsfbemFqexEjQZ4n4aB/Wh5ZwyttSwHl/fUGPvWV8l/4obp0kKZH4Bn7wN8
- NCNmGeMIhEC8bdCNINKJ3DfitAYpZweN1bWtt3twrfio7lymvab4N1QAZRZDbCoA8ly6
- E8ZrLQ9Zp/SCypjcbsQgMv1HiPrzTDj5AEqazdjiq8h5eXDuVNBII9xFODUIIb0IxZ2V
- PfHg==
+ id 1icHTj-0005NU-Bq; Tue, 03 Dec 2019 23:21:12 +0000
+Received: by mail-oi1-f194.google.com with SMTP id t25so2799469oij.10;
+ Tue, 03 Dec 2019 15:21:10 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=9aXu3KlzmsFJZ6e1TagDw+H66vR2neNxwDhx8plTDXE=;
- b=gVQ3uhGJPaluW3WV/m9oG10c0f237/XKp6eM5xKiWztz/OK1tWILGWw60EAzXPeHRE
- /phtdIGAApfweT4vp4Rh02/akj20PlDTB8qeXz1V8NLMjhTwDUrazyhDiR3hvPGHm45s
- iTzVRac6B/lYYxff+4esPO/IKHSAKzj5t0kHOOcwr/aerPktiEZnAsbqLhvyrMEGawRF
- sEuAgH2lctvki+QhZkfRmpbnOo9bwuTk7wJUIlLhaFx1pLQNZYne9IO0u/7BeUskUdS7
- FyrJDwfozIzyOALyRICGxxeSUa+tIZ7UGD/zCqJamurWjomqQKaQCrEFRu73eJV8khOj
- JPDw==
-X-Gm-Message-State: APjAAAU/NfDRhO7BMDieqd1qxGO2FcTLxhaDRH7LQasR4wAWGXFVewWH
- dX7pCOOiHcFtlcqBT9RZSnxM4GD32g14axRfdxoiqFQ2ZjiuHA==
-X-Google-Smtp-Source: APXvYqwaPUhrCsgUEC6zT/MsYaJdSktVjMyOaLL/ZwQxaZzTYw2kYgyCxNVMDYa3yDWpwXTVusT3MTlJbF4W8DELTSA=
-X-Received: by 2002:a17:902:7c84:: with SMTP id
- y4mr417290pll.297.1575415143951; 
- Tue, 03 Dec 2019 15:19:03 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=OLIRLr5XywqWPFFuglLlD1BjNumn3WJ8Ne6YKbN5tvs=;
+ b=Lx1kiOvWTgFR+Nry+Ji0Gf5ZW4dF0PjNN3+8iqsPmLFXIwLp+dfU9zomsC2eXnvnmN
+ eMpFA/VeuDrnYDcEiVR14EdbZPT78Dv1ZnHzIByNxmryyWnI7KygAYAz4jiDfuogcAfC
+ r8MnslyY4K8UKDi61uOzXQ6GospKiTXttIt+dDgqU4oXUEqo/61S0rg+a2zLzYQvYPDn
+ bfk0Gii7eSlMJpK1fdvhf6N1RAcQBnCzfG4e8vIUkrQQkk2oW3mq3BJhOfxCH/83lR6O
+ XOgzpVIuY6dGf27JhSnCzC9Myfu5Q7XGk94ASQt1CbWkdeWMM2SWxJdUbqBWk2TZs3Fu
+ 9Y9A==
+X-Gm-Message-State: APjAAAVdVuSKV6uKq/IekGKbyLeXCSW9B1ON3107jDtm+MKUDFxppTZI
+ xH4vFP/bNxxlvuBhKeXRBg==
+X-Google-Smtp-Source: APXvYqzxnxMykdi0OVF/YNoTEiUpYFT5/p0zN9KY5kNFKZUG+9whG8bIMuudZJPbuRke4NTBnJ9HPg==
+X-Received: by 2002:aca:52c3:: with SMTP id g186mr140649oib.118.1575415270129; 
+ Tue, 03 Dec 2019 15:21:10 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id c68sm984963oig.11.2019.12.03.15.21.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 03 Dec 2019 15:21:09 -0800 (PST)
+Date: Tue, 3 Dec 2019 17:21:09 -0600
+From: Rob Herring <robh@kernel.org>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH 2/4] dt-bindings: media: amlogic,gx-vdec: add bindings
+ for G12A family
+Message-ID: <20191203232108.GA361@bogus>
+References: <20191120111430.29552-1-narmstrong@baylibre.com>
+ <20191120111430.29552-3-narmstrong@baylibre.com>
 MIME-Version: 1.0
-References: <20191125202937.23133-1-roy.van.doormaal@prodrive-technologies.com>
- <20191126074025.5112-1-roy.van.doormaal@prodrive-technologies.com>
-In-Reply-To: <20191126074025.5112-1-roy.van.doormaal@prodrive-technologies.com>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Tue, 3 Dec 2019 15:18:52 -0800
-Message-ID: <CAFd5g450nWm47mFi10W+J=oiaO_sV0fXh3SwH0zxX6ZF1qZ-Xw@mail.gmail.com>
-Subject: Re: [PATCH v2] irqchip/aspeed-i2c-ic: Fix irq domain name memory leak
-To: Roy van Doormaal <roy.van.doormaal@prodrive-technologies.com>
+Content-Disposition: inline
+In-Reply-To: <20191120111430.29552-3-narmstrong@baylibre.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_151907_825133_DEF26BE1 
-X-CRM114-Status: UNSURE (   9.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191203_152111_402559_3DB079BD 
+X-CRM114-Status: GOOD (  15.98  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ no trust [209.85.167.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,52 +90,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jason Cooper <jason@lakedaemon.net>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Joel Stanley <joel@jms.id.au>, Marc Zyngier <maz@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-i2c@vger.kernel.org
+Cc: mjourdan@baylibre.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 25, 2019 at 11:41 PM Roy van Doormaal
-<roy.van.doormaal@prodrive-technologies.com> wrote:
->
-> The aspeed irqchip driver overwrites the default irq domain name,
-> but doesn't free the existing domain name.
-> This patch frees the irq domain name before overwriting it.
->
-> kmemleak trace:
->
-> unreferenced object 0xb8004c40 (size 64):
-> comm "swapper", pid 0, jiffies 4294937303 (age 747.660s)
-> hex dump (first 32 bytes):
-> 3a 61 68 62 3a 61 70 62 3a 62 75 73 40 31 65 37 :ahb:apb:bus@1e7
-> 38 61 30 30 30 3a 69 6e 74 65 72 72 75 70 74 2d 8a000:interrupt-
-> backtrace:
-> [<086b59b8>] kmemleak_alloc+0xa8/0xc0
-> [<b5a3490c>] __kmalloc_track_caller+0x118/0x1a0
-> [<f59c7ced>] kvasprintf+0x5c/0xc0
-> [<49275eec>] kasprintf+0x30/0x50
-> [<5713064b>] __irq_domain_add+0x184/0x25c
-> [<53c594d0>] aspeed_i2c_ic_of_init+0x9c/0x128
-> [<d8d7017e>] of_irq_init+0x1ec/0x314
-> [<f8405bf1>] irqchip_init+0x1c/0x24
-> [<7ef974b3>] init_IRQ+0x30/0x90
-> [<87a1438f>] start_kernel+0x28c/0x458
-> [< (null)>] (null)
-> [<f0763fdf>] 0xffffffff
->
-> Signed-off-by: Roy van Doormaal <roy.van.doormaal@prodrive-technologies.com>
+On Wed, Nov 20, 2019 at 12:14:28PM +0100, Neil Armstrong wrote:
+> Add bindings to support the Amlogic Video Decoder on the Amlogic G12A
+> family.
+> 
+> For the G12A family, a supplementary clock is needed to operate the
+> HEVC/VP9 decoder.
+> 
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> ---
+>  .../bindings/media/amlogic,gx-vdec.yaml       | 57 +++++++++++++++----
+>  1 file changed, 46 insertions(+), 11 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/media/amlogic,gx-vdec.yaml b/Documentation/devicetree/bindings/media/amlogic,gx-vdec.yaml
+> index 878944867d6e..8ea979bb97e6 100644
+> --- a/Documentation/devicetree/bindings/media/amlogic,gx-vdec.yaml
+> +++ b/Documentation/devicetree/bindings/media/amlogic,gx-vdec.yaml
+> @@ -27,12 +27,15 @@ description: |
+>  
+>  properties:
+>    compatible:
+> -    items:
+> +    oneOf:
+> +      - items:
+> +        - enum:
+> +          - amlogic,gxbb-vdec # GXBB (S905)
+> +          - amlogic,gxl-vdec # GXL (S905X, S905D)
+> +          - amlogic,gxm-vdec # GXM (S912)
+> +        - const: amlogic,gx-vdec
+>        - enum:
+> -        - amlogic,gxbb-vdec # GXBB (S905)
+> -        - amlogic,gxl-vdec # GXL (S905X, S905D)
+> -        - amlogic,gxm-vdec # GXM (S912)
+> -      - const: amlogic,gx-vdec
+> +        - amlogic,g12a-vdec # G12A (S905X2, S905D2)
+>  
+>    interrupts:
+>      minItems: 2
+> @@ -59,13 +62,9 @@ properties:
+>  
+>    clocks:
+>      minItems: 4
+> +    maxItems: 5
+>  
+> -  clock-names:
+> -    items:
+> -      - const: dos_parser
+> -      - const: dos
+> -      - const: vdec_1
+> -      - const: vdec_hevc
 
-Acked-by: Brendan Higgins <brendanhiggins@google.com>
+You can leave this here and add the 5th clock along with { minItems: 4, 
+maxItems: 5 }.
 
-Sorry for the delayed response.
+Then the 'if' schema just needs a 'maxItems: 4'.
+
+> +  clock-names: true
+>  
+>    amlogic,ao-sysctrl:
+>      description: should point to the AOBUS sysctrl node
+> @@ -77,6 +76,42 @@ properties:
+>      allOf:
+>        - $ref: /schemas/types.yaml#/definitions/phandle
+>  
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - amlogic,gx-vdec
+> +
+> +    then:
+> +      properties:
+> +        clock-names:
+> +          minItems: 4
+> +          items:
+> +            - const: dos_parser
+> +            - const: dos
+> +            - const: vdec_1
+> +            - const: vdec_hevc
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - amlogic,g12a-vdec
+> +
+> +    then:
+> +      properties:
+> +        clock-names:
+> +          minItems: 5
+> +          items:
+> +            - const: dos_parser
+> +            - const: dos
+> +            - const: vdec_1
+> +            - const: vdec_hevc
+> +            - const: vdec_hevcf
+> +
+>  required:
+>    - compatible
+>    - reg
+> -- 
+> 2.22.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
