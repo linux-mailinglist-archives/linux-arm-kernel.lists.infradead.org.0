@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECC8A111B16
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 22:39:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D1F0111B18
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 22:39:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wWoR/0eutGcHMIF6cagduWxyIYVrAAyevrD+dtc3g4k=; b=EKm8o6pXeM+ngC
-	QlqbpPHZTRVDeEYgY7P38xS0mY4MLKEerSyW1HGSmhjfsw80PAOzqFN44etkuVV0LJLXsKrlZlvpa
-	5o6eHeBSZcPH5Z5+5uOYAPEaBDZWSP4RdYoRZePQ9B+cM585X3kScrphO81dNWapF7fC6Mf2pBuiW
-	hiKaw0kH13wn+eIJl6uH/NA/rfnlYwgn8M3scD+beiB/E930oqYV0G8bYs2BLxyzWLmQTniuplQdw
-	FUqc+9k+qURmPNYtoAUO+mutrH0Qr99CQmdZ5acOwWmf4BDzwgUUlFjd9zJ5qA25UgFIUOq6T45pS
-	pRl14GqIcugCWMdmPVow==;
+	List-Owner; bh=CPR79GsjW8hrVxswZBGJ9giuYtyWgSKd2FSdnMLE25U=; b=Yb5ZztwrjiajO3
+	ih0mOKVe0tQhbpGn2sbtWc34t68FDxaD8Zl6mkHjsL15QlVTYBt4yqb3Td58M3dcevjB0eCdfUg4c
+	kuzxxLvHzrJ02PQxHNxxx0AB2A8jY2VP4h9/V7y4yrIcwYe//MN2TD8X2SEfsRkBuLYHZf79zquh1
+	WZ64fNbPz74M0xFP+lvcQ7KJ0LmM16HRTvyCKfN78oCCqzyOmcBzaXvLsS32haOIyKN0JUiJ91im/
+	vpEh+QeiMOGJrtdkvQ0M7lQcgBWJI3ZKm3wwno3CJu1X4QE21hMcltIjMR393xexK/X8DNCfX9H8n
+	1/p3oGcWQbSOPtG/MWjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icFsz-0007wi-95; Tue, 03 Dec 2019 21:39:09 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1icFta-0008I0-7c; Tue, 03 Dec 2019 21:39:46 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icFsW-0007q3-Pn
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 21:38:42 +0000
-Received: by mail-oi1-f194.google.com with SMTP id c16so4835853oic.3
+ id 1icFtI-0008HT-UN
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 21:39:30 +0000
+Received: by mail-ot1-f65.google.com with SMTP id d17so4419629otc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 13:38:40 -0800 (PST)
+ Tue, 03 Dec 2019 13:39:27 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=F3uHqZbzedLUE0xuUfIMpIgrRc1NYArGkbcNIpnaHjU=;
- b=m7JEWFJ3a4f9Drb0a5COk+V66sDascPNXcS5Cs+lqRLPtRoRP2Fi6D8F7Za/Hgl2gJ
- GXuCpswe8gVe/ie8ZQgQMD1bDt7P795u58ak9n7pVzYa02y/uc6pT6jvjH4R6p1xMPsC
- lsIT2ujpOB+V3LdEi0eI4Un2qiYD6s5pr2jGvKbvIMwpMMRHlT/IomJii4zuP4poxDLU
- 6nXdyYyWVAmftG9OUexzRCI/IcHr+YjwQZAnXIF3MpPsaEanlZgI7lTC3b0ukk387fH4
- n68Leu20GKPcQhEZhgkddEFvFUpOgagWVMM+sGu6/W2wmtdHv1/68rTqCLvVPYNJAp3E
- vbGg==
-X-Gm-Message-State: APjAAAXvjzJ9i9ZTndWn8BxO3MSRs5v9cJQ/9CV/CEUWb4ivAOHxLAaB
- 5rCtBopbKRiV7bzclwR+NA==
-X-Google-Smtp-Source: APXvYqzrwgm/HxFVUZ352gIniGDYj8kl0CmjIYTrPSpfZC7zbhYc9s6vYb6cfEfd3T4Cfiq4raE4WQ==
-X-Received: by 2002:aca:889:: with SMTP id 131mr75288oii.3.1575409119897;
- Tue, 03 Dec 2019 13:38:39 -0800 (PST)
+ bh=DuOA0zBLQcvKVkSQwZNftSyUaZTa7uOJ30XltITcLWM=;
+ b=llRcrvvWIVMXsyN5wBY/Cy0SJ72d/CIvauAMvdmA022H+D0yzeeHfMqhhnZqkZI80j
+ jJ/uuyf6HJkgYBcRKvBEi2/xbS3qQg8713K2od3FDHlaOL/6CYEhDR3WTv+ZgCGvkRui
+ +okUOdwkdiQA9A/gq7A5/VHdMx8m/6MmG7xiz6uzx/0HnyqJgNjNbkeDVABlCWyfJSPK
+ pCivIzVR0BG4Oh4E2bJ5irLbRRQxLnRmjyeht5mfA7nFLG9BHe0GORVLJp41t427p39H
+ bDfoo+SsNn3W3YKErDIsfUyvWfFXRNXQE4bJNOltofmTe/t3GavZ8v7GYDnNn97yOs/y
+ e7bQ==
+X-Gm-Message-State: APjAAAWOIkaX7IfsTyZ4z1CX9SGC3aKpCd0Q3UdoI8Sk/kv+Pp3gMtQP
+ SCpE5PBsRXKmexDqRCi9Uw==
+X-Google-Smtp-Source: APXvYqz/YJVpzj5Ns4de7SfcrAw60fS1tPC0hInpJwwLL2VAApzqpGh6/6qNf4XX9VcVikm16HhBmQ==
+X-Received: by 2002:a05:6830:1251:: with SMTP id
+ s17mr15158otp.108.1575409166858; 
+ Tue, 03 Dec 2019 13:39:26 -0800 (PST)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id o2sm1582504oih.19.2019.12.03.13.38.39
+ by smtp.gmail.com with ESMTPSA id o2sm1583188oih.19.2019.12.03.13.39.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Dec 2019 13:38:39 -0800 (PST)
-Date: Tue, 3 Dec 2019 15:38:38 -0600
+ Tue, 03 Dec 2019 13:39:26 -0800 (PST)
+Date: Tue, 3 Dec 2019 15:39:25 -0600
 From: Rob Herring <robh@kernel.org>
 To: Dong Aisheng <aisheng.dong@nxp.com>
-Subject: Re: [PATCH 2/3] dt-bindings: serial: lpuart: add imx8qm compatible
- string
-Message-ID: <20191203213838.GA21567@bogus>
+Subject: Re: [PATCH 3/3] dt-bindings: i2c: lpi2c: add imx8qm compatible string
+Message-ID: <20191203213925.GA22895@bogus>
 References: <1573995530-14573-1-git-send-email-aisheng.dong@nxp.com>
- <1573995530-14573-2-git-send-email-aisheng.dong@nxp.com>
+ <1573995530-14573-3-git-send-email-aisheng.dong@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1573995530-14573-2-git-send-email-aisheng.dong@nxp.com>
+In-Reply-To: <1573995530-14573-3-git-send-email-aisheng.dong@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_133840_881161_7F66B912 
-X-CRM114-Status: UNSURE (   9.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191203_133929_004872_B9976657 
+X-CRM114-Status: GOOD (  10.49  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
@@ -78,8 +77,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -102,13 +102,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 17 Nov 2019 20:58:49 +0800, Dong Aisheng wrote:
+On Sun, 17 Nov 2019 20:58:50 +0800, Dong Aisheng wrote:
 > Add imx8qm compatible string.
 > 
 > Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
 > ---
->  Documentation/devicetree/bindings/serial/fsl-lpuart.txt | 2 ++
->  1 file changed, 2 insertions(+)
+>  Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.txt | 1 +
+>  1 file changed, 1 insertion(+)
 > 
 
 Applied, thanks.
