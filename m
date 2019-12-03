@@ -2,70 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D49C10F56D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 04:06:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBDF510F57B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 04:12:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vgKxtcfnC1ezeYN5JEI3mwapxHPxuYwJz76iEWZYxks=; b=bxnlOZzOW/seRQ
-	OfePUnoIXiDy5zLp0O6htNZKDqA1Quf5Y4uzx1G+k1LG2lNQuJcS6SYWb2psYqTtc/RUyyBPijeka
-	R2Fm5UyQnMxtUTCsCSITZUcNPUYCEj54y/vdd+1MyGm+vbkxtyzclkd9/sJ4US4JJAeUiHrY/cONx
-	YY8QGUxvcIOHIMeF+lxrrA48t/CExXcvBnmC8XuTassgGQOeCRdsGbeV+6ov5iYJMooHeAJvUTJ85
-	Sqdw8J62shBjoFtPndfWgyKK/LWvCJ7yQYlVC2/27kIjq+JFaYk2QOcOp99kIE3+noMVk44CWPmdz
-	OgQYz9/zVovyvCUP/pMw==;
+	List-Owner; bh=d0e2YF74Nntm9fTsHUE4TjWSuYALOTI/ZCaEnqZT6A8=; b=Os9nbLszl9xRbG
+	KfhP8wIX5XaBqi8HmAYYCJY2Folngh1Jz1pUAnL4GrXkJXLoBUyRD1CGw8yKlRTO5gy2Q39shpB51
+	rjlo9sVqvhbqShOhYpwV+7djGOlcI84pKdBLbLyFLORA2UuJ9mePxUxsM+TXBBOgk1poRfCRMXnNB
+	wHsVnCy83UtmLxnrIZigGgYqU85I3MACC7qdxq82PFNdpcX4qlx+Gv7vqd4aTX33SmaTnMZXW7N87
+	Z78fIMoKgqOMAFbov3IVYlYnQV3/1c3LeksiJfcP6guFQHt0ycc5fAhp1fzXE63fxFrlZ1wBIDh7m
+	rP8r8BS/fAaVpL155p/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibyWT-0006aI-7i; Tue, 03 Dec 2019 03:06:45 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ibybT-0008WJ-45; Tue, 03 Dec 2019 03:11:55 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibyW3-0006KU-CZ; Tue, 03 Dec 2019 03:06:21 +0000
-X-UUID: c1a1ba0c802b4db28d45884c4f41f8f2-20191202
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=pmVMm5SOfCFhpHw4vOj3FTnsiDgBoQKAvwJKCKcst2Q=; 
- b=M9RMVVU3ClZgl7kr+w58TYfLI85oC+ADmSf2PhCOeLhnpnaMqU8do2YuHeNhK49abHcPrIa3AHGKqOjPRnJqNzpLTYiu7jkwRAejXqsLCmz7Db+aQdphG/QjNj29q1Rw8s86iMmLQ+pARe6nxQHVTz8RxYmFV9Q5z3tsMGBhRuo=;
-X-UUID: c1a1ba0c802b4db28d45884c4f41f8f2-20191202
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <yong.liang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1032841279; Mon, 02 Dec 2019 19:06:13 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 2 Dec 2019 19:02:52 -0800
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 3 Dec 2019 11:02:01 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 3 Dec 2019 11:01:56 +0800
-Message-ID: <1575342124.7013.13.camel@mhfsdcap03>
-Subject: Re: [PATCH v5 2/2] watchdog: mtk_wdt: mt8183: Add reset controller
-From: Yong Liang <yong.liang@mediatek.com>
-To: Philipp Zabel <p.zabel@pengutronix.de>
-Date: Tue, 3 Dec 2019 11:02:04 +0800
-In-Reply-To: <88994e7445df8b2d98f3548e2043eb29bf5fa95f.camel@pengutronix.de>
-References: <20191125061627.GA7313@roeck-us.net>
- <e138b69efad563822da1db8e160d43458c21eae1.camel@pengutronix.de>
- <1575016588.7013.8.camel@mhfsdcap03>
- <88994e7445df8b2d98f3548e2043eb29bf5fa95f.camel@pengutronix.de>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1ibybM-0008Vj-IN
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 03:11:50 +0000
+Received: by mail-io1-xd41.google.com with SMTP id z26so1986029iot.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Dec 2019 19:11:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=XOeBq8NTJnyQees1/O7Dsyz9vUFmGtTsKefvd2BETVU=;
+ b=WNEu9DlXH2JDzhmnGUWP8E1dPclr7eLVOk7kqkDMRATr7aFRk1tjhmNTjXflj1jYWQ
+ IR2SjXGnpd++0N6o6FEfCqWlYqQxw9DQ7cYZJtfol3De3Vz///qHWR+MOHhfn+iMf1oS
+ /Mt8+5ALYd+dFnzUXgIw9RqGK4zI1Z/vytt3o2cOZycns1xD6AmYFSIN/me//xhFvb2p
+ JGoWKUKBSP3VkGh+bstBqL/Taj5O4Cu1fWff+mY48+u1IcB24FPQGh46GgIilunWB4Dr
+ HV42EgXo5RzwWSBEadIlPKSTrGQi9+5ucQU2C1q87bTYuWABnUCaYBlk80WDSFFtU6y9
+ apag==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=XOeBq8NTJnyQees1/O7Dsyz9vUFmGtTsKefvd2BETVU=;
+ b=QLGJE0q77HMNEx6HrMs48QgV2ypIDvW5BKkbSa1kUDJ+COhwoxfNnJwkomdJjo1LfS
+ SowtEV1t2E47SvCzOV+sQT1RiuVal6M5oaQevxG8ofg7oY2bri1m4A3w6tw8lWBRnq7x
+ LlO3IfvYwJREMmYfo2eRppLPLORxv7NejrOJURqE29k2itreZDniqjhrEAtHTSiFC5Zz
+ z+KTFUaV413TRAZUjTIAt5rM1ecQYnkLF2mnDTjZexCcrXVotcQEMLbJavgdVw+fFei0
+ 4TZbPxH5oXeisefieNpwP9mqxOfprwL9bMNuJxivy3OyVLu7/zzAZyDpronHJe8l2n+Q
+ Eutg==
+X-Gm-Message-State: APjAAAX7T6rYQfTa12i7gz3KZpXhPnBvfbjjEZb2H4/zDssCuL5zqZWX
+ IdcqYU6Wy7wRj1hVOwpcFzsD+GENtOlB3H7z/K1qRA==
+X-Google-Smtp-Source: APXvYqw0/gmLO11IfoRmR3xJH+l8Yv2EPBBkCt627OYn2NWTQXSYIYAozYs13O+oMGdSwI79/NJD0Kl5AjdTDEFKs5I=
+X-Received: by 2002:a02:ab90:: with SMTP id t16mr3767723jan.106.1575342704169; 
+ Mon, 02 Dec 2019 19:11:44 -0800 (PST)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 82EBD1AB543FDABB01B85E3B0278C45DF1646569865AE3A902AE5107D2AF64112000:8
-X-MTK: N
+References: <20191202144524.5391-1-jun.nie@linaro.org>
+ <20191202144524.5391-2-jun.nie@linaro.org>
+ <cd0fae1a6b88a37e034876b53b350e79f58c654f.camel@pengutronix.de>
+In-Reply-To: <cd0fae1a6b88a37e034876b53b350e79f58c654f.camel@pengutronix.de>
+From: Jun Nie <jun.nie@linaro.org>
+Date: Tue, 3 Dec 2019 11:11:33 +0800
+Message-ID: <CABymUCOoTZ0MAmtb9O2N+KZj+XF=073C9=BxBgbL9RXwMCuuMA@mail.gmail.com>
+Subject: Re: [PATCH 1/3] dt-bindings: clock: Update Hisilicon reset doc
+To: Philipp Zabel <p.zabel@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_190619_428519_8D7BEA60 
-X-CRM114-Status: GOOD (  27.77  )
+X-CRM114-CacheID: sfid-20191202_191148_621638_BCA31FC1 
+X-CRM114-Status: GOOD (  25.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -75,8 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,169 +93,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- Jiaxin Yu =?UTF-8?Q?=28=E4=BF=9E=E5=AE=B6=E9=91=AB=29?=
- <Jiaxin.Yu@mediatek.com>, "perex@perex.cz" <perex@perex.cz>,
- "tzungbi@google.com" <tzungbi@google.com>,
- "broonie@kernel.org" <broonie@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Guenter Roeck <linux@roeck-us.net>,
- Eason Yen =?UTF-8?Q?=28=E9=A1=8F=E5=BB=B7=E4=BB=BB=29?=
- <Eason.Yen@mediatek.com>,
- Yingjoe Chen =?UTF-8?Q?=28=E9=99=B3=E8=8B=B1=E6=B4=B2=29?=
- <Yingjoe.Chen@mediatek.com>, "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ sboyd@kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ yuehaibing@huawei.com, Wei Xu <xuwei5@hisilicon.com>,
+ xuejiancheng@hisilicon.com, Rob Herring <robh+dt@kernel.org>,
+ swinslow@gmail.com, opensource@jilayne.com, tglx@linutronix.de,
+ linux-clk@vger.kernel.org, allison@lohutok.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-12-02 at 21:02 +0800, Philipp Zabel wrote:
-> On Fri, 2019-11-29 at 16:36 +0800, Yong Liang wrote:
-> > On Mon, 2019-11-25 at 17:51 +0800, Philipp Zabel wrote:
-> > > On Sun, 2019-11-24 at 22:16 -0800, Guenter Roeck wrote:
-> > > > On Mon, Nov 25, 2019 at 11:03:50AM +0800, Jiaxin Yu wrote:
-> > > > > From: "yong.liang" <yong.liang@mediatek.com>
-> > > > > 
-> > > > > Add reset controller API in watchdog driver.
-> > > > > Besides watchdog, MTK toprgu module also provide sub-system (eg, audio,
-> > > > > camera, codec and connectivity) software reset functionality.
-> > > > > 
-> > > > > Signed-off-by: yong.liang <yong.liang@mediatek.com>
-> > > > > Signed-off-by: jiaxin.yu <jiaxin.yu@mediatek.com>
-> > > > > Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
-> > > > > ---
-> > > > >  drivers/watchdog/Kconfig   |   1 +
-> > > > >  drivers/watchdog/mtk_wdt.c | 111 ++++++++++++++++++++++++++++++++++++-
-> > > > >  2 files changed, 111 insertions(+), 1 deletion(-)
-> > > > > 
-> > > > > diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-> > > > > index 2e07caab9db2..629249fe5305 100644
-> > > > > --- a/drivers/watchdog/Kconfig
-> > > > > +++ b/drivers/watchdog/Kconfig
-> > > > > @@ -717,6 +717,7 @@ config MEDIATEK_WATCHDOG
-> > > > >  	tristate "Mediatek SoCs watchdog support"
-> > > > >  	depends on ARCH_MEDIATEK || COMPILE_TEST
-> > > > >  	select WATCHDOG_CORE
-> > > > > +	select RESET_CONTROLLER
-> > > > >  	help
-> > > > >  	  Say Y here to include support for the watchdog timer
-> > > > >  	  in Mediatek SoCs.
-> > > > > diff --git a/drivers/watchdog/mtk_wdt.c b/drivers/watchdog/mtk_wdt.c
-> > > > > index 9c3d0033260d..d29484c7940a 100644
-> > > > > --- a/drivers/watchdog/mtk_wdt.c
-> > > > > +++ b/drivers/watchdog/mtk_wdt.c
-> > > > > @@ -9,6 +9,9 @@
-> > > > >   * Based on sunxi_wdt.c
-> > > > >   */
-> > > > >  
-> > > > > +#include <dt-bindings/reset-controller/mt2712-resets.h>
-> > > > > +#include <dt-bindings/reset-controller/mt8183-resets.h>
-> > > > > +#include <linux/delay.h>
-> > > > >  #include <linux/err.h>
-> > > > >  #include <linux/init.h>
-> > > > >  #include <linux/io.h>
-> > > > > @@ -16,10 +19,12 @@
-> > > > >  #include <linux/module.h>
-> > > > >  #include <linux/moduleparam.h>
-> > > > >  #include <linux/of.h>
-> > > > > +#include <linux/of_device.h>
-> > > > >  #include <linux/platform_device.h>
-> > > > > +#include <linux/reset-controller.h>
-> > > > > +#include <linux/slab.h>
-> > > > >  #include <linux/types.h>
-> > > > >  #include <linux/watchdog.h>
-> > > > > -#include <linux/delay.h>
-> > > > >  
-> > > > >  #define WDT_MAX_TIMEOUT		31
-> > > > >  #define WDT_MIN_TIMEOUT		1
-> > > > > @@ -44,6 +49,9 @@
-> > > > >  #define WDT_SWRST		0x14
-> > > > >  #define WDT_SWRST_KEY		0x1209
-> > > > >  
-> > > > > +#define WDT_SWSYSRST		0x18U
-> > > > > +#define WDT_SWSYS_RST_KEY	0x88000000
-> > > > > +
-> > > > >  #define DRV_NAME		"mtk-wdt"
-> > > > >  #define DRV_VERSION		"1.0"
-> > > > >  
-> > > > > @@ -53,8 +61,99 @@ static unsigned int timeout;
-> > > > >  struct mtk_wdt_dev {
-> > > > >  	struct watchdog_device wdt_dev;
-> > > > >  	void __iomem *wdt_base;
-> > > > > +	spinlock_t lock; /* protects WDT_SWSYSRST reg */
-> > > > > +	struct reset_controller_dev rcdev;
-> > > > > +};
-> > > > > +
-> > > > > +struct mtk_wdt_data {
-> > > > > +	int sw_rst_num;
-> > > > >  };
-> > > > >  
-> > > > > +static const struct mtk_wdt_data mt2712_data = {
-> > > > > +	.sw_rst_num = MT2712_TOPRGU_SW_RST_NUM,
-> > > > > +};
-> > > > > +
-> > > > > +static const struct mtk_wdt_data mt8183_data = {
-> > > > > +	.sw_rst_num = MT8183_TOPRGU_SW_RST_NUM,
-> > > > > +};
-> > > > 
-> > > > The number of resets can be set in .data directly; there is no need
-> > > > for the structures.
-> > 
-> >     We want to put all properities in mtxxxx-resets.h and it easy to
-> > manager. If there are new properity in the feture, we can put it in
-> > mtk_wdt_data mtxxxx_data
-> 
-> Do you expect there will be more properties in the future?
-
-  Yes, We may put some infra reset bit and max number in mtxxxx-resets.h
-> 
-> > > > > +static int toprgu_reset_deassert(struct reset_controller_dev *rcdev,
-> > > > > +				 unsigned long id)
-> > > > > +{
-> > > > > +	unsigned int tmp;
-> > > > > +	unsigned long flags;
-> > > > > +	struct mtk_wdt_dev *data =
-> > > > > +		 container_of(rcdev, struct mtk_wdt_dev, rcdev);
-> > > > > +
-> > > > > +	spin_lock_irqsave(&data->lock, flags);
-> > > > > +
-> > > > > +	tmp = __raw_readl(data->wdt_base + WDT_SWSYSRST);
-> > > > > +	tmp &= ~BIT(id);
-> > > > > +	tmp |= WDT_SWSYS_RST_KEY;
-> > > > > +	writel(tmp, data->wdt_base + WDT_SWSYSRST);
-> > > > > +
-> > > > > +	spin_unlock_irqrestore(&data->lock, flags);
-> > > > > +
-> > > > > +	return 0;
-> > > > > +}
-> > > > 
-> > > > There is a lot of duplication in those functions. Only one line
-> > > > is different. I think this is a good example where a helper function
-> > > > with an additional argument indicating set or reset would be helpful.
-> > > > 
-> >     .assert and .dessert are two numbers of struct reset_control_ops.
-> >      I think it's better to define both of them.
-> 
-> The suggestion was to have two very short _assert and _deassert
-> functions that only contain a single call to a common helper function.
-> See the reset-a10sr.c driver for an example.
-
-  OK. I will modify it as reset-a10sr.c do.
-> 
-> regards
-> Philipp
-> 
-> 
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+UGhpbGlwcCBaYWJlbCA8cC56YWJlbEBwZW5ndXRyb25peC5kZT4g5LqOMjAxOeW5tDEy5pyIM+aX
+peWRqOS6jCDkuIrljYgxOjA05YaZ6YGT77yaCj4KPiBIaSBKdW4sCj4KPiBJIGhhdmUgYSBmZXcg
+cXVlc3Rpb25zIGFuZCBjb21tZW50cyBhYm91dCB0aGVzZSBwYXRjaGVzLiBJIG5vdGljZSB0aGF0
+Cj4gdGhlIGNoYW5nZWQgZGV2aWNlIHRyZWVzIG9ubHkgdXNlIHRoZSBkZWZhdWx0IHNldHRpbmcu
+IEFyZSB0aGVzZSBuZXcKPiBmZWF0dXJlcyBzb21ldGhpbmcgdGhhdCBpcyByZXF1aXJlZCBmb3Ig
+dGhlIHByZXNlbnQgU29Dcywgb3IgaXMgdGhpcyBpbgo+IHByZXBhcmF0aW9uIGZvciBhIG5ldyBT
+b0M/CgpZZXMsIHRoaXMgcGF0Y2ggc2V0IGlzIHByZXBhcmVkIGZvciBuZXcgU29DLgoKPgo+IE9u
+IE1vbiwgMjAxOS0xMi0wMiBhdCAyMjo0NSArMDgwMCwgSnVuIE5pZSB3cm90ZToKPiA+IERvY3Vt
+ZW50IHRoZSB1cGRhdGUgb2YgSGlzaWxpY29uIHJlc2V0IG9wZXJhdGlvbiBleHRlbnNpb24uCj4g
+Pgo+ID4gU2lnbmVkLW9mZi1ieTogSnVuIE5pZSA8anVuLm5pZUBsaW5hcm8ub3JnPgo+ID4gLS0t
+Cj4gPiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3MvY2xvY2svaGlzaS1jcmcudHh0ICAgIHwgMTIg
+KysrKy0tLS0KPiA+ICBpbmNsdWRlL2R0LWJpbmRpbmdzL3Jlc2V0L2hpc2lsaWNvbi1yZXNldHMu
+aCAgfCAyOCArKysrKysrKysrKysrKysrKysrCj4gPiAgMiBmaWxlcyBjaGFuZ2VkLCAzNSBpbnNl
+cnRpb25zKCspLCA1IGRlbGV0aW9ucygtKQo+ID4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBpbmNsdWRl
+L2R0LWJpbmRpbmdzL3Jlc2V0L2hpc2lsaWNvbi1yZXNldHMuaAo+ID4KPiA+IGRpZmYgLS1naXQg
+YS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvY2xvY2svaGlzaS1jcmcudHh0IGIv
+RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Nsb2NrL2hpc2ktY3JnLnR4dAo+ID4g
+aW5kZXggY2M2MGIzZDQyM2YzLi5mZDhiMGE5NjQ4MDYgMTAwNjQ0Cj4gPiAtLS0gYS9Eb2N1bWVu
+dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvY2xvY2svaGlzaS1jcmcudHh0Cj4gPiArKysgYi9E
+b2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvY2xvY2svaGlzaS1jcmcudHh0Cj4gPiBA
+QCAtMjYsMTkgKzI2LDIxIEBAIHRvIHNwZWNpZnkgdGhlIGNsb2NrIHdoaWNoIHRoZXkgY29uc3Vt
+ZS4KPiA+Cj4gPiAgQWxsIHRoZXNlIGlkZW50aWZpZXIgY291bGQgYmUgZm91bmQgaW4gPGR0LWJp
+bmRpbmdzL2Nsb2NrL2hpMzUxOS1jbG9jay5oPi4KPiA+Cj4gPiAtLSAjcmVzZXQtY2VsbHM6IHNo
+b3VsZCBiZSAyLgo+ID4gKy0gI3Jlc2V0LWNlbGxzOiBzaG91bGQgYmUgMy4KPiA+Cj4gPiAgQSBy
+ZXNldCBzaWduYWwgY2FuIGJlIGNvbnRyb2xsZWQgYnkgd3JpdGluZyBhIGJpdCByZWdpc3RlciBp
+biB0aGUgQ1JHIG1vZHVsZS4KPiA+IC1UaGUgcmVzZXQgc3BlY2lmaWVyIGNvbnNpc3RzIG9mIHR3
+byBjZWxscy4gVGhlIGZpcnN0IGNlbGwgcmVwcmVzZW50cyB0aGUKPiA+ICtUaGUgcmVzZXQgc3Bl
+Y2lmaWVyIGNvbnNpc3RzIG9mIHRocmVlIGNlbGxzLiBUaGUgZmlyc3QgY2VsbCByZXByZXNlbnRz
+IHRoZQo+ID4gIHJlZ2lzdGVyIG9mZnNldCByZWxhdGl2ZSB0byB0aGUgYmFzZSBhZGRyZXNzLiBU
+aGUgc2Vjb25kIGNlbGwgcmVwcmVzZW50cyB0aGUKPiA+IC1iaXQgaW5kZXggaW4gdGhlIHJlZ2lz
+dGVyLgo+ID4gK2JpdCBpbmRleCBpbiB0aGUgcmVnaXN0ZXIuIFRoZSB0aGlyZCByZXByZXNlbnQg
+dGhlIGZsYWdzIHRvIG9wZXJhdGlvbiB0eXBlLgo+ID4gKwo+ID4gK0FsbCByZXNldCBmbGFncyBj
+b3VsZCBiZSBmb3VuZCBpbiA8ZHQtYmluZGluZ3MvcmVzZXQvaGlzaWxpY29uLXJlc2V0cy5oPgo+
+ID4KPiA+ICBFeGFtcGxlOiBDUkcgbm9kZXMKPiA+ICBDUkc6IGNsb2NrLXJlc2V0LWNvbnRyb2xs
+ZXJAMTIwMTAwMDAgewo+ID4gICAgICAgY29tcGF0aWJsZSA9ICJoaXNpbGljb24saGkzNTE5LWNy
+ZyI7Cj4gPiAgICAgICByZWcgPSA8MHgxMjAxMDAwMCAweDEwMDAwPjsKPiA+ICAgICAgICNjbG9j
+ay1jZWxscyA9IDwxPjsKPiA+IC0gICAgICNyZXNldC1jZWxscyA9IDwyPjsKPiA+ICsgICAgICNy
+ZXNldC1jZWxscyA9IDwzPjsKPiA+ICB9Owo+ID4KPiA+ICBFeGFtcGxlOiBjb25zdW1lciBub2Rl
+cwo+ID4gQEAgLTQ2LDUgKzQ4LDUgQEAgaTJjMDogaTJjQDEyMTEwMDAwIHsKPiA+ICAgICAgIGNv
+bXBhdGlibGUgPSAiaGlzaWxpY29uLGhpMzUxOS1pMmMiOwo+ID4gICAgICAgcmVnID0gPDB4MTIx
+MTAwMDAgMHgxMDAwPjsKPiA+ICAgICAgIGNsb2NrcyA9IDwmQ1JHIEhJMzUxOV9JMkMwX1JTVD47
+Cj4gPiAtICAgICByZXNldHMgPSA8JkNSRyAweGU0IDA+Owo+ID4gKyAgICAgcmVzZXRzID0gPCZD
+UkcgMHhlNCAwIChISVNJX0FTU0VSVF9TRVQgfCBISVNJX0RFQVNTRVJUX0NMRUFSKT47Cj4gPiAg
+fTsKPiA+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2R0LWJpbmRpbmdzL3Jlc2V0L2hpc2lsaWNvbi1y
+ZXNldHMuaCBiL2luY2x1ZGUvZHQtYmluZGluZ3MvcmVzZXQvaGlzaWxpY29uLXJlc2V0cy5oCj4g
+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+ID4gaW5kZXggMDAwMDAwMDAwMDAwLi45ODNlNDJhMGMz
+MTgKPiA+IC0tLSAvZGV2L251bGwKPiA+ICsrKyBiL2luY2x1ZGUvZHQtYmluZGluZ3MvcmVzZXQv
+aGlzaWxpY29uLXJlc2V0cy5oCj4gPiBAQCAtMCwwICsxLDI4IEBACj4gPiArLyogU1BEWC1MaWNl
+bnNlLUlkZW50aWZpZXI6IEdQTC0yLjAgKi8KPiA+ICsvKgo+ID4gKyAqIEhpc2lsaWNvbiBSZXNl
+dCBkZWZpbml0aW9ucwo+ID4gKyAqCj4gPiArICogQ29weXJpZ2h0IChjKSAyMDE5IEhpU2lsaWNv
+biBUZWNobm9sb2dpZXMgQ28uLCBMdGQuCj4gPiArICovCj4gPiArCj4gPiArI2lmbmRlZiBfX0RU
+X0JJTkRJTkdTX1JFU0VUX0hJU0lMSUNPTl9IX18KPiA+ICsjZGVmaW5lIF9fRFRfQklORElOR1Nf
+UkVTRVRfSElTSUxJQ09OX0hfXwo+ID4gKwo+ID4gKy8qCj4gPiArICogVGhlIHJlc2V0IGRvZXMg
+bm90IHN1cHBvcnQgdGhlIGZlYXR1cmUgYW5kIGNvcnJlc3BvbmRpbmcKPiA+ICsgKiB2YWx1ZXMg
+YXJlIG5vdCB2YWxpZAo+ID4gKyAqLwo+ID4gKyNkZWZpbmUgSElTSV9BU1NFUlRfTk9ORSAgICAg
+ICAgICAgICAoMSA8PCAwKQo+ID4gKyNkZWZpbmUgSElTSV9ERUFTU0VSVF9OT05FICAgICAgICAg
+ICAoMSA8PCAxKQo+Cj4gV2hhdCBpcyB0aGUgcHVycG9zZSBvZiB0aGVzZSB0d28/IFN1cmVseSBh
+IHJlc2V0IGNvbnRyb2wgdGhhdCBkb2VzCj4gbm90aGluZyBpcyBub3QgdXNlZnVsPwo+Cj4gPiAr
+Cj4gPiArLyogV2hlbiBzZXQgdGhpcyBmdW5jdGlvbiBpcyBhY3RpdmF0ZWQgYnkgcG9sbGluZy9z
+ZXR0aW5nL2NsZWFyaW5nIHRoaXMgYml0ICovCj4gPiArI2RlZmluZSBISVNJX0FTU0VSVF9TRVQg
+ICAgICAgICAgICAgICgxIDw8IDIpCj4gPiArI2RlZmluZSBISVNJX0RFQVNTRVJUX1NFVCAgICAg
+ICAgICAgICgxIDw8IDMpCj4KPiA+ICsjZGVmaW5lIEhJU0lfQVNTRVJUX0NMRUFSICAgICAgICAg
+ICAgKDAgPDwgNCkKPiA+ICsjZGVmaW5lIEhJU0lfREVBU1NFUlRfQ0xFQVIgICAgICAgICAgKDAg
+PDwgNSkKPiA+ICsjZGVmaW5lIEhJU0lfQVNTRVJUX1BPTEwgICAgICAgICAgICAgKDAgPDwgNikK
+PiA+ICsjZGVmaW5lIEhJU0lfREVBU1NFUlRfUE9MTCAgICAgICAgICAgKDAgPDwgNykKPgo+IFRo
+ZXNlIGFyZSBhbGwgemVybywgY2hlY2tpbmcgZm9yIHRoZW0gd2l0aCBhbiAmIG9wZXJhdGlvbiBp
+biB0aGUgY29kZQo+IGFsd2F5cyByZXR1cm5zIGZhbHNlLgoKVGhhbmtzIGZvciBwb2ludGluZyBv
+dXQgdGhpcyEgVGhpcyBpcyBhIHR5cG8gaW4gdGhlIGVhcmx5IHZlcnNpb24KcGF0Y2guIEkgbWFk
+ZSBzb21lCm1pc3Rha2Ugd2hlbiBwcmVwYXJpbmcgdGhlIHBhdGNoIGZvciB1cHN0cmVhbS4gV2ls
+bCBmaXggdGhpcyBpc3N1ZS4KPgo+ID4gKwo+ID4gKyNkZWZpbmUgSElTSV9SRVNFVF9ERUZBVUxU
+ICAgICAgICAgICAoSElTSV9BU1NFUlRfU0VUIHwgSElTSV9ERUFTU0VSVF9DTEVBUikKPiA+ICsK
+PiA+ICsjZW5kaWYKPgo+IHJlZ2FyZHMKPiBQaGlsaXBwCj4KCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
