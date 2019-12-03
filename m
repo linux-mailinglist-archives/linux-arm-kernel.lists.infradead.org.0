@@ -2,42 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F22710FCB1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 12:48:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B07110FCB3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 12:48:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=y3vHjnvuTW/uUjBOeDFzdHZXVaYhxvxOehcjYr62Xoc=; b=dGWVHGAx+qdI6I
-	kUFOlkIheBNkPUkanMNark3FO5TpD9ghqZBqHI4XiwaLUYU6f6qTnFigq1T6rUR3ZQNW+IsmPtAfP
-	2PT38XkNQjN8EmWnfrDX8CnXWst2gdJsIpkNW5wFox48AZKUZZfnQ65APNx4xXhm8bRub0+8s0tWs
-	iP1IyA3rzP8YXLxQfBpxEhXgNqzs/yY1BcT9ji0dcVMYgtVYNU13CN94rtOZIlZNnOI85w4ZqoJ6a
-	2/Kj/czickQXf3CXRf6rLnnPa/fWidQ2M1WjhzvmTLXUhm5ko2RKxmvsR3OiqwWW6us7nRi+qlYuY
-	SQ+rT76shEGO07EtGucw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IqcL74yj2rL3lcYfU5yMt0a7qtruPl8B1YvyhBXAO0E=; b=YncEePUQvEA7KI
+	vfeP/VIQvIZkG4SHmOI/+tGFzmxINQKLokUc+IqOogE/yFIRPeq62wAQcL8mqGT4056JpLikobyIG
+	5lEuZvJCUd6IkA7sCQIfh5H3Qg7mA1QhAiSOiWi5JJGCtYfo/5kMB0RXwm4xU8pbYmIQeTLEpvnb4
+	9Xqvy75NqsQTTFJzw+iDS83QMDWE26HTQyXQGWzCAdJ2F6ZHgKpeQ2mrzZFr4dVWIRG29s44yXzrq
+	uXZqI2sKKYJgNEkrG99LyDfNyycC69A6MJALYTKZ8tnPPSDk3q2DQuLWgt/QLquI7kd+VP6rFx2/c
+	HCQbZ2CCA2jTGG/pe93g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic6f5-0000ou-Rq; Tue, 03 Dec 2019 11:48:11 +0000
+	id 1ic6fS-0001AU-Ey; Tue, 03 Dec 2019 11:48:34 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic6en-0000lW-55; Tue, 03 Dec 2019 11:47:55 +0000
+ id 1ic6en-0000lZ-Es; Tue, 03 Dec 2019 11:47:55 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 6C137B183;
- Tue,  3 Dec 2019 11:47:49 +0000 (UTC)
+ by mx1.suse.de (Postfix) with ESMTP id 78EF7B168;
+ Tue,  3 Dec 2019 11:47:50 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: andrew.murray@arm.com,
-	maz@kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v4 0/8] Raspberry Pi 4 PCIe support
-Date: Tue,  3 Dec 2019 12:47:33 +0100
-Message-Id: <20191203114743.1294-1-nsaenzjulienne@suse.de>
+To: andrew.murray@arm.com, maz@kernel.org, linux-kernel@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, Eric Anholt <eric@anholt.net>,
+ Stefan Wahren <wahrenst@gmx.net>, Bjorn Helgaas <bhelgaas@google.com>
+Subject: [PATCH v4 1/8] dt-bindings: PCI: Add bindings for brcmstb's PCIe
+ device
+Date: Tue,  3 Dec 2019 12:47:34 +0100
+Message-Id: <20191203114743.1294-2-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191203114743.1294-1-nsaenzjulienne@suse.de>
+References: <20191203114743.1294-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_034753_489942_6CA8CE7C 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20191203_034753_785244_9E9D53D8 
+X-CRM114-Status: GOOD (  13.14  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -58,119 +62,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-nfs@vger.kernel.org, f.fainelli@gmail.com,
- linux-rockchip@lists.infradead.org, linux-rdma@vger.kernel.org,
- linux-pci@vger.kernel.org, phil@raspberrypi.org, jeremy.linton@arm.com,
- kexec@lists.infradead.org, linux-acpi@vger.kernel.org,
- iommu@lists.linux-foundation.org, mbrugger@suse.com,
- bcm-kernel-feedback-list@broadcom.com, wahrenst@gmx.net,
- james.quinlan@broadcom.com, netdev@vger.kernel.org,
- Robin Murphy <robin.murphy@arm.com>, linux-clk@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ mbrugger@suse.com, devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ phil@raspberrypi.org, jeremy.linton@arm.com, Rob Herring <robh+dt@kernel.org>,
+ linux-rpi-kernel@lists.infradead.org, james.quinlan@broadcom.com,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series aims at providing support for Raspberry Pi 4's PCIe
-controller, which is also shared with the Broadcom STB family of
-devices.
+From: Jim Quinlan <james.quinlan@broadcom.com>
 
-There was a previous attempt to upstream this some years ago[1] but was
-blocked as most STB PCIe integrations have a sparse DMA mapping[2] which
-is something currently not supported by the kernel.  Luckily this is not
-the case for the Raspberry Pi 4.
+The DT bindings description of the brcmstb PCIe device is described.
+This node can only be used for now on the Raspberry Pi 4.
 
-Note that the driver code is to be based on top of Rob Herring's series
-simplifying inbound and outbound range parsing.
-
-[1] https://patchwork.kernel.org/cover/10605933/
-[2] https://patchwork.kernel.org/patch/10605957/
+Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
+Co-developed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 ---
 
-Changes since v3:
-  - Moved all the log2.h related changes at the end of the series, as I
-    presume they will be contentious and I don't want the PCIe patches
-    to depend on them. Ultimately I think I'll respin them on their own
-    series but wanted to keep them in for this submission just for the
-    sake of continuity.
-  - Addressed small nits here and there.
-
 Changes since v2:
-  - Redo register access in driver avoiding indirection while keeping
-    the naming intact
-  - Add patch editing ARM64's config
-  - Last MSI cleanups, notably removing MSIX flag
-  - Got rid of all _RB writes
-  - Got rid of all of_data
-  - Overall churn removal
-  - Address the rest of Andrew's comments
+  - Add pci reference schema
+  - Drop all default properties
+  - Assume msi-controller and msi-parent are properly defined
+  - Add num entries on multiple properties
+  - use unevaluatedProperties
+  - Update required properties
+  - Fix license
 
 Changes since v1:
-  - add generic rounddown/roundup_pow_two64() patch
-  - Add MAINTAINERS patch
-  - Fix Kconfig
-  - Cleanup probe, use up to date APIs, exit on MSI failure
-  - Get rid of linux,pci-domain and other unused constructs
-  - Use edge triggered setup for MSI
-  - Cleanup MSI implementation
-  - Fix multiple cosmetic issues
-  - Remove supend/resume code
+  - Fix commit Subject
+  - Remove linux,pci-domain
 
-Jim Quinlan (3):
-  dt-bindings: PCI: Add bindings for brcmstb's PCIe device
-  PCI: brcmstb: Add Broadcom STB PCIe host controller driver
-  PCI: brcmstb: Add MSI support
+This was based on Jim's original submission[1], converted to yaml and
+adapted to the RPi4 case.
 
-Nicolas Saenz Julienne (5):
-  ARM: dts: bcm2711: Enable PCIe controller
-  MAINTAINERS: Add brcmstb PCIe controller
-  arm64: defconfig: Enable Broadcom's STB PCIe controller
-  linux/log2.h: Fix 64bit calculations in roundup/down_pow_two()
-  linux/log2.h: Use roundup/dow_pow_two() on 64bit calculations
+[1] https://patchwork.kernel.org/patch/10605937/
 
- .../bindings/pci/brcm,stb-pcie.yaml           |   97 ++
- MAINTAINERS                                   |    4 +
- arch/arm/boot/dts/bcm2711.dtsi                |   37 +
- arch/arm64/configs/defconfig                  |    1 +
- drivers/acpi/arm64/iort.c                     |    2 +-
- drivers/clk/clk-divider.c                     |    8 +-
- drivers/clk/sunxi/clk-sunxi.c                 |    2 +-
- drivers/infiniband/hw/hfi1/chip.c             |    4 +-
- drivers/infiniband/hw/hfi1/init.c             |    4 +-
- drivers/infiniband/hw/mlx4/srq.c              |    2 +-
- drivers/infiniband/hw/mthca/mthca_srq.c       |    2 +-
- drivers/infiniband/sw/rxe/rxe_qp.c            |    4 +-
- drivers/iommu/intel-iommu.c                   |    4 +-
- drivers/iommu/intel-svm.c                     |    4 +-
- drivers/iommu/intel_irq_remapping.c           |    2 +-
- drivers/net/ethernet/amd/xgbe/xgbe-ethtool.c  |    4 +-
- drivers/net/ethernet/marvell/sky2.c           |    2 +-
- drivers/net/ethernet/mellanox/mlx4/en_clock.c |    3 +-
- drivers/net/ethernet/rocker/rocker_hw.h       |    4 +-
- drivers/net/ethernet/sfc/ef10.c               |    2 +-
- drivers/net/ethernet/sfc/efx.h                |    2 +-
- drivers/net/ethernet/sfc/falcon/efx.h         |    2 +-
- drivers/of/device.c                           |    3 +-
- drivers/pci/controller/Kconfig                |    9 +
- drivers/pci/controller/Makefile               |    1 +
- .../pci/controller/cadence/pcie-cadence-ep.c  |    3 +-
- drivers/pci/controller/cadence/pcie-cadence.c |    3 +-
- drivers/pci/controller/pcie-brcmstb.c         | 1008 +++++++++++++++++
- drivers/pci/controller/pcie-rockchip-ep.c     |    5 +-
- drivers/pci/msi.c                             |    2 +-
- include/linux/log2.h                          |   44 +-
- kernel/dma/direct.c                           |    2 +-
- kernel/kexec_core.c                           |    3 +-
- lib/rhashtable.c                              |    2 +-
- net/sunrpc/xprtrdma/verbs.c                   |    2 +-
- 35 files changed, 1211 insertions(+), 72 deletions(-)
+ .../bindings/pci/brcm,stb-pcie.yaml           | 97 +++++++++++++++++++
+ 1 file changed, 97 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
- create mode 100644 drivers/pci/controller/pcie-brcmstb.c
 
+diff --git a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+new file mode 100644
+index 000000000000..77d3e81a437b
+--- /dev/null
++++ b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+@@ -0,0 +1,97 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/pci/brcm,stb-pcie.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Brcmstb PCIe Host Controller Device Tree Bindings
++
++maintainers:
++  - Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
++
++allOf:
++  - $ref: /schemas/pci/pci-bus.yaml#
++
++properties:
++  compatible:
++    const: brcm,bcm2711-pcie # The Raspberry Pi 4
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    minItems: 1
++    maxItems: 2
++    items:
++      - description: PCIe host controller
++      - description: builtin MSI controller
++
++  interrupt-names:
++    minItems: 1
++    maxItems: 2
++    items:
++      - const: pcie
++      - const: msi
++
++  ranges:
++    maxItems: 1
++
++  dma-ranges:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    items:
++      - const: sw_pcie
++
++  msi-controller:
++    description: Identifies the node as an MSI controller.
++
++  msi-parent:
++    description: MSI controller the device is capable of using.
++
++  brcm,enable-ssc:
++    description: Indicates usage of spread-spectrum clocking.
++    type: boolean
++
++required:
++  - reg
++  - dma-ranges
++  - "#interrupt-cells"
++  - interrupts
++  - interrupt-names
++  - interrupt-map-mask
++  - interrupt-map
++  - msi-controller
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/irq.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++
++    scb {
++            #address-cells = <2>;
++            #size-cells = <1>;
++            pcie0: pcie@7d500000 {
++                    compatible = "brcm,bcm2711-pcie";
++                    reg = <0x0 0x7d500000 0x9310>;
++                    device_type = "pci";
++                    #address-cells = <3>;
++                    #size-cells = <2>;
++                    #interrupt-cells = <1>;
++                    interrupts = <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>,
++                                 <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
++                    interrupt-names = "pcie", "msi";
++                    interrupt-map-mask = <0x0 0x0 0x0 0x7>;
++                    interrupt-map = <0 0 0 1 &gicv2 GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>;
++                    msi-parent = <&pcie0>;
++                    msi-controller;
++                    ranges = <0x02000000 0x0 0xf8000000 0x6 0x00000000 0x0 0x04000000>;
++                    dma-ranges = <0x02000000 0x0 0x00000000 0x0 0x00000000 0x0 0x80000000>;
++                    brcm,enable-ssc;
++            };
++    };
 -- 
 2.24.0
 
