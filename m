@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E451810FDC5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:37:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4404B10FDC7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:37:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gXqEfRdKV/L+FkA3tmUDCgM3Gp1+tJODl2yjPc3Wd5o=; b=W7SDvyfy83uu2j
-	Q02fs9g5KW0ipPcO8oct0iLKMN19wglJxW689z6ZIVn5CLFGC4b/CnBEAYVJYz3Kb0Wbz1FT+J9qo
-	GJw5CQ15okZzTkTqmARg9W5FPz9cpOrLZmOQ215U5kZ8bukWBeAoYuaPvmkWubzaCv3c3RvOwZo60
-	8hPIL/knzLX6tO9UhGqpL7a593dleIa+9gC9J2Z/zAscwRq0dn32l4v0W1xjN9aejbY1+IhToJLd1
-	Mso1fODlUFNmMsgzX/8zBu/xkRS/5zYvWcfDEacxbAt3N71PaJjzyUyFF+MsuVXJsGsHauRQ6SB9I
-	RIn0z9iZQPv4QlVmWUrw==;
+	List-Owner; bh=TaE5d/FXJFu2fBM/YNovEzSoBvkjlAOr7444TgJZjO8=; b=hTDG+sgOcQpclL
+	q0zeKD24IfBXdpP94MceID+NtZbCnYUhgNoLRNyJASFaa96n7fQSszjEpYt6nCxv3g902+Wtk9t56
+	82KAo8tO0EoVTZ9Q5aLVjhzdUHjAX0WnY8+kkybHY/iMUMZ18dVnYZd+TDYMypCCt1tyLADI0Z7Ua
+	lArMC3X7uByyOUSgzycCfqoImcmlaKoLV0cNibonj556s0Q/+zheEtochg4gDXBBf8rgMdgyVsYJR
+	8ojb7Zoz29wSO2uj/M1/nssVCHDIK0WwSsr/4XbBxOxZrwgCGdrSI/yPkgP9XFH0khVmCzvARL0J6
+	sTpeX1a343xGhvbtdtTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic7QT-0004mJ-2I; Tue, 03 Dec 2019 12:37:09 +0000
+	id 1ic7Qk-00051A-BU; Tue, 03 Dec 2019 12:37:26 +0000
 Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic7Q7-0004c7-BX
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:36:48 +0000
+ id 1ic7QC-0004i1-9W
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:36:53 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id C07C76E64;
- Tue,  3 Dec 2019 07:36:46 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 977F26E85;
+ Tue,  3 Dec 2019 07:36:51 -0500 (EST)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Tue, 03 Dec 2019 07:36:46 -0500
+ by compute4.internal (MEProxy); Tue, 03 Dec 2019 07:36:51 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm1; bh=8ZlgpTfN5GmTh
- 4i624Rlcksvxj54ouDMeKXMopZs1XE=; b=fC0cu19wEM2nuuI5OlavXIp8itYWV
- MAH8uNjjus+ai8C9rm581qD0MGE1MQPfCpHT7k+Xx35iLwXZ2dPFcyj2R5QFVFVK
- r/J3HC1BEhFFf0RuQWMBX8XwNJO3uUhTs/RwIW1QjzrymgrvaUTbgXKLzqTJh2/1
- 4FYbS+JLNj84ju6+5VJm/uAXF79suZDe0HAqQBct3qPeQ2T/9C5E0WH8Qea0/doi
- Su8LonezleqcHA7Y6DBaYeucKmUn/6YlAjgtN64z6KdQvRQpwf0gNBDPCMdTPyvj
- qKe7Z9bMdVUNknbT5aZPKfHUI9c5U2xMz8JZfbM4geoZAXOJ+IW1QFymQ==
+ :mime-version:content-transfer-encoding; s=fm1; bh=AOngRiTxh05CH
+ c+UEUsafbobBZ4W/uuHTrMYg0GNvQ0=; b=K6UKXHMtMTt+v5izg/FIaaOlfWIFx
+ QKYJDjdBLuiPwveORL/Z7ZLqKLtMCxJRHJKBFe3S7YTLYkgPg/R9XF3ttt8hME1d
+ kLuIRvmd3jjzfMNKPW1r8sYa7MY6COKm9orTx3D8AmY7J3UcU2FucQwOhZ4D0knV
+ 4ZjtQ8WcDbtBnak2CZlWdq8m+1oACZ5YoWtxKlkjNxuhFrzc+AEdljhYu2A1DMuz
+ JZcYpkC2e1TDhX/s1VZ2N5A+DACFaKATb+wwD7miq7Kq03T3vsLwQK9G6+3rI10j
+ U5+DhpevETDEW5Kj4BY3H6eXQNs7/rFf3VDPk4nBIwfQKtfcPMD1isIxA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; bh=8ZlgpTfN5GmTh4i624Rlcksvxj54ouDMeKXMopZs1XE=; b=f8zM9Bg2
- 5+XdexcX1HdP+Nc0MizFl6zEBAtqnyFjbCDVmk1mFsAHDEvAJgr1gQO2xuSfHJkn
- SivHEtnq1C3wfUzFk/e5r94KjpbN89eUNJhJui596uKZ4zR6e6DzLPRF+6ZoknZr
- aBD7x5basN5cFNZZx7WBM5TpfTDpNE3jrQFmXvGRrb5z7JJR6XJO/vLTwxxF+wKD
- UtaIvBpEnWvVsCK/Mdoona/hpli6E8EkIhMyXnHRpT1ghOlGw9mRCzJyMzHacDs+
- ndM7/f3Gnojt6yep89I7bdsY8EYbtWkDIXCwv5/W54AEU6PAeORXoqvrZ3IfBFPG
- SPx3C9uA3BqhFg==
-X-ME-Sender: <xms:3lbmXXS06qAsIh1BD-aS17ZHpW-GEbJiEHKRu2oXaFu-aW0z7zRjfw>
+ fm1; bh=AOngRiTxh05CHc+UEUsafbobBZ4W/uuHTrMYg0GNvQ0=; b=x/m6vK9v
+ aD6N1e8pg1RiacnJjH5ClB/vRaIObK4ns/1Mshh/9q+gTrY6xvBV68m/xCwRabYz
+ rnoV0eUwo+4Idx2DmWz+mC0NHAwE6k/Ko/DiNNBNvPVKTrNjQA/zh4J1O/kzhO+A
+ b2W4eYJIUrdo+m6xntQI7fGRV7N3Ms7sFGq69sXPQte9iel94Boch5XOmjLcprlA
+ 2QeHA+g8JyVU+dX3/QHb2/63vC1ddaIvOcYi6qGzwkNvQZGIRT5TnfrY8R2TTH58
+ +oYynpoIXNYE1AI7rvcmU36W1wL8G9ZvOoNoZOvoRjcyWXz3LEz653FoYfwlylNr
+ J1/+YV9rYFuSWg==
+X-ME-Sender: <xms:41bmXdQPNfT-Xk4pNrzu3Qjh2adO7GnC3PcHJVIAreIvMRD2wuac7w>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudejjedggeefucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgjfhgggfestdekre
- dtredttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegr
- jhdrihgurdgruheqnecukfhppeduudekrddvuddurdelvddrudefnecurfgrrhgrmhepmh
- grihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfuihii
- vgeptd
-X-ME-Proxy: <xmx:3lbmXXCTd7ecyAxMLtfyGT24QKHC1-5VqEBO9Mr-W6TJktoEgv5lIw>
- <xmx:3lbmXWKq7o7n15b5OIJLdTrvWZEtXvERoKNQrQAM0mPq52D1awf3HQ>
- <xmx:3lbmXaBq701cVdq9NzQP08T5sOdl2RqeYoADJt6NbxwzN1vp-neKxw>
- <xmx:3lbmXYx9LTKAIt-N3KHwH-c1NkSLOm35M-eWZyFJ3EVsEmSM2KYvSA>
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeetnhgurhgv
+ ficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfkphepudduke
+ drvdduuddrledvrddufeenucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegr
+ jhdrihgurdgruhenucevlhhushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:41bmXaMRxaaCkffEGZTaXDhawKltHxAWoW13bcJs5prKeWvjuLuuKA>
+ <xmx:41bmXfkNoPeEBXK_pq_cNSN9vq4AV9NiwPQQyMm2rcVPBlUORF_4-w>
+ <xmx:41bmXYaWfX9VanLCyYhINZjLp49kbbTNITPv3c8bN6ujn9363MCGrA>
+ <xmx:41bmXWIW2rkDzbb1WnNe4fcZdtpq-Qcr4VMMMJ37_w4UQEblksPOXg>
 Received: from mistburn.lan (unknown [118.211.92.13])
- by mail.messagingengine.com (Postfix) with ESMTPA id ABCD5306017A;
- Tue,  3 Dec 2019 07:36:42 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 1C20430600D2;
+ Tue,  3 Dec 2019 07:36:46 -0500 (EST)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: openipmi-developer@lists.sourceforge.net
-Subject: [PATCH 1/3] dt-bindings: ipmi: aspeed: Introduce a v2 binding for KCS
-Date: Tue,  3 Dec 2019 23:08:23 +1030
-Message-Id: <3da2492c244962c27b21aad87bfa6bf74f568f1d.1575376664.git-series.andrew@aj.id.au>
+Subject: [PATCH 2/3] ipmi: kcs: Finish configuring ASPEED KCS device before
+ enable
+Date: Tue,  3 Dec 2019 23:08:24 +1030
+Message-Id: <84315a29b453068373c096c03433e3a326731988.1575376664.git-series.andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <cover.5630f63168ad5cddf02e9796106f8e086c196907.1575376664.git-series.andrew@aj.id.au>
 References: <cover.5630f63168ad5cddf02e9796106f8e086c196907.1575376664.git-series.andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_043647_533390_B5E40E19 
-X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-CacheID: sfid-20191203_043652_487326_6E3EF8C3 
+X-CRM114-Status: UNSURE (   8.29  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -103,8 +104,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, minyard@acm.org,
- arnd@arndb.de, gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Haiyue Wang <haiyue.wang@linux.intel.com>, minyard@acm.org, arnd@arndb.de,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
  linux-aspeed@lists.ozlabs.org, robh+dt@kernel.org, joel@jms.id.au,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -112,56 +114,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The v2 binding utilises reg and renames some of the v1 properties.
+The currently interrupts are configured after the channel was enabled.
 
 Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+Reviewed-by: Joel Stanley <joel@jms.id.au>
+Reviewed-by: Haiyue Wang <haiyue.wang@linux.intel.com>
 ---
- Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt | 20 +++++---
- 1 file changed, 14 insertions(+), 6 deletions(-)
+ drivers/char/ipmi/kcs_bmc_aspeed.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt b/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
-index d98a9bf45d6c..76b180ebbde4 100644
---- a/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
-+++ b/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
-@@ -1,9 +1,10 @@
--* Aspeed KCS (Keyboard Controller Style) IPMI interface
-+# Aspeed KCS (Keyboard Controller Style) IPMI interface
+diff --git a/drivers/char/ipmi/kcs_bmc_aspeed.c b/drivers/char/ipmi/kcs_bmc_aspeed.c
+index 3c955946e647..e3dd09022589 100644
+--- a/drivers/char/ipmi/kcs_bmc_aspeed.c
++++ b/drivers/char/ipmi/kcs_bmc_aspeed.c
+@@ -268,13 +268,14 @@ static int aspeed_kcs_probe(struct platform_device *pdev)
+ 	kcs_bmc->io_inputb = aspeed_kcs_inb;
+ 	kcs_bmc->io_outputb = aspeed_kcs_outb;
  
- The Aspeed SOCs (AST2400 and AST2500) are commonly used as BMCs
- (Baseboard Management Controllers) and the KCS interface can be
- used to perform in-band IPMI communication with their host.
++	rc = aspeed_kcs_config_irq(kcs_bmc, pdev);
++	if (rc)
++		return rc;
++
+ 	dev_set_drvdata(dev, kcs_bmc);
  
-+## v1
- Required properties:
- - compatible : should be one of
-     "aspeed,ast2400-kcs-bmc"
-@@ -12,14 +13,21 @@ Required properties:
- - kcs_chan : The LPC channel number in the controller
- - kcs_addr : The host CPU IO map address
+ 	aspeed_kcs_set_address(kcs_bmc, addr);
+ 	aspeed_kcs_enable_channel(kcs_bmc, true);
+-	rc = aspeed_kcs_config_irq(kcs_bmc, pdev);
+-	if (rc)
+-		return rc;
  
-+## v2
-+Required properties:
-+- compatible : should be one of
-+    "aspeed,ast2400-kcs-bmc-v2"
-+    "aspeed,ast2500-kcs-bmc-v2"
-+- reg : The address and size of the IDR, ODR and STR registers
-+- interrupts : interrupt generated by the controller
-+- slave-reg : The host CPU IO map address
- 
- Example:
- 
--    kcs3: kcs3@0 {
--        compatible = "aspeed,ast2500-kcs-bmc";
--        reg = <0x0 0x80>;
-+    kcs3: kcs@24 {
-+        compatible = "aspeed,ast2500-kcs-bmc-v2";
-+        reg = <0x24 0x1>, <0x30 0x1>, <0x3c 0x1>;
-         interrupts = <8>;
--        kcs_chan = <3>;
--        kcs_addr = <0xCA2>;
-+        slave-reg = <0xca2>;
-         status = "okay";
-     };
+ 	rc = misc_register(&kcs_bmc->miscdev);
+ 	if (rc) {
 -- 
 git-series 0.9.1
 
